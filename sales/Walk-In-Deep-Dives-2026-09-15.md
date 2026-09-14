@@ -4,7 +4,7 @@ Companion to [`Walk-In-Batch-2026-09-15.md`](Walk-In-Batch-2026-09-15.md). **Seq
 
 **Two research-forced route changes (read first):**
 - **Inter Comprehensive HS is OUT.** It is in a public ownership lawsuit (founder vs late administrator's family — see disqualified note at the end). No single decision-maker; selling into a disputed school is a waste and a risk. Replaced by **Bishop Jules Peters Memorial College, Bokwaongo** (Catholic diocesan, active, no site, on the same uphill loop).
-- **Baird Memorial becomes CONDITIONAL.** It already has a self-built website, bairdmemorial.com (with visible spelling errors and unreachable from outside tonight). Open it on your phone tonight: dead/broken = full pitch; loads fine = card + light word, park as upsell.
+- **Baird Memorial is now a FULL PITCH — conditional resolved by King on 14 Sep:** bairdmemorial.com confirmed **dead on his phone**; **677 87 53 95 confirmed on WhatsApp**; **677 78 04 05 is NOT on WhatsApp, discarded**. WhatsApp msg 1 goes Tuesday 16:00 (replan §4); card left Wednesday only if WhatsApp silent. The conditional logic in section ⑥ is retained as research record only. No email leg counted (King: emails rarely opened).
 
 ---
 
@@ -17,7 +17,9 @@ You confirmed all three are on WhatsApp (14 Sep). None is yet confirmed as the *
 | **679 65 07 07** | Baptist Comp. College | Published on the school's own Facebook page intro ("Baptist Comprehensive College, Great Soppo Buea") | **Official school line** — likely administrator/proprietor's phone; role unknown |
 | **652 075 229** | PCSS Buea | Published by the school itself on the GPENreformation global Protestant-schools network (self-reported official listing) | **Official school line** — office/head teacher; not personal |
 | **675 533 321** | PCSS Buea | Named individual: **Kinang Edwin Ngenge**, listed as the school's network contact with personal Yahoo email (he lists EN/ES/FR/DE — reads as a language teacher/partnerships person) | **Staff, not principal** — potential internal champion who opens the door |
-| **677 87 53 95 / 677 78 04 05** | Baird Memorial | Visitor-submitted directory entry paired with P.O. Box 403 Buea | Plausibly school admin — **please WA-check these two tonight too** |
+| **677 87 53 95** | Baird Memorial | Visitor-submitted directory entry paired with P.O. Box 403 Buea | **CONFIRMED on WhatsApp (King 14 Sep)** — role attribution on reply; 677 78 04 05 is NOT on WA and is discarded |
+| **679 15 10 75** | St. Theresa (STIBCCOL) | Official Facebook page intro | **CONFIRMED on WhatsApp (King 14 Sep)** — Tue 15:45 msg 1; TikTok DM deferred to Wed if silent |
+| **691 63 29 41 / 677 61 57 57 · 678 90 89 62** | Solidarity Clinic & Lab / MITOC (clinics) | medicoor profile + WTWC/Zenithe lists · FB intro | **King to verify tonight**; Tue 08:35 clinic msg 1 — see `Clinic-Batch-2026-09-15.md` |
 
 **30-second identity check for each chat tonight:** open the WhatsApp contact → profile photo (school logo vs a person), display name, About line. Then the first text never assumes the person is the principal — it asks to be **directed** (messages updated below). Final cross-check is at the gate: show office staff the number — *"Is this the principal's direct line, or the bursar's?"*
 
@@ -108,7 +110,7 @@ Sources: project-house.net industrial-placement report (full history, location, 
 | Differentiator | **Evening school from 3:30pm** — shared practicals, revision and exams with day students ("a privilege not found anywhere in the region" — their words) |
 | Decision-maker | **Principal Mr. Yerima Samson Tata** — named and quoted in Cameroon Tribune three times in June 2026 |
 | Contacts | smbicol@yahoo.com only; **no phone published anywhere; Facebook page "Summerset Bilingual College (SUBICOL)" inactive since Dec 2015** (carries an unrelated Yahoo address — do not use); **no website found** |
-| Tuesday channel | Parallel email (replan §4, weak leg) + **Wed async card-drop addressed to Principal Tata** (the effective first touch; he has no digital inbox he is known to read) |
+| Tuesday channel | **No Tuesday email (removed per King 14 Sep: people rarely open email here).** Counted first touch = **Wed sealed-envelope card-drop addressed to Principal Tata**; a smbicol@ email may be sent as a bonus with zero expectation, never as a planned leg |
 
 **Verified hooks (strongest on the route):**
 1. **Live pain, from the principal's own mouth to the press (Sep 2026):** enrollment is **slower this resumption** — many parents are pushing student arrival to October 2026; he is spending on repainting, benches and cleanliness to compete. Visibility is the missing half of that fight.
@@ -147,7 +149,7 @@ Sources: concourscameroon.com 2020 GCE results · camgceb.org/cameroongcerevisio
 
 ---
 
-## ⑥ Baird Memorial College (BMC) — behind the Public Tap, Bonduma · ID 31 · **CONDITIONAL 6–10**
+## ⑥ Baird Memorial College (BMC) — behind the Public Tap, Bonduma · ID 31 · **~11/B+ FULL PITCH (King 14 Sep: site dead + 677 87 53 95 on WA)**
 
 | | |
 |---|---|
@@ -158,10 +160,9 @@ Sources: concourscameroon.com 2020 GCE results · camgceb.org/cameroongcerevisio
 | Web presence | ⚠️ **A self-built website exists: bairdmemorial.com** — copy on it reads "bording", "Accademic services"; **it could not be opened from outside tonight** (down or blocking) |
 | Visibility | Active in inter-school events (CSDC Buea 2025 report) |
 
-**Tonight's check decides the pitch:**
-- **Site does NOT load on your phone (or shows an error/holding page):** full D-grade pitch — *"I actually tried to open your website before coming; it's not opening this morning. Parents browsing tonight hit the same wall."* Score rises to ~10; ask who built it and when it was last touched.
-- **Site loads fine:** compliment the effort, leave the card, one soft line — *"If you ever want it bilingual with WhatsApp admissions, here's my number"* — and park as an upsell/refresh lead. Do not criticise a working site at the gate.
-- **WhatsApp-check both 677 numbers tonight;** if on WhatsApp and the site is dead, they join the 08:30 text list.
+**RESOLVED 14 Sep (King's phone):** site **dead**, 677 87 53 95 **on WhatsApp**, 677 78 04 05 **not on WhatsApp (discard)**. The full-pitch branch below is the live one: Tuesday 16:00 WhatsApp msg 1 (replan §4), Wednesday sealed card only if the line stays silent; visit by invitation.
+- **Full pitch (LIVE):** *"I tried bairdmemorial.com again this morning and it still does not open. Parents browsing tonight hit the same wall."* Ask who built it and when it was last touched; lead with the nameless sample on any yes.
+- **Parked alternative (only if the site ever comes back to life):** compliment the effort, leave the card, one soft line — *"If you ever want it bilingual with WhatsApp admissions, here's my number"* — and treat as an upsell/refresh lead.
 
 Sources: all-about-cameroon-today.com submission-center visitor entry (address, phones, email) · bairdmemorial.com (about-us copy, spelling) · baselineoratorsnetwork CSDC Buea 2025 PDF · camgceb.org centre lists.
 
