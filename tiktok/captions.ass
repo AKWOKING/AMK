@@ -1,0 +1,25 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: FR,Arial,60,&H00FFFFFF,&H00FFFFFF,&H000F172A,&H960F172A,-1,0,0,0,100,100,0,0,1,7,0,2,70,70,330,1
+Style: EN,Arial,40,&H00D9E2F3,&H00D9E2F3,&H000F172A,&H960F172A,0,0,0,0,100,100,0,0,1,6,0,2,70,70,225,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:03.04,FR,,0,0,0,,Les parents cherchent votre école sur Google avant de l'appeler.
+Dialogue: 0,0:00:00.00,0:00:03.04,EN,,0,0,0,,Parents Google your school before they call it.
+Dialogue: 0,0:00:03.04,0:00:05.56,FR,,0,0,0,,Et ce qu'ils trouvent ? Une page Facebook…
+Dialogue: 0,0:00:03.04,0:00:05.56,EN,,0,0,0,,And what do they find? A Facebook page…
+Dialogue: 0,0:00:05.56,0:00:08.76,FR,,0,0,0,,…ou un site qui ressemble à l'école de quelqu'un d'autre.
+Dialogue: 0,0:00:05.56,0:00:08.76,EN,,0,0,0,,…or a site that looks like someone else's school.
+Dialogue: 0,0:00:08.76,0:00:12.81,FR,,0,0,0,,On construit ça pour votre école — vos couleurs, votre histoire,
+Dialogue: 0,0:00:08.76,0:00:12.81,EN,,0,0,0,,We build that for your school — your colors, your story,
+Dialogue: 0,0:00:12.81,0:00:16.85,FR,,0,0,0,,en deux langues, en 3 à 5 jours.
+Dialogue: 0,0:00:12.81,0:00:16.85,EN,,0,0,0,,in two languages, in 3 to 5 days.
+Dialogue: 0,0:00:16.85,0:00:22.85,FR,,0,0,0,,Aperçu gratuit en 24h — écrivez APERÇU sur WhatsApp.
+Dialogue: 0,0:00:16.85,0:00:22.85,EN,,0,0,0,,Free 24h preview — message APERÇU on WhatsApp.
