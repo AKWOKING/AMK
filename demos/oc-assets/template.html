@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>OraCare Dental Clinic — Molyko, Buea | Gentle Care · Clear FCFA Prices</title>
+<meta name="description" content="Gentle, modern dental care at St. Pius Hospital, Mayor's Street, Molyko, Buea. Clear FCFA prices, same-week appointments, care in English & French. Book on WhatsApp.">
+<meta property="og:title" content="OraCare Dental Clinic — Molyko, Buea">
+<meta property="og:description" content="Gentle dental care, clear FCFA prices, WhatsApp booking. St. Pius Hospital, Mayor's Street, Molyko, Buea.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F7F1E8; --cream2:#FBF7F0; --sage:#EDF3EE; --sage-d:#7FA88F;
+  --navy:#16323A; --navy2:#1E4152; --ink:#1C2B33; --slate:#5C6F78;
+  --gold:#C9A24B; --coral:#E76F51; --white:#fff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:'Outfit','Inter',sans-serif;letter-spacing:-.02em;line-height:1.08}
+section{scroll-margin-top:84px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.eyebrow{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);margin-bottom:16px}
+.eyebrow b{color:var(--gold);font-weight:800}
+.eyebrow::after{content:"";height:1px;width:56px;background:var(--gold);opacity:.5}
+h2{font-size:clamp(28px,4vw,44px);font-weight:800;margin-bottom:14px;color:var(--navy)}
+.sub{font-size:16.5px;color:var(--slate);max-width:640px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:99px;font-size:15px;font-weight:700;border:none;cursor:pointer;transition:.2s;font-family:'Inter',sans-serif}
+.btn .arr{transition:transform .2s;display:inline-block}
+.btn:hover .arr{transform:translateX(4px)}
+.btn-dark{background:var(--navy);color:var(--cream)}
+.btn-dark:hover{background:var(--navy2);transform:translateY(-2px);box-shadow:0 12px 28px rgba(22,50,58,.28)}
+.link-cta{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--navy);border-bottom:1.5px solid transparent;padding:4px 0}
+.link-cta:hover{border-color:var(--gold)}
+.spark{position:absolute;color:var(--gold);opacity:.55;pointer-events:none;font-size:18px;z-index:1}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+.concept-badge{background:rgba(201,162,75,.1);border:1px solid rgba(201,162,75,.45);color:#A9842F;font-size:10.5px;font-weight:700;letter-spacing:.05em;padding:4px 11px;border-radius:99px;white-space:nowrap}
+
+/* nav */
+nav.main{position:sticky;top:0;z-index:60;background:rgba(247,241,232,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(22,50,58,.07);transition:.3s}
+nav.main.scrolled{background:rgba(251,247,240,.94);box-shadow:0 10px 30px rgba(22,50,58,.1)}
+nav.main .wrap{display:flex;align-items:center;gap:14px;padding-top:14px;padding-bottom:14px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Outfit',sans-serif;font-weight:800;font-size:21px;color:var(--navy)}
+.logo .tooth{width:38px;height:38px;border-radius:12px;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:19px}
+.logo small{display:block;font-size:9px;font-weight:700;letter-spacing:.18em;color:var(--slate)}
+nav.main .links{display:flex;gap:18px;margin-left:auto}
+nav.main .links a{font-size:14px;font-weight:600;color:var(--ink);opacity:.8;white-space:nowrap}
+nav.main .links a:hover{opacity:1;color:#A9842F}
+.nav-phone{font-size:13.5px;font-weight:700;color:var(--navy);white-space:nowrap}
+.nav-phone:hover{color:#A9842F}
+.lang-sw{display:flex;border:1.5px solid rgba(22,50,58,.25);border-radius:99px;overflow:hidden}
+.lang-sw button{background:none;border:none;font-weight:700;font-size:12.5px;padding:7px 13px;cursor:pointer;color:var(--slate);font-family:'Inter',sans-serif}
+.lang-sw button.on{background:var(--navy);color:var(--cream)}
+.nav-cta{padding:10px 18px;font-size:13.5px;white-space:nowrap}
+
+/* hero — full-bleed feathered image */
+.hero{position:relative;overflow:hidden;background:linear-gradient(100deg,#F7F1E8 0%,#FAF5EC 42%,#F1E8D8 100%)}
+.hero-img{position:absolute;top:0;right:0;height:100%;width:64%;object-fit:cover;object-position:72% center;
+ -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 40%),linear-gradient(180deg,#000 70%,transparent 100%);
+ -webkit-mask-composite:source-in;
+ mask-image:linear-gradient(90deg,transparent 0%,#000 40%),linear-gradient(180deg,#000 70%,transparent 100%);
+ mask-composite:intersect}
+.hero .wrap{position:relative;z-index:2;padding-top:88px;padding-bottom:120px}
+.hero-copy{max-width:660px}
+.hero h1{font-size:clamp(36px,4vw,54px);font-weight:800;color:var(--navy)}
+.hero .sub{font-size:17.5px;margin:22px 0 30px;max-width:480px}
+.h-ctas{display:flex;gap:22px;align-items:center;flex-wrap:wrap;margin-bottom:30px}
+.h-chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{background:rgba(255,255,255,.8);backdrop-filter:blur(4px);border:1px solid rgba(22,50,58,.1);border-radius:99px;padding:8px 16px;font-size:13px;font-weight:600;color:var(--ink)}
+
+/* split heads */
+.split-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap}
+.split-head .lh{max-width:600px}
+.split-cta{display:flex;flex-direction:column;align-items:flex-end;gap:16px;flex:none}
+.avatar-stack{display:flex;align-items:center}
+.avatar-stack img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2.5px solid var(--cream2);margin-left:-12px}
+.avatar-stack img:first-child{margin-left:0}
+.avatar-stack .more{width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--cream);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-left:-12px;border:2.5px solid var(--cream2)}
+.sample-note{font-size:12.5px;color:var(--slate);margin-top:10px;font-style:italic}
+
+/* 001 pricing */
+.pricing{background:var(--cream2);padding:84px 0}
+.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+.pcard{background:var(--white);border:1px solid rgba(22,50,58,.08);border-radius:22px;padding:26px 22px;display:flex;flex-direction:column;transition:.25s}
+.pcard:hover{transform:translateY(-6px);box-shadow:0 22px 48px rgba(22,50,58,.12)}
+.pcard .p-ic{width:44px;height:44px;border-radius:13px;background:var(--sage);display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:16px}
+.pcard h3{font-size:16.5px;font-weight:700;margin-bottom:10px;color:var(--navy)}
+.pcard .p-amt{font-family:'Outfit',sans-serif;font-size:26px;font-weight:800;color:var(--navy)}
+.pcard .p-amt small{font-size:13px;font-weight:600;color:var(--slate)}
+.pcard .p-dur{font-size:12px;color:var(--slate);margin:2px 0 12px}
+.pcard ul{list-style:none;margin-bottom:16px;flex:1}
+.pcard li{font-size:13px;color:var(--slate);padding:6px 0;border-bottom:1px dashed rgba(22,50,58,.1)}
+.pcard li::before{content:"✓ ";color:var(--sage-d);font-weight:800}
+.pcard .btn{justify-content:center;padding:12px 18px;font-size:13.5px}
+.price-cta{margin-top:26px;text-align:center;font-size:14.5px;color:var(--slate)}
+.price-cta a{color:var(--navy);font-weight:700;border-bottom:1.5px solid var(--gold)}
+
+/* 002 work */
+.work{background:var(--sage);padding:84px 0}
+.work-head .work-head-r{text-align:right;max-width:620px;margin-left:auto}
+.work-meta{display:flex;align-items:center;gap:16px;justify-content:flex-end;margin-top:16px}
+.work-meta p{font-size:14px;color:var(--slate);max-width:340px}
+.badge-round{width:118px;height:118px;border-radius:50%;background:var(--navy);color:var(--cream);display:flex;align-items:center;justify-content:center;text-align:center;font-size:10.5px;font-weight:700;letter-spacing:.08em;line-height:1.5;padding:16px;transition:.25s;flex:none}
+.badge-round:hover{transform:scale(1.06) rotate(4deg);background:var(--navy2)}
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.wcard{cursor:pointer}
+.wcard .w-ph{border-radius:20px;overflow:hidden;aspect-ratio:4/5;background:var(--white)}
+.wcard .w-ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.wcard:hover .w-ph img{transform:scale(1.06)}
+.wcard h3{font-size:16.5px;font-weight:700;margin-top:14px;color:var(--navy)}
+.wcard p{font-size:13.5px;color:var(--slate);margin-top:4px}
+
+/* 003 safety */
+.safety{padding:84px 0}
+.center{text-align:center}.center .sub{margin:0 auto}
+.safe-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.sc{background:#F2EDE4;border-radius:22px;padding:34px 26px;text-align:center;transition:.25s}
+.sc:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(22,50,58,.09)}
+.sc .ic{font-size:30px;margin-bottom:14px}
+.sc h3{font-size:17px;font-weight:700;margin-bottom:8px;color:var(--navy)}
+.sc p{font-size:14.5px;color:var(--slate)}
+.safe-line{margin-top:30px;font-size:15px;color:var(--slate);font-style:italic;text-align:center;max-width:720px;margin-left:auto;margin-right:auto}
+
+/* 004 team */
+.team{background:var(--cream2);padding:84px 0}
+.circle-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;margin-top:48px}
+.circ{aspect-ratio:1;border-radius:50%;overflow:hidden}
+.circ img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.circ:hover img{transform:scale(1.08)}
+.circ.p1{background:#E4EDF4}.circ.p2{background:#EDF3EE}.circ.p3{background:#F7E8E4}
+.circ.p4{background:#ECE9F5}.circ.p5{background:#F6EBD6}.circ.p6{background:#F3EDE2}
+.team-cap{text-align:center;margin-top:26px;font-size:14px;font-weight:600;color:var(--slate)}
+.team-cap b{color:var(--navy)}
+
+/* 005 visit */
+.visit{background:var(--sage);padding:84px 0}
+.car-arrows{display:flex;gap:10px;justify-content:flex-end;margin-top:6px}
+.car-arrows button{width:42px;height:42px;border-radius:50%;border:1.5px solid rgba(22,50,58,.3);background:transparent;font-size:17px;color:var(--navy);cursor:pointer;transition:.2s}
+.car-arrows button:hover{background:var(--navy);color:var(--cream)}
+.visit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.vcard .v-ph{border-radius:20px;overflow:hidden;aspect-ratio:4/3;background:var(--white)}
+.vcard .v-ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.vcard:hover .v-ph img{transform:scale(1.05)}
+.vcard h3{font-size:16px;font-weight:700;margin-top:12px;color:var(--navy)}
+.vcard p{font-size:13px;color:var(--slate);margin-top:2px}
+.loc-strip{margin-top:20px;background:var(--navy);border-radius:22px;padding:26px 30px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;color:var(--cream)}
+.loc-strip h3{font-size:19px;color:var(--cream);margin-bottom:6px}
+.loc-strip p{font-size:14px;color:rgba(247,241,232,.75);max-width:560px}
+.loc-strip a.dir{display:inline-flex;gap:8px;align-items:center;background:var(--gold);color:var(--navy);font-weight:700;font-size:13.5px;padding:11px 18px;border-radius:99px;transition:.2s}
+.loc-strip a.dir:hover{background:#dcb964;transform:translateY(-2px)}
+
+/* 006 before/after */
+.results{background:var(--cream);padding:84px 0}
+.ba{position:relative;max-width:860px;margin:44px auto 0;aspect-ratio:16/10;border-radius:26px;overflow:hidden;box-shadow:0 26px 60px rgba(22,50,58,.2);cursor:ew-resize;touch-action:none;user-select:none}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba-wrap{position:absolute;inset:0;width:50%;overflow:hidden}
+.ba-wrap img{position:absolute;inset:auto auto auto 0;height:100%;max-width:none}
+.ba-handle{position:absolute;top:0;bottom:0;left:50%;width:3px;background:var(--white);box-shadow:0 0 14px rgba(0,0,0,.4);pointer-events:none}
+.ba-handle::after{content:"↔";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:var(--white);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;box-shadow:0 8px 22px rgba(0,0,0,.3)}
+.ba-tag{position:absolute;top:16px;font-size:11px;font-weight:800;letter-spacing:.1em;padding:6px 13px;border-radius:99px;background:rgba(22,50,58,.75);color:var(--cream);z-index:2}
+.ba-tag.t1{left:16px}.ba-tag.t2{right:16px;background:var(--gold);color:var(--navy)}
+.ba-note{margin-top:20px;text-align:center;font-size:13px;color:var(--slate);font-style:italic}
+
+/* 007 testimonial */
+.testi{background:var(--cream2);padding:88px 0 0}
+.t-quote{max-width:840px;margin:0 auto;text-align:center;font-family:'Outfit',sans-serif;font-size:clamp(19px,2.5vw,28px);font-weight:600;line-height:1.45;color:var(--navy)}
+.t-who{text-align:center;margin-top:20px;font-size:14px;color:var(--slate);font-weight:600}
+.strip{display:flex;margin-top:44px;border-radius:26px;overflow:hidden}
+.strip img{flex:1;aspect-ratio:1/1.05;object-fit:cover;filter:grayscale(1) contrast(1.03);transition:filter .45s}
+.strip img:hover{filter:grayscale(0)}
+.t-fb{margin-top:26px;text-align:center;font-size:13px;color:var(--slate);padding-bottom:64px}
+.t-fb b{color:var(--gold)}
+
+/* 008 faq */
+.faq{padding:84px 0 60px}
+.faq-list{max-width:760px;margin:36px auto 0}
+.faq-item{background:var(--white);border:1px solid rgba(22,50,58,.08);border-radius:16px;margin-bottom:12px;overflow:hidden}
+.faq-item summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 22px;font-weight:700;font-size:15.5px;color:var(--navy);font-family:'Outfit',sans-serif}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary .pm{flex:none;width:26px;height:26px;border-radius:50%;background:var(--sage);color:var(--sage-d);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;transition:.25s}
+.faq-item[open] summary .pm{background:var(--navy);color:var(--cream);transform:rotate(45deg)}
+.faq-item .faq-a{padding:0 22px 18px;font-size:14.5px;color:var(--slate)}
+
+/* 009 booking */
+.book{background:var(--navy);color:var(--cream);padding:88px 0;position:relative;overflow:hidden}
+.book::before{content:"";position:absolute;top:-260px;right:-220px;width:760px;height:760px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,75,.14),transparent 62%)}
+.book .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1fr 480px;gap:56px;align-items:start}
+.book .eyebrow{color:rgba(247,241,232,.6)}
+.book .eyebrow b{color:var(--gold)}
+.book h2{color:var(--cream)}
+.book .sub{color:rgba(247,241,232,.75)}
+.steps3{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.step3{flex:1;min-width:130px;background:rgba(251,247,240,.06);border:1px solid rgba(247,241,232,.14);border-radius:16px;padding:16px 16px}
+.step3 .n{width:30px;height:30px;border-radius:50%;background:var(--gold);color:var(--navy);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.step3 b{font-size:13.5px;display:block;color:var(--cream)}
+.step3 span{font-size:12px;color:rgba(247,241,232,.6)}
+.form-card{background:var(--cream2);color:var(--ink);border-radius:24px;padding:30px;box-shadow:0 40px 90px rgba(0,0,0,.35)}
+.form-card h3{font-size:20px;color:var(--navy);margin-bottom:4px}
+.fc-sub{font-size:13px;color:var(--slate);margin-bottom:18px}
+.fld{margin-bottom:13px}
+.fld label{display:block;font-size:12.5px;font-weight:700;margin-bottom:5px;color:var(--ink)}
+.fld input,.fld select{width:100%;padding:12px 14px;border:1.5px solid rgba(22,50,58,.18);border-radius:12px;font-size:14.5px;background:var(--white);font-family:'Inter',sans-serif;transition:.15s;color:var(--ink)}
+.fld input:focus,.fld select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,75,.18)}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-card .btn{width:100%;justify-content:center;margin-top:8px;background:var(--navy);color:var(--cream)}
+.form-card .btn:hover{background:var(--navy2)}
+.form-small{font-size:11.5px;color:var(--slate);margin-top:12px;text-align:center}
+
+/* footer */
+footer{background:var(--cream);padding:54px 0 26px}
+.f-top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+.f-mail{font-size:16px;font-weight:600;color:var(--navy)}
+.f-mail:hover{color:#A9842F}
+.f-line{height:1px;background:rgba(22,50,58,.1);margin-bottom:36px}
+.f-grid4{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:36px;margin-bottom:36px}
+.f-grid4 p.blurb{font-size:14px;color:var(--slate);margin-bottom:16px;max-width:280px}
+.f-grid4 h5{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);margin-bottom:14px;font-family:'Inter',sans-serif}
+.f-grid4 a.fl{display:block;font-size:14px;color:var(--slate);padding:4px 0}
+.f-grid4 a.fl:hover{color:#A9842F}
+.f-grid4 .btn{padding:11px 20px;font-size:13.5px}
+.nl{display:flex;border:1.5px solid rgba(22,50,58,.2);border-radius:99px;overflow:hidden;margin-top:12px;background:var(--white);max-width:300px}
+.nl input{border:none;flex:1;padding:11px 16px;font-size:13.5px;min-width:0;font-family:'Inter',sans-serif}
+.nl input:focus{outline:none}
+.nl button{background:var(--navy);color:var(--cream);border:none;padding:0 18px;font-size:16px;cursor:pointer;transition:.2s}
+.nl button:hover{background:var(--navy2)}
+.nl-done{font-size:13px;font-weight:700;color:var(--sage-d);margin-top:12px}
+.f-socials{display:flex;gap:12px;margin-bottom:24px}
+.f-socials a{width:38px;height:38px;border-radius:50%;background:var(--navy);color:var(--cream);display:flex;align-items:center;justify-content:center;transition:.2s}
+.f-socials a:hover{background:var(--navy2);transform:translateY(-2px)}
+.f-socials svg{width:17px;height:17px;fill:currentColor}
+.f-bottom{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid rgba(22,50,58,.1);padding-top:20px;font-size:12.5px;color:var(--slate)}
+.f-bottom b{color:#A9842F}
+
+@media(max-width:1000px){
+  .hero-img{width:78%}
+  .hero .wrap{padding-bottom:96px}
+  .price-grid{grid-template-columns:1fr 1fr}
+  .work-grid,.safe-grid,.visit-grid{grid-template-columns:1fr 1fr}
+  .circle-grid{grid-template-columns:repeat(4,1fr)}
+  .book .wrap{grid-template-columns:1fr}
+  .work-head-r{text-align:left;margin-left:0}
+  .work-meta{justify-content:flex-start}
+  nav.main .links{display:none}
+  .f-grid4{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+  .hero .wrap::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(247,241,232,.97) 0%,rgba(247,241,232,.88) 52%,rgba(247,241,232,0) 90%);z-index:1}
+  .hero-copy{position:relative;z-index:2}
+  .price-grid,.work-grid,.safe-grid{grid-template-columns:1fr}
+  .circle-grid{grid-template-columns:repeat(3,1fr)}
+  .visit-grid{display:grid;grid-auto-flow:column;grid-auto-columns:84%;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:none}
+  .visit-grid::-webkit-scrollbar{display:none}
+  .vcard{scroll-snap-align:center}
+  .car-arrows{display:flex}
+  .f-grid4{grid-template-columns:1fr}
+  .h-ctas .btn{width:100%;justify-content:center}
+  .nav-phone,.concept-badge{display:none}
+  .split-cta{align-items:flex-start}
+  .strip img{aspect-ratio:1/1.15}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="main" id="nav">
+  <div class="wrap">
+    <a class="logo" href="#top"><span class="tooth">🦷</span><span>OraCare<small data-en="DENTAL CLINIC · MOLYKO" data-fr="CLINIQUE DENTAIRE · MOLYKO">DENTAL CLINIC · MOLYKO</small></span></a>
+    <div class="links">
+      <a href="#pricing" data-en="Pricing" data-fr="Tarifs">Pricing</a>
+      <a href="#work" data-en="Our Work" data-fr="Nos réalisations">Our Work</a>
+      <a href="#visit" data-en="Your Visit" data-fr="Votre visite">Your Visit</a>
+      <a href="#results" data-en="Results" data-fr="Résultats">Results</a>
+    </div>
+    <a class="nav-phone" href="tel:+237672526686">📞 +237 672 52 66 86</a>
+    <span class="concept-badge" data-en="Website concept by AMK" data-fr="Site concept par AMK">Website concept by AMK</span>
+    <div class="lang-sw">
+      <button id="btn-en" class="on" onclick="setLang('en')">EN</button>
+      <button id="btn-fr" onclick="setLang('fr')">FR</button>
+    </div>
+    <a href="#book" class="btn btn-dark nav-cta" data-en="Book Your Visit" data-fr="Prendre rendez-vous">Book Your Visit</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <img class="hero-img" src="{{HERO}}" alt="Bright smile — OraCare dental clinic, Molyko Buea">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="eyebrow"><b>•</b><span data-en="DENTAL CARE — MOLYKO, BUEA" data-fr="SOINS DENTAIRES — MOLYKO, BUEA">DENTAL CARE — MOLYKO, BUEA</span></div>
+      <h1><span data-en="Dental care" data-fr="Des soins dentaires">Dental care</span> 🦷<br><span data-en="that puts you at ease" data-fr="qui vous mettent à l'aise">that puts you at ease</span></h1>
+      <p class="sub" data-en="Gentle, modern dentistry at St. Pius Hospital, Mayor's Street — clear prices in FCFA, same-week appointments, and care in English or French." data-fr="Des soins dentaires doux et modernes à l'hôpital St. Pius, Mayor's Street — tarifs clairs en FCFA, rendez-vous dans la semaine, et des soins en anglais ou en français.">Gentle, modern dentistry at St. Pius Hospital, Mayor's Street — clear prices in FCFA, same-week appointments, and care in English or French.</p>
+      <div class="h-ctas">
+        <a class="btn btn-dark" href="https://wa.me/237672526686?text=Hello%20OraCare!%20I'd%20like%20to%20book%20a%20visit." target="_blank" rel="noopener"><span data-en="Book Your Visit" data-fr="Prendre rendez-vous">Book Your Visit</span> <span class="arr">→</span></a>
+        <a class="link-cta" href="#book"><span data-en="Smile Assessment" data-fr="Évaluation du sourire">Smile Assessment</span> →</a>
+      </div>
+      <div class="h-chips">
+        <span class="chip">⭐ <span data-en="5.0 on Facebook" data-fr="5.0 sur Facebook">5.0 on Facebook</span></span>
+        <span class="chip">🗣 EN | FR</span>
+        <span class="chip">💬 <span data-en="WhatsApp booking" data-fr="Rendez-vous par WhatsApp">WhatsApp booking</span></span>
+      </div>
+    </div>
+  </div>
+  <span class="spark" style="top:16%;left:46%">✦</span>
+  <span class="spark" style="top:58%;left:38%;font-size:13px">✦</span>
+  <span class="spark" style="top:24%;left:52%;font-size:22px">✦</span>
+  <span class="spark" style="bottom:18%;left:60%">✦</span>
+</section>
+
+<!-- 001 PRICING -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="split-head rv">
+      <div class="lh">
+        <div class="eyebrow"><b>001</b><span data-en="Transparent Pricing" data-fr="Tarifs transparents">Transparent Pricing</span></div>
+        <h2 data-en="The price you see is the price you pay" data-fr="Le prix affiché est le prix payé">The price you see is the price you pay</h2>
+        <p class="sub" data-en="Many patients hesitate to ask about prices. So we publish them — in plain FCFA. Pay by cash, MTN Mobile Money or Orange Money." data-fr="Beaucoup de patients hésitent à demander le prix. Nous l'affichons donc — en FCFA, clairement. Espèces, MTN Mobile Money ou Orange Money.">Many patients hesitate to ask about prices. So we publish them — in plain FCFA. Pay by cash, MTN Mobile Money or Orange Money.</p>
+        <p class="sample-note" data-en="Sample prices for this concept — your real price list goes here." data-fr="Tarifs d'exemple pour ce concept — votre vraie grille de prix ici.">Sample prices for this concept — your real price list goes here.</p>
+      </div>
+      <div class="split-cta">
+        <div class="avatar-stack" title="280+ on our Facebook page">
+          <img src="{{FACE_1}}" alt="Happy patient"><img src="{{FACE_2}}" alt="Happy patient"><img src="{{FACE_3}}" alt="Happy patient"><img src="{{FACE_4}}" alt="Happy patient">
+          <span class="more">280+</span>
+        </div>
+        <a class="btn btn-dark" href="https://wa.me/237672526686?text=Hello%20OraCare!%20I'd%20like%20to%20book%20a%20visit." target="_blank" rel="noopener"><span data-en="Book Your Visit" data-fr="Prendre rendez-vous">Book Your Visit</span> <span class="arr">→</span></a>
+      </div>
+    </div>
+    <div class="price-grid">
+      <div class="pcard rv"><div class="p-ic">🩺</div><h3 data-en="General Consultation" data-fr="Consultation générale">General Consultation</h3><div class="p-amt">5,000 <small data-en="FCFA" data-fr="FCFA">FCFA</small></div><div class="p-dur" data-en="~30 min · per visit" data-fr="~30 min · par visite">~30 min · per visit</div><ul><li data-en="Full examination" data-fr="Examen complet">Full examination</li><li data-en="Written treatment plan" data-fr="Plan de traitement écrit">Written treatment plan</li></ul><a class="btn btn-dark" data-wa="General Consultation" data-en="Book this service" data-fr="Réserver ce soin">Book this service</a></div>
+      <div class="pcard rv" data-d="80"><div class="p-ic">✨</div><h3 data-en="Professional Cleaning" data-fr="Détartrage professionnel">Professional Cleaning</h3><div class="p-amt">15,000 <small data-en="FCFA" data-fr="FCFA">FCFA</small></div><div class="p-dur" data-en="~45 min · per visit" data-fr="~45 min · par visite">~45 min · per visit</div><ul><li data-en="Ultrasonic scaling" data-fr="Détartrage à l'ultrason">Ultrasonic scaling</li><li data-en="Polish & fluoride" data-fr="Polissage et fluor">Polish & fluoride</li></ul><a class="btn btn-dark" data-wa="Professional Cleaning" data-en="Book this service" data-fr="Réserver ce soin">Book this service</a></div>
+      <div class="pcard rv" data-d="160"><div class="p-ic">🦷</div><h3 data-en="Tooth Filling" data-fr="Obturation">Tooth Filling</h3><div class="p-amt">20,000 <small data-en="FCFA · per tooth" data-fr="FCFA · par dent">FCFA · per tooth</small></div><div class="p-dur" data-en="~40 min · per tooth" data-fr="~40 min · par dent">~40 min · per tooth</div><ul><li data-en="Caries treatment" data-fr="Soin de la carie">Caries treatment</li><li data-en="Color-matched composite" data-fr="Composite assorti">Color-matched composite</li></ul><a class="btn btn-dark" data-wa="Tooth Filling" data-en="Book this service" data-fr="Réserver ce soin">Book this service</a></div>
+      <div class="pcard rv" data-d="240"><div class="p-ic">😁</div><h3 data-en="Whitening Session" data-fr="Séance de blanchiment">Whitening Session</h3><div class="p-amt">40,000 <small data-en="FCFA" data-fr="FCFA">FCFA</small></div><div class="p-dur" data-en="~60 min · per session" data-fr="~60 min · par séance">~60 min · per session</div><ul><li data-en="Professional gel" data-fr="Gel professionnel">Professional gel</li><li data-en="Aftercare guidance" data-fr="Conseils d'entretien">Aftercare guidance</li></ul><a class="btn btn-dark" data-wa="Whitening Session" data-en="Book this service" data-fr="Réserver ce soin">Book this service</a></div>
+    </div>
+    <p class="price-cta rv" data-en="Service not listed? <a href='https://wa.me/237672526686?text=Hello%20OraCare!%20Can%20you%20tell%20me%20the%20price%20for...'>Ask on WhatsApp — answer in minutes.</a>" data-fr="Service non listé ? <a href='https://wa.me/237672526686?text=Bonjour%20OraCare%21%20Peux-tu%20me%20donner%20le%20prix%20pour...'>Demandez sur WhatsApp — réponse en quelques minutes.</a>">Service not listed? <a href='https://wa.me/237672526686?text=Hello%20OraCare!%20Can%20you%20tell%20me%20the%20price%20for...'>Ask on WhatsApp — answer in minutes.</a></p>
+  </div>
+</section>
+
+<!-- 002 WORK -->
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="work-head rv">
+      <div class="eyebrow"><b>002</b><span data-en="Our Work" data-fr="Nos réalisations">Our Work</span></div>
+      <div class="work-head-r">
+        <h2 data-en="A healthy smile starts here" data-fr="Un sourire sain commence ici">A healthy smile starts here</h2>
+        <div class="work-meta">
+          <p data-en="Restorations, cosmetic work and orthodontics — what our patients ask for most." data-fr="Traitements, esthétique et orthodontie — ce que nos patients demandent le plus.">Restorations, cosmetic work and orthodontics — what our patients ask for most.</p>
+          <a class="badge-round" href="https://facebook.com/p/Oracare237-100075164312902" target="_blank" rel="noopener" data-en="SEE OUR WORK ON FACEBOOK ↗" data-fr="VOIR NOS RÉALISATIONS SUR FACEBOOK ↗">SEE OUR WORK ON FACEBOOK ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="work-grid">
+      <div class="wcard rv"><div class="w-ph"><img src="{{WORK_W}}" alt="Teeth whitening at OraCare"></div><h3 data-en="Teeth Whitening" data-fr="Blanchiment dentaire">Teeth Whitening</h3><p data-en="Visible results in a single visit." data-fr="Des résultats visibles en une séance.">Visible results in a single visit.</p></div>
+      <div class="wcard rv" data-d="100"><div class="w-ph"><img src="{{WORK_I}}" alt="Dental implant and restoration"></div><h3 data-en="Implants & Restorations" data-fr="Implants et restaurations">Implants & Restorations</h3><p data-en="Replace. Rebuild. Restore." data-fr="Remplacer. Reconstruire. Restaurer.">Replace. Rebuild. Restore.</p></div>
+      <div class="wcard rv" data-d="200"><div class="w-ph"><img src="{{WORK_O}}" alt="Orthodontics and braces"></div><h3 data-en="Orthodontics & Braces" data-fr="Orthodontie et bagues">Orthodontics & Braces</h3><p data-en="Straight smiles, at every age." data-fr="Des sourires alignés, à tous les âges.">Straight smiles, at every age.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 003 SAFETY -->
+<section class="safety">
+  <div class="wrap">
+    <div class="center rv">
+      <div class="eyebrow" style="justify-content:center"><b>003</b><span data-en="Why Patients Feel Safe" data-fr="Pourquoi nos patients sont à l'aise">Why Patients Feel Safe</span></div>
+      <h2 data-en="Nervous? That's normal. We're built for it." data-fr="Nerveux ? C'est normal. Nous sommes faits pour ça.">Nervous? That's normal. We're built for it.</h2>
+    </div>
+    <div class="safe-grid">
+      <div class="sc rv"><div class="ic">🗣</div><h3 data-en="We explain first" data-fr="On vous explique d'abord">We explain first</h3><p data-en="Every step is explained before it happens — you always know what's coming and what it will feel like." data-fr="Chaque étape est expliquée avant de commencer — vous savez toujours ce qui vient et ce que ça fait.">Every step is explained before it happens — you always know what's coming and what it will feel like.</p></div>
+      <div class="sc rv" data-d="100"><div class="ic">🧼</div><h3 data-en="Clean, for every patient" data-fr="Propre, pour chaque patient">Clean, for every patient</h3><p data-en="Instruments sterilized between every patient. Modern equipment, maintained and updated." data-fr="Instruments stérilisés entre chaque patient. Équipement moderne, entretenu et à jour.">Instruments sterilized between every patient. Modern equipment, maintained and updated.</p></div>
+      <div class="sc rv" data-d="200"><div class="ic">🤝</div><h3 data-en="No judgment, ever" data-fr="Jamais de jugement">No judgment, ever</h3><p data-en="Every smile is welcome here. We treat people, not problems." data-fr="Chaque sourire est le bienvenu ici. Nous soignons des personnes, pas des problèmes.">Every smile is welcome here. We treat people, not problems.</p></div>
+    </div>
+    <p class="safe-line rv" data-en="Many first visits start with “I've always been afraid of the dentist.” That's exactly the conversation we're glad to have." data-fr="Beaucoup de premières visites commencent par « j'ai toujours eu peur du dentiste ». C'est justement la conversation que nous aimons avoir.">Many first visits start with “I've always been afraid of the dentist.” That's exactly the conversation we're glad to have.</p>
+  </div>
+</section>
+
+<!-- 004 TEAM -->
+<section class="team">
+  <div class="wrap">
+    <div class="split-head rv">
+      <div class="lh">
+        <div class="eyebrow"><b>004</b><span data-en="Your Care Team" data-fr="Votre équipe de soins">Your Care Team</span></div>
+        <h2 data-en="Professional. Gentle. On your side." data-fr="Professionnel. Doux. De votre côté.">Professional. Gentle. On your side.</h2>
+        <p class="sub" data-en="Our experienced team ensures a comfortable, stress-free visit — from your first message to your final check-up, the same people follow your smile." data-fr="Notre équipe expérimentée assure des visites confortables et sans stress — de votre premier message à votre dernier contrôle, les mêmes personnes suivent votre sourire.">Our experienced team ensures a comfortable, stress-free visit — from your first message to your final check-up, the same people follow your smile.</p>
+      </div>
+      <div class="split-cta">
+        <a class="btn btn-dark" href="#book"><span data-en="Book your appointment" data-fr="Prendre rendez-vous">Book your appointment</span> <span class="arr">→</span></a>
+      </div>
+    </div>
+    <div class="circle-grid rv">
+      <div class="circ"><img src="{{TEAM}}" alt="Dr. A. Nkafu, lead dentist"></div>
+      <div class="circ p1"></div>
+      <div class="circ"><img src="{{ASSIST}}" alt="Dental assistant"></div>
+      <div class="circ p4"></div>
+      <div class="circ"><img src="{{HYGI}}" alt="Dental hygienist"></div>
+      <div class="circ p3"></div>
+      <div class="circ p2"></div>
+      <div class="circ p5"></div>
+      <div class="circ"><img src="{{FACE_1}}" alt="Smile coach"></div>
+      <div class="circ p6"></div>
+      <div class="circ p1"></div>
+      <div class="circ p2"></div>
+    </div>
+    <p class="team-cap rv"><b data-en="Dr. A. Nkafu — Lead Dentist" data-fr="Dr A. Nkafu — Dentiste principal">Dr. A. Nkafu — Lead Dentist</b> · <span data-en="General · Cosmetic · Surgical" data-fr="Générale · Esthétique · Chirurgicale">General · Cosmetic · Surgical</span></p>
+  </div>
+</section>
+
+<!-- 005 VISIT -->
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="work-head rv">
+      <div class="eyebrow"><b>005</b><span data-en="Your Visit" data-fr="Votre visite">Your Visit</span></div>
+      <div class="work-head-r">
+        <h2 data-en="Inside OraCare, Molyko" data-fr="À l'intérieur d'OraCare, Molyko">Inside OraCare, Molyko</h2>
+        <div class="work-meta">
+          <p data-en="Easy to find, easy to park — inside St. Pius Hospital, Mayor's Street." data-fr="Facile à trouver, facile de se garer — à l'intérieur de l'hôpital St. Pius, Mayor's Street.">Easy to find, easy to park — inside St. Pius Hospital, Mayor's Street.</p>
+          <div class="car-arrows">
+            <button type="button" id="arL" aria-label="Previous">←</button>
+            <button type="button" id="arR" aria-label="Next">→</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="visit-grid" id="visitGrid">
+      <div class="vcard rv"><div class="v-ph"><img src="{{TOUR_1}}" alt="OraCare reception, Molyko Buea"></div><h3 data-en="Reception" data-fr="Réception">Reception</h3><p data-en="You're greeted by name" data-fr="On vous reçoit par votre nom">You're greeted by name</p></div>
+      <div class="vcard rv" data-d="100"><div class="v-ph"><img src="{{TOUR_2}}" alt="OraCare treatment room"></div><h3 data-en="Treatment room" data-fr="Salle de soins">Treatment room</h3><p data-en="Quiet, clean, modern" data-fr="Calme, propre, moderne">Quiet, clean, modern</p></div>
+      <div class="vcard rv" data-d="200"><div class="v-ph"><img src="{{TOUR_3}}" alt="Modern dental equipment"></div><h3 data-en="Modern equipment" data-fr="Équipement moderne">Modern equipment</h3><p data-en="Maintained and updated" data-fr="Entretenu et à jour">Maintained and updated</p></div>
+    </div>
+    <div class="loc-strip rv">
+      <div>
+        <h3 data-en="Find us in 2 minutes" data-fr="Trouvez-nous en 2 minutes">Find us in 2 minutes</h3>
+        <p data-en="Inside St. Pius Hospital, Mayor's Street, Molyko, Buea — and we'll see you at the reception." data-fr="À l'intérieur de l'hôpital St. Pius, Mayor's Street, Molyko, Buea — nous vous attendons à la réception.">Inside St. Pius Hospital, Mayor's Street, Molyko, Buea — and we'll see you at the reception.</p>
+      </div>
+      <a class="dir" href="https://www.google.com/maps/search/?api=1&query=St.+Pius+Hospital+Mayor+Street+Buea" target="_blank" rel="noopener" data-en="Get Directions ↗" data-fr="Itinéraire ↗">Get Directions ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- 006 RESULTS -->
+<section class="results" id="results">
+  <div class="wrap">
+    <div class="center rv">
+      <div class="eyebrow" style="justify-content:center"><b>006</b><span data-en="Real Results" data-fr="Résultats réels">Real Results</span></div>
+      <h2 data-en="Drag to see the difference" data-fr="Glissez pour voir la différence">Drag to see the difference</h2>
+    </div>
+    <div class="ba rv" id="ba">
+      <img src="{{AFTER}}" alt="Smile after treatment at OraCare">
+      <div class="ba-wrap" id="baWrap"><img src="{{BEFORE}}" alt="Smile before treatment at OraCare" id="baImg"></div>
+      <div class="ba-handle" id="baHandle"></div>
+      <span class="ba-tag t1" data-en="BEFORE" data-fr="AVANT">BEFORE</span>
+      <span class="ba-tag t2" data-en="AFTER" data-fr="APRÈS">AFTER</span>
+    </div>
+    <p class="ba-note rv" data-en="Whitening result shown. Every smile is different — your assessment sets the expectation before we begin." data-fr="Résultat de blanchiment. Chaque sourire est différent — votre évaluation fixe l'objectif avant de commencer.">Whitening result shown. Every smile is different — your assessment sets the expectation before we begin.</p>
+  </div>
+</section>
+
+<!-- 007 TESTIMONIAL -->
+<section class="testi">
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow" style="justify-content:center"><b>007</b><span data-en="What Patients Say" data-fr="Ce que disent nos patients">What Patients Say</span></div>
+      <p class="t-quote" data-en="“I was afraid of the dentist for years. The team explained every step before they started — and it was painless. I finally smile without thinking about it.”" data-fr="« J'avais peur du dentiste depuis des années. L'équipe a expliqué chaque étape avant de commencer — et c'était indolore. Je souris enfin sans y penser. »">“I was afraid of the dentist for years. The team explained every step before they started — and it was painless. I finally smile without thinking about it.”</p>
+      <p class="t-who" data-en="— A. F., Molyko (sample review)" data-fr="— A. F., Molyko (avis d'exemple)">— A. F., Molyko (sample review)</p>
+    </div>
+  </div>
+  <div class="strip rv">
+    <img src="{{FACE_1}}" alt="Patient at OraCare">
+    <img src="{{FACE_2}}" alt="Patient at OraCare">
+    <img src="{{FACE_3}}" alt="Patient at OraCare">
+    <img src="{{FACE_4}}" alt="Patient at OraCare">
+    <img src="{{TEAM}}" alt="Dr. A. Nkafu">
+  </div>
+  <div class="wrap"><p class="t-fb rv" data-en="<b>5.0 ★</b> · 1 review on Facebook — and growing with every patient." data-fr="<b>5.0 ★</b> · 1 avis sur Facebook — et ça grandit à chaque patient."><b>5.0 ★</b> · 1 review on Facebook — and growing with every patient.</p></div>
+</section>
+
+<!-- 008 FAQ -->
+<section class="faq">
+  <div class="wrap">
+    <div class="center rv">
+      <div class="eyebrow" style="justify-content:center"><b>008</b><span data-en="Quick Answers" data-fr="Réponses rapides">Quick Answers</span></div>
+      <h2 data-en="The questions we get most" data-fr="Les questions qu'on nous pose le plus">The questions we get most</h2>
+    </div>
+    <div class="faq-list rv">
+      <details class="faq-item" open><summary><span data-en="Will it hurt?" data-fr="Est-ce que ça fait mal ?">Will it hurt?</span><span class="pm">+</span></summary><p class="faq-a" data-en="Most patients are surprised — the first visit is usually the least intense part. For anything like fillings, we use local anesthesia, and we explain every step before we start it." data-fr="La plupart des patients sont surpris — la première visite est souvent la partie la plus calme. Pour les soins comme les obturations, nous utilisons une anesthésie locale, et nous expliquons chaque étape avant de la commencer.">Most patients are surprised — the first visit is usually the least intense part. For anything like fillings, we use local anesthesia, and we explain every step before we start it.</p></details>
+      <details class="faq-item"><summary><span data-en="How do I pay?" data-fr="Comment payer ?">How do I pay?</span><span class="pm">+</span></summary><p class="faq-a" data-en="Cash, MTN Mobile Money or Orange Money. The price you're quoted before we begin is the price you pay — no surprises at the end." data-fr="Espèces, MTN Mobile Money ou Orange Money. Le prix indiqué avant de commencer est le prix payé — sans surprise à la fin.">Cash, MTN Mobile Money or Orange Money. The price you're quoted before we begin is the price you pay — no surprises at the end.</p></details>
+      <details class="faq-item"><summary><span data-en="How soon can I be seen?" data-fr="Quand puis-je être reçu ?">How soon can I be seen?</span><span class="pm">+</span></summary><p class="faq-a" data-en="Send us a WhatsApp message — most patients are booked within a few days, and emergencies are seen as soon as possible." data-fr="Envoyez-nous un message WhatsApp — la plupart des patients sont pris en quelques jours, et les urgences sont vues dans les plus brefs délais.">Send us a WhatsApp message — most patients are booked within a few days, and emergencies are seen as soon as possible.</p></details>
+      <details class="faq-item"><summary><span data-en="I'm not sure what I need. Where do I start?" data-fr="Je ne sais pas exactement ce qu'il me faut. Par où commencer ?">I'm not sure what I need. Where do I start?</span><span class="pm">+</span></summary><p class="faq-a" data-en="Start with a general consultation. We examine, explain what's going on, and give you a written plan with clear prices before any treatment." data-fr="Commencez par une consultation générale. Nous examinons, nous expliquons, et nous vous donnons un plan écrit avec des prix clairs avant tout traitement.">Start with a general consultation. We examine, explain what's going on, and give you a written plan with clear prices before any treatment.</p></details>
+      <details class="faq-item"><summary><span data-en="Where exactly are you?" data-fr="Où êtes-vous exactement ?">Where exactly are you?</span><span class="pm">+</span></summary><p class="faq-a" data-en="Inside St. Pius Hospital, Mayor's Street, Molyko, Buea. Use the Get Directions button above and we'll see you at the reception." data-fr="À l'intérieur de l'hôpital St. Pius, Mayor's Street, Molyko, Buea. Utilisez le bouton Itinéraire ci-dessus et nous vous attendons à la réception.">Inside St. Pius Hospital, Mayor's Street, Molyko, Buea. Use the Get Directions button above and we'll see you at the reception.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 009 BOOKING -->
+<section class="book" id="book">
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow"><b>009</b><span data-en="Book Your Visit" data-fr="Prendre rendez-vous">Book Your Visit</span></div>
+      <h2 data-en="Book in 3 steps — on WhatsApp" data-fr="Réservez en 3 étapes — sur WhatsApp">Book in 3 steps — on WhatsApp</h2>
+      <p class="sub" data-en="No account, no waiting on the line. Your request arrives directly on our WhatsApp, and we confirm your slot the same day." data-fr="Compte, attente téléphonique — rien de tout ça. Votre demande arrive directement sur notre WhatsApp, et nous confirmons votre créneau le jour même.">No account, no waiting on the line. Your request arrives directly on our WhatsApp, and we confirm your slot the same day.</p>
+      <div class="steps3">
+        <div class="step3"><div class="n">1</div><b data-en="Pick your service" data-fr="Choisissez votre soin">Pick your service</b><span data-en="or “not sure yet”" data-fr="ou « pas encore sûr »">or “not sure yet”</span></div>
+        <div class="step3"><div class="n">2</div><b data-en="Pick day & time" data-fr="Choisissez jour & heure">Pick day & time</b><span data-en="we work around you" data-fr="nous nous adaptons">we work around you</span></div>
+        <div class="step3"><div class="n">3</div><b data-en="We confirm on WhatsApp" data-fr="Nous confirmons sur WhatsApp">We confirm on WhatsApp</b><span data-en="Ref: OC-XXXX" data-fr="Réf : OC-XXXX">Ref: OC-XXXX</span></div>
+      </div>
+    </div>
+    <form class="form-card rv" data-d="150" onsubmit="return sendBooking(event)">
+      <h3 data-en="Request your appointment" data-fr="Demandez votre rendez-vous">Request your appointment</h3>
+      <p class="fc-sub" data-en="Goes straight to the clinic's WhatsApp — 30 seconds." data-fr="Part directement sur le WhatsApp de la clinique — 30 secondes.">Goes straight to the clinic's WhatsApp — 30 seconds.</p>
+      <div class="fld"><label data-en="Your name *" data-fr="Votre nom *">Your name *</label><input type="text" id="b-name" required></div>
+      <div class="fld"><label data-en="WhatsApp number *" data-fr="Numéro WhatsApp *">WhatsApp number *</label><input type="tel" id="b-phone" required placeholder="+237 6XX XXX XXX"></div>
+      <div class="fld"><label data-en="Service *" data-fr="Soin *">Service *</label>
+        <select id="b-service">
+          <option data-en="General Consultation" data-fr="Consultation générale">General Consultation</option>
+          <option data-en="Professional Cleaning" data-fr="Détartrage professionnel">Professional Cleaning</option>
+          <option data-en="Tooth Filling" data-fr="Obturation">Tooth Filling</option>
+          <option data-en="Whitening" data-fr="Blanchiment">Whitening</option>
+          <option data-en="Implant / Restoration" data-fr="Implant / restauration">Implant / Restoration</option>
+          <option data-en="Braces / Orthodontics" data-fr="Bagues / orthodontie">Braces / Orthodontics</option>
+          <option data-en="Not sure yet" data-fr="Pas encore sûr">Not sure yet</option>
+        </select>
+      </div>
+      <div class="f-row">
+        <div class="fld"><label data-en="Day" data-fr="Jour">Day</label>
+          <select id="b-day">
+            <option data-en="Tomorrow" data-fr="Demain">Tomorrow</option>
+            <option data-en="This week" data-fr="Cette semaine">This week</option>
+            <option data-en="Next week" data-fr="La semaine prochaine">Next week</option>
+          </select>
+        </div>
+        <div class="fld"><label data-en="Time" data-fr="Heure">Time</label>
+          <select id="b-time">
+            <option data-en="Morning" data-fr="Matin">Morning</option>
+            <option data-en="Afternoon" data-fr="Après-midi">Afternoon</option>
+            <option data-en="Any moment" data-fr="Peu importe">Any moment</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="btn"><span data-en="Send my request on WhatsApp" data-fr="Envoyer ma demande sur WhatsApp">Send my request on WhatsApp</span> <span class="arr">→</span></button>
+      <p class="form-small" data-en="Opens WhatsApp with your message already written — nothing is sent without you. Your reference: OC-XXXX." data-fr="Ouvre WhatsApp avec votre message déjà rédigé — rien n'est envoyé sans vous. Votre référence : OC-XXXX.">Opens WhatsApp with your message already written — nothing is sent without you. Your reference: OC-XXXX.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <a class="logo" href="#top"><span class="tooth">🦷</span><span>OraCare<small data-en="DENTAL CLINIC · MOLYKO" data-fr="CLINIQUE DENTAIRE · MOLYKO">DENTAL CLINIC · MOLYKO</small></span></a>
+      <a class="f-mail" href="mailto:snkafuarnold11@gmail.com">snkafuarnold11@gmail.com</a>
+    </div>
+    <div class="f-line"></div>
+    <div class="f-grid4">
+      <div>
+        <p class="blurb" data-en="Gentle, modern dental care in Molyko, Buea — clear FCFA prices, English & French, booking on WhatsApp." data-fr="Des soins dentaires doux et modernes à Molyko, Buea — tarifs FCFA clairs, anglais et français, rendez-vous sur WhatsApp.">Gentle, modern dental care in Molyko, Buea — clear FCFA prices, English & French, booking on WhatsApp.</p>
+        <a class="btn btn-dark" href="https://wa.me/237672526686?text=Hello%20OraCare!%20I'd%20like%20to%20book%20a%20visit." target="_blank" rel="noopener"><span data-en="Learn More" data-fr="En savoir plus">Learn More</span> <span class="arr">→</span></a>
+      </div>
+      <div>
+        <h5 data-en="Contact" data-fr="Contact">Contact</h5>
+        <a class="fl" href="tel:+237672526686">+237 672 52 66 86 (WhatsApp)</a>
+        <a class="fl" href="mailto:snkafuarnold11@gmail.com">snkafuarnold11@gmail.com</a>
+        <a class="fl" data-en="Mon–Sat · 8:00 am – 6:00 pm (sample hours)" data-fr="Lun–Sam · 8h00 – 18h00 (horaires d'exemple)">Mon–Sat · 8:00 am – 6:00 pm (sample hours)</a>
+      </div>
+      <div>
+        <h5 data-en="Explore" data-fr="Explorer">Explore</h5>
+        <a class="fl" href="#pricing" data-en="Pricing" data-fr="Tarifs">Pricing</a>
+        <a class="fl" href="#work" data-en="Our Work" data-fr="Nos réalisations">Our Work</a>
+        <a class="fl" href="#visit" data-en="Your Visit" data-fr="Votre visite">Your Visit</a>
+        <a class="fl" href="#results" data-en="Results" data-fr="Résultats">Results</a>
+        <a class="fl" href="https://facebook.com/p/Oracare237-100075164312902" target="_blank" rel="noopener" data-en="Facebook ↗" data-fr="Facebook ↗">Facebook ↗</a>
+      </div>
+      <div>
+        <h5 data-en="Newsletter" data-fr="Infolettre">Newsletter</h5>
+        <p class="blurb" style="margin-bottom:0" data-en="Smile tips and offers, once a month." data-fr="Conseils sourires et offres, une fois par mois.">Smile tips and offers, once a month.</p>
+        <form class="nl" id="nlForm">
+          <input type="email" required data-en-ph="Email address" data-fr-ph="Adresse email" placeholder="Email address">
+          <button type="submit" aria-label="Subscribe">→</button>
+        </form>
+      </div>
+    </div>
+    <div class="f-socials">
+      <a href="https://facebook.com/p/Oracare237-100075164312902" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.6-1.5h1.3V4.9c-.2 0-1-.1-1.9-.1-2.4 0-4 1.4-4 4V11H8v3h2.5v7h3z"/></svg></a>
+      <a href="https://wa.me/237672526686" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.3zM12 21.8c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm5.5-7.3c-.3-.2-1.8-.9-2-.9-.3-.2-.5-.2-.7.2-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.6l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg></a>
+      <a href="mailto:snkafuarnold11@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 4.2L12 13l8-4.8V6l-8 5.2L4 6v2.2z"/></svg></a>
+    </div>
+    <div class="f-bottom">
+      <span data-en="© 2026 OraCare Dental Clinic · Molyko, Buea" data-fr="© 2026 OraCare Dental Clinic · Molyko, Buea">© 2026 OraCare Dental Clinic · Molyko, Buea</span>
+      <span><b data-en="Concept by AMK" data-fr="Concept par AMK">Concept by AMK</b> — <span data-en="your real site, live in 3–5 days" data-fr="votre vrai site, en ligne en 3–5 jours">your real site, live in 3–5 days</span></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+var OC_WA = "237672526686"; // OraCare's own WhatsApp number (King-verified)
+function setLang(l){
+  document.documentElement.lang = l;
+  document.querySelectorAll("[data-en]").forEach(function(el){
+    var v = (l === "fr") ? el.getAttribute("data-fr") : el.getAttribute("data-en");
+    if (v !== null && v !== undefined && v !== "") el.innerHTML = v;
+  });
+  var nl = document.querySelector("#nlForm input");
+  if (nl) nl.placeholder = (l === "fr") ? "Adresse email" : "Email address";
+  document.getElementById("btn-en").classList.toggle("on", l === "en");
+  document.getElementById("btn-fr").classList.toggle("on", l === "fr");
+}
+// price-card quick-book links
+document.querySelectorAll(".pcard .btn[data-wa]").forEach(function(a){
+  var s = a.getAttribute("data-wa");
+  a.href = "https://wa.me/" + OC_WA + "?text=" + encodeURIComponent("Hello OraCare! I'd like to book: " + s + ".");
+  a.setAttribute("target","_blank"); a.setAttribute("rel","noopener");
+});
+// nav scroll
+window.addEventListener("scroll", function(){
+  document.getElementById("nav").classList.toggle("scrolled", window.scrollY > 30);
+}, {passive:true});
+// reveal
+var io = new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); }
+  });
+},{threshold:.12});
+document.querySelectorAll(".rv").forEach(function(el){
+  el.style.transitionDelay = (el.getAttribute("data-d") || 0) + "ms";
+  io.observe(el);
+});
+// visit carousel arrows (mobile)
+var grid = document.getElementById("visitGrid");
+document.getElementById("arL").addEventListener("click", function(){ grid.scrollBy({left:-320, behavior:"smooth"}); });
+document.getElementById("arR").addEventListener("click", function(){ grid.scrollBy({left:320, behavior:"smooth"}); });
+// before/after slider
+var ba = document.getElementById("ba"), baWrap = document.getElementById("baWrap"), baImg = document.getElementById("baImg"), baHandle = document.getElementById("baHandle");
+function sizeBA(){ baImg.style.width = ba.clientWidth + "px"; }
+function setBA(pct){
+  pct = Math.max(4, Math.min(96, pct));
+  baWrap.style.width = pct + "%";
+  baHandle.style.left = pct + "%";
+}
+function baFromEvent(ev){
+  var r = ba.getBoundingClientRect();
+  var x = (ev.touches ? ev.touches[0].clientX : ev.clientX) - r.left;
+  setBA(x / r.width * 100);
+}
+var dragging = false;
+ba.addEventListener("pointerdown", function(ev){ dragging = true; ba.setPointerCapture(ev.pointerId); baFromEvent(ev); });
+ba.addEventListener("pointermove", function(ev){ if (dragging) baFromEvent(ev); });
+ba.addEventListener("pointerup", function(){ dragging = false; });
+window.addEventListener("resize", sizeBA);
+sizeBA(); setBA(50);
+// newsletter (concept — no backend)
+document.getElementById("nlForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var fr = document.documentElement.lang === "fr";
+  this.outerHTML = '<p class="nl-done" data-en="✓ Thanks — you\'re on the list." data-fr="✓ Merci — vous êtes inscrit(e).">✓ Thanks — you\'re on the list.</p>';
+});
+// booking form → clinic WhatsApp + JSON payload for the FastAPI/PostgreSQL backend
+function sendBooking(e){
+  e.preventDefault();
+  var name = document.getElementById("b-name").value;
+  var phone = document.getElementById("b-phone").value;
+  var service = document.getElementById("b-service").value;
+  var day = document.getElementById("b-day").value;
+  var time = document.getElementById("b-time").value;
+  var ref = "OC-" + Math.floor(1000 + Math.random() * 9000);
+  var fr = document.documentElement.lang === "fr";
+  var msg = fr
+    ? "Bonjour OraCare ! Je souhaite prendre rendez-vous.\n\nSoin : " + service + "\nJour : " + day + " (" + time + ")\nNom : " + name + "\nTéléphone : " + phone + "\nRéf : " + ref
+    : "Hello OraCare! I would like to book an appointment.\n\nService: " + service + "\nDay: " + day + " (" + time + ")\nName: " + name + "\nPhone: " + phone + "\nRef: " + ref;
+  var payload = { ref: ref, name: name, phone: phone, service: service, day: day, time: time, lang: document.documentElement.lang, source: "website", created_at: new Date().toISOString() };
+  console.log("OraCare booking payload → POST /api/bookings", JSON.stringify(payload));
+  window.open("https://wa.me/" + OC_WA + "?text=" + encodeURIComponent(msg), "_blank");
+  return false;
+}
+</script>
+</body>
+</html>

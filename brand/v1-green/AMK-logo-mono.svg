@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" font-family="Helvetica, Arial, sans-serif">
+  <rect x="40" y="90" width="120" height="120" rx="28" fill="#1a1a1a"/>
+  <circle cx="100" cy="152" r="34" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.9"/>
+  <line x1="100" y1="122" x2="74" y2="178" stroke="#ffffff" stroke-width="3.5"/>
+  <line x1="100" y1="122" x2="126" y2="178" stroke="#ffffff" stroke-width="3.5"/>
+  <line x1="74" y1="178" x2="126" y2="178" stroke="#ffffff" stroke-width="3.5"/>
+  <circle cx="100" cy="122" r="6.5" fill="#ffffff"/>
+  <circle cx="74" cy="178" r="6.5" fill="#ffffff"/>
+  <circle cx="126" cy="178" r="6.5" fill="#ffffff"/>
+  <circle cx="100" cy="110" r="3" fill="#ffffff"/>
+  <text x="196" y="168" font-size="76" font-weight="bold" fill="#1a1a1a" letter-spacing="10">AMK</text>
+  <rect x="200" y="184" width="212" height="5" fill="#1a1a1a"/>
+  <text x="200" y="218" font-size="16" fill="#444444" letter-spacing="3">DÉVELOPPEMENT WEB &amp; SOLUTIONS DIGITALES</text>
+  <text x="200" y="244" font-size="13" fill="#777777" letter-spacing="1">Douala · Yaoundé · Buea · Limbe</text>
+</svg>

@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>AMK – Web Design for Schools & Clinics in Cameroon | Free 24h Preview</title>
+<meta name="description" content="Modern, bilingual (EN|FR), mobile-first websites for private schools & clinics in Cameroon. Free 24h preview, live in 3–5 days. Douala · Yaoundé · Buea · Limbe.">
+<link rel="canonical" href="https://amk-cm.vercel.app/">
+<meta property="og:title" content="AMK – Web Design for Schools & Clinics in Cameroon">
+<meta property="og:description" content="Your website, built to be found. Free 24h preview · bilingual EN|FR · live in 3–5 days.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"AMK – Web Development & Digital Solutions","url":"https://amk-cm.vercel.app","telephone":"+237677789631","areaServed":["Douala","Yaoundé","Buea","Limbe"],"description":"Modern bilingual (EN|FR) websites for private schools and clinics in Cameroon."}
+</script>
+<style>
+:root{
+  --navy:#0F172A; --navy2:#1E293B; --navy3:#334155; --navy4:#0B1120;
+  --amber:#F59E0B; --amber-l:#FCD34D; --amber-t:#FFFBEB;
+  --green:#10B981; --green-d:#04211D;
+  --bg:#F8FAFC; --white:#fff; --border:#E2E8F0;
+  --ink:#0F172A; --slate:#64748B; --slate-l:#94A3B8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+section{padding:84px 0;scroll-margin-top:84px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#B45309;background:var(--amber-t);border:1px solid #FDE68A;padding:6px 14px;border-radius:99px;margin-bottom:18px}
+.dark .kicker{color:var(--amber-l);background:rgba(245,158,11,.08);border-color:rgba(245,158,11,.25)}
+h2{font-size:clamp(28px,4.2vw,42px);font-weight:800;letter-spacing:-.025em;line-height:1.12;margin-bottom:14px}
+.sub{font-size:17px;color:var(--slate);max-width:680px}
+.dark .sub{color:#94A3B8}
+.center{text-align:center}
+.center .sub{margin:0 auto}
+.btn{display:inline-block;padding:15px 28px;border-radius:12px;font-size:16px;font-weight:700;transition:.18s;cursor:pointer;border:none;text-align:center}
+.btn-amber{background:var(--amber);color:var(--navy)}
+.btn-amber:hover{background:var(--amber-l);transform:translateY(-2px);box-shadow:0 10px 26px rgba(245,158,11,.3)}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid var(--navy3)}
+.btn-ghost:hover{border-color:var(--amber);color:var(--amber-l);transform:translateY(-2px)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+
+/* progress */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--amber),var(--amber-l));z-index:200}
+
+/* header */
+header{position:fixed;top:0;left:0;right:0;z-index:100;transition:.3s;padding:14px 0}
+header.scrolled{background:rgba(11,17,32,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 6px 24px rgba(0,0,0,.25);padding:10px 0}
+.h-in{display:flex;align-items:center;gap:28px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand svg{width:40px;height:40px;flex:none}
+.brand .t{color:#fff;font-weight:800;font-size:19px;letter-spacing:.02em;line-height:1.1}
+.brand .t small{display:block;font-size:9.5px;font-weight:600;letter-spacing:.14em;color:var(--slate-l);text-transform:uppercase}
+nav.main{display:flex;gap:26px;margin-left:auto}
+nav.main a{color:#CBD5E1;font-size:15px;font-weight:600;transition:.15s}
+nav.main a:hover{color:var(--amber-l)}
+.lang-sw{display:flex;border:1.5px solid var(--navy3);border-radius:99px;overflow:hidden}
+.lang-sw button{background:none;border:none;color:var(--slate-l);font-weight:700;font-size:13px;padding:7px 14px;cursor:pointer;transition:.15s}
+.lang-sw button.on{background:var(--amber);color:var(--navy)}
+.h-cta{padding:11px 20px;font-size:14.5px}
+#m-btn{display:none;background:none;border:none;cursor:pointer;padding:6px}
+#m-btn span{display:block;width:24px;height:2px;background:#fff;margin:5px 0;border-radius:2px}
+.m-nav{position:fixed;inset:0;background:rgba(11,17,32,.97);z-index:150;display:none;flex-direction:column;justify-content:center;padding:40px;text-align:center;gap:8px}
+.m-nav.open{display:flex}
+.m-nav a{color:#fff;font-size:26px;font-weight:800;padding:12px;letter-spacing:-.01em}
+.m-nav .btn{margin-top:18px;align-self:center}
+.m-close{position:absolute;top:26px;right:28px;background:none;border:none;color:#fff;font-size:34px;cursor:pointer}
+
+/* hero */
+.hero{background:var(--navy4);color:#fff;padding:150px 0 90px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-300px;right:-200px;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.14),transparent 62%)}
+.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(148,163,184,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.05) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 30% 20%,black,transparent 70%)}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.niche-sw{display:inline-flex;background:rgba(30,41,59,.75);border:1px solid var(--navy3);border-radius:99px;padding:5px;margin-bottom:26px}
+.niche-btn{border:none;background:none;color:var(--slate-l);font-weight:700;font-size:15px;padding:10px 22px;border-radius:99px;cursor:pointer;transition:.2s;display:flex;align-items:center;gap:8px}
+.niche-btn.on{background:var(--amber);color:var(--navy);box-shadow:0 4px 14px rgba(245,158,11,.35)}
+.h-panels{position:relative;min-height:340px}
+.h-panel{display:none}
+.h-panel.active{display:block;animation:panelIn .45s ease}
+@keyframes panelIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.h-panel h1{font-size:clamp(34px,4.6vw,56px);font-weight:800;letter-spacing:-.03em;line-height:1.08;margin-bottom:20px}
+.h-panel h1 em{font-style:normal;color:var(--amber)}
+.h-panel .sub{font-size:18px;color:#B6C2D6;margin-bottom:30px;max-width:560px}
+.h-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+.h-checks{display:flex;gap:22px;flex-wrap:wrap;font-size:14px;color:var(--slate-l)}
+.h-checks span{display:flex;gap:8px;align-items:center}
+.h-checks b{color:var(--amber-l);font-weight:800}
+.h-visual{position:relative}
+.frame{background:var(--navy2);border:1px solid var(--navy3);border-radius:18px;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.5);animation:float 7s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.frame .bar{display:flex;align-items:center;gap:7px;padding:12px 16px;background:var(--navy4);border-bottom:1px solid var(--navy3)}
+.frame .bar i{width:10px;height:10px;border-radius:50%;background:var(--navy3)}
+.frame .bar i:first-child{background:#F87171}.frame .bar i:nth-child(2){background:#FBBF24}.frame .bar i:nth-child(3){background:#34D399}
+.frame .bar .url{margin-left:10px;font-size:12px;color:var(--slate-l);background:rgba(51,65,85,.5);padding:4px 14px;border-radius:99px}
+.frame .shots{position:relative;aspect-ratio:1280/800;background:var(--navy)}
+.h-shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;transition:opacity .5s ease}
+.h-shot.active{opacity:1}
+.chip{position:absolute;background:rgba(11,17,32,.88);border:1px solid var(--navy3);backdrop-filter:blur(8px);color:#fff;font-size:13px;font-weight:700;padding:9px 16px;border-radius:99px;display:flex;gap:8px;align-items:center;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--amber);display:inline-block}
+.chip.c1{top:8%;right:-14px;animation:float 6s ease-in-out infinite}
+.chip.c2{bottom:18%;left:-22px;animation:float 8s ease-in-out infinite reverse}
+.chip.c3{bottom:7%;right:8%;animation:float 7s ease-in-out infinite .8s}
+.scroll-cue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:var(--slate-l);font-size:12px;letter-spacing:.18em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px;z-index:2}
+.scroll-cue .arr{width:1px;height:34px;background:linear-gradient(var(--amber),transparent);animation:cue 1.6s ease-in-out infinite}
+@keyframes cue{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+
+/* stats */
+.stats{background:var(--navy);border-top:1px solid var(--navy3);padding:44px 0}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.stat .n{font-size:clamp(34px,4vw,48px);font-weight:800;color:var(--amber);letter-spacing:-.02em;line-height:1}
+.stat .l{font-size:13.5px;color:var(--slate-l);margin-top:8px}
+
+/* marquee */
+.marquee{background:var(--amber);color:var(--navy);overflow:hidden;padding:14px 0;white-space:nowrap;position:relative}
+.marquee .track{display:inline-flex;animation:mq 28s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.marquee span{font-weight:800;font-size:15px;letter-spacing:.1em;margin:0 22px;text-transform:uppercase}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* problem */
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+.pcard{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px;transition:.25s}
+.pcard:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(15,23,42,.1);border-color:#CBD5E1}
+.pcard .ico{width:46px;height:46px;border-radius:12px;background:var(--amber-t);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.pcard h3{font-size:19px;font-weight:800;margin-bottom:8px}
+.pcard p{font-size:15px;color:var(--slate)}
+.cmp{margin-top:48px;border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.cmp-head{background:var(--navy);color:#fff;font-weight:800;padding:16px 24px;font-size:15px}
+.cmp-row{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--border)}
+.cmp-cell{padding:14px 24px;font-size:14.5px;display:flex;gap:10px;align-items:center}
+.cmp-cell.old{background:#F8FAFC;color:var(--slate)}
+.cmp-cell.new{background:var(--amber-t);font-weight:600}
+.mk{font-weight:900;flex:none}
+.old .mk{color:#EF4444}.new .mk{color:#16A34A}
+
+/* mid cta */
+.midcta{background:var(--amber);padding:56px 0}
+.midcta .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.midcta h3{font-size:clamp(22px,3vw,32px);font-weight:800;letter-spacing:-.02em;color:var(--navy);max-width:640px}
+.midcta .btn{background:var(--navy);color:#fff}
+.midcta .btn:hover{background:var(--navy2);transform:translateY(-2px)}
+
+/* work */
+.work{background:var(--bg)}
+.row-label{display:flex;align-items:center;gap:16px;margin:44px 0 20px;font-size:14px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--slate)}
+.row-label::after{content:"";height:1px;flex:1;background:var(--border)}
+.row-label .dot{width:10px;height:10px;border-radius:50%;background:var(--amber)}
+.row-label.clinic .dot{background:var(--green)}
+.w-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.w-grid.two{grid-template-columns:1fr 1fr;max-width:780px}
+.wcard{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:.28s}
+.wcard:hover{transform:translateY(-8px);box-shadow:0 28px 60px rgba(15,23,42,.14)}
+.wcard .shot{position:relative;aspect-ratio:1280/800;overflow:hidden;background:var(--navy)}
+.wcard .shot img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s ease}
+.wcard:hover .shot img{transform:scale(1.05)}
+.wcard .shot .mini-bar{position:absolute;top:0;left:0;right:0;height:26px;background:rgba(11,17,32,.9);display:flex;align-items:center;gap:5px;padding:0 10px}
+.wcard .shot .mini-bar i{width:7px;height:7px;border-radius:50%;background:var(--navy3)}
+.wcard .body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:8px;flex:1}
+.tag{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#B45309}
+.wcard.clinic .tag{color:#047857}
+.wcard h3{font-size:20px;font-weight:800;letter-spacing:-.01em}
+.loc{font-size:13.5px;color:var(--slate-l);font-weight:600}
+.wcard p{font-size:14.5px;color:var(--slate);flex:1}
+.wcard .btn{align-self:flex-start;padding:12px 20px;font-size:14.5px;margin-top:8px}
+.wcard.ghost{border:2px dashed var(--border);background:#FCFDFE;justify-content:center;align-items:center;text-align:center;padding:36px 28px}
+.wcard.ghost .plus{font-size:44px;font-weight:300;color:var(--slate-l);line-height:1;margin-bottom:14px}
+.wcard.ghost:hover{border-color:var(--amber);box-shadow:none;transform:translateY(-4px)}
+
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:44px}
+.svc{background:#fff;border:1px solid var(--border);border-radius:16px;padding:30px;display:flex;gap:20px;transition:.25s}
+.svc:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(15,23,42,.09)}
+.svc .ico{width:48px;height:48px;border-radius:12px;background:var(--navy);display:flex;align-items:center;justify-content:center;flex:none}
+.svc h3{font-size:18px;font-weight:800;margin-bottom:8px}
+.svc p{font-size:14.5px;color:var(--slate)}
+
+/* process */
+.process{background:var(--navy4);color:#fff}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:52px;counter-reset:st}
+.step{background:rgba(30,41,59,.55);border:1px solid var(--navy3);border-radius:16px;padding:24px 20px;position:relative;transition:.25s}
+.step:hover{transform:translateY(-5px);border-color:var(--amber)}
+.step .n{width:38px;height:38px;border-radius:50%;background:var(--amber);color:var(--navy);font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:15px}
+.step small{display:block;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--amber-l);margin-bottom:6px}
+.step h3{font-size:16.5px;font-weight:800;margin-bottom:8px}
+.step p{font-size:13.5px;color:#94A3B8;line-height:1.55}
+
+/* pricing */
+.pr-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:48px;max-width:920px;margin-left:auto;margin-right:auto}
+.pr{background:#fff;border:1px solid var(--border);border-radius:20px;padding:34px;position:relative}
+.pr.feat{border:2px solid var(--amber);box-shadow:0 18px 50px rgba(245,158,11,.14)}
+.rib{position:absolute;top:-13px;left:34px;background:var(--amber);color:var(--navy);font-size:11px;font-weight:800;letter-spacing:.1em;padding:6px 14px;border-radius:99px}
+.pr h3{font-size:21px;font-weight:800;margin-bottom:6px}
+.pr .for{font-size:14.5px;color:var(--slate);margin-bottom:18px;min-height:44px}
+.price{font-size:42px;font-weight:800;letter-spacing:-.03em}
+.price .cur{font-size:24px;vertical-align:super;color:var(--slate)}
+.price-note{font-size:13.5px;color:var(--slate);margin:6px 0 20px}
+.pr ul{list-style:none;margin-bottom:26px}
+.pr li{font-size:14.5px;padding:9px 0;border-bottom:1px dashed var(--border);display:flex;gap:10px;align-items:center}
+.pr li::before{content:"✓";color:#16A34A;font-weight:800}
+.pr .btn{width:100%}
+
+/* faq */
+.faq{background:var(--bg)}
+.qa{max-width:820px;margin:40px auto 0}
+details{background:#fff;border:1px solid var(--border);border-radius:14px;margin-bottom:12px;overflow:hidden;transition:.2s}
+details[open]{border-color:var(--amber);box-shadow:0 10px 30px rgba(15,23,42,.07)}
+summary{cursor:pointer;font-weight:700;font-size:16px;padding:19px 24px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:24px;font-weight:300;color:var(--slate-l);transition:.25s;flex:none}
+details[open] summary::after{transform:rotate(45deg);color:var(--amber)}
+.ans{padding:0 24px 20px;font-size:15px;color:var(--slate);line-height:1.65}
+
+/* final cta */
+.audit{background:var(--navy4);color:#fff;position:relative;overflow:hidden}
+.audit::before{content:"";position:absolute;bottom:-300px;left:-200px;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.12),transparent 62%)}
+.audit .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1fr 460px;gap:60px;align-items:start}
+.ap{display:flex;gap:16px;margin-top:22px;align-items:flex-start}
+.ap .b{width:34px;height:34px;border-radius:50%;background:var(--amber);color:var(--navy);font-weight:800;display:flex;align-items:center;justify-content:center;flex:none;font-size:14px}
+.ap p{font-size:15px;color:#B6C2D6}
+.ap p b{color:#fff}
+.direct{margin-top:36px;padding:24px;border:1px solid var(--navy3);border-radius:16px;background:rgba(30,41,59,.4)}
+.direct h4{font-size:15px;margin-bottom:8px}
+.direct p{font-size:15px;margin:4px 0;color:#CBD5E1}
+.direct a{color:var(--amber-l);font-weight:700}
+.form-card{background:#fff;color:var(--ink);border-radius:20px;padding:32px;box-shadow:0 40px 80px rgba(0,0,0,.4)}
+.form-card h3{font-size:21px;font-weight:800;margin-bottom:6px}
+.fc-sub{font-size:13.5px;color:var(--slate);margin-bottom:20px}
+.fld{margin-bottom:15px}
+.fld label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}
+.fld input,.fld select{width:100%;padding:13px 14px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;background:#fff;transition:.15s;font-family:inherit}
+.fld input:focus,.fld select:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 3px rgba(245,158,11,.15)}
+.form-card .btn{width:100%;margin-top:6px}
+.form-small{font-size:12px;color:var(--slate-l);margin-top:12px;text-align:center}
+
+/* footer */
+footer{background:var(--navy);color:#94A3B8;padding:70px 0 30px;border-top:1px solid var(--navy3)}
+.f-big{font-size:clamp(30px,5vw,54px);font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1.1;margin-bottom:14px}
+.f-big em{font-style:normal;color:var(--amber)}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin:52px 0;padding-top:44px;border-top:1px solid var(--navy3)}
+.f-brand{display:flex;align-items:center;gap:11px;margin-bottom:16px}
+.f-brand svg{width:38px;height:38px}
+.f-brand .t{color:#fff;font-weight:800;font-size:17px}
+.f-grid h5{color:#fff;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px}
+.f-grid a{display:block;padding:5px 0;font-size:14.5px;transition:.15s}
+.f-grid a:hover{color:var(--amber-l)}
+.f-bottom{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:13px;padding-top:24px;border-top:1px solid var(--navy3)}
+
+@media(max-width:1000px){
+  .hero .wrap{grid-template-columns:1fr;gap:44px}
+  .h-panels{min-height:0}
+  .h-visual{max-width:640px}
+  .stats .wrap{grid-template-columns:repeat(2,1fr);gap:32px}
+  .cards3,.w-grid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .audit .wrap{grid-template-columns:1fr}
+  .f-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  nav.main,.h-cta{display:none}
+  #m-btn{display:block}
+  .cards3,.w-grid,.w-grid.two,.svc-grid,.pr-grid,.steps{grid-template-columns:1fr}
+  .pr-grid{max-width:440px}
+  .cmp-row{grid-template-columns:1fr}
+  .cmp-cell.old{border-bottom:1px solid var(--border)}
+  .chip.c1{right:6px}.chip.c2{left:6px}
+  .f-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<header id="hdr">
+  <div class="wrap h-in">
+    <a class="brand" href="#top" aria-label="AMK">
+      <svg viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1E293B"/><circle cx="32" cy="30" r="17" fill="none" stroke="#F59E0B" stroke-width="2.4"/><path d="M32 16v28M32 30L18 44M32 30l14 14" stroke="#FCD34D" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="16" r="3" fill="#F59E0B"/><circle cx="18" cy="44" r="3" fill="#F59E0B"/><circle cx="46" cy="44" r="3" fill="#F59E0B"/></svg>
+      <span class="t">AMK<small data-en="Web Development & Digital Solutions" data-fr="Développement Web & Solutions Digitales">Web Development & Digital Solutions</small></span>
+    </a>
+    <nav class="main">
+      <a href="#work" data-en="Work" data-fr="Réalisations">Work</a>
+      <a href="#process" data-en="Process" data-fr="Processus">Process</a>
+      <a href="#pricing" data-en="Pricing" data-fr="Tarif">Pricing</a>
+      <a href="#faq" data-en="FAQ" data-fr="FAQ">FAQ</a>
+    </nav>
+    <div class="lang-sw">
+      <button id="btn-en" class="on" onclick="setLang('en')">EN</button>
+      <button id="btn-fr" onclick="setLang('fr')">FR</button>
+    </div>
+    <a href="#audit" class="btn btn-amber h-cta" data-en="Free 24h preview" data-fr="Aperçu gratuit 24h">Free 24h preview</a>
+    <button id="m-btn" aria-label="Menu" onclick="document.getElementById('m-nav').classList.add('open')"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="m-nav" id="m-nav">
+  <button class="m-close" onclick="document.getElementById('m-nav').classList.remove('open')">×</button>
+  <a href="#work" onclick="closeM()" data-en="Work" data-fr="Réalisations">Work</a>
+  <a href="#process" onclick="closeM()" data-en="Process" data-fr="Processus">Process</a>
+  <a href="#pricing" onclick="closeM()" data-en="Pricing" data-fr="Tarif">Pricing</a>
+  <a href="#faq" onclick="closeM()" data-en="FAQ" data-fr="FAQ">FAQ</a>
+  <a href="#audit" class="btn btn-amber" onclick="closeM()" data-en="Get my free 24h preview" data-fr="Recevoir mon aperçu gratuit 24h">Get my free 24h preview</a>
+  <div class="lang-sw" style="align-self:center;margin-top:20px">
+    <button id="btn-en-m" class="on" onclick="setLang('en')">EN</button>
+    <button id="btn-fr-m" onclick="setLang('fr')">FR</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="kicker" data-en="Web design — schools & clinics · Cameroon" data-fr="Développement web — écoles & cliniques · Cameroun">Web design — schools & clinics · Cameroon</span>
+      <div class="niche-sw" role="tablist">
+        <button class="niche-btn on" data-niche="school" onclick="setNiche('school')">🏫 <span data-en="Schools" data-fr="Écoles">Schools</span></button>
+        <button class="niche-btn" data-niche="clinic" onclick="setNiche('clinic')">🩺 <span data-en="Clinics" data-fr="Cliniques">Clinics</span></button>
+      </div>
+      <div class="h-panels">
+        <div class="h-panel active" data-niche="school">
+          <h1><span data-en="Your school is being" data-fr="Votre école est">Your school is being</span> <em data-en="judged on Google" data-fr="jugée sur Google">judged on Google</em> <span data-en="— before parents call." data-fr="— avant que les parents n'appellent.">— before parents call.</span></h1>
+          <p class="sub" data-en="Parents search before they visit. We design modern, bilingual, mobile-first websites for private schools in Cameroon — so when they search, they find a school that looks as excellent as it really is." data-fr="Les parents cherchent avant de visiter. Nous concevons des sites modernes, bilingues et pensés mobile d'abord pour les écoles privées du Cameroun — afin qu'en cherchant, ils trouvent une école qui paraît aussi excellente qu'elle l'est vraiment.">Parents search before they visit. We design modern, bilingual, mobile-first websites for private schools in Cameroon — so when they search, they find a school that looks as excellent as it really is.</p>
+        </div>
+        <div class="h-panel" data-niche="clinic">
+          <h1><span data-en="Your next patient is" data-fr="Votre prochain patient">Your next patient is</span> <em data-en="choosing" data-fr="choisit">choosing</em> <span data-en="— and they're searching right now." data-fr="— et il cherche en ce moment.">— and they're searching right now.</span></h1>
+          <p class="sub" data-en="Patients search “dentist in Buea” or “clinic in Douala”. If they can't find you — or land on a Facebook page — they stop at your competitor's door. We build clinic sites that put you first: two languages, clear FCFA pricing, booking on WhatsApp." data-fr="Les patients cherchent « dentiste à Buea » ou « clinique à Douala ». S'ils ne vous trouvent pas — ou tombent sur une page Facebook — ils s'arrêtent chez votre concurrent. Nous construisons des sites de clinique qui vous placent en premier : deux langues, tarifs FCFA clairs, rendez-vous sur WhatsApp.">Patients search “dentist in Buea” or “clinic in Douala”. If they can't find you — or land on a Facebook page — they stop at your competitor's door. We build clinic sites that put you first: two languages, clear FCFA pricing, booking on WhatsApp.</p>
+        </div>
+      </div>
+      <div class="h-ctas">
+        <a href="#audit" class="btn btn-amber" data-en="Get my free 24h preview" data-fr="Recevoir mon aperçu gratuit 24h">Get my free 24h preview</a>
+        <a href="#work" class="btn btn-ghost" data-en="Open a concept site" data-fr="Ouvrir un site concept">Open a concept site</a>
+      </div>
+      <div class="h-checks">
+        <span><b>✓</b> <span data-en="No payment until you approve" data-fr="Aucun paiement avant validation">No payment until you approve</span></span>
+        <span><b>✓</b> <span data-en="EN|FR standard on every site" data-fr="EN|FR standard sur chaque site">EN|FR standard on every site</span></span>
+        <span><b>✓</b> <span data-en="Live in 3–5 days" data-fr="En ligne en 3–5 jours">Live in 3–5 days</span></span>
+      </div>
+    </div>
+    <div class="h-visual">
+      <div class="frame">
+        <div class="bar"><i></i><i></i><i></i><span class="url" data-en="your-institution · concept" data-fr="votre-établissement · concept">your-institution · concept</span></div>
+        <div class="shots">
+          <img class="h-shot active" data-niche="school" src="img/nova.png" alt="School concept site preview">
+          <img class="h-shot" data-niche="clinic" src="img/clinic.png" alt="Clinic concept site preview" loading="lazy">
+        </div>
+      </div>
+      <span class="chip c1"><i></i> EN|FR</span>
+      <span class="chip c2"><i></i> <span data-en="WhatsApp-first" data-fr="WhatsApp d'abord">WhatsApp-first</span></span>
+      <span class="chip c3"><i></i> <span data-en="3G-fast" data-fr="Rapide en 3G">3G-fast</span></span>
+    </div>
+  </div>
+  <div class="scroll-cue"><span data-en="scroll" data-fr="défiler">scroll</span><div class="arr"></div></div>
+</section>
+
+<!-- STATS -->
+<div class="stats dark">
+  <div class="wrap">
+    <div class="stat rv"><div class="n"><span data-count="24">0</span>h</div><div class="l" data-en="free homepage preview" data-fr="d'aperçu gratuit de page d'accueil">free homepage preview</div></div>
+    <div class="stat rv" data-d="80"><div class="n">3–5</div><div class="l" data-en="days to launch (founding offer)" data-fr="jours pour lancer (formule fondatrice)">days to launch (founding offer)</div></div>
+    <div class="stat rv" data-d="160"><div class="n"><span data-count="2">0</span></div><div class="l" data-en="languages, standard & included" data-fr="langues, standard et incluses">languages, standard & included</div></div>
+    <div class="stat rv" data-d="240"><div class="n"><span data-count="4">0</span></div><div class="l" data-en="concept sites open today" data-fr="sites concepts à ouvrir aujourd'hui">concept sites open today</div></div>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Écoles</span><span>·</span><span>Cliniques</span><span>·</span><span>Bilingue EN|FR</span><span>·</span><span>WhatsApp-first</span><span>·</span><span>Mobile-first</span><span>·</span><span>3G-fast</span><span>·</span><span>Douala</span><span>·</span><span>Yaoundé</span><span>·</span><span>Buea</span><span>·</span><span>Limbe</span><span>·</span>
+    <span>Écoles</span><span>·</span><span>Cliniques</span><span>·</span><span>Bilingue EN|FR</span><span>·</span><span>WhatsApp-first</span><span>·</span><span>Mobile-first</span><span>·</span><span>3G-fast</span><span>·</span><span>Douala</span><span>·</span><span>Yaoundé</span><span>·</span><span>Buea</span><span>·</span><span>Limbe</span><span>·</span>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="kicker" data-en="The silent leak" data-fr="La fuite silencieuse">The silent leak</span>
+      <h2 data-en="Three ways schools & clinics lose customers — without knowing" data-fr="Trois façons dont écoles et cliniques perdent des clients — sans le savoir">Three ways schools & clinics lose customers — without knowing</h2>
+      <p class="sub" data-en="Broken, invisible on mobile, or missing from Google — any one of them sends parents and patients to the institution next door." data-fr="Cassé, invisible sur mobile, ou absent de Google — chacune de ces failles envoie les parents et les patients à l'établissement d'à côté.">Broken, invisible on mobile, or missing from Google — any one of them sends parents and patients to the institution next door.</p>
+    </div>
+    <div class="cards3">
+      <div class="pcard rv"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2"><path d="M12 9v4m0 4h.01M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg></div><h3 data-en="The broken link" data-fr="Le lien cassé">The broken link</h3><p data-en="Expired domain, error page, dead phone number. Every parent or patient who stumbles on it keeps the address of the school or clinic next door." data-fr="Domaine expiré, page d'erreur, numéro injoignable. Chaque parent ou patient qui tombe dessus retient l'adresse de l'école ou de la clinique d'à côté.">Expired domain, error page, dead phone number. Every parent or patient who stumbles on it keeps the address of the school or clinic next door.</p></div>
+      <div class="pcard rv" data-d="100"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div><h3 data-en="The phone-size problem" data-fr="Le problème du téléphone">The phone-size problem</h3><p data-en="Your visitors scroll on phones, at night, on 3G. If your site doesn't load there in seconds, you're not in the conversation." data-fr="Vos visiteurs consultent sur téléphone, le soir, en 3G. Si votre site ne s'y charge pas en quelques secondes, vous n'êtes pas dans la conversation.">Your visitors scroll on phones, at night, on 3G. If your site doesn't load there in seconds, you're not in the conversation.</p></div>
+      <div class="pcard rv" data-d="200"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M8 11h6"/></svg></div><h3 data-en="The Google invisibility" data-fr="L'invisibilité sur Google">The Google invisibility</h3><p data-en="Slow, hard to read, one language? Google ranks the school or clinic with the better site first — even when yours is better." data-fr="Lent, difficile à lire, une seule langue ? Google classe d'abord l'école ou la clinique au meilleur site — même quand la vôtre est meilleure.">Slow, hard to read, one language? Google ranks the school or clinic with the better site first — even when yours is better.</p></div>
+    </div>
+    <div class="cmp rv">
+      <div class="cmp-head" data-en="An old-school website vs. what we build" data-fr="Un site à l'ancienne vs. ce que nous construisons">An old-school website vs. what we build</div>
+      <div class="cmp-row"><div class="cmp-cell old"><span class="mk">✕</span><span data-en="Outdated design visitors don't trust" data-fr="Un design daté que les visiteurs ne croient pas">Outdated design visitors don't trust</span></div><div class="cmp-cell new"><span class="mk">✓</span><span data-en="A modern look that says “excellent institution”" data-fr="Un design moderne qui dit « excellent établissement »">A modern look that says “excellent institution”</span></div></div>
+      <div class="cmp-row"><div class="cmp-cell old"><span class="mk">✕</span><span data-en="Visitors hunting for phone numbers" data-fr="Des visiteurs qui cherchent un numéro de téléphone">Visitors hunting for phone numbers</span></div><div class="cmp-cell new"><span class="mk">✓</span><span data-en="One-tap WhatsApp, calendar and announcements" data-fr="Un seul clic : WhatsApp, calendrier et annonces">One-tap WhatsApp, calendar and announcements</span></div></div>
+      <div class="cmp-row"><div class="cmp-cell old"><span class="mk">✕</span><span data-en="Only the tech-savvy staff member can update it" data-fr="Seul le membre du personnel technique peut le mettre à jour">Only the tech-savvy staff member can update it</span></div><div class="cmp-cell new"><span class="mk">✓</span><span data-en="Easy updates + 30-minute staff training" data-fr="Mises à jour simples + formation du personnel en 30 min">Easy updates + 30-minute staff training</span></div></div>
+      <div class="cmp-row"><div class="cmp-cell old"><span class="mk">✕</span><span data-en="Slow, hard to read, invisible on Google" data-fr="Lent, difficile à lire, invisible sur Google">Slow, hard to read, invisible on Google</span></div><div class="cmp-cell new"><span class="mk">✓</span><span data-en="Fast, accessible, found locally on Google" data-fr="Rapide, accessible, trouvé sur Google localement">Fast, accessible, found locally on Google</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MID CTA -->
+<div class="midcta">
+  <div class="wrap">
+    <h3 class="rv" data-en="Stop losing them. See your homepage concept in 24 hours — free." data-fr="Arrêtez de les perdre. Voyez le concept de votre page d'accueil en 24 heures — gratuit.">Stop losing them. See your homepage concept in 24 hours — free.</h3>
+    <a href="#audit" class="btn rv" data-d="120" data-en="Get my free preview →" data-fr="Recevoir mon aperçu gratuit →">Get my free preview →</a>
+  </div>
+</div>
+
+<!-- WORK -->
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="kicker" data-en="Proof, honestly" data-fr="Les preuves, honnêtement">Proof, honestly</span>
+      <h2 data-en="Our proof is a website you can open." data-fr="Notre preuve, c'est un site que vous pouvez ouvrir.">Our proof is a website you can open.</h2>
+      <p class="sub" data-en="Four complete concepts, live right now — three for schools, one for clinics. Open any of them: every name, logo and stat is a placeholder we replace with yours in 24 hours, free." data-fr="Quatre concepts complets, en ligne dès maintenant — trois pour les écoles, un pour les cliniques. Ouvrez celui de votre choix : chaque nom, logo et chiffre est un emplacement que nous remplaçons par les vôtres en 24 heures, gratuitement.">Four complete concepts, live right now — three for schools, one for clinics. Open any of them: every name, logo and stat is a placeholder we replace with yours in 24 hours, free.</p>
+    </div>
+    <div class="row-label rv"><span class="dot"></span><span data-en="For schools" data-fr="Pour les écoles">For schools</span></div>
+    <div class="w-grid">
+      <div class="wcard rv">
+        <div class="shot"><div class="mini-bar"><i></i><i></i><i></i></div><img src="img/nova.png" alt="Bilingual Academy concept" loading="lazy"></div>
+        <div class="body">
+          <span class="tag" data-en="Concept 01 · Complete" data-fr="Concept 01 · Terminé">Concept 01 · Complete</span>
+          <h3 data-en="Bilingual Academy Concept" data-fr="Concept Académie Bilingue">Bilingual Academy Concept</h3>
+          <span class="loc" data-en="Template · any school, any city" data-fr="Modèle · toute école, toute ville">Template · any school, any city</span>
+          <p data-en="A complete dual-language academy homepage — open-house funnel, parent quick-hub, curriculum tabs, admissions steps, SEO-ready schema. We replace the placeholders with your school in 24 hours, free." data-fr="Une page d'accueil d'académie bilingue complète — entonnoir portes ouvertes, centre rapide parents, onglets programme, étapes d'admission, schéma SEO prêt. Nous remplaçons les emplacements par votre école en 24 heures, gratuitement.">A complete dual-language academy homepage — open-house funnel, parent quick-hub, curriculum tabs, admissions steps, SEO-ready schema. We replace the placeholders with your school in 24 hours, free.</p>
+          <a class="btn btn-amber" href="sample-school.html" data-en="Open the concept site ↗" data-fr="Ouvrir le site concept ↗">Open the concept site ↗</a>
+        </div>
+      </div>
+      <div class="wcard rv" data-d="100">
+        <div class="shot"><div class="mini-bar"><i></i><i></i><i></i></div><img src="img/littleoaks.png" alt="Nursery & Primary concept" loading="lazy"></div>
+        <div class="body">
+          <span class="tag" data-en="Concept 02 · Complete" data-fr="Concept 02 · Terminé">Concept 02 · Complete</span>
+          <h3 data-en="Nursery & Primary Concept" data-fr="Concept Maternelle & Primaire">Nursery & Primary Concept</h3>
+          <span class="loc" data-en="Template · ages 2–11" data-fr="Modèle · 2–11 ans">Template · ages 2–11</span>
+          <p data-en="A warm, playful homepage for nursery & primary schools — age-group classrooms, parent quick-hub, and an admissions form that speaks JSON to your backend. Same promise: 24 hours, free." data-fr="Une page d'accueil chaleureuse et joyeuse pour maternelles et primaires — classes par âge, centre rapide parents, et un formulaire d'admission qui parle JSON à votre backend. Même promesse : 24 heures, gratuitement.">A warm, playful homepage for nursery & primary schools — age-group classrooms, parent quick-hub, and an admissions form that speaks JSON to your backend. Same promise: 24 hours, free.</p>
+          <a class="btn btn-amber" href="sample-nursery.html" data-en="Open the concept site ↗" data-fr="Ouvrir le site concept ↗">Open the concept site ↗</a>
+        </div>
+      </div>
+      <div class="wcard rv" data-d="200">
+        <div class="shot"><div class="mini-bar"><i></i><i></i><i></i></div><img src="img/crestwood.png" alt="Secondary School concept" loading="lazy"></div>
+        <div class="body">
+          <span class="tag" data-en="Concept 03 · Complete" data-fr="Concept 03 · Terminé">Concept 03 · Complete</span>
+          <h3 data-en="Secondary School Concept" data-fr="Concept Lycée (Secondaire)">Secondary School Concept</h3>
+          <span class="loc" data-en="Template · grades 6–12" data-fr="Modèle · 6e–12e années">Template · grades 6–12</span>
+          <p data-en="An aspirational, tech-forward homepage for secondary schools — animated stats, academic pathways, student-life gallery, portals, and a tour form that speaks JSON to your backend. Same promise: 24 hours, free." data-fr="Une page d'accueil ambitieuse et tournée vers la tech pour les lycées — statistiques animées, parcours académiques, galerie de vie étudiante, portails, et un formulaire de visite qui parle JSON à votre backend. Même promesse : 24 heures, gratuitement.">An aspirational, tech-forward homepage for secondary schools — animated stats, academic pathways, student-life gallery, portals, and a tour form that speaks JSON to your backend. Same promise: 24 hours, free.</p>
+          <a class="btn btn-amber" href="sample-secondary.html" data-en="Open the concept site ↗" data-fr="Ouvrir le site concept ↗">Open the concept site ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="row-label clinic rv"><span class="dot"></span><span data-en="For clinics" data-fr="Pour les cliniques">For clinics</span></div>
+    <div class="w-grid two">
+      <div class="wcard clinic rv">
+        <div class="shot"><div class="mini-bar"><i></i><i></i><i></i></div><img src="img/clinic.png" alt="Clinic concept — live demo" loading="lazy"></div>
+        <div class="body">
+          <span class="tag" data-en="Concept 04 · Live demo" data-fr="Concept 04 · Démo en ligne">Concept 04 · Live demo</span>
+          <h3 data-en="Clinic Concept" data-fr="Concept Clinique">Clinic Concept</h3>
+          <span class="loc" data-en="3 fictional profiles · Buea · Yaoundé · Douala" data-fr="3 profils fictifs · Buea · Yaoundé · Douala">3 fictional profiles · Buea · Yaoundé · Douala</span>
+          <p data-en="A patient-first clinic homepage — transparent FCFA pricing, WhatsApp booking in two languages. This one is live: switch between the three demo clinics. Same promise: we replace the placeholders with your clinic in 24 hours, free." data-fr="Une page d'accueil de clinique pensée patient d'abord — tarifs FCFA transparents, prise de rendez-vous WhatsApp en deux langues. Celui-ci est en ligne : passez d'une démo à l'autre. Même promesse : nous remplaçons les emplacements par votre clinique en 24 heures, gratuitement.">A patient-first clinic homepage — transparent FCFA pricing, WhatsApp booking in two languages. This one is live: switch between the three demo clinics. Same promise: we replace the placeholders with your clinic in 24 hours, free.</p>
+          <a class="btn btn-amber" href="https://demo-cliniques-cm.vercel.app/" target="_blank" rel="noopener" data-en="Open the live clinic demo ↗" data-fr="Ouvrir la démo clinique en ligne ↗">Open the live clinic demo ↗</a>
+        </div>
+      </div>
+      <div class="wcard ghost rv" data-d="120">
+        <div class="plus">＋</div>
+        <h3 data-en="Your clinic here" data-fr="Votre clinique ici">Your clinic here</h3>
+        <p data-en="The next concept slot is yours — free 24h preview, nothing owed until you approve." data-fr="La prochaine place concept est à vous — aperçu gratuit en 24h, rien n'est dû avant votre validation.">The next concept slot is yours — free 24h preview, nothing owed until you approve.</p>
+        <a class="btn btn-amber" href="#audit" data-en="Claim it on WhatsApp →" data-fr="Réservez-la sur WhatsApp →">Claim it on WhatsApp →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="kicker" data-en="What's included" data-fr="Ce qui est inclus">What's included</span>
+      <h2 data-en="Everything a school or clinic needs. Nothing it doesn't." data-fr="Tout ce qu'une école ou une clinique a besoin. Rien de superflu.">Everything a school or clinic needs. Nothing it doesn't.</h2>
+    </div>
+    <div class="svc-grid">
+      <div class="svc rv"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FCD34D" stroke-width="2"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3zM12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></div><div><h3 data-en="Custom website & branding" data-fr="Site web sur mesure & identité">Custom website & branding</h3><p data-en="Designed around your logo, your colors, your story — and built to be found for “school in Buea”, “dentist in Buea” or “école privée à Douala”. Fast on 3G, clean structure Google rewards." data-fr="Conçu autour de votre logo, vos couleurs, votre histoire — et pensé pour être trouvé sur « école à Buea », « dentiste à Buea » ou « école privée à Douala ». Rapide en 3G, structure propre que Google récompense.">Designed around your logo, your colors, your story — and built to be found for “school in Buea”, “dentist in Buea” or “école privée à Douala”. Fast on 3G, clean structure Google rewards.</p></div></div>
+      <div class="svc rv" data-d="80"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FCD34D" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.9 5.7 3.9 9S14.5 18.4 12 21c-2.5-2.6-3.9-5.7-3.9-9S9.5 5.6 12 3z"/></svg></div><div><h3 data-en="Bilingual EN|FR — standard, included" data-fr="Bilingue EN|FR — standard, inclus">Bilingual EN|FR — standard, included</h3><p data-en="Cameroon is a bilingual country, so is your website. Every page in both languages, one click. No upsell, ever." data-fr="Le Cameroun est bilingue, votre site aussi. Chaque page dans les deux langues, un clic. Jamais d'option payante.">Cameroon is a bilingual country, so is your website. Every page in both languages, one click. No upsell, ever.</p></div></div>
+      <div class="svc rv" data-d="160"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FCD34D" stroke-width="2"><path d="M21 11.5a8.5 8.5 0 01-8.5 8.5c-1.6 0-3.1-.4-4.4-1.2L3 20l1.2-5.1A8.5 8.5 0 1121 11.5z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/></svg></div><div><h3 data-en="WhatsApp-first: booking that works" data-fr="WhatsApp d'abord : une prise de rendez-vous qui fonctionne">WhatsApp-first: booking that works</h3><p data-en="Every button on every screen routes to your WhatsApp — admissions, appointments, questions. The channel your visitors already live in." data-fr="Chaque bouton de chaque écran mène à votre WhatsApp — admissions, rendez-vous, questions. Le canal où vos visiteurs vivent déjà.">Every button on every screen routes to your WhatsApp — admissions, appointments, questions. The channel your visitors already live in.</p></div></div>
+      <div class="svc rv" data-d="240"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FCD34D" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div><div><h3 data-en="Domain, hosting & training" data-fr="Domaine, hébergement & formation">Domain, hosting & training</h3><p data-en="Secure SSL hosting, 99.9% uptime, 30-minute staff training, and WhatsApp support when you need us." data-fr="Hébergement sécurisé SSL, disponibilité 99,9 %, formation du personnel en 30 min, et support WhatsApp quand il faut.">Secure SSL hosting, 99.9% uptime, 30-minute staff training, and WhatsApp support when you need us.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process dark" id="process">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="kicker" data-en="How it works" data-fr="Comment ça marche">How it works</span>
+      <h2 data-en="From first message to launch — in one week." data-fr="Du premier message au lancement — en une semaine.">From first message to launch — in one week.</h2>
+    </div>
+    <div class="steps">
+      <div class="step rv"><div class="n">1</div><small data-en="Today" data-fr="Aujourd'hui">Today</small><h3 data-en="Message us" data-fr="Envoyez-nous un message">Message us</h3><p data-en="One WhatsApp message: your school's or clinic's name, your town, your number." data-fr="Un message WhatsApp : le nom de votre école ou de votre clinique, votre ville, votre numéro.">One WhatsApp message: your school's or clinic's name, your town, your number.</p></div>
+      <div class="step rv" data-d="80"><div class="n">2</div><small data-en="Within 24h" data-fr="Sous 24h">Within 24h</small><h3 data-en="Free preview" data-fr="Aperçu gratuit">Free preview</h3><p data-en="We design your real homepage — your logo, your colors, your story — and send it to you. Free." data-fr="Nous concevons votre vraie page d'accueil — votre logo, vos couleurs, votre histoire — et nous vous l'envoyons. Gratuit.">We design your real homepage — your logo, your colors, your story — and send it to you. Free.</p></div>
+      <div class="step rv" data-d="160"><div class="n">3</div><small>48h</small><h3 data-en="Your words" data-fr="Vos remarques">Your words</h3><p data-en="You review it with your team, we refine it. You don't pay until you approve." data-fr="Vous l'examinez avec votre équipe, nous l'ajustons. Vous ne payez rien avant votre validation.">You review it with your team, we refine it. You don't pay until you approve.</p></div>
+      <div class="step rv" data-d="240"><div class="n">4</div><small data-en="3–5 days" data-fr="3–5 jours">3–5 days</small><h3 data-en="Build & launch" data-fr="Construction & lancement">Build & launch</h3><p data-en="Domain, secure hosting, both languages, final checks. Live before the end of the week." data-fr="Domaine, hébergement sécurisé, deux langues, vérifications finales. En ligne avant la fin de la semaine.">Domain, secure hosting, both languages, final checks. Live before the end of the week.</p></div>
+      <div class="step rv" data-d="320"><div class="n">5</div><small data-en="30 days" data-fr="30 jours">30 days</small><h3 data-en="Support" data-fr="Support">Support</h3><p data-en="A month of free support, staff training, and your launch becomes our next case study." data-fr="Un mois de support gratuit, formation du personnel, et votre lancement devient notre prochaine étude de cas.">A month of free support, staff training, and your launch becomes our next case study.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="kicker" data-en="Pricing" data-fr="Tarif">Pricing</span>
+      <h2 data-en="One transparent price. No surprises." data-fr="Un prix transparent. Aucune surprise.">One transparent price. No surprises.</h2>
+      <p class="sub" data-en="The founding price is locked for the first two launches — school or clinic. After that, it goes up." data-fr="Le prix fondateur est bloqué pour les deux premiers lancements — école ou clinique. Après, il augmente.">The founding price is locked for the first two launches — school or clinic. After that, it goes up.</p>
+    </div>
+    <div class="pr-grid">
+      <div class="pr feat rv">
+        <span class="rib" data-en="2 FOUNDING SLOTS" data-fr="2 PLACES FONDATRICES">2 FOUNDING SLOTS</span>
+        <h3 data-en="Starter — Founding" data-fr="Starter — Fondateur">Starter — Founding</h3>
+        <p class="for" data-en="Schools & clinics, small to mid-size, ready to be found." data-fr="Écoles et cliniques, petites à moyennes, prêtes à être trouvées.">Schools & clinics, small to mid-size, ready to be found.</p>
+        <div class="price"><span class="cur">₣</span>100,000</div>
+        <div class="price-note" data-en="or 50/50 — 50,000 FCFA to start, 50,000 FCFA at launch" data-fr="ou 50/50 — 50 000 FCFA pour démarrer, 50 000 FCFA au lancement">or 50/50 — 50,000 FCFA to start, 50,000 FCFA at launch</div>
+        <ul>
+          <li data-en="1-page bilingual homepage (up to 6 sections)" data-fr="Page d'accueil bilingue (jusqu'à 6 sections)">1-page bilingual homepage (up to 6 sections)</li>
+          <li data-en="EN|FR — included, standard" data-fr="EN|FR — inclus, standard">EN|FR — included, standard</li>
+          <li data-en="WhatsApp button on every screen" data-fr="Bouton WhatsApp sur chaque écran">WhatsApp button on every screen</li>
+          <li data-en="Domain + secure hosting setup" data-fr="Domaine + installation de l'hébergement sécurisé">Domain + secure hosting setup</li>
+          <li data-en="Staff training (30 min) + 1 month free support" data-fr="Formation du personnel (30 min) + 1 mois de support gratuit">Staff training (30 min) + 1 month free support</li>
+          <li data-en="Live in 3–5 days" data-fr="En ligne en 3–5 jours">Live in 3–5 days</li>
+        </ul>
+        <a href="#audit" class="btn btn-amber" data-en="Claim a founding slot →" data-fr="Réserver une place fondatrice →">Claim a founding slot →</a>
+      </div>
+      <div class="pr rv" data-d="120">
+        <h3 data-en="Growth" data-fr="Croissance">Growth</h3>
+        <p class="for" data-en="Growing schools & clinics that need more than one page." data-fr="Écoles et cliniques en croissance qui ont besoin de plus d'une page.">Growing schools & clinics that need more than one page.</p>
+        <div class="price" data-en="On request" data-fr="Sur demande">On request</div>
+        <div class="price-note" data-en="transparent quote before you commit" data-fr="devis transparent avant de vous engager">transparent quote before you commit</div>
+        <ul>
+          <li data-en="Multi-page site (up to 8 pages)" data-fr="Site multi-pages (jusqu'à 8 pages)">Multi-page site (up to 8 pages)</li>
+          <li data-en="Results & services page + photo & news gallery" data-fr="Page résultats & services + galerie photos et actualités">Results & services page + photo & news gallery</li>
+          <li data-en="Admissions or booking section: fees, requirements, calendar" data-fr="Section admissions ou rendez-vous : frais, conditions, calendrier">Admissions or booking section: fees, requirements, calendar</li>
+          <li data-en="WhatsApp booking wired end-to-end" data-fr="Prise de rendez-vous WhatsApp branchée de bout en bout">WhatsApp booking wired end-to-end</li>
+          <li data-en="Priority support + SEO fine-tuning" data-fr="Support prioritaire + affinage SEO">Priority support + SEO fine-tuning</li>
+          <li data-en="Live in 5–7 days" data-fr="En ligne en 5–7 jours">Live in 5–7 days</li>
+        </ul>
+        <a href="#audit" class="btn btn-amber" data-en="Ask for the growth quote →" data-fr="Demander le devis croissance →">Ask for the growth quote →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="kicker" data-en="Questions" data-fr="Questions">Questions</span>
+      <h2 data-en="Asked before, answered honestly" data-fr="Posé avant, répondu honnêtement">Asked before, answered honestly</h2>
+    </div>
+    <div class="qa rv">
+      <details><summary data-en="How long does it really take?" data-fr="Combien de temps ça prend vraiment ?">How long does it really take?</summary><div class="ans" data-en="3–5 days from your approval to live for the founding package. And the preview is on your phone within 24 hours of your first message." data-fr="3 à 5 jours entre votre validation et la mise en ligne pour la formule fondatrice. Et l'aperçu est dans votre téléphone sous 24 heures après votre premier message.">3–5 days from your approval to live for the founding package. And the preview is on your phone within 24 hours of your first message.</div></details>
+      <details><summary data-en="My staff aren't technical. Can they update the site?" data-fr="Mon personnel n'est pas technique. Peut-il mettre à jour le site ?">My staff aren't technical. Can they update the site?</summary><div class="ans" data-en="Yes — that's the point. We design for non-technical staff, run a 30-minute training, and stay reachable on WhatsApp. News, photos, events: your team handles it." data-fr="Oui — c'est le but. Nous concevons pour du personnel non technique, faisons une formation de 30 minutes, et restons joignables sur WhatsApp. Actualités, photos, événements : votre équipe s'en charge.">Yes — that's the point. We design for non-technical staff, run a 30-minute training, and stay reachable on WhatsApp. News, photos, events: your team handles it.</div></details>
+      <details><summary data-en="Is bilingual (EN|FR) really included in the price?" data-fr="Le bilingue (EN|FR) est-il vraiment inclus dans le prix ?">Is bilingual (EN|FR) really included in the price?</summary><div class="ans" data-en="Yes — it's the standard on every site we build, not an add-on. A school or clinic in Cameroon serves both languages; your website should too." data-fr="Oui — c'est le standard sur chaque site que nous construisons, pas une option. Une école ou une clinique au Cameroun sert les deux langues ; votre site aussi.">Yes — it's the standard on every site we build, not an add-on. A school or clinic in Cameroon serves both languages; your website should too.</div></details>
+      <details><summary data-en="Do you really work with clinics, or is that an add-on?" data-fr="Travaillez-vous vraiment avec les cliniques, ou c'est un simple ajout ?">Do you really work with clinics, or is that an add-on?</summary><div class="ans" data-en="Clinics are one of our two core niches — schools and clinics. The clinic concept on this page is live: transparent FCFA pricing, WhatsApp booking, EN|FR, built patient-first." data-fr="Les cliniques sont l'une de nos deux niches principales — écoles et cliniques. Le concept de clinique de cette page est en ligne : tarifs FCFA transparents, prise de rendez-vous WhatsApp, EN|FR, pensé patient d'abord.">Clinics are one of our two core niches — schools and clinics. The clinic concept on this page is live: transparent FCFA pricing, WhatsApp booking, EN|FR, built patient-first.</div></details>
+      <details><summary data-en="Do I pay for the preview?" data-fr="L'aperçu est-il payant ?">Do I pay for the preview?</summary><div class="ans" data-en="No. The preview is free, and nothing is charged until you approve it and the 50% deposit begins the build." data-fr="Non. L'aperçu est gratuit, et aucun paiement avant votre validation et l'acompte de 50 % qui démarre la construction.">No. The preview is free, and nothing is charged until you approve it and the 50% deposit begins the build.</div></details>
+      <details><summary data-en="What happens after launch?" data-fr="Que se passe-t-il après le lancement ?">What happens after launch?</summary><div class="ans" data-en="One month of free support, 99.9% uptime hosting, and an affordable monthly plan if you later want us to handle updates. Your domain and files stay 100% yours." data-fr="Un mois de support gratuit, un hébergement avec 99,9 % de disponibilité, et un forfait mensuel abordable si vous voulez ensuite que nous gérions les mises à jour. Votre domaine et vos fichiers restent 100 % à vous.">One month of free support, 99.9% uptime hosting, and an affordable monthly plan if you later want us to handle updates. Your domain and files stay 100% yours.</div></details>
+      <details><summary data-en="Will my school or clinic be found on Google?" data-fr="Mon école ou ma clinique sera-t-elle trouvée sur Google ?">Will my school or clinic be found on Google?</summary><div class="ans" data-en="We build with local search in mind — fast pages, clean structure, both languages, and the way parents and patients actually search: “school in Buea”, “dentist in Buea”, “école privée à Douala”. We set you up to be found; your reputation does the rest." data-fr="Nous construisons avec la recherche locale en tête — pages rapides, structure propre, deux langues, et la manière dont les parents et les patients cherchent vraiment : « école à Buea », « dentiste à Buea », « école privée à Douala ». Nous vous mettons en position d'être trouvé ; votre réputation fait le reste.">We build with local search in mind — fast pages, clean structure, both languages, and the way parents and patients actually search: “school in Buea”, “dentist in Buea”, “école privée à Douala”. We set you up to be found; your reputation does the rest.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="audit dark" id="audit">
+  <div class="wrap">
+    <div class="rv">
+      <span class="kicker" data-en="Start here" data-fr="Commencez ici">Start here</span>
+      <h2 data-en="See what your school or clinic website could look like — in 24 hours." data-fr="Voyez ce que pourraient être le site de votre école ou de votre clinique — en 24 heures.">See what your school or clinic website could look like — in 24 hours.</h2>
+      <p class="sub" data-en="Send one message. Within 24 hours, your homepage concept is on your phone, in both languages. Free — and nothing is owed until you approve it." data-fr="Envoyez un message. Sous 24 heures, le concept de votre page d'accueil est dans votre téléphone, dans les deux langues. Gratuit — et rien n'est dû avant votre validation.">Send one message. Within 24 hours, your homepage concept is on your phone, in both languages. Free — and nothing is owed until you approve it.</p>
+      <div class="ap"><span class="b">1</span><p data-en="<b>Free.</b> No payment for the preview, and none until you approve it." data-fr="<b>Gratuit.</b> Aucun paiement pour l'aperçu, et aucun avant votre validation."><b>Free.</b> No payment for the preview, and none until you approve it.</p></div>
+      <div class="ap"><span class="b">2</span><p data-en="<b>Yours.</b> Your logo, your colors, your story — not a generic template." data-fr="<b>Vôtre.</b> Votre logo, vos couleurs, votre histoire — pas un template générique."><b>Yours.</b> Your logo, your colors, your story — not a generic template.</p></div>
+      <div class="ap"><span class="b">3</span><p data-en="<b>Fast.</b> Preview in 24h. Full site live in 3–5 days." data-fr="<b>Rapide.</b> Aperçu en 24h. Site complet en ligne en 3–5 jours."><b>Fast.</b> Preview in 24h. Full site live in 3–5 days.</p></div>
+      <div class="direct">
+        <h4 data-en="Prefer to talk now?" data-fr="Vous préférez parler maintenant ?">Prefer to talk now?</h4>
+        <p data-en="WhatsApp / call:" data-fr="WhatsApp / appel :">WhatsApp / call:</p>
+        <p><a href="tel:+237677789631">+237 677 789 631</a></p>
+        <p><a href="mailto:akwo.king.dev@gmail.com">akwo.king.dev@gmail.com</a></p>
+        <p style="margin-top:8px;font-size:13px;color:#64748B" data-en="We reply the same day. No spam, no pressure." data-fr="Nous répondons le jour même. Pas de spam, pas de pression.">We reply the same day. No spam, no pressure.</p>
+      </div>
+    </div>
+    <form class="form-card rv" data-d="150" onsubmit="return sendAudit(event)">
+      <h3 data-en="Get my free preview" data-fr="Recevoir mon aperçu gratuit">Get my free preview</h3>
+      <p class="fc-sub" data-en="Sent to us on WhatsApp — 60 seconds, no email needed." data-fr="Envoyé directement sur notre WhatsApp — 60 secondes, pas d'e-mail nécessaire.">Sent to us on WhatsApp — 60 seconds, no email needed.</p>
+      <div class="fld"><label data-en="School or clinic name *" data-fr="Nom de l'école ou de la clinique *">School or clinic name *</label><input type="text" id="f-school" required placeholder="e.g. St. Anne College · or a clinic name"></div>
+      <div class="fld"><label data-en="Town" data-fr="Ville">Town</label><select id="f-town"><option>Douala</option><option>Yaoundé</option><option>Buea</option><option>Limbe</option><option data-en="Other" data-fr="Autre">Other</option></select></div>
+      <div class="fld"><label data-en="Your name" data-fr="Votre nom">Your name</label><input type="text" id="f-name" placeholder="Director's name"></div>
+      <div class="fld"><label data-en="WhatsApp number" data-fr="Numéro WhatsApp">WhatsApp number</label><input type="tel" id="f-phone" placeholder="+237 6XX XXX XXX"></div>
+      <div class="fld"><label data-en="Current website (if any)" data-fr="Site actuel (si existant)">Current website (if any)</label><input type="text" id="f-site" placeholder="your-site.cm"></div>
+      <button type="submit" class="btn btn-amber" data-en="Get my free preview on WhatsApp →" data-fr="Recevoir mon aperçu gratuit sur WhatsApp →">Get my free preview on WhatsApp →</button>
+      <p class="form-small" data-en="This opens WhatsApp with your message already written. You stay in control — nothing is sent without you." data-fr="Ceci ouvre WhatsApp avec votre message déjà rédigé. Vous restez maître — rien n'est envoyé sans vous.">This opens WhatsApp with your message already written. You stay in control — nothing is sent without you.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="f-big rv" data-en="Ready to be <em>found?</em>" data-fr="Prêt à être <em>trouvé ?</em>">Ready to be <em>found?</em></div>
+    <a href="#audit" class="btn btn-amber rv" data-d="120" data-en="Get my free 24h preview" data-fr="Recevoir mon aperçu gratuit 24h">Get my free 24h preview</a>
+    <div class="f-grid">
+      <div>
+        <div class="f-brand">
+          <svg viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1E293B"/><circle cx="32" cy="30" r="17" fill="none" stroke="#F59E0B" stroke-width="2.4"/><path d="M32 16v28M32 30L18 44M32 30l14 14" stroke="#FCD34D" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="16" r="3" fill="#F59E0B"/><circle cx="18" cy="44" r="3" fill="#F59E0B"/><circle cx="46" cy="44" r="3" fill="#F59E0B"/></svg>
+          <span class="t">AMK</span>
+        </div>
+        <p style="font-size:14.5px" data-en="AMK – Web Development & Digital Solutions" data-fr="AMK – Développement Web & Solutions Digitales">AMK – Web Development & Digital Solutions</p>
+        <p style="margin-top:8px;font-size:14px" data-en="Modern, bilingual websites for schools and clinics that are ready to be found." data-fr="Des sites modernes et bilingues pour les écoles et les cliniques prêtes à être trouvées.">Modern, bilingual websites for schools and clinics that are ready to be found.</p>
+      </div>
+      <div>
+        <h5 data-en="Explore" data-fr="Explorer">Explore</h5>
+        <a href="#work" data-en="Work" data-fr="Réalisations">Work</a>
+        <a href="#services" data-en="Services" data-fr="Services">Services</a>
+        <a href="#pricing" data-en="Pricing" data-fr="Tarif">Pricing</a>
+        <a href="#faq" data-en="FAQ" data-fr="FAQ">FAQ</a>
+      </div>
+      <div>
+        <h5 data-en="Contact & concepts" data-fr="Contact & concepts">Contact & concepts</h5>
+        <a href="tel:+237677789631">+237 677 789 631</a>
+        <a href="mailto:akwo.king.dev@gmail.com">akwo.king.dev@gmail.com</a>
+        <a href="sample-school.html" data-en="Academy concept ↗" data-fr="Concept académie ↗">Academy concept ↗</a>
+        <a href="sample-nursery.html" data-en="Nursery concept ↗" data-fr="Concept maternelle ↗">Nursery concept ↗</a>
+        <a href="sample-secondary.html" data-en="Secondary concept ↗" data-fr="Concept lycée ↗">Secondary concept ↗</a>
+        <a href="https://demo-cliniques-cm.vercel.app/" target="_blank" rel="noopener" data-en="Clinic demo (live) ↗" data-fr="Démo clinique (en ligne) ↗">Clinic demo (live) ↗</a>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span data-en="© 2026 AMK · Built in Cameroon" data-fr="© 2026 AMK · Conçu au Cameroun">© 2026 AMK · Built in Cameroon</span>
+      <span>Douala · Yaoundé · Buea · Limbe</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+var WA_NUM = "237677789631";
+function setLang(l){
+  document.documentElement.lang = l;
+  document.querySelectorAll("[data-en]").forEach(function(el){
+    var v = (l === "fr") ? el.getAttribute("data-fr") : el.getAttribute("data-en");
+    if (v !== null && v !== undefined) el.innerHTML = v;
+  });
+  ["btn-en","btn-fr","btn-en-m","btn-fr-m"].forEach(function(id){
+    var b = document.getElementById(id);
+    if (!b) return;
+    var isEn = id.indexOf("en") !== -1;
+    b.classList.toggle("on", (l === "en") === isEn);
+  });
+}
+function setNiche(n){
+  document.querySelectorAll(".niche-btn").forEach(function(b){ b.classList.toggle("on", b.dataset.niche === n); });
+  document.querySelectorAll(".h-panel").forEach(function(p){ p.classList.toggle("active", p.dataset.niche === n); });
+  document.querySelectorAll(".h-shot").forEach(function(im){ im.classList.toggle("active", im.dataset.niche === n); });
+}
+function closeM(){ document.getElementById("m-nav").classList.remove("open"); }
+// header + progress
+window.addEventListener("scroll", function(){
+  var h = document.getElementById("hdr");
+  h.classList.toggle("scrolled", window.scrollY > 40);
+  var max = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById("progress").style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + "%";
+}, {passive:true});
+// reveal
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if (e.isIntersecting){
+      e.target.classList.add("in");
+      e.target.querySelectorAll("[data-count]").forEach(runCount);
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:.12});
+document.querySelectorAll(".rv").forEach(function(el){
+  el.style.transitionDelay = (el.getAttribute("data-d") || 0) + "ms";
+  io.observe(el);
+});
+// counters
+function runCount(el){
+  if (el.dataset.done) return;
+  el.dataset.done = "1";
+  var target = +el.getAttribute("data-count"), t0 = null;
+  function step(t){
+    if (!t0) t0 = t;
+    var k = Math.min((t - t0) / 1300, 1);
+    el.textContent = Math.round(target * (k * k * (3 - 2 * k)));
+    if (k < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+// graceful image fallback — if the host 404s any asset, show a branded panel instead of a broken icon
+var AMK_FB = "data:image/svg+xml," + encodeURIComponent(
+  '<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800"><rect width="1280" height="800" fill="#0F172A"/><circle cx="640" cy="350" r="86" fill="none" stroke="#F59E0B" stroke-width="4"/><path d="M640 268v164M640 350l-66 82M640 350l66 82" stroke="#FCD34D" stroke-width="6" stroke-linecap="round" fill="none"/><text x="640" y="545" text-anchor="middle" fill="#94A3B8" font-family="Arial,sans-serif" font-size="30" font-weight="bold">AMK — concept preview</text></svg>'
+);
+document.querySelectorAll("img").forEach(function(im){
+  if (im.dataset.fbDone) return;
+  im.dataset.fbDone = "1";
+  im.addEventListener("error", function(){ im.src = AMK_FB; });
+});
+// WA form
+function sendAudit(e){
+  e.preventDefault();
+  var school = document.getElementById("f-school").value;
+  var town = document.getElementById("f-town").value;
+  var name = document.getElementById("f-name").value;
+  var phone = document.getElementById("f-phone").value;
+  var site = document.getElementById("f-site").value;
+  var fr = document.documentElement.lang === "fr";
+  var msg = fr
+    ? "Bonjour AMK ! Je souhaite recevoir mon APERÇU GRATUIT de site web (école ou clinique).\n\nÉcole / clinique : " + school + "\nVille : " + town + (name ? "\nNom : " + name : "") + (phone ? "\nWhatsApp : " + phone : "") + (site ? "\nSite actuel : " + site : "") + "\n\nMerci de m'envoyer l'aperçu. Merci !"
+    : "Hello AMK! I would like my FREE website preview (school or clinic).\n\nSchool / clinic: " + school + "\nTown: " + town + (name ? "\nName: " + name : "") + (phone ? "\nWhatsApp: " + phone : "") + (site ? "\nCurrent site: " + site : "") + "\n\nPlease send me the preview. Thank you!";
+  window.open("https://wa.me/" + WA_NUM + "?text=" + encodeURIComponent(msg), "_blank");
+  return false;
+}
+</script>
+</body>
+</html>
