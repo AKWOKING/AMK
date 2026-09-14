@@ -1,5 +1,10 @@
 # Tuesday 15 Sep — Buea Walk-In Batch (10 stops) + digital sends
 
+# ⚠️ SUPERSEDED for sequencing — see [`Invitation-First-Replan-2026-09-15.md`](Invitation-First-Replan-2026-09-15.md)
+King directive 14 Sep night: minimum walk-ins; visits **by invitation** (principals often off campus). Tuesday is now WhatsApp/TikTok/email-first from home; numberless gates get a Wed async sealed-envelope card-drop sweep; sit-down visits happen only when the school books one. Scripts, timing and the §deep-dives below remain valid; use the replan's messages/order.
+
+---
+
 **Full individual intelligence (facts, contacts, attribution, hooks): [`Walk-In-Deep-Dives-2026-09-15.md`](Walk-In-Deep-Dives-2026-09-15.md) — read it tonight, one section per stop.
 
 **Rule for the day:** a walk-in is NOT a sales call. Goal of every stop, in order:

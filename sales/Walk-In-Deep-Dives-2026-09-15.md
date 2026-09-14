@@ -1,6 +1,6 @@
 # Walk-In Batch — Individual Deep Dives (10 schools, Buea, Tue 15 Sep 2026)
 
-Companion to [`Walk-In-Batch-2026-09-15.md`](Walk-In-Batch-2026-09-15.md) (route, scripts, timing). Every fact below is sourced; everything unverified is marked **[VERIFY AT GATE]**. Nothing here may be stated to a school as fact unless it is in the "verified" list.
+Companion to [`Walk-In-Batch-2026-09-15.md`](Walk-In-Batch-2026-09-15.md). **Sequencing is superseded by [`Invitation-First-Replan-2026-09-15.md`](Invitation-First-Replan-2026-09-15.md): Tue = WhatsApp/TikTok/email first; cold gates replaced by a Wed async card-drop sweep; sit-down visits only by invitation.** Intelligence below is unchanged. Every fact below is sourced; everything unverified is marked **[VERIFY AT GATE]**. Nothing here may be stated to a school as fact unless it is in the "verified" list.
 
 **Two research-forced route changes (read first):**
 - **Inter Comprehensive HS is OUT.** It is in a public ownership lawsuit (founder vs late administrator's family — see disqualified note at the end). No single decision-maker; selling into a disputed school is a waste and a risk. Replaced by **Bishop Jules Peters Memorial College, Bokwaongo** (Catholic diocesan, active, no site, on the same uphill loop).
@@ -34,8 +34,9 @@ You confirmed all three are on WhatsApp (14 Sep). None is yet confirmed as the *
 | GCE centre | **11555** — hosted ~128 candidates in 2024 (large private centre) |
 | Fee capacity | **181,088–236,891 FCFA/yr** (inovedu directory) — paying families |
 | Rating | 3.9/5, 35 parent reviews, 265 likes |
-| Online presence | Facebook page (`/p/ST-Theresa-...-100067292716772`) — posted **"Admissions currently ongoing"** (Aug 2024); email **stibccol@yahoo.com**; **no website found** |
-| Decision-maker | **[VERIFY AT GATE]** principal/proprietor (page admin may be a bursar) |
+| Online presence | Facebook page (`/p/ST-Theresa-...-100067292716772`) — posted **"Admissions currently ongoing"** (Aug 2024) and lists **+237 679 15 10 75**; email **stibccol@yahoo.com**; **active TikTok @stibccol** (Bilingualism Day/graduation posts as recently as 14 Sep 2026); secondary number 677 36 19 11 on a 2022 YouTube clip (low confidence — ignore unless first is dead); **no website found** |
+| Tuesday channel | **TikTok DM @stibccol (works regardless) + WhatsApp 679 15 10 75 if King's WA-check confirms** (verify profile tonight); messages in the replan §4 |
+| Decision-maker | **[VERIFY]** principal/proprietor (ask "who should receive it?" in message 1) |
 
 **Verified hooks:**
 - An admissions-active school whose entire digital front is a Facebook page and a Yahoo address — no Google destination for fees, results or enrolment.
@@ -106,7 +107,8 @@ Sources: project-house.net industrial-placement report (full history, location, 
 | Facilities | Modern science lab, **computer laboratory with internet**, modern school band, standby generator, water reservoir |
 | Differentiator | **Evening school from 3:30pm** — shared practicals, revision and exams with day students ("a privilege not found anywhere in the region" — their words) |
 | Decision-maker | **Principal Mr. Yerima Samson Tata** — named and quoted in Cameroon Tribune three times in June 2026 |
-| Contacts | smbicol@yahoo.com; no phone published; **no website found** |
+| Contacts | smbicol@yahoo.com only; **no phone published anywhere; Facebook page "Summerset Bilingual College (SUBICOL)" inactive since Dec 2015** (carries an unrelated Yahoo address — do not use); **no website found** |
+| Tuesday channel | Parallel email (replan §4, weak leg) + **Wed async card-drop addressed to Principal Tata** (the effective first touch; he has no digital inbox he is known to read) |
 
 **Verified hooks (strongest on the route):**
 1. **Live pain, from the principal's own mouth to the press (Sep 2026):** enrollment is **slower this resumption** — many parents are pushing student arrival to October 2026; he is spending on repainting, benches and cleanliness to compete. Visibility is the missing half of that fight.
@@ -152,7 +154,7 @@ Sources: concourscameroon.com 2020 GCE results · camgceb.org/cameroongcerevisio
 | Type | Private **boarding, "inclusive" high school** |
 | Location | Behind the public tap, Bonduma; P.O. Box 403 Buea |
 | GCE centre | **11489** (small: 20–40 candidates) |
-| Published contacts | **677 87 53 95 · 677 78 04 05 · 99 83 74 79** · bairdmemorial@yahoo.com |
+| Published contacts | **677 87 53 95 · 677 78 04 05 · 99 83 74 79** (visitor-submitted directory entry paired with P.O. Box 403 — plausible admin lines; King to WA-check profile attribution tonight) · bairdmemorial@yahoo.com |
 | Web presence | ⚠️ **A self-built website exists: bairdmemorial.com** — copy on it reads "bording", "Accademic services"; **it could not be opened from outside tonight** (down or blocking) |
 | Visibility | Active in inter-school events (CSDC Buea 2025 report) |
 

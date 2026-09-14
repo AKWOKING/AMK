@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- SEO META BLUEPRINT (production: split to /en and /fr URLs, or ?lang= as here) -->
+<!-- Local keywords targeted: "best bilingual school near me" · "dual language private academy Limbe" · "K-12 accredited international school" -->
+<title>K-12 Bilingual School Website Concept — Nova (Template) | AMK Cameroon</title>
+<meta name="description" content="A complete dual-language K-12 academy homepage concept by AMK — open-house funnel, parent quick-hub, admissions steps, SEO-ready. Template for any school in Cameroon. Free 24h preview.">
+<link rel="canonical" href="https://amk-cm.vercel.app/sample-school.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2l12 5v9c0 8-5 13.5-12 16C9 29.5 4 24 4 16V7l12-5z' fill='%230F172A' stroke='%2310B981' stroke-width='2'/%3E%3Cpath d='M16 10l1.5 3 3.3.5-2.4 2.3.6 3.3-3-1.6-3 1.6.6-3.3-2.4-2.3 3.3-.5z' fill='%2310B981'/%3E%3C/svg%3E">
+<!-- JSON-LD: EducationalOrganization (demo values — replace with the real school) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "EducationalOrganization",
+      "name": "Nova Bilingual Academy",
+      "url": "https://www.your-school.cm",
+      "logo": "https://www.your-school.cm/favicon.svg",
+      "description": "Dual-language K-12 academy in Limbe, Cameroon: 50/50 English–French immersion, STEM labs, arts and athletics, strong college acceptance.",
+      "foundingDate": "1998",
+      "telephone": "+237 677 789 631",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Buea–Limbe Road",
+        "addressLocality": "Limbe",
+        "addressRegion": "South West",
+        "addressCountry": "CM"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": "4.1557", "longitude": "9.1720" },
+      "sameAs": ["https://www.facebook.com/your-school"],
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "87" }
+    },
+    {
+      "@type": "Event",
+      "name": "Open House — Nova Bilingual Academy",
+      "startDate": "2026-10-18T09:00:00+01:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": { "@type": "Place", "name": "Nova Bilingual Academy", "address": { "@type": "PostalAddress", "addressLocality": "Limbe", "addressCountry": "CM" } },
+      "description": "Free open house: sit in a class, tour the STEM labs, meet the teachers, register on the day.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "XAF" }
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --navy:#0F172A; --navy2:#1E293B; --navy3:#334155;
+  --em:#10B981; --em-d:#059669; --em-t:#ECFDF5;
+  --bg:#F8FAFC; --white:#FFFFFF; --border:#E2E8F0;
+  --ink:#0F172A; --slate:#64748B; --slate-l:#94A3B8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+section{padding:72px 0}
+.kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--em-d);background:var(--em-t);border:1px solid #A7F3D0;padding:6px 14px;border-radius:99px;margin-bottom:16px}
+h2{font-size:clamp(28px,4vw,38px);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-bottom:14px}
+.sub{font-size:17px;color:var(--slate);max-width:640px}
+.center{text-align:center}.center .sub{margin:0 auto}
+.btn{display:inline-block;padding:15px 28px;border-radius:12px;font-size:16px;font-weight:700;text-decoration:none;transition:.18s;cursor:pointer;border:none;text-align:center}
+.btn-em{background:var(--em);color:var(--navy)}
+.btn-em:hover{background:#34D399;transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid var(--navy3)}
+.btn-ghost:hover{border-color:var(--em);color:#6EE7B7}
+/* TW: topbar → bg-slate-900 text-slate-200 text-[13px] sticky top-0 z-50 */
+.topbar{background:var(--navy);color:#CBD5E1;font-size:13px;padding:8px 0;position:sticky;top:0;z-index:60}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.topbar a{text-decoration:none;font-weight:600;color:var(--em)}
+.concept-chip{font-size:11.5px;font-weight:700;color:#94A3B8;border:1px solid var(--navy3);border-radius:99px;padding:3px 10px;text-decoration:none}
+.concept-chip b{color:var(--em)}
+/* TW: nav → max-w-7xl mx-auto flex items-center justify-between h-20 px-6 */
+header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:41px;z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px;gap:14px}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+.logo svg{width:42px;height:42px}
+.logo .t{font-weight:800;font-size:17px;line-height:1.15;color:var(--navy)}
+.logo .t small{display:block;font-size:10px;font-weight:600;letter-spacing:.12em;color:var(--slate);text-transform:uppercase}
+.nav-links{display:flex;gap:24px}
+.nav-links a{text-decoration:none;font-size:15px;font-weight:600;color:var(--navy2)}
+.nav-links a:hover{color:var(--em-d)}
+.nav .btn{padding:11px 20px;font-size:14.5px}
+/* TW: hero → bg-slate-900 text-white py-24 grid lg:grid-cols-2 gap-16 items-center */
+.hero{background:var(--navy);color:#fff;padding:76px 0 84px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;left:-160px;bottom:-220px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.16),transparent 65%)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;position:relative}
+.hero .kicker{color:#6EE7B7;background:rgba(16,185,129,.12);border-color:rgba(16,185,129,.4)}
+.hero h1{font-size:clamp(32px,4.4vw,50px);font-weight:800;letter-spacing:-.025em;line-height:1.09;margin-bottom:18px}
+.hero h1 em{font-style:normal;color:#6EE7B7}
+.hero .sub{color:#CBD5E1;font-size:17.5px;margin-bottom:28px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+/* TW: video frame → rounded-3xl overflow-hidden shadow-2xl aspect-video */
+.video-frame{background:var(--navy2);border:1px solid var(--navy3);border-radius:20px;padding:18px;box-shadow:0 30px 70px rgba(0,0,0,.45)}
+.video-inner{background:linear-gradient(135deg,#1E293B,#0F172A);border-radius:14px;height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;position:relative;overflow:hidden}
+.video-inner::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(16,185,129,.18),transparent 55%)}
+.play{width:64px;height:64px;border-radius:50%;background:var(--em);display:flex;align-items:center;justify-content:center;position:relative}
+.play::after{content:"";border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent var(--navy);margin-left:4px}
+.video-cap{font-size:12.5px;color:#94A3B8;position:relative}
+.trust-row{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:13.5px;color:#CBD5E1;border-top:1px solid var(--navy3);padding-top:20px}
+.trust-row b{color:#6EE7B7;font-weight:800}
+/* TW: hub → grid md:grid-cols-2 gap-8 */
+.hub{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:44px}
+.hub-card{border-radius:22px;padding:32px;box-shadow:0 14px 40px rgba(15,23,42,.07)}
+.hub-card.h1c{background:var(--navy);color:#fff}
+.hub-card.h2c{background:#fff;border:1px solid var(--border)}
+.hub-card h3{font-size:19px;font-weight:800;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.hub-card .hi{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex:none}
+.h1c .hi{background:rgba(16,185,129,.18)}
+.h2c .hi{background:var(--em-t)}
+.hub-card ul{list-style:none}
+.hub-card li a{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 4px;font-size:15px;font-weight:600;text-decoration:none;border-top:1px solid rgba(148,163,184,.18)}
+.h2c .hub-card li a{border-top-color:var(--border)}
+.hub-card li a:hover span{color:var(--em)}
+.h1c li a:hover span{color:#6EE7B7}
+.hub-card .util{font-size:12.5px;margin-top:14px;opacity:.75}
+/* TW: pillars → grid md:grid-cols-2 lg:grid-cols-4 gap-6 */
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+.pil{background:#fff;border:1px solid var(--border);border-radius:18px;padding:26px;transition:.18s}
+.pil:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(15,23,42,.09);border-color:#A7F3D0}
+.pil .ico{width:46px;height:46px;border-radius:13px;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.pil h3{font-size:16.5px;font-weight:800;margin-bottom:8px}
+.pil p{font-size:14px;color:var(--slate)}
+/* tabs */
+.tabs{margin-top:44px;background:#fff;border:1px solid var(--border);border-radius:20px;overflow:hidden}
+.tab-bar{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--border);background:var(--bg)}
+.tab-btn{background:none;border:none;padding:16px 22px;font-size:15px;font-weight:700;color:var(--slate);cursor:pointer;border-bottom:3px solid transparent}
+.tab-btn.on{color:var(--navy);border-bottom-color:var(--em)}
+.tab-pane{display:none;padding:34px}
+.tab-pane.on{display:grid;grid-template-columns:1.2fr 1fr;gap:34px;align-items:start}
+.tab-pane ul{list-style:none}
+.tab-pane li{padding:9px 0 9px 28px;position:relative;font-size:15px;color:var(--navy2);border-bottom:1px dashed var(--border)}
+.tab-pane li::before{content:"✓";position:absolute;left:0;color:var(--em-d);font-weight:800}
+.meta-chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.mchip{background:var(--em-t);border:1px solid #A7F3D0;border-radius:99px;padding:8px 16px;font-size:13px;font-weight:700;color:#065F46}
+.quote{background:var(--navy);border-radius:16px;padding:26px;color:#E2E8F0;font-size:15px;font-style:italic}
+.quote b{display:block;margin-top:14px;font-style:normal;font-size:13px;color:#6EE7B7}
+/* TW: steps → grid md:grid-cols-3 gap-8 */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.step{background:#fff;border:1px solid var(--border);border-radius:18px;padding:30px;position:relative}
+.step .n{width:42px;height:42px;border-radius:50%;background:var(--em);color:var(--navy);font-weight:800;font-size:17px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.step h3{font-size:17px;font-weight:800;margin-bottom:8px}
+.step p{font-size:14.5px;color:var(--slate)}
+.steps-cta{margin-top:30px;text-align:center}
+/* testimonials */
+.tst{background:var(--bg)}
+.tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.tcard{background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:16px}
+.tcard .stars{color:var(--em-d);font-size:14px;letter-spacing:2px}
+.tcard p{font-size:14.5px;color:var(--navy2);flex:1}
+.tcard .who{display:flex;align-items:center;gap:12px}
+.avatar{width:44px;height:44px;border-radius:50%;background:var(--navy);color:#6EE7B7;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;flex:none}
+.who b{display:block;font-size:14px}
+.who span{font-size:12.5px;color:var(--slate)}
+.tst-note{margin-top:20px;font-size:12.5px;color:var(--slate-l);text-align:center}
+/* FAQ */
+.faq{max-width:780px;margin:44px auto 0}
+.faq details{background:#fff;border:1px solid var(--border);border-radius:14px;margin-bottom:12px;overflow:hidden}
+.faq summary{cursor:pointer;padding:20px 24px;font-weight:700;font-size:16px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:24px;color:var(--em-d);transition:.2s;flex:none}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .ans{padding:0 24px 22px;font-size:15px;color:var(--slate)}
+/* final CTA */
+.final{background:var(--navy);color:#fff}
+.final .kicker{color:#6EE7B7;background:rgba(16,185,129,.12);border-color:rgba(16,185,129,.4)}
+.final .sub{color:#CBD5E1}
+.final-grid{display:grid;grid-template-columns:1fr 420px;gap:52px;margin-top:40px;align-items:start}
+.pts{display:flex;flex-direction:column;gap:18px}
+.pt{display:flex;gap:14px}
+.pt .b{width:22px;height:22px;border-radius:50%;background:rgba(16,185,129,.18);color:#6EE7B7;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none;margin-top:2px}
+.pt p{color:#CBD5E1;font-size:15px}
+.pt b{color:#fff}
+.form-card{background:#fff;border-radius:20px;padding:30px;color:var(--ink);box-shadow:0 30px 70px rgba(0,0,0,.4)}
+.form-card h3{font-size:19px;font-weight:800;margin-bottom:4px}
+.form-card .fc-sub{font-size:13.5px;color:var(--slate);margin-bottom:20px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fld{margin-bottom:12px}
+.fld.full{grid-column:1/-1}
+.fld label{display:block;font-size:12.5px;font-weight:700;color:var(--navy2);margin-bottom:5px}
+.fld input,.fld select{width:100%;padding:12px 13px;border:1.5px solid var(--border);border-radius:10px;font-size:14.5px;font-family:inherit;background:#fff}
+.fld input:focus,.fld select:focus{outline:none;border-color:var(--em)}
+.form-card .btn{width:100%;margin-top:8px}
+.form-small{margin-top:12px;font-size:12px;color:var(--slate-l);text-align:center}
+/* footer */
+footer{background:#0B1120;color:#94A3B8;padding:52px 0 26px;font-size:14px}
+.f-grid{display:grid;grid-template-columns:1.3fr 1fr 1.2fr;gap:36px;margin-bottom:34px}
+.f-grid h5{color:#fff;font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+.f-grid a{display:block;text-decoration:none;padding:4px 0}
+.f-grid a:hover{color:#6EE7B7}
+.map-ph{background:var(--navy2);border:1px dashed var(--navy3);border-radius:14px;padding:26px;text-align:center;font-size:13px;margin-top:12px}
+.amk-bar{background:var(--navy2);border:1px solid var(--navy3);border-radius:16px;padding:22px 26px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:28px}
+.amk-bar .t{font-size:14.5px;color:#CBD5E1}
+.amk-bar .t b{color:#fff}
+.amk-bar .t small{display:block;font-size:12.5px;color:#64748B;margin-top:3px}
+.f-bottom{border-top:1px solid #1E293B;padding-top:22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12.5px}
+/* responsive */
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:44px}
+  .pillars{grid-template-columns:1fr 1fr}
+  .steps,.tst-grid{grid-template-columns:1fr 1fr}
+  .final-grid{grid-template-columns:1fr}
+  .tab-pane.on{grid-template-columns:1fr}
+  .f-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  section{padding:54px 0}
+  .nav-links{display:none}
+  .hub,.pillars,.steps,.tst-grid{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:1fr}
+  .topbar .tb-portal{display:none}
+  header{top:0;position:relative}
+}
+</style>
+</head>
+<body>
+
+<!-- A. TOP ANNOUNCEMENT BAR -->
+<!-- TW: bg-slate-900 text-slate-200 text-[13px] sticky top-0 z-50 -->
+<div class="topbar">
+  <div class="wrap">
+    <span data-en="🎓 Open House — Saturday 18 October 2026, 9:00 AM · Limited seats" data-fr="🎓 Portes ouvertes — samedi 18 octobre 2026, 9h00 · Places limitées">🎓 Open House — Saturday 18 October 2026, 9:00 AM · Limited seats</span>
+    <span style="display:flex;align-items:center;gap:10px">
+      <a class="tb-portal" href="#" data-en="Parent Portal →" data-fr="Portail Parents →">Parent Portal →</a>
+      <span class="lang-sw" style="display:flex;border:1px solid var(--navy3);border-radius:99px;overflow:hidden">
+        <button id="btn-en" class="on" onclick="setLang('en')" style="background:var(--em);color:var(--navy);border:none;font-size:12px;font-weight:800;padding:4px 12px;cursor:pointer">EN</button>
+        <button id="btn-fr" onclick="setLang('fr')" style="background:transparent;color:#CBD5E1;border:none;font-size:12px;font-weight:800;padding:4px 12px;cursor:pointer">FR</button>
+      </span>
+      <a class="concept-chip" href="index.html">Website concept by <b>AMK</b></a>
+    </span>
+  </div>
+</div>
+
+<!-- NAV -->
+<!-- TW: max-w-7xl mx-auto flex items-center justify-between h-20 px-6 -->
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top">
+      <svg viewBox="0 0 48 48"><path d="M24 4l16 6v12c0 10-6.8 17.5-16 22C14.8 39.5 8 32 8 22V10l16-6z" fill="#0F172A" stroke="#10B981" stroke-width="2"/><path d="M15 26c4-2.5 7-2.5 9 0 2-2.5 5-2.5 9 0v9c-4-2.5-7-2.5-9 0-2-2.5-5-2.5-9 0v-9z" fill="#F8FAFC"/><path d="M24 26v9" stroke="#0F172A" stroke-width="1.4"/><path d="M24 12l1.7 3.4 3.8.6-2.7 2.7.6 3.8-3.4-1.8-3.4 1.8.6-3.8-2.7-2.7 3.8-.6z" fill="#10B981"/></svg>
+      <span class="t">Nova Bilingual Academy<small data-en="Fluency · Character · Excellence" data-fr="Fluidité · Caractère · Excellence">Fluency · Character · Excellence</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#about" data-en="About Us" data-fr="À Propos">About Us</a>
+      <a href="#academics" data-en="Academics" data-fr="Académique">Academics</a>
+      <a href="#admissions" data-en="Admissions" data-fr="Admissions">Admissions</a>
+      <a href="#campus" data-en="Campus Life" data-fr="Vie du Campus">Campus Life</a>
+      <a href="#news" data-en="News & Events" data-fr="Actualités">News & Events</a>
+    </nav>
+    <a href="#visit" class="btn btn-em" data-en="Schedule a Tour" data-fr="Planifier une visite">Schedule a Tour</a>
+  </div>
+</header>
+
+<!-- B. HERO -->
+<!-- TW: bg-slate-900 text-white py-24 grid lg:grid-cols-2 gap-16 items-center -->
+<div class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker" data-en="K-12 · Dual Language · Limbe, Cameroon" data-fr="Maternelle → Secondaire · Bilingue · Limbe, Cameroun">K-12 · Dual Language · Limbe, Cameroon</span>
+      <h1><span data-en="Empowering" data-fr="Former les">Empowering</span> <em data-en="Global Leaders" data-fr="leaders de demain">Global Leaders</em><span data-en=" through world-class dual-language education." data-fr=" grâce à une éducation bilingue d'excellence."> through world-class dual-language education.</span></h1>
+      <p class="sub" data-en="Discover a nurture-first K-12 academy in Limbe combining 50/50 English–French immersion, STEM labs, arts and athletics — and a track record that gets students into the world's best universities." data-fr="Découvrez une académie K-12 à Limbe, centrée sur l'enfant, qui combine immersion 50/50 anglais–français, laboratoires STEM, arts et athlétisme — et un bilan qui envoie les élèves dans les meilleures universités du monde.">Discover a nurture-first K-12 academy in Limbe combining 50/50 English–French immersion, STEM labs, arts and athletics — and a track record that gets students into the world's best universities.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-em wa" href="#" data-wa data-en="Book a Campus Visit" data-fr="Réserver une visite du campus">Book a Campus Visit</a>
+        <a class="btn btn-ghost" href="#academics" data-en="Explore Curriculum & Virtual Tour" data-fr="Découvrir le programme & la visite virtuelle">Explore Curriculum & Virtual Tour</a>
+      </div>
+      <div class="trust-row">
+        <span><b>100%</b> <span data-en="bilingual program" data-fr="de programme bilingue">bilingual program</span></span>
+        <span><b>98%</b> <span data-en="college acceptance" data-fr="d'admissions universitaires">college acceptance</span></span>
+        <span data-en="Accredited · CSEC & A-Level centres" data-fr="Accréditée · centres CSEC & A-Level">Accredited · CSEC & A-Level centres</span>
+      </div>
+    </div>
+    <div>
+      <!-- TW: video loop → rounded-3xl overflow-hidden aspect-video shadow-2xl -->
+      <div class="video-frame">
+        <div class="video-inner">
+          <div class="play"></div>
+          <span class="video-cap" data-en="Full-width video loop — students in science labs, sports, and immersion classes" data-fr="Boucle vidéo pleine largeur — élèves en laboratoires, sports et classes d'immersion">Full-width video loop — students in science labs, sports, and immersion classes</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- C. DUAL-PATHWAY QUICK HUB -->
+<!-- TW: grid md:grid-cols-2 gap-8 · card → bg-white rounded-3xl shadow-lg p-8 -->
+<section id="hub" style="padding-top:64px">
+  <div class="wrap">
+    <div class="center">
+      <span class="kicker" data-en="Quick access" data-fr="Accès rapide">Quick access</span>
+      <h2 data-en="What do you need today?" data-fr="De quoi avez-vous besoin aujourd'hui ?">What do you need today?</h2>
+    </div>
+    <div class="hub">
+      <div class="hub-card h1c">
+        <h3><span class="hi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6EE7B7" stroke-width="2"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3zM12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></span><span data-en="Prospective Families" data-fr="Familles candidates">Prospective Families</span></h3>
+        <ul>
+          <li><a href="#admissions"><span data-en="Admissions steps & deadlines" data-fr="Étapes et dates d'admission">Admissions steps & deadlines</span><span>→</span></a></li>
+          <li><a href="#"><span data-en="Tuition & financial aid" data-fr="Frais de scolarité & aide financière">Tuition & financial aid</span><span>→</span></a></li>
+          <li><a href="#"><span data-en="Download the prospectus" data-fr="Télécharger le prospectus">Download the prospectus</span><span>↓</span></a></li>
+        </ul>
+      </div>
+      <div class="hub-card h2c">
+        <h3><span class="hi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span><span data-en="Current Families" data-fr="Familles inscrites">Current Families</span></h3>
+        <ul>
+          <li><a href="#"><span data-en="Daily school calendar" data-fr="Calendrier quotidien">Daily school calendar</span><span>→</span></a></li>
+          <li><a href="#"><span data-en="Lunch menu this week" data-fr="Menu de la cantine">Lunch menu this week</span><span>→</span></a></li>
+          <li><a href="#"><span data-en="Bus routes & schedules" data-fr="Trajets et horaires des bus">Bus routes & schedules</span><span>→</span></a></li>
+          <li><a href="#"><span data-en="Homework & portal login" data-fr="Devoirs & connexion au portail">Homework & portal login</span><span>→</span></a></li>
+        </ul>
+        <p class="util" data-en="Utility pages go live with your site — updated by your admin in minutes, not weeks." data-fr="Les pages pratiques sont en ligne avec votre site — mises à jour par votre administrateur en minutes, pas en semaines.">Utility pages go live with your site — updated by your admin in minutes, not weeks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- D. THE BILINGUAL ADVANTAGE -->
+<!-- TW: grid md:grid-cols-2 lg:grid-cols-4 gap-6 · card → bg-white rounded-2xl p-6 shadow-sm -->
+<section id="about" style="background:var(--bg)">
+  <div class="wrap">
+    <div class="center">
+      <span class="kicker" data-en="Why dual-language" data-fr="Pourquoi le bilinguisme">Why dual-language</span>
+      <h2 data-en="The Bilingual Advantage" data-fr="L'avantage bilingue">The Bilingual Advantage</h2>
+      <p class="sub" data-en="Fluency in two languages is the strongest career asset your child can build before 18. Here is how we build it." data-fr="La fluidité dans deux langues est le plus fort atout professionnel que votre enfant puisse construire avant 18 ans. Voici comment nous la construisons.">Fluency in two languages is the strongest career asset your child can build before 18. Here is how we build it.</p>
+    </div>
+    <div class="pillars">
+      <div class="pil"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6EE7B7" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.9 5.7 3.9 9S14.5 18.4 12 21c-2.5-2.6-3.9-5.7-3.9-9S9.5 5.6 12 3z"/></svg></div><h3 data-en="Dual-Immersion Mastery" data-fr="Maîtrise de l'immersion double">Dual-Immersion Mastery</h3><p data-en="50/50 instruction with native-level teachers in both languages. Children don't translate — they think in two." data-fr="Un enseignement 50/50 par des enseignants de niveau maternel dans les deux langues. Les enfants ne traduisent pas — ils pensent en deux.">50/50 instruction with native-level teachers in both languages. Children don't translate — they think in two.</p></div>
+      <div class="pil"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6EE7B7" stroke-width="2"><rect x="4" y="4" width="16" height="12" rx="2"/><path d="M12 16v4M8 20h8M9 10l2 2 4-4"/></svg></div><h3 data-en="STEM & Future-Ready Labs" data-fr="STEM & laboratoires d'avenir">STEM & Future-Ready Labs</h3><p data-en="Robotics, coding and science labs from Primary 4 — assessed through CSEC & A-Level science." data-fr="Robotique, code et laboratoires de sciences dès la primaire — évalués au CSEC & A-Level en sciences.">Robotics, coding and science labs from Primary 4 — assessed through CSEC & A-Level science.</p></div>
+      <div class="pil"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6EE7B7" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div><h3 data-en="Arts, Athletics & Character" data-fr="Arts, athlétisme & caractère">Arts, Athletics & Character</h3><p data-en="Music, drama and sport with one clear purpose: discipline, confidence and service to others." data-fr="Musique, théâtre et sport, avec un seul objectif : discipline, confiance et service aux autres.">Music, drama and sport with one clear purpose: discipline, confidence and service to others.</p></div>
+      <div class="pil"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6EE7B7" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.6 3 14.4 0 18M12 3c-3 3.6-3 14.4 0 18"/></svg></div><h3 data-en="Global Citizenship" data-fr="Citoyenneté mondiale">Global Citizenship</h3><p data-en="Exchange days, debate clubs and community projects that build kids comfortable in any country." data-fr="Journées d'échange, clubs de débat et projets communautaires qui forment des enfants à l'aise dans n'importe quel pays.">Exchange days, debate clubs and community projects that build kids comfortable in any country.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- E. ACADEMICS BY AGE GROUP -->
+<!-- TW: tabs → flex gap-2 border-b · active: border-emerald-500 text-slate-900 -->
+<section id="academics">
+  <div class="wrap">
+    <div class="center">
+      <span class="kicker" data-en="Curriculum" data-fr="Programme">Curriculum</span>
+      <h2 data-en="Academic Excellence by Age" data-fr="L'excellence académique par âge">Academic Excellence by Age</h2>
+    </div>
+    <div class="tabs">
+      <div class="tab-bar">
+        <button class="tab-btn on" data-tab="t1" data-en="Early Years (3–6)" data-fr="Petite enfance (3–6)">Early Years (3–6)</button>
+        <button class="tab-btn" data-tab="t2" data-en="Elementary (7–12)" data-fr="Primaire (7–12)">Elementary (7–12)</button>
+        <button class="tab-btn" data-tab="t3" data-en="Middle School (13–15)" data-fr="Collège (13–15)">Middle School (13–15)</button>
+        <button class="tab-btn" data-tab="t4" data-en="High School (16–18)" data-fr="Lycée (16–18)">High School (16–18)</button>
+      </div>
+      <div class="tab-pane on" id="t1">
+        <div>
+          <div class="meta-chips"><span class="mchip" data-en="Language ratio: 80% EN · 20% FR" data-fr="Ratio des langues : 80 % AN · 20 % FR">Language ratio: 80% EN · 20% FR</span><span class="mchip" data-en="Class size: 12:1" data-fr="Taille des classes : 12:1">Class size: 12:1</span></div>
+          <ul>
+            <li data-en="Phonics and storytelling in both languages" data-fr="Phonétique et contes dans les deux langues">Phonics and storytelling in both languages</li>
+            <li data-en="Numeracy and science through play" data-fr="Numération et sciences à travers le jeu">Numeracy and science through play</li>
+            <li data-en="Confidence, routine and fine-motor skills" data-fr="Confiance, routine et motricité fine">Confidence, routine and fine-motor skills</li>
+          </ul>
+        </div>
+        <div class="quote" data-en="“By the end of Year 2, my daughter was singing her multiplication tables in both languages.”" data-fr="« À la fin de la 2e année, ma fille chantait sa table de multiplication dans les deux langues. »">“By the end of Year 2, my daughter was singing her multiplication tables in both languages.”<b data-en="Mrs. A. — Year 2 parent" data-fr="Mme A. — parent de la 2e année">Mrs. A. — Year 2 parent</b></div>
+      </div>
+      <div class="tab-pane" id="t2">
+        <div>
+          <div class="meta-chips"><span class="mchip" data-en="Language ratio: 50% EN · 50% FR" data-fr="Ratio des langues : 50 % AN · 50 % FR">Language ratio: 50% EN · 50% FR</span><span class="mchip" data-en="Class size: 15:1" data-fr="Taille des classes : 15:1">Class size: 15:1</span></div>
+          <ul>
+            <li data-en="Bilingual literacy: reading & writing in EN + FR" data-fr="Littératie bilingue : lecture & écriture en AN + FR">Bilingual literacy: reading & writing in EN + FR</li>
+            <li data-en="STEM fundamentals with weekly lab sessions" data-fr="Fondamentaux STEM avec séances de laboratoire hebdomadaires">STEM fundamentals with weekly lab sessions</li>
+            <li data-en="French oral fluency and first debate games" data-fr="Fluidité orale en français et premiers jeux de débat">French oral fluency and first debate games</li>
+          </ul>
+        </div>
+        <div class="quote" data-en="“The 50/50 split is why she never struggled when we relocated — she simply switched languages.”" data-fr="« Le partage 50/50 explique pourquoi elle n'a jamais eu de difficulté lors de notre déménagement — elle a simplement changé de langue. »">“The 50/50 split is why she never struggled when we relocated — she simply switched languages.”<b data-en="Mr. K. — expat parent, Year 5" data-fr="M. K. — parent expat, 5e année">Mr. K. — expat parent, Year 5</b></div>
+      </div>
+      <div class="tab-pane" id="t3">
+        <div>
+          <div class="meta-chips"><span class="mchip" data-en="Language ratio: 50/50 by subject" data-fr="Ratio des langues : 50/50 par matière">Language ratio: 50/50 by subject</span><span class="mchip" data-en="Class size: 18:1" data-fr="Taille des classes : 18:1">Class size: 18:1</span></div>
+          <ul>
+            <li data-en="CSEC preparation with past-paper labs" data-fr="Préparation au CSEC avec ateliers de sujets précédents">CSEC preparation with past-paper labs</li>
+            <li data-en="Certified science practicals in both languages" data-fr="Travaux pratiques de sciences certifiés dans les deux langues">Certified science practicals in both languages</li>
+            <li data-en="Leadership: debate club, house system, prefectship" data-fr="Leadership : club de débat, système de maisons, fonctions de préfet">Leadership: debate club, house system, prefectship</li>
+          </ul>
+        </div>
+        <div class="quote" data-en="“She sat her science practicals in English and her history in French — the school made both feel normal.”" data-fr="« Elle a passé ses travaux pratiques de sciences en anglais et son histoire en français — l'école a rendu les deux choses normales. »">“She sat her science practicals in English and her history in French — the school made both feel normal.”<b data-en="Parent — Form 3" data-fr="Parent — 3e année du secondaire">Parent — Form 3</b></div>
+      </div>
+      <div class="tab-pane" id="t4">
+        <div>
+          <div class="meta-chips"><span class="mchip" data-en="Language ratio: 50/50 + EN applications" data-fr="Ratio des langues : 50/50 + dossiers en AN">Language ratio: 50/50 + EN applications</span><span class="mchip" data-en="Class size: 20:1" data-fr="Taille des classes : 20:1">Class size: 20:1</span></div>
+          <ul>
+            <li data-en="A-Level excellence with subject specialists" data-fr="Excellence A-Level avec des spécialistes par matière">A-Level excellence with subject specialists</li>
+            <li data-en="University counselling & applications from Form 5" data-fr="Conseil universitaire et dossiers dès la 5e année">University counselling & applications from Form 5</li>
+            <li data-en="Character portfolio: service hours, awards, leadership" data-fr="Dossier de caractère : heures de service, distinctions, leadership">Character portfolio: service hours, awards, leadership</li>
+          </ul>
+        </div>
+        <div class="quote" data-en="“Two first-choice university offers before results day. We knew we had chosen well.”" data-fr="« Deux offres d'universités de premier choix avant le jour des résultats. Nous savions que nous avions bien choisi. »">“Two first-choice university offers before results day. We knew we had chosen well.”<b data-en="Parent — Form 6" data-fr="Parent — 6e année du secondaire">Parent — Form 6</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- F. ADMISSIONS FUNNEL -->
+<!-- TW: grid md:grid-cols-3 gap-8 -->
+<section id="admissions" style="background:var(--bg)">
+  <div class="wrap">
+    <div class="center">
+      <span class="kicker" data-en="Admissions" data-fr="Admissions">Admissions</span>
+      <h2 data-en="Three Steps to Join Us" data-fr="Trois étapes pour nous rejoindre">Three Steps to Join Us</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3 data-en="Send an inquiry" data-fr="Envoyez une demande">Send an inquiry</h3><p data-en="One form or one WhatsApp message. We reply the same day with next steps, dates and answers." data-fr="Un formulaire ou un message WhatsApp. Nous répondons le jour même avec les étapes, les dates et les réponses.">One form or one WhatsApp message. We reply the same day with next steps, dates and answers.</p></div>
+      <div class="step"><div class="n">2</div><h3 data-en="Visit the campus" data-fr="Visitez le campus">Visit the campus</h3><p data-en="Join the open house or book a private tour. Sit in a class, meet the teachers, eat lunch in the hall." data-fr="Rejoignez les portes ouvertes ou réservez une visite privée. Assistez à un cours, rencontrez les enseignants, déjeunez dans la salle.">Join the open house or book a private tour. Sit in a class, meet the teachers, eat lunch in the hall.</p></div>
+      <div class="step"><div class="n">3</div><h3 data-en="Apply & assess" data-fr="Candidature & évaluation">Apply & assess</h3><p data-en="Complete the application; a light, friendly placement assessment finds the perfect class for your child." data-fr="Complétez la candidature ; une évaluation d'orientation légère et bienveillante trouve la classe idéale pour votre enfant.">Complete the application; a light, friendly placement assessment finds the perfect class for your child.</p></div>
+    </div>
+    <div class="steps-cta"><a href="#visit" class="btn btn-em" data-en="Start step one →" data-fr="Commencer l'étape 1 →">Start step one →</a></div>
+  </div>
+</section>
+
+<!-- G. TESTIMONIALS -->
+<!-- TW: grid md:grid-cols-3 gap-6 · card → bg-white rounded-3xl p-7 shadow-sm -->
+<section class="tst" id="campus">
+  <div class="wrap">
+    <div class="center">
+      <span class="kicker" data-en="Social proof" data-fr="Preuve sociale">Social proof</span>
+      <h2 data-en="Why Families Choose Nova" data-fr="Pourquoi les familles choisissent Nova">Why Families Choose Nova</h2>
+    </div>
+    <div class="tst-grid">
+      <div class="tcard"><span class="stars">★★★★★</span><p data-en="“We compared four schools in Limbe. The only one where my son's teachers worked with him in both languages — and checked his homework questions in French — was Nova.”" data-fr="« Nous avons comparé quatre écoles à Limbe. La seule où les enseignants de mon fils travaillaient avec lui dans les deux langues — et vérifiaient ses questions de devoirs en français — c'était Nova. »">“We compared four schools in Limbe. The only one where my son's teachers worked with him in both languages — and checked his homework questions in French — was Nova.”</p><div class="who"><span class="avatar">E</span><span><b data-en="Mrs. E." data-fr="Mme E.">Mrs. E.</b><span data-en="Parent · Grade 4" data-fr="Parent · 4e année">Parent · Grade 4</span></span></div></div>
+      <div class="tcard"><span class="stars">★★★★★</span><p data-en="“As expats, we wanted a school our kids would keep in their adult lives. Two years in, they host visitors in English and debate in French.”" data-fr="« En tant qu'expatriés, nous voulions une école que nos enfants garderaient dans leur vie adulte. Deux ans après, ils reçoivent les visiteurs en anglais et débattent en français. »">“As expats, we wanted a school our kids would keep in their adult lives. Two years in, they host visitors in English and debate in French.”</p><div class="who"><span class="avatar">D</span><span><b data-en="Mr. & Mrs. D." data-fr="M. & Mme D.">Mr. & Mrs. D.</b><span data-en="Parents · Grade 6 & Year 2" data-fr="Parents · 6e année & 2e année">Parents · Grade 6 & Year 2</span></span></div></div>
+      <div class="tcard"><span class="stars">★★★★★</span><p data-en="“My daughter went from hiding in the back row to leading the science fair. The class sizes make that possible.”" data-fr="« Ma fille est passée de la dernière rangée, cachée, à la présidence du salon des sciences. La taille des classes rend cela possible. »">“My daughter went from hiding in the back row to leading the science fair. The class sizes make that possible.”</p><div class="who"><span class="avatar">T</span><span><b data-en="Mr. T." data-fr="M. T.">Mr. T.</b><span data-en="Parent · Form 3" data-fr="Parent · 3e année du secondaire">Parent · Form 3</span></span></div></div>
+    </div>
+    <p class="tst-note" data-en="Demo voices — your school's real parent quotes and photos go here at launch." data-fr="Voix de démonstration — les témoignages et photos réels de vos parents prennent place ici au lancement.">Demo voices — your school's real parent quotes and photos go here at launch.</p>
+  </div>
+</section>
+
+<!-- H. FAQ -->
+<section id="news" style="background:#fff">
+  <div class="wrap">
+    <div class="center">
+      <span class="kicker" data-en="FAQ" data-fr="FAQ">FAQ</span>
+      <h2 data-en="Questions Parents Ask" data-fr="Les questions des parents">Questions Parents Ask</h2>
+    </div>
+    <div class="faq">
+      <details><summary data-en="What percentage of the day is taught in each language?" data-fr="Quelle proportion de la journée est enseignée dans chaque langue ?">What percentage of the day is taught in each language?</summary><div class="ans" data-en="50/50 from Elementary up: subjects are split by language (Math & Science in English, French & Humanities in French, rotated by term), so both languages carry the full curriculum — not just one subject each." data-fr="50/50 à partir de la primaire : les matières sont réparties par langue (Maths & Sciences en anglais, Français & Humaines en français, en rotation par trimestre), pour que les deux langues portent tout le programme — pas une matière chacune.">50/50 from Elementary up: subjects are split by language (Math & Science in English, French & Humanities in French, rotated by term), so both languages carry the full curriculum — not just one subject each.</div></details>
+      <details><summary data-en="Do parents need to speak the second language at home?" data-fr="Les parents doivent-ils parler la deuxième langue à la maison ?">Do parents need to speak the second language at home?</summary><div class="ans" data-en="No. Around 30% of our families are not fluent in the second language at home — the school carries the immersion. We send a weekly 'practice corner' (5 minutes a day) to help at home." data-fr="Non. Environ 30 % de nos familles ne maîtrisent pas la deuxième langue à la maison — c'est l'école qui porte l'immersion. Nous envoyons chaque semaine un « coin pratique » (5 minutes par jour) pour aider à la maison.">No. Around 30% of our families are not fluent in the second language at home — the school carries the immersion. We send a weekly 'practice corner' (5 minutes a day) to help at home.</div></details>
+      <details><summary data-en="What are the application deadlines?" data-fr="Quelles sont les dates limites de candidature ?">What are the application deadlines?</summary><div class="ans" data-en="Rolling, with priority rounds on 31 January and 30 April for the following academic year. Early Years keeps a waiting list every term — the sooner you visit, the sooner you apply." data-fr="Candidatures continues, avec des sessions prioritaires les 31 janvier et 30 avril pour l'année scolaire suivante. La petite enfance garde une liste d'attente chaque trimestre — plus vous visitez tôt, plus vous candidatez tôt.">Rolling, with priority rounds on 31 January and 30 April for the following academic year. Early Years keeps a waiting list every term — the sooner you visit, the sooner you apply.</div></details>
+      <details><summary data-en="Is transportation provided?" data-fr="Un transport est-il fourni ?">Is transportation provided?</summary><div class="ans" data-en="Yes — six bus routes covering Limbe, Buea and Mundemba, with GPS tracking shared to parents every morning and afternoon." data-fr="Oui — six lignes de bus couvrant Limbe, Buea et Mundemba, avec un suivi GPS partagé aux parents chaque matin et chaque après-midi.">Yes — six bus routes covering Limbe, Buea and Mundemba, with GPS tracking shared to parents every morning and afternoon.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- I. FINAL CTA + LEAD FORM -->
+<!-- TW: bg-slate-900 text-white py-24 grid lg:grid-cols-2 gap-16 -->
+<section class="final" id="visit">
+  <div class="wrap">
+    <span class="kicker" data-en="Enrollment" data-fr="Inscription">Enrollment</span>
+    <h2 data-en="Give Your Child the Gift of Fluency — and Academic Distinction." data-fr="Offrez à votre enfant le don de la fluidité — et de l'excellence académique.">Give Your Child the Gift of Fluency — and Academic Distinction.</h2>
+    <p class="sub" data-en="Book a campus tour or register for the 18 October open house. We reply within one school day." data-fr="Réservez une visite du campus ou inscrivez-vous aux portes ouvertes du 18 octobre. Nous répondons sous un jour ouvré.">Book a campus tour or register for the 18 October open house. We reply within one school day.</p>
+    <div class="final-grid">
+      <div class="pts">
+        <div class="pt"><span class="b">1</span><p data-en="<b>Tours run every Saturday, 9:00 AM.</b> Small groups, real classrooms, real students." data-fr="<b>Les visites se font tous les samedis, 9h00.</b> Petits groupes, vraies salles de classe, vrais élèves."><b>Tours run every Saturday, 9:00 AM.</b> Small groups, real classrooms, real students.</p></div>
+        <div class="pt"><span class="b">2</span><p data-en="<b>Open house is free</b> and open to all — sit in a class, taste the lunch, ask anything." data-fr="<b>Les portes ouvertes sont gratuites</b> et ouvertes à tous — assistez à un cours, goûtez le déjeuner, posez toutes vos questions."><b>Open house is free</b> and open to all — sit in a class, taste the lunch, ask anything.</p></div>
+        <div class="pt"><span class="b">3</span><p data-en="<b>Questions answered in your language.</b> Our admissions team works in English and French." data-fr="<b>Vos questions sont répondues dans votre langue.</b> Notre équipe d'admissions travaille en anglais et en français."><b>Questions answered in your language.</b> Our admissions team works in English and French.</p></div>
+      </div>
+      <form class="form-card" onsubmit="return sendLead(event)">
+        <h3 data-en="Request Information & Book a Tour" data-fr="Demander des informations & réserver une visite">Request Information & Book a Tour</h3>
+        <p class="fc-sub" data-en="Sent on WhatsApp — 60 seconds, no email needed." data-fr="Envoyé sur WhatsApp — 60 secondes, pas d'e-mail nécessaire.">Sent on WhatsApp — 60 seconds, no email needed.</p>
+        <div class="fgrid">
+          <div class="fld"><label data-en="Parent first name *" data-fr="Prénom du parent *">Parent first name *</label><input type="text" id="l-fn" required></div>
+          <div class="fld"><label data-en="Last name" data-fr="Nom">Last name</label><input type="text" id="l-ln"></div>
+          <div class="fld"><label data-en="Phone (WhatsApp) *" data-fr="Téléphone (WhatsApp) *">Phone (WhatsApp) *</label><input type="tel" id="l-ph" required></div>
+          <div class="fld"><label data-en="Email" data-fr="E-mail">Email</label><input type="email" id="l-em"></div>
+          <div class="fld"><label data-en="Child's grade entering" data-fr="Classe d'entrée de l'enfant">Child's grade entering</label><select id="l-gr"><option data-en="Early Years" data-fr="Petite enfance">Early Years</option><option data-en="Elementary" data-fr="Primaire">Elementary</option><option data-en="Middle School" data-fr="Collège">Middle School</option><option data-en="High School" data-fr="Lycée">High School</option></select></div>
+          <div class="fld"><label data-en="Contact language" data-fr="Langue de contact">Contact language</label><select id="l-lg"><option>English</option><option>Français</option></select></div>
+          <div class="fld full"><label data-en="Preferred tour date" data-fr="Date de visite souhaitée">Preferred tour date</label><input type="date" id="l-dt"></div>
+        </div>
+        <button type="submit" class="btn btn-em" data-en="Send & Book My Tour →" data-fr="Envoyer & réserver ma visite →">Send & Book My Tour →</button>
+        <p class="form-small" data-en="Concept demo: this form routes to AMK. On your live site it routes to your school's WhatsApp." data-fr="Démo concept : ce formulaire est dirigé vers AMK. Sur votre site en ligne, il est dirigé vers le WhatsApp de votre école.">Concept demo: this form routes to AMK. On your live site it routes to your school's WhatsApp.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<!-- TW: bg-slate-950 text-slate-400 py-16 -->
+<footer>
+  <div class="wrap">
+    <div class="amk-bar">
+      <span class="t"><b>This website is a concept by AMK</b> — Web Development &amp; Digital Solutions<small data-en="The agency that builds sites like this for schools. Want yours? One WhatsApp message starts the 24h free preview." data-fr="L'agence qui construit des sites comme celui-ci pour les écoles. Voulez-vous le vôtre ? Un message WhatsApp démarre l'aperçu gratuit de 24h.">The agency that builds sites like this for schools. Want yours? One WhatsApp message starts the 24h free preview.</small></span>
+      <span style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn btn-em" style="padding:12px 22px;font-size:14px" href="index.html" data-en="Back to AMK website" data-fr="Retour au site d'AMK">Back to AMK website</a>
+      </span>
+    </div>
+    <div class="f-grid">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+          <svg viewBox="0 0 48 48" width="38" height="38"><path d="M24 4l16 6v12c0 10-6.8 17.5-16 22C14.8 39.5 8 32 8 22V10l16-6z" fill="#1E293B" stroke="#10B981" stroke-width="2"/><path d="M15 26c4-2.5 7-2.5 9 0 2-2.5 5-2.5 9 0v9c-4-2.5-7-2.5-9 0-2-2.5-5-2.5-9 0v-9z" fill="#F8FAFC"/><path d="M24 26v9" stroke="#0F172A" stroke-width="1.4"/><path d="M24 12l1.7 3.4 3.8.6-2.7 2.7.6 3.8-3.4-1.8-3.4 1.8.6-3.8-2.7-2.7 3.8-.6z" fill="#10B981"/></svg>
+          <span style="color:#fff;font-weight:800;font-size:16px">Nova Bilingual Academy</span>
+        </div>
+        <p data-en="Buea–Limbe Road, Limbe, Cameroon" data-fr="Route Buea–Limbe, Limbe, Cameroun">Buea–Limbe Road, Limbe, Cameroon</p>
+        <p><a href="tel:+237677789631">+237 677 789 631</a></p>
+        <p><a href="mailto:info@your-school.cm">info@your-school.cm</a></p>
+        <div class="map-ph" data-en="📍 Google Maps embed goes here" data-fr="📍 L'intégration Google Maps prend place ici">📍 Google Maps embed goes here</div>
+      </div>
+      <div>
+        <h5 data-en="Quick Links" data-fr="Liens rapides">Quick Links</h5>
+        <a href="#about" data-en="About Us" data-fr="À propos">About Us</a>
+        <a href="#academics" data-en="Academics" data-fr="Académique">Academics</a>
+        <a href="#admissions" data-en="Admissions" data-fr="Admissions">Admissions</a>
+        <a href="#visit" data-en="Book a Tour" data-fr="Réserver une visite">Book a Tour</a>
+      </div>
+      <div>
+        <h5 data-en="Accreditation" data-fr="Accréditation">Accreditation</h5>
+        <p style="margin-bottom:10px" data-en="CSEC Examination Centre · A-Level Centre · Bilingual Literacy Programme (demo badges)" data-fr="Centre d'examen CSEC · Centre A-Level · Programme de littératie bilingue (badges de démo)">CSEC Examination Centre · A-Level Centre · Bilingual Literacy Programme (demo badges)</p>
+        <p style="font-size:12.5px" data-en="Built to WCAG-minded accessibility standards; works on any mobile connection. Data practices follow child-protection guidelines (COPPA-style)." data-fr="Conçu selon des normes d'accessibilité inspirées de WCAG ; fonctionne sur toute connexion mobile. Les pratiques de données suivent les directives de protection de l'enfance (type COPPA).">Built to WCAG-minded accessibility standards; works on any mobile connection. Data practices follow child-protection guidelines (COPPA-style).</p>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span data-en="© 2026 Nova Bilingual Academy (concept)" data-fr="© 2026 Nova Bilingual Academy (concept)">© 2026 Nova Bilingual Academy (concept)</span>
+      <span>Concept by AMK · amk-cm</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+var WA_NUM = "237677789631"; // AMK number (concept demo routing) — replace in ONE place
+function setLang(l){
+  document.documentElement.lang = l;
+  document.querySelectorAll("[data-en]").forEach(function(el){ el.innerHTML = (l === "fr") ? el.getAttribute("data-fr") : el.getAttribute("data-en"); });
+  document.getElementById("btn-en").style.background = (l === "en") ? "var(--em)" : "transparent";
+  document.getElementById("btn-en").style.color = (l === "en") ? "var(--navy)" : "#CBD5E1";
+  document.getElementById("btn-fr").style.background = (l === "fr") ? "var(--em)" : "transparent";
+  document.getElementById("btn-fr").style.color = (l === "fr") ? "var(--navy)" : "#CBD5E1";
+  document.querySelectorAll("a.wa").forEach(function(a){ a.href = "https://wa.me/" + WA_NUM + "?text=" + encodeURIComponent(l === "fr" ? "Bonjour AMK ! J'aimerais réserver une visite du campus / voir ce site concept pour mon école." : "Hello AMK! I'd like to book a campus visit / get this concept website for my school."); });
+  try{ history.replaceState(null, "", l === "fr" ? "?lang=fr" : "index.html"); }catch(e){}
+}
+document.querySelectorAll("a.wa").forEach(function(a){ a.href = "https://wa.me/" + WA_NUM + "?text=" + encodeURIComponent("Hello AMK! I'd like to book a campus visit / get this concept website for my school."); });
+// tabs
+document.querySelectorAll(".tab-btn").forEach(function(b){
+  b.addEventListener("click", function(){
+    document.querySelectorAll(".tab-btn").forEach(function(x){ x.classList.remove("on"); });
+    document.querySelectorAll(".tab-pane").forEach(function(x){ x.classList.remove("on"); });
+    b.classList.add("on");
+    document.getElementById(b.getAttribute("data-tab")).classList.add("on");
+  });
+});
+function sendLead(e){
+  e.preventDefault();
+  var fn = document.getElementById("l-fn").value, ln = document.getElementById("l-ln").value;
+  var ph = document.getElementById("l-ph").value, em = document.getElementById("l-em").value;
+  var gr = document.getElementById("l-gr").value, lg = document.getElementById("l-lg").value, dt = document.getElementById("l-dt").value;
+  var fr = document.documentElement.lang === "fr";
+  var msg = fr
+    ? "Bonjour AMK ! Je viens du site concept (Nova Bilingual Academy) et je veux un site comme celui-ci pour mon école.\n\nNom du parent : " + fn + " " + ln + "\nTéléphone : " + ph + (em ? "\nE-mail : " + em : "") + "\nClasse d'entrée : " + gr + "\nLangue de contact : " + lg + (dt ? "\nDate de visite souhaitée : " + dt : "") + "\n\nNom de mon école : [à compléter]"
+    : "Hello AMK! I came from the concept site (Nova Bilingual Academy) and I want a website like this for my school.\n\nParent name: " + fn + " " + ln + "\nPhone: " + ph + (em ? "\nEmail: " + em : "") + "\nGrade entering: " + gr + "\nContact language: " + lg + (dt ? "\nPreferred tour date: " + dt : "") + "\n\nMy school name: [to complete]";
+  window.open("https://wa.me/" + WA_NUM + "?text=" + encodeURIComponent(msg), "_blank");
+  return false;
+}
+// URL language support: sample-school.html?lang=fr
+(function(){ var p = new URLSearchParams(location.search).get("lang"); if(p === "fr" || p === "en"){ setLang(p); } })();
+</script>
+</body>
+</html>
