@@ -1,6 +1,6 @@
 # AMK — Pipeline Status (running handoff)
 
-**Read this file first in any new chat.** Updated every working day or after every pipeline movement. Most recent update: **Mon 14 Sep 2026, EOD.**
+**Read this file first in any new chat.** Updated every working day or after every pipeline movement. Most recent update: **Mon 14 Sep 2026, night — Tue 15 set as Buea WALK-IN day.**
 Current week plan: [`Weekly-Plan-2026-09-14.md`](Weekly-Plan-2026-09-14.md) · paste-ready messages: [`Outreach-Pack-2026-09-14.md`](Outreach-Pack-2026-09-14.md) · verified intel: [`Deep-Dive-Research.md`](Deep-Dive-Research.md).
 
 ## Operating parameters (King-confirmed, 14 Sep)
@@ -28,6 +28,19 @@ Any fresh "yes" joins this list immediately.
 | NHICHS (Limbe) | 11 A | email Tue 15 (email-only for now) | pending | ⛔ build on yes | FU1 Thu if silent |
 | ~~SAHISCOL (Limbe)~~ | 9 | **PARKED 14 Sep** (no WA reach; maintained template site = filter) | — | ✅ hosted /sah/ | revival: site expiry/outage, admissions push, Limbe referral/diocese |
 | COEL (Limbe, FR) | 9 A | not yet (no contact found) | — | ⛔ build on yes | recon Thu 17 → FR first message |
+
+### Stage 1/2 — walk-in batch Tue 15 (contact captured at the gate)
+| Lead | Quarter | Score* | Hook at the gate |
+|---|---|---|---|
+| St. Theresa Int. Bilingual Comp. College (27) | Molyko | 14 A | 128 GCE candidates; admissions posts; no site, FB+yahoo only |
+| Summerset Bilingual College (28) | Wokoko | 15 A | ~1,000 students/80 teachers, founded 2000, no website |
+| Saint Bernard HS (29) | Molyko | 12 B+ | founded 2020 by Dr Fomba, growth-stage, founder decides |
+| NABESK Comp. College (30) | Bonduma | 13 A- | 83.5% O-level, 400+ external candidates, results hidden in PDFs |
+| Baird Memorial (31) | Bonduma | 7 C+ | same-road light stop |
+| Baptist Comp. College (32) | Great Soppo | 12 B+ | mobile 679 65 07 07 (WA-check Mon night); confessional protocol |
+| St. Sylvester Int. College (33) | Muea | 8 B- | stretch stop; swap for Frankfils/Marthlo if closer |
+*provisional until the gate visit; re-score from enrollment/fee posters + decision-maker capture. Existing Salvation (20), Frankfils (19), Marthlo (21) and PCSS (18) are on the same route.
+**New sourcing channel logged:** GCE Board annual accommodation-centre decision PDFs (camgceb.org) name every active accredited school with centre number + quarter + candidate counts — a verified, quarterly-refreshable D/E mine.
 
 ### Stage 1 — verify before qualifying
 | Lead | Score | What verification needs |

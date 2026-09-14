@@ -52,7 +52,7 @@
 | ~~Mon 14~~ | ~~SAHISCOL~~ | — | **PARKED 14 Sep** — no WA reach + maintained template; concept hosted /sah/; triggers in Pipeline-Status |
 | **Tue 15** | OraCare / any replier | WhatsApp | BANT + concept handover same day any "yes" |
 | **Tue 15** | King | phone | Capture hero shots + record OraCare 30-sec video if requested |
-| **Tue 15** | NEW batch | WhatsApp/TikTok | **8–10 channel-qualified D/E prospects** (WA mobile or active TikTok; prefer clinics with FB ads like OraCare) backfill paused leads |
+| **Tue 15** | **Buea WALK-IN DAY** | in person (route doc: `Walk-In-Batch-2026-09-15.md`) + 07:45 Sasse TikTok/email + NHICHS midday email | **10 routed stops** (7 new leads IDs 27–33; 3 existing): Molyko×3, Wokoko, Bonduma×2, Great Soppo×3, Muea stretch. Gate visit captures the channel Facebook was meant to. |
 | **Thu 17 (M+2)** | OraCare silent? / Sasse + NHICHS | same channels | FU1 gentle nudge (pack, dated) — dates shift +2 for the Tue sends |
 | **Thu 17** | COEL Limbe | Maps/web directory recon (no FB needed to find a number) | find phone/WA/TikTok/email; French first-message ready in Pack §6 |
 | **Fri 18 (M+4)** | still silent | same channels | FU2 value-add (5-point parent checklist offer) |
