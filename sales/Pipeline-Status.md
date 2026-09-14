@@ -1,6 +1,6 @@
 # AMK — Pipeline Status (running handoff)
 
-**Read this file first in any new chat.** Updated every working day or after every pipeline movement. Most recent update: **Mon 14 Sep 2026, night — Tue 15 set as Buea WALK-IN day.**
+**Read this file first in any new chat.** Updated every working day or after every pipeline movement. Most recent update: **Mon 14 Sep 2026, late night — 10 walk-in deep dives done; OraCare + Sasse LIVE on Vercel.**
 Current week plan: [`Weekly-Plan-2026-09-14.md`](Weekly-Plan-2026-09-14.md) · paste-ready messages: [`Outreach-Pack-2026-09-14.md`](Outreach-Pack-2026-09-14.md) · verified intel: [`Deep-Dive-Research.md`](Deep-Dive-Research.md).
 
 ## Operating parameters (King-confirmed, 14 Sep)
@@ -36,10 +36,12 @@ Any fresh "yes" joins this list immediately.
 | Summerset Bilingual College (28) | Wokoko | 15 A | ~1,000 students/80 teachers, founded 2000, no website |
 | Saint Bernard HS (29) | Molyko | 12 B+ | founded 2020 by Dr Fomba, growth-stage, founder decides |
 | NABESK Comp. College (30) | Bonduma | 13 A- | 83.5% O-level, 400+ external candidates, results hidden in PDFs |
-| Baird Memorial (31) | Bonduma | 7 C+ | same-road light stop |
-| Baptist Comp. College (32) | Great Soppo | 12 B+ | mobile 679 65 07 07 (WA-check Mon night); confessional protocol |
+| Baird Memorial (31) | Bonduma | 6 C conditional | **has self-built bairdmemorial.com** (typos; verify tonight) — dead=full pitch, works=light card/upsell |
+| Baptist Comp. College (32) | Great Soppo | 12 B+ | 679 65 07 07 ✅ on WA (school FB-page line; directed text 08:30); Baptist protocol |
+| Bishop Jules Peters Memorial (34) | Bokwaongo | 9 B | **NEW #8** (replaces disqualified Inter): diocesan, proprietor Bishop Bibi; principal-first Catholic motion like Sasse |
+| ~~Inter Comprehensive HS (35)~~ | Great Soppo | 0 X | DISQUALIFIED: ownership lawsuit (Enni Philomena vs Fongoh Mayah administrators); revisit ~Mar 2027 |
 | St. Sylvester Int. College (33) | Muea | 8 B- | stretch stop; swap for Frankfils/Marthlo if closer |
-*provisional until the gate visit; re-score from enrollment/fee posters + decision-maker capture. Existing Salvation (20), Frankfils (19), Marthlo (21) and PCSS (18) are on the same route.
+*provisional until the gate visit; re-score from enrollment/fee posters + decision-maker capture. Salvation (20, near CUIB Molyko) and PCSS (18, boarding 700+) are stops 2 and 9; Frankfils (19)/Marthlo (21) are backups. PCSS lines 652 075 229 (official) + 675 533 321 (teacher Kinang) both ✅ on WA; directed warm texts 08:30.
 **New sourcing channel logged:** GCE Board annual accommodation-centre decision PDFs (camgceb.org) name every active accredited school with centre number + quarter + candidate counts — a verified, quarterly-refreshable D/E mine.
 
 ### Stage 1 — verify before qualifying
@@ -95,6 +97,7 @@ Any fresh "yes" joins this list immediately.
 ## Log (newest first)
 - **Mon 14 Sep:** Orientation completed. OraCare msg 1 sent (King, video/file double-bind). Built oracare v3 (merged pricing + assistant), rebuilt sjc-sasse v2 (was missing despite docs claiming it existed), pre-built comobil v1. This week's plan, outreach pack, status file and W37 research written. 4 remaining first messages queued for today.
 - **Mon 14 Sep (evening):** King phone-verified: COMOBIL + SAHISCOL numbers are NOT on WhatsApp; email read rates in CMR too weak to be plan A; King has no Facebook. Decision raised. **AMK recommendation: park SAHISCOL** (maintained template + no reachable channel; /sah/ stays hosted; revival triggers logged); **keep COMOBIL via a 25-min AMK Facebook Page** (also unlocks NHICHS + ~half of school TAM; setup sheet written), warmup Tue, DM Wed; fallback = one batched Douala morning visit. Sasse unaffected (TikTok). New sourcing rule: channel reachability scored before domain pain. Awaiting King decision.
+- **Mon 14 Sep (late night):** King deployed OraCare v3 + Sasse concepts on Vercel (URLs verified: correct builds live, noindex not required on isolated projects). Confirmed Baptist/PCSS numbers all on WhatsApp — deep dives established attribution (none is a confirmed principal line; method documented). 10 individual walk-in deep dives written; Summerset emerges as flagship (named principal + live enrollment pain); Inter Comp disqualified (ownership lawsuit) and replaced by diocesan Bishop Jules Peters, Bokwaongo; Baird reclassified conditional (self-built site). Bilingual EN|FR walk-in cards rebuilt (8/A4).
 - **Mon 14 Sep (night) — KING DECISION:** SAHISCOL parked as recommended; **COMOBIL also paused/parked** (AMK recommended the FB Page; King declined both Page and Douala trip for now). Kill list now OraCare + Sasse (+NHICHS email leg). Facebook sheet retained for a future reversal; COMOBIL is the #1 revival lead. Tuesday D/E batch must be channel-qualified (WA mobile / active TikTok) and backfill COMOBIL's volume; Tue 22 Sep deposit target withdrawn with the lead.
 - **Mon 14 Sep (EOD update):** King committed the full demo folder — his canonical `sjc-sasse-v2.html` (123 pairs, real chapel photo) + `sjc-sasse-chapel.jpg` + captured shots (`demos/shot-*.png`, `demos/shots/oracare-*`). AMK patched the Sasse form/footer channels (email routing; 677 195 500 is calls-only) via `demos/patch_sasse_channels.py`. Hosting model set: King self-hosts from `hosting/previews/` (built today). Earlier AMK alt Sasse build removed to avoid two files.
 - Sat 12 Sep: Deep-Dive v (6 leads), oracare/sah iscol/retraite concepts, Playbook v2.

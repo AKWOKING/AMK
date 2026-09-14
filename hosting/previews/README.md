@@ -4,13 +4,15 @@ This folder is a **drag-and-drop deploy bundle**. Every concept is a single self
 
 ## URLs after deploy (example project name: `amk-previews`)
 
-| Slug | Link to share | Lead | Canonical source file |
+| Slug | LIVE link | Lead | Canonical source file |
 |---|---|---|---|
-| `/oracare/` | `https://amk-previews.vercel.app/oracare/` | OraCare237, Buea | `demos/concept-oracare-v3.html` |
-| `/sasse/` | `https://amk-previews.vercel.app/sasse/` | SJC Sasse, Buea | `demos/sjc-sasse-v2.html` |
-| `/comobil/` | `https://amk-previews.vercel.app/comobil/` | COMOBIL / Groupe WAFO, Douala | `demos/concept-comobil-v1.html` |
-| `/sah/` | `https://amk-previews.vercel.app/sah/` | SAHISCOL, Limbe | `demos/concept-sahiscol-v1.html` |
+| **separate Vercel project** | ✅ **https://oracare-concept.vercel.app/** (live 14 Sep, verified v3: prices + assistant) | OraCare237, Buea | `demos/concept-oracare-v3.html` |
+| **separate Vercel project** | ✅ **https://sjc-sasse-concept.vercel.app/** (live 14 Sep, verified email-patched build) | SJC Sasse, Buea | `demos/sjc-sasse-v2.html` |
+| `/comobil/` (this bundle, when deployed) | `https://amk-previews.vercel.app/comobil/` | COMOBIL — PARKED 14 Sep; deploy only on revival | `demos/concept-comobil-v1.html` |
+| `/sah/` (this bundle, when deployed) | `https://amk-previews.vercel.app/sah/` | SAHISCOL — PARKED 14 Sep | `demos/concept-sahiscol-v1.html` |
 | `/` | private marker, deliberately no links | — | — |
+
+**Current model (King, 14 Sep):** one Vercel project per named concept, deployed from the canonical HTML (index.html at project root). To push an update: overwrite that project's root index.html with the rebuilt canonical file and redeploy. The `build_previews.py` bundle remains available as a single-project multi-slug alternative for future batches.
 
 All four carry `noindex,nofollow` (private previews, never search-listed). Rebuild after editing any concept:
 
