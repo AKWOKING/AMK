@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#EEF2F7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1350" fill="url(#bg)"/>
+  <ellipse cx="920" cy="170" rx="300" ry="240" fill="#F59E0B" opacity="0.10"/>
+  <ellipse cx="130" cy="1180" rx="280" ry="230" fill="#0F172A" opacity="0.06"/>
+
+  <!-- phone shadow + frame -->
+  <rect x="330" y="138" width="460" height="950" rx="64" fill="#0F172A" opacity="0.14"/>
+  <rect x="310" y="110" width="460" height="950" rx="64" fill="#0B1120"/>
+  <rect x="324" y="124" width="432" height="922" rx="50" fill="#FFFFFF"/>
+  <rect x="490" y="134" width="100" height="18" rx="9" fill="#0B1120"/>
+
+  <!-- ===== HERO (navy, rounded top) ===== -->
+  <path d="M324 210 v-36 a50 50 0 0 1 50-50 h332 a50 50 0 0 1 50 50 v36 z" fill="#0F172A"/>
+  <rect x="324" y="210" width="432" height="320" fill="#0F172A"/>
+  <!-- topbar -->
+  <text x="346" y="152" font-size="12" fill="#94A3B8">Douala · Yaoundé · Buea · Limbe</text>
+  <text x="734" y="152" font-size="12" font-weight="bold" fill="#FCD34D" text-anchor="end">EN | FR</text>
+  <line x1="324" y1="170" x2="756" y2="170" stroke="#1E293B" stroke-width="1.5"/>
+  <!-- nav -->
+  <g transform="translate(346,182)">
+    <rect width="40" height="40" rx="10" fill="#1E293B"/>
+    <line x1="20" y1="9" x2="10" y2="30" stroke="#FCD34D" stroke-width="1.6"/>
+    <line x1="20" y1="9" x2="30" y2="30" stroke="#FCD34D" stroke-width="1.6"/>
+    <line x1="10" y1="30" x2="30" y2="30" stroke="#FCD34D" stroke-width="1.6"/>
+    <circle cx="20" cy="9" r="2.2" fill="#F59E0B"/><circle cx="10" cy="30" r="2.2" fill="#F59E0B"/><circle cx="30" cy="30" r="2.2" fill="#F59E0B"/>
+  </g>
+  <text x="396" y="205" font-size="20" font-weight="bold" fill="#FFFFFF" letter-spacing="2">AMK</text>
+  <text x="396" y="219" font-size="7.5" fill="#94A3B8" letter-spacing="1">WEB DEVELOPMENT &amp; DIGITAL SOLUTIONS</text>
+  <rect x="606" y="190" width="128" height="34" rx="17" fill="#F59E0B"/>
+  <text x="670" y="212" font-size="13" font-weight="bold" fill="#0F172A" text-anchor="middle">Free preview</text>
+  <!-- kicker -->
+  <rect x="346" y="252" width="286" height="26" rx="13" fill="#F59E0B" opacity="0.14"/>
+  <text x="358" y="270" font-size="10.5" font-weight="bold" fill="#FCD34D" letter-spacing="1.2">WEB DESIGN FOR SCHOOLS — CAMEROON</text>
+  <!-- H1 -->
+  <text x="346" y="318" font-size="33" font-weight="bold" fill="#FFFFFF" letter-spacing="-0.5">Your school is being</text>
+  <text x="346" y="356" font-size="33" font-weight="bold" fill="#FCD34D" letter-spacing="-0.5">judged on Google</text>
+  <text x="346" y="394" font-size="33" font-weight="bold" fill="#FFFFFF" letter-spacing="-0.5">right now.</text>
+  <!-- sub skeleton -->
+  <rect x="346" y="416" width="352" height="8" rx="4" fill="#475569"/>
+  <rect x="346" y="432" width="268" height="8" rx="4" fill="#475569"/>
+  <!-- CTA -->
+  <rect x="346" y="458" width="238" height="46" rx="10" fill="#F59E0B"/>
+  <text x="465" y="487" font-size="15" font-weight="bold" fill="#0F172A" text-anchor="middle">Free 24h preview</text>
+  <text x="346" y="524" font-size="10.5" fill="#94A3B8">✓ No payment until you approve the preview</text>
+
+  <!-- stats strip -->
+  <rect x="324" y="530" width="432" height="64" fill="#1E293B"/>
+  <text x="400" y="562" font-size="19" font-weight="bold" fill="#FCD34D" text-anchor="middle">3–5</text>
+  <text x="400" y="580" font-size="9.5" fill="#94A3B8" text-anchor="middle">days to launch</text>
+  <text x="540" y="562" font-size="19" font-weight="bold" fill="#FCD34D" text-anchor="middle">24h</text>
+  <text x="540" y="580" font-size="9.5" fill="#94A3B8" text-anchor="middle">free preview</text>
+  <text x="680" y="562" font-size="19" font-weight="bold" fill="#FCD34D" text-anchor="middle">2</text>
+  <text x="680" y="580" font-size="9.5" fill="#94A3B8" text-anchor="middle">founding slots</text>
+
+  <!-- white section: compare -->
+  <text x="346" y="630" font-size="14.5" font-weight="bold" fill="#0F172A">Old-school vs. what we build</text>
+  <rect x="346" y="646" width="188" height="58" rx="10" fill="#FEF2F2"/>
+  <text x="360" y="672" font-size="12" font-weight="bold" fill="#7F1D1D">✕ Broken domain</text>
+  <text x="360" y="690" font-size="9.5" fill="#B91C1C">expired, error page</text>
+  <rect x="546" y="646" width="188" height="58" rx="10" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
+  <text x="560" y="672" font-size="12" font-weight="bold" fill="#78350F">✓ Found on Google</text>
+  <text x="560" y="690" font-size="9.5" fill="#92400E">fast · mobile · bilingual</text>
+
+  <!-- pricing card -->
+  <rect x="346" y="726" width="388" height="92" rx="12" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="362" y="752" font-size="12" font-weight="bold" fill="#0F172A">Starter — Founding · 2 slots</text>
+  <text x="362" y="780" font-size="21" font-weight="bold" fill="#0F172A">FCFA 100,000</text>
+  <text x="362" y="802" font-size="10.5" fill="#B45309">or 50/50 · EN|FR included · live in 3–5 days</text>
+
+  <!-- process steps -->
+  <rect x="346" y="840" width="120" height="76" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+  <circle cx="372" cy="866" r="11" fill="#0F172A"/>
+  <text x="372" y="871" font-size="11" font-weight="bold" fill="#FCD34D" text-anchor="middle">1</text>
+  <text x="360" y="898" font-size="9.5" font-weight="bold" fill="#0F172A">Message</text>
+  <text x="360" y="910" font-size="8.5" fill="#64748B">today</text>
+  <rect x="478" y="840" width="120" height="76" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+  <circle cx="504" cy="866" r="11" fill="#0F172A"/>
+  <text x="504" y="871" font-size="11" font-weight="bold" fill="#FCD34D" text-anchor="middle">2</text>
+  <text x="492" y="898" font-size="9.5" font-weight="bold" fill="#0F172A">Free preview</text>
+  <text x="492" y="910" font-size="8.5" fill="#64748B">within 24h</text>
+  <rect x="610" y="840" width="120" height="76" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+  <circle cx="636" cy="866" r="11" fill="#0F172A"/>
+  <text x="636" y="871" font-size="11" font-weight="bold" fill="#FCD34D" text-anchor="middle">3</text>
+  <text x="624" y="898" font-size="9.5" font-weight="bold" fill="#0F172A">Live</text>
+  <text x="624" y="910" font-size="8.5" fill="#64748B">3–5 days</text>
+
+  <!-- footer -->
+  <path d="M324 960 h432 v36 a50 50 0 0 1 -50 50 h-332 a50 50 0 0 1 -50 -50 z" fill="#0B1120"/>
+  <g transform="translate(346,988)">
+    <rect width="34" height="34" rx="9" fill="#1E293B"/>
+    <line x1="17" y1="8" x2="8.5" y2="26" stroke="#FCD34D" stroke-width="1.4"/>
+    <line x1="17" y1="8" x2="25.5" y2="26" stroke="#FCD34D" stroke-width="1.4"/>
+    <line x1="8.5" y1="26" x2="25.5" y2="26" stroke="#FCD34D" stroke-width="1.4"/>
+    <circle cx="17" cy="8" r="1.9" fill="#F59E0B"/><circle cx="8.5" cy="26" r="1.9" fill="#F59E0B"/><circle cx="25.5" cy="26" r="1.9" fill="#F59E0B"/>
+  </g>
+  <text x="392" y="1006" font-size="15" font-weight="bold" fill="#FFFFFF" letter-spacing="1.5">AMK</text>
+  <text x="392" y="1020" font-size="8" fill="#94A3B8">Web Development &amp; Digital Solutions</text>
+  <text x="734" y="1012" font-size="9" fill="#64748B" text-anchor="end">© 2026 · Built in Cameroon</text>
+  <rect x="500" y="1032" width="80" height="5" rx="2.5" fill="#334155"/>
+
+  <!-- floating chips -->
+  <rect x="178" y="196" width="124" height="46" rx="23" fill="#0F172A" opacity="0.10"/>
+  <rect x="170" y="186" width="124" height="46" rx="23" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <circle cx="194" cy="209" r="5" fill="#F59E0B"/>
+  <text x="206" y="215" font-size="15" font-weight="bold" fill="#0F172A">EN|FR</text>
+  <rect x="798" y="492" width="172" height="46" rx="23" fill="#0F172A" opacity="0.10"/>
+  <rect x="790" y="482" width="172" height="46" rx="23" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <circle cx="814" cy="505" r="5" fill="#F59E0B"/>
+  <text x="826" y="511" font-size="15" font-weight="bold" fill="#0F172A">WhatsApp CTA</text>
+  <rect x="128" y="912" width="196" height="46" rx="23" fill="#0F172A" opacity="0.10"/>
+  <rect x="120" y="902" width="196" height="46" rx="23" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <circle cx="144" cy="925" r="5" fill="#F59E0B"/>
+  <text x="156" y="931" font-size="15" font-weight="bold" fill="#0F172A">Live in 3–5 days</text>
+
+  <!-- caption -->
+  <text x="540" y="1236" font-size="17" font-weight="bold" fill="#0F172A" text-anchor="middle">AMK – Web Development &amp; Digital Solutions</text>
+  <text x="540" y="1264" font-size="13.5" fill="#64748B" text-anchor="middle">The agency website — built to the exact standard we sell</text>
+</svg>

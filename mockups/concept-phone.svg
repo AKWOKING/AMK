@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FDF8F5"/>
+      <stop offset="1" stop-color="#F3EEE9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1350" fill="url(#bg2)"/>
+  <ellipse cx="930" cy="180" rx="300" ry="240" fill="#C8102E" opacity="0.08"/>
+  <ellipse cx="120" cy="1170" rx="280" ry="230" fill="#0F172A" opacity="0.06"/>
+
+  <!-- phone shadow + frame -->
+  <rect x="330" y="138" width="460" height="950" rx="64" fill="#0F172A" opacity="0.14"/>
+  <rect x="310" y="110" width="460" height="950" rx="64" fill="#0B1120"/>
+  <rect x="324" y="124" width="432" height="922" rx="50" fill="#FFFFFF"/>
+  <rect x="490" y="134" width="100" height="18" rx="9" fill="#0B1120"/>
+
+  <!-- ===== HERO (navy, rounded top) ===== -->
+  <path d="M324 210 v-36 a50 50 0 0 1 50-50 h332 a50 50 0 0 1 50 50 v36 z" fill="#0F172A"/>
+  <rect x="324" y="210" width="432" height="330" fill="#0F172A"/>
+  <!-- topbar -->
+  <text x="346" y="152" font-size="11.5" fill="#94A3B8">Open House — Saturday 18 October</text>
+  <text x="734" y="152" font-size="12" font-weight="bold" fill="#FF8FA3" text-anchor="end">EN | FR</text>
+  <line x1="324" y1="170" x2="756" y2="170" stroke="#1E293B" stroke-width="1.5"/>
+  <!-- nav -->
+  <g transform="translate(346,182)">
+    <path d="M20 1l13 5v10c0 8-5.4 14-13 17.5C12.4 30 7 24 7 16V6l13-5z" fill="#1E293B" stroke="#C8102E" stroke-width="1.4"/>
+    <path d="M20 8l2.2 4.5h-4.4l2.2-4.5z" fill="#C8102E"/>
+    <path d="M15.5 16.5h9l-4.5 10.5-4.5-10.5z" fill="#C8102E"/>
+  </g>
+  <text x="396" y="202" font-size="16.5" font-weight="bold" fill="#FFFFFF">Crestwood Secondary</text>
+  <text x="396" y="217" font-size="8" fill="#94A3B8" letter-spacing="1.5">GRADES 6–12 · AGES 11–18</text>
+  <rect x="606" y="190" width="128" height="34" rx="17" fill="#C8102E"/>
+  <text x="670" y="212" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Book a Tour</text>
+  <!-- kicker -->
+  <rect x="346" y="254" width="242" height="26" rx="13" fill="#C8102E" opacity="0.22"/>
+  <text x="358" y="272" font-size="10.5" font-weight="bold" fill="#FF8FA3" letter-spacing="1.2">UNIVERSITY-PREP ACADEMY</text>
+  <!-- H1 -->
+  <text x="346" y="322" font-size="33" font-weight="bold" fill="#FFFFFF" letter-spacing="-0.5">Shape Your Future.</text>
+  <text x="346" y="362" font-size="33" font-weight="bold" fill="#FF5C7A" letter-spacing="-0.5">Lead the World.</text>
+  <!-- sub skeleton -->
+  <rect x="346" y="386" width="352" height="8" rx="4" fill="#475569"/>
+  <rect x="346" y="402" width="282" height="8" rx="4" fill="#475569"/>
+  <!-- CTA -->
+  <rect x="346" y="432" width="252" height="46" rx="10" fill="#C8102E"/>
+  <text x="472" y="461" font-size="14.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Book a Campus Tour</text>
+  <rect x="612" y="432" width="122" height="46" rx="10" fill="none" stroke="#334155" stroke-width="1.5"/>
+  <text x="673" y="461" font-size="12" font-weight="bold" fill="#CBD5E1" text-anchor="middle">Academics</text>
+  <text x="346" y="512" font-size="10.5" fill="#94A3B8">✓ 99% college placement · 25+ advanced courses</text>
+
+  <!-- stats strip -->
+  <rect x="324" y="540" width="432" height="64" fill="#1E293B"/>
+  <text x="378" y="572" font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle">99%</text>
+  <text x="378" y="590" font-size="8.5" fill="#94A3B8" text-anchor="middle">placement</text>
+  <text x="492" y="572" font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle">25+</text>
+  <text x="492" y="590" font-size="8.5" fill="#94A3B8" text-anchor="middle">adv. courses</text>
+  <text x="606" y="572" font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle">40+</text>
+  <text x="606" y="590" font-size="8.5" fill="#94A3B8" text-anchor="middle">clubs</text>
+  <text x="720" y="572" font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle">15:1</text>
+  <text x="720" y="590" font-size="8.5" fill="#94A3B8" text-anchor="middle">ratio</text>
+
+  <!-- pathways card -->
+  <text x="346" y="642" font-size="14.5" font-weight="bold" fill="#0F172A">Academic pathways</text>
+  <rect x="346" y="658" width="388" height="96" rx="12" fill="#0F172A"/>
+  <rect x="362" y="676" width="44" height="44" rx="10" fill="#C8102E" opacity="0.2"/>
+  <rect x="372" y="686" width="24" height="24" rx="4" fill="none" stroke="#FF8FA3" stroke-width="2"/>
+  <rect x="378" y="692" width="12" height="12" rx="2" fill="#FF8FA3"/>
+  <text x="420" y="694" font-size="13.5" font-weight="bold" fill="#FFFFFF">STEM &amp; Computer Science</text>
+  <text x="420" y="712" font-size="10.5" fill="#94A3B8">Build the future, literally.</text>
+  <text x="420" y="742" font-size="10.5" font-weight="bold" fill="#FF8FA3">Learn more →</text>
+
+  <!-- masonry tiles -->
+  <text x="346" y="792" font-size="14.5" font-weight="bold" fill="#0F172A">Student life</text>
+  <rect x="346" y="808" width="188" height="138" rx="10" fill="#1E293B"/>
+  <circle cx="440" cy="864" r="22" fill="#C8102E" opacity="0.25"/>
+  <circle cx="440" cy="864" r="10" fill="#C8102E"/>
+  <text x="440" y="932" font-size="10.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Robotics finals — 1st</text>
+  <rect x="546" y="808" width="188" height="138" rx="10" fill="#16324A"/>
+  <circle cx="640" cy="864" r="22" fill="#4FC0E8" opacity="0.25"/>
+  <circle cx="640" cy="864" r="10" fill="#4FC0E8"/>
+  <text x="640" y="932" font-size="10.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Home game night</text>
+
+  <!-- footer -->
+  <path d="M324 960 h432 v36 a50 50 0 0 1 -50 50 h-332 a50 50 0 0 1 -50 -50 z" fill="#0B1120"/>
+  <g transform="translate(346,986) scale(0.85)">
+    <path d="M20 1l13 5v10c0 8-5.4 14-13 17.5C12.4 30 7 24 7 16V6l13-5z" fill="#1E293B" stroke="#C8102E" stroke-width="1.4"/>
+    <path d="M20 8l2.2 4.5h-4.4l2.2-4.5z" fill="#C8102E"/>
+    <path d="M15.5 16.5h9l-4.5 10.5-4.5-10.5z" fill="#C8102E"/>
+  </g>
+  <text x="386" y="1004" font-size="14" font-weight="bold" fill="#FFFFFF">Crestwood Secondary</text>
+  <text x="386" y="1018" font-size="8" fill="#94A3B8">A concept by AMK · Web Development &amp; Digital Solutions</text>
+  <rect x="500" y="1032" width="80" height="5" rx="2.5" fill="#334155"/>
+
+  <!-- floating chips -->
+  <rect x="178" y="196" width="124" height="46" rx="23" fill="#0F172A" opacity="0.10"/>
+  <rect x="170" y="186" width="124" height="46" rx="23" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <circle cx="194" cy="209" r="5" fill="#C8102E"/>
+  <text x="206" y="215" font-size="15" font-weight="bold" fill="#0F172A">EN|FR</text>
+  <rect x="806" y="492" width="168" height="46" rx="23" fill="#0F172A" opacity="0.10"/>
+  <rect x="798" y="482" width="168" height="46" rx="23" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <circle cx="822" cy="505" r="5" fill="#C8102E"/>
+  <text x="834" y="511" font-size="14" font-weight="bold" fill="#0F172A">99% placement</text>
+  <rect x="128" y="912" width="196" height="46" rx="23" fill="#0F172A" opacity="0.10"/>
+  <rect x="120" y="902" width="196" height="46" rx="23" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <circle cx="144" cy="925" r="5" fill="#C8102E"/>
+  <text x="156" y="931" font-size="15" font-weight="bold" fill="#0F172A">Live in 3–5 days</text>
+
+  <!-- caption -->
+  <text x="540" y="1236" font-size="17" font-weight="bold" fill="#0F172A" text-anchor="middle">A concept for secondary schools — ages 11–18</text>
+  <text x="540" y="1264" font-size="13.5" fill="#64748B" text-anchor="middle">Your crest, your colors, your story — in 24 hours, free</text>
+</svg>

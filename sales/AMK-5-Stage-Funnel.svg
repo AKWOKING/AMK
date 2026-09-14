@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" font-family="Helvetica, Arial, sans-serif">
+  <!-- background -->
+  <rect x="0" y="0" width="1600" height="1000" fill="#F8FAFC"/>
+  <rect x="0" y="0" width="1600" height="8" fill="#F59E0B"/>
+
+  <!-- header -->
+  <rect x="60" y="38" width="44" height="44" rx="10" fill="#0F172A"/>
+  <circle cx="82" cy="59" r="13" fill="none" stroke="#F59E0B" stroke-width="1.4" opacity="0.85"/>
+  <line x1="82" y1="50" x2="73" y2="68" stroke="#FCD34D" stroke-width="2"/>
+  <line x1="82" y1="50" x2="91" y2="68" stroke="#FCD34D" stroke-width="2"/>
+  <line x1="73" y1="68" x2="91" y2="68" stroke="#FCD34D" stroke-width="2"/>
+  <circle cx="82" cy="50" r="2.6" fill="#F59E0B"/>
+  <circle cx="73" cy="68" r="2.6" fill="#F59E0B"/>
+  <circle cx="91" cy="68" r="2.6" fill="#F59E0B"/>
+  <text x="122" y="62" font-size="30" font-weight="bold" fill="#0F172A" letter-spacing="1">AMK · 5-STAGE SALES FUNNEL</text>
+  <text x="122" y="88" font-size="14" fill="#64748B">Website products for private schools — Cameroon · Sales Process v1.0 · September 2026</text>
+
+  <!-- ============ KPI CHIPS (left) ============ -->
+  <!-- layer y: 150 / 284 / 418 / 552 / 686, h=120 -->
+  <g font-size="13" fill="#713F12">
+    <rect x="60" y="150" width="200" height="120" rx="12" fill="#F1F5F9" stroke="#FDE68A"/>
+    <text x="80" y="182" font-size="11" font-weight="bold" fill="#B45309" letter-spacing="2">KPI</text>
+    <text x="80" y="210">10 qualified leads / day</text>
+    <text x="80" y="232">MQL rate ≥ 40%</text>
+
+    <rect x="60" y="284" width="200" height="120" rx="12" fill="#F1F5F9" stroke="#FDE68A"/>
+    <text x="80" y="316" font-size="11" font-weight="bold" fill="#B45309" letter-spacing="2">KPI</text>
+    <text x="80" y="344">Reply rate 15–25%</text>
+    <text x="80" y="366">MQL→SQL ≥ 25% of replies</text>
+
+    <rect x="60" y="418" width="200" height="120" rx="12" fill="#F1F5F9" stroke="#FDE68A"/>
+    <text x="80" y="450" font-size="11" font-weight="bold" fill="#B45309" letter-spacing="2">KPI</text>
+    <text x="80" y="478">Demo→conversation ≥ 50%</text>
+    <text x="80" y="500">conversation→offer ≥ 30%</text>
+
+    <rect x="60" y="552" width="200" height="120" rx="12" fill="#F1F5F9" stroke="#FDE68A"/>
+    <text x="80" y="584" font-size="11" font-weight="bold" fill="#B45309" letter-spacing="2">KPI</text>
+    <text x="80" y="612">Offer→deposit ≥ 50%</text>
+    <text x="80" y="634">close window ≤ 1 week</text>
+
+    <rect x="60" y="686" width="200" height="120" rx="12" fill="#F1F5F9" stroke="#FDE68A"/>
+    <text x="80" y="718" font-size="11" font-weight="bold" fill="#B45309" letter-spacing="2">KPI</text>
+    <text x="80" y="746">On-time delivery 100%</text>
+    <text x="80" y="768">≥ 1 referral / client</text>
+  </g>
+
+  <!-- ============ FUNNEL ============ -->
+  <!-- Stage 1 -->
+  <polygon points="290,150 1150,150 1090,270 350,270" fill="#223454"/>
+  <!-- Stage 2 -->
+  <polygon points="350,284 1090,284 1030,404 410,404" fill="#1A2C49"/>
+  <!-- Stage 3 -->
+  <polygon points="410,418 1030,418 970,538 470,538" fill="#152238"/>
+  <!-- Stage 4 (money = gold) -->
+  <polygon points="470,552 970,552 915,672 525,672" fill="#F59E0B"/>
+  <!-- Stage 5 -->
+  <polygon points="525,686 915,686 895,806 545,806" fill="#0F172A"/>
+
+  <g text-anchor="middle">
+    <!-- S1 -->
+    <text x="720" y="188" font-size="11" font-weight="bold" fill="#FCD34D" letter-spacing="3">STAGE 1</text>
+    <text x="720" y="218" font-size="20" font-weight="bold" fill="#ffffff">PROSPECTING</text>
+    <text x="720" y="248" font-size="13.5" fill="#CBD5E1">Find &amp; capture — Maps · Facebook · directories · GCE lists</text>
+    <!-- S2 -->
+    <text x="720" y="322" font-size="11" font-weight="bold" fill="#FCD34D" letter-spacing="3">STAGE 2</text>
+    <text x="720" y="352" font-size="20" font-weight="bold" fill="#ffffff">QUALIFYING (MQL → SQL)</text>
+    <text x="720" y="382" font-size="13.5" fill="#CBD5E1">ICP 5/7 + channel verified → reply + BANT  B · A · N · T</text>
+    <!-- S3 -->
+    <text x="720" y="456" font-size="11" font-weight="bold" fill="#FCD34D" letter-spacing="3">STAGE 3</text>
+    <text x="720" y="486" font-size="20" font-weight="bold" fill="#ffffff">DEMO &amp; ENGAGEMENT</text>
+    <text x="720" y="516" font-size="13.5" fill="#CBD5E1">Custom EN|FR homepage concept — permission first</text>
+    <!-- S4 (dark text on gold) -->
+    <text x="720" y="590" font-size="11" font-weight="bold" fill="#92400E" letter-spacing="3">STAGE 4</text>
+    <text x="720" y="620" font-size="20" font-weight="bold" fill="#0F172A">OFFER &amp; CLOSE</text>
+    <text x="720" y="650" font-size="13.5" fill="#78350F">FCFA 100,000 · 50/50 · first version in 3–5 days</text>
+    <!-- S5 -->
+    <text x="720" y="724" font-size="11" font-weight="bold" fill="#FCD34D" letter-spacing="3">STAGE 5</text>
+    <text x="720" y="754" font-size="19" font-weight="bold" fill="#ffffff">DELIVERY · PROOF · GROWTH</text>
+    <text x="720" y="782" font-size="13" fill="#CBD5E1">Daily updates · balance at handover</text>
+    <text x="720" y="802" font-size="13" fill="#CBD5E1">testimonial + upsell</text>
+  </g>
+
+  <!-- connectors funnel -> gate cards -->
+  <g stroke="#F59E0B" stroke-width="2" stroke-dasharray="5 4">
+    <line x1="1120" y1="210" x2="1198" y2="210"/>
+    <line x1="1060" y1="344" x2="1198" y2="344"/>
+    <line x1="1000" y1="478" x2="1198" y2="478"/>
+    <line x1="942"  y1="612" x2="1198" y2="612"/>
+    <line x1="905"  y1="746" x2="1198" y2="746"/>
+  </g>
+
+  <!-- ============ GATE CARDS (right) ============ -->
+  <g>
+    <rect x="1200" y="150" width="340" height="120" rx="12" fill="#ffffff" stroke="#F59E0B" stroke-width="1.5"/>
+    <text x="1220" y="182" font-size="11" font-weight="bold" fill="#B45309" letter-spacing="2">EXIT GATE</text>
+    <text x="1220" y="210" font-size="15" fill="#0F172A">Lead in CRM · score 0–20</text>
+    <text x="1220" y="232" font-size="15" fill="#0F172A">Channel VERIFIED (WhatsApp opened)</text>
+
+    <rect x="1200" y="284" width="340" height="120" rx="12" fill="#ffffff" stroke="#F59E0B" stroke-width="1.5"/>
+    <text x="1220" y="316" font-size="11" font-weight="bold" fill="#B45309" letter-spacing="2">EXIT GATE</text>
+    <text x="1220" y="344" font-size="15" fill="#0F172A">SQL: replied + BANT complete</text>
+    <text x="1220" y="366" font-size="15" fill="#0F172A">B·A·N·T all green (T ≤ 8 weeks)</text>
+
+    <rect x="1200" y="418" width="340" height="120" rx="12" fill="#ffffff" stroke="#F59E0B" stroke-width="1.5"/>
+    <text x="1220" y="450" font-size="11" font-weight="bold" fill="#B45309" letter-spacing="2">EXIT GATE</text>
+    <text x="1220" y="478" font-size="15" fill="#0F172A">Asks the price / requests</text>
+    <text x="1220" y="500" font-size="15" fill="#0F172A">changes / sets a call</text>
+
+    <rect x="1200" y="552" width="340" height="120" rx="12" fill="#ffffff" stroke="#F59E0B" stroke-width="2.5"/>
+    <text x="1220" y="584" font-size="11" font-weight="bold" fill="#B45309" letter-spacing="2">EXIT GATE  ★ DEAL IS REAL</text>
+    <text x="1220" y="612" font-size="15" font-weight="bold" fill="#0F172A">50% deposit paid</text>
+    <text x="1220" y="634" font-size="15" fill="#0F172A">FCFA 50,000 — MoMo / bank, receipt in CRM</text>
+
+    <rect x="1200" y="686" width="340" height="120" rx="12" fill="#ffffff" stroke="#F59E0B" stroke-width="1.5"/>
+    <text x="1220" y="718" font-size="11" font-weight="bold" fill="#B45309" letter-spacing="2">EXIT GATE</text>
+    <text x="1220" y="746" font-size="15" fill="#0F172A">Case study live + ≥ 1 referral</text>
+    <text x="1220" y="768" font-size="15" fill="#0F172A">→ back to Stage 1 (warm leads)</text>
+  </g>
+
+  <!-- ============ BOTTOM BAR ============ -->
+  <rect x="60" y="870" width="1480" height="84" rx="14" fill="#0F172A"/>
+  <!-- flywheel arc icon -->
+  <path d="M 120 928 A 20 20 0 1 1 140 912" fill="none" stroke="#FCD34D" stroke-width="3.5"/>
+  <polygon points="140,912 148,918 136,920" fill="#FCD34D"/>
+  <text x="170" y="906" font-size="15" font-weight="bold" fill="#FCD34D" letter-spacing="1">MONTH 1 OBJECTIVE — FIRST FCFA 100,000 IN 30 DAYS</text>
+  <text x="170" y="932" font-size="13" fill="#CBD5E1">2 founding-client slots · FCFA 100,000 — 50/50 — 3–5 days — EN|FR standard on every site · referral flywheel keeps the funnel warm</text>
+  <text x="1520" y="928" font-size="14" fill="#FCD34D" text-anchor="end" font-weight="bold" letter-spacing="2">AMK</text>
+</svg>
