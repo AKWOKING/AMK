@@ -61,6 +61,8 @@ Capture: Android screen recorder; portrait; slow taps; end on the WhatsApp pre-f
 
 ## §2 · COMOBIL / Groupe WAFO (Douala) — 18/20 A · KILL LIST · STAGE 2, SEND TODAY
 
+> **PARKED 14 Sep (King decision):** no WhatsApp, no AMK Facebook Page, email weak. Copy below stays queued — send within 48h if a Facebook Page is created, or use on a Douala walk-in. Revival triggers in Pipeline-Status.
+
 **Channel 1 (today):** Facebook Messenger → page id **100064111147236**. **Channel 2 (Wed if silent):** email comobil@yahoo.fr + same first message as FU1. No call (233 470 608 only if he proposes it). Concept ready: `demos/concept-comobil-v1.html`.
 
 **Message 1 (FR, paste):**

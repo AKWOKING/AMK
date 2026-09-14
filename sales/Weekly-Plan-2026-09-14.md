@@ -22,15 +22,10 @@
 4. Silence → FU1 Wed 16, FU2 Fri 18, FU3 Mon 21 (all pre-written in the pack).
 **Deposit target date:** Fri 19 Sep. **Worst case in window:** Mon 28 Sep (still live before 30 Sep).
 
-### ② COMOBIL / Groupe WAFO (Douala, FR) — 18/20 A · KILL LIST
-**Why it closes:** one man, Pierre WAFO, decides for five institutions. The official address comobil.com is a parked ad page and is linked from his own Facebook page. That is verified gold and the referral upside is the largest in the pipeline.
-**Where it is:** Stage 2, not contacted yet.
-**Concept (BUILT today, unblocking the send):** `demos/concept-comobil-v1.html` — forest-green/bone/amber (palette rotated away from the navy projects), FR default, 115 EN|FR pairs, all three sections (Générale, Technique, Anglo-saxonne), pension comprise, WAFO group page, 233 470 608 + comobil@yahoo.fr, admissions form on the AMK demo number with a visible kickoff swap note. Crest/photos are labeled placeholders.
-**Next actions:**
-1. **Today:** Messenger paste → Pack §2 (dead-domain observation, no sell, "may I send a preview?").
-2. Silent by Wed 09:00 → email comobil@yahoo.fr + FU1 on Messenger (M+2).
-3. "Yes" → attach `concept-comobil-v1.html` within 24h (same day ideally) → walkthrough → group angle: "the same system gives each of the five establishments its own front door" (never bulk-discount; scope/timing trade only).
-**Deposit target:** Tue 22 Sep (FR-market decisions usually move on the call itself).
+### ② ~~COMOBIL / Groupe WAFO (Douala, FR) — 18/20~~ · PARKED 14 Sep (King decision)
+
+> **Why it's parked (channel, not pain):** King verified the numbers are not on WhatsApp; Cameroon email is too weak to be plan A; he has no Facebook Page and chose not to create one this week; no Douala trip planned. Without a channel that gets read, the strongest expired-domain pain is unsellable right now. The FR concept stays built + hosted `/comobil/`, §2 message queued in the pack. **Revival triggers** (do the send within 48h of any): AMK Facebook Page created · a Douala trip scheduled · comobil.com fully dark/competitor re-registers · WAFO-network referral. #1 revival priority.
+
 
 ### ③ SJC Sasse (Buea) — 16/20 A · KILL LIST · loudest admissions campaign
 **Why it can close in September:** their 2026/27 admissions campaign and interview sessions are running **right now** on TikTok with no website to land on. Timing is the trigger; the principal-stands-alone path exists, with diocese as ratifier not blocker (King's confirmed model). A Sasse win also unlocks the entire Diocese of Buea portfolio (SAHISCOL, the dead colleges-gallery pages) and the SOBANS alumni network.
@@ -51,19 +46,20 @@
 | Day | Lead | Channel | Action |
 |---|---|---|---|
 | **Mon 14** | OraCare | WhatsApp | ✅ SENT (video/file double-bind). Now reply-watch. |
-| **Mon 14** | COMOBIL | Messenger 100064111147236 | Send first message (Pack §2) |
-| **Mon 14** | Sasse | TikTok DM + sajoscol@gmail.com | Send short DM + email (Pack §3) |
-| **Mon 14** | NHICHS | mehdi@nhiss.org + Messenger | Send email first (Pack §4) |
-| **Mon 14 (after phone check)** | SAHISCOL | WA 334 745 678 / Messenger / info@sahiscol.org | Send dead-site OR template-names variant (Pack §5) |
+| ~~Mon 14~~ | ~~COMOBIL~~ | — | **PARKED 14 Sep** — no reachable channel; revival triggers above |
+| **Tue AM 15** | Sasse | TikTok DM + sajoscol@gmail.com | Send DM + email (Pack §3); active TikTok = their channel |
+| **Tue 15** | NHICHS | mehdi@nhiss.org (email-only) | Send email (Pack §4); Messenger leg removed with FB decision |
+| ~~Mon 14~~ | ~~SAHISCOL~~ | — | **PARKED 14 Sep** — no WA reach + maintained template; concept hosted /sah/; triggers in Pipeline-Status |
 | **Tue 15** | OraCare / any replier | WhatsApp | BANT + concept handover same day any "yes" |
 | **Tue 15** | King | phone | Capture hero shots + record OraCare 30-sec video if requested |
-| **Wed 16 (M+2)** | all silent 5 | same channels | FU1 gentle nudge (pack, dated) |
-| **Thu 17** | COEL Limbe | Maps/FB recon | find a phone/email; French first-message ready in Pack §6 |
+| **Tue 15** | NEW batch | WhatsApp/TikTok | **8–10 channel-qualified D/E prospects** (WA mobile or active TikTok; prefer clinics with FB ads like OraCare) backfill paused leads |
+| **Thu 17 (M+2)** | OraCare silent? / Sasse + NHICHS | same channels | FU1 gentle nudge (pack, dated) — dates shift +2 for the Tue sends |
+| **Thu 17** | COEL Limbe | Maps/web directory recon (no FB needed to find a number) | find phone/WA/TikTok/email; French first-message ready in Pack §6 |
 | **Fri 18 (M+4)** | still silent | same channels | FU2 value-add (5-point parent checklist offer) |
 | **Sun 20** | review | — | schedule M+7 closes, prep Deep-Dive pages, write weekly report |
 | **Mon 21 (M+7)** | non-responders | same channels | FU3 graceful close, park with APERÇU/PREVIEW trigger |
 
-**Kill list (daily visible attention):** OraCare · COMOBIL · any fresh "yes". Sasse tracked daily while admissions campaign runs. La Retraite stays parked with its logged revival triggers.
+**Kill list after the 14 Sep channel decision:** OraCare · Sasse · NHICHS tracked with them · **+ any fresh yes**; the Tue batch must surface 2–3 channel-qualified additions by Thu. COMOBIL / SAHISCOL / La Retraite parked with logged triggers.
 
 ---
 
@@ -112,7 +108,7 @@ Three techniques, sourced and with concrete playbook fold-ins:
 
 ## 6 · Numbers I track against this week
 
-- Sent by Mon EOD: **5** · Replies target (15–25%): 1 · "Preview" grants: 1 · Demos sent: 1 (OraCare) → 3 by Sun if COMOBIL/Sasse answer.
+- Revised after 14 Sep channel pruning: active sends **3** (OraCare ✅, Sasse Tue AM, NHICHS Tue) + **8–10 fresh channel-qualified Tue batch**; reply target 1–2; preview grants 1; OraCare deposit still targeted Fri 19; Sasse fallback Mon 28. ~~COMOBIL Tue 22 deposit target withdrawn with the lead.~~
 - Deposits this week: **target 1 (OraCare, 50,000 FCFA)**. Anything else pulls the 30 Sep goal forward.
 - Tracker updated nightly in `leads/leads_50.xlsx` (Daily Tracker) and `leads/Daily Ops.csv`.
 

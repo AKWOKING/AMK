@@ -23,9 +23,9 @@ Any fresh "yes" joins this list immediately.
 | Lead | Score | Contacted | Reply | Concept | Next step / date |
 |---|---|---|---|---|---|
 | OraCare237 (Buea, clinic) | 18 A+ | ✅ 14 Sep WA | pending | ✅ v3 canonical | reply within 1h → branch sheet; FU1 Wed 16 |
-| COMOBIL / Groupe WAFO (Douala) | 18 A | **held — channel decision** (no WA, no FB on King side; landline/email weak) | pending | ✅ hosted /comobil/ | FB Page DM Wed OR Douala visit; decision 14 Sep |
+| ~~COMOBIL / Groupe WAFO (Douala)~~ | 18 | **PARKED 14 Sep by King decision** (no reachable channel: no WA, no FB, weak email) | — | ✅ hosted /comobil/ | see parked list for revival triggers |
 | SJC Sasse (Buea) | 16 A | today (TikTok DM + email) | pending | ✅ sjc-sasse v2 | FU1 Wed both channels |
-| NHICHS (Limbe) | 11 A | email Tue (Messenger leg gated on FB Page) | pending | ⛔ build on yes | FU1 Thu if silent |
+| NHICHS (Limbe) | 11 A | email Tue 15 (email-only for now) | pending | ⛔ build on yes | FU1 Thu if silent |
 | ~~SAHISCOL (Limbe)~~ | 9 | **PARKED 14 Sep** (no WA reach; maintained template site = filter) | — | ✅ hosted /sah/ | revival: site expiry/outage, admissions push, Limbe referral/diocese |
 | COEL (Limbe, FR) | 9 A | not yet (no contact found) | — | ⛔ build on yes | recon Thu 17 → FR first message |
 
@@ -47,6 +47,7 @@ Any fresh "yes" joins this list immediately.
 | La Semence (Douala) | 3 C | directory-only; verify or drop |
 
 ### Parked (GETS-THE-JOB-DONE filter; revival triggers logged)
+- **COMOBIL / Groupe WAFO (Douala, 18/20 — high pain, parked on CHANNEL not pain):** numbers not on WhatsApp (King-verified 14 Sep), landline 233 470 608, email weak in CMR, no AMK Facebook presence. Concept `concept-comobil-v1.html` stays built + hosted `/comobil/`; message queued in Outreach-Pack §2. Revival triggers (any one): (a) AMK Facebook Page created → Page DM within 48h (sheet ready: `AMK-Facebook-Page-Setup.md`); (b) a Douala trip is scheduled → walk-in with QR card; (c) comobil.com goes fully dark or is re-registered by a competitor; (d) referral via the WAFO/school network. Highest-priority revival on the board.
 - **SAHISCOL (Limbe, 9/20):** no WhatsApp (King-verified 14 Sep: 233/334 fixed lines), email is a weak channel in CMR, and the live site is a maintained template — park per GETS-THE-JOB-DONE filter. Concept stays built and hosted at /sah/; revival = same-day link when (a) the site expires/breaks, (b) a new admissions push lands with no working landing, (c) referral from another Limbe school or the diocese.
 - **La Retraite (Yaoundé, ~12/20):** board of elders risk + internally maintained site; concept built and held (`concept-la-retraite-v1.html`). Revive after 2–3 client proofs, Abbé Messi Mbarga's public digitalisation push, or inbound; lead with conversion (1,500 concours candidates).
 - **COSBINAL (Douala):** good Didacweb site — upsell (e-learning, EN|FR) list.
@@ -57,9 +58,9 @@ Any fresh "yes" joins this list immediately.
 ## Channel coverage (verified 14 Sep)
 - ✅ WhatsApp (King): primary, 90%+ of clinic targets, most schools' mobile numbers.
 - ✅ TikTok DM (King): active-posting schools (Sasse) — checked daily by whoever runs the account.
-- ⛔ Facebook/Messenger: **King has no profile/Page** — unreachable segment = schools whose only presence is a FB page (COMOBIL, NHICHS, PCSS Bonamoussadi, Divine Success…). Setup sheet: `sales/AMK-Facebook-Page-Setup.md`.
+- ⛔ Facebook/Messenger: **King decided 14 Sep NOT to create a Page for now** (setup sheet `sales/AMK-Facebook-Page-Setup.md` is written and ready if reversed). FB-only leads are parked/revival-listed, not worked.
 - ⚠️ Email: Cameroon weak channel; parallel leg only, never plan A (King judgment 14 Sep).
-- 🚶 In-person: allowed (not a cold call); strongest for a multi-school promoter; batch Douala leads into one morning.
+- 🚶 In-person: allowed (not a cold call); strongest for a multi-school promoter; batch Douala leads into one morning. Not planned this week (King decision).
 - New D/E sourcing rule (14 Sep): a lead needs a **reachable channel** (WA mobile · active TikTok · FB page) BEFORE scoring — landline-only + weak email = park even with an expired domain.
 
 ## Asset register (what exists to sell with)
@@ -81,6 +82,7 @@ Any fresh "yes" joins this list immediately.
 ## Log (newest first)
 - **Mon 14 Sep:** Orientation completed. OraCare msg 1 sent (King, video/file double-bind). Built oracare v3 (merged pricing + assistant), rebuilt sjc-sasse v2 (was missing despite docs claiming it existed), pre-built comobil v1. This week's plan, outreach pack, status file and W37 research written. 4 remaining first messages queued for today.
 - **Mon 14 Sep (evening):** King phone-verified: COMOBIL + SAHISCOL numbers are NOT on WhatsApp; email read rates in CMR too weak to be plan A; King has no Facebook. Decision raised. **AMK recommendation: park SAHISCOL** (maintained template + no reachable channel; /sah/ stays hosted; revival triggers logged); **keep COMOBIL via a 25-min AMK Facebook Page** (also unlocks NHICHS + ~half of school TAM; setup sheet written), warmup Tue, DM Wed; fallback = one batched Douala morning visit. Sasse unaffected (TikTok). New sourcing rule: channel reachability scored before domain pain. Awaiting King decision.
+- **Mon 14 Sep (night) — KING DECISION:** SAHISCOL parked as recommended; **COMOBIL also paused/parked** (AMK recommended the FB Page; King declined both Page and Douala trip for now). Kill list now OraCare + Sasse (+NHICHS email leg). Facebook sheet retained for a future reversal; COMOBIL is the #1 revival lead. Tuesday D/E batch must be channel-qualified (WA mobile / active TikTok) and backfill COMOBIL's volume; Tue 22 Sep deposit target withdrawn with the lead.
 - **Mon 14 Sep (EOD update):** King committed the full demo folder — his canonical `sjc-sasse-v2.html` (123 pairs, real chapel photo) + `sjc-sasse-chapel.jpg` + captured shots (`demos/shot-*.png`, `demos/shots/oracare-*`). AMK patched the Sasse form/footer channels (email routing; 677 195 500 is calls-only) via `demos/patch_sasse_channels.py`. Hosting model set: King self-hosts from `hosting/previews/` (built today). Earlier AMK alt Sasse build removed to avoid two files.
 - Sat 12 Sep: Deep-Dive v (6 leads), oracare/sah iscol/retraite concepts, Playbook v2.
 - Fri 11 Sep: OraCare clinic pilot researched; paid-ad pricing-question evidence captured.
