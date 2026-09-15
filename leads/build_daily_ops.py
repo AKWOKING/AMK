@@ -11,9 +11,9 @@ r("TUE 15 SEP — DIGITAL-FIRST, CLINICS FIRST (King: clinics have more potentia
 r("", "", "", "", "")
 r("① KILL LIST — hot leads get daily visible attention", "", "", "", "")
 r("Lead", "Why hot", "Next action (TODAY)", "Done?", "Re-check")
-r("⭐ Solidarity Clinic & Laboratory (Malingo/Molyko) — CLINIC #1",
-  "15/A · 24h clinic+lab+maternity+pharmacy · Google profile 4.0 stars/54 reviews/21 photos BUT no website/booking link attached ('Add website') · Drs Nde Fon Peter + Njang Mbeng Emmanuel · WA candidates 691 63 29 41 / 677 61 57 57 (number confirmed correct by King; WA-check tonight)",
-  "08:35 WhatsApp msg 1 (Clinic-Batch §1, updated): praises the 54 Google reviews, shows they dead-end at a phone number; asks which doctor receives preview. Yes -> nameless https://amk-cm.vercel.app/sample-clinic.html + clinic invite-choice; pitch: attach bilingual site+WA booking+same-day lab results to the Google profile, claim medicoor.", "☐", "Tue")
+r("⭐ Solidarity Clinic & Laboratory (Solidarity Health Foundation, Malingo/Molyko) — CLINIC #1",
+  "15/A · 24h not-for-profit clinic+lab+maternity+pharmacy founded 1998 · Google 4.0 stars/54 reviews/21 photos BUT no website/booking ('Add website') · founder Dr Peter Nde Fon DIED 2020, current director unknown (gatekeeper routing) · clinic line 677 61 57 57; 691 63 29 41 is Dr Njang's PERSONAL WA - DO NOT TEXT about Solidarity",
+  "08:35 WhatsApp msg 1 (Clinic-Batch §1, NO personal names) to clinic line 677 61 57 57 once King's WA-profile check confirms it answers as the clinic; asks for current medical director or clinic manager. Yes -> nameless /sample-clinic.html + invite-choice; pitch: attach bilingual site+WA booking+same-day lab results to the Google profile, claim stale medicoor page.", "☐", "Tue")
 r("⭐ Midas Touch Optic Center MITOC (Molyko-Malingo) — CLINIC #2",
   "12/B+ · full optician (refract, prescribe, mount lenses) · Facebook-only, invisible on Google · WA candidate 678 90 89 62 (FB intro), contact Ateasom Collins",
   "TONIGHT King WA-verifies 678 90 89 62. 08:35 WhatsApp msg 1 (Clinic-Batch §2). Yes -> sample-clinic link; named optic re-skin within 24h (eye-test booking, frames, FCFA lens prices).", "☐", "Tue")
@@ -69,7 +69,8 @@ r("· Wed PM / Thu / Fri: invited 10-min walkthroughs batched by quarter (Molyko
 r("· If silent after Wed sweep: FU follows M+2/M+4/M+7; no second uninvited visit. No email legs counted anywhere (King: rarely opened).", "", "", "", "")
 r("", "", "", "", "")
 r("④ TONIGHT PREP (Mon, 20 min)", "", "", "", "")
-r("· WA-verify CLINICS (highest value): Solidarity 691 63 29 41 and 677 61 57 57 (Drs Nde Fon Peter / Njang Mbeng Emmanuel, Malingo St), MITOC 678 90 89 62 — note profile name/photo. Optional: NHICHS 680 738 111 / 679 246 223.", "", "", "", "")
+r("· WA-verify CLINICS (highest value): Solidarity clinic line 677 61 57 57 (check profile photo/name answers AS THE CLINIC; 691 63 29 41 is Dr Njang personal - hold, do not text Solidarity pitch), MITOC 678 90 89 62. Optional: admin 677 61 12 07, NHICHS 680 738 111 / 679 246 223.", "", "", "", "")
+r("· Research accuracy: every prospect dossier now follows sales/RESEARCH-STANDARD.md (source tiers, named-person obituary/collision/current-role checks, number attribution labels, message claim audit). No name from a directory enters a message unverified.", "", "", "", "")
 r("· Schools already King-confirmed: 679 15 10 75 St Theresa, 677 87 53 95 Baird (677 78 04 05 discarded, not on WA), Baptist 679 65 07 07, PCSS 652 075 229, Kinang 675 533 321. bairdmemorial.com confirmed dead.", "", "", "", "")
 r("· REDEPLOY the site folder to the EXISTING amk-cm.vercel.app Vercel project (same folder/project as the agency site — NOT a separate project): includes sample-clinic.html, updated index.html clinic card, sitemap. Rebuild bundle: python3 hosting/build_samples.py.", "", "", "", "")
 r("· Print TWO A4 sheets of bilingual cards sales/walkin/walk-in-cards.html = 16 cards; prepare 6 envelopes (Baird now included if silent).", "", "", "", "")

@@ -15,7 +15,7 @@ Full per-school intelligence stays in [`Walk-In-Deep-Dives-2026-09-15.md`](Walk-
 ### ✅ SURE WhatsApp numbers (all personally confirmed on your phone, 14 Sep)
 | Target | Number | Whose line / note | Action |
 |---|---|---|---|
-| **Solidarity Clinic & Laboratory**, Malingo/Molyko ⭐ | **691 63 29 41 / 677 61 57 57** (number confirmed correct) | Drs **Nde Fon Peter** / **Njang Mbeng Emmanuel** (GPs); Google profile 4.0★/54 reviews, 24h, NO website attached | **King verifies WA tonight**; clinic msg 1 at **08:35** |
+| **Solidarity Clinic & Laboratory** (Solidarity Health Foundation), Malingo/Molyko ⭐ | clinic line **677 61 57 57** (King WA-profile check tonight); **691 63 29 41 = Dr Njang's personal WA, HOLD** | Founder Dr Peter Nde Fon DIED 2020; current director unknown (gatekeeper routing, no names in msg 1); Google 4.0★/54 reviews, 24h, NO website attached | Clinic msg 1 at **08:35** to clinic line only; full correction in Clinic-Batch §1 + RESEARCH-STANDARD |
 | **Midas Touch Optic Center**, Molyko-Malingo | **678 90 89 62** | Optic center line (from their FB page) | **King verifies tonight**; clinic msg 1 at **08:35** |
 | **Baptist Comp. College**, Great Soppo | **679 65 07 07** | School line from their own FB page (role unknown) | Message 1 at 09:00 |
 | **PCSS Buea** | **652 075 229** | Official school line (GPEN network listing) | Message 1 at 09:00 |
@@ -30,7 +30,7 @@ Full per-school intelligence stays in [`Walk-In-Deep-Dives-2026-09-15.md`](Walk-
 | Target | Number | Source | If on WhatsApp |
 |---|---|---|---|
 | **Solidarity Clinic, Molyko** | **691 63 29 41** | medicoor clinic profile | Clinic msg 1 at 08:35 |
-| **Solidarity Clinic, Molyko** | **677 61 57 57** | Google Business Profile + medicoor + Zenithe list | Clinic msg 1 at 08:35 |
+| **Solidarity Clinic, Molyko** | **691 63 29 41** (Dr Njang personal per King — do not use for Solidarity), **677 61 57 57** (clinic), 677 61 12 07 (UN registry admin, unverified) | GBP/medicoor/Zenithe/UN NGO registry | Only the clinic line 677 61 57 57 is messaged, after WA-profile confirmation |
 | **MITOC optic center, Molyko** | **678 90 89 62** | Their official Facebook page intro | Clinic msg 1 at 08:35 |
 | NHICHS Limbe | 680 738 111 / 679 246 223 | Directory mobiles (unverified) | If either is WA: Wednesday WhatsApp instead of email |
 | St. Theresa secondary (low confidence) | 677 36 19 11 | "For more info" on a 2022 YouTube clip — likely a media person | Do **not** pitch; 679 15 10 75 is the confirmed line |
@@ -143,7 +143,7 @@ The text remains in the deep dive if ever sent as a bonus; the planned first tou
 
 ## 5 · Tonight (20 minutes)
 1. ✅ School numbers 679 15 10 75 (St Theresa) and 677 87 53 95 (Baird) confirmed on WhatsApp; 677 78 04 05 discarded; bairdmemorial.com confirmed dead on your phone — all already applied above.
-2. **WhatsApp-verify the clinic batch (highest value check tonight):** Solidarity **691 63 29 41** and **677 61 57 57** (Drs Nde Fon Peter / Njang Mbeng Emmanuel), MITOC **678 90 89 62**. Note profile name/photo. Optionally try NHICHS **680 738 111** / **679 246 223**.
+2. **WhatsApp-verify the clinic batch (highest value check tonight):** Solidarity **clinic line 677 61 57 57** (confirm the profile answers AS THE CLINIC; 691 63 29 41 is Dr Njang's personal line, hold it), MITOC **678 90 89 62**. Note profile name/photo. Optionally try NHICHS **680 738 111** / **679 246 223**.
 3. **Redeploy the site folder to the existing `amk-cm.vercel.app` Vercel project** (same project as the agency site — the clinic concept `sample-clinic.html` and updated `index.html` must go up; no separate project).
 4. Print **two A4 sheets** of the bilingual cards (`sales/walkin/walk-in-cards.html`), cut 16, and have 6 envelopes for Wednesday (Baird now also gets one if WhatsApp stays silent).
 5. Read [`Clinic-Batch-2026-09-15.md`](Clinic-Batch-2026-09-15.md) and [`Walk-In-Deep-Dives-2026-09-15.md`](Walk-In-Deep-Dives-2026-09-15.md) per target you message, so replies get personalized answers. No email steps remain on the clock.

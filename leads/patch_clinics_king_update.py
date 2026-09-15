@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """15 Sep update: King's WA verifications + clinic batch (Solidarity, MITOC).
 Idempotent: run repeatedly, rows matched by ID."""
+import sys
+raise SystemExit("SUPERSEDED 15 Sep: Solidarity facts corrected by patch_solidarity_leadership.py (founder deceased; Njang unconfirmed). Do not rerun this script. Kept for history.")
 import openpyxl, pathlib
 
 P = pathlib.Path(__file__).resolve().parent / "leads_50.xlsx"

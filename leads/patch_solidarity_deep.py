@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """15 Sep deep recheck of Solidarity: corrected doctor name + Google profile facts."""
+import sys
+raise SystemExit("SUPERSEDED 15 Sep: Solidarity facts corrected by patch_solidarity_leadership.py (founder deceased; Njang unconfirmed). Do not rerun this script. Kept for history.")
 import openpyxl, pathlib
 
 P = pathlib.Path(__file__).resolve().parent / "leads_50.xlsx"
