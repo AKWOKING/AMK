@@ -4,7 +4,7 @@ Companion to [`Walk-In-Batch-2026-09-15.md`](Walk-In-Batch-2026-09-15.md). **Seq
 
 **Two research-forced route changes (read first):**
 - **Inter Comprehensive HS is OUT.** It is in a public ownership lawsuit (founder vs late administrator's family — see disqualified note at the end). No single decision-maker; selling into a disputed school is a waste and a risk. Replaced by **Bishop Jules Peters Memorial College, Bokwaongo** (Catholic diocesan, active, no site, on the same uphill loop).
-- **Baird Memorial is now a FULL PITCH — conditional resolved by King on 14 Sep:** bairdmemorial.com confirmed **dead on his phone**; **677 87 53 95 confirmed on WhatsApp**; **677 78 04 05 is NOT on WhatsApp, discarded**. WhatsApp msg 1 goes Tuesday 16:00 (replan §4); card left Wednesday only if WhatsApp silent. The conditional logic in section ⑥ is retained as research record only. No email leg counted (King: emails rarely opened).
+- **Baird Memorial — GO GRANTED by King 15 Sep afternoon ("proceed"):** site **dead** (his phone 14 Sep; re-verified 15 Sep 13:35 — DNS no longer resolves); **677 87 53 95 confirmed on WhatsApp but a personal line (man's photo)**; **677 78 04 05 discarded**. Their old site names a **proprietress (Madam Mary Forju)** — never name her, never reference the photo; msg stays neutral and attaches `demos/shots/mockup-secondary.png` first (final text replan §4). Card left Wednesday only if WhatsApp silent. The conditional logic in section ⑥ is retained as research record only. No email leg counted (King: emails rarely opened).
 
 ---
 
@@ -157,14 +157,15 @@ Sources: concourscameroon.com 2020 GCE results · camgceb.org/cameroongcerevisio
 | Location | Behind the public tap, Bonduma; P.O. Box 403 Buea |
 | GCE centre | **11489** (small: 20–40 candidates) |
 | Published contacts | **677 87 53 95 · 677 78 04 05 · 99 83 74 79** (visitor-submitted directory entry paired with P.O. Box 403 — plausible admin lines; King to WA-check profile attribution tonight) · bairdmemorial@yahoo.com |
-| Web presence | ⚠️ **A self-built website exists: bairdmemorial.com** — copy on it reads "bording", "Accademic services"; **it could not be opened from outside tonight** (down or blocking) |
+| Web presence | ⚠️ **A self-built site existed at bairdmemorial.com** (Home + /about-us/ indexed in Google; "New look in 2024" refresh claimed; typos "bording", "Accademic"); **same-day recheck 15 Sep 13:35: DNS no longer resolves for apex or www, all 4 http variants fail** (control hosts resolve fine) — domain/hosting has lapsed, but Google still surfaces the dead pages |
 | Visibility | Active in inter-school events (CSDC Buea 2025 report) |
+| Ownership intel (from their OWN site copy, Tier B self-published) | Site named **Madam Mary Forju as "School Proprietress"** and a **Mr. Ndichafah Fredrick** (role unclear); accreditation line cites **MINESEC Order No. 257/16**; address variants "Watolo, 600 m from GCE Board, Bonduma"; extra published numbers 652 24 80 21 / 677 16 98 66 / 673 40 40 69 and emails bairdmemorialhsc@gmail.com / bairdmemorialcol@yahoo.com / bairdmemorialbonduma@outlook.com — **do not open these channels unprompted**; record only |
 
-**RESOLVED 14 Sep (King's phone):** site **dead**, 677 87 53 95 **on WhatsApp**, 677 78 04 05 **not on WhatsApp (discard)**. The full-pitch branch below is the live one: Tuesday 16:00 WhatsApp msg 1 (replan §4), Wednesday sealed card only if the line stays silent; visit by invitation.
-- **Full pitch (LIVE):** *"I tried bairdmemorial.com again this morning and it still does not open. Parents browsing tonight hit the same wall."* Ask who built it and when it was last touched; lead with the nameless sample on any yes.
+**RESOLVED 14 Sep (King's phone) + re-verified 15 Sep 13:35 (AMK side: DNS dead, not merely blocking):** site **dead**, 677 87 53 95 **on WhatsApp but a PERSONAL line with a man's profile photo**, 677 78 04 05 **not on WhatsApp (discard)**. Note: the proprietor their own site names is a **woman** (Madam Mary Forju), so the man on the 95 handset may be the principal, a bursar or family — exactly why msg 1 asks "the proprietor or the principal?" and never assumes. **King granted the send ("proceed", 15 Sep afternoon)** — pack in replan §4, image first. Wednesday sealed card only if the line stays silent; visit by invitation.
+- **Full pitch (LIVE, accuracy-locked 15 Sep):** *"I tried bairdmemorial.com again today — it is offline and does not open, so the Baird links that still appear in Google currently lead parents nowhere."* Do NOT say "parents find nothing at all" — false; Google still indexes the dead pages. On a warm reply, ask who built it and when it was last touched; never mock the old copy; lead with the mockup + live sample.
 - **Parked alternative (only if the site ever comes back to life):** compliment the effort, leave the card, one soft line — *"If you ever want it bilingual with WhatsApp admissions, here's my number"* — and treat as an upsell/refresh lead.
 
-Sources: all-about-cameroon-today.com submission-center visitor entry (address, phones, email) · bairdmemorial.com (about-us copy, spelling) · baselineoratorsnetwork CSDC Buea 2025 PDF · camgceb.org centre lists.
+Sources: all-about-cameroon-today.com submission-center visitor entry (address, phones, email) · Google index of bairdmemorial.com Home + /about-us/ (proprietress name, 2024 refresh, MINESEC order, extra contacts; page itself unreachable 15 Sep) · baselineoratorsnetwork CSDC Buea 2025 PDF · camgceb.org centre lists.
 
 ---
 

@@ -45,10 +45,18 @@ node run.js                 # all jobs
 node run.js secondary       # one job  -> out/mockup-secondary.png
 ```
 
-Promote a composed mockup to the committed deliverables folder when it accompanies a send:
+Promote a composed mockup to the committed deliverables folder when it accompanies a send,
+and make the WhatsApp-send JPEG (1600 long edge, ~160-180 KB, avoids WA recompression mush):
 
 ```bash
 cp out/mockup-secondary.png ../../demos/shots/
+python3 - <<'EOF'
+from PIL import Image
+for name in ["secondary","clinic","mitoc"]:
+    im = Image.open(f"../../demos/shots/mockup-{name}.png").convert("RGB")
+    im.resize((1600, 900), Image.LANCZOS).save(
+        f"../../demos/shots/mockup-{name}-wa.jpg", quality=88, optimize=True, progressive=True)
+EOF
 ```
 
 ## Notes / gotchas
