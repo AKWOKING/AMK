@@ -29,9 +29,9 @@ r("Baptist Comp. College Great Soppo — SENT, NOW LOW-PRIORITY",
 r("PCSS Buea — PARKED BEFORE SEND (BOARD-BUYER)",
   "12/B+ · 700 boarders, founded 1993 · no site (deliberate network pattern: no PCC secondary in CM has one) · WA 652 075 229 = business acct, Namondo Elangwe (likely principal, cannot sign)",
   "DO NOT SEND msg 1; Kinang door-opener CANCELLED (no staff end-runs). Future play only: one network-level proposal to PCC Christian Education Secretary AFTER the 30 Sep founder push. Error log RESEARCH-STANDARD #2.", "☑", "Tue")
-r("St. Theresa STIBCCOL Molyko — REPLIED Tue 20:44 (soft objection), SOFT-ACK SENT",
-  "14/A · ~128 GCE candidates · official GCE Board 2026 marking centre (camgceb.org) · WA 679 15 10 75 · chat has 24h DISAPPEARING messages (logged verbatim in leads_50 row 27)",
-  "They say a site is 'in the making, ready by October… already late'. King sent soft-ack: congrats, fees+WA-admissions+bilingual checklist, free second opinion if it slips, asked to check back at launch. NO link/mockup pushed; TikTok fallback CANCELLED (engaged on WA). FU Wed 14 Oct (is it live? free review) → FU2 Wed 4 Nov if silent → stop.", "☑", "Tue")
+r("St. Theresa STIBCCOL Molyko — REPLIED 20:44, SOFT-ACK SENT by King 22:25 (screenshot-confirmed)",
+  "14/A · ~128 GCE candidates · official GCE Board 2026 marking centre (camgceb.org) · WA 679 15 10 75 · chat timer 24h->90 days changed by King (verbatim logged in leads_50 row 28/ID27)",
+  "They say a site is 'in the making, ready by October… already late'. King sent the approved soft-ack at 22:25 (congrats, fees+WA-admissions+bilingual checklist, free second opinion if it slips, permission to check back at launch) and changed the chat timer 24h -> 90 days, so history is retained. NO link/mockup pushed; TikTok fallback CANCELLED. FU Wed 14 Oct (is it live? free review) → FU2 Wed 4 Nov if silent → stop.", "☑", "Tue")
 r("Baird Memorial Bonduma — SENT 14:41, awaiting delivery",
   "bairdmemorial.com DNS-DEAD (13:35 recheck; Google indexes the dead pages; live text kept King's stronger 'find nothing at all' phrasing as he sent it) · WA 677 87 53 95 = PERSONAL line, man's photo; their own old site names PROPRIETRESS Madam Mary Forju (never name her, never reference the photo) · 677 78 04 05 discarded",
   "SENT by King 14:41 (mockup image + msg 1, single tick so far). 1h watch to 21:00. Warm reply -> live /sample-secondary.html + bilingual caption + Thu/Fri walkthrough choice. Silent -> sealed card in Wed Limbe sweep; FU cadence M+2/M+4/M+7 OWNER-BUYER only after the card.", "☑", "Wed")
@@ -53,7 +53,7 @@ r("Lead", "Last activity", "Next step", "Due", "Done?")
 r("OraCare237", "Mon 14 msg 1 sent; no reply yet", "§1 branches; silence → FU1 Wed 16.", "Wed", "☐")
 r("Tue clinics: MITOC SENT 08:35 (two ticks, awaiting; FU1 Thu 17). Solidarity: front line not on WA → check admin 677 61 12 07 (profile must answer as the clinic; attach demos/shots/mockup-clinic-wa.jpg) else Wed sealed card", "MITOC out; Solidarity routing open",
   "Yes → /clinic-bonaberi.html (LIVE demo; King accepts the partial rename; always with the 'every name is a placeholder' caption; MITOC uses mitoc-concept.vercel.app) + clinic invite-choice ('10 minutes with the doctor Thu/Fri morning, or all here on WhatsApp?'); named concept within 24h; answers within 1h.", "Tue", "☐")
-r("Tue schools: Baptist SENT→inbound only (BOARD); PCSS PARKED (BOARD); St Theresa REPLIED 20:44 soft objection (site in the making, October) → soft-ack sent, FU 14 Oct, no chase; Baird GO — image-first pack ready for King's tap", "Baird in King's hand; St Theresa parked warm",
+r("Tue schools: Baptist SENT→inbound only (BOARD); PCSS PARKED (BOARD); St Theresa REPLIED 20:44 → King soft-ack SENT 22:25 (timer set 90 days), FU 14 Oct, no chase; Baird GO — image-first pack ready for King's tap", "Baird in King's hand; St Theresa parked warm",
   "Baird warm yes → nameless /sample-secondary.html (LIVE, verified) with bilingual-toggle caption + invite-choice Thu/Fri (Baird already has the image; link is next). Named concept within 24h for warm specific requests; answers within 1h.", "Tue", "☐")
 r("SJC Sasse", "TikTok DM 07:45 Tue", "Watch TikTok inbox; invite visit only.", "Tue", "☐")
 r("Wed card-drop inbound scans", "Cards dropped Wed AM",
