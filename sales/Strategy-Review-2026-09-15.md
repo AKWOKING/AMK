@@ -241,16 +241,18 @@ client names · named previews private, public assets nameless.
 King answered the five questions after reading the review and added his own
 directives. Final positions:
 
-**D1 · Geography — Douala clinics YES, remote-first (King didn't understand
-the question, so here it is plainly).** "Remote" means: we target
-Douala clinics/labs/opticians **by WhatsApp and links only — no travel, no
-walk-in cards, no transport cost**. Everything we deliver (mockup image,
-named preview on a Vercel link, payments by MoMo, launch + handoff video)
-already works without a meeting; the Bonabéri clinic concept is built. Buea
-keeps the local advantage (sealed cards, same-boda loops, walkthroughs in
-person); **Douala schools are NOT prospecting targets this quarter** — their
-buying happens on the ground and we'd spend cards for nothing. If a Douala
-school finds AMK inbound (TikTok/IG/Status/referral), we serve it.
+**D1 · Geography — SUPERSEDED same evening by King: "open everything
+remotely, independent of location" (final position).** All prospecting and
+delivery are **remote-first nationwide — any Cameroonian city or town
+(Clinics/labs/opticians AND schools)**, by WhatsApp, preview links,
+TikTok/IG inbound and MoMo. No travel, no transport cost; everything we
+deliver (mockup image, named preview on a Vercel link, payment, launch +
+handoff video, front-door setup guided by screenshots) works without a
+meeting. Buea keeps its OPTIONAL local edge (the Wed sealed-card sweep,
+same-boda loops, in-person walkthroughs when useful) — it is no longer the
+geographic boundary. Target lists expand city by city from the Google-Maps
+sweep SOP (Douala → Yaoundé → Bafoussam/Bamenda/Kumba etc.), each city
+treated as a WhatsApp/links territory, not a travel plan.
 **D2 · Named-first gifts: APPROVED, clinics first.** Hot list of 5–12
 owner-buyer clinics/labs; semi-named 60–90 min concepts (real name/crest
 pulled from their Google/Facebook, DEMO prices/photos, accuracy law on every

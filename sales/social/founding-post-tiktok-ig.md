@@ -6,12 +6,26 @@ never name a real client without consent, no fake scarcity (the two slots are
 real), link-in-bio = https://amk-cm.vercel.app, DMs move to WhatsApp
 (+237 677 78 96 31). Same 09:00–21:00 reply window as WhatsApp.
 
+## 0 · READY-MADE VIDEOS (produced by AMK, 15 Sep evening)
+
+Four finished 1080×1920, 29 s silent MP4s are in `sales/social/videos/`:
+`clinic-founding-en.mp4`, `clinic-founding-fr.mp4`,
+`school-founding-en.mp4`, `school-founding-fr.mp4` (+ `-cover.jpg`
+thumbnails each). They follow the hook→reveal→features→phone pan→WhatsApp→
+2-slots CTA structure below. King posts; captions/hashtags in A. Add
+trending sound in-app after upload (silent is deliberate so captions read).
+Posting order: clinic EN → clinic FR (or single post with bilingual
+caption) → school versions 3–4 days later. Repost every video to **YouTube
+Shorts** (Google AI Overviews cite YouTube; title/caption templates in
+`Playbook-Addendum-2-SEO` §5) and mirror to FB Page + Status.
+
 ## A · TikTok video #1 (do this one first — highest expected reach)
 
-**Format:** 20–30 s screen recording of the clinic demo
-(clinic-bonaberi.html) on a phone/laptop, EN then FR text overlays. No voice
-needed; trending gentle audio. Free screen recording on phone; keep it
-vertical 9:16.
+**Format (superseded by the finished MP4s in §0 — kept as the live-action
+recording guide if King later wants a real screen scroll):** 20–30 s screen
+recording of the clinic demo (clinic-bonaberi.html) on a phone/laptop, EN
+then FR text overlays. No voice needed; trending gentle audio. Free screen
+recording on phone; keep it vertical 9:16.
 
 **Shot list (≈25 s):**
 1. (0–3 s) Phone opens Google Maps on a clinic with reviews and no website —
