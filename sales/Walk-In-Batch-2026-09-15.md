@@ -38,9 +38,9 @@ Never name another school. Never quote a competitor. Pain lines below use only v
 
 | Number | School | If it IS on WhatsApp |
 |---|---|---|
-| **679 65 07 07** ✅ on WA | Baptist Comp. College (number on the college's own FB page = official school line, role unknown) | send the directed message below at 08:30, then still walk in after lunch |
-| **652 075 229** ✅ on WA | PCSS official line (self-listed on the global Protestant schools network) | send directed message 08:30; walk in after lunch |
-| **675 533 321** ✅ on WA | **Kinang Edwin Ngenge, PCSS staff/network contact (a teacher, NOT the principal)** | only text if the official line gives no steer: "who is the right person?" |
+| ~~679 65 07 07~~ | Baptist Comp | SENT 15 Sep ~12:00 (one tick); BOARD-BUYER → inbound only, no walk-in |
+| ~~652 075 229~~ | PCSS (Namondo Elangwe, likely principal) | **PARKED before send (BOARD-BUYER); no message** |
+| ~~675 533 321~~ | Kinang (PCSS teacher) | **CANCELLED end-run text** |
 | **677 87 53 95 / 677 78 04 05** | Baird Memorial (directory-listed with their P.O. Box) | WA-check tonight; text 08:30 ONLY if bairdmemorial.com is dead on your phone |
 
 For every chat: check the WhatsApp **profile photo / name / About** tonight (logo = school line; personal name = an individual). The 08:30 messages ask to be **directed to the principal** — they no longer assume you have the decision-maker. None of these replaces the walk-in; the gate captures the principal's personal number.
@@ -82,6 +82,8 @@ For every chat: check the WhatsApp **profile photo / name / About** tonight (log
 - ⚠️ **It already has a self-built website, bairdmemorial.com** (spelling errors, and it did not open from outside tonight). Phone-check tonight: **dead/broken → full pitch** ("I tried opening it before coming; it's not loading"); **loads fine → card + one soft compliment, park as refresh/upsell**, never criticise a working site at the gate. Full detail in the deep-dive file.
 
 ### LOOP 2 — GREAT SOPPO (13:45 onward)
+
+> ⛔ **SUPERSEDED 15 Sep (King): Baptist Comp, PCSS and Bishop Jules Peters are BOARD-BUYERS (missionary/diocesan; principal cannot sign; PCC network deliberately website-free). No walk-in, no cold card, no counted FU. These gates are skipped entirely; the Wednesday sweep covers lay schools only. Kept below for the record.**
 
 **⑦ Baptist Comprehensive College — Great Soppo**
 - Facts: GCE centre 11708; mobile **679 65 07 07** from their own Facebook page (WA-check tonight); email bgccbuea@yahoo.com; no website found. Baptist confessional.

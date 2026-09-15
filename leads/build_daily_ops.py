@@ -20,15 +20,15 @@ r("⭐ Midas Touch Optic Center MITOC (Molyko-Malingo) — CLINIC #2",
 r("OraCare237 (Buea) — CLINIC PILOT",
   "18/20 · msg 1 sent Mon · no reply yet · v3 LIVE https://oracare-concept.vercel.app/",
   "REPLY-WATCH all day (1h rule). Silent → FU1 Wed 16 (pack §7). If he replies: branch sheet pack §1; send live v3 link.", "☐", "daily")
-r("SJC Sasse (Buea) — KILL LIST #2",
+r("SJC Sasse (Buea) — KILL LIST #2 · BOARD-BUYER (Catholic diocesan, King 15 Sep)",
   "16/20 · active TikTok admissions · concept LIVE https://sjc-sasse-concept.vercel.app/",
-  "07:45: TikTok DM @saintjosephcollegesasse (pack §3; no email counted). Visit only if they invite one.", "☐", "Tue")
-r("Baptist Comp. College Great Soppo — NEW",
+  "07:45 TikTok DM treated as inbound seed only; no FU chase — bishop/diocesan education office decides. Network-level future play post founder-clients.", "☐", "Tue")
+r("Baptist Comp. College Great Soppo — SENT, NOW LOW-PRIORITY",
   "12/B+ · GCE 11708 · no site · SURE WA 679 65 07 07 (King-confirmed, school FB-page line)",
-  "09:00 WhatsApp msg 1 (replan §4) → yes = nameless sample link + invite-choice (Thu/Fri walkthrough vs WhatsApp). Baptist protocol: principal then education office.", "☐", "Tue")
-r("PCSS Buea — NEW",
-  "12/B+ · 700 boarders, founded 1993 · no site · SURE WA 652 075 229 (official) + champion teacher Kinang 675 533 321",
-  "09:00 WhatsApp msg 1 (replan §4, boarding angle). No steer by noon → Kinang door-opener text; 15:30 resend if silent. Visit by invitation; Presbyterian education office ratifies.", "☐", "Tue")
+  "MSG 1 SENT ~12:00 Tue (one tick). RECLASSIFIED BOARD-BUYER 15 Sep (King: Baptist mission, principal cannot sign). Inbound only: NO FU chase, NO cold walk-in; if they reply, equip contact to forward to Baptist education office/board.", "☑", "Tue")
+r("PCSS Buea — PARKED BEFORE SEND (BOARD-BUYER)",
+  "12/B+ · 700 boarders, founded 1993 · no site (deliberate network pattern: no PCC secondary in CM has one) · WA 652 075 229 = business acct, Namondo Elangwe (likely principal, cannot sign)",
+  "DO NOT SEND msg 1; Kinang door-opener CANCELLED (no staff end-runs). Future play only: one network-level proposal to PCC Christian Education Secretary AFTER the 30 Sep founder push. Error log RESEARCH-STANDARD #2.", "☑", "Tue")
 r("St. Theresa STIBCCOL Molyko — NEW",
   "14/A · ~128 GCE candidates, fees 181-237k · active TikTok @stibccol (to 14 Sep) · SURE WA 679 15 10 75 (King-confirmed)",
   "15:45 WhatsApp msg 1 (replan §4, afternoon slot). TikTok DM @stibccol becomes WEDNESDAY second touch only if WA stays silent.", "☐", "Tue")
@@ -53,7 +53,7 @@ r("Lead", "Last activity", "Next step", "Due", "Done?")
 r("OraCare237", "Mon 14 msg 1 sent; no reply yet", "§1 branches; silence → FU1 Wed 16.", "Wed", "☐")
 r("Tue 08:35 clinics (MITOC FIRST: Solidarity front line 677 61 57 57 not on WhatsApp -> admin-line recheck, else Wed sealed card)", "Going out 08:35 Tue",
   "Yes → https://amk-cm.vercel.app/sample-clinic.html + clinic invite-choice ('10 minutes with the doctor Thu/Fri morning, or all here on WhatsApp?'); named concept within 24h; answers within 1h.", "Tue", "☐")
-r("Tue schools (Baptist 09:00, PCSS 09:00, St Theresa 15:45, Baird 16:00)", "Going out Tue",
+r("Tue schools (Baptist sent→inbound only; PCSS PARKED board-buyer; St Theresa 15:45 + Baird 16:00 = both LAY private, go as planned)", "Going out Tue",
   "Yes → matching nameless /sample-secondary.html link + invite-choice Thu/Fri; named concept within 24h for warm specific requests; questions answered within 1h.", "Tue", "☐")
 r("SJC Sasse", "TikTok DM 07:45 Tue", "Watch TikTok inbox; invite visit only.", "Tue", "☐")
 r("Wed card-drop inbound scans", "Cards dropped Wed AM",
@@ -62,7 +62,7 @@ r("GBP verification", "UNDER REVIEW", "Keep 677 789 631 reachable; check weekly.
 r("", "", "", "", "☐")
 r("", "", "", "", "")
 r("③ WED 16 — ASYNC CARD-DROP SWEEP (~1h, NO meetings; invitations only after)", "", "", "", "")
-r("· Numberless gates, one boda loop: St Bernard (Garden Park, opp Orange, attn Dr Fomba) → Salvation (near CUIB) → Summerset (Check Point Wokoko opp ENAMEN Pharmacy, attn Principal Tata) → NABESK (Nabesk junction) → Baird (Bonduma road; card only because WA stayed silent).", "", "", "", "")
+r("· Numberless gates, one boda loop: St Bernard (Garden Park, opp Orange, attn Dr Fomba — VERIFY lay founder vs diocesan at gate before pitching) → Salvation (near CUIB — VERIFY possibly faith-founded governance) → Summerset (Check Point Wokoko opp ENAMEN Pharmacy, attn Principal Tata; LAY, keep) → NABESK (Nabesk junction; LAY, keep) → Baird (Bonduma road; card only because WA stayed silent; LAY). SKIP missionary/diocesan gates: St Sylvester, Bishop Jules (BOARD-BUYER, King 15 Sep).", "", "", "", "")
 r("· Sealed envelope 'For: the Principal', handwritten bilingual line on card back (replan §3); capture gate-staff name + any mobile; never wait for the principal.", "", "", "", "")
 r("· St Sylvester Muea only if already in Muea; Bishop Jules Bokwaongo folds into an invited Great Soppo trip (do not cold-drop a diocesan college).", "", "", "", "")
 r("· Wed PM / Thu / Fri: invited 10-min walkthroughs batched by quarter (Molyko clinics/schools one trip, Wokoko one trip, Great Soppo/Bokwaongo one trip); confirm the decision-maker is present before leaving home.", "", "", "", "")
@@ -71,7 +71,7 @@ r("", "", "", "", "")
 r("④ TONIGHT PREP (Mon, 20 min)", "", "", "", "")
 r("· WA-verify: DONE Solidarity 677 61 57 57 NOT on WA (admin 677 61 12 07 still to check, else Wed sealed card); DONE MITOC 678 90 89 62 = ORG Business account MITOC with catalogue, hours 09:00-18:00, bio adds lens accessories + computer/swimming glasses. Named preview LIVE: https://mitoc-concept.vercel.app (send after warm yes). 691 63 29 41 stays Dr Njang personal - hold.", "", "", "", "")
 r("· Research accuracy: every prospect dossier now follows sales/RESEARCH-STANDARD.md (source tiers, named-person obituary/collision/current-role checks, number attribution labels, message claim audit). No name from a directory enters a message unverified.", "", "", "", "")
-r("· Schools already King-confirmed: 679 15 10 75 St Theresa, 677 87 53 95 Baird (677 78 04 05 discarded, not on WA), Baptist 679 65 07 07, PCSS 652 075 229, Kinang 675 533 321. bairdmemorial.com confirmed dead.", "", "", "", "")
+r("· Schools already King-confirmed: 679 15 10 75 St Theresa (LAY, 15:45), 677 87 53 95 Baird (LAY, 16:00; 677 78 04 05 discarded), Baptist 679 65 07 07 (SENT, board-buyer inbound only), PCSS 652 075 229 (PARKED, board-buyer; Kinang 675 533 321 cancelled). RULE (King 15 Sep): missionary/confessional secondaries = BOARD-BUYER like government; principal can't sign (education secretary/moderator/board); no counted slots.", "", "", "", "")
 r("· REDEPLOY the site folder to the EXISTING amk-cm.vercel.app Vercel project (same folder/project as the agency site — NOT a separate project): includes sample-clinic.html, NAMED MITOC preview mitoc.html (send ONLY after MITOC warm-yes; link https://amk-cm.vercel.app/mitoc.html), updated index.html clinic card, sitemap. Rebuild bundle: python3 hosting/build_samples.py.", "", "", "", "")
 r("· MITOC named concept READY: site/mitoc.html (Cobalt+Cream sheet C, EN|FR 140 pairs, 9 concept photos, WA booking demo-routed to AMK, ref MIT-XXXX). After warm yes: send link, then offer 10-min shop visit vs all-on-WhatsApp.", "", "", "", "")
 r("· Print TWO A4 sheets of bilingual cards sales/walkin/walk-in-cards.html = 16 cards; prepare 6 envelopes (Baird now included if silent).", "", "", "", "")

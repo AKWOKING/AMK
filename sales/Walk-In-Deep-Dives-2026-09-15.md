@@ -170,7 +170,7 @@ Sources: all-about-cameroon-today.com submission-center visitor entry (address, 
 
 # LOOP 2 — GREAT SOPPO / BOKWAONGO
 
-## ⑦ Baptist Comprehensive College — Great Soppo · ID 32 · **12/B+**
+## ⑦ Baptist Comprehensive College — Great Soppo · ID 32 · **12/B+ · ⛔ RECLASSIFIED BOARD-BUYER 15 Sep (King): Baptist Mission school, principal cannot sign; msg 1 already sent 15 Sep → inbound only, no chase, no cold walk-in; future play via Baptist education office/board**
 
 | | |
 |---|---|
@@ -208,7 +208,7 @@ Sources: bueadiocese.org "Bishop Michael Bibi visits Bishop Jules Peters Memoria
 
 ---
 
-## ⑨ Presbyterian Comprehensive Secondary School (PCSS) Buea — Great Soppo · ID 18 · **12/B+**
+## ⑨ Presbyterian Comprehensive Secondary School (PCSS) Buea — Great Soppo · ID 18 · **12/B+ · ⛔ PARKED 15 Sep BEFORE send (King): BOARD-BUYER — PCC Education Secretary/Synod/board decide; no PCC secondary in Cameroon has a website (network policy, not neglect); no msg, no Kinang end-run; future = one network-level proposal after the founder-client push**
 
 | | |
 |---|---|

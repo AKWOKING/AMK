@@ -19,7 +19,7 @@ Full per-school intelligence stays in [`Walk-In-Deep-Dives-2026-09-15.md`](Walk-
 | **Midas Touch Optic Center**, Molyko-Malingo | **678 90 89 62** | WhatsApp BUSINESS account "MITOC" (King-verified 15 Sep; catalogue live, 09:00-18:00) | First clinic msg 1; named preview live https://mitoc-concept.vercel.app after warm yes |
 | **Baptist Comp. College**, Great Soppo | **679 65 07 07** | School line from their own FB page (role unknown) | Message 1 at 09:00 |
 | **PCSS Buea** | **652 075 229** | Official school line (GPEN network listing) | Message 1 at 09:00 |
-| PCSS internal champion: **Kinang Edwin Ngenge** (teacher) | **675 533 321** | Named staff, not the decision-maker | Door-opener text only if the official line gives no steer by noon |
+| ~~PCSS internal champion: Kinang Edwin Ngenge (teacher)~~ | 675 533 321 | Named staff, not decision-maker | **CANCELLED 15 Sep: PCSS parked as BOARD-BUYER (King); no end-run texts to staff** |
 | **St. Theresa (STIBCCOL), Molyko** | **679 15 10 75** | Official FB page intro — **CONFIRMED on WhatsApp** | Message 1 Tue 15:45 (after school-line sends) |
 | **Baird Memorial, Bonduma** | **677 87 53 95** | Directory line w/ their P.O. Box — **CONFIRMED on WhatsApp**; other number 677 78 04 05 NOT on WA, discarded | **bairdmemorial.com confirmed DOWN on your phone → full pitch**, message Tue 16:00 |
 
@@ -53,10 +53,10 @@ Full per-school intelligence stays in [`Walk-In-Deep-Dives-2026-09-15.md`](Walk-
 |---|---|
 | **07:45** | Sasse: TikTok DM (pack §3). NHICHS email at midday ONLY if neither mobile number (680 738 111 / 679 246 223) verified on WhatsApp tonight (pack §4; fallback leg, not counted). |
 | **08:35** | ⭐ **CLINICS FIRST (King's priority):** WhatsApp message 1 → **MITOC first (678 90 89 62)** — Solidarity's clinic line 677 61 57 57 is NOT on WhatsApp (King 15 Sep); Solidarity goes via admin 677 61 12 07 only if that WA profile answers as the clinic, otherwise Wednesday's sealed envelope. Exact texts in [`Clinic-Batch-2026-09-15.md`](Clinic-Batch-2026-09-15.md). |
-| **09:00** | WhatsApp message 1 → Baptist (679 65 07 07), PCSS (652 075 229). |
+| **09:00** | ~~Baptist (sent, one tick) + PCSS~~ **RECLASSIFIED 15 Sep (King): missionary/confessional secondaries are BOARD-BUYERS (education secretary/board above principal; no PCC/Baptist-network college has a website, appears deliberate). Baptist msg already sent → inbound only, no chase, no cold walk-in. PCSS msg NOT sent → PARK. Afternoon St Theresa (lay) + Baird (private) unchanged.** |
 | **12:16** | OraCare 1-hour reply window closes if still silent (FU1 stays scheduled Wednesday per branch sheet pack §1). |
-| **By 12:00** | If PCSS official line gives no steer → Kinang door-opener (675 533 321). |
-| **15:30** | Kinang 24h resend if silent (per Daily Ops). |
+| ~~By 12:00~~ | ~~Kinang door-opener~~ CANCELLED: PCSS parked (BOARD-BUYER). |
+| ~~15:30~~ | ~~Kinang resend~~ CANCELLED. |
 | **15:45** | WhatsApp message 1 → **St. Theresa (679 15 10 75, confirmed on WA)**; afternoon slot avoids the morning batch blur. |
 | **16:00** | WhatsApp message 1 → **Baird Memorial (677 87 53 95 confirmed WA; bairdmemorial.com confirmed DOWN on your phone → full pitch, conditional language removed)**; text in §4. If silent, Wednesday's Limbe card sweep leaves a physical card too. |
 | **All day** | **1-hour reply rule, 09:00–21:00.** Every reply → two-step sequence below. OraCare reply-watch continues (branch sheet pack §1). |
@@ -123,16 +123,9 @@ The QR opens WhatsApp on **677 78 96 31** with a bilingual preview request pre-w
 > I have a secondary-school preview ready. May I send it, and who should receive it, the principal's own WhatsApp?
 > — Akwo King / AMK – Web Development & Digital Solutions
 
-**PCSS → 652 075 229 (FINAL 15 Sep 12:xx, NAMED variant — King verified the account):**
-> Good morning, Madam Namondo. Akwo King, AMK Web Development, Buea.
-> I build bilingual websites for boarding schools: admissions, dormitory and fee information online, and one-tap WhatsApp for parents out of town, ready in 3-5 days.
-> I could not find a website for PCSS, though other schools in the Presbyterian network already run theirs.
-> I have a boarding-school preview ready. May I send it to you here?
-> — Akwo King / AMK – Web Development & Digital Solutions
-> Research ledger (RESEARCH-STANDARD): number = WA Business account "PCSS BUEA" displaying **Namondo Elangwe** (King screenshot 15 Sep, Tier A profile); GPENreformation self-listing (2021) gives the school contact as **"Madam Namondo Alexander"** — same first name, surname drift between sources; role LIKELY principal/proprietor-level, title UNVERIFIED, so message greets "Madam Namondo" and asks her directly (no routing question). Claim audit: "other schools in the Presbyterian network" = PCSS Bonamoussadi Douala, never named.
+**PCSS → 652 075 229 — PARKED before send (King, 15 Sep):** missionary school = BOARD-BUYER; the verified principal-ish contact (Namondo Elangwe / "Madam Namondo Alexander") cannot sign, and the network deliberately has no websites. No msg 1, no Kinang end-run, no counted FU. Future play only: a single network-level proposal to the PCC Christian Education Secretary (one contract, many colleges), long cycle, AFTER the 30 Sep founder-client push. The false "network already has websites" line is error log #2 in RESEARCH-STANDARD.md.
 
-**PCSS door-opener → Kinang 675 533 321 (MOVED to M+2: the official line is now verified as the likely principal's own business account — a same-day text to a junior teacher would look like an end-run; use only if Madam Namondo stays silent through the normal FU window):**
-> Good morning, sir. Akwo King, AMK Web Development — I prepare free bilingual website previews for Buea schools (admissions, fees, results, WhatsApp contact). I tried the college's official line for PCSS; please, who is the right person to send the preview to? Thank you. — Akwo King / AMK
+**PCSS door-opener → Kinang 675 533 321: CANCELLED.** Under the BOARD-BUYER reclassification a junior teacher cannot route a purchase past an education board that has network-wide policy; the text is retained in the deep dive for the record only and is never sent.
 
 **St. Theresa → 679 15 10 75 (Tue 15:45, CONFIRMED on WhatsApp):**
 > Good afternoon. Akwo King, AMK Web Development, Buea. I build bilingual school websites — admissions, fees and results online, parents reach the office in one WhatsApp tap, ready in 3–5 days. I couldn't find a website for St. Theresa; may I send a free preview built for an international bilingual college like yours? Who should receive it? — Akwo King / AMK
