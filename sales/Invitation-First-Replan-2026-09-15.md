@@ -16,7 +16,7 @@ Full per-school intelligence stays in [`Walk-In-Deep-Dives-2026-09-15.md`](Walk-
 | Target | Number | Whose line / note | Action |
 |---|---|---|---|
 | **Solidarity Clinic & Laboratory** (Solidarity Health Foundation), Malingo/Molyko ⭐ | ~~677 61 57 57 NOT ON WHATSAPP (King 15 Sep)~~; remaining WA candidate admin **677 61 12 07**; **691 63 29 41 = Dr Njang's personal WA, HOLD** | Founder Dr Peter Nde Fon DIED 2020; current director unknown (gatekeeper routing, no names); Google 4.0★/54 reviews, 24h, NO website attached | WA-blocked: check 677 61 12 07 tonight → msg 1 there if it answers as the clinic; else **Wed sealed envelope** to "current medical director or clinic manager" |
-| **Midas Touch Optic Center**, Molyko-Malingo | **678 90 89 62** | Optic center line (from their FB page) | **King verifies tonight**; **now the first clinic msg 1 at 08:35** |
+| **Midas Touch Optic Center**, Molyko-Malingo | **678 90 89 62** | WhatsApp BUSINESS account "MITOC" (King-verified 15 Sep; catalogue live, 09:00-18:00) | First clinic msg 1; named preview live https://mitoc-concept.vercel.app after warm yes |
 | **Baptist Comp. College**, Great Soppo | **679 65 07 07** | School line from their own FB page (role unknown) | Message 1 at 09:00 |
 | **PCSS Buea** | **652 075 229** | Official school line (GPEN network listing) | Message 1 at 09:00 |
 | PCSS internal champion: **Kinang Edwin Ngenge** (teacher) | **675 533 321** | Named staff, not the decision-maker | Door-opener text only if the official line gives no steer by noon |
@@ -30,7 +30,7 @@ Full per-school intelligence stays in [`Walk-In-Deep-Dives-2026-09-15.md`](Walk-
 | Target | Number | Source | If on WhatsApp |
 |---|---|---|---|
 | **Solidarity Clinic, Molyko** | ~~677 61 57 57~~ **NOT ON WHATSAPP (King 15 Sep)**; remaining check: 677 61 12 07 (UN registry SHF-CIG admin) | GBP/UN NGO registry | If admin line answers as the clinic → nameless msg 1 there; else **Wednesday sealed envelope** addressed to "current medical director or clinic manager". 691 63 29 41 = Dr Njang personal — never used |
-| **MITOC optic center, Molyko** | **678 90 89 62** | Their official Facebook page intro | Clinic msg 1 at 08:35 |
+| **MITOC optic center, Molyko** | **678 90 89 62** | Official WA Business profile (org account, catalogue, hours, bio) + FB intro | VERIFIED business line; msg 1 ready |
 | NHICHS Limbe | 680 738 111 / 679 246 223 | Directory mobiles (unverified) | If either is WA: Wednesday WhatsApp instead of email |
 | St. Theresa secondary (low confidence) | 677 36 19 11 | "For more info" on a 2022 YouTube clip — likely a media person | Do **not** pitch; 679 15 10 75 is the confirmed line |
 

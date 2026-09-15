@@ -439,7 +439,7 @@ footer{background:var(--navy-800);color:#AFC1D3;padding:48px 0 24px;font-size:14
     <div class="center rv">
       <span class="eyebrow" data-en="The collection" data-fr="La collection">The collection</span>
       <h2 data-en="Frames for every face and budget" data-fr="Des montures pour chaque visage et budget">Frames for every face and budget</h2>
-      <p class="sub" data-en="A sample of frame styles for this concept. The live gallery is photographed in your shop and shows your real prices in FCFA." data-fr="Aperçu de styles pour ce concept. La galerie finale est photographiée dans votre magasin et affiche vos vrais prix en FCFA.">A sample of frame styles for this concept. The live gallery is photographed in your shop and shows your real prices in FCFA.</p>
+      <p class="sub" data-en="A sample for this concept. The live gallery is photographed in your shop, including computer and swimming glasses and lens accessories, with your real prices in FCFA." data-fr="Aperçu pour ce concept. La galerie finale est photographiée dans votre magasin, y compris les lunettes d'ordinateur, de natation et les accessoires, avec vos vrais prix en FCFA.">A sample for this concept. The live gallery is photographed in your shop, including computer and swimming glasses and lens accessories, with your real prices in FCFA.</p>
     </div>
     <div class="rail">
       <div class="fcard rv">
@@ -514,7 +514,7 @@ footer{background:var(--navy-800);color:#AFC1D3;padding:48px 0 24px;font-size:14
         <a class="btn btn-cream" href="#book" data-en="Book an eye exam" data-fr="Réserver un examen de vue">Book an eye exam</a>
         <a class="btn btn-ghost-light" href="https://wa.me/237677789631" target="_blank" rel="noopener" data-en="Chat on WhatsApp" data-fr="Discuter sur WhatsApp">Chat on WhatsApp</a>
       </div>
-      <p class="fnote" data-en="The live Google listing, map and opening hours are connected at launch." data-fr="La fiche Google, la carte et les heures d'ouverture sont connectées au lancement.">The live Google listing, map and opening hours are connected at launch.</p>
+      <p class="fnote" data-en="The live Google listing and map are connected at launch." data-fr="La fiche Google et la carte sont connectées au lancement.">The live Google listing and map are connected at launch.</p>
     </div>
   </div>
 </section>
@@ -528,6 +528,7 @@ footer{background:var(--navy-800);color:#AFC1D3;padding:48px 0 24px;font-size:14
       <p class="sub" data-en="Your request opens WhatsApp already written. Nothing is sent until you press send. We confirm your slot by message. Reference: MIT-XXXX." data-fr="Votre demande ouvre WhatsApp déjà rédigée. Rien n'est envoyé sans vous. Nous confirmons le créneau par message. Référence : MIT-XXXX.">Your request opens WhatsApp already written. Nothing is sent until you press send. We confirm your slot by message. Reference: MIT-XXXX.</p>
       <div class="info-blocks">
         <div class="ib"><span class="ic">📍</span><div><h3 data-en="Where" data-fr="Lieu">Where</h3><p data-en="Malingo, opposite the former police station, Molyko, Buea." data-fr="Malingo, face à l'ancien commissariat, Molyko, Buéa.">Malingo, opposite the former police station, Molyko, Buea.</p></div></div>
+        <div class="ib"><span class="ic">🕒</span><div><h3 data-en="Opening hours" data-fr="Heures d'ouverture">Opening hours</h3><p data-en="Open 09:00 to 18:00" data-fr="Ouvert de 9 h à 18 h">Open 09:00 to 18:00</p></div></div>
         <div class="ib"><span class="ic">💬</span><div><h3 data-en="Call or WhatsApp" data-fr="Appel ou WhatsApp">Call or WhatsApp</h3><p><a href="tel:+237677789631">+237 677 789 631</a> <span data-en="(demo routing to AMK)" data-fr="(acheminement démo vers AMK)">(demo routing to AMK)</span></p></div></div>
         <div class="ib"><span class="ic">👓</span><div><h3 data-en="Bring along" data-fr="À apporter">Bring along</h3><p data-en="Your current glasses or previous prescription, if you have either." data-fr="Vos lunettes actuelles ou votre ancienne prescription, si vous les avez.">Your current glasses or previous prescription, if you have either.</p></div></div>
       </div>
@@ -544,6 +545,8 @@ footer{background:var(--navy-800);color:#AFC1D3;padding:48px 0 24px;font-size:14
           <option data-en="Eye test &amp; prescription" data-fr="Examen de vue et prescription">Eye test &amp; prescription</option>
           <option data-en="Complete glasses (frames + lenses)" data-fr="Lunettes complètes (monture + verres)">Complete glasses (frames + lenses)</option>
           <option data-en="New lenses for my own frame" data-fr="Verres neufs pour ma monture">New lenses for my own frame</option>
+          <option data-en="Computer or swimming glasses" data-fr="Lunettes d'ordinateur ou de natation">Computer or swimming glasses</option>
+          <option data-en="Lens accessories" data-fr="Accessoires pour lunettes">Lens accessories</option>
           <option data-en="Fitting or adjustment" data-fr="Ajustage">Fitting or adjustment</option>
           <option data-en="Not sure yet" data-fr="Je ne sais pas encore">Not sure yet</option>
         </select>

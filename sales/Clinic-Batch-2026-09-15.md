@@ -76,6 +76,11 @@ May I send a free preview built for a clinic-and-laboratory like Solidarity? Who
 **Footprint:** Facebook page only (page id 100064126300520, ~365 likes, category Medical & health). Intro line: "We refract, prescribe n mount lenses". No website, no Google listing surfaced in search; phone books (mawidoO, business-guide P-O-C) carry the number with no other data.
 
 ### Verified facts
+- **KING-VERIFIED 15 Sep 11:39 (Tier A, WhatsApp Business profile of 678 90 89 62):** the number IS the shop's own **business account named "MITOC"** (not a personal line); medical & health category; photo = the optician/proprietor in a white coat in front of the frame wall.
+  - Business bio (their words): "Examine the eyes, prescribed and fit lenses. Also sells lens accessories and computer and swimming glasses." -> services/products now include **lens accessories, computer glasses and swimming glasses** (added to the named preview).
+  - **Hours shown: 09:00-18:00** (days not stated; do not claim Sundays); address matches: "Opposite Former Police Station Malingo"; a **WhatsApp Catalogue is already in use** (they sell via catalogue) -> opening line acknowledges it.
+  - Email shown: ateasomcollins@gmail.com (profile header renders "ateasoncollins"; ambiguous spelling, unused - no email pillar).
+  - Named preview deployed by King at **https://mitoc-concept.vercel.app** (separate throwaway project for this one named lead; canonical copy stays site/mitoc.html inside the amk-cm project; named file kept OUT of the public sitemap).
 - Services stated in the page's own words: refraction (eye testing), prescribing and mounting lenses — a full optician service, not just a frame shop.
 - Facebook-only presence; the page carries no website link and no hours/price data in search-cached intro.
 - Located in Molyko-Malingo, high-footfall student area; clientele naturally skews to students needing correction.
@@ -95,29 +100,19 @@ May I send a free preview built for a clinic-and-laboratory like Solidarity? Who
 - AMK brings: clinic concept on phone + an optic-center re-skin sketch using the same template.
 - Visit conditions: Mr Ateasom invited; 24h named preview offer; card does not sell.
 
-### Message 1 — WhatsApp (≤5 lines) — FINAL 15 Sep (named demo already built)
-> Pre-send: WA-profile check on 678 90 89 62 (business profile vs Ateasom Collins personal; the routing question works either way). No person's name used.
+### Message 1 — WhatsApp (≤5 lines) — POST-VERIFICATION FINAL 15 Sep 11:39 (send this)
+> 678 90 89 62 confirmed as the MITOC business account. Send as one message, nothing attached.
 ```
 Good morning. Akwo King, AMK Web Development, Buea.
-I build bilingual websites for opticians: eye tests booked on WhatsApp, frames and lens services shown with prices in FCFA, in English and French.
-Looking up Midas Touch, I found only the Facebook page, so a student in the Molyko-Malingo area searching "optician Buea" on Google cannot see your services or book a test.
-I have already prepared a free preview built around Midas Touch itself. May I send it to this number, or is there a better WhatsApp for the shop?
+I build bilingual websites for opticians: eye tests booked on WhatsApp, with frames, computer and swimming glasses and lens accessories priced in FCFA, in English and French.
+I can see Midas Touch already keeps a WhatsApp catalogue, which is a great start. What is missing is a website and Google listing, so a student in Molyko searching "optician Buea" still cannot find or book you.
+I have already prepared a free preview built around Midas Touch itself. May I send the link here?
 — Akwo King / AMK – Web Development & Digital Solutions
 ```
-- Why this wins replies (psychology): specificity proves it is not a broadcast (real FB-only footprint + student catchment); one tiny permission ask (reciprocity + commitment ladder); routing question handles a personal-number pickup by owner or staff; "already prepared" collapses the 24h promise into seconds after yes; ending on a question is the strongest predictor of a DM reply.
-- On YES: send `mitoc.html` **as a WhatsApp file attachment** (609 KB, self-contained, opens offline in any phone browser; the Vercel link works only after King redeploys) + framing message, then invite-choice (BAMFAM): "What would you change? I can walk you through it here, or show it in person in 10 minutes at the shop."
-- If they ask the price: answer plainly **100 000 FCFA, 50 000 to start, 50 000 at launch**, founding-client terms, never discount, trade scope/timing.
-- Silence: FU1 M+2 (Google search gap), FU2 M+4 (frame photos earning while you sleep), FU3 M+7 (gentle loop-close). After 3, stop.
-- Warm yes asset: named preview `mitoc.html` (`https://amk-cm.vercel.app/mitoc.html` after King redeploys), builder `site/build_sample_mitoc.py`, sheet C cobalt+cream, 140 EN/FR pairs, demo WA routing to AMK. Do NOT send before the warm yes (Invitation-First); never send the clinic template to an optician.
-- Reply branches (paste-ready):
-  - **YES ("send it"):** attach `site/mitoc.html` as a document (not a photo), then:
-    "Thank you. It opens right on your phone, no app needed: tap the EN/FR switch at top and press 'Book an eye exam' to see how a booking lands in your WhatsApp. Prices and frame photos are placeholders for yours. What would you change? I can walk you through it here, or show it in person in 10 minutes at the shop."
-  - **"How much?"**: "100 000 FCFA one-time: 50 000 to start and 50 000 when it is live. Your bilingual site, the frame gallery, WhatsApp booking and connecting your Google listing. I take two founding clients at these terms." No discount; trade scope/timing instead.
-  - **"I already have Facebook"**: "Yes, and your page is good. The difference is that Facebook does not show in Google searches, so a new student with headaches cannot find you unless they already know your name. The site puts you in that search and sends bookings straight to your WhatsApp."
-  - **Gatekeeper / "who is this?":** "I make websites for local clinics and opticians and built a free preview for Midas Touch. Who should I send it to, the owner or the manager?"
-  - **FU1 (M+2, silence):** "Quick one: when a student searches 'optician Buea' on Google right now, Midas Touch does not appear, only your Facebook. The preview I built shows exactly how that page could look with exam booking on WhatsApp. Still happy to send it?"
-  - **FU2 (M+4):** "One thing the preview shows well: photos of the frames on your wall, with prices in FCFA, keep working for you after closing time, and students share them in faculty groups. Want me to send it?"
-  - **FU3 (M+7, loop-close):** "No trouble from me after this. If the timing is wrong now, reply LATER and I check back next term. If useful, reply YES and the preview is with you in one minute."
+- Changes vs the earlier draft and why: routing question removed (the business account answers the routing question); the WhatsApp catalogue is acknowledged (respects effort already made, and proves genuine research); two newly-verified product lines echo their own bio words; asks one trivial yes/no question ending the message.
+- On YES: paste **https://mitoc-concept.vercel.app** with: "Thank you. It opens right on your phone, no app needed: try the EN/FR switch at top and press 'Book an eye exam' to see how a booking lands in your WhatsApp. Prices and frame photos are placeholders for yours. What would you change? I can walk you through it here, or show it in person in 10 minutes at the shop." (File fallback: attach site/mitoc.html as a document, 595 KB self-contained.)
+- If they ask the price: "100 000 FCFA one-time: 50 000 to start and 50 000 when it is live. Your bilingual site, the frame gallery, WhatsApp booking and connecting your Google listing. I take two founding clients at these terms." Never discount; trade scope/timing.
+- Silence: FU1 M+2 (Google search gap), FU2 M+4 (frame photos selling after 18:00, shared in faculty groups), FU3 M+7 (LATER/YES loop-close). After 3, stop.
 - Claim discipline inside the preview: only refract / prescribe / mount lenses (their FB intro), real Malingo address; no hours, no brands, no contact lenses or surgery invented; prices tagged Demo; 9 generated concept photos, replaced by real shop shots at launch.
 
 ---
