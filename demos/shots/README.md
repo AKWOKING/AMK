@@ -3,6 +3,11 @@
 Standard (per `AMK-DESIGN-SKILLS.md` §13 and the Concept Production Standard):
 every sent concept gets a 1280×800 hero shot (after reveal), a 390-wide mobile shot, and a laptop+phone mockup when sending. Public use of named shots only after client permission; until then public content is nameless (Nova / Little Oaks / Crestwood).
 
+## Captured 15 Sep — pipeline-built (see `tools/shots/`)
+- `mockup-secondary.png` — nameless bilingual-secondary concept (`site/sample-secondary.html`, Crestwood); accompanies school first messages.
+- `mockup-clinic.png` — nameless clinic/lab concept (`site/sample-clinic.html`, Molyko Medical Centre); accompanies clinic first messages.
+- `mockup-mitoc.png` — **named MITOC** mockup (`site/mitoc.html`); private to MITOC only, never public/nameless use.
+
 ## Captured 14 Sep (King)
 - `oracare-concept.png` — 1280-wide hero of OraCare **v2** (prices build, no assistant FAB)
 - `oracare-mockup.png` — laptop/phone mockup for the send

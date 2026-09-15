@@ -54,11 +54,12 @@ Bilingual website attached TO the Google profile: 24h/emergency bar, six-service
 
 ### Message 1 — WhatsApp (no personal names; ≤5 lines)
 > **Channel status 15 Sep (King): the clinic line 677 61 57 57 is NOT on WhatsApp.** Send sequence: (1) WA-check admin line 677 61 12 07 — send below only if its profile answers as Solidarity/the foundation; (2) otherwise this exact text becomes the Wednesday sealed-envelope letter addressed to "the current medical director or the clinic manager"; (3) 691 63 29 41 never receives it, landline never cold-called.
+> **Image (15 Sep, standing rule): on the WhatsApp leg attach `demos/shots/mockup-clinic.png` (nameless clinic mockup) with the text** — an image of the product beats description. The sealed-envelope leg carries the QR card as before. (MITOC already went out text-only per its own batch note; not retroactively changed.)
 ```
 Good morning. Akwo King, AMK Web Development, Buea.
 I build bilingual websites for private clinics and laboratories: services and lab panels listed, prices in FCFA, results and appointment requests on WhatsApp, English and French, ready in 3-5 days.
 Your Google listing already has 54 patient reviews and 21 photos, but no website, services or booking link attached to it, so that goodwill ends at a phone call.
-May I send a free preview built for a clinic-and-laboratory like Solidarity? Who should receive it, the current medical director or the clinic manager?
+The image is a clinic-and-laboratory preview already built for exactly this. May I send the live version, and who should receive it, the current medical director or the clinic manager?
 — Akwo King / AMK – Web Development & Digital Solutions
 ```
 - FU1 M+2 / FU2 M+4 / FU3 M+7; warm yes → `/sample-clinic.html` link → 24h named concept → invite choice.

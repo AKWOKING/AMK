@@ -1,0 +1,16 @@
+{
+  "name": "amk-shots",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AMK concept hero capture + house-style laptop/phone mockup composer",
+  "main": "run.js",
+  "scripts": {
+    "shots": "node run.js"
+  },
+  "dependencies": {
+    "@fontsource/noto-color-emoji": "^5.0.0",
+    "@fontsource/outfit": "^5.0.0",
+    "@sparticuz/chromium": "^131.0.0",
+    "puppeteer-core": "^23.0.0"
+  }
+}
