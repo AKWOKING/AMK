@@ -127,15 +127,26 @@ The QR opens WhatsApp on **677 78 96 31** with a bilingual preview request pre-w
 
 **PCSS door-opener → Kinang 675 533 321: CANCELLED.** Under the BOARD-BUYER reclassification a junior teacher cannot route a purchase past an education board that has network-wide policy; the text is retained in the deep dive for the record only and is never sent.
 
-**St. Theresa → 679 15 10 75 (Tue 15:45, CONFIRMED on WhatsApp):**
-> Good afternoon. Akwo King, AMK Web Development, Buea. I build bilingual school websites — admissions, fees and results online, parents reach the office in one WhatsApp tap, ready in 3–5 days. I couldn't find a website for St. Theresa; may I send a free preview built for an international bilingual college like yours? Who should receive it? — Akwo King / AMK
+**St. Theresa → 679 15 10 75 (Tue 15:45, CONFIRMED on WhatsApp; LAY private, proprietor buyer):**
+> Good afternoon. Akwo King, AMK Web Development, Buea.
+> I build bilingual websites for secondary colleges: admissions, fees and GCE results online, and parents reach the office in one WhatsApp tap, in English and French, ready in 3-5 days.
+> Looking up St. Theresa, I found the TikTok and Facebook pages but no website, so a parent searching the college's name cannot enrol or see fees online.
+> I have a bilingual college preview ready. May I send it, and who should receive it, the proprietor or the principal?
+> — Akwo King / AMK – Web Development & Digital Solutions
+> Audit: FB/TikTok/no-website from own channels (Tier A/B); 'international bilingual' college = own name; no principal name claimed; routing question because proprietor vs principal unverified.
+
 
 **St. Theresa → TikTok DM @stibccol (WEDNESDAY, only if the WhatsApp stays silent):**
 > Good morning, St. Theresa! Akwo King from AMK in Buea — I design bilingual websites for secondary schools (admissions, fees, results, one-tap WhatsApp to the office). Parents searching for the college find the TikTok and a Yahoo address but no website. May I send a free preview built for you? — Akwo King / AMK
 
-**Baird → 677 87 53 95 (Tue 16:00, FULL pitch: WhatsApp confirmed and bairdmemorial.com confirmed dead on your phone):**
-> Good afternoon. Akwo King, AMK Web Development, Buea. I build bilingual school websites — admissions, fees and results online, parents reach the office in one WhatsApp tap, ready in 3–5 days. I tried bairdmemorial.com again this morning and it still does not open, so Baird is invisible to parents searching Google. May I send a free preview built for the college, and who should receive it? I can pass Bonduma at a time that suits the principal. — Akwo King / AMK
-> (Discard 677 78 04 05 — confirmed not on WhatsApp. If the 95 line stays silent, leave the sealed gate card Wednesday during the Limbe sweep.)
+**Baird → 677 87 53 95 (Tue 16:00, FULL pitch: WhatsApp confirmed LAY private; bairdmemorial.com confirmed dead on King's phone):**
+> Good afternoon. Akwo King, AMK Web Development, Buea.
+> I build bilingual websites for secondary colleges: admissions, boarding and fees online, parents reach the office in one WhatsApp tap, ready in 3-5 days.
+> I tried bairdmemorial.com again today and it still does not open, so parents searching Baird on Google currently find nothing at all.
+> I have a college preview ready, built for exactly this. May I send it, and who should receive it? I can pass Bonduma at a time that suits the principal.
+> — Akwo King / AMK – Web Development & Digital Solutions
+> (Discard 677 78 04 05 — confirmed not on WhatsApp. If the 95 line stays silent, leave the sealed gate card Wednesday during the Limbe sweep. Dead-site claim is KING-VERIFIED; re-check live on any later send.)
+
 
 **Summerset → smbicol@yahoo.com (REMOVED from the counted schedule per King: emails rarely opened).**
 The text remains in the deep dive if ever sent as a bonus; the planned first touch is Wednesday's sealed-envelope card at the gate. No Tuesday action depends on email.
