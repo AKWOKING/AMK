@@ -21,7 +21,7 @@ PAGES = [
     "sample-school.html",
     "sample-nursery.html",
     "sample-secondary.html",
-    "sample-clinic.html",
+    "clinic-bonaberi.html",
     "mitoc.html",
 ]
 ROOT_FILES = ["favicon.svg", "robots.txt", "sitemap.xml"]

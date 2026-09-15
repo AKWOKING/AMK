@@ -9,7 +9,7 @@ modelled on `demos/shots/oracare-mockup.png`, plus raw 1280×800 desktop and
 - `lib.js` — `launch()` (puppeteer-core + `@sparticuz/chromium`),
   `captureHero(browser, fileURL, name, outdir)`, `composeMockup(browser, cfg, outPath)`.
 - `run.js` — job list for the current concepts (`sample-secondary.html`,
-  `mitoc.html`, `sample-clinic.html`). Add a job per concept; colours/eyebrow/
+  `mitoc.html`, `clinic-bonaberi.html`). Add a job per concept; colours/eyebrow/
   title/tagline per concept live there.
 - `woff2ttf.js` — zero-dependency WOFF1→TTF decoder (zlib inflate + sfnt
   rebuild), used to install a system emoji font for headless.

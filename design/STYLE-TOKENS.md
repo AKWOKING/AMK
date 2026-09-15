@@ -14,7 +14,7 @@ Contrast rule: `--on-brand` on `--brand` and `--ink` on `--surface` both pass WC
 
 ---
 
-## A. Clinic / laboratory — Forest (IN USE: sample-clinic.html "Molyko Medical Centre")
+## A. Clinic / laboratory — Forest (IN USE: clinic-bonaberi.html "Bonabéri Medical Centre")
 Registry family: `premium` structure + Forest rotation family. Anxiety-defusing, trustworthy, warm-but-clinical.
 ```css
 --ink:#15201C; --ink-soft:#4E6259; --surface:#F6F3EC; --surface-2:#FFFFFF; --line:#E3DDD0;
@@ -94,7 +94,7 @@ Registry family: `clean`. Maximum legality and speed; warm off-white, one trust 
 | 2026-09-15 | **sample-secondary.html (Crestwood) REBUILT** | **D, deep navy + cream + gold** | nameless; Cameroon-localized GCE/boarding/FCFA rebuild (replaced US-style template; 8 concept photos, 152 EN/FR pairs) |
 | 2026-09 | sample-school.html (Nova) | F, clean teal-blue | nameless |
 | 2026-09 | sample-nursery.html (Little Oaks) | E, friendly green | nameless |
-| 2026-09 | **sample-clinic.html (MMC)** | **A, Forest green + bone + amber** | nameless |
+| 2026-09 | **clinic-bonaberi.html (BMC, Bonabéri)** | **A, Forest green + bone + amber** | nameless |
 | 2026-09-15 | **mitoc.html (Midas Touch Optic Center)** | **C, Cobalt + Cream, amber sparse** | NAMED preview, builder `site/build_sample_mitoc.py`; send only to MITOC; reference attachment drove page-wide eyebrows (law §4.4) |
 | Next clinic | must NOT repeat A → **B Terracotta+Slate** (unless client brand dictates) | | |
 | Next optic/eye build | must NOT repeat C → Terracotta+Slate or Olive+Brick+Paper adaptation | | |

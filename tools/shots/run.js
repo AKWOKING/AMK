@@ -38,13 +38,13 @@ const JOBS = [
     },
   },
   {
-    file: "sample-clinic.html", name: "clinic",
+    file: "clinic-bonaberi.html", name: "clinic",
     cfg: {
       bg1: "#F5F4EC", bg2: "#DFE8DA", glow: "rgba(14,122,92,.20)", glow2: "rgba(201,146,59,.10)",
       accent: "#0E7A5C", title: "#103F31", tag: "#4E6259", chipBg: "#114333", chipText: "#ffffff",
       spark: "#C9923B", shadow: "rgba(17,67,51,.28)",
-      eyebrow: "Website concept &nbsp;·&nbsp; Private clinic &amp; laboratory · Cameroon",
-      title: "Molyko Medical Centre",
+      eyebrow: "Website concept &nbsp;·&nbsp; Private clinic &amp; laboratory · Douala",
+      title: "Bonabéri Medical Centre",
       tagline: "Transparent FCFA prices · Same-day laboratory · WhatsApp appointments",
       chip: "Concept by AMK — your real site, live in 3-5 days",
     },

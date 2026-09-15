@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Build site/sample-clinic.html — nameless clinic template (Molyko Medical Centre).
+"""Build site/clinic-bonaberi.html — nameless clinic template (Bonabéri Medical Centre).
 
 Design Read: local private clinic & laboratory landing for anxious first-time
 patients in a Cameroonian town, warm premium trust language, Forest family
@@ -23,9 +23,9 @@ HTML = r"""<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Medical Clinic & Laboratory Website Concept · Molyko Medical Centre (Template) | AMK Cameroon</title>
+<title>Medical Clinic & Laboratory Website Concept · Bonabéri Medical Centre (Template) | AMK Cameroon</title>
 <meta name="description" content="A patient-first private clinic concept by AMK: transparent FCFA pricing, same-day laboratory, maternity scans, WhatsApp booking in English and French. Template for any clinic in Cameroon. Free 24h preview.">
-<link rel="canonical" href="https://amk-cm.vercel.app/sample-clinic.html">
+<link rel="canonical" href="https://amk-cm.vercel.app/clinic-bonaberi.html">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='2' width='28' height='28' rx='8' fill='%23155642'/%3E%3Cpath d='M14 8h4v6h6v4h-6v6h-4v-6H8v-4h6z' fill='%23F6F3EC'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +34,7 @@ HTML = r"""<!DOCTYPE html>
 {
   "@context": "https://schema.org",
   "@type": "MedicalClinic",
-  "name": "Molyko Medical Centre (concept)",
+  "name": "Bonabéri Medical Centre (concept)",
   "url": "https://www.your-clinic.cm",
   "telephone": "+237 677 789 631",
   "address": { "@type": "PostalAddress", "addressLocality": "Your Town", "addressCountry": "CM" },
@@ -260,7 +260,7 @@ footer{background:#0C2E23;color:#9CB5AC;padding:48px 0 24px;font-size:14px}
   <div class="wrap nav">
     <a class="logo" href="#top">
       <span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M10.5 4h3v4.5H18v3h-4.5V16h-3v-4.5H6v-3h4.5z" fill="#F6F3EC"/></svg></span>
-      <span class="t">Molyko Medical Centre<small data-en="Clinic · Laboratory · Maternity" data-fr="Clinique · Laboratoire · Maternité">Clinic · Laboratory · Maternity</small></span>
+      <span class="t">Bonabéri Medical Centre<small data-en="Clinic · Laboratory · Maternity" data-fr="Clinique · Laboratoire · Maternité">Clinic · Laboratory · Maternity</small></span>
     </a>
     <nav class="nav-links">
       <a href="#services" data-en="Services" data-fr="Services">Services</a>
@@ -280,7 +280,7 @@ footer{background:#0C2E23;color:#9CB5AC;padding:48px 0 24px;font-size:14px}
 <div class="hero" id="top">
   <div class="wrap hero-grid">
     <div class="rv">
-      <span class="eyebrow" data-en="Private clinic & laboratory · Buea, Cameroon" data-fr="Clinique privée & laboratoire · Buéa, Cameroun">Private clinic & laboratory · Buea, Cameroon</span>
+      <span class="eyebrow" data-en="Private clinic & laboratory · Douala, Cameroon" data-fr="Clinique privée & laboratoire · Douala, Cameroun">Private clinic & laboratory · Douala, Cameroon</span>
       <h1 data-en="Healthcare that answers, <em>day or night</em>" data-fr="Des soins qui répondent, <em>jour et nuit</em>">Healthcare that answers, <em>day or night</em></h1>
       <p class="sub" data-en="See a doctor today, know the price before you are seen, and book by WhatsApp in English or French. Laboratory results the same day, maternity scans on site." data-fr="Consultez un médecin aujourd'hui, connaissez le prix avant la consultation, et prenez rendez-vous sur WhatsApp en anglais ou en français. Résultats de laboratoire le jour même, échographies sur place.">See a doctor today, know the price before you are seen, and book by WhatsApp in English or French. Laboratory results the same day, maternity scans on site.</p>
       <div class="hero-ctas">
@@ -289,7 +289,7 @@ footer{background:#0C2E23;color:#9CB5AC;padding:48px 0 24px;font-size:14px}
       </div>
     </div>
     <div class="hero-media rv" style="transition-delay:.12s">
-      <img src="HERO" alt="Molyko Medical Centre reception" loading="eager">
+      <img src="HERO" alt="Bonabéri Medical Centre reception" loading="eager">
       <span class="hero-badge" data-en="🕒 Open 7 days · emergencies 24/7" data-fr="🕒 Ouvert 7j/7 · urgences 24h/24">🕒 Open 7 days · emergencies 24/7</span>
       <div class="hero-float">
         <span class="ic">💬</span>
@@ -434,9 +434,9 @@ footer{background:#0C2E23;color:#9CB5AC;padding:48px 0 24px;font-size:14px}
     <div class="rv">
       <span class="eyebrow" data-en="Visit us" data-fr="Nous rendre visite">Visit us</span>
       <h2 id="book" data-en="Book in three steps, on WhatsApp" data-fr="Réservez en trois étapes, sur WhatsApp">Book in three steps, on WhatsApp</h2>
-      <p class="sub" data-en="No account, no waiting on hold. Your request opens WhatsApp already written; nothing is sent without you. We confirm the same day. Reference: MMC-XXXX." data-fr="Pas de compte, pas d'attente au téléphone. Votre demande ouvre WhatsApp déjà rédigée ; rien n'est envoyé sans vous. Confirmation le jour même. Référence : MMC-XXXX.">No account, no waiting on hold. Your request opens WhatsApp already written; nothing is sent without you. We confirm the same day. Reference: MMC-XXXX.</p>
+      <p class="sub" data-en="No account, no waiting on hold. Your request opens WhatsApp already written; nothing is sent without you. We confirm the same day. Reference: BMC-XXXX." data-fr="Pas de compte, pas d'attente au téléphone. Votre demande ouvre WhatsApp déjà rédigée ; rien n'est envoyé sans vous. Confirmation le jour même. Référence : BMC-XXXX.">No account, no waiting on hold. Your request opens WhatsApp already written; nothing is sent without you. We confirm the same day. Reference: BMC-XXXX.</p>
       <div class="info-blocks">
-        <div class="ib"><span class="ic">📍</span><div><h3 data-en="Find us" data-fr="Nous trouver">Find us</h3><p data-en="Main road, Molyko, Buea. Two minutes from the main junction (concept address)." data-fr="Route principale, Molyko, Buéa. À deux minutes du carrefour principal (adresse de démo).">Main road, Molyko, Buea. Two minutes from the main junction (concept address).</p></div></div>
+        <div class="ib"><span class="ic">📍</span><div><h3 data-en="Find us" data-fr="Nous trouver">Find us</h3><p data-en="Main road, Bonabéri, Douala. Two minutes from the main junction (concept address)." data-fr="Route principale, Bonabéri, Douala. À deux minutes du carrefour principal (adresse de démo).">Main road, Bonabéri, Douala. Two minutes from the main junction (concept address).</p></div></div>
         <div class="ib"><span class="ic">🕒</span><div><h3 data-en="Opening hours" data-fr="Heures d'ouverture">Opening hours</h3><p data-en="Monday to Saturday 7:30 to 19:00 · Sundays and after hours: emergencies by line." data-fr="Lundi au samedi 7h30 à 19h00 · Dimanches et après les heures : urgences par la ligne.">Monday to Saturday 7:30 to 19:00 · Sundays and after hours: emergencies by line.</p></div></div>
         <div class="ib"><span class="ic">📞</span><div><h3 data-en="Call or WhatsApp" data-fr="Appel ou WhatsApp">Call or WhatsApp</h3><p><a href="tel:+237677789631">+237 677 789 631</a> <span data-en="(demo routing to AMK)" data-fr="(acheminement démo vers AMK)">(demo routing to AMK)</span></p></div></div>
       </div>
@@ -503,7 +503,7 @@ footer{background:#0C2E23;color:#9CB5AC;padding:48px 0 24px;font-size:14px}
       <div>
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
           <span class="mark" style="width:38px;height:38px;border-radius:11px"><svg viewBox="0 0 24 24" fill="none"><path d="M10.5 4h3v4.5H18v3h-4.5V16h-3v-4.5H6v-3h4.5z" fill="#F6F3EC"/></svg></span>
-          <b style="color:#fff;font-size:15.5px">Molyko Medical Centre</b>
+          <b style="color:#fff;font-size:15.5px">Bonabéri Medical Centre</b>
         </div>
         <p data-en="Your street, your town, Cameroon (demo address)" data-fr="Votre rue, votre ville, Cameroun (adresse de démo)">Your street, your town, Cameroon (demo address)</p>
         <p style="margin-top:6px"><a href="tel:+237677789631">+237 677 789 631</a></p>
@@ -522,7 +522,7 @@ footer{background:#0C2E23;color:#9CB5AC;padding:48px 0 24px;font-size:14px}
       </div>
     </div>
     <div class="f-bottom">
-      <span data-en="© 2026 Molyko Medical Centre (concept)" data-fr="© 2026 Molyko Medical Centre (concept)">© 2026 Molyko Medical Centre (concept)</span>
+      <span data-en="© 2026 Bonabéri Medical Centre (concept)" data-fr="© 2026 Bonabéri Medical Centre (concept)">© 2026 Bonabéri Medical Centre (concept)</span>
       <span>Concept by AMK · Web Development &amp; Digital Solutions</span>
     </div>
   </div>
@@ -540,7 +540,7 @@ function setLang(l){
   document.querySelectorAll("[data-en]").forEach(function(el){ el.innerHTML = (l === "fr") ? el.getAttribute("data-fr") : el.getAttribute("data-en"); });
   document.getElementById("btn-en").classList.toggle("on", l === "en");
   document.getElementById("btn-fr").classList.toggle("on", l === "fr");
-  try{ history.replaceState(null, "", l === "fr" ? "?lang=fr" : "sample-clinic.html"); }catch(e){}
+  try{ history.replaceState(null, "", l === "fr" ? "?lang=fr" : "clinic-bonaberi.html"); }catch(e){}
 }
 var io = new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } }); }, {threshold:.12});
 document.querySelectorAll(".rv").forEach(function(el){ io.observe(el); });
@@ -566,10 +566,10 @@ function book(e){
   var day = document.getElementById("b-day").selectedOptions[0].text;
   var tm = document.getElementById("b-time").selectedOptions[0].text;
   var q = document.getElementById("b-q").value.trim();
-  var ref = "MMC-" + Math.floor(1000 + Math.random()*9000);
+  var ref = "BMC-" + Math.floor(1000 + Math.random()*9000);
   var msg = fr
-    ? "Bonjour Molyko Medical Centre ! Je souhaite prendre rendez-vous.\n\nNom : " + name + "\nTéléphone : " + phone + "\nService : " + sv + "\nJour : " + day + "\nHeure : " + tm + (q ? "\nNote : " + q : "") + "\nRéférence : " + ref
-    : "Hello Molyko Medical Centre! I would like to book an appointment.\n\nName: " + name + "\nPhone: " + phone + "\nService: " + sv + "\nDay: " + day + "\nTime: " + tm + (q ? "\nNote: " + q : "") + "\nReference: " + ref;
+    ? "Bonjour Bonabéri Medical Centre ! Je souhaite prendre rendez-vous.\n\nNom : " + name + "\nTéléphone : " + phone + "\nService : " + sv + "\nJour : " + day + "\nHeure : " + tm + (q ? "\nNote : " + q : "") + "\nRéférence : " + ref
+    : "Hello Bonabéri Medical Centre! I would like to book an appointment.\n\nName: " + name + "\nPhone: " + phone + "\nService: " + sv + "\nDay: " + day + "\nTime: " + tm + (q ? "\nNote: " + q : "") + "\nReference: " + ref;
   window.open("https://wa.me/" + WA_NUM + "?text=" + encodeURIComponent(msg), "_blank");
   return false;
 }
@@ -585,6 +585,6 @@ HTML = (HTML
         .replace("url(BG_LAB)", "url('%s')" % IMG["lab"])
         .replace("url(BG_MAT)", "url('%s')" % IMG["maternity"]))
 
-out = HERE / "sample-clinic.html"
+out = HERE / "clinic-bonaberi.html"
 out.write_text(HTML, encoding="utf-8")
 print("wrote", out, round(len(HTML)/1024), "KB")

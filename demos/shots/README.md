@@ -5,7 +5,7 @@ every sent concept gets a 1280×800 hero shot (after reveal), a 390-wide mobile 
 
 ## Captured 15 Sep — pipeline-built (see `tools/shots/`)
 - `mockup-secondary.png` (1920×1080 master) + `mockup-secondary-wa.jpg` (1600×900, ~177 KB, **WhatsApp-send copy**) — nameless bilingual-secondary concept (`site/sample-secondary.html`, Crestwood); accompanies school first messages.
-- `mockup-clinic.png` + `mockup-clinic-wa.jpg` — nameless clinic/lab concept (`site/sample-clinic.html`, Molyko Medical Centre); accompanies clinic first messages.
+- `mockup-clinic.png` + `mockup-clinic-wa.jpg` — nameless clinic/lab concept (`site/clinic-bonaberi.html`, Bonabéri Medical Centre, Douala); accompanies clinic first messages.
 - `mockup-mitoc.png` + `mockup-mitoc-wa.jpg` — **named MITOC** mockup (`site/mitoc.html`); private to MITOC only, never public/nameless use.
 
 Send rule: attach the `-wa.jpg` (bypasses WA's heavy recompression at the long-edge limit), masters stay for print/portfolio. Regenerate WA copies from masters with a Lanczos 1600×900 / q88 JPEG.

@@ -3,7 +3,7 @@
 > King, 14 Sep: clinics may have **more potential than schools**. This pair opens Tuesday before the school kill-list.
 > Rules unchanged: WhatsApp-first, no cold calls, never sell in msg 1, ≤5 lines, verified pain only, no competitor names, no fake scarcity, BAMFAM, sign every message.
 > King instruction, 14 Sep: **people rarely open email in this country** — no clinic plan depends on email. WhatsApp is the channel.
-> Preview link used in this batch: **https://amk-cm.vercel.app/sample-clinic.html** (nameless concept, hosted inside the AMK site project; deploy with next push).
+> Preview link used in this batch: **https://amk-cm.vercel.app/clinic-bonaberi.html** (nameless concept **Bonabéri Medical Centre, Douala** — renamed by King 15 Sep afternoon from the original Molyko Medical Centre; live via his manual upload but showing a partial rename ("Buea" eyebrow + Molyko/MMC leftovers) until the canonical `site/clinic-bonaberi.html` redeploys via `amk-site.zip`; builder `site/build_sample_clinic.py`; old `sample-clinic.html` is removed/404). Until redeploy, send with the standard placeholder caption ("every name, price and photo is a placeholder…"). For Buea clinic targets (Solidarity), flag to AMK if you want the concept/mockup re-branded Buea/city-neutral.
 > Owner: King sends all WhatsApp manually. AMK drafts only.
 
 ---
@@ -62,7 +62,7 @@ Your Google listing already has 54 patient reviews and 21 photos, but no website
 The image is a clinic-and-laboratory preview already built for exactly this. May I send the live version, and who should receive it, the current medical director or the clinic manager?
 — Akwo King / AMK – Web Development & Digital Solutions
 ```
-- FU1 M+2 / FU2 M+4 / FU3 M+7; warm yes → `/sample-clinic.html` link → 24h named concept → invite choice.
+- FU1 M+2 / FU2 M+4 / FU3 M+7; warm yes → `/clinic-bonaberi.html` link → 24h named concept → invite choice.
 - **691 63 29 41 (Dr Njang): HOLD.** Only if King verifies through the clinic itself (or Dr Njang confirms) that he still works there may he be messaged, and then with his dual role acknowledged. Separately qualified as his own lead below.
 - Gatekeeper (nurse/front desk): ask, exactly like a school bursar, for the current director's own WhatsApp.
 
@@ -122,4 +122,4 @@ I have already prepared a free preview built around Midas Touch itself. May I se
 - **Research accuracy is now governed by `RESEARCH-STANDARD.md`**: source tiers, dated/labeled facts, mandatory named-person checks (collision + obituary + current-role + conflict), number attribution labels, and a per-message claim audit. No name or role from a directory enters a message without clearing it.
 - Parks (do NOT pitch, already well digitized): Dr Liwo Dental Clinic (drliwo.org, polished site + blog + prices), Dr Soliman Clinic (solimanclinics.com, WordPress + online store + active socials, 4.8/5 on Google mirrors), St Veronica Medical Centre (biakahc.org, 24h site).
 - Pattern to repeat when sourcing more clinics: **reachable WhatsApp + (no website OR a website-less Google profile with reviews) + named owner/doctor + a repeat-visit service** (lab results, refraction, scans, pharmacy refills) = qualified. A rich Google profile with no website link is the NEW highest-value pattern, as Solidarity proves.
-- Every clinic concept is nameless first (`sample-clinic.html`), named within 24h of a warm yes, built strictly per `AMK-DESIGN-SKILLS.md` (Forest palette family used for the nameless concept; rotate on named builds, never reuse OraCare's cream/navy Odentrics family).
+- Every clinic concept is nameless first (`clinic-bonaberi.html`), named within 24h of a warm yes, built strictly per `AMK-DESIGN-SKILLS.md` (Forest palette family used for the nameless concept; rotate on named builds, never reuse OraCare's cream/navy Odentrics family).
