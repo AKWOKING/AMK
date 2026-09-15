@@ -8,6 +8,7 @@ The governing law remains **`/AMK-DESIGN-SKILLS.md`** at the repo root (read it 
 | `WORKFLOW.md` | End-to-end pipeline: research → design read → dials → tokens → copy → images → build → motion → QA → handoff, with a handoff-record template |
 | `STYLE-TOKENS.md` | Locked starting `:root` sheets per vertical (clinic/lab, optic, secondary, nursery, day school, agency) + the palette rotation ledger |
 | `MOTION.md` | Exact motion tokens, durations, vanilla snippets, the four-question opportunity gate, and the Before/After review table |
+| `CRAFT-FLOOR.md` | Quality floor distilled 15 Sep from Impeccable (Bakaus), Anthropic frontend-design, UI/UX Pro Max: surface modes, 10 built-result checks, refuse list with AMK market exceptions, two-pass self-critique (squint/personas), a11y/schema gates, vertical grounding decisions |
 
 ## Vendored upstream skills (all MIT, licenses alongside)
 - `vendor/bergside-skills/` — **bergside/awesome-design-skills**, 67 design-system families (`<family>/SKILL.md` agent rules + `DESIGN.md` token sheet). Programmatic digest: `vendor/registry-digest.json` (67 parsed token sets).

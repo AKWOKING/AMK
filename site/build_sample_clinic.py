@@ -33,14 +33,32 @@ HTML = r"""<!DOCTYPE html>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "MedicalClinic",
-  "name": "Bonabéri Medical Centre (concept)",
-  "url": "https://www.your-clinic.cm",
-  "telephone": "+237 677 789 631",
-  "address": { "@type": "PostalAddress", "addressLocality": "Your Town", "addressCountry": "CM" },
-  "medicalSpecialty": ["GeneralPractice", "LaboratoryScience", "Obstetric"]
+  "@graph": [
+    {
+      "@type": "MedicalClinic",
+      "name": "Bonabéri Medical Centre (concept)",
+      "url": "https://www.your-clinic.cm",
+      "telephone": "+237 677 789 631",
+      "priceRange": "$$",
+      "address": { "@type": "PostalAddress", "streetAddress": "Demo street", "addressLocality": "Douala", "addressCountry": "CM" },
+      "medicalSpecialty": ["GeneralPractice", "LaboratoryScience", "Obstetric", "Pediatric"],
+      "contactPoint": { "@type": "ContactPoint", "telephone": "+237 677 789 631", "contactType": "appointment booking", "availableLanguage": ["English", "French"] },
+      "sameAs": []
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Do I need an appointment?", "acceptedAnswer": { "@type": "Answer", "text": "Walk-ins are welcome, but booking on WhatsApp means a confirmed slot and little or no waiting. Emergencies are seen immediately." } },
+        { "@type": "Question", "name": "How do I pay, and do you take insurance?", "acceptedAnswer": { "@type": "Answer", "text": "Cash, MTN Mobile Money and Orange Money at the desk. We work with selected insurance partners; send your insurer's name on WhatsApp before the visit." } },
+        { "@type": "Question", "name": "How fast are laboratory results?", "acceptedAnswer": { "@type": "Answer", "text": "Most routine panels are ready the same day and are sent to you on WhatsApp, with an explanation of what they mean." } },
+        { "@type": "Question", "name": "Do you see patients in French?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Reception, doctors and the laboratory work in English and French, and this website switches language with one tap." } },
+        { "@type": "Question", "name": "What counts as an emergency after hours?", "acceptedAnswer": { "@type": "Answer", "text": "Severe pain, breathing difficulty, high fever that will not break, heavy bleeding, pregnancy complications. Call the emergency line and we direct you immediately." } }
+      ]
+    }
+  ]
 }
 </script>
+<!-- LAUNCH schema: replace demo address/telephone/priceRange, add real openingHours + geo, list Google/Facebook/TikTok URLs in sameAs, and only add aggregateRating with REAL review counts (accuracy law) -->
 <style>
 :root{
   --ease-out:cubic-bezier(.23,1,.32,1);
@@ -261,10 +279,13 @@ footer{background:#0C2E23;color:#9CB5AC;padding:48px 0 24px;font-size:14px}
   .nav-right .btn{padding:9px 14px;font-size:12.5px}
   .demobar{font-size:10.5px;letter-spacing:.1em;padding:6px 12px}
 }
+:focus-visible{outline:3px solid var(--emerald);outline-offset:2px;border-radius:6px}
+.mbar a:focus-visible{outline-color:var(--amber)}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  *,*::before,*::after{animation:none!important;transition:none!important}
-  .rv{opacity:1;transform:none}
+  *,*::before,*::after{animation:none!important}
+  .rv,.btn,.bcell{transition:none!important;transform:none!important}
+  .rv{opacity:1}
 }
 </style>
 </head>
@@ -594,9 +615,12 @@ function setLang(l){
 var io = new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } }); }, {threshold:.12});
 document.querySelectorAll(".rv").forEach(function(el){ io.observe(el); });
 var counted = false;
+var REDUCED_MOTION = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function setStatsFinal(){ document.querySelectorAll(".stat-num[data-count]").forEach(function(el){ el.innerHTML = el.getAttribute("data-count") + (el.getAttribute("data-suffix") || ""); }); }
 var cio = new IntersectionObserver(function(es){ es.forEach(function(en){
   if(en.isIntersecting && !counted){
     counted = true;
+    if(REDUCED_MOTION){ setStatsFinal(); cio.disconnect(); return; }
     document.querySelectorAll(".stat-num[data-count]").forEach(function(el){
       var target = parseInt(el.getAttribute("data-count"), 10), suffix = el.getAttribute("data-suffix") || "", start = null, dur = 1400;
       function tick(now){ if(!start) start = now; var p = Math.min((now-start)/dur,1), e = 1 - Math.pow(1-p,3); el.innerHTML = Math.round(target*e) + suffix; if(p<1) requestAnimationFrame(tick); }

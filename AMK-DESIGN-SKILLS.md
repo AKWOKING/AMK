@@ -338,7 +338,14 @@ Pale Red #FDEBEC/#9F2F2D · Pale Blue #E1F3FE/#1F6C9F · Pale Green #EDF3EC/#346
 - [ ] Watermark/logo scan on every image asset (visual)
 - [ ] Motion: IO-based (no scroll listeners), reduced-motion block present, claimed = shown; **0 `transition:all`; 0 entrance `ease-in`; every pressable has `:active` scale .95-.98 at 100-160ms; hover transforms gated by `(hover:hover) and (pointer:fine)`; no entrance from scale(0); UI motion ≤300ms (reveals ≤700ms); stagger 30-80ms; only transform/opacity animated; `design/MOTION.md` §6 sweep run**
 - [ ] Shape lock + color lock + theme lock consistent page-wide
-- [ ] Mobile collapse explicit per section; test at 390
+- [ ] Mobile collapse explicit per section; test at 390 AND 360 width
+- [ ] `:focus-visible` branded 3px ring present on all controls; tab order matches visual order
+- [ ] Reduced-motion: CSS block present AND JS honours it (count-ups/animations render final state — check, a CSS block alone fails this)
+- [ ] JSON-LD `@graph` valid (Rich Results Test or local JSON parse); FAQ schema mirrors visible FAQs; zero fabricated ratings/hours; launch-only fields commented
+- [ ] Decorative icons/emoji `aria-hidden="true"`; meaningful images carry descriptive alt; below-fold media `loading="lazy" decoding="async"`
+- [ ] Cognitive load: ≤4 distinct options at any decision point; nav ≤5 top items; one primary action per section (Addendum #3/CRAFT-FLOOR §2)
+- [ ] Squint test + 2 persona walks (parent abroad; anxious first-time patient/cost-conscious shopper) recorded in delivery notes
+- [ ] C12 honesty: no claimed A/B test below ~1,000 pageviews/month; dated change-log entry instead (Addendum #4 §2)
 
 **AMK standing additions:**
 - [ ] Concept badge ("Website concept by AMK") present

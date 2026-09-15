@@ -36,13 +36,30 @@ HTML = r"""<!DOCTYPE html>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "School",
-  "name": "Crestwood College (concept)",
-  "url": "https://www.your-college.cm",
-  "telephone": "+237 677 789 631",
-  "address": { "@type": "PostalAddress", "addressLocality": "Your Town", "addressCountry": "CM" }
+  "@graph": [
+    {
+      "@type": "School",
+      "name": "Crestwood College (concept)",
+      "url": "https://www.your-college.cm",
+      "telephone": "+237 677 789 631",
+      "address": { "@type": "PostalAddress", "streetAddress": "Demo quarter", "addressLocality": "Your Town", "addressCountry": "CM" },
+      "contactPoint": { "@type": "ContactPoint", "telephone": "+237 677 789 631", "contactType": "admissions", "availableLanguage": ["English", "French"] },
+      "sameAs": []
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "When do admissions open?", "acceptedAnswer": { "@type": "Answer", "text": "Admissions run through the long vacation for the new school year, with a few late places in the first week of the first term. Send a WhatsApp message to reserve a placement assessment." } },
+        { "@type": "Question", "name": "Which exams do students sit?", "acceptedAnswer": { "@type": "Answer", "text": "Students prepare for the GCE Ordinary Level at the end of Form 5 and the GCE Advanced Level at the end of Upper Sixth, set by the Cameroon GCE Board." } },
+        { "@type": "Question", "name": "Can a French-speaking pupil enrol?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The bilingual section supports French-medium pupils joining the English stream, with extra language support in the first year." } },
+        { "@type": "Question", "name": "How do boarding parents follow progress?", "acceptedAnswer": { "@type": "Answer", "text": "Weekly reports and visiting-day news arrive by WhatsApp, and the office answers out-of-town parents directly instead of relying on the child to relay messages." } },
+        { "@type": "Question", "name": "How are fees paid?", "acceptedAnswer": { "@type": "Answer", "text": "Per term, before the term begins, by cash at the bursary, bank transfer or Mobile Money, with a receipt issued for every payment. The figures on this concept page are samples." } }
+      ]
+    }
+  ]
 }
 </script>
+<!-- LAUNCH schema: replace demo address/telephone, list Google/Facebook/TikTok URLs in sameAs, add real openingHours, and only add aggregateRating with REAL review counts (accuracy law) -->
 <style>
 :root{
   --ease-out:cubic-bezier(.23,1,.32,1);
@@ -320,11 +337,13 @@ footer{background:var(--navy-b);color:#A9BACC;padding:48px 0 24px;font-size:14px
   .hero-badge{font-size:11.5px;padding:7px 12px}
   .adband .wrap{padding:80px 16px}
 }
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:6px}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
-  .rv{opacity:1;transform:none}
-  .drawer nav a{opacity:1;transform:none}
+  *,*::before,*::after{animation:none!important}
+  .rv,.btn,.cell{transition:none!important;transform:none!important}
+  .rv{opacity:1}
+  .drawer nav a{opacity:1;transform:none;transition:none!important}
 }
 </style>
 </head>
@@ -471,7 +490,7 @@ footer{background:var(--navy-b);color:#A9BACC;padding:48px 0 24px;font-size:14px
 <!-- BOARDING -->
 <section class="boarding" id="boarding">
   <div class="wrap bd-grid">
-    <div class="bd-media rv"><img src="DORM" alt="A tidy boarding dormitory"></div>
+    <div class="bd-media rv"><img src="DORM" alt="A tidy boarding dormitory" loading="lazy" decoding="async"></div>
     <div class="rv" style="transition-delay:.1s">
       <span class="eyebrow" data-en="Boarding" data-fr="Internat">Boarding</span>
       <h2 data-en="A safe place for a child whose parents are far away" data-fr="Un lieu sûr pour l'enfant dont les parents sont loin">A safe place for a child whose parents are far away</h2>
@@ -765,9 +784,12 @@ function toggleDrawer(open){
 var io = new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } }); }, {threshold:.12});
 document.querySelectorAll(".rv").forEach(function(el){ io.observe(el); });
 var counted = false;
+var REDUCED_MOTION = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function setStatsFinal(){ document.querySelectorAll(".stat-num[data-count]").forEach(function(el){ el.innerHTML = el.getAttribute("data-count") + (el.getAttribute("data-suffix") || ""); }); }
 var cio = new IntersectionObserver(function(es){ es.forEach(function(en){
   if(en.isIntersecting && !counted){
     counted = true;
+    if(REDUCED_MOTION){ setStatsFinal(); cio.disconnect(); return; }
     document.querySelectorAll(".stat-num[data-count]").forEach(function(el){
       var target = parseInt(el.getAttribute("data-count"), 10), start = null, dur = 1200;
       function tick(now){ if(!start) start = now; var p = Math.min((now-start)/dur,1), e = 1 - Math.pow(1-p,3); el.innerHTML = Math.round(target*e); if(p<1) requestAnimationFrame(tick); }

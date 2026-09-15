@@ -101,10 +101,14 @@ Placeholders ship marked `#`/demo and are replaced at launch with the client's r
 | C9 | Friction | forms ≤2 required fields; no clicks "click"; tap labels on mobile |
 | C10 | Gaze/faces | any face looks toward the primary CTA |
 | C11 | Scarcity honesty | only real dates/slots; no timers/fake counters |
-| C12 | A/B plan | one post-launch test named in handoff (button label or hero line) for Growth Care clients |
+| C12 | Iteration log | one dated change-log entry (change + hypothesis + source) at handoff; **real A/B tests only above ~1,000 pageviews/month (Addendum #4 §2 — smaller traffic cannot produce significance); below that, one researched best-practice change at a time** |
+| C13 | Motion a11y | `prefers-reduced-motion` blocks spatial animation AND JS count-ups (final values shown immediately); `:focus-visible` branded ring on every control |
+| C14 | Structured data | JSON-LD `@graph` (MedicalClinic/School + FAQPage mirroring visible FAQs) passes Rich Results Test; no `aggregateRating` without real third-party reviews; launch fields (hours/geo/sameAs) commented, not faked |
+| C15 | Aria & lazy | decorative icons/emoji `aria-hidden`, meaningful `alt`, below-fold images `loading=lazy decoding=async`, no horizontal overflow at 360px |
 
 ## 9. Implementation log (15 Sep)
 
 - **Already in generators before this study** (validated, keep): sticky bottom mobile WA/call bar, dual hero CTAs, stats/sheer-numbers band with demo tags, per-audience service tiles, transparent FCFA pricing, FAQ `<details>`, bilingual data-EN/data-FR toggle with `?lang=`, WhatsApp-composed booking (no server form), IntersectionObserver reveal + count-up, schema.org School/Clinic JSON-LD.
 - **Added this date to `site/build_sample_clinic.py` and `site/build_sample_secondary.py`:** proof section (third-party-linked rating + quote slots, demo-marked); alternative-CTA follow strip in the final band; sticky-bar buttons min-height 52px on mobile.
-- **Backlog (next natural deploy, do not hot-deploy tonight):** regenerate named `mitoc-concept` and any live named concept with the same two blocks; replace demo social/Google URLs at each client's launch; add PageSpeed screenshot to the kickoff kit; real-device C5 test by King at handoff; Growth Care CRO test naming in the retainer one-pager.
+- **Same-night second pass (15 Sep late; see `design/CRAFT-FLOOR.md` + Addendum #4):** generators now ship `:focus-visible` branded rings, reduced-motion-aware count-up JS (final values rendered immediately), `@graph` JSON-LD (MedicalClinic/School + FAQPage) validated, `loading=lazy decoding=async` on below-fold media; C12 corrected (no fake A/B tests under ~1k visits/month).
+- **Backlog (next natural deploy):** regenerate named `mitoc-concept` and any live named concept with the proof/follow blocks + the a11y/schema upgrades; replace demo social/Google/sameAs fields at each client's launch; PageSpeed screenshot + Rich Results Test into the kickoff kit; real-device C5 test by King at handoff; Growth Care loops named in the retainer one-pager (Addendum #4 §5).
