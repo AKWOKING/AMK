@@ -166,6 +166,16 @@ header{position:sticky;top:0;z-index:60;background:rgba(250,250,247,.88);backdro
 .bg-sports{background-image:url(BG_SPORTS)}
 .bg-awards{background-image:url(BG_AWARDS)}
 .bg-lib{background-image:url(BG_LIB)}
+/* student corner */
+.res-links{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:8px}
+.res-links a{font-size:13.5px;font-weight:700;color:var(--navy);text-decoration:none}
+.res-links a:hover{text-decoration:underline}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chips span{font-size:12px;font-weight:700;background:var(--brand-tint);color:var(--navy);border-radius:999px;padding:6px 12px}
+.cell .small{font-size:12px;color:var(--ink-soft);margin-top:12px}
+.flyer-strip{margin-top:24px;background:var(--gold-tint);border:1px solid #E3D3AA;border-radius:var(--radius);padding:24px 28px;text-align:center}
+.flyer-strip b{display:block;font-size:17px;color:var(--navy);margin-bottom:6px}
+.flyer-strip span{font-size:13.5px;color:#5B4A1F}
 /* fees */
 .fees{background:var(--surface-2);border-block:1px solid var(--line)}
 .fee-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
@@ -314,6 +324,7 @@ footer{background:var(--navy-b);color:#A9BACC;padding:48px 0 24px;font-size:14px
     <nav class="nav-links">
       <a href="#programmes" data-en="Programmes" data-fr="Programmes">Programmes</a>
       <a href="#boarding" data-en="Boarding" data-fr="Internat">Boarding</a>
+      <a href="#corner" data-en="Students" data-fr="Élèves">Students</a>
       <a href="#fees" data-en="Fees" data-fr="Frais">Fees</a>
       <a href="#admissions" data-en="Admissions" data-fr="Admissions">Admissions</a>
       <a href="#faq" data-en="Questions" data-fr="Questions">Questions</a>
@@ -335,9 +346,10 @@ footer{background:var(--navy-b);color:#A9BACC;padding:48px 0 24px;font-size:14px
   <nav>
     <a href="#programmes" style="--i:0" onclick="toggleDrawer(false)" data-en="Programmes" data-fr="Programmes">Programmes</a>
     <a href="#boarding" style="--i:1" onclick="toggleDrawer(false)" data-en="Boarding" data-fr="Internat">Boarding</a>
-    <a href="#fees" style="--i:2" onclick="toggleDrawer(false)" data-en="Fees" data-fr="Frais">Fees</a>
-    <a href="#admissions" style="--i:3" onclick="toggleDrawer(false)" data-en="Admissions" data-fr="Admissions">Admissions</a>
-    <a href="#faq" style="--i:4" onclick="toggleDrawer(false)" data-en="Questions" data-fr="Questions">Questions</a>
+    <a href="#corner" style="--i:2" onclick="toggleDrawer(false)" data-en="Students" data-fr="Élèves">Students</a>
+    <a href="#fees" style="--i:3" onclick="toggleDrawer(false)" data-en="Fees" data-fr="Frais">Fees</a>
+    <a href="#admissions" style="--i:4" onclick="toggleDrawer(false)" data-en="Admissions" data-fr="Admissions">Admissions</a>
+    <a href="#faq" style="--i:5" onclick="toggleDrawer(false)" data-en="Questions" data-fr="Questions">Questions</a>
   </nav>
   <div class="d-foot">
     <a class="btn btn-navy" href="#apply" onclick="toggleDrawer(false)" data-en="Start admission" data-fr="Commencer l'inscription">Start admission</a>
@@ -449,6 +461,61 @@ footer{background:var(--navy-b);color:#A9BACC;padding:48px 0 24px;font-size:14px
       <figure class="life rv"><div class="ph bg-lib" role="img" aria-label="Students reading in the library"></div><figcaption data-en="Quiet study hours in the college library" data-fr="Heures d'étude silencieuses à la bibliothèque">Quiet study hours in the college library</figcaption></figure>
       <figure class="life rv" style="transition-delay:.06s"><div class="ph bg-sports" role="img" aria-label="Students racing on sports day"></div><figcaption data-en="Inter-house sports on the college field" data-fr="Compétitions sportives inter-maisons sur le terrain">Inter-house sports on the college field</figcaption></figure>
       <figure class="life rv" style="transition-delay:.12s"><div class="ph bg-awards" role="img" aria-label="A student receiving a prize"></div><figcaption data-en="Prize-giving after the GCE results" data-fr="Remise des prix après les résultats du GCE">Prize-giving after the GCE results</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- STUDENT CORNER -->
+<section id="corner">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="eyebrow" data-en="Student &amp; parent corner" data-fr="Espace élèves &amp; parents">Student &amp; parent corner</span>
+      <h2 data-en="A reason to open the site every week — not just once" data-fr="Une raison d'ouvrir le site chaque semaine — pas une seule fois">A reason to open the site every week — not just once</h2>
+      <p class="sub" data-en="Results day, downloads, a curated research corner and college news: pupils and parents come back to the site, share it, and give the college something real to print on its flyers." data-fr="Jour des résultats, téléchargements, coin recherche et nouvelles du collège : élèves et parents reviennent sur le site, le partagent, et donnent au collège de quoi imprimer sur ses flyers.">Results day, downloads, a curated research corner and college news: pupils and parents come back to the site, share it, and give the college something real to print on its flyers.</p>
+    </div>
+    <div class="bento">
+      <div class="cell photo wide rv">
+        <div class="ph bg-awards" role="img" aria-label="Prize-giving ceremony"></div>
+        <div class="pin">
+          <h3 data-en="🏆 GCE results &amp; honour roll, published results day" data-fr="🏆 Résultats GCE &amp; palmarès, publiés le jour des résultats">🏆 GCE results &amp; honour roll, published results day</h3>
+          <p data-en="Pass rates, prize winners and university destinations go online the day the GCE Board publishes — the page proud parents and old students share at home and abroad. (Example figures only.)" data-fr="Taux de réussite, lauréats et admissions universitaires en ligne le jour de publication du GCE Board — la page que parents et anciens partagent au pays et à l'étranger. (Chiffres d'exemple uniquement.)">Pass rates, prize winners and university destinations go online the day the GCE Board publishes — the page proud parents and old students share at home and abroad. (Example figures only.)</p>
+          <a class="more" href="https://camgceb.org" target="_blank" rel="noopener" data-en="Official GCE Board results ↗" data-fr="Résultats officiels du GCE Board ↗">Official GCE Board results ↗</a>
+        </div>
+      </div>
+      <div class="cell rv" style="transition-delay:.06s">
+        <div class="ico">📂</div>
+        <h3 data-en="Downloads, term by term" data-fr="Téléchargements, trimestre par trimestre">Downloads, term by term</h3>
+        <p data-en="Prospectus, school calendar, fee sheet, past-question packs and admission forms, uploaded by the office instead of reprinted every January." data-fr="Prospectus, calendrier scolaire, grille des frais, sujets anciens et dossiers d'inscription, mis en ligne par le bureau au lieu d'être réimprimés chaque janvier.">Prospectus, school calendar, fee sheet, past-question packs and admission forms, uploaded by the office instead of reprinted every January.</p>
+        <div class="chips">
+          <span data-en="Prospectus (PDF)" data-fr="Prospectus (PDF)">Prospectus (PDF)</span>
+          <span data-en="Calendar" data-fr="Calendrier">Calendar</span>
+          <span data-en="Fee sheet" data-fr="Grille des frais">Fee sheet</span>
+          <span data-en="Past questions" data-fr="Anciens sujets">Past questions</span>
+        </div>
+        <p class="small" data-en="Slots shown; the college publishes its own files at launch." data-fr="Emplacements affichés ; le collège publie ses propres fichiers au lancement.">Slots shown; the college publishes its own files at launch.</p>
+      </div>
+      <div class="cell photo narrow rv" style="transition-delay:.06s">
+        <div class="ph bg-lib" role="img" aria-label="College library study corner"></div>
+        <div class="pin">
+          <h3 data-en="📚 Research corner" data-fr="📚 Coin recherche">📚 Research corner</h3>
+          <ul class="res-links">
+            <li><a href="https://camgceb.org" target="_blank" rel="noopener" data-en="GCE Board · syllabuses &amp; results" data-fr="GCE Board · programmes &amp; résultats">GCE Board · syllabuses &amp; results</a></li>
+            <li><a href="https://minesec.gov.cm" target="_blank" rel="noopener" data-en="MINESEC · official news" data-fr="MINESEC · informations officielles">MINESEC · official news</a></li>
+            <li><a href="https://www.khanacademy.org" target="_blank" rel="noopener" data-en="Khan Academy · free revision" data-fr="Khan Academy · révision gratuite">Khan Academy · free revision</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="cell photo wide rv" style="grid-column:span 2;transition-delay:.12s">
+        <div class="pin" style="padding:26px">
+          <h3 data-en="📰 News worth printing on a flyer" data-fr="📰 Des nouvelles à imprimer sur les flyers">📰 News worth printing on a flyer</h3>
+          <p data-en="Inter-house sports, science week, debate club wins, visiting-day photos and announcements — posted by the office, shared by parents on WhatsApp, and turned into next term's admissions poster. While the Ministry digitises school cards and fee payments, the college visibly moves with the times instead of watching neighbours catch up." data-fr="Compétitions inter-maisons, semaine des sciences, victoires du club de débat, photos du jour de visite et annonces — publiés par le bureau, partagés par les parents sur WhatsApp, et transformés en affiche d'inscription au trimestre suivant. Pendant que le Ministère numérise cartes et paiements scolaires, le collège avance visiblement avec son époque.">Inter-house sports, science week, debate club wins, visiting-day photos and announcements — posted by the office, shared by parents on WhatsApp, and turned into next term's admissions poster. While the Ministry digitises school cards and fee payments, the college visibly moves with the times instead of watching neighbours catch up.</p>
+          <a class="more" href="https://wa.me/237677789631" target="_blank" rel="noopener" data-en="Send the office a news item on WhatsApp →" data-fr="Envoyer une nouvelle au bureau sur WhatsApp →">Send the office a news item on WhatsApp →</a>
+        </div>
+      </div>
+    </div>
+    <div class="flyer-strip rv">
+      <b data-en="&ldquo;Our GCE results, calendar and admissions are online — open them on any phone.&rdquo;" data-fr="« Nos résultats GCE, notre calendrier et nos inscriptions sont en ligne — consultez-les sur n'importe quel téléphone. »">“Our GCE results, calendar and admissions are online — open them on any phone.”</b>
+      <span data-en="A ready-made line for every admissions flyer, prospectus and banner. (Demo concept.)" data-fr="Une phrase prête pour chaque flyer, prospectus et bannière. (Concept de démonstration.)">A ready-made line for every admissions flyer, prospectus and banner. (Demo concept.)</span>
     </div>
   </div>
 </section>

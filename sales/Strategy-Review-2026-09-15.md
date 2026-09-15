@@ -79,8 +79,15 @@ then it aligns with the market."*
 2. **WhatsApp-Business/catalogue owners with no Google presence** (MITOC shape):
    already digital, immediate grasp of the offer, cheap to convince.
 3. **Boarding / bilingual fee-paying colleges, 100+ GCE candidates, no site,
-   lay proprietor** (St Theresa, Summerset, Baird, NABESK shapes): out-of-town
-   parents ARE on Google; one extra boarder (180 k+/term) pays for the site twice.
+   lay proprietor** — **refined by King 15 Sep evening (criteria below, §10 D4):**
+   exclusively **lay-private**, **old enough to have parent trust, GCE history
+   and an active online presence** (live Facebook page, parent engagement),
+   **young enough still to need the boost and lack a site**; **highest bonus =
+   ever ran Facebook ads**. (St Theresa, Summerset, Baird, NABESK shapes.)
+   Out-of-town/diaspora parents ARE on Google; one extra boarder
+   (180 k+/term) pays for the site twice. Every school build now includes the
+   new **Student Corner** (results honour roll, downloads, research links,
+   shareable news — §10 D4).
 
 ### Tier 2 — opportunistic
 Small lay day schools with active Facebook admissions · hotels/pharmacies/larger
@@ -140,7 +147,7 @@ schools (scope creep kills the 3–5 day promise and the margin).
 |---|---|---|
 | Cold WhatsApp gift messages (≤5 lines + mockup) | primary outbound | keep; needs 5–8× more volume; never blast from a fresh/unnamed number |
 | Sealed QR cards at numberless gates | offline inbound | Wednesday sweep (already planned) — this is our "town group" for no-channel schools |
-| **Facebook community groups (Buea/Douala business/community) + WhatsApp buy-and-sell groups** | inbound hands-raisers | **NEW — one bilingual gift post, King's name, after group-rules check (addendum §7)**; 1 post/week |
+| **TikTok + Instagram (King's chosen inbound stage, 15 Sep)** | inbound hands-raisers | **DECIDED — see §10 D3; ready pack `sales/social/founding-post-tiktok-ig.md`; 2 posts/week, mirror to FB Page + Status. FB group text (addendum §7) kept as fallback only.** |
 | **TikTok build-in-public** | compounding inbound | King already posted video 1; commit **2 short videos/week**: screen-recorded mockup/build reveals ("I built a Buea clinic a website today"), naming no client; the 60–90 s handoff videos double as content |
 | WhatsApp Status | free broadcast to existing network | daily micro-post during push: mockup, launch, tip; converts acquaintances to referrals |
 | Referral partners | warm intro network | NEW small test: banner/signwriter printers, cyber/business centres, and one accountant serving proprietors — they already serve these owners. Thank-you = 10 k per signed referral or a free one-pager for their own business; never a client discount |
@@ -212,7 +219,7 @@ OWNER-BUYER only · governance gating for confessional/government · accuracy la
 every generated page · King sends from his phone, AMK drafts/builds · domains in
 client names · named previews private, public assets nameless.
 
-## 9 · Decisions requested from King (5)
+## 9 · Decisions requested from King (5) — **DECIDED same evening; see §10**
 
 1. **Geography:** open **Douala clinics remotely now** (Bonabéri demo ready),
    Buea-first for schools? (Recommend: yes.)
@@ -228,5 +235,93 @@ client names · named previews private, public assets nameless.
 5. **Care & wedge:** (a) bundle the Google-front-door cleanup free with founding
    sites; (b) hold Care pricing for the 30-day check-in, Basic at ~100–120 k/yr MoMo?
    (Recommend: yes to both; no change to the 100 k founding price.)
+
+## 10 · King's decisions — Tue 15 Sep evening (supersede §9 where they differ)
+
+King answered the five questions after reading the review and added his own
+directives. Final positions:
+
+**D1 · Geography — Douala clinics YES, remote-first (King didn't understand
+the question, so here it is plainly).** "Remote" means: we target
+Douala clinics/labs/opticians **by WhatsApp and links only — no travel, no
+walk-in cards, no transport cost**. Everything we deliver (mockup image,
+named preview on a Vercel link, payments by MoMo, launch + handoff video)
+already works without a meeting; the Bonabéri clinic concept is built. Buea
+keeps the local advantage (sealed cards, same-boda loops, walkthroughs in
+person); **Douala schools are NOT prospecting targets this quarter** — their
+buying happens on the ground and we'd spend cards for nothing. If a Douala
+school finds AMK inbound (TikTok/IG/Status/referral), we serve it.
+**D2 · Named-first gifts: APPROVED, clinics first.** Hot list of 5–12
+owner-buyer clinics/labs; semi-named 60–90 min concepts (real name/crest
+pulled from their Google/Facebook, DEMO prices/photos, accuracy law on every
+claim), sent with "I went ahead and drafted yours — may I send the link?".
+No provisioning, no domain purchase, no live accounts until paid.
+**D3 · Inbound goes on TikTok/Instagram, NOT Facebook groups (King's call).**
+Ready pack: `sales/social/founding-post-tiktok-ig.md` — first post is a
+20–30 s screen-recorded clinic reveal (4M+ TikTok users CM, 73% of consumers
+prefer short video for finding services; 2.2 M IG users concentrated
+Douala/Yaoundé/Bafoussam — sources in the ammunition dossier). Same videos
+mirror to the AMK Facebook **Page** and Status for free. Cadence 2/week.
+**D4 · Schools: tighter ICP + a product King designed.**
+- Target ONLY lay-private colleges that are **young enough to still need the
+  boost** (no site, no marketing budget/habit) **yet old enough to have parent
+  trust and an online presence** — at minimum an active Facebook page with
+  parent engagement and **some GCE history worth boasting about**. Strongest
+  signal: **they have run Facebook ads before** (they already know online
+  visibility costs money and brings returns). Disqualify dormant pages,
+  board/government, decent existing sites.
+- **Student Corner / Espace Élèves is now STANDARD on every school build**
+  (built into `site/build_sample_secondary.py`, live in sample-secondary.html):
+  results-day honour roll + pass rates, termly downloads (prospectus,
+  calendar, fee sheet, past questions), a curated research corner linking
+  official sources (camgceb.org, minesec.gov.cm, Khan Academy), and a news
+  strip parents share — plus a ready flyer line: *"Our GCE results, calendar
+  and admissions are online — open them on any phone."* It gives students a
+  reason to return, gives the proprietor something to print on flyers, and
+  rides MINESEC's digitisation wave without overclaiming it.
+- Bonus verified fact for St Theresa and Summerset: **both are official 2026
+  GCE marking centres** (named on camgceb.org 21 Aug 2026 communique) — use the
+  "the Board trusts you to host marking" line at FU/walkthrough, never in
+  writing that implies endorsement.
+**D5 · Google front-door + Care — King asked what it actually entails;
+scope locked as follows.**
+
+*Google front-door (FREE with every founding site, one-time, ~60–90 min
+AMK work + one action from the owner):*
+1. Create or claim the Google Business Profile for the business (clinic/lab/
+   optical/school) — AMK prepares name, category, quarter/landmark, hours,
+   services, price list where allowed, and 8–12 of the owner's real photos;
+   the **owner completes Google's verification** (they receive the code by
+   phone/SMS/postcard and forward it; we never impersonate them).
+2. Add the website link and the WhatsApp button; link to their Facebook page
+   consistently (same name, hours, number everywhere).
+3. Print-ready "Find us on Google / Leave a review" card with QR (our existing
+   card pipeline), so patients/parents leave the reviews that power ranking.
+4. At the 30-day check-in we show the owner the numbers (profile views,
+   direction requests, WhatsApp taps) in the first monthly report.
+School equivalent: profile + page-link hygiene + the review card for parents;
+the Ministry's cartescolaire MoMo system is left untouched (not our scope).
+
+*Care Plan (offered only AFTER the two founding clients are live, at the
+30-day check-in, never conditioned on the build):*
+- **Basic — 10 000 FCFA/month billed 100 000/year (2 months free) or
+  30 000/quarter by MoMo:** domain & hosting renewal, uptime monitoring,
+  daily backup, **up to 2 small same-week edits per month** ("send a
+  screenshot with an arrow"), hours/price/fee updates, WhatsApp tap & visitor
+  numbers in the one-page monthly report (`sales/templates/monthly-care-report.md`),
+  Google profile kept accurate and fresh quarterly.
+- **Growth — 25 000 FCFA/month billed 250 000/year or 70 000/quarter:**
+  everything in Basic, unlimited same-week edits, **2 SEO topic pages per
+  term** (the bilingual topic clusters from addendum §3), monthly Google
+  post + review replies coached for the owner, one content refresh per term.
+- Guardrails unchanged: domain registered in the client's own name from day
+  one (no hostage), no auto-debits (MoMo doesn't do them; we invoice termly/
+  annually), ~2 h/month work at Basic, and the 100 000 founding build / 50-50
+  is never discounted or tied to signing Care. Krexora's 80 000/month anchor
+  makes 10–25 k/month read as plainly fair.
+
+*Ammunition for all of the above* (stat sources, sector news, ready EN/FR
+lines, accuracy guardrails):
+`sales/research/Market-Ammunition-2020-2026.md`.
 
 — Akwo King / AMK – Web Development & Digital Solutions

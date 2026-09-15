@@ -172,7 +172,15 @@ Asset to build when first client goes live: `sales/templates/monthly-care-report
 5. **AI fact-check gate (Erhart's warning #2 = our RESEARCH-STANDARD):** every generated page gets the standard pre-send audit (phone numbers, names, prices, claims) before a prospect sees it — non-negotiable, already law.
 6. **Pre-payment provisioning gate (Erhart warning #3):** preview link stays AMK-hosted; domain/MoMo/real WA number switch only after the second 50 k. Already rule; restated.
 
-## 7 · Inbound experiment #1 — Facebook community gift post (needs King's approval; King posts as himself)
+> **UPDATE 15 Sep evening (King's call):** the inbound gift experiment moves
+> from Facebook groups to **TikTok + Instagram** (video-first, his preference).
+> Ready EN/FR captions, 25 s shot list, 4-week content bank and DM protocol are
+> in **`sales/social/founding-post-tiktok-ig.md`**. The Facebook-group copy
+> below is retained only as fallback / Page-mirror content; do not post in
+> groups unless King later asks. Source stats behind the channel choice:
+> `sales/research/Market-Ammunition-2020-2026.md` §5.
+
+## 7 · Inbound experiment #1 — Facebook community gift post (fallback only; King's chosen stage is now TikTok/IG)
 
 Why: turns cold outreach into inbound (consistent with QR cards and TikTok) and
 uses the genuinely-available "two founding slots" — truth, not fake scarcity.
