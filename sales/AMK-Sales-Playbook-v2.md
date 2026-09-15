@@ -1,6 +1,8 @@
 # AMK — Sales Playbook v2 (09/12)
 **Synthesized from 4 videos → optimized for AMK's exact context (WhatsApp-first, schools + clinics, free concept previews, ₦100k 50/50, King's standing rules).**
 
+> **Addendum (15 Sep evening):** [`AMK-Playbook-Addendum-Outcomes-2026-09-15.md`](AMK-Playbook-Addendum-Outcomes-2026-09-15.md) synthesizes 5 newer AI-agency videos — outcome (not website) framing, the gift-preview validation, Google-Maps no-website prospecting, the optional Care Plan retainer (FCFA/MoMo), monthly reports, and the handoff-video delivery step. Standing rules in this file still override; pricing changes in the addendum are proposals until King approves.
+
 Sources:
 1. Alex Hormozi — *Sales Was Hard Until I Understood These 9 Concepts* (51 min) — the ENGINE (opportunity × conversion × consistency)
 2. Adam Erhart — *10 Dark Psychology Sales Techniques (Ethically)* (21 min) — the MIND (framing tactics)
