@@ -103,7 +103,8 @@ Midas Touch currently has only a Facebook page, so people searching for an optic
 May I send a free preview built for your optic center? Which number should receive it?
 — Akwo King / AMK – Web Development & Digital Solutions
 ```
-- FU1 M+2 / FU2 M+4 / FU3 M+7; warm yes → `sample-clinic.html` link → 24h named MITOC re-skin → invite (site vs clinic visit).
+- FU1 M+2 / FU2 M+4 / FU3 M+7; warm yes → **named preview already built: `mitoc.html` (`https://amk-cm.vercel.app/mitoc.html` after King redeploys), builder `site/build_sample_mitoc.py`, sheet C cobalt+cream, 140 EN/FR pairs, demo WA routing to AMK** → then invite choice (10 minutes in the shop vs all on WhatsApp). Do NOT send before the warm yes (Invitation-First); never send the clinic template to an optician.
+- Claim discipline inside the preview: only refract / prescribe / mount lenses (their FB intro), real Malingo address; no hours, no brands, no contact lenses or surgery invented; prices tagged Demo; 9 generated concept photos, replaced by real shop shots at launch.
 
 ---
 

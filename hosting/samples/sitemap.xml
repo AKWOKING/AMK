@@ -6,4 +6,5 @@
   <url><loc>https://amk-cm.vercel.app/sample-nursery.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://amk-cm.vercel.app/sample-secondary.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://amk-cm.vercel.app/sample-clinic.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://amk-cm.vercel.app/mitoc.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
 </urlset>

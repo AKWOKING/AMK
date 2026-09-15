@@ -1,14 +1,18 @@
 # -*- coding: utf-8 -*-
-"""Assemble hosting/samples/ from site/ — the PUBLIC agency site + nameless
-templates (Nova / Little Oaks / Crestwood). Unlike hosting/previews/, this
-bundle is meant to be indexable: it is the public face + the generic preview
-links used in cold outreach (never send a named concept to a different lead).
+"""Assemble hosting/samples/ from site/ — the PUBLIC agency site + the
+nameless templates (Nova / Little Oaks / Crestwood / Molyko Medical Centre)
+plus named concepts built for a specific lead (e.g. /mitoc.html for Midas
+Touch Optic Center; named previews are only sent to that lead).
 
-Deploy as its own Vercel project (e.g. amk-web), root dir = hosting/samples.
+Deploy rule (King, standing): this bundle goes INSIDE the existing
+amk-cm.vercel.app project, never a separate Vercel project. King redeploys
+the site/ folder; hosting/samples/ is the snapshot of the same files.
 Shareable preview links afterwards:
   /sample-secondary.html  -> comprehensive / high / bilingual colleges
   /sample-school.html     -> general day schools (Nova)
   /sample-nursery.html    -> nursery/primary (Little Oaks)
+  /sample-clinic.html     -> clinics & laboratories (Molyko Medical Centre)
+  /mitoc.html             -> NAMED preview for Midas Touch Optic Center only
 """
 import pathlib, shutil
 

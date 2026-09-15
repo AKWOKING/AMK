@@ -37,7 +37,7 @@ Registry family: `terracotta`/`cafe` structure. Rotation alternative when Forest
 --shadow:0 18px 40px rgba(62,74,82,.14);
 ```
 
-## C. Optic / eye center — Cobalt + Cream (queued for MITOC named build)
+## C. Optic / eye center — Cobalt + Cream (IN USE: mitoc.html, 15 Sep 2026)
 Registry family: `clean` + `professional` structure. Precision, clarity, lens-like crispness.
 ```css
 --ink:#10202E; --ink-soft:#46596A; --surface:#F7F5EE; --surface-2:#FFFFFF; --line:#E3E6E4;
@@ -95,5 +95,6 @@ Registry family: `clean`. Maximum legality and speed; warm off-white, one trust 
 | 2026-09 | sample-school.html (Nova) | F, clean teal-blue | nameless |
 | 2026-09 | sample-nursery.html (Little Oaks) | E, friendly green | nameless |
 | 2026-09 | **sample-clinic.html (MMC)** | **A, Forest green + bone + amber** | nameless |
+| 2026-09-15 | **mitoc.html (Midas Touch Optic Center)** | **C, Cobalt + Cream, amber sparse** | NAMED preview, builder `site/build_sample_mitoc.py`; send only to MITOC; reference attachment drove page-wide eyebrows (law §4.4) |
 | Next clinic | must NOT repeat A → **B Terracotta+Slate** (unless client brand dictates) | | |
-| MITOC named (if won) | **C Cobalt+Cream** | queued | |
+| Next optic/eye build | must NOT repeat C → Terracotta+Slate or Olive+Brick+Paper adaptation | | |
