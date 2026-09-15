@@ -8,46 +8,64 @@
 
 ---
 
-## 1. Solidarity Clinic & Laboratory — Molyko, Buea ⭐ BEST CLINIC BET
+## 1. Solidarity Clinic & Laboratory — Malingo/Molyko, Buea ⭐ BEST CLINIC BET
 
-**Person in charge:** Dr Ndifor (name from "Walk The Walk Campaign" provider PDF: "CENTER OF CARE · 677 61 57 57 · SOLIDARITY CLINIC · DR NDIFOR · MOLYKO BUEA"). Role attribution still needed at the gate/on WhatsApp.
-**Address:** Quartier Molyko, P.O. Box 467, Buea.
-**Phone:** +237 691 63 29 41 · +237 677 61 57 57 (the 677 number is cross-confirmed by three sources: medicoor listing, WTWC provider PDF, Zenithe Insurance accredited-provider list).
-**WhatsApp:** NOT yet verified — King to check **both** numbers on his phone tonight (14 Sep), message whichever is registered.
-**Map:** medicoor.com profile id 380 ("Solidarity Clinic Laboratory", no profile image, no comments/ratings, unclaimed third-party listing).
+### Name correction (15 Sep deep recheck — read this first)
+- **The doctor is Dr Nde Fon Peter** (general medicine), per the clinic's own medicoor booking profile, whose doctor dropdown lists two GPs: **"Nde Fon Peter, Médecine Générale"** and **"Njang Mbeng Emmanuel, Médecine Générale"**.
+- The WTWC provider PDF line "SOLIDARITY CLINIC **DR NDIFOR**" was a transcription of **NDE FON**; The Sun newspaper independently renders it "**Dr. Ndifon of Solidarity Clinic in Buea**" (same name, run together). Treat the PDF spelling as wrong.
+- Do **not** conflate with **Dr Peter Louis Ndifor** (proprietor of Bota Polyclinic, Limbe; Vice President of the Cameroon Medical Council; Sasse old boy). He is a different man. The Sun interview actually has him citing Dr Nde Fon of Solidarity as a mentor who encouraged him into private practice — useful proof that Dr Nde Fon is an established, respected private-practice figure in the region, but they are two people.
+- **Salutation plan:** do not assume Dr Nde Fon owns the line. Message asks which doctor should receive the preview (both names spelled correctly), which doubles as research proof.
 
-### Verified facts (all sourced, none assumed)
-- Full private clinic **plus on-site laboratory**: lab categories listed — hematology, parasitology, serology, biochemistry, clinical chemistry, microbiology, plus ultrasound and X-ray, general consultations.
-- **Insurance-accredited**: appears on Zenithe Insurance's published provider list as "SOLIDARITY HEALTH FOUNDATION, MOLYKO, 77 61 57 57" — meaning insurance patients are already sent there by paperwork, but find no website.
-- **No website, no Google presence** — the entire online footprint is one unclaimed third-party booking profile (medicoor.com) with zero comments and no photo. Not on Google Maps with own listing in the search results surfaced.
-- P.O. Box only as postal address; lab reports and results are presumably collected physically.
-- Name registered as a foundation ("Solidarity Health Foundation") in one accreditation document — possibly NGO/social-mission character; stay neutral on ownership structure in messaging, speak to the doctor.
+### Identity, location, channels (all sourced)
+- **Registered name: Solidarity Health Foundation (Solidarity Clinic)** — "Foundation" is confirmed by the Google Business Profile, the Zenithe insurance list and the elidge directory; it is a social-enterprise clinic (reviewers praise "free consultation with some specialists like the cardiologist"; its 2013 social-enterprise heritage describes affordable care).
+- **Address:** **Untarred Malingo Street, Buea** (Google Business Profile); quartier Molyko, medicoor says Molyko; medpages places it at **Molyko Buea Checkpoint, road D61**; P.O. Box 467 Buea. Plus code **575J+7M**; coordinates 4.1581816, 9.2816356.
+- **Phones:** +237 691 63 29 41 and +237 677 61 57 57 (medicoor, both listed; elidge and the Google profile carry 677 61 57 57; **King confirmed the number is correct, 15 Sep**; WhatsApp registration still to be checked tonight). Landline +237 2 33 32 31 31 (medpages).
+- **Hours: OPEN 24 HOURS** (Google profile; medicoor banner "The Clinic is open 24Hr").
 
-### Pain (verified, lead the msg with this)
-1. Patients sent by insurers and referrals cannot find the clinic online: no services list, no lab panel list, no prices, no location pin beyond "Molyko".
-2. Lab results require a physical trip back to Molyko; competitors (Soliman, Liwo — do not name) already show services and pricing online.
-3. Accredited-provider status is invisible to the public — patients choosing a clinic on Google cannot see they accept insurance.
+### ⭐ The Google profile King remembered (rechecked 15 Sep)
+- Google Business Profile: **"Solidarity Health Foundation (Solidarity Clinic)"**, medical clinic.
+- **Rating: 4.0 stars from 54 Google reviews** (King's recollection was 4.5; as of tonight it reads 4.0 — go with what is on screen if he opens it with the doctor; 54 reviews is the stronger number anyway).
+- **21 photos** uploaded; review keyword clusters: **"clean environment" (8), "professional staff" (8), "caring staff" (4), "nurses" (4), "team" (4)**, plus "cardiologist", "compassionate healthcare", "hygiene", "laboratory", "pharmacy" (2 each).
+- Sample fresh reviews (1 month old): *"One of the health facilities that feels like home… even free consultation with some specialists like the cardiologist… sustainable over 5 years"*; *"the nurses and Doctors treated me like a family… a holistic experience of treatment."*
+- **Critical: the profile has NO website attached.** Google literally shows an "**Add website**" button; there is no booking link, no services menu, no price list, no owner-style structure visible. The medicoor profile is also **unclaimed** ("Revendiquer ce profil").
+
+### Verified facts (all sourced)
+- Services per medicoor: **general medicine, vaccination, surgery, laboratory, maternity**; lab sub-panels: check-up, hematology, parasitology, serology, microbiology, biochemistry, hormonology, water analysis; **echography/ultrasound and radiography/X-ray**.
+- Reviews reference a **cardiologist**, nurses, a **laboratory** and a **pharmacy** on site — broader specialist cover than the booking profile lists.
+- **Insurance:** on the Zenithe accredited-provider list as "SOLIDARITY HEALTH FOUNDATION, MOLYKO, 77 61 57 57" (independent); medicoor displays a large insurer network panel (ACTIVA, ALLIANZ, AXA, ASCOMA, CIGNA, NSIA, SAHAM, ZENITHE and others) — only Zenithe is independently confirmed, so cite Zenithe in writing, treat the rest as "listed across major insurance networks on medicoor". The "approved by embassies" tags on that page look like platform boilerplate: do NOT repeat them.
+- Real facility photos exist (medicoor uploads, dated 2017: reception/building shots).
+- **Academic credibility:** two peer-reviewed studies (Pan African Medical Journal 2023; BioMed Research International 2025, MRSA surface study) selected Solidarity among the **three most-solicited facilities in the Buea Health District**, alongside Buea Regional Hospital and Mount Mary Hospital. In the 2020 sampling it was the random private representative of all 176 private facilities — proof of patient throughput.
+- Still NO website of their own anywhere; footprint = Google profile (rich, but website-less), unclaimed medicoor profile, elidge/medpages directory stubs. (Ignore solidarity-clinic.blogspot.com and solidarity-clinic.gr — those belong to an unrelated 2013 Athens, Greece social-enterprise template.)
+
+### Pain (verified, lead with this — note the reframe)
+1. **This is NOT an invisible clinic.** It is a well-reviewed (4.0, 54 reviews), 24h, high-throughput clinic whose Google reputation dead-ends at a phone number: no website, no booking, no services, no lab panels, no prices, no WhatsApp link, unclaimed third-party profiles. Every one of the 54 reviewers' goodwill currently converts only via a voice call.
+2. Patients referred by insurers and the 24h flow cannot see what services/panels exist or what they cost before traveling; lab results still require a physical trip.
+3. The social-mission story (foundation, free specialist consults, "treated like family") and the academic/throughput credibility are nowhere structured online — the listing cannot even showcase the cardiologist, maternity, or lab.
+4. The medicoor profile with their photos and doctor names is unclaimed by them — someone else platforms their brand.
 
 ### Pitch (only after invitation)
-- Bilingual clinic + laboratory concept (`sample-clinic.html`, same shape, swapped in 24h): six-service grid with lab bento, **"Results on WhatsApp same day"** feature card, transparent FCFA price cards (their real lab panel prices), insurance-partner strip ("Zenithe accredited" with their permission), ultrasound/X-ray services, emergency line pinned on mobile, bookings → their WhatsApp in EN and FR.
-- Deposit fit: single-doctor clinic + lab = likely 100k range; lab results-on-WhatsApp is the conversion hook. Foundation/NGO structure: if true, the pitch is still service-commercial to patients; ask the doctor who pays for the clinic's operations.
+- Attach a bilingual website TO the existing Google profile: six-service grid + lab bento, **"results on WhatsApp same day"**, transparent FCFA panels (their real prices), 24h/emergency line prominent, maternity + ultrasound, insurance strip (Zenithe accredited first; add the others only on their confirmation), cardiologist/specialist section echoing their reviewers' words, EN|FR, bookings → their WhatsApp with reference codes.
+- Add a Google review call-to-action flow (a 4.0 with 54 reviews heading toward 4.5 is a believable, organic story — never fabricate reviews).
+- Claim/clean the medicoor profile as part of delivery.
+- Deposit fit: 24h multi-service clinic + lab + pharmacy = likely 100k anchor client; the foundation angle supports a long-term retainer (Google posts, result digests).
 
 ### Card fields
-- What AMK knows: clinic + lab in Molyko, Dr Ndifor, insurer-accredited, two phone lines, no website (only a bare third-party profile).
-- One question AMK needs answered: "Do patients currently receive lab results on WhatsApp, or must they always come back for them?"
-- AMK brings to the visit: phone open on the nameless clinic concept, plus the lab bento variant sketched; a draft "results on WhatsApp" flow.
-- Visit conditions (written on the card): Dr Ndifor invited; bring the 24h named-preview offer; the card itself never sells.
+- What AMK knows: 24h clinic + lab + maternity + pharmacy on Malingo Street, Molyko; Drs Nde Fon Peter and Njang Mbeng Emmanuel; 4.0/54 Google reviews + 21 photos; Zenithe-accredited; two mobile lines + landline; no website attached anywhere.
+- One question AMK needs answered: "Do patients currently receive lab results on WhatsApp, or must they always travel back for them?"
+- AMK brings to the visit: phone open on the nameless clinic concept with the "reviews → booking" gap sketched; a draft same-page flow linking the Google listing to the site.
+- Visit conditions (written on the card): Dr Nde Fon (or Dr Njang) invited; bring the 24h named-preview offer; the card never sells.
 
 ### Message 1 — WhatsApp (≤5 lines, clinic variant, send after King verifies a number)
 ```
-Good morning, Dr Ndifor. Akwo King, AMK Web Development, Buea.
-I build bilingual websites for private clinics and laboratories: services and lab panels listed, prices in FCFA, results and appointment requests on WhatsApp, English and French, delivered in 3-5 days.
-Searching Solidarity Clinic online, I found only a bare third-party booking page, no photo or price, even though your laboratory is on an insurance accredited-providers list.
-May I send a free preview built for a clinic-and-laboratory like yours? Which number should receive it?
+Good morning. Akwo King, AMK Web Development, Buea.
+I build bilingual websites for private clinics and laboratories: services and lab panels listed, prices in FCFA, results and appointment requests on WhatsApp, English and French, ready in 3-5 days.
+Your Google listing already has 54 patient reviews and 21 photos, but no website, services or booking link attached to it, so that goodwill ends at a phone call.
+May I send a free preview built for a clinic-and-laboratory like Solidarity? Who should receive it, Dr Nde Fon Peter or Dr Njang Mbeng Emmanuel?
 — Akwo King / AMK – Web Development & Digital Solutions
 ```
 - FU1 M+2 / FU2 M+4 / FU3 M+7; on warm yes → link sent → 24h named Solidarity concept → invite (site vs visits).
-- If the 677 line is answered by a lab tech/front desk: treat as gatekeeper, ask for Dr Ndifor's own WhatsApp exactly like a school bursar.
+- If a lab tech/front desk answers: treat as gatekeeper, ask for the doctor on duty's own WhatsApp, exactly like a school bursar.
+- If the doctor corrects the name order or spelling, update the CRM immediately and thank him.
 
 ---
 
@@ -59,7 +77,7 @@ May I send a free preview built for a clinic-and-laboratory like yours? Which nu
 **Footprint:** Facebook page only (page id 100064126300520, ~365 likes, category Medical & health). Intro line: "We refract, prescribe n mount lenses". No website, no Google listing surfaced in search; phone books (mawidoO, business-guide P-O-C) carry the number with no other data.
 
 ### Verified facts
-- Services stated in the page's own words: refraction (eye testing), prescribing and mounting lenses — i.e. full optician service, not just a frame shop.
+- Services stated in the page's own words: refraction (eye testing), prescribing and mounting lenses — a full optician service, not just a frame shop.
 - Facebook-only presence; the page carries no website link and no hours/price data in search-cached intro.
 - Located in Molyko-Malingo, high-footfall student area; clientele naturally skews to students needing correction.
 
@@ -69,12 +87,12 @@ May I send a free preview built for a clinic-and-laboratory like yours? Which nu
 3. Facebook pages offer no bilingual service/price structure and no WhatsApp booking button that lands as a chat on the owner's phone with a reference.
 
 ### Pitch (only after invitation)
-- Clinic concept adapted to an optic center: eye-test booking on WhatsApp, frame collections gallery, lens option cards with FCFA prices, student-correction offer (their choice, no discounts invented), EN/FR toggle, emergency/repair CTA, map pin opposite the former police station.
+- Clinic concept adapted to an optic center: eye-test booking on WhatsApp, frame collections gallery, lens option cards with FCFA prices, student-correction offer (his choice, no discounts invented), EN/FR toggle, emergency/repair CTA, map pin opposite the former police station.
 - Smaller scope than Solidarity; frame catalog is the heavier content task (he supplies photos) → quote by scope, never discount.
 
 ### Card fields
 - What AMK knows: optician at Molyko-Malingo opposite former police station; refraction, prescribing, lens mounting; Facebook-only; one mobile line.
-- One question: "How many students currently walk out without booking because they cannot see your frames or prices beforehand?"
+- One question: "How many students walk out without booking because they cannot see your frames or prices beforehand?"
 - AMK brings: clinic concept on phone + an optic-center re-skin sketch using the same template.
 - Visit conditions: Mr Ateasom invited; 24h named preview offer; card does not sell.
 
@@ -91,6 +109,6 @@ May I send a free preview built for your optic center? Which number should recei
 ---
 
 ## Sector rule for the rest of the week
-- Parks (do NOT pitch, already well digitized): Dr Liwo Dental Clinic (drliwo.org, polished site + blog + prices), Dr Soliman Clinic (solimanclinics.com, WordPress + online store + active socials), St Veronica Medical Centre (biakahc.org, 24h site).
-- Pattern to repeat when sourcing more clinics: no website + working WhatsApp + named owner/doctor + a repeat-visit service (lab results, refraction, scans, pharmacy refills) = qualified. Facebook-only or third-party-listing-only is the verified-pain test.
+- Parks (do NOT pitch, already well digitized): Dr Liwo Dental Clinic (drliwo.org, polished site + blog + prices), Dr Soliman Clinic (solimanclinics.com, WordPress + online store + active socials, 4.8/5 on Google mirrors), St Veronica Medical Centre (biakahc.org, 24h site).
+- Pattern to repeat when sourcing more clinics: **reachable WhatsApp + (no website OR a website-less Google profile with reviews) + named owner/doctor + a repeat-visit service** (lab results, refraction, scans, pharmacy refills) = qualified. A rich Google profile with no website link is the NEW highest-value pattern, as Solidarity proves.
 - Every clinic concept is nameless first (`sample-clinic.html`), named within 24h of a warm yes, built strictly per `AMK-DESIGN-SKILLS.md` (Forest palette family used for the nameless concept; rotate on named builds, never reuse OraCare's cream/navy Odentrics family).

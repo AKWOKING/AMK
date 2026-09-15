@@ -43,6 +43,10 @@ HTML = r"""<!DOCTYPE html>
 </script>
 <style>
 :root{
+  --ease-out:cubic-bezier(.23,1,.32,1);
+  --ease-in-out:cubic-bezier(.77,0,.175,1);
+  --ease-drawer:cubic-bezier(.32,.72,0,1);
+  --dur-press:140ms;--dur-pop:170ms;--dur-menu:220ms;--dur-panel:320ms;--dur-reveal:520ms;
   --g900:#114333; --g800:#155642; --g700:#1B6B52; --emerald:#0E7A5C; --emerald-b:#12936E;
   --bone:#F6F3EC; --bone-2:#EFE8D9; --card:#FFFFFF;
   --ink:#14201B; --muted:#56655E; --line:rgba(20,32,27,.10);
@@ -62,12 +66,12 @@ section{padding:84px 0}
 h2{font-size:clamp(27px,3.4vw,38px);margin-bottom:12px}
 .sub{font-size:16.5px;color:var(--muted);max-width:620px}
 .center{text-align:center}.center .eyebrow{justify-content:center}.center .sub{margin:0 auto}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 26px;border-radius:12px;font-size:15.5px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;font-family:inherit;transition:transform .18s cubic-bezier(.16,1,.3,1),background .18s,box-shadow .18s;text-align:center;white-space:nowrap}
-.btn:active{transform:scale(.98)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 26px;border-radius:12px;font-size:15.5px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;font-family:inherit;transition:transform var(--dur-press) var(--ease-out),background .2s var(--ease-out),box-shadow .2s var(--ease-out),border-color .2s var(--ease-out);text-align:center;white-space:nowrap}
+.btn:active{transform:scale(.97)}
 .btn-green{background:var(--emerald);color:#fff;box-shadow:0 10px 24px rgba(14,122,92,.28)}
-.btn-green:hover{background:var(--emerald-b);transform:translateY(-2px)}
+.btn-green:hover{background:var(--emerald-b)}
 .btn-red{background:var(--red);color:#fff;box-shadow:0 10px 24px rgba(181,52,42,.26)}
-.btn-red:hover{background:#9E2B22;transform:translateY(-2px)}
+.btn-red:hover{background:#9E2B22}
 .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
 .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
 .btn-outline-d{background:transparent;color:var(--g800);border-color:rgba(21,86,66,.35)}
@@ -84,7 +88,6 @@ header{position:sticky;top:0;z-index:60;background:rgba(246,243,236,.86);backdro
 .logo .t small{display:block;font-size:9.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 .nav-links{display:flex;gap:24px}
 .nav-links a{text-decoration:none;font-size:14.5px;font-weight:600;color:var(--muted)}
-.nav-links a:hover{color:var(--g800)}
 .nav-right{display:flex;align-items:center;gap:10px}
 .lang{display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden}
 .lang button{border:none;background:transparent;font-family:inherit;font-size:12.5px;font-weight:700;padding:6px 12px;cursor:pointer;color:var(--muted)}
@@ -114,8 +117,8 @@ header{position:sticky;top:0;z-index:60;background:rgba(246,243,236,.86);backdro
 .stat .demo{display:block;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#7E968C;margin-top:5px}
 /* services bento */
 .bento{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px}
-.bcell{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
-.bcell:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(17,67,51,.12)}
+.bcell{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;transition:transform var(--dur-pop) var(--ease-out),box-shadow var(--dur-pop) var(--ease-out)}
+.bcell:hover{box-shadow:0 18px 40px rgba(17,67,51,.12)}
 .bcell.photo{padding:0;overflow:hidden;grid-row:span 1}
 .bcell.photo img{width:100%;height:178px;object-fit:cover}
 .bcell.photo .pin{padding:22px 26px 24px}
@@ -186,7 +189,7 @@ header{position:sticky;top:0;z-index:60;background:rgba(246,243,236,.86);backdro
 .faq-list details{border-bottom:1px solid var(--line);padding:6px 0}
 .faq-list summary{cursor:pointer;list-style:none;font-size:16.5px;font-weight:700;padding:14px 30px 14px 0;position:relative;color:var(--g900)}
 .faq-list summary::-webkit-details-marker{display:none}
-.faq-list summary::after{content:"+";position:absolute;right:4px;top:12px;font-size:24px;font-weight:400;color:var(--emerald);transition:transform .2s}
+.faq-list summary::after{content:"+";position:absolute;right:4px;top:12px;font-size:24px;font-weight:400;color:var(--emerald);transition:transform var(--dur-menu) var(--ease-out)}
 .faq-list details[open] summary::after{transform:rotate(45deg)}
 .faq-list .ans{font-size:14.5px;color:var(--muted);padding:0 0 18px;max-width:660px}
 /* footer */
@@ -197,14 +200,19 @@ footer{background:#0C2E23;color:#9CB5AC;padding:48px 0 24px;font-size:14px}
 .f-grid{display:grid;grid-template-columns:1.3fr 1fr 1.2fr;gap:34px;margin-bottom:26px}
 .f-grid h5{color:#fff;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
 .f-grid a{display:block;text-decoration:none;padding:3px 0}
-.f-grid a:hover{color:var(--amber)}
 .f-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:18px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:12.5px}
 /* mobile cta */
 .mbar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:70;background:#fff;border-top:1px solid var(--line);padding:10px 12px;gap:9px;box-shadow:0 -8px 24px rgba(0,0,0,.08)}
 .mbar a{flex:1}
 /* reveal */
-.rv{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.rv{opacity:0;transform:translateY(22px);transition:opacity var(--dur-reveal) var(--ease-out),transform var(--dur-reveal) var(--ease-out)}
 .rv.in{opacity:1;transform:none}
+@media (hover:hover) and (pointer:fine){
+  .btn-green:hover{transform:translateY(-2px)}
+  .btn-red:hover{transform:translateY(-2px)}
+  .bcell:hover{transform:translateY(-5px)}
+  .nav-links a:hover{color:var(--g800)}
+    }
 @media(max-width:960px){
   .hero-grid,.expect-grid,.visit-grid{grid-template-columns:1fr;gap:40px}
   .bento{grid-template-columns:1fr 1fr}

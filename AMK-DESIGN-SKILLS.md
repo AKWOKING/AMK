@@ -1,8 +1,8 @@
 # AMK DESIGN SKILLS LIBRARY
 
-_Consolidated from `bergside/awesome-design-skills` (TypeUI, 67 design-system skills) and `Leonxlnx/taste-skill` (anti-slop agent skills). Raw repos persist at `design-library/repos/`. Full registry token digest: `design-library/registry-digest.json`._
+_Consolidated from three MIT-licensed agent skill libraries: `bergside/awesome-design-skills` (TypeUI, 67 design-system families), `Leonxlnx/taste-skill` (anti-slop frontend), and `emilkowalski/skills` (animation/design engineering). Vendored sources live in `design/vendor/` (full family token sheets: `design/vendor/bergside-skills/<family>/`, digest `design/vendor/registry-digest.json`; motion skills: `design/vendor/emil/skills/`; taste skills: `design/vendor/taste/skills/`)._
 
-**How to use:** before building any site/concept, read §1-§2 (infer the brief, set dials), build against §4-§11, run §13 before delivery. For image/comps work, also read §15. This library is an overlay on top of the AMK standing standards (single-file HTML, EN|FR, base64, Concept Production Standard, nameless-template rule, no fabricated facts).
+**How to use:** the build pipeline is `design/WORKFLOW.md` (9 stages). Before building, read §1-§2 below (infer the brief, set dials), lock a token sheet from `design/STYLE-TOKENS.md`, build against §4-§11, run the motion pass (`design/MOTION.md`), run §13 before delivery. For image/comps work, also read §15. This library is an overlay on top of the AMK standing standards (single-file HTML, EN|FR, base64, Concept Production Standard, nameless-template rule, no fabricated facts).
 
 ---
 
@@ -229,16 +229,34 @@ Pale Red #FDEBEC/#9F2F2D · Pale Blue #E1F3FE/#1F6C9F · Pale Green #EDF3EC/#346
 
 ## §9 MOTION
 
+> Full playbook with copy-paste snippets: `design/MOTION.md` (distilled from `design/vendor/emil/skills/`). Every concept build passes stage 8 (motion gate) of `design/WORKFLOW.md`.
+
+**Gate before animating (four questions, in order):** frequency (100+/day = no animation ever; tens/day = near-invisible; occasional = standard; rare = the delight budget) then purpose (feedback / spatial consistency / state indication / preventing jarring change / explanation; "looks cool" rejected) then speed (UI interactions under 300ms) then function (never move data the user is reading). Cap 5-7 deliberate motion moments per concept page.
+
+**Motion tokens (paste into every `:root`, reference via variables):**
+```css
+--ease-out:cubic-bezier(.23,1,.32,1);       /* entrances, exits, press, hover */
+--ease-in-out:cubic-bezier(.77,0,.175,1);   /* on-screen movement A to B */
+--ease-drawer:cubic-bezier(.32,.72,0,1);    /* sheets and bottom bars */
+--dur-press:140ms; --dur-pop:170ms; --dur-menu:220ms; --dur-panel:320ms; --dur-reveal:520ms;
+```
+
 **Rules:**
 - **Motion must be motivated** — one-sentence justification per animation: hierarchy / storytelling / feedback / state transition. "It looked cool" = delete it.
 - **Claimed = shown:** if MOTION_INTENSITY > 4, the page actually moves (hero entry, scroll reveals, hover physics). If you can't ship working motion, drop the dial to 3 and ship clean static. Never half-broken motion.
-- Animate ONLY `transform` + `opacity`. Never top/left/width/height.
-- **`window.addEventListener("scroll")` is BANNED for reveal logic** — use IntersectionObserver (AMK standard `.rv` pattern is compliant), CSS scroll-driven animations, or a library's scroll API. Passive listeners OK for trivial nav-shadow toggles.
-- `prefers-reduced-motion: reduce` → everything collapses to static/instant (AMK sites already include the block — keep it).
-- Marquee: **max ONE per page.**
-- Infinite loops only where the section actively benefits (status, live feel); never every card.
-- Easing: spring or `cubic-bezier(0.16, 1, 0.3, 1)` (ease-out-quint). NO linear, NO ease-in-out for entrances.
-- Stagger: 60-100ms per item (`transition-delay` / `animation-delay: calc(var(--i) * 80ms)`).
+- Animate ONLY `transform` + `opacity`. Never top/left/width/height/margin/padding. Never `transition:all` — list exact properties.
+- Easing: entrances/exits use `--ease-out`; on-screen movement/morph uses `--ease-in-out`; hover/color uses `--ease-out`; only loops and progress use linear. **`ease-in` is banned on UI** (it reads as sluggish).
+- Durations: press 100-160ms; tooltips 125-200; menus/accordions 150-250; modals/sheets 200-500; scroll reveals/hero 400-700 (one-time marketing only).
+- **Every pressable element gets `:active{transform:scale(.97)}`** (range .95-.98) with a 140-160ms transition. No exceptions.
+- **Hover transforms are gated** behind `@media (hover:hover) and (pointer:fine)` — touch screens otherwise stick on a hover state.
+- Entrances never start from `scale(0)` (nothing real appears from nothing): start at `translateY(18-24px)` or `scale(.92-.97)` plus opacity 0.
+- Popovers/menus scale in FROM THEIR TRIGGER (`transform-origin` at the trigger); modals stay centered.
+- **`window.addEventListener("scroll", ...)` is BANNED for reveal logic** — use IntersectionObserver (AMK standard `.rv` pattern is compliant), CSS scroll-driven animations, or a library's scroll API. Passive listeners OK for trivial nav-shadow toggles.
+- `prefers-reduced-motion: reduce` means gentler, not zero: keep opacity/color transitions that aid comprehension, kill movement/loops/parallax (house block in `design/MOTION.md` §5).
+- Marquee: **max ONE per page.** Infinite loops only where the section actively benefits (status, live feel); never every card.
+- Stagger: **30-80ms per sibling** (house 60ms: `transition-delay:calc(var(--i)*60ms)`); never block interaction; cap staggered groups near 7 items.
+- Rapidly-triggered elements (toggles, language switch, toasts) use CSS **transitions**, which retarget mid-flight, not keyframes, which restart; exits are faster than entrances.
+
 - `backdrop-blur` ONLY on fixed/sticky elements (nav, overlays) — never on scrolling containers.
 - Grain/noise overlays ONLY on fixed `pointer-events:none` pseudo-elements.
 - Z-index: systemic scale only (nav 50-60, modals above), never 9999 spam.
@@ -318,7 +336,7 @@ Pale Red #FDEBEC/#9F2F2D · Pale Blue #E1F3FE/#1F6C9F · Pale Green #EDF3EC/#346
 - [ ] Em-dash scan: zero in EN strings (hyphen ok); FR permitted
 - [ ] No filler verbs, no fake names, no unlabeled fake numbers
 - [ ] Watermark/logo scan on every image asset (visual)
-- [ ] Motion: IO-based (no scroll listeners), reduced-motion block present, claimed = shown
+- [ ] Motion: IO-based (no scroll listeners), reduced-motion block present, claimed = shown; **0 `transition:all`; 0 entrance `ease-in`; every pressable has `:active` scale .95-.98 at 100-160ms; hover transforms gated by `(hover:hover) and (pointer:fine)`; no entrance from scale(0); UI motion ≤300ms (reveals ≤700ms); stagger 30-80ms; only transform/opacity animated; `design/MOTION.md` §6 sweep run**
 - [ ] Shape lock + color lock + theme lock consistent page-wide
 - [ ] Mobile collapse explicit per section; test at 390
 
@@ -336,7 +354,7 @@ Pale Red #FDEBEC/#9F2F2D · Pale Blue #E1F3FE/#1F6C9F · Pale Green #EDF3EC/#346
 
 ## §14 STYLE MENU (67 registry styles, one-liners + AMK mapping)
 
-_Raw tokens: `registry-digest.json`. Full specs: `repos/awesome-design-skills/skills/<slug>/`._
+_Full specs: `design/vendor/bergside-skills/<slug>/` (SKILL.md + DESIGN.md). Token digest: `design/vendor/registry-digest.json`. AMK-curated per-vertical starter sheets: `design/STYLE-TOKENS.md`._
 
 | Style | Character | AMK use |
 |---|---|---|
@@ -436,7 +454,9 @@ Research finding: output truncation is a **deliberate RLHF brevity bias, not a d
 ---
 
 ## SOURCES
-- `repos/awesome-design-skills/` — bergside/awesome-design-skills (TypeUI) — 67 SKILL.md + DESIGN.md pairs, MIT
-- `repos/taste-skill/` — Leonxlnx/taste-skill — taste-skill v2/v1, soft, minimalist, brutalist, redesign, output, gpt, stitch, imagegen-web/mobile, brandkit, image-to-code, laziness research, MIT
-- `registry-digest.json` — programmatic digest of all 67 registry skills (tokens, fonts, spacing)
-- In-house references: `agency/sales/Monday-Outreach-Pack.md` (Concept Production Standard), `agency/site/design-research.md` (AMK site v3 research), OraCare v2 (reference-override case study)
+- `design/vendor/bergside-skills/` — github.com/bergside/awesome-design-skills (TypeUI), 67 SKILL.md + DESIGN.md pairs, MIT (see `design/vendor/LICENSE-bergside`)
+- `design/vendor/taste/skills/` — github.com/Leonxlnx/taste-skill: taste-skill, redesign, output, brandkit, imagegen web/mobile, image-to-code, stitch, soft/minimalist/brutalist, MIT (`design/vendor/LICENSE-taste`)
+- `design/vendor/emil/skills/` — github.com/emilkowalski/skills: emil-design-eng, animate, review-animations, improve-animations, find-animation-opportunities, animation-vocabulary, apple-design, prototype, pick-ui-library, MIT (`design/vendor/LICENSE-emil`); condensed for vanilla builds in `design/MOTION.md`
+- `design/vendor/registry-digest.json` — machine digest of all 67 bergside token sheets
+- AMK playbooks: `design/WORKFLOW.md` (pipeline), `design/STYLE-TOKENS.md` (vertical starters + rotation ledger), `design/MOTION.md` (motion standard)
+- In-house references: `sales/Monday-Outreach-Pack.md` (Concept Production Standard), `site/design-research.md` (AMK site research), OraCare v2/v3 (reference-override case studies)
