@@ -95,15 +95,29 @@ May I send a free preview built for a clinic-and-laboratory like Solidarity? Who
 - AMK brings: clinic concept on phone + an optic-center re-skin sketch using the same template.
 - Visit conditions: Mr Ateasom invited; 24h named preview offer; card does not sell.
 
-### Message 1 — WhatsApp (≤5 lines, clinic variant)
+### Message 1 — WhatsApp (≤5 lines) — FINAL 15 Sep (named demo already built)
+> Pre-send: WA-profile check on 678 90 89 62 (business profile vs Ateasom Collins personal; the routing question works either way). No person's name used.
 ```
 Good morning. Akwo King, AMK Web Development, Buea.
-I build bilingual websites for eye clinics and opticians: eye tests booked on WhatsApp, frames and lens services shown with prices in FCFA, in English and French, ready in 3-5 days.
-Midas Touch currently has only a Facebook page, so people searching for an optician in Buea cannot see your services or book a test on Google.
-May I send a free preview built for your optic center? Which number should receive it?
+I build bilingual websites for opticians: eye tests booked on WhatsApp, frames and lens services shown with prices in FCFA, in English and French.
+Looking up Midas Touch, I found only the Facebook page, so a student in the Molyko-Malingo area searching "optician Buea" on Google cannot see your services or book a test.
+I have already prepared a free preview built around Midas Touch itself. May I send it to this number, or is there a better WhatsApp for the shop?
 — Akwo King / AMK – Web Development & Digital Solutions
 ```
-- FU1 M+2 / FU2 M+4 / FU3 M+7; warm yes → **named preview already built: `mitoc.html` (`https://amk-cm.vercel.app/mitoc.html` after King redeploys), builder `site/build_sample_mitoc.py`, sheet C cobalt+cream, 140 EN/FR pairs, demo WA routing to AMK** → then invite choice (10 minutes in the shop vs all on WhatsApp). Do NOT send before the warm yes (Invitation-First); never send the clinic template to an optician.
+- Why this wins replies (psychology): specificity proves it is not a broadcast (real FB-only footprint + student catchment); one tiny permission ask (reciprocity + commitment ladder); routing question handles a personal-number pickup by owner or staff; "already prepared" collapses the 24h promise into seconds after yes; ending on a question is the strongest predictor of a DM reply.
+- On YES: send `mitoc.html` **as a WhatsApp file attachment** (609 KB, self-contained, opens offline in any phone browser; the Vercel link works only after King redeploys) + framing message, then invite-choice (BAMFAM): "What would you change? I can walk you through it here, or show it in person in 10 minutes at the shop."
+- If they ask the price: answer plainly **100 000 FCFA, 50 000 to start, 50 000 at launch**, founding-client terms, never discount, trade scope/timing.
+- Silence: FU1 M+2 (Google search gap), FU2 M+4 (frame photos earning while you sleep), FU3 M+7 (gentle loop-close). After 3, stop.
+- Warm yes asset: named preview `mitoc.html` (`https://amk-cm.vercel.app/mitoc.html` after King redeploys), builder `site/build_sample_mitoc.py`, sheet C cobalt+cream, 140 EN/FR pairs, demo WA routing to AMK. Do NOT send before the warm yes (Invitation-First); never send the clinic template to an optician.
+- Reply branches (paste-ready):
+  - **YES ("send it"):** attach `site/mitoc.html` as a document (not a photo), then:
+    "Thank you. It opens right on your phone, no app needed: tap the EN/FR switch at top and press 'Book an eye exam' to see how a booking lands in your WhatsApp. Prices and frame photos are placeholders for yours. What would you change? I can walk you through it here, or show it in person in 10 minutes at the shop."
+  - **"How much?"**: "100 000 FCFA one-time: 50 000 to start and 50 000 when it is live. Your bilingual site, the frame gallery, WhatsApp booking and connecting your Google listing. I take two founding clients at these terms." No discount; trade scope/timing instead.
+  - **"I already have Facebook"**: "Yes, and your page is good. The difference is that Facebook does not show in Google searches, so a new student with headaches cannot find you unless they already know your name. The site puts you in that search and sends bookings straight to your WhatsApp."
+  - **Gatekeeper / "who is this?":** "I make websites for local clinics and opticians and built a free preview for Midas Touch. Who should I send it to, the owner or the manager?"
+  - **FU1 (M+2, silence):** "Quick one: when a student searches 'optician Buea' on Google right now, Midas Touch does not appear, only your Facebook. The preview I built shows exactly how that page could look with exam booking on WhatsApp. Still happy to send it?"
+  - **FU2 (M+4):** "One thing the preview shows well: photos of the frames on your wall, with prices in FCFA, keep working for you after closing time, and students share them in faculty groups. Want me to send it?"
+  - **FU3 (M+7, loop-close):** "No trouble from me after this. If the timing is wrong now, reply LATER and I check back next term. If useful, reply YES and the preview is with you in one minute."
 - Claim discipline inside the preview: only refract / prescribe / mount lenses (their FB intro), real Malingo address; no hours, no brands, no contact lenses or surgery invented; prices tagged Demo; 9 generated concept photos, replaced by real shop shots at launch.
 
 ---
