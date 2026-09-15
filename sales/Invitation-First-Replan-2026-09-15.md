@@ -15,8 +15,8 @@ Full per-school intelligence stays in [`Walk-In-Deep-Dives-2026-09-15.md`](Walk-
 ### ✅ SURE WhatsApp numbers (all personally confirmed on your phone, 14 Sep)
 | Target | Number | Whose line / note | Action |
 |---|---|---|---|
-| **Solidarity Clinic & Laboratory** (Solidarity Health Foundation), Malingo/Molyko ⭐ | clinic line **677 61 57 57** (King WA-profile check tonight); **691 63 29 41 = Dr Njang's personal WA, HOLD** | Founder Dr Peter Nde Fon DIED 2020; current director unknown (gatekeeper routing, no names in msg 1); Google 4.0★/54 reviews, 24h, NO website attached | Clinic msg 1 at **08:35** to clinic line only; full correction in Clinic-Batch §1 + RESEARCH-STANDARD |
-| **Midas Touch Optic Center**, Molyko-Malingo | **678 90 89 62** | Optic center line (from their FB page) | **King verifies tonight**; clinic msg 1 at **08:35** |
+| **Solidarity Clinic & Laboratory** (Solidarity Health Foundation), Malingo/Molyko ⭐ | ~~677 61 57 57 NOT ON WHATSAPP (King 15 Sep)~~; remaining WA candidate admin **677 61 12 07**; **691 63 29 41 = Dr Njang's personal WA, HOLD** | Founder Dr Peter Nde Fon DIED 2020; current director unknown (gatekeeper routing, no names); Google 4.0★/54 reviews, 24h, NO website attached | WA-blocked: check 677 61 12 07 tonight → msg 1 there if it answers as the clinic; else **Wed sealed envelope** to "current medical director or clinic manager" |
+| **Midas Touch Optic Center**, Molyko-Malingo | **678 90 89 62** | Optic center line (from their FB page) | **King verifies tonight**; **now the first clinic msg 1 at 08:35** |
 | **Baptist Comp. College**, Great Soppo | **679 65 07 07** | School line from their own FB page (role unknown) | Message 1 at 09:00 |
 | **PCSS Buea** | **652 075 229** | Official school line (GPEN network listing) | Message 1 at 09:00 |
 | PCSS internal champion: **Kinang Edwin Ngenge** (teacher) | **675 533 321** | Named staff, not the decision-maker | Door-opener text only if the official line gives no steer by noon |
@@ -29,8 +29,7 @@ Full per-school intelligence stays in [`Walk-In-Deep-Dives-2026-09-15.md`](Walk-
 ### 🟡 Still to verify tonight (check profile photo/name/About in WhatsApp)
 | Target | Number | Source | If on WhatsApp |
 |---|---|---|---|
-| **Solidarity Clinic, Molyko** | **691 63 29 41** | medicoor clinic profile | Clinic msg 1 at 08:35 |
-| **Solidarity Clinic, Molyko** | **691 63 29 41** (Dr Njang personal per King — do not use for Solidarity), **677 61 57 57** (clinic), 677 61 12 07 (UN registry admin, unverified) | GBP/medicoor/Zenithe/UN NGO registry | Only the clinic line 677 61 57 57 is messaged, after WA-profile confirmation |
+| **Solidarity Clinic, Molyko** | ~~677 61 57 57~~ **NOT ON WHATSAPP (King 15 Sep)**; remaining check: 677 61 12 07 (UN registry SHF-CIG admin) | GBP/UN NGO registry | If admin line answers as the clinic → nameless msg 1 there; else **Wednesday sealed envelope** addressed to "current medical director or clinic manager". 691 63 29 41 = Dr Njang personal — never used |
 | **MITOC optic center, Molyko** | **678 90 89 62** | Their official Facebook page intro | Clinic msg 1 at 08:35 |
 | NHICHS Limbe | 680 738 111 / 679 246 223 | Directory mobiles (unverified) | If either is WA: Wednesday WhatsApp instead of email |
 | St. Theresa secondary (low confidence) | 677 36 19 11 | "For more info" on a 2022 YouTube clip — likely a media person | Do **not** pitch; 679 15 10 75 is the confirmed line |
@@ -44,7 +43,7 @@ Full per-school intelligence stays in [`Walk-In-Deep-Dives-2026-09-15.md`](Walk-
 - Summerset's only Facebook page has been **inactive since December 2015** (and carries a stranger's Yahoo address); its mailboxes are smbicol@yahoo.com. **The Tuesday parallel email is removed from the counted plan** — first touch is Wednesday's sealed-envelope card at the gate. If you ever send that email, treat a reply as a bonus, never a dependency.
 - Bishop Jules Peters routes through the diocese; hold for the Sasse/diocesan motion rather than messaging the Bishop's House front desk.
 
-**Bottom line:** Tuesday opens **2 clinic conversations (King's priority) at 08:35**, then 2 sure school WhatsApp at 09:00, 1 TikTok DM (Sasse 07:45), with St Theresa at 15:45 and Baird at 16:00 (full pitch, site dead) both confirmed for the afternoon; the other five numberless schools get invited to *you* by Wednesday's card-drop sweep.
+**Bottom line (updated 15 Sep send morning):** Solidarity's clinic line is **not on WhatsApp** (King-checked) — Tuesday now opens with **MITOC at 08:35 as the first clinic WhatsApp**; Solidarity rides on the admin-line check or Wednesday's sealed card. Then 2 sure school WhatsApp at 09:00, 1 TikTok DM (Sasse 07:45), with St Theresa at 15:45 and Baird at 16:00 (full pitch, site dead) both confirmed for the afternoon; the other five numberless schools get invited to *you* by Wednesday's card-drop sweep.
 
 ---
 
@@ -53,7 +52,7 @@ Full per-school intelligence stays in [`Walk-In-Deep-Dives-2026-09-15.md`](Walk-
 | Time | Action |
 |---|---|
 | **07:45** | Sasse: TikTok DM (pack §3). NHICHS email at midday ONLY if neither mobile number (680 738 111 / 679 246 223) verified on WhatsApp tonight (pack §4; fallback leg, not counted). |
-| **08:35** | ⭐ **CLINICS FIRST (King's priority):** WhatsApp message 1 → Solidarity Clinic & Laboratory (691 63 29 41, else 677 61 57 57, whichever verified) and MITOC (678 90 89 62). Exact texts in [`Clinic-Batch-2026-09-15.md`](Clinic-Batch-2026-09-15.md). |
+| **08:35** | ⭐ **CLINICS FIRST (King's priority):** WhatsApp message 1 → **MITOC first (678 90 89 62)** — Solidarity's clinic line 677 61 57 57 is NOT on WhatsApp (King 15 Sep); Solidarity goes via admin 677 61 12 07 only if that WA profile answers as the clinic, otherwise Wednesday's sealed envelope. Exact texts in [`Clinic-Batch-2026-09-15.md`](Clinic-Batch-2026-09-15.md). |
 | **09:00** | WhatsApp message 1 → Baptist (679 65 07 07), PCSS (652 075 229). |
 | **12:16** | OraCare 1-hour reply window closes if still silent (FU1 stays scheduled Wednesday per branch sheet pack §1). |
 | **By 12:00** | If PCSS official line gives no steer → Kinang door-opener (675 533 321). |
@@ -113,7 +112,7 @@ The QR opens WhatsApp on **677 78 96 31** with a bilingual preview request pre-w
 
 ## 4 · Tuesday's exact messages
 
-**⭐ Solidarity Clinic & Laboratory → verified WhatsApp of 691 63 29 41 / 677 61 57 57 (08:35):** full text in [`Clinic-Batch-2026-09-15.md`](Clinic-Batch-2026-09-15.md) §1.
+**⭐ Solidarity Clinic & Laboratory → WhatsApp BLOCKED on 677 61 57 57 (not registered; King 15 Sep):** check admin 677 61 12 07; if it answers as the clinic send the §1 nameless text, else the same text goes as Wednesday's sealed envelope to "the current medical director or the clinic manager". Full text in [`Clinic-Batch-2026-09-15.md`](Clinic-Batch-2026-09-15.md) §1.
 
 **⭐ Midas Touch Optic Center → 678 90 89 62 (08:35):** full text in [`Clinic-Batch-2026-09-15.md`](Clinic-Batch-2026-09-15.md) §2.
 
@@ -143,7 +142,7 @@ The text remains in the deep dive if ever sent as a bonus; the planned first tou
 
 ## 5 · Tonight (20 minutes)
 1. ✅ School numbers 679 15 10 75 (St Theresa) and 677 87 53 95 (Baird) confirmed on WhatsApp; 677 78 04 05 discarded; bairdmemorial.com confirmed dead on your phone — all already applied above.
-2. **WhatsApp-verify the clinic batch (highest value check tonight):** Solidarity **clinic line 677 61 57 57** (confirm the profile answers AS THE CLINIC; 691 63 29 41 is Dr Njang's personal line, hold it), MITOC **678 90 89 62**. Note profile name/photo. Optionally try NHICHS **680 738 111** / **679 246 223**.
+2. **WhatsApp-verify the clinic batch:** ✅ Solidarity **677 61 57 57 = NOT ON WHATSAPP (King 15 Sep)** — do not retry; instead check SHF-CIG admin **677 61 12 07** (does its profile answer as Solidarity/the foundation?). Remaining: MITOC **678 90 89 62** (should answer as Midas Touch / Ateasom Collins). Note profile name/photo. 691 63 29 41 stays held (Dr Njang personal). Optionally try NHICHS **680 738 111** / **679 246 223**.
 3. **Redeploy the site folder to the existing `amk-cm.vercel.app` Vercel project** (same project as the agency site — the clinic concept `sample-clinic.html` and updated `index.html` must go up; no separate project).
 4. Print **two A4 sheets** of the bilingual cards (`sales/walkin/walk-in-cards.html`), cut 16, and have 6 envelopes for Wednesday (Baird now also gets one if WhatsApp stays silent).
 5. Read [`Clinic-Batch-2026-09-15.md`](Clinic-Batch-2026-09-15.md) and [`Walk-In-Deep-Dives-2026-09-15.md`](Walk-In-Deep-Dives-2026-09-15.md) per target you message, so replies get personalized answers. No email steps remain on the clock.

@@ -12,8 +12,8 @@ r("", "", "", "", "")
 r("① KILL LIST — hot leads get daily visible attention", "", "", "", "")
 r("Lead", "Why hot", "Next action (TODAY)", "Done?", "Re-check")
 r("⭐ Solidarity Clinic & Laboratory (Solidarity Health Foundation, Malingo/Molyko) — CLINIC #1",
-  "15/A · 24h not-for-profit clinic+lab+maternity+pharmacy founded 1998 · Google 4.0 stars/54 reviews/21 photos BUT no website/booking ('Add website') · founder Dr Peter Nde Fon DIED 2020, current director unknown (gatekeeper routing) · clinic line 677 61 57 57; 691 63 29 41 is Dr Njang's PERSONAL WA - DO NOT TEXT about Solidarity",
-  "08:35 WhatsApp msg 1 (Clinic-Batch §1, NO personal names) to clinic line 677 61 57 57 once King's WA-profile check confirms it answers as the clinic; asks for current medical director or clinic manager. Yes -> nameless /sample-clinic.html + invite-choice; pitch: attach bilingual site+WA booking+same-day lab results to the Google profile, claim stale medicoor page.", "☐", "Tue")
+  "15/A · 24h not-for-profit clinic+lab+maternity+pharmacy founded 1998 · Google 4.0 stars/54 reviews/21 photos BUT no website/booking ('Add website') · founder Dr Peter Nde Fon DIED 2020, current director unknown (gatekeeper routing) · clinic line 677 61 57 57 IS NOT ON WHATSAPP (King-checked 15 Sep); 691 63 29 41 is Dr Njang's PERSONAL WA - DO NOT TEXT about Solidarity",
+  "WHATSAPP BLOCKED on front line: (1) quick WA-check admin 677 61 12 07 (SHF-CIG UN-registry number, unverified) -> if it answers as the clinic, send the §1 nameless msg 1 there; (2) if not, Solidarity moves to WED sealed-envelope sweep addressed to 'the current medical director or the clinic manager', never a personal name; (3) landline 2 33 32 31 31 never cold-called. MITOC becomes Tue 08:35 first WhatsApp send.", "☐", "Tue")
 r("⭐ Midas Touch Optic Center MITOC (Molyko-Malingo) — CLINIC #2",
   "12/B+ · full optician (refract, prescribe, mount lenses) · Facebook-only, invisible on Google · WA candidate 678 90 89 62 (FB intro), contact Ateasom Collins",
   "TONIGHT King WA-verifies 678 90 89 62. 08:35 WhatsApp msg 1 (Clinic-Batch §2). Yes -> sample-clinic link; named optic re-skin within 24h (eye-test booking, frames, FCFA lens prices).", "☐", "Tue")
@@ -51,7 +51,7 @@ r("", "", "", "", "")
 r("② REPLY QUEUE — 1-hour rule · every chat ends with a booked next step (BAMFAM)", "", "", "", "")
 r("Lead", "Last activity", "Next step", "Due", "Done?")
 r("OraCare237", "Mon 14 msg 1 sent; no reply yet", "§1 branches; silence → FU1 Wed 16.", "Wed", "☐")
-r("Tue 08:35 clinics (Solidarity, MITOC)", "Going out 08:35 Tue",
+r("Tue 08:35 clinics (MITOC FIRST: Solidarity front line 677 61 57 57 not on WhatsApp -> admin-line recheck, else Wed sealed card)", "Going out 08:35 Tue",
   "Yes → https://amk-cm.vercel.app/sample-clinic.html + clinic invite-choice ('10 minutes with the doctor Thu/Fri morning, or all here on WhatsApp?'); named concept within 24h; answers within 1h.", "Tue", "☐")
 r("Tue schools (Baptist 09:00, PCSS 09:00, St Theresa 15:45, Baird 16:00)", "Going out Tue",
   "Yes → matching nameless /sample-secondary.html link + invite-choice Thu/Fri; named concept within 24h for warm specific requests; questions answered within 1h.", "Tue", "☐")
@@ -69,7 +69,7 @@ r("· Wed PM / Thu / Fri: invited 10-min walkthroughs batched by quarter (Molyko
 r("· If silent after Wed sweep: FU follows M+2/M+4/M+7; no second uninvited visit. No email legs counted anywhere (King: rarely opened).", "", "", "", "")
 r("", "", "", "", "")
 r("④ TONIGHT PREP (Mon, 20 min)", "", "", "", "")
-r("· WA-verify CLINICS (highest value): Solidarity clinic line 677 61 57 57 (check profile photo/name answers AS THE CLINIC; 691 63 29 41 is Dr Njang personal - hold, do not text Solidarity pitch), MITOC 678 90 89 62. Optional: admin 677 61 12 07, NHICHS 680 738 111 / 679 246 223.", "", "", "", "")
+r("· WA-verify CLINICS: DONE Solidarity 677 61 57 57 = NOT ON WHATSAPP (King 15 Sep); remaining tonight: Solidarity admin 677 61 12 07 (UN-registry SHF-CIG number, see if profile answers as the clinic), MITOC 678 90 89 62 (profile should answer as Midas Touch / Ateasom Collins). 691 63 29 41 stays Dr Njang personal - hold. Optional: NHICHS 680 738 111 / 679 246 223.", "", "", "", "")
 r("· Research accuracy: every prospect dossier now follows sales/RESEARCH-STANDARD.md (source tiers, named-person obituary/collision/current-role checks, number attribution labels, message claim audit). No name from a directory enters a message unverified.", "", "", "", "")
 r("· Schools already King-confirmed: 679 15 10 75 St Theresa, 677 87 53 95 Baird (677 78 04 05 discarded, not on WA), Baptist 679 65 07 07, PCSS 652 075 229, Kinang 675 533 321. bairdmemorial.com confirmed dead.", "", "", "", "")
 r("· REDEPLOY the site folder to the EXISTING amk-cm.vercel.app Vercel project (same folder/project as the agency site — NOT a separate project): includes sample-clinic.html, updated index.html clinic card, sitemap. Rebuild bundle: python3 hosting/build_samples.py.", "", "", "", "")
@@ -78,7 +78,7 @@ r("· Read Clinic-Batch-2026-09-15 (Solidarity, MITOC) + Walk-In-Deep-Dives sect
 r("", "", "", "", "")
 r("⑤ DRILL — 15 min/day (voice memo/friend — never on real leads)", "", "", "", "")
 r("Day", "Segment", "", "", "")
-r("Tue", "30-SECOND TEXT OPEN: read the clinic msg 1 aloud (Solidarity), then a school one; rehearse BOTH invite choices: '10 minutes with the doctor Thu/Fri morning?' and 'after morning classes Thu/Fri?'", "", "", "")
+r("Tue", "30-SECOND TEXT OPEN: read the clinic msg 1 aloud (MITOC - Solidarity line not on WhatsApp), then a school one; rehearse BOTH invite choices: '10 minutes with the doctor Thu/Fri morning?' and 'after morning classes Thu/Fri?'", "", "", "")
 r("Wed", "FLIPS: 'It's expensive' → one missed registration/appointment worth per week? · 'I need to think' → timing or priority?", "", "", "")
 r("Thu", "CARDONE + REFERRAL: 'Have you heard enough to decide?' · 'Who do you know that's like you?' (use on invited walkthroughs)", "", "", "")
 r("Fri", "Friend plays skeptical principal/doctor — full invited-visit run; rehearse price+pause.", "", "", "")

@@ -23,7 +23,8 @@
 ### Numbers with attribution labels (research standard §5)
 | Number | Label | Sources / notes |
 |---|---|---|
-| **+237 677 61 57 57** | **ORG-LIKELY clinic front line** | Google Business Profile (Tier A), elidge, medicoor all carry it; cross-confirmed 4+ ways. **King: confirm on WhatsApp tonight whose profile/photo it is**; if it answers as the clinic, it is tomorrow's send line. |
+| **+237 677 61 57 57** | **ORG-LIKELY clinic front line — NOT A WHATSAPP NUMBER (King-checked 15 Sep)** | Google Business Profile (Tier A), elidge, medicoor all carry it, but it is not registered on WhatsApp. Voice/SMS line only; per the no-cold-call rule it is not dialled. Demoted from WhatsApp send line. |
+| **+237 677 61 12 07** | ORG-UNVERIFIED, SHF-CIG admin (UN NGO registry) | **Only remaining WhatsApp candidate: King to check whether its profile answers as Solidarity/the foundation.** If yes, msg 1 goes there; if no, Solidarity moves to Wednesday's sealed-card sweep. |
 | **+237 691 63 29 41** | **PERSONAL-NAMED: Dr Njang's direct WhatsApp (King-confirmed ownership)** | Listed on medicoor against the clinic, but given his current roles and his own lab, treat as his personal line. **DO NOT TEXT a Solidarity pitch to it until his current relationship with the clinic is verified.** |
 | +237 677 61 12 07 | UNKNOWN admin | UN NGO Branch SHF-CIG profile only; no corroboration. |
 | +237 2 33 32 31 31 | Landline | medpages ("Solidarity Hospital", Molyko Checkpoint, D61). |
@@ -51,7 +52,8 @@ Bilingual website attached TO the Google profile: 24h/emergency bar, six-service
 - AMK brings: the nameless clinic concept on the phone; a sketched flow linking Google profile to site + WA booking.
 - Visit conditions: current medical director OR clinic manager invited (name obtained at the gate/on chat); 24h named-preview offer; card never sells.
 
-### Message 1 — WhatsApp, to the CLINIC LINE 677 61 57 57 only (no personal names; ≤5 lines)
+### Message 1 — WhatsApp (no personal names; ≤5 lines)
+> **Channel status 15 Sep (King): the clinic line 677 61 57 57 is NOT on WhatsApp.** Send sequence: (1) WA-check admin line 677 61 12 07 — send below only if its profile answers as Solidarity/the foundation; (2) otherwise this exact text becomes the Wednesday sealed-envelope letter addressed to "the current medical director or the clinic manager"; (3) 691 63 29 41 never receives it, landline never cold-called.
 ```
 Good morning. Akwo King, AMK Web Development, Buea.
 I build bilingual websites for private clinics and laboratories: services and lab panels listed, prices in FCFA, results and appointment requests on WhatsApp, English and French, ready in 3-5 days.
