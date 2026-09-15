@@ -91,7 +91,7 @@ Registry family: `clean`. Maximum legality and speed; warm off-white, one trust 
 |---|---|---|---|
 | 2026-09 | OraCare v3 (named) | Odentrics reference: cream/sand + soft navy + gold + sage | reference-driven, exempt from rotation (§4.4) |
 | 2026-09 | SJC Sasse v2 (named) | school institutional w/ chapel photo | named brand |
-| 2026-09 | sample-secondary.html (Crestwood) | D, navy/indigo | nameless |
+| 2026-09-15 | **sample-secondary.html (Crestwood) REBUILT** | **D, deep navy + cream + gold** | nameless; Cameroon-localized GCE/boarding/FCFA rebuild (replaced US-style template; 8 concept photos, 152 EN/FR pairs) |
 | 2026-09 | sample-school.html (Nova) | F, clean teal-blue | nameless |
 | 2026-09 | sample-nursery.html (Little Oaks) | E, friendly green | nameless |
 | 2026-09 | **sample-clinic.html (MMC)** | **A, Forest green + bone + amber** | nameless |
