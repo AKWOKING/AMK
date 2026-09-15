@@ -116,11 +116,20 @@ The QR opens WhatsApp on **677 78 96 31** with a bilingual preview request pre-w
 
 **⭐ Midas Touch Optic Center → 678 90 89 62 (08:35):** full text in [`Clinic-Batch-2026-09-15.md`](Clinic-Batch-2026-09-15.md) §2.
 
-**Baptist Comp. → 679 65 07 07 (09:00):**
-> Good morning. Akwo King, AMK Web Development, Buea. I build bilingual websites for secondary schools — admissions, results, one-tap WhatsApp to the office, delivered in 3–5 days. I couldn't find a website for the college; may I send a free preview built for a Baptist school like yours? Please, who should I direct it to — the principal's own WhatsApp? — Akwo King / AMK
+**Baptist Comp. → 679 65 07 07 (FINAL 15 Sep, "preview ready" variant):**
+> Good morning. Akwo King, AMK Web Development, Buea.
+> I build bilingual websites for secondary schools: admissions and results online, fees published for parents, and one-tap WhatsApp to the office, ready in 3-5 days.
+> I could not find a website for the college, so parents comparing Baptist schools in Buea cannot see your admissions or reach the office online.
+> I have a secondary-school preview ready. May I send it, and who should receive it, the principal's own WhatsApp?
+> — Akwo King / AMK – Web Development & Digital Solutions
 
-**PCSS → 652 075 229 (09:00):**
-> Good morning. Akwo King, AMK Web Development in Buea. I specialise in boarding schools' bilingual websites — admissions, dormitory and fee information, one-tap WhatsApp for parents out of town, delivered in 3–5 days. There is no website for PCSS that parents can find. May I send a free preview, and who is the right person to receive it? — Akwo King / AMK
+**PCSS → 652 075 229 (FINAL 15 Sep, network-proof + "preview ready" variant):**
+> Good morning. Akwo King, AMK Web Development, Buea.
+> I build bilingual websites for boarding schools: admissions, dormitory and fee information online, and one-tap WhatsApp for parents out of town, ready in 3-5 days.
+> I could not find a website for PCSS, though other schools in the Presbyterian network already run theirs.
+> I have a boarding-school preview ready. May I send it, and who is the right person to receive it?
+> — Akwo King / AMK – Web Development & Digital Solutions
+> Claim audit: "other schools in the Presbyterian network" = PCSS Bonamoussadi Douala website (Tier A/C, named nowhere per no-competitor rule).
 
 **PCSS door-opener → Kinang 675 533 321 (only if official line silent by noon):**
 > Good morning, sir. Akwo King, AMK Web Development — I prepare free bilingual website previews for Buea schools (admissions, fees, results, WhatsApp contact). I tried the college's official line for PCSS; please, who is the right person to send the preview to? Thank you. — Akwo King / AMK
