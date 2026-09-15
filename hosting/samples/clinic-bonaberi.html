@@ -181,9 +181,25 @@ footer{background:#0C2E23;color:#9CB5AC;padding:48px 0 24px;font-size:14px}
 .f-grid h5{color:#fff;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
 .f-grid a{display:block;text-decoration:none;padding:3px 0}
 .f-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:18px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:12.5px}
+/* proof strip (conversion standard addendum #3) */
+.proof{background:var(--card);border-bottom:1px solid var(--line)}
+.proof-grid{display:grid;grid-template-columns:290px 1fr;gap:34px;align-items:center;padding:42px 0}
+.proof-rate{text-align:center;border-right:1px solid var(--line);padding-right:34px}
+.proof-rate .stars{color:#E8A33D;font-size:21px;letter-spacing:2px}
+.proof-rate .big{font-size:46px;font-weight:800;color:var(--g800);line-height:1.05;margin:2px 0}
+.proof-rate .who{font-size:12.5px;color:var(--muted)}
+.proof-rate a{display:inline-block;margin-top:8px;font-size:13px;font-weight:700;color:var(--emerald);text-decoration:none}
+.proof-q{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.proof-q blockquote{background:var(--bone);border:1px solid var(--line);border-radius:14px;padding:16px 17px;font-size:13.5px;color:var(--g700)}
+.proof-q b{display:block;margin-top:9px;font-size:12.5px;color:var(--g800)}
+.follow{display:flex;flex-wrap:wrap;gap:11px;align-items:center;justify-content:center;margin-top:26px}
+.follow .lbl{font-size:13.5px;font-weight:700;color:var(--muted)}
+.follow a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 18px;border-radius:999px;border:1.5px solid rgba(21,86,66,.28);text-decoration:none;font-size:13.5px;font-weight:700;color:var(--g800);background:var(--card)}
+.follow a:hover{border-color:var(--emerald);background:var(--amber-t)}
 /* mobile cta */
 .mbar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:70;background:#fff;border-top:1px solid var(--line);padding:10px 12px;gap:9px;box-shadow:0 -8px 24px rgba(0,0,0,.08)}
-.mbar a{flex:1}
+.mbar a{flex:1;min-height:52px;display:flex;align-items:center;justify-content:center}
+@media(max-width:860px){.proof-grid{grid-template-columns:1fr;gap:22px;padding:32px 0}.proof-rate{border-right:none;border-bottom:1px solid var(--line);padding:0 0 22px}.proof-q{grid-template-columns:1fr}}
 /* reveal */
 .rv{opacity:0;transform:translateY(22px);transition:opacity var(--dur-reveal) var(--ease-out),transform var(--dur-reveal) var(--ease-out)}
 .rv.in{opacity:1;transform:none}
@@ -288,6 +304,24 @@ footer{background:#0C2E23;color:#9CB5AC;padding:48px 0 24px;font-size:14px}
     <div class="stat"><div class="stat-num">5 000<span class="u"> FCFA</span></div><div class="lbl" data-en="General consultation, from" data-fr="Consultation générale, à partir de">General consultation, from</div><span class="demo" data-en="demo values" data-fr="valeurs de démo">demo values</span></div>
   </div>
 </div>
+
+<!-- PROOF (addendum #3: third-party-linked; replace demo values at launch or remove) -->
+<section class="proof">
+  <div class="wrap proof-grid">
+    <div class="proof-rate rv">
+      <div class="stars">★★★★★</div>
+      <div class="big">4.8</div>
+      <div class="who" data-en="Google rating · 126 reviews (demo)" data-fr="Note Google · 126 avis (démo)">Google rating · 126 reviews (demo)</div>
+      <!-- LAUNCH: replace href with the clinic's real Google Business Profile 'reviews' URL -->
+      <a href="#" data-en="Read every review on Google →" data-fr="Lire tous les avis sur Google →">Read every review on Google →</a>
+    </div>
+    <div class="proof-q">
+      <blockquote class="rv" style="transition-delay:.05s" data-en="“I booked on WhatsApp from Bonabéri at 7am and was seen by 8. The price was exactly what the website said.”<b>— Patient, Douala (demo)</b>" data-fr="« J'ai réservé sur WhatsApp depuis Bonabéri à 7h et j'étais reçu à 8h. Le prix était exactement celui du site. »<b>— Patient, Douala (démo)</b>">“I booked on WhatsApp from Bonabéri at 7am and was seen by 8. The price was exactly what the website said.”<b>— Patient, Douala (demo)</b></blockquote>
+      <blockquote class="rv" style="transition-delay:.1s" data-en="“My lab results came to my phone the same day, explained in French. No second trip across town.”<b>— Patient (demo)</b>" data-fr="« Mes résultats d'analyse sont arrivés sur mon téléphone le jour même, expliqués en français. Pas besoin de retraverser la ville. »<b>— Patient (démo)</b>">“My lab results came to my phone the same day, explained in French. No second trip across town.”<b>— Patient (demo)</b></blockquote>
+      <blockquote class="rv" style="transition-delay:.15s" data-en="“They answered in English for my husband and French for my mother. Nobody does that.”<b>— Family of a patient (demo)</b>" data-fr="« Ils ont répondu en anglais pour mon mari et en français pour ma mère. Personne ne fait ça. »<b>— Famille d'un patient (démo)</b>">“They answered in English for my husband and French for my mother. Nobody does that.”<b>— Family of a patient (demo)</b></blockquote>
+    </div>
+  </div>
+</section>
 
 <!-- SERVICES BENTO -->
 <section id="services">
@@ -468,6 +502,21 @@ footer{background:#0C2E23;color:#9CB5AC;padding:48px 0 24px;font-size:14px}
       <details><summary data-en="How fast are laboratory results?" data-fr="Quelle est la rapidité des résultats de laboratoire ?">How fast are laboratory results?</summary><div class="ans" data-en="Most routine panels are ready the same day and are sent to you on WhatsApp, with an explanation of what they mean." data-fr="La plupart des bilans de routine sont prêts le jour même et vous sont envoyés sur WhatsApp, avec une explication claire.">Most routine panels are ready the same day and are sent to you on WhatsApp, with an explanation of what they mean.</div></details>
       <details><summary data-en="Do you see patients in French?" data-fr="Recevez-vous les patients en français ?">Do you see patients in French?</summary><div class="ans" data-en="Yes. Reception, doctors and the laboratory work in English and French, and this website switches language with one tap." data-fr="Oui. L'accueil, les médecins et le laboratoire travaillent en anglais et en français, et ce site change de langue en une touche.">Yes. Reception, doctors and the laboratory work in English and French, and this website switches language with one tap.</div></details>
       <details><summary data-en="What counts as an emergency after hours?" data-fr="Qu'est-ce qu'une urgence après les heures ?">What counts as an emergency after hours?</summary><div class="ans" data-en="Severe pain, breathing difficulty, high fever that will not break, heavy bleeding, pregnancy complications. Call the emergency line and we direct you immediately." data-fr="Douleur intense, difficulté à respirer, forte fièvre qui ne baisse pas, saignement abondant, complications de grossesse. Appelez la ligne d'urgence et nous vous orientons immédiatement.">Severe pain, breathing difficulty, high fever that will not break, heavy bleeding, pregnancy complications. Call the emergency line and we direct you immediately.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ALTERNATIVE CTA (addendum #3: low-commitment path; replace # with real pages at launch or remove) -->
+<section style="padding:54px 0 60px">
+  <div class="wrap center rv">
+    <h2 style="font-size:clamp(22px,2.6vw,28px)" data-en="Not ready to book? Keep us in your pocket" data-fr="Pas encore prêt à réserver ? Gardez-nous sous la main">Not ready to book? Keep us in your pocket</h2>
+    <p class="sub" style="margin:8px auto 0" data-en="Opening-hour changes, vaccination days and health tips — no noise, in English and French." data-fr="Changements d'horaires, jours de vaccination et conseils santé — sans bruit, en anglais et en français.">Opening-hour changes, vaccination days and health tips — no noise, in English and French.</p>
+    <div class="follow">
+      <span class="lbl" data-en="Follow:" data-fr="Suivez :">Follow:</span>
+      <!-- LAUNCH: replace each href with the clinic's real social page; delete any they do not have -->
+      <a href="#">📘 Facebook</a>
+      <a href="#">📸 Instagram</a>
+      <a href="#">🎵 TikTok</a>
     </div>
   </div>
 </section>

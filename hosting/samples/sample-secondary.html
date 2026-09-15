@@ -220,9 +220,26 @@ footer{background:var(--navy-b);color:#A9BACC;padding:48px 0 24px;font-size:14px
 .f-grid h5{color:#fff;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
 .f-grid a{display:block;text-decoration:none;padding:3px 0}
 .f-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:18px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:12.5px}
+/* proof strip (conversion standard addendum #3) */
+.proof{background:var(--surface-2);border-bottom:1px solid var(--line)}
+.proof-grid{display:grid;grid-template-columns:290px 1fr;gap:34px;align-items:center;padding:42px 0}
+.proof-rate{text-align:center;border-right:1px solid var(--line);padding-right:34px}
+.proof-rate .stars{color:var(--gold);font-size:21px;letter-spacing:2px}
+.proof-rate .big{font-size:46px;font-weight:800;color:var(--navy);line-height:1.05;margin:2px 0}
+.proof-rate .who{font-size:12.5px;color:var(--ink-soft)}
+.proof-rate a{display:inline-block;margin-top:8px;font-size:13px;font-weight:700;color:var(--navy);text-decoration:none}
+.proof-rate .gce{display:inline-block;margin-top:6px;font-size:12px;color:var(--ink-soft)}
+.proof-q{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.proof-q blockquote{background:var(--gold-tint);border:1px solid var(--line);border-radius:14px;padding:16px 17px;font-size:13.5px;color:var(--ink)}
+.proof-q b{display:block;margin-top:9px;font-size:12.5px;color:var(--navy)}
+.follow{display:flex;flex-wrap:wrap;gap:11px;align-items:center;justify-content:center;margin-top:26px}
+.follow .lbl{font-size:13.5px;font-weight:700;color:var(--ink-soft)}
+.follow a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 18px;border-radius:999px;border:1.5px solid rgba(15,42,71,.28);text-decoration:none;font-size:13.5px;font-weight:700;color:var(--navy);background:var(--surface-2)}
+.follow a:hover{border-color:var(--navy);background:var(--brand-tint)}
 .mbar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:70;background:#fff;border-top:1px solid var(--line);padding:10px 12px;gap:9px;box-shadow:0 -8px 24px rgba(15,32,55,.1)}
-.mbar a{flex:1}
+.mbar a{flex:1;min-height:52px;display:flex;align-items:center;justify-content:center}
 .mbar a:first-child{flex:0 0 92px}
+@media(max-width:860px){.proof-grid{grid-template-columns:1fr;gap:22px;padding:32px 0}.proof-rate{border-right:none;border-bottom:1px solid var(--line);padding:0 0 22px}.proof-q{grid-template-columns:1fr}}
 .cell .more{transition:transform var(--dur-press) var(--ease-out)}
 .cell .more:active,.concept-chip:active,.logo:active{transform:scale(.97)}
 .concept-chip,.logo{transition:transform var(--dur-press) var(--ease-out)}
@@ -366,6 +383,25 @@ footer{background:var(--navy-b);color:#A9BACC;padding:48px 0 24px;font-size:14px
     <div class="stat"><div class="stat-num">24<span class="u">/7</span></div><div class="lbl" data-en="Boarding supervision day and night" data-fr="Encadrement internat jour et nuit">Boarding supervision day and night</div><span class="demo" data-en="demo values" data-fr="valeurs de démo">demo values</span></div>
   </div>
 </div>
+
+<!-- PROOF (addendum #3: third-party-linked; replace demo values at launch or remove) -->
+<section class="proof">
+  <div class="wrap proof-grid">
+    <div class="proof-rate rv">
+      <div class="stars">★★★★★</div>
+      <div class="big">4.9</div>
+      <div class="who" data-en="Google rating · 58 parent reviews (demo)" data-fr="Note Google · 58 avis de parents (démo)">Google rating · 58 parent reviews (demo)</div>
+      <!-- LAUNCH: replace href with the college's real Google Business Profile reviews URL -->
+      <a href="#" data-en="Read parent reviews on Google →" data-fr="Lire les avis des parents sur Google →">Read parent reviews on Google →</a>
+      <span class="gce"><br><a href="https://www.camgceb.org" target="_blank" rel="noopener" style="font-size:12.5px;font-weight:600" data-en="Official GCE results: camgceb.org" data-fr="Résultats GCE officiels : camgceb.org">Official GCE results: camgceb.org</a></span>
+    </div>
+    <div class="proof-q">
+      <blockquote class="rv" style="transition-delay:.05s" data-en="“I am in Douala for work and I get the boarding update on WhatsApp every week. I know what my child is eating and scoring.”<b>— Boarding parent (demo)</b>" data-fr="« Je suis à Douala pour le travail et je reçois le bulletin de l'internat sur WhatsApp chaque semaine. Je sais ce que mon enfant mange et ses notes. »<b>— Parent d'interne (démo)</b>">“I am in Douala for work and I get the boarding update on WhatsApp every week. I know what my child is eating and scoring.”<b>— Boarding parent (demo)</b></blockquote>
+      <blockquote class="rv" style="transition-delay:.1s" data-en="“The fees were exactly what the website said. No hidden levy at the bursary.”<b>— Day parent (demo)</b>" data-fr="« Les frais étaient exactement ceux du site. Aucune cotisation cachée à la comptabilité. »<b>— Parent d'externe (démo)</b>">“The fees were exactly what the website said. No hidden levy at the bursary.”<b>— Day parent (demo)</b></blockquote>
+      <blockquote class="rv" style="transition-delay:.15s" data-en="“My sister did the whole admission from abroad by WhatsApp before flying into Douala. That is why we chose them.”<b>— Parent abroad (demo)</b>" data-fr="« Ma sœur a fait toute l'inscription depuis l'étranger par WhatsApp avant de voler vers Douala. C'est pour ça que nous les avons choisis. »<b>— Parent à l'étranger (démo)</b>">“My sister did the whole admission from abroad by WhatsApp before flying into Douala. That is why we chose them.”<b>— Parent abroad (demo)</b></blockquote>
+    </div>
+  </div>
+</section>
 
 <!-- PROGRAMMES -->
 <section id="programmes">
@@ -626,6 +662,21 @@ footer{background:var(--navy-b);color:#A9BACC;padding:48px 0 24px;font-size:14px
       <details><summary data-en="Can a French-speaking pupil enrol?" data-fr="Un élève francophone peut-il s'inscrire ?">Can a French-speaking pupil enrol?</summary><div class="ans" data-en="Yes. The bilingual section supports French-medium pupils joining the English stream, with extra language support in the first year." data-fr="Oui. La section bilingue accompagne les élèves francophones rejoignant le filière anglophone, avec un soutien linguistique renforcé la première année.">Yes. The bilingual section supports French-medium pupils joining the English stream, with extra language support in the first year.</div></details>
       <details><summary data-en="How do boarding parents follow progress?" data-fr="Comment les parents d'internes suivent-ils les progrès ?">How do boarding parents follow progress?</summary><div class="ans" data-en="Weekly reports and visiting-day news arrive by WhatsApp, and the office answers out-of-town parents directly instead of relying on the child to relay messages." data-fr="Les bilans hebdomadaires et les nouvelles du jour de visite arrivent sur WhatsApp, et le bureau répond directement aux parents éloignés au lieu de faire passer les messages par l'enfant.">Weekly reports and visiting-day news arrive by WhatsApp, and the office answers out-of-town parents directly instead of relying on the child to relay messages.</div></details>
       <details><summary data-en="How are fees paid?" data-fr="Comment les frais sont-ils payés ?">How are fees paid?</summary><div class="ans" data-en="Per term, before the term begins, by cash at the bursary, bank transfer or Mobile Money, with a receipt issued for every payment. The figures on this concept page are samples." data-fr="Par trimestre, avant la rentrée, en espèces à la comptabilité, par virement ou Mobile Money, avec un reçu pour chaque paiement. Les montants de cette page concept sont des exemples.">Per term, before the term begins, by cash at the bursary, bank transfer or Mobile Money, with a receipt issued for every payment. The figures on this concept page are samples.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ALTERNATIVE CTA (addendum #3: low-commitment path; replace # with real pages at launch or remove) -->
+<section style="padding:54px 0 60px">
+  <div class="wrap center rv">
+    <h2 style="font-size:clamp(22px,2.6vw,28px)" data-en="Still deciding? Follow admissions here" data-fr="Pas encore décidé ? Suivez les inscriptions ici">Still deciding? Follow admissions here</h2>
+    <p class="sub" style="margin:8px auto 0" data-en="Open-day clips, boarding life and admission deadlines as they happen, in English and French." data-fr="Vidéos des journées portes ouvertes, vie à l'internat et dates limites d'inscription en direct, en anglais et en français.">Open-day clips, boarding life and admission deadlines as they happen, in English and French.</p>
+    <div class="follow">
+      <span class="lbl" data-en="Follow:" data-fr="Suivez :">Follow:</span>
+      <!-- LAUNCH: replace each href with the college's real social page; delete any they do not have -->
+      <a href="#">🎵 TikTok</a>
+      <a href="#">📘 Facebook</a>
+      <a href="#">📸 Instagram</a>
     </div>
   </div>
 </section>
