@@ -123,15 +123,15 @@ The QR opens WhatsApp on **677 78 96 31** with a bilingual preview request pre-w
 > I have a secondary-school preview ready. May I send it, and who should receive it, the principal's own WhatsApp?
 > — Akwo King / AMK – Web Development & Digital Solutions
 
-**PCSS → 652 075 229 (FINAL 15 Sep, network-proof + "preview ready" variant):**
-> Good morning. Akwo King, AMK Web Development, Buea.
+**PCSS → 652 075 229 (FINAL 15 Sep 12:xx, NAMED variant — King verified the account):**
+> Good morning, Madam Namondo. Akwo King, AMK Web Development, Buea.
 > I build bilingual websites for boarding schools: admissions, dormitory and fee information online, and one-tap WhatsApp for parents out of town, ready in 3-5 days.
 > I could not find a website for PCSS, though other schools in the Presbyterian network already run theirs.
-> I have a boarding-school preview ready. May I send it, and who is the right person to receive it?
+> I have a boarding-school preview ready. May I send it to you here?
 > — Akwo King / AMK – Web Development & Digital Solutions
-> Claim audit: "other schools in the Presbyterian network" = PCSS Bonamoussadi Douala website (Tier A/C, named nowhere per no-competitor rule).
+> Research ledger (RESEARCH-STANDARD): number = WA Business account "PCSS BUEA" displaying **Namondo Elangwe** (King screenshot 15 Sep, Tier A profile); GPENreformation self-listing (2021) gives the school contact as **"Madam Namondo Alexander"** — same first name, surname drift between sources; role LIKELY principal/proprietor-level, title UNVERIFIED, so message greets "Madam Namondo" and asks her directly (no routing question). Claim audit: "other schools in the Presbyterian network" = PCSS Bonamoussadi Douala, never named.
 
-**PCSS door-opener → Kinang 675 533 321 (only if official line silent by noon):**
+**PCSS door-opener → Kinang 675 533 321 (MOVED to M+2: the official line is now verified as the likely principal's own business account — a same-day text to a junior teacher would look like an end-run; use only if Madam Namondo stays silent through the normal FU window):**
 > Good morning, sir. Akwo King, AMK Web Development — I prepare free bilingual website previews for Buea schools (admissions, fees, results, WhatsApp contact). I tried the college's official line for PCSS; please, who is the right person to send the preview to? Thank you. — Akwo King / AMK
 
 **St. Theresa → 679 15 10 75 (Tue 15:45, CONFIRMED on WhatsApp):**

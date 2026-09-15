@@ -15,7 +15,7 @@ You confirmed all three are on WhatsApp (14 Sep). None is yet confirmed as the *
 | Number | School | Attribution (verified source) | Treat as |
 |---|---|---|---|
 | **679 65 07 07** | Baptist Comp. College | Published on the school's own Facebook page intro ("Baptist Comprehensive College, Great Soppo Buea") | **Official school line** — likely administrator/proprietor's phone; role unknown |
-| **652 075 229** | PCSS Buea | Published by the school itself on the GPENreformation global Protestant-schools network (self-reported official listing) | **Official school line** — office/head teacher; not personal |
+| **652 075 229** | PCSS Buea | WA Business profile "PCSS BUEA" (King screenshot 15 Sep) + GPENreformation self-listing | **ORG-CONFIRMED business account, operated by Namondo Elangwe** ("Madam Namondo Alexander" on the 2021 listing); LIKELY principal, title unverified — greet "Madam Namondo", never state the title |
 | **675 533 321** | PCSS Buea | Named individual: **Kinang Edwin Ngenge**, listed as the school's network contact with personal Yahoo email (he lists EN/ES/FR/DE — reads as a language teacher/partnerships person) | **Staff, not principal** — potential internal champion who opens the door |
 | **677 87 53 95** | Baird Memorial | Visitor-submitted directory entry paired with P.O. Box 403 Buea | **CONFIRMED on WhatsApp (King 14 Sep)** — role attribution on reply; 677 78 04 05 is NOT on WA and is discarded |
 | **679 15 10 75** | St. Theresa (STIBCCOL) | Official Facebook page intro | **CONFIRMED on WhatsApp (King 14 Sep)** — Tue 15:45 msg 1; TikTok DM deferred to Wed if silent |
