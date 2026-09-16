@@ -51,14 +51,31 @@ Concept **déjà construit sur mesure** (bleus du logo, « Souriez à l'infini �
 > Petit point : Mondocteur indique une adresse face CAMTEL Bépanda — est-ce un 2e cabinet, ou uniquement Bonamoussadi ?
 > — Akwo King / AMK – Développement Web & Solutions Digitales
 
-### 2b · Cabinet dentaire YAKS — Logbessou (immeuble BAO)
-**+237 672 70 20 78** · ~14:45 · 2 100+ mentions J'aime, page active, aucune adresse web propre.
+### 2b · Cabinet Dentaire YAKS — Logbessou, immeuble BAO (face Collège Soleil) ⭐ NAMED GIFT (msg1 ENVOYÉ)
+**+237 672 70 20 78** (WA Business vérifié par King : logo « NOS SPÉCIALITÉS », catalogue, 08–17h ; 2ᵉ n° annuaire 691 21 07 66 = JAMAIS contacter) · dossier complet `sales/research/Cabinet-YAKS-deep-dive-2026-09-16.md`.
+**Msg1 ENVOYÉ le 16/09 à 16:43** (texte SMYKM ci-dessous). ⚠️ le panneau contact affichait « Media, links and docs: 0 » : l'image générique n'est peut-être pas passée — sans importance, la **maquette nommée laptop+phone part à la réponse « oui »**.
 
+**Concept nommé construit sur mesure** (vert feuille + teal de LEUR logo, police ronde familiale Nunito, section signature « roue des 6 spécialités » reprise de LEUR plaquette, slogan « La santé de vos dents, la beauté de votre sourire », Dre Lekane épse Ntoweng Lolita, consult 6 000 FCFA réelle, RDV WhatsApp → 672 70 20 78, FR par défaut) : `demos/concept-yaks-v1.html`.
+**Maquette à joindre : `demos/shots/mockup-yaks-wa.jpg`** (laptop + téléphone, leurs couleurs, 6 médaillons, stats 2 100 ❤ / 100 % / 6 spécialités / 6 000 F).
+
+**Étape 0 — déployer AVANT la réponse (lien prêt pour la règle 1 h) :** nouveau projet Vercel **concept-yaks** (drag du dossier `hosting/previews/yaks/`), ouvrir sur téléphone, vérifier le démarrage FR + la pilule EN|FR (correctif mobile-first déjà inclus) + un bouton tarif qui pré-remplit en français.
+
+**Msg1 (envoyé — conservé pour archive) :**
 > 2 100 abonnés Facebook — et le Cabinet YAKS n'a toujours pas de site.
 > Bonjour 👋, je suis Akwo King, développeur web à Douala. Quand un patient cherche votre cabinet, il ne trouve que votre page Facebook : aucun endroit où voir vos soins ou prendre rendez-vous.
 > J'ai préparé une maquette bilingue pour cabinet dentaire : tarifs en FCFA et rendez-vous WhatsApp en un clic.
 > Je vous l'envoie ? Répondez juste « oui » — une minute sur votre téléphone, sans engagement.
 > — Akwo King / AMK – Développement Web & Solutions Digitales
+
+**Réponse « oui / envoie » → joindre d'ABORD `mockup-yaks-wa.jpg`, puis :**
+> Avec plaisir ! J'ai construit le concept autour de vos couleurs et de vos 6 spécialités 👉 https://concept-yaks.vercel.app
+> Ouvrez sur téléphone : testez « Prendre RDV » sur une carte de tarif — le message arrive en français, pré-rédigé, sur VOTRE WhatsApp — et la section « Nos spécialités », inspirée de votre plaquette.
+> La consultation à 6 000 FCFA est déjà affichée (vue sur Mondocteur) ; les autres tarifs, vos photos et vos horaires réels remplacent les emplacements en 24 h.
+> Une question en passant : un annuaire affiche cabinetdentaireyaks.com, mais le domaine ne s'ouvre pas — vous l'avez déjà possédé, ou faut-il le réserver avec le site ?
+> — Akwo King / AMK – Développement Web & Solutions Digitales
+
+- **Qualification Ferry après le « oui » (une question à la fois) :** équipe/décideur (Dre Lekane + associés ?) · horaires exacts (plaquette 6j/7 8h–17h vs annuaires Sam 8h–13h et coupure 13h–14h) · MoMo/OM acceptés ? · autres tarifs à publier ? · le n° 691 21 07 66 est-il encore à eux ? · photos équipe autorisées ?
+- **Silence :** FU1 ven 18 (M+2) · FU2 dim 20 (M+4) · FU3 mer 23 (M+7, fermeture gracieuse), puis stop.
 
 ### 2c · AFRIQUE LABO SARL — Bessengue (feu rouge, Tour SGBC / au-dessus de Wafa cash)
 **+237 690 54 70 93** (secours 699 73 36 25) · ~15:00 · 5 500+ mentions J'aime ; vérifié le 16/09 : afriqlabo.com n'est PAS relié à eux, aucun site propre.

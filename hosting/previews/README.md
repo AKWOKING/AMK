@@ -7,6 +7,7 @@ This folder is a **drag-and-drop deploy bundle**. Every concept is a single self
 | Slug | LIVE link | Lead | Canonical source file |
 |---|---|---|---|
 | **separate Vercel project** | ✅ LIVE **https://concept-skye.vercel.app/** (King's Vercel project `concept-skye`; re-deploy after each sync of the `skye` folder) | Cabinet Dentaire The Skye, Bonamoussadi Douala | `demos/concept-skye-v1.html` |
+| **separate Vercel project** | ⏳ suggested **https://concept-yaks.vercel.app/** (deploy `yaks` folder as project `concept-yaks` AFTER the prospect replies « oui » — gift gate; folder ready) | Cabinet Dentaire YAKS, Logbessou Douala | `demos/concept-yaks-v1.html` |
 | **separate Vercel project** | ✅ **https://oracare-concept.vercel.app/** (live 14 Sep, verified v3: prices + assistant) | OraCare237, Buea | `demos/concept-oracare-v3.html` |
 | **separate Vercel project** | ✅ **https://sjc-sasse-concept.vercel.app/** (live 14 Sep, verified email-patched build) | SJC Sasse, Buea | `demos/sjc-sasse-v2.html` |
 | `/comobil/` (this bundle, when deployed) | `https://amk-previews.vercel.app/comobil/` | COMOBIL — PARKED 14 Sep; deploy only on revival | `demos/concept-comobil-v1.html` |
