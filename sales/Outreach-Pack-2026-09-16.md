@@ -1,97 +1,82 @@
 # Outreach Pack — Wed 16 Sep 2026 (afternoon/evening)
 
-**Time now:** 13:35. **Laws in force:** window 09:00–21:00 · one message ≤5 lines · image FIRST on every msg 1 (`demos/shots/mockup-clinic-wa.jpg`, 1600×900 ~170 KB) · no sell in msg 1 (only ask = "may I send the preview?") · every msg personalized (never identical text to several numbers) · sign **— Akwo King / AMK – Développement Web & Solutions Digitales** in FR · human-paced, ~15 min between new contacts · no travel/cards/boda (remote-only standing law — the Wed card sweep in the old Daily Ops is CANCELLED).
+**Time now:** ~14:15. **Laws:** window 09:00–21:00 · one message ≤5 lines · every cold msg 1 = image FIRST (`demos/shots/mockup-clinic-wa.jpg`, 1600×900 ~170 KB) · one ask per message · never identical wording across numbers · sign **— Akwo King / AMK – Développement Web & Solutions Digitales** · ~15 min between new contacts · log every send in `leads/leads_50.xlsx`.
 
-**Send queue today = 1 follow-up + max 4 new Douala clinics.** Douala = French. Log every send in `leads/leads_50.xlsx` the moment it goes.
+**Queue:** OraCare FU1 (link) → 4 Douala FR msg1s → inbound watch → evening FR video.
 
 ---
 
-## 1 · OraCare237 — FU1 (due TODAY, M+2 from Mon 14) · EN, LINK MESSAGE (no image)
+## 1 · OraCare237 — FU1 TODAY (M+2) · EN, LINK ONLY (no image, the link unfurls with his clinic name)
 
-Number: +237 672 52 66 86. Send ~14:00. **REQUIRED FIRST: AMK patched the live demo (removed a "5.0★" rating claim his real Facebook page doesn't show — "Not yet rated"; it would have embarrassed us). King must REDEPLOY oracare-concept from `hosting/previews/oracare/index.html` the same way as the first deploy, then hard-refresh and confirm the line reads "Your reviews, live."** Then send:
+Number **+237 672 52 66 86**. Sent Mon 13:04, double ticks, never replied. Psychology: don't re-ask the video/file choice he ignored — just deliver; curiosity gap ("watch where it lands"); one action; multiple-choice opinion question to force an easy reply.
 
-> Good morning Dr. Nkafu — your OraCare preview is live: https://oracare-concept.vercel.app
-> Open it on your phone: try the EN|FR button, the green chat bubble, and tap "Book this service" on any price card — the message lands on YOUR OWN WhatsApp.
-> Everything marked "sample" is replaced with your real details in 24h.
-> Which section feels most useful for the patients you want this month?
+> Good afternoon Dr. Nkafu — your OraCare preview is ready 👋
+> https://oracare-concept.vercel.app
+> Tap any green "Book" button and watch where the appointment request lands 👀 it opens YOUR OWN WhatsApp, pre-written — no app, no receptionist.
+> Everything marked "sample" becomes your real prices & photos in 24h.
+> Quick one: which service would patients book first — cleaning, whitening or braces?
 > — Akwo King / AMK
 
-- Why the link beats the 30-second video: one tap, nothing to schedule, and the self-booking trick is felt, not described.
-- Replies → Outreach-Pack-2026-09-14.md §1 branches (file vs video vs price); the qualifying question is already in the message above.
-- Silent → FU2 Fri 18 (5-point checklist), FU3 Mon 21 (graceful close). Max 3, then park.
+- His one-tap answer ("Cleaning" etc.) reopens the whole conversation; then run Outreach-Pack-2026-09-14 §1 branches (NAT discovery → walkthrough → price+pause).
+- **Silence →** FU2 Fri 18 = value gift (5-point checklist, pack 14 Sep §1) · FU3 Mon 21 = graceful close ("I'll close my file here… reply PREVIEW any time") — break-up messages have the highest reply rate of the sequence. Then stop.
 
-## 2 · Douala new clinics — FR, image first (`mockup-clinic-wa.jpg`)
+## 2 · Douala clinics — FR, image `mockup-clinic-wa.jpg` attached FIRST, text in the image caption
 
-**Before each send (2 min):** save the number; check the WhatsApp profile photo/name actually matches the business; open any domain mentioned. Skip on doubt and tell AMK what you saw.
+Before each (2 min): save the number; the WA profile must match the business (photo/name); skip and report any mismatch. ~15 min pacing.
 
 ### 2a · Cabinet Dentaire The Skye — Bonamoussadi (immeuble Stella & Joyce, Petit terrain)
-**Number: +237 677 79 69 99** (backup 672 67 65 70). Facts: FB 19 avis, 100% recommandent; no own website.
+**+237 677 79 69 99** (secours 672 67 65 70) · ~14:30 · FB: 19 avis, 100% recommandent, pas de site.
 
-> Bonjour 👋, je suis Akwo King, fondateur d'AMK – Développement Web & Solutions Digitales à Douala.
-> En cherchant le Cabinet Dentaire The Skye, j'ai vu vos 19 avis Facebook — 100 % de recommandations — mais aucun site qui présente vos soins, vos tarifs et la prise de rendez-vous.
-> J'ai dessiné un concept de site bilingue, rapide sur téléphone, pour un cabinet comme le vôtre, avec rendez-vous WhatsApp en un clic.
-> Puis-je vous envoyer l'aperçu ? Une minute à regarder, sans aucun engagement.
+> Bonjour 👋, je tombe sur le Cabinet Dentaire The Skye en cherchant les cabinets dentaires de Bonamoussadi.
+> Vos 19 avis Facebook à 100 % de recommandations m'ont marqué — mais il n'existe aucun site qui présente vos soins, vos tarifs et la prise de rendez-vous.
+> Je suis Akwo King, fondateur d'AMK (Développement Web, Douala) : j'ai dessiné un concept bilingue, rapide sur mobile, avec rendez-vous WhatsApp en un clic.
+> Puis-je vous l'envoyer ? Une minute à regarder, sans aucun engagement.
 > — Akwo King / AMK
 
 ### 2b · Cabinet dentaire YAKS — Logbessou (immeuble BAO)
-**Number: +237 672 70 20 78.** Facts: 2 100+ mentions J'aime, page active; no website (adresse Gmail seulement).
+**+237 672 70 20 78** · ~14:45 · 2 100+ mentions J'aime, page active, aucune adresse web propre.
 
-> Bonjour 👋, je suis Akwo King d'AMK – Développement Web & Solutions Digitales (Douala).
-> Votre page Facebook compte plus de 2 000 mentions J'aime — une vraie communauté — mais quand on cherche « YAKS » sur Google, aucun site ne présente vos soins ni ne permet de prendre rendez-vous.
-> J'ai préparé un concept de site bilingue pour cabinet dentaire, avec réservations WhatsApp en un clic et les tarifs affichés.
-> Puis-je vous l'envoyer ? Tout y est remplaçable, et ça ne vous engage à rien.
+> Bonjour 👋, je suis Akwo King, fondateur d'AMK – Développement Web & Solutions Digitales à Douala.
+> Plus de 2 000 personnes suivent le Cabinet YAKS sur Facebook — une vraie communauté. Pourtant, quand un patient cherche « YAKS » sur Google, aucun site ne présente vos soins ni ne permet de prendre rendez-vous.
+> J'ai préparé un concept de site bilingue pour cabinet dentaire : tarifs affichés en FCFA et réservations WhatsApp en un clic.
+> Puis-je vous l'envoyer ? Ça prend une minute, sans engagement.
 > — Akwo King / AMK
 
 ### 2c · AFRIQUE LABO SARL — Bessengue (feu rouge, Tour SGBC / au-dessus de Wafa cash)
-**Number: +237 690 54 70 93** (numéro de la page FB; secours 699 73 36 25). Facts: 5 500+ mentions J'aime, laboratoire multidisciplinaire; vérifié AMK le 16/09 : **afriqlabo.com n'est pas relié à eux** (aucun lien depuis leur FB ni les annuaires; leurs adresses sont Gmail/Yahoo) — ils n'ont pas de site propre.
+**+237 690 54 70 93** (secours 699 73 36 25) · ~15:00 · 5 500+ mentions J'aime ; vérifié le 16/09 : afriqlabo.com n'est PAS relié à eux, aucun site propre.
 
-> Bonjour 👋, je suis Akwo King, fondateur d'AMK – Développement Web & Solutions Digitales.
-> AFRIQUE LABO réunit plus de 5 500 mentions J'aime sur Facebook, mais vos patients ne trouvent qu'une page Facebook et des fiches annuaires — pas de site qui explique vos analyses, vos horaires et la prise de contact WhatsApp.
-> J'ai préparé un concept de site bilingue, rapide sur mobile, pour un laboratoire multidisciplinaire.
+> Bonjour 👋, je suis Akwo King, fondateur d'AMK à Douala.
+> AFRIQUE LABO réunit plus de 5 500 abonnés sur Facebook — mais quand les patients cherchent vos analyses ou vos horaires sur Google, ils ne trouvent que des fiches annuaires, jamais un site à vous.
+> J'ai préparé un concept de site bilingue pour laboratoire multidisciplinaire, rapide sur mobile, avec demande d'analyses par WhatsApp en un clic.
 > Puis-je vous envoyer l'aperçu ? Une minute à regarder, sans engagement.
 > — Akwo King / AMK
 
-### 2d · JOSS MEDI Clinic — Bonanjo (rue Ivy, derrière l'ancienne CNPS) — GATE AVANT ENVOI
-**D'abord ouvrir `jossmediclinic.com` dans le navigateur du téléphone.**
-- Si un vrai site s'affiche → **NE PAS ENVOYER**, prévenir AMK (on retire JOSS de la liste).
-- Si page vide/parquée/erreur → envoyer au **+237 677 58 42 73** (secours 674 63 88 88). Facts: clinique privée depuis mai 2009, la plus grosse activité WhatsApp mesurée sur DoualaTour, pas de site propre trouvé.
+### 2d · JOSS MEDI Clinic — Bonanjo (rue Ivy, derrière l'ancienne CNPS) · GATE AVANT ENVOI
+**D'abord ouvrir `jossmediclinic.com` sur le téléphone :** vrai site = NE PAS ENVOYER et prévenir AMK · page morte/parquée/erreur = envoyer au **+237 677 58 42 73** (secours 674 63 88 88), ~15:15. Clinique privée depuis 2009, pas de site propre trouvé.
 
-> Bonjour 👋, je suis Akwo King d'AMK – Développement Web & Solutions Digitales à Douala.
-> En cherchant JOSS MEDI Clinic, je ne vous trouve que sur des annuaires tiers — où votre fiche attire déjà beaucoup de demandes WhatsApp — sans site à vous pour présenter vos consultations et vos horaires.
-> J'ai dessiné un concept de site bilingue pour clinique, avec rendez-vous WhatsApp en un clic et les tarifs affichés.
-> Puis-je vous envoyer l'aperçu ? Une minute sur votre téléphone, sans engagement.
+> Bonjour 👋, je suis Akwo King, fondateur d'AMK à Douala.
+> En cherchant JOSS MEDI Clinic à Bonanjo, les patients ne vous trouvent que sur des annuaires tiers — où ils prennent déjà leurs rendez-vous — sans jamais arriver sur un site qui vous appartient.
+> J'ai dessiné un concept de site bilingue pour clinique : rendez-vous WhatsApp en un clic et tarifs en FCFA affichés.
+> Puis-je vous l'envoyer ? Une minute sur votre téléphone, sans engagement.
 > — Akwo King / AMK
 
-**Pacing:** envoyer 2a → attendre 15 min → 2b → 15 min → 2c → 15 min → 2d. Si le numéro n'est pas sur WhatsApp ou le profil ne correspond pas, noter et sauter, ne pas forcer.
+## 3 · Réponse « oui / envoie » (même mécanique pour les 4)
 
-## 3 · Réponse « oui / envoie » (identique pour les 4, adapter cabinet/laboratoire/clinique)
-
-1. Envoyer le lien **https://amk-cm.vercel.app/clinic-bonaberi.html** (après le redéploiement; sinon l'URL marche déjà) avec :
-
-> Avec plaisir ! Ouvrez sur téléphone et testez le bouton EN|FR et la prise de rendez-vous WhatsApp en bas 👇
-> C'est un concept clinique de démonstration : pour votre cabinet, le nom, les photos, les couleurs et les tarifs réels remplacent les emplacements en 24 h.
+1. Lien **https://amk-cm.vercel.app/clinic-bonaberi.html** avec :
+> Avec plaisir ! Ouvrez sur téléphone et testez le bouton EN|FR, puis "Book an appointment" en bas 👇
+> C'est une clinique de démonstration : pour votre établissement, le nom, les photos, les couleurs et les tarifs réels remplacent les emplacements en 24 h.
 > Quel passage vous semble le plus utile pour vos patients ?
 > — Akwo King / AMK
+2. Leur réponse qualifie → invite-choice (appel WhatsApp 10 min, ou tout par écrit). Prix seulement après l'avoir vu.
+3. **Silence :** FU1 ven 18 (M+2) · FU2 dim 20 (M+4) · FU3 mer 23 (M+7, fermeture gracieuse), puis stop.
 
-2. Leur réponse qualifie → invite-choice (appel WhatsApp de 10 min, ou tout par écrit). Le nom de l'offre viendra seulement après l'avoir vu.
+## 4 · TikTok / IG inbound — 1-h rule toute la journée
+- DM keyword CLINIC / SCHOOL / « site » / « combien » → UNIQUEMENT :
+> Thank you for your message! Are you a clinic/lab or a school — and which town? / Merci ! Vous êtes une clinique/laboratoire ou une école — et dans quelle ville ?
+- CRM source = TikTok. Commentaires publics → "DM sent ✅", jamais de prix en public.
 
-**Silence:** FU1 ven 18 (M+2) · FU2 dim 20 (M+4) · FU3 mer 23 (M+7, fermeture gracieuse). Puis stop.
+## 5 · Ne PAS faire aujourd'hui
+- ❌ Cartes/déplacements/boda (remote-only). ❌ Opticiens Bali/Maison Optique : le mockup est nommé MITOC — concept optique générique jeudi. ❌ Solidarité 677 61 57 57 (jamais), Dr Njang 691 63 29 41 (hold permanent), COMOBIL/SAHISCOL/Retraite (parqués), cibles diocésaines/étatiques. Baird = vérif coches seulement (FU jeudi). MITOC FU1 jeudi. St Theresa 14 oct.
 
-## 4 · TikTok / Instagram — inbound toute la journée (1-h rule)
-
-- DM keyword CLINIC / SCHOOL / « site » / « combien » → première réponse UNIQUEMENT :
-  > Thank you for your message! Are you a clinic/lab or a school — and which town are you in? / Merci ! Vous êtes une clinique/laboratoire ou une école — et dans quelle ville ?
-- Noter la source = TikTok dans le CRM. Rien d'autre tant que niche + ville ne sont pas connus.
-- Commentaires publics : répondre brièvement, diriger en DM, ne jamais mettre de prix en commentaire.
-
-## 5 · Ce qui NE se fait PAS aujourd'hui
-
-- ❌ Tournée de cartes / déplacements / enveloppes / boda (abrogé par la règle remote-only).
-- ❌ Opticiens (L'Opticien Bali, Maison Optique) : l'image mockup porte le nom MITOC — isolation des avant-premières nommées. AMK construit d'abord un concept optique SANS nom (jeudi, avant envoi).
-- ❌ COMOBIL (parqué : déclencheur = Page Facebook AMK) · Solidarity (numéros en hold, ne pas relancer 677 61 57 57) · Dr Njang 691 63 29 41 (hold permanent) · cibles diocésaines/étatiques.
-- Baird : vérifier les coches seulement aujourd'hui (envoyé hier 14:41) ; FU1 prévu jeudi 17 (M+2).
-- MITOC : FU1 prévu jeudi 17, ne pas avancer.
-
-## 6 · Ce soir 18:00–20:00
-
-- Poster **clinic-founding-fr.mp4** sur TikTok (légende FR dans `sales/social/founding-post-tiktok-ig.md`), puis miroirs : Page Facebook, Statut WhatsApp, YouTube Shorts (métadonnées prêtes dans `sales/social/youtube-shorts-metadata.md`).
+## 6 · 18:00–20:00
+clinic-founding-fr.mp4 sur TikTok (légende FR du post pack §A) → miroirs FB Page · WA Status (3 slides) · YouTube Shorts (`sales/social/youtube-shorts-metadata.md` §2). L'EN peut déjà être miré YT/FB avec la §1 des métadonnées.
