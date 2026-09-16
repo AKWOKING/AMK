@@ -6,13 +6,18 @@
 
 ---
 
-## 1 · OraCare237 — FU1 (due TODAY, M+2 from Mon 14) · EN, TEXT ONLY (no image)
+## 1 · OraCare237 — FU1 (due TODAY, M+2 from Mon 14) · EN, LINK MESSAGE (no image)
 
-Number: +237 672 52 66 86. Send ~14:00.
+Number: +237 672 52 66 86. Send ~14:00. **REQUIRED FIRST: AMK patched the live demo (removed a "5.0★" rating claim his real Facebook page doesn't show — "Not yet rated"; it would have embarrassed us). King must REDEPLOY oracare-concept from `hosting/previews/oracare/index.html` the same way as the first deploy, then hard-refresh and confirm the line reads "Your reviews, live."** Then send:
 
-> Good morning Dr. Nkafu — following up on the OraCare preview. The 30-second video is ready whenever you are; it takes half a minute. Kind regards, Akwo King.
+> Good morning Dr. Nkafu — your OraCare preview is live: https://oracare-concept.vercel.app
+> Open it on your phone: try the EN|FR button, the green chat bubble, and tap "Book this service" on any price card — the message lands on YOUR OWN WhatsApp.
+> Everything marked "sample" is replaced with your real details in 24h.
+> Which section feels most useful for the patients you want this month?
+> — Akwo King / AMK
 
-- Replies → Outreach-Pack-2026-09-14.md §1 branches (file vs video vs price).
+- Why the link beats the 30-second video: one tap, nothing to schedule, and the self-booking trick is felt, not described.
+- Replies → Outreach-Pack-2026-09-14.md §1 branches (file vs video vs price); the qualifying question is already in the message above.
 - Silent → FU2 Fri 18 (5-point checklist), FU3 Mon 21 (graceful close). Max 3, then park.
 
 ## 2 · Douala new clinics — FR, image first (`mockup-clinic-wa.jpg`)

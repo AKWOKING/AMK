@@ -67,6 +67,14 @@ do not use it for `amk-cm` — ask AMK to run Option A instead.
 3. `/sample-secondary.html` still shows the Crestwood Cameroon build.
 4. The four cards' thumbnails render (`/img/nova.png`, `littleoaks.png`,
    `crestwood.png`, `clinic.png`).
+5. On a phone at 360px: header EN/FR pill shows BOTH buttons and tapping FR
+   switches the whole page; the sticky bottom bar appears with "Free 24h
+   preview" → opens a prefilled WhatsApp message; the lead form shows only
+   name + school/clinic chip + WhatsApp number.
+6. `/img/og-cover.jpg` loads (1200×630 share card; paste the live URL into a
+   WhatsApp chat once to confirm the unfurl image appears).
+7. Rich Results Test passes for the homepage `@graph` (LocalBusiness +
+   FAQPage) and the concept pages' JSON-LD.
 
 ## Rebuilding the bundle after site edits
 
