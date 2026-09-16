@@ -1,6 +1,8 @@
 # Outreach Pack — Wed 16 Sep 2026 (afternoon/evening)
 
-**Time now:** ~14:15. **Laws:** window 09:00–21:00 · one message ≤5 lines · every cold msg 1 = image FIRST (`demos/shots/mockup-clinic-wa.jpg`, 1600×900 ~170 KB) · one ask per message · never identical wording across numbers · sign **— Akwo King / AMK – Développement Web & Solutions Digitales** · ~15 min between new contacts · log every send in `leads/leads_50.xlsx`.
+**Time now:** ~15:25. **Laws:** window 09:00–21:00 · one message ≤5 lines · every cold msg 1 = image FIRST (`demos/shots/mockup-clinic-wa.jpg`, 1600×900 ~170 KB) · one ask per message · never identical wording across numbers · sign **— Akwo King / AMK – Développement Web & Solutions Digitales** · ~15 min between new contacts · log every send in `leads/leads_50.xlsx`.
+
+**Règle d'écriture msg1 (Miner + Ferry + Sam McKenna « Show Me You Know Me », 16/09) :** ligne 1 = l'« objet » qui s'affiche dans l'aperçu de la notif WhatsApp → un chiffre/spécificité VRAI qui parle d'eux + le manque que personne d'autre qu'eux ne peut expliquer (curiosité, zéro mot vendeur). Ligne 2 = identité + constat. Ligne 3 = le cadeau préparé. Ligne 4 = UNE micro-question répondable en 5 s (« répondez « oui » »). Pas d'argumentaire, ton détaché.
 
 **Queue:** OraCare FU1 (link) → 4 Douala FR msg1s → inbound watch → evening FR video.
 
@@ -52,29 +54,29 @@ Concept **déjà construit sur mesure** (bleus du logo, « Souriez à l'infini �
 ### 2b · Cabinet dentaire YAKS — Logbessou (immeuble BAO)
 **+237 672 70 20 78** · ~14:45 · 2 100+ mentions J'aime, page active, aucune adresse web propre.
 
-> Bonjour 👋, je suis Akwo King, fondateur d'AMK – Développement Web & Solutions Digitales à Douala.
-> Plus de 2 000 personnes suivent le Cabinet YAKS sur Facebook — une vraie communauté. Pourtant, quand un patient cherche « YAKS » sur Google, aucun site ne présente vos soins ni ne permet de prendre rendez-vous.
-> J'ai préparé un concept de site bilingue pour cabinet dentaire : tarifs affichés en FCFA et réservations WhatsApp en un clic.
-> Puis-je vous l'envoyer ? Ça prend une minute, sans engagement.
-> — Akwo King / AMK
+> 2 100 abonnés Facebook — et le Cabinet YAKS n'a toujours pas de site.
+> Bonjour 👋, je suis Akwo King, développeur web à Douala. Quand un patient cherche votre cabinet, il ne trouve que votre page Facebook : aucun endroit où voir vos soins ou prendre rendez-vous.
+> J'ai préparé une maquette bilingue pour cabinet dentaire : tarifs en FCFA et rendez-vous WhatsApp en un clic.
+> Je vous l'envoie ? Répondez juste « oui » — une minute sur votre téléphone, sans engagement.
+> — Akwo King / AMK – Développement Web & Solutions Digitales
 
 ### 2c · AFRIQUE LABO SARL — Bessengue (feu rouge, Tour SGBC / au-dessus de Wafa cash)
 **+237 690 54 70 93** (secours 699 73 36 25) · ~15:00 · 5 500+ mentions J'aime ; vérifié le 16/09 : afriqlabo.com n'est PAS relié à eux, aucun site propre.
 
-> Bonjour 👋, je suis Akwo King, fondateur d'AMK à Douala.
-> AFRIQUE LABO réunit plus de 5 500 abonnés sur Facebook — mais quand les patients cherchent vos analyses ou vos horaires sur Google, ils ne trouvent que des fiches annuaires, jamais un site à vous.
-> J'ai préparé un concept de site bilingue pour laboratoire multidisciplinaire, rapide sur mobile, avec demande d'analyses par WhatsApp en un clic.
-> Puis-je vous envoyer l'aperçu ? Une minute à regarder, sans engagement.
-> — Akwo King / AMK
+> 5 500 abonnés Facebook — et aucun site n'appartient à AFRIQUE LABO.
+> Bonjour 👋, je suis Akwo King, développeur web à Douala. Quand les patients cherchent vos analyses ou vos horaires, ils ne trouvent que des fiches annuaires — jamais de voie directe vers vous.
+> J'ai préparé une maquette bilingue pour laboratoire multidisciplinaire : demande d'analyses par WhatsApp en un clic, rapide sur mobile.
+> Je vous envoie l'aperçu ? Répondez juste « oui » — une minute, sans engagement.
+> — Akwo King / AMK – Développement Web & Solutions Digitales
 
 ### 2d · JOSS MEDI Clinic — Bonanjo (rue Ivy, derrière l'ancienne CNPS) · GATE AVANT ENVOI
 **D'abord ouvrir `jossmediclinic.com` sur le téléphone :** vrai site = NE PAS ENVOYER et prévenir AMK · page morte/parquée/erreur = envoyer au **+237 677 58 42 73** (secours 674 63 88 88), ~15:15. Clinique privée depuis 2009, pas de site propre trouvé.
 
-> Bonjour 👋, je suis Akwo King, fondateur d'AMK à Douala.
-> En cherchant JOSS MEDI Clinic à Bonanjo, les patients ne vous trouvent que sur des annuaires tiers — où ils prennent déjà leurs rendez-vous — sans jamais arriver sur un site qui vous appartient.
-> J'ai dessiné un concept de site bilingue pour clinique : rendez-vous WhatsApp en un clic et tarifs en FCFA affichés.
-> Puis-je vous l'envoyer ? Une minute sur votre téléphone, sans engagement.
-> — Akwo King / AMK
+> JOSS MEDI Clinic soigne Bonanjo depuis 2009 — et Google ne lui connaît toujours pas de site.
+> Bonjour 👋, je suis Akwo King, développeur web à Douala. Vos patients ne tombent que sur des annuaires tiers, où des cliniques concurrentes leur sont aussitôt suggérées.
+> J'ai dessiné une maquette bilingue pour clinique : rendez-vous WhatsApp en un clic et tarifs en FCFA affichés.
+> Je vous l'envoie ? Répondez juste « oui » — une minute sur votre téléphone, sans engagement.
+> — Akwo King / AMK – Développement Web & Solutions Digitales
 
 ## 3 · Réponse « oui / envoie » (même mécanique pour les 4)
 

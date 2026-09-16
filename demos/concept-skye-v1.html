@@ -304,6 +304,23 @@ footer{background:var(--cream);padding:54px 0 26px}
 }
 @media (prefers-reduced-motion:reduce){.bot-fab .pulse{animation:none}.bm{animation:none}.bot-panel{transition:none}}
 </style>
+<style>
+/* AMK mobile-first nav pass (16 Sep 2026): EN|FR pill must never clip on phones */
+.lang-sw{flex:0 0 auto}
+.lang-sw button{min-height:40px}
+@media(max-width:1000px){ .concept-badge{display:none} }
+@media(max-width:860px){
+  .nav-phone,.concept-badge,.logo small,.nav-cta{display:none}
+  .lang-sw{margin-left:auto}
+  .lang-sw button{min-height:44px;padding:10px 16px;font-size:13px}
+  .logo{min-width:0}
+}
+@media(max-width:620px){
+  nav.main .wrap{gap:10px;padding-top:10px;padding-bottom:10px;padding-left:16px;padding-right:16px}
+  .lang-sw button{padding:10px 15px}
+}
+@media(max-width:380px){ .tooth{width:34px;height:34px;border-radius:10px} .logo{font-size:19px} }
+</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Dentist", "name": "Cabinet Dentaire The Skye", "alternateName": "The Skye Dental Clinic", "slogan": "Souriez à l'infini", "image": "https://www.facebook.com/237DentalClinic", "telephone": "+237677796999", "email": "cabinetheskye@gmail.com", "priceRange": "$$", "address": {"@type": "PostalAddress", "streetAddress": "Immeuble Stella & Joyce, Petit terrain, Bonamoussadi", "addressLocality": "Douala", "addressRegion": "Littoral", "addressCountry": "CM"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "17:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "14:00"}], "sameAs": ["https://www.facebook.com/237DentalClinic"], "dentist": {"@type": "Physician", "name": "Dr Sandrine Djuinne"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Est-ce que ça fait mal ?", "acceptedAnswer": {"@type": "Answer", "text": "La première visite est souvent la plus calme. Pour les soins comme les plombages, une anesthésie locale est utilisée, et chaque étape est expliquée avant de commencer."}}, {"@type": "Question", "name": "Comment payer ?", "acceptedAnswer": {"@type": "Answer", "text": "Espèces, MTN Mobile Money ou Orange Money (à confirmer). Le prix annoncé avant le soin est le prix payé, sans surprise."}}, {"@type": "Question", "name": "Comment prendre rendez-vous ?", "acceptedAnswer": {"@type": "Answer", "text": "Par WhatsApp en un clic depuis le site, ou au +237 677 79 69 99. La plupart des rendez-vous sont confirmés le jour même."}}, {"@type": "Question", "name": "Où se trouve le cabinet ?", "acceptedAnswer": {"@type": "Answer", "text": "Immeuble Stella & Joyce, Petit terrain, Bonamoussadi, Douala."}}, {"@type": "Question", "name": "Recevez-vous les enfants ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, enfants et adolescents sont reçus en douceur, à leur rythme."}}]}]}</script>
 </head>
 <body>
@@ -321,7 +338,7 @@ footer{background:var(--cream);padding:54px 0 26px}
 .mbar .m-call{flex:0 0 64px;background:#E3F3FC;color:var(--navy);border:1.5px solid rgba(11,74,120,.2)}
 .mbar .m-book{background:var(--navy2);color:#fff}
 :where(a,button,input,select,summary):focus-visible{outline:3px solid #38BDF8;outline-offset:2px;border-radius:6px}
-@media(max-width:640px){ .mbar{display:flex} body{padding-bottom:74px} }
+@media(max-width:860px){ .mbar{display:flex} body{padding-bottom:78px} }
 @media(prefers-reduced-motion:reduce){ *,*::before,*::after{animation:none!important;transition:none!important} .rv{opacity:1;transform:none} }
 </style>
 <div class="mbar">

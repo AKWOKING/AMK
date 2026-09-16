@@ -280,7 +280,7 @@ TOPBAR = '''<!-- TOP PROMO BAR -->
 .mbar .m-call{flex:0 0 64px;background:#E3F3FC;color:var(--navy);border:1.5px solid rgba(11,74,120,.2)}
 .mbar .m-book{background:var(--navy2);color:#fff}
 :where(a,button,input,select,summary):focus-visible{outline:3px solid #38BDF8;outline-offset:2px;border-radius:6px}
-@media(max-width:640px){ .mbar{display:flex} body{padding-bottom:74px} }
+@media(max-width:860px){ .mbar{display:flex} body{padding-bottom:78px} }
 @media(prefers-reduced-motion:reduce){ *,*::before,*::after{animation:none!important;transition:none!important} .rv{opacity:1;transform:none} }
 </style>
 <div class="mbar">

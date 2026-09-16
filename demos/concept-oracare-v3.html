@@ -303,6 +303,23 @@ footer{background:var(--cream);padding:54px 0 26px}
 }
 @media (prefers-reduced-motion:reduce){.bot-fab .pulse{animation:none}.bm{animation:none}.bot-panel{transition:none}}
 </style>
+<style>
+/* AMK mobile-first nav pass (16 Sep 2026): EN|FR pill must never clip on phones */
+.lang-sw{flex:0 0 auto}
+.lang-sw button{min-height:40px}
+@media(max-width:1000px){ .concept-badge{display:none} }
+@media(max-width:860px){
+  .nav-phone,.concept-badge,.logo small,.nav-cta{display:none}
+  .lang-sw{margin-left:auto}
+  .lang-sw button{min-height:44px;padding:10px 16px;font-size:13px}
+  .logo{min-width:0}
+}
+@media(max-width:620px){
+  nav.main .wrap{gap:10px;padding-top:10px;padding-bottom:10px;padding-left:16px;padding-right:16px}
+  .lang-sw button{padding:10px 15px}
+}
+@media(max-width:380px){ .tooth{width:34px;height:34px;border-radius:10px} .logo{font-size:19px} }
+</style>
 </head>
 <body>
 
