@@ -58,7 +58,7 @@ Concept **déjà construit sur mesure** (bleus du logo, « Souriez à l'infini �
 **Concept nommé construit sur mesure** (vert feuille + teal de LEUR logo, police ronde familiale Nunito, section signature « roue des 6 spécialités » reprise de LEUR plaquette, slogan « La santé de vos dents, la beauté de votre sourire », Dre Lekane épse Ntoweng Lolita, consult 6 000 FCFA réelle, RDV WhatsApp → 672 70 20 78, FR par défaut) : `demos/concept-yaks-v1.html`.
 **Maquette à joindre : `demos/shots/mockup-yaks-wa.jpg`** (laptop + téléphone, leurs couleurs, 6 médaillons, stats 2 100 ❤ / 100 % / 6 spécialités / 6 000 F).
 
-**Étape 0 — déployer AVANT la réponse (lien prêt pour la règle 1 h) :** nouveau projet Vercel **concept-yaks** (drag du dossier `hosting/previews/yaks/`), ouvrir sur téléphone, vérifier le démarrage FR + la pilule EN|FR (correctif mobile-first déjà inclus) + un bouton tarif qui pré-remplit en français.
+**✅ Étape 0 — DÉJÀ EN LIGNE (déployé par King) :** **https://concept-yaks-v1.vercel.app** (projet `concept-yaks-v1`), vérifié par AMK le 16/09 : démarre en FR, pré-remplissages WhatsApp FR corrects (Consultation/Détartrage/Obturation/Blanchiment), 6 000 FCFA réels, roue des spécialités, adresse BAO.
 
 **Msg1 (envoyé — conservé pour archive) :**
 > 2 100 abonnés Facebook — et le Cabinet YAKS n'a toujours pas de site.
@@ -68,7 +68,7 @@ Concept **déjà construit sur mesure** (bleus du logo, « Souriez à l'infini �
 > — Akwo King / AMK – Développement Web & Solutions Digitales
 
 **Réponse « oui / envoie » → joindre d'ABORD `mockup-yaks-wa.jpg`, puis :**
-> Avec plaisir ! J'ai construit le concept autour de vos couleurs et de vos 6 spécialités 👉 https://concept-yaks.vercel.app
+> Avec plaisir ! J'ai construit le concept autour de vos couleurs et de vos 6 spécialités 👉 https://concept-yaks-v1.vercel.app
 > Ouvrez sur téléphone : testez « Prendre RDV » sur une carte de tarif — le message arrive en français, pré-rédigé, sur VOTRE WhatsApp — et la section « Nos spécialités », inspirée de votre plaquette.
 > La consultation à 6 000 FCFA est déjà affichée (vue sur Mondocteur) ; les autres tarifs, vos photos et vos horaires réels remplacent les emplacements en 24 h.
 > Une question en passant : un annuaire affiche cabinetdentaireyaks.com, mais le domaine ne s'ouvre pas — vous l'avez déjà possédé, ou faut-il le réserver avec le site ?
@@ -77,17 +77,28 @@ Concept **déjà construit sur mesure** (bleus du logo, « Souriez à l'infini �
 - **Qualification Ferry après le « oui » (une question à la fois) :** équipe/décideur (Dre Lekane + associés ?) · horaires exacts (plaquette 6j/7 8h–17h vs annuaires Sam 8h–13h et coupure 13h–14h) · MoMo/OM acceptés ? · autres tarifs à publier ? · le n° 691 21 07 66 est-il encore à eux ? · photos équipe autorisées ?
 - **Silence :** FU1 ven 18 (M+2) · FU2 dim 20 (M+4) · FU3 mer 23 (M+7, fermeture gracieuse), puis stop.
 
-### 2c · AFRIQUE LABO SARL — Bessengue (feu rouge, Tour SGBC / au-dessus de Wafa cash)
-**+237 690 54 70 93** (secours 699 73 36 25) · ~15:00 · 5 500+ mentions J'aime ; vérifié le 16/09 : afriqlabo.com n'est PAS relié à eux, aucun site propre.
+### 2c · AFRIQUE LABO SARL — Bessengue (feu rouge, au-dessus de Wafa Cash, face Total) · ⛔ GATE AVANT ENVOI (comme JOSS)
+**+237 690 54 70 93** (secours 699 73 36 25) · **ils ont DÉJÀ un site fait par une agence : `afriqlabo.com` (+ `afriqlabo.net`, agence Sajor Company SARL ; biologiste propriétaire Dr TAKALA Cathérine).** Dossier `sales/research/AFRIQUE-LABO-deep-dive-2026-09-16.md`. Le message « aucun site » ci-dessous est **FAUX — ne pas l'envoyer tant que le portail téléphone n'est pas fait.**
 
-> 5 500 abonnés Facebook — et aucun site n'appartient à AFRIQUE LABO.
-> Bonjour 👋, je suis Akwo King, développeur web à Douala. Quand les patients cherchent vos analyses ou vos horaires, ils ne trouvent que des fiches annuaires — jamais de voie directe vers vous.
-> J'ai préparé une maquette bilingue pour laboratoire multidisciplinaire : demande d'analyses par WhatsApp en un clic, rapide sur mobile.
-> Je vous envoie l'aperçu ? Répondez juste « oui » — une minute, sans engagement.
+**PORTAIL (2 min, sur téléphone) — ouvrir `afriqlabo.com` puis `afriqlabo.net` :**
+- **Ça s'ouvre vite, propre et responsive → BRANCH C : NE RIEN ENVOYER** (lead refonte seulement, hors campagne du jour), passer au prospect suivant.
+- **Page d'erreur / vide / expirée → BRANCH A (domaine mort), image `mockup-clinic-wa.jpg` d'abord :**
+> afriqlabo.com est dans Google, mais la page ne s'ouvre pas.
+> Bonjour 👋, je suis Akwo King, développeur web à Douala. Quand un patient cherche votre laboratoire, il tombe sur une adresse en erreur ; vos analyses et demandes de prélèvement ne vivent que sur Facebook.
+> J'ai préparé une maquette de site de laboratoire : demandes d'analyses et réception des résultats par WhatsApp, en français et en anglais.
+> Je vous l'envoie ? Répondez juste « oui » — une minute, sans engagement.
+> — Akwo King / AMK – Développement Web & Solutions Digitales
+- **Ça s'ouvre mais c'est mauvais sur mobile / textes de modèle (« 700+ chirurgies », « 20 médecins ») / pas de résultats WhatsApp → BRANCH B (refonte honnête), image d'abord :**
+> « 700 chirurgies » sur le site d'un laboratoire d'analyses.
+> Bonjour Dr Takala 👋, je suis Akwo King, développeur web à Douala. Votre site afriqlabo.com contient encore des textes de modèle tout prêts qui ne correspondent pas à votre métier — et il ne permet ni demande d'analyses, ni résultats par WhatsApp.
+> J'ai dessiné une version mobile repensée pour laboratoire, avec résultats et prélèvements par WhatsApp.
+> Je vous l'envoie ? Répondez juste « oui » — une minute, sans engagement.
 > — Akwo King / AMK – Développement Web & Solutions Digitales
 
+> ~~Ancien msg « aucun site » (ARCHIVE, devenu faux) :~~ 5 500 abonnés Facebook — et aucun site n'appartient à AFRIQUE LABO … ne plus utiliser.
+
 ### 2d · JOSS MEDI Clinic — Bonanjo (rue Ivy, derrière l'ancienne CNPS) · GATE AVANT ENVOI
-**D'abord ouvrir `jossmediclinic.com` sur le téléphone :** vrai site = NE PAS ENVOYER et prévenir AMK · page morte/parquée/erreur = envoyer au **+237 677 58 42 73** (secours 674 63 88 88), ~15:15. Clinique privée depuis 2009, pas de site propre trouvé.
+**D'abord ouvrir `jossmediclinic.com` sur le téléphone :** vrai site = NE PAS ENVOYER et prévenir AMK · page morte/parquée/erreur = envoyer au **+237 677 58 42 73** (secours 674 63 88 88). MAJ 16/09 : le domaine est référencé comme site OFFICIEL par Clodura, RocketReach et leur FB /JMClini (email infos@jossmediclinic.com, tél. 233 42 18 91) — forte probabilité qu'il existe : bien faire le portail. Grosse clinique pluridisciplinaire depuis 2009 (11–50 employés : urgences, radio, labo, gynéco, dentaire…), profil « board buyer » : si le site vit, on ne chasse pas (règle board buyers no chase), on passe.
 
 > JOSS MEDI Clinic soigne Bonanjo depuis 2009 — et Google ne lui connaît toujours pas de site.
 > Bonjour 👋, je suis Akwo King, développeur web à Douala. Vos patients ne tombent que sur des annuaires tiers, où des cliniques concurrentes leur sont aussitôt suggérées.
