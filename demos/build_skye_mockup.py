@@ -58,7 +58,7 @@ d.rectangle((LX,LY,LX+LW,LY+44*S//2),fill=(244,248,252))
 for i,c in enumerate([(248,113,113),(251,191,36),(52,211,153)]):
     d.ellipse((LX+18*S//2+i*22*S//2,LY+14*S//2,LX+30*S//2+i*22*S//2,LY+26*S//2),fill=c)
 rr((LX+120*S//2,LY+10*S//2,LX+470*S//2,LY+34*S//2),12,fill=WHITE,outline=(214,226,236))
-d.text((LX+136*S//2,LY+12*S//2),"theskye-dental.vercel.app (concept)",font=f("OpenSans-Regular.ttf",12*S//2),fill=SLATE)
+d.text((LX+136*S//2,LY+12*S//2),"concept-skye.vercel.app",font=f("OpenSans-Regular.ttf",12*S//2),fill=SLATE)
 # page nav
 py=LY+58*S//2
 d.rounded_rectangle((LX+28*S//2,py-6,LX+60*S//2,py+26),radius=9,fill=NAVY)

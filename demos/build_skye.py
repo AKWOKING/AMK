@@ -317,6 +317,43 @@ s = s.replace('clinic-bonaberi.html', 'index.html').replace('sample-nursery.html
 s = re.sub(r'https://www\.google\.com/maps/search/\?api=1&query=[^"\\ ]*',
            'https://www.google.com/maps/search/?api=1&query=Cabinet%20Dentaire%20The%20Skye%20Bonamoussadi%20Douala', s)
 
+# ----- language-aware WA prefills (source JS still has English OraCare-era strings) -----
+old_wire = ('document.querySelectorAll(".pcard .btn[data-wa]").forEach(function(a){\n'
+ '  var s = a.getAttribute("data-wa");\n'
+ '  a.href = "https://wa.me/" + OC_WA + "?text=" + encodeURIComponent("Hello The Skye! I\'d like to book: " + s + ".");\n'
+ '  a.setAttribute("target","_blank"); a.setAttribute("rel","noopener");\n});')
+new_wire = (
+ 'function waHref(en,fr){ var frOn=document.documentElement.lang==="fr";\n'
+ '  return "https://wa.me/" + OC_WA + "?text=" + encodeURIComponent(frOn?fr:en); }\n'
+ 'function wireWa(){\n'
+ '  document.querySelectorAll(".pcard .btn[data-wa]").forEach(function(a){\n'
+ '    var card=a.closest(".pcard"), h=card?card.querySelector("h3"):null;\n'
+ '    var en=a.getAttribute("data-wa"), fr=h?h.getAttribute("data-fr"):en;\n'
+ '    a.href=waHref("Hello! I\\u2019d like to book: "+en+".", "Bonjour The Skye ! Je souhaite r\\u00e9server : "+fr+".");\n'
+ '    a.setAttribute("target","_blank"); a.setAttribute("rel","noopener");\n'
+ '  });\n'
+ '  document.querySelectorAll(".js-genbook").forEach(function(a){\n'
+ '    a.href=waHref("Hello! I\\u2019d like to book a visit.","Bonjour The Skye ! Je souhaite prendre rendez-vous.");\n'
+ '    a.setAttribute("target","_blank"); a.setAttribute("rel","noopener");\n'
+ '  });\n'
+ '  var mb=document.getElementById("mbarBook");\n'
+ '  if(mb) mb.href=waHref("Hello! I\\u2019d like to book a visit.","Bonjour The Skye ! Je souhaite prendre rendez-vous.");\n'
+ '}\n'
+ 'document.addEventListener("DOMContentLoaded",wireWa);\n'
+ 'var __skyeSetLang=setLang; setLang=function(l){__skyeSetLang(l); wireWa();};')
+assert old_wire in s, "wire block not found"
+s = s.replace(old_wire, new_wire)
+
+# generic static "book a visit" anchors -> js hook
+s = re.sub(r'<a class="btn btn-dark" href="https://wa\.me/237677796999\?text=[^"]*book%20a%20visit[^"]*"',
+           '<a class="btn btn-dark js-genbook" href="#book"', s)
+# sticky bar button id
+s = s.replace('<a class="m-book" href="https://wa.me/237677796999?text=Bonjour%20The%20Skye%20!%20Je%20souhaite%20prendre%20rendez-vous."',
+              '<a class="m-book" id="mbarBook" href="#book"')
+# formal "vous" in the unlisted-service FR deep link
+s = s.replace("Bonjour%20The Skye%21%20Peux-tu%20me%20donner%20le%20prix%20pour",
+              "Bonjour%20The Skye%21%20Pouvez-vous%20m%27indiquer%20le%20prix%20de")
+
 # boot: FR-first (Douala), honor ?lang= + saved choice (must run after bot setLang override)
 _init = (
  "};\n"
