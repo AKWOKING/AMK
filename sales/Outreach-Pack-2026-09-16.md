@@ -82,12 +82,14 @@ Concept **déjà construit sur mesure** (bleus du logo, « Souriez à l'infini �
 
 **PORTAIL (2 min, sur téléphone) — ouvrir `afriqlabo.com` puis `afriqlabo.net` :**
 - **Ça s'ouvre vite, propre et responsive → BRANCH C : NE RIEN ENVOYER** (lead refonte seulement, hors campagne du jour), passer au prospect suivant.
-- **Page d'erreur / vide / expirée → BRANCH A (domaine mort), image `mockup-clinic-wa.jpg` d'abord :**
-> afriqlabo.com est dans Google, mais la page ne s'ouvre pas.
-> Bonjour 👋, je suis Akwo King, développeur web à Douala. Quand un patient cherche votre laboratoire, il tombe sur une adresse en erreur ; vos analyses et demandes de prélèvement ne vivent que sur Facebook.
+- **Page d'erreur / vide / expirée → ✅ CONFIRMÉ LE 16/09 ~17:00 (King, téléphone) : afriqlabo.com ET afriqlabo.net = DNS NXDOMAIN. → BRANCH A (domaine mort), image `mockup-clinic-wa.jpg` d'abord (elle est déjà étiquetée « clinic & laboratory »), numéro 690 54 70 93 :**
+> afriqlabo.com est référencé sur Google — mais le domaine ne s'ouvre plus.
+> Bonjour 👋, je suis Akwo King, développeur web à Douala. Quand un patient cherche votre laboratoire, il tombe sur une adresse éteinte ; vos analyses et demandes de prélèvement ne vivent que sur Facebook.
 > J'ai préparé une maquette de site de laboratoire : demandes d'analyses et réception des résultats par WhatsApp, en français et en anglais.
 > Je vous l'envoie ? Répondez juste « oui » — une minute, sans engagement.
 > — Akwo King / AMK – Développement Web & Solutions Digitales
+>
+> Après « oui » : joindre la maquette nommée laboratoire, puis le lien ; glisser en valeur que le nom de domaine et l'hébergement seront sous LEUR contrôle et ne pourront plus « s'éteindre » sans eux (ne jamais enregistrer le domaine avant paiement, règle #42 — le conseiller, pas l'acheter).
 - **Ça s'ouvre mais c'est mauvais sur mobile / textes de modèle (« 700+ chirurgies », « 20 médecins ») / pas de résultats WhatsApp → BRANCH B (refonte honnête), image d'abord :**
 > « 700 chirurgies » sur le site d'un laboratoire d'analyses.
 > Bonjour Dr Takala 👋, je suis Akwo King, développeur web à Douala. Votre site afriqlabo.com contient encore des textes de modèle tout prêts qui ne correspondent pas à votre métier — et il ne permet ni demande d'analyses, ni résultats par WhatsApp.
@@ -100,11 +102,14 @@ Concept **déjà construit sur mesure** (bleus du logo, « Souriez à l'infini �
 ### 2d · JOSS MEDI Clinic — Bonanjo (rue Ivy, derrière l'ancienne CNPS) · GATE AVANT ENVOI
 **D'abord ouvrir `jossmediclinic.com` sur le téléphone :** vrai site = NE PAS ENVOYER et prévenir AMK · page morte/parquée/erreur = envoyer au **+237 677 58 42 73** (secours 674 63 88 88). MAJ 16/09 : le domaine est référencé comme site OFFICIEL par Clodura, RocketReach et leur FB /JMClini (email infos@jossmediclinic.com, tél. 233 42 18 91) — forte probabilité qu'il existe : bien faire le portail. Grosse clinique pluridisciplinaire depuis 2009 (11–50 employés : urgences, radio, labo, gynéco, dentaire…), profil « board buyer » : si le site vit, on ne chasse pas (règle board buyers no chase), on passe.
 
-> JOSS MEDI Clinic soigne Bonanjo depuis 2009 — et Google ne lui connaît toujours pas de site.
-> Bonjour 👋, je suis Akwo King, développeur web à Douala. Vos patients ne tombent que sur des annuaires tiers, où des cliniques concurrentes leur sont aussitôt suggérées.
-> J'ai dessiné une maquette bilingue pour clinique : rendez-vous WhatsApp en un clic et tarifs en FCFA affichés.
+**✅ PORTAIL FAIT LE 16/09 ~17:00 (King, téléphone) : jossmediclinic.com = DNS NXDOMAIN (domaine mort alors qu'il est écrit sur la page Facebook /JMClini et dans les annuaires pro). Envoi autorisé au +237 677 58 42 73 (secours 674 63 88 88), image `mockup-clinic-wa.jpg` d'abord, ~15 min après AFRIQUE LABO :**
+> jossmediclinic.com figure sur votre page Facebook — mais le domaine ne s'ouvre plus.
+> Bonjour 👋, je suis Akwo King, développeur web à Douala. Depuis 2009, JOSS MEDI réunit urgences, radio, laboratoire, gynéco et dentaire à Bonanjo — et un patient qui vous cherche en ligne tombe sur une adresse éteinte ou sur des annuaires qui suggèrent d'autres cliniques.
+> J'ai dessiné une maquette bilingue pour clinique pluridisciplinaire : rendez-vous WhatsApp par service, en français et en anglais.
 > Je vous l'envoie ? Répondez juste « oui » — une minute sur votre téléphone, sans engagement.
 > — Akwo King / AMK – Développement Web & Solutions Digitales
+
+> ~~Ancien msg « Google ne lui connaît pas de site » (ARCHIVE) :~~ remplacé par l'accroche domaine mort, plus précise et vérifiée.
 
 ## 3 · Réponse « oui / envoie » (même mécanique pour les 4)
 

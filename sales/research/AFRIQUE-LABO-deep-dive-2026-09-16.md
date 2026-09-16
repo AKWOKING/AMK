@@ -41,3 +41,11 @@ Open **afriqlabo.com** (and afriqlabo.net):
 - NOT dental — distinct design family: medical laboratory. Palette cues from afriqlabo branding to be screenshotted by King (logo colors on FB/site); preliminary: medical teal/green + clean white, test-tube/microscope motifs, results document UI.
 - Sections: analyses catalogue with WhatsApp request, results retrieval by code + WhatsApp, home sampling booking, hours/address, quality/fiabilité/rapidité value triplet, French-first bilingual.
 - Proof that IS real: 5 500+ FB likes, 4.5/5 on 2 Google reviews, 6j/7 07–18h. Never repeat the fake « 700 chirurgies ».
+
+## 6. UPDATE 16/09 ~17:00 — gate result + storefront brand
+- **King phone gate: afriqlabo.com AND afriqlabo.net AND jossmediclinic.com all return DNS_PROBE_FINISHED_NXDOMAIN** — the domains do not exist in DNS (expired, never renewed). The agency-built site is fully dark. → **BRANCH A confirmed for AFRIQUE LABO; JOSS cold send authorized.**
+- Real storefront photo saved `sales/research/ref/afrique-labo-storefront.jpg` (Google street view via docteur.goyo; reference only, do NOT ship in the site):
+  - signboard: « **A.F.L AFRIQUE LABO** » in royal/electric **BLUE** with an **Africa-contour icon** tucked into the « A »; underline tagline « LABORATOIRE MULTIDISCIPLINAIRE D'ANALYSE DE BIOLOGIE MÉDICALE » in **RED**;
+  - window posters: « AFRIQUE ANALYSES » and « LABO MÉDICALES » in blue/red on sky-blue panels; menu panels list Bilan Médical, Mammographie, Radiographie, NFS, CRP, glycémie, etc.;
+  - WafaCash sign below; **MoneyGram + Orange Money payment signs at the doorway** (mobile money likely accepted — confirm which: MTN MoMo and/or OM).
+- Named LAB concept brand: royal blue #1464C0 + red #E11D2E on white/sky-blue, Africa-map tooth/flask-free motif (test tube / flask + continent), typography bold rounded; tagline « Votre santé, notre priorité »; values QUALITÉ · FIABILITÉ · RAPIDITÉ.
