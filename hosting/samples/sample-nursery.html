@@ -180,11 +180,14 @@ footer{background:var(--ink);color:#CFE3EC;padding:50px 0 26px;font-size:14px}
   .nav-links{display:none}
   .why,.cls-grid{grid-template-columns:1fr}
   .topbar .tb-portal{display:none}
+  .topbar .concept-chip{display:none}
   header{top:0;position:relative}
   .mbar-cta{display:block}
   body{padding-bottom:74px}
   .blob{display:none}
 }
+:focus-visible{outline:3px solid #0EA5E9;outline-offset:2px;border-radius:6px}
+.topbar .lang-sw{flex:none}.topbar .lang-sw button{white-space:nowrap}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none}
@@ -406,6 +409,7 @@ function setLang(l){
   document.getElementById("btn-fr").style.background = (l === "fr") ? "var(--sky)" : "transparent";
   document.getElementById("btn-fr").style.color = (l === "fr") ? "#fff" : "var(--slate)";
   try{ history.replaceState(null, "", l === "fr" ? "?lang=fr" : "sample-nursery.html"); }catch(e){}
+  try{ localStorage.setItem("amk-lang", l); }catch(e){}
 }
 // scroll reveals (Framer-Motion-style fade-in-up, zero dependencies)
 var io = new IntersectionObserver(function(entries){
@@ -444,7 +448,7 @@ function sendInquiry(e){
   window.open("https://wa.me/" + WA_NUM + "?text=" + encodeURIComponent(msg), "_blank");
   return false;
 }
-(function(){ var p = new URLSearchParams(location.search).get("lang"); if(p === "fr" || p === "en"){ setLang(p); } })();
+(function(){ var p = new URLSearchParams(location.search).get("lang"); var sv=null; try{sv=localStorage.getItem("amk-lang");}catch(e){} if(p==="fr"||p==="en"){setLang(p);}else if(sv==="fr"||sv==="en"){setLang(sv);} })();
 </script>
 </body>
 </html>

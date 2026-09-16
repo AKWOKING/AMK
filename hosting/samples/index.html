@@ -9,9 +9,28 @@
 <meta property="og:title" content="AMK – Web Design for Schools & Clinics in Cameroon">
 <meta property="og:description" content="Your website, built to be found. Free 24h preview · bilingual EN|FR · live in 3–5 days.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://amk-cm.vercel.app/">
+<meta property="og:image" content="https://amk-cm.vercel.app/img/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AMK – Bilingual websites for Cameroon's schools & clinics">
+<meta name="twitter:description" content="Free 24h preview · bilingual EN|FR · WhatsApp-first · live in 3–5 days.">
+<meta name="twitter:image" content="https://amk-cm.vercel.app/img/og-cover.jpg">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"AMK – Web Development & Digital Solutions","url":"https://amk-cm.vercel.app","telephone":"+237677789631","areaServed":["Douala","Yaoundé","Buea","Limbe"],"description":"Modern bilingual (EN|FR) websites for private schools and clinics in Cameroon."}
+{"@context":"https://schema.org","@graph":[
+{"@type":"LocalBusiness","name":"AMK – Web Development & Digital Solutions","url":"https://amk-cm.vercel.app","telephone":"+237677789631","email":"akwo.king.dev@gmail.com","areaServed":[{"@type":"City","name":"Douala"},{"@type":"City","name":"Yaoundé"},{"@type":"City","name":"Buea"},{"@type":"City","name":"Limbe"}],"description":"Modern bilingual (EN|FR) websites for private schools and clinics in Cameroon. Free 24h preview, live in 3–5 days.","sameAs":[]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How long does it really take?","acceptedAnswer":{"@type":"Answer","text":"3–5 days from your approval to live for the founding package. And the preview is on your phone within 24 hours of your first message."}},
+{"@type":"Question","name":"My staff aren't technical. Can they update the site?","acceptedAnswer":{"@type":"Answer","text":"Yes. We design for non-technical staff, run a 30-minute training, and stay reachable on WhatsApp. News, photos, events: your team handles it."}},
+{"@type":"Question","name":"Is bilingual (EN|FR) really included in the price?","acceptedAnswer":{"@type":"Answer","text":"Yes — it is the standard on every site we build, not an add-on. A school or clinic in Cameroon serves both languages; your website should too."}},
+{"@type":"Question","name":"Do you really work with clinics, or is that an add-on?","acceptedAnswer":{"@type":"Answer","text":"Clinics are one of our two core niches — schools and clinics. The clinic concept on this page is live: transparent FCFA pricing, WhatsApp booking, EN|FR, built patient-first."}},
+{"@type":"Question","name":"Do I pay for the preview?","acceptedAnswer":{"@type":"Answer","text":"No. The preview is free, and nothing is charged until you approve it and the 50% deposit begins the build."}},
+{"@type":"Question","name":"What happens after launch?","acceptedAnswer":{"@type":"Answer","text":"One month of free support, reliable hosting, and an affordable monthly plan if you later want us to handle updates. Your domain and files stay 100% yours."}},
+{"@type":"Question","name":"Will my school or clinic be found on Google?","acceptedAnswer":{"@type":"Answer","text":"We build with local search in mind — fast pages, clean structure, both languages, and the way parents and patients actually search: school in Buea, dentist in Buea, ecole privee a Douala. We set you up to be found; your reputation does the rest."}}
+]}
+]}
 </script>
 <style>
 :root{
@@ -40,6 +59,18 @@ h2{font-size:clamp(28px,4.2vw,42px);font-weight:800;letter-spacing:-.025em;line-
 .btn-amber:hover{background:var(--amber-l);transform:translateY(-2px);box-shadow:0 10px 26px rgba(245,158,11,.3)}
 .btn-ghost{background:transparent;color:#fff;border:1.5px solid var(--navy3)}
 .btn-ghost:hover{border-color:var(--amber);color:var(--amber-l);transform:translateY(-2px)}
+:where(a,button,input,select,summary):focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:6px}
+.lang-sw button:focus-visible{outline-offset:-2px}
+
+/* sticky mobile CTA bar */
+.mbar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:120;background:rgba(11,17,32,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--navy3);padding:10px 12px;gap:9px;box-shadow:0 -10px 30px rgba(0,0,0,.35)}
+.mbar .btn{min-height:52px;display:flex;align-items:center;justify-content:center;flex:1;padding:12px 16px}
+.mbar .btn-ghost{flex:0 0 118px;background:rgba(30,41,59,.6)}
+
+/* form type chips */
+.f-types{display:flex;gap:8px}
+.f-type{flex:1;border:1.5px solid var(--border);background:#fff;border-radius:99px;padding:12px 10px;font-family:inherit;font-size:14px;font-weight:700;color:var(--slate);cursor:pointer;transition:.15s}
+.f-type.on{border-color:var(--amber);background:var(--amber-t);color:#92400E;box-shadow:0 0 0 3px rgba(245,158,11,.15)}
 
 /* reveal */
 .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
@@ -118,7 +149,7 @@ nav.main a:hover{color:var(--amber-l)}
 /* marquee */
 .marquee{background:var(--amber);color:var(--navy);overflow:hidden;padding:14px 0;white-space:nowrap;position:relative}
 .marquee .track{display:inline-flex;animation:mq 28s linear infinite}
-.marquee:hover .track{animation-play-state:paused}
+.marquee:hover .track,.marquee:focus-within .track{animation-play-state:paused}
 .marquee span{font-weight:800;font-size:15px;letter-spacing:.1em;margin:0 22px;text-transform:uppercase}
 @keyframes mq{to{transform:translateX(-50%)}}
 
@@ -260,9 +291,17 @@ footer{background:var(--navy);color:#94A3B8;padding:70px 0 30px;border-top:1px s
   .audit .wrap{grid-template-columns:1fr}
   .f-grid{grid-template-columns:1fr 1fr}
 }
+@media(max-width:760px){
+  .brand .t small{display:none}
+}
 @media(max-width:640px){
   nav.main,.h-cta{display:none}
-  #m-btn{display:block}
+  #m-btn{display:flex;align-items:center;justify-content:center;min-width:44px;min-height:44px}
+  .lang-sw{margin-left:auto;flex:none}
+  .lang-sw button{white-space:nowrap}
+  .brand .t{font-size:17px}
+  .mbar{display:flex}
+  body{padding-bottom:74px}
   .cards3,.w-grid,.w-grid.two,.svc-grid,.pr-grid,.steps{grid-template-columns:1fr}
   .pr-grid{max-width:440px}
   .cmp-row{grid-template-columns:1fr}
@@ -273,6 +312,7 @@ footer{background:var(--navy);color:#94A3B8;padding:70px 0 30px;border-top:1px s
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .rv{opacity:1;transform:none}
+  .marquee:focus-within .track{animation:none}
 }
 </style>
 </head>
@@ -300,7 +340,7 @@ footer{background:var(--navy);color:#94A3B8;padding:70px 0 30px;border-top:1px s
   </div>
 </header>
 <div class="m-nav" id="m-nav">
-  <button class="m-close" onclick="document.getElementById('m-nav').classList.remove('open')">×</button>
+  <button class="m-close" aria-label="Close menu" onclick="document.getElementById('m-nav').classList.remove('open')">×</button>
   <a href="#work" onclick="closeM()" data-en="Work" data-fr="Réalisations">Work</a>
   <a href="#process" onclick="closeM()" data-en="Process" data-fr="Processus">Process</a>
   <a href="#pricing" onclick="closeM()" data-en="Pricing" data-fr="Tarif">Pricing</a>
@@ -317,9 +357,9 @@ footer{background:var(--navy);color:#94A3B8;padding:70px 0 30px;border-top:1px s
   <div class="wrap">
     <div>
       <span class="kicker" data-en="Web design — schools & clinics · Cameroon" data-fr="Développement web — écoles & cliniques · Cameroun">Web design — schools & clinics · Cameroon</span>
-      <div class="niche-sw" role="tablist">
-        <button class="niche-btn on" data-niche="school" onclick="setNiche('school')">🏫 <span data-en="Schools" data-fr="Écoles">Schools</span></button>
-        <button class="niche-btn" data-niche="clinic" onclick="setNiche('clinic')">🩺 <span data-en="Clinics" data-fr="Cliniques">Clinics</span></button>
+      <div class="niche-sw" role="tablist" aria-label="School or clinic">
+        <button class="niche-btn on" role="tab" aria-selected="true" data-niche="school" onclick="setNiche('school')">🏫 <span data-en="Schools" data-fr="Écoles">Schools</span></button>
+        <button class="niche-btn" role="tab" aria-selected="false" data-niche="clinic" onclick="setNiche('clinic')">🩺 <span data-en="Clinics" data-fr="Cliniques">Clinics</span></button>
       </div>
       <div class="h-panels">
         <div class="h-panel active" data-niche="school">
@@ -515,7 +555,7 @@ footer{background:var(--navy);color:#94A3B8;padding:70px 0 30px;border-top:1px s
         <span class="rib" data-en="2 FOUNDING SLOTS" data-fr="2 PLACES FONDATRICES">2 FOUNDING SLOTS</span>
         <h3 data-en="Starter — Founding" data-fr="Starter — Fondateur">Starter — Founding</h3>
         <p class="for" data-en="Schools & clinics, small to mid-size, ready to be found." data-fr="Écoles et cliniques, petites à moyennes, prêtes à être trouvées.">Schools & clinics, small to mid-size, ready to be found.</p>
-        <div class="price"><span class="cur">₣</span>100,000</div>
+        <div class="price" style="font-size:38px"><span data-en="100,000 FCFA" data-fr="100 000 FCFA">100,000 FCFA</span></div>
         <div class="price-note" data-en="or 50/50 — 50,000 FCFA to start, 50,000 FCFA at launch" data-fr="ou 50/50 — 50 000 FCFA pour démarrer, 50 000 FCFA au lancement">or 50/50 — 50,000 FCFA to start, 50,000 FCFA at launch</div>
         <ul>
           <li data-en="1-page bilingual homepage (up to 6 sections)" data-fr="Page d'accueil bilingue (jusqu'à 6 sections)">1-page bilingual homepage (up to 6 sections)</li>
@@ -587,12 +627,16 @@ footer{background:var(--navy);color:#94A3B8;padding:70px 0 30px;border-top:1px s
       <h3 data-en="Get my free preview" data-fr="Recevoir mon aperçu gratuit">Get my free preview</h3>
       <p class="fc-sub" data-en="Sent to us on WhatsApp — 60 seconds, no email needed." data-fr="Envoyé directement sur notre WhatsApp — 60 secondes, pas d'e-mail nécessaire.">Sent to us on WhatsApp — 60 seconds, no email needed.</p>
       <div class="fld"><label data-en="School or clinic name *" data-fr="Nom de l'école ou de la clinique *">School or clinic name *</label><input type="text" id="f-school" required placeholder="e.g. St. Anne College · or a clinic name"></div>
-      <div class="fld"><label data-en="Town" data-fr="Ville">Town</label><select id="f-town"><option>Douala</option><option>Yaoundé</option><option>Buea</option><option>Limbe</option><option data-en="Other" data-fr="Autre">Other</option></select></div>
-      <div class="fld"><label data-en="Your name" data-fr="Votre nom">Your name</label><input type="text" id="f-name" placeholder="Director's name"></div>
-      <div class="fld"><label data-en="WhatsApp number" data-fr="Numéro WhatsApp">WhatsApp number</label><input type="tel" id="f-phone" placeholder="+237 6XX XXX XXX"></div>
-      <div class="fld"><label data-en="Current website (if any)" data-fr="Site actuel (si existant)">Current website (if any)</label><input type="text" id="f-site" placeholder="your-site.cm"></div>
+      <div class="fld">
+        <label data-en="This is a…" data-fr="Il s'agit d'une…">This is a…</label>
+        <div class="f-types" role="group" aria-label="School or clinic">
+          <button type="button" class="f-type on" data-type="school" onclick="setNiche('school')">🏫 <span data-en="School" data-fr="École">School</span></button>
+          <button type="button" class="f-type" data-type="clinic" onclick="setNiche('clinic')">🩺 <span data-en="Clinic" data-fr="Clinique">Clinic</span></button>
+        </div>
+      </div>
+      <div class="fld"><label data-en="Your WhatsApp number" data-fr="Votre numéro WhatsApp">Your WhatsApp number</label><input type="tel" id="f-phone" inputmode="tel" placeholder="+237 6XX XXX XXX"></div>
       <button type="submit" class="btn btn-amber" data-en="Get my free preview on WhatsApp →" data-fr="Recevoir mon aperçu gratuit sur WhatsApp →">Get my free preview on WhatsApp →</button>
-      <p class="form-small" data-en="This opens WhatsApp with your message already written. You stay in control — nothing is sent without you." data-fr="Ceci ouvre WhatsApp avec votre message déjà rédigé. Vous restez maître — rien n'est envoyé sans vous.">This opens WhatsApp with your message already written. You stay in control — nothing is sent without you.</p>
+      <p class="form-small" data-en="This opens WhatsApp with your message already written. You stay in control — nothing is sent without you. Town and other details are asked in the chat." data-fr="Ceci ouvre WhatsApp avec votre message déjà rédigé. Vous restez maître — rien n'est envoyé sans vous. La ville et les autres détails sont demandés dans la discussion.">This opens WhatsApp with your message already written. You stay in control — nothing is sent without you. Town and other details are asked in the chat.</p>
     </form>
   </div>
 </section>
@@ -635,8 +679,17 @@ footer{background:var(--navy);color:#94A3B8;padding:70px 0 30px;border-top:1px s
   </div>
 </footer>
 
+<!-- sticky mobile CTA -->
+<div class="mbar">
+  <a class="btn btn-ghost" href="#work" data-en="See concepts" data-fr="Voir les concepts">See concepts</a>
+  <a class="btn btn-amber" id="mbar-wa" target="_blank" rel="noopener" data-en="💬 Free 24h preview" data-fr="💬 Aperçu gratuit 24h">💬 Free 24h preview</a>
+</div>
+
 <script>
 var WA_NUM = "237677789631";
+var REDUCED_MOTION = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var SRC = new URLSearchParams(location.search).get("src") || "";
+var SRC_LABEL = {tiktok:"TikTok", ig:"Instagram", fb:"Facebook", yt:"YouTube", wa:"WhatsApp", status:"WhatsApp Status"}[SRC];
 function setLang(l){
   document.documentElement.lang = l;
   document.querySelectorAll("[data-en]").forEach(function(el){
@@ -649,13 +702,30 @@ function setLang(l){
     var isEn = id.indexOf("en") !== -1;
     b.classList.toggle("on", (l === "en") === isEn);
   });
+  try{ localStorage.setItem("amk-lang", l); }catch(e){}
+  wireWaLinks();
 }
 function setNiche(n){
-  document.querySelectorAll(".niche-btn").forEach(function(b){ b.classList.toggle("on", b.dataset.niche === n); });
+  document.querySelectorAll(".niche-btn").forEach(function(b){ b.classList.toggle("on", b.dataset.niche === n); b.setAttribute("aria-selected", b.dataset.niche === n ? "true":"false"); });
+  document.querySelectorAll(".f-type").forEach(function(b){ b.classList.toggle("on", b.dataset.type === n); b.setAttribute("aria-pressed", b.dataset.type === n ? "true":"false"); });
   document.querySelectorAll(".h-panel").forEach(function(p){ p.classList.toggle("active", p.dataset.niche === n); });
   document.querySelectorAll(".h-shot").forEach(function(im){ im.classList.toggle("active", im.dataset.niche === n); });
 }
 function closeM(){ document.getElementById("m-nav").classList.remove("open"); }
+function waMessage(fr, kind){
+  var srcLine = SRC_LABEL ? (fr ? " (vu sur " + SRC_LABEL + ")" : " (from " + SRC_LABEL + ")") : (fr ? " (depuis le site)" : " (from the website)");
+  if (kind === "bar"){
+    return fr ? "Bonjour AMK ! Je veux mon aperçu GRATUIT de site web sous 24h — école ou clinique." + srcLine
+              : "Hello AMK! I'd like my FREE website preview within 24h — school or clinic." + srcLine;
+  }
+  return "";
+}
+function wireWaLinks(){
+  var fr = document.documentElement.lang === "fr";
+  var bar = document.getElementById("mbar-wa");
+  if (bar) bar.href = "https://wa.me/" + WA_NUM + "?text=" + encodeURIComponent(waMessage(fr, "bar"));
+}
+document.addEventListener("DOMContentLoaded", wireWaLinks);
 // header + progress
 window.addEventListener("scroll", function(){
   var h = document.getElementById("hdr");
@@ -674,6 +744,7 @@ var io = new IntersectionObserver(function(entries){
   });
 },{threshold:.12});
 document.querySelectorAll(".rv").forEach(function(el){
+  if (REDUCED_MOTION){ el.classList.add("in"); el.querySelectorAll("[data-count]").forEach(function(c){ c.textContent = c.getAttribute("data-count"); }); return; }
   el.style.transitionDelay = (el.getAttribute("data-d") || 0) + "ms";
   io.observe(el);
 });
@@ -681,7 +752,9 @@ document.querySelectorAll(".rv").forEach(function(el){
 function runCount(el){
   if (el.dataset.done) return;
   el.dataset.done = "1";
-  var target = +el.getAttribute("data-count"), t0 = null;
+  var target = +el.getAttribute("data-count");
+  if (REDUCED_MOTION){ el.textContent = target; return; }
+  var t0 = null;
   function step(t){
     if (!t0) t0 = t;
     var k = Math.min((t - t0) / 1300, 1);
@@ -702,18 +775,29 @@ document.querySelectorAll("img").forEach(function(im){
 // WA form
 function sendAudit(e){
   e.preventDefault();
-  var school = document.getElementById("f-school").value;
-  var town = document.getElementById("f-town").value;
-  var name = document.getElementById("f-name").value;
-  var phone = document.getElementById("f-phone").value;
-  var site = document.getElementById("f-site").value;
+  var biz = document.getElementById("f-school").value.trim();
+  if (!biz) return false;
+  var phone = document.getElementById("f-phone").value.trim();
+  var kindBtn = document.querySelector(".f-type.on");
+  var kind = kindBtn ? kindBtn.dataset.type : "school";
   var fr = document.documentElement.lang === "fr";
+  var srcLine = SRC_LABEL ? (fr ? "\nSource : " + SRC_LABEL : "\nSource: " + SRC_LABEL) : "";
   var msg = fr
-    ? "Bonjour AMK ! Je souhaite recevoir mon APERÇU GRATUIT de site web (école ou clinique).\n\nÉcole / clinique : " + school + "\nVille : " + town + (name ? "\nNom : " + name : "") + (phone ? "\nWhatsApp : " + phone : "") + (site ? "\nSite actuel : " + site : "") + "\n\nMerci de m'envoyer l'aperçu. Merci !"
-    : "Hello AMK! I would like my FREE website preview (school or clinic).\n\nSchool / clinic: " + school + "\nTown: " + town + (name ? "\nName: " + name : "") + (phone ? "\nWhatsApp: " + phone : "") + (site ? "\nCurrent site: " + site : "") + "\n\nPlease send me the preview. Thank you!";
+    ? "Bonjour AMK ! Je veux mon APERÇU GRATUIT de site web sous 24h.\n\nÉtablissement : " + biz + "\nType : " + (kind === "clinic" ? "Clinique / laboratoire" : "École") + (phone ? "\nMon WhatsApp : " + phone : "") + srcLine + "\n\nMerci !"
+    : "Hello AMK! I'd like my FREE 24h website preview.\n\nInstitution: " + biz + "\nType: " + (kind === "clinic" ? "Clinic / laboratory" : "School") + (phone ? "\nMy WhatsApp: " + phone : "") + srcLine + "\n\nThank you!";
   window.open("https://wa.me/" + WA_NUM + "?text=" + encodeURIComponent(msg), "_blank");
   return false;
 }
+// initial language: ?lang= wins, then saved preference
+(function(){
+  var q = new URLSearchParams(location.search).get("lang");
+  var saved = null;
+  try{ saved = localStorage.getItem("amk-lang"); }catch(e){}
+  if (q === "fr" || q === "en") setLang(q);
+  else if (saved === "fr" || saved === "en") setLang(saved);
+  setNiche("school");
+  wireWaLinks();
+})();
 </script>
 </body>
 </html>

@@ -25,7 +25,7 @@ PAGES = [
     "mitoc.html",
 ]
 ROOT_FILES = ["favicon.svg", "robots.txt", "sitemap.xml"]
-THUMBS = ["nova.png", "littleoaks.png", "crestwood.png", "clinic.png"]
+THUMBS = ["nova.png", "littleoaks.png", "crestwood.png", "clinic.png", "og-cover.jpg"]
 
 members = PAGES + ROOT_FILES + [f"img/{t}" for t in THUMBS]
 

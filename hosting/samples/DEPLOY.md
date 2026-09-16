@@ -30,10 +30,9 @@ locally (every page 200, every internal link resolves).
   separate throwaway project https://mitoc-concept.vercel.app. Deploying it
   here too is optional and it must stay out of the public sitemap.
 
-Redeploy `amk-site.zip` to make the live clinic page fully consistent and to
-clean the homepage; until then the live clinic link opens (eyebrow mismatch
-noted) and is usable, but send it with the concept caption that calls every
-name a placeholder.
+> **King's decision 15:58: leave the live clinic demo as-is** — "it's just a demo concept to show our work." Redeploy is therefore **non-urgent/optional**; the canonical fully-renamed file ships whenever the next natural deploy happens. The partial-rename live page (Buea eyebrow) is acceptable for demo use, always sent with the "every name/price/photo is a placeholder" caption.
+
+Redeploy `amk-site.zip` whenever convenient to make the live clinic page fully consistent and clean the homepage; no prospect link is blocked by it (MITOC uses its own project).
 
 ## Option A — Vercel CLI (fastest, matches how the named projects went up)
 

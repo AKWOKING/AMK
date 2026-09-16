@@ -206,9 +206,16 @@ footer{background:#0B1120;color:#94A3B8;padding:52px 0 26px;font-size:14px}
   .tab-pane.on{grid-template-columns:1fr}
   .f-grid{grid-template-columns:1fr 1fr}
 }
+:focus-visible{outline:3px solid #F59E0B;outline-offset:2px;border-radius:6px}
+.topbar .lang-sw{flex:none}.topbar .lang-sw button{white-space:nowrap}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv,.reveal{opacity:1!important;transform:none!important}
+}
 @media(max-width:640px){
   section{padding:54px 0}
   .nav-links{display:none}
+  .topbar .concept-chip{display:none}
   .hub,.pillars,.steps,.tst-grid{grid-template-columns:1fr}
   .fgrid{grid-template-columns:1fr}
   .topbar .tb-portal{display:none}
@@ -528,7 +535,8 @@ function setLang(l){
   document.getElementById("btn-fr").style.background = (l === "fr") ? "var(--em)" : "transparent";
   document.getElementById("btn-fr").style.color = (l === "fr") ? "var(--navy)" : "#CBD5E1";
   document.querySelectorAll("a.wa").forEach(function(a){ a.href = "https://wa.me/" + WA_NUM + "?text=" + encodeURIComponent(l === "fr" ? "Bonjour AMK ! J'aimerais réserver une visite du campus / voir ce site concept pour mon école." : "Hello AMK! I'd like to book a campus visit / get this concept website for my school."); });
-  try{ history.replaceState(null, "", l === "fr" ? "?lang=fr" : "index.html"); }catch(e){}
+  try{ history.replaceState(null, "", l === "fr" ? "?lang=fr" : "sample-school.html"); }catch(e){}
+  try{ localStorage.setItem("amk-lang", l); }catch(e){}
 }
 document.querySelectorAll("a.wa").forEach(function(a){ a.href = "https://wa.me/" + WA_NUM + "?text=" + encodeURIComponent("Hello AMK! I'd like to book a campus visit / get this concept website for my school."); });
 // tabs
@@ -553,7 +561,7 @@ function sendLead(e){
   return false;
 }
 // URL language support: sample-school.html?lang=fr
-(function(){ var p = new URLSearchParams(location.search).get("lang"); if(p === "fr" || p === "en"){ setLang(p); } })();
+(function(){ var p = new URLSearchParams(location.search).get("lang"); var sv=null; try{sv=localStorage.getItem("amk-lang");}catch(e){} if(p==="fr"||p==="en"){setLang(p);}else if(sv==="fr"||sv==="en"){setLang(sv);} })();
 </script>
 </body>
 </html>
