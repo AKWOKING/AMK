@@ -143,3 +143,6 @@ Any fresh "yes" joins this list immediately.
 - Sat 12 Sep: Deep-Dive v (6 leads), oracare/sah iscol/retraite concepts, Playbook v2.
 - Fri 11 Sep: OraCare clinic pilot researched; paid-ad pricing-question evidence captured.
 - Wed 09 Sep: 25-lead batch captured + scored; first 5 deep-dives; Sasse first demo logged (later found absent from repo).
+
+## Log addition Wed 16 13:40
+- Daily Ops rebuilt for Wed 16 (remote-only; card sweep formally cancelled in the sheet): `leads/build_daily_ops.py` + CSV (50 rows). Paste-ready afternoon/evening pack: `sales/Outreach-Pack-2026-09-16.md` (OraCare FU1 EN + 4 Douala FR msg1s: Skye dental 677796999, YAKS 672702078, AFRIQUE LABO 690547093 [afriqlabo.com verified NOT theirs; 5.5k FB likes], JOSS MEDI 677584273 with jossmediclinic.com live/dead GATE before send; ~15min pacing; 'oui' reply caption; silence FU ven18/dim20/mer23). Opticians held until nameless optical concept built Thu. YouTube Shorts metadata (EN+FR clinic): `sales/social/youtube-shorts-metadata.md`.
