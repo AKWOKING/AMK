@@ -24,13 +24,25 @@ Number **+237 672 52 66 86**. Sent Mon 13:04, double ticks, never replied. Psych
 
 Before each (2 min): save the number; the WA profile must match the business (photo/name); skip and report any mismatch. ~15 min pacing.
 
-### 2a · Cabinet Dentaire The Skye — Bonamoussadi (immeuble Stella & Joyce, Petit terrain)
-**+237 677 79 69 99** (secours 672 67 65 70) · ~14:30 · FB: 19 avis, 100% recommandent, pas de site.
+### 2a · Cabinet Dentaire The Skye — Bonamoussadi ⭐ NAMED GIFT UPGRADE (do this FIRST, ~14:30)
+**+237 677 79 69 99** (secours 672 67 65 70) · King-verified WA business profile w/ logo · dossier complet `sales/research/The-Skye-deep-dive-2026-09-16.md`.
+Concept **déjà construit sur mesure** (bleus du logo, « Souriez à l'infini », Dre Djuinne Sandrine, RDV WhatsApp → leur numéro, FR par défaut) : `demos/concept-skye-v1.html`.
+**Image à joindre EN PREMIER : `demos/shots/mockup-skye-wa.jpg`** (maquette personnalisée, PAS la maquette clinique générique).
 
-> Bonjour 👋, je tombe sur le Cabinet Dentaire The Skye en cherchant les cabinets dentaires de Bonamoussadi.
-> Vos 19 avis Facebook à 100 % de recommandations m'ont marqué — mais il n'existe aucun site qui présente vos soins, vos tarifs et la prise de rendez-vous.
-> Je suis Akwo King, fondateur d'AMK (Développement Web, Douala) : j'ai dessiné un concept bilingue, rapide sur mobile, avec rendez-vous WhatsApp en un clic.
-> Puis-je vous l'envoyer ? Une minute à regarder, sans aucun engagement.
+**Étape 0 (2 min, avant l'envoi) — créer le projet Vercel :** nouveau projet nommé **theskye-dental** (drag du dossier `hosting/previews/skye/`, ou `vercel --prod` depuis ce dossier). Vérifier sur téléphone que le lien s'ouvre en français.
+
+**Message 1 (image d'abord, puis ce texte) :**
+> Bonjour Docteur 👋, je suis Akwo King, fondateur d'AMK – Développement Web à Douala.
+> En cherchant les cabinets dentaires de Bonamoussadi, j'ai découvert The Skye : 19 avis Facebook, 100 % de recommandations — et aucune présence en dehors de Facebook.
+> Je vous ai dessiné une maquette de site bilingue, construite autour de « Souriez à l'infini », avec vos couleurs et la prise de rendez-vous WhatsApp en un clic.
+> Puis-je vous envoyer le lien ? Une minute à regarder, sans aucun engagement.
+> — Akwo King / AMK
+
+**Réponse « oui / envoie » →**
+> Avec plaisir, Docteur 👉 https://theskye-dental.vercel.app
+> Ouvrez sur téléphone : testez "Prendre RDV" sur une carte de tarif — le message arrive sur VOTRE WhatsApp, pré-rédigé — et le bouton EN|FR en haut.
+> La consultation à 10 000 FCFA est déjà affichée (vue sur Mondocteur) ; les autres tarifs, vos photos et vos horaires réels remplacent les emplacements en 24 h.
+> Petit point : Mondocteur indique une adresse face CAMTEL Bépanda — est-ce un 2e cabinet, ou uniquement Bonamoussadi ?
 > — Akwo King / AMK
 
 ### 2b · Cabinet dentaire YAKS — Logbessou (immeuble BAO)

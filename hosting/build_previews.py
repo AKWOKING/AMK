@@ -17,6 +17,7 @@ OUT = ROOT / "hosting" / "previews"
 
 SLUGS = {
     "oracare": ("demos/concept-oracare-v3.html", "OraCare Dental Clinic, Buea — concept"),
+    "skye":    ("demos/concept-skye-v1.html",    "Cabinet Dentaire The Skye, Douala — concept"),
     "sasse":   ("demos/sjc-sasse-v2.html",       "St. Joseph's College, Sasse — concept"),
     "comobil": ("demos/concept-comobil-v1.html", "COMOBIL Les Lauréats, Douala — concept"),
     "sah":     ("demos/concept-sahiscol-v1.html","Saint Ann's High School, Limbe — concept"),
