@@ -87,10 +87,24 @@ def _sheen(img, box, t, period=1.6, alpha=42):
     return Image.alpha_composite(img.convert("RGBA"), layer)
 
 
+def _moving_background(img, t, tint=(255, 255, 255), alpha=12, spacing=190, tilt=140, speed=46):
+    """Bandes diagonales en dérive + balayage large : mouvement continu de grande surface.
+    C'est ce qui fait passer une carte longue au portique (une apparition ne suffit pas)."""
+    lay = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    dl = ImageDraw.Draw(lay)
+    offset = int((t * speed) % spacing)
+    for k in range(-2, int(img.width / spacing) + 4):
+        x = k * spacing + offset
+        dl.polygon([(x, 0), (x + 46, 0), (x + 46 + tilt, img.height), (x + tilt, img.height)],
+                   fill=tint + (alpha,))
+    img = Image.alpha_composite(img.convert("RGBA"), lay)
+    return _sheen(img.convert("RGB"), (0, 0, img.width, img.height), t, period=1.9, alpha=22)
+
+
 def render_hook(t, dur, eyebrow, hook_lines):
     """Carte d'ouverture ANIMÉE : eyebrow, titre blanc qui monte, **dernière ligne dans le
     bloc ambre**, barre de progression continue + reflet qui balaie le bloc."""
-    img = Image.new("RGB", (W, H), NAVY)
+    img = _moving_background(Image.new("RGB", (W, H), NAVY), t)
     d = ImageDraw.Draw(img)
     d.rectangle([0, 0, W, 14], fill=TEAL)
 
@@ -122,29 +136,32 @@ def render_hook(t, dur, eyebrow, hook_lines):
     p = _ease_out((t - 0.5) / 0.6)
     if p > 0 and amber_line:
         f_a = fnt(F_BOLD, 78)
-        sub = wrap(d, amber_line.upper(), f_a, W - 260)[0] if wrap(d, amber_line.upper(), f_a, W - 260) else ""
-        bw = d.textlength(sub, font=f_a)
+        # retour à la ligne, puis on prend TOUTES les lignes (une ligne unique tronquait le texte)
+        sub_lines = wrap(d, amber_line.upper(), f_a, W - 300)
+        bw = max((d.textlength(l, font=f_a) for l in sub_lines), default=0)
         box_w = min(W - 120, bw + 150)
+        box_h = 96 * len(sub_lines) + 84
         x0 = 90
         x1 = x0 + int(box_w * p)
-        d.rectangle([x0, y - 10, x1, y + 168], fill=AMBER)
+        d.rectangle([x0, y - 10, x1, y - 10 + box_h], fill=AMBER)
         if p >= 0.6:
             q = _ease_out((t - 0.75) / 0.45)
             lay = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-            ImageDraw.Draw(lay).text((x0 + 60, y + 30), sub, font=f_a,
-                                     fill=NAVY_D + (int(255 * q),))
+            dl2 = ImageDraw.Draw(lay)
+            for i, l in enumerate(sub_lines):
+                dl2.text((x0 + 60, y + 24 + i * 96), l, font=f_a, fill=NAVY_D + (int(255 * q),))
             img = Image.alpha_composite(img.convert("RGBA"), lay).convert("RGB")
             d = ImageDraw.Draw(img)
         if p >= 0.98:
-            img = _sheen(img, (x0, y - 10, x0 + box_w, y + 168), t, alpha=52)
+            img = _sheen(img, (x0, y - 10, x0 + box_w, y - 10 + box_h), t, alpha=52)
     d = ImageDraw.Draw(img)
     d.rectangle([0, H - 16, int(W * min(1.0, t / dur)), H], fill=TEAL)
     return img
 
 
 def render_payoff(t, dur, text):
-    """Carte de payoff ANIMÉE : bande qui entre, texte qui suit, reflet continu."""
-    img = Image.new("RGB", (W, H), NAVY)
+    """Carte de payoff ANIMÉE : fond en dérive, bande qui entre, texte qui suit, reflet continu."""
+    img = _moving_background(Image.new("RGB", (W, H), NAVY), t)
     d = ImageDraw.Draw(img)
     p = _ease_out(t / 0.45)
     f = fnt(F_BOLD, 96)
@@ -246,7 +263,7 @@ def label_bar(img, text):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--frames", required=True, help="dossier des images capturées")
+    ap.add_argument("--frames", required=True, action="append", help="dossier d'images (répétable : A puis B)")
     ap.add_argument("--out", required=True)
     ap.add_argument("--lang", default="fr", choices=["fr", "en"])
     ap.add_argument("--eyebrow", default="")
@@ -262,9 +279,12 @@ def main():
     ap.add_argument("--fps", type=int, default=FPS)
     a = ap.parse_args()
 
-    frames = sorted(Path(a.frames).glob("*.jpg"))
-    if len(frames) < 5:
-        sys.exit(f"✗ pas assez d'images dans {a.frames} (lancer capture.mjs d'abord)")
+    frames = []
+    for d in a.frames:
+        part = sorted(Path(d).glob("*.jpg"))
+        if len(part) < 5:
+            sys.exit(f"✗ pas assez d'images dans {d} (lancer capture.mjs d'abord)")
+        frames += part
 
     hook_parts = a.hook.split("|")
     eyebrow = a.eyebrow or ("3 fuites mobiles" if a.lang == "fr" else "3 mobile leaks")

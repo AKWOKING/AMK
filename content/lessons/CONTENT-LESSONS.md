@@ -96,7 +96,7 @@ MboaCare (abstract principle) · our own shipped work · **our concept/preview l
 
 ## 11 · King's decisions (17 Sep 2026) — binding
 1. **No real clinic/school name in any content without the owner's written permission.** Default: **anonymise** (blur/rename logos, addresses, unique details); the live *named* concepts (YAKS, Skye, OraCare, MITOC) are unlisted and shared only with their prospect — **no public content may show or link them**.
-2. **Voice:** King agrees we **re-audition a voice before video #5** (the previous `voice-00` registration does not carry over). Existing MP3s are the reference.
+2. **Voice:** King agrees we **re-audition a voice before video #5** — **FAIT le 17 Sep (nuit)** : la voix des videos precedentes venait de **l'outil de voix de la plateforme d'AMK** (audition -> `voice-00`), pas d'un service externe ; `voice-00` est re-enregistree et narre V-05. Aucun telechargement de modele n'etait necessaire (piste Piper/HuggingFace abandonnee).
 3. **#1 master** (`Instagram_vs_Website_v2.mp4`) is **not re-uploaded**; its TikTok status is recorded as **not posted**.
 4. **Founding videos (repo, 15 Sep):** King confirms **only one of the four was posted — `clinic-founding-en.mp4` on TikTok**; the other three are unposted assets → integrated in the calendar (§A2).
 5. **Strategy + calendar + shortlist: APPROVED.** **Video #4 is approved** — the remaining action is **posting** (King), first slot Tue 23 Sep TikTok / Wed 24 Sep IG, or earlier if King posts it with the outreach push.
@@ -145,6 +145,7 @@ MboaCare (abstract principle) · our own shipped work · **our concept/preview l
 6. **Pas de recadrage sur une carte composée** (zoom 1,3× = texte tronqué, vérifié). Le mouvement doit venir de la **capture**, ou d'une animation *dans* la carte (apparition, reflet, barre) — jamais d'un rognage.
 
 ## 9 · Changelog
+- **v0.8 — 17 Sep 2026 (nuit) :** V-05 produite avec narration (`voice-00` re-auditionnee) ; outil de voix identifie = plateforme AMK ; regle « le texte du hook doit tenir en entier dans sa carte » (un texte tronque a ete corrige) ; capture par plages (`--from-frac`/`--to-frac`), `--settle`, vitesse plafonnee a 420 px/s.
 - **v0.7 — 17 Sep 2026 (nuit) :** chaîne vidéo reconstruite (§13 corrigé) — Chromium embarqué dans un paquet npm, capture réelle du défilement, cartes animées, bibliothèque de 5 démos publiables, portique mouvement bloquant ; recherche d'outillage complète dans `research/Video-Toolchain-Research.md`.
 - **v0.6 — 17 Sep 2026 (nuit) :** §13 portique mouvement — toutes nos vidéos sont des diaporamas, le zoom n'est pas du mouvement, recadrer une carte coupe le texte, pas de capture possible dans cet environnement.
 - **v0.5 — 17 Sep 2026 (nuit) :** corrections de King (narration vs son tendance ; #4 déjà publié ; fondatrices retirées) + §12 bis cadence de publication.

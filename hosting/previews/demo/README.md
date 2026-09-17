@@ -19,3 +19,16 @@ Le script **échoue** s'il reste un numéro réel, une marque, un nom de pratici
 **Déploiement (King) :** un projet Vercel, dossier `hosting/previews/demo` → `https://mboacare-demo.vercel.app/<fichier>`. Utile pour filmer au téléphone, **et** pour les captures de la chaîne `tools/video/`.
 
 **À ne jamais faire :** publier une démo en la présentant comme un client réel. Toute capture à l'écran porte l'étiquette « MBOACARE (FICTIF) · DÉMONSTRATION ».
+
+
+## Déjà en ligne chez King (rappel — ne pas dupliquer inutilement)
+
+| URL | Nature | Usage vidéo |
+|---|---|---|
+| **https://amk-cm.vercel.app/clinic-bonaberi.html** | maquette clinique + laboratoire (Bonabéri Medical Centre) — **fictive, template** | ✅ matériel vidéo direct |
+| **https://amk-cm.vercel.app/sample-nursery.html** | maquette école maternelle/primaire (Little Oaks) — fictive | ✅ |
+| **https://amk-cm.vercel.app/sample-school.html** | maquette école bilingue K-12 (Nova) — fictive | ✅ |
+| **https://amk-cm.vercel.app/sample-secondary.html** | maquette collège secondaire (Crestwood College) — fictive | ✅ |
+| **https://mboa-gamma.vercel.app** | démo MboaCare (clinique, studio « after ») — **déployée par King le 17/09** | ✅ |
+
+Ces cinq pages sont **publiques et fictives** : aucune autorisation à demander, aucune anonymisation à faire. Ce sont elles la matière première par défaut — les démos anonymisées de ce dossier servent quand on veut montrer un **type de site différent** (polyclinique, maternité, optique, dentaire).

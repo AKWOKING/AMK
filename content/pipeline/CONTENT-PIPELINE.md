@@ -87,7 +87,13 @@
 **Blocage restant :** la **narration** — `piper-tts` s'installe (MIT, usage commercial libre) mais les voix sont hébergées sur HuggingFace, inaccessible d'ici. Options : machine de King, ou **sa propre voix**.
 **Règle posée :** aucune vidéo ne part sans `audit_video_motion.py` = OK ; aucune carte composée recadrée ; toute capture étiquetée fiction.
 
+## J · V-05 produite (17 Sep, nuit)
+`Video_05_School_WhatsApp_v1.mp4` — 23,9 s · 1080×1920 · **narration `voice-00`** · **portique mouvement OK**.
+**Outils ajoutes depuis §I :** `--from-frac/--to-frac` (capturer une section d'une page longue), `--settle` (laisser les revelations au defilement se terminer), garde-fou de vitesse (420 px/s max), plusieurs `--frames` dans `compose.py`, fond en derive sur les cartes longues, retour a la ligne des cartes (un texte tronque a ete detecte et corrige).
+**Chaine complete, reproductible :** `content/scripts/v05-schools.md`.
+
 ## E · Changelog
+- **v0.8 — 17 Sep 2026 (nuit) :** §J — V-05 produite (narration + mouvement reel) ; outils de capture etendus (plages, settle, vitesse) ; `compose.py` multi-dossiers et cartes multi-lignes.
 - **v0.7 — 17 Sep 2026 (nuit) :** §I — chaîne vidéo reconstruite (Chromium embarqué), deux preuves de mouvement réel validées par le portique, bibliothèque de 5 démos publiables, narration bloquée par HuggingFace.
 - **v0.6 — 17 Sep 2026 (nuit) :** §H — portique mouvement livré, catalogue mesuré, v04c rejeté (texte tronqué), page de démonstration publique prête (audit 0), production en attente d'un enregistrement d'écran réel.
 - **v0.5 — 17 Sep 2026 (nuit) :** King confirme que la publication du 15/09 **était bien #4** (registre corrigé) et que la vidéo fondatrice EN a reçu **un son tendance TikTok** à la publication (correction de la lecture « muette ») ; **les 3 fondatrices non publiées sont retirées** ; **#4b animé livré** (§G) ; cadence de publication fixée (réponse à King).

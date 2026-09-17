@@ -24,6 +24,11 @@ if [ ! -d node_modules/@sparticuz/chromium ]; then
   npm install --no-audit --no-fund puppeteer-core @sparticuz/chromium >/dev/null
 fi
 
+# dépendances Python (peuvent disparaître à chaque redémarrage de l'environnement)
+python3 - <<'PYCHK' || pip install --break-system-packages -q brotli Pillow numpy imageio-ffmpeg
+import brotli, PIL, numpy, imageio_ffmpeg  # noqa
+PYCHK
+
 echo "▸ extraction des couches embarquées (brotli + tar)…"
 python3 - "$RT" <<'PY'
 import brotli, tarfile, io, os, shutil, sys

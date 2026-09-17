@@ -21,8 +21,8 @@
 ## A · First slots after today's outreach
 | Slot | Platform | Asset | Caption | Cover | Pinned/first comment |
 |---|---|---|---|---|---|
-| **Tue 23 Sep, 18:00–20:00** | **TikTok** | **CRÉNEAU LIBÉRÉ** — #4 y serait un doublon (déjà publié le 15/09) | — | — | **Ne rien publier plutôt que republier** ; réserve : V-05 **si** voix + montage prêts, sinon créneau vide |
-| **Wed 24 Sep, 12:00–14:00** | **Instagram Reels** | **EN ATTENTE** — #4 ne part pas tant qu'une version **qui bouge** n'existe pas (§13) | EN led (below) | same hook frame | "DM **PREVIEW** for a free homepage concept." |
+| **Tue 23 Sep, 18:00–20:00** | **TikTok** | **V-05 — `Video_05_School_WhatsApp_v1.mp4`** (23,9 s, narration, portique OK) — **si King valide** | FR | hook « Un parent cherche votre école » | « Dites **PREVIEW** en DM pour un aperçu gratuit de page d'accueil. » |
+| **Wed 24 Sep, 12:00–14:00** | **Instagram Reels** | **V-05 (sous-titres EN a produire)** ou **#4 `v04b`** selon decision de King | EN | — | "DM **PREVIEW** for a free homepage concept." |
 | Thu 25 Sep | YouTube Shorts | **EN ATTENTE** (même raison) | search-first: « Pourquoi vos clients partent avant WhatsApp — site mobile Cameroun » | hook frame | link `?src=yt` |
 
 **Caption drafts**
@@ -125,3 +125,10 @@
 **Ce qui est prêt :** page de démonstration **publique** MboaCare (`hosting/previews/mboacare-demo/`, **audit HTML : 0 anomalie**) → à déployer par King (Vercel, projet `mboacare-demo`).
 **Ce qui manque :** **20 s d'enregistrement d'écran sur téléphone** (voir la demande du 17/09). Dès qu'il arrive : V-05 se monte en ~1 h (hook sur le vrai défilement, démo, payoff, carte PREVIEW).
 **Règle de remplissage :** un créneau sans vidéo conforme **reste vide** — ni doublon, ni diaporama.
+
+
+## I · V-05 prete (17 Sep, nuit) — premiere video AVEC narration et VRAI mouvement
+**Fichier :** `content/videos/v05-schools/Video_05_School_WhatsApp_v1.mp4` · 23,9 s · 1080×1920 · narration `voice-00` · **portique mouvement : OK**.
+**Source :** `site/sample-secondary.html` (Crestwood College, maquette **fictive et publique**, deja en ligne sur `amk-cm.vercel.app`).
+**Ce qu'elle corrige par rapport a tout ce qui a ete publie jusqu'ici :** la page **defile vraiment** (aucune fenetre de 2 s figee), la voix est **dans le fichier**, aucun texte de carte n'est tronque.
+**A valider par King** avant toute publication. Sous-titres EN a produire pour le creneau IG.

@@ -50,6 +50,9 @@ const HOLD_START = parseFloat(args['hold-start'] || '0.8');
 const HOLD_END = parseFloat(args['hold-end'] || '1.2');
 const MAX_SPEED = parseFloat(args['max-speed'] || '700'); // px CSS/s — lisible
 const WAIT = parseInt(args.wait || '1400', 10);
+const FROM_FRAC = parseFloat(args['from-frac'] ?? '0');
+const TO_FRAC = parseFloat(args['to-frac'] ?? '1');
+const SETTLE = parseInt(args.settle || '170', 10);   // laisse les révélations au scroll se terminer
 const QUALITY = parseInt(args.quality || '92', 10);
 
 if (!args.url) { console.error('✗ --url obligatoire'); process.exit(2); }
@@ -79,16 +82,27 @@ try {
     const dims = await page.evaluate(() => ({ w: document.scrollingElement.scrollWidth, h: document.scrollingElement.scrollHeight }));
     console.log(`✓ ${MODE} → ${file}  (page ${dims.w}×${dims.h} CSS px)`);
   } else {
-    const maxScroll = await page.evaluate(() =>
+    const pageScroll = await page.evaluate(() =>
       Math.max(0, (document.scrollingElement.scrollHeight - window.innerHeight)));
+    // plage : on peut ne filmer qu'une section (ex. --from-frac 0.05 --to-frac 0.45)
+    const yStart = Math.round(pageScroll * Math.min(Math.max(FROM_FRAC, 0), 1));
+    const yEnd = Math.round(pageScroll * Math.min(Math.max(TO_FRAC, 0), 1));
+    const maxScroll = Math.max(0, yEnd - yStart);
+    if (maxScroll < 40) { console.error('✗ plage vide'); process.exit(3); }
     if (maxScroll < 40) {
       console.error('✗ page non défilable (hauteur utile ' + maxScroll + ' px) — rien à capturer en mouvement');
       process.exit(3);
     }
-    // durée : imposée (--duration) sinon déduite de la vitesse maximale lisible
-    const travel = args.duration
+    // durée : imposée (--duration) sinon déduite de la vitesse maximale lisible.
+    // GARDE-FOU : si la durée imposée pousse la vitesse au-delà de --max-speed, on allonge
+    // (un défilement trop rapide rend le texte illisible — mesuré : 1511 px/s était trop vite).
+    let travel = args.duration
       ? Math.max(1.5, parseFloat(args.duration) - HOLD_START - HOLD_END)
       : maxScroll / MAX_SPEED;
+    if (maxScroll / travel > MAX_SPEED) {
+      travel = maxScroll / MAX_SPEED;
+      console.log(`  ⚠ durée allongée : ${maxScroll} px ÷ ${MAX_SPEED} px/s → +${travel.toFixed(1)} s (lisibilité)`);
+    }
     const duration = HOLD_START + travel + HOLD_END;
     const frames = Math.max(2, Math.round(duration * FPS));
     const dir = path.join(OUT, 'frames');
@@ -99,8 +113,9 @@ try {
     for (let i = 0; i < frames; i++) {
       const t = i / FPS;
       const p = Math.min(1, Math.max(0, (t - HOLD_START) / travel));
-      const y = Math.round(easeInOut(p) * maxScroll);
+      const y = yStart + Math.round(easeInOut(p) * maxScroll);
       await page.evaluate(_y => window.scrollTo(0, _y), y);
+      if (SETTLE > 0) await new Promise(r => setTimeout(r, SETTLE));
       await page.screenshot({ path: path.join(dir, 'f' + String(i + 1).padStart(5, '0') + '.jpg'), type: 'jpeg', quality: QUALITY });
     }
     const manifest = {

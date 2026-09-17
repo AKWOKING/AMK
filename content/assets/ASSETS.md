@@ -26,7 +26,12 @@
 | #4 CTA line | `content/videos/v04-before-whatsapp/source/cta.mp3` | 2.98 s — "DM preview for a free homepage concept" |
 | Earlier tests (repo) | `tiktok/vo-video1-fr.mp3`, `tiktok/vo-test-en.mp3` | not confirmed as the selected voice |
 
-⚠ **The previous chat's registered voice (`voice-00`) does not carry into a new chat.** For any new narration King must re-select a voice (audition) — existing MP3s are the reference to match. **Do not narrate #5+ until this is done.**
+## RESOLU (17 Sep 2026, nuit) — quel outil produisait la voix ?
+**Question de King :** « for the voice find an alternative, which tool did you use in the previous videos use it ».
+
+**Reponse : la voix des videos precedentes venait de l'outil de voix de la plateforme de production d'AMK** (audition + voix enregistree `voice-00`), **pas d'un service externe**. Verifie dans `content/handover/2026-09-17-content-handover.md` : « The selected speech voice used in this conversation is `voice-00`. It was registered earlier and reused for all later narration. »
+
+**Donc aucun telechargement n'etait necessaire** : les voix Piper/Kokoro (hebergees sur HuggingFace, inaccessible ici) etaient une fausse piste. **Voix re-auditionnee le 17 Sep 2026 -> `voice-00`** ; c'est elle qui narre **V-05** (`content/videos/v05-schools/`). Les MP3 existants restent les references sonores.
 
 ## Studio (MboaCare — the abstract-principle asset)
 `content/studio/` — see its README for the honesty constraints. Studio, before/after HTML, reception photo, create.py, test.py all present and verified.
