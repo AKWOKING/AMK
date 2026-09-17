@@ -116,6 +116,24 @@ The source skill BANS em-dashes everywhere (top production tell in EN). AMK ruli
 - NO pure-text "minimalism" — even minimal sites need 2-3 real images.
 - NO broken stock links. Use generated images (our standard), then reliable placeholders, then clearly-labeled TODO slots + tell the user.
 
+### 3.8 VIBE-CODE TELLS (added 17 Sep 2026, YC design review [10] — `research/YouTube-Lessons.md`)
+*The tells that make a visitor think "this was AI-generated" and quietly discount the business behind it. Every item below is a hard ban unless a written, brand-driven reason exists.*
+
+- **NO scroll-jacking** — never intercept native scroll for animation ("like molasses": you lose your place and the scroll indicator lies). Readable progress beats choreography.
+- **NO hover states that hide or de-emphasise** — nav items fading out on hover is the opposite of an invitation. Hover either invites the click (pop / one shade lighter / subtle glow) or reinforces meaning; the browser's own hand cursor is free, so it's enough.
+- **NO essential information behind hover** — mobile has no hover. Anything a user needs is visible, tappable, or in the layout.
+- **NO moving buttons** — a control that follows the cursor or drifts cannot be clicked reliably and reads as a bug.
+- **NO entrance animations that hide content** — fade-ins must never leave a section looking empty (a FAQ caught mid-fade reads as "one lonely question"); content is present in the DOM and painted; never gate it on a timer.
+- **NO decorative scroll-following lines / meteors / cursor glows** — if it wouldn't be worth a week of hand-coding, it isn't worth shipping because it was free.
+- **NO emoji as UI icons** — standard-icon tells. Inline SVG only (our standing rule).
+- **NO mixed type styles in one header block** — logo + kicker + H1 + sub + fourth style = five styles and zero hierarchy; each block has at most: kicker (optional) + H1 + sub.
+- **NO fake dashboards** — same ban as §3.7, restated: red/green/blue/purple Google-colour callout cards are a hallmark tell.
+- **NO bento card grids as a default** — icon + text ×6 is the standard LLM section; bento allowed only when the content is genuinely modular with exact cell count and interlocking spans (see §3.3), never as the house rhythm.
+- **Banned empty claims** — "10x everything", "unlocked", "seamless", giant whitespace substituting for information. A visitor scrolling halfway must be able to say what the business does.
+- **Brand palette first, always** — derive colour/type from the client's own logo, signage, or research BEFORE generating layout (YAKS / Labo storefront method). Never accept an AI default palette; "you have to be intentional about ending up in a different place."
+- **The editor rule** — every generated element must survive: *"would a designer have chosen this on purpose?"* If it exists only because it was easy, cut it. Just because it's possible doesn't mean it ships.
+- **QA everything yourself** — click every control, scroll every section on a phone, in both languages, before delivery (this is the human half of §18's verification ladder).
+
 ---
 
 ## §4 THE LOCKS (consistency rules)
@@ -318,6 +336,8 @@ Pale Red #FDEBEC/#9F2F2D · Pale Blue #E1F3FE/#1F6C9F · Pale Green #EDF3EC/#346
 - **Benefits translator:** feature → "…ce qui veut dire…" consequence, once each; short sentences; bullets for lists; no data dumps.
 - **Banned words (EN/FR):** passion/passionné, révolutionnaire, dynamique, "solutions digitales" (as a benefit), "excellence" as a claim without a number; "best", "world-class", "state-of-the-art" — same rule in both languages.
 - **Read-aloud test** on the whole hero + every CTA, in spoken (not translated) French.
+- **Hero price anchor (King-approved 17 Sep):** price sits in the hero ONLY when price is the client's differentiator (a real, verified low price — YAKS consult). Otherwise the price moves next to the claim it proves, further down.
+- **H1 contract:** the hero answers what it is / who it's for / why care + one CTA, above the fold, in plain words [10]. A landing page is an acquisition channel, not an art piece.
 
 **SEO placement [6]:** long-tail keywords live in the **FAQ accordion** and in **kickers/eyebrows** — never squeezed into the conversion headline. Ticks/inline SVG for lists, not emoji clusters.
 
@@ -481,6 +501,45 @@ Research finding: output truncation is a **deliberate RLHF brevity bias, not a d
 **Micro:** magnetic button (motion values, never state) · particle-success CTA · skeleton shimmer · directional hover fill · ripple.
 **Type:** kinetic marquee (max 1/page) · text-mask reveal · text scramble · circular text path.
 **Libraries:** CSS/IO for single-file (AMK standard) · Motion (motion/react) for React UI · GSAP+ScrollTrigger for scrolltelling · never mix GSAP+Motion+rAF in one tree.
+
+---
+
+## §18 SPEC-DRIVEN BUILD & VERIFICATION (added 17 Sep 2026, engineering batch [9] — `research/YouTube-Lessons.md`)
+
+*The rule that makes everything else hold: **AI builds decay by default** — every feature added without discipline makes the next one harder. Discipline is not a better prompt; it's plan → decide → build → verify → debug.*
+
+### 18.1 Plan before build (never a wish)
+- Every concept/client build starts from a **one-page spec in the dossier**: who it's for · what's in v1 · what is explicitly OUT · build order · what depends on what. Changing a line in a plan is free; changing a decision already spread across the code is a rewrite (this is our builder-replacement bug class).
+- **Scope never touches the stack**: decide *what* we're building first, *how* (fonts, palette derivation, sections) second, so a plan doesn't rot when a detail changes.
+- **Value provenance check (mandatory, pre-ship):** for every number, price, hour, count or status a page shows, name the source — research file, real price, or the explicit DEMO/sample label. **Any value with no source is a decision nobody made** → stop, decide, source it or remove it. This is the mechanical trigger for the accuracy law and §3.6's fake-number ban.
+
+### 18.2 Decisions written down, on purpose
+- Defaults that hold unless there's a reason: **single file, base64 embedded, no external requests; mobile-first; EN|FR pairs complete; WhatsApp-first CTAs.**
+- Every non-obvious design choice gets one line in the build notes with the **honest alternative and why it lost** (e.g. "sticky WA bar — alternative: fixed footer nav, rejected: competes with language toggle").
+- **Secrets/keys never in code** (this repo is public).
+
+### 18.3 State lives in files, not in chats
+- The build must be reproducible from the repo: builder script + inputs + dossier + QA notes. A future session (or another AI) reads the files and continues — nobody re-explains the project.
+- Our context files: `sales/Pipeline-Status.md` (state), the prospect dossiers (decisions), `hosting/previews/README.md` (deploy map), session memory (continuity). **Update them at the moment of the decision, not at the end of the day.**
+- Never overwrite human-written notes; add alongside and flag conflicts.
+
+### 18.4 The verification ladder (match effort to risk)
+*"It works" is a lie until verified — green checks only prove what we thought to check.*
+- **Marketing concepts (reputation risk):** builder greps (leftovers, numbers, URL, phone) · `node --check` on the JS · DOM pair counts · JSON parse · served over HTTP locally · **mobile click-through: every WA / tel / mailto / CTA opened on a real phone (King's phone QA)** · hero shot + mockup captured.
+- **Client deliverables (money risk): run all four jobs:**
+  1. **Check/verify** — drive the actual flows (book, submit, language toggle, sticky bar), against the spec's criteria, not against the code.
+  2. **Test** — what a real caller depends on: correct number reaches a real WhatsApp, form saves/sends, both languages complete.
+  3. **Review** — a fresh pass over the built output, by different eyes than the builder (King's phone pass on the live URL counts as the second pair of eyes; never self-approve from the same pass that wrote it).
+  4. **Document** — the change log written from the actual diff, not from memory.
+- **Deploy gate:** the live URL is verified on a phone (FR boot, one prefill, one CTA) **before** the link goes to a prospect — the YAKS sequence is the standard.
+
+### 18.5 Debug discipline (no pattern-match fixes)
+1. **Reproduce reliably first** — a bug you can't reproduce on command is a bug you can't prove you fixed.
+2. Narrow to the smallest failing spot.
+3. **Form ONE theory, test that one thing.** If wrong, discard the change — no dead edits left in the file.
+4. Fix the **cause**, not the symptom; then hunt the same mistake elsewhere.
+5. **Add a regression check** that fails without the fix (grep/assert in the QA script) so it can never quietly come back.
+6. If the "bug" is a bad decision, say so and redesign — don't patch over it.
 
 ---
 

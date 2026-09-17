@@ -22,6 +22,18 @@ All four carry `noindex,nofollow` (private previews, never search-listed). Rebui
 python3 hosting/build_previews.py
 ```
 
+## Deploy gate (added 17 Sep 2026 — from the engineering batch, `AMK-DESIGN-SKILLS.md` §18.4)
+
+Before any concept URL goes to a prospect, on a **phone** (not the laptop preview):
+1. Page boots in **FR** (default), the EN|FR toggle switches the whole page back and forth.
+2. **One real WhatsApp prefill opened** from an in-page CTA — correct number, correct French text, correctly URL-encoded.
+3. The sticky mobile CTA is visible and tappable; the nav is one line; no horizontal overflow.
+4. The prospect's real facts render (name, address, phone) — and every unreal number carries its DEMO label.
+5. **Value provenance pass** (`§18.1`): each price/hour/count traced to a source or labelled sample; no orphan values.
+6. After any post-deploy fix, re-verify the same items on the live URL — the deployed file, not the local copy.
+
+Not verified on a phone = not sent.
+
 ## Hosting priority (14 Sep 2026)
 
 **Deploy today, before anything else:**

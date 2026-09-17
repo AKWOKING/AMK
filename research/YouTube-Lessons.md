@@ -41,6 +41,10 @@ WhatsApp-first · mobile-first · EN|FR · Cameroon (Kumba/Douala/South-West) ·
 | 4 | 17 Sep 2026 | How to Write Irresistible Website Copy — Graham Cochrane | Marketing / Niche | Absorbed (customer-language rule) | `sales/AMK-Sales-Playbook-v2.md` → v2.1 Part H · `sales/Monday-Outreach-Pack.md` |
 | 5 | 17 Sep 2026 | Learn Copywriting in 76 Minutes — Harry Dry (David Perell) | Marketing / Sales | **Absorbed — new copy law** | `sales/Monday-Outreach-Pack.md` (COPY CRAFT GATE) · `AMK-DESIGN-SKILLS.md` §11 · playbook v2.1 |
 | 6 | 17 Sep 2026 | 14 Years of Copywriting Knowledge in 1 Hour — Alex Nafia-Holland (Relume) | Marketing / Niche | Absorbed | `AMK-DESIGN-SKILLS.md` §11 · playbook v2.1 Part H · `sales/Deep-Dive-Research.md` (WhatsApp-default line) |
+| 7 | 17 Sep 2026 | After Closing 4000+ Sales… — Alex Hormozi | Sales / Objections | Absorbed (new reframe system) | `sales/AMK-Sales-Playbook-v2.md` → **v2.2 Part I** |
+| 8 | 17 Sep 2026 | The Secret To Alex Hormozi's Sales Success — SaaS Academy | Sales / Ops | Partly absorbed; team sections rejected | playbook v2.2 **Part J** |
+| 9 | 17 Sep 2026 | The Engineering Skill AI Won't Replace — JavaScript Mastery | Build / Engineering | Absorbed | `AMK-DESIGN-SKILLS.md` **§18** · `hosting/previews/README.md` (deploy gate) |
+| 10 | 17 Sep 2026 | Design Experts Review Vibe Coded Websites — Y Combinator (Raphael Schaad) | Design | Absorbed (anti-slop ban list) | `AMK-DESIGN-SKILLS.md` **§3.8** |
 
 ## 4 · Entries (full reports)
 
@@ -175,6 +179,107 @@ WhatsApp-first · mobile-first · EN|FR · Cameroon (Kumba/Douala/South-West) ·
 
 **Junk filter:** Webflow-specific build steps, logo-row advice ("don't use Apple/Microsoft — use smaller brands") is B2B SaaS; our equivalent = the prospect's own real logos/partners — and the "use ChatGPT to rank keywords" step (we do it manually). Both dropped as process detail, kept as principles.
 
+---
+
+### [7] 17 Sep 2026 · Alex Hormozi — "After Closing 4000+ Sales, I Discovered a New Method to Close Deals Faster"
+**Link:** https://youtu.be/RVbvhPGFi6E · **Field:** Sales / Objections · **Length:** ~35 min
+
+**Core claims**
+1. **Reframing = the 1–3 sentences you say after a prospect says anything but yes**, to raise the odds that your next sentence lands. **The 3A framework:**
+   - **Acknowledge** — say their words back ("so you're curious about our certifications"). Two jobs: shows listening, and buys you 2–3 seconds to think.
+   - **Associate** — label the question as the behaviour of your best customers ("that's a question our best clients ask; it means you're making a serious, rational decision"). The label becomes something they then live up to; bring it back at the close.
+   - **Ask (attack the frame)** — ask a question *about their question*: "which certifications were you looking for specifically?", "what would it take to say yes?", "what are you most afraid of?", "what would make this a no?"
+2. **The person asking questions controls the conversation.** Beginners answer questions and hand the prospect the role of judge/jury/executioner over an answer they never specified. "Do you have any questions?" is the worst question in sales — you're inviting objections and handing over the wheel.
+3. **Prospects believe almost nothing you say and almost everything they say.** Don't tell them they're a good fit — breadcrumb them with questions until *they* say it.
+4. **Five rules:** (1) breadcrumb, don't assert; (2) **never disagree with a prospect** — you can never win a sale by winning an argument (be "smoke": un-punchable, always side-shifting); (3) **tell them what their question means** (the associate step, zoomed in: "clients who shift to us usually already have an advisor — it means you'll be up the learning curve"); (4) **use straw men for tough truths** — a third-party foil (a person earlier today, a past customer, the prospect's own authority) so the harsh truth isn't aimed at them; (5) **retain childlike curiosity** ("huh… that's interesting, can I ask more about that?") with smile and tone doing the work.
+5. **Ethical frame:** state the facts, tell the truth — and if the prospect is qualified, you have an obligation to keep asking until they make a decision. "You don't close sales by being right; you close by making the prospect right."
+
+**AMK-applicable tactics**
+1. **The 3A script for our four objections** (text/WhatsApp-adapted, short sentences because it's typed):
+   - *"C'est trop cher"* → Acknowledge: « Je comprends — c'est un vrai budget. » Associate: « C'est la question que posent les clients qui comparent sérieusement. » Ask: « Qu'est-ce qui vous ferait dire que ça vaut le prix : plus de patients qui réservent, ou moins d'appels au secrétariat ? »
+   - *"Je vais réfléchir"* → « Bien sûr. Pour réfléchir utilement : quels sont les deux points que vous voulez trancher ? » / « Qu'est-ce qui vous ferait dire non ? »
+   - *"On a déjà une page Facebook"* → Associate: « C'est exactement ce que nous disent nos meilleurs clients au départ — la page marche, mais elle ne prend pas les rendez-vous la nuit. » Ask: « Combien de patients vous écrivent le dimanche, sans réponse ? »
+   - *"Je dois en parler à mon associé/épouse"* → Acknowledge + Associate (« c'est la réaction des gens sérieux ») + Ask: « Sur quoi pensez-vous qu'il/elle serait d'accord, et quel point pourrait le/la bloquer ? » (name the parts — they'll tell you the real objection).
+2. **Never answer a question we're not sure of** — instead: « Bonne question. Avant que je réponde : vous cherchez surtout X ou Y ? » This is safe in writing, keeps control, and prevents us from inventing a fact (accuracy law).
+3. **Ban the sentence "Vous avez des questions ?"** in every call/FU — replace with a specific question ("Qu'est-ce qui vous ferait dire oui ?").
+4. **The label bank:** « Ça, c'est une question de quelqu'un qui prend ça au sérieux. » / « C'est la question de nos meilleurs clients. » Use once per conversation, and echo the label at the close (« comme quelqu'un qui veut faire le bon choix pour ses patients… »).
+
+**Contradictions — flagged and resolved:** the **straw-man device invites fabricated third parties** ("someone earlier today asked the same"), which collides with our accuracy law. **Rule adopted:** straw men are allowed **only with true references** — a real past client, a real quote from the prospect's own reviews, a real story that happened. Never invent a person. (Logged as an AMK amendment, not a silent edit.)
+
+**Junk filter:** the acquisition.com upsell interludes; "seducing/hard-truth" language framed for phone/Vegas close culture — softened for a WhatsApp-first, reputation-driven Douala market where the network is small.
+
+---
+
+### [8] 17 Sep 2026 · SaaS Academy — "The Secret To Alex Hormozi's Sales Success"
+**Link:** https://youtu.be/ZIJAuw64nY4 · **Field:** Sales / Ops · **Length:** ~25 min (conference talk)
+
+**Core claims**
+1. **The CLOSER framework** — every step must be phrased as a **question**, never a statement (prospects can answer questions instantly; statements force them to think and stall):
+   - **C — Clarify** why they're here: "What's your goal? Why is that important to you? What would 12 months from now look like if this worked?"
+   - **L — Label** the problem: "So what I'm hearing is you've done X, Y, Z and the missing piece is… Is that right?"
+   - **O — Overview the pain** (the pain cycle, repeat until they have nothing left, then recap).
+   - **S — Sell the vacation** — three 30-second stories illustrating the missing link (e.g., fitness = training + nutrition + accountability). "You were missing one of these three."
+   - **E — Explain away their concerns** — only three objection types exist: **price, stall, decision-maker**. For the decision-maker: lean on past agreements ("your partner already knows you're dealing with this"). Walk them through a **yes/no decision chain**: Do you like us? Do you like the product? Do you believe it can help? Do you have access to the money?
+   - **R — Reinforce the decision** — immediately after the yes: founder video, personalised confirmation, card/T-shirt — make their feet hot so they don't back out.
+2. **Always make the ask.** "You can never make a sale you never ask for." Closers ask the most times — and reframing (video [7]) is what lets you ask repeatedly without burning rapport.
+3. **Team management (the second half):** record every call; daily huddles to share testimonials; weekly 1:1 reviewing best/worst/average calls; cut the bottom 10% regularly (claimed +30% productivity); leaderboard + 6-week team competitions (3-person teams, ~25% of a month's pay per prize).
+
+**AMK-applicable tactics**
+1. **The yes/no decision chain becomes our pre-close checklist** in WhatsApp form, asked one at a time: « Le concept vous plaît ? » → « Vous pensez que ça peut vous amener des patients ? » → « Vous avez la première moitié disponible maintenant ou fin de mois ? » Three yeses = the close is administrative, not a leap.
+2. **"Sell the vacation" → our three-part missing link** for clinics/schools: (a) a site that works on the phone, (b) WhatsApp as the intake/booking channel, (c) being findable when searched. Most have one or two; the offer is the third. Three 30-second stories as proof (a real clinic, a real school, the prospect's own numbers).
+3. **Reinforce-the-decision sequence** (fits our existing handoff video): on « oui », within the hour: a short voice/video note from King, the personalised confirmation with their business name, and the first deliverable date. This is the anti-buyer's-remorse step we were doing informally — now it's a rule.
+4. **One objection taxonomy only: price / delay / decision-maker.** Simplify the CRM objection log to these three; everything else gets mapped to one of them. (Real Cameroon additions found in practice: trust (« est-ce que vous disparaissez après paiement ? ») → map to price-visibility and decision-maker; note as a 4th local variant, kept separate from the framework.)
+5. **Weekly self-review (solo version of the 1:1):** Friday, re-read the week's best/worst exchange and write one line each in `sales/swipe/` — the solo operator's version of the call-review cadence.
+
+**Contradictions:** "cut the bottom 10%" and leaderboards are team mechanics — irrelevant to a solo operation today; kept in the register as future hires playbook, not in the playbook itself. The deep pain-cycle "until they have nothing left" conflicts with our **no-chase rule** (M+2/+4/+7 then stop) — our rule (King's standing instruction) wins; the pain cycle is capped at the discovery conversation, never the follow-up sequence.
+
+**Junk filter:** Vegas/Bahamas incentive economics; "kid trying to write with a permanent marker while closing her credit card" war stories; the sales-team management half (record/Gong, comms cadence, comp) — parked for when AMK has people.
+
+---
+
+### [9] 17 Sep 2026 · JavaScript Mastery — "The Engineering Skill AI Won't Replace" (AI Can Build Your App. It Can't Engineer It.)
+**Link:** https://youtu.be/Vok_nReMFaU · **Field:** Build / Engineering · **Length:** ~15 min
+
+**Core claims**
+1. **AI builds decay by default.** Every feature added without engineering discipline makes the next one harder: missing pieces, silent breakage, duplicated logic, regressions — "nothing is holding the project together." That is an engineering problem, not a prompting problem.
+2. **Give it a plan, not a wish.** Requirements before code: what's in v1, what's explicitly out, in what order, what depends on what. Changing a line in a plan is free; changing a decision already spread across the codebase is a rewrite.
+3. **Name the provenance of every value.** For each total, date, status a feature must show or compute, write down where it comes from. **Any value with no source is a decision nobody made** — and the correct move is to stop and decide, not to invent.
+4. **Decisions must be explicit and in writing** — recommended option + the honest alternative with the reason it lost; secrets never in code; defaults that hold: monolith first, relational DB, paginate every list, rate-limit public endpoints.
+5. **State lives in files, not in chats.** Context files (stack, commands, conventions) keep every new session from guessing and drifting into three styles; they must be lean, per-area in a monorepo, never overwrite human-written docs, and be re-synced against what the repo actually shows.
+6. **"It works" is a lie until verified.** Green tests only prove what the AI thought to test. Four separate verification jobs: **check/verify** (drive the real feature, click the flow, against the plan's criteria), **test** (what a caller relies on), **review** (read the diff on a different model than the one that wrote it), **document** (changelog from the actual diff, not from memory). Match effort to risk: a prototype self-checks; a payment system runs all four.
+7. **Debugging with discipline:** reproduce reliably → narrow to the smallest failing spot → **form one theory and test that one thing** → if wrong, throw the change away → fix the cause, not the symptom → write a test that fails without the fix → hunt the same mistake elsewhere. If the bug is a bad decision rather than a coding error, say so and redesign instead of patching.
+
+**AMK-applicable tactics — folded into `AMK-DESIGN-SKILLS.md` §18**
+1. **Concept spec before build (one page, in the dossier):** who it's for, what's in v1, what's explicitly out, order. Our `build_yaks.py` already worked this way implicitly; now every concept starts with the spec written down.
+2. **Value provenance pass (pre-ship):** every number/price/hours/stat in a concept traced to a source — research file, real price, or the explicit DEMO label. Anything untraceable is either sourced or removed. Direct reinforcement of the accuracy law and the fake-number rules.
+3. **Verification ladder, matched to risk:** concepts (marketing surface, reputation risk) = static checks + greps + mobile click-through on King's phone; **client deliverables (money risk) = all four jobs**: drive every flow, test the WA/tel/mailto links, review the built HTML (fresh pass, different eyes/model than the builder), document the diff.
+4. **Regression checks that persist:** every bug fixed adds a grep/test to the QA script so it cannot quietly come back (we did this with the OraCare/YAKS leftover greps — now it's the rule).
+5. **Context files:** our equivalents already exist (`sales/Pipeline-Status.md`, dossiers, READMEs, session memory) — the discipline added is: update the file at the moment of the decision, not at the end of the day.
+
+**Contradictions:** none. The "stop and ask a human when a value has no source" mechanic is exactly what the accuracy law already demands; this gives it a mechanical trigger.
+
+**Junk filter:** the Agentic Engineering course launch (Sept 22) and skill names (scope/architect/develop/audit/sync/check/test/review/debug); tools specifics (Claude MD conventions). Kept only the workflow principles — our stack is Python builders + single-file HTML, not agentic app scaffolding, so the folder mechanics don't transfer.
+
+---
+
+### [10] 17 Sep 2026 · Y Combinator (with Raphael Schaad) — "Design Experts Review Vibe Coded Websites"
+**Link:** https://youtu.be/DNSXlBmukck · **Field:** Design · **Length:** ~45 min
+
+**Core claims**
+1. **The AI-design tells are now a credibility tax.** Purple gradients everywhere, animation for animation's sake, decorative lines following the scroll, cursor-chasing buttons, meteors, fade-ins — "if it looks like a bunch of other things I've seen, customers assume you vibe-coded the product too."
+2. **Specific failures found in the review:** hover effects that make nav items *fade out* (opposite of invitation); hover-locked essential information (no hover on mobile → undiscoverable); scroll-jacking ("like molasses", you lose your place, scroll indicator fails); fade-ins that leave sections seemingly empty (an FAQ caught mid-fade looks like one lonely question); 4–5 mixed type styles in the hero adding vertical space without hierarchy; buttons that move (can't be clicked); emoji/standard-icon tells; blurry assets; low-contrast light text; "10x everything" empty claims with enormous whitespace; fake dashboards with the classic red/green/blue/purple Google-colour callouts; bento boxes as a non-original default.
+3. **The counter-patterns:** hover should *invite* the click (pop, one shade lighter, subtle glow, cursor hand is already free); a hover that reinforces meaning is the good kind; **the H1 answers what it is, who it's for, why care + a CTA above the fold**; start from **your own brand palette** and feed that in, instead of accepting what the model spits out; **you are the editor** of every suggestion — "just because it's easy doesn't mean it's worth doing"; QA everything yourself; a landing page is a **customer acquisition channel**, not the product.
+
+**AMK-applicable tactics — folded into `AMK-DESIGN-SKILLS.md` §3.8**
+1. **New hard bans:** scroll-jacking, hover that hides/de-emphasises, essential info behind hover, moving buttons, entrance animations that hide content, decorative scroll-following lines, emoji as icons, mixed type styles in one header block.
+2. **Brand-palette-first is now the build order:** derive the palette/type from the client's own logo/signage/research *before* generating any layout (YAKS and the Labo storefront work already do this — now it's the documented first step) — never accept a default palette.
+3. **The editor rule:** every generated element must survive "would a designer have chosen this on purpose?" — if it exists only because it was easy, it's cut. This formalises what our anti-slop §3 already does; the YC list becomes the concrete examples.
+4. **Hover audit** added to the pre-flight: every hover state either invites a click or reinforces meaning; zero hover states that hide information; every hover-revealed element also reachable without hover (mobile has none).
+
+**Contradictions:** our §17 pattern vocabulary *lists* bento as a layout pattern; the video calls bento (3×2 icon-text grids) a non-original default. **Resolution:** bento stays allowed when the content is genuinely modular (exact cell count, interlocking spans — already required in §3.3), but the "icon + text ×6" bento card grid is banned as a section default. Logged, King can veto.
+
+**Junk filter:** none — the claims are design fundamentals with concrete evidence from live sites. The YC-startup context (fundraising pages) doesn't change the rules for clinics/schools; if anything they matter more, because our clients compete on trust.
+
 
 ## 5 · Rejected (named, with reason)
 
@@ -187,6 +292,10 @@ WhatsApp-first · mobile-first · EN|FR · Cameroon (Kumba/Douala/South-West) ·
 | "Wall of love" testimonial walls (3-column testimonial row) | [2] | Directly contradicted by [6]: one testimonial at a time, under the claim it proves. [6] wins — closer to our claim+proof structure. |
 | Webflow-specific build steps; logo-row "don't use Apple" advice | [6] | Tool- and B2B-SaaS-specific; our equivalent is the prospect's own real partners/FB proof. |
 | Custom emoji icons vs plain ticks | [6] | Marginal A/B claim, no local test; not worth a design rule. *(Kept as a note only — ticks are also lighter, but our concepts use inline SVG icons, which is a different thing.)* |
+| Sales-team management half (recorded calls/Gong, daily huddles, cut-the-bottom-10%, leaderboards, Vegas incentives) | [8] | Solo operator — no team to manage. **Parked as the future-hires playbook**, not deleted: revisit at first hire. |
+| "Pain cycle until they have nothing left" beyond discovery | [8] | Conflicts with King's no-chase rule (M+2/+4/+7 then stop). Our rule wins; pain work stays inside discovery. |
+| Fabricated straw-man foils ("someone earlier today asked the same") | [7] | Direct conflict with the accuracy law. Adopted only with **true** references — real client, real quote, real story. |
+| Agentic Engineering course pitch + skill/tool names (Sept 22 launch) | [9] | Course upsell; our stack is Python builders + single-file HTML, not agentic app scaffolding. Principles kept, tooling dropped. |
 
 ## 6 · Weekly ritual (Mondays, before the outreach pack goes out)
 
