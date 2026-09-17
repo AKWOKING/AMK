@@ -10,10 +10,10 @@
 
 | # | Heure cible | Prospect | Numéro | Image à joindre | Texte |
 |---|---|---|---|---|---|
-| 1 | dès que possible | **AFRIQUE LABO SARL** (Bessengue) | **690 54 70 93** | `demos/shots/mockup-clinic-wa.jpg` (163 KB, 1600×900) | §L ci-dessous |
+| 1 | ✅ **ENVOYÉ 13:24** | **AFRIQUE LABO SARL** (Bessengue) | **690 54 70 93** | ✅ `mockup-afriquelabo-wa.jpg` envoyée | §1 de `sales/Outreach-AFRIQUE-LABO-v1.md` · **liée à https://concept-afriquelabo-v1.vercel.app** |
 | 2 | +15 min | **JOSS MEDI Clinic** (Bonanjo) | **677 58 42 73** *(secours 674 63 88 88)* | même image | §J ci-dessous |
-| 3 | +15 min | **MITOC** (Molyko, Buea) — **FU1 (M+2)** | **678 90 89 62** | aucune (texte seul) | §M ci-dessous |
-| 4 | après 3 | **Baird Memorial College** — vérifier les coches d'abord | 677 87 53 95 | aucune si FU1 | §B ci-dessous |
+| 3 | aujourd'hui | **MITOC** (Molyko, Buea) — **FU1 (M+2)** · 2 coches, non lu | **678 90 89 62** | aucune (texte seul) | §M ci-dessous |
+| 4 | aujourd'hui | **Baird Memorial College** — **FU1 (M+2)** · 2 coches, non lu | 677 87 53 95 | aucune (texte seul) | §B ci-dessous |
 
 **Portail 10 secondes avant l'envoi (comme hier) :** ouvrir `afriqlabo.com` puis `jossmediclinic.com` sur le téléphone.
 - Page morte/erreur → **envoyer** comme ci-dessous (c'est le cas enregistré au 16/09 ~17:00).
@@ -56,6 +56,13 @@
 > — Akwo King / AMK – Web Development & Digital Solutions
 
 ---
+
+### §J2 · JOSS MEDI — **VÉRIFIER LE NUMÉRO AVANT D'ENVOYER (2 min)**
+⚠️ Ta capture montre le contact enregistré comme **« +237 77584273 » (8 chiffres)** — notre numéro vérifié est **+237 677 58 42 73 (9 chiffres)**. C'est le même numéro **sans le 6 initial** : vérifie avant d'écrire que le contact est complet (appui long sur la discussion → infos du contact).
+1. **Contrôle 1 :** le numéro du contact doit se lire **+237 6 77 58 42 73**.
+2. **Contrôle 2 :** vérifie **674 63 88 88** sur WhatsApp — si CE numéro a un profil pro (nom/logo/catalogue), c'est la ligne officielle → envoie là.
+3. **Contrôle 3 (optionnel) :** ouvre leur page Facebook `/JMClini` depuis le téléphone et regarde le numéro WhatsApp qu'ils publient aujourd'hui.
+4. Les deux sont des numéros simples ? **On envoie quand même** — beaucoup de cliniques camerounaises utilisent une ligne personnelle ; notre message nomme la clinique dès la ligne 1 et inclut une porte de sortie. Si les contrôles montrent un numéro différent, **ne pas envoyer encore** — me le dire.
 
 ## 3 · Réponse watch (ne rien renvoyer — juste répondre vite)
 

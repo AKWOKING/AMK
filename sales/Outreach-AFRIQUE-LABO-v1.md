@@ -4,7 +4,8 @@
 **Numéro :** **+237 690 54 70 93** (WhatsApp Business confirmé « Afrique labo sarl ») · secours **699 73 36 25** — ne jamais contacter 674 46 62 15
 **Ordre d'envoi :** 1) **image d'abord** → `demos/shots/mockup-afriquelabo-wa.jpg` (163 KB, 1600×900) — puis 2) le texte ci-dessous.
 **Portail 10 secondes avant :** ouvrir `afriqlabo.com` sur le téléphone — si le site s'ouvre normalement, **ne pas envoyer** et me prévenir.
-**Concept (après le « oui ») :** `https://amk-cm.vercel.app/previews/afriquelabo/` *(URL définitive à confirmer après le déploiement ; la page est `noindex`)*
+**✅ CONCEPT EN LIGNE (King, 17/09) :** **https://concept-afriquelabo-v1.vercel.app** — page `noindex`, non listée, jamais publiée.
+**✅ MESSAGE 1 ENVOYÉ (King, 17/09 13:24)** — image `mockup-afriquelabo-wa.jpg` puis le texte §1, deux coches. **En attente de réponse.** Silence → FU1 **dim 19** (M+2), FU2 **mar 21** (M+4), FU3 **ven 24** (M+7).
 
 ---
 
@@ -20,7 +21,7 @@
 
 ## §2 · Après « oui » — image déjà envoyée, donc lien + vérité + 2 questions
 
-> Avec plaisir ! Ouvrez sur téléphone 👉 https://amk-cm.vercel.app/previews/afriquelabo/
+> Avec plaisir ! Ouvrez sur téléphone 👉 https://concept-afriquelabo-v1.vercel.app
 > Trois choses que j'ai mises en avant : le catalogue chercheable avec vos tarifs FCFA, la préparation au prélèvement (à jeun, quoi apporter, quand venir pour les hormones), et le bouton WhatsApp sur chaque analyse qui arrive pré-rempli chez vous.
 > Deux questions pour être exact : le laboratoire est **ouvert 24h/24** (vu sur votre statut WhatsApp) ou 6j/7 07h–18h ? Et les résultats : retrait sur place seulement, ou envoi WhatsApp/e-mail possible ?
 > — Akwo King / AMK – Développement Web & Solutions Digitales
