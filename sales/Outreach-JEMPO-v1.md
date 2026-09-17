@@ -1,11 +1,11 @@
 # OUTREACH — J&E MEMORIAL POLYCLINIC « JEMPO » (Deido · Bessengue, Douala)
 
-**Statut : BROUILLON — porte A (WhatsApp) à vérifier par King. Ne rien envoyer avant.**
+**Statut : PRÊT — porte A confirmée (WhatsApp Business « J&E MEMORIAL » sur 696 71 06 99). Envoyer après déploiement + QA téléphone.**
 Dossier : `clients/jempo/dossier.md`. Numéros à tester : **696 71 06 99** · **670 85 85 42** · secours **699 910 342** (ligne du Dr Marcus Youda).
 
 ## 1 · Message 1 — **image d'abord** (mockup JEMPO, une fois construit), puis ce texte
 
-> Bonjour 👋 En cherchant un ORL à Deido, je suis tombé sur MonDocteur237 : le Dr Youda y est réservable, mais la page, la réservation et le contact appartiennent à la plateforme — pas à JEMPO.
+> Bonjour 👋 En cherchant un ORL à Deido, je suis tombé sur MonDocteur237 : le Dr Youda y est réservable — mais la page et la réservation appartiennent à la plateforme, pas à JEMPO.
 > Je suis Akwo King, développeur web à Douala : je construis la porte d'entrée propre des cliniques — spécialités et jours de consultation, accès, rendez-vous WhatsApp, en français et en anglais.
 > Je vous l'envoie ? Un simple « oui » suffit — une minute sur votre téléphone, sans engagement.
 > — Akwo King / AMK – Développement Web & Solutions Digitales

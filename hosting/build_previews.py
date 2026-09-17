@@ -25,6 +25,7 @@ SLUGS = {
     "afriquelabo": ("demos/concept-afriquelabo-v1.html", "Afrique Labo SARL, Bessengue Douala — concept"),
     "opticien": ("demos/concept-opticien-lopticien.html", "Votre Opticien — concept pour L'Opticien, Bali Douala"),
     "labethanie": ("demos/concept-labethanie-v1.html", "Clinique La Béthanie, Bonabéri Douala — concept"),
+    "jempo": ("demos/concept-jempo-v1.html", "J&E Memorial Polyclinic (JEMPO), Deido Douala — concept"),
 }
 
 NOINDEX = '<meta name="robots" content="noindex,nofollow">'

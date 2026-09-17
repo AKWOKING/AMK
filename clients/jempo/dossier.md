@@ -1,15 +1,15 @@
 # Prospect n°3 — J&E MEMORIAL POLYCLINIC « JEMPO » (Deido · Bessengue, Douala)
 
 *Ouvert le 17 Sep 2026 au soir, après le déploiement de La Béthanie.*
-**Statut : dossier ouvert — porte A (ligne WhatsApp) à vérifier par King avant toute construction.**
+**Statut : 3/3 — porte A CONFIRMÉE par King le 17/09 (capture) — build en cours.**
 
 ## 1 · Trois portes (§8b)
 | Porte | Verdict | Preuve |
 |---|---|---|
-| **A · Joignabilité** | ⏳ **À VÉRIFIER PAR KING (téléphone)** | Mobiles à tester : **696 71 06 99** · **670 85 85 42** (fiche Maligah) · **699 910 342** (ligne du Dr Marcus Youda sur MonDocteur237 — le fallback humain) · fixe 233 47 87 69. Noter lequel a un **profil WhatsApp Business** (nom/logo/catalogue). |
+| **A · Joignabilité** | ✅ **PASS — King, 17/09 (capture)** | **696 71 06 99** = compte **WhatsApp Business** nommé « **J&E MEMORIAL** », catégorie **Medical & health**, mention « **Polyclinic** » (panneau Contact info). C'est la ligne câblée dans le concept. Autres lignes : **670 85 85 42**, fixe **233 47 87 69**. |
 | **B · Intention digitale** | ✅ **FORTE** | **4 praticiens de la polyclinique réservables sur MonDocteur237** : Dr Marcus Youda (ORL, « **partenaire prioritaire** », consultation publiée à 15 000 FCFA, présentiel + téléconsultation, RDV WhatsApp, paiement MTN MoMo/Orange Money) · Dr Paul Djomaleu (diabétologue) · Dr Angelique Njeumen (dermatologue) · Dr Humphry Neng (gynécologue). Fiche Maligah complète. **Aucun site propre, aucune page Facebook trouvée** → toute leur présence numérique est **louée** à des plateformes. |
 | **C · Acheteur** | ✅ | **Dr Marcus YOUDA, ORL — fondateur** de JEMPO (fiche Maligah), et c'est lui le partenaire prioritaire de la plateforme de réservation : décideur identifié, pas un conseil. |
-**Score provisoire 2/3 → 3/3 dès que King confirme la ligne WhatsApp** (3/3 = on construit et on envoie).
+**Score 3/3 → on construit et on envoie.** Preuve : `clients/jempo/whatsapp-business-2026-09-17.md` (relevé de la capture de King).
 
 ## 2 · Ce que les sources disent (17 Sep 2026)
 - **Maligah** : JEMPO, clinique à **Deido**, **1.149 Boulevard de la République**, repère **« Deido, Vallée Bessengue, face hôtel LEWAT »**, BP 8 268 Douala. Horaires déclarés : **tous les jours 24h/24**. Tél. +237 **233 47 87 69 / 696 71 06 99 / 670 85 85 42**. **Site : —**. Fondée par **Dr YOUDA Marcus, oto-rhino-laryngologiste**.

@@ -16,6 +16,7 @@
 | 4 | aujourd'hui | **Baird Memorial College** — **FU1 (M+2)** · 2 coches, non lu | 677 87 53 95 | aucune (texte seul) | §B ci-dessous |
 
 | 5 | ce soir (après §2d) | **CLINIQUE LA BÉTHANIE** (Bonabéri) | **677 76 07 82** | ✅ `mockup-labethanie-wa.jpg` (191 Ko) | §2e |
+| 6 | dès que déployé | **JEMPO** — J&E Memorial Polyclinic (Deido) | **696 71 06 99** | ✅ `mockup-jempo-wa.jpg` (174 Ko) | §2f |
 
 **Portail 10 secondes avant l'envoi (comme hier) :** ouvrir `afriqlabo.com` puis `jossmediclinic.com` sur le téléphone.
 - Page morte/erreur → **envoyer** comme ci-dessous (c'est le cas enregistré au 16/09 ~17:00).
@@ -103,6 +104,25 @@
 
 **5. Relances** : à poser le jour de l'envoi → **sam 19 · lun 21 · jeu 24** (mêmes dates que L'Opticien si les deux partent ce soir). Détail : `sales/Outreach-LaBethanie-v1.md`.
 
+## 2f · JEMPO (Deido · Bessengue, Douala) — **PREMIER build avec le footer §20** · 696 71 06 99
+
+**Portes §8b : 3/3** (WhatsApp **Business** « J&E MEMORIAL », catégorie Medical & health, mention « Polyclinic » — capture King du 17/09 · 4 praticiens réservables sur MonDocteur237 + 202 clics WhatsApp via DoualaTour · **Dr Marcus Youda, ORL, fondateur** = décideur nommé).
+**L'angle, en une phrase :** tout ce qui existe en ligne pour eux appartient à une plateforme — nous construisons **leur** porte.
+
+**1. Envoyer d'abord l'image** : `demos/shots/mockup-jempo-wa.jpg` (174 Ko) — laptop + téléphone, footer complet visible.
+**2. Puis ce texte (copier-coller) :**
+
+> Bonjour 👋 En cherchant un ORL à Deido, je suis tombé sur MonDocteur237 : le Dr Youda y est réservable — mais la page et la réservation appartiennent à la plateforme, pas à JEMPO.
+> Je suis Akwo King, développeur web à Douala : je construis la porte d'entrée propre des cliniques — spécialités et jours de consultation, accès, rendez-vous WhatsApp, en français et en anglais.
+> Je vous l'envoie ? Un simple « oui » suffit — une minute sur votre téléphone, sans engagement.
+> — Akwo King / AMK – Développement Web & Solutions Digitales
+
+**3. Contrôles avant d'appuyer** : contact **+237 696 71 06 99** (appui long → infos : doit afficher « J&E MEMORIAL ») · fenêtre 09–21 · image **avant** le texte · aucun prix dans le message (le 15 000 FCFA est celui de la plateforme).
+
+**4. Après « oui » (dans l'heure)** : lien de l'aperçu déployé → 2 questions : « Je confirme **vos jours et heures par praticien** ? » / « Vous préférez être appelé comment ? » → collecte : logo/couleurs, liste réelle des spécialités, noms + accord écrit, adresse + repère, ligne WhatsApp définitive, assureurs pris en charge.
+
+**5. Relances** : à poser le jour de l'envoi (M+2 · M+4 · M+7, max 3). Détail : `sales/Outreach-JEMPO-v1.md`.
+
 ## 3 · Réponse watch (ne rien renvoyer — juste répondre vite)
 
 | Prospect | Statut | Si réponse « oui » | Si silence |
@@ -113,6 +133,7 @@
 | AFRIQUE LABO / JOSS / MITOC / Baird | ce matin | §2 ci-dessus | FU1 **ven 18** (M+2) |
 | **L'Opticien** (670 27 60 65) | **à envoyer ce soir** (§2d) | aperçu → lien réseau réel | FU1 **sam 19** (M+2) · FU2 lun 21 · FU3 jeu 24 |
 | **LA BÉTHANIE** (677 76 07 82) | aperçu prêt, **à envoyer ce soir** (§2e) | lien `/labethanie/` + 2 questions (photos, qui décide) | FU1 **sam 19** · FU2 lun 21 · FU3 jeu 24 (à poser à l'envoi) |
+| **JEMPO** (696 71 06 99) | aperçu prêt, **à envoyer dès déploiement** (§2f) | lien aperçu + jours/heures à confirmer | FU1/FU2/FU3 à poser à l'envoi |
 
 **Qualification après « oui » (une question à la fois, jamais de prix au premier message) :** qui décide · ville/quartier · horaires réels · photos autorisées · ce qui manque le plus à leurs patients.
 
