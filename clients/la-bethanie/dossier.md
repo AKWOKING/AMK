@@ -6,7 +6,7 @@
 ## 1 · Trois portes (§8b) — VERDICT : 3/3 ✅
 | Porte | Verdict | Preuve |
 |---|---|---|
-| **A · Joignabilité** | ✅ **PASS (King, 17 Sep)** | **677 76 07 82** confirmé sur WhatsApp (capture de King « +237 77760782 » = même ligne en format 8 chiffres). C'est la ligne câblée dans les 6 boutons WhatsApp du concept. |
+| **A · Joignabilité** | ✅ **PASS (King, 17 Sep)** | **677 76 07 82** confirmé sur WhatsApp. Capture du 17/09 (panneau Contact info) : s'affiche **+237 77760782** (8 chiffres = même ligne), **sans profil Business** (aucun nom, aucune catégorie) → **ligne personnelle probable** ; envoi maintenu, la ligne 1 du message nomme la clinique et le Send-Sheet §2e propose une **ligne de repli**. |
 | **B · Intention digitale** | ✅ PASS | **210 clics WhatsApp** via DoualaTour ; présence active dans les annuaires santé (Medicoor, Maligah, réseau ASCOMA) : les patients les cherchent déjà par téléphone. **Aucun site propre trouvé** → leur crédibilité visible dépend d'annuaires tiers qu'ils ne contrôlent pas. |
 | **C · Acheteur** | ✅ PASS | Clinique privée dirigée par **Dr Richard PETIEU** (chirurgien) — propriétaire-décideur nommé. |
 **Score 3/3 → on construit et on envoie.**

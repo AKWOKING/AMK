@@ -57,6 +57,21 @@
 - **Pinned post:** best performer — candidate #2 on IG, #3 on TikTok; confirm before changing anything.
 - ⚠ **Never claim bio/pin/link was edited unless King says so.**
 
+## E · Fenêtres de publication (proposition du 17/09 — à confirmer avec les analytics de King)
+
+**Statut : hypothèse de travail, pas une règle validée.** Nos seules données réelles sont #2 (IG 47 / TT 87) et #3 (IG 41 / TT 137) — trop peu pour fixer une heure avec certitude. Ce qui suit est la fenêtre de départ ; elle sera corrigée par les chiffres que King enverra (vues, % de lecture, visites de profil, clics lien, DM).
+
+| Type | Fenêtre proposée | Pourquoi |
+|---|---|---|
+| TikTok (FR) | **18:00–20:00**, jours de semaine | après le travail, téléphone en main ; c'est aussi la fenêtre où nos envois WhatsApp sont lus |
+| Instagram Reels (EN) | **12:00–14:00** ou **week-end matin** | audience plus large (diaspora + anglophones du Sud-Ouest) |
+| YouTube Shorts | **20:00–22:00**, recherche d'abord | les Shorts se consomment comme des réponses à une recherche, pas seulement au fil |
+| Statut WhatsApp | **07:30–08:30** ou **20:00–21:00** | lecture avant/après la journée ; réservé aux séries internes (fondateur), pas aux concepts clients |
+
+**Rythme de départ :** 1 vidéo publiée = 2 plateformes (TikTok + IG), jamais les deux dans la même heure (métriques séparées). **Création :** en soirée, par AMK, mais **rien n'est publié sans validation de King** (règle en vigueur).
+
+**Décision liée (proposition) :** avancer **#4** de mar 23 → **ven 18, 18:00–20:00** (TikTok FR) + **sam 19, 12:00–14:00** (IG EN) : l'actif est approuvé, il dort, et il sortira la veille des premières relances — un profil actif rassure un prospect qui vérifie. Si King refuse, les créneaux mar 23 / mer 24 restent inchangés.
+
 ## D · When numbers get logged
 24 h / 72 h / 7 d after each post, per platform, in that Friday's `pipeline/Weekly-Content-Report-YYYY-MM-DD.md`. King's numbers only. IG and TikTok never averaged.
 

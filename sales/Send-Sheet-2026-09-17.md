@@ -98,7 +98,12 @@
 > Je vous l'envoie ? Un simple « oui » suffit — une minute sur votre téléphone, sans engagement.
 > — Akwo King / AMK – Développement Web & Solutions Digitales
 
-**3. Contrôles avant d'appuyer** : le contact est bien **+237 677 76 07 82** (appui long → infos du contact) · fenêtre 09–21 · l'image part **avant** le texte · rien d'autre dans le message.
+**3. Contrôles avant d'appuyer** : le contact est bien **+237 677 76 07 82** — capture de King 17/09 : il s'affiche **+237 77760782** (même ligne, format 8 chiffres) et **sans profil Business** (aucun nom, aucune catégorie) → **ligne personnelle probable : on envoie quand même** (usage courant), la ligne 1 nomme la clinique et Bonabéri · fenêtre 09–21 · l'image part **avant** le texte.
+
+**3b. Ligne de repli (RECOMMANDÉE sur une ligne sans nom)** — à ajouter comme 5ᵉ ligne du message :
+> Si ce n'est pas vous qui suivez la communication de la clinique, dites-moi simplement à qui m'adresser.
+
+Elle coûte une ligne et évite de brûler le prospect si le numéro est celui d'un membre du personnel.
 
 **4. Après « oui » (dans l'heure)** : lien **https://labethanie-concept.vercel.app** (déployé, vérifié : page complète servie) → puis 2 questions seulement : « Je mets vos vraies photos et votre ligne ? » / « Vous préférez être appelé comment ? » → ensuite collecte : logo, photos (accueil, salle d'accouchement, bloc), liste exacte des services, numéro WhatsApp définitif.
 
@@ -119,7 +124,7 @@
 
 **3. Contrôles avant d'appuyer** : contact **+237 696 71 06 99** (appui long → infos : doit afficher « J&E MEMORIAL ») · fenêtre 09–21 · image **avant** le texte · aucun prix dans le message (le 15 000 FCFA est celui de la plateforme).
 
-**4. Après « oui » (dans l'heure)** : lien de l'aperçu déployé → 2 questions : « Je confirme **vos jours et heures par praticien** ? » / « Vous préférez être appelé comment ? » → collecte : logo/couleurs, liste réelle des spécialités, noms + accord écrit, adresse + repère, ligne WhatsApp définitive, assureurs pris en charge.
+**4. Après « oui » (dans l'heure)** : lien **https://jempo-concept.vercel.app** (déployé, vérifié) → 2 questions : « Je confirme **vos jours et heures par praticien** ? » / « Vous préférez être appelé comment ? » → collecte : logo/couleurs, liste réelle des spécialités, noms + accord écrit, adresse + repère, ligne WhatsApp définitive, assureurs pris en charge.
 
 **5. Relances** : à poser le jour de l'envoi (M+2 · M+4 · M+7, max 3). Détail : `sales/Outreach-JEMPO-v1.md`.
 

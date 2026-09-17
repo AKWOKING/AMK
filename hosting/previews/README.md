@@ -6,7 +6,7 @@ This folder is a **drag-and-drop deploy bundle**. Every concept is a single self
 
 | Slug | LIVE link | Lead | Canonical source file |
 |---|---|---|---|
-| **separate Vercel project** | 🚀 **à déployer (17 Sep)** — projet suggéré `concept-jempo-v1` → `https://concept-jempo-v1.vercel.app` | **J&E Memorial Polyclinic (JEMPO)**, Deido Douala — à envoyer §2f | `demos/concept-jempo-v1.html` |
+| **separate Vercel project** | ✅ LIVE **https://jempo-concept.vercel.app** (déployé par King 17/09, vérifié : page complète, 6 liens WhatsApp réels, footer §20) | **J&E Memorial Polyclinic (JEMPO)**, Deido Douala | `demos/concept-jempo-v1.html` |
 | **separate Vercel project** | ✅ LIVE **https://labethanie-concept.vercel.app** (déployé par King 17/09, vérifié : page complète, 6 liens WhatsApp réels) | Clinique La Béthanie, Bonabéri Douala | `demos/concept-labethanie-v1.html` |
 | **separate Vercel project** | ✅ LIVE **https://concept-afriquelabo-v1.vercel.app** (déployé 17/09) | Afrique Labo SARL, Bessengue Douala | `demos/concept-afriquelabo-v1.html` |
 | **bundle `/opticien/`** | 🚀 **à déployer (17 Sep)** → `https://amk-cm.vercel.app/opticien/` | L'Opticien, Bali Douala — la variante servie contient **leur ligne réelle** (8 liens) | `hosting/previews/opticien/index.html` ← `demos/concept-opticien-lopticien.html` |

@@ -1,7 +1,7 @@
 # Prospect n°3 — J&E MEMORIAL POLYCLINIC « JEMPO » (Deido · Bessengue, Douala)
 
 *Ouvert le 17 Sep 2026 au soir, après le déploiement de La Béthanie.*
-**Statut : 3/3 — porte A CONFIRMÉE par King le 17/09 (capture) — build en cours.**
+**Statut : construit, audité (0 finding) et DÉPLOYÉ — https://jempo-concept.vercel.app (King, 17/09 ; vérifié depuis le sandbox : page complète, 6 liens `wa.me/237696710699`, FR|EN, noindex). Prêt à envoyer (Send-Sheet §2f, image d'abord).**
 
 ## 1 · Trois portes (§8b)
 | Porte | Verdict | Preuve |

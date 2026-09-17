@@ -23,7 +23,7 @@ Dossier : `clients/jempo/dossier.md`. Numéros à tester : **696 71 06 99** · *
 - [ ] Rien sur la note 4,8/5 ni sur les autres praticiens dans le message 1 (on garde du grain à moudre pour la réponse).
 
 ## 3 · Après « oui » (règle de la 1ʳᵉ heure)
-1. Lien du concept + « c'est un aperçu privé, pas encore votre site ».
+1. Lien du concept : **https://jempo-concept.vercel.app** (déployé, vérifié) + « c'est un aperçu privé, pas encore votre site ».
 2. Deux questions seulement : « Je mets **vos vrais horaires par praticien** et vos photos ? » · « Vous préférez être appelé comment ? »
 3. Collecte : logo/couleurs, liste des spécialités **et jours réels** par praticien, noms des praticiens **avec accord écrit**, adresse exacte + repère, numéro WhatsApp définitif, assurance/moyens de paiement.
 4. **Prix : 100 000 FCFA, 50-50, jamais de rabais** — et jamais dans les messages 1 et 2.
