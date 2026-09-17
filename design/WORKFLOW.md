@@ -3,7 +3,7 @@
 _The law: `AMK-DESIGN-SKILLS.md` (repo root). This file is the step-by-step pipeline that applies it, with the vendored skills mapped in. Every site/concept passes through stages 1-9; skipping a stage is allowed only when the brief explicitly removes it (note why in the delivery notes)._
 
 ## Stage map
-1. Research & verified facts → 2. Design Read → 3. Dials → 4. Family + token sheet → 5. IA & copy (EN|FR) → 6. Image shot-list & generation → 7. Build (single file) → 8. Motion pass → 9. Pre-flight + screenshot QA → handoff.
+1. Research & verified facts → 2. Design Read → 3. Dials → **3b. Direction exploration (3 directions)** → 4. Family + token sheet → 5. IA & copy (EN|FR) → 6. Image shot-list & generation → 7. Build (single file) → 8. Motion pass → 9. Pre-flight + screenshot QA → handoff.
 
 ---
 
@@ -22,6 +22,14 @@ _The law: `AMK-DESIGN-SKILLS.md` (repo root). This file is the step-by-step pipe
 
 ## 3. Dials
 Set VARIANCE / MOTION / DENSITY from the root-law §2 presets (school/clinic concept = 6/4/4; agency = 7/6/4; trust-first = 3/2/4-5). Record them in the builder header comment.
+
+## 3b. Direction exploration (mandatory — 30-45 min, root §19.3)
+- Write the brief line: audience + the one action + tone.
+- Produce **exactly three** distinct directions (blueprint/technical · editorial/broadsheet · warm/minimal, or the three best suited to the vertical), each with its own type pairing and accent. Never accept the first output; never accept a default palette.
+- State the avoid-list before generating: purple/violet gradients · neon glow · emoji icons · AI sparkles · overly-rounded "AI" UI · cheap stock 3D · content-hiding fade-ins · Instrument Serif (root §19.3).
+- Judge with the zoom-out hierarchy test (§19.2) and the vibe-code tell list (§3.8). Pick one; iterate **variants of the winner only** (font pairing, accent, headline tone).
+- Pick the outcome-led headline (root §11b / §19.3.5).
+- Only then proceed to stage 4 (token sheet). Record the chosen direction + why in the delivery notes and the ledger.
 
 ## 4. Family + token sheet
 - Pick a sheet from `design/STYLE-TOKENS.md` by vertical; rotate per the ledger; or pull structure from a bergside family (`design/vendor/bergside-skills/<family>/DESIGN.md` + `design/vendor/registry-digest.json`).

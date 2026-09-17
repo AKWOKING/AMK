@@ -45,6 +45,10 @@ WhatsApp-first · mobile-first · EN|FR · Cameroon (Kumba/Douala/South-West) ·
 | 8 | 17 Sep 2026 | The Secret To Alex Hormozi's Sales Success — SaaS Academy | Sales / Ops | Partly absorbed; team sections rejected | playbook v2.2 **Part J** |
 | 9 | 17 Sep 2026 | The Engineering Skill AI Won't Replace — JavaScript Mastery | Build / Engineering | Absorbed | `AMK-DESIGN-SKILLS.md` **§18** · `hosting/previews/README.md` (deploy gate) |
 | 10 | 17 Sep 2026 | Design Experts Review Vibe Coded Websites — Y Combinator (Raphael Schaad) | Design | Absorbed (anti-slop ban list) | `AMK-DESIGN-SKILLS.md` **§3.8** |
+| 11 | 17 Sep 2026 | The Easy Way to Design Top Tier Websites — Sajid | Design | Absorbed | `AMK-DESIGN-SKILLS.md` **§19.1/§19.2/§19.4** · `design/WORKFLOW.md` stage 3b |
+| 12 | 17 Sep 2026 | Give Me 7 Minutes & Your Web Design Skills Will Take Off — Self-Made Web Designer | Design / Conversion | Absorbed | §19.1/§19.2 · §6 (60-30-10) · §5 (line-height, centring) · §8 (ghost rule) |
+| 13 | 17 Sep 2026 | Still Vibe Coding AI Slop? (Genspark) — Build Great Products | Design / Build | Absorbed | §19.3 · §3.8 avoid-list · `design/WORKFLOW.md` 3b |
+| 14 | 17 Sep 2026 | How to Vibe Code a Designer-Level Website — The Next Wave (Munk Toad) | Design | Absorbed | §19.5 · §5 (pairing) · §6 (background derivation) · §17 cross-ref |
 
 ## 4 · Entries (full reports)
 
@@ -280,6 +284,99 @@ WhatsApp-first · mobile-first · EN|FR · Cameroon (Kumba/Douala/South-West) ·
 
 **Junk filter:** none — the claims are design fundamentals with concrete evidence from live sites. The YC-startup context (fundraising pages) doesn't change the rules for clinics/schools; if anything they matter more, because our clients compete on trust.
 
+---
+
+### [11] 17 Sep 2026 · Sajid — "The Easy Way to Design Top Tier Websites"
+**Link:** https://youtu.be/qyomWr_C_jA · **Field:** Design · **Length:** ~12 min
+
+**Core claims**
+1. **Creativity is a process, not a moment** — connect existing ideas; nobody designs from a blank slate.
+2. **Rule 1: good design is as little design as possible.** Don't start at the header / the section count / the button styles — start from the page's **key functionality** (for many sites: heading + input + button). Chances are that's all it needed.
+3. **Rule 2: similarity & proximity** (Gestalt) — group with shape/size/colour/spacing; the page must be understood as a whole within seconds (scannable).
+4. **Rule 3: elements need more spacing than you think** — start generous, then bring related elements closer.
+5. **Rule 4: use a design system** — spacing values divisible by 4, rem units (px/16), all as CSS variables; ~1 font + type scale; a dark and light for text/background plus two for personality; **no science in colour psychology**; avoid centred paragraphs; line-height inverse to font size; two button types (primary/secondary).
+6. **Rule 5: hierarchy is everything** — emphasise with size/weight/colour but start small; often you must **de-emphasise competing elements** instead; finish by zooming out to test whether the key element wins.
+7. Exceptions/additions: depth via colour + shadows (shadows can replace borders), accent colour to highlight, subtle gradients over flat fills, cards for bland content.
+8. The **process**: know the basics → collect inspiration (top sites, Figma community) → work the ideas over in your head → **step away** (new ideas arrive on return; if they don't, you're stressed or short on sleep) → don't fall in love with your design (test with friends, then users) → ship something.
+
+**AMK-applicable tactics — folded into §19.1, §19.2, §19.4 + WORKFLOW stage 3b**
+1. Build order for every concept: **key functionality first** (e.g. heading + WhatsApp CTA block), then outward. Kills the "design the header for an hour" trap.
+2. **Spacing-first method** with the 4-divisible scale (our token sheets already use 4/8) — start generous, reduce with intent.
+3. **Zoom-out test** in the pre-flight: at 25%, the primary element must win.
+4. The 5-step inspiration process, with "step away" now legitimate: when a direction stalls, park it and return — it's part of the process, not procrastination.
+
+**Contradictions:** none; it sharpens what §2 (dials), §6 (colour), §7 (layout) already require.
+
+**Junk filter:** the Mobbin sponsorship segment (the pattern library is useful but paid — we already have the vendored registries, keep those); the "read these books" list (already in our sources culture).
+
+---
+
+### [12] 17 Sep 2026 · Self-Made Web Designer — "Give Me 7 Minutes & Your Web Design Skills Will Take Off"
+**Link:** https://youtu.be/1NTKwpAVcHg · **Field:** Design / Conversion · **Length:** ~9 min
+
+**Core claims**
+1. **The F-pattern is bogus** — outdated designer folklore; forcing attention along a path makes people miss content. Use **visual hierarchy**: most important = biggest + boldest; turn the volume down on everything else; CTAs need high contrast (the main job is the click).
+2. **Stop using ghost buttons** — outline-only buttons are invisible and don't get clicked (with a caveat that our third-tier ghost usage is deliberate).
+3. **Colour:** brand-matched palette; accessibility first — check contrast (Coolors Contrast Checker); **60-30-10** (60% dominant neutrals, 30% brand, 10% accent for CTAs).
+4. **Typography roles:** H1 biggest/most prominent (what the page is about), H2s divide the page and guide attention, body text stays readable (never decorative).
+5. **Good design without conversion is useless to clients** — the cautionary story: a beautiful relaunch that dropped sales. Conversion = **clarity + scannability + motivation**, and **design for the audience — not yourself, not the client**.
+6. Keep learning: "AI won't take all jobs — it will take lazy ones."
+
+**AMK-applicable tactics — folded into §19.1, §19.2, §6, §5, §8**
+1. **Conversion-first law** written into §19.1 with the anti-story (pretty ≠ paid).
+2. **60-30-10** added to §6.1 — with our "one accent" rule this now quantifies how rare the accent must be.
+3. **Ghost rule refined** in §8: primary is always solid; ghost lives only as a third tier beside a filled primary, contrast-checked.
+4. **Line-height inverse to size** and **no centred paragraphs** added to §5.
+5. Persona walks (already in §13 pre-flight) now explicitly mean **audience, not client or self** — matters when a client asks for a look their patients won't use.
+
+**Contradictions — one, flagged and resolved:** §8 allowed a ghost/tertiary tier; this video says stop ghost buttons. **Resolution:** the primary action is never outline-only (adopted); tertiary ghost stays because our design system uses it sparingly next to filled primaries and our contrast rule already forbids invisible ones. King can veto the tertiary tier.
+
+**Junk filter:** the funnel/community pitch; nothing else.
+
+---
+
+### [13] 17 Sep 2026 · Build Great Products — "Still Vibe Coding AI Slop? Here's How to Create Actually Beautiful Websites with AI (Genspark)"
+**Link:** https://youtu.be/ced7C5d7p08 · **Field:** Design / Build · **Length:** ~22 min
+
+**Core claims**
+1. **AI slop = whatever the agent reaches for by default**: either purple/blue gradients with glow, or the "Claude" beige/brown/orange family — plus generic sans and over-rounded UI.
+2. **What the vibe-coded look signals to customers:** you didn't spend effort → you may not be trustworthy → the product is amateur → "why should I care?". And AI copy tends to be **wordy copy about the product** instead of messaging the customer actually cares about.
+3. **Design is a growth lever, not decoration** — his example product made $25k/month while looking bad; better design unlocks more of the same demand.
+4. **The fix is a process:** explore **3 design directions** *before* building, specifying audience, aesthetic references, an explicit **avoid-list**, colour direction, type direction, hero approach, data-viz prominence, and scope (hero + one supporting section, not the whole site). Then iterate variants of the winning direction (fonts, accents), rewrite headlines **outcome-led**, build the full page, and extract a **design-system file** to reuse everywhere.
+5. Outcome-led example: "For organic traffic you can actually defend" → **"Ship SEO work that measurably moves the needle."**
+
+**AMK-applicable tactics — folded into §19.3 + WORKFLOW stage 3b**
+1. **Three-direction rule** is now a pipeline gate: no concept build starts without three explored directions and a locked winner.
+2. The **avoid-list** is written into §19.3 for reuse in any generation prompt (fits our §3.8 bans).
+3. **Outcome-led headlines** reinforce the H1 contract (§11b) — for clinics/schools: "Des rendez-vous qui n'attendent pas le lundi" beats "Site web pour clinique".
+4. The **design-system file** maps to our `design/STYLE-TOKENS.md` + builder `:root` block — already our practice; now explicit that the *winner* seeds it.
+
+**Contradictions:** none.
+
+**Junk filter:** Genspark itself and the AI-video feature (tool marketing); the Product Studio course pitch; "download this HTML" workflows tied to their platform. Principles kept, tool dropped.
+
+---
+
+### [14] 17 Sep 2026 · The Next Wave — "How to Vibe Code a Designer-Level Website in 28 Minutes" (with Munk Toad)
+**Link:** https://youtu.be/UNqRlRz80Ss · **Field:** Design · **Length:** ~30 min
+
+**Core claims**
+1. Every AI site looks the same because prompts lack **design vocabulary**; "beautiful" is subjective and resolves to purple gradients. Precision works: **hero / feature / onboarding**, card / list / bento, framing (full-screen vs framed), styling (flat / outline / minimalist / glass / iOS-like), mode (light/dark), **accent colour**, background = accent hue with **reduced saturation + brightness**, border, shadow family, typography (sans/serif/mono/condensed/rounded/handwritten), **font pairing** (display + body), sizing, weight personality (light = refined, bold = forceful), tightened tracking on big titles, animation (fade/slide/scale/blur; sequenced word-by-word; ease-in-out).
+2. **The recipe metaphor:** a template is instant ramen (always decent); cooking with the right ingredients is better but needs the recipe. **One good ingredient** (a 3D/blob asset via Spline, an animated asset via Unicorn Studio, a strong reference) lifts a design 10x.
+3. **Reference-driven prompting:** attach an image, a Figma frame, or an HTML reference and say "create a website based on this" — the model inherits embedded taste rather than guessing.
+4. In the AI era **taste is the differentiator** — the more apps exist, the more sameness, so design is what makes one stand out. "Fewer McDonald's."
+
+**AMK-applicable tactics — folded into §19.5 + §5 pairing + §6 derivation**
+1. **Vocabulary-first briefs:** our design-read one-liner (WORKFLOW stage 2) now gets the §19.5 word list for precision — human or AI, the same words.
+2. **Font pairing** rule added to §5 (display + body; body carries the reading, never the personality).
+3. **Background derivation rule** added to §6 (tints = accent hue, saturation/brightness reduced) — matches our token sheets but now stated as the derivation principle.
+4. **The "one ingredient"** rule: allowed only if embeddable (single-file, no external requests) — external 3D/animated embeds parked for the AMK main site.
+5. **Instrument Serif flagged** by this creator as an AI-slop signal (we already banned it as a default in §3.2) — our ban stands.
+
+**Contradictions:** none material. His "dark mode often needs no accent" is a preference; our §6 (one accent, 60-30-10) still governs.
+
+**Junk filter:** Aura (his template product) and its prompt-builder as a tool; v0/Lovable/Bolt/Cursor workflow specifics; Tailwind-specific colour cross-matching; the book/QR-code promos.
+
 
 ## 5 · Rejected (named, with reason)
 
@@ -296,6 +393,12 @@ WhatsApp-first · mobile-first · EN|FR · Cameroon (Kumba/Douala/South-West) ·
 | "Pain cycle until they have nothing left" beyond discovery | [8] | Conflicts with King's no-chase rule (M+2/+4/+7 then stop). Our rule wins; pain work stays inside discovery. |
 | Fabricated straw-man foils ("someone earlier today asked the same") | [7] | Direct conflict with the accuracy law. Adopted only with **true** references — real client, real quote, real story. |
 | Agentic Engineering course pitch + skill/tool names (Sept 22 launch) | [9] | Course upsell; our stack is Python builders + single-file HTML, not agentic app scaffolding. Principles kept, tooling dropped. |
+| Genspark / Aura / v0 / Lovable / Bolt workflows, model picks, Tailwind cross-matching | [13][14] | Tool-specific; AMK builds single-file HTML with committed Python builders. Principles (3 directions, avoid-list, vocabulary, design-system file) kept. |
+| External Spline 3D / Unicorn Studio embeds | [14] | Break the single-file, no-external-request rule; parked for the AMK main site only. |
+| Mobbin (paid pattern library) | [11] | Principle kept (reference libraries); we already have vendored registries + Figma community. No new paid tool. |
+| Launch-video auto-generation, course/community promos | [13] | Upsells; our launch content is made deliberately (see `sales/social/`). |
+| "Beautiful shadow" / skeuomorphic revival | [14] | Not adopted as default; our shadow rules (§6.1, §8) stay. Noted as a vocabulary item only. |
+| Ghost-button absolute ban | [12] | Softened to our precise rule: never the primary action; tertiary ghost allowed beside a filled primary, contrast-checked (§8). Flagged for King's veto. |
 
 ## 6 · Weekly ritual (Mondays, before the outreach pack goes out)
 

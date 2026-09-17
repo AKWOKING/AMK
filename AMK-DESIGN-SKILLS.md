@@ -160,6 +160,9 @@ When the client provides an explicit visual reference (screenshot/Dribbble), the
 - Hierarchy: use Medium(500)/SemiBold(600) between Regular and Bold for subtle steps.
 - Negative tracking on large headers (-0.02em), positive on small-caps labels.
 - Weight 800/900 for hero display; never extra-bold shouting on everything.
+- **Font pairing:** one display face for titles, one body face; the body never carries the personality, it carries the reading. The title face may run tighter (negative tracking at large sizes); body never tighter than -0.01em.
+- **Line-height is inverse to size:** small text (captions, labels, meta) needs MORE line-height (1.5-1.7); display can run tight (0.95-1.05) with descender reserve (§3.2). Never one line-height for the whole page.
+- **Never centre paragraphs or small text.** Centring is for 1-2-line hero/section statements; body, lists and FAQ answers stay left-aligned.
 
 ---
 
@@ -169,6 +172,10 @@ When the client provides an explicit visual reference (screenshot/Dribbble), the
 - Max 1 accent. Neutral base (warm or cool, locked). 1-2 secondary tints for section backgrounds.
 - Text on accent: WCAG AA 4.5:1 (3:1 for large text). Audit every CTA.
 - Shadows tinted to background hue. Consistent light direction across all shadows.
+- **60-30-10 balance:** ~60% neutral surfaces, ~30% brand colour, ~10% accent. The accent is the rarest colour on the page; CTAs and key numbers own the 10%. If the accent is everywhere, nothing is emphasised.
+- **Tinted neutrals are derived, not picked:** background tints = the brand/accent hue with saturation and brightness reduced (a contextual tint, never accidental grey).
+- **Contrast is checked, not felt:** run every brand/background pair through a contrast checker (Coolors Contrast Checker or equivalent) before shipping: 4.5:1 body, 3:1 large (the §13 promise, verified).
+- Skip colour-psychology folklore: legibility first, one personality accent second.
 
 ### 6.2 The premium-consumer default BANNED (2nd most-recurring AI tell)
 For premium/warm briefs the LLM default is: **cream/beige bg (#f5f1ea family) + brass/clay/oxblood accent (#b08947 family) + espresso text (#1a1714 family).** BANNED as a default reach.
@@ -188,6 +195,8 @@ Pale Red #FDEBEC/#9F2F2D · Pale Blue #E1F3FE/#1F6C9F · Pale Green #EDF3EC/#346
 ---
 
 ## §7 LAYOUT DISCIPLINE (hard rules)
+
+**Foundation method: build order, spacing-first, hierarchy & zoom-out test → §19.**
 
 **Hero:**
 - Must fit initial viewport. Headline ≤ 2 lines, subtext ≤ 20 words AND ≤ 4 lines, CTAs visible without scroll.
@@ -215,6 +224,7 @@ Pale Red #FDEBEC/#9F2F2D · Pale Blue #E1F3FE/#1F6C9F · Pale Green #EDF3EC/#346
 ### Buttons
 - Pill or max 12px radius (per shape lock). Generous padding (15-16px / 26px).
 - **Contrast check mandatory** (no white-on-white, no invisible ghost over photos — use scrim/stroke).
+- **Primary is always solid with high contrast.** An outline/ghost treatment is never the primary action on a page: outlined buttons read as invisible and get skipped [12]. Our ghost/tertiary tier stays only as a third choice, when a filled primary exists in the same viewport and the outline passes contrast on its background.
 - **No wrap:** label fits one line at desktop; ≤ 3 words for primary CTAs (ideally 1-2); widen the button before constraining it.
 - Hover: bg shift + translateY(-2px) + tinted shadow; arrow translates 4px.
 - **Active/press:** `scale(0.98)` or `translateY(1px)` — simulate physical push.
@@ -493,6 +503,8 @@ Research finding: output truncation is a **deliberate RLHF brevity bias, not a d
 
 ## §17 PATTERN VOCABULARY (names to know & reach for)
 
+**Naming matters (§19.5):** use these exact words when briefing a human or an AI. Precision beats "make it beautiful".
+
 **Heroes:** asymmetric split · editorial manifesto · media-mask · kinetic-type · curtain-reveal · scroll-pinned · image-as-canvas · mini-minimalist.
 **Nav:** floating glass pill · magnification dock · mega-menu reveal · contextual radial.
 **Layout:** bento (exact cell count) · masonry · split-screen scroll · sticky-stack · chroma grid.
@@ -540,6 +552,46 @@ Research finding: output truncation is a **deliberate RLHF brevity bias, not a d
 4. Fix the **cause**, not the symptom; then hunt the same mistake elsewhere.
 5. **Add a regression check** that fails without the fix (grep/assert in the QA script) so it can never quietly come back.
 6. If the "bug" is a bad decision, say so and redesign — don't patch over it.
+
+---
+
+## §19 DESIGN FOUNDATIONS & DIRECTION EXPLORATION (added 17 Sep 2026, design batch [11][12][13][14] — `research/YouTube-Lessons.md`)
+
+*The four design videos agree on one thing: execution is now cheap, so the differentiator is taste, the decisions. This section is the base layer that produces those decisions.*
+
+### 19.1 Less design, conversion first
+- **Design for the visitor, not for yourself, not for the client.** [12] A clean, modern redesign once dropped a client's sales because it was pretty instead of converting. Beauty in service of conversion is the goal.
+- **Start from the key functionality, not the chrome.** [11] Don't begin at the header, the nav, or "how many sections do I need". Ask: what is the one thing a visitor must do here? Design that unit first (for many pages: heading + form/CTA + button). If that is all the page needed, ship that.
+- **The three conversion jobs** [12]: **clarity** (who we are, what to do next, why care), **scannability** (they scan, they don't read), **motivation** (speak to what makes them say yes).
+- **Foundation before furniture** [11]: one spacing scale (values divisible by 4, rem = px/16, CSS variables), 1-2 font choices, two button types (primary/secondary), one accent. The system exists so no value gets re-decided.
+- **Spacing-first method** [11]: start generous (e.g. a 40px rhythm), then bring related elements closer, picking from the scale, never nudging pixels by feel. Elements need more space than feels right when you're zoomed into one component; users scan the whole UI first.
+
+### 19.2 Visual hierarchy — the method
+- The most important element is the **biggest and boldest**; everything else has its volume turned down [12]. A CTA must be the highest-contrast object in its viewport.
+- **Emphasise by de-emphasising** [11]: when the key element still doesn't win, reduce the contrast/weight/size of its competitors instead of inflating the hero further. Start with the smallest change that works; the most elegant pages use one strong contrast, not five loud ones.
+- **Zoom-out test** after each section: squint, or zoom to 25%. If the eye doesn't land on the primary element first, fix the hierarchy before adding anything.
+- **F-pattern / Z-pattern dogma: retired.** [12] People engage in many patterns; hierarchy, not a mandated reading path, does the work.
+
+### 19.3 Direction exploration (mandatory before any build, 30-45 min)
+*From [13], reinforced by [14]: explore directions before building; the winner becomes the token sheet.*
+1. **Write the brief line**: audience + the one action + tone.
+2. **Produce exactly 3 directions** (no more), each with its own type pairing and accent: e.g. blueprint/technical · editorial/broadsheet · warm/minimal. Never accept the first output; never accept a default palette.
+3. **State the avoid-list** (paste into any tool): purple/violet gradients · neon glow · emoji iconography · AI sparkles · overly-rounded "AI" UI · cheap stock 3D renders · content-hiding fade-ins · Instrument Serif (now an AI-slop tell [13], already banned in §3.2).
+4. **Judge with §19.2 + the §3.8 tell list**; pick one; then iterate **variants of the winner only** (font pairing, accent, headline tone).
+5. **Headlines are outcome-led, not product-led** [13]: "For organic traffic you can actually defend" becomes "Ship SEO work that measurably moves the needle". Same law as the H1 contract (§11b).
+6. **Lock the token sheet** (`design/STYLE-TOKENS.md`) from the winner; that sheet is our version of the "design system file" [13].
+7. **Then** build the full page from it. Pipeline hook: `design/WORKFLOW.md` stage 3b.
+
+### 19.4 The inspiration process (creativity is a process, not a moment) [11]
+- **Know the basics, collect references, work them over in your head, step away, come back, test with others, ship something.**
+- Reference sources: real sites in or adjacent to the vertical, Figma community, pattern libraries, and our vendored registries (`design/vendor/*`). Study *why* a layout works (what it does, for whom) before borrowing anything.
+- **Don't fall in love with your own work** [11]: show it to someone who will say it is bad, test it on a phone, adjust. Some outputs only teach you what the next one should be. A finished average page teaches more than a perfect plan.
+
+### 19.5 Design vocabulary beats "beautiful" [14]
+- "Make it beautiful" is subjective, and the model resolves it to purple gradients. Name the decisions instead: **layout** (hero / feature / onboarding · card / list / bento · full-screen vs framed), **style** (flat, outline, minimalist, glass, soft-depth), **mode** (light/dark), **accent** (one hue, and where it is allowed), **type** (sans/serif/mono · light vs bold personality · pairing), **motion** (fade/slide/scale/blur · sequenced · ease-in-out).
+- **Reference-driven work**: point at a real reference (the client's own storefront/logo, a real site, a Figma frame, our vendored registries) and build *from* it; the taste is inherited instead of guessed.
+- **The "one ingredient" rule** [14]: a single well-chosen element (a real photo treatment, one geometric mark, a product mock) lifts a page more than ten generic effects. *Our constraint:* single-file, no external requests; any ingredient must be embeddable (CSS/SVG/canvas). External 3D/blob embeds are parked for the AMK main site only.
+- **Taste is the moat** [14]: as every site converges on the same blocks, the decisions are the differentiator. Build for the result, not the template.
 
 ---
 
