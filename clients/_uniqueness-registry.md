@@ -6,6 +6,7 @@
 
 | Date | Client / file | Niche | Layout archetype | Palette family | Type system | Tone / angle |
 |---|---|---|---|---|---|---|
+| 17 Sep 2026 | **Afrique Labo SARL** — `demos/concept-afriquelabo-v1.html` | **Medical laboratory**, Bessengue (Douala) | **Test-console / report**: searchable price catalogue as the centrepiece, numbered mono sections | **Poster cyan `#12B4D6` + navy `#0E2347` + white**, red `#E11D2E` as rare signal | **Space Grotesk** + Inter + **JetBrains Mono** labels | Practical, desk-level answers (à jeun, quoi apporter, résultats) |
 | 16 Sep 2026 | Cabinet Dentaire YAKS — `demos/concept-yaks-v1.html` | Dental, Logbessou (Douala) | Hero + **specialities wheel** (circular grid), proof stats band, services bento | Green `#57A52A` + teal `#1FB7C8`/`#0E8A99` on light | **Nunito** display + Inter body | Family/care ("la santé de vos dents, la beauté de votre sourire") |
 | 16 Sep 2026 | Cabinet Dentaire The Skye — `demos/concept-skye-v1.html` | Dental, Bonamoussadi (Douala) | Editorial hero + services list, FR-first | **Logo blues** (their brand), light neutrals | Outfit + Inter | Aspirational ("Souriez à l'infini") |
 | 14 Sep 2026 | OraCare Dental Clinic — `demos/concept-oracare-v3.html` | Dental, Molyko (Buea) | Bento-heavy, price cards, photo-forward hero | **Odentrics family** cream/sand `#F7F1E8` + navy `#16323A` + gold `#C9A24B` + sage `#7FA88F` | Outfit + Inter | Price clarity + 24/7 booking, EN-first demo |

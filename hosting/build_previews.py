@@ -22,6 +22,7 @@ SLUGS = {
     "sasse":   ("demos/sjc-sasse-v2.html",       "St. Joseph's College, Sasse — concept"),
     "comobil": ("demos/concept-comobil-v1.html", "COMOBIL Les Lauréats, Douala — concept"),
     "sah":     ("demos/concept-sahiscol-v1.html","Saint Ann's High School, Limbe — concept"),
+    "afriquelabo": ("demos/concept-afriquelabo-v1.html", "Afrique Labo SARL, Bessengue Douala — concept"),
 }
 
 NOINDEX = '<meta name="robots" content="noindex,nofollow">'
