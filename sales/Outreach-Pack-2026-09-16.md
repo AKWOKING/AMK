@@ -78,6 +78,8 @@ Concept **déjà construit sur mesure** (bleus du logo, « Souriez à l'infini �
 - **Silence :** FU1 ven 18 (M+2) · FU2 dim 20 (M+4) · FU3 mer 23 (M+7, fermeture gracieuse), puis stop.
 
 ### 2c · AFRIQUE LABO SARL — Bessengue (feu rouge, au-dessus de Wafa Cash, face Total) · ⛔ GATE AVANT ENVOI (comme JOSS)
+
+> **✅ 17/09 — FLUX NOMMÉ PRÊT (remplace les branches A/B ci-dessous) :** aperçu construit sur mesure (catalogue + tarifs FCFA + WhatsApp par analyse, direction « feuille de résultat ») → `demos/concept-afriquelabo-v1.html`, prévisualisation `hosting/previews/afriquelabo/`, mockup `demos/shots/mockup-afriquelabo-wa.jpg` (image d'abord). **Message 1, réponses et plan de relance : `sales/Outreach-AFRIQUE-LABO-v1.md`.** Analyse et décisions : `clients/afrique-labo/{inspiration,build-notes}.md`. Les textes A/B ci-dessous restent en archive.
 **+237 690 54 70 93** (secours 699 73 36 25) · **ils ont DÉJÀ un site fait par une agence : `afriqlabo.com` (+ `afriqlabo.net`, agence Sajor Company SARL ; biologiste propriétaire Dr TAKALA Cathérine).** Dossier `sales/research/AFRIQUE-LABO-deep-dive-2026-09-16.md`. Le message « aucun site » ci-dessous est **FAUX — ne pas l'envoyer tant que le portail téléphone n'est pas fait.**
 
 **PORTAIL (2 min, sur téléphone) — ouvrir `afriqlabo.com` puis `afriqlabo.net` :**
