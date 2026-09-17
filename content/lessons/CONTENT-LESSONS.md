@@ -72,6 +72,36 @@ MboaCare (abstract principle) · our own shipped work · **our concept/preview l
 - Direction exploration [13]: three directions before visual work; explicit avoid-list.
 - Taste is the moat [14]: the decisions differentiate when everyone's feed looks the same.
 
+## 10 · Video-marketing lessons (batch #4, 17 Sep 2026 — `research/YouTube-Lessons.md` [15]–[17])
+
+### 10.1 · From Nate Woodbury ("How To Make A Marketing Video For My Business")
+- **Two asset classes, don't mix them:** the *educational short-form series* (reach, mirrored to Shorts) vs the **flagship promo** (60–90 s, unlisted on YouTube, embedded on the site + used in proposals). A promo is not expected to go viral; it converts people who already arrived. → production candidate **V-13**.
+- **Outcome-over-features gate:** in every script, features may be a minority of beats — the outcome must carry the majority ("features don't sell; the outcome does").
+- **Clarity gate before render (4 questions):** what we do · who we help · which outcome · the emotional journey start→middle→end.
+- **Testimonials = soundbites**, 5–10 s, placed under the claim they prove — only with consent (ties to [6]).
+- **Polish is our pipeline:** §19 three directions + §13 pre-flight + QA — no external production.
+
+### 10.2 · From Brooklyn Social ("How To Make High Converting Videos For Your Business")
+- **3-second hook gate (written):** line 1 is a question or a specific aimed at **one person** (a clinic owner, a school proprietor) — never a self-intro, never "today we're going to talk about".
+- **"Why should someone care?"** — required per beat before a script is approved.
+- **Zero-fluff pass:** read aloud, delete filler (reinforces copy law [5]).
+- **Every video carries one clear CTA** — independent confirmation of the PREVIEW closing-beat mandate.
+- **Our "lighting/audio" equivalents:** contrast/legibility checked on a phone-sized canvas; music ducked under narration.
+- ❌ Rejected: get-the-team-on-camera (no talking heads — BTS becomes build footage: screens, hands, craft), the 78 % Sprout Social stat (unverifiable here), the algorithm/lighting claim (unverified).
+
+### 10.3 · From Digital Canva Mastery (Canva explainer tutorial)
+- **Adopted (micro):** element **pop-in** for labels/numbers, and **match-and-move** when the same element grows/moves between beats — implemented in our own PIL/FFmpeg renderer. **Constraint: never animate the demonstrated UI** (no moving buttons — §3.8 anti-slop); titles/labels only.
+- **Three-component pre-flight** formalised in the script header: script → visuals → voice.
+- ❌ Rejected: the Canva/ChatGPT/ElevenLabs template stack — it cannot show **real websites** (our hard requirement) and produces the generic look King banned. Our pipeline already does script→visuals→voice with the real pages.
+
+## 11 · King's decisions (17 Sep 2026) — binding
+1. **No real clinic/school name in any content without the owner's written permission.** Default: **anonymise** (blur/rename logos, addresses, unique details); the live *named* concepts (YAKS, Skye, OraCare, MITOC) are unlisted and shared only with their prospect — **no public content may show or link them**.
+2. **Voice:** King agrees we **re-audition a voice before video #5** (the previous `voice-00` registration does not carry over). Existing MP3s are the reference.
+3. **#1 master** (`Instagram_vs_Website_v2.mp4`) is **not re-uploaded**; its TikTok status is recorded as **not posted**.
+4. **Founding videos (repo, 15 Sep):** King confirms **only one of the four was posted — `clinic-founding-en.mp4` on TikTok**; the other three are unposted assets → integrated in the calendar (§A2).
+5. **Strategy + calendar + shortlist: APPROVED.** **Video #4 is approved** — the remaining action is **posting** (King), first slot Tue 23 Sep TikTok / Wed 24 Sep IG, or earlier if King posts it with the outreach push.
+
 ## 9 · Changelog
+- **v0.3 — 17 Sep 2026:** batch-4 video-marketing lessons absorbed (§10.1–10.3) + King's binding decisions (§11) + script gates formalised in `content/scripts/README.md`.
 - **v0.2 — 17 Sep 2026:** handover absorbed — fingerprint hexes, hard rules, production discipline, full technical failure log, evidence table, qualified earlier advice.
 - **v0.1 — 17 Sep 2026:** created from King's brief + repo history + lesson batches.

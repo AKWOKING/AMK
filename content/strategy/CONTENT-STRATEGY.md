@@ -1,6 +1,6 @@
 # AMK — CONTENT STRATEGY
 
-**Version v0.2** (draft for King's approval) · 17 Sep 2026 · Owner: AMK (CCO)
+**Version v0.3** · **APPROVED by King, 17 Sep 2026** · Owner: AMK (CCO)
 **Revision rule:** changes only with a reason, dated. Not every week, not never.
 
 ---
@@ -36,7 +36,7 @@
 - **No retrofitting the PREVIEW CTA into #1–#3** unless King asks; #1's file isn't even in the repo.
 - **No talking-head/avatar-recital videos**; no unlabelled fiction; no invented proof.
 - **No claims of posting, profile edits, or tracking** unless King confirms them.
-- **No naming a real client or prospect** without consent — anonymise cleanly (no logos, no unique addresses).
+- **No naming a real clinic or school without the owner's written permission** (King, 17 Sep — binding). Default = **anonymise**: blur or rename logos, addresses, phone numbers and other unique identifiers. The live *named* concepts (`concept-yaks-v1`, `concept-skye`, `oracare-concept`, `mitoc-concept`) are unlisted and shared only with their prospect — **no content may show or link them publicly**.
 - **No trend-chasing dance/audio formats** — educational tone is the fingerprint; King adds music in-app.
 - **No unverified algorithm advice** (fixed time windows, cadence minimums, hashtag counts) presented as fact.
 - **No markets outside clinics/schools** this quarter.
@@ -56,5 +56,6 @@
 - Log every content-sourced conversation in `sales/Pipeline-Status.md` with `src=` attribution.
 
 ## 7 · Changelog
+- **v0.3 — 17 Sep 2026:** **approved by King**; binding rights rule (no real names without written permission; anonymise by default; named concepts never public); lesson batch #4 absorbed into the tests (T1 hook/CTA discipline from [15][16]); V-13 flagship promo added to the pipeline (unlisted + site embed, per [15]).
 - **v0.2 — 17 Sep 2026:** handover absorbed — real baseline numbers, tests re-anchored to evidence (#2 IG / #3 TikTok), added T4 school test, extended not-doing list (algorithm claims, retrofit, anonymity).
 - **v0.1 — 17 Sep 2026:** first draft from King's brief.

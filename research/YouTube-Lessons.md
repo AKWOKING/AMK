@@ -23,6 +23,7 @@ This is the catch-all register for every YouTube link King drops in chat. Links 
 | Build (HTML/CSS/JS, mobile-first, EN\|FR, base64, perf, deploy) | `AMK-DESIGN-SKILLS.md` §build/deploy + `hosting/DEPLOY.md` | dated entry |
 | Agency ops (delivery, onboarding, retention, upsell, referrals) | relevant ops/delivery doc (`sales/AMK-Playbook-Addendum-*`) | dated entry |
 | Niche intel (schools, clinics, Cameroon/Africa, WhatsApp-first buyers) | `sales/Deep-Dive-Research.md` or the playbook addendum in scope | dated entry |
+| Content / social (video marketing, platform craft, posting, hooks, CTAs) | `content/lessons/CONTENT-LESSONS.md` + `content/strategy/CONTENT-STRATEGY.md` / `POSTING-CALENDAR.md` | version bump (v0.x) + changelog line |
 | Anything that fits nowhere | **this file**, as a dated entry | — |
 
 Cross-link with the weekly techniques register `sales/research/2026-W37-techniques.md` when a video and a technique overlap.
@@ -49,6 +50,9 @@ WhatsApp-first · mobile-first · EN|FR · Cameroon (Kumba/Douala/South-West) ·
 | 12 | 17 Sep 2026 | Give Me 7 Minutes & Your Web Design Skills Will Take Off — Self-Made Web Designer | Design / Conversion | Absorbed | §19.1/§19.2 · §6 (60-30-10) · §5 (line-height, centring) · §8 (ghost rule) |
 | 13 | 17 Sep 2026 | Still Vibe Coding AI Slop? (Genspark) — Build Great Products | Design / Build | Absorbed | §19.3 · §3.8 avoid-list · `design/WORKFLOW.md` 3b |
 | 14 | 17 Sep 2026 | How to Vibe Code a Designer-Level Website — The Next Wave (Munk Toad) | Design | Absorbed | §19.5 · §5 (pairing) · §6 (background derivation) · §17 cross-ref |
+| 15 | 17 Sep 2026 | How To Make A Marketing Video For My Business — Nate Woodbury | Content / Marketing (video) | Absorbed (promo asset + script gates) | `content/lessons/CONTENT-LESSONS.md` **§10.1** · `content/scripts/README.md` (gates) · `content/pipeline/CONTENT-SHORTLIST.md` **V-13** |
+| 16 | 17 Sep 2026 | How To Make High Converting Videos For Your Business — Brooklyn Social | Content / Marketing (video) | Absorbed (hook/CTA discipline); on-camera-team rejected | `content/lessons/CONTENT-LESSONS.md` **§10.2** |
+| 17 | 17 Sep 2026 | How to Create Free 2D Animated Explainer Videos … using Canva — Digital Canva Mastery | Content / Production | Mostly rejected; 2 micro-techniques adopted | `content/lessons/CONTENT-LESSONS.md` **§10.3** |
 
 ## 4 · Entries (full reports)
 
@@ -378,6 +382,74 @@ WhatsApp-first · mobile-first · EN|FR · Cameroon (Kumba/Douala/South-West) ·
 **Junk filter:** Aura (his template product) and its prompt-builder as a tool; v0/Lovable/Bolt/Cursor workflow specifics; Tailwind-specific colour cross-matching; the book/QR-code promos.
 
 
+### [15] 17 Sep 2026 · Nate Woodbury — "How To Make A Marketing Video For My Business"
+
+**Link:** https://youtu.be/y5iegw6wlAg · **Field:** Content / Marketing (video) · **Length:** ~12 min
+
+**Core claims**
+1. A promo/marketing video must be **short** (audiences know they are being sold to and guard their attention) and **easy to follow** — simple storyline, show don't tell, get feedback before shipping.
+2. **Outcomes beat features**: "the features aren't going to sell it — what's the outcome/benefit? How is their life going to change?" Features get mentioned quickly; the majority of the video is the outcome.
+3. Use **customers and their results**, and **testimonials as soundbites** — find the 5–10 s moments, never play the whole interview.
+4. **Script, refine, polish** promo videos (do not just hit record); the flagship asset deserves disproportionate effort (his own example: months on one 5-min video).
+5. A **promo video belongs on your website / landing page** (hosted unlisted), not fed to YouTube hoping for virality. The viral path is *other*, search-driven "leaf" videos that build the relationship first — his **3-video formula**: relationship video #1 → #2 → then people choose to watch the promo.
+6. **Paying to push a promo = paying to annoy** — people skip ads; you buy low-quality leads that cost more to filter than they return.
+
+**AMK-applicable tactics**
+- **T-15a — Build the flagship promo asset.** One 60–90 s bilingual AMK promo/explainer (what we do, who we serve, outcome, PREVIEW CTA), hosted unlisted, embedded on `amk-cm.vercel.app` and reused in proposals. It is a *different asset class* from the short-form series — see conflicts. → candidate **V-13**.
+- **T-15b — Outcome-over-features gate** in every script header: features may be a minority of the beats; the outcome must carry the majority. (#2–#4 already pass; now it is written.)
+- **T-15c — Clarity gate before render:** (1) does it say what we do, (2) who we help, (3) which outcome, (4) what emotional journey it takes the viewer start→middle→end?
+- **T-15d — Testimonials as soundbites** once we have consent: 5–10 s verbatim under the claim it proves (ties to [6]'s one-quote rule).
+- **T-15e — Polish = our pipeline**, not hiring out: §19 three-direction work + §13 pre-flight + QA, aimed hardest at the flagship asset.
+
+**Contradictions**
+- "Promo videos don't belong on YouTube" **vs** our TikTok→Shorts mirroring strategy. **Not a true conflict:** his split is *leaf/search videos* (YouTube-native, relationship) vs *promo* (landing-page asset). Resolution: mirroring continues for the educational series; the future flagship promo gets unlisted hosting + site embed. No King ruling required.
+
+**Junk filter:** the videographer-hiring advice and the 4-months-per-5-min scale (AMK is the producer); his course/upsell mentions.
+
+---
+
+### [16] 17 Sep 2026 · Brooklyn Social — "How To Make High Converting Videos For Your Business"
+
+**Link:** https://youtu.be/_znL3ofhkFE · **Field:** Content / Marketing (video) · **Length:** ~5 min
+
+**Core claims**
+1. **First 3 seconds decide**: a question or a bold statement; never "hey guys, today we're going to talk about…"; speak to **one person**, not an audience.
+2. **Understand the audience** — their pains, and always answer "why should someone care about this?"
+3. **Get right to the point** — no filler, no rambling; busy people swipe.
+4. **Always a clear CTA** — direct the viewer somewhere.
+5. **Lighting and audio are not optional** (window light, tripod, clip-on mic); claims bad lighting stops the algorithm pushing (unverified — see rejected).
+
+**AMK-applicable tactics**
+- **T-16a — 3-second hook gate (written):** line 1 of every script = a question or a specific, aimed at **one** person (a clinic owner, a school proprietor) — never a self-introduction. Our #2–#4 hooks already pass; the gate now exists in the script template.
+- **T-16b — "Why should someone care?" line** required per beat before a script is approved.
+- **T-16c — Zero-fluff pass:** read aloud, delete filler — reinforces copy law [5].
+- **T-16d — Clear CTA in every video** — this independently confirms the PREVIEW closing-beat mandate.
+- **T-16e — Our version of "good lighting/audio":** frame contrast/readability checked on a phone-sized canvas + music ducked under narration (handover §6). We never shoot live video; the transfer is legibility + clean mix.
+
+**Contradictions**
+- "Get your team and your face on camera / share behind the scenes" **vs** our **no talking-head** fingerprint. **Adaptation, not adoption:** behind-the-scenes becomes *build footage* — screens, hands, craft, scroll/tap/load (our V-10 format). The host + real websites remain the fingerprint.
+
+**Junk filter:** the agency pitch, the free checklist, "book a call"; the **78 % (Sprout Social)** stat — US, unverifiable in our market, and we never quote unverifiable stats (accuracy law); the algorithm-punishes-bad-lighting claim.
+
+---
+
+### [17] 17 Sep 2026 · Digital Canva Mastery — "How to Create Free 2D Animated Explainer Videos for Your Business using Canva"
+
+**Link:** https://youtu.be/QsQhaatwSnU · **Field:** Content / Production · **Length:** ~4 min
+
+**Core claims / method**
+- Three components: **script → animation → voice-over**. Their stack: ChatGPT (script) → Canva (animated elements, "filter: animated only" to save time) → ElevenLabs (voice) → "pop" entrance animation + "match & move" transition between beats → manual element motion → brand name/CTA → export MP4.
+
+**AMK-applicable tactics (only two, both micro)**
+- **T-17a — Element entrance/transition vocabulary** for our own PIL/FFmpeg renderer: **pop-in** for labels/numbers, **match-and-move** for the same element growing/moving between beats (keeps visual continuity). **Constraint:** never animate the demonstrated UI itself (anti-slop §3.8 — no moving buttons while being explained). Titles/labels only.
+- **T-17b — Three-component pre-flight** (script → visuals → voice) formalised in the script header, matching our existing pipeline.
+
+**Verdict:** the tool stack is **rejected** — template animation cannot show **real websites** (our hard requirement), it produces exactly the generic look King banned, and our house pipeline already does script→visuals→voice with the real pages. Only the two micro-techniques above are absorbed.
+
+**Junk filter:** the ChatGPT/Canva/ElevenLabs workflow as a method for AMK; the agency-ad framing; "free" tooling claims.
+
+---
+
 ## 5 · Rejected (named, with reason)
 
 | Item | Source | Why rejected |
@@ -399,6 +471,11 @@ WhatsApp-first · mobile-first · EN|FR · Cameroon (Kumba/Douala/South-West) ·
 | Launch-video auto-generation, course/community promos | [13] | Upsells; our launch content is made deliberately (see `sales/social/`). |
 | "Beautiful shadow" / skeuomorphic revival | [14] | Not adopted as default; our shadow rules (§6.1, §8) stay. Noted as a vocabulary item only. |
 | Ghost-button absolute ban | [12] | Softened to our precise rule: never the primary action; tertiary ghost allowed beside a filled primary, contrast-checked (§8). Flagged for King's veto. |
+| Canva + ChatGPT + ElevenLabs template-explainers | [17] | Cannot show real websites (our hard requirement); generic template look is the banned "generic art"; house pipeline (PIL/FFmpeg + real captures + selected voice) is better for the niche. Only pop-in / match-and-move kept. |
+| "78 % prefer learning about a product or service through video" (Sprout Social, US) | [16] | Unverifiable for Cameroon; we never quote stats we cannot verify (accuracy law). |
+| "The algorithm won't push videos with bad lighting" | [16] | Unverified algorithm claim; platform claims only from current platform guidance or our own account insights. |
+| Hiring an external promo team / months per 5-minute video | [15] | Wrong scale — AMK produces in-house; our "polish" is §19 directions + §13 pre-flight + QA. |
+| "Get your team / faces on camera" as a rule | [16] | Conflicts with the no-talking-head fingerprint; kept only as build-footage BTS (screens, hands, craft), never faces-by-rule. |
 
 ## 6 · Weekly ritual (Mondays, before the outreach pack goes out)
 

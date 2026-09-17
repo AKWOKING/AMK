@@ -1,6 +1,6 @@
 # AMK — CONTENT PIPELINE
 
-**Updated:** 17 Sep 2026 (v0.2 — previous-chat pack received and ingested)
+**Updated:** 17 Sep 2026 (v0.3 — King's decisions recorded; pack ingested)
 **Stages:** `scripted → rendered → delivered → approved → posted → measured`
 **Rule:** update after every movement. Nothing is marked posted/measured without King's explicit confirmation. King's reported figures are recorded verbatim with their caveats.
 
@@ -10,11 +10,11 @@
 
 | Video | Concept | Master file (location) | Duration (verified) | Stage | Posted? | Measured (King-reported) |
 |---|---|---|---|---|---|---|
-| **#1** | Instagram is not a substitute for a website | `Instagram_vs_Website_v2.mp4` — **⚠ NOT in repo, re-upload needed** | 40.08 s (handover) | delivered → **accepted by King for posting** | **yes** (IG) | IG **13** · TikTok **not supplied** (post status unconfirmed) |
+| **#1** | Instagram is not a substitute for a website | `Instagram_vs_Website_v2.mp4` — **⚠ NOT in repo; King (17 Sep) declined the re-upload** | 40.08 s (handover) | delivered → posted | **IG yes · TikTok: NOT posted** (King, 17 Sep) | IG **13** · TikTok **—** |
 | **#2** | 5 things your website should tell a customer in 10 seconds | `content/videos/v02-five-website-answers/Video_02_Five_Website_Answers.mp4` | **29.40 s** ✓ | delivered → posted | **yes** | IG **47** · TikTok **87** |
 | **#3** | 3 reasons people leave without contacting you (= **series Part 2**) | `content/videos/v03-part2-three-reasons/Video_03_Part_2.mp4` | **34.90 s** ✓ | delivered → posted | **yes** | IG **41** · TikTok **137** |
 | **#4** original | Losing customers before they reach WhatsApp | `Video_04_Before_WhatsApp.mp4` — **⚠ not in repo** (superseded) | 30.9 s (handover) | obsolete for posting | no | — |
-| **#4** latest | Same script, real website footage + **PREVIEW CTA** | `content/videos/v04-before-whatsapp/Video_04_Real_Website_PREVIEW.mp4` | **34.20 s** ✓ | **delivered → PENDING: not approved, not posted** | **no** | — |
+| **#4** latest | Same script, real website footage + **PREVIEW CTA** | `content/videos/v04-before-whatsapp/Video_04_Real_Website_PREVIEW.mp4` | **34.20 s** ✓ | delivered → **APPROVED by King 17 Sep** → awaiting posting | **no** (King posts) | — |
 
 **QA performed this session (17 Sep), reported as checked:** all three files in the repo were decoded with FFmpeg (`imageio_ffmpeg` binary `ffmpeg-linux-x86_64-v7.0.2`) → 1080×1920, SAR 1:1, DAR 9:16, H.264 High, 30 fps, + AAC 48 kHz mono. Frames extracted and **visually inspected**: #4 at 1 s (hook + real site, labelled "FICTIONAL CLINIC"), 10 s (bad-site demo labelled "Deliberately flawed", desktop-layout-on-phone leak), 22 s (MAKE CONTACT EASY payoff), 33 s (DM "PREVIEW" end card) — all correct; #3 at 18 s ("They don't trust you yet", X-list panel); #2 not frame-inspected yet (QA pending, file verified by decode only).
 
@@ -49,6 +49,10 @@
 8 candidates with rationale: `content/pipeline/CONTENT-SHORTLIST.md`.
 **Blocking prerequisites:** (1) rights/consent decisions on concepts, (2) voice selection (previous `voice-00` registration is not available in a new chat — re-audition required), (3) Playwright install for captures.
 
+## B2 · Founding series status (King, 17 Sep)
+**Only one of the four** founding videos was posted: **`clinic-founding-en.mp4` on TikTok**. `clinic-founding-fr.mp4`, `school-founding-en.mp4`, `school-founding-fr.mp4` are **unposted** → integrated into the calendar (POSTING-CALENDAR §A2). TikTok `video1-final.mp4` (repo, 25 fps): unposted, parked as archive.
+
 ## E · Changelog
+- **v0.3 — 17 Sep 2026:** King's decisions — #4 **approved** (posting = King), #1 TikTok **not posted** + no re-upload, founding series status recorded (1 of 4 posted), shortlist + strategy approved, voice re-audition confirmed. Batch-4 lessons folded into the script gates.
 - **v0.2 — 17 Sep 2026:** pack received; files migrated into `content/`; real specs + frame QA recorded; performance figures recorded with caveats; Video 4 = pending/not approved/not posted.
 - **v0.1 — 17 Sep 2026:** structure created while uploads were missing.
