@@ -53,6 +53,8 @@ WhatsApp-first · mobile-first · EN|FR · Cameroon (Kumba/Douala/South-West) ·
 | 15 | 17 Sep 2026 | How To Make A Marketing Video For My Business — Nate Woodbury | Content / Marketing (video) | Absorbed (promo asset + script gates) | `content/lessons/CONTENT-LESSONS.md` **§10.1** · `content/scripts/README.md` (gates) · `content/pipeline/CONTENT-SHORTLIST.md` **V-13** |
 | 16 | 17 Sep 2026 | How To Make High Converting Videos For Your Business — Brooklyn Social | Content / Marketing (video) | Absorbed (hook/CTA discipline); on-camera-team rejected | `content/lessons/CONTENT-LESSONS.md` **§10.2** |
 | 17 | 17 Sep 2026 | How to Create Free 2D Animated Explainer Videos … using Canva — Digital Canva Mastery | Content / Production | Mostly rejected; 2 micro-techniques adopted | `content/lessons/CONTENT-LESSONS.md` **§10.3** |
+| 18 | 17 Sep 2026 | Everything About: Footers In Web Design — The Website Architect | Design / Build (footers) | Absorbed (anatomy + SEO rules; A/B stats rejected) | `AMK-DESIGN-SKILLS.md` **§20 · §13** |
+| 19 | 17 Sep 2026 | Website Footer Design Inspiration (Best practices) — Flux Academy | Design (footers) | Absorbed (footer as designed screen; mobile caveat) | `AMK-DESIGN-SKILLS.md` **§20** |
 
 ## 4 · Entries (full reports)
 
@@ -450,6 +452,59 @@ WhatsApp-first · mobile-first · EN|FR · Cameroon (Kumba/Douala/South-West) ·
 
 ---
 
+### [18] 17 Sep 2026 · The Website Architect — "Everything About: Footers In Web Design"
+**Link:** https://youtu.be/T5BACF2goFU · **Field:** Design / Build (footers) · **Length:** ~13 min
+
+**Core claims**
+1. Footers have **two uses**: a last resort to find content that is not in the primary navigation (contact, careers, rarely-used pages) and a **second chance to convert** the user. Every website needs one; skipping it ("we're too trendy") damages UX, conversions and SEO.
+2. **Three types**: normal (identical site-wide) · **infinite-scroll / mini** footers (placed in the sidebar because a feed never ends, e.g. LinkedIn) · **contextual** (content changes by page or by signed-in state, e.g. Medium).
+3. Design depends on site size: for small/medium businesses he uses a **4-column layout + bottom strip** — (1) logo + 2–3 sentence company blurb (the "too long, didn't read" of the business); (2) links: primary nav **plus the pages that didn't make it** — the term is **doormat navigation** (first thing you see on arrival, last thing when you leave); (3) more **CTAs** (services/products) because footer readers are interested; (4) **contact info** (email, location, phone, socials) — a standard ~80% of sites follow.
+4. Making footers more useful: **clearer link labels** (not "Resources" → "Blog"/"Articles", citing NN Group on vague labelling) · **3–6 awards** for credibility, modest in size (overdoing it looks like compensating) · an Instagram feed **only** if the account genuinely posts well (adds complexity + speed cost; FB/Twitter feeds look outdated) · a **newsletter signup**, which users now expect in footers.
+5. **Evidence he cites**: SuperOffice added CTAs to the footer → **+50%** conversions on the goals placed there; Smart Insights / **Radley London (2012)** swapped a one-line footer for a "mega footer" with product categories → **+24% sales** — with his own caveats (the footer may have been above the fold; results vary with homepage height; and Radley later **reverted** to the old footer).
+6. **SEO**: footer internal links raise CTR (an SEO factor); the footer is a prime **E-A-T** location (phone, physical location, email, socials, awards, contact/support, privacy); footer weight differs by page (contextual footers make the homepage footer worth another look). **Black-hat warnings**: hidden/faded anchor text (Google's own guidelines name it) and agency credit links — a **keyword anchor** ("web design toronto") is penalisable, a **plain brand credit** ("Website designed by X") is fine; if your company name looks like a keyword, don't link back at all. Closing rule: common sense — if it feels unnatural or manipulative, don't.
+
+**AMK-applicable tactics — folded into §20 (+ §13 gate)**
+1. **Footer anatomy adopted for every concept**: brand+line · doormat nav · CTA · contact, plus strip. The 2–3 paragraph blurb is trimmed to **one sentence** (mobile cost).
+2. **Doormat nav** = the concept's own section anchors, labelled with the destination; "Ressources"-style labels banned.
+3. **Footer CTA = the hero's action** (WhatsApp), never a new offer.
+4. **Contact cluster in the footer** (address + landmark + hours + phone) — serves both E-A-T and the real patient at 22:00.
+5. **Credit-line rule**: brand text only, never a keyword anchor; text-only on client sites until they agree to a link.
+6. **Bans added**: hidden/faded anchors, vague labels, version/fake-live strips.
+
+**Contradictions:** the +50% / +24% figures are single-source, one is from 2012, the creator himself flags the caveats and the company reverted → **not quotable** under our accuracy law (kept as internal calibration only, rejected as pitch material in §5). Instagram/Facebook feeds and newsletter signups conflict with the single-file/no-external-request rule and with WhatsApp-first → parked in §20.5.
+
+**Junk filter:** Pinterest as "the best" footer-inspiration source (our inspiration process is live refs + vendored registries, §19.4); the A/B numbers as marketing ammunition; feed widgets; the affiliate-tool plug at the end.
+
+**Attribution:** The Website Architect (73.1K subs) — footer anatomy, doormat navigation, E-A-T and the credit-link SEO ruling.
+
+---
+
+### [19] 17 Sep 2026 · Flux Academy — "Website Footer Design Inspiration (Best practices in 2024)"
+**Link:** https://youtu.be/Dt04HR1lN5Y · **Field:** Design (footers) · **Length:** ~12 min
+
+**Core claims**
+1. The footer is the **last thing a user sees** — the split second where they decide whether to close the tab. A copyright line + privacy link "misses a golden opportunity".
+2. **Use the full viewport as the canvas** — "it's not a printed brochure", extra depth costs nothing; **generous negative space**; every viewport should look like something you could print and hang.
+3. **Repeat the hero's primary CTA in the footer** (Framer, Figma): the same "get started" button, in its own column, with negative space making it the most prominent item; credibility (awards/reviews) sits beside or just above it.
+4. **Repeat/expand navigation with large type**: at the bottom the visitor's question is "where do I go next?" — big nav titles encourage exploring more pages (Figma's huge sitemap; a card-wallet store's four typographic columns with clear titles).
+5. **Scale contrast + hierarchy**: a huge wordmark or tagline, a medium element (photo/motif), small body links; legal/copyright **fades into the background**.
+6. **Micro-delight**: hover/underline-wipe easing and small interactions keep the visitor a split second longer; a **back-to-top** link is useful. Teenage Engineering carries the product's photographic motif into the footer as a literal canvas — motif continuity as the closing statement.
+
+**AMK-applicable tactics — folded into §20.3/§20.4**
+1. Footer treated as a **designed screen** with **one scale contrast** (large brand line, bounded on mobile per AMK caveat).
+2. **Hero CTA repeated** in the footer (WhatsApp) — now part of the anatomy; legal stays small.
+3. **Back-to-top link** adopted for every build.
+4. **Column titles** in the desktop 4-column version (orientation).
+5. **Motif continuity**: reuse the build's one ingredient in the footer (La Béthanie's real photo, the lab's console, the optician's mirror) instead of adding new assets.
+
+**Contradictions:** the full-viewport footer conflicts with mobile-first → resolved as a **desktop-only** move (mobile footer bounded). Awards/testimonial rows in the footer conflict with the accuracy law → real + permissioned only.
+
+**Junk filter:** the showcase sites as copy targets (we take principles, not layouts); newsletter-for-agency-lead-gen framing; the "you can be generous with depth" line read as permission to pad — our §20.3 caps it on mobile.
+
+**Attribution:** Flux Academy (1.09M subs) — footer as last-screen conversion surface, CTA repetition, scale hierarchy, motif continuity.
+
+---
+
 ## 5 · Rejected (named, with reason)
 
 | Item | Source | Why rejected |
@@ -476,6 +531,13 @@ WhatsApp-first · mobile-first · EN|FR · Cameroon (Kumba/Douala/South-West) ·
 | "The algorithm won't push videos with bad lighting" | [16] | Unverified algorithm claim; platform claims only from current platform guidance or our own account insights. |
 | Hiring an external promo team / months per 5-minute video | [15] | Wrong scale — AMK produces in-house; our "polish" is §19 directions + §13 pre-flight + QA. |
 | "Get your team / faces on camera" as a rule | [16] | Conflicts with the no-talking-head fingerprint; kept only as build-footage BTS (screens, hands, craft), never faces-by-rule. |
+| Footer A/B numbers as pitch material (+50% SuperOffice, +24% Radley London 2012) | [18] | Single-source, one from 2012; the creator flags the caveats and the company later reverted. Our accuracy law bans unverifiable stats → internal calibration only, never quoted to a prospect. |
+| Instagram / Facebook feed embeds in the footer | [18] | External requests + page-speed cost, breaks the single-file rule; our clients don't post consistently enough for it to count as proof. |
+| Newsletter signup in the footer | [18][19] | No list to manage and our channel is WhatsApp; newsletter-first framing is a Western agency habit. Parked until a client asks for email capture. |
+| Pinterest as the primary footer-inspiration source | [18] | Moodboard, not research; our process is live references + vendored registries (§19.4 / PRE-FLIGHT §2.3). |
+| Awards row / press-quote row as a default footer element | [18][19] | Adopted only with real, permissioned proof; the default is to leave the slot empty. |
+| Full-viewport footer on mobile | [19] | Scroll cost beats drama on a 390px screen → desktop-only (§20.3). |
+| Hidden/faded anchor text and keyword-anchor agency credit | [18] | Named as black-hat (Google's own guidelines) → banned outright in §20.5. Credit lines are brand text only. |
 
 ## 6 · Weekly ritual (Mondays, before the outreach pack goes out)
 

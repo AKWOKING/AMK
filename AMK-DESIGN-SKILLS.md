@@ -408,6 +408,7 @@ Pale Red #FDEBEC/#9F2F2D · Pale Blue #E1F3FE/#1F6C9F · Pale Green #EDF3EC/#346
 - [ ] Mockup (laptop+phone) captured when sending to a lead
 - [ ] Single file, base64 embedded, opens on phone browser
 - [ ] File size sanity (concepts ~1MB is acceptable)
+- [ ] **Footer gate (§20.6):** 4 blocks + strip, footer CTA = hero action, labels name destinations, credit = brand text only
 
 **If any box cannot be honestly ticked, it is not done. Fix before delivering.**
 
@@ -595,10 +596,54 @@ Research finding: output truncation is a **deliberate RLHF brevity bias, not a d
 
 ---
 
+## §20 FOOTERS — THE LAST SCREEN (added 17 Sep 2026, footer batch [18][19] — `research/YouTube-Lessons.md`)
+
+*Two videos, one message: the footer is a **conversion + trust surface**, not a legal dump. Generic advice below is filtered through our rules — mobile-first, single-file, WhatsApp-first, no fabricated proof.*
+
+### 20.1 What a footer is for [18]
+- Two jobs only: **doormat navigation** — the last-chance index for what the nav dropped (contact, hours, address, rarely-needed pages) — and a **second chance to convert**: whoever reached the bottom is interested, so give them the action again.
+- A footer is **mandatory**. "Too minimal for a footer" costs UX, conversions and SEO signals.
+
+### 20.2 AMK footer anatomy — 4 blocks + strip (every concept)
+1. **Brand + line** — logo lockup + **one sentence** (who you are, what you do). [18] says 2–3 paragraphs; too heavy for our single-page mobile builds → one sentence, always present.
+2. **Doormat nav** — the page's own sections, labelled with the destination, never "Ressources"/"Infos" [18].
+3. **CTA block** — **the same primary action as the hero** (WhatsApp first, phone second). Framer/Figma repeat the hero CTA in the footer [19]; small landing pages benefit most. Never a second, competing action.
+4. **Contact block** — address + landmark if we have one, hours, phone(s)/WhatsApp. This is the **E-A-T cluster** [18] and exactly what a patient needs at 22:00.
+- **Bottom strip:** copyright · AMK concept/preview disclaimer · privacy note — small, low-contrast (legal *fades*, hierarchy [19]) + a **back-to-top** link [19].
+- Mobile order: brand → CTA → contact → nav → strip (action before index). Desktop: 4 columns with column titles so the eye orients instantly [19].
+
+### 20.3 Space & hierarchy [19]
+- The footer is a **designed screen**, never leftover: generous negative space, and **one scale contrast** — a large brand/wordmark (or one large element), a medium one (photo/motif), small body/legal type.
+- Negative space is the **canvas** where personality goes [19] — but §3 still governs: no decorative versions, no fake live counters, no ghost chrome.
+- **Mobile caveat (AMK):** full-viewport footers are a **desktop-only** move; on mobile the footer is bounded (≈ ≤120px of designed content + strip) because scroll cost beats drama.
+- Carry the build's **one ingredient** into the footer (the client's real photo, the drawn motif, the letterform) — motif continuity, no new assets [19].
+
+### 20.4 Copy & proof in the footer
+- Link labels name the destination, in the client's own vocabulary [18].
+- **No fabricated proof.** Awards, press quotes and review rows go in a footer **only if they are real and permissioned** (accuracy law). No proof yet → leave the slot empty; never fill it with decoration.
+- **AMK credit line = plain brand text**: "Site par AMK — Développement Web & Solutions Digitales". A keyword anchor ("développeur web Douala") is flagged as black-hat SEO [18]; on client sites the credit stays **text only** until the client agrees to a link.
+
+### 20.5 Bans & parked [18][19]
+- **Banned in footers:** hidden/faded anchor text (named black-hat, Google's own guidelines); keyword-anchor backlinks; vague labels ("Resources"); version footers / fake-live strips (§3.1); external widget embeds.
+- **Parked:** Instagram/Facebook feed embeds (external request + speed cost; our clients don't post consistently enough to use as proof) · newsletter signup forms (our channel is WhatsApp; no list to manage yet) · full-viewport mobile footer (desktop-only) · mega multi-column footers on 1-page concepts.
+- **Contextual footers** (footer varies by page / by condition) [18]: parked until a genuinely multi-page build (school admissions, lab results portal) — note it in the build notes when it's used.
+
+### 20.6 Footer gate (add to §13)
+- [ ] 4 blocks present (brand+line · doormat nav · CTA · contact) + bottom strip (© · disclaimer · back-to-top)
+- [ ] Footer CTA = the hero's action, not a second offer
+- [ ] Every label names its destination; nothing hidden or faded
+- [ ] Credit line = brand text only
+- [ ] Footer contrast passes the audit gate (§1b) on desktop **and** mobile
+
+**Applies to every new build immediately.** *Queued retrofit:* the concepts built before today (opticien, afriquelabo, labethanie, yaks, skye, oracare, clinic-bonaberi) end on a thin one-line footer — a footer pass is proposed **after** tonight's sends (never mid-deploy, never mid-send). Awaiting King's yes.
+
+---
+
 ## SOURCES
 - `design/vendor/bergside-skills/` — github.com/bergside/awesome-design-skills (TypeUI), 67 SKILL.md + DESIGN.md pairs, MIT (see `design/vendor/LICENSE-bergside`)
 - `design/vendor/taste/skills/` — github.com/Leonxlnx/taste-skill: taste-skill, redesign, output, brandkit, imagegen web/mobile, image-to-code, stitch, soft/minimalist/brutalist, MIT (`design/vendor/LICENSE-taste`)
 - `design/vendor/emil/skills/` — github.com/emilkowalski/skills: emil-design-eng, animate, review-animations, improve-animations, find-animation-opportunities, animation-vocabulary, apple-design, prototype, pick-ui-library, MIT (`design/vendor/LICENSE-emil`); condensed for vanilla builds in `design/MOTION.md`
 - `design/vendor/registry-digest.json` — machine digest of all 67 bergside token sheets
 - AMK playbooks: `design/WORKFLOW.md` (pipeline), `design/STYLE-TOKENS.md` (vertical starters + rotation ledger), `design/MOTION.md` (motion standard)
+- YouTube lesson batches [18][19] (footers, 17 Sep 2026) → this file §20; full log + rejections in `research/YouTube-Lessons.md`
 - In-house references: `sales/Monday-Outreach-Pack.md` (Concept Production Standard), `site/design-research.md` (AMK site research), OraCare v2/v3 (reference-override case studies)
