@@ -6,6 +6,10 @@ This folder is a **drag-and-drop deploy bundle**. Every concept is a single self
 
 | Slug | LIVE link | Lead | Canonical source file |
 |---|---|---|---|
+| **separate Vercel project** | 🚀 **à déployer (17 Sep)** — projet suggéré `concept-jempo-v1` → `https://concept-jempo-v1.vercel.app` | **J&E Memorial Polyclinic (JEMPO)**, Deido Douala — à envoyer §2f | `demos/concept-jempo-v1.html` |
+| **separate Vercel project** | ✅ LIVE **https://labethanie-concept.vercel.app** (déployé par King 17/09, vérifié : page complète, 6 liens WhatsApp réels) | Clinique La Béthanie, Bonabéri Douala | `demos/concept-labethanie-v1.html` |
+| **separate Vercel project** | ✅ LIVE **https://concept-afriquelabo-v1.vercel.app** (déployé 17/09) | Afrique Labo SARL, Bessengue Douala | `demos/concept-afriquelabo-v1.html` |
+| **bundle `/opticien/`** | 🚀 **à déployer (17 Sep)** → `https://amk-cm.vercel.app/opticien/` | L'Opticien, Bali Douala — la variante servie contient **leur ligne réelle** (8 liens) | `hosting/previews/opticien/index.html` ← `demos/concept-opticien-lopticien.html` |
 | **separate Vercel project** | ✅ LIVE **https://concept-skye.vercel.app/** (King's Vercel project `concept-skye`; re-deploy after each sync of the `skye` folder) | Cabinet Dentaire The Skye, Bonamoussadi Douala | `demos/concept-skye-v1.html` |
 | **separate Vercel project** | ✅ LIVE **https://concept-yaks-v1.vercel.app/** (King's Vercel project `concept-yaks-v1`; re-deploy after each sync of the `yaks` folder) | Cabinet Dentaire YAKS, Logbessou Douala | `demos/concept-yaks-v1.html` |
 | **separate Vercel project** | ✅ **https://oracare-concept.vercel.app/** (live 14 Sep, verified v3: prices + assistant) | OraCare237, Buea | `demos/concept-oracare-v3.html` |
@@ -16,11 +20,19 @@ This folder is a **drag-and-drop deploy bundle**. Every concept is a single self
 
 **Current model (King, 14 Sep):** one Vercel project per named concept, deployed from the canonical HTML (index.html at project root). To push an update: overwrite that project's root index.html with the rebuilt canonical file and redeploy. The `build_previews.py` bundle remains available as a single-project multi-slug alternative for future batches.
 
-All four carry `noindex,nofollow` (private previews, never search-listed). Rebuild after editing any concept:
+Every preview carries `noindex,nofollow` (private previews, never search-listed). Rebuild the bundle after editing any concept:
 
 ```bash
 python3 hosting/build_previews.py
 ```
+
+## Deploying a NEW named concept (recipe used 17 Sep for La Béthanie / JEMPO)
+
+1. `python3 hosting/build_previews.py` → the bundle folder is refreshed (and the standalone HTML is already the canonical file).
+2. New Vercel project from the canonical file: put `demos/concept-<client>-v1.html` as **`index.html`** at the project root → deploy → rename the project to `concept-<client>-v1`.
+3. Phone QA (deploy-gate list above) **on the live URL**, not the laptop.
+4. Send **image first** (`demos/shots/mockup-<client>-wa.jpg`), then the text from the send sheet — never both in one message.
+5. **Footers:** every concept built from 17 Sep 2026 comes with the §20 footer standard (4 blocks + strip). Get asked about it? It is `AMK-DESIGN-SKILLS.md` §20.
 
 ## Deploy gate (added 17 Sep 2026 — from the engineering batch, `AMK-DESIGN-SKILLS.md` §18.4)
 
