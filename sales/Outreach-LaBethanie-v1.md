@@ -17,13 +17,13 @@ Dossier : `clients/la-bethanie/dossier.md` · Concept : `demos/concept-labethani
 - Rien sur la psychoneurologie (sujet sensible) — ni dans le message, ni dans le concept.
 
 ## 2 · Avant d'appuyer
-- [ ] Déploiement fait : `amk-cm.vercel.app/labethanie/` répond (noindex).
+- [x] **Déployé par King le 17/09 : https://labethanie-concept.vercel.app** (vérifié le 17/09 : page complète servie, 6 liens WhatsApp vers 677 76 07 82).
 - [ ] QA téléphone : hero + photo, liste à cocher → message WhatsApp pré-rempli, sticky barre, FR|EN.
 - [ ] Le contact affiché est bien **+237 677 76 07 82** (appui long → infos du contact).
 - [ ] Fenêtre **09–21** · l'image part **avant** le texte, jamais dans le même message.
 
 ## 3 · Après « oui » (règle de la 1ʳᵉ heure)
-1. Le lien du concept + rappel : « c'est un aperçu, pas encore votre site ».
+1. Le lien : **https://labethanie-concept.vercel.app** + rappel : « c'est un aperçu privé, pas encore votre site ».
 2. Deux questions seulement : « Je mets **votre vraie ligne** et **vos photos** ? » · « Vous préférez être appelé comment ? »
 3. Collecte : logo, photos (accueil, salle d'accouchement, bloc, labo), **liste exacte des services et spécialités**, numéro WhatsApp définitif, horaires réels.
 4. **Prix : 100 000 FCFA, 50-50, jamais de rabais** — et jamais dans le message 1 ni 2.

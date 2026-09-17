@@ -99,7 +99,7 @@
 
 **3. Contrôles avant d'appuyer** : le contact est bien **+237 677 76 07 82** (appui long → infos du contact) · fenêtre 09–21 · l'image part **avant** le texte · rien d'autre dans le message.
 
-**4. Après « oui » (dans l'heure)** : lien `amk-cm.vercel.app/labethanie/` (aperçu noindex) → puis 2 questions seulement : « Je mets vos vraies photos et votre ligne ? » / « Vous préférez être appelé comment ? » → ensuite collecte : logo, photos (accueil, salle d'accouchement, bloc), liste exacte des services, numéro WhatsApp définitif.
+**4. Après « oui » (dans l'heure)** : lien **https://labethanie-concept.vercel.app** (déployé, vérifié : page complète servie) → puis 2 questions seulement : « Je mets vos vraies photos et votre ligne ? » / « Vous préférez être appelé comment ? » → ensuite collecte : logo, photos (accueil, salle d'accouchement, bloc), liste exacte des services, numéro WhatsApp définitif.
 
 **5. Relances** : à poser le jour de l'envoi → **sam 19 · lun 21 · jeu 24** (mêmes dates que L'Opticien si les deux partent ce soir). Détail : `sales/Outreach-LaBethanie-v1.md`.
 

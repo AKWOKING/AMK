@@ -635,7 +635,7 @@ Research finding: output truncation is a **deliberate RLHF brevity bias, not a d
 - [ ] Credit line = brand text only
 - [ ] Footer contrast passes the audit gate (§1b) on desktop **and** mobile
 
-**Applies to every new build immediately.** *Queued retrofit:* the concepts built before today (opticien, afriquelabo, labethanie, yaks, skye, oracare, clinic-bonaberi) end on a thin one-line footer — a footer pass is proposed **after** tonight's sends (never mid-deploy, never mid-send). Awaiting King's yes.
+**King's ruling, 17 Sep 2026:** the §20 footer standard **applies to every NEW build**. The concepts already built (opticien, afriquelabo, labethanie, yaks, skye, oracare, clinic-bonaberi) **stay exactly as they are — no retrofit.** First build under this rule: the JEMPO concept (next prospect).
 
 ---
 

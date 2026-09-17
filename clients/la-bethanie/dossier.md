@@ -23,6 +23,7 @@
 
 ## 4 · Concept livré — « LA CONSULTATION »
 `demos/concept-labethanie-v1.html` (257 KB, single-file, base64, FR|EN) · builder `demos/build_labethanie.py` (paramétrable `--wa/--out`) · mockup `demos/shots/mockup-labethanie-wa.jpg` (191 KB) · preview `hosting/previews/labethanie/`.
+**Déployé le 17/09 par King : https://labethanie-concept.vercel.app** (vérifié : page complète, 6 liens WhatsApp vers la ligne réelle).
 Sections : hero (photo réelle de l'entrée + « Votre santé intime, notre priorité ») · **urgences 24h/24 · 7j/7** (appel + WhatsApp) · **service de gynécologie** avec les 6 prestations du dépliant en **liste à cocher → un seul message WhatsApp discret** (rien n'est stocké sur la page) · « une première consultation, comment ça se passe » · **chirurgie** (centre médico-chirurgical, direction Dr Petieu) · **nous trouver** (Rue Mpondo / Ancienne Route, repère « bâtiment jaune, grille verte », plan schématique, photo de l'enseigne) · FAQ (5) · contact + sticky WhatsApp/appel · **aucun prix** (aucun n'est publié) · **aucun nom de patient, aucun témoignage**.
 Audit : `python3 tools/qa/audit_html.py` → **0 finding** (222 runs, desktop + mobile). Détail des décisions : `clients/la-bethanie/build-notes.md` · références live : `clients/la-bethanie/inspiration.md`.
 
