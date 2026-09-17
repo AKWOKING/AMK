@@ -15,7 +15,7 @@ The rule names abstract folders; these are where the lessons actually live. Load
 | Task type | Load these (repo paths) |
 |---|---|
 | **Marketing / outreach copy** | `research/YouTube-Lessons.md` (entries [1]–[6] copy, [10][13] design-of-copy) · `sales/Monday-Outreach-Pack.md` (**COPY CRAFT GATE** + templates) · `sales/AMK-Sales-Playbook-v2.md` (Parts H, I) · niche: `sales/research/*deep-dive*.md`, `sales/Deep-Dive-Research.md`, `sales/RESEARCH-STANDARD.md` |
-| **Prospecting / qualifying** | `sales/AMK-Sales-Playbook-v2.md` (Parts A, B, D, E, H, J) · `research/YouTube-Lessons.md` [7][8] · niche: `sales/Deep-Dive-Research.md`, `sales/RESEARCH-STANDARD.md`, `sales/Remote-Sweep-*.md`, `sales/Walk-In-*.md` · state: `sales/Pipeline-Status.md` |
+| **Prospecting / qualifying** | `sales/AMK-Sales-Playbook-v2.md` (Parts A, B, D, E, H, J) · `research/YouTube-Lessons.md` [7][8] · **`sales/RESEARCH-STANDARD.md` (incl. §8b three-door pre-send gates — every send, every time)** · niche: `sales/Deep-Dive-Research.md`, `sales/Remote-Sweep-*.md`, `sales/Walk-In-*.md` · state: `sales/Pipeline-Status.md` |
 | **Presenting / proposals** | `sales/AMK-Sales-Playbook-v2.md` (Parts C, E, F, I, J) · `sales/Monday-Outreach-Pack.md` · `AMK-DESIGN-SKILLS.md` §11b + §19 · `sales/swipe/README.md` |
 | **Closing / objection handling** | `sales/AMK-Sales-Playbook-v2.md` (Part I = 3A reframe, Part J = CLOSER, Part E = flips, Part C = closes) · `research/YouTube-Lessons.md` [7][8] |
 | **Any copywriting** | `research/YouTube-Lessons.md` [1]–[6] (+ [5] Harry Dry = the law) · `sales/Monday-Outreach-Pack.md` COPY CRAFT GATE · `AMK-DESIGN-SKILLS.md` §11 + §11b · `sales/swipe/README.md` · client's own words (FB/comments) per Part H |

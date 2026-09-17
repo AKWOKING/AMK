@@ -135,3 +135,8 @@ Concept **déjà construit sur mesure** (bleus du logo, « Souriez à l'infini �
 
 ## 6 · 18:00–20:00
 clinic-founding-fr.mp4 sur TikTok (légende FR du post pack §A) → miroirs FB Page · WA Status (3 slides) · YouTube Shorts (`sales/social/youtube-shorts-metadata.md` §2). L'EN peut déjà être miré YT/FB avec la §1 des métadonnées.
+
+
+## 7 · 17/09 — vérifications opticiens (trois portes, §8b du RESEARCH-STANDARD)
+- **Maison Optique (657 73 70 45) — ⛔ ÉCARTÉ (règle d'exclusion) :** ils ont **déjà un vrai site** `maison-optique.cm` (Next.js, chaîne Douala + Yaoundé, mur de marques premium Cartier/Gucci/Ray-Ban, e-mail pro). Le dossier du 15/09 disait « no site » — c'était faux. **Parqué** ; réouverture seulement si un besoin refonte apparaît (le site actuel n'affiche ni prix ni prise de rendez-vous en ligne → angle refonte possible plus tard, jamais un cold « vous n'avez pas de site »).
+- **L'Opticien Bali (670 27 60 65) — ✅ 3/3 portes :** compte WhatsApp **Business** « L'Opticien », catégorie Médical, **catalogue actif**, horaires 08:30–18:00, e-mail pro ; mono-boutique = propriétaire-décideur probable. **Concept générique construit** : `demos/concept-opticien-v1.html` + mockup `demos/shots/mockup-opticien-wa.jpg`.

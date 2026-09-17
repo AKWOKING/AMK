@@ -79,6 +79,20 @@ A claim the recipient could factually dispute, or that addresses a dead/moved/wr
 - [ ] Date of research on the dossier; facts older than 30 days re-verified before sending if send date slips
 - [ ] Any negative result stated plainly ("current director not found in public sources") instead of guessed
 
+## 8b. PRE-SEND GATES — the three doors (standing, King approved 17 Sep 2026)
+
+**Every send passes through this table, every time, no exceptions.** A dossier can be perfect and still fail here. Record the verdict in the dossier before King taps send.
+
+| # | Gate | Pass condition (evidence, not vibes) | If it fails |
+|---|---|---|---|
+| **A · Reachability** | At least one number **verified live on WhatsApp by King** (profile seen), ideally **ORG-CONFIRMED** (§5). The channel we actually use must exist. | **No send.** Park with the reason; reopen only if a verified line appears. |
+| **B · Digital intent** | A **recent** sign the organisation acts on digital: FB post < 12 months, live site, active WA catalogue/business account, recent Google activity. | **Park as dormant** (write the re-open condition). Dormant orgs default to "no decision", which costs the 30-Sep window. |
+| **C · Buyer type** | Owner / decision-maker reachable (**OWNER-BUYER** label, §4.6). | Board buyer → cold leg only if the 30-day plan allows; otherwise park (no chase). |
+
+**Scoring:** 3/3 = send. **2/3 = King decides explicitly**, and the reason is written down. 1/3 = never send.
+
+**Worked example (JOSS MEDI, 17 Sep):** A **FAIL** (their own FB number 674 84 39 02 not on WhatsApp; no verified line) · B **FAIL** (last FB post 24 Jun 2022) · C **FAIL** (11–50 staff clinic since 2009 = board buyer) → **0/3, parked dormant.** Same day, same check on L'Opticien Bali: A **PASS** (WhatsApp Business account seen, catalogue in use) · B **PASS** (business account + catalogue + seen active 11:54) · C **PASS** (single-store optician = owner) → **3/3, send.**
+
 ## 9. Feedback loop
 - Every King correction is logged here as an error-log entry with: what was wrong, which poisoned source caused it, what check would have caught it, and which OTHER dossiers used that source (they get re-checked the same day).
 - When a source type proves unreliable in one dossier (here: medicoor doctor rosters + truncated PDF provider lists), every other dossier's facts from that source type are demoted one tier until re-verified.
@@ -86,3 +100,4 @@ A claim the recipient could factually dispute, or that addresses a dead/moved/wr
 ## Error log
 - **#2, 15 Sep, PCSS (King correction):** msg 1 draft claimed "other schools in the Presbyterian network already run theirs", citing PCSS Bonamoussadi (Douala). King: NO PCC Cameroon secondary school has a website; it appears deliberate, and missionary principals do not decide (education secretary/Synod/board above them). Verification agreed: Bonamoussadi is a 2020 local-congregation (PC Bonamoussadi) IDP-response school, not PCC-network precedent. The claim would have been factually disputable by the recipient AND pitched to a non-buyer. Caught by King before send. Fixes: §4 steps 6-7 added (authority/governance classification + precedent check); all missionary/confessional secondaries reclassified BOARD-BUYER and parked (PCSS, Baptist Comp., SJC Sasse/diocesan, St Sylvester, Bishop Jules); lay private leads unaffected (St Theresa STIBCCOL = lay, Baird Memorial = private, Summerset/NABESK = lay).
 - **#1, 15 Sep, Solidarity:** named deceased founder as current doctor; conflated name variants; assumed second doctor's employment; nearly messaged his personal line. Causes: Tier C roster used as fact, no obituary check, no role dating, personal/org number conflation. Caught by King before send. Fixes: this whole standard. Same-source sweep: MITOC came from the org's own Facebook intro (Tier A, unaffected); parked clinics (Liwo/Soliman/St Veronica) were based on their own websites (Tier A, unaffected).
+- **#3, 17 Sep, JOSS MEDI (King correction):** the dossier carried a "verified" WhatsApp line (677 58 42 73) that was never confirmed **on WhatsApp itself**; King's check found their own Facebook number (674 84 39 02) **not registered on WhatsApp**, and the page **dormant since 24 Jun 2022**. Two failures in one: the channel didn't exist and the organisation had stopped acting digitally. Caught by King before send (the message was drafted and armed). Fixes: **§8b three-door pre-send gate** (reachability / digital intent / buyer type) + error-log rule below. Same-source sweep: every armed dossier was re-scored — AFRIQUE LABO 3/3 (business account, catalogue, active) · L'Opticien 3/3 · Maison Optique 2.5/3 (personal-type line, strong brand identity, WA activity — King's call recorded) · MITOC 3/3 (business account, catalogue) · Baird 2/3 (delivered-unread; private lay school = owner) · Skye/YAKS/OraCare 3/3 (business accounts, live concepts).
