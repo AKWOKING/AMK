@@ -15,6 +15,8 @@
 | 3 | aujourd'hui | **MITOC** (Molyko, Buea) — **FU1 (M+2)** · 2 coches, non lu | **678 90 89 62** | aucune (texte seul) | §M ci-dessous |
 | 4 | aujourd'hui | **Baird Memorial College** — **FU1 (M+2)** · 2 coches, non lu | 677 87 53 95 | aucune (texte seul) | §B ci-dessous |
 
+| 5 | ce soir (après §2d) | **CLINIQUE LA BÉTHANIE** (Bonabéri) | **677 76 07 82** | ✅ `mockup-labethanie-wa.jpg` (191 Ko) | §2e |
+
 **Portail 10 secondes avant l'envoi (comme hier) :** ouvrir `afriqlabo.com` puis `jossmediclinic.com` sur le téléphone.
 - Page morte/erreur → **envoyer** comme ci-dessous (c'est le cas enregistré au 16/09 ~17:00).
 - Le site s'ouvre normalement → **NE PAS envoyer**, me prévenir.
@@ -82,6 +84,25 @@
 
 **5. Relances** : sam 19 (M+2) · lun 21 (M+4) · jeu 24 (M+7). Détail et objections : `sales/Outreach-LOpticien-v1.md`.
 
+## 2e · LA BÉTHANIE (Bonabéri, Douala) — **à envoyer ce soir, après L'Opticien** · 677 76 07 82
+
+**Portes §8b : 3/3** (ligne confirmée WhatsApp par toi le 17/09 · 210 clics WhatsApp via DoualaTour + annuaires de 2021 = intention réelle · clinique privée du Dr Richard Petieu = propriétaire-décideur).
+**Le concept est bâti sur leur propre matière** : leur dépliant gynécologie + la photo de leur entrée (King, uploads du 17/09). Aucun prix inventé, aucun témoignage, aucun nom de patient.
+
+**1. Envoyer d'abord l'image** : `demos/shots/mockup-labethanie-wa.jpg` (191 Ko) — laptop + téléphone, photo réelle de leur entrée.
+**2. Puis ce texte (copier-coller) :**
+
+> Bonjour 👋 Votre dépliant « Service de gynécologie » est clair — mais en ligne, un patient qui cherche La Béthanie ne trouve que des fiches d'annuaire, dont certaines datent de 2021.
+> Je suis Akwo King, développeur web à Douala. J'ai préparé un aperçu : vos 6 prestations de gynécologie, les urgences 24h/24 et 7j/7, l'accès Rue Mpondo — en français et en anglais.
+> Je vous l'envoie ? Un simple « oui » suffit — une minute sur votre téléphone, sans engagement.
+> — Akwo King / AMK – Développement Web & Solutions Digitales
+
+**3. Contrôles avant d'appuyer** : le contact est bien **+237 677 76 07 82** (appui long → infos du contact) · fenêtre 09–21 · l'image part **avant** le texte · rien d'autre dans le message.
+
+**4. Après « oui » (dans l'heure)** : lien `amk-cm.vercel.app/labethanie/` (aperçu noindex) → puis 2 questions seulement : « Je mets vos vraies photos et votre ligne ? » / « Vous préférez être appelé comment ? » → ensuite collecte : logo, photos (accueil, salle d'accouchement, bloc), liste exacte des services, numéro WhatsApp définitif.
+
+**5. Relances** : à poser le jour de l'envoi → **sam 19 · lun 21 · jeu 24** (mêmes dates que L'Opticien si les deux partent ce soir). Détail : `sales/Outreach-LaBethanie-v1.md`.
+
 ## 3 · Réponse watch (ne rien renvoyer — juste répondre vite)
 
 | Prospect | Statut | Si réponse « oui » | Si silence |
@@ -91,6 +112,7 @@
 | **OraCare** (672 52 66 86) | preview + micro-question 16/09 14:32 (lue) | pack §1 : répondre à sa réponse (nettoyage / blanchiment / bagues) | FU2 **dim 20** (M+4) |
 | AFRIQUE LABO / JOSS / MITOC / Baird | ce matin | §2 ci-dessus | FU1 **ven 18** (M+2) |
 | **L'Opticien** (670 27 60 65) | **à envoyer ce soir** (§2d) | aperçu → lien réseau réel | FU1 **sam 19** (M+2) · FU2 lun 21 · FU3 jeu 24 |
+| **LA BÉTHANIE** (677 76 07 82) | aperçu prêt, **à envoyer ce soir** (§2e) | lien `/labethanie/` + 2 questions (photos, qui décide) | FU1 **sam 19** · FU2 lun 21 · FU3 jeu 24 (à poser à l'envoi) |
 
 **Qualification après « oui » (une question à la fois, jamais de prix au premier message) :** qui décide · ville/quartier · horaires réels · photos autorisées · ce qui manque le plus à leurs patients.
 

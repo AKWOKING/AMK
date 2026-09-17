@@ -1,34 +1,33 @@
 # Prospect n°2 — CLINIQUE LA BÉTHANIE (Bonabéri, Douala)
 
-*Ouvert le 17 Sep 2026 au soir, après l'envoi d'Afrique Labo (prospect n°1) et la finalisation de L'Opticien.*
+*Ouvert le 17 Sep 2026 en fin d'après-midi, après l'envoi d'Afrique Labo (prospect n°1) et la finalisation de L'Opticien.*
+**Statut : concept construit et audité — en attente du déploiement + de l'envoi par King.**
 
-## 1 · Trois portes (§8b) — état
-| Porte | Verdict | Preuve / à faire |
+## 1 · Trois portes (§8b) — VERDICT : 3/3 ✅
+| Porte | Verdict | Preuve |
 |---|---|---|
-| **A · Joignabilité** | ⏳ **à vérifier par King sur WhatsApp** | Numéros publiés dans les annuaires : **677 76 07 82** (principal), **677 67 70 27**, fixe 233 03 78 97. Vérifier lequel a un profil WhatsApp **Business** (nom/logo/catalogue) → c'est la porte d'entrée |
-| **B · Intention digitale** | ✅ probable | **210 clics WhatsApp** enregistrés via DoualaTour ; présence active dans les annuaires santé (Medicoor, Maligah, réseau ASCOMA) — donc les patients les cherchent **déjà** par téléphone/WhatsApp |
-| **C · Acheteur** | ✅ | Clinique privée dirigée par **Dr Richard PETIEU** (chirurgien) — propriétaire-décideur nommé, pas un conseil d'administration |
-**Total provisoire : 2/3 confirmées → 3/3 dès que la porte A passe sur ton téléphone** (règle : 3/3 = on envoie ; 2/3 = tu décides explicitement).
+| **A · Joignabilité** | ✅ **PASS (King, 17 Sep)** | **677 76 07 82** confirmé sur WhatsApp (capture de King « +237 77760782 » = même ligne en format 8 chiffres). C'est la ligne câblée dans les 6 boutons WhatsApp du concept. |
+| **B · Intention digitale** | ✅ PASS | **210 clics WhatsApp** via DoualaTour ; présence active dans les annuaires santé (Medicoor, Maligah, réseau ASCOMA) : les patients les cherchent déjà par téléphone. **Aucun site propre trouvé** → leur crédibilité visible dépend d'annuaires tiers qu'ils ne contrôlent pas. |
+| **C · Acheteur** | ✅ PASS | Clinique privée dirigée par **Dr Richard PETIEU** (chirurgien) — propriétaire-décideur nommé. |
+**Score 3/3 → on construit et on envoie.**
 
-## 2 · Ce que les sources publiques disent (vérifié ce soir)
-- Raison sociale publiée : **« Clinique La Béthanie-Ginteam »**, **Ancienne Route Bonabéri**, proche du **collège le Levant**, BP 4 916 Douala.
-- **Dirigée par le Dr Richard Petieu** (chirurgien) — annuaire du **réseau de soins ASCOMA** (édition 2021) et fiches Medicoor/Maligah.
-- Spécialités déclarées : **psychoneurologie**, **chirurgie**, **maternité**.
-- ⚠️ Deux entrées d'annuaire coexistent (« CENTRE MEDICALE LA BETHANIE » et « Clinique La Bethanie-Ginteam ») et les informations datent de **2021** → **c'est exactement le problème** : leurs données publiques sont périmées et dispersées.
+## 2 · Ce que les sources disent (re-vérifié le 17 Sep)
+- Raison sociale publiée : **« Clinique La Béthanie-Ginteam »**, **Ancienne Route Bonabéri**, **Rue Mpondo**, BP 4 916 Douala.
+- **Dr Richard Petieu**, chirurgien — annuaire du **réseau de soins ASCOMA** (édition 2021), fiches Medicoor / Maligah.
+- ⚠️ Deux entrées d'annuaire coexistent (« CENTRE MEDICALE LA BETHANIE » / « Clinique La Bethanie-Ginteam ») et les informations datent de **2021** → c'est exactement le problème : leurs données publiques sont périmées et dispersées.
 
-## 3 · Hypothèse de douleur (à confirmer par le message, pas à affirmer dans un contenu public)
-1. Un patient de Bonabéri qui cherche « maternité », « chirurgie » ou « consultation » **ne tombe pas sur eux** mais sur des annuaires : horaires faux, pas de services détaillés, pas de prise de rendez-vous, pas de repère de prix.
-2. **Maternité = besoin récurrent et anxiogène** : les futurs parents veulent savoir *ce qui est inclus, quoi apporter, comment se passe le suivi prénatal* — c'est du contenu, pas une page Facebook.
-3. Une clinique avec **psychoneurologie** a un besoin de **discrétion et de clarté** : une page sobre qui explique la prise en charge rassure plus qu'un post.
-4. Aucun site propre trouvé → leur crédibilité ne dépend que d'annuaires tiers qu'ils ne contrôlent pas.
+## 3 · Ce que la clinique a livré elle-même (uploads King, 17 Sep)
+- **Dépliant « Service de gynécologie »** (`clients/la-bethanie/Clinique La Béthanie (Bonabéri).jpg`) : « Votre santé intime, notre priorité » ; six prestations ; **683 76 74 13 / 699 73 15 48** ; « BONABÉRI – RUE MPONDO (ANCIENNE ROUTE), DOUALA » ; **OUVERT 24H/24 · 7J/7** ; palette bleu royal + vert feuille ; typographie Montserrat.
+- **Photo de l'entrée** (`entrance … .jpg`) : bâtiment jaune, grille verte, enseigne blanche « LA BETHANIE — Centre Médico-Chirurgical, Maternité », Tél. **677 76 07 82 / 683 … 74 13** ; bloc « NOS SPÉCIALITÉS » (gynécologie-obstétrique, médecine générale, chirurgie générale lisibles — le reste est trop flou pour être utilisé).
+- **Conséquence de méthode :** le concept est bâti **sur leur propre matière** (dépliant + photo réelle), pas sur des suppositions.
 
-## 4 · Angle de concept (brouillon, à valider)
-Concept **nommé** construit depuis leur identité (à récupérer : logo + couleurs sur leur page Facebook), sur la base éprouvée du gabarit Bonabéri (`site/clinic-bonaberi.html` — conçu pour ce quartier, il « mappe 1:1 » d'après le sweep).
-Sections prévues : **Urgences / contact immédiat** · **Maternité** (suivi prénatal, quoi apporter, chambres) · **Chirurgie** · **Psychoneurologie** (nom sobre, explication de la prise en charge) · **Laboratoire & résultats sur WhatsApp** · **Équipe (Dr Petieu)** · **Accès depuis Bonabéri** (repères réels : Ancienne Route, face/avant collège le Levant) · FR|EN · WhatsApp sticky.
-Différenciation : sobre, médicale, **anti-annuaire** (adresse exacte + itinéraire + horaires + qui répond).
+## 4 · Concept livré — « LA CONSULTATION »
+`demos/concept-labethanie-v1.html` (257 KB, single-file, base64, FR|EN) · builder `demos/build_labethanie.py` (paramétrable `--wa/--out`) · mockup `demos/shots/mockup-labethanie-wa.jpg` (191 KB) · preview `hosting/previews/labethanie/`.
+Sections : hero (photo réelle de l'entrée + « Votre santé intime, notre priorité ») · **urgences 24h/24 · 7j/7** (appel + WhatsApp) · **service de gynécologie** avec les 6 prestations du dépliant en **liste à cocher → un seul message WhatsApp discret** (rien n'est stocké sur la page) · « une première consultation, comment ça se passe » · **chirurgie** (centre médico-chirurgical, direction Dr Petieu) · **nous trouver** (Rue Mpondo / Ancienne Route, repère « bâtiment jaune, grille verte », plan schématique, photo de l'enseigne) · FAQ (5) · contact + sticky WhatsApp/appel · **aucun prix** (aucun n'est publié) · **aucun nom de patient, aucun témoignage**.
+Audit : `python3 tools/qa/audit_html.py` → **0 finding** (222 runs, desktop + mobile). Détail des décisions : `clients/la-bethanie/build-notes.md` · références live : `clients/la-bethanie/inspiration.md`.
 
 ## 5 · Prochaines étapes
-1. **King** : vérifier sur WhatsApp lequel des deux numéros a un profil Business → porte A.
-2. Récupérer le **logo/couleurs** (capture de leur page Facebook) et les **services exacts**.
-3. Construire le concept nommé (gabarit Bonabéri adapté) + mockup téléphone/portable.
-4. Message 1 (brouillon dans `sales/Outreach-LaBethanie-v1.md`), règle : **image d'abord**, puis texte, question finale à un mot.
+1. **King** : déployer `hosting/previews/` → l'aperçu `/labethanie/` · QA téléphone · **envoyer image d'abord** (§2e du Send-Sheet 17/09).
+2. Réponse « oui » → lien + 2 questions (photos/vraie ligne ; qui décide ?) puis collecte : logo, photos (accueil, salle d'accouchement, bloc, labo), liste exacte des services, numéro WhatsApp définitif.
+3. À faire confirmer par la clinique : quel numéro est **le** WhatsApp (677 76 07 82 supposé) et si **683 76 74 13 / 699 73 15 48** sont toujours actifs ; la liste de chirurgie ; l'accord pour nommer le Dr Petieu.
+4. Relances : **à poser le jour de l'envoi** (M+2 · M+4 · M+7, max 3).
