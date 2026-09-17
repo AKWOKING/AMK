@@ -83,9 +83,9 @@ Concept **déjà construit sur mesure** (bleus du logo, « Souriez à l'infini �
 **PORTAIL (2 min, sur téléphone) — ouvrir `afriqlabo.com` puis `afriqlabo.net` :**
 - **Ça s'ouvre vite, propre et responsive → BRANCH C : NE RIEN ENVOYER** (lead refonte seulement, hors campagne du jour), passer au prospect suivant.
 - **Page d'erreur / vide / expirée → ✅ CONFIRMÉ LE 16/09 ~17:00 (King, téléphone) : afriqlabo.com ET afriqlabo.net = DNS NXDOMAIN. → BRANCH A (domaine mort), image `mockup-clinic-wa.jpg` d'abord (elle est déjà étiquetée « clinic & laboratory »), numéro 690 54 70 93 :**
-> afriqlabo.com est référencé sur Google — mais le domaine ne s'ouvre plus.
-> Bonjour 👋, je suis Akwo King, développeur web à Douala. Quand un patient cherche votre laboratoire, il tombe sur une adresse éteinte ; vos analyses et demandes de prélèvement ne vivent que sur Facebook.
-> J'ai préparé une maquette de site de laboratoire : demandes d'analyses et réception des résultats par WhatsApp, en français et en anglais.
+> afriqlabo.com est référencé sur Google — mais la page ne s'ouvre plus.
+> Bonjour 👋, je suis Akwo King, développeur web à Douala. Un patient qui tape votre nom tombe sur une page d'erreur, et vos demandes de prélèvement comme vos résultats ne vivent que sur Facebook.
+> J'ai préparé une maquette de site de laboratoire : demande d'analyses et résultats reçus par WhatsApp, en français et en anglais.
 > Je vous l'envoie ? Répondez juste « oui » — une minute, sans engagement.
 > — Akwo King / AMK – Développement Web & Solutions Digitales
 >
@@ -103,8 +103,8 @@ Concept **déjà construit sur mesure** (bleus du logo, « Souriez à l'infini �
 **D'abord ouvrir `jossmediclinic.com` sur le téléphone :** vrai site = NE PAS ENVOYER et prévenir AMK · page morte/parquée/erreur = envoyer au **+237 677 58 42 73** (secours 674 63 88 88). MAJ 16/09 : le domaine est référencé comme site OFFICIEL par Clodura, RocketReach et leur FB /JMClini (email infos@jossmediclinic.com, tél. 233 42 18 91) — forte probabilité qu'il existe : bien faire le portail. Grosse clinique pluridisciplinaire depuis 2009 (11–50 employés : urgences, radio, labo, gynéco, dentaire…), profil « board buyer » : si le site vit, on ne chasse pas (règle board buyers no chase), on passe.
 
 **✅ PORTAIL FAIT LE 16/09 ~17:00 (King, téléphone) : jossmediclinic.com = DNS NXDOMAIN (domaine mort alors qu'il est écrit sur la page Facebook /JMClini et dans les annuaires pro). Envoi autorisé au +237 677 58 42 73 (secours 674 63 88 88), image `mockup-clinic-wa.jpg` d'abord, ~15 min après AFRIQUE LABO :**
-> jossmediclinic.com figure sur votre page Facebook — mais le domaine ne s'ouvre plus.
-> Bonjour 👋, je suis Akwo King, développeur web à Douala. Depuis 2009, JOSS MEDI réunit urgences, radio, laboratoire, gynéco et dentaire à Bonanjo — et un patient qui vous cherche en ligne tombe sur une adresse éteinte ou sur des annuaires qui suggèrent d'autres cliniques.
+> jossmediclinic.com figure sur votre page Facebook — mais la page ne s'ouvre plus.
+> Bonjour 👋, je suis Akwo King, développeur web à Douala. Depuis 2009, JOSS MEDI réunit urgences, radio, laboratoire, gynéco et dentaire à Bonanjo — et un patient qui vous cherche tombe sur une page d'erreur, ou sur un annuaire qui lui propose aussitôt une autre clinique.
 > J'ai dessiné une maquette bilingue pour clinique pluridisciplinaire : rendez-vous WhatsApp par service, en français et en anglais.
 > Je vous l'envoie ? Répondez juste « oui » — une minute sur votre téléphone, sans engagement.
 > — Akwo King / AMK – Développement Web & Solutions Digitales

@@ -297,6 +297,30 @@ Pale Red #FDEBEC/#9F2F2D · Pale Blue #E1F3FE/#1F6C9F · Pale Green #EDF3EC/#346
 - **COPY SELF-AUDIT (mandatory before ship):** re-read every visible string. Flag: grammatically broken, unclear referents, AI-hallucinated wordplay, "LLM trying to sound thoughtful" (fake humility, mock-poetic meta). Rewrite to plain functional sentences. Boring > broken.
 - Fake numbers: only real data or explicitly labeled sample (AMK concepts mark prices/hours/reviews as samples — standing rule).
 
+### §11b — SITE COPY LAW (added 17 Sep 2026, from the copywriting batch · see `research/YouTube-Lessons.md`)
+
+**The three questions — apply to every headline, every claim, every section title (Harry Dry, [5]):**
+1. **Can I visualize it?** Concrete beats abstract. If the reader can't see it, it isn't there yet. Zoom-in drill: write the abstract claim, then rewrite downward until you reach a concrete object or number.
+2. **Can I falsify it?** A true-or-false claim is checkable — "Consultation 6 000 F", "Résultats reçus sur WhatsApp", "2 100 patients suivis". Unfalsifiable slogans ("l'excellence à votre service", "votre santé, notre priorité") are banned from heroes.
+3. **Can nobody else say this?** If the clinic next door could paste the headline unchanged on their site, rewrite it. Use the client's own verified facts.
+
+**Tests before ship (in addition to the §13 pre-flight):**
+- **2-second test:** hero headline + sub must land in two seconds on a phone. Read it out loud to someone from the niche.
+- **Competitor-sign test:** could this hero live on the competitor's site with just a logo swap? → rewrite.
+- **Point, don't talk:** every claim sits next to its artifact — real photo, real number, real screenshot, price, hours, the WhatsApp button. Adjectives are not proof.
+
+**Structure rules (from [1][2][4][6]):**
+- **Hero names the business in plain language** + what to do (one CTA). Save the clever line for the section headline, never the hero (kicker/eyebrow carries the keyword; the hero carries plain meaning).
+- **Claim → proof pairs:** make a bold claim, put the evidence immediately under it. Never a testimonial "wall of love"; drip **one real verbatim quote** at a time under the claim it supports (use the client's/FB's own words — the customer-language rule [4]).
+- **Minimum one real verbatim human quote per concept** beside the numeric proof (follower counts / stars are not enough on their own).
+- **Awareness split:** hero + first section speaks to someone who has never heard of them; the FAQ/accordion handles the technical buyer's questions (exact services, hours, payment, location).
+- **CTA context:** never a bare button/link — the text around it says what they get. Repeat the same action top / middle / end.
+- **Benefits translator:** feature → "…ce qui veut dire…" consequence, once each; short sentences; bullets for lists; no data dumps.
+- **Banned words (EN/FR):** passion/passionné, révolutionnaire, dynamique, "solutions digitales" (as a benefit), "excellence" as a claim without a number; "best", "world-class", "state-of-the-art" — same rule in both languages.
+- **Read-aloud test** on the whole hero + every CTA, in spoken (not translated) French.
+
+**SEO placement [6]:** long-tail keywords live in the **FAQ accordion** and in **kickers/eyebrows** — never squeezed into the conversion headline. Ticks/inline SVG for lists, not emoji clusters.
+
 ---
 
 ## §12 REDESIGN PROTOCOL (for AMK site iterations & client rebuilds)

@@ -1,5 +1,7 @@
-# AMK — Sales Playbook v2 (09/12)
+# AMK — Sales Playbook v2.1 (09/12 · updated 17/09)
 **Synthesized from 4 videos → optimized for AMK's exact context (WhatsApp-first, schools + clinics, free concept previews, ₦100k 50/50, King's standing rules).**
+
+> **v2.1 changelog (17 Sep 2026 — copywriting batch of 6 videos, see `research/YouTube-Lessons.md`):** added **Part H — the customer-language system** (customer interviews as ingredient harvest; the WhatsApp-default reframe; claim→proof discipline). No existing rule was deleted or overwritten. The copy law itself (Harry Dry's 3 questions, 2-Mississippi, read-aloud) lives in `sales/Monday-Outreach-Pack.md` (cold messages) and `AMK-DESIGN-SKILLS.md` §11b (site copy) — Part H is the sales-specific slice only.
 
 > **Addendum (15 Sep evening):** [`AMK-Playbook-Addendum-Outcomes-2026-09-15.md`](AMK-Playbook-Addendum-Outcomes-2026-09-15.md) synthesizes 5 newer AI-agency videos — outcome (not website) framing, the gift-preview validation, Google-Maps no-website prospecting, the optional Care Plan retainer (FCFA/MoMo), monthly reports, and the handoff-video delivery step. Standing rules in this file still override; pricing changes in the addendum are proposals until King approves.
 
@@ -225,3 +227,29 @@ The "dark" part that's actually legal: **over-deliver.** 3–5 day promise → d
 4. Tomorrow: swap in the 30-second open. Friday: a friend plays "skeptical principal" for 10 minutes.
 
 **Rule:** never practice on real leads. Practice on people who owe you nothing — and never send a drilled line verbatim; the drill makes it *breathe*, not robotic.
+
+---
+
+## PART H · THE CUSTOMER-LANGUAGE SYSTEM (v2.1, 17 Sep — from videos [4] and [6])
+
+**H1 · Never originate the words.** The best copy is quoted, not written. Sources, in order: (1) the client's/prospect's own customers, (2) the prospect's own public words (FB posts, comments, signage, listings), (3) our own swipe file of messages that got replies (`sales/swipe/`).
+
+**H2 · The 6-field ingredient sheet** — the questions for any discovery conversation (onboarding call for a delivered client; qualification for the close):
+1. **Struggle** — what was happening before? what was frustrating?
+2. **Solutions** — what did you actually use it for / expect it to do?
+3. **Hesitations** — what worried you before saying yes? (unspoken here: price, trust, "will he disappear after payment?" — pre-answer in the offer, not the close)
+4. **Awareness** — what are you comparing this to? *(expect: another clinic's Facebook page, the phone number on the door, "we already have a page")*
+5. **Differentiators** — why choose us over the alternative?
+6. **Success** — what does life/business look like after? (business outcome + the emotional one — a lab that no longer makes patients queue for paper results; a school where the parent stops calling the office)
+Ask "anything else you'd like to add?" and then **stay silent** — the gold is in the answer to that question.
+
+**H3 · The WhatsApp-default reframe (Alex [6]: "the default is Google Sheets and WhatsApp").** In Cameroon, a clinic/school is not competing with another website — it competes with a Facebook page and a WhatsApp status. Use this in qualification and in the close, verbatim if it fits:
+- FR : « Vos patients ne vous comparent pas à un autre laboratoire — ils vous comparent à une page Facebook. »
+- EN : "Your patients aren't comparing you to another clinic — they're comparing you to a Facebook page."
+This is not a scare line: it's the reason a real site + WhatsApp flow *wins* without any ads.
+
+**H4 · Claim → proof discipline in the demo and the close.** Every bold sentence gets its artifact on the very next screen or breath: the price on their own ad, the deadline, the dead domain, the Google listing, the number of followers. No claim without a pointer. In the walkthrough: "here it is" beats "this is great".
+
+**H5 · One quote at a time.** Never a wall of reviews in a client deliverable or a concept. Bold claim → one real verbatim quote under it → next claim. (Contradicts nothing in v2; sharpens the proof sections.)
+
+**H6 · Testimonial harvest as a delivery step (zero cost over-delivery).** At handover +1 week, ask the client for 3 of their own customers to answer H2's questions (WhatsApp voice notes are fine). Their words go into the site (with consent) and become the next concept's proof. This is the "customer writes your copy" hack [4] applied to our delivery — logged in the client's delivery checklist.
