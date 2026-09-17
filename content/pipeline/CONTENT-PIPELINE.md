@@ -14,7 +14,8 @@
 | **#2** | 5 things your website should tell a customer in 10 seconds | `content/videos/v02-five-website-answers/Video_02_Five_Website_Answers.mp4` | **29.40 s** ✓ | delivered → posted | **yes** | IG **47** · TikTok **87** |
 | **#3** | 3 reasons people leave without contacting you (= **series Part 2**) | `content/videos/v03-part2-three-reasons/Video_03_Part_2.mp4` | **34.90 s** ✓ | delivered → posted | **yes** | IG **41** · TikTok **137** |
 | **#4** original | Losing customers before they reach WhatsApp | `Video_04_Before_WhatsApp.mp4` — **⚠ not in repo** (superseded) | 30.9 s (handover) | obsolete for posting | no | — |
-| **#4** latest | Same script, real website footage + **PREVIEW CTA** | `content/videos/v04-before-whatsapp/Video_04_Real_Website_PREVIEW.mp4` | **34.20 s** ✓ | delivered → **APPROVED by King 17 Sep** → awaiting posting | **no** (King posts) | — |
+| **#4** latest | Same script, real website footage + **PREVIEW CTA** | `content/videos/v04-before-whatsapp/Video_04_Real_Website_PREVIEW.mp4` | **34.20 s** ✓ | delivered → approved → **PUBLIÉ TikTok 15/09 19:25** (version modifiée par King, 34,27 s affichés) | **TikTok oui · IG non · Shorts non** | **156 vues · 6,2 s · 18 % · 4,35 % complet · +1 abonné** |
+| **#4b** | Même script/voix/minutage, **ouverture animée** (correctif de la falaise à 0:02) | `content/videos/v04-before-whatsapp/Video_04b_Animated_Opening.mp4` | **34.20 s** ✓ (audio 34.21) | **livré 17/09 → à valider par King** → créneaux IG mer 24 + Shorts jeu 25 | non | — |
 
 **QA performed this session (17 Sep), reported as checked:** all three files in the repo were decoded with FFmpeg (`imageio_ffmpeg` binary `ffmpeg-linux-x86_64-v7.0.2`) → 1080×1920, SAR 1:1, DAR 9:16, H.264 High, 30 fps, + AAC 48 kHz mono. Frames extracted and **visually inspected**: #4 at 1 s (hook + real site, labelled "FICTIONAL CLINIC"), 10 s (bad-site demo labelled "Deliberately flawed", desktop-layout-on-phone leak), 22 s (MAKE CONTACT EASY payoff), 33 s (DM "PREVIEW" end card) — all correct; #3 at 18 s ("They don't trust you yet", X-list panel); #2 not frame-inspected yet (QA pending, file verified by decode only).
 
@@ -61,7 +62,15 @@
 - `Video_04_Real_Website_PREVIEW.mp4` = **34,20 s** ; la publication TikTok A affiche **34,27 s** → **écart à élucider** (question ouverte : cette publication est-elle une version antérieure de #4 ?). **Bloque la réutilisation de #4 sur TikTok tant que King n'a pas répondu.**
 - Correctif #4 proposé (non exécuté) : recut `v04b` — garder **le script, la voix et le minutage** ; remplacer seulement la **vision** du premier beat (0 → 4,78 s) par un plan animé (zoom lent + apparition d'éléments, jamais l'UI démontrée). Une fois approuvé : ~1 passe FFmpeg, aucun Playwright requis.
 
+## G · Correctif #4b — livré le 17/09 (nuit)
+**Problème :** le master #4 tient une **image totalement figée de 0:00 à 4,78 s** (première coupe) — dans les analytics, « la plupart des spectateurs ont arrêté à 0:02 ».
+**Correctif (`Video_04b_Animated_Opening.mp4`) :** la **vision** du premier beat est remplacée par un plan animé à partir de la **même image** (punch de 1,2 % en 0,2 s puis push-in lent jusqu'à ~7,6 % sur 4,78 s). **Script, voix, minutage et tout le reste de la vidéo sont inchangés.**
+**QA (vérifié, pas affirmé) :** 1080×1920 · SAR 1:1 · 30 fps · H.264 · audio AAC 48 kHz mono · **durée 34,20 s (audio 34,21)** · alignement après la coupe : écart moyen ≤ **0,19/255** vs master (bruit d'encodage) · **mouvement 0,0→0,5 s : 0,02 → 13,69**.
+**Aussi livré :** `review-opening-avant-apres.mp4` (6 s, 1080×1920, sans audio) — « AVANT / APRÈS » côte à côte dans le temps, pour validation sur téléphone.
+**Destination :** **IG Reels mer 24** + **YouTube Shorts jeu 25**. **Pas de republication TikTok** (#4 y est déjà).
+
 ## E · Changelog
+- **v0.5 — 17 Sep 2026 (nuit) :** King confirme que la publication du 15/09 **était bien #4** (registre corrigé) et que la vidéo fondatrice EN a reçu **un son tendance TikTok** à la publication (correction de la lecture « muette ») ; **les 3 fondatrices non publiées sont retirées** ; **#4b animé livré** (§G) ; cadence de publication fixée (réponse à King).
 - **v0.4 — 17 Sep 2026 (soir) :** analytics TikTok de King absorbées (§F) — loi des 2 secondes, vidéos fondatrices muettes, ouverture figée de #4, question ouverte sur la publication du 15/09 ; correctif #4 spécifié.
 - **v0.3 — 17 Sep 2026:** King's decisions — #4 **approved** (posting = King), #1 TikTok **not posted** + no re-upload, founding series status recorded (1 of 4 posted), shortlist + strategy approved, voice re-audition confirmed. Batch-4 lessons folded into the script gates.
 - **v0.2 — 17 Sep 2026:** pack received; files migrated into `content/`; real specs + frame QA recorded; performance figures recorded with caveats; Video 4 = pending/not approved/not posted.

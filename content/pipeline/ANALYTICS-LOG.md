@@ -78,3 +78,12 @@
 6. **Rien ne circule** : 0 enregistrement sur les deux, 1 partage (A), 0 (B). Aucune valeur « à envoyer à quelqu'un ».
 7. **Recherche = 0,0 %** : aucune vue via la recherche TikTok — les légendes/mots-clés ne captent pas d'intention.
 8. **Le créneau soir vs midi** : A (19:25) bat B (12:02) sur **toutes** les mesures (vues 156 vs 121, lecture moyenne 6,2 vs 3,8 s, rétention 18 % vs 13 %, visionnage complet 4,35 % vs 1,4 %, temps total 18:55 vs 8:58, +1 abonné vs 0). **Mais** les deux vidéos diffèrent par l'audio, la langue, le contenu et l'ancienneté → **ce n'est pas un test propre de l'heure**. À retenir comme indice, pas comme preuve.
+
+---
+
+### CORRECTIONS & RÉSOLUTION (King, 17 Sep ~22:15 — réponses à mes 3 questions)
+1. **La question ouverte est résolue :** la publication A du **15/09 à 19:25 est bien une version modifiée de la vidéo #4** (« post #4 = video #4 = before whatsapp »). → **#4 a donc été publié sur TikTok le 15/09.** Le registre du calendrier est corrigé ; le créneau TikTok du mar 23 est **libéré** (republier le même script = doublon).
+2. **Correction de la découverte « vidéo muette » :** `clinic-founding-en.mp4` n'a **aucune piste audio dans le fichier**, mais King a **ajouté un son tendance proposé par TikTok au moment de la publication** → **la vidéo n'a pas été publiée en silence.** Le constat devient : *la vidéo publiée avait un fond musical TikTok, pas de narration.* Comparaison A/B à lire en conséquence : **narration (A : 6,2 s / 18 %) vs son tendance seul (B : 3,8 s / 13 %)** — écart cohérent avec l'hypothèse « la voix retient », mais **toujours confondu** par le contenu, la langue et l'ouverture. Ne pas présenter comme une preuve.
+3. **Vidéos fondatrices : King a tranché — on les retire** (voir `POSTING-CALENDAR.md` §A2). Les 4 fichiers restent dans le dépôt comme archives, marqués **ne pas publier**.
+
+**Ce qui reste vrai après correction :** la **falaise à 0:02** sur les deux publications, l'**ouverture figée 4,8 s** de #4 (vérifiée image par image), la **récence** de l'audience (86–91 % en 18–34 ans) et la distribution quasi exclusivement « Pour Toi » auprès de non-abonnés.

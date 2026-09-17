@@ -1,9 +1,16 @@
 # Video 04 — Losing customers before they reach WhatsApp (+ PREVIEW CTA)
-**Status: DELIVERED → PENDING — not approved, not posted** (King to confirm)
-Master: `Video_04_Real_Website_PREVIEW.mp4` · 3.2 MB
-QA 17 Sep (checked): FFmpeg decode OK · 1080×1920 · SAR 1:1 · DAR 9:16 · H.264 High · **30 fps** · **34.20 s** · AAC 48 kHz mono.
-Frames inspected (4): t=1 s hook + real improved site with "FICTIONAL CLINIC · Educational website demonstration" label · t=10 s bad-site demo labelled "FICTIONAL CLINIC · Deliberately flawed website demonstration" + "Desktop layout on a phone" (leak 2/3) · t=22 s MAKE CONTACT EASY payoff · t=33 s `DM "PREVIEW" for a free homepage concept.` end card. All four correct and mobile-readable.
-Source: `source/` (capture.py · render.py · timeline.json · cta.mp3 · narration.mp3). Timeline starts [0, 4.78, 9.78, 16.02, 21.30, 26.50, 30.50], 30 fps.
-Technical truth: browser captures sampled at **15 fps**, composed at 30 fps (never claim native 30 fps capture).
-Supersedes: `Video_04_Before_WhatsApp.mp4` (30.9 s diagram version — not in repo; obsolete for posting).
-Next action: King's approval → first post Tue 23 Sep TikTok, Wed 24 Sep IG (see POSTING-CALENDAR §A).
+
+**Statut 17 Sep (nuit) : PUBLIÉ sur TikTok le 15/09 à 19:25 — version modifiée par King (34,27 s affichés) — puis mesuré : 156 vues · 6,2 s de lecture moyenne · 18 % de rétention · 4,35 % de visionnage complet · +1 abonné.** Détail : `content/pipeline/ANALYTICS-LOG.md`.
+**Instagram + YouTube Shorts : pas encore publiés** → créneaux mer 24 / jeu 25, avec la version **b** ci-dessous.
+
+## Fichiers
+| Fichier | Rôle | Specs vérifiées |
+|---|---|---|
+| `Video_04_Real_Website_PREVIEW.mp4` | master publié sur TikTok (ouverture **figée 4,78 s**) | 34,20 s (audio 34,21) · 1080×1920 · SAR 1:1 · H.264 High · 30 fps · AAC 48 kHz mono |
+| **`Video_04b_Animated_Opening.mp4`** | **correctif de l'ouverture** — même script, même voix, même minutage ; le premier beat devient animé (punch 1,2 % en 0,2 s puis push-in lent) | **34,20 s (audio 34,21)** · 1080×1920 · 30 fps · AAC 48 kHz mono · **mouvement 0,0→0,5 s : 0,02 → 13,69** · alignement après la coupe ≤ 0,19/255 vs master |
+| `review-opening-avant-apres.mp4` | clip de validation (6 s, sans audio) : 3 s AVANT / 3 s APRÈS | 1080×1920 · 30 fps · 0,93 Mo |
+
+**QA du 17/09 :** décodage FFmpeg OK sur les trois fichiers · images inspectées (b : 0,0 s / 2,4 s / 5,1 s) · **la coupe est au bon endroit** (l'image post-4,78 s est identique au master à ≤ 0,19/255 près).
+**Note technique :** `drawtext` **absent** de ce build FFmpeg → les libellés du clip de validation sont posés avec PIL (`overlay`), pas avec drawtext.
+**Rappel :** captures navigateur échantillonnées à 15 fps, composées à 30 fps — ne jamais parler de capture native 30 fps.
+**Suite :** validation par King → publication IG (mer 24) + Shorts (jeu 25). **Pas de republication TikTok.**

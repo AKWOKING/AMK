@@ -12,7 +12,7 @@
 | **#1** `Instagram_vs_Website_v2.mp4` | Posted on **Instagram (13 views reported)** · **TikTok: NOT posted** (King, 17 Sep) · file not re-uploaded — archive only |
 | **#2** `Video_02_Five_Website_Answers.mp4` | **Posted** — IG 47 · TikTok 87 |
 | **#3** `Video_03_Part_2.mp4` | **Posted** — IG 41 · TikTok 137 |
-| **#4** `Video_04_Real_Website_PREVIEW.mp4` | **APPROVED by King 17 Sep** — **awaiting posting** (carries the PREVIEW end card) |
+| **#4** `Video_04_Real_Website_PREVIEW.mp4` | **PUBLIÉ sur TikTok le 15/09 à 19:25** (version modifiée par King, 34,27 s affichés) — **156 vues · 6,2 s · 18 % · 4,35 % complet · +1 abonné** (voir `pipeline/ANALYTICS-LOG.md`) · **IG + Shorts : pas encore publiés** |
 | Founding series (repo, 15 Sep) | **Only `clinic-founding-en.mp4` posted (TikTok).** The other three: unposted — slots below |
 | Profile layer (bio, pin, UTM link) | **Recommendations only — not verified as installed** |
 
@@ -21,9 +21,9 @@
 ## A · First slots after today's outreach
 | Slot | Platform | Asset | Caption | Cover | Pinned/first comment |
 |---|---|---|---|---|---|
-| **Tue 23 Sep, 18:00–20:00** | **TikTok** | **#4** ⚠️ **sous réserve — voir §A-note** | FR led (below) | hook frame "Losing customers BEFORE WHATSAPP?" | « Dites **PREVIEW** en DM pour un aperçu gratuit de page d'accueil. » |
-| **Wed 24 Sep, 12:00–14:00** | **Instagram Reels** | **#4** | EN led (below) | same hook frame | "DM **PREVIEW** for a free homepage concept." |
-| Thu 25 Sep | YouTube Shorts | **#4** | search-first: « Pourquoi vos clients partent avant WhatsApp — site mobile Cameroun » | hook frame | link `?src=yt` |
+| **Tue 23 Sep, 18:00–20:00** | **TikTok** | **CRÉNEAU LIBÉRÉ** — #4 y serait un doublon (déjà publié le 15/09) | — | — | **Ne rien publier plutôt que republier** ; réserve : V-05 **si** voix + montage prêts, sinon créneau vide |
+| **Wed 24 Sep, 12:00–14:00** | **Instagram Reels** | **#4 · `Video_04b_Animated_Opening.mp4`** | EN led (below) | same hook frame | "DM **PREVIEW** for a free homepage concept." |
+| Thu 25 Sep | YouTube Shorts | **#4 · `Video_04b_Animated_Opening.mp4`** | search-first: « Pourquoi vos clients partent avant WhatsApp — site mobile Cameroun » | hook frame | link `?src=yt` |
 
 **Caption drafts**
 - FR / TikTok : « Votre site perd des clients **avant** qu'ils n'atteignent votre WhatsApp. 3 fuites : lenteur, illisible sur téléphone, contact enterré. Réglez ça avant d'acheter du trafic. 👉 DM **PREVIEW** pour un aperçu gratuit de page d'accueil. »
@@ -31,27 +31,24 @@
 - **If King posts #4 earlier (right after the outreach push), keep the same caption/comment pair and move the remaining slots accordingly.**
 
 
-### §A-note (17 Sep au soir) — deux réserves avant de publier #4
-1. **Risque de doublon :** les analytics montrent une publication **« Losing customers — BEFORE WHATSAPP? » (34,27 s) déjà en ligne le mar 15 sep 19:25** (156 vues). Notre master #4 fait 34,20 s et tous les états du dépôt le disent non publié. **Tant que King n'a pas confirmé ce qu'était cette publication, ne pas remettre #4 sur TikTok** (même script = doublon probable → déclassement). Question posée dans `content/pipeline/ANALYTICS-LOG.md`.
-2. **Ouverture à corriger d'abord :** le master #4 tient **une image figée jusqu'à 4,78 s**. Le correctif prévu (voir ci-dessous) consiste à donner du mouvement aux 2 premières secondes **sans toucher au script ni à la voix**.
+### §A-note — RÉSOLU (King, 17 Sep 22:15)
+**#4 a été publié sur TikTok le 15/09 à 19:25** (version modifiée par King) → **on ne le republie pas sur TikTok** (doublon). Ses chiffres sont au registre (`ANALYTICS-LOG.md`).
+**En revanche #4 n'est jamais allé sur Instagram ni sur YouTube** → les créneaux **mer 24 (Reels)** et **jeu 25 (Shorts)** sont maintenus, avec la version corrigée **`Video_04b_Animated_Opening.mp4`** (ouverture animée, script/voix/minutage identiques, livrée le 17/09 pour validation).
+**Pourquoi la version b :** le master #4 tient une **image figée jusqu'à 4,78 s** — c'est très probablement ce qui a produit la falaise à 0:02. v04b garde tout à l'identique après 4,78 s (vérifié : écart image ≤ 0,2/255) et donne du mouvement dès la frame 1.
 
-## A2 · Founding series (3 unposted — repo assets, older fingerprint)
-| Slot | Platform | Asset | Note |
-|---|---|---|---|
-| Fri 26 Sep, 18:00–20:00 | TikTok + FB Page + WA Status | `sales/social/videos/clinic-founding-fr.mp4` ⚠️ **MUETTE — ne pas publier en l'état** | the natural pair to the posted EN; keep its own caption (pack §A) — **not** the PREVIEW block (these predate it; retrofit only if King asks). **Vérifié le 17/09 : les 3 vidéos fondatrices non publiées n'ont AUCUNE piste audio** (et la EN publiée non plus — c'est elle qui fait 3,8 s / 1,4 %). Décision à prendre : ajouter une narration (après ré-audition de la voix) ou retirer du calendrier. |
-| Sat 27 Sep | TikTok + Shorts + IG | `school-founding-en.mp4` ⚠️ **MUETTE** | school side; DM keyword SCHOOL in its caption. **Même blocage audio que la vidéo EN publiée.** |
-| Sun 28 Sep | TikTok + IG + FB | `school-founding-fr.mp4` ⚠️ **MUETTE** | close the founding set; then the set is fully aired. **Même blocage audio.** |
-**Cross-link:** each founding post's pinned comment points to the posted `clinic-founding-en` ("the first one →"), and to the school pair respectively.
+## A2 · Founding series — **RETIRÉES DU CALENDRIER (décision King, 17 Sep)**
+**Les 3 vidéos non publiées (`clinic-founding-fr`, `school-founding-en`, `school-founding-fr`) ne seront pas publiées.** Raison : fichiers **sans piste audio** (aucune narration) et la seule des quatre qui a été publiée — avec un son tendance TikTok ajouté à l'upload — est la moins performante de nos deux lectures. Les 4 fichiers restent dans le dépôt (`sales/social/videos/`) comme archives, marqués *ne pas publier*.
+**Conséquence : les créneaux ven 26 / sam 27 / dim 28 sont libérés** — le prochain contenu planifié après #4 (mer 24 / jeu 25) est la production **V-05** quand elle sera prête.
 
 ## B · Two-week plan (21 Sep – 2 Oct)
 | Date | Platform | What | Language | Note |
 |---|---|---|---|---|
 | Mon 21 Sep | — | Pipeline review + sales outreach pack | — | outreach priority |
 | Tue 22 Sep | — | Strategy/shortlist locked; **voice re-audition** before any new render | — | prerequisite for V-05+ |
-| Wed 23 Sep | TikTok | **#4** | FR | T1 test opens |
-| Thu 24 Sep | IG Reels | **#4** | EN | T2 baseline |
+| Wed 23 Sep | TikTok | **créneau vide** (pas de doublon #4) | — | T1 reporté à la prochaine vidéo conforme |
+| Thu 24 Sep | IG Reels | **#4 `v04b`** | EN | T2 baseline (si King valide v04b : possible dès ven 18) |
 | Fri 25 Sep | — | **Weekly content report** | — | numbers only if King supplies them |
-| Fri 26 – Sun 28 | TikTok/IG/FB/Shorts | **founding trio** (A2) | FR/EN | cheap airing of ready assets |
+| Fri 26 – Sun 28 | — | ~~founding trio~~ **retiré** (A2) — créneaux libres | — | décision King 17/09 |
 | Mon 29 Sep | — | #4 72 h read + calendar adjust | — | |
 | Tue 30 Sep | — | **Close-the-month checkpoint (sales).** First new production slot only if a video is produced AND approved | — | content yields to the close |
 | Thu 2 Oct | TikTok/IG | second new-production slot (V-05/V-06 when ready) | FR+EN | |
@@ -62,9 +59,9 @@
 - **Pinned post:** best performer — candidate #2 on IG, #3 on TikTok; confirm before changing anything.
 - ⚠ **Never claim bio/pin/link was edited unless King says so.**
 
-## E · Fenêtres de publication (proposition du 17/09 — à confirmer avec les analytics de King)
+## E · Fenêtres de publication (hypothèse du 17/09 — **lecture des chiffres en §E2**)
 
-**Statut : hypothèse de travail, pas une règle validée.** Nos seules données réelles sont #2 (IG 47 / TT 87) et #3 (IG 41 / TT 137) — trop peu pour fixer une heure avec certitude. Ce qui suit est la fenêtre de départ ; elle sera corrigée par les chiffres que King enverra (vues, % de lecture, visites de profil, clics lien, DM).
+**Statut : hypothèse de travail, pas une règle validée.** Données disponibles le 17/09 au soir : #2 (IG 47 / TT 87), #3 (IG 41 / TT 137) **+ les deux lectures TikTok de §E2** — encore trop peu pour fixer une heure avec certitude (les deux publications diffèrent aussi par l'audio et le contenu). Ce qui suit reste la fenêtre de départ ; elle sera réévaluée après 3 publications à heure fixe.
 
 | Type | Fenêtre proposée | Pourquoi |
 |---|---|---|
@@ -75,12 +72,13 @@
 
 **Rythme de départ :** 1 vidéo publiée = 2 plateformes (TikTok + IG), jamais les deux dans la même heure (métriques séparées). **Création :** en soirée, par AMK, mais **rien n'est publié sans validation de King** (règle en vigueur).
 
-**Décision liée (proposition) :** avancer **#4** de mar 23 → **ven 18, 18:00–20:00** (TikTok FR) + **sam 19, 12:00–14:00** (IG EN) : l'actif est approuvé, il dort, et il sortira la veille des premières relances — un profil actif rassure un prospect qui vérifie. Si King refuse, les créneaux mar 23 / mer 24 restent inchangés.
+**Décision liée — MISE À JOUR :** #4 **a été publié sur TikTok le 15/09** → la proposition d'avance ne concerne plus TikTok mais **Instagram** : si King valide `v04b`, le Reel peut sortir **ven 18 (12:00–14:00)** ou **sam 19**, au lieu de mer 24 — un profil actif le week-end où partent les relances. Sinon, créneau mer 24 inchangé. **Le créneau TikTok du mar 23 reste vide** (pas de doublon).
 
 ## D · When numbers get logged
 24 h / 72 h / 7 d after each post, per platform, in that Friday's `pipeline/Weekly-Content-Report-YYYY-MM-DD.md`. King's numbers only. IG and TikTok never averaged.
 
-## E · Changelog
+## G · Changelog
+- **v0.4 — 17 Sep 2026 (nuit) :** #4 enregistré comme **publié sur TikTok le 15/09** (156 vues) ; créneau TikTok mar 23 **libéré** ; créneaux IG mer 24 / Shorts jeu 25 passés à **`v04b`** ; **vidéos fondatrices retirées du calendrier** (décision King) ; **§F cadence de publication** ajoutée ; §E2 corrigée (son tendance TikTok, pas « muet »).
 - **v0.3 — 17 Sep 2026:** approved; #4 approved + posting kit; founding trio slots (1 of 4 was posted); outreach-first ordering; #1 TikTok recorded as not posted.
 - **v0.2 — 17 Sep 2026:** rebuilt on the real series state.
 - **v0.1 — 17 Sep 2026:** placeholder plan.
@@ -98,10 +96,26 @@
 | Temps de lecture total | **18:55** | **8:58** |
 | Nouveaux abonnés | **+1** | **0** |
 | Arrêt principal | **0:02** | **0:02** |
-| Audio | narration | **aucune piste audio** |
+| Audio | narration (voix) | fichier sans piste audio → **son tendance TikTok ajouté à la publication** (King) |
 
 **DÉCISIONS :**
-1. **Créneau TikTok : on tient 18:00–20:00.** A (soir) bat B (midi) sur toutes les mesures — mais B était **muette** : on ne peut pas attribuer la différence à l'heure. On garde donc l'heure **fixe** sur les 3 prochaines publications pour la rendre comparable, et l'hypothèse « soir » reste **indicative, non prouvée**.
+1. **Créneau TikTok : on tient 18:00–20:00.** A (soir) bat B (midi) sur toutes les mesures — mais B n'avait **pas de narration** (son tendance ajouté à la publication) : on ne peut pas attribuer la différence à l'heure. On garde donc l'heure **fixe** sur les 3 prochaines publications pour la rendre comparable, et l'hypothèse « soir » reste **indicative, non prouvée**.
 2. **Le levier n'est pas l'heure, c'est 0:00–0:02.** Aucun budget de production ne part dans un nouveau script avant que ce point soit corrigé (voir `CONTENT-LESSONS.md` §12).
 3. **Statut WhatsApp + page Facebook** reçoivent la version **acheteur** (propriétaires 35–55) : l'audience TikTok atteinte est à 86–91 % en 18–34 ans.
 4. **Création :** l'heure de production n'a aucune importance ; ce qui compte est que **rien ne soit publié hors créneau** et que **rien de muet** ne parte.
+
+
+## F · CADENCE DE PUBLICATION (réponse à King, 17 Sep) — règle en vigueur
+**Règle dure :** **1 publication maximum par plateforme et par jour** · jamais deux publications à moins de **4 h** d'intervalle sur la même plateforme · jamais le même fichier deux fois sur la même plateforme.
+
+| Plateforme | Rythme | Créneau | Notes |
+|---|---|---|---|
+| **TikTok** | **3 / semaine** (mar · jeu · sam) | **18:00–20:00** | le créneau est **tenu constant** jusqu'à 3 publications comparables |
+| **Instagram Reels** | **2 / semaine** (mer · dim) | **12:00–14:00** | métriques séparées de TikTok, jamais moyennées |
+| **YouTube Shorts** | 1 / semaine (jeu) | **20:00–22:00** | recherche d'abord (titre + description) |
+| **Statut WhatsApp** | 2–3 / semaine, **max 1 / jour** | 07:30–08:30 ou 20:00–21:00 | canal **acheteur** (réseau de King) |
+
+**Ramp :** ce rythme suppose **2 productions par semaine** — notre plafond réel aujourd'hui (script + rendu + QA + validation King + publication King).
+**Pour monter à 1 publication/jour par plateforme**, il faut d'abord qu'**une vidéo passe la porte des 2 secondes** : **lecture moyenne ≥ 12 s** ou **visionnage complet ≥ 15 %** (mesures actuelles : 3,8–6,2 s et 1,4–4,35 %).
+**Pourquoi pas plus maintenant :** TikTok nous échantillonne déjà (~120–160 vues/publication, 87–91 % Pour Toi) ; ce qui manque n'est pas le volume mais la rétention. Poster plus vite avec la même ouverture figée multiplie les échecs — et deux publications rapprochées se partagent le même échantillon.
+**Ne jamais remplir un créneau vide avec un doublon** (créneau TikTok du mar 23 : laissé vide pour cette raison).
