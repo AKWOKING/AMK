@@ -64,6 +64,24 @@
 3. **Contrôle 3 (optionnel) :** ouvre leur page Facebook `/JMClini` depuis le téléphone et regarde le numéro WhatsApp qu'ils publient aujourd'hui.
 4. Les deux sont des numéros simples ? **On envoie quand même** — beaucoup de cliniques camerounaises utilisent une ligne personnelle ; notre message nomme la clinique dès la ligne 1 et inclut une porte de sortie. Si les contrôles montrent un numéro différent, **ne pas envoyer encore** — me le dire.
 
+## 2d · L'OPTICIEN (Bali, Douala) — **à envoyer ce soir** · 670 27 60 65
+
+**Portes §8b : 3/3** (WA Business + catalogue actifs / vu aujourd'hui / mono-boutique = propriétaire). Maison Optique écarté (a un vrai site : `maison-optique.cm`).
+
+**1. Envoyer d'abord l'image** : `demos/shots/mockup-opticien-wa.jpg` (165 Ko).
+**2. Puis ce texte (copier-coller) :**
+
+> Bonjour 👋 Depuis le 1ᵉʳ juillet, les verres ont un prix plafonné au niveau national, et 80 boutiques d'optique clandestines ont été fermées à Douala et Yaoundé. Pour un opticien en règle, c'est le moment où les clients regardent qui est sérieux — et sur Google, votre boutique ne sort pas.
+> Je suis Akwo King, développeur web à Douala. J'ai préparé un aperçu : contrôle de la vue sur rendez-vous, choix de la monture selon la forme du visage, devis verres reçu sur WhatsApp avant de se déplacer.
+> Je vous l'envoie ? Un simple « oui » suffit — vous regardez une minute sur votre téléphone, sans engagement.
+> — Akwo King / AMK – Développement Web & Solutions Digitales
+
+**3. Contrôles avant d'appuyer** : le contact est bien **+237 670 27 60 65** (appui long → infos du contact) · nous sommes dans la fenêtre 09–21 · l'image part **avant** le texte.
+
+**4. Après « oui » (dans l'heure)** : lien `amk-cm.vercel.app/opticien/` (numéro réel déjà câblé dans les 8 boutons WhatsApp : le devis et le sélecteur de forme arrivent **sur leur ligne**) → puis 2 questions seulement : « Je mets votre vraie ligne et vos photos ? » / « Vous préférez être appelé comment ? »
+
+**5. Relances** : sam 19 (M+2) · lun 21 (M+4) · jeu 24 (M+7). Détail et objections : `sales/Outreach-LOpticien-v1.md`.
+
 ## 3 · Réponse watch (ne rien renvoyer — juste répondre vite)
 
 | Prospect | Statut | Si réponse « oui » | Si silence |
@@ -72,13 +90,14 @@
 | **YAKS** (672 70 20 78) | msg1 16/09 16:43 + **mockup livré 17:43** (lue) | pack §2b : lien `concept-yaks-v1.vercel.app` + vérité 6 000 F + question domaine mort | FU1 **ven 18** (M+2) |
 | **OraCare** (672 52 66 86) | preview + micro-question 16/09 14:32 (lue) | pack §1 : répondre à sa réponse (nettoyage / blanchiment / bagues) | FU2 **dim 20** (M+4) |
 | AFRIQUE LABO / JOSS / MITOC / Baird | ce matin | §2 ci-dessus | FU1 **ven 18** (M+2) |
+| **L'Opticien** (670 27 60 65) | **à envoyer ce soir** (§2d) | aperçu → lien réseau réel | FU1 **sam 19** (M+2) · FU2 lun 21 · FU3 jeu 24 |
 
 **Qualification après « oui » (une question à la fois, jamais de prix au premier message) :** qui décide · ville/quartier · horaires réels · photos autorisées · ce qui manque le plus à leurs patients.
 
 ---
 
 ## 4 · Ne pas faire aujourd'hui
-❌ Cartes/déplacements/boda (remote-only) · ❌ Solidarité (677 61 57 57 jamais) · ❌ Dr Njang 691 63 29 41 (hold) · ❌ COMOBIL / SAHISCOL / La Retraite (parqués) · ❌ cibles diocésaines/étatiques · ❌ opticiens Bali/Maison Optique (concept optique jeudi) · ❌ prix en public (commentaires) · ❌ nommer un vrai client/prospect dans un contenu public.
+❌ Cartes/déplacements/boda (remote-only) · ❌ Solidarité (677 61 57 57 jamais) · ❌ Dr Njang 691 63 29 41 (hold) · ❌ COMOBIL / SAHISCOL / La Retraite (parqués) · ❌ cibles diocésaines/étatiques · ❌ Maison Optique (a un site — parqué) · ❌ prix en public (commentaires) · ❌ nommer un vrai client/prospect dans un contenu public.
 
 ## 5 · Après l'outreach
 Le contenu reprend : **#4 approuvée** (post TikTok/IG dès que tu veux, kit dans `content/strategy/POSTING-CALENDAR.md` §A), puis les 3 vidéos « founding » non publiées (§A2). Rien n'est posté sans toi.

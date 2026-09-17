@@ -1,6 +1,6 @@
 # OUTREACH — L'OPTICIEN (Bali, Douala) · 670 27 60 65
 
-**Statut : PRÊT — envoi par King après déploiement de la preview + QA téléphone.**
+**Statut : PRÊT À ENVOYER (17/09 au soir).** Il ne manque que : déployer `hosting/previews/` → `amk-cm.vercel.app/opticien/`, QA téléphone, puis envoi. Concept audité : 0 trouvaille structure/contraste (`tools/qa/audit_html.py`).
 Concept : `demos/concept-opticien-v1.html` (générique « Votre Opticien ») · Image : `demos/shots/mockup-opticien-wa.jpg` (165 KB) · Dossier : `clients/l-opticien/` (portes §8b, douleurs, design).
 
 ## 0 · Portes §8b (RESEARCH-STANDARD) — 3/3 ✅
@@ -37,9 +37,9 @@ A joignabilité : WhatsApp **Business** « L'Opticien », profil + catalogue act
 | « J'ai déjà un site. » | Il n'en a pas (vérifié). Ne jamais l'affirmer de travers : « Je n'en ai pas trouvé. » |
 
 ## 5 · Relances (max 3)
-- **M+2 (ven 19/09)** : « Un mot : vous voulez que je vous envoie l'aperçu ? »
-- **M+4 (dim 21/09)** : le lien renvoyé seul + « Il reste en ligne jusqu'à mardi. »
-- **M+7 (mer 24/09)** : clôture douce : « Je le laisse de côté. Si un jour vous voulez être visible sur Google, écrivez-moi. »
+- **M+2 (sam 19/09)** : « Un mot : vous voulez que je vous envoie l'aperçu ? »
+- **M+4 (lun 21/09)** : le lien renvoyé seul + « Il reste en ligne jusqu'à mardi. »
+- **M+7 (jeu 24/09)** : clôture douce : « Je le laisse de côté. Si un jour vous voulez être visible sur Google, écrivez-moi. »
 
 ## 6 · À ne jamais dire / écrire
 « Vous n'avez pas de site » (dire « je n'en ai pas trouvé ») · un prix de verre inventé · « dépistage gratuit » (c'est l'offre de Golden Eyes) · une marque qu'il ne vend pas · un faux témoignage · un délai de livraison qu'il n'a pas confirmé.
