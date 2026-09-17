@@ -17,7 +17,7 @@ A joignabilité : WhatsApp **Business** « L'Opticien », profil + catalogue act
 
 ## 2 · Check avant envoi
 - [ ] Preview déployée + **QA téléphone** (le sandbox n'a pas de navigateur) — miroir animé, FR/EN, liens WhatsApp, taille sur 3G
-- [ ] **Remplacer `237600000000`** par le **670 27 60 65** dans `demos/concept-opticien-v1.html` (tous les `wa.me/`, y compris devis et sélecteur)
+- [x] **Numéro réel intégré** : variante `demos/concept-opticien-lopticien.html` construite avec `python3 demos/build_opticien.py --wa 237670276065 --out concept-opticien-lopticien.html` — les 8 liens `wa.me` et le libellé « +237 670 27 60 65 » sont dedans ; le fichier générique garde le placeholder. C'est cette variante que sert `hosting/previews/opticien/`.
 - [ ] Image `mockup-opticien-wa.jpg` envoyée **avant** le texte
 - [ ] Fenêtre 09–21, pas de relance avant M+2
 

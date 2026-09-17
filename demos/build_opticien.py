@@ -8,14 +8,20 @@ the lab concept (cyan/navy + Space Grotesk).
 
 Output: demos/concept-opticien-v1.html  (single file, base64 images, EN|FR)
 """
-import base64, io, json
+import base64, io, json, sys
 from pathlib import Path
 from PIL import Image
 
 ROOT = Path('/home/user/AMK')
-OUT = ROOT / 'demos/concept-opticien-v1.html'
-WA = '237600000000'          # placeholder — replaced by the prospect's line before sharing
+WA = "237600000000"          # placeholder — pass --wa 2376XXXXXXXX to bake a real line
+OUT_NAME = "concept-opticien-v1.html"
 WA_LABEL = '+237 6XX XX XX XX'
+if "--wa" in sys.argv:
+    WA = sys.argv[sys.argv.index("--wa") + 1]
+    WA_LABEL = '+237 ' + WA[3:6] + ' ' + WA[6:8] + ' ' + WA[8:10] + ' ' + WA[10:12]
+if "--out" in sys.argv:
+    OUT_NAME = sys.argv[sys.argv.index("--out") + 1]
+OUT = ROOT / 'demos' / OUT_NAME
 
 def b64(path, width, quality=76):
     im = Image.open(ROOT / path).convert('RGB')
