@@ -1,64 +1,59 @@
 # AMK — POSTING CALENDAR
 
-**Version:** v0.1 (draft) · **Updated:** 17 Sep 2026 · **Posting is King-only.**
-**Rule:** this file records what goes out, when, where, with which caption/cover — plus what is **confirmed posted** vs **assumed**. Nothing in the "assumed" column may ever be reported as fact.
+**Version v0.2** (draft) · 17 Sep 2026 · **Posting is King-only.**
+**Rule:** this file records what goes out, when, where, with which caption/cover — and separates **confirmed** from **assumed**. Nothing assumed may ever be reported as fact.
 
 ---
 
-## 0 · Ground truth (nothing assumed)
-
+## 0 · Ground truth
 | Item | Status |
 |---|---|
-| Video 4 `Video_04_Real_Website_PREVIEW.mp4` | **PENDING — not approved, not posted** (per King, 17 Sep) |
-| Videos #1–#3 (previous chat) | **Status unknown** — files not received; King to confirm which, if any, went out, where, and when |
-| Founding series (repo, 15 Sep) — `clinic-founding-en/fr`, `school-founding-en/fr` | **Prepared, not confirmed posted** (pack says "King posts") |
-| TikTok `video1-final.mp4` (repo) | **Prepared** — not confirmed posted |
-
-The calendar below therefore has two parts: **A · confirm-first** (existing material — King marks what's live) and **B · plan** (goes out only after King approves strategy + shortlist).
+| **#1** `Instagram_vs_Website_v2.mp4` | Posted on **Instagram (13 views reported)**. TikTok post status **unconfirmed**. **File not in repo** → re-upload needed for any reuse. |
+| **#2** `Video_02_Five_Website_Answers.mp4` | **Posted** — IG 47 · TikTok 87 |
+| **#3** `Video_03_Part_2.mp4` | **Posted** — IG 41 · TikTok 137. Caption + in-video Part 2 opener incl. "MISSED PART 1? Watch '5 things'" (handover; in-video addition verified in file via handover description) |
+| **#4** `Video_04_Real_Website_PREVIEW.mp4` | **NOT POSTED. Pending King's approval.** Carries the PREVIEW end card. |
+| Recommended-but-unconfirmed profile actions (pin "5 things", bio text, UTM link) | **Not verified as done.** Never assume. |
 
 ---
 
-## A · Confirm-first queue (existing material)
-
-| Slot | Asset | Platform | Caption | Cover | Pinned/first comment | Status |
-|---|---|---|---|---|---|---|
-| A1 | `clinic-founding-en.mp4` | TikTok (+ YouTube Shorts) | pack §A (EN/FR combined) | `clinic-founding-en-cover.jpg` | "2 founding slots left this month — DM PREVIEW" | ⏳ confirm |
-| A2 | `clinic-founding-fr.mp4` | TikTok (18:00–20:00) + IG Reels | FR caption from pack | `clinic-founding-fr-cover.jpg` | same, FR | ⏳ confirm |
-| A3 | `school-founding-en.mp4` | TikTok + YT Shorts | school variant (metadata file) | `school-founding-en-cover.jpg` | "DM SCHOOL" → update to PREVIEW | ⏳ confirm |
-| A4 | `school-founding-fr.mp4` | TikTok + IG Reels | FR school variant | `school-founding-fr-cover.jpg` | same | ⏳ confirm |
-| A5 | `tiktok/video1-final.mp4` (25fps — older fingerprint) | TikTok | from `tiktok/assemble.py` provenance | frame extract | — | ⏳ confirm / archive |
-
-**Notes:** masters are silent by design (King adds in-app trending audio). Mirror each TikTok to Shorts with the search-first title. Every link carries `?src=` for attribution.
-
-## B · Two-week plan (v0.1 — starts only on King's approval)
-
-Assumes: posting cadence 1 video/2 days per platform, EN/FR variants on separate days, no posting on days the outreach pack needs King's full attention (outreach first — content supports it).
-
-| Date | Platform | Asset | Language | Cover choice | Pinned comment |
+## A · Video 4 — placement once approved
+| Slot | Platform | Asset | Caption | Cover frame | Pinned/first comment |
 |---|---|---|---|---|---|
-| Mon 21 Sep | TikTok + Shorts | V-01 (shortlist #1) | FR | headline frame (payoff) | "Écrivez PREVIEW en DM" |
-| Tue 22 Sep | IG Reels | V-01 | EN | same master, EN cover | "DM PREVIEW" |
-| --- | --- | --- | --- | --- | --- |
-| Wed 23 Sep | TikTok + Shorts | V-02 (school angle) | FR | proof frame | "DM PREVIEW" |
-| Thu 24 Sep | IG Reels | V-02 | EN | EN cover | "DM PREVIEW" |
-| --- | --- | --- | --- | --- | --- |
-| Fri 25 Sep | TikTok | V-03 (build timelapse, authority) | EN | mid-build frame | link in bio |
-| Sat 26 Sep | IG Reels + FB Page | V-03 | FR | FR cover | link in bio |
-| --- | --- | --- | --- | --- | --- |
-| Mon 28 Sep | TikTok + Shorts | V-04 (before/after dead domain) | FR | before-frame | "Votre domaine est mort ? PREVIEW" |
-| Tue 29 Sep | IG Reels | V-04 | EN | after-frame | "DM PREVIEW" |
-| Wed 30 Sep | TikTok | **Video 4 (PREVIEW CTA)** — first slot after approval | FR | PREVIEW closing frame | "PREVIEW" |
-| Thu 01 Oct | IG Reels + YT | Video 4 | EN | EN cover | "PREVIEW" |
+| **Tue 23 Sep, 18:00–20:00** | **TikTok** | #4 master | FR led caption (below) | hook frame "Losing customers BEFORE WHATSAPP?" | « Dites **PREVIEW** en DM pour un aperçu gratuit de page d'accueil. » |
+| **Wed 24 Sep, 12:00–14:00** | **Instagram Reels** | #4 master | EN led caption | same hook frame | "DM **PREVIEW** for a free homepage concept." |
+| *(optional)* Thu 25 Sep | YouTube Shorts | #4 master | search-first title: "Pourquoi vos clients partent avant WhatsApp — site mobile Cameroun" | hook frame | link with `?src=yt` |
 
-**Cross-links:** V-01 and V-02 are a pair (clinic → school); each video's pinned comment links the other ("Version école →"). V-04 links to V-01 (the fix is shown in V-01).
+**Why #4 first on TikTok:** #3 (pain-led) won TikTok — #4 is the pain-led recut, and it carries the CTA we want to test (T1).
+**Caption drafts**
+- FR / TikTok: « Votre site perd des clients **avant** qu'ils n'atteignent votre WhatsApp. 3 fuites : lenteur, illisible sur téléphone, contact enterré. Réglez ça avant d'acheter du trafic. 👉 DM **PREVIEW** pour un aperçu gratuit de page d'accueil. »
+- EN / IG: "Your website loses customers before they reach your WhatsApp. 3 leaks: slow, unusable on a phone, contact buried. Fix that before buying more traffic. 👉 DM **PREVIEW** for a free homepage concept."
+*(Both stay inside the copy law: specifics, no hype, no invented numbers. "3 leaks" = what the video shows.)*
 
-**When funnel numbers get logged:** 24h / 72h / 7d after each post, per platform, in `pipeline/Weekly-Content-Report-YYYY-MM-DD.md` (Friday). IG and TikTok reported separately — never averaged.
+## B · Two weeks (21 Sep – 2 Oct)
+| Date | Platform | What | Language | Note |
+|---|---|---|---|---|
+| Mon 21 Sep | — | **No post.** Pipeline review + sales outreach pack day | — | outreach priority |
+| Tue 22 Sep | — | *hold*: strategy + shortlist approval checkpoint | — | no render before approval |
+| Wed 23 Sep | TikTok | **#4 (if approved)** | FR | T1 test opens |
+| Thu 24 Sep | IG Reels | **#4** | EN | T2 baseline |
+| Fri 25 Sep | — | **Weekly content report** (`pipeline/Weekly-Content-Report-2026-09-25.md`) | — | numbers only if King gives them |
+| Mon 28 Sep | — | **No post.** Review #4's first 72 h; adjust | — | |
+| Tue 29 Sep | TikTok / IG | **First new production (V-05 school or V-06 dead-domain)** — only if produced and approved | FR + EN | needs voice + rights cleared |
+| Wed 30 Sep | — | Close-the-month checkpoint (sales priority) | — | content may move if a prospect needs attention |
+| Thu 1 Oct | TikTok / IG | second new production slot (V-06 / V-05) | | |
+| Fri 2 Oct | — | Weekly content report | — | |
 
-## C · Profile layer (SMM owns; edits only when King confirms)
-- **Bio:** who AMK is + what we do + the link. Current link: `https://amk-cm.vercel.app` (with `?src=` per platform).
-- **Pinned post:** the best-performing clinic video (rotates monthly) — currently to be decided once #1–#3 status is confirmed.
-- **Link field:** WhatsApp handoff (`wa.me/237677789631`) + site link; keep one primary action.
-- **⚠ Never claim the bio/pinned/link was edited unless King says so.**
+**Cross-links:** #3's pinned comment links "5 things" (#2) — **confirm what was actually pinned before changing anything**; #4's comment links #3 ("la partie 2 →"). Stories on post days: one frame + the DM keyword.
 
-## D · Changelog
-- **v0.1 — 17 Sep 2026:** created. Part A awaiting King's confirmation; Part B awaiting approval of strategy + shortlist.
+## C · Profile layer (SMM owns; **edits only when King confirms**)
+- **Bio (suggested, not installed):** `Websites for schools & clinics in Cameroon.` / `Bilingual EN/FR. Easy WhatsApp contact.` / `Get your free 24h homepage preview below.` — display name suggestion: `AMK | Web Design Cameroon`.
+- **Link field:** `https://amk-cm.vercel.app/?utm_source=<platform>&utm_medium=organic_social&utm_campaign=profile` (UTM = attribution **only if** analytics collect it).
+- **Pinned post:** best performer — candidate #2 on IG ("5 things"), #3 on TikTok. To be confirmed by King before any change.
+- **⚠ Never claim the bio, pinned post or link was edited** unless King says so.
+
+## D · When numbers get logged
+24 h / 72 h / 7 d after each post, per platform, into that Friday's `Weekly-Content-Report-YYYY-MM-DD.md`. Only King's numbers. Never averaged across platforms.
+
+## E · Changelog
+- **v0.2 — 17 Sep 2026:** rebuilt on the real series state (#1–#3 posted, #4 pending); Video 4 placement added; two-week plan; profile layer marked recommendation-only.
+- **v0.1 — 17 Sep 2026:** placeholder plan while uploads were missing.

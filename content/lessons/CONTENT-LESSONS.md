@@ -1,78 +1,77 @@
 # AMK — CONTENT LESSONS (living playbook)
 
-**Version:** v0.1 · **Created:** 17 Sep 2026 · **Sources absorbed:** King's 17 Sep content brief (authoritative), repo content history (15–16 Sep founding series + TikTok v1), `research/YouTube-Lessons.md` batches 1–3 (relevant slices).
-**⛔ PENDING:** the previous content chat's lessons file was not received — merge when re-uploaded; log conflicts, never overwrite.
-
-**Rule:** append a dated entry whenever a video teaches something (hook that worked, frame that landed, mistake to avoid). Version the file; never silently rewrite.
+**Version v0.2** · 17 Sep 2026 · sources: `content/handover/2026-09-17-content-handover.md` (previous chat, authoritative), King's 17 Sep brief, repo content history, `research/YouTube-Lessons.md` batches 1–3.
+**Rule:** append dated entries; never silently rewrite. Conflicts get logged and go to King.
 
 ---
 
-## 1 · Brand fingerprint (what "in the image of AMK" means — every video)
+## 1 · Brand fingerprint (every video, no exceptions)
+- Same **cartoon host**, same **selected voice**, same **navy `#1B2055` / teal `#23C4B1` / amber `#FFB020`** palette, same **Montserrat/Poppins** typography, same **educational tone**.
+- Vertical **9:16, 1080×1920, 30 fps, SAR 1:1, H.264** — *verify by decoding the output, never assert.*
+- **Host introduces → real website footage teaches.** Never a talking head; never an avatar reciting a script over generic art.
+- **One message per beat · one question per screen** when narration lists items.
+- Every conclusion and every CTA gets **its own clean, high-contrast, mobile-readable frame**.
+- **No overlays on the thing being demonstrated** — a caption once covered the good site's WhatsApp buttons; it was fixed and **must not be reintroduced**.
 
-- Same **cartoon host**, same **selected voice**, same **navy/teal/amber** palette, same **Montserrat/Poppins** typography, same **educational tone**.
-- Vertical **9:16, 1080×1920, 30fps, SAR 1:1, H.264** — verify the output, don't assert it.
-- **The host introduces the subject and steps back.** Real website footage does the teaching. **No talking-head-only videos. No avatar reciting a script over generic art.**
-- Every important conclusion and every CTA gets its **own clean, high-contrast, mobile-readable frame**. No overlays on the thing being demonstrated — **especially never a WhatsApp button**.
-- One message per beat. One question per screen when narration presents a list.
+## 2 · Content quality (hard rules)
+- **Show real webpages**, never rectangles masquerading as sites (King's explicit criticism of earlier videos).
+- **Bad examples: believable, not parody** — and **labelled**. MboaCare carries "FICTIONAL CLINIC · Deliberately flawed website demonstration" on every capture.
+- **Label fiction as fiction, real as real.** Concept sites are **not** client case studies.
+- **Hooks are questions or specifics, never hype.** "10 seconds" is a hook, **not** a measured threshold — never turn it into a statistic.
+- Payoff frames stay clean: **HARD TO FIND → EASY TO LEAVE · CURIOUS → CONFIDENT · MAKE CONTACT EASY.**
+- **Never invent** testimonials, rankings, conversion stats, client outcomes, or completion claims.
+- **Never claim a post, a profile edit, or tracking installation happened unless King says so.** Bio/pinned/link advice is *recommendation only*.
 
-## 2 · Content quality
+## 3 · Funnel & measurement
+- Funnel: **Views → Profile visits → Website clicks → PREVIEW DMs → qualified inquiries → projects.**
+- Every video ends with the **DM "PREVIEW" closing beat, separate from the educational payoff**. Latest #4 has it; #1–#3 do **not** — **retrofit only if King asks** (and #1's file isn't in the repo).
+- **Track IG and TikTok separately. Never average. Never declare a cross-platform winner.**
+- Report **24 h / 72 h / 7 d, per platform, only with King's numbers** — never assume, never round up.
+- **Views ≠ unique reach.** A bio tap ≠ a loaded session. A WhatsApp click ≠ an inquiry. **A UTM tag = attribution only if analytics actually collect it.**
+- Suggested first reply to a PREVIEW DM: ask for **name of school/clinic, town, current website link**. No automation exists.
 
-- **Show real websites** — MboaCare, a shipped site, or a concept preview. The visual is always a real webpage, never rectangles.
-- Make the bad example **believable, not a parody**. Label fiction as fiction; label real work as real work.
-- **Hooks are questions or specifics, never hype.**
-- Payoff frames are clean and memorable: **HARD TO FIND → EASY TO LEAVE · CURIOUS → CONFIDENT · MAKE CONTACT EASY.**
-- **Never invent** testimonials, rankings, "verified" conversion stats, or client outcomes. "10 seconds" is a hook, not a threshold.
-- **Never claim** a video was posted, a profile was edited, or tracking was installed unless King explicitly said so.
-
-## 3 · Funnel tie-in
-
-- Every video ends with the **DM "PREVIEW" CTA as a separate closing beat**, after the educational payoff. **Video 4 already does this. Earlier videos do not — retrofit only if King asks.**
-- Funnel: Views → Profile visits → Website clicks → **PREVIEW DMs** → qualified inquiries → projects.
-- **Instagram and TikTok are tracked separately.** Never average them; never declare a cross-platform winner — different videos lead on different platforms.
-- Report at **24h / 72h / 7 days**, per platform, with the numbers King actually gave. Never assume, never round up.
-
-## 4 · Sources (a decision, never a default)
-
-Allowed sources, with the reason stated per video:
-1. **MboaCare studio** (`content/studio/`) — right when the video teaches a problem in the abstract.
-2. **Our own shipped work** — anonymised where the client relationship requires it, credited where it doesn't.
-3. **Our concept/preview library** — real prospects, real problems, real fixes we proposed. Much of the best raw material lives here.
-4. **Before/after from actual prospects** — only where permission exists or anonymisation is clean.
-5. **Build footage** (scroll, tap, load, contact flow) from anything we've shipped.
-6. **Client stories/results** — only when verified **and** the client agreed.
-7. **The niche itself** — schools and clinics in Cameroon: what their customers struggle with, what they get wrong, what good looks like.
+## 4 · Sources (a stated decision, never a default)
+MboaCare (abstract principle) · our own shipped work · **our concept/preview library** (real prospects, real problems, real fixes) · before/after pairs with permission or clean anonymisation · build footage · verified client stories with consent · the niche itself (schools/clinics in Cameroon). State why the source fits the video.
 
 ## 5 · Production discipline
+- **Unique filename per stage, never edit in place, preserve every prior deliverable.**
+- **FFmpeg via `imageio_ffmpeg.get_ffmpeg_exe()`** — never a hard-coded path (packages moved after env resets).
+- **Small sequential compositing passes** — a 7-input full-res graph once exhausted the sandbox.
+- **Browser captures at 15 fps → compose at 30 fps**; say so in any technical note.
+- **QA every final file:** decode, resolution, fps, SAR/DAR, duration — report what was checked.
+- **Inspect frames when images are available. Never claim you can't see.**
 
-- **Unique filename per stage. Never edit in place. Preserve every prior deliverable.**
-- **FFmpeg via `imageio_ffmpeg.get_ffmpeg_exe()`** — never a hard-coded path. *(Repo environment: installed 17 Sep; resolved path logged in the pipeline file.)*
-- **Small sequential compositing passes** over one giant graph — the sandbox chokes on 7 full-res inputs.
-- **Sample browser captures at 15fps, compose at 30fps.** Say so in any technical note.
-- **QA every final file:** decode it, check resolution, frame rate, SAR/DAR, duration — report what was actually checked.
-- Inspect frames whenever possible. Never claim you can't see.
+## 6 · Technical failure log (do not repeat)
+| Failure | Fix that worked |
+|---|---|
+| Wrong loop variable in output filenames → only last clip kept (was wrongly blamed on cleanup) | inspect code before inventing environmental explanations |
+| Input and output both `tmpcap.mp4` | unique paths per step; FFmpeg cannot edit in place |
+| Mixed/default frame rates | set input & output rates explicitly, `fps=30`, `-r 30`, `setsar=1`; verify output |
+| Multiline Bash filter → array instead of one filter string | Python arg list or one correctly quoted filter string |
+| "ExtraBold" variable fonts rendered **Thin** | `set_variation_by_axes([800])` bold / `[500]` regular, with fallback (verified working 17 Sep) |
+| Font lacked check/arrow glyphs → missing boxes | draw simple marks with PIL lines/vector |
+| Playwright Chromium missing system libs | `python -m playwright install-deps chromium` |
+| `imageio_ffmpeg` absent after env change | `pip install imageio-ffmpeg`; resolve path at runtime |
 
-## 6 · Varied formats, not one repeated video
-
-The variety is the point — sameness kills reach. Rotate across: build timelapse (craft/perception) · concept preview reveal · "how we think about X" authority · answer to a real prospect question · single-frame payoff + CTA. Videos must serve the whole funnel, not cluster at "here's what's wrong with your website".
-
-## 7 · Absorbed from the repo's own content history (15–16 Sep 2026)
-
-- **Silent + captions is deliberate** on the founding series (in-app trending sound added by King post-upload) — keep the master silent, let the platform add music.
-- **Mirror every TikTok to YouTube Shorts** with a search-first title (niche + city + "website"); Google AI Overviews cite YouTube. Bio/channel link carries `?src=` attribution.
-- **DM keywords per vertical** ("CLINIC" / "SCHOOL" / now "PREVIEW") route the conversation into WhatsApp; replies follow the 09:00–21:00 window.
-- **No fake scarcity** — the two founding slots were real; state capacity only when it's true.
-- **⚠ Discrepancy to reconcile:** `tiktok/video1-final.mp4` is **25fps** (and carries an audio track); the founding series is **30fps silent**. The fingerprint says 30fps → future masters use 30fps; v1 stays as-is unless re-rendered.
-- Never name a real client without consent (standing rule, reinforced by 17 Sep brief).
+## 7 · Evidence from the series so far (King-reported views)
+| Platform | #1 | #2 | #3 |
+|---|---:|---:|---:|
+| Instagram | 13 | **47** | 41 |
+| TikTok | not supplied | 87 | **137** |
+- **Actionable, specific education beats generic** (#2/#3 vs #1) — direction, not proof.
+- **#2 (list/educational) leads IG; #3 (pain-led) leads TikTok.** Test that split, don't average it.
+- **⚠ Qualified by the handover:** earlier confident advice about fixed posting windows, minimum weekly cadence, engagement-weight hierarchies and prescribed hashtag counts is **unverified** — treat as hypotheses, never as facts.
+- **Duration discipline:** 40.38 s was once called "inside a 35–40 s brief" — it wasn't. Report exact duration; ask before exceeding a cap.
+- #1's **SOCIAL MEDIA → ATTENTION / WEBSITE → TRUST → ACTION** mapping was **not prominent enough** — diagrams that matter need their own clean frame (same lesson as #4's CTA frame).
 
 ## 8 · Absorbed from the lesson batches (`research/YouTube-Lessons.md`)
-
-- **Copy law [5]:** visualize / falsify / nobody-else-can-say-it — applies to hooks and on-screen text; 2-second test on frame 1; read aloud; no padded lines.
-- **Claim → proof [6]:** every claim in a video carries its artifact on screen (the dead domain, the price, the real page).
-- **One quote at a time [6]:** no walls of testimonials — one real verbatim client/patient sentence under the claim it proves.
-- **Anti-slop design [10]:** no scroll-jacking, no content-hiding animations, no moving buttons, no emoji icons — applies to any UI shown on camera.
-- **Conversion-first [12]:** show hierarchy (biggest = most important), solid high-contrast CTAs, never ghost buttons as the primary action.
-- **Direction exploration [13]:** three directions before visual work; explicit avoid-list (purple gradients, AI sparkles, generic 3D).
-- **Taste is the moat [14]:** when every feed looks the same, the decisions differentiate.
+- Copy law [5]: visualize / falsify / nobody-else-can-say-it; 2-second test on frame 1; read aloud.
+- Claim → proof [6]: every claim carries its artifact on screen; one quote at a time, never a wall.
+- Anti-slop [10]: no scroll-jacking, no content-hiding animation, no moving buttons, no emoji icons — applies to any UI on camera.
+- Conversion-first [12]: hierarchy (biggest = most important), solid high-contrast CTAs, never ghost buttons as primary.
+- Direction exploration [13]: three directions before visual work; explicit avoid-list.
+- Taste is the moat [14]: the decisions differentiate when everyone's feed looks the same.
 
 ## 9 · Changelog
-- **v0.1 — 17 Sep 2026:** created from King's content brief + repo history + lesson batches 1–3. Previous-chat lessons pending ingestion.
+- **v0.2 — 17 Sep 2026:** handover absorbed — fingerprint hexes, hard rules, production discipline, full technical failure log, evidence table, qualified earlier advice.
+- **v0.1 — 17 Sep 2026:** created from King's brief + repo history + lesson batches.

@@ -1,39 +1,32 @@
 # AMK — CONTENT ASSETS INDEX
 
-**Purpose:** character art, fonts, voice references, palette, typography — where each actually lives.
-**Status 17 Sep 2026:** repo assets indexed ✅ · previous-chat assets (`clinic-reception.jpg`, `s1_hook.png`, studio art) **not received** ⛔.
+**Updated:** 17 Sep 2026 (v0.2 — pack received, all assets in `content/`)
 
-## Brand & identity (repo, verified present)
-
-| Asset | Path | Use |
+## Character / host art
+| Asset | Path | Verified |
 |---|---|---|
-| Logo kit | `brand/AMK-Logo-Kit.html` · `brand/AMK-logo-primary.{svg,png}` · `-mono` · `-square` | end cards, watermarks, covers |
-| Legacy green kit | `brand/v1-green/` (+ `funnel-v1-green.svg`) | archive — do not use in new content |
-| Avatar | `brand/avatar-amk.png` | profile pictures, host reference |
-
-## Content palette (from the 17 Sep brief — the fingerprint)
-- **Navy / teal / amber.** Exact hexes to be locked into a token file (`content/assets/palette.css` + swatches) once the studio files arrive and the previous chat's chosen values can be reconciled — **do not invent hexes**. Interim: pull from the live concepts' CSS (`demos/concept-*.html` `:root` blocks) where they match navy/teal/amber.
+| Established cartoon host + phone | `content/assets/host/s1_hook.png` | ✅ 1.2 MB · used in #1 (and #4's opening art) |
+⚠ Pose inventory (intro / pointing / payoff) beyond this single frame is **not available** — request more from King if a video needs them.
 
 ## Typography (fingerprint)
-- **Montserrat / Poppins** for on-screen text and captions. Both are Google Fonts — safe for FFmpeg drawtext pipelines and browser captures.
-- Repo note: the concepts use Outfit/Inter/Nunito per client brand; the **content** fingerprint is Montserrat/Poppins — do not confuse the two systems.
+| Asset | Path | Verified |
+|---|---|---|
+| Montserrat Medium / SemiBold / Bold / ExtraBold / VF | `content/assets/fonts/Montserrat-*.ttf` | ✅ PIL loads; **variable fonts render Thin by default** — call `set_variation_by_axes([800])` (bold) / `[500]` (regular); verified working |
+| Poppins SemiBold | `content/assets/fonts/Poppins-SemiBold.ttf` | ✅ |
+⚠ Known glyph gaps (check marks, arrows) in some weights → draw simple marks with PIL lines instead.
 
-## Voice (host narration)
-- **Selected voice: pending** — the chosen voice from the previous chat was not received (no reference file). Placeholder: `tiktok/vo-video1-fr.mp3` and `tiktok/vo-test-en.mp3` exist in-repo as *earlier* tests — **not confirmed** as the selected voice. ⛔ King to confirm or supply the reference sample.
-- Rule: same voice every video; English and French variants must sound like the same character.
+## Palette (fingerprint — locked)
+`navy #1B2055` · `ink #172044` · `teal #23C4B1` · `gold #FFB020` · `white #FFFFFF` — as used in `content/videos/v04-before-whatsapp/source/render.py` and confirmed in inspected frames.
+⚠ Note: the AMK **brand** folder uses a different green-family kit (`brand/v1-green/` = archive). Content fingerprint is the navy/teal/amber above.
 
-## Character art (host)
-- ⛔ Not received. Expected: the cartoon host used in the previous chat's videos (referenced by `s1_hook.png`) + any pose/expression set.
-- When it lands → `content/assets/host/` with a pose inventory (intro, pointing, shrug, payoff) so scripts can name poses.
+## Voice (narration)
+| Asset | Path | Use |
+|---|---|---|
+| #4 narration | `content/videos/v04-before-whatsapp/source/narration.mp3` | 30.43 s · 44.1 kHz mono · **best available voice reference** |
+| #4 CTA line | `content/videos/v04-before-whatsapp/source/cta.mp3` | 2.98 s — "DM preview for a free homepage concept" |
+| Earlier tests (repo) | `tiktok/vo-video1-fr.mp3`, `tiktok/vo-test-en.mp3` | not confirmed as the selected voice |
 
-## Studio (MboaCare demo)
-- ⛔ Not received: `Website_Demo_Studio.html`, `before.html`, `after.html`, `timeline.json`, `clinic-reception.jpg`.
-- Destination once received: `content/studio/` (see its README for the full expected inventory + verification steps).
+⚠ **The previous chat's registered voice (`voice-00`) does not carry into a new chat.** For any new narration King must re-select a voice (audition) — existing MP3s are the reference to match. **Do not narrate #5+ until this is done.**
 
-## Screens & captures we can produce today (no dependency on uploads)
-- **Our own concepts** (`demos/concept-*.html`, `hosting/previews/`) — yaks, skye, oracare, sasse, comobil, sahiscol, la-retraite, clinic-bonaberi, mitoc, sample-secondary.
-- **Build footage**: scroll/tap/load/contact-flow captures from any of the above, at 15fps sampled → 30fps composed.
-- **Rule reminder:** anime/credit decisions belong to King; anonymise when consent is absent.
-
-## Changelog
-- **17 Sep 2026:** index created; repo assets verified; pending list explicit.
+## Studio (MboaCare — the abstract-principle asset)
+`content/studio/` — see its README for the honesty constraints. Studio, before/after HTML, reception photo, create.py, test.py all present and verified.

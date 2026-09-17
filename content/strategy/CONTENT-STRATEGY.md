@@ -1,67 +1,60 @@
 # AMK — CONTENT STRATEGY
 
-**Version:** v0.1 (draft for King's approval) · **Date:** 17 Sep 2026 · **Owner:** AMK (CCO)
-**Revision rule:** strategy changes only with a reason, dated. Not every week, not never.
+**Version v0.2** (draft for King's approval) · 17 Sep 2026 · Owner: AMK (CCO)
+**Revision rule:** changes only with a reason, dated. Not every week, not never.
 
 ---
 
 ## 1 · Who we're talking to
 
-**Primary audience — clinic/lab decision-makers** (Douala, Buea; secondary Yaoundé, Limbe):
-- Owner-doctors, lab biologists (e.g. Dr Takala), clinic managers/directors. 1–20 staff, 1–3 locations.
-- Trigger: their online presence is dead or missing (expired domain, Facebook-only, template filler) **and** patients are already searching.
-- Where they actually are: **Facebook (their page + comments), WhatsApp, Google Maps**. Not TikTok-first — but TikTok/IG is where **their competitors' visibility** and our authority get built.
+**Primary — clinic/lab decision-makers** (Douala, Buea; then Yaoundé, Limbe): owner-doctors, lab biologists, clinic managers. 1–20 staff. **Trigger:** their online presence is dead or missing (expired domain, Facebook-only, template filler) while patients already search Google and WhatsApp.
+**Secondary — school administrators** (Buea, Kumba, Douala): proprietors/directors/registrars, 100–1 500 pupils. **Trigger:** admissions season and parent search behaviour.
+**Where they scroll:** Facebook + WhatsApp first; TikTok/IG is where we build visibility and authority (their competitors are not there yet — that is the opening).
+**Tertiary byproduct:** peers/agencies watching the craft content (later: referrals/hiring — not a target this quarter).
 
-**Secondary audience — school administrators** (Buea, Kumba, Douala; secondary Yaoundé):
-- Proprietors/directors/registrars; 100–1 500 pupils; admissions-driven.
-- Trigger: admissions season, parent search behaviour, no working site or a stale one.
+## 2 · What we're driving (quarter to 30 Sep, then to month 6)
+1. **One paying client closed by 30 September** — content supplies inbound signal; the close happens in WhatsApp.
+2. **PREVIEW DMs** from cold viewers — the metric that maps to the offer (free preview first, 100 000 FCFA 50/50 if kept).
+3. **Recognition in the two niches** — a clinic owner who sees 3 videos should think "these people build real sites".
+4. By month 6 (500 000 FCFA/month ≈ 3–5 active clients): content is a repeatable inbound channel, not a burst.
 
-**Tertiary (inbound byproduct):** peers/other local agencies watching AMK's build-quality content (recruitment + referrals later — not a target this quarter).
+**Baseline (King-reported, 17 Sep):** #1 IG 13 · #2 IG 47 / TT 87 · #3 IG 41 / TT 137. Windows/reach not supplied. #4 not posted.
 
-## 2 · What we're trying to drive (this quarter: to 30 Sep, then to month 6)
-
-1. **One paying client closed by 30 September** — content's job is to supply **inbound signal**, not to close. The close still happens in WhatsApp outreach.
-2. **PREVIEW DMs from cold viewers** — the single content metric that maps to the offer (free preview first, 100 000 FCFA 50/50 if kept).
-3. **Recognition in the two niches** — a Cameroonian clinic owner who sees 3 AMK videos should think "these people build real sites".
-4. Month-6 context: 500 000 FCFA/month → needs ~3–5 active clients; content must be a repeatable inbound channel by then, not a one-off burst.
-
-## 3 · What we're testing this month (one hypothesis each)
+## 3 · What we're testing this month (one hypothesis per test)
 
 | # | Hypothesis | Test | Success signal |
 |---|---|---|---|
-| T1 | A **real-prospect concept reveal** (real problem, real fix, anonymised if needed) out-performs abstract demo content | 1 reveal video vs 1 MboaCare-abstract video, same week, same platform, different days | 24h/72h: profile visits + PREVIEW DMs per video |
-| T2 | The **PREVIEW closing beat** (separate clean CTA frame) lifts DMs vs videos ending on the payoff | compare a v4-style ending vs an older ending **on new uploads only** (no retrofits without King's OK) | PREVIEW DM count per 1 000 views |
-| T3 | **EN and FR each lead on different platforms/audiences** → we stop deciding "one language wins" | EN and FR variants of the same master, same day, IG vs TikTok | per-platform, per-language breakdown at 72h |
-| T4 | **Before/after ("dead domain → live site")** is the strongest BOFU format for clinics | 1 before/after video using a real NXDOMAIN case (anonymised) + 1 authority video same week | DMs + replies that start with the dead domain |
+| **T1** | The **PREVIEW closing beat** converts views into DMs (not just views) | #4 (with the beat) vs #3 (without) — same pain-led family, posted on the platform where #3 won | PREVIEW DMs per 1 000 views; DM quality (name/town/link supplied) |
+| **T2** | **Format splits by platform:** list/educational wins IG, pain-led wins TikTok | next two videos produced in one format each, cross-posted to both platforms, same days | 72 h views per platform per format |
+| **T3** | A **real dead-domain before/after** (anonymised) produces the highest-intent DMs | one video built only on a real NXDOMAIN case + our replacement concept | DMs citing the dead domain; qualified inquiries |
+| **T4** | The **school side responds at all** to the same approach | one school-focused video (V-05) in the winning format, same cadence | 72 h views + any school DM/inquiry |
 
-**Measurement discipline:** IG and TikTok reported separately, at 24h / 72h / 7 days, only with numbers King supplies. No averaging, no rounding up, no invented benchmarks. Views alone never count as success.
+**Discipline:** IG and TikTok reported separately, 24 h / 72 h / 7 d, only with King's numbers. Views never count as success alone. No algorithm claims.
 
 ## 4 · What we are explicitly NOT doing (and why)
-
-- **No talking-head-only videos, no avatar reading a script over generic art** — the host introduces and steps back; real websites teach (brand fingerprint).
-- **No retrofitting the PREVIEW CTA into earlier videos** unless King asks.
-- **No claiming anything was posted/edited/tracked** without King's explicit confirmation.
-- **No invented testimonials, stats, rankings, or client results** — accuracy law.
-- **No naming a real client without consent**; anonymise cleanly (no logos, no unique identifiers where consent is absent).
-- **No Facebook-group spam or cold-DM blasts from content** — inbound only; outreach stays the disciplined WhatsApp pipeline.
-- **No trend-chasing audio/dance formats** — educational tone is the fingerprint; music is added by King in-app.
-- **No content about markets we don't serve** (e.g. real estate, e-commerce) this quarter — clinics/schools only.
-- **Not posting on days when the sales pipeline's outreach needs the attention** — content is a support function to the close by 30 Sep.
+- **No generic rectangle diagrams** — real webpages only (King's explicit lesson).
+- **No retrofitting the PREVIEW CTA into #1–#3** unless King asks; #1's file isn't even in the repo.
+- **No talking-head/avatar-recital videos**; no unlabelled fiction; no invented proof.
+- **No claims of posting, profile edits, or tracking** unless King confirms them.
+- **No naming a real client or prospect** without consent — anonymise cleanly (no logos, no unique addresses).
+- **No trend-chasing dance/audio formats** — educational tone is the fingerprint; King adds music in-app.
+- **No unverified algorithm advice** (fixed time windows, cadence minimums, hashtag counts) presented as fact.
+- **No markets outside clinics/schools** this quarter.
+- **No content crowding out outreach** — the 30 Sep close is the priority; content supports it.
 
 ## 5 · Platform roles
-
-| Platform | Role | Format | CTA route |
+| Platform | Role | Format | Route |
 |---|---|---|---|
-| **TikTok** | Reach + discovery; Cameroonian SMB attention | 9:16, hook-first, FR-led with EN variant | Bio link (`?src=tt`) → WhatsApp; DM keyword **PREVIEW** |
-| **Instagram (Reels)** | Reach + profile-as-portfolio; credibility (visual craft) | Same master, different caption/cover | Bio link (`?src=ig`); DM keyword **PREVIEW** |
-| **YouTube Shorts** | Search surface ("site web clinique Douala"); long shelf-life; Google AI Overviews cite it | Same master, search-first title | Description link (`?src=yt`) |
-| **Facebook (Page)** | Mirror + where the niche actually scrolls; posts, not paid ads | Master + still frames | Post CTA → WhatsApp |
+| TikTok | Reach + discovery; where #3 won | 9:16 master, FR caption lead | bio link `?src=tt` → WhatsApp; DM **PREVIEW** |
+| Instagram Reels | Reach + profile-as-portfolio; where #2 won | same master, EN caption | bio link `?src=ig`; DM **PREVIEW** |
+| YouTube Shorts | Search shelf-life ("site web clinique Douala") | same master, search-first title | description link `?src=yt` |
+| Facebook Page | Mirror where the niche actually scrolls | master + still frames | post → WhatsApp |
 
-## 6 · Content→sales handoff
-
-- A **PREVIEW DM** = hot: reply inside 09:00–21:00 (1-hour rule), qualify with the playbook's H2 questions, then the 3A reframe handles the first objection (Part I).
-- A **profile visit without DM** = warm: the pinned post + bio link must do the selling (bio, pinned post, link field are owned by the SMM role).
+## 6 · Content → sales handoff
+- **PREVIEW DM = hot:** reply inside 09:00–21:00, ask **name / town / current site link**, then playbook H2 qualification; first objection handled with **3A (Part I)**.
+- **Profile visit without DM = warm:** bio + pinned post carry the selling (profile layer owned by SMM; **edits only when King confirms**).
 - Log every content-sourced conversation in `sales/Pipeline-Status.md` with `src=` attribution.
 
 ## 7 · Changelog
-- **v0.1 — 17 Sep 2026:** first draft from King's content brief + current sales pipeline (0 deposits, target 30 Sep). Awaiting approval; pending previous-chat strategy reconciliation.
+- **v0.2 — 17 Sep 2026:** handover absorbed — real baseline numbers, tests re-anchored to evidence (#2 IG / #3 TikTok), added T4 school test, extended not-doing list (algorithm claims, retrofit, anonymity).
+- **v0.1 — 17 Sep 2026:** first draft from King's brief.
