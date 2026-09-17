@@ -482,5 +482,40 @@ s = s.rstrip("\n")[:-len(_tail)] + (
  "</script>\n</body>\n</html>\n")
 
 out = ROOT / "demos" / "concept-yaks-v1.html"
+A11Y_CSS = """
+/* a11y-pass-2026-09-17 — readable small text (audited by tools/qa/audit_html.py).
+   Light surfaces get a darker text variant of the accent; mid-tone pills get a
+   darker fill under light text; the dark booking block gets a lighter accent. */
+.eyebrow b{color:#3F7A1E}
+.spark{color:#3F7A1E;opacity:.8}
+.t-fb b{color:#3F7A1E}
+.faq-item summary .pm{color:#0F6E7B}
+.loc-strip a.dir{background:#2C7A22;color:#F0FAF1}
+.loc-strip a.dir:hover{background:#25681C}
+.step3 .n{background:#146A2C;color:#F0FAF1}
+.step3 span{color:rgba(240,250,241,.9)}
+.btn-dark{background:linear-gradient(135deg,#2A7A20 0%,#1F6E7A 100%)}
+.book .eyebrow b,
+.book .eyebrow span b{color:#B6E88F}
+
+.mbar .m-book,.btn-dark,a.sp-h h3,.sp-h{background:#2A7A20}
+.btn-dark{background:linear-gradient(135deg,#2A7A20 0%,#1F6E7A 100%)}
+a.sp-h{background:linear-gradient(135deg,#2A7A20,#1F6E7A)}
+.sp-h p{color:#FFFFFF}
+.ba-tag{background:#2C7A22;color:#F0FAF1}
+.sc p{color:#475C70}
+.work-meta p,.vcard p,.wcard p{color:#475C70}
+.loc-strip p,.book .sub{color:rgba(240,250,241,.92)}
+.bot-head small{color:rgba(255,255,255,.9)}
+.book .sub{color:rgba(240,250,241,.92)}
+.sp-h h3,.sp-h b,.sp-h span,.sp-h em{color:#FFFFFF}
+.mbar .m-book{background:linear-gradient(135deg,#2A7A20,#1F6E7A)}
+.sage-on-navy{color:#B6E88F}
+"""
+
+_i = s.rfind("</style>")
+s = s[:_i] + A11Y_CSS + s[_i:]
+
+
 out.write_text(s, encoding="utf-8")
 print("wrote", out, round(out.stat().st_size / 1024), "KB")

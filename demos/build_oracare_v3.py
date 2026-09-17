@@ -266,5 +266,49 @@ out = must_replace(out, "<script>", BOT_HTML + "<script>", "bot html")
 out = must_replace(out, "</script>", BOT_JS + "</script>", "bot js")
 
 dest = ROOT / "concept-oracare-v3.html"
+MOBILE_NAV_CSS = """
+/* AMK mobile-first nav pass (16 Sep 2026): EN|FR pill must never clip on phones */
+.lang-sw{flex:0 0 auto}
+.lang-sw button{min-height:40px}
+@media(max-width:1000px){ .concept-badge{display:none} }
+@media(max-width:860px){
+  .nav-phone,.concept-badge,.logo small,.nav-cta{display:none}
+  .lang-sw{margin-left:auto}
+  .lang-sw button{min-height:44px;padding:10px 16px;font-size:13px}
+  .logo{min-width:0}
+}
+@media(max-width:620px){
+  nav.main .wrap{gap:10px;padding-top:10px;padding-bottom:10px;padding-left:16px;padding-right:16px}
+  .lang-sw button{padding:10px 15px}
+}
+@media(max-width:380px){ .tooth{width:34px;height:34px;border-radius:10px} .logo{font-size:19px} }
+"""
+
+out = out.replace("</style>", MOBILE_NAV_CSS + "</style>", 1) if "mobile-first nav pass" not in out else out
+
+A11Y_CSS = """
+/* a11y-pass-2026-09-17 — readable small text (audited by tools/qa/audit_html.py).
+   Light surfaces get a darker text variant of the accent; mid-tone pills get a
+   darker fill under light text; the dark booking block gets a lighter accent. */
+.eyebrow b{color:#3F7A1E}
+.spark{color:#3F7A1E;opacity:.8}
+.t-fb b{color:#3F7A1E}
+.faq-item summary .pm{color:#0F6E7B}
+.loc-strip a.dir{background:#2C7A22;color:#F0FAF1}
+.loc-strip a.dir:hover{background:#25681C}
+.step3 .n{background:#146A2C;color:#F0FAF1}
+.step3 span{color:rgba(240,250,241,.9)}
+.btn-dark{background:linear-gradient(135deg,#2A7A20 0%,#1F6E7A 100%)}
+.book .eyebrow b,
+.book .eyebrow span b{color:#B6E88F}
+
+.concept-badge{color:#846420}
+.f-bottom b{color:#846420}
+"""
+
+_i = out.rfind("</style>")
+out = out[:_i] + A11Y_CSS + out[_i:]
+
+
 dest.write_text(out, encoding="utf-8")
 print(f"WROTE {dest} ({len(out.encode('utf-8'))} bytes)")

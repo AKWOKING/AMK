@@ -167,8 +167,8 @@ JSONLD = json.dumps({
 
 CSS = """
 :root{
- --ink:#0E3B43; --ink-2:#155763; --amber:#F0A03C; --clay:#C96F4A; --cream:#FBF6EF;
- --paper:#FFFFFF; --mute:#5E7A80; --line:rgba(14,59,67,.14); --wa:#0B7A3E; --r:16px; --max:1120px;
+ --ink:#0E3B43; --ink-2:#155763; --amber:#F0A03C; --clay:#C96F4A;--clay-text:#A8542C; --cream:#FBF6EF;
+ --paper:#FFFFFF; --mute:#557076; --line:rgba(14,59,67,.14); --wa:#0B7A3E; --r:16px; --max:1120px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -258,7 +258,7 @@ html[data-lang="fr"] .fr-only{display:revert !important}
 
 /* quote builder */
 .quote{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px}
-.quote .mono{color:var(--clay)}
+.quote .mono{color:var(--clay-text)}
 .len-row{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;align-items:start;padding:12px 0;border-top:1px solid var(--line);cursor:pointer}
 .len-row input{margin-top:5px;accent-color:var(--clay)}
 .len-name{font-weight:600}
@@ -272,6 +272,7 @@ html[data-lang="fr"] .fr-only{display:revert !important}
 /* services */
 .svc{display:grid;gap:14px}
 @media(min-width:760px){.svc{grid-template-columns:repeat(3,1fr)}}
+.card,.quote,.faq{color:var(--ink)}
 .card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px}
 .card .mono{color:var(--mute)}
 .card h3{margin-top:8px;color:var(--ink)}
@@ -280,7 +281,7 @@ html[data-lang="fr"] .fr-only{display:revert !important}
 .faq{background:#fff;border:1px solid var(--line);border-radius:12px;margin:10px 0;padding:2px 16px}
 .faq summary{cursor:pointer;padding:14px 0;font-weight:600;list-style:none}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";float:right;color:var(--clay);font-weight:700}
+.faq summary::after{content:"+";float:right;color:var(--clay-text);font-weight:700}
 .faq[open] summary::after{content:"–"}
 .faq p{margin:0 0 14px;color:#2C4C53}
 .contact{background:var(--ink);color:#fff;border-radius:var(--r);padding:22px}
@@ -348,7 +349,7 @@ HTML = f"""<!doctype html>
 
 <section class="hero"><div class="wrap hero-grid">
   <div>
-    <p class="mono" style="color:var(--clay)"><span class="fr-only">Opticien · contrôle de la vue · montage</span><span class="en-only">Optician · eye check · lens fitting</span></p>
+    <p class="mono" style="color:var(--clay-text)"><span class="fr-only">Opticien · contrôle de la vue · montage</span><span class="en-only">Optician · eye check · lens fitting</span></p>
     <h1><span class="fr-only">Voir net. <em>Se voir bien.</em></span><span class="en-only">See clearly. <em>Look right.</em></span></h1>
     <p class="lede"><span class="fr-only">Contrôle de la vue sur rendez-vous, conseil sur la forme de votre visage, et un devis verres qui arrive sur WhatsApp avant que vous ne vous déplaciez.</span>
       <span class="en-only">An eye check by appointment, advice on your face shape, and a lens quote that reaches you on WhatsApp before you travel.</span></p>
@@ -400,9 +401,10 @@ HTML = f"""<!doctype html>
       </div>
     </div>
   </div>
+</div></section>
 
 <section><div class="wrap">
-  <p class="mono" style="color:var(--clay)"><span class="fr-only">La boutique</span><span class="en-only">The shop</span></p>
+  <p class="mono" style="color:var(--clay-text)"><span class="fr-only">La boutique</span><span class="en-only">The shop</span></p>
   <h2><span class="fr-only">Des montures qu'on essaie, pas qu'on devine.</span><span class="en-only">Frames you try, not frames you guess at.</span></h2>
   <div class="wall">
     <div class="shot"><img src="{IMG_FRAMES}" alt="Présentoir de montures colorées dans une boutique d'optique" style="aspect-ratio:16/11"></div>
@@ -418,7 +420,7 @@ HTML = f"""<!doctype html>
 </div></section>
 
 <section id="verres" class="hair"><div class="wrap">
-  <p class="mono" style="color:var(--clay)"><span class="fr-only">Verres &amp; devis</span><span class="en-only">Lenses &amp; quote</span></p>
+  <p class="mono" style="color:var(--clay-text)"><span class="fr-only">Verres &amp; devis</span><span class="en-only">Lenses &amp; quote</span></p>
   <h2><span class="fr-only">Composez votre demande, recevez le prix.</span><span class="en-only">Build your request, get the price.</span></h2>
   <div class="grid2" style="margin-top:22px">
     <div class="quote">
@@ -463,7 +465,7 @@ HTML = f"""<!doctype html>
 </div></section>
 
 <section id="services" class="hair"><div class="wrap">
-  <p class="mono" style="color:var(--clay)"><span class="fr-only">Services</span><span class="en-only">Services</span></p>
+  <p class="mono" style="color:var(--clay-text)"><span class="fr-only">Services</span><span class="en-only">Services</span></p>
   <h2><span class="fr-only">Cinq choses qu'un opticien fait pour vous.</span><span class="en-only">Five things an optician does for you.</span></h2>
   <div class="svc" style="margin-top:22px">
     <div class="card"><span class="mono">01</span><h3><span class="fr-only">Contrôle de la vue</span><span class="en-only">Eye check</span></h3>
@@ -482,13 +484,13 @@ HTML = f"""<!doctype html>
 </div></section>
 
 <section class="hair"><div class="wrap">
-  <p class="mono" style="color:var(--clay)"><span class="fr-only">Questions fréquentes</span><span class="en-only">Frequently asked</span></p>
+  <p class="mono" style="color:var(--clay-text)"><span class="fr-only">Questions fréquentes</span><span class="en-only">Frequently asked</span></p>
   <h2 style="margin-bottom:16px"><span class="fr-only">Ce qu'on nous demande au comptoir.</span><span class="en-only">What people ask at the counter.</span></h2>
 {FAQ_HTML}
 </div></section>
 
 <section id="contact" class="hair"><div class="wrap">
-  <p class="mono" style="color:var(--clay)"><span class="fr-only">Venir</span><span class="en-only">Visit</span></p>
+  <p class="mono" style="color:var(--clay-text)"><span class="fr-only">Venir</span><span class="en-only">Visit</span></p>
   <h2><span class="fr-only">Une visite, ou juste un message.</span><span class="en-only">A visit, or just a message.</span></h2>
   <div class="contact" style="margin-top:22px;max-width:640px">
     <div class="row"><span class="k">WhatsApp</span><span><a href="https://wa.me/{WA}">{WA_LABEL}</a></span></div>

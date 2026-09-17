@@ -373,5 +373,31 @@ s = s.rstrip("\n")[:-len(_tail)] + (
 # footer wordmark lockup uses name "The Skye" + small already says CABINET DENTAIRE; fine.
 # write
 out = ROOT / "demos" / "concept-skye-v1.html"
+A11Y_CSS = """
+/* a11y-pass-2026-09-17 — readable small text (audited by tools/qa/audit_html.py).
+   Light surfaces get a darker text variant of the accent; mid-tone pills get a
+   darker fill under light text; the dark booking block gets a lighter accent. */
+.eyebrow b{color:#3F7A1E}
+.spark{color:#3F7A1E;opacity:.8}
+.t-fb b{color:#3F7A1E}
+.faq-item summary .pm{color:#0F6E7B}
+.loc-strip a.dir{background:#2C7A22;color:#F0FAF1}
+.loc-strip a.dir:hover{background:#25681C}
+.step3 .n{background:#146A2C;color:#F0FAF1}
+.step3 span{color:rgba(240,250,241,.9)}
+.btn-dark{background:linear-gradient(135deg,#2A7A20 0%,#1F6E7A 100%)}
+.book .eyebrow b,
+.book .eyebrow span b{color:#B6E88F}
+
+.concept-badge{color:#0369A1}
+.f-bottom b{color:#0369A1}
+.wcard p,.vcard p,.work-meta p,.sc p,.wcard li,.faq-item p{color:#475C70}
+.slate-on-navy,.book .eyebrow span{color:#B9D3E6}
+"""
+
+_i = s.rfind("</style>")
+s = s[:_i] + A11Y_CSS + s[_i:]
+
+
 out.write_text(s, encoding="utf-8")
 print("wrote", out, round(out.stat().st_size/1024), "KB")

@@ -29,6 +29,13 @@ The rule names abstract folders; these are where the lessons actually live. Load
 
 ---
 
+## 1b · Porte technique obligatoire avant toute livraison (17 Sep 2026)
+
+```
+python3 tools/qa/audit_html.py <fichier-construit>      # doit finir sur « TOTAL confirmed findings: 0 »
+```
+Contrôle **structure** (sections imbriquées, équilibre) + **contraste WCAG** de chaque texte (desktop et mobile). Motif : un `</div>` perdu en insérant le miroir opticien a rendu du texte blanc sur fond blanc (déclaré par King). Détail : `tools/qa/AUDIT-2026-09-17.md`.
+
 ## 2 · Uniqueness protocol (every website/design build, before a line of HTML)
 
 1. Load design + copywriting lessons (routing table rows above) and re-read `AMK-DESIGN-SKILLS.md` (dials §2, Design Read §1, anti-default §3/§3.8, pre-flight §13, §19).

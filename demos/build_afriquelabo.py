@@ -131,7 +131,7 @@ JSONLD = json.dumps({
 
 CSS = """
 :root{
- --cyan:#12B4D6; --cyan-d:#0C8FAB; --cyan-soft:#E4F6FA; --navy:#0E2347; --navy-2:#153464;
+ --cyan:#12B4D6; --cyan-d:#0A7388; --cyan-soft:#E4F6FA; --navy:#0E2347; --navy-2:#153464;
  --red:#E11D2E; --paper:#F7FAFC; --ink:#0B1B33; --mute:#55688A; --line:rgba(14,35,71,.14);
  --wa:#0B7A3E; --r:14px; --max:1120px;
 }
