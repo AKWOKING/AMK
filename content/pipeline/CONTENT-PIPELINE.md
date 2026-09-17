@@ -76,7 +76,19 @@
 **Blocage levé par :** un enregistrement d'écran réel (téléphone de King). Cette sandbox ne peut pas en produire — Chromium ne s'installe pas, `weasyprint` échoue (`libpango-1.0-0`).
 **Page de démonstration publique :** `hosting/previews/mboacare-demo/index.html` — copie de `content/studio/after.html`, `noindex`, titre préfixé `[DÉMO AMK]`, **audit HTML 0 anomalie** ; ⚠ au passage : `content/studio/after.html` avait **10 anomalies de contraste** (dont un `p` global qui écrasait la couleur du footer) — corrigé à la source, le studio reste donc synchronisé.
 
+## I · Chaîne vidéo reconstruite (17 Sep, nuit) — capture réelle disponible
+**Déblocage :** `@sparticuz/chromium` (déjà dans `tools/shots/package.json`) **embarque le binaire** → aucun CDN à joindre. Chaîne complète dans `tools/video/` (`install.sh` · `capture.mjs` · `compose.py` · `anonymise.py`), portique `tools/qa/audit_video_motion.py`, recherche d'outillage dans `research/Video-Toolchain-Research.md`.
+**Preuves produites (les deux passent le portique — mouvement dans chaque fenêtre de 2 s) :**
+| Fichier | Résumé | Durée |
+|---|---|---|
+| `content/videos/_technique/preuve-mouvement-reel.mp4` | hook animé + **défilement réel** de la démo polyclinique + payoff + CTA | 20,6 s |
+| `content/videos/_technique/preuve-mouvement-2-maternite.mp4` | idem, **autre concept** (maternité) | 19,6 s |
+**Ce sont des pièces TECHNIQUES**, pas des publications : elles n'ont pas de narration (blocage Piper/HuggingFace) et l'étiquette le dit.
+**Blocage restant :** la **narration** — `piper-tts` s'installe (MIT, usage commercial libre) mais les voix sont hébergées sur HuggingFace, inaccessible d'ici. Options : machine de King, ou **sa propre voix**.
+**Règle posée :** aucune vidéo ne part sans `audit_video_motion.py` = OK ; aucune carte composée recadrée ; toute capture étiquetée fiction.
+
 ## E · Changelog
+- **v0.7 — 17 Sep 2026 (nuit) :** §I — chaîne vidéo reconstruite (Chromium embarqué), deux preuves de mouvement réel validées par le portique, bibliothèque de 5 démos publiables, narration bloquée par HuggingFace.
 - **v0.6 — 17 Sep 2026 (nuit) :** §H — portique mouvement livré, catalogue mesuré, v04c rejeté (texte tronqué), page de démonstration publique prête (audit 0), production en attente d'un enregistrement d'écran réel.
 - **v0.5 — 17 Sep 2026 (nuit) :** King confirme que la publication du 15/09 **était bien #4** (registre corrigé) et que la vidéo fondatrice EN a reçu **un son tendance TikTok** à la publication (correction de la lecture « muette ») ; **les 3 fondatrices non publiées sont retirées** ; **#4b animé livré** (§G) ; cadence de publication fixée (réponse à King).
 - **v0.4 — 17 Sep 2026 (soir) :** analytics TikTok de King absorbées (§F) — loi des 2 secondes, vidéos fondatrices muettes, ouverture figée de #4, question ouverte sur la publication du 15/09 ; correctif #4 spécifié.
