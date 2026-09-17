@@ -12,17 +12,23 @@
 | **#1** `Instagram_vs_Website_v2.mp4` | Posted on **Instagram (13 views reported)** · **TikTok: NOT posted** (King, 17 Sep) · file not re-uploaded — archive only |
 | **#2** `Video_02_Five_Website_Answers.mp4` | **Posted** — IG 47 · TikTok 87 |
 | **#3** `Video_03_Part_2.mp4` | **Posted** — IG 41 · TikTok 137 |
-| **#4** `Video_04_Real_Website_PREVIEW.mp4` | **PUBLIÉ sur TikTok le 15/09 à 19:25** (version modifiée par King, 34,27 s affichés) — **156 vues · 6,2 s · 18 % · 4,35 % complet · +1 abonné** (voir `pipeline/ANALYTICS-LOG.md`) · **IG + Shorts : pas encore publiés** |
-| Founding series (repo, 15 Sep) | **Only `clinic-founding-en.mp4` posted (TikTok).** The other three: unposted — slots below |
+| **#4** `Video_04_Real_Website_PREVIEW.mp4` | **PUBLIÉ sur TikTok mardi 15/09 à 19:25** (version modifiée par King, 34,27 s affichés) — **156 vues · 6,2 s · 18 % · 4,35 % complet · +1 abonné** (voir `pipeline/ANALYTICS-LOG.md`) · **IG + Shorts : pas encore publiés** |
+| Founding series (repo, 15 Sep) | **Only `clinic-founding-en.mp4` posted (TikTok, mer 16/09 12:02).** Les trois autres : **retirées du calendrier** (décision King) |
 | Profile layer (bio, pin, UTM link) | **Recommendations only — not verified as installed** |
 
 ---
 
+### 17/09/2026 — AUCUNE PUBLICATION (fait confirmé)
+**Rien n'a été publié le 17/09.** Dernières publications : **mar 15/09 · 19:25** (#4, TikTok) et **mer 16/09 · 12:02** (fondatrice EN, TikTok).
+**Pourquoi ce jour sans publication :** (a) ta règle **« outreach first »** — le contenu reprend *après* les envois ; (b) la fenêtre d'envoi **09–21** s'est fermée à 21:26 alors que les trois messages 1 étaient prêts → ils sont partis le **vendredi matin** ; (c) les analytics du soir ont prouvé que **toutes nos vidéos étaient des diaporamas** — publier une de plus aurait reproduit l'échec que les chiffres venaient de documenter.
+
 ## A · First slots after today's outreach
 | Slot | Platform | Asset | Caption | Cover | Pinned/first comment |
 |---|---|---|---|---|---|
-| **Tue 23 Sep, 18:00–20:00** | **TikTok** | **V-05 — `Video_05_School_WhatsApp_v1.mp4`** (23,9 s, narration, portique OK) — **si King valide** | FR | hook « Un parent cherche votre école » | « Dites **PREVIEW** en DM pour un aperçu gratuit de page d'accueil. » |
-| **Wed 24 Sep, 12:00–14:00** | **Instagram Reels** | **V-05 (sous-titres EN a produire)** ou **#4 `v04b`** selon decision de King | EN | — | "DM **PREVIEW** for a free homepage concept." |
+| **Fri 18 Sep, 18:00–20:00** | **TikTok** | **V-05 FR — `Video_05_School_WhatsApp_v1.mp4`** (23,9 s, narration, portique OK) — **si King valide** | FR | hook « Un parent cherche votre école » | « Dites **PREVIEW** en DM pour un aperçu gratuit de page d'accueil. » |
+| **Sat 19 Sep, 12:00–14:00** | **Instagram Reels** | **V-05 EN — `Video_05_School_WhatsApp_EN.mp4`** (22,1 s, narration anglaise, portique OK) | EN | hook « A parent is looking for your school » | "DM **PREVIEW** for a free homepage concept." |
+| **Tue 23 Sep, 18:00–20:00** | **TikTok** | disponible pour la production suivante (V-06 / V-05 variante clinique) | FR | — | — |
+| **Wed 24 Sep, 12:00–14:00** | **Instagram Reels** | **V-05 EN (déjà prête)** ou la production suivante | EN | — | "DM **PREVIEW** for a free homepage concept." |
 | Thu 25 Sep | YouTube Shorts | **EN ATTENTE** (même raison) | search-first: « Pourquoi vos clients partent avant WhatsApp — site mobile Cameroun » | hook frame | link `?src=yt` |
 
 **Caption drafts**

@@ -2,7 +2,13 @@
 
 **Produite le 17 Sep 2026 (nuit).** Statut : **portique mouvement OK**, narration incluse → **à valider par King** (rien n'est publié sans son accord).
 
-**Fichier :** `Video_05_School_WhatsApp_v1.mp4` · **23,9 s** · 3,69 Mo · 1080×1920 · 24 fps · H.264 High · AAC 44,1 kHz mono.
+**Deux versions, les deux validées par le portique mouvement :**
+| Fichier | Langue | Durée | Taille | Destination |
+|---|---|---|---|---|
+| `Video_05_School_WhatsApp_v1.mp4` | **FR** (narration française) | 23,9 s | 3,69 Mo | **TikTok** (créneau 18:00–20:00) |
+| `Video_05_School_WhatsApp_EN.mp4` | **EN** (narration anglaise) | 22,1 s | 3,53 Mo | **Instagram Reels** (créneau 12:00–14:00) |
+
+1080×1920 · 24 fps · H.264 High · AAC 44,1 kHz mono · **narration dans le fichier** (aucun son à ajouter à la publication).
 
 ## Ce qu'elle corrige, par rapport à tout ce qui a été publié jusqu'ici
 1. **La page est réellement filmée** — vraie capture d'écran de `site/sample-secondary.html` (Crestwood College, maquette **fictive et publique**, déjà en ligne sur `amk-cm.vercel.app`) : plus de diaporama.
@@ -22,4 +28,4 @@
 
 **Sources :** captures `/tmp/capA` + `/tmp/capB` (recapturables) · narration `narration/01-hook.mp3`, `02-body.mp3`, `03-cta.mp3` · commandes exactes dans `content/scripts/v05-schools.md`.
 
-**Suite :** validation de King → TikTok (créneau 18:00–20:00) puis Reels IG (sous-titres EN à produire).
+**Suite :** validation de King → **ven 18 à 18:00–20:00 (TikTok FR)** puis **sam 19 à 12:00–14:00 (Reels IG EN)**. Rien n'est publié sans son accord.
