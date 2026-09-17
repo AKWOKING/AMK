@@ -21,7 +21,7 @@
 ## A · First slots after today's outreach
 | Slot | Platform | Asset | Caption | Cover | Pinned/first comment |
 |---|---|---|---|---|---|
-| **Tue 23 Sep, 18:00–20:00** | **TikTok** | **#4** | FR led (below) | hook frame "Losing customers BEFORE WHATSAPP?" | « Dites **PREVIEW** en DM pour un aperçu gratuit de page d'accueil. » |
+| **Tue 23 Sep, 18:00–20:00** | **TikTok** | **#4** ⚠️ **sous réserve — voir §A-note** | FR led (below) | hook frame "Losing customers BEFORE WHATSAPP?" | « Dites **PREVIEW** en DM pour un aperçu gratuit de page d'accueil. » |
 | **Wed 24 Sep, 12:00–14:00** | **Instagram Reels** | **#4** | EN led (below) | same hook frame | "DM **PREVIEW** for a free homepage concept." |
 | Thu 25 Sep | YouTube Shorts | **#4** | search-first: « Pourquoi vos clients partent avant WhatsApp — site mobile Cameroun » | hook frame | link `?src=yt` |
 
@@ -30,12 +30,17 @@
 - EN / IG : "Your website loses customers before they reach your WhatsApp. 3 leaks: slow, unusable on a phone, contact buried. Fix that before buying more traffic. 👉 DM **PREVIEW** for a free homepage concept."
 - **If King posts #4 earlier (right after the outreach push), keep the same caption/comment pair and move the remaining slots accordingly.**
 
+
+### §A-note (17 Sep au soir) — deux réserves avant de publier #4
+1. **Risque de doublon :** les analytics montrent une publication **« Losing customers — BEFORE WHATSAPP? » (34,27 s) déjà en ligne le mar 15 sep 19:25** (156 vues). Notre master #4 fait 34,20 s et tous les états du dépôt le disent non publié. **Tant que King n'a pas confirmé ce qu'était cette publication, ne pas remettre #4 sur TikTok** (même script = doublon probable → déclassement). Question posée dans `content/pipeline/ANALYTICS-LOG.md`.
+2. **Ouverture à corriger d'abord :** le master #4 tient **une image figée jusqu'à 4,78 s**. Le correctif prévu (voir ci-dessous) consiste à donner du mouvement aux 2 premières secondes **sans toucher au script ni à la voix**.
+
 ## A2 · Founding series (3 unposted — repo assets, older fingerprint)
 | Slot | Platform | Asset | Note |
 |---|---|---|---|
-| Fri 26 Sep, 18:00–20:00 | TikTok + FB Page + WA Status | `sales/social/videos/clinic-founding-fr.mp4` | the natural pair to the posted EN; keep its own caption (pack §A) — **not** the PREVIEW block (these predate it; retrofit only if King asks) |
-| Sat 27 Sep | TikTok + Shorts + IG | `school-founding-en.mp4` | school side; DM keyword SCHOOL in its caption, per `sales/social/youtube-shorts-metadata.md` |
-| Sun 28 Sep | TikTok + IG + FB | `school-founding-fr.mp4` | close the founding set; then the set is fully aired |
+| Fri 26 Sep, 18:00–20:00 | TikTok + FB Page + WA Status | `sales/social/videos/clinic-founding-fr.mp4` ⚠️ **MUETTE — ne pas publier en l'état** | the natural pair to the posted EN; keep its own caption (pack §A) — **not** the PREVIEW block (these predate it; retrofit only if King asks). **Vérifié le 17/09 : les 3 vidéos fondatrices non publiées n'ont AUCUNE piste audio** (et la EN publiée non plus — c'est elle qui fait 3,8 s / 1,4 %). Décision à prendre : ajouter une narration (après ré-audition de la voix) ou retirer du calendrier. |
+| Sat 27 Sep | TikTok + Shorts + IG | `school-founding-en.mp4` ⚠️ **MUETTE** | school side; DM keyword SCHOOL in its caption. **Même blocage audio que la vidéo EN publiée.** |
+| Sun 28 Sep | TikTok + IG + FB | `school-founding-fr.mp4` ⚠️ **MUETTE** | close the founding set; then the set is fully aired. **Même blocage audio.** |
 **Cross-link:** each founding post's pinned comment points to the posted `clinic-founding-en` ("the first one →"), and to the school pair respectively.
 
 ## B · Two-week plan (21 Sep – 2 Oct)
@@ -79,3 +84,24 @@
 - **v0.3 — 17 Sep 2026:** approved; #4 approved + posting kit; founding trio slots (1 of 4 was posted); outreach-first ordering; #1 TikTok recorded as not posted.
 - **v0.2 — 17 Sep 2026:** rebuilt on the real series state.
 - **v0.1 — 17 Sep 2026:** placeholder plan.
+
+
+## E2 · Lecture du 17/09 au soir — les chiffres de King (décision)
+**Source :** `content/pipeline/ANALYTICS-LOG.md` (11 captures TikTok Studio). **Deux publications seulement, et elles diffèrent par l'audio, la langue et le contenu.**
+
+| | A — « avant WhatsApp » | B — fondatrice EN |
+|---|---|---|
+| Publiée | **mar 15/09 · 19:25** | **mer 16/09 · 12:02** |
+| Vues | **156** | **121** |
+| Lecture moyenne | **6,2 s** (18 %) | **3,8 s** (13 %) |
+| Visionnage complet | **4,35 %** | **1,4 %** |
+| Temps de lecture total | **18:55** | **8:58** |
+| Nouveaux abonnés | **+1** | **0** |
+| Arrêt principal | **0:02** | **0:02** |
+| Audio | narration | **aucune piste audio** |
+
+**DÉCISIONS :**
+1. **Créneau TikTok : on tient 18:00–20:00.** A (soir) bat B (midi) sur toutes les mesures — mais B était **muette** : on ne peut pas attribuer la différence à l'heure. On garde donc l'heure **fixe** sur les 3 prochaines publications pour la rendre comparable, et l'hypothèse « soir » reste **indicative, non prouvée**.
+2. **Le levier n'est pas l'heure, c'est 0:00–0:02.** Aucun budget de production ne part dans un nouveau script avant que ce point soit corrigé (voir `CONTENT-LESSONS.md` §12).
+3. **Statut WhatsApp + page Facebook** reçoivent la version **acheteur** (propriétaires 35–55) : l'audience TikTok atteinte est à 86–91 % en 18–34 ans.
+4. **Création :** l'heure de production n'a aucune importance ; ce qui compte est que **rien ne soit publié hors créneau** et que **rien de muet** ne parte.

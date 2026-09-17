@@ -52,7 +52,17 @@
 ## B2 · Founding series status (King, 17 Sep)
 **Only one of the four** founding videos was posted: **`clinic-founding-en.mp4` on TikTok**. `clinic-founding-fr.mp4`, `school-founding-en.mp4`, `school-founding-fr.mp4` are **unposted** → integrated into the calendar (POSTING-CALENDAR §A2). TikTok `video1-final.mp4` (repo, 25 fps): unposted, parked as archive.
 
+## F · Analytics absorbées (17 Sep au soir) — `ANALYTICS-LOG.md`
+**Deux lectures TikTok fournies par King** (captures) : « Losing customers — BEFORE WHATSAPP? » **156 vues · 6,2 s · 18 % · 4,35 % complet** (mar 15/09 19:25) et `clinic-founding-en` **121 vues · 3,8 s · 13 % · 1,4 % complet** (mer 16/09 12:02). Détail complet, calculs et limites : `content/pipeline/ANALYTICS-LOG.md`. Leçons → `content/lessons/CONTENT-LESSONS.md` §12. Décisions d'horaire → `POSTING-CALENDAR.md` §E2.
+
+**Découvertes techniques (vérifiées par décodage FFmpeg, 17/09) :**
+- **Les 4 vidéos fondatrices sont muettes** (aucune piste audio), y compris **celle qui a été publiée** — la moins performante des deux lectures.
+- **#4 ouvre sur une image figée** de 0:00 à ≥2,4 s ; première coupe à **4,78 s** (`timeline.json`).
+- `Video_04_Real_Website_PREVIEW.mp4` = **34,20 s** ; la publication TikTok A affiche **34,27 s** → **écart à élucider** (question ouverte : cette publication est-elle une version antérieure de #4 ?). **Bloque la réutilisation de #4 sur TikTok tant que King n'a pas répondu.**
+- Correctif #4 proposé (non exécuté) : recut `v04b` — garder **le script, la voix et le minutage** ; remplacer seulement la **vision** du premier beat (0 → 4,78 s) par un plan animé (zoom lent + apparition d'éléments, jamais l'UI démontrée). Une fois approuvé : ~1 passe FFmpeg, aucun Playwright requis.
+
 ## E · Changelog
+- **v0.4 — 17 Sep 2026 (soir) :** analytics TikTok de King absorbées (§F) — loi des 2 secondes, vidéos fondatrices muettes, ouverture figée de #4, question ouverte sur la publication du 15/09 ; correctif #4 spécifié.
 - **v0.3 — 17 Sep 2026:** King's decisions — #4 **approved** (posting = King), #1 TikTok **not posted** + no re-upload, founding series status recorded (1 of 4 posted), shortlist + strategy approved, voice re-audition confirmed. Batch-4 lessons folded into the script gates.
 - **v0.2 — 17 Sep 2026:** pack received; files migrated into `content/`; real specs + frame QA recorded; performance figures recorded with caveats; Video 4 = pending/not approved/not posted.
 - **v0.1 — 17 Sep 2026:** structure created while uploads were missing.

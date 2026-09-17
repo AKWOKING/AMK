@@ -101,7 +101,23 @@ MboaCare (abstract principle) · our own shipped work · **our concept/preview l
 4. **Founding videos (repo, 15 Sep):** King confirms **only one of the four was posted — `clinic-founding-en.mp4` on TikTok**; the other three are unposted assets → integrated in the calendar (§A2).
 5. **Strategy + calendar + shortlist: APPROVED.** **Video #4 is approved** — the remaining action is **posting** (King), first slot Tue 23 Sep TikTok / Wed 24 Sep IG, or earlier if King posts it with the outreach push.
 
+## 12 · Lecture des analytics TikTok (17 Sep 2026) — les règles de la falaise à 0:02
+**Source :** `content/pipeline/ANALYTICS-LOG.md` (captures TikTok Studio de King, 2 publications : « avant WhatsApp » 156 vues · fondatrice EN 121 vues). Chiffres de King uniquement.
+
+1. **Loi des 2 secondes.** Les deux publications perdent l'essentiel de l'audience à **0:02** (rétention 18 % / 13 %). Sur TikTok, tout ce qui suit la seconde 2 est vu par ~1 spectateur sur 5. **Conséquence : le message entier doit tenir dans les 2 premières secondes, et il doit y avoir un mouvement + une voix dès la frame 1.**
+2. **Aucun cadre figé à l'ouverture.** Vérifié : #4 tient une image immobile de 0:00 à 4,78 s (première coupe) ; la fondatrice EN fait une révélation lente. **Gate de production : première coupe ≤ 1,5 s, et le plan 0:00–0:02 contient du mouvement réel** (défilement de page, zoom lent, apparition d'élément — jamais l'UI démontrée elle-même, §3.8).
+3. **Audio obligatoire, vérifié par décodage.** `clinic-founding-en.mp4` — la seule vidéo fondatrice publiée — **n'a aucune piste audio**. Elle est dernière sur tout (3,8 s de lecture moyenne, 1,4 % de visionnage complet, 0 abonné) ; la vidéo narrée fait 6,2 s / 4,35 % / +1. **Gate : `ffmpeg -i` doit montrer une piste audio avant tout envoi à King** (les 3 autres fondatrices sont muettes aussi → ne pas les publier tel quel).
+4. **Le premier cadre intéresse, la suite non.** Le plus de likes tombe à **0:00** (33 % / 80 %) — le hook visuel fonctionne. Ce n'est pas la promesse qu'il faut changer, c'est **ce qui se passe juste après**.
+5. **Longueur : viser 15–22 s.** Avec 4–6 s de lecture moyenne, une vidéo de 29–34 s passe l'essentiel de sa durée devant des gens déjà partis. Test à faire (V-12 de la shortlist, déjà approuvée) : un payoff de 8–10 s.
+6. **La falaise n'est pas un problème de diffusion.** Pour Toi = 87,5 % / 90,9 %, **100 % de non-abonnés** : TikTok nous échantillonne. Il arrête parce que la vidéo n'est pas regardée. Ne jamais lire ces vues comme un plafond d'algorithme.
+7. **L'audience atteinte n'est pas l'acheteur.** 18–34 ans = 91 % / 86 % ; 35–54 ans = 8 % / 13 %. Le ton « dessin animé + annonce » classe le contenu en divertissement jeunesse. **Le message acheteur (propriétaire de clinique/école) passe aussi par le statut WhatsApp et la page Facebook** — là où ils sont réellement.
+8. **Recherche = 0,0 %.** Aucune vue par recherche : légendes et mots-clés doivent porter les termes que l'acheteur taperait (site web clinique Douala, cabinet dentaire Bonamoussadi…).
+9. **Rien à envoyer, rien à garder** : 0 enregistrement, 0–1 partage. Pour un contenu B2B, viser au moins une raison de « transmettre » (checklist, avant/après, chiffre vérifiable).
+10. **Heure de publication : tenir 18:00–20:00 constant, sans conclure.** Le post de 19:25 bat celui de 12:02 sur toutes les mesures, mais les deux vidéos diffèrent aussi par l'audio et le contenu → **indice, pas preuve**. On garde l'heure fixe sur les 3 prochaines publications pour obtenir une comparaison propre.
+**À ne pas faire :** publier un doublon (même script, nouvelle coupe) sur le même compte à quelques jours d'intervalle — vérifier d'abord le registre (`ANALYTICS-LOG.md` §question ouverte).
+
 ## 9 · Changelog
+- **v0.4 — 17 Sep 2026 (soir) :** analytics TikTok de King absorbées (§12 — loi des 2 secondes, audio vérifié par décodage, ouverture immobile, audience ≠ acheteur, heure à tenir constante). Source : `content/pipeline/ANALYTICS-LOG.md`.
 - **v0.3 — 17 Sep 2026:** batch-4 video-marketing lessons absorbed (§10.1–10.3) + King's binding decisions (§11) + script gates formalised in `content/scripts/README.md`.
 - **v0.2 — 17 Sep 2026:** handover absorbed — fingerprint hexes, hard rules, production discipline, full technical failure log, evidence table, qualified earlier advice.
 - **v0.1 — 17 Sep 2026:** created from King's brief + repo history + lesson batches.

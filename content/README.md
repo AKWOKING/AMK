@@ -42,6 +42,7 @@ content/
 - **#1, #2, #3 posted** (King-reported: IG 13/47/41 · TikTok —/87/137). **#4 delivered, pending approval, not posted.**
 - **#2 leads IG, #3 leads TikTok** — tracked separately, no averaged winner.
 - **Blocking prerequisites for the next production:** rights decisions on concepts, a re-selected voice (the previous `voice-00` registration is gone), Playwright install for captures.
+- **17 Sep (soir) — premieres analytics TikTok reçues** (`content/pipeline/ANALYTICS-LOG.md`) : falaise à 0:02 sur les deux publications, vidéos fondatrices **muettes**, ouverture de #4 figée jusqu'à 4,78 s. Règles → `lessons/CONTENT-LESSONS.md` §12 ; horaires → `strategy/POSTING-CALENDAR.md` §E2.
 
 ## Weekly cadence
 Mon: pipeline + calendar + plan vs the sales pack · Wed: mid-week check · Fri: `pipeline/Weekly-Content-Report-YYYY-MM-DD.md`.
