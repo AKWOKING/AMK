@@ -1,5 +1,7 @@
 # Video 04 — Losing customers before they reach WhatsApp (+ PREVIEW CTA)
 
+> **17 Sep, nuit — King a REFUSÉ la v04b : « the difference isn't really noticeable it's just a zoom in ».** Mesure de contrôle : le master contient **6 fenêtres de 2 s totalement figées** (dont 0-2 s), la v04b en contient encore **4** → le portique `tools/qa/audit_video_motion.py` **bloque les deux**. La v04c (mon correctif suivant, 22 plans) passe le portique mais **coupe le texte** (recadrages 1,3×) → **ne pas publier non plus**. Conclusion : #4 ne peut pas être « réparé » à partir de ses propres images ; il faut une **vraie capture d'écran**.
+
 **Statut 17 Sep (nuit) : PUBLIÉ sur TikTok le 15/09 à 19:25 — version modifiée par King (34,27 s affichés) — puis mesuré : 156 vues · 6,2 s de lecture moyenne · 18 % de rétention · 4,35 % de visionnage complet · +1 abonné.** Détail : `content/pipeline/ANALYTICS-LOG.md`.
 **Instagram + YouTube Shorts : pas encore publiés** → créneaux mer 24 / jeu 25, avec la version **b** ci-dessous.
 

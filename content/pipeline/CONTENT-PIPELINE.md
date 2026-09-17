@@ -69,7 +69,15 @@
 **Aussi livré :** `review-opening-avant-apres.mp4` (6 s, 1080×1920, sans audio) — « AVANT / APRÈS » côte à côte dans le temps, pour validation sur téléphone.
 **Destination :** **IG Reels mer 24** + **YouTube Shorts jeu 25**. **Pas de republication TikTok** (#4 y est déjà).
 
+## H · Portique mouvement (17 Sep, nuit) — outil + état réel du catalogue
+**Outil :** `tools/qa/audit_video_motion.py` — échantillonne à 12 img/s, mesure l'écart moyen entre images, agrège par fenêtre de 2 s ; une fenêtre dont l'écart maximal reste sous 1,5/255 est **FIGÉE** ; code de sortie 1 → livraison bloquée. (Usage : `python3 tools/qa/audit_video_motion.py <fichier>`.)
+**État mesuré :** #4 **6 fenêtres figées** · #4b **4** · #2 **8** · #3 **9** · fondatrice EN **5** · `page-scroll-technique-demo.mp4` **0** · `Video_04c_Cut_Montage.mp4` **0** (mais rejeté visuellement, ci-dessous).
+**`Video_04c_Cut_Montage.mp4`** (34,20 s · 4,8 Mo · 22 plans · audio d'origine) : passe le portique grâce aux coupes, **mais les recadrages de 1,3× coupent le texte** (« MAKE CONTACT EASY. » tronqué) → **NE PAS PUBLIER**, conservé comme trace technique.
+**Blocage levé par :** un enregistrement d'écran réel (téléphone de King). Cette sandbox ne peut pas en produire — Chromium ne s'installe pas, `weasyprint` échoue (`libpango-1.0-0`).
+**Page de démonstration publique :** `hosting/previews/mboacare-demo/index.html` — copie de `content/studio/after.html`, `noindex`, titre préfixé `[DÉMO AMK]`, **audit HTML 0 anomalie** ; ⚠ au passage : `content/studio/after.html` avait **10 anomalies de contraste** (dont un `p` global qui écrasait la couleur du footer) — corrigé à la source, le studio reste donc synchronisé.
+
 ## E · Changelog
+- **v0.6 — 17 Sep 2026 (nuit) :** §H — portique mouvement livré, catalogue mesuré, v04c rejeté (texte tronqué), page de démonstration publique prête (audit 0), production en attente d'un enregistrement d'écran réel.
 - **v0.5 — 17 Sep 2026 (nuit) :** King confirme que la publication du 15/09 **était bien #4** (registre corrigé) et que la vidéo fondatrice EN a reçu **un son tendance TikTok** à la publication (correction de la lecture « muette ») ; **les 3 fondatrices non publiées sont retirées** ; **#4b animé livré** (§G) ; cadence de publication fixée (réponse à King).
 - **v0.4 — 17 Sep 2026 (soir) :** analytics TikTok de King absorbées (§F) — loi des 2 secondes, vidéos fondatrices muettes, ouverture figée de #4, question ouverte sur la publication du 15/09 ; correctif #4 spécifié.
 - **v0.3 — 17 Sep 2026:** King's decisions — #4 **approved** (posting = King), #1 TikTok **not posted** + no re-upload, founding series status recorded (1 of 4 posted), shortlist + strategy approved, voice re-audition confirmed. Batch-4 lessons folded into the script gates.

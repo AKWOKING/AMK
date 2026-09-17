@@ -122,7 +122,28 @@ MboaCare (abstract principle) · our own shipped work · **our concept/preview l
 **Condition pour monter à 1/jour :** une vidéo doit d'abord **passer la porte des 2 secondes** — objectif interne : **lecture moyenne ≥ 12 s** ou **visionnage complet ≥ 15 %** (aujourd'hui 3,8–6,2 s et 1,4–4,35 %).
 **Pourquoi pas plus maintenant :** la contrainte n'est pas l'offre de vues (TikTok échantillonne déjà ~120–160 vues par publication) mais la rétention ; poster 3× plus avec la même ouverture figée = 3× plus d'échecs, et deux publications rapprochées se partagent le même échantillon.
 
+## 13 · PORTIQUE MOUVEMENT — « un zoom n'est pas du mouvement » (King, 17 Sep, après refus de la v04b)
+**Déclencheur :** King a regardé le correctif de l'ouverture de #4 et a répondu : *« the difference isn't really noticeable it's just a zoom in »*. Il a raison. J'ai mesuré l'ensemble du catalogue :
+
+| Fichier | Fenêtres de 2 s figées |
+|---|---|
+| `Video_04_Real_Website_PREVIEW.mp4` (#4, publié) | **6 / 17** (dont 0-2 s et 2-4 s) |
+| `Video_04b_Animated_Opening.mp4` (mon correctif) | **4 / 17** |
+| `Video_02_Five_Website_Answers.mp4` (#2, publié · TT 87) | **8 / 14** |
+| `Video_03_Part_2.mp4` (#3, publié · TT 137) | **9 / 17** |
+| `clinic-founding-en.mp4` (publié) | **5 / 14** |
+
+**Constat : nos vidéos sont des diaporamas.** Le problème n'est ni le texte du hook, ni l'heure de publication : à l'intérieur de chaque beat, **rien ne bouge** — une image fixe avec une voix off. C'est ce qui explique la falaise à 0:02 mieux que n'importe quelle hypothèse de créneau.
+
+**Règles (opposables) :**
+1. **Portique obligatoire avant toute livraison vidéo :** `python3 tools/qa/audit_video_motion.py <fichier>` doit renvoyer **OK — mouvement présent dans chaque fenêtre**. Une fenêtre de 2 s sans changement visible = **BLOQUÉ**, on ne livre pas, on ne publie pas.
+2. **Mouvement = quelque chose change à l'écran**, pas un recadrage lent. Sont du mouvement : un vrai défilement de page, une capture d'écran réelle, un tap, une coupe franche, une apparition d'élément. **Un push-in sur une carte fixe n'en est pas.**
+3. **Interdit : recadrer une carte composée.** Vérifié sur la v04c : un zoom de 1,35× coupe « MAKE CONTACT EASY. » et la ligne du dessous. Nos cartes sont composées plein cadre → **toute coupe doit rester au cadre entier**, sinon le texte est tronqué (défaut éliminatoire).
+4. **La matière première manque ici.** Ni navigateur (Chromium ne s'installe pas : `apt` indisponible), ni rendu HTML (`weasyprint` → `libpango-1.0-0` absente). Donc **pas de capture d'écran produite dans cet environnement**. Deux sources possibles : (a) **l'enregistrement d'écran du téléphone de King** — la meilleure, c'est un vrai appareil, un vrai tap ; (b) une capture fournie par King depuis sa machine.
+5. **Conséquence de production :** un clip qui passe le portique et utilise de la vraie capture vaut mieux que dix cartes animées. La page de démonstration **publique** est prête (`hosting/previews/mboacare-demo/`, audit HTML 0 anomalie) précisément pour ça.
+
 ## 9 · Changelog
+- **v0.6 — 17 Sep 2026 (nuit) :** §13 portique mouvement — toutes nos vidéos sont des diaporamas, le zoom n'est pas du mouvement, recadrer une carte coupe le texte, pas de capture possible dans cet environnement.
 - **v0.5 — 17 Sep 2026 (nuit) :** corrections de King (narration vs son tendance ; #4 déjà publié ; fondatrices retirées) + §12 bis cadence de publication.
 - **v0.4 — 17 Sep 2026 (soir) :** analytics TikTok de King absorbées (§12 — loi des 2 secondes, audio vérifié par décodage, ouverture immobile, audience ≠ acheteur, heure à tenir constante). Source : `content/pipeline/ANALYTICS-LOG.md`.
 - **v0.3 — 17 Sep 2026:** batch-4 video-marketing lessons absorbed (§10.1–10.3) + King's binding decisions (§11) + script gates formalised in `content/scripts/README.md`.

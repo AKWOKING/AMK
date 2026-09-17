@@ -22,8 +22,8 @@
 | Slot | Platform | Asset | Caption | Cover | Pinned/first comment |
 |---|---|---|---|---|---|
 | **Tue 23 Sep, 18:00–20:00** | **TikTok** | **CRÉNEAU LIBÉRÉ** — #4 y serait un doublon (déjà publié le 15/09) | — | — | **Ne rien publier plutôt que republier** ; réserve : V-05 **si** voix + montage prêts, sinon créneau vide |
-| **Wed 24 Sep, 12:00–14:00** | **Instagram Reels** | **#4 · `Video_04b_Animated_Opening.mp4`** | EN led (below) | same hook frame | "DM **PREVIEW** for a free homepage concept." |
-| Thu 25 Sep | YouTube Shorts | **#4 · `Video_04b_Animated_Opening.mp4`** | search-first: « Pourquoi vos clients partent avant WhatsApp — site mobile Cameroun » | hook frame | link `?src=yt` |
+| **Wed 24 Sep, 12:00–14:00** | **Instagram Reels** | **EN ATTENTE** — #4 ne part pas tant qu'une version **qui bouge** n'existe pas (§13) | EN led (below) | same hook frame | "DM **PREVIEW** for a free homepage concept." |
+| Thu 25 Sep | YouTube Shorts | **EN ATTENTE** (même raison) | search-first: « Pourquoi vos clients partent avant WhatsApp — site mobile Cameroun » | hook frame | link `?src=yt` |
 
 **Caption drafts**
 - FR / TikTok : « Votre site perd des clients **avant** qu'ils n'atteignent votre WhatsApp. 3 fuites : lenteur, illisible sur téléphone, contact enterré. Réglez ça avant d'acheter du trafic. 👉 DM **PREVIEW** pour un aperçu gratuit de page d'accueil. »
@@ -119,3 +119,9 @@
 **Pour monter à 1 publication/jour par plateforme**, il faut d'abord qu'**une vidéo passe la porte des 2 secondes** : **lecture moyenne ≥ 12 s** ou **visionnage complet ≥ 15 %** (mesures actuelles : 3,8–6,2 s et 1,4–4,35 %).
 **Pourquoi pas plus maintenant :** TikTok nous échantillonne déjà (~120–160 vues/publication, 87–91 % Pour Toi) ; ce qui manque n'est pas le volume mais la rétention. Poster plus vite avec la même ouverture figée multiplie les échecs — et deux publications rapprochées se partagent le même échantillon.
 **Ne jamais remplir un créneau vide avec un doublon** (créneau TikTok du mar 23 : laissé vide pour cette raison).
+
+## H · Blocage de production (17 Sep, nuit) — la vidéo doit bouger
+**Motif :** King a refusé `v04b` (*« just a zoom in »*). Mesure faite : **toutes nos vidéos sont des diaporamas** (6 à 9 fenêtres de 2 s figées sur 14–17, voir `lessons/CONTENT-LESSONS.md` §13). Publier #4 sur IG/Shorts en l'état ne reproduirait que le résultat connu.
+**Ce qui est prêt :** page de démonstration **publique** MboaCare (`hosting/previews/mboacare-demo/`, **audit HTML : 0 anomalie**) → à déployer par King (Vercel, projet `mboacare-demo`).
+**Ce qui manque :** **20 s d'enregistrement d'écran sur téléphone** (voir la demande du 17/09). Dès qu'il arrive : V-05 se monte en ~1 h (hook sur le vrai défilement, démo, payoff, carte PREVIEW).
+**Règle de remplissage :** un créneau sans vidéo conforme **reste vide** — ni doublon, ni diaporama.
