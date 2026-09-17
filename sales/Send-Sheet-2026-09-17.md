@@ -11,7 +11,7 @@
 | # | Heure cible | Prospect | Numéro | Image à joindre | Texte |
 |---|---|---|---|---|---|
 | 1 | ✅ **ENVOYÉ 13:24** | **AFRIQUE LABO SARL** (Bessengue) | **690 54 70 93** | ✅ `mockup-afriquelabo-wa.jpg` envoyée | §1 de `sales/Outreach-AFRIQUE-LABO-v1.md` · **liée à https://concept-afriquelabo-v1.vercel.app** |
-| 2 | +15 min | **JOSS MEDI Clinic** (Bonanjo) | **677 58 42 73** *(secours 674 63 88 88)* | même image | §J ci-dessous |
+| ~~2~~ | ⛔ **ANNULÉ** | ~~JOSS MEDI Clinic~~ | — | — | **Gate échoué 17/09 : aucune ligne WhatsApp vérifiée (le n° de leur page FB n'est pas sur WhatsApp) + page dormante depuis juin 2022 → parqué.** Voir `Outreach-Pack-2026-09-16.md` §2d |
 | 3 | aujourd'hui | **MITOC** (Molyko, Buea) — **FU1 (M+2)** · 2 coches, non lu | **678 90 89 62** | aucune (texte seul) | §M ci-dessous |
 | 4 | aujourd'hui | **Baird Memorial College** — **FU1 (M+2)** · 2 coches, non lu | 677 87 53 95 | aucune (texte seul) | §B ci-dessous |
 
@@ -57,7 +57,7 @@
 
 ---
 
-### §J2 · JOSS MEDI — **VÉRIFIER LE NUMÉRO AVANT D'ENVOYER (2 min)**
+### ~~§J2 · JOSS MEDI — contrôle du numéro~~ **⛔ CADUC : JOSS est parqué (gate échoué le 17/09). Archive.**
 ⚠️ Ta capture montre le contact enregistré comme **« +237 77584273 » (8 chiffres)** — notre numéro vérifié est **+237 677 58 42 73 (9 chiffres)**. C'est le même numéro **sans le 6 initial** : vérifie avant d'écrire que le contact est complet (appui long sur la discussion → infos du contact).
 1. **Contrôle 1 :** le numéro du contact doit se lire **+237 6 77 58 42 73**.
 2. **Contrôle 2 :** vérifie **674 63 88 88** sur WhatsApp — si CE numéro a un profil pro (nom/logo/catalogue), c'est la ligne officielle → envoie là.
