@@ -62,6 +62,9 @@ FAQ = [
     ("Faut-il une ordonnance ?", "Do I need a prescription?",
      "Non pour le contrôle de la vue. Si vous apportez une ordonnance récente, nous montons vos verres directement.",
      "No for the eye check. If you bring a recent prescription, we make your lenses directly from it."),
+    ("Combien coûtent les verres ?", "How much do the lenses cost?",
+     "Depuis le 1\u1d49\u02b3 juillet 2026, les verres montés ont un prix plafonné au niveau national (référentiel ONOC / ministère de la Santé). Vous recevez un devis écrit avant toute commande : vous connaissez le prix avant de vous engager.",
+     "Since 1 July 2026 mounted lenses have a nationally capped price (ONOC / Ministry of Public Health framework). You get a written quote before any order: you know the price before committing."),
     ("Est-ce que vous réparez les lunettes ?", "Do you repair glasses?",
      "Oui : vis, plaquettes, branches tordues, ajustement. Passez avec vos lunettes — dites-nous d'abord sur WhatsApp.",
      "Yes: screws, nose pads, bent arms, adjustments. Come in with your glasses — message us first on WhatsApp."),
@@ -83,6 +86,53 @@ GLYPHS = {
     "cat": '<svg viewBox="0 0 48 32"><path d="M4 18c0-6 5-11 11-11 5 0 8 3 9 7l-3 8c-2 4-6 5-9 5-5 0-8-4-8-9Z"/><path d="M44 18c0-6-5-11-11-11-5 0-8 3-9 7l3 8c2 4 6 5 9 5 5 0 8-4 8-9Z"/></svg>',
     "avi": '<svg viewBox="0 0 48 32"><path d="M3 12h18l-4 12c-2 4-5 5-7 5-4 0-7-4-7-9Zm42 0H27l4 12c2 4 5 5 7 5 4 0 7-4 7-9Z"/><path d="M21 12h6"/></svg>',
 }
+FACE_SVG = """<svg viewBox="0 0 300 340" role="img" aria-label="Visage illustré portant la monture sélectionnée">
+  <path d="M40 340c0-44 48-66 110-66s110 22 110 66Z" fill="#0E3B43"/>
+  <path d="M118 226h64v44c0 12-16 20-32 20s-32-8-32-20Z" fill="#E4C4A6"/>
+  <ellipse cx="66" cy="162" rx="12" ry="20" fill="#EFD2B8"/>
+  <ellipse cx="234" cy="162" rx="12" ry="20" fill="#EFD2B8"/>
+  <path d="M150 50c46 0 84 38 84 96 0 62-38 112-84 112S66 208 66 146c0-58 38-96 84-96Z" fill="#F2D9C0"/>
+  <path d="M150 40c54 0 90 34 90 80 0 7-3 11-8 11-7-22-22-38-46-44-24-6-54-5-78 6-15 7-23 20-27 40-5 0-7-5-7-11 0-46 36-82 76-82Z" fill="#2B2620"/>
+  <path d="M96 116q20-10 40-2" stroke="#4A3B2E" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M164 114q20-8 40 2" stroke="#4A3B2E" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="116" cy="152" rx="15" ry="9" fill="#fff"/>
+  <ellipse cx="184" cy="152" rx="15" ry="9" fill="#fff"/>
+  <circle cx="116" cy="152" r="5.6" fill="#3A2E24"/>
+  <circle cx="184" cy="152" r="5.6" fill="#3A2E24"/>
+  <path d="M150 156v22q0 8 8 10" stroke="#DFB995" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M128 208q22 16 44 0" stroke="#C08B72" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="100" cy="188" rx="14" ry="8" fill="#EBBFA1" opacity=".5"/>
+  <ellipse cx="200" cy="188" rx="14" ry="8" fill="#EBBFA1" opacity=".5"/>
+  <path d="M104 236q46 26 92 0" stroke="#D8B48F" stroke-width="4" fill="none" stroke-linecap="round" opacity=".7"/>
+  <g stroke="#4A3222" stroke-width="6" fill="none" stroke-linecap="round">
+    <g class="frame is-on" data-k="rond">
+      <circle cx="116" cy="152" r="33" fill="rgba(190,230,240,.10)"/>
+      <circle cx="184" cy="152" r="33" fill="rgba(190,230,240,.10)"/>
+      <path d="M147 150h6"/>
+      <path d="M83 150 64 152"/><path d="M217 150 236 152"/>
+    </g>
+    <g class="frame" data-k="carre">
+      <rect x="84" y="128" width="64" height="48" rx="10" fill="rgba(190,230,240,.10)"/>
+      <rect x="152" y="128" width="64" height="48" rx="10" fill="rgba(190,230,240,.10)"/>
+      <path d="M148 146h4"/>
+      <path d="M84 146 64 150"/><path d="M216 146 236 150"/>
+    </g>
+    <g class="frame" data-k="cat">
+      <path d="M78 136 Q96 128 124 132 Q146 136 149 152 Q150 172 126 176 Q94 178 80 158 Q76 146 78 136 Z" fill="rgba(190,230,240,.10)"/>
+      <path d="M222 136 Q204 128 176 132 Q154 136 151 152 Q150 172 174 176 Q206 178 220 158 Q224 146 222 136 Z" fill="rgba(190,230,240,.10)"/>
+      <path d="M147 144h6"/>
+      <path d="M80 148 64 152"/><path d="M220 148 236 152"/>
+    </g>
+    <g class="frame" data-k="avi">
+      <path d="M80 136h68v8c0 22-15 38-35 38c-20 0-35-16-35-38v-8Z" fill="rgba(190,230,240,.09)"/>
+      <path d="M220 136h-68v8c0 22 15 38 35 38c20 0 35-16 35-38v-8Z" fill="rgba(190,230,240,.09)"/>
+      <path d="M82 134h136"/>
+      <path d="M148 142h4"/>
+      <path d="M82 140 64 146"/><path d="M218 140 236 146"/>
+    </g>
+  </g>
+</svg>"""
+
 SHAPE_HTML = "\n".join(
     f'''<button class="shape tab{" is-on" if i == 0 else ""}" data-shape="{key}" role="tab" aria-selected="{"true" if i == 0 else "false"}">
       <span class="gl" aria-hidden="true">{GLYPHS[key]}</span>
@@ -183,6 +233,15 @@ html[data-lang="fr"] .fr-only{display:revert !important}
 .shape-panel p{color:#CBE0E3}
 .who{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
 .who span{background:rgba(240,160,60,.16);border:1px solid rgba(240,160,60,.4);color:#FFDDA8;border-radius:999px;padding:6px 12px;font-size:.78rem}
+.mirror-grid{display:grid;gap:22px}
+@media(min-width:900px){.mirror-grid{grid-template-columns:290px 1fr;gap:30px;align-items:start}}
+.mirror{margin:0;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:16px 16px 12px}
+.mirror svg{display:block;width:100%;height:auto}
+.mirror figcaption{display:block;margin-top:10px;font-size:.68rem;letter-spacing:.04em;color:#9FBDC3;text-transform:uppercase}
+.mirror-grid .tabs{grid-template-columns:repeat(2,1fr);margin-top:0}
+.frame{opacity:0;transform:translateY(-12px);transition:opacity .32s ease,transform .32s ease}
+.frame.is-on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.frame{transition:none}}
 
 /* frames wall */
 .wall{display:grid;gap:12px;margin-top:20px}
@@ -312,22 +371,29 @@ HTML = f"""<!doctype html>
   <h2><span class="fr-only">Quelle forme pour votre visage ?</span><span class="en-only">Which shape suits your face?</span></h2>
   <p style="color:#CBE0E3;max-width:60ch"><span class="fr-only">Touchez une forme : vous voyez à qui elle va, et vous pouvez la demander directement sur WhatsApp — on vous envoie les modèles disponibles dans cette forme.</span>
     <span class="en-only">Tap a shape: see who it suits, then ask for it straight on WhatsApp — we send you the models available in that shape.</span></p>
-  <div class="tabs" role="tablist" aria-label="Formes de monture">{SHAPE_HTML}</div>
-  <div class="shape-panel" id="shapePanel">
-    <h3 id="shapeTitle"><span class="fr-only">Rond</span><span class="en-only">Round</span></h3>
-    <p id="shapeDesc"><span class="fr-only">Adoucit les visages anguleux (mâchoire marquée, front large).</span><span class="en-only">Softens angular faces (strong jaw, broad forehead).</span></p>
-    <div class="who">
-      <span class="fr-only">Essayage en boutique</span><span class="en-only">Try-on in store</span>
-      <span class="fr-only">Ajustement offert après montage</span><span class="en-only">Free adjustment after fitting</span>
-    </div>
-    <div class="actions">
-      <a class="btn btn-alt" id="shapeCta" href="https://wa.me/{WA}?text=Bonjour%2C%20je%20cherche%20une%20monture%20ronde.">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a11 11 0 0 1-5.6-4.9c-.4-.7-.6-1.4-.5-2 .1-.6.6-1.4 1.1-1.7.3-.2.7-.2.9.2l.8 1.4c.1.3.1.5-.1.8l-.4.5c-.2.2-.2.4-.1.6.4.8 1.5 2 2.4 2.4.2.1.4.1.6-.1l.5-.5c.2-.2.5-.3.8-.1l1.4.8c.4.2.4.6.2.9Z"/></svg>
-        <span class="fr-only">Demander cette forme</span><span class="en-only">Ask for this shape</span>
-      </a>
+  <div class="mirror-grid">
+    <figure class="mirror">
+      {FACE_SVG}
+      <figcaption class="mono"><span class="fr-only">Illustration — l'essayage réel se fait en boutique</span><span class="en-only">Illustration — real try-on happens in store</span></figcaption>
+    </figure>
+    <div class="mirror-side">
+      <div class="tabs" role="tablist" aria-label="Formes de monture">{SHAPE_HTML}</div>
+      <div class="shape-panel" id="shapePanel">
+        <h3 id="shapeTitle"><span class="fr-only">Rond</span><span class="en-only">Round</span></h3>
+        <p id="shapeDesc"><span class="fr-only">Adoucit les visages anguleux (mâchoire marquée, front large).</span><span class="en-only">Softens angular faces (strong jaw, broad forehead).</span></p>
+        <div class="who">
+          <span class="fr-only">Essayage en boutique</span><span class="en-only">Try-on in store</span>
+          <span class="fr-only">Ajustement offert après montage</span><span class="en-only">Free adjustment after fitting</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn-alt" id="shapeCta" href="https://wa.me/{WA}?text=Bonjour%2C%20je%20cherche%20une%20monture%20ronde.">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a11 11 0 0 1-5.6-4.9c-.4-.7-.6-1.4-.5-2 .1-.6.6-1.4 1.1-1.7.3-.2.7-.2.9.2l.8 1.4c.1.3.1.5-.1.8l-.4.5c-.2.2-.2.4-.1.6.4.8 1.5 2 2.4 2.4.2.1.4.1.6-.1l.5-.5c.2-.2.5-.3.8-.1l1.4.8c.4.2.4.6.2.9Z"/></svg>
+            <span class="fr-only">Demander cette forme</span><span class="en-only">Ask for this shape</span>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
-</div></section>
 
 <section><div class="wrap">
   <p class="mono" style="color:var(--clay)"><span class="fr-only">La boutique</span><span class="en-only">The shop</span></p>
@@ -472,6 +538,8 @@ HTML = f"""<!doctype html>
     document.getElementById('shapeDesc').innerHTML='<span class="'+(l==='fr'?'fr-only':'en-only')+'">'+(l==='fr'?s.dfr:s.den)+'</span>';
     var msg=(l==='fr'?'Bonjour, je cherche une monture '+s.fr.toLowerCase()+'.':'Hello, I am looking for a '+s.en.toLowerCase()+' frame.');
     document.getElementById('shapeCta').href='https://wa.me/{WA}?text='+encodeURIComponent(msg);
+    var fg=document.querySelectorAll('.mirror .frame');
+    [].forEach.call(fg,function(g){{g.classList.toggle('is-on', g.getAttribute('data-k')===s.key)}});
   }}
   tabs.forEach(function(t){{t.addEventListener('click',function(){{
     tabs.forEach(function(x){{x.classList.remove('is-on'); x.setAttribute('aria-selected','false')}});

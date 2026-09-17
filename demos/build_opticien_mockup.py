@@ -103,20 +103,55 @@ for i, t in enumerate(["15 min · contrôle", "Devis avant déplacement", "FR / 
     rr((hx + i * 168, hy + 264, hx + (i + 1) * 164, hy + 294), 15, fill=(238, 244, 243))
     d.text((hx + i * 168 + 12, hy + 271), t, font=os_(10, True), fill=INK2)
 
-# shape selector block (signature)
-sy = hy + 312
-d.rectangle((hx, sy, hx + 560, sy + 150), fill=INK)
+# shape selector block (signature) — the drawn mirror, as on the site
+sy = hy + 300
+SH_H = 232
+d.rectangle((hx, sy, hx + 560, sy + SH_H), fill=INK)
 d.text((hx + 18, sy + 12), "QUELLE FORME POUR VOTRE VISAGE ?", font=os_(10, True), fill=AMBER)
+
+SKIN = (242, 217, 192); SKIN2 = (228, 196, 166); HAIR = (43, 38, 32)
+BROW = (74, 59, 46); FRAME = (74, 50, 34)
+
+def mirror_face(cx, cy, k=0.62):
+    """Drawn head + selected (round) frame — same geometry as the site's SVG."""
+    def S(v): return int(round(v * k))
+    d.ellipse((cx - S(70), cy - S(96), cx + S(70), cy + S(40)), fill=HAIR)          # hair dome
+    d.ellipse((cx - S(14), cy + S(74), cx + S(14), cy + S(130)), fill=SKIN2)        # neck
+    for sx in (-1, 1):                                                              # ears
+        ex = cx + sx * S(84)
+        d.ellipse((ex - S(11), cy - S(21), ex + S(11), cy + S(21)), fill=SKIN2)
+    d.ellipse((cx - S(84), cy - S(102), cx + S(84), cy + S(102)), fill=SKIN)        # face
+    d.ellipse((cx - S(66), cy - S(99), cx + S(70), cy - S(20)), fill=SKIN)          # carve forehead
+    d.arc((cx - S(60), cy - S(70), cx - S(6), cy - S(30)), 200, 340, fill=BROW, width=2)
+    d.arc((cx + S(6), cy - S(70), cx + S(60), cy - S(30)), 200, 340, fill=BROW, width=2)
+    for sx in (-1, 1):
+        ex = cx + sx * S(34)
+        d.ellipse((ex - S(15), cy - S(9), ex + S(15), cy + S(9)), fill=(255, 255, 255))
+        d.ellipse((ex - S(6), cy - S(6), ex + S(6), cy + S(6)), fill=(58, 46, 36))
+    d.line((cx, cy + S(4), cx + S(8), cy + S(32)), fill=SKIN2, width=2)
+    d.arc((cx - S(22), cy + S(30), cx + S(22), cy + S(62)), 20, 160, fill=(192, 139, 114), width=2)
+    for sx in (-1, 1):                                                              # round frame
+        ex = cx + sx * S(34)
+        d.ellipse((ex - S(33), cy - S(33), ex + S(33), cy + S(33)), outline=FRAME, width=3)
+    d.line((cx - S(1), cy, cx + S(1), cy), fill=FRAME, width=3)
+    d.line((cx - S(67), cy, cx - S(84), cy + S(2)), fill=FRAME, width=3)
+    d.line((cx + S(67), cy, cx + S(84), cy + S(2)), fill=FRAME, width=3)
+
+mirror_face(hx + 118, sy + 104)
+d.text((hx + 18, sy + SH_H - 22), "Illustration — l'essayage réel se fait en boutique", font=os_(9), fill=(159, 189, 195))
+
 labels = ["Rond", "Carré", "Œil de chat", "Aviateur"]
 for i, t in enumerate(labels):
-    x = hx + 18 + i * 134
+    x = hx + 250 + (i % 2) * 156
+    y = sy + 34 + (i // 2) * 56
     on = (i == 0)
-    rr((x, sy + 34, x + 124, sy + 112), 12, fill=AMBER if on else None,
+    rr((x, y, x + 148, y + 48), 10, fill=AMBER if on else None,
        outline=None if on else (70, 110, 116), w=2)
     col = (58, 37, 8) if on else (234, 244, 245)
-    glasses(x + 62, sy + 62, 30 if not on else 30, col, 3)
-    d.text((x + 34, sy + 88), t, font=os_(11, True), fill=col)
-d.text((hx + 18, sy + 124), "Adoucit les visages anguleux — essayage en boutique", font=os_(12), fill=(203, 224, 227))
+    glasses(x + 30, y + 24, 20, col, 2)
+    d.text((x + 56, y + 16), t, font=os_(11, True), fill=col)
+d.text((hx + 250, sy + SH_H - 46), "Rond — adoucit les visages anguleux.", font=os_(11), fill=(203, 224, 227))
+d.text((hx + 250, sy + SH_H - 28), "Essayage en boutique · ajustement offert", font=os_(10), fill=(159, 189, 195))
 
 # hero photo right
 hero = Image.open(ROOT / 'demos/img/opticien-hero.jpg').convert('RGB')

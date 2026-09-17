@@ -12,7 +12,7 @@
 
 ## 2 · What the concept answers (from the sweep dossier)
 Facebook-only presence, no site: a client searching « opticien Bali/Douala » finds a page, not a shop. No price context, no way to book an eye test, no frame catalogue, no repair request path.
-**Concept answers:** eye-check booking on WhatsApp · **frame-shape selector** (the signature interaction) · honest quote builder (lens type / who / use → WhatsApp) · repairs & adjustments · children · sunglasses · FAQ · EN|FR · sticky WhatsApp.
+**Concept answers (updated with the pain dossier `pain-signals.md`):** eye-check booking on WhatsApp · **frame-shape selector** (the signature interaction) · honest quote builder (lens type / who / use → WhatsApp) · repairs & adjustments · children · sunglasses · FAQ · EN|FR · sticky WhatsApp.
 
 ## 3 · Direction explored (§19.3) and rejected alternatives
 - **« LE MIROIR » (retained)** — warm editorial boutique: ink-teal `#0E3B43` + amber `#F0A03C` + clay `#C96F4A` on cream, **Fraunces** display + Inter, the fitting-room metaphor (« Voir net. Se voir bien. »), shape selector as the centrepiece.
