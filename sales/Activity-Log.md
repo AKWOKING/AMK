@@ -47,6 +47,9 @@
 | *(non envoyé)* | *CMODN (698 00 68 98)* | *pas sur WhatsApp* | — | — |
 | *(non envoyé)* | *Médic-o-La Persévérance (677 69 25 04)* | *pas sur WhatsApp* | — | — |
 | *(non envoyé)* | *Imagerie Saint Joseph (690 412 400)* | *pas sur WhatsApp* | — | — |
+| *(non envoyé)* | *Cabinet Dentaire Emmanuel (Bonamoussadi, 694 42 62 39)* | *pas retenu — King 18/09 ~20:00* | — | — |
+| *(non envoyé)* | *CEMECES « Clinique de L'Espoir » (674 93 66 04)* | ***NUMÉRO ERRONÉ*** : ce numéro est celui d'**INSES**, un institut supérieur (capture de King). Ma fiche Maligah attribuait le mobile de l'école à la clinique. | — | — |
+| *(piste ouverte)* | **INSES — institut supérieur, Douala** (674 93 66 04) | Numéro identifié comme celui de l'école. **Filières BTS · HND · Licence · Master.** La même affiche porte « **LA CLINIQUE DE L'ESPOIR** » → promoteur probablement commun école + clinique. | À traiter | — |
 | *(non envoyé)* | *LABO-PHANUEL (243 17 94 71)* | *écarté — ligne fixe probable* | — | — |
 | jeu 17/09 13:24 | AFRIQUE LABO (690 54 70 93) | msg 1 | Envoyé, 2 coches | **Non** |
 | jeu 17/09 13:47 | MITOC | FU1 (M+2) | Envoyé | **Non** |
@@ -63,6 +66,7 @@
 - **Fils ouverts sans réponse au 18/09 :** OraCare · MITOC · Baptist Comprehensive · Baird Memorial · The Skye · YAKS · AFRIQUE LABO · L'Opticien · La Béthanie · JEMPO. **28 fils ouverts, 1 seule réponse humaine depuis le début (St. Theresa).**
 - **Réponse automatique ≠ réponse.** Adonaï envoie automatiquement « Merci d'avoir contacté cabiomedadonai » à tout nouveau contact. C'est un accusé de réception machine : il ne compte ni comme réponse, ni comme intention, ni dans le PRR. Seule une réponse humaine compte.
 - **7 envois du soir (18/09) partis SANS maquette** — décision de King, vitesse d'abord. Les maquettes de CAMERA et LE NID existent déjà (`clients/douala-cliniques/`) : elles peuvent partir en second message ou en relance M+2, ce qui rattrape l'essentiel de l'effet perdu.
+- **Nuance du soir (18/09 20:00) :** même un bon annuaire peut porter un **mauvais numéro** — Maligah donnait le mobile d'INSES (école) comme celui de la clinique CEMECES. **La vérification d'identité à l'écran n'est pas une formalité : c'est elle qui a évité un message à la mauvaise personne.**
 - **Qualité des sources de numéros (leçon du soir, 18/09) :** les lots 1 et 2 sont partis à **7/7** — leurs numéros venaient de
   **pagespratiquescm.com** et **maligah.com** (annuaires de cabinets médicaux). Le lot 3 est parti à **2/7 seulement** — ses numéros venaient
   de doualabouge, pagesjaunes et pages Facebook. **Les deux premiers annuaires donnent des mobiles réellement sur WhatsApp ;
