@@ -32,6 +32,14 @@
 | **ven 18/09 ~18:30** | **Département Biologique** (Akwa I, 699 85 33 52) | msg 1 — **sans maquette** | Envoyé | **Non** |
 | **ven 18/09 ~18:30** | **Cabinet Médical CAMERA** (Akwa, 699 90 53 27) | msg 1 — **sans maquette** | Envoyé | **Non** |
 | **ven 18/09 ~18:30** | **Polyclinique LE NID** (Bessengue, 699 987 775) | msg 1 — **sans maquette** | Envoyé | **Non** |
+| **ven 18/09 ~19:00** | **Cabinet Médical ISIS** (Bonapriso, 699 34 93 89) | msg 1 — sans maquette | Envoyé | **Non** |
+| **ven 18/09 ~19:00** | **Cabinet Médical La Cerisaie** (Bonapriso, 699 95 51 64) | msg 1 — sans maquette | Envoyé | **Non** |
+| **ven 18/09 ~19:00** | **Cabinet Médical i'DoC** (Bonapriso, 699 68 05 88) | msg 1 — sans maquette | Envoyé | **Non** |
+| **ven 18/09 ~19:00** | **Centre Médical des Capucines** (Bonapriso, 699 72 36 93) | msg 1 — sans maquette | Envoyé | **Non** |
+| **ven 18/09 ~19:00** | **Cabinet du Dr Brulet Epaka** (Bonapriso, 694 77 74 54) | msg 1 — sans maquette | Envoyé | **Non** |
+| **ven 18/09 ~19:00** | **Centre Médical Kouam Samuel** (Bali, 677 39 35 31) | msg 1 — sans maquette | Envoyé | **Non** |
+| **ven 18/09 ~19:00** | **DAS Group International** (Akwa, 680 100 626) | msg 1 — sans maquette | Envoyé | **Non** |
+| *(non envoyé)* | *Polyclinique Innova (674 145 740)* | *numéro indisponible (King, 18/09 19:18)* | — | — |
 | *(non envoyé)* | *LABO-PHANUEL (243 17 94 71)* | *écarté — ligne fixe probable* | — | — |
 | jeu 17/09 13:24 | AFRIQUE LABO (690 54 70 93) | msg 1 | Envoyé, 2 coches | **Non** |
 | jeu 17/09 13:47 | MITOC | FU1 (M+2) | Envoyé | **Non** |
@@ -39,13 +47,13 @@
 
 ### Bilan chiffré (à ne jamais arrondir en notre faveur)
 
-- **24 messages envoyés** depuis le 14/09 — dont **L'Opticien, La Béthanie et JEMPO, partis le jeudi 17/09** (correction de King, 18/09 : ma feuille d'envoi du 18/09 les listait encore comme « à envoyer », c'était une erreur de planification de ma part).
+- **31 messages envoyés** depuis le 14/09 — dont **L'Opticien, La Béthanie et JEMPO, partis le jeudi 17/09** (correction de King, 18/09 : ma feuille d'envoi du 18/09 les listait encore comme « à envoyer », c'était une erreur de planification de ma part).
 - **1 seule réponse** : St. Theresa. Soit **8,3 %** — dans la fourchette normale du froid, mais l'échantillon est trop petit pour en tirer une conclusion.
 - **0 prospect n'a demandé l'aperçu.**
 - **Confirmé par King 18/09 :** L'Opticien, La Béthanie et JEMPO = envoyés le **17/09** · Adonaï et Malia = envoyés le **18/09**.
 - **0 client · 0 acompte · 0 FCFA** de revenu.
 - **L'Opticien, La Béthanie, JEMPO : ENVOYÉS le jeudi 17/09.** Ils sont en attente de réponse, plus en attente d'envoi. La feuille du 18/09 qui les listait encore était fausse — corrigé ici.
-- **Fils ouverts sans réponse au 18/09 :** OraCare · MITOC · Baptist Comprehensive · Baird Memorial · The Skye · YAKS · AFRIQUE LABO · L'Opticien · La Béthanie · JEMPO. **19 fils ouverts, 1 seule réponse humaine depuis le début (St. Theresa).**
+- **Fils ouverts sans réponse au 18/09 :** OraCare · MITOC · Baptist Comprehensive · Baird Memorial · The Skye · YAKS · AFRIQUE LABO · L'Opticien · La Béthanie · JEMPO. **26 fils ouverts, 1 seule réponse humaine depuis le début (St. Theresa).**
 - **Réponse automatique ≠ réponse.** Adonaï envoie automatiquement « Merci d'avoir contacté cabiomedadonai » à tout nouveau contact. C'est un accusé de réception machine : il ne compte ni comme réponse, ni comme intention, ni dans le PRR. Seule une réponse humaine compte.
 - **7 envois du soir (18/09) partis SANS maquette** — décision de King, vitesse d'abord. Les maquettes de CAMERA et LE NID existent déjà (`clients/douala-cliniques/`) : elles peuvent partir en second message ou en relance M+2, ce qui rattrape l'essentiel de l'effet perdu.
 - **Relances échues :** Skye (M+2) et YAKS (M+2) — 18/09 · AFRIQUE LABO (M+2) — 19/09 · OraCare (M+4) — 20/09 · MITOC (M+4) — 21/09.
