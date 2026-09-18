@@ -1,217 +1,224 @@
-# CRM — audit du fichier de leads et proposition d'architecture
+# CRM — audit des fichiers de leads et proposition d'architecture (v2)
 
-**Date :** vendredi 18 septembre 2026 · **Statut : PROPOSITION — rien n'est migré, rien n'est déplacé.**
-**Documents lus :** `leads/leads_50.xlsx` (5 feuilles) · `leads/Daily Ops.csv` · `leads/*.py` (12 scripts) · `sales/AMK-Sales-Playbook-v2.md` · `sales/Pipeline-Status.md` · `sales/Activity-Log.md` · `sales/MQL-Qualification-2026-09-18.md` · `sales/Clinic-Batch-2026-09-15.md` · `sales/Remote-Sweep-1-Douala-2026-09-15.md` · `sales/Walk-In-*.md` · `sales/Outreach-Pack-*.md` · `sales/Send-*.md` · `clients/*/`.
+**Date :** vendredi 18 septembre 2026 · **Statut : PROPOSITION — rien n'est migré, rien n'est déplacé, aucun fichier n'est renommé.**
+**v2 remplace la v1 du même jour** : l'audit a été refait sur les fichiers exacts demandés par King, et il **corrige une affirmation fausse de la v1**.
 
----
-
-## 1 · Combien de leads existent aujourd'hui
-
-| Où | Nombre | Nature |
-|---|---|---|
-| `leads_50.xlsx` → onglet **« Leads 50 »** | **38** | Le seul tableau structuré. Malgré son nom, 38 lignes. |
-| `leads_50.xlsx` → onglet DAILY OPS | — | Tableau de bord du jour, pas une liste de leads |
-| `leads_50.xlsx` → onglets *Deep Dive*, *Daily Tracker*, *Pipeline - 5 Stages* | — | Vues et rapports, alimentés à la main |
-| `leads/Daily Ops.csv` | — | **Export de l'onglet DAILY OPS** — même contenu, autre format |
-| `sales/*.md` | **14 leads suivis hors fichier** | Tous les leads cliniques/optiques de Douala |
-| `sales/Remote-Sweep-1-Douala` §C | **12 labos** | Réservoir brut, jamais qualifié |
-
-### Le chiffre qui compte
-
-**38 leads dans le fichier maître + 14 leads suivis uniquement dans des documents Markdown = 52 organisations identifiées**, plus 12 labos en réserve.
-
-**Et le problème structurel est là :** les 14 leads absents du fichier — OraCare, The Skye, YAKS, L'Opticien, La Béthanie, JEMPO, AFRIQUE LABO, JOSS MEDI, Maison Optique, CAMERA, LE NID, Wonders Medical, Adonaï, Malia Labo — **sont exactement ceux que nous avons contactés.** Le fichier maître ne contient aucun des leads engagés de Douala. Il contient des écoles que nous n'avons jamais jointes.
-
-Autrement dit : **le fichier maître décrit la partie du pipeline qui n'a pas bougé, et ignore celle qui a bougé.**
+**Documents lus :** `leads/leads_50.xlsx` (5 onglets) · `leads/Daily Ops.csv` · `leads/build_daily_ops.py` · `leads/build_sheet.py` · `leads/add_walkin_leads.py` · les 8 dossiers `clients/<slug>/` · `PRE-FLIGHT.md` · `sales/AMK-Sales-Playbook-v2.md` · `sales/Outreach-*.md` (7 fichiers) · `sales/Pipeline-Status.md` · `sales/Activity-Log.md` · `sales/Remote-Sweep-1-Douala-2026-09-15.md` · `sales/Clinic-Batch-2026-09-15.md` · `sales/Walk-In-*.md`.
 
 ---
 
-## 2 · Champs actuellement suivis
+## 0 · D'abord, deux corrections de ma part
 
-Onglet « Leads 50 » — **26 champs :**
+**① Le champ `Language` n'est pas vide. Il est rempli, pour les 38 leads.**
 
-`ID · School · City · Language · Facebook · Website · Website status · Last FB post · FB followers · Admissions activity · Phone · WhatsApp · Decision maker · Contact channel · Facilities · Multiple branches · Lead score · Priority · Demo made · Contacted · Reply · Conversation · Offer made · Deposit · Sale · Follow-up date · Notes`
+Répartition réelle : `EN` **15** · `FR/EN` **13** · `FR` **3** · `EN/FR` **3** · `Bilingual EN/FR` **3** · `FR (N/V)` **1**.
 
-`Daily Ops.csv` : aucune colonne exploitable — un tableau de bord mis en forme, **7 numéros de téléphone sur 50 lignes**.
+La ligne de Summerset dit **EN/FR**, celle de NABESK dit **EN**. **Le CRM avait la réponse, je ne l'ai pas lue.** C'est exactement la même erreur que les fausses réponses d'OraCare et MITOC : **j'ai travaillé de mémoire au lieu de lire le fichier.** Ma v1 proposait d'ajouter un champ `language` — c'est inutile, il existe. (Une amélioration utile reste : normaliser les six variantes d'écriture en trois valeurs `EN` / `FR` / `both`, pour que ce soit filtrable.)
+
+**② `sales/AMK-Sales-Playbook-v2.md` et les packs existent.** Vérifié fichier par fichier — voir §2.
 
 ---
 
-## 3 · Champs manquants mais nécessaires
+## 1 · Combien de leads uniques
 
-Sept manques, chacun payé par une erreur déjà commise cette semaine :
-
-| Champ manquant | L'erreur qu'il aurait évitée |
+| Où vivent les leads | Nombre |
 |---|---|
-| **`language`** *(existe mais jamais rempli — voir §4)* | Les 3 maquettes en français pour Buea, région anglophone |
-| **`whatsapp_verified`** + `whatsapp_verified_on` + `profile_name_seen` | 696 023 696 = « Kingdom Family Int'l » (une entreprise de finances) · 677 647 802 sans photo de profil |
-| **`reply_type`** (human / auto / none) | La réponse automatique d'Adonaï aurait pu être comptée comme une réponse |
-| **`last_send_state`** (sent / delivered / read) | « Envoyé » écrit comme « répondu » — mon erreur du 18/09 |
-| **`site_url`** + `site_checked_on` | QUALITECH et Clinique des Anges : deux maquettes produites **avant** de découvrir qu'un site existe |
-| **`disqualified`** (valeur de stage) + `disqualification_reason` | 8 leads aujourd'hui sans case où vivre : Summerset, Saint Bernard, NABESK, Divine Success, Awae (aucun canal), ICHS (litige), QUALITECH, Clinique des Anges (site existant) |
-| **`added_on`** | La métrique hebdomadaire « nouveaux leads » est incalculable sans elle |
+| `leads_50.xlsx` → onglet **« Leads 50 »** | **38** |
+| `leads_50.xlsx` → onglet **« Pipeline - 5 Stages »** — contient **OraCare237**, absent de « Leads 50 » | **+1** |
+| Pistes présentes **uniquement en prose** (`sales/*.md`, `clients/*/`) | **+15** |
+| **Total d'organisations identifiées** | **54** |
+| Réserve brute, jamais qualifiée (`Remote-Sweep` §C, labos) | 12 (hors total) |
 
-**Manquent aussi, demandés par votre schéma et absents du fichier actuel :** `source`, `source_detail`, `first_touched`, `stage_since`, `last_message_sent`, `last_reply_received`, `follow_ups_sent`, `preview_sent`, `preview_asset`, `proposal_sent`, `price_quoted_fcfa`, `invoice_sent`, `closed_on`, `closed_value_fcfa`, `health`.
+Les 15 hors classeur : **The Skye · YAKS · AFRIQUE LABO · JOSS MEDI · L'Opticien Bali · La Béthanie · JEMPO/J&E Memorial · Maison Optique · Cabinet Médical CAMERA · Polyclinique LE NID · Wonders Medical · Cabinet Biomédical Adonaï · Malia Labo · QUALITECH · Clinique des Anges.**
 
-**Le fichier actuel ne contient aucun champ de suivi temporel.** `Contacted`, `Reply`, `Follow-up date` sont les seuls, et ils sont renseignés à la main, en texte libre, sans date normalisée.
+**Ce que ce chiffre dit :** le classeur maître ne contient **aucun** des leads engagés de Douala. Il décrit la partie du pipeline qui n'a pas bougé et ignore celle qui a bougé.
 
 ---
 
-## 4 · Recouvrement, contradictions et doublons
+## 2 · Les fichiers cités existent-ils ?
 
-### ① Les deux fichiers ne se recouvrent pas — ils se contredisent
+**Oui — tous.** Réponse sans détour, contenu non inventé :
 
-`Daily Ops.csv` **est un export de l'onglet DAILY OPS** du même classeur. Ce n'est pas une seconde source : c'est la même source en double, et les deux sont **périmées au 16/09**.
+| Fichier | Existe | Taille |
+|---|---|---|
+| `leads/leads_50.xlsx` | ✅ | 40 340 o |
+| `leads/Daily Ops.csv` | ✅ | 8 019 o |
+| `leads/build_daily_ops.py` | ✅ | 9 197 o |
+| `leads/build_sheet.py` | ✅ | 36 829 o |
+| `leads/add_walkin_leads.py` | ✅ | 6 449 o |
+| `PRE-FLIGHT.md` | ✅ | 7 354 o |
+| `sales/AMK-Sales-Playbook-v2.md` | ✅ | 33 247 o (v2.2, 17/09) |
 
-### ② Contradictions relevées (11)
+**Packs d'outreach présents :** `Outreach-Pack-2026-09-14.md` · `Outreach-Pack-2026-09-16.md` · `Monday-Outreach-Pack.md` · `Outreach-AFRIQUE-LABO-v1.md` · `Outreach-JEMPO-v1.md` · `Outreach-LOpticien-v1.md` · `Outreach-LaBethanie-v1.md` · `Outreach-Pivot-2026-09-18.md`.
+
+⚠️ **Un fichier que personne ne trouvera : il n'existe pas d'`Outreach-Pack-2026-09-18.md`.** Les productions du 18/09 s'appellent `Send-Pack-2026-09-18-1030.md` et `Send-Pack-Douala-Cliniques-2026-09-18.md`. Si un document cite un « pack du 18/09 », c'est une référence morte.
+
+---
+
+## 3 · Champs du classeur et complétude
+
+**26 colonnes :** `ID · School · City · Language · Facebook · Website · Website status · Last FB post · FB followers · Admissions activity · Phone · WhatsApp · Decision maker · Contact channel · Facilities · Multiple branches · Lead score · Priority · Demo made · Contacted · Reply · Conversation · Offer made · Deposit · Sale · Follow-up date · Notes`
+
+### Aucun lead n'a de champ vide — et c'est le problème
+
+**0 case blanche sur les 11 champs clés, pour les 38 lignes.** L'absence est **écrite en toutes lettres** :
+
+| Constat | Nombre |
+|---|---|
+| `Phone` n'est **pas un numéro** (mais `N/V`, `not listed`, `not published anywhere`) | **16 / 38** |
+| `WhatsApp` n'est **pas un numéro** (`N/V (landline)`, `Likely same (mobile)`, `none found`, `verify on walk-in`) | **27 / 38 — 71 %** |
+
+**Seuls 11 leads sur 38 ont un numéro WhatsApp réellement écrit dans le fichier.** C'est l'explication chiffrée du blocage d'aujourd'hui — et c'est un problème de **type de donnée**, pas de rigueur : « pas de numéro » est écrit comme une phrase, donc **ni triable, ni filtrable, ni comptable**. Un `CRM.csv` doit porter `wa_verified = unknown` et une case vide, pas une phrase.
+
+---
+
+## 4 · `clients/<slug>/` → lignes du classeur
+
+| Dossier | Ligne correspondante |
+|---|---|
+| `clients/nabesk/` | **30 — NABESK** ✅ |
+| `clients/saint-bernard/` | **29 — Saint Bernard** ✅ |
+| `clients/summerset/` | **28 — Summerset** ✅ |
+| `clients/afrique-labo/` | ❌ **aucune ligne** |
+| `clients/jempo/` | ❌ **aucune ligne** |
+| `clients/l-opticien/` | ❌ **aucune ligne** |
+| `clients/la-bethanie/` | ❌ **aucune ligne** |
+| `clients/douala-cliniques/` (6 maquettes) | ❌ **aucune ligne** |
+
+**5 dossiers clients sur 8 n'ont aucune ligne dans le classeur.** Ce sont les dossiers qui contiennent le travail réel — concepts, inspirations, notes de build — et ils ne sont référencés nulle part dans le fichier maître.
+
+**Piège de dédoublonnage à signaler :** une simple recherche du mot « NABESK » fait remonter **la ligne 31 (Baird Memorial)**, parce que ses notes disent *« otherwise Wed card drop same road as NABESK »*. Une déduplication par mot-clé produirait une fausse fusion. Le rapprochement devra se faire **sur l'identifiant, jamais sur le texte**.
+
+---
+
+## 5 · `Daily Ops.csv` — leads ou notes opérationnelles ?
+
+**50 lignes, dont 7 vides → 43 lignes utiles.**
+
+| Nature | Nombre | Exemples |
+|---|---|---|
+| **État de lead** (le seul contenu CRM) | **12** | L7 OraCare · L8 Skye · L9 YAKS · L10 AFRIQUE LABO · L11 JOSS · L13 MITOC · L14 Baird · L15 St. Theresa · L16 Holds & parks · L20 FU OraCare · L23 FU Baird · L24 FU MITOC |
+| **Notes opérationnelles** | **18** | En-têtes de section, `Lead / Why hot / Next action / Done?`, cases à cocher |
+| **Consignes permanentes** | **6** | L36 file d'attente AMK · L37 règle des mockups · L47 journaliser chaque envoi · L48 que faire sur un « oui » · L49 points bloqués |
+| **Exercices d'entraînement** | **4** | L40-L42 drills EN/FR · L44 dimanche off |
+| **Créneaux et décisions** | **3** | L29 14:00-14:15 · L30 14:30-16:00 envois FR · L33 sweep annulé |
+
+**Conclusion : 12 lignes sur 43 (28 %) sont de la donnée de lead.** Les 31 autres sont de la logistique. **Le nom du fichier ment** — ce n'est pas une liste de leads, c'est un plan de journée. Votre proposition de le renommer `Daily-Plan.csv` est la bonne, et je propose mieux : **qu'il soit généré depuis le CRM**, sinon il redeviendra faux (il est déjà périmé au 16/09).
+
+---
+
+## 6 · Contradictions à arbitrer
 
 | # | Contradiction | Gravité |
 |---|---|---|
-| 1 | `Pipeline-Status.md` annonce **27 leads** ; le classeur en contient **38** | Moyenne |
-| 2 | Le classeur **ne contient aucun des 14 leads engagés de Douala** — il liste des écoles jamais contactées à la place | **Critique** |
-| 3 | La liste de mort du playbook est « les deux 18 » (COMOBIL, OraCare) — mais **COMOBIL est parqué** et **OraCare n'est pas dans le fichier**. La règle est inapplicable depuis les fichiers | **Critique** |
-| 4 | Onglet DAILY OPS : COMOBIL en **tête de kill list** ; `Pipeline-Status` : COMOBIL **parqué** | Élevée |
-| 5 | Solidarity : le classeur dit « **scheduled Tue** » ; `Pipeline-Status` dit **WA bloqué → parqué** | Élevée |
-| 6 | Ligne St. Theresa : **colonnes décalées** — la cellule « Lead score » contient le texte de la réponse, pas un score | Élevée |
-| 7 | Colonne `Language` présente mais **peu ou pas remplie** — la donnée qui manquait pour Buea | Élevée |
-| 8 | `Contacted` vide pour L'Opticien, La Béthanie, JEMPO, AFRIQUE LABO — **parce que ces lignes n'existent pas** | Élevée |
-| 9 | **Trois vocabulaires de stage** : classeur 1-5 + « PARK » · `Pipeline-Status` « parked-warm-with-permission », « BOARD-BUYER », « INBOUND » | Moyenne |
-| 10 | NABESK : « 83,5 % au O-Level » → en réalité **83,46 % au A-Level 2020** | Moyenne (exactitude) |
-| 11 | GS WAFO (#2) fusionné dans COMOBIL (#1) selon `Pipeline-Status`, mais **reste une ligne séparée** avec son propre score | Faible |
-
-### ③ Doublons
-
-- **Fichiers :** `Daily Ops.csv` ↔ onglet DAILY OPS (même contenu, deux formats).
-- **Leads :** COMOBIL ↔ GS WAFO (même promoteur, même contact, 5 institutions) — **un seul acheteur, deux lignes**.
-- **Scripts :** 12 scripts `patch*.py` dans `leads/` — quatre sont marqués *SUPERSEDED* dans leur propre en-tête et refusent de s'exécuter. **Ces scripts sont la seule trace de plusieurs corrections** : s'ils partent, l'histoire part avec eux.
+| 1 | **La kill list du playbook est inapplicable depuis les fichiers** : elle dit « les deux 18 » = COMOBIL + OraCare. COMOBIL est **parké**, OraCare **n'est pas dans la table des leads** | **Critique** |
+| 2 | Le classeur contient **0 des 15 leads engagés de Douala** et liste à leur place des écoles jamais contactées | **Critique** |
+| 3 | **5 dossiers `clients/` sur 8 n'ont aucune ligne** dans le classeur | Élevée |
+| 4 | **71 % des leads n'ont pas de numéro WhatsApp** exploitable, l'absence étant écrite en prose | Élevée |
+| 5 | COMOBIL : **tête de kill list** dans l'onglet DAILY OPS, **parké** dans `Pipeline-Status` | Élevée |
+| 6 | Solidarity : « scheduled Tue » au classeur, **parqué** dans `Pipeline-Status` | Élevée |
+| 7 | **Ligne 27 (St. Theresa) décalée** : la cellule « Lead score » contient le verbatim de la réponse | Élevée |
+| 8 | `Daily Ops.csv` est un **export de l'onglet DAILY OPS** — même contenu, deux formats, périmés au 16/09 | Moyenne |
+| 9 | Trois vocabulaires de stage concurrents ; `Pipeline-Status` dit 27 leads, le classeur en a 38 | Moyenne |
+| 10 | NABESK : « 83,5 % au O-Level » → en réalité **83,46 % au A-Level 2020** | Moyenne |
+| 11 | GS WAFO (#2) fusionné dans COMOBIL (#1) selon `Pipeline-Status`, mais **reste une ligne séparée** avec son score | Faible |
 
 ---
 
-## 5 · Engagés, froids, morts
+## 7 · Schéma proposé — ajusté à ce que l'audit montre
 
-**11 leads engagés** (un message au moins est parti) · **0 lead mort** (personne n'a dit non) · **1 lead parké-warm** (St. Theresa, permission de revenir en octobre).
+**Toutes les colonnes du classeur sont conservées, à l'identique, avec leurs noms.** Rien n'est remplacé. J'ajoute ce que l'audit démontre manquant — **et je retire une addition de ma v1.**
 
-| Classe | Nombre | Qui |
+### ~~`language`~~ — **annulé**
+Le champ existe et il est rempli (§0). Rien à ajouter. Seule amélioration : normaliser les 6 variantes.
+
+### Ajouts (9)
+
+| Champ | Type | La preuve qui le justifie |
 |---|---|---|
-| **Engagé — en attente de réponse** | **11** | OraCare · MITOC · Baptist Comprehensive · Baird Memorial · The Skye · YAKS · AFRIQUE LABO · L'Opticien · La Béthanie · JEMPO · Adonaï · Malia |
-| **Engagé — réponse obtenue** | **1** | St. Theresa (parkée-warm, retour en octobre) |
-| **Qualifié, jamais contacté** | **3** | Cabinet Médical CAMERA · Polyclinique LE NID · Wonders Medical Foundation (Wonders sans numéro vérifié) |
-| **À vérifier (canal non confirmé)** | **12** | Les écoles de Douala/Buea sans numéro confirmé |
-| **Disqualifié** | **8** | Summerset, Saint Bernard, NABESK, Divine Success, BHS Awae (aucun canal) · ICHS (litige) · QUALITECH, Clinique des Anges (site existant) |
-| **Parké** | **5** | COMOBIL/WAFO · SAHISCOL · La Retraite · JOSS MEDI · Solidarity |
-| **Réserve non qualifiée** | **12** | Labos du `Remote-Sweep` §C |
+| `slug` | texte | 5 dossiers `clients/` orphelins : il faut une clé qui relie dossier et ligne |
+| `org_type` | school / clinic / lab / other | Le classeur est scolaire à 82 % (31/38) ; les cliniques arrivent par la prose et n'ont pas de place |
+| `contact_name` · `contact_role` | texte | « Decision maker » contient des phrases entières (`« Principal (capture) »`, `« Dr Njang… (co-owner; also DMO…) »`) |
+| `wa_number` | numérique ou vide | **27/38 lignes ont une phrase au lieu d'un numéro** : il faut une colonne triable à côté du texte conservé |
+| `wa_verified` | yes / no / unknown | C'est la porte qui a laissé passer « Kingdom Family Int'l » |
+| `profile_name_seen` | texte | Le nom vu à la vérification — la donnée qui a révélé l'erreur |
+| `reply_type` | human / auto / none | Adonaï envoie un accueil automatique ; il ne doit jamais gonfler le PRR |
+| `last_send_state` | sent / delivered / read | « Envoyé » a été écrit comme « répondu » |
+| `site_url` + `site_checked_on` | URL + date | QUALITECH et Clinique des Anges : 2 maquettes produites avant de découvrir un site existant |
 
-> **Note :** après vérification, **OraCare et MITOC n'ont répondu ni l'un ni l'autre.** Les deux messages n'ont même pas été lus. La seule réponse humaine de toute la campagne reste St. Theresa.
+### Ajouts pour la gestion (7)
 
----
+`source` · `source_detail` · `added_on` · `qualified_on` · `stage_since` · `follow_ups_sent` · `disqualification_reason`
 
-## 6 · Schéma proposé — et ce que je changerais
+### Dérivés, jamais saisis (2)
 
-Votre schéma est bon. **Je propose 8 ajouts et 2 retraits**, chacun justifié par un fait, pas par une préférence.
+`kill_list` et `health` **se calculent**. C'est le stockage manuel qui a laissé le fichier mentir pendant quatre jours. `health` reste **modifiable à la main** pour les cas comme St. Theresa (froide en date, chaude en intention).
 
-### Ajouts
+### Valeurs à corriger dans votre schéma
 
-| Champ | Type | Pourquoi |
-|---|---|---|
-| `language` | `EN` / `FR` / `both` | **Obligatoire.** La langue se déduit de la région : Sud-Ouest et Nord-Ouest = EN ; Littoral et Centre = FR. C'est ce champ qui aurait empêché les maquettes françaises pour Buea. |
-| `whatsapp_verified` | `yes` / `no` / `unknown` | Porte d'entrée : un numéro non vérifié ne s'envoie pas. |
-| `profile_name_seen` | texte | Le nom affiché à la vérification — c'est ce qui a révélé « Kingdom Family Int'l ». |
-| `reply_type` | `human` / `auto` / `none` | Adonaï envoie un message d'accueil automatique. Il ne doit jamais gonfler le PRR. |
-| `last_send_state` | `sent` / `delivered` / `read` | « Envoyé ≠ lu ≠ répondu » devient une donnée, plus une consigne. |
-| `site_url` + `site_checked_on` | URL + date | Deux maquettes produites avant de découvrir un site existant. On vérifie **avant** de produire. |
-| `disqualification_reason` | texte | 8 leads disqualifiés n'ont aujourd'hui aucune case où exister. |
-| `mockup_path` | chemin | Un aperçu et une maquette ne sont pas la même chose : la maquette existe souvent sans qu'aucun lien n'ait été envoyé. |
-
-### Retraits
-
-| Champ | Pourquoi |
-|---|---|
-| `kill_list` (stocké) | **À dériver, pas à stocker.** La règle est « les deux 18 + tout nouveau oui ». Stocké à la main, il dérive — c'est exactement ce qui est arrivé à l'onglet DAILY OPS. `KILL-LIST.md` le recalcule à chaque génération. |
-| `health` (stocké) | **À dériver par défaut** : aucun mouvement depuis 7 jours = `cold`, 21 jours = `dead`. Le champ reste **modifiable à la main** pour les cas particuliers (St. Theresa est froide en date mais chaude en intention). |
-
-### Ajouts dans les valeurs, pas dans les colonnes
-
-**`source` — votre énumération ne couvre pas nos vraies sources.** Nous recrutons par annuaire (DoualaTour), Google Maps, Facebook, TikTok, PDF du GCE Board, et portails. Proposition :
-
-`directory` · `google_maps` · `facebook` · `tiktok` · `gce_board` · `walk_in` · `referral` · `inbound` · `outreach_pack` · `content_video` · `other`
-
-**`stage` — ajouter `disqualified`** à votre énumération. Sinon 8 leads sont rangés dans `lost`, ce qui est faux : ils n'ont jamais été perdus, ils n'ont jamais été jouables.
+- **`source` :** votre énumération ne couvre pas nos vraies sources. Nous recrutons par **annuaire** (DoualaTour), **Google Maps**, **Facebook**, **TikTok**, **PDF du GCE Board**, **portail**. Proposition : `directory · google_maps · facebook · tiktok · gce_board · walk_in · referral · inbound · content_video · outreach_pack · other`.
+- **`stage` :** ajouter **`disqualified`**. Sinon 8 leads sont rangés dans `lost` — faux : ils n'ont jamais été perdus, ils n'ont jamais été jouables.
 
 ---
 
-## 7 · Structure de dossiers proposée
+## 8 · Arborescence proposée (chemins réels)
 
 ```
 leads/
-  CRM.csv                        ← l'index, une ligne par lead
+  CRM.csv
   records/
-    adonai-douala.md
-    malia-labo-douala.md
-    oracare-buea.md
-    st-theresa-molyko.md
-    ...                          ← un fichier par lead ayant un historique
-  PIPELINE.md                    ← généré
-  KILL-LIST.md                   ← généré, quotidien
-  STALE.md                       ← généré, hebdomadaire
-  SOURCES.md                     ← généré
-  reports/
-    WEEKLY-SALES-REPORT-2026-09-18.md
+    adonai-douala.md · malia-labo-douala.md · oracare-buea.md
+    skye-douala.md · yaks-douala.md · afrique-labo-douala.md
+    opticien-bali-douala.md · la-bethanie-bonaberi.md · jempo-deido.md
+    mitoc-molyko.md · baird-bonduma.md · st-theresa-molyko.md
+    ...                                        ← un fichier par lead avec historique
+  PIPELINE.md · KILL-LIST.md · STALE.md · SOURCES.md     ← générés
+  reports/WEEKLY-SALES-REPORT-2026-09-18.md              ← généré
+  Daily-Plan.csv                                        ← renommé + généré depuis le CRM
   archive/
-    leads_50.xlsx
-    Daily Ops.csv
-    patch1.py … patch4.py        ← les scripts marqués SUPERSEDED
-  build/
-    crm.py                       ← extraction, dédoublonnage, génération des vues
-  CRM-AUDIT-AND-PROPOSAL-2026-09-18.md   ← ce fichier
+    leads_50.xlsx · Daily Ops.csv · patch1.py … patch4.py
+  build/crm.py
+  CRM-AUDIT-AND-PROPOSAL-2026-09-18.md
 ```
 
-**Deux points importants :**
+**Deux règles de génération, en tête de chaque vue :** *« Généré le … par `leads/build/crm.py` — ne pas modifier à la main. »* Un fichier dérivé modifié à la main redevient une source concurrente, et c'est précisément ce qui a produit l'onglet DAILY OPS.
 
-- **`sales/Activity-Log.md` reste** tel quel. C'est le journal chronologique — l'append-only — et il précède le CRM. Il ne sera pas remplacé : `CRM.csv` dit où en est chaque lead, `Activity-Log.md` dit ce qui s'est passé et quand. Le registre et le journal, pas l'un ou l'autre.
-- **`leads/archive/`** reçoit les originaux, jamais la corbeille. Rien n'est supprimé.
-
----
-
-## 8 · Plan de migration (à exécuter après votre accord)
-
-1. **Extraire** les 38 leads de l'onglet « Leads 50 » et les 14 leads des documents `sales/`.
-2. **Dédoublonner** — COMOBIL/WAFO à fusionner en une fiche, un acheteur.
-3. **Signaler** les 11 contradictions du §4 avec la valeur retenue et la valeur écartée, pour arbitrage.
-4. **Créer un `records/<slug>.md`** pour chaque lead ayant un historique réel — soit **15 fiches** (11 engagés + St. Theresa + 3 suivis).
-5. **Construire `CRM.csv`** : 52 lignes, valeurs déduites là où la donnée existe, **cases vides là où elle n'existe pas** — jamais d'invention.
-6. **Archiver** `leads_50.xlsx`, `Daily Ops.csv` et les 4 scripts périmés vers `leads/archive/`.
-7. **Générer** les premières vues : `PIPELINE.md`, `KILL-LIST.md`, `STALE.md`, `SOURCES.md`.
-8. **Vous montrer le résumé** avant de considérer la migration terminée.
-
-**Ce qui change :** un seul fichier maître, daté, triable ; les vues ne se modifient plus à la main ; chaque lead a son histoire.
-**Ce qui est préservé :** les originaux archivés, `Activity-Log.md` intact, tous les dossiers `clients/`, et l'historique des 12 scripts `patch`.
+**`sales/Activity-Log.md` reste intact** et n'est pas remplacé : c'est le journal chronologique append-only. `CRM.csv` dit *où en est* chaque lead ; `Activity-Log.md` dit *ce qui s'est passé et quand*.
 
 ---
 
-## 9 · Métriques — et la réponse sur le PRR
+## 9 · Migration — ce qui change, ce qui est conservé
 
-Vos 12 métriques sont calculables depuis le schéma proposé, **à deux exceptions près** : « nouveaux leads » exige `added_on` (ajouté), et « temps moyen avant première réponse » exige des dates horodatées, pas « mardi ».
-
-**Sur le PRR :** votre définition est la bonne — *leads ayant répondu au moins une fois ÷ leads contactés*. **Je propose de la durcir** : **les réponses automatiques sont exclues**. Adonaï a envoyé un message d'accueil machine 60 secondes après notre message ; le compter comme une réponse fausserait la seule métrique qui dit la vérité sur notre approche.
-
-**Et je propose un second indicateur, `ARR` (taux de réponse automatique)** — non pas comme une réponse, mais comme un **signal d'achat** : une entreprise qui a configuré un message d'accueil automatique est déjà équipée en digital. C'est un bon prospect, pas un mauvais. Adonaï en est la preuve.
-
-**Deux métriques à ajouter**, parce qu'elles manquent et qu'elles nous concernent directement :
-
-- **`PRR` par source** — il répond à votre question « quelle source produit le meilleur taux de qualification ». Aujourd'hui on ne peut pas y répondre.
-- **Délai moyen avant première réponse** — mesure la règle des 90 secondes, qui est notre argument de vente et notre faiblesse opérationnelle actuelle.
-
----
-
-## 10 · Questions avant de construire
-
-1. **PRR** — voulez-vous ma version durcie (réponses humaines uniquement) ou la version simple (toute réponse) ? Et garde-t-on `ARR` comme indicateur d'équipement digital ?
-2. **Y a-t-il des leads dans l'historique de conversation qui ne sont dans aucun fichier ?** **Oui — j'en ai trouvé 14** (§1). Le classeur n'en contient aucun. *Est-ce qu'il vous arrive d'avoir approché quelqu'un que je n'ai jamais vu, hors WhatsApp existant ?* Dans ce cas, dites-le moi et je l'intègre.
-3. **COMOBIL** — la règle du playbook dit qu'il est l'un des deux 18 de la kill list ; votre décision du 14/09 l'a parqué faute de canal. **Laquelle gagne ?** Je propose : il reste dans la kill list **comme incident de canal** — c'est-à-dire qu'on le remonte à chaque fois qu'une Page Facebook AMK est évoquée, pas chaque matin.
-4. **St. Theresa** — `health` la dirait `cold` (3 jours sans mouvement) alors qu'elle a donné une permission. Confirmez-vous que `health` reste **modifiable à la main** pour ce genre de cas ?
-5. **Les 12 labos en réserve** (`Remote-Sweep` §C) : ils entrent au CRM comme `prospect` à qualifier, ou restent hors CRM jusqu'à vérification du canal ?
+| Étape | Ce qui change | Ce qui est préservé |
+|---|---|---|
+| 1. Extraire | 38 lignes du classeur + 16 hors classeur = **54** | Le classeur original, intact, jusqu'à l'archivage |
+| 2. Dédoublonner | COMOBIL + GS WAFO → **une fiche, un acheteur** | Les deux lignes d'origine, archivées |
+| 3. Signaler | Les **11 contradictions** du §6, valeur retenue + valeur écartée | Le verbatim d'origine dans `Notes` |
+| 4. Fiches | **13-15 `records/<slug>.md`** (leads avec historique réel) | Les dossiers `clients/` : **liés, jamais dupliqués** |
+| 5. `CRM.csv` | 54 lignes, colonnes du classeur conservées + 16 champs | Les cases vides là où la donnée n'existe pas — **jamais d'invention** |
+| 6. Archiver | `leads_50.xlsx`, `Daily Ops.csv`, 4 scripts `patch*.py` → `leads/archive/` | Rien n'est supprimé ; les scripts marqués SUPERSEDED sont la seule trace de plusieurs corrections |
+| 7. Générer | `PIPELINE.md` · `KILL-LIST.md` · `STALE.md` · `SOURCES.md` · `Daily-Plan.csv` | `Activity-Log.md`, `Pipeline-Status.md`, tous les `sales/*.md` |
+| 8. Résumé | Compte rendu avant signature | — |
 
 ---
 
-## Ce que je ferais différemment de votre plan — en un paragraphe
+## 10 · Réponses à vos questions
 
-Votre architecture est la bonne et je ne propose **aucun changement de fond** : un index, des fiches, des vues dérivées. Mes trois ajustements tiennent en une phrase chacun. **Un :** les vues dérivées doivent porter un en-tête *généré le … — ne pas modifier à la main*, sinon elles finiront comme l'onglet DAILY OPS. **Deux :** `health` et `kill_list` se calculent, ils ne se stockent pas — c'est précisément le stockage manuel qui a laissé le fichier mentir pendant quatre jours. **Trois :** la discipline d'écriture doit être mécanique, pas volontaire : **si un envoi n'est pas dans `Activity-Log.md` et dans `CRM.csv` dans la même réponse, il n'a pas eu lieu.** C'est la seule règle qui aurait empêché mon erreur de ce matin.
+**« PRR » — c'est bien Prospect Response Rate ?** Oui, votre définition : *leads ayant répondu au moins une fois ÷ leads contactés*. **Je propose de la durcir : réponses humaines uniquement.** Adonaï a envoyé un message automatique 60 secondes après notre message ; le compter fausserait la seule métrique qui dit la vérité sur notre approche. Et je propose un second indicateur, **`ARR`** — non comme une réponse, mais comme **signal d'équipement digital** : une entreprise qui a configuré un accueil automatique **a déjà adopté le digital**. C'est un bon prospect, pas un mauvais.
+
+**Des leads dans l'historique qui ne sont dans aucun fichier ?** **Oui : 16, dont 15 hors classeur** (§1). Le plus notable : **OraCare237 figure dans l'onglet « Pipeline - 5 Stages » mais pas dans la table des leads** — il a donc disparu de la seule liste que nous filtrons.
+
+**3 autres questions :**
+1. **COMOBIL** — le playbook le met en kill list, votre décision du 14/09 l'a parqué faute de canal. Laquelle gagne ? *(Le playbook gagne selon vos propres règles — mais je propose de l'amender : COMOBIL remonte comme **incident de canal**, pas comme tâche quotidienne.)*
+2. **St. Theresa** — `health` la dirait `cold` (3 jours), alors qu'elle a donné une permission. Confirmez-vous que `health` reste **modifiable à la main** ?
+3. **Les 12 labos** du `Remote-Sweep` §C : au CRM comme `prospect` à qualifier, ou en réserve hors CRM jusqu'à vérification du canal ?
+
+---
+
+## Ce que je ferais différemment — en trois phrases
+
+**Un :** `kill_list` et `health` **se calculent**, ils ne se saisissent pas — c'est le stockage manuel qui a laissé le fichier mentir quatre jours. **Deux :** chaque vue générée porte un en-tête *« ne pas modifier à la main »*, sinon elle redeviendra une source concurrente, comme l'onglet DAILY OPS. **Trois :** la discipline d'écriture doit être **mécanique, pas volontaire** — *si un envoi n'est pas écrit dans `Activity-Log.md` et `CRM.csv` dans la même réponse, il n'a pas eu lieu*. C'est la seule règle qui aurait empêché mon erreur de ce matin — et celle sur `Language`, qui est la même erreur.
+
+---
+
+**Rien n'est migré.** Dites oui et je migre d'un bloc, puis je vous présente le résumé avant signature.
