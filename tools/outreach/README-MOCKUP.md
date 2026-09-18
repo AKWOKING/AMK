@@ -35,7 +35,19 @@ python3 tools/outreach/mockup.py \
 `--vertical clinique|college` choisit seulement la **photo par défaut** et les libellés
 d'action neutres. Tout le reste vient du prospect.
 
-Sortie : image **1080×1350** (~165 Ko), prête à envoyer sur WhatsApp.
+Sortie : image **1080×1620** (~225 Ko) — la même page montrée sur **ordinateur portable
+et sur téléphone**. Choisir le format avec `--devices both` (défaut), `phone` ou `laptop`
+(dans ce cas la sortie est en 1080×1350).
+
+| `--devices` | Sortie | Usage |
+|---|---|---|
+| `both` (défaut) | 1080×1620 | l'envoi habituel : on voit la page sur ordinateur **et** sur téléphone |
+| `phone` | 1080×1350 | quand on ne veut montrer que le téléphone |
+| `laptop` | 1080×1350 | quand on ne veut montrer que l'ordinateur |
+
+Le modèle `site/mockup-hero.html` est **responsive** : la même page est capturée en
+390×844 (téléphone) et en 1280×800 (ordinateur). Les deux rendus sont donc réellement
+la même page, à deux largeurs — la maquette ne triche pas.
 
 ## 3 · Où trouver les mots à mettre dans la maquette
 
@@ -69,7 +81,8 @@ La maquette porte deux étiquettes d'honnêteté : le bandeau interne
 | `--bar` / `--bar-sub` | barre d'action du bas |
 | `--kicker` | sur-titre de la carte (« Aperçu gratuit · 1 page d'accueil ») |
 | `--line` | phrase de pied de carte |
-| `--height` | hauteur de la carte (1350 par défaut, 1920 possible) |
+| `--devices` | `both` (défaut) · `phone` · `laptop` |
+| `--height` | hauteur de la carte (1620 pour deux appareils, 1350 pour un seul) |
 
 ## 6 · Fichiers
 
