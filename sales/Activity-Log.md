@@ -19,17 +19,22 @@
 | mer 16/09 | OraCare237 | FU1 (M+2) | Envoyé | **Non** |
 | mer 16/09 | Cabinet Dentaire The Skye (677 79 69 99) | msg 1 | Envoyé | **Non** |
 | mer 16/09 | Cabinet dentaire YAKS (672 70 20 78) | msg 1 | Envoyé | **Non** |
+| **jeu 17/09** | **L'OPTICIEN** (Bali, 670 27 60 65) | msg 1 + maquette | **ENVOYÉ (confirmé par King 18/09)** | **Non** |
+| **jeu 17/09** | **LA BÉTHANIE** (Bonabéri, 677 76 07 82) | msg 1 + maquette | **ENVOYÉ (confirmé par King 18/09)** | **Non** |
+| **jeu 17/09** | **JEMPO / J&E Memorial** (Deido, 696 71 06 99) | msg 1 + maquette | **ENVOYÉ (confirmé par King 18/09)** | **Non** |
 | jeu 17/09 13:24 | AFRIQUE LABO (690 54 70 93) | msg 1 | Envoyé, 2 coches | **Non** |
 | jeu 17/09 13:47 | MITOC | FU1 (M+2) | Envoyé | **Non** |
 | jeu 17/09 13:48 | Baird Memorial | FU1 (M+2) | Envoyé | **Non** |
 
 ### Bilan chiffré (à ne jamais arrondir en notre faveur)
 
-- **12 messages envoyés** depuis le 14/09.
+- **15 messages envoyés** depuis le 14/09 — dont **L'Opticien, La Béthanie et JEMPO, partis le jeudi 17/09** (correction de King, 18/09 : ma feuille d'envoi du 18/09 les listait encore comme « à envoyer », c'était une erreur de planification de ma part).
 - **1 seule réponse** : St. Theresa. Soit **8,3 %** — dans la fourchette normale du froid, mais l'échantillon est trop petit pour en tirer une conclusion.
 - **0 prospect n'a demandé l'aperçu.**
 - **0 client · 0 acompte · 0 FCFA** de revenu.
-- **L'Opticien, La Béthanie, JEMPO : rien n'est parti au 18/09 12:07.** La feuille de 09:00 n'a pas été exécutée — donc **zéro envoi ce jour** à cette heure-là.
+- **L'Opticien, La Béthanie, JEMPO : ENVOYÉS le jeudi 17/09.** Ils sont en attente de réponse, plus en attente d'envoi. La feuille du 18/09 qui les listait encore était fausse — corrigé ici.
+- **Fils ouverts sans réponse au 18/09 :** OraCare · MITOC · Baptist Comprehensive · Baird Memorial · The Skye · YAKS · AFRIQUE LABO · L'Opticien · La Béthanie · JEMPO. **10 fils ouverts, 1 seule réponse depuis le début (St. Theresa).**
+- **Relances échues :** Skye (M+2) et YAKS (M+2) — 18/09 · AFRIQUE LABO (M+2) — 19/09 · OraCare (M+4) — 20/09 · MITOC (M+4) — 21/09.
 
 ## 2 · Ce que cette erreur m'apprend (et que je consigne pour ne pas la refaire)
 

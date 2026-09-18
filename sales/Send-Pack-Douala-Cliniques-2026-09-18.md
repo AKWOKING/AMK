@@ -53,7 +53,10 @@ Je vous envoie le lien ? Un « oui » suffit.
 — Akwo King / AMK – Développement Web & Solutions Digitales
 ```
 
-## 5 · Laboratoire QUALITECH — Logbessou / Deido · **690 72 01 84**
+## 5 · RETIRE — Laboratoire QUALITECH **a deja un site**
+*Verifie par King le 18/09 : **https://qualitechsarl.org/** existe.* Un site vivant = pas de besoin -> hors cible (porte M2). `05-qualitech.jpg` a ete produite avant la verification : **ne pas l'envoyer**, la garder comme preuve de recherche. Sa section est conservee ci-dessous **pour memoire seule**.
+
+### (retire) Laboratoire QUALITECH — Logbessou / Deido · **690 72 01 84**
 `clients/douala-cliniques/05-qualitech.jpg`
 ```
 Bonjour. Akwo King, AMK — Développement Web, Douala.
@@ -82,6 +85,7 @@ Je vous envoie le lien ? Un « oui » suffit.
 | Établissement | Raison |
 |---|---|
 | **Clinique des Anges** (Nyalla) | **A un site** : `angesclinic-dla.cm` → elle n'a pas besoin d'un site, elle en a un. Écartée du lot. |
+| **Laboratoire QUALITECH** (Logbessou/Deido) | **A un site** : `qualitechsarl.org` (vérifié par King 18/09) → écarté. Quatrième écarté pour site existant, avec Clinique des Anges. |
 | **J&E Memorial Polyclinic** (Bessengue) | **C'est JEMPO** — déjà prospect, message parti ce matin, maquette déjà faite. Ne pas doubler. |
 | **L'Opticien Bali · Maison Optique** | Opticiens : le playbook MITOC s'applique, autre lot. |
 | **JOSS MEDI** | 292 clics WhatsApp = le plus actif, mais **envoi déjà bloqué par la porte de vérification** (décision antérieure). |
@@ -91,4 +95,4 @@ Je vous envoie le lien ? Un « oui » suffit.
 
 **D'abord :** L'Opticien, La Béthanie, JEMPO — préparés depuis hier, en français, maquettes faîtes, et **rien n'est parti ce matin** (zéro envoi à 12:07). Ils sont prêts et ciblés : c'est le meilleur retour par minute investie.
 
-**Ensuite :** les six ci-dessus, dans l'ordre — **1 CAMERA · 2 LE NID · 3 WONDERS (dès numéro) · 4 ADONAÏ · 5 QUALITECH · 6 MALIA**.
+**Ensuite, ordre fixé par King (18/09) :** **1 ADONAÏ puis 2 MALIA LABO** — les deux seuls du lot avec un **profil WhatsApp Business vérifié** (captures de King). Puis **3 CAMERA · 4 LE NID** (numéros sûrs, à confirmer sur WhatsApp avant envoi) · **5 WONDERS** dès que le numéro est récupéré. **QUALITECH retiré.**
