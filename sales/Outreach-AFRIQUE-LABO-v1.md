@@ -34,9 +34,22 @@
 - **« On passe par Facebook »** → « Facebook est excellent pour être vu. Il ne répond pas à *“où faire ma glycémie, combien, et quand venir à jeun”* — c'est ce que fait cet aperçu. »
 
 ## §4 · Silence (plan de relance)
-- **FU1 dim 19** (M+2) : « Un patient qui cherche “analyse Bessengue” ne vous trouve pas sur Google. L'aperçu est prêt quand vous voulez. »
-- **FU2 mar 21** (M+4) : angle résultats WhatsApp (envoi + retrait).
-- **FU3 ven 24** (M+7) : fermeture gracieuse, puis stop.
+
+> **Correction des dates (18/09).** Le plan initial disait « FU1 dim 19 · FU2 mar 21 · FU3 ven 24 ». C'est faux d'un jour : le **19 septembre 2026 est un samedi**. Message 1 parti **jeudi 17/09** → M+2 = **samedi 19**, M+4 = **lundi 21**, M+7 = **jeudi 24**.
+
+**Portail 10 secondes avant d'envoyer :** ouvrir `afriqlabo.com` sur le téléphone. S'il s'ouvre, **ne pas envoyer** et me prévenir.
+
+### FU1 — **samedi 19/09** (M+2) · FR · texte seul · à coller tel quel
+
+> Bonjour 👋 Petit rappel amical : votre aperçu est prêt et il tient sur un téléphone — la grille d'analyses avec vos tarifs en FCFA, la préparation avant prélèvement, et chaque analyse qui ouvre une demande WhatsApp déjà rédigée.
+> Rien d'inventé là-dedans : vous êtes à 4,5/5 sur Google et plus de 5 500 personnes vous suivent sur Facebook. Mais quand un patient tape « laboratoire d'analyses Bessengue », il ne trouve rien qui vous appartienne.
+> Je vous envoie le lien ? Un « oui » suffit.
+> — Akwo King / AMK – Développement Web & Solutions Digitales
+
+*Pourquoi ce texte :* la relance n'apporte **aucun argument nouveau** — elle rappelle que le travail est fait, puis s'appuie sur deux faits **vérifiés** (4,5/5 Google, 5 500+ Facebook) pour montrer l'écart. La question reste à un mot. Aucun prix, aucune insistance.
+
+- **FU2 lundi 21** (M+4) : angle résultats WhatsApp (envoi + retrait) — la question posée en §2 restée sans réponse.
+- **FU3 jeudi 24** (M+7) : fermeture gracieuse, puis stop. **Jamais de 4ᵉ relance.**
 
 ## §5 · Faits vérifiés utilisés (ne pas dépasser)
 Adresse, téléphone, e-mail, tagline « Votre santé, notre priorité », 3 services (analyses / consultation / coaching), 5 500+ Facebook, 4,5/5 Google, 24h/24 (statut WhatsApp), paiement Orange Money/MoneyGram (devanture), domaines `.com`/`.net` morts. **Aucun chiffre inventé, aucune promesse de délai, aucun test qui n'est pas dans leur propre grille.**
