@@ -179,3 +179,22 @@ Si lecture sans réponse → relance **M+2 dim 20/09**, angle : la correction de
 - Consigné dans `research/YouTube-Lessons.md` (log [20] + entrée complète + 5 lignes de junk filter),
   `AMK-DESIGN-SKILLS.md` **§21**, et `sales/Voice-Offer-Decision-2026-09-18.md` (2 décisions à trancher).
 - **Aucun prospect n'est touché par ce lot.** Rien ne change dans le pipeline tant que King n'a pas tranché.
+
+
+---
+
+## 22:20–22:45 — Prototype voix Tier 0 construit et testé (site AMK)
+
+- King : « on teste sur le site de AMK that's better right » → oui, et c'est fait. `site/index.html`
+  porte maintenant un bouton **« Talk to this site / Parler à ce site »**.
+- **Ce qu'il fait :** question au micro (Chrome/Edge) ou par puce → réponse **uniquement tracée à une ligne de la page** →
+  lue à voix haute → **et si l'assistant ne sait pas, il le dit et ouvre WhatsApp** avec la question du visiteur pré-remplie.
+- **Ce qu'il dit du prix :** 100 000 FCFA (50/50) · aperçu gratuit · 3–5 jours · **mensuel 15 000 FCFA** (2 modifications/mois,
+  sans engagement, domaine au client) — la FAQ « après le lancement » du site était **vague**, elle est maintenant chiffrée,
+  et le JSON-LD dit la même chose (une seule vérité dans le fichier).
+- **Vérifié :** `audit_html.py` **0 finding** (desktop + mobile) · `tools/qa/test_voice_widget.mjs` **24/24** · zéro erreur JS.
+  Deux bugs réels attrapés par le test (égalités de score, mots-clés qui se chevauchaient) — corrigés.
+- **Trouvé au passage :** le site AMK traînait **13 défauts de contraste préexistants** (autofix 13 → 1, le dernier corrigé à la
+  main) ; **et un bouton flottant qui recouvrait un CTA du hero sur mobile**. Les deux sont réglés.
+- **Non vérifié, et je le dis :** la précision du micro sur un accent camerounais. Ça se teste sur le téléphone de King.
+- `amk-site.zip` reconstruit (contenu du déploiement préservé, index remplacé) → **King redéploie `amk-cm.vercel.app`.**

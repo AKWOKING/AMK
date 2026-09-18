@@ -1,6 +1,13 @@
 # Décision — faut-il ajouter la voix aux sites AMK, et faut-il passer au mensuel ?
 
-**Date :** 18 Sep 2026 · **Origine :** vidéo [20] (`research/YouTube-Lessons.md`) · **Statut : EN ATTENTE DU RULING DE KING**
+**Date :** 18 Sep 2026 · **Origine :** vidéo [20] (`research/YouTube-Lessons.md`) · **Statut : TRANCHÉ PAR KING — 18 Sep 2026**
+
+> **① Prototype voix :** « on teste sur le site de AMK, that's better right » → **construit et testé sur `site/index.html`**
+> (`tools/qa/test_voice_widget.mjs`, 24/24). Le site est à nous : le pire cas, c'est un bug trouvé par nous.
+> **② Modèle :** « I'm more inclined to 100,000 FCFA then 15,000 monthly » → **retenu**, et `research/Pricing-Model-Cameroon-2026-09-18.md`
+> confirme que le marché local va dans ce sens (installation 100 000 = entrée de marché ; maintenance 20 000–50 000 FCFA/mois
+> chez les agences → **15 000 est sous le marché, volontairement**). Le mensuel est **optionnel et post-lancement**,
+> jamais une condition de la vente. **La règle 43 n'est pas touchée : 100 000, 50/50, jamais de rabais.**
 
 ---
 

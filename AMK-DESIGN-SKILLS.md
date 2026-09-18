@@ -685,6 +685,24 @@ concept's hero screenshot from `tools/video/capture.mjs --mode hero` (1080×1620
 ### 21.3 The implementation ladder (cheapest first — do not skip a tier)
 
 **Tier 0 — voice on the scripted assistant. Free. No backend. No account. Ships in an hour.**
+
+> ### ✅ BUILT & TESTED — 18 Sep 2026, on our own site (`site/index.html`)
+> King ruled: *« on teste sur le site de AMK »* — our own page, so the worst case is a bug found by us.
+> **`tools/site/patch_voice_widget.py`** injects the layer (idempotent), **`tools/qa/test_voice_widget.mjs`** verifies it
+> headless (**24/24 checks pass**), both committed. `audit_html.py` = **0 findings** with the widget in, desktop and mobile.
+>
+> What it answers, traced to lines already on the page: price 100,000 FCFA · free preview · 3–5 days · **monthly 15,000 FCFA
+> (2 updates/month, no contract, domain stays yours)** · bilingual included · what's in the package · staff can update it ·
+> local Google search · ownership · how to start. Anything else → **"I do not know that one"** + WhatsApp.
+>
+> **Two bugs the test caught that review would have missed:** equal KB scores let a vague question ("et après ?") win over
+> the right answer → scoring rewritten (phrase match 4+, word 2+n/4, tie-break on number of hits, threshold 3);
+> and "launch/lancement" in the *delay* keywords stole the *after-launch* question → overlap removed.
+> **Mobile:** the labelled FAB covered a hero CTA → icon-only 54 px pill above the sticky bar, plus a 3-pulse halo
+> (disabled under `prefers-reduced-motion`). The ✕ glyph is an **SVG**, not `&#10005;` — the glyph was missing from the font.
+>
+> **Still not verified, and stated as such:** microphone accuracy on a Cameroonian accent. That is King's phone test.
+> Speech *input* needs Chrome/Edge; the chips and the WhatsApp handoff work in every browser regardless.
 We already write the answers (FAQ, preparation rules, hours, directions, price→WhatsApp). A Tier-0 voice layer is: `SpeechRecognition` for the patient's question → match it against the **existing scripted knowledge base** → `speechSynthesis` reads the answer in the site's current language → if the question isn't in the base, it says so honestly and opens WhatsApp. **This is the tier UNI-LABO's "Avant de venir" section is already written for** — "Est-ce que je dois être à jeun ?" is the single most valuable voice question a lab will ever be asked.
 
 **Tier 1 — a real AI answer, small backend. Needs an API key + a serverless function.**
