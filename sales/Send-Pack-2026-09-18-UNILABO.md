@@ -1,5 +1,12 @@
 # UNI-LABO — réponse à chaud · 18 Sep 2026 (21:54 WAT)
 
+> ## ✅ DÉJÀ ENVOYÉ — 18/09 à 22:05 par King. **Lien : https://uni-labo.vercel.app**
+> **Le fil n'est PAS ENCORE LU** (`last seen 21:04`) : deux coches grises, pas bleues.
+> **Prochaine action : ne rien envoyer.** Contrôler la lecture sam 19/09 07:00 et 13:00 ;
+> si lecture sans réponse → relance M+2 **dim 20/09** (angle : la correction des horaires).
+> Ce qui suit est conservé comme trace de ce qui a été préparé et envoyé.
+
+
 **Contexte :** UNI-LABO a répondu **« Bsr »** le **18/09 à 20:57** au msg1 du soir
 (« Je vous prépare un aperçu gratuit de votre accueil ? Un « oui » suffit. »).
 C'est la **2ᵉ réponse humaine de la campagne** (après St. Theresa le 15/09).
@@ -36,11 +43,10 @@ tranchés en faveur de la source la plus spécifique — **et la page demande au
 
 1. vercel.com → **Add New → Project**
 2. glisser le dossier `hosting/previews/unilabo/` (il contient `index.html`)
-3. nom du projet : **`unilabo-concept`** → Deploy
-4. lien attendu : **https://unilabo-concept.vercel.app**
+3. nom du projet : **`uni-labo`** → Deploy
+4. lien déployé : **https://uni-labo.vercel.app** ✅ *(vérifié en ligne 18/09 22:20)*
 
-> ⚠️ **Vérifiez le lien une fois avant de l'envoyer** (page complète, les 3 boutons du hero
-> cliquables). Le lien est déjà écrit dans le message ci-dessous : s'il diffère, corrigez-le.
+> ⚠️ **Le lien déployé est `uni-labo.vercel.app`, pas `unilabo-concept.vercel.app`.** Corrigé partout ci-dessous.
 
 ---
 
@@ -51,7 +57,7 @@ tranchés en faveur de la source la plus spécifique — **et la page demande au
 ```
 Bonsoir. Akwo King, AMK — Douala. Vous m'avez écrit ce soir, alors je vous réponds avec l'aperçu plutôt qu'avec un discours.
 
-https://unilabo-concept.vercel.app
+https://uni-labo.vercel.app
 
 Il est fait pour UNI-LABO : vrais horaires, préparation des examens, itinéraire Carrefour Etoo, en français et en anglais.
 Dites-moi si les horaires et la liste des analyses sont exacts — je corrige tout de suite. Un « oui » suffit.

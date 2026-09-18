@@ -8,7 +8,7 @@ This folder is a **drag-and-drop deploy bundle**. Every concept is a single self
 |---|---|---|---|
 | **separate Vercel project** | 🟡 **à déployer — King** (projet `mboacare-demo`) | **DÉMO MBOACARE** (fictive, publiable) — clinique de démonstration | `hosting/previews/mboacare-demo/index.html` |
 | **`/demo/` (bundle)** | 🟡 **à déployer — King** — **bibliothèque de 5 démos publiables** (polyclinique, maternité, dentaire ×2, optique), 0 fuite d'identité, audit 0 | matière première des vidéos | `hosting/previews/demo/*.html` |
-| **separate Vercel project** | 🌡️ **URGENT — à déployer (18/09 21:54)** → **https://unilabo-concept.vercel.app** | **UNI-LABO**, Bonamoussadi Douala — **a répondu « Bsr » à 20:57, réponse à chaud** | `demos/concept-unilabo-v1.html` |
+| **separate Vercel project** | ✅ **LIVE https://uni-labo.vercel.app** (déployé par King 18/09 22:05, vérifié en ligne : page complète FR+EN, 3 boutons du hero) | **UNI-LABO**, Bonamoussadi Douala — réponse envoyée 22:05, **pas encore lue** | `demos/concept-unilabo-v1.html` |
 | **separate Vercel project** | ✅ LIVE **https://jempo-concept.vercel.app** (déployé par King 17/09, vérifié : page complète, 6 liens WhatsApp réels, footer §20) | **J&E Memorial Polyclinic (JEMPO)**, Deido Douala | `demos/concept-jempo-v1.html` |
 | **separate Vercel project** | ✅ LIVE **https://labethanie-concept.vercel.app** (déployé par King 17/09, vérifié : page complète, 6 liens WhatsApp réels) | Clinique La Béthanie, Bonabéri Douala | `demos/concept-labethanie-v1.html` |
 | **separate Vercel project** | ✅ LIVE **https://concept-afriquelabo-v1.vercel.app** (déployé 17/09) | Afrique Labo SARL, Bessengue Douala | `demos/concept-afriquelabo-v1.html` |

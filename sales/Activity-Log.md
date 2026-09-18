@@ -141,3 +141,26 @@ en **35 minutes**. C'est le premier message du fil, pas une relance. À retenir 
 `sales/Send-Pack-2026-09-18-UNILABO.md` §2 — **King déploie (≈ 2 min) puis envoie.**
 
 **PRR mis à jour : 2/31 = 6,5 %.** Aperçu demandé : 0 (une page complète est prête, pas une maquette).
+
+### 21:47 & 22:05 — King envoie la réponse UNI-LABO (deux messages)
+
+| Heure | De | Message | État |
+|---|---|---|---|
+| **21:47** | King | « Bonsoir 🙏 Merci de votre retour. Dites-moi juste : je vous envoie l'aperçu ici ? Il s'ouvre sur votre téléphone en une minute, rien à installer, vous ne vous engagez à rien. » | Envoyé ✓✓ |
+| **22:05** | King | « Bonsoir. Akwo King, AMK — Douala. Vous m'avez écrit ce soir, alors je vous réponds avec l'aperçu plutôt qu'avec un discours. **https://uni-labo.vercel.app** Il est fait pour UNI-LABO : vrais horaires, préparation des examens, itinéraire Carrefour Etoo, en français et en anglais. Dites-moi si les horaires et la liste des analyses sont exacts — je corrige tout de suite. Un « oui » suffit. — Akwo King / AMK » | Envoyé ✓✓ |
+
+**Lien réel : `https://uni-labo.vercel.app`** (et non `unilabo-concept.vercel.app` comme annoncé dans mon pack). **Vérifié en ligne le 18/09 à 22:20 : page complète, FR + EN, 3 boutons du hero actifs, og:title + og:description rendus dans l'aperçu WhatsApp.**
+
+**⚠️ État réel du fil au 18/09 22:20 : `last seen today at 21:04` → NOS DEUX MESSAGES NE SONT PAS ENCORE LUS.**
+Ce qui est parti, ce sont **deux coches grises** (livré), pas bleues (lu). Tant que « Bsr » reste la seule chose lue,
+**le compteur des 90 secondes n'a pas commencé** — et il ne sert à rien d'écrire à nouveau.
+
+**Ce qu'on garde de ce fil :**
+1. **Deux messages avant la première lecture, c'est un de trop.** Le 21:47 posait une question (« je vous envoie l'aperçu ici ? ») et le 22:05 y répondait sans attendre. La question a été annulée par le message suivant. **Règle à retenir : une seule question par fenêtre de lecture, sinon elle ne compte pas.**
+2. **Le lien est parti 68 minutes après leur « Bsr »** (20:57 → 22:05), pas 90 secondes. La cause n'est pas la lenteur : c'est qu'il n'y avait **pas de page prête** au moment où ils ont écrit. **C'est exactement ce que le stock d'avance évite la prochaine fois.**
+3. **Un « Bsr » suivi d'un silence de 68 minutes** se relit comme un test : est-ce qu'il y a quelqu'un en face ? La réponse est arrivée, avec la page. C'est le bon signal à envoyer.
+
+**Prochaine action :** ne rien envoyer. Contrôler la lecture **sam 19/09 à 07:00 puis à 13:00** (le labo ouvre 07h–13h).
+Si lecture sans réponse → relance **M+2 dim 20/09**, angle : la correction des horaires.
+
+**À corriger pour tous les prochains builds :** la page n'a **pas de `og:image`** — WhatsApp affiche donc une carte **texte** au lieu d'une carte **photo**. La page, elle, est bonne. À ajouter au gabarit avant le prochain site.

@@ -635,6 +635,24 @@ Research finding: output truncation is a **deliberate RLHF brevity bias, not a d
 - [ ] Credit line = brand text only
 - [ ] Footer contrast passes the audit gate (§1b) on desktop **and** mobile
 
+### 20.7 The link card — what the prospect sees BEFORE the page (added 18 Sep 2026)
+
+The first thing a prospect sees is **not the page: it is the WhatsApp link preview.** A concept
+link with no `og:image` renders as a grey text card — it looks like a forwarded link, not like
+work. The UNI-LABO concept (18/09) shipped **without `og:image`** and the preview came out as a
+text card. The page was fine; the first impression was weaker than the page deserved.
+
+Every concept link sent on WhatsApp must carry, in `<head>`:
+- [ ] `og:title` — the business name + what it does, ≤ 60 chars
+- [ ] `og:description` — one line a patient would recognise, ≤ 120 chars
+- [ ] **`og:image` — 1200×630, a real screenshot of the built page, absolute URL** (the deploy URL,
+      not a relative path: WhatsApp does not resolve relative URLs)
+- [ ] `og:type` = `website`, `og:locale` = `fr_FR` (+ `og:locale:alternate` = `en_US` when FR|EN)
+
+`og:image` must be an absolute `https://` URL on the deployed host, so it is added **after** the
+first deploy — or the host must be known in advance. Where a project has no image host, use the
+concept's hero screenshot from `tools/video/capture.mjs --mode hero` (1080×1620 → crop to 1200×630).
+
 **King's ruling, 17 Sep 2026:** the §20 footer standard **applies to every NEW build**. The concepts already built (opticien, afriquelabo, labethanie, yaks, skye, oracare, clinic-bonaberi) **stay exactly as they are — no retrofit.** First build under this rule: the JEMPO concept (next prospect).
 
 ---
