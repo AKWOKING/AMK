@@ -64,8 +64,12 @@
 
 ### Bilan chiffré (à ne jamais arrondir en notre faveur)
 
+> ⏱️ **Ce bilan a été écrit à 20:22. Il a été périmé par un fait à 20:57** — UNI-LABO a répondu
+> « Bsr ». Les lignes ci-dessous sont conservées telles quelles (c'était vrai à 20:22) ;
+> **le chiffre à utiliser est plus bas : 2 réponses / 31 fils = 6,5 %.**
+
 - **38 messages envoyés** depuis le 14/09 (dont **5 relances**) — dont **L'Opticien, La Béthanie et JEMPO, partis le jeudi 17/09** (correction de King, 18/09 : ma feuille d'envoi du 18/09 les listait encore comme « à envoyer », c'était une erreur de planification de ma part).
-- **1 seule réponse** : St. Theresa. Soit **8,3 %** — dans la fourchette normale du froid, mais l'échantillon est trop petit pour en tirer une conclusion.
+- **1 seule réponse au moment de ce bilan (20:22)** : St. Theresa. Soit **8,3 %** sur 1/12 fils actifs à cette heure-là — au-dessus de la fourchette froide, mais l'échantillon est trop petit pour en tirer une conclusion.
 - **0 prospect n'a demandé l'aperçu.**
 - **REGLE DES 90 SECONDES ACTIVEE (18/09 20:57) :** UNI-LABO a repondu « Bsr » — premiere reponse depuis St. Theresa. Reponse a envoyer dans l'heure. Apercu pre-produit : `clients/douala-cliniques/07-unilabo.jpg`.
 - **Confirmé par King 18/09 :** L'Opticien, La Béthanie et JEMPO = envoyés le **17/09** · Adonaï et Malia = envoyés le **18/09**.
@@ -112,6 +116,7 @@
 **Bilan du jour : 23 messages — le meilleur de la campagne.** Comparaison : 12 messages sur les quatre premiers jours réunis.
 
 **Cumul depuis le 14/09 :** 38 messages · **31 fils ouverts** · **1 réponse humaine** (St. Theresa) · **0 aperçu demandé · 0 client · 0 FCFA.**
+*(→ périmé 35 minutes plus tard : UNI-LABO a répondu « Bsr » à 20:57. Voir la section « Après la clôture » en fin de fichier.)*
 
 **Ce qu'on a appris aujourd'hui, et qui vaut plus que les 23 envois :**
 1. **maligah.com et pagespratiquescm.com = 14 numéros sur 14 joignables.** Les autres sources : 2 sur 7. **C'est la première chose à miner pour tout lot futur.**
@@ -119,3 +124,20 @@
 3. **Les cliniques et labos de Douala restent la bonne cible** : c'est là qu'on trouve des numéros mobiles et des profils Business.
 
 **Point d'honnêteté :** sur 31 fils ouverts, un seul a répondu. C'est cohérent avec un taux froid de 3–5 % — mais l'échantillon reste trop petit pour juger l'approche. **Ce qui est en retard, ce ne sont pas les envois, ce sont les relances.**
+
+---
+
+## Après la clôture — vendredi 18 septembre 2026, 20:57 → 21:54
+
+| Heure | Prospect | Événement | Verbatim |
+|---|---|---|---|
+| **20:57** | **UNI-LABO** (696 13 98 19) | ✅ **RÉPONSE HUMAINE — 2ᵉ de la campagne** | « Bsr » |
+| 21:05 → 21:54 | UNI-LABO | King tranche : « c'est à toi de créer le site unique de UNI-LABO sur mesure » → **`demos/concept-unilabo-v1.html` construit**, `audit_html.py` **0 finding**, bundle `hosting/previews/unilabo/` prêt. **En attente : déploiement King puis envoi du lien.** | — |
+
+**Ce qui a produit cette réponse :** le **msg1 du soir, envoyé vers 18:30** — soit une réponse
+en **35 minutes**. C'est le premier message du fil, pas une relance. À retenir pour le lot suivant.
+
+**État du fil :** ouvert, chaud, **aucun lien encore envoyé**. Message prêt dans
+`sales/Send-Pack-2026-09-18-UNILABO.md` §2 — **King déploie (≈ 2 min) puis envoie.**
+
+**PRR mis à jour : 2/31 = 6,5 %.** Aperçu demandé : 0 (une page complète est prête, pas une maquette).
