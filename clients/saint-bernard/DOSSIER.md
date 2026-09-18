@@ -1,7 +1,7 @@
 # Saint Bernard High School (SBHS) — Garden Park, Molyko, Buea
 
-**MQL 6/6 · INBOUND — carte scellée livrée mercredi 16/09 · numéro à vérifier**
-Statut : *on ne les relance pas, on les attend — mais l'aperçu doit être prêt avant qu'ils écrivent.*
+**MQL 6/6 · FROID — jamais approché · numéro introuvable**
+Statut corrigé le 18/09 : **aucune carte scellée n'a été déposée**. Ce prospect n'a jamais été contacté. Il n'y a pas de canal : sans numéro trouvé, il n'est pas joignable aujourd'hui.
 
 ---
 
@@ -47,7 +47,9 @@ Statut : *on ne les relance pas, on les attend — mais l'aperçu doit être pr�
 
 *Note d'application : `AMK-DESIGN-SKILLS.md` §6.2 bannit l'association crème + laiton + espresso comme **réflexe par défaut**. Ici elle n'est pas un réflexe : la famille est « Olive + Brick + Paper » du pool de rotation, choisie parce que le brief est « jeune école, formation du caractère ». La règle est respectée dans son intention.*
 
-## 4 · Maquette
+## 4 · Maquette — ⚠️ À REFAIRE EN ANGLAIS
+
+**Défaut signalé par King le 18/09 : cette maquette a été produite en français alors que Buea est anglophone.** Elle ne doit pas être envoyée telle quelle. La commande ci-dessous est conservée telle quelle ; la corriger = passer les jetons en anglais (`--h1 --sub --svc`, et le libellé `--line`).
 
 ```bash
 python3 tools/outreach/mockup.py --vertical college \

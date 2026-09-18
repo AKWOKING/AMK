@@ -63,7 +63,8 @@
 
 **Trois choses, et la troisième change le plan de la semaine.**
 
-**① Il n'y a aucun MQL sortant disponible aujourd'hui.** Sur 38 leads : **6 sont des MQL** (score 6/6) — et **les six sont en `INBOUND`** : SJC Sasse, Summerset, Saint Bernard, NABESK, Saint Sylvester, Salvation. Ils ont tous été approchés par **carte scellée** ou sont des acheteurs institutionnels à qui on ne court pas après. **On ne les relance pas : on les attend.** Mais quand l'un d'eux scanne la carte, la règle des 90 secondes s'applique — donc leur maquette doit être prête **avant** qu'ils écrivent.
+**① Il n'y a aucun MQL sortant disponible aujourd'hui.** Sur 38 leads, **6 atteignent 6/6** : Summerset, Saint Bernard, NABESK, Saint Sylvester, Salvation et SJC Sasse.
+> **Correction du 18/09 (King) :** *aucune carte scellée n'a été déposée*. Ces six leads sont **froids, jamais approchés** — pas « invités ». Et **aucun d'eux n'a de numéro connu**, donc **aucun n'est joignable aujourd'hui**. La carte scellée reste une option à planifier ; elle n'est pas un contact existant.
 
 **② Le vivier clinique est épuisé.** Les quatre cliniques restantes sont bloquées : Solidarity **n'a pas de numéro sur WhatsApp**, One Stop = **Dr Njang (interdit)**, MITOC et OraCare déjà servis. La règle « cliniques d'abord » n'a plus de carburant : la prochaine vague est scolaire, ou il faut **sourcer de nouvelles cliniques**.
 
@@ -88,7 +89,7 @@
 
 ## 5 · Les trois premiers — et pourquoi eux
 
-King a demandé de commencer par trois. Le tableau impose son ordre : les trois **6/6** de Buea — **Summerset, Saint Bernard, NABESK** — parce que ce sont les seuls leads parfaits sur les six portes, qu'ils ont **déjà été invités** (carte scellée mercredi 16), et qu'une invitation peut se transformer en demande d'aperçu **à n'importe quelle heure**. Leur préparation n'est pas de la prospection : c'est de la **livraison en moins de 90 secondes**.
+King a demandé de commencer par trois. Le tableau impose son ordre : les trois **6/6** de Buea — **Summerset, Saint Bernard, NABESK** — les seuls leads parfaits sur les six portes (canal mis à part). **Correction du 18/09 : ils sont froids et sans numéro**, donc leur préparation ne sert pas aujourd'hui — elle sert dès qu'un numéro est trouvé. Les messages sont prêts et **en anglais** (Buea est anglophone) dans [`Send-Pack-2026-09-18-1030.md`](Send-Pack-2026-09-18-1030.md).
 
 Leurs dossiers complets (recherche, direction artistique, maquette téléphone + portable, texte) sont dans :
 
