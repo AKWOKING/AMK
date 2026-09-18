@@ -657,6 +657,67 @@ concept's hero screenshot from `tools/video/capture.mjs --mode hero` (1080×1620
 
 ---
 
+## §21 TALKING PAGES — VOICE ON AN AMK BUILD (added 18 Sep 2026, build batch [20] — `research/YouTube-Lessons.md`)
+
+**Origin:** Pavlo, *"How I sell Talking Websites to local businesses for 499/mo"* — voice AI embedded in a page that answers questions and books appointments; sold as **recurring revenue**, not as a delivered file. The concept is right and we are already halfway there: **OraCare v1/v3 already ship a scripted assistant** whose answers come only from the page's verified facts.
+
+### 21.1 The rule that governs everything below
+
+**Voice is an addition, never the only way to reach the business.** The primary action of every AMK build stays a plain `wa.me` link — it works on every phone, every browser, costs nothing, and needs no permission. A voice button sits *next to* it. If the voice layer fails, the page is still complete.
+
+### 21.2 What the browser can actually do (verified 18 Sep 2026, not assumed)
+
+| | Speech **out** (synthesis) | Speech **in** (recognition) |
+|---|---|---|
+| Chrome desktop | Full (33+) | Full (33+) |
+| Chrome **Android** | Full | **Partial** — the only mobile browser that works at all |
+| Safari / iOS | Full (7+) | Partial (14.5+), inconsistent |
+| **Firefox (all platforms)** | Desktop only | **Not supported, ever** |
+| Samsung Internet | Full (5.0+) | Via the Chromium engine |
+
+- **Cost: free, no API key** — the browser vendor runs it (Google for Chrome).
+- **Recognition requires a network connection** and **sends the audio to that vendor's servers.** Synthesis is local.
+- Newer Chrome builds have begun shipping **on-device recognition** (Chrome 139+, reported Aug 2026) — promising, **not verified on our own devices yet**.
+- Cloud voice APIs ($0.006–0.024/min, far better accuracy and custom vocabulary) exist for when a client pays for production quality. They need a key + a backend, so they are **not** our default.
+
+**⚠️ The one thing no source can tell us:** accuracy of recognition on **Cameroonian English and French accents**, in a real room, on a real phone, on mobile data. That is an empirical question and it can only be answered by a test on King's own device. **Do not promise a client a voice feature before that test exists.**
+
+### 21.3 The implementation ladder (cheapest first — do not skip a tier)
+
+**Tier 0 — voice on the scripted assistant. Free. No backend. No account. Ships in an hour.**
+We already write the answers (FAQ, preparation rules, hours, directions, price→WhatsApp). A Tier-0 voice layer is: `SpeechRecognition` for the patient's question → match it against the **existing scripted knowledge base** → `speechSynthesis` reads the answer in the site's current language → if the question isn't in the base, it says so honestly and opens WhatsApp. **This is the tier UNI-LABO's "Avant de venir" section is already written for** — "Est-ce que je dois être à jeun ?" is the single most valuable voice question a lab will ever be asked.
+
+**Tier 1 — a real AI answer, small backend. Needs an API key + a serverless function.**
+An LLM grounded in the same knowledge base. Cost per conversation is small but real, and it breaks the single-file rule (the page now talks to an endpoint we run). Not before a client is paying.
+
+**Tier 2 — the video's model (Retell / Vapi / ElevenLabs / GoHighLevel-class agent).** USD-billed, per-minute, foreign card required. **Parked, not rejected** — revisit only when a client explicitly pays for that service.
+
+### 21.4 Answers must be traceable to the page
+
+**Every spoken answer must be a line that already exists on that site, written from a verified fact.** No improvisation, no invented services, no invented prices, no invented turnaround times. The video's own demo fails this test — its AI invents "control joints, reinforcements and curing methods" for a company whose real services nobody checked. If a patient asks something the page doesn't answer, the assistant says **"je ne sais pas — demandez au laboratoire"** and hands off to WhatsApp. *An honest "I don't know" builds more trust than a fluent guess — and a wrong answer about a medical test is not a marketing error, it is a safety error.*
+
+### 21.5 The handoff is the conversion, not the booking
+
+In this market nobody fills a calendar. The assistant's job is to end with **WhatsApp open, the patient's own question pre-filled** — the same `wa.me?text=` mechanic we already ship, except the text is now written from what the patient actually said. That is our equivalent of the video's "books the appointment automatically", and it is measurable.
+
+### 21.6 Gate — a voice layer may ship to a client only when all of these are true
+
+- [ ] The plain WhatsApp button is still there, above or beside it, and works without the voice layer
+- [ ] **Explicit click to start** the microphone — never autoplay, never listen on page load
+- [ ] A visible line saying the voice is a demo/assistant and that speech recognition uses the browser's service (no silent recording)
+- [ ] Language follows the site's FR|EN switch; the answer is spoken in the language the question was asked in
+- [ ] Every answer traceable to a line on the page (§21.4); unknown → honest fallback → WhatsApp
+- [ ] **`audit_html.py` 0 findings** with the voice UI included, desktop **and** mobile
+- [ ] Tested on a real Android phone, on mobile data, with an accented question, before any client sees it
+
+### 21.7 What is permanently banned (from this same video)
+
+- **AI-generated photos presented as the real team, the real owner, or real completed work.** Never. Not for a concept, not for a client. The legitimate use of image generation is a mockup **of the site** — never a fabrication **of their reality**.
+- Quoting the "2–3 % average website conversion" figure to a prospect — unverifiable here; internal calibration only.
+- Exit-intent pop-ups and auto-rotating review widgets as *defaults* on a mobile-first Cameroonian page.
+
+---
+
 ## SOURCES
 - `design/vendor/bergside-skills/` — github.com/bergside/awesome-design-skills (TypeUI), 67 SKILL.md + DESIGN.md pairs, MIT (see `design/vendor/LICENSE-bergside`)
 - `design/vendor/taste/skills/` — github.com/Leonxlnx/taste-skill: taste-skill, redesign, output, brandkit, imagegen web/mobile, image-to-code, stitch, soft/minimalist/brutalist, MIT (`design/vendor/LICENSE-taste`)
@@ -664,4 +725,6 @@ concept's hero screenshot from `tools/video/capture.mjs --mode hero` (1080×1620
 - `design/vendor/registry-digest.json` — machine digest of all 67 bergside token sheets
 - AMK playbooks: `design/WORKFLOW.md` (pipeline), `design/STYLE-TOKENS.md` (vertical starters + rotation ledger), `design/MOTION.md` (motion standard)
 - YouTube lesson batches [18][19] (footers, 17 Sep 2026) → this file §20; full log + rejections in `research/YouTube-Lessons.md`
+- YouTube lesson batch [20] (talking websites / voice, 18 Sep 2026) → this file **§21**; offer-model decision in `sales/Voice-Offer-Decision-2026-09-18.md`
+- **§21 browser-support matrix (checked 18 Sep 2026):** addpipe.com "A Deep Dive into the Web Speech API" (Chrome 139+ on-device recognition, mobile matrix) · vocafuse.com "Web Speech API vs Cloud APIs" (free/no-key, audio sent to vendor servers, cloud at $0.006–0.024/min) · testmuai.com "Speech Synthesis API: Browser Support" (synthesis matrix, Firefox-Android gap). **No source was found for recognition accuracy on Cameroonian accents — that gap is stated in §21.2, not filled by assumption.**
 - In-house references: `sales/Monday-Outreach-Pack.md` (Concept Production Standard), `site/design-research.md` (AMK site research), OraCare v2/v3 (reference-override case studies)

@@ -55,6 +55,7 @@ WhatsApp-first · mobile-first · EN|FR · Cameroon (Kumba/Douala/South-West) ·
 | 17 | 17 Sep 2026 | How to Create Free 2D Animated Explainer Videos … using Canva — Digital Canva Mastery | Content / Production | Mostly rejected; 2 micro-techniques adopted | `content/lessons/CONTENT-LESSONS.md` **§10.3** |
 | 18 | 17 Sep 2026 | Everything About: Footers In Web Design — The Website Architect | Design / Build (footers) | Absorbed (anatomy + SEO rules; A/B stats rejected) | `AMK-DESIGN-SKILLS.md` **§20 · §13** |
 | 19 | 17 Sep 2026 | Website Footer Design Inspiration (Best practices) — Flux Academy | Design (footers) | Absorbed (footer as designed screen; mobile caveat) | `AMK-DESIGN-SKILLS.md` **§20** |
+| 20 | 18 Sep 2026 | How I sell "Talking Websites" to local businesses for 499/mo — Pavlo | Build (voice) / Sales (offer model) | **Absorbed with a hard limit** — voice layer yes, SaaS stack no; recurring model **pending King** | `AMK-DESIGN-SKILLS.md` **§21** · `sales/Voice-Offer-Decision-2026-09-18.md` |
 
 ## 4 · Entries (full reports)
 
@@ -505,6 +506,46 @@ WhatsApp-first · mobile-first · EN|FR · Cameroon (Kumba/Douala/South-West) ·
 
 ---
 
+### [20] 18 Sep 2026 · Pavlo — "How I sell "Talking Websites" to local businesses for 499/mo (FULL Guide 2026)"
+*(titre affiché dans la recherche : « Beginners Guide to Building And Selling Talking Websites in 2026 »)*
+**Link:** https://youtu.be/sZbv-HbOIDg · **Field:** Build (voice) / Sales (modèle d'offre) · **Length:** non mesurée (transcript en 11 segments)
+
+**Core claims**
+1. **A "talking website" = a voice AI embedded in the page.** The visitor clicks a button and *talks* to the site in-browser — no phone call, no download, no leaving the page, works after hours. The AI answers (hours, services, rough price), asks follow-ups, and **books the appointment** straight into a calendar, writing the contact + transcript to a back end.
+2. **The money is recurring, and that is the real product.** Setup fee $1 000–6 000 (or $2–4 000 where he leads), then **$500/month**. His claim: a "10/10 static site" cannot command what a "5/10 talking site" can, because the talking site is billed as a service that produces bookings, not as a file that was delivered. For an existing site: paste one snippet, no rebuild.
+3. **The pain he sells against:** the average site converts ~2–3 %, so ~97 of 100 visitors leave doing nothing; contact forms are long; nobody answers at 9 p.m.; the visitor calls a competitor who *does* have a system. "I paid for traffic and got nothing" is the owner's real complaint.
+4. **Who to target:** high call volume + high revenue per transaction (roofer, cosmetic surgeon, chiropractor) — **and above all businesses already spending on ads.** He finds them with the **Google Ads Transparency Center** and the **Facebook Ads Library**: if an owner already pays for traffic, they already believe in paying for acquisition and are maximally ready to pay for conversion.
+5. **Sales move:** don't argue — **run side by side.** Keep their campaign, build a landing page, compare appointments. "If I get you 41 people instead of 40, is $500 worth it?" Free install offered as the wedge.
+6. **"12 components of a $10 000 website":** clear value proposition above the fold · multiple contact methods · strong specific CTAs (not "Contact us today") · real high-quality visuals incl. a photo of the owner · reviews/social proof kept fresh · trust signals (years, certifications, payment) · one page per service + per location for SEO · a personal About page (why the founder started) · mobile-first · FAQ · **booking/scheduling right after the enquiry** · bonus: video + exit-intent pop-up.
+7. **His stack:** `gofreetrial.com` (GoHighLevel) — knowledge base built by crawling the client's site, a rich-text FAQ field, an AI agent, one snippet to install on any site. WhatsApp integration exists for non-US markets.
+
+**AMK-applicable tactics — folded into §21**
+1. **The voice layer as an *addition* to our scripted assistant, never a replacement for WhatsApp.** We already ship a scripted chat assistant (OraCare v1/v3). Voice is a second input/output on the same knowledge base we already write.
+2. **The assistant's job is the handoff, not the booking.** In Cameroon the booking channel is WhatsApp, not a calendar. Our equivalent of "books the appointment" = **the conversation ends by opening WhatsApp with the patient's actual question pre-filled** — the same mechanic as our existing `wa.me?text=` links, but now the text is written by what the patient said.
+3. **The knowledge base is the site itself.** We already build the FAQ and the preparation rules from verified facts. That content *is* the assistant's brain — no crawler, no new document. Method: every answer must be traceable to a line already on the page.
+4. **"Businesses already spending on ads" = a new sourcing signal we have never used** (Google Ads Transparency Center + Facebook Ads Library, free, public). Our sourcing so far = directory presence + measured WhatsApp click traffic. An owner paying for traffic is strictly warmer than an owner merely listed. **This tactic stands on its own even if voice is never built.**
+5. **"Run it side by side" is the least-argument sale we have.** We already build concepts for free before a yes. The missing half: **measure and show the before/after** (WhatsApp clicks, calls) — which turns a concept into a demonstration instead of a gift.
+
+**Contradictions**
+| Video says | Our standing rule | Resolution |
+|---|---|---|
+| $500/mo recurring | **Rule 43: 100 000 FCFA one-off, 50/50, never a discount** | **NOT adopted. King's ruling required** → `sales/Voice-Offer-Decision-2026-09-18.md` |
+| "Use AI to get you real photos" of the owner / of completed work | **Accuracy law + no invented proof** | **Rejected outright.** Generating a fake photo of a real clinic's team is fabrication. We may never do it. |
+| "Average website converts at 2–3 %" as a pitch number | Never quote a stat we cannot verify | Internal calibration only, never spoken to a prospect |
+| Calendar booking as the conversion event | WhatsApp-first market | Adapted: the handoff *is* the conversion |
+| $97–297/mo US SaaS platform | No USD card, no recurring infra budget, single-file rule | Tier 3 only, and only if a client pays for it explicitly |
+
+**Junk filter**
+- The GoHighLevel affiliate funnel: "rated the number one course", `laptopceo.com`, a Zoom onboarding call, "copy everything with a click" — a course sale, not a method.
+- "No one is doing it yet" / "the best part is you can do this without a portfolio" — scarcity framing, unverifiable.
+- Fabricated proof in the demo (the AI improvising "we use control joints, reinforcements and curing methods" for a company whose real services are unknown).
+- Exit-intent pop-ups and auto-rotating review widgets — US desktop habits; on a 390px Cameroonian phone they cost more than they earn.
+- The straw-man "old website from 2005 ranked number one" comparison — the point survives (ranking ≠ conversion) but the theatre doesn't travel.
+
+**Attribution:** Pavlo (YouTube, ~130 K subs) — voice as a site capability, recurring-revenue framing, the "already spending on ads" prospecting signal, and the "12 components of a $10 000 website" checklist.
+
+---
+
 ## 5 · Rejected (named, with reason)
 
 | Item | Source | Why rejected |
@@ -536,6 +577,11 @@ WhatsApp-first · mobile-first · EN|FR · Cameroon (Kumba/Douala/South-West) ·
 | Newsletter signup in the footer | [18][19] | No list to manage and our channel is WhatsApp; newsletter-first framing is a Western agency habit. Parked until a client asks for email capture. |
 | Pinterest as the primary footer-inspiration source | [18] | Moodboard, not research; our process is live references + vendored registries (§19.4 / PRE-FLIGHT §2.3). |
 | Awards row / press-quote row as a default footer element | [18][19] | Adopted only with real, permissioned proof; the default is to leave the slot empty. |
+| AI-generated "photos" of the business owner / of real completed work | [20] | Fabrication of proof about a real client — banned by the accuracy law, no exception. The legitimate version: **generate a mockup of *this site*, never of *their reality*.** |
+| GoHighLevel / `gofreetrial.com` as our delivery stack | [20] | USD-billed recurring SaaS ($97–297/mo), needs a foreign card, breaks the single-file rule; nothing it does that we need is impossible in a serverless function we control. Parked, not deleted — revisit if a client pays for it. |
+| "No one is doing it yet" / no-portfolio-needed scarcity framing | [20] | Unverifiable and irrelevant to a Douala lab that has never heard of a talking website either way. |
+| Exit-intent pop-up + auto-rotating review widget as defaults | [20] | Desktop/ads-driven behaviour; on a mobile-first Cameroonian page the pop-up interrupts the one action we want (WhatsApp). Kept only as a client-paid extra. |
+| "Average website converts at 2–3 %" quoted to a prospect | [20] | Unverifiable for Cameroon; internal calibration only (same ruling as [16][18]). |
 | Full-viewport footer on mobile | [19] | Scroll cost beats drama on a 390px screen → desktop-only (§20.3). |
 | Hidden/faded anchor text and keyword-anchor agency credit | [18] | Named as black-hat (Google's own guidelines) → banned outright in §20.5. Credit lines are brand text only. |
 

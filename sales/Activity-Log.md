@@ -164,3 +164,18 @@ Ce qui est parti, ce sont **deux coches grises** (livré), pas bleues (lu). Tant
 Si lecture sans réponse → relance **M+2 dim 20/09**, angle : la correction des horaires.
 
 **À corriger pour tous les prochains builds :** la page n'a **pas de `og:image`** — WhatsApp affiche donc une carte **texte** au lieu d'une carte **photo**. La page, elle, est bonne. À ajouter au gabarit avant le prochain site.
+
+---
+
+## 23:1x — Vidéo YouTube [20] ingérée (demande de King)
+
+- King a envoyé `https://youtu.be/sZbv-HbOIDg` (Pavlo — *Talking Websites*, 499 $/mois) : « learn from
+  this and let me know if you can implement this in our future sites ».
+- Transcript obtenu via `youtubetotranscript.com` (11 segments), lu en entier sur les parties qui portent :
+  l'agent vocal, le modèle économique, le ciblage, les 12 composants du site à 10 000 $, l'outillage.
+- **Verdict : oui pour la voix (Tier 0, gratuit, sans serveur) — non pour la pile SaaS à 97–297 $/mois,
+  non pour les photos générées par IA présentées comme réelles.** Le modèle mensuel **remonte à King** :
+  il touche la règle 43, je ne la modifie pas tout seul.
+- Consigné dans `research/YouTube-Lessons.md` (log [20] + entrée complète + 5 lignes de junk filter),
+  `AMK-DESIGN-SKILLS.md` **§21**, et `sales/Voice-Offer-Decision-2026-09-18.md` (2 décisions à trancher).
+- **Aucun prospect n'est touché par ce lot.** Rien ne change dans le pipeline tant que King n'a pas tranché.
