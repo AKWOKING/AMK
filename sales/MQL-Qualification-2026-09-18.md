@@ -14,6 +14,9 @@
 | **M5 · Capacité** | La taille justifie 100 000 FCFA ? | Effectifs, nombre de campus, années d'existence |
 | **M6 · Disponible** | Est-ce le bon moment ? | Pas déjà servi · ou relance due |
 
+> **CORRECTION 18/09 — M1 est ÉLIMINATOIRE.** Un lead sans canal vérifié n'est pas un prospect, quel que soit son score. Le score ne compense jamais l'absence de canal.
+> **Correction 18/09 — M2 se dédouble.** « Pas de site » (bon signe : ils communiquent déjà) ≠ « aucune trace numérique » (mauvais signe : injoignables et indifférents depuis des années). Le second ne se prospecte pas.
+
 **MQL = M1 ET M2 acquis, plus un total ≥ 4/6.** Sinon : `À VÉRIFIER` (il manque une information, pas un prospect), `NURTURE` (a déjà un site → vente plus tard), `PARK` (bloqué), `INBOUND` (il doit venir à nous).
 
 ## 2 · Le tableau
@@ -25,7 +28,7 @@
 | 3 | COSBINAL – Complexe Scolaire Bilingue NAL | Douala | ? | n | n | ? | y | y | 2 | NURTURE | probable (mobile) |
 | 4 | Le Paradis des Anges (PDA) | Douala | ? | n | n | ? | y | y | 2 | NURTURE | 677 378 542 (probable) |
 | 5 | American School of Douala (ASD) | Douala | n | n | n | ? | y | y | 2 | NURTURE | N/V |
-| 6 | **Divine Success Comprehensive College (DSCC)** | Douala | ? | y | ? | ? | y | y | 3 | **À VÉRIFIER ★** | probable |
+| 6 | Divine Success Comprehensive College (DSCC) | Douala | **n** | y | ? | ? | y | y | 3 | **DISQUALIFIÉ** *(King 18/09 : 696 023 696 = « Kingdom Family Int'l », compte Finance)* | numéro faux |
 | 7 | **PCSS Bonamoussadi** | Douala | ? | y | ? | ? | y | y | 3 | **À VÉRIFIER ★** | N/V |
 | 8 | École Privée Bilingue Les Génies | Douala | ? | ? | ? | ? | y | y | 2 | À VÉRIFIER | N/V |
 | 9 | Groupe Scolaire La Semence | Douala | ? | ? | ? | ? | ? | y | 1 | PARK | N/V |
@@ -33,7 +36,7 @@
 | 11 | Collège Catholique Bilingue La Retraite | Yaoundé | ? | y | y | y | y | y | 5 | PARK — décision King | N/V |
 | 12 | Complexe Scolaire et Universitaire Siantou | Yaoundé | ? | n | n | y | y | y | 3 | NURTURE | probable |
 | 13 | Blessed Group of Schools (BGS) | Yaoundé | ? | n | n | ? | y | y | 2 | NURTURE | probable |
-| 14 | Baptist High School (BHS) Awae | Yaoundé | ? | y | ? | ? | y | y | 3 | À VÉRIFIER | probable |
+| 14 | Baptist High School (BHS) Awae | Yaoundé | **n** | y | ? | ? | y | y | 3 | **DISQUALIFIÉ** *(King 18/09 : 677 647 802 sans nom ni photo = non fiable)* | numéro faux |
 | 15 | Rainforest International School (RFIS) | Yaoundé | n | n | n | ? | y | y | 2 | NURTURE | N/V |
 | 16 | Institut Notre Dame des Apôtres | Yaoundé | ? | ? | ? | ? | y | y | 2 | À VÉRIFIER | N/V |
 | 17 | St. Joseph's College Sasse (SJC Sasse) | Buea | y | y | y | y | y | y | 6 | INBOUND SEUL | 677 195 500 **pas sur WA** |
@@ -47,9 +50,9 @@
 | 25 | National Comprehensive High School (NCHS) | Limbe | ? | y | ? | ? | y | y | 3 | À VÉRIFIER | N/V |
 | 26 | Presbyterian Girls Secondary School (PGSS) | Limbe | ? | ? | ? | ? | y | y | 2 | À VÉRIFIER | N/V |
 | 27 | St. Theresa International Bilingual Comp. | Buea | y | y | y | y | y | n | 5 | INBOUND — octobre | confirmé WA |
-| 28 | **Summerset Bilingual College (SMBICOL)** | Buea | y | y | y | y | y | y | 6 | **INBOUND — carte ★** | aucun trouvé |
-| 29 | **Saint Bernard High School (SBHS)** | Buea | y | y | y | y | y | y | 6 | **INBOUND — carte ★** | à vérifier |
-| 30 | **NABESK Comprehensive College** | Buea | y | y | y | y | y | y | 6 | **INBOUND — carte ★** | à vérifier |
+| 28 | ~~Summerset Bilingual College~~ | Buea | **n** | y | y | y | y | y | 5 | **DISQUALIFIÉ — pas de canal** *(page FB dormante depuis 2015 = écarté par l'ICP D4 de King)* | aucun trouvé |
+| 29 | ~~Saint Bernard High School~~ | Buea | **n** | y | y | y | y | ? | 4 | **DISQUALIFIÉ — pas de canal** *(aucune présence en ligne)* | aucun trouvé |
+| 30 | ~~NABESK Comprehensive College~~ | Buea | **n** | y | y | y | ? | y | 4 | **DISQUALIFIÉ — pas de canal** *(aucune présence en ligne)* | aucun trouvé |
 | 31 | Baird Memorial College | Buea | y | n | y | y | y | n | 4 | SUIVI — envoyé | confirmé WA |
 | 32 | Baptist Comprehensive College | Buea | y | y | y | y | y | n | 5 | INBOUND SEUL | confirmé WA |
 | 33 | St. Sylvester International College | Buea | y | y | ? | ? | y | y | 4 | INBOUND — carte | à vérifier |

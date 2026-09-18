@@ -1,6 +1,6 @@
 # Summerset Bilingual College (SMBICOL) — Wokoko, Buea
 
-**MQL 6/6 · FROID — jamais approché · aucun numéro WhatsApp connu**
+**⛔ DISQUALIFIÉ (King, 18/09) — pas de canal joignable.** Raison : page Facebook dormante depuis décembre 2015 → écarté par l'ICP §D4 de King (15/09). Voir [`sales/LeadSourcing-Reset-2026-09-18.md`](../../sales/LeadSourcing-Reset-2026-09-18.md).
 Statut corrigé le 18/09 : **aucune carte scellée n'a été déposée**. Ce prospect n'a jamais été contacté. Il n'y a pas de canal : sans numéro trouvé, il n'est pas joignable aujourd'hui.
 
 ---
