@@ -671,6 +671,24 @@ deploy was old — the deploy *was* old, but the same string existed in both ver
 - [ ] After editing any bilingual string, grep the file for the **old** wording — it must return **zero** hits, in all three places
 - [ ] `audit_html.py` counts text runs but does **not** compare the three sources: this check is manual, or a 3-line script
 
+### 20.9 `display:revert !important` beats every other `display` (added 19 Sep 2026)
+
+Our bilingual pattern hides one language with `html[data-lang="fr"] .en-only{display:none !important}` and shows the
+other with `display:revert !important`. **`revert` sends the element back to the user-agent default — not to your CSS.**
+So a `<small class="fr-only">` that you styled `display:block` becomes **`inline`** again, and the layout breaks
+silently in one language only.
+
+**Found on the Bonanjo build (19 Sep):** the site name ran into its subtitle in the header — the `.brand small{display:block}`
+rule was being overridden by the language rule.
+
+- **Rule:** never put `fr-only`/`en-only` on an element whose layout depends on `display`. **Wrap it instead** — the
+  language class goes on an inner span, the layout stays on the untouched parent.
+- Or omit the language class entirely when the string is identical in both languages (a proper noun often is).
+
+### 20.10 `display:revert !important` — the other half of the bilingual trap
+See §20.8 for the three places a bilingual string lives; §20.9 is the layout half of the same pattern. Both come from
+the same mechanism, and both fail silently in one language only. **Test every build in BOTH languages before shipping.**
+
 **King's ruling, 17 Sep 2026:** the §20 footer standard **applies to every NEW build**. The concepts already built (opticien, afriquelabo, labethanie, yaks, skye, oracare, clinic-bonaberi) **stay exactly as they are — no retrofit.** First build under this rule: the JEMPO concept (next prospect).
 
 ---

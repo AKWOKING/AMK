@@ -280,3 +280,22 @@ numéro d'UNE AUTRE organisation). C'est la donnée qui évite de refaire le tra
 INSES/CEMECES y est gravé, avec la raison.
 
 **État du CRM : 82 lignes · 0 étape vide · 32 contactés · 3 réponses humaines.**
+
+---
+
+## sam 19/09 12:10–12:30 — Démo sur mesure pour Bonanjo (décision de King)
+
+- King : *« quand il lit le message il pourrait s'attendre à un peu plus qu'une maquette ; quitte à inclure le prix,
+  ne devrions-nous pas plutôt envoyer le lien d'une démo personnalisée ? »* → **oui, et c'est fait.**
+- **Construit : `demos/concept-bonanjo-v1.html`** (31 Ko, fichier unique, bilingue FR|EN, page complète).
+  Bundle de déploiement : `hosting/previews/bonanjo/index.html`.
+- **Portiques : 0 finding / 215 passages** · aucune fuite d'autre client · FR/EN 83/83 · un seul numéro
+  (237694572277) · JSON-LD valide · noindex · `node --check` OK.
+- **Ce qu'elle contient :** les 9 services vérifiés, le Dr Tchaleu neurologue, l'adresse exacte, le rendez-vous
+  en 3 étapes sur WhatsApp, une section sur ce que la neurologie prend en charge, la FAQ, Google Maps.
+- **Ce qu'elle ne contient pas, volontairement :** aucun horaire (inconnu — la page demande à les corriger),
+  aucun tarif inventé, aucun chiffre de fréquentation. Le pied de page dit que c'est une maquette à valider.
+- **Bug trouvé et corrigé :** `display:revert !important` des règles `fr-only`/`en-only` **écrase tout `display`**
+  posé sur le même élément → le nom se collait au sous-titre. Nouvelle règle **§20.9** dans `AMK-DESIGN-SKILLS.md`.
+- **Message mis à jour** (`sales/Reply-Bonanjo-2026-09-19.md`) : il annonce la page entière, donne le lien,
+  dit le prix, et l'ask final ne demande pas d'acheter — il demande **ce qui est inexact**.

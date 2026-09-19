@@ -1,7 +1,12 @@
 # Réponse — Centre Médical de Bonanjo · samedi 19 septembre 2026
 
 **Prospect :** Centre Médical de Bonanjo — Bonapriso, ancien aéroport · **694 57 22 77**
-**Directeur :** **Dr Tchaleu B. Clet — neurologue** (fait public, maligah + mondocteur237)
+**Directeur :** **Dr Tchaleu B. Clet — neurologue** (fait public : maligah + mondocteur237)
+
+> **Décision de King, 19/09 12:33 :** *« quand il lit le message il pourrait s'attendre à un peu plus qu'une maquette ;
+> quitte à inclure le prix, ne devrions-nous pas plutôt envoyer le lien d'une démo personnalisée pour lui ? »*
+> **Il a raison.** Annoncer un prix et demander « je vous envoie le lien ? » alors qu'aucun lien n'existe, c'est
+> demander un effort avant d'avoir rien livré. **La démo est construite : `demos/concept-bonanjo-v1.html`.**
 
 ## Le fil, tel qu'il est
 
@@ -9,65 +14,88 @@
 |---|---|
 | **jeu 18/09 19:42** | Notre msg 1 part. Deux coches. |
 | **sam 19/09 08:44** | **Il répond : « Bjr merci je vous reviens »** |
-| **sam 19/09** | Nous répondons — **il est ~11:00, on est en retard sur la règle de l'heure.** |
+| **sam 19/09 12:xx** | On envoie **la page entière**, pas un écran. |
 
-**Ce que dit cette réponse, sans se raconter d'histoires :** ce n'est **pas un oui**. C'est une
-reconnaissance polie — « je vous reviens » veut dire « je ne dis pas non, mais je ne fais rien
-maintenant ». **Si on ne fait que répondre « d'accord, j'attends », c'est fini.** Ce qui débloque
-un « je vous reviens », c'est de livrer la chose promise : il n'a plus rien à se rappeler.
+**Ce que dit cette réponse, sans se raconter d'histoires :** ce n'est **pas un oui**. « Je vous reviens » = *« je ne dis
+pas non, mais je ne fais rien maintenant »*. Répondre « d'accord, j'attends » l'aurait enterré. **Ce qui débloque ce
+genre de message, c'est de livrer plus que promis.**
 
-## À envoyer — l'image D'ABORD, puis ce texte
+---
 
-**Image :** `clients/_mockups/bonanjo.jpg` (1080×1620, 233 Ko)
+## Ce qu'on envoie — l'image D'ABORD, puis ce texte
+
+**1 · Image :** `clients/_mockups/bonanjo.jpg` (1080×1620)
+
+**2 · Puis ce texte — remplacer `[LIEN]` par l'URL réelle donnée par Vercel après déploiement :**
 
 ```
 Bonjour Docteur Tchaleu, merci pour votre retour.
 
-Comme promis, votre aperçu : l'accueil du Centre Médical de Bonanjo — neurologie, radiologie,
-échographie, et le rendez-vous qui se confirme sur WhatsApp. Tout vient de vos informations
-publiques, rien n'est inventé.
+Comme promis, votre aperçu — et comme vous m'avez répondu, j'ai fait la page entière plutôt qu'un simple écran. Ouvrez-la sur votre téléphone, elle est faite pour ça :
 
-Vous êtes déjà visible sur un annuaire de prise de rendez-vous : des patients vous cherchent
-donc déjà en ligne. Ici, la page est à vous.
+[LIEN]
 
-Un seul prix : 100 000 FCFA — 50 000 pour commencer, 50 000 à la mise en ligne.
-Rien n'est dû avant votre accord.
+Neurologie, médecine générale, radiologie, échographie, gynécologie, pédiatrie, chirurgie, accouchement : vos neuf services au même endroit, et le rendez-vous qui se confirme sur WhatsApp au lieu de passer par un annuaire.
 
-Je vous envoie le lien pour l'ouvrir sur votre téléphone ? Un « oui » suffit.
+Un seul prix : 100 000 FCFA — 50 000 pour commencer, 50 000 à la mise en ligne. Rien n'est dû avant votre accord.
+
+Si quelque chose est inexact — un horaire, un service, une adresse — dites-le moi et je corrige tout de suite. Un « oui » suffit.
 — Akwo King / AMK – Développement Web & Solutions Digitales
 ```
 
 ### Pourquoi ce texte, ligne par ligne
 
-1. **« Comme promis »** — on tient la parole donnée hier. La promesse du site (« aperçu en 24 h ») est tenue en **16 h**.
-2. **Le prix est dit.** C'est la conclusion de `research/Pricing-Model-Cameroun-2026-09-18.md` : *le pipeline se bloque parce que le prix n'est jamais prononcé.* C'est le **2ᵉ message**, l'endroit prévu pour ça. On ne dit **pas** le mensuel : il se pose le jour du lancement, pas maintenant.
-3. **Une seule idée neuve : « la page est à vous ».** C'est l'angle le plus fort du dossier et il vient d'un fait vérifié, pas d'un argumentaire — **il figure déjà sur `mondocteur237.com`**, un annuaire de prise de rendez-vous, avec ses honoraires de consultation (20 000 FCFA) affichés publiquement. **Il cherche déjà des patients en ligne. Sur la plateforme de quelqu'un d'autre.** (§21.7 des design skills : cibler ceux qui paient déjà pour du trafic.)
-4. **« Un « oui » suffit »** — la question reste à un mot, et **elle ne demande pas d'acheter, seulement d'ouvrir un lien.**
+1. **« la page entière plutôt qu'un simple écran »** — c'est la phrase qui répond à l'objection de King : on ne demande rien, on a déjà livré plus que promis.
+2. **Le prix est dit.** Conclusion de `research/Pricing-Model-Cameroon-2026-09-18.md` : *le pipeline se bloque parce que le prix n'est jamais prononcé.* C'est le 2ᵉ message, l'endroit prévu. **Le mensuel n'est PAS dit** : il se pose le jour du lancement.
+3. **« au lieu de passer par un annuaire »** — une seule idée neuve, et elle ne vient pas de nous : il figure déjà sur `mondocteur237.com`, un annuaire de prise de rendez-vous, **avec ses honoraires publics (20 000 FCFA)**. **Il cherche déjà des patients en ligne. Sur la plateforme de quelqu'un d'autre.** (§21.7 des design skills : cibler ceux qui paient déjà pour du trafic.)
+4. **« dites-moi ce qui est inexact »** — l'ask final ne demande **pas d'acheter** : il demande une correction. C'est un « oui » facile, et il transforme le prospect en relecteur — donc en participant.
 
-**Si tu préfères sans le prix :** retire le paragraphe 4. Mais c'est celui qui évite l'aller-retour « c'est combien ? » dans trois jours.
+**⚠️ Ne pas écrire d'URL « attendue ».** Leçon du 18/09 avec UNI-LABO : le pack annonçait `unilabo-concept.vercel.app`, King a déployé `uni-labo.vercel.app`. **Lire l'URL réelle après déploiement, jamais la deviner.**
 
-## Ce que la maquette dit — et d'où ça vient
+---
 
-**Tout ce qui est à l'écran est vérifié, rien n'est inventé :**
+## La démo — `demos/concept-bonanjo-v1.html`
 
-| Sur la maquette | Source |
+**31 Ko, fichier unique, aucune dépendance hors Google Fonts.** Page complète, bilingue FR|EN, prête à déployer.
+
+### Les portiques, tous passés avant de te la remettre
+
+| Portique | Résultat |
 |---|---|
-| Neurologie · Radiologie · Échographie | `maligah.com` — les 9 activités publiées du centre |
-| « Bonapriso, Douala » · « Ancien aéroport » | `maligah.com` + `mondocteur237.com` |
-| Rendez-vous sur WhatsApp · bilingue FR/EN | ce qu'on construit, pas une affirmation sur lui |
-| `+237 694 57 22 77` | le numéro qui vient de lui répondre |
+| `audit_html.py` (règle 55) | **0 finding / 215 passages** — desktop et mobile |
+| Fuites de noms d'autres clients | **aucune** (aucune trace UNI-LABO, labo, Bonamoussadi…) |
+| Paires FR / EN | **83 / 83 — équilibré** |
+| Liens WhatsApp et téléphone | **un seul numéro** : 237694572277 — vérifié |
+| JSON-LD | **valide** (`MedicalClinic` + `Physician`) |
+| `noindex` | **présent** — la page n'est pas publique tant qu'il n'a pas dit oui |
+| JS | `node --check` **OK** |
 
-**Ce que je n'ai PAS mis, faute de source :** aucun chiffre de fréquentation, aucun « 5 étoiles », aucun
-nombre de patients, aucune mention de son père fondateur. **La maquette montre son accueil, elle ne raconte pas son histoire à sa place.**
+### Un bug trouvé et corrigé en la construisant
 
-## Les deux portiques d'avant-envoi
+**Le nom se collait au sous-titre dans la barre.** La cause n'est pas évidente : la règle `fr-only`/`en-only`
+utilise `display:revert !important`, qui **écrase tout `display` posé sur le même élément** — un
+`<small display:block>` redevient `inline`. **Documenté dans le CSS du fichier** pour que ça ne se reperde pas,
+et la règle sera ajoutée à `AMK-DESIGN-SKILLS.md`.
 
-- **A-t-il déjà un site ?** Le msg 1 l'affirmait (« aucune page à vous »). Aucun site trouvé pour le
-  Centre Médical de Bonanjo — seulement sa fiche dans des annuaires. **Ce n'est pas un site à lui.**
-- **La maquette ne promet rien de faux ?** Vérifié ligne à ligne ci-dessus. Le bandeau « MAQUETTE
-  PERSONNALISÉE · PAS LE SITE FINAL » est dessus : **on ne fait pas passer une maquette pour un site livré.**
+### Ce qu'elle contient — et ce qu'elle ne contient PAS
+
+**Dedans :** les 9 services vérifiés (maligah) · le Dr Tchaleu B. Clet, neurologue · l'adresse exacte
+(rue des pavés, à droite du carrefour armée de l'air, repère « ancien aéroport ») · le rendez-vous en 3 étapes
+sur WhatsApp · une section « ce qu'un neurologue prend en charge » (connaissance générale de la spécialité,
+pas une affirmation sur lui — c'est écrit noir sur blanc) · une FAQ · un lien Google Maps.
+
+**Pas dedans, faute de source vérifiée :**
+- **Aucun horaire** — on ne les connaît pas. La page dit : *« Horaires et tarifs : à confirmer avec le centre — ils seront affichés ici dès que vous nous les donnez. »* **C'est un appel à corriger, pas un trou.**
+- **Aucun tarif inventé** — son honoraires de consultation (20 000 FCFA) est public, mais je ne l'affiche pas sur sa propre page : je ne veux pas mettre un prix qu'il aurait changé.
+- **Aucun chiffre de fréquentation, aucun « 5 étoiles », aucun nombre de patients.**
+- **Le pied de page dit que c'est une maquette** : *« Horaires, tarifs, services et textes à valider par le centre avant toute mise en ligne. »*
+
+## Si quelque chose est inexact dans ce que j'ai supposé
+
+**Deux points à vérifier par King avant l'envoi** (je n'ai pas pu les contrôler) :
+1. **Le Dr Tchaleu B. Clet est-il toujours le directeur / neurologue du centre ?** (sources : maligah, écrit avant 2026 ; mondocteur237)
+2. **Le repère « ancien aéroport » est-il toujours le bon ?** Il vient de ton propre pack d'envoi du 18/09, donc a priori oui.
 
 ## S'il dit oui au lien
 
-Il reçoit `hosting/previews/` du concept, puis **on passe à la vraie construction** — et là seulement.
-**Rien n'est construit avant.** Aucun prix ne bouge : **100 000 FCFA, 50/50, jamais de remise.**
+Il reçoit la page, puis **on passe à la vraie construction** — et là seulement. **Aucun prix ne bouge : 100 000 FCFA, 50/50, jamais de remise.**
