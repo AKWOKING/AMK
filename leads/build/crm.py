@@ -31,6 +31,16 @@ except ImportError:
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 XLSX = ROOT / "leads" / "leads_50.xlsx"
 
+# ── Correspondance nom court → nom EXACT de la colonne du classeur.
+#    Leclasseur garde ses noms (espaces compris) ; le code utilise des identifiants lisibles.
+#    Sans cette table, un nom approchant était jeté en silence (bug du 19/09, 15 leads touchés).
+KEYMAP = {
+    "city": "City", "language": "Language", "decision": "Decision maker",
+    "contacted": "Contacted", "reply": "Reply", "demo": "Demo made",
+    "wa": "WhatsApp", "org": "School",
+    "contact_channel": "Contact channel", "notes": "Notes",
+}
+
 # ── Nouveaux champs (audit §7). On ajoute, on ne remplace pas. ──────────────────
 NEW_FIELDS = [
     # identification
@@ -48,6 +58,8 @@ NEW_FIELDS = [
     "same_buyer_as",
     # contradictions (M2) — valeur retenue + valeur écartée, verbatim conservé
     "contradiction", "value_kept", "value_discarded",
+    # M1-bis : pourquoi un numéro est inutilisable (canal injoignable, numéro erroné…)
+    "wa_number_note",
 ]
 
 # ── Les 15 leads hors classeur (audit §1), avec les seuls faits sourcés du dépôt ──
@@ -169,6 +181,154 @@ PROSE_LEADS = [
          disqualification_reason="A DÉJÀ UN SITE VIVANT (angesclinic-dla.cm). Hors cible.",
          notes="Écartée à la vérification, aucune maquette produite (le contrôle a fonctionné cette fois)."),
 ]
+
+# ── Les envois du vendredi 18/09 au soir, absents de l'audit du matin (trouvé le 19/09
+#    en cherchant la réponse de Bonanjo dans le CRM — elle n'y était pas).
+#    Source : `sales/Activity-Log.md`, tableau des envois. Seuls les « Envoyé » sont ici.
+SENT_1809 = [
+    # ~18:30 — labos et cliniques
+    dict(slug="discovery-labs-bassong", org="Discovery Labs", city="Douala (Bassong)", language="FR",
+         org_type="lab", wa_number="694 86 13 61", wa_verified="yes", contact_channel="WhatsApp",
+         source="directory", source_detail="Remote-Sweep §C — dans nos fichiers depuis le 15/09",
+         contacted="Yes", reply="No", demo="No", last_send_state="sent",
+         notes="Envoyé 18/09 ~18:30, sans maquette (vitesse)."),
+    dict(slug="uni-labo-bonamoussadi", org="UNI-LABO", city="Douala (Bonamoussadi, Carrefour Etoo)", language="FR/EN",
+         org_type="lab", wa_number="696 13 98 19", wa_verified="yes", contact_channel="WhatsApp",
+         decision="Dr Tientcheu Philomène (biologiste)", source="directory",
+         source_detail="Remote-Sweep §C — Lun-Ven 07h-19h, Sam 07h-13h",
+         contacted="Yes", reply="Yes", demo="Yes", last_send_state="sent", follow_ups_sent="0",
+         notes="⭐ LE LEAD LE PLUS ENGAGÉ. Envoyé 18:41, il a répondu « Bsr » à 20:57 (2 coches → les deux "
+               "messages de 21:47 et 22:05 ne sont PAS lus, last seen 21:04). SITE COMPLET construit et déployé : "
+               "https://uni-labo.vercel.app. Contrôle de lecture prévu sam 19/09, M+2 dim 20, M+4 mar 22, M+7 ven 25 → parked."),
+    dict(slug="yondja-analyse-douala", org="YONDJA ANALYSE", city="Douala", language="FR",
+         org_type="lab", wa_number="696 88 88 23", wa_verified="yes", contact_channel="WhatsApp",
+         source="directory", source_detail="Remote-Sweep §C", contacted="Yes", reply="No", demo="No",
+         last_send_state="sent", notes="Envoyé 18/09 ~18:30, sans maquette."),
+    dict(slug="laboratoire-du-chateau-bonaberi", org="Laboratoire du Château", city="Douala (Bonabéri)",
+         language="FR", org_type="lab", wa_number="676 94 69 93", wa_verified="yes",
+         contact_channel="WhatsApp", source="directory", source_detail="Remote-Sweep §C",
+         contacted="Yes", reply="No", demo="No", last_send_state="sent",
+         notes="Envoyé 18/09 ~18:30, sans maquette."),
+    dict(slug="departement-biologique-akwa", org="Département Biologique", city="Douala (Akwa I)",
+         language="FR", org_type="lab", wa_number="699 85 33 52", wa_verified="yes",
+         contact_channel="WhatsApp", source="directory", source_detail="Remote-Sweep §C",
+         contacted="Yes", reply="No", demo="No", last_send_state="sent",
+         notes="Envoyé 18/09 ~18:30, sans maquette."),
+    # ~19:00 — cabinets de Bonapriso/Bali/Akwa
+    dict(slug="cabinet-isis-bonapriso", org="Cabinet Médical ISIS", city="Douala (Bonapriso)", language="FR",
+         org_type="clinic", wa_number="699 34 93 89", wa_verified="yes", contact_channel="WhatsApp",
+         source="directory", source_detail="pagespratiquescm — cabmed", contacted="Yes", reply="No",
+         demo="No", last_send_state="sent", notes="Envoyé 18/09 ~19:00, sans maquette."),
+    dict(slug="cabinet-la-cerisaie-bonapriso", org="Cabinet Médical La Cerisaie", city="Douala (Bonapriso)",
+         language="FR", org_type="clinic", wa_number="699 95 51 64", wa_verified="yes",
+         contact_channel="WhatsApp", source="directory", source_detail="pagespratiquescm — cabmed",
+         contacted="Yes", reply="No", demo="No", last_send_state="sent",
+         notes="Envoyé 18/09 ~19:00, sans maquette."),
+    dict(slug="cabinet-idoc-bonapriso", org="Cabinet Médical i'DoC", city="Douala (Bonapriso)", language="FR",
+         org_type="clinic", wa_number="699 68 05 88", wa_verified="yes", contact_channel="WhatsApp",
+         source="directory", source_detail="pagespratiquescm — cabmed", contacted="Yes", reply="No",
+         demo="No", last_send_state="sent", notes="Envoyé 18/09 ~19:00, sans maquette."),
+    dict(slug="centre-des-capucines-bonapriso", org="Centre Médical des Capucines", city="Douala (Bonapriso)",
+         language="FR", org_type="clinic", wa_number="699 72 36 93", wa_verified="yes",
+         contact_channel="WhatsApp", source="directory", source_detail="pagespratiquescm — cabmed",
+         contacted="Yes", reply="No", demo="No", last_send_state="sent",
+         notes="Envoyé 18/09 ~19:00, sans maquette."),
+    dict(slug="cabinet-brulet-epaka-bonapriso", org="Cabinet du Dr Brulet Epaka", city="Douala (Bonapriso)",
+         language="FR", org_type="clinic", wa_number="694 77 74 54", wa_verified="yes",
+         contact_channel="WhatsApp", source="directory", source_detail="pagespratiquescm — cabmed",
+         contacted="Yes", reply="No", demo="No", last_send_state="sent",
+         notes="Envoyé 18/09 ~19:00, sans maquette."),
+    dict(slug="centre-kouam-samuel-bali", org="Centre Médical Kouam Samuel", city="Douala (Bali)", language="FR",
+         org_type="clinic", wa_number="677 39 35 31", wa_verified="yes", contact_channel="WhatsApp",
+         source="directory", source_detail="pagespratiquescm — cabmed", contacted="Yes", reply="No",
+         demo="No", last_send_state="sent", notes="Envoyé 18/09 ~19:00, sans maquette."),
+    dict(slug="das-group-international-akwa", org="DAS Group International", city="Douala (Akwa)", language="FR",
+         org_type="other", wa_number="680 100 626", wa_verified="yes", contact_channel="WhatsApp",
+         source="directory", source_detail="annuaires Akwa", contacted="Yes", reply="No", demo="No",
+         last_send_state="sent", notes="Envoyé 18/09 ~19:00, sans maquette."),
+    # 19:42
+    dict(slug="centre-medical-de-bonanjo", org="Centre Médical de Bonanjo", city="Douala (Bonapriso, ancien aéroport)",
+         language="FR", org_type="clinic", wa_number="694 57 22 77", wa_verified="yes",
+         contact_channel="WhatsApp", decision="Dr Tchaleu B. Clet — NEUROLOGUE",
+         source="directory", source_detail="maligah + mondocteur237 (consultation 20 000 FCFA, publique)",
+         contacted="Yes", reply="Yes", demo="Yes", last_send_state="sent", follow_ups_sent="0",
+         profile_name_seen="Centre Médical de Bonanjo — Bonapriso",
+         notes="⭐ A RÉPONDU. Envoyé 18/09 19:42 (2 coches) → « Bjr merci je vous reviens » le 19/09 à 08:44. "
+               "Maquette personnalisée envoyée le 19/09 : clients/_mockups/bonanjo.jpg. "
+               "FAIT DÉCISIF : le Dr Tchaleu figure déjà sur mondocteur237.com (annuaire de prise de rendez-vous) "
+               "→ il cherche déjà des patients en ligne, mais sur la plateforme d'un autre. C'est le profil "
+               "« paie déjà pour du trafic » (§21.7), notre meilleur angle. Services publics vérifiés (maligah) : "
+               "neurologie, médecine générale, radiologie, chirurgie, gynécologie, pédiatrie, échographie, accouchement."),
+    dict(slug="kamais-optic-bessengue", org="Kamaïs Optic", city="Douala (Bessengue)", language="FR",
+         org_type="other", wa_number="678 435 460", wa_verified="yes", contact_channel="WhatsApp",
+         source="directory", source_detail="annuaires Bessengue", contacted="Yes", reply="No", demo="No",
+         last_send_state="sent", notes="Envoyé 18/09 19:42, sans maquette."),
+    # 20:02
+    dict(slug="cabinet-dentaire-emmanuel-bonamoussadi", org="Cabinet Dentaire Emmanuel",
+         city="Douala (Bonamoussadi)", language="FR", org_type="clinic", wa_number="694 42 62 39",
+         wa_verified="yes", contact_channel="WhatsApp", source="directory",
+         source_detail="pagespratiquescm — dentaire", contacted="Yes", reply="No", demo="No",
+         last_send_state="sent", notes="Envoyé 18/09 20:02, sans maquette."),
+    dict(slug="clinique-de-luniversite-bassa", org="Clinique de L'université", city="Douala (Bassa)",
+         language="FR", org_type="clinic", wa_number="694 36 02 03", wa_verified="yes",
+         contact_channel="WhatsApp", source="directory", source_detail="annuaires Bassa",
+         contacted="Yes", reply="No", demo="No", last_send_state="sent",
+         notes="Envoyé 18/09 20:02, sans maquette."),
+    dict(slug="medi-labo-akwa", org="MEDI LABO", city="Douala (Akwa, 1927 Bld de la République)",
+         language="FR", org_type="lab", wa_number="677 81 70 25", wa_verified="yes",
+         contact_channel="WhatsApp", source="directory", source_detail="pagespratiquescm",
+         contacted="Yes", reply="No", demo="No", last_send_state="sent",
+         notes="Envoyé 18/09 20:02, sans maquette."),
+]
+
+# ── Numéros testés le 18/09 et ÉCARTÉS : la donnée qui évite de refaire le travail.
+#    Ce sont les « portes A » du MQL — soit le numéro ne va pas sur WhatsApp, soit il est faux.
+NOT_REACHABLE = [
+    ("douala-clinic-makepe", "Douala clinic", "Douala (Makepe BM, rue des pavés)", "clinic", "650 34 32 01",
+     "pas sur WhatsApp (vérifié par King 18/09)"),
+    ("clinique-des-cites-makepe", "Clinique des Cités", "Douala (Makepe, face Cinpharm)", "clinic", "699 22 62 74",
+     "pas sur WhatsApp (vérifié par King 18/09)"),
+    ("cmodn-makepe", "Centre Médical d'Ophtalmologie de Douala-Nord (CMODN)", "Douala (Makepe)", "clinic",
+     "698 00 68 98", "pas sur WhatsApp (vérifié par King 18/09)"),
+    ("perseverance-bonaberi", "Centre de Soins Médic-o-La Persévérance", "Douala (Bonabéri)", "clinic",
+     "677 69 25 04", "pas sur WhatsApp (vérifié par King 18/09)"),
+    ("imagerie-saint-joseph", "Centre d'Imagerie Médicale Saint Joseph", "Douala (Bonamoussadi)", "clinic",
+     "690 412 400", "pas sur WhatsApp (vérifié par King 18/09)"),
+    ("polyclinique-innova", "Polyclinique Innova", "Douala", "clinic", "674 145 740",
+     "numéro indisponible (King, 18/09 19:18)"),
+    ("centre-medical-saint-luc", "Centre Médical Saint Luc", "Douala (Rond-point Deido)", "clinic", "699 08 67 11",
+     "aucun profil Business à ce numéro"),
+    ("le-cigah-bonaberi", "Clinique Traditionnelle Moderne du Dr Lecigah", "Douala (Bonabéri Sodiko)", "clinic",
+     "699 96 95 77", "aucun profil Business à ce numéro"),
+    ("labo-phanuel-akwa", "LABO-PHANUEL", "Douala (Akwa)", "lab", "243 17 94 71",
+     "ligne fixe — pas un mobile"),
+    ("cem-eces-bonaberi", "Clinique Médico-Chirurgicale de L'Espoir (CEMECES)", "Douala (Bonabéri Sodiko)",
+     "clinic", "674 93 66 04",
+     "NUMÉRO ERRONÉ : ce mobile est celui d'INSES, un institut supérieur. Maligah attribuait le numéro de "
+     "l'école à la clinique. La vérification d'identité à l'écran a évité un message à la mauvaise personne."),
+]
+
+
+def _not_reachable_rows():
+    out = []
+    for slug, org, city, kind, num, why in NOT_REACHABLE:
+        out.append(dict(slug=slug, org=org, city=city, language="FR", org_type=kind,
+                        wa_number=num, wa_verified="no", wa_number_note=why,
+                        stage="prospecting", contacted="No", reply="No", demo="No",
+                        source="directory", source_detail="annuaire de Douala",
+                        disqualification_reason=f"canal injoignable — {why}",
+                        notes=f"⛔ NE PAS ENVOYER sur {num} : {why}. Vérifié le 18/09."))
+    # INSES porte le numéro « CEMECES » : c'est un prospect À PART (institut supérieur),
+    # et le seul cas où un même numéro sert deux organisations.
+    out.append(dict(slug="inses-douala", org="INSES — institut supérieur", city="Douala", language="FR/EN",
+                    org_type="school", wa_number="674 93 66 04", wa_verified="yes",
+                    stage="prospecting", contacted="No", reply="No", demo="No",
+                    source="walk_in", source_detail="affiche vue par King 18/09 — BTS · HND · Licence · Master",
+                    notes="Piste ouverte : le mobile 674 93 66 04 est bien celui d'INSES (confirmé par capture). "
+                          "La même affiche porte « LA CLINIQUE DE L'ESPOIR » → promoteur probablement commun "
+                          "école + clinique. Deux offres possibles en une conversation. **Jamais contacté.**"))
+    return out
+
 
 # ── Le lead hors classeur qui vit dans un autre onglet du même fichier ──────────
 ORACARE = dict(slug="oracare-buea", org="OraCare Dental Clinic (Oracare237)",
@@ -378,6 +538,15 @@ def main() -> int:
     # 2 · OraCare — même fichier, autre onglet
     out.append({"School": ORACARE["org"], **ORACARE})
 
+    # 2b · les envois du 18/09 au soir (absents de l'audit du matin)
+    for p in SENT_1809:
+        p.setdefault("stage", "qualifying")   # un message parti = étape 2 du pipeline du classeur
+        out.append({"School": p["org"], **p})
+
+    # 2c · les numéros testés et écartés — la donnée qui évite de refaire le travail
+    for p in _not_reachable_rows():
+        out.append({"School": p["org"], **p})
+
     # 3 · les 15 hors classeur
     for p in PROSE_LEADS:
         out.append({"School": p["org"], **p})
@@ -414,7 +583,23 @@ def main() -> int:
         rec["Notes"] = (str(rec.get("Notes") or "") +
                         " | CONTRADICTION RÉSOLUE (M2) — retenu : " + kept).strip(" ·")
 
+    # Garde-fou (bug du 19/09) : une clé mal orthographiée était jetée EN SILENCE par
+    # DictWriter(extrasaction="ignore") — 15 leads avaient perdu City, Language, Contacted,
+    # Reply et Demo made sans qu'aucune ligne ne se plaigne. On refuse désormais de sortir.
+    for rec in out:
+        for short, full in KEYMAP.items():
+            if short in rec:
+                rec[full] = rec.pop(short)
+        rec.setdefault("School", "")
+
     cols = headers + NEW_FIELDS
+    allowed = set(cols)
+    for rec in out:
+        unknown = set(rec) - allowed
+        if unknown:
+            sys.exit(f"✗ clé(s) inconnue(s) {sorted(unknown)} — nom de colonne probablement mal "
+                     f"orthographié. Rien n'a été écrit (perte de données évitée).")
+
     csv_path = pathlib.Path(args.csv)
     csv_path.parent.mkdir(parents=True, exist_ok=True)
     with csv_path.open("w", newline="", encoding="utf-8-sig") as f:

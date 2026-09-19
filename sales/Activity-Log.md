@@ -243,3 +243,40 @@ elle ne prouvait rien. Ce qui prouve le déploiement, c'est la ligne de prix « 
 15,000 FCFA », absente du site en ligne.
 
 **Déploiement :** `amk-site-2026-09-19-VOICE.zip` (3 454 752 octets) + `amk-site.zip` synchronisé.
+
+---
+
+## sam 19/09 08:44 — ⭐ 3ᵉ RÉPONSE HUMAINE : Centre Médical de Bonanjo
+
+- **Envoyé** jeu 18/09 19:42 (msg 1, sans maquette) → **réponse sam 19/09 08:44 : « Bjr merci je vous reviens »**
+- **Ce n'est pas un oui.** C'est une reconnaissance polie. Répondre « d'accord, j'attends » l'aurait enterré.
+- **Ce qu'on fait :** on livre la chose promise — maquette personnalisée + prix, et une seule idée neuve.
+- **Le fait qui change l'angle :** le **Dr Tchaleu est déjà sur `mondocteur237.com`** (annuaire de prise de
+  rendez-vous, honoraires publics 20 000 FCFA). Il cherche donc déjà des patients en ligne — **sur la plateforme
+  de quelqu'un d'autre.** C'est le profil §21.7 (« cible ceux qui paient déjà pour du trafic »), et le meilleur
+  dossier de la campagne.
+- **Livré :** `sales/Reply-Bonanjo-2026-09-19.md` (texte à coller + justification) et
+  `clients/_mockups/bonanjo.jpg` (1080×1620, personnalisée avec ses services **vérifiés** sur maligah).
+- **Compteur : 3 réponses humaines** (St. Theresa 15/09, UNI-LABO 18/09, Bonanjo 19/09).
+
+## sam 19/09 10:30–11:10 — Le CRM avait un trou, et un bug silencieux
+
+**Deux problèmes trouvés en cherchant Bonanjo dans le CRM — il n'y était pas.**
+
+**① 17 envois du 18/09 manquaient**, dont UNI-LABO. L'audit qui a servi de base à M1 avait été écrit
+le **matin** du 18/09 : il ne pouvait pas connaître les envois du soir. Un lot de 19:00 entier
+(7 cabinets Bonapriso/Bali + DAS Group) était absent de mes fichiers. **Un CRM sans le lead qui
+vient de répondre n'est pas un CRM.** Corrigé : `leads/CRM.csv` = **82 lignes**.
+
+**② Un bug qui jetait des données en silence.** Mes 15 leads en prose perdaient `City`, `Language`,
+`Contacted`, `Reply`, `Demo made` : j'avais écrit `city=` au lieu de `City=`, et
+`DictWriter(extrasaction="ignore")` **jetait la clé sans rien dire**. Corrigé par une table de
+correspondance (`KEYMAP`) **et un garde-fou qui refuse d'écrire** si une clé est inconnue — le
+garde-fou a immédiatement attrapé deux clés de plus que j'aurais perdues (`contact_channel`, `notes`).
+**C'est exactement la classe de bug contre laquelle ce CRM existe.**
+
+**③ Ajouté aussi :** les **11 numéros testés et écartés** le 18/09 (pas sur WhatsApp, ligne fixe,
+numéro d'UNE AUTRE organisation). C'est la donnée qui évite de refaire le travail — et le cas
+INSES/CEMECES y est gravé, avec la raison.
+
+**État du CRM : 82 lignes · 0 étape vide · 32 contactés · 3 réponses humaines.**
