@@ -671,6 +671,33 @@ deploy was old — the deploy *was* old, but the same string existed in both ver
 - [ ] After editing any bilingual string, grep the file for the **old** wording — it must return **zero** hits, in all three places
 - [ ] `audit_html.py` counts text runs but does **not** compare the three sources: this check is manual, or a 3-line script
 
+### 15.bis Images: generate FIRST, never ship a text-only page (reinforced 19 Sep 2026)
+
+**King's correction, 19 Sep:** *« why is there no image on their site, look for more inspiration (focus on clinics
+of the same type) online joined with our design documentations and give me something with images »*.
+
+**He is right, and our own library already said so twice — §15 point 3 (« NO pure-text minimalism — even minimal
+sites need 2-3 real images ») and §15 point 1 (« Generate first. If an image tool exists, use it… Never skip
+because CSS "feels faster" »).** The Bonanjo page had zero images because I built it before reading §15, not
+because the tools were missing. **A delivered page with no photograph is an unfinished page.**
+
+**What the 2026 healthcare-web research adds (sources: sitebuilderreport, ueni, reallygooddesigns, digitalsilk):**
+- **« Clinical-sterile aesthetics lose patients to warm-and-modern ones at the same price point. »** The hero image must be *calming* — a real practitioner portrait or a warm caregiver–patient moment. **Never a stethoscope on white.**
+- The hero is seen for about **6 seconds** — it sets the emotional state before a word is read.
+- Non-negotiable stack stays: book-now above the fold, click-to-call on mobile, named specialties.
+- Neuro clinics specifically win with **clear hero message + organised service sections + a visible consultation CTA**.
+
+**The AMK image recipe (applies to every client page from now on):**
+1. **One image per section** — never one tall page image (§15).
+2. **Generate first**, at the right aspect ratio (16:10 hero, 4:3 sections), before writing CSS.
+3. **Prompt discipline:** art-direct it (subject, crop, light), name the palette, and **explicitly exclude text,
+   logos, signage, writing on clothing and watermarks** — then **read every image back** (the OraCare v2 rule).
+4. **Continuity:** all images in one page share one light family and one palette grade, so they read as one site.
+5. **Honesty:** when the people are models, **say so under the image** — *« Mise en situation. La photo définitive
+   sera prise dans votre centre. »* It is also the sentence that invites the client to supply his own photos.
+6. **Weight:** never base64 five photographs into a single file. **Separate files load in parallel**; a 750 KB
+   base64 page is a slow page on 3G, which is exactly the market we sell to.
+
 ### 20.9 `display:revert !important` beats every other `display` (added 19 Sep 2026)
 
 Our bilingual pattern hides one language with `html[data-lang="fr"] .en-only{display:none !important}` and shows the

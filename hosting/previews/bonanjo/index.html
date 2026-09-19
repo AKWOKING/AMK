@@ -117,12 +117,39 @@ html[data-lang="fr"] .fr-only{display:revert !important}
 .dot svg{width:17px;height:17px;fill:currentColor}
 .heroCard .row span{font-size:.9rem;color:var(--ink-2)}
 
+/* bande d'infos sous le hero */
+.cap{font-size:.8rem;color:var(--mute);margin-top:10px}
+.infostrip{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.infostrip .wrap{display:grid;gap:16px;padding:22px 18px}
+@media (min-width:640px){.infostrip .wrap{grid-template-columns:1fr 1fr}}
+@media (min-width:1000px){.infostrip .wrap{grid-template-columns:repeat(4,1fr)}}
+.infostrip b{display:block;font-family:"Sora",Inter,sans-serif;font-size:.92rem}
+.infostrip span{display:block;font-size:.84rem;color:var(--mute);margin-top:3px}
+
 /* bandeau de faits */
 .facts{background:var(--ink);color:#fff}
 .facts .wrap{display:grid;gap:20px;padding:26px 18px}
 @media (min-width:760px){.facts .wrap{grid-template-columns:repeat(3,1fr)}}
 .facts .n{font:700 1.6rem "Sora",Inter,sans-serif;color:#8FC4EE}
 .facts .l{font-size:.86rem;color:var(--mute-on-ink);margin-top:4px}
+
+/* images — inspiration 2026 : chaleureux, humain, jamais stérile.
+   Règles appliquées : un visuel par section · légende SOUS l'image (jamais de pastille dessus)
+   · object-fit:cover + ratio fixe · aucune image sans alt */
+figure{margin:0}
+figure img{display:block;width:100%;height:auto;object-fit:cover;border-radius:var(--r);
+  border:1px solid var(--line);background:#E7EBF0}
+figure figcaption{font-size:.82rem;color:var(--mute);margin-top:9px;padding-left:2px}
+.heroMedia{display:flex;flex-direction:column}
+.ph-hero{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line);
+  aspect-ratio:16/10;background:#E7EBF0}
+.ph-hero img{width:100%;height:100%;object-fit:cover}
+@media (min-width:940px){
+  /* le hero respire : l'image est décadrée vers la droite, le texte reste lisible */
+  .ph-hero{aspect-ratio:4/3}
+}
+.strip2{display:grid;gap:16px;margin-top:26px}
+@media (min-width:700px){.strip2{grid-template-columns:1fr 1fr}}
 
 /* services */
 .cards{display:grid;gap:14px;margin-top:24px}
@@ -132,6 +159,10 @@ html[data-lang="fr"] .fr-only{display:revert !important}
 .card h3{color:var(--ink)}
 .card p{color:var(--mute);font-size:.9rem}
 .card .mono{color:var(--signal)}
+
+/* split image + carte */
+.splitimg{margin-top:22px}
+.splitimg img{aspect-ratio:4/3}
 
 /* neuro */
 .neuro{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;margin-top:24px}
@@ -174,7 +205,7 @@ footer .mock{border-left:3px solid #8FC4EE;padding-left:12px}
 
 /* barre mobile */
 .sticky-wa{position:fixed;left:12px;right:12px;bottom:12px;z-index:50;display:flex;gap:10px}
-.sticky-wa a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;
+.sticky-wa a{flex:1;white-space:nowrap;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;
   border-radius:13px;padding:14px;font-weight:600;font-size:.92rem;min-height:52px;box-shadow:0 10px 24px rgba(20,21,26,.22)}
 .sticky-wa .w{background:var(--wa);color:#fff}
 .sticky-wa .c{background:#fff;color:var(--ink);flex:0 0 38%}
@@ -241,29 +272,38 @@ footer .mock{border-left:3px solid #8FC4EE;padding-left:12px}
       </div>
     </div>
 
-    <div class="heroCard">
-      <div class="row">
-        <span class="dot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 3 6v6c0 5 3.8 9.3 9 10 5.2-.7 9-5 9-10V6l-9-4Zm0 5a3 3 0 0 1 3 3h-2a1 1 0 0 0-2 0v3h4v2h-4v2h-2v-2H7v-2h4v-3a3 3 0 0 1 1-2.2V7Z"/></svg></span>
-        <span class="fr-only"><b>Neurologie</b> — le Dr Tchaleu B. Clet, neurologue</span>
-        <span class="en-only"><b>Neurology</b> — Dr Tchaleu B. Clet, neurologist</span>
-      </div>
-      <div class="row">
-        <span class="dot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-1-.3-1.8-.7-2.2-1-3.6-3.3-3.7-3.5-.1-.1-.9-1.2-.9-2.3s.6-1.6.8-1.9c.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .5.4l.7 1.7c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.2.3-.1.5.1.2.6 1 1.2 1.6.8.7 1.4.9 1.6 1 .2.1.4.1.5 0l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.3.2.4.3.4.5Z"/></svg></span>
-        <span class="fr-only">Rendez-vous confirmé <b>sur WhatsApp</b></span>
-        <span class="en-only">Appointment confirmed <b>on WhatsApp</b></span>
-      </div>
-      <div class="row">
-        <span class="dot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7Zm0 4.5A2.5 2.5 0 1 0 12 11a2.5 2.5 0 0 0 0-4.5Z"/></svg></span>
-        <span class="fr-only">Rue des pavés, à droite du carrefour armée de l'air — <b>ancien aéroport</b></span>
-        <span class="en-only">Rue des pavés, right of the air-force roundabout — <b>old airport</b></span>
-      </div>
-      <div class="row">
-        <span class="dot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h3l2 5-2 1.5a12 12 0 0 0 5.5 5.5L16 12l5 2v3a2 2 0 0 1-2.2 2A16 16 0 0 1 4 4.2 2 2 0 0 1 6 2Z"/></svg></span>
-        <span>+237 694 57 22 77</span>
-      </div>
+    <div class="heroMedia">
+      <figure class="ph-hero">
+        <img src="img/hero.jpg" alt="Une consultation dans un centre médical : une médecin écoute un patient" loading="eager" decoding="async">
+      </figure>
+      <p class="cap">
+        <span class="fr-only">Mise en situation. La photo définitive sera prise dans votre centre.</span>
+        <span class="en-only">Staged scene. The final photo will be taken at your centre.</span>
+      </p>
     </div>
   </div>
 </header>
+
+<div class="infostrip">
+  <div class="wrap">
+    <div>
+      <b><span class="fr-only">Neurologie</span><span class="en-only">Neurology</span></b>
+      <span><span class="fr-only">Un médecin neurologue reçoit au centre</span><span class="en-only">A neurologist sees patients at the centre</span></span>
+    </div>
+    <div>
+      <b>WhatsApp</b>
+      <span><span class="fr-only">Rendez-vous confirmé sur WhatsApp</span><span class="en-only">Appointment confirmed on WhatsApp</span></span>
+    </div>
+    <div>
+      <b><span class="fr-only">Bonapriso</span><span class="en-only">Bonapriso</span></b>
+      <span><span class="fr-only">Rue des pavés — repère : ancien aéroport</span><span class="en-only">Rue des pavés — landmark: old airport</span></span>
+    </div>
+    <div>
+      <b>+237 694 57 22 77</b>
+      <span><span class="fr-only">Appel et WhatsApp</span><span class="en-only">Call and WhatsApp</span></span>
+    </div>
+  </div>
+</div>
 
 <div class="facts">
   <div class="wrap">
@@ -280,6 +320,13 @@ footer .mock{border-left:3px solid #8FC4EE;padding-left:12px}
     <h2 class="en-only" style="margin-top:10px">Seeing a neurologist in Douala, without the runaround</h2>
     <p class="lead fr-only" style="color:var(--mute);max-width:44em">Le centre reçoit pour les symptômes qui inquiètent et qu'on laisse traîner : maux de tête qui reviennent, vertiges, tremblements, fourmillements, douleurs du dos et de la nuque, suites d'AVC.</p>
     <p class="lead en-only" style="color:var(--mute);max-width:44em">The centre sees patients for the symptoms people put off: recurring headaches, dizziness, tremors, numbness, back and neck pain, follow-up after a stroke.</p>
+
+    <div class="splitimg">
+      <figure>
+        <img src="img/neuro.jpg" alt="Un médecin teste le réflexe du genou d'une patiente" loading="lazy" decoding="async">
+        <figcaption><span class="fr-only">Photo d'illustration — à remplacer par une photo du centre.</span><span class="en-only">Illustration photo — to be replaced with a photo of the centre.</span></figcaption>
+      </figure>
+    </div>
 
     <div class="neuro">
       <h3 class="fr-only">Ce qu'un neurologue prend en charge</h3>
@@ -324,7 +371,7 @@ footer .mock{border-left:3px solid #8FC4EE;padding-left:12px}
     <p class="en-only" style="color:var(--mute)">A patient sent to three different addresses gives up on the way. Here, you come in once.</p>
 
     <div class="cards">
-      <div class="card"><span class="mono fr-only">Spécialité</span><span class="mono en-only">Specialty</span><h3 class="fr-only">Neurologie</h3><h3 class="en-only">Neurology</h3><p class="fr-only">Consultation avec le Dr Tchaleu B. Clet, neurologue.</p><p class="en-only">Consultation with Dr Tchaleu B. Clet, neurologist.</p></div>
+      <div class="card"><span class="mono fr-only">Spécialité</span><span class="mono en-only">Specialty</span><h3 class="fr-only">Neurologie</h3><h3 class="en-only">Neurology</h3><p class="fr-only">Consultation de neurologie sur rendez-vous.</p><p class="en-only">Neurology consultation by appointment.</p></div>
       <div class="card"><span class="mono fr-only">Tous les jours</span><span class="mono en-only">Every day</span><h3 class="fr-only">Médecine générale</h3><h3 class="en-only">General medicine</h3><p class="fr-only">La consultation d'entrée : ce qui vous amène, examens si besoin, traitement.</p><p class="en-only">The first door: what brings you in, tests if needed, treatment.</p></div>
       <div class="card"><span class="mono">Imagerie</span><h3 class="fr-only">Radiologie</h3><h3 class="en-only">Radiology</h3><p class="fr-only">Radiographie sur place — pas besoin d'aller ailleurs pour une image.</p><p class="en-only">X-ray on site — no need to go elsewhere for an image.</p></div>
       <div class="card"><span class="mono">Imagerie</span><h3 class="fr-only">Échographie</h3><h3 class="en-only">Ultrasound</h3><p class="fr-only">Examen à l'échographie, y compris le suivi de grossesse.</p><p class="en-only">Ultrasound examination, including pregnancy follow-up.</p></div>
@@ -333,6 +380,16 @@ footer .mock{border-left:3px solid #8FC4EE;padding-left:12px}
       <div class="card"><span class="mono fr-only">Enfants</span><span class="mono en-only">Children</span><h3 class="fr-only">Pédiatrie</h3><h3 class="en-only">Paediatrics</h3><p class="fr-only">Consultations des nourrissons, enfants et adolescents.</p><p class="en-only">Consultations for infants, children and teenagers.</p></div>
       <div class="card"><span class="mono">Bloc</span><h3 class="fr-only">Chirurgie</h3><h3 class="en-only">Surgery</h3><p class="fr-only">Interventions chirurgicales au centre.</p><p class="en-only">Surgical procedures at the centre.</p></div>
       <div class="card"><span class="mono fr-only">Toujours</span><span class="mono en-only">Always</span><h3 class="fr-only">Consultations</h3><h3 class="en-only">Consultations</h3><p class="fr-only">Prendre rendez-vous, ou venir avec ce qui vous inquiète.</p><p class="en-only">Book an appointment, or come in with what worries you.</p></div>
+    </div>
+    <div class="strip2">
+      <figure>
+        <img src="img/imagerie.jpg" alt="Une échographie réalisée dans une salle d'imagerie" loading="lazy" decoding="async">
+        <figcaption><span class="fr-only">Photo d'illustration — à remplacer par une photo du centre.</span><span class="en-only">Illustration photo — to be replaced with a photo of the centre.</span></figcaption>
+      </figure>
+      <figure>
+        <img src="img/maternite.jpg" alt="Une mère tenant son nouveau-né avec une sage-femme" loading="lazy" decoding="async">
+        <figcaption><span class="fr-only">Photo d'illustration — à remplacer par une photo du centre.</span><span class="en-only">Illustration photo — to be replaced with a photo of the centre.</span></figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -387,11 +444,12 @@ footer .mock{border-left:3px solid #8FC4EE;padding-left:12px}
           <span class="en-only"><b>Hours and fees:</b> to be confirmed with the centre — they will be shown here, in plain FCFA, as soon as you give them to us.</span>
         </div>
       </div>
-      <div class="mapbox">
-        <span class="mono">Bonapriso · Douala</span>
-        <p class="fr-only" style="margin-top:10px">Un patient cherche « centre médical Bonapriso » ou « neurologue Douala » sur son téléphone. C'est ici qu'il doit arriver.</p>
-        <p class="en-only" style="margin-top:10px">A patient searches "medical centre Bonapriso" or "neurologist Douala" on their phone. This is where they should land.</p>
-        <a class="btn btn-signal" style="margin-top:14px" href="https://www.google.com/maps/search/?api=1&query=Centre+M%C3%A9dical+de+Bonanjo+Bonapriso+Douala">
+      <div>
+        <figure>
+        <img src="img/accueil.jpg" alt="L'accueil et la salle d'attente d'un centre médical" loading="lazy" decoding="async">
+        <figcaption><span class="fr-only">Photo d'illustration — à remplacer par une photo du centre.</span><span class="en-only">Illustration photo — to be replaced with a photo of the centre.</span></figcaption>
+      </figure>
+        <a class="btn btn-signal" style="margin-top:14px;width:100%" href="https://www.google.com/maps/search/?api=1&query=Centre+M%C3%A9dical+de+Bonanjo+Bonapriso+Douala">
           <span class="fr-only">Ouvrir dans Google Maps</span><span class="en-only">Open in Google Maps</span>
         </a>
       </div>
@@ -451,7 +509,7 @@ footer .mock{border-left:3px solid #8FC4EE;padding-left:12px}
 <div class="sticky-wa">
   <a class="w" href="https://wa.me/237694572277?text=Bonjour%2C%20je%20souhaite%20prendre%20rendez-vous%20au%20Centre%20M%C3%A9dical%20de%20Bonanjo.">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-1-.3-1.8-.7-2.2-1-3.6-3.3-3.7-3.5-.1-.1-.9-1.2-.9-2.3s.6-1.6.8-1.9c.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .5.4l.7 1.7c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.2.3-.1.5.1.2.6 1 1.2 1.6.8.7 1.4.9 1.6 1 .2.1.4.1.5 0l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.3.2.4.3.4.5Z"/></svg>
-    <span class="fr-only">Rendez-vous WhatsApp</span><span class="en-only">WhatsApp appointment</span>
+    <span class="fr-only">Rendez-vous</span><span class="en-only">Appointment</span>
   </a>
   <a class="c" href="tel:+237694572277"><span class="fr-only">Appeler</span><span class="en-only">Call</span></a>
 </div>
@@ -472,11 +530,7 @@ footer .mock{border-left:3px solid #8FC4EE;padding-left:12px}
   "areaServed": "Douala",
   "availableLanguage": ["fr", "en"],
   "medicalSpecialty": "Neurologic",
-  "employee": {
-    "@type": "Physician",
-    "name": "Dr Tchaleu B. Clet",
-    "medicalSpecialty": "Neurologic"
-  }
+  "medicalSpecialty": "Neurologic"
 }
 </script>
 

@@ -299,3 +299,43 @@ INSES/CEMECES y est gravé, avec la raison.
   posé sur le même élément → le nom se collait au sous-titre. Nouvelle règle **§20.9** dans `AMK-DESIGN-SKILLS.md`.
 - **Message mis à jour** (`sales/Reply-Bonanjo-2026-09-19.md`) : il annonce la page entière, donne le lien,
   dit le prix, et l'ask final ne demande pas d'acheter — il demande **ce qui est inexact**.
+
+---
+
+## sam 19/09 13:35 — Bonanjo : message envoyé par King, et la page passe aux images
+
+- **King a déployé `bonanjo.vercel.app` et envoyé le message à 13:35.** Le fil attend sa réponse.
+- **King annonce : relance AFRIQUE LABO déjà envoyée.** Compteur à corriger — **FU1 ne doit PAS être renvoyée.**
+  La file descend : OraCare FU2 **dim 20**, MITOC FU2 **lun 21**.
+
+**① Consigne de King appliquée :** *« si tu n'es pas sûr ne mentionne pas son nom »* → **le Dr Tchaleu n'apparaît
+plus nulle part** (0 occurrence, y compris dans le JSON-LD). La page dit « **un médecin neurologue reçoit au centre** ».
+
+**② Correction de King, et elle est juste :** *« why is there no image on their site »*. La page est passée de
+**0 image à 5**, toutes générées puis relues une par une (aucun texte, aucun logo, aucun filigrane).
+
+**Ce n'était pas un manque d'outil — c'était un manque de lecture.** `AMK-DESIGN-SKILLS.md` §15 disait déjà
+« pas de minimalisme tout-texte : même un site minimal a besoin de 2-3 vraies images » et « génère d'abord ».
+**J'ai construit la page avant de relire §15.**
+
+**L'inspiration 2026 (4 sources) confirme §15 et ajoute une raison :** *« les esthétiques cliniques et stériles
+perdent des patients face aux images chaleureuses et modernes, au même prix »*. Le hero d'un site de santé se
+regarde ~6 secondes et fixe l'état émotionnel **avant** qu'un mot soit lu. Les cliniques de neurologie gagnent
+avec : message clair + services organisés + un CTA de consultation visible. **C'est exactement ce que fait la page.**
+
+**Les 5 images et ce qu'elles font :** hero (consultation, écoute) · neurologie (examen réflexe) ·
+imagerie (échographie) · maternité (mère + nouveau-né + sage-femme) · accueil (réception).
+**Toutes légendées honnêtement :** *« Mise en situation. La photo définitive sera prise dans votre centre. »*
+— mention qui invite aussi le client à fournir les siennes.
+
+**③ Bug §20.9 retombé dedans, dans le même fichier** : la bande d'infos avait `<b class="fr-only">` et
+`<span class="fr-only">` → `display:revert` les a remis en `inline` et le titre s'est collé au texte. Corrigé.
+**La règle est devenue une case à cocher, pas une note : ne jamais mettre une classe de langue sur un élément
+dont la mise en page dépend de son `display`.**
+
+**④ Poids de la page :** 5 photos en fichiers séparés (549 Ko optimisés) plutôt qu'en base64 dans le HTML
+(≈750 Ko en un seul flux). **Le marché qu'on vend est en 3G — la page doit rester légère.**
+
+**Portiques : 0 finding / 222 passages · 5 images, 0 cassée · FR/EN équilibré · un seul numéro · noindex.**
+**Bundle : `hosting/previews/bonanjo/index.html` + `img/` (592 Ko).** L'ancien fichier plat `demos/concept-bonanjo-v1.html`
+a été supprimé — **une seule source de vérité, sinon les deux divergent.**
