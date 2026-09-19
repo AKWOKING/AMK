@@ -489,7 +489,8 @@ ENVOIS_1909_SOIR = {
     "labo-meka-bonamoussadi":      ("envoye", "19:29", "UNE coche — pas encore lu. Maquette déjà prête."),
     "flemming-dream-bessengue":    ("lu", "19:30", ""),
     "interlabo-akwa":              ("envoye", "19:31", "UNE coche — pas encore lu. Maquette déjà prête."),
-    "labiomed-deido":              ("lu", "19:32", "Lu. Maquette déjà prête."),
+    "labiomed-deido":              ("lu", "19:32",
+                                    "***A REPONDU Oui a 19:43 - 11 minutes apres notre message. PREMIER OUI DE LA CAMPAGNE.*** Apercu + texte envoyes 20:02 SANS le prix (decision de King : le prix va avec un lien). Demo complete construite : hosting/previews/labiomed/ - a deployer puis envoyer avec le prix (100 000 FCFA, 50/50)."),
     "la-passerelle-deido":         ("envoye", "19:33",
                                     "Profil SANS NOM (« +237 6 94 71 91 22 ») — King l'a signalé. Une coche. "
                                     "Cohérent avec le reste du dossier : ce labo communique par adresse yahoo "
@@ -511,6 +512,12 @@ PAS_SUR_WHATSAPP = {
 
 def _apply_envois(out: list) -> None:
     by = {r.get("slug"): r for r in out}
+    # un « Oui » est une reponse HUMAINE : on la pose AVANT la boucle generique,
+    # sinon le tuple de ENVOIS_1909_SOIR la remettrait a « none ».
+    _oui = by.get("labiomed-deido")
+    if _oui is not None:
+        _oui["Reply"] = "YES 19/09 19:43 - \"Oui\" (verbatim). PREMIER OUI DE LA CAMPAGNE."
+        _oui["reply_type"] = "human"
     for slug, (etat, heure, note) in ENVOIS_1909_SOIR.items():
         r = by.get(slug)
         if not r:
@@ -524,7 +531,8 @@ def _apply_envois(out: list) -> None:
         r["Contacted"] = "Yes"
         r["stage"] = "qualifying"
         r["last_send_state"] = etat
-        r["reply_type"] = "auto" if etat == "auto-reponse" else "none"
+        if not str(r.get("Reply", "")).strip().lower().startswith("yes"):
+            r["reply_type"] = "auto" if etat == "auto-reponse" else "none"
         r["follow_ups_sent"] = "0"
         label = {"lu": "lu (2 coches)", "envoye": "distribué, NON lu (1 coche)",
                  "auto-reponse": "réponse AUTOMATIQUE"}[etat]

@@ -16,6 +16,7 @@
 | Contact | Dr Fomekong Kuate Guy — biologiste (nom public) |
 | Canal | WhatsApp |
 | Contacté | Yes |
+| Réponse | YES 19/09 19:43 - "Oui" (verbatim). PREMIER OUI DE LA CAMPAGNE. |
 | Relances envoyées | 0 |
 | Source | directory |
 | Détail source | pagespratiquescm |
@@ -26,7 +27,7 @@ BATCH A. Maquette faite. Argument : Deido-Bassa est un axe en travaux chroniques
 
 ## Prochaine action
 
-**0 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**Répondre dans l'heure.** Une réponse humaine est en attente : c'est la priorité absolue (règle des 90 secondes).
 
 ## Historique — lignes du journal qui citent ce lead
 
