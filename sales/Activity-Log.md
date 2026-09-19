@@ -220,3 +220,26 @@ Si lecture sans réponse → relance **M+2 dim 20/09**, angle : la correction de
 - Livré : `tools/video/install_hyperframes.sh` (testé depuis zéro) · `research/HyperFrames-Evaluation-2026-09-19.md`
   · `content/lessons/CONTENT-LESSONS.md` **v0.9** (§10.4, §13 ter).
 - **Aucun prospect touché. Aucun prix modifié.**
+
+---
+
+## sam 19/09 09:00–09:50 — CRM M1 + M2, et un bug trouvé sur le site AMK
+
+**CRM M1** — `leads/CRM.csv` : **54 lignes × 50 colonnes**. 38 du classeur + OraCare + les 15 en prose.
+Colonnes du classeur conservées, 20 champs ajoutés. Dédoublonnage = un champ, pas une suppression.
+32/54 ont un mobile exploitable ; 8 fixes écartés. **Les deux règles « ne jamais contacter » sont maintenant
+dans la donnée** — dont **One Stop Medical Lab (Dr Njang)**, qui était rangé comme un prospect normal.
+
+**CRM M2** — les 11 contradictions vérifiées une par une (`leads/CONTRADICTIONS.md`).
+**Trois de mon propre audit étaient fausses** : COMOBIL n'était pas « tête de kill list » (DAILY OPS dit PARKED),
+la ligne St. Theresa n'était pas décalée (0 anomalie), et `Daily Ops.csv` n'est pas une copie de l'onglet (50 vs 36).
+**Correction appliquée** au playbook §A4, qui mettait un lead parké sur une liste « TODAY ».
+
+**Site AMK — bug réel trouvé en diagnostiquant le bouton manquant :** une phrase bilingue vit en **trois** endroits
+(`data-en`, `data-fr`, **et le texte visible**). Mon patch du 18/09 avait corrigé les deux attributs mais pas le texte :
+la page était juste dans un navigateur et **fausse pour Google et tout lecteur sans JS**. Corrigé ; règle §20.8.
+**Ce bug m'a aussi induit en erreur :** la chaîne « affordable monthly plan » existait dans les deux versions, donc
+elle ne prouvait rien. Ce qui prouve le déploiement, c'est la ligne de prix « Optional monthly after launch —
+15,000 FCFA », absente du site en ligne.
+
+**Déploiement :** `amk-site-2026-09-19-VOICE.zip` (3 454 752 octets) + `amk-site.zip` synchronisé.
