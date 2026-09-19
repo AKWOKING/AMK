@@ -60,6 +60,9 @@ NEW_FIELDS = [
     "contradiction", "value_kept", "value_discarded",
     # M1-bis : pourquoi un numéro est inutilisable (canal injoignable, numéro erroné…)
     "wa_number_note",
+    # M4 : le dossier de travail réel (concept, inspirations, maquette). L'audit §4 : 5 dossiers
+    # sur 8 n'avaient AUCUNE ligne — du travail qui existe et que le CRM ignore.
+    "dossier",
 ]
 
 # ── Les 15 leads hors classeur (audit §1), avec les seuls faits sourcés du dépôt ──
@@ -332,6 +335,172 @@ def _not_reachable_rows():
     return out
 
 
+# ── Les 19 laboratoires du pack du 19/09 au soir (`sales/Send-Pack-2026-09-19-LABS.md`).
+#    Aucun doublon : les numéros ont été croisés avec les 82 lignes du CRM AVANT d'écrire.
+#    `demo` est renseigné seulement pour les 4 qui ont une maquette ce soir.
+LABS_1909 = [
+    # BATCH A — Akwa / Deido / Bonamoussadi
+    dict(slug="labo-meka-bonamoussadi", org="Laboratoire Meka", city="Douala (Bonamoussadi, 241 Rue 5N036)",
+         org_type="lab", language="FR", wa_number="699 79 93 35", wa_verified="unknown",
+         contact_channel="WhatsApp", source="directory", source_detail="pagespratiquescm — 2e ligne : 677 70 57 27",
+         stage="prospecting", contacted="No", reply="No", demo="Yes",
+         dossier="clients/_mockups/labs/meka.jpg",
+         notes="BATCH A. Maquette faite (clients/_mockups/labs/meka.jpg). Argument : la liste des examens et "
+               "leur préparation — la question posée au téléphone toute la journée. Bonamoussadi est le quartier "
+               "où nos cibles dentaires (Skye, YAKS, Emmanuel) sont déjà actives."),
+    dict(slug="niva-labo-akwa", org="Niva Labo", city="Douala (Akwa, Av King Akwa — face Meche a meche)",
+         org_type="lab", language="FR", wa_number="679 03 13 30", wa_verified="unknown",
+         contact_channel="WhatsApp", source="directory", source_detail="pagespratiquescm / doualazoom",
+         stage="prospecting", contacted="No", reply="No", demo="No",
+         notes="BATCH A. Argument : Akwa est le quartier le plus concurrentiel de Douala et son voisin immédiat, "
+               "Douala Labo, A UN SITE avec espace résultats. Le patient qui compare choisit celui qu'il trouve."),
+    dict(slug="flemming-dream-bessengue", org="Flemming Dream Labo",
+         city="Douala (Bessenguè, feu rouge, Bld de la République)", org_type="lab", language="FR",
+         wa_number="699 81 34 04", wa_verified="unknown", contact_channel="WhatsApp",
+         source="directory", source_detail="pagespratiquescm (liste papier — absent des annuaires en ligne)",
+         stage="prospecting", contacted="No", reply="No", demo="No",
+         notes="BATCH A. N'apparaît dans AUCUN annuaire en ligne. Nom mémorable, trace nulle : "
+               "quand un patient tape « Flemming Dream », il ne trouve rien."),
+    dict(slug="interlabo-akwa", org="Interlabo", city="Douala (Akwa, 780 Rue E. Betote — R. Pau)",
+         org_type="lab", language="FR", wa_number="677 75 54 21", wa_verified="unknown",
+         contact_channel="WhatsApp", decision="Dr Fotso Kuaté — biologiste (nom public)",
+         source="directory", source_detail="pagespratiquescm",
+         stage="prospecting", contacted="No", reply="No", demo="Yes",
+         dossier="clients/_mockups/labs/interlabo.jpg",
+         notes="BATCH A. Maquette faite. Argument : le nom du biologiste rassure ceux qui le connaissent déjà, "
+               "mais un patient qui cherche « laboratoire sérieux à Akwa » ne tombe jamais sur lui."),
+    dict(slug="labiomed-deido", org="Labiomed", city="Douala (Deido, 104 Route Deido-Bassa)",
+         org_type="lab", language="FR", wa_number="699 98 54 66", wa_verified="unknown",
+         contact_channel="WhatsApp", decision="Dr Fomekong Kuate Guy — biologiste (nom public)",
+         source="directory", source_detail="pagespratiquescm",
+         stage="prospecting", contacted="No", reply="No", demo="Yes",
+         dossier="clients/_mockups/labs/labiomed.jpg",
+         notes="BATCH A. Maquette faite. Argument : Deido-Bassa est un axe en travaux chroniques — "
+               "une page qui explique l'accès supprime des dizaines d'appels par semaine."),
+    dict(slug="la-passerelle-deido", org="Labo La Passerelle", city="Douala (Deido, 820 Bld de la Réunification)",
+         org_type="lab", language="FR", wa_number="694 71 91 22", wa_verified="unknown",
+         contact_channel="WhatsApp", decision="Dr Djanpou — biologiste (nom public)",
+         source="directory", source_detail="pagespratiquescm",
+         stage="prospecting", contacted="No", reply="No", demo="No",
+         notes="BATCH A. Argument : « La Passerelle » est un nom qu'on retient mais qui n'existe pas en ligne, "
+               "et le labo communique par une adresse yahoo — jamais de présence propre."),
+    dict(slug="biodiagnostics-sable", org="Laboratoire Biodiagnostics", city="Douala (Sable, Rue Deido-Bonanjo)",
+         org_type="lab", language="FR", wa_number="699 92 91 98", wa_verified="unknown",
+         contact_channel="WhatsApp", decision="Dr Tankoua Jean Alain — biologiste (nom public)",
+         source="directory", source_detail="pagespratiquescm",
+         stage="prospecting", contacted="No", reply="No", demo="No",
+         notes="BATCH A. ⚠️ Un « Laboratoire Biodiagnostic » existe aussi à New-Bell (Rue du Roi Njoya), "
+               "probablement le MÊME biologiste : deux adresses, une seule page à faire. "
+               "Argument : avec deux adresses, un patient ne sait pas laquelle choisir — rien ne l'explique."),
+    # BATCH B — Bonabéri / New-Bell / Akwa / Bali
+    dict(slug="diagmed-bonaberi", org="Diagmed", city="Douala (Bonabéri, Rue 4.352 — Route du Lycée)",
+         org_type="lab", language="FR", wa_number="698 97 22 03", wa_verified="unknown",
+         contact_channel="WhatsApp", source="directory", source_detail="pagespratiquescm — 2e ligne : 675 96 05 98",
+         stage="prospecting", contacted="No", reply="No", demo="No",
+         notes="BATCH B. Bonabéri = le quartier de La Béthanie, déjà contactée. Argument : résultats annoncés "
+               "sur WhatsApp au lieu de faire revenir le patient — la question la plus posée en salle d'attente."),
+    dict(slug="aube-labo-akwa", org="Aube Labo", city="Douala (Akwa II)", org_type="lab", language="FR",
+         wa_number="693 06 81 84", wa_verified="unknown", contact_channel="WhatsApp",
+         source="directory", source_detail="goafricaonline — Akwa II",
+         stage="prospecting", contacted="No", reply="No", demo="No",
+         notes="BATCH B. Argument : le repère « derrière l'ancien cinéma Le Berlioz » ne parle plus aux moins "
+               "de 30 ans — un point Maps cliquable vaut mieux qu'un repère disparu."),
+    dict(slug="hyrus-labo-deido", org="Hyrus Labo", city="Douala (Deido, Bld de la République)",
+         org_type="lab", language="FR", wa_number="699 76 01 18", wa_verified="unknown",
+         contact_channel="WhatsApp", source="directory",
+         source_detail="pagespratiquescm + PDF réseau de soins Société Générale",
+         stage="prospecting", contacted="No", reply="No", demo="No",
+         notes="BATCH B. Argument : sur le boulevard de la République — un emplacement que beaucoup envieraient, "
+               "mais qu'on ne trouve pas en ligne."),
+    dict(slug="labtag-bali", org="Labtag", city="Douala (Bali, 301 Rue Ngosso Din)", org_type="lab",
+         language="FR", wa_number="699 68 30 50", wa_verified="unknown", contact_channel="WhatsApp",
+         decision="Dr Tagu J.P. — biologiste (nom public)", source="directory", source_detail="pagespratiquescm",
+         stage="prospecting", contacted="No", reply="No", demo="No",
+         notes="BATCH B. ⚠️ MÊME ADRESSE ET MÊME NOM que « Dr Jean Pierre Tagu » (699 91 66 16) : "
+               "NE PAS ENVOYER AUX DEUX. Envoyer Labtag d'abord, l'autre sert de relance. "
+               "Argument : un fax, en 2026, est le signe le plus net d'une présence en ligne jamais construite."),
+    dict(slug="sainte-anne-newbell", org="Laboratoire Sainte Anne",
+         city="Douala (New-Bell, 152 Av de l'Indépendance)", org_type="lab", language="FR",
+         wa_number="675 39 76 65", wa_verified="unknown", contact_channel="WhatsApp",
+         decision="Dr Nkanjo Francis — biologiste (nom public)", source="directory",
+         source_detail="pagespratiquescm / doualazoom",
+         stage="prospecting", contacted="No", reply="No", demo="No",
+         notes="BATCH B. New-Bell = l'un des quartiers les plus densément peuplés de Douala et des moins "
+               "couverts en ligne. Argument : le patient cherche au dernier moment, sur son téléphone."),
+    dict(slug="pasteur-medlas-akwa", org="Ctre d'Analyses Médicales Pasteur Medlas",
+         city="Douala (Akwa, Bld de la République)", org_type="lab", language="FR", wa_number="677 45 99 97",
+         wa_verified="unknown", contact_channel="WhatsApp", source="directory",
+         source_detail="pagespratiquescm", stage="prospecting", contacted="No", reply="No", demo="No",
+         notes="BATCH B. Argument : sur le même axe que trois autres laboratoires de ce pack — et celui qui a "
+               "un site part avec les patients qui comparent."),
+    # BATCH C — Yassa / Deido / New Bell / Bonanjo
+    dict(slug="2k-labo-yassa", org="2K Labo", city="Douala (Yassa, à côté de l'institut La Perle)",
+         org_type="lab", language="FR", wa_number="670 94 43 03", wa_verified="unknown",
+         contact_channel="WhatsApp", source="directory",
+         source_detail="mont-pandi.com — horaires publics 07:00–18:00 · 2e ligne : 694 59 10 44",
+         stage="prospecting", contacted="No", reply="No", demo="Yes",
+         dossier="clients/_mockups/labs/2k-labo.jpg",
+         notes="⭐ MEILLEUR PROSPECT DU PACK. Maquette faite. Yassa = quartier jeune et en expansion : "
+               "des familles qui arrivent, sans habitude médicale locale, qui cherchent tout sur leur téléphone. "
+               "Là où la population est nouvelle, le premier trouvé gagne. Horaires 07:00–18:00."),
+    dict(slug="pathcare-deido", org="Pathcare Diagnostics", city="Douala (Deido)", org_type="lab",
+         language="FR/EN", wa_number="680 00 88 45", wa_verified="unknown", contact_channel="WhatsApp",
+         source="directory", source_detail="goafricaonline",
+         stage="prospecting", contacted="No", reply="No", demo="No",
+         notes="BATCH C. Nom de marque anglophone SANS AUCUNE présence en ligne au Cameroun. "
+               "Argument : le nom anglais est un atout pour la clientèle anglophone de Douala — "
+               "rarement servie, et une page FR|EN la sert."),
+    dict(slug="biolex-deido", org="Biolex Labo", city="Douala (Deido, Rue Kotto)", org_type="lab",
+         language="FR", wa_number="697 78 00 05", wa_verified="unknown", contact_channel="WhatsApp",
+         source="directory", source_detail="goafricaonline",
+         stage="prospecting", contacted="No", reply="No", demo="No",
+         notes="BATCH C. Argument : quand un patient tape « Biolex », il ne trouve rien — "
+               "même pas une confirmation que le laboratoire existe."),
+    dict(slug="bioscan-newbell", org="Bioscan", city="Douala (New Bell)", org_type="lab", language="FR",
+         wa_number="680 06 03 94", wa_verified="unknown", contact_channel="WhatsApp",
+         source="directory", source_detail="goafricaonline + PDF réseau de soins Société Générale",
+         stage="prospecting", contacted="No", reply="No", demo="No",
+         notes="BATCH C. Figure déjà dans des réseaux de soins professionnels — donc les assureurs et les "
+               "entreprises le connaissent. Ce qui manque, c'est la page que LE PATIENT trouve."),
+    dict(slug="cidm-saint-joseph", org="CIDM St Joseph", city="Douala", org_type="lab", language="FR",
+         wa_number="674 30 07 98", wa_verified="unknown", contact_channel="WhatsApp",
+         source="directory", source_detail="goafricaonline",
+         stage="prospecting", contacted="No", reply="No", demo="No",
+         notes="BATCH C. AUCUNE adresse publique exploitable dans les annuaires — seulement un nom et un "
+               "numéro. Un numéro seul est un numéro qu'on n'appelle pas au hasard. "
+               "C'est le prospect du pack pour qui une page change le plus de choses."),
+]
+
+# Ces deux entrées n'ont PAS été envoyées : ce sont des pièges enregistrés pour ne pas les oublier.
+LABS_ECARTES = [
+    ("douala-lab-akwa", "Douala Labo", "Douala (Akwa, 37 Av King Akwa)", "699 62 61 21",
+     "https://www.douala-labo.com/", "A un site vivant avec espace résultats en ligne."),
+    ("labo-drouot-akwa", "Laboratoire Drouot", "Douala (Akwa, 789 Rue Drouot)", "699 09 29 55",
+     "https://laboratoire-drouot.com/", "A un site vivant — 20 ans d'expertise affichés."),
+    ("kylaya-labo-bali", "Kylaya Labo", "Douala (Bali, 189 Rue des Manguiers)", "696 78 77 78",
+     "http://www.kylayalabo.com/", "A un site vivant."),
+    ("scientilabo-akwa", "Scientilabo", "Douala (Akwa, Rue Gallieni)", "696 42 34 77",
+     "https://scientilabo.com/", "A un site vivant — 8 spécialités, 34 ans d'expérience."),
+    ("le-bon-diagnostic-elf", "Le Bon Diagnostic", "Douala (Elf, Axe-Lourd)", "699 95 67 32",
+     "https://www.lebondiagnostic.com", "Site référencé dans les annuaires."),
+]
+
+
+def _labs_ecartes_rows():
+    out = []
+    for slug, org, city, num, site, why in LABS_ECARTES:
+        out.append(dict(slug=slug, org=org, city=city, language="FR", org_type="lab",
+                        wa_number=num, wa_verified="no", stage="disqualified", contacted="No",
+                        reply="No", demo="No", source="directory", source_detail="annuaires de Douala",
+                        site_url=site, site_checked_on="2026-09-19",
+                        disqualification_reason=f"A DÉJÀ UN SITE VIVANT ({site}). Hors cible — "
+                                                "vérifié AVANT toute production (règle 66).",
+                        notes=f"⛔ NE PAS ENVOYER. {why} Écarté le 19/09 pendant la préparation du pack LABOS. "
+                              "C'est exactement le piège QUALITECH/Clinique des Anges — sauf que cette fois "
+                              "la vérification est passée avant la production, pas après."))
+    return out
+
+
 # ── Le lead hors classeur qui vit dans un autre onglet du même fichier ──────────
 ORACARE = dict(slug="oracare-buea", org="OraCare Dental Clinic (Oracare237)",
                city="Buea (Molyo)", org_type="clinic", language="EN",
@@ -481,6 +650,61 @@ STRUCTURAL = [
 ]
 
 
+# ── M4 · les dossiers de travail, liés à leur ligne.
+#    Le rapprochement se fait sur le SLUG, jamais par recherche de texte : l'audit §4 prévenait
+#    qu'une recherche du mot « NABESK » remonte la ligne Baird Memorial (« same road as NABESK »),
+#    ce qui produirait une fausse fusion.
+DOSSIERS = {
+    "afrique-labo-douala": "clients/afrique-labo/",
+    "jempo-deido": "clients/jempo/",
+    "opticien-bali-douala": "clients/l-opticien/",
+    "la-bethanie-bonaberi": "clients/la-bethanie/",
+    "nabesk-comprehensive-college": "clients/nabesk/",
+    "saint-bernard-high-school-sbhs": "clients/saint-bernard/",
+    "summerset-bilingual-college-smbicol": "clients/summerset/",
+    "camera-akwa": "clients/douala-cliniques/01-camera.jpg",
+    "le-nid-bessengue": "clients/douala-cliniques/02-le-nid.jpg",
+    "wonders-bonamoussadi": "clients/douala-cliniques/03-wonders.jpg",
+    "adonai-douala": "clients/douala-cliniques/04-adonai.jpg",
+    "qualitech-douala": "clients/douala-cliniques/05-qualitech.jpg",
+    "malia-labo-douala": "clients/douala-cliniques/06-malia-labo.jpg",
+    "uni-labo-bonamoussadi": "clients/douala-cliniques/07-unilabo.jpg",
+    "centre-medical-de-bonanjo": "clients/_mockups/bonanjo.jpg",
+    "2k-labo-yassa": "clients/_mockups/labs/2k-labo.jpg",
+    "interlabo-akwa": "clients/_mockups/labs/interlabo.jpg",
+    "labiomed-deido": "clients/_mockups/labs/labiomed.jpg",
+    "labo-meka-bonamoussadi": "clients/_mockups/labs/meka.jpg",
+}
+
+# Dossiers qui n'appartiennent à aucun lead (gabarits de maquette, pas des prospects)
+DOSSIERS_HORS_LEAD = {"_mockups"}
+
+
+def check_dossiers(out: list) -> None:
+    """Le vrai livrable de M4 n'est pas la table, c'est le CONTRÔLE :
+    chaque dossier de `clients/` doit être référencé, et chaque référence doit exister.
+    Une table se périme ; un contrôle qui refuse le silence, non."""
+    linked = {r.get("dossier") for r in out if r.get("dossier")}
+    base = ROOT / "clients"
+    problems = []
+    if base.exists():
+        for d in sorted(base.iterdir()):
+            if not d.is_dir() or d.name in DOSSIERS_HORS_LEAD:
+                continue
+            if not any((l or "").startswith(f"clients/{d.name}/") for l in linked):
+                problems.append(f"dossier non référencé : clients/{d.name}/")
+    for l in sorted(linked):
+        if l and not (ROOT / l).exists():
+            problems.append(f"référence morte : {l}")
+    if problems:
+        print(f"  ⚠ M4 — {len(problems)} problème(s) :")
+        for x in problems:
+            print("      ·", x)
+    else:
+        n = len([d for d in base.iterdir() if d.is_dir() and d.name not in DOSSIERS_HORS_LEAD]) if base.exists() else 0
+        print(f"  M4 : {len(linked)} dossier(s)/maquette(s) liés · {n} dossier(s) de travail, tous référencés ✓")
+
+
 def read_workbook():
     wb = openpyxl.load_workbook(XLSX, data_only=True)
     ws = wb["Leads 50"]
@@ -549,6 +773,14 @@ def main() -> int:
     for p in _not_reachable_rows():
         out.append({"School": p["org"], **p})
 
+    # 2d · les 19 laboratoires du pack du 19/09 au soir
+    for p in LABS_1909:
+        out.append({"School": p["org"], **p})
+
+    # 2e · les 5 laboratoires ÉCARTÉS pour site vivant — la donnée qui évite de refaire le travail
+    for p in _labs_ecartes_rows():
+        out.append({"School": p["org"], **p})
+
     # 3 · les 15 hors classeur
     for p in PROSE_LEADS:
         out.append({"School": p["org"], **p})
@@ -571,6 +803,12 @@ def main() -> int:
         b["same_buyer_as"] = norm_slug(a.get("School", ""))
         a["Notes"] = (str(a.get("Notes") or "") + " · " + note).strip(" ·")
         b["Notes"] = (str(b.get("Notes") or "") + " · " + note).strip(" ·")
+
+    # 4b · M4 — lier les dossiers de travail
+    for rec in out:
+        d = DOSSIERS.get(rec.get("slug"))
+        if d:
+            rec["dossier"] = d
 
     # 5 · M2 — les contradictions : valeur retenue + valeur écartée, sur la ligne concernée
     by_slug = {r.get("slug"): r for r in out}
@@ -622,6 +860,7 @@ def main() -> int:
         t = rec.get("org_type") or "(non renseigné)"
         types[t] = types.get(t, 0) + 1
     print("  types   :", " · ".join(f"{k}={v}" for k, v in sorted(types.items(), key=lambda x: -x[1])))
+    check_dossiers(out)
     n_con = sum(1 for r in out if r.get("contradiction"))
     print(f"  M2 : {n_con} ligne(s) portent une contradiction résolue ({len(CONTRADICTIONS)} + {len(STRUCTURAL)} structurelles)")
     noslug = [r for r in out if not r.get("slug")]
