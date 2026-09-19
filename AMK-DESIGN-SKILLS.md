@@ -698,6 +698,42 @@ because the tools were missing. **A delivered page with no photograph is an unfi
 6. **Weight:** never base64 five photographs into a single file. **Separate files load in parallel**; a 750 KB
    base64 page is a slow page on 3G, which is exactly the market we sell to.
 
+### 20.11 A `<details>` has ONE summary — never put a language class on it (added 19 Sep 2026)
+
+**Found by King on 19 Sep, on Labiomed:** *« FAQ (Questions) do not appear in the English version »*.
+The accordion rows were **completely blank in English** — and **also on Bonanjo, which was already live.**
+
+**The cause.** I wrote:
+
+```html
+<details>
+  <summary class="fr-only">Faut-il prendre rendez-vous ?</summary>
+  <summary class="en-only">Do I need an appointment?</summary>
+  ...
+</details>
+```
+
+**HTML recognises only the FIRST `<summary>` as the disclosure control.** In English the first one is hidden,
+so the control is empty — and the whole FAQ looks broken to an English reader. Every one of my other builds
+used the correct pattern, which is why **only the two pages written in the last two days were affected.**
+
+**The correct pattern — the one already shipped and validated everywhere else:**
+
+```html
+<details>
+  <summary><span class="fr-only">…</span><span class="en-only">…</span></summary>
+  <p><span class="fr-only">…</span><span class="en-only">…</span></p>
+</details>
+```
+
+**The rule, and it generalises past `<details>`:** a language class may only sit on an element whose
+**text** is bilingual — **never on an element whose BEHAVIOUR is structural** (`<summary>`, `<option>`,
+`<title>`, `<legend>`, `<caption>`). Wrapping a `<span>` is always safe; wrapping the functional element is not.
+
+**Repaired with `tools/site/fix_details_summary.py`** (idempotent, and it re-checks that no `<details>`
+has more than one `<summary>`). Both pages verified **in a real browser, in English: 9 questions visible, all opening**.
+**No browser test had ever opened the FAQ in the second language — that is the gap that let this through.**
+
 ### 20.9 `display:revert !important` beats every other `display` (added 19 Sep 2026)
 
 Our bilingual pattern hides one language with `html[data-lang="fr"] .en-only{display:none !important}` and shows the

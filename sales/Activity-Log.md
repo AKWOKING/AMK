@@ -395,3 +395,31 @@ premier coup) · une page qui **répond à la vraie question** (« je dois venir
 **6 photos :** le hero **généré** (exclusion explicite de tout texte/logo, puis relu à l'œil) ; les 4 autres viennent des
 visuels de laboratoire **déjà dans le dépôt** (`labo-samples`, `labo-hero`, `labo-reception`) — King avait raison.
 **Portiques : 0 finding / 245 passages · 5 images, 0 cassée · FR/EN équilibré · un seul numéro · noindex.**
+
+---
+
+## sam 19/09 21:00+ — Le message part, et King trouve un vrai bug : la FAQ anglaise
+
+- **Le message est PARTI à 21:00** avec le lien `labiomed.vercel.app` et le prix (100 000 FCFA, 50/50).
+  **Premier message de la campagne qui contient le prix ET une preuve cliquable.** Envoyé à la fermeture de la fenêtre.
+- **King signale : « FAQ (Questions) do not appear in the English version »** — **c'est un vrai bug, et il est grave.**
+
+**La cause.** J'avais écrit **DEUX `<summary>`** dans chaque `<details>` (un FR, un EN). **HTML ne reconnaît
+que le PREMIER comme bouton d'ouverture.** En anglais, le premier est caché → **le bouton est vide**, et
+toute la FAQ anglaise semble absente. **Les 5 questions de Labiomed et les 4 de Bonanjo étaient touchées —
+et Bonanjo est DÉJÀ EN LIGNE depuis 13:35.**
+
+**Ce qui rend ce bug instructif :** **tous mes autres sites utilisaient déjà le bon motif** (la langue dans des
+`<span>` à l'intérieur d'un seul `<summary>`). **Seules les deux pages écrites ces deux derniers jours sont
+touchées** — celles construites vite. La vitesse n'a pas créé un mauvais style, elle a fait sauter une
+vérification que le reste du dépôt faisait naturellement.
+
+**Réparé :** `tools/site/fix_details_summary.py` (idempotent, et il revérifie qu'aucun `<details>` n'a deux `<summary>`).
+**40 paires fusionnées sur les 2 pages. Vérifié dans un vrai navigateur, EN ANGLAIS : 9 questions visibles, toutes s'ouvrent.**
+Recherche systématique des autres éléments à comportement structurel (`summary`, `title`, `option`, `legend`) : **aucun autre cas.**
+`audit_html.py` : **0 finding** sur les deux pages.
+
+**La leçon, et c'est la troisième du même jour :** le portique `audit_html.py` **ne teste jamais la FAQ en anglais.**
+Il compte les passages de texte et le contraste — pas si un contrôle structurel fonctionne dans la seconde langue.
+**Nouvelle règle §20.11 : une classe de langue ne va JAMAIS sur un élément dont le comportement est structurel,
+seulement sur son texte.**
