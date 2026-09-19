@@ -33,7 +33,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 15 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 17 ligne(s).*
 
 `L43` · | **ven 18/09 19:42** | **Centre Médical de Bonanjo** (Bonapriso, 694 57 22 77) | msg 1 — sans maquette | Envoyé | **Non** |
 `L112` · | 19:42 | Centre Médical de Bonanjo · Kamaïs Optic |
@@ -50,6 +50,8 @@
 `L305` · ## sam 19/09 13:35 — Bonanjo : message envoyé par King, et la page passe aux images
 `L307` · - **King a déployé `bonanjo.vercel.app` et envoyé le message à 13:35.** Le fil attend sa réponse.
 `L340` · **Bundle : `hosting/previews/bonanjo/index.html` + `img/` (592 Ko).** L'ancien fichier plat `demos/concept-bonanjo-v1.html`
+`L409` · toute la FAQ anglaise semble absente. **Les 5 questions de Labiomed et les 4 de Bonanjo étaient touchées —
+`L410` · et Bonanjo est DÉJÀ EN LIGNE depuis 13:35.**
 
 ---
 

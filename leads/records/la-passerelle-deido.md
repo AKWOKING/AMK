@@ -22,7 +22,7 @@
 
 ## Notes
 
-BATCH A. Argument : « La Passerelle » est un nom qu'on retient mais qui n'existe pas en ligne, et le labo communique par une adresse yahoo — jamais de présence propre.
+⚠️ Profil affiché « +237 6 94 71 91 22 » — AUCUN NOM, aucune catégorie. King a envoyé quand même (décision de volume du 19/09). À surveiller : si la réponse semble venir d'une personne privée, ne pas insister. | Envoyé le 19/09 à 19:33 — distribué, NON lu (1 coche). Profil SANS NOM (« +237 6 94 71 91 22 ») — King l'a signalé. Une coche. Cohérent avec le reste du dossier : ce labo communique par adresse yahoo et n'a jamais construit de présence en ligne.
 
 ## Prochaine action
 

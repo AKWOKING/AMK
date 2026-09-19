@@ -22,7 +22,7 @@
 
 ## Notes
 
-BATCH A. Maquette faite. Argument : le nom du biologiste rassure ceux qui le connaissent déjà, mais un patient qui cherche « laboratoire sérieux à Akwa » ne tombe jamais sur lui.
+⚠️ Avatar = la lettre « I », pas de logo d'entreprise. Identité non confirmée à l'écran. | Envoyé le 19/09 à 19:31 — distribué, NON lu (1 coche). UNE coche — pas encore lu. Maquette déjà prête.
 
 ## Prochaine action
 

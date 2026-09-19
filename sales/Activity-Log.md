@@ -423,3 +423,60 @@ Recherche systématique des autres éléments à comportement structurel (`summa
 Il compte les passages de texte et le contraste — pas si un contrôle structurel fonctionne dans la seconde langue.
 **Nouvelle règle §20.11 : une classe de langue ne va JAMAIS sur un élément dont le comportement est structurel,
 seulement sur son texte.**
+
+---
+
+## sam 19/09 21:16–21:40 — LABIOMED : la conversation complète, et 3 vérités à corriger
+
+### La conversation, telle qu'elle s'est passée
+
+| Heure | Qui | Quoi | État |
+|---|---|---|---|
+| 19:32 | nous | msg 1 | **lu (2 coches)** |
+| **19:43** | lui | **« Oui »** | — |
+| 20:02 | nous | aperçu + texte, **sans le prix** | lu |
+| **21:00** | nous | **lien `labiomed.vercel.app` + 100 000 FCFA (50/50)** | **lu (2 coches)** |
+| **21:16** | lui | **« Ok je vous reviens dès que je suis disponible »** | — |
+| 21:22 | King | « C'est noté, Docteur.. Je reste à votre disposition. » | **lu (2 coches)** |
+| 21:27 | lui | 🙏 | — |
+| 21:40 | — | **il a rouvert le fil** | — |
+
+**Ce que ça veut dire, sans se raconter d'histoires :** **ce n'est PAS un oui commercial.** C'est un
+« je suis intéressé, je n'ai pas le temps maintenant ». **La différence avec Bonanjo : ici il a demandé
+l'aperçu, il l'a reçu, et il a répondu « je reviens » APRÈS avoir vu le prix.** Le prix n'a donc pas tué
+l'intérêt — c'est déjà beaucoup plus loin que les 44 autres.
+
+**Le risque, et il est réel :** un « je vous reviens » sans date s'éteint tout seul. **Il est 21:40 : la
+fenêtre est fermée** (pas d'outreach froid après 21:00), donc **on ne relance pas ce soir.** Mais comme il
+a déjà été prévenu qu'on reste disponible, **on ne le relance pas non plus demain** : ce serait deux
+relances en douze heures.
+
+**→ La relance de LABIOMED, c'est `M+2` = lundi 21/09.** Et l'angle est déjà écrit : **pas « alors ? »,
+mais une question utile** — ses horaires, qui manquent à la page.
+
+### Trois vérités corrigées dans le CRM
+
+**① Les 5 numéros sans WhatsApp : confirmé par King.** *« the others weren't available on whatsapp »* →
+Niva, Aube, Hyrus, Biolex, Bioscan passent de « à confirmer » à **CONFIRMÉ**. Rien à retenter sur ces 5.
+
+**② Décision de King consignée : envoyer même aux profils non professionnels.**
+*« I sent to all the numbers available even those that weren't professional. »*
+C'est un **écart assumé** à la règle du 18/09 (le profil doit s'identifier : nom + catégorie).
+**La règle reste la bonne quand on a le temps de vérifier ; en poussée de volume, King a choisi de ne pas
+perdre le créneau.** Ce n'est **pas** un retour en arrière sur la leçon Kingdom Family (696 023 696 =
+un cabinet de finances, pas une école) : **ce numéro reste écarté.**
+Deux profils sont notés dans le CRM comme envoyés **sans identité vérifiée** :
+**La Passerelle** (« +237 6 94 71 91 22 », aucun nom, aucune catégorie) et **Interlabo** (avatar = la
+lettre « I », pas de logo). *À surveiller : si la réponse semble venir d'une personne privée, ne pas insister.*
+
+**③ 4ᵉ occurrence du même bug — corrigée à la CAUSE.** Les notes des envois et la conversation LABIOMED
+**n'étaient toujours pas dans le CRM** : le `KEYMAP` écrasait sans condition ce que `_apply_envois` venait
+d'écrire. Les trois fois précédentes, j'avais corrigé le symptôme. **Cette fois, la cause : la valeur déjà
+posée par un traitement explicite GAGNE sur la table de correspondance.** Une table ne peut plus effacer
+une donnée.
+
+### Et une perte sèche à signaler
+
+**`leads/build/views.py` et `rebuild.sh` ont été effacés par le 8ᵉ recul du bac à sable** — le commit qui
+les contenait n'était pas poussé. **Les 5 vues générées (`PIPELINE`, `KILL-LIST`, `STALE`, `SOURCES`,
+`Daily-Plan`) doivent être refaites.** Le CRM, les fiches `records/` et les deux correctifs sont poussés.

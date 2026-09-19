@@ -21,7 +21,7 @@
 
 ## Notes
 
-BATCH A. Maquette faite (clients/_mockups/labs/meka.jpg). Argument : la liste des examens et leur préparation — la question posée au téléphone toute la journée. Bonamoussadi est le quartier où nos cibles dentaires (Skye, YAKS, Emmanuel) sont déjà actives.
+Envoyé le 19/09 à 19:29 — distribué, NON lu (1 coche). UNE coche — pas encore lu. Maquette déjà prête.
 
 ## Prochaine action
 

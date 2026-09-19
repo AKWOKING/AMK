@@ -22,7 +22,7 @@
 
 ## Notes
 
-BATCH B. ⚠️ MÊME ADRESSE ET MÊME NOM que « Dr Jean Pierre Tagu » (699 91 66 16) : NE PAS ENVOYER AUX DEUX. Envoyer Labtag d'abord, l'autre sert de relance. Argument : un fax, en 2026, est le signe le plus net d'une présence en ligne jamais construite.
+Envoyé le 19/09 à 19:23 — lu (2 coches).
 
 ## Prochaine action
 

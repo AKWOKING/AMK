@@ -22,7 +22,7 @@
 
 ## Notes
 
-BATCH B. New-Bell = l'un des quartiers les plus densément peuplés de Douala et des moins couverts en ligne. Argument : le patient cherche au dernier moment, sur son téléphone.
+Envoyé le 19/09 à 19:24 — lu (2 coches).
 
 ## Prochaine action
 

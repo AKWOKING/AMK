@@ -21,7 +21,7 @@
 
 ## Notes
 
-BATCH B. Argument : sur le même axe que trois autres laboratoires de ce pack — et celui qui a un site part avec les patients qui comparent.
+Envoyé le 19/09 à 19:25 — lu (2 coches).
 
 ## Prochaine action
 

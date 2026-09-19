@@ -22,7 +22,7 @@
 
 ## Notes
 
-BATCH A. ⚠️ Un « Laboratoire Biodiagnostic » existe aussi à New-Bell (Rue du Roi Njoya), probablement le MÊME biologiste : deux adresses, une seule page à faire. Argument : avec deux adresses, un patient ne sait pas laquelle choisir — rien ne l'explique.
+Envoyé le 19/09 à 19:33 — lu (2 coches).
 
 ## Prochaine action
 

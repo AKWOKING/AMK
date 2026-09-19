@@ -21,7 +21,7 @@
 
 ## Notes
 
-BATCH C. AUCUNE adresse publique exploitable dans les annuaires — seulement un nom et un numéro. Un numéro seul est un numéro qu'on n'appelle pas au hasard. C'est le prospect du pack pour qui une page change le plus de choses.
+Envoyé le 19/09 à 19:29 — lu (2 coches).
 
 ## Prochaine action
 

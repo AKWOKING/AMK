@@ -21,7 +21,7 @@
 
 ## Notes
 
-BATCH C. Nom de marque anglophone SANS AUCUNE présence en ligne au Cameroun. Argument : le nom anglais est un atout pour la clientèle anglophone de Douala — rarement servie, et une page FR|EN la sert.
+Envoyé le 19/09 à 19:26 — distribué, NON lu (1 coche). UNE coche — pas encore lu.
 
 ## Prochaine action
 

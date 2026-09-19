@@ -490,7 +490,7 @@ ENVOIS_1909_SOIR = {
     "flemming-dream-bessengue":    ("lu", "19:30", ""),
     "interlabo-akwa":              ("envoye", "19:31", "UNE coche — pas encore lu. Maquette déjà prête."),
     "labiomed-deido":              ("lu", "19:32",
-                                    "***A REPONDU Oui a 19:43 - 11 minutes apres notre message. PREMIER OUI DE LA CAMPAGNE.*** Apercu + texte envoyes 20:02 SANS le prix (decision de King : le prix va avec un lien). Demo complete construite : hosting/previews/labiomed/ - a deployer puis envoyer avec le prix (100 000 FCFA, 50/50)."),
+                                    "***PREMIER OUI DE LA CAMPAGNE.*** ""19:43 il repond « Oui » (11 min apres notre message). ""20:02 apercu + texte, SANS le prix (choix de King : le prix va avec un lien). ""21:00 lien labiomed.vercel.app + PRIX 100 000 FCFA 50/50 — premier message de la campagne ""avec prix ET preuve cliquable. ""21:16 il repond : « Ok je vous reviens des que je suis disponible ». ""21:22 King : « C'est note, Docteur.. Je reste a votre disposition. » (2 coches). ""21:27 il envoie un emoji 🙏. Derniere visite 21:40 — il a donc LU la reponse de King. ""ETAT : chaud, en attente, PAS de date donnee. Prochaine relance M+2 = lundi 21/09."),
     "la-passerelle-deido":         ("envoye", "19:33",
                                     "Profil SANS NOM (« +237 6 94 71 91 22 ») — King l'a signalé. Une coche. "
                                     "Cohérent avec le reste du dossier : ce labo communique par adresse yahoo "
@@ -501,12 +501,36 @@ ENVOIS_1909_SOIR = {
 # Numéros essayés et NON joignables sur WhatsApp (King, 19/09 : « the others weren't available »).
 # PAR ÉLIMINATION, pas par affirmation : les 5 du pack qu'il n'a pas envoyés (+ le jumeau du Dr Tagu,
 # volontairement écarté). À CONFIRMER par King.
+# CONFIRMÉ par King le 19/09 : « the others weren't available on whatsapp ».
 PAS_SUR_WHATSAPP = {
-    "niva-labo-akwa": "essayé le 19/09 — numéro pas sur WhatsApp (à confirmer par King)",
-    "aube-labo-akwa": "essayé le 19/09 — numéro pas sur WhatsApp (à confirmer par King)",
-    "hyrus-labo-deido": "essayé le 19/09 — numéro pas sur WhatsApp (à confirmer par King)",
-    "biolex-deido": "essayé le 19/09 — numéro pas sur WhatsApp (à confirmer par King)",
-    "bioscan-newbell": "essayé le 19/09 — numéro pas sur WhatsApp (à confirmer par King)",
+    "niva-labo-akwa": "CONFIRMÉ 19/09 — pas sur WhatsApp",
+    "aube-labo-akwa": "CONFIRMÉ 19/09 — pas sur WhatsApp",
+    "hyrus-labo-deido": "CONFIRMÉ 19/09 — pas sur WhatsApp",
+    "biolex-deido": "CONFIRMÉ 19/09 — pas sur WhatsApp",
+    "bioscan-newbell": "CONFIRMÉ 19/09 — pas sur WhatsApp",
+}
+
+
+# ── DÉCISION DE KING — 19/09/2026, pendant la poussée de volume ────────────────
+# « I sent to all the numbers available even those that weren't professional. »
+#
+# C'est un ÉCART ASSUMÉ à la règle du 18/09 (« le profil WhatsApp doit s'identifier :
+# nom + catégorie »). La règle reste la bonne quand on a le temps de vérifier ; en poussée
+# de volume, King a choisi d'envoyer à tout numéro joignable plutôt que de perdre le créneau.
+#
+# Ce que ça change, et ce que ça ne change pas :
+#   · ce n'est PAS revenir sur la leçon Kingdom Family (696 023 696 = un cabinet de finances,
+#     PAS une école) — cette erreur-là reste interdite, et le numéro reste écarté ;
+#   · c'est accepter qu'un message puisse arriver à quelqu'un qui n'est pas le bon
+#     interlocuteur, quand le pire cas est un « ce n'est pas moi » et non un message à un inconnu.
+#
+# Les profils ci-dessous ont été envoyés SANS nom ni catégorie vérifiés. On le note, pour que
+# la prochaine personne sache pourquoi ces lignes n'ont pas de `profile_name_seen`.
+PROFILS_NON_PROFESSIONNELS = {
+    "la-passerelle-deido": "Profil affiché « +237 6 94 71 91 22 » — AUCUN NOM, aucune catégorie. "
+                           "King a envoyé quand même (décision de volume du 19/09). "
+                           "À surveiller : si la réponse semble venir d'une personne privée, ne pas insister.",
+    "interlabo-akwa": "Avatar = la lettre « I », pas de logo d'entreprise. Identité non confirmée à l'écran.",
 }
 
 
@@ -538,6 +562,11 @@ def _apply_envois(out: list) -> None:
                  "auto-reponse": "réponse AUTOMATIQUE"}[etat]
         r["Notes"] = (f"Envoyé le 19/09 à {heure} — {label}." + (" " + note if note else "") +
                       " | " + str(r.get("Notes") or "")).strip(" |")
+    for slug, why in PROFILS_NON_PROFESSIONNELS.items():
+        r = by.get(slug)
+        if r is not None:
+            r["Notes"] = ("⚠️ " + why + " | " + str(r.get("Notes") or "")).strip(" |")
+
     for slug, why in PAS_SUR_WHATSAPP.items():
         r = by.get(slug)
         if not r:
@@ -911,9 +940,20 @@ def main() -> int:
     # Garde-fou (bug du 19/09) : une clé mal orthographiée était jetée EN SILENCE par
     # DictWriter(extrasaction="ignore") — 15 leads avaient perdu City, Language, Contacted,
     # Reply et Demo made sans qu'aucune ligne ne se plaigne. On refuse désormais de sortir.
+    # ⚠️ CORRECTION DE CAUSE (4e occurrence du même bug, 19/09).
+    # AVANT : `rec[full] = rec.pop(short)` écrasait SANS CONDITION ce qu'un autre traitement
+    # venait d'écrire (`_apply_envois`, `_apply ...`) — les envois du 19/09 et la conversation
+    # LABIOMED ont été perdus deux fois de cette façon.
+    # MAINTENANT : la forme longue déjà posée GAGNE. On jette seulement le doublon court.
+    # Une donnée écrite par un traitement explicite ne peut plus être effacée par une
+    # simple table de correspondance.
     for rec in out:
         for short, full in KEYMAP.items():
-            if short in rec:
+            if short not in rec:
+                continue
+            if full in rec and str(rec[full]).strip():
+                rec.pop(short)          # la valeur déjà posée gagne
+            else:
                 rec[full] = rec.pop(short)
         rec.setdefault("School", "")
 

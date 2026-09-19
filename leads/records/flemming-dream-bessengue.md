@@ -21,7 +21,7 @@
 
 ## Notes
 
-BATCH A. N'apparaît dans AUCUN annuaire en ligne. Nom mémorable, trace nulle : quand un patient tape « Flemming Dream », il ne trouve rien.
+Envoyé le 19/09 à 19:30 — lu (2 coches).
 
 ## Prochaine action
 

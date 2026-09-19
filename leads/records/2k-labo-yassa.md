@@ -21,7 +21,7 @@
 
 ## Notes
 
-⭐ MEILLEUR PROSPECT DU PACK. Maquette faite. Yassa = quartier jeune et en expansion : des familles qui arrivent, sans habitude médicale locale, qui cherchent tout sur leur téléphone. Là où la population est nouvelle, le premier trouvé gagne. Horaires 07:00–18:00.
+Envoyé le 19/09 à 19:26 — réponse AUTOMATIQUE. Réponse AUTOMATIQUE : « Merci pour votre message. Nous ne sommes pas disponibles pour l'instant, mais… ». Ce n'est PAS une réponse humaine et ça ne compte pas dans le PRR (leçon Adonaï). Mais le numéro est vivant et surveillé — c'est un signal, pas une porte fermée.
 
 ## Prochaine action
 

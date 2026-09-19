@@ -21,7 +21,7 @@
 
 ## Notes
 
-BATCH B. Bonabéri = le quartier de La Béthanie, déjà contactée. Argument : résultats annoncés sur WhatsApp au lieu de faire revenir le patient — la question la plus posée en salle d'attente.
+Envoyé le 19/09 à 19:21 — lu (2 coches).
 
 ## Prochaine action
 
