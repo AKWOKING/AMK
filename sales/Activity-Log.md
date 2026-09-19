@@ -360,3 +360,38 @@ une règle qui lit le corpus, non.
 
 **Correction de compteur :** King a confirmé la relance **AFRIQUE LABO** — `follow_ups_sent` passe à **1**,
 et `sales/Send-Pack-2026-09-19.md` §2 est marqué **« déjà envoyée, ne pas renvoyer »**.
+
+---
+
+## sam 19/09 19:21–20:02 — ⭐ PREMIER « OUI » DE LA CAMPAGNE : LABIOMED
+
+**13 laboratoires envoyés ce soir** (19:21 → 19:33), tous loggés avec **la vérité des coches** :
+**9 lus (2 coches)** · **4 distribués non lus (1 coche)** · **1 réponse automatique**.
+
+- **23:59 → LABIOMED a répondu « Oui » à 19:43 — 11 minutes après notre message.**
+  **C'est le premier « oui » de la campagne** : 45 messages envoyés, 3 réponses humaines, et la première main levée.
+  **Ce n'est pas un « je vous reviens » — c'est une demande.**
+- **King a envoyé l'aperçu + le texte à 20:02, sans le prix** (son choix, et sa raison tient : *« je veux que le prix
+  soit accompagné d'un lien »*). **La démo est construite : `hosting/previews/labiomed/`.**
+- **2K Labo a répondu AUTOMATIQUEMENT** (« merci pour votre message, nous ne sommes pas disponibles pour l'instant »).
+  **Ce n'est pas un refus** — c'est un numéro vivant et surveillé. Compté comme `auto`, **hors PRR** (leçon Adonaï).
+- **5 numéros n'ont PAS WhatsApp** : Niva, Aube, Hyrus, Biolex, Bioscan. Écrit dans le CRM avec la raison.
+  **Leçon : un annuaire donne un numéro, il ne dit pas si le numéro reçoit WhatsApp.** 19 candidats → 13 joignables = 68 %.
+
+**BUG CORRIGÉ (attrapé en enregistrant les envois) :** `Contacted = Yes` **n'était pas écrit sur les 13 lignes du soir** —
+le `KEYMAP` écrasait après coup l'état posé par `_apply_envois()`. **Les 32 contactés sont maintenant 45.**
+*C'est la deuxième fois en deux jours qu'un générateur efface silencieusement ce qu'un autre vient d'écrire. Les deux fois,
+c'est le contrôle de cohérence qui l'a vu, pas moi.*
+
+### DÉMO LABIOMED — design décidé par LE MARCHÉ (consigne de King)
+
+Les **5 sites de laboratoires camerounais vivants** ont été **ouverts et lus** (ce sont les 5 écartés du pack LABOS).
+**Ce que le marché fait :** Douala Labo — **35 ans, le plus établi de Douala** — utilise un **hero en photo plein écran,
+texte par-dessus**, et une barre de 3 accès rapides. **La page suit ce standard.**
+**Ce que le marché ne fait pas :** un **voile dégradé** sous le texte (lisibilité — passé le portique contraste du
+premier coup) · une page qui **répond à la vraie question** (« je dois venir à jeun ? ») au lieu d'un catalogue ·
+**mobile d'abord** (leur site vise l'ordinateur, ici WhatsApp est collé en bas de l'écran).
+
+**6 photos :** le hero **généré** (exclusion explicite de tout texte/logo, puis relu à l'œil) ; les 4 autres viennent des
+visuels de laboratoire **déjà dans le dépôt** (`labo-samples`, `labo-hero`, `labo-reception`) — King avait raison.
+**Portiques : 0 finding / 245 passages · 5 images, 0 cassée · FR/EN équilibré · un seul numéro · noindex.**

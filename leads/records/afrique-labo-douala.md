@@ -31,12 +31,13 @@ Message 1 envoyé 17/09 13:24. **FU1 (M+2) ENVOYÉE par King le 19/09** (confirm
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 4 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 5 ligne(s).*
 
 `L61` · | jeu 17/09 13:24 | AFRIQUE LABO (690 54 70 93) | msg 1 | Envoyé, 2 coches | **Non** |
 `L78` · - **Fils ouverts sans réponse au 18/09 :** OraCare · MITOC · Baptist Comprehensive · Baird Memorial · The Skye · YAKS · AFRIQUE LABO · L'Opticien · La Béthanie · JEMPO. **31 fils ouverts · 2 réponses humaines (St. Theresa, UNI-LABO) · PRR = 2/31 = 6,5 %.**
 `L86` · - **Relances échues :** Skye (M+2) et YAKS (M+2) — 18/09 · AFRIQUE LABO (M+2) — 19/09 · OraCare (M+4) — 20/09 · MITOC (M+4) — 21/09.
 `L308` · - **King annonce : relance AFRIQUE LABO déjà envoyée.** Compteur à corriger — **FU1 ne doit PAS être renvoyée.**
+`L361` · **Correction de compteur :** King a confirmé la relance **AFRIQUE LABO** — `follow_ups_sent` passe à **1**,
 
 ---
 

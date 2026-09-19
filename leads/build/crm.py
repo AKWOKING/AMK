@@ -471,6 +471,80 @@ LABS_1909 = [
                "C'est le prospect du pack pour qui une page change le plus de choses."),
 ]
 
+# ── Envois RÉELS du samedi 19/09 au soir (19:21 → 19:33), relevés sur les captures de King.
+#    Les coches sont la vérité : ✓✓ = lu, ✓ = distribué mais PAS lu.
+#    « Envoyé » ≠ « lu » ≠ « répondu » — la règle du journal s'applique aussi ici.
+ENVOIS_1909_SOIR = {
+    "diagmed-bonaberi":            ("lu", "19:21", ""),
+    "labtag-bali":                 ("lu", "19:23", ""),
+    "sainte-anne-newbell":         ("lu", "19:24", ""),
+    "pasteur-medlas-akwa":         ("lu", "19:25", ""),
+    "2k-labo-yassa":               ("auto-reponse", "19:26",
+                                    "Réponse AUTOMATIQUE : « Merci pour votre message. Nous ne sommes pas "
+                                    "disponibles pour l'instant, mais… ». Ce n'est PAS une réponse humaine et "
+                                    "ça ne compte pas dans le PRR (leçon Adonaï). Mais le numéro est vivant et "
+                                    "surveillé — c'est un signal, pas une porte fermée."),
+    "pathcare-deido":              ("envoye", "19:26", "UNE coche — pas encore lu."),
+    "cidm-saint-joseph":           ("lu", "19:29", ""),
+    "labo-meka-bonamoussadi":      ("envoye", "19:29", "UNE coche — pas encore lu. Maquette déjà prête."),
+    "flemming-dream-bessengue":    ("lu", "19:30", ""),
+    "interlabo-akwa":              ("envoye", "19:31", "UNE coche — pas encore lu. Maquette déjà prête."),
+    "labiomed-deido":              ("lu", "19:32", "Lu. Maquette déjà prête."),
+    "la-passerelle-deido":         ("envoye", "19:33",
+                                    "Profil SANS NOM (« +237 6 94 71 91 22 ») — King l'a signalé. Une coche. "
+                                    "Cohérent avec le reste du dossier : ce labo communique par adresse yahoo "
+                                    "et n'a jamais construit de présence en ligne."),
+    "biodiagnostics-sable":        ("lu", "19:33", ""),
+}
+
+# Numéros essayés et NON joignables sur WhatsApp (King, 19/09 : « the others weren't available »).
+# PAR ÉLIMINATION, pas par affirmation : les 5 du pack qu'il n'a pas envoyés (+ le jumeau du Dr Tagu,
+# volontairement écarté). À CONFIRMER par King.
+PAS_SUR_WHATSAPP = {
+    "niva-labo-akwa": "essayé le 19/09 — numéro pas sur WhatsApp (à confirmer par King)",
+    "aube-labo-akwa": "essayé le 19/09 — numéro pas sur WhatsApp (à confirmer par King)",
+    "hyrus-labo-deido": "essayé le 19/09 — numéro pas sur WhatsApp (à confirmer par King)",
+    "biolex-deido": "essayé le 19/09 — numéro pas sur WhatsApp (à confirmer par King)",
+    "bioscan-newbell": "essayé le 19/09 — numéro pas sur WhatsApp (à confirmer par King)",
+}
+
+
+def _apply_envois(out: list) -> None:
+    by = {r.get("slug"): r for r in out}
+    for slug, (etat, heure, note) in ENVOIS_1909_SOIR.items():
+        r = by.get(slug)
+        if not r:
+            print(f"  ⚠ envoi 19/09 : slug introuvable « {slug} »")
+            continue
+        # ⚠️ On retire les clés COURTES avant d'écrire : sinon KEYMAP, qui tourne plus loin,
+        # réécrase « Contacted = Yes » avec le « contacted = No » d'origine du dictionnaire.
+        # Bug attrapé le 19/09 par vérification : les 13 envois du soir n'étaient pas comptés.
+        for k in ("contacted", "reply", "demo"):
+            r.pop(k, None)
+        r["Contacted"] = "Yes"
+        r["stage"] = "qualifying"
+        r["last_send_state"] = etat
+        r["reply_type"] = "auto" if etat == "auto-reponse" else "none"
+        r["follow_ups_sent"] = "0"
+        label = {"lu": "lu (2 coches)", "envoye": "distribué, NON lu (1 coche)",
+                 "auto-reponse": "réponse AUTOMATIQUE"}[etat]
+        r["Notes"] = (f"Envoyé le 19/09 à {heure} — {label}." + (" " + note if note else "") +
+                      " | " + str(r.get("Notes") or "")).strip(" |")
+    for slug, why in PAS_SUR_WHATSAPP.items():
+        r = by.get(slug)
+        if not r:
+            print(f"  ⚠ non joignable : slug introuvable « {slug} »")
+            continue
+        for k in ("contacted", "reply", "demo"):
+            r.pop(k, None)
+        r["Contacted"] = "No"
+        r["wa_verified"] = "no"
+        r["wa_number_note"] = why
+        r["stage"] = "prospecting"
+        r["disqualification_reason"] = f"Canal injoignable — {why}."
+        r["Notes"] = ("⛔ " + why + " | " + str(r.get("Notes") or "")).strip(" |")
+
+
 # Ces deux entrées n'ont PAS été envoyées : ce sont des pièges enregistrés pour ne pas les oublier.
 LABS_ECARTES = [
     ("douala-lab-akwa", "Douala Labo", "Douala (Akwa, 37 Av King Akwa)", "699 62 61 21",
@@ -776,6 +850,9 @@ def main() -> int:
     # 2d · les 19 laboratoires du pack du 19/09 au soir
     for p in LABS_1909:
         out.append({"School": p["org"], **p})
+
+    # 2d-bis · les envois RÉELS du 19/09 au soir (captures de King)
+    _apply_envois(out)
 
     # 2e · les 5 laboratoires ÉCARTÉS pour site vivant — la donnée qui évite de refaire le travail
     for p in _labs_ecartes_rows():
