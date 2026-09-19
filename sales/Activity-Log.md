@@ -339,3 +339,24 @@ dont la mise en page dépend de son `display`.**
 **Portiques : 0 finding / 222 passages · 5 images, 0 cassée · FR/EN équilibré · un seul numéro · noindex.**
 **Bundle : `hosting/previews/bonanjo/index.html` + `img/` (592 Ko).** L'ancien fichier plat `demos/concept-bonanjo-v1.html`
 a été supprimé — **une seule source de vérité, sinon les deux divergent.**
+
+---
+
+## sam 19/09 14:00 — CRM M3 : les 39 fiches, et une fausse attribution corrigée
+
+- **`leads/records/` — 39 fiches générées** par `leads/build/records.py`. L'audit en prévoyait « 13-15 » :
+  il avait été écrit **avant** les 17 envois du 18/09 au soir. **39 leads ont un historique réel aujourd'hui.**
+- **Générées, pas écrites à la main** — parce que l'audit §5 avait déjà montré le piège : `Daily Ops.csv`
+  était périmé au 16/09. Une fiche écrite à la main redevient fausse en trois envois.
+  La fiche **lit** le CRM et **cite** les lignes du journal ; elle ne recopie rien.
+- **Prochaine action déduite** de chaque fiche : règle des 90 s si une réponse est en attente, rythme
+  M+2/M+4/M+7, plafond de 3 relances, et « aucune action » explicite pour `parked`/`disqualified`.
+
+**⚠️ Fausse attribution trouvée et corrigée :** `JOSS MEDI Clinic` citait la ligne de `Douala clinic`.
+Cause : ma liste de mots génériques contenait « clinique » mais **pas l'anglais « clinic »**.
+**Corrigé en supprimant le besoin de liste** : *un mot ne peut servir de clé que s'il n'apparaît que
+dans le nom d'un SEUL lead.* Le corpus décide. **86 mots distinctifs.** Une liste noire se périme ;
+une règle qui lit le corpus, non.
+
+**Correction de compteur :** King a confirmé la relance **AFRIQUE LABO** — `follow_ups_sent` passe à **1**,
+et `sales/Send-Pack-2026-09-19.md` §2 est marqué **« déjà envoyée, ne pas renvoyer »**.

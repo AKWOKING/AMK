@@ -85,8 +85,10 @@ PROSE_LEADS = [
          contact_channel="WhatsApp", source="directory",
          source_detail="maligah/pagespratiques — numéro joignable vérifié",
          stage="qualifying", contacted="Yes", reply="No", demo="Yes",
-         last_send_state="sent", follow_ups_sent="0",
-         notes="Message 1 envoyé 17/09 13:24. FU1 prévue sam 19/09. Concept live : concept-afriquelabo-v1.vercel.app. "
+         last_send_state="sent", follow_ups_sent="1",
+         notes="Message 1 envoyé 17/09 13:24. **FU1 (M+2) ENVOYÉE par King le 19/09** (confirmé par lui : "
+               "« I have already sent message de relance »). FU2 (M+4) = lundi 21/09, angle résultats WhatsApp. "
+               "Concept live : concept-afriquelabo-v1.vercel.app. "
                "Numéros interdits : 699 73 36 25 et 674 46 62 15 (secours seulement si l'invitation vient d'eux)."),
     dict(slug="joss-medi-buea", org="JOSS MEDI Clinic", city="Buea",
          org_type="clinic", language="EN", wa_number="", wa_verified="no",

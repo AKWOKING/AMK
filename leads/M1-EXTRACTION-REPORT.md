@@ -1,4 +1,4 @@
-# CRM — microtâches M1 et M2 terminées
+# CRM — microtâches M1, M2 et M3 terminées
 
 **Date :** samedi 19 septembre 2026 · **Livrables :** `leads/CRM.csv` (**54 lignes × 50 colonnes**) + `leads/CONTRADICTIONS.md` (M2)
 **Script :** `leads/build/crm.py` (relançable à volonté — il reconstruit le CSV depuis la source)
@@ -85,7 +85,7 @@ Les deux sont documentés dans la docstring de la fonction. **Un CRM qui rend de
 | Microtâche | État |
 |---|---|
 | **M2** — les 11 contradictions du §6 : valeur retenue + valeur écartée, verbatim conservé | **FAIT** — `leads/CONTRADICTIONS.md` |
-| **M3** — `records/<slug>.md` pour les 13-15 leads avec un historique réel | à faire |
+| **M3** — `records/<slug>.md` pour les leads avec un historique réel | **FAIT** — 39 fiches générées, `leads/build/records.py` |
 | **M4** — lier les 8 dossiers `clients/` (dont 5 orphelins) aux lignes | à faire |
 | **M5** — compléter les champs des 33 leads en `prospecting` | à faire |
 | **M6** — archiver `leads_50.xlsx` + `Daily Ops.csv` + les `patch*.py`, puis générer les vues | à faire |
