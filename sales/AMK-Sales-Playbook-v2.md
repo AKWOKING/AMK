@@ -37,6 +37,9 @@ A salesman has 3 jobs: **maximize opportunities → convert the highest % → st
 ### A4. The Kill List
 - The 2 leads at 18 (COMOBIL, OraCare) + any lead who just said yes → written on a visible "TODAY" list (CRM top rows). They get the extra attention daily until they close or park.
 
+> **⚠️ CORRECTION — 19 Sep 2026 (CRM M2, `leads/CONTRADICTIONS.md` §1).** This line is **wrong as written** and must not be followed literally: **COMOBIL has been `parked` since 14 Sep** (King's decision — the DAILY OPS tab says so itself), so it does not belong on a "TODAY" list. An earlier audit claim that DAILY OPS contradicted `Pipeline-Status` on this was **checked and infirmed** — both files agree.
+> **The rule, corrected:** the kill list is **derived** from the CRM, never written in hard: *score ≥ 18 **and** stage ≠ `parked` **and** stage ≠ `disqualified` **and** the lead has not just been contacted.* With the current data that leaves **OraCare** alone, plus anyone who replies. `KILL-LIST.md` will be generated from `leads/CRM.csv` in M6 — this paragraph then becomes the spec for that generator.
+
 ### A5. Referrals: "Who do you know?"
 > A new rep who asked "who would you like to bring?" outperformed #2 by ~50% — only 1 in 4 refers, but referrals close at 80–90%. CAC effectively halves.
 

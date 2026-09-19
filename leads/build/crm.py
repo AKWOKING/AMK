@@ -46,6 +46,8 @@ NEW_FIELDS = [
     "follow_ups_sent", "disqualification_reason",
     # dédoublonnage (M1) — relie les lignes du même acheteur sans en supprimer aucune
     "same_buyer_as",
+    # contradictions (M2) — valeur retenue + valeur écartée, verbatim conservé
+    "contradiction", "value_kept", "value_discarded",
 ]
 
 # ── Les 15 leads hors classeur (audit §1), avec les seuls faits sourcés du dépôt ──
@@ -252,6 +254,71 @@ def wa_number_for(rec: dict) -> str:
     return ""
 
 
+# ── M2 · les contradictions, vérifiées le 19/09 contre les fichiers (voir CONTRADICTIONS.md).
+#    Chaque entrée écrit : ce qui se contredisait · ce qu'on retient · ce qu'on écarte.
+#    Aucun verbatim n'est supprimé : la colonne d'origine du classeur reste intacte.
+CONTRADICTIONS = [
+    # (slug, contradiction, retenu, écarté)
+    ("comobil-college-moderne-bilingue-les-laureats",
+     "Le playbook §A4 code en dur une kill list « les deux 18 » (COMOBIL + OraCare) ; COMOBIL est parké depuis le 14/09. "
+     "L'onglet DAILY OPS dit « PARKED 14 Sep (King decision) » — mon audit du 18/09 prétendait le contraire (infirmé).",
+     "parked — une kill list doit se DÉDUIRE de l'état réel (score 18 ET non parké ET non disqualifié).",
+     "la liste figée du playbook, qui met sur une liste « TODAY » un lead parké depuis cinq jours."),
+    ("groupe-scolaire-moderne-bilingue-wafo",
+     "Fusionné dans COMOBIL selon Pipeline-Status, mais resté une ligne séparée avec son propre score.",
+     "deux lignes LIÉES par same_buyer_as — un seul acheteur (Pierre WAFO), deux établissements.",
+     "supprimer une des deux lignes : une ligne supprimée est une donnée perdue, et l'audit disait les deux choses à la fois."),
+    ("st-theresa-international-bilingual-comprehensive-college-sti",
+     "Mon audit du 18/09 affirmait que la cellule « Lead score » de cette ligne contenait le verbatim de la réponse.",
+     "la ligne est CORRECTE : Lead score = 14 (numérique), le verbatim est dans Reply. 0 anomalie sur 38 lignes.",
+     "l'affirmation de l'audit — vérifiée et infirmée le 19/09. Aucun changement de donnée."),
+    ("solidarity-health-foundation-solidarity-clinic-laboratory",
+     "Le classeur dit « scheduled Tue » ; Pipeline-Status dit « no WhatsApp line » ; King dit : ne jamais contacter.",
+     "parked, avec le motif de King écrit dans la donnée : jamais de contact, acheteur institutionnel.",
+     "« scheduled Tue » — la ligne n'a jamais été jouable, et la consigne de King prime sur les deux fichiers."),
+    ("one-stop-medical-laboratory-diagnostics",
+     "Rangé COMME UN PROSPECT NORMAL dans le classeur (score attribué, priorité, canal).",
+     "parked — King a une règle : ne jamais contacter Dr Njang (691 63 29 41).",
+     "le traitement de prospect standard : personne n'aurait vu l'interdiction avant l'envoi."),
+    ("nabesk-comprehensive-college",
+     "Le classeur annonce « 83,5 % au O-Level 2020 ».",
+     "83,46 % au A-Level 2020 — correction déjà journalisée dans Pipeline-Status le 18/09.",
+     "« 83,5 % au O-Level » — un chiffre faux dans une accroche commerciale, le pire endroit pour se tromper. "
+     "Verbatim conservé : la colonne Facilities du classeur n'est pas modifiée."),
+    ("divine-success-comprehensive-college-dscc",
+     "Numéro présent au classeur mais jamais vérifié sur WhatsApp ; il s'est révélé être « Kingdom Family Int'l » (Finance).",
+     "wa_verified = no, numéro écarté, motif écrit.",
+     "le numéro comme numéro d'école : c'est un cabinet de finances, pas un établissement scolaire."),
+    ("baptist-high-school-bhs-awae",
+     "Numéro présent au classeur, aucune identité affichée sur WhatsApp.",
+     "wa_verified = no, numéro écarté.",
+     "l'envoi à un numéro non identifié — la règle de King du 18/09 interdit d'écrire sans nom ni catégorie."),
+]
+
+# Contradictions structurelles : elles ne visent pas une ligne mais un fichier entier.
+STRUCTURAL = [
+    ("#2", "Le classeur maître ne contenait aucun des 15 leads engagés de Douala.",
+     "Les 15 existent et sont engagés — ils ont maintenant une ligne.",
+     "« le classeur suffit pour décrire le pipeline »."),
+    ("#3", "5 dossiers clients/ sur 8 n'avaient aucune ligne dans le classeur.",
+     "Ces dossiers contiennent le travail réel, donc ils doivent être liés à une ligne.",
+     "l'idée que le classeur décrivait le pipeline.",
+     "Réparé par M1 (les 4 + les 6 cliniques ont une ligne). M4 doit lier les fiches."),
+    ("#4", "L'absence de numéro WhatsApp était écrite en prose, donc intraitable.",
+     "32 lignes sur 54 ont un mobile exploitable ; 41 n'en ont pas ; 8 fixes volontairement exclus.",
+     "« N/V (landline) » comme contenu de champ.",
+     "Une colonne triable (wa_number) ET le texte d'origine intact dans WhatsApp."),
+    ("#8", "Daily Ops.csv présenté comme un export de l'onglet DAILY OPS.",
+     "C'est un PLAN DE JOURNÉE du 16/09 (12 lignes sur 43 seulement sont de la donnée de lead) — périmé.",
+     "« même contenu, deux formats » : le CSV a 50 lignes, l'onglet 36. Mon audit était partiellement faux.",
+     "M6 : le renommer Daily-Plan.csv et le GÉNÉRER depuis le CRM, sinon il redeviendra faux."),
+    ("#9", "Trois vocabulaires d'étape concurrents ; Pipeline-Status dit 27 leads, le classeur 38, le CRM 54.",
+     "Le vocabulaire de l'onglet « Pipeline - 5 Stages » du classeur + disqualified + parked (7 valeurs).",
+     "les trois autres vocabulaires.",
+     "Réparé par M1 : chaque ligne porte une étape de l'énumération, aucune hors énumération."),
+]
+
+
 def read_workbook():
     wb = openpyxl.load_workbook(XLSX, data_only=True)
     ws = wb["Leads 50"]
@@ -334,6 +401,19 @@ def main() -> int:
         a["Notes"] = (str(a.get("Notes") or "") + " · " + note).strip(" ·")
         b["Notes"] = (str(b.get("Notes") or "") + " · " + note).strip(" ·")
 
+    # 5 · M2 — les contradictions : valeur retenue + valeur écartée, sur la ligne concernée
+    by_slug = {r.get("slug"): r for r in out}
+    for slug, what, kept, dropped in CONTRADICTIONS:
+        rec = by_slug.get(slug)
+        if not rec:
+            print(f"  ⚠ contradiction M2 : slug introuvable « {slug} »")
+            continue
+        rec["contradiction"] = what
+        rec["value_kept"] = kept
+        rec["value_discarded"] = dropped
+        rec["Notes"] = (str(rec.get("Notes") or "") +
+                        " | CONTRADICTION RÉSOLUE (M2) — retenu : " + kept).strip(" ·")
+
     cols = headers + NEW_FIELDS
     csv_path = pathlib.Path(args.csv)
     csv_path.parent.mkdir(parents=True, exist_ok=True)
@@ -355,6 +435,8 @@ def main() -> int:
         t = rec.get("org_type") or "(non renseigné)"
         types[t] = types.get(t, 0) + 1
     print("  types   :", " · ".join(f"{k}={v}" for k, v in sorted(types.items(), key=lambda x: -x[1])))
+    n_con = sum(1 for r in out if r.get("contradiction"))
+    print(f"  M2 : {n_con} ligne(s) portent une contradiction résolue ({len(CONTRADICTIONS)} + {len(STRUCTURAL)} structurelles)")
     noslug = [r for r in out if not r.get("slug")]
     if noslug:
         print(f"  ⚠ {len(noslug)} ligne(s) sans slug")

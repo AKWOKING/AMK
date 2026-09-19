@@ -653,6 +653,24 @@ Every concept link sent on WhatsApp must carry, in `<head>`:
 first deploy — or the host must be known in advance. Where a project has no image host, use the
 concept's hero screenshot from `tools/video/capture.mjs --mode hero` (1080×1620 → crop to 1200×630).
 
+### 20.8 Bilingual text lives in THREE places — patch all three (added 19 Sep 2026)
+
+On every EN|FR build the same sentence exists in **three** places, and they must always agree:
+
+1. `data-en="…"` — what the language toggle writes
+2. `data-fr="…"` — what the language toggle writes
+3. **the visible text node between the tags** — what the page shows *before* JavaScript runs, and
+   **what Google and every LLM crawler actually read.** `fetch_page`, PageSpeed and any no-JS reader
+   never call `setLang()`.
+
+**Found on 19 Sep while diagnosing AMK's own site:** the FAQ answer *"What happens after launch?"* had been updated in
+`data-en` and `data-fr` but **not in the text node**. The page looked right in a browser and was wrong to every
+crawler. It very nearly made me misdiagnose a deployment (I read the stale node on the live site and concluded the
+deploy was old — the deploy *was* old, but the same string existed in both versions, so that one string proved nothing).
+
+- [ ] After editing any bilingual string, grep the file for the **old** wording — it must return **zero** hits, in all three places
+- [ ] `audit_html.py` counts text runs but does **not** compare the three sources: this check is manual, or a 3-line script
+
 **King's ruling, 17 Sep 2026:** the §20 footer standard **applies to every NEW build**. The concepts already built (opticien, afriquelabo, labethanie, yaks, skye, oracare, clinic-bonaberi) **stay exactly as they are — no retrofit.** First build under this rule: the JEMPO concept (next prospect).
 
 ---
