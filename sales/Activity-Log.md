@@ -198,3 +198,25 @@ Si lecture sans réponse → relance **M+2 dim 20/09**, angle : la correction de
   main) ; **et un bouton flottant qui recouvrait un CTA du hero sur mobile**. Les deux sont réglés.
 - **Non vérifié, et je le dis :** la précision du micro sur un accent camerounais. Ça se teste sur le téléphone de King.
 - `amk-site.zip` reconstruit (contenu du déploiement préservé, index remplacé) → **King redéploie `amk-cm.vercel.app`.**
+
+
+---
+
+## sam 19/09 07:15–07:30 — Évaluation de l'outil envoyé par King (`brag` / HyperFrames)
+
+- King : « can this repo/tool be useful to us in anyway » → **oui, mais pas pour ce que son README vend.**
+- **`/brag` (le skill, MIT)** : conçu pour faire la promo d'un *logiciel* qu'on vient de coder ; ses tons
+  (parodie de levée de fonds, chaotique, deadpan) sont incompatibles avec une clinique ou une école.
+  → **3 lois adoptées** : porte de lisibilité (0,8 s / 0,3 s par mot), **frame 0 = vignette**, patron 15–25 s.
+- **HyperFrames (le moteur, Apache-2.0)** : rend du HTML/CSS/JS en vidéo, **image par image, en local,
+  sans compte ni clé**. Testé pour de vrai — deux obstacles contournés (`--ignore-scripts` pour le binaire
+  GPU onnxruntime ; GSAP vendu localement car le CDN est injoignable), trois variables trouvées dans le code
+  pour lui brancher **notre Chromium et notre FFmpeg**. **MP4 de test produit : 1080×1920 · 30 fps · 300 images
+  · H.264**, audité par notre propre portique.
+- **Pourquoi ça compte :** §13 chiffre notre faiblesse (6/17 · 8/14 · 9/17 fenêtres figées) et §12 situe la
+  falaise à 0:02. **Nos vidéos ne bougent pas.** HyperFrames est exactement un générateur de mouvement réel.
+- **Statut : ÉVALUÉ, PAS ADOPTÉ.** `compose.py` reste la production. Condition : **un clip d'essai** passé au
+  portique §13, comparé à #2/#3/#4. S'il ne bouge pas mieux, on abandonne.
+- Livré : `tools/video/install_hyperframes.sh` (testé depuis zéro) · `research/HyperFrames-Evaluation-2026-09-19.md`
+  · `content/lessons/CONTENT-LESSONS.md` **v0.9** (§10.4, §13 ter).
+- **Aucun prospect touché. Aucun prix modifié.**

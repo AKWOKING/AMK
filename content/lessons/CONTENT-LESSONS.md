@@ -1,6 +1,6 @@
 # AMK — CONTENT LESSONS (living playbook)
 
-**Version v0.2** · 17 Sep 2026 · sources: `content/handover/2026-09-17-content-handover.md` (previous chat, authoritative), King's 17 Sep brief, repo content history, `research/YouTube-Lessons.md` batches 1–3.
+**Version v0.9** · 19 Sep 2026 · sources: `content/handover/2026-09-17-content-handover.md` (previous chat, authoritative), King's 17 Sep brief, repo content history, `research/YouTube-Lessons.md` batches 1–3, `research/HyperFrames-Evaluation-2026-09-19.md`.
 **Rule:** append dated entries; never silently rewrite. Conflicts get logged and go to King.
 
 ---
@@ -94,6 +94,45 @@ MboaCare (abstract principle) · our own shipped work · **our concept/preview l
 - **Three-component pre-flight** formalised in the script header: script → visuals → voice.
 - ❌ Rejected: the Canva/ChatGPT/ElevenLabs template stack — it cannot show **real websites** (our hard requirement) and produces the generic look King banned. Our pipeline already does script→visuals→voice with the real pages.
 
+### 10.4 · Depuis `/brag` de latent-spaces (19 Sep 2026) — la lisibilité devient un nombre
+**Contexte :** King a envoyé `github.com/latent-spaces/brag` (« can this be useful to us »). Évaluation
+complète : `research/HyperFrames-Evaluation-2026-09-19.md`. Le *skill* ne nous convient pas (il lit le
+**code** d'un projet, et ses tons — parodie, chaotique, deadpan — saborderaient la crédibilité d'une
+clinique). Mais ses **lois créatives** contiennent une règle mesurable et une micro-technique.
+
+1. **ADOPTÉ — porte de lisibilité (loi dure).** « Toute ligne qu'un spectateur doit lire reste assez
+   longtemps pour être lue : **label court ~0,8 s une fois posé ; une phrase ~0,3 s par mot.
+   *Fast-in, then hold* — jamais *fast-in, then gone*. »**
+   → **À vérifier automatiquement** : `compose.py` connaît la durée de chaque carte. Une carte qui reste
+   moins longtemps que `0,3 s × nombre de mots` (ou moins de 0,8 s pour un label) = échec, au même titre
+   que le portique mouvement §13. **Raison :** notre falaise est à 0:02 (§12) ; un texte qui fuit avant
+   d'être lu est un texte qui n'existe pas.
+2. **ADOPTÉ — la frame 0 est la vignette.** Choisir la **meilleure** image et la poser en frame 0, pour que
+   la vidéo soit belle partout où elle apparaît. **Pourquoi ça compte ici plus qu'ailleurs :** notre canal
+   de partage est **WhatsApp**, où la vignette décide du clic. Micro-gain, zéro coût.
+3. **ADOPTÉ — le patron de 15–25 s, écrit noir sur blanc :**
+   **Hook 2–3 s → Révélation 2–4 s → 2–3 points forts 5–12 s → Chute 2–4 s.**
+   Notre V-05 (23,9 s) est déjà dans la cible — on écrit la structure au lieu de la deviner.
+4. **REJETÉ — les tons parodiques du skill.** `yc-parody`, `chaotic`, `deadpan`, « fausse levée de fonds » :
+   registre incompatible avec un laboratoire ou une école. **Seul `polished` est transposable.**
+5. **REJETÉ — générer des visuels par IA pour « avoir de vraies photos ».** Même interdiction que
+   le lot [20] : on peut générer une maquette **du site**, jamais une fabrication **de leur réalité**.
+
+**Moteur évalué et installable :** HyperFrames (Apache-2.0) — voir §13 bis ci-dessous pour la piste
+« mouvement réel ». `tools/video/install_hyperframes.sh` installé et testé (rendu 1080×1920/30 vérifié).
+
+### 13 ter · HyperFrames — la piste pour sortir du diaporama (19 Sep 2026)
+**Constat qui motive :** §13 a chiffré notre faiblesse (6/17 · 8/14 · 9/17 fenêtres figées) et §12 a
+localisé la falaise à 0:02. **Le problème n'est pas le message, c'est qu'il ne bouge pas.**
+**Ce qui a été testé :** HyperFrames rend du HTML/CSS/JS en vidéo, image par image, en local, sans compte
+ni clé, avec **notre Chromium et notre FFmpeg** (`HYPERFRAMES_BROWSER_PATH`, `HYPERFRAMES_FFMPEG_PATH`,
+`HYPERFRAMES_FFPROBE_PATH`). MP4 de test = 1080×1920, 30 fps, 300 images, H.264, audité par notre portique.
+**Statut : ÉVALUÉ, PAS ADOPTÉ.** `compose.py` reste le chemin de production.
+**Condition d'adoption — un essai, une fois :** produire **un** clip réel avec HyperFrames, le passer au
+portique §13, et le comparer aux fenêtres figées de #2/#3/#4. **S'il ne bouge pas mieux, on abandonne.**
+Aucune migration avant cette preuve.
+
+
 ## 11 · King's decisions (17 Sep 2026) — binding
 1. **No real clinic/school name in any content without the owner's written permission.** Default: **anonymise** (blur/rename logos, addresses, unique details); the live *named* concepts (YAKS, Skye, OraCare, MITOC) are unlisted and shared only with their prospect — **no public content may show or link them**.
 2. **Voice:** King agrees we **re-audition a voice before video #5** — **FAIT le 17 Sep (nuit)** : la voix des videos precedentes venait de **l'outil de voix de la plateforme d'AMK** (audition -> `voice-00`), pas d'un service externe ; `voice-00` est re-enregistree et narre V-05. Aucun telechargement de modele n'etait necessaire (piste Piper/HuggingFace abandonnee).
@@ -145,6 +184,7 @@ MboaCare (abstract principle) · our own shipped work · **our concept/preview l
 6. **Pas de recadrage sur une carte composée** (zoom 1,3× = texte tronqué, vérifié). Le mouvement doit venir de la **capture**, ou d'une animation *dans* la carte (apparition, reflet, barre) — jamais d'un rognage.
 
 ## 9 · Changelog
+- **v0.9 — 19 Sep 2026 :** évaluation `/brag` + HyperFrames (§10.4 lois créatives adoptées : porte de lisibilité 0,8 s / 0,3 s par mot, frame 0 = vignette, patron 15–25 s ; tons parodiques rejetés) + §13 ter piste moteur HyperFrames (évalué, non adopté, conditionné à un essai au portique). Source : `research/HyperFrames-Evaluation-2026-09-19.md`.
 - **v0.8 — 17 Sep 2026 (nuit) :** V-05 produite avec narration (`voice-00` re-auditionnee) ; outil de voix identifie = plateforme AMK ; regle « le texte du hook doit tenir en entier dans sa carte » (un texte tronque a ete corrige) ; capture par plages (`--from-frac`/`--to-frac`), `--settle`, vitesse plafonnee a 420 px/s.
 - **v0.7 — 17 Sep 2026 (nuit) :** chaîne vidéo reconstruite (§13 corrigé) — Chromium embarqué dans un paquet npm, capture réelle du défilement, cartes animées, bibliothèque de 5 démos publiables, portique mouvement bloquant ; recherche d'outillage complète dans `research/Video-Toolchain-Research.md`.
 - **v0.6 — 17 Sep 2026 (nuit) :** §13 portique mouvement — toutes nos vidéos sont des diaporamas, le zoom n'est pas du mouvement, recadrer une carte coupe le texte, pas de capture possible dans cet environnement.
