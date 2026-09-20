@@ -480,3 +480,41 @@ une donnée.
 **`leads/build/views.py` et `rebuild.sh` ont été effacés par le 8ᵉ recul du bac à sable** — le commit qui
 les contenait n'était pas poussé. **Les 5 vues générées (`PIPELINE`, `KILL-LIST`, `STALE`, `SOURCES`,
 `Daily-Plan`) doivent être refaites.** Le CRM, les fiches `records/` et les deux correctifs sont poussés.
+
+---
+
+## sam 19/09 20:20 → 21:40 — ⭐⭐⭐ UNI-LABO DEMANDE UN RENDEZ-VOUS
+
+**« Bsr. Peut on prendre un rendez vous pour vendredi pour que vous nous presentez vos services? »**
+
+- **C'est le plus fort signal de toute la campagne.** 45 messages envoyés, 4 réponses humaines,
+  et **la première demande de rendez-vous**. `stage` passe à **`offer`** — le seul lead du pipeline à cette étape.
+- **Ce n'est pas un « je vous reviens ».** Bonanjo et Labiomed ont dit exactement ça, sans date. **UNI-LABO propose un jour.**
+- **Et il est revenu tout seul :** « Bsr » le 18/09 20:57 → notre lien à 21:47 et 22:05 → **silence 24 h** →
+  **il revient de lui-même avec une demande.** Aucun autre lead de la campagne dans ce cas.
+- **Rendez-vous = VENDREDI 25/09.** Le site est **déjà en ligne** : la « présentation des services » se fera
+  **sur leur propre site, ouvert sur un téléphone.** C'est une séance de clôture, pas un premier contact.
+- **Réponse prête** (`sales/RDV-UNILABO-2026-09-25.md`) : elle accepte, demande l'heure, **et pose le prix
+  100 000 FCFA / 50-50 AVANT la réunion** — pour que la réunion porte sur le travail et pas sur un chiffre surprise.
+
+### Deuxième bug de la journée trouvé EN ÉCRIVANT ce log
+
+**Ma première correction a patché AFRIQUE LABO avec les données d'UNI-LABO.** Le motif d'ancrage
+(« follow_ups_sent=1 » + début des notes) existait **dans les deux entrées**. C'est le doublon de `stage=`
+qui a fait planter le script — **sinon la donnée d'UNI-LABO aurait écrasé celle d'Afrique Labo en silence.**
+**Troisième fois aujourd'hui qu'un script écrit au mauvais endroit.** Réparé en remplaçant **l'entrée entière**
+au lieu de rapiécer des morceaux, avec `ast.parse()` en contrôle avant d'exécuter. **Afrique Labo vérifié intact.**
+
+### PRÉSENCE GOOGLE D'AMK — les captures de King
+
+**`research/Google-Presence-AMK-2026-09-19.md`.** Le chiffre : **6 impressions · 0 clic · position 2,3 · 3 vues du profil.**
+
+- **La mauvaise nouvelle :** AMK est **quasi invisible** sur Google — **le même problème qu'on vend à nos prospects.**
+- **La très bonne :** **on est DEUXIÈME et personne ne clique.** Ce n'est pas un problème de position,
+  c'est un problème de **titre et de description.** **Le CTR à la position 2,3 se répare en 10 minutes.**
+- **Action ① :** réécrire titre + description (le titre actuel parle en anglais de « free preview » ;
+  il ne dit ni le métier ni la ville en premier). **Action ② :** compléter le profil Google
+  (Google réclame lui-même « Complete your profile » ; 3 vues = profil jamais alimenté).
+  **Action ③ :** la Page Facebook — **5ᵉ fois que la décision revient**, maintenant reliée au profil Google.
+- **Repère à battre dans 30 jours :** ≥ 20 impressions, ≥ 2 clics. **Et le vrai signe : une première requête
+  tapée par un inconnu.** Aujourd'hui il n'y en a aucune.

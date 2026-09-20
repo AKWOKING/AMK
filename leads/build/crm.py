@@ -197,14 +197,25 @@ SENT_1809 = [
          source="directory", source_detail="Remote-Sweep §C — dans nos fichiers depuis le 15/09",
          contacted="Yes", reply="No", demo="No", last_send_state="sent",
          notes="Envoyé 18/09 ~18:30, sans maquette (vitesse)."),
-    dict(slug="uni-labo-bonamoussadi", org="UNI-LABO", city="Douala (Bonamoussadi, Carrefour Etoo)", language="FR/EN",
-         org_type="lab", wa_number="696 13 98 19", wa_verified="yes", contact_channel="WhatsApp",
-         decision="Dr Tientcheu Philomène (biologiste)", source="directory",
-         source_detail="Remote-Sweep §C — Lun-Ven 07h-19h, Sam 07h-13h",
-         contacted="Yes", reply="Yes", demo="Yes", last_send_state="sent", follow_ups_sent="0",
-         notes="⭐ LE LEAD LE PLUS ENGAGÉ. Envoyé 18:41, il a répondu « Bsr » à 20:57 (2 coches → les deux "
-               "messages de 21:47 et 22:05 ne sont PAS lus, last seen 21:04). SITE COMPLET construit et déployé : "
-               "https://uni-labo.vercel.app. Contrôle de lecture prévu sam 19/09, M+2 dim 20, M+4 mar 22, M+7 ven 25 → parked."),
+    dict(slug="uni-labo-bonamoussadi", org="UNI-LABO",
+         city="Douala (Bonamoussadi, Carrefour Etoo)", language="FR/EN",
+         org_type="lab", wa_number="696 13 98 19", wa_verified="yes",
+         contact_channel="WhatsApp", source="directory",
+         source_detail="Remote-Sweep section C - Lun-Ven 07h-19h, Sam 07h-13h",
+         contacted="Yes", reply="YES 19/09 20:20 - demande de RENDEZ-VOUS",
+         demo="Yes", last_send_state="sent", follow_ups_sent="0",
+         stage="offer", reply_type="human",
+         notes="DEMANDE DE RENDEZ-VOUS - LE PLUS FORT SIGNAL DE LA CAMPAGNE. "
+               "Le 19/09 a 20:20, UNI-LABO a ecrit, mot pour mot : « Bsr. Peut on prendre un rendez vous "
+               "pour vendredi pour que vous nous presentez vos services? » "
+               "Ce n est plus « je vous reviens » : c est une INVITATION. Premier prospect de la "
+               "campagne qui demande a nous voir. RENDEZ-VOUS = VENDREDI 25/09. "
+               "ATTENTION : LE SITE EST DEJA CONSTRUIT ET EN LIGNE (https://uni-labo.vercel.app) - "
+               "la presentation des services se fera donc sur LEUR PROPRE site, ouvert sur un telephone. "
+               "C est une seance de CLOTURE, pas un premier contact. Prix a poser : 100 000 FCFA, 50/50. "
+               "Ce qui rend ce lead unique : il avait ecrit « Bsr » le 18/09 a 20:57, nous avons envoye "
+               "le lien a 21:47 puis 22:05, et il est revenu DE LUI-MEME 24 h plus tard. "
+               "Message 1 envoye le 18/09 a 18:41 (2 coches)."),
     dict(slug="yondja-analyse-douala", org="YONDJA ANALYSE", city="Douala", language="FR",
          org_type="lab", wa_number="696 88 88 23", wa_verified="yes", contact_channel="WhatsApp",
          source="directory", source_detail="Remote-Sweep §C", contacted="Yes", reply="No", demo="No",
