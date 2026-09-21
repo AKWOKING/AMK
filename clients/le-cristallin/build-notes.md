@@ -105,3 +105,31 @@ fichier n'a plus besoin d'un menu de services. Zéro concept de nos autres build
 Contrôles : `python3 tools/qa/audit_html.py` → `TOTAL confirmed findings: 0` (385 runs, desktop 385 / mobile 385)
 sur le démo **et** sur l'aperçu. Les leçons mécaniques de cette relecture sont versées dans
 `design/LESSONS.md` (21/09) — elles valent pour les prochains concepts, pas seulement pour celui-ci.
+
+## Correction de 19:40 — la note vocale était une question d'achat, et une de mes « divergences » était la mienne
+
+**Ce que la transcription de King a changé (vocale de 18:01, 10 s) :** le cabinet a **déjà une page Facebook** en
+plus du site, et M. Messoue a demandé **si nous voulions bien lui en créer une autre**. Ce n'est plus un fil « on
+vous livre un aperçu », c'est un fil « on nous demande une prestation » → étape `closing`, et le prix peut sortir
+d'un message 1 (la règle est consommée : message 1 envoyé, lu, répondu). La feuille d'envoi porte maintenant deux
+versions, A sans prix / B chiffrée, **B n'est envoyable qu'après que King a validé qu'AMK fait la page FB**.
+
+**Deux lignes de la maquette réécrites à la source (JSON), une retirée :**
+1. `contact.addrFlag` — j'affirmais que son flyer donnait une **adresse différente** (Bonapriso / CTFIC Mballa 2)
+   de celle du site (Akwa / FODEC / COMECI). Sur l'image visible à l'écran, **le flyer porte lui aussi Akwa /
+   FODEC / COMECI** : l'écart est peut-être de mon côté (j'avais lu le « Bonapriso CTFIC » dans mes propres notes
+   d'inventaire, pas dans sa bouche). La page ne corrige plus le client, elle **demande** : « si une deuxième
+   adresse existe, écrivez-la moi ».
+2. `contact.hoursFlag` — « le flyer ajoute le samedi 8h30–13h30 » est **maintenu** (c'est lisible sur l'image),
+   mais reformulé en choix à trancher : *un seul des deux horaires peut être publié*.
+3. **Ajout de la ligne « Votre page Facebook »** dans *Nous joindre* : nommée, **pas liée** — son URL nous est
+   inconnue et un lien deviné part chez un homonyme. Le lien réel arrive par sa réponse → ici + dans `sameAs`.
+
+**Contrôles rejoués après édition :** `audit_html.py` → **0 finding** (389 runs, desktop 389 / mobile 389) ·
+**172 FR / 172 EN** · 0 jeton survivant · 0 `<a>` sans `href` · 3 eyebrows / 8 sections · rail mobile = libellé
+du hero · `wa.me/699905577`. `diff` démo ↔ `hosting/previews/cristallin/index.html` = 0 ligne.
+
+**Et la leçon de méthode, pour les prochains dossiers :** une divergence relevée entre deux supports du client
+doit être **lue sur les deux supports**, pas sur mes notes. Je l'avais inscrite comme un fait de SON inventaire
+alors qu'elle sortait de MON traitement — et elle était devenue une ligne visible de la page, donc une correction
+publique du client par nous. Trois libellés de la maquette portent maintenant un conditionnel, pas une accusation.

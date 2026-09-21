@@ -530,8 +530,8 @@
    ]
   ],
   "hoursFlag": {
-   "fr": "⚠️ Le site actuel n'affiche que lundi-vendredi ; le flyer ajoute le samedi. À trancher avant publication.",
-   "en": "⚠️ The current site shows Monday to Friday only; the flyer adds Saturday. To settle before publishing."
+   "fr": "⚠️ Votre site n'affiche que lundi-vendredi ; le flyer ajoute samedi 8h30 – 13h30. Un seul des deux peut être publié : confirmez l'horaire du samedi.",
+   "en": "⚠️ Your website shows Monday to Friday only; the flyer adds Saturday 8:30 - 13:30. Only one of the two can be published: confirm the Saturday hours."
   },
   "whereH": {
    "fr": "Où nous trouver",
@@ -542,8 +542,8 @@
    "en": "Akwa, Ancien Dalip roundabout, next to the FODEC building, facing COMECI SA. P.O. Box 566, Douala."
   },
   "addrFlag": {
-   "fr": "Le flyer indique « à côté du Carrefour CTFIC Mballa 2, Bonapriso » : les deux adresses doivent être réconciliées avant publication.",
-   "en": "The flyer reads \"next to Carrefour CTFIC Mballa 2, Bonapriso\": both wordings must be reconciled before publishing."
+   "fr": "Ce texte est repris de votre site actuel (BP 566, lui, vient du flyer). Si une DEUXIÈME adresse existe — un second point de vente, ou un ancien local — écrivez-la moi : je ne mets sur une page qu'une seule adresse, validée par vous.",
+   "en": "This line is taken from your current website (the P.O. Box comes from your flyer). If a SECOND address exists - a second shop, or an old one - write it to me: a page carries one address only, confirmed by you."
   },
   "maps": {
    "fr": "Ouvrir dans Google Maps",
@@ -768,5 +768,15 @@
    "Groupe LOGO",
    "France"
   ]
- ]
+ ],
+ "fb": {
+  "q": {
+   "fr": "Votre page Facebook",
+   "en": "Your Facebook page"
+  },
+  "hint": {
+   "fr": "Elle existe et votre site ne la montre nulle part. Donnez-moi le lien : je la relie au pied de page et au bouton, dans les deux langues.",
+   "en": "It exists and your website never points to it. Send me the link: I will wire it into the footer and the button, in both languages."
+  }
+ }
 }

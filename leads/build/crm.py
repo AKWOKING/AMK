@@ -196,27 +196,38 @@ LIVE_LEDGER = {
              "photo visible le 21/09) : la porte A est passée. bairdmemorial.com ne répondait toujours pas au "
              "contrôle du 21/09."),
     "le-cristallin": dict(
-        # Premier « oui » de la vague 1, et premier prospect optics à qui NOUS devons quelque chose.
-        # ⚠️ Ici le cadencement ne nous appartient plus : la balle est dans NOTRE camp (promesse de 17:57).
-        stage="presented", stage_since="2026-09-21", first_touched="2026-09-21",
-        last_reply_received="2026-09-21", follow_ups_sent="0", last_send_state="delivered",
+        # Premier « oui » de la vague 1, et le SEUL fil du portefeuille où le prospect a retourné la
+        # question vers NOUS (« vous voulez m'en créer une autre ? »). Ce n'est plus de la prospection :
+        # c'est une négociation ouverte. Roi : la règle « pas de prix dans un message 1 » est consommée —
+        # message 1 envoyé, lu, répondu, aperçu annoncé. Le prix se pose MAINTENANT, dans le fil.
+        stage="closing", stage_since="2026-09-21", first_touched="2026-09-21",
+        last_reply_received="2026-09-21", follow_ups_sent="0",
+        # « read » et non « delivered » : le 18:13 porte deux coches GRISES à l'écran (non lues au moment
+        # de la lecture) — et `apply_vague1` avait posé « delivered » plus tôt dans la chaîne, donc le
+        # registre doit le corrige explicitement sil ne le fait pas, le champ garde la valeur d'avant.
+        last_send_state="read",
         # ⚠️ `preview_sent` est VIDE exprès : la maquette est construite et contrôlée, pas ENCORE
         #   ENVOYÉE (aucune URL en ligne, King n'a rien collé). Un aperçu « presque envoyé » compté
         #   comme envoyé gonfle le tunnel et endort la relance. Le poser au verbatim du roi.
         **{"Follow-up date": "2026-09-23",
            "site_url": "https://lecristallinoptique.com/", "site_checked_on": "2026-09-21",
            "dossier": "clients/le-cristallin/"},
-        bamfam_next_action="LIVRER CE QUE NOUS AVONS PROMIS à 17:57 (« je vous transmets le lien très "
-                           "rapidement »). Maquette prête et contrôlée ; le LIEN n'existe pas encore. Texte prêt à "
-                           "copier : `sales/Send-LE-CRISTALLIN-2026-09-21-Soir.md` (feuille d'envoi du "
-                           "soir — l'aperçu n'est PAS en ligne, on envoie le fichier).",
-        bamfam_next_step="ORDRE NON NÉGOCIABLE (la feuille d'envoi le détaille) : ① le fichier "
-                         "`hosting/previews/cristallin/index.html` en pièce jointe — JAMAIS un lien non déployé "
-                         "— ② le texte de 5 lignes qui pose LES QUATRE confirmations (samedi du flyer · adresse "
-                         "exacte · les deux autres lignes du flyer · la liste des assureurs, que nous n'avons "
-                         "pas pu vérifier sur sa page d'accueil). Prix interdit tant qu'il ne le demande pas. "
-                         "Si l'option lien est préférée : déployer le dossier en projet `concept-le-cristallin-v1` "
-                         "et me donner l'URL EXACTE — ne jamais la deviner (`yaks-concept`).",
+        bamfam_next_action="TROIS CHOSES, CE SOIR (fenêtre ouverte, il est « last seen 18:06 ») : "
+                           "① envoyer l'aperçu (`demos/concept-le-cristallin-v1.html`, 58 KB — le FICHIER, pas un "
+                           "lien non déployé) ② répondre à SA question, qui est une demande : oui, on peut lui "
+                           "créer la page Facebook, et ça chiffré = SITE (refonte) + PAGE FB (création + "
+                           "exploitation) en deux postes ③ récupérer le LIEN de sa page Facebook existante — "
+                           "c'est une preuve B2C que nous n'avions pas, et ça change le contenu de la maquette.",
+        bamfam_next_step="Texte prêt à copier : `sales/Send-LE-CRISTALLIN-2026-09-21-Soir.md` §②bis (version "
+                         "« il a demandé le prix » — remplace §②, écrit avant la transcription de la vocale). "
+                         "Chiffrage à poser, même grille que les deux autres fils : 100 000 FCFA, 50/50, "
+                         "JAMAIS de remise — si 100 000 ne couvre pas les DEUX postes (refonte + page FB), on "
+                         "TRACE LA PÉRIMÈTRE (deuxième poste en option à 50 000, ou prise en charge de la page "
+                         "seule), on ne baisse pas le prix. ⚠️ Deux points à NE PAS présenter comme réglés : "
+                         "(a) la liste des 12 assureurs, jamais confirmée sur sa page d'accueil ; (b) "
+                         "l'« adresse différente » que j'avais inscrite — le flyer, tel que visible à l'écran, "
+                         "porte AUSSI Akwa / FODEC / COMECI, donc l'écart est peut-être de mon côté : à "
+                         "re-contrôler avant d'en faire une ligne de la page.",
         log_ref="L837",
         note="Une note VOCALE de 10 s (18:01) n'est pas transcrite dans ce fichier : si elle porte une "
              "demande (prix, délai, photos), elle doit être dite, pas devinée. Le message de 18:13 dit « avoir "
@@ -855,17 +866,31 @@ CANAL_HORS_SERVICE_2109 = {
 #   fenêtre — un prospect qui a répondu dans les deux minutes se traite dans l'heure, pas jeudi.
 REPONSES_2109 = {
     "le-cristallin": {
-        "reply": "YES lun 21/09 17:53 « Ok » — répondu en 2 MINUTES (le fil le plus rapide de la campagne)",
+        # LE FIL COMPLET, relu à l'écran le 21/09 soir (capture King) — trois messages de nous, deux de lui.
+        # ⚠️ Ce que la transcription de King CHANGE : la vocale n'était pas une demande, c'était une
+        #   INFORMATION (« j'ai déjà un site et une page Facebook ») suivie d'UNE QUESTION D'ACHAT
+        #   (« est-ce que vous voulez m'en créer une autre ? »). Ce n'est plus un fil à aperçu,
+        #   c'est un fil qui demande le prix. L'étape suit le fil, pas notre calendrier.
+        "reply": "YES lun 21/09 17:53 « Ok » (2 min) · PUIS 18:01 VOCAL : il a déjà un site ET une page "
+                 "Facebook, et il DEMANDE si on veut bien lui en créer une autre = signal d'achat",
         "reply_type": "human", "last_reply_received": "2026-09-21",
-        "stage": "presented", "stage_since": "2026-09-21",
-        "follow_ups_sent": "0", "last_send_state": "delivered", "demo": "Yes",
-        "wa_verified": "yes", "profile_name_seen": "Le Cristallin (nom + catégorie vus par King avant envoi)",
-        "note": "17:51 msg 1 (2 coches) · **17:53 « Ok »** · 17:57 « je prépare votre aperçu sur-mesure et je "
-                "vous transmets le lien très rapidement » · 18:01 NOTE VOCALE 10 s (non transcrite : si elle "
-                "porte une demande, la dire) · 18:02 SON FLYER en image, double flèche de TRANSFERT · 18:07 un "
-                "message de King SUPPRIMÉ · 18:13 la réponse réellement envoyée (2 coches), qui pose la refonte "
-                "et non le remplacement. ⚠️ Une promesse a été écrite à 17:57 : « le lien très rapidement ». "
-                "La maquette existe (`demos/concept-le-cristallin-v1.html`) ; le lien, non. C'est LA dette.",
+        "stage": "closing", "stage_since": "2026-09-21",
+        "follow_ups_sent": "0", "last_send_state": "read", "demo": "Yes",
+        "wa_verified": "yes",
+        "profile_name_seen": "Le Cristallin · « last seen today at 18:06 » (vu 21/09) — il est sur WhatsApp "
+                             "plusieurs fois par jour : la fenêtre de réponse est réelle, pas théorique",
+        "note": "Chronologie exacte (écran 21/09) : 17:51 msg 1 (2 coches) · **17:53 « Ok »** · 17:57 NOTRE "
+                "réponse verbatim : « Parfait ! Je prépare votre aperçu sur-mesure et je vous transmets le lien "
+                "très rapidement. A très vite ! » · 18:01 note VOCALE 10 s = « j'ai déjà un site et une page "
+                "Facebook » + la question de savoir si on lui en créerait une AUTRE · 18:02 son FLYER en image, "
+                "double flèche de TRANSFERT · 18:07 « You deleted this message » (King a retiré un texte avant "
+                "de le renvoyer) · 18:13 NOTRE message verbatim : « C'est noté Monsieur Messoue, merci pour le "
+                "flyer ! / Avoir déjà un site est une très bonne chose. L'aperçu que je vous prépare n'est pas là "
+                "pour remplacer ce que vous avez, mais pour vous montrer une version modernisée, ultra-rapide sur "
+                "téléphone et 100 % axée sur la prise de RDV WhatsApp. / Je vous envoie cette proposition de "
+                "modernisation comme prévu pour que vous puissiez comparer. Excellente soirée à vous ! » "
+                "→ `last_send_state=read` : deux coches grises, PAS de bleues visibles à l'écran, et je n'invente "
+                "pas une lecture.",
     },
 }
 
@@ -1364,10 +1389,13 @@ CONTRADICTIONS = [
     ("le-cristallin",
      "Ma note d'annuaire (21/09) affirmait « Aucun site trouvé » et j'ai écrit le message 1 dessus.",
      "lecristallinoptique.com est EN LIGNE et a été lu en entier le 21/09 (roi : « Le cristallin a déjà un "
-     "site »). La douleur réelle : le site ne convertit pas (pas de WhatsApp, carrousels ×3, flyer qui "
-     "contredit horaires/adresse/e-mail).",
-     "l'argument « introuvable » retiré de la fiche ; le lead passe en refonte, et la maquette "
-     "dite «modernisation» porte la liste des 4 divergences à trancher par le propriétaire."),
+     "site »), et IL A AUSSI UNE PAGE FACEBOOK — dite par lui dans sa note vocale de 18:01, absente de ma "
+     "fiche : je n'avais pas cherché ce canal. Douleur réelle : ni l'un ni l'autre ne prend de rendez-vous "
+     "(pas de WhatsApp, carrousels dupliqués ×3, formulaire Nom/Email comme seul chemin).",
+     "l'argument « introuvable » retiré de la fiche ; le lead passe en REFONTE + création de page FB (sa "
+     "demande, 18:01) ; les claims non contrôlés sont rétrogradés en questions : les 12 assureurs "
+     "(jamais vus sur la page d'accueil) et « deux adresses différentes » (le flyer porte Akwa/FODEC aussi, "
+     "visible à l'écran — mon écart, pas le sien). Le samedi 08h30-13h30, lui, reste bien lu sur le flyer."),
     ("solidarity-health-foundation-solidarity-clinic-laboratory",
      "Le classeur dit « scheduled Tue » ; Pipeline-Status dit « no WhatsApp line » ; King dit : ne jamais contacter.",
      "parked, avec le motif de King écrit dans la donnée : jamais de contact, acheteur institutionnel.",

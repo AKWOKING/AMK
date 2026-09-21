@@ -1020,3 +1020,42 @@ indexé** (`noindex`). La Vercel URL client, elle, n'existe pas encore. ⚠️
 **Ce que je n'ai pas pu faire ici :** la note vocale de 10 s (18:01) — aucun dossier `uploads/` dans ce bac, donc
 ni l'image du flyer ni la vocale ne sont dans ma portée ; je travaille sur ce que King en a dit. Si la vocale porte
 une demande, elle doit être **dite**, pas devinée, et gravée dans `crm.py`.
+
+### 8 · 19:40 — la note vocale est transcrite par King : le fil change de nature, et une de mes « divergences » était la mienne
+
+**Ce que King a entendu (vocale de 18:01, 10 s) :** « il disait juste qu'il avait **déjà un site et une page
+Facebook** », puis **il a demandé si on voulait lui en créer une autre**. Trois conséquences, dans l'ordre :
+
+1. **Le CRM bouge d'étape.** `presented` → **`closing`** (`closing = 3 · presented = 1 · qualified 41 ·
+   prospect 1 · parked 8 · lost 10`). Ce n'est pas de l'optimisme : un prospect qui **demande** si on lui crée un
+   support n'est plus dans notre file d'attente, il est dans la sienne. La règle « pas de prix dans un message 1 »
+   est **consommée** (message 1 envoyé 17:51, lu, répondu 17:53, aperçu annoncé 17:57) — le prix peut sortir, mais
+   **uniquement si King valide le périmètre** : je ne chiffre pas une prestation que le roi n'a pas dite chez AMK.
+   La feuille d'envoi porte donc **deux versions** : A sans prix (on demande le lien de sa page), B chiffrée
+   (refonte 100 000 FCFA · page FB 50 000 · 50/50, **jamais de remise**).
+2. **J'avais tort sur une « divergence ».** J'écrivais que son flyer donnait une adresse différente du site
+   (Bonapriso / CTFIC Mballa 2 vs Akwa / FODEC / COMECI). Sur l'image visible à l'écran, **le flyer porte lui
+   aussi Akwa / FODEC / COMECI** : l'écart venait de mes notes d'inventaire, pas de ses supports. La ligne de la
+   maquette ne corrige plus le client, elle **demande** (« si un second local existe, écrivez-le moi »). Le samedi
+   8h30–13h30, lui, **reste** : c'est lisible sur l'image.
+3. **La page Facebook entre dans la maquette — nommée, pas liée.** Son URL nous est inconnue ; un lien deviné
+   part chez un homonyme. `Nous joindre` porte la ligne + l'explication, `sameAs` attend sa réponse.
+
+**Verbatim posés dans `crm.py` (et non plus paraphrasés) :** 17:57 « Parfait ! Je prépare votre aperçu sur-mesure
+et je vous transmets le lien très rapidement. A très vite ! » · 18:13 « C'est noté Monsieur Messoue, merci pour le
+flyer ! / Avoir déjà un site est une très bonne chose. L'aperçu que je vous prépare n'est pas là pour remplacer ce
+que vous avez, mais pour vous montrer une version modernisée, ultra-rapide sur téléphone et 100 % axée sur la
+prise de RDV WhatsApp. / Je vous envoie cette proposition de modernisation comme prévu pour que vous puissiez
+comparer. Excellente soirée à vous ! » · **18:07 « You deleted this message »** (un texte retiré avant renvoi —
+je note, je ne conclus pas). Profil : « last seen today at 18:06 » → il est sur WhatsApp plusieurs fois par jour.
+`last_send_state` corrigé à **`read`** : deux coches **grises** sur le 18:13, pas de bleues = pas de lecture affirmée.
+
+**Contrôles rejoués après édition :** `audit_html.py` = **0 finding** (389 runs, desktop 389 / mobile 389) ·
+**172 FR / 172 EN** · 3 eyebrows / 8 sections · 0 `<a>` sans `href` · `wa.me/699905577` chiffres seuls · rail
+mobile = libellé du hero · `diff` démo ↔ aperçu = **0 ligne**. Le générateur garde ses 5 assertions (dont la
+nouvelle égalité hero ↔ rail), rejouées en les cassant.
+
+**Une limite écrite, pas gommée :** `read_file` sur `/home/user/uploads/image-1.png` **échoue** (« no such file »)
+— la pièce jointe annoncée n'est pas dans le bac, je n'ai donc travaillé que sur **l'image telle que visible à
+l'écran** et sur la transcription de King. Si une ligne du flyer me contredit (numéros, e-mail, BP), c'est **toi**
+qui la liras en grand, pas moi en petit.

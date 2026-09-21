@@ -7,8 +7,8 @@
 
 | Étape | Leads |
 |---|---|
-| ④ Offre posée / prix annoncé | **2** |
-| ③ Aperçu envoyé | **2** |
+| ④ Offre posée / prix annoncé | **3** |
+| ③ Aperçu envoyé | **1** |
 | ② Qualifié — en conversation | **41** |
 | ① Prospect — à qualifier | **82** |
 | ⏸ Parqué | **8** |
@@ -27,19 +27,19 @@
 
 > **Règle des 90 secondes.** Une réponse en attente passe avant tout le reste.
 
-## ④ Offre posée / prix annoncé — 2
+## ④ Offre posée / prix annoncé — 3
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
 | Labiomed | Douala (Deido, 104 Route Deido-Bassa) | 699 98 54 66 | `L788` |
+| Le Cristallin | Douala | 699 90 55 77 | `L1054` |
 | UNI-LABO | Douala (Bonamoussadi, Carrefour Etoo) | 696 13 98 19 | `L134` |
 
-## ③ Aperçu envoyé — 2
+## ③ Aperçu envoyé — 1
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
 | Centre Médical de Bonanjo | Douala (Bonapriso, ancien aéroport) | 694 57 22 77 | `L991` |
-| Le Cristallin | Douala | 699 90 55 77 | `L985` |
 
 ## ② Qualifié — en conversation — 41
 

@@ -325,6 +325,8 @@ html[data-lang=fr] .fr-only{display:revert!important}
 .picker .state{font-size:.9rem;color:var(--txt);margin-bottom:13px;min-height:2.7em}
 .picker .state b{color:var(--ink)}
 .fine{font-size:.79rem;color:var(--mute);margin:12px 0 0}
+/* libellé d'un élément À FOURNIR par le cabinet (ex. lien de sa page Facebook) : lisible, jamais un champ vide */
+.pending{font-size:.86rem;color:var(--mute)}
 .listcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
 .listcard .k{font-family:var(--mono);font-size:.67rem;letter-spacing:.11em;text-transform:uppercase;
  color:var(--deep)}
@@ -668,6 +670,7 @@ PAGE = """<!doctype html>
         <tr><td>@@K_TEL@@</td><td><a href="tel:@@TEL2@@">@@TEL2DISP@@</a></td></tr>
         <tr><td>@@K_MAIL@@</td><td><a href="mailto:@@MAIL@@">@@MAIL@@</a></td></tr>
         <tr><td>@@K_SITE@@</td><td><a href="https://lecristallinoptique.com/" rel="noopener">lecristallinoptique.com</a></td></tr>
+        <tr><td>@@K_FBQ@@</td><td><span class="pending">@@K_FBH@@</span></td></tr>
       </tbody></table>
       <p class="fine">@@K_NFLAG@@</p>
     </div>
@@ -748,6 +751,9 @@ REPL = {
     "K_ADDR": L(kt["addr"]), "K_ADDRF": L(kt["addrFlag"]), "K_MAPS": L(kt["maps"]),
     "K_REACH": L(kt["reachH"]), "K_FAST": L(kt["fastest"]), "K_TEL": L(kt["phone"]),
     "K_MAIL": L(kt["email"]), "K_SITE": L(kt["site"]), "K_NFLAG": L(kt["numFlag"]),
+    # la page Facebook du cabinet EXISTE (dite par lui dans sa note vocale du 21/09 18:01) mais son LIEN
+    # nous est inconnu : elle est donc NOMMÉE, pas liée. Un lien deviné = une page qui part chez un homonyme.
+    "K_FBQ": L(C["fb"]["q"]), "K_FBH": L(C["fb"]["hint"]),
     "F_P": L(ft["brandP"]), "F_BADGE": L(ft["badge"]), "FCOLS": FOOT_COLS,
     "F_S1": L(ft["strip1"]), "F_S2": L(ft["strip2"]), "F_WA": L(ft["cta"]),
     "F_CALL": L(C["sticky"][1]), "CSS": CSS, "JS": JS, "JSONLD": JSONLD,
