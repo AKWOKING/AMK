@@ -120,3 +120,72 @@ devient une impression au lieu d'une mesure.
   facteurs de fond sont transférables ; les tactiques ne le sont pas.** Aucune n'a jamais fait de SEO à Douala.
 - **Le rapport Whitespark est une enquête d'opinion** auprès de ~50 experts, pas une mesure de l'algorithme.
   **Les pourcentages sont des perceptions agrégées, pas des poids officiels.**
+
+---
+
+## 7 · Le tableau de mots-clés (ajouté le 21/09, demande de King)
+
+**Méthode :** relevé dans les pages des concurrents camerounais qui rankent aujourd'hui
+(FeliSitePro, **VENEGRE** — « Création de site web à Douala », « Prix site internet Yaoundé » ;
+**CreawebMax** — cible nommément les quartiers : Akwa, Bonanjo, Bonapriso, Bali, Bépanda, et
+Yaoundé : Bastos, Omnisports, Mvog-Mbi, Ngousso) **+ ce que nos propres prospects tapent**
+(les messages WhatsApp reçus) **+ les 6 impressions de notre Search Console.**
+
+**Ce que ce relevé prouve :** **le marché cherche en français, avec la ville dans la requête.**
+Notre page était 100 % anglaise. C'est la correction appliquée dans `site/index.html`.
+
+### Priorité 1 — les requêtes qui amènent un client (à viser maintenant)
+
+| Requête cible | Langue | Pourquoi elle est prioritaire | Où elle doit vivre |
+|---|---|---|---|
+| **création de site web Douala** | FR | la tête de pont du marché ; VENEGRE et CreawebMax la ciblent | accueil + titre |
+| **agence web Douala** | FR | intention d'achat directe, forte concurrence mais gros volume | accueil |
+| **création site internet Cameroun** | FR | large, capte la diaspora | accueil |
+| **prix site internet Cameroun** / **combien coûte un site web** | FR | **question d'intention froide** — nous sommes les seuls à donner un chiffre (100 000 FCFA) | FAQ (déjà en place) |
+| **site web école Cameroun** · **site internet école privée Douala** | FR | notre niche n°1 | page service |
+| **site web clinique Douala** · **site internet laboratoire Cameroun** | FR | notre niche n°2 | page service |
+
+### Priorité 2 — la niche anglophone (Buea / Limbe / Nord-Ouest)
+
+| Requête cible | Langue | Pourquoi |
+|---|---|---|
+| **school website Cameroon** · **school website Buea** | EN | Sud-Ouest anglophone ; peu de concurrents y répondent |
+| **clinic website Douala** · **dentist website Cameroon** | EN | les cabinets dentaires anglais cherchent en anglais |
+| **bilingual website Cameroon** | EN | notre différence réelle, personne ne la revendique |
+
+### Priorité 3 — squelette local (quartiers et villes)
+
+**C'est notre retard mesuré** (règle 3 du playbook : une page par service par ville).
+**Méthode CreawebMax, qu'on applique avec nos propres quartiers :**
+
+**Douala :** Akwa · Bonanjo · Bonapriso · Bonamoussadi · Bali · Deido · Bonabéri · Makepe · Bépanda · Bessengue · Yassa · Logbessou · Logbaba · Ndogbong
+**Yaoundé :** Bastos · Omnisports · Mvog-Mbi · Ngousso · Odza · Mendong
+**Buea :** Molyko · Bonduma · Great Soppo · Muea · Bokwaongo
+**Limbe :** New Town · Bota · Cité Sonara · Mile 4
+**Autres :** Bafoussam · Bamenda · Limbé · Garoua · Kribi
+
+**Règle de sûreté :** on n'écrit une page ville **que si on a quelque chose de vrai à y dire**
+(un client, une maquette, une observation). **Mille pages vides font chuter le site** — c'est
+le piège classique, et il est écrit noir sur blanc dans la vidéo 1 : *« prioritisation »* est
+la partie la plus dure du référencement, pas l'exécution.
+
+### Priorité 4 — ce qu'il ne faut PAS viser
+
+| Requête | Pourquoi non |
+|---|---|
+| **web design** (en anglais) | dominé par Behance/Dribbble/Awwwards — compétition mondiale, zéro conversion locale |
+| **site web pas cher** · **prix négociable** | attire exactement les clients qu'on ne veut pas — et viole la règle 43 (jamais de remise) |
+| **créer un site gratuitement** | aucune intention d'achat |
+
+### Les 4 actions qui suivent, par rendement
+
+1. **Une page « site web pour école » et une page « site web pour clinique »** — règle 3, notre plus gros retard mesuré. Chacune avec sa FAQ, ses prix en FCFA et sa preuve cliquable.
+2. **Compléter le profil Google** (facteur n°1 : la **catégorie principale** ; n°5 : les **horaires**). 32 % du classement local — plus gros que tout le HTML de la page.
+3. **Demander des avis aux 3 clients contactés** quand ils diront oui. **Les avis font ~20 %** : c'est le deuxième levier, et nous n'en avons aucun.
+4. **Un article par mois qui répond à une vraie question** (« combien coûte un site web au Cameroun ? », « pourquoi ma clinique n'apparaît pas sur Google »). C'est la fréquence (règle 5), et ça construit l'autorité thématique (étape 2 de la vidéo 1).
+
+### Le contrôle, dans 30 jours
+
+**Repère à battre : 6 impressions · 0 clic · position 2,3 · 3 vues du profil Google.**
+**Objectif : ≥ 20 impressions, ≥ 2 clics, ≥ 20 vues du profil.**
+**Le vrai signe que ça marche : une première requête tapée par un inconnu** — aujourd'hui il n'y en a aucune.
