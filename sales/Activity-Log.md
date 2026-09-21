@@ -615,3 +615,631 @@ B (boutiques de montures → personne ne voit vos montures) · C (marques établ
 **PERTE À SIGNALER :** les **2 pages service** (`creation-site-web-ecole-cameroun.html` et
 `creation-site-web-clinique-cameroun.html`) ont été **perdues au 13ᵉ recul du bac** — leur push avait échoué
 (jeton GitHub intermittent). Elles sont à reconstruire. **Ce n'est pas bloquant pour l'outreach.**
+
+---
+
+## lundi 21/09 15:00 — TOUT EST TERMINÉ, L'OUTREACH PEUT COMMENCER
+
+**Les 2 pages service sont reconstruites — et cette fois dans un GÉNÉRATEUR.**
+
+Perdues au 13ᵉ recul du bac (leur push avait échoué). **Reconstruites par
+`tools/site/build_service_pages.py`** — parce qu'**une page qui n'existe que sous forme de fichier
+est fragile ; une page qui se régénère en une commande ne l'est pas.** Si elles disparaissent encore :
+
+    python3 tools/site/build_service_pages.py
+
+**Vérifié dans un vrai navigateur, les 3 pages :**
+
+| Page | Images | FAQ FR | FAQ EN | Liens service |
+|---|---|---|---|---|
+| **Accueil** | 6/6 ✓ | 10 (0 vide) | 10 (0 vide) | 4 |
+| **École** | 3/3 ✓ | 5 (0 vide) | 5 (0 vide) | 4 |
+| **Clinique** | 2/2 ✓ | 5 (0 vide) | 5 (0 vide) | 4 |
+
+**Plus :** `audit_html.py` **0 finding sur les 3 pages** · JSON-LD **3 blocs valides** par page
+(Service, FAQPage, BreadcrumbList) · §20.11 : 5 details / 5 summary, 0 violation · sitemap **7 URLs**.
+
+**Paquet : `amk-site.zip` — 5 201 986 octets · 38 fichiers · 8 pages.**
+Accueil : voix ✓ 15 000 FCFA ✓ liens vers les 2 pages ✓
+
+**Poussé : `316edce`. GitHub a tout** (vérifié par `fetch`, pas supposé).
+
+### Ce qui a été fait aujourd'hui, dans l'ordre
+
+1. **Vague 1 opticiens** : 38 neufs depuis l'annuaire officiel de l'ONOC, 0 doublon, 36 avec nom du titulaire.
+2. **2 pages service** reconstruites par générateur.
+3. **Maillage** : section « Deux pages, deux métiers » sur l'accueil + 2 liens au pied de page.
+
+### L'OUTREACH PEUT COMMENCER
+
+**`sales/Vague1-Opticiens-2026-09-21.md`** — les 10 premiers, avec numéro, nom du titulaire, variante de message
+et la raison de leur position dans l'ordre. **Le problème qu'on résout est le même pour les 38 :**
+*« être dans une liste, ce n'est pas être trouvé »* — et pour un opticien, **personne ne peut voir une seule
+de ses montures avant de pousser la porte.**
+
+**6 heures de fenêtre restantes.** ~10 minutes entre deux envois.
+
+---
+
+## lun 21/09 16:00 → 17:00 — audit du dépôt, migration M7 du CRM, et trois bugs trouvés EN LISANT les cellules
+
+**Aucun message n'a été envoyé pendant ce travail.** Le paquet prêt à envoyer est
+`sales/Send-Pack-2026-09-21-1600.md` (réponses ①, relances ②, vague 1 ③, interdits ④).
+
+### Récupéré : les 2 pages service sont de retour
+
+`PR #2` (branche `arena/01a0a0a4-amk`, restée OUVERTE, non fusionnée à main) contenait
+`site/creation-site-web-ecole-cameroun.html` (419 lignes), `site/creation-site-web-clinique-cameroun.html`
+(409), `tools/site/build_service_pages.py` (773 lignes — le générateur), `site/index.html` (maillage),
+`site/sitemap.xml`, `amk-site.zip` et 43 lignes de ce journal. **Rapatriés dans la branche de session**
+`arena/01a0c495-amk` par `git checkout origin/…`. Elles n'étaient pas perdues — jamais fusionnées.
+Contrôle : `audit_html.py` à relancer avant tout redéploiement.
+
+### M7 — le CRM parle maintenant le vocabulaire du funnel (décision King, 21/09)
+
+`prospect → qualified → presented → closing → won → delivered` + `parked` + `lost`. `delivered` est
+**gardé séparé de `won`** : payé ≠ livré, et c'est précisément la couture où un client meurt.
+11 champs ajoutés à `leads/build/crm.py` (`NEW_FIELDS`) → `leads/CRM.csv` passe de **52 à 64 colonnes**,
+**145 lignes avant comme après** (contrôlé slug par slug : 0 perte, 0 ajout, 14 diff = mes compléments).
+Ce qui N'est PAS stocké, et pourquoi c'est écrit dans le fichier : `kill_list`, `health` (calculés —
+`health_override` est la seule porte manuelle, tracée), `last_message_sent` (c'est le journal),
+`preview_asset` (c'est `dossier`), `notes_summary` (doublon de `Notes`).
+
+### Trois bugs trouvés, et les trois venaient de la même cause : la règle vivait dans la prose
+
+**① COMOBIL : « parké » dans trois fichiers, `prospect` dans la donnée.** `Pipeline-Status.md` dit
+PARKED 14/09, `CONTRADICTIONS.md` §1 dit parké, `KILL-LIST.md` **affirme** « le seul lead à 18 est
+COMOBIL, parké » — et le générateur ne l'écrivait nulle part. Résultat : la kill list déduite le
+remettait en tête, contre la règle du 19/09. **Corrigé à la cause** : table `PARKED` dans `crm.py`
+(COMOBIL, SAHISCOL — avec gâchette de réveil — et ICHS Great Soppo, qui garde son motif de procès).
+La règle de tenue est écrite dans `PRE-FLIGHT.md` : *une décision qui doit changer un calcul se met
+dans la DONNÉE.*
+
+**② OraCare était absent de SA propre kill list.** Son score 18/20 A+ vivait dans
+`sales/Outreach-Pack-2026-09-14.md` §1 ; `Lead score` était vide. Le calcul `score >= 18` ne pouvait
+pas le voir. **Corrigé** : `lead_score="18"`, `priority="A+"` dans `ORACARE`. La liste affiche
+désormais OraCare (COMOBIL sort, parké) — exactement ce que dit le §A4 amendé.
+
+**③ MITOC, opticien de Molyko, était classé `school`.** `crm.py` collait `org_type="school"` à
+**toutes** les lignes du classeur sans regard. Un lot de 60 leads était donc étiqueté à l'aveugle :
+le reporting par métier, les créneaux par niche et la lecture du funnel héritent du même défaut.
+**Corrigé pour les 5 dont le métier EST écrit dans la ligne** (MITOC→other, One Stop→lab, JOSS→clinic,
+Kamaïs→other, Baird confirmé school). **Les 55 autres restent non vérifiés — je ne devine pas.**
+Dispo après : un tri `org_type` à la main sur les 38 lignes du classeur, 10 minutes, si tu veux.
+
+### Deux compléments déduits, pas inventés
+
+**`reply_type`.** Le PRR ne compte que les réponses humaines (leçon Adonaï). Mais `reply_type` était
+laissé VIDE sur des lignes où `Reply` dit oui : **Bonanjo** et **Labiomed** étaient hors calcul et le
+taux affiché (2/45 = 4,4 %) mentait par en bas. Règle posée : `Reply` commence par « yes » ET
+`reply_type` vide → `human` ; une valeur explicite (`auto`, `none`) n'est jamais écrasée.
+**PRR recalculé : 3/45 = 6,7 %.**
+⚠️ **St. Theresa a bien répondu deux fois le 15/09** — sa cellule `Reply` contient le verbatim, pas un
+« yes », donc la déduction ne l'a pas rattrapée. **Le vrai chiffre est probablement 4/45 = 8,9 %.**
+Je ne le force pas : dis-moi si je la compte, et je passe par une table explicite.
+
+**Le filtre « GETS THE JOB DONE »**, demandé comme champ `gets_the_job_done`, est devenu `gtd_filter` :
+une **formule** sur `Website status` + `disqualification_reason` (cassé/expiré/absent = `gold` ·
+vivant et entretenu = `park` + gâchette · site vivant prouvé = `kill`), pas une quatrième échelle de
+score. 38/145 lignes portent une étiquette — celles qui ont un `Website status` vérifié. **Les 107
+lignes issues d'annuaires n'ont pas de contrôle de site : la colonne est vide, et un vide honnête
+vaut mieux qu'un « unknown » qui se lit comme un fait.** Conséquence de travail : *les 38 opticiens de
+la vague 1 ne sont pas encore passés par le filtre* — deux ont déjà été écartés à la main avant envoi,
+les 10 du paquet doivent l'être au contrôle du portique ③.
+
+### Textes abîmés trouvés dans la source (et réparés à la source)
+
+Les 38 lignes ONOC portaient `Probleme : etre dans la listanuaire de l'Ordre…` — une chaîne écrite à
+la main dans `crm.py`, **sans accents et avec une collision de mots** — et 8 slugs étaient hachés par
+le même procédé (`m-dina-optic`, `gr-ce-vision`, `optic-laser-m-dical`, `plan-te-optique`…).
+**Corrigé dans le générateur** (les 38 notes réécrites avec le fait vérifié + la source), slugs
+normalisés via `norm_slug`. La table est petite et rien ne pointait encore sur ces slugs (aucun
+`clients/<slug>/`, aucune fiche `records/`) : 0 lien à défaire. Le prochain lot s'écrit en français
+normal — la transcription ASCII des notes de lead n'a jamais rien protégé, elle a juste abîmé la donnée.
+
+### Ce que je te demande (5 points, pas de travail caché)
+
+1. **St. Theresa compte-t-elle dans le PRR ?** (oui → 4/45 = 8,9 %, table explicite ajoutée)
+2. **Skye et YAKS : la relance de dimanche est-elle partie ?** Ça décide follow_ups_sent 1 ou 2 et donc FU3 jeudi ou parked.
+3. **org_type des 55 lignes du classeur** : je propose un tri de 10 minutes, ligne par ligne, sur les faits écrits — jamais par hypothèse.
+4. **Les 5 questions de l'audit du 18/09 §10 sont toujours sans réponse** (COMOBIL · health manuel de St. Theresa · les 12 labos de la réserve · la Page Facebook · le parrainage St. Theresa). Les deux premières ont été tranchées par la migration d'aujourd'hui ; il en reste trois.
+5. **Contenu** : la vidéo #1 n'est pas dans le dépôt (tu as refusé le re-upload), la voix du personnage n'est pas ré-enregistrée, et `ffmpeg`/`playwright`/`PIL` ne sont pas dans ce bac. **Rien ne peut être rendu ici aujourd'hui** — la décision « anonymisé jusqu'à un client signé » a déjà été écrite dans les leçons et la shortlist, et elle bloque la sortie de V-05 telle quelle. À toi de dire si je prépare le floutage (demain) ou si le contenu reste gelé tant que l'outreach n'a pas clos.
+
+---
+
+## Lundi 21/09/2026 — 17:30 · les 5 décisions de King exécutées, le lot 1 écrit, et deux trous trouvés en route
+
+**Casquette : Sales Operator + Build Lead.** Rien n'a été envoyé — je ne suis pas le canal. Tout est écrit
+pour que King envoie, et chaque envoi s'enregistrera dans la même réponse que l'envoi.
+
+### 1 · Les réponses de King (17:00), telles quelles
+
+| # | Sa décision | Ce que j'ai fait |
+|---|---|---|
+| ① | **Skye + YAKS : parked.** La FU du 18/09 est bien partie sur les deux fils — ses captures le prouvent (Skye 16/09 16:19 ✓✓ puis 18/09 20:14 ✓✓ **jamais ouverts** ; YAKS 16/09 16:43 ✓✓, maquette **à double flèche de transfert**, texte ✓✓ non lu). | Les deux lignes passent `qualified → parked`, `stage_since=2026-09-21`, `last_send_state=delivered_unread`, `follow_ups_sent` reste **1** (la FU du 20/09 n'est pas partie et ne partira pas). Gâchette de réveil dans `bamfam_next_step`. Et **`Daily-Plan.csv` les affiche maintenant comme `NE PAS RELANCER (parqué)`** — voir §3. |
+| ② | **St. Theresa : oui, elle compte dans le PRR.** | Sa `Reply` porte le verbatim, pas un « yes » : la déduction ne la voyait pas. Forcée à la main (`reply_type=human`, verbatim des 15/09 20:44 + 22:51 dans la cellule). Le PRR passe de 4,4 % à **6,7 % (3/45)** — et retombe à **6,5 % (3/46)** quand AFRIQUE LABO entre au tableau (§2). Sa `stage_since` = **21/09**, la date de la décision de parking, pas celle de la réponse. |
+| ③ | **org_type : « va ligne par ligne sur les faits écrits dans la ligne. »** | Fait — **mais je n'ai pas trié à la main une par une : j'ai supprimé la cause.** `crm.py` collait `"school"` aux 38 lignes du classeur **sans jamais lire la ligne** ; voilà d'où venaient MITOC « school » et Solidarity « school ». Nouveau `org_type_for()` : l'étiquette n'existe que si un mot **du nom, des Facilities, de l'activité ou des notes** la porte (`lab` → `clinic` → `other` → `school`, dans cet ordre parce qu'« laboratoire d'analyses médicales » n'est pas une clinique). La preuve est écrite dans `Notes` (`org_type=lab prouvé par « laboratoire »`). Les overrides explicites (MITOC, One Stop, JOSS, Kamaïs, Solidarity) gagnent avant. **Résultat : 0 ligne sans étiquette et 0 ligne sans preuve** — contre 145 dont 38 affirmées « school » par défaut. |
+| ④ | **Le site `amk-cm.vercel.app` :** contrôle demandé sur les pages concernées. | `audit_html.py` sur les 3 pages récupérées du dépôt = **0 finding**. Les liens de concepts cités dans les textes d'envoi ont été **vérifiés en ligne, un par un** : `bonanjo` · `concept-skye` · `concept-yaks-v1` · `mitoc-concept` · `uni-labo` · `concept-afriquelabo-v1` = vivants ; **`amk-cm.vercel.app/yaks/` renvoie 404** → aucune phrase d'envoi ne doit pointer sur ce chemin (les maquettes nommées ne sont pas listées, règle du 17/09). |
+| ⑤ | **Contenu :** la dé-identification de V-05 est pour demain ; la sortie vidéo reste gelée tant que l'outreach n'a rien clos. | Constaté, rien de plus fait ici. `ffmpeg`/`playwright`/`PIL` toujours absents du bac → **aucun rendu possible dans cette session**, ce n'est pas un choix. |
+
+### 2 · AFRIQUE LABO n'était pas dans le CRM — 4 messages, une relance due, aucune ligne
+
+En écrivant le lot, j'ai voulu lire sa ligne : **elle n'existe pas.** Le lead ne vivait que dans
+`sales/Outreach-AFRIQUE-LABO-v1.md` et le journal. Conséquence mécanique, pas une opinion : un lead hors
+tableau n'a **pas de cadencement calculé, pas de compteur de relances, pas de place au PRR, pas de fiche**
+— et sa date due ne vit que dans la tête de qui l'a lue.
+
+Corrections : `afrique-labo-sarl` **ajouté comme 146ᵉ ligne**, uniquement avec des faits déjà écrits dans le
+dépôt (msg 1 jeu 17/09 13:24 · FU1 sam 19/09 confirmée par King → `follow_ups_sent=1` · FU2 lun 21 · FU3
+jeu 24 · `presented` · `lab` · WhatsApp Business nommé « Afrique labo sarl » vérifié 17/09 · `afriqlabo.com`
+**et** `.net` en `NXDOMAIN` au contrôle King du 16/09 ~17:00 · Dr Takala Cathérine · ⛔ 674 46 62 15 ·
+secours 699 73 36 25 seulement sur invitation · portail obligatoire 10 s avant chaque envoi).
+
+**Et cette inscription a révélé une de mes erreurs, plus grave qu'un oubli de saisie :** le pack de 16:00
+disait « AFRIQUE LABO FU2 = mercredi 23/09 → ne rien envoyer aujourd'hui ». **C'était faux** — ce calcul
+sortait de ma note de plan du 19/09, alors que le §4 **corrigé le 18/09 dans son propre dossier** donne
+FU2 = **lundi 21**, c'est-à-dire aujourd'hui. Le texte n'est pas envoyé : corrigé avant, dans les deux fichiers.
+Leçon écrite ici, pas dans une conversation : **une date de relance qui n'existe que dans une phrase de note
+de plan est une date fausse en puissance.** Elle est maintenant dans la colonne `Follow-up date` du CRM
+(UNI-LABO 2026-09-25 et Labiomed 2026-09-21 y sont entrées en même temps).
+
+### 3 · Deux trous de vue trouvés en chemin (corrigés dans `views.py`)
+
+1. **Les seules affaires à `closing` disparaissaient de la file du jour.** Labiomed et UNI-LABO —
+   **200 000 FCFA chiffrés, les deux seuls « oui » de la campagne** — n'apparaissaient pas dans
+   `Daily-Plan.csv` : une date de relance planifiée annule « répondre » **et** « relancer », donc un
+   rendez-vous déjà fixé devenait invisible. Ajouté : `CONFIRMER LE RENDEZ-VOUS (J-1)` /
+   `RENDEZ-VOUS DU JOUR` / `AFFAIRE À CLOSING — la faire avancer`, avec le prix dans la note.
+   **Une file qui omet les deux seules ventes en cours n'est pas une file, c'est une liste de regrets.**
+2. **Un lead parqué sortait de la mémoire.** Les 7 parqués n'apparaissaient nulle part le jour où l'on
+   décide quoi envoyer. Ajouté : `NE PAS RELANCER (parqué)` en bas de file, avec la date de parking et la
+   gâchette de réveil. La file passe de 40 à **49 lignes** et **les priorités sont enfin triées** —
+   avant, elle était dans l'ordre du tableau, pas dans l'ordre de la journée.
+
+### 4 · Le lot 1 est écrit, pas envoyé
+
+`sales/Send-Pack-2026-09-21-LOT1.md` (247 lignes) — 10 destinataires dans l'ordre d'envoi : Bonanjo
+(l'horaire manquant, pas le prix) · MITOC FU2 · Baird FU2 (le domaine **ne répond toujours pas**,
+revérifié aujourd'hui, et la formulation reste « your leads land nowhere », jamais « vous n'avez pas de site ») ·
+AFRIQUE LABO FU2 (angle : les résultats) · **OraCare conditionnel** — si la FU2 du 20/09 est partie, on
+n'écrit pas aujourd'hui, FU3 demain ; sinon le texte est prêt · les 5 premiers opticiens de la Vague 1,
+**chacun ouvert par le fait du titulaire public** (1974 pour Tchaya · Bonamoussadi/ACACIAS pour Bely ·
+« Univers Optique » introuvable même en tapant son propre nom).
+**Et une porte qui bloque, écrite au lieu d'être contournée : les 10 opticiens sont à 1/3** (C seulement) —
+la porte A, ouvrir chaque contact et regarder le profil, te prend ~2 minutes par numéro. Sans elle, un envoi
+à un profil muet s'enregistre comme **incident de canal, pas comme relance**.
+
+### 5 · Ce que je te demande maintenant
+
+1. **Les 5 opticiens du lot :** ouvre les 5 numéros, dis-moi « nom vu » ou « profil muet ». Si les 5 passent,
+   j'écris les 5 suivants (Optic Laser · Planète · Médina · Fashion · MegaOptic) dans la foulée.
+2. **OraCare :** la FU2 de dimanche est-elle partie ? (une ligne — ça décide si on écrit aujourd'hui ou demain.)
+3. **Rien n'est envoyé tant que tu n'as pas dit « j'y vais ».** À chaque envoi : heure · coches · réponse
+   verbatim · profil vérifié oui/non. J'enregistre dans `crm.py` + ce journal **dans la même réponse**.
+4. **Trois questions de l'audit du 18/09 §10 restent sans réponse** : les 12 labos de la réserve ·
+   la Page Facebook · le parrainage St. Theresa.
+
+
+---
+
+## Lundi 21/09/2026 — 18:20 · les écrans de King corrigent trois de mes lectures (et le CRM avec)
+
+**Casquette : Sales Operator.** Envoi : King, sur son téléphone. Moi : enregistrement + corrections.
+
+**Ce que les captures ont dit, et que mes fichiers ignoraient :**
+- `AFRIQUE LABO` : FU2 partie **17:39 (éditée, une coche)** · message d'amorce du **14/09 13:04 jamais compté**
+  → `follow_ups_sent` 1 → **2**, FU3 mer 23/09 max, palier des 3 messages atteint.
+- `OraCare` : message de **clôture parti 17:43** → **`parked` le 21/09**, 3 relances au compteur, plus aucune
+  relance, retiré de `RELANCE_A_JOUR`. Le fil : 14/09 13:04 · 16/09 14:32 · 21/09 17:43 — 0 réponse, 0 bleu.
+- `Baird` : **FU1 jeu 17/09 13:48 envoyée et jamais enregistrée** (la preuve était écrite dans la cellule
+  `Contacted` du classeur : « YES 15 Sep 14:41 WA (mockup image + msg 1; one tick) ») → 2 relances comptées,
+  FU3 mer 23/09 = la dernière.
+- `Le Cristallin` 17:51 · `Univers Optique` 17:50 · `Disc Optique Médicale` 17:48 · `Tchaya Optique` 17:47 :
+  message 1 parti, **une coche** sur les quatre → 4 lignes `prospect → qualified`, `first_touched=21/09`,
+  `variante_envoi` A/C gravé, profil WhatsApp **vérifié avant envoi** (porte A passée par les faits).
+- `Bely Optique Médicale` : **696 85 52 42 n'est pas sur WhatsApp** → incident de canal, `Contacted=No`,
+  `disqualification_reason=Canal injoignable`. Jamais une relance ratée.
+
+**Mes trois erreurs, corrigées dans la donnée (pas dans une conversation) :**
+1. **« AFRIQUE LABO n'est pas dans le CRM » — c'était faux.** La ligne existait sous `afrique-labo-douala` ;
+   j'avais cherché le *nom* dans `crm.py` au lieu du *numéro* dans le CSV. J'ai donc créé un doublon
+   (146 lignes, même docteure deux fois, deux cadencements). Doublon supprimé + **garde-fou permanent :
+   deux lignes portant le même numéro = build en échec**.
+2. **Un parqué ressortait « à relancer »** : OraCare pointait en « Relance 4/3 » dans la file du jour parce
+   que `views.py` consultait sa table de dates AVANT de regarder l'étape. Corrigé : `parked`/`lost` ne sont
+   jamais dus.
+3. **`Contacted` du classeur n'est pas un booléen partout** : une valeur longue (« YES 15 Sep 14:41 WA… »)
+   faisait lire la ligne comme *non contactée* et restait dans une colonne oui/non. Normalisée, **et la preuve
+   d'envol descendue dans `Notes`**.
+
+**Trou de MA donnée, trouvé en relisant le CRM contre l'écran :** `price_quoted_fcfa` d'AFRIQUE LABO/
+Baird OK, mais **celui de Bonanjo (100 000 FCFA annoncé sam 19/09 13:35) n'avait jamais été enregistré** —
+la table le laissait vide, donc le fichier le plus important de l'opération racontait qu'aucun prix avait
+été dit. `price_quoted_fcfa=100000` + `proposal_sent=2026-09-19` posés, étape **`presented`** (page + prix
+vus, pas `closing` : aucune acceptation).
+
+**La correction de texte que King a demandée :** mon brouillon de 17:00 pour Bonanjo supposait un accord
+(« j'attends votre feu vert », « je les écris sur la page »). **Réécrit** en une question d'avis + une porte
+de sortie, sans prix rappelé — dans `sales/Enregistrements-2026-09-21-SOIR.md` §①. Règle debout ajoutée au
+playbook (A9) : **un report poli n'est pas un consentement.**
+
+**Le garde-fou a mordu tout de suite :** `674 93 66 04` était sur DEUX lignes (CEMECES et INSES) — l'erreur
+de ma fiche du 18/09. Correction choisie : **retirer le numéro de la ligne CEMECES** (et non créer une
+exception), la clinique restant sans canal vérifié, à reprendre par sa page Facebook.
+
+**Écart noté, pas caché :** quatre nouveaux contacts en 4 minutes (17:47→17:51) contre ~10 min prescrites,
+à des confrères du même ordre. Écrit dans `crm.py` au-dessus de la table d'envoi.
+
+**Compteur du soir :** 145 lignes · **49 contactées** · PRR **6,1 %** (3 réponses humaines) ·
+`closing 2 · presented 1 · qualified 42 · prospect 1 · parked 8 · lost 10` · **0 client · 0 FCFA · 9 jours.**
+
+**Trois questions à King :** Médina Optic (hors WhatsApp ou choix ?) · Bonanjo (ce soir ou demain 09:00 ?) ·
+AFRIQUE LABO (la phrase de trop sur les résultats : rétablie à la réponse, ou avec la FU3 de mercredi ?).
+
+---
+
+## Lundi 21/09/2026 — 18:20 → 19:15 · « Ok » de Le Cristallin : le premier aperçu demandé, construit et branché sur le CRM
+
+**Ce bloc continue celui de 18:20** (le même soir). Tout ce qui suit est lu sur l'écran de King ou contrôlé dans le dépôt — aucune déduction.
+
+### 1 · L'ordre du roi, et la correction qu'il portait
+
+> « Le cristallin a déjà un site : https://lecristallinoptique.com/ … notre but, puisqu'il a eu la gentillesse
+> de nous répondre, est d'en créer une version moderne. » (+ flyer en image + note vocale de 10 s)
+
+**Ma faute, écrite ici noir sur blanc :** la ligne `le-cristallin` du CRM portait ma note « **Aucun site trouvé** »,
+et mon message 1 de 17:51 était construit dessus (« on ne vous trouve pas »). C'était **faux** : le site est en
+ligne, il est tenu, il a un nom de domaine. J'avais recopié une note d'annuaire sans la vérifier, et je n'ai pas
+contrôlé le domaine avant d'envoyer. Le lead a répondu en deux minutes **malgré** l'angle faux — pas grâce à lui.
+→ La douleur réelle n'est pas l'invisibilité, c'est **la conversion** : le brief est passé de « création » à
+**refonte**. La correction est gravée à trois endroits (CRM `Notes`, `Website status`, `contradiction` M2), plus
+dans `clients/le-cristallin/inspiration.md`.
+
+### 2 · La réponse, minute par minute (écran King)
+
+| Heure | Événement |
+|---|---|
+| 17:51 | message 1 (variante C) — 2 coches |
+| **17:53** | **« Ok »** — réponse humaine en **2 minutes**, la plus rapide de la campagne |
+| 17:57 | notre réponse : « je prépare votre aperçu sur-mesure et je vous transmets **le lien très rapidement** » |
+| 18:01 | **note vocale de 10 s** — non transcrite (⚠️ je ne devine pas son contenu) |
+| 18:02 | **son flyer**, en image, avec la double flèche de **transfert** |
+| 18:07 | un message de King **supprimé** avant envoi — j'enregistre le fait, je n'en conclus rien |
+| 18:13 | la réponse réellement envoyée (2 coches) : « avoir déjà un site est une très bonne chose » + les trois portes |
+
+**Conséquence de cadencement :** une réponse humaine efface l'étiquette « livré non lu » et **arrête le compteur
+de relances** (`follow_ups_sent = 0`,FU1/FU2/FU3 suspendues). Le pipeline passe `presented 1 → 2`. Un prospect qui
+vient de dire oui se traite dans l'heure, pas jeudi.
+
+### 3 · Le site lu avant de maquetter (pas l'inverse)
+
+`fetch_page` × 2, `hasMore: false` obtenu. Faits retenus — **tous venus de SES pages ou de SON flyer** :
+11 prestations nommées · 12 assureurs et mutuelles · 8 partenaires industriels · ISO 9001:2008 via SIVO ·
+autorisation MINSANTE · ONOC · « depuis 2010 » · 24 ans · laboratoire de montage · « kit d'entretien gratuit pour
+une paire achetée » · manifeste social (malvoyance, urbain et rural) · horaires **lun–ven 8h30–18h30** ·
+`(+237) 242 65 12 65 / 699 90 55 77 / 679 63 20 12` · `contact@lecristallinoptique.com` · Akwa, face COMECI SA.
+
+**Les quatre divergences site ↔ flyer, trouvées en comparant, et ÉCRITES SUR LA PAGE** (pied de page
+« Avant de publier ») : le **samedi 8h30–13h30** (flyer seul) · l'**adresse** (Akwa face COMECI / Bonapriso,
+carrefour CTFIC Mballa 2, BP 566) · **deux autres lignes de téléphone** et un **autre e-mail** (gmail) portés
+par le flyer seul · la **version du certificat** ISO.
+
+**Ce que le site fait mal, mesuré dans son HTML :** le carrousel de montures et la liste des assureurs sont
+**écrits trois fois** ; « ACTIVA Assurances » apparaît **deux fois avec deux logos différents** ; le seul chemin
+de contact est un **formulaire Nom/Email/Objet/Message** — zéro WhatsApp, alors que son propre flyer donne le
+699 90 55 77. C'est là que se trouve la valeur de la refonte, et c'est ce que la maquette démontre.
+
+### 4 · La maquette (construite, contrôlée, pas encore envoyée)
+
+- `demos/build_le_cristallin.py` + **`demos/le_cristallin_content.json`** (toute la copie FR|EN vit dans le JSON ;
+  le générateur ne contient pas une phrase — premier jet mort sur les apostrophes françaises dans un f-string,
+  la leçon est devenue architecture) → `demos/concept-le-cristallin-v1.html` · **58 KB** · **zéro image** · une
+  seule copie de la page, langue masquée en CSS + sélecteur persistant.
+- **Design Read : « PLANCHE D'ACUITÉ »** · dials **V6 / M4 / D4**. La table Snellen est l'ouverture **et** le
+  menu : 5 lignes de lettres décroissantes, chaque ligne = un acte du cabinet = un message WhatsApp pré-rempli
+  qui nomme cet acte. Sélecteur des 12 assureurs → message qui porte le nom de l'assureur du patient. Tableau à
+  filets (10 lignes) au lieu des cartes égales. Bandeau sombre pour les trois papiers.
+- **Différenciation sur 6 axes** au registre (layout · palette · typo · traitement d'image · ordre des sections ·
+  ton) : cool paper `#EFF2F1` + le vert du flyer `#0D5A41` + encre `#0B1613`, **Archivo** + Instrument Sans +
+  JetBrains Mono sur les libellés de mesure. Aucun ambre, aucune crème, aucun gradient → ne ressemble à aucun des
+  10 concepts du registre (dont `concept-opticien-v1`, déjà un opticien).
+- **Contrôles FINAUX : `tools/qa/audit_html.py` → zéro finding confirmé** (385 runs, desktop 385 / mobile 385)
+  sur le demo **et** sur `hosting/previews/cristallin/index.html` — et **diff démo ↔ aperçu = 0 ligne** (contrôlé
+  au `difflib`, parce qu'un aperçu publié n'est pas toujours le fichier qu'on a audité). Deux contrastes
+  manquants trouvés et corrigés (lien du bandeau sombre + eyebrow du bandeau de preuve, `--deep` sur noir = 2,25:1) ·
+  **170 FR / 170 EN**, compte égal vérifié **avant** écriture · 0 `href` mort · 0 em-dash dans les 170 chaînes
+  anglaises · JSON-LD `Optician` décodé · `noindex` posé (concept nommé = privé) · 3 eyebrows pour 8 sections.
+- **Deux défauts trouvés par la relecture §13, pas par le script, et devenus mécaniques :** (1) le CTA du hero
+  était un `<a>` **sans `href`** — il n'existait que par JavaScript : le lien est réel dès le HTML, le JS ne fait
+  que le re-traduire ; (2) l'URL WhatsApp portait le numéro **tel que l'écrit le flyer** (`699 90 55 77`) → le
+  navigateur tronque l'attribut au premier espace, `wa.me/699` sans message pré-rempli : la fonctionnalité entière
+  du concept était morte, avec un audit vert. Le jeton d'URL est donc les chiffres seuls (`re.sub(r"\D", "", …)`,
+  l'affichage garde les espaces) et le générateur **assertionne** les deux. Les quatre règles (href obligatoire ·
+  chiffres seuls dans une URL · plafond d'eyebrows `ceil(n/3)` · contrôles AVANT écriture) sont versées dans
+  `design/LESSONS.md` (21/09) et chacune a été **testée en la cassant** : numéro espacé, ancre sans href,
+  4 eyebrows sur 8 sections, langue déséquilibrée → les quatre mutations bloquent le build. Le script d'audit
+  n'en voyait aucune.
+- **Trois choix d'honnêteté :** aucun prix (il n'en publie pas — la FAQ l'explique et renvoie à WhatsApp) ·
+  aucune photo, trois cadres dessinés **étiquetés « à remplacer par vos photos »** (pas de photos de marques
+  Ray-Ban/Dior copiées de son site : droits de tiers, et un propriétaire qui voit une photo volée croit le
+  travail fini) · aucun avis, aucune note, aucun compteur.
+- **Dossier créé : `clients/le-cristallin/{inspiration,build-notes}.md`** + ligne au registre d'unicité +
+  `DOSSIERS` du CRM (M4 : « 9 dossiers de travail, tous référencés ✓ »).
+- `hosting/build_previews.py` → **`/cristallin/`** ajouté aux aperçus privés.
+
+### 5 · Ce qui EST DÉJÀ FAUX dans ma maquette et que je ne cache pas
+
+**La liste des 12 assureurs/mutuelles n'a pas pu être confirmée sur la page d'accueil** (le premier fragment
+fourni ne contenait que partenaires, marques et contact). Elle est donc affichée avec la mention explicite
+« **Liste reprise du site actuel du cabinet — à faire valider avant publication** ». De même, les faits venus du
+seul flyer portent des ⚠️ dans la page au lieu d'être présentés comme acquis. Le dossier `uploads/` (flyer,
+vocale) **n'existe pas dans ce bac** : je n'ai pas pu relire l'image ni entendre la note, je travaille sur ce que
+King en a dit. Rien n'est envoyé tant que cette ligne n'est pas validée par le propriétaire ou retirée.
+
+### 6 · Le compteur du soir, et ce qui est dû
+
+145 lignes · **49 contactées** · PRR **6,1 %** (3 réponses humaines) ·
+`closing 2 · presented 2 · qualified 41 · prospect 1 · parked 8 · lost 10` · **0 client · 0 FCFA · 9 jours.**
+
+**Dette ouverte, la seule qui compte ce soir :** à 17:57 j'ai écrit « je vous transmets le lien très rapidement ».
+La maquette existe ; **le lien n'existe pas** — `amk-cm.vercel.app/cristallin/` répondra 404 tant que King n'aura
+pas déployé `hosting/previews/` sur son projet Vercel, et **je ne devine jamais une URL de preview** (c'est
+`yaks-concept` qui a brûlé comme ça). Alternative immédiate sans Vercel : envoyer le fichier lui-même (58 KB,
+s'ouvre dans le navigateur d'un téléphone). Capture 1280×800 impossible ici : `playwright` absent du bac.
+
+**Toujours en attente de King (depuis 18:20, non répondu) :** Médina Optic (hors WhatsApp ou choix ?) ·
+Bonanjo (réécriture ce soir ≤ 21:00 ou demain 09:00 ?) · AFRIQUE LABO (la phrase « noir sur blanc » sur les
+résultats : rétablie à la réponse, ou avec la FU3 de jeudi 24 ?).
+
+
+### 7 · Après relecture de ma propre relecture (19:25) — trois défauts trouvés dans mes propres contrôles
+
+Parce que le danger, ici, n'était plus la maquette mais **mes affirmations sur la maquette** :
+
+1. **`rebuild.sh` pouvait annoncer un succès sur un build mort.** Je lançais `bash leads/build/rebuild.sh 2>&1 |
+   grep -E "..."` : le code de retour lu était celui de `grep`, jamais celui du builder. Un `crm.py` sorti en
+   `✗ clé(s) inconnue(s)` (son propre garde-fou — excellent) laissait donc sur le disque le CSV **de la fois
+   d'avant**, et j'ai lu trois fois de suite des champs périmés en accusant mes écritures d'être « perdues ».
+   Le script capture maintenant le code de retour de chaque étape, imprime `✗ ÉCHEC — <étape>` + le `mtime` du
+   CSV quand rien n'a été écrit, et sort en `1`. **Contre-épreuve faite en cassant le schéma** (clé inconnue
+   posée sur la ligne `le-cristallin`) : rc = 1, message lu, CSV intact ; après revert, rc = 0.
+2. **Ma ligne §13 « CTA mobile = même texte que le hero : ✓ » était fausse.** Le hero dit « Réserver un examen de
+   vue », le rail disait « Réserver sur WhatsApp ». Le libellé est maintenant **dérivé du même champ JSON** (une
+   seule source) et l'égalité hero ↔ rail est **une assertion du générateur** — testée en la cassant. Règle tenue :
+   *dans une check-list, un point sans machine derrière est une opinion.*
+3. **Le CTA du hero n'avait pas de `href`** (il n'existait que par JavaScript) et l'URL WhatsApp portait le numéro
+   **avec ses espaces**, ce qui tronque l'attribut et tue le message pré-rempli : audit vert sur un concept
+   WhatsApp-first qui n'ouvrait rien. Les deux sont devenus des assertions. Les cinq mutations testées ce soir
+   (numéro espacé · ancre sans `href` · 4 eyebrows sur 8 sections · langue déséquilibrée · libellé divergent)
+   **bloquent toutes le build**. Chiffres finaux : 385 runs audités · **0 finding** · 170 FR / 170 EN · 3 eyebrows
+   pour 8 sections · démo ↔ aperçu `diff = 0 ligne`.
+
+**Ce qui est vérifié, et par qui :** l'aperçu tourne en HTTP 200 dans le bac (serveur statique sur
+`hosting/previews/`, `/cristallin/` = 59 888 octets) — visible par King dans son navigateur de préview, **jamais
+indexé** (`noindex`). La Vercel URL client, elle, n'existe pas encore. ⚠️
+**Ce que je n'ai pas pu faire ici :** la note vocale de 10 s (18:01) — aucun dossier `uploads/` dans ce bac, donc
+ni l'image du flyer ni la vocale ne sont dans ma portée ; je travaille sur ce que King en a dit. Si la vocale porte
+une demande, elle doit être **dite**, pas devinée, et gravée dans `crm.py`.
+
+### 8 · 19:40 — la note vocale est transcrite par King : le fil change de nature, et une de mes « divergences » était la mienne
+
+**Ce que King a entendu (vocale de 18:01, 10 s) :** « il disait juste qu'il avait **déjà un site et une page
+Facebook** », puis **il a demandé si on voulait lui en créer une autre**. Trois conséquences, dans l'ordre :
+
+1. **Le CRM bouge d'étape.** `presented` → **`closing`** (`closing = 3 · presented = 1 · qualified 41 ·
+   prospect 1 · parked 8 · lost 10`). Ce n'est pas de l'optimisme : un prospect qui **demande** si on lui crée un
+   support n'est plus dans notre file d'attente, il est dans la sienne. La règle « pas de prix dans un message 1 »
+   est **consommée** (message 1 envoyé 17:51, lu, répondu 17:53, aperçu annoncé 17:57) — le prix peut sortir, mais
+   **uniquement si King valide le périmètre** : je ne chiffre pas une prestation que le roi n'a pas dite chez AMK.
+   La feuille d'envoi porte donc **deux versions** : A sans prix (on demande le lien de sa page), B chiffrée
+   (refonte 100 000 FCFA · page FB 50 000 · 50/50, **jamais de remise**).
+2. **J'avais tort sur une « divergence ».** J'écrivais que son flyer donnait une adresse différente du site
+   (Bonapriso / CTFIC Mballa 2 vs Akwa / FODEC / COMECI). Sur l'image visible à l'écran, **le flyer porte lui
+   aussi Akwa / FODEC / COMECI** : l'écart venait de mes notes d'inventaire, pas de ses supports. La ligne de la
+   maquette ne corrige plus le client, elle **demande** (« si un second local existe, écrivez-le moi »). Le samedi
+   8h30–13h30, lui, **reste** : c'est lisible sur l'image.
+3. **La page Facebook entre dans la maquette — nommée, pas liée.** Son URL nous est inconnue ; un lien deviné
+   part chez un homonyme. `Nous joindre` porte la ligne + l'explication, `sameAs` attend sa réponse.
+
+**Verbatim posés dans `crm.py` (et non plus paraphrasés) :** 17:57 « Parfait ! Je prépare votre aperçu sur-mesure
+et je vous transmets le lien très rapidement. A très vite ! » · 18:13 « C'est noté Monsieur Messoue, merci pour le
+flyer ! / Avoir déjà un site est une très bonne chose. L'aperçu que je vous prépare n'est pas là pour remplacer ce
+que vous avez, mais pour vous montrer une version modernisée, ultra-rapide sur téléphone et 100 % axée sur la
+prise de RDV WhatsApp. / Je vous envoie cette proposition de modernisation comme prévu pour que vous puissiez
+comparer. Excellente soirée à vous ! » · **18:07 « You deleted this message »** (un texte retiré avant renvoi —
+je note, je ne conclus pas). Profil : « last seen today at 18:06 » → il est sur WhatsApp plusieurs fois par jour.
+`last_send_state` corrigé à **`read`** : deux coches **grises** sur le 18:13, pas de bleues = pas de lecture affirmée.
+
+**Contrôles rejoués après édition :** `audit_html.py` = **0 finding** (389 runs, desktop 389 / mobile 389) ·
+**172 FR / 172 EN** · 3 eyebrows / 8 sections · 0 `<a>` sans `href` · `wa.me/699905577` chiffres seuls · rail
+mobile = libellé du hero · `diff` démo ↔ aperçu = **0 ligne**. Le générateur garde ses 5 assertions (dont la
+nouvelle égalité hero ↔ rail), rejouées en les cassant.
+
+**Une limite écrite, pas gommée :** `read_file` sur `/home/user/uploads/image-1.png` **échoue** (« no such file »)
+— la pièce jointe annoncée n'est pas dans le bac, je n'ai donc travaillé que sur **l'image telle que visible à
+l'écran** et sur la transcription de King. Si une ligne du flyer me contredit (numéros, e-mail, BP), c'est **toi**
+qui la liras en grand, pas moi en petit.
+
+---
+
+## Lundi 21/09/2026 — 20:20 · consigne du roi : « la démo doit être MEILLEURE que son site, pour qu'il compare » → V2 (images + comparatif + sa page FB câblée)
+
+**La consigne, textuelle :** « so that's why our demo has to look better than his actual website so that he can
+compare — generate images where need be. Build it. » + le verbatim enfin retranscrit de la note vocale de 18:01 :
+« bonsoir j'ai un site web et une addresse Facebook , bon je ne sais pas si vous avez consulter mon site web ou
+quoi vous voulez seulement cree une autre » + **l'URL de sa page Facebook** (`https://www.facebook.com/lecristallinoptique/`,
+via le lien de partage qu'il a envoyé).
+
+### 1 · Ce que la V2 est devenue (et pourquoi la V1 ne suffisait plus)
+
+La V1 était une **lettre d'intention** : sobre, honnête, zéro image, et sans dire en quoi elle bat ce qu'il a déjà.
+Un prospect qui demande « vous avez consulté mon site ? » ne compare pas des intentions, il compare des preuves.
+Trois ajouts, dans l'ordre d'importance :
+
+1. **Section `#comparatif` — 8 lignes, deux colonnes légendées** (« Votre site actuel » / « Version modernisée »).
+   Tout ce qui est à gauche est **lu sur sa page ou son flyer** : formulaire Nom/Email comme seul chemin · le bloc
+   des 8 partenaires **écrit trois fois** · « ACTIVA Assurances » **deux fois, deux logos** · le samedi du flyer
+   absent du site · **sa page Facebook non reliée** · FR seul · ISO/MINSANTE/ONOC noyés dans un paragraphe · poids
+   sur téléphone. Pied de section : *« Huit lignes, huit lectures de VOTRE page. Si l'une est fausse, dites-la :
+   je la corrige avant même de parler de la suite. »*
+2. **Trois visuels générés** (`generate_image`, inlinés en base64 : 166 + 126 + 108 Ko de JPEG) : devanture avec
+   l'enseigne « LE CRISTALLIN » posée sur le vert du flyer, tailluse en marche avec praticienne en blouse et
+   lunettes de protection, monture sur un visage. **Chacun porte l'étiquette** « Visuel de concept — à remplacer
+   par vos photos », en FR **et** EN — loi §15 : un rendu ne se fait jamais passer pour une photo du client, et un
+   propriétaire qui voit une belle image non étiquetée croit le travail fini. Le fichier fait **592 Ko**, sous le
+   budget d'envoi WhatsApp (1 100 Ko, assertion dans le générateur ; repli : version sobre de 58 Ko sans images).
+3. **Sa page Facebook, RELIÉE** — en-tête, bloc *Nous joindre*, et `sameAs` du JSON-LD. Ses chiffres publics sont
+   affichés sans enjoliver : **515 likes · 44 en parlent · 98 y étaient**, et **avis Google : 3 avis, note 3,0**
+   (lus le 21/09 dans des annuaires publics). Une note de 3,0 montrée telle quelle + un chantier proposé
+   (répondre aux trois, en demander d'autres à la remise du matériel) : c'est exactement ce qui sépare un dossier
+   d'un moule, et ça ne s'invente pas dans l'autre sens non plus.
+
+### 2 · Trois sources, une seule adresse — et c'est MON erreur qui est tombée
+
+En cherchant sa page FB, l'annuaire du **réseau de soins ASCOMA** renvoie sa fiche : « LE CRISTALLIN · Optique
+Médicale · M. Serge Nazaire **MESSOUA** · 222 65 12 65 / 699 90 55 77 · Akwa · Boulevard de la République,
+Carrefour TIF face ancien COMECI ». **Site + flyer + annuaire disent la MÊME adresse** : mon « Bonapriso / CTFIC
+Mballa 2 » d'hier soir ne figurait dans aucune des trois — erreur de MES notes, qui était devenue une ligne
+visible de la maquette, donc une correction publique du client par nous. Retirée ; la ligne restante ne corrige
+plus, elle **demande** s'il existe un second local. Seul point encore en conditionnel : **la liste des 12
+assureurs**, jamais confirmée sur sa page d'accueil. Et le nom du titulaire s'écrit **MESSOUA** (ASCOMA) ou
+**MESSOUE** (ONOC) → à caler sur sa pièce au devis ; dans le fil, on garde la graphie déjà utilisée à 17:51 et
+18:13 (« Monsieur Messoue »), la cohérence vaut mieux qu'une correction hasardeuse.
+
+### 3 · Ce que la V2 a cassé, et la limite de notre outil de contrôle
+
+- **Un jeton non remplacé ne faisait pas échouer le build** : le premier essai a écrit un HTML de 166 Ko (le
+  gabarit nu) que l'audit a trouvé « conforme ». Depuis, le générateur refuse d'écrire si un `@@TOKEN@@` survit —
+  et j'ai rejoué la mutation pour vérifier qu'elle mord.
+- **Collision de classes** : j'avais appelé `.cmp` la grille du comparatif **et** le lien de l'en-tête ; le lien
+  héritait du fond de la grille. Renommées `.cmpgrid` / `.tocmp`. Règle : un jeton de rendu ne doit jamais partager
+  sa racine avec un nom de classe.
+- **`tools/qa/audit_html.py` a deux défauts mesurés ce soir** (sélecteurs composés `.a.b` jamais égalés ;
+  `effective_bg` qui lit la couleur d'une `border` comme un fond). J'ai patché le matching → **régression immédiate
+  sur 6 concepts déjà livrés** (jusqu'à 32 findings sur `concept-oracare-v1`) → **patch remisé** (`git checkout`),
+  outil laissé tel quel, défaut **consigné** dans `design/LESSONS.md`. Corriger un auditeur n'est pas un détail de
+  fin de soirée : ça se fait avec la liste des pages à re-valider. Ce qui protège réellement le fichier, ce sont
+  les **sept assertions du générateur**, chacune testée en la cassant. Une vérification qu'on n'a jamais vue échouer
+  n'est pas une vérification, c'est un rituel.
+
+**Contrôles finaux V2 :** `audit_html.py` = **0 finding** (484 runs, desktop 484 / mobile 484) sur le démo **et**
+sur `hosting/previews/cristallin/index.html`, `diff` entre les deux = **0 ligne** · **218 FR / 218 EN** · 9 sections
+pour 2 eyebrows (plafond 3) · 3 `<img>` toutes en `loading="lazy"` + `alt` + `width/height`, 0 `alt=""` · 0 `<a>`
+sans `href` · 0 ancre morte · `wa.me/699905577` (chiffres seuls, **son** numéro, jamais le nôtre) · JSON-LD décodé
+avec les deux URL en `sameAs` · 0 em-dash dans les 218 chaînes anglaises. Le serveur de préview du bac répond
+**HTTP 200** sur `/cristallin/`.
+
+**Écrit dans les fichiers :** `demos/le_cristallin_content.json` (comparatif, social, photos), `demos/build_le_cristallin.py`
+(images + assertions), `demos/img/le-cristallin-{hero,lab,tryon}.{png,jpg}`, `clients/le-cristallin/build-notes.md`
+(bloc V2, y compris mes cassages), `clients/le-cristallin/inspiration.md` (4ᵉ source), `design/LESSONS.md`
+(limites de l'auditeur), `leads/build/crm.py` (verbatim de la vocale, consigne du roi gravée, adresse close,
+deux graphies du nom, `closing`), `sales/Send-LE-CRISTALLIN-2026-09-21-Soir.md` (versions A/B réécrites sur les
+faits obtenus — le lien FB n'est plus à demander, il est câblé).
+
+**Ce qui reste ouvert, ce soir :** la **seule** chose qui bloque l'envoi, c'est ta réponse sur le périmètre —
+**est-ce qu'AMK reprend la page Facebook, et à 50 000 FCFA ?** Dis « A » ou « B », et le message part. Ensuite :
+Médina Optic · Bonanjo (ce soir ≤ 21:00 ou demain 09:00) · AFRIQUE LABO (« noir sur blanc ») · les 12 assureurs
+à faire valider par lui.
+---
+
+## Lundi 21/09/2026 — 21:15 → 23:20 · Univers Optique (Bépanda) : « digge deep, tout trouver » → dossier de reprise construit, et DEUX ratages du CRM trouvés en route
+
+**La commande, textuelle :** « *from univers optique, build the modern website following our pipeline, look
+for inspiration, read the design and SEO docs then start build — this time make sure you dig deep and find
+out everything: all his social and google business reviews everything.* » Le mot « tout » a été pris au
+sérieux : **six sources lues, dont deux que deux recherches ne donnent jamais** (le DNS du domaine et les
+10 captures Wayback). Le fil, lui, était déjà chaud : 17:50 message 1 · **17:56 il demande le prix** ·
+18:08 King chiffre (100 000 FCFA · 50/50 · rien dû avant accord) et promet **« un aperçu gratuit d'ici
+demain »** → la promesse a fait de ce build **la tâche de la soirée**, devant toute autre réponse.
+
+### 1 · Ce que la fouille a donné, et ce qu'elle a défait
+
+**Défait, d'abord : mon message de 17:50 était faux.** Il affirmait « absent du web ». Or il a (a) une
+**fiche Google notée 3,3/5 avec 6 avis**, catégorie Opticien, horaires lun–ven 8h–18h / sam 8h–13h, plus
+code **3P3G+JCG**, « entre pharmacie Sass et Express Union », **champ site VIDÉ, aucun réseau relié**
+(miroir `docteur.go.yo.fr/univers-optique/`, relevé du 13/09/2025) ; (b) un **domaine enregistré mais mort**
+— `getent hosts` ne résout rien, `curl` = 000, et la dernière copie **vivante** date du 02/11/2023, la
+capture du 09/01/2024 étant un **répertoire Apache vide** ; (c) une **fiche annuaire Maligah** à son nom
+légal `ETS UNIVERS OPTIQUE`, BP 4680, trois lignes téléphoniques, et trois champs vides (e-mail, langues,
+moyens de paiement) ; (d) une **annonce kerawa de 2022** encore indexée qui date le début d'activité au
+**01/08/2009** et liste **prothèses oculaires** et **verres de sécurité** (le support lui-même est
+devenu une page « domaine à vendre » : on cite l'index, jamais la page).
+
+**Trouvé, ensuite, ce qui ne se cherche pas deux fois :** sur SA dernière page vivante, au paragraphe
+« Verres et montures », il est écrit « **Chez Gweleo**, vous pouvez désormais adapter des nouveaux verres… »
+— le nom d'une enseigne étrangère, resté collé dans son propre texte ; ses **trois cartes « NOS SERVICES »
+pointent toutes vers `/examen-de-vue/`** ; une bannière « **15 % de réduction** » tourne sans offre derrière.
+Et en cherchant « Univers Optique avis », le premier résultat détaillé est un **homonyme de Moselle noté
+4,9/5 sur 9 avis** — mieux noté que lui, qui passe avant lui. **Aucune** page Facebook, Instagram ou TikTok
+rattachable : la page « Univers Optique · 508 likes · Global trade invesment » est un homonyme de métier
+différent, donc **ni revendiquée ni liée**.
+
+**Le cadrage qui a remplacé ma phrase fausse, et il est plus fort :** *ce n'est pas qu'il est absent du web
+— c'est que sa seule page vivante est celle d'un autre.* Écrit dans la page (section *Le dossier*, six
+constatations avec URL + date), **pas** en correction publique du client : ses deux numéros fixes
+contradictoires, son « 15 % » et son unique e-mail deviennent **six questions qu'il tranche lui-même**.
+
+### 2 · Le build, et pourquoi un dossier et pas une vitrine
+
+Rituels faits dans l'ordre : `AMK-DESIGN-SKILLS.md` §1–§2 relus + §3.1/§3.2 (règle maison : le crosshair
+et la grille de réticule décorative sont **bannis**, donc la « planche d'acuité » du Cristallin ne pouvait
+être ni copiée ni approchée), `PRE-FLIGHT.md` §2.6 (unicité), **`AMK-SEO-PLAYBOOK.md` lu en entier** (règles
+1, 2, 4 + tableau de mots-clés).
+
+> **Design Read :** « une reprise de fiche publique pour les habitants de Bépanda ET pour les RH/mutuelles
+> qui achètent des verres de sécurité — dans la langue administrative du document, penchée vers un dossier
+> d'affaires plutôt qu'une vitrine. » · **Dials V7 / M4 / D5** (le preset conversion 6/4/4, poussé d'un cran
+> parce que la promesse était « on a tout lu ») · **Mode §12 : greenfield sur archive** (rien à préserver).
+
+**Archétype : la COUVERTURE D'UN DOSSIER** — fiche d'établissement à 8 champs + tampon « à reprendre », puis
+vis-à-vis *ce que j'ai lu* ↔ *la reprise*, registre des 10 actes à filets, créneaux WhatsApp, sa vraie note
+3,3, six questions. **Différent sur 6 axes** au registre d'unicité (archétype, ouverture, palette, typo,
+preuve, angle) : papier chaud `#F2EDE3` / bleu-petrole `#14344A` / **une seule encre rouge brique** ·
+**Bricolage Grotesque + Public Sans + JetBrains Mono** · langue administrative.
+
+Fichiers : `demos/univers_optique_content.py` → `.json` (toute la copie, + dictionnaire `SOURCES`),
+`demos/build_univers_optique.py` (zéro phrase dans le gabarit), `demos/img/univers-optique-{shop,bench,customer}.jpg`
+(générés, **étiquetés** « Rendu de concept — votre photo le remplacera » en FR et EN),
+`clients/univers-optique/{inspiration,build-notes}.md`, ligne au registre, slug `univers` dans
+`hosting/build_previews.py`. **Deux contrôles qui n'existaient pas ce matin** et qui ont mordu : une
+assertion anti-**collision de classes** (mutée exprès → `✗ {'pagefoot': ['div','footer']}`) et une
+assertion de **couverture bilingue de la COPIE** (le DOM ne peut pas compter des spans cachées).
+
+**État livré :** `demos/concept-univers-optique-v1.html` **927 Ko** · `audit_html.py` **0 finding** sur la
+démo **et** sur `hosting/previews/univers/index.html`, `diff` = **0 ligne**, `:4173/univers/` = **200** ·
+167 paires FR|EN · 8 sections / 1 eyebrow · 3 `<img>` lazy+alt+dims · 21 liens WhatsApp vers **son** numéro ·
+JSON-LD `Optician` sans `aggregateRating` ni `sameAs` · **repli d'envoi généré** :
+`demos/concept-univers-optique-v1-sobre.html` **83 Ko**, audit 0 finding lui aussi. Feuille
+`sales/Send-UNIVERS-OPTIQUE-2026-09-22-Soir.md` (version A preuve / version B prix re-posé, **aucune**
+promesse de page Facebook) — **l'envoi est dû avant 09:00 mardi 22/09**.
+
+### 3 · Et surtout : DEUX trous trouvés dans le CRM en voulant l'inscrire — corrigés à la source
+
+**(a) `bash leads/build/rebuild.sh` a EFFACÉ l'état de Le Cristallin.** En ajoutant la ligne Univers, le
+rebuild a rendu `stage=prospecting`, `Facebook` vide, `Follow-up date` vide : les valeurs « closing / 515
+likes / verbatim de la vocale » avaient été écrites **dans `leads/CRM.csv`**, pas dans `leads/build/crm.py`.
+Le CSV est une sortie : **tout ce qu'on y tape à la main meurt au premier passage, en silence.** (C'est la
+5ᵉ fois que ce piège mord dans ce dépôt — `Daily Ops.csv`, KEYMAP, les deux graphies, le lien Vercel.)
+**Corrigé de cause :** `EVENING_2109` + `_apply_evening()` dans `crm.py` — l'état des fils chauds vit
+désormais **dans le générateur**, appliqué **après** toutes les fusions ; trois garde-fous machine : un
+**slug inconnu fait échouer le build** (muté et vérifié : `rc=1`, CSV intact), une **clé non canonique fait
+échouer le build** (elle a mordu immédiatement sur `bamfam_*`, `Last FB post`, `first_touched` → tous
+remisés dans `Notes`/`Conversation`), et **deux rebuilds d'affilée produisent un CSV identique** (vérifié).
+
+**(b) Notre tableau de bord était aveugle au stage le plus chaud.** `closing` n'était dans
+`STAGE_ORDER` **ni** dans `STAGE_LABEL` de `views.py` : nos deux meilleurs fils (prix posé, aperçu
+construit) ne figuraient **nulle part** dans `PIPELINE.md`, parce que la boucle saute toute valeur
+inconnue. Le compteur n'était pas faux, il était **muet**. Corrigé : étapes `won / closing / lost /
+aperçu envoyé` ajoutées (vocabulaire canonique de King, `closing ≠ offer`), **et une assertion : aucun
+stage présent dans le CSV ne peut rester hors de la vue.** `PIPELINE.md` sort maintenant avec
+« **④ Prix posé, en négociation — 2** » (Le Cristallin, Univers Optique) · 47 contactés · **4 réponses
+humaines · PRR 8,5 %** · 0 client · 0 FCFA.
+
+**(c) Le contrecoup du DNS :** `openpyxl` manquait dans le bac (le rebuild refusait de lire le classeur) →
+installée (`openpyxl 3.1.5`, déjà requis par `crm.py`). À savoir pour le prochain bac neuf.
+
+**Ce qui reste ouvert :** l'envoi de l'aperçu Univers (dû avant 09:00) ; la réponse de King sur le périmètre
+Le Cristallin (« A » page seule / « B » page + Facebook, 50 000 FCFA) ; les six questions qu'Univers doit
+trancher (dont l'**accès à sa fiche Google**, qui prime sur la mise en ligne) ; Médina Optic · Bonanjo ·
+AFRIQUE LABO. `amk-cm.vercel.app/univers/` répond **404** tant que King n'a pas déployé.
+

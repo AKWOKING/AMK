@@ -33,7 +33,7 @@ Walk-In-Batch-2026-09-15. Pain: parents find only FB/yahoo, no website. Bilingua
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 9 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 14 ligne(s).*
 
 `L17` · | mar 15/09 15:45 | **St. Theresa** (679 15 10 75) | msg 1 | Envoyé | ✅ **OUI — 20:44** |
 `L18` · | mar 15/09 22:25 | St. Theresa | accusé de réception | Envoyé | ✅ **22:51 — permission de revenir en octobre** |
@@ -44,6 +44,11 @@ Walk-In-Batch-2026-09-15. Pain: parents find only FB/yahoo, no website. Bilingua
 `L118` · **Cumul depuis le 14/09 :** 38 messages · **31 fils ouverts** · **1 réponse humaine** (St. Theresa) · **0 aperçu demandé · 0 client · 0 FCFA.**
 `L235` · la ligne St. Theresa n'était pas décalée (0 anomalie), et `Daily Ops.csv` n'est pas une copie de l'onglet (50 vs 36).
 `L260` · - **Compteur : 3 réponses humaines** (St. Theresa 15/09, UNI-LABO 18/09, Bonanjo 19/09).
+`L717` · ⚠️ **St. Theresa a bien répondu deux fois le 15/09** — sa cellule `Reply` contient le verbatim, pas un
+`L742` · 1. **St. Theresa compte-t-elle dans le PRR ?** (oui → 4/45 = 8,9 %, table explicite ajoutée)
+`L745` · 4. **Les 5 questions de l'audit du 18/09 §10 sont toujours sans réponse** (COMOBIL · health manuel de St. Theresa · les 12 labos de la réserve · la Page Facebook · le parrainage St. Theresa). Les deux premières ont été tranchées par la migration d'aujourd'hui ; il en reste trois.
+`L760` · | ② | **St. Theresa : oui, elle compte dans le PRR.** | Sa `Reply` porte le verbatim, pas un « yes » : la déduction ne la voyait pas. Forcée à la main (`reply_type=human`, verbatim des 15/09 20:44 + 22:51 dans la cellule). Le PRR passe de 4,4 % à **6,7 % (3/45)** — et retombe à **6,5 % (3/46)** quand AFRIQUE LABO entre au tableau (§2). Sa `stage_since` = **21/09**, la date de la décision de parking, pas celle de la réponse. |
+`L820` · la Page Facebook · le parrainage St. Theresa.
 
 ---
 
