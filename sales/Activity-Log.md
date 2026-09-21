@@ -1059,3 +1059,84 @@ nouvelle égalité hero ↔ rail), rejouées en les cassant.
 — la pièce jointe annoncée n'est pas dans le bac, je n'ai donc travaillé que sur **l'image telle que visible à
 l'écran** et sur la transcription de King. Si une ligne du flyer me contredit (numéros, e-mail, BP), c'est **toi**
 qui la liras en grand, pas moi en petit.
+
+---
+
+## Lundi 21/09/2026 — 20:20 · consigne du roi : « la démo doit être MEILLEURE que son site, pour qu'il compare » → V2 (images + comparatif + sa page FB câblée)
+
+**La consigne, textuelle :** « so that's why our demo has to look better than his actual website so that he can
+compare — generate images where need be. Build it. » + le verbatim enfin retranscrit de la note vocale de 18:01 :
+« bonsoir j'ai un site web et une addresse Facebook , bon je ne sais pas si vous avez consulter mon site web ou
+quoi vous voulez seulement cree une autre » + **l'URL de sa page Facebook** (`https://www.facebook.com/lecristallinoptique/`,
+via le lien de partage qu'il a envoyé).
+
+### 1 · Ce que la V2 est devenue (et pourquoi la V1 ne suffisait plus)
+
+La V1 était une **lettre d'intention** : sobre, honnête, zéro image, et sans dire en quoi elle bat ce qu'il a déjà.
+Un prospect qui demande « vous avez consulté mon site ? » ne compare pas des intentions, il compare des preuves.
+Trois ajouts, dans l'ordre d'importance :
+
+1. **Section `#comparatif` — 8 lignes, deux colonnes légendées** (« Votre site actuel » / « Version modernisée »).
+   Tout ce qui est à gauche est **lu sur sa page ou son flyer** : formulaire Nom/Email comme seul chemin · le bloc
+   des 8 partenaires **écrit trois fois** · « ACTIVA Assurances » **deux fois, deux logos** · le samedi du flyer
+   absent du site · **sa page Facebook non reliée** · FR seul · ISO/MINSANTE/ONOC noyés dans un paragraphe · poids
+   sur téléphone. Pied de section : *« Huit lignes, huit lectures de VOTRE page. Si l'une est fausse, dites-la :
+   je la corrige avant même de parler de la suite. »*
+2. **Trois visuels générés** (`generate_image`, inlinés en base64 : 166 + 126 + 108 Ko de JPEG) : devanture avec
+   l'enseigne « LE CRISTALLIN » posée sur le vert du flyer, tailluse en marche avec praticienne en blouse et
+   lunettes de protection, monture sur un visage. **Chacun porte l'étiquette** « Visuel de concept — à remplacer
+   par vos photos », en FR **et** EN — loi §15 : un rendu ne se fait jamais passer pour une photo du client, et un
+   propriétaire qui voit une belle image non étiquetée croit le travail fini. Le fichier fait **592 Ko**, sous le
+   budget d'envoi WhatsApp (1 100 Ko, assertion dans le générateur ; repli : version sobre de 58 Ko sans images).
+3. **Sa page Facebook, RELIÉE** — en-tête, bloc *Nous joindre*, et `sameAs` du JSON-LD. Ses chiffres publics sont
+   affichés sans enjoliver : **515 likes · 44 en parlent · 98 y étaient**, et **avis Google : 3 avis, note 3,0**
+   (lus le 21/09 dans des annuaires publics). Une note de 3,0 montrée telle quelle + un chantier proposé
+   (répondre aux trois, en demander d'autres à la remise du matériel) : c'est exactement ce qui sépare un dossier
+   d'un moule, et ça ne s'invente pas dans l'autre sens non plus.
+
+### 2 · Trois sources, une seule adresse — et c'est MON erreur qui est tombée
+
+En cherchant sa page FB, l'annuaire du **réseau de soins ASCOMA** renvoie sa fiche : « LE CRISTALLIN · Optique
+Médicale · M. Serge Nazaire **MESSOUA** · 222 65 12 65 / 699 90 55 77 · Akwa · Boulevard de la République,
+Carrefour TIF face ancien COMECI ». **Site + flyer + annuaire disent la MÊME adresse** : mon « Bonapriso / CTFIC
+Mballa 2 » d'hier soir ne figurait dans aucune des trois — erreur de MES notes, qui était devenue une ligne
+visible de la maquette, donc une correction publique du client par nous. Retirée ; la ligne restante ne corrige
+plus, elle **demande** s'il existe un second local. Seul point encore en conditionnel : **la liste des 12
+assureurs**, jamais confirmée sur sa page d'accueil. Et le nom du titulaire s'écrit **MESSOUA** (ASCOMA) ou
+**MESSOUE** (ONOC) → à caler sur sa pièce au devis ; dans le fil, on garde la graphie déjà utilisée à 17:51 et
+18:13 (« Monsieur Messoue »), la cohérence vaut mieux qu'une correction hasardeuse.
+
+### 3 · Ce que la V2 a cassé, et la limite de notre outil de contrôle
+
+- **Un jeton non remplacé ne faisait pas échouer le build** : le premier essai a écrit un HTML de 166 Ko (le
+  gabarit nu) que l'audit a trouvé « conforme ». Depuis, le générateur refuse d'écrire si un `@@TOKEN@@` survit —
+  et j'ai rejoué la mutation pour vérifier qu'elle mord.
+- **Collision de classes** : j'avais appelé `.cmp` la grille du comparatif **et** le lien de l'en-tête ; le lien
+  héritait du fond de la grille. Renommées `.cmpgrid` / `.tocmp`. Règle : un jeton de rendu ne doit jamais partager
+  sa racine avec un nom de classe.
+- **`tools/qa/audit_html.py` a deux défauts mesurés ce soir** (sélecteurs composés `.a.b` jamais égalés ;
+  `effective_bg` qui lit la couleur d'une `border` comme un fond). J'ai patché le matching → **régression immédiate
+  sur 6 concepts déjà livrés** (jusqu'à 32 findings sur `concept-oracare-v1`) → **patch remisé** (`git checkout`),
+  outil laissé tel quel, défaut **consigné** dans `design/LESSONS.md`. Corriger un auditeur n'est pas un détail de
+  fin de soirée : ça se fait avec la liste des pages à re-valider. Ce qui protège réellement le fichier, ce sont
+  les **sept assertions du générateur**, chacune testée en la cassant. Une vérification qu'on n'a jamais vue échouer
+  n'est pas une vérification, c'est un rituel.
+
+**Contrôles finaux V2 :** `audit_html.py` = **0 finding** (484 runs, desktop 484 / mobile 484) sur le démo **et**
+sur `hosting/previews/cristallin/index.html`, `diff` entre les deux = **0 ligne** · **218 FR / 218 EN** · 9 sections
+pour 2 eyebrows (plafond 3) · 3 `<img>` toutes en `loading="lazy"` + `alt` + `width/height`, 0 `alt=""` · 0 `<a>`
+sans `href` · 0 ancre morte · `wa.me/699905577` (chiffres seuls, **son** numéro, jamais le nôtre) · JSON-LD décodé
+avec les deux URL en `sameAs` · 0 em-dash dans les 218 chaînes anglaises. Le serveur de préview du bac répond
+**HTTP 200** sur `/cristallin/`.
+
+**Écrit dans les fichiers :** `demos/le_cristallin_content.json` (comparatif, social, photos), `demos/build_le_cristallin.py`
+(images + assertions), `demos/img/le-cristallin-{hero,lab,tryon}.{png,jpg}`, `clients/le-cristallin/build-notes.md`
+(bloc V2, y compris mes cassages), `clients/le-cristallin/inspiration.md` (4ᵉ source), `design/LESSONS.md`
+(limites de l'auditeur), `leads/build/crm.py` (verbatim de la vocale, consigne du roi gravée, adresse close,
+deux graphies du nom, `closing`), `sales/Send-LE-CRISTALLIN-2026-09-21-Soir.md` (versions A/B réécrites sur les
+faits obtenus — le lien FB n'est plus à demander, il est câblé).
+
+**Ce qui reste ouvert, ce soir :** la **seule** chose qui bloque l'envoi, c'est ta réponse sur le périmètre —
+**est-ce qu'AMK reprend la page Facebook, et à 50 000 FCFA ?** Dis « A » ou « B », et le message part. Ensuite :
+Médina Optic · Bonanjo (ce soir ≤ 21:00 ou demain 09:00) · AFRIQUE LABO (« noir sur blanc ») · les 12 assureurs
+à faire valider par lui.

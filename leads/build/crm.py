@@ -213,26 +213,36 @@ LIVE_LEDGER = {
            "site_url": "https://lecristallinoptique.com/", "site_checked_on": "2026-09-21",
            "dossier": "clients/le-cristallin/"},
         bamfam_next_action="TROIS CHOSES, CE SOIR (fenêtre ouverte, il est « last seen 18:06 ») : "
-                           "① envoyer l'aperçu (`demos/concept-le-cristallin-v1.html`, 58 KB — le FICHIER, pas un "
-                           "lien non déployé) ② répondre à SA question, qui est une demande : oui, on peut lui "
-                           "créer la page Facebook, et ça chiffré = SITE (refonte) + PAGE FB (création + "
-                           "exploitation) en deux postes ③ récupérer le LIEN de sa page Facebook existante — "
-                           "c'est une preuve B2C que nous n'avions pas, et ça change le contenu de la maquette.",
+                           "① envoyer l'aperçu (`demos/concept-le-cristallin-v1.html`, 592 KB — le FICHIER, pas un "
+                           "lien non déployé ; budgété ≤ 1 100 Ko pour rester envoyable sur WhatsApp) "
+                           "② répondre à SA question : oui pour la page Facebook, en deux postes chiffrés "
+                           "(refonte du site + création/entretien de la page) ③ PLUS BESOIN de demander le lien "
+                           "FB : il l'a donné (facebook.com/lecristallinoptique) — il est déjà câblé dans la "
+                           "maquette (nav, bloc contact, `sameAs` du JSON-LD).",
         bamfam_next_step="Texte prêt à copier : `sales/Send-LE-CRISTALLIN-2026-09-21-Soir.md` §②bis (version "
                          "« il a demandé le prix » — remplace §②, écrit avant la transcription de la vocale). "
                          "Chiffrage à poser, même grille que les deux autres fils : 100 000 FCFA, 50/50, "
-                         "JAMAIS de remise — si 100 000 ne couvre pas les DEUX postes (refonte + page FB), on "
-                         "TRACE LA PÉRIMÈTRE (deuxième poste en option à 50 000, ou prise en charge de la page "
-                         "seule), on ne baisse pas le prix. ⚠️ Deux points à NE PAS présenter comme réglés : "
-                         "(a) la liste des 12 assureurs, jamais confirmée sur sa page d'accueil ; (b) "
-                         "l'« adresse différente » que j'avais inscrite — le flyer, tel que visible à l'écran, "
-                         "porte AUSSI Akwa / FODEC / COMECI, donc l'écart est peut-être de mon côté : à "
-                         "re-contrôler avant d'en faire une ligne de la page.",
+                         "JAMAIS de remise — si 100 000 ne couvre pas les DEUX postes (refonte + page FB), on TRANCHE "
+                         "LE PÉRIMÈTRE (page FB en option à 50 000, ou la page seule), on ne baisse pas le prix. "
+                         "⚠️ Un seul point reste à NE PAS présenter comme réglé : la liste des 12 assureurs, "
+                         "jamais confirmée sur sa page d'accueil (la page l'affiche avec la mention « à faire "
+                         "valider »). L'adresse, elle, est CLOSE : site + flyer + annuaire ASCOMA concordent.",
         log_ref="L837",
-        note="Une note VOCALE de 10 s (18:01) n'est pas transcrite dans ce fichier : si elle porte une "
-             "demande (prix, délai, photos), elle doit être dite, pas devinée. Le message de 18:13 dit « avoir "
-             "déjà un site est une très bonne chose » : la posture de la conversation est donc la MODERNISATION, "
-             "pas la création. C'est écrit dans la maquette elle-même (section « Avant de publier »)."),
+        note="La vocale de 18:01 EST retranscrite dans le fil (verbatim du roi, 21/09 19:40) : ce n’était "
+             "pas une demande de prix, c’était une vérification de notre sérieux (« vous avez consulté mon "
+             "site ? »). Le message de 18:13 posait déjà la MODERNISATION et non le remplacement : c’est ce "
+             "que la maquette démontre ligne par ligne dans sa section COMPARATIF — 8 lignes, chacune lue sur "
+             "SA page, aucune inventée. "
+             "ADRESSE : le site, le flyer et l’annuaire du réseau ASCOMA concordent sur Akwa, carrefour TIF, "
+             "face ancien COMECI SA. Mon « Bonapriso / CTFIC Mballa 2 » ne figurait dans aucune des trois "
+             "sources : erreur de MES notes, retirée de la page — la ligne « à trancher » ne corrige plus le "
+             "client, elle demande s’il existe un second local. "
+             "NOM du titulaire : ASCOMA écrit « MESSOUA », l’annuaire ONOC « MESSOUE » (une consonne de "
+             "différence) : à caler sur sa pièce d’identité, jamais sur notre fichier. "
+             "CHIFFRES PUBLICS LUS le 21/09 (ni inventés, ni enjolivés, ni cachés) : page Facebook 515 likes · "
+             "44 en parlent · 98 y étaient ; avis Google 3 avis, note 3,0. La maquette affiche la note TELLE "
+             "QUELLE et en fait un chantier à deux (répondre aux trois, en demander d’autres à la remise du "
+             "matériel) : c’est exactement ce qui sépare un dossier d’un moule."),
     "skye-douala": dict(
         # Parked à la demande explicite de King (21/09), sur preuve des captures d'écran :
         # deux messages LIVRÉS (✓✓) et JAMAIS OUVERTS. Une 3e relance sur un fil non lu ne vend rien.
@@ -872,14 +882,27 @@ REPONSES_2109 = {
         #   (« est-ce que vous voulez m'en créer une autre ? »). Ce n'est plus un fil à aperçu,
         #   c'est un fil qui demande le prix. L'étape suit le fil, pas notre calendrier.
         "reply": "YES lun 21/09 17:53 « Ok » (2 min) · PUIS 18:01 VOCAL : il a déjà un site ET une page "
-                 "Facebook, et il DEMANDE si on veut bien lui en créer une autre = signal d'achat",
+                 "Facebook, et il DEMANDE si on veut bien lui en créer une autre = signal d'achat. "
+                 "VERBATIM de la vocale (retranscrit par King, 21/09 19:40) : « bonsoir j'ai un site web et une "
+                 "addresse Facebook , bon je ne sais pas si vous avez consulter mon site web ou quoi vous voulez "
+                 "seulement cree une autre » — la phrase porte une QUESTION SUR NOTRE INTENTION (« est-ce que "
+                 "vous avez consulté mon site ? vous voulez juste m'en créer un autre ? ») : il veut savoir sur "
+                 "quoi on se base. Ça se paie par une preuve, pas par un argument.",
         "reply_type": "human", "last_reply_received": "2026-09-21",
         "stage": "closing", "stage_since": "2026-09-21",
         "follow_ups_sent": "0", "last_send_state": "read", "demo": "Yes",
         "wa_verified": "yes",
         "profile_name_seen": "Le Cristallin · « last seen today at 18:06 » (vu 21/09) — il est sur WhatsApp "
                              "plusieurs fois par jour : la fenêtre de réponse est réelle, pas théorique",
-        "note": "Chronologie exacte (écran 21/09) : 17:51 msg 1 (2 coches) · **17:53 « Ok »** · 17:57 NOTRE "
+                "note": "⚠️ CONSIGNE DE TRAVAIL DU ROI (21/09 19:40), gravée ici parce qu'elle engage la "
+                "maquette et pas seulement le message : « notre démo doit être MEILLEURE que son site actuel "
+                "pour qu'il puisse comparer » + « génère des images là où il en faut ». Donc : (1) une section "
+                "COMPARATIF de 8 lignes, chacune LUE sur sa page (formulaire seul, carrousels triplés, ACTIVA en "
+                "double, samedi absent, Facebook non relié, FR seul, papiers noyés, poids) ; (2) trois VISUELS "
+                "générés, JPEG inlinés, CHACUN étiqueté « Visuel de concept — à remplacer par vos photos » en "
+                "FR et EN (loi §15 : un rendu ne se fait jamais passer pour une photo du client) ; (3) sa page "
+                "Facebook RELIÉE (nav, contact, sameAs) puisque l'URL vient de lui. "
+                "Chronologie exacte (écran 21/09) : 17:51 msg 1 (2 coches) · **17:53 « Ok »** · 17:57 NOTRE "
                 "réponse verbatim : « Parfait ! Je prépare votre aperçu sur-mesure et je vous transmets le lien "
                 "très rapidement. A très vite ! » · 18:01 note VOCALE 10 s = « j'ai déjà un site et une page "
                 "Facebook » + la question de savoir si on lui en créerait une AUTRE · 18:02 son FLYER en image, "
@@ -1046,7 +1069,8 @@ OPTICIENS_2109 = [
          notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : MANFO Hélène. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="le-cristallin", org="Le Cristallin", city="Douala", org_type="other", language="FR",
          wa_number="699 90 55 77", wa_verified="unknown",
-         contact_channel="WhatsApp", decision="MESSOUE LONTE Serge Nazaire", source="directory",
+         contact_channel="WhatsApp", decision="MESSOUE LONTE Serge Nazaire — ASCOMA écrit « MESSOUA » :"
+         " deux graphies connues, à caler sur sa pièce d'identité", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
          Website="lecristallinoptique.com",

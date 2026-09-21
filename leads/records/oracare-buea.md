@@ -31,7 +31,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 15 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 16 ligne(s).*
 
 `L3` · **Pourquoi ce fichier existe.** Le 18/09, j'ai écrit dans un résumé que « OraCare et MITOC ont répondu ». **C'est faux.** Oracle a écrit le contraire et j'ai parlé de mémoire au lieu de lire ce fichier. King a corrigé. Cette erreur a coûté du temps et de la confiance : ce journal remplace la mémoire par des faits vérifiables.
 `L13` · | lun 14/09 | **OraCare237** (672 52 66 86) | msg 1 | **Pas lu** | **Non** |
@@ -48,6 +48,7 @@
 `L816` · 2. **OraCare :** la FU2 de dimanche est-elle partie ? (une ligne — ça décide si on écrit aujourd'hui ou demain.)
 `L832` · - `OraCare` : message de **clôture parti 17:43** → **`parked` le 21/09**, 3 relances au compteur, plus aucune
 `L848` · 2. **Un parqué ressortait « à relancer »** : OraCare pointait en « Relance 4/3 » dans la file du jour parce
+`L1119` · sur 6 concepts déjà livrés** (jusqu'à 32 findings sur `concept-oracare-v1`) → **patch remisé** (`git checkout`),
 
 ---
 

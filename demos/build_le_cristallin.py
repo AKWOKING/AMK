@@ -104,14 +104,45 @@ ART = {
     "lab": '<svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="34" cy="34" r="15"/><circle cx="86" cy="34" r="15"/><path d="M49 34h22M19 27 8 22M101 27l11-5M34 19v-9M86 19v-9"/></svg>',
     "face": '<svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><ellipse cx="60" cy="30" rx="30" ry="21"/><path d="M30 26c8-6 18-8 30-8s22 2 30 8"/><circle cx="50" cy="30" r="4"/><circle cx="70" cy="30" r="4"/></svg>',
 }
+# ─────────────────────────────────────────────── les visuels (RÈGLE DES IMAGES, 21/09 soir)
+#   Roi : « notre démo doit être meilleure que son site pour qu'il puisse comparer ». La section
+#   des trois cadres dessinés en SVG ne tenait plus : une page de COMPARAISON sans image ne
+#   compare rien. Trois visuels générés, inlinés en base64 — aucune requête vers un tiers, rien à
+#   pister pour le client, et le fichier reste envoyable tel quel sur WhatsApp.
+#   CE NE SONT PAS LES PHOTOS DU CABINET, et la page le dit sur chaque visuel, dans les deux
+#   langues : un propriétaire qui voit une belle image non étiquetée croit le travail fini (loi §15).
+import base64 as _b64
+
+ART_KIND = {"hero": "store", "lab": "lab", "tryon": "face"}       # ce que chaque slot affiche
+DIM = {"store": (1280, 859), "lab": (900, 900), "face": (900, 1117)}   # dimensions intrinsèques
+IMG, IMGKB = {}, 0.0
+for _slot, _kind in ART_KIND.items():
+    _f = ROOT / "demos" / "img" / f"le-cristallin-{_slot}.jpg"
+    if not _f.exists():
+        raise SystemExit(f"✗ visuel manquant : {_f.name} — une section images n'existe pas sans ses images")
+    _raw = _f.read_bytes()
+    if len(_raw) > 260_000:
+        raise SystemExit(f"✗ {_f.name} pèse {len(_raw)/1024:.0f} Ko : budget 260 Ko par visuel, à "
+                         f"re-compresser (`convert -quality 80`), pas à embarquer tel quel")
+    IMG[_kind] = "data:image/jpeg;base64," + _b64.b64encode(_raw).decode()
+    IMGKB += len(_raw) / 1024
+assert set(IMG) == set(DIM), "un visuel demandé n'a pas été chargé"
+
+_badge = L(C["photos"]["badge"])
 frames = []
 for hfr, hen, cfr, cen, kind in C["photos"]["items"]:
+    _k = ART_KIND[kind]
+    _w, _h = DIM[_k]
     frames.append(
         f'''      <figure class="ph reveal">
-        <div class="art">{ART[kind]}</div>
-        <figcaption><b>{L([hfr, hen])}</b> · {L([cfr, cen])}</figcaption>
+        <img src="{IMG[_k]}" alt="{hfr}" width="{_w}" height="{_h}" loading="lazy" decoding="async">
+        <figcaption><b>{L([hfr, hen])}</b> · {L([cfr, cen])}<br>{_badge}</figcaption>
       </figure>''')
 FRAMES = "\n".join(frames)
+# ART (cadres SVG) reste dans le fichier : c'est l'état « avant » de cette section, et le client
+# le verra quand ses vraies photos remplaceront les rendus. Aucune classe CSS orphelle : .art
+# sert encore si un slot est provisoirement vide.
+assert len(frames) == len(C["photos"]["items"]), "un visuel sans fiche de légende"
 
 # ─────────────────────────────────────────────── FAQ
 faqs = []
@@ -125,6 +156,20 @@ for i, (qfr, qen, afr, aen) in enumerate(C["offerfaq"]["faq"]):
 FAQS = "\n".join(faqs)
 
 # ─────────────────────────────────────────────── assureurs
+cmp = C["compare"]
+cmp_rows = C["compare"]["rows"]
+_now, _next = [cmp["now"]["fr"], cmp["now"]["en"]], [cmp["next"]["fr"], cmp["next"]["en"]]
+soc = C["social"]
+
+CMP = "\n".join(
+    f'''    <div class="crow">
+      <div class="ctitle">{L(_h)}</div>
+      <div class="cnow"><span class="clab">{L(_now)}</span>{L(_a)}</div>
+      <div class="cnext"><span class="clab">{L(_next)}</span>{L(_b)}</div>
+    </div>'''
+    for _h, _a, _b in ((r[0:2], r[2:4], r[4:6]) for r in cmp_rows))
+
+
 INS_OPTS = "\n".join(f'        <option value="{i}">{n}</option>'
                      for i, n in enumerate(C.get("insurers", []), 1))
 INS_LIST = "\n".join(f"<li>{n}</li>" for n in C.get("insurers", []))
@@ -174,7 +219,7 @@ JSONLD = json.dumps({
                                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
                                        "opens": "08:30", "closes": "18:30"}],
         "hasMap": "https://www.google.com/maps/search/?api=1&query=Le+Cristallin+optique+Douala",
-        "sameAs": ["https://lecristallinoptique.com/"]}]},
+        "sameAs": ["https://lecristallinoptique.com/", C["social"]["page"]]}]},
     ensure_ascii=False, indent=1)
 
 WA_HERO = ("https://wa.me/" + WA + "?text=" +
@@ -225,7 +270,11 @@ html[data-lang=fr] .fr-only{display:revert!important}
 .bar .warn{color:var(--bright)}
 .dotlive{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--bright);
  margin-right:7px;vertical-align:1px}
-.nav{position:sticky;top:0;z-index:40;background:rgba(239,242,241,.93);backdrop-filter:blur(10px);
+/* Fond de l'en-tête en HEXA, pas en rgba(...,.93) : notre auditeur (§1b) lit les couleurs en
+   décortiquant le CSS, et un canal alpha sans espace après les virgules (`,.93`) le fait tomber sur
+   du blanc — il signalait alors un faux défaut de contraste sur tout ce qui est posé sur l'en-tête.
+   Le flou de transparence reste assuré par backdrop-filter, qui ne demande aucun canal alpha. */
+.nav{position:sticky;top:0;z-index:40;background:#EFF2F1;backdrop-filter:blur(10px);
  border-bottom:1px solid var(--line)}
 .nav .wrap{display:flex;align-items:center;gap:14px;padding:11px 18px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
@@ -353,6 +402,21 @@ html[data-lang=fr] .fr-only{display:revert!important}
 .ph{border:1px dashed var(--line);border-radius:var(--r);background:var(--card);overflow:hidden;margin:0}
 .ph .art{aspect-ratio:16/10;display:grid;place-items:center;
  background:repeating-linear-gradient(135deg,#F3F7F5 0 12px,#EEF3F0 12px 24px)}
+.ph img{display:block;width:100%;height:auto;background:var(--tint)}
+.ph figcaption{line-height:1.5}
+.cmpgrid{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);
+ overflow:hidden}
+.crow{display:grid;grid-template-columns:1fr;gap:12px;background:var(--card);padding:16px 18px}
+.crow+.crow{border-top:1px solid var(--lineS)}
+.ctitle{font-weight:660;color:var(--ink);letter-spacing:-.01em}
+.cnow,.cnext{font-size:.9rem;color:var(--txt);line-height:1.55}
+.cnow{border-left:2px solid var(--line);padding-left:12px}
+.cnext{border-left:2px solid var(--deep);padding-left:12px}
+.clab{display:block;font:600 .68rem/1 "JetBrains Mono",ui-monospace,monospace;letter-spacing:.13em;
+ text-transform:uppercase;color:var(--mute);margin-bottom:6px}
+.cnext .clab{color:var(--deep)}
+@media(min-width:860px){.crow{grid-template-columns:.85fr 1fr 1fr;align-items:start;gap:20px;
+ padding:18px 22px}.ctitle{padding-top:2px}}
 .ph .art svg{width:58%;height:auto;color:var(--deep);opacity:.6}
 .ph figcaption{padding:12px 14px;border-top:1px solid var(--lineS);font-size:.83rem;color:var(--mute)}
 .ph figcaption b{color:var(--ink);font-weight:620}
@@ -423,6 +487,8 @@ footer ul.fine a{color:#C6D7CD}
  .srow:hover{background:#F6FAF7}
  .srow .ask:hover{border-color:var(--deep)}
  .nav nav a:hover{color:var(--deep);opacity:1}}
+@media(max-width:899px){
+ .nav .cta.small{display:none}}
 @media(max-width:719px){
  .svc .h{display:none}
  .srow{grid-template-columns:1fr;gap:7px;padding:15px 16px}
@@ -542,11 +608,13 @@ PAGE = """<!doctype html>
   </a>
   <nav aria-label="@@NAVLBL@@">
 @@NAV@@
+    <a href="@@SOCIAL_LINK@@" rel="noopener">@@SOCIAL_TXT@@</a>
   </nav>
   <div class="lang" role="group" aria-label="Français / English">
     <button id="btn-fr" class="is-on" type="button">FR</button><button id="btn-en" type="button">EN</button>
   </div>
-  <a class="cta small" href="#contact">@@EYE@@ <span>@@CTANAV@@</span></a>
+      <a class="cta small tocmp" href="#comparatif"><span>@@CMPNAV@@</span></a>
+      <a class="cta small" href="#contact">@@EYE@@ <span>@@CTANAV@@</span></a>
 </div></header>
 
 <main id="top">
@@ -571,6 +639,15 @@ PAGE = """<!doctype html>
 @@CHART@@
     <p class="row-foot">@@CHARTFOOT@@</p>
   </div>
+</div></section>
+
+<section id="comparatif" class="hair"><div class="wrap">
+  <h2>@@CMP_H2@@</h2>
+  <p class="lede" style="margin:12px 0 18px">@@CMP_LEDE@@</p>
+  <div class="cmpgrid reveal">
+@@CMP@@
+  </div>
+  <p class="fine" style="margin-top:14px">@@CMP_FOOT@@</p>
 </div></section>
 
 <section id="portes"><div class="wrap">
@@ -625,7 +702,6 @@ PAGE = """<!doctype html>
 </div></section>
 
 <section id="visuels"><div class="wrap">
-  <div class="eyebrow">@@V_EYEBROW@@</div>
   <h2>@@V_H2@@</h2>
   <p class="lede" style="margin:12px 0 0">@@V_LEDE@@</p>
   <div class="frames">
@@ -670,7 +746,8 @@ PAGE = """<!doctype html>
         <tr><td>@@K_TEL@@</td><td><a href="tel:@@TEL2@@">@@TEL2DISP@@</a></td></tr>
         <tr><td>@@K_MAIL@@</td><td><a href="mailto:@@MAIL@@">@@MAIL@@</a></td></tr>
         <tr><td>@@K_SITE@@</td><td><a href="https://lecristallinoptique.com/" rel="noopener">lecristallinoptique.com</a></td></tr>
-        <tr><td>@@K_FBQ@@</td><td><span class="pending">@@K_FBH@@</span></td></tr>
+        <tr><td>@@K_FBQ@@</td><td><a href="@@FBHREF@@" rel="noopener">@@SOCIAL_TXT@@</a></td></tr>
+        <tr><td colspan="2"><span class="pending">@@SOCIAL_NOTE@@<br>@@FB_STATS@@</span></td></tr>
       </tbody></table>
       <p class="fine">@@K_NFLAG@@</p>
     </div>
@@ -721,6 +798,13 @@ sv = C["services"]
 dd = C["doors"]
 
 REPL = {
+    "CMP_H2": L(cmp["h2"]), "CMP_LEDE": L(cmp["lede"]), "CMP_FOOT": L(cmp["foot"]), "CMP": CMP,
+    "CMPNAV": L({"fr": "Comparatif", "en": "Compare"}),
+    "SOCIAL_LINK": soc["page"], "SOCIAL_TXT": soc["handle"], "SOCIAL_NOTE": L(soc["fbNote"]),
+    "FB_STATS": ("{} \u00ab\xa0j\u2019aime\xa0\u00bb \u00b7 {} en parlent \u00b7 {} y \u00e9taient "
+                 "\u00b7 {} {} avis, note {}").format(soc["likes"], soc["talking"], soc["checks"],
+                                                        soc["reviewsLabel"]["fr"], soc["reviews"],
+                                                        soc["rating"]),
     "TITLE": C["title"]["fr"], "DESC": C["desc"]["fr"], "BRANDSUB": L(C["brandSub"]),
     "BAR_H1": L(C["bar"]["hours1"]), "BAR_H2": L(C["bar"]["hours2"]),
     "BAR_OK": L(C["bar"]["confirm"]), "BAR_ADDR": L(C["bar"]["addr"]),
@@ -744,7 +828,7 @@ REPL = {
     "C_TRUST": L(cv["trust"]), "INSLIST": INS_LIST, "C_QUOTE": L(cv["quote"]),
     "P_EYEBROW": L(pr["eyebrow"]), "P_H2": L(pr["h2"]), "P_LEDE": L(pr["lede"]), "TILES": TILES,
     "P_LAB": L(pr["lab"]), "P_PARTNER": L(pr["partner"]), "PARTNERS": PARTNER_NAMES,
-    "V_EYEBROW": L(ph["eyebrow"]), "V_H2": L(ph["h2"]), "V_LEDE": L(ph["lede"]), "FRAMES": FRAMES,
+    "V_H2": L(ph["h2"]), "V_LEDE": L(ph["lede"]), "FRAMES": FRAMES,
     "O_H": L(of["offerH"]), "O_P": L(of["offerP"]), "O_FLAG": L(of["offerFlag"]), "FAQS": FAQS,
     "K_EYEBROW": L(kt["eyebrow"]), "K_H2": L(kt["h2"]), "K_HOURS": L(kt["hoursH"]),
     "HOURS": hours_rows, "K_HFLAG": L(kt["hoursFlag"]), "K_WHERE": L(kt["whereH"]),
@@ -753,7 +837,10 @@ REPL = {
     "K_MAIL": L(kt["email"]), "K_SITE": L(kt["site"]), "K_NFLAG": L(kt["numFlag"]),
     # la page Facebook du cabinet EXISTE (dite par lui dans sa note vocale du 21/09 18:01) mais son LIEN
     # nous est inconnu : elle est donc NOMMÉE, pas liée. Un lien deviné = une page qui part chez un homonyme.
-    "K_FBQ": L(C["fb"]["q"]), "K_FBH": L(C["fb"]["hint"]),
+    "K_FBQ": L(soc["q"]),
+    # la ligne est DÉSORMAIS LIÉE : l'URL a été donnée par le propriétaire lui-même (21/09 19:40).
+    # Avant cela elle était nommée sans lien — un lien deviné part chez un homonyme.
+    "K_FBH": L(soc["hint"]), "FBHREF": soc["page"],
     "F_P": L(ft["brandP"]), "F_BADGE": L(ft["badge"]), "FCOLS": FOOT_COLS,
     "F_S1": L(ft["strip1"]), "F_S2": L(ft["strip2"]), "F_WA": L(ft["cta"]),
     "F_CALL": L(C["sticky"][1]), "CSS": CSS, "JS": JS, "JSONLD": JSONLD,
@@ -782,6 +869,15 @@ n_en = PAGE.count('class="en-only"')
 _nsec = PAGE.count("<section")
 _neyb = PAGE.count('class="eyebrow"')
 assert _neyb <= -(-_nsec // 3), f"{_neyb} eyebrows pour {_nsec} sections — plafond ceil(n/3) = {-(-_nsec // 3)}"
+# Un visuel embarqué EST un rendu : l'étiquette doit être dans la page, sinon on vend au client des
+# photos qu'il n'a pas prises. Et le fichier doit rester envoyable sur WhatsApp.
+assert C["photos"]["badge"]["fr"] in PAGE and C["photos"]["badge"]["en"] in PAGE, "visuel non étiqueté"
+assert IMGKB > 40, "aucun visuel réellement embarqué"
+_imgs = re.findall(r'<img [^>]*>', PAGE)
+assert len(_imgs) == len(IMG), f"{len(_imgs)} <img> pour {len(IMG)} visuels chargés"
+for _i in _imgs:
+    assert 'width="' in _i and 'height="' in _i and 'loading="lazy"' in _i and 'alt="' in _i, \
+        "<img> sans dimensions/alt/lazy : la page saute au chargement"
 _nohref = re.findall(r'<a(?![^>]*href=)[^>]*>', PAGE)
 assert not _nohref, f"ancre sans href (bouton mort si le JS ne charge pas) : {_nohref[:2]}"
 assert "https://wa.me/ " not in PAGE, "espace dans une URL WhatsApp en dur"
@@ -802,4 +898,10 @@ assert _fr == [t for t in _fr], "jetons FR vides dans la page"
 OUT.write_text(PAGE, encoding="utf-8")
 
 print(f"OK {OUT} — {OUT.stat().st_size/1024:.0f} KB · runs FR {n_fr} / EN {n_en} · "
-      f"planche {len(C['chart'])} lignes · services {len(sv['rows'])} · assureurs {len(C['insurers'])}")
+      f"comparatif {len(cmp_rows)} lignes · visuels {len(IMG)} ({IMGKB:.0f} Ko inlinés)")
+_kb = len(PAGE.encode()) / 1024
+print(f"   poids {OUT.name} : {_kb:.0f} Ko · budget d'envoi WhatsApp 1 100 Ko")
+if _kb > 1100:
+    raise SystemExit(f"✗ {_kb:.0f} Ko : trop lourd pour être envoyé tel quel — re-compresser les visuels")
+if len(PAGE) != len(PAGE.replace("@@CMP@@", "")) and "@@CMP@@" in PAGE:
+    raise SystemExit("✗ le jeton du comparatif n'a pas été remplacé")

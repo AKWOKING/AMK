@@ -133,3 +133,67 @@ du hero · `wa.me/699905577`. `diff` démo ↔ `hosting/previews/cristallin/inde
 doit être **lue sur les deux supports**, pas sur mes notes. Je l'avais inscrite comme un fait de SON inventaire
 alors qu'elle sortait de MON traitement — et elle était devenue une ligne visible de la page, donc une correction
 publique du client par nous. Trois libellés de la maquette portent maintenant un conditionnel, pas une accusation.
+
+---
+
+# V2 — 21/09 · 20:15 · « la démo doit être MEILLEURE que son site, pour qu'il compare » (consigne du roi)
+
+## Ce qui a changé, et pourquoi la v1 ne suffisait plus
+
+La v1 était une **lettre d'intention** : belle, sobre, honnête — mais sans une seule image, et sans dire
+explicitement en quoi elle bat le site existant. Pour un prospect qui a déjà un site et qui demande « vous avez
+consulté mon site ? », ce n'est pas assez : **il compare, donc nous devons comparer avec lui**. Trois ajouts :
+
+1. **Section `#comparatif` — 8 lignes, deux colonnes légendées** (« Votre site actuel » / « Version modernisée »).
+   Chaque ligne de gauche est **lue sur sa page ou son flyer**, ce n'est pas un argumentaire : formulaire Nom/Email
+   comme seul chemin · bloc des 8 partenaires écrit **trois fois** · « ACTIVA Assurances » **deux fois avec deux
+   logos** · samedi absent du site · page Facebook non reliée · FR seul · les trois papiers noyés dans un paragraphe ·
+   poids. Pied de section : *« Huit lignes, huit lectures de VOTRE page. Si l'une est fausse, dites-la : je la
+   corrige avant même de parler de la suite. »* → c'est une **preuve de travail**, pas un pitch.
+2. **Trois visuels générés, inlinés en base64** (166 + 126 + 108 Ko de JPEG, 391 Ko embarqués) : devanture avec
+   l'enseigne « LE CRISTALLIN » sur le vert du flyer, tailluse en marche avec praticienne en blouse et lunettes de
+   protection, monture sur un visage. Règle tenue : **chacun porte l'étiquette** « Visuel de concept — à remplacer
+   par vos photos » en FR **et** EN, et le générateur le vérifie par assertion (`badge.fr in PAGE and badge.en in PAGE`)
+   — un rendu qui ne se dit pas devient une fausse photo du client (loi §15).
+3. **Sa page Facebook, RELIÉE** (il en a donné l'URL) : dans l'en-tête, dans le bloc contact avec ses chiffres
+   publics (515 likes · 44 en parlent · 98 y étaient) et dans `sameAs` du JSON-LD. Les **avis Google — 3 avis,
+   note 3,0** — sont affichés tels quels, avec le chantier proposé (répondre aux trois, en demander d'autres à la
+   remise du matériel) : ni inventés, ni enjolivés, ni cachés.
+
+## Ce que la V2 a cassé en route (utile pour les prochains builds)
+
+- **Un jeton non remplacé n'était pas un crash.** Le premier essai produisait un HTML de 166 Ko (le gabarit nu)
+  et l'audit passait : seule la relecture à l'œil a vu les `@@TOKEN@@` qui sautaient aux yeux. Depuis, le
+  générateur refuse d'écrire si un seul jeton survit.
+- **Collision de classes, trouvée par l'auditeur — mais par accident.** J'avais nommé `.cmp` à la fois la grille
+  du comparatif (`border + background:var(--line)`) et le lien de l'en-tête : le lien héritait du **fond** du
+  conteneur. Renommées `.cmpgrid` / `.tocmp`. Leçon de nommage : un jeton de rendu et un nom de classe ne doivent
+  jamais partager une racine.
+- **`tools/qa/audit_html.py` a un défaut connu, consigné, NON corrigé ce soir** : son `match_compound` ne gère pas
+  les sélecteurs composés (`.a.b` → testé comme un seul nom de classe, donc jamais égal), et `effective_bg` lit
+  `background:` en attrapant la valeur de `border:`. Résultat : il peut signaler un faux défaut (texte blanc sur
+  la couleur d'une bordure) et en rater de vrais. J'ai patché le matching — **régression immédiate sur 6 concepts
+  (jusqu'à 32 findings sur `concept-oracare-v1`)** — donc j'ai **remisé le patch** (`git checkout`) et laissé
+  l'outil tel quel : corriger l'auditeur exige de rejouer les 11 concepts un par un, ce n'est pas la tâche de
+  ce soir, et une correction d'outil qui casse 6 pages livrées est une régression. À ouvrir en ticket
+  d'ingénierie séparé, avec la liste des concepts à re-valider.
+
+## État des contrôles, V2
+
+`audit_html.py` → **0 finding** (484 runs, desktop 484 / mobile 484) sur le démo **et** sur l'aperçu publié,
+avec `diff démo ↔ aperçu = 0 ligne` · **218 FR / 218 EN** · 9 sections pour 2 eyebrows (plafond `ceil(9/3)=3`) ·
+3 `<img>` toutes en `loading="lazy"` + `alt` + `width`/`height` (aucun saut de mise en page) · 0 `alt=""` ·
+0 `<a>` sans `href`, 0 ancre morte · `wa.me/699905577` (chiffres seuls) vers **son** numéro, `tel:` 242 65 12 65
+et 679 63 20 12 · JSON-LD `Optician` décodé avec les deux URL en `sameAs` · 0 em-dash dans les 218 chaînes
+anglaises · **poids 592 Ko** sous le budget d'envoi WhatsApp de 1 100 Ko (assertion).
+
+En-tête mobile : les deux CTA portent `.small` et disparaissent sous 900 px — sur un téléphone, l'action reste
+dans le rail collant ; deux CTA dans une barre de 390 px, c'est un bouton sur deux non touchable.
+
+## Reste à faire, et c'est court
+
+Envoyer **le fichier** (pas de lien : rien n'est déployé, et je n'invente pas une URL Vercel) + les 5 lignes de
+`sales/Send-LE-CRISTALLIN-2026-09-21-Soir.md`. La seule question encore ouverte côté contenu : **les 12
+assureurs** — la page les affiche avec la mention « à faire valider » ; s'il les confirme, ils sortent du
+conditionnel ; s'il n'en reconnaît que neuf, on retire les trois autres. Capture mockup non produite (`playwright`
+absent du bac) : sur son téléphone, la page se suffit à elle-même.

@@ -45,6 +45,20 @@ false à la fin). Ce qui y est écrit, et rien d'autre, est la seule source de c
 6. `foundingDate` 2010 et ISO **9001:2008** : la version 2008 de la norme a été remplacée depuis — à
    confirmer sur le certificat courant, pas à « moderniser » par nous.
 
+## La 4ᵉ source, trouvée en cherchant la page Facebook (21/09, 20:05) — et ce qu'elle annule
+
+En cherchant `LE CRISTALLIN Douala facebook`, l'annuaire du **réseau de soins ASCOMA** (fiche géolocalisée + flipbook
+2022) renvoie une fiche complète : « LE CRISTALLIN · Optique Médicale · M. Serge Nazaire MESSOUA · 222 65 12 65 /
+699 90 55 77 · Akwa · **Boulevard de la République, Carrefour TIF face ancien COMECI** · @lecristallinoptique.com ».
+
+**Ce qu'elle règle :** SITE + FLYER + ANNUAIRE disent la **même adresse** (Akwa, face COMECI). Mon « Bonapriso /
+Carrefour CTFIC Mballa 2 » d'hier soir ne figurait dans **aucune** des trois sources — c'était une erreur de mes
+notes, devenue une ligne visible de la maquette. Retirée ; la ligne « à trancher » ne corrige plus le client, elle
+demande s'il existe un second local. **Ce qu'elle ouvre :** le nom du titulaire s'écrit **MESSOUA** ici, **MESSOUE**
+dans l'annuaire ONOC — deux graphies connues, à caler sur sa pièce, pas sur nos fichiers. Et la page Facebook est
+confirmée sous `facebook.com/lecristallinoptique` avec ses chiffres publics (515 likes · 44 en parlent · 98 y
+étaient) et **avis Google : 3 avis, note 3,0** — chiffre public, donc affiché tel quel, pas enjolivé.
+
 ## Références de direction (3 angles, comme l'exige PRE-FLIGHT §2.3 — prises en ligne, pas de mémoire)
 
 | Angle | Référence | Ce qu'on prend | Ce qu'on refuse |

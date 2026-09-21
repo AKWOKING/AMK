@@ -33,7 +33,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 27 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 28 ligne(s).*
 
 `L43` · | **ven 18/09 19:42** | **Centre Médical de Bonanjo** (Bonapriso, 694 57 22 77) | msg 1 — sans maquette | Envoyé | **Non** |
 `L112` · | 19:42 | Centre Médical de Bonanjo · Kamaïs Optic |
@@ -62,6 +62,7 @@
 `L861` · **La correction de texte que King a demandée :** mon brouillon de 17:00 pour Bonanjo supposait un accord
 `L876` · **Trois questions à King :** Médina Optic (hors WhatsApp ou choix ?) · Bonanjo (ce soir ou demain 09:00 ?) ·
 `L991` · Bonanjo (réécriture ce soir ≤ 21:00 ou demain 09:00 ?) · AFRIQUE LABO (la phrase « noir sur blanc » sur les
+`L1141` · Médina Optic · Bonanjo (ce soir ≤ 21:00 ou demain 09:00) · AFRIQUE LABO (« noir sur blanc ») · les 12 assureurs
 
 ---
 

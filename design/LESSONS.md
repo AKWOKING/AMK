@@ -75,3 +75,31 @@ chaque étape est exécutée par une fonction qui capture le code de retour, imp
 vue », le rail « Réserver sur WhatsApp ». Réglé par le code, pas par la bonne intention : le libellé du rail est
 **dérivé** de `hero.book` dans le JSON (une seule source), et le générateur assert que les deux `<span>` du hero
 et du rail sont égaux. Leçon tenue : **dans une check-list, un point sans machine derrière est une opinion.**
+
+**Règle de contenu qui en découle (loi maison §13, côté copie) :** une divergence relevée entre deux supports du
+client doit être **lue sur les deux supports**, pas dans mes notes de tri. Ce que j'avais écrit — « son flyer donne
+une adresse que son site ne donne pas » — sortait de MON inventaire : sur l'image, le flyer porte la MÊME adresse.
+Une note d'audit recopiée sans relecture est devenue une ligne visible de la page, donc **une correction publique
+du client par nous**. Forme définitive dans la maquette : on ne corrige pas, on **demande** (« si un second local
+existe, écrivez-le moi — une page ne porte qu'une adresse validée par vous »). Deux autres lignes suivent la même
+règle (horaire du samedi, liste des assureurs) : **question explicite + conditionnel**, jamais affirmation.
+
+## 21 Sep 2026 · 20:20 · `audit_html.py` est un filet, pas un juge (défaut consigné, patch remisé)
+
+Deux défauts **mesurés** dans l'outil ce soir : `match_compound` ne sait pas lire un sélecteur **composé**
+(`.a.b` est testé comme un seul nom de classe → jamais égal), et `effective_bg` lit la propriété `background`
+sans exiger le point-virgule, donc il attrape parfois la couleur d'une **bordure** comme fond. Conséquence
+concrète : il a signalé un faux 1,38:1 sur un lien d'en-tête bien contrasté, et il n'a rien vu pendant qu'un
+jeton `@@TOKEN@@`全文 sautait à l'œil dans la page.
+
+**J'ai patché le matching — et je l'ai remisé dans la minute** : la correction fait apparaître **des régressions
+sur 6 concepts déjà livrés** (jusqu'à 32 findings sur `concept-oracare-v1`). Un outil de contrôle ne se corrige pas
+en même temps qu'une livraison : d'abord la liste des pages à re-valider, ensuite le patch, avec le temps de
+relire chaque finding. Écrit ici pour que le prochain qui « optimise » l'auditeur sache dans quoi il met les mains.
+
+**Ce que ça change à ma discipline, dès demain :** un `TOTAL confirmed findings: 0` ne prouve que ce que l'outil
+sait voir. Les cinq assertions **dans le générateur** (jetons survivants · `<a>` sans `href` · espaces dans une
+URL `wa.me` · plafond d'eyebrows · paires de langue équilibrées · étiquette obligatoire sur chaque visuel ·
+poids ≤ 1 100 Ko) sont ce qui protège vraiment, parce qu'elles échouent **bruyamment** et qu'elles sont
+individuellement **testées en les cassant**. Règle tenue : *une vérification qui n'a jamais été vue en échec
+n'est pas une vérification, c'est un rituel.*

@@ -420,39 +420,39 @@
   }
  },
  "photos": {
-  "eyebrow": {
-   "fr": "À remplacer par vos photos",
-   "en": "To be replaced by your photos"
-  },
   "h2": {
-   "fr": "Trois images que vous avez déjà, et qui valent plus que n'importe quel visuel de marque.",
-   "en": "Three photos you already have, worth more than any brand visual."
+   "fr": "Trois visuels pour trois décisions d'achat.",
+   "en": "Three visuals for three buying decisions."
   },
   "lede": {
-   "fr": "Un site d'opticien se juge sur trois choses : la devanture (pour qu'on vous trouve dans la rue), le laboratoire (pour qu'on croie au montage), et une monture sur un visage (pour qu'on se voie déjà avec).",
-   "en": "An optician's site is judged on three things: the storefront (so people find you in the street), the lab (so they believe the glazing), and one frame on a face (so they already see themselves)."
+   "fr": "Un site d'opticien se juge sur trois choses : la devanture (pour qu'on vous trouve dans la rue), le laboratoire (pour qu'on croie au montage), une monture sur un visage (pour qu'on se voie déjà avec). Les trois images ci-dessous sont des VISUELS DE CONCEPT, générés pour montrer la place et le cadrage : elles seront remplacées par VOS photos à la mise en ligne, et par rien d'autre.",
+   "en": "An optician's site is judged on three things: the storefront (so people find you in the street), the lab (so they believe the glazing), one frame on a face (so they already see themselves). The three images below are CONCEPT VISUALS, generated to show placement and framing: at go-live they are replaced by YOUR photos, and by nothing else."
+  },
+  "badge": {
+   "fr": "Visuel de concept — à remplacer par vos photos",
+   "en": "Concept visual - to be replaced by your photos"
   },
   "items": [
    [
     "La devanture, en journée",
     "The storefront, in daylight",
-    "à côté de l'immeuble FODEC, face COMECI SA — c'est comme ça qu'un patient vous reconnaît.",
-    "next to the FODEC building, facing COMECI SA - this is how a patient recognises you.",
-    "store"
+    "C'est comme ça qu'un patient vous reconnaît depuis la rue : enseigne lisible, montures en vitrine, poste de contrôle à droite.",
+    "This is how a patient recognises you from the street: readable sign, frames in the window, measurement station on the right.",
+    "hero"
    ],
    [
-    "Le laboratoire",
-    "The lab",
-    "le montage sur place est votre différence : montrez-le.",
-    "on-site glazing is what sets you apart: show it.",
+    "Votre laboratoire de montage",
+    "Your own glazing lab",
+    "Une tailluse en marche, un praticien en blouse et lunettes de protection : c'est la preuve que le montage se fait ici, pas à l'étranger.",
+    "An edger running, a practitioner in coat and safety glasses: the proof that glazing happens here, not abroad.",
     "lab"
    ],
    [
-    "Une monture portée",
-    "A frame being worn",
-    "pas un produit sur fond blanc : un visage, avec la correction expliquée.",
-    "not a product on white: a face, with the prescription explained.",
-    "face"
+    "Une monture sur un visage",
+    "One frame on a face",
+    "Le client ne cherche pas une marque, il cherche à savoir si ça lui va. Une photo de patient qui a dit oui vaut dix visuels de studio.",
+    "The client is not hunting a brand, they are checking whether it suits them. One consented patient photo beats ten studio renders.",
+    "tryon"
    ]
   ]
  },
@@ -777,6 +777,128 @@
   "hint": {
    "fr": "Elle existe et votre site ne la montre nulle part. Donnez-moi le lien : je la relie au pied de page et au bouton, dans les deux langues.",
    "en": "It exists and your website never points to it. Send me the link: I will wire it into the footer and the button, in both languages."
+  }
+ },
+ "social": {
+  "page": "https://www.facebook.com/lecristallinoptique/",
+  "handle": "facebook.com/lecristallinoptique",
+  "likes": "515",
+  "talking": "44",
+  "checks": "98",
+  "reviews": "3",
+  "rating": "3,0",
+  "checkedOn": "21/09/2026",
+  "fbLabel": {
+   "fr": "Page Facebook du cabinet",
+   "en": "The practice Facebook page"
+  },
+  "fbNote": {
+   "fr": "515 mentions « j'aime », 44 personnes en parlent, 98 y étaient. Ce public est déjà là : le site actuel ne le relie nulle part. Sur la version modernisée, la page est dans l'en-tête, au pied de page et dans les données structurées — avec un bouton qui envoie sur WhatsApp, pas sur un formulaire.",
+   "en": "515 likes, 44 people talking about it, 98 check-ins. That audience already exists: the current website links to it nowhere. On the modernised version the page sits in the header, the footer and the structured data - with a button that opens WhatsApp, not a form."
+  },
+  "reviewsLabel": {
+   "fr": "Avis Google",
+   "en": "Google reviews"
+  },
+  "reviewsNote": {
+   "fr": "Annuaire public consulté le 21/09/2026 : 3 avis, note 3,0. Aucun de nos concepts n'invente de note, ni n'en cache une : si vous modernisez, l'affichage des avis devient un chantier à décider ensemble (répondre aux trois, puis en demander d'autres sur WhatsApp, à la remise du matériel).",
+   "en": "Public directory checked 21/09/2026: 3 reviews, rating 3.0. None of our concepts invents a rating or hides one: if you modernise, how reviews are shown becomes a decision to make together (answer the three, then ask for more on WhatsApp, at hand-over)."
+  },
+  "q": {
+   "fr": "Page Facebook",
+   "en": "Facebook page"
+  },
+  "hint": {
+   "fr": "Elle est déjà là, votre site ne la montre nulle part : nous l'avons reliée ici, en en-tête et dans les données structurées.",
+   "en": "It already exists and your website never points to it: we have wired it here, in the header and in the structured data."
+  }
+ },
+ "compare": {
+  "h2": {
+   "fr": "Votre site actuel, et la même information en version modernisée.",
+   "en": "Your current website, and the same information modernised."
+  },
+  "lede": {
+   "fr": "Rien ici n'est inventé : la colonne de gauche est ce que nous avons lu sur lecristallinoptique.com le 21/09/2026, celle de droite est ce que devient la MÊME information. Vous êtes le seul juge de la comparaison.",
+   "en": "Nothing here is invented: the left column is what we read on lecristallinoptique.com on 21/09/2026, the right column is what the SAME information becomes. You are the only judge of the comparison."
+  },
+  "now": {
+   "fr": "Votre site actuel",
+   "en": "Your current website"
+  },
+  "next": {
+   "fr": "Version modernisée",
+   "en": "Modernised version"
+  },
+  "rows": [
+   [
+    "Prendre un examen de vue",
+    "Book an eye exam",
+    "Un seul chemin : un formulaire Nom, Email, Objet, Message.",
+    "One path only: a Name, Email, Subject, Message form.",
+    "Chaque ligne de la planche d'acuité ouvre WhatsApp avec la prestation déjà écrite dans le message.",
+    "Every line of the acuity chart opens WhatsApp with the service already written in the message."
+   ],
+   [
+    "Vos huit partenaires industriels",
+    "Your eight industrial partners",
+    "Le même bloc de logos est écrit trois fois dans la page.",
+    "The same logo block is written three times in the page.",
+    "Une seule fois, en bandeau lisible — ce que le patient cherche, c'est « Essilor », pas un carrousel.",
+    "Once, as a readable strip - what a patient looks for is \"Essilor\", not a carousel."
+   ],
+   [
+    "Vos douze assureurs et mutuelles",
+    "Your twelve insurers and mutuals",
+    "Liste triplée ; « ACTIVA Assurances » deux fois, avec deux logos différents.",
+    "List tripled; \"ACTIVA Assurances\" twice, with two different logos.",
+    "Un sélecteur : le patient choisit son assureur, le message WhatsApp part avec son nom dedans.",
+    "A picker: the patient chooses their insurer, the WhatsApp message goes out carrying that name."
+   ],
+   [
+    "Vos horaires",
+    "Your opening hours",
+    "« Lundi à Vendredi entre 8h30 et 18h30 » — le samedi de votre flyer n'apparaît pas.",
+    "\"Monday to Friday, 8:30am to 6:30pm\" - the Saturday on your flyer does not appear.",
+    "Un bloc d'horaires sur chaque page, dans les deux langues, dans les données que lisent Google et WhatsApp.",
+    "One hours block on every page, in both languages, inside the data Google and WhatsApp read."
+   ],
+   [
+    "Votre page Facebook",
+    "Your Facebook page",
+    "515 mentions « j'aime », 44 en parlent : le site ne la relie nulle part.",
+    "515 likes, 44 talking about it: the website links to it nowhere.",
+    "Lien en en-tête et en pied de page + dans les données structurées : les deux supports se renforcent.",
+    "Linked in the header and footer and in the structured data: the two channels reinforce each other."
+   ],
+   [
+    "Le français et l'anglais",
+    "French and English",
+    "Le site est en français seul.",
+    "The site is French only.",
+    "Un bouton FR | EN : vos clients anglophones du South West, vos RH et vos assureurs lisent la même page.",
+    "One FR | EN button: your English-speaking clients, your HR contacts and your insurers read one page."
+   ],
+   [
+    "Vos trois papiers (ISO, MINSANTE, ONOC)",
+    "Your three certificates (ISO, MINSANTE, ONOC)",
+    "Une phrase perdue dans un paragraphe d'accueil.",
+    "One sentence lost in a homepage paragraph.",
+    "Un bandeau : c'est ce qui vous distingue d'un vendeur de montures, et ça doit se voir en trois secondes.",
+    "A dedicated band: this is what separates you from a frames seller, and it must land in three seconds."
+   ],
+   [
+    "Poids de la page sur un téléphone",
+    "Page weight on a phone",
+    "Plusieurs blocs d'images répétés ; chargement lent en 3G.",
+    "Several repeated image blocks; slow on 3G.",
+    "580 Ko, une seule copie du texte, aucune requête vers un site tiers.",
+    "580 KB, one copy of the text, no request to any third-party site."
+   ]
+  ],
+  "foot": {
+   "fr": "Huit lignes, huit lectures de VOTRE page. Si l'une est fausse, dites-la : je la corrige avant même de parler de la suite.",
+   "en": "Eight lines, eight readings of YOUR page. If one is wrong, say it: I fix it before we even talk about next steps."
   }
  }
 }
