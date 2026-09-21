@@ -1,6 +1,6 @@
 # Labiomed
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-19. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-21. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -31,7 +31,7 @@ Envoyé le 19/09 à 19:32 — lu (2 coches). ***PREMIER OUI DE LA CAMPAGNE.*** 1
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 6 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 11 ligne(s).*
 
 `L366` · ## sam 19/09 19:21–20:02 — ⭐ PREMIER « OUI » DE LA CAMPAGNE : LABIOMED
 `L371` · - **23:59 → LABIOMED a répondu « Oui » à 19:43 — 11 minutes après notre message.**
@@ -39,6 +39,11 @@ Envoyé le 19/09 à 19:32 — lu (2 coches). ***PREMIER OUI DE LA CAMPAGNE.*** 1
 `L386` · ### DÉMO LABIOMED — design décidé par LE MARCHÉ (consigne de King)
 `L403` · - **Le message est PARTI à 21:00** avec le lien `labiomed.vercel.app` et le prix (100 000 FCFA, 50/50).
 `L409` · toute la FAQ anglaise semble absente. **Les 5 questions de Labiomed et les 4 de Bonanjo étaient touchées —
+`L429` · ## sam 19/09 21:16–21:40 — LABIOMED : la conversation complète, et 3 vérités à corriger
+`L438` · | **21:00** | nous | **lien `labiomed.vercel.app` + 100 000 FCFA (50/50)** | **lu (2 coches)** |
+`L454` · **→ La relance de LABIOMED, c'est `M+2` = lundi 21/09.** Et l'angle est déjà écrit : **pas « alors ? »,
+`L472` · **③ 4ᵉ occurrence du même bug — corrigée à la CAUSE.** Les notes des envois et la conversation LABIOMED
+`L492` · - **Ce n'est pas un « je vous reviens ».** Bonanjo et Labiomed ont dit exactement ça, sans date. **UNI-LABO propose un jour.**
 
 ---
 

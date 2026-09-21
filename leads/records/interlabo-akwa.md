@@ -1,6 +1,6 @@
 # Interlabo
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-19. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-21. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -30,7 +30,9 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Aucune ligne du journal ne cite encore ce lead. S'il a été contacté, c'est que l'envoi n'a pas été loggé — **à corriger dans `Activity-Log.md`**.*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 1 ligne(s).*
+
+`L469` · **La Passerelle** (« +237 6 94 71 91 22 », aucun nom, aucune catégorie) et **Interlabo** (avatar = la
 
 ---
 

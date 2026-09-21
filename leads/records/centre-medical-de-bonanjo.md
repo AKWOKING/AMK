@@ -1,6 +1,6 @@
 # Centre Médical de Bonanjo
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-19. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-21. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -33,7 +33,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 17 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 19 ligne(s).*
 
 `L43` · | **ven 18/09 19:42** | **Centre Médical de Bonanjo** (Bonapriso, 694 57 22 77) | msg 1 — sans maquette | Envoyé | **Non** |
 `L112` · | 19:42 | Centre Médical de Bonanjo · Kamaïs Optic |
@@ -52,6 +52,8 @@
 `L340` · **Bundle : `hosting/previews/bonanjo/index.html` + `img/` (592 Ko).** L'ancien fichier plat `demos/concept-bonanjo-v1.html`
 `L409` · toute la FAQ anglaise semble absente. **Les 5 questions de Labiomed et les 4 de Bonanjo étaient touchées —
 `L410` · et Bonanjo est DÉJÀ EN LIGNE depuis 13:35.**
+`L445` · « je suis intéressé, je n'ai pas le temps maintenant ». **La différence avec Bonanjo : ici il a demandé
+`L492` · - **Ce n'est pas un « je vous reviens ».** Bonanjo et Labiomed ont dit exactement ça, sans date. **UNI-LABO propose un jour.**
 
 ---
 
