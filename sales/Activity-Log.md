@@ -518,3 +518,70 @@ au lieu de rapiécer des morceaux, avec `ast.parse()` en contrôle avant d'exéc
   **Action ③ :** la Page Facebook — **5ᵉ fois que la décision revient**, maintenant reliée au profil Google.
 - **Repère à battre dans 30 jours :** ≥ 20 impressions, ≥ 2 clics. **Et le vrai signe : une première requête
   tapée par un inconnu.** Aujourd'hui il n'y en a aucune.
+
+---
+
+## lun 21/09/2026 — Bugs réparés, puis le SEO appliqué à notre propre site
+
+### ① Les bugs, dans l'ordre où King les a demandés
+
+- **`views.py` et `rebuild.sh` reconstruits** — ils avaient été perdus au 8ᵉ recul du bac à sable
+  (jamais poussés). **Toutes les leçons du 19/09 sont intégrées d'emblée** : kill list déduite, une réponse
+  déjà traitée n'est pas une réponse en attente, la décision humaine prime sur le rythme, un rendez-vous
+  n'est pas une relance à calculer.
+- **NOUVEAU BUG trouvé et corrigé dans la kill list :** la section « Décisions déjà prises — ne rien faire
+  maintenant » listait **toutes** les entrées, y compris celles dont la date était **déjà passée** → une
+  relance due aujourd'hui s'affichait « ne rien faire maintenant ». **Deux sections du même fichier se
+  contredisaient.** Corrigé : seules les dates futures y figurent.
+- **CRM régénéré :** 105 lignes · 57 fiches · 5 vues · **file du jour = 40 actions** (les envois du 18/09
+  arrivent à M+2). Priorités : Baird + MITOC (FU2 fixée lundi 21), OraCare (**FU2 fixée dimanche 20 —
+  en retard d'un jour**), puis les labos du 18/09. **Labiomed M+2 = aujourd'hui** (il a dit « je vous
+  reviens quand je serai disponible » — report poli, pas un non). **UNI-LABO : rien avant vendredi 25.**
+
+### ② SEO — les 3 vidéos analysées, et notre propre site réparé
+
+**`AMK-SEO-PLAYBOOK.md` v1** + lot [21] dans `research/YouTube-Lessons.md`.
+
+**Le chiffre qui a commandé tout le reste** (rapport Whitespark 2026, via Portable Entrepreneur) :
+**signaux de profil Google 32 % · avis ~20 % · on-page ~15 %.** Autrement dit : **le profil et les avis
+font plus de la moitié du classement local** — et nous étions en train de peaufiner le HTML d'une page
+pendant que notre fiche Google affichait 3 vues.
+
+**Ce que la recherche concurrentielle a montré :** les agences camerounaises (FeliSitePro, VENEGRE, Jainli,
+ECS) ciblent **le français du marché** — « création de site web », « agence web Douala ». **Notre page
+était 100 % anglaise**, et **notre seul mot-clé était « Web Design »**.
+
+**Modifications appliquées à `site/index.html` (0 finding, vérifié dans les DEUX langues) :**
+1. **Titre** → `Création de site web pour écoles & cliniques au Cameroun | AMK – Douala · Yaoundé · Buea · Limbé`
+2. **Description** → en français d'abord, avec les villes et une raison de cliquer
+3. **UNE seule H1** porteuse du mot-clé (il y en avait DEUX, sans mot-clé). Les accroches fortes passent en `<h2>`
+   — **elles gardent leur place, la H1 fait son travail.**
+4. **Section « Ce que nous faisons »** : site vitrine · bilingue · rendez-vous WhatsApp · référencement local ·
+   rapide en 3G · domaine et hébergement — **le vocabulaire que le marché tape**
+5. **3 questions de FAQ** visant de vraies requêtes (le prix, hors de Douala, voir un vrai site)
+6. **Schéma enrichi** : `priceRange`, `knowsLanguage`, 6 villes, **`OfferCatalog` de 5 services** — ce que les
+   concurrents déclarent et pas nous. **Et le `FAQPage` est désormais GÉNÉRÉ depuis la FAQ visible** (10 questions) :
+   le 19/09, la FAQ avait changé et le schéma était resté en arrière. **Deux copies d'une même vérité divergent toujours.**
+7. **`sitemap.xml`** : commentaire TODO retiré, `lastmod` ajouté.
+
+**Déploiement : `amk-site.zip`** (3 458 813 o) — `index.html` 116 235 o, synchronisé et vérifié.
+
+### ③ ⚠️ J'ai réintroduit le bug §20.11 — dans le script écrit juste après l'avoir documenté
+
+**Les 3 questions de FAQ que je viens d'ajouter utilisaient DEUX `<summary>` avec classe de langue** —
+**exactement le bug qui a cassé la FAQ anglaise de Labiomed et Bonanjo le 19/09**, et que j'ai documenté
+en §20.11 des design skills le lendemain matin.
+
+**Ce n'est pas une étourderie isolée, c'est un défaut de processus :** j'écris les scripts plus vite que je
+ne relis mes propres règles. **Corrigé** — les 3 FAQ utilisent maintenant **le motif du site**
+(`data-en`/`data-fr` sur le `<summary>` et sur le `<div class="ans">`), vérifié : **0 `<summary>` avec classe
+de langue dans tout le fichier.**
+
+**Deuxième défaut trouvé au passage, et il est plus subtil :** mon extracteur de FAQ ne connaissait qu'UN
+motif (`<p data-fr>`), donc il ne lisait que **3 questions sur 10**. **Un extracteur qui ne connaît qu'un
+motif ne lit que la moitié de la page.** Corrigé : il accepte `<p>` et `<div class="ans">`. **10 questions
+extraites, 0 finding.**
+
+**Vérifié dans un vrai navigateur, dans les deux langues :**
+`[EN]` H1 « Website design for schools and clinics in Cameroon » · 10 questions · 0 vide
+`[FR]` H1 « Création de sites web pour écoles et cliniques au Cameroun » · 10 questions · 0 vide

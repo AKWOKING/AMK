@@ -591,3 +591,52 @@ WhatsApp-first · mobile-first · EN|FR · Cameroon (Kumba/Douala/South-West) ·
 2. Surface the **top 3 lessons that should change how we operate this week** — each one must name the file it changes and the concrete move it changes.
 3. If a lesson contradicts the playbook: state the conflict and ask King which side wins (unless the video is clearly stronger evidence — then propose the change and wait for the yes).
 4. Log the Monday summary at the top of §3 as a dated row so the ritual itself is auditable.
+
+---
+
+## Lot [21] · SEO et classement local — 3 vidéos (King, 21/09/2026)
+
+**Analyse complète : `AMK-SEO-PLAYBOOK.md`.** Ce qui suit est le résumé du lot ; les règles de
+construction vivent dans le playbook, pas ici.
+
+| # | Vidéo | Chaîne | Ce qu'elle apporte |
+|---|---|---|---|
+| 21.1 | *How to Rank #1 in Google in 2026: The 3-Step SEO Playbook* | Surfer Academy | la méthode : intention de recherche · format · E-E-A-T · autorité thématique |
+| 21.2 | *Rank #1 in Google Business Profile in 2026 (GBP Ranking Factors Explained)* | Portable Entrepreneur | les facteurs de classement local, chiffrés (rapport Whitespark 2026, ~50 experts) |
+| 21.3 | *How to Optimize Your Google Business Profile to Outrank 99% of Local Businesses* | Steve Hunsaker | l'expérience terrain : fréquence, avis avec photos, sections produits/services |
+
+### Affirmations centrales retenues
+
+- **Signaux de profil Google 32 % · avis ~20 % · on-page ~15 %** → le profil et les avis font **plus de la moitié** du classement local. *On peaufinait le HTML pendant que la fiche était vide.*
+- **Une seule H1, qui porte le mot-clé** (facteur #20 : mots-clés dans les H1/H2 ; #17 : dans le title).
+- **Une page dédiée par service** (facteur #19) — c'est là qu'on est en retard sur VENEGRE.
+- **Le NAP doit correspondre EXACTEMENT** (facteur #15). Chez nous : déjà bon.
+- **La fréquence bat les pics** — pour les avis comme pour les publications.
+- **L'expérience (« le second E » de E-E-A-T) est le facteur le plus lourdement pondéré** — photos originales, captures, documentation pas-à-pas, **études de cas avec des chiffres**.
+- **Google ne récompense aucun nombre de mots.** La bonne question : *« qu'est-ce que quelqu'un qui tape ça doit savoir, et est-ce que j'ai tout couvert ? »*
+- **L'avis automatique n'est pas une preuve de qualité** : une photo dans un avis est difficile à falsifier (géolocalisation), donc Google la remonte.
+
+### 2 tactiques AMK retenues immédiatement
+
+1. **Notre dépôt EST notre preuve d'expérience.** 45 messages, 4 réponses, un site livré, des captures réelles,
+   des erreurs assumées — **aucune agence camerounaise ne publie ça.** On publie des études de cas **anonymisées**
+   (règle 11) avec de vrais chiffres.
+2. **Réécrire nos propres balises avant de vendre du SEO à qui que ce soit.** Notre titre était 100 % anglais
+   alors que le marché tape en français. **Fait le 21/09.**
+
+### Contradictions avec nos fichiers
+
+- **Aucune contradiction avec nos règles existantes.** Mais une **tension** : `AMK-DESIGN-SKILLS.md` privilégie
+  la sobriété et la conversion ; le SEO demande du contenu et du volume (une page par service, par ville).
+  **Arbitrage : une page qui n'a rien à dire ne se crée pas.** On ne fera pas 6 pages de ville vides.
+- **Nuance sur les « avis » :** les vidéos insistent sur la collecte d'avis. **Nous n'avons aucun client.** On ne
+  peut pas fabriquer d'avis — **c'est interdit et c'est exactement ce que nos propres cibles subissent.**
+  Règle : **on demande un avis à notre premier client, avec une photo, et pas avant.**
+
+### Déchets écartés
+
+- Les promotions de leurs propres formations/groupes payants (Home Service Accelerator Pro, Surfer).
+- Le contexte métier : plomberie à Houston, décorations de Noël à Scottsdale, SaaS B2B. **Les facteurs de fond
+  sont transférables, les tactiques non.** Aucun de ces intervenants n'a jamais fait de SEO à Douala.
+- Les « pourcentages » présentés comme des poids officiels : c'est une **enquête d'opinion** auprès de ~50 experts.
+
