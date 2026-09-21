@@ -585,3 +585,33 @@ extraites, 0 finding.**
 **Vérifié dans un vrai navigateur, dans les deux langues :**
 `[EN]` H1 « Website design for schools and clinics in Cameroon » · 10 questions · 0 vide
 `[FR]` H1 « Création de sites web pour écoles et cliniques au Cameroun » · 10 questions · 0 vide
+
+---
+
+## lundi 21/09 14:20 — VAGUE 1 : 38 OPTICIENS (source : annuaire officiel de l'ONOC)
+
+**La trouvaille : l'annuaire de l'Ordre National des Opticiens du Cameroun (ONOC) publie
+les opticiens par région, avec le numéro ET le nom du titulaire.** 40+ opticiens de Douala.
+**38 neufs, 0 doublon** avec les 82 lignes déjà contactées · **36 ont un nom de titulaire public.**
+
+**Pourquoi les opticiens, maintenant :** ① L'Opticien Bali a passé les 3 portes du MQL (3/3) et n'a pas été
+relancé depuis le 17/09. ② MITOC a un concept live — **on a déjà la preuve dans ce métier**.
+③ Mono-boutique = **le propriétaire décide**, pas de comité. ④ **Ils vendent un produit visuel** :
+pas de site = des lunettes que personne ne voit.
+
+**LE PROBLÈME QUE NOUS AIDONS À RÉSOUDRE — le même pour les 38 :**
+*« Être dans une liste, ce n'est pas être trouvé. »* Un patient qui tape « opticien Douala » tombe sur
+l'annuaire de l'Ordre — **une liste de plus de 150 noms où vous êtes une ligne entre deux autres.**
+Et pour un opticien il y a pire : **personne ne peut voir une seule de ses montures avant de pousser la porte.**
+
+**3 variantes de message** selon le métier réel : A (opticiens médicaux → le rendez-vous d'examen de la vue) ·
+B (boutiques de montures → personne ne voit vos montures) · C (marques établies → le nom existe, pas en ligne).
+
+**2 ÉCARTÉS, vérifiés AVANT toute production (règle 66) :** **Vision Care Center** (a un site vivant) et
+**Original Optique** (a un site vivant). *C'est la vérification qui coûte 2 minutes et évite un message gênant.*
+
+**CRM : 105 → 145 lignes.** Vague 1 = les 10 meilleurs ; 28 autres prêts (1B et 1C).
+
+**PERTE À SIGNALER :** les **2 pages service** (`creation-site-web-ecole-cameroun.html` et
+`creation-site-web-clinique-cameroun.html`) ont été **perdues au 13ᵉ recul du bac** — leur push avait échoué
+(jeton GitHub intermittent). Elles sont à reconstruire. **Ce n'est pas bloquant pour l'outreach.**
