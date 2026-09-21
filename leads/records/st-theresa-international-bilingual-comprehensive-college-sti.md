@@ -25,7 +25,7 @@
 
 ## Notes
 
-PREUVE D'ENVOI lue dans la colonne `Contacted` du classeur : « 15 Sep 15:45 WA by King (text-only msg 1, 679 15 10 75) » (relu le 21/09 — la colonne est un booléen, le fait est descendu ici) · Walk-In-Batch-2026-09-15. Pain: parents find only FB/yahoo, no website. Bilingual international comprehensive. Get WA + permission, preview by 4pm. | INVITATION-FIRST 14 Sep: TikTok @stibccol ACTIVE (Bilingualism Day/Miss St Theresa posts 14 Sep 2026) = DM channel like Sasse; official FB page lists 679 15 10 75 (verify WA profile tonight). YouTube 2022 "for more info" 677 36 19 11 likely media person, do not pitch. [OWNER-BUYER confirmed type: lay private 15 Sep; remains in active plan] | 15 Sep PM: msg 1 out (1 tick, not yet delivered to handset). Personal WA line (lay private = likely proprietor pocket = buyer). Mockup image went to later schools first; include image with the link on reply. | 15 Sep 20:44 FIRST REPLY OF THE CAMPAIGN: site 'in the making, ready October, already late'. Soft-ack branch only. Watch the October launch (check Google/FB): template/student builds commonly miss WhatsApp admissions, bilingual toggle, fees pages and 3G speed = re-open wedge. Verified GCE Board 2026 marking centre (camgceb.org) — usable compliment at FU. | Soft-ack delivered 22:25; chat timer now 90 days (was 24h). · org_type=school prouvé par « college » (M7, 21/09) | CONTRADICTION RÉSOLUE (M2) — retenu : la ligne est CORRECTE : Lead score = 14 (numérique), le verbatim est dans Reply. 0 anomalie sur 38 lignes. · reply_type=human déduit de la colonne Reply (M7, 21/09) — à valider si le verbatim est introuvable dans `Activity-Log.md` | M7 (21/09) : L15 · Parqué AVEC permission (2 réponses humaines). health_override = warm à la main, pas cold : le calcul dirait 6 jours = froid, la permission dit le contraire.
+Walk-In-Batch-2026-09-15. Pain: parents find only FB/yahoo, no website. Bilingual international comprehensive. Get WA + permission, preview by 4pm. | INVITATION-FIRST 14 Sep: TikTok @stibccol ACTIVE (Bilingualism Day/Miss St Theresa posts 14 Sep 2026) = DM channel like Sasse; official FB page lists 679 15 10 75 (verify WA profile tonight). YouTube 2022 "for more info" 677 36 19 11 likely media person, do not pitch. [OWNER-BUYER confirmed type: lay private 15 Sep; remains in active plan] | 15 Sep PM: msg 1 out (1 tick, not yet delivered to handset). Personal WA line (lay private = likely proprietor pocket = buyer). Mockup image went to later schools first; include image with the link on reply. | 15 Sep 20:44 FIRST REPLY OF THE CAMPAIGN: site 'in the making, ready October, already late'. Soft-ack branch only. Watch the October launch (check Google/FB): template/student builds commonly miss WhatsApp admissions, bilingual toggle, fees pages and 3G speed = re-open wedge. Verified GCE Board 2026 marking centre (camgceb.org) — usable compliment at FU. | Soft-ack delivered 22:25; chat timer now 90 days (was 24h). · org_type=school prouvé par « college » (M7, 21/09) | CONTRADICTION RÉSOLUE (M2) — retenu : la ligne est CORRECTE : Lead score = 14 (numérique), le verbatim est dans Reply. 0 anomalie sur 38 lignes. · reply_type=human déduit de la colonne Reply (M7, 21/09) — à valider si le verbatim est introuvable dans `Activity-Log.md` | M7 (21/09) : L15 · Parqué AVEC permission (2 réponses humaines). health_override = warm à la main, pas cold : le calcul dirait 6 jours = froid, la permission dit le contraire.
 
 ## Prochaine action
 
@@ -33,7 +33,7 @@ PREUVE D'ENVOI lue dans la colonne `Contacted` du classeur : « 15 Sep 15:45 WA 
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 14 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 12 ligne(s).*
 
 `L17` · | mar 15/09 15:45 | **St. Theresa** (679 15 10 75) | msg 1 | Envoyé | ✅ **OUI — 20:44** |
 `L18` · | mar 15/09 22:25 | St. Theresa | accusé de réception | Envoyé | ✅ **22:51 — permission de revenir en octobre** |
@@ -47,8 +47,6 @@ PREUVE D'ENVOI lue dans la colonne `Contacted` du classeur : « 15 Sep 15:45 WA 
 `L717` · ⚠️ **St. Theresa a bien répondu deux fois le 15/09** — sa cellule `Reply` contient le verbatim, pas un
 `L742` · 1. **St. Theresa compte-t-elle dans le PRR ?** (oui → 4/45 = 8,9 %, table explicite ajoutée)
 `L745` · 4. **Les 5 questions de l'audit du 18/09 §10 sont toujours sans réponse** (COMOBIL · health manuel de St. Theresa · les 12 labos de la réserve · la Page Facebook · le parrainage St. Theresa). Les deux premières ont été tranchées par la migration d'aujourd'hui ; il en reste trois.
-`L760` · | ② | **St. Theresa : oui, elle compte dans le PRR.** | Sa `Reply` porte le verbatim, pas un « yes » : la déduction ne la voyait pas. Forcée à la main (`reply_type=human`, verbatim des 15/09 20:44 + 22:51 dans la cellule). Le PRR passe de 4,4 % à **6,7 % (3/45)** — et retombe à **6,5 % (3/46)** quand AFRIQUE LABO entre au tableau (§2). Sa `stage_since` = **21/09**, la date de la décision de parking, pas celle de la réponse. |
-`L820` · la Page Facebook · le parrainage St. Theresa.
 
 ---
 

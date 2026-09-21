@@ -68,9 +68,6 @@ NEW_FIELDS = [
     "first_touched", "last_reply_received", "bamfam_next_action", "bamfam_next_step",
     "preview_sent", "proposal_sent", "price_quoted_fcfa", "invoice_sent",
     "closed_on", "closed_value_fcfa", "health_override", "gtd_filter",
-    # M7 · la variante de message réellement envoyée (A/B/C) — sinon on ne peut plus dire
-    # quelle branche a produit une réponse, et le test A/B devient une intention.
-    "variante_envoi",
 ]
 
 # M7 · ce qui N'EST PAS stocké, et pourquoi — la raison est dans le fichier, pas dans la tête.
@@ -128,32 +125,22 @@ LIVE_LEDGER = {
         log_ref="L366",
         note="PREMIER OUI de la campagne (19/09 19:43, 11 min après msg 1). Prix envoyé 21:00."),
     "centre-medical-de-bonanjo": dict(
-        stage="presented", stage_since="2026-09-19", first_touched="2026-09-18",
+        stage="qualified", stage_since="2026-09-19", first_touched="2026-09-18",
         last_reply_received="2026-09-19", preview_sent="2026-09-19",
-        proposal_sent="2026-09-19", price_quoted_fcfa="100000", follow_ups_sent="1",
-        **{"Follow-up date": "2026-09-21"},
-        bamfam_next_action="DEMANDÉ À KING — il n'a PAS dit oui. Demander ce qu'il pense de la page, rien d'autre.",
-        bamfam_next_step="Zéro formulation qui suppose un accord. Pas de créneau proposé avant un avis.",
+        proposal_sent="", price_quoted_fcfa="",
+        bamfam_next_action="Répondre au fil ouvert (règle des 90 secondes)",
+        bamfam_next_step="« je vous reviens » → livrer plus que promis, puis proposer un créneau",
         log_ref="L249",
-        note="« Bjr merci je vous reviens » (sam 19/09 08:44) = **un report, pas un accord**. "
-             "Le 19/09 13:35, King a envoyé la page entière (bonanjo.vercel.app, en ligne et vérifiée le "
-             "21/09) AVEC le prix 100 000 FCFA · 50 000/50 000 — d'où `proposal_sent` et `price_quoted_fcfa` "
-             "qui manquaient dans cette table (trou de MA donnée, pas d'un oubli d'envoi). Étape = `presented` "
-             "(page + prix vus), JAMAIS `closing` : aucune acceptation. "
-             "⚠️ La « démo » citée par `sales/Reply-Bonanjo-2026-09-19.md` (demos/concept-bonanjo-v1.html) "
-             "n'existe pas dans `demos/` — la preuve vivante est le lien Vercel, pas un fichier du dépôt."),
+        note="« Bjr merci je vous reviens » (19/09 08:44). Réponse = `qualified`, PAS `closing` : "
+             "aucun prix accepté, et la démo annoncée dans `sales/Reply-Bonanjo-2026-09-19.md` "
+             "(demos/concept-bonanjo-v1.html) N'EXISTE PAS dans demos/ — référence morte, à réparer."),
     "oracare-buea": dict(
-        # Écran King 21/09 : le message de clôture est parti à 17:43 (une coche). Séquence TERMINÉE.
-        stage="parked", stage_since="2026-09-21", first_touched="2026-09-14",
-        preview_sent="2026-09-16", follow_ups_sent="3", last_send_state="delivered",
-        bamfam_next_action="AUCUNE relance. Le fil est fermé par la phrase « last note from me, then I stop ».",
-        bamfam_next_step="Réveil : une réponse, ou l'ouverture du lien. Le score 18 A+ ne rouvre pas un fil — "
-                         "seule leur voix le fait.",
+        stage="qualified", stage_since="2026-09-14", first_touched="2026-09-14",
+        preview_sent="2026-09-14", follow_ups_sent="1",
+        bamfam_next_action="FU2 (M+4) fixée dim 20 — partie ?",
+        bamfam_next_step="Silence après FU3 (lun 21) → parked",
         log_ref="L15",
-        note="Le fil réel compte TROIS relances, pas une : lun 14/09 13:04 (« video demo or interactive file ? ») "
-             "· mer 16/09 14:32 (aperçu + lien + « which service first ? ») · lun 21/09 17:43 (clôture). "
-             "La relance du dim 20/09 n'est pas partie, et c'est bien : King a envoyé la clôture à la place. "
-             "0 réponse, 0 coche bleue sur 4 messages. Concept : oracare-concept.vercel.app."),
+        note="Seul lead à score 18 non parqué = la kill list réelle (règle corrigée 19/09)."),
     "opticien-bali-douala": dict(
         stage="qualified", stage_since="2026-09-17", first_touched="2026-09-17",
         preview_sent="2026-09-17",
@@ -183,18 +170,20 @@ LIVE_LEDGER = {
         log_ref="L13", note=""),
     "baird-memorial-college": dict(
         stage="qualified", stage_since="2026-09-15", first_touched="2026-09-15",
-        follow_ups_sent="2", last_send_state="delivered",
-        **{"Follow-up date": "2026-09-23"},
-        bamfam_next_action="FU3 (M+7) = mer 23/09 — LA DERNIÈRE, puis parked",
-        bamfam_next_step="Le texte du 17/09 demande « here, or to the principal? » : s'ils répondent "
-                         "« the principal », c'est un AUTRE interlocuteur à trouver, pas un oui.",
-        log_ref="L14",
-        note="Site auto-construit bairdmemorial.com, DNS mort au contrôle = or (filtre « ça fait le travail »). "
-             "ÉCRAN KING 21/09 — le compte était faux d'un envoi : msg 1 mar 15/09 14:41 (maquette Crestwood) · "
-             "**FU1 jeu 17/09 13:48 « Quick follow-up » — jamais enregistrée** · FU2 lun 21/09 17:30 (lot du soir). "
-             "3 messages sur le fil, 0 réponse. Le nom du contact dans WhatsApp est « Baird » (profil = un homme, "
-             "photo visible le 21/09) : la porte A est passée. bairdmemorial.com ne répondait toujours pas au "
-             "contrôle du 21/09."),
+        follow_ups_sent="1", bamfam_next_action="FU2 due lun 21/09 (même lot que MITOC)",
+        bamfam_next_step="Silence → FU3, puis parked", log_ref="L14",
+        note="Site auto-construit bairdmemorial.com, DNS mort au contrôle = or (filtre « ça fait le travail »)."),
+    "afrique-labo-sarl": dict(
+        # Cadencement OFFICIEL pris dans `sales/Outreach-AFRIQUE-LABO-v1.md` §4 (corrigé le 18/09) :
+        # msg 1 jeu 17/09 13:24 → FU1 sam 19/09 (envoyée, comptée 1/3 d'après King) → FU2 LUN 21/09 → FU3 jeu 24/09.
+        stage="presented", stage_since="2026-09-17", first_touched="2026-09-17",
+        preview_sent="2026-09-17", follow_ups_sent="1", last_send_state="delivered",
+        bamfam_next_action="FU2 AUJOURD'HUI (lun 21/09) — angle : les résultats par WhatsApp.",
+        bamfam_next_step="FU3 jeu 24/09 max, puis parked. Prix jamais annoncé avant un « oui ».",
+        log_ref="L61",
+        note="Deux messages livrés (17/09 msg 1 avec mockup · 19/09 FU1), aucune réponse. Ne PAS redemander "
+             "« je vous envoie l'aperçu ? » : l'aperçu est envoyé depuis le 17/09. La FU2 demande la décision, "
+             "ou rien. Portail `afriqlabo.com` à refaire 10 s avant l'envoi."),
     "skye-douala": dict(
         # Parked à la demande explicite de King (21/09), sur preuve des captures d'écran :
         # deux messages LIVRÉS (✓✓) et JAMAIS OUVERTS. Une 3e relance sur un fil non lu ne vend rien.
@@ -236,6 +225,32 @@ PROSE_LEADS = [
          stage="qualifying", contacted="Yes", reply="No",
          demo="Yes", last_send_state="sent", follow_ups_sent="1",
          notes="Message 16/09. Relance M+2 (FU1) partie 18/09 20:22. Concept live : concept-skye.vercel.app"),
+    # M7 · AFRIQUE LABO existait UNIQUEMENT en prose (sales/Outreach-AFRIQUE-LABO-v1.md +
+    #   Activity-Log) — 4 messages échangés, un concept en ligne, une relance due aujourd'hui,
+    #   et AUCUNE ligne dans le CRM : donc absent du calcul des relances, du cadencement, du PRR.
+    #   Un prospect hors tableau est un prospect qui se gère à la mémoire. Ajouté avec les seuls
+    #   faits écrits dans le dépôt (aucun numéro, aucune date qui ne soit déjà ailleurs ici).
+    dict(slug="afrique-labo-sarl", org="AFRIQUE LABO SARL", city="Douala (Bessengue, feu rouge, immeuble Nkake)",
+         org_type="lab", language="FR", wa_number="690 54 70 93", wa_verified="yes",
+         contact_name="Dr TAKALA Cathérine (biologiste propriétaire)",
+         decision="Gérante = propriétaire : décide seule",
+         contact_channel="WhatsApp",
+         wa="Oui (WhatsApp Business, nom « Afrique labo sarl ») — vérifié par King 17/09",
+         source="sweep + recherche profonde", source_detail="sales/research/AFRIQUE-LABO-deep-dive-2026-09-16.md",
+         stage="presented", contacted="Yes", reply="No", demo="Yes",
+         last_send_state="sent", follow_ups_sent="1",
+         Facilities="laboratoire d'analyses · catalogue d'examens · 24h/24 annoncé sur le statut WhatsApp (à faire valider)",
+         Website="afriqlabo.com + afriqlabo.net (agence Sajor Company SARL)",
+         **{"Website status": "les DEUX domaines en DNS NXDOMAIN au contrôle King "
+                                         "du ven 16/09 ~17:00 (sur téléphone)"},
+         added_on="2026-09-21",
+         contact_role="Fondateur-biologiste (gérante)",
+         priority="A", lead_score="16",
+         notes="Concept nommé en ligne : concept-afriquelabo-v1.vercel.app (noindex, jamais publié). "
+               "Image d'abord : demos/shots/mockup-afriquelabo-wa.jpg. ⛔ Ne JAMAIS contacter le 674 46 62 15 "
+               "(numéro écarté). Secours autorisé seulement sur invitation : 699 73 36 25. "
+               "Portail obligatoire avant chaque envoi : ouvrir afriqlabo.com sur le téléphone — s'il se rouvre, "
+               "on n'écrit pas et on préviendrait King (le pitch repose sur le domaine mort)."),
     dict(slug="yaks-douala", org="Cabinet Dentaire YAKS", city="Douala (Logbessou)",
          org_type="clinic", language="FR/EN", wa_number="672 70 20 78", wa_verified="yes",
          contact_channel="WhatsApp", source="google_maps",

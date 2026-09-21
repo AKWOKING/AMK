@@ -70,7 +70,7 @@ RELANCE_A_JOUR = {
     # OraCare RETIRÉE de cette table le 21/09 : King a envoyé le message de clôture à 17:43 et le
     # fil est parqué. Une date de relance sur un fil fermé est une invitation à se griller.
     "midas-touch-optic-center-mitoc": ("2026-09-21", "FU2 fixée lun 21"),
-    "baird-memorial-college": ("2026-09-23", "FU3 (LA DERNIÈRE) fixée mer 23 — FU2 envoyée lun 21/09 17:30"),
+    "baird-memorial-college": ("2026-09-21", "FU2 fixée lun 21 (même lot que MITOC)"),
     # AFRIQUE LABO : ajoutée le 21/09 quand on a trouvé le lead ABSENT du CRM (il ne vivait que
     # dans sales/Outreach-AFRIQUE-LABO-v1.md). Dates prises dans le §4 corrigé du 18/09 de ce fichier.
     "afrique-labo-sarl": ("2026-09-21", "FU2 (M+4) fixée lun 21 — §4 d'Outreach-AFRIQUE-LABO-v1.md"),
@@ -183,12 +183,7 @@ def due_for_relance(r):
         return None, None
     if slug in RELANCE_A_JOUR:
         d, note = RELANCE_A_JOUR[slug]
-        if d <= today.isoformat():
-            return (d, f"fixé : {note}")
-        # Pas encore due ≠ invisible. (None, None) faisait DISPARAÎTRE le lead de la file du jour
-        # et de STALE.md : Baird, dont la FU3 est programmée mer 23, ne figurait nulle part le 21.
-        # Une seule ligne « programmée » dans la file suffit à ce que le jour venu on sache pourquoi.
-        return ("PLANNED:" + d, f"programmée le {d} — {note}")
+        return (d, f"fixé : {note}") if d <= today.isoformat() else (None, None)
     if (r.get("stage") or "") != QUALIFIED:
         return None, None
     age = last_send_age_days(r)
