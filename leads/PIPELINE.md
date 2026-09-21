@@ -8,13 +8,14 @@
 | Étape | Leads |
 |---|---|
 | ④ Offre posée / prix annoncé | **2** |
-| ② Qualifié — en conversation | **42** |
+| ③ Aperçu envoyé | **1** |
+| ② Qualifié — en conversation | **40** |
 | ① Prospect — à qualifier | **86** |
-| ⏸ Parqué | **5** |
+| ⏸ Parqué | **7** |
 | ⛔ Perdu / écarté | **10** |
-| **Total** | **145** |
+| **Total** | **146** |
 
-- **Contactés :** 45 · **Réponses humaines :** 3 · **Taux de réponse : 6.7 %**
+- **Contactés :** 46 · **Réponses humaines :** 3 · **Taux de réponse : 6.5 %**
 - **Réponses automatiques (hors PRR) :** 1
 - **Clients :** 0 · **Revenu :** 0 FCFA
 
@@ -33,19 +34,23 @@
 | Labiomed | Douala (Deido, 104 Route Deido-Bassa) | 699 98 54 66 | `L713` |
 | UNI-LABO | Douala (Bonamoussadi, Carrefour Etoo) | 696 13 98 19 | `L134` |
 
-## ② Qualifié — en conversation — 42
+## ③ Aperçu envoyé — 1
+
+| Lead | Ville | WhatsApp | Trace au journal |
+|---|---|---|---|
+| AFRIQUE LABO SARL | Douala (Bessengue, feu rouge, immeuble Nkake) | 690 54 70 93 | `L61` |
+
+## ② Qualifié — en conversation — 40
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
 | 2K Labo | Douala (Yassa, à côté de l'institut La Perle) | 670 94 43 03 | — |
-| Afrique Labo SARL | Douala (Bessengue) | 690 54 70 93 | `L506` |
+| Afrique Labo SARL | Douala (Bessengue) | 690 54 70 93 | `L61` |
 | Baird Memorial College | Buea (Bonduma) | 677875395 | `L16` |
 | Baptist Comprehensive College | Buea (Great Soppo) | 679650707 | `L15` |
 | CIDM St Joseph | Douala | 674 30 07 98 | — |
 | Cabinet Biomédical Adonaï | Douala | 696 53 87 75 | `L712` |
 | Cabinet Dentaire Emmanuel | Douala (Bonamoussadi) | 694 42 62 39 | `L113` |
-| Cabinet Dentaire The Skye | Douala (Bonamoussadi) | 677 79 69 99 | `L53` |
-| Cabinet Dentaire YAKS | Douala (Logbessou) | 672 70 20 78 | `L54` |
 | Cabinet Médical CAMERA | Douala (Akwa) | 699 90 53 27 | `L110` |
 | Cabinet Médical ISIS | Douala (Bonapriso) | 699 34 93 89 | `L35` |
 | Cabinet Médical La Cerisaie | Douala (Bonapriso) | 699 95 51 64 | `L111` |
@@ -171,11 +176,13 @@
 | Wonders Medical Foundation | Douala (Bonamoussadi) | — | — |
 | École Privée Bilingue Les Génies | Douala (Akwa) | — | `L470` |
 
-## ⏸ Parqué — 5
+## ⏸ Parqué — 7
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
 | COMOBIL – Collège Moderne Bilingue Les Lauréats | Douala (Bonamoussadi) | — | `L745` |
+| Cabinet Dentaire The Skye | Douala (Bonamoussadi) | 677 79 69 99 | `L53` |
+| Cabinet Dentaire YAKS | Douala (Logbessou) | 672 70 20 78 | `L54` |
 | One Stop Medical Laboratory & Diagnostics | Buea (location TBD; co-owner based Buea) | 691632941 | — |
 | Presbyterian Comprehensive Secondary School (PCSS) Buea | Buea (Madam Namondo Alexander) | 652075229 | — |
 | Solidarity Health Foundation (Solidarity Clinic & Laboratory) | Buea (Untarred Malingo St / Molyko Checkpoint D61, P.O. Box 467; plus code 575J+7M) | 677615757 | `L745` |

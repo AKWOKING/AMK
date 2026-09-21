@@ -110,7 +110,8 @@ LIVE_LEDGER = {
         stage="closing", stage_since="2026-09-19", first_touched="2026-09-18",
         last_reply_received="2026-09-19", preview_sent="2026-09-18",
         proposal_sent="2026-09-19", price_quoted_fcfa="100000",
-        bamfam_next_action="RDV vendredi 25/09 — confirmer l'heure avant",
+        **{"Follow-up date": "2026-09-25"},   # la date vit dans la COLONNE, pas dans une phrase
+        bamfam_next_action="RDV vendredi 25/09 — confirmer l'heure + demander leurs horaires réels",
         bamfam_next_step="Rappel J-1 (jeu 24/09) + prix déjà posé dans `RDV-UNILABO-2026-09-25.md`",
         log_ref="L486",
         note="Demande de rendez-vous du prospect = le plus fort signal de la campagne (19/09 20:20)."),
@@ -118,7 +119,8 @@ LIVE_LEDGER = {
         stage="closing", stage_since="2026-09-19", first_touched="2026-09-19",
         last_reply_received="2026-09-19", preview_sent="2026-09-19",
         proposal_sent="2026-09-19", price_quoted_fcfa="100000",
-        bamfam_next_action="Relance M+2 due lun 21/09 — angle : ses horaires manquent à la page",
+        **{"Follow-up date": "2026-09-21"},
+        bamfam_next_action="FU1 (M+2) AUJOURD'HUI 21/09, après 20:00 — angle : ses horaires manquent à la page",
         bamfam_next_step="Après le « oui » : fixer le jour du dépôt 50 000 FCFA",
         log_ref="L366",
         note="PREMIER OUI de la campagne (19/09 19:43, 11 min après msg 1). Prix envoyé 21:00."),
@@ -147,9 +149,15 @@ LIVE_LEDGER = {
         log_ref="L226",
         note="MQL 3/3. Le meilleur prospect optique de Douala, en attente depuis quatre jours."),
     "st-theresa-international-bilingual-comprehensive-college-sti": dict(
-        stage="parked", stage_since="2026-09-19", first_touched="2026-09-15",
+        # Roi 21/09 : `parked` assumé AVEC sa permission, pas un abandon. La date d'étape est
+        # celle de la décision de parking (21/09), la dernière réponse reste le 15/09.
+        stage="parked", stage_since="2026-09-21", first_touched="2026-09-15",
         last_reply_received="2026-09-15",
         health_override="warm",
+        # Roi 21/09 : elle a répondu deux fois le 15/09 — sa cellule `Reply` porte le verbatim,
+        # pas un « yes », donc la déduction ne la voyait pas. Forcée explicitement, avec la raison.
+        reply="YES Tue 15 Sep 20:44 + 22:51 (verbatim : « Ok thanks you can get back to me for a follow up »)",
+        reply_type="human",
         bamfam_next_action="Revenir le 14/10 — le site était annoncé « pour octobre »",
         bamfam_next_step="Question d'ouverture : le site est-il en ligne ? Avis gratuit honnête.",
         log_ref="L15",
@@ -165,22 +173,45 @@ LIVE_LEDGER = {
         follow_ups_sent="1", bamfam_next_action="FU2 due lun 21/09 (même lot que MITOC)",
         bamfam_next_step="Silence → FU3, puis parked", log_ref="L14",
         note="Site auto-construit bairdmemorial.com, DNS mort au contrôle = or (filtre « ça fait le travail »)."),
+    "afrique-labo-sarl": dict(
+        # Cadencement OFFICIEL pris dans `sales/Outreach-AFRIQUE-LABO-v1.md` §4 (corrigé le 18/09) :
+        # msg 1 jeu 17/09 13:24 → FU1 sam 19/09 (envoyée, comptée 1/3 d'après King) → FU2 LUN 21/09 → FU3 jeu 24/09.
+        stage="presented", stage_since="2026-09-17", first_touched="2026-09-17",
+        preview_sent="2026-09-17", follow_ups_sent="1", last_send_state="delivered",
+        bamfam_next_action="FU2 AUJOURD'HUI (lun 21/09) — angle : les résultats par WhatsApp.",
+        bamfam_next_step="FU3 jeu 24/09 max, puis parked. Prix jamais annoncé avant un « oui ».",
+        log_ref="L61",
+        note="Deux messages livrés (17/09 msg 1 avec mockup · 19/09 FU1), aucune réponse. Ne PAS redemander "
+             "« je vous envoie l'aperçu ? » : l'aperçu est envoyé depuis le 17/09. La FU2 demande la décision, "
+             "ou rien. Portail `afriqlabo.com` à refaire 10 s avant l'envoi."),
     "skye-douala": dict(
-        stage="qualified", stage_since="2026-09-16", first_touched="2026-09-16",
-        preview_sent="2026-09-16", follow_ups_sent="1",
-        bamfam_next_action="À CONFIRMER PAR KING : FU2 (M+4) due dim 20/09 — envoyée ou non ?",
-        bamfam_next_step="Si oui → FU3 (M+7) jeu 24/09 puis parked. Si non → envoyer AUJOURD'HUI.",
+        # Parked à la demande explicite de King (21/09), sur preuve des captures d'écran :
+        # deux messages LIVRÉS (✓✓) et JAMAIS OUVERTS. Une 3e relance sur un fil non lu ne vend rien.
+        stage="parked", stage_since="2026-09-21", first_touched="2026-09-16",
+        preview_sent="2026-09-18", follow_ups_sent="1", last_send_state="delivered_unread",
+        bamfam_next_action="PARKED (décision King 21/09) — pas de 3ᵉ relance sur un fil non lu.",
+        bamfam_next_step="Réveil : lecture du fil, clic sur concept-skye.vercel.app, "
+                         "ou recommandation à Bonamoussadi.",
         log_ref="L15",
-        note="FU1 partie 18/09 20:22 (texte écrit dans `FU-2026-09-18-Soir.md`). Le journal ne dit PAS "
-             "si la relance du 20/09 a été envoyée : follow_ups_sent reste à 1, rien n'est supposé."),
+        note="Faits des captures King (21/09) : message 1 mer 16/09 16:19 ✓✓ · relance ven 18/09 20:14 "
+             "avec la maquette ✓✓. Deux fils livrés, aucun ouvert. La maquette est en ligne et vérifiée "
+             "le 21/09 (concept-skye.vercel.app) : le travail n'est pas perdu, c'est le moment qui l'est. "
+             "FU1 bien partie le 18/09 20:22 (texte : `FU-2026-09-18-Soir.md`).",
+    ),
     "yaks-douala": dict(
-        stage="qualified", stage_since="2026-09-16", first_touched="2026-09-16",
-        preview_sent="2026-09-16", follow_ups_sent="1",
-        bamfam_next_action="À CONFIRMER PAR KING : FU2 (M+4) due dim 20/09 — envoyée ou non ?",
-        bamfam_next_step="Si oui → FU3 (M+7) jeu 24/09 puis parked. Si non → envoyer AUJOURD'HUI.",
+        # Parked à la demande de King (21/09) — avec une retenue HONNÊTE qui change la gâchette :
+        # la maquette du 18/09 porte la DOUBLE FLÈCHE DE TRANSFERT, donc elle a été lue puis
+        # envoyée à quelqu'un d'autre. Intérêt réel, décision absente → parked avec réveil, pas abandon.
+        stage="parked", stage_since="2026-09-21", first_touched="2026-09-16",
+        preview_sent="2026-09-18", follow_ups_sent="1", last_send_state="delivered_unread",
+        bamfam_next_action="PARKED (décision King 21/09) — pas de 3ᵉ relance sur un fil non lu.",
+        bamfam_next_step="Réveil : réponse sur la maquette transférée, ou campagne d'admissions/rentrée.",
         log_ref="L15",
-        note="FU1 partie 18/09 20:22 (texte écrit dans `FU-2026-09-18-Soir.md`). Le journal ne dit PAS "
-             "si la relance du 20/09 a été envoyée : follow_ups_sent reste à 1, rien n'est supposé."),
+        note="Faits des captures King (21/09) : message 1 mer 16/09 16:43 ✓✓ · ven 18/09 la maquette "
+             "porte la double flèche de TRANSFERT (lue puis envoyée à un tiers), texte ✓✓ non lu. "
+             "Lien exact du concept : concept-yaks-v1.vercel.app (vérifié en ligne le 21/09). "
+             "⚠️ `yaks-concept.vercel.app` renvoie 404 — ne JAMAIS écrire cette variante dans un message.",
+    ),
 }
 
 # ── Les 15 leads hors classeur (audit §1), avec les seuls faits sourcés du dépôt ──
@@ -194,6 +225,32 @@ PROSE_LEADS = [
          stage="qualifying", contacted="Yes", reply="No",
          demo="Yes", last_send_state="sent", follow_ups_sent="1",
          notes="Message 16/09. Relance M+2 (FU1) partie 18/09 20:22. Concept live : concept-skye.vercel.app"),
+    # M7 · AFRIQUE LABO existait UNIQUEMENT en prose (sales/Outreach-AFRIQUE-LABO-v1.md +
+    #   Activity-Log) — 4 messages échangés, un concept en ligne, une relance due aujourd'hui,
+    #   et AUCUNE ligne dans le CRM : donc absent du calcul des relances, du cadencement, du PRR.
+    #   Un prospect hors tableau est un prospect qui se gère à la mémoire. Ajouté avec les seuls
+    #   faits écrits dans le dépôt (aucun numéro, aucune date qui ne soit déjà ailleurs ici).
+    dict(slug="afrique-labo-sarl", org="AFRIQUE LABO SARL", city="Douala (Bessengue, feu rouge, immeuble Nkake)",
+         org_type="lab", language="FR", wa_number="690 54 70 93", wa_verified="yes",
+         contact_name="Dr TAKALA Cathérine (biologiste propriétaire)",
+         decision="Gérante = propriétaire : décide seule",
+         contact_channel="WhatsApp",
+         wa="Oui (WhatsApp Business, nom « Afrique labo sarl ») — vérifié par King 17/09",
+         source="sweep + recherche profonde", source_detail="sales/research/AFRIQUE-LABO-deep-dive-2026-09-16.md",
+         stage="presented", contacted="Yes", reply="No", demo="Yes",
+         last_send_state="sent", follow_ups_sent="1",
+         Facilities="laboratoire d'analyses · catalogue d'examens · 24h/24 annoncé sur le statut WhatsApp (à faire valider)",
+         Website="afriqlabo.com + afriqlabo.net (agence Sajor Company SARL)",
+         **{"Website status": "les DEUX domaines en DNS NXDOMAIN au contrôle King "
+                                         "du ven 16/09 ~17:00 (sur téléphone)"},
+         added_on="2026-09-21",
+         contact_role="Fondateur-biologiste (gérante)",
+         priority="A", lead_score="16",
+         notes="Concept nommé en ligne : concept-afriquelabo-v1.vercel.app (noindex, jamais publié). "
+               "Image d'abord : demos/shots/mockup-afriquelabo-wa.jpg. ⛔ Ne JAMAIS contacter le 674 46 62 15 "
+               "(numéro écarté). Secours autorisé seulement sur invitation : 699 73 36 25. "
+               "Portail obligatoire avant chaque envoi : ouvrir afriqlabo.com sur le téléphone — s'il se rouvre, "
+               "on n'écrit pas et on préviendrait King (le pitch repose sur le domaine mort)."),
     dict(slug="yaks-douala", org="Cabinet Dentaire YAKS", city="Douala (Logbessou)",
          org_type="clinic", language="FR/EN", wa_number="672 70 20 78", wa_verified="yes",
          contact_channel="WhatsApp", source="google_maps",
@@ -1108,6 +1165,34 @@ def gtd_for(rec: dict) -> str:
         return f"park — statut vérifié « {st[:40]} » : à classer au prochain contrôle"
     return ""     # aucune donnée = aucune étiquette. Un vide honnête vaut mieux qu'un « unknown » lu comme un fait.
 
+# M7 · `org_type` par PREUVE, plus par défaut. Jusqu'ici `crm.py` écrivait « school » sur les
+# 38 lignes du classeur sans jamais regarder la ligne (d'où MITOC « school », un opticien).
+# Règle : une étiquette n'existe que si un mot du nom ou des notes la porte. Sinon la cellule
+# reste VIDE et le générateur le dit. Un vide marqué est une tâche ; un faux marqué est un mensonge.
+ORG_KEYS = (
+    ("lab", ("laboratoire", "labo", "diagnostic", "analyses", "biologie médicale", "medlas", "pathcare")),
+    ("clinic", ("clinique", "polyclinique", "cabinet dentaire", "cabinet médical", "cabinet medical",
+                "centre médical", "centre medical", "centre de santé", "hôpital", "hopital", "maternité",
+                "dental", "health foundation", "medical centre", "médical", "polyclinic")),
+    ("other", ("optique", "optic", "lunetterie", "vision", "pharmacie", "opticien", "montures")),
+    ("school", ("college", "collège", "école", "ecole", "school", "lycée", "lycee", "scolaire",
+                "groupe scolaire",
+                "institute", "institut", "seminary", "séminaire", "maternelle", "nursery", "académie",
+                "academie", "high school", "bilingual", "comprehensive")),
+)
+
+
+def org_type_for(rec: dict) -> tuple:
+    """(étiquette, preuve) — la preuve est écrite dans la donnée, pas dans une conversation."""
+    hay = f"{rec.get('School') or ''} {rec.get('Facilities') or ''} {rec.get('Admissions activity') or ''} " \
+          f"{str(rec.get('Notes') or '')[:600]}".lower()
+    # l'ordre importe : « laboratoire d'analyses médicales » n'est pas une clinique.
+    for label, keys in ORG_KEYS:
+        for k in keys:
+            if k in hay:
+                return label, k
+    return "", ""
+
 
 def stage_for(rec: dict) -> str:
     """Étape déduite des colonnes du classeur. Rien d'inventé : la règle est écrite ici."""
@@ -1282,7 +1367,9 @@ def main() -> int:
     for r in wb_rows:
         rec = {h: r.get(h) for h in headers}
         rec["slug"] = norm_slug(r.get("School", ""))
-        rec["org_type"] = "school"
+        # M7 : plus de « school » par défaut. `org_type` reste vide ICI et est rempli à l'étape 1c,
+        # qui tourne après NEVER_CONTACT / ORG_TYPE_FIX — donc sur des Notes complètes.
+        rec["org_type"] = ""
         rec["wa_number"] = wa_number_for(r)
         rec["stage"] = stage_for(r)
         rec["gtd_filter"] = gtd_for(rec)
@@ -1324,6 +1411,10 @@ def main() -> int:
         "one-stop-medical-laboratory-diagnostics": ("lab", "laboratoire d'analyses"),
         "joss-medi-buea": ("clinic", "clinique privée depuis 2009"),
         "kamais-optic-bessengue": ("other", "opticien"),
+        "solidarity-health-foundation-solidarity-clinic-laboratory": (
+            "clinic", "« Solidarity Clinic & Laboratory », 24h clinic + laboratoire (Notes du classeur)"),
+        "one-stop-medical-laboratory-diagnostics": ("lab", "« Medical Laboratory & Diagnostics » dans le nom"),
+        "centre-kouam-samuel-bali": ("clinic", "centre médical (nom + Facilities)"),
     }
     for rec in out:
         fix = ORG_TYPE_FIX.get(rec.get("slug") or "")
@@ -1331,6 +1422,26 @@ def main() -> int:
             rec["org_type"] = fix[0]
             rec["Notes"] = (str(rec.get("Notes") or "") +
                             f" · org_type = {fix[0]} (M7, 21/09) — base : {fix[1]}").strip(" ·")
+
+    # 1c · M7 — `org_type` par preuve (voir org_type_for). Les overrides explicites d'
+    #   ORG_TYPE_FIX ont déjà gagné ; ici on ne remplit que les vides, et on marque la preuve.
+    n_org = n_org_blank = 0
+    for rec in out:
+        if rec.get("slug") in ORG_TYPE_FIX:
+            continue
+        lbl, why = org_type_for(rec)
+        if not lbl and not str(rec.get("org_type") or "").strip():
+            n_org_blank += 1
+        if lbl:
+            if str(rec.get("org_type") or "").strip() not in ("", lbl):
+                rec["Notes"] = (str(rec.get("Notes") or "") +
+                                f" · ⚠️ org_type {rec['org_type']} → {lbl} : l'étiquette du classeur "
+                                f"venait du défaut « school » collé par `crm.py`, pas d'une donnée").strip(" ·")
+            rec["org_type"] = lbl
+            rec["Notes"] = (str(rec.get("Notes") or "") +
+                            f" · org_type={lbl} prouvé par « {why} » (M7, 21/09)").strip(" ·")
+            n_org += 1
+    ORG_BLANK = n_org_blank
 
     # 1b · le numéro qui NE DOIT PAS servir — la leçon du 18/09, gravée dans la donnée
     #      (King : « vérifier nom + catégorie sur WhatsApp avant d'écrire »)
@@ -1398,6 +1509,13 @@ def main() -> int:
         a["Notes"] = (str(a.get("Notes") or "") + " · " + note).strip(" ·")
         b["Notes"] = (str(b.get("Notes") or "") + " · " + note).strip(" ·")
 
+    # 4a-bis · M7 — `gtd_filter` était calculé dans la boucle du classeur seulement : les lignes
+    #   ajoutées depuis la prose (Skye, YAKS, AFRIQUE LABO…) restaient sans filtre, donc invisibles
+    #   au tri « qu'est-ce qui fait le travail ». Une règle, appliquée partout, pas deux règles.
+    for rec in out:
+        if not str(rec.get("gtd_filter") or "").strip():
+            rec["gtd_filter"] = gtd_for(rec)
+
     # 4b · M4 — lier les dossiers de travail
     for rec in out:
         d = DOSSIERS.get(rec.get("slug"))
@@ -1455,7 +1573,10 @@ def main() -> int:
             if k in ("log_ref", "note") and v:
                 m7.append(str(v))
                 continue
-            if k in NEW_FIELDS or k in ("follow_ups_sent",):
+            if k in NEW_FIELDS or k in ("follow_ups_sent", "Follow-up date", "reply", "Contacted", "Reply",
+                                        "Demo made", "Lead score", "Priority", "WhatsApp",
+                                        "Decision maker", "Contact channel", "Website",
+                                        "Website status", "Admissions activity"):
                 rec[k] = v
             elif v:
                 sys.exit(f"✗ M7 : clé du registre hors schéma (« {k} » pour {slug})")
@@ -1526,6 +1647,9 @@ def main() -> int:
     check_dossiers(out)
     n_con = sum(1 for r in out if r.get("contradiction"))
     print(f"  M2 : {n_con} ligne(s) portent une contradiction résolue ({len(CONTRADICTIONS)} + {len(STRUCTURAL)} structurelles)")
+    blank = sum(1 for r in out if not str(r.get("org_type") or "").strip())
+    if blank:
+        print(f"  M7 : {blank} ligne(s) sans `org_type` prouvé — vide assumé, pas « school » par défaut.")
     noslug = [r for r in out if not r.get("slug")]
     if noslug:
         print(f"  ⚠ {len(noslug)} ligne(s) sans slug")

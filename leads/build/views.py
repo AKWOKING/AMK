@@ -70,6 +70,9 @@ RELANCE_A_JOUR = {
     "oracare-buea": ("2026-09-20", "FU2 (M+4) fixée dim 20"),
     "midas-touch-optic-center-mitoc": ("2026-09-21", "FU2 fixée lun 21"),
     "baird-memorial-college": ("2026-09-21", "FU2 fixée lun 21 (même lot que MITOC)"),
+    # AFRIQUE LABO : ajoutée le 21/09 quand on a trouvé le lead ABSENT du CRM (il ne vivait que
+    # dans sales/Outreach-AFRIQUE-LABO-v1.md). Dates prises dans le §4 corrigé du 18/09 de ce fichier.
+    "afrique-labo-sarl": ("2026-09-21", "FU2 (M+4) fixée lun 21 — §4 d'Outreach-AFRIQUE-LABO-v1.md"),
     "labiomed-deido": ("2026-09-21", "M+2 — il a dit « je vous reviens quand je serai disponible » (report poli, pas un non)"),
     # UNI-LABO a DEMANDÉ un rendez-vous : ce n'est plus une relance à calculer.
     "uni-labo-bonamoussadi": ("2026-09-25", "RENDEZ-VOUS demandé par le prospect — vendredi 25/09"),
@@ -351,6 +354,7 @@ def view_daily_plan(rows, date):
         w.writerow(["# Généré le " + date + " par leads/build/views.py — ne pas modifier à la main"])
         w.writerow(["priorite", "action", "lead", "whatsapp", "ville", "etape", "note"])
         prio = 0
+        lignes = []      # collectées puis triées : sinon la file est dans l'ordre du CRM, pas l'ordre du jour
         for r in rows:
             action, note = "", ""
             if reply_pending(r):
@@ -368,9 +372,42 @@ def view_daily_plan(rows, date):
                     prio += 1
                     action = "À CONTACTER (numéro vérifié)"
                     note = re.sub(r"\s+", " ", str(r.get("Notes", "")))[:110]
+            if not action and (r.get("stage") or "") == "closing":
+                # TROU TROUVÉ LE 21/09 : Labiomed et UNI-LABO — les DEUX seules affaires à « closing »,
+                # soit 200 000 FCFA chiffrés — avaient DISPARU de la file du jour. Cause : une date de
+                # relance planifiée annule « répondre » ET « relancer », donc un rendez-vous déjà fixé
+                # devient invisible. Or rien ne dort à cette étape : on confirme, ou on perd.
+                prio += 1
+                rdv = RELANCE_A_JOUR.get(r.get("slug", ""), ("", ""))[0]
+                prix = str(r.get("price_quoted_fcfa") or "").strip()
+                if rdv and rdv > date:
+                    action, quand = "CONFIRMER LE RENDEZ-VOUS (J-1)", f"RDV fixé au {rdv}"
+                elif rdv:
+                    action, quand = "RENDEZ-VOUS DU JOUR", f"échéance {rdv}"
+                else:
+                    action, quand = "AFFAIRE À CLOSING — la faire avancer", "aucune date posée"
+                note = str(r.get("bamfam_next_action") or "")[:110]
+                lignes.append([prio, action, r["School"], r.get("wa_number", ""), r.get("City", ""),
+                            "closing", f"{quand} · {('prix ' + prix + ' FCFA · ') if prix.isdigit() else ''}{note}"])
+                continue
+            if not action and (r.get("stage") or "") == "parked":
+                # Un lead parqué doit APPARAÎTRE dans la file, avec la consigne contraire : « ne pas
+                # relancer ». Sans cette ligne, la file du jour est une liste d'occasions ratées et
+                # un fil parqué disparaît de la mémoire — c'est comme ça qu'on relance un lead mort.
+                trig = ""
+                notes = str(r.get("Notes") or "")
+                if " ⏸ " in notes:
+                    trig = notes.rsplit(" ⏸ ", 1)[1]
+                trig = trig or str(r.get("bamfam_next_step") or "")
+                lignes.append([100, "NE PAS RELANCER (parqué)", r["School"], r.get("wa_number", ""),
+                               r.get("City", ""), "parked",
+                               f"depuis {r.get('stage_since') or '—'} · {re.sub(chr(10),' ',trig)[:130]}"])
+                continue
             if action:
-                w.writerow([prio, action, r["School"], r.get("wa_number", ""),
-                            r.get("City", ""), r.get("stage", ""), note])
+                lignes.append([prio, action, r["School"], r.get("wa_number", ""),
+                               r.get("City", ""), r.get("stage", ""), note])
+        for row in sorted(lignes, key=lambda x: (x[0], x[2].lower())):
+            w.writerow(row)
     return out
 
 

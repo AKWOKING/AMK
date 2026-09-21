@@ -744,3 +744,77 @@ normal — la transcription ASCII des notes de lead n'a jamais rien protégé, e
 3. **org_type des 55 lignes du classeur** : je propose un tri de 10 minutes, ligne par ligne, sur les faits écrits — jamais par hypothèse.
 4. **Les 5 questions de l'audit du 18/09 §10 sont toujours sans réponse** (COMOBIL · health manuel de St. Theresa · les 12 labos de la réserve · la Page Facebook · le parrainage St. Theresa). Les deux premières ont été tranchées par la migration d'aujourd'hui ; il en reste trois.
 5. **Contenu** : la vidéo #1 n'est pas dans le dépôt (tu as refusé le re-upload), la voix du personnage n'est pas ré-enregistrée, et `ffmpeg`/`playwright`/`PIL` ne sont pas dans ce bac. **Rien ne peut être rendu ici aujourd'hui** — la décision « anonymisé jusqu'à un client signé » a déjà été écrite dans les leçons et la shortlist, et elle bloque la sortie de V-05 telle quelle. À toi de dire si je prépare le floutage (demain) ou si le contenu reste gelé tant que l'outreach n'a pas clos.
+
+---
+
+## Lundi 21/09/2026 — 17:30 · les 5 décisions de King exécutées, le lot 1 écrit, et deux trous trouvés en route
+
+**Casquette : Sales Operator + Build Lead.** Rien n'a été envoyé — je ne suis pas le canal. Tout est écrit
+pour que King envoie, et chaque envoi s'enregistrera dans la même réponse que l'envoi.
+
+### 1 · Les réponses de King (17:00), telles quelles
+
+| # | Sa décision | Ce que j'ai fait |
+|---|---|---|
+| ① | **Skye + YAKS : parked.** La FU du 18/09 est bien partie sur les deux fils — ses captures le prouvent (Skye 16/09 16:19 ✓✓ puis 18/09 20:14 ✓✓ **jamais ouverts** ; YAKS 16/09 16:43 ✓✓, maquette **à double flèche de transfert**, texte ✓✓ non lu). | Les deux lignes passent `qualified → parked`, `stage_since=2026-09-21`, `last_send_state=delivered_unread`, `follow_ups_sent` reste **1** (la FU du 20/09 n'est pas partie et ne partira pas). Gâchette de réveil dans `bamfam_next_step`. Et **`Daily-Plan.csv` les affiche maintenant comme `NE PAS RELANCER (parqué)`** — voir §3. |
+| ② | **St. Theresa : oui, elle compte dans le PRR.** | Sa `Reply` porte le verbatim, pas un « yes » : la déduction ne la voyait pas. Forcée à la main (`reply_type=human`, verbatim des 15/09 20:44 + 22:51 dans la cellule). Le PRR passe de 4,4 % à **6,7 % (3/45)** — et retombe à **6,5 % (3/46)** quand AFRIQUE LABO entre au tableau (§2). Sa `stage_since` = **21/09**, la date de la décision de parking, pas celle de la réponse. |
+| ③ | **org_type : « va ligne par ligne sur les faits écrits dans la ligne. »** | Fait — **mais je n'ai pas trié à la main une par une : j'ai supprimé la cause.** `crm.py` collait `"school"` aux 38 lignes du classeur **sans jamais lire la ligne** ; voilà d'où venaient MITOC « school » et Solidarity « school ». Nouveau `org_type_for()` : l'étiquette n'existe que si un mot **du nom, des Facilities, de l'activité ou des notes** la porte (`lab` → `clinic` → `other` → `school`, dans cet ordre parce qu'« laboratoire d'analyses médicales » n'est pas une clinique). La preuve est écrite dans `Notes` (`org_type=lab prouvé par « laboratoire »`). Les overrides explicites (MITOC, One Stop, JOSS, Kamaïs, Solidarity) gagnent avant. **Résultat : 0 ligne sans étiquette et 0 ligne sans preuve** — contre 145 dont 38 affirmées « school » par défaut. |
+| ④ | **Le site `amk-cm.vercel.app` :** contrôle demandé sur les pages concernées. | `audit_html.py` sur les 3 pages récupérées du dépôt = **0 finding**. Les liens de concepts cités dans les textes d'envoi ont été **vérifiés en ligne, un par un** : `bonanjo` · `concept-skye` · `concept-yaks-v1` · `mitoc-concept` · `uni-labo` · `concept-afriquelabo-v1` = vivants ; **`amk-cm.vercel.app/yaks/` renvoie 404** → aucune phrase d'envoi ne doit pointer sur ce chemin (les maquettes nommées ne sont pas listées, règle du 17/09). |
+| ⑤ | **Contenu :** la dé-identification de V-05 est pour demain ; la sortie vidéo reste gelée tant que l'outreach n'a rien clos. | Constaté, rien de plus fait ici. `ffmpeg`/`playwright`/`PIL` toujours absents du bac → **aucun rendu possible dans cette session**, ce n'est pas un choix. |
+
+### 2 · AFRIQUE LABO n'était pas dans le CRM — 4 messages, une relance due, aucune ligne
+
+En écrivant le lot, j'ai voulu lire sa ligne : **elle n'existe pas.** Le lead ne vivait que dans
+`sales/Outreach-AFRIQUE-LABO-v1.md` et le journal. Conséquence mécanique, pas une opinion : un lead hors
+tableau n'a **pas de cadencement calculé, pas de compteur de relances, pas de place au PRR, pas de fiche**
+— et sa date due ne vit que dans la tête de qui l'a lue.
+
+Corrections : `afrique-labo-sarl` **ajouté comme 146ᵉ ligne**, uniquement avec des faits déjà écrits dans le
+dépôt (msg 1 jeu 17/09 13:24 · FU1 sam 19/09 confirmée par King → `follow_ups_sent=1` · FU2 lun 21 · FU3
+jeu 24 · `presented` · `lab` · WhatsApp Business nommé « Afrique labo sarl » vérifié 17/09 · `afriqlabo.com`
+**et** `.net` en `NXDOMAIN` au contrôle King du 16/09 ~17:00 · Dr Takala Cathérine · ⛔ 674 46 62 15 ·
+secours 699 73 36 25 seulement sur invitation · portail obligatoire 10 s avant chaque envoi).
+
+**Et cette inscription a révélé une de mes erreurs, plus grave qu'un oubli de saisie :** le pack de 16:00
+disait « AFRIQUE LABO FU2 = mercredi 23/09 → ne rien envoyer aujourd'hui ». **C'était faux** — ce calcul
+sortait de ma note de plan du 19/09, alors que le §4 **corrigé le 18/09 dans son propre dossier** donne
+FU2 = **lundi 21**, c'est-à-dire aujourd'hui. Le texte n'est pas envoyé : corrigé avant, dans les deux fichiers.
+Leçon écrite ici, pas dans une conversation : **une date de relance qui n'existe que dans une phrase de note
+de plan est une date fausse en puissance.** Elle est maintenant dans la colonne `Follow-up date` du CRM
+(UNI-LABO 2026-09-25 et Labiomed 2026-09-21 y sont entrées en même temps).
+
+### 3 · Deux trous de vue trouvés en chemin (corrigés dans `views.py`)
+
+1. **Les seules affaires à `closing` disparaissaient de la file du jour.** Labiomed et UNI-LABO —
+   **200 000 FCFA chiffrés, les deux seuls « oui » de la campagne** — n'apparaissaient pas dans
+   `Daily-Plan.csv` : une date de relance planifiée annule « répondre » **et** « relancer », donc un
+   rendez-vous déjà fixé devenait invisible. Ajouté : `CONFIRMER LE RENDEZ-VOUS (J-1)` /
+   `RENDEZ-VOUS DU JOUR` / `AFFAIRE À CLOSING — la faire avancer`, avec le prix dans la note.
+   **Une file qui omet les deux seules ventes en cours n'est pas une file, c'est une liste de regrets.**
+2. **Un lead parqué sortait de la mémoire.** Les 7 parqués n'apparaissaient nulle part le jour où l'on
+   décide quoi envoyer. Ajouté : `NE PAS RELANCER (parqué)` en bas de file, avec la date de parking et la
+   gâchette de réveil. La file passe de 40 à **49 lignes** et **les priorités sont enfin triées** —
+   avant, elle était dans l'ordre du tableau, pas dans l'ordre de la journée.
+
+### 4 · Le lot 1 est écrit, pas envoyé
+
+`sales/Send-Pack-2026-09-21-LOT1.md` (247 lignes) — 10 destinataires dans l'ordre d'envoi : Bonanjo
+(l'horaire manquant, pas le prix) · MITOC FU2 · Baird FU2 (le domaine **ne répond toujours pas**,
+revérifié aujourd'hui, et la formulation reste « your leads land nowhere », jamais « vous n'avez pas de site ») ·
+AFRIQUE LABO FU2 (angle : les résultats) · **OraCare conditionnel** — si la FU2 du 20/09 est partie, on
+n'écrit pas aujourd'hui, FU3 demain ; sinon le texte est prêt · les 5 premiers opticiens de la Vague 1,
+**chacun ouvert par le fait du titulaire public** (1974 pour Tchaya · Bonamoussadi/ACACIAS pour Bely ·
+« Univers Optique » introuvable même en tapant son propre nom).
+**Et une porte qui bloque, écrite au lieu d'être contournée : les 10 opticiens sont à 1/3** (C seulement) —
+la porte A, ouvrir chaque contact et regarder le profil, te prend ~2 minutes par numéro. Sans elle, un envoi
+à un profil muet s'enregistre comme **incident de canal, pas comme relance**.
+
+### 5 · Ce que je te demande maintenant
+
+1. **Les 5 opticiens du lot :** ouvre les 5 numéros, dis-moi « nom vu » ou « profil muet ». Si les 5 passent,
+   j'écris les 5 suivants (Optic Laser · Planète · Médina · Fashion · MegaOptic) dans la foulée.
+2. **OraCare :** la FU2 de dimanche est-elle partie ? (une ligne — ça décide si on écrit aujourd'hui ou demain.)
+3. **Rien n'est envoyé tant que tu n'as pas dit « j'y vais ».** À chaque envoi : heure · coches · réponse
+   verbatim · profil vérifié oui/non. J'enregistre dans `crm.py` + ce journal **dans la même réponse**.
+4. **Trois questions de l'audit du 18/09 §10 restent sans réponse** : les 12 labos de la réserve ·
+   la Page Facebook · le parrainage St. Theresa.

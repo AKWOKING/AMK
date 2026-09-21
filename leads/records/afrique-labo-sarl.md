@@ -1,4 +1,4 @@
-# Afrique Labo SARL
+# AFRIQUE LABO SARL
 
 > ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-21. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
@@ -6,24 +6,25 @@
 
 | Champ | Valeur |
 |---|---|
-| Slug | afrique-labo-douala |
+| Slug | afrique-labo-sarl |
 | Type | lab |
-| Ville | Douala (Bessengue) |
+| Ville | Douala (Bessengue, feu rouge, immeuble Nkake) |
 | Langue de contact | FR |
-| Étape | qualified |
+| Étape | presented |
 | WhatsApp | 690 54 70 93 |
 | Numéro vérifié | yes |
+| Contact | Gérante = propriétaire : décide seule |
 | Canal | WhatsApp |
 | Contacté | Yes |
 | Réponse | No |
 | Maquette / site | Yes |
 | Relances envoyées | 1 |
-| Source | directory |
-| Détail source | maligah/pagespratiques — numéro joignable vérifié |
+| Source | sweep + recherche profonde |
+| Détail source | sales/research/AFRIQUE-LABO-deep-dive-2026-09-16.md |
 
 ## Notes
 
-Message 1 envoyé 17/09 13:24. **FU1 (M+2) ENVOYÉE par King le 19/09** (confirmé par lui : « I have already sent message de relance »). FU2 (M+4) = lundi 21/09, angle résultats WhatsApp. Concept live : concept-afriquelabo-v1.vercel.app. Numéros interdits : 699 73 36 25 et 674 46 62 15 (secours seulement si l'invitation vient d'eux).
+| M7 (21/09) : L61 · Deux messages livrés (17/09 msg 1 avec mockup · 19/09 FU1), aucune réponse. Ne PAS redemander « je vous envoie l'aperçu ? » : l'aperçu est envoyé depuis le 17/09. La FU2 demande la décision, ou rien. Portail `afriqlabo.com` à refaire 10 s avant l'envoi.
 
 ## Prochaine action
 

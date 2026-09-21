@@ -25,7 +25,7 @@
 
 ## Notes
 
-Founded 1999 by decree; complex general/technical/anglo-saxon; COMOBIL.com is PARKED (verified 09/09/26) = golden D/E target; one contact = whole WAFO group. | Concept concept-comobil-v1.html BUILT 14 Sep (FR, forest palette, 115 pairs, 3 sections + pension + WAFO group). · ⏸ Réveil : un canal atteignable (WhatsApp Business au nom du groupe, ou réponse sur Messenger) OU le domaine COMOBIL.com expire vraiment et disparaît. Source de la décision : `sales/Pipeline-Status.md` (14/09) + `leads/CONTRADICTIONS.md` §1. · Même acheteur que la ligne liée — Pierre WAFO (promoteur). Le classeur liste les deux établissements du même groupe ; une seule conversation, un seul acheteur (audit §9 étape 2). | CONTRADICTION RÉSOLUE (M2) — retenu : parked — une kill list doit se DÉDUIRE de l'état réel (score 18 ET non parké ET non disqualifié).
+Founded 1999 by decree; complex general/technical/anglo-saxon; COMOBIL.com is PARKED (verified 09/09/26) = golden D/E target; one contact = whole WAFO group. | Concept concept-comobil-v1.html BUILT 14 Sep (FR, forest palette, 115 pairs, 3 sections + pension + WAFO group). · ⏸ Réveil : un canal atteignable (WhatsApp Business au nom du groupe, ou réponse sur Messenger) OU le domaine COMOBIL.com expire vraiment et disparaît. Source de la décision : `sales/Pipeline-Status.md` (14/09) + `leads/CONTRADICTIONS.md` §1. · org_type=school prouvé par « collège » (M7, 21/09) · Même acheteur que la ligne liée — Pierre WAFO (promoteur). Le classeur liste les deux établissements du même groupe ; une seule conversation, un seul acheteur (audit §9 étape 2). | CONTRADICTION RÉSOLUE (M2) — retenu : parked — une kill list doit se DÉDUIRE de l'état réel (score 18 ET non parké ET non disqualifié).
 
 ## Prochaine action
 
