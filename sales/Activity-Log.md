@@ -615,3 +615,46 @@ B (boutiques de montures → personne ne voit vos montures) · C (marques établ
 **PERTE À SIGNALER :** les **2 pages service** (`creation-site-web-ecole-cameroun.html` et
 `creation-site-web-clinique-cameroun.html`) ont été **perdues au 13ᵉ recul du bac** — leur push avait échoué
 (jeton GitHub intermittent). Elles sont à reconstruire. **Ce n'est pas bloquant pour l'outreach.**
+
+---
+
+## lundi 21/09 15:00 — TOUT EST TERMINÉ, L'OUTREACH PEUT COMMENCER
+
+**Les 2 pages service sont reconstruites — et cette fois dans un GÉNÉRATEUR.**
+
+Perdues au 13ᵉ recul du bac (leur push avait échoué). **Reconstruites par
+`tools/site/build_service_pages.py`** — parce qu'**une page qui n'existe que sous forme de fichier
+est fragile ; une page qui se régénère en une commande ne l'est pas.** Si elles disparaissent encore :
+
+    python3 tools/site/build_service_pages.py
+
+**Vérifié dans un vrai navigateur, les 3 pages :**
+
+| Page | Images | FAQ FR | FAQ EN | Liens service |
+|---|---|---|---|---|
+| **Accueil** | 6/6 ✓ | 10 (0 vide) | 10 (0 vide) | 4 |
+| **École** | 3/3 ✓ | 5 (0 vide) | 5 (0 vide) | 4 |
+| **Clinique** | 2/2 ✓ | 5 (0 vide) | 5 (0 vide) | 4 |
+
+**Plus :** `audit_html.py` **0 finding sur les 3 pages** · JSON-LD **3 blocs valides** par page
+(Service, FAQPage, BreadcrumbList) · §20.11 : 5 details / 5 summary, 0 violation · sitemap **7 URLs**.
+
+**Paquet : `amk-site.zip` — 5 201 986 octets · 38 fichiers · 8 pages.**
+Accueil : voix ✓ 15 000 FCFA ✓ liens vers les 2 pages ✓
+
+**Poussé : `316edce`. GitHub a tout** (vérifié par `fetch`, pas supposé).
+
+### Ce qui a été fait aujourd'hui, dans l'ordre
+
+1. **Vague 1 opticiens** : 38 neufs depuis l'annuaire officiel de l'ONOC, 0 doublon, 36 avec nom du titulaire.
+2. **2 pages service** reconstruites par générateur.
+3. **Maillage** : section « Deux pages, deux métiers » sur l'accueil + 2 liens au pied de page.
+
+### L'OUTREACH PEUT COMMENCER
+
+**`sales/Vague1-Opticiens-2026-09-21.md`** — les 10 premiers, avec numéro, nom du titulaire, variante de message
+et la raison de leur position dans l'ordre. **Le problème qu'on résout est le même pour les 38 :**
+*« être dans une liste, ce n'est pas être trouvé »* — et pour un opticien, **personne ne peut voir une seule
+de ses montures avant de pousser la porte.**
+
+**6 heures de fenêtre restantes.** ~10 minutes entre deux envois.
