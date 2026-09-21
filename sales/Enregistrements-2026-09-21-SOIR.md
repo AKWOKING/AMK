@@ -113,3 +113,22 @@ ouvrir ce dossier.
 ~10 min prescrites, à des confrères du même ordre. Pour l'instant aucun retour négatif. Noté dans `crm.py`.
 Si le lot 2 part ce soir, je les espace — la réputation dans une petite profession vaut plus que quatre
 envois gagnés en cinq minutes.
+
+---
+
+## ⑥ L'ÉTAT DES FILS À 18:25 — ce qui n'a PAS bougé aujourd'hui, écrit sans l'habiller
+
+| Lead | Dernier fait enregistré | Ce que ça veut dire |
+|---|---|---|
+| **L'Opticien Bali** (670 27 60 65) | msg 1 jeu 17/09 · **aucune relance envoyée** (le fichier du 16:00 en promettait une dim 20/09) | 3/3 aux trois portes, **4 jours sans rien**. Le seul prospect optique déjà validé. Texte prêt : `Send-Pack-2026-09-21-1600.md` §7. |
+| **MITOC** (678 90 89 62) | FU1 jeu 17/09 · **FU2 du 21/09 non envoyée** (la page live `mitoc-concept.vercel.app` tourne toujours en démo vers TOI) | Le bouton WhatsApp d'un prospect affiche le numéro d'AMK depuis 5 jours : c'est le seul message qui **mérite** d'être envoyé en premier demain matin. |
+| **Labiomed** (699 98 54 66) | « je vous reviens » 19/09 21:16 · 🙏 21:27 · lu 21:40 · **FU1 (M+2) non envoyée** | Le premier oui de la campagne, et le CRM ne dit plus « Relance 2/3 » mais « M+2 — il a dit qu'il reviendrait quand il serait disponible ». Fenêtre : **20:00 ce soir**, sinon demain 09:00. |
+| **UNI-LABO** | RDV fixé par eux **ven 25/09**, heure manquante | Neuf jours de marge, mais **rien n'est confirmé** : une ligne de confirmation + leurs horaires réels (notre page les affiche, écrits par nous). |
+| **Skye · YAKS** | parqués 18:20, deux fils ✓✓ non lus / transférés | Aucune relance. Réveil = leur lecture, pas notre calendrier. |
+
+**Une phrase à ne plus écrire, venue de moi et partie par ta main :** « last note from me, then I stop »
+(OraCare 17:43) et « je ne vous écrirai plus » (brouillon Bali) sont des **promesses de silence**. Si demain
+un prospect ouvre le lien et que nous réécrivons, nous aurons menti sur la seule chose qu'un opticien ou un
+dentiste peut vérifier : notre parole. **Formulation à retenir pour la reprise** : « je ne vous relancerai
+plus sur ce dossier — si un jour vous voulez la page, ce fil suffit ». Le palier des 3 messages reste, la
+promesse absolue sort des textes.
