@@ -1324,6 +1324,13 @@ de fiches cherche les mots du nom, et ces deux mots en étaient un. Réglé par 
 strict perdrait 56 citations **légitimes** sur 295 (`Bonanjo`, `Yondja`, `Cerisaie`…). Limite consignée en
 tête de `leads/build/records.py` pour que le prochain qui passe ne « corrige » pas à l'aveugle.
 
+**00:55 — validation demandée, pas reçue.** La question « les trois rendus d'UNIVERS OPTIQUE sont-ils validés
+pour l'envoi de 09:00, et Le Cristallin choisit A ou B ? » a été posée à King ; **pas de réponse avant la coupure
+de session**. En conséquence : rien n'est envoyé ; la décision est **cadrée en tête de la feuille d'envoi** (deux
+chemins prêts — le fichier de 722 Ko avec les rendus neufs, ou le repli de 84 Ko sans image, avec la phrase qui va
+avec) ; la relance du Cristallin reste datée au 23/09. Une demande de validation qui dort n'est pas un feu vert,
+mais ce n'est pas un motif d'immobilisme non plus : le pack doit rester exécutable en trente secondes.
+
 **Ce qui reste vrai et attendu :** l'envoi de **UNIVERS OPTIQUE** est programmé **demain avant 09:00**
 (`sales/Send-UNIVERS-OPTIQUE-2026-09-22-Soir.md`) — mais **les visuels sont à valider par le roi d'abord**,
 puisque c'est eux qui ont été refusés ; et **LE CRISTALLIN** attend toujours sa réponse **A (page seule) /

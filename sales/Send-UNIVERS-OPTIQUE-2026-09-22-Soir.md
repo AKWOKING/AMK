@@ -11,6 +11,23 @@
 
 ---
 
+
+## AVANT D'OUVRIR WHATSAPP — 30 secondes, une seule décision
+
+Les visuels ont été refaits sur ta consigne (« *ça ne représente pas une clinique moderne* ») et **relus un à un** :
+salle de vente chêne + pétrole avec présentoirs rétroéclairés, atelier avec tailluse et frontofocomètre, examen au
+réfracteur — **zéro lettrage inventé** dans les trois, rue de Bépanda visible derrière la vitre. La demande de
+validation t'a été posée à 00:55, **sans réponse avant la coupure de session** : la décision t'est laissée, et les
+deux chemins sont prêts.
+
+- **Si les images te vont** → envoie `demos/concept-univers-optique-v1.html` (**722 Ko**). C'est le fichier, pas une
+  URL : `amk-cm.vercel.app/univers/` répond **404** tant que rien n'est déployé.
+- **Si tu ne veux aucun risque sur l'image avant 09:00** → envoie `demos/concept-univers-optique-v1-sobre.html`
+  (**84 Ko**, tout le texte, zéro visuel, même audit à 0 finding) et tu ajoutes une ligne : « *les photos du
+  cabinet, on les met à la livraison* ».
+- **Dans les deux cas**, ne rien changer au message plus bas : il ne reprend pas le « absent du web » de 17:50 qui
+  est faux (Google Business 3,3/5 avec 6 avis ; domaine vivant jusqu'en janvier 2024).
+
 ## ① D'ABORD le fichier (l'aperçu, pas un lien à inventer)
 
 `demos/concept-univers-optique-v1.html` — **722 Ko**, un seul fichier, trois visuels de concept inlinés
