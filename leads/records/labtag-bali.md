@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Bali, 301 Rue Ngosso Din) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | qualified |
 | WhatsApp | 699 68 30 50 |
 | Numéro vérifié | unknown |
 | Contact | Dr Tagu J.P. — biologiste (nom public) |

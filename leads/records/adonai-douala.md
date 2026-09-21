@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | qualified |
 | WhatsApp | 696 53 87 75 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |
@@ -31,7 +31,7 @@ Envoyé 18/09 13:39. ⚠️ reply_type = auto : le cabinet envoie automatiquemen
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 6 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 7 ligne(s).*
 
 `L25` · | **ven 18/09 13:39** | **Cabinet Biomédical Adonaï** (696 53 87 75) | msg 1 + maquette | **Envoyé — 2 coches (distribué)** | **Non** |
 `L26` · | *ven 18/09 13:40* | *Adonaï — message d'accueil **automatique*** | *« Merci d'avoir contacté cabiomedadonai 🙏 Dites-nous en quoi nous pouvons vous aider. »* | *Automatique* | **NE COMPTE PAS comme réponse** |
@@ -39,6 +39,7 @@ Envoyé 18/09 13:39. ⚠️ reply_type = auto : le cabinet envoie automatiquemen
 `L79` · - **Réponse automatique ≠ réponse.** Adonaï envoie automatiquement « Merci d'avoir contacté cabiomedadonai » à tout nouveau contact. C'est un accusé de réception machine : il ne compte ni comme réponse, ni comme intention, ni dans le PRR. Seule une réponse humaine compte.
 `L109` · | 13:39 · 13:42 | Adonaï · Malia Labo |
 `L377` · **Ce n'est pas un refus** — c'est un numéro vivant et surveillé. Compté comme `auto`, **hors PRR** (leçon Adonaï).
+`L712` · **`reply_type`.** Le PRR ne compte que les réponses humaines (leçon Adonaï). Mais `reply_type` était
 
 ---
 

@@ -25,7 +25,7 @@ Le playbook §A4 disait « les 2 leads à 18 (COMOBIL, OraCare) ». **C'était f
 
 | Lead | Score | Ville | WhatsApp |
 |---|---|---|---|
-| **COMOBIL – Collège Moderne Bilingue Les Lauréats** | 18 | Douala (Bonamoussadi) | — |
+| **OraCare Dental Clinic (Oracare237)** | 18 | Buea (Molyo) | 672 52 66 86 |
 ## Ce qui alimente la liste quand elle est vide
 
 1. **Une réponse** — priorité absolue.

@@ -7,7 +7,7 @@
 | Champ | Valeur |
 |---|---|
 | Slug | one-stop-medical-laboratory-diagnostics |
-| Type | school |
+| Type | lab |
 | Ville | Buea (location TBD; co-owner based Buea) |
 | Langue de contact | Bilingual EN/FR |
 | Étape | parked |
@@ -29,7 +29,7 @@ King : NE JAMAIS contacter Dr Njang (691 63 29 41).
 
 ## Notes
 
-Created 15 Sep during Solidarity deep recheck. Entrepreneurial public-health doctor with proven appetite for digital health = strong future website/app client. Conflict-aware: he appears on Solidarity's stale medicoor roster; resolve that first. Follow-ups M+2/M+4/M+7 once opened. · 🚫 King : NE JAMAIS contacter Dr Njang (691 63 29 41). | CONTRADICTION RÉSOLUE (M2) — retenu : parked — King a une règle : ne jamais contacter Dr Njang (691 63 29 41).
+Created 15 Sep during Solidarity deep recheck. Entrepreneurial public-health doctor with proven appetite for digital health = strong future website/app client. Conflict-aware: he appears on Solidarity's stale medicoor roster; resolve that first. Follow-ups M+2/M+4/M+7 once opened. · 🚫 King : NE JAMAIS contacter Dr Njang (691 63 29 41). · org_type = lab (M7, 21/09) — base : « Medical Laboratory & Diagnostics » dans le nom | CONTRADICTION RÉSOLUE (M2) — retenu : parked — King a une règle : ne jamais contacter Dr Njang (691 63 29 41).
 
 ## Prochaine action
 

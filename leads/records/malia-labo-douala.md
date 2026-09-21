@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | qualified |
 | WhatsApp | 694 56 22 44 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |

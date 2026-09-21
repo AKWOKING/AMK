@@ -10,7 +10,7 @@
 | Type | school |
 | Ville | Buea (Great Soppo) |
 | Langue de contact | EN |
-| Étape | qualifying |
+| Étape | qualified |
 | WhatsApp | 679650707 |
 | Contact | Principal; Baptist education office above |
 | Canal | Tue 15 Sep 09:00 WhatsApp msg 1 (replan §4) then nameless sample link + invite-choice walkthrough Thu/Fri; Baptist protocol: principal then education office |
@@ -18,7 +18,7 @@
 
 ## Notes
 
-Walk-In-Batch-2026-09-15. Confessional: principal first, ask 'who else decides?', offer forwardable version. Contingent WA msg in walk-in doc. | DEEP DIVE 14 Sep: 679 65 07 07 confirmed on WA (King) — attribution = number published on the college FB page intro (official school line, role unknown; likely admin/proprietor; verify profile photo/name tonight). Baptist confessional -> principal then Baptist education office; ask who else decides. bgccbuea@yahoo.com. [BOARD-BUYER 15 Sep King: Baptist Comp.; msg 1 SENT 15 Sep (one tick) -> inbound only, NO FU chase, NO cold walk-in; route via Baptist education office if reply asks for HQ]
+Walk-In-Batch-2026-09-15. Confessional: principal first, ask 'who else decides?', offer forwardable version. Contingent WA msg in walk-in doc. | DEEP DIVE 14 Sep: 679 65 07 07 confirmed on WA (King) — attribution = number published on the college FB page intro (official school line, role unknown; likely admin/proprietor; verify profile photo/name tonight). Baptist confessional -> principal then Baptist education office; ask who else decides. bgccbuea@yahoo.com. [BOARD-BUYER 15 Sep King: Baptist Comp.; msg 1 SENT 15 Sep (one tick) -> inbound only, NO FU chase, NO cold walk-in; route via Baptist education office if reply asks for HQ] · org_type=school prouvé par « college » (M7, 21/09)
 
 ## Prochaine action
 

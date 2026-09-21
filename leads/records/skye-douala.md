@@ -10,7 +10,7 @@
 | Type | clinic |
 | Ville | Douala (Bonamoussadi) |
 | Langue de contact | FR/EN |
-| Étape | qualifying |
+| Étape | parked |
 | WhatsApp | 677 79 69 99 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |
@@ -23,11 +23,11 @@
 
 ## Notes
 
-Message 16/09. Relance M+2 (FU1) partie 18/09 20:22. Concept live : concept-skye.vercel.app
+| M7 (21/09) : L15 · Faits des captures King (21/09) : message 1 mer 16/09 16:19 ✓✓ · relance ven 18/09 20:14 avec la maquette ✓✓. Deux fils livrés, aucun ouvert. La maquette est en ligne et vérifiée le 21/09 (concept-skye.vercel.app) : le travail n'est pas perdu, c'est le moment qui l'est. FU1 bien partie le 18/09 20:22 (texte : `FU-2026-09-18-Soir.md`).
 
 ## Prochaine action
 
-**1 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**Aucune.** Parqué. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 

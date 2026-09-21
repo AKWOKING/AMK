@@ -10,7 +10,7 @@
 | Type | school |
 | Ville | Buea (Molyko) |
 | Langue de contact | EN/FR |
-| Étape | qualifying |
+| Étape | parked |
 | WhatsApp | 679151075 |
 | Contact | Principal/proprietor (capture) |
 | Canal | SENT by King ~15:45 Tue 15 Sep (one grey tick; text-only). No chase; TikTok @stibccol DM = Wed second touch only if WA stays silent. On warm reply: attach demos/shots/mockup-secondary-wa.jpg + live /sample-secondary.html link, then Thu/Fri walkthrough choice |
@@ -25,15 +25,15 @@
 
 ## Notes
 
-Walk-In-Batch-2026-09-15. Pain: parents find only FB/yahoo, no website. Bilingual international comprehensive. Get WA + permission, preview by 4pm. | INVITATION-FIRST 14 Sep: TikTok @stibccol ACTIVE (Bilingualism Day/Miss St Theresa posts 14 Sep 2026) = DM channel like Sasse; official FB page lists 679 15 10 75 (verify WA profile tonight). YouTube 2022 "for more info" 677 36 19 11 likely media person, do not pitch. [OWNER-BUYER confirmed type: lay private 15 Sep; remains in active plan] | 15 Sep PM: msg 1 out (1 tick, not yet delivered to handset). Personal WA line (lay private = likely proprietor pocket = buyer). Mockup image went to later schools first; include image with the link on reply. | 15 Sep 20:44 FIRST REPLY OF THE CAMPAIGN: site 'in the making, ready October, already late'. Soft-ack branch only. Watch the October launch (check Google/FB): template/student builds commonly miss WhatsApp admissions, bilingual toggle, fees pages and 3G speed = re-open wedge. Verified GCE Board 2026 marking centre (camgceb.org) — usable compliment at FU. | Soft-ack delivered 22:25; chat timer now 90 days (was 24h). | CONTRADICTION RÉSOLUE (M2) — retenu : la ligne est CORRECTE : Lead score = 14 (numérique), le verbatim est dans Reply. 0 anomalie sur 38 lignes.
+Walk-In-Batch-2026-09-15. Pain: parents find only FB/yahoo, no website. Bilingual international comprehensive. Get WA + permission, preview by 4pm. | INVITATION-FIRST 14 Sep: TikTok @stibccol ACTIVE (Bilingualism Day/Miss St Theresa posts 14 Sep 2026) = DM channel like Sasse; official FB page lists 679 15 10 75 (verify WA profile tonight). YouTube 2022 "for more info" 677 36 19 11 likely media person, do not pitch. [OWNER-BUYER confirmed type: lay private 15 Sep; remains in active plan] | 15 Sep PM: msg 1 out (1 tick, not yet delivered to handset). Personal WA line (lay private = likely proprietor pocket = buyer). Mockup image went to later schools first; include image with the link on reply. | 15 Sep 20:44 FIRST REPLY OF THE CAMPAIGN: site 'in the making, ready October, already late'. Soft-ack branch only. Watch the October launch (check Google/FB): template/student builds commonly miss WhatsApp admissions, bilingual toggle, fees pages and 3G speed = re-open wedge. Verified GCE Board 2026 marking centre (camgceb.org) — usable compliment at FU. | Soft-ack delivered 22:25; chat timer now 90 days (was 24h). · org_type=school prouvé par « college » (M7, 21/09) | CONTRADICTION RÉSOLUE (M2) — retenu : la ligne est CORRECTE : Lead score = 14 (numérique), le verbatim est dans Reply. 0 anomalie sur 38 lignes. · reply_type=human déduit de la colonne Reply (M7, 21/09) — à valider si le verbatim est introuvable dans `Activity-Log.md` | M7 (21/09) : L15 · Parqué AVEC permission (2 réponses humaines). health_override = warm à la main, pas cold : le calcul dirait 6 jours = froid, la permission dit le contraire.
 
 ## Prochaine action
 
-**Répondre dans l'heure.** Une réponse humaine est en attente : c'est la priorité absolue (règle des 90 secondes).
+**Aucune.** Parqué. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 9 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 12 ligne(s).*
 
 `L17` · | mar 15/09 15:45 | **St. Theresa** (679 15 10 75) | msg 1 | Envoyé | ✅ **OUI — 20:44** |
 `L18` · | mar 15/09 22:25 | St. Theresa | accusé de réception | Envoyé | ✅ **22:51 — permission de revenir en octobre** |
@@ -44,6 +44,9 @@ Walk-In-Batch-2026-09-15. Pain: parents find only FB/yahoo, no website. Bilingua
 `L118` · **Cumul depuis le 14/09 :** 38 messages · **31 fils ouverts** · **1 réponse humaine** (St. Theresa) · **0 aperçu demandé · 0 client · 0 FCFA.**
 `L235` · la ligne St. Theresa n'était pas décalée (0 anomalie), et `Daily Ops.csv` n'est pas une copie de l'onglet (50 vs 36).
 `L260` · - **Compteur : 3 réponses humaines** (St. Theresa 15/09, UNI-LABO 18/09, Bonanjo 19/09).
+`L717` · ⚠️ **St. Theresa a bien répondu deux fois le 15/09** — sa cellule `Reply` contient le verbatim, pas un
+`L742` · 1. **St. Theresa compte-t-elle dans le PRR ?** (oui → 4/45 = 8,9 %, table explicite ajoutée)
+`L745` · 4. **Les 5 questions de l'audit du 18/09 §10 sont toujours sans réponse** (COMOBIL · health manuel de St. Theresa · les 12 labos de la réserve · la Page Facebook · le parrainage St. Theresa). Les deux premières ont été tranchées par la migration d'aujourd'hui ; il en reste trois.
 
 ---
 

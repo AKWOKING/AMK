@@ -118,13 +118,13 @@ def matches_for(rec: dict, lines: list, distinctive: set) -> list:
 def next_action(rec: dict) -> str:
     """Déduite des règles de relance. Rien n'est inventé : si la règle ne s'applique pas, on le dit."""
     stage = rec.get("stage", "")
-    if stage == "disqualified":
+    if stage in ("lost", "disqualified"):
         return "**Aucune.** Lead écarté — " + (rec.get("disqualification_reason") or "motif dans le CRM")
     if stage == "parked":
         return ("**Aucune.** Parqué"
                 + (" — " + rec["disqualification_reason"] if rec.get("disqualification_reason") else "")
                 + ". Une action n'est légitime que si King le décide explicitement.")
-    if stage == "prospecting":
+    if stage in ("prospect", "prospecting"):
         return "**Prospecter** : vérifier l'identité du numéro sur WhatsApp avant d'écrire (nom + catégorie)."
     if rec.get("Reply", "").strip().lower().startswith("yes"):
         return ("**Répondre dans l'heure.** Une réponse humaine est en attente : c'est la priorité absolue "
@@ -222,7 +222,7 @@ def main() -> int:
         # on ne crée une fiche que pour un lead avec un historique réel
         real = (rec.get("Contacted", "").strip().lower().startswith(("yes", "sent"))
                 or rec.get("wa_verified") == "yes"
-                or rec.get("stage") in ("qualifying", "parked", "disqualified"))
+                or rec.get("stage") in ("qualified", "qualifying", "presented", "closing", "parked", "lost", "disqualified"))
         if not real:
             continue
         hits = matches_for(rec, lines, distinctive)

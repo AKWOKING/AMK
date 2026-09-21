@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Yassa, à côté de l'institut La Perle) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | qualified |
 | WhatsApp | 670 94 43 03 |
 | Numéro vérifié | unknown |
 | Canal | WhatsApp |

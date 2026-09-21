@@ -10,7 +10,7 @@
 | Type | clinic |
 | Ville | Douala (Bonapriso) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | qualified |
 | WhatsApp | 699 34 93 89 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |

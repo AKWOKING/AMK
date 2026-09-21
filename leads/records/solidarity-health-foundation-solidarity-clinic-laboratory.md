@@ -7,7 +7,7 @@
 | Champ | Valeur |
 |---|---|
 | Slug | solidarity-health-foundation-solidarity-clinic-laboratory |
-| Type | school |
+| Type | clinic |
 | Ville | Buea (Untarred Malingo St / Molyko Checkpoint D61, P.O. Box 467; plus code 575J+7M) |
 | Langue de contact | Bilingual EN/FR |
 | Étape | parked |
@@ -29,7 +29,7 @@ King : NE JAMAIS contacter Solidarity (677 61 57 57). Base : établissement à a
 
 ## Notes
 
-Clinic lead #1, research-standard corrected 15 Sep (see sales/RESEARCH-STANDARD.md error #1). Not-for-profit CIG founded Aug 1998 by late Dr Peter Nde Fon (UB public health chair, obituary verified). GBP 4.0 stars/54 reviews/21 photos/24h, Untarred Malingo St plus code 575J+7M, NO website ('Add website'), medicoor unclaimed+stale (still lists deceased founder), X @SolidarityHeal1 since May 2021. Services: gen med, vaccination, surgery, lab panels, maternity, ultrasound/X-ray; reviews cite cardiologist+pharmacy; Zenithe accredited. Among Buea district top-3 most-solicited facilities (PAMJ 2023, BMRI 2025). Pitch: attach bilingual site+WA booking+same-day lab results to GBP; foundation/grant visibility; claim medicoor; 24h emergency bar. FUs M+2/M+4/M+7. [15 Sep send morning: 677 61 57 57 not registered on WhatsApp per King; voice line only, never cold-call; MITOC now leads Tue 08:35; Solidarity -> admin-line check, else Wed sealed card] | 15 Sep PM RENAME: live concept is /clinic-bonaberi.html (LIVE, partial hand-rename by King; canonical repo build fully renamed to Douala/BMC, redeploys with amk-site.zip). Solidarity (Buea) warm-yes link uses it with placeholder caption; ask King if he wants a Buea/city-neutral variant + matching mockup-clinic image. · 🚫 King : NE JAMAIS contacter Solidarity (677 61 57 57). Base : établissement à acheteur institutionnel — notre règle ne relance pas ce type d'acheteur. | CONTRADICTION RÉSOLUE (M2) — retenu : parked, avec le motif de King écrit dans la donnée : jamais de contact, acheteur institutionnel.
+Clinic lead #1, research-standard corrected 15 Sep (see sales/RESEARCH-STANDARD.md error #1). Not-for-profit CIG founded Aug 1998 by late Dr Peter Nde Fon (UB public health chair, obituary verified). GBP 4.0 stars/54 reviews/21 photos/24h, Untarred Malingo St plus code 575J+7M, NO website ('Add website'), medicoor unclaimed+stale (still lists deceased founder), X @SolidarityHeal1 since May 2021. Services: gen med, vaccination, surgery, lab panels, maternity, ultrasound/X-ray; reviews cite cardiologist+pharmacy; Zenithe accredited. Among Buea district top-3 most-solicited facilities (PAMJ 2023, BMRI 2025). Pitch: attach bilingual site+WA booking+same-day lab results to GBP; foundation/grant visibility; claim medicoor; 24h emergency bar. FUs M+2/M+4/M+7. [15 Sep send morning: 677 61 57 57 not registered on WhatsApp per King; voice line only, never cold-call; MITOC now leads Tue 08:35; Solidarity -> admin-line check, else Wed sealed card] | 15 Sep PM RENAME: live concept is /clinic-bonaberi.html (LIVE, partial hand-rename by King; canonical repo build fully renamed to Douala/BMC, redeploys with amk-site.zip). Solidarity (Buea) warm-yes link uses it with placeholder caption; ask King if he wants a Buea/city-neutral variant + matching mockup-clinic image. · 🚫 King : NE JAMAIS contacter Solidarity (677 61 57 57). Base : établissement à acheteur institutionnel — notre règle ne relance pas ce type d'acheteur. · org_type = clinic (M7, 21/09) — base : « Solidarity Clinic & Laboratory », 24h clinic + laboratoire (Notes du classeur) | CONTRADICTION RÉSOLUE (M2) — retenu : parked, avec le motif de King écrit dans la donnée : jamais de contact, acheteur institutionnel.
 
 ## Prochaine action
 
@@ -37,7 +37,11 @@ Clinic lead #1, research-standard corrected 15 Sep (see sales/RESEARCH-STANDARD.
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Aucune ligne du journal ne cite encore ce lead. S'il a été contacté, c'est que l'envoi n'a pas été loggé — **à corriger dans `Activity-Log.md`**.*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 3 ligne(s).*
+
+`L684` · Ce qui N'est PAS stocké, et pourquoi c'est écrit dans le fichier : `kill_list`, `health` (calculés —
+`L685` · `health_override` est la seule porte manuelle, tracée), `last_message_sent` (c'est le journal),
+`L745` · 4. **Les 5 questions de l'audit du 18/09 §10 sont toujours sans réponse** (COMOBIL · health manuel de St. Theresa · les 12 labos de la réserve · la Page Facebook · le parrainage St. Theresa). Les deux premières ont été tranchées par la migration d'aujourd'hui ; il en reste trois.
 
 ---
 

@@ -10,7 +10,7 @@
 | Type | clinic |
 | Ville | Buea |
 | Langue de contact | EN |
-| Étape | disqualified |
+| Étape | lost |
 | Numéro vérifié | no |
 | Canal | Facebook |
 | Contacté | No |

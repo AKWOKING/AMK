@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | qualified |
 | WhatsApp | 696 88 88 23 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |
@@ -30,11 +30,12 @@ Envoyé 18/09 ~18:30, sans maquette.
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 3 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 4 ligne(s).*
 
 `L30` · | **ven 18/09 ~18:30** | **YONDJA ANALYSE** (696 88 88 23) | msg 1 — **sans maquette** | Envoyé | **Non** |
 `L110` · | ~18:30 | Discovery Labs · UNI-LABO · YONDJA ANALYSE · Laboratoire du Château · Département Biologique · CAMERA · LE NID |
 `L150` · | **22:05** | King | « Bonsoir. Akwo King, AMK — Douala. Vous m'avez écrit ce soir, alors je vous réponds avec l'aperçu plutôt qu'avec un discours. **https://uni-labo.vercel.app** Il est fait pour UNI-LABO : vrais horaires, préparation des examens, itinéraire Carrefour Etoo, en français et en anglais. Dites-moi si les horaires et la liste des analyses sont exacts — je corrige tout de suite. Un « oui » suffit. — Akwo King / AMK » | Envoyé ✓✓ |
+`L541` · ### ② SEO — les 3 vidéos analysées, et notre propre site réparé
 
 ---
 

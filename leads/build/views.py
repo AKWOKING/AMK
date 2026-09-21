@@ -36,16 +36,33 @@ GEN = ("> ⚙️ **Généré le {date} par `leads/build/views.py` — ne pas mod
        "> Toute correction se fait dans `leads/build/crm.py` ou `sales/Activity-Log.md`, "
        "puis on relance `leads/build/rebuild.sh`.\n")
 
+# M7 · AVERTISSEMENT D'ÉCRITURE (21/09) — lu à l'envers, c'est la source qui compte :
+#   relancer `python3 leads/build/rebuild.sh` REGENERE leads/CRM.csv depuis le classeur +
+#   les tables de crm.py. Les lignes VAGUE 1 (opticiens ONOC) y ont été portées dans
+#   `OPTICIENS_2109`, donc rien n'est perdu — mais TOUT ajout écrit à la main dans le CSV
+#   disparaît au prochain passage. Règle : un nouveau lot = un bloc dans `crm.py` ;
+#   une décision = une table dans `crm.py` ; un envoi = une ligne dans `Activity-Log.md`.
+# Vocabulaire M7 (21/09/2026) — décision King : le CRM parle maintenant les noms d'étape
+# du funnel, plus `won`/`lost` (inexistants avant) + `delivered` (conservé : l'étape 5 du
+# funnel — DELIVERY · PROOF · GROWTH — ne peut pas être absorbée par `won` sans perdre la
+# distinction « payé » / « livré », qui est exactement là où meurt un client).
+#    prospect → qualified → presented → closing → won → delivered        (vivant)
+#    parked (réveil possible) · lost (déduit, motif en `disqualification_reason`)
 STAGE_LABEL = {
-    "prospecting": "① Prospection — à qualifier",
-    "qualifying": "② Qualifié — en conversation",
-    "demo": "③ Démo envoyée",
-    "offer": "④ Offre posée",
-    "delivered": "⑤ Livré",
+    "prospect": "① Prospect — à qualifier",
+    "qualified": "② Qualifié — en conversation",
+    "presented": "③ Aperçu envoyé",
+    "closing": "④ Offre posée / prix annoncé",
+    "won": "⑤ Signé — dépôt reçu",
+    "delivered": "⑥ Livré",
     "parked": "⏸ Parqué",
-    "disqualified": "⛔ Écarté",
+    "lost": "⛔ Perdu / écarté",
 }
-STAGE_ORDER = ["offer", "demo", "qualifying", "prospecting", "parked", "disqualified"]
+STAGE_ORDER = ["won", "closing", "presented", "qualified", "prospect", "parked", "lost"]
+# Alias historiques — une seule énumération est stockée, les constantes ci-dessous évitent
+# qu'un comparateur éparpillé continue à raisonner en ancien vocabulaire.
+QUALIFIED, PROSPECT, CLOSED_STAGES = "qualified", "prospect", ("closing", "won")
+DEAD = ("parked", "lost")
 
 # Décisions humaines qui priment sur les règles automatiques : slug -> (échéance ISO, note)
 RELANCE_A_JOUR = {
@@ -53,6 +70,9 @@ RELANCE_A_JOUR = {
     "oracare-buea": ("2026-09-20", "FU2 (M+4) fixée dim 20"),
     "midas-touch-optic-center-mitoc": ("2026-09-21", "FU2 fixée lun 21"),
     "baird-memorial-college": ("2026-09-21", "FU2 fixée lun 21 (même lot que MITOC)"),
+    # AFRIQUE LABO : ajoutée le 21/09 quand on a trouvé le lead ABSENT du CRM (il ne vivait que
+    # dans sales/Outreach-AFRIQUE-LABO-v1.md). Dates prises dans le §4 corrigé du 18/09 de ce fichier.
+    "afrique-labo-sarl": ("2026-09-21", "FU2 (M+4) fixée lun 21 — §4 d'Outreach-AFRIQUE-LABO-v1.md"),
     "labiomed-deido": ("2026-09-21", "M+2 — il a dit « je vous reviens quand je serai disponible » (report poli, pas un non)"),
     # UNI-LABO a DEMANDÉ un rendez-vous : ce n'est plus une relance à calculer.
     "uni-labo-bonamoussadi": ("2026-09-25", "RENDEZ-VOUS demandé par le prospect — vendredi 25/09"),
@@ -157,7 +177,7 @@ def due_for_relance(r):
     if slug in RELANCE_A_JOUR:
         d, note = RELANCE_A_JOUR[slug]
         return (d, f"fixé : {note}") if d <= today.isoformat() else (None, None)
-    if (r.get("stage") or "") != "qualifying":
+    if (r.get("stage") or "") != QUALIFIED:
         return None, None
     age = last_send_age_days(r)
     if age < 0:
@@ -230,7 +250,7 @@ def view_kill_list(rows, date):
             return 0
 
     hot = [r for r in rows if score(r) >= 18
-           and (r.get("stage") or "") not in ("parked", "disqualified")
+           and (r.get("stage") or "") not in DEAD
            and not reply_pending(r)]
 
     waiting = [r for r in rows if reply_pending(r)]
@@ -286,7 +306,7 @@ def view_stale(rows, idx, date):
             continue
         if str(r.get("Reply", "")).strip().lower().startswith("yes"):
             continue
-        if (r.get("stage") or "") in ("parked", "disqualified"):
+        if (r.get("stage") or "") in DEAD:
             continue
         age = last_send_age_days(r)
         if age < 2:
@@ -334,6 +354,7 @@ def view_daily_plan(rows, date):
         w.writerow(["# Généré le " + date + " par leads/build/views.py — ne pas modifier à la main"])
         w.writerow(["priorite", "action", "lead", "whatsapp", "ville", "etape", "note"])
         prio = 0
+        lignes = []      # collectées puis triées : sinon la file est dans l'ordre du CRM, pas l'ordre du jour
         for r in rows:
             action, note = "", ""
             if reply_pending(r):
@@ -347,13 +368,46 @@ def view_daily_plan(rows, date):
                     fu = str(r.get("follow_ups_sent") or "0")
                     action = f"Relance {int(fu)+1}/3" if fu.isdigit() else "Relance"
                     note = why or ""
-                elif (r.get("stage") or "") == "prospecting" and r.get("wa_verified") == "yes":
+                elif (r.get("stage") or "") == PROSPECT and r.get("wa_verified") == "yes":
                     prio += 1
                     action = "À CONTACTER (numéro vérifié)"
                     note = re.sub(r"\s+", " ", str(r.get("Notes", "")))[:110]
+            if not action and (r.get("stage") or "") == "closing":
+                # TROU TROUVÉ LE 21/09 : Labiomed et UNI-LABO — les DEUX seules affaires à « closing »,
+                # soit 200 000 FCFA chiffrés — avaient DISPARU de la file du jour. Cause : une date de
+                # relance planifiée annule « répondre » ET « relancer », donc un rendez-vous déjà fixé
+                # devient invisible. Or rien ne dort à cette étape : on confirme, ou on perd.
+                prio += 1
+                rdv = RELANCE_A_JOUR.get(r.get("slug", ""), ("", ""))[0]
+                prix = str(r.get("price_quoted_fcfa") or "").strip()
+                if rdv and rdv > date:
+                    action, quand = "CONFIRMER LE RENDEZ-VOUS (J-1)", f"RDV fixé au {rdv}"
+                elif rdv:
+                    action, quand = "RENDEZ-VOUS DU JOUR", f"échéance {rdv}"
+                else:
+                    action, quand = "AFFAIRE À CLOSING — la faire avancer", "aucune date posée"
+                note = str(r.get("bamfam_next_action") or "")[:110]
+                lignes.append([prio, action, r["School"], r.get("wa_number", ""), r.get("City", ""),
+                            "closing", f"{quand} · {('prix ' + prix + ' FCFA · ') if prix.isdigit() else ''}{note}"])
+                continue
+            if not action and (r.get("stage") or "") == "parked":
+                # Un lead parqué doit APPARAÎTRE dans la file, avec la consigne contraire : « ne pas
+                # relancer ». Sans cette ligne, la file du jour est une liste d'occasions ratées et
+                # un fil parqué disparaît de la mémoire — c'est comme ça qu'on relance un lead mort.
+                trig = ""
+                notes = str(r.get("Notes") or "")
+                if " ⏸ " in notes:
+                    trig = notes.rsplit(" ⏸ ", 1)[1]
+                trig = trig or str(r.get("bamfam_next_step") or "")
+                lignes.append([100, "NE PAS RELANCER (parqué)", r["School"], r.get("wa_number", ""),
+                               r.get("City", ""), "parked",
+                               f"depuis {r.get('stage_since') or '—'} · {re.sub(chr(10),' ',trig)[:130]}"])
+                continue
             if action:
-                w.writerow([prio, action, r["School"], r.get("wa_number", ""),
-                            r.get("City", ""), r.get("stage", ""), note])
+                lignes.append([prio, action, r["School"], r.get("wa_number", ""),
+                               r.get("City", ""), r.get("stage", ""), note])
+        for row in sorted(lignes, key=lambda x: (x[0], x[2].lower())):
+            w.writerow(row)
     return out
 
 
