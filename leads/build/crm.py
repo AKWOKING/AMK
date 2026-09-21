@@ -68,6 +68,9 @@ NEW_FIELDS = [
     "first_touched", "last_reply_received", "bamfam_next_action", "bamfam_next_step",
     "preview_sent", "proposal_sent", "price_quoted_fcfa", "invoice_sent",
     "closed_on", "closed_value_fcfa", "health_override", "gtd_filter",
+    # M7 · la variante de message réellement envoyée (A/B/C) — sinon on ne peut plus dire
+    # quelle branche a produit une réponse, et le test A/B devient une intention.
+    "variante_envoi",
 ]
 
 # M7 · ce qui N'EST PAS stocké, et pourquoi — la raison est dans le fichier, pas dans la tête.
@@ -125,22 +128,32 @@ LIVE_LEDGER = {
         log_ref="L366",
         note="PREMIER OUI de la campagne (19/09 19:43, 11 min après msg 1). Prix envoyé 21:00."),
     "centre-medical-de-bonanjo": dict(
-        stage="qualified", stage_since="2026-09-19", first_touched="2026-09-18",
+        stage="presented", stage_since="2026-09-19", first_touched="2026-09-18",
         last_reply_received="2026-09-19", preview_sent="2026-09-19",
-        proposal_sent="", price_quoted_fcfa="",
-        bamfam_next_action="Répondre au fil ouvert (règle des 90 secondes)",
-        bamfam_next_step="« je vous reviens » → livrer plus que promis, puis proposer un créneau",
+        proposal_sent="2026-09-19", price_quoted_fcfa="100000", follow_ups_sent="1",
+        **{"Follow-up date": "2026-09-21"},
+        bamfam_next_action="DEMANDÉ À KING — il n'a PAS dit oui. Demander ce qu'il pense de la page, rien d'autre.",
+        bamfam_next_step="Zéro formulation qui suppose un accord. Pas de créneau proposé avant un avis.",
         log_ref="L249",
-        note="« Bjr merci je vous reviens » (19/09 08:44). Réponse = `qualified`, PAS `closing` : "
-             "aucun prix accepté, et la démo annoncée dans `sales/Reply-Bonanjo-2026-09-19.md` "
-             "(demos/concept-bonanjo-v1.html) N'EXISTE PAS dans demos/ — référence morte, à réparer."),
+        note="« Bjr merci je vous reviens » (sam 19/09 08:44) = **un report, pas un accord**. "
+             "Le 19/09 13:35, King a envoyé la page entière (bonanjo.vercel.app, en ligne et vérifiée le "
+             "21/09) AVEC le prix 100 000 FCFA · 50 000/50 000 — d'où `proposal_sent` et `price_quoted_fcfa` "
+             "qui manquaient dans cette table (trou de MA donnée, pas d'un oubli d'envoi). Étape = `presented` "
+             "(page + prix vus), JAMAIS `closing` : aucune acceptation. "
+             "⚠️ La « démo » citée par `sales/Reply-Bonanjo-2026-09-19.md` (demos/concept-bonanjo-v1.html) "
+             "n'existe pas dans `demos/` — la preuve vivante est le lien Vercel, pas un fichier du dépôt."),
     "oracare-buea": dict(
-        stage="qualified", stage_since="2026-09-14", first_touched="2026-09-14",
-        preview_sent="2026-09-14", follow_ups_sent="1",
-        bamfam_next_action="FU2 (M+4) fixée dim 20 — partie ?",
-        bamfam_next_step="Silence après FU3 (lun 21) → parked",
+        # Écran King 21/09 : le message de clôture est parti à 17:43 (une coche). Séquence TERMINÉE.
+        stage="parked", stage_since="2026-09-21", first_touched="2026-09-14",
+        preview_sent="2026-09-16", follow_ups_sent="3", last_send_state="delivered",
+        bamfam_next_action="AUCUNE relance. Le fil est fermé par la phrase « last note from me, then I stop ».",
+        bamfam_next_step="Réveil : une réponse, ou l'ouverture du lien. Le score 18 A+ ne rouvre pas un fil — "
+                         "seule leur voix le fait.",
         log_ref="L15",
-        note="Seul lead à score 18 non parqué = la kill list réelle (règle corrigée 19/09)."),
+        note="Le fil réel compte TROIS relances, pas une : lun 14/09 13:04 (« video demo or interactive file ? ») "
+             "· mer 16/09 14:32 (aperçu + lien + « which service first ? ») · lun 21/09 17:43 (clôture). "
+             "La relance du dim 20/09 n'est pas partie, et c'est bien : King a envoyé la clôture à la place. "
+             "0 réponse, 0 coche bleue sur 4 messages. Concept : oracare-concept.vercel.app."),
     "opticien-bali-douala": dict(
         stage="qualified", stage_since="2026-09-17", first_touched="2026-09-17",
         preview_sent="2026-09-17",
@@ -170,20 +183,18 @@ LIVE_LEDGER = {
         log_ref="L13", note=""),
     "baird-memorial-college": dict(
         stage="qualified", stage_since="2026-09-15", first_touched="2026-09-15",
-        follow_ups_sent="1", bamfam_next_action="FU2 due lun 21/09 (même lot que MITOC)",
-        bamfam_next_step="Silence → FU3, puis parked", log_ref="L14",
-        note="Site auto-construit bairdmemorial.com, DNS mort au contrôle = or (filtre « ça fait le travail »)."),
-    "afrique-labo-sarl": dict(
-        # Cadencement OFFICIEL pris dans `sales/Outreach-AFRIQUE-LABO-v1.md` §4 (corrigé le 18/09) :
-        # msg 1 jeu 17/09 13:24 → FU1 sam 19/09 (envoyée, comptée 1/3 d'après King) → FU2 LUN 21/09 → FU3 jeu 24/09.
-        stage="presented", stage_since="2026-09-17", first_touched="2026-09-17",
-        preview_sent="2026-09-17", follow_ups_sent="1", last_send_state="delivered",
-        bamfam_next_action="FU2 AUJOURD'HUI (lun 21/09) — angle : les résultats par WhatsApp.",
-        bamfam_next_step="FU3 jeu 24/09 max, puis parked. Prix jamais annoncé avant un « oui ».",
-        log_ref="L61",
-        note="Deux messages livrés (17/09 msg 1 avec mockup · 19/09 FU1), aucune réponse. Ne PAS redemander "
-             "« je vous envoie l'aperçu ? » : l'aperçu est envoyé depuis le 17/09. La FU2 demande la décision, "
-             "ou rien. Portail `afriqlabo.com` à refaire 10 s avant l'envoi."),
+        follow_ups_sent="2", last_send_state="delivered",
+        **{"Follow-up date": "2026-09-23"},
+        bamfam_next_action="FU3 (M+7) = mer 23/09 — LA DERNIÈRE, puis parked",
+        bamfam_next_step="Le texte du 17/09 demande « here, or to the principal? » : s'ils répondent "
+                         "« the principal », c'est un AUTRE interlocuteur à trouver, pas un oui.",
+        log_ref="L14",
+        note="Site auto-construit bairdmemorial.com, DNS mort au contrôle = or (filtre « ça fait le travail »). "
+             "ÉCRAN KING 21/09 — le compte était faux d'un envoi : msg 1 mar 15/09 14:41 (maquette Crestwood) · "
+             "**FU1 jeu 17/09 13:48 « Quick follow-up » — jamais enregistrée** · FU2 lun 21/09 17:30 (lot du soir). "
+             "3 messages sur le fil, 0 réponse. Le nom du contact dans WhatsApp est « Baird » (profil = un homme, "
+             "photo visible le 21/09) : la porte A est passée. bairdmemorial.com ne répondait toujours pas au "
+             "contrôle du 21/09."),
     "skye-douala": dict(
         # Parked à la demande explicite de King (21/09), sur preuve des captures d'écran :
         # deux messages LIVRÉS (✓✓) et JAMAIS OUVERTS. Une 3e relance sur un fil non lu ne vend rien.
@@ -225,32 +236,6 @@ PROSE_LEADS = [
          stage="qualifying", contacted="Yes", reply="No",
          demo="Yes", last_send_state="sent", follow_ups_sent="1",
          notes="Message 16/09. Relance M+2 (FU1) partie 18/09 20:22. Concept live : concept-skye.vercel.app"),
-    # M7 · AFRIQUE LABO existait UNIQUEMENT en prose (sales/Outreach-AFRIQUE-LABO-v1.md +
-    #   Activity-Log) — 4 messages échangés, un concept en ligne, une relance due aujourd'hui,
-    #   et AUCUNE ligne dans le CRM : donc absent du calcul des relances, du cadencement, du PRR.
-    #   Un prospect hors tableau est un prospect qui se gère à la mémoire. Ajouté avec les seuls
-    #   faits écrits dans le dépôt (aucun numéro, aucune date qui ne soit déjà ailleurs ici).
-    dict(slug="afrique-labo-sarl", org="AFRIQUE LABO SARL", city="Douala (Bessengue, feu rouge, immeuble Nkake)",
-         org_type="lab", language="FR", wa_number="690 54 70 93", wa_verified="yes",
-         contact_name="Dr TAKALA Cathérine (biologiste propriétaire)",
-         decision="Gérante = propriétaire : décide seule",
-         contact_channel="WhatsApp",
-         wa="Oui (WhatsApp Business, nom « Afrique labo sarl ») — vérifié par King 17/09",
-         source="sweep + recherche profonde", source_detail="sales/research/AFRIQUE-LABO-deep-dive-2026-09-16.md",
-         stage="presented", contacted="Yes", reply="No", demo="Yes",
-         last_send_state="sent", follow_ups_sent="1",
-         Facilities="laboratoire d'analyses · catalogue d'examens · 24h/24 annoncé sur le statut WhatsApp (à faire valider)",
-         Website="afriqlabo.com + afriqlabo.net (agence Sajor Company SARL)",
-         **{"Website status": "les DEUX domaines en DNS NXDOMAIN au contrôle King "
-                                         "du ven 16/09 ~17:00 (sur téléphone)"},
-         added_on="2026-09-21",
-         contact_role="Fondateur-biologiste (gérante)",
-         priority="A", lead_score="16",
-         notes="Concept nommé en ligne : concept-afriquelabo-v1.vercel.app (noindex, jamais publié). "
-               "Image d'abord : demos/shots/mockup-afriquelabo-wa.jpg. ⛔ Ne JAMAIS contacter le 674 46 62 15 "
-               "(numéro écarté). Secours autorisé seulement sur invitation : 699 73 36 25. "
-               "Portail obligatoire avant chaque envoi : ouvrir afriqlabo.com sur le téléphone — s'il se rouvre, "
-               "on n'écrit pas et on préviendrait King (le pitch repose sur le domaine mort)."),
     dict(slug="yaks-douala", org="Cabinet Dentaire YAKS", city="Douala (Logbessou)",
          org_type="clinic", language="FR/EN", wa_number="672 70 20 78", wa_verified="yes",
          contact_channel="WhatsApp", source="google_maps",
@@ -263,8 +248,15 @@ PROSE_LEADS = [
          contact_channel="WhatsApp", source="directory",
          source_detail="maligah/pagespratiques — numéro joignable vérifié",
          stage="qualifying", contacted="Yes", reply="No", demo="Yes",
-         last_send_state="sent", follow_ups_sent="1",
-         notes="Message 1 envoyé 17/09 13:24. **FU1 (M+2) ENVOYÉE par King le 19/09** (confirmé par lui : "
+         last_send_state="delivered", follow_ups_sent="2",
+         **{"Follow-up date": "2026-09-23"},
+         notes="[écran King 21/09 17:39] message du jour envoyé 17:39, une coche, **édité après envoi**. "
+               "Rappel du compte réel (corrigé à l'écran) : FU1 sam 19/09 10:13 · FU2 lun 21/09 17:39 → "
+               "FU3 mer 23/09 au plus tard. Palier des 3 messages atteint : RIEN de plus tant qu'ils n'ont pas répondu (réveil possible : "
+               "« last seen today »). ⚠️ À TENIR : ce message affirmait que l'envoi des résultats « est écrit "
+               "noir sur blanc » sur l'aperçu — le concept dit « Retrait sur place, envoi sur demande au "
+               "guichet ». Si la docteure répond, on rétablit la vérité dans la minute. "
+               "Message 1 envoyé 17/09 13:24. **FU1 (M+2) ENVOYÉE par King le 19/09** (confirmé par lui : "
                "« I have already sent message de relance »). FU2 (M+4) = lundi 21/09, angle résultats WhatsApp. "
                "Concept live : concept-afriquelabo-v1.vercel.app. "
                "Numéros interdits : 699 73 36 25 et 674 46 62 15 (secours seulement si l'invitation vient d'eux)."),
@@ -694,6 +686,9 @@ PAS_SUR_WHATSAPP = {
     "hyrus-labo-deido": "CONFIRMÉ 19/09 — pas sur WhatsApp",
     "biolex-deido": "CONFIRMÉ 19/09 — pas sur WhatsApp",
     "bioscan-newbell": "CONFIRMÉ 19/09 — pas sur WhatsApp",
+    # Bely Optique : le 21/09 d'abord écrit ici, puis RETIRÉ — `apply_vague1` (CANAL_HORS_SERVICE_2109)
+    #   tourne APRÈS ce bloc et écrasait l'étiquette. Deux traitements qui écrivent le même champ,
+    #   c'est exactement comment une donnée disparaît en silence. Une seule porte : la vague 1.
 }
 
 
@@ -797,6 +792,58 @@ def _labs_ecartes_rows():
                               "la vérification est passée avant la production, pas après."))
     return out
 
+
+
+# ── M7 · LA VAGUE 1 OPTICIENS, enregistrée depuis les ÉCRANS de King (21/09 17:47-17:51) ──
+#   Un envoi est une DATE, une HEURE et un ÉTAT de livraison. Une table, pas une phrase :
+#   c'est ce que `rebuild.sh` applique, et c'est ce que les vues lisent.
+#   ⚠️ Écart assumé et écrit ici : 2 à 3 minutes d'écart entre quatre nouveaux contacts, contre
+#   ~10 min prescrits par le playbook. Quatre messages serrés à des confrères inscrits au même
+#   ordre peuvent se lire comme une rafale. Aucun retour pour l'instant — à surveiller, et à ne
+#   pas reproduire dans le lot 2.
+ENVOYES_2109 = {
+    # slug : (heure, titulaire public vu à l'annuaire de l'ONOC, variante envoyée)
+    "tchaya-optique":        ("17:47", "TCHAYA PITCHA'A Yannick", "C"),
+    "disc-optique-medicale": ("17:48", "NANKAP TCHIPTCHOUA Jean Calvin", "A"),
+    "univers-optique":       ("17:50", "BAYANG BIHEN Calvin", "C"),
+    "le-cristallin":         ("17:51", "MESSOUE LONTE Serge Nazaire", "C"),
+}
+# Numéros qui NE REÇOIVENT PAS WhatsApp = incident de canal, JAMAIS une relance. Un message qui
+# n'a pas pu être livré n'a rien demandé à personne : le compter « contacté » remplirait le
+# cadencement d'un numéro mort et fausserait le taux de réponse.
+CANAL_HORS_SERVICE_2109 = {
+    "bely-optique-medicale":
+        "696 85 52 42 n'est PAS sur WhatsApp (contrôle King 21/09 ~17:45). Aucun message envoyé. "
+        "La ligne déclarée à l'annuaire de l'Ordre est sûrement fixe. La suite est à King : une "
+        "autre ligne trouvée, ou on n'écrit pas — le numéro d'un annuaire n'est pas un canal.",
+    "medina-optic":
+        "Absent des quatre envois du soir. Est-ce le même cas (numéro hors WhatsApp) ou un choix "
+        "de King ? À dire. En attendant : `prospect`, 0 envoi, aucune date posée.",
+}
+
+
+def apply_vague1(out):
+    by = {r.get("slug"): r for r in out}
+    for slug, (heure, titulaire, variante) in ENVOYES_2109.items():
+        rec = by.get(slug)
+        if not rec:
+            sys.exit(f"✗ VAGUE 1 : slug inconnu « {slug} » — la table d'envoi pointe dans le vide.")
+        rec.update(contacted="Yes", stage="qualified", stage_since="2026-09-21",
+                   first_touched="2026-09-21", last_send_state="delivered", wa_verified="yes",
+                   profile_name_seen=titulaire, follow_ups_sent="0", variante_envoi=variante)
+        rec["Notes"] = (str(rec.get("Notes") or "") +
+                        f" · ENVOYÉ lun 21/09 {heure} (message 1, variante {variante}) · une coche = "
+                        f"livré non lu · profil WhatsApp ouvert par King avant l'envoi (porte A passée "
+                        f"par les faits, titulaire {titulaire})").strip(" ·")
+    for slug, why in CANAL_HORS_SERVICE_2109.items():
+        rec = by.get(slug)
+        if not rec:
+            sys.exit(f"✗ VAGUE 1 : slug inconnu « {slug} » dans CANAL_HORS_SERVICE_2109.")
+        rec.update(wa_verified="no", contacted="No", wa_number_note=why,
+                   disqualification_reason=f"Canal injoignable — {why.split('.')[0]}.",
+                   stage="prospect")
+        rec["Notes"] = (str(rec.get("Notes") or "") + " · ⚠️ INCIDENT DE CANAL 21/09 : " + why).strip(" ·")
+    return len(ENVOYES_2109), len(CANAL_HORS_SERVICE_2109)
 
 
 # ── VAGUE 1 OPTICIENS du 21/09 — source : annuaire officiel de l'ONOC (Ordre National des
@@ -1490,6 +1537,51 @@ def main() -> int:
     for p in PROSE_LEADS:
         out.append({"School": p["org"], **p})
 
+    # M7 · LE NUMÉRO PARTAGÉ N'EST PAS UN DOUBLON, C'UNE ERREUR DE SAISIE — et le garde-fou du
+    #   bas de fichier l'a rattrapée (21/09) : `674 93 66 04` figure sur CEMECES **et** INSES, parce
+    #   que ma fiche de l'18/09 attribuait le mobile de l'école à la clinique (capture de King,
+    #   `Activity-Log`). La clinique ne possède pas ce numéro → on le RETIRE de sa ligne plutôt que
+    #   d'ouvrir une exception dans le garde-fou. Une ligne sans numéro = un travail à faire ;
+    #   une ligne avec le numéro du voisin = un message envoyé au mauvais destinataire.
+    for rec in out:
+        if rec.get("slug") == "cem-eces-bonaberi":
+            rec["wa_number"] = ""
+            rec["wa_verified"] = "no"
+            rec["wa_number_note"] = ("674 93 66 04 RETIRÉ le 21/09 : c'est le mobile d'INSES, "
+                                     "l'école du même afficheur, pas celui de la clinique "
+                                     "(preuve : capture King 18/09). Aucun canal vérifié pour cette "
+                                     "ligne — donc RIEN à envoyer tant que le numéro propre n'est pas "
+                                     "trouvé sur leur page Facebook (la page, pas l'affiche).")
+            rec["Notes"] = (str(rec.get("Notes") or "") +
+                            " · ⚠️ CANAL RETIRÉ 21/09 : le numéro de cette ligne appartenait à un autre "
+                            "établissement (INSES). La clinique reste sans ligne vérifiée.").strip(" ·")
+
+    # M7 · L'ONGLET « Leads 50 » écrit parfois la PREUVE D'ENVOI dans la colonne `Contacted`
+    #   (ligne 31, Baird : « YES 15 Sep 14:41 WA (mockup image + msg 1; one tick) »). Tant que la
+    #   valeur n'était pas « Yes », elle passait dans `stage_for()` comme non contactée ET restait
+    #   dans une colonne booléenne — deux erreurs d'un coup. On normalise, et la preuve descend
+    #   dans Notes : ce que le classeur raconte ne doit jamais être jeté pour faire propre.
+    import re as _re
+    for rec in out:
+        c = str(rec.get("Contacted") or "").strip()
+        if not c or c.lower() in ("yes", "no", "none", "n/v", "-"):
+            continue
+        reste = c[3:].strip(" :·-") if c.lower().startswith("yes") else c
+        if c.lower().startswith("yes"):
+            rec["Contacted"] = "Yes"
+            if reste:
+                rec["Notes"] = (f"PREUVE D'ENVOI lue dans la colonne `Contacted` du classeur : « {reste} » "
+                                f"(relu le 21/09 — la colonne est un booléen, le fait est descendu ici) · "
+                                + str(rec.get("Notes") or "")).strip(" ·")
+        else:
+            rec["Contacted"] = "No"
+            rec["Notes"] = (f"⚠️ cellule `Contacted` non booléenne dans le classeur : « {c[:80]} » · "
+                            + str(rec.get("Notes") or "")).strip(" ·")
+
+    # M7 · la vague 1, appliquée après l'injection des leads, avant toute déduction d'étape
+    nv, nc = apply_vague1(out)
+    print(f"  M7 : VAGUE 1 — {nv} envoi(s) enregistré(s) le 21/09 · {nc} incident(s) de canal.")
+
     # le nom de colonne du classeur est `School` : on le garde tel quel, comme demandé
     for rec in out:
         rec.pop("org", None)
@@ -1615,6 +1707,27 @@ def main() -> int:
             else:
                 rec[full] = rec.pop(short)
         rec.setdefault("School", "")
+
+    # M7 · GARDE-FOU DOUBLONS — écrit parce que JE ME SUIS TROMPÉ LE 21/09 : j'ai « découvert »
+    #   qu'AFRIQUE LABO n'était pas dans le CRM et j'ai ajouté une ligne. FAUX : elle y était déjà,
+    #   sous `afrique-labo-douala`. Cause de l'erreur : j'ai cherché le mot « AFRIQUE LABO » dans
+    #   `crm.py` au lieu du NUMÉRO dans le CSV généré — et la ligne s'appelait « Afrique Labo SARL ».
+    #   Un même numéro sur deux lignes = un cadencement qui tourne à double, un taux de réponse
+    #   faussé, et deux conversations possibles avec la même docteure. On refuse de sortir.
+    def _tel(r):
+        import re as _re
+        d = _re.sub(r"\D", "", str(r.get("wa_number") or r.get("Phone") or ""))
+        return d[-9:] if len(d) >= 9 else ""
+    vus = {}
+    for rec in out:
+        t = _tel(rec)
+        if not t:
+            continue
+        if t in vus:
+            sys.exit(f"✗ DOUBLON : le numéro {t} est sur DEUX lignes — « {vus[t]} » et « "
+                     f"{rec.get('slug')} ». Avant d'ajouter une ligne, on cherche le NUMÉRO dans le "
+                     f"CSV, jamais le nom dans le code.")
+        vus[t] = rec.get("slug")
 
     cols = headers + NEW_FIELDS
     allowed = set(cols)

@@ -10,7 +10,6 @@
 | `google_maps` | 2 | Sweep cartographique — dentaires de Bonamoussadi/Logbessou. |
 | `content_video` | 1 | Premier lead de la campagne, venu du contenu. |
 | `walk_in` | 1 | Affiche relevée sur place par King. |
-| `sweep + recherche profonde` | 1 |  |
 | `facebook` | 1 | Page Facebook identifiée comme seul canal vivant. |
 
 ## Ce que ce tableau dit

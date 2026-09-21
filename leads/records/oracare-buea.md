@@ -10,28 +10,28 @@
 | Type | clinic |
 | Ville | Buea (Molyo) |
 | Langue de contact | EN |
-| Étape | qualified |
+| Étape | parked |
 | WhatsApp | 672 52 66 86 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |
 | Contacté | Yes |
 | Réponse | No |
 | Maquette / site | Yes |
-| Relances envoyées | 1 |
+| Relances envoyées | 3 |
 | Source | content_video |
 | Détail source | Premier lead de la campagne — vérifié par King |
 
 ## Notes
 
-| M7 (21/09) : L15 · Seul lead à score 18 non parqué = la kill list réelle (règle corrigée 19/09).
+| M7 (21/09) : L15 · Le fil réel compte TROIS relances, pas une : lun 14/09 13:04 (« video demo or interactive file ? ») · mer 16/09 14:32 (aperçu + lien + « which service first ? ») · lun 21/09 17:43 (clôture). La relance du dim 20/09 n'est pas partie, et c'est bien : King a envoyé la clôture à la place. 0 réponse, 0 coche bleue sur 4 messages. Concept : oracare-concept.vercel.app.
 
 ## Prochaine action
 
-**1 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**Aucune.** Parqué. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 11 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 13 ligne(s).*
 
 `L3` · **Pourquoi ce fichier existe.** Le 18/09, j'ai écrit dans un résumé que « OraCare et MITOC ont répondu ». **C'est faux.** Oracle a écrit le contraire et j'ai parlé de mémoire au lieu de lire ce fichier. King a corrigé. Cette erreur a coûté du temps et de la confiance : ce journal remplace la mémoire par des faits vérifiables.
 `L13` · | lun 14/09 | **OraCare237** (672 52 66 86) | msg 1 | **Pas lu** | **Non** |
@@ -44,6 +44,8 @@
 `L698` · **② OraCare était absent de SA propre kill list.** Son score 18/20 A+ vivait dans
 `L700` · pas le voir. **Corrigé** : `lead_score="18"`, `priority="A+"` dans `ORACARE`. La liste affiche
 `L701` · désormais OraCare (COMOBIL sort, parké) — exactement ce que dit le §A4 amendé.
+`L804` · AFRIQUE LABO FU2 (angle : les résultats) · **OraCare conditionnel** — si la FU2 du 20/09 est partie, on
+`L816` · 2. **OraCare :** la FU2 de dimanche est-elle partie ? (une ligne — ça décide si on écrit aujourd'hui ou demain.)
 
 ---
 

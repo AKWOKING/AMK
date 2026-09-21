@@ -66,6 +66,20 @@ A salesman has 3 jobs: **maximize opportunities → convert the highest % → st
 ### A9. Be concise — 5 words when 100 do
 - Every WA message ≤ 5 lines (except the concept handover). Long messages get read as homework.
 
+> **M7 soirée (21 Sep 2026, 18:20 — King's screens corrected my read).** Three standing rules added, nothing deleted:
+> **(1) A deferral is not a consent.** "je vous reviens" / "Ok" / a 🙏 means *not yet* — never "he agreed,
+> send the price and the full page". Bonanjo is the case: page + 100 000 FCFA went out on a "je vous reviens"
+> and the thread has been silent 29 h. A follow-up that assumes agreement ("j'attends votre feu vert",
+> "comme convenu") is now a **defect in the copy**, not a style choice: ask for an *opinion*, offer an exit.
+> **(2) Never count a send the CRM cannot prove — and never un-count one it can.** King's screenshots found
+> three messages that had never been registered (OraCare's 14/09 13:04, AFRIQUE LABO's 21/09, Baird's 17/09
+> 13:48) and one that looked sent but wasn't (Bely: number not on WhatsApp → **channel incident**, not a
+> failed follow-up). **(3) Look up a lead by NUMBER in the generated CSV, never by name in the code.**
+> I "discovered" AFRIQUE LABO was missing from the CRM and added a second row for the same laboratory; the
+> row already existed as `afrique-labo-douala`. `crm.py` now **fails the build** if one number appears on two
+> rows — and that guard immediately caught the 18/09 CEMECES/INSES number swap, which is now fixed by
+> *removing* the number from the wrong row rather than by exempting it.
+
 ### A10. Consistency system (the 3rd bucket — "do it for a very long time")
 - **Lives in the workbook:** `leads/leads_50.xlsx` → **"DAILY OPS" tab** (first tab, opens by default) — Kill List + Reply Queue + this week's drill + tonight's 5 min.
 - **Morning (10 min):** open DAILY OPS → check Kill List → check Reply Queue → 15 min drill.
