@@ -8,14 +8,14 @@
 | Étape | Leads |
 |---|---|
 | ④ Offre posée / prix annoncé | **2** |
-| ③ Aperçu envoyé | **1** |
-| ② Qualifié — en conversation | **42** |
+| ③ Aperçu envoyé | **2** |
+| ② Qualifié — en conversation | **41** |
 | ① Prospect — à qualifier | **82** |
 | ⏸ Parqué | **8** |
 | ⛔ Perdu / écarté | **10** |
 | **Total** | **145** |
 
-- **Contactés :** 49 · **Réponses humaines :** 3 · **Taux de réponse : 6.1 %**
+- **Contactés :** 49 · **Réponses humaines :** 4 · **Taux de réponse : 8.2 %**
 - **Réponses automatiques (hors PRR) :** 1
 - **Clients :** 0 · **Revenu :** 0 FCFA
 
@@ -34,18 +34,19 @@
 | Labiomed | Douala (Deido, 104 Route Deido-Bassa) | 699 98 54 66 | `L788` |
 | UNI-LABO | Douala (Bonamoussadi, Carrefour Etoo) | 696 13 98 19 | `L134` |
 
-## ③ Aperçu envoyé — 1
+## ③ Aperçu envoyé — 2
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| Centre Médical de Bonanjo | Douala (Bonapriso, ancien aéroport) | 694 57 22 77 | `L876` |
+| Centre Médical de Bonanjo | Douala (Bonapriso, ancien aéroport) | 694 57 22 77 | `L991` |
+| Le Cristallin | Douala | 699 90 55 77 | `L985` |
 
-## ② Qualifié — en conversation — 42
+## ② Qualifié — en conversation — 41
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
 | 2K Labo | Douala (Yassa, à côté de l'institut La Perle) | 670 94 43 03 | — |
-| Afrique Labo SARL | Douala (Bessengue) | 690 54 70 93 | `L877` |
+| Afrique Labo SARL | Douala (Bessengue) | 690 54 70 93 | `L991` |
 | Baird Memorial College | Buea (Bonduma) | 677875395 | `L16` |
 | Baptist Comprehensive College | Buea (Great Soppo) | 679650707 | `L15` |
 | CIDM St Joseph | Douala | 674 30 07 98 | — |
@@ -77,7 +78,6 @@
 | Laboratoire Sainte Anne | Douala (New-Bell, 152 Av de l'Indépendance) | 675 39 76 65 | — |
 | Laboratoire du Château | Douala (Bonabéri) | 676 94 69 93 | `L110` |
 | Labtag | Douala (Bali, 301 Rue Ngosso Din) | 699 68 30 50 | — |
-| Le Cristallin | Douala | 699 90 55 77 | `L837` |
 | MEDI LABO | Douala (Akwa, 1927 Bld de la République) | 677 81 70 25 | `L55` |
 | Malia Labo | Douala | 694 56 22 44 | `L27` |
 | Midas Touch Optic Center (MITOC) | Buea (Molyko, opp former police station, Malingo) | 678908962 | `L14` |
@@ -152,7 +152,7 @@
 | MegaOptic | Douala | 698 82 10 27 | `L815` |
 | Mel's Optic | Douala | 690 98 85 18 | — |
 | Mouscou Optique Médicale | Douala | 696 65 41 64 | — |
-| Médina Optic | Douala | 699 93 93 34 | `L876` |
+| Médina Optic | Douala | 699 93 93 34 | `L990` |
 | NABESK Comprehensive College | Buea (Bonduma) | — | — |
 | National Comprehensive High School (NCHS) Limbe | Limbe (near Atlantic Technical & Commercial) | — | `L593` |
 | New Horizon International Comprehensive High School (NHICHS) | Limbe (Cité Sonara, Bota) | 680738111 | — |

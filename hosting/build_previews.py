@@ -26,6 +26,12 @@ SLUGS = {
     "opticien": ("demos/concept-opticien-lopticien.html", "Votre Opticien — concept pour L'Opticien, Bali Douala"),
     "labethanie": ("demos/concept-labethanie-v1.html", "Clinique La Béthanie, Bonabéri Douala — concept"),
     "jempo": ("demos/concept-jempo-v1.html", "J&E Memorial Polyclinic (JEMPO), Deido Douala — concept"),
+    # 21/09 soir — LE CRISTALLIN : le premier prospect qui a dit « Ok » à l'aperçu (21/09 17:53).
+    # Attention : c'est une REFONTE d'un site qui existe déjà (lecristallinoptique.com), pas un
+    # concept « introuvable ». Privé, noindex, partagé un-à-un uniquement (aucun droit public sur
+    # le nom du cabinet avant signature + consentement).
+    "cristallin": ("demos/concept-le-cristallin-v1.html",
+                   "Le Cristallin, opticien à Douala — refonte concept"),
 }
 
 NOINDEX = '<meta name="robots" content="noindex,nofollow">'

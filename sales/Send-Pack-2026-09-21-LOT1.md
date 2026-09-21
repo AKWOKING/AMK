@@ -209,6 +209,21 @@ MegaOptic (698 82 10 27, B). Puis 1B (10) et 1C (18) — **uniquement si le terr
 envoyer vingt-deux messages à la chaîne, c'est exactement ce qui nous fera passer pour un envoi de masse
 dans un ordre professionnel où tout le monde se connaît.
 
+> ### ⚠️ ③′ — CE QUI S'EST VRAIMENT PASSÉ SUR CE LOT (21/09 18:20 → 19:15) — à lire avant de réutiliser une ligne d'ici
+>
+> | Ligne | Ce qui a été écrit ci-dessus | La réalité de l'écran |
+> |---|---|---|
+> | **Le Cristallin** | « il n'existe nulle part en ligne » | **FAUX.** `lecristallinoptique.com` est en ligne et tenu (contrôlé le 21/09, lu en entier). Il a répondu **« Ok » à 17:53**, deux minutes après l'envoi — pas parce que l'angle était bon, même si l'accroche sur son nom l'était. Brief retourné par King : **moderniser son site existant**, pas en créer un. Maquette livrée en interne : `demos/concept-le-cristallin-v1.html` (58 KB · `audit_html.py` = 0 finding · FR 171 / EN 171). **Ne jamais réutiliser la variante « vous êtes introuvable » sur un lead dont on n'a pas contrôlé le domaine.** |
+> | **Tchaya / Disc / Univers** | message 1 | **Envoyés, 2 coches, aucune réponse.** FU1 = mercredi 23/09 (M+2). |
+> | **Bely Optique** | message 1 | **Numéro hors service** — incident de canal, **pas un refus** : ligne repassée en `prospect`, jamais relancée sur ce numéro, et retirée du taux de réponse. |
+> | **Médina Optic** | « prêt à suivre (B) » | **Jamais contacté — et jamais vérifié sur WhatsApp.** La question posée à 18:20 n'a pas eu de réponse : hors WhatsApp (comme Bely) ou choix de King ? **Ne pas envoyer avant la réponse.** |
+> | **AFRIQUE LABO** (§4) | FU2 envoyée ce soir | La phrase « noir sur blanc » sur les résultats **surélève** la maquette. Elle reste dans le fil, non rétractée. Rétablissement prévu à sa réponse, ou avec la FU3 du jeudi 24 — **au choix de King, pas au mien.** |
+>
+> Les faits ci-dessus sont dans `sales/Activity-Log.md` (bloc 18:20 → 19:15) et dans `leads/build/crm.py` ; le
+> CSV est généré. Cette annotation existe pour que quelqu'un qui ouvre **ce** fichier ne renvoie pas **ces**
+> phrases.
+
+
 ---
 
 ## ④ CE QUE J'AI ENLEVER DU LOT — et pourquoi

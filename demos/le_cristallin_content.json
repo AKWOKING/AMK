@@ -1,0 +1,772 @@
+{
+ "wa": "699 90 55 77",
+ "telFixe": "+237242651265",
+ "tel2": "+237679632012",
+ "mail": "contact@lecristallinoptique.com",
+ "title": {
+  "fr": "Le Cristallin — Cabinet d'optique, examen de vue et montures à Douala",
+  "en": "Le Cristallin - Optician practice, eye exams and frames in Douala"
+ },
+ "desc": {
+  "fr": "Cabinet d'optique à Douala depuis 2010 : examen de vue, verres médicaux et progressifs, montures de marque, lentilles de contact, laboratoire sur place, entretien et réparation. Bons de prise en charge acceptés. Rendez-vous sur WhatsApp.",
+  "en": "Optician practice in Douala since 2010: eye exams, medical and progressive lenses, branded frames, contact lenses, own lab, care and repair. Coverage vouchers accepted. Book on WhatsApp."
+ },
+ "brandSub": {
+  "fr": "optique · douala",
+  "en": "optician · douala"
+ },
+ "bar": {
+  "hours1": {
+   "fr": "Lundi · Vendredi",
+   "en": "Monday · Friday"
+  },
+  "hours2": {
+   "fr": "Samedi",
+   "en": "Saturday"
+  },
+  "confirm": {
+   "fr": "à confirmer",
+   "en": "to confirm"
+  },
+  "addr": {
+   "fr": "Douala, Akwa — carrefour Ancien Dalip",
+   "en": "Douala, Akwa - Ancien Dalip roundabout"
+  }
+ },
+ "nav": [
+  [
+   "#portes",
+   "Pour qui",
+   "Who"
+  ],
+  [
+   "#services",
+   "Le cabinet",
+   "Services"
+  ],
+  [
+   "#couverture",
+   "Assurances",
+   "Cover"
+  ],
+  [
+   "#preuves",
+   "Références",
+   "Credentials"
+  ],
+  [
+   "#contact",
+   "Venir",
+   "Visit"
+  ]
+ ],
+ "ctaNav": {
+  "fr": "Réserver",
+  "en": "Book"
+ },
+ "hero": {
+  "eyebrow": {
+   "fr": "Cabinet d'optique · Douala · depuis 2010",
+   "en": "Optician practice · Douala · since 2010"
+  },
+  "h1": {
+   "fr": "Vous lisez la dernière ligne ?",
+   "en": "Can you read the last line?"
+  },
+  "lede": {
+   "fr": "La planche ci-contre est la vôtre : chaque ligne est un acte du cabinet. Lisez-la comme chez l'opticien — la plus petite ligne est notre spécialité : l'équipement complet, monté ici, au laboratoire du cabinet.",
+   "en": "The chart beside you is ours: each line is one thing the practice does. Read it as you would at the optician - the smallest line is our specialty: full eyewear, glazed here, in the practice's own lab."
+  },
+  "h1hl": {
+   "fr": "l'équipement complet, monté ici, au laboratoire du cabinet.",
+   "en": "full eyewear, glazed here, in the practice's own lab."
+  },
+  "book": {
+   "fr": "Réserver un examen de vue",
+   "en": "Book an eye exam"
+  },
+  "insured": {
+   "fr": "Je suis assuré",
+   "en": "I am insured"
+  },
+  "facts": [
+   [
+    "2010",
+    "installé au Cameroun",
+    "in Cameroon since"
+   ],
+   [
+    "24",
+    "ans d'expérience",
+    "years of experience"
+   ],
+   [
+    "Laboratoire",
+    "high-tech, sur place",
+    "Lab",
+    "high-tech, on site"
+   ]
+  ],
+  "chartTop": {
+   "fr": "le cabinet, en cinq lignes",
+   "en": "the practice, in five lines"
+  },
+  "acuity": {
+   "fr": "acuité",
+   "en": "acuity"
+  },
+  "chartFoot": {
+   "fr": "Touchez une ligne pour réserver cet acte sur WhatsApp.",
+   "en": "Tap a line to book that service on WhatsApp."
+  }
+ },
+ "chart": [
+  [
+   "E F P T Z O",
+   "Examen de vue",
+   "Eye examination",
+   "Mesure de la vue chez l'opticien, sur place",
+   "Vision measured in the practice"
+  ],
+  [
+   "L O Z H P E",
+   "Verres médicaux et spéciaux",
+   "Medical and specialist lenses",
+   "Progressifs, simples foyers, traitement adapté",
+   "Progressive, single vision, the right coating"
+  ],
+  [
+   "P E Z T O L",
+   "Montures de marque",
+   "Branded frames",
+   "Un choix en boutique, monté au laboratoire du cabinet",
+   "Chosen in store, glazed in the in-house lab"
+  ],
+  [
+   "E T O P",
+   "Lentilles de contact",
+   "Contact lenses",
+   "Uniquement sur prescription de votre optométriste",
+   "Only as prescribed by your optometrist"
+  ],
+  [
+   "T O",
+   "Entretien, réparation, contrôle",
+   "Care, repair, check-up",
+   "Réglage et contrôle d'équipement sur place",
+   "Fitting and equipment checks done here"
+  ]
+ ],
+ "book": {
+  "fr": "réserver",
+  "en": "book"
+ },
+ "doors": {
+  "eyebrow": {
+   "fr": "À qui ça s'adresse",
+   "en": "Who this is for"
+  },
+  "h2": {
+   "fr": "Trois personnes entrent ici pour trois raisons différentes.",
+   "en": "Three kinds of person walk in, for three different reasons."
+  },
+  "items": [
+   [
+    "01 · patients",
+    "Vous voulez voir net",
+    "You want to see clearly",
+    "Examen de vue, verres, montures, lentilles, et un conseil qui prend le temps.",
+    "Eye exam, lenses, frames, contact lenses, and advice that takes the time.",
+    "Réserver",
+    "Book",
+    "#contact"
+   ],
+   [
+    "02 · assurés",
+    "Votre mutuelle paie une partie",
+    "Your insurer covers part of it",
+    "Nous acceptons les bons de prise en charge et respectons la tarification en vigueur.",
+    "We accept coverage vouchers and apply the agreed tariff.",
+    "Vérifier la couverture",
+    "Check my cover",
+    "#couverture"
+   ],
+   [
+    "03 · entreprises et institutions",
+    "Vous équipez vos collaborateurs",
+    "You equip your staff",
+    "Lunettes médicales et de sécurité à prix concurrentiels, sur place, pour vos assurés, vos collaborateurs et leurs familles ; et formation du personnel en optique-lunetterie quand vous avez un service santé interne.",
+    "Medical and safety eyewear at competitive prices, on site, for your insured staff and their families; plus optics training for in-house health teams.",
+    "Écrire au cabinet",
+    "Contact the practice",
+    "#contact"
+   ]
+  ]
+ },
+ "services": {
+  "eyebrow": {
+   "fr": "Le cabinet",
+   "en": "The practice"
+  },
+  "h2": {
+   "fr": "Ce que nous faisons, ligne par ligne.",
+   "en": "What we do, line by line."
+  },
+  "lede": {
+   "fr": "Le personnel est qualifié et le laboratoire est à nous : ce qui est mesuré ici est monté ici.",
+   "en": "The staff is qualified and the lab is ours: what is measured here is glazed here."
+  },
+  "head": [
+   {
+    "fr": "Prestation",
+    "en": "Service"
+   },
+   {
+    "fr": "Pour qui",
+    "en": "For"
+   },
+   {
+    "fr": "Réserver",
+    "en": "Book"
+   }
+  ],
+  "rows": [
+   [
+    "Examen de vue",
+    "Eye examination",
+    "Mesure et contrôle de la vue au cabinet, avant tout équipement.",
+    "Vision measured and checked before any eyewear.",
+    "all"
+   ],
+   [
+    "Orientation en consultation ophtalmologique",
+    "Referral to an ophthalmologist",
+    "Si votre vue demande un médecin, on vous oriente au lieu de vous équiper à l'aveugle.",
+    "If an eye doctor is needed we refer you, instead of fitting you blind.",
+    "patients"
+   ],
+   [
+    "Fourniture de verres médicaux et spéciaux",
+    "Medical and specialist lenses",
+    "Verres adaptés à votre correction et à votre métier, écrans et conduite de nuit compris.",
+    "Lenses matched to your prescription and your work, screens and night driving included.",
+    "all"
+   ],
+   [
+    "Montures de marque",
+    "Branded frames",
+    "Le choix se fait en main, à votre visage, pas dans un catalogue en ligne.",
+    "Frames are chosen on your face, not from a web catalogue.",
+    "patients"
+   ],
+   [
+    "Montage d'équipement au laboratoire",
+    "Glazing in our own lab",
+    "Le cabinet possède son laboratoire : le montage est fait sur place, pas expédié.",
+    "The practice runs its own lab, so glazing happens here.",
+    "all"
+   ],
+   [
+    "Lentilles de contact",
+    "Contact lenses",
+    "Uniquement les lentilles prescrites par votre optométriste, pour votre cornée.",
+    "Only lenses prescribed by your optometrist, for your cornea.",
+    "patients"
+   ],
+   [
+    "Opticien conseil",
+    "Optician advice",
+    "Un professionnel qualifié qui explique, pas une caisse qui encaisse.",
+    "A qualified professional who explains, not a till that takes payment.",
+    "all"
+   ],
+   [
+    "Entretien, réparation et contrôle d'équipement",
+    "Care, repair and equipment check",
+    "Un réglage de branches ou un changement de plaquettes se fait pendant que vous attendez.",
+    "A temple adjustment or nose-pad swap while you wait.",
+    "patients"
+   ],
+   [
+    "Bons de prise en charge acceptés",
+    "Coverage vouchers accepted",
+    "Vos assureurs et mutuelles sont reconnus ici ; nous respectons la tarification en vigueur.",
+    "Your insurer is known to us and we apply the agreed tariff.",
+    "insured"
+   ],
+   [
+    "Formation du personnel en optique-lunetterie",
+    "Staff training in optics",
+    "Le cabinet forme son personnel : c'est aussi ce qui garantit la qualité du conseil.",
+    "The practice trains its own people, which is what keeps advice honest.",
+    "employers"
+   ]
+  ],
+  "ask": {
+   "fr": "Demander sur WhatsApp",
+   "en": "Ask on WhatsApp"
+  },
+  "who": {
+   "all": [
+    "Tous publics",
+    "All"
+   ],
+   "patients": [
+    "Tout public",
+    "Everyone"
+   ],
+   "insured": [
+    "Assurés · mutuelles",
+    "Insured · mutuals"
+   ],
+   "employers": [
+    "Entreprises",
+    "Employers"
+   ]
+  }
+ },
+ "cover": {
+  "eyebrow": {
+   "fr": "Assurances et mutuelles",
+   "en": "Insurers and mutuals"
+  },
+  "h2": {
+   "fr": "Votre assureur est-il reconnu ici ?",
+   "en": "Is your insurer known here?"
+  },
+  "label": {
+   "fr": "Choisissez votre assurance",
+   "en": "Choose your insurer"
+  },
+  "none": {
+   "fr": "— aucune de la liste —",
+   "en": "- not on this list -"
+  },
+  "idle": {
+   "fr": "Sélectionnez une assurance : le message WhatsApp partira déjà rempli, avec votre nom.",
+   "en": "Pick an insurer: the WhatsApp message goes out pre-written, with your name in it."
+  },
+  "on": {
+   "fr": "figure sur la liste du cabinet. La prise en charge et la tarification se confirment au guichet.",
+   "en": "appears on the practice list. Cover and tariff are confirmed at the desk."
+  },
+  "go": {
+   "fr": "Demander ma prise en charge",
+   "en": "Ask about my cover"
+  },
+  "fine": {
+   "fr": "Liste reprise du site actuel du cabinet — à faire valider avant publication.",
+   "en": "List taken from the current website - to be confirmed before publishing."
+  },
+  "trust": {
+   "fr": "Ils nous font confiance",
+   "en": "They trust us"
+  },
+  "quote": {
+   "fr": "« Dans le même ordre d'idée que le Ministère de la Santé Publique, nous nous inscrivons dans la lutte contre la malvoyance et la cécité : dans un environnement urbain et rural où tous n'ont pas les moyens de s'équiper en lunettes médicales, nous leur offrons cette possibilité. »",
+   "en": "\"In line with the Ministry of Public Health, we take part in the fight against visual impairment and blindness: in urban and rural areas where not everyone can afford medical eyewear, we make it possible.\""
+  }
+ },
+ "proof": {
+  "eyebrow": {
+   "fr": "Pourquoi ce cabinet",
+   "en": "Why this practice"
+  },
+  "h2": {
+   "fr": "Trois papiers, un laboratoire, douze assureurs.",
+   "en": "Three certificates, one lab, twelve insurers."
+  },
+  "lede": {
+   "fr": "Ce ne sont pas des arguments de vente : ce sont les pièces que le cabinet affiche déjà, et qu'un patient ne peut pas vérifier en trois secondes sur un site de 2010.",
+   "en": "These are not sales claims: they are documents the practice already shows, which a patient cannot check in three seconds on a 2010-era website."
+  },
+  "tiles": [
+   [
+    "certification",
+    "ISO 9001 : 2008",
+    "Délivrée via les Laboratoires SIVO.",
+    "Issued through Laboratoires SIVO.",
+    "Version à confirmer sur le certificat courant.",
+    "Version to confirm on the current certificate."
+   ],
+   [
+    "autorisation",
+    "MINSANTE",
+    "Autorisation d'exercer du Ministère de la Santé Publique.",
+    "Practising authorisation from the Ministry of Public Health.",
+    "",
+    ""
+   ],
+   [
+    "ordre professionnel",
+    "ONOC",
+    "Ordre National des Opticiens-Lunetiers du Cameroun.",
+    "National Order of Opticians of Cameroon.",
+    "",
+    ""
+   ]
+  ],
+  "lab": {
+   "fr": "Le cabinet possède son propre laboratoire high-tech : le montage, le réglage et le contrôle se font sur place, pas chez un sous-traitant.",
+   "en": "The practice owns its high-tech lab: glazing, fitting and checks are done here, not subcontracted."
+  },
+  "partner": {
+   "fr": "partenaire",
+   "en": "partner"
+  },
+  "partnerKind": {
+   "fr": "verré, montures ou équipement du laboratoire",
+   "en": "lenses, frames or lab equipment"
+  }
+ },
+ "photos": {
+  "eyebrow": {
+   "fr": "À remplacer par vos photos",
+   "en": "To be replaced by your photos"
+  },
+  "h2": {
+   "fr": "Trois images que vous avez déjà, et qui valent plus que n'importe quel visuel de marque.",
+   "en": "Three photos you already have, worth more than any brand visual."
+  },
+  "lede": {
+   "fr": "Un site d'opticien se juge sur trois choses : la devanture (pour qu'on vous trouve dans la rue), le laboratoire (pour qu'on croie au montage), et une monture sur un visage (pour qu'on se voie déjà avec).",
+   "en": "An optician's site is judged on three things: the storefront (so people find you in the street), the lab (so they believe the glazing), and one frame on a face (so they already see themselves)."
+  },
+  "items": [
+   [
+    "La devanture, en journée",
+    "The storefront, in daylight",
+    "à côté de l'immeuble FODEC, face COMECI SA — c'est comme ça qu'un patient vous reconnaît.",
+    "next to the FODEC building, facing COMECI SA - this is how a patient recognises you.",
+    "store"
+   ],
+   [
+    "Le laboratoire",
+    "The lab",
+    "le montage sur place est votre différence : montrez-le.",
+    "on-site glazing is what sets you apart: show it.",
+    "lab"
+   ],
+   [
+    "Une monture portée",
+    "A frame being worn",
+    "pas un produit sur fond blanc : un visage, avec la correction expliquée.",
+    "not a product on white: a face, with the prescription explained.",
+    "face"
+   ]
+  ]
+ },
+ "offerfaq": {
+  "offerH": {
+   "fr": "Kit d'entretien offert pour une paire achetée",
+   "en": "Free care kit with any pair bought"
+  },
+  "offerP": {
+   "fr": "Annoncé sur votre site actuel. Sur une page mobile, une offre se lit en une seconde : elle mérite sa place, et une date de fin.",
+   "en": "Stated on your current site. On a phone an offer is read in one second: it deserves its place, and an end date."
+  },
+  "offerFlag": {
+   "fr": "⚠️ Ajouter la période de validité avant publication.",
+   "en": "⚠️ Add the validity period before publishing."
+  },
+  "faq": [
+   [
+    "Combien ça coûte ?",
+    "What does it cost?",
+    "Le cabinet n'affiche pas de prix sur son site : les verres dépendent de la correction, la monture du modèle choisi, et la prise en charge de votre contrat. Écrivez la mesure de votre ordonnance sur WhatsApp, un devis suit.",
+    "The practice publishes no prices: lenses depend on your prescription, the frame on the model, and cover on your contract. Send your prescription reading on WhatsApp and a quote follows."
+   ],
+   [
+    "Faut-il un rendez-vous pour un examen de vue ?",
+    "Do I need a booking for an eye exam?",
+    "Non, aux heures d'ouverture. Un message WhatsApp avant de passer évite simplement l'attente : on vous répond avec un créneau.",
+    "No, during opening hours. A WhatsApp message before you come simply avoids the wait: we reply with a slot."
+   ],
+   [
+    "Vous acceptez les bons de prise en charge ?",
+    "Do you accept coverage vouchers?",
+    "Oui, avec les assureurs et mutuelles listés ci-dessus, en respectant la tarification en vigueur.",
+    "Yes, with the insurers and mutuals listed above, applying the agreed tariff."
+   ],
+   [
+    "Puis-je apporter mes lentilles achetées en ligne ?",
+    "Can I bring contact lenses bought online?",
+    "Pour votre sécurité et votre confort, le cabinet ne recommande que les lentilles prescrites par votre optométriste. Un contrôle est possible sur place.",
+    "For your safety and comfort the practice recommends only lenses prescribed by your optometrist. A check-up can be done here."
+   ]
+  ]
+ },
+ "contact": {
+  "eyebrow": {
+   "fr": "Venir · écrire · réserver",
+   "en": "Visit · write · book"
+  },
+  "h2": {
+   "fr": "Une seule chose à retenir : on vous répond sur WhatsApp.",
+   "en": "One thing to remember: we answer on WhatsApp."
+  },
+  "hoursH": {
+   "fr": "Horaires",
+   "en": "Hours"
+  },
+  "hours": [
+   [
+    "Lundi · Vendredi",
+    "Monday · Friday",
+    "8h30 – 18h30",
+    "8:30 - 18:30"
+   ],
+   [
+    "Samedi",
+    "Saturday",
+    "8h30 – 13h30",
+    "8:30 - 13:30"
+   ],
+   [
+    "Dimanche",
+    "Sunday",
+    "fermé",
+    "closed"
+   ]
+  ],
+  "hoursFlag": {
+   "fr": "⚠️ Le site actuel n'affiche que lundi-vendredi ; le flyer ajoute le samedi. À trancher avant publication.",
+   "en": "⚠️ The current site shows Monday to Friday only; the flyer adds Saturday. To settle before publishing."
+  },
+  "whereH": {
+   "fr": "Où nous trouver",
+   "en": "Where to find us"
+  },
+  "addr": {
+   "fr": "Akwa, carrefour Ancien Dalip, à côté de l'immeuble FODEC, face COMECI SA. BP 566, Douala.",
+   "en": "Akwa, Ancien Dalip roundabout, next to the FODEC building, facing COMECI SA. P.O. Box 566, Douala."
+  },
+  "addrFlag": {
+   "fr": "Le flyer indique « à côté du Carrefour CTFIC Mballa 2, Bonapriso » : les deux adresses doivent être réconciliées avant publication.",
+   "en": "The flyer reads \"next to Carrefour CTFIC Mballa 2, Bonapriso\": both wordings must be reconciled before publishing."
+  },
+  "maps": {
+   "fr": "Ouvrir dans Google Maps",
+   "en": "Open in Google Maps"
+  },
+  "reachH": {
+   "fr": "Nous joindre",
+   "en": "Reach us"
+  },
+  "fastest": {
+   "fr": "(le plus rapide)",
+   "en": "(fastest)"
+  },
+  "phone": {
+   "fr": "Téléphone",
+   "en": "Phone"
+  },
+  "email": {
+   "fr": "E-mail",
+   "en": "Email"
+  },
+  "site": {
+   "fr": "Site actuel",
+   "en": "Current site"
+  },
+  "numFlag": {
+   "fr": "Le flyer ajoute deux lignes non reprises ici (06 99 05 57 77 · 699 03 46 01) : à confirmer comme numéros du cabinet avant de les publier.",
+   "en": "The flyer lists two further numbers not shown here (06 99 05 57 77 · 699 03 46 01): to be confirmed as practice lines before publishing."
+  }
+ },
+ "footer": {
+  "brandH": "Le Cristallin",
+  "brandP": {
+   "fr": "Cabinet d'optique à Douala depuis 2010 : examen de vue, verres, montures, lentilles, laboratoire sur place.",
+   "en": "Optician practice in Douala since 2010: eye exams, lenses, frames, contact lenses, own lab."
+  },
+  "badge": {
+   "fr": "Concept de site par AMK — non publié",
+   "en": "Website concept by AMK - not published"
+  },
+  "cols": [
+   [
+    {
+     "fr": "Le cabinet",
+     "en": "The practice"
+    },
+    [
+     [
+      "#services",
+      "Prestations",
+      "Services"
+     ],
+     [
+      "#couverture",
+      "Assurances et mutuelles",
+      "Insurers and mutuals"
+     ],
+     [
+      "#preuves",
+      "Certifications",
+      "Credentials"
+     ],
+     [
+      "#visuels",
+      "Photos à fournir",
+      "Photos to supply"
+     ]
+    ]
+   ],
+   [
+    {
+     "fr": "Entreprises",
+     "en": "Employers"
+    },
+    [
+     [
+      "#portes",
+      "Équiper ses collaborateurs",
+      "Equip your staff"
+     ],
+     [
+      "#portes",
+      "Bons de prise en charge",
+      "Coverage vouchers"
+     ],
+     [
+      "#portes",
+      "Formation du personnel",
+      "Staff training"
+     ],
+     [
+      "#contact",
+      "Devis entreprise",
+      "Corporate quote"
+     ]
+    ]
+   ],
+   [
+    {
+     "fr": "Avant de publier",
+     "en": "Before publishing"
+    },
+    [
+     [
+      "#contact",
+      "Réconcilier les deux adresses (site / flyer)",
+      "Reconcile the two addresses (site / flyer)"
+     ],
+     [
+      "#contact",
+      "Confirmer le samedi et les lignes du flyer",
+      "Confirm Saturday and the flyer numbers"
+     ],
+     [
+      "#contact",
+      "Valider la version du certificat ISO",
+      "Confirm the ISO certificate version"
+     ],
+     [
+      "#contact",
+      "Ajouter la date de fin du kit offert",
+      "Add the end date of the free kit"
+     ]
+    ]
+   ]
+  ],
+  "cta": {
+   "fr": "Réserver un examen de vue",
+   "en": "Book an eye exam"
+  },
+  "strip1": {
+   "fr": "Le Cristallin · Douala, Cameroun",
+   "en": "Le Cristallin · Douala, Cameroon"
+  },
+  "strip2": {
+   "fr": "Page de démonstration : tarifs, horaires et photos à valider par le cabinet.",
+   "en": "Demonstration page: prices, hours and photos to be approved by the practice."
+  }
+ },
+ "sticky": [
+  {
+   "fr": "Réserver un examen de vue",
+   "en": "Book an eye exam"
+  },
+  {
+   "fr": "Appeler",
+   "en": "Call"
+  }
+ ],
+ "a11y": {
+  "nav": {
+   "fr": "Navigation",
+   "en": "Navigation"
+  },
+  "chart": {
+   "fr": "Planche des services du cabinet",
+   "en": "Practice services chart"
+  }
+ },
+ "waMsg": {
+  "row": {
+   "fr": "Bonjour Le Cristallin, je souhaite réserver : {svc}. Quels sont vos prochains créneaux ?",
+   "en": "Hello Le Cristallin, I would like to book: {svc}. What are your next slots?"
+  },
+  "ask": {
+   "fr": "Bonjour Le Cristallin, votre site propose : {svc}. Est-ce que je peux passer cette semaine ?",
+   "en": "Hello Le Cristallin, your site lists: {svc}. Can I come this week?"
+  },
+  "ins": {
+   "fr": "Bonjour Le Cristallin, je suis assuré(e) chez {n}. Je souhaite faire vérifier ma prise en charge pour des lunettes. Quand puis-je passer ?",
+   "en": "Hello Le Cristallin, I am covered by {n}. I would like my lens cover checked. When can I come?"
+  },
+  "generic": {
+   "fr": "Bonjour Le Cristallin, je souhaite réserver un examen de la vue. Quels sont vos prochains créneaux ?",
+   "en": "Hello Le Cristallin, I would like to book an eye examination. What are your next slots?"
+  }
+ },
+ "insurers": [
+  "CHANAS Assurances",
+  "Activa Assurances",
+  "Beneficial General Insurance",
+  "SAAR Assurances",
+  "Ascoma Cameroun",
+  "Zénith Insurance SA",
+  "Samaritan Insurance Inc.",
+  "Mutuelle des Brasseries du Cameroun",
+  "Gras Savoye Cameroun",
+  "Alpha Assurances",
+  "Saham Assurances",
+  "GMC Assurances"
+ ],
+ "partners": [
+  [
+   "Essilor",
+   "France"
+  ],
+  [
+   "MCT Vision",
+   "France"
+  ],
+  [
+   "Laboratoire SIVO",
+   "Tunisie"
+  ],
+  [
+   "American Optical",
+   "France"
+  ],
+  [
+   "Fondation Krys Group",
+   "France"
+  ],
+  [
+   "Luxottica Group",
+   "Italie"
+  ],
+  [
+   "Technidis",
+   "France"
+  ],
+  [
+   "Groupe LOGO",
+   "France"
+  ]
+ ]
+}

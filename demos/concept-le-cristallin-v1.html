@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Le Cristallin — Cabinet d'optique, examen de vue et montures à Douala</title>
+<meta name="description" content="Cabinet d'optique à Douala depuis 2010 : examen de vue, verres médicaux et progressifs, montures de marque, lentilles de contact, laboratoire sur place, entretien et réparation. Bons de prise en charge acceptés. Rendez-vous sur WhatsApp.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0B1613">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+ --paper:#EFF2F1;--card:#FFFFFF;--ink:#101E19;--txt:#1B2A24;--mute:#586A62;--line:#D5DDD8;
+ --lineS:#E4EAE6;--deep:#0D5A41;--deepD:#0A4634;--bright:#7FE0BC;--dark:#0B1613;--tint:#E2EDE6;
+ --max:1220px;--r:14px;
+ --disp:"Archivo","Helvetica Neue",Arial,sans-serif;
+ --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+ --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--txt);font-family:var(--body);font-size:1rem;
+ line-height:1.56;text-rendering:optimizeLegibility}
+img,svg{max-width:100%}
+h1,h2,h3,h4{font-family:var(--disp);color:var(--ink);margin:0;letter-spacing:-.022em;line-height:1.06;
+ text-wrap:balance}
+h1{font-size:clamp(2.05rem,6.4vw,3.5rem);font-weight:700}
+h2{font-size:clamp(1.5rem,3.7vw,2.15rem);font-weight:650}
+h3{font-size:1.14rem;font-weight:620;letter-spacing:-.01em}
+h4{font-size:1rem;font-weight:620}
+p{margin:0 0 .9em}
+.lede{font-size:1.05rem;color:var(--txt);max-width:54ch}
+.mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+section{padding:54px 0}
+a{color:var(--deep)}
+.eyebrow{color:var(--deep);font-weight:600;font-size:.76rem;letter-spacing:.11em;text-transform:uppercase;
+ margin-bottom:12px}
+.hair{border-top:1px solid var(--line)}
+html[data-lang=fr] .en-only{display:none!important}
+html[data-lang=en] .fr-only{display:none!important}
+html[data-lang=en] .en-only{display:revert!important}
+html[data-lang=fr] .fr-only{display:revert!important}
+:is(a,button,select,summary):focus-visible{outline:3px solid var(--deep);outline-offset:2px;border-radius:8px}
+::selection{background:var(--bright);color:var(--ink)}
+.bar{background:var(--dark);color:#D7E4DC;font-size:.8rem}
+.bar .wrap{display:flex;gap:14px;justify-content:space-between;align-items:center;padding:9px 18px;
+ flex-wrap:wrap}
+.bar b{color:#fff;font-weight:600}
+.bar a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.34)}
+.bar a:hover{border-color:var(--bright)}
+.bar .sep{color:#8FA79C}
+.bar .warn{color:var(--bright)}
+.dotlive{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--bright);
+ margin-right:7px;vertical-align:1px}
+.nav{position:sticky;top:0;z-index:40;background:rgba(239,242,241,.93);backdrop-filter:blur(10px);
+ border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:14px;padding:11px 18px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.brand svg{flex:0 0 auto;display:block}
+.brand b{font-family:var(--disp);font-size:1.04rem;letter-spacing:-.015em;color:var(--ink);display:block;
+ line-height:1.05;font-weight:700}
+.brand .sub{display:block;font-size:.67rem;color:var(--mute);letter-spacing:.07em;text-transform:uppercase;
+ font-family:var(--mono)}
+.nav nav{margin-left:auto;display:none;gap:20px;font-size:.9rem}
+.nav nav a{text-decoration:none;color:var(--txt);opacity:.9}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--card);
+ margin-left:auto}
+.nav nav+.lang{margin-left:0}
+.lang button{border:0;background:transparent;padding:7px 12px;font:600 .78rem/1 var(--body);color:var(--mute);
+ cursor:pointer;transition:background .16s ease,color .16s ease}
+.lang button:active{transform:scale(.97)}
+.lang button.is-on{background:var(--deep);color:#fff}
+.cta{background:var(--deep);color:#fff;text-decoration:none;padding:10px 15px;border-radius:999px;
+ font-weight:600;font-size:.86rem;white-space:nowrap;display:inline-flex;align-items:center;gap:8px;
+ transition:background .16s ease,transform .12s ease}
+.cta:hover{background:var(--deepD)}
+.cta:active{transform:scale(.97)}
+.cta svg{width:16px;height:16px;fill:currentColor}
+.cta.small{display:none}
+.hero{padding:38px 0 46px;background:linear-gradient(180deg,var(--card) 0%,var(--paper) 78%)}
+.hero .grid{display:grid;gap:26px;align-items:start}
+.chart{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.chart-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:13px 16px;
+ border-bottom:1px solid var(--line);background:var(--tint)}
+.chart-top .mono{color:var(--deep)}
+.chart-top .acuity{font-family:var(--disp);font-weight:700;color:var(--ink);font-size:.92rem;
+ font-variant-numeric:tabular-nums;white-space:nowrap}
+.row{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:13px 16px;
+ border-bottom:1px solid var(--lineS);text-decoration:none;color:inherit;transition:background .18s ease}
+.row:last-of-type{border-bottom:0}
+.row .g{font-family:var(--disp);font-weight:700;color:var(--ink);letter-spacing:.06em;line-height:1;
+ font-variant-numeric:tabular-nums;white-space:nowrap}
+.row:nth-of-type(1) .g{font-size:2.3rem}
+.row:nth-of-type(2) .g{font-size:1.75rem}
+.row:nth-of-type(3) .g{font-size:1.4rem}
+.row:nth-of-type(4) .g{font-size:1.16rem}
+.row:nth-of-type(5) .g{font-size:1rem;color:var(--mute)}
+.row .t{font-size:.94rem;color:var(--txt)}
+.row .t b{font-weight:620;font-family:var(--disp)}
+.row .t em{display:block;font-style:normal;font-size:.78rem;color:var(--mute);margin-top:2px}
+.row .v{font-family:var(--mono);font-size:.68rem;color:var(--deep);border:1px solid var(--line);
+ border-radius:999px;padding:4px 8px;white-space:nowrap;transition:background .18s ease,color .18s ease}
+.row-foot{padding:12px 16px;border-top:1px solid var(--line);font-size:.78rem;color:var(--mute)}
+.h1hl{color:var(--deep)}
+.actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:20px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 18px;border-radius:12px;text-decoration:none;
+ font-weight:620;border:1px solid transparent;cursor:pointer;font-size:.94rem;
+ transition:background .16s ease,color .16s ease,transform .12s ease,border-color .16s ease}
+.btn svg{width:18px;height:18px;fill:currentColor}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--deep);color:#fff}
+.btn-primary:hover{background:var(--deepD)}
+.btn-ghost{background:var(--card);color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--deep);color:var(--deep)}
+.facts{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 13px;font-size:.8rem;
+ color:var(--txt)}
+.fact b{font-family:var(--disp);color:var(--ink);font-variant-numeric:tabular-nums}
+.doors{display:grid;gap:14px}
+.door{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 18px;
+ text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:8px;
+ transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.door .k{font-family:var(--mono);font-size:.68rem;color:var(--deep);letter-spacing:.12em}
+.door h3{margin:0}
+.door p{font-size:.9rem;color:var(--mute);margin:0}
+.door .go{margin-top:auto;font-weight:620;font-size:.88rem;color:var(--deep);display:flex;align-items:center;
+ gap:7px}
+.door .go svg{width:14px;height:14px;fill:currentColor;transition:transform .2s ease}
+.svc{border:1px solid var(--line);border-radius:var(--r);background:var(--card);overflow:hidden}
+.svc .h,.srow{display:grid;grid-template-columns:1.6fr 1.05fr auto;gap:16px;align-items:center;
+ padding:12px 16px}
+.svc .h{background:var(--tint);border-bottom:1px solid var(--line)}
+.svc .h span{font-family:var(--mono);font-size:.67rem;letter-spacing:.11em;text-transform:uppercase;
+ color:var(--deep)}
+.srow{border-bottom:1px solid var(--lineS);transition:background .18s ease}
+.srow:last-child{border-bottom:0}
+.srow b{font-family:var(--disp);font-weight:620;color:var(--ink);font-size:.98rem;display:block}
+.srow small{display:block;color:var(--mute);font-size:.83rem;margin-top:3px}
+.srow .who{font-size:.76rem;color:var(--txt);background:var(--tint);border-radius:999px;padding:5px 10px;
+ display:inline-block;justify-self:start}
+.srow .ask{font-size:.82rem;font-weight:600;color:var(--deep);text-decoration:none;white-space:nowrap;
+ border-bottom:1px solid transparent;transition:border-color .16s ease}
+.cover{display:grid;gap:22px;align-items:start}
+.picker{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.picker label{display:block;font-family:var(--mono);font-size:.68rem;letter-spacing:.11em;
+ text-transform:uppercase;color:var(--deep);margin-bottom:8px}
+.picker select{width:100%;font:1rem var(--body);color:var(--ink);background:var(--paper);
+ border:1px solid var(--line);border-radius:10px;padding:12px 34px 12px 13px;margin-bottom:13px;
+ -webkit-appearance:none;appearance:none;background-image:linear-gradient(45deg,transparent 49%,#0D5A41 50%),
+ linear-gradient(-45deg,transparent 49%,#0D5A41 50%);background-size:9px 9px;
+ background-position:right 15px center;background-repeat:no-repeat}
+.picker .state{font-size:.9rem;color:var(--txt);margin-bottom:13px;min-height:2.7em}
+.picker .state b{color:var(--ink)}
+.fine{font-size:.79rem;color:var(--mute);margin:12px 0 0}
+.listcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.listcard .k{font-family:var(--mono);font-size:.67rem;letter-spacing:.11em;text-transform:uppercase;
+ color:var(--deep)}
+.listcard ul{margin:10px 0 0;padding:0;list-style:none;columns:2;column-gap:26px}
+.listcard li{break-inside:avoid;font-size:.9rem;padding:6px 0;border-bottom:1px solid var(--lineS);
+ color:var(--txt)}
+.listcard li:last-child,.listcard li:nth-last-child(2){border-bottom:0}
+.quote{font-size:.86rem;color:var(--mute);margin-top:14px;border-left:2px solid var(--deep);padding-left:12px}
+.proof{background:var(--dark);color:#D7E4DC;padding:52px 0}
+.proof h2,.proof h3{color:#fff}
+.proof .lede{color:#BFD2C8}
+.proof .eyebrow,.proof .eyebrow .fr-only,.proof .eyebrow .en-only{color:var(--bright)}
+.proof .tile .mono,.proof .band b{color:var(--bright)}
+.tiles{display:grid;gap:14px;margin-top:24px}
+.tile{border:1px solid rgba(127,224,188,.22);border-radius:var(--r);padding:18px;background:rgba(255,255,255,.03)}
+.tile .mono{color:var(--bright);display:block;margin-bottom:8px}
+.tile b{font-family:var(--disp);color:#fff;font-size:1.5rem;display:block;letter-spacing:-.02em;
+ font-variant-numeric:tabular-nums}
+.tile p{font-size:.88rem;margin:8px 0 0;color:#BFD2C8}
+.tile .note{font-size:.76rem;color:#9FB6AB;margin-top:9px}
+.band{margin-top:22px;font-size:.86rem;color:#9FB6AB}
+.band b{color:#fff;font-weight:600}
+.frames{display:grid;gap:14px;margin-top:20px}
+.ph{border:1px dashed var(--line);border-radius:var(--r);background:var(--card);overflow:hidden;margin:0}
+.ph .art{aspect-ratio:16/10;display:grid;place-items:center;
+ background:repeating-linear-gradient(135deg,#F3F7F5 0 12px,#EEF3F0 12px 24px)}
+.ph .art svg{width:58%;height:auto;color:var(--deep);opacity:.6}
+.ph figcaption{padding:12px 14px;border-top:1px solid var(--lineS);font-size:.83rem;color:var(--mute)}
+.ph figcaption b{color:var(--ink);font-weight:620}
+.two{display:grid;gap:16px}
+.offer{background:var(--tint);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.offer h3{margin-bottom:8px}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px}
+details+details{margin-top:9px}
+summary{cursor:pointer;padding:14px 0;font:620 .95rem/1.3 var(--disp);color:var(--ink);list-style:none;
+ display:flex;justify-content:space-between;gap:14px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary .pm{font-family:var(--mono);color:var(--deep);font-size:1.05rem;flex:0 0 auto;transition:transform .2s ease}
+details[open] summary .pm{transform:rotate(45deg)}
+details p{font-size:.9rem;color:var(--txt);margin:0 0 15px;max-width:70ch}
+.info{display:grid;gap:14px;margin-top:20px}
+.icard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.icard h3{margin-bottom:10px}
+.icard table{width:100%;border-collapse:collapse;font-size:.92rem}
+.icard td{padding:7px 0;border-bottom:1px solid var(--lineS);vertical-align:top;color:var(--txt)}
+.icard tr:last-child td{border-bottom:0}
+.icard td:last-child{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink);
+ font-family:var(--disp);font-weight:600}
+.icard a{text-decoration:none;border-bottom:1px solid var(--line)}
+.icard a:hover{border-color:var(--deep)}
+.flag{display:inline-block;font-size:.76rem;background:var(--tint);color:var(--deep);border-radius:999px;
+ padding:5px 10px;margin-top:10px}
+footer{background:var(--dark);color:#C6D7CD;padding:38px 0 96px;font-size:.88rem}
+footer h4{color:#fff;margin-bottom:11px}
+footer a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.28)}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{padding:4px 0}
+footer .cols{display:grid;gap:24px}
+footer ul.fine li{font-size:.84rem;color:#9FB6AB}
+footer ul.fine a{color:#C6D7CD}
+.strip{margin-top:28px;padding-top:16px;border-top:1px solid rgba(255,255,255,.14);display:flex;gap:12px;
+ justify-content:space-between;flex-wrap:wrap;font-size:.78rem;color:#9FB6AB}
+.badge{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bright);
+ border:1px solid rgba(127,224,188,.3);border-radius:999px;padding:5px 10px;display:inline-block;margin-top:6px}
+.sticky-wa{position:fixed;inset:auto 0 0 0;z-index:50;display:flex;gap:9px;padding:10px 12px;
+ background:rgba(11,22,19,.95);backdrop-filter:blur(8px)}
+.sticky-wa a{flex:1;text-align:center;text-decoration:none;font-weight:620;font-size:.9rem;padding:12px;
+ border-radius:11px}
+.sticky-wa .p{background:var(--bright);color:var(--ink)}
+.sticky-wa .c{border:1px solid rgba(255,255,255,.3);color:#fff}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(min-width:720px){.hero .grid{grid-template-columns:1fr 1fr;gap:34px}}
+@media(min-width:900px){
+ .doors{grid-template-columns:1.15fr 1fr}
+ .door:nth-child(3){grid-column:1/-1;flex-direction:row;align-items:center;gap:26px}
+ .door:nth-child(3) .go{margin-top:0;margin-left:auto}
+ .door:nth-child(3) p{max-width:64ch}
+ .tiles{grid-template-columns:1.25fr 1fr 1fr;align-items:end}
+ .frames{grid-template-columns:1.4fr 1fr 1fr}
+ .two{grid-template-columns:1fr 1.25fr;align-items:start}
+ .cover{grid-template-columns:1fr 1fr}
+ .info{grid-template-columns:1fr 1.1fr 1.1fr}
+ footer .cols{grid-template-columns:1.4fr 1fr 1fr 1.15fr}
+ footer{padding-bottom:34px}
+ .sticky-wa{display:none}
+ .nav nav{display:flex}
+ .cta.small{display:inline-flex}}
+@media(hover:hover) and (pointer:fine){
+ .row:hover{background:var(--tint)}
+ .row:hover .v{background:var(--deep);color:#fff;border-color:var(--deep)}
+ .door:hover{border-color:var(--deep);transform:translateY(-2px);box-shadow:0 6px 22px rgba(16,30,25,.07)}
+ .door:hover .go svg{transform:translateX(3px)}
+ .srow:hover{background:#F6FAF7}
+ .srow .ask:hover{border-color:var(--deep)}
+ .nav nav a:hover{color:var(--deep);opacity:1}}
+@media(max-width:719px){
+ .svc .h{display:none}
+ .srow{grid-template-columns:1fr;gap:7px;padding:15px 16px}
+ .listcard ul{columns:1}
+ .row{grid-template-columns:auto 1fr;gap:12px}
+ .row .v{grid-column:2;justify-self:start}}
+@media (prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *{transition:none!important;animation:none!important}
+ .reveal{opacity:1;transform:none}}
+</style>
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Optician",
+   "@id": "https://lecristallinoptique.com/#org",
+   "name": "Le Cristallin",
+   "url": "https://lecristallinoptique.com/",
+   "email": "contact@lecristallinoptique.com",
+   "telephone": "+237 699 90 55 77",
+   "foundingDate": "2010",
+   "areaServed": "Douala, Cameroun",
+   "memberOf": "Ordre National des Opticiens-Lunetiers du Cameroun (ONOC)",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Akwa, carrefour Ancien Dalip, à côté de l'immeuble FODEC, face COMECI SA",
+    "addressLocality": "Douala",
+    "postalCode": "BP 566",
+    "addressCountry": "CM"
+   },
+   "openingHoursSpecification": [
+    {
+     "@type": "OpeningHoursSpecification",
+     "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+     ],
+     "opens": "08:30",
+     "closes": "18:30"
+    }
+   ],
+   "hasMap": "https://www.google.com/maps/search/?api=1&query=Le+Cristallin+optique+Douala",
+   "sameAs": [
+    "https://lecristallinoptique.com/"
+   ]
+  }
+ ]
+}</script>
+</head>
+<body>
+<div class="bar"><div class="wrap">
+  <span><span class="dotlive" aria-hidden="true"></span><b><span class="fr-only">Lundi · Vendredi</span><span class="en-only">Monday · Friday</span></b> 8h30 – 18h30
+    <span class="sep">·</span> <b><span class="fr-only">Samedi</span><span class="en-only">Saturday</span></b> 8h30 – 13h30 <span class="warn"><span class="fr-only">à confirmer</span><span class="en-only">to confirm</span></span></span>
+  <span><span class="fr-only">Douala, Akwa — carrefour Ancien Dalip</span><span class="en-only">Douala, Akwa - Ancien Dalip roundabout</span> <span class="sep">·</span> <a href="tel:+237242651265">(+237) 242 65 12 65</a></span>
+</div></div>
+
+<header class="nav"><div class="wrap">
+  <a class="brand" href="#top">
+    <svg width="30" height="30" viewBox="0 0 40 40" role="img" aria-label="Le Cristallin">
+      <circle cx="20" cy="20" r="18.4" fill="none" stroke="#0D5A41" stroke-width="1.6"/>
+      <path d="M5.6 20C9 13.4 14 10.2 20 10.2S31 13.4 34.4 20C31 26.6 26 29.8 20 29.8S9 26.6 5.6 20Z"
+            fill="none" stroke="#0D5A41" stroke-width="1.6"/>
+      <circle cx="20" cy="20" r="5.1" fill="#0D5A41"/><circle cx="18.1" cy="18.1" r="1.5" fill="#EFF2F1"/>
+    </svg>
+    <span><b>Le Cristallin</b><span class="sub"><span class="fr-only">optique · douala</span><span class="en-only">optician · douala</span></span></span>
+  </a>
+  <nav aria-label="Navigation">
+      <a href="#portes"><span class="fr-only">Pour qui</span><span class="en-only">Who</span></a>
+      <a href="#services"><span class="fr-only">Le cabinet</span><span class="en-only">Services</span></a>
+      <a href="#couverture"><span class="fr-only">Assurances</span><span class="en-only">Cover</span></a>
+      <a href="#preuves"><span class="fr-only">Références</span><span class="en-only">Credentials</span></a>
+      <a href="#contact"><span class="fr-only">Venir</span><span class="en-only">Visit</span></a>
+  </nav>
+  <div class="lang" role="group" aria-label="Français / English">
+    <button id="btn-fr" class="is-on" type="button">FR</button><button id="btn-en" type="button">EN</button>
+  </div>
+  <a class="cta small" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg> <span><span class="fr-only">Réserver</span><span class="en-only">Book</span></span></a>
+</div></header>
+
+<main id="top">
+<section class="hero" id="hero"><div class="wrap grid">
+  <div class="reveal">
+    <div class="eyebrow"><span class="fr-only">Cabinet d'optique · Douala · depuis 2010</span><span class="en-only">Optician practice · Douala · since 2010</span></div>
+    <h1><span class="fr-only">Vous lisez la dernière ligne ?</span><span class="en-only">Can you read the last line?</span></h1>
+    <p class="lede" style="margin-top:14px"><span class="fr-only">La planche ci-contre est la vôtre : chaque ligne est un acte du cabinet. Lisez-la comme chez l'opticien — la plus petite ligne est notre spécialité : <b class="h1hl">l'équipement complet, monté ici, au laboratoire du cabinet.</b></span><span class="en-only">The chart beside you is ours: each line is one thing the practice does. Read it as you would at the optician - the smallest line is our specialty: <b class="h1hl">full eyewear, glazed here, in the practice's own lab.</b></span></p>
+    <div class="actions">
+      <a class="btn btn-primary" id="wa-hero" target="_blank" rel="noopener" href="https://wa.me/699905577?text=Bonjour%20Le%20Cristallin%2C%20je%20souhaite%20r%C3%A9server%20un%20examen%20de%20la%20vue.%20Quels%20sont%20vos%20prochains%20cr%C3%A9neaux%20%3F"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg> <span><span class="fr-only">Réserver un examen de vue</span><span class="en-only">Book an eye exam</span></span></a>
+      <a class="btn btn-ghost" href="#couverture"><span class="fr-only">Je suis assuré</span><span class="en-only">I am insured</span></a>
+    </div>
+    <div class="facts">
+      <span class="fact"><b>2010</b> <span class="fr-only">installé au Cameroun</span><span class="en-only">in Cameroon since</span></span>
+      <span class="fact"><b>24</b> <span class="fr-only">ans d'expérience</span><span class="en-only">years of experience</span></span>
+      <span class="fact"><b><span class="fr-only">Laboratoire</span><span class="en-only">Lab</span></b> <span class="fr-only">high-tech, sur place</span><span class="en-only">high-tech, on site</span></span>
+    </div>
+  </div>
+  <div class="chart reveal" role="group" aria-label="Planche des services du cabinet">
+    <div class="chart-top">
+      <span class="mono"><span class="fr-only">le cabinet, en cinq lignes</span><span class="en-only">the practice, in five lines</span></span>
+      <span class="acuity"><span class="fr-only">acuité</span><span class="en-only">acuity</span> 20/20</span>
+    </div>
+      <a class="row" href="#contact" data-svc-fr="Examen de vue" data-svc-en="Eye examination">
+        <span class="g" aria-hidden="true">E F P T Z O</span>
+        <span class="t"><b><span class="fr-only">Examen de vue</span><span class="en-only">Eye examination</span></b><em><span class="fr-only">Mesure de la vue chez l'opticien, sur place</span><span class="en-only">Vision measured in the practice</span></em></span>
+        <span class="v"><span class="fr-only">réserver</span><span class="en-only">book</span></span>
+      </a>
+      <a class="row" href="#contact" data-svc-fr="Verres médicaux et spéciaux" data-svc-en="Medical and specialist lenses">
+        <span class="g" aria-hidden="true">L O Z H P E</span>
+        <span class="t"><b><span class="fr-only">Verres médicaux et spéciaux</span><span class="en-only">Medical and specialist lenses</span></b><em><span class="fr-only">Progressifs, simples foyers, traitement adapté</span><span class="en-only">Progressive, single vision, the right coating</span></em></span>
+        <span class="v"><span class="fr-only">réserver</span><span class="en-only">book</span></span>
+      </a>
+      <a class="row" href="#contact" data-svc-fr="Montures de marque" data-svc-en="Branded frames">
+        <span class="g" aria-hidden="true">P E Z T O L</span>
+        <span class="t"><b><span class="fr-only">Montures de marque</span><span class="en-only">Branded frames</span></b><em><span class="fr-only">Un choix en boutique, monté au laboratoire du cabinet</span><span class="en-only">Chosen in store, glazed in the in-house lab</span></em></span>
+        <span class="v"><span class="fr-only">réserver</span><span class="en-only">book</span></span>
+      </a>
+      <a class="row" href="#contact" data-svc-fr="Lentilles de contact" data-svc-en="Contact lenses">
+        <span class="g" aria-hidden="true">E T O P</span>
+        <span class="t"><b><span class="fr-only">Lentilles de contact</span><span class="en-only">Contact lenses</span></b><em><span class="fr-only">Uniquement sur prescription de votre optométriste</span><span class="en-only">Only as prescribed by your optometrist</span></em></span>
+        <span class="v"><span class="fr-only">réserver</span><span class="en-only">book</span></span>
+      </a>
+      <a class="row" href="#contact" data-svc-fr="Entretien, réparation, contrôle" data-svc-en="Care, repair, check-up">
+        <span class="g" aria-hidden="true">T O</span>
+        <span class="t"><b><span class="fr-only">Entretien, réparation, contrôle</span><span class="en-only">Care, repair, check-up</span></b><em><span class="fr-only">Réglage et contrôle d'équipement sur place</span><span class="en-only">Fitting and equipment checks done here</span></em></span>
+        <span class="v"><span class="fr-only">réserver</span><span class="en-only">book</span></span>
+      </a>
+    <p class="row-foot"><span class="fr-only">Touchez une ligne pour réserver cet acte sur WhatsApp.</span><span class="en-only">Tap a line to book that service on WhatsApp.</span></p>
+  </div>
+</div></section>
+
+<section id="portes"><div class="wrap">
+  <h2><span class="fr-only">Trois personnes entrent ici pour trois raisons différentes.</span><span class="en-only">Three kinds of person walk in, for three different reasons.</span></h2>
+  <div class="doors" style="margin-top:22px">
+      <a class="door reveal" href="#contact">
+        <span class="k">01 · patients</span>
+        <h3><span class="fr-only">Vous voulez voir net</span><span class="en-only">You want to see clearly</span></h3>
+        <p><span class="fr-only">Examen de vue, verres, montures, lentilles, et un conseil qui prend le temps.</span><span class="en-only">Eye exam, lenses, frames, contact lenses, and advice that takes the time.</span></p>
+        <span class="go"><span class="fr-only">Réserver</span><span class="en-only">Book</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11h10.2l-4.1-4.1L11.6 5 20 13.4 11.6 21.8l-1.5-1.9 4.1-4.1H4z"/></svg></span>
+      </a>
+      <a class="door reveal" href="#couverture">
+        <span class="k">02 · assurés</span>
+        <h3><span class="fr-only">Votre mutuelle paie une partie</span><span class="en-only">Your insurer covers part of it</span></h3>
+        <p><span class="fr-only">Nous acceptons les bons de prise en charge et respectons la tarification en vigueur.</span><span class="en-only">We accept coverage vouchers and apply the agreed tariff.</span></p>
+        <span class="go"><span class="fr-only">Vérifier la couverture</span><span class="en-only">Check my cover</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11h10.2l-4.1-4.1L11.6 5 20 13.4 11.6 21.8l-1.5-1.9 4.1-4.1H4z"/></svg></span>
+      </a>
+      <a class="door reveal" href="#contact">
+        <span class="k">03 · entreprises et institutions</span>
+        <h3><span class="fr-only">Vous équipez vos collaborateurs</span><span class="en-only">You equip your staff</span></h3>
+        <p><span class="fr-only">Lunettes médicales et de sécurité à prix concurrentiels, sur place, pour vos assurés, vos collaborateurs et leurs familles ; et formation du personnel en optique-lunetterie quand vous avez un service santé interne.</span><span class="en-only">Medical and safety eyewear at competitive prices, on site, for your insured staff and their families; plus optics training for in-house health teams.</span></p>
+        <span class="go"><span class="fr-only">Écrire au cabinet</span><span class="en-only">Contact the practice</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11h10.2l-4.1-4.1L11.6 5 20 13.4 11.6 21.8l-1.5-1.9 4.1-4.1H4z"/></svg></span>
+      </a>
+  </div>
+</div></section>
+
+<section id="services" class="hair"><div class="wrap">
+  <h2><span class="fr-only">Ce que nous faisons, ligne par ligne.</span><span class="en-only">What we do, line by line.</span></h2>
+  <p class="lede" style="margin:12px 0 20px"><span class="fr-only">Le personnel est qualifié et le laboratoire est à nous : ce qui est mesuré ici est monté ici.</span><span class="en-only">The staff is qualified and the lab is ours: what is measured here is glazed here.</span></p>
+  <div class="svc reveal">
+    <div class="h"><span><span class="fr-only">Prestation</span><span class="en-only">Service</span></span><span><span class="fr-only">Pour qui</span><span class="en-only">For</span></span><span><span class="fr-only">Réserver</span><span class="en-only">Book</span></span></div>
+      <div class="srow">
+        <span><b><span class="fr-only">Examen de vue</span><span class="en-only">Eye examination</span></b><small><span class="fr-only">Mesure et contrôle de la vue au cabinet, avant tout équipement.</span><span class="en-only">Vision measured and checked before any eyewear.</span></small></span>
+        <span class="who"><span class="fr-only">Tous publics</span><span class="en-only">All</span></span>
+        <a class="ask" href="#contact" data-svc-fr="Examen de vue" data-svc-en="Eye examination"><span class="fr-only">Demander sur WhatsApp</span><span class="en-only">Ask on WhatsApp</span></a>
+      </div>
+      <div class="srow">
+        <span><b><span class="fr-only">Orientation en consultation ophtalmologique</span><span class="en-only">Referral to an ophthalmologist</span></b><small><span class="fr-only">Si votre vue demande un médecin, on vous oriente au lieu de vous équiper à l'aveugle.</span><span class="en-only">If an eye doctor is needed we refer you, instead of fitting you blind.</span></small></span>
+        <span class="who"><span class="fr-only">Tout public</span><span class="en-only">Everyone</span></span>
+        <a class="ask" href="#contact" data-svc-fr="Orientation en consultation ophtalmologique" data-svc-en="Referral to an ophthalmologist"><span class="fr-only">Demander sur WhatsApp</span><span class="en-only">Ask on WhatsApp</span></a>
+      </div>
+      <div class="srow">
+        <span><b><span class="fr-only">Fourniture de verres médicaux et spéciaux</span><span class="en-only">Medical and specialist lenses</span></b><small><span class="fr-only">Verres adaptés à votre correction et à votre métier, écrans et conduite de nuit compris.</span><span class="en-only">Lenses matched to your prescription and your work, screens and night driving included.</span></small></span>
+        <span class="who"><span class="fr-only">Tous publics</span><span class="en-only">All</span></span>
+        <a class="ask" href="#contact" data-svc-fr="Fourniture de verres médicaux et spéciaux" data-svc-en="Medical and specialist lenses"><span class="fr-only">Demander sur WhatsApp</span><span class="en-only">Ask on WhatsApp</span></a>
+      </div>
+      <div class="srow">
+        <span><b><span class="fr-only">Montures de marque</span><span class="en-only">Branded frames</span></b><small><span class="fr-only">Le choix se fait en main, à votre visage, pas dans un catalogue en ligne.</span><span class="en-only">Frames are chosen on your face, not from a web catalogue.</span></small></span>
+        <span class="who"><span class="fr-only">Tout public</span><span class="en-only">Everyone</span></span>
+        <a class="ask" href="#contact" data-svc-fr="Montures de marque" data-svc-en="Branded frames"><span class="fr-only">Demander sur WhatsApp</span><span class="en-only">Ask on WhatsApp</span></a>
+      </div>
+      <div class="srow">
+        <span><b><span class="fr-only">Montage d'équipement au laboratoire</span><span class="en-only">Glazing in our own lab</span></b><small><span class="fr-only">Le cabinet possède son laboratoire : le montage est fait sur place, pas expédié.</span><span class="en-only">The practice runs its own lab, so glazing happens here.</span></small></span>
+        <span class="who"><span class="fr-only">Tous publics</span><span class="en-only">All</span></span>
+        <a class="ask" href="#contact" data-svc-fr="Montage d'équipement au laboratoire" data-svc-en="Glazing in our own lab"><span class="fr-only">Demander sur WhatsApp</span><span class="en-only">Ask on WhatsApp</span></a>
+      </div>
+      <div class="srow">
+        <span><b><span class="fr-only">Lentilles de contact</span><span class="en-only">Contact lenses</span></b><small><span class="fr-only">Uniquement les lentilles prescrites par votre optométriste, pour votre cornée.</span><span class="en-only">Only lenses prescribed by your optometrist, for your cornea.</span></small></span>
+        <span class="who"><span class="fr-only">Tout public</span><span class="en-only">Everyone</span></span>
+        <a class="ask" href="#contact" data-svc-fr="Lentilles de contact" data-svc-en="Contact lenses"><span class="fr-only">Demander sur WhatsApp</span><span class="en-only">Ask on WhatsApp</span></a>
+      </div>
+      <div class="srow">
+        <span><b><span class="fr-only">Opticien conseil</span><span class="en-only">Optician advice</span></b><small><span class="fr-only">Un professionnel qualifié qui explique, pas une caisse qui encaisse.</span><span class="en-only">A qualified professional who explains, not a till that takes payment.</span></small></span>
+        <span class="who"><span class="fr-only">Tous publics</span><span class="en-only">All</span></span>
+        <a class="ask" href="#contact" data-svc-fr="Opticien conseil" data-svc-en="Optician advice"><span class="fr-only">Demander sur WhatsApp</span><span class="en-only">Ask on WhatsApp</span></a>
+      </div>
+      <div class="srow">
+        <span><b><span class="fr-only">Entretien, réparation et contrôle d'équipement</span><span class="en-only">Care, repair and equipment check</span></b><small><span class="fr-only">Un réglage de branches ou un changement de plaquettes se fait pendant que vous attendez.</span><span class="en-only">A temple adjustment or nose-pad swap while you wait.</span></small></span>
+        <span class="who"><span class="fr-only">Tout public</span><span class="en-only">Everyone</span></span>
+        <a class="ask" href="#contact" data-svc-fr="Entretien, réparation et contrôle d'équipement" data-svc-en="Care, repair and equipment check"><span class="fr-only">Demander sur WhatsApp</span><span class="en-only">Ask on WhatsApp</span></a>
+      </div>
+      <div class="srow">
+        <span><b><span class="fr-only">Bons de prise en charge acceptés</span><span class="en-only">Coverage vouchers accepted</span></b><small><span class="fr-only">Vos assureurs et mutuelles sont reconnus ici ; nous respectons la tarification en vigueur.</span><span class="en-only">Your insurer is known to us and we apply the agreed tariff.</span></small></span>
+        <span class="who"><span class="fr-only">Assurés · mutuelles</span><span class="en-only">Insured · mutuals</span></span>
+        <a class="ask" href="#contact" data-svc-fr="Bons de prise en charge acceptés" data-svc-en="Coverage vouchers accepted"><span class="fr-only">Demander sur WhatsApp</span><span class="en-only">Ask on WhatsApp</span></a>
+      </div>
+      <div class="srow">
+        <span><b><span class="fr-only">Formation du personnel en optique-lunetterie</span><span class="en-only">Staff training in optics</span></b><small><span class="fr-only">Le cabinet forme son personnel : c'est aussi ce qui garantit la qualité du conseil.</span><span class="en-only">The practice trains its own people, which is what keeps advice honest.</span></small></span>
+        <span class="who"><span class="fr-only">Entreprises</span><span class="en-only">Employers</span></span>
+        <a class="ask" href="#contact" data-svc-fr="Formation du personnel en optique-lunetterie" data-svc-en="Staff training in optics"><span class="fr-only">Demander sur WhatsApp</span><span class="en-only">Ask on WhatsApp</span></a>
+      </div>
+  </div>
+</div></section>
+
+<section id="couverture" class="hair" style="background:var(--card)"><div class="wrap">
+  <div class="eyebrow"><span class="fr-only">Assurances et mutuelles</span><span class="en-only">Insurers and mutuals</span></div>
+  <h2><span class="fr-only">Votre assureur est-il reconnu ici ?</span><span class="en-only">Is your insurer known here?</span></h2>
+  <div class="cover" style="margin-top:20px">
+    <div class="picker reveal">
+      <label for="ins"><span class="fr-only">Choisissez votre assurance</span><span class="en-only">Choose your insurer</span></label>
+      <select id="ins">
+        <option value=""><span class="fr-only">— aucune de la liste —</span><span class="en-only">- not on this list -</span></option>
+        <option value="1">CHANAS Assurances</option>
+        <option value="2">Activa Assurances</option>
+        <option value="3">Beneficial General Insurance</option>
+        <option value="4">SAAR Assurances</option>
+        <option value="5">Ascoma Cameroun</option>
+        <option value="6">Zénith Insurance SA</option>
+        <option value="7">Samaritan Insurance Inc.</option>
+        <option value="8">Mutuelle des Brasseries du Cameroun</option>
+        <option value="9">Gras Savoye Cameroun</option>
+        <option value="10">Alpha Assurances</option>
+        <option value="11">Saham Assurances</option>
+        <option value="12">GMC Assurances</option>
+      </select>
+      <p class="state" id="ins-state"></p>
+      <a class="btn btn-primary" id="ins-go" href="#contact" style="width:100%;justify-content:center">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg> <span><span class="fr-only">Demander ma prise en charge</span><span class="en-only">Ask about my cover</span></span></a>
+      <p class="fine"><span class="fr-only">Liste reprise du site actuel du cabinet — à faire valider avant publication.</span><span class="en-only">List taken from the current website - to be confirmed before publishing.</span></p>
+    </div>
+    <div class="listcard reveal">
+      <span class="k"><span class="fr-only">Ils nous font confiance</span><span class="en-only">They trust us</span></span>
+      <ul>
+<li>CHANAS Assurances</li>
+<li>Activa Assurances</li>
+<li>Beneficial General Insurance</li>
+<li>SAAR Assurances</li>
+<li>Ascoma Cameroun</li>
+<li>Zénith Insurance SA</li>
+<li>Samaritan Insurance Inc.</li>
+<li>Mutuelle des Brasseries du Cameroun</li>
+<li>Gras Savoye Cameroun</li>
+<li>Alpha Assurances</li>
+<li>Saham Assurances</li>
+<li>GMC Assurances</li>
+      </ul>
+      <p class="quote"><span class="fr-only">« Dans le même ordre d'idée que le Ministère de la Santé Publique, nous nous inscrivons dans la lutte contre la malvoyance et la cécité : dans un environnement urbain et rural où tous n'ont pas les moyens de s'équiper en lunettes médicales, nous leur offrons cette possibilité. »</span><span class="en-only">"In line with the Ministry of Public Health, we take part in the fight against visual impairment and blindness: in urban and rural areas where not everyone can afford medical eyewear, we make it possible."</span></p>
+    </div>
+  </div>
+</div></section>
+
+<section class="proof" id="preuves"><div class="wrap">
+  <h2><span class="fr-only">Trois papiers, un laboratoire, douze assureurs.</span><span class="en-only">Three certificates, one lab, twelve insurers.</span></h2>
+  <p class="lede" style="margin-top:12px"><span class="fr-only">Ce ne sont pas des arguments de vente : ce sont les pièces que le cabinet affiche déjà, et qu'un patient ne peut pas vérifier en trois secondes sur un site de 2010.</span><span class="en-only">These are not sales claims: they are documents the practice already shows, which a patient cannot check in three seconds on a 2010-era website.</span></p>
+  <div class="tiles">
+      <div class="tile reveal">
+        <span class="mono">certification</span>
+        <b>ISO 9001 : 2008</b>
+        <p><span class="fr-only">Délivrée via les Laboratoires SIVO.</span><span class="en-only">Issued through Laboratoires SIVO.</span></p>
+        <p class="note"><span class="fr-only">Version à confirmer sur le certificat courant.</span><span class="en-only">Version to confirm on the current certificate.</span></p>
+      </div>
+      <div class="tile reveal">
+        <span class="mono">autorisation</span>
+        <b>MINSANTE</b>
+        <p><span class="fr-only">Autorisation d'exercer du Ministère de la Santé Publique.</span><span class="en-only">Practising authorisation from the Ministry of Public Health.</span></p>
+        
+      </div>
+      <div class="tile reveal">
+        <span class="mono">ordre professionnel</span>
+        <b>ONOC</b>
+        <p><span class="fr-only">Ordre National des Opticiens-Lunetiers du Cameroun.</span><span class="en-only">National Order of Opticians of Cameroon.</span></p>
+        
+      </div>
+  </div>
+  <p class="band"><span class="fr-only">Le cabinet possède son propre laboratoire high-tech : le montage, le réglage et le contrôle se font sur place, pas chez un sous-traitant.</span><span class="en-only">The practice owns its high-tech lab: glazing, fitting and checks are done here, not subcontracted.</span></p>
+  <p class="band"><b><span class="fr-only">partenaire</span><span class="en-only">partner</span></b> ::Essilor · MCT Vision · Laboratoire SIVO · American Optical · Fondation Krys Group · Luxottica Group · Technidis · Groupe LOGO::</p>
+</div></section>
+
+<section id="visuels"><div class="wrap">
+  <div class="eyebrow"><span class="fr-only">À remplacer par vos photos</span><span class="en-only">To be replaced by your photos</span></div>
+  <h2><span class="fr-only">Trois images que vous avez déjà, et qui valent plus que n'importe quel visuel de marque.</span><span class="en-only">Three photos you already have, worth more than any brand visual.</span></h2>
+  <p class="lede" style="margin:12px 0 0"><span class="fr-only">Un site d'opticien se juge sur trois choses : la devanture (pour qu'on vous trouve dans la rue), le laboratoire (pour qu'on croie au montage), et une monture sur un visage (pour qu'on se voie déjà avec).</span><span class="en-only">An optician's site is judged on three things: the storefront (so people find you in the street), the lab (so they believe the glazing), and one frame on a face (so they already see themselves).</span></p>
+  <div class="frames">
+      <figure class="ph reveal">
+        <div class="art"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 52h108M14 52V22l14-12 14 12v30M42 30h14v10H42zM64 52V28l16-8 16 8v24M70 38h10v8H70z"/></svg></div>
+        <figcaption><b><span class="fr-only">La devanture, en journée</span><span class="en-only">The storefront, in daylight</span></b> · <span class="fr-only">à côté de l'immeuble FODEC, face COMECI SA — c'est comme ça qu'un patient vous reconnaît.</span><span class="en-only">next to the FODEC building, facing COMECI SA - this is how a patient recognises you.</span></figcaption>
+      </figure>
+      <figure class="ph reveal">
+        <div class="art"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="34" cy="34" r="15"/><circle cx="86" cy="34" r="15"/><path d="M49 34h22M19 27 8 22M101 27l11-5M34 19v-9M86 19v-9"/></svg></div>
+        <figcaption><b><span class="fr-only">Le laboratoire</span><span class="en-only">The lab</span></b> · <span class="fr-only">le montage sur place est votre différence : montrez-le.</span><span class="en-only">on-site glazing is what sets you apart: show it.</span></figcaption>
+      </figure>
+      <figure class="ph reveal">
+        <div class="art"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><ellipse cx="60" cy="30" rx="30" ry="21"/><path d="M30 26c8-6 18-8 30-8s22 2 30 8"/><circle cx="50" cy="30" r="4"/><circle cx="70" cy="30" r="4"/></svg></div>
+        <figcaption><b><span class="fr-only">Une monture portée</span><span class="en-only">A frame being worn</span></b> · <span class="fr-only">pas un produit sur fond blanc : un visage, avec la correction expliquée.</span><span class="en-only">not a product on white: a face, with the prescription explained.</span></figcaption>
+      </figure>
+  </div>
+</div></section>
+
+<section class="hair"><div class="wrap two">
+  <div class="offer reveal">
+    <h3><span class="fr-only">Kit d'entretien offert pour une paire achetée</span><span class="en-only">Free care kit with any pair bought</span></h3>
+    <p style="margin:10px 0 0;font-size:.92rem"><span class="fr-only">Annoncé sur votre site actuel. Sur une page mobile, une offre se lit en une seconde : elle mérite sa place, et une date de fin.</span><span class="en-only">Stated on your current site. On a phone an offer is read in one second: it deserves its place, and an end date.</span></p>
+    <p class="fine"><span class="fr-only">⚠️ Ajouter la période de validité avant publication.</span><span class="en-only">⚠️ Add the validity period before publishing.</span></p>
+  </div>
+  <div class="reveal">
+      <details open>
+        <summary><span class="fr-only">Combien ça coûte ?</span><span class="en-only">What does it cost?</span><span class="pm" aria-hidden="true">+</span></summary>
+        <p><span class="fr-only">Le cabinet n'affiche pas de prix sur son site : les verres dépendent de la correction, la monture du modèle choisi, et la prise en charge de votre contrat. Écrivez la mesure de votre ordonnance sur WhatsApp, un devis suit.</span><span class="en-only">The practice publishes no prices: lenses depend on your prescription, the frame on the model, and cover on your contract. Send your prescription reading on WhatsApp and a quote follows.</span></p>
+      </details>
+      <details>
+        <summary><span class="fr-only">Faut-il un rendez-vous pour un examen de vue ?</span><span class="en-only">Do I need a booking for an eye exam?</span><span class="pm" aria-hidden="true">+</span></summary>
+        <p><span class="fr-only">Non, aux heures d'ouverture. Un message WhatsApp avant de passer évite simplement l'attente : on vous répond avec un créneau.</span><span class="en-only">No, during opening hours. A WhatsApp message before you come simply avoids the wait: we reply with a slot.</span></p>
+      </details>
+      <details>
+        <summary><span class="fr-only">Vous acceptez les bons de prise en charge ?</span><span class="en-only">Do you accept coverage vouchers?</span><span class="pm" aria-hidden="true">+</span></summary>
+        <p><span class="fr-only">Oui, avec les assureurs et mutuelles listés ci-dessus, en respectant la tarification en vigueur.</span><span class="en-only">Yes, with the insurers and mutuals listed above, applying the agreed tariff.</span></p>
+      </details>
+      <details>
+        <summary><span class="fr-only">Puis-je apporter mes lentilles achetées en ligne ?</span><span class="en-only">Can I bring contact lenses bought online?</span><span class="pm" aria-hidden="true">+</span></summary>
+        <p><span class="fr-only">Pour votre sécurité et votre confort, le cabinet ne recommande que les lentilles prescrites par votre optométriste. Un contrôle est possible sur place.</span><span class="en-only">For your safety and comfort the practice recommends only lenses prescribed by your optometrist. A check-up can be done here.</span></p>
+      </details>
+  </div>
+</div></section>
+
+<section id="contact" class="hair"><div class="wrap">
+  <h2><span class="fr-only">Une seule chose à retenir : on vous répond sur WhatsApp.</span><span class="en-only">One thing to remember: we answer on WhatsApp.</span></h2>
+  <div class="info">
+    <div class="icard reveal">
+      <h3><span class="fr-only">Horaires</span><span class="en-only">Hours</span></h3>
+      <table><tbody>
+        <tr><td><span class="fr-only">Lundi · Vendredi</span><span class="en-only">Monday · Friday</span></td><td><span class="fr-only">8h30 – 18h30</span><span class="en-only">8:30 - 18:30</span></td></tr>
+        <tr><td><span class="fr-only">Samedi</span><span class="en-only">Saturday</span></td><td><span class="fr-only">8h30 – 13h30</span><span class="en-only">8:30 - 13:30</span></td></tr>
+        <tr><td><span class="fr-only">Dimanche</span><span class="en-only">Sunday</span></td><td><span class="fr-only">fermé</span><span class="en-only">closed</span></td></tr>
+      </tbody></table>
+      <span class="flag"><span class="fr-only">⚠️ Le site actuel n'affiche que lundi-vendredi ; le flyer ajoute le samedi. À trancher avant publication.</span><span class="en-only">⚠️ The current site shows Monday to Friday only; the flyer adds Saturday. To settle before publishing.</span></span>
+    </div>
+    <div class="icard reveal">
+      <h3><span class="fr-only">Où nous trouver</span><span class="en-only">Where to find us</span></h3>
+      <p style="font-size:.94rem;margin:0"><span class="fr-only">Akwa, carrefour Ancien Dalip, à côté de l'immeuble FODEC, face COMECI SA. BP 566, Douala.</span><span class="en-only">Akwa, Ancien Dalip roundabout, next to the FODEC building, facing COMECI SA. P.O. Box 566, Douala.</span></p>
+      <p style="font-size:.88rem;margin:10px 0 0;color:var(--mute)"><span class="fr-only">Le flyer indique « à côté du Carrefour CTFIC Mballa 2, Bonapriso » : les deux adresses doivent être réconciliées avant publication.</span><span class="en-only">The flyer reads "next to Carrefour CTFIC Mballa 2, Bonapriso": both wordings must be reconciled before publishing.</span></p>
+      <a class="btn btn-ghost" style="margin-top:14px"
+         href="https://www.google.com/maps/search/?api=1&amp;query=Le+Cristallin+optique+Douala"
+         target="_blank" rel="noopener"><span class="fr-only">Ouvrir dans Google Maps</span><span class="en-only">Open in Google Maps</span></a>
+    </div>
+    <div class="icard reveal">
+      <h3><span class="fr-only">Nous joindre</span><span class="en-only">Reach us</span></h3>
+      <table><tbody>
+        <tr><td>WhatsApp <span class="fr-only">(le plus rapide)</span><span class="en-only">(fastest)</span></td><td><a href="https://wa.me/699905577">699 90 55 77</a></td></tr>
+        <tr><td><span class="fr-only">Téléphone</span><span class="en-only">Phone</span></td><td><a href="tel:+237242651265">(+237) 242 65 12 65</a></td></tr>
+        <tr><td><span class="fr-only">Téléphone</span><span class="en-only">Phone</span></td><td><a href="tel:+237679632012">679 63 20 12</a></td></tr>
+        <tr><td><span class="fr-only">E-mail</span><span class="en-only">Email</span></td><td><a href="mailto:contact@lecristallinoptique.com">contact@lecristallinoptique.com</a></td></tr>
+        <tr><td><span class="fr-only">Site actuel</span><span class="en-only">Current site</span></td><td><a href="https://lecristallinoptique.com/" rel="noopener">lecristallinoptique.com</a></td></tr>
+      </tbody></table>
+      <p class="fine"><span class="fr-only">Le flyer ajoute deux lignes non reprises ici (06 99 05 57 77 · 699 03 46 01) : à confirmer comme numéros du cabinet avant de les publier.</span><span class="en-only">The flyer lists two further numbers not shown here (06 99 05 57 77 · 699 03 46 01): to be confirmed as practice lines before publishing.</span></p>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="cols">
+      <div>
+        <h4>Le Cristallin</h4>
+        <p style="max-width:34ch"><span class="fr-only">Cabinet d'optique à Douala depuis 2010 : examen de vue, verres, montures, lentilles, laboratoire sur place.</span><span class="en-only">Optician practice in Douala since 2010: eye exams, lenses, frames, contact lenses, own lab.</span></p>
+        <span class="badge"><span class="fr-only">Concept de site par AMK — non publié</span><span class="en-only">Website concept by AMK - not published</span></span>
+      </div>
+      <div>
+        <h4><span class="fr-only">Le cabinet</span><span class="en-only">The practice</span></h4>
+        <ul>
+        <li><a href="#services"><span class="fr-only">Prestations</span><span class="en-only">Services</span></a></li>
+        <li><a href="#couverture"><span class="fr-only">Assurances et mutuelles</span><span class="en-only">Insurers and mutuals</span></a></li>
+        <li><a href="#preuves"><span class="fr-only">Certifications</span><span class="en-only">Credentials</span></a></li>
+        <li><a href="#visuels"><span class="fr-only">Photos à fournir</span><span class="en-only">Photos to supply</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span class="fr-only">Entreprises</span><span class="en-only">Employers</span></h4>
+        <ul>
+        <li><a href="#portes"><span class="fr-only">Équiper ses collaborateurs</span><span class="en-only">Equip your staff</span></a></li>
+        <li><a href="#portes"><span class="fr-only">Bons de prise en charge</span><span class="en-only">Coverage vouchers</span></a></li>
+        <li><a href="#portes"><span class="fr-only">Formation du personnel</span><span class="en-only">Staff training</span></a></li>
+        <li><a href="#contact"><span class="fr-only">Devis entreprise</span><span class="en-only">Corporate quote</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span class="fr-only">Avant de publier</span><span class="en-only">Before publishing</span></h4>
+        <ul class="fine">
+        <li><a href="#contact"><span class="fr-only">Réconcilier les deux adresses (site / flyer)</span><span class="en-only">Reconcile the two addresses (site / flyer)</span></a></li>
+        <li><a href="#contact"><span class="fr-only">Confirmer le samedi et les lignes du flyer</span><span class="en-only">Confirm Saturday and the flyer numbers</span></a></li>
+        <li><a href="#contact"><span class="fr-only">Valider la version du certificat ISO</span><span class="en-only">Confirm the ISO certificate version</span></a></li>
+        <li><a href="#contact"><span class="fr-only">Ajouter la date de fin du kit offert</span><span class="en-only">Add the end date of the free kit</span></a></li>
+        </ul>
+      </div>
+  </div>
+  <div class="strip">
+    <span><span class="fr-only">Le Cristallin · Douala, Cameroun</span><span class="en-only">Le Cristallin · Douala, Cameroon</span> · <a href="https://lecristallinoptique.com/" rel="noopener">lecristallinoptique.com</a></span>
+    <span><span class="fr-only">Page de démonstration : tarifs, horaires et photos à valider par le cabinet.</span><span class="en-only">Demonstration page: prices, hours and photos to be approved by the practice.</span></span>
+  </div>
+</div></footer>
+
+<div class="sticky-wa">
+  <a class="p" id="wa-sticky" target="_blank" rel="noopener" href="https://wa.me/699905577?text=Bonjour%20Le%20Cristallin%2C%20je%20souhaite%20r%C3%A9server%20un%20examen%20de%20la%20vue.%20Quels%20sont%20vos%20prochains%20cr%C3%A9neaux%20%3F"><span class="fr-only">Réserver un examen de vue</span><span class="en-only">Book an eye exam</span></a>
+  <a class="c" href="tel:+237242651265"><span class="fr-only">Appeler</span><span class="en-only">Call</span></a>
+</div>
+<script>
+(function(){
+  var html=document.documentElement, KEY='cristallin-lang', WA='699905577';
+  var MSG={"row": {"fr": "Bonjour Le Cristallin, je souhaite réserver : {svc}. Quels sont vos prochains créneaux ?", "en": "Hello Le Cristallin, I would like to book: {svc}. What are your next slots?"}, "ask": {"fr": "Bonjour Le Cristallin, votre site propose : {svc}. Est-ce que je peux passer cette semaine ?", "en": "Hello Le Cristallin, your site lists: {svc}. Can I come this week?"}, "ins": {"fr": "Bonjour Le Cristallin, je suis assuré(e) chez {n}. Je souhaite faire vérifier ma prise en charge pour des lunettes. Quand puis-je passer ?", "en": "Hello Le Cristallin, I am covered by {n}. I would like my lens cover checked. When can I come?"}, "generic": {"fr": "Bonjour Le Cristallin, je souhaite réserver un examen de la vue. Quels sont vos prochains créneaux ?", "en": "Hello Le Cristallin, I would like to book an eye examination. What are your next slots?"}};
+  function lang(){return html.getAttribute('data-lang')||'fr';}
+  function setLang(l){
+    html.setAttribute('data-lang',l); html.lang=l;
+    document.getElementById('btn-fr').classList.toggle('is-on',l==='fr');
+    document.getElementById('btn-en').classList.toggle('is-on',l==='en');
+    try{localStorage.setItem(KEY,l)}catch(e){}
+    paint();
+    paintHero();
+  }
+  document.getElementById('btn-fr').addEventListener('click',function(){setLang('fr')});
+  document.getElementById('btn-en').addEventListener('click',function(){setLang('en')});
+  try{var s=localStorage.getItem(KEY); if(s)setLang(s);}catch(e){}
+
+  function msg(kind,svc){
+    var l=lang(), t=MSG[kind][l];
+    return 'https://wa.me/'+WA+'?text='+encodeURIComponent(t.replace('{svc}',svc).replace('{n}',svc));
+  }
+  [].slice.call(document.querySelectorAll('.row')).forEach(function(r){
+    r.addEventListener('click',function(ev){
+      ev.preventDefault();
+      var svc=lang()==='fr'?r.dataset.svcFr:r.dataset.svcEn;
+      window.open(msg('row',svc),'_blank','noopener');
+    });
+  });
+  [].slice.call(document.querySelectorAll('.ask')).forEach(function(a){
+    a.addEventListener('click',function(ev){
+      ev.preventDefault();
+      var svc=lang()==='fr'?a.dataset.svcFr:a.dataset.svcEn;
+      window.open(msg('ask',svc),'_blank','noopener');
+    });
+  });
+
+  var links=[document.getElementById('wa-hero'), document.getElementById('wa-sticky')].filter(Boolean);
+  function paintHero(){ links.forEach(function(a){ a.href = msg('generic'); }); }
+  var ins=document.getElementById('ins'), st=document.getElementById('ins-state'),
+      go=document.getElementById('ins-go'), NAMES=["CHANAS Assurances", "Activa Assurances", "Beneficial General Insurance", "SAAR Assurances", "Ascoma Cameroun", "Zénith Insurance SA", "Samaritan Insurance Inc.", "Mutuelle des Brasseries du Cameroun", "Gras Savoye Cameroun", "Alpha Assurances", "Saham Assurances", "GMC Assurances"];
+  function paint(){
+    if(!ins||!st) return;
+    var l=lang(), i=ins.value;
+    if(!i){ st.textContent = (l==='fr'? Sélectionnez une assurance : le message WhatsApp partira déjà rempli, avec votre nom. : Pick an insurer: the WhatsApp message goes out pre-written, with your name in it.); return; }
+    var n=NAMES[+i-1];
+    st.innerHTML = '<b>'+n+'</b>' + (l==='fr'? figure sur la liste du cabinet. La prise en charge et la tarification se confirment au guichet. : appears on the practice list. Cover and tariff are confirmed at the desk.);
+    go.href = msg('ins', n);
+  }
+  if(ins) ins.addEventListener('change',paint);
+  if(go) go.addEventListener('click',function(ev){ if(!ins.value){ev.preventDefault();ins.focus();} });
+  paint();
+  paintHero();
+
+  var els=[].slice.call(document.querySelectorAll('.reveal'));
+  if(!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach(function(e){e.classList.add('in')});
+  }else{
+    var io=new IntersectionObserver(function(en){
+      en.forEach(function(x){ if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);} });
+    },{rootMargin:'0px 0px -8% 0px',threshold:.12});
+    els.forEach(function(e,i){ e.style.transitionDelay=(Math.min(i,4)*45)+'ms'; io.observe(e); });
+  }
+})();
+</script>
+</body>
+</html>

@@ -195,6 +195,33 @@ LIVE_LEDGER = {
              "3 messages sur le fil, 0 réponse. Le nom du contact dans WhatsApp est « Baird » (profil = un homme, "
              "photo visible le 21/09) : la porte A est passée. bairdmemorial.com ne répondait toujours pas au "
              "contrôle du 21/09."),
+    "le-cristallin": dict(
+        # Premier « oui » de la vague 1, et premier prospect optics à qui NOUS devons quelque chose.
+        # ⚠️ Ici le cadencement ne nous appartient plus : la balle est dans NOTRE camp (promesse de 17:57).
+        stage="presented", stage_since="2026-09-21", first_touched="2026-09-21",
+        last_reply_received="2026-09-21", follow_ups_sent="0", last_send_state="delivered",
+        # ⚠️ `preview_sent` est VIDE exprès : la maquette est construite et contrôlée, pas ENCORE
+        #   ENVOYÉE (aucune URL en ligne, King n'a rien collé). Un aperçu « presque envoyé » compté
+        #   comme envoyé gonfle le tunnel et endort la relance. Le poser au verbatim du roi.
+        **{"Follow-up date": "2026-09-23",
+           "site_url": "https://lecristallinoptique.com/", "site_checked_on": "2026-09-21",
+           "dossier": "clients/le-cristallin/"},
+        bamfam_next_action="LIVRER CE QUE NOUS AVONS PROMIS à 17:57 (« je vous transmets le lien très "
+                           "rapidement »). Maquette prête et contrôlée ; le LIEN n'existe pas encore. Texte prêt à "
+                           "copier : `sales/Send-LE-CRISTALLIN-2026-09-21-Soir.md` (feuille d'envoi du "
+                           "soir — l'aperçu n'est PAS en ligne, on envoie le fichier).",
+        bamfam_next_step="ORDRE NON NÉGOCIABLE (la feuille d'envoi le détaille) : ① le fichier "
+                         "`hosting/previews/cristallin/index.html` en pièce jointe — JAMAIS un lien non déployé "
+                         "— ② le texte de 5 lignes qui pose LES QUATRE confirmations (samedi du flyer · adresse "
+                         "exacte · les deux autres lignes du flyer · la liste des assureurs, que nous n'avons "
+                         "pas pu vérifier sur sa page d'accueil). Prix interdit tant qu'il ne le demande pas. "
+                         "Si l'option lien est préférée : déployer le dossier en projet `concept-le-cristallin-v1` "
+                         "et me donner l'URL EXACTE — ne jamais la deviner (`yaks-concept`).",
+        log_ref="L837",
+        note="Une note VOCALE de 10 s (18:01) n'est pas transcrite dans ce fichier : si elle porte une "
+             "demande (prix, délai, photos), elle doit être dite, pas devinée. Le message de 18:13 dit « avoir "
+             "déjà un site est une très bonne chose » : la posture de la conversation est donc la MODERNISATION, "
+             "pas la création. C'est écrit dans la maquette elle-même (section « Avant de publier »)."),
     "skye-douala": dict(
         # Parked à la demande explicite de King (21/09), sur preuve des captures d'écran :
         # deux messages LIVRÉS (✓✓) et JAMAIS OUVERTS. Une 3e relance sur un fil non lu ne vend rien.
@@ -822,6 +849,27 @@ CANAL_HORS_SERVICE_2109 = {
 }
 
 
+# ── M7 · LES PREMIÈRES RÉPONSES DE LA VAGUE 1 (21/09, écrans de King) ──────────────
+#   Une réponse humaine n'est pas une annotation de note : c'est un ÉVÉNEMENT de pipeline. Elle
+#   change l'étape, le compteur de relances (à zéro : on ne relance pas quelqu'un qui répond) et la
+#   fenêtre — un prospect qui a répondu dans les deux minutes se traite dans l'heure, pas jeudi.
+REPONSES_2109 = {
+    "le-cristallin": {
+        "reply": "YES lun 21/09 17:53 « Ok » — répondu en 2 MINUTES (le fil le plus rapide de la campagne)",
+        "reply_type": "human", "last_reply_received": "2026-09-21",
+        "stage": "presented", "stage_since": "2026-09-21",
+        "follow_ups_sent": "0", "last_send_state": "delivered", "demo": "Yes",
+        "wa_verified": "yes", "profile_name_seen": "Le Cristallin (nom + catégorie vus par King avant envoi)",
+        "note": "17:51 msg 1 (2 coches) · **17:53 « Ok »** · 17:57 « je prépare votre aperçu sur-mesure et je "
+                "vous transmets le lien très rapidement » · 18:01 NOTE VOCALE 10 s (non transcrite : si elle "
+                "porte une demande, la dire) · 18:02 SON FLYER en image, double flèche de TRANSFERT · 18:07 un "
+                "message de King SUPPRIMÉ · 18:13 la réponse réellement envoyée (2 coches), qui pose la refonte "
+                "et non le remplacement. ⚠️ Une promesse a été écrite à 17:57 : « le lien très rapidement ». "
+                "La maquette existe (`demos/concept-le-cristallin-v1.html`) ; le lien, non. C'est LA dette.",
+    },
+}
+
+
 def apply_vague1(out):
     by = {r.get("slug"): r for r in out}
     for slug, (heure, titulaire, variante) in ENVOYES_2109.items():
@@ -843,6 +891,19 @@ def apply_vague1(out):
                    disqualification_reason=f"Canal injoignable — {why.split('.')[0]}.",
                    stage="prospect")
         rec["Notes"] = (str(rec.get("Notes") or "") + " · ⚠️ INCIDENT DE CANAL 21/09 : " + why).strip(" ·")
+    # les réponses : appliquées APRÈS l'envoi (une réponse efface l'étiquette « livré non lu »)
+    n_rep = 0
+    for slug, patch in REPONSES_2109.items():
+        rec = by.get(slug)
+        if not rec:
+            sys.exit(f"✗ VAGUE 1 : slug inconnu « {slug} » dans REPONSES_2109.")
+        note = patch.pop("note", "")
+        rec.update(**patch)
+        if note:
+            rec["Notes"] = (str(rec.get("Notes") or "") + " · RÉPONSE 21/09 : " + note).strip(" ·")
+        n_rep += 1
+    if n_rep:
+        print(f"  M7 : VAGUE 1 — {n_rep} réponse(s) humaine(s) enregistrée(s) le 21/09.")
     return len(ENVOYES_2109), len(CANAL_HORS_SERVICE_2109)
 
 
@@ -963,7 +1024,20 @@ OPTICIENS_2109 = [
          contact_channel="WhatsApp", decision="MESSOUE LONTE Serge Nazaire", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : MESSOUE LONTE Serge Nazaire. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
+         Website="lecristallinoptique.com",
+         **{"Website status": "VIVANT et consultable le 21/09 (lu en entier) — mais sans WhatsApp ni prise de "
+                        "rendez-vous, avec des carrousels dupliqués ×3 et des horaires contredits par son "
+                        "propre flyer. C'EST UNE REFONTE, PAS UNE CRÉATION."},
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : MESSOUE LONTE Serge Nazaire. ⚠️ MA CORRECTION "
+               "DU 21/09 18:50 : la note d'annuaire disait « Aucun site trouvé », et je l'avais recopiée puis "
+               "utilisée comme argumentaire « introuvable ». FAUX — `lecristallinoptique.com` existe, est en "
+               "ligne, et le pitch « on ne vous trouve pas » n'était donc pas vrai pour LUI. La douleur réelle, "
+               "mesurée sur sa page : le site ne convertit pas (formulaire Nom/Email comme seul contact, aucun "
+               "WhatsApp alors que son propre flyer donne le 699 90 55 77 ; le carrousel de montures et la liste "
+               "des douze assureurs écrits TROIS fois dans le code ; « ACTIVA Assurances » deux fois avec deux "
+               "logos différents ; horaires lun-ven 8h30-18h30 sur le site, + samedi 8h30-13h30 sur le flyer ; "
+               "adresses différentes : Akwa face COMECI SA / Carrefour CTFIC Mballa 2 Bonapriso, BP 566 ; deux "
+               "e-mails : contact@ / lecristallinoptique@gmail.com)."),
     dict(slug="doyoan-optic", org="Doyoan Optic", city="Douala", org_type="other", language="FR",
          wa_number="653 85 27 49", wa_verified="unknown",
          contact_channel="WhatsApp", decision="MEZAFO Gildas", source="directory",
@@ -1287,6 +1361,13 @@ CONTRADICTIONS = [
      "Mon audit du 18/09 affirmait que la cellule « Lead score » de cette ligne contenait le verbatim de la réponse.",
      "la ligne est CORRECTE : Lead score = 14 (numérique), le verbatim est dans Reply. 0 anomalie sur 38 lignes.",
      "l'affirmation de l'audit — vérifiée et infirmée le 19/09. Aucun changement de donnée."),
+    ("le-cristallin",
+     "Ma note d'annuaire (21/09) affirmait « Aucun site trouvé » et j'ai écrit le message 1 dessus.",
+     "lecristallinoptique.com est EN LIGNE et a été lu en entier le 21/09 (roi : « Le cristallin a déjà un "
+     "site »). La douleur réelle : le site ne convertit pas (pas de WhatsApp, carrousels ×3, flyer qui "
+     "contredit horaires/adresse/e-mail).",
+     "l'argument « introuvable » retiré de la fiche ; le lead passe en refonte, et la maquette "
+     "dite «modernisation» porte la liste des 4 divergences à trancher par le propriétaire."),
     ("solidarity-health-foundation-solidarity-clinic-laboratory",
      "Le classeur dit « scheduled Tue » ; Pipeline-Status dit « no WhatsApp line » ; King dit : ne jamais contacter.",
      "parked, avec le motif de King écrit dans la donnée : jamais de contact, acheteur institutionnel.",
@@ -1340,6 +1421,7 @@ STRUCTURAL = [
 #    ce qui produirait une fausse fusion.
 DOSSIERS = {
     "afrique-labo-douala": "clients/afrique-labo/",
+    "le-cristallin": "clients/le-cristallin/",
     "jempo-deido": "clients/jempo/",
     "opticien-bali-douala": "clients/l-opticien/",
     "la-bethanie-bonaberi": "clients/la-bethanie/",

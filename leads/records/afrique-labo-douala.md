@@ -31,7 +31,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 20 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 21 ligne(s).*
 
 `L61` · | jeu 17/09 13:24 | AFRIQUE LABO (690 54 70 93) | msg 1 | Envoyé, 2 coches | **Non** |
 `L78` · - **Fils ouverts sans réponse au 18/09 :** OraCare · MITOC · Baptist Comprehensive · Baird Memorial · The Skye · YAKS · AFRIQUE LABO · L'Opticien · La Béthanie · JEMPO. **31 fils ouverts · 2 réponses humaines (St. Theresa, UNI-LABO) · PRR = 2/31 = 6,5 %.**
@@ -53,6 +53,7 @@
 `L844` · 1. **« AFRIQUE LABO n'est pas dans le CRM » — c'était faux.** La ligne existait sous `afrique-labo-douala` ;
 `L855` · **Trou de MA donnée, trouvé en relisant le CRM contre l'écran :** `price_quoted_fcfa` d'AFRIQUE LABO/
 `L877` · AFRIQUE LABO (la phrase de trop sur les résultats : rétablie à la réponse, ou avec la FU3 de mercredi ?).
+`L991` · Bonanjo (réécriture ce soir ≤ 21:00 ou demain 09:00 ?) · AFRIQUE LABO (la phrase « noir sur blanc » sur les
 
 ---
 

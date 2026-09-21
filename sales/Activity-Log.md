@@ -875,3 +875,148 @@ exception), la clinique restant sans canal vérifié, à reprendre par sa page F
 
 **Trois questions à King :** Médina Optic (hors WhatsApp ou choix ?) · Bonanjo (ce soir ou demain 09:00 ?) ·
 AFRIQUE LABO (la phrase de trop sur les résultats : rétablie à la réponse, ou avec la FU3 de mercredi ?).
+
+---
+
+## Lundi 21/09/2026 — 18:20 → 19:15 · « Ok » de Le Cristallin : le premier aperçu demandé, construit et branché sur le CRM
+
+**Ce bloc continue celui de 18:20** (le même soir). Tout ce qui suit est lu sur l'écran de King ou contrôlé dans le dépôt — aucune déduction.
+
+### 1 · L'ordre du roi, et la correction qu'il portait
+
+> « Le cristallin a déjà un site : https://lecristallinoptique.com/ … notre but, puisqu'il a eu la gentillesse
+> de nous répondre, est d'en créer une version moderne. » (+ flyer en image + note vocale de 10 s)
+
+**Ma faute, écrite ici noir sur blanc :** la ligne `le-cristallin` du CRM portait ma note « **Aucun site trouvé** »,
+et mon message 1 de 17:51 était construit dessus (« on ne vous trouve pas »). C'était **faux** : le site est en
+ligne, il est tenu, il a un nom de domaine. J'avais recopié une note d'annuaire sans la vérifier, et je n'ai pas
+contrôlé le domaine avant d'envoyer. Le lead a répondu en deux minutes **malgré** l'angle faux — pas grâce à lui.
+→ La douleur réelle n'est pas l'invisibilité, c'est **la conversion** : le brief est passé de « création » à
+**refonte**. La correction est gravée à trois endroits (CRM `Notes`, `Website status`, `contradiction` M2), plus
+dans `clients/le-cristallin/inspiration.md`.
+
+### 2 · La réponse, minute par minute (écran King)
+
+| Heure | Événement |
+|---|---|
+| 17:51 | message 1 (variante C) — 2 coches |
+| **17:53** | **« Ok »** — réponse humaine en **2 minutes**, la plus rapide de la campagne |
+| 17:57 | notre réponse : « je prépare votre aperçu sur-mesure et je vous transmets **le lien très rapidement** » |
+| 18:01 | **note vocale de 10 s** — non transcrite (⚠️ je ne devine pas son contenu) |
+| 18:02 | **son flyer**, en image, avec la double flèche de **transfert** |
+| 18:07 | un message de King **supprimé** avant envoi — j'enregistre le fait, je n'en conclus rien |
+| 18:13 | la réponse réellement envoyée (2 coches) : « avoir déjà un site est une très bonne chose » + les trois portes |
+
+**Conséquence de cadencement :** une réponse humaine efface l'étiquette « livré non lu » et **arrête le compteur
+de relances** (`follow_ups_sent = 0`,FU1/FU2/FU3 suspendues). Le pipeline passe `presented 1 → 2`. Un prospect qui
+vient de dire oui se traite dans l'heure, pas jeudi.
+
+### 3 · Le site lu avant de maquetter (pas l'inverse)
+
+`fetch_page` × 2, `hasMore: false` obtenu. Faits retenus — **tous venus de SES pages ou de SON flyer** :
+11 prestations nommées · 12 assureurs et mutuelles · 8 partenaires industriels · ISO 9001:2008 via SIVO ·
+autorisation MINSANTE · ONOC · « depuis 2010 » · 24 ans · laboratoire de montage · « kit d'entretien gratuit pour
+une paire achetée » · manifeste social (malvoyance, urbain et rural) · horaires **lun–ven 8h30–18h30** ·
+`(+237) 242 65 12 65 / 699 90 55 77 / 679 63 20 12` · `contact@lecristallinoptique.com` · Akwa, face COMECI SA.
+
+**Les quatre divergences site ↔ flyer, trouvées en comparant, et ÉCRITES SUR LA PAGE** (pied de page
+« Avant de publier ») : le **samedi 8h30–13h30** (flyer seul) · l'**adresse** (Akwa face COMECI / Bonapriso,
+carrefour CTFIC Mballa 2, BP 566) · **deux autres lignes de téléphone** et un **autre e-mail** (gmail) portés
+par le flyer seul · la **version du certificat** ISO.
+
+**Ce que le site fait mal, mesuré dans son HTML :** le carrousel de montures et la liste des assureurs sont
+**écrits trois fois** ; « ACTIVA Assurances » apparaît **deux fois avec deux logos différents** ; le seul chemin
+de contact est un **formulaire Nom/Email/Objet/Message** — zéro WhatsApp, alors que son propre flyer donne le
+699 90 55 77. C'est là que se trouve la valeur de la refonte, et c'est ce que la maquette démontre.
+
+### 4 · La maquette (construite, contrôlée, pas encore envoyée)
+
+- `demos/build_le_cristallin.py` + **`demos/le_cristallin_content.json`** (toute la copie FR|EN vit dans le JSON ;
+  le générateur ne contient pas une phrase — premier jet mort sur les apostrophes françaises dans un f-string,
+  la leçon est devenue architecture) → `demos/concept-le-cristallin-v1.html` · **58 KB** · **zéro image** · une
+  seule copie de la page, langue masquée en CSS + sélecteur persistant.
+- **Design Read : « PLANCHE D'ACUITÉ »** · dials **V6 / M4 / D4**. La table Snellen est l'ouverture **et** le
+  menu : 5 lignes de lettres décroissantes, chaque ligne = un acte du cabinet = un message WhatsApp pré-rempli
+  qui nomme cet acte. Sélecteur des 12 assureurs → message qui porte le nom de l'assureur du patient. Tableau à
+  filets (10 lignes) au lieu des cartes égales. Bandeau sombre pour les trois papiers.
+- **Différenciation sur 6 axes** au registre (layout · palette · typo · traitement d'image · ordre des sections ·
+  ton) : cool paper `#EFF2F1` + le vert du flyer `#0D5A41` + encre `#0B1613`, **Archivo** + Instrument Sans +
+  JetBrains Mono sur les libellés de mesure. Aucun ambre, aucune crème, aucun gradient → ne ressemble à aucun des
+  10 concepts du registre (dont `concept-opticien-v1`, déjà un opticien).
+- **Contrôles FINAUX : `tools/qa/audit_html.py` → zéro finding confirmé** (385 runs, desktop 385 / mobile 385)
+  sur le demo **et** sur `hosting/previews/cristallin/index.html` — et **diff démo ↔ aperçu = 0 ligne** (contrôlé
+  au `difflib`, parce qu'un aperçu publié n'est pas toujours le fichier qu'on a audité). Deux contrastes
+  manquants trouvés et corrigés (lien du bandeau sombre + eyebrow du bandeau de preuve, `--deep` sur noir = 2,25:1) ·
+  **170 FR / 170 EN**, compte égal vérifié **avant** écriture · 0 `href` mort · 0 em-dash dans les 170 chaînes
+  anglaises · JSON-LD `Optician` décodé · `noindex` posé (concept nommé = privé) · 3 eyebrows pour 8 sections.
+- **Deux défauts trouvés par la relecture §13, pas par le script, et devenus mécaniques :** (1) le CTA du hero
+  était un `<a>` **sans `href`** — il n'existait que par JavaScript : le lien est réel dès le HTML, le JS ne fait
+  que le re-traduire ; (2) l'URL WhatsApp portait le numéro **tel que l'écrit le flyer** (`699 90 55 77`) → le
+  navigateur tronque l'attribut au premier espace, `wa.me/699` sans message pré-rempli : la fonctionnalité entière
+  du concept était morte, avec un audit vert. Le jeton d'URL est donc les chiffres seuls (`re.sub(r"\D", "", …)`,
+  l'affichage garde les espaces) et le générateur **assertionne** les deux. Les quatre règles (href obligatoire ·
+  chiffres seuls dans une URL · plafond d'eyebrows `ceil(n/3)` · contrôles AVANT écriture) sont versées dans
+  `design/LESSONS.md` (21/09) et chacune a été **testée en la cassant** : numéro espacé, ancre sans href,
+  4 eyebrows sur 8 sections, langue déséquilibrée → les quatre mutations bloquent le build. Le script d'audit
+  n'en voyait aucune.
+- **Trois choix d'honnêteté :** aucun prix (il n'en publie pas — la FAQ l'explique et renvoie à WhatsApp) ·
+  aucune photo, trois cadres dessinés **étiquetés « à remplacer par vos photos »** (pas de photos de marques
+  Ray-Ban/Dior copiées de son site : droits de tiers, et un propriétaire qui voit une photo volée croit le
+  travail fini) · aucun avis, aucune note, aucun compteur.
+- **Dossier créé : `clients/le-cristallin/{inspiration,build-notes}.md`** + ligne au registre d'unicité +
+  `DOSSIERS` du CRM (M4 : « 9 dossiers de travail, tous référencés ✓ »).
+- `hosting/build_previews.py` → **`/cristallin/`** ajouté aux aperçus privés.
+
+### 5 · Ce qui EST DÉJÀ FAUX dans ma maquette et que je ne cache pas
+
+**La liste des 12 assureurs/mutuelles n'a pas pu être confirmée sur la page d'accueil** (le premier fragment
+fourni ne contenait que partenaires, marques et contact). Elle est donc affichée avec la mention explicite
+« **Liste reprise du site actuel du cabinet — à faire valider avant publication** ». De même, les faits venus du
+seul flyer portent des ⚠️ dans la page au lieu d'être présentés comme acquis. Le dossier `uploads/` (flyer,
+vocale) **n'existe pas dans ce bac** : je n'ai pas pu relire l'image ni entendre la note, je travaille sur ce que
+King en a dit. Rien n'est envoyé tant que cette ligne n'est pas validée par le propriétaire ou retirée.
+
+### 6 · Le compteur du soir, et ce qui est dû
+
+145 lignes · **49 contactées** · PRR **6,1 %** (3 réponses humaines) ·
+`closing 2 · presented 2 · qualified 41 · prospect 1 · parked 8 · lost 10` · **0 client · 0 FCFA · 9 jours.**
+
+**Dette ouverte, la seule qui compte ce soir :** à 17:57 j'ai écrit « je vous transmets le lien très rapidement ».
+La maquette existe ; **le lien n'existe pas** — `amk-cm.vercel.app/cristallin/` répondra 404 tant que King n'aura
+pas déployé `hosting/previews/` sur son projet Vercel, et **je ne devine jamais une URL de preview** (c'est
+`yaks-concept` qui a brûlé comme ça). Alternative immédiate sans Vercel : envoyer le fichier lui-même (58 KB,
+s'ouvre dans le navigateur d'un téléphone). Capture 1280×800 impossible ici : `playwright` absent du bac.
+
+**Toujours en attente de King (depuis 18:20, non répondu) :** Médina Optic (hors WhatsApp ou choix ?) ·
+Bonanjo (réécriture ce soir ≤ 21:00 ou demain 09:00 ?) · AFRIQUE LABO (la phrase « noir sur blanc » sur les
+résultats : rétablie à la réponse, ou avec la FU3 de jeudi 24 ?).
+
+
+### 7 · Après relecture de ma propre relecture (19:25) — trois défauts trouvés dans mes propres contrôles
+
+Parce que le danger, ici, n'était plus la maquette mais **mes affirmations sur la maquette** :
+
+1. **`rebuild.sh` pouvait annoncer un succès sur un build mort.** Je lançais `bash leads/build/rebuild.sh 2>&1 |
+   grep -E "..."` : le code de retour lu était celui de `grep`, jamais celui du builder. Un `crm.py` sorti en
+   `✗ clé(s) inconnue(s)` (son propre garde-fou — excellent) laissait donc sur le disque le CSV **de la fois
+   d'avant**, et j'ai lu trois fois de suite des champs périmés en accusant mes écritures d'être « perdues ».
+   Le script capture maintenant le code de retour de chaque étape, imprime `✗ ÉCHEC — <étape>` + le `mtime` du
+   CSV quand rien n'a été écrit, et sort en `1`. **Contre-épreuve faite en cassant le schéma** (clé inconnue
+   posée sur la ligne `le-cristallin`) : rc = 1, message lu, CSV intact ; après revert, rc = 0.
+2. **Ma ligne §13 « CTA mobile = même texte que le hero : ✓ » était fausse.** Le hero dit « Réserver un examen de
+   vue », le rail disait « Réserver sur WhatsApp ». Le libellé est maintenant **dérivé du même champ JSON** (une
+   seule source) et l'égalité hero ↔ rail est **une assertion du générateur** — testée en la cassant. Règle tenue :
+   *dans une check-list, un point sans machine derrière est une opinion.*
+3. **Le CTA du hero n'avait pas de `href`** (il n'existait que par JavaScript) et l'URL WhatsApp portait le numéro
+   **avec ses espaces**, ce qui tronque l'attribut et tue le message pré-rempli : audit vert sur un concept
+   WhatsApp-first qui n'ouvrait rien. Les deux sont devenus des assertions. Les cinq mutations testées ce soir
+   (numéro espacé · ancre sans `href` · 4 eyebrows sur 8 sections · langue déséquilibrée · libellé divergent)
+   **bloquent toutes le build**. Chiffres finaux : 385 runs audités · **0 finding** · 170 FR / 170 EN · 3 eyebrows
+   pour 8 sections · démo ↔ aperçu `diff = 0 ligne`.
+
+**Ce qui est vérifié, et par qui :** l'aperçu tourne en HTTP 200 dans le bac (serveur statique sur
+`hosting/previews/`, `/cristallin/` = 59 888 octets) — visible par King dans son navigateur de préview, **jamais
+indexé** (`noindex`). La Vercel URL client, elle, n'existe pas encore. ⚠️
+**Ce que je n'ai pas pu faire ici :** la note vocale de 10 s (18:01) — aucun dossier `uploads/` dans ce bac, donc
+ni l'image du flyer ni la vocale ne sont dans ma portée ; je travaille sur ce que King en a dit. Si la vocale porte
+une demande, elle doit être **dite**, pas devinée, et gravée dans `crm.py`.
