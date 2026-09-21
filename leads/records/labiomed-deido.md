@@ -31,7 +31,7 @@ Envoyé le 19/09 à 19:32 — lu (2 coches). ***PREMIER OUI DE LA CAMPAGNE.*** 1
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 14 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 16 ligne(s).*
 
 `L366` · ## sam 19/09 19:21–20:02 — ⭐ PREMIER « OUI » DE LA CAMPAGNE : LABIOMED
 `L371` · - **23:59 → LABIOMED a répondu « Oui » à 19:43 — 11 minutes après notre message.**
@@ -47,6 +47,8 @@ Envoyé le 19/09 à 19:32 — lu (2 coches). ***PREMIER OUI DE LA CAMPAGNE.*** 1
 `L538` · en retard d'un jour**), puis les labos du 18/09. **Labiomed M+2 = aujourd'hui** (il a dit « je vous
 `L572` · **exactement le bug qui a cassé la FAQ anglaise de Labiomed et Bonanjo le 19/09**, et que j'ai documenté
 `L713` · laissé VIDE sur des lignes où `Reply` dit oui : **Bonanjo** et **Labiomed** étaient hors calcul et le
+`L784` · (UNI-LABO 2026-09-25 et Labiomed 2026-09-21 y sont entrées en même temps).
+`L788` · 1. **Les seules affaires à `closing` disparaissaient de la file du jour.** Labiomed et UNI-LABO —
 
 ---
 

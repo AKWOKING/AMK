@@ -24,9 +24,8 @@ Le playbook §A4 disait « les 2 leads à 18 (COMOBIL, OraCare) ». **C'était f
 
 ## 🎯 Score >= 18 et jouable
 
-| Lead | Score | Ville | WhatsApp |
-|---|---|---|---|
-| **OraCare Dental Clinic (Oracare237)** | 18 | Buea (Molyo) | 672 52 66 86 |
+**Aucun.** Le seul lead à 18 est COMOBIL, parké depuis le 14/09. **C'est la vérité, pas un manque de prospection.**
+
 ## Ce qui alimente la liste quand elle est vide
 
 1. **Une réponse** — priorité absolue.

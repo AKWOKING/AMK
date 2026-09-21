@@ -10,7 +10,7 @@
 | Type | clinic |
 | Ville | Douala (Bonapriso, ancien aéroport) |
 | Langue de contact | FR |
-| Étape | qualified |
+| Étape | presented |
 | WhatsApp | 694 57 22 77 |
 | Numéro vérifié | yes |
 | Profil vu | Centre Médical de Bonanjo — Bonapriso |
@@ -25,7 +25,7 @@
 
 ## Notes
 
-| M7 (21/09) : L249 · « Bjr merci je vous reviens » (19/09 08:44). Réponse = `qualified`, PAS `closing` : aucun prix accepté, et la démo annoncée dans `sales/Reply-Bonanjo-2026-09-19.md` (demos/concept-bonanjo-v1.html) N'EXISTE PAS dans demos/ — référence morte, à réparer.
+| M7 (21/09) : L249 · « Bjr merci je vous reviens » (sam 19/09 08:44) = **un report, pas un accord**. Le 19/09 13:35, King a envoyé la page entière (bonanjo.vercel.app, en ligne et vérifiée le 21/09) AVEC le prix 100 000 FCFA · 50 000/50 000 — d'où `proposal_sent` et `price_quoted_fcfa` qui manquaient dans cette table (trou de MA donnée, pas d'un oubli d'envoi). Étape = `presented` (page + prix vus), JAMAIS `closing` : aucune acceptation. ⚠️ La « démo » citée par `sales/Reply-Bonanjo-2026-09-19.md` (demos/concept-bonanjo-v1.html) n'existe pas dans `demos/` — la preuve vivante est le lien Vercel, pas un fichier du dépôt.
 
 ## Prochaine action
 
@@ -33,7 +33,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 21 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 26 ligne(s).*
 
 `L43` · | **ven 18/09 19:42** | **Centre Médical de Bonanjo** (Bonapriso, 694 57 22 77) | msg 1 — sans maquette | Envoyé | **Non** |
 `L112` · | 19:42 | Centre Médical de Bonanjo · Kamaïs Optic |
@@ -56,6 +56,11 @@
 `L492` · - **Ce n'est pas un « je vous reviens ».** Bonanjo et Labiomed ont dit exactement ça, sans date. **UNI-LABO propose un jour.**
 `L572` · **exactement le bug qui a cassé la FAQ anglaise de Labiomed et Bonanjo le 19/09**, et que j'ai documenté
 `L713` · laissé VIDE sur des lignes où `Reply` dit oui : **Bonanjo** et **Labiomed** étaient hors calcul et le
+`L762` · | ④ | **Le site `amk-cm.vercel.app` :** contrôle demandé sur les pages concernées. | `audit_html.py` sur les 3 pages récupérées du dépôt = **0 finding**. Les liens de concepts cités dans les textes d'envoi ont été **vérifiés en ligne, un par un** : `bonanjo` · `concept-skye` · `concept-yaks-v1` · `mitoc-concept` · `uni-labo` · `concept-afriquelabo-v1` = vivants ; **`amk-cm.vercel.app/yaks/` renvoie 404** → aucune phrase d'envoi ne doit pointer sur ce chemin (les maquettes nommées ne sont pas listées, règle du 17/09). |
+`L801` · `sales/Send-Pack-2026-09-21-LOT1.md` (247 lignes) — 10 destinataires dans l'ordre d'envoi : Bonanjo
+`L856` · Baird OK, mais **celui de Bonanjo (100 000 FCFA annoncé sam 19/09 13:35) n'avait jamais été enregistré** —
+`L861` · **La correction de texte que King a demandée :** mon brouillon de 17:00 pour Bonanjo supposait un accord
+`L876` · **Trois questions à King :** Médina Optic (hors WhatsApp ou choix ?) · Bonanjo (ce soir ou demain 09:00 ?) ·
 
 ---
 

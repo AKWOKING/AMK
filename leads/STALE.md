@@ -8,7 +8,7 @@
 | Lead | Étape | Âge | Relances | Trace |
 |---|---|---|---|---|
 | Discovery Labs | qualified | 3 j | 0/3 | `L110` |
-| YONDJA ANALYSE | qualified | 3 j | 0/3 | `L541` |
+| YONDJA ANALYSE | qualified | 3 j | 0/3 | `L761` |
 | Laboratoire du Château | qualified | 3 j | 0/3 | `L110` |
 | Département Biologique | qualified | 3 j | 0/3 | `L110` |
 | Cabinet Médical ISIS | qualified | 3 j | 0/3 | `L35` |
@@ -18,7 +18,7 @@
 | Cabinet du Dr Brulet Epaka | qualified | 3 j | 0/3 | `L111` |
 | Centre Médical Kouam Samuel | qualified | 3 j | 0/3 | `L111` |
 | DAS Group International | qualified | 3 j | 0/3 | `L41` |
-| Kamaïs Optic | qualified | 3 j | 0/3 | `L707` |
+| Kamaïs Optic | qualified | 3 j | 0/3 | `L761` |
 | Cabinet Dentaire Emmanuel | qualified | 3 j | 0/3 | `L113` |
 | Clinique de L'université | qualified | 3 j | 0/3 | `L113` |
 | MEDI LABO | qualified | 3 j | 0/3 | `L55` |
@@ -30,7 +30,7 @@
 | Diagmed | qualified | 2 j | 0/3 | — |
 | Labtag | qualified | 2 j | 0/3 | — |
 | Laboratoire Sainte Anne | qualified | 2 j | 0/3 | — |
-| Ctre d'Analyses Médicales Pasteur Medlas | qualified | 2 j | 0/3 | — |
+| Ctre d'Analyses Médicales Pasteur Medlas | qualified | 2 j | 0/3 | `L761` |
 | 2K Labo | qualified | 2 j | 0/3 | — |
 | Pathcare Diagnostics | qualified | 2 j | 0/3 | — |
 | CIDM St Joseph | qualified | 2 j | 0/3 | — |

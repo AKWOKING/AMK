@@ -20,7 +20,7 @@
 
 ## Notes
 
-Clinic lead #2. Pitch hooks: invisible on Google (FB-only), eye-test booking on WA, frames + FCFA lens prices bilingual, student catchment Molyko. Smaller scope than Solidarity - quote by scope, never discount. Follow-ups M+2/M+4/M+7. [15 Sep: named concept ready /mitoc.html, cobalt+cream, 140 EN/FR pairs, demo WA routing AMK; send only after warm yes + 678 90 89 62 WA-profile check] [15 Sep 11:39 KING-VERIFIED business profile; email ateasomcollins@gmail.com (unused); site updated w/ hours + computer/swimming/accessories, 144 EN/FR pairs] · org_type = other (M7, 21/09) — base : opticien (FB page + catalogue de montures) | M7 (21/09) : L13
+PREUVE D'ENVOI lue dans la colonne `Contacted` du classeur : « 15 Sep ~11:45 WA msg 1 (catalogue-ack variant); awaiting reply » (relu le 21/09 — la colonne est un booléen, le fait est descendu ici) · Clinic lead #2. Pitch hooks: invisible on Google (FB-only), eye-test booking on WA, frames + FCFA lens prices bilingual, student catchment Molyko. Smaller scope than Solidarity - quote by scope, never discount. Follow-ups M+2/M+4/M+7. [15 Sep: named concept ready /mitoc.html, cobalt+cream, 140 EN/FR pairs, demo WA routing AMK; send only after warm yes + 678 90 89 62 WA-profile check] [15 Sep 11:39 KING-VERIFIED business profile; email ateasomcollins@gmail.com (unused); site updated w/ hours + computer/swimming/accessories, 144 EN/FR pairs] · org_type = other (M7, 21/09) — base : opticien (FB page + catalogue de montures) | M7 (21/09) : L13
 
 ## Prochaine action
 

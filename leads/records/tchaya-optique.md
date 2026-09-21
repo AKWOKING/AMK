@@ -33,9 +33,10 @@ ENVOYÉ lun 21/09 17:47 (message 1, variante C) · une coche = livré non lu · 
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 1 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 2 ligne(s).*
 
 `L806` · **chacun ouvert par le fait du titulaire public** (1974 pour Tchaya · Bonamoussadi/ACACIAS pour Bely ·
+`L837` · - `Le Cristallin` 17:51 · `Univers Optique` 17:50 · `Disc Optique Médicale` 17:48 · `Tchaya Optique` 17:47 :
 
 ---
 

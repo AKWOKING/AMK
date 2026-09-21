@@ -18,7 +18,7 @@
 
 ## Notes
 
-Walk-In-Batch-2026-09-15. Confessional: principal first, ask 'who else decides?', offer forwardable version. Contingent WA msg in walk-in doc. | DEEP DIVE 14 Sep: 679 65 07 07 confirmed on WA (King) — attribution = number published on the college FB page intro (official school line, role unknown; likely admin/proprietor; verify profile photo/name tonight). Baptist confessional -> principal then Baptist education office; ask who else decides. bgccbuea@yahoo.com. [BOARD-BUYER 15 Sep King: Baptist Comp.; msg 1 SENT 15 Sep (one tick) -> inbound only, NO FU chase, NO cold walk-in; route via Baptist education office if reply asks for HQ] · org_type=school prouvé par « college » (M7, 21/09)
+PREUVE D'ENVOI lue dans la colonne `Contacted` du classeur : « 15 Sep ~12:00 WA msg 1 (preview-ready variant); one tick as of send, awaiting » (relu le 21/09 — la colonne est un booléen, le fait est descendu ici) · Walk-In-Batch-2026-09-15. Confessional: principal first, ask 'who else decides?', offer forwardable version. Contingent WA msg in walk-in doc. | DEEP DIVE 14 Sep: 679 65 07 07 confirmed on WA (King) — attribution = number published on the college FB page intro (official school line, role unknown; likely admin/proprietor; verify profile photo/name tonight). Baptist confessional -> principal then Baptist education office; ask who else decides. bgccbuea@yahoo.com. [BOARD-BUYER 15 Sep King: Baptist Comp.; msg 1 SENT 15 Sep (one tick) -> inbound only, NO FU chase, NO cold walk-in; route via Baptist education office if reply asks for HQ] · org_type=school prouvé par « college » (M7, 21/09)
 
 ## Prochaine action
 
