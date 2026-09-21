@@ -10,7 +10,7 @@
 | Type | clinic |
 | Ville | Douala (Bonabéri) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | qualified |
 | WhatsApp | 677 76 07 82 |
 | Numéro vérifié | unknown |
 | Canal | WhatsApp |

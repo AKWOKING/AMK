@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | qualified |
 | WhatsApp | 696 88 88 23 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |

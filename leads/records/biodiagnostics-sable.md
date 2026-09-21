@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Sable, Rue Deido-Bonanjo) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | qualified |
 | WhatsApp | 699 92 91 98 |
 | Numéro vérifié | unknown |
 | Contact | Dr Tankoua Jean Alain — biologiste (nom public) |

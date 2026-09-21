@@ -10,19 +10,20 @@
 | Type | school |
 | Ville | Buea (Bonduma) |
 | Langue de contact | EN |
-| Étape | qualifying |
+| Étape | qualified |
 | WhatsApp | 677875395 |
 | Contact | Principal/proprietor (capture); P.O. Box 403 Buea |
 | Canal | GO (King 'proceed' 15 Sep PM): attach demos/shots/mockup-secondary-wa.jpg FIRST, then recipient-neutral msg (replan §4) to WA 677 87 53 95; pre-tap open bairdmemorial.com once, swap para 3 if it loads; Wed sealed card in Limbe sweep if silent; invited visit only |
-| Contacté | YES 15 Sep 14:41 WA (mockup image + msg 1; one tick) |
+| Contacté | Yes |
+| Relances envoyées | 2 |
 
 ## Notes
 
-Walk-In-Batch-2026-09-15 stop 6 light. Boarding 'inclusive' high school behind public tap Bonduma; bairdmemorial@yahoo.com; GCE 11489 (small); active CSDC inter-school events 2025. | DEEP DIVE 14 Sep: ALREADY HAS self-built website bairdmemorial.com (visible typos 'bording/Accademic', did not open externally). Phone-check tonight: DEAD = full D pitch ('I tried opening it before coming'); WORKS = card + soft refresh/upsell line, never criticise at gate. | INVITATION-FIRST 14 Sep: WA-check 677 87 53 95 + 677 78 04 05 profile attribution tonight; message only if site dead AND number on WA (text in replan section 4); otherwise Wed card drop same road as NABESK. [OWNER-BUYER confirmed type: lay private 15 Sep; remains in active plan] | 15 Sep PM GO: 95 line is a PERSONAL WA account (man's profile photo, no business profile); their OWN old dead site names PROPRIETRESS Madam Mary Forju (also Mr Ndichafah Fredrick, extra nums 652 24 80 21/677 16 98 66/673 40 40 69, gmail/outlook/yahoo boxes - record only, never open). Holder of 95 unknown (principal/bursar/family possible) -> msg asks 'proprietor or the principal?', never names her, never references the photo. Never mock old copy; ask who built it/last touched on warm reply. | SENT 14:41 by King, single tick (delivered-pending). Next: 1h watch to 21:00; warm reply -> live /sample-secondary.html + caption + Thu/Fri choice; silence -> Wed sealed gate card in Limbe sweep; FUs M+2/M+4/M+7 OWNER-BUYER only after Wed card.
+PREUVE D'ENVOI lue dans la colonne `Contacted` du classeur : « 15 Sep 14:41 WA (mockup image + msg 1; one tick) » (relu le 21/09 — la colonne est un booléen, le fait est descendu ici) · Walk-In-Batch-2026-09-15 stop 6 light. Boarding 'inclusive' high school behind public tap Bonduma; bairdmemorial@yahoo.com; GCE 11489 (small); active CSDC inter-school events 2025. | DEEP DIVE 14 Sep: ALREADY HAS self-built website bairdmemorial.com (visible typos 'bording/Accademic', did not open externally). Phone-check tonight: DEAD = full D pitch ('I tried opening it before coming'); WORKS = card + soft refresh/upsell line, never criticise at gate. | INVITATION-FIRST 14 Sep: WA-check 677 87 53 95 + 677 78 04 05 profile attribution tonight; message only if site dead AND number on WA (text in replan section 4); otherwise Wed card drop same road as NABESK. [OWNER-BUYER confirmed type: lay private 15 Sep; remains in active plan] | 15 Sep PM GO: 95 line is a PERSONAL WA account (man's profile photo, no business profile); their OWN old dead site names PROPRIETRESS Madam Mary Forju (also Mr Ndichafah Fredrick, extra nums 652 24 80 21/677 16 98 66/673 40 40 69, gmail/outlook/yahoo boxes - record only, never open). Holder of 95 unknown (principal/bursar/family possible) -> msg asks 'proprietor or the principal?', never names her, never references the photo. Never mock old copy; ask who built it/last touched on warm reply. | SENT 14:41 by King, single tick (delivered-pending). Next: 1h watch to 21:00; warm reply -> live /sample-secondary.html + caption + Thu/Fri choice; silence -> Wed sealed gate card in Limbe sweep; FUs M+2/M+4/M+7 OWNER-BUYER only after Wed card. · org_type = school (M7, 21/09) — base : « College » Bonduma — école, confirmé | M7 (21/09) : L14 · Site auto-construit bairdmemorial.com, DNS mort au contrôle = or (filtre « ça fait le travail »). ÉCRAN KING 21/09 — le compte était faux d'un envoi : msg 1 mar 15/09 14:41 (maquette Crestwood) · **FU1 jeu 17/09 13:48 « Quick follow-up » — jamais enregistrée** · FU2 lun 21/09 17:30 (lot du soir). 3 messages sur le fil, 0 réponse. Le nom du contact dans WhatsApp est « Baird » (profil = un homme, photo visible le 21/09) : la porte A est passée. bairdmemorial.com ne répondait toujours pas au contrôle du 21/09.
 
 ## Prochaine action
 
-**0 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**2 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
 
 ## Historique — lignes du journal qui citent ce lead
 

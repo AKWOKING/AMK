@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Bonabéri, Rue 4.352 — Route du Lycée) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | qualified |
 | WhatsApp | 698 97 22 03 |
 | Numéro vérifié | unknown |
 | Canal | WhatsApp |

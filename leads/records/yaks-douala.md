@@ -10,7 +10,7 @@
 | Type | clinic |
 | Ville | Douala (Logbessou) |
 | Langue de contact | FR/EN |
-| Étape | qualifying |
+| Étape | parked |
 | WhatsApp | 672 70 20 78 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |
@@ -23,11 +23,11 @@
 
 ## Notes
 
-Message 16/09. Relance M+2 (FU1) partie 18/09 20:22. Concept live : concept-yaks-v1.vercel.app
+| M7 (21/09) : L15 · Faits des captures King (21/09) : message 1 mer 16/09 16:43 ✓✓ · ven 18/09 la maquette porte la double flèche de TRANSFERT (lue puis envoyée à un tiers), texte ✓✓ non lu. Lien exact du concept : concept-yaks-v1.vercel.app (vérifié en ligne le 21/09). ⚠️ `yaks-concept.vercel.app` renvoie 404 — ne JAMAIS écrire cette variante dans un message.
 
 ## Prochaine action
 
-**1 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**Aucune.** Parqué. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 

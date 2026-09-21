@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Bali, 189 Rue des Manguiers) |
 | Langue de contact | FR |
-| Étape | disqualified |
+| Étape | lost |
 | WhatsApp | 696 78 77 78 |
 | Numéro vérifié | no |
 | Contacté | No |

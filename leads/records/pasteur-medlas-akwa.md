@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Akwa, Bld de la République) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | qualified |
 | WhatsApp | 677 45 99 97 |
 | Numéro vérifié | unknown |
 | Canal | WhatsApp |

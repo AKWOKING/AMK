@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Elf, Axe-Lourd) |
 | Langue de contact | FR |
-| Étape | disqualified |
+| Étape | lost |
 | WhatsApp | 699 95 67 32 |
 | Numéro vérifié | no |
 | Contacté | No |

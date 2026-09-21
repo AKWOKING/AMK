@@ -1,4 +1,4 @@
-# Laboratoire Sainte Anne
+# Disc Optique Médicale
 
 > ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-21. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
@@ -6,23 +6,26 @@
 
 | Champ | Valeur |
 |---|---|
-| Slug | sainte-anne-newbell |
-| Type | lab |
-| Ville | Douala (New-Bell, 152 Av de l'Indépendance) |
+| Slug | disc-optique-medicale |
+| Type | other |
+| Ville | Douala |
 | Langue de contact | FR |
 | Étape | qualified |
-| WhatsApp | 675 39 76 65 |
-| Numéro vérifié | unknown |
-| Contact | Dr Nkanjo Francis — biologiste (nom public) |
+| WhatsApp | 677 53 35 68 |
+| Numéro vérifié | yes |
+| Profil vu | NANKAP TCHIPTCHOUA Jean Calvin |
+| Contact | NANKAP TCHIPTCHOUA Jean Calvin |
 | Canal | WhatsApp |
 | Contacté | Yes |
+| Réponse | No |
+| Maquette / site | No |
 | Relances envoyées | 0 |
 | Source | directory |
-| Détail source | pagespratiquescm / doualazoom |
+| Détail source | Annuaire officiel ONOC + Maligah |
 
 ## Notes
 
-Envoyé le 19/09 à 19:24 — lu (2 coches).
+ENVOYÉ lun 21/09 17:48 (message 1, variante A) · une coche = livré non lu · profil WhatsApp ouvert par King avant l'envoi (porte A passée par les faits, titulaire NANKAP TCHIPTCHOUA Jean Calvin)
 
 ## Prochaine action
 

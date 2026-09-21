@@ -10,7 +10,7 @@
 | Type | clinic |
 | Ville | Douala (Bonamoussadi) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | qualified |
 | WhatsApp | 694 42 62 39 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |

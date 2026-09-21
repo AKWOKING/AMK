@@ -10,7 +10,7 @@
 | Type | clinic |
 | Ville | Douala (Bonapriso) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | qualified |
 | WhatsApp | 694 77 74 54 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |

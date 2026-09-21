@@ -10,7 +10,7 @@
 | Type | clinic |
 | Ville | Douala (Bali) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | qualified |
 | WhatsApp | 677 39 35 31 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |
