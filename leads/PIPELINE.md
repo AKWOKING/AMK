@@ -30,7 +30,7 @@
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| Labiomed | Douala (Deido, 104 Route Deido-Bassa) | 699 98 54 66 | `L572` |
+| Labiomed | Douala (Deido, 104 Route Deido-Bassa) | 699 98 54 66 | `L713` |
 | UNI-LABO | Douala (Bonamoussadi, Carrefour Etoo) | 696 13 98 19 | `L134` |
 
 ## ② Qualifié — en conversation — 42
@@ -42,7 +42,7 @@
 | Baird Memorial College | Buea (Bonduma) | 677875395 | `L16` |
 | Baptist Comprehensive College | Buea (Great Soppo) | 679650707 | `L15` |
 | CIDM St Joseph | Douala | 674 30 07 98 | — |
-| Cabinet Biomédical Adonaï | Douala | 696 53 87 75 | `L377` |
+| Cabinet Biomédical Adonaï | Douala | 696 53 87 75 | `L712` |
 | Cabinet Dentaire Emmanuel | Douala (Bonamoussadi) | 694 42 62 39 | `L113` |
 | Cabinet Dentaire The Skye | Douala (Bonamoussadi) | 677 79 69 99 | `L53` |
 | Cabinet Dentaire YAKS | Douala (Logbessou) | 672 70 20 78 | `L54` |
@@ -52,7 +52,7 @@
 | Cabinet Médical i'DoC | Douala (Bonapriso) | 699 68 05 88 | `L37` |
 | Cabinet du Dr Brulet Epaka | Douala (Bonapriso) | 694 77 74 54 | `L111` |
 | Centre Médical Kouam Samuel | Douala (Bali) | 677 39 35 31 | `L111` |
-| Centre Médical de Bonanjo | Douala (Bonapriso, ancien aéroport) | 694 57 22 77 | `L572` |
+| Centre Médical de Bonanjo | Douala (Bonapriso, ancien aéroport) | 694 57 22 77 | `L713` |
 | Centre Médical des Capucines | Douala (Bonapriso) | 699 72 36 93 | `L111` |
 | Clinique La Béthanie | Douala (Bonabéri) | 677 76 07 82 | `L78` |
 | Clinique de L'université | Douala (Bassa) | 694 36 02 03 | `L113` |
@@ -64,7 +64,7 @@
 | Flemming Dream Labo | Douala (Bessenguè, feu rouge, Bld de la République) | 699 81 34 04 | — |
 | Interlabo | Douala (Akwa, 780 Rue E. Betote — R. Pau) | 677 75 54 21 | `L469` |
 | J&E Memorial Polyclinic (JEMPO) | Douala (Deido/Bessengue) | 696 71 06 99 | `L24` |
-| Kamaïs Optic | Douala (Bessengue) | 678 435 460 | `L112` |
+| Kamaïs Optic | Douala (Bessengue) | 678 435 460 | `L707` |
 | L'Opticien Bali SARL | Douala (Bali) | 670 27 60 65 | `L22` |
 | Labo La Passerelle | Douala (Deido, 820 Bld de la Réunification) | 694 71 91 22 | `L469` |
 | Laboratoire Biodiagnostics | Douala (Sable, Rue Deido-Bonanjo) | 699 92 91 98 | — |
@@ -75,7 +75,7 @@
 | MEDI LABO | Douala (Akwa, 1927 Bld de la République) | 677 81 70 25 | `L55` |
 | Malia Labo | Douala | 694 56 22 44 | `L27` |
 | Midas Touch Optic Center (MITOC) | Buea (Molyko, opp former police station, Malingo) | 678908962 | `L14` |
-| OraCare Dental Clinic (Oracare237) | Buea (Molyo) | 672 52 66 86 | `L537` |
+| OraCare Dental Clinic (Oracare237) | Buea (Molyo) | 672 52 66 86 | `L701` |
 | Pathcare Diagnostics | Douala (Deido) | 680 00 88 45 | — |
 | Polyclinique de la Gare LE NID | Douala (Bessengue) | 699 987 775 | `L34` |
 | YONDJA ANALYSE | Douala | 696 88 88 23 | `L541` |
@@ -160,9 +160,9 @@
 | Presbyterian Comprehensive Secondary School Bonamoussadi (PCSS) | Douala (Bonamoussadi) | — | `L57` |
 | Presbyterian Girls Secondary School (PGSS) Limbe | Limbe | — | — |
 | Rainforest International School (RFIS) | Yaoundé (SIL, BP 1299) | 677937162 | — |
-| Saint Anne's High School Limbe (SAHISCOL) | Limbe (New Town) | 682122959 | — |
+| Saint Anne's High School Limbe (SAHISCOL) | Limbe (New Town) | 682122959 | `L694` |
 | Saint Bernard High School (SBHS) | Buea (Molyko) | — | — |
-| Salvation Bilingual High School (Molyko-Buea) | Buea (Molyko) | — | — |
+| Salvation Bilingual High School (Molyko-Buea) | Buea (Molyko) | — | `L703` |
 | St. Joseph's College Sasse (SJC Sasse) | Buea (Sasse/Small Soppo) | 677195500 | — |
 | St. Sylvester International College | Buea (Muea) | — | — |
 | Summerset Bilingual College (SMBICOL) | Buea (Wokoko) | — | — |
@@ -175,11 +175,11 @@
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| COMOBIL – Collège Moderne Bilingue Les Lauréats | Douala (Bonamoussadi) | — | `L234` |
+| COMOBIL – Collège Moderne Bilingue Les Lauréats | Douala (Bonamoussadi) | — | `L745` |
 | One Stop Medical Laboratory & Diagnostics | Buea (location TBD; co-owner based Buea) | 691632941 | — |
 | Presbyterian Comprehensive Secondary School (PCSS) Buea | Buea (Madam Namondo Alexander) | 652075229 | — |
-| Solidarity Health Foundation (Solidarity Clinic & Laboratory) | Buea (Untarred Malingo St / Molyko Checkpoint D61, P.O. Box 467; plus code 575J+7M) | 677615757 | — |
-| St. Theresa International Bilingual Comprehensive College (STIBCCOL) | Buea (Molyko) | 679151075 | `L260` |
+| Solidarity Health Foundation (Solidarity Clinic & Laboratory) | Buea (Untarred Malingo St / Molyko Checkpoint D61, P.O. Box 467; plus code 575J+7M) | 677615757 | `L745` |
+| St. Theresa International Bilingual Comprehensive College (STIBCCOL) | Buea (Molyko) | 679151075 | `L745` |
 
 ## ⛔ Perdu / écarté — 10
 

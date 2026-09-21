@@ -18,7 +18,7 @@
 | Cabinet du Dr Brulet Epaka | qualified | 3 j | 0/3 | `L111` |
 | Centre Médical Kouam Samuel | qualified | 3 j | 0/3 | `L111` |
 | DAS Group International | qualified | 3 j | 0/3 | `L41` |
-| Kamaïs Optic | qualified | 3 j | 0/3 | `L112` |
+| Kamaïs Optic | qualified | 3 j | 0/3 | `L707` |
 | Cabinet Dentaire Emmanuel | qualified | 3 j | 0/3 | `L113` |
 | Clinique de L'université | qualified | 3 j | 0/3 | `L113` |
 | MEDI LABO | qualified | 3 j | 0/3 | `L55` |
@@ -38,5 +38,5 @@
 | J&E Memorial Polyclinic (JEMPO) | qualified | 4 j | 0/3 | `L24` |
 | Cabinet Médical CAMERA | qualified | 3 j | 0/3 | `L110` |
 | Polyclinique de la Gare LE NID | qualified | 3 j | 0/3 | `L34` |
-| Cabinet Biomédical Adonaï | qualified | 3 j | 0/3 | `L377` |
+| Cabinet Biomédical Adonaï | qualified | 3 j | 0/3 | `L712` |
 | Malia Labo | qualified | 3 j | 0/3 | `L27` |

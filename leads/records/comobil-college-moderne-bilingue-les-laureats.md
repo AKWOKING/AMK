@@ -33,9 +33,14 @@ Founded 1999 by decree; complex general/technical/anglo-saxon; COMOBIL.com is PA
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 1 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 6 ligne(s).*
 
 `L234` · **Trois de mon propre audit étaient fausses** : COMOBIL n'était pas « tête de kill list » (DAILY OPS dit PARKED),
+`L690` · **① COMOBIL : « parké » dans trois fichiers, `prospect` dans la donnée.** `Pipeline-Status.md` dit
+`L692` · COMOBIL, parké » — et le générateur ne l'écrivait nulle part. Résultat : la kill list déduite le
+`L694` · (COMOBIL, SAHISCOL — avec gâchette de réveil — et ICHS Great Soppo, qui garde son motif de procès).
+`L701` · désormais OraCare (COMOBIL sort, parké) — exactement ce que dit le §A4 amendé.
+`L745` · 4. **Les 5 questions de l'audit du 18/09 §10 sont toujours sans réponse** (COMOBIL · health manuel de St. Theresa · les 12 labos de la réserve · la Page Facebook · le parrainage St. Theresa). Les deux premières ont été tranchées par la migration d'aujourd'hui ; il en reste trois.
 
 ---
 

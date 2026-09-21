@@ -31,7 +31,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 8 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 11 ligne(s).*
 
 `L3` · **Pourquoi ce fichier existe.** Le 18/09, j'ai écrit dans un résumé que « OraCare et MITOC ont répondu ». **C'est faux.** Oracle a écrit le contraire et j'ai parlé de mémoire au lieu de lire ce fichier. King a corrigé. Cette erreur a coûté du temps et de la confiance : ce journal remplace la mémoire par des faits vérifiables.
 `L13` · | lun 14/09 | **OraCare237** (672 52 66 86) | msg 1 | **Pas lu** | **Non** |
@@ -41,6 +41,9 @@
 `L228` · **CRM M1** — `leads/CRM.csv` : **54 lignes × 50 colonnes**. 38 du classeur + OraCare + les 15 en prose.
 `L309` · La file descend : OraCare FU2 **dim 20**, MITOC FU2 **lun 21**.
 `L537` · arrivent à M+2). Priorités : Baird + MITOC (FU2 fixée lundi 21), OraCare (**FU2 fixée dimanche 20 —
+`L698` · **② OraCare était absent de SA propre kill list.** Son score 18/20 A+ vivait dans
+`L700` · pas le voir. **Corrigé** : `lead_score="18"`, `priority="A+"` dans `ORACARE`. La liste affiche
+`L701` · désormais OraCare (COMOBIL sort, parké) — exactement ce que dit le §A4 amendé.
 
 ---
 

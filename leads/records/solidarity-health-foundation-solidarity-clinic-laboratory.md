@@ -37,7 +37,11 @@ Clinic lead #1, research-standard corrected 15 Sep (see sales/RESEARCH-STANDARD.
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Aucune ligne du journal ne cite encore ce lead. S'il a été contacté, c'est que l'envoi n'a pas été loggé — **à corriger dans `Activity-Log.md`**.*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 3 ligne(s).*
+
+`L684` · Ce qui N'est PAS stocké, et pourquoi c'est écrit dans le fichier : `kill_list`, `health` (calculés —
+`L685` · `health_override` est la seule porte manuelle, tracée), `last_message_sent` (c'est le journal),
+`L745` · 4. **Les 5 questions de l'audit du 18/09 §10 sont toujours sans réponse** (COMOBIL · health manuel de St. Theresa · les 12 labos de la réserve · la Page Facebook · le parrainage St. Theresa). Les deux premières ont été tranchées par la migration d'aujourd'hui ; il en reste trois.
 
 ---
 

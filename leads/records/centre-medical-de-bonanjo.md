@@ -33,7 +33,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 20 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 21 ligne(s).*
 
 `L43` · | **ven 18/09 19:42** | **Centre Médical de Bonanjo** (Bonapriso, 694 57 22 77) | msg 1 — sans maquette | Envoyé | **Non** |
 `L112` · | 19:42 | Centre Médical de Bonanjo · Kamaïs Optic |
@@ -55,6 +55,7 @@
 `L445` · « je suis intéressé, je n'ai pas le temps maintenant ». **La différence avec Bonanjo : ici il a demandé
 `L492` · - **Ce n'est pas un « je vous reviens ».** Bonanjo et Labiomed ont dit exactement ça, sans date. **UNI-LABO propose un jour.**
 `L572` · **exactement le bug qui a cassé la FAQ anglaise de Labiomed et Bonanjo le 19/09**, et que j'ai documenté
+`L713` · laissé VIDE sur des lignes où `Reply` dit oui : **Bonanjo** et **Labiomed** étaient hors calcul et le
 
 ---
 

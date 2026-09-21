@@ -30,10 +30,11 @@ Envoyé 18/09 19:42, sans maquette.
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 2 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 3 ligne(s).*
 
 `L44` · | **ven 18/09 19:42** | **Kamaïs Optic** (Bessengue, 678 435 460) | msg 1 — sans maquette | Envoyé | **Non** |
 `L112` · | 19:42 | Centre Médical de Bonanjo · Kamaïs Optic |
+`L707` · Kamaïs→other, Baird confirmé school). **Les 55 autres restent non vérifiés — je ne devine pas.**
 
 ---
 
