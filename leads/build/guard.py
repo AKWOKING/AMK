@@ -68,13 +68,14 @@ def main():
         print("· empreinte initiale des générateurs posée (premier run) — rien à signaler")
         return 0
 
-    prev = json.loads(LOCK.read_text(encoding="utf-8")).get("digests", {})
+    data = json.loads(LOCK.read_text(encoding="utf-8"))
+    prev = data.get("digests", {})
     drift = [k for k in WATCH if prev.get(k) != cur.get(k)]
     if not drift:
         return 0
 
     print("✗ GARDE-FOU : un ou plusieurs GÉNÉRATEURS DU CRM ne correspondent plus au verrou validé")
-    print("  dernier verrou : %s (%s)" % (LOCK.name, prev.get("written", "?")))
+    print("  dernier verrou : %s — %s" % (LOCK.name, data.get("why", "?")))
     for rel in drift:
         old, new = prev.get(rel, "?"), cur[rel]
         if touched_in_worktree(rel):
@@ -85,7 +86,7 @@ def main():
         print("    %s\n        %s → %s · %s" % (rel, old, new, etat))
     print("  Ce qui est en jeu : ces fichiers sont la SEULE SOURCE de leads/CRM.csv, des fiches")
     print("  leads/records/*.md et des vues PIPELINE / KILL-LIST / STALE / Daily-Plan. Une version")
-    print("  plus ancienne ne casse rien d'apparent : elle RECOMMENCE l'histoire et Perd l'état des")
+    print("  plus ancienne ne casse rien d'apparent : elle RECOMMENCE l'histoire et **efface** l'état des")
     print("  leads, silencieusement. C'est exactement l'accident du 22/09, 00:20.")
     print("  À faire, dans l'ordre :")
     print("    1) git diff HEAD -- leads/build/            (lire ce qui a bougé)")
