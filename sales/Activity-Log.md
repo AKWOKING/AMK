@@ -1260,3 +1260,72 @@ pour vérifier qu'elles mordent** : `rc=1` à chaque fois.
 et `/cristallin/` = 200. **Loi nouvelle, dans `design/LESSONS.md` : « conforme » ≠ « bon » — après
 l'auditeur de contrastes, trois contrôles de géométrie sur le fichier.**
 
+
+## 2026-09-21 · 23:59 → 00:20 · **UNIVERS OPTIQUE (et LE CRISTALLIN) — le roi refuse les images, on refait les visuels**
+
+**Verdict reçu, tel quel :** « *je n'aime pas les images generer, ca ne represente pas une clinique moderne* ».
+**Une lecture en deux temps, pas en une :** (1) mon **brief** était fautif — « documentary realism, Bépanda,
+lumière du jour » a produit des locaux usés, donc une démo **plus laide** que le site du client, à l'opposé de la
+règle « *our demo has to look BETTER than his actual website so that he can compare* » ; (2) en relisant mes
+propres fichiers avant de les câbler, j'ai trouvé **du lettrage inventé** dans les rendus — un nom d’autrui
+peint sur un mur (« VISION CLAIRE OPTIQUE »), une marque brodée sur une blouse, et chez Le Cristallin
+une vitre avec du **texte miroité sans sens**. Sur la maquette d'un client réel, un nom inventé en image est une info
+fausse, et peut être un concurrent.
+
+**Ce que j'ai fait :** trois rendus redemandés pour **UNIVERS OPTIQUE** (salle de vente chêne + pétrole,
+présentoirs rétroéclairés, comptoir vitré · atelier avec tailluse et frontofocomètre, blouse **unie** · examen
+de vue au réfracteur, optotype conservé parce qu'outil du métier et non marque), avec **négatifs écrits dans le
+prompt** (pas de peinture qui pèle, pas d'encombrement, pas de halo bleu/violet « IA », **absolutely no text, no
+lettering, no signage**) et le réalisme douala gardé **par la rue visible derrière la vitre**. **LE CRISTALLIN**
+traité de la même façon (devanture régénérée sans aucun lettrage). Pipeline d'entrée de gamme respecté :
+`convert -colorspace sRGB -strip -interlace Plane -quality 80/82`, dimensions **forcées au `DIM` du générateur**
+(shop 1312×816 · bench 1200×896 · customer 1024×1024 ; store 1280×859), **lecture de chaque image** avant
+câblage — pas d'assertion à l'aveugle.
+
+**Troisième conséquence, éditoriale :** une **légende doit décrire son image**. « La devanture… avec l'enseigne
+lisible depuis la chaussée » ne collait plus à un rendu d'intérieur → « **La salle de vente, en journée** » chez
+les deux clients, avec la phrase qui assume le remplacement à la livraison.
+
+**Contrôle écrit dans le générateur :** `IMG_REVIEW` — chaque visuel embarqué doit porter sa **fiche de relecture**
+statuant sur le lettrage, sinon `rc=1` (le juge est humain, le bac n'a pas d'OCR ; **l'obligation, elle, est
+machine**). Muté une fois : fiche vidée → build refusé, puis rétabli et reconstruit.
+
+**État vérifié après coup, pas raconté :** démo Univers **722 Ko** (visuels 633 Ko · 193/128/154 Ko chacun),
+repli sobre **84 Ko**, démo Cristallin **605 Ko** · `audit_html.py` = **TOTAL confirmed findings: 0** sur les
+**cinq** fichiers (2 démos, 2 aperçus, 1 repli) · `diff` démo ↔ aperçu = **0 ligne** pour les deux clients ·
+`:4173/univers/` et `:4173/cristallin/` = **200** · feuilles d'envoi actualisées (poids, mention du changement
+d'images) · loi maison consignée dans `design/LESSONS.md` (3 règles) et `clients/univers-optique/build-notes.md`
+(bloc « V1-ter — 23:59 »).
+
+**Épilogue 00:40 — un second incident, dans le noir cette fois, et il nous a fauché l'état du CRM.** En
+revenant sur la session, le bac avait été **restauré depuis un instantané** : `leads/build/crm.py`,
+`views.py`, `records.py` et `rebuild.sh` étaient revenus à leur version **d'avant l'enrichissement
+`EVENING_2109`**, sans que rien le signale. Comme ces fichiers sont la **seule source** du CSV, mon
+`rebuild.sh` de 00:35 a **réécrit `leads/CRM.csv` en perdant les deux fils chauds** — `univers-optique`
+et `le-cristallin` repassés de `closing` à `prospecting`, relance du 22/09 effacée, note vocale du
+Cristallin envolée, et les fiches `leads/records/*.md` reconstruites sans mes blocs du journal. **Aucune
+erreur, aucun message** : un fichier d'état redevenu muet. Rattrapé en comparant l'arbre à `HEAD`
+(`git diff --stat` : 151 lignes manquantes dans `crm.py`), `git checkout HEAD -- leads/build/`,
+re-génération, vérification : `closing` + relances 22/09 et 23/09 + « C'EST UNE REPRISE, PAS UNE
+REFONTE » + le verbatim des 100 000 FCFA sont **tous revenus**, et le bloc 23:59 est bien cité dans
+`leads/records/univers-optique.md` (`L1264`). **Contrôle écrit pour que ça ne se reproduise pas** :
+`leads/build/guard.py` — empreinte sha256 des cinq fichiers de génération, vérifiée **par `rebuild.sh`
+avant la moindre écriture** ; divergences = `rc=1`, rien n'est régénéré, et le message dit si le
+changement est visible dans `git diff` (donc voulu) ou non (donc restauration d'instantané). Muté une
+fois pour de vrai : `crm.py` remplacé par la version du 14/09 → `✗ ARRÊT`, `rc=1`, **md5 du CSV inchangé**
+pendant tout l'essai ; rétabli, re-verrouillé, rebuild vert. Le verrou est versionné
+(`leads/build/generators.lock.json`) : il déménage avec le dépôt, pas avec le bac.
+
+**Un troisième point, trouvé en relisant les effets de bord de ce bloc :** en écrivant
+« Diagnostic en deux temps » et « OPTICAL SERVICES DOUALA » dans le journal, j'ai fait **fuitér ces
+lignes vers les fiches de deux AUTRES leads** (`le-bon-diagnostic-elf`, `gift-optical`) — le générateur
+de fiches cherche les mots du nom, et ces deux mots en étaient un. Réglé par **réécriture de mes lignes**
+(nom complet ou numéro uniquement dans le journal), pas par un filtre : la mesure dit qu'un filtre plus
+strict perdrait 56 citations **légitimes** sur 295 (`Bonanjo`, `Yondja`, `Cerisaie`…). Limite consignée en
+tête de `leads/build/records.py` pour que le prochain qui passe ne « corrige » pas à l'aveugle.
+
+**Ce qui reste vrai et attendu :** l'envoi de **UNIVERS OPTIQUE** est programmé **demain avant 09:00**
+(`sales/Send-UNIVERS-OPTIQUE-2026-09-22-Soir.md`) — mais **les visuels sont à valider par le roi d'abord**,
+puisque c'est eux qui ont été refusés ; et **LE CRISTALLIN** attend toujours sa réponse **A (page seule) /
+B (page + Facebook, 50 000 FCFA)**. Toujours **aucun navigateur** dans le bac : densités sous 700px non vérifiées
+à l'œil, et **rien n'a été envoyé à un client** par mes soins.

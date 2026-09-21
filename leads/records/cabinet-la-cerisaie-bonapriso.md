@@ -30,10 +30,11 @@ Envoyé 18/09 ~19:00, sans maquette.
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 2 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 3 ligne(s).*
 
 `L36` · | **ven 18/09 ~19:00** | **Cabinet Médical La Cerisaie** (Bonapriso, 699 95 51 64) | msg 1 — sans maquette | Envoyé | **Non** |
 `L111` · | ~19:00 | ISIS · La Cerisaie · i'DoC · Capucines · Brulet Epaka · Kouam Samuel · DAS Group |
+`L1324` · strict perdrait 56 citations **légitimes** sur 295 (`Bonanjo`, `Yondja`, `Cerisaie`…). Limite consignée en
 
 ---
 

@@ -38,7 +38,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 33 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 41 ligne(s).*
 
 `L837` · - `Le Cristallin` 17:51 · `Univers Optique` 17:50 · `Disc Optique Médicale` 17:48 · `Tchaya Optique` 17:47 :
 `L881` · ## Lundi 21/09/2026 — 18:20 → 19:15 · « Ok » de Le Cristallin : le premier aperçu demandé, construit et branché sur le CRM
@@ -73,6 +73,14 @@
 `L1235` · « **④ Prix posé, en négociation — 2** » (Le Cristallin, Univers Optique) · 47 contactés · **4 réponses
 `L1242` · Le Cristallin (« A » page seule / « B » page + Facebook, 50 000 FCFA) ; les six questions qu'Univers doit
 `L1260` · et `/cristallin/` = 200. **Loi nouvelle, dans `design/LESSONS.md` : « conforme » ≠ « bon » — après
+`L1264` · ## 2026-09-21 · 23:59 → 00:20 · **UNIVERS OPTIQUE (et LE CRISTALLIN) — le roi refuse les images, on refait les visuels**
+`L1271` · peint sur un mur (« VISION CLAIRE OPTIQUE »), une marque brodée sur une blouse, et chez Le Cristallin
+`L1279` · lettering, no signage**) et le réalisme douala gardé **par la rue visible derrière la vitre**. **LE CRISTALLIN**
+`L1294` · repli sobre **84 Ko**, démo Cristallin **605 Ko** · `audit_html.py` = **TOTAL confirmed findings: 0** sur les
+`L1296` · `:4173/univers/` et `:4173/cristallin/` = **200** · feuilles d'envoi actualisées (poids, mention du changement
+`L1305` · et `le-cristallin` repassés de `closing` à `prospecting`, relance du 22/09 effacée, note vocale du
+`L1306` · Cristallin envolée, et les fiches `leads/records/*.md` reconstruites sans mes blocs du journal. **Aucune
+`L1329` · puisque c'est eux qui ont été refusés ; et **LE CRISTALLIN** attend toujours sa réponse **A (page seule) /
 
 ---
 

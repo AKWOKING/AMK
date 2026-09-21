@@ -11,14 +11,16 @@
 
 ## ① D'ABORD le fichier (l'aperçu, pas un lien à inventer)
 
-`hosting/previews/cristallin/index.html` — **592 Ko**, un seul fichier (trois visuels inlinés), s'ouvre dans le
+`hosting/previews/cristallin/index.html` — **605 Ko**, un seul fichier (trois visuels inlinés ; la
+devanture a été régénérée **sans lettrage**, la précédente portait une plaque de verre avec du texte
+miroité sans sens — ce qui n'a rien à faire dans un document client), s'ouvre dans le
 navigateur d'un téléphone, FR|EN commutable. Contrôle final : `audit_html.py` = **0 finding** (484 runs,
 desktop 484 / mobile 484) · 218 FR / 218 EN · diff démo ↔ aperçu = **0 ligne** · sous le budget d'envoi WhatsApp
 de 1 100 Ko. **Elle porte maintenant une section COMPARATIF de 8 lignes**, lues sur SA page, plus trois visuels
 de concept étiquetés — c'est la réponse à ta consigne : il doit pouvoir comparer, pas nous croire.
 
 ⚠️ **Ne pas envoyer `amk-cm.vercel.app/cristallin/`** : le dossier est bâti dans le dépôt, **pas déployé** → 404.
-Si ton WhatsApp refuse une pièce jointe de 592 Ko, dis-le : je régénère la version sobre sans les trois visuels
+Si ton WhatsApp refuse une pièce jointe de 605 Ko, dis-le : je régénère la version sobre sans les trois visuels
 (58 Ko) en moins d'une minute — la maquette garde ses deux tiers de valeur sans eux.
 Je ne devine jamais une URL de preview (c'est `yaks-concept` qui a brûlé comme ça). Si tu préfères le lien :
 déploie, donne-moi l'URL exacte, je la grave. Capture mockup impossible ici (`playwright` absent) : le fichier suffit.

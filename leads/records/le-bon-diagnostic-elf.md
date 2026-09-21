@@ -35,7 +35,10 @@ A DÉJÀ UN SITE VIVANT (https://www.lebondiagnostic.com). Hors cible — vérif
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Aucune ligne du journal ne cite encore ce lead. S'il a été contacté, c'est que l'envoi n'a pas été loggé — **à corriger dans `Activity-Log.md`**.*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 2 ligne(s).*
+
+`L1320` · « Diagnostic en deux temps » et « OPTICAL SERVICES DOUALA » dans le journal, j'ai fait **fuitér ces
+`L1321` · lignes vers les fiches de deux AUTRES leads** (`le-bon-diagnostic-elf`, `gift-optical`) — le générateur
 
 ---
 

@@ -307,7 +307,9 @@ C = {
  "photos": {
    "h2": {"fr": "Trois visuels de concept. Vos photos les remplacent à la mise en ligne.",
           "en": "Three concept visuals. Your own photos replace them at go-live."},
-   "lede": {"fr": "Ce ne sont PAS les photos de votre boutique. Elles sont générées pour montrer la "
+   "lede": {"fr": "Ce ne sont PAS les photos de votre boutique. Elles sont générées pour montrer le "
+                 "niveau de finition visé - le carrelage, les présentoirs, la lumière - et non pas votre "
+                 "local tel qu'il est. Elles sont là pour montrer la "
                  "place, le cadrage et la lumière — parce qu'un commerçant à qui l'on montre un cadre "
                  "vide ne sait pas quoi y mettre, et qu'un commerçant à qui l'on montre une belle image "
                  "qui n'est pas la sienne croit que le travail est fini. À la livraison : devanture, "
@@ -319,10 +321,13 @@ C = {
    "badge": {"fr": "Rendu de concept — votre photo le remplacera",
              "en": "Concept render - your photo replaces it"},
    "items": [
-     ["La devanture, en journée", "The storefront, by daylight",
-      "C'est ce que Google montre de vous aujourd'hui. Le vôtre, en plus net, en plus large, avec "
-      "l'enseigne lisible depuis la chaussée.",
-      "This is what Google shows of you today. Yours, sharper and wider, sign readable from the street."],
+     ["La salle de vente, en journée", "The sales room, by daylight",
+      "Voici ce que voit un client qui pousse la porte : présentoirs éclairés, comptoir vitré, lumière "
+      "du jour. C'est cette image-là qui donne envie d'entrer - pas une photo floue prise depuis le "
+      "trottoir, comme celle que Google montre de vous aujourd'hui.",
+      "This is what a customer sees on pushing the door: lit displays, a glass counter, daylight. That "
+      "image is what makes people come in - not a blurred shot taken from the pavement, which is what "
+      "Google shows of you today."],
      ["Le comptoir d'entretien", "The repair bench",
       "Vis, plaquettes, réglage : le service que vos voisins promettent et que vous faites à "
       "l'atelier, sous les yeux du client.",

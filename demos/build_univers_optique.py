@@ -643,6 +643,33 @@ for i, sl in enumerate(B["slots"]):
 #   éditoriale (il nomme un fichier), il vit donc ici, à côté de DIM.
 SHOT_TAGS = ["shop", "bench", "customer"]
 assert len(SHOT_TAGS) == len(P["items"]), "un visuel sans fiche de légende"
+
+# ── LE CONTRÔLE QUE LA MACHINE NE PEUT PAS FAIRE TOUTE SEULE, MAIS PEUT EXIGER ──────────
+#   Un rendu doit être RELU avant d'être câblé, pour deux raisons précises (21/09, consigne du roi :
+#   « je n'aime pas les images générées, ça ne représente pas un cabinet moderne ») :
+#   1) il ne doit porter AUCUN LETTRAGE INVENTÉ — la première devanture générée affichait
+#      « VISION CLAIRE OPTIQUE » sur le mur et « OPTICAL SERVICES DOUALA » sur une blouse : un nom
+#      que le client n'a pas, mis dans SA maquette, c'est une info fausse en image (et un nom de
+#      concurrent potentiel, interdit) ;
+#   2) il doit montrer le NIVEAU DE FINITION VISÉ, pas le local usé du quartier — sinon la démo est
+#      plus mauvaise que le site qu'elle est censée battre, et le client n'a rien à comparer.
+#   Le juge est humain (aucun OCR dans le bac), mais l'OBLIGATION est machine : pas de visuel embarqué
+#   sans sa fiche de relecture renseignée. Un point de relecture sans contrôle derrière est une opinion.
+IMG_REVIEW = {
+    "shop":     "relu 21/09 23:58 · zéro lettrage (mur, glace, écrans) · intérieur moderne chêne + "
+                "petrole, rue de Bépanda visible derrière la vitre · 2 clients, 2 conseillers",
+    "bench":    "relu 21/09 23:58 · blouse unie sans broderie, écrans illisibles par construction · "
+                "montage sur bois, lentilles et plaquettes en ordre · aucun sang, aucun contexte "
+                "chirurgical",
+    "customer": "relu 21/09 23:58 · réfracteur moderne, optotype d'échelle (outil du métier, pas une "
+                "marque) · patient de 50-60 ans, aucun visage tourné vers l'objectif",
+}
+_missing = [t for t in SHOT_TAGS if not str(IMG_REVIEW.get(t, "")).strip()]
+assert not _missing, f"visuel EMBARQUÉ SANS RELLECTION ENREGISTRÉE : {_missing} — « aucune image " \
+                     f"inventée, aucune image non relue »"
+for _t, _note in IMG_REVIEW.items():
+    assert "lettrage" in _note or "broderie" in _note or "marque" in _note, \
+        f"fiche de relecture du visuel {_t} trop vague : elle doit statuer sur le LETTRAGE"
 shot_rows = []
 for i, it in enumerate(P["items"]):
     title_fr, title_en, note_fr, note_en = it[0], it[1], it[2], it[3]

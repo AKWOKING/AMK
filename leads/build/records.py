@@ -46,6 +46,20 @@ def digits(s) -> str:
     return d[-9:] if len(d) >= 9 else d
 
 
+# LIMITE CONNUE, MESURÉE LE 22/09 (ne pas « corriger » à l'aveugle)
+#   Un mot du nom reste une clé même quand le journal l'emploie comme NOM COMMUN : ma ligne
+#   « Diagnostic en deux temps » a été citée sur la fiche de « Le Bon Diagnostic ELF », et
+#   « OPTICAL SERVICES DOUALA » sur celle de « Gift Optical ». J'ai testé le resserrement
+#   (le mot doit être le MOTEUR du nom ou être accompagné d'un second mot du nom) :
+#   **295 citations → 239**, et les 56 perdues sont presque toutes LÉGITIMES (« Bonanjo »,
+#   « Yondja », « Cerisaie » : le mot distinctif est justement le second). Donc un stop-list plus
+#   courte, ou le mot-tête, ou l'adjacence : trois mauvaises idées mesurées. La vraie correction
+#   passe par un test de CONTEXTE (le mot est-il écrit comme un nom propre, au voisinage du métier
+#   du lead ?) — hors de proportion ici. En attendant : **dans le journal, on cite le lead par son
+#   nom complet ou son numéro**, et on ne pose pas un mot de son nom en majuscules en dehors d'un
+#   nom complet. La pollution de ce soir a été retirée par réécriture des lignes, pas par le filtre.
+
+
 def name_tokens(name: str) -> set:
     """Mots d'un nom de lead qui POURRAIENT servir de clé (≥6 lettres)."""
     return {norm_txt(w) for w in re.split(r"[^A-Za-zÀ-ÿ0-9']+", str(name or ""))

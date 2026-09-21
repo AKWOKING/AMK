@@ -8,11 +8,11 @@
 | Lead | Étape | Âge | Relances | Trace |
 |---|---|---|---|---|
 | Discovery Labs | qualifying | 3 j | 0/3 | `L110` |
-| YONDJA ANALYSE | qualifying | 3 j | 0/3 | `L761` |
+| YONDJA ANALYSE | qualifying | 3 j | 0/3 | `L1324` |
 | Laboratoire du Château | qualifying | 3 j | 0/3 | `L110` |
 | Département Biologique | qualifying | 3 j | 0/3 | `L110` |
 | Cabinet Médical ISIS | qualifying | 3 j | 0/3 | `L35` |
-| Cabinet Médical La Cerisaie | qualifying | 3 j | 0/3 | `L111` |
+| Cabinet Médical La Cerisaie | qualifying | 3 j | 0/3 | `L1324` |
 | Cabinet Médical i'DoC | qualifying | 3 j | 0/3 | `L37` |
 | Centre Médical des Capucines | qualifying | 3 j | 0/3 | `L111` |
 | Cabinet du Dr Brulet Epaka | qualifying | 3 j | 0/3 | `L111` |

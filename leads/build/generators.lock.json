@@ -1,0 +1,10 @@
+{
+ "digests": {
+  "leads/build/crm.py": "e19bde42fccc9a7a",
+  "leads/build/views.py": "1b27a1362ed771cc",
+  "leads/build/records.py": "7c77bd2042d527ac",
+  "leads/build/rebuild.sh": "e1bbf5d8a26f5aba",
+  "leads/build/guard.py": "0a33eab65f35251d"
+ },
+ "why": "verrou rejoué à la main"
+}

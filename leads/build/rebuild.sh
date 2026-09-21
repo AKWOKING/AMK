@@ -36,6 +36,15 @@ step() {  # $1 = nom, $2.. = commande
   return 0
 }
 
+# ── GARDE-FOU ANTI-RETOUR-EN-ARRIÈRE (22/09, 00:25) ─────────────────────────────────────────
+#   Un instantané du bac a rendu des générateurs PLUS ANCIENS ; comme ce script est la seule
+#   source du CRM, son premier run a effacé l'état des deux fils chauds sans rien dire.
+#   Donc : on vérifie l'empreinte des générateurs AVANT d'écrire le moindre fichier.
+if ! python3 "$HERE/guard.py" check; then
+  printf '✗ ARRÊT — générateurs non conformes au verrou, RIEN n\x27a été régénéré.\n'
+  exit 1
+fi
+
 step "crm.py (source → CSV)" python3 "$HERE/crm.py"     || true
 step "records.py (CSV → fiches)" python3 "$HERE/records.py" || true
 step "views.py (CSV → vues)" python3 "$HERE/views.py"   || true

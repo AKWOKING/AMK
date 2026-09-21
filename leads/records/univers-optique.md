@@ -39,7 +39,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 24 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 33 ligne(s).*
 
 `L51` · | **ven 18/09 20:02** | **Clinique de L'université** (Bassa, 694 36 02 03) | msg 1 — sans maquette | Envoyé | **Non** |
 `L113` · | 20:02 | Cabinet Dentaire Emmanuel · Clinique de L'université · MEDI LABO |
@@ -65,6 +65,15 @@
 `L1244` · AFRIQUE LABO. `amk-cm.vercel.app/univers/` répond **404** tant que King n'a pas déployé.
 `L1245` · ## Lundi 21/09/2026 — 23:55 · UNIVERS OPTIQUE · « try again » → repasse qualité : DEUX défauts que l'auditeur ne voyait pas
 `L1259` · État : 950 Ko · **0 finding** sur la démo, la sobre (84 Ko) et l'aperçu · `diff` = 0 ligne · `/univers/`
+`L1264` · ## 2026-09-21 · 23:59 → 00:20 · **UNIVERS OPTIQUE (et LE CRISTALLIN) — le roi refuse les images, on refait les visuels**
+`L1275` · **Ce que j'ai fait :** trois rendus redemandés pour **UNIVERS OPTIQUE** (salle de vente chêne + pétrole,
+`L1293` · **État vérifié après coup, pas raconté :** démo Univers **722 Ko** (visuels 633 Ko · 193/128/154 Ko chacun),
+`L1296` · `:4173/univers/` et `:4173/cristallin/` = **200** · feuilles d'envoi actualisées (poids, mention du changement
+`L1297` · d'images) · loi maison consignée dans `design/LESSONS.md` (3 règles) et `clients/univers-optique/build-notes.md`
+`L1304` · `rebuild.sh` de 00:35 a **réécrit `leads/CRM.csv` en perdant les deux fils chauds** — `univers-optique`
+`L1311` · `leads/records/univers-optique.md` (`L1264`). **Contrôle écrit pour que ça ne se reproduise pas** :
+`L1327` · **Ce qui reste vrai et attendu :** l'envoi de **UNIVERS OPTIQUE** est programmé **demain avant 09:00**
+`L1328` · (`sales/Send-UNIVERS-OPTIQUE-2026-09-22-Soir.md`) — mais **les visuels sont à valider par le roi d'abord**,
 
 ---
 

@@ -148,3 +148,49 @@ la version sobre (84 Ko, 437 runs) et sur `hosting/previews/univers/index.html` 
 **Reste à vérifier à l'œil, quand un navigateur sera disponible dans le bac** (pas de `playwright` ici,
 je ne le prétends pas) : la densité du registre des dix actes sous 700px et la ligne de tampon sur la
 fiche d'établissement entre 600 et 700px.
+
+---
+
+## V1-ter — 21/09 23:59 · **le roi refuse les images : « ça ne représente pas une clinique moderne »**
+
+**Verdict tel que reçu :** « *je n'aime pas les images generer, ca ne represente pas une clinique moderne* ».
+Ce n'est pas un goût à discuter, c'est un **défaut de cadrage de ma part** : j'avais demandé des rendus
+« documentaires, réalistes, éclairage du jour, quartier de Bépanda » et le modèle m'a obéi — en montrant la
+devanture fatiguée d'un commerce du coin. Or la règle du roi est **comparative** : « *our demo has to look
+BETTER than his actual website so that he can compare* ». Un rendu qui montre un local usé **fait perdre la
+démo avant même qu'on l'ouvre** : le client n'a rien à envier, il se dit « ils montrent mon magasin en pire ».
+
+**Ce que le brief dit maintenant (à réutiliser pour tout commerce) :** intérieur de pratique **indépendante
+mais contemporaine** — chêne clair + menuiserie bleu-pétrole mat, **présentoirs rétroéclairés**, long comptoir
+vitré, **un réfracteur et une tailluse moderne**, plantes, sol stratifié/terrazzo, lumière équatoriale vive,
+personnel en chemise repassée ou uniforme propre. **Négatifs explicites, écrits dans le prompt :** pas de
+peinture qui pèle, pas d'encombrement, pas de néon, pas de halo bleu/violet « IA », pas de verre dépoli
+décoratif, pas de surimpression de texte. Le réalisme douala est gardé **par le dehors** : rue visible derrière
+la vitrine, palmier, bodaboda, façade en face — pas par la dégradation de l'intérieur.
+
+**Deuxième défaut trouvé en relisant mes propres rendus (à retenir avant de câbler quoi que ce soit) :** le
+premier lot générait **du lettrage inventé** — « VISION CLAIRE OPTIQUE » peint sur un mur, « OPTICAL SERVICES
+DOUALA » brodé sur une blouse. Sur la maquette d'un client réel, un nom inventé dans l'image est (a) une
+**information fausse**, (b) potentiellement le **nom d'un concurrent**, que nous n'écrivons nulle part publiquement.
+Les deux images ont été **redemandées avec « absolutely NO text, NO lettering, NO logo, NO signage »** et
+relues une à une avant câblage. Le troisième rendu (examen de vue) gardait un **optotype** : conservé, parce
+qu'un panneau d'échelle est un outil du métier, pas une marque. Chez Le Cristallin, la vitre portait du texte
+miroité sans sens → régénérée aussi.
+
+**Troisième point, automatique :** une **légende doit décrire son image**. « *La devanture, en journée … avec
+l'enseigne lisible depuis la chaussée* » ne collait plus à un rendu d'intérieur → renommé « **La salle de vente,
+en journée** » chez les deux clients, et la légende assume maintenant ce que l'image montre **et** ce qui sera
+remplacé à la livraison (« cette image part, la vôtre arrive, devanture comprise »).
+
+**Contrôle ajouté au générateur** (`demos/build_univers_optique.py`, `IMG_REVIEW`) : le juge reste humain (pas
+d'OCR dans le bac) mais **l'obligation est machine** — tout visuel embarqué doit avoir sa **fiche de relecture
+renseignée**, qui statue explicitement sur le lettrage ; sinon `rc=1`. Muté une fois (fiche vidée → build
+refusé), puis rétabli.
+
+**État après V1-ter :** démo **722 Ko** (633 Ko de visuels, ≤260 Ko chacun : 193 / 128 / 154) · repli sobre
+**84 Ko** · `audit_html.py` **0 finding** sur la démo, le repli et l'aperçu · `diff` démo ↔ aperçu **0 ligne** ·
+**:4173/univers/** et **:4173/cristallin/** = **200**. Le fichier de Le Cristallin passe de 592 à **605 Ko**
+(484 runs, 0 finding, `diff` 0) pour la même raison d'image. Toujours **aucun navigateur** dans le bac : les
+densités sous 700px et la ligne de tampon entre 600 et 700px restent **non vérifiées à l'œil**, et le roi doit
+valider les visuels **avant** l'envoi.
+

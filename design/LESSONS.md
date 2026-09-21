@@ -151,3 +151,34 @@ Chacun **muté une fois pour vérifier qu'il échoue** (rc=1 sur `.orphantest`, 
 **Corollaire honnête, à écrire dans les notes de livraison : sans navigateur dans le bac, la densité et les
 débordements fins ne sont PAS vérifiés — on le dit, on ne le prétend pas « passé à l'œil ».**
 
+## 2026-09-21 23:59 · un rendu généré porte la **norme**, pas le réel — et jamais un nom inventé
+
+**Ce qui s'est passé (UNIVERS OPTIQUE) :** j'avais briefé les images en « *documentary realism, Bépanda
+neighbourhood, natural daylight* ». Résultat : trois rendus **techniquement** et **commercialement faux** —
+un local aux murs fatigués, des présentoirs vides. Le roi a refusé : « *je n'aime pas les images generer, ça ne
+représente pas une clinique moderne* ». Sa règle comparative (« *the demo has to look BETTER than his actual
+website* ») s'applique **aux pixels autant qu'au code** : un audit à 0 finding sur une page qui montre une
+boutique délabrée ne vaut rien, parce que le client, lui, lit d'abord l'image.
+
+**Deuxième défaut du même lot, trouvé en relisant les fichiers avant câblage :** les rendus portaient **du
+lettrage inventé** — « VISION CLAIRE OPTIQUE » sur un mur, « OPTICAL SERVICES DOUALA » sur une blouse, et chez
+Le Cristallin une plaque de verre avec du **texte miroité sans sens**. Une maquette n'a pas le droit d'écrire un
+nom que le client n'a pas : c'est une info fausse en image, et le hasard peut en faire un concurrent.
+
+**Règle 1 — brief d'image pour tout commerce (clinique, école, optique) :** *moderne, tenu, équipé* —
+menuiserie claire + sombre, **présentoirs rétroéclairés**, comptoir vitré, **appareils de mesure réels et
+propres**, personnel en tenue soignée, lumière équatoriale ; **négatifs écrits dans le prompt** : pas de
+peinture qui pèle, pas d'encombrement, pas de néon, pas de halo bleu/violet « IA », pas de verre givré décoratif,
+pas de texte incrusté. **Le réalisme local se met dehors** (rue, palmiers, mobilité visible derrière la vitre),
+jamais dans la dégradation de l'intérieur.
+
+**Règle 2 — aucune image n'est câblée sans relecture humaine enregistrée :** on **ouvre** chaque rendu, on
+vérifie (a) niveau de finition, (b) **zéro lettrage**, (c) mains/visages/ombres plausibles, (d) **aucun contexte
+médical chirurgical**. Le bac n'a pas d'OCR : le **contrôle est manuel mais rendu obligatoire par la machine** —
+ici une fiche `IMG_REVIEW` par visuel, sans quoi le générateur sort `rc=1`. Un point de relecture sans contrôle
+derrière est une opinion.
+
+**Règle 3 — la légende décrit son image.** Quand le rendu change de sujet, le texte qui le présente change dans
+le même commit (« La devanture » → « **La salle de vente** »), et dit ce qui restera vrai à la livraison :
+*cette image est un rendu de concept, la vôtre la remplacera, devanture et enseigne comprises*.
+
