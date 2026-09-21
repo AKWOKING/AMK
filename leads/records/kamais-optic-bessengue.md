@@ -10,7 +10,7 @@
 | Type | other |
 | Ville | Douala (Bessengue) |
 | Langue de contact | FR |
-| Étape | qualified |
+| Étape | qualifying |
 | WhatsApp | 678 435 460 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |

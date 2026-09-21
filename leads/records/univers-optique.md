@@ -39,7 +39,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 22 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 24 ligne(s).*
 
 `L51` · | **ven 18/09 20:02** | **Clinique de L'université** (Bassa, 694 36 02 03) | msg 1 — sans maquette | Envoyé | **Non** |
 `L113` · | 20:02 | Cabinet Dentaire Emmanuel · Clinique de L'université · MEDI LABO |
@@ -63,6 +63,8 @@
 `L1241` · **Ce qui reste ouvert :** l'envoi de l'aperçu Univers (dû avant 09:00) ; la réponse de King sur le périmètre
 `L1242` · Le Cristallin (« A » page seule / « B » page + Facebook, 50 000 FCFA) ; les six questions qu'Univers doit
 `L1244` · AFRIQUE LABO. `amk-cm.vercel.app/univers/` répond **404** tant que King n'a pas déployé.
+`L1245` · ## Lundi 21/09/2026 — 23:55 · UNIVERS OPTIQUE · « try again » → repasse qualité : DEUX défauts que l'auditeur ne voyait pas
+`L1259` · État : 950 Ko · **0 finding** sur la démo, la sobre (84 Ko) et l'aperçu · `diff` = 0 ligne · `/univers/`
 
 ---
 

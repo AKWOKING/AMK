@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Akwa, 1927 Bld de la République) |
 | Langue de contact | FR |
-| Étape | qualified |
+| Étape | qualifying |
 | WhatsApp | 677 81 70 25 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |

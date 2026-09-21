@@ -10,7 +10,7 @@
 | Type | clinic |
 | Ville | Douala (Akwa) |
 | Langue de contact | FR |
-| Étape | qualified |
+| Étape | qualifying |
 | WhatsApp | 699 90 53 27 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |

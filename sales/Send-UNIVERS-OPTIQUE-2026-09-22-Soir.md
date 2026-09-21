@@ -13,16 +13,16 @@
 
 ## ① D'ABORD le fichier (l'aperçu, pas un lien à inventer)
 
-`demos/concept-univers-optique-v1.html` — **927 Ko**, un seul fichier, trois visuels de concept inlinés,
+`demos/concept-univers-optique-v1.html` — **928 Ko**, un seul fichier, trois visuels de concept inlinés,
 FR|EN commutable, s'ouvre dans le navigateur d'un téléphone. Contrôles : `audit_html.py` = **0 finding**
-(457 runs de texte, desktop 457 / mobile 457) sur la démo **et** sur `hosting/previews/univers/index.html`,
+(459 runs de texte, desktop 459 / mobile 459) sur la démo **et** sur `hosting/previews/univers/index.html`,
 `diff` démo ↔ aperçu = **0 ligne**, 167 paires FR|EN, 0 ancre morte, 21 liens WhatsApp **vers son numéro à lui**
 (699 25 28 74), JSON-LD `Optician` décodé **sans** note ni réseau inventés.
 
 - ⚠️ **Ne pas envoyer `amk-cm.vercel.app/univers/`** : l'aperçu est bâti dans le dépôt, **pas déployé** → 404.
   Tu déploies, tu me donnes l'URL exacte, je la grave — jamais l'inverse.
-- **Si ton WhatsApp refuse une pièce jointe de 927 Ko** : la version **sobre est déjà générée**,
-  `demos/concept-univers-optique-v1-sobre.html` (**83 Ko**, zéro visuel, audit 0 finding aussi). Elle dit
+- **Si ton WhatsApp refuse une pièce jointe de 928 Ko** : la version **sobre est déjà générée**,
+  `demos/concept-univers-optique-v1-sobre.html` (**84 Ko**, zéro visuel, audit 0 finding aussi). Elle dit
   elle-même, en FR et EN, que les photos du cabinet prendront la place à la mise en ligne. Régénérer :
   `python3 demos/build_univers_optique.py --sobre`.
 - Le fichier **corrige mon message de 17:50 sans le dire au client** : il prétendait « absent du web ».

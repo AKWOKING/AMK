@@ -38,7 +38,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 32 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 33 ligne(s).*
 
 `L837` · - `Le Cristallin` 17:51 · `Univers Optique` 17:50 · `Disc Optique Médicale` 17:48 · `Tchaya Optique` 17:47 :
 `L881` · ## Lundi 21/09/2026 — 18:20 → 19:15 · « Ok » de Le Cristallin : le premier aperçu demandé, construit et branché sur le CRM
@@ -72,6 +72,7 @@
 `L1218` · **(a) `bash leads/build/rebuild.sh` a EFFACÉ l'état de Le Cristallin.** En ajoutant la ligne Univers, le
 `L1235` · « **④ Prix posé, en négociation — 2** » (Le Cristallin, Univers Optique) · 47 contactés · **4 réponses
 `L1242` · Le Cristallin (« A » page seule / « B » page + Facebook, 50 000 FCFA) ; les six questions qu'Univers doit
+`L1260` · et `/cristallin/` = 200. **Loi nouvelle, dans `design/LESSONS.md` : « conforme » ≠ « bon » — après
 
 ---
 

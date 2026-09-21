@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Akwa, 780 Rue E. Betote — R. Pau) |
 | Langue de contact | FR |
-| Étape | qualified |
+| Étape | qualifying |
 | WhatsApp | 677 75 54 21 |
 | Numéro vérifié | unknown |
 | Contact | Dr Fotso Kuaté — biologiste (nom public) |

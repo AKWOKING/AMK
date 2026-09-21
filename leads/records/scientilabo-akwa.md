@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Akwa, Rue Gallieni) |
 | Langue de contact | FR |
-| Étape | lost |
+| Étape | disqualified |
 | WhatsApp | 696 42 34 77 |
 | Numéro vérifié | no |
 | Contacté | No |

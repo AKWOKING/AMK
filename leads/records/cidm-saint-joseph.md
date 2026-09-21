@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala |
 | Langue de contact | FR |
-| Étape | qualified |
+| Étape | qualifying |
 | WhatsApp | 674 30 07 98 |
 | Numéro vérifié | unknown |
 | Canal | WhatsApp |

@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Deido, 820 Bld de la Réunification) |
 | Langue de contact | FR |
-| Étape | qualified |
+| Étape | qualifying |
 | WhatsApp | 694 71 91 22 |
 | Numéro vérifié | unknown |
 | Contact | Dr Djanpou — biologiste (nom public) |

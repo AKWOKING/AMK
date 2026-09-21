@@ -10,7 +10,7 @@
 | Type | clinic |
 | Ville | Douala (Bonapriso) |
 | Langue de contact | FR |
-| Étape | qualified |
+| Étape | qualifying |
 | WhatsApp | 699 68 05 88 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |

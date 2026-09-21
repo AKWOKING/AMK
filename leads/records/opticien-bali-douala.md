@@ -10,7 +10,7 @@
 | Type | other |
 | Ville | Douala (Bali) |
 | Langue de contact | FR |
-| Étape | qualified |
+| Étape | qualifying |
 | WhatsApp | 670 27 60 65 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |
@@ -23,7 +23,7 @@
 
 ## Notes
 
-| M7 (21/09) : L226 · MQL 3/3. Le meilleur prospect optique de Douala, en attente depuis quatre jours.
+3/3 portes le 17/09 (compte WhatsApp Business + catalogue + activité du jour ; mono-boutique = propriétaire). Message envoyé 17/09. Live : amk-cm.vercel.app/opticien/. Relances : dim 20 / mar 22 / ven 25.
 
 ## Prochaine action
 

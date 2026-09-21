@@ -215,7 +215,10 @@ html[data-lang=en] .fr-only{display:none}
 .cta .i{flex:0 0 auto}
 .cta.ghost{background:transparent;color:var(--brand);border-color:var(--brand)}
 .cta.ghost:hover{background:#E4E9EE}
-.cta.small{display:none}
+/* Le CTA de l'en-tête : visible dès qu'il y a la place (≥ 900px). En dessous, c'est le rail
+   collé au pouce qui tient ce rôle — d'où la règle `display:none` dans le bloc 960px, et le
+   fait que les DEUX portent le MÊME texte (assertion 7). */
+.nav .cta.small{display:inline-flex;font-size:.88rem;padding:9px 14px;flex:0 0 auto}
 
 /* ── le dossier : couverture ───────────────────────────────────────────────── */
 main>section{padding-block:clamp(46px,7vw,88px);border-bottom:1px solid var(--line)}
@@ -404,7 +407,7 @@ main>section:last-of-type{border-bottom:0}
 .pagefoot li a{text-decoration:none;border-bottom:1px solid #37607A;transition:border-color .18s,color .18s}
 .pagefoot li a:hover{border-bottom-color:#EAF1F6;text-decoration:none}
 .pagefoot .open{color:#F0C9BC;border-bottom-color:#8A5340}
-.pagefoot .cta{margin-top:4px}
+.pagefoot .cta{margin-top:18px}
 .strip2{margin-top:clamp(26px,4vw,44px);border-top:1px solid #2A4A60;padding-block:16px 20px;
  display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between;align-items:center;
  font-family:var(--mono);font-size:10.4px;letter-spacing:.045em;color:#A8C0D0}
@@ -420,7 +423,9 @@ main>section:last-of-type{border-bottom:0}
 .reveal.in{opacity:1;transform:none}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%%);white-space:nowrap}
 
+@media (max-width:1120px){.mark .rl{display:none}}
 @media (max-width:960px){
+ .nav .cta.small{display:none}
  .hero .grid,.book,.rare{grid-template-columns:1fr}
  .pagefoot .top{grid-template-columns:1fr 1fr}
  .strip{grid-template-columns:1fr 1fr}
@@ -736,6 +741,7 @@ PAGE = """<!doctype html>
   <nav aria-label="@@NAVLBL@@"><ol>
 @@NAV@@
   </ol></nav>
+  <a class="cta small" href="https://wa.me/@@WA@@?text=@@HEROMSG@@" target="_blank" rel="noopener">@@EYE@@ <span>@@H_BOOK@@</span></a>
   <div class="lang" role="group" aria-label="Français / English">
     <button id="btn-fr" class="is-on" type="button">FR</button><button id="btn-en" type="button">EN</button>
   </div>
@@ -860,12 +866,10 @@ PAGE = """<!doctype html>
     <div>
       <div class="brandline">Univers Optique</div>
       <p>@@FO_BRAND@@</p>
-      <span class="badge">@@FO_BADGE@@</span>
+      <a class="cta" href="https://wa.me/@@WA@@?text=@@HEROMSG@@" target="_blank" rel="noopener">@@WA_I@@ <span>@@FO_CTA@@</span></a>
+      <div><span class="badge">@@FO_BADGE@@</span></div>
     </div>
 @@COLS@@
-    <div style="margin-top:26px">
-      <a class="cta" href="https://wa.me/@@WA@@?text=@@HEROMSG@@" target="_blank" rel="noopener">@@WA_I@@ <span>@@FO_CTA@@</span></a>
-    </div>
   </div>
   <div class="strip2">
     <span>@@FO_STRIP1@@</span>
@@ -1030,8 +1034,8 @@ check("aucun href vers le domaine mort : %s" % sorted({u for u in hrefs if "univ
 
 # 7 · même action = mêmes mots (§13) : hero, pied de page et rail mobile
 book_fr = C["hero"]["book"]["fr"]
-check("CTA identique au hero, au rail mobile et au pied de page (« %s »)" % book_fr,
-      PAGE.count(esc(book_fr)) >= 3)
+check("CTA identique au hero, à l'en-tête, au rail mobile et au pied de page (« %s »)" % book_fr,
+      PAGE.count(esc(book_fr)) >= 4)
 
 # 8 · pas de prix, pas de testimonial, pas de « 15 % » publié comme une offre
 for banned in ("15 % de réduction sur nos services.", "Témoignages", "★★★★★", "98 % de clients satisfaits"):
@@ -1134,7 +1138,41 @@ for c, rules in bare_bg.items():
 check("aucune règle non encadrée ne peint un second bloc portant la même classe (%d classe(s) en collision)"
       % len(clash), not clash, str(clash))
 
-_out = OUT.write_text(PAGE, encoding="utf-8")
+# 14 · TROIS filets contre les défauts trouvés en relisant le FICHIER (l'auditeur ne les voit pas,
+#      il ne regarde que les contrastes) :
+#  14a · une règle CSS qui ne cible rien dans le DOM = un contrôle cru qui ne mord plus
+#        (`display:none` orphelin = le CTA d'en-tête n'existait pas et personne ne l'a vu).
+_css = re.search(r"<style>(.*?)</style>", PAGE, re.S).group(1)
+_used = {c for attr in re.findall(r'class="([^"]+)"', PAGE) for c in attr.split()}
+_js = {"is-on", "in", "shut"}      # classes posées par le JS au runtime : absentes à la construction
+orphan_rules = sorted(c for c in set(re.findall(r"\.([a-zA-Z][\w-]+)", _css))
+                      if c not in _used and c not in _js and len(c) > 3)
+check("aucune règle CSS orpheline (%d classe(s) mise(s) à jour par le JS exclues)" % len(_js),
+      not orphan_rules, str(orphan_rules[:6]))
+#  14b · un pied de page ne peut pas avoir plus d'enfants que de colonnes : le surnuméraire
+#        tombe seul sur une ligne, décalé. On compte les deux.
+_cols = int(re.findall(r"grid-template-columns:([^;]+);",
+                       re.search(r"\.pagefoot \.top\{[^}]*\}", _css).group(0))[0].count("fr"))
+_f = re.search(r'<div class="top">(.*?)\n  </div>\n  <div class="strip2">', PAGE, re.S).group(1)
+_kids = 0
+_d = 0
+for _m in re.finditer(r"<div\b[^>]*>|</div>", _f):
+    if _m.group(0).startswith("<div"):
+        if _d == 0:
+            _kids += 1
+        _d += 1
+    else:
+        _d -= 1
+check("pied de page : %d colonne%s déclarée%s, %d bloc%s dans le DOM"
+      % (_cols, "" if _cols == 1 else "s", "" if _cols == 1 else "s", _kids, "" if _kids == 1 else "s"),
+      _kids == _cols, "sinon le bloc de trop saute sur une ligne et se retrouve large d'une colonne")
+#  14c · sur desktop, au moins un chemin vers WhatsApp doit être VISIBLE hors du hero et du
+#        rail mobile (qui est `display:none` ici) : sans lui, la page ne convertit plus entre
+#        le 2e et le 9e écran.
+check("un CTA d'en-tête visible > 960px — sous ce seuil c'est le rail collé au pouce qui convertit",
+      '.nav .cta.small{display:inline-flex' in _css.replace('\n', '')
+      and 'class="cta small"' in PAGE)
+
 OUT.write_text(PAGE, encoding="utf-8")
 
 # ══════════════════════════════════════════════════════════════════════════

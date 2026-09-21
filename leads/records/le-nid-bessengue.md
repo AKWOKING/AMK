@@ -10,7 +10,7 @@
 | Type | clinic |
 | Ville | Douala (Bessengue) |
 | Langue de contact | FR |
-| Étape | qualified |
+| Étape | qualifying |
 | WhatsApp | 699 987 775 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |

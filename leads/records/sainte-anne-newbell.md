@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (New-Bell, 152 Av de l'Indépendance) |
 | Langue de contact | FR |
-| Étape | qualified |
+| Étape | qualifying |
 | WhatsApp | 675 39 76 65 |
 | Numéro vérifié | unknown |
 | Contact | Dr Nkanjo Francis — biologiste (nom public) |

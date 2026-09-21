@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Bonamoussadi, 241 Rue 5N036) |
 | Langue de contact | FR |
-| Étape | qualified |
+| Étape | qualifying |
 | WhatsApp | 699 79 93 35 |
 | Numéro vérifié | unknown |
 | Canal | WhatsApp |

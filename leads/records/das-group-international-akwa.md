@@ -10,7 +10,7 @@
 | Type | other |
 | Ville | Douala (Akwa) |
 | Langue de contact | FR |
-| Étape | qualified |
+| Étape | qualifying |
 | WhatsApp | 680 100 626 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |

@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Akwa, 789 Rue Drouot) |
 | Langue de contact | FR |
-| Étape | lost |
+| Étape | disqualified |
 | WhatsApp | 699 09 29 55 |
 | Numéro vérifié | no |
 | Contacté | No |

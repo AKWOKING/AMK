@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Akwa I) |
 | Langue de contact | FR |
-| Étape | qualified |
+| Étape | qualifying |
 | WhatsApp | 699 85 33 52 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |

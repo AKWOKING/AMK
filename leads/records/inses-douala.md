@@ -10,7 +10,7 @@
 | Type | school |
 | Ville | Douala |
 | Langue de contact | FR/EN |
-| Étape | prospect |
+| Étape | prospecting |
 | WhatsApp | 674 93 66 04 |
 | Numéro vérifié | yes |
 | Contacté | No |

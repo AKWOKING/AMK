@@ -134,4 +134,20 @@ le même gabarit (83 Ko, 0 visuel, dit dans la page, audit 0 finding) : une prom
 si le canal refuse le poids. **Jamais** un lien de preview inventé (`amk-cm.vercel.app/univers/` = 404 tant que
 King ne déploie pas). Et **jamais** de balisage `aggregateRating` sur une base de 6 avis, **jamais** de
 `sameAs` deviné : ce qui n'est pas lu n'est pas écrit — ni sur la page, ni dans le code.
+## 21 Sep 2026 · 23:55 · Un fichier peut être « conforme » et cassé (Univers Optique, repasse qualité)
+
+Deux défauts trouvés **après** un `audit_html.py` à 0 finding : (1) le pied de page avait 5 blocs dans une
+grille déclarée à 4 colonnes — le CTA tombait seul sur une ligne de décalée ; (2) la règle
+`.cta.small{display:none}` était **orpheline** : le bouton n'avait jamais été posé dans le `<header>`, donc
+sur desktop (rail mobile masqué) **il n'existait plus aucun chemin vers WhatsApp entre le hero et le pied de
+page**. Le premier se voyait dans le navigateur, le second dans le comportement d'un visiteur — **aucun des
+deux n'est un contraste**, et c'est exactement ce que notre auditeur mesure.
+
+**Règle :** après l'auditeur, trois contrôles **de géométrie sur le fichier généré**, écrits dans le
+générateur : (a) **aucune règle CSS orpheline** (toute classe stylée doit exister dans le DOM, sauf celles
+posées par le JS) ; (b) **enfants directs = colonnes déclarées** pour toute grille, en parsant le HTML, pas
+en comptant à l'œil ; (c) **au moins un chemin de conversion visible hors du hero et hors du rail mobile**.
+Chacun **muté une fois pour vérifier qu'il échoue** (rc=1 sur `.orphantest`, sur le 5ᵉ bloc du footer).
+**Corollaire honnête, à écrire dans les notes de livraison : sans navigateur dans le bac, la densité et les
+débordements fins ne sont PAS vérifiés — on le dit, on ne le prétend pas « passé à l'œil ».**
 

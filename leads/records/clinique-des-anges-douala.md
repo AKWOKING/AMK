@@ -10,7 +10,7 @@
 | Type | clinic |
 | Ville | Douala |
 | Langue de contact | FR |
-| Étape | lost |
+| Étape | disqualified |
 | Numéro vérifié | unknown |
 | Contacté | No |
 | Réponse | No |

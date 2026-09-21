@@ -104,3 +104,47 @@ compteur live, pas de bandeau météo/locale ; gris **chauds uniquement** (une s
   sort pas en ligne.
 - Récupérer l'accès à la fiche Google AVANT la mise en ligne (c'est écrit dans la page, section questions).
 - Remplacer les trois rendus par ses photos.
+---
+
+# V1-bis — 21/09 · 23:55 · « try again » → repasse qualité sur le FICHIER, pas sur l'auditeur
+
+Roi : « *try again* ». Plutôt que de recommencer le concept au jugé, j'ai relu **le fichier généré**
+(ce que l'œil ne peut pas voir sans navigateur, `playwright` absent du bac) avec trois contrôles
+aveugles : balisage équilibré, classes utilisées ↔ règles CSS, enfants ↔ colonnes des grilles.
+
+## Deux défauts réels, trouvés et corrigés
+
+1. **Le pied de page avait 5 blocs pour 4 colonnes.** Le CTA, cinquième enfant d'une grille déclarée
+   `1.3fr 1fr 1fr 1fr`, **tombait seul sur une deuxième ligne, large d'une colonne** — un bloc d'action
+   décalé tout en bas de la dernière écran. §20 dit que le pied de page est une surface de conversion,
+   pas un dépotoir : le CTA est **rentré dans la colonne de marque** (4 blocs = 4 colonnes).
+2. **Aucun CTA dans l'en-tête.** La règle `.cta.small{display:none}` que j'avais écrite était
+   **orpheline** : elle ne ciblait rien, parce que je n'avais jamais posé le bouton dans le `<header>`.
+   Combiné au fait que le rail mobile est `display:none` sur desktop, **un visiteur d'ordinateur n'avait
+   plus aucun moyen de réserver entre le hero et le pied de page** — huit écrans sans porte de sortie.
+   Corrigé : CTA d'en-tête visible > 960px (le rail reprend la main en dessous), avec **le même texte**
+   que le hero (l'assertion 7 est passée de ≥3 à ≥4 occurrences). Et `@media (max-width:1120px)` retire
+   la ligne de statut de la marque pour que marque + onglets + CTA + bascule FR|EN tiennent sans
+   débordement entre 961 et 1120px.
+
+## Trois filets mécaniques ajoutés (les mêmes défauts ne peuvent plus repasser inaperçus)
+
+| # | Ce qu'il vérifie | Preuve qu'il mord |
+|---|---|---|
+| 14a | **aucune règle CSS orpheline** (toute classe stylée existe dans le DOM ; `is-on`/`in`/`shut` exclues, posées par le JS) | mutation `.orphantest` ajoutée → `✗ … ['orphantest']`, `rc=1` |
+| 14b | **enfants directs du pied de page = colonnes déclarées** (le fichier est parsé, pas compté à l'œil) | cinquième `<div>` réinjecté → `✗ 4 colonnes déclarées, 5 blocs dans le DOM`, `rc=1` |
+| 14c | **un chemin WhatsApp visible subsiste hors hero et hors rail** sur desktop | vérifie la règle ET la présence de `class="cta small"` |
+
+**Ce que ça dit de notre porte de sortie habituelle :** `audit_html.py` est **excellent sur les
+contrastes** et **aveugle à la géométrie** — ses 459 runs de texte sont passés « 0 finding » avec un
+pied de page cassé et une page sans CTA sur desktop. Un fichier peut être conforme et moche. D'où la
+règle : **après l'auditeur, on repasse trois contrôles structurels sur le fichier généré** (équilibre
+des balises · classes orphelines · enfants ↔ colonnes), et on écrit ces contrôles dans le générateur.
+
+**État après correction :** 950 Ko · 459 runs de texte · **`audit_html.py` 0 finding** sur la démo, sur
+la version sobre (84 Ko, 437 runs) et sur `hosting/previews/univers/index.html` · `diff` démo ↔ aperçu =
+**0 ligne** · `:4173/univers/` et `:4173/cristallin/` = **200**. Le fichier de Le Cristallin n'a pas bougé (484 runs, 0 finding).
+
+**Reste à vérifier à l'œil, quand un navigateur sera disponible dans le bac** (pas de `playwright` ici,
+je ne le prétends pas) : la densité du registre des dix actes sous 700px et la ligne de tampon sur la
+fiche d'établissement entre 600 et 700px.

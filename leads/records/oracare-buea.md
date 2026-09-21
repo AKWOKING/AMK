@@ -10,24 +10,24 @@
 | Type | clinic |
 | Ville | Buea (Molyo) |
 | Langue de contact | EN |
-| Étape | parked |
+| Étape | qualifying |
 | WhatsApp | 672 52 66 86 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |
 | Contacté | Yes |
 | Réponse | No |
 | Maquette / site | Yes |
-| Relances envoyées | 3 |
+| Relances envoyées | 1 |
 | Source | content_video |
 | Détail source | Premier lead de la campagne — vérifié par King |
 
 ## Notes
 
-| M7 (21/09) : L15 · Le fil réel compte TROIS relances, pas une : lun 14/09 13:04 (« video demo or interactive file ? ») · mer 16/09 14:32 (aperçu + lien + « which service first ? ») · lun 21/09 17:43 (clôture). La relance du dim 20/09 n'est pas partie, et c'est bien : King a envoyé la clôture à la place. 0 réponse, 0 coche bleue sur 4 messages. Concept : oracare-concept.vercel.app.
+Message 1 lundi 14/09. FU2 (M+4) prévue dim 20/09. Concept live : oracare-concept.vercel.app (v3, prix + assistant). ⚠️ N'a JAMAIS répondu : message non lu attribué à tort le 18/09, corrigé.
 
 ## Prochaine action
 
-**Aucune.** Parqué. Une action n'est légitime que si King le décide explicitement.
+**1 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
 
 ## Historique — lignes du journal qui citent ce lead
 

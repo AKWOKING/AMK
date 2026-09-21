@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Akwa, 37 Av King Akwa) |
 | Langue de contact | FR |
-| Étape | lost |
+| Étape | disqualified |
 | WhatsApp | 699 62 61 21 |
 | Numéro vérifié | no |
 | Contacté | No |

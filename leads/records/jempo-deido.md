@@ -10,7 +10,7 @@
 | Type | clinic |
 | Ville | Douala (Deido/Bessengue) |
 | Langue de contact | FR/EN |
-| Étape | qualified |
+| Étape | qualifying |
 | WhatsApp | 696 71 06 99 |
 | Numéro vérifié | yes |
 | Profil vu | J&E MEMORIAL — Medical & health, mention « Polyclinic » |

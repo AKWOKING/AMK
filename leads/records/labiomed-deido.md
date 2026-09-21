@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Deido, 104 Route Deido-Bassa) |
 | Langue de contact | FR |
-| Étape | closing |
+| Étape | qualifying |
 | WhatsApp | 699 98 54 66 |
 | Numéro vérifié | unknown |
 | Contact | Dr Fomekong Kuate Guy — biologiste (nom public) |
@@ -23,7 +23,7 @@
 
 ## Notes
 
-Envoyé le 19/09 à 19:32 — lu (2 coches). ***PREMIER OUI DE LA CAMPAGNE.*** 19:43 il repond « Oui » (11 min apres notre message). 20:02 apercu + texte, SANS le prix (choix de King : le prix va avec un lien). 21:00 lien labiomed.vercel.app + PRIX 100 000 FCFA 50/50 — premier message de la campagne avec prix ET preuve cliquable. 21:16 il repond : « Ok je vous reviens des que je suis disponible ». 21:22 King : « C'est note, Docteur.. Je reste a votre disposition. » (2 coches). 21:27 il envoie un emoji 🙏. Derniere visite 21:40 — il a donc LU la reponse de King. ETAT : chaud, en attente, PAS de date donnee. Prochaine relance M+2 = lundi 21/09. | M7 (21/09) : L366 · PREMIER OUI de la campagne (19/09 19:43, 11 min après msg 1). Prix envoyé 21:00.
+Envoyé le 19/09 à 19:32 — lu (2 coches). ***PREMIER OUI DE LA CAMPAGNE.*** 19:43 il repond « Oui » (11 min apres notre message). 20:02 apercu + texte, SANS le prix (choix de King : le prix va avec un lien). 21:00 lien labiomed.vercel.app + PRIX 100 000 FCFA 50/50 — premier message de la campagne avec prix ET preuve cliquable. 21:16 il repond : « Ok je vous reviens des que je suis disponible ». 21:22 King : « C'est note, Docteur.. Je reste a votre disposition. » (2 coches). 21:27 il envoie un emoji 🙏. Derniere visite 21:40 — il a donc LU la reponse de King. ETAT : chaud, en attente, PAS de date donnee. Prochaine relance M+2 = lundi 21/09.
 
 ## Prochaine action
 

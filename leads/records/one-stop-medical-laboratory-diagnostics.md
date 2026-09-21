@@ -7,14 +7,14 @@
 | Champ | Valeur |
 |---|---|
 | Slug | one-stop-medical-laboratory-diagnostics |
-| Type | lab |
+| Type | school |
 | Ville | Buea (location TBD; co-owner based Buea) |
 | Langue de contact | Bilingual EN/FR |
 | Étape | parked |
 | WhatsApp | 691632941 |
 | Contact | Dr Njang Mbeng Emmanuel MD MBA MSc (co-owner; also DMO Muyuka Health District Oct 2020-present; ex Maealth mobile-health Medical Director; FAMSA ex-president; UBMSAA president; HERO Cameroon CFO) |
 | Canal | HOLD - do not contact until (1) Solidarity relationship clarified and (2) dossier researched per RESEARCH-STANDARD. High digital-health fit (self-described 'digital driven healthcare solutions', built Help Yourself app). Separate dossier required; never mix with Solidarity pitch |
-| Contacté | No |
+| Contacté | not contacted |
 | Maquette / site | none yet |
 
 ## Pourquoi il est écarté
@@ -29,7 +29,7 @@ King : NE JAMAIS contacter Dr Njang (691 63 29 41).
 
 ## Notes
 
-⚠️ cellule `Contacted` non booléenne dans le classeur : « not contacted » · Created 15 Sep during Solidarity deep recheck. Entrepreneurial public-health doctor with proven appetite for digital health = strong future website/app client. Conflict-aware: he appears on Solidarity's stale medicoor roster; resolve that first. Follow-ups M+2/M+4/M+7 once opened. · 🚫 King : NE JAMAIS contacter Dr Njang (691 63 29 41). · org_type = lab (M7, 21/09) — base : « Medical Laboratory & Diagnostics » dans le nom | CONTRADICTION RÉSOLUE (M2) — retenu : parked — King a une règle : ne jamais contacter Dr Njang (691 63 29 41).
+Created 15 Sep during Solidarity deep recheck. Entrepreneurial public-health doctor with proven appetite for digital health = strong future website/app client. Conflict-aware: he appears on Solidarity's stale medicoor roster; resolve that first. Follow-ups M+2/M+4/M+7 once opened. · 🚫 King : NE JAMAIS contacter Dr Njang (691 63 29 41). | CONTRADICTION RÉSOLUE (M2) — retenu : parked — King a une règle : ne jamais contacter Dr Njang (691 63 29 41).
 
 ## Prochaine action
 

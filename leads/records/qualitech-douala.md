@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Logbessou/Deido) |
 | Langue de contact | FR |
-| Étape | lost |
+| Étape | disqualified |
 | WhatsApp | 690 72 01 84 |
 | Numéro vérifié | unknown |
 | Contacté | No |

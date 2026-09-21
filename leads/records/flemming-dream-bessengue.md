@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Bessenguè, feu rouge, Bld de la République) |
 | Langue de contact | FR |
-| Étape | qualified |
+| Étape | qualifying |
 | WhatsApp | 699 81 34 04 |
 | Numéro vérifié | unknown |
 | Canal | WhatsApp |

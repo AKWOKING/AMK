@@ -1242,4 +1242,21 @@ installée (`openpyxl 3.1.5`, déjà requis par `crm.py`). À savoir pour le pro
 Le Cristallin (« A » page seule / « B » page + Facebook, 50 000 FCFA) ; les six questions qu'Univers doit
 trancher (dont l'**accès à sa fiche Google**, qui prime sur la mise en ligne) ; Médina Optic · Bonanjo ·
 AFRIQUE LABO. `amk-cm.vercel.app/univers/` répond **404** tant que King n'a pas déployé.
+## Lundi 21/09/2026 — 23:55 · UNIVERS OPTIQUE · « try again » → repasse qualité : DEUX défauts que l'auditeur ne voyait pas
+
+**Lu littéralement, traité structurellement.** Pas de nouveau concept « au jugé » : j'ai relu le fichier
+généré avec trois contrôles que la chaîne ne faisait pas (équilibre des balises · classes CSS orphelines ·
+comptage enfants ↔ colonnes). Deux défauts trouvés, tous deux **visibles sans être mesurés** :
+① le pied de page avait **5 blocs pour 4 colonnes** → le CTA tombait seul sur une deuxième ligne,
+décalé ; il est rentré dans la colonne de marque. ② **Aucun CTA dans l'en-tête** : ma règle
+`.cta.small{display:none}` était orpheline (le bouton n'avait jamais été posé dans le `<header>`) et le
+rail étant `display:none` sur desktop, **entre le hero et le pied de page il n'y avait plus de porte de
+sortie sur ordinateur** — huit écrans. CTA d'en-tête ajouté (> 960px, texte identique au hero et au rail,
+assertion portée à 4 occurrences) + respiration à ≤ 1120px.
+**Trois assertions écrites dans le générateur pour que la classe de bug ne revienne pas** (règle CSS
+orpheline · enfants = colonnes · au moins un WhatsApp visible hors hero/rail), **et mutées une par une
+pour vérifier qu'elles mordent** : `rc=1` à chaque fois.
+État : 950 Ko · **0 finding** sur la démo, la sobre (84 Ko) et l'aperçu · `diff` = 0 ligne · `/univers/`
+et `/cristallin/` = 200. **Loi nouvelle, dans `design/LESSONS.md` : « conforme » ≠ « bon » — après
+l'auditeur de contrastes, trois contrôles de géométrie sur le fichier.**
 

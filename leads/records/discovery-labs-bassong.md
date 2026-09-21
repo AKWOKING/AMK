@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Bassong) |
 | Langue de contact | FR |
-| Étape | qualified |
+| Étape | qualifying |
 | WhatsApp | 694 86 13 61 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |
