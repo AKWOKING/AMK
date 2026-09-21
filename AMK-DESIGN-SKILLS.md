@@ -380,7 +380,12 @@ Pale Red #FDEBEC/#9F2F2D · Pale Blue #E1F3FE/#1F6C9F · Pale Green #EDF3EC/#346
 **Mechanical (script where possible):**
 - [ ] Bilingual: `data-en` count == `data-fr` count, and 0 elements with only one of the pair (DOM check)
 - [ ] 0 broken images (naturalWidth > 0 on all `<img>`); 0 unresolved template tokens
-- [ ] 0 console errors in headless Chromium (EN, FR, mobile 390)
+- [ ] 0 console errors in headless Chromium (EN, FR, mobile 390) — **if the sandbox has no browser, write
+      that the item was NOT run; never let an unchecked line read as passed**
+- [ ] **First paint without JS:** no `opacity:0` / `visibility:hidden` entrance state outside an `html.js`
+      gate set inline in `<head>`; reveal system in its own `<script>` with `try/catch`; hero + headings static
+- [ ] **Every inline `<script>` compiles:** `python3 tools/qa/check_inline_js.py <file>` → rc 0 (rc 3 = control
+      not rendered, say so)
 - [ ] 0px horizontal overflow at 390px
 - [ ] All WA/tel/mailto links → correct owner number/address; no dead `#` links
 - [ ] Heading ≤ 2 lines desktop; nav 1 line ≤ 80px; hero CTAs visible at 800px height

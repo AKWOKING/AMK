@@ -11,7 +11,9 @@
 
 ## ① D'ABORD le fichier (l'aperçu, pas un lien à inventer)
 
-`hosting/previews/cristallin/index.html` — **605 Ko**, un seul fichier (trois visuels inlinés ; la
+`demos/concept-le-cristallin-v1.html` — **620 492 octets** (sha256 `625ce76a78f9b341…`), un seul fichier
+(son jumeau `hosting/previews/cristallin/index.html` est identique au caractère près — envoie
+le premier, c'est le fichier que nous générons ; la
 devanture a été régénérée **sans lettrage**, la précédente portait une plaque de verre avec du texte
 miroité sans sens — ce qui n'a rien à faire dans un document client), s'ouvre dans le
 navigateur d'un téléphone, FR|EN commutable. Contrôle final : `audit_html.py` = **0 finding** (484 runs,
@@ -20,7 +22,12 @@ de 1 100 Ko. **Elle porte maintenant une section COMPARATIF de 8 lignes**, lues 
 de concept étiquetés — c'est la réponse à ta consigne : il doit pouvoir comparer, pas nous croire.
 
 ⚠️ **Ne pas envoyer `amk-cm.vercel.app/cristallin/`** : le dossier est bâti dans le dépôt, **pas déployé** → 404.
-Si ton WhatsApp refuse une pièce jointe de 605 Ko, dis-le : je régénère la version sobre sans les trois visuels
+> ⚠️ **Le fichier que tu as reçu dimanche est cassé, utilise celui d'aujourd'hui.** Son `<script>` ne
+> compilait pas (une phrase injectée sans guillemets) : selon le lecteur, la page se vidait sous l'en-tête.
+> Corrigé à la source, vérifié à la compilation (`tools/qa/check_inline_js.py`, 0 faute) et à la peinture
+> sans JavaScript. 620 492 octets — si la taille diffère, le téléchargement est tronqué : redemande-le.
+
+Si ton WhatsApp refuse une pièce jointe de 620 Ko, dis-le : je régénère la version sobre sans les trois visuels
 (58 Ko) en moins d'une minute — la maquette garde ses deux tiers de valeur sans eux.
 Je ne devine jamais une URL de preview (c'est `yaks-concept` qui a brûlé comme ça). Si tu préfères le lien :
 déploie, donne-moi l'URL exacte, je la grave. Capture mockup impossible ici (`playwright` absent) : le fichier suffit.

@@ -31,7 +31,7 @@
 
 ## Notes
 
-| CONTRADICTION RÉSOLUE (M2) — retenu : le constat exact, plus fort et vérifiable : « votre seule page vivante est celle d'un autre » — son site ne répond plus depuis janvier 2024, et le champ « site web » de sa fiche Google est vide. · ENVOI DÛ : `demos/concept-univers-optique-v1.html` (927 Ko, aperçu promis « d'ici demain ») AVANT 09:00 mardi 22/09. Repli si WhatsApp refuse la pièce jointe : la version sobre sans visuels, JAMAIS un lien non déployé. Feuille : `sales/Send-UNIVERS-OPTIQUE-2026-09-22-Soir.md`. Ne PAS répéter « absent du web » (faux — voir la contradiction M2 de cette ligne) ; la page pose SIX questions qu'il doit trancher avant publication (fixe publié en deux versions, offre « 15 % », ordre des trois lignes, nom du titulaire, e-mail unique, accès à sa fiche Google). AUCUNE page Facebook rattachable à ce nom (21/09) : celle de 508 likes est un homonyme (« Global trade invesment ») — ni revendiquée ni liée. Récupérer l'ACCÈS à sa fiche Google PRIME sur la mise en ligne : c'est son premier visiteur, et le champ « site web » y est vide.
+| CONTRADICTION RÉSOLUE (M2) — retenu : le constat exact, plus fort et vérifiable : « votre seule page vivante est celle d'un autre » — son site ne répond plus depuis janvier 2024, et le champ « site web » de sa fiche Google est vide. · ENVOI DÛ : `demos/concept-univers-optique-v1.html` (722 Ko / 740 056 octets, sha256 719f8b60283184b6…, aperçu promis « d'ici demain ») AVANT 09:00 mardi 22/09, et en repartant du fichier DU 22/09 : la version du 21 au soir ne peignait son contenu que si le JavaScript s'exécutait (défaut trouvé par King, corrigé à la source ; loi consignée design/LESSONS.md du 22/09). Repli si WhatsApp refuse la pièce jointe : la version sobre sans visuels, JAMAIS un lien non déployé. Feuille : `sales/Send-UNIVERS-OPTIQUE-2026-09-22-Soir.md`. Ne PAS répéter « absent du web » (faux — voir la contradiction M2 de cette ligne) ; la page pose SIX questions qu'il doit trancher avant publication (fixe publié en deux versions, offre « 15 % », ordre des trois lignes, nom du titulaire, e-mail unique, accès à sa fiche Google). AUCUNE page Facebook rattachable à ce nom (21/09) : celle de 508 likes est un homonyme (« Global trade invesment ») — ni revendiquée ni liée. Récupérer l'ACCÈS à sa fiche Google PRIME sur la mise en ligne : c'est son premier visiteur, et le champ « site web » y est vide.
 
 ## Prochaine action
 
@@ -39,7 +39,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 34 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 41 ligne(s).*
 
 `L51` · | **ven 18/09 20:02** | **Clinique de L'université** (Bassa, 694 36 02 03) | msg 1 — sans maquette | Envoyé | **Non** |
 `L113` · | 20:02 | Cabinet Dentaire Emmanuel · Clinique de L'université · MEDI LABO |
@@ -75,6 +75,13 @@
 `L1327` · **00:55 — validation demandée, pas reçue.** La question « les trois rendus d'UNIVERS OPTIQUE sont-ils validés
 `L1334` · **Ce qui reste vrai et attendu :** l'envoi de **UNIVERS OPTIQUE** est programmé **demain avant 09:00**
 `L1335` · (`sales/Send-UNIVERS-OPTIQUE-2026-09-22-Soir.md`) — mais **les visuels sont à valider par le roi d'abord**,
+`L1340` · ## 2026-09-22 · 08:05 → 08:55 · UNIVERS OPTIQUE + LE CRISTALLIN — « ce site est moche et n'a pas d'image » : c'était une panne, pas un goût
+`L1348` · **UNIVERS OPTIQUE — défaut 1 : le contenu était retenu par le JavaScript.** 25 blocs à `opacity:0` relevés par
+`L1354` · `design/CRAFT-FLOOR.md` §3 ; cinq contrôles écrits dans `demos/build_univers_optique.py`, mutés (une règle
+`L1373` · (`clients/univers-optique/`, `clients/le-cristallin/`).
+`L1375` · **État vérifié après coup :** Univers **740 056 octets** (sha256 `719f8b60283184b6…`) · repli sobre
+`L1378` · `diff` démo ↔ aperçu = **0 ligne** aux deux clients · `:4173/univers/` et `:4173/cristallin/` = **200**.
+`L1383` · par mes soins.** La promesse tient : aperçu UNIVERS OPTIQUE **avant 09:00** ; LE CRISTALLIN attend toujours sa
 
 ---
 

@@ -1202,8 +1202,11 @@ EVENING_2109 = {
         "last_send_state": "delivered",
         "Demo made": "Yes",
         "Follow-up date": "2026-09-22",
-        "Notes_extra": "ENVOI DÛ : `demos/concept-univers-optique-v1.html` (927 Ko, aperçu promis « d'ici "
-                       "demain ») AVANT 09:00 mardi 22/09. Repli si WhatsApp refuse la pièce jointe : la "
+        "Notes_extra": "ENVOI DÛ : `demos/concept-univers-optique-v1.html` (722 Ko / 740 056 octets, sha256 719f8b60283184b6…, aperçu promis « d'ici "
+                       "demain ») AVANT 09:00 mardi 22/09, et en repartant du fichier DU 22/09 : la version du 21 au soir "
+                       "ne peignait son contenu que si le JavaScript s'exécutait (défaut trouvé par King, corrigé "
+                       "à la source ; loi consignée design/LESSONS.md du 22/09). Repli si WhatsApp refuse la "
+                       "pièce jointe : la "
                        "version sobre sans visuels, JAMAIS un lien non déployé. Feuille : "
                        "`sales/Send-UNIVERS-OPTIQUE-2026-09-22-Soir.md`. Ne PAS répéter « absent du web » "
                        "(faux — voir la contradiction M2 de cette ligne) ; la page pose SIX questions qu'il "

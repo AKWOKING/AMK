@@ -31,8 +31,8 @@
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| Le Cristallin | Douala | 699 90 55 77 | `L1336` |
-| Univers Optique | Douala | 699 25 28 74 | `L1335` |
+| Le Cristallin | Douala | 699 90 55 77 | `L1383` |
+| Univers Optique | Douala | 699 25 28 74 | `L1383` |
 
 ## ④ Offre posée — 1
 
@@ -151,7 +151,7 @@
 | Lux Optique | Douala | 655 04 05 49 | — |
 | LyfyOptic | Douala | 699 98 06 66 | — |
 | Maff Optique | Douala | 699 93 19 56 | — |
-| Maison Optique | Douala | 657 73 70 45 | `L1297` |
+| Maison Optique | Douala | 657 73 70 45 | `L1345` |
 | Marthlo Comprehensive Bilingual College | Buea | — | — |
 | MegaOptic | Douala | 698 82 10 27 | `L815` |
 | Mel's Optic | Douala | 690 98 85 18 | — |

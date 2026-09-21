@@ -30,9 +30,15 @@ deux chemins sont prêts.
 
 ## ① D'ABORD le fichier (l'aperçu, pas un lien à inventer)
 
-`demos/concept-univers-optique-v1.html` — **722 Ko**, un seul fichier, trois visuels de concept inlinés
-(633 Ko à eux trois, chacun relu à l'œil : **zéro lettrage inventé**, et des locaux **modernes** — les
-trois premières images étaient des boutiques fatiguées, tu les as refusées à juste titre, elles sont remplacées).
+`demos/concept-univers-optique-v1.html` — **722 Ko (740 056 octets, sha256 `719f8b60283184b6…`)**, un seul
+fichier, trois visuels de concept inlinés (633 Ko à eux trois, chacun relu à l'œil : **zéro lettrage
+inventé**, et des locaux **modernes** — les trois premières images étaient des boutiques fatiguées, tu les
+as refusées à juste titre, elles sont remplacées).
+> ⚠️ **Ce matin, la page était blanche sous l'en-tête chez toi, et ce n'était pas un goût : un défaut.**
+> Le contenu dépendait d'un script (fade-in sans porte) ; c'est corrigé — le texte et les images se peignent
+> désormais **même si le JavaScript ne tourne pas**, et le JS embarqué est compilé avant chaque livraison.
+> **Repars du fichier d'aujourd'hui** (740 056 octets). Si jamais le corps manque sous l'en-tête, compte
+> 800 Ko et compare la taille : téléchargement tronqué → redemande-moi le fichier, ce n'est pas le site.
 FR|EN commutable, s'ouvre dans le navigateur d'un téléphone. Contrôles : `audit_html.py` = **0 finding**
 (459 runs de texte, desktop 459 / mobile 459) sur la démo **et** sur `hosting/previews/univers/index.html`,
 `diff` démo ↔ aperçu = **0 ligne**, 167 paires FR|EN, 0 ancre morte, 21 liens WhatsApp **vers son numéro à lui**
@@ -41,7 +47,8 @@ FR|EN commutable, s'ouvre dans le navigateur d'un téléphone. Contrôles : `aud
 - ⚠️ **Ne pas envoyer `amk-cm.vercel.app/univers/`** : l'aperçu est bâti dans le dépôt, **pas déployé** → 404.
   Tu déploies, tu me donnes l'URL exacte, je la grave — jamais l'inverse.
 - **Si ton WhatsApp refuse une pièce jointe de 722 Ko** : la version **sobre est déjà générée**,
-  `demos/concept-univers-optique-v1-sobre.html` (**84 Ko**, zéro visuel, audit 0 finding aussi). Elle dit
+  `demos/concept-univers-optique-v1-sobre.html` (**86 954 octets**, sha256 `1ff52ae6be71dc4d…`, zéro
+  visuel, audit de contraste **et** compilation du JS à 0 faute). Elle dit
   elle-même, en FR et EN, que les photos du cabinet prendront la place à la mise en ligne. Régénérer :
   `python3 demos/build_univers_optique.py --sobre`.
 - Le fichier **corrige mon message de 17:50 sans le dire au client** : il prétendait « absent du web ».

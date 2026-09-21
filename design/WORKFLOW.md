@@ -45,7 +45,19 @@ Set VARIANCE / MOTION / DENSITY from the root-law §2 presets (school/clinic con
 ## 6. Images (art-directed, continuity-locked)
 - Shot-list per section (aspect ratio, subject, crop, light, negative space); full rules: root §10 + §15.
 - Prompt pack: same world across every image (palette grade, light family, Cameroonian context, no text/watermarks/logos); "no logos, no watermarks, no text on clothing" always.
-- Generate → READ each image back (watermark/logo scan) → re-generate/crop if dirty.
+- **The image must depict the STANDARD we deliver, not the current state of the premises.** The page is a
+  comparison piece: the rule is "our demo has to look BETTER than his actual website", and that applies to
+  pixels. "Documentary realism" in the brief produces a tired shop and loses the client before he scrolls.
+  Ground the local reality OUTSIDE the window (street, light, passers-by), never inside the fit-out.
+- **No invented lettering, ever.** Read each render for text on walls, glass, uniforms, screens: a fabricated
+  shop name inside a client's mock-up is a false fact in image form — and can spell a competitor's name.
+  Re-prompt with "absolutely NO text, no lettering, no logo, no signage"; keep only objects that are tools
+  of the trade (a Snellen chart is equipment, a brand plate is not).
+- **A caption describes the image it sits under.** If the render changes subject, the caption and alt change in
+  the same commit, and say what the client will replace at go-live ("concept render - your photo replaces it").
+- Generate → READ each image back (watermark/logo/text scan + "would this hang in a modern Douala practice?")
+  → re-generate/crop if dirty → record the read-back in the builder (`IMG_REVIEW` style), because an
+  obligation with no machine behind it is an opinion.
 - Embed base64 once each (CSS background or `<img>`; never embed the same photo twice), object-fit cover, reserve space (CLS).
 
 ## 7. Build (single-file house format)
@@ -58,6 +70,11 @@ Set VARIANCE / MOTION / DENSITY from the root-law §2 presets (school/clinic con
 - Run the opportunity gate (`design/MOTION.md` §0): frequency, purpose, speed, function. Expect 5-7 survivors max, list rejects.
 - Apply tokens (--ease-out/--ease-in-out/--ease-drawer, durations), `.rv` IO reveal with 60ms stagger, `:active` press scale .97, hover behind `(hover:hover)`, accordions, sheet/bars, tabular counters.
 - transform/opacity only; no `transition:all`; no scroll listeners; reduced-motion block.
+- **First paint never depends on JavaScript** (root §13; 22/09 lesson): any `opacity:0`/`visibility:hidden`
+  entrance state must be scoped under `html.js`, set by an inline `<script>` in `<head>`; the reveal system
+  lives in its own `<script>` after the language one, with a `try/catch` that shows everything on failure.
+  Hero and section headings do not animate at all: they are what the reader came for.
+- Reveal budget: ≤ 40 % of content blocks, ONE authored moment per page (`design/CRAFT-FLOOR.md` §2.5/§3).
 - React/Motion/GSAP only in real app stacks (vendored skills cover them); concepts stay vanilla.
 
 ## 9. Pre-flight + QA (non-negotiable; the page is not done until all pass)
@@ -71,6 +88,15 @@ Root-law §13 matrix, mechanically enforced where possible via a QA script + bro
 7. Lighthouse-minded: LCP image, CLS space reservation, single file size sane (~1MB acceptable).
 8. Screenshot QA at 1280×800 + 390×844, EN and FR; capture hero shot to `demos/shots/<name>-concept.png`; mockup when going to a lead.
 9. Rebuild `hosting/samples/` (`python3 hosting/build_samples.py`) when `site/` changed; confirm sitemap + index wiring.
+10. **First paint without JS** (machine, no browser needed): every hiding rule is `html.js`-gated, the head
+   carries the inline `js` setter, and no hero/heading/figure is reveal-gated. Asserted in the builder
+   (Univers: checks 15a-e; Cristallin: same block) — an ungated `.rv`/`.reveal` fails the build.
+11. **Every inline `<script` compiles**: `python3 tools/qa/check_inline_js.py <file...>` (extracts each block,
+   `node --check`, validates JSON-LD separately). `rc=1` → nothing is delivered; `rc=3` (no `node` in the
+   sandbox) → the control was NOT rendered and must be written as such in the handoff. Both builders run it
+   on the in-memory page before writing, so a broken script never reaches disk.
+12. **Send integrity**: a concept goes as a FILE; record `bytes` + `sha256` in the send sheet, and tell the
+   reader that a page whose body is missing under the header = a truncated download, ask for the file again.
 
 ## Handoff record (delivery notes template)
 ```

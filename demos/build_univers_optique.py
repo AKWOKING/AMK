@@ -148,6 +148,8 @@ def img(tag, w, h):
 
 
 # ── CSS ─────────────────────────────────────────────────────────────────────────────
+JSREV = "/* LE SYSTEME DE REVELATION VIT SEUL — son propre <script>, son propre try/catch.\n   Leçon du 22/09 : tant qu'il partageait le bloc de la bascule de langue, n'importe quelle faute\n   plus haut dans le fichier condamnait la page à rester invisible (c'est exactement ce qui est\n   arrivé à la page Le Cristallin, partie entre les mains de King avec un SyntaxError dans son\n   <script>). Et comme l'état caché n'existe que sous `html.js`, un lecteur qui n'exécute rien\n   perd UNIQUEMENT l'animation, jamais le texte. */\n(function(){\n function show(){[].slice.call(document.querySelectorAll('.reveal')).forEach(function(e){e.classList.add('in')});}\n try{\n  var els=[].slice.call(document.querySelectorAll('.reveal'));\n  if(!els.length) return;\n  var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;\n  if(reduced||!('IntersectionObserver' in window)){show();return;}\n  var io=new IntersectionObserver(function(es){\n   es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});\n  },{threshold:.1,rootMargin:'0px 0px -6% 0px'});\n  els.forEach(function(e,i){e.style.transitionDelay=(Math.min(i,4)*60)+'ms';io.observe(e);});\n }catch(err){show();}\n})();"
+
 CSS = """
 :root{
  --paper:%(PAPER)s; --card:%(CARD)s; --ink:%(INK)s; --text:%(TEXT)s; --mute:%(MUTE)s;
@@ -418,9 +420,15 @@ main>section:last-of-type{border-bottom:0}
  calc(9px + env(safe-area-inset-bottom));background:rgba(242,237,227,.97);
  border-top:1px solid var(--line);backdrop-filter:blur(7px)}
 .rail a{flex:1;justify-content:center;font-size:.92rem;padding:12px 10px}
-.reveal{opacity:0;transform:translateY(15px);transition:opacity .55s cubic-bezier(.2,.7,.2,1),
+/* La loi maison est appliquée à la lettre (design/WORKFLOW.md §3b place « content-hiding fade-ins » dans la
+   liste à éviter ; design/CRAFT-FLOOR.md §2.5 veut UN moment écrit par surface et §3 plafonne .rv à 40 %%
+   des blocs). L'état caché n'existe DONC QUE sous `html.js`, classe posée par un script INLINE dans le
+   <head>. Sans JS — JS coupé, script rogné par une pièce jointe tronquée, aperçu qui n'exécute rien — la
+   page se peint ENTIÈRE. C'est la correction du défaut relevé par King au matin du 22/09 sur cet
+   UNIVERS OPTIQUE : en-tête visible, corps vide, et audit à 0 finding par-dessus. */
+html.js .reveal{opacity:0;transform:translateY(15px);transition:opacity .55s cubic-bezier(.2,.7,.2,1),
  transform .55s cubic-bezier(.2,.7,.2,1)}
-.reveal.in{opacity:1;transform:none}
+html.js .reveal.in{opacity:1;transform:none}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%%);white-space:nowrap}
 
 @media (max-width:1120px){.mark .rl{display:none}}
@@ -457,7 +465,7 @@ main>section:last-of-type{border-bottom:0}
 @media (prefers-reduced-motion:reduce){
  html{scroll-behavior:auto}
  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
- .reveal{opacity:1;transform:none}
+ html.js .reveal{opacity:1;transform:none;transition:none}
 }
 """ % dict(PAPER=PAPER, CARD=CARD, INK=INK, TEXT=TEXT, MUTE=MUTE, LINE=LINE,
            BRAND=BRAND, BRAND_DK=BRAND_DK, FLAG=FLAG, CHECK=CHECK)
@@ -486,13 +494,7 @@ JS = """
     function(x){x.classList.remove('is-on')});t.classList.add('is-on');}});},
    {rootMargin:'-45%% 0px -50%% 0px'});
   [].slice.call(document.querySelectorAll('main>section[id]')).forEach(function(s){spy.observe(s)});
-  var rev=new IntersectionObserver(function(es){es.forEach(function(e){
-   if(e.isIntersecting){e.target.classList.add('in');rev.unobserve(e.target);}});},
-   {threshold:.1,rootMargin:'0px 0px -6%% 0px'});
-  [].slice.call(document.querySelectorAll('.reveal')).forEach(function(el){rev.observe(el)});
- }else{[].slice.call(document.querySelectorAll('.reveal')).forEach(function(el){el.classList.add('in')});}
- function reduce(){return window.matchMedia('(prefers-reduced-motion: reduce)').matches;}
- if(reduce()){[].slice.call(document.querySelectorAll('.reveal')).forEach(function(el){el.classList.add('in')});}
+ }
 
  /* un acte, un créneau = une conversation déjà écrite */
  function open(el){
@@ -581,7 +583,7 @@ for cells in H["facts"]:
     rec_rows.append(
         '<div class="rec"><dt>%s</dt><dd%s>%s</dd></div>'
         % (bi(cells[0], cells[1]), cls, esc(cells[2])))
-SHEET = ('<aside class="sheet reveal" role="group" aria-label="%s">'
+SHEET = ('<aside class="sheet" role="group" aria-label="%s">'
          '<div class="sheet-top"><span class="t">%s</span>'
          '<span class="no mono">%s</span></div>%s'
          '<div class="stamp" aria-hidden="true">%s</div>'
@@ -675,7 +677,7 @@ for i, it in enumerate(P["items"]):
     title_fr, title_en, note_fr, note_en = it[0], it[1], it[2], it[3]
     tag = SHOT_TAGS[i]
     shot_rows.append(
-        '<figure class="shot%s reveal"><img src="%s" width="%d" height="%d" loading="lazy" '
+        '<figure class="shot%s"><img src="%s" width="%d" height="%d" loading="lazy" '
         'decoding="async" alt="%s" style="width:100%%;height:auto">'
         '<div class="lay"><span class="cn">%s</span><figcaption>%s</figcaption></div>'
         '<div class="badge">%s</div></figure>'
@@ -698,7 +700,7 @@ for it in O["items"]:
 # ── avis ───────────────────────────────────────────────────────────────────
 lg_rows = []
 for it in V["rows"]:
-    lg_rows.append('<div class="lg reveal"><h3>%s</h3><p>%s</p></div>' % (bi(it[0], it[1]), bi(it[2], it[3])))
+    lg_rows.append('<div class="lg"><h3>%s</h3><p>%s</p></div>' % (bi(it[0], it[1]), bi(it[2], it[3])))
 
 # ── FAQ ───────────────────────────────────────────────────────────────────
 faq_rows = []
@@ -754,6 +756,7 @@ PAGE = """<!doctype html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..700&family=JetBrains+Mono:wght@400;600&family=Public+Sans:ital,wght@0,400..600;1,400&display=swap">
+<script>document.documentElement.classList.add('js')</script>
 <style>@@CSS@@</style>
 <script type="application/ld+json">@@JSONLD@@</script>
 </head>
@@ -777,7 +780,7 @@ PAGE = """<!doctype html>
 <main id="top">
 
 <section class="hero" id="hero"><div class="wrap grid">
-  <div class="reveal">
+  <div>
     <div class="eyebrow">@@H_EYEBROW@@</div>
     <h1>@@H_H1@@</h1>
     <p class="lede">@@H_LEDE@@</p>
@@ -791,7 +794,7 @@ PAGE = """<!doctype html>
 </div></section>
 
 <section class="dossier" id="dossier"><div class="wrap">
-  <div class="intro reveal">
+  <div class="intro">
     <h2>@@D_H2@@</h2>
     <p class="lede">@@D_LEDE@@</p>
   </div>
@@ -800,17 +803,17 @@ PAGE = """<!doctype html>
 </div></section>
 
 <section class="svcsec" id="services"><div class="wrap">
-  <div class="intro reveal" style="max-width:74ch">
+  <div class="intro" style="max-width:74ch">
     <h2>@@S_H2@@</h2>
     <p class="lede">@@S_LEDE@@</p>
   </div>
-  <div class="svc reveal">
+  <div class="svc">
     <div class="head"><span>@@S_C1@@</span><span>@@S_C2@@</span><span>@@S_C3@@</span></div>
     <ul style="list-style:none;margin:0;padding:0">
 @@SVCROWS@@
     </ul>
   </div>
-  <div class="rare reveal" id="protheses">
+  <div class="rare" id="protheses">
     <div>
       <span class="f-kick">@@R_KICK@@</span>
       <h2>@@R_H2@@</h2>
@@ -822,19 +825,19 @@ PAGE = """<!doctype html>
 </div></section>
 
 <section class="booksec" id="rendez-vous"><div class="wrap">
-  <div class="intro reveal" style="max-width:70ch">
+  <div class="intro" style="max-width:70ch">
     <h2>@@B_H2@@</h2>
     <p class="lede">@@B_LEDE@@</p>
   </div>
   <div class="book" style="margin-top:24px">
-    <div class="reveal">
+    <div>
       <ul style="list-style:none;margin:0;padding:0" class="hours">
 @@SLOTS@@
       </ul>
       <div class="prewrite"><span class="mono lbl">@@B_MSGHEAD@@</span><span id="prewrite">@PREWRITE@</span></div>
       <p class="fine">@@B_FINE@@</p>
     </div>
-    <aside class="contact reveal">
+    <aside class="contact">
       <h3>@@B_CTITLE@@</h3>
       <div class="l"><span class="k">@@B_KAD@@</span><span class="v">@@ADDR@@<br><span style="color:var(--mute);font-size:.86rem">@@LANDMARK@@ · <a href="@@MAPS@@" target="_blank" rel="noopener">@@PLUS@@</a></span></span></div>
       <div class="l"><span class="k">@@B_KTEL@@</span><span class="v"><a href="tel:@@TEL@@">@@WADISP@@</a> <span class="q">· WhatsApp</span><br><a href="tel:@@TEL2@@">@@TEL2D@@</a></span></div>
@@ -847,11 +850,11 @@ PAGE = """<!doctype html>
 </div></section>
 
 <section class="ratsec" id="avis"><div class="wrap">
-  <div class="intro reveal" style="max-width:72ch">
+  <div class="intro" style="max-width:72ch">
     <h2>@@V_H2@@</h2>
     <p class="lede">@@V_OF@@</p>
   </div>
-  <div class="rate reveal" style="margin-top:22px">
+  <div class="rate" style="margin-top:22px">
     <div class="score">@@V_SCORE@@<span>@@V_STAMP@@</span></div>
     <div><p class="of">@@V_LEDE@@</p><p class="of" style="margin-top:10px">@@V_SCOREOF@@</p></div>
   </div>
@@ -862,7 +865,7 @@ PAGE = """<!doctype html>
 </div></section>
 
 <section class="photos" id="visuels"><div class="wrap">
-  <div class="intro reveal" style="max-width:76ch">
+  <div class="intro" style="max-width:76ch">
     <h2>@@P_H2@@</h2>
     <p class="lede">@@P_LEDE@@</p>
   </div>
@@ -872,7 +875,7 @@ PAGE = """<!doctype html>
 </div></section>
 
 <section class="opensec" id="questions"><div class="wrap">
-  <div class="intro reveal" style="max-width:74ch">
+  <div class="intro" style="max-width:74ch">
     <h2>@@O_H2@@</h2>
     <p class="lede">@@O_LEDE@@</p>
   </div>
@@ -910,6 +913,7 @@ PAGE = """<!doctype html>
 </div>
 
 <script>@@JS@@</script>
+<script>@@JSREV@@</script>
 </body>
 </html>
 """
@@ -920,6 +924,7 @@ T = {
     "@@OGT@@": esc(C["title"]["fr"]),
     "@@CSS@@": CSS,
     "@@JS@@": JS.replace("__WA__", WA),
+               "@@JSREV@@": JSREV,
     "@@JSONLD@@": json.dumps(SCHEMA, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"),
     "@@LOGO@@": LOGO,
     "@@WA@@": WA,
@@ -1200,6 +1205,72 @@ check("un CTA d'en-tête visible > 960px — sous ce seuil c'est le rail collé 
       '.nav .cta.small{display:inline-flex' in _css.replace('\n', '')
       and 'class="cta small"' in PAGE)
 
+
+# ══════════════════════════════════════════════════════════════════════════
+# 15 · PREMIÈRE PEINTURE SANS JAVASCRIPT — la loi qui a manqué le 22/09 (UNIVERS OPTIQUE)
+#      King a ouvert le fichier : en-tête peint, corps ENTièrement vide. Cause : `.reveal{opacity:0}` posé
+#      sur 25 blocs dont le hero, relevé par un IntersectionObserver placé en FIN de document. Dès que le JS
+#      ne s'exécute pas, la page devient une feuille blanche — et `audit_html.py`, qui mesure des contrastes
+#      sur des portées de texte, ne voyait rien (0 finding, 459 runs sur du contenu invisible). Ce n'était
+#      pas l'angle mort de l'outil, c'était le mien : design/WORKFLOW.md §3b et design/CRAFT-FLOOR.md
+#      §2.5/§3 interdisent le fade qui cache le contenu, et je n'avais pas ouvert ces deux fichiers.
+#      Depuis : (a) AUCUN état caché hors d'un `html.js` posé INLINE dans le <head> ; (b) le budget mouvement
+#      est dépensé UNE fois, sur les six constats du dossier ; (c) ce que le lecteur a besoin de lire —
+#      titres, registres, images, barre collée — est statique.
+# ══════════════════════════════════════════════════════════════════════════
+_dom = PAGE[PAGE.find("<body"):]
+_attrs = re.findall(r'class="([^"]*)"', _dom)
+_fams = sorted({c for a in _attrs if "reveal" in a.split() for c in a.split() if c != "reveal"})
+_nrv = sum(1 for a in _attrs if "reveal" in a.split())
+_blk = len(re.findall(r'<(?:section|article|figure|aside)\b', _dom))
+_css_plain = re.sub(r"/\*.*?\*/", "", CSS, flags=re.S)   # un commentaire CSS n'est pas une règle
+_hidden = [" ".join(part.split())[:58] for sel, decl in re.findall(r"([^{}]+)\{([^{}]*)\}", _css_plain)
+           for part in sel.split(",")
+           if ("opacity:0" in decl.replace(" ", "") or "visibility:hidden" in decl.replace(" ", ""))
+           and "html.js" not in part]
+check("première peinture sans JS : aucune règle ne cache du contenu hors garde `html.js`",
+      not _hidden, "hors garde : %s" % (_hidden[:3] if _hidden else "aucune règle cachante non gardée"))
+check("le <head> pose lui-même la classe `js` (script INLINE, pas un fichier à côté)",
+      "<script>document.documentElement.classList.add('js')</script>" in PAGE[:PAGE.find("<body")])
+check("budget mouvement : %d blocs animés sur %d blocs de contenu (plafond 40 %%)" % (_nrv, _blk),
+      _nrv <= 0.40 * _blk, "design/CRAFT-FLOOR.md §3")
+check("UN seul moment écrit : les blocs animés sont exactement %s" % _fams,
+      _fams == ["finding"], "familles portant reveal : %s" % _fams)
+check("hero, titres, registres, images et barre collée ne dépendent d'aucune animation",
+      not any(x in _fams for x in ("hero", "intro", "lg", "shot", "sheet", "svc", "rate", "rare", "contact")))
+check("`prefers-reduced-motion` annule l'état caché, jamais l'inverse",
+      "html.js .reveal{opacity:1;transform:none;transition:none}" in CSS)
+
+
+# ── LE JAVASCRIPT EMBARQUÉ EST COMPILÉ AVANT LIVRAISON (tools/qa/check_inline_js.py) ────────────────
+#    Un <script> qui plante annule TOUT ce qui suit dans le même bloc : sur nos pages, ça se lit
+#    exactement comme « la page est vide ». L'auditeur de contrastes ne lit pas le JS ; un compilateur, si.
+#    On compile la PAGE EN MÉMOIRE (fichier temporaire), PAS le fichier du disque : sinon on audite le
+#    build précédent et on croit voir un succès là où il y a une faute — piège réel, rencontré le 22/09.
+#    rc=3 (bac sans node) = contrôle NON rendu, affiché comme tel, jamais compté comme un succès.
+import subprocess as _sp, tempfile as _tf
+_qa = ROOT / "tools" / "qa" / "check_inline_js.py"
+if _qa.exists():
+    import os as _os
+    with _tf.NamedTemporaryFile("w", suffix=".html", delete=False, encoding="utf-8") as _fh:
+        _fh.write(PAGE)
+        _tmp = _fh.name
+    try:
+        _r = _sp.run([sys.executable, str(_qa), _tmp], capture_output=True, text=True)
+    finally:
+        _os.unlink(_tmp)
+    if _r.returncode == 1:
+        print(_r.stdout)
+        raise SystemExit("\u2717 JavaScript embarqu\u00e9 non compilable \u2014 RIEN n'est \u00e9crit sur le "
+                         "disque : on corrige le g\u00e9n\u00e9rateur, pas la page")
+    elif _r.returncode == 3:
+        print("!  AVERTISSEMENT : `node` absent du bac \u2014 le JS embarqu\u00e9 n'a PAS \u00e9t\u00e9 "
+              "compil\u00e9. \u00c0 reporter dans les notes de livraison.")
+    else:
+        print(" \u2713 " + _r.stdout.strip().splitlines()[0])
+else:
+    print("!  tools/qa/check_inline_js.py absent \u2014 la page n'a pas \u00e9t\u00e9 compil\u00e9e")
+
 OUT.write_text(PAGE, encoding="utf-8")
 
 # ══════════════════════════════════════════════════════════════════════════
@@ -1220,6 +1291,8 @@ if "--sobre" in sys.argv:
             "at go-live - and they will be far stronger than any render.") + '</p>', 1)
     OUT_S = OUT.with_name(OUT.stem + "-sobre" + OUT.suffix)
     assert "data:image/jpeg;base64," not in PAGE, "des visuels restent dans la version sobre"
+    assert "<script>document.documentElement.classList.add('js')</script>" in PAGE, "repli sans la porte JS"
+    assert ".reveal{opacity:0" not in PAGE.replace("html.js .reveal{opacity:0", ""), "repli avec état caché non gardé"
     kbs = len(PAGE.encode()) / 1024
     assert kbs < 120, f"version sobre encore à {kbs:.0f} Ko : le repli ne sert à rien"
     OUT_S.write_text(PAGE, encoding="utf-8")

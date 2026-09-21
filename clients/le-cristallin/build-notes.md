@@ -197,3 +197,25 @@ Envoyer **le fichier** (pas de lien : rien n'est déployé, et je n'invente pas 
 assureurs** — la page les affiche avec la mention « à faire valider » ; s'il les confirme, ils sortent du
 conditionnel ; s'il n'en reconnaît que neuf, on retire les trois autres. Capture mockup non produite (`playwright`
 absent du bac) : sur son téléphone, la page se suffit à elle-même.
+
+---
+
+## 22/09 08:3x · le fichier envoyé dimanche contenait un `<script>` en SyntaxError (trouvé en compilant, pas en regardant)
+
+`build_le_cristallin.py` injectait quatre phrases de statut du sélecteur d'assurance avec
+`json.dumps(...)[1:-1]` : les **guillemets sautés**, donc le moteur JS lisait `Sélectionnez une assurance`
+comme trois identifiants. `Unexpected identifier 'une'` → toute l'IIFE mourait : bascule FR|EN, message
+WhatsApp construit à la volée, état du sélecteur, reveals. Comme le reveal portait un `opacity:0` **non gardé**
+sur 24 blocs, la page pouvait se présenter **vide sous l'en-tête** chez un lecteur dont le JS ne tournait pas —
+le symptôme exact que King a photographié chez le voisin d'Univers Optique le même matin.
+
+**Trois corrections, écrites dans le générateur :** (1) les phrases sont injectées **avec** leurs guillemets
+(`json.dumps` garde l'échappement) ; (2) l'état caché n'existe que sous **`html.js`** posé inline dans le
+`<head>`, la révélation a son propre `<script>` et son `try/catch` (`show()` en cas de pépin), le budget
+tombé à **2 blocs sur 12** (`chart` + `cmpgrid`, le moment écrit de cette page : la lecture comparée) ;
+(3) `tools/qa/check_inline_js.py` compile le JS embarqué **avant** écriture — `rc=1`, rien sur le disque.
+
+**Pour l'envoi :** le fichier du dimanche est à remplacer. Version d'aujourd'hui : **620 492 octets**,
+sha256 `625ce76a78f9b341…`, 484 runs de texte, 0 finding de contraste, aperçu identique au octale près
+(`diff` = 0 ligne). Le message A/B du 21/09 reste valable tel quel : la panne était technique, pas
+commerciale — mais il faut **redonner le fichier**, sinon c'est la version cassée qu'il ouvrira.

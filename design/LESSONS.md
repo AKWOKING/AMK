@@ -182,3 +182,47 @@ derrière est une opinion.
 le même commit (« La devanture » → « **La salle de vente** »), et dit ce qui restera vrai à la livraison :
 *cette image est un rendu de concept, la vôtre la remplacera, devanture et enseigne comprises*.
 
+## 2026-09-22 08:3x · « moche et sans image » voulait dire : la page ne se peignait pas
+
+**Ce que le roi a envoyé :** une capture — en-tête peint, tout le reste blanc — et « *ce site est moche et n'a
+pas d'image, tu es sûr que tu as lu les skills du repo pour le design ?* ». Il avait raison sur le fond et
+sur la forme : j'avais lu la loi racine (`AMK-DESIGN-SKILLS.md`) et **pas le dossier `design/`** —
+`WORKFLOW.md` §3b, §8, §9, `CRAFT-FLOOR.md` §2-§3, `MOTION.md` §3.2, `STYLE-TOKENS.md` (la feuille
+« optic » et son registre de rotation). Or **la loi de maison contenait le défaut** : le gabarit
+`design/MOTION.md` §3.2 pose `.rv{opacity:0}` sans porte, donc chaque page qui le recopie à la lettre
+interdit sa propre lecture tant que le JavaScript ne tourne pas.
+
+**Deux causes, toutes deux réelles, trouvées en relisant le fichier généré — pas en le regardant :**
+1. **Cache-contenu non gardé.** Univers : 25 blocs à `opacity:0` relevés par un `IntersectionObserver` placé
+   en fin de document ; Le Cristallin : 24. Un JS qui ne s'exécute pas (coupé, rogné par une pièce jointe
+   tronquée, aperçu qui n'exécute rien) = page blanche. Aucun des deux contrôles existants ne pouvait le
+   voir : `audit_html.py` mesure des **contrastes sur des portées de texte**, pas la géométrie ni la
+   visibilité — 459 runs, 0 finding, sur une page invisible.
+2. **Un `<script>` en SyntaxError, déjà parti chez le client.** Chez Le Cristallin, quatre phrases de statut
+   étaient injectées avec `json.dumps(...)[1:-1]` — guillemets retirés — donc lues comme des identifiants
+   nus : `Unexpected identifier 'une'`. La faute tuait l'IIFE entière : bascule FR|EN morte, sélecteur
+   d'assurance mort, liens WhatsApp peints au mort, et — à l'époque où le reveal partageait le bloc — page
+   vidée. Personne n'avait jamais compilé ce JS, parce que « 0 console errors in headless Chromium » est
+   une case que le bac ne peut pas cocher, et que je laissais telle quelle au lieu de la déclarer non rendue.
+
+**Corrections écrites dans la loi (pas seulement dans les fichiers) :**
+- `design/MOTION.md` §3.2 et §5 : l'état caché n'existe que sous **`html.js`**, classe posée par un `<script>`
+  **inline dans le `<head>`** ; le gabarit montré en exemple est désormais celui-là, parce qu'un exemple
+  fautif dans la loi produit des pages fautives par obéissance.
+- Le système de révélation a **son propre `<script>`, après celui de la langue, avec son `try/catch`** qui
+  appelle `show()` : une donnée illisible ne doit jamais coûter sa lecture au visiteur.
+- `design/WORKFLOW.md` §8 + §9 (lignes 10-12) : première peinture sans JS ; compilation de chaque
+  `<script>` via `tools/qa/check_inline_js.py` (`node --check`, rc=3 = contrôle **non rendu**, à écrire) ;
+  **intégrité de l'envoi** (octets + sha256 dans la feuille, et la phrase qui dit au client « corps manquant
+  sous l'en-tête = téléchargement tronqué, redemande le fichier »).
+- `design/CRAFT-FLOOR.md` §2.11-§2.12 : le plancher mécanique gagne deux vérifications, une pour la peinture,
+  une pour le compilateur.
+- `AMK-DESIGN-SKILLS.md` §13 : les deux portes en cases machine, plus l'obligation explicite — **une case
+  qu'on ne peut pas cocher dans ce bac s'écrit « NON VÉRIFIÉ », jamais « ok »**.
+- `design/STYLE-TOKENS.md` : les deux maquettes d'optique sont enfin au registre de rotation (elles y
+  manquaient — une loi non consignée n'est pas une loi).
+
+**La règle que je garde pour moi :** quand le roi dit « c'est moche », la première hypothèse n'est pas le
+goût, c'est **que la page ne s'affiche pas comme je l'imagine**. Une maquette n'existe que de ce que le
+lecteur peut prouver ; et « je n'ai pas de navigateur dans le bac » n'autorise pas à livrer un fichier
+dont la lisibilité dépend d'un script que personne n'a compilé.

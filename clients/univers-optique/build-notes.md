@@ -194,3 +194,50 @@ refusé), puis rétabli.
 densités sous 700px et la ligne de tampon entre 600 et 700px restent **non vérifiées à l'œil**, et le roi doit
 valider les visuels **avant** l'envoi.
 
+---
+
+## V2 — 22/09 08:3x · « moche et sans image » : la page ne se peignait pas (deux défauts, dont un chez Le Cristallin)
+
+**Capture du roi, 08:0x :** en-tête peint, corps entièrement blanc, fichier ouvert depuis `Downloads/RES/`.
+Verdict reçu comme un goût ; c'était une **panne**. Diagnostic mené sur le fichier généré, sans navigateur
+(il n'y en a pas dans le bac, et `playwright` ne s'y installe pas : le contrôle ne pouvait donc pas être
+visuel — il est devenu **statique et machine**, ce qui est plus durable).
+
+**Défaut 1 — un cache-contenu hérité du gabarit de la maison.** `design/MOTION.md` §3.2 enseigne
+`.rv{opacity:0}` sans porte, et `build_univers_optique.py` l'avait recopié sous le nom `.reveal`, posé sur
+**25 blocs dont le hero**, relevé par un `IntersectionObserver` en fin de document. Sans exécution du JS —
+coupée, rognée par un envoi, aperçu inerte — la page est blanche. `audit_html.py` ne peut pas le voir : il
+mesure des contrastes sur des portées de texte, pas la visibilité.
+**Correction :** l'état caché n'existe plus que sous **`html.js`** (classe posée par un `<script>` inline dans
+le `<head>`) ; la révélation vit dans **son propre `<script>`** avec un `try/catch` qui appelle `show()` ;
+le hero, les titres de section, les registres, les images et la barre collée ne s'animent plus du tout —
+budget ramené à **6 blocs sur 19 (31 %)**, sous le plafond de 40 % que pose `design/CRAFT-FLOOR.md` §3.
+Cinq contrôles écrits dans le générateur (`première peinture sans JS`, `classe js posée dans le <head>`,
+`budget mouvement`, `UN seul moment écrit` — familles animées = `['finding']` —, `prefers-reduced-motion`
+annule l'état caché). Muté : une règle `.thead{opacity:0}` non gardée injectée dans le gabarit → `rc=1`
+(refusée d'abord par le contrôle de CSS orpheline, ce qui prouve les deux filets).
+
+**Défaut 2 — et c'est le plus grave : la même famille de panne chez LE CRISTALLIN, déjà partie chez le client.**
+En cherchant ce qui pouvait faire taire le JS d'Univers, j'ai compilé les deux pages : le `<script>` de
+Le Cristallin contient un **SyntaxError** depuis dimanche. Quatre phrases de statut (selecteur d'assurance)
+étaient injectées via `json.dumps(...)[1:-1]` — les **guillemets retirés** — donc lues par le moteur comme des
+identifiants nus : `Unexpected identifier 'une'`. Une faute dans un bloc annule **tout** ce qui suit dans ce
+bloc : bascule FR|EN, sélecteur, messages WhatsApp construits à la volée, reveals. **Corrigé à la source**
+(`json.dumps` garde ses guillemets et son échappement), plus `try{paint()}catch(e){}` autour des peintures,
+plus la révélation isolée dans son propre script. Nouvelle porte pour les deux générateurs :
+`tools/qa/check_inline_js.py` compile chaque `<script>` embarqué (via `node --check`) **sur la page en mémoire,
+avant écriture** — un fichier fautif n'atteint plus le disque ; `rc=3` (bac sans node) est affiché comme
+contrôle **non rendu**, jamais comme un succès. Muté : le `[1:-1]` remis en place → `rc=1`, et md5 du fichier
+sur disque **inchangé** (rien n'a été écrit).
+
+**Ce que ça change pour l'envoi :** le fichier que King a téléchargé hier soir est périmé des deux côtés — il
+faut lui redonner la version d'aujourd'hui, et la feuille d'envoi porte désormais **octets + sha256** pour que
+« page vide sous l'en-tête » se lise comme un téléchargement tronqué et non comme un site moche. Univers
+**740 056 octets** (sha256 `719f8b60283184b6…`), repli sobre **86 954** (`1ff52ae6be71dc4d…`), Le Cristallin
+**620 492** (`625ce76a78f9b341…`).
+
+**Reste non vérifié, et cela reste écrit :** aucun navigateur dans le bac → pas de capture 1280×800 ni
+390×844, pas de console lue en conditions réelles, densités sous 700 px non vues à l'œil. Ce qui est vérifié à
+la place : les deux pages compilent (20 blocs `<script>`, 0 faute), 0 finding de contraste sur les cinq
+fichiers, `diff` démo ↔ aperçu = 0 ligne, `:4173/univers/` et `:4173/cristallin/` = 200, et — le point du
+jour — **le contenu ne dépend plus de JavaScript pour être peint**.

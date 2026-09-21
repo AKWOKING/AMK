@@ -38,7 +38,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 43 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 49 ligne(s).*
 
 `L837` · - `Le Cristallin` 17:51 · `Univers Optique` 17:50 · `Disc Optique Médicale` 17:48 · `Tchaya Optique` 17:47 :
 `L881` · ## Lundi 21/09/2026 — 18:20 → 19:15 · « Ok » de Le Cristallin : le premier aperçu demandé, construit et branché sur le CRM
@@ -83,6 +83,12 @@
 `L1328` · pour l'envoi de 09:00, et Le Cristallin choisit A ou B ? » a été posée à King ; **pas de réponse avant la coupure
 `L1331` · avec) ; la relance du Cristallin reste datée au 23/09. Une demande de validation qui dort n'est pas un feu vert,
 `L1336` · puisque c'est eux qui ont été refusés ; et **LE CRISTALLIN** attend toujours sa réponse **A (page seule) /
+`L1340` · ## 2026-09-22 · 08:05 → 08:55 · UNIVERS OPTIQUE + LE CRISTALLIN — « ce site est moche et n'a pas d'image » : c'était une panne, pas un goût
+`L1357` · **LE CRISTALLIN — défaut 2, plus grave : son `<script>` ne compilait pas depuis dimanche.** Quatre phrases de
+`L1373` · (`clients/univers-optique/`, `clients/le-cristallin/`).
+`L1376` · **86 954** (`1ff52ae6be71dc4d…`) · Le Cristallin **620 492** (`625ce76a78f9b341…`) · `audit_html.py`
+`L1378` · `diff` démo ↔ aperçu = **0 ligne** aux deux clients · `:4173/univers/` et `:4173/cristallin/` = **200**.
+`L1383` · par mes soins.** La promesse tient : aperçu UNIVERS OPTIQUE **avant 09:00** ; LE CRISTALLIN attend toujours sa
 
 ---
 

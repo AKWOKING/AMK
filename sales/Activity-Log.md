@@ -1336,3 +1336,50 @@ mais ce n'est pas un motif d'immobilisme non plus : le pack doit rester exécuta
 puisque c'est eux qui ont été refusés ; et **LE CRISTALLIN** attend toujours sa réponse **A (page seule) /
 B (page + Facebook, 50 000 FCFA)**. Toujours **aucun navigateur** dans le bac : densités sous 700px non vérifiées
 à l'œil, et **rien n'a été envoyé à un client** par mes soins.
+
+## 2026-09-22 · 08:05 → 08:55 · UNIVERS OPTIQUE + LE CRISTALLIN — « ce site est moche et n'a pas d'image » : c'était une panne, pas un goût
+
+**Ce que King a écrit, tel quel :** « *ce site est moche et n'a pas d'image tu est sur que tu as lu les skill
+du repo pour le design ?* » avec une capture — en-tête peint, corps blanc. Le reproche sur les skills était
+juste : j'avais lu la loi racine et **pas le dossier `design/`** (`WORKFLOW.md`, `CRAFT-FLOOR.md`,
+`MOTION.md`, `STYLE-TOKENS.md`). Deux fautes y vivaient, et la première venait du **gabarit de la maison
+lui-même** : `design/MOTION.md` §3.2 enseigne un `.rv{opacity:0}` sans porte.
+
+**UNIVERS OPTIQUE — défaut 1 : le contenu était retenu par le JavaScript.** 25 blocs à `opacity:0` relevés par
+un `IntersectionObserver` de fin de document, hero compris. Si le JS ne tourne pas (coupé, rogné par la pièce
+jointe, aperçu inerte), la page est blanche et l'auditeur de contrastes dit « 0 finding, 459 runs » par-dessus.
+Corrigé : état caché uniquement sous **`html.js`** posé par un `<script>` inline dans le `<head>` ; révélation
+isolée dans son propre script avec `try/catch` → `show()` ; hero, titres, registres, images et barre collée
+désormais **statiques** ; budget ramené à **6 blocs animés sur 19 (31 %)** sous le plafond de 40 % de
+`design/CRAFT-FLOOR.md` §3 ; cinq contrôles écrits dans `demos/build_univers_optique.py`, mutés (une règle
+`opacity:0` non gardée injectée → `rc=1`).
+
+**LE CRISTALLIN — défaut 2, plus grave : son `<script>` ne compilait pas depuis dimanche.** Quatre phrases de
+statut du sélecteur d'assurance injectées avec `json.dumps(...)[1:-1]`, donc **sans guillemets** →
+`Unexpected identifier 'une'` → l'IIFE entière morte : bascule FR|EN, liens WhatsApp construits à la volée,
+état du sélecteur, reveals. Trouvé **en compilant les deux pages**, pas en les regardant. Corrigé à la source
++ `try{paint()}catch(e){}` + révélation isolée + budget ramené à 2 blocs (`chart`, `cmpgrid`). Nouvelle porte
+commune aux deux générateurs : `tools/qa/check_inline_js.py` passe chaque `<script>` embarqué à
+`node --check` **sur la page en mémoire avant écriture** — `rc=1` = rien sur le disque (muté : le `[1:-1]`
+remis en place → `rc=1`, md5 du fichier inchangé) ; `rc=3` = bac sans node, **contrôle non rendu, affiché
+comme tel**.
+
+**Intégré à la loi (l'instruction de King était « learn and assimilate then integrate to workflow ») :**
+`design/MOTION.md` §3.2/§5 (gabarit corrigé + règle du script séparé), `design/WORKFLOW.md` §8 et §9 lignes
+10-12 (première peinture sans JS · compilation du JS embarqué · intégrité de l'envoi octets+sha256),
+`design/CRAFT-FLOOR.md` §2.11-§2.12, `AMK-DESIGN-SKILLS.md` §13 (trois cases dont celle-ci : **une case
+qu'on ne peut pas cocher dans ce bac s'écrit « NON VÉRIFIÉ », jamais « ok »**) et les deux maquettes enfin
+au registre de rotation de `design/STYLE-TOKENS.md`. Notes de build des deux côtés
+(`clients/univers-optique/`, `clients/le-cristallin/`).
+
+**État vérifié après coup :** Univers **740 056 octets** (sha256 `719f8b60283184b6…`) · repli sobre
+**86 954** (`1ff52ae6be71dc4d…`) · Le Cristallin **620 492** (`625ce76a78f9b341…`) · `audit_html.py`
+**TOTAL confirmed findings: 0** sur les cinq fichiers · `check_inline_js.py` **0 faute sur 20 blocs** ·
+`diff` démo ↔ aperçu = **0 ligne** aux deux clients · `:4173/univers/` et `:4173/cristallin/` = **200**.
+
+**Conséquence commerciale, à ne pas perdre de vue :** les fichiers que King a téléchargés hier sont périmés —
+il doit repartir de ceux d'aujourd'hui, et la feuille d'envoi porte maintenant la taille exacte pour qu'un
+corps manquant se lise comme un téléchargement tronqué et non comme « le site est moche ». **Aucun envoi fait
+par mes soins.** La promesse tient : aperçu UNIVERS OPTIQUE **avant 09:00** ; LE CRISTALLIN attend toujours sa
+réponse **A / B**. Aucun navigateur dans le bac : pas de capture 1280×800 / 390×844 ni de console lue en réel —
+c'est écrit, pas caché.

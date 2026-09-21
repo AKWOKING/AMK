@@ -15,6 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..700&family=JetBrains+Mono:wght@400;600&family=Public+Sans:ital,wght@0,400..600;1,400&display=swap">
+<script>document.documentElement.classList.add('js')</script>
 <style>
 :root{
  --paper:#F2EDE3; --card:#F7F3EA; --ink:#17140F; --text:#322E27; --mute:#5A5347;
@@ -285,9 +286,15 @@ main>section:last-of-type{border-bottom:0}
  calc(9px + env(safe-area-inset-bottom));background:rgba(242,237,227,.97);
  border-top:1px solid var(--line);backdrop-filter:blur(7px)}
 .rail a{flex:1;justify-content:center;font-size:.92rem;padding:12px 10px}
-.reveal{opacity:0;transform:translateY(15px);transition:opacity .55s cubic-bezier(.2,.7,.2,1),
+/* La loi maison est appliquée à la lettre (design/WORKFLOW.md §3b place « content-hiding fade-ins » dans la
+   liste à éviter ; design/CRAFT-FLOOR.md §2.5 veut UN moment écrit par surface et §3 plafonne .rv à 40 %
+   des blocs). L'état caché n'existe DONC QUE sous `html.js`, classe posée par un script INLINE dans le
+   <head>. Sans JS — JS coupé, script rogné par une pièce jointe tronquée, aperçu qui n'exécute rien — la
+   page se peint ENTIÈRE. C'est la correction du défaut relevé par King au matin du 22/09 sur cet
+   UNIVERS OPTIQUE : en-tête visible, corps vide, et audit à 0 finding par-dessus. */
+html.js .reveal{opacity:0;transform:translateY(15px);transition:opacity .55s cubic-bezier(.2,.7,.2,1),
  transform .55s cubic-bezier(.2,.7,.2,1)}
-.reveal.in{opacity:1;transform:none}
+html.js .reveal.in{opacity:1;transform:none}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 
 @media (max-width:1120px){.mark .rl{display:none}}
@@ -324,7 +331,7 @@ main>section:last-of-type{border-bottom:0}
 @media (prefers-reduced-motion:reduce){
  html{scroll-behavior:auto}
  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
- .reveal{opacity:1;transform:none}
+ html.js .reveal{opacity:1;transform:none;transition:none}
 }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Optician","name":"Univers Optique","legalName":"ETS UNIVERS OPTIQUE","foundingDate":"2009-08-01","description":"Opticien à Bépanda, Douala, depuis le 1er août 2009 : examen de vue, verres médicaux et de sécurité, montures, entretien, lentilles, prothèses oculaires, formations. Rendez-vous par WhatsApp.","address":{"@type":"PostalAddress","streetAddress":"Rue de Bépanda, Bépanda","addressLocality":"Douala","addressRegion":"Littoral","addressCountry":"CM","postOfficeBoxNumber":"4680"},"geo":{"@type":"GeoCoordinates","latitude":4.0540715,"longitude":9.7260728},"hasMap":"https://www.google.com/maps/search/?api=1&query=Univers%20Optique%20B%C3%A9panda%20Douala","telephone":"+237699252874","email":"universoptique@yahoo.fr","areaServed":[{"@type":"City","name":"Douala"},{"@type":"Place","name":"Bépanda"}],"currenciesAccepted":"XAF","paymentAccepted":"Espèces, Mobile Money, carte — à confirmer (champ annuaire vide)","knowsAbout":["examen de vue","verres correcteurs","montures","verres de sécurité","prothèses oculaires","lentilles de contact","formation en optique-lunetterie"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"}]}</script>
@@ -352,7 +359,7 @@ main>section:last-of-type{border-bottom:0}
 <main id="top">
 
 <section class="hero" id="hero"><div class="wrap grid">
-  <div class="reveal">
+  <div>
     <div class="eyebrow"><span class="fr-only">dossier de reprise</span><span class="en-only">reclamation record</span></div>
     <h1><span class="fr-only">Vous existez en ligne. C'est vous qui n'y êtes pas.</span><span class="en-only">You exist online. You are just not in it.</span></h1>
     <p class="lede"><span class="fr-only">Votre nom est en ligne trois fois : une fiche Google notée 3,3 sur 6 avis, une fiche d'annuaire professionnel à champs vides, et un site mort depuis janvier 2024. Les trois parlent de vous. Aucun ne vous appartient. Cet aperçu est la version où vous reprenez la main — et où un patient de Bépanda peut vous écrire à 20h.</span><span class="en-only">Your name appears online three times: a Google listing rated 3.3 out of six reviews, a professional directory page with empty fields, and a website dead since January 2024. All three are about you. None is yours. This preview is the version where you take it back - and where a Bepanda patient can message you at 8pm.</span></p>
@@ -362,11 +369,11 @@ main>section:last-of-type{border-bottom:0}
     </div>
     <p class="lede" style="margin-top:18px;font-size:.92rem;color:var(--mute)"><span class="fr-only" data-lang="fr">Aucun prix, aucun avis, aucune photo ne sont inventés sur cette page : les six constatations viennent de sources publiques citées, et les trois visuels sont des rendus. Vos réponses complètent le reste.</span><span class="en-only" data-lang="en">No price, no review and no photo on this page is invented: the six findings come from the public sources cited, and the three visuals are renders. Your answers complete the rest.</span></p>
   </div>
-  <aside class="sheet reveal" role="group" aria-label="Fiche d'établissement, huit lignes"><div class="sheet-top"><span class="t"><span class="fr-only" data-lang="fr">Fiche d'établissement</span><span class="en-only" data-lang="en">Establishment record</span></span><span class="no mono">AMK · UO/2026-09-21</span></div><div class="rec"><dt><span class="fr-only" data-lang="fr">Établissement</span><span class="en-only" data-lang="en">Establishment</span></dt><dd>ETS UNIVERS OPTIQUE</dd></div><div class="rec"><dt><span class="fr-only" data-lang="fr">Activité depuis</span><span class="en-only" data-lang="en">Trading since</span></dt><dd>1er août 2009</dd></div><div class="rec"><dt><span class="fr-only" data-lang="fr">Ville</span><span class="en-only" data-lang="en">City</span></dt><dd>Bépanda, Douala</dd></div><div class="rec"><dt><span class="fr-only" data-lang="fr">Téléphones déclarés</span><span class="en-only" data-lang="en">Declared phone lines</span></dt><dd>3 lignes, 2 opérateurs, 2 formats</dd></div><div class="rec"><dt><span class="fr-only" data-lang="fr">E-mails publics</span><span class="en-only" data-lang="en">Public e-mails</span></dt><dd>2, dont 1@yahoo.fr</dd></div><div class="rec"><dt><span class="fr-only" data-lang="fr">Site</span><span class="en-only" data-lang="en">Website</span></dt><dd class="dead">univers-optique.com — hors ligne</dd></div><div class="rec"><dt><span class="fr-only" data-lang="fr">Avis en ligne</span><span class="en-only" data-lang="en">Online reviews</span></dt><dd>6 avis · 3,3/5 (Google)</dd></div><div class="rec"><dt><span class="fr-only" data-lang="fr">Page Facebook</span><span class="en-only" data-lang="en">Facebook page</span></dt><dd class="open">à confirmer — aucune trouvée à votre nom</dd></div><div class="stamp" aria-hidden="true"><span class="fr-only">à reprendre</span><span class="en-only">to reclaim</span></div><div class="sheet-foot"><span class="fr-only" data-lang="fr">Constaté le 21/09/2026 par AMK · six sources publiques citées plus bas · « à reprendre » veut dire : c'est à vous de décider ce qui est vrai.</span><span class="en-only" data-lang="en">Recorded 21/09/2026 by AMK · six public sources cited below · "to reclaim" means: you decide what is true.</span></div></aside>
+  <aside class="sheet" role="group" aria-label="Fiche d'établissement, huit lignes"><div class="sheet-top"><span class="t"><span class="fr-only" data-lang="fr">Fiche d'établissement</span><span class="en-only" data-lang="en">Establishment record</span></span><span class="no mono">AMK · UO/2026-09-21</span></div><div class="rec"><dt><span class="fr-only" data-lang="fr">Établissement</span><span class="en-only" data-lang="en">Establishment</span></dt><dd>ETS UNIVERS OPTIQUE</dd></div><div class="rec"><dt><span class="fr-only" data-lang="fr">Activité depuis</span><span class="en-only" data-lang="en">Trading since</span></dt><dd>1er août 2009</dd></div><div class="rec"><dt><span class="fr-only" data-lang="fr">Ville</span><span class="en-only" data-lang="en">City</span></dt><dd>Bépanda, Douala</dd></div><div class="rec"><dt><span class="fr-only" data-lang="fr">Téléphones déclarés</span><span class="en-only" data-lang="en">Declared phone lines</span></dt><dd>3 lignes, 2 opérateurs, 2 formats</dd></div><div class="rec"><dt><span class="fr-only" data-lang="fr">E-mails publics</span><span class="en-only" data-lang="en">Public e-mails</span></dt><dd>2, dont 1@yahoo.fr</dd></div><div class="rec"><dt><span class="fr-only" data-lang="fr">Site</span><span class="en-only" data-lang="en">Website</span></dt><dd class="dead">univers-optique.com — hors ligne</dd></div><div class="rec"><dt><span class="fr-only" data-lang="fr">Avis en ligne</span><span class="en-only" data-lang="en">Online reviews</span></dt><dd>6 avis · 3,3/5 (Google)</dd></div><div class="rec"><dt><span class="fr-only" data-lang="fr">Page Facebook</span><span class="en-only" data-lang="en">Facebook page</span></dt><dd class="open">à confirmer — aucune trouvée à votre nom</dd></div><div class="stamp" aria-hidden="true"><span class="fr-only">à reprendre</span><span class="en-only">to reclaim</span></div><div class="sheet-foot"><span class="fr-only" data-lang="fr">Constaté le 21/09/2026 par AMK · six sources publiques citées plus bas · « à reprendre » veut dire : c'est à vous de décider ce qui est vrai.</span><span class="en-only" data-lang="en">Recorded 21/09/2026 by AMK · six public sources cited below · "to reclaim" means: you decide what is true.</span></div></aside>
 </div></section>
 
 <section class="dossier" id="dossier"><div class="wrap">
-  <div class="intro reveal">
+  <div class="intro">
     <h2><span class="fr-only">Ce que le web dit de vous aujourd'hui — point par point, source par source.</span><span class="en-only">What the web says about you today - point by point, source by source.</span></h2>
     <p class="lede"><span class="fr-only">Rien ci-dessous n'est une opinion d'agence. Chaque ligne est lue à une adresse précise, consultée le 21 septembre 2026. Si une ligne est fausse, dites-le : c'est la première chose que je corrige.</span><span class="en-only">Nothing below is an agency opinion. Every line was read at a specific address, checked on 21 September 2026. If a line is wrong, say it: that is the first thing I fix.</span></p>
   </div>
@@ -380,11 +387,11 @@ main>section:last-of-type{border-bottom:0}
 </div></section>
 
 <section class="svcsec" id="services"><div class="wrap">
-  <div class="intro reveal" style="max-width:74ch">
+  <div class="intro" style="max-width:74ch">
     <h2><span class="fr-only">L'optique à Bépanda : ce que vous faisiez déjà, écrit noir sur blanc.</span><span class="en-only">Optics in Bepanda: what you already did, written out plainly.</span></h2>
     <p class="lede"><span class="fr-only">Dix lignes reprises de votre propre annonce de 2022 et de la dernière copie de votre site. Chaque ligne est un acte que vous pratiquez — aucune n'est une promesse d'agence. Chaque ligne, sur la version en ligne, ouvrira une conversation WhatsApp déjà remplie.</span><span class="en-only">Ten lines taken from your own 2022 advertisement and the last copy of your website. Each is a service you already provide - none is an agency promise. On the live version, each line opens a WhatsApp conversation already filled in.</span></p>
   </div>
-  <div class="svc reveal">
+  <div class="svc">
     <div class="head"><span><span class="fr-only" data-lang="fr">L'acte</span><span class="en-only" data-lang="en">The service</span></span><span><span class="fr-only" data-lang="fr">Détail</span><span class="en-only" data-lang="en">Detail</span></span><span><span class="fr-only" data-lang="fr">WhatsApp</span><span class="en-only" data-lang="en">WhatsApp</span></span></div>
     <ul style="list-style:none;margin:0;padding:0">
 <li class="row" tabindex="0" role="link" data-msg="https://wa.me/699252874?text=Bonjour%20Univers%20Optique%2C%20je%20souhaite%20r%C3%A9server%20%3A%20Examen%20de%20vue.%20Est-ce%20possible%20cette%20semaine%20%3F" data-svc-fr="Examen de vue" data-svc-en="Eye test" aria-label="Demander « Examen de vue » par WhatsApp"><span class="n"><span class="fr-only" data-lang="fr">Examen de vue</span><span class="en-only" data-lang="en">Eye test</span></span><span class="go"><span class="fr-only">Demander ce poste</span><span class="en-only">Ask about this</span></span><span class="d"><span class="fr-only" data-lang="fr">Série de tests d'acuité visuelle et de mise au point, sur place.</span><span class="en-only" data-lang="en">Acuity and focusing tests, in the shop.</span></span></li>
@@ -399,7 +406,7 @@ main>section:last-of-type{border-bottom:0}
 <li class="row" tabindex="0" role="link" data-msg="https://wa.me/699252874?text=Bonjour%20Univers%20Optique%2C%20je%20souhaite%20r%C3%A9server%20%3A%20Formations.%20Est-ce%20possible%20cette%20semaine%20%3F" data-svc-fr="Formations" data-svc-en="Training" aria-label="Demander « Formations » par WhatsApp"><span class="n"><span class="fr-only" data-lang="fr">Formations</span><span class="en-only" data-lang="en">Training</span></span><span class="go"><span class="fr-only">Demander ce poste</span><span class="en-only">Ask about this</span></span><span class="d"><span class="fr-only" data-lang="fr">Formation du personnel aux métiers de l'optique-lunetterie.</span><span class="en-only" data-lang="en">Staff training in optical trades.</span></span></li>
     </ul>
   </div>
-  <div class="rare reveal" id="protheses">
+  <div class="rare" id="protheses">
     <div>
       <span class="f-kick"><span class="fr-only" data-lang="fr">Ce qui vous distingue</span><span class="en-only" data-lang="en">What sets you apart</span></span>
       <h2><span class="fr-only">Les prothèses oculaires : ce que personne dans le quartier ne peut vous disputer.</span><span class="en-only">Ocular prostheses: what no one in the neighbourhood can dispute with you.</span></h2>
@@ -411,12 +418,12 @@ main>section:last-of-type{border-bottom:0}
 </div></section>
 
 <section class="booksec" id="rendez-vous"><div class="wrap">
-  <div class="intro reveal" style="max-width:70ch">
+  <div class="intro" style="max-width:70ch">
     <h2><span class="fr-only">Prendre rendez-vous chez votre opticien à Douala : par WhatsApp, pas par formulaire.</span><span class="en-only">Booking your eye test in Douala: on WhatsApp, not by form.</span></h2>
     <p class="lede"><span class="fr-only">Vos horaires, tels qu'ils sont déjà publiés sur votre fiche Google. On touche un créneau, le message part écrit.</span><span class="en-only">Your hours, exactly as already published on your Google listing. Tap a slot, the message goes out written.</span></p>
   </div>
   <div class="book" style="margin-top:24px">
-    <div class="reveal">
+    <div>
       <ul style="list-style:none;margin:0;padding:0" class="hours">
 <li class="slot" tabindex="0" role="link" data-msg="https://wa.me/699252874?text=Bonjour%20Univers%20Optique%2C%20je%20souhaite%20un%20rendez-vous%20Lundi%20%E2%80%93%20Vendredi%208h00%20%E2%80%93%2018h00.%20Est-ce%20possible%20en%20cet%20apr%C3%A8s-midi%20%3F"><span class="d"><span class="fr-only" data-lang="fr">Lundi – Vendredi</span><span class="en-only" data-lang="en">Monday - Friday</span></span><span class="h">8h00 – 18h00</span><span class="p"><span class="fr-only" data-lang="fr">Réserver</span><span class="en-only" data-lang="en">Book</span></span></li>
 <li class="slot" tabindex="0" role="link" data-msg="https://wa.me/699252874?text=Bonjour%20Univers%20Optique%2C%20je%20souhaite%20un%20rendez-vous%20Samedi%208h00%20%E2%80%93%2013h00.%20Est-ce%20possible%20en%20samedi%20%3F"><span class="d"><span class="fr-only" data-lang="fr">Samedi</span><span class="en-only" data-lang="en">Saturday</span></span><span class="h">8h00 – 13h00</span><span class="p"><span class="fr-only" data-lang="fr">Réserver</span><span class="en-only" data-lang="en">Book</span></span></li>
@@ -425,7 +432,7 @@ main>section:last-of-type{border-bottom:0}
       <div class="prewrite"><span class="mono lbl"><span class="fr-only">Message qui part :</span><span class="en-only">Message sent:</span></span><span id="prewrite">&laquo;Bonjour Univers Optique, je souhaite réserver un examen de vue. Quel est votre prochain créneau libre ?&raquo;</span></div>
       <p class="fine"><span class="fr-only">Le numéro WhatsApp utilisé est le vôtre (699 25 28 74, la ligne que votre fiche Google affiche et que vous m'avez écrite aujourd'hui). Aucun de nos aperçus ne dirige un patient vers nous.</span><span class="en-only">The WhatsApp number used is yours (699 25 28 74, the line your Google listing shows and that you wrote to me today). None of our previews ever routes a patient to us.</span></p>
     </div>
-    <aside class="contact reveal">
+    <aside class="contact">
       <h3><span class="fr-only" data-lang="fr">Le cabinet</span><span class="en-only" data-lang="en">The practice</span></h3>
       <div class="l"><span class="k"><span class="fr-only" data-lang="fr">Adresse</span><span class="en-only" data-lang="en">Address</span></span><span class="v"><span class="fr-only" data-lang="fr">Rue de Bépanda, Bépanda — Douala</span><span class="en-only" data-lang="en">Bépanda, Douala</span><br><span style="color:var(--mute);font-size:.86rem"><span class="fr-only" data-lang="fr">Entre Pharmacie Sass et Express Union, face à l'ancienne pharmacie Omnisports</span><span class="en-only" data-lang="en">Entre Pharmacie Sass et Express Union, face à l'ancienne pharmacie Omnisports</span> · <a href="https://www.google.com/maps/search/?api=1&query=Univers%20Optique%20B%C3%A9panda%20Douala" target="_blank" rel="noopener">3P3G+JCG Douala</a></span></span></div>
       <div class="l"><span class="k"><span class="fr-only" data-lang="fr">Téléphones</span><span class="en-only" data-lang="en">Phones</span></span><span class="v"><a href="tel:699252874">699 25 28 74</a> <span class="q">· WhatsApp</span><br><a href="tel:674599302">674 59 93 02</a></span></div>
@@ -438,24 +445,24 @@ main>section:last-of-type{border-bottom:0}
 </div></section>
 
 <section class="ratsec" id="avis"><div class="wrap">
-  <div class="intro reveal" style="max-width:72ch">
+  <div class="intro" style="max-width:72ch">
     <h2><span class="fr-only">Vos six avis. 3,3 sur 5. On ne les enjolive pas : on les travaille.</span><span class="en-only">Your six reviews. 3.3 out of 5. We do not prettify them - we work on them.</span></h2>
     <p class="lede"><span class="fr-only" data-lang="fr">Votre fiche Google affiche une note. Nous la laissons affichée, telle quelle.</span><span class="en-only" data-lang="en">Your Google listing shows a rating. We leave it shown, as it is.</span></p>
   </div>
-  <div class="rate reveal" style="margin-top:22px">
+  <div class="rate" style="margin-top:22px">
     <div class="score">3,3<span><span class="fr-only" data-lang="fr">note réelle, non modifiée</span><span class="en-only" data-lang="en">real rating, unedited</span></span></div>
     <div><p class="of"><span class="fr-only" data-lang="fr">La note ci-contre n'est pas un ornement : c'est le premier chiffre que voit quiconque tape votre nom. Un aperçu qui la cachait ne vous rendrait pas service.</span><span class="en-only" data-lang="en">The rating beside is not decoration: it is the first number anyone sees when they type your name. A preview that hid it would not serve you.</span></p><p class="of" style="margin-top:10px"><span class="fr-only">sur 5 · 6 avis publiés sur Google</span><span class="en-only">out of 5 · 6 reviews on Google</span></p></div>
   </div>
   <div class="ledger">
-<div class="lg reveal"><h3><span class="fr-only" data-lang="fr">Ce que la note dit aujourd'hui</span><span class="en-only" data-lang="en">What the rating says today</span></h3><p><span class="fr-only" data-lang="fr">Six avis, 3,3 : une note qui, seule, fait hésiter. Elle est visible de tous ceux qui recherchent votre nom — et c'est tout ce que Google montre de vous, faute de site.</span><span class="en-only" data-lang="en">Six reviews at 3.3: a rating that, alone, makes people hesitate. Everyone searching your name sees it - and it is all Google shows of you, for want of a website.</span></p></div>
-<div class="lg reveal"><h3><span class="fr-only" data-lang="fr">Ce que nous proposons d'écrire</span><span class="en-only" data-lang="en">What we propose to write</span></h3><p><span class="fr-only" data-lang="fr">La note affichée, telle quelle, à côté du chemin pour la laisser (QR ou lien vers votre fiche) et d'un mot à dire au comptoir. Aucun avis inventé, aucun client mis en scène, jamais.</span><span class="en-only" data-lang="en">The rating shown as it is, next to the way to leave one (QR or link to your listing) and one sentence to say at the counter. No invented review, no staged customer, ever.</span></p></div>
-<div class="lg reveal"><h3><span class="fr-only" data-lang="fr">Ce que ça change en trois mois</span><span class="en-only" data-lang="en">What changes in three months</span></h3><p><span class="fr-only" data-lang="fr">Six avis à 3,3 et zéro réponse publique pèsent moins de choses dans Google que six avis répondus. Répondre, remercier, proposer un réglage gratuit : c'est un carnet, pas un budget.</span><span class="en-only" data-lang="en">Six reviews at 3.3 with zero public replies weighs less on Google than six answered ones. Replying, thanking, offering a free adjustment: that is a notebook, not a budget.</span></p></div>
+<div class="lg"><h3><span class="fr-only" data-lang="fr">Ce que la note dit aujourd'hui</span><span class="en-only" data-lang="en">What the rating says today</span></h3><p><span class="fr-only" data-lang="fr">Six avis, 3,3 : une note qui, seule, fait hésiter. Elle est visible de tous ceux qui recherchent votre nom — et c'est tout ce que Google montre de vous, faute de site.</span><span class="en-only" data-lang="en">Six reviews at 3.3: a rating that, alone, makes people hesitate. Everyone searching your name sees it - and it is all Google shows of you, for want of a website.</span></p></div>
+<div class="lg"><h3><span class="fr-only" data-lang="fr">Ce que nous proposons d'écrire</span><span class="en-only" data-lang="en">What we propose to write</span></h3><p><span class="fr-only" data-lang="fr">La note affichée, telle quelle, à côté du chemin pour la laisser (QR ou lien vers votre fiche) et d'un mot à dire au comptoir. Aucun avis inventé, aucun client mis en scène, jamais.</span><span class="en-only" data-lang="en">The rating shown as it is, next to the way to leave one (QR or link to your listing) and one sentence to say at the counter. No invented review, no staged customer, ever.</span></p></div>
+<div class="lg"><h3><span class="fr-only" data-lang="fr">Ce que ça change en trois mois</span><span class="en-only" data-lang="en">What changes in three months</span></h3><p><span class="fr-only" data-lang="fr">Six avis à 3,3 et zéro réponse publique pèsent moins de choses dans Google que six avis répondus. Répondre, remercier, proposer un réglage gratuit : c'est un carnet, pas un budget.</span><span class="en-only" data-lang="en">Six reviews at 3.3 with zero public replies weighs less on Google than six answered ones. Replying, thanking, offering a free adjustment: that is a notebook, not a budget.</span></p></div>
   </div>
   <p class="warn"><span class="fr-only">À savoir — nous n'afficherons pas de note en données structurées (le balisage `aggregateRating`) tant que la base d'avis est si mince : ce serait servir une étoile pâle dans les résultats de recherche. Visible sur la page, oui — marqué pour Google, non, pas encore.</span><span class="en-only">We will not mark a rating in structured data (aggregateRating) while the review base is this thin: that would serve a pale star in search results. Visible on the page, yes - advertised to Google, not yet.</span></p>
 </div></section>
 
 <section class="opensec" id="questions"><div class="wrap">
-  <div class="intro reveal" style="max-width:74ch">
+  <div class="intro" style="max-width:74ch">
     <h2><span class="fr-only">Six points à trancher par vous avant toute publication.</span><span class="en-only">Six points for you to settle before anything is published.</span></h2>
     <p class="lede"><span class="fr-only">Un aperçu qui ne montre que ce qui brille est un catalogue. Voici ce que je n'ai pas pu vérifier, et ce qui vous contredit vous-même. Une réponse par ligne suffit.</span><span class="en-only">A preview that shows only the shiny parts is a catalogue. Here is what I could not verify, and where your own sources disagree with each other. One answer per line is enough.</span></p>
   </div>
@@ -532,13 +539,7 @@ main>section:last-of-type{border-bottom:0}
     function(x){x.classList.remove('is-on')});t.classList.add('is-on');}});},
    {rootMargin:'-45%% 0px -50%% 0px'});
   [].slice.call(document.querySelectorAll('main>section[id]')).forEach(function(s){spy.observe(s)});
-  var rev=new IntersectionObserver(function(es){es.forEach(function(e){
-   if(e.isIntersecting){e.target.classList.add('in');rev.unobserve(e.target);}});},
-   {threshold:.1,rootMargin:'0px 0px -6%% 0px'});
-  [].slice.call(document.querySelectorAll('.reveal')).forEach(function(el){rev.observe(el)});
- }else{[].slice.call(document.querySelectorAll('.reveal')).forEach(function(el){el.classList.add('in')});}
- function reduce(){return window.matchMedia('(prefers-reduced-motion: reduce)').matches;}
- if(reduce()){[].slice.call(document.querySelectorAll('.reveal')).forEach(function(el){el.classList.add('in')});}
+ }
 
  /* un acte, un créneau = une conversation déjà écrite */
  function open(el){
@@ -552,5 +553,24 @@ main>section:last-of-type{border-bottom:0}
  });
 })();
 </script>
+<script>/* LE SYSTEME DE REVELATION VIT SEUL — son propre <script>, son propre try/catch.
+   Leçon du 22/09 : tant qu'il partageait le bloc de la bascule de langue, n'importe quelle faute
+   plus haut dans le fichier condamnait la page à rester invisible (c'est exactement ce qui est
+   arrivé à la page Le Cristallin, partie entre les mains de King avec un SyntaxError dans son
+   <script>). Et comme l'état caché n'existe que sous `html.js`, un lecteur qui n'exécute rien
+   perd UNIQUEMENT l'animation, jamais le texte. */
+(function(){
+ function show(){[].slice.call(document.querySelectorAll('.reveal')).forEach(function(e){e.classList.add('in')});}
+ try{
+  var els=[].slice.call(document.querySelectorAll('.reveal'));
+  if(!els.length) return;
+  var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduced||!('IntersectionObserver' in window)){show();return;}
+  var io=new IntersectionObserver(function(es){
+   es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.1,rootMargin:'0px 0px -6% 0px'});
+  els.forEach(function(e,i){e.style.transitionDelay=(Math.min(i,4)*60)+'ms';io.observe(e);});
+ }catch(err){show();}
+})();</script>
 </body>
 </html>
