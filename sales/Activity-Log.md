@@ -615,3 +615,132 @@ B (boutiques de montures → personne ne voit vos montures) · C (marques établ
 **PERTE À SIGNALER :** les **2 pages service** (`creation-site-web-ecole-cameroun.html` et
 `creation-site-web-clinique-cameroun.html`) ont été **perdues au 13ᵉ recul du bac** — leur push avait échoué
 (jeton GitHub intermittent). Elles sont à reconstruire. **Ce n'est pas bloquant pour l'outreach.**
+
+---
+
+## lundi 21/09 15:00 — TOUT EST TERMINÉ, L'OUTREACH PEUT COMMENCER
+
+**Les 2 pages service sont reconstruites — et cette fois dans un GÉNÉRATEUR.**
+
+Perdues au 13ᵉ recul du bac (leur push avait échoué). **Reconstruites par
+`tools/site/build_service_pages.py`** — parce qu'**une page qui n'existe que sous forme de fichier
+est fragile ; une page qui se régénère en une commande ne l'est pas.** Si elles disparaissent encore :
+
+    python3 tools/site/build_service_pages.py
+
+**Vérifié dans un vrai navigateur, les 3 pages :**
+
+| Page | Images | FAQ FR | FAQ EN | Liens service |
+|---|---|---|---|---|
+| **Accueil** | 6/6 ✓ | 10 (0 vide) | 10 (0 vide) | 4 |
+| **École** | 3/3 ✓ | 5 (0 vide) | 5 (0 vide) | 4 |
+| **Clinique** | 2/2 ✓ | 5 (0 vide) | 5 (0 vide) | 4 |
+
+**Plus :** `audit_html.py` **0 finding sur les 3 pages** · JSON-LD **3 blocs valides** par page
+(Service, FAQPage, BreadcrumbList) · §20.11 : 5 details / 5 summary, 0 violation · sitemap **7 URLs**.
+
+**Paquet : `amk-site.zip` — 5 201 986 octets · 38 fichiers · 8 pages.**
+Accueil : voix ✓ 15 000 FCFA ✓ liens vers les 2 pages ✓
+
+**Poussé : `316edce`. GitHub a tout** (vérifié par `fetch`, pas supposé).
+
+### Ce qui a été fait aujourd'hui, dans l'ordre
+
+1. **Vague 1 opticiens** : 38 neufs depuis l'annuaire officiel de l'ONOC, 0 doublon, 36 avec nom du titulaire.
+2. **2 pages service** reconstruites par générateur.
+3. **Maillage** : section « Deux pages, deux métiers » sur l'accueil + 2 liens au pied de page.
+
+### L'OUTREACH PEUT COMMENCER
+
+**`sales/Vague1-Opticiens-2026-09-21.md`** — les 10 premiers, avec numéro, nom du titulaire, variante de message
+et la raison de leur position dans l'ordre. **Le problème qu'on résout est le même pour les 38 :**
+*« être dans une liste, ce n'est pas être trouvé »* — et pour un opticien, **personne ne peut voir une seule
+de ses montures avant de pousser la porte.**
+
+**6 heures de fenêtre restantes.** ~10 minutes entre deux envois.
+
+---
+
+## lun 21/09 16:00 → 17:00 — audit du dépôt, migration M7 du CRM, et trois bugs trouvés EN LISANT les cellules
+
+**Aucun message n'a été envoyé pendant ce travail.** Le paquet prêt à envoyer est
+`sales/Send-Pack-2026-09-21-1600.md` (réponses ①, relances ②, vague 1 ③, interdits ④).
+
+### Récupéré : les 2 pages service sont de retour
+
+`PR #2` (branche `arena/01a0a0a4-amk`, restée OUVERTE, non fusionnée à main) contenait
+`site/creation-site-web-ecole-cameroun.html` (419 lignes), `site/creation-site-web-clinique-cameroun.html`
+(409), `tools/site/build_service_pages.py` (773 lignes — le générateur), `site/index.html` (maillage),
+`site/sitemap.xml`, `amk-site.zip` et 43 lignes de ce journal. **Rapatriés dans la branche de session**
+`arena/01a0c495-amk` par `git checkout origin/…`. Elles n'étaient pas perdues — jamais fusionnées.
+Contrôle : `audit_html.py` à relancer avant tout redéploiement.
+
+### M7 — le CRM parle maintenant le vocabulaire du funnel (décision King, 21/09)
+
+`prospect → qualified → presented → closing → won → delivered` + `parked` + `lost`. `delivered` est
+**gardé séparé de `won`** : payé ≠ livré, et c'est précisément la couture où un client meurt.
+11 champs ajoutés à `leads/build/crm.py` (`NEW_FIELDS`) → `leads/CRM.csv` passe de **52 à 64 colonnes**,
+**145 lignes avant comme après** (contrôlé slug par slug : 0 perte, 0 ajout, 14 diff = mes compléments).
+Ce qui N'est PAS stocké, et pourquoi c'est écrit dans le fichier : `kill_list`, `health` (calculés —
+`health_override` est la seule porte manuelle, tracée), `last_message_sent` (c'est le journal),
+`preview_asset` (c'est `dossier`), `notes_summary` (doublon de `Notes`).
+
+### Trois bugs trouvés, et les trois venaient de la même cause : la règle vivait dans la prose
+
+**① COMOBIL : « parké » dans trois fichiers, `prospect` dans la donnée.** `Pipeline-Status.md` dit
+PARKED 14/09, `CONTRADICTIONS.md` §1 dit parké, `KILL-LIST.md` **affirme** « le seul lead à 18 est
+COMOBIL, parké » — et le générateur ne l'écrivait nulle part. Résultat : la kill list déduite le
+remettait en tête, contre la règle du 19/09. **Corrigé à la cause** : table `PARKED` dans `crm.py`
+(COMOBIL, SAHISCOL — avec gâchette de réveil — et ICHS Great Soppo, qui garde son motif de procès).
+La règle de tenue est écrite dans `PRE-FLIGHT.md` : *une décision qui doit changer un calcul se met
+dans la DONNÉE.*
+
+**② OraCare était absent de SA propre kill list.** Son score 18/20 A+ vivait dans
+`sales/Outreach-Pack-2026-09-14.md` §1 ; `Lead score` était vide. Le calcul `score >= 18` ne pouvait
+pas le voir. **Corrigé** : `lead_score="18"`, `priority="A+"` dans `ORACARE`. La liste affiche
+désormais OraCare (COMOBIL sort, parké) — exactement ce que dit le §A4 amendé.
+
+**③ MITOC, opticien de Molyko, était classé `school`.** `crm.py` collait `org_type="school"` à
+**toutes** les lignes du classeur sans regard. Un lot de 60 leads était donc étiqueté à l'aveugle :
+le reporting par métier, les créneaux par niche et la lecture du funnel héritent du même défaut.
+**Corrigé pour les 5 dont le métier EST écrit dans la ligne** (MITOC→other, One Stop→lab, JOSS→clinic,
+Kamaïs→other, Baird confirmé school). **Les 55 autres restent non vérifiés — je ne devine pas.**
+Dispo après : un tri `org_type` à la main sur les 38 lignes du classeur, 10 minutes, si tu veux.
+
+### Deux compléments déduits, pas inventés
+
+**`reply_type`.** Le PRR ne compte que les réponses humaines (leçon Adonaï). Mais `reply_type` était
+laissé VIDE sur des lignes où `Reply` dit oui : **Bonanjo** et **Labiomed** étaient hors calcul et le
+taux affiché (2/45 = 4,4 %) mentait par en bas. Règle posée : `Reply` commence par « yes » ET
+`reply_type` vide → `human` ; une valeur explicite (`auto`, `none`) n'est jamais écrasée.
+**PRR recalculé : 3/45 = 6,7 %.**
+⚠️ **St. Theresa a bien répondu deux fois le 15/09** — sa cellule `Reply` contient le verbatim, pas un
+« yes », donc la déduction ne l'a pas rattrapée. **Le vrai chiffre est probablement 4/45 = 8,9 %.**
+Je ne le force pas : dis-moi si je la compte, et je passe par une table explicite.
+
+**Le filtre « GETS THE JOB DONE »**, demandé comme champ `gets_the_job_done`, est devenu `gtd_filter` :
+une **formule** sur `Website status` + `disqualification_reason` (cassé/expiré/absent = `gold` ·
+vivant et entretenu = `park` + gâchette · site vivant prouvé = `kill`), pas une quatrième échelle de
+score. 38/145 lignes portent une étiquette — celles qui ont un `Website status` vérifié. **Les 107
+lignes issues d'annuaires n'ont pas de contrôle de site : la colonne est vide, et un vide honnête
+vaut mieux qu'un « unknown » qui se lit comme un fait.** Conséquence de travail : *les 38 opticiens de
+la vague 1 ne sont pas encore passés par le filtre* — deux ont déjà été écartés à la main avant envoi,
+les 10 du paquet doivent l'être au contrôle du portique ③.
+
+### Textes abîmés trouvés dans la source (et réparés à la source)
+
+Les 38 lignes ONOC portaient `Probleme : etre dans la listanuaire de l'Ordre…` — une chaîne écrite à
+la main dans `crm.py`, **sans accents et avec une collision de mots** — et 8 slugs étaient hachés par
+le même procédé (`m-dina-optic`, `gr-ce-vision`, `optic-laser-m-dical`, `plan-te-optique`…).
+**Corrigé dans le générateur** (les 38 notes réécrites avec le fait vérifié + la source), slugs
+normalisés via `norm_slug`. La table est petite et rien ne pointait encore sur ces slugs (aucun
+`clients/<slug>/`, aucune fiche `records/`) : 0 lien à défaire. Le prochain lot s'écrit en français
+normal — la transcription ASCII des notes de lead n'a jamais rien protégé, elle a juste abîmé la donnée.
+
+### Ce que je te demande (5 points, pas de travail caché)
+
+1. **St. Theresa compte-t-elle dans le PRR ?** (oui → 4/45 = 8,9 %, table explicite ajoutée)
+2. **Skye et YAKS : la relance de dimanche est-elle partie ?** Ça décide follow_ups_sent 1 ou 2 et donc FU3 jeudi ou parked.
+3. **org_type des 55 lignes du classeur** : je propose un tri de 10 minutes, ligne par ligne, sur les faits écrits — jamais par hypothèse.
+4. **Les 5 questions de l'audit du 18/09 §10 sont toujours sans réponse** (COMOBIL · health manuel de St. Theresa · les 12 labos de la réserve · la Page Facebook · le parrainage St. Theresa). Les deux premières ont été tranchées par la migration d'aujourd'hui ; il en reste trois.
+5. **Contenu** : la vidéo #1 n'est pas dans le dépôt (tu as refusé le re-upload), la voix du personnage n'est pas ré-enregistrée, et `ffmpeg`/`playwright`/`PIL` ne sont pas dans ce bac. **Rien ne peut être rendu ici aujourd'hui** — la décision « anonymisé jusqu'à un client signé » a déjà été écrite dans les leçons et la shortlist, et elle bloque la sortie de V-05 telle quelle. À toi de dire si je prépare le floutage (demain) ou si le contenu reste gelé tant que l'outreach n'a pas clos.

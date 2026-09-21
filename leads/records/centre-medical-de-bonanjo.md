@@ -10,7 +10,7 @@
 | Type | clinic |
 | Ville | Douala (Bonapriso, ancien aéroport) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | qualified |
 | WhatsApp | 694 57 22 77 |
 | Numéro vérifié | yes |
 | Profil vu | Centre Médical de Bonanjo — Bonapriso |
@@ -25,7 +25,7 @@
 
 ## Notes
 
-⭐ A RÉPONDU. Envoyé 18/09 19:42 (2 coches) → « Bjr merci je vous reviens » le 19/09 à 08:44. Maquette personnalisée envoyée le 19/09 : clients/_mockups/bonanjo.jpg. FAIT DÉCISIF : le Dr Tchaleu figure déjà sur mondocteur237.com (annuaire de prise de rendez-vous) → il cherche déjà des patients en ligne, mais sur la plateforme d'un autre. C'est le profil « paie déjà pour du trafic » (§21.7), notre meilleur angle. Services publics vérifiés (maligah) : neurologie, médecine générale, radiologie, chirurgie, gynécologie, pédiatrie, échographie, accouchement.
+| M7 (21/09) : L249 · « Bjr merci je vous reviens » (19/09 08:44). Réponse = `qualified`, PAS `closing` : aucun prix accepté, et la démo annoncée dans `sales/Reply-Bonanjo-2026-09-19.md` (demos/concept-bonanjo-v1.html) N'EXISTE PAS dans demos/ — référence morte, à réparer.
 
 ## Prochaine action
 
@@ -33,7 +33,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 19 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 20 ligne(s).*
 
 `L43` · | **ven 18/09 19:42** | **Centre Médical de Bonanjo** (Bonapriso, 694 57 22 77) | msg 1 — sans maquette | Envoyé | **Non** |
 `L112` · | 19:42 | Centre Médical de Bonanjo · Kamaïs Optic |
@@ -54,6 +54,7 @@
 `L410` · et Bonanjo est DÉJÀ EN LIGNE depuis 13:35.**
 `L445` · « je suis intéressé, je n'ai pas le temps maintenant ». **La différence avec Bonanjo : ici il a demandé
 `L492` · - **Ce n'est pas un « je vous reviens ».** Bonanjo et Labiomed ont dit exactement ça, sans date. **UNI-LABO propose un jour.**
+`L572` · **exactement le bug qui a cassé la FAQ anglaise de Labiomed et Bonanjo le 19/09**, et que j'ai documenté
 
 ---
 

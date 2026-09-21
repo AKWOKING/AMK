@@ -10,7 +10,7 @@
 | Type | clinic |
 | Ville | Douala (Bonamoussadi) |
 | Langue de contact | FR/EN |
-| Étape | qualifying |
+| Étape | qualified |
 | WhatsApp | 677 79 69 99 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |
@@ -23,7 +23,7 @@
 
 ## Notes
 
-Message 16/09. Relance M+2 (FU1) partie 18/09 20:22. Concept live : concept-skye.vercel.app
+| M7 (21/09) : L15 · FU1 partie 18/09 20:22 (texte écrit dans `FU-2026-09-18-Soir.md`). Le journal ne dit PAS si la relance du 20/09 a été envoyée : follow_ups_sent reste à 1, rien n'est supposé.
 
 ## Prochaine action
 

@@ -36,16 +36,33 @@ GEN = ("> ⚙️ **Généré le {date} par `leads/build/views.py` — ne pas mod
        "> Toute correction se fait dans `leads/build/crm.py` ou `sales/Activity-Log.md`, "
        "puis on relance `leads/build/rebuild.sh`.\n")
 
+# M7 · AVERTISSEMENT D'ÉCRITURE (21/09) — lu à l'envers, c'est la source qui compte :
+#   relancer `python3 leads/build/rebuild.sh` REGENERE leads/CRM.csv depuis le classeur +
+#   les tables de crm.py. Les lignes VAGUE 1 (opticiens ONOC) y ont été portées dans
+#   `OPTICIENS_2109`, donc rien n'est perdu — mais TOUT ajout écrit à la main dans le CSV
+#   disparaît au prochain passage. Règle : un nouveau lot = un bloc dans `crm.py` ;
+#   une décision = une table dans `crm.py` ; un envoi = une ligne dans `Activity-Log.md`.
+# Vocabulaire M7 (21/09/2026) — décision King : le CRM parle maintenant les noms d'étape
+# du funnel, plus `won`/`lost` (inexistants avant) + `delivered` (conservé : l'étape 5 du
+# funnel — DELIVERY · PROOF · GROWTH — ne peut pas être absorbée par `won` sans perdre la
+# distinction « payé » / « livré », qui est exactement là où meurt un client).
+#    prospect → qualified → presented → closing → won → delivered        (vivant)
+#    parked (réveil possible) · lost (déduit, motif en `disqualification_reason`)
 STAGE_LABEL = {
-    "prospecting": "① Prospection — à qualifier",
-    "qualifying": "② Qualifié — en conversation",
-    "demo": "③ Démo envoyée",
-    "offer": "④ Offre posée",
-    "delivered": "⑤ Livré",
+    "prospect": "① Prospect — à qualifier",
+    "qualified": "② Qualifié — en conversation",
+    "presented": "③ Aperçu envoyé",
+    "closing": "④ Offre posée / prix annoncé",
+    "won": "⑤ Signé — dépôt reçu",
+    "delivered": "⑥ Livré",
     "parked": "⏸ Parqué",
-    "disqualified": "⛔ Écarté",
+    "lost": "⛔ Perdu / écarté",
 }
-STAGE_ORDER = ["offer", "demo", "qualifying", "prospecting", "parked", "disqualified"]
+STAGE_ORDER = ["won", "closing", "presented", "qualified", "prospect", "parked", "lost"]
+# Alias historiques — une seule énumération est stockée, les constantes ci-dessous évitent
+# qu'un comparateur éparpillé continue à raisonner en ancien vocabulaire.
+QUALIFIED, PROSPECT, CLOSED_STAGES = "qualified", "prospect", ("closing", "won")
+DEAD = ("parked", "lost")
 
 # Décisions humaines qui priment sur les règles automatiques : slug -> (échéance ISO, note)
 RELANCE_A_JOUR = {
@@ -157,7 +174,7 @@ def due_for_relance(r):
     if slug in RELANCE_A_JOUR:
         d, note = RELANCE_A_JOUR[slug]
         return (d, f"fixé : {note}") if d <= today.isoformat() else (None, None)
-    if (r.get("stage") or "") != "qualifying":
+    if (r.get("stage") or "") != QUALIFIED:
         return None, None
     age = last_send_age_days(r)
     if age < 0:
@@ -230,7 +247,7 @@ def view_kill_list(rows, date):
             return 0
 
     hot = [r for r in rows if score(r) >= 18
-           and (r.get("stage") or "") not in ("parked", "disqualified")
+           and (r.get("stage") or "") not in DEAD
            and not reply_pending(r)]
 
     waiting = [r for r in rows if reply_pending(r)]
@@ -286,7 +303,7 @@ def view_stale(rows, idx, date):
             continue
         if str(r.get("Reply", "")).strip().lower().startswith("yes"):
             continue
-        if (r.get("stage") or "") in ("parked", "disqualified"):
+        if (r.get("stage") or "") in DEAD:
             continue
         age = last_send_age_days(r)
         if age < 2:
@@ -347,7 +364,7 @@ def view_daily_plan(rows, date):
                     fu = str(r.get("follow_ups_sent") or "0")
                     action = f"Relance {int(fu)+1}/3" if fu.isdigit() else "Relance"
                     note = why or ""
-                elif (r.get("stage") or "") == "prospecting" and r.get("wa_verified") == "yes":
+                elif (r.get("stage") or "") == PROSPECT and r.get("wa_verified") == "yes":
                     prio += 1
                     action = "À CONTACTER (numéro vérifié)"
                     note = re.sub(r"\s+", " ", str(r.get("Notes", "")))[:110]

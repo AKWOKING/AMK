@@ -5,7 +5,7 @@
 
 | Source | Leads | Ce que ça dit |
 |---|---|---|
-| `directory` | 62 | Annuaires professionnels de Douala (pagespratiquescm, maligah, doualazoom, goafricaonline). |
+| `directory` | 102 | Annuaires professionnels de Douala (pagespratiquescm, maligah, doualazoom, goafricaonline). |
 | `(non renseigné)` | 38 | **Les 38 lignes du classeur d'origine.** Leur provenance n'a jamais été écrite — trou de données assumé, pas une invention. |
 | `google_maps` | 2 | Sweep cartographique — dentaires de Bonamoussadi/Logbessou. |
 | `content_video` | 1 | Premier lead de la campagne, venu du contenu. |

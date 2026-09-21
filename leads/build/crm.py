@@ -35,6 +35,7 @@ XLSX = ROOT / "leads" / "leads_50.xlsx"
 #    Leclasseur garde ses noms (espaces compris) ; le code utilise des identifiants lisibles.
 #    Sans cette table, un nom approchant était jeté en silence (bug du 19/09, 15 leads touchés).
 KEYMAP = {
+    "lead_score": "Lead score", "priority": "Priority",
     "city": "City", "language": "Language", "decision": "Decision maker",
     "contacted": "Contacted", "reply": "Reply", "demo": "Demo made",
     "wa": "WhatsApp", "org": "School",
@@ -63,7 +64,124 @@ NEW_FIELDS = [
     # M4 : le dossier de travail réel (concept, inspirations, maquette). L'audit §4 : 5 dossiers
     # sur 8 n'avaient AUCUNE ligne — du travail qui existe et que le CRM ignore.
     "dossier",
+    # M7 · 21/09/2026 — le champ et la chronologie (décision King, migration du vocabulaire)
+    "first_touched", "last_reply_received", "bamfam_next_action", "bamfam_next_step",
+    "preview_sent", "proposal_sent", "price_quoted_fcfa", "invoice_sent",
+    "closed_on", "closed_value_fcfa", "health_override", "gtd_filter",
 ]
+
+# M7 · ce qui N'EST PAS stocké, et pourquoi — la raison est dans le fichier, pas dans la tête.
+#   kill_list / health  → CALULÉS par views.py (règle du 19/09 : « une liste figée ment en
+#                         quatre jours »). `health_override` est la SEULE porte manuelle, tracée.
+#   gets_the_job_done   → n'existe pas comme jugement séparé : `Lead score` + `Priority` +
+#                         `disqualification_reason` le portent déjà. Deux échelles concurrentes
+#                         = deux vérités. La règle « cassé / expiré / absent = or » vit dans
+#                         `Website status`, qui est une donnée vérifiée, pas une opinion.
+#   last_message_sent   → c'est `first_touched` + `follow_ups_sent` + la dernière ligne du
+#                         `Activity-Log.md`. Trois sources, une seule vraie : le journal.
+#   preview_asset        → c'est `dossier` (+ le champ `Demo made` du classeur, conservé).
+#   notes_summary        → `Notes` existe déjà ; un résumé à côté de l'original devient
+#                         bientôt LA version qu'on lit.
+
+# M7 · migration du vocabulaire d'étape (choix de King, 21/09). Deux valeurs n'existaient
+#      nulle part : `won` et `lost`. Une n'a pas de correspondant dans la liste de King :
+#      `delivered` — l'étape 5 du funnel (DELIVERY · PROOF · GROWTH) ne peut pas être
+#      absorbée par `won` sans perdre la distinction « payé » / « livré ». Gardée, déclarée.
+STAGE_MIGRATION = {
+    "prospecting": "prospect",
+    "qualifying": "qualified",
+    "demo": "presented",
+    "offer": "closing",
+    "delivered": "delivered",
+    "parked": "parked",
+    "disqualified": "lost",
+    # déjà conformes
+    "prospect": "prospect", "qualified": "qualified", "presented": "presented",
+    "closing": "closing", "won": "won", "lost": "lost",
+}
+STAGES = ("prospect", "qualified", "presented", "closing", "won", "delivered",
+          "parked", "lost")
+
+# M7 · le registre des leads vivants, au 21/09 16:00. UNIQUEMENT des faits datés et tracés
+#      dans `sales/Activity-Log.md` (référence `L<line>`). Une date sans ligne du journal
+#      n'entre pas ici. Un champ laissé vide = l'information n'existe pas encore.
+LIVE_LEDGER = {
+    "uni-labo-bonamoussadi": dict(
+        stage="closing", stage_since="2026-09-19", first_touched="2026-09-18",
+        last_reply_received="2026-09-19", preview_sent="2026-09-18",
+        proposal_sent="2026-09-19", price_quoted_fcfa="100000",
+        bamfam_next_action="RDV vendredi 25/09 — confirmer l'heure avant",
+        bamfam_next_step="Rappel J-1 (jeu 24/09) + prix déjà posé dans `RDV-UNILABO-2026-09-25.md`",
+        log_ref="L486",
+        note="Demande de rendez-vous du prospect = le plus fort signal de la campagne (19/09 20:20)."),
+    "labiomed-deido": dict(
+        stage="closing", stage_since="2026-09-19", first_touched="2026-09-19",
+        last_reply_received="2026-09-19", preview_sent="2026-09-19",
+        proposal_sent="2026-09-19", price_quoted_fcfa="100000",
+        bamfam_next_action="Relance M+2 due lun 21/09 — angle : ses horaires manquent à la page",
+        bamfam_next_step="Après le « oui » : fixer le jour du dépôt 50 000 FCFA",
+        log_ref="L366",
+        note="PREMIER OUI de la campagne (19/09 19:43, 11 min après msg 1). Prix envoyé 21:00."),
+    "centre-medical-de-bonanjo": dict(
+        stage="qualified", stage_since="2026-09-19", first_touched="2026-09-18",
+        last_reply_received="2026-09-19", preview_sent="2026-09-19",
+        proposal_sent="", price_quoted_fcfa="",
+        bamfam_next_action="Répondre au fil ouvert (règle des 90 secondes)",
+        bamfam_next_step="« je vous reviens » → livrer plus que promis, puis proposer un créneau",
+        log_ref="L249",
+        note="« Bjr merci je vous reviens » (19/09 08:44). Réponse = `qualified`, PAS `closing` : "
+             "aucun prix accepté, et la démo annoncée dans `sales/Reply-Bonanjo-2026-09-19.md` "
+             "(demos/concept-bonanjo-v1.html) N'EXISTE PAS dans demos/ — référence morte, à réparer."),
+    "oracare-buea": dict(
+        stage="qualified", stage_since="2026-09-14", first_touched="2026-09-14",
+        preview_sent="2026-09-14", follow_ups_sent="1",
+        bamfam_next_action="FU2 (M+4) fixée dim 20 — partie ?",
+        bamfam_next_step="Silence après FU3 (lun 21) → parked",
+        log_ref="L15",
+        note="Seul lead à score 18 non parqué = la kill list réelle (règle corrigée 19/09)."),
+    "opticien-bali-douala": dict(
+        stage="qualified", stage_since="2026-09-17", first_touched="2026-09-17",
+        preview_sent="2026-09-17",
+        bamfam_next_action="FU due — 3/3 portes MQL, jamais relancé depuis le 17/09",
+        bamfam_next_step="Relancer AVANT la vague 1 : c'est la preuve que le métier répond",
+        log_ref="L226",
+        note="MQL 3/3. Le meilleur prospect optique de Douala, en attente depuis quatre jours."),
+    "st-theresa-international-bilingual-comprehensive-college-sti": dict(
+        stage="parked", stage_since="2026-09-19", first_touched="2026-09-15",
+        last_reply_received="2026-09-15",
+        health_override="warm",
+        bamfam_next_action="Revenir le 14/10 — le site était annoncé « pour octobre »",
+        bamfam_next_step="Question d'ouverture : le site est-il en ligne ? Avis gratuit honnête.",
+        log_ref="L15",
+        note="Parqué AVEC permission (2 réponses humaines). health_override = warm à la main, "
+             "pas cold : le calcul dirait 6 jours = froid, la permission dit le contraire."),
+    "midas-touch-optic-center-mitoc": dict(
+        stage="qualified", stage_since="2026-09-15", first_touched="2026-09-15",
+        preview_sent="2026-09-15", follow_ups_sent="1",
+        bamfam_next_action="FU2 due lun 21/09", bamfam_next_step="Silence → FU3 mer 23 puis parked",
+        log_ref="L13", note=""),
+    "baird-memorial-college": dict(
+        stage="qualified", stage_since="2026-09-15", first_touched="2026-09-15",
+        follow_ups_sent="1", bamfam_next_action="FU2 due lun 21/09 (même lot que MITOC)",
+        bamfam_next_step="Silence → FU3, puis parked", log_ref="L14",
+        note="Site auto-construit bairdmemorial.com, DNS mort au contrôle = or (filtre « ça fait le travail »)."),
+    "skye-douala": dict(
+        stage="qualified", stage_since="2026-09-16", first_touched="2026-09-16",
+        preview_sent="2026-09-16", follow_ups_sent="1",
+        bamfam_next_action="À CONFIRMER PAR KING : FU2 (M+4) due dim 20/09 — envoyée ou non ?",
+        bamfam_next_step="Si oui → FU3 (M+7) jeu 24/09 puis parked. Si non → envoyer AUJOURD'HUI.",
+        log_ref="L15",
+        note="FU1 partie 18/09 20:22 (texte écrit dans `FU-2026-09-18-Soir.md`). Le journal ne dit PAS "
+             "si la relance du 20/09 a été envoyée : follow_ups_sent reste à 1, rien n'est supposé."),
+    "yaks-douala": dict(
+        stage="qualified", stage_since="2026-09-16", first_touched="2026-09-16",
+        preview_sent="2026-09-16", follow_ups_sent="1",
+        bamfam_next_action="À CONFIRMER PAR KING : FU2 (M+4) due dim 20/09 — envoyée ou non ?",
+        bamfam_next_step="Si oui → FU3 (M+7) jeu 24/09 puis parked. Si non → envoyer AUJOURD'HUI.",
+        log_ref="L15",
+        note="FU1 partie 18/09 20:22 (texte écrit dans `FU-2026-09-18-Soir.md`). Le journal ne dit PAS "
+             "si la relance du 20/09 a été envoyée : follow_ups_sent reste à 1, rien n'est supposé."),
+}
 
 # ── Les 15 leads hors classeur (audit §1), avec les seuls faits sourcés du dépôt ──
 #    Aucun numéro, aucune ville, aucun état qui ne soit écrit dans sales/*.md ou clients/*/
@@ -628,234 +746,234 @@ def _labs_ecartes_rows():
 #    Opticiens du Cameroun) + Maligah. 38 neufs, 0 doublon avec les 82 lignes deja contactees.
 #    2 ecartes pour site vivant (Vision Care Center, Original Optique) : voir OPT_ECARTES.
 OPTICIENS_2109 = [
-    dict(slug="m-dina-optic", org="Médina Optic", city="Douala", org_type="other", language="FR",
+    dict(slug="medina-optic", org="Médina Optic", city="Douala", org_type="other", language="FR",
          wa_number="699 93 93 34", wa_verified="unknown",
          contact_channel="WhatsApp", decision="BALLA Saïdou", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : BALLA Saïdou. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : BALLA Saïdou. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="lux-optique", org="Lux Optique", city="Douala", org_type="other", language="FR",
          wa_number="655 04 05 49", wa_verified="unknown",
          contact_channel="WhatsApp", decision="BATJOM BA BOOH Michel", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : BATJOM BA BOOH Michel. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : BATJOM BA BOOH Michel. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="dumbu-lunetterie", org="Dumbu Lunetterie", city="Douala", org_type="other", language="FR",
          wa_number="690 11 43 23", wa_verified="unknown",
          contact_channel="WhatsApp", decision="", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="univers-optique", org="Univers Optique", city="Douala", org_type="other", language="FR",
          wa_number="699 25 28 74", wa_verified="unknown",
          contact_channel="WhatsApp", decision="BAYANG BIHEN Calvin", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : BAYANG BIHEN Calvin. (2e : 674 59 93 02) Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : BAYANG BIHEN Calvin. (2e : 674 59 93 02) Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="lyfyoptic", org="LyfyOptic", city="Douala", org_type="other", language="FR",
          wa_number="699 98 06 66", wa_verified="unknown",
          contact_channel="WhatsApp", decision="BELL MBENOUN Dominique", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : BELL MBENOUN Dominique. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : BELL MBENOUN Dominique. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="espace-vision", org="Espace Vision", city="Douala", org_type="other", language="FR",
          wa_number="677 33 94 24", wa_verified="unknown",
          contact_channel="WhatsApp", decision="BIYOUMA Théodore", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : BIYOUMA Théodore. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : BIYOUMA Théodore. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="espace-lunetterie", org="Espace Lunetterie", city="Douala", org_type="other", language="FR",
          wa_number="677 34 24 62", wa_verified="unknown",
          contact_channel="WhatsApp", decision="BOUDJEU TCHAKOUNTE Edwige", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : BOUDJEU TCHAKOUNTE Edwige. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : BOUDJEU TCHAKOUNTE Edwige. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="faby-optique", org="Faby Optique", city="Douala", org_type="other", language="FR",
          wa_number="692 08 00 55", wa_verified="unknown",
          contact_channel="WhatsApp", decision="BOUDZAP ZOYEM Hermine", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : BOUDZAP ZOYEM Hermine. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : BOUDZAP ZOYEM Hermine. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="horizon-optique", org="Horizon Optique", city="Douala", org_type="other", language="FR",
          wa_number="677 44 74 17", wa_verified="unknown",
          contact_channel="WhatsApp", decision="DJEUMO FEUNOU Siméon", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : DJEUMO FEUNOU Siméon. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : DJEUMO FEUNOU Siméon. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="cavisa-optique", org="Cavisa Optique", city="Douala", org_type="other", language="FR",
          wa_number="699 95 90 52", wa_verified="unknown",
          contact_channel="WhatsApp", decision="DONGMO Jean René", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : DONGMO Jean René. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : DONGMO Jean René. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="l-opticien-sarl", org="L'Opticien SARL", city="Douala", org_type="other", language="FR",
          wa_number="694 33 65 82", wa_verified="unknown",
          contact_channel="WhatsApp", decision="DOUALLA Karen Sophie", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : DOUALLA Karen Sophie. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : DOUALLA Karen Sophie. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="class-optic", org="Class-Optic", city="Douala", org_type="other", language="FR",
          wa_number="691 17 18 17", wa_verified="unknown",
          contact_channel="WhatsApp", decision="KAMGANG NGOUNOU Jean Roméo", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : KAMGANG NGOUNOU Jean Roméo. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : KAMGANG NGOUNOU Jean Roméo. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="4m-optique-akwa", org="4M Optique Akwa", city="Douala", org_type="other", language="FR",
          wa_number="679 27 06 64", wa_verified="unknown",
          contact_channel="WhatsApp", decision="KAPTUE TAFFO Virginie", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : KAPTUE TAFFO Virginie. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
-    dict(slug="gr-ce-vision", org="Grâce Vision", city="Douala", org_type="other", language="FR",
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : KAPTUE TAFFO Virginie. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
+    dict(slug="grace-vision", org="Grâce Vision", city="Douala", org_type="other", language="FR",
          wa_number="691 39 28 78", wa_verified="unknown",
          contact_channel="WhatsApp", decision="", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
-    dict(slug="gilles-andr-vision", org="Gilles-André Vision", city="Douala", org_type="other", language="FR",
+         notes="VAGUE 1 OPTICIENS (21/09). Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
+    dict(slug="gilles-andre-vision", org="Gilles-André Vision", city="Douala", org_type="other", language="FR",
          wa_number="699 88 31 78", wa_verified="unknown",
          contact_channel="WhatsApp", decision="KONTCHOU FOUENGO Justine Flore", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : KONTCHOU FOUENGO Justine Flore. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : KONTCHOU FOUENGO Justine Flore. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="jiredoptic-med", org="JiredOptic Med", city="Douala", org_type="other", language="FR",
          wa_number="696 26 50 31", wa_verified="unknown",
          contact_channel="WhatsApp", decision="LIPOTH Pierrette", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : LIPOTH Pierrette. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
-    dict(slug="plan-te-optique", org="Planète Optique", city="Douala", org_type="other", language="FR",
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : LIPOTH Pierrette. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
+    dict(slug="planete-optique", org="Planète Optique", city="Douala", org_type="other", language="FR",
          wa_number="699 85 58 35", wa_verified="unknown",
          contact_channel="WhatsApp", decision="MAKONGO Jean Dury", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : MAKONGO Jean Dury. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : MAKONGO Jean Dury. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="maff-optique", org="Maff Optique", city="Douala", org_type="other", language="FR",
          wa_number="699 93 19 56", wa_verified="unknown",
          contact_channel="WhatsApp", decision="MANFO Hélène", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : MANFO Hélène. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : MANFO Hélène. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="le-cristallin", org="Le Cristallin", city="Douala", org_type="other", language="FR",
          wa_number="699 90 55 77", wa_verified="unknown",
          contact_channel="WhatsApp", decision="MESSOUE LONTE Serge Nazaire", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : MESSOUE LONTE Serge Nazaire. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : MESSOUE LONTE Serge Nazaire. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="doyoan-optic", org="Doyoan Optic", city="Douala", org_type="other", language="FR",
          wa_number="653 85 27 49", wa_verified="unknown",
          contact_channel="WhatsApp", decision="MEZAFO Gildas", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : MEZAFO Gildas. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : MEZAFO Gildas. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="london-vision", org="London Vision", city="Douala", org_type="other", language="FR",
          wa_number="696 76 81 16", wa_verified="unknown",
          contact_channel="WhatsApp", decision="MINANKO Pascal", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : MINANKO Pascal. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : MINANKO Pascal. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="africa-optic", org="Africa Optic", city="Douala", org_type="other", language="FR",
          wa_number="691 28 02 37", wa_verified="unknown",
          contact_channel="WhatsApp", decision="MINTEU NZONGA Eric Aimé", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : MINTEU NZONGA Eric Aimé. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : MINTEU NZONGA Eric Aimé. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="cristalys-optic", org="Cristalys Optic", city="Douala", org_type="other", language="FR",
          wa_number="690 94 51 50", wa_verified="unknown",
          contact_channel="WhatsApp", decision="MPEGNA Pascal Bertrand", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : MPEGNA Pascal Bertrand. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : MPEGNA Pascal Bertrand. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="megaoptic", org="MegaOptic", city="Douala", org_type="other", language="FR",
          wa_number="698 82 10 27", wa_verified="unknown",
          contact_channel="WhatsApp", decision="MVENG ATEBA Zénon", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : MVENG ATEBA Zénon. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
-    dict(slug="disc-optique-m-dicale", org="Disc Optique Médicale", city="Douala", org_type="other", language="FR",
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : MVENG ATEBA Zénon. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
+    dict(slug="disc-optique-medicale", org="Disc Optique Médicale", city="Douala", org_type="other", language="FR",
          wa_number="677 53 35 68", wa_verified="unknown",
          contact_channel="WhatsApp", decision="NANKAP TCHIPTCHOUA Jean Calvin", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : NANKAP TCHIPTCHOUA Jean Calvin. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
-    dict(slug="bely-optique-m-dicale", org="Bely Optique Médicale", city="Douala", org_type="other", language="FR",
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : NANKAP TCHIPTCHOUA Jean Calvin. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
+    dict(slug="bely-optique-medicale", org="Bely Optique Médicale", city="Douala", org_type="other", language="FR",
          wa_number="696 85 52 42", wa_verified="unknown",
          contact_channel="WhatsApp", decision="NGATCHA ZOE Rosalie", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : NGATCHA ZOE Rosalie. (2e : 651 61 32 17 — consultation oculaire) Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : NGATCHA ZOE Rosalie. (2e : 651 61 32 17 — consultation oculaire) Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="isalyd-corporation", org="Isalyd Corporation", city="Douala", org_type="other", language="FR",
          wa_number="694 85 87 46", wa_verified="unknown",
          contact_channel="WhatsApp", decision="NGANKEU Christelle", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : NGANKEU Christelle. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : NGANKEU Christelle. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="gift-optical", org="Gift Optical", city="Douala", org_type="other", language="FR",
          wa_number="673 52 17 35", wa_verified="unknown",
          contact_channel="WhatsApp", decision="NGUIFFEU TETNE NGASTING Aristide", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : NGUIFFEU TETNE NGASTING Aristide. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
-    dict(slug="optic-laser-m-dical", org="Optic Laser Médical", city="Douala", org_type="other", language="FR",
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : NGUIFFEU TETNE NGASTING Aristide. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
+    dict(slug="optic-laser-medical", org="Optic Laser Médical", city="Douala", org_type="other", language="FR",
          wa_number="677 82 74 34", wa_verified="unknown",
          contact_channel="WhatsApp", decision="NJUMSSA François", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : NJUMSSA François. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : NJUMSSA François. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="mel-s-optic", org="Mel's Optic", city="Douala", org_type="other", language="FR",
          wa_number="690 98 85 18", wa_verified="unknown",
          contact_channel="WhatsApp", decision="NTOLO Marie Luise", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : NTOLO Marie Luise. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : NTOLO Marie Luise. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="fashion-vision", org="Fashion Vision", city="Douala", org_type="other", language="FR",
          wa_number="656 22 38 63", wa_verified="unknown",
          contact_channel="WhatsApp", decision="PUILLE Nicolas", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : PUILLE Nicolas. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : PUILLE Nicolas. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="omb-optique", org="OMB Optique", city="Douala", org_type="other", language="FR",
          wa_number="699 77 02 34", wa_verified="unknown",
          contact_channel="WhatsApp", decision="SAMEYO Elie", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : SAMEYO Elie. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : SAMEYO Elie. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="caprice-optique", org="Caprice Optique", city="Douala", org_type="other", language="FR",
          wa_number="675 06 16 23", wa_verified="unknown",
          contact_channel="WhatsApp", decision="SEGUE Benezer", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : SEGUE Benezer. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : SEGUE Benezer. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="le-samaritain-optique", org="Le Samaritain Optique", city="Douala", org_type="other", language="FR",
          wa_number="670 19 74 51", wa_verified="unknown",
          contact_channel="WhatsApp", decision="TASING KAYEH Isaac", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : TASING KAYEH Isaac. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : TASING KAYEH Isaac. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="opticplus", org="OpticPlus", city="Douala", org_type="other", language="FR",
          wa_number="699 37 91 50", wa_verified="unknown",
          contact_channel="WhatsApp", decision="TATSAEDONG Alain Michel", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : TATSAEDONG Alain Michel. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : TATSAEDONG Alain Michel. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="express-optic", org="Express Optic", city="Douala", org_type="other", language="FR",
          wa_number="675 77 61 25", wa_verified="unknown",
          contact_channel="WhatsApp", decision="TAVEA Frédéric Marie", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : TAVEA Frédéric Marie. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
-    dict(slug="mouscou-optique-m-dicale", org="Mouscou Optique Médicale", city="Douala", org_type="other", language="FR",
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : TAVEA Frédéric Marie. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
+    dict(slug="mouscou-optique-medicale", org="Mouscou Optique Médicale", city="Douala", org_type="other", language="FR",
          wa_number="696 65 41 64", wa_verified="unknown",
          contact_channel="WhatsApp", decision="TATSINKOU NGUTE Justin", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : TATSINKOU NGUTE Justin. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : TATSINKOU NGUTE Justin. Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
     dict(slug="tchaya-optique", org="Tchaya Optique", city="Douala", org_type="other", language="FR",
          wa_number="696 79 01 73", wa_verified="unknown",
          contact_channel="WhatsApp", decision="TCHAYA PITCHA'A Yannick — depuis 1974", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : TCHAYA PITCHA'A Yannick — depuis 1974. (2e : 699 98 87 24) Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : TCHAYA PITCHA'A Yannick — depuis 1974. (2e : 699 98 87 24) Problème vérifié (annuaire ONOC, 21/09) : le nom figure dans la liste de l'Ordre — plus de 150 noms — mais rien en ligne : un patient ne peut voir aucune monture avant de pousser la porte. Aucun site trouvé. Texte sans accents : la faute venait de l'écriture en dur, pas des données."),
 ]
 
 OPT_ECARTES = [
@@ -883,6 +1001,11 @@ ORACARE = dict(slug="oracare-buea", org="OraCare Dental Clinic (Oracare237)",
                source="content_video", source_detail="Premier lead de la campagne — vérifié par King",
                stage="qualifying", contacted="Yes", reply="No", demo="Yes",
                last_send_state="sent", follow_ups_sent="1",
+               # M7 (21/09) : le score vivait dans `sales/Outreach-Pack-2026-09-14.md` §1
+               # (« ORACARE237 — 18/20 A+ · KILL LIST ») et nulle part dans la DONNÉE.
+               # La kill list se calcule sur `Lead score` : sans cette ligne, OraCare — le seul
+               # lead à 18 qui soit jouable — était ABSENT de sa propre kill list.
+               lead_score="18", priority="A+",
                notes="Message 1 lundi 14/09. FU2 (M+4) prévue dim 20/09. Concept live : oracare-concept.vercel.app "
                      "(v3, prix + assistant). ⚠️ N'a JAMAIS répondu : message non lu attribué à tort le 18/09, corrigé.")
 
@@ -929,20 +1052,74 @@ NEVER_CONTACT = {
     "njang": "King : NE JAMAIS contacter Dr Njang (691 63 29 41).",
 }
 
-STAGES = ("prospecting", "qualifying", "demo", "offer", "delivered", "disqualified", "parked")
+# STAGES n'est plus redéfini ici. L'énumération vit UNE SEULE FOIS, en tête de fichier (M7,
+# 21/09). L'ancienne définition était placée plus bas que la nouvelle et la REMPLAÇAIT
+# silencieusement en import — c'est le même défaut qui a fait mentir trois vocabulaires à la
+# fois (audit #9). Les blocs qui écrivent encore « qualifying »/« prospecting »/« offer » en
+# dur sont rattrapés par la migration 5b, qui convertit et refuse toute valeur inconnue.
+
+# M7 · 21/09/2026 — les décisions de PARKING, écrites dans le générateur.
+#   LE TROU TROUVÉ AUJOURD'HUI : `Pipeline-Status.md` (14/09) dit « COMOBIL / Groupe WAFO —
+#   PARKED 14 Sep by King decision » et SAHISCOL « PARKED 14 Sep », `leads/CONTRADICTIONS.md` §1
+#   dit « COMOBIL est parké depuis le 14/09 », et `KILL-LIST.md` affirme « le seul lead à 18 est
+#   COMOBIL, parké » — mais AUCUN de ces trois fichiers n'écrit `parked` dans la DONNÉE. La ligne
+#   COMOBIL sortait de `crm.py` en `prospect` (Contacted = No), donc la kill list déduite LA REMETTAIT
+#   en tête. Une règle vraie dans trois fichiers et fausse dans le CSV est une règle qui ne tient pas.
+#   Règle de tenue : une décision qui doit changer un calcul se met dans la DONNÉE, pas dans la prose.
+PARKED = {
+    "comobil-college-moderne-bilingue-les-laureats": {
+        "stage_since": "2026-09-14",
+        "gtd": "gold — COMOBIL.com EXPIRED/PARKED (vérifié 09/09/26) : la douleur est réelle et "
+               "vérifiée. Parké sur le CANAL, pas sur la douleur (Pipeline-Status 18/09). Réveils : "
+               "(a) page FB AMK créée → DM sous 48 h (`AMK-Facebook-Page-Setup.md`) · (b) déplacement "
+               "à Douala → walk-in avec carte QR · (c) le domaine tombe ou est racheté · (d) "
+               "recommandation par le réseau WAFO. Meilleur réveil du tableau.",
+        "trigger": "Réveil : un canal atteignable (WhatsApp Business au nom du groupe, ou réponse "
+                   "sur Messenger) OU le domaine COMOBIL.com expire vraiment et disparaît. "
+                   "Source de la décision : `sales/Pipeline-Status.md` (14/09) + `leads/CONTRADICTIONS.md` §1.",
+    },
+    "sainte-anne-newbell": {
+        "stage_since": "2026-09-14",
+        "trigger": "Réveil : sahiscol.org (502) tombe pour de bon, campagne d'admissions, ou "
+                   "recommandation via le réseau diocésain/Buea-Limbe. Site entretenu = filtre « ça "
+                   "fait le travail » → parké avec gâchette, pas écarté (source : `sales/Pipeline-Status.md` 14/09).",
+    },
+    "inter-comprehensive-high-school-great-soppo": {
+        "stage_since": "2026-09-15",
+        "trigger": "Procès en cours (Enni Philomena c. administrateurs Fongoh Mayah) — réexamen ~mars 2027. "
+                   "Reste ÉCARTÉ tant qu'il n'y a pas d'interlocuteur qui puisse signer.",
+    },
+}
+
+# M7 · le filtre « GETS THE JOB DONE » du playbook, appliqué mécaniquement.
+#   cassé / expiré / absent = OR · vivant et entretenu = parké avec gâchette ·
+#   déjà un site vivant prouvé = écarté (déjà porté par `disqualification_reason`).
+#   On ne STOCKE PAS un quatrième score : on FORMULE ce que les colonnes disent déjà,
+#   et on l'écrit à côté. Deux échelles concurrentes = deux vérités (audit #9).
+def gtd_for(rec: dict) -> str:
+    st = str(rec.get("Website status") or "").strip().lower()
+    if (rec.get("disqualification_reason") or "").strip():
+        return "kill — " + str(rec["disqualification_reason"]).strip()[:200]
+    if any(k in st for k in ("expired", "broken", "parked", "no website", "none", "404", "nxdomain")):
+        return "gold — site cassé / expiré / absent : c'est la douleur vérifiée, rien à inventer"
+    if st.startswith(("good", "ok", "active", "maintained", "up")):
+        return "park — site actuel et entretenu : on ne pitch pas, on pose une gâchette de réveil"
+    if st:
+        return f"park — statut vérifié « {st[:40]} » : à classer au prochain contrôle"
+    return ""     # aucune donnée = aucune étiquette. Un vide honnête vaut mieux qu'un « unknown » lu comme un fait.
 
 
 def stage_for(rec: dict) -> str:
     """Étape déduite des colonnes du classeur. Rien d'inventé : la règle est écrite ici."""
     c = str(rec.get("Contacted") or "").strip().lower()
     if c.startswith("yes"):
-        return "qualifying"          # « Message right leads » — onglet Pipeline, étape 2
+        return "qualified"          # « Message right leads » — onglet Pipeline, étape 2
     if "scheduled" in c:
         return "parked"              # planifié puis jamais parti
     if "parked" in c:
         return "parked"
     if c in ("", "none", "no", "not contacted") or c.startswith("no"):
-        return "prospecting"         # « Find & capture qualified… » — étape 1
+        return "prospect"         # « Find & capture qualified… » — étape 1
     return ""
 
 
@@ -1108,6 +1285,7 @@ def main() -> int:
         rec["org_type"] = "school"
         rec["wa_number"] = wa_number_for(r)
         rec["stage"] = stage_for(r)
+        rec["gtd_filter"] = gtd_for(rec)
         # wa_verified reste vide : personne n'a ouvert ces profils. On ne le devine pas.
         out.append(rec)
 
@@ -1121,6 +1299,38 @@ def main() -> int:
                 rec["disqualification_reason"] = why
                 rec["Notes"] = (str(rec.get("Notes") or "") + " · 🚫 " + why).strip(" ·")
                 break
+
+    # 1a-bis · M7 — les décisions de parking (voir le commentaire de la table PARKED)
+    for rec in out:
+        pk = PARKED.get(rec.get("slug") or "")
+        if not pk:
+            continue
+        if not str(rec.get("stage") or "").strip() or rec.get("stage") in ("prospect", "prospecting"):
+            rec["stage"] = "parked"
+        rec.setdefault("stage_since", "")
+        if not str(rec.get("stage_since") or "").strip():
+            rec["stage_since"] = pk["stage_since"]
+        rec["gtd_filter"] = (pk.get("gtd") or ("park — " + pk["trigger"]))[:400]
+        rec["Notes"] = (str(rec.get("Notes") or "") + " · ⏸ " + pk["trigger"]).strip(" ·")
+
+    # 1a-ter · M7 — `org_type` était collé à « school » sur TOUTES les lignes du classeur
+    #   sans regard (une seule valeur par défaut, jamais vérifiée). Conséquence trouvée
+    #   aujourd'hui : **MITOC, un opticien de Molyko, est classé `school`** — donc le reporting
+    #   par métier, les packs par créneau et la lecture du funnel sont faux sur cette ligne.
+    #   On ne redevine pas les autres : on corrige ceux dont le métier EST écrit dans la ligne.
+    ORG_TYPE_FIX = {
+        "midas-touch-optic-center-mitoc": ("other", "opticien (FB page + catalogue de montures)"),
+        "baird-memorial-college": ("school", "« College » Bonduma — école, confirmé"),
+        "one-stop-medical-laboratory-diagnostics": ("lab", "laboratoire d'analyses"),
+        "joss-medi-buea": ("clinic", "clinique privée depuis 2009"),
+        "kamais-optic-bessengue": ("other", "opticien"),
+    }
+    for rec in out:
+        fix = ORG_TYPE_FIX.get(rec.get("slug") or "")
+        if fix and str(rec.get("org_type") or "") != fix[0]:
+            rec["org_type"] = fix[0]
+            rec["Notes"] = (str(rec.get("Notes") or "") +
+                            f" · org_type = {fix[0]} (M7, 21/09) — base : {fix[1]}").strip(" ·")
 
     # 1b · le numéro qui NE DOIT PAS servir — la leçon du 18/09, gravée dans la donnée
     #      (King : « vérifier nom + catégorie sur WhatsApp avant d'écrire »)
@@ -1206,6 +1416,64 @@ def main() -> int:
         rec["value_discarded"] = dropped
         rec["Notes"] = (str(rec.get("Notes") or "") +
                         " | CONTRADICTION RÉSOLUE (M2) — retenu : " + kept).strip(" ·")
+
+    # 5a · M7 — `reply_type` déduit, pas déviné.
+    #   Le PRR est LA métrique qui dit la vérité sur l'approche (audit §10 : réponses HUMAINES
+    #   seulement, les accusés automatiques comptent à part — leçon Adonaï). Or le champ était
+    #   laissé vide sur des lignes où `Reply` dit oui noir sur blanc : Bonanjo et St. Theresa
+    #   étaient hors calcul, et le taux affiché (2/45 = 4,4 %) mentait par en bas.
+    #   Règle : `Reply` commence par « yes » ET `reply_type` est vide → human. Une ligne
+    #   explicitement posée (`auto`, `none`) n'est JAMAIS écrasée.
+    for rec in out:
+        if not str(rec.get("reply_type") or "").strip() and \
+           str(rec.get("Reply") or "").strip().lower().startswith("yes"):
+            rec["reply_type"] = "human"
+            rec["Notes"] = (str(rec.get("Notes") or "") +
+                            " · reply_type=human déduit de la colonne Reply (M7, 21/09) — à valider "
+                            "si le verbatim est introuvable dans `Activity-Log.md`").strip(" ·")
+
+    # 5b · M7 · migration du vocabulaire + registre des leads vivants (21/09).
+    #      La migration passe APRÈS tous les traitements qui écrivent `stage` en dur,
+    #      sinon un `qualifying` écrit plus bas réchapperait au renommage.
+    for rec in out:
+        s = str(rec.get("stage") or "").strip()
+        if s:
+            new = STAGE_MIGRATION.get(s)
+            if new is None:
+                sys.exit(f"✗ étape inconnue « {s} » pour {rec.get('slug')} — le vocabulaire a "
+                         f"dérivé. Énumération admise : {', '.join(STAGES)}.")
+            rec["stage"] = new
+    by_slug_l = {r.get("slug"): r for r in out}
+    missing_ledger = []
+    for slug, patch in LIVE_LEDGER.items():
+        rec = by_slug_l.get(slug)
+        if not rec:
+            missing_ledger.append(slug)
+            continue
+        m7 = []
+        for k, v in patch.items():
+            if k in ("log_ref", "note") and v:
+                m7.append(str(v))
+                continue
+            if k in NEW_FIELDS or k in ("follow_ups_sent",):
+                rec[k] = v
+            elif v:
+                sys.exit(f"✗ M7 : clé du registre hors schéma (« {k} » pour {slug})")
+        if m7:
+            rec["Notes"] = (str(rec.get("Notes") or "") + " | M7 (21/09) : "
+                            + " · ".join(m7)).strip(" ·")
+    if missing_ledger:
+        print(f"  ⚠ M7 : {len(missing_ledger)} slug(s) du registre introuvables dans le CRM : "
+              + ", ".join(missing_ledger))
+    for rec in out:
+        if rec.get("stage") in ("presented", "closing", "won") and not str(rec.get("bamfam_next_action") or "").strip():
+            print(f"  ⚠ M7 : BAMFAM vide à une étape où ça coûte — {rec.get('slug')} ({rec.get('stage')})")
+
+    # 5c · garde-fou d'énumération : une valeur hors STAGES ne sort pas du script
+    bad = [r.get("slug") for r in out if str(r.get("stage") or "") and r["stage"] not in STAGES]
+    if bad:
+        sys.exit(f"✗ étapes hors énumération : {bad[:6]}")
+
 
     # Garde-fou (bug du 19/09) : une clé mal orthographiée était jetée EN SILENCE par
     # DictWriter(extrasaction="ignore") — 15 leads avaient perdu City, Language, Contacted,

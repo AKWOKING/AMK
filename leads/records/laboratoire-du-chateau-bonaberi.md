@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Bonabéri) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | qualified |
 | WhatsApp | 676 94 69 93 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |

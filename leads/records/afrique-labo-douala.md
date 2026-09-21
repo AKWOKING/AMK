@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Bessengue) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | qualified |
 | WhatsApp | 690 54 70 93 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |

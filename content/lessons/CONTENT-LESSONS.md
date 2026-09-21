@@ -193,3 +193,30 @@ Aucune migration avant cette preuve.
 - **v0.3 — 17 Sep 2026:** batch-4 video-marketing lessons absorbed (§10.1–10.3) + King's binding decisions (§11) + script gates formalised in `content/scripts/README.md`.
 - **v0.2 — 17 Sep 2026:** handover absorbed — fingerprint hexes, hard rules, production discipline, full technical failure log, evidence table, qualified earlier advice.
 - **v0.1 — 17 Sep 2026:** created from King's brief + repo history + lesson batches.
+
+---
+
+## 14 · Droits d'usage — décision KING du 21 Sep 2026 (à appliquer dès la prochaine vidéo)
+
+**Rien de nommé avant un client signé.** Aucun prospect (école, clinique, labo, opticien) n'apparaît
+avec son nom, son logo, son adresse, son numéro ou un détail qui permettrait de l'identifier dans un
+contenu public — **y compris ceux qui ont répondu**, y compris UNI-LABO (rdv du 25/09) et Labiomed
+(le premier « oui »). Une vidéo « étude de cas » sur un lead en conversation se lit comme
+**l'étalage d'une difficulté privée** : dans un réseau de la taille de Bulea/Douala, c'est le pont
+qu'on brûle pour un vues.
+
+1. **Contenu public autorisé sans demande :** `content/studio/` (MboaCare, étiqueté FICTIONNEL sur
+   chaque capture), les gabarits **sans nom** (`hosting/samples/` — Nova · Little Oaks · Crestwood),
+   nos propres pages (`site/`), et les principes généraux démontrés sur ces assets.
+2. **Concepts nommés dans `demos/` :****flouté/anonymisé par défaut** — nom, adresse, numéro,
+   détails uniques. Un concept jamais envoyé n'est pas un sujet public.
+3. **Après une signature :** l'autorisation **écrite** du client ouvre trois usages — avant/après,
+   un chiffre vérifié, un verbatim. Les trois restent interdits tant que l'accord n'existe pas.
+4. **Conséquence sur la shortlist (à corriger dans `pipeline/CONTENT-SHORTLIST.md`) :** V-05 (SJC
+   Sasse), V-06 (AFRIQUE LABO / JOSS), V-07 (YAKS / Skye / OraCare), V-08 (vraie page FB), V-10 et
+   V-13 (travail client) passent **toutes** en régime anonymisé. V-05 est déjà rendue : **à repasser
+   en floutage avant toute publication**, sinon elle ne sort pas.
+
+**Pourquoi maintenant :** la règle précédente datait du 17/09 et laissait la porte ouverte
+(« named *or* anonymised, on King's call »). Une règle à deux lectures est une règle qu'on applique
+pas. C'est écrit, plus besoin de demander à chaque vidéo.

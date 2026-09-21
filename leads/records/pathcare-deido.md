@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Deido) |
 | Langue de contact | FR/EN |
-| Étape | qualifying |
+| Étape | qualified |
 | WhatsApp | 680 00 88 45 |
 | Numéro vérifié | unknown |
 | Canal | WhatsApp |

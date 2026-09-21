@@ -10,7 +10,7 @@
 | Type | clinic |
 | Ville | Douala (Bassa) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | qualified |
 | WhatsApp | 694 36 02 03 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |

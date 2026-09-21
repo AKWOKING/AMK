@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Deido, 104 Route Deido-Bassa) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | closing |
 | WhatsApp | 699 98 54 66 |
 | Numéro vérifié | unknown |
 | Contact | Dr Fomekong Kuate Guy — biologiste (nom public) |
@@ -23,7 +23,7 @@
 
 ## Notes
 
-Envoyé le 19/09 à 19:32 — lu (2 coches). ***PREMIER OUI DE LA CAMPAGNE.*** 19:43 il repond « Oui » (11 min apres notre message). 20:02 apercu + texte, SANS le prix (choix de King : le prix va avec un lien). 21:00 lien labiomed.vercel.app + PRIX 100 000 FCFA 50/50 — premier message de la campagne avec prix ET preuve cliquable. 21:16 il repond : « Ok je vous reviens des que je suis disponible ». 21:22 King : « C'est note, Docteur.. Je reste a votre disposition. » (2 coches). 21:27 il envoie un emoji 🙏. Derniere visite 21:40 — il a donc LU la reponse de King. ETAT : chaud, en attente, PAS de date donnee. Prochaine relance M+2 = lundi 21/09.
+Envoyé le 19/09 à 19:32 — lu (2 coches). ***PREMIER OUI DE LA CAMPAGNE.*** 19:43 il repond « Oui » (11 min apres notre message). 20:02 apercu + texte, SANS le prix (choix de King : le prix va avec un lien). 21:00 lien labiomed.vercel.app + PRIX 100 000 FCFA 50/50 — premier message de la campagne avec prix ET preuve cliquable. 21:16 il repond : « Ok je vous reviens des que je suis disponible ». 21:22 King : « C'est note, Docteur.. Je reste a votre disposition. » (2 coches). 21:27 il envoie un emoji 🙏. Derniere visite 21:40 — il a donc LU la reponse de King. ETAT : chaud, en attente, PAS de date donnee. Prochaine relance M+2 = lundi 21/09. | M7 (21/09) : L366 · PREMIER OUI de la campagne (19/09 19:43, 11 min après msg 1). Prix envoyé 21:00.
 
 ## Prochaine action
 
@@ -31,7 +31,7 @@ Envoyé le 19/09 à 19:32 — lu (2 coches). ***PREMIER OUI DE LA CAMPAGNE.*** 1
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 11 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 13 ligne(s).*
 
 `L366` · ## sam 19/09 19:21–20:02 — ⭐ PREMIER « OUI » DE LA CAMPAGNE : LABIOMED
 `L371` · - **23:59 → LABIOMED a répondu « Oui » à 19:43 — 11 minutes après notre message.**
@@ -44,6 +44,8 @@ Envoyé le 19/09 à 19:32 — lu (2 coches). ***PREMIER OUI DE LA CAMPAGNE.*** 1
 `L454` · **→ La relance de LABIOMED, c'est `M+2` = lundi 21/09.** Et l'angle est déjà écrit : **pas « alors ? »,
 `L472` · **③ 4ᵉ occurrence du même bug — corrigée à la CAUSE.** Les notes des envois et la conversation LABIOMED
 `L492` · - **Ce n'est pas un « je vous reviens ».** Bonanjo et Labiomed ont dit exactement ça, sans date. **UNI-LABO propose un jour.**
+`L538` · en retard d'un jour**), puis les labos du 18/09. **Labiomed M+2 = aujourd'hui** (il a dit « je vous
+`L572` · **exactement le bug qui a cassé la FAQ anglaise de Labiomed et Bonanjo le 19/09**, et que j'ai documenté
 
 ---
 

@@ -1,4 +1,4 @@
-# Scientilabo
+# Vision Care Center
 
 > ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-21. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
@@ -6,32 +6,32 @@
 
 | Champ | Valeur |
 |---|---|
-| Slug | scientilabo-akwa |
-| Type | lab |
-| Ville | Douala (Akwa, Rue Gallieni) |
+| Slug | vision-care-center |
+| Type | other |
+| Ville | Douala (Akwa, rue Ernest Betote) |
 | Langue de contact | FR |
 | Étape | lost |
-| WhatsApp | 696 42 34 77 |
+| WhatsApp | 698 55 80 34 |
 | Numéro vérifié | no |
 | Contacté | No |
 | Réponse | No |
 | Maquette / site | No |
 | Source | directory |
-| Détail source | annuaires de Douala |
-| Site vérifié le | 2026-09-19 |
-| Site existant | https://scientilabo.com/ |
+| Détail source | Annuaire ONOC |
+| Site vérifié le | 2026-09-21 |
+| Site existant | https://visioncarecentreoptique.com/ |
 
 ## Pourquoi il est écarté
 
-A DÉJÀ UN SITE VIVANT (https://scientilabo.com/). Hors cible — vérifié AVANT toute production (règle 66).
+A DEJA UN SITE VIVANT (https://visioncarecentreoptique.com/). Hors cible - verifie AVANT toute production.
 
 ## Notes
 
-⛔ NE PAS ENVOYER. A un site vivant — 8 spécialités, 34 ans d'expérience. Écarté le 19/09 pendant la préparation du pack LABOS. C'est exactement le piège QUALITECH/Clinique des Anges — sauf que cette fois la vérification est passée avant la production, pas après.
+NE PAS ENVOYER. A un site vivant. Ecarte le 21/09 pendant la preparation de la vague opticiens.
 
 ## Prochaine action
 
-**Aucune.** Lead écarté — A DÉJÀ UN SITE VIVANT (https://scientilabo.com/). Hors cible — vérifié AVANT toute production (règle 66).
+**Aucune.** Lead écarté — A DEJA UN SITE VIVANT (https://visioncarecentreoptique.com/). Hors cible - verifie AVANT toute production.
 
 ## Historique — lignes du journal qui citent ce lead
 

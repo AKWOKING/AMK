@@ -10,7 +10,7 @@
 | Type | school |
 | Ville | Buea (Great Soppo) |
 | Langue de contact | EN |
-| Étape | qualifying |
+| Étape | qualified |
 | WhatsApp | 679650707 |
 | Contact | Principal; Baptist education office above |
 | Canal | Tue 15 Sep 09:00 WhatsApp msg 1 (replan §4) then nameless sample link + invite-choice walkthrough Thu/Fri; Baptist protocol: principal then education office |
