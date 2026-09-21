@@ -5,6 +5,27 @@ Rules in every message: don't sell in message 1 · goal = "send me the preview" 
 
 ---
 
+# ⚖️ COPY CRAFT GATE — run before sending ANY cold message (added 17 Sep, from the copywriting batch)
+**Source of law:** Harry Dry's three questions (video [5], `research/YouTube-Lessons.md`) + the customer-language rule [4] + awareness split [6]. This gate sits *on top of* the rules above — nothing here replaces them.
+
+**1 · The three questions — every sentence of every cold message (lines 1–2 are non-negotiable):**
+- **Can I visualize it?** Concrete, not abstract. A dead domain, a number, a screenshot, a queue of patients — not "your online presence".
+- **Can I falsify it?** True or false, checkable by them in 10 seconds. "afriqlabo.com est référencé sur Google — le domaine ne s'ouvre plus" is falsifiable. "Votre image mérite mieux" is not.
+- **Can nobody else say this?** If the same message could go to the clinic next door with just a name swap, it's a bad message. Use *their* verified facts only.
+
+**2 · One Mississippi, two Mississippi:** the point of the message must land in 2 seconds, on a phone, with the preview line collapsed into the WhatsApp notification. If line 1 needs context from line 2 to make sense, line 1 is wrong.
+
+**3 · Never originate the words:** take the prospect's own vocabulary (their Facebook posts/comments, their signage, their listings). The reader must think "comment il sait ça ?". We already research the lead — now we *lift their words*, not just their facts.
+
+**4 · Claim → proof, always adjacent:** every claim in our messages sits next to the artifact that proves it (the domain they can check, the filler text on their old site, the price on their own ad). No orphan adjectives.
+
+**5 · Bans:** opening padding ("j'espère que vous allez bien", "je me permets de vous contacter") · second padding line anywhere · buzzwords (passion/passionné, révolutionnaire, dynamique, "solutions digitales" as a benefit) · competitor-signaturas — if the line could be pasted on a competitor's page, cut it. *(Kept by King's standing rules: the signature, ≤5 lines, one low-risk reassurance like "sans engagement", the "répondez oui" micro-ask.)*
+
+**6 · Read-aloud test (10 seconds):** read the message out loud before sending. If your tongue stumbles or it sounds like a memo, rewrite. FR messages: read for *spoken* Cameroonian French, not translated English.
+
+**7 · One "toward pleasure" line per message** (from [2]): our house mode is away-from-pain (dead domain, missed patients) — close the loop with the concrete future state once ("le patient reçoit ses résultats sur WhatsApp sans revenir"), never twice.
+
+
 # SALES OS — the 4-video engine (full play: `AMK-Sales-Playbook-v2.md`)
 **NO COLD CALLS (King, 13 Sep):** text / WhatsApp / Messenger / email only. A call happens only if the prospect themselves proposes it.
 **"GETS THE JOB DONE" FILTER (King, 13 Sep):** if a lead's site is current and internally maintained, the buyer believes it works → slow or no buyer. D/E (broken/expired/absent) = gold; "internally fixable" decay (old number, dead link) = weak pitch. Park such leads WITH revival triggers; if pitching them ever, lead with conversion (admission flow), never repair.

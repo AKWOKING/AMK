@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Collège Moderne Bilingue Les Lauréats (COMOBIL) · Bonamoussadi, Douala</title>
+<meta name="description" content="COMOBIL, Collège Moderne Bilingue Les Lauréats à Bonamoussadi, Douala — sections Générale, Technique et Anglo-saxonne, pension comprise de la 6e à la Terminale. Fondé en 1999. Inscriptions 2026/2027 : 233 470 608.">
+<script type="application/ld+json">{
+"@context":"https://schema.org","@type":"EducationalOrganization",
+"name":"Collège Moderne Bilingue Les Lauréats",
+"alternateName":"COMOBIL",
+"foundingDate":"1999",
+"address":{"@type":"PostalAddress","addressLocality":"Bonamoussadi, Douala","addressCountry":"CM","postalOfficeBoxNumber":"B.P. 6081"},
+"telephone":"+237233470608",
+"email":"comobil@yahoo.fr",
+"description":"Complexe scolaire bilingue (général, technique, anglo-saxon) avec pension, Bonamoussadi Douala. Groupe WAFO."
+}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#14402F; --green2:#0C2E21; --green-l:#2E7D5B;
+  --bone:#F6F2E8; --bone2:#EDE6D6; --amber:#C98A24; --amber-l:#E4B25E;
+  --white:#FFFFFF; --ink:#16241D; --slate:#55635A; --slate-l:#8C978E; --line:#E0DBCB;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Outfit','Inter',sans-serif;letter-spacing:-.02em;line-height:1.12}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+section{padding:84px 0}
+.kicker{display:inline-flex;align-items:center;gap:9px;font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--green-l)}
+.kicker::before{content:"";width:22px;height:2px;background:var(--amber)}
+h2{font-size:clamp(28px,3.6vw,42px);font-weight:700;margin:14px 0 16px;color:var(--green)}
+.sub{font-size:16.5px;color:var(--slate);max-width:62ch}
+.center{text-align:center}.center .kicker::before{display:none}.center .sub{margin:0 auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 28px;border-radius:999px;font-size:15px;font-weight:700;text-decoration:none;transition:transform .2s,background .2s,box-shadow .2s;cursor:pointer;border:none;font-family:'Outfit',sans-serif;white-space:nowrap}
+.btn-amber{background:var(--amber);color:#fff;box-shadow:0 12px 26px rgba(201,138,36,.28)}
+.btn-amber:hover{background:#B2771B;transform:translateY(-2px);box-shadow:0 16px 32px rgba(18,64,47,.25)}
+.btn-amber:active{transform:translateY(1px)}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55)}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--green);border:1.5px solid var(--line)}
+.btn-outline:hover{border-color:var(--green-l);color:var(--green-l);transform:translateY(-2px)}
+.motto{font-family:'Outfit',sans-serif;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+
+nav.main{position:sticky;top:0;z-index:60;background:rgba(246,242,232,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid transparent;transition:.3s}
+nav.main.scrolled{border-bottom-color:var(--line);box-shadow:0 8px 30px rgba(20,64,47,.07)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+.logo svg{width:40px;height:44px;flex:none}
+.logo .t{font-family:'Outfit',sans-serif;font-weight:800;font-size:15px;line-height:1.12;color:var(--green)}
+.logo .t small{display:block;font-size:9.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--slate);font-family:'Inter',sans-serif}
+.nav-links{display:flex;gap:26px}
+.nav-links a{text-decoration:none;font-size:14.5px;font-weight:600;color:var(--slate);transition:color .2s}
+.nav-links a:hover{color:var(--green-l)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.lang{display:flex;border:1.5px solid var(--line);border-radius:99px;overflow:hidden}
+.lang button{border:none;background:transparent;font:700 12px 'Outfit',sans-serif;padding:6px 12px;cursor:pointer;color:var(--slate)}
+.lang button.on{background:var(--green);color:#fff}
+.nav-cta{padding:11px 20px;font-size:14px}
+
+.hero{background:var(--green);color:#fff;position:relative;overflow:hidden;padding:74px 0 96px}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:120px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 120 L0 80 L200 50 L420 92 L640 46 L860 96 L1080 52 L1280 88 L1440 60 L1440 120 Z' fill='%230C2E21' opacity='.55'/%3E%3Cpath d='M0 120 L0 98 L240 74 L460 106 L700 70 L940 110 L1160 78 L1320 102 L1440 86 L1440 120 Z' fill='%23F6F2E8'/%3E%3C/svg%3E") center bottom/cover no-repeat;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;position:relative;z-index:2}
+.hero .kicker{color:#9CC7B0}.hero .kicker::before{background:var(--amber-l)}
+.hero h1{font-size:clamp(32px,4.4vw,52px);font-weight:800;margin:18px 0 12px;color:#fff}
+.hero .motto{font-size:14px;color:var(--amber-l);margin-bottom:20px}
+.hero .sub{color:#D9E4DC;font-size:16.5px;margin-bottom:30px;max-width:54ch}
+.hero-ctas{display:flex;gap:13px;flex-wrap:wrap}
+.hero-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
+.htag{font-size:12.5px;font-weight:600;color:#D9E4DC;border:1px solid rgba(255,255,255,.25);border-radius:99px;padding:7px 14px}
+.hero-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:24px;padding:26px}
+.crest-medallion{width:108px;height:124px;margin:0 auto 18px;display:block}
+.hero-card .hc-label{text-align:center;font-family:'Outfit',sans-serif;font-weight:700;font-size:14px;color:#fff}
+.photo-slot{margin-top:18px;border:1.5px dashed rgba(255,255,255,.4);border-radius:16px;padding:30px 18px;text-align:center;color:#BFD4C6;font-size:12.5px;line-height:1.55;background:rgba(12,46,33,.35)}
+.photo-slot .ps-ico{font-size:22px;display:block;margin-bottom:8px}
+
+.stats{background:var(--bone);border-bottom:1px solid var(--line)}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:38px 26px;border-left:1px solid var(--line)}
+.stat:first-child{border-left:none}
+.stat .num{font-family:'Outfit',sans-serif;font-weight:800;font-size:clamp(30px,3.4vw,42px);color:var(--green);font-variant-numeric:tabular-nums;line-height:1}
+.stat .num small{font-size:.5em;font-weight:700;color:var(--amber);margin-left:2px;text-transform:uppercase}
+.stat .cap{font-size:13px;color:var(--slate);margin-top:9px;line-height:1.45}
+
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(148px,auto);gap:16px;margin-top:46px}
+.cell{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:26px;display:flex;flex-direction:column;justify-content:flex-end;transition:transform .25s,box-shadow .25s}
+.cell:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(20,64,47,.1)}
+.cell.wide{grid-column:span 2}
+.cell.tall{grid-row:span 2;justify-content:space-between}
+.cell.green{background:var(--green);border-color:var(--green);color:#fff}
+.cell h3{font-size:17px;font-weight:700;color:var(--green);margin-bottom:7px}
+.cell.green h3{color:#fff}
+.cell p{font-size:13.5px;color:var(--slate)}
+.cell.green p{color:#C7D8CC}
+.cell .big{font-family:'Outfit',sans-serif;font-weight:800;font-size:40px;color:var(--amber);line-height:1;margin-bottom:8px}
+.cell .tag{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green-l);margin-bottom:auto}
+.cell.green .tag{color:var(--amber-l)}
+.cell-photo{border:1.5px dashed var(--green-l);background:var(--bone);color:var(--slate);text-align:center;justify-content:center;align-items:center}
+.cell-photo .ps-ico{font-size:24px;margin-bottom:10px}
+.cell-photo p{font-size:12px;color:var(--slate-l)}
+.cell-ico{width:42px;height:42px;border-radius:12px;background:var(--bone2);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.cell.green .cell-ico{background:rgba(255,255,255,.1)}
+
+.pension{background:var(--green);color:#fff;position:relative;overflow:hidden}
+.pension::before{content:"";position:absolute;top:-140px;left:-140px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(46,125,91,.3),transparent 65%)}
+.pen-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative;z-index:2}
+.pen-grid .kicker{color:#9CC7B0}.pen-grid .kicker::before{background:var(--amber-l)}
+.pen-grid h2{color:#fff}
+.pen-grid>div>p{color:#D9E4DC;font-size:15.5px;margin-bottom:18px}
+.pen-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+.pen-list li{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;color:#EAF1EC;padding-top:12px;border-top:1px solid rgba(255,255,255,.14)}
+.pen-list .tick{flex:none;width:22px;height:22px;border-radius:50%;background:rgba(201,138,36,.22);color:var(--amber-l);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.pen-photo{border:1.5px dashed rgba(255,255,255,.4);border-radius:20px;background:rgba(12,46,33,.4);padding:56px 24px;text-align:center;color:#BFD4C6;font-size:12.5px}
+.pen-photo .ps-ico{font-size:28px;display:block;margin-bottom:12px}
+
+.groupe{background:var(--bone)}
+.gp-names{display:flex;flex-wrap:wrap;gap:10px;margin:34px 0 26px}
+.gp-chip{background:#fff;border:1px solid var(--line);border-radius:99px;padding:10px 18px;font:700 13.5px 'Outfit',sans-serif;color:var(--green)}
+.gp-chip.hot{background:var(--green);color:#fff;border-color:var(--green)}
+.gp-note{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.gp-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px}
+.gp-card h3{font-size:15.5px;color:var(--green);margin-bottom:7px}
+.gp-card p{font-size:13.5px;color:var(--slate)}
+
+.adm-top{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:46px}
+.ast{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:28px}
+.ast .n{width:38px;height:38px;border-radius:50%;background:var(--green);color:#fff;font:800 16px 'Outfit',sans-serif;display:flex;align-items:center;justify-content:center;margin-bottom:15px}
+.ast h3{font-size:16.5px;color:var(--green);margin-bottom:7px}
+.ast p{font-size:13.8px;color:var(--slate)}
+.contact-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:16px;margin-top:16px}
+.ct{border-radius:20px;padding:26px;text-decoration:none;display:flex;flex-direction:column;gap:8px;transition:transform .25s,box-shadow .25s;border:1px solid var(--line)}
+.ct:hover{transform:translateY(-4px);box-shadow:0 16px 38px rgba(20,64,47,.1)}
+.ct.primary{background:var(--green);color:#fff;border-color:var(--green)}
+.ct.secondary{background:var(--white);color:var(--ink)}
+.ct .ci{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.16);margin-bottom:6px}
+.ct.secondary .ci{background:var(--bone2)}
+.ct b{font-family:'Outfit',sans-serif;font-size:16px}
+.ct span{font-size:13.5px;opacity:.9}
+.ct .go{margin-top:auto;font-size:13px;font-weight:700;padding-top:8px}
+.ct.primary .go{color:#DCEADF}
+.ct.secondary .go{color:var(--green-l)}
+.form-card{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:30px;margin-top:44px;box-shadow:0 22px 60px rgba(20,64,47,.08)}
+.form-card h3{font-size:19px;color:var(--green);margin-bottom:4px}
+.form-card .fc-sub{font-size:13.5px;color:var(--slate);margin-bottom:18px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.fld{margin-bottom:13px}.fld.full{grid-column:1/-1}
+.fld label{display:block;font:700 12.5px 'Outfit',sans-serif;color:var(--green);margin-bottom:6px}
+.fld input,.fld select{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;font:400 14.5px 'Inter',sans-serif;background:var(--bone);color:var(--ink)}
+.fld input:focus,.fld select:focus{outline:none;border-color:var(--green-l);box-shadow:0 0 0 4px rgba(46,125,91,.13);background:#fff}
+.form-card .btn{width:100%;margin-top:5px}
+.form-small{margin-top:12px;font-size:12px;color:var(--slate-l);text-align:center}
+
+.faq{background:var(--bone)}
+.faq-list{max-width:820px;margin:40px auto 0}
+.faq-list details{border-bottom:1px solid var(--line)}
+.faq-list summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:22px 4px;font:700 16px 'Outfit',sans-serif;color:var(--green)}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:"+";font-size:24px;color:var(--amber);font-weight:400;transition:transform .25s;flex:none}
+.faq-list details[open] summary::after{transform:rotate(45deg)}
+.faq-list .ans{padding:0 40px 22px 4px;font-size:14.5px;color:var(--slate)}
+
+.final{background:var(--green2);color:#fff;text-align:center;position:relative;overflow:hidden}
+.final::before{content:"";position:absolute;left:50%;top:-180px;width:520px;height:380px;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(46,125,91,.35),transparent 70%)}
+.final .wrap{position:relative;z-index:2}
+.final .motto{font-size:14px;color:var(--amber-l);letter-spacing:.22em;margin-bottom:22px}
+.final h2{color:#fff;max-width:22ch;margin:0 auto 14px}
+.final .sub{color:#C7D8CC;margin:0 auto 30px}
+
+footer{background:var(--green);color:#BCD0C2;padding:56px 0 26px;font-size:14px}
+.f-grid{display:grid;grid-template-columns:1.25fr 1fr 1.25fr;gap:40px;margin-bottom:34px}
+.f-grid h5{color:#fff;font:800 12px 'Outfit',sans-serif;letter-spacing:.13em;text-transform:uppercase;margin-bottom:14px}
+.f-grid a{display:block;text-decoration:none;padding:4px 0;color:#D9E4DC}
+.f-grid a:hover{color:#fff}
+.amk-bar{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:20px 24px;margin-bottom:30px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.amk-bar .t{font-size:14px;color:#D9E4DC}.amk-bar .t b{color:#fff}
+.amk-bar .t small{display:block;font-size:12px;color:#9DBAA7;margin-top:3px}
+.amk-chip{font-size:11.5px;font-weight:700;color:#D9E4DC;border:1px solid rgba(255,255,255,.3);border-radius:99px;padding:6px 14px;text-decoration:none;white-space:nowrap}
+.f-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12.5px;color:#9DBAA7}
+
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:none}
+@media(max-width:960px){
+  .hero-grid,.pen-grid{grid-template-columns:1fr;gap:44px}
+  .stats-row{grid-template-columns:1fr 1fr}
+  .stat:nth-child(3){border-left:none}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line);padding-bottom:30px}
+  .stat{padding-top:30px}
+  .bento{grid-template-columns:1fr 1fr}
+  .adm-top,.gp-note{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr 1fr}
+  .f-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  section{padding:58px 0}
+  .nav-links{display:none}
+  .nav-cta{padding:10px 15px;font-size:13px}
+  .logo .t small{display:none}
+  .stats-row{grid-template-columns:1fr}
+  .stat{border-left:none!important;border-bottom:1px solid var(--line);padding:24px 4px}
+  .stat:last-child{border-bottom:none}
+  .bento{grid-template-columns:1fr}.cell.wide{grid-column:span 1}
+  .contact-grid,.fgrid,.f-grid{grid-template-columns:1fr}
+  .hero{padding:54px 0 80px}
+  .hero-card{padding:20px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}*{animation:none!important}}
+</style>
+</head>
+<body>
+
+<nav class="main" id="nav"><div class="wrap nav-in">
+  <a class="logo" href="#top" aria-label="COMOBIL — Collège Moderne Bilingue Les Lauréats">
+    <svg viewBox="0 0 48 54"><path d="M24 2l20 7v15c0 12-8 21.5-20 28C4 45.5 4 36 4 24V9z" fill="#14402F" stroke="#0C2E21" stroke-width="2.2"/><path d="M24 9v13M17 14.5h14" stroke="#E4B25E" stroke-width="2.6" stroke-linecap="round"/><path d="M12 33c3.6-2.4 7.2-2.4 12 0 4.8-2.4 8.4-2.4 12 0v6c-3.6-2.4-7.2-2.4-12 0-4.8-2.4-8.4-2.4-12 0z" fill="none" stroke="#E4B25E" stroke-width="1.8"/><path d="M24 33v6.5" stroke="#E4B25E" stroke-width="1.3"/></svg>
+    <span class="t">COMOBIL<small data-en="Les Lauréats · Bonamoussadi, Douala" data-fr="Les Lauréats · Bonamoussadi, Douala">Les Lauréats · Bonamoussadi, Douala</small></span>
+  </a>
+  <div class="nav-links">
+    <a href="#sections" data-en="Our sections" data-fr="Nos sections">Nos sections</a>
+    <a href="#pension" data-en="Boarding" data-fr="Pension">Pension</a>
+    <a href="#groupe" data-en="WAFO Group" data-fr="Groupe WAFO">Groupe WAFO</a>
+    <a href="#admissions" data-en="Admissions" data-fr="Inscriptions">Inscriptions</a>
+  </div>
+  <div class="nav-right">
+    <span class="lang"><button id="btn-en" onclick="setLang('en')">EN</button><button id="btn-fr" class="on" onclick="setLang('fr')">FR</button></span>
+    <a class="btn btn-amber nav-cta" href="#admissions" data-en="Enrolment 2026/27" data-fr="Inscriptions 2026/27">Inscriptions 2026/27</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap hero-grid">
+  <div>
+    <span class="kicker rv" data-en="Bilingual school complex · Bonamoussadi, Douala · since 1999" data-fr="Complexe scolaire bilingue · Bonamoussadi, Douala · depuis 1999">Complexe scolaire bilingue · Bonamoussadi, Douala · depuis 1999</span>
+    <h1 class="rv" data-d="80" data-en="Collège Moderne Bilingue Les Lauréats" data-fr="Collège Moderne Bilingue Les Lauréats">Collège Moderne Bilingue Les Lauréats</h1>
+    <p class="motto rv" data-d="130" data-en="Discipline – Work – Success" data-fr="Discipline – Travail – Succès">Discipline – Travail – Succès</p>
+    <p class="sub rv" data-d="190" data-en="One school complex, three paths: the general, technical and Anglo-Saxon sections, from Form 1 (6e) to Upper Sixth (Terminale), with boarding included in the fees, at the Bonamoussadi market roundabout." data-fr="Un seul complexe, trois voies : les sections générale, technique et anglo-saxonne, de la 6e à la Terminale, avec la pension comprise dans les frais, au rond-point du marché de Bonamoussadi.">Un seul complexe, trois voies : les sections générale, technique et anglo-saxonne, de la 6e à la Terminale, avec la pension comprise dans les frais, au rond-point du marché de Bonamoussadi.</p>
+    <div class="hero-ctas rv" data-d="250">
+      <a class="btn btn-amber" href="#admissions" data-en="Start enrolment" data-fr="Démarrer l'inscription">Démarrer l'inscription</a>
+      <a class="btn btn-ghost" href="#sections" data-en="Discover the sections" data-fr="Découvrir les sections">Découvrir les sections</a>
+    </div>
+    <div class="hero-tags rv" data-d="310">
+      <span class="htag" data-en="📚 General section" data-fr="📚 Section générale">📚 Section générale</span>
+      <span class="htag" data-en="🔧 Technical section" data-fr="🔧 Section technique">🔧 Section technique</span>
+      <span class="htag" data-en="🇬🇧 Anglo-Saxon section" data-fr="🇬🇧 Section anglo-saxonne">🇬🇧 Section anglo-saxonne</span>
+      <span class="htag" data-en="🏛 Boarding included" data-fr="🏛 Pension comprise">🏛 Pension comprise</span>
+    </div>
+  </div>
+  <div class="hero-card rv" data-d="190">
+    <svg class="crest-medallion" viewBox="0 0 48 54"><path d="M24 2l20 7v15c0 12-8 21.5-20 28C4 45.5 4 36 4 24V9z" fill="rgba(255,255,255,.08)" stroke="#9CC7B0" stroke-width="1.6"/><path d="M24 9v13M17 14.5h14" stroke="#E4B25E" stroke-width="2.4" stroke-linecap="round"/><path d="M12 33c3.6-2.4 7.2-2.4 12 0 4.8-2.4 8.4-2.4 12 0v6c-3.6-2.4-7.2-2.4-12 0-4.8-2.4-8.4-2.4-12 0z" fill="none" stroke="#9CC7B0" stroke-width="1.8"/></svg>
+    <p class="hc-label" data-en="School crest slot: Les Lauréats' own crest replaces this at kickoff" data-fr="Emplacement du logo : les armoiries des Lauréats remplacent celle-ci au lancement">Emplacement du logo : les armoiries des Lauréats remplacent celle-ci au lancement</p>
+    <div class="photo-slot">
+      <span class="ps-ico">📷</span>
+      <span data-en="Your photo here: the entrance or a classroom block. 10–15 phone photos replace every placeholder at kickoff." data-fr="Votre photo ici : l'entrée ou un bâtiment de classes. 10 à 15 photos de téléphone remplacent chaque emplacement au lancement.">Votre photo ici : l'entrée ou un bâtiment de classes. 10 à 15 photos de téléphone remplacent chaque emplacement au lancement.</span>
+    </div>
+  </div>
+</div></header>
+
+<div class="stats"><div class="wrap"><div class="stats-row">
+  <div class="stat rv"><div class="num">1999</div><div class="cap" data-en="Founded by decree N° J1/7/MINEDUC" data-fr="Créé par le décret N° J1/7/MINEDUC">Créé par le décret N° J1/7/MINEDUC</div></div>
+  <div class="stat rv" data-d="80"><div class="num">3</div><div class="cap" data-en="Sections in one complex: general, technical, Anglo-Saxon" data-fr="Sections dans un même complexe : générale, technique, anglo-saxonne">Sections dans un même complexe : générale, technique, anglo-saxonne</div></div>
+  <div class="stat rv" data-d="160"><div class="num">6<small>e</small>→T<small>le</small></div><div class="cap" data-en="From first year to final year, boarding included in the fees" data-fr="De la première année à la Terminale, pension comprise dans les frais">De la première année à la Terminale, pension comprise dans les frais</div></div>
+  <div class="stat rv" data-d="240"><div class="num">5</div><div class="cap" data-en="Establishments within the WAFO group" data-fr="Établissements au sein du Groupe WAFO">Établissements au sein du Groupe WAFO</div></div>
+</div></div></div>
+
+<section id="sections"><div class="wrap">
+  <div class="center">
+    <span class="kicker rv" data-en="Our sections" data-fr="Nos sections">Nos sections</span>
+    <h2 class="rv" data-en="Three paths, one standard of work" data-fr="Trois voies, une même exigence de travail">Trois voies, une même exigence de travail</h2>
+    <p class="sub rv" data-en="Families choose the path that fits their child; all three share the same discipline, bilingual environment and supervised study." data-fr="Les familles choisissent la voie qui correspond à leur enfant ; les trois partagent la même discipline, un environnement bilingue et l'étude encadrée.">Families choose the path that fits their child; all three share the same discipline, bilingual environment and supervised study.</p>
+  </div>
+  <div class="bento">
+    <div class="cell green tall rv">
+      <span class="tag" data-en="The core" data-fr="Le tronc commun">Le tronc commun</span>
+      <div><div class="big">GÉ</div><h3 data-en="General section" data-fr="Section générale">Section générale</h3><p data-en="The classical bilingual secondary path from 6e to Terminale, leading to the official examinations (BEPC, Probatoire, Baccalauréat; GCE in the Anglo-Saxon stream)." data-fr="Le parcours secondaire classique et bilingue de la 6e à la Terminale, menant aux examens officiels (BEPC, Probatoire, Baccalauréat ; GCE dans le parcours anglo-saxon).">Le parcours secondaire classique et bilingue de la 6e à la Terminale, menant aux examens officiels (BEPC, Probatoire, Baccalauréat ; GCE dans le parcours anglo-saxon).</p></div>
+    </div>
+    <div class="cell wide rv" data-d="80">
+      <h3 data-en="Technical section" data-fr="Section technique">Section technique</h3>
+      <p data-en="Hands-on technical and commercial pathways for pupils headed toward skilled trades and technical examinations." data-fr="Des parcours techniques et commerciaux concrets pour les élèves qui se dirigent vers les métiers qualifiés et les examens techniques.">Hands-on technical and commercial pathways for pupils headed toward skilled trades and technical examinations.</p>
+    </div>
+    <div class="cell rv" data-d="140">
+      <h3 data-en="Anglo-Saxon section" data-fr="Section anglo-saxonne">Section anglo-saxonne</h3>
+      <p data-en="English-medium Forms 1 to Upper Sixth, leading to the GCE O and A Levels." data-fr="Parcours anglophone de la Form 1 à l'Upper Sixth, menant aux GCE O et A-Level.">English-medium Forms 1 to Upper Sixth, leading to the GCE O and A Levels.</p>
+    </div>
+    <div class="cell rv">
+      <div class="cell-ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#2E7D5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+      <h3 data-en="Documentation centre" data-fr="Centre de documentation">Centre de documentation</h3>
+      <p data-en="A reading and reference room supporting study across all three sections." data-fr="Une salle de lecture et de référence au service des trois sections.">A reading and reference room supporting study across all three sections.</p>
+    </div>
+    <div class="cell rv" data-d="80">
+      <div class="cell-ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#2E7D5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
+      <h3 data-en="Multimedia room" data-fr="Salle multimédia">Salle multimédia</h3>
+      <p data-en="Computer and multimedia facilities for practical digital work." data-fr="Des équipements informatiques et multimédias pour les travaux numériques pratiques.">Computer and multimedia facilities for practical digital work.</p>
+    </div>
+    <div class="cell rv" data-d="160">
+      <div class="cell-ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#2E7D5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="11" r="8"/><path d="M4 11h16M12 3c2.5 2.4 3.5 5.2 3.5 8s-1 5.6-3.5 8c-2.5-2.4-3.5-5.2-3.5-8s1-5.6 3.5-8z"/></svg></div>
+      <h3 data-en="Language laboratory" data-fr="Laboratoire de langues">Laboratoire de langues</h3>
+      <p data-en="Dedicated practice for the bilingual English and French programme." data-fr="Un espace dédié à la pratique du bilingue anglais et français.">Dedicated practice for the bilingual English and French programme.</p>
+    </div>
+    <div class="cell cell-photo wide rv" data-d="100">
+      <span class="ps-ico">🔬</span>
+      <p data-en="PHOTO SLOT: the science laboratory or the documentation centre (your phone photo)" data-fr="EMPLACEMENT PHOTO : le laboratoire scientifique ou le centre de documentation (votre photo)">EMPLACEMENT PHOTO : le laboratoire scientifique ou le centre de documentation (votre photo)</p>
+    </div>
+    <div class="cell rv">
+      <div class="cell-ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#2E7D5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10z"/><path d="M9 11h6"/></svg></div>
+      <h3 data-en="Science laboratory" data-fr="Laboratoire scientifique">Laboratoire scientifique</h3>
+      <p data-en="Practical sciences with an on-site infirmary for everyday care." data-fr="Sciences pratiques, avec une infirmerie sur place pour les soins quotidiens.">Practical sciences with an on-site infirmary for everyday care.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="pension" id="pension"><div class="wrap"><div class="pen-grid">
+  <div>
+    <span class="kicker rv" data-en="Boarding" data-fr="La pension">La pension</span>
+    <h2 class="rv" data-en="Boarding included, from first year to final year" data-fr="La pension comprise, de la première à la Terminale">La pension comprise, de la première à la Terminale</h2>
+    <p class="rv" data-en="COMOBIL's boarding (pension) is included in the fees from 6e to Terminale. Pupils live, study and take their meals on one campus, with supervised study and daily structure." data-fr="La pension du COMOBIL est comprise dans les frais, de la 6e à la Terminale. Les élèves logent, étudient et prennent leurs repas sur un même campus, avec études encadrées et cadre quotidien.">COMOBIL's boarding (pension) is included in the fees from 6e to Terminale. Pupils live, study and take their meals on one campus, with supervised study and daily structure.</p>
+    <ul class="pen-list rv">
+      <li><span class="tick">✓</span><span data-en="Boarding included in the published fees (the full schedule is provided by the administration)" data-fr="Pension comprise dans les frais publiés (la grille complète est fournie par l'administration)">Boarding included in the published fees (the full schedule is provided by the administration)</span></li>
+      <li><span class="tick">✓</span><span data-en="One supervised campus from study time to lights out" data-fr="Un seul campus encadré, de l'heure d'étude à l'extinction des feux">One supervised campus from study time to lights out</span></li>
+      <li><span class="tick">✓</span><span data-en="Infirmary on the school grounds" data-fr="Une infirmerie dans l'enceinte de l'établissement">Infirmary on the school grounds</span></li>
+    </ul>
+  </div>
+  <div class="pen-photo rv" data-d="120">
+    <span class="ps-ico">🏛️</span>
+    <span data-en="PHOTO SLOT: a dormitory or the boarding block (your phone photo). The final list of boarding services is confirmed with the administration at kickoff." data-fr="EMPLACEMENT PHOTO : un dortoir ou le bâtiment de la pension (votre photo). La liste définitive des services de pension est confirmée avec l'administration au lancement.">EMPLACEMENT PHOTO : un dortoir ou le bâtiment de la pension (votre photo). La liste définitive des services de pension est confirmée avec l'administration au lancement.</span>
+  </div>
+</div></div></section>
+
+<section class="groupe" id="groupe"><div class="wrap">
+  <div class="center">
+    <span class="kicker rv" data-en="The WAFO group" data-fr="Le Groupe WAFO">Le Groupe WAFO</span>
+    <h2 class="rv" data-en="One educational family in Douala" data-fr="Une même famille éducative à Douala">One educational family in Douala</h2>
+    <p class="sub rv" data-en="COMOBIL (Les Lauréats) belongs to the WAFO educational group, which runs five establishments and celebrates pupils each year at the Excellence Académique awards through the L'Enfance Joyeuse du Cameroun association." data-fr="Le COMOBIL (Les Lauréats) appartient au Groupe WAFO, qui dirige cinq établissements et distingue chaque année ses élèves lors des prix d'Excellence Académique, à travers l'association L'Enfance Joyeuse du Cameroun.">COMOBIL (Les Lauréats) belongs to the WAFO educational group, which runs five establishments and celebrates pupils each year at the Excellence Académique awards through the L'Enfance Joyeuse du Cameroun association.</p>
+  </div>
+  <div class="gp-names rv">
+    <span class="gp-chip hot">COMOBIL · Les Lauréats</span>
+    <span class="gp-chip">Collège La Maturité</span>
+    <span class="gp-chip">Groupe Scolaire WAFO</span>
+    <span class="gp-chip">EPL Fraternité</span>
+    <span class="gp-chip">ENIEG WAFO</span>
+  </div>
+  <div class="gp-note">
+    <div class="gp-card rv"><h3 data-en="Annual awards" data-fr="Remise des prix annuelle">Remise des prix annuelle</h3><p data-en="The Excellence Académique ceremony rewards the year's best pupils across the group." data-fr="La cérémonie d'Excellence Académique récompense les meilleurs élèves de l'année au sein du groupe.">The Excellence Académique ceremony rewards the year's best pupils across the group.</p></div>
+    <div class="gp-card rv" data-d="100"><h3 data-en="Open days and education fairs" data-fr="Portes ouvertes et salons éducatifs">Open days and education fairs</h3><p data-en="The group presents its sections at open days and education fairs such as the UCAC-ICAM fair (March 2026)." data-fr="Le groupe présente ses sections lors des portes ouvertes et des salons éducatifs comme le salon UCAC-ICAM (mars 2026).">The group presents its sections at open days and education fairs such as the UCAC-ICAM fair (March 2026).</p></div>
+  </div>
+</div></section>
+
+<section id="admissions"><div class="wrap">
+  <div class="center">
+    <span class="kicker rv" data-en="Admissions 2026/2027" data-fr="Inscriptions 2026/2027">Inscriptions 2026/2027</span>
+    <h2 class="rv" data-en="Three steps to Les Lauréats" data-fr="Trois étapes vers Les Lauréats">Trois étapes vers Les Lauréats</h2>
+    <p class="sub rv" data-en="Admission follows the administration's own sequence; the office confirms the exact dates and documents on the first call." data-fr="L'admission suit la séquence propre à l'administration ; le secrétariat confirme les dates et documents exacts dès le premier appel.">Admission follows the administration's own sequence; the office confirms the exact dates and documents on the first call.</p>
+  </div>
+  <div class="adm-top">
+    <div class="ast rv"><div class="n">1</div><h3 data-en="Contact the office" data-fr="Contacter le secrétariat">Contacter le secrétariat</h3><p data-en="Call 233 470 608, send a message on Facebook, or email comobil@yahoo.fr to receive the enrolment dates and requirements." data-fr="Appelez le 233 470 608, écrivez sur Facebook ou à comobil@yahoo.fr pour recevoir les dates et conditions d'inscription.">Call 233 470 608, send a message on Facebook, or email comobil@yahoo.fr to receive the enrolment dates and requirements.</p></div>
+    <div class="ast rv" data-d="90"><div class="n">2</div><h3 data-en="Collect and submit the file" data-fr="Retirer et déposer le dossier">Retirer et déposer le dossier</h3><p data-en="Collect the enrolment file from the administration at the Bonamoussadi market roundabout and return it complete." data-fr="Retirez le dossier d'inscription auprès de l'administration, au rond-point du marché de Bonamoussadi, et déposez-le complet.">Collect the enrolment file from the administration at the Bonamoussadi market roundabout and return it complete.</p></div>
+    <div class="ast rv" data-d="180"><div class="n">3</div><h3 data-en="Placement and boarding" data-fr="Orientation et pension">Orientation et pension</h3><p data-en="The pupil is placed in the right section and class; boarders receive their place in the dormitory." data-fr="L'élève est orienté vers la bonne section et la bonne classe ; les pensionnaires reçoivent leur place en dortoir.">The pupil is placed in the right section and class; boarders receive their place in the dormitory.</p></div>
+  </div>
+
+  <div class="contact-grid">
+    <a class="ct primary rv" href="tel:+237233470608">
+      <span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+      <b data-en="Call the administration" data-fr="Appeler l'administration">Appeler l'administration</b>
+      <span>233 470 608</span>
+      <span data-en="Bonamoussadi market roundabout, Douala" data-fr="Rond-point du marché de Bonamoussadi, Douala">Rond-point du marché de Bonamoussadi, Douala</span>
+      <span class="go" data-en="Landline; the school also answers on Facebook Messenger →" data-fr="Ligne fixe — joignable aussi par Facebook Messenger →">Ligne fixe — joignable aussi par Facebook Messenger →</span>
+    </a>
+    <a class="ct secondary rv" data-d="90" href="mailto:comobil@yahoo.fr">
+      <span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#14402F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+      <b data-en="Email" data-fr="Courriel">Courriel</b>
+      <span>comobil@yahoo.fr</span>
+      <span>comobi.laureats@yahoo.fr</span>
+      <span class="go" data-en="Opens your email app →" data-fr="Ouvre votre messagerie →">Ouvre votre messagerie →</span>
+    </a>
+    <a class="ct secondary rv" data-d="180" href="https://www.facebook.com/100064111147236" target="_blank" rel="noopener">
+      <span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#14402F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.6-1.5h1.3V4.9c-.2 0-1-.1-1.9-.1-2.4 0-4 1.4-4 4V11H8v3h2.5v7z"/></svg></span>
+      <b data-en="Facebook Messenger" data-fr="Facebook Messenger">Facebook Messenger</b>
+      <span data-en="COMOBIL official page" data-fr="Page officielle du COMOBIL">Page officielle du COMOBIL</span>
+      <span class="go" data-en="Fastest weekday channel →" data-fr="Canal le plus rapide en semaine →">Canal le plus rapide en semaine →</span>
+    </a>
+  </div>
+
+  <form class="form-card rv" onsubmit="return sendLead(event)">
+    <h3 data-en="Request enrolment information" data-fr="Demander les informations d'inscription">Demander les informations d'inscription</h3>
+    <p class="fc-sub" data-en="Opens WhatsApp with your message ready (about 60 seconds)." data-fr="Ouvre WhatsApp avec votre message prêt (environ 60 secondes).">Opens WhatsApp with your message ready (about 60 seconds).</p>
+    <div class="fgrid">
+      <div class="fld"><label data-en="Parent / guardian name *" data-fr="Nom du parent / tuteur *">Nom du parent / tuteur *</label><input type="text" id="l-name" required></div>
+      <div class="fld"><label data-en="Phone (WhatsApp) *" data-fr="Téléphone (WhatsApp) *">Téléphone (WhatsApp) *</label><input type="tel" id="l-phone" required></div>
+      <div class="fld"><label data-en="Section wanted" data-fr="Section souhaitée">Section souhaitée</label>
+        <select id="l-section">
+          <option data-en="General (Générale)" data-fr="Générale">Générale</option>
+          <option data-en="Technical (Technique)" data-fr="Technique">Technique</option>
+          <option data-en="Anglo-Saxon (GCE)" data-fr="Anglo-saxonne (GCE)">Anglo-saxonne (GCE)</option>
+          <option data-en="Not sure yet" data-fr="Pas encore décidé">Pas encore décidé</option>
+        </select>
+      </div>
+      <div class="fld"><label data-en="Class sought" data-fr="Classe souhaitée">Classe souhaitée</label>
+        <select id="l-class">
+          <option data-en="6e / Form 1" data-fr="6e / Form 1">6e / Form 1</option>
+          <option data-en="Other secondary level" data-fr="Autre niveau secondaire">Autre niveau secondaire</option>
+          <option data-en="Terminale / Upper Sixth" data-fr="Terminale / Upper Sixth">Terminale / Upper Sixth</option>
+        </select>
+      </div>
+      <div class="fld full"><label data-en="Question (optional)" data-fr="Question (facultatif)">Question (facultatif)</label><input type="text" id="l-note"></div>
+    </div>
+    <button type="submit" class="btn btn-amber" data-en="Send my request on WhatsApp →" data-fr="Envoyer ma demande sur WhatsApp →">Envoyer ma demande sur WhatsApp →</button>
+    <p class="form-small" data-en="Concept demo: the form currently routes to the AMK project number; at kickoff it is switched to the school office's own WhatsApp. The school keeps every contact and file." data-fr="Démo concept : le formulaire route actuellement vers le numéro projet AMK ; au lancement, il bascule sur le propre WhatsApp de l'administration scolaire. L'école garde chaque contact et chaque dossier.">Démo concept : le formulaire route actuellement vers le numéro projet AMK ; au lancement, il bascule sur le propre WhatsApp de l'administration scolaire. L'école garde chaque contact et chaque dossier.</p>
+  </form>
+</div></section>
+
+<section class="faq"><div class="wrap">
+  <div class="center">
+    <span class="kicker rv" data-en="Questions parents ask" data-fr="Les questions des parents">Les questions des parents</span>
+    <h2 class="rv" data-en="Before contacting the office" data-fr="Avant de contacter le secrétariat">Avant de contacter le secrétariat</h2>
+  </div>
+  <div class="faq-list rv">
+    <details><summary data-en="Which sections does COMOBIL offer?" data-fr="Quelles sections propose le COMOBIL ?">Quelles sections propose le COMOBIL ?</summary><div class="ans" data-en="Three: the general section, the technical section and the Anglo-Saxon (English, GCE) section, within one school complex." data-fr="Trois : la section générale, la section technique et la section anglo-saxonne (anglaise, GCE), au sein d'un même complexe scolaire.">Three: the general section, the technical section and the Anglo-Saxon (English, GCE) section, within one school complex.</div></details>
+    <details><summary data-en="Is boarding included?" data-fr="La pension est-elle comprise ?">La pension est-elle comprise ?</summary><div class="ans" data-en="Yes. Boarding (pension) is included in the fees from 6e to Terminale. The administration provides the current fee schedule and the boarding list on request." data-fr="Oui. La pension est comprise dans les frais, de la 6e à la Terminale. L'administration fournit sur demande la grille actuelle des frais et la liste des effets.">Yes. Boarding (pension) is included in the fees from 6e to Terminale. The administration provides the current fee schedule and the boarding list on request.</div></details>
+    <details><summary data-en="Where is the school?" data-fr="Où se trouve l'école ?">Où se trouve l'école ?</summary><div class="ans" data-en="At the Bonamoussadi market roundabout in Douala, B.P. 6081. The administration line is 233 470 608 and the email is comobil@yahoo.fr." data-fr="Au rond-point du marché de Bonamoussadi à Douala, B.P. 6081. La ligne de l'administration est le 233 470 608 et le courriel est comobil@yahoo.fr.">At the Bonamoussadi market roundabout in Douala, B.P. 6081. The administration line is 233 470 608 and the email is comobil@yahoo.fr.</div></details>
+    <details><summary data-en="At what age or level can a child enter?" data-fr="À quel âge ou niveau un enfant peut-il entrer ?">À quel âge ou niveau un enfant peut-il entrer ?</summary><div class="ans" data-en="The complex admits from the first year of secondary (6e / Form 1) through to Terminale / Upper Sixth. The office confirms the entry requirements for each section." data-fr="Le complexe accueille dès la première année du secondaire (6e / Form 1) jusqu'à la Terminale / Upper Sixth. Le secrétariat confirme les conditions d'entrée par section.">The complex admits from the first year of secondary (6e / Form 1) through to Terminale / Upper Sixth. The office confirms the entry requirements for each section.</div></details>
+    <details><summary data-en="Which other schools belong to the group?" data-fr="Quels autres établissements appartiennent au groupe ?">Quels autres établissements appartiennent au groupe ?</summary><div class="ans" data-en="The WAFO group runs five establishments: COMOBIL Les Lauréats, Collège La Maturité, Groupe Scolaire WAFO, EPL Fraternité and ENIEG WAFO." data-fr="Le Groupe WAFO dirige cinq établissements : le COMOBIL Les Lauréats, le Collège La Maturité, le Groupe Scolaire WAFO, l'EPL Fraternité et l'ENIEG WAFO.">The WAFO group runs five establishments: COMOBIL Les Lauréats, Collège La Maturité, Groupe Scolaire WAFO, EPL Fraternité and ENIEG WAFO.</div></details>
+  </div>
+</div></section>
+
+<section class="final"><div class="wrap">
+  <p class="motto rv" data-en="DISCIPLINE – WORK – SUCCESS" data-fr="DISCIPLINE – TRAVAIL – SUCCÈS">DISCIPLINE – TRAVAIL – SUCCÈS</p>
+  <h2 class="rv" data-en="Give your child three paths in one school." data-fr="Offrez à votre enfant trois voies dans une seule école.">Offrez à votre enfant trois voies dans une seule école.</h2>
+  <p class="sub rv" data-en="Enrolment for 2026/2027 is open. Call the administration this week for the file and the next visit date." data-fr="Les inscriptions 2026/2027 sont ouvertes. Appelez l'administration cette semaine pour le dossier et la prochaine date de visite.">Les inscriptions 2026/2027 sont ouvertes. Appelez l'administration cette semaine pour le dossier et la prochaine date de visite.</p>
+  <div class="hero-ctas rv" style="justify-content:center">
+    <a class="btn btn-amber" href="tel:+237233470608" data-en="📞 233 470 608" data-fr="📞 233 470 608">📞 233 470 608</a>
+    <a class="btn btn-ghost" href="mailto:comobil@yahoo.fr" data-en="Email the office" data-fr="Écrire au secrétariat">Écrire au secrétariat</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="amk-bar">
+    <span class="t"><b data-en="This website is a concept by AMK, Web Development & Digital Solutions" data-fr="Ce site est une maquette par AMK, Développement Web & Solutions Digitales">Ce site est une maquette par AMK, Développement Web &amp; Solutions Digitales</b><small data-en="Bilingual (FR|EN), mobile-first. Crest and photos are marked placeholders, replaced with the school's own; live in 3–5 days." data-fr="Bilingue (FR|EN), mobile d'abord. Le logo et les photos sont des emplacements signalés, remplacés par ceux de l'école ; en ligne en 3 à 5 jours.">Bilingue (FR|EN), mobile d'abord. Le logo et les photos sont des emplacements signalés, remplacés par ceux de l'école ; en ligne en 3 à 5 jours.</small></span>
+    <a class="amk-chip" href="#top" data-en="Website concept by AMK" data-fr="Maquette de site par AMK">Maquette de site par AMK</a>
+  </div>
+  <div class="f-grid">
+    <div>
+      <h5>COMOBIL · Les Lauréats</h5>
+      <p data-en="Bonamoussadi market roundabout · B.P. 6081 Douala · Cameroon" data-fr="Rond-point du marché de Bonamoussadi · B.P. 6081 Douala · Cameroun">Rond-point du marché de Bonamoussadi · B.P. 6081 Douala · Cameroun</p>
+      <p data-en="Created 1999, decree N° J1/7/MINEDUC" data-fr="Créé en 1999, décret N° J1/7/MINEDUC">Créé en 1999, décret N° J1/7/MINEDUC</p>
+    </div>
+    <div>
+      <h5 data-en="Contact" data-fr="Contact">Contact</h5>
+      <a href="tel:+237233470608">233 470 608</a>
+      <a href="mailto:comobil@yahoo.fr">comobil@yahoo.fr</a>
+      <a href="mailto:comobi.laureats@yahoo.fr">comobi.laureats@yahoo.fr</a>
+      <a href="https://www.facebook.com/100064111147236" target="_blank" rel="noopener">Facebook</a>
+    </div>
+    <div>
+      <h5 data-en="About this page" data-fr="À propos de cette page">À propos de cette page</h5>
+      <p style="font-size:12.5px" data-en="Sections, boarding, facilities, the WAFO group and contact details come from the school's Facebook page and education directories. No results figures, fees or testimonials have been invented; the fee schedule and boarding list are provided by the administration." data-fr="Les sections, la pension, les installations, le Groupe WAFO et les coordonnées proviennent de la page Facebook de l'école et d'annuaires scolaires. Aucun résultat, frais ou témoignage n'a été inventé ; la grille des frais et la liste de pension sont fournis par l'administration.">Les sections, la pension, les installations, le Groupe WAFO et les coordonnées proviennent de la page Facebook de l'école et d'annuaires scolaires. Aucun résultat, frais ou témoignage n'a été inventé ; la grille des frais et la liste de pension sont fournis par l'administration.</p>
+    </div>
+  </div>
+  <div class="f-bottom">
+    <span data-en="© 2026 Collège Moderne Bilingue Les Lauréats (website concept)" data-fr="© 2026 Collège Moderne Bilingue Les Lauréats (maquette de site)">© 2026 Collège Moderne Bilingue Les Lauréats (maquette de site)</span>
+    <span data-en="Concept by AMK · Web Development & Digital Solutions" data-fr="Maquette par AMK · Développement Web & Solutions Digitales">Maquette par AMK · Développement Web &amp; Solutions Digitales</span>
+  </div>
+</div></footer>
+
+<script>
+var WA_NUM = "237677789631"; // DEMO: AMK project number — swap to the office's WhatsApp at kickoff
+function setLang(l){
+  document.documentElement.lang = l;
+  document.querySelectorAll("[data-en]").forEach(function(el){
+    var v = (l === "fr") ? el.getAttribute("data-fr") : el.getAttribute("data-en");
+    if(v !== null && v !== undefined && v !== "") el.innerHTML = v;
+  });
+  document.getElementById("btn-en").classList.toggle("on", l === "en");
+  document.getElementById("btn-fr").classList.toggle("on", l === "fr");
+  try{ history.replaceState(null,"", l === "fr" ? "?lang=fr" : "?lang=en"); }catch(e){}
+}
+window.addEventListener("scroll", function(){
+  document.getElementById("nav").classList.toggle("scrolled", window.scrollY > 24);
+},{passive:true});
+var io = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+},{threshold:.12});
+document.querySelectorAll(".rv").forEach(function(el){
+  el.style.transitionDelay = (el.getAttribute("data-d") || 0) + "ms";
+  io.observe(el);
+});
+function sendLead(e){
+  e.preventDefault();
+  var fr = document.documentElement.lang === "fr";
+  var name = document.getElementById("l-name").value;
+  var phone = document.getElementById("l-phone").value;
+  var section = document.getElementById("l-section").value;
+  var cls = document.getElementById("l-class").value;
+  var note = document.getElementById("l-note").value;
+  var ref = "CM-" + Math.floor(1000 + Math.random()*9000);
+  var msg = fr
+    ? "Bonjour COMOBIL ! Je souhaite des informations d'inscription pour 2026/2027.\n\nParent/tuteur : " + name + "\nTéléphone : " + phone + "\nSection : " + section + "\nClasse : " + cls + (note ? "\nQuestion : " + note : "") + "\nRéf : " + ref
+    : "Hello COMOBIL! I would like enrolment information for 2026/2027.\n\nParent/guardian: " + name + "\nPhone: " + phone + "\nSection: " + section + "\nClass: " + cls + (note ? "\nQuestion: " + note : "") + "\nRef: " + ref;
+  window.open("https://wa.me/" + WA_NUM + "?text=" + encodeURIComponent(msg), "_blank");
+  return false;
+}
+(function(){ var p = new URLSearchParams(location.search).get("lang"); if(p === "fr" || p === "en"){ setLang(p); } })();
+</script>
+</body>
+</html>

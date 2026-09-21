@@ -1,8 +1,8 @@
 # AMK DESIGN SKILLS LIBRARY
 
-_Consolidated from `bergside/awesome-design-skills` (TypeUI, 67 design-system skills) and `Leonxlnx/taste-skill` (anti-slop agent skills). Raw repos persist at `design-library/repos/`. Full registry token digest: `design-library/registry-digest.json`._
+_Consolidated from three MIT-licensed agent skill libraries: `bergside/awesome-design-skills` (TypeUI, 67 design-system families), `Leonxlnx/taste-skill` (anti-slop frontend), and `emilkowalski/skills` (animation/design engineering). Vendored sources live in `design/vendor/` (full family token sheets: `design/vendor/bergside-skills/<family>/`, digest `design/vendor/registry-digest.json`; motion skills: `design/vendor/emil/skills/`; taste skills: `design/vendor/taste/skills/`)._
 
-**How to use:** before building any site/concept, read §1-§2 (infer the brief, set dials), build against §4-§11, run §13 before delivery. For image/comps work, also read §15. This library is an overlay on top of the AMK standing standards (single-file HTML, EN|FR, base64, Concept Production Standard, nameless-template rule, no fabricated facts).
+**How to use:** the build pipeline is `design/WORKFLOW.md` (9 stages). Before building, read §1-§2 below (infer the brief, set dials), lock a token sheet from `design/STYLE-TOKENS.md`, build against §4-§11, run the motion pass (`design/MOTION.md`), run §13 before delivery. For image/comps work, also read §15. This library is an overlay on top of the AMK standing standards (single-file HTML, EN|FR, base64, Concept Production Standard, nameless-template rule, no fabricated facts).
 
 ---
 
@@ -116,6 +116,24 @@ The source skill BANS em-dashes everywhere (top production tell in EN). AMK ruli
 - NO pure-text "minimalism" — even minimal sites need 2-3 real images.
 - NO broken stock links. Use generated images (our standard), then reliable placeholders, then clearly-labeled TODO slots + tell the user.
 
+### 3.8 VIBE-CODE TELLS (added 17 Sep 2026, YC design review [10] — `research/YouTube-Lessons.md`)
+*The tells that make a visitor think "this was AI-generated" and quietly discount the business behind it. Every item below is a hard ban unless a written, brand-driven reason exists.*
+
+- **NO scroll-jacking** — never intercept native scroll for animation ("like molasses": you lose your place and the scroll indicator lies). Readable progress beats choreography.
+- **NO hover states that hide or de-emphasise** — nav items fading out on hover is the opposite of an invitation. Hover either invites the click (pop / one shade lighter / subtle glow) or reinforces meaning; the browser's own hand cursor is free, so it's enough.
+- **NO essential information behind hover** — mobile has no hover. Anything a user needs is visible, tappable, or in the layout.
+- **NO moving buttons** — a control that follows the cursor or drifts cannot be clicked reliably and reads as a bug.
+- **NO entrance animations that hide content** — fade-ins must never leave a section looking empty (a FAQ caught mid-fade reads as "one lonely question"); content is present in the DOM and painted; never gate it on a timer.
+- **NO decorative scroll-following lines / meteors / cursor glows** — if it wouldn't be worth a week of hand-coding, it isn't worth shipping because it was free.
+- **NO emoji as UI icons** — standard-icon tells. Inline SVG only (our standing rule).
+- **NO mixed type styles in one header block** — logo + kicker + H1 + sub + fourth style = five styles and zero hierarchy; each block has at most: kicker (optional) + H1 + sub.
+- **NO fake dashboards** — same ban as §3.7, restated: red/green/blue/purple Google-colour callout cards are a hallmark tell.
+- **NO bento card grids as a default** — icon + text ×6 is the standard LLM section; bento allowed only when the content is genuinely modular with exact cell count and interlocking spans (see §3.3), never as the house rhythm.
+- **Banned empty claims** — "10x everything", "unlocked", "seamless", giant whitespace substituting for information. A visitor scrolling halfway must be able to say what the business does.
+- **Brand palette first, always** — derive colour/type from the client's own logo, signage, or research BEFORE generating layout (YAKS / Labo storefront method). Never accept an AI default palette; "you have to be intentional about ending up in a different place."
+- **The editor rule** — every generated element must survive: *"would a designer have chosen this on purpose?"* If it exists only because it was easy, cut it. Just because it's possible doesn't mean it ships.
+- **QA everything yourself** — click every control, scroll every section on a phone, in both languages, before delivery (this is the human half of §18's verification ladder).
+
 ---
 
 ## §4 THE LOCKS (consistency rules)
@@ -142,6 +160,9 @@ When the client provides an explicit visual reference (screenshot/Dribbble), the
 - Hierarchy: use Medium(500)/SemiBold(600) between Regular and Bold for subtle steps.
 - Negative tracking on large headers (-0.02em), positive on small-caps labels.
 - Weight 800/900 for hero display; never extra-bold shouting on everything.
+- **Font pairing:** one display face for titles, one body face; the body never carries the personality, it carries the reading. The title face may run tighter (negative tracking at large sizes); body never tighter than -0.01em.
+- **Line-height is inverse to size:** small text (captions, labels, meta) needs MORE line-height (1.5-1.7); display can run tight (0.95-1.05) with descender reserve (§3.2). Never one line-height for the whole page.
+- **Never centre paragraphs or small text.** Centring is for 1-2-line hero/section statements; body, lists and FAQ answers stay left-aligned.
 
 ---
 
@@ -151,6 +172,10 @@ When the client provides an explicit visual reference (screenshot/Dribbble), the
 - Max 1 accent. Neutral base (warm or cool, locked). 1-2 secondary tints for section backgrounds.
 - Text on accent: WCAG AA 4.5:1 (3:1 for large text). Audit every CTA.
 - Shadows tinted to background hue. Consistent light direction across all shadows.
+- **60-30-10 balance:** ~60% neutral surfaces, ~30% brand colour, ~10% accent. The accent is the rarest colour on the page; CTAs and key numbers own the 10%. If the accent is everywhere, nothing is emphasised.
+- **Tinted neutrals are derived, not picked:** background tints = the brand/accent hue with saturation and brightness reduced (a contextual tint, never accidental grey).
+- **Contrast is checked, not felt:** run every brand/background pair through a contrast checker (Coolors Contrast Checker or equivalent) before shipping: 4.5:1 body, 3:1 large (the §13 promise, verified).
+- Skip colour-psychology folklore: legibility first, one personality accent second.
 
 ### 6.2 The premium-consumer default BANNED (2nd most-recurring AI tell)
 For premium/warm briefs the LLM default is: **cream/beige bg (#f5f1ea family) + brass/clay/oxblood accent (#b08947 family) + espresso text (#1a1714 family).** BANNED as a default reach.
@@ -170,6 +195,8 @@ Pale Red #FDEBEC/#9F2F2D · Pale Blue #E1F3FE/#1F6C9F · Pale Green #EDF3EC/#346
 ---
 
 ## §7 LAYOUT DISCIPLINE (hard rules)
+
+**Foundation method: build order, spacing-first, hierarchy & zoom-out test → §19.**
 
 **Hero:**
 - Must fit initial viewport. Headline ≤ 2 lines, subtext ≤ 20 words AND ≤ 4 lines, CTAs visible without scroll.
@@ -197,6 +224,7 @@ Pale Red #FDEBEC/#9F2F2D · Pale Blue #E1F3FE/#1F6C9F · Pale Green #EDF3EC/#346
 ### Buttons
 - Pill or max 12px radius (per shape lock). Generous padding (15-16px / 26px).
 - **Contrast check mandatory** (no white-on-white, no invisible ghost over photos — use scrim/stroke).
+- **Primary is always solid with high contrast.** An outline/ghost treatment is never the primary action on a page: outlined buttons read as invisible and get skipped [12]. Our ghost/tertiary tier stays only as a third choice, when a filled primary exists in the same viewport and the outline passes contrast on its background.
 - **No wrap:** label fits one line at desktop; ≤ 3 words for primary CTAs (ideally 1-2); widen the button before constraining it.
 - Hover: bg shift + translateY(-2px) + tinted shadow; arrow translates 4px.
 - **Active/press:** `scale(0.98)` or `translateY(1px)` — simulate physical push.
@@ -229,16 +257,34 @@ Pale Red #FDEBEC/#9F2F2D · Pale Blue #E1F3FE/#1F6C9F · Pale Green #EDF3EC/#346
 
 ## §9 MOTION
 
+> Full playbook with copy-paste snippets: `design/MOTION.md` (distilled from `design/vendor/emil/skills/`). Every concept build passes stage 8 (motion gate) of `design/WORKFLOW.md`.
+
+**Gate before animating (four questions, in order):** frequency (100+/day = no animation ever; tens/day = near-invisible; occasional = standard; rare = the delight budget) then purpose (feedback / spatial consistency / state indication / preventing jarring change / explanation; "looks cool" rejected) then speed (UI interactions under 300ms) then function (never move data the user is reading). Cap 5-7 deliberate motion moments per concept page.
+
+**Motion tokens (paste into every `:root`, reference via variables):**
+```css
+--ease-out:cubic-bezier(.23,1,.32,1);       /* entrances, exits, press, hover */
+--ease-in-out:cubic-bezier(.77,0,.175,1);   /* on-screen movement A to B */
+--ease-drawer:cubic-bezier(.32,.72,0,1);    /* sheets and bottom bars */
+--dur-press:140ms; --dur-pop:170ms; --dur-menu:220ms; --dur-panel:320ms; --dur-reveal:520ms;
+```
+
 **Rules:**
 - **Motion must be motivated** — one-sentence justification per animation: hierarchy / storytelling / feedback / state transition. "It looked cool" = delete it.
 - **Claimed = shown:** if MOTION_INTENSITY > 4, the page actually moves (hero entry, scroll reveals, hover physics). If you can't ship working motion, drop the dial to 3 and ship clean static. Never half-broken motion.
-- Animate ONLY `transform` + `opacity`. Never top/left/width/height.
-- **`window.addEventListener("scroll")` is BANNED for reveal logic** — use IntersectionObserver (AMK standard `.rv` pattern is compliant), CSS scroll-driven animations, or a library's scroll API. Passive listeners OK for trivial nav-shadow toggles.
-- `prefers-reduced-motion: reduce` → everything collapses to static/instant (AMK sites already include the block — keep it).
-- Marquee: **max ONE per page.**
-- Infinite loops only where the section actively benefits (status, live feel); never every card.
-- Easing: spring or `cubic-bezier(0.16, 1, 0.3, 1)` (ease-out-quint). NO linear, NO ease-in-out for entrances.
-- Stagger: 60-100ms per item (`transition-delay` / `animation-delay: calc(var(--i) * 80ms)`).
+- Animate ONLY `transform` + `opacity`. Never top/left/width/height/margin/padding. Never `transition:all` — list exact properties.
+- Easing: entrances/exits use `--ease-out`; on-screen movement/morph uses `--ease-in-out`; hover/color uses `--ease-out`; only loops and progress use linear. **`ease-in` is banned on UI** (it reads as sluggish).
+- Durations: press 100-160ms; tooltips 125-200; menus/accordions 150-250; modals/sheets 200-500; scroll reveals/hero 400-700 (one-time marketing only).
+- **Every pressable element gets `:active{transform:scale(.97)}`** (range .95-.98) with a 140-160ms transition. No exceptions.
+- **Hover transforms are gated** behind `@media (hover:hover) and (pointer:fine)` — touch screens otherwise stick on a hover state.
+- Entrances never start from `scale(0)` (nothing real appears from nothing): start at `translateY(18-24px)` or `scale(.92-.97)` plus opacity 0.
+- Popovers/menus scale in FROM THEIR TRIGGER (`transform-origin` at the trigger); modals stay centered.
+- **`window.addEventListener("scroll", ...)` is BANNED for reveal logic** — use IntersectionObserver (AMK standard `.rv` pattern is compliant), CSS scroll-driven animations, or a library's scroll API. Passive listeners OK for trivial nav-shadow toggles.
+- `prefers-reduced-motion: reduce` means gentler, not zero: keep opacity/color transitions that aid comprehension, kill movement/loops/parallax (house block in `design/MOTION.md` §5).
+- Marquee: **max ONE per page.** Infinite loops only where the section actively benefits (status, live feel); never every card.
+- Stagger: **30-80ms per sibling** (house 60ms: `transition-delay:calc(var(--i)*60ms)`); never block interaction; cap staggered groups near 7 items.
+- Rapidly-triggered elements (toggles, language switch, toasts) use CSS **transitions**, which retarget mid-flight, not keyframes, which restart; exits are faster than entrances.
+
 - `backdrop-blur` ONLY on fixed/sticky elements (nav, overlays) — never on scrolling containers.
 - Grain/noise overlays ONLY on fixed `pointer-events:none` pseudo-elements.
 - Z-index: systemic scale only (nav 50-60, modals above), never 9999 spam.
@@ -279,6 +325,32 @@ Pale Red #FDEBEC/#9F2F2D · Pale Blue #E1F3FE/#1F6C9F · Pale Green #EDF3EC/#346
 - **COPY SELF-AUDIT (mandatory before ship):** re-read every visible string. Flag: grammatically broken, unclear referents, AI-hallucinated wordplay, "LLM trying to sound thoughtful" (fake humility, mock-poetic meta). Rewrite to plain functional sentences. Boring > broken.
 - Fake numbers: only real data or explicitly labeled sample (AMK concepts mark prices/hours/reviews as samples — standing rule).
 
+### §11b — SITE COPY LAW (added 17 Sep 2026, from the copywriting batch · see `research/YouTube-Lessons.md`)
+
+**The three questions — apply to every headline, every claim, every section title (Harry Dry, [5]):**
+1. **Can I visualize it?** Concrete beats abstract. If the reader can't see it, it isn't there yet. Zoom-in drill: write the abstract claim, then rewrite downward until you reach a concrete object or number.
+2. **Can I falsify it?** A true-or-false claim is checkable — "Consultation 6 000 F", "Résultats reçus sur WhatsApp", "2 100 patients suivis". Unfalsifiable slogans ("l'excellence à votre service", "votre santé, notre priorité") are banned from heroes.
+3. **Can nobody else say this?** If the clinic next door could paste the headline unchanged on their site, rewrite it. Use the client's own verified facts.
+
+**Tests before ship (in addition to the §13 pre-flight):**
+- **2-second test:** hero headline + sub must land in two seconds on a phone. Read it out loud to someone from the niche.
+- **Competitor-sign test:** could this hero live on the competitor's site with just a logo swap? → rewrite.
+- **Point, don't talk:** every claim sits next to its artifact — real photo, real number, real screenshot, price, hours, the WhatsApp button. Adjectives are not proof.
+
+**Structure rules (from [1][2][4][6]):**
+- **Hero names the business in plain language** + what to do (one CTA). Save the clever line for the section headline, never the hero (kicker/eyebrow carries the keyword; the hero carries plain meaning).
+- **Claim → proof pairs:** make a bold claim, put the evidence immediately under it. Never a testimonial "wall of love"; drip **one real verbatim quote** at a time under the claim it supports (use the client's/FB's own words — the customer-language rule [4]).
+- **Minimum one real verbatim human quote per concept** beside the numeric proof (follower counts / stars are not enough on their own).
+- **Awareness split:** hero + first section speaks to someone who has never heard of them; the FAQ/accordion handles the technical buyer's questions (exact services, hours, payment, location).
+- **CTA context:** never a bare button/link — the text around it says what they get. Repeat the same action top / middle / end.
+- **Benefits translator:** feature → "…ce qui veut dire…" consequence, once each; short sentences; bullets for lists; no data dumps.
+- **Banned words (EN/FR):** passion/passionné, révolutionnaire, dynamique, "solutions digitales" (as a benefit), "excellence" as a claim without a number; "best", "world-class", "state-of-the-art" — same rule in both languages.
+- **Read-aloud test** on the whole hero + every CTA, in spoken (not translated) French.
+- **Hero price anchor (King-approved 17 Sep):** price sits in the hero ONLY when price is the client's differentiator (a real, verified low price — YAKS consult). Otherwise the price moves next to the claim it proves, further down.
+- **H1 contract:** the hero answers what it is / who it's for / why care + one CTA, above the fold, in plain words [10]. A landing page is an acquisition channel, not an art piece.
+
+**SEO placement [6]:** long-tail keywords live in the **FAQ accordion** and in **kickers/eyebrows** — never squeezed into the conversion headline. Ticks/inline SVG for lists, not emoji clusters.
+
 ---
 
 ## §12 REDESIGN PROTOCOL (for AMK site iterations & client rebuilds)
@@ -318,9 +390,16 @@ Pale Red #FDEBEC/#9F2F2D · Pale Blue #E1F3FE/#1F6C9F · Pale Green #EDF3EC/#346
 - [ ] Em-dash scan: zero in EN strings (hyphen ok); FR permitted
 - [ ] No filler verbs, no fake names, no unlabeled fake numbers
 - [ ] Watermark/logo scan on every image asset (visual)
-- [ ] Motion: IO-based (no scroll listeners), reduced-motion block present, claimed = shown
+- [ ] Motion: IO-based (no scroll listeners), reduced-motion block present, claimed = shown; **0 `transition:all`; 0 entrance `ease-in`; every pressable has `:active` scale .95-.98 at 100-160ms; hover transforms gated by `(hover:hover) and (pointer:fine)`; no entrance from scale(0); UI motion ≤300ms (reveals ≤700ms); stagger 30-80ms; only transform/opacity animated; `design/MOTION.md` §6 sweep run**
 - [ ] Shape lock + color lock + theme lock consistent page-wide
-- [ ] Mobile collapse explicit per section; test at 390
+- [ ] Mobile collapse explicit per section; test at 390 AND 360 width
+- [ ] `:focus-visible` branded 3px ring present on all controls; tab order matches visual order
+- [ ] Reduced-motion: CSS block present AND JS honours it (count-ups/animations render final state — check, a CSS block alone fails this)
+- [ ] JSON-LD `@graph` valid (Rich Results Test or local JSON parse); FAQ schema mirrors visible FAQs; zero fabricated ratings/hours; launch-only fields commented
+- [ ] Decorative icons/emoji `aria-hidden="true"`; meaningful images carry descriptive alt; below-fold media `loading="lazy" decoding="async"`
+- [ ] Cognitive load: ≤4 distinct options at any decision point; nav ≤5 top items; one primary action per section (Addendum #3/CRAFT-FLOOR §2)
+- [ ] Squint test + 2 persona walks (parent abroad; anxious first-time patient/cost-conscious shopper) recorded in delivery notes
+- [ ] C12 honesty: no claimed A/B test below ~1,000 pageviews/month; dated change-log entry instead (Addendum #4 §2)
 
 **AMK standing additions:**
 - [ ] Concept badge ("Website concept by AMK") present
@@ -329,6 +408,7 @@ Pale Red #FDEBEC/#9F2F2D · Pale Blue #E1F3FE/#1F6C9F · Pale Green #EDF3EC/#346
 - [ ] Mockup (laptop+phone) captured when sending to a lead
 - [ ] Single file, base64 embedded, opens on phone browser
 - [ ] File size sanity (concepts ~1MB is acceptable)
+- [ ] **Footer gate (§20.6):** 4 blocks + strip, footer CTA = hero action, labels name destinations, credit = brand text only
 
 **If any box cannot be honestly ticked, it is not done. Fix before delivering.**
 
@@ -336,7 +416,7 @@ Pale Red #FDEBEC/#9F2F2D · Pale Blue #E1F3FE/#1F6C9F · Pale Green #EDF3EC/#346
 
 ## §14 STYLE MENU (67 registry styles, one-liners + AMK mapping)
 
-_Raw tokens: `registry-digest.json`. Full specs: `repos/awesome-design-skills/skills/<slug>/`._
+_Full specs: `design/vendor/bergside-skills/<slug>/` (SKILL.md + DESIGN.md). Token digest: `design/vendor/registry-digest.json`. AMK-curated per-vertical starter sheets: `design/STYLE-TOKENS.md`._
 
 | Style | Character | AMK use |
 |---|---|---|
@@ -424,6 +504,8 @@ Research finding: output truncation is a **deliberate RLHF brevity bias, not a d
 
 ## §17 PATTERN VOCABULARY (names to know & reach for)
 
+**Naming matters (§19.5):** use these exact words when briefing a human or an AI. Precision beats "make it beautiful".
+
 **Heroes:** asymmetric split · editorial manifesto · media-mask · kinetic-type · curtain-reveal · scroll-pinned · image-as-canvas · mini-minimalist.
 **Nav:** floating glass pill · magnification dock · mega-menu reveal · contextual radial.
 **Layout:** bento (exact cell count) · masonry · split-screen scroll · sticky-stack · chroma grid.
@@ -435,8 +517,331 @@ Research finding: output truncation is a **deliberate RLHF brevity bias, not a d
 
 ---
 
+## §18 SPEC-DRIVEN BUILD & VERIFICATION (added 17 Sep 2026, engineering batch [9] — `research/YouTube-Lessons.md`)
+
+*The rule that makes everything else hold: **AI builds decay by default** — every feature added without discipline makes the next one harder. Discipline is not a better prompt; it's plan → decide → build → verify → debug.*
+
+### 18.1 Plan before build (never a wish)
+- Every concept/client build starts from a **one-page spec in the dossier**: who it's for · what's in v1 · what is explicitly OUT · build order · what depends on what. Changing a line in a plan is free; changing a decision already spread across the code is a rewrite (this is our builder-replacement bug class).
+- **Scope never touches the stack**: decide *what* we're building first, *how* (fonts, palette derivation, sections) second, so a plan doesn't rot when a detail changes.
+- **Value provenance check (mandatory, pre-ship):** for every number, price, hour, count or status a page shows, name the source — research file, real price, or the explicit DEMO/sample label. **Any value with no source is a decision nobody made** → stop, decide, source it or remove it. This is the mechanical trigger for the accuracy law and §3.6's fake-number ban.
+
+### 18.2 Decisions written down, on purpose
+- Defaults that hold unless there's a reason: **single file, base64 embedded, no external requests; mobile-first; EN|FR pairs complete; WhatsApp-first CTAs.**
+- Every non-obvious design choice gets one line in the build notes with the **honest alternative and why it lost** (e.g. "sticky WA bar — alternative: fixed footer nav, rejected: competes with language toggle").
+- **Secrets/keys never in code** (this repo is public).
+
+### 18.3 State lives in files, not in chats
+- The build must be reproducible from the repo: builder script + inputs + dossier + QA notes. A future session (or another AI) reads the files and continues — nobody re-explains the project.
+- Our context files: `sales/Pipeline-Status.md` (state), the prospect dossiers (decisions), `hosting/previews/README.md` (deploy map), session memory (continuity). **Update them at the moment of the decision, not at the end of the day.**
+- Never overwrite human-written notes; add alongside and flag conflicts.
+
+### 18.4 The verification ladder (match effort to risk)
+*"It works" is a lie until verified — green checks only prove what we thought to check.*
+- **Marketing concepts (reputation risk):** builder greps (leftovers, numbers, URL, phone) · `node --check` on the JS · DOM pair counts · JSON parse · served over HTTP locally · **mobile click-through: every WA / tel / mailto / CTA opened on a real phone (King's phone QA)** · hero shot + mockup captured.
+- **Client deliverables (money risk): run all four jobs:**
+  1. **Check/verify** — drive the actual flows (book, submit, language toggle, sticky bar), against the spec's criteria, not against the code.
+  2. **Test** — what a real caller depends on: correct number reaches a real WhatsApp, form saves/sends, both languages complete.
+  3. **Review** — a fresh pass over the built output, by different eyes than the builder (King's phone pass on the live URL counts as the second pair of eyes; never self-approve from the same pass that wrote it).
+  4. **Document** — the change log written from the actual diff, not from memory.
+- **Deploy gate:** the live URL is verified on a phone (FR boot, one prefill, one CTA) **before** the link goes to a prospect — the YAKS sequence is the standard.
+
+### 18.5 Debug discipline (no pattern-match fixes)
+1. **Reproduce reliably first** — a bug you can't reproduce on command is a bug you can't prove you fixed.
+2. Narrow to the smallest failing spot.
+3. **Form ONE theory, test that one thing.** If wrong, discard the change — no dead edits left in the file.
+4. Fix the **cause**, not the symptom; then hunt the same mistake elsewhere.
+5. **Add a regression check** that fails without the fix (grep/assert in the QA script) so it can never quietly come back.
+6. If the "bug" is a bad decision, say so and redesign — don't patch over it.
+
+---
+
+## §19 DESIGN FOUNDATIONS & DIRECTION EXPLORATION (added 17 Sep 2026, design batch [11][12][13][14] — `research/YouTube-Lessons.md`)
+
+*The four design videos agree on one thing: execution is now cheap, so the differentiator is taste, the decisions. This section is the base layer that produces those decisions.*
+
+### 19.1 Less design, conversion first
+- **Design for the visitor, not for yourself, not for the client.** [12] A clean, modern redesign once dropped a client's sales because it was pretty instead of converting. Beauty in service of conversion is the goal.
+- **Start from the key functionality, not the chrome.** [11] Don't begin at the header, the nav, or "how many sections do I need". Ask: what is the one thing a visitor must do here? Design that unit first (for many pages: heading + form/CTA + button). If that is all the page needed, ship that.
+- **The three conversion jobs** [12]: **clarity** (who we are, what to do next, why care), **scannability** (they scan, they don't read), **motivation** (speak to what makes them say yes).
+- **Foundation before furniture** [11]: one spacing scale (values divisible by 4, rem = px/16, CSS variables), 1-2 font choices, two button types (primary/secondary), one accent. The system exists so no value gets re-decided.
+- **Spacing-first method** [11]: start generous (e.g. a 40px rhythm), then bring related elements closer, picking from the scale, never nudging pixels by feel. Elements need more space than feels right when you're zoomed into one component; users scan the whole UI first.
+
+### 19.2 Visual hierarchy — the method
+- The most important element is the **biggest and boldest**; everything else has its volume turned down [12]. A CTA must be the highest-contrast object in its viewport.
+- **Emphasise by de-emphasising** [11]: when the key element still doesn't win, reduce the contrast/weight/size of its competitors instead of inflating the hero further. Start with the smallest change that works; the most elegant pages use one strong contrast, not five loud ones.
+- **Zoom-out test** after each section: squint, or zoom to 25%. If the eye doesn't land on the primary element first, fix the hierarchy before adding anything.
+- **F-pattern / Z-pattern dogma: retired.** [12] People engage in many patterns; hierarchy, not a mandated reading path, does the work.
+
+### 19.3 Direction exploration (mandatory before any build, 30-45 min)
+*From [13], reinforced by [14]: explore directions before building; the winner becomes the token sheet.*
+1. **Write the brief line**: audience + the one action + tone.
+2. **Produce exactly 3 directions** (no more), each with its own type pairing and accent: e.g. blueprint/technical · editorial/broadsheet · warm/minimal. Never accept the first output; never accept a default palette.
+3. **State the avoid-list** (paste into any tool): purple/violet gradients · neon glow · emoji iconography · AI sparkles · overly-rounded "AI" UI · cheap stock 3D renders · content-hiding fade-ins · Instrument Serif (now an AI-slop tell [13], already banned in §3.2).
+4. **Judge with §19.2 + the §3.8 tell list**; pick one; then iterate **variants of the winner only** (font pairing, accent, headline tone).
+5. **Headlines are outcome-led, not product-led** [13]: "For organic traffic you can actually defend" becomes "Ship SEO work that measurably moves the needle". Same law as the H1 contract (§11b).
+6. **Lock the token sheet** (`design/STYLE-TOKENS.md`) from the winner; that sheet is our version of the "design system file" [13].
+7. **Then** build the full page from it. Pipeline hook: `design/WORKFLOW.md` stage 3b.
+
+### 19.4 The inspiration process (creativity is a process, not a moment) [11]
+- **Know the basics, collect references, work them over in your head, step away, come back, test with others, ship something.**
+- Reference sources: real sites in or adjacent to the vertical, Figma community, pattern libraries, and our vendored registries (`design/vendor/*`). Study *why* a layout works (what it does, for whom) before borrowing anything.
+- **Don't fall in love with your own work** [11]: show it to someone who will say it is bad, test it on a phone, adjust. Some outputs only teach you what the next one should be. A finished average page teaches more than a perfect plan.
+
+### 19.5 Design vocabulary beats "beautiful" [14]
+- "Make it beautiful" is subjective, and the model resolves it to purple gradients. Name the decisions instead: **layout** (hero / feature / onboarding · card / list / bento · full-screen vs framed), **style** (flat, outline, minimalist, glass, soft-depth), **mode** (light/dark), **accent** (one hue, and where it is allowed), **type** (sans/serif/mono · light vs bold personality · pairing), **motion** (fade/slide/scale/blur · sequenced · ease-in-out).
+- **Reference-driven work**: point at a real reference (the client's own storefront/logo, a real site, a Figma frame, our vendored registries) and build *from* it; the taste is inherited instead of guessed.
+- **The "one ingredient" rule** [14]: a single well-chosen element (a real photo treatment, one geometric mark, a product mock) lifts a page more than ten generic effects. *Our constraint:* single-file, no external requests; any ingredient must be embeddable (CSS/SVG/canvas). External 3D/blob embeds are parked for the AMK main site only.
+- **Taste is the moat** [14]: as every site converges on the same blocks, the decisions are the differentiator. Build for the result, not the template.
+
+---
+
+## §20 FOOTERS — THE LAST SCREEN (added 17 Sep 2026, footer batch [18][19] — `research/YouTube-Lessons.md`)
+
+*Two videos, one message: the footer is a **conversion + trust surface**, not a legal dump. Generic advice below is filtered through our rules — mobile-first, single-file, WhatsApp-first, no fabricated proof.*
+
+### 20.1 What a footer is for [18]
+- Two jobs only: **doormat navigation** — the last-chance index for what the nav dropped (contact, hours, address, rarely-needed pages) — and a **second chance to convert**: whoever reached the bottom is interested, so give them the action again.
+- A footer is **mandatory**. "Too minimal for a footer" costs UX, conversions and SEO signals.
+
+### 20.2 AMK footer anatomy — 4 blocks + strip (every concept)
+1. **Brand + line** — logo lockup + **one sentence** (who you are, what you do). [18] says 2–3 paragraphs; too heavy for our single-page mobile builds → one sentence, always present.
+2. **Doormat nav** — the page's own sections, labelled with the destination, never "Ressources"/"Infos" [18].
+3. **CTA block** — **the same primary action as the hero** (WhatsApp first, phone second). Framer/Figma repeat the hero CTA in the footer [19]; small landing pages benefit most. Never a second, competing action.
+4. **Contact block** — address + landmark if we have one, hours, phone(s)/WhatsApp. This is the **E-A-T cluster** [18] and exactly what a patient needs at 22:00.
+- **Bottom strip:** copyright · AMK concept/preview disclaimer · privacy note — small, low-contrast (legal *fades*, hierarchy [19]) + a **back-to-top** link [19].
+- Mobile order: brand → CTA → contact → nav → strip (action before index). Desktop: 4 columns with column titles so the eye orients instantly [19].
+
+### 20.3 Space & hierarchy [19]
+- The footer is a **designed screen**, never leftover: generous negative space, and **one scale contrast** — a large brand/wordmark (or one large element), a medium one (photo/motif), small body/legal type.
+- Negative space is the **canvas** where personality goes [19] — but §3 still governs: no decorative versions, no fake live counters, no ghost chrome.
+- **Mobile caveat (AMK):** full-viewport footers are a **desktop-only** move; on mobile the footer is bounded (≈ ≤120px of designed content + strip) because scroll cost beats drama.
+- Carry the build's **one ingredient** into the footer (the client's real photo, the drawn motif, the letterform) — motif continuity, no new assets [19].
+
+### 20.4 Copy & proof in the footer
+- Link labels name the destination, in the client's own vocabulary [18].
+- **No fabricated proof.** Awards, press quotes and review rows go in a footer **only if they are real and permissioned** (accuracy law). No proof yet → leave the slot empty; never fill it with decoration.
+- **AMK credit line = plain brand text**: "Site par AMK — Développement Web & Solutions Digitales". A keyword anchor ("développeur web Douala") is flagged as black-hat SEO [18]; on client sites the credit stays **text only** until the client agrees to a link.
+
+### 20.5 Bans & parked [18][19]
+- **Banned in footers:** hidden/faded anchor text (named black-hat, Google's own guidelines); keyword-anchor backlinks; vague labels ("Resources"); version footers / fake-live strips (§3.1); external widget embeds.
+- **Parked:** Instagram/Facebook feed embeds (external request + speed cost; our clients don't post consistently enough to use as proof) · newsletter signup forms (our channel is WhatsApp; no list to manage yet) · full-viewport mobile footer (desktop-only) · mega multi-column footers on 1-page concepts.
+- **Contextual footers** (footer varies by page / by condition) [18]: parked until a genuinely multi-page build (school admissions, lab results portal) — note it in the build notes when it's used.
+
+### 20.6 Footer gate (add to §13)
+- [ ] 4 blocks present (brand+line · doormat nav · CTA · contact) + bottom strip (© · disclaimer · back-to-top)
+- [ ] Footer CTA = the hero's action, not a second offer
+- [ ] Every label names its destination; nothing hidden or faded
+- [ ] Credit line = brand text only
+- [ ] Footer contrast passes the audit gate (§1b) on desktop **and** mobile
+
+### 20.7 The link card — what the prospect sees BEFORE the page (added 18 Sep 2026)
+
+The first thing a prospect sees is **not the page: it is the WhatsApp link preview.** A concept
+link with no `og:image` renders as a grey text card — it looks like a forwarded link, not like
+work. The UNI-LABO concept (18/09) shipped **without `og:image`** and the preview came out as a
+text card. The page was fine; the first impression was weaker than the page deserved.
+
+Every concept link sent on WhatsApp must carry, in `<head>`:
+- [ ] `og:title` — the business name + what it does, ≤ 60 chars
+- [ ] `og:description` — one line a patient would recognise, ≤ 120 chars
+- [ ] **`og:image` — 1200×630, a real screenshot of the built page, absolute URL** (the deploy URL,
+      not a relative path: WhatsApp does not resolve relative URLs)
+- [ ] `og:type` = `website`, `og:locale` = `fr_FR` (+ `og:locale:alternate` = `en_US` when FR|EN)
+
+`og:image` must be an absolute `https://` URL on the deployed host, so it is added **after** the
+first deploy — or the host must be known in advance. Where a project has no image host, use the
+concept's hero screenshot from `tools/video/capture.mjs --mode hero` (1080×1620 → crop to 1200×630).
+
+### 20.8 Bilingual text lives in THREE places — patch all three (added 19 Sep 2026)
+
+On every EN|FR build the same sentence exists in **three** places, and they must always agree:
+
+1. `data-en="…"` — what the language toggle writes
+2. `data-fr="…"` — what the language toggle writes
+3. **the visible text node between the tags** — what the page shows *before* JavaScript runs, and
+   **what Google and every LLM crawler actually read.** `fetch_page`, PageSpeed and any no-JS reader
+   never call `setLang()`.
+
+**Found on 19 Sep while diagnosing AMK's own site:** the FAQ answer *"What happens after launch?"* had been updated in
+`data-en` and `data-fr` but **not in the text node**. The page looked right in a browser and was wrong to every
+crawler. It very nearly made me misdiagnose a deployment (I read the stale node on the live site and concluded the
+deploy was old — the deploy *was* old, but the same string existed in both versions, so that one string proved nothing).
+
+- [ ] After editing any bilingual string, grep the file for the **old** wording — it must return **zero** hits, in all three places
+- [ ] `audit_html.py` counts text runs but does **not** compare the three sources: this check is manual, or a 3-line script
+
+### 15.bis Images: generate FIRST, never ship a text-only page (reinforced 19 Sep 2026)
+
+**King's correction, 19 Sep:** *« why is there no image on their site, look for more inspiration (focus on clinics
+of the same type) online joined with our design documentations and give me something with images »*.
+
+**He is right, and our own library already said so twice — §15 point 3 (« NO pure-text minimalism — even minimal
+sites need 2-3 real images ») and §15 point 1 (« Generate first. If an image tool exists, use it… Never skip
+because CSS "feels faster" »).** The Bonanjo page had zero images because I built it before reading §15, not
+because the tools were missing. **A delivered page with no photograph is an unfinished page.**
+
+**What the 2026 healthcare-web research adds (sources: sitebuilderreport, ueni, reallygooddesigns, digitalsilk):**
+- **« Clinical-sterile aesthetics lose patients to warm-and-modern ones at the same price point. »** The hero image must be *calming* — a real practitioner portrait or a warm caregiver–patient moment. **Never a stethoscope on white.**
+- The hero is seen for about **6 seconds** — it sets the emotional state before a word is read.
+- Non-negotiable stack stays: book-now above the fold, click-to-call on mobile, named specialties.
+- Neuro clinics specifically win with **clear hero message + organised service sections + a visible consultation CTA**.
+
+**The AMK image recipe (applies to every client page from now on):**
+1. **One image per section** — never one tall page image (§15).
+2. **Generate first**, at the right aspect ratio (16:10 hero, 4:3 sections), before writing CSS.
+3. **Prompt discipline:** art-direct it (subject, crop, light), name the palette, and **explicitly exclude text,
+   logos, signage, writing on clothing and watermarks** — then **read every image back** (the OraCare v2 rule).
+4. **Continuity:** all images in one page share one light family and one palette grade, so they read as one site.
+5. **Honesty:** when the people are models, **say so under the image** — *« Mise en situation. La photo définitive
+   sera prise dans votre centre. »* It is also the sentence that invites the client to supply his own photos.
+6. **Weight:** never base64 five photographs into a single file. **Separate files load in parallel**; a 750 KB
+   base64 page is a slow page on 3G, which is exactly the market we sell to.
+
+### 20.11 A `<details>` has ONE summary — never put a language class on it (added 19 Sep 2026)
+
+**Found by King on 19 Sep, on Labiomed:** *« FAQ (Questions) do not appear in the English version »*.
+The accordion rows were **completely blank in English** — and **also on Bonanjo, which was already live.**
+
+**The cause.** I wrote:
+
+```html
+<details>
+  <summary class="fr-only">Faut-il prendre rendez-vous ?</summary>
+  <summary class="en-only">Do I need an appointment?</summary>
+  ...
+</details>
+```
+
+**HTML recognises only the FIRST `<summary>` as the disclosure control.** In English the first one is hidden,
+so the control is empty — and the whole FAQ looks broken to an English reader. Every one of my other builds
+used the correct pattern, which is why **only the two pages written in the last two days were affected.**
+
+**The correct pattern — the one already shipped and validated everywhere else:**
+
+```html
+<details>
+  <summary><span class="fr-only">…</span><span class="en-only">…</span></summary>
+  <p><span class="fr-only">…</span><span class="en-only">…</span></p>
+</details>
+```
+
+**The rule, and it generalises past `<details>`:** a language class may only sit on an element whose
+**text** is bilingual — **never on an element whose BEHAVIOUR is structural** (`<summary>`, `<option>`,
+`<title>`, `<legend>`, `<caption>`). Wrapping a `<span>` is always safe; wrapping the functional element is not.
+
+**Repaired with `tools/site/fix_details_summary.py`** (idempotent, and it re-checks that no `<details>`
+has more than one `<summary>`). Both pages verified **in a real browser, in English: 9 questions visible, all opening**.
+**No browser test had ever opened the FAQ in the second language — that is the gap that let this through.**
+
+### 20.9 `display:revert !important` beats every other `display` (added 19 Sep 2026)
+
+Our bilingual pattern hides one language with `html[data-lang="fr"] .en-only{display:none !important}` and shows the
+other with `display:revert !important`. **`revert` sends the element back to the user-agent default — not to your CSS.**
+So a `<small class="fr-only">` that you styled `display:block` becomes **`inline`** again, and the layout breaks
+silently in one language only.
+
+**Found on the Bonanjo build (19 Sep):** the site name ran into its subtitle in the header — the `.brand small{display:block}`
+rule was being overridden by the language rule.
+
+- **Rule:** never put `fr-only`/`en-only` on an element whose layout depends on `display`. **Wrap it instead** — the
+  language class goes on an inner span, the layout stays on the untouched parent.
+- Or omit the language class entirely when the string is identical in both languages (a proper noun often is).
+
+### 20.10 `display:revert !important` — the other half of the bilingual trap
+See §20.8 for the three places a bilingual string lives; §20.9 is the layout half of the same pattern. Both come from
+the same mechanism, and both fail silently in one language only. **Test every build in BOTH languages before shipping.**
+
+**King's ruling, 17 Sep 2026:** the §20 footer standard **applies to every NEW build**. The concepts already built (opticien, afriquelabo, labethanie, yaks, skye, oracare, clinic-bonaberi) **stay exactly as they are — no retrofit.** First build under this rule: the JEMPO concept (next prospect).
+
+---
+
+## §21 TALKING PAGES — VOICE ON AN AMK BUILD (added 18 Sep 2026, build batch [20] — `research/YouTube-Lessons.md`)
+
+**Origin:** Pavlo, *"How I sell Talking Websites to local businesses for 499/mo"* — voice AI embedded in a page that answers questions and books appointments; sold as **recurring revenue**, not as a delivered file. The concept is right and we are already halfway there: **OraCare v1/v3 already ship a scripted assistant** whose answers come only from the page's verified facts.
+
+### 21.1 The rule that governs everything below
+
+**Voice is an addition, never the only way to reach the business.** The primary action of every AMK build stays a plain `wa.me` link — it works on every phone, every browser, costs nothing, and needs no permission. A voice button sits *next to* it. If the voice layer fails, the page is still complete.
+
+### 21.2 What the browser can actually do (verified 18 Sep 2026, not assumed)
+
+| | Speech **out** (synthesis) | Speech **in** (recognition) |
+|---|---|---|
+| Chrome desktop | Full (33+) | Full (33+) |
+| Chrome **Android** | Full | **Partial** — the only mobile browser that works at all |
+| Safari / iOS | Full (7+) | Partial (14.5+), inconsistent |
+| **Firefox (all platforms)** | Desktop only | **Not supported, ever** |
+| Samsung Internet | Full (5.0+) | Via the Chromium engine |
+
+- **Cost: free, no API key** — the browser vendor runs it (Google for Chrome).
+- **Recognition requires a network connection** and **sends the audio to that vendor's servers.** Synthesis is local.
+- Newer Chrome builds have begun shipping **on-device recognition** (Chrome 139+, reported Aug 2026) — promising, **not verified on our own devices yet**.
+- Cloud voice APIs ($0.006–0.024/min, far better accuracy and custom vocabulary) exist for when a client pays for production quality. They need a key + a backend, so they are **not** our default.
+
+**⚠️ The one thing no source can tell us:** accuracy of recognition on **Cameroonian English and French accents**, in a real room, on a real phone, on mobile data. That is an empirical question and it can only be answered by a test on King's own device. **Do not promise a client a voice feature before that test exists.**
+
+### 21.3 The implementation ladder (cheapest first — do not skip a tier)
+
+**Tier 0 — voice on the scripted assistant. Free. No backend. No account. Ships in an hour.**
+
+> ### ✅ BUILT & TESTED — 18 Sep 2026, on our own site (`site/index.html`)
+> King ruled: *« on teste sur le site de AMK »* — our own page, so the worst case is a bug found by us.
+> **`tools/site/patch_voice_widget.py`** injects the layer (idempotent), **`tools/qa/test_voice_widget.mjs`** verifies it
+> headless (**24/24 checks pass**), both committed. `audit_html.py` = **0 findings** with the widget in, desktop and mobile.
+>
+> What it answers, traced to lines already on the page: price 100,000 FCFA · free preview · 3–5 days · **monthly 15,000 FCFA
+> (2 updates/month, no contract, domain stays yours)** · bilingual included · what's in the package · staff can update it ·
+> local Google search · ownership · how to start. Anything else → **"I do not know that one"** + WhatsApp.
+>
+> **Two bugs the test caught that review would have missed:** equal KB scores let a vague question ("et après ?") win over
+> the right answer → scoring rewritten (phrase match 4+, word 2+n/4, tie-break on number of hits, threshold 3);
+> and "launch/lancement" in the *delay* keywords stole the *after-launch* question → overlap removed.
+> **Mobile:** the labelled FAB covered a hero CTA → icon-only 54 px pill above the sticky bar, plus a 3-pulse halo
+> (disabled under `prefers-reduced-motion`). The ✕ glyph is an **SVG**, not `&#10005;` — the glyph was missing from the font.
+>
+> **Still not verified, and stated as such:** microphone accuracy on a Cameroonian accent. That is King's phone test.
+> Speech *input* needs Chrome/Edge; the chips and the WhatsApp handoff work in every browser regardless.
+We already write the answers (FAQ, preparation rules, hours, directions, price→WhatsApp). A Tier-0 voice layer is: `SpeechRecognition` for the patient's question → match it against the **existing scripted knowledge base** → `speechSynthesis` reads the answer in the site's current language → if the question isn't in the base, it says so honestly and opens WhatsApp. **This is the tier UNI-LABO's "Avant de venir" section is already written for** — "Est-ce que je dois être à jeun ?" is the single most valuable voice question a lab will ever be asked.
+
+**Tier 1 — a real AI answer, small backend. Needs an API key + a serverless function.**
+An LLM grounded in the same knowledge base. Cost per conversation is small but real, and it breaks the single-file rule (the page now talks to an endpoint we run). Not before a client is paying.
+
+**Tier 2 — the video's model (Retell / Vapi / ElevenLabs / GoHighLevel-class agent).** USD-billed, per-minute, foreign card required. **Parked, not rejected** — revisit only when a client explicitly pays for that service.
+
+### 21.4 Answers must be traceable to the page
+
+**Every spoken answer must be a line that already exists on that site, written from a verified fact.** No improvisation, no invented services, no invented prices, no invented turnaround times. The video's own demo fails this test — its AI invents "control joints, reinforcements and curing methods" for a company whose real services nobody checked. If a patient asks something the page doesn't answer, the assistant says **"je ne sais pas — demandez au laboratoire"** and hands off to WhatsApp. *An honest "I don't know" builds more trust than a fluent guess — and a wrong answer about a medical test is not a marketing error, it is a safety error.*
+
+### 21.5 The handoff is the conversion, not the booking
+
+In this market nobody fills a calendar. The assistant's job is to end with **WhatsApp open, the patient's own question pre-filled** — the same `wa.me?text=` mechanic we already ship, except the text is now written from what the patient actually said. That is our equivalent of the video's "books the appointment automatically", and it is measurable.
+
+### 21.6 Gate — a voice layer may ship to a client only when all of these are true
+
+- [ ] The plain WhatsApp button is still there, above or beside it, and works without the voice layer
+- [ ] **Explicit click to start** the microphone — never autoplay, never listen on page load
+- [ ] A visible line saying the voice is a demo/assistant and that speech recognition uses the browser's service (no silent recording)
+- [ ] Language follows the site's FR|EN switch; the answer is spoken in the language the question was asked in
+- [ ] Every answer traceable to a line on the page (§21.4); unknown → honest fallback → WhatsApp
+- [ ] **`audit_html.py` 0 findings** with the voice UI included, desktop **and** mobile
+- [ ] Tested on a real Android phone, on mobile data, with an accented question, before any client sees it
+
+### 21.7 What is permanently banned (from this same video)
+
+- **AI-generated photos presented as the real team, the real owner, or real completed work.** Never. Not for a concept, not for a client. The legitimate use of image generation is a mockup **of the site** — never a fabrication **of their reality**.
+- Quoting the "2–3 % average website conversion" figure to a prospect — unverifiable here; internal calibration only.
+- Exit-intent pop-ups and auto-rotating review widgets as *defaults* on a mobile-first Cameroonian page.
+
+---
+
 ## SOURCES
-- `repos/awesome-design-skills/` — bergside/awesome-design-skills (TypeUI) — 67 SKILL.md + DESIGN.md pairs, MIT
-- `repos/taste-skill/` — Leonxlnx/taste-skill — taste-skill v2/v1, soft, minimalist, brutalist, redesign, output, gpt, stitch, imagegen-web/mobile, brandkit, image-to-code, laziness research, MIT
-- `registry-digest.json` — programmatic digest of all 67 registry skills (tokens, fonts, spacing)
-- In-house references: `agency/sales/Monday-Outreach-Pack.md` (Concept Production Standard), `agency/site/design-research.md` (AMK site v3 research), OraCare v2 (reference-override case study)
+- `design/vendor/bergside-skills/` — github.com/bergside/awesome-design-skills (TypeUI), 67 SKILL.md + DESIGN.md pairs, MIT (see `design/vendor/LICENSE-bergside`)
+- `design/vendor/taste/skills/` — github.com/Leonxlnx/taste-skill: taste-skill, redesign, output, brandkit, imagegen web/mobile, image-to-code, stitch, soft/minimalist/brutalist, MIT (`design/vendor/LICENSE-taste`)
+- `design/vendor/emil/skills/` — github.com/emilkowalski/skills: emil-design-eng, animate, review-animations, improve-animations, find-animation-opportunities, animation-vocabulary, apple-design, prototype, pick-ui-library, MIT (`design/vendor/LICENSE-emil`); condensed for vanilla builds in `design/MOTION.md`
+- `design/vendor/registry-digest.json` — machine digest of all 67 bergside token sheets
+- AMK playbooks: `design/WORKFLOW.md` (pipeline), `design/STYLE-TOKENS.md` (vertical starters + rotation ledger), `design/MOTION.md` (motion standard)
+- YouTube lesson batches [18][19] (footers, 17 Sep 2026) → this file §20; full log + rejections in `research/YouTube-Lessons.md`
+- YouTube lesson batch [20] (talking websites / voice, 18 Sep 2026) → this file **§21**; offer-model decision in `sales/Voice-Offer-Decision-2026-09-18.md`
+- **§21 browser-support matrix (checked 18 Sep 2026):** addpipe.com "A Deep Dive into the Web Speech API" (Chrome 139+ on-device recognition, mobile matrix) · vocafuse.com "Web Speech API vs Cloud APIs" (free/no-key, audio sent to vendor servers, cloud at $0.006–0.024/min) · testmuai.com "Speech Synthesis API: Browser Support" (synthesis matrix, Firefox-Android gap). **No source was found for recognition accuracy on Cameroonian accents — that gap is stated in §21.2, not filled by assumption.**
+- In-house references: `sales/Monday-Outreach-Pack.md` (Concept Production Standard), `site/design-research.md` (AMK site research), OraCare v2/v3 (reference-override case studies)

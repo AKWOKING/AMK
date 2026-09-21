@@ -1,0 +1,2948 @@
+{
+ "agentic": {
+  "tokens": {
+   "name": "Agentic",
+   "colors": {
+    "primary": "#FF5701",
+    "secondary": "#F6F6F1",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Playfair Display",
+     "fontSize": "2.5rem"
+    },
+    "body-md": {
+     "fontFamily": "Playfair Display",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.875rem"
+    },
+    "sourceScale": "14/16/18/24/32/40",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "8px",
+    "md": "16px",
+    "sourceScale": "8pt baseline grid"
+   }
+  },
+  "overview": "Conversational AI-first interface with minimal controls, clear outcomes, and delegated task flows for agentic workflows.",
+  "description": "Conversational AI-first interface with minimal controls, clear outcomes, and delegated task flows for agentic workflows.",
+  "type_scale": "14/16/18/24/32/40 | Fonts: primary=Playfair Display, display=Playfair Display, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "8pt baseline grid"
+ },
+ "ant": {
+  "tokens": {
+   "name": "Ant",
+   "colors": {
+    "primary": "#1677ff",
+    "secondary": "#8B5CF6",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Plus Jakarta Sans",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "Plus Jakarta Sans",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Structured, enterprise-focused design system emphasizing clarity, consistency, and efficiency for data-dense web applications.",
+  "description": "Structured, enterprise-focused design system emphasizing clarity, consistency, and efficiency for data-dense web applications.",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=Plus Jakarta Sans, display=Plus Jakarta Sans, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "artistic": {
+  "tokens": {
+   "name": "Artistic",
+   "colors": {
+    "primary": "#3B82F6",
+    "secondary": "#8B5CF6",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Limelight",
+     "fontSize": "2.25rem"
+    },
+    "body-md": {
+     "fontFamily": "Limelight",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/18/24/30/36",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "High-contrast, expressive style with creative typography and bold color choices for visually striking interfaces.",
+  "description": "High-contrast, expressive style with creative typography and bold color choices for visually striking interfaces.",
+  "type_scale": "12/14/16/18/24/30/36 | Fonts: primary=Limelight, display=Limelight, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "basic": {
+  "tokens": {
+   "name": "Basic",
+   "colors": {
+    "primary": "#A855F7",
+    "secondary": "#0A1829",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#0A1829",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Oswald",
+     "fontSize": "3rem"
+    },
+    "body-md": {
+     "fontFamily": "Nunito",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "desktop-first expressive scale",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Print-inspired visual language for books, magazines, and reports with editorial grids and expressive typography.",
+  "description": "Print-inspired visual language for books, magazines, and reports with editorial grids and expressive typography.",
+  "type_scale": "desktop-first expressive scale | Fonts: primary=Nunito, display=Oswald, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "bento": {
+  "tokens": {
+   "name": "Bento",
+   "colors": {
+    "primary": "#FAD4C0",
+    "secondary": "#80A1C1",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFF5E6",
+    "text": "#111827",
+    "neutral": "#FFF5E6"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Inter",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "Inter",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Modular grid layout with card-like blocks, clear hierarchy, soft spacing, and subtle visual contrast for organized, scannable interfaces.",
+  "description": "Modular grid layout with card-like blocks, clear hierarchy, soft spacing, and subtle visual contrast for organized, scannable interfaces.",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=Inter, display=Inter, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "bold": {
+  "tokens": {
+   "name": "Bold",
+   "colors": {
+    "primary": "#0077BC",
+    "secondary": "#009866",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#111111",
+    "text": "#111827",
+    "neutral": "#111111"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Archivo Black",
+     "fontSize": "3rem"
+    },
+    "body-md": {
+     "fontFamily": "Archivo Black",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "desktop-first expressive scale",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Strong visual presence with heavyweight typography, high-contrast colors, and commanding layouts.",
+  "description": "Strong visual presence with heavyweight typography, high-contrast colors, and commanding layouts.",
+  "type_scale": "desktop-first expressive scale | Fonts: primary=Archivo Black, display=Archivo Black, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "brutalism": {
+  "tokens": {
+   "name": "Brutalism",
+   "colors": {
+    "primary": "#DD614C",
+    "secondary": "#DAA144",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Darker Grotesque",
+     "fontSize": "3rem"
+    },
+    "body-md": {
+     "fontFamily": "Darker Grotesque",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "desktop-first expressive scale",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Raw, anti-design aesthetic inspired by concrete architecture with unadorned elements, jarring layouts, and functional minimalism.",
+  "description": "Raw, anti-design aesthetic inspired by concrete architecture with unadorned elements, jarring layouts, and functional minimalism.",
+  "type_scale": "desktop-first expressive scale | Fonts: primary=Darker Grotesque, display=Darker Grotesque, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "cafe": {
+  "tokens": {
+   "name": "Cafe",
+   "colors": {
+    "primary": "#5D4432",
+    "secondary": "#E9E3DD",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#F9F7F5",
+    "text": "#3E2B1E",
+    "neutral": "#F9F7F5"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Poppins",
+     "fontSize": "3rem"
+    },
+    "body-md": {
+     "fontFamily": "Poppins",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "desktop-first expressive scale",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "2px",
+    "md": "4px",
+    "sourceScale": "2/4/8/12/16/24/32/48"
+   }
+  },
+  "overview": "Cozy cafe-inspired interface with warm tones, soft typography, and clean layouts for a relaxed browsing experience.",
+  "description": "Cozy cafe-inspired interface with warm tones, soft typography, and clean layouts for a relaxed browsing experience.",
+  "type_scale": "desktop-first expressive scale | Fonts: primary=Poppins, display=Poppins, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "2/4/8/12/16/24/32/48"
+ },
+ "claude": {
+  "tokens": {
+   "name": "Claude",
+   "colors": {
+    "primary": "#141413",
+    "secondary": "#FAF9F6",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Anthropic Sans",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "Anthropic Sans",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Research-journal aesthetic on warm stone with near-black ink, restrained earthy accents, and editorially strict contrast.",
+  "description": "\"A research-journal aesthetic printed on warm stone — authoritative, editorial, almost achromatic. Pages live on warm ivory parchment (never pure white), with near-black slate as the dominant ink.\"",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=Anthropic Sans, display=Anthropic Sans, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "claymorphism": {
+  "tokens": {
+   "name": "Claymorphism",
+   "colors": {
+    "primary": "#3B82F6",
+    "secondary": "#FFFFFF",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#1C398E",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Poppins",
+     "fontSize": "3rem"
+    },
+    "body-md": {
+     "fontFamily": "Montserrat",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "desktop-first expressive scale",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Soft, rounded 3D-like shapes mimicking malleable clay with playful, puffy elements and colorful surfaces.",
+  "description": "Soft, rounded 3D-like shapes mimicking malleable clay with playful, puffy elements and colorful surfaces.",
+  "type_scale": "desktop-first expressive scale | Fonts: primary=Montserrat, display=Poppins, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "clean": {
+  "tokens": {
+   "name": "Clean",
+   "colors": {
+    "primary": "#3B82F6",
+    "secondary": "#8B5CF6",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Poppins",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "Roboto",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "Inconsolata",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "8px",
+    "md": "16px",
+    "sourceScale": "8pt baseline grid"
+   }
+  },
+  "overview": "Simplicity-focused design with ample whitespace, legible typography, and a limited color palette to reduce visual clutter.",
+  "description": "Simplicity-focused design with ample whitespace, legible typography, and a limited color palette to reduce visual clutter.",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=Roboto, display=Poppins, mono=Inconsolata | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "8pt baseline grid"
+ },
+ "codex": {
+  "tokens": {
+   "name": "Codex",
+   "colors": {
+    "primary": "#000000",
+    "secondary": "#FFFFFF",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Open Sans",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "Open Sans",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Radically minimal blank-canvas interface where black carries structure and typography drives hierarchy.",
+  "description": "\"A radically minimal, blank-canvas interface built as a pure edge-to-edge surface, with almost no color and typography carrying the visual weight. Black serves as the only filled color, the only divider, and the sole surface tone cards.\"",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=Open Sans, display=Open Sans, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "colorful": {
+  "tokens": {
+   "name": "Colorful",
+   "colors": {
+    "primary": "#3B82F6",
+    "secondary": "#8B5CF6",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Inter",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "Inter",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "8px",
+    "md": "16px",
+    "sourceScale": "8pt baseline grid"
+   }
+  },
+  "overview": "Vibrant, high-contrast palettes and gradients for engaging, memorable, and modern user experiences.",
+  "description": "Vibrant, high-contrast palettes and gradients for engaging, memorable, and modern user experiences.",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=Inter, display=Inter, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "8pt baseline grid"
+ },
+ "contemporary": {
+  "tokens": {
+   "name": "Contemporary",
+   "colors": {
+    "primary": "#C800DF",
+    "secondary": "#E60076",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Jost",
+     "fontSize": "3rem"
+    },
+    "body-md": {
+     "fontFamily": "Jost",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "Overpass Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "desktop-first expressive scale",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "8px",
+    "md": "16px",
+    "sourceScale": "comfortable density mode"
+   }
+  },
+  "overview": "Current-era minimalist design with bento grids, dark mode support, and high-performance accessible layouts.",
+  "description": "Current-era minimalist design with bento grids, dark mode support, and high-performance accessible layouts.",
+  "type_scale": "desktop-first expressive scale | Fonts: primary=Jost, display=Jost, mono=Overpass Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "comfortable density mode"
+ },
+ "corporate": {
+  "tokens": {
+   "name": "Corporate",
+   "colors": {
+    "primary": "#3B82F6",
+    "secondary": "#8B5CF6",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Poppins",
+     "fontSize": "3rem"
+    },
+    "body-md": {
+     "fontFamily": "Open Sans",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "IBM Plex Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "desktop-first expressive scale",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "8px",
+    "md": "16px",
+    "sourceScale": "8pt baseline grid"
+   }
+  },
+  "overview": "Professional, brand-aligned design with structured grids, minimalist layouts, and consistent enterprise patterns.",
+  "description": "Professional, brand-aligned design with structured grids, minimalist layouts, and consistent enterprise patterns.",
+  "type_scale": "desktop-first expressive scale | Fonts: primary=Open Sans, display=Poppins, mono=IBM Plex Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "8pt baseline grid"
+ },
+ "cosmic": {
+  "tokens": {
+   "name": "Cosmic",
+   "colors": {
+    "primary": "#3B82F6",
+    "secondary": "#8B5CF6",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Audiowide",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "Audiowide",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "400"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Futuristic sci-fi aesthetic with dark themes, vibrant neon accents, and immersive spatial elements.",
+  "description": "Futuristic sci-fi aesthetic with dark themes, vibrant neon accents, and immersive spatial elements.",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=Audiowide, display=Audiowide, mono=JetBrains Mono | weights=400",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "creative": {
+  "tokens": {
+   "name": "Creative",
+   "colors": {
+    "primary": "#3B82F6",
+    "secondary": "#8B5CF6",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Bangers",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "Bangers",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "IBM Plex Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Playful, character-driven design with expressive typography and bold graphics for landing pages and creative projects.",
+  "description": "Playful, character-driven design with expressive typography and bold graphics for landing pages and creative projects.",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=Bangers, display=Bangers, mono=IBM Plex Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "dithered": {
+  "tokens": {
+   "name": "Dithered",
+   "colors": {
+    "primary": "#3B82F6",
+    "secondary": "#8B5CF6",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Space Grotesk",
+     "fontSize": "2.5rem"
+    },
+    "body-md": {
+     "fontFamily": "Open Sans",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "IBM Plex Mono",
+     "fontSize": "0.875rem"
+    },
+    "sourceScale": "14/16/18/24/32/40",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Dot-pattern rendering technique that simulates shades with a limited palette for nostalgic, retro, high-contrast visuals.",
+  "description": "Dot-pattern rendering technique that simulates shades with a limited palette for nostalgic, retro, high-contrast visuals.",
+  "type_scale": "14/16/18/24/32/40 | Fonts: primary=Open Sans, display=Space Grotesk, mono=IBM Plex Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "doodle": {
+  "tokens": {
+   "name": "Doodle",
+   "colors": {
+    "primary": "#49B6E5",
+    "secondary": "#263D5B",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Delius Swash Caps",
+     "fontSize": "2.5rem"
+    },
+    "body-md": {
+     "fontFamily": "Delius Swash Caps",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.875rem"
+    },
+    "sourceScale": "14/16/18/24/32/40",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Hand-drawn, sketch-like style with doodles, handwritten fonts, and imperfect lines for a playful, informal feel.",
+  "description": "Hand-drawn, sketch-like style with doodles, handwritten fonts, and imperfect lines for a playful, informal feel.",
+  "type_scale": "14/16/18/24/32/40 | Fonts: primary=Delius Swash Caps, display=Delius Swash Caps, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "dramatic": {
+  "tokens": {
+   "name": "Dramatic",
+   "colors": {
+    "primary": "#8B5CF6",
+    "secondary": "#F43F5E",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#09090B",
+    "text": "#FAFAFA",
+    "neutral": "#09090B"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Outfit",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "Outfit",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "400, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "High-contrast, theatrical design with bold layouts, immersive visuals, and unconventional compositions that command attention.",
+  "description": "High-contrast, theatrical design with bold layouts, immersive visuals, and unconventional compositions that command attention.",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=Outfit, display=Outfit, mono=JetBrains Mono | weights=400, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "editorial": {
+  "tokens": {
+   "name": "Editorial",
+   "colors": {
+    "primary": "#111111",
+    "secondary": "#f1f1f1",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Gelasio",
+     "fontSize": "2.5rem"
+    },
+    "body-md": {
+     "fontFamily": "Gelasio",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "Ubuntu Mono",
+     "fontSize": "0.875rem"
+    },
+    "sourceScale": "14/16/18/24/32/40",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "8px",
+    "md": "16px",
+    "sourceScale": "8pt baseline grid"
+   }
+  },
+  "overview": "Magazine-inspired editorial layout with refined serif typography, structured grids, and elegant reading experiences.",
+  "description": "Magazine-inspired editorial layout with refined serif typography, structured grids, and elegant reading experiences.",
+  "type_scale": "14/16/18/24/32/40 | Fonts: primary=Gelasio, display=Gelasio, mono=Ubuntu Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "8pt baseline grid"
+ },
+ "enterprise": {
+  "tokens": {
+   "name": "Enterprise",
+   "colors": {
+    "primary": "#0C5CAB",
+    "secondary": "#0a4a8a",
+    "success": "#10b981",
+    "warning": "#f59e0b",
+    "danger": "#ef4444",
+    "surface": "#09090b",
+    "text": "#fafafa",
+    "neutral": "#09090b"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "IBM Plex Sans",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "IBM Plex Sans",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "IBM Plex Sans",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "8px",
+    "md": "16px",
+    "sourceScale": "8pt baseline grid"
+   }
+  },
+  "overview": "Dark-themed cloud-platform aesthetic with modular grids, glass-like panels, and strong data hierarchy for productivity dashboards.",
+  "description": "Dark-themed cloud-platform aesthetic with modular grids, glass-like panels, and strong data hierarchy for productivity dashboards.",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=IBM Plex Sans, display=IBM Plex Sans, mono=IBM Plex Sans | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "8pt baseline grid"
+ },
+ "expressive": {
+  "tokens": {
+   "name": "Expressive",
+   "colors": {
+    "primary": "#db2777",
+    "secondary": "#2563eb",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "IBM Plex Mono",
+     "fontSize": "2.5rem"
+    },
+    "body-md": {
+     "fontFamily": "IBM Plex Mono",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "IBM Plex Mono",
+     "fontSize": "0.875rem"
+    },
+    "sourceScale": "14/16/18/24/32/40",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Vibrant, personality-driven design with bold colors, playful graphics, and dynamic layouts that balance creativity with structure.",
+  "description": "Vibrant, personality-driven design with bold colors, playful graphics, and dynamic layouts that balance creativity with structure.",
+  "type_scale": "14/16/18/24/32/40 | Fonts: primary=IBM Plex Mono, display=IBM Plex Mono, mono=IBM Plex Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "fantasy": {
+  "tokens": {
+   "name": "Fantasy",
+   "colors": {
+    "primary": "#0250CC",
+    "secondary": "#FDC800",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "New Rocker",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "New Rocker",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "IBM Plex Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "8px",
+    "md": "16px",
+    "sourceScale": "8pt baseline grid"
+   }
+  },
+  "overview": "Game-inspired fantasy aesthetic with bold, premium visuals, rich color palettes, and immersive thematic elements.",
+  "description": "Game-inspired fantasy aesthetic with bold, premium visuals, rich color palettes, and immersive thematic elements.",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=New Rocker, display=New Rocker, mono=IBM Plex Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "8pt baseline grid"
+ },
+ "fiction": {
+  "tokens": {
+   "name": "Fiction",
+   "colors": {
+    "primary": "#222222",
+    "secondary": "#FFE9CE",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Cossette Texte",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "Cossette Texte",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Playful, storybook-inspired interface with warm surfaces, chunky outlines, and expressive display typography.",
+  "description": "\"A playful, energetic, cartoonesque interface inspired by friendly children's-book illustrations — warm cream backgrounds, big bold custom display typography, saturated brand color blocks, thick black outlines, generously rounded shapes\"",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=Cossette Texte, display=Cossette Texte, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "flat": {
+  "tokens": {
+   "name": "Flat",
+   "colors": {
+    "primary": "#F2673C",
+    "secondary": "#8B5CF6",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Inter",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "Inter",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Two-dimensional minimalist style with vibrant colors, clean typography, and no 3D effects for fast, user-friendly interfaces.",
+  "description": "Two-dimensional minimalist style with vibrant colors, clean typography, and no 3D effects for fast, user-friendly interfaces.",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=Inter, display=Inter, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "friendly": {
+  "tokens": {
+   "name": "Friendly",
+   "colors": {
+    "primary": "#F2D9DC",
+    "secondary": "#D9F2D8",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Noto Serif Display",
+     "fontSize": "2.5rem"
+    },
+    "body-md": {
+     "fontFamily": "Noto Serif Display",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "Space Mono",
+     "fontSize": "0.875rem"
+    },
+    "sourceScale": "14/16/18/24/32/40",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "compact density mode"
+   }
+  },
+  "overview": "Approachable, intuitive design with rounded elements, ample whitespace, and soft pastel color palettes.",
+  "description": "Approachable, intuitive design with rounded elements, ample whitespace, and soft pastel color palettes.",
+  "type_scale": "14/16/18/24/32/40 | Fonts: primary=Noto Serif Display, display=Noto Serif Display, mono=Space Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "compact density mode"
+ },
+ "futuristic": {
+  "tokens": {
+   "name": "Futuristic",
+   "colors": {
+    "primary": "#3B82F6",
+    "secondary": "#8B5CF6",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Audiowide",
+     "fontSize": "3rem"
+    },
+    "body-md": {
+     "fontFamily": "Roboto",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "Anonymous Pro",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "desktop-first expressive scale",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Forward-looking design with tech-inspired typography, modern layouts, and a sleek, innovation-driven aesthetic.",
+  "description": "Forward-looking design with tech-inspired typography, modern layouts, and a sleek, innovation-driven aesthetic.",
+  "type_scale": "desktop-first expressive scale | Fonts: primary=Roboto, display=Audiowide, mono=Anonymous Pro | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "geometric": {
+  "tokens": {
+   "name": "Geometric",
+   "colors": {
+    "primary": "#3B82F6",
+    "secondary": "#8B5CF6",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Inter",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "Inter",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Geometric, structured design with clean typography, neutral colors, precise shapes, and intuitive layouts that stay out of the way.",
+  "description": "Geometric, structured design with clean typography, neutral colors, precise shapes, and intuitive layouts that stay out of the way.",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=Inter, display=Inter, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "glassmorphism": {
+  "tokens": {
+   "name": "Glassmorphism",
+   "colors": {
+    "primary": "#1856FF",
+    "secondary": "#3A344E",
+    "success": "#07CA6B",
+    "warning": "#E89558",
+    "danger": "#EA2143",
+    "surface": "#FFFFFF",
+    "text": "#141414",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Plus Jakarta Sans",
+     "fontSize": "3rem"
+    },
+    "body-md": {
+     "fontFamily": "Plus Jakarta Sans",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "mobile-first compact scale",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "8px",
+    "md": "16px",
+    "sourceScale": "comfortable density mode"
+   }
+  },
+  "overview": "Frosted glass effect with translucent layers, subtle blur, and luminous borders for depth and modern elegance.",
+  "description": "Frosted glass effect with translucent layers, subtle blur, and luminous borders for depth and modern elegance.",
+  "type_scale": "mobile-first compact scale | Fonts: primary=Plus Jakarta Sans, display=Plus Jakarta Sans, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "comfortable density mode"
+ },
+ "gradient": {
+  "tokens": {
+   "name": "Gradient",
+   "colors": {
+    "primary": "#990FFA",
+    "secondary": "#E60076",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Space Grotesk",
+     "fontSize": "2.25rem"
+    },
+    "body-md": {
+     "fontFamily": "Montserrat",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/18/24/30/36",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "8px",
+    "md": "16px",
+    "sourceScale": "8pt baseline grid"
+   }
+  },
+  "overview": "Smooth color transitions and gradient-rich surfaces for modern, playful interfaces with visual depth.",
+  "description": "Smooth color transitions and gradient-rich surfaces for modern, playful interfaces with visual depth.",
+  "type_scale": "12/14/16/18/24/30/36 | Fonts: primary=Montserrat, display=Space Grotesk, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "8pt baseline grid"
+ },
+ "immersive": {
+  "tokens": {
+   "name": "Immersive",
+   "colors": {
+    "primary": "#00592B",
+    "secondary": "#0023D1",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Oswald",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "Oswald",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Exhibit-style interface that blends storytelling and game-like interaction on a continuous deep-green canvas.",
+  "description": "\"An immersive, interactive, exhibit-style interface that blends storytelling, animation, and gamified elements to create a playful, experience-driven journey. The entire app sits on a single continuous brand-colored canvas (deep green)\"",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=Oswald, sans-serif, display=Oswald, sans-serif, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "impeccable": {
+  "tokens": {
+   "name": "Impeccable",
+   "colors": {
+    "primary": "#CC8800",
+    "secondary": "#C55221",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Chakra Petch",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "Chakra Petch",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Graphic editorial-poster aesthetic with warm cream and burnt-orange rhythm plus a sharp amber accent.",
+  "description": "\"A modern, graphic, editorial-poster aesthetic — warm and confident — built on alternating cream and burnt orange sections, an amber brand color.\"",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=Chakra Petch, display=Chakra Petch, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "levels": {
+  "tokens": {
+   "name": "Levels",
+   "colors": {
+    "primary": "#27272A",
+    "secondary": "#8B5CF6",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Inter",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "Inter",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Conversion-focused design that removes friction and guides users toward action through clarity, trust, and speed.",
+  "description": "Conversion-focused design that removes friction and guides users toward action through clarity, trust, and speed.",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=Inter, display=Inter, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "lingo": {
+  "tokens": {
+   "name": "Lingo",
+   "colors": {
+    "primary": "#58cc02",
+    "secondary": "#ce82ff",
+    "success": "#58cc02",
+    "warning": "#ffc800",
+    "danger": "#ff4b4b",
+    "surface": "#FFFFFF",
+    "text": "#3c3c3c",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Nunito",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "Nunito",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Playful, minimal design with bright colors, rounded shapes, tactile 3D borders, and friendly illustrations for approachable interfaces.",
+  "description": "Playful, minimal design with bright colors, rounded shapes, tactile 3D borders, and friendly illustrations for approachable interfaces.",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=Nunito, display=Nunito, mono=JetBrains Mono | weights=400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "material": {
+  "tokens": {
+   "name": "Material",
+   "colors": {
+    "primary": "#6442D6",
+    "secondary": "#C8B3FD",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Roboto",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "Inter",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "Fira Code",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Google's Material Design with layered surfaces, dynamic theming, built-in motion, and responsive cross-platform patterns.",
+  "description": "Google's Material Design with layered surfaces, dynamic theming, built-in motion, and responsive cross-platform patterns.",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=Inter, display=Roboto, mono=Fira Code | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "matrix": {
+  "tokens": {
+   "name": "Matrix",
+   "colors": {
+    "primary": "#2DB58A",
+    "secondary": "#0B0C14",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Space Mono",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "Space Mono",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "Space Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Dark cyber-terminal visual language with mono typography, dense data layouts, and one green interaction accent.",
+  "description": "\"A cyber-slick, dark-only Matrix-inspired interface defined by minimalist fashion, high-tech digital elements\"",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=Space Mono, display=Space Mono, mono=Space Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "minimal": {
+  "tokens": {
+   "name": "Minimal",
+   "colors": {
+    "primary": "#0C0C09",
+    "secondary": "#312C85",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#F4F4F1",
+    "text": "#0C0C09",
+    "neutral": "#F4F4F1"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Inter",
+     "fontSize": "3rem"
+    },
+    "body-md": {
+     "fontFamily": "Open Sans",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "Inconsolata",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "desktop-first expressive scale",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Stripped-back design emphasizing whitespace, clean typography, and restrained color for maximum clarity and focus.",
+  "description": "Stripped-back design emphasizing whitespace, clean typography, and restrained color for maximum clarity and focus.",
+  "type_scale": "desktop-first expressive scale | Fonts: primary=Open Sans, display=Inter, mono=Inconsolata | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "modern": {
+  "tokens": {
+   "name": "Modern",
+   "colors": {
+    "primary": "#553F83",
+    "secondary": "#111111",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#553F83",
+    "text": "#ffffff",
+    "neutral": "#553F83"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "IBM Plex Serif",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "IBM Plex Serif",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Contemporary editorial style with serif typography, minimal palettes, and clean layouts for polished digital products.",
+  "description": "Contemporary editorial style with serif typography, minimal palettes, and clean layouts for polished digital products.",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=IBM Plex Serif, display=IBM Plex Serif, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "mono": {
+  "tokens": {
+   "name": "Mono",
+   "colors": {
+    "primary": "#37F712",
+    "secondary": "#00A6F4",
+    "success": "#00A63D",
+    "warning": "#FE9900",
+    "danger": "#FF2157",
+    "surface": "#E7E5E4",
+    "text": "#78716B",
+    "neutral": "#E7E5E4"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Space Mono",
+     "fontSize": "3rem"
+    },
+    "body-md": {
+     "fontFamily": "Space Mono",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "desktop-first expressive scale",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "compact density mode"
+   }
+  },
+  "overview": "Monospace-driven, matrix-inspired design with high-contrast elements, compact density, and a hacker-chic aesthetic.",
+  "description": "Monospace-driven, matrix-inspired design with high-contrast elements, compact density, and a hacker-chic aesthetic.",
+  "type_scale": "desktop-first expressive scale | Fonts: primary=Space Mono, display=Space Mono, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "compact density mode"
+ },
+ "neobrutalism": {
+  "tokens": {
+   "name": "Neobrutalism",
+   "colors": {
+    "primary": "#FDC800",
+    "secondary": "#432DD7",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FBFBF9",
+    "text": "#1C293C",
+    "neutral": "#FBFBF9"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Inter",
+     "fontSize": "2.1875rem"
+    },
+    "body-md": {
+     "fontFamily": "Inter",
+     "fontSize": "0.9375rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.8125rem"
+    },
+    "sourceScale": "13/15/17/21/27/35",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Modern take on brutalism with bold borders, vivid accent colors, and raw, high-contrast layouts on warm surfaces.",
+  "description": "Modern take on brutalism with bold borders, vivid accent colors, and raw, high-contrast layouts on warm surfaces.",
+  "type_scale": "13/15/17/21/27/35 | Fonts: primary=Inter, display=Inter, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "neon": {
+  "tokens": {
+   "name": "Neon",
+   "colors": {
+    "primary": "#BBF351",
+    "secondary": "#00BCFF",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "STIX Two Text",
+     "fontSize": "2.5rem"
+    },
+    "body-md": {
+     "fontFamily": "Roboto",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "Source Code Pro",
+     "fontSize": "0.875rem"
+    },
+    "sourceScale": "14/16/18/24/32/40",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Electric neon glow effects with high-contrast color pairings for bold, attention-grabbing interfaces.",
+  "description": "Electric neon glow effects with high-contrast color pairings for bold, attention-grabbing interfaces.",
+  "type_scale": "14/16/18/24/32/40 | Fonts: primary=Roboto, display=STIX Two Text, mono=Source Code Pro | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "neumorphism": {
+  "tokens": {
+   "name": "Neumorphism",
+   "colors": {
+    "primary": "#006666",
+    "secondary": "#F1F2F5",
+    "success": "#00A63D",
+    "warning": "#FE9900",
+    "danger": "#FF2157",
+    "surface": "#E7E5E4",
+    "text": "#1E2938",
+    "neutral": "#E7E5E4"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Space Mono",
+     "fontSize": "3rem"
+    },
+    "body-md": {
+     "fontFamily": "Space Mono",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "desktop-first expressive scale",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "compact density mode"
+   }
+  },
+  "overview": "Soft, extruded UI elements with inner and outer shadows on monochromatic surfaces for a tactile, embedded look.",
+  "description": "Soft, extruded UI elements with inner and outer shadows on monochromatic surfaces for a tactile, embedded look.",
+  "type_scale": "desktop-first expressive scale | Fonts: primary=Space Mono, display=Space Mono, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "compact density mode"
+ },
+ "pacman": {
+  "tokens": {
+   "name": "Pacman",
+   "colors": {
+    "primary": "#2A3FE5",
+    "secondary": "#F4B9B0",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#000000",
+    "text": "#111827",
+    "neutral": "#000000"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Press Start 2P",
+     "fontSize": "3rem"
+    },
+    "body-md": {
+     "fontFamily": "Press Start 2P",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "Space Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "desktop-first expressive scale",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "8px",
+    "md": "16px",
+    "sourceScale": "8pt baseline grid"
+   }
+  },
+  "overview": "Retro arcade-inspired design with pixel fonts, dotted borders, playful high-contrast colors, and 8-bit game aesthetics.",
+  "description": "Retro arcade-inspired design with pixel fonts, dotted borders, playful high-contrast colors, and 8-bit game aesthetics.",
+  "type_scale": "desktop-first expressive scale | Fonts: primary=Press Start 2P, display=Press Start 2P, mono=Space Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "8pt baseline grid"
+ },
+ "paper": {
+  "tokens": {
+   "name": "Paper",
+   "colors": {
+    "primary": "#111111",
+    "secondary": "#8B5CF6",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Montserrat",
+     "fontSize": "2.5rem"
+    },
+    "body-md": {
+     "fontFamily": "Roboto",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "PT Mono",
+     "fontSize": "0.875rem"
+    },
+    "sourceScale": "14/16/18/24/32/40",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Paper-textured, print-inspired design with minimal colors, clean serif/sans typography, and tactile surface qualities.",
+  "description": "Paper-textured, print-inspired design with minimal colors, clean serif/sans typography, and tactile surface qualities.",
+  "type_scale": "14/16/18/24/32/40 | Fonts: primary=Roboto, display=Montserrat, mono=PT Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "perspective": {
+  "tokens": {
+   "name": "Perspective",
+   "colors": {
+    "primary": "#00BD7D",
+    "secondary": "#00BD7D",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Oswald",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "Poppins",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Spatial depth design with isometric views, vanishing points, and layered elements that guide attention through 3D-like realism.",
+  "description": "Spatial depth design with isometric views, vanishing points, and layered elements that guide attention through 3D-like realism.",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=Poppins, display=Oswald, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "power": {
+  "tokens": {
+   "name": "Power",
+   "colors": {
+    "primary": "#FAFAFA",
+    "secondary": "#FAFAFA",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#000000",
+    "text": "#ffffff",
+    "neutral": "#000000"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Oswald",
+     "fontSize": "3rem"
+    },
+    "body-md": {
+     "fontFamily": "Oswald",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "desktop-first expressive scale",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "8px",
+    "md": "16px",
+    "sourceScale": "8pt baseline grid"
+   }
+  },
+  "overview": "High-end dark aesthetic with bold headings, monochromatic palette, and premium feel for premium brand experiences.",
+  "description": "High-end dark aesthetic with bold headings, monochromatic palette, and premium feel for premium brand experiences.",
+  "type_scale": "desktop-first expressive scale | Fonts: primary=Oswald, display=Oswald, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "8pt baseline grid"
+ },
+ "premium": {
+  "tokens": {
+   "name": "Premium",
+   "colors": {
+    "primary": "#3B82F6",
+    "secondary": "#8B5CF6",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Inter",
+     "fontSize": "2.25rem"
+    },
+    "body-md": {
+     "fontFamily": "Inter",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/18/24/30/36",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Apple-inspired premium aesthetic with precise spacing, modern typography, and a refined, polished visual language.",
+  "description": "Apple-inspired premium aesthetic with precise spacing, modern typography, and a refined, polished visual language.",
+  "type_scale": "12/14/16/18/24/30/36 | Fonts: primary=Inter, display=Inter, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "professional": {
+  "tokens": {
+   "name": "Professional",
+   "colors": {
+    "primary": "#FECE14",
+    "secondary": "#000000",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Poppins",
+     "fontSize": "3rem"
+    },
+    "body-md": {
+     "fontFamily": "Poppins",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "IBM Plex Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "mobile-first compact scale",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Polished, business-ready design with modern typography, structured layouts, and a trustworthy visual identity.",
+  "description": "Polished, business-ready design with modern typography, structured layouts, and a trustworthy visual identity.",
+  "type_scale": "mobile-first compact scale | Fonts: primary=Poppins, display=Poppins, mono=IBM Plex Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "pulse": {
+  "tokens": {
+   "name": "Pulse",
+   "colors": {
+    "primary": "#EA580B",
+    "secondary": "#F59E0B",
+    "background": "#FFEDD5",
+    "surface": "#FDBA74",
+    "text": "#EA580C",
+    "neutral": "#FDBA74"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Limelight",
+     "fontSize": "3rem"
+    },
+    "body-md": {
+     "fontFamily": "Limelight",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32/48",
+    "weights": "400"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32/48/64"
+   }
+  },
+  "overview": "Dynamic, vibrant style with thick borders, geometric shapes, high-contrast colors, and expressive typography conveying motion and vitality.",
+  "description": "Dynamic, vibrant style with thick borders, geometric shapes, high-contrast colors, and expressive typography conveying motion and vitality.",
+  "type_scale": "12/14/16/20/24/32/48 | Fonts: primary=Limelight, display=Limelight, mono=JetBrains Mono | weights=400",
+  "spacing": "4/8/12/16/24/32/48/64"
+ },
+ "refined": {
+  "tokens": {
+   "name": "Refined",
+   "colors": {
+    "primary": "#3B82F6",
+    "secondary": "#8B5CF6",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Playfair Display",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "Playfair Display",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Carefully curated, modern minimal style with elegant serif typography and understated, sophisticated palettes.",
+  "description": "Carefully curated, modern minimal style with elegant serif typography and understated, sophisticated palettes.",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=Playfair Display, display=Playfair Display, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "retro": {
+  "tokens": {
+   "name": "Retro",
+   "colors": {
+    "primary": "#3B82F6",
+    "secondary": "#8B5CF6",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Macondo",
+     "fontSize": "3rem"
+    },
+    "body-md": {
+     "fontFamily": "Macondo",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "desktop-first expressive scale",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Throwback design with vintage-inspired typography, high-contrast retro palettes, and nostalgic visual elements.",
+  "description": "Throwback design with vintage-inspired typography, high-contrast retro palettes, and nostalgic visual elements.",
+  "type_scale": "desktop-first expressive scale | Fonts: primary=Macondo, display=Macondo, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "riso": {
+  "tokens": {
+   "name": "Riso",
+   "colors": {
+    "primary": "#F237A1",
+    "secondary": "#2C40A7",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Space Grotesk",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "Space Grotesk",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "Overpass Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Playful two-color risograph-inspired system with paper-like warmth, vivid pink actions, and bold blue structure.",
+  "description": "\"A playful, joyful, two-color risograph print aesthetic built on a single warm off-white paper surface running through every section\"",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=Space Grotesk, display=Space Grotesk, mono=Overpass Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "roku": {
+  "tokens": {
+   "name": "Roku",
+   "colors": {
+    "primary": "#9333ea",
+    "secondary": "#a855f7",
+    "success": "#10b981",
+    "warning": "#f59e0b",
+    "danger": "#ef4444",
+    "surface": "#FFFFFF",
+    "text": "#09090b",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Inter",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "Inter",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "App dashboard with purple-themed aesthetic, top-bar navigation, card-based layouts, and developer-first workflows.",
+  "description": "App dashboard with purple-themed aesthetic, top-bar navigation, card-based layouts, and developer-first workflows.",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=Inter, display=Inter, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "sega": {
+  "tokens": {
+   "name": "Sega",
+   "colors": {
+    "primary": "#4502FF",
+    "secondary": "#FFDA14",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "VT323",
+     "fontSize": "2.1875rem"
+    },
+    "body-md": {
+     "fontFamily": "VT323",
+     "fontSize": "0.9375rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.8125rem"
+    },
+    "sourceScale": "13/15/17/21/27/35",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Arcade-inspired game interface with pixel typography, hard edges, and physically punchy, offset-shadow controls.",
+  "description": "\"A playful, arcade-inspired interface for games — built on the VT323 pixel typeface, hard-edged 0px corners, chunky pill buttons that physically press into solid offset blocks\"",
+  "type_scale": "13/15/17/21/27/35 | Fonts: primary=VT323, display=VT323, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "shadcn": {
+  "tokens": {
+   "name": "Shadcn",
+   "colors": {
+    "primary": "#000000",
+    "secondary": "#111111",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Geist",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "Geist",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "Fira Code",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Shadcn/ui-inspired design with minimal, clean components, monochrome palette, and utility-first patterns.",
+  "description": "Shadcn/ui-inspired design with minimal, clean components, monochrome palette, and utility-first patterns.",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=Geist, display=Geist, mono=Fira Code | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "sketch": {
+  "tokens": {
+   "name": "Sketch",
+   "colors": {
+    "primary": "#1DAD97",
+    "secondary": "#F4EDE0",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Delicious Handrawn",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "Delicious Handrawn",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Hand-drawn sketch aesthetic on warm paper with soft teal accents, dashed outlines, and tactile illustrated shadows.",
+  "description": "\"A friendly, hand-drawn sketch interface inspired by pencil illustrations on warm cream paper. Soft teal brand accents, hand-written display headings, rounded pill controls.\"",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=Delicious Handrawn, display=Delicious Handrawn, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "skeumorphism": {
+  "tokens": {
+   "name": "Skeumorphism",
+   "colors": {
+    "primary": "#FA3C00",
+    "secondary": "#F08321",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Germania One",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "Roboto",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Real-world mimicry with textured surfaces, 3D effects, and familiar physical metaphors for intuitive digital interfaces.",
+  "description": "Real-world mimicry with textured surfaces, 3D effects, and familiar physical metaphors for intuitive digital interfaces.",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=Roboto, display=Germania One, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "sleek": {
+  "tokens": {
+   "name": "Sleek",
+   "colors": {
+    "primary": "#3B82F6",
+    "secondary": "#8B5CF6",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Inter",
+     "fontSize": "3rem"
+    },
+    "body-md": {
+     "fontFamily": "Inter",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "desktop-first expressive scale",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "8px",
+    "md": "16px",
+    "sourceScale": "8pt baseline grid"
+   }
+  },
+  "overview": "Modern minimalist aesthetic with clean lines, intentional color palette, subtle interactions, and consistent spacing.",
+  "description": "Modern minimalist aesthetic with clean lines, intentional color palette, subtle interactions, and consistent spacing.",
+  "type_scale": "desktop-first expressive scale | Fonts: primary=Inter, display=Inter, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "8pt baseline grid"
+ },
+ "spacious": {
+  "tokens": {
+   "name": "Spacious",
+   "colors": {
+    "primary": "#3B82F6",
+    "secondary": "#8B5CF6",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Montserrat",
+     "fontSize": "2.25rem"
+    },
+    "body-md": {
+     "fontFamily": "Open Sans",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "IBM Plex Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/18/24/30/36",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "8px",
+    "md": "16px",
+    "sourceScale": "8pt baseline grid"
+   }
+  },
+  "overview": "Generous whitespace, consistent padding, and grid-based layouts for clean, readable, and breathing interfaces.",
+  "description": "Generous whitespace, consistent padding, and grid-based layouts for clean, readable, and breathing interfaces.",
+  "type_scale": "12/14/16/18/24/30/36 | Fonts: primary=Open Sans, display=Montserrat, mono=IBM Plex Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "8pt baseline grid"
+ },
+ "square": {
+  "tokens": {
+   "name": "Square",
+   "colors": {
+    "primary": "#3B82F6",
+    "secondary": "#8B5CF6",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Google Sans",
+     "fontSize": "2.5rem"
+    },
+    "body-md": {
+     "fontFamily": "Google Sans",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "Anonymous Pro",
+     "fontSize": "0.875rem"
+    },
+    "sourceScale": "14/16/18/24/32/40",
+    "weights": "100, 200, 300, 400, 500, 600"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Graceful, refined aesthetic with delicate typography, minimal palettes, and polished layouts that exude sophistication.",
+  "description": "Graceful, refined aesthetic with delicate typography, minimal palettes, and polished layouts that exude sophistication.",
+  "type_scale": "14/16/18/24/32/40 | Fonts: primary=Google Sans, display=Google Sans, mono=Anonymous Pro | weights=100, 200, 300, 400, 500, 600",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "stitch": {
+  "tokens": {
+   "name": "Stitch",
+   "colors": {
+    "primary": "#072C2C",
+    "secondary": "#FF5F03",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#EDEADE",
+    "text": "#111827",
+    "neutral": "#EDEADE"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Oswald",
+     "fontSize": "3rem"
+    },
+    "body-md": {
+     "fontFamily": "Ubuntu",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "Ubuntu Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "desktop-first expressive scale",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "8px",
+    "md": "16px",
+    "sourceScale": "comfortable density mode"
+   }
+  },
+  "overview": "Clean, high-contrast enterprise design for data-driven workflows with intuitive drag-and-drop patterns and structured layouts.",
+  "description": "Clean, high-contrast enterprise design for data-driven workflows with intuitive drag-and-drop patterns and structured layouts.",
+  "type_scale": "desktop-first expressive scale | Fonts: primary=Ubuntu, display=Oswald, mono=Ubuntu Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "comfortable density mode"
+ },
+ "storytelling": {
+  "tokens": {
+   "name": "Storytelling",
+   "colors": {
+    "primary": "#3B82F6",
+    "secondary": "#8B5CF6",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Abril Fatface",
+     "fontSize": "3rem"
+    },
+    "body-md": {
+     "fontFamily": "Inter",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "desktop-first expressive scale",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Narrative-driven design using visuals, copy, and interaction to guide users through engaging, emotionally resonant journeys.",
+  "description": "Narrative-driven design using visuals, copy, and interaction to guide users through engaging, emotionally resonant journeys.",
+  "type_scale": "desktop-first expressive scale | Fonts: primary=Inter, display=Abril Fatface, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "terracotta": {
+  "tokens": {
+   "name": "Terracotta",
+   "colors": {
+    "primary": "#C56A3C",
+    "secondary": "#F3E9D8",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#111827",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "DM Serif Display",
+     "fontSize": "2.5rem"
+    },
+    "body-md": {
+     "fontFamily": "DM Serif Display",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.875rem"
+    },
+    "sourceScale": "14/16/18/24/32/40",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "Sun-baked, clay-toned editorial system with warm cream surfaces, serif headlines, and a single terracotta accent.",
+  "description": "\"A sun-baked, clay-toned editorial interface built on warm cream surfaces, ink-brown headlines set in a display serif, and a single terracotta accent.\"",
+  "type_scale": "14/16/18/24/32/40 | Fonts: primary=DM Serif Display, display=DM Serif Display, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "4/8/12/16/24/32"
+ },
+ "tetris": {
+  "tokens": {
+   "name": "Tetris",
+   "colors": {
+    "primary": "#1C202B",
+    "secondary": "#7107E7",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#DFE7FF",
+    "text": "#1C398E",
+    "neutral": "#DFE7FF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Bangers",
+     "fontSize": "3rem"
+    },
+    "body-md": {
+     "fontFamily": "Bangers",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "desktop-first expressive scale",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "compact density mode"
+   }
+  },
+  "overview": "Classic block-game inspired design with playful colors, bold display fonts, and compact, high-energy layouts.",
+  "description": "Classic block-game inspired design with playful colors, bold display fonts, and compact, high-energy layouts.",
+  "type_scale": "desktop-first expressive scale | Fonts: primary=Bangers, display=Bangers, mono=JetBrains Mono | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "compact density mode"
+ },
+ "vibrant": {
+  "tokens": {
+   "name": "Vibrant",
+   "colors": {
+    "primary": "#7C61D4",
+    "secondary": "#EAAE87",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#FFFFFF",
+    "text": "#2F281D",
+    "neutral": "#FFFFFF"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Fascinate",
+     "fontSize": "2.5rem"
+    },
+    "body-md": {
+     "fontFamily": "Noto Sans",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "Fira Code",
+     "fontSize": "0.875rem"
+    },
+    "sourceScale": "14/16/18/24/32/40",
+    "weights": "100, 200, 300, 400, 500, 600, 700, 800, 900"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "2px",
+    "md": "4px",
+    "sourceScale": "2/4/8/12/16/24/32/48"
+   }
+  },
+  "overview": "Lively, colorful design with bold playful typography, warm accents, and dynamic visual energy.",
+  "description": "Lively, colorful design with bold playful typography, warm accents, and dynamic visual energy.",
+  "type_scale": "14/16/18/24/32/40 | Fonts: primary=Noto Sans, display=Fascinate, mono=Fira Code | weights=100, 200, 300, 400, 500, 600, 700, 800, 900",
+  "spacing": "2/4/8/12/16/24/32/48"
+ },
+ "vintage": {
+  "tokens": {
+   "name": "Vintage",
+   "colors": {
+    "primary": "#008080",
+    "secondary": "#C0C0C0",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626",
+    "surface": "#C0C0C0",
+    "text": "#000000",
+    "neutral": "#C0C0C0"
+   },
+   "typography": {
+    "h1": {
+     "fontFamily": "Silkscreen",
+     "fontSize": "2rem"
+    },
+    "body-md": {
+     "fontFamily": "Silkscreen",
+     "fontSize": "1rem"
+    },
+    "label-caps": {
+     "fontFamily": "JetBrains Mono",
+     "fontSize": "0.75rem"
+    },
+    "sourceScale": "12/14/16/20/24/32",
+    "weights": "400, 700"
+   },
+   "rounded": {
+    "sm": "4px",
+    "md": "8px"
+   },
+   "spacing": {
+    "sm": "4px",
+    "md": "8px",
+    "sourceScale": "4/8/12/16/24/32"
+   }
+  },
+  "overview": "1950s-1990s nostalgia with skeuomorphic touches, grainy textures, retro color palettes, and pixel-style typography.",
+  "description": "1950s-1990s nostalgia with skeuomorphic touches, grainy textures, retro color palettes, and pixel-style typography.",
+  "type_scale": "12/14/16/20/24/32 | Fonts: primary=Silkscreen, display=Silkscreen, mono=JetBrains Mono | weights=400, 700",
+  "spacing": "4/8/12/16/24/32"
+ }
+}

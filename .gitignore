@@ -1,0 +1,10 @@
+.DS_Store
+__pycache__/
+*.pyc
+
+# shot pipeline working files
+tools/shots/node_modules/
+tools/shots/out/
+
+# video compositor working files
+tools/record/node_modules/

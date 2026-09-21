@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{NAME}} — Maquette d'accueil AMK</title>
+<!--
+  MODÈLE DE MAQUETTE AMK — page d'accueil responsive (téléphone + ordinateur).
+  Tous les mots visibles viennent du prospect via des jetons {{...}} :
+  aucun texte de remplissage, aucun chiffre, aucun témoignage inventé.
+  Rempli par tools/outreach/mockup.py, puis capturé deux fois (390×844 et 1280×800).
+-->
+<style>
+  :root{
+    --brand:{{BRAND}};
+    --brand-b:{{BRAND_B}};
+    --ink:#141A24;
+    --muted:#5B6472;
+    --bone:#F7F5F0;
+    --line:#E4E1D9;
+  }
+  *{box-sizing:border-box;margin:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--bone);font-family:Inter,"Open Sans","Helvetica Neue",Arial,sans-serif;
+       color:var(--ink);-webkit-font-smoothing:antialiased;min-height:100vh}
+
+  /* étiquette d'honnêteté — la page se déclare maquette */
+  .strip{background:#F3E3CC;color:#8A5A16;font:700 11px/1 Inter,Arial;
+         letter-spacing:.16em;text-transform:uppercase;text-align:center;padding:9px 12px}
+
+  header{display:flex;align-items:center;justify-content:space-between;gap:16px;
+         padding:15px 20px;background:#fff;border-bottom:1px solid var(--line)}
+  .id{display:flex;align-items:center;gap:10px;min-width:0}
+  .mark{width:30px;height:30px;border-radius:9px;background:var(--brand);flex:none;
+        display:grid;place-items:center;color:#fff;font:800 15px Inter,Arial}
+  .id b{font:800 15.5px/1.15 Inter,Arial;letter-spacing:-.2px;
+        white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .nav{display:none}
+  .lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;flex:none}
+  .lang span{padding:5px 11px;font:700 11px Inter,Arial;color:var(--muted)}
+  .lang .on{background:var(--brand);color:#fff}
+
+  .hero{padding:24px 20px 0;background:#fff}
+  .eyebrow{display:flex;align-items:center;gap:8px;font:700 11px/1 Inter,Arial;
+           letter-spacing:.16em;text-transform:uppercase;color:var(--brand)}
+  .eyebrow i{display:block;width:22px;height:2px;background:var(--brand);flex:none}
+  h1{margin:13px 0 0;font:800 32px/1.13 Inter,Arial;letter-spacing:-.7px}
+  h1 em{font-style:normal;color:var(--brand)}
+  .sub{margin:12px 0 0;font:400 15px/1.5 Inter,Arial;color:var(--muted);max-width:62ch}
+  .cta{display:flex;gap:10px;margin:18px 0 0}
+  .btn{flex:1;border-radius:12px;padding:14px 12px;text-align:center;font:700 14px Inter,Arial}
+  .btn.p{background:var(--brand);color:#fff;box-shadow:0 8px 20px rgb(0 0 0/.14)}
+  .btn.s{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+
+  .media{margin:20px 20px 0;border-radius:18px;overflow:hidden;position:relative;
+         box-shadow:0 14px 34px rgb(0 0 0/.16)}
+  .media img{width:100%;height:236px;object-fit:cover;display:block}
+  .badge{position:absolute;left:12px;bottom:12px;background:var(--brand);color:#fff;
+         border-radius:999px;padding:8px 13px;font:700 11.5px Inter,Arial}
+
+  .svc{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin:16px 20px 0}
+  .svc div{background:#fff;border:1px solid var(--line);border-radius:13px;
+           padding:13px 10px;font:700 12px/1.3 Inter,Arial;text-align:center}
+
+  .bar{margin:18px 20px 24px;background:var(--brand);border-radius:14px;padding:15px 18px;
+       display:flex;align-items:center;justify-content:space-between;color:#fff}
+  .bar b{font:700 14px Inter,Arial}
+  .bar span{font:400 11.5px Inter,Arial;opacity:.86}
+
+  /* ─────────── ORDINATEUR (≥ 900px) : deux colonnes, même contenu ─────────── */
+  @media (min-width:900px){
+    /* la page bureau remplit exactement la hauteur de fenêtre : pas de vide en bas */
+    body{display:flex;flex-direction:column;min-height:100vh}
+    .hero{flex:1 1 auto}
+    .strip{padding:8px 12px}
+    header{padding:14px 40px}
+    .mark{width:34px;height:34px;border-radius:10px;font-size:16px}
+    .id b{font-size:17px}
+    .nav{display:flex;gap:26px;margin-left:auto;margin-right:26px}
+    .nav a{font:600 13.5px Inter,Arial;color:var(--muted);text-decoration:none}
+    .lang span{padding:6px 13px;font-size:11.5px}
+
+    .hero{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);
+          gap:48px;align-items:center;padding:38px 40px 30px}
+    h1{font-size:44px;line-height:1.08;letter-spacing:-1.1px;margin-top:15px}
+    .sub{font-size:16px;line-height:1.55;margin-top:14px}
+    .cta{margin-top:22px;gap:12px}
+    .btn{flex:none;min-width:186px;padding:15px 22px;font-size:14.5px}
+    .media{margin:0}
+    .media img{height:330px}
+    .svc{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:26px 40px 0}
+    .svc div{padding:16px 12px;font-size:13.5px}
+    .bar{margin:16px 40px 26px}
+  }
+</style>
+</head>
+<body>
+
+<div class="strip">Maquette AMK · pas encore en ligne</div>
+
+<header>
+  <div class="id">
+    <span class="mark">{{INITIALS}}</span>
+    <b>{{NAME}}</b>
+  </div>
+  <nav class="nav"><a href="#">{{S1}}</a><a href="#">{{S2}}</a><a href="#">{{S3}}</a></nav>
+  <div class="lang"><span class="on">EN</span><span>FR</span></div>
+</header>
+
+<section class="hero">
+  <div class="copy">
+    <div class="eyebrow"><i></i>{{EYEBROW}}</div>
+    <h1>{{H1_A}} <em>{{H1_B}}</em></h1>
+    <p class="sub">{{SUB}}</p>
+    <div class="cta">
+      <div class="btn p">{{CTA1}}</div>
+      <div class="btn s">{{CTA2}}</div>
+    </div>
+  </div>
+  <div class="media">
+    <img src="{{PHOTO}}" alt="{{NAME}}">
+    <span class="badge">{{BADGE}}</span>
+  </div>
+</section>
+
+<div class="svc">
+  <div>{{S1}}</div>
+  <div>{{S2}}</div>
+  <div>{{S3}}</div>
+</div>
+
+<div class="bar">
+  <div><b>{{BAR}}</b><br><span>{{BAR_SUB}}</span></div>
+  <div style="font:800 20px Inter,Arial">›</div>
+</div>
+
+</body>
+</html>

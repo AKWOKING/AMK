@@ -1,0 +1,89 @@
+# AMK — Client preview hosting (King self-hosts)
+
+This folder is a **drag-and-drop deploy bundle**. Every concept is a single self-contained `index.html` (base64 images, no local assets), so any static host works.
+
+## URLs after deploy (example project name: `amk-previews`)
+
+| Slug | LIVE link | Lead | Canonical source file |
+|---|---|---|---|
+| **separate Vercel project** | 🟡 **à déployer — King** (projet `mboacare-demo`) | **DÉMO MBOACARE** (fictive, publiable) — clinique de démonstration | `hosting/previews/mboacare-demo/index.html` |
+| **`/demo/` (bundle)** | 🟡 **à déployer — King** — **bibliothèque de 5 démos publiables** (polyclinique, maternité, dentaire ×2, optique), 0 fuite d'identité, audit 0 | matière première des vidéos | `hosting/previews/demo/*.html` |
+| **separate Vercel project** | ✅ **LIVE https://uni-labo.vercel.app** (déployé par King 18/09 22:05, vérifié en ligne : page complète FR+EN, 3 boutons du hero) | **UNI-LABO**, Bonamoussadi Douala — réponse envoyée 22:05, **pas encore lue** | `demos/concept-unilabo-v1.html` |
+| **separate Vercel project** | ✅ LIVE **https://jempo-concept.vercel.app** (déployé par King 17/09, vérifié : page complète, 6 liens WhatsApp réels, footer §20) | **J&E Memorial Polyclinic (JEMPO)**, Deido Douala | `demos/concept-jempo-v1.html` |
+| **separate Vercel project** | ✅ LIVE **https://labethanie-concept.vercel.app** (déployé par King 17/09, vérifié : page complète, 6 liens WhatsApp réels) | Clinique La Béthanie, Bonabéri Douala | `demos/concept-labethanie-v1.html` |
+| **separate Vercel project** | ✅ LIVE **https://concept-afriquelabo-v1.vercel.app** (déployé 17/09) | Afrique Labo SARL, Bessengue Douala | `demos/concept-afriquelabo-v1.html` |
+| **bundle `/opticien/`** | 🚀 **à déployer (17 Sep)** → `https://amk-cm.vercel.app/opticien/` | L'Opticien, Bali Douala — la variante servie contient **leur ligne réelle** (8 liens) | `hosting/previews/opticien/index.html` ← `demos/concept-opticien-lopticien.html` |
+| **separate Vercel project** | ✅ LIVE **https://concept-skye.vercel.app/** (King's Vercel project `concept-skye`; re-deploy after each sync of the `skye` folder) | Cabinet Dentaire The Skye, Bonamoussadi Douala | `demos/concept-skye-v1.html` |
+| **separate Vercel project** | ✅ LIVE **https://concept-yaks-v1.vercel.app/** (King's Vercel project `concept-yaks-v1`; re-deploy after each sync of the `yaks` folder) | Cabinet Dentaire YAKS, Logbessou Douala | `demos/concept-yaks-v1.html` |
+| **separate Vercel project** | ✅ **https://oracare-concept.vercel.app/** (live 14 Sep, verified v3: prices + assistant) | OraCare237, Buea | `demos/concept-oracare-v3.html` |
+| **separate Vercel project** | ✅ **https://sjc-sasse-concept.vercel.app/** (live 14 Sep, verified email-patched build) | SJC Sasse, Buea | `demos/sjc-sasse-v2.html` |
+| `/comobil/` (this bundle, when deployed) | `https://amk-previews.vercel.app/comobil/` | COMOBIL — PARKED 14 Sep; deploy only on revival | `demos/concept-comobil-v1.html` |
+| `/sah/` (this bundle, when deployed) | `https://amk-previews.vercel.app/sah/` | SAHISCOL — PARKED 14 Sep | `demos/concept-sahiscol-v1.html` |
+| `/` | private marker, deliberately no links | — | — |
+
+**Current model (King, 14 Sep):** one Vercel project per named concept, deployed from the canonical HTML (index.html at project root). To push an update: overwrite that project's root index.html with the rebuilt canonical file and redeploy. The `build_previews.py` bundle remains available as a single-project multi-slug alternative for future batches.
+
+Every preview carries `noindex,nofollow` (private previews, never search-listed). Rebuild the bundle after editing any concept:
+
+```bash
+python3 hosting/build_previews.py
+```
+
+## Deploying a NEW named concept (recipe used 17 Sep for La Béthanie / JEMPO)
+
+1. `python3 hosting/build_previews.py` → the bundle folder is refreshed (and the standalone HTML is already the canonical file).
+2. New Vercel project from the canonical file: put `demos/concept-<client>-v1.html` as **`index.html`** at the project root → deploy → rename the project to `concept-<client>-v1`.
+3. Phone QA (deploy-gate list above) **on the live URL**, not the laptop.
+4. Send **image first** (`demos/shots/mockup-<client>-wa.jpg`), then the text from the send sheet — never both in one message.
+5. **Footers:** every concept built from 17 Sep 2026 comes with the §20 footer standard (4 blocks + strip). Get asked about it? It is `AMK-DESIGN-SKILLS.md` §20.
+
+## Deploy gate (added 17 Sep 2026 — from the engineering batch, `AMK-DESIGN-SKILLS.md` §18.4)
+
+Before any concept URL goes to a prospect, on a **phone** (not the laptop preview):
+1. Page boots in **FR** (default), the EN|FR toggle switches the whole page back and forth.
+2. **One real WhatsApp prefill opened** from an in-page CTA — correct number, correct French text, correctly URL-encoded.
+3. The sticky mobile CTA is visible and tappable; the nav is one line; no horizontal overflow.
+4. The prospect's real facts render (name, address, phone) — and every unreal number carries its DEMO label.
+5. **Value provenance pass** (`§18.1`): each price/hour/count traced to a source or labelled sample; no orphan values.
+6. After any post-deploy fix, re-verify the same items on the live URL — the deployed file, not the local copy.
+
+Not verified on a phone = not sent.
+
+## Hosting priority (14 Sep 2026)
+
+**Deploy today, before anything else:**
+1. **`/oracare/`** — the only live conversation; Dr. Nkafu was already promised the preview today. This is v3: FCFA prices **and** the 24/7 assistant (his sent message promised both).
+2. **`/sasse/`** — needed for the TikTok DM + email going out today.
+3. **`/comobil/`** — have it live before the Messenger "oui" so the link goes back within the hour.
+4. **`/sah/`** — deploy after King's phone check of sahiscol.org (do not send the school the link until the check).
+
+**Next, agency-facing (separate project/domain):**
+5. The whole **`site/`** folder (agency homepage + the three nameless templates Nova / Little Oaks / Crestwood) → the AMK domain / `amk-cm.vercel.app`. That is public and indexable; do NOT add noindex there.
+6. The clinic switcher demo already referenced as `demo-cliniques-cm.vercel.app` — its source is not in the repo; keep that deployment as-is or drop its folder into the repo so v3 can replace its OraCare variant.
+
+**Do not host publicly:** `concept-la-retraite-v1.html` (lead parked; hold), v1/v2 OraCare files (superseded by v3), `sjc-sasse-homepage.html` (v1 draft).
+
+## Option A — Vercel from GitHub (recommended)
+1. Push the repo; on vercel.app → **Add New → Project** → import AKWOKING/AMK.
+2. Set **Root Directory** = `hosting/previews`, Framework Preset = **Other**, Build Command = none, Output = `public` is not needed (leave defaults).
+3. Deploy. Rename the project (Settings → Domains) to something plain like `amk-previews`.
+4. Re-deploy is automatic on every push after `python3 hosting/build_previews.py` is run and committed.
+
+## Option B — Vercel CLI (fastest, no Git settings)
+```bash
+npm i -g vercel
+cd hosting/previews
+vercel            # preview URL
+vercel --prod     # production URL after checking
+```
+
+## Option C — Netlify Drop (no account setup friction)
+Go to app.netlify.com/drop and drag the **`hosting/previews`** folder. Subfolder links then read `https://<random>.netlify.app/oracare/` (rename the site in site settings).
+
+## Sending rules
+- Send the **subfolder link**, never the raw GitHub URL.
+- On the client's own domain after close: site goes to a folder/project in THEIR name, domain registered in THEIR name (internal checklist rule).
+- Re-shoot `demos/shots/oracare-v3-*` once v3 is live (the existing shot shows v2 without the assistant FAB).
+- HTTPS and mobile viewport already work on all these hosts; the links open full-screen on a phone, which is the whole pitch.
+
+— Akwo King / AMK – Web Development & Digital Solutions

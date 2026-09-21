@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LABIOMED — Laboratoire d'analyses de biologie médicale à Deido-Bassa, Douala</title>
+<meta name="description" content="LABIOMED, laboratoire d'analyses médicales à Deido-Bassa, Douala. Préparez votre examen, venez au bon moment, résultats annoncés sur WhatsApp. Français et anglais.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#4C1D95">
+<meta property="og:title" content="LABIOMED — Analyses médicales à Deido-Bassa, Douala">
+<meta property="og:description" content="Ce qu'il faut préparer avant de venir, les examens disponibles, et le rendez-vous confirmé sur WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F5F4F8;
+  --card:#FFFFFF;
+  --ink:#14121B;
+  --ink-2:#221F2C;
+  --mute:#565064;
+  --signal:#6D28D9;
+  --signal-2:#4C1D95;
+  --tint:#F1EBFE;
+  --tint-ink:#4C1D95;
+  --line:rgba(20,18,27,.12);
+  --wa:#0B7A3E;
+  --r:16px; --max:1100px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font:16px/1.62 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased}
+h1,h2,h3,.display{font-family:"Sora",Inter,sans-serif;line-height:1.1;margin:0;letter-spacing:-.02em}
+h1{font-size:clamp(2.1rem,6.4vw,3.5rem);font-weight:700}
+h2{font-size:clamp(1.4rem,4.4vw,2.05rem);font-weight:700}
+h3{font-size:1.06rem;font-weight:600}
+p{margin:.6rem 0 0}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+section{padding:52px 0}
+.hair{border-top:1px solid var(--line)}
+.mono{font-family:"Sora",Inter,sans-serif;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+/* langue — les DEUX langues vivent dans le HTML (le crawler lit les deux).
+   ⚠️ display:revert !important écrase tout `display` posé sur le MÊME élément (§20.9) :
+   jamais de classe de langue sur un élément dont la mise en page dépend de son display. */
+html[data-lang="fr"] .en-only{display:none !important}
+html[data-lang="en"] .fr-only{display:none !important}
+html[data-lang="en"] .en-only{display:revert !important}
+html[data-lang="fr"] .fr-only{display:revert !important}
+:is(a,button,summary):focus-visible{outline:3px solid var(--signal);outline-offset:2px;border-radius:8px}
+
+/* barre haute */
+.topbar{background:var(--ink);color:#EDEAF4;font-size:.82rem}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:42px}
+.topbar a{text-decoration:none;color:#EDEAF4}
+.topbar .tel{font-weight:600}
+.langs{display:flex;gap:2px;background:rgba(255,255,255,.14);border-radius:999px;padding:2px}
+.langs button{border:0;background:transparent;color:#EDEAF4;font:600 .74rem Inter;padding:4px 10px;border-radius:999px;cursor:pointer}
+.langs button.is-on{background:#fff;color:var(--ink)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:40;background:rgba(245,244,248,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:66px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brandtxt{display:flex;flex-direction:column;line-height:1.16;font-weight:700;font-family:"Sora",Inter,sans-serif}
+.brandtxt small{font:500 .68rem Inter;color:var(--mute);letter-spacing:.04em}
+.mark{width:38px;height:38px;border-radius:11px;background:var(--signal);color:#fff;display:grid;place-items:center;
+  font:700 .82rem "Sora",Inter,sans-serif}
+.navlinks{display:none;gap:22px;font-size:.92rem;font-weight:500}
+.navlinks a{text-decoration:none;color:var(--ink-2)}
+@media (min-width:900px){.navlinks{display:flex}}
+@media (max-width:620px){
+  .brandtxt{font-size:.9rem}
+  .brandtxt small{display:none}
+  .mark{width:34px;height:34px}
+  .nav .wrap{min-height:60px;gap:8px}
+  .nav .btn{padding:12px 13px;font-size:.86rem;white-space:nowrap;min-height:46px}
+}
+
+/* boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;
+  border-radius:12px;padding:14px 20px;font-weight:600;font-size:.97rem;min-height:52px;
+  border:1px solid transparent;cursor:pointer}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-ghost{background:#fff;color:var(--ink);border-color:var(--line)}
+.btn-signal{background:var(--signal);color:#fff}
+.btn-light{background:rgba(255,255,255,.96);color:var(--ink)}
+.btn svg{width:19px;height:19px;fill:currentColor;flex:none}
+
+/* ── HERO : PHOTO PLEIN ÉCRAN + voile, comme le fait le laboratoire établi de Douala.
+   Le voile est indispensable : sans lui, aucun texte n'est lisible sur une photo. */
+.hero{position:relative;isolation:isolate;color:#fff;
+  background:#20172E url("img/hero.jpg") center/cover no-repeat;
+  padding:0}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(20,16,40,.72) 0%,rgba(24,18,46,.62) 45%,rgba(20,14,38,.86) 100%)}
+.hero .wrap{padding-top:62px;padding-bottom:56px;display:grid;gap:26px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.28);color:#fff;border-radius:999px;padding:7px 14px;
+  font:600 .75rem Inter;letter-spacing:.03em;width:fit-content}
+.hero h1{margin-top:16px;max-width:19em}
+.hero h1 em{font-style:normal;color:#D6C2FF}
+.hero .lead{color:#EDE7FA;max-width:34em;font-size:1.05rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.trust{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:22px;font-size:.86rem;color:#E3DCF4}
+.trust b{color:#fff;font-weight:600}
+@media (min-width:940px){
+  .hero .wrap{padding-top:86px;padding-bottom:80px;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);align-items:end}
+  .hero .sideCard{grid-column:2;align-self:end}
+}
+/* carte d'infos en verre, par-dessus la photo */
+.sideCard{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.24);
+  border-radius:18px;padding:18px 20px;backdrop-filter:blur(8px)}
+.sideCard .row{display:flex;gap:11px;align-items:flex-start}
+.sideCard .row+.row{border-top:1px solid rgba(255,255,255,.18);margin-top:11px;padding-top:11px}
+.sideCard span{font-size:.9rem;color:#F2EEFB}
+.sideCard b{color:#fff}
+.sideCard .dot{width:30px;height:30px;border-radius:9px;background:rgba(255,255,255,.2);display:grid;place-items:center;flex:none}
+.sideCard .dot svg{width:16px;height:16px;fill:#fff}
+
+/* bande d'infos */
+.infostrip{background:#fff;border-bottom:1px solid var(--line)}
+.infostrip .wrap{display:grid;gap:16px;padding:22px 18px}
+@media (min-width:640px){.infostrip .wrap{grid-template-columns:1fr 1fr}}
+@media (min-width:1000px){.infostrip .wrap{grid-template-columns:repeat(4,1fr)}}
+.infostrip b{display:block;font-family:"Sora",Inter,sans-serif;font-size:.92rem}
+.infostrip span{display:block;font-size:.84rem;color:var(--mute);margin-top:3px}
+
+/* images */
+figure{margin:0}
+figure img{display:block;width:100%;height:auto;object-fit:cover;border-radius:var(--r);
+  border:1px solid var(--line);background:#E8E4F0}
+figcaption{font-size:.82rem;color:var(--mute);margin-top:9px}
+.split{display:grid;gap:24px;margin-top:24px;align-items:center}
+@media (min-width:860px){.split{grid-template-columns:1.05fr .95fr;gap:34px}}
+.split img{aspect-ratio:4/3}
+
+/* cartes */
+.cards{display:grid;gap:14px;margin-top:24px}
+@media (min-width:640px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:940px){.cards{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.card h3{color:var(--ink)}
+.card p{color:var(--mute);font-size:.9rem}
+.card .mono{color:var(--signal)}
+
+/* encadré préparation */
+.prep{background:var(--tint);border:1px solid rgba(109,40,217,.2);border-radius:20px;padding:24px;margin-top:22px}
+.prep h3{color:var(--tint-ink)}
+.prep ul{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+@media (min-width:640px){.prep ul{grid-template-columns:repeat(2,1fr)}}
+.prep li{position:relative;padding-left:26px;font-size:.94rem;color:var(--ink-2)}
+.prep li::before{content:"";position:absolute;left:0;top:.45em;width:12px;height:12px;border-radius:3px;background:var(--signal)}
+.prep .note{font-size:.84rem;color:var(--mute);margin-top:16px}
+
+/* biologiste */
+.bio{background:var(--ink);color:#EDEAF4;border-radius:22px;padding:0;overflow:hidden;margin-top:24px}
+.bio .grid{display:grid}
+@media (min-width:820px){.bio .grid{grid-template-columns:.85fr 1.15fr}}
+.bio img{width:100%;height:100%;object-fit:cover;display:block;min-height:260px}
+.bio .txt{padding:26px 24px}
+.bio h2{color:#fff}
+.bio p{color:#CFC7E4}
+.bio .mono{color:#D6C2FF}
+
+/* résultats */
+.res{display:grid;gap:22px;margin-top:24px;align-items:center}
+@media (min-width:820px){.res{grid-template-columns:1fr 1fr;gap:34px}}
+.res ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+.res li{position:relative;padding-left:30px;font-size:.95rem}
+.res li::before{content:"✓";position:absolute;left:0;top:0;color:var(--signal);font-weight:700}
+
+/* accès */
+.accCard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.accCard .line{display:flex;gap:12px;padding:11px 0;align-items:flex-start}
+.accCard .line+.line{border-top:1px solid var(--line)}
+.accCard .line span{font-size:.92rem;color:var(--ink-2)}
+a.telv{font-weight:600}
+.dot2{width:32px;height:32px;border-radius:9px;background:var(--tint);color:var(--tint-ink);display:grid;place-items:center;flex:none}
+.dot2 svg{width:16px;height:16px;fill:currentColor}
+
+/* faq */
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:12px}
+details summary{cursor:pointer;font-weight:600;font-family:"Sora",Inter,sans-serif;font-size:.98rem}
+details p{color:var(--mute);font-size:.92rem}
+
+/* pied */
+footer{background:var(--ink);color:#C6BEDC;font-size:.84rem;margin-top:10px}
+footer .wrap{padding:30px 18px;display:grid;gap:14px}
+footer a{color:#D6C2FF}
+footer .mock{border-left:3px solid #D6C2FF;padding-left:12px}
+
+/* barre mobile */
+.pad-bottom{padding-bottom:86px}
+@media (min-width:760px){.pad-bottom{padding-bottom:0}}
+.sticky-wa{position:fixed;left:12px;right:12px;bottom:12px;z-index:50;display:flex;gap:10px}
+.sticky-wa a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;
+  white-space:nowrap;border-radius:13px;padding:14px;font-weight:600;font-size:.92rem;min-height:52px;
+  box-shadow:0 10px 24px rgba(20,18,27,.24)}
+.sticky-wa .w{background:var(--wa);color:#fff}
+.sticky-wa .c{background:#fff;color:var(--ink);flex:0 0 34%}
+.sticky-wa svg{width:17px;height:17px;fill:currentColor}
+@media (min-width:760px){.sticky-wa{display:none}}
+</style>
+</head>
+<body id="top">
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="tel" href="tel:+237699985466">📞 +237 699 98 54 66</a>
+    <div class="langs" role="group" aria-label="Langue / Language">
+      <button id="btn-fr" class="is-on" type="button">FR</button>
+      <button id="btn-en" type="button">EN</button>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <span class="mark">LB</span>
+      <span class="brandtxt">LABIOMED<small>Deido-Bassa · Douala</small></span>
+    </a>
+    <div class="navlinks">
+      <a href="#preparer"><span class="fr-only">Avant de venir</span><span class="en-only">Before you come</span></a>
+      <a href="#examens"><span class="fr-only">Examens</span><span class="en-only">Tests</span></a>
+      <a href="#resultats"><span class="fr-only">Résultats</span><span class="en-only">Results</span></a>
+      <a href="#acces"><span class="fr-only">Accès</span><span class="en-only">Location</span></a>
+    </div>
+    <a class="btn btn-signal" href="https://wa.me/237699985466?text=Bonjour%20LABIOMED%2C%20je%20souhaite%20faire%20des%20analyses.">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-1-.3-1.8-.7-2.2-1-3.6-3.3-3.7-3.5-.1-.1-.9-1.2-.9-2.3s.6-1.6.8-1.9c.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .5.4l.7 1.7c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.2.3-.1.5.1.2.6 1 1.2 1.6.8.7 1.4.9 1.6 1 .2.1.4.1.5 0l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.3.2.4.3.4.5Z"/></svg>
+      <span class="fr-only">Rendez-vous</span><span class="en-only">Appointment</span>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO : photo plein écran + voile sombre. Le marché local fait exactement ça —
+     c'est ce qui donne au laboratoire l'air d'un établissement établi plutôt que d'une fiche d'annuaire. -->
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">🔬 <span class="fr-only">Laboratoire d'analyses médicales · Deido-Bassa, Douala</span><span class="en-only">Medical analysis laboratory · Deido-Bassa, Douala</span></span>
+      <h1>
+        <span class="fr-only">Vos examens, <em>sans détour.</em></span>
+        <span class="en-only">Your tests, <em>without the runaround.</em></span>
+      </h1>
+      <p class="lead fr-only">Ce qu'il faut préparer avant de venir, les examens que nous faisons, et le rendez-vous confirmé sur WhatsApp. Vous arrivez au bon moment, préparé.</p>
+      <p class="lead en-only">What to prepare before you come, the tests we run, and your appointment confirmed on WhatsApp. You arrive at the right time, prepared.</p>
+      <div class="cta-row">
+        <a class="btn btn-wa" href="https://wa.me/237699985466?text=Bonjour%2C%20je%20souhaite%20faire%20une%20analyse.%20Voici%20ce%20que%20je%20dois%20faire%20%3A%20">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-1-.3-1.8-.7-2.2-1-3.6-3.3-3.7-3.5-.1-.1-.9-1.2-.9-2.3s.6-1.6.8-1.9c.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .5.4l.7 1.7c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.2.3-.1.5.1.2.6 1 1.2 1.6.8.7 1.4.9 1.6 1 .2.1.4.1.5 0l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.3.2.4.3.4.5Z"/></svg>
+          <span class="fr-only">Écrire sur WhatsApp</span><span class="en-only">Message on WhatsApp</span>
+        </a>
+        <a class="btn btn-light" href="tel:+237699985466">
+          <span class="fr-only">Appeler le laboratoire</span><span class="en-only">Call the laboratory</span>
+        </a>
+      </div>
+      <div class="trust">
+        <span class="fr-only"><b>Prélèvement sur place</b></span><span class="en-only"><b>Sample taken on site</b></span>
+        <span class="fr-only"><b>Résultats</b> annoncés sur WhatsApp</span><span class="en-only"><b>Results</b> announced on WhatsApp</span>
+        <span><b>FR | EN</b></span>
+      </div>
+    </div>
+
+    <div class="sideCard">
+      <div class="row">
+        <span class="dot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7Zm0 4.5A2.5 2.5 0 1 0 12 11a2.5 2.5 0 0 0 0-4.5Z"/></svg></span>
+        <span class="fr-only"><b>Deido-Bassa</b> — 104 Route Deido-Bassa</span>
+        <span class="en-only"><b>Deido-Bassa</b> — 104 Route Deido-Bassa</span>
+      </div>
+      <div class="row">
+        <span class="dot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h3l2 5-2 1.5a12 12 0 0 0 5.5 5.5L16 12l5 2v3a2 2 0 0 1-2.2 2A16 16 0 0 1 4 4.2 2 2 0 0 1 6 2Z"/></svg></span>
+        <span><a href="tel:+237699985466" style="text-decoration:none">+237 699 98 54 66</a></span>
+      </div>
+      <div class="row">
+        <span class="dot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 5v5l4 2-.8 1.6L11 13V7h2Z"/></svg></span>
+        <span class="fr-only"><b>Horaires :</b> à confirmer — affichés ici dès que vous nous les donnez</span>
+        <span class="en-only"><b>Hours:</b> to be confirmed — shown here as soon as you give them to us</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="infostrip">
+  <div class="wrap">
+    <div><b><span class="fr-only">Avant de venir</span><span class="en-only">Before you come</span></b>
+      <span><span class="fr-only">À jeun ou pas, quoi apporter : c'est écrit</span><span class="en-only">Fasting or not, what to bring: it's written down</span></span></div>
+    <div><b><span class="fr-only">Sur place</span><span class="en-only">On site</span></b>
+      <span><span class="fr-only">Prélèvement au laboratoire, sans rendez-vous obligatoire</span><span class="en-only">Sample taken at the lab, no appointment strictly needed</span></span></div>
+    <div><b><span class="fr-only">Résultats</span><span class="en-only">Results</span></b>
+      <span><span class="fr-only">Annoncés sur WhatsApp — vous n'attendez pas sur place</span><span class="en-only">Announced on WhatsApp — you don't wait around</span></span></div>
+    <div><b>FR | EN</b>
+      <span><span class="fr-only">Reçus en français et en anglais</span><span class="en-only">Served in French and English</span></span></div>
+  </div>
+</div>
+
+<section id="preparer">
+  <div class="wrap">
+    <span class="mono fr-only">Avant de venir</span><span class="mono en-only">Before you come</span>
+    <h2 class="fr-only" style="margin-top:10px">La question qu'on nous pose toute la journée</h2>
+    <h2 class="en-only" style="margin-top:10px">The question we're asked all day</h2>
+    <p class="fr-only" style="color:var(--mute);max-width:44em">« Docteur, je dois venir à jeun ? » — elle mérite une réponse écrite, pas une explication au téléphone pendant qu'on tient un tube. Voici l'essentiel avant de vous déplacer.</p>
+    <p class="en-only" style="color:var(--mute);max-width:44em">"Doctor, do I need to come fasting?" — that deserves a written answer, not an explanation over the phone while holding a tube. Here is what matters before you travel.</p>
+
+    <div class="prep">
+      <h3 class="fr-only">À vérifier avant votre prélèvement</h3>
+      <h3 class="en-only">Check before your sample is taken</h3>
+      <ul class="fr-only">
+        <li><b>À jeun :</b> pour la glycémie, le bilan lipidique, le cholestérol et les triglycérides — 8 à 12 h sans manger. L'eau est permise.</li>
+        <li><b>Pas besoin d'être à jeun :</b> hémogramme (NFS), sérologies, test de grossesse, marqueurs infectieux.</li>
+        <li><b>Urines :</b> le premier jet du matin est le meilleur. Apportez le flacon propre fourni par le laboratoire.</li>
+        <li><b>Médicaments :</b> sauf avis contraire de votre médecin, ne les arrêtez pas — <b>dites-nous simplement lesquels</b> vous prenez.</li>
+        <li><b>Ce qu'il faut apporter :</b> votre nom complet et votre date de naissance, la demande de votre médecin si vous en avez une.</li>
+        <li><b>Pour un enfant :</b> venez accompagné, et prévenez-nous — nous prenons le temps qu'il faut.</li>
+      </ul>
+      <ul class="en-only">
+        <li><b>Fasting:</b> for blood glucose, lipid panel, cholesterol and triglycerides — 8 to 12 h without food. Water is fine.</li>
+        <li><b>No fasting needed:</b> full blood count, serology, pregnancy test, infection markers.</li>
+        <li><b>Urine:</b> the first morning sample is best. Bring the clean container the laboratory gives you.</li>
+        <li><b>Medication:</b> unless your doctor says otherwise, do not stop it — <b>just tell us what you take</b>.</li>
+        <li><b>What to bring:</b> your full name and date of birth, and your doctor's request slip if you have one.</li>
+        <li><b>For a child:</b> come with an adult, and tell us — we take the time it needs.</li>
+      </ul>
+      <p class="note fr-only">Ces indications sont générales : elles ne remplacent pas la consigne de votre médecin. En cas de doute, écrivez-nous avant de vous déplacer — nous répondons sur WhatsApp.</p>
+      <p class="note en-only">This is general guidance: it does not replace your doctor's instructions. If in doubt, message us before travelling — we answer on WhatsApp.</p>
+    </div>
+  </div>
+</section>
+
+<section id="examens" class="hair">
+  <div class="wrap">
+    <span class="mono fr-only">Examens</span><span class="mono en-only">Tests</span>
+    <h2 class="fr-only" style="margin-top:10px">Ce que nous analysons</h2>
+    <h2 class="en-only" style="margin-top:10px">What we analyse</h2>
+    <p class="fr-only" style="color:var(--mute);max-width:44em">Si votre examen n'apparaît pas ici, écrivez-nous avant de venir : nous vous dirons tout de suite s'il est possible, et sinon où aller.</p>
+    <p class="en-only" style="color:var(--mute);max-width:44em">If your test isn't listed here, message us before coming: we'll tell you straight away whether we can do it, and if not, where to go.</p>
+
+    <div class="cards">
+      <div class="card"><span class="mono">Hématologie</span><h3 class="fr-only">Hémogramme complet</h3><h3 class="en-only">Full blood count</h3><p class="fr-only">Numération, formule, plaquettes. Pas besoin d'être à jeun.</p><p class="en-only">Count, formula, platelets. No fasting needed.</p></div>
+      <div class="card"><span class="mono">Biochimie</span><h3 class="fr-only">Glycémie et bilan lipidique</h3><h3 class="en-only">Glucose and lipid panel</h3><p class="fr-only">Glycémie, cholestérol, triglycérides — <b>à jeun</b>.</p><p class="en-only">Glucose, cholesterol, triglycerides — <b>fasting required</b>.</p></div>
+      <div class="card"><span class="mono">Biochimie</span><h3 class="fr-only">Fonction rénale et hépatique</h3><h3 class="en-only">Kidney and liver function</h3><p class="fr-only">Créatinine, urée, transaminases, bilirubine.</p><p class="en-only">Creatinine, urea, transaminases, bilirubin.</p></div>
+      <div class="card"><span class="mono">Sérologie</span><h3 class="fr-only">Tests infectieux</h3><h3 class="en-only">Infection tests</h3><p class="fr-only">Hépatites, VIH, syphilis, typhoïde, paludisme.</p><p class="en-only">Hepatitis, HIV, syphilis, typhoid, malaria.</p></div>
+      <div class="card"><span class="mono">Endocrinologie</span><h3 class="fr-only">Hormones</h3><h3 class="en-only">Hormones</h3><p class="fr-only">Thyroïde, fertilité, bilan hormonal féminin.</p><p class="en-only">Thyroid, fertility, female hormone panel.</p></div>
+      <div class="card"><span class="mono fr-only">Femmes</span><span class="mono en-only">Women</span><h3 class="fr-only">Grossesse et suivi</h3><h3 class="en-only">Pregnancy and follow-up</h3><p class="fr-only">Test de grossesse, groupe sanguin, suivi biologique.</p><p class="en-only">Pregnancy test, blood group, biological follow-up.</p></div>
+      <div class="card"><span class="mono">Parasitologie</span><h3 class="fr-only">Parasites et selles</h3><h3 class="en-only">Parasites and stool</h3><p class="fr-only">Examen de selles, recherche de parasites intestinaux.</p><p class="en-only">Stool examination, intestinal parasite screening.</p></div>
+      <div class="card"><span class="mono fr-only">Enfants</span><span class="mono en-only">Children</span><h3 class="fr-only">Analyses pédiatriques</h3><h3 class="en-only">Paediatric tests</h3><p class="fr-only">Prélèvement adapté aux nourrissons et jeunes enfants.</p><p class="en-only">Sampling adapted for infants and young children.</p></div>
+      <div class="card"><span class="mono fr-only">Autres</span><span class="mono en-only">Other</span><h3 class="fr-only">Votre cas n'est pas là ?</h3><h3 class="en-only">Not listed?</h3><p class="fr-only">Écrivez le nom de l'examen sur WhatsApp — la réponse arrive vite.</p><p class="en-only">Send the test name on WhatsApp — the answer comes quickly.</p></div>
+    </div>
+
+    <div class="split">
+      <figure>
+        <img src="img/analyse.jpg" alt="Un technicien de laboratoire devant un automate de biochimie" loading="lazy" decoding="async">
+        <figcaption class="fr-only">Photo d'illustration — à remplacer par une photo du laboratoire.</figcaption>
+        <figcaption class="en-only">Illustration photo — to be replaced with a photo of the laboratory.</figcaption>
+      </figure>
+      <div>
+        <h3 class="fr-only">Un plateau technique, pas un comptoir</h3>
+        <h3 class="en-only">A real bench, not a counter</h3>
+        <p class="fr-only" style="color:var(--mute)">Les analyses courantes sont traitées sur place. Ce qui doit être confié à un plateau spécialisé est annoncé clairement — et le délai est dit à l'avance, pas découvert après trois jours d'attente.</p>
+        <p class="en-only" style="color:var(--mute)">Routine tests are processed on site. Anything that needs a specialised bench is stated clearly — and the turnaround is given upfront, not discovered after three days of waiting.</p>
+        <div class="cta-row" style="margin-top:18px">
+          <a class="btn btn-signal" href="https://wa.me/237699985466?text=Bonjour%2C%20je%20souhaite%20savoir%20si%20vous%20faites%20cet%20examen%20%3A%20">
+            <span class="fr-only">Demander pour un examen</span><span class="en-only">Ask about a test</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="bio">
+      <div class="grid">
+        <img src="img/biologiste.jpg" alt="Une biologiste devant un microscope dans un laboratoire" loading="lazy" decoding="async">
+        <div class="txt">
+          <span class="mono fr-only">Votre interlocuteur</span><span class="mono en-only">Who you speak to</span>
+          <h2 class="fr-only" style="margin-top:10px">Un biologiste derrière chaque résultat</h2>
+          <h2 class="en-only" style="margin-top:10px">A biologist behind every result</h2>
+          <p class="fr-only">Un résultat n'est pas une machine qui imprime un chiffre. Il est relu, et une valeur qui sort de l'ordinaire est signalée — pas laissée à votre interprétation devant un papier que personne ne vous explique.</p>
+          <p class="en-only">A result isn't a machine printing a number. It is read again, and a value out of the ordinary is flagged — not left for you to interpret alone on a sheet nobody explains.</p>
+          <p class="fr-only" style="margin-top:14px"><b style="color:#fff">Votre cas est discuté au laboratoire</b> — passez pendant les heures d'ouverture, ou écrivez-nous.</p>
+          <p class="en-only" style="margin-top:14px"><b style="color:#fff">Your case is discussed at the laboratory</b> — come during opening hours, or message us.</p>
+          <div class="cta-row" style="margin-top:18px">
+            <a class="btn btn-light" href="https://wa.me/237699985466?text=Bonjour%2C%20j%27ai%20une%20question%20sur%20un%20r%C3%A9sultat.">
+              <span class="fr-only">Poser une question</span><span class="en-only">Ask a question</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="resultats" class="hair">
+  <div class="wrap">
+    <span class="mono fr-only">Résultats</span><span class="mono en-only">Results</span>
+    <h2 class="fr-only" style="margin-top:10px">Vous ne faites pas la queue pour un papier</h2>
+    <h2 class="en-only" style="margin-top:10px">You don't queue for a piece of paper</h2>
+
+    <div class="res">
+      <figure>
+        <img src="img/tubes.jpg" alt="Des tubes d'échantillons alignés dans un portoir de laboratoire" loading="lazy" decoding="async">
+        <figcaption class="fr-only">Photo d'illustration — à remplacer par une photo du laboratoire.</figcaption>
+        <figcaption class="en-only">Illustration photo — to be replaced with a photo of the laboratory.</figcaption>
+      </figure>
+      <div>
+        <ul class="fr-only">
+          <li><b>Vous êtes prévenu sur WhatsApp</b> quand votre résultat est prêt.</li>
+          <li><b>Vous passez le retirer</b> au laboratoire, à l'heure qui vous arrange.</li>
+          <li><b>Un résultat à expliquer ?</b> Le biologiste est là pour ça — ce n'est pas un service en extra.</li>
+          <li><b>Un délai qui change :</b> vous êtes prévenu, pas laissé à attendre.</li>
+        </ul>
+        <ul class="en-only">
+          <li><b>You're told on WhatsApp</b> when your result is ready.</li>
+          <li><b>You come and collect it</b> at a time that suits you.</li>
+          <li><b>A result to explain?</b> The biologist is there for that — it isn't an extra service.</li>
+          <li><b>If the turnaround changes:</b> you're told, not left waiting.</li>
+        </ul>
+        <p class="fr-only" style="font-size:.86rem;color:var(--mute);margin-top:16px">Vos résultats vous appartiennent : ils ne sont transmis qu'à vous, ou à la personne que vous désignez.</p>
+        <p class="en-only" style="font-size:.86rem;color:var(--mute);margin-top:16px">Your results belong to you: they are given only to you, or to the person you name.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="acces" class="hair">
+  <div class="wrap">
+    <span class="mono fr-only">Accès</span><span class="mono en-only">Location</span>
+    <h2 class="fr-only" style="margin-top:10px">Où nous trouver</h2>
+    <h2 class="en-only" style="margin-top:10px">Where to find us</h2>
+    <div class="split">
+      <div>
+        <div class="accCard">
+          <div class="line">
+            <span class="dot2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7Zm0 4.5A2.5 2.5 0 1 0 12 11a2.5 2.5 0 0 0 0-4.5Z"/></svg></span>
+            <span class="fr-only"><b>104 Route Deido-Bassa</b> — Deido, Douala.</span>
+            <span class="en-only"><b>104 Route Deido-Bassa</b> — Deido, Douala.</span>
+          </div>
+          <div class="line">
+            <span class="dot2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h3l2 5-2 1.5a12 12 0 0 0 5.5 5.5L16 12l5 2v3a2 2 0 0 1-2.2 2A16 16 0 0 1 4 4.2 2 2 0 0 1 6 2Z"/></svg></span>
+            <span><a class="telv" href="tel:+237699985466">+237 699 98 54 66</a> · <span class="fr-only">appel et WhatsApp</span><span class="en-only">call and WhatsApp</span></span>
+          </div>
+          <div class="line">
+            <span class="dot2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 5v5l4 2-.8 1.6L11 13V7h2Z"/></svg></span>
+            <span class="fr-only"><b>Horaires :</b> à confirmer avec le laboratoire — ils seront affichés ici, noir sur blanc, dès que vous nous les donnez.</span>
+            <span class="en-only"><b>Hours:</b> to be confirmed with the laboratory — they will be shown here in plain text as soon as you give them to us.</span>
+          </div>
+        </div>
+        <a class="btn btn-signal" style="margin-top:14px;width:100%" href="https://www.google.com/maps/search/?api=1&query=LABIOMED+Deido+Bassa+Douala">
+          <span class="fr-only">Ouvrir dans Google Maps</span><span class="en-only">Open in Google Maps</span>
+        </a>
+      </div>
+      <figure>
+        <img src="img/accueil.jpg" alt="L'accueil d'un laboratoire d'analyses médicales" loading="lazy" decoding="async">
+        <figcaption class="fr-only">Photo d'illustration — à remplacer par une photo du laboratoire.</figcaption>
+        <figcaption class="en-only">Illustration photo — to be replaced with a photo of the laboratory.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="hair">
+  <div class="wrap">
+    <span class="mono fr-only">Questions</span><span class="mono en-only">Questions</span>
+    <h2 class="fr-only" style="margin-top:10px">Avant de vous déplacer</h2>
+    <h2 class="en-only" style="margin-top:10px">Before you travel</h2>
+
+    <details>
+      <summary><span class="fr-only">Faut-il prendre rendez-vous ?</span><span class="en-only">Do I need an appointment?</span></summary>
+      <p><span class="fr-only">Écrivez-nous sur WhatsApp avant de venir : nous vous confirmons l'heure et la préparation de votre examen. Vous pouvez aussi appeler le laboratoire au +237 699 98 54 66.</span><span class="en-only">Message us on WhatsApp before coming: we'll confirm the time and how to prepare for your test. You can also call the laboratory on +237 699 98 54 66.</span></p>
+    </details>
+
+    <details>
+      <summary><span class="fr-only">Est-ce que je dois venir à jeun ?</span><span class="en-only">Do I need to fast?</span></summary>
+      <p><span class="fr-only">Cela dépend de l'examen : à jeun pour la glycémie et le bilan lipidique, sans obligation pour une numération ou une sérologie. Le détail est plus haut sur cette page — et si vous avez un doute, écrivez-nous.</span><span class="en-only">It depends on the test: fasting for glucose and lipid panels, not required for a blood count or serology. The detail is higher up this page — and if you're unsure, message us.</span></p>
+    </details>
+
+    <details>
+      <summary><span class="fr-only">Combien de temps avant d'avoir mon résultat ?</span><span class="en-only">How long before I get my result?</span></summary>
+      <p><span class="fr-only">Le délai dépend de l'examen et il vous est annoncé au moment du prélèvement. Vous êtes prévenu sur WhatsApp dès que le résultat est prêt — vous n'avez pas à repasser pour demander.</span><span class="en-only">The turnaround depends on the test and is given to you when the sample is taken. You're told on WhatsApp as soon as the result is ready — you don't need to come back and ask.</span></p>
+    </details>
+
+    <details>
+      <summary><span class="fr-only">Puis-je écrire en anglais ?</span><span class="en-only">Can I write in English?</span></summary>
+      <p><span class="fr-only">Oui. Le laboratoire reçoit en français et en anglais, et cette page existe dans les deux langues — le bouton FR | EN est en haut.</span><span class="en-only">Yes. The laboratory serves patients in French and English, and this page exists in both languages — the FR | EN switch is at the top.</span></p>
+    </details>
+
+    <details>
+      <summary><span class="fr-only">Mes résultats sont-ils confidentiels ?</span><span class="en-only">Are my results confidential?</span></summary>
+      <p><span class="fr-only">Oui. Ils ne sont remis qu'à vous, ou à la personne que vous désignez explicitement. Aucune donnée médicale n'est collectée par cette page.</span><span class="en-only">Yes. They are given only to you, or to the person you explicitly name. No medical data is collected by this page.</span></p>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="mock">
+      <span class="fr-only">Maquette préparée par AMK pour LABIOMED. Horaires, examens, tarifs et textes à valider par le laboratoire avant toute mise en ligne. Aucune donnée médicale n'est collectée par cette page.</span>
+      <span class="en-only">Mockup prepared by AMK for LABIOMED. Hours, tests, fees and wording to be validated by the laboratory before going live. No medical data is collected by this page.</span>
+    </div>
+    <div>LABIOMED · 104 Route Deido-Bassa, Deido, Douala · +237 699 98 54 66</div>
+    <div>Site par AMK — Développement Web &amp; Solutions Digitales · <a href="#top"><span class="fr-only">Haut de page ↑</span><span class="en-only">Back to top ↑</span></a></div>
+  </div>
+</footer>
+
+<div class="pad-bottom"></div>
+
+<div class="sticky-wa">
+  <a class="w" href="https://wa.me/237699985466?text=Bonjour%20LABIOMED%2C%20je%20souhaite%20faire%20une%20analyse.">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-1-.3-1.8-.7-2.2-1-3.6-3.3-3.7-3.5-.1-.1-.9-1.2-.9-2.3s.6-1.6.8-1.9c.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .5.4l.7 1.7c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.2.3-.1.5.1.2.6 1 1.2 1.6.8.7 1.4.9 1.6 1 .2.1.4.1.5 0l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.3.2.4.3.4.5Z"/></svg>
+    <span class="fr-only">Rendez-vous</span><span class="en-only">Appointment</span>
+  </a>
+  <a class="c" href="tel:+237699985466"><span class="fr-only">Appeler</span><span class="en-only">Call</span></a>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalLaboratory",
+  "name": "LABIOMED",
+  "description": "Laboratoire d'analyses de biologie médicale à Deido-Bassa, Douala : hématologie, biochimie, sérologie, hormones, parasitologie et analyses pédiatriques.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "104 Route Deido-Bassa",
+    "addressLocality": "Deido, Douala",
+    "addressCountry": "CM"
+  },
+  "telephone": "+237699985466",
+  "areaServed": "Douala",
+  "availableLanguage": ["fr", "en"]
+}
+</script>
+
+<script>
+(function(){
+  var html=document.documentElement, k='labiomed-lang';
+  function setLang(l){
+    html.setAttribute('data-lang',l); html.lang=l;
+    document.getElementById('btn-fr').classList.toggle('is-on',l==='fr');
+    document.getElementById('btn-en').classList.toggle('is-on',l==='en');
+    try{localStorage.setItem(k,l)}catch(e){}
+  }
+  document.getElementById('btn-fr').addEventListener('click',function(){setLang('fr')});
+  document.getElementById('btn-en').addEventListener('click',function(){setLang('en')});
+  try{ var saved=localStorage.getItem(k); if(saved) setLang(saved); }catch(e){}
+})();
+</script>
+</body>
+</html>

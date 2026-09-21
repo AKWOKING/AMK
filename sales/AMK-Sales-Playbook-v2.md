@@ -1,5 +1,11 @@
-# AMK — Sales Playbook v2 (09/12)
+# AMK — Sales Playbook v2.2 (09/12 · updated 17/09)
 **Synthesized from 4 videos → optimized for AMK's exact context (WhatsApp-first, schools + clinics, free concept previews, ₦100k 50/50, King's standing rules).**
+
+> **v2.1 changelog (17 Sep 2026 — copywriting batch of 6 videos, see `research/YouTube-Lessons.md`):** added **Part H — the customer-language system** (customer interviews as ingredient harvest; the WhatsApp-default reframe; claim→proof discipline). No existing rule was deleted or overwritten. The copy law itself (Harry Dry's 3 questions, 2-Mississippi, read-aloud) lives in `sales/Monday-Outreach-Pack.md` (cold messages) and `AMK-DESIGN-SKILLS.md` §11b (site copy) — Part H is the sales-specific slice only.
+>
+> **v2.2 changelog (17 Sep 2026 — sales batch, videos [7] Hormozi 3A and [8] CLOSER):** added **Part I — the 3A reframe** (objection handling with Acknowledge · Associate · Ask, now the house method for written/WhatsApp objections) and **Part J — CLOSER for the WhatsApp era** (clarify→label→pain→vacation→concerns→reinforce, yes/no decision chain, always-ask, reinforce-the-decision sequence, one-taxonomy objection log). Nothing deleted. Two guardrails added: straw men only with **true** references (accuracy law), and the pain cycle is capped inside discovery — it never extends the no-chase FU rule (M+2/+4/+7 then stop).
+
+> **Addendum (15 Sep evening):** [`AMK-Playbook-Addendum-Outcomes-2026-09-15.md`](AMK-Playbook-Addendum-Outcomes-2026-09-15.md) synthesizes 5 newer AI-agency videos — outcome (not website) framing, the gift-preview validation, Google-Maps no-website prospecting, the optional Care Plan retainer (FCFA/MoMo), monthly reports, and the handoff-video delivery step. Standing rules in this file still override; pricing changes in the addendum are proposals until King approves.
 
 Sources:
 1. Alex Hormozi — *Sales Was Hard Until I Understood These 9 Concepts* (51 min) — the ENGINE (opportunity × conversion × consistency)
@@ -30,6 +36,9 @@ A salesman has 3 jobs: **maximize opportunities → convert the highest % → st
 
 ### A4. The Kill List
 - The 2 leads at 18 (COMOBIL, OraCare) + any lead who just said yes → written on a visible "TODAY" list (CRM top rows). They get the extra attention daily until they close or park.
+
+> **⚠️ CORRECTION — 19 Sep 2026 (CRM M2, `leads/CONTRADICTIONS.md` §1).** This line is **wrong as written** and must not be followed literally: **COMOBIL has been `parked` since 14 Sep** (King's decision — the DAILY OPS tab says so itself), so it does not belong on a "TODAY" list. An earlier audit claim that DAILY OPS contradicted `Pipeline-Status` on this was **checked and infirmed** — both files agree.
+> **The rule, corrected:** the kill list is **derived** from the CRM, never written in hard: *score ≥ 18 **and** stage ≠ `parked` **and** stage ≠ `disqualified` **and** the lead has not just been contacted.* With the current data that leaves **OraCare** alone, plus anyone who replies. `KILL-LIST.md` will be generated from `leads/CRM.csv` in M6 — this paragraph then becomes the spec for that generator.
 
 ### A5. Referrals: "Who do you know?"
 > A new rep who asked "who would you like to bring?" outperformed #2 by ~50% — only 1 in 4 refers, but referrals close at 80–90%. CAC effectively halves.
@@ -223,3 +232,74 @@ The "dark" part that's actually legal: **over-deliver.** 3–5 day promise → d
 4. Tomorrow: swap in the 30-second open. Friday: a friend plays "skeptical principal" for 10 minutes.
 
 **Rule:** never practice on real leads. Practice on people who owe you nothing — and never send a drilled line verbatim; the drill makes it *breathe*, not robotic.
+
+---
+
+## PART H · THE CUSTOMER-LANGUAGE SYSTEM (v2.1, 17 Sep — from videos [4] and [6])
+
+**H1 · Never originate the words.** The best copy is quoted, not written. Sources, in order: (1) the client's/prospect's own customers, (2) the prospect's own public words (FB posts, comments, signage, listings), (3) our own swipe file of messages that got replies (`sales/swipe/`).
+
+**H2 · The 6-field ingredient sheet** — the questions for any discovery conversation (onboarding call for a delivered client; qualification for the close):
+1. **Struggle** — what was happening before? what was frustrating?
+2. **Solutions** — what did you actually use it for / expect it to do?
+3. **Hesitations** — what worried you before saying yes? (unspoken here: price, trust, "will he disappear after payment?" — pre-answer in the offer, not the close)
+4. **Awareness** — what are you comparing this to? *(expect: another clinic's Facebook page, the phone number on the door, "we already have a page")*
+5. **Differentiators** — why choose us over the alternative?
+6. **Success** — what does life/business look like after? (business outcome + the emotional one — a lab that no longer makes patients queue for paper results; a school where the parent stops calling the office)
+Ask "anything else you'd like to add?" and then **stay silent** — the gold is in the answer to that question.
+
+**H3 · The WhatsApp-default reframe (Alex [6]: "the default is Google Sheets and WhatsApp").** In Cameroon, a clinic/school is not competing with another website — it competes with a Facebook page and a WhatsApp status. Use this in qualification and in the close, verbatim if it fits:
+- FR : « Vos patients ne vous comparent pas à un autre laboratoire — ils vous comparent à une page Facebook. »
+- EN : "Your patients aren't comparing you to another clinic — they're comparing you to a Facebook page."
+This is not a scare line: it's the reason a real site + WhatsApp flow *wins* without any ads.
+
+**H4 · Claim → proof discipline in the demo and the close.** Every bold sentence gets its artifact on the very next screen or breath: the price on their own ad, the deadline, the dead domain, the Google listing, the number of followers. No claim without a pointer. In the walkthrough: "here it is" beats "this is great".
+
+**H5 · One quote at a time.** Never a wall of reviews in a client deliverable or a concept. Bold claim → one real verbatim quote under it → next claim. (Contradicts nothing in v2; sharpens the proof sections.)
+
+**H6 · Testimonial harvest as a delivery step (zero cost over-delivery).** At handover +1 week, ask the client for 3 of their own customers to answer H2's questions (WhatsApp voice notes are fine). Their words go into the site (with consent) and become the next concept's proof. This is the "customer writes your copy" hack [4] applied to our delivery — logged in the client's delivery checklist.
+
+---
+
+## PART I · THE 3A REFRAME — the house method for every objection (v2.2, 17 Sep, from Hormozi [7])
+
+**When to use:** any moment a prospect says anything other than yes — an objection, a stall, a question we're not certain how to answer, a "no" dressed as a statement. Especially written WhatsApp replies, where we have time to think and every word stays on record.
+
+**The three beats (always this order, keep it to 3–4 short lines in writing):**
+1. **ACKNOWLEDGE** — say their words back, in their words: « Je comprends : le budget est un vrai sujet. » / "I understand — timing isn't right for you."
+2. **ASSOCIATE** — label their question as the behaviour of our best clients: « C'est la question que posent les clients qui prennent ça au sérieux. » / "That's exactly what the ones who end up happy ask first." The label is a mirror they then live up to. Echo it deliberately when we get to the close.
+3. **ASK** — ask a question *about their question*, never defend:
+   - « Qu'est-ce qui vous ferait dire oui ? » · « Qu'est-ce qui vous ferait dire non ? »
+   - « Qu'est-ce qui vous inquiète le plus ? » (use once we're far enough along; early on use « Quel est le point principal ? »)
+   - « Sur quoi votre associé serait-il d'accord, et sur quoi pourrait-il bloquer ? »
+   - « Vous cherchez surtout X ou Y ? » (safe answer to a question we can't verify — it keeps control and protects the accuracy law)
+
+**The four objections written out (FR/EN-ready, 3–4 lines each):** price · « je vais réfléchir » · « on a déjà une page Facebook » · « je dois en parler à mon associé/épouse » — full scripts in `research/YouTube-Lessons.md` entry [7] §"AMK-applicable tactics" 1.
+
+**Rules that make it safe and ethical (AMK version):**
+- **Never disagree with a prospect, ever.** You cannot win a sale by winning an argument. Be smoke: always side-shift to a question.
+- **Never invent a third party.** Straw-man stories (a foil who asked the same thing) are allowed **only when true** — a real past client, a real quote from their own reviews, a real story that happened. Otherwise it's a lie and it breaks the accuracy law.
+- **Prospects believe what they say, not what we say.** Stop telling them they're a good fit; ask until they say it themselves.
+- **Retain childlike curiosity** — in writing that means « Hmm, intéressant… » followed by a real question, never a defensive paragraph.
+- **Ban the sentence "Vous avez des questions ?"** — it invites objections and hands over the wheel. Replace with a specific question.
+
+**The label bank (use once per conversation, then echo at the close):** « Ça, c'est une question de quelqu'un qui prend ça au sérieux. » · « C'est la question de nos meilleurs clients. » · « Vous faites bien de vérifier ça. »
+
+---
+
+## PART J · CLOSER FOR THE WHATSAPP ERA (v2.2, 17 Sep, from SaaS Academy [8])
+
+**The framework (every step phrased as a question — statements make people stall, questions get instant answers):**
+- **C — Clarify:** « Quel est votre objectif avec ça ? » → « Pourquoi c'est important pour vous ? » → « Dans 12 mois, ça ressemble à quoi si ça marche ? »
+- **L — Label the problem:** « Si je comprends bien : vous avez X, Y, et il manque Z. C'est ça ? »
+- **O — Overview the pain:** « Qu'est-ce que vous avez déjà essayé ? Pourquoi ça n'a pas marché ? » — recap the pain in their words, **inside discovery only** (never extend into follow-ups; our no-chase rule stands).
+- **S — Sell the vacation:** three 30-second proof stories showing the missing link, adapted to our niche: (a) a site that works on a phone, (b) WhatsApp as the booking/results channel, (c) being findable when searched. Most prospects have one or two; we sell the third.
+- **E — Explain away concerns.** Only three objection types exist: **price · delay · decision-maker.** Log every objection into one of these three (local addition: trust — « est-ce que vous disparaissez après paiement ? » — mapped to price-visibility and decision-maker, logged separately until we have a fourth confirmed pattern).
+- **R — Reinforce the decision:** within the hour of a « oui »: a short voice/video note from King + the personalised confirmation with their business name + the first delivery date. Feet hot, no buyer's remorse, no ghosting.
+
+**Yes/no decision chain (pre-close checklist, one question at a time — three yeses and the close is administrative):**
+1. « Le concept vous plaît ? » · 2. « Vous pensez que ça peut vous amener des patients ? » · 3. « Vous avez la première moitié disponible cette semaine ou fin de mois ?
+
+**Always make the ask.** A sale we never asked for is a sale we never made. The 3A reframe (Part I) is what lets us ask repeatedly without burning rapport: ask, reframe, ask again.
+
+**Solo version of the team cadence** (the video's huddle/1-on-1/leaderboard mechanics are for teams — parked in the register, not in the playbook): Friday, re-read the week's best and worst exchange, write one line on each into `sales/swipe/README.md`, and update the objection log. That is our call-recording discipline.

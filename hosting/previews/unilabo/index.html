@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UNI-LABO — Laboratoire d'analyses de biologie médicale à Bonamoussadi, Douala</title>
+<meta name="description" content="Laboratoire d'analyses de biologie médicale à Bonamoussadi, Douala (Carrefour Etoo). Préparation des analyses, prélèvement sur place, résultats remis au laboratoire. Français et anglais.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#14151A">
+<meta property="og:title" content="UNI-LABO — Analyses médicales à Bonamoussadi, Douala">
+<meta property="og:description" content="Carrefour Etoo, Bonamoussadi. Préparation claire, prélèvement sur place, résultats au laboratoire.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<!-- og:image doit être une URL absolue : WhatsApp ne résout pas les chemins relatifs (§20.7) -->
+<meta property="og:image" content="https://uni-labo.vercel.app/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://uni-labo.vercel.app/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F5F7;      /* neutral base — cool light, never cream */
+  --card:#FFFFFF;
+  --ink:#14151A;        /* off-black, never pure #000 */
+  --ink-2:#22242B;
+  --mute:#57606E;       /* 5.8:1 on paper */
+  --mute-on-ink:#B9BFCC;/* 9.8:1 on ink */
+  --signal:#5B21B6;     /* the one saturated colour: violet */
+  --signal-2:#7C3AED;
+  --tint:#EDE9FE;
+  --line:rgba(20,21,26,.12);
+  --wa:#0B7A3E;
+  --r:16px; --max:1100px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font:16px/1.62 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased}
+h1,h2,h3,.display{font-family:"Sora",Inter,sans-serif;line-height:1.1;margin:0;letter-spacing:-.02em}
+h1{font-size:clamp(2rem,7vw,3.35rem);font-weight:700}
+h2{font-size:clamp(1.45rem,4.4vw,2.1rem);font-weight:700}
+h3{font-size:1.06rem;font-weight:600;letter-spacing:-.01em}
+p{margin:.6rem 0 0}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+section{padding:50px 0}
+.hair{border-top:1px solid var(--line)}
+.mono{font-family:"Sora",Inter,sans-serif;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+.lead{font-size:1.04rem}
+/* language visibility — display:revert keeps each element's native display */
+html[data-lang="fr"] .en-only{display:none !important}
+html[data-lang="en"] .fr-only{display:none !important}
+html[data-lang="en"] .en-only{display:revert !important}
+html[data-lang="fr"] .fr-only{display:revert !important}
+:is(a,button,summary):focus-visible{outline:3px solid var(--signal-2);outline-offset:2px;border-radius:8px}
+
+/* top bar */
+.bar{background:var(--ink);color:var(--mute-on-ink);font-size:.8rem}
+.bar .wrap{display:flex;gap:12px;justify-content:space-between;align-items:center;padding:9px 18px;flex-wrap:wrap}
+.bar a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35)}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#34D399;margin-right:7px;vertical-align:1px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:40;background:rgba(244,245,247,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:12px;padding:11px 18px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.brand b{font-family:"Sora",sans-serif;font-size:1rem;letter-spacing:-.01em;display:block;line-height:1.1}
+.brand .sub{display:block;font-size:.66rem;color:var(--mute);letter-spacing:.08em;text-transform:uppercase}
+.nav nav{margin-left:auto;display:none;gap:18px;font-size:.9rem}
+.nav nav a{text-decoration:none;color:var(--ink-2);opacity:.85}
+.nav nav a:hover{opacity:1;color:var(--signal)}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:#fff}
+.lang button{border:0;background:transparent;padding:7px 12px;font:600 .78rem Inter,sans-serif;color:var(--mute);cursor:pointer}
+.lang button.is-on{background:var(--signal);color:#fff}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;justify-content:center;text-decoration:none;
+  border-radius:12px;padding:13px 18px;font-weight:600;font-size:.94rem;border:1.5px solid transparent}
+.btn-primary{background:var(--signal);color:#fff;box-shadow:0 8px 20px rgba(91,33,182,.22)}
+.btn-primary:hover{background:var(--signal-2)}
+.btn-ghost{background:#fff;color:var(--ink);border-color:var(--line)}
+.btn-wa{background:var(--wa);color:#fff}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+
+/* hero */
+.hero{background:var(--ink);color:#fff;padding:54px 0 58px}
+.hero-grid{display:grid;gap:30px;align-items:center}
+.eyebrow{color:#C4B5FD;margin:0}
+.hero h1 em{font-style:normal;color:#C4B5FD}
+.hero .sub{color:var(--mute-on-ink);font-size:1.02rem;max-width:56ch}
+.hero .who{display:flex;align-items:center;gap:10px;margin-top:18px;color:#fff;font-weight:600;font-size:.94rem}
+.hero .who span.badge{background:rgba(124,58,237,.28);border:1px solid rgba(196,181,253,.5);
+  border-radius:999px;padding:5px 11px;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:#DDD6FE}
+
+/* journey strip — the build's one ingredient */
+.journey{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:20px 18px;color:var(--ink)}          /* the hero is white text; this card is white too */
+.journey ol{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.journey li{display:flex;gap:13px;align-items:flex-start}
+.journey .ic{flex:0 0 42px;width:42px;height:42px;border-radius:12px;background:var(--tint);
+  display:grid;place-items:center}
+.journey b{display:block;font-size:.95rem}
+.journey p{margin:.15rem 0 0;font-size:.88rem;color:var(--mute)}
+
+/* steps heading */
+.sec-head{max-width:62ch}
+.sec-head h2{margin-top:8px}
+
+/* prep chips */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 0}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:9px 15px;
+  font:600 .85rem Inter,sans-serif;color:var(--ink-2);cursor:pointer}
+.chip.is-on{background:var(--signal);border-color:var(--signal);color:#fff}
+.prep{margin-top:16px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.prep h3{margin-bottom:2px}
+.prep p{color:var(--mute);font-size:.94rem}
+.prep .always{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line);
+  font-size:.88rem;color:var(--signal);font-weight:600}
+.prep-panel{display:none}
+.prep-panel.is-on{display:block}
+
+/* categories */
+.cats{display:grid;gap:14px;margin-top:22px}
+.cat{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.cat h3{display:flex;align-items:center;gap:9px}
+.cat .k{width:8px;height:8px;border-radius:2px;background:var(--signal);display:inline-block;flex:none}
+.cat ul{margin:12px 0 0;padding-left:18px;color:var(--mute);font-size:.92rem}
+.cat ul li{margin:.2rem 0}
+.cat .ask{margin-top:14px;font-size:.85rem}
+.cat .ask a{color:var(--signal);font-weight:600;text-decoration:none;border-bottom:1px solid var(--signal)}
+.note{font-size:.86rem;color:var(--mute)}
+
+/* results + biologist split */
+.split{display:grid;gap:18px;margin-top:20px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.panel ul{margin:12px 0 0;padding-left:18px;color:var(--mute);font-size:.93rem}
+.panel ul li{margin:.35rem 0}
+.quote{border-left:3px solid var(--signal);padding-left:14px;color:var(--ink-2);font-size:.98rem}
+
+/* access */
+.access{display:grid;gap:18px;margin-top:20px}
+.rowmap{display:grid;gap:10px;margin-top:12px}
+.row{display:flex;gap:10px;font-size:.93rem}
+.row .k{flex:0 0 118px;color:var(--mute)}
+.map{border:1px solid var(--line);border-radius:var(--r);background:#fff;overflow:hidden}
+.map svg{display:block;width:100%;height:auto}
+
+/* faq */
+details.faq{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 18px;margin-top:11px}
+details.faq summary{cursor:pointer;font-weight:600;font-size:.96rem}
+details.faq p{color:var(--mute);font-size:.92rem}
+
+/* footer §20 */
+footer{background:var(--ink);color:#fff;padding:44px 0 0;margin-top:10px}
+.f-grid{display:grid;gap:26px}
+.f-block h4{font-family:"Sora",sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  color:#C4B5FD;margin:0 0 12px;font-weight:600}
+.f-brand{display:flex;align-items:center;gap:11px}
+.f-brand b{font-family:"Sora",sans-serif;font-size:1.16rem;letter-spacing:-.01em}
+.f-line{color:var(--mute-on-ink);font-size:.9rem;margin-top:12px;max-width:34ch}
+.f-nav{display:grid;gap:9px;font-size:.92rem}
+.f-nav a{color:#fff;text-decoration:none;opacity:.9}
+.f-nav a:hover{opacity:1;text-decoration:underline}
+.f-cta .btn{width:100%}
+.f-tel{margin-top:11px;font-size:.86rem;color:var(--mute-on-ink)}
+.f-tel a{color:#fff}
+.f-contact{display:grid;gap:8px;font-size:.92rem;color:var(--mute-on-ink)}
+.f-contact b{color:#fff;font-weight:600}
+.f-strip{border-top:1px solid rgba(255,255,255,.14);margin-top:34px;padding:16px 0;
+  display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap;
+  font-size:.78rem;color:#9AA1B0}
+.f-strip a{color:#C4B5FD;text-decoration:none}
+
+/* sticky mobile action bar */
+.sticky-wa{position:fixed;left:12px;right:12px;bottom:12px;z-index:50;display:flex;gap:10px}
+.sticky-wa a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;
+  border-radius:13px;padding:13px 14px;font-weight:700;font-size:.9rem;box-shadow:0 10px 26px rgba(0,0,0,.22)}
+.sticky-wa .w{background:var(--wa);color:#fff}
+.sticky-wa .c{background:#fff;color:var(--ink);flex:0 0 38%}
+.sticky-wa svg{width:17px;height:17px;fill:currentColor}
+
+@media (min-width:760px){
+  section{padding:66px 0}
+  .nav nav{display:flex}
+  .hero-grid{grid-template-columns:1.05fr .95fr;gap:44px}
+  .journey ol{grid-template-columns:1fr 1fr;gap:16px 22px}
+  .cats{grid-template-columns:1fr 1fr;gap:16px}
+  .split{grid-template-columns:1fr 1fr}
+  .access{grid-template-columns:1.05fr .95fr}
+  .f-grid{grid-template-columns:1.25fr .8fr 1fr 1.05fr;gap:34px}
+  .f-strip{margin-top:40px}
+}
+@media (min-width:760px){ .sticky-wa{display:none} }
+body{padding-bottom:84px}
+@media (min-width:760px){ body{padding-bottom:0} }
+</style>
+</head>
+<body>
+
+<div class="bar"><div class="wrap">
+  <span><span class="dot"></span><span class="fr-only">Lun–Ven 07h–19h · Sam 07h–13h · Carrefour Etoo, Bonamoussadi</span><span class="en-only">Mon–Fri 7am–7pm · Sat 7am–1pm · Carrefour Etoo, Bonamoussadi</span></span>
+  <a href="tel:+237696139819">696 13 98 19</a>
+</div></div>
+
+<header class="nav"><div class="wrap">
+  <a class="brand" href="#top" aria-label="UNI-LABO">
+    <svg width="38" height="38" viewBox="0 0 38 38" role="img" aria-hidden="true">
+      <rect width="38" height="38" rx="11" fill="#14151A"/>
+      <path d="M15 8h8v6.2l5.6 12.1A4 4 0 0 1 25 32H13a4 4 0 0 1-3.6-5.7L15 14.2V8Z" fill="#5B21B6"/>
+      <path d="M12.4 24.4h13.2" stroke="#F4F5F7" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M19 9.2v13.4" stroke="#F4F5F7" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
+    </svg>
+    <span><b>UNI-LABO</b><span class="sub"><span class="fr-only">Analyses médicales · Douala</span><span class="en-only">Medical laboratory · Douala</span></span></span>
+  </a>
+  <nav>
+    <a href="#avant"><span class="fr-only">Avant de venir</span><span class="en-only">Before you come</span></a>
+    <a href="#analyses"><span class="fr-only">Nos analyses</span><span class="en-only">Our tests</span></a>
+    <a href="#resultats"><span class="fr-only">Résultats</span><span class="en-only">Results</span></a>
+    <a href="#acces"><span class="fr-only">Nous trouver</span><span class="en-only">Find us</span></a>
+  </nav>
+  <div class="lang" role="group" aria-label="Langue / Language">
+    <button id="btn-fr" class="is-on" type="button">FR</button>
+    <button id="btn-en" type="button">EN</button>
+  </div>
+  <a class="btn btn-primary" href="https://wa.me/237696139819?text=Bonjour%20UNI-LABO%2C%20je%20souhaite%20des%20informations.">
+    <span class="fr-only">Écrire</span><span class="en-only">Message us</span>
+  </a>
+</div></header>
+
+<main id="top">
+
+<section class="hero"><div class="wrap hero-grid">
+  <div>
+    <p class="mono eyebrow"><span class="fr-only">Laboratoire d'analyses de biologie médicale · Bonamoussadi, Douala</span><span class="en-only">Medical biology laboratory · Bonamoussadi, Douala</span></p>
+    <h1 style="margin-top:14px"><span class="fr-only">Un diagnostic sûr commence <em>par une analyse fiable.</em></span><span class="en-only">A confident diagnosis starts <em>with a reliable test.</em></span></h1>
+    <p class="sub"><span class="fr-only">Vous arrivez avec l'ordonnance de votre médecin : nous réalisons l'analyse, puis nous vous remettons le résultat au laboratoire. Carrefour Etoo, Bonamoussadi — en français et en anglais.</span><span class="en-only">You come with your doctor's request: we run the test and hand you the result at the laboratory. Carrefour Etoo, Bonamoussadi — in English and in French.</span></p>
+    <div class="who">
+      <span class="badge"><span class="fr-only">Biologiste</span><span class="en-only">Biologist</span></span>
+      <span>Dr Tientcheu Philomène</span>
+    </div>
+    <div class="actions">
+      <a class="btn btn-wa" href="https://wa.me/237696139819?text=Bonjour%20UNI-LABO%2C%20je%20souhaite%20faire%20une%20analyse.%20Voici%20ce%20que%20mon%20m%C3%A9decin%20a%20prescrit%20%3A">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" style="fill:currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a11 11 0 0 1-5.6-4.9c-.4-.7-.6-1.4-.5-2 .1-.6.6-1.4 1.1-1.7.3-.2.7-.2.9.2l.8 1.4c.1.3.1.5-.1.8l-.4.5c-.2.2-.2.4-.1.6.4.8 1.5 2 2.4 2.4.2.1.4.1.6-.1l.5-.5c.2-.2.5-.3.8-.1l1.4.8c.4.2.4.6.2.9Z"/></svg>
+        <span class="fr-only">Écrire sur WhatsApp</span><span class="en-only">Message us on WhatsApp</span>
+      </a>
+      <a class="btn btn-ghost" href="tel:+237696139819"><span class="fr-only">Appeler</span><span class="en-only">Call</span></a>
+      <a class="btn btn-ghost" href="https://www.google.com/maps/search/Uni+Labo+Carrefour+Etoo+Bonamoussadi+Douala" target="_blank" rel="noopener"><span class="fr-only">Itinéraire</span><span class="en-only">Directions</span></a>
+    </div>
+  </div>
+
+  <div class="journey">
+    <p class="mono" style="color:var(--signal);margin:0 0 14px"><span class="fr-only">Comment ça se passe</span><span class="en-only">How it works</span></p>
+    <ol>
+      <li>
+        <span class="ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 3h7l5 5v13H7z" stroke="#5B21B6" stroke-width="1.7"/><path d="M14 3v5h5" stroke="#5B21B6" stroke-width="1.7"/><path d="M9.5 13h6M9.5 16.5h4" stroke="#5B21B6" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+        <div><b><span class="fr-only">1 · Vous apportez l'ordonnance</span><span class="en-only">1 · Bring the request</span></b><p><span class="fr-only">Le papier de votre médecin, ou une photo nette si vous l'avez reçue par téléphone. Votre carte de couverture si vous en avez une.</span><span class="en-only">Your doctor's paper, or a clear photo if it came by phone. Your cover card if you have one.</span></p></div>
+      </li>
+      <li>
+        <span class="ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.4" stroke="#5B21B6" stroke-width="1.7"/><path d="M12 7.6V12l3.2 2" stroke="#5B21B6" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+        <div><b><span class="fr-only">2 · Vous préparez l'analyse</span><span class="en-only">2 · Prepare the test</span></b><p><span class="fr-only">Certaines analyses demandent d'être à jeun. La consigne dépend de ce qui est prescrit : demandez-la nous sur WhatsApp avant de venir.</span><span class="en-only">Some tests need fasting. The instruction depends on what is prescribed: ask us on WhatsApp before you come.</span></p></div>
+      </li>
+      <li>
+        <span class="ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M10 3h4v4.2l3.6 8.1A3 3 0 0 1 14.9 19H9.1a3 3 0 0 1-2.7-3.7L10 7.2V3Z" stroke="#5B21B6" stroke-width="1.7"/><path d="M8 14.6h8" stroke="#5B21B6" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+        <div><b><span class="fr-only">3 · Prélèvement sur place</span><span class="en-only">3 · Sample taken here</span></b><p><span class="fr-only">Au laboratoire, Carrefour Etoo. Nous vous confirmons le délai au moment du dépôt.</span><span class="en-only">At the laboratory, Carrefour Etoo. We confirm the turnaround when you drop off.</span></p></div>
+      </li>
+      <li>
+        <span class="ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5 9.2 17 19 7" stroke="#5B21B6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div><b><span class="fr-only">4 · Vous repartez avec le résultat</span><span class="en-only">4 · You leave with the result</span></b><p><span class="fr-only">Remis au laboratoire, sur présentation du reçu — et expliqué par la biologiste si vous le souhaitez.</span><span class="en-only">Handed to you at the laboratory on the receipt — and explained by the biologist if you wish.</span></p></div>
+      </li>
+    </ol>
+  </div>
+</div></section>
+
+<section id="avant"><div class="wrap">
+  <div class="sec-head">
+    <p class="mono" style="color:var(--signal)"><span class="fr-only">Avant de venir</span><span class="en-only">Before you come</span></p>
+    <h2><span class="fr-only">La préparation, écrite noir sur blanc.</span><span class="en-only">The preparation, written plainly.</span></h2>
+    <p class="lead"><span class="fr-only">La plupart des analyses ratées le sont pour une seule raison : la préparation. Choisissez ce qui vous concerne — et si vous avez un doute, écrivez-nous : nous répondons avec la consigne exacte.</span><span class="en-only">Most spoiled tests fail for one reason only: preparation. Pick what applies to you — and if in doubt, message us: we answer with the exact instruction.</span></p>
+  </div>
+
+  <div class="chips" role="group" aria-label="Préparation">
+    <button class="chip is-on" type="button" data-prep="jeun"><span class="fr-only">À jeun</span><span class="en-only">Fasting</span></button>
+    <button class="chip" type="button" data-prep="urines"><span class="fr-only">Urines</span><span class="en-only">Urine</span></button>
+    <button class="chip" type="button" data-prep="hormones"><span class="fr-only">Hormones</span><span class="en-only">Hormones</span></button>
+    <button class="chip" type="button" data-prep="enfant"><span class="fr-only">Enfant</span><span class="en-only">Child</span></button>
+    <button class="chip" type="button" data-prep="suivi"><span class="fr-only">Suivi de traitement</span><span class="en-only">Treatment follow-up</span></button>
+  </div>
+
+  <div class="prep">
+    <div class="prep-panel is-on" id="prep-jeun">
+      <h3><span class="fr-only">Analyses à jeun</span><span class="en-only">Fasting tests</span></h3>
+      <p><span class="fr-only">Glycémie, cholestérol, triglycérides : venez le matin, sans manger depuis 8 à 12 heures. <b>L'eau est permise</b>, et vos médicaments habituels sont pris normalement, sauf avis contraire de votre médecin.</span><span class="en-only">Glucose, cholesterol, triglycerides: come in the morning, without food for 8 to 12 hours. <b>Water is allowed</b>, and your usual medication is taken as normal unless your doctor says otherwise.</span></p>
+    </div>
+    <div class="prep-panel" id="prep-urines">
+      <h3><span class="fr-only">Analyses d'urines</span><span class="en-only">Urine tests</span></h3>
+      <p><span class="fr-only">Le recueil se fait <b>au laboratoire</b> : nous vous remettons le flacon propre et la consigne au moment du dépôt. Pour certains examens, on demande la première urine du matin — nous vous le dirons à l'avance.</span><span class="en-only">The sample is collected <b>at the laboratory</b>: we hand you the clean container and the instruction when you arrive. Some tests need the first urine of the morning — we will tell you in advance.</span></p>
+    </div>
+    <div class="prep-panel" id="prep-hormones">
+      <h3><span class="fr-only">Dosages hormonaux</span><span class="en-only">Hormone tests</span></h3>
+      <p><span class="fr-only">Plusieurs dosages hormonaux se font <b>le matin</b>, et certains dépendent du <b>jour du cycle</b> ou d'un moment précis de la journée. C'est l'analyse qui commande : demandez-nous la consigne exacte avant de venir, nous vous donnerons la date et l'heure.</span><span class="en-only">Many hormone tests are done <b>in the morning</b>, and some depend on the <b>day of the cycle</b> or a precise time of day. The test decides: ask us for the exact instruction before coming and we will give you the date and time.</span></p>
+    </div>
+    <div class="prep-panel" id="prep-enfant">
+      <h3><span class="fr-only">Pour un enfant</span><span class="en-only">For a child</span></h3>
+      <p><span class="fr-only">Précisez <b>l'âge</b> à l'accueil : les valeurs normales ne sont pas les mêmes que chez l'adulte. Pour les tout-petits, venez si possible à deux et dites-le nous à l'avance — nous vous dirons le meilleur moment de la journée.</span><span class="en-only">Mention the <b>age</b> at reception: normal values differ from an adult's. For very young children, come with a second person if you can and tell us in advance — we will advise the best time of day.</span></p>
+    </div>
+    <div class="prep-panel" id="prep-suivi">
+      <h3><span class="fr-only">Suivi d'un traitement</span><span class="en-only">Treatment follow-up</span></h3>
+      <p><span class="fr-only">Apportez <b>le résultat précédent</b> : la comparaison avec le nouveau est ce qui montre si le traitement agit. C'est aussi la question que votre médecin posera — autant l'avoir sous la main.</span><span class="en-only">Bring <b>the previous result</b>: comparing it with the new one is what shows whether the treatment is working. It is also the first question your doctor will ask — worth having it at hand.</span></p>
+    </div>
+    <p class="always"><span class="fr-only">Dans tous les cas : demandez-nous la consigne avant de venir. Une question sur WhatsApp coûte une minute et évite un déplacement pour rien.</span><span class="en-only">In every case: ask us before you come. A question on WhatsApp takes a minute and saves you a wasted trip.</span></p>
+  </div>
+</div></section>
+
+<section id="analyses" class="hair"><div class="wrap">
+  <div class="sec-head">
+    <p class="mono" style="color:var(--signal)"><span class="fr-only">Nos analyses</span><span class="en-only">Our tests</span></p>
+    <h2><span class="fr-only">Ce que nous dosons.</span><span class="en-only">What we run.</span></h2>
+    <p class="lead"><span class="fr-only">Les analyses prescrites par votre médecin, dans quatre grands domaines. <b>Aucun tarif n'est affiché ici</b> : le prix dépend de l'analyse et du réactif du jour — demandez-le sur WhatsApp, vous l'aurez en une réponse.</span><span class="en-only">The tests your doctor prescribes, across four areas. <b>No prices are shown here</b>: the price depends on the test and the day's reagent — ask on WhatsApp and you will have it in one reply.</span></p>
+  </div>
+
+  <div class="cats">
+    <div class="cat">
+      <h3><span class="k"></span><span class="fr-only">Biochimie</span><span class="en-only">Biochemistry</span></h3>
+      <ul>
+        <li><span class="fr-only">Glycémie (à jeun et post-prandiale)</span><span class="en-only">Glucose (fasting and after meals)</span></li>
+        <li><span class="fr-only">Cholestérol total, HDL, LDL, triglycérides</span><span class="en-only">Total cholesterol, HDL, LDL, triglycerides</span></li>
+        <li><span class="fr-only">Créatinine et urée (fonction rénale)</span><span class="en-only">Creatinine and urea (kidney function)</span></li>
+        <li><span class="fr-only">Transaminases (fonction du foie)</span><span class="en-only">Transaminases (liver function)</span></li>
+      </ul>
+      <p class="ask"><a href="https://wa.me/237696139819?text=Bonjour%20UNI-LABO%2C%20je%20voudrais%20conna%C3%AEtre%20le%20tarif%20d%26%23x27%3Bune%20analyse%20de%20biochimie."><span class="fr-only">Demander le tarif →</span><span class="en-only">Ask the price →</span></a></p>
+    </div>
+    <div class="cat">
+      <h3><span class="k"></span><span class="fr-only">Hématologie</span><span class="en-only">Haematology</span></h3>
+      <ul>
+        <li><span class="fr-only">Hémogramme complet (NFS)</span><span class="en-only">Complete blood count (CBC)</span></li>
+        <li><span class="fr-only">Groupe sanguin et rhésus</span><span class="en-only">Blood group and rhesus</span></li>
+        <li><span class="fr-only">Vitesse de sédimentation (VS)</span><span class="en-only">Erythrocyte sedimentation rate (ESR)</span></li>
+        <li><span class="fr-only">Comptage des plaquettes</span><span class="en-only">Platelet count</span></li>
+      </ul>
+      <p class="ask"><a href="https://wa.me/237696139819?text=Bonjour%20UNI-LABO%2C%20je%20voudrais%20conna%C3%AEtre%20le%20tarif%20d%26%23x27%3Bune%20analyse%20d%26%23x27%3Bh%C3%A9matologie."><span class="fr-only">Demander le tarif →</span><span class="en-only">Ask the price →</span></a></p>
+    </div>
+    <div class="cat">
+      <h3><span class="k"></span><span class="fr-only">Sérologie &amp; immunologie</span><span class="en-only">Serology &amp; immunology</span></h3>
+      <ul>
+        <li><span class="fr-only">Widal (fièvre typhoïde)</span><span class="en-only">Widal (typhoid fever)</span></li>
+        <li><span class="fr-only">Hépatites B et C</span><span class="en-only">Hepatitis B and C</span></li>
+        <li><span class="fr-only">VIH 1 &amp; 2</span><span class="en-only">HIV 1 &amp; 2</span></li>
+        <li><span class="fr-only">CRP (inflammation)</span><span class="en-only">CRP (inflammation)</span></li>
+      </ul>
+      <p class="ask"><a href="https://wa.me/237696139819?text=Bonjour%20UNI-LABO%2C%20je%20voudrais%20conna%C3%AEtre%20le%20tarif%20d%26%23x27%3Bune%20s%C3%A9rologie."><span class="fr-only">Demander le tarif →</span><span class="en-only">Ask the price →</span></a></p>
+    </div>
+    <div class="cat">
+      <h3><span class="k"></span><span class="fr-only">Hormonologie</span><span class="en-only">Hormonology</span></h3>
+      <ul>
+        <li><span class="fr-only">TSH, T3, T4 (thyroïde)</span><span class="en-only">TSH, T3, T4 (thyroid)</span></li>
+        <li><span class="fr-only">Prolactine</span><span class="en-only">Prolactin</span></li>
+        <li><span class="fr-only">Bêta-HCG (grossesse)</span><span class="en-only">Beta-HCG (pregnancy)</span></li>
+        <li><span class="fr-only">FSH et LH</span><span class="en-only">FSH and LH</span></li>
+      </ul>
+      <p class="ask"><a href="https://wa.me/237696139819?text=Bonjour%20UNI-LABO%2C%20je%20voudrais%20conna%C3%AEtre%20le%20tarif%20d%26%23x27%3Bun%20dosage%20hormonal."><span class="fr-only">Demander le tarif →</span><span class="en-only">Ask the price →</span></a></p>
+    </div>
+  </div>
+  <p class="note" style="margin-top:16px"><span class="fr-only">Votre analyse n'est pas dans cette liste ? Elle l'est probablement quand même : envoyez-nous l'ordonnance en photo, nous vous répondons avec le tarif et la préparation.</span><span class="en-only">Not seeing your test? It is probably still here: send us a photo of the request and we reply with the price and the preparation.</span></p>
+</div></section>
+
+<section id="resultats"><div class="wrap">
+  <div class="sec-head">
+    <p class="mono" style="color:var(--signal)"><span class="fr-only">Vos résultats</span><span class="en-only">Your results</span></p>
+    <h2><span class="fr-only">Où et quand récupérer le résultat.</span><span class="en-only">Where and when to collect your result.</span></h2>
+  </div>
+  <div class="split">
+    <div class="panel">
+      <h3><span class="fr-only">Retrait au laboratoire</span><span class="en-only">Collection at the laboratory</span></h3>
+      <ul>
+        <li><span class="fr-only">Sur présentation du <b>reçu</b> remis au dépôt.</span><span class="en-only">On presentation of the <b>receipt</b> given at drop-off.</span></li>
+        <li><span class="fr-only">Le <b>délai dépend de l'analyse</b> : nous vous le confirmons au moment du prélèvement, pour que vous sachiez quand revenir.</span><span class="en-only">The <b>turnaround depends on the test</b>: we confirm it when the sample is taken, so you know when to come back.</span></li>
+        <li><span class="fr-only">Si quelqu'un vient à votre place, prévenez-nous : nous vous dirons ce qu'il faut apporter.</span><span class="en-only">If someone collects it for you, tell us first: we will say what they need to bring.</span></li>
+      </ul>
+      <p class="note" style="margin-top:14px"><span class="fr-only">Un doute sur un résultat déjà retiré ? Écrivez-nous avec la date du prélèvement — c'est plus rapide qu'un déplacement.</span><span class="en-only">A question about a result you already collected? Message us with the sample date — faster than a trip.</span></p>
+    </div>
+    <div class="panel">
+      <h3><span class="fr-only">La biologiste</span><span class="en-only">The biologist</span></h3>
+      <p class="quote"><span class="fr-only">« Réaliser les analyses biologiques prescrites par un médecin, en vue de confirmer ou d'infirmer un diagnostic, de traiter une maladie ou d'assurer un suivi thérapeutique. »</span><span class="en-only">“To run the biological tests a doctor prescribes, in order to confirm or rule out a diagnosis, to treat an illness, or to follow a treatment.”</span></p>
+      <p class="note" style="margin-top:12px"><span class="fr-only">C'est la mission du laboratoire, écrite par le laboratoire. Dr Tientcheu Philomène, biologiste, conduit les analyses et peut vous expliquer un résultat sur place.</span><span class="en-only">That is the laboratory's mission, in its own words. Dr Tientcheu Philomène, biologist, runs the tests and can explain a result to you on site.</span></p>
+      <div class="actions" style="margin-top:16px">
+        <a class="btn btn-primary" href="https://wa.me/237696139819?text=Bonjour%20Dr%20Tientcheu%2C%20j%26%23x27%3Bai%20une%20question%20sur%20une%20analyse."><span class="fr-only">Poser une question</span><span class="en-only">Ask a question</span></a>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section id="acces" class="hair"><div class="wrap">
+  <div class="sec-head">
+    <p class="mono" style="color:var(--signal)"><span class="fr-only">Nous trouver</span><span class="en-only">Find us</span></p>
+    <h2><span class="fr-only">Carrefour Etoo, Bonamoussadi.</span><span class="en-only">Carrefour Etoo, Bonamoussadi.</span></h2>
+  </div>
+  <div class="access">
+    <div>
+      <div class="rowmap">
+        <div class="row"><span class="k"><span class="fr-only">Quartier</span><span class="en-only">Quarter</span></span><span>Bonamoussadi (Makepe Bloc L), Douala</span></div>
+        <div class="row"><span class="k"><span class="fr-only">Repère</span><span class="en-only">Landmark</span></span><span><span class="fr-only">Carrefour Etoo</span><span class="en-only">Carrefour Etoo</span></span></div>
+        <div class="row"><span class="k"><span class="fr-only">Rue</span><span class="en-only">Street</span></span><span>Rue 5N441 · BP 2592 Douala</span></div>
+        <div class="row"><span class="k">WhatsApp</span><span><a href="https://wa.me/237696139819" style="color:var(--signal);font-weight:600">696 13 98 19</a></span></div>
+        <div class="row"><span class="k"><span class="fr-only">Fixe</span><span class="en-only">Landline</span></span><span><a href="tel:+237233470068">233 47 00 68</a></span></div>
+        <div class="row"><span class="k">E-mail</span><span><a href="mailto:u.labo@yahoo.fr">u.labo@yahoo.fr</a></span></div>
+        <div class="row"><span class="k"><span class="fr-only">Horaires</span><span class="en-only">Hours</span></span><span><span class="fr-only">Lundi–vendredi 07h–19h · Samedi 07h–13h</span><span class="en-only">Monday–Friday 7am–7pm · Saturday 7am–1pm</span></span></div>
+        <div class="row"><span class="k"><span class="fr-only">Paiement</span><span class="en-only">Payment</span></span><span><span class="fr-only">Espèces</span><span class="en-only">Cash</span></span></div>
+        <div class="row"><span class="k"><span class="fr-only">Langues</span><span class="en-only">Languages</span></span><span>Français · English</span></div>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/Uni+Labo+Carrefour+Etoo+Bonamoussadi+Douala" target="_blank" rel="noopener"><span class="fr-only">Ouvrir dans Maps</span><span class="en-only">Open in Maps</span></a>
+        <a class="btn btn-ghost" href="https://wa.me/237696139819?text=Bonjour%2C%20je%20viens%20au%20laboratoire.%20Vous%20%C3%AAtes%20ouverts%20maintenant%20%3F"><span class="fr-only">Vous êtes ouverts ?</span><span class="en-only">Are you open now?</span></a>
+      </div>
+    </div>
+    <div class="map">
+      <svg viewBox="0 0 520 340" role="img" aria-label="Plan schématique — Carrefour Etoo, Bonamoussadi">
+        <rect width="520" height="340" fill="#FFFFFF"/>
+        <path d="M0 124h520" stroke="#D8DBE2" stroke-width="26"/>
+        <path d="M0 124h520" stroke="#C3C7D1" stroke-width="1.4" stroke-dasharray="9 9"/>
+        <path d="M148 0v340" stroke="#D8DBE2" stroke-width="22"/>
+        <path d="M148 0v340" stroke="#C3C7D1" stroke-width="1.4" stroke-dasharray="9 9"/>
+        <path d="M356 124v216" stroke="#E2E4EA" stroke-width="16"/>
+        <circle cx="148" cy="124" r="19" fill="none" stroke="#5B21B6" stroke-width="2.4"/>
+        <circle cx="148" cy="124" r="6" fill="#5B21B6"/>
+        <rect x="196" y="52" width="126" height="46" rx="9" fill="#EDE9FE" stroke="#5B21B6" stroke-width="1.6"/>
+        <text x="259" y="80" text-anchor="middle" font-family="Sora,Inter,sans-serif" font-size="15" font-weight="600" fill="#14151A">UNI-LABO</text>
+        <line x1="196" y1="98" x2="168" y2="116" stroke="#5B21B6" stroke-width="1.8"/>
+        <text x="259" y="34" text-anchor="middle" font-family="Inter,sans-serif" font-size="12.5" fill="#57606E">Rue 5N441 · Bonamoussadi</text>
+        <text x="162" y="118" font-family="Inter,sans-serif" font-size="12.5" fill="#57606E">Carrefour</text>
+        <text x="162" y="134" font-family="Inter,sans-serif" font-size="12.5" fill="#57606E">Etoo</text>
+        <text x="30" y="112" font-family="Inter,sans-serif" font-size="12.5" fill="#98A0AE">vers Makepe</text>
+        <text x="404" y="112" font-family="Inter,sans-serif" font-size="12.5" fill="#98A0AE">vers Bonamoussadi</text>
+        <text x="163" y="320" font-family="Inter,sans-serif" font-size="12.5" fill="#98A0AE">vers Bonabéri</text>
+      </svg>
+    </div>
+  </div>
+</div></section>
+
+<section class="hair"><div class="wrap">
+  <div class="sec-head">
+    <p class="mono" style="color:var(--signal)"><span class="fr-only">Questions fréquentes</span><span class="en-only">Frequently asked</span></p>
+    <h2><span class="fr-only">Ce qu'on nous demande au guichet, écrit ici.</span><span class="en-only">What people ask at the desk, written here.</span></h2>
+  </div>
+  <details class="faq">
+    <summary><span class="fr-only">Faut-il être à jeun ?</span><span class="en-only">Do I need to fast?</span></summary>
+    <p><span class="fr-only">Pour la glycémie, le cholestérol et les triglycérides : 8 à 12 heures sans manger, l'eau est permise. Pour les autres analyses, ce n'est pas toujours nécessaire — demandez-nous avant de venir. Si votre médecin a donné une consigne précise, c'est la sienne qui compte.</span><span class="en-only">For glucose, cholesterol and triglycerides: 8 to 12 hours without food, water is allowed. For other tests it is not always needed — ask us before coming. If your doctor gave a specific instruction, that one wins.</span></p>
+  </details>
+  <details class="faq">
+    <summary><span class="fr-only">Quand venir pour un dosage hormonal ?</span><span class="en-only">When should I come for a hormone test?</span></summary>
+    <p><span class="fr-only">Souvent le matin, et parfois à un jour précis du cycle. Écrivez-nous le nom de l'analyse : nous vous donnons la date et l'heure exactes — c'est la seule façon d'éviter un déplacement pour rien.</span><span class="en-only">Often in the morning, and sometimes on a specific day of the cycle. Message us the name of the test: we give you the exact date and time — the only way to avoid a wasted trip.</span></p>
+  </details>
+  <details class="faq">
+    <summary><span class="fr-only">Qu'est-ce que j'apporte ?</span><span class="en-only">What should I bring?</span></summary>
+    <p><span class="fr-only">L'ordonnance de votre médecin (ou sa photo), votre carte de couverture si vous en avez une, et votre ancien résultat s'il s'agit d'un suivi.</span><span class="en-only">Your doctor's request (or a photo of it), your cover card if you have one, and your previous result if this is a follow-up.</span></p>
+  </details>
+  <details class="faq">
+    <summary><span class="fr-only">Combien coûte une analyse ?</span><span class="en-only">How much does a test cost?</span></summary>
+    <p><span class="fr-only">Le tarif dépend de l'analyse et du réactif utilisé. Envoyez-nous le nom de l'analyse (ou l'ordonnance en photo) sur WhatsApp : nous vous répondons avec le prix avant que vous vous déplaciez.</span><span class="en-only">The price depends on the test and the reagent used. Send us the name of the test (or a photo of the request) on WhatsApp: we reply with the price before you travel.</span></p>
+  </details>
+  <details class="faq">
+    <summary><span class="fr-only">Où se trouve exactement le laboratoire ?</span><span class="en-only">Where exactly is the laboratory?</span></summary>
+    <p><span class="fr-only">À Bonamoussadi, au carrefour Etoo — Rue 5N441 (Makepe Bloc L), Douala. Le plan ci-dessus montre le carrefour : le laboratoire est indiqué en violet.</span><span class="en-only">In Bonamoussadi, at Carrefour Etoo — Rue 5N441 (Makepe Bloc L), Douala. The sketch above shows the junction: the laboratory is marked in violet.</span></p>
+  </details>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <div class="f-grid">
+    <div class="f-block">
+      <div class="f-brand">
+        <svg width="40" height="40" viewBox="0 0 38 38" role="img" aria-hidden="true">
+          <rect width="38" height="38" rx="11" fill="#5B21B6"/>
+          <path d="M15 8h8v6.2l5.6 12.1A4 4 0 0 1 25 32H13a4 4 0 0 1-3.6-5.7L15 14.2V8Z" fill="#F4F5F7"/>
+          <path d="M12.4 24.4h13.2" stroke="#14151A" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <b>UNI-LABO</b>
+      </div>
+      <p class="f-line"><span class="fr-only">Laboratoire d'analyses de biologie médicale à Bonamoussadi, Douala — Carrefour Etoo. Analyses prescrites par votre médecin, résultats remis au laboratoire.</span><span class="en-only">Medical biology laboratory in Bonamoussadi, Douala — Carrefour Etoo. Tests prescribed by your doctor, results handed over at the laboratory.</span></p>
+    </div>
+
+    <div class="f-block">
+      <h4><span class="fr-only">Sur cette page</span><span class="en-only">On this page</span></h4>
+      <div class="f-nav">
+        <a href="#avant"><span class="fr-only">Avant de venir</span><span class="en-only">Before you come</span></a>
+        <a href="#analyses"><span class="fr-only">Nos analyses</span><span class="en-only">Our tests</span></a>
+        <a href="#resultats"><span class="fr-only">Vos résultats</span><span class="en-only">Your results</span></a>
+        <a href="#acces"><span class="fr-only">Nous trouver</span><span class="en-only">Find us</span></a>
+      </div>
+    </div>
+
+    <div class="f-block f-cta">
+      <h4><span class="fr-only">Écrire au laboratoire</span><span class="en-only">Message the laboratory</span></h4>
+      <a class="btn btn-wa" href="https://wa.me/237696139819?text=Bonjour%20UNI-LABO%2C%20je%20souhaite%20faire%20une%20analyse.%20Voici%20ce%20que%20mon%20m%C3%A9decin%20a%20prescrit%20%3A">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" style="fill:currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a11 11 0 0 1-5.6-4.9c-.4-.7-.6-1.4-.5-2 .1-.6.6-1.4 1.1-1.7.3-.2.7-.2.9.2l.8 1.4c.1.3.1.5-.1.8l-.4.5c-.2.2-.2.4-.1.6.4.8 1.5 2 2.4 2.4.2.1.4.1.6-.1l.5-.5c.2-.2.5-.3.8-.1l1.4.8c.4.2.4.6.2.9Z"/></svg>
+        <span class="fr-only">WhatsApp</span><span class="en-only">WhatsApp</span>
+      </a>
+      <p class="f-tel"><span class="fr-only">Ou appelez le</span><span class="en-only">Or call</span> <a href="tel:+237696139819">696 13 98 19</a></p>
+    </div>
+
+    <div class="f-block">
+      <h4><span class="fr-only">Nous trouver</span><span class="en-only">Find us</span></h4>
+      <div class="f-contact">
+        <span><b><span class="fr-only">Adresse</span><span class="en-only">Address</span></b><br><span class="fr-only">Rue 5N441, Bonamoussadi (Makepe Bloc L) — repère Carrefour Etoo, Douala</span><span class="en-only">Rue 5N441, Bonamoussadi (Makepe Bloc L) — landmark Carrefour Etoo, Douala</span></span>
+        <span><b><span class="fr-only">Horaires</span><span class="en-only">Hours</span></b><br><span class="fr-only">Lundi–vendredi 07h–19h · Samedi 07h–13h</span><span class="en-only">Monday–Friday 7am–7pm · Saturday 7am–1pm</span></span>
+        <span><b><span class="fr-only">Téléphone</span><span class="en-only">Phone</span></b><br><a href="tel:+237696139819" style="color:#fff">696 13 98 19</a> · <a href="tel:+237233470068" style="color:#fff">233 47 00 68</a></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="f-strip">
+    <span>© 2026 UNI-LABO</span>
+    <span><span class="fr-only">Maquette préparée par AMK pour UNI-LABO — horaires, services et mentions à valider par le laboratoire avant mise en ligne.</span><span class="en-only">Mockup prepared by AMK for UNI-LABO — hours, services and wording to be validated by the laboratory before going live.</span></span>
+    <span>Site par AMK — Développement Web &amp; Solutions Digitales · <a href="#top"><span class="fr-only">Haut de page ↑</span><span class="en-only">Back to top ↑</span></a></span>
+  </div>
+</div></footer>
+
+<div class="sticky-wa">
+  <a class="w" href="https://wa.me/237696139819?text=Bonjour%20UNI-LABO%2C%20je%20souhaite%20faire%20une%20analyse.">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a11 11 0 0 1-5.6-4.9c-.4-.7-.6-1.4-.5-2 .1-.6.6-1.4 1.1-1.7.3-.2.7-.2.9.2l.8 1.4c.1.3.1.5-.1.8l-.4.5c-.2.2-.2.4-.1.6.4.8 1.5 2 2.4 2.4.2.1.4.1.6-.1l.5-.5c.2-.2.5-.3.8-.1l1.4.8c.4.2.4.6.2.9Z"/></svg>
+    <span class="fr-only">WhatsApp</span><span class="en-only">WhatsApp</span>
+  </a>
+  <a class="c" href="tel:+237696139819"><span class="fr-only">Appeler</span><span class="en-only">Call</span></a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"MedicalBusiness","name":"UNI-LABO","description":"Laboratoire d'analyses de biologie médicale à Bonamoussadi, Douala.",
+  "telephone":"+237696139819","email":"u.labo@yahoo.fr",
+  "address":{"@type":"PostalAddress","streetAddress":"Rue 5N441, Bonamoussadi (Makepe Bloc L)","addressLocality":"Douala","addressCountry":"CM"},
+  "areaServed":"Douala",
+  "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"19:00"},
+   {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"07:00","closes":"13:00"}]}
+]}
+</script>
+
+<script>
+(function(){
+  var html=document.documentElement, k='unilabo-lang';
+  function setLang(l){
+    html.setAttribute('data-lang',l); html.lang=l;
+    document.getElementById('btn-fr').classList.toggle('is-on',l==='fr');
+    document.getElementById('btn-en').classList.toggle('is-on',l==='en');
+    try{localStorage.setItem(k,l)}catch(e){}
+  }
+  document.getElementById('btn-fr').addEventListener('click',function(){setLang('fr')});
+  document.getElementById('btn-en').addEventListener('click',function(){setLang('en')});
+  try{ var saved=localStorage.getItem(k); if(saved) setLang(saved); }catch(e){}
+
+  // preparation chips — one answer at a time, no scrolling required
+  var chips=[].slice.call(document.querySelectorAll('.chip'));
+  chips.forEach(function(c){
+    c.addEventListener('click',function(){
+      chips.forEach(function(x){x.classList.remove('is-on')});
+      c.classList.add('is-on');
+      document.querySelectorAll('.prep-panel').forEach(function(p){p.classList.remove('is-on')});
+      var t=document.getElementById('prep-'+c.dataset.prep);
+      if(t) t.classList.add('is-on');
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TODO: replace https://amk-cm.vercel.app with the final AMK site URL before relying on this -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://amk-cm.vercel.app/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://amk-cm.vercel.app/sample-school.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://amk-cm.vercel.app/sample-nursery.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://amk-cm.vercel.app/sample-secondary.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://amk-cm.vercel.app/clinic-bonaberi.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+</urlset>

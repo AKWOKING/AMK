@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Centre Médical de Bonanjo — Neurologie et soins médicaux à Bonapriso, Douala</title>
+<meta name="description" content="Centre Médical de Bonanjo, Bonapriso (ancien aéroport), Douala. Neurologie, médecine générale, radiologie, échographie, gynécologie, pédiatrie, chirurgie, accouchement. Rendez-vous sur WhatsApp, en français et en anglais.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0B5FA5">
+<meta property="og:title" content="Centre Médical de Bonanjo — Bonapriso, Douala">
+<meta property="og:description" content="Neurologie et soins médicaux complets à Bonapriso. Rendez-vous confirmé sur WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F5F7;
+  --card:#FFFFFF;
+  --ink:#14151A;
+  --ink-2:#22242B;
+  --mute:#4F5866;
+  --mute-on-ink:#C3C9D4;
+  --signal:#0B5FA5;      /* le bleu du centre — repris de la maquette envoyée */
+  --signal-2:#084C86;
+  --tint:#E8F1F9;
+  --tint-ink:#07406F;
+  --line:rgba(20,21,26,.12);
+  --wa:#0B7A3E;
+  --r:16px; --max:1100px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font:16px/1.62 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased}
+h1,h2,h3,.display{font-family:"Sora",Inter,sans-serif;line-height:1.1;margin:0;letter-spacing:-.02em}
+h1{font-size:clamp(2rem,7vw,3.3rem);font-weight:700}
+h2{font-size:clamp(1.4rem,4.4vw,2.05rem);font-weight:700}
+h3{font-size:1.06rem;font-weight:600;letter-spacing:-.01em}
+p{margin:.6rem 0 0}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+section{padding:50px 0}
+.hair{border-top:1px solid var(--line)}
+.mono{font-family:"Sora",Inter,sans-serif;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+.lead{font-size:1.04rem}
+/* langue — les DEUX langues vivent dans le HTML (le crawler les lit toutes les deux).
+   ⚠️ PIÈGE (19/09) : la règle `display:revert !important` ci-dessous ÉCRASE tout `display`
+   posé sur le même élément. Un <small class="fr-only">display:block</small> redevient
+   `inline` et le nom se colle au sous-titre. Ne jamais mettre fr-only/en-only sur un
+   élément dont la mise en page dépend du `display` — envelopper à la place. */
+html[data-lang="fr"] .en-only{display:none !important}
+html[data-lang="en"] .fr-only{display:none !important}
+html[data-lang="en"] .en-only{display:revert !important}
+html[data-lang="fr"] .fr-only{display:revert !important}
+:is(a,button,summary):focus-visible{outline:3px solid var(--signal-2);outline-offset:2px;border-radius:8px}
+
+/* barre haute */
+.topbar{background:var(--ink);color:#EDEFF3;font-size:.82rem}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:42px}
+.topbar a{text-decoration:none;color:#EDEFF3}
+.topbar .tel{font-weight:600}
+.langs{display:flex;gap:2px;background:rgba(255,255,255,.12);border-radius:999px;padding:2px}
+.langs button{border:0;background:transparent;color:#EDEFF3;font:600 .74rem Inter;padding:4px 10px;border-radius:999px;cursor:pointer}
+.langs button.is-on{background:#fff;color:var(--ink)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:40;background:rgba(244,245,247,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:66px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-family:"Sora",Inter,sans-serif}
+.mark{width:38px;height:38px;border-radius:11px;background:var(--signal);color:#fff;display:grid;place-items:center;
+  font:700 .84rem "Sora",Inter,sans-serif;letter-spacing:.02em}
+.brandtxt{display:flex;flex-direction:column;line-height:1.18}
+.brandtxt small{font:500 .68rem Inter;color:var(--mute);letter-spacing:.04em}
+.navlinks{display:none;gap:22px;font-size:.92rem;font-weight:500}
+.navlinks a{text-decoration:none;color:var(--ink-2)}
+.navlinks a:hover{color:var(--signal)}
+@media (min-width:900px){.navlinks{display:flex}}
+/* mobile : la barre portait trop de texte, le bouton passait sur deux lignes */
+@media (max-width:620px){
+  .brandtxt{font-size:.88rem;line-height:1.12}
+  .brandtxt small{display:none}
+  .mark{width:34px;height:34px;border-radius:10px}
+  .nav .wrap{min-height:60px;gap:8px}
+  .nav .btn{padding:12px 13px;font-size:.87rem;white-space:nowrap;min-height:46px}
+}
+
+/* boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;
+  border-radius:12px;padding:14px 20px;font-weight:600;font-size:.97rem;min-height:52px;
+  border:1px solid transparent;cursor:pointer;transition:transform .12s ease}
+.btn:active{transform:translateY(1px)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-ghost{background:#fff;color:var(--ink);border-color:var(--line)}
+.btn-signal{background:var(--signal);color:#fff}
+.btn svg{width:19px;height:19px;fill:currentColor;flex:none}
+
+/* hero */
+.hero{background:linear-gradient(180deg,#FFFFFF 0%,#F4F5F7 100%);padding:44px 0 40px}
+.hero .grid{display:grid;gap:30px}
+@media (min-width:940px){.hero .grid{grid-template-columns:1.05fr .95fr;align-items:center;gap:44px}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--tint);color:var(--tint-ink);
+  border-radius:999px;padding:7px 14px;font:600 .75rem Inter;letter-spacing:.04em}
+.hero h1{margin-top:16px}
+.hero h1 em{font-style:normal;color:var(--signal)}
+.hero .lead{color:var(--mute);max-width:36em}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.trust{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:20px;font-size:.86rem;color:var(--mute)}
+.trust b{color:var(--ink);font-weight:600}
+.heroCard{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 18px 40px rgba(20,21,26,.07)}
+.heroCard .row{display:flex;align-items:center;gap:12px;padding:11px 0}
+.heroCard .row+.row{border-top:1px solid var(--line)}
+.dot{width:34px;height:34px;border-radius:10px;background:var(--tint);color:var(--tint-ink);display:grid;place-items:center;flex:none}
+.dot svg{width:17px;height:17px;fill:currentColor}
+.heroCard .row span{font-size:.9rem;color:var(--ink-2)}
+
+/* bande d'infos sous le hero */
+.cap{font-size:.8rem;color:var(--mute);margin-top:10px}
+.infostrip{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.infostrip .wrap{display:grid;gap:16px;padding:22px 18px}
+@media (min-width:640px){.infostrip .wrap{grid-template-columns:1fr 1fr}}
+@media (min-width:1000px){.infostrip .wrap{grid-template-columns:repeat(4,1fr)}}
+.infostrip b{display:block;font-family:"Sora",Inter,sans-serif;font-size:.92rem}
+.infostrip span{display:block;font-size:.84rem;color:var(--mute);margin-top:3px}
+
+/* bandeau de faits */
+.facts{background:var(--ink);color:#fff}
+.facts .wrap{display:grid;gap:20px;padding:26px 18px}
+@media (min-width:760px){.facts .wrap{grid-template-columns:repeat(3,1fr)}}
+.facts .n{font:700 1.6rem "Sora",Inter,sans-serif;color:#8FC4EE}
+.facts .l{font-size:.86rem;color:var(--mute-on-ink);margin-top:4px}
+
+/* images — inspiration 2026 : chaleureux, humain, jamais stérile.
+   Règles appliquées : un visuel par section · légende SOUS l'image (jamais de pastille dessus)
+   · object-fit:cover + ratio fixe · aucune image sans alt */
+figure{margin:0}
+figure img{display:block;width:100%;height:auto;object-fit:cover;border-radius:var(--r);
+  border:1px solid var(--line);background:#E7EBF0}
+figure figcaption{font-size:.82rem;color:var(--mute);margin-top:9px;padding-left:2px}
+.heroMedia{display:flex;flex-direction:column}
+.ph-hero{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line);
+  aspect-ratio:16/10;background:#E7EBF0}
+.ph-hero img{width:100%;height:100%;object-fit:cover}
+@media (min-width:940px){
+  /* le hero respire : l'image est décadrée vers la droite, le texte reste lisible */
+  .ph-hero{aspect-ratio:4/3}
+}
+.strip2{display:grid;gap:16px;margin-top:26px}
+@media (min-width:700px){.strip2{grid-template-columns:1fr 1fr}}
+
+/* services */
+.cards{display:grid;gap:14px;margin-top:24px}
+@media (min-width:640px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:940px){.cards{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.card h3{color:var(--ink)}
+.card p{color:var(--mute);font-size:.9rem}
+.card .mono{color:var(--signal)}
+
+/* split image + carte */
+.splitimg{margin-top:22px}
+.splitimg img{aspect-ratio:4/3}
+
+/* neuro */
+.neuro{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;margin-top:24px}
+.neuro h2{color:var(--ink)}
+.neuro ul{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:9px}
+@media (min-width:640px){.neuro ul{grid-template-columns:repeat(2,1fr)}}
+.neuro li{position:relative;padding-left:24px;color:var(--ink-2);font-size:.94rem}
+.neuro li::before{content:"";position:absolute;left:0;top:.42em;width:11px;height:11px;border-radius:3px;background:var(--signal)}
+.note{font-size:.84rem;color:var(--mute);margin-top:16px}
+
+/* étapes */
+.steps{display:grid;gap:14px;margin-top:24px}
+@media (min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.step .num{font:700 .78rem "Sora",Inter,sans-serif;color:#fff;background:var(--signal);width:26px;height:26px;
+  border-radius:8px;display:grid;place-items:center}
+.step h3{margin-top:12px}
+.step p{color:var(--mute);font-size:.9rem}
+
+/* accès */
+.access{display:grid;gap:16px;margin-top:24px}
+@media (min-width:860px){.access{grid-template-columns:1.1fr .9fr;gap:26px;align-items:center}}
+.accCard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.accCard .line{display:flex;gap:12px;padding:11px 0}
+.accCard .line+.line{border-top:1px solid var(--line)}
+.accCard .line span{font-size:.92rem;color:var(--ink-2)}
+.mapbox{background:var(--tint);border-radius:var(--r);padding:22px;border:1px solid rgba(11,95,165,.18)}
+.mapbox .mono{color:var(--tint-ink)}
+
+/* faq */
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:12px}
+details summary{cursor:pointer;font-weight:600;font-family:"Sora",Inter,sans-serif;font-size:.98rem}
+details p{color:var(--mute);font-size:.92rem}
+
+/* pied */
+footer{background:var(--ink);color:#C3C9D4;font-size:.84rem;margin-top:10px}
+footer .wrap{padding:30px 18px;display:grid;gap:14px}
+footer a{color:#8FC4EE}
+footer .mock{border-left:3px solid #8FC4EE;padding-left:12px}
+
+/* barre mobile */
+.sticky-wa{position:fixed;left:12px;right:12px;bottom:12px;z-index:50;display:flex;gap:10px}
+.sticky-wa a{flex:1;white-space:nowrap;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;
+  border-radius:13px;padding:14px;font-weight:600;font-size:.92rem;min-height:52px;box-shadow:0 10px 24px rgba(20,21,26,.22)}
+.sticky-wa .w{background:var(--wa);color:#fff}
+.sticky-wa .c{background:#fff;color:var(--ink);flex:0 0 38%}
+.sticky-wa svg{width:17px;height:17px;fill:currentColor}
+@media (min-width:760px){.sticky-wa{display:none}}
+.pad-bottom{padding-bottom:86px}
+@media (min-width:760px){.pad-bottom{padding-bottom:0}}
+</style>
+</head>
+<body id="top">
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="tel" href="tel:+237694572277">📞 +237 694 57 22 77</a>
+    <div class="langs" role="group" aria-label="Langue / Language">
+      <button id="btn-fr" class="is-on" type="button">FR</button>
+      <button id="btn-en" type="button">EN</button>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <span class="mark">CMB</span>
+      <span class="brandtxt">Centre Médical de Bonanjo<small>Bonapriso · Douala</small></span>
+    </a>
+    <div class="navlinks">
+      <a href="#neurologie"><span class="fr-only">Neurologie</span><span class="en-only">Neurology</span></a>
+      <a href="#services"><span class="fr-only">Services</span><span class="en-only">Services</span></a>
+      <a href="#acces"><span class="fr-only">Accès</span><span class="en-only">Location</span></a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a class="btn btn-signal" href="https://wa.me/237694572277?text=Bonjour%20Centre%20M%C3%A9dical%20de%20Bonanjo%2C%20je%20souhaite%20prendre%20rendez-vous.">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-1-.3-1.8-.7-2.2-1-3.6-3.3-3.7-3.5-.1-.1-.9-1.2-.9-2.3s.6-1.6.8-1.9c.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .5.4l.7 1.7c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.2.3-.1.5.1.2.6 1 1.2 1.6.8.7 1.4.9 1.6 1 .2.1.4.1.5 0l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.3.2.4.3.4.5Z"/></svg>
+      <span class="fr-only">Rendez-vous</span><span class="en-only">Appointment</span>
+    </a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap grid">
+    <div>
+      <span class="eyebrow">🩺 <span class="fr-only">Centre médical · Bonapriso, Douala</span><span class="en-only">Medical centre · Bonapriso, Douala</span></span>
+      <h1>
+        <span class="fr-only">Votre neurologue, <em>à Bonapriso.</em></span>
+        <span class="en-only">Your neurologist, <em>in Bonapriso.</em></span>
+      </h1>
+      <p class="lead fr-only">Neurologie, médecine générale, radiologie et échographie sous un même toit. Vous écrivez sur WhatsApp, vous dites ce qui vous amène, et le rendez-vous est confirmé.</p>
+      <p class="lead en-only">Neurology, general medicine, radiology and ultrasound under one roof. You message us on WhatsApp, tell us what you need, and the appointment is confirmed.</p>
+      <div class="cta-row">
+        <a class="btn btn-wa" href="https://wa.me/237694572277?text=Bonjour%2C%20je%20souhaite%20prendre%20rendez-vous%20avec%20le%20Centre%20M%C3%A9dical%20de%20Bonanjo.">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-1-.3-1.8-.7-2.2-1-3.6-3.3-3.7-3.5-.1-.1-.9-1.2-.9-2.3s.6-1.6.8-1.9c.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .5.4l.7 1.7c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.2.3-.1.5.1.2.6 1 1.2 1.6.8.7 1.4.9 1.6 1 .2.1.4.1.5 0l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.3.2.4.3.4.5Z"/></svg>
+          <span class="fr-only">Écrire sur WhatsApp</span><span class="en-only">Message on WhatsApp</span>
+        </a>
+        <a class="btn btn-ghost" href="tel:+237694572277">
+          <span class="fr-only">Appeler le centre</span><span class="en-only">Call the centre</span>
+        </a>
+      </div>
+      <div class="trust">
+        <span class="fr-only"><b>9 services</b> sur place</span><span class="en-only"><b>9 services</b> on site</span>
+        <span class="fr-only"><b>Un seul numéro</b> pour tout</span><span class="en-only"><b>One number</b> for everything</span>
+        <span><b>FR | EN</b></span>
+      </div>
+    </div>
+
+    <div class="heroMedia">
+      <figure class="ph-hero">
+        <img src="img/hero.jpg" alt="Une consultation dans un centre médical : une médecin écoute un patient" loading="eager" decoding="async">
+      </figure>
+      <p class="cap">
+        <span class="fr-only">Mise en situation. La photo définitive sera prise dans votre centre.</span>
+        <span class="en-only">Staged scene. The final photo will be taken at your centre.</span>
+      </p>
+    </div>
+  </div>
+</header>
+
+<div class="infostrip">
+  <div class="wrap">
+    <div>
+      <b><span class="fr-only">Neurologie</span><span class="en-only">Neurology</span></b>
+      <span><span class="fr-only">Un médecin neurologue reçoit au centre</span><span class="en-only">A neurologist sees patients at the centre</span></span>
+    </div>
+    <div>
+      <b>WhatsApp</b>
+      <span><span class="fr-only">Rendez-vous confirmé sur WhatsApp</span><span class="en-only">Appointment confirmed on WhatsApp</span></span>
+    </div>
+    <div>
+      <b><span class="fr-only">Bonapriso</span><span class="en-only">Bonapriso</span></b>
+      <span><span class="fr-only">Rue des pavés — repère : ancien aéroport</span><span class="en-only">Rue des pavés — landmark: old airport</span></span>
+    </div>
+    <div>
+      <b>+237 694 57 22 77</b>
+      <span><span class="fr-only">Appel et WhatsApp</span><span class="en-only">Call and WhatsApp</span></span>
+    </div>
+  </div>
+</div>
+
+<div class="facts">
+  <div class="wrap">
+    <div><div class="n">9</div><div class="l fr-only">services sur place — de la consultation à l'accouchement</div><div class="l en-only">services on site — from consultation to delivery</div></div>
+    <div><div class="n fr-only">1 numéro</div><div class="n en-only">1 number</div><div class="l fr-only">téléphone et WhatsApp — pour un rendez-vous comme pour une question</div><div class="l en-only">phone and WhatsApp — for an appointment or a question</div></div>
+    <div><div class="n fr-only">Bonapriso</div><div class="n en-only">Bonapriso</div><div class="l fr-only">à côté de l'ancien aéroport, accessible depuis Akwa et Bonanjo</div><div class="l en-only">by the old airport, easy from Akwa and Bonanjo</div></div>
+  </div>
+</div>
+
+<section id="neurologie">
+  <div class="wrap">
+    <span class="mono fr-only">Neurologie</span><span class="mono en-only">Neurology</span>
+    <h2 class="fr-only" style="margin-top:10px">Voir un neurologue à Douala, sans se perdre</h2>
+    <h2 class="en-only" style="margin-top:10px">Seeing a neurologist in Douala, without the runaround</h2>
+    <p class="lead fr-only" style="color:var(--mute);max-width:44em">Le centre reçoit pour les symptômes qui inquiètent et qu'on laisse traîner : maux de tête qui reviennent, vertiges, tremblements, fourmillements, douleurs du dos et de la nuque, suites d'AVC.</p>
+    <p class="lead en-only" style="color:var(--mute);max-width:44em">The centre sees patients for the symptoms people put off: recurring headaches, dizziness, tremors, numbness, back and neck pain, follow-up after a stroke.</p>
+
+    <div class="splitimg">
+      <figure>
+        <img src="img/neuro.jpg" alt="Un médecin teste le réflexe du genou d'une patiente" loading="lazy" decoding="async">
+        <figcaption><span class="fr-only">Photo d'illustration — à remplacer par une photo du centre.</span><span class="en-only">Illustration photo — to be replaced with a photo of the centre.</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="neuro">
+      <h3 class="fr-only">Ce qu'un neurologue prend en charge</h3>
+      <h3 class="en-only">What a neurologist treats</h3>
+      <ul class="fr-only">
+        <li>Maux de tête et migraines qui reviennent</li>
+        <li>Épilepsie et crises convulsives</li>
+        <li>Suivi après un AVC</li>
+        <li>Vertiges et troubles de l'équilibre</li>
+        <li>Fourmillements, engourdissements, douleurs nerveuses</li>
+        <li>Tremblements et troubles du mouvement</li>
+        <li>Douleurs du dos et de la nuque d'origine nerveuse</li>
+        <li>Troubles de la mémoire et de la concentration</li>
+      </ul>
+      <ul class="en-only">
+        <li>Recurring headaches and migraines</li>
+        <li>Epilepsy and seizures</li>
+        <li>Follow-up after a stroke</li>
+        <li>Dizziness and balance problems</li>
+        <li>Numbness, tingling, nerve pain</li>
+        <li>Tremors and movement disorders</li>
+        <li>Nerve-related back and neck pain</li>
+        <li>Memory and concentration problems</li>
+      </ul>
+      <p class="note fr-only">Cette liste décrit ce que la spécialité prend en charge. Elle ne remplace pas un avis médical : le diagnostic se fait en consultation.</p>
+      <p class="note en-only">This list describes what the specialty covers. It is not medical advice: diagnosis happens in consultation.</p>
+      <div class="cta-row">
+        <a class="btn btn-signal" href="https://wa.me/237694572277?text=Bonjour%2C%20je%20souhaite%20un%20rendez-vous%20en%20neurologie.%20Voici%20ce%20qui%20m%27am%C3%A8ne%20%3A%20">
+          <span class="fr-only">Demander un rendez-vous en neurologie</span><span class="en-only">Request a neurology appointment</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="hair">
+  <div class="wrap">
+    <span class="mono fr-only">Services</span><span class="mono en-only">Services</span>
+    <h2 class="fr-only" style="margin-top:10px">Tout sous un même toit</h2>
+    <h2 class="en-only" style="margin-top:10px">Everything under one roof</h2>
+    <p class="fr-only" style="color:var(--mute)">Un patient qui doit courir trois adresses pour un examen abandonne en route. Ici, on entre une fois.</p>
+    <p class="en-only" style="color:var(--mute)">A patient sent to three different addresses gives up on the way. Here, you come in once.</p>
+
+    <div class="cards">
+      <div class="card"><span class="mono fr-only">Spécialité</span><span class="mono en-only">Specialty</span><h3 class="fr-only">Neurologie</h3><h3 class="en-only">Neurology</h3><p class="fr-only">Consultation de neurologie sur rendez-vous.</p><p class="en-only">Neurology consultation by appointment.</p></div>
+      <div class="card"><span class="mono fr-only">Tous les jours</span><span class="mono en-only">Every day</span><h3 class="fr-only">Médecine générale</h3><h3 class="en-only">General medicine</h3><p class="fr-only">La consultation d'entrée : ce qui vous amène, examens si besoin, traitement.</p><p class="en-only">The first door: what brings you in, tests if needed, treatment.</p></div>
+      <div class="card"><span class="mono">Imagerie</span><h3 class="fr-only">Radiologie</h3><h3 class="en-only">Radiology</h3><p class="fr-only">Radiographie sur place — pas besoin d'aller ailleurs pour une image.</p><p class="en-only">X-ray on site — no need to go elsewhere for an image.</p></div>
+      <div class="card"><span class="mono">Imagerie</span><h3 class="fr-only">Échographie</h3><h3 class="en-only">Ultrasound</h3><p class="fr-only">Examen à l'échographie, y compris le suivi de grossesse.</p><p class="en-only">Ultrasound examination, including pregnancy follow-up.</p></div>
+      <div class="card"><span class="mono fr-only">Femmes</span><span class="mono en-only">Women</span><h3 class="fr-only">Gynécologie</h3><h3 class="en-only">Gynaecology</h3><p class="fr-only">Suivi gynécologique et suivi de grossesse.</p><p class="en-only">Gynaecological care and pregnancy follow-up.</p></div>
+      <div class="card"><span class="mono fr-only">Maternité</span><span class="mono en-only">Maternity</span><h3 class="fr-only">Accouchement</h3><h3 class="en-only">Delivery</h3><p class="fr-only">Mise au monde au centre, avec le suivi qui précède.</p><p class="en-only">Delivery at the centre, with the follow-up that leads to it.</p></div>
+      <div class="card"><span class="mono fr-only">Enfants</span><span class="mono en-only">Children</span><h3 class="fr-only">Pédiatrie</h3><h3 class="en-only">Paediatrics</h3><p class="fr-only">Consultations des nourrissons, enfants et adolescents.</p><p class="en-only">Consultations for infants, children and teenagers.</p></div>
+      <div class="card"><span class="mono">Bloc</span><h3 class="fr-only">Chirurgie</h3><h3 class="en-only">Surgery</h3><p class="fr-only">Interventions chirurgicales au centre.</p><p class="en-only">Surgical procedures at the centre.</p></div>
+      <div class="card"><span class="mono fr-only">Toujours</span><span class="mono en-only">Always</span><h3 class="fr-only">Consultations</h3><h3 class="en-only">Consultations</h3><p class="fr-only">Prendre rendez-vous, ou venir avec ce qui vous inquiète.</p><p class="en-only">Book an appointment, or come in with what worries you.</p></div>
+    </div>
+    <div class="strip2">
+      <figure>
+        <img src="img/imagerie.jpg" alt="Une échographie réalisée dans une salle d'imagerie" loading="lazy" decoding="async">
+        <figcaption><span class="fr-only">Photo d'illustration — à remplacer par une photo du centre.</span><span class="en-only">Illustration photo — to be replaced with a photo of the centre.</span></figcaption>
+      </figure>
+      <figure>
+        <img src="img/maternite.jpg" alt="Une mère tenant son nouveau-né avec une sage-femme" loading="lazy" decoding="async">
+        <figcaption><span class="fr-only">Photo d'illustration — à remplacer par une photo du centre.</span><span class="en-only">Illustration photo — to be replaced with a photo of the centre.</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="hair">
+  <div class="wrap">
+    <span class="mono fr-only">Prendre rendez-vous</span><span class="mono en-only">Book an appointment</span>
+    <h2 class="fr-only" style="margin-top:10px">Trois étapes, pas de formulaire compliqué</h2>
+    <h2 class="en-only" style="margin-top:10px">Three steps, no complicated form</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3 class="fr-only">Vous écrivez</h3><h3 class="en-only">You message</h3>
+        <p class="fr-only">Sur WhatsApp, en une phrase : ce qui vous amène et le jour qui vous arrange.</p>
+        <p class="en-only">On WhatsApp, in one line: what brings you in and the day that suits you.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3 class="fr-only">On vous confirme</h3><h3 class="en-only">We confirm</h3>
+        <p class="fr-only">Le service qui vous concerne, et l'heure — pour éviter une salle d'attente pleine.</p>
+        <p class="en-only">The right service for you, and the time — so you avoid a full waiting room.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3 class="fr-only">Vous venez</h3><h3 class="en-only">You come in</h3>
+        <p class="fr-only">Rue des pavés, à droite du carrefour armée de l'air. On vous attend.</p>
+        <p class="en-only">Rue des pavés, right of the air-force roundabout. We expect you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="acces" class="hair">
+  <div class="wrap">
+    <span class="mono fr-only">Accès</span><span class="mono en-only">Location</span>
+    <h2 class="fr-only" style="margin-top:10px">Où nous trouver</h2>
+    <h2 class="en-only" style="margin-top:10px">Where to find us</h2>
+    <div class="access">
+      <div class="accCard">
+        <div class="line">
+          <span class="dot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7Zm0 4.5A2.5 2.5 0 1 0 12 11a2.5 2.5 0 0 0 0-4.5Z"/></svg></span>
+          <span class="fr-only"><b>Rue des pavés</b>, à droite du carrefour armée de l'air — Bonapriso, Douala. Repère : <b>l'ancien aéroport</b>.</span>
+          <span class="en-only"><b>Rue des pavés</b>, right of the air-force roundabout — Bonapriso, Douala. Landmark: <b>the old airport</b>.</span>
+        </div>
+        <div class="line">
+          <span class="dot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h3l2 5-2 1.5a12 12 0 0 0 5.5 5.5L16 12l5 2v3a2 2 0 0 1-2.2 2A16 16 0 0 1 4 4.2 2 2 0 0 1 6 2Z"/></svg></span>
+          <span><a href="tel:+237694572277" style="font-weight:600">+237 694 57 22 77</a> · <span class="fr-only">appel et WhatsApp</span><span class="en-only">call and WhatsApp</span></span>
+        </div>
+        <div class="line">
+          <span class="dot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 5v5l4 2-.8 1.6L11 13V7h2Z"/></svg></span>
+          <span class="fr-only"><b>Horaires et tarifs :</b> à confirmer avec le centre — ils seront affichés ici, noir sur blanc, dès que vous nous les donnez.</span>
+          <span class="en-only"><b>Hours and fees:</b> to be confirmed with the centre — they will be shown here, in plain FCFA, as soon as you give them to us.</span>
+        </div>
+      </div>
+      <div>
+        <figure>
+        <img src="img/accueil.jpg" alt="L'accueil et la salle d'attente d'un centre médical" loading="lazy" decoding="async">
+        <figcaption><span class="fr-only">Photo d'illustration — à remplacer par une photo du centre.</span><span class="en-only">Illustration photo — to be replaced with a photo of the centre.</span></figcaption>
+      </figure>
+        <a class="btn btn-signal" style="margin-top:14px;width:100%" href="https://www.google.com/maps/search/?api=1&query=Centre+M%C3%A9dical+de+Bonanjo+Bonapriso+Douala">
+          <span class="fr-only">Ouvrir dans Google Maps</span><span class="en-only">Open in Google Maps</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="hair">
+  <div class="wrap">
+    <span class="mono fr-only">Questions</span><span class="mono en-only">Questions</span>
+    <h2 class="fr-only" style="margin-top:10px">Avant de venir</h2>
+    <h2 class="en-only" style="margin-top:10px">Before you come</h2>
+
+    <details>
+      <summary><span class="fr-only">Comment prendre rendez-vous ?</span><span class="en-only">How do I book an appointment?</span></summary>
+      <p><span class="fr-only">Sur WhatsApp au +237 694 57 22 77 — dites ce qui vous amène et le jour qui vous arrange. Vous pouvez aussi appeler le même numéro.</span><span class="en-only">On WhatsApp at +237 694 57 22 77 — say what brings you in and the day that suits you. You can also call the same number.</span></p>
+    </details>
+
+    <details>
+      <summary><span class="fr-only">Où se trouve exactement le centre ?</span><span class="en-only">Where exactly is the centre?</span></summary>
+      <p><span class="fr-only">Rue des pavés, à droite du carrefour armée de l'air, à Bonapriso — le repère que tout le monde connaît est l'ancien aéroport.</span><span class="en-only">Rue des pavés, right of the air-force roundabout, in Bonapriso — the landmark everyone knows is the old airport.</span></p>
+    </details>
+
+    <details>
+      <summary><span class="fr-only">Quelles spécialités sont disponibles sur place ?</span><span class="en-only">Which specialties are available on site?</span></summary>
+      <p><span class="fr-only">Neurologie, médecine générale, radiologie, échographie, gynécologie, pédiatrie, chirurgie, accouchement et consultations — soit neuf services sous un même toit.</span><span class="en-only">Neurology, general medicine, radiology, ultrasound, gynaecology, paediatrics, surgery, delivery and consultations — nine services under one roof.</span></p>
+    </details>
+
+    <details>
+      <summary><span class="fr-only">Puis-je écrire en anglais ?</span><span class="en-only">Can I write in English?</span></summary>
+      <p><span class="fr-only">Oui. Le centre reçoit en français et en anglais, et ce site existe dans les deux langues — le bouton FR | EN est en haut de la page.</span><span class="en-only">Yes. The centre serves patients in French and English, and this site exists in both languages — the FR | EN switch is at the top of the page.</span></p>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="mock">
+      <span class="fr-only">Maquette préparée par AMK pour le Centre Médical de Bonanjo. Horaires, tarifs, services et textes à valider par le centre avant toute mise en ligne. Aucune donnée médicale n'est collectée par cette page.</span>
+      <span class="en-only">Mockup prepared by AMK for Centre Médical de Bonanjo. Hours, fees, services and wording to be validated by the centre before going live. No medical data is collected by this page.</span>
+    </div>
+    <div>Centre Médical de Bonanjo · Bonapriso, Douala · +237 694 57 22 77</div>
+    <div>Site par AMK — Développement Web &amp; Solutions Digitales · <a href="#top"><span class="fr-only">Haut de page ↑</span><span class="en-only">Back to top ↑</span></a></div>
+  </div>
+</footer>
+
+<div class="pad-bottom"></div>
+
+<div class="sticky-wa">
+  <a class="w" href="https://wa.me/237694572277?text=Bonjour%2C%20je%20souhaite%20prendre%20rendez-vous%20au%20Centre%20M%C3%A9dical%20de%20Bonanjo.">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-1-.3-1.8-.7-2.2-1-3.6-3.3-3.7-3.5-.1-.1-.9-1.2-.9-2.3s.6-1.6.8-1.9c.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .5.4l.7 1.7c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.2.3-.1.5.1.2.6 1 1.2 1.6.8.7 1.4.9 1.6 1 .2.1.4.1.5 0l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.3.2.4.3.4.5Z"/></svg>
+    <span class="fr-only">Rendez-vous</span><span class="en-only">Appointment</span>
+  </a>
+  <a class="c" href="tel:+237694572277"><span class="fr-only">Appeler</span><span class="en-only">Call</span></a>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "name": "Centre Médical de Bonanjo",
+  "description": "Centre médical à Bonapriso, Douala : neurologie, médecine générale, radiologie, échographie, gynécologie, pédiatrie, chirurgie et accouchement.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rue des pavés, à droite du carrefour armée de l'air",
+    "addressLocality": "Bonapriso, Douala",
+    "addressCountry": "CM"
+  },
+  "telephone": "+237694572277",
+  "areaServed": "Douala",
+  "availableLanguage": ["fr", "en"],
+  "medicalSpecialty": "Neurologic",
+  "medicalSpecialty": "Neurologic"
+}
+</script>
+
+<script>
+(function(){
+  var html=document.documentElement, k='bonanjo-lang';
+  function setLang(l){
+    html.setAttribute('data-lang',l); html.lang=l;
+    document.getElementById('btn-fr').classList.toggle('is-on',l==='fr');
+    document.getElementById('btn-en').classList.toggle('is-on',l==='en');
+    try{localStorage.setItem(k,l)}catch(e){}
+  }
+  document.getElementById('btn-fr').addEventListener('click',function(){setLang('fr')});
+  document.getElementById('btn-en').addEventListener('click',function(){setLang('en')});
+  try{ var saved=localStorage.getItem(k); if(saved) setLang(saved); }catch(e){}
+})();
+</script>
+</body>
+</html>

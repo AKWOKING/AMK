@@ -1,0 +1,23 @@
+# LA BÉTHANIE — inspiration & Design Read (17 Sep 2026)
+
+## Live references pulled (URLs opened, not memory)
+| # | Reference | Angle | Taken (specifically) | Rejected |
+|---|---|---|---|---|
+| R1 | **malaica.com** (maternity-care service, Nairobi — live) | Maternity UX / patient journey | The **antenatal journey told as ordered steps** (their 01→04 « Book consult → check-ups → delivery → postnatal »): a care path, not a service list. Also their explicit **« 24/7 Emergency Support »** tile — round-the-clock is treated as a *service*, not a footnote. | The heavy testimonial wall (we can't publish patient names/reviews for La Béthanie), stock-photo hero, WP-template feel, subscription framing. |
+| R2 | **cliniqueodyssee.com** (Douala, Bonapriso — live, local benchmark) | Local service vocabulary | The words local patients actually search in Douala: « préparation à l'accouchement », « anesthésie péridurale », « césarienne », « échographie », « maternité ouverte 24H/24 » — useful for reading *how* Cameroonian clinics describe maternity. | Their `/desktop/fr/` desktop-only architecture (no real mobile page), frames-era navigation, practitioner-list-as-homepage. |
+| R3 | **hgoped.cm** (Hôpital Gynéco-Obstétrique et Pédiatrique de Douala — live, public reference) | Women's-health trust in Cameroon | Proof that **mother-and-child is a whole institution** in Douala — the category exists and is searched; their « dedicated to mother and child health » positioning shows gynaecology/maternity is a *destination*, not a service line. | Institutional/corporate tone (missions, 6-hectare campus, DG's welcome), French-only, no booking path, imagery that reads like an administration. |
+| R4 | **lagoonhospitals.com** (Iwosan Lagoon Hospitals, Lagos — live, private-hospital benchmark) | Private-clinic trust & 24-7 presence | How a private African hospital earns trust **above the fold**: appointment CTA + locations + services in a single scannable bar, emergency kept visible, « centre of excellence for mother and child » as a *facility* claim. | Event banners/carousel, JCI-accreditation bragging (not transferable to a Bonabéri clinic), corporate tertiary-care scale, video-news section. |
+
+**Gaps stated:** no Cameroonian clinic was found with a *well-designed* mobile site — R2/R3 are content references, not design references; the design direction comes from R1/R4 and the client's own printed matter (flyer + entrance sign), which is the strongest brand evidence we have.
+
+## Design Read
+Dials: **Soft 6/10 · Editorial 5/10 · Dense 3/10** — calm and feminine, never cute; a clinic that speaks quietly.
+Direction **« LA CONSULTATION »**: their printed gynaecology flyer becomes the page. Palette = **their** royal blue `#0F4C9C` + deep navy `#0A2C5E` + **leaf green** `#3F8B1E` (the green of their own "SERVICE DE" pill and heart) with a light blue tint; type = **Montserrat + Open Sans**, the flyer's own voice; imagery = **their real entrance photo** (the yellow building, green fence, white sign) instead of stock; and the flyer's **six prestations become a tickable list that composes one discreet WhatsApp message** — the one memorable interaction, built for a woman who does not want to explain herself out loud at a reception desk.
+
+## Rejected alternative directions (§19.3)
+- **« MATERNITÉ D'ABORD »** — pink/rose palette, baby imagery, big belly photos. Rejected: it reduces a medico-surgical centre with a surgical director to a baby ward, and it fights their own blue identity.
+- **« ANNUAIRE CORRIGÉ »** — a page built around fixing their directory listings (hours, services, map). Rejected as the *concept* (it's an argument, not a website) — kept as the outreach message angle.
+- **« 24/7 D'ABORD »** — emergency-led dark design with big red call bars. Rejected: Bonabéri patients arrive mostly for consultations and maternity follow-up; leading with red urgency makes a discreet gynaecology visit feel like an accident.
+
+## Uniqueness check
+Registry read before building. Nearest rows: **Bonabéri Medical Centre** (`site/clinic-bonaberi.html`, nameless sample — forest green + bone + amber, Outfit + Inter, bento services + published prices, care/urgency balance) and **Afrique Labo** (cyan + navy, Space Grotesk, test-console). Differentiation from Bonabéri on **6 axes**: layout (leaflet/path rather than bento), palette (royal blue + leaf green), type (Montserrat + Open Sans), imagery (**their real photo**, not illustrated placeholders), interaction (tickable prestations → one WhatsApp message), tone (intimate/discreet, FR-first, no prices at all). From Afrique Labo: different dominant hue (royal blue vs poster cyan), different archetype (care-leaflet vs catalogue console).
