@@ -37,21 +37,25 @@ GEN = ("> ⚙️ **Généré le {date} par `leads/build/views.py` — ne pas mod
        "puis on relance `leads/build/rebuild.sh`.\n")
 
 STAGE_LABEL = {
+    "won": "✅ Client — contrat signé",
     "prospecting": "① Prospection — à qualifier",
     "qualifying": "② Qualifié — en conversation",
-    "demo": "③ Démo envoyée",
+    "demo": "③ Aperçu envoyé",
+    "closing": "④ Prix posé, en négociation",
     "offer": "④ Offre posée",
-    # « closing » a manqué du 21 au 22/09 : les deux leads en négociation de prix (Univers Optique,
-    # Le Cristallin) ne s'affichaient NULLE PART — ni PIPELINE, ni Daily-Plan — alors que le CSV les
-    # donnait en closing avec une réponse humaine en attente. La section portait ce titre à la main
-    # (journal `L1235` : « ④ Prix posé, en négociation — 2 ») ; un rebuild l'a effacée. Le voilà dans
-    # la machine. Le ④′ dit ce qu'il est : le cran d'après de l'offre, pas une offre fraîche.
-    "closing": "④′ Prix posé, en négociation",
     "delivered": "⑤ Livré",
+    "lost": "❌ Perdu",
     "parked": "⏸ Parqué",
     "disqualified": "⛔ Écarté",
 }
-STAGE_ORDER = ["offer", "closing", "demo", "qualifying", "prospecting", "parked", "disqualified"]
+STAGE_ORDER = ["won", "delivered", "closing", "offer", "demo", "qualifying",
+               "prospecting", "lost", "parked", "disqualified"]
+# ⚠️ CE QUE ÇA A CORRIGÉ (21/09, 23:10) : `closing` n'était NI dans STAGE_ORDER NI dans STAGE_LABEL.
+# Le CRM était juste — le tableau de bord, non. Nos DEUX prospects les plus avancés (Le Cristallin,
+# Univers Optique : prix posé, aperçu construit) ne figuraient AUCUNE PART dans PIPELINE.md, parce que
+# la boucle d'affichage saute silencieusement toute valeur inconnue. Un compteur qui omet le lead le
+# plus chaud est pire qu'un compteur absent. D'où l'assertion plus bas : AUCUN stage du CSV ne peut
+# rester hors de la vue.
 
 # Décisions humaines qui priment sur les règles automatiques : slug -> (échéance ISO, note)
 RELANCE_A_JOUR = {
@@ -60,6 +64,13 @@ RELANCE_A_JOUR = {
     "midas-touch-optic-center-mitoc": ("2026-09-21", "FU2 fixée lun 21"),
     "baird-memorial-college": ("2026-09-21", "FU2 fixée lun 21 (même lot que MITOC)"),
     "labiomed-deido": ("2026-09-21", "M+2 — il a dit « je vous reviens quand je serai disponible » (report poli, pas un non)"),
+    # Les deux fils « prix posé » du 21/09 : l'échéance vient de ce qui a été ÉCRIT au client,
+    # pas d'un calcul M+2. Univers Optique = l'aperçu promis « d'ici demain ». Le Cristallin =
+    # la réponse de King sur le périmètre FB attendue avant d'envoyer, relance 48 h après.
+    "univers-optique": ("2026-09-22", "aperçu GRATUIT PROMIS le 21/09 à 18:08 (« d'ici demain ») — "
+                                      "l'envoi du fichier est la première tâche de la soirée"),
+    "le-cristallin": ("2026-09-23", "relance M+2 après la réponse de King sur le périmètre "
+                                     "(page seule / page + Facebook) ; fichier déjà prêt"),
     # UNI-LABO a DEMANDÉ un rendez-vous : ce n'est plus une relance à calculer.
     "uni-labo-bonamoussadi": ("2026-09-25", "RENDEZ-VOUS demandé par le prospect — vendredi 25/09"),
 }
@@ -183,6 +194,10 @@ def due_for_relance(r):
 def view_pipeline(rows, idx, date):
     L = ["# PIPELINE — où en est chaque lead\n", GEN.format(date=date)]
     c = Counter(r["stage"] or "(sans étape)" for r in rows)
+    orphan = sorted(k for k in c if k and k not in STAGE_ORDER)
+    if orphan:
+        sys.exit(f"✗ stage(s) orphelins {orphan} : présents dans le CSV, absents de STAGE_ORDER — "
+                 f"ces leads seraient invisibles dans PIPELINE.md. Ajouter l'étape, pas le lead.")
     L += ["## Compteur\n", "| Étape | Leads |", "|---|---|"]
     for s in STAGE_ORDER + [""]:
         if c.get(s):

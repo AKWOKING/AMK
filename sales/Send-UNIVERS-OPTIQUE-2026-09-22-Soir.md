@@ -95,10 +95,11 @@ vérifier les **718 514 octets** et `ec91063bbe…` avant de répondre à la rem
 3. **LE CRISTALLIN** : sa réponse **A / B** (page seule 100 000 · page + page Facebook 50 000) — relance
    prévue le 23/09, et lui renvoyer `demos/concept-le-cristallin-v1.html` (620 492 o), sa copie du
    dimanche étant cassée.
-4. **Feuille de leads** : le *Follow-up date* d'Univers passe du 22/09 au **23/09** dès ce
-   fichier envoyé — à changer dans `leads/build/crm.py`, bloc `ETAT_21_2209`, **jamais dans
-   `leads/CRM.csv`** (c'est une sortie : le 22/09 à 08:31, un `rebuild.sh` a effacé l'état qui n'y
-   figurait qu'à la main). Puis `bash leads/build/rebuild.sh`.)
+4. **Feuille de leads** : le *Follow-up date* d'Univers passe du 22/09 au **23/09** dès ce fichier
+   envoyé — à changer dans `leads/build/crm.py`, bloc `EVENING_2109` (la table d'état), **jamais dans
+   `leads/CRM.csv`** : c'est une SORTIE, et le 22/09 à 08:31 un `rebuild.sh` lancé depuis une branche en
+   retard a effacé l'état des deux fils chauds. Ensuite `bash leads/build/rebuild.sh` — le garde-fou
+   `leads/build/guard.py` refusera si un générateur a bougé sans validation : c'est voulu.
 5. **Envoi** : je ne touche à aucun compte — les messages sont prêts ci-dessus, le déclencheur reste à toi.
 
 ---

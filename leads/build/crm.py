@@ -647,11 +647,32 @@ OPTICIENS_2109 = [
          stage="prospecting", contacted="No", reply="No", demo="No",
          notes="VAGUE 1 OPTICIENS (21/09). Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
     dict(slug="univers-optique", org="Univers Optique", city="Douala", org_type="other", language="FR",
-         wa_number="699 25 28 74", wa_verified="unknown",
+         wa_number="699 25 28 74", wa_verified="yes",
          contact_channel="WhatsApp", decision="BAYANG BIHEN Calvin", source="directory",
-         source_detail="Annuaire officiel ONOC + Maligah",
-         stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : BAYANG BIHEN Calvin. (2e : 674 59 93 02) Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         source_detail="Annuaire officiel ONOC + Maligah + Google Maps + Wayback + kerawa (2022)",
+         stage="closing", contacted="Yes", reply="Yes", demo="Yes",
+         reply_type="human", last_send_state="delivered",
+         site_url="", site_checked_on="2026-09-21",
+         Website="univers-optique.com — HORS LIGNE (aucun enregistrement DNS, vérifié 21/09 ; dernière copie Wayback vivante 02/11/2023, répertoire Apache vide au 09/01/2024)",
+         **{"Website status": "AUCUN site à moderniser : le domaine est MORT. Le cabinet existe en ligne "
+            "ailleurs — fiche Google (3,3/5 · 6 avis · champ site VIDÉ · aucun réseau relié), annuaire "
+            "Maligah à champs vides, annonce kerawa retirée. C'EST UNE REPRISE, PAS UNE REFONTE. "
+            "Dernière page vivante = WordPress avec le nom d'un autre opticien (« Gweleo ») dans le texte, "
+            "3 cartes pointant vers la même URL, et une bannière « 15 % » sans offre derrière."},
+         **{"Follow-up date": "2026-09-22", "Conversation": "Message 1 lun 21/09 17:50 (variante C) · "
+            "17:56 il répond « Combien ça me coûte » (2e question de prix de la campagne) · 18:08 King : "
+            "100 000 FCFA la page complète FR|EN, mise en ligne 3 à 5 jours, 50 000 pour commencer + 50 000 "
+            "à la mise en ligne, rien dû avant accord, aperçu gratuit promis « d'ici demain » · AUCUN prix "
+            "n'est écrit sur la maquette, et aucun ne sera publié sur SA page sans son accord."},
+         **{"Last FB post": "aucune page Facebook rattachable à ce nom trouvée (21/09) — la page « Univers Optique · 508 likes · Global trade invesment » est un HOMONYME, métier différent : NE PAS REVENDIQUER, NE PAS LIER."},
+         **{"FB followers": "—"},
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : BAYANG BIHEN Calvin (raison sociale annuaire : ETS UNIVERS OPTIQUE). "
+               "Deuxième ligne 674 59 93 02 ; fixe publié en DEUX VERSIONS contradictoires par SES propres supports "
+               "(« +237 33 18 33 08 » / « 243 18 33 08 ») → posé comme QUESTION sur la page, jamais tranché par nous. "
+               "Adresse Google : rue de Bépanda omnisports, plus code 3P3G+JCG, entre pharmacie Sass et Express Union, BP 4680. "
+               "Créé le 01/08/2009 (annonce kerawa, support retiré). E-mails publics : universoptique@yahoo.fr + universoptique.uo@gmail.com. "
+               "Raretés réelles à vendre : PROTHÈSES OCULAIRES, verres de sécurité en atelier, FORMATIONS. "
+               "Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
     dict(slug="lyfyoptic", org="LyfyOptic", city="Douala", org_type="other", language="FR",
          wa_number="699 98 06 66", wa_verified="unknown",
          contact_channel="WhatsApp", decision="BELL MBENOUN Dominique", source="directory",
@@ -965,6 +986,23 @@ def wa_number_for(rec: dict) -> str:
 #    Aucun verbatim n'est supprimé : la colonne d'origine du classeur reste intacte.
 CONTRADICTIONS = [
     # (slug, contradiction, retenu, écarté)
+    ("le-cristallin",
+     "Ma note d'annuaire (21/09) affirmait « Aucun site trouvé » et j'ai écrit le message 1 dessus. Son "
+     "propre flyer, lu plus tard, portait l'adresse du cabinet.",
+     "lecristallinoptique.com est EN LIGNE et a été lu EN ENTIER le 21/09 (roi : « Le cristallin a déjà un "
+     "site »), et IL A AUSSI UNE PAGE FACEBOOK — dite par lui dans sa note vocale de 18:01, absente de ma "
+     "fiche : je n'avais pas cherché là où il me pointait.",
+     "l'argument « introuvable » retiré de la ligne ; le lead passe en REFONTE + création/reprise de page FB "
+     "(sa demande, 18:01) ; les claims non contrôlés sont rétrogradés en QUESTIONS posées sur la page : les "
+     "12 assureurs (jamais vus sur la page d'accueil) et « 24 ans d'expérience »."),
+    ("univers-optique",
+     "Mon message 1 du 21/09 17:50 affirmait « absent du web » et « deux recherches ne suffisent pas à le trouver ». "
+     "La fouille du même soir prouve le contraire : fiche Google notée (3,3/5 · 6 avis), domaine enregistré (mort), "
+     "fiche annuaire à son nom légal, annonce datée de 2009 encore indexée.",
+     "le constat exact, plus fort et vérifiable : « votre seule page vivante est celle d'un autre » — son site ne "
+     "répond plus depuis janvier 2024, et le champ « site web » de sa fiche Google est vide.",
+     "l'angle « introuvable », déjà retiré chez Le Cristallin pour la même raison. Une affirmation sur la présence "
+     "en ligne d'un prospect doit venir d'une source LUE, datée — pas d'une impression de recherche."),
     ("comobil-college-moderne-bilingue-les-laureats",
      "Le playbook §A4 code en dur une kill list « les deux 18 » (COMOBIL + OraCare) ; COMOBIL est parké depuis le 14/09. "
      "L'onglet DAILY OPS dit « PARKED 14 Sep (King decision) » — mon audit du 18/09 prétendait le contraire (infirmé).",
@@ -1025,81 +1063,14 @@ STRUCTURAL = [
 ]
 
 
-# ── ÉTAT VÉRIFIÉ 21–22/09 · Univers Optique et Le Cristallin.
-#    Ces deux lignes étaient enrichies à la main dans `leads/CRM.csv` et nulle part ailleurs.
-#    Conséquence mesurée le 22/09 à 08:31 : `bash leads/build/rebuild.sh` les a ramenées à leur
-#    ligne d'annuaire — la conversation, le prix déjà annoncé, le follow-up, la clause de
-#    contradiction et le stage « closing » ont disparu d'un coup. Rétablies par
-#    `git checkout HEAD -- leads/CRM.csv`, puis rapportées ICI, parce que la seule source est ce
-#    fichier (c'est ce que `rebuild.sh` écrit lui-même au dernier mot).
-#
-#    Règle de ce bloc : il FAIT FOI pour ces deux lignes et remplace la ligne d'annuaire, plus
-#    vieille et plus pauvre. Il n'écrase rien d'écrit le même jour : `_apply_envois` passe avant
-#    lui et ne concerne pas ces slugs, l'étape M2 passe après et ne liste pas ces slugs (la
-#    clause « CONTRADICTION RÉSOLUE » est déjà dans le texte de Notes, recopié tel quel — ne pas
-#    la doubler en ajoutant ces slugs à CONTRADICTIONS). Ne pas résumer ces valeurs : le verbatim
-#    du client est la donnée, pas un ornement.
-ETAT_21_2209 = {
-    "univers-optique": {
-        "Contact channel": "WhatsApp",
-        "Contacted": "Yes",
-        "Conversation": "17:50 message 1 (variante C) · 17:56 IL DEMANDE LE PRIX · 18:08 King répond : 100 000 FCFA la page complète FR|EN en 3-5 jours, 50 000 pour commencer + 50 000 à la mise en ligne, rien dû avant accord, APERÇU GRATUIT PROMIS « d'ici demain » → la promesse fait de l'envoi la PREMIÈRE tâche de la soirée, avant toute autre réponse.",
-        "Decision maker": "BAYANG BIHEN Calvin",
-        "Demo made": "Yes",
-        "FB followers": "—",
-        "Follow-up date": "2026-09-22",
-        "Last FB post": "aucune page Facebook rattachable à ce nom trouvée (21/09) — la page « Univers Optique · 508 likes · Global trade invesment » est un HOMONYME, métier différent : NE PAS REVENDIQUER, NE PAS LIER.",
-        "Notes": "| CONTRADICTION RÉSOLUE (M2) — retenu : le constat exact, plus fort et vérifiable : « votre seule page vivante est celle d'un autre » — son site ne répond plus depuis janvier 2024, et le champ « site web » de sa fiche Google est vide. · ENVOI DÛ : **la V2** `demos/concept-univers-optique-v2.html` (718 Ko / 734 727 octets, sha256 ca52d3c5f6ccb7ec…) — la v1 `concept-univers-optique-v1.html` (740 056 octets, sha256 719f8b60283184b6…) est gardée pour la comparaison des deux directions et NE part plus ; aperçu promis « d'ici demain ») AVANT 09:00 mardi 22/09, et en repartant du fichier DU 22/09 : la version du 21 au soir ne peignait son contenu que si le JavaScript s'exécutait (défaut trouvé par King, corrigé à la source ; loi consignée design/LESSONS.md du 22/09). Repli si WhatsApp refuse la pièce jointe : la version sobre sans visuels, JAMAIS un lien non déployé. Feuille : `sales/Send-UNIVERS-OPTIQUE-2026-09-22-Matin.md` (la Soir reste archive : elle décrit la v1). Ne PAS répéter « absent du web » (faux — voir la contradiction M2 de cette ligne) ; la page pose SIX questions qu'il doit trancher avant publication (fixe publié en deux versions, offre « 15 % », ordre des trois lignes, nom du titulaire, e-mail unique, accès à sa fiche Google). AUCUNE page Facebook rattachable à ce nom (21/09) : celle de 508 likes est un homonyme (« Global trade invesment ») — ni revendiquée ni liée. Récupérer l'ACCÈS à sa fiche Google PRIME sur la mise en ligne : c'est son premier visiteur, et le champ « site web » y est vide.",
-        "Reply": "Yes — lun 21/09 17:56 : « Combien ça me coûte » (2ᵉ question de prix de la campagne).",
-        "Website": "univers-optique.com — HORS LIGNE (aucun enregistrement DNS, vérifié 21/09 ; dernière copie Wayback vivante 02/11/2023, répertoire Apache vide au 09/01/2024)",
-        "Website status": "AUCUN site à moderniser : le domaine est MORT. Le cabinet existe en ligne ailleurs — fiche Google (3,3/5 · 6 avis · champ site VIDÉ · aucun réseau relié), annuaire Maligah à champs vides, annonce kerawa retirée. C'EST UNE REPRISE, PAS UNE REFONTE. Dernière page vivante = WordPress avec le nom d'un autre opticien (« Gweleo ») dans le texte, 3 cartes pointant vers la même URL, et une bannière « 15 % » sans offre derrière.",
-        "contradiction": "Mon message 1 du 21/09 17:50 affirmait « absent du web » et « deux recherches ne suffisent pas à le trouver ». La fouille du même soir prouve le contraire : fiche Google notée (3,3/5 · 6 avis), domaine enregistré (mort), fiche annuaire à son nom légal, annonce datée de 2009 encore indexée.",
-        "follow_ups_sent": "0",
-        "last_send_state": "delivered",
-        "reply_type": "human",
-        "site_checked_on": "2026-09-21",
-        "source": "directory",
-        "source_detail": "Annuaire officiel ONOC + Maligah + Google Maps + Wayback + kerawa (2022)",
-        "stage": "closing",
-        "stage_since": "2026-09-21",
-        "value_discarded": "l'angle « introuvable », déjà retiré chez Le Cristallin pour la même raison. Une affirmation sur la présence en ligne d'un prospect doit venir d'une source LUE, datée — pas d'une impression de recherche.",
-        "value_kept": "le constat exact, plus fort et vérifiable : « votre seule page vivante est celle d'un autre » — son site ne répond plus depuis janvier 2024, et le champ « site web » de sa fiche Google est vide.",
-        "wa_number": "699 25 28 74",
-        "wa_verified": "yes",
-    },
-    "le-cristallin": {
-        "Contact channel": "WhatsApp",
-        "Contacted": "Yes",
-        "Conversation": "VERBATIM de la vocale (retranscrit par King, 21/09 19:40) : « bonsoir j'ai un site web et une addresse Facebook , bon je ne sais pas si vous avez consulter mon site web ou quoi vous voulez seulement cree une autre ». Il a aussi ENVOYÉ l'URL de sa page : https://www.facebook.com/lecristallinoptique/ (lien de partage, 18:01). 18:06 : « last seen today at 18:06 » — il est sur WhatsApp plusieurs fois par jour, la fenêtre de réponse est réelle, pas théorique.",
-        "Decision maker": "MESSOUE LONTE Serge Nazaire — ASCOMA écrit « MESSOUA » : DEUX graphies connues, à caler sur sa pièce d'identité, jamais tranchées par nous",
-        "Demo made": "Yes",
-        "Facebook": "https://www.facebook.com/lecristallinoptique/",
-        "Follow-up date": "2026-09-23",
-        "Notes": "| CONTRADICTION RÉSOLUE (M2) — retenu : lecristallinoptique.com est EN LIGNE et a été lu EN ENTIER le 21/09 (roi : « Le cristallin a déjà un site »), et IL A AUSSI UNE PAGE FACEBOOK — dite par lui dans sa note vocale de 18:01, absente de ma fiche : je n'avais pas cherché là où il me pointait. · FB : 515 likes · 44 en parlent · 98 y étaient (lus le 21/09 dans des annuaires publics, affichés sans enjoliver sur la maquette) · avis Google : 3 avis, note 3,0. ENVOI : envoyer LE FICHIER `demos/concept-le-cristallin-v1.html` (592 Ko, ≤ budget WhatsApp 1 100 Ko), PAS un lien — `amk-cm.vercel.app/cristallin/` répond 404 tant que rien n'est déployé. BLOQUÉ par UNE réponse de King : est-ce qu'AMK reprend la page Facebook du cabinet, et à 50 000 FCFA ? Réponse « A » (page seule) ou « B » (page + FB) → le message part. Feuille prête : `sales/Send-LE-CRISTALLIN-2026-09-21-Soir.md` (A sans prix / B : refonte 100 000 FCFA + reprise page FB 50 000 FCFA, 50/50, rien dû avant accord). S'il marchande : on ajuste le PÉRIMÈTRE, on ne baisse jamais les 100 000 FCFA. ADRESSE CLOSE à trois sources (site + flyer + annuaire ASCOMA) : Akwa, boulevard de la République, carrefour TIF, face ancien COMECI · 242 65 12 65 / 699 90 55 77 / 679 63 20 12 · contact@lecristallinoptique.com. MON « Bonapriso / CTFIC Mballa 2 » d'hier soir ne figurait dans AUCUNE des trois : retiré. La maquette ne corrige plus, elle DEMANDE s'il existe un second local.",
-        "Reply": "YES lun 21/09 17:53 « Ok » (2 min) puis 18:01 note VOCALE : il a un site ET une page Facebook, et il DEMANDE si on veut bien lui en créer une autre = signal d'achat.",
-        "Website status": "VIVANT et consultable le 21/09 (lu EN ENTIER) — mais sans WhatsApp ni prise de rendez-vous, carrousels dupliqués ×3, horaires contredits par son propre flyer. C'EST UNE REFONTE, PAS UNE CRÉATION.",
-        "contradiction": "Ma note d'annuaire (21/09) affirmait « Aucun site trouvé » et j'ai écrit le message 1 dessus. Son propre flyer, lu plus tard, portait l'adresse du cabinet.",
-        "follow_ups_sent": "0",
-        "last_send_state": "read",
-        "reply_type": "human",
-        "source": "directory",
-        "source_detail": "Annuaire officiel ONOC + Maligah",
-        "stage": "closing",
-        "stage_since": "2026-09-21",
-        "value_discarded": "l'argument « introuvable » retiré de la ligne ; le lead passe en REFONTE + création/reprise de page FB (sa demande, 18:01) ; les claims non contrôlés sont rétrogradés en QUESTIONS posées sur la page : les 12 assureurs (jamais vus sur la page d'accueil) et « 24 ans d'expérience ».",
-        "value_kept": "lecristallinoptique.com est EN LIGNE et a été lu EN ENTIER le 21/09 (roi : « Le cristallin a déjà un site »), et IL A AUSSI UNE PAGE FACEBOOK — dite par lui dans sa note vocale de 18:01, absente de ma fiche : je n'avais pas cherché là où il me pointait.",
-        "wa_number": "699 90 55 77",
-        "wa_verified": "unknown",
-    },
-}
-
-
 # ── M4 · les dossiers de travail, liés à leur ligne.
 #    Le rapprochement se fait sur le SLUG, jamais par recherche de texte : l'audit §4 prévenait
 #    qu'une recherche du mot « NABESK » remonte la ligne Baird Memorial (« same road as NABESK »),
 #    ce qui produirait une fausse fusion.
 DOSSIERS = {
     "afrique-labo-douala": "clients/afrique-labo/",
+    "le-cristallin": "clients/le-cristallin/",
+    "univers-optique": "clients/univers-optique/",
     "jempo-deido": "clients/jempo/",
     "opticien-bali-douala": "clients/l-opticien/",
     "la-bethanie-bonaberi": "clients/la-bethanie/",
@@ -1118,8 +1089,6 @@ DOSSIERS = {
     "interlabo-akwa": "clients/_mockups/labs/interlabo.jpg",
     "labiomed-deido": "clients/_mockups/labs/labiomed.jpg",
     "labo-meka-bonamoussadi": "clients/_mockups/labs/meka.jpg",
-    "univers-optique": "clients/univers-optique/",
-    "le-cristallin": "clients/le-cristallin/",
 }
 
 # Dossiers qui n'appartiennent à aucun lead (gabarits de maquette, pas des prospects)
@@ -1162,6 +1131,111 @@ def read_workbook():
             continue
         rows.append(dict(zip(headers, vals)))
     return headers, rows
+
+
+# ══════════════════════════════════════════════════════════════════════════
+# ÉTAT DES FILS CHAUDS — 21/09 au soir
+# ══════════════════════════════════════════════════════════════════════════
+# **Pourquoi ce bloc existe.** À 22:55, `bash leads/build/rebuild.sh` a EFFACÉ l'état de Le Cristallin
+# (`closing`, la page FB à 515, la date de relance, le verbatim de la vocale) : ces valeurs avaient été
+# écrites DANS `leads/CRM.csv` sans être écrites dans `leads/build/crm.py`. Le CSV est une SORTIE : tout
+# ce qu'on y tape à la main meurt au prochain passage, et meurt SILENCIEUSEMENT. Cinquième occurrence du
+# même piège dans ce dépôt (après `Daily Ops.csv`, KEYMAP, les deux graphies, le lien Vercel).
+# Loi gravée ici : **un fait d'échange — qui a répondu, quoi, à quelle heure, avec quelle URL lue — n'a
+# pas le droit de vivre ailleurs que dans un générateur.**
+#
+# **Ce qu'on y met** : uniquement ce qui ne se déduit pas (verbatims, horodatages, URL lues, chiffre lu
+# avec sa date, promesse faite au client). **Ce qu'on n'y met pas** : kill list, health, dernier message
+# envoyé, résumé des notes, existence d'un aperçu — tout ça se DÉDUIT (`demo` + `dossier`).
+#
+# **Trois garde-fous machine, et ils ont mordu tout de suite (c'est leur preuve)** : un slug inconnu fait
+# échouer le build ; une clé qui n'est pas une colonne canonique fait échouer le build ; l'application
+# arrive APRÈS toutes les fusions, donc rien ne peut écraser un fait d'échange. `bamfam_*`, `Last FB post`,
+# `FB followers`, `preview_sent` et `first_touched` ne sont PAS des colonnes : y fourrer un fait, c'est
+# l'écrire à l'encre effaçable. Le fait va dans `Notes`, `Conversation` ou `Reply`.
+EVENING_2109 = {
+    "le-cristallin": {
+        "stage": "closing",
+        "Contacted": "Yes",
+        "Reply": "YES lun 21/09 17:53 « Ok » (2 min) puis 18:01 note VOCALE : il a un site ET une page "
+                 "Facebook, et il DEMANDE si on veut bien lui en créer une autre = signal d'achat.",
+        "Conversation": "VERBATIM de la vocale (retranscrit par King, 21/09 19:40) : « bonsoir j'ai un site "
+                        "web et une addresse Facebook , bon je ne sais pas si vous avez consulter mon site web "
+                        "ou quoi vous voulez seulement cree une autre ». Il a aussi ENVOYÉ l'URL de sa page : "
+                        "https://www.facebook.com/lecristallinoptique/ (lien de partage, 18:01). "
+                        "18:06 : « last seen today at 18:06 » — il est sur WhatsApp plusieurs fois par jour, la "
+                        "fenêtre de réponse est réelle, pas théorique.",
+        "reply_type": "human",
+        "last_send_state": "read",
+        "Demo made": "Yes",
+        "Facebook": "https://www.facebook.com/lecristallinoptique/",
+        "Website status": "VIVANT et consultable le 21/09 (lu EN ENTIER) — mais sans WhatsApp ni prise de "
+                          "rendez-vous, carrousels dupliqués ×3, horaires contredits par son propre flyer. "
+                          "C'EST UNE REFONTE, PAS UNE CRÉATION.",
+        "Decision maker": "MESSOUE LONTE Serge Nazaire — ASCOMA écrit « MESSOUA » : DEUX graphies connues, à "
+                          "caler sur sa pièce d'identité, jamais tranchées par nous",
+        "Follow-up date": "2026-09-23",
+        "Notes_extra": "FB : 515 likes · 44 en parlent · 98 y étaient (lus le 21/09 dans des annuaires "
+                       "publics, affichés sans enjoliver sur la maquette) · avis Google : 3 avis, note 3,0. "
+                       "ENVOI : envoyer LE FICHIER `demos/concept-le-cristallin-v1.html` (592 Ko, ≤ budget "
+                       "WhatsApp 1 100 Ko), PAS un lien — `amk-cm.vercel.app/cristallin/` répond 404 tant que "
+                       "rien n'est déployé. BLOQUÉ par UNE réponse de King : est-ce qu'AMK reprend la page "
+                       "Facebook du cabinet, et à 50 000 FCFA ? Réponse « A » (page seule) ou « B » (page + FB) "
+                       "→ le message part. Feuille prête : `sales/Send-LE-CRISTALLIN-2026-09-21-Soir.md` "
+                       "(A sans prix / B : refonte 100 000 FCFA + reprise page FB 50 000 FCFA, 50/50, rien dû "
+                       "avant accord). S'il marchande : on ajuste le PÉRIMÈTRE, on ne baisse jamais les "
+                       "100 000 FCFA. ADRESSE CLOSE à trois sources (site + flyer + annuaire ASCOMA) : Akwa, "
+                       "boulevard de la République, carrefour TIF, face ancien COMECI · 242 65 12 65 / "
+                       "699 90 55 77 / 679 63 20 12 · contact@lecristallinoptique.com. MON « Bonapriso / CTFIC "
+                       "Mballa 2 » d'hier soir ne figurait dans AUCUNE des trois : retiré. La maquette ne "
+                       "corrige plus, elle DEMANDE s'il existe un second local.",
+    },
+    "univers-optique": {
+        "stage": "closing",
+        "Contacted": "Yes",
+        "Reply": "Yes — lun 21/09 17:56 : « Combien ça me coûte » (2ᵉ question de prix de la campagne).",
+        "Conversation": "17:50 message 1 (variante C) · 17:56 IL DEMANDE LE PRIX · 18:08 King répond : "
+                        "100 000 FCFA la page complète FR|EN en 3-5 jours, 50 000 pour commencer + 50 000 à la "
+                        "mise en ligne, rien dû avant accord, APERÇU GRATUIT PROMIS « d'ici demain » → la "
+                        "promesse fait de l'envoi la PREMIÈRE tâche de la soirée, avant toute autre réponse.",
+        "reply_type": "human",
+        "last_send_state": "delivered",
+        "Demo made": "Yes",
+        "Follow-up date": "2026-09-22",
+        "Notes_extra": "ENVOI DÛ : **la V2** `demos/concept-univers-optique-v2.html` (718 Ko / 734 727 octets, sha256 ca52d3c5f6ccb7ec…) — la v1 `concept-univers-optique-v1.html` (740 056 octets, sha256 719f8b60283184b6…) est gardée pour la comparaison des deux directions et NE part plus ; aperçu promis « d'ici "
+                       "demain ») AVANT 09:00 mardi 22/09, et en repartant du fichier DU 22/09 : la version du 21 au soir "
+                       "ne peignait son contenu que si le JavaScript s'exécutait (défaut trouvé par King, corrigé "
+                       "à la source ; loi consignée design/LESSONS.md du 22/09). Repli si WhatsApp refuse la "
+                       "pièce jointe : la "
+                       "version sobre sans visuels, JAMAIS un lien non déployé. Feuille : "
+                       "`sales/Send-UNIVERS-OPTIQUE-2026-09-22-Matin.md` (la Soir reste archive : elle décrit la v1). Ne PAS répéter « absent du web » "
+                       "(faux — voir la contradiction M2 de cette ligne) ; la page pose SIX questions qu'il "
+                       "doit trancher avant publication (fixe publié en deux versions, offre « 15 % », ordre "
+                       "des trois lignes, nom du titulaire, e-mail unique, accès à sa fiche Google). "
+                       "AUCUNE page Facebook rattachable à ce nom (21/09) : celle de 508 likes est un homonyme "
+                       "(« Global trade invesment ») — ni revendiquée ni liée. Récupérer l'ACCÈS à sa fiche "
+                       "Google PRIME sur la mise en ligne : c'est son premier visiteur, et le champ « site "
+                       "web » y est vide.",
+    },
+}
+
+
+def _apply_evening(out: list) -> None:
+    by = {r.get("slug"): r for r in out}
+    missing = [k for k in EVENING_2109 if k not in by]
+    if missing:
+        sys.exit(f"✗ EVENING_2109 : slug(s) introuvable(s) {missing} — une table d'état qui ne trouve "
+                 f"pas sa ligne est une table menteuse. Rien n'a été écrit.")
+    for slug, patch in EVENING_2109.items():
+        r = by[slug]
+        extra = patch.pop("Notes_extra", "")
+        for k, v in patch.items():
+            r[k] = v
+        if extra:
+            r["Notes"] = (str(r.get("Notes") or "") + " · " + extra).strip(" ·")
+        r["stage_since"] = "2026-09-21"
+        r["follow_ups_sent"] = r.get("follow_ups_sent") or "0"
+
 
 
 def main() -> int:
@@ -1259,13 +1333,6 @@ def main() -> int:
         a["Notes"] = (str(a.get("Notes") or "") + " · " + note).strip(" ·")
         b["Notes"] = (str(b.get("Notes") or "") + " · " + note).strip(" ·")
 
-    # 4a' · ÉTAT VÉRIFIÉ 21–22/09 — la ligne d'annuaire est périmée pour ces deux leads :
-    #     ce que le roi a lu, reçu et répondu depuis fait foi, et rien de ce qui est écrit aujourd'hui
-    #     ne passe par là (voir la règle du bloc ETAT_21_2209).
-    for rec in out:
-        for k, v in ETAT_21_2209.get(rec.get("slug"), {}).items():
-            rec[k] = v
-
     # 4b · M4 — lier les dossiers de travail
     for rec in out:
         d = DOSSIERS.get(rec.get("slug"))
@@ -1304,6 +1371,11 @@ def main() -> int:
             else:
                 rec[full] = rec.pop(short)
         rec.setdefault("School", "")
+
+    # 2g · l'état des fils chauds du 21/09, appliqué EN DERNIER des fusions. Avant, il se faisait
+    #      écraser ; après KEYMAP il ne pourrait plus rien poser. C'est LA place : rien, après,
+    #      ne réécrit un fait d'échange.
+    _apply_evening(out)
 
     cols = headers + NEW_FIELDS
     allowed = set(cols)

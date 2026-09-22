@@ -1477,15 +1477,18 @@ budget Facebook) : relance prévue le 23/09, et son fichier doit être renvoyé 
 devra passer au 23/09 dans la feuille de leads.
 
 **Et la faute commise ici, écrite parce qu'elle est réelle.** À 08:31, `bash leads/build/rebuild.sh` a
-réduit **Univers Optique et Le Cristallin** à leur ligne d'annuaire : stage effacé, conversation vidée,
-follow-up perdu, prix annoncé disparu. Le générateur n'était pas cassé — l'enrichissement n'avait jamais
-été écrit dedans, il vivait à la main dans `leads/CRM.csv`, qui est une SORTIE. Rétabli par
-`git checkout HEAD -- leads/CRM.csv …`, puis **rapporté à la source** : bloc `ETAT_21_2209` dans
-`leads/build/crm.py` (25 + 22 champs recopiés à l'octet près), et le contrôle est simple — le CSV
-régénéré est **identique à l'état vérifié, `diff` = 0 ligne**. Deuxième trou trouvé dans le même
-mouvement : `leads/build/views.py` ne connaissait pas l'étape `closing`, donc un lead en négociation de
-prix ne s'affichait **nulle part** (ni PIPELINE, ni plan du jour) ; la section « Prix posé, en
-négociation » était tenue à la main depuis le 21/09. Ajoutée dans la machine : `④′ Prix posé, en
-négociation — 2` rend les deux leads avec leur trace au journal. **Loi pour la suite : on ne corrige pas
+réduit **Univers Optique et Le Cristallin** à leur ligne d'annuaire : closing effacé, conversation vidée,
+follow-up perdu. Cause : cette branche était en retard de dix-huit commits, et l'autre session avait déjà
+réparé le trou à la source le 21/09 à 23:10 — bloc `EVENING_2109` dans `leads/build/crm.py`, plus
+`leads/build/guard.py` (empreinte des générateurs, vérifiée avant toute reconstruction) et l'étape
+`closing` enfin connue de `views.py` — ce que le journal appelait « l'accident du 22/09, 00:20 ».
+J'ai d'abord cru à un trou non réparé et j'ai rapporté l'état moi-même (bloc `ETAT_21_2209`, 47 champs) ;
+le merge a montré que c'était un DOUBLON : la clause de contradiction se retrouvait deux fois dans Notes
+(3 055 octets au lieu de 1 527). Le mien est retiré, `crm.py` est revenu **octet pour octet** à la version
+verrouillée — `python3 leads/build/guard.py check` = rc 0 — et le CSV régénéré rend les deux lignes
+intactes (`closing=2` au compteur, `④ Prix posé, en négociation — 2` dans PIPELINE, Notes à leur poids
+vrai). **Loi pour la suite : avant `rebuild.sh`, `git fetch` + merge de la branche de session — une source
+qu'on croit en retard est une source qui réécrit l'histoire ; et le garde-fou `guard.py` n'est pas une
+formalité, c'est lui qui a rendu le doublon visible.**
 une sortie, on corrige la source — et un rebuild doit être sûr à n'importe quelle heure.**
 
