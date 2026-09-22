@@ -23,7 +23,7 @@ priorite,action,lead,whatsapp,ville,etape,note
 21,Relance 1/3,Laboratoire Meka,699 79 93 35,"Douala (Bonamoussadi, 241 Rue 5N036)",qualifying,rythme M+2 (message il y a 3 j)
 22,Relance 1/3,Flemming Dream Labo,699 81 34 04,"Douala (Bessenguè, feu rouge, Bld de la République)",qualifying,rythme M+2 (message il y a 3 j)
 23,Relance 1/3,Interlabo,677 75 54 21,"Douala (Akwa, 780 Rue E. Betote — R. Pau)",qualifying,rythme M+2 (message il y a 3 j)
-24,Relance 1/3,Labiomed,699 98 54 66,"Douala (Deido, 104 Route Deido-Bassa)",qualifying,"fixé : M+2 — il a dit « je vous reviens quand je serai disponible » (report poli, pas un non)"
+24,Relance 1/3,Labiomed,699 98 54 66,"Douala (Deido, 104 Route Deido-Bassa)",qualifying,"fixé : PREMIER OUI DE LA CAMPAGNE (« Oui », 19/09 19:43, onze minutes après notre message). L'aperçu et le lien sont partis à 21:00 le 19/09 ; RIEN depuis. Ce n'est pas une relance à envoyer, c'est NOTRE tour : une question qui clos — le mettre en ligne, avec le prix, dans le même message (règle de King : le prix voyage avec le lien)"
 25,Relance 1/3,Labo La Passerelle,694 71 91 22,"Douala (Deido, 820 Bld de la Réunification)",qualifying,rythme M+2 (message il y a 3 j)
 26,Relance 1/3,Laboratoire Biodiagnostics,699 92 91 98,"Douala (Sable, Rue Deido-Bonanjo)",qualifying,rythme M+2 (message il y a 3 j)
 27,Relance 1/3,Diagmed,698 97 22 03,"Douala (Bonabéri, Rue 4.352 — Route du Lycée)",qualifying,rythme M+2 (message il y a 3 j)
@@ -33,13 +33,12 @@ priorite,action,lead,whatsapp,ville,etape,note
 31,Relance 1/3,2K Labo,670 94 43 03,"Douala (Yassa, à côté de l'institut La Perle)",qualifying,rythme M+2 (message il y a 3 j)
 32,Relance 1/3,Pathcare Diagnostics,680 00 88 45,Douala (Deido),qualifying,rythme M+2 (message il y a 3 j)
 33,Relance 1/3,CIDM St Joseph,674 30 07 98,Douala,qualifying,rythme M+2 (message il y a 3 j)
-34,Relance 1/3,Univers Optique,699 25 28 74,Douala,closing,fixé : aperçu GRATUIT PROMIS le 21/09 à 18:08 (« d'ici demain ») — l'envoi du fichier est la première tâche de la soirée
-35,Relance 2/3,Cabinet Dentaire The Skye,677 79 69 99,Douala (Bonamoussadi),qualifying,rythme M+4 (message il y a 4 j)
-36,Relance 2/3,Cabinet Dentaire YAKS,672 70 20 78,Douala (Logbessou),qualifying,rythme M+4 (message il y a 4 j)
-37,Relance 1/3,L'Opticien Bali SARL,670 27 60 65,Douala (Bali),qualifying,fixé : relances fixées dim 20 / mar 22 / ven 25
-38,Relance 1/3,Clinique La Béthanie,677 76 07 82,Douala (Bonabéri),qualifying,rythme M+2 (message il y a 5 j)
-39,Relance 1/3,J&E Memorial Polyclinic (JEMPO),696 71 06 99,Douala (Deido/Bessengue),qualifying,rythme M+2 (message il y a 5 j)
-40,Relance 1/3,Cabinet Médical CAMERA,699 90 53 27,Douala (Akwa),qualifying,rythme M+2 (message il y a 4 j)
-41,Relance 1/3,Polyclinique de la Gare LE NID,699 987 775,Douala (Bessengue),qualifying,rythme M+2 (message il y a 4 j)
-42,Relance 1/3,Cabinet Biomédical Adonaï,696 53 87 75,Douala,qualifying,rythme M+2 (message il y a 4 j)
-43,Relance 1/3,Malia Labo,694 56 22 44,Douala,qualifying,rythme M+2 (message il y a 4 j)
+34,Relance 2/3,Cabinet Dentaire The Skye,677 79 69 99,Douala (Bonamoussadi),qualifying,rythme M+4 (message il y a 4 j)
+35,Relance 2/3,Cabinet Dentaire YAKS,672 70 20 78,Douala (Logbessou),qualifying,rythme M+4 (message il y a 4 j)
+36,Relance 1/3,L'Opticien Bali SARL,670 27 60 65,Douala (Bali),qualifying,fixé : relances fixées dim 20 / mar 22 / ven 25
+37,Relance 1/3,Clinique La Béthanie,677 76 07 82,Douala (Bonabéri),qualifying,rythme M+2 (message il y a 5 j)
+38,Relance 1/3,J&E Memorial Polyclinic (JEMPO),696 71 06 99,Douala (Deido/Bessengue),qualifying,rythme M+2 (message il y a 5 j)
+39,Relance 1/3,Cabinet Médical CAMERA,699 90 53 27,Douala (Akwa),qualifying,rythme M+2 (message il y a 4 j)
+40,Relance 1/3,Polyclinique de la Gare LE NID,699 987 775,Douala (Bessengue),qualifying,rythme M+2 (message il y a 4 j)
+41,Relance 1/3,Cabinet Biomédical Adonaï,696 53 87 75,Douala,qualifying,rythme M+2 (message il y a 4 j)
+42,Relance 1/3,Malia Labo,694 56 22 44,Douala,qualifying,rythme M+2 (message il y a 4 j)

@@ -63,14 +63,23 @@ RELANCE_A_JOUR = {
     "oracare-buea": ("2026-09-20", "FU2 (M+4) fixée dim 20"),
     "midas-touch-optic-center-mitoc": ("2026-09-21", "FU2 fixée lun 21"),
     "baird-memorial-college": ("2026-09-21", "FU2 fixée lun 21 (même lot que MITOC)"),
-    "labiomed-deido": ("2026-09-21", "M+2 — il a dit « je vous reviens quand je serai disponible » (report poli, pas un non)"),
+    "labiomed-deido": ("2026-09-22", "PREMIER OUI DE LA CAMPAGNE (« Oui », 19/09 19:43, onze minutes après "
+                                      "notre message). L'aperçu et le lien sont partis à 21:00 le 19/09 ; "
+                                      "RIEN depuis. Ce n'est pas une relance à envoyer, c'est NOTRE tour : "
+                                      "une question qui clos — le mettre en ligne, avec le prix, dans le même "
+                                      "message (règle de King : le prix voyage avec le lien)"),
     # Les deux fils « prix posé » du 21/09 : l'échéance vient de ce qui a été ÉCRIT au client,
     # pas d'un calcul M+2. Univers Optique = l'aperçu promis « d'ici demain ». Le Cristallin =
     # la réponse de King sur le périmètre FB attendue avant d'envoyer, relance 48 h après.
-    "univers-optique": ("2026-09-22", "aperçu GRATUIT PROMIS le 21/09 à 18:08 (« d'ici demain ») — "
-                                      "l'envoi du fichier est la première tâche de la soirée"),
-    "le-cristallin": ("2026-09-23", "relance M+2 après la réponse de King sur le périmètre "
-                                     "(page seule / page + Facebook) ; fichier déjà prêt"),
+    "univers-optique": ("2026-09-23", "APERÇU ENVOYÉ 22/09 14:35 (une seule coche à 15:53 : distribué, "
+                                      "pas encore lu). Le prix est déjà posé depuis le 21/09 18:08 — demain, "
+                                      "une relance COURTE avant 11 h, sans re-proposer le prix ni promettre "
+                                      "une date de mise en ligne avant son accord"),
+    "le-cristallin": ("2026-09-23", "quatre confirmations à lui demander sur la page en ligne "
+                                     "(horaires vs son flyer, mur d'assurances à 19, logos déjà chez lui, "
+                                     "l'assistant n'est pas un éditeur). CADRE VOULU PAR KING le 22/09 "
+                                     "15:53 : toutes les modifications pendant l'aperçu, sans compter ; "
+                                     "prix, hébergement et accès LWS à la fin, après son accord"),
     # UNI-LABO a DEMANDÉ un rendez-vous : ce n'est plus une relance à calculer.
     "uni-labo-bonamoussadi": ("2026-09-25", "RENDEZ-VOUS demandé par le prospect — vendredi 25/09"),
 }

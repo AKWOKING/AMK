@@ -1546,3 +1546,39 @@ avant de lire le CSV.**
 `sales/Send-LE-CRISTALLIN-2026-09-23-Matin.md` (les quatre points à valider avec lui, la clarification de
 l'assistant, le cadre de prix posé sur « vous ne payez rien de nouveau »), et l'item 3 de
 `sales/Send-UNIVERS-OPTIQUE-2026-09-22-Soir.md` réécrit pour ne plus relancer le Cristallin à l'aveugle.
+## 2026-09-22 · 15:53 → 16:20 · LE CRM SUIT LES FAITS — Univers envoyé à 14:35 (une coche), Cristallin sans prix, et la vague de 37 messages de ce soir
+
+**Ce qui a changé depuis la dernière entrée.** King a envoyé l'aperçu d'**Univers Optique à 14:35**, avec la
+carte du lien `univers-optique-concept.vercel.app` et **la note au cabinet à l'intérieur de la page**,
+étiquetée « à ne pas publier » en bas — pas le découpage en deux fichiers préparé ici. À 15:53 le message
+affiche **une seule coche** : distribué, pas encore lu. Décisions consignées dans la source (`JOUR_2209`) :
+`last_send_state = sent` (pas « delivered » : une coche ne vaut pas deux), *Follow-up date* au 23/09,
+`site_url` du concept, et la règle du prochain message — une relance courte demain avant 11 h, **sans
+re-proposer le prix** (il est posé depuis le 21/09 18:08). Le fichier `demos/univers-optique-site-v2.html`
+(718 514 o, `ec91063b…`) reste le repli si le client demande à ne voir que la page patient.
+
+**Chez Le Cristallin, le cadre est tranché par King, 15:53** : « any modification will be done as the
+client wants, the question of price and hosting will come at the end since we will need the logins of the
+hosting provider ». Donc : **toutes les corrections pendant l'aperçu, sans compter** ; **prix, hébergement
+et demande des accès LWS à la fin**, quand il dira « on publie ». Écrit dans le fil du CRM, et la
+conséquence appliquée : les mots « c'est fini », « à valider sous 48 h » et toute facture déguisée en
+urgence sortent des messages. Le lead reste en `demo`.
+
+**Trois échéances humaines recalées dans `views.py` (`RELANCE_A_JOUR`), parce que le plan disait faux :**
+Univers sort du plan d'aujourd'hui (envoyé, pas relançable) ; **Labiomed** y entre avec la seule note qui
+compte — « **premier OUI de la campagne**, dit le 19/09 à 19:43, aperçu + lien partis à 21:00, RIEN depuis
+: ce n'est pas une relance, c'est NOTRE tour » ; Le Cristallin porte désormais la liste des quatre
+confirmations plutôt qu'une « relance M+2 après la réponse de King sur le périmètre FB ». `guard.py lock`
+rejoué après chaque changement voulu, `rebuild.sh` propre (42 actions, plus 43 : Univers est sorti tout
+seul).
+
+**Les messages de ce soir** : `sales/Send-BATCH-2026-09-22-Apres-midi.md` — **37 à envoyer**, 5 à faire
+attendre (quatre distribués-non-lus + 2K Labo dont la « réponse » était automatique), les 26 d'une même
+vague courts et sans ré-explication, Baird et MITOC en anglais (FU2 en retard d'un jour), L'Opticien Bali
+sur son propre créneau du mardi, INSES en premier contact (numéro vérifié par capture), et le rappel de la
+loi : neuf numéros de laboratoires sont `wa_verified = unknown` → **on regarde le profil avant d'écrire**,
+et si le profil ne s'identifie pas, on n'envoie pas.
+
+**Rien envoyé depuis ce bac, rien déployé.** Après chaque envoi, le relevé (coche, lecture, verbatim) se
+note ici, pas dans `leads/CRM.csv` — la date d'un suivi se change dans `crm.py` (`JOUR_2209`) ou
+`views.py` (`RELANCE_A_JOUR`), puis `bash leads/build/rebuild.sh`.

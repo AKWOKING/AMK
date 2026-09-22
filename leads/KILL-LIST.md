@@ -17,8 +17,9 @@ Le playbook §A4 disait « les 2 leads à 18 (COMOBIL, OraCare) ». **C'était f
 
 ## 📅 Décisions déjà prises — DATES À VENIR, ne rien faire maintenant
 
-- **Le Cristallin** — 2026-09-23 · relance M+2 après la réponse de King sur le périmètre (page seule / page + Facebook) ; fichier déjà prêt
+- **Le Cristallin** — 2026-09-23 · quatre confirmations à lui demander sur la page en ligne (horaires vs son flyer, mur d'assurances à 19, logos déjà chez lui, l'assistant n'est pas un éditeur). CADRE VOULU PAR KING le 22/09 15:53 : toutes les modifications pendant l'aperçu, sans compter ; prix, hébergement et accès LWS à la fin, après son accord
 - **UNI-LABO** — 2026-09-25 · RENDEZ-VOUS demandé par le prospect — vendredi 25/09
+- **Univers Optique** — 2026-09-23 · APERÇU ENVOYÉ 22/09 14:35 (une seule coche à 15:53 : distribué, pas encore lu). Le prix est déjà posé depuis le 21/09 18:08 — demain, une relance COURTE avant 11 h, sans re-proposer le prix ni promettre une date de mise en ligne avant son accord
 
 > Les échéances **déjà passées** sont dans `Daily-Plan.csv` — c'est la file de travail.
 

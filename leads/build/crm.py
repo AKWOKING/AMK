@@ -1255,7 +1255,7 @@ JOUR_2209 = {
             "681 49 45 89) clicables vers WhatsApp, 699 90 55 77 garde la priorité RDV · 21:50 « On va "
             "continuer Demain » · 22/09 13:50 six assurances de plus (SUNU, A.F.G, ROYAL ONYX rectif, "
             "EXCA rectif, LES MUTUELLES RÉUNIES S.A., SAMARITAN) · 14:43 King « je vais les ajouter » · "
-            "15:08 King : wall de logos + demande des logos officiels, photos et vidéos.",
+            "15:08 King : wall de logos + demande des logos officiels, photos et vidéos. Le prix, l'hébergement et la demande des accès LWS ne se posent QU'À LA FIN, quand il dira « on publie » : pendant l'aperçu, toute modification demandée est faite sans facture et sans compter. Ne jamais écrire « c'est fini » ni « à valider sous 48 h » — une urgence que nous n'avons pas créée se facture mal.",
         "Notes_extra":
             "PAGE EN LIGNE (relue 22/09, ?v=7) : https://lecristallin-concept.vercel.app/?v=7 — bandeau "
             "« Aperçu de site par AMK — pas encore le site officiel » et widget « Réponses du site · "
@@ -1297,6 +1297,29 @@ JOUR_2209 = {
             "https), le mur « Ils nous font confiance » est répété trois fois dans le même carrousel, "
             "ACTIVAASSURANCES y figure deux fois, et le texte est collé sans espaces (« bonsde prise en "
             "charge », « porte feuille », « ou quoi »). C'EST UNE REFONTE, PAS UNE CRÉATION.",
+    },
+    "univers-optique": {
+        "last_send_state": "sent",
+        "Follow-up date": "2026-09-23",
+        "site_url": "https://univers-optique-concept.vercel.app",
+        "Conversation_extra":
+            "22/09 14:35 — le message d'aperçu est PARTI, avec la carte du lien `univers-optique-concept"
+            ".vercel.app` : « Bonjour Monsieur Bayang. Comme promis, voici l'aperçu, fait pour Univers "
+            "Optique », les deux parties annoncées (la page des patients : examen, montage, réparation, "
+            "prothèses, horaires, Bépanda, RDV WhatsApp, FR+EN ; et la « Note au cabinet — à ne pas "
+            "publier » : le diagnostic, les six avis Google 3,3/5, ce que le web dit aujourd'hui, le nom "
+            "ambigu, l'ancien site hors ligne, la fiche pro à moitié remplie), et la promesse que cette "
+            "seconde partie disparaît à la publication. UNE SEULE coche à 15:53 : distribué pas encore lu. "
+            "Le prix n'a PAS été répété : il est posé depuis le 21/09 18:08 (100 000 FCFA, 50/50, rien dû "
+            "avant accord), et l'aperçu gratuit avait été promis la veille.",
+        "Notes_extra":
+            "LA PAGE PUBLIÉE CONTIENT LA NOTE AU CABINET, en bas, étiquetée « à ne pas publier » — choix "
+            "assumé par King pour la discussion, différent du découpage en deux fichiers préparé ici. Les "
+            "deux tiennent : si le client demande à ne voir que la page patient, on envoie "
+            "`demos/univers-optique-site-v2.html` (718 514 o, sha `ec91063b…`, note retirée par "
+            "construction — un contrôle refuse le vocabulaire du dossier dans la page publique). Prochaine "
+            "action : une relance courte le 23/09 avant 11 h s'il n'a pas répondu, SANS re-proposer le prix "
+            "ni promettre une mise en ligne avant son accord.",
     },
 }
 
