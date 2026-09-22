@@ -1581,4 +1581,56 @@ et si le profil ne s'identifie pas, on n'envoie pas.
 
 **Rien envoyé depuis ce bac, rien déployé.** Après chaque envoi, le relevé (coche, lecture, verbatim) se
 note ici, pas dans `leads/CRM.csv` — la date d'un suivi se change dans `crm.py` (`JOUR_2209`) ou
-`views.py` (`RELANCE_A_JOUR`), puis `bash leads/build/rebuild.sh`.
+`views.py` (`RELANCE_A_JOUR`), puis `bash leads/build/rebuild.sh`.## 2026-09-22 · 16:22 → 16:35 · LE PROFIL DES « OUI » — et deux relances qui partent pour de vrai
+
+**Deux envois, puis une question.** À **16:22** King relance **Labiomed** (carte du lien
+`labiomed.vercel.app`, « je fais un suivi des projets de la semaine », question fermée : « Souhaitez-vous
+qu'on valide le lancement cette semaine ? ») et à **16:24** le **Centre Médical de Bonanjo** (sa page
+complète était partie à 13:35 avec le prix, deux coches). Les deux portent **une seule coche** au moment de
+la capture. Puis, à **16:30** : « **Labiomed et Bonanjo relancer prochaine vague** ».
+
+**Conséquence appliquée partout, pas seulement notée** : les deux entrent dans `JOUR_2209` (`last_send_state
+= sent`, `Follow-up date = 2026-09-24`, `site_url` du concept, verbatim des deux messages dont le texte
+exact du 16:22 et la phrase « vos 9 services centralisés pour orienter les patients de Google vers votre
+WhatsApp »), leurs échéances passent au 24/09 dans `views.py`, et **ils sortent du plan du jour** (42 → 40
+actions) pour apparaître dans « Décisions déjà prises — ne rien faire maintenant ». La feuille
+`Send-BATCH-2026-09-22-Apres-midi.md` est recalée : **35 messages ce soir** au lieu de 37, et les §1/§2
+deviennent la matière de **jeudi 24/09** — avec un texte qui ne répète pas celui de mardi (le prix est déjà
+posé chez Bonanjo ; chez Labiomed on ne repose qu'une question de calendrier).
+
+**Puis la vraie question de King :** « ya-t-il un point commun entre tous ceux qui nous ont dit oui ? Si oui
+on devrait se pencher plus sur ce type de profil. » Réponse écrite, chiffrée, dans
+**`sales/PROFIL-DES-OUI-2026-09-22.md`** — 145 leads, 6 réponses humaines, et **un seul facteur qui sépare
+vraiment** :
+
+| critère | quand OUI | quand NON |
+|---|---|---|
+| **a déjà une vitrine À SOI** (domaine ou page FB) | **3/27 = 11,1 %** | 3/118 = 2,5 % |
+| site `Website` seul | 2/15 = 13,3 % | — |
+| page `Facebook` seule | 2/20 = 10,0 % | — |
+| vitrine à soi **et** référencé chez un tiers | 2/5 = 40,0 % | — |
+
+**Ce qui ne sépare pas** — et c'est aussi utile à savoir : la ville (Douala 4,3 % vs Buea/Limbe 3,3 %), le
+secteur seul (labo 5,9 %, optique 4,5 %, clinique 4,2 %, école 2,6 %), et **la qualité du message** (message
+1 écrit à partir d'un fait vérifié sur le lead : 4,6 % contre 3,8 %). **On a optimisé le texte pendant des
+jours ; le levier, c'est la liste.** Détail des six : Le Cristallin (site vivant + FB, réponse en 2 min),
+Univers (domaine mort + fiche Google, 6 min), Labiomed (11 min), UNI-LABO (~2 h), Bonanjo (lendemain 08:44
+— et il paie déjà pour du trafic sur `mondocteur237.com`), STIBCCOL (le seul établissement à avoir répondu
+parmi 39 écoles, **la seule qui construisait déjà un site**). Le §21.7 des design skills était juste ; il est
+maintenant chiffré.
+
+**Le trou qui bloque l'exploitation :** sur les **106** leads santé/optique, la colonne `Website` n'est
+renseignée que pour **2** (Les Cristallin et Univers, vérifiés à la main) et `Facebook` est vide pour 105.
+Le critère à 11 % est donc calculé sur 41 leads observés sur 145 — les écoles ont été auditées (39/39), la
+santé non. **Prochain chantier : remplir cette seule colonne sur les 104 leads santé/optique** (domaine mort
+/ vivant / `none found`), une minute par lead ; au taux observé c'est ~19 leads qui entrent dans le profil.
+
+**Deux suites immédiates, écrites dans la note :** (a) **24 leads du CRM cochent déjà le critère sans avoir
+répondu** (tous audités, listés avec leur domaine réel : COMOBIL.com, leparadisdesanges.org, asddouala.com,
+bairdmemorial.com…) — ils deviennent la prochaine vague, avec un angle « voilà ce que ce que vous avez déjà
+ne fait pas » au lieu de « vous n'existez pas » ; (b) **test de falsification** : les ~30 prochains premiers
+contacts pris uniquement dans ce profil, et on lit le résultat dans trois jours — ≥ 4 réponses (≥ 13 %) et le
+profil devient la loi du sourcing, ≤ 2 et on le classe comme une coïncidence de six cas.
+
+`guard.py lock` + `rebuild.sh` rejoués (CRM reconstruit, 40 actions, KILL-LIST à jour), fiches régénérées
+pour Labiomed, Bonanjo, Le Cristallin. **Aucun message envoyé par moi, aucun déploiement.**

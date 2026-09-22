@@ -22,17 +22,13 @@
 
 ## ⚡ Répondre d'abord
 
-| Lead | WhatsApp | Ce qu'il a dit |
-|---|---|---|
-| **Centre Médical de Bonanjo** | 694 57 22 77 | Yes |
-
-> **Règle des 90 secondes.** Une réponse en attente passe avant tout le reste.
+*Rien en attente.*
 
 ## ④ Prix posé, en négociation — 1
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| Univers Optique | Douala | 699 25 28 74 | `L1548` |
+| Univers Optique | Douala | 699 25 28 74 | `L1623` |
 
 ## ④ Offre posée — 1
 
@@ -44,7 +40,7 @@
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| Le Cristallin | Douala | 699 90 55 77 | `L1548` |
+| Le Cristallin | Douala | 699 90 55 77 | `L1636` |
 
 ## ② Qualifié — en conversation — 44
 
@@ -65,7 +61,7 @@
 | Cabinet Médical i'DoC | Douala (Bonapriso) | 699 68 05 88 | `L37` |
 | Cabinet du Dr Brulet Epaka | Douala (Bonapriso) | 694 77 74 54 | `L111` |
 | Centre Médical Kouam Samuel | Douala (Bali) | 677 39 35 31 | `L111` |
-| Centre Médical de Bonanjo | Douala (Bonapriso, ancien aéroport) | 694 57 22 77 | `L1324` |
+| Centre Médical de Bonanjo | Douala (Bonapriso, ancien aéroport) | 694 57 22 77 | `L1636` |
 | Centre Médical des Capucines | Douala (Bonapriso) | 699 72 36 93 | `L111` |
 | Clinique La Béthanie | Douala (Bonabéri) | 677 76 07 82 | `L78` |
 | Clinique de L'université | Douala (Bassa) | 694 36 02 03 | `L113` |
@@ -79,7 +75,7 @@
 | J&E Memorial Polyclinic (JEMPO) | Douala (Deido/Bessengue) | 696 71 06 99 | `L24` |
 | Kamaïs Optic | Douala (Bessengue) | 678 435 460 | `L761` |
 | L'Opticien Bali SARL | Douala (Bali) | 670 27 60 65 | `L22` |
-| Labiomed | Douala (Deido, 104 Route Deido-Bassa) | 699 98 54 66 | `L788` |
+| Labiomed | Douala (Deido, 104 Route Deido-Bassa) | 699 98 54 66 | `L1636` |
 | Labo La Passerelle | Douala (Deido, 820 Bld de la Réunification) | 694 71 91 22 | `L469` |
 | Laboratoire Biodiagnostics | Douala (Sable, Rue Deido-Bonanjo) | 699 92 91 98 | — |
 | Laboratoire Meka | Douala (Bonamoussadi, 241 Rue 5N036) | 699 79 93 35 | — |
@@ -92,7 +88,7 @@
 | OraCare Dental Clinic (Oracare237) | Buea (Molyo) | 672 52 66 86 | `L1119` |
 | Pathcare Diagnostics | Douala (Deido) | 680 00 88 45 | — |
 | Polyclinique de la Gare LE NID | Douala (Bessengue) | 699 987 775 | `L34` |
-| St. Theresa International Bilingual Comprehensive College (STIBCCOL) | Buea (Molyko) | 679151075 | `L820` |
+| St. Theresa International Bilingual Comprehensive College (STIBCCOL) | Buea (Molyko) | 679151075 | `L1618` |
 | YONDJA ANALYSE | Douala | 696 88 88 23 | `L1324` |
 
 ## ① Prospection — à qualifier — 85
@@ -109,7 +105,7 @@
 | Bioscan | Douala (New Bell) | 680 06 03 94 | `L460` |
 | Bishop Jules Peters Memorial College | Buea (Bokwaongo) | 683348856 | — |
 | Blessed Group of Schools (BGS / Blessed Anglo-Saxon) | Yaoundé (Simbock + Nomayos, BP 1839) | 680139453 | `L586` |
-| COMOBIL – Collège Moderne Bilingue Les Lauréats | Douala (Bonamoussadi) | — | `L745` |
+| COMOBIL – Collège Moderne Bilingue Les Lauréats | Douala (Bonamoussadi) | — | `L1629` |
 | COSBINAL – Complexe Scolaire Bilingue NAL | Douala (Bonamoussadi, Kotto Bloc K) | 677786379 | — |
 | Caprice Optique | Douala | 675 06 16 23 | — |
 | Cavisa Optique | Douala | 699 95 90 52 | — |
@@ -151,7 +147,7 @@
 | JiredOptic Med | Douala | 696 26 50 31 | — |
 | L'Opticien SARL | Douala | 694 33 65 82 | — |
 | LABO-PHANUEL | Douala (Akwa) | 243 17 94 71 | `L60` |
-| Le Paradis des Anges (PDA) | Douala (Makepe, Carrefour SNEC Bloc A) | 677378542 | — |
+| Le Paradis des Anges (PDA) | Douala (Makepe, Carrefour SNEC Bloc A) | 677378542 | `L1629` |
 | Le Samaritain Optique | Douala | 670 19 74 51 | — |
 | London Vision | Douala | 696 76 81 16 | — |
 | Lux Optique | Douala | 655 04 05 49 | — |

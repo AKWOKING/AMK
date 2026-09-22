@@ -1,6 +1,11 @@
 # ENVOYS DE L'APRÈS-MIDI · mardi 22/09/2026 — préparé à 15:53
-**42 actions au plan du jour : 37 messages ce soir, 5 qui doivent attendre (distribués non lus),
-et 2 fils qui se jouent demain. Tu envoies ; ce bac n'envoie rien.**
+**40 actions au plan du jour (Univers, Labiomed et Bonanjo sont sortis) : 35 messages ce soir, 5 qui
+doivent attendre (distribués non lus), et 2 fils qui se jouent demain. Tu envoies ; ce bac n'envoie rien.**
+
+> **Mise à jour 16:35 — décision de King** : « Labiomed et Bonanjo relancer prochaine vague ». Les deux
+> relances sont donc **parties** (16:22 et 16:24, une coche chacune) et glissent d'une vague : §1 et §2 ne
+> sont plus à envoyer ce soir, ils deviennent la matière de **jeudi 24/09**. Les deux sont sortis du plan
+> du jour et figurent dans `leads/KILL-LIST.md` au 24/09.
 
 ---
 
@@ -17,8 +22,16 @@ et 2 fils qui se jouent demain. Tu envoies ; ce bac n'envoie rien.**
 
 ---
 
-## 1 · MAINTENANT — Labiomed (Deido) · 699 98 54 66
-*Il a dit oui. Trois jours de silence de notre côté. On clos, on ne relance pas.*
+## 1 · DÉJÀ FAIT à 16:22 — Labiomed (Deido) · 699 98 54 66 → **jeudi 24/09**
+*Le message ci-dessous est parti à 16:22 (une coche) : il ne se répète pas. Jeudi, on ne peut pas
+relancer un message de mardi resté sans réponse sans le contredire — donc **une seule ligne**, sur ce
+qu'il reste à décider :*
+
+> **Texte de jeudi 24/09** — Bonjour Docteur. Ma question de mardi tient toujours : on valide le
+> lancement cette semaine ? Si oui, je vous envoie le lien de paiement (50 000 FCFA pour commencer)
+> et je lance la mise en ligne sur votre nom de domaine le jour même. Un « oui » suffit.
+
+**Rappel de ce qui est parti à 16:22** (à ne pas répéter) :
 
 > Bonjour Docteur. Vous aviez dit « oui » à l'aperçu le 19 au soir — il est en ligne : le lien que je vous avais envoyé mardi soir est toujours actif. Personne n'a tranché depuis, et c'est moi qui reprends le fil.
 > Ce que je propose : je mets le site en ligne sur votre nom de domaine, avec la prise de rendez-vous WhatsApp, et vous gardez vos horaires actuels. Cadre : 100 000 FCFA, 50 000 maintenant, 50 000 à la mise en ligne. Rien n'est dû avant votre accord, et si un détail ne vous va pas avant publication, on le corrige sans supplément.
@@ -26,8 +39,15 @@ et 2 fils qui se jouent demain. Tu envoies ; ce bac n'envoie rien.**
 
 **À ne pas écrire** : un faux délai (« ça expire demain »), un témoignage d'un autre laboratoire, ou le prix sans le lien — le prix voyage avec le lien, jamais avant.
 
-## 2 · MAINTENANT — Centre Médical de Bonanjo · 694 57 22 77
-*Il a dit « je vous reviens » le 19. La maquette personnalisée est partie le 19 aussi. Une ligne, pas un pavé.*
+## 2 · DÉJÀ FAIT à 16:24 — Centre Médical de Bonanjo · 694 57 22 77 → **jeudi 24/09**
+*La page complète est partie à 13:35 (deux coches) avec le prix, puis la relance à 16:24 (une coche).
+Jeudi, une seule question de calendrier, sans reposer le prix :*
+
+> **Texte de jeudi 24/09** — Bonjour Docteur Tchaleu. Sans nouvelle de votre côté, je ne veux pas
+> laisser la page s'endormir ni vous presser : dites-moi seulement si je la garde ouverte encore un
+> mois, ou si je vous rappelle en octobre. Dans les deux cas je ne vous écris plus d'ici là.
+
+**Ce qui est parti aujourd'hui** (à ne pas répéter) :
 
 > Bonjour Docteur Tchaleu. Je ne vous relance pas pour vous relancer : la maquette que je vous avais envoyée (votre nom, l'annuaire, vos consultations) est prête à être posée en ligne, et votre fiche Google reste à moitié remplie en attendant — c'est le premier endroit où un patient tombe sur vous.
 > Dites-moi juste : on la garde, on la change, ou on attend un mois de plus ? Les trois réponses me vont.
@@ -116,5 +136,5 @@ Préparation seulement : la présentation se fait **sur leur propre site** (`uni
 ## 10 · Ce que je n'ai pas fait, et ce que tu dois faire après avoir envoyé
 - **Rien n'a été envoyé depuis ce bac.** Aucun compte, aucun lien écourté, aucun SMS. Le fichier `amk-cm.vercel.app` est le tien, jamais touché d'ici.
 - **Après chaque envoi**, relève l'état réel (une coche = distribué, deux = lu, réponse = verbatim) dans `sales/Activity-Log.md` — c'est ce que lisent `records.py` et les vues ; et si un état doit changer de date, il change dans **la source** : `leads/build/crm.py` (table `JOUR_2209`) ou `leads/build/views.py` (`RELANCE_A_JOUR`), puis `bash leads/build/rebuild.sh`. **Jamais à la main dans `leads/CRM.csv`** : c'est une sortie, et deux fois déjà on y a perdu un fil chaud en croyant le corriger.
-- Ce soir : 37 messages max, **les 4 distribués-non-lus attendent jeudi**, et 2K Labo attend un créneau ouvré
+- Ce soir : 35 messages max, **les 4 distribués-non-lus attendent jeudi**, et 2K Labo attend un créneau ouvré
   (sa réponse du 19 était un message automatique, pas une réponse humaine — elle ne compte pas dans le PRR). devient un numéro qu'on bloque.

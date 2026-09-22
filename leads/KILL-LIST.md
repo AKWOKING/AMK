@@ -11,12 +11,12 @@ Le playbook §A4 disait « les 2 leads à 18 (COMOBIL, OraCare) ». **C'était f
 
 ## ⚡ Répondre d'abord
 
-- **Centre Médical de Bonanjo** — 694 57 22 77
-
-> **Règle des 90 secondes.**
+*Rien en attente.*
 
 ## 📅 Décisions déjà prises — DATES À VENIR, ne rien faire maintenant
 
+- **Centre Médical de Bonanjo** — 2026-09-24 · Page complète envoyée le 22/09 à 13:35 (deux coches) avec le prix posé, puis relance 16:24 (une coche) : « vos 9 services centralisés pour orienter les patients de Google vers votre WhatsApp ». DÉCISION KING 16:30 : prochaine vague — jeudi 24/09, sans reposer le prix, une question de calendrier seulement
+- **Labiomed** — 2026-09-24 · PREMIER OUI DE LA CAMPAGNE (« Oui », 19/09 19:43). Relance ENVOYÉE le 22/09 à 16:22 (une coche) : la maquette toujours active + « on valide le lancement cette semaine ? ». DÉCISION KING 16:30 : prochaine vague — donc jeudi 24/09, une seule ligne, sans répéter le 16:22, et le prix (100 000 FCFA, 50/50) avec le lien à l'accord
 - **Le Cristallin** — 2026-09-23 · quatre confirmations à lui demander sur la page en ligne (horaires vs son flyer, mur d'assurances à 19, logos déjà chez lui, l'assistant n'est pas un éditeur). CADRE VOULU PAR KING le 22/09 15:53 : toutes les modifications pendant l'aperçu, sans compter ; prix, hébergement et accès LWS à la fin, après son accord
 - **UNI-LABO** — 2026-09-25 · RENDEZ-VOUS demandé par le prospect — vendredi 25/09
 - **Univers Optique** — 2026-09-23 · APERÇU ENVOYÉ 22/09 14:35 (une seule coche à 15:53 : distribué, pas encore lu). Le prix est déjà posé depuis le 21/09 18:08 — demain, une relance COURTE avant 11 h, sans re-proposer le prix ni promettre une date de mise en ligne avant son accord

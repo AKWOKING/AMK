@@ -22,10 +22,11 @@
 | Relances envoyées | 0 |
 | Source | directory |
 | Détail source | maligah + mondocteur237 (consultation 20 000 FCFA, publique) |
+| Site existant | https://bonanjo.vercel.app |
 
 ## Notes
 
-⭐ A RÉPONDU. Envoyé 18/09 19:42 (2 coches) → « Bjr merci je vous reviens » le 19/09 à 08:44. Maquette personnalisée envoyée le 19/09 : clients/_mockups/bonanjo.jpg. FAIT DÉCISIF : le Dr Tchaleu figure déjà sur mondocteur237.com (annuaire de prise de rendez-vous) → il cherche déjà des patients en ligne, mais sur la plateforme d'un autre. C'est le profil « paie déjà pour du trafic » (§21.7), notre meilleur angle. Services publics vérifiés (maligah) : neurologie, médecine générale, radiologie, chirurgie, gynécologie, pédiatrie, échographie, accouchement.
+⭐ A RÉPONDU. Envoyé 18/09 19:42 (2 coches) → « Bjr merci je vous reviens » le 19/09 à 08:44. Maquette personnalisée envoyée le 19/09 : clients/_mockups/bonanjo.jpg. FAIT DÉCISIF : le Dr Tchaleu figure déjà sur mondocteur237.com (annuaire de prise de rendez-vous) → il cherche déjà des patients en ligne, mais sur la plateforme d'un autre. C'est le profil « paie déjà pour du trafic » (§21.7), notre meilleur angle. Services publics vérifiés (maligah) : neurologie, médecine générale, radiologie, chirurgie, gynécologie, pédiatrie, échographie, accouchement. · Le prix est DÉJÀ posé (13:35, et rappelé dans le fil du 19/09) : à la prochaine vague on ne le répète pas, on ne repose qu'une question de calendrier. Le fait décisif du dossier reste l'annuaire `mondocteur237.com` (honoraires publics) — il paie déjà, ailleurs, pour être trouvé.
 
 ## Prochaine action
 
@@ -33,7 +34,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 30 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 35 ligne(s).*
 
 `L43` · | **ven 18/09 19:42** | **Centre Médical de Bonanjo** (Bonapriso, 694 57 22 77) | msg 1 — sans maquette | Envoyé | **Non** |
 `L112` · | 19:42 | Centre Médical de Bonanjo · Kamaïs Optic |
@@ -65,6 +66,11 @@
 `L1141` · Médina Optic · Bonanjo (ce soir ≤ 21:00 ou demain 09:00) · AFRIQUE LABO (« noir sur blanc ») · les 12 assureurs
 `L1243` · trancher (dont l'**accès à sa fiche Google**, qui prime sur la mise en ligne) ; Médina Optic · Bonanjo ·
 `L1324` · strict perdrait 56 citations **légitimes** sur 295 (`Bonanjo`, `Yondja`, `Cerisaie`…). Limite consignée en
+`L1588` · qu'on valide le lancement cette semaine ? ») et à **16:24** le **Centre Médical de Bonanjo** (sa page
+`L1590` · la capture. Puis, à **16:30** : « **Labiomed et Bonanjo relancer prochaine vague** ».
+`L1599` · posé chez Bonanjo ; chez Labiomed on ne repose qu'une question de calendrier).
+`L1617` · Univers (domaine mort + fiche Google, 6 min), Labiomed (11 min), UNI-LABO (~2 h), Bonanjo (lendemain 08:44
+`L1636` · pour Labiomed, Bonanjo, Le Cristallin. **Aucun message envoyé par moi, aucun déploiement.**
 
 ---
 

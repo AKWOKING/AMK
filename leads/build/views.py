@@ -63,11 +63,16 @@ RELANCE_A_JOUR = {
     "oracare-buea": ("2026-09-20", "FU2 (M+4) fixée dim 20"),
     "midas-touch-optic-center-mitoc": ("2026-09-21", "FU2 fixée lun 21"),
     "baird-memorial-college": ("2026-09-21", "FU2 fixée lun 21 (même lot que MITOC)"),
-    "labiomed-deido": ("2026-09-22", "PREMIER OUI DE LA CAMPAGNE (« Oui », 19/09 19:43, onze minutes après "
-                                      "notre message). L'aperçu et le lien sont partis à 21:00 le 19/09 ; "
-                                      "RIEN depuis. Ce n'est pas une relance à envoyer, c'est NOTRE tour : "
-                                      "une question qui clos — le mettre en ligne, avec le prix, dans le même "
-                                      "message (règle de King : le prix voyage avec le lien)"),
+    "labiomed-deido": ("2026-09-24", "PREMIER OUI DE LA CAMPAGNE (« Oui », 19/09 19:43). Relance ENVOYÉE "
+                                      "le 22/09 à 16:22 (une coche) : la maquette toujours active + « on "
+                                      "valide le lancement cette semaine ? ». DÉCISION KING 16:30 : "
+                                      "prochaine vague — donc jeudi 24/09, une seule ligne, sans répéter le "
+                                      "16:22, et le prix (100 000 FCFA, 50/50) avec le lien à l'accord"),
+    "centre-medical-de-bonanjo": ("2026-09-24", "Page complète envoyée le 22/09 à 13:35 (deux coches) "
+                                      "avec le prix posé, puis relance 16:24 (une coche) : « vos 9 services "
+                                      "centralisés pour orienter les patients de Google vers votre "
+                                      "WhatsApp ». DÉCISION KING 16:30 : prochaine vague — jeudi 24/09, "
+                                      "sans reposer le prix, une question de calendrier seulement"),
     # Les deux fils « prix posé » du 21/09 : l'échéance vient de ce qui a été ÉCRIT au client,
     # pas d'un calcul M+2. Univers Optique = l'aperçu promis « d'ici demain ». Le Cristallin =
     # la réponse de King sur le périmètre FB attendue avant d'envoyer, relance 48 h après.

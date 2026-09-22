@@ -39,7 +39,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 59 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 65 ligne(s).*
 
 `L837` · - `Le Cristallin` 17:51 · `Univers Optique` 17:50 · `Disc Optique Médicale` 17:48 · `Tchaya Optique` 17:47 :
 `L881` · ## Lundi 21/09/2026 — 18:20 → 19:15 · « Ok » de Le Cristallin : le premier aperçu demandé, construit et branché sur le CRM
@@ -100,6 +100,12 @@
 `L1529` · `contact@lecristallinoptique.com` vit sur ce domaine et qu'une bascule de nameservers emporterait les MX.
 `L1546` · `sales/Send-LE-CRISTALLIN-2026-09-23-Matin.md` (les quatre points à valider avec lui, la clarification de
 `L1548` · `sales/Send-UNIVERS-OPTIQUE-2026-09-22-Soir.md` réécrit pour ne plus relancer le Cristallin à l'aveugle.
+`L1549` · ## 2026-09-22 · 15:53 → 16:20 · LE CRM SUIT LES FAITS — Univers envoyé à 14:35 (une coche), Cristallin sans prix, et la vague de 37 messages de ce soir
+`L1560` · **Chez Le Cristallin, le cadre est tranché par King, 15:53** : « any modification will be done as the
+`L1570` · : ce n'est pas une relance, c'est NOTRE tour » ; Le Cristallin porte désormais la liste des quatre
+`L1616` · jours ; le levier, c'est la liste.** Détail des six : Le Cristallin (site vivant + FB, réponse en 2 min),
+`L1623` · renseignée que pour **2** (Les Cristallin et Univers, vérifiés à la main) et `Facebook` est vide pour 105.
+`L1636` · pour Labiomed, Bonanjo, Le Cristallin. **Aucun message envoyé par moi, aucun déploiement.**
 
 ---
 

@@ -40,7 +40,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 57 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 65 ligne(s).*
 
 `L51` · | **ven 18/09 20:02** | **Clinique de L'université** (Bassa, 694 36 02 03) | msg 1 — sans maquette | Envoyé | **Non** |
 `L113` · | 20:02 | Cabinet Dentaire Emmanuel · Clinique de L'université · MEDI LABO |
@@ -99,6 +99,14 @@
 `L1505` · *Follow-up* reposés, Univers Optique laissé en `closing` (là, le prix a été dit le 21/09 à 18:08). Un
 `L1540` · sur `e4220c5`, les trois livrables d'Univers re-comparés aux mêmes empreintes (`ec91063bbe80604b`,
 `L1548` · `sales/Send-UNIVERS-OPTIQUE-2026-09-22-Soir.md` réécrit pour ne plus relancer le Cristallin à l'aveugle.
+`L1549` · ## 2026-09-22 · 15:53 → 16:20 · LE CRM SUIT LES FAITS — Univers envoyé à 14:35 (une coche), Cristallin sans prix, et la vague de 37 messages de ce soir
+`L1551` · **Ce qui a changé depuis la dernière entrée.** King a envoyé l'aperçu d'**Univers Optique à 14:35**, avec la
+`L1552` · carte du lien `univers-optique-concept.vercel.app` et **la note au cabinet à l'intérieur de la page**,
+`L1557` · re-proposer le prix** (il est posé depuis le 21/09 18:08). Le fichier `demos/univers-optique-site-v2.html`
+`L1568` · Univers sort du plan d'aujourd'hui (envoyé, pas relançable) ; **Labiomed** y entre avec la seule note qui
+`L1572` · rejoué après chaque changement voulu, `rebuild.sh` propre (42 actions, plus 43 : Univers est sorti tout
+`L1617` · Univers (domaine mort + fiche Google, 6 min), Labiomed (11 min), UNI-LABO (~2 h), Bonanjo (lendemain 08:44
+`L1623` · renseignée que pour **2** (Les Cristallin et Univers, vérifiés à la main) et `Facebook` est vide pour 105.
 
 ---
 

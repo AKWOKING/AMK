@@ -1321,6 +1321,56 @@ JOUR_2209 = {
             "action : une relance courte le 23/09 avant 11 h s'il n'a pas répondu, SANS re-proposer le prix "
             "ni promettre une mise en ligne avant son accord.",
     },
+    # ── DÉCISION DE KING, 22/09 16:30 — « Labiomed et Bonanjo relancer prochaine vague ».
+    #    Les deux messages du 16:22 et 16:24 sont donc partis (une coche chacun) : ils glissent
+    #    d'une vague, ils ne sont pas perdus, et on ne réécrit pas aujourd'hui par-dessus un
+    #    message distribué il y a quelques minutes — même règle que pour les quatre « distribués
+    #    non lus » du lot du 19/09.
+    "labiomed-deido": {
+        "last_send_state": "sent",
+        "Follow-up date": "2026-09-24",
+        "site_url": "https://labiomed.vercel.app",
+        "Conversation_extra":
+            "22/09 16:22 — relance ENVOYÉE par King : la carte du lien `labiomed.vercel.app` titrée "
+            "« LABIOMED — Analyses médicales à Deido-Bassa, Douala », le texte « Je sais que votre emploi "
+            "du temps au laboratoire est très chargé. Je fais un suivi des projets de la semaine : la "
+            "maquette de votre site est toujours active et prête ici », la phrase « Tout est configuré "
+            "(vos horaires, vos examens et la prise de rendez-vous directe sur votre WhatsApp) » et la "
+            "question fermée « Souhaitez-vous qu'on valide le lancement cette semaine ? ». Rappel du fil : "
+            "« Ok je vous reviens des que je suis disponible » le 19/09 21:16, emoji 🙏 à 21:27, dernière "
+            "visite 21:40 — il avait donc LU la réponse de King. DÉCISION KING 16:30 : prochaine vague.",
+        "Notes_extra":
+            "Ce message du 16:22 ne contient PAS le prix (le prix du fil reste 100 000 FCFA, 50/50). "
+            "À la prochaine vague, ne pas répéter le 16:22 : une seule ligne, et le prix avec le lien à "
+            "l'accord. Ne jamais compter ce fil comme « quatre jours de silence » — il a reçu quelque "
+            "chose aujourd'hui.",
+    },
+    "centre-medical-de-bonanjo": {
+        "last_send_state": "sent",
+        "Follow-up date": "2026-09-24",
+        "site_url": "https://bonanjo.vercel.app",
+        "Conversation_extra":
+            "22/09 13:35 — King avait envoyé (DEUX coches) la page complète avec le lien "
+            "`bonanjo.vercel.app` : « Comme promis, votre aperçu — et comme vous m'avez répondu, j'ai fait "
+            "la page entière plutôt qu'un simple écran », les neuf services en une phrase (neurologie, "
+            "médecine générale, radiologie, échographie, gynécologie, pédiatrie, chirurgie, accouchement), "
+            "le rendez-vous qui se confirme sur WhatsApp « au lieu de passer par un annuaire », le prix "
+            "posé (100 000 FCFA — 50 000 pour commencer, 50 000 à la mise en ligne, rien dû avant accord) "
+            "et « Si quelque chose est inexact — un horaire, un service, une adresse — dites-le moi et je "
+            "corrige tout de suite. Un “oui” suffit. » Puis 16:24 — relance ENVOYÉE : la carte du lien, "
+            "« Je sais que la gestion du Centre Médical vous prend énormément de temps… votre aperçu est "
+            "toujours fonctionnel et prêt à être déployé ici », « vos 9 services y sont centralisés pour "
+            "orienter immédiatement les patients de Google vers votre WhatsApp », et la question fermée "
+            "« Avez-vous eu un moment pour regarder, ou souhaitez-vous que je réajuste quelques détails "
+            "avant d'officialiser la mise en ligne ? ». Son dernier mot à lui, verbatim : « Bjr merci je "
+            "vous reviens » (19/09 08:44). DÉCISION KING 16:30 : "
+            "prochaine vague.",
+        "Notes_extra":
+            "Le prix est DÉJÀ posé (13:35, et rappelé dans le fil du 19/09) : à la prochaine vague on ne "
+            "le répète pas, on ne repose qu'une question de calendrier. Le fait décisif du dossier reste "
+            "l'annuaire `mondocteur237.com` (honoraires publics) — il paie déjà, ailleurs, pour être "
+            "trouvé.",
+    },
 }
 
 

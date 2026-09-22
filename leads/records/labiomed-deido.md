@@ -20,10 +20,11 @@
 | Relances envoyées | 0 |
 | Source | directory |
 | Détail source | pagespratiquescm |
+| Site existant | https://labiomed.vercel.app |
 
 ## Notes
 
-Envoyé le 19/09 à 19:32 — lu (2 coches). ***PREMIER OUI DE LA CAMPAGNE.*** 19:43 il repond « Oui » (11 min apres notre message). 20:02 apercu + texte, SANS le prix (choix de King : le prix va avec un lien). 21:00 lien labiomed.vercel.app + PRIX 100 000 FCFA 50/50 — premier message de la campagne avec prix ET preuve cliquable. 21:16 il repond : « Ok je vous reviens des que je suis disponible ». 21:22 King : « C'est note, Docteur.. Je reste a votre disposition. » (2 coches). 21:27 il envoie un emoji 🙏. Derniere visite 21:40 — il a donc LU la reponse de King. ETAT : chaud, en attente, PAS de date donnee. Prochaine relance M+2 = lundi 21/09.
+Envoyé le 19/09 à 19:32 — lu (2 coches). ***PREMIER OUI DE LA CAMPAGNE.*** 19:43 il repond « Oui » (11 min apres notre message). 20:02 apercu + texte, SANS le prix (choix de King : le prix va avec un lien). 21:00 lien labiomed.vercel.app + PRIX 100 000 FCFA 50/50 — premier message de la campagne avec prix ET preuve cliquable. 21:16 il repond : « Ok je vous reviens des que je suis disponible ». 21:22 King : « C'est note, Docteur.. Je reste a votre disposition. » (2 coches). 21:27 il envoie un emoji 🙏. Derniere visite 21:40 — il a donc LU la reponse de King. ETAT : chaud, en attente, PAS de date donnee. Prochaine relance M+2 = lundi 21/09. · Ce message du 16:22 ne contient PAS le prix (le prix du fil reste 100 000 FCFA, 50/50). À la prochaine vague, ne pas répéter le 16:22 : une seule ligne, et le prix avec le lien à l'accord. Ne jamais compter ce fil comme « quatre jours de silence » — il a reçu quelque chose aujourd'hui.
 
 ## Prochaine action
 
@@ -31,7 +32,7 @@ Envoyé le 19/09 à 19:32 — lu (2 coches). ***PREMIER OUI DE LA CAMPAGNE.*** 1
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 16 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 23 ligne(s).*
 
 `L366` · ## sam 19/09 19:21–20:02 — ⭐ PREMIER « OUI » DE LA CAMPAGNE : LABIOMED
 `L371` · - **23:59 → LABIOMED a répondu « Oui » à 19:43 — 11 minutes après notre message.**
@@ -49,6 +50,13 @@ Envoyé le 19/09 à 19:32 — lu (2 coches). ***PREMIER OUI DE LA CAMPAGNE.*** 1
 `L713` · laissé VIDE sur des lignes où `Reply` dit oui : **Bonanjo** et **Labiomed** étaient hors calcul et le
 `L784` · (UNI-LABO 2026-09-25 et Labiomed 2026-09-21 y sont entrées en même temps).
 `L788` · 1. **Les seules affaires à `closing` disparaissaient de la file du jour.** Labiomed et UNI-LABO —
+`L1568` · Univers sort du plan d'aujourd'hui (envoyé, pas relançable) ; **Labiomed** y entre avec la seule note qui
+`L1586` · **Deux envois, puis une question.** À **16:22** King relance **Labiomed** (carte du lien
+`L1587` · `labiomed.vercel.app`, « je fais un suivi des projets de la semaine », question fermée : « Souhaitez-vous
+`L1590` · la capture. Puis, à **16:30** : « **Labiomed et Bonanjo relancer prochaine vague** ».
+`L1599` · posé chez Bonanjo ; chez Labiomed on ne repose qu'une question de calendrier).
+`L1617` · Univers (domaine mort + fiche Google, 6 min), Labiomed (11 min), UNI-LABO (~2 h), Bonanjo (lendemain 08:44
+`L1636` · pour Labiomed, Bonanjo, Le Cristallin. **Aucun message envoyé par moi, aucun déploiement.**
 
 ---
 
