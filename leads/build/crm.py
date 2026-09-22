@@ -1549,6 +1549,132 @@ def _apply_dead(out: list) -> None:
                       "on ne réécrit plus, on va vers des prospects frais. Aucune relance programmée.").strip(" ·")
 
 
+# ── LA PASSE « VITRINE » DU 22/09 AU SOIR · 24 leads santé/optique lus un par un ───────────────
+# King, 17:56 : « why tomorrow, time is 17:56, we can send one last batch … then move to content
+# creation ». La passe a donc été faite ce soir, et elle a produit deux choses :
+#   ① 5 leads JAMAIS contactés qui ont une vitrine À EUX (Facebook) → le dernier lot de la soirée ;
+#   ② 19 leads vérifiés SANS aucune vitrine → notés `none found`, ils ne seront pas démarchés.
+# Le critère est celui qui a coûté la soirée : vitrine à soi = 11,1 % de réponse ; sans = 2,5 %,
+# et 0/33 sur les fils classés morts aujourd'hui.
+FICHE_2209 = {
+    "niva-labo-akwa": (
+        'none found (aucun domaine — vérifié 22/09)',
+        'facebook.com/people/Laboratoire-Danalyses-Médicales-Niva-Labo/61554339904742/',
+        'Vitrine : page Facebook au nom du laboratoire (Akwa, rue King, face Vision Confort). Rien à lui côté domaine.',
+    ),
+    "aube-labo-akwa": (
+        'none found (aucun domaine — vérifié 22/09)',
+        'facebook.com/Aubelabo/',
+        "Vitrine : page Facebook ACTIVE (dépistage IST, prélèvement à domicile, carrefour Montagne Manga Bell, Bali). ⚠️ Le numéro affiché sur la page est 6 95 75 36 91 ; celui du CRM (693 06 81 84) vient de l'annuaire — vérifier l'identité WhatsApp avant d'écrire.",
+    ),
+    "hyrus-labo-deido": (
+        'none found (aucun domaine — vérifié 22/09)',
+        'facebook.com/HYRUS-LABO-1716532941949127/ + facebook.com/p/HYRUS-LABO-100043399675037/ (DEUX pages)',
+        "Vitrine : DEUX pages Facebook (999 et 778 mentions J'aime) + fiche Google 5,0/5 (5 avis) + Maligah. « examens à prix réduits » est leur positionnement affiché.",
+    ),
+    "megaoptic": (
+        'none found (aucun domaine — vérifié 22/09)',
+        'facebook.com/Mega Optic/',
+        'Vitrine : page Facebook MegaOptic, avec une vidéo qui liste les ASSURANCES avec lesquelles ils travaillent (angle identique au Cristallin : ils parlent déjà assurances à leur audience).',
+    ),
+    "polyclinique-innova": (
+        'none found (aucun domaine — vérifié 22/09)',
+        'facebook.com/polycliniqueinnova/',
+        "Vitrine : page Facebook active (Akwa, immeuble ancien Marlboro / près pharmacie de la Trinité ; ouvert 7j/7 24h/24 ; deux sites Douala + Yaoundé ; membre du réseau CAMERHO). Les horaires et les contacts vivent dans les POSTS, pas dans une page trouvable. Numéros publiés sur la page : 693 14 31 78 / 690 14 71 12 ; celui du CRM (674 145 740) vient de l'annuaire — vérifier l'identité WhatsApp avant d'écrire.",
+    ),
+    "m-dina-optic": (
+        'none found (22/09 : aucune page, aucun domaine — seulement une entrée de carte)',
+        '',
+        '',
+    ),
+    "lux-optique": (
+        'none found (22/09)',
+        '',
+        '',
+    ),
+    "dumbu-lunetterie": (
+        'none found (22/09)',
+        '',
+        '',
+    ),
+    "class-optic": (
+        'none found (22/09 : zéro résultat, même hors Douala)',
+        '',
+        '',
+    ),
+    "horizon-optique": (
+        'none found (22/09 — un compte Instagram homonyme à 33 abonnés, 0 post, numéro étranger : PAS eux)',
+        '',
+        '',
+    ),
+    "plan-te-optique": (
+        'none found (22/09 — les pages « Planète Optique » trouvées sont Tébessa, Yaoundé et Libreville : homonymes)',
+        '',
+        '',
+    ),
+    "bioscan-newbell": (
+        'none found (22/09) — fiche Google 5/5 (3 avis) via annuaires',
+        '',
+        '',
+    ),
+    "biolex-deido": (
+        'none found (22/09)',
+        '',
+        '',
+    ),
+    "clinique-des-cites-makepe": (
+        'none found (22/09 — fiche Maligah + carte ; aucun site, aucune page)',
+        '',
+        '',
+    ),
+    "centre-medical-saint-luc": (
+        'none found (22/09)',
+        '',
+        '',
+    ),
+    "wonders-bonamoussadi": (
+        'none found (22/09)',
+        '',
+        '',
+    ),
+    "imagerie-saint-joseph": (
+        'none found (22/09)',
+        '',
+        '',
+    ),
+    "labo-phanuel-akwa": (
+        'none found (22/09 : zéro résultat)',
+        '',
+        '',
+    ),
+    "tchaya-optique": (
+        'none found (22/09)',
+        'facebook.com/T.OPTIQUE/ (+ une seconde page, cabinet depuis 1974)',
+        "DÉJÀ CONTACTÉ : message 1 parti le 21/09 à 17:47 (une coche), jamais enregistré dans le CRM — corrigé le 22/09. Vitrine : deux pages Facebook, dont « TCHAYA OPTIQUE INTERNATIONAL » (2 390 mentions J'aime, depuis 1974).",
+    ),
+    "disc-optique-m-dicale": (
+        'none found (22/09)',
+        'facebook.com/people/DISC-Optique-Médical-DOM/100088156174066/',
+        'DÉJÀ CONTACTÉ : message 1 parti le 21/09 à 17:48 (une coche), jamais enregistré — corrigé le 22/09. Vitrine : page Facebook « DISC Optique Médical - DOM » (Bali, rue des manguiers).',
+    ),
+}
+
+
+def _apply_fiche(out: list) -> None:
+    by = {r.get("slug"): r for r in out}
+    for slug, (site, fb, note) in FICHE_2209.items():
+        r = by.get(slug)
+        if r is None:
+            continue
+        r["Website"] = site
+        if fb:
+            r["Facebook"] = fb
+        if note:
+            r["Notes"] = (str(r.get("Notes") or "") + " · " + note).strip(" ·")
+        if site.startswith("none found") and not fb:
+            r["disqualification_reason"] = "aucune vitrine à lui (passe du 22/09) — hors profil d'envoi"
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--csv", default=str(ROOT / "leads" / "CRM.csv"))
@@ -1692,6 +1818,7 @@ def main() -> int:
     _apply_evening(out)
     _apply_jour(out)
     _apply_dead(out)
+    _apply_fiche(out)
 
     cols = headers + NEW_FIELDS
     allowed = set(cols)

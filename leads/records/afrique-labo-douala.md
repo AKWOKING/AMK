@@ -31,7 +31,7 @@ Message 1 envoyé 17/09 13:24. **FU1 (M+2) ENVOYÉE par King le 19/09** (confirm
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 23 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 24 ligne(s).*
 
 `L61` · | jeu 17/09 13:24 | AFRIQUE LABO (690 54 70 93) | msg 1 | Envoyé, 2 coches | **Non** |
 `L78` · - **Fils ouverts sans réponse au 18/09 :** OraCare · MITOC · Baptist Comprehensive · Baird Memorial · The Skye · YAKS · AFRIQUE LABO · L'Opticien · La Béthanie · JEMPO. **31 fils ouverts · 2 réponses humaines (St. Theresa, UNI-LABO) · PRR = 2/31 = 6,5 %.**
@@ -56,6 +56,7 @@ Message 1 envoyé 17/09 13:24. **FU1 (M+2) ENVOYÉE par King le 19/09** (confirm
 `L991` · Bonanjo (réécriture ce soir ≤ 21:00 ou demain 09:00 ?) · AFRIQUE LABO (la phrase « noir sur blanc » sur les
 `L1141` · Médina Optic · Bonanjo (ce soir ≤ 21:00 ou demain 09:00) · AFRIQUE LABO (« noir sur blanc ») · les 12 assureurs
 `L1244` · AFRIQUE LABO. `amk-cm.vercel.app/univers/` répond **404** tant que King n'a pas déployé.
+`L1776` · - à trancher, pas dans le lot : `concept-afriquelabo-v1.vercel.app` (Afrique Labo, `qualifying`, aucune action
 
 ---
 

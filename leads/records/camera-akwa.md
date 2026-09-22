@@ -31,11 +31,12 @@ Envoi 18/09 ~18:30 SANS maquette (vitesse). Maquette disponible : clients/douala
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 3 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 4 ligne(s).*
 
 `L33` · | **ven 18/09 ~18:30** | **Cabinet Médical CAMERA** (Akwa, 699 90 53 27) | msg 1 — **sans maquette** | Envoyé | **Non** |
 `L80` · - **7 envois du soir (18/09) partis SANS maquette** — décision de King, vitesse d'abord. Les maquettes de CAMERA et LE NID existent déjà (`clients/douala-cliniques/`) : elles peuvent partir en second message ou en relance M+2, ce qui rattrape l'essentiel de l'effet perdu.
 `L110` · | ~18:30 | Discovery Labs · UNI-LABO · YONDJA ANALYSE · Laboratoire du Château · Département Biologique · CAMERA · LE NID |
+`L1783` · - Les « démos » de CAMERA, LE NID, Adonaï et Malia Labo étaient des **images** envoyées dans la conversation
 
 ---
 

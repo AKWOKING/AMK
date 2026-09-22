@@ -93,6 +93,12 @@ RELANCE_A_JOUR = {
                                      "prix, hébergement et accès LWS à la fin, après son accord"),
     # UNI-LABO a DEMANDÉ un rendez-vous : ce n'est plus une relance à calculer.
     "uni-labo-bonamoussadi": ("2026-09-25", "RENDEZ-VOUS demandé par le prospect — vendredi 25/09"),
+    "tchaya-optique": ("2026-09-23", "Message 1 parti le 21/09 à 17:47 (une coche, jamais enregistré avant le "
+                                     "22/09). Vitrine : deux pages Facebook, dont « TCHAYA OPTIQUE INTERNATIONAL » "
+                                     "(2 390 mentions J'aime, opticien depuis 1974). Relance 1/3 : 23/09"),
+    "disc-optique-m-dicale": ("2026-09-23", "Message 1 parti le 21/09 à 17:48 (une coche, jamais enregistré avant "
+                                           "le 22/09). Vitrine : page Facebook « DISC Optique Médical - DOM » "
+                                           "(Bali, rue des manguiers). Relance 1/3 : 23/09"),
     "skye-douala": ("2026-09-29", "Relance 2/3 envoyée le 22/09 au soir (réécrite sans reproche). DERNIÈRE "
                                   "touche : 29/09, puis parked daté"),
     "yaks-douala": ("2026-09-29", "Relance 2/3 envoyée le 22/09 au soir. DERNIÈRE touche : 29/09, puis parked"),

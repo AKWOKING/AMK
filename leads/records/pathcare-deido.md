@@ -29,11 +29,12 @@ Envoyé le 19/09 à 19:26 — distribué, NON lu (1 coche). UNE coche — pas en
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 3 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 4 ligne(s).*
 
 `L1665` · Meka, Interlabo, La Passerelle, Pathcare (distribués non lus depuis le 19 — on n'écrit pas par-dessus) et
 `L1702` · Labiomed**, 5 à ne pas envoyer ce soir (Meka, Interlabo, La Passerelle, Pathcare — distribués non lus depuis le
 `L1735` · dernière** relance). Les 5 « ne pas envoyer » restent dehors : Meka, Interlabo, La Passerelle, Pathcare
+`L1761` · §1/§2 + les 5 « à ne pas envoyer ce soir » : Meka, Interlabo, La Passerelle, Pathcare, 2K Labo) passent en
 
 ---
 

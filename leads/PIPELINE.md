@@ -28,7 +28,7 @@
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| Univers Optique | Douala | 699 25 28 74 | `L1715` |
+| Univers Optique | Douala | 699 25 28 74 | `L1780` |
 
 ## ④ Offre posée — 1
 
@@ -40,20 +40,20 @@
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| Le Cristallin | Douala | 699 90 55 77 | `L1636` |
+| Le Cristallin | Douala | 699 90 55 77 | `L1779` |
 
 ## ② Qualifié — en conversation — 10
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| Afrique Labo SARL | Douala (Bessengue) | 690 54 70 93 | `L1244` |
+| Afrique Labo SARL | Douala (Bessengue) | 690 54 70 93 | `L1776` |
 | Baird Memorial College | Buea (Bonduma) | 677875395 | `L16` |
 | Baptist Comprehensive College | Buea (Great Soppo) | 679650707 | `L15` |
 | Cabinet Dentaire The Skye | Douala (Bonamoussadi) | 677 79 69 99 | `L53` |
 | Cabinet Dentaire YAKS | Douala (Logbessou) | 672 70 20 78 | `L54` |
-| Centre Médical de Bonanjo | Douala (Bonapriso, ancien aéroport) | 694 57 22 77 | `L1726` |
+| Centre Médical de Bonanjo | Douala (Bonapriso, ancien aéroport) | 694 57 22 77 | `L1780` |
 | L'Opticien Bali SARL | Douala (Bali) | 670 27 60 65 | `L22` |
-| Labiomed | Douala (Deido, 104 Route Deido-Bassa) | 699 98 54 66 | `L1740` |
+| Labiomed | Douala (Deido, 104 Route Deido-Bassa) | 699 98 54 66 | `L1780` |
 | Midas Touch Optic Center (MITOC) | Buea (Molyko, opp former police station, Malingo) | 678908962 | `L14` |
 | St. Theresa International Bilingual Comprehensive College (STIBCCOL) | Buea (Molyko) | 679151075 | `L1698` |
 
@@ -71,7 +71,7 @@
 | Bioscan | Douala (New Bell) | 680 06 03 94 | `L460` |
 | Bishop Jules Peters Memorial College | Buea (Bokwaongo) | 683348856 | — |
 | Blessed Group of Schools (BGS / Blessed Anglo-Saxon) | Yaoundé (Simbock + Nomayos, BP 1839) | 680139453 | `L1642` |
-| COMOBIL – Collège Moderne Bilingue Les Lauréats | Douala (Bonamoussadi) | — | `L1629` |
+| COMOBIL – Collège Moderne Bilingue Les Lauréats | Douala (Bonamoussadi) | — | `L1781` |
 | COSBINAL – Complexe Scolaire Bilingue NAL | Douala (Bonamoussadi, Kotto Bloc K) | 677786379 | — |
 | Caprice Optique | Douala | 675 06 16 23 | — |
 | Cavisa Optique | Douala | 699 95 90 52 | — |
@@ -139,7 +139,7 @@
 | Saint Anne's High School Limbe (SAHISCOL) | Limbe (New Town) | 682122959 | `L694` |
 | Saint Bernard High School (SBHS) | Buea (Molyko) | — | — |
 | Salvation Bilingual High School (Molyko-Buea) | Buea (Molyko) | — | `L1656` |
-| St. Joseph's College Sasse (SJC Sasse) | Buea (Sasse/Small Soppo) | 677195500 | — |
+| St. Joseph's College Sasse (SJC Sasse) | Buea (Sasse/Small Soppo) | 677195500 | `L1775` |
 | St. Sylvester International College | Buea (Muea) | — | — |
 | Summerset Bilingual College (SMBICOL) | Buea (Wokoko) | — | — |
 | Tchaya Optique | Douala | 696 79 01 73 | `L837` |
@@ -152,16 +152,16 @@
 |---|---|---|---|
 | 2K Labo | Douala (Yassa, à côté de l'institut La Perle) | 670 94 43 03 | — |
 | CIDM St Joseph | Douala | 674 30 07 98 | — |
-| Cabinet Biomédical Adonaï | Douala | 696 53 87 75 | `L712` |
+| Cabinet Biomédical Adonaï | Douala | 696 53 87 75 | `L1783` |
 | Cabinet Dentaire Emmanuel | Douala (Bonamoussadi) | 694 42 62 39 | `L113` |
-| Cabinet Médical CAMERA | Douala (Akwa) | 699 90 53 27 | `L110` |
+| Cabinet Médical CAMERA | Douala (Akwa) | 699 90 53 27 | `L1783` |
 | Cabinet Médical ISIS | Douala (Bonapriso) | 699 34 93 89 | `L35` |
 | Cabinet Médical La Cerisaie | Douala (Bonapriso) | 699 95 51 64 | `L1324` |
 | Cabinet Médical i'DoC | Douala (Bonapriso) | 699 68 05 88 | `L37` |
 | Cabinet du Dr Brulet Epaka | Douala (Bonapriso) | 694 77 74 54 | `L111` |
 | Centre Médical Kouam Samuel | Douala (Bali) | 677 39 35 31 | `L111` |
 | Centre Médical des Capucines | Douala (Bonapriso) | 699 72 36 93 | `L111` |
-| Clinique La Béthanie | Douala (Bonabéri) | 677 76 07 82 | `L78` |
+| Clinique La Béthanie | Douala (Bonabéri) | 677 76 07 82 | `L1781` |
 | Clinique de L'université | Douala (Bassa) | 694 36 02 03 | `L113` |
 | Ctre d'Analyses Médicales Pasteur Medlas | Douala (Akwa, Bld de la République) | 677 45 99 97 | `L761` |
 | DAS Group International | Douala (Akwa) | 680 100 626 | `L41` |
@@ -170,10 +170,10 @@
 | Département Biologique | Douala (Akwa I) | 699 85 33 52 | `L110` |
 | Flemming Dream Labo | Douala (Bessenguè, feu rouge, Bld de la République) | 699 81 34 04 | — |
 | INSES — Institut Supérieur de l'Espoir | Douala (Bonabéri) | 674 93 66 04 | `L1716` |
-| Interlabo | Douala (Akwa, 780 Rue E. Betote — R. Pau) | 677 75 54 21 | `L1735` |
+| Interlabo | Douala (Akwa, 780 Rue E. Betote — R. Pau) | 677 75 54 21 | `L1761` |
 | J&E Memorial Polyclinic (JEMPO) | Douala (Deido/Bessengue) | 696 71 06 99 | `L24` |
 | Kamaïs Optic | Douala (Bessengue) | 678 435 460 | `L761` |
-| Labo La Passerelle | Douala (Deido, 820 Bld de la Réunification) | 694 71 91 22 | `L1735` |
+| Labo La Passerelle | Douala (Deido, 820 Bld de la Réunification) | 694 71 91 22 | `L1761` |
 | Laboratoire Biodiagnostics | Douala (Sable, Rue Deido-Bonanjo) | 699 92 91 98 | — |
 | Laboratoire Meka | Douala (Bonamoussadi, 241 Rue 5N036) | 699 79 93 35 | — |
 | Laboratoire Sainte Anne | Douala (New-Bell, 152 Av de l'Indépendance) | 675 39 76 65 | — |
@@ -182,8 +182,8 @@
 | MEDI LABO | Douala (Akwa, 1927 Bld de la République) | 677 81 70 25 | `L55` |
 | Malia Labo | Douala | 694 56 22 44 | `L27` |
 | One Stop Medical Laboratory & Diagnostics | Buea (location TBD; co-owner based Buea) | 691632941 | — |
-| OraCare Dental Clinic (Oracare237) | Buea (Molyo) | 672 52 66 86 | `L1741` |
-| Pathcare Diagnostics | Douala (Deido) | 680 00 88 45 | `L1735` |
+| OraCare Dental Clinic (Oracare237) | Buea (Molyo) | 672 52 66 86 | `L1777` |
+| Pathcare Diagnostics | Douala (Deido) | 680 00 88 45 | `L1761` |
 | Polyclinique de la Gare LE NID | Douala (Bessengue) | 699 987 775 | `L34` |
 | Presbyterian Comprehensive Secondary School (PCSS) Buea | Buea (Madam Namondo Alexander) | 652075229 | — |
 | Solidarity Health Foundation (Solidarity Clinic & Laboratory) | Buea (Untarred Malingo St / Molyko Checkpoint D61, P.O. Box 467; plus code 575J+7M) | 677615757 | `L761` |

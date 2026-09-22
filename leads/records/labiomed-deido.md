@@ -32,7 +32,7 @@ Envoyé le 19/09 à 19:32 — lu (2 coches). ***PREMIER OUI DE LA CAMPAGNE.*** 1
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 29 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 30 ligne(s).*
 
 `L366` · ## sam 19/09 19:21–20:02 — ⭐ PREMIER « OUI » DE LA CAMPAGNE : LABIOMED
 `L371` · - **23:59 → LABIOMED a répondu « Oui » à 19:43 — 11 minutes après notre message.**
@@ -63,6 +63,7 @@ Envoyé le 19/09 à 19:32 — lu (2 coches). ***PREMIER OUI DE LA CAMPAGNE.*** 1
 `L1723` · **Six envois, enregistrés comme des faits** (« MITOC, L'Opticien, Yaks, Skye, Labiomed, Bonanjo all sent this
 `L1727` · et **Labiomed** reste au **1ᵉʳ octobre**. Sa réponse de 17:14 est enregistrée **telle qu'il l'a écrite** —
 `L1740` · (Labiomed), un message tué avant envoi parce que le prospect avait déjà un site (INSES), un autre tué parce
+`L1780` · `univers-optique-concept`, `labiomed`, `bonanjo`, `amk-cm.vercel.app/opticien/`.
 
 ---
 

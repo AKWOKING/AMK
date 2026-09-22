@@ -40,7 +40,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 68 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 69 ligne(s).*
 
 `L51` · | **ven 18/09 20:02** | **Clinique de L'université** (Bassa, 694 36 02 03) | msg 1 — sans maquette | Envoyé | **Non** |
 `L113` · | 20:02 | Cabinet Dentaire Emmanuel · Clinique de L'université · MEDI LABO |
@@ -110,6 +110,7 @@
 `L1695` · reprogrammait donc en relance 2/3 : exactement le mode de panne d'Univers). Un seul message reste permis,
 `L1711` · **King a montré `univ-inses.com` : « is a university and they already have a site ».** Notre premier message
 `L1715` · fiche WhatsApp Business « Insés » (Education · University, catalogue CQP/BTS) portant le **même numéro
+`L1780` · `univers-optique-concept`, `labiomed`, `bonanjo`, `amk-cm.vercel.app/opticien/`.
 
 ---
 

@@ -1,4 +1,4 @@
-# LA PASSE « VITRINE » — mercredi 23/09/2026
+# LA PASSE « VITRINE » — **commencée le 22/09 au soir (24 leads), à finir le 23/09 (80 restants)**
 **Objectif : remplir `Website` et `Facebook` sur les 104 leads santé/optique jamais vérifiés, et sortir de
 là la prochaine liste d'envoi.** C'est la seule tâche qui fabrique des prospects frais, et c'est elle qui a
 été demandée par King (« I prefer spending time on fresh prospects »).
@@ -73,3 +73,16 @@ le plan — **un lot qui ne change pas le plan n'a rien produit**.
   ouvert ») : une seule affirmation non vérifiée efface tout le message.
 - Plus de secteur « prometteur » sans vitrine : labo 5,9 %, optique 4,5 %, clinique 4,2 % — le secteur ne
   prédit rien, la vitrine prédit.
+
+---
+
+## Journal de la passe — 22/09 au soir (24 leads lus)
+
+| Verdict | Leads |
+|---|---|
+| **Vitrine à eux (5)** | Niva Labo (FB), Hyrus Labo (FB ×2), Aube Labo (FB active), MegaOptic (FB + assurances), Polyclinique Innova (FB active) |
+| **Vitrine, mais déjà contactés le 21/09** | Tchaya Optique (FB ×2, depuis 1974), Disc Optique Médicale (FB, Bali) |
+| **`none found` (13)** | Médina Optic, Lux Optique, Dumbu Lunetterie, Class-Optic, Horizon Optique, Planète Optique (homonymes Tébessa/Yaoundé/Libreville), Bioscan, Biolex Labo, Clinique des Cités, Centre Médical Saint Luc, Wonders Medical Foundation, Imagerie Saint Joseph, LABO-PHANUEL |
+
+**Rendement : 5 / 24 = 21 %** de leads avec vitrine — cohérent avec les 18 % du CRM entier, et très au-dessus
+des 0 % d'aujourd'hui sur les 33 fils morts. Les 80 leads restants gardent la même recette.

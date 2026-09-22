@@ -34,7 +34,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 37 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 38 ligne(s).*
 
 `L43` · | **ven 18/09 19:42** | **Centre Médical de Bonanjo** (Bonapriso, 694 57 22 77) | msg 1 — sans maquette | Envoyé | **Non** |
 `L112` · | 19:42 | Centre Médical de Bonanjo · Kamaïs Optic |
@@ -73,6 +73,7 @@
 `L1636` · pour Labiomed, Bonanjo, Le Cristallin. **Aucun message envoyé par moi, aucun déploiement.**## 2026-09-22 · 16:45 · DÉCISION — « laisser tomber les écoles », et la vague du soir sort du plan
 `L1723` · **Six envois, enregistrés comme des faits** (« MITOC, L'Opticien, Yaks, Skye, Labiomed, Bonanjo all sent this
 `L1726` · **Bonanjo** passe au **lun 28/09** (le message de ce soir a consommé la relance de jeudi : on ne double pas),
+`L1780` · `univers-optique-concept`, `labiomed`, `bonanjo`, `amk-cm.vercel.app/opticien/`.
 
 ---
 

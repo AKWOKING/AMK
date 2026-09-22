@@ -1788,4 +1788,46 @@ puisse repartir par erreur.
 elle qui fabrique la prochaine liste. Les 33 morts, eux, étaient tous des leads **sans aucune vitrine à eux** :
 0 réponse sur 33, quand le profil « a déjà une vitrine » est à 11,1 %. La note
 `sales/PROFIL-DES-OUI-2026-09-22.md` vient de recevoir sa démonstration la plus chère — et la moins chère
-serait de ne plus jamais envoyer à ce profil-là.
+serait de ne plus jamais envoyer à ce profil-là.## 2026-09-22 · 17:56 → 18:10 · « Why tomorrow ? » — la passe « vitrine » a été faite ce soir, pas demain, et elle a sorti 5 leads frais
+
+**King, 17:56** : « pourquoi demain, il est 17:56, on peut envoyer un dernier lot, non ? puis on passe à la
+création de contenu. » Il a raison sur le fond : l'heure n'était pas le problème, la liste l'était. La passe
+« vitrine » prévue pour le 23 a donc été faite **ce soir**, et la soirée finit sur un lot frais — pas sur un
+plan vide.
+
+**Ce que la passe a produit, chiffres nus : 24 leads santé/optique lus un par un** (recherche web par lead,
+5 lots de requêtes ciblées), et **5 avec une vitrine À EUX** — soit **21 %**, contre les 18 % observés sur
+l'ensemble du CRM. Les 19 autres : `none found`, notés dans la source, **ils ne seront pas démarchés.**
+
+| Lead | Sa vitrine (vérifiée ce soir) | Angle du message |
+|---|---|---|
+| **Niva Labo** (Akwa, rue King) | page Facebook au nom du labo + ~10 fiches d'annuaire | sa page existe, mais ni examens, ni horaires, ni bouton |
+| **Hyrus Labo** (Deido, Bd de la République) | **deux** pages Facebook (999 et 778 mentions J'aime) + Google 5,0/5 | deux endroits où ses patients se perdent |
+| **Aube Labo** (Akwa II / Bali) | page Facebook **active** (dépistage IST, prélèvement à domicile) | le prélèvement à domicile n'est trouvable qu'en défilant Facebook |
+| **MegaOptic** | page Facebook + **vidéo listant les assurances acceptées** | la liste est enfermée dans une vidéo — angle identique au Cristallin |
+| **Polyclinique Innova** (Akwa) | page Facebook active, 2 sites, réseau CAMERHO, « 7j/7 24h/24 » | les horaires et l'adresse vivent dans les POSTS |
+
+Le fichier à envoyer : **`sales/Send-Dernier-Lot-2026-09-22-18h.md`** — 5 messages, une question fermée chacun,
+aucun prix, aucune affirmation d'absence, et pour chacun ce qu'il ne faut pas écrire. **Rien n'a été envoyé
+d'ici.**
+
+**Deux trous du CRM trouvés en passant, et rebouchés** : `Tchaya Optique` (17:47) et `Disc Optique Médicale`
+(17:48) avaient reçu leur **message 1 le 21/09**, une coche — le journal le disait, le CRM non. Ils
+apparaissaient donc comme « jamais contactés ». Corrigé dans la source (`FICHE_2209`) et programmés au
+**23/09** pour leur relance 1/3 — surtout **pas ce soir** : relancer un message d'hier, c'est le harcèlement
+que la critique d'OraCare nous a appris à éviter. Les deux ont d'ailleurs une vitrine (deux pages Facebook
+pour Tchaya, dont « TCHAYA OPTIQUE INTERNATIONAL » à 2 390 mentions J'aime, opticien depuis 1974 ; une page
+pour « DISC Optique Médical - DOM » à Bali).
+
+**Deux écarts de numéros notés, pas devinés** : la page d'**Aube Labo** affiche **6 95 75 36 91** (nous avons
+693 06 81 84) et **Polyclinique Innova** publie **693 14 31 78 / 690 14 71 12** (nous avons 674 145 740). Le
+message est prêt à partir sur nos numéros **après vérification du profil WhatsApp** ; si le profil ne
+s'identifie pas, on écrit au numéro de leur propre page — c'est leur numéro le plus frais.
+
+**Et une chose que la soirée a montrée sur la méthode** : les cinq leads frais ont été trouvés **en cherchant
+leur nom**, pas en cherchant un annuaire de plus. C'est la différence entre un annuaire (où tout le monde est
+listé, donc personne n'a rien payé) et une vitrine (où quelqu'un a investi du temps). Le critère « a déjà une
+vitrine à lui » est désormais **opérationnel** : il suffit d'une requête et de trente secondes de lecture.
+
+**Suite immédiate** : King envoie ces cinq, relève les coches dans ce journal, et on passe à la **création de
+contenu** — le prochain chantier, tel qu'il l'a annoncé à 17:56.
