@@ -1874,3 +1874,49 @@ qu'on vient d'apprendre : `content/strategy/CONTENT-STRATEGY.md` (v0.3 approuvé
 cliniques et de labos) et un pipeline avec #4b livré à valider. **Le sujet qui s'impose est celui de ce soir :
 « votre page Facebook ne prend pas un rendez-vous »** — cinq des leads trouvés aujourd'hui avaient une
 vitrine, aucun n'avait de quoi convertir, et ce sont **nos propres données** qui le disent.
+
+
+## 2026-09-22 · 18:55 → 19:45 (horodatage du bac) · LA CRÉATION DE CONTENU A ABOUTI — vidéo 06 « Votre page Facebook ne prend pas de rendez-vous » : master, voix, portique, et deux pièges payés
+
+**Le sujet vient de nos propres chiffres, pas d'une idée.** Sur la passe « vitrine » du 22/09, **cinq leads sur
+six avaient déjà une vitrine** (page Facebook, parfois deux) et **aucun** n'avait de quoi prendre un
+rendez-vous. Donc la vidéo ne dit pas « vous n'existez pas » — ce serait faux et vérifiable — elle dit :
+**votre page montre, elle ne répond pas.**
+
+**Le livrable est écrit, mesuré, et prêt** :
+`content/videos/v06-facebook-no-booking/Video_06_Facebook_No_Booking_VOIX.mp4`
+**38,61 s · 1080×1920 · 30 fps · 4,1 Mo · audio AAC mono 48 kHz · -15,9 LUFS intégrés · crête -1,5 dBFS**.
+Une version muette du même master existe (38,60 s, 3,3 Mo) si King veut poser sa propre voix ou un son
+tendance. **Le portique du mouvement est passé sur la version AVEC voix : « OK — mouvement présent dans chaque
+fenêtre », 0 fenêtre figée.** Et la relecture image par image est jointe : `apercus/planche-v06.jpg`, une
+image par plan, extraite du master final.
+
+**Le montage suit la voix, pas l'inverse.** Les six phrases (voix `voice-01`, choisie par King) ont été
+mesurées avant d'être montées : `narration/timeline.json` porte les frontières réelles
+**[0 / 4,85 / 13,12 / 20,58 / 27,91 / 32,08]**, `build.py` s'y conforme, et `mux_voice.py` **refuse de sortir un
+master** si l'écart entre le montage et la voix dépasse **0,35 s**. Un décalage voix/image ne se rattrape pas
+après coup : il se refuse avant.
+
+**Deux pièges payés, écrits dans le moteur pour ne plus les repayer.**
+① **Rien ne dépasse du cadre, et ça se mesure** : la taille du titre du plan 05 était choisie sur le *nombre de
+caractères*, pas sur la largeur réelle des glyphes — il ne tenait qu'à 99 % de la place, et à un mot près
+c'était « Comptez les questio… » coupé au bord. Corrigé par `fit_font()` + un `head()` qui mesure chaque ligne
+et rétracte la taille (78 → 62 sur ce plan ; les autres ne bougent pas).
+② **Changer la toile invalide toutes les coordonnées** : un passage temporaire du rendu interne en 900×1600
+(pour rendre plus vite) a fait tomber **hors cadre** les textes de bas des plans 02, 04 et 05, et la signature
+finale avec eux — **sans que le portique du mouvement, qui ne regarde que le mouvement, ne voie rien**. Toile
+rétablie à 1080×1920, et la vitesse est venue d'ailleurs : le push-in de 3 % est maintenant fait par `zoompan`
+dans ffmpeg (0,27 s/image, rendu complet en ~5 min). Loi ajoutée : après tout changement de moteur ou de
+toile, on ré-extrait des images et on les regarde.
+
+**Ce qui n'est pas dans la vidéo, volontairement** : aucun prix, aucune date promise, aucun témoignage, aucune
+école (les 36 ont été écartées le 22/09), aucune page d'un vrai prospect ni nom de concurrent à l'écran — la
+maquette est dessinée et étiquetée « EXEMPLE FICTIF ».
+
+**Petite correction de registre** : le commit `48c4294` avait été noté comme incomplet ; vérification faite,
+`build.py`, `mux_voice.py`, `narration/*.mp3` et `narration/timeline.json` **sont bien suivis par git**. Ce
+qui restait à pousser : le `build.py` corrigé, le master re-rendu, la version voix, la planche et le statut —
+fait dans le même mouvement.
+
+**Suite immédiate : publication — King seul** (règle du calendrier). Sujet de la vidéo 07 déjà choisi par les
+chiffres du soir dans `content/pipeline/KEYWORDS-2026-09-22.md`.

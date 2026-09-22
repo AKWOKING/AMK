@@ -205,10 +205,30 @@ def top_bar(im, idx, prog):
             d.rounded_rectangle((a, y, a + max(6, seg * prog), y + 7), radius=4, fill=TEAL)
 
 
+_MESURE = ImageDraw.Draw(Image.new("RGB", (8, 8)))
+
+
+def fit_font(text, size, weight="M", maxw=None, floor=18):
+    """Loi ③ appliquée pour de vrai : on MESURE et on rétracte la taille jusqu'à ce que ça tienne.
+    (le plan 05 sortait « Comptez les questio » coupé au bord droit : la taille était choisie
+    sur le NOMBRE de caractères, pas sur la largeur réelle des glyphes.)"""
+    s = int(size)
+    while s > floor:
+        f = font(s, weight)
+        if maxw is None or _MESURE.textlength(text, font=f) <= maxw:
+            return f
+        s -= 2
+    return font(int(floor), weight)
+
+
 def head(im, eyebrow, lines, y=200):
     d = ImageDraw.Draw(im)
     spaced(d, (64, y), eyebrow, font(34, "S"), TEAL, tracking=4)
-    f = font(78, "X") if max(len(l) for l in lines) < 24 else font(62, "X")
+    maxw = W - 2 * 64
+    size = 78
+    while size > 46 and any(_MESURE.textlength(l, font=font(size, "X")) > maxw for l in lines):
+        size -= 4
+    f = font(size, "X")
     yy = y + 64
     for l in lines:
         d.text((64, yy), l, font=f, fill=BLANC)
@@ -357,26 +377,33 @@ def scene3(im, t):
     page = Page(412, 700).build(min(t, 1.4), comments=[("Client", "Vous êtes ouverts ?", "")])
     phone(im, 56, 780, 440, 800, page)
     fictif(im, 78, 800)
-    bx, by = 588, 780
-    shadow(im, (bx, by, bx + 420, by + 800), 54, blur=34, alpha=155, dy=20)
+    # la carte vivait de 588 à 1008 sur une toile de 900 : ses phrases sortaient coupées en plein mot.
+    bx, by, cw, chh = 588, 780, 420, 800
+    shadow(im, (bx, by, bx + cw, by + chh), 54, blur=34, alpha=155, dy=20)
     d = ImageDraw.Draw(im)
-    d.rounded_rectangle((bx, by, bx + 420, by + 800), radius=54, fill=(255, 255, 255))
-    d.rounded_rectangle((bx + 14, by + 14, bx + 406, by + 786), radius=40, fill=(241, 244, 250))
-    d.rounded_rectangle((bx + 174, by + 30, bx + 246, by + 48), radius=9, fill=(228, 233, 242))
+    d.rounded_rectangle((bx, by, bx + cw, by + chh), radius=54, fill=(255, 255, 255))
+    d.rounded_rectangle((bx + 14, by + 14, bx + cw - 14, by + chh - 14), radius=40, fill=(241, 244, 250))
+    d.rounded_rectangle((bx + cw / 2 - 36, by + 30, bx + cw / 2 + 36, by + 48), radius=9,
+                        fill=(228, 233, 242))
     if t > 0.25:
         shake = 7 * math.sin(t * 24) * max(0.0, 1 - abs(t - 1.0) / 0.7)
         ny = by + 260 + max(0.0, (1.4 - t)) * -160 + shake
-        veil_rect(im, (bx + 30, ny, bx + 390, ny + 136), 26, (255, 255, 255), 0.97)
+        veil_rect(im, (bx + 30, ny, bx + cw - 30, ny + 136), 26, (255, 255, 255), 0.97)
         d = ImageDraw.Draw(im)
-        d.ellipse((bx + 54, ny + 32, bx + 54 + 72, ny + 104), fill=ROUGE)
+        d.ellipse((bx + 54, ny + 32, bx + 126, ny + 104), fill=ROUGE)
         d = ImageDraw.Draw(im)
         icon_phone(d, bx + 90, ny + 68, 42, (255, 255, 255))
-        d.text((bx + 148, ny + 30), "Appel manqué", font=font(32, "S"), fill=(28, 34, 66))
-        d.text((bx + 148, ny + 74), "Cabinet d'à côté", font=font(22, "S"), fill=(140, 148, 172))
-        d.text((bx + 148, ny + 104), "il y a 1 min", font=font(22, "S"), fill=(140, 148, 172))
+        tx, tw = bx + 148, cw - 148 - 30
+        d.text((tx, ny + 26), "Appel manqué", font=fit_font("Appel manqué", 31, "S", tw), fill=(28, 34, 66))
+        d.text((tx, ny + 70), "Cabinet d'à côté", font=fit_font("Cabinet d'à côté", 21, "S", tw),
+               fill=(140, 148, 172))
+        d.text((tx, ny + 100), "il y a 1 min", font=fit_font("il y a 1 min", 21, "S", tw), fill=(140, 148, 172))
     if t > 1.7:
-        d.text((bx + 44, by + 560), "Le rendez-vous est", font=font(30, "M"), fill=(150, 158, 180))
-        d.text((bx + 44, by + 604), "déjà pris ailleurs.", font=font(34, "S"), fill=(214, 92, 100))
+        tw = cw - 44 - 24
+        d.text((bx + 44, by + 560), "Le rendez-vous est",
+               font=fit_font("Le rendez-vous est", 30, "M", tw), fill=(150, 158, 180))
+        d.text((bx + 44, by + 604), "déjà pris ailleurs.",
+               font=fit_font("déjà pris ailleurs.", 34, "S", tw), fill=(214, 92, 100))
 
 
 def scene4(im, t):
@@ -468,11 +495,7 @@ def frame(t: float) -> Image.Image:
     dust(im, t)
     SCENE_FN[i](im, local)
     top_bar(im, i + 1, min(1.0, local / dur))
-    z = 1.0 + 0.030 * (local / dur)                       # push-in global
-    cw, ch = int(W / z), int(H / z)
-    ox = int((W - cw) / 2 + 5 * math.sin(t * 0.35))
-    oy = int((H - ch) / 2 + 6 * math.cos(t * 0.31))
-    return im.convert("RGB").crop((ox, oy, ox + cw, oy + ch)).resize((W, H), Image.BILINEAR)
+    return im.convert("RGB")
 
 
 def load_scenes():
@@ -492,12 +515,15 @@ def main():
     ff = imageio_ffmpeg.get_ffmpeg_exe()
     n = int(round(dur * FPS))
     cmd = [ff, "-y", "-f", "rawvideo", "-vcodec", "rawvideo", "-pix_fmt", "rgb24",
-           "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-", "-vf", "setsar=1,fps=30", "-an",
-           "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p",
+           "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
+           "-vf", (f"setsar=1,fps=30," 
+                   f"zoompan=z='min(1.045,1+0.030*on/({dur}*30))':x='iw/2-(iw/zoom/2)+4*sin(on/24)':"
+                   f"y='ih/2-(ih/zoom/2)+5*cos(on/29)':d=1:s=1080x1920:fps=30"),
+           "-an", "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p",
            "-movflags", "+faststart", str(out)]
     p = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
     for k in range(n):
-        p.stdin.write(frame(k / FPS).tobytes())
+        p.stdin.write(frame(k / FPS).tobytes())   # le push-in et la montée en 1080 se font dans ffmpeg
         if k % 150 == 0:
             print(f"  {k}/{n} · {k / FPS:5.1f}s", flush=True)
     p.stdin.close()

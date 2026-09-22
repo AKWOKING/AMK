@@ -1,6 +1,6 @@
 # AMK — CONTENT PIPELINE
 
-**Updated:** 17 Sep 2026 (v0.3 — King's decisions recorded; pack ingested)
+**Updated:** 22 Sep 2026 (v0.9 — V-06 produite le soir ; publication King seul)
 **Stages:** `scripted → rendered → delivered → approved → posted → measured`
 **Rule:** update after every movement. Nothing is marked posted/measured without King's explicit confirmation. King's reported figures are recorded verbatim with their caveats.
 
@@ -92,7 +92,44 @@
 **Outils ajoutes depuis §I :** `--from-frac/--to-frac` (capturer une section d'une page longue), `--settle` (laisser les revelations au defilement se terminer), garde-fou de vitesse (420 px/s max), plusieurs `--frames` dans `compose.py`, fond en derive sur les cartes longues, retour a la ligne des cartes (un texte tronque a ete detecte et corrige).
 **Chaine complete, reproductible :** `content/scripts/v05-schools.md`.
 
+## K · V-06 produite (22 Sep, soir) — « Votre page Facebook ne prend pas de rendez-vous »
+**Le sujet ne vient pas d'une intuition : il vient de nos propres données.** Sur la passe « vitrine » du 22/09,
+**cinq leads sur six avaient déjà une vitrine** (page Facebook, parfois deux) et **aucun** n'avait de quoi
+prendre un rendez-vous. Les huit réponses de la campagne venaient toutes de gens qui avaient déjà payé pour
+être visibles. Donc on ne dit pas « vous n'existez pas » — ce serait faux — on dit : *votre page montre, elle
+ne répond pas*.
+| | |
+|---|---|
+| Livrable | `content/videos/v06-facebook-no-booking/Video_06_Facebook_No_Booking_VOIX.mp4` |
+| Spécs vérifiées | **38,61 s · 1080×1920 · 30 fps · 4,4 Mo · audio AAC mono 48 kHz** |
+| Version muette | `…_No_Booking.mp4` (38,60 s) — si King veut poser sa voix ou un son tendance |
+| Script | `content/scripts/v06-facebook-no-booking.md` (6 plans, FR, CTA « APERÇU ») |
+| Portique mouvement | **OK — mouvement dans chaque fenêtre, 0 fenêtre figée** (mesuré sur la version AVEC voix) |
+| Son mesuré | **-15,9 LUFS intégrés · crête réelle -1,5 dBFS** (`ebur128`, après `loudnorm`) |
+| Relecture | `apercus/planche-v06.jpg` — une image par plan, extraite du master final |
+| État | **prête à publier** · publication **King seul** |
+
+**Deux lois de méthode verrouillées avec cette vidéo :**
+1. **Le montage suit la voix, pas l'inverse.** Les six phrases ont d'abord été enregistrées (`voice-01`,
+   choix de King), puis mesurées ; `narration/timeline.json` porte les frontières réelles et `build.py` s'y
+   conforme (`load_scenes()`). `mux_voice.py` refuse de sortir un master si l'écart entre le montage et la
+   voix dépasse **0,35 s** — un décalage voix/image ne se rattrape pas au montage.
+2. **Rien ne dépasse du cadre, et ça se MESURE.** Deux défauts trouvés à la relecture image par image :
+   un titre dont la taille était choisie sur le **nombre de caractères** (« Comptez les questio… » coupé) et
+   une carte dont les phrases sortaient en plein mot. Corrigés par `fit_font()` + un `head()` qui mesure
+   chaque ligne et rétracte la taille : **le nombre de caractères n'est pas une mesure.**
+   ⚠ Piège payant : un passage temporaire de la toile interne en 900×1600 (pour rendre plus vite) a fait
+   tomber **tous** les textes de bas de plan hors cadre — parce que chaque coordonnée de `build.py` avait été
+   réglée pour 1080×1920. Toile rétablie, et la vitesse est venue d'ailleurs : **le push-in (zoom 3 %) est
+   désormais fait par `zoompan` dans ffmpeg**, plus par un recadrage/redimensionnement en Python.
+   Mesuré : **0,27 s/image**, rendu complet en ~5 min.
+
+**Ce qui n'est PAS dans la vidéo :** aucun prix, aucune date promise, aucun témoignage, aucune école (36
+écartées le 22/09), aucune page d'un vrai prospect ni nom de concurrent à l'écran — maquette dessinée et
+étiquetée « EXEMPLE FICTIF ».
+
 ## E · Changelog
+- **v0.9 — 22 Sep 2026 (soir) :** §K — **V-06 produite** (« votre page Facebook ne prend pas de rendez-vous »), voix française posée sur frontières mesurées, portique mouvement OK sur la version avec voix, son normalisé à -15,9 LUFS / -1,5 dBFS, planche de relecture jointe. Deux lois ajoutées : le montage suit la voix (`mux_voice.py` refuse au-delà de 0,35 s d'écart) et **les tailles de texte se mesurent** (`fit_font`). Le push-in passe dans ffmpeg (`zoompan`) : 0,27 s/image. Publication : King seul.
 - **v0.8 — 17 Sep 2026 (nuit) :** §J — V-05 produite (narration + mouvement reel) ; outils de capture etendus (plages, settle, vitesse) ; `compose.py` multi-dossiers et cartes multi-lignes.
 - **v0.7 — 17 Sep 2026 (nuit) :** §I — chaîne vidéo reconstruite (Chromium embarqué), deux preuves de mouvement réel validées par le portique, bibliothèque de 5 démos publiables, narration bloquée par HuggingFace.
 - **v0.6 — 17 Sep 2026 (nuit) :** §H — portique mouvement livré, catalogue mesuré, v04c rejeté (texte tronqué), page de démonstration publique prête (audit 0), production en attente d'un enregistrement d'écran réel.
