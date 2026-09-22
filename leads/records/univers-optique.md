@@ -1,0 +1,97 @@
+# Univers Optique
+
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-22. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+
+## État (lu dans `leads/CRM.csv`)
+
+| Champ | Valeur |
+|---|---|
+| Slug | univers-optique |
+| Type | other |
+| Ville | Douala |
+| Langue de contact | FR |
+| Étape | closing |
+| WhatsApp | 699 25 28 74 |
+| Numéro vérifié | yes |
+| Contact | BAYANG BIHEN Calvin |
+| Canal | WhatsApp |
+| Contacté | Yes |
+| Réponse | Yes — lun 21/09 17:56 : « Combien ça me coûte » (2ᵉ question de prix de la campagne). |
+| Maquette / site | Yes |
+| Relances envoyées | 0 |
+| Source | directory |
+| Détail source | Annuaire officiel ONOC + Maligah + Google Maps + Wayback + kerawa (2022) |
+| Site vérifié le | 2026-09-21 |
+
+## Contradiction résolue (M2)
+
+- **Ce qui se contredisait :** Mon message 1 du 21/09 17:50 affirmait « absent du web » et « deux recherches ne suffisent pas à le trouver ». La fouille du même soir prouve le contraire : fiche Google notée (3,3/5 · 6 avis), domaine enregistré (mort), fiche annuaire à son nom légal, annonce datée de 2009 encore indexée.
+- **Retenu :** le constat exact, plus fort et vérifiable : « votre seule page vivante est celle d'un autre » — son site ne répond plus depuis janvier 2024, et le champ « site web » de sa fiche Google est vide.
+- **Écarté :** l'angle « introuvable », déjà retiré chez Le Cristallin pour la même raison. Une affirmation sur la présence en ligne d'un prospect doit venir d'une source LUE, datée — pas d'une impression de recherche.
+
+## Notes
+
+| CONTRADICTION RÉSOLUE (M2) — retenu : le constat exact, plus fort et vérifiable : « votre seule page vivante est celle d'un autre » — son site ne répond plus depuis janvier 2024, et le champ « site web » de sa fiche Google est vide. · ENVOI DÛ : **la V2** `demos/concept-univers-optique-v2.html` (718 Ko / 734 727 octets, sha256 ca52d3c5f6ccb7ec…) — la v1 `concept-univers-optique-v1.html` (740 056 octets, sha256 719f8b60283184b6…) est gardée pour la comparaison des deux directions et NE part plus ; aperçu promis « d'ici demain ») AVANT 09:00 mardi 22/09, et en repartant du fichier DU 22/09 : la version du 21 au soir ne peignait son contenu que si le JavaScript s'exécutait (défaut trouvé par King, corrigé à la source ; loi consignée design/LESSONS.md du 22/09). Repli si WhatsApp refuse la pièce jointe : la version sobre sans visuels, JAMAIS un lien non déployé. Feuille : `sales/Send-UNIVERS-OPTIQUE-2026-09-22-Matin.md` (la Soir reste archive : elle décrit la v1). Ne PAS répéter « absent du web » (faux — voir la contradiction M2 de cette ligne) ; la page pose SIX questions qu'il doit trancher avant publication (fixe publié en deux versions, offre « 15 % », ordre des trois lignes, nom du titulaire, e-mail unique, accès à sa fiche Google). AUCUNE page Facebook rattachable à ce nom (21/09) : celle de 508 likes est un homonyme (« Global trade invesment ») — ni revendiquée ni liée. Récupérer l'ACCÈS à sa fiche Google PRIME sur la mise en ligne : c'est son premier visiteur, et le champ « site web » y est vide.
+
+## Prochaine action
+
+**Répondre dans l'heure.** Une réponse humaine est en attente : c'est la priorité absolue (règle des 90 secondes).
+
+## Historique — lignes du journal qui citent ce lead
+
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 48 ligne(s).*
+
+`L51` · | **ven 18/09 20:02** | **Clinique de L'université** (Bassa, 694 36 02 03) | msg 1 — sans maquette | Envoyé | **Non** |
+`L113` · | 20:02 | Cabinet Dentaire Emmanuel · Clinique de L'université · MEDI LABO |
+`L807` · « Univers Optique » introuvable même en tapant son propre nom).
+`L837` · - `Le Cristallin` 17:51 · `Univers Optique` 17:50 · `Disc Optique Médicale` 17:48 · `Tchaya Optique` 17:47 :
+`L1145` · ## Lundi 21/09/2026 — 21:15 → 23:20 · Univers Optique (Bépanda) : « digge deep, tout trouver » → dossier de reprise construit, et DEUX ratages du CRM trouvés en route
+`L1147` · **La commande, textuelle :** « *from univers optique, build the modern website following our pipeline, look
+`L1160` · (miroir `docteur.go.yo.fr/univers-optique/`, relevé du 13/09/2025) ; (b) un **domaine enregistré mais mort**
+`L1163` · légal `ETS UNIVERS OPTIQUE`, BP 4680, trois lignes téléphoniques, et trois champs vides (e-mail, langues,
+`L1172` · Et en cherchant « Univers Optique avis », le premier résultat détaillé est un **homonyme de Moselle noté
+`L1174` · rattachable : la page « Univers Optique · 508 likes · Global trade invesment » est un homonyme de métier
+`L1200` · Fichiers : `demos/univers_optique_content.py` → `.json` (toute la copie, + dictionnaire `SOURCES`),
+`L1201` · `demos/build_univers_optique.py` (zéro phrase dans le gabarit), `demos/img/univers-optique-{shop,bench,customer}.jpg`
+`L1203` · `clients/univers-optique/{inspiration,build-notes}.md`, ligne au registre, slug `univers` dans
+`L1208` · **État livré :** `demos/concept-univers-optique-v1.html` **927 Ko** · `audit_html.py` **0 finding** sur la
+`L1209` · démo **et** sur `hosting/previews/univers/index.html`, `diff` = **0 ligne**, `:4173/univers/` = **200** ·
+`L1212` · `demos/concept-univers-optique-v1-sobre.html` **83 Ko**, audit 0 finding lui aussi. Feuille
+`L1213` · `sales/Send-UNIVERS-OPTIQUE-2026-09-22-Soir.md` (version A preuve / version B prix re-posé, **aucune**
+`L1218` · **(a) `bash leads/build/rebuild.sh` a EFFACÉ l'état de Le Cristallin.** En ajoutant la ligne Univers, le
+`L1235` · « **④ Prix posé, en négociation — 2** » (Le Cristallin, Univers Optique) · 47 contactés · **4 réponses
+`L1241` · **Ce qui reste ouvert :** l'envoi de l'aperçu Univers (dû avant 09:00) ; la réponse de King sur le périmètre
+`L1242` · Le Cristallin (« A » page seule / « B » page + Facebook, 50 000 FCFA) ; les six questions qu'Univers doit
+`L1244` · AFRIQUE LABO. `amk-cm.vercel.app/univers/` répond **404** tant que King n'a pas déployé.
+`L1245` · ## Lundi 21/09/2026 — 23:55 · UNIVERS OPTIQUE · « try again » → repasse qualité : DEUX défauts que l'auditeur ne voyait pas
+`L1259` · État : 950 Ko · **0 finding** sur la démo, la sobre (84 Ko) et l'aperçu · `diff` = 0 ligne · `/univers/`
+`L1264` · ## 2026-09-21 · 23:59 → 00:20 · **UNIVERS OPTIQUE (et LE CRISTALLIN) — le roi refuse les images, on refait les visuels**
+`L1275` · **Ce que j'ai fait :** trois rendus redemandés pour **UNIVERS OPTIQUE** (salle de vente chêne + pétrole,
+`L1293` · **État vérifié après coup, pas raconté :** démo Univers **722 Ko** (visuels 633 Ko · 193/128/154 Ko chacun),
+`L1296` · `:4173/univers/` et `:4173/cristallin/` = **200** · feuilles d'envoi actualisées (poids, mention du changement
+`L1297` · d'images) · loi maison consignée dans `design/LESSONS.md` (3 règles) et `clients/univers-optique/build-notes.md`
+`L1304` · `rebuild.sh` de 00:35 a **réécrit `leads/CRM.csv` en perdant les deux fils chauds** — `univers-optique`
+`L1311` · `leads/records/univers-optique.md` (`L1264`). **Contrôle écrit pour que ça ne se reproduise pas** :
+`L1327` · **00:55 — validation demandée, pas reçue.** La question « les trois rendus d'UNIVERS OPTIQUE sont-ils validés
+`L1334` · **Ce qui reste vrai et attendu :** l'envoi de **UNIVERS OPTIQUE** est programmé **demain avant 09:00**
+`L1335` · (`sales/Send-UNIVERS-OPTIQUE-2026-09-22-Soir.md`) — mais **les visuels sont à valider par le roi d'abord**,
+`L1340` · ## 2026-09-22 · 08:05 → 08:55 · UNIVERS OPTIQUE + LE CRISTALLIN — « ce site est moche et n'a pas d'image » : c'était une panne, pas un goût
+`L1348` · **UNIVERS OPTIQUE — défaut 1 : le contenu était retenu par le JavaScript.** 25 blocs à `opacity:0` relevés par
+`L1354` · `design/CRAFT-FLOOR.md` §3 ; cinq contrôles écrits dans `demos/build_univers_optique.py`, mutés (une règle
+`L1373` · (`clients/univers-optique/`, `clients/le-cristallin/`).
+`L1375` · **État vérifié après coup :** Univers **740 056 octets** (sha256 `719f8b60283184b6…`) · repli sobre
+`L1378` · `diff` démo ↔ aperçu = **0 ligne** aux deux clients · `:4173/univers/` et `:4173/cristallin/` = **200**.
+`L1383` · par mes soins.** La promesse tient : aperçu UNIVERS OPTIQUE **avant 09:00** ; LE CRISTALLIN attend toujours sa
+`L1390` · ## UNIVERS OPTIQUE — « take inspiration from all the attachments then read the design files once more,
+`L1399` · **Ce qui a ete fait** : nouvelle copie dans `demos/univers_optique_content.py` (hero, trois etapes,
+`L1402` · d'affichage, **relus un a un** ; `demos/build_univers_optique_v2.py` ecrit de zero (718 Ko, meme NAP,
+`L1403` · mêmes faits, `noindex,nofollow`) ; apercu `/univers/` bascule sur la v2, `/univers-v1/` garde le dossier.
+`L1430` · **Etat verifie** : `concept-univers-optique-v2.html` **734 727 octets** (`ca52d3c5f6ccb7ec…`) · repli
+`L1433` · `sales/Send-UNIVERS-OPTIQUE-2026-09-22-Matin.md`. **Aucun envoi fait par mes soins ; aucun lien envoye.**
+`L1436` · 50 000) — relance le 23/09, et son fichier doit etre renvoyé (la copie du dimanche est cassee). Univers
+
+---
+
+## À la main (facultatif)
+
+*Ce que tu écris ici est perdu au prochain passage du générateur. Pour garder une information, mets-la dans `sales/Activity-Log.md`.*

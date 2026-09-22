@@ -1,0 +1,1576 @@
+{
+ "sources": {
+  "annuaire": "Maligah, fiche « ETS UNIVERS OPTIQUE » (lecture 21/09/2026)",
+  "kerawa": "kerawa.com, annonce « CABINET D'OPTIQUE MÉDICAL » de UNIVERS OPTIQUE (2022)",
+  "gmb": "fiche Google Maps UNIVERS OPTIQUE, reprise par docteur.go.yo.fr (13/09/2025)",
+  "archive": "Wayback Machine, univers-optique.com : 10 captures du 06/01/2018 au 09/01/2024",
+  "site": "univers-optique.com (domaine, état vérifié le 21/09/2026)",
+  "crm": "CRM AMK, vague 1 opticiens du 21/09/2026 (annuaire ONOC)"
+ },
+ "page": {
+  "slug": "univers-optique-bepanda",
+  "wa": "699252874",
+  "waDisp": "699 25 28 74",
+  "tel1": "",
+  "tel1Disp": "",
+  "tel2": "674599302",
+  "tel2Disp": "674 59 93 02",
+  "mail1": "universoptique@yahoo.fr",
+  "mail2": "universoptique.uo@gmail.com",
+  "bp": "BP 4680 Douala",
+  "addr": "Rue de Bépanda, Bépanda — Douala",
+  "landmark": "Entre Pharmacie Sass et Express Union, face à l'ancienne pharmacie Omnisports",
+  "mapsPlus": "3P3G+JCG Douala",
+  "geo": [
+   4.0540715,
+   9.7260728
+  ],
+  "founded": "01 août 2009",
+  "legalName": "ETS UNIVERS OPTIQUE",
+  "holder": "BAYANG BIHEN Calvin",
+  "title": {
+   "fr": "Univers Optique Bépanda — opticien à Douala · examen de vue, verres, prothèses oculaires",
+   "en": "Univers Optique Bepanda - optician in Douala - eye test, lenses, ocular prostheses"
+  },
+  "titleV2": {
+   "fr": "Opticien à Bépanda - Univers Optique, examen de vue et verres",
+   "en": "Optician in Bepanda - Univers Optique, eye tests and lenses"
+  },
+  "desc": {
+   "fr": "Opticien à Bépanda, Douala, depuis le 1er août 2009 : examen de vue, verres médicaux et de sécurité, montures, entretien, lentilles, prothèses oculaires, formations. Rendez-vous par WhatsApp.",
+   "en": "Optician in Bepanda, Douala, since 1 August 2009: eye tests, medical and safety lenses, frames, repairs, contact lenses, ocular prostheses, training. Booking on WhatsApp."
+  },
+  "bar": {
+   "line": {
+    "fr": "Bépanda, rue de Bépanda · Ouvert lun–ven 8h–18h, sam 8h–13h",
+    "en": "Bepanda, rue de Bepanda - Open Mon-Fri 8am-6pm, Sat 8am-1pm"
+   },
+   "confirm": {
+    "fr": "horaires tels qu'affichés sur votre fiche Google",
+    "en": "hours as shown on your Google listing"
+   }
+  },
+  "nav": [
+   [
+    "#dossier",
+    "Le dossier",
+    "The record"
+   ],
+   [
+    "#services",
+    "Le cabinet",
+    "Services"
+   ],
+   [
+    "#rendez-vous",
+    "Rendez-vous",
+    "Booking"
+   ],
+   [
+    "#avis",
+    "Vos avis",
+    "Your reviews"
+   ]
+  ],
+  "ctaNav": {
+   "fr": "Réserver",
+   "en": "Book"
+  },
+  "hero": {
+   "eyebrow": {
+    "fr": "dossier de reprise",
+    "en": "reclamation record"
+   },
+   "h1": {
+    "fr": "Vous existez en ligne. C'est vous qui n'y êtes pas.",
+    "en": "You exist online. You are just not in it."
+   },
+   "lede": {
+    "fr": "Votre nom est en ligne trois fois : une fiche Google notée 3,3 sur 6 avis, une fiche d'annuaire professionnel à champs vides, et un site mort depuis janvier 2024. Les trois parlent de vous. Aucun ne vous appartient. Cet aperçu est la version où vous reprenez la main — et où un patient de Bépanda peut vous écrire à 20h.",
+    "en": "Your name appears online three times: a Google listing rated 3.3 out of six reviews, a professional directory page with empty fields, and a website dead since January 2024. All three are about you. None is yours. This preview is the version where you take it back - and where a Bepanda patient can message you at 8pm."
+   },
+   "book": {
+    "fr": "Réserver un examen de vue",
+    "en": "Book an eye test"
+   },
+   "second": {
+    "fr": "Voir ce que le web dit de vous",
+    "en": "See what the web says about you"
+   },
+   "recordHead": {
+    "fr": "Fiche d'établissement",
+    "en": "Establishment record"
+   },
+   "recordNo": "AMK · UO/2026-09-21",
+   "facts": [
+    [
+     "Établissement",
+     "Establishment",
+     "ETS UNIVERS OPTIQUE"
+    ],
+    [
+     "Activité depuis",
+     "Trading since",
+     "1er août 2009"
+    ],
+    [
+     "Ville",
+     "City",
+     "Bépanda, Douala"
+    ],
+    [
+     "Téléphones déclarés",
+     "Declared phone lines",
+     "3 lignes, 2 opérateurs, 2 formats"
+    ],
+    [
+     "E-mails publics",
+     "Public e-mails",
+     "2, dont 1@yahoo.fr"
+    ],
+    [
+     "Site",
+     "Website",
+     "univers-optique.com — hors ligne"
+    ],
+    [
+     "Avis en ligne",
+     "Online reviews",
+     "6 avis · 3,3/5 (Google)"
+    ],
+    [
+     "Page Facebook",
+     "Facebook page",
+     "à confirmer — aucune trouvée à votre nom"
+    ]
+   ],
+   "stamp": {
+    "fr": "à reprendre",
+    "en": "to reclaim"
+   }
+  },
+  "dossier": {
+   "h2": {
+    "fr": "Ce que le web dit de vous aujourd'hui — point par point, source par source.",
+    "en": "What the web says about you today - point by point, source by source."
+   },
+   "lede": {
+    "fr": "Rien ci-dessous n'est une opinion d'agence. Chaque ligne est lue à une adresse précise, consultée le 21 septembre 2026. Si une ligne est fausse, dites-le : c'est la première chose que je corrige.",
+    "en": "Nothing below is an agency opinion. Every line was read at a specific address, checked on 21 September 2026. If a line is wrong, say it: that is the first thing I fix."
+   },
+   "rows": [
+    [
+     "Fiche Google (avis clients)",
+     "Google Business (customer reviews)",
+     "3,3 / 5 sur Google · 6 avis · catégorie « Opticien » · horaires lun–ven 8h–18h, sam 8h–13h, dim fermé · photo de devanture · téléphone 699 25 28 74. AUCUN site web relié, AUCUN bouton de réservation.",
+     "3.3 / 5, 6 reviews, category \"Optician\", hours Mon-Fri 8-18, Sat 8-13. No website linked, no booking button.",
+     "Un patient qui vous trouve sur Google vous note 3,3 et doit traverser la rue pour réserver. Un site à vous prend le relais : bouton WhatsApp, mêmes horaires, et le lien de retour vers votre fiche Google — les deux se renforcent au lieu de se concurrencer.",
+     "A patient who finds you on Google rates you 3.3 and has to cross the street to book. Your own site takes over: WhatsApp button, same hours, and a link back to your Google listing - the two reinforce each other instead of competing.",
+     "docteur.go.yo.fr/univers-optique/ (reprise de votre fiche Google Maps, 13/09/2025)"
+    ],
+    [
+     "Votre nom sur le net est ambigu",
+     "Your name online is ambiguous",
+     "En cherchant « Univers Optique avis », le premier résultat détaillé est un autre « Univers Optique » : un magasin de Moselle, en France, noté 4,9 sur 9 avis. Un homonyme, avec votre nom, mieux noté que vous, qui apparaît avant vous.",
+     "Searching \"Univers Optique reviews\" returns first a different Univers Optique - in Moselle, France, rated 4.9 on 9 reviews. A namesake, with your name, ranked better than you.",
+     "Votre adresse et votre quartier doivent être écrits dans le titre, les données structurées et les photos : « Univers Optique — Bépanda, Douala ». Un nom seul ne vous distingue pas ; un nom avec un lieu, si.",
+     "Your street and district must sit in the title, the structured data and the photo captions: \"Univers Optique - Bepanda, Douala\". A name alone does not distinguish you; a name with a place does.",
+     "lecture croisée des résultats de recherche, 21/09/2026 — aucun lien commercial avec ce magasin"
+    ],
+    [
+     "Votre ancien site est hors ligne",
+     "Your old website is offline",
+     "`univers-optique.com` ne répond plus : le nom de domaine ne résout pas (vérification du 21/09/2026, aucune adresse DNS). La dernière copie archivée, le 9 janvier 2024, est un répertoire Apache vide : plus de page du tout.",
+     "univers-optique.com no longer answers - the domain resolves to nothing (checked 21/09/2026). The last archived copy, 9 January 2024, is an empty Apache directory: no page at all.",
+     "Un domaine hors service, c'est une adresse imprimée sur vos papiers qui ne mène nulle part. La reprise commence là : un nouveau domaine, ou votre ancien domaine remis en service, avec une page qui charge en une seconde sur 3G.",
+     "A dead domain is an address printed on your paperwork that leads nowhere. Reclamation starts there: a new domain, or your old one brought back, with a page that loads in one second on 3G.",
+     "curl + DNS le 21/09/2026 · Wayback Machine : 10 captures, 06/01/2018 → 09/01/2024"
+    ],
+    [
+     "Sur votre dernière page vivante, un autre nom que le vôtre",
+     "On your last living page, another name than yours",
+     "La copie du 2 novembre 2023 : dans le paragraphe « Verres et montures », il est écrit « Chez Gweleo, vous pouvez désormais adapter des nouveaux verres correcteurs sur une monture que vous possédez déjà. » — Gweleo est une enseigne d'optique étrangère. Vos trois cartes « NOS SERVICES » mènent toutes à la même page, et une bannière « Profitez de 15 % de réduction » est restée en ligne.",
+     "The 2 November 2023 copy: under \"Verres et montures\" it reads \"Chez Gweleo, vous pouvez désormais adapter...\" - Gweleo is a foreign optical chain. All three \"NOS SERVICES\" cards point to the same page, and a \"15% off\" banner stayed online.",
+     "Ce n'est pas un reproche : c'est ce qui arrive quand un site est posé puis laissé. La différence que je propose n'est pas le design, c'est la tenue : le texte, les liens et les prix sont les vôtres, relus à chaque saison.",
+     "That is not a reproach: it is what happens when a site is set up and then left. The difference I propose is not design, it is upkeep - wording, links and offers are yours, re-read every season.",
+     "web.archive.org/web/20231102113017/http://univers-optique.com/ (copie intégrale lue le 21/09/2026)"
+    ],
+    [
+     "Votre fiche professionnelle est à moitié vide",
+     "Your professional listing is half empty",
+     "Sur l'annuaire Maligah, votre fiche affiche vos trois lignes téléphoniques et votre BP 4680 — et, champ par champ : « Langues parlées : — », « Moyens de paiement acceptés : — », et « Désolé. L'adresse email de ETS UNIVERS OPTIQUE n'est pas renseignée. » Alors que vos deux e-mails sont pourtant publiés ailleurs, par vous.",
+     "On the Maligah directory your listing shows the three phone lines and BP 4680, but field by field: \"Languages spoken: -\", \"Accepted payment methods: -\", and \"Sorry, the e-mail of ETS UNIVERS OPTIQUE is not provided.\" While both your e-mails are published elsewhere, by you.",
+     "Un acheteur institutionnel (RH, mutuelle, école) remplit sa shortlist avec ces champs. Les vôtres sont vides pendant que vos concurrents les remplissent. Renseigner une fiche annuaire, c'est trente minutes — et c'est déjà une vente.",
+     "An institutional buyer (HR, insurer, school) builds its shortlist from these fields. Yours are empty while competitors fill theirs. Completing a directory listing takes thirty minutes - and it is already a sale.",
+     "maligah.com/entreprises/details/ETS-UNIVERS-OPTIQUE (lecture 21/09/2026)"
+    ],
+    [
+     "Aucun réseau social qui vous soit rattaché",
+     "No social network attached to you",
+     "Une page « Univers Optique · 508 likes · Global trade investment » existe, mais sa description n'a rien d'optique : impossible de l'affirmer à vous, et je ne la compte pas. Aucune page Facebook, Instagram ou TikTok d'optique de Bépanda ne mène à votre nom avec certitude.",
+     "A page \"Univers Optique - 508 likes - Global trade investment\" exists, but its description is not optical; I cannot say it is yours, and I do not count it. No Facebook, Instagram or TikTok page for a Bepanda optician leads to your name with certainty.",
+     "C'est le vide le plus rentable à remplir : une page à votre nom, géolocalisée, reliée à la fiche Google et au site. Je ne devine pas une page — dites-moi si vous en tenez une, j'y mets le lien à la première heure.",
+     "That is the most profitable blank to fill: a page in your name, geo-tagged, linked to your Google listing and your site. I do not guess a page - tell me if you run one and I will wire it in the first hour.",
+     "recherches Facebook / Instagram / TikTok, 21/09/2026"
+    ]
+   ],
+   "foot": {
+    "fr": "Six constats, six adresses où les vérifier. C'est un constat de terrain, pas un argumentaire : je n'ai rien ajouté que je n'aie lu.",
+    "en": "Six findings, six addresses to check them at. This is fieldwork, not a pitch: I added nothing I had not read."
+   }
+  },
+  "services": {
+   "h2": {
+    "fr": "L'optique à Bépanda : ce que vous faisiez déjà, écrit noir sur blanc.",
+    "en": "Optics in Bepanda: what you already did, written out plainly."
+   },
+   "lede": {
+    "fr": "Dix lignes reprises de votre propre annonce de 2022 et de la dernière copie de votre site. Chaque ligne est un acte que vous pratiquez — aucune n'est une promesse d'agence. Chaque ligne, sur la version en ligne, ouvrira une conversation WhatsApp déjà remplie.",
+    "en": "Ten lines taken from your own 2022 advertisement and the last copy of your website. Each is a service you already provide - none is an agency promise. On the live version, each line opens a WhatsApp conversation already filled in."
+   },
+   "rows": [
+    [
+     "Examen de vue",
+     "Eye test",
+     "Série de tests d'acuité visuelle et de mise au point, sur place.",
+     "Acuity and focusing tests, in the shop."
+    ],
+    [
+     "Verres médicaux et spéciaux",
+     "Medical and special lenses",
+     "Verres correcteurs, verres de soleil correcteurs, verres de protection.",
+     "Corrective, tinted-corrective and protective lenses."
+    ],
+    [
+     "Montures",
+     "Frames",
+     "Montures pour verres médicaux et pour verres de sécurité.",
+     "Frames for medical and for safety lenses."
+    ],
+    [
+     "Montage des verres",
+     "Glazing",
+     "Montage en boutique, reprise sur une monture que vous avez déjà.",
+     "Done in-shop; re-glazing of a frame you already own."
+    ],
+    [
+     "Entretien et réparation",
+     "Maintenance and repair",
+     "Nettoyage, réglage, remplacement de plaquettes et de vis.",
+     "Cleaning, adjusting, nose-pad and screw replacement."
+    ],
+    [
+     "Lentilles de contact",
+     "Contact lenses",
+     "Vente et conseil — port sur prescription, comme le recommande tout opticien sérieuse.",
+     "Supply and advice - prescription wear only, as any careful optician recommends."
+    ],
+    [
+     "Prothèses oculaires",
+     "Ocular prostheses",
+     "Vente et adaptation. C'est le service qui vous distingue de la quasi-totalité de la rue.",
+     "Supply and fitting. This is the service that separates you from almost every other shop in town."
+    ],
+    [
+     "Lunettes de sécurité",
+     "Safety eyewear",
+     "Protection pour ateliers, chantiers, industries — le poste que les entreprises cherchent.",
+     "Workshop, site and industrial protection - the line employers search for."
+    ],
+    [
+     "Conseils",
+     "Advice",
+     "Choix de la monture selon la forme du visage, la correction, le métier.",
+     "Frame choice by face shape, prescription and trade."
+    ],
+    [
+     "Formations",
+     "Training",
+     "Formation du personnel aux métiers de l'optique-lunetterie.",
+     "Staff training in optical trades."
+    ]
+   ],
+   "ask": {
+    "fr": "Demander ce poste",
+    "en": "Ask about this"
+   }
+  },
+  "prosthesis": {
+   "h2": {
+    "fr": "Les prothèses oculaires : ce que personne dans le quartier ne peut vous disputer.",
+    "en": "Ocular prostheses: what no one in the neighbourhood can dispute with you."
+   },
+   "body": {
+    "fr": "Votre annonce de 2022 porte « Ventes des prothèses oculaires ». C'est un acte médical, rare, et il concerne des gens qui ont perdu un œil — souvent loin de chez eux, souvent sans savoir qui fait ça à Douala. Aujourd'hui, cette compétence n'apparaît que dans une annonce sur un site de petites annonces dont le domaine est à vendre. Un parent qui cherche « prothèse oculaire Douala » ne vous trouvera pas. C'est la ligne de texte qui rapporte le plus, et elle ne coûte qu'une ligne de texte.",
+    "en": "Your 2022 advertisement lists \"Ventes des prothèses oculaires\" - ocular prostheses. It is a rare, medical act, and it concerns people who have lost an eye, often far from home, often not knowing who does this in Douala. Today that capability appears only in a classifieds ad, on a domain that is up for sale. A relative searching \"prothèse oculaire Douala\" will not find you. That line of text is the cheapest revenue on the page."
+   },
+   "ask": {
+    "fr": "Écrire cette page ensemble — dites-moi les deux ou trois cas que vous prenez par mois",
+    "en": "Write this page together - tell me the two or three cases you take a month"
+   }
+  },
+  "book": {
+   "h2": {
+    "fr": "Prendre rendez-vous chez votre opticien à Douala : par WhatsApp, pas par formulaire.",
+    "en": "Booking your eye test in Douala: on WhatsApp, not by form."
+   },
+   "lede": {
+    "fr": "Vos horaires, tels qu'ils sont déjà publiés sur votre fiche Google. On touche un créneau, le message part écrit.",
+    "en": "Your hours, exactly as already published on your Google listing. Tap a slot, the message goes out written."
+   },
+   "slots": [
+    [
+     "Lundi – Vendredi",
+     "Monday - Friday",
+     "8h00 – 18h00"
+    ],
+    [
+     "Samedi",
+     "Saturday",
+     "8h00 – 13h00"
+    ],
+    [
+     "Dimanche",
+     "Sunday",
+     "Fermé"
+    ]
+   ],
+   "msgHead": {
+    "fr": "Message qui part :",
+    "en": "Message sent:"
+   },
+   "fine": {
+    "fr": "Le numéro WhatsApp utilisé est le vôtre (699 25 28 74, la ligne que votre fiche Google affiche et que vous m'avez écrite aujourd'hui). Aucun de nos aperçus ne dirige un patient vers nous.",
+    "en": "The WhatsApp number used is yours (699 25 28 74, the line your Google listing shows and that you wrote to me today). None of our previews ever routes a patient to us."
+   }
+  },
+  "reviews": {
+   "h2": {
+    "fr": "Vos six avis. 3,3 sur 5. On ne les enjolive pas : on les travaille.",
+    "en": "Your six reviews. 3.3 out of 5. We do not prettify them - we work on them."
+   },
+   "score": "3,3",
+   "scoreOf": {
+    "fr": "sur 5 · 6 avis publiés sur Google",
+    "en": "out of 5 · 6 reviews on Google"
+   },
+   "rows": [
+    [
+     "Ce que la note dit aujourd'hui",
+     "What the rating says today",
+     "Six avis, 3,3 : une note qui, seule, fait hésiter. Elle est visible de tous ceux qui recherchent votre nom — et c'est tout ce que Google montre de vous, faute de site.",
+     "Six reviews at 3.3: a rating that, alone, makes people hesitate. Everyone searching your name sees it - and it is all Google shows of you, for want of a website."
+    ],
+    [
+     "Ce que nous proposons d'écrire",
+     "What we propose to write",
+     "La note affichée, telle quelle, à côté du chemin pour la laisser (QR ou lien vers votre fiche) et d'un mot à dire au comptoir. Aucun avis inventé, aucun client mis en scène, jamais.",
+     "The rating shown as it is, next to the way to leave one (QR or link to your listing) and one sentence to say at the counter. No invented review, no staged customer, ever."
+    ],
+    [
+     "Ce que ça change en trois mois",
+     "What changes in three months",
+     "Six avis à 3,3 et zéro réponse publique pèsent moins de choses dans Google que six avis répondus. Répondre, remercier, proposer un réglage en boutique : c'est un carnet, pas un budget.",
+     "Six reviews at 3.3 with zero public replies weighs less on Google than six answered ones. Replying, thanking, offering a free adjustment: that is a notebook, not a budget."
+    ]
+   ],
+   "warn": {
+    "fr": "À savoir — nous n'afficherons pas de note en données structurées (le balisage `aggregateRating`) tant que la base d'avis est si mince : ce serait servir une étoile pâle dans les résultats de recherche. Visible sur la page, oui — marqué pour Google, non, pas encore.",
+    "en": "We will not mark a rating in structured data (aggregateRating) while the review base is this thin: that would serve a pale star in search results. Visible on the page, yes - advertised to Google, not yet."
+   }
+  },
+  "photos": {
+   "h2": {
+    "fr": "Trois visuels de concept. Vos photos les remplacent à la mise en ligne.",
+    "en": "Three concept visuals. Your own photos replace them at go-live."
+   },
+   "lede": {
+    "fr": "Ce ne sont PAS les photos de votre boutique. Elles sont générées pour montrer le niveau de finition visé - le carrelage, les présentoirs, la lumière - et non pas votre local tel qu'il est. Elles sont là pour montrer la place, le cadrage et la lumière — parce qu'un commerçant à qui l'on montre un cadre vide ne sait pas quoi y mettre, et qu'un commerçant à qui l'on montre une belle image qui n'est pas la sienne croit que le travail est fini. À la livraison : devanture, comptoir, un client en mesure. Trois téléphones suffisent.",
+    "en": "These are NOT photos of your shop. They are generated to show placement, framing and light - because a shopkeeper shown an empty frame does not know what to put in it, and a shopkeeper shown a nice image that is not his believes the job is done. At hand-over: storefront, counter, one customer being measured. Three phone shots are enough."
+   },
+   "badge": {
+    "fr": "Rendu de concept — votre photo le remplacera",
+    "en": "Concept render - your photo replaces it"
+   },
+   "items": [
+    [
+     "La salle de vente, en journée",
+     "The sales room, by daylight",
+     "Voici ce que voit un client qui pousse la porte : présentoirs éclairés, comptoir vitré, lumière du jour. C'est cette image-là qui donne envie d'entrer - pas une photo floue prise depuis le trottoir, comme celle que Google montre de vous aujourd'hui.",
+     "This is what a customer sees on pushing the door: lit displays, a glass counter, daylight. That image is what makes people come in - not a blurred shot taken from the pavement, which is what Google shows of you today."
+    ],
+    [
+     "Le comptoir d'entretien",
+     "The repair bench",
+     "Vis, plaquettes, réglage : le service que vos voisins promettent et que vous faites à l'atelier, sous les yeux du client.",
+     "Screws, nose pads, adjustment: the service neighbours promise and you do at the bench, in front of the client."
+    ],
+    [
+     "La mesure, chez le client",
+     "The measurement, with the client",
+     "Règle pupillaire, regard calme. C'est cette photo, pas un logo de marque, qui rassure un parent venu pour son enfant.",
+     "Pupillary ruler, calm look. That photo, not a brand logo, is what reassures a parent who came for a child."
+    ]
+   ]
+  },
+  "open": {
+   "h2": {
+    "fr": "Six points à trancher par vous avant toute publication.",
+    "en": "Six points for you to settle before anything is published."
+   },
+   "lede": {
+    "fr": "Un aperçu qui ne montre que ce qui brille est un catalogue. Voici ce que je n'ai pas pu vérifier, et ce qui vous contredit vous-même. Une réponse par ligne suffit.",
+    "en": "A preview that shows only the shiny parts is a catalogue. Here is what I could not verify, and where your own sources disagree with each other. One answer per line is enough."
+   },
+   "items": [
+    [
+     "Le fixe : 33 18 33 08, sous quel préfixe ?",
+     "The landline 33 18 33 08 - which prefix?",
+     "Votre ancienne annonce et Maligah écrivent « +237 33 18 33 08 » ; la page archivée de votre site écrivait « 243 18 33 08 ». Les deux se recouvrent à moitié, et aucun ne ressemble à un standard de Douala tel qu'on l'écrit aujourd'hui. Un numéro faux sur une page, c'est un patient perdu et une fiche Google invalidée.",
+     "Your old ad and Maligah read +237 33 18 33 08; your archived site said 243 18 33 08. The two overlap by half, and neither reads like a Douala landline as it is written today. One wrong number kills a patient and fails a Google listing."
+    ],
+    [
+     "« 15 % de réduction »",
+     "The \"15% off\" banner",
+     "C'était écrit sur votre site en 2023. Est-ce une offre qui existe encore ? Je ne la reprends PAS, et personne ne doit la voir en ligne sans votre accord écrit.",
+     "It was on your site in 2023. Is the offer still alive? I do NOT carry it, and no one should see it live without your written say-so."
+    ],
+    [
+     "Vos trois lignes, dans quel ordre ?",
+     "Your three lines - in what order?",
+     "699 25 28 74 (WhatsApp, la ligne que vous m'avez écrite) · fixe · 674 59 93 02. Deux lignes mobiles = lequel est le poste du magasin, lequel est le vôtre ?",
+     "699 25 28 74 (WhatsApp, the line you wrote me) - landline - 674 59 93 02. Two mobiles: which is the shop's, which is yours?"
+    ],
+    [
+     "Le nom du titulaire",
+     "The holder's name",
+     "Votre fiche annuaire dit « ETS UNIVERS OPTIQUE » ; notre annuaire de l'Ordre, « BAYANG BIHEN Calvin ». Sur la page, on met l'un ou l'autre — pas les deux, et pas un nom que vous ne signeriez pas.",
+     "Your directory listing says ETS UNIVERS OPTIQUE; the Order directory we worked from says BAYANG BIHEN Calvin. On the page we put one or the other - not both, and not a name you would not sign."
+    ],
+    [
+     "Les e-mails",
+     "The e-mails",
+     "Deux sont publics (yahoo.fr et gmail.com). Un seul doit être affiché ; celui que vous lisez vraiment. Une adresse morte sur une page de rendez-vous, c'est pire que pas d'adresse.",
+     "Two are public (yahoo.fr and gmail.com). Exactly one should be shown - the one you actually read. A dead address on a booking page is worse than none."
+    ],
+    [
+     "Votre page Google, y avez-vous accès ?",
+     "Can you access your Google listing?",
+     "Si oui : la fiche est à vous, on la complète (site, horaires, photos, réponses aux six avis) en une séance. Si non : c'est la première chose à récupérer, AVANT le site — vous avez plus de visiteurs par Google que par n'importe quelle page.",
+     "If yes: the listing is yours, we complete it (site, hours, photos, replies to the six reviews) in one session. If no: recovering it comes BEFORE the site - Google sends you more visitors than any page will."
+    ]
+   ]
+  },
+  "faq": {
+   "h2": {
+    "fr": "Ce qu'on nous demande, et notre réponse écrite d'avance.",
+    "en": "What people ask us, answered in writing beforehand."
+   },
+   "items": [
+    [
+     "Pourquoi aucun prix n'est affiché ?",
+     "Why is no price shown?",
+     "Parce que le vôtre dépend du verre, de la monture et de la prise en charge — et que votre propriétaire n'a publié de prix nulle part. Ce que nous affichons, à la place : un devis en deux minutes par WhatsApp, et la liste de ce que nous savons faire.",
+     "Because your price depends on lens, frame and cover - and your owner has published no price anywhere. In its place: a quote in two minutes on WhatsApp, and the list of what we can do."
+    ],
+    [
+     "Est-ce que ça remplace ma fiche Google ?",
+     "Will this replace my Google listing?",
+     "Non, et c'est voulu : la fiche Google reste votre première vitrine. Le site lui renvoie le visiteur, la fiche lui envoie le patient, et les deux portent les mêmes horaires et le même numéro. Un site qui contredit Google perd les deux.",
+     "No, and that is deliberate: the Google listing stays your first window. The site sends it the visitor, the listing sends it the patient, and both carry the same hours and the same number. A site that contradicts Google loses both."
+    ],
+    [
+     "Et mon ancien nom de domaine ?",
+     "And my old domain?",
+     "Il ne répond plus. Deux options, à vous de choisir : le remettre en service s'il est encore à vous (nous vérifions en une heure), ou repartir sur un nom qui porte votre quartier — plus fort pour la recherche locale. Dans les deux cas l'adresse imprimée sur vos papiers doit conduire quelque part.",
+     "It no longer answers. Two options, your call: bring it back if it is still yours (we check in an hour), or start on a name that carries your district - stronger for local search. Either way the address printed on your paperwork must lead somewhere."
+    ],
+    [
+     "Est-ce que vous allez publier sans moi ?",
+     "Will you publish without me?",
+     "Jamais. Cet aperçu est privé, non indexé, et ne montre que ce que vos propres sources publient déjà. Rien ne sort en ligne sans votre accord, ligne à ligne.",
+     "Never. This preview is private, no-index, and shows only what your own sources already publish. Nothing goes live without your agreement, line by line."
+    ]
+   ]
+  },
+  "footer": {
+   "brandP": {
+    "fr": "Cabinet d'optique médicale à Bépanda, Douala, depuis le 1er août 2009. Examens de vue, verres, montures, entretien, lentilles, prothèses oculaires, sécurité, conseils et formations.",
+    "en": "Medical optics practice in Bepanda, Douala, since 1 August 2009. Eye tests, lenses, frames, maintenance, contact lenses, ocular prostheses, safety eyewear, advice and training."
+   },
+   "badge": {
+    "fr": "Aperçu privé — non publié, non indexé",
+    "en": "Private preview - not published, not indexed"
+   },
+   "cols": [
+    [
+     [
+      "Le cabinet",
+      "The practice"
+     ],
+     [
+      [
+       "#services",
+       "Nos dix actes",
+       "Our ten services"
+      ],
+      [
+       "#protheses",
+       "Prothèses oculaires",
+       "Ocular prostheses"
+      ],
+      [
+       "#avis",
+       "Vos avis Google",
+       "Your Google reviews"
+      ]
+     ]
+    ],
+    [
+     [
+      "Nous trouver",
+      "Find us"
+     ],
+     [
+      [
+       "#rendez-vous",
+       "Horaires et rendez-vous",
+       "Hours and booking"
+      ],
+      [
+       "MAPS",
+       "Ouvrir dans Google Maps",
+       "Open in Google Maps"
+      ],
+      [
+       "BP",
+       "BP 4680, Douala",
+       "P.O. Box 4680, Douala"
+      ]
+     ]
+    ],
+    [
+     [
+      "À compléter avant publication",
+      "To complete before publishing"
+     ],
+     [
+      [
+       "OPEN1",
+       "Fixe : préfixe à confirmer",
+       "Landline prefix - to confirm"
+      ],
+      [
+       "OPEN2",
+       "L'offre « 15 % » : retirée, à confirmer",
+       "\"15%\" offer: withheld, to confirm"
+      ],
+      [
+       "OPEN3",
+       "Un seul e-mail à afficher",
+       "One e-mail to show"
+      ],
+      [
+       "OPEN4",
+       "Accès à votre fiche Google",
+       "Access to your Google listing"
+      ]
+     ]
+    ]
+   ],
+   "cta": {
+    "fr": "Réserver un examen de vue",
+    "en": "Book an eye test"
+   },
+   "strip1": {
+    "fr": "Aperçu réalisé par AMK — Développement Web & Solutions Digitales, Douala",
+    "en": "Preview by AMK - Web Development & Digital Solutions, Douala"
+   },
+   "strip2": {
+    "fr": "© 2026 ETS UNIVERS OPTIQUE · tous les faits de cette page viennent de sources publiques citées · page non indexée",
+    "en": "2026 ETS UNIVERS OPTIQUE - every fact on this page comes from the public sources cited - page not indexed"
+   }
+  },
+  "sticky": [
+   {
+    "fr": "Réserver un examen de vue",
+    "en": "Book an eye test"
+   },
+   {
+    "fr": "Appeler",
+    "en": "Call"
+   }
+  ],
+  "waMsg": {
+   "row": {
+    "fr": "Bonjour Univers Optique, je souhaite réserver : {svc}. Est-ce possible cette semaine ?",
+    "en": "Hello Univers Optique, I would like to book: {svc}. Is this week possible?"
+   },
+   "ask": {
+    "fr": "Bonjour Univers Optique, vous proposez : {svc}. Quels sont vos délais et vos prix ?",
+    "en": "Hello Univers Optique, you offer: {svc}. What are your lead times and prices?"
+   },
+   "generic": {
+    "fr": "Bonjour Univers Optique, je souhaite réserver un examen de vue. Quel est votre prochain créneau libre ?",
+    "en": "Hello Univers Optique, I would like to book an eye test. What is your next free slot?"
+   }
+  },
+  "a11y": {
+   "nav": {
+    "fr": "Navigation",
+    "en": "Navigation"
+   },
+   "record": {
+    "fr": "Fiche d'établissement, huit lignes",
+    "en": "Establishment record, eight lines"
+   }
+  },
+  "v2": {
+   "heroPill": {
+    "fr": "Ouvert lun–ven 8h–18h · sam 8h–13h · Bépanda, rue de l'Omnisports",
+    "en": "Open Mon-Fri 8am-6pm, Sat 8am-1pm - Bepanda, rue de l'Omnisports"
+   },
+   "heroH1a": {
+    "fr": "Opticien à Bépanda, ",
+    "en": "Optician in Bepanda - "
+   },
+   "heroH1b": {
+    "fr": "un examen de vue qui change la journée.",
+    "en": "an eye test that changes your day."
+   },
+   "heroLede": {
+    "fr": "Depuis le 1er août 2009, vous examinez, montez et réparez dans le quartier. Sur le web, il reste votre nom, un numéro et une note de 3,3 sur 5. La page que voici remet les trois ensemble : votre nom, vos actes, un rendez-vous par WhatsApp.",
+    "en": "Since 1 August 2009 you have examined, fitted and repaired in this neighbourhood. On the web what is left is your name, one phone number and a 3.3 out of 5 rating. This page puts the three back together: your name, your services, a WhatsApp booking."
+   },
+   "heroNote": {
+    "fr": "Aperçu privé de concept, non publié : les prix, les horaires et les photos restent à valider par vous.",
+    "en": "Private concept preview, not published: prices, hours and photos still need your sign-off."
+   },
+   "heroStats": [
+    [
+     "Avis Google",
+     "3,3 sur 5 · 6 avis",
+     "Google reviews",
+     "3.3 out of 5 - 6 reviews"
+    ],
+    [
+     "Ouvert depuis",
+     "1er août 2009",
+     "Trading since",
+     "1 August 2009"
+    ],
+    [
+     "Sur place",
+     "Verres de sécurité · prothèses oculaires",
+     "In store",
+     "Safety lenses - ocular prostheses"
+    ]
+   ],
+   "steps": {
+    "h2": {
+     "fr": "Trois étapes, aucune paperasse.",
+     "en": "Three steps, no paperwork."
+    },
+    "lede": {
+     "fr": "C'est le chemin réel que nous suivrons pour votre cabinet. Il tient en trois écrans, et le premier se règle par WhatsApp.",
+     "en": "This is the actual path we will follow for your practice. It fits in three screens, and the first one is settled on WhatsApp."
+    },
+    "items": [
+     {
+      "n": "01",
+      "h": {
+       "fr": "Choisir un créneau",
+       "en": "Pick a slot"
+      },
+      "p": {
+       "fr": "Les heures proposées sont calculées le jour même à partir de la grille du comptoir : rien n’est posé à la main, rien ne tombe en poussière le lendemain. Le message part déjà écrit, au numéro du cabinet, sans compte et sans formulaire. Et si aucune de ces heures ne convient, une phrase suffit pour en proposer une autre.",
+       "en": "The hours on offer are computed that very day from the counter grid: nothing is typed in by hand, nothing rots the next morning. The message goes out already written, to the practice number, with no account and no form - and if none of those hours suits, one sentence is enough to propose another."
+      },
+      "widget": "days"
+     },
+     {
+      "n": "02",
+      "h": {
+       "fr": "Valider le dossier",
+       "en": "Sign off the record"
+      },
+      "p": {
+       "fr": "Nous écrivons, vous coupez. Six questions vous sont posées noir sur blanc : ce qui est faux sautera avant la mise en ligne, pas après.",
+       "en": "We write, you cut. Six questions are put to you in black and white: anything wrong is caught before go-live, not after."
+      },
+      "widget": "bars"
+     },
+     {
+      "n": "03",
+      "h": {
+       "fr": "Mise en ligne en 3 à 5 jours",
+       "en": "Live in 3 to 5 days"
+      },
+      "p": {
+       "fr": "Une page française d'abord, une anglaise en vis-à-vis, votre fiche Google reliée, un lien WhatsApp qui ouvre la conversation en cours de route.",
+       "en": "A French page first, an English one facing it, your Google profile linked, a WhatsApp link that opens the conversation mid-scroll."
+      },
+      "widget": "list"
+     }
+    ],
+    "barsCaption": {
+     "fr": "Six constats relevés le 21/09, chacun avec sa source en note de bas de page.",
+     "en": "Six findings recorded on 21 Sep, each with its source footnoted."
+    },
+    "list": [
+     [
+      "Page française + anglaise",
+      "French page + English page"
+     ],
+     [
+      "Fiche Google reliée à la page",
+      "Google profile wired to the page"
+     ],
+     [
+      "Rendez-vous WhatsApp, message pré-rempli",
+      "WhatsApp booking, message pre-written"
+     ]
+    ]
+   },
+   "cmp": {
+    "h2": {
+     "fr": "Ce que le web montre de vous — et ce que la page montrerait.",
+     "en": "What the web shows of you - and what the page would show."
+    },
+    "lede": {
+     "fr": "Colonne du milieu : votre présence constatée le 21/09, recopiée sans l'arranger. Colonne de droite : ce que la page AMK livre, ligne par ligne. Aucun chiffre de résultat n'y figure, parce que nous ne les avons pas encore.",
+     "en": "Middle column: your presence as recorded on 21 Sep, not tidied up. Right column: what the AMK page delivers, line by line. No outcome figures appear there, because we do not have them yet."
+    },
+    "cols": [
+     "Ce que l'on voit",
+     "Aujourd'hui",
+     "Avec la page AMK",
+     "What shows up",
+     "Today",
+     "With the AMK page"
+    ],
+    "rows": [
+     [
+      "Le champ « site web » de votre fiche Google",
+      "vide",
+      "pointe sur votre page, FR en tête",
+      "The website field on your Google profile",
+      "empty",
+      "points at your page, French first"
+     ],
+     [
+      "universoptique.cm",
+      "hors ligne depuis janvier 2024 (archive consultée)",
+      "reconstruit, ou nouveau domaine : à trancher par vous",
+      "universoptique.cm",
+      "offline since January 2024 (archive checked)",
+      "rebuilt, or a new domain: your call"
+     ],
+     [
+      "Les pages de l'ancien site",
+      "trois cartes cliquables, toutes vers la même page",
+      "une page par service, seulement là où le service est réel",
+      "Pages of the old site",
+      "three clickable cards, all to the same page",
+      "one page per service, only where the service is real"
+     ],
+     [
+      "Le nom d'un autre opticien",
+      "lisait sur vos propres pages (archive du 2 nov. 2023)",
+      "disparaît : votre nom, votre adresse, vos phrases",
+      "Another optician's name",
+      "appeared on your own pages (2 Nov 2023 archive)",
+      "gone: your name, your address, your wording"
+     ],
+     [
+      "L'offre « 15 % de réduction »",
+      "bandeau coupé, sans date de fin",
+      "offre datée et tenue, ou retirée",
+      "The 15 percent offer",
+      "cut-off banner, no end date",
+      "dated, kept offer - or removed"
+     ],
+     [
+      "Prendre rendez-vous",
+      "un appel, aux heures d'ouverture",
+      "un appui sur un créneau, message déjà écrit",
+      "Booking",
+      "a phone call, during opening hours",
+      "one tap on a slot, message already written"
+     ],
+     [
+      "Vos six avis Google",
+      "3,3 sur 5, aucune réponse publiée",
+      "une ligne de réponse type par avis, à valider par vous",
+      "Your six Google reviews",
+      "3.3 out of 5, no public reply",
+      "one drafted reply per review, for you to sign off"
+     ],
+     [
+      "Vos horaires",
+      "deux versions selon l'annuaire",
+      "une seule source, votre fiche, corrigée une fois",
+      "Your opening hours",
+      "two versions depending on the directory",
+      "one source, your profile, fixed once"
+     ]
+    ],
+    "foot": {
+     "fr": "Tableau construit à partir de la fiche Google relue le 21/09, des captures Wayback des 2 nov. 2023 et 9 janv. 2024, et des notices Maligah et Kerawa. Rien n'est déduit, rien n'est supposé : ce qui manque est écrit « à trancher ».",
+     "en": "Table built from the Google profile read on 21 Sep, Wayback captures of 2 Nov 2023 and 9 Jan 2024, and the Maligah and Kerawa notices. Nothing inferred, nothing assumed: what is missing is written as « for you to settle »."
+    }
+   },
+   "cabinet": {
+    "shotT": {
+     "fr": "Le plateau, avant le montage.",
+     "en": "The tray, before edging."
+    },
+    "shotP": {
+     "fr": "Trois montures choisies, un chiffon, l'outil de cintrage : le geste qui distingue un opticien d'un vendeur de lunettes. C'est cette image-là qu'il faut montrer, pas une photo floue prise du trottoir.",
+     "en": "Three chosen frames, a cloth, the bending tool: the gesture that tells an optician apart from a frame seller. That is the image to show, not a blurry photo taken from the pavement."
+    },
+    "h2": {
+     "fr": "Le cabinet du quartier, écrit au niveau de ce qu'il est devenu.",
+     "en": "The neighbourhood practice, written up to the level it has reached."
+    },
+    "p1": {
+     "fr": "Rue de Bépanda Omnisports, entre la pharmacie Sass et Express Union. Un comptoir, des présentoirs, une tailluse, un réfracteur. Ce que la page doit rendre, ce n'est pas un décor : c'est la raison pour laquelle on traverse la ville pour venir chez vous.",
+     "en": "On rue de Bépanda Omnisports, between Pharmacie Sass and Express Union. One counter, frame walls, an edger, a phoropter. What the page must carry is not the decor: it is the reason people cross town to reach you."
+    },
+    "p2": {
+     "fr": "Les trois photographies de cette page sont des rendus de concept. À la livraison, ce sont les vôtres qui les remplacent - et elles seront plus fortes, parce qu'elles seront vraies.",
+     "en": "The three photographs on this page are concept renders. At handover your own replace them - and they will be stronger, because they will be real."
+    },
+    "marks": [
+     [
+      "Adresse",
+      "Rue de Bépanda Omnisports · BP 4680, Douala",
+      "Address",
+      "Rue de Bépanda Omnisports - BP 4680, Douala"
+     ],
+     [
+      "Téléphone",
+      "+237 699 25 28 74",
+      "Phone",
+      "+237 699 25 28 74"
+     ],
+     [
+      "Reconnu depuis",
+      "1er août 2009, notice Kerawa",
+      "Trading since",
+      "1 August 2009, Kerawa notice"
+     ]
+    ]
+   },
+   "clusters": {
+    "h2": {
+     "fr": "Dix actes, trois paquets, une raison par paquet.",
+     "en": "Ten acts, three groups, one reason each."
+    },
+    "lede": {
+     "fr": "Rien n'est ajouté à votre liste, rien n'est retiré : les dix lignes relevées à l'annuaire de l'Ordre et sur votre ancienne page, rangées en trois paquets. C'est la rangée qui compte pour un patient, pas la liste de courses.",
+     "en": "Nothing added to your list, nothing removed: the ten lines taken from the Order's directory and your old page, set in three groups. It is the row a patient needs, not a shopping list."
+    },
+    "groups": [
+     {
+      "t": {
+       "fr": "La vue",
+       "en": "Eyesight"
+      },
+      "why": {
+       "fr": "Le cœur de l'adresse : on vient mesurer, on repart avec une ordonnance comprise.",
+       "en": "The heart of the address: you come to be measured, you leave understanding the prescription."
+      },
+      "rows": [
+       [
+        "Examen de vue, acuité et mise au point",
+        "Eye test: acuity and focusing"
+       ],
+       [
+        "Verres correcteurs simples et progressifs",
+        "Single-vision and progressive lenses"
+       ],
+       [
+        "Lentilles de contact, conseil et entretien",
+        "Contact lenses: fitting advice and care"
+       ],
+       [
+        "Choix de la monture selon le visage, la correction, le métier",
+        "Frame choice by face, correction and trade"
+       ]
+      ]
+     },
+     {
+      "t": {
+       "fr": "Le montage",
+       "en": "Fitting"
+      },
+      "why": {
+       "fr": "Ce qui se fait sur place ne se promet pas au téléphone : c'est là que le cabinet gagne le client de dix ans.",
+       "en": "What is done on the bench is not promised over the phone: that is where a practice wins the ten-year client."
+      },
+      "rows": [
+       [
+        "Montures, sélection et ajustage",
+        "Frames: selection and adjusting"
+       ],
+       [
+        "Montage en boutique, reprise d'une monture apportée",
+        "Edging in store, refitting a frame you bring"
+       ],
+       [
+        "Entretien et réparation : nettoyage, réglage, plaquettes, vis",
+        "Cleaning, adjusting, nose pads and screws"
+       ]
+      ]
+     },
+     {
+      "t": {
+       "fr": "Ce que peu de cabinets font",
+       "en": "What few practices do"
+      },
+      "why": {
+       "fr": "Trois lignes qui rendent votre nom difficile à remplacer dans le quartier, et que personne d'autre n'écrit.",
+       "en": "Three lines that make your name hard to replace in this neighbourhood, and that no one else writes."
+      },
+      "rows": [
+       [
+        "Verres de protection et lunettes de sécurité pour ateliers et chantiers",
+        "Protective lenses and safety frames for workshops and sites"
+       ],
+       [
+        "Prothèses oculaires sur mesure",
+        "Custom ocular prostheses"
+       ],
+       [
+        "Formation du personnel aux métiers de l'optique-lunetterie",
+        "Staff training in optics and dispensing"
+       ]
+      ]
+     }
+    ]
+   },
+   "photosNote": {
+    "fr": "Trois rendus, et la salle de vente est le premier : elle ouvre la page. Les deux autres sont posés plus bas, avec la même légende dessous et le même badge — aucun de ces visuels ne se fait passer pour une photographie de votre cabinet.",
+    "en": "Three renders, and the sales room is the first: it opens the page. The other two sit lower, with the same caption below and the same badge - none of these pretends to be a photograph of your practice."
+   },
+   "band": {
+    "t": {
+     "fr": "Les prothèses oculaires.",
+     "en": "Ocular prostheses."
+    },
+    "p": {
+     "fr": "Un acte rare, listé dans votre notice d'annuaire, qu'aucune page du quartier ne revendique. C'est la ligne la plus difficile à vous disputer — et celle qu'aucun moteur ne peut montrer aujourd'hui, faute de page.",
+     "en": "A rare act, listed in your directory notice, claimed by no other page in this area. It is the line hardest to dispute - and the one no search engine can show today, for want of a page."
+    },
+    "cta": {
+     "fr": "Faire exister cette ligne",
+     "en": "Make this line exist"
+    }
+   }
+  },
+  "site": {
+   "strip": {
+    "l": {
+     "fr": "Rue de Bépanda, face à l'ancienne pharmacie Omnisports · lun-ven 8h-18h, sam 8h-13h",
+     "en": "Rue de Bepanda, opposite the old Omnisports pharmacy - Mon-Fri 8am-6pm, Sat 8am-1pm"
+    },
+    "cta": {
+     "fr": "Écrire pour un créneau",
+     "en": "Write for a slot"
+    }
+   },
+   "pill": {
+    "fr": "Optique médicale à Bépanda · ouvert du lundi au samedi",
+    "en": "Medical optics in Bepanda - open Monday to Saturday"
+   },
+   "h1a": {
+    "fr": "Opticien à Bépanda : ",
+    "en": "Optician in Bepanda: "
+   },
+   "h1b": {
+    "fr": "l'examen, le montage et la réparation, sur place.",
+    "en": "the test, the fitting and the repair, in store."
+   },
+   "lede": {
+    "fr": "Examen de vue, verres correcteurs et progressifs, montures, lentilles, lunettes de sécurité, prothèses oculaires : tout se discute au comptoir, avec la personne qui va monter vos verres. Univers Optique est ouvert rue de Bépanda depuis le 1er août 2009.",
+    "en": "Eye tests, single-vision and progressive lenses, frames, contact lenses, safety glasses, ocular prostheses: it is all discussed at the counter, with the person who will edge your lenses. Univers Optique is open on rue de Bepanda since 1 August 2009."
+   },
+   "cta1": {
+    "fr": "Écrire sur WhatsApp",
+    "en": "Write on WhatsApp"
+   },
+   "cta2": {
+    "fr": "Voir les actes et les horaires",
+    "en": "See the services and the hours"
+   },
+   "note": {
+    "fr": "Pas de formulaire, pas de compte : vous écrivez, un humain répond au numéro du comptoir.",
+    "en": "No form, no account: you write, a person answers at the counter's number."
+   },
+   "stats": [
+    [
+     "Ouvert depuis",
+     "1er août 2009",
+     "Trading since",
+     "1 August 2009"
+    ],
+    [
+     "À la boutique",
+     "examen · montage · réparation",
+     "In store",
+     "test - fitting - repair"
+    ],
+    [
+     "Ce que peu font",
+     "sécurité · prothèses oculaires",
+     "What few do",
+     "safety - prostheses"
+    ]
+   ],
+   "openLbl": {
+    "fr": "Comptoir ouvert",
+    "en": "Counter open"
+   },
+   "shutLbl": {
+    "fr": "Comptoir fermé",
+    "en": "Counter closed"
+   },
+   "closesAt": {
+    "fr": "ferme à ",
+    "en": "closes at "
+   },
+   "opensOn": {
+    "fr": "rouvre ",
+    "en": "reopens "
+   },
+   "steps": {
+    "h2": {
+     "fr": "Comment ça se passe, en trois pas",
+     "en": "How it goes, in three steps"
+    },
+    "lede": {
+     "fr": "Écrire, venir, repartir avec. Ce qui se passe entre les deux est écrit ci-dessous, sans surprise.",
+     "en": "Write, come, leave with it. What happens in between is written below, with no surprises."
+    },
+    "items": [
+     {
+      "n": "01",
+      "h": {
+       "fr": "Vous écrivez",
+       "en": "You write"
+      },
+      "p": {
+       "fr": "Un jour, une heure qui vous arrange, et le message part déjà écrit au numéro du comptoir. Si le créneau ne tient pas, on en propose un autre.",
+       "en": "A day, a time that suits you, and the message goes out already written to the counter's number. If the slot does not hold, we propose another."
+      },
+      "widget": "slots"
+     },
+     {
+      "n": "02",
+      "h": {
+       "fr": "Vous venez",
+       "en": "You come in"
+      },
+      "p": {
+       "fr": "Au comptoir : acuité de loin et de près, mise au point, lecture de votre ordonnance, et une question sur votre journée - l'écran, la route, l'atelier, la lecture.",
+       "en": "At the counter: distance and near acuity, focusing, your prescription read, and a question about your day - screens, the road, the workshop, reading."
+      },
+      "widget": "list"
+     },
+     {
+      "n": "03",
+      "h": {
+       "fr": "Vous repartez avec",
+       "en": "You leave with it"
+      },
+      "p": {
+       "fr": "La monture réglée sur le nez, les verres montés ici, et ce qu'il faut savoir pour les garder. Nettoyage et réglage se refont à la boutique.",
+       "en": "The frame adjusted on your nose, the lenses edged here, and what you need to keep them. Cleaning and adjusting are done again at the counter."
+      },
+      "widget": "care"
+     }
+    ],
+    "list": [
+     [
+      "Acuité de loin et de près",
+      "Distance and near acuity"
+     ],
+     [
+      "Mise au point et confort des anciens verres",
+      "Focusing and the old pair checked"
+     ],
+     [
+      "Usage déclaré : écran, nuit, atelier, lecture",
+      "Stated use: screens, night, workshop, reading"
+     ]
+    ],
+    "care": [
+     [
+      "Nettoyage et réglage",
+      "Cleaning and adjusting"
+     ],
+     [
+      "Plaquettes, vis, nez",
+      "Pads, screws, the nose rest"
+     ],
+     [
+      "Montage repris sur une monture apportée",
+      "Refitting a frame you bring in"
+     ]
+    ],
+    "slotsCap": {
+     "fr": "Choisissez un jour et une heure",
+     "en": "Pick a day and a time"
+    },
+    "slotsHint": {
+     "fr": "On ne réserve pas en ligne : votre message arrive au comptoir et on vous confirme l'heure.",
+     "en": "Nothing is booked online: your message reaches the counter and the hour is confirmed back to you."
+    }
+   },
+   "services": {
+    "h2": {
+     "fr": "Ce que vous venez chercher ici",
+     "en": "What you come here for"
+    },
+    "lede": {
+     "fr": "Dix actes, trois rangées. Ce qui est écrit ci-dessous est ce qui se fait à la boutique ; le reste, on vous dit où le trouver.",
+     "en": "Ten acts, three rows. What is written below is what is done at the counter; for anything else, we will tell you where to go."
+    }
+   },
+   "whys": [
+    {
+     "fr": "Le cœur de l'adresse : on vient mesurer, on repart en sachant ce qu'il faut porter.",
+     "en": "The heart of the address: you come to be measured, you leave knowing what to wear."
+    },
+    {
+     "fr": "Le montage se fait ici, à la tailluse : vos verres sont dans la pièce d'à côté.",
+     "en": "Edging happens here, on the bench: your lenses are in the next room."
+    },
+    {
+     "fr": "Deux lignes que peu d'adresses peuvent écrire : le poste de travail, et l'après-traumatisme.",
+     "en": "Two lines few addresses can write: the workplace, and life after trauma."
+    }
+   ],
+   "exam": {
+    "h2": {
+     "fr": "Avant de passer, ce qu'il faut apporter",
+     "en": "Before you come, what to bring"
+    },
+    "lede": {
+     "fr": "Une visite chez l'opticien se prépare en dix secondes. Voici les trois choses, et ce que nous ne faisons pas.",
+     "en": "A visit to the optician takes ten seconds to prepare. Here are the three things, and what we do not do."
+    },
+    "items": [
+     [
+      "Votre ordonnance, si vous en avez une",
+      "Your prescription, if you have one"
+     ],
+     [
+      "Vos verres actuels, même rayés",
+      "Your current glasses, scratched is fine"
+     ],
+     [
+      "Vos habitudes, dites à voix haute",
+      "Your habits, said out loud"
+     ]
+    ],
+    "not": {
+     "fr": "Ce que nous ne faisons pas ici : poser un diagnostic médical. Si l'œil réclame un médecin, nous vous l'écrivons et nous attendons votre compte rendu avant de tailler quoi que ce soit.",
+     "en": "What we do not do here: give a medical diagnosis. If the eye needs a doctor, we write it down and wait for the report before cutting anything."
+    }
+   },
+   "place": {
+    "h2": {
+     "fr": "Nous trouver à Bépanda",
+     "en": "Finding us in Bepanda"
+    },
+    "p1": {
+     "fr": "Rue de Bépanda, entre la pharmacie Sass et Express Union, face à l'ancienne pharmacie Omnisports. Le comptoir, la tailluse et l'appareil de mesure sont dans la même pièce : vos verres se montent là où vous êtes assis.",
+     "en": "Rue de Bepanda, between the Sass pharmacy and Express Union, opposite the old Omnisports pharmacy. The counter, the edger and the measuring instrument are in one room: your lenses are cut where you are sitting."
+    },
+    "p2": {
+     "fr": "Vous pouvez écrire avant de passer : un jour, une heure, et on vous dit si cela tient. Le numéro du comptoir est le même en appel et en WhatsApp.",
+     "en": "You can write before coming: a day, an hour, and we tell you if it holds. The counter's number is the same for a call and for WhatsApp."
+    }
+   },
+   "photos": {
+    "h2": {
+     "fr": "Ce que vous verrez en poussant la porte",
+     "en": "What you see on pushing the door"
+    },
+    "lede": {
+     "fr": "La lumière du jour sur les présentoirs, le comptoir vitré, la tailluse à deux pas, la mesure assis : la boutique tient dans une pièce, et c'est ce que ces images cherchent à rendre.",
+     "en": "Daylight on the displays, the glass counter, the edger two steps away, the measurement taken seated: the shop lives in one room, and that is what these images reach for."
+    },
+    "badge": {
+     "fr": "Image d'illustration",
+     "en": "Illustration"
+    },
+    "note": {
+     "fr": "Ces trois images sont des visuels de concept, dessinés pour ce projet : les photos du comptoir les remplaceront à la mise en ligne.",
+     "en": "These three images are concept visuals drawn for this project: photographs of the counter will replace them at go-live."
+    },
+    "caps": [
+     [
+      "La salle de vente, en journée",
+      "The sales room, by daylight",
+      "Présentoirs éclairés, comptoir vitré, lumière du jour : ce que voit celui qui entre.",
+      "Lit displays, a glass counter, daylight: what anyone sees on coming in."
+     ],
+     [
+      "Le comptoir d'entretien",
+      "The repair bench",
+      "Vis, plaquettes, réglage : ce qui se reprend ici, sans rendez-vous.",
+      "Screws, pads, adjusting: what gets taken up again here, without an appointment."
+     ],
+     [
+      "La mesure, chez l'opticien",
+      "The measurement, at the practice",
+      "Règle pupillaire, regard calme : la partie que même un enfant supporte.",
+      "Pupillary ruler, calm look: the part even a child gets through."
+     ]
+    ]
+   },
+   "prosth": {
+    "h2": {
+     "fr": "Prothèses oculaires : vente et adaptation",
+     "en": "Ocular prostheses: supply and fitting"
+    },
+    "p": {
+     "fr": "Nous recevons les personnes qui ont perdu un œil, et souvent leur famille. C'est un travail lent, sur mesure, qui demande de la place et du calme : écrivez avant de passer, nous vous recevons à un moment où le comptoir est moins plein.",
+     "en": "We see people who have lost an eye, and often their family. It is slow work, made to measure, and it needs room and calm: write before coming, we will receive you when the counter is less busy."
+    },
+    "cta": {
+     "fr": "Écrire pour être reçu calmement",
+     "en": "Write to be seen quietly"
+    }
+   },
+   "book": {
+    "h2": {
+     "fr": "Prendre un rendez-vous",
+     "en": "Book a time"
+    },
+    "lede": {
+     "fr": "Deux façons, le même numéro : écrire sur WhatsApp, ou appeler. Aucun formulaire à remplir, aucun compte à créer.",
+     "en": "Two ways, the same number: write on WhatsApp, or call. No form to fill in, no account to make."
+    },
+    "msgHead": {
+     "fr": "Ce que votre message contiendra",
+     "en": "What your message will hold"
+    },
+    "msgRows": [
+     [
+      "Le jour et l'heure choisis",
+      "The day and hour you picked"
+     ],
+     [
+      "Ce que vous cherchez",
+      "What you are coming for"
+     ],
+     [
+      "Un numéro de réponse",
+      "A number to answer back to"
+     ]
+    ],
+    "fine": {
+     "fr": "Les horaires ci-contre sont ceux du comptoir. Une fête, une urgence : il arrive qu'ils bougent, et c'est écrit dans la réponse.",
+     "en": "The hours opposite are the counter's. A holiday, an emergency: they move sometimes, and the answer says so."
+    }
+   },
+   "faqH2": {
+    "fr": "Les questions qu'on pose au comptoir",
+    "en": "The questions asked at the counter"
+   },
+   "faq": [
+    [
+     "Combien ça coûte ?",
+     "How much is it?",
+     "Cela dépend du verre, de la monture et de votre prise en charge, alors le prix se donne au comptoir, une fois le choix fait. Ce qui est écrit avant, c'est ce qui est inclus : la mesure, le réglage, le conseil.",
+     "It depends on the lens, the frame and your cover, so the price is given at the counter, once the choice is made. What is stated beforehand is what is included: the measurement, the adjusting, the advice."
+    ],
+    [
+     "Faut-il une ordonnance ?",
+     "Do I need a prescription?",
+     "Pour des verres correcteurs, oui : la vôtre, ou celle établie ici après la mesure. Pour un choix de monture, un réglage ou un nettoyage, non.",
+     "For corrective lenses, yes: yours, or the one made here after the measurement. For a frame choice, an adjustment or a cleaning, no."
+    ],
+    [
+     "Vous réparez des lunettes achetées ailleurs ?",
+     "Do you repair glasses bought elsewhere?",
+     "Nettoyage, réglage, plaquettes, vis : c'est le métier du comptoir, et la monture n'a pas d'importance. Pour changer les verres, on regarde d'abord si la monture le supporte.",
+     "Cleaning, adjusting, pads, screws: that is the counter's work, and the frame is not the question. To change lenses, we first see whether the frame can take it."
+    ],
+    [
+     "Et si je ne peux pas venir ?",
+     "And if I cannot come in?",
+     "Écrivez : selon ce qu'il faut, un réglage se conseille au téléphone, une monture se réserve, et un rendez-vous se décale. Ce qui ne se fait pas à distance, on vous le dit.",
+     "Write: depending on what is needed, an adjustment can be advised by phone, a frame can be held, a visit can be moved. What cannot be done remotely, we say so."
+    ]
+   ],
+   "foot": {
+    "brand": {
+     "fr": "Univers Optique, opticien à Bépanda, Douala. Examen de vue, verres, montures, entretien, lentilles, lunettes de sécurité, prothèses oculaires.",
+     "en": "Univers Optique, optician in Bepanda, Douala. Eye tests, lenses, frames, care, contact lenses, safety glasses, ocular prostheses."
+    },
+    "cta": {
+     "fr": "Écrire pour un créneau",
+     "en": "Write for a slot"
+    },
+    "badge": {
+     "fr": "Aperçu de concept · non publié",
+     "en": "Concept preview - not published"
+    },
+    "cols": [
+     [
+      [
+       "Le cabinet",
+       "The practice"
+      ],
+      [
+       [
+        "#services",
+        "Les actes",
+        "Services"
+       ],
+       [
+        "#rendez-vous",
+        "Horaires et adresse",
+        "Hours and address"
+       ],
+       [
+        "#visite",
+        "Comment ça se passe",
+        "How it goes"
+       ]
+      ]
+     ],
+     [
+      [
+       "Nous trouver",
+       "Find us"
+      ],
+      [
+       [
+        "MAPS",
+        "Ouvrir dans Google Maps",
+        "Open in Google Maps"
+       ],
+       [
+        "BP",
+        "BP 4680, Douala",
+        "P.O. Box 4680, Douala"
+       ],
+       [
+        "TEL",
+        "Appeler le comptoir",
+        "Call the counter"
+       ]
+      ]
+     ],
+     [
+      [
+       "Écrire",
+       "Write"
+      ],
+      [
+       [
+        "WA",
+        "WhatsApp · ",
+        "WhatsApp - "
+       ],
+       [
+        "MAIL",
+        "universoptique@yahoo.fr",
+        "universoptique@yahoo.fr"
+       ]
+      ]
+     ]
+    ],
+    "strip1": {
+     "fr": "ETS UNIVERS OPTIQUE · Bépanda, Douala · depuis le 1er août 2009",
+     "en": "ETS UNIVERS OPTIQUE - Bepanda, Douala - since 1 August 2009"
+    },
+    "strip2": {
+     "fr": "Fermé le dimanche",
+     "en": "Closed on Sunday"
+    }
+   },
+   "rail": [
+    {
+     "fr": "Écrire pour un créneau",
+     "en": "Write for a slot"
+    },
+    {
+     "fr": "Appeler",
+     "en": "Call"
+    }
+   ],
+   "waMsg": {
+    "fr": "Bonjour Univers Optique, je souhaite un rendez-vous {when}. Est-ce possible ?",
+    "en": "Hello Univers Optique, I would like an appointment {when}. Is that possible?"
+   },
+   "caps": {
+    "reserver": {
+     "fr": "Réserver ce créneau",
+     "en": "Book this slot"
+    },
+    "ecrire": {
+     "fr": "Écrire pour proposer un créneau",
+     "en": "Write to propose a slot"
+    },
+    "appeler": {
+     "fr": "Appeler",
+     "en": "Call"
+    }
+   },
+   "openNow": {
+    "fr": "Le comptoir est ouvert · {t}",
+    "en": "The counter is open · {t}"
+   },
+   "shutNow": {
+    "fr": "Le comptoir est fermé · {t}",
+    "en": "The counter is closed · {t}"
+   },
+   "todayLbl": {
+    "fr": "aujourd'hui",
+    "en": "today"
+   },
+   "nav": [
+    [
+     "#hero",
+     "Le cabinet",
+     "The practice"
+    ],
+    [
+     "#services",
+     "Ce que nous faisons",
+     "What we do"
+    ],
+    [
+     "#visite",
+     "La visite",
+     "The visit"
+    ],
+    [
+     "#lieu",
+     "Où nous trouver",
+     "Where to find us"
+    ],
+    [
+     "#protheses",
+     "Prothèses",
+     "Prostheses"
+    ],
+    [
+     "#questions",
+     "Questions",
+     "Questions"
+    ]
+   ],
+   "ctaNav": {
+    "fr": "Écrire pour un créneau",
+    "en": "Write for a slot"
+   },
+   "fallback": {
+    "fr": "Les créneaux ci-dessus sont calculés par la page à partir des heures du comptoir. Sans script, le bouton du haut envoie déjà le message, et le téléphone reste le chemin le plus sûr.",
+    "en": "The slots above are computed by the page from the counter hours. Without a script the button above still sends the message, and the phone stays the surest way in."
+   },
+   "pick": {
+    "h": {
+     "fr": "Choisissez une heure, le message part écrit.",
+     "en": "Pick a time, the message goes out written."
+    },
+    "fine": {
+     "fr": "Aucun compte, aucun formulaire, aucun acompte : une proposition part sur WhatsApp et le cabinet répond. Les heures ci-dessous sont celles du comptoir, telles qu’elles sont affichées.",
+     "en": "No account, no form, no deposit: a proposal goes out on WhatsApp and the practice answers. The hours below are the counter hours, as displayed."
+    }
+   }
+  },
+  "hours": {
+   "1": [
+    480,
+    1080
+   ],
+   "2": [
+    480,
+    1080
+   ],
+   "3": [
+    480,
+    1080
+   ],
+   "4": [
+    480,
+    1080
+   ],
+   "5": [
+    480,
+    1080
+   ],
+   "6": [
+    480,
+    780
+   ],
+   "0": null
+  },
+  "dayNames": [
+   [
+    "Dimanche",
+    "Sunday"
+   ],
+   [
+    "Lundi",
+    "Monday"
+   ],
+   [
+    "Mardi",
+    "Tuesday"
+   ],
+   [
+    "Mercredi",
+    "Wednesday"
+   ],
+   [
+    "Jeudi",
+    "Thursday"
+   ],
+   [
+    "Vendredi",
+    "Friday"
+   ],
+   [
+    "Samedi",
+    "Saturday"
+   ]
+  ],
+  "monthNames": [
+   "janv.",
+   "févr.",
+   "mars",
+   "avr.",
+   "mai",
+   "juin",
+   "juil.",
+   "août",
+   "sept.",
+   "oct.",
+   "nov.",
+   "déc."
+  ],
+  "brief": {
+   "h2": {
+    "fr": "Note au cabinet — à ne pas publier.",
+    "en": "Note to the practice - not for publication."
+   },
+   "lede": {
+    "fr": "Tout ce qui suit regarde le propriétaire des lieux, pas le client : les six constats relevés sur le web public, la comparaison avant/après, votre note de 3,3 sur six avis, les six points qui n’engagent que vous, et la liste des photos qui manquent. Rien de ceci n’est dans la page que vos clients lisent (`--public` le retire à la construction).",
+    "en": "What follows is for the owner, not for the patient: the six findings read off the public web, the before/after comparison, your 3.3 rating over six reviews, the six points only you can settle, and the list of missing photographs. None of this is in the page your clients read (`--public` removes it at build time)."
+   },
+   "badge": {
+    "fr": "Note interne · chiffrée, sourcée, non publiée",
+    "en": "Internal note - sourced, not published"
+   }
+  }
+ }
+}

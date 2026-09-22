@@ -25,6 +25,16 @@ The rule names abstract folders; these are where the lessons actually live. Load
 | **Retention / upsell / referrals** | `sales/AMK-Sales-Playbook-v2.md` (A5 referral, F6, Part J reinforce-the-decision) · `sales/AMK-Playbook-Addendum-Outcomes-2026-09-15.md` · `sales/AMK-Playbook-Addendum-4-Marketing-Systems-2026-09-15.md` (monthly report, GBP layer) |
 | **Weekly research** | The field being studied → log the output back into that field's lessons: sales/marketing → `sales/research/<YYYY>-W<WW>-techniques.md`; video lessons → `research/YouTube-Lessons.md`; design/build → the relevant `AMK-DESIGN-SKILLS.md` section |
 
+| **CRM / pipeline** | `leads/build/crm.py` (schéma + énumération des étapes — C'EST LUI LA SOURCE, pas le CSV) · `leads/build/guard.py` + `generators.lock.json` (EMPREINTE des générateurs : `rebuild.sh` refuse d'écrire si un générateur a été remplacé par une version plus ancienne — 22/09 : une restauration d'instantané avait effacé l'état des deux fils chauds du CSV sans un seul message d'erreur) · `leads/CRM.csv` (état) · `sales/Activity-Log.md` (chronologie, append-only) · `sales/AMK-Sales-Playbook-v2.md` (règles debout, §A4 corrigé) · vue live : `leads/PIPELINE.md`, `leads/KILL-LIST.md`, `leads/STALE.md`, `leads/SOURCES.md`, `leads/Daily-Plan.csv` (toutes GÉNÉRÉES) · fiche d'un lead : `leads/records/<slug>.md` |
+
+**Règle d'écriture du CRM (M7, 21 Sep 2026) — « la prose ne suffit pas ».** Une décision qui
+doit changer un calcul (`parked`, un score, un `reply_type`) se met **dans le générateur**
+(`leads/build/crm.py`), jamais seulement dans un `.md` : COMOBIL était annoncé « parké » dans trois
+fichiers et restait `prospect` dans les données, donc la kill list déduite le remettait en tête.
+Une correction manuelle dans `CRM.csv` est **perdue** au prochain `leads/build/rebuild.sh` —
+c'est voulu. La chronologie, elle, va dans `sales/Activity-Log.md` (une ligne par envoi, une ligne
+par réponse) et remonte toute seule dans les fiches et les vues.
+
 **State files to load with almost everything:** `sales/Pipeline-Status.md` (current week), the prospect dossier, `sales/Outreach-Pack-<date>.md` (active pack), session memory.
 
 ---

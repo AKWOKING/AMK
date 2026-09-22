@@ -5,6 +5,8 @@
 >
 > **v2.2 changelog (17 Sep 2026 — sales batch, videos [7] Hormozi 3A and [8] CLOSER):** added **Part I — the 3A reframe** (objection handling with Acknowledge · Associate · Ask, now the house method for written/WhatsApp objections) and **Part J — CLOSER for the WhatsApp era** (clarify→label→pain→vacation→concerns→reinforce, yes/no decision chain, always-ask, reinforce-the-decision sequence, one-taxonomy objection log). Nothing deleted. Two guardrails added: straw men only with **true** references (accuracy law), and the pain cycle is capped inside discovery — it never extends the no-chase FU rule (M+2/+4/+7 then stop).
 
+> **M7 changelog (21 Sep 2026 — CRM migration, King's ruling).** The pipeline now speaks ONE stage vocabulary — `prospect → qualified → presented → closing → won → delivered`, plus `parked` and `lost` — the same five beats as `sales/AMK-5-Stage-Funnel.svg`, with `won`/`lost` added and `delivered` kept separate (paid ≠ delivered, and that seam is where a client dies). Two rules were settled today: **(1) the kill list is DERIVED, never hardcoded** — King confirmed the 19 Sep correction to §A4, and a reply always outranks it (the 90-second rule); **(2) the no-cold-calls rule is now written here as a standing rule** — it had been operating since 14 Sep only as a routing preference (`Contact channel`, `Invitation-First-Replan`). Fields were added to `leads/CRM.csv` (`first_touched`, `stage_since`, `last_reply_received`, `preview_sent`, `proposal_sent`, `price_quoted_fcfa`, `invoice_sent`, `closed_on`, `closed_value_fcfa`, `bamfam_next_action/step`, `health_override`, `gtd_filter`) — see `leads/build/crm.py` header. Nothing in this file was deleted.
+
 > **Addendum (15 Sep evening):** [`AMK-Playbook-Addendum-Outcomes-2026-09-15.md`](AMK-Playbook-Addendum-Outcomes-2026-09-15.md) synthesizes 5 newer AI-agency videos — outcome (not website) framing, the gift-preview validation, Google-Maps no-website prospecting, the optional Care Plan retainer (FCFA/MoMo), monthly reports, and the handoff-video delivery step. Standing rules in this file still override; pricing changes in the addendum are proposals until King approves.
 
 Sources:
@@ -63,6 +65,20 @@ A salesman has 3 jobs: **maximize opportunities → convert the highest % → st
 
 ### A9. Be concise — 5 words when 100 do
 - Every WA message ≤ 5 lines (except the concept handover). Long messages get read as homework.
+
+> **M7 soirée (21 Sep 2026, 18:20 — King's screens corrected my read).** Three standing rules added, nothing deleted:
+> **(1) A deferral is not a consent.** "je vous reviens" / "Ok" / a 🙏 means *not yet* — never "he agreed,
+> send the price and the full page". Bonanjo is the case: page + 100 000 FCFA went out on a "je vous reviens"
+> and the thread has been silent 29 h. A follow-up that assumes agreement ("j'attends votre feu vert",
+> "comme convenu") is now a **defect in the copy**, not a style choice: ask for an *opinion*, offer an exit.
+> **(2) Never count a send the CRM cannot prove — and never un-count one it can.** King's screenshots found
+> three messages that had never been registered (OraCare's 14/09 13:04, AFRIQUE LABO's 21/09, Baird's 17/09
+> 13:48) and one that looked sent but wasn't (Bely: number not on WhatsApp → **channel incident**, not a
+> failed follow-up). **(3) Look up a lead by NUMBER in the generated CSV, never by name in the code.**
+> I "discovered" AFRIQUE LABO was missing from the CRM and added a second row for the same laboratory; the
+> row already existed as `afrique-labo-douala`. `crm.py` now **fails the build** if one number appears on two
+> rows — and that guard immediately caught the 18/09 CEMECES/INSES number swap, which is now fixed by
+> *removing* the number from the wrong row rather than by exempting it.
 
 ### A10. Consistency system (the 3rd bucket — "do it for a very long time")
 - **Lives in the workbook:** `leads/leads_50.xlsx` → **"DAILY OPS" tab** (first tab, opens by default) — Kill List + Reply Queue + this week's drill + tonight's 5 min.
