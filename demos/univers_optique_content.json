@@ -1028,14 +1028,6 @@
      "safety - prostheses"
     ]
    ],
-   "openLbl": {
-    "fr": "Comptoir ouvert",
-    "en": "Counter open"
-   },
-   "shutLbl": {
-    "fr": "Comptoir fermé",
-    "en": "Counter closed"
-   },
    "closesAt": {
     "fr": "ferme à ",
     "en": "closes at "
@@ -1204,8 +1196,8 @@
      "en": "Daylight on the displays, the glass counter, the edger two steps away, the measurement taken seated: the shop lives in one room, and that is what these images reach for."
     },
     "badge": {
-     "fr": "Image d'illustration",
-     "en": "Illustration"
+     "fr": "Rendu de concept",
+     "en": "Concept render"
     },
     "note": {
      "fr": "Ces trois images sont des visuels de concept, dessinés pour ce projet : les photos du comptoir les remplaceront à la mise en ligne.",
@@ -1425,12 +1417,12 @@
     }
    },
    "openNow": {
-    "fr": "Le comptoir est ouvert · {t}",
-    "en": "The counter is open · {t}"
+    "fr": "Le comptoir est {o} · {t}",
+    "en": "The counter is {o} · {t}"
    },
    "shutNow": {
-    "fr": "Le comptoir est fermé · {t}",
-    "en": "The counter is closed · {t}"
+    "fr": "Le comptoir est {o} · {t}",
+    "en": "The counter is {o} · {t}"
    },
    "todayLbl": {
     "fr": "aujourd'hui",
@@ -1485,6 +1477,14 @@
      "fr": "Aucun compte, aucun formulaire, aucun acompte : une proposition part sur WhatsApp et le cabinet répond. Les heures ci-dessous sont celles du comptoir, telles qu’elles sont affichées.",
      "en": "No account, no form, no deposit: a proposal goes out on WhatsApp and the practice answers. The hours below are the counter hours, as displayed."
     }
+   },
+   "openLbl": {
+    "fr": "ouvert",
+    "en": "open"
+   },
+   "shutLbl": {
+    "fr": "fermé",
+    "en": "closed"
    }
   },
   "hours": {
@@ -1545,18 +1545,54 @@
    ]
   ],
   "monthNames": [
-   "janv.",
-   "févr.",
-   "mars",
-   "avr.",
-   "mai",
-   "juin",
-   "juil.",
-   "août",
-   "sept.",
-   "oct.",
-   "nov.",
-   "déc."
+   [
+    "janv.",
+    "Jan"
+   ],
+   [
+    "févr.",
+    "Feb"
+   ],
+   [
+    "mars",
+    "Mar"
+   ],
+   [
+    "avr.",
+    "Apr"
+   ],
+   [
+    "mai",
+    "May"
+   ],
+   [
+    "juin",
+    "Jun"
+   ],
+   [
+    "juil.",
+    "Jul"
+   ],
+   [
+    "août",
+    "Aug"
+   ],
+   [
+    "sept.",
+    "Sep"
+   ],
+   [
+    "oct.",
+    "Oct"
+   ],
+   [
+    "nov.",
+    "Nov"
+   ],
+   [
+    "déc.",
+    "Dec"
+   ]
   ],
   "brief": {
    "h2": {

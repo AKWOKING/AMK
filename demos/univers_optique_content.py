@@ -674,8 +674,6 @@ C["site"] = {
    "stats": [["Ouvert depuis", "1er août 2009", "Trading since", "1 August 2009"],
              ["À la boutique", "examen · montage · réparation", "In store", "test - fitting - repair"],
              ["Ce que peu font", "sécurité · prothèses oculaires", "What few do", "safety - prostheses"]],
-   "openLbl": {"fr": "Le comptoir est ouvert", "en": "The counter is open"},
-   "shutLbl": {"fr": "Le comptoir est fermé", "en": "The counter is closed"},
    "closesAt": {"fr": "ferme à ", "en": "closes at "},
    "opensOn": {"fr": "rouvre ", "en": "reopens "},
    "steps": {"h2": {"fr": "Comment ça se passe, en trois pas", "en": "How it goes, in three steps"},
@@ -756,7 +754,7 @@ C["site"] = {
                             "cherchent à rendre.",
                       "en": "Daylight on the displays, the glass counter, the edger two steps away, the measurement "
                             "taken seated: the shop lives in one room, and that is what these images reach for."},
-             "badge": {"fr": "Image d'illustration", "en": "Illustration"},
+             "badge": {"fr": "Rendu de concept", "en": "Concept render"},
              "note": {"fr": "Ces trois images sont des visuels de concept, dessinés pour ce projet : les photos du "
                             "comptoir les remplaceront à la mise en ligne.",
                       "en": "These three images are concept visuals drawn for this project: photographs of the "
@@ -842,8 +840,8 @@ C["site"] = {
    "caps": {"reserver": {"fr": "Réserver ce créneau", "en": "Book this slot"},
             "ecrire": {"fr": "Écrire pour proposer un créneau", "en": "Write to propose a slot"},
             "appeler": {"fr": "Appeler", "en": "Call"}},
-   "openNow": {"fr": "Le comptoir est ouvert · {t}", "en": "The counter is open · {t}"},
-   "shutNow": {"fr": "Le comptoir est fermé · {t}", "en": "The counter is closed · {t}"},
+   "openNow": {"fr": "Le comptoir est {o} · {t}", "en": "The counter is {o} · {t}"},
+   "shutNow": {"fr": "Le comptoir est {o} · {t}", "en": "The counter is {o} · {t}"},
    "todayLbl": {"fr": "aujourd'hui", "en": "today"},   "nav": [["#hero", "Le cabinet", "The practice"], ["#services", "Ce que nous faisons", "What we do"],
            ["#visite", "La visite", "The visit"], ["#lieu", "Où nous trouver", "Where to find us"],
            ["#protheses", "Prothèses", "Prostheses"], ["#questions", "Questions", "Questions"]],
@@ -859,8 +857,8 @@ C["site"] = {
                           "affichées.",
                      "en": "No account, no form, no deposit: a proposal goes out on WhatsApp and the practice "
                            "answers. The hours below are the counter hours, as displayed."}},
-   "openLbl": {"fr": "Comptoir ouvert", "en": "Counter open"},
-   "shutLbl": {"fr": "Comptoir fermé", "en": "Counter closed"}
+   "openLbl": {"fr": "ouvert", "en": "open"},
+   "shutLbl": {"fr": "fermé", "en": "closed"}
  }
  # Les heures du comptoir, SEULE source du moteur de créneaux : la grille est calculée à partir de ces
  # minutes, jamais écrite à la main ailleurs. (6 = lundi .. 0 = dimanche, comme getDay().)
@@ -868,8 +866,9 @@ C["hours"] = {"1": [480, 1080], "2": [480, 1080], "3": [480, 1080], "4": [480, 1
            "6": [480, 780], "0": None}
 C["dayNames"] = [["Dimanche", "Sunday"], ["Lundi", "Monday"], ["Mardi", "Tuesday"], ["Mercredi", "Wednesday"],
               ["Jeudi", "Thursday"], ["Vendredi", "Friday"], ["Samedi", "Saturday"]]
-C["monthNames"] = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.",
-                "nov.", "déc."]
+C["monthNames"] = [["janv.", "Jan"], ["févr.", "Feb"], ["mars", "Mar"], ["avr.", "Apr"],
+                 ["mai", "May"], ["juin", "Jun"], ["juil.", "Jul"], ["août", "Aug"],
+                 ["sept.", "Sep"], ["oct.", "Oct"], ["nov.", "Nov"], ["déc.", "Dec"]]
 C["brief"] = {
   "h2": {"fr": "Note au cabinet — à ne pas publier.", "en": "Note to the practice - not for publication."},
   "lede": {"fr": "Tout ce qui suit regarde le propriétaire des lieux, pas le client : les six constats relevés "

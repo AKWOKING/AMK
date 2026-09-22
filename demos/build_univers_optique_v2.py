@@ -62,6 +62,9 @@ IMGDIR = ROOT / "demos" / "img"
 C = json.loads((ROOT / "demos" / "univers_optique_content.json").read_text(encoding="utf-8"))["page"]
 V2 = C["v2"]
 WA = re.sub(r"\D", "", C["wa"])
+# wa.me et l'API WhatsApp exigent le format E.164 ; la fiche, elle, s'affiche en numérotation locale.
+# Deux écritures du MÊME numéro, donc deux variables — et un contrôle qui refuse l'une sans l'autre.
+WA_INTL = "237" + WA
 assert len(WA) == 9 and WA.startswith("6"), "numéro WhatsApp malformé : " + WA
 
 # ── PALETTE — le monde de la référence, verrouillé et justifié avant la feuille de style ──────────────
@@ -160,7 +163,7 @@ def L(pair, tag="span"):
 
 
 def wa_url(text):
-    return "https://wa.me/" + WA + "?text=" + urllib.parse.quote(text, safe="")
+    return "https://wa.me/" + WA_INTL + "?text=" + urllib.parse.quote(text, safe="")
 
 
 MSG = C["waMsg"]
@@ -319,7 +322,7 @@ html[data-lang=en] .fr-only{display:none}
 .hero .note{margin-top:20px;font-size:.83rem;color:var(--on-dark-4);max-width:54ch}
 .pick{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh);
  padding:16px 16px 14px;color:var(--text)}
-.pick .cap{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.pick .cap,.pickslots .cap{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
 .pick h3{font-size:.98rem;margin:4px 0 0}
 .chips{display:flex;gap:6px;flex-wrap:wrap;margin:11px 0 2px}
 .chip{display:inline-flex;align-items:center;gap:6px;text-decoration:none;background:var(--card2);border:1px solid
@@ -330,7 +333,45 @@ html[data-lang=en] .fr-only{display:none}
 .chip.h{font-family:var(--mono);font-size:.82rem;background:transparent;color:var(--petrol);
  border-color:var(--edge-blue)}
 .chip.h:hover{background:var(--wash-blue)}
-.pick .fine{font-size:.76rem;color:var(--mute);margin-top:10px;line-height:1.5}
+.pick .fine,.alt{font-size:.76rem;color:var(--mute);margin-top:10px;line-height:1.5}
+pick .slots{margin-top:12px}
+.pick .slots>div{padding:9px 11px}
+.msglbl{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);
+ margin:13px 0 0}
+.msg{font-family:var(--mono);font-size:.75rem;line-height:1.55;color:var(--petrol);margin:5px 0 0;
+ word-break:break-word}
+.openstate{margin-top:11px;font-family:var(--mono);font-size:.75rem;line-height:1.5;color:var(--rust-dk)}
+.openstate[data-on="1"]{color:var(--petrol)}
+/* Les trois repères du hero, posés sur la photo : même famille mono que les légendes, et un filet crème
+   à 32 % qui n'est pas une décoration mais la séparation des trois colonnes. */
+.hero .stats{display:flex;gap:16px;flex-wrap:wrap;margin:22px 0 0;padding:0}
+.hero .stats>div{border-left:2px solid rgba(var(--rgb-cream),.32);padding-left:12px}
+.hero .stats dt{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+ color:var(--on-dark-4)}
+.hero .stats dd{margin:4px 0 0;font-family:var(--disp);font-size:1.02rem;color:var(--on-dark)}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(18px,3vw,34px);align-items:start}
+.bring{list-style:none;margin:0;padding:0}
+.bring li{display:flex;gap:10px;align-items:flex-start;padding:11px 0;border-top:1px dotted var(--hair);
+ font-size:.98rem;color:var(--ink)}
+.bring li:first-child{border-top:0}
+.bring li::before{content:"";flex:0 0 auto;width:7px;height:7px;border-radius:50%;background:var(--rust);
+ margin-top:.5em}
+.notmed{background:var(--wash);border:1px solid var(--line);border-left:3px solid var(--rust);
+ border-radius:var(--r);padding:16px 18px;font-size:.95rem;color:var(--text);line-height:1.6}
+.msgrows{list-style:none;margin:14px 0 0;padding:0}
+.msgrows li{display:flex;gap:10px;padding:9px 0;border-top:1px dotted var(--hair);font-size:.93rem;
+ color:var(--text)}
+.msgrows li:first-child{border-top:0}
+.msgrows b{font-family:var(--mono);font-size:.78rem;color:var(--rust-dk);flex:0 0 auto}
+.hint{font-size:.75rem;color:var(--mute);margin:9px 0 0;line-height:1.5}
+/* La note au cabinet : un fond plus froid, un liseré d'encre, et des sections resserrées — on doit
+   comprendre en une seconde que ce bloc ne se publie pas. */
+.brief{background:var(--wash);border-top:3px solid var(--ink)}
+.brief .bhead{padding-block:clamp(40px,6vw,70px)}
+.brief .bhead h2{max-width:30ch}
+.brief .bhead .badge{margin-top:14px}
+.brief>section{padding-block:clamp(40px,6vw,78px);border-top:1px solid var(--line)}
+.brief .ed{grid-template-columns:minmax(0,1fr)}
 main>section{padding-block:clamp(58px,8.4vw,124px)}
 main>section+section{border-top:1px solid var(--line)}
 .kick{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--rust-dk);
@@ -503,7 +544,8 @@ table.t td.mark b{font-weight:600}
  html{scroll-padding-top:132px}
 }
 @media (max-width:700px){
- .steps,.packs,.asks,.shots,.shots2{grid-template-columns:minmax(0,1fr)}
+ .steps,.packs,.asks,.shots,.shots2,.two{grid-template-columns:minmax(0,1fr)}
+ .hero .stats{gap:12px}
  .find{grid-template-columns:28px minmax(0,1fr)}
  .find p{grid-column:2}
  .band{grid-template-columns:minmax(0,1fr)}
@@ -598,75 +640,384 @@ ARR = ('<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="curr
 # ══════════════════════════════════════════════════════════════════════════════════
 #  SECTIONS — chacune tient debout seule (ruban de loi n° 11)
 # ══════════════════════════════════════════════════════════════════════════════════
+# ══════════════════════════════════════════════════════════════════════════════════
+#  DEUX PAGES DANS UN SEUL FICHIER, ET UNE SEULE SOURCE DE DATES
+# ══════════════════════════════════════════════════════════════════════════════════
+#  Le 22/09 au soir, le roi a gardé la direction visuelle (« I love the designs of V2 ») et relevé deux
+#  tares. La première : « le créneau » affichait des dates écrites à la main — « Mar 22 sept » — donc
+#  fausses dès le lendemain (« are they dynamique??, do they auto update ? I hope they do if not they're
+#  useless »). La seconde : la page parlait du cabinet AU cabinet — note de 3,3, « nous écrivons vous
+#  coupez », « faute de page » — alors que « the objectif of the site is so clients find, him his services,
+#  increase trust and they book easily ». Les deux se règlent dans la machine, pas dans les intentions :
+#   · AUCUNE date absolue n'est posée dans ce constructeur. Les créneaux naissent de new Date() et de la
+#     grille C["hours"], qui est AUSSI la source du tableau d'heures et du JSON-LD. Une seule écriture,
+#     trois usages. Le HTML, lui, ne contient que des heures (elles ne percent pas) et des liens réels.
+#   · S = la page que lit un client. B = la note au cabinet (les six constats, le comparatif, le 3,3 sur
+#     six avis, les six questions à trancher, la liste des photos qui manquent). Le fichier publié est
+#     PUBLIC ; la note n'existe que dans le fichier de travail. Un contrôle vérifie qu'aucun mot du
+#     vocabulaire du dossier ne passe dans la page publique.
 S = []
+B = []
+SITE = C["site"]
+BRIEF = C["brief"]
+HGRID = C["hours"]
+DAYN = C["dayNames"]
+MON = C["monthNames"]
 WA_HERO = wa_url(msg("generic"))
+WA_PROPOSE = WA_HERO          # même message, même numéro : le chemin d'entrée sans JavaScript
+UI_KEYS = ("openNow", "shutNow", "todayLbl", "openLbl", "shutLbl", "closesAt", "opensOn")
 
-# 1 · bandeau rouille : une urgence vraie, les horaires
+
+def hours_only():
+    """Le tableau des heures du comptoir : sept lignes, un jour, une plage. Aucune date."""
+    rows = ""
+    for _fr, _en, _txt in C["book"]["slots"]:
+        _cls = "h closed" if "Ferm" in _txt else "h"
+        rows += ('<div><span class="d">' + bi(_fr, _en) + '</span><span class="' + _cls + '">' + esc(_txt)
+                 + '</span></div>')
+    return ('<div class="slots">' + rows + '</div>'
+            '<p class="openstate" data-openstate hidden></p>')
+
+
+def pick_block(ident, cap=None):
+    """Le socle que le moteur remplit. `hidden` : sans JavaScript, ce conteneur disparaît et le reste de
+       la carte — heures, téléphone, bouton WhatsApp — continue de fonctionner. Un bloc de dates figées
+       à la main, lui, resterait affiché et mentirait."""
+    return ('<div class="pickslots" data-slots="' + ident + '" hidden>'
+            '<p class="cap">' + (L(cap) if cap else bi("Heures proposées", "Hours offered")) + '</p>'
+            '<div class="chips" data-days></div>'
+            '<p class="msglbl">' + L(C["book"]["msgHead"]) + '</p><p class="msg" data-msg></p></div>')
+
+
+def alt_line():
+    """La phrase qui reste vraie quand le script ne tourne pas, avec son lien réel hors de tout caché."""
+    return ('<p class="alt">' + L(SITE["fallback"]) + ' <a href="' + WA_PROPOSE + '" target="_blank"'
+            ' rel="noopener">' + L(SITE["caps"]["ecrire"]) + '</a></p>')
+
+
+# Le moteur, en quatre tokens : la grille, les noms de jours et de mois, le gabarit de message, l'URL.
+# Rien n'est recopié ici — ce que le client lit et ce que le calculateur proposent viennent du même dictionnaire.
+JS_SLOTS = ("""
+(function () {
+  'use strict';
+  var H = @@H@@, DN = @@D@@, MN = @@M@@, MSG = @@W@@, UI = @@U@@, WB = @@WB@@;
+  var MIN_AHEAD = 60, MIN_LEFT = 120;
+  function lang() { return document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'fr'; }
+  function U(o) { return o[lang()] || o.fr; }
+  function pad(q) { return q < 10 ? '0' + q : '' + q; }
+  function hm(m) { return Math.floor(m / 60) + 'h' + pad(m % 60); }
+  function grid(d) { return H[String(d.getDay())] || null; }
+  function mins() { var n = new Date(); return n.getHours() * 60 + n.getMinutes(); }
+  function today() { return new Date().toDateString(); }
+  function isToday(d) { return d.toDateString() === today(); }
+  function ix() { return lang() === 'en' ? 1 : 0; }
+  function lab(d) { var k = ix(); return DN[d.getDay()][k] + ' ' + d.getDate() + ' ' + MN[d.getMonth()][k]; }
+  /* Cinq journées encore réservables, dans l'ordre, dimanche jamais proposé (la grille le dit, pas nous).
+     Une journée déjà entamée n'est gardée que s'il reste au moins deux heures de comptoir devant soi ;
+     l'heure proposée est prise dans le tiers ouvert qui reste, arrondi à la demi-heure. */
+  function picks() {
+    var out = [], n = new Date(), i, d, w, lo, hi, step, m;
+    for (i = 0; i < 21 && out.length < 5; i++) {
+      d = new Date(n.getFullYear(), n.getMonth(), n.getDate() + i, 0, 0, 0, 0);
+      w = grid(d);
+      if (!w) { continue; }
+      lo = w[0];
+      if (isToday(d)) {
+        if (w[1] - mins() < MIN_LEFT) { continue; }
+        lo = Math.max(lo, mins() + MIN_AHEAD);
+      }
+      hi = w[1] - 60;
+      if (hi - lo < 60) { continue; }
+      step = Math.floor((hi - lo) / 3 / 30) * 30;
+      m = lo + step * (out.length % 3);
+      if (m > hi) { m = hi; }
+      out.push({ d: d, m: m });
+    }
+    return out;
+  }
+  function when(x) { return lab(x.d) + ' \\u00b7 ' + hm(x.m); }
+  function fill() {
+    var host = document.querySelectorAll('[data-slots]'), ps = picks(), k, i, box, days, msg, a, t, txt;
+    for (k = 0; k < host.length; k++) {
+      box = host[k]; days = box.querySelector('[data-days]'); msg = box.querySelector('[data-msg]');
+      while (days.firstChild) { days.removeChild(days.firstChild); }
+      for (i = 0; i < ps.length; i++) {
+        t = when(ps[i]) + (isToday(ps[i].d) ? ' (' + U(UI.todayLbl) + ')' : '');
+        txt = U(MSG).replace('{when}', t);
+        a = document.createElement('a');
+        a.className = 'chip'; a.href = WB + encodeURIComponent(txt);
+        a.target = '_blank'; a.rel = 'noopener'; a.textContent = t;
+        days.appendChild(a);
+      }
+      if (!ps.length) { box.hidden = true; continue; }
+      msg.textContent = '\\u00ab ' + U(MSG).replace('{when}', when(ps[0])) + ' \\u00bb';
+      box.hidden = false;
+    }
+    state();
+  }
+  /* Le point d’état lit la MÊME grille que le tableau publié : pas une deuxième vérité du matin. */
+  function state() {
+    var els = document.querySelectorAll('[data-openstate]'), i, n, w, m, sub, j, d, nw;
+    for (i = 0; i < els.length; i++) {
+      n = new Date(); m = n.getHours() * 60 + n.getMinutes(); w = grid(n);
+      if (w && m >= w[0] && m < w[1]) {
+        sub = U(UI.closesAt) + hm(w[1]);
+        els[i].textContent = U(UI.openNow).replace('{o}', U(UI.openLbl)).replace('{t}', sub);
+        els[i].setAttribute('data-on', '1');
+
+      } else {
+        sub = '';
+        for (j = 1; j < 8; j++) {
+          d = new Date(n.getFullYear(), n.getMonth(), n.getDate() + j, 0, 0, 0, 0);
+          nw = grid(d);
+          if (nw) { sub = U(UI.opensOn) + lab(d) + ' \u00b7 ' + hm(nw[0]); break; }
+        }
+        els[i].textContent = U(UI.shutNow).replace('{o}', U(UI.shutLbl)).replace('{t}', sub);
+        els[i].setAttribute('data-on', '0');
+      }
+      els[i].hidden = false;
+    }
+  }
+  try { fill(); } catch (e) { /* le HTML de repli reste debout tout seul */ }
+  document.addEventListener('click', function (ev) {
+    var t = ev.target;
+    if (t && (t.id === 'btn-fr' || t.id === 'btn-en')) { try { fill(); } catch (e) {} }
+  }, true);
+})();
+"""
+            .replace("@@H@@", json.dumps(HGRID, separators=(",", ":"), sort_keys=True))
+            .replace("@@D@@", json.dumps(DAYN, ensure_ascii=False, separators=(",", ":")))
+            .replace("@@M@@", json.dumps(MON, ensure_ascii=False, separators=(",", ":")))
+            .replace("@@W@@", json.dumps(SITE["waMsg"], ensure_ascii=False, separators=(",", ":")))
+            .replace("@@U@@", json.dumps({k: SITE[k] for k in UI_KEYS}, ensure_ascii=False,
+                                         separators=(",", ":")))
+            .replace("@@WB@@", json.dumps("https://wa.me/" + WA_INTL + "?text=")))
+
+# 1 · bandeau : l'adresse et les heures, dites au client
 S.append('<div class="strip"><div class="wrap"><span>' + L(C["bar"]["line"]) +
-         ' <span class="dim">· ' + L(C["bar"]["confirm"]) + '</span></span>'
-         '<a href="#rendez-vous">' + bi("Un créneau de vingt minutes se prend ici",
-                                        "A twenty-minute slot is taken here") + '</a></div></div>')
+         '<span class="dim"> · ' + bi("examen de vue, verres, montures, adaptation de lentilles",
+                                      "eye tests, lenses, frames, contact lens fitting") + '</span></span>'
+         '<a href="#rendez-vous">' + bi("Un examen de vue se prend ici", "An eye test is taken here")
+         + '</a></div></div>')
 
 # 2 · en-tête
-_nav = "".join('<li><a href="%s">%s</a></li>' % (h, bi(fr, en)) for h, fr, en in C["nav"])
+_nav = "".join('<li><a href="%s">%s</a></li>' % (h, bi(fr, en)) for h, fr, en in SITE["nav"])
 S.append('<header class="hd"><div class="wrap">'
          '<a class="mark" href="#top"><span class="lg" aria-hidden="true"></span><span>'
          '<span class="nm">Univers Optique</span>'
          '<span class="rl">' + bi("Optique médicale · Bépanda · depuis 2009",
-                                  "Medical optics - Bepanda - since 2009") + '</span></span></a>'
+                                 "Medical optics - Bepanda - since 2009") + '</span></span></a>'
          '<ol class="nav" aria-label="' + esc(C["a11y"]["nav"]["fr"]) + '">' + _nav + '</ol>'
-         '<a class="btn" href="' + WA_HERO + '" target="_blank" rel="noopener">' + EYE +
-         '<span>' + L(C["ctaNav"]) + '</span></a>'
+         '<a class="btn" href="' + WA_PROPOSE + '" target="_blank" rel="noopener">' + WA_I +
+         '<span>' + L(SITE["ctaNav"]) + '</span></a>'
          '<span class="lang" role="group" aria-label="' + esc("Langue / Language") + '">'
          '<button id="btn-fr" class="is-on" type="button">FR</button>'
          '<button id="btn-en" type="button">EN</button></span>'
          '</div></header>')
 
-# 3 · HERO — la grande photo, le sélecteur de créneaux posé dedans
-_days = "".join('<a class="chip" href="%s">%s</a>' % (wa_url(msg("slot", slot=fr, when=fr)), bi(fr, en))
-                for fr, en in V2["steps"]["chipsDays"][:3])
-_hours = "".join('<a class="chip h" href="%s">%s</a>' % (wa_url(msg("slot", slot=fr, when="lundi-vendredi")),
-                                                         bi(fr, en))
-                 for fr, en in V2["steps"]["chipsHours"])
-_pick_fine = ("Aucun compte, aucun formulaire : ces appuis ouvrent WhatsApp au " + C["waDisp"] +
-              " avec la demande déjà écrite. Les horaires viennent de votre fiche Google, relue le 21/09.")
-_pick_fine_en = ("No account, no form: these taps open WhatsApp on " + C["waDisp"] + " with the request already "
-                 "written. Hours come from your Google listing, re-read on 21 Sep.")
+
+# 3 · HERO — la grande photo, et à côté LE bloc qui sert à réserver.
+#     Le card ne promet rien qu'il ne puisse tenir sans script : le bouton du haut écrit déjà le message,
+#     le tableau d'heures est du texte, et les pastilles de créneaux n'existent qu'une fois calculées.
 S.append('<section class="hero" id="hero">'
          '<img class="ph" src="' + IMGS["hero"] + '" width="' + str(DIM["hero"][0]) + '" height="' +
          str(DIM["hero"][1]) + '" alt="' + esc(IMG_ALT["hero"]) + '" fetchpriority="high" decoding="async">'
          '<span class="veil" aria-hidden="true"></span>'
          '<div class="wrap"><div>'
-         '<span class="pill"><i aria-hidden="true"></i>' + L(V2["heroPill"]) + '</span>'
-         '<h1>' + L(V2["heroH1a"]) + '<em>' + L(V2["heroH1b"]) + '</em></h1>'
-         '<p class="lede">' + L(V2["heroLede"]) + '</p>'
+         '<span class="pill"><i aria-hidden="true"></i>' + L(SITE["pill"]) + '</span>'
+         '<h1>' + L(SITE["h1a"]) + '<em>' + L(SITE["h1b"]) + '</em></h1>'
+         '<p class="lede">' + L(SITE["lede"]) + '</p>'
+         '<dl class="stats">' + "".join(
+             '<div><dt>' + bi(a, c) + '</dt><dd>' + bi(b, d) + '</dd></div>' for a, b, c, d in SITE["stats"])
+         + '</dl>'
          '<div class="acts">'
-         '<a class="btn" href="' + WA_HERO + '" target="_blank" rel="noopener">' + WA_I +
-         '<span>' + L(C["hero"]["book"]) + '</span></a>'
-         '<a class="btn ghost onphoto" href="#dossier">' + L(C["hero"]["second"]) + '</a>'
+         '<a class="btn" href="' + WA_PROPOSE + '" target="_blank" rel="noopener">' + WA_I +
+         '<span>' + L(SITE["cta1"]) + '</span></a>'
+         '<a class="btn ghost onphoto" href="#services">' + L(SITE["cta2"]) + '</a>'
          '</div>'
-         '<p class="note">' + L(V2["heroNote"]) + '</p>'
+         '<p class="note">' + L(SITE["note"]) + '</p>'
          '</div>'
          '<aside class="pick" aria-label="' + esc("Choisir un créneau") + '">'
-         '<span class="cap">' + bi("Prochains créneaux proposés", "Next slots offered") + '</span>'
-         '<h3>' + bi("Appuyez, le message est écrit", "Tap it, the message is written") + '</h3>'
-         '<div class="chips">' + _days + '</div><div class="chips">' + _hours + '</div>'
-         '<p class="fine">' + bi(_pick_fine, _pick_fine_en) + '</p>'
+         '<span class="cap">' + bi("Réserver au comptoir", "Book at the counter") + '</span>'
+         '<h3>' + L(SITE["pick"]["h"]) + '</h3>'
+         + pick_block("hero") + hours_only() +
+         '<p class="fine">' + L(SITE["pick"]["fine"]) + '</p>'
+         + alt_line() +
          '</aside></div></section>')
 
+# 4p · les trois pas du client — ce qui se passe AVANT, PENDANT, APRÈS sa visite
+def wid_slots(ident, cap, hint):
+    return ('<div class="wid">' + pick_block(ident, cap) + '<p class="hint">' + L(hint) + '</p></div>')
+
+
+def wid_list(items, cls="tick"):
+    return ('<div class="wid">' + "".join('<div class="' + cls + '"><b>+</b><span>' + bi(fr, en) + '</span></div>'
+                                          for fr, en in items) + '</div>')
+
+
+_steps = "".join('<article class="step rv"><span class="n">' + it["n"] + '</span><h3>' + L(it["h"]) + '</h3>'
+                 '<p>' + L(it["p"]) + '</p>' +
+                 (wid_slots("step1", SITE["steps"]["slotsCap"], SITE["steps"]["slotsHint"])
+                  if it["widget"] == "slots" else wid_list(SITE["steps"][it["widget"]])) + '</article>'
+                 for it in SITE["steps"]["items"])
+S.append('<section id="etapes"><div class="wrap">'
+         '<div class="sec2"><div><h2>' + L(SITE["steps"]["h2"]) + '</h2></div>'
+         '<p class="lede">' + L(SITE["steps"]["lede"]) + '</p></div>'
+         '<div class="steps">' + _steps + '</div></div></section>')
+
+# 8p · les actes, en trois paquets — la raison par paquet est dite au client, pas au propriétaire
+_packs = ""
+for _i, _g in enumerate(V2["clusters"]["groups"]):
+    _lis = "".join('<li><a href="#rendez-vous">' + bi(fr, en) + '</a></li>' for fr, en in _g["rows"])
+    _packs += ('<article class="pack"><h3>' + L(_g["t"]) + '</h3><p class="why">' + L(SITE["whys"][_i]) +
+               '</p><ul>' + _lis + '</ul></article>')
+S.append('<section id="services"><div class="wrap">'
+         '<div class="sec2"><div>'
+         '<h2>' + L(SITE["services"]["h2"]) + '</h2></div>'
+         '<p class="lede">' + L(SITE["services"]["lede"]) + '</p></div>'
+         '<div class="packs">' + _packs + '</div>'
+         '<p class="note-inline">' + bi("Aucun de ces actes ne se réserve en ligne : on écrit l\u2019heure, "
+                                        "le comptoir confirme \u2014 ", "None of these is booked online: you write "
+                                        "the hour, the counter confirms - ") +
+         '<a href="#rendez-vous">' + bi("et \u00e7a se r\u00e8gle au comptoir", "and it is settled at the counter")
+         + '</a>.</p></div></section>')
+
+# 5p · la visite préparée : ce qu\u2019on apporte, et ce qu\u2019on ne fait pas ici
+_ap = "".join('<li><span>' + bi(fr, en) + '</span></li>' for fr, en in SITE["exam"]["items"])
+S.append('<section id="visite"><div class="wrap">'
+         '<div class="sec2"><div>'
+         '<h2>' + L(SITE["exam"]["h2"]) + '</h2></div>'
+         '<p class="lede">' + L(SITE["exam"]["lede"]) + '</p></div>'
+         '<div class="two"><ul class="bring">' + _ap + '</ul>'
+         '<p class="notmed">' + L(SITE["exam"]["not"]) + '</p></div></div></section>')
+
+# 10p · les rendus, côté client : une image, une légende, et le mot « illustration » dit une fois
+_pc = SITE["photos"]["caps"]
+
+
+def shot_pub(tag, item):
+    return ('<figure class="shot"><img src="' + IMGS[tag] + '" width="' + str(DIM[tag][0]) + '" height="' +
+            str(DIM[tag][1]) + '" loading="lazy" decoding="async" alt="' + esc(IMG_ALT[tag]) + '">'
+            '<figcaption><b>' + bi(item[0], item[1]) + '</b>' + bi(item[2], item[3]) +
+            ' <span class="chip">' + L(SITE["photos"]["badge"]) + '</span></figcaption></figure>')
+
+
+S.append('<section id="visuels"><div class="wrap">'
+         '<div class="sec2"><div>'
+         '<h2>' + L(SITE["photos"]["h2"]) + '</h2></div>'
+         '<p class="lede">' + L(SITE["photos"]["lede"]) + '</p></div>'
+         '<div class="shots">' + shot_pub("lab", _pc[1]) + '<div class="shots2">' + shot_pub("exam", _pc[2]) +
+         '</div></div>'
+         '<p class="note-inline">' + L(SITE["photos"]["note"]) + '</p></div></section>')
+
+# 9p · le bandeau : la ligne rare, écrite pour celui qui la cherche
+S.append('<section id="protheses"><div class="wrap"><div class="band">'
+         '<div><h2>' + L(SITE["prosth"]["h2"]) + '</h2><p>' + L(SITE["prosth"]["p"]) + '</p></div>'
+         '<a class="btn onlight" href="' + wa_url(msg("ask", svc="les prothèses oculaires")) +
+         '" target="_blank" rel="noopener">' + EYE + '<span>' + L(SITE["prosth"]["cta"]) + '</span>' + ARR +
+         '</a></div></div></section>')
+
+# 6p · où nous trouver : l\u2019adresse, le repère, la fiche, et la photo du plateau de montures
+_kv = [("Établissement", "Establishment", C["legalName"], None),
+       ("Adresse", "Address", C["addr"] + " \u00b7 " + C["bp"], None),
+       ("Repère", "Landmark", C["landmark"], None),
+       ("Téléphone", "Phone", C["waDisp"], "tel:+237" + WA),
+       ("Second numéro", "Second number", C["tel2Disp"], "tel:+237" + re.sub(r"\D", "", C["tel2"])),
+       ("E-mail", "Email", C["mail1"], "mailto:" + C["mail1"]),
+       ("Plus code", "Plus code", C["mapsPlus"], None),
+       ("Carte", "Map", None, MAPS)]
+_kvs = ""
+for _l1, _l2, _txt, _href in _kv:
+    _v = bi("Ouvrir dans Google Maps", "Open in Google Maps") if _txt is None else esc(_txt)
+    if _href:
+        _v = '<a href="' + _href + '"' + (' rel="noopener"' if _href.startswith("http") else '') + '>' + _v + '</a>'
+    _kvs += '<dt>' + bi(_l1, _l2) + '</dt><dd>' + _v + '</dd>'
+S.append('<section id="lieu"><div class="wrap"><div class="ed">'
+         '<div>'
+         '<h2>' + L(SITE["place"]["h2"]) + '</h2>'
+         '<p class="lede">' + L(SITE["place"]["p1"]) + '</p>'
+         '<p class="lead-mute">' + L(SITE["place"]["p2"]) + '</p>'
+         '<dl class="kv" aria-label="' + esc(C["a11y"]["record"]["fr"]) + '">' + _kvs + '</dl></div>'
+         '<figure class="shot"><img src="' + IMGS["frames"] + '" width="' + str(DIM["frames"][0]) +
+         '" height="' + str(DIM["frames"][1]) + '" loading="lazy" decoding="async" alt="' +
+         esc(IMG_ALT["frames"]) + '"><figcaption><b>' + bi(_pc[0][0], _pc[0][1]) + '</b>' +
+         bi(_pc[0][2], _pc[0][3]) + ' <span class="chip">' + L(SITE["photos"]["badge"]) +
+         '</span></figcaption></figure>'
+         '</div></div></section>')
+
+# 11p · rendez-vous : le comptoir, les heures, les créneaux calculés, et la fiche sous la main
+S.append('<section id="rendez-vous"><div class="wrap">'
+         '<div class="sec2"><div><span class="kick">' + bi("Réserver", "Booking") + '</span>'
+         '<h2>' + L(SITE["book"]["h2"]) + '</h2></div>'
+         '<p class="lede">' + L(SITE["book"]["lede"]) + '</p></div>'
+         '<div class="book"><div>'
+         + pick_block("book") + hours_only() +
+         '<p class="fine">' + L(SITE["book"]["fine"]) + '</p>'
+         + alt_line() +
+         '</div><div class="card"><h3>' + L(SITE["book"]["msgHead"]) + '</h3><ul class="msgrows">' +
+         "".join('<li><b>' + str(_i) + '</b><span>' + bi(fr, en) + '</span></li>'
+                 for _i, (fr, en) in enumerate(SITE["book"]["msgRows"], 1)) +
+         '</ul><a class="btn gap-top" href="' + WA_PROPOSE + '" target="_blank" rel="noopener">' + WA_I +
+         '<span>' + L(SITE["caps"]["ecrire"]) + '</span></a>'
+         '<a class="btn ghost gap-top" href="tel:+237' + WA + '"><span>' + L(SITE["caps"]["appeler"]) +
+         ' \u00b7 ' + esc(C["waDisp"]) + '</span></a></div></div></div></section>')
+
+# 14p · FAQ : quatre questions de comptoir, réponses écrites d\u2019avance, aucune promesse chiffrée
+_faq = "".join('<details><summary>' + bi(r[0], r[1]) + '</summary><div>' + bi(r[2], r[3]) + '</div></details>'
+               for r in SITE["faq"])
+S.append('<section id="questions"><div class="wrap">'
+         '<h2 class="ttl">' + L(SITE["faqH2"]) + '</h2>'
+         '<div class="faq narrow">' + _faq + '</div></div></section>')
+
+# 15p · pied de page : la conversion, et la vérité du statut de la page
+def fcol(title, links):
+    lis = ""
+    for _href, _fr, _en in links:
+        if _href == "MAPS":
+            lis += '<li><a href="' + MAPS + '" rel="noopener">' + bi(_fr, _en) + '</a></li>'
+        elif _href == "BP":
+            lis += '<li><span>' + bi(_fr, _en) + '</span></li>'
+        elif _href == "TEL":
+            lis += '<li><a href="tel:+237' + WA + '">' + bi(_fr, _en) + '</a></li>'
+        elif _href == "WA":
+            _t = bi(_fr + C["waDisp"], _en + C["waDisp"])
+            lis += '<li><a href="' + WA_PROPOSE + '" target="_blank" rel="noopener">' + _t + '</a></li>'
+        elif _href == "MAIL":
+            lis += '<li><a href="mailto:' + C["mail1"] + '">' + bi(_fr, _en) + '</a></li>'
+        else:
+            lis += '<li><a href="' + _href + '">' + bi(_fr, _en) + '</a></li>'
+    return '<div><h4>' + bi(title[0], title[1]) + '</h4><ul>' + lis + '</ul></div>'
+
+
+_cols = "".join(fcol(_t, _items) for _t, _items in SITE["foot"]["cols"])
+assert _cols.count("<h4>") == len(SITE["foot"]["cols"])
+S.append('<footer class="foot" id="contact"><div class="wrap"><div class="cols">'
+         '<div><div class="bn">Univers Optique</div><p>' + L(SITE["foot"]["brand"]) + '</p>'
+         '<a class="btn" href="' + WA_PROPOSE + '" target="_blank" rel="noopener">' + WA_I +
+         '<span>' + L(SITE["foot"]["cta"]) + '</span></a>'
+         '<span class="badge">' + L(SITE["foot"]["badge"]) + '</span></div>' + _cols + '</div>'
+         '<div class="strip2"><span>' +
+         bi("Univers Optique \u00b7 " + C["addr"] + " \u00b7 " + C["bp"],
+            "Univers Optique - " + C["addr"] + " - " + C["bp"]) +
+         '</span><span>' + L(SITE["foot"]["strip1"]) + ' \u00b7 ' + L(SITE["foot"]["strip2"]) + '</span>'
+         '<a class="up" href="#top">' + bi("Retour en haut", "Back to top") + '</a></div></div></footer>')
+
+# 16p · barre collée au pouce
+S.append('<div class="rail" role="group" aria-label="' + esc("Actions rapides") + '">'
+         '<a class="btn" href="' + WA_PROPOSE + '" target="_blank" rel="noopener">' + WA_I +
+         '<span>' + L(SITE["rail"][0]) + '</span></a>'
+         '<a class="btn ghost" href="tel:+237' + WA + '"><span>' + L(SITE["rail"][1]) + '</span></a></div>')
+
+# 18 · les sections du dossier, hors du fichier publié
 # 4 · les trois étapes — LE moment animé de la page
 
 
 def widget(it):
     kind = it["widget"]
     if kind == "days":
-        a = "".join('<a class="chip" href="%s">%s</a>' %
-                    (wa_url(msg("slot", slot=fr, when=en)), bi(fr, en))
-                    for fr, en in V2["steps"]["chipsDays"][2:])
-        b = "".join('<a class="chip h" href="%s">%s</a>' %
-                    (wa_url(msg("slot", slot=fr, when="demain")), bi(fr, en))
-                    for fr, en in V2["steps"]["chipsHours"])
-        return '<div class="wid"><div class="chips">' + a + '</div><div class="chips">' + b + '</div></div>'
+        return ('<div class="wid">' + pick_block("pitch") +
+                '<p class="hint">' + bi("Le m\u00eame calcul que la page : ces pastilles sont pos\u00e9es au chargement, \u00e0 partir des heures du comptoir.",
+                "The same computation as the page: these chips are set at load, from the counter hours.") + '</p></div>')
     if kind == "bars":
         bars = "".join('<i class="on"></i>' if i < 6 else '<i></i>' for i in range(9))
         lbl = "6 constats sourcés sur 9 lignes publiées"
@@ -677,9 +1028,9 @@ def widget(it):
     return '<div class="wid">' + ticks + '</div>'
 
 
-_steps = "".join('<article class="step rv"><span class="n">' + it["n"] + '</span><h3>' + L(it["h"]) + '</h3>'
+_steps = "".join('<article class="step"><span class="n">' + it["n"] + '</span><h3>' + L(it["h"]) + '</h3>'
                  '<p>' + L(it["p"]) + '</p>' + widget(it) + '</article>' for it in V2["steps"]["items"])
-S.append('<section id="etapes"><div class="wrap">'
+B.append('<section id="b-etapes"><div class="wrap">'
          '<div class="sec2"><div>'
          '<h2>' + L(V2["steps"]["h2"]) + '</h2></div>'
          '<p class="lede">' + L(V2["steps"]["lede"]) + '</p></div>'
@@ -692,7 +1043,7 @@ for _r in V2["cmp"]["rows"]:
               '<td class="c1">' + bi(_r[1], _r[4]) + '</td>'
               '<td class="mark"><b>' + bi(_r[2], _r[5]) + '</b></td></tr>')
 _c = V2["cmp"]["cols"]
-S.append('<section id="comparatif"><div class="wrap">'
+B.append('<section id="b-comparatif"><div class="wrap">'
          '<div class="sec2"><div><span class="kick">' + bi("Face à face", "Side by side") + '</span>'
          '<h2>' + L(V2["cmp"]["h2"]) + '</h2></div>'
          '<p class="lede">' + L(V2["cmp"]["lede"]) + '</p></div>'
@@ -706,12 +1057,7 @@ S.append('<section id="comparatif"><div class="wrap">'
 # 6 · le cabinet : édition photo + repères vérifiés
 _mk = "".join('<div><dt>' + bi(a, c) + '</dt><dd>' + bi(b, d) + '</dd></div>'
               for a, b, c, d in V2["cabinet"]["marks"])
-S.append('<section id="cabinet"><div class="wrap"><div class="ed">'
-         '<figure><img src="' + IMGS["frames"] + '" width="' + str(DIM["frames"][0]) + '" height="' +
-         str(DIM["frames"][1]) + '" loading="lazy" decoding="async" alt="' + esc(IMG_ALT["frames"]) + '">'
-         '<figcaption><b>' + L(V2["cabinet"]["shotT"]) + '</b>' + L(V2["cabinet"]["shotP"]) +
-         ' <span class="chip">' + bi("Rendu de concept — votre photo le remplacera",
-                                    "Concept render - your photo replaces it") + '</span></figcaption></figure>'
+B.append('<section id="b-cabinet"><div class="wrap"><div class="ed">'
          '<div>'
          '<h2>' + L(V2["cabinet"]["h2"]) + '</h2>'
          '<p class="lede lead-dim">' + L(V2["cabinet"]["p1"]) + '</p>'
@@ -726,91 +1072,19 @@ for _i, _r in enumerate(C["dossier"]["rows"], 1):
                '<div><h3>' + bi(_r[0], _r[1]) + '</h3>'
                '<span class="src">' + bi("relu le 21/09/2026", "read on 21 Sep 2026") + '</span></div>'
                '<p>' + bi(_r[2], _r[3]) + _so + '</p></article>')
-S.append('<section id="dossier"><div class="wrap">'
+B.append('<section id="b-dossier"><div class="wrap">'
          '<div class="sec2"><div><span class="kick">' + bi("Le dossier", "The record") + '</span>'
          '<h2>' + L(C["dossier"]["h2"]) + '</h2></div>'
          '<p class="lede">' + L(C["dossier"]["lede"]) + '</p></div>'
          '<div class="finds">' + _finds + '</div>'
          '<p class="note-inline">' + L(C["dossier"]["foot"]) + '</p></div></section>')
 
-# 8 · les dix actes en trois paquets
-_packs = ""
-for _g in V2["clusters"]["groups"]:
-    _lis = "".join('<li><a href="#rendez-vous">' + bi(fr, en) + '</a></li>' for fr, en in _g["rows"])
-    _packs += ('<article class="pack"><h3>' + L(_g["t"]) + '</h3><p class="why">' + L(_g["why"]) +
-               '</p><ul>' + _lis + '</ul></article>')
-_pack_foot = bi("Deux lignes manquent exprès ici : les prix et un horaire du dimanche. Vous n'avez publié de "
-                "prix nulle part, et votre fiche écrit « Fermé » le dimanche. Les deux sont dans la colonne "
-                "des questions, pas dans la vitrine.",
-                "Two lines are missing here on purpose: prices and a Sunday hour. You published no price "
-                "anywhere, and your listing reads closed on Sunday. Both sit in the questions column, not in "
-                "the window.")
-S.append('<section id="services"><div class="wrap">'
-         '<div class="sec2"><div>'
-         '<h2>' + L(V2["clusters"]["h2"]) + '</h2></div>'
-         '<p class="lede">' + L(V2["clusters"]["lede"]) + '</p></div>'
-         '<div class="packs">' + _packs + '</div>'
-         '<p class="note-inline">' + _pack_foot + '</p></div></section>')
-
 # 9 · le bandeau : l'acte que personne d'autre ne revendique
-S.append('<section id="protheses"><div class="wrap"><div class="band">'
+B.append('<section id="b-protheses"><div class="wrap"><div class="band">'
          '<div><h2>' + L(V2["band"]["t"]) + '</h2><p>' + L(V2["band"]["p"]) + '</p></div>'
          '<a class="btn onlight" href="' + wa_url(msg("ask", svc="les prothèses oculaires")) +
          '" target="_blank" rel="noopener">' + EYE + '<span>' + L(V2["band"]["cta"]) + '</span>' + ARR + '</a>'
          '</div></div></section>')
-
-# 10 · les rendus : une image = une légende = un badge, la légende dessous
-
-
-def shot(tag, item):
-    cap = bi(item[0], item[1])
-    body = bi(item[2], item[3])
-    badge = bi("Rendu de concept — votre photo le remplacera", "Concept render - your photo replaces it")
-    return ('<figure class="shot"><img src="' + IMGS[tag] + '" width="' + str(DIM[tag][0]) + '" height="' +
-            str(DIM[tag][1]) + '" loading="lazy" decoding="async" alt="' + esc(IMG_ALT[tag]) + '">'
-            '<figcaption><b>' + cap + '</b>' + body + ' <span class="chip">' + badge + '</span>'
-            '</figcaption></figure>')
-
-
-_ph = C["photos"]["items"]
-S.append('<section id="visuels"><div class="wrap">'
-         '<div class="sec2"><div>'
-         '<h2>' + L(C["photos"]["h2"]) + '</h2></div>'
-         '<p class="lede">' + L(C["photos"]["lede"]) + '</p></div>'
-         '<div class="shots">' + shot("lab", _ph[1]) + '<div class="shots2">' + shot("exam", _ph[2]) +
-         '</div></div>'
-         '<p class="note-inline">' + L(V2["photosNote"]) + '</p></div></section>')
-
-# 11 · rendez-vous + fiche
-_slots = ""
-for _fr, _en, _hours_txt in C["book"]["slots"]:
-    _cls = ' class="h closed"' if "Ferm" in _hours_txt else ' class="h"'
-    _slots += ('<div><span class="d">' + bi(_fr, _en) + '</span><span' + _cls + '>' + esc(_hours_txt) +
-               '</span></div>')
-_kv = [("Établissement", "Establishment", C["legalName"], None),
-       ("Adresse", "Address", C["addr"] + " · " + C["bp"], None),
-       ("Repère", "Landmark", C["landmark"], None),
-       ("Téléphone", "Phone", C["waDisp"], "tel:+237" + WA),
-       ("Second numéro", "Second number", C["tel2Disp"], "tel:+237" + re.sub(r"\D", "", C["tel2"])),
-       ("E-mail", "Email", C["mail1"], "mailto:" + C["mail1"]),
-       ("Plus code", "Plus code", C["mapsPlus"], None),
-       ("Carte", "Map", None, MAPS)]
-_kvs = ""
-for _l1, _l2, _txt, _href in _kv:
-    _v = bi("Ouvrir dans Google Maps", "Open in Google Maps") if _txt is None else esc(_txt)
-    if _href:
-        _v = '<a href="' + _href + '"' + (' rel="noopener"' if _href.startswith("http") else '') + '>' + _v + '</a>'
-    _kvs += '<dt>' + bi(_l1, _l2) + '</dt><dd>' + _v + '</dd>'
-S.append('<section id="rendez-vous"><div class="wrap">'
-         '<div class="sec2"><div><span class="kick">' + bi("Réserver", "Booking") + '</span>'
-         '<h2>' + L(C["book"]["h2"]) + '</h2></div>'
-         '<p class="lede">' + L(C["book"]["lede"]) + '</p></div>'
-         '<div class="book"><div><div class="slots">' + _slots + '</div>'
-         '<p class="note-inline">' + L(C["book"]["fine"]) + '</p></div>'
-         '<div class="card"><h3>' + bi("La fiche du cabinet", "The practice record") + '</h3>'
-         '<dl class="kv">' + _kvs + '</dl>'
-         '<a class="btn gap-top" href="' + WA_HERO + '" target="_blank" rel="noopener">' + WA_I +
-         '<span>' + L(C["hero"]["book"]) + '</span></a></div></div></div></section>')
 
 # 12 · les avis, tels qu'ils sont
 _rws = "".join('<div class="rw"><h3>' + bi(a, c) + '</h3><p>' + bi(b, d) + '</p></div>'
@@ -818,7 +1092,7 @@ _rws = "".join('<div class="rw"><h3>' + bi(a, c) + '</h3><p>' + bi(b, d) + '</p>
 _score_note = bi("Barre lue comme une proportion, pas comme une promesse : aucun avis n'est ajouté pour la "
                  "faire monter.",
                  "Read the bar as a proportion, not a promise: no review is added to lift it.")
-S.append('<section id="avis"><div class="wrap">'
+B.append('<section id="b-avis"><div class="wrap">'
          '<div class="sec2"><div>'
          '<h2>' + L(C["reviews"]["h2"]) + '</h2></div>'
          '<p class="lede">' + bi("Aucun avis n'est écrit, déplacé ou enjolivé ici. Ce qui est publié sous votre "
@@ -837,7 +1111,7 @@ S.append('<section id="avis"><div class="wrap">'
 # 13 · les six questions à trancher
 _asks = "".join('<article class="ask"><h3>' + bi(r[0], r[1]) + '</h3><p>' + bi(r[2], r[3]) + '</p></article>'
                 for r in C["open"]["items"])
-S.append('<section id="questions"><div class="wrap">'
+B.append('<section id="b-questions"><div class="wrap">'
          '<div class="sec2"><div><span class="kick">' + bi("À trancher par vous", "For you to settle") + '</span>'
          '<h2>' + L(C["open"]["h2"]) + '</h2></div>'
          '<p class="lede">' + L(C["open"]["lede"]) + '</p></div>'
@@ -846,43 +1120,24 @@ S.append('<section id="questions"><div class="wrap">'
 # 14 · FAQ (le seul accordéon de la page : une question, quatre réponses, aucune promesse)
 _faq = "".join('<details><summary>' + bi(r[0], r[1]) + '</summary><div>' + bi(r[2], r[3]) + '</div></details>'
                for r in C["faq"]["items"])
-S.append('<section id="faq"><div class="wrap">'
+B.append('<section id="b-faq"><div class="wrap">'
          '<h2 class="ttl">' + L(C["faq"]["h2"]) + '</h2>'
          '<div class="faq narrow">' + _faq + '</div></div></section>')
 
-# 15 · pied de page = l'écran de conversion (loi §20)
 
-
-def fcol(title, links):
-    lis = ""
-    for _href, _fr, _en in links:
-        if _href == "MAPS":
-            lis += '<li><a href="' + MAPS + '" rel="noopener">' + bi(_fr, _en) + '</a></li>'
-        elif _href == "BP":
-            lis += '<li><span>' + bi(_fr, _en) + '</span></li>'
-        else:
-            lis += '<li><a href="' + _href + '">' + bi(_fr, _en) + '</a></li>'
-    return '<div><h4>' + bi(title[0], title[1]) + '</h4><ul>' + lis + '</ul></div>'
-
-
-_cols = "".join(fcol(_t, _items) for _t, _items in C["footer"]["cols"])
-assert _cols.count("<h4>") == len(C["footer"]["cols"]) + 0
-S.append('<footer class="foot" id="contact"><div class="wrap"><div class="cols">'
-         '<div><div class="bn">Univers Optique</div><p>' + L(C["footer"]["brandP"]) + '</p>'
-         '<a class="btn" href="' + WA_HERO + '" target="_blank" rel="noopener">' + WA_I +
-         '<span>' + L(C["footer"]["cta"]) + '</span></a>'
-         '<span class="badge">' + L(C["footer"]["badge"]) + '</span></div>' + _cols + '</div>'
-         '<div class="strip2"><span>' +
-         bi("Univers Optique · " + C["addr"] + " · " + C["bp"], "Univers Optique - " + C["addr"] + " - " + C["bp"]) +
-         '</span><span>' + L(C["footer"]["strip1"]) + ' · ' + L(C["footer"]["strip2"]) + '</span>'
-         '<a class="up" href="#top">' + bi("Retour en haut", "Back to top") + '</a></div></div></footer>')
-
-# 16 · barre collée au pouce
-S.append('<div class="rail" role="group" aria-label="' + esc("Actions rapides") + '">'
-         '<a class="btn" href="' + WA_HERO + '" target="_blank" rel="noopener">' + WA_I +
-         '<span>' + L(C["sticky"][0]) + '</span></a>'
-         '<a class="btn ghost" href="tel:+237' + WA + '"><span>' + L(C["sticky"][1]) + '</span></a></div>')
-
+# 18p · la note au cabinet, hors du fichier publié : le constat, la note, les questions, les photos
+BN = ['<div class="wrap"><div class="bhead"><div><span class="kick">' + bi("Note au cabinet", "Note to the "
+        "practice") + '</span><h2>' + L(BRIEF["h2"]) + '</h2></div>'
+        '<p class="lede">' + L(BRIEF["lede"]) + '</p>'
+        '<span class="badge">' + L(BRIEF["badge"]) + '</span></div></div>']
+BN.append('<section id="b-photos"><div class="wrap">'
+          '<div class="sec2"><div><span class="kick">' + bi("Les visuels", "The visuals") + '</span>'
+          '<h2>' + L(C["photos"]["h2"]) + '</h2></div>'
+          '<p class="lede">' + L(C["photos"]["lede"]) + '</p></div>'
+          '<p class="note-inline">' + L(V2["photosNote"]) + '</p></div></section>')
+# Un <div>, pas une <section> : une section dans une section fait hériter au bloc suivant les styles du
+#  bloc précédent (l'auditeur le signale à juste titre), et le note doit rester visuellement à part.
+BRIEF_OPEN = '<div class="brief" id="brief">' + BN[0] + BN[1]
 # 17 · JSON-LD : mêmes octets que la fiche Google, aucune note inventée, aucun sameAs
 _ld_desc = C["desc"]["fr"]
 JSONLD = json.dumps({
@@ -925,9 +1180,16 @@ HEAD = ('<!doctype html>\n<html lang="fr" data-lang="fr">\n<head>\n'
         '<style>' + CSS + '</style>\n'
         '<script type="application/ld+json">' + JSONLD + '</script>\n</head>\n<body>')
 
-PAGE = (HEAD + '\n<main id="top">\n' + "\n".join(S) + "\n</main>\n" +
-        "<script>" + JS.strip() + "</script>\n" +
-        "<script>" + JS_REV.strip() + "</script>\n</body>\n</html>\n")
+SCRIPTS = ("<script>" + JS.strip() + "</script>\n" +
+           "<script>" + JS_SLOTS.strip() + "</script>\n" +
+           "<script>" + JS_REV.strip() + "</script>\n</body>\n</html>\n")
+NOTE = BRIEF_OPEN + "\n" + "\n".join(B) + "\n</div>\n"
+# La page publique et le fichier de travail ne diffèrent QUE de la note : la découpe se fait sur la
+# chaîne assemblée, avec des marqueurs, pour qu'aucune phrase ne soit écrite deux fois.
+PAGE = (HEAD + '\n<main id="top">\n' + "\n".join(S) + "\n<!--NOTE-->\n" + NOTE + "\n<!--/NOTE-->" +
+        "\n</main>\n" + SCRIPTS)
+PUBLIC = PAGE[:PAGE.index("<!--NOTE-->")] + PAGE[PAGE.index("<!--/NOTE-->") + len("<!--/NOTE-->"):]
+PUBLIC = PUBLIC.replace("\n\n</main>", "\n</main>")
 
 # ══════════════════════════════════════════════════════════════════════════════════
 #  LES CONTRÔLES — tout est vérifié AVANT que le fichier existe
@@ -1006,7 +1268,7 @@ check("aucune citation d'avis inventée (guillemet suivi d'un nom propre)",
       not re.findall(r"»\s*[—–-]\s*[A-ZÀ][a-zà-ÿ]+ [A-ZÀ]", TXT))
 check("NAP : un seul numéro WhatsApp, le même dans le schema, les boutons et la barre collée",
       "+237" + WA in JSONLD and len(set(re.findall(r"wa\.me/(\d+)", PAGE))) == 1 and
-      re.findall(r"wa\.me/(\d+)", PAGE)[0] == WA and PAGE.count("wa.me/" + WA) >= 12)
+      re.findall(r"wa\.me/(\d+)", PAGE)[0] == WA_INTL and PAGE.count("wa.me/" + WA_INTL) >= 12)
 _http = re.findall(r'href="(https?:[^"]*)"', PAGE)
 check("aucun lien sortant vers le domaine mort (%d liens http sortants, 0 vers universoptique) ; le domaine "
       "n'apparaît qu'en texte, comme archive" % len(_http),
@@ -1091,8 +1353,11 @@ check("largeurs de lecture bornées en ch (62 / 56 / 54 / 60 / 78)",
       len(re.findall(r"max-width:\d+ch", CSS)) >= 5)
 check("zéro emoji décoratif dans toute la page",
       not re.findall(r"[\U0001F000-\U0001FAFF\u2190-\u21FF\u2600-\u27BF\u2B00-\u2BFF]", PAGE))
-check("icônes : SVG dessinés à la main, aucune librairie",
-      PAGE.count("<svg") <= 8 and "fa-" not in PAGE and "icon-" not in PAGE)
+ICON_PATHS = sorted(set(re.findall(r'<path d="[^"]*"', PAGE)))
+check("icônes : %d dessins tracés à la main dans la page, aucun paquet d'icônes du commerce" %
+      len(ICON_PATHS),
+      1 <= len(ICON_PATHS) <= 4 and "fa-" not in PAGE and "icon-" not in PAGE and
+      all('aria-hidden="true"' in t for t in re.findall(r"<svg[^>]*>", PAGE)))
 check("chiffres tabulaires partout où il y a des nombres", CSS.count("tabular-nums") >= 2)
 check("focus visible redéfini, jamais supprimé",
       ":focus-visible{outline:3px solid" in CSS and "outline:none" not in CSS and
@@ -1102,9 +1367,9 @@ check("toutes les images : largeur, hauteur, alt, lazy (le hero en fetchpriority
            ('loading="lazy"' in t or 'fetchpriority="high"' in t)) for t in re.findall(r"<img\b[^>]*>", PAGE)))
 check("aucun alt ne contient de HTML (le bilinguisme reste dans le texte, pas dans les attributs)",
       not re.findall(r'<img\b[^>]*alt="[^"]*<(span|div|em)', PAGE))
-check("les trois rendus portent le badge « concept » dans la légende, FR et EN",
-      TXT.count("Rendu de concept — votre photo le remplacera") == 3 and
-      TXT.count("Concept render - your photo replaces it") == 3)
+check("les trois rendus disent au client qu'ils ne sont pas des photos du cabinet (FR et EN)",
+      TXT.count("Rendu de concept") == 3 and TXT.count("Concept render") == 3 and
+      PUBLIC.count("Rendu de concept") == 3 and "remplaceront" in TXT)
 check("légende SOUS l'image : aucune pastelle posée sur la photo (la maison, pas la référence)",
       ".shot img{position:absolute" not in CSS and PAGE.count("<figcaption>") == 3 and
       "figcaption" in CSS and CSS.count("figcaption") >= 4)
@@ -1122,8 +1387,10 @@ try:
 except FileNotFoundError:
     check("contrôle identify NON RENDU : ImageMagick absent du bac — dimensions non revérifiées", False,
           "loi §13 : une mesure impossible s'écrit NON VÉRIFIÉE, jamais « ok »")
-check("une section = une photo : le plateau est au cabinet, deux rendus dans la section images, "
-      "quatre au total", PAGE.count("<img ") == 4 and PAGE.count('<figure class="shot"') == 2)
+check("une section = une photo : le plateau est au lieu, deux rendus dans les visuels, quatre au "
+      "total, et la note n'en répète aucun", PAGE.count("<img ") == 4 and
+      PAGE.count('<figure class="shot"') == 3 and
+      "data:image" not in PAGE[PAGE.find('class="brief"'):])
 _CSS_PLAIN = re.sub(r"/\*.*?\*/", " ", CSS, flags=re.S)   # la prose des commentaires n'est pas un sélecteur
 _used_cls = {c for a in re.findall(r'class="([^"]+)"', PAGE[PAGE.find("<main"):]) for c in a.split()}
 _def_cls = set(re.findall(r"\.([a-z][a-z0-9-]*)", _CSS_PLAIN))
@@ -1168,16 +1435,25 @@ check("les dix actes sont rendus en 3 paquets de 4+3+3, une raison par paquet (l
 check("un seul tableau dans la page : les filets restent dans le document", len(re.findall(r"<table", PAGE)) == 1)
 check("les six constats sont numérotés et datés", PAGE.count('class="find"') == 6 and PAGE.count('class="src"') == 6)
 check("les six questions à trancher sont là, aucune effacée", PAGE.count('class="ask"') == 6)
-check("les créneaux sont des liens réels, pas un widget qui attend un bundle",
-      PAGE.count('class="chip"') >= 4 and "<template" not in PAGE and "setTimeout" not in PAGE)
+SCR = re.findall(r"<script>(.*?)</script>", PUBLIC, re.S)
+JSSLOT = "".join(SCR)
+check("les créneaux sont des liens réels dès que le moteur a tourné, et le HTML seul ne promet rien "
+      "qui attende un bundle : %d socles branchés" % PUBLIC.count("data-slots="),
+      "<template" not in PAGE and "setTimeout" not in PAGE and PUBLIC.count("data-slots=") >= 3 and
+      "a.href = WB + encodeURIComponent" in JSSLOT and "innerHTML" not in JSSLOT and
+      'href="#"' not in PUBLIC and "javascript:" not in PUBLIC)
 check("la fiche du cabinet porte adresse, repère, BP, plus code, carte et les deux lignes téléphoniques",
       all(x in PAGE for x in (C["addr"], C["bp"], C["landmark"], C["mapsPlus"], C["tel2Disp"])))
 _body = PAGE[PAGE.find("<main"):PAGE.find("<footer")]
 check("chemin de conversion hors du hero : %d boutons dans le corps + la barre collée au pouce" %
       _body.count('class="btn'), _body.count('class="btn"') >= 2)
-check("un seul appel à l'action, répété : « Réserver un examen de vue » — pas de rival concurrent",
-      TXT.count("Réserver un examen de vue") >= 2 and "Demander un devis" not in TXT and
-      "Nous contacter" not in TXT)
+CTAS = set(re.findall(r'class="btn" href="[^"]*" target="_blank"[^>]*>'
+                      r'(?:<svg.*?</svg>)?<span[^>]*>(?:<span class="fr-only">)?([^<]*)', PUBLIC, re.S))
+check("un seul appel à l'action, répété : écrire pour un créneau — %d libellés, aucun rival concurrent"
+      % len(CTAS),
+      1 <= len(CTAS) <= 3 and all(("crire" in c or "server" in c) for c in CTAS) and
+      "Demander un devis" not in TXT and "Nous contacter" not in TXT and "Newsletter" not in TXT,
+      str(sorted(CTAS)))
 _foot_html = PAGE[PAGE.find("<footer"):PAGE.find("</footer>")]
 check("pied de page : 4 colonnes (marque + 3 blocs), le même appel à l'action, retour en haut",
       _foot_html.count("<h4>") == 3 and 'class="up"' in _foot_html and 'class="cols"' in _foot_html and
@@ -1204,11 +1480,91 @@ check("le script de révélation est isolé et fileté (une faute dedans ne vide
       PAGE.count("<script>") >= 3 and "catch(err){show();}" in PAGE)
 _pick_html = PAGE[PAGE.find('class="pick"'):PAGE.find("</aside>")]
 _npick = len(re.findall(r'<a class="chip', _pick_html))
-check("les créneaux se prennent sans JavaScript : %d liens réels dans le bloc, zéro onclick, zéro gabarit "
-      "à remplir après coup" % _npick,
-      _npick >= 6 and "onclick" not in _pick_html and "<template" not in PAGE and "innerHTML" not in _pick_html
-      and all("wa.me/" in h for h in re.findall(r'href="([^"]+)"', _pick_html)),
-      "le bulbe de langue a le droit d'écouter un clic : le contrôle ne porte que sur le bloc des créneaux")
+_pick_html = PAGE[PAGE.find('class="pick"'):PAGE.find("</aside>")]
+MAIN_PUB = PUBLIC[PUBLIC.find("<main"):PUBLIC.find("</main>")]
+TXT_PUB = re.sub(r"<style>.*?</style>|<script.*?</script>|<img\b[^>]*>", " ", MAIN_PUB, flags=re.S)
+
+
+def _outside_hidden(frag, needle):
+    """Vrai si chaque `needle` tombe HORS de tout élément porteur de l'attribut hidden. Un repli
+       enfermé dans le bloc qu'il est censé remplacer ne serait plus un repli du tout."""
+    spans = []
+    for m in re.finditer(r"<(\w+)([^>]*\bhidden\b[^>]*)>", frag):
+        depth, k, end = 1, m.end(), m.end()
+        tag = re.compile(r"</?%s\b" % m.group(1))
+        while depth:
+            nxt = tag.search(frag, k)
+            if not nxt:
+                end = len(frag)
+                break
+            depth += -1 if nxt.group(0).startswith("</") else 1
+            k = end = nxt.end()
+        spans.append((m.start(), end))
+    return not any(a <= p < b for p in [x for x in range(len(frag)) if frag.startswith(needle, x)]
+                   for a, b in spans)
+
+
+check("le socle de créneaux est caché tant que le calcul n'a pas eu lieu : trois fois, sans exception",
+      len(re.findall(r'<div class="pickslots"[^>]*>', PUBLIC)) == 3 and
+      all(" hidden" in m for m in re.findall(r'<div class="pickslots"[^>]*>', PUBLIC)))
+_nalt = MAIN_PUB.count('class="alt"')
+_nwa = len(re.findall(r'href="https://wa\.me/', MAIN_PUB))
+check("réserver reste possible sans JavaScript : %d liens WhatsApp réels dans la page publique, %d lignes "
+      "de repli hors de tout caché, zéro gabarit à remplir après coup" % (_nwa, _nalt),
+      _nwa >= 5 and _nalt >= 2 and "<template" not in PAGE and "innerHTML" not in MAIN_PUB and
+      "onclick" not in _pick_html and _outside_hidden(MAIN_PUB, '<p class="alt">') and
+      all(h.startswith(("https://wa.me/", "tel:")) for h in re.findall(r'class="btn" href="([^"]+)"',
+                                                                      MAIN_PUB)),
+      "le bulbe de langue a le droit d'écouter un clic : le contrôle ne porte que sur le bloc")
+
+# ── la règle du 22/09 au soir : rien de daté ne peut pourrir, et rien de privé ne peut fuiter ────────
+_MOIS = r"janv|f[ée]vr|mars|avr|mai|juin|juil|ao[ûu]t|sept|oct|nov|d[ée]c"
+check("aucune date absolue dans la page publique : ni jj/mm/aaaa, ni quantième suivi du mois, ni mois "
+      "suivi du quantième",
+      not re.search(r"\d{1,2}/\d{1,2}/\d{4}", TXT_PUB) and
+      not re.search(r"\d{1,2}\s?(?:%s)" % _MOIS, TXT_PUB, re.I) and
+      not re.search(r"(?:%s)\s+\d{1,2}(?!\d)" % _MOIS, TXT_PUB, re.I),
+      "%d octets de copie lue par un client, zéro date" % len(TXT_PUB))
+check("la grille du moteur est le seul calendrier : six jours ouverts, dimanche fermé, samedi coupé à 13h",
+      [k for k in sorted(HGRID) if HGRID[k]] == ["1", "2", "3", "4", "5", "6"] and not HGRID["0"] and
+      HGRID["6"] == [480, 780] and all(HGRID[str(i)] == [480, 1080] for i in range(1, 6)))
+
+
+def _txt(w):
+    return "%dh%02d – %dh%02d" % (w[0] // 60, w[0] % 60, w[1] // 60, w[1] % 60)
+
+
+_pub = {fr: txt for fr, en, txt in C["book"]["slots"]}
+check("heures publiées = grille du moteur, au quart d'heure près, et le tableau est posé deux fois "
+      "(hero, rendez-vous)",
+      _pub["Lundi – Vendredi"] == _txt(HGRID["1"]) and _pub["Samedi"] == _txt(HGRID["6"]) and
+      "Ferm" in _pub["Dimanche"] and MAIN_PUB.count('<div class="slots">') == 2 and
+      all(bi(fr, en) in MAIN_PUB and esc(txt) in MAIN_PUB for fr, en, txt in C["book"]["slots"]))
+check("chaque lien WhatsApp porte l'indicatif : un numéro à 9 chiffres ouvre « numéro invalide »",
+      PUBLIC.count("wa.me/") >= 5 and
+      all(re.match(r"^https://wa\.me/237\d{9}\?text=", h) for h in re.findall(r'href="(https://wa\.me/[^"]*)"', PUBLIC)) and "wa.me/699252874" not in PUBLIC)
+check("le moteur est embarqué une fois, branché sur trois socles, et ne connaît qu'un seul numéro",
+      JSSLOT.count("function picks()") == 1 and "new Date()" in JSSLOT and
+      PUBLIC.count('data-slots="') == 3 and ("https://wa.me/" + WA_INTL + "?text=") in JSSLOT and
+      JSSLOT.count('"https://wa.me/') == 1)
+_LEX = ["3,3", "votre fiche", "à trancher", "annuaire", "hors ligne", "domaine", "faute de page",
+        "dossier de reprise", "à confirmer", "Rien n'est ajouté à votre liste", "votre annonce"]
+_fuites = [w for w in _LEX if w in TXT_PUB]
+check("le vocabulaire du dossier reste dans la note : %d fuite(s) dans la page publique" % len(_fuites),
+      not _fuites, str(_fuites[:5]))
+check("la note au cabinet n'existe que dans le fichier de travail : absente du publié, titre et badge "
+      "reconnus dans l'autre",
+      'class="brief"' not in PUBLIC and '<section id="b-dossier"' in PAGE and
+      L(BRIEF["badge"]) in PAGE and L(BRIEF["badge"]) not in PUBLIC and
+      not re.search(r"<!--/?NOTE-->", PUBLIC) and PAGE.count("<main") == 1)
+_KB_SITE = len(PUBLIC.encode()) / 1024
+check("le fichier public se tient seul : un <main>, un </html>, huit sections de client au moins, et "
+      "rien de la note",
+      PUBLIC.count("<main") == 1 and PUBLIC.rstrip().endswith("</html>") and
+      PUBLIC.count("<section") >= 8 and 'class="brief"' not in PUBLIC and "b-dossier" not in PUBLIC and
+      "<!--NOTE-->" not in PUBLIC)
+check("la note au cabinet ne pèse que du texte : aucun visuel répété (%.0f Ko de note)" % (KB - _KB_SITE),
+      0 < KB - _KB_SITE < 130 and "data:image" not in PAGE[PAGE.find('class="brief"'):])
 
 if FAILS:
     raise SystemExit("ÉCHEC CONTRÔLE — " + str(len(FAILS)) + " faute(s) : " + " · ".join(FAILS))
@@ -1235,18 +1591,21 @@ if _qa.exists():
         print(" ✓ " + (_r.stdout.strip().splitlines() or ["JS embarqué compilé"])[-1])
 
 OUT.write_text(PAGE, encoding="utf-8")
-print("écrit : %s — %.0f Ko · %d portées bilingues · %d sections · %.0f Ko de visuels"
+OUT_SITE = OUT.with_name("univers-optique-site-v2.html")
+OUT_SITE.write_text(PUBLIC, encoding="utf-8")
+print("écrit : %s — %.0f Ko · %d portées bilingues · %d sections · %.0f Ko de visuels (site + note)"
       % (OUT.relative_to(ROOT), KB, _nfr, PAGE.count("<section"), IMGKB))
+print("écrit : %s — %.0f Ko (LE SITE SEUL, ce que lit un client : note au cabinet retirée)"
+      % (OUT_SITE.relative_to(ROOT), _KB_SITE))
 
 # ── repli d'envoi : on RETIRE les visuels, on ne réécrit aucune phrase ────────────────────────────────
 if "--sobre" in sys.argv:
-    S2 = re.sub(r'<img class="ph"[^>]*>', "", PAGE)
+    S2 = re.sub(r'<img class="ph"[^>]*>', "", PUBLIC)
     S2 = re.sub(r'<section id="visuels">.*?</section>\n', "", S2, flags=re.S)
-    S2 = re.sub(r'<figure><img src="data:image/jpeg;base64,"[^>]*>.*?</figure>', "", S2, flags=re.S)
-    S2 = re.sub(r'<figure><img src="data:image[^"]*"[^>]*>.*?</figure>', "", S2, flags=re.S)
-    OUT_S = OUT.with_name(OUT.stem + "-sobre" + OUT.suffix)
+    S2 = re.sub(r'<figure[^>]*><img src="data:image[^"]*"[^>]*>.*?</figure>', "", S2, flags=re.S)
+    OUT_S = OUT_SITE.with_name(OUT_SITE.stem + "-sobre" + OUT_SITE.suffix)
     assert "data:image/jpeg;base64," not in S2, "des visuels restent dans la version sobre"
     assert "html.js .rv{opacity:0" in S2, "la porte de peinture a sauté dans le repli"
     OUT_S.write_text(S2, encoding="utf-8")
-    print("écrit : %s — %.0f Ko (repli d'envoi, 0 visuel, même copie)"
+    print("écrit : %s — %.0f Ko (repli d'envoi du SITE, 0 visuel, même copie)"
           % (OUT_S.relative_to(ROOT), len(S2.encode()) / 1024))
