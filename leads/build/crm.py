@@ -1665,6 +1665,15 @@ FICHE_2209 = {
     #    pas vus. Les autres (bioscan, biolex, horizon-optique, clinique-des-cites, imagerie-saint-joseph,
     #    labo-phanuel) sont déjà dans la table ci-dessus — deux entrées pour une même clé dans un dict,
     #    c'est la seconde qui gagne EN SILENCE. Le garde-fou ne voit pas ce piège ; la relecture, si.
+    "afrique-labo-douala": (
+        'afriqlabo.com — VIVANT (site du laboratoire, Bessengué feu rouge, même numéro 690 54 70 93 '
+        'que notre fiche) — VU LE 22/09 PENDANT LA PASSE « MOTS-CLÉS »',
+        '',
+        "⚠️ CORRECTION : la fiche le donnait sans site, et un concept lui a même été construit et déployé. "
+        "Afrique Labo a une vitrine À LUI → profil « a déjà une vitrine », donc plus jamais « vous n'existez "
+        "pas ». Site simple (valeurs, contact) sans prise de rendez-vous. Le concept déployé peut encore "
+        "servir, mais l'angle change : partir de ce qu'il a déjà, pas de ce qui lui manque.",
+    ),
     "lyfyoptic": (
         'lyfyoptic.com — VIVANT, mais GABARIT NON TERMINÉ : les titres « Premier texte » et « Deuxième texte » '
         'sont restés sur la page d\'accueil (lu le 22/09)',

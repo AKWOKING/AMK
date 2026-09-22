@@ -23,7 +23,7 @@
 
 ## Notes
 
-Message 1 envoyé 17/09 13:24. **FU1 (M+2) ENVOYÉE par King le 19/09** (confirmé par lui : « I have already sent message de relance »). FU2 (M+4) = lundi 21/09, angle résultats WhatsApp. Concept live : concept-afriquelabo-v1.vercel.app. Numéros interdits : 699 73 36 25 et 674 46 62 15 (secours seulement si l'invitation vient d'eux).
+Message 1 envoyé 17/09 13:24. **FU1 (M+2) ENVOYÉE par King le 19/09** (confirmé par lui : « I have already sent message de relance »). FU2 (M+4) = lundi 21/09, angle résultats WhatsApp. Concept live : concept-afriquelabo-v1.vercel.app. Numéros interdits : 699 73 36 25 et 674 46 62 15 (secours seulement si l'invitation vient d'eux). · ⚠️ CORRECTION : la fiche le donnait sans site, et un concept lui a même été construit et déployé. Afrique Labo a une vitrine À LUI → profil « a déjà une vitrine », donc plus jamais « vous n'existez pas ». Site simple (valeurs, contact) sans prise de rendez-vous. Le concept déployé peut encore servir, mais l'angle change : partir de ce qu'il a déjà, pas de ce qui lui manque.
 
 ## Prochaine action
 
