@@ -1741,4 +1741,51 @@ dernière** relance). Les 5 « ne pas envoyer » restent dehors : Meka, Interlab
 qu'il promettait le silence puis reprochait le silence (OraCare), et six messages sortis. **Trois des quatre
 corrections de la soirée viennent d'une vérification, pas d'une rédaction** — c'est la conclusion de la note
 `sales/PROFIL-DES-OUI-2026-09-22.md` en train de se vérifier toute seule : le travail utile est dans la
-lecture du lead, pas dans la phrase.
+lecture du lead, pas dans la phrase.## 2026-09-22 · 17:55 → 18:05 · 33 fils passent en morts, et le plan du jour tombe à zéro par décision
+
+**King, 17:55** : « §1 and §2 weren't even open … I prefer spending time on fresh prospects, classify all
+those as dead, if there is any we hosted a demo for let me know so that we delete it. »
+
+**Le fait qui compte, et il est désagréable : notre attribution de lecture était fausse.** Le §1 de la vague
+s'appelait « les neuf qui ont ouvert sans répondre » et son texte commençait par « vous avez ouvert mon
+message du 19 » : sur le téléphone de King, **ces messages n'ont jamais été ouverts**. C'est la leçon OraCare
+(« message non lu attribué à tort le 18/09 ») qui revient — non plus sur un fil, mais sur 33. Deux règles
+gravées dans la source, à l'endroit où elles serviront (`DEAD_2209`, `leads/build/crm.py`) :
+
+1. **« lu » n'est pas une preuve d'intérêt**, et quand la donnée de lecture n'est pas certaine, elle ne se
+   présente pas au prospect et ne se compte pas dans la stratégie (le profil, le score, la relance) ;
+2. **un message qui affirme « vous avez ouvert mon message » ne s'écrit plus.** Un message ne se justifie que
+   par ce qui est vérifiable et utile au destinataire.
+
+**Ce qui a été fait, dans la source et pas seulement dans le fichier du soir :** les **33 leads** (les 28 des
+§1/§2 + les 5 « à ne pas envoyer ce soir » : Meka, Interlabo, La Passerelle, Pathcare, 2K Labo) passent en
+`parked` **sans date**, avec le motif daté ; la table `DEAD_2209` refuse de s'écrire si un slug n'existe pas,
+et le CRM refuse la reconstruction si une clé est inconnue (il l'a d'ailleurs fait : `relance_programmee`
+rejetée, rien n'a été écrit — le garde-fou a coûté trente secondes et évité une perte de données).
+**`leads/Daily-Plan.csv` : 33 actions ce matin → 0 action par décision.** La journée ne se termine pas sur un
+plan vide : elle se termine sur **6 messages envoyés ce soir, 1 lead qui a répondu, 1 message tué avant envoi
+(INSES), 1 message tué parce qu'il promettait le silence puis reprochait le silence (OraCare), et 33 fils
+rangés.** Les deux fichiers concernés portent désormais un **bandeau d'arrêt** — `Send-Lot-2-…-17h30.md`
+(« LOT ANNULÉ — NE PAS ENVOYER ») et les §B/§C de `Send-Vague-…-16h45.md` — pour qu'aucun de ces textes ne
+puisse repartir par erreur.
+
+**Les démos hébergées, à supprimer — c'est la question de King, et la réponse est courte :**
+- `jempo-concept.vercel.app` — JEMPO (mort 22/09)
+- `labethanie-concept.vercel.app` — Clinique La Béthanie (mort 22/09)
+- `sjc-sasse-concept.vercel.app` — St. Joseph's College Sasse (école, hors périmètre)
+- à trancher, pas dans le lot : `concept-afriquelabo-v1.vercel.app` (Afrique Labo, `qualifying`, aucune action
+  programmée), `oracare-concept.vercel.app` (parked — le message prévu pour le 28/09 propose justement de le
+  retirer « quietly »), `mboacare-demo.vercel.app` (démo sans lead dans le CRM).
+- **à garder** : `uni-labo`, `mitoc-concept`, `lecristallin-concept`, `concept-skye`, `concept-yaks-v1`,
+  `univers-optique-concept`, `labiomed`, `bonanjo`, `amk-cm.vercel.app/opticien/`.
+- Les dossiers locaux (`hosting/previews/jempo`, `labethanie`, `sah`, `sasse`, `comobil`, `demos/concept-*`)
+  ne sont **pas publics** tant que personne ne les déploie : rien d'urgent, mais c'est la même liste de morts.
+- Les « démos » de CAMERA, LE NID, Adonaï et Malia Labo étaient des **images** envoyées dans la conversation
+  (aucun hébergement) : il n'y a rien à supprimer côté web.
+
+**Et d'ici demain** : « I prefer spending time on fresh prospects » → la passe `Website`/`Facebook` sur les
+**104 leads santé/optique** jamais vérifiés (une minute par lead) devient la première tâche, parce que c'est
+elle qui fabrique la prochaine liste. Les 33 morts, eux, étaient tous des leads **sans aucune vitrine à eux** :
+0 réponse sur 33, quand le profil « a déjà une vitrine » est à 11,1 %. La note
+`sales/PROFIL-DES-OUI-2026-09-22.md` vient de recevoir sa démonstration la plus chère — et la moins chère
+serait de ne plus jamais envoyer à ce profil-là.

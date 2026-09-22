@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Yassa, à côté de l'institut La Perle) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | parked |
 | WhatsApp | 670 94 43 03 |
 | Numéro vérifié | unknown |
 | Canal | WhatsApp |
@@ -21,11 +21,11 @@
 
 ## Notes
 
-Envoyé le 19/09 à 19:26 — réponse AUTOMATIQUE. Réponse AUTOMATIQUE : « Merci pour votre message. Nous ne sommes pas disponibles pour l'instant, mais… ». Ce n'est PAS une réponse humaine et ça ne compte pas dans le PRR (leçon Adonaï). Mais le numéro est vivant et surveillé — c'est un signal, pas une porte fermée.
+Envoyé le 19/09 à 19:26 — réponse AUTOMATIQUE. Réponse AUTOMATIQUE : « Merci pour votre message. Nous ne sommes pas disponibles pour l'instant, mais… ». Ce n'est PAS une réponse humaine et ça ne compte pas dans le PRR (leçon Adonaï). Mais le numéro est vivant et surveillé — c'est un signal, pas une porte fermée. · ⚰️ MORT le 22/09 (lot du 19/09 (réponse automatique)) — jamais ouvert, jamais répondu ; décision de King : on ne réécrit plus, on va vers des prospects frais. Aucune relance programmée.
 
 ## Prochaine action
 
-**0 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**Aucune.** Parqué. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 

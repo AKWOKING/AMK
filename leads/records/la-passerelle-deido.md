@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Deido, 820 Bld de la Réunification) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | parked |
 | WhatsApp | 694 71 91 22 |
 | Numéro vérifié | unknown |
 | Contact | Dr Djanpou — biologiste (nom public) |
@@ -22,19 +22,20 @@
 
 ## Notes
 
-⚠️ Profil affiché « +237 6 94 71 91 22 » — AUCUN NOM, aucune catégorie. King a envoyé quand même (décision de volume du 19/09). À surveiller : si la réponse semble venir d'une personne privée, ne pas insister. | Envoyé le 19/09 à 19:33 — distribué, NON lu (1 coche). Profil SANS NOM (« +237 6 94 71 91 22 ») — King l'a signalé. Une coche. Cohérent avec le reste du dossier : ce labo communique par adresse yahoo et n'a jamais construit de présence en ligne.
+⚠️ Profil affiché « +237 6 94 71 91 22 » — AUCUN NOM, aucune catégorie. King a envoyé quand même (décision de volume du 19/09). À surveiller : si la réponse semble venir d'une personne privée, ne pas insister. | Envoyé le 19/09 à 19:33 — distribué, NON lu (1 coche). Profil SANS NOM (« +237 6 94 71 91 22 ») — King l'a signalé. Une coche. Cohérent avec le reste du dossier : ce labo communique par adresse yahoo et n'a jamais construit de présence en ligne. · ⚰️ MORT le 22/09 (lot du 19/09) — jamais ouvert, jamais répondu ; décision de King : on ne réécrit plus, on va vers des prospects frais. Aucune relance programmée.
 
 ## Prochaine action
 
-**0 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**Aucune.** Parqué. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 3 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 4 ligne(s).*
 
 `L469` · **La Passerelle** (« +237 6 94 71 91 22 », aucun nom, aucune catégorie) et **Interlabo** (avatar = la
 `L1665` · Meka, Interlabo, La Passerelle, Pathcare (distribués non lus depuis le 19 — on n'écrit pas par-dessus) et
 `L1702` · Labiomed**, 5 à ne pas envoyer ce soir (Meka, Interlabo, La Passerelle, Pathcare — distribués non lus depuis le
+`L1735` · dernière** relance). Les 5 « ne pas envoyer » restent dehors : Meka, Interlabo, La Passerelle, Pathcare
 
 ---
 

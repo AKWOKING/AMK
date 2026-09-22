@@ -10,7 +10,7 @@
 | Type | clinic |
 | Ville | Douala (Bessengue) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | parked |
 | WhatsApp | 699 987 775 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |
@@ -23,11 +23,11 @@
 
 ## Notes
 
-Envoi 18/09 ~18:30 sans maquette. Maquette : clients/douala-cliniques/02-le-nid.jpg. NB : le fixe 233 40 09 61 était jugé comme seule ligne fiable avant la vérification du mobile.
+Envoi 18/09 ~18:30 sans maquette. Maquette : clients/douala-cliniques/02-le-nid.jpg. NB : le fixe 233 40 09 61 était jugé comme seule ligne fiable avant la vérification du mobile. · ⚰️ MORT le 22/09 (lot du 18/09) — jamais ouvert, jamais répondu ; décision de King : on ne réécrit plus, on va vers des prospects frais. Aucune relance programmée.
 
 ## Prochaine action
 
-**0 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**Aucune.** Parqué. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 

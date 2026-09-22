@@ -1483,6 +1483,72 @@ WORKBOOK_TYPE_EXCEPTIONS = {
 }
 
 
+# ── LES MORTS DU 22/09 · décision de King, 17:55 ────────────────────────────────────────────────
+# « §1 and §2 weren't even open … I prefer spending time on fresh prospects, classify all those as
+#   dead, if there is any we hosted a demo for let me know so that we delete it. »
+#
+# DEUX LEÇONS GRAVÉES ICI, parce qu'elles ont coûté 33 fils :
+#   ① « lu » n'est PAS une preuve d'intérêt. Notre attribution de lecture du lot du 19/09 était
+#      fausse — King l'a constaté sur son téléphone. C'est l'erreur OraCare (« message non lu
+#      attribué à tort le 18/09 ») qui revient en volume : quand la donnée de lecture n'est pas
+#      certaine, on ne la présente pas au prospect, et on ne la compte pas dans la stratégie.
+#   ② Un message qui DIT « vous avez ouvert mon message » repose sur cette donnée-là. Plus jamais.
+#      Un message ne se justifie que par ce qui est vérifiable et utile au lead.
+#
+# Ces lignes passent en `parked` SANS date : elles sortent du plan, et il n'existe aucun chemin
+# qui les y remette (ni Follow-up date, ni RELANCE_A_JOUR). « Dated parked » = réécriture un jour
+# si un fait nouveau apparaît ; ici, pas de fait, pas de date.
+DEAD_2209 = {
+    "flemming-dream-bessengue": "lot du 19/09",
+    "biodiagnostics-sable": "lot du 19/09",
+    "diagmed-bonaberi": "lot du 19/09",
+    "labtag-bali": "lot du 19/09",
+    "sainte-anne-newbell": "lot du 19/09",
+    "pasteur-medlas-akwa": "lot du 19/09",
+    "cidm-saint-joseph": "lot du 19/09",
+    "malia-labo-douala": "lot du 19/09",
+    "adonai-douala": "lot du 19/09",
+    "labo-meka-bonamoussadi": "lot du 19/09",
+    "interlabo-akwa": "lot du 19/09",
+    "la-passerelle-deido": "lot du 19/09",
+    "pathcare-deido": "lot du 19/09",
+    "2k-labo-yassa": "lot du 19/09 (réponse automatique)",
+    "discovery-labs-bassong": "lot du 18/09",
+    "yondja-analyse-douala": "lot du 18/09",
+    "laboratoire-du-chateau-bonaberi": "lot du 18/09",
+    "departement-biologique-akwa": "lot du 18/09",
+    "cabinet-isis-bonapriso": "lot du 18/09",
+    "cabinet-la-cerisaie-bonapriso": "lot du 18/09",
+    "cabinet-idoc-bonapriso": "lot du 18/09",
+    "centre-des-capucines-bonapriso": "lot du 18/09",
+    "cabinet-brulet-epaka-bonapriso": "lot du 18/09",
+    "centre-kouam-samuel-bali": "lot du 18/09",
+    "das-group-international-akwa": "lot du 18/09",
+    "cabinet-dentaire-emmanuel-bonamoussadi": "lot du 18/09",
+    "clinique-de-luniversite-bassa": "lot du 18/09",
+    "medi-labo-akwa": "lot du 18/09",
+    "kamais-optic-bessengue": "lot du 18/09",
+    "la-bethanie-bonaberi": "lot du 18/09",
+    "jempo-deido": "lot du 18/09",
+    "camera-akwa": "lot du 18/09",
+    "le-nid-bessengue": "lot du 18/09",
+}
+
+
+def _apply_dead(out: list) -> None:
+    """Un seul endroit qui tue, un seul endroit qui réveille."""
+    by = {r.get("slug"): r for r in out}
+    for slug, why in DEAD_2209.items():
+        r = by.get(slug)
+        if r is None:
+            continue
+        r["stage"] = "parked"
+        r["Follow-up date"] = ""
+        r["Notes"] = (str(r.get("Notes") or "") +
+                      f" · ⚰️ MORT le 22/09 ({why}) — jamais ouvert, jamais répondu ; décision de King : "
+                      "on ne réécrit plus, on va vers des prospects frais. Aucune relance programmée.").strip(" ·")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--csv", default=str(ROOT / "leads" / "CRM.csv"))
@@ -1625,6 +1691,7 @@ def main() -> int:
     #      ne réécrit un fait d'échange.
     _apply_evening(out)
     _apply_jour(out)
+    _apply_dead(out)
 
     cols = headers + NEW_FIELDS
     allowed = set(cols)

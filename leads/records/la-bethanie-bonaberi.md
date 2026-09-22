@@ -10,7 +10,7 @@
 | Type | clinic |
 | Ville | Douala (Bonabéri) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | parked |
 | WhatsApp | 677 76 07 82 |
 | Numéro vérifié | unknown |
 | Canal | WhatsApp |
@@ -23,11 +23,11 @@
 
 ## Notes
 
-Capture de King : +237 77760782 sans profil Business (aucun nom, aucune catégorie) → ligne personnelle probable. Envoi maintenu 17/09 avec ligne de repli (§2e/§3b). Live : labethanie-concept.vercel.app
+Capture de King : +237 77760782 sans profil Business (aucun nom, aucune catégorie) → ligne personnelle probable. Envoi maintenu 17/09 avec ligne de repli (§2e/§3b). Live : labethanie-concept.vercel.app · ⚰️ MORT le 22/09 (lot du 18/09) — jamais ouvert, jamais répondu ; décision de King : on ne réécrit plus, on va vers des prospects frais. Aucune relance programmée.
 
 ## Prochaine action
 
-**0 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**Aucune.** Parqué. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 

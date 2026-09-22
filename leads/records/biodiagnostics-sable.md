@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Sable, Rue Deido-Bonanjo) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | parked |
 | WhatsApp | 699 92 91 98 |
 | Numéro vérifié | unknown |
 | Contact | Dr Tankoua Jean Alain — biologiste (nom public) |
@@ -22,11 +22,11 @@
 
 ## Notes
 
-Envoyé le 19/09 à 19:33 — lu (2 coches).
+Envoyé le 19/09 à 19:33 — lu (2 coches). · ⚰️ MORT le 22/09 (lot du 19/09) — jamais ouvert, jamais répondu ; décision de King : on ne réécrit plus, on va vers des prospects frais. Aucune relance programmée.
 
 ## Prochaine action
 
-**0 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**Aucune.** Parqué. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 

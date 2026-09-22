@@ -31,7 +31,7 @@ Message 1 lundi 14/09. Concept live : oracare-concept.vercel.app (v3, prix + ass
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 21 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 22 ligne(s).*
 
 `L3` · **Pourquoi ce fichier existe.** Le 18/09, j'ai écrit dans un résumé que « OraCare et MITOC ont répondu ». **C'est faux.** Oracle a écrit le contraire et j'ai parlé de mémoire au lieu de lire ce fichier. King a corrigé. Cette erreur a coûté du temps et de la confiance : ce journal remplace la mémoire par des faits vérifiables.
 `L13` · | lun 14/09 | **OraCare237** (672 52 66 86) | msg 1 | **Pas lu** | **Non** |
@@ -54,6 +54,7 @@ Message 1 lundi 14/09. Concept live : oracare-concept.vercel.app (v3, prix + ass
 `L1679` · **Puis King a envoyé la critique d'un brouillon — celui d'OraCare, dans la vague de 16:45 — et il a raison sur
 `L1693` · **Ce qui a changé dans la source, pas seulement dans le fichier du soir :** OraCare est enfin `parked` — la
 `L1706` · du jour (OraCare sorti), CRM reconstruit. Le profil des « oui » gagne une conséquence de plus, écrite dans
+`L1741` · qu'il promettait le silence puis reprochait le silence (OraCare), et six messages sortis. **Trois des quatre
 
 ---
 
