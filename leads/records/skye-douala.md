@@ -17,17 +17,17 @@
 | Contacté | Yes |
 | Réponse | No |
 | Maquette / site | Yes |
-| Relances envoyées | 1 |
+| Relances envoyées | 2 |
 | Source | google_maps |
 | Détail source | Douala sweep 15/09 — dentaire Bonamoussadi |
 
 ## Notes
 
-Message 16/09. Relance M+2 (FU1) partie 18/09 20:22. Concept live : concept-skye.vercel.app
+Message 16/09. Relance M+2 (FU1) partie 18/09 20:22. Concept live : concept-skye.vercel.app · 22/09 (soir) — relance 2/3 réécrite SANS reproche et envoyée par King : une question sur LEUR contenu (les horaires et les soins affichés sont-ils justes ?), jamais sur leur silence. Prochaine et DERNIÈRE touche : 29/09, puis parked daté.
 
 ## Prochaine action
 
-**1 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**2 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
 
 ## Historique — lignes du journal qui citent ce lead
 

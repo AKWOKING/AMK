@@ -59,20 +59,22 @@ STAGE_ORDER = ["won", "delivered", "closing", "offer", "demo", "qualifying",
 
 # Décisions humaines qui priment sur les règles automatiques : slug -> (échéance ISO, note)
 RELANCE_A_JOUR = {
-    "opticien-bali-douala": ("2026-09-20", "relances fixées dim 20 / mar 22 / ven 25"),
+    "opticien-bali-douala": ("2026-09-25", "2ᵉ message envoyé le 22/09 au soir (créneau fixé par le prospect "
+                                        "lui-même). DERNIÈRE touche : vendredi 25/09, puis parked daté"),
     "oracare-buea": ("2026-09-28", "PARKED depuis le message de CLÔTURE du 21/09 17:43 (« last note from me, "
                                     "then I stop ») — ne rien écrire avant lundi 28/09, et ce jour-là un seul "
                                     "message : léger, SANS reproche, justifié par du neuf (les prix et la prise "
                                     "de RDV 24/7 sont sur la page). Nom vérifié : Dr Arnold Nkafu — jamais "
                                     "« Dr Njie », ce prénom n'existe dans aucun fichier"),
-    "midas-touch-optic-center-mitoc": ("2026-09-21", "FU2 fixée lun 21"),
+    "midas-touch-optic-center-mitoc": ("2026-09-29", "FU2 envoyée le 22/09 au soir (un jour de retard rattrapé). "
+                                          "DERNIÈRE touche : 29/09, puis on classe — trois messages maximum"),
     "baird-memorial-college": ("2026-09-21", "FU2 fixée lun 21 (même lot que MITOC)"),
     "labiomed-deido": ("2026-10-01", "A RÉPONDU le 22/09 à 16:41 : « Non pas encore je ne suis pas en place » "
                                       "· « Quand je serai la je vais vous contacter ». Ce n'est ni un oui ni un "
                                       "refus — c'est un REPORT MOTIVÉ (pas encore installé). Réponse envoyée "
                                       "dans l'heure ; on ne le relance plus d'ici le 1ᵉʳ octobre, et ce jour-là "
                                       "sans prix ni question de validation : juste « vous êtes en place ? »"),
-    "centre-medical-de-bonanjo": ("2026-09-24", "Page complète envoyée le 22/09 à 13:35 (deux coches) "
+    "centre-medical-de-bonanjo": ("2026-09-28", "Page complète envoyée le 22/09 à 13:35 (deux coches) "
                                       "avec le prix posé, puis relance 16:24 (une coche) : « vos 9 services "
                                       "centralisés pour orienter les patients de Google vers votre "
                                       "WhatsApp ». DÉCISION KING 16:30 : prochaine vague — jeudi 24/09, "
@@ -91,6 +93,9 @@ RELANCE_A_JOUR = {
                                      "prix, hébergement et accès LWS à la fin, après son accord"),
     # UNI-LABO a DEMANDÉ un rendez-vous : ce n'est plus une relance à calculer.
     "uni-labo-bonamoussadi": ("2026-09-25", "RENDEZ-VOUS demandé par le prospect — vendredi 25/09"),
+    "skye-douala": ("2026-09-29", "Relance 2/3 envoyée le 22/09 au soir (réécrite sans reproche). DERNIÈRE "
+                                  "touche : 29/09, puis parked daté"),
+    "yaks-douala": ("2026-09-29", "Relance 2/3 envoyée le 22/09 au soir. DERNIÈRE touche : 29/09, puis parked"),
 }
 
 

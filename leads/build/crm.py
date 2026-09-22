@@ -336,13 +336,21 @@ def _not_reachable_rows():
                         notes=f"⛔ NE PAS ENVOYER sur {num} : {why}. Vérifié le 18/09."))
     # INSES porte le numéro « CEMECES » : c'est un prospect À PART (institut supérieur),
     # et le seul cas où un même numéro sert deux organisations.
-    out.append(dict(slug="inses-douala", org="INSES — institut supérieur", city="Douala", language="FR/EN",
-                    org_type="school", wa_number="674 93 66 04", wa_verified="yes",
-                    stage="prospecting", contacted="No", reply="No", demo="No",
+    out.append(dict(slug="inses-douala", org="INSES — Institut Supérieur de l'Espoir", city="Douala (Bonabéri)",
+                    language="FR/EN", org_type="school", wa_number="674 93 66 04", wa_verified="yes",
+                    stage="parked", contacted="No", reply="No", demo="No",
+                    Website="univ-inses.com — VIVANT et moderne (Next.js bilingue FR/EN, page /inscription), lu le 22/09",
                     source="walk_in", source_detail="affiche vue par King 18/09 — BTS · HND · Licence · Master",
-                    notes="Piste ouverte : le mobile 674 93 66 04 est bien celui d'INSES (confirmé par capture). "
-                          "La même affiche porte « LA CLINIQUE DE L'ESPOIR » → promoteur probablement commun "
-                          "école + clinique. Deux offres possibles en une conversation. **Jamais contacté.**"))
+                    notes="JAMAIS contacté, et le 22/09 le premier message préparé a été RETIRÉ avant envoi : King a "
+                          "montré `univ-inses.com` — site Next.js bilingue (programmes, /inscription, /contact), "
+                          "Douala-Bonabéri, partenaire CEMECES (Clinique Médico-chirurgicale de l'Espoir) ; fiche "
+                          "WhatsApp Business « Insés » (Education · University, catalogue CQP Aide-soignant / BTS) "
+                          "portant le MÊME numéro 674 93 66 04. Le message préparé disait « quand un parent cherche "
+                          "INSES Douala il trouve une affiche, pas une page » : FAUX. C'est un lead du profil « a déjà "
+                          "une vitrine à lui » — le meilleur profil de la campagne — pas un premier contact. Défauts "
+                          "relevés sur le site, à exploiter si on y revient : /images/formations/default.jpg illustre "
+                          "cinq des six filières, et « Diététique et Nutrition » apparaît deux fois avec deux durées "
+                          "contradictoires (2 ans / 3 ans). PARKED : les écoles sont hors périmètre (décision King)."))
     return out
 
 
@@ -1327,6 +1335,32 @@ JOUR_2209 = {
             "action : une relance courte le 23/09 avant 11 h s'il n'a pas répondu, SANS re-proposer le prix "
             "ni promettre une mise en ligne avant son accord.",
     },
+    # ── LES QUATRE ENVOIS DU SOIR DU 22/09 (relevé de King à 17:31 : « MITOC, L'Opticien, Yaks, Skye »).
+    "midas-touch-optic-center-mitoc": {
+        "last_send_state": "sent", "Follow-up date": "2026-09-29", "follow_ups_sent": "2",
+        "Notes_extra": "22/09 (soir) — relance envoyée par King (FU2, due le 21/09) : sa fiche Facebook trouve "
+                       "son public mais l'examen de vue ne se réserve nulle part ; une page avec les montures, "
+                       "les prix en FCFA, les horaires, le bassin étudiant de Molyko et un bouton WhatsApp. "
+                       "Prochaine et DERNIÈRE touche : 29/09, puis on classe.",
+    },
+    "opticien-bali-douala": {
+        "last_send_state": "sent", "Follow-up date": "2026-09-25", "follow_ups_sent": "2",
+        "Notes_extra": "22/09 (soir) — deuxième message envoyé par King, sur le créneau que le prospect avait "
+                       "lui-même fixé (« dim 20 / mar 22 / ven 25 »). Prochaine touche : vendredi 25/09, et ce "
+                       "sera la dernière (trois messages maximum, puis parked daté).",
+    },
+    "skye-douala": {
+        "last_send_state": "sent", "Follow-up date": "2026-09-29", "follow_ups_sent": "2",
+        "Notes_extra": "22/09 (soir) — relance 2/3 réécrite SANS reproche et envoyée par King : une question sur "
+                       "LEUR contenu (les horaires et les soins affichés sont-ils justes ?), jamais sur leur "
+                       "silence. Prochaine et DERNIÈRE touche : 29/09, puis parked daté.",
+    },
+    "yaks-douala": {
+        "last_send_state": "sent", "Follow-up date": "2026-09-29", "follow_ups_sent": "2",
+        "Notes_extra": "22/09 (soir) — relance 2/3 envoyée par King, même réécriture : « qu'est-ce qui manque "
+                       "ou qu'est-ce qui est faux sur la page ? ». Prochaine et DERNIÈRE touche : 29/09.",
+    },
+
     # ── DÉCISION DE KING, 22/09 16:30 — « Labiomed et Bonanjo relancer prochaine vague ».
     #    Les deux messages du 16:22 et 16:24 sont donc partis (une coche chacun) : ils glissent
     #    d'une vague, ils ne sont pas perdus, et on ne réécrit pas aujourd'hui par-dessus un
@@ -1348,7 +1382,10 @@ JOUR_2209 = {
             "PUIS, 22/09 16:41, IL A RÉPONDU à la relance de 16:22, en trois messages : « Bjr » · « Non pas "
             "encore je ne suis pas en place » · « Quand je serai la je vais vous contacter ». Ce n'est ni un "
             "oui ni un refus : il n'est pas encore installé. Réponse de King dans l'heure (§0 de "
-            "sales/Send-Vague-2026-09-22-16h45.md), échéance repoussée au 1ᵉʳ octobre.",
+            "sales/Send-Vague-2026-09-22-16h45.md), 17:14 — réponse de King, SON texte, pas le brouillon du §0 : « C'est très clair, Docteur. Merci pour "
+            "la précision ! » · « La maquette reste active et accessible à tout moment. J'attends de vos "
+            "nouvelles dès que vous serez de retour / disponible ! » — DEUX coches, il l'a lue. AUCUNE DATE "
+            "n'a été promise au client : le 1ᵉʳ octobre est une échéance INTERNE, pas un engagement.",
         "Notes_extra":
             "CORRECTION DU 22/09 16:41 — le mot « premier OUI DE LA CAMPAGNE » était trop fort : son « Oui » du "
             "19/09 acceptait un APERÇU, et son « je vous reviens quand je serai disponible » était un report. "
@@ -1362,7 +1399,7 @@ JOUR_2209 = {
     },
     "centre-medical-de-bonanjo": {
         "last_send_state": "sent",
-        "Follow-up date": "2026-09-24",
+        "Follow-up date": "2026-09-28",
         "site_url": "https://bonanjo.vercel.app",
         "Conversation_extra":
             "22/09 13:35 — King avait envoyé (DEUX coches) la page complète avec le lien "
@@ -1379,7 +1416,9 @@ JOUR_2209 = {
             "« Avez-vous eu un moment pour regarder, ou souhaitez-vous que je réajuste quelques détails "
             "avant d'officialiser la mise en ligne ? ». Son dernier mot à lui, verbatim : « Bjr merci je "
             "vous reviens » (19/09 08:44). DÉCISION KING 16:30 : "
-            "prochaine vague.",
+            "prochaine vague. PUIS un message de plus est parti dans la soirée du 22/09 (texte non relevé — "
+            "King l'a écrit lui-même) : la relance prévue pour jeudi est CONSOMMÉE, on ne double pas. "
+            "Prochaine touche : lundi 28/09, ou avant s'il répond.",
         "Notes_extra":
             "Le prix est DÉJÀ posé (13:35, et rappelé dans le fil du 19/09) : à la prochaine vague on ne "
             "le répète pas, on ne repose qu'une question de calendrier. Le fait décisif du dossier reste "

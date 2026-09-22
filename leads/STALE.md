@@ -34,8 +34,6 @@
 | 2K Labo | qualifying | 3 j | 0/3 | — |
 | Pathcare Diagnostics | qualifying | 3 j | 0/3 | `L1702` |
 | CIDM St Joseph | qualifying | 3 j | 0/3 | — |
-| Cabinet Dentaire The Skye | qualifying | 4 j | 1/3 | `L53` |
-| Cabinet Dentaire YAKS | qualifying | 4 j | 1/3 | `L54` |
 | Clinique La Béthanie | qualifying | 5 j | 0/3 | `L78` |
 | J&E Memorial Polyclinic (JEMPO) | qualifying | 5 j | 0/3 | `L24` |
 | Cabinet Médical CAMERA | qualifying | 4 j | 0/3 | `L110` |

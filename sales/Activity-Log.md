@@ -1706,4 +1706,39 @@ recherches, donc cette phrase ne s'écrit pas. `guard.py lock` + `rebuild.sh` re
 du jour (OraCare sorti), CRM reconstruit. Le profil des « oui » gagne une conséquence de plus, écrite dans
 `sales/PROFIL-DES-OUI-2026-09-22.md` : avec les écoles écartées, il ne reste **qu'un** lead du profil dans le
 CRM — la prochaine vague dépend entièrement de la vérification `Website`/`Facebook` des 104 leads
-santé/optique, prévue demain.
+santé/optique, prévue demain.## 2026-09-22 · 17:31 → 17:45 · INSES avait un site, six messages sont partis, et le LOT 2 est prêt
+
+**King a montré `univ-inses.com` : « is a university and they already have a site ».** Notre premier message
+pour l'INSES disait « quand un parent cherche INSES Douala, il trouve une affiche, pas une page » — **c'était
+faux**, et le message n'est jamais parti. Lecture faite ici pour ne pas refaire l'erreur deux fois : site
+**Next.js bilingue FR/EN** (programmes, `/inscription`, `/contact`), Douala-Bonabéri, partenaire CEMECES,
+fiche WhatsApp Business « Insés » (Education · University, catalogue CQP/BTS) portant le **même numéro
+674 93 66 04**. L'INSES est donc **un lead du profil « a déjà une vitrine à lui »** — le meilleur profil de
+la campagne — pas un premier contact : `parked` avec les écoles, et si on y revient ce sera par des
+**corrections précises** (cinq des six filières partagent `/images/formations/default.jpg`, « Diététique et
+Nutrition » apparaît deux fois avec 2 ans puis 3 ans). **La règle « jamais *absent du web* » vient de sauver
+un message de plus** — cette fois parce que King a vérifié avant d'envoyer, ce qui est exactement le geste que
+le §B de la vague demandait pour neuf autres numéros.
+
+**Six envois, enregistrés comme des faits** (« MITOC, L'Opticien, Yaks, Skye, Labiomed, Bonanjo all sent this
+evening ») : les quatre relances du soir (MITOC rattrape son jour de retard ; Skye et YAKS font leur 2/3 le
+jour même) passent au **29/09** — dernière touche avant `parked` — **Bali** garde son créneau du **ven 25/09**,
+**Bonanjo** passe au **lun 28/09** (le message de ce soir a consommé la relance de jeudi : on ne double pas),
+et **Labiomed** reste au **1ᵉʳ octobre**. Sa réponse de 17:14 est enregistrée **telle qu'il l'a écrite** —
+« C'est très clair, Docteur. Merci pour la précision ! / La maquette reste active et accessible à tout
+moment. J'attends de vos nouvelles dès que vous serez de retour / disponible ! » (deux coches : il l'a lue).
+**Aucune date ne lui a été promise** : le 1ᵉʳ octobre est une échéance interne, pas un engagement — la nuance
+compte, parce qu'une date promise puis oubliée coûte plus cher que pas de date du tout.
+
+**`sales/Send-Lot-2-2026-09-22-17h30.md`** : le lot suivant, **28 messages** — les 9 laboratoires qui ont
+ouvert le message du 19 (§1, profil vérifié avant envoi), puis les 19 du 18/09 (§2, leur **troisième et
+dernière** relance). Les 5 « ne pas envoyer » restent dehors : Meka, Interlabo, La Passerelle, Pathcare
+(distribués non lus → jeudi) et 2K Labo (réponse automatique). Le plan du jour tombe à **33 actions**, dont
+28 messages + ces 5 rappels : le compte est vérifié, pas supposé.
+
+**Ce que la soirée aura montré en trois heures** : un lead qui répond « pas encore » et qu'on ne relance pas
+(Labiomed), un message tué avant envoi parce que le prospect avait déjà un site (INSES), un autre tué parce
+qu'il promettait le silence puis reprochait le silence (OraCare), et six messages sortis. **Trois des quatre
+corrections de la soirée viennent d'une vérification, pas d'une rédaction** — c'est la conclusion de la note
+`sales/PROFIL-DES-OUI-2026-09-22.md` en train de se vérifier toute seule : le travail utile est dans la
+lecture du lead, pas dans la phrase.

@@ -17,17 +17,17 @@
 | Contacté | Yes |
 | Réponse | No |
 | Maquette / site | Yes |
-| Relances envoyées | 0 |
+| Relances envoyées | 2 |
 | Source | directory |
 | Détail source | Douala sweep — 2 039 likes FB, pas de site |
 
 ## Notes
 
-3/3 portes le 17/09 (compte WhatsApp Business + catalogue + activité du jour ; mono-boutique = propriétaire). Message envoyé 17/09. Live : amk-cm.vercel.app/opticien/. Relances : dim 20 / mar 22 / ven 25.
+3/3 portes le 17/09 (compte WhatsApp Business + catalogue + activité du jour ; mono-boutique = propriétaire). Message envoyé 17/09. Live : amk-cm.vercel.app/opticien/. Relances : dim 20 / mar 22 / ven 25. · 22/09 (soir) — deuxième message envoyé par King, sur le créneau que le prospect avait lui-même fixé (« dim 20 / mar 22 / ven 25 »). Prochaine touche : vendredi 25/09, et ce sera la dernière (trois messages maximum, puis parked daté).
 
 ## Prochaine action
 
-**0 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**2 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
 
 ## Historique — lignes du journal qui citent ce lead
 

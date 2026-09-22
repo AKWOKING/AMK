@@ -11,8 +11,8 @@
 | ④ Offre posée | **1** |
 | ③ Aperçu envoyé | **1** |
 | ② Qualifié — en conversation | **43** |
-| ① Prospection — à qualifier | **85** |
-| ⏸ Parqué | **4** |
+| ① Prospection — à qualifier | **84** |
+| ⏸ Parqué | **5** |
 | ⛔ Écarté | **10** |
 | **Total** | **145** |
 
@@ -90,7 +90,7 @@
 | St. Theresa International Bilingual Comprehensive College (STIBCCOL) | Buea (Molyko) | 679151075 | `L1698` |
 | YONDJA ANALYSE | Douala | 696 88 88 23 | `L1324` |
 
-## ① Prospection — à qualifier — 85
+## ① Prospection — à qualifier — 84
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
@@ -113,7 +113,7 @@
 | Centre d'Imagerie Médicale Saint Joseph | Douala (Bonamoussadi) | 690 412 400 | `L49` |
 | Centre de Soins Médic-o-La Persévérance | Douala (Bonabéri) | 677 69 25 04 | `L48` |
 | Class-Optic | Douala | 691 17 18 17 | — |
-| Clinique Médico-Chirurgicale de L'Espoir (CEMECES) | Douala (Bonabéri Sodiko) | 674 93 66 04 | `L1647` |
+| Clinique Médico-Chirurgicale de L'Espoir (CEMECES) | Douala (Bonabéri Sodiko) | 674 93 66 04 | `L867` |
 | Clinique Traditionnelle Moderne du Dr Lecigah | Douala (Bonabéri Sodiko) | 699 96 95 77 | `L56` |
 | Clinique des Cités | Douala (Makepe, face Cinpharm) | 699 22 62 74 | `L46` |
 | College de l'Excellence de Limbe | Limbe | — | — |
@@ -138,7 +138,6 @@
 | Grâce Vision | Douala | 691 39 28 78 | — |
 | Horizon Optique | Douala | 677 44 74 17 | — |
 | Hyrus Labo | Douala (Deido, Bld de la République) | 699 76 01 18 | — |
-| INSES — institut supérieur | Douala | 674 93 66 04 | `L866` |
 | Institut Notre Dame des Apôtres | Yaoundé | — | — |
 | Institut Polyvalent Fosso | Douala (Akwa/Bépanda Tonerre, 'safari' route Bonamoussadi) | — | — |
 | Inter Comprehensive High School (ICHS) Great Soppo | Buea (Great Soppo) | — | — |
@@ -180,10 +179,11 @@
 | Wonders Medical Foundation | Douala (Bonamoussadi) | — | — |
 | École Privée Bilingue Les Génies | Douala (Akwa) | — | `L470` |
 
-## ⏸ Parqué — 4
+## ⏸ Parqué — 5
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
+| INSES — Institut Supérieur de l'Espoir | Douala (Bonabéri) | 674 93 66 04 | `L866` |
 | One Stop Medical Laboratory & Diagnostics | Buea (location TBD; co-owner based Buea) | 691632941 | — |
 | OraCare Dental Clinic (Oracare237) | Buea (Molyo) | 672 52 66 86 | `L1706` |
 | Presbyterian Comprehensive Secondary School (PCSS) Buea | Buea (Madam Namondo Alexander) | 652075229 | — |
