@@ -30,9 +30,11 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 1 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 3 ligne(s).*
 
 `L469` · **La Passerelle** (« +237 6 94 71 91 22 », aucun nom, aucune catégorie) et **Interlabo** (avatar = la
+`L1665` · Meka, Interlabo, La Passerelle, Pathcare (distribués non lus depuis le 19 — on n'écrit pas par-dessus) et
+`L1702` · Labiomed**, 5 à ne pas envoyer ce soir (Meka, Interlabo, La Passerelle, Pathcare — distribués non lus depuis le
 
 ---
 

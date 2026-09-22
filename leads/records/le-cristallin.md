@@ -105,7 +105,7 @@
 `L1570` · : ce n'est pas une relance, c'est NOTRE tour » ; Le Cristallin porte désormais la liste des quatre
 `L1616` · jours ; le levier, c'est la liste.** Détail des six : Le Cristallin (site vivant + FB, réponse en 2 min),
 `L1623` · renseignée que pour **2** (Les Cristallin et Univers, vérifiés à la main) et `Facebook` est vide pour 105.
-`L1636` · pour Labiomed, Bonanjo, Le Cristallin. **Aucun message envoyé par moi, aucun déploiement.**
+`L1636` · pour Labiomed, Bonanjo, Le Cristallin. **Aucun message envoyé par moi, aucun déploiement.**## 2026-09-22 · 16:45 · DÉCISION — « laisser tomber les écoles », et la vague du soir sort du plan
 
 ---
 

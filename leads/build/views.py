@@ -60,14 +60,18 @@ STAGE_ORDER = ["won", "delivered", "closing", "offer", "demo", "qualifying",
 # Décisions humaines qui priment sur les règles automatiques : slug -> (échéance ISO, note)
 RELANCE_A_JOUR = {
     "opticien-bali-douala": ("2026-09-20", "relances fixées dim 20 / mar 22 / ven 25"),
-    "oracare-buea": ("2026-09-20", "FU2 (M+4) fixée dim 20"),
+    "oracare-buea": ("2026-09-28", "PARKED depuis le message de CLÔTURE du 21/09 17:43 (« last note from me, "
+                                    "then I stop ») — ne rien écrire avant lundi 28/09, et ce jour-là un seul "
+                                    "message : léger, SANS reproche, justifié par du neuf (les prix et la prise "
+                                    "de RDV 24/7 sont sur la page). Nom vérifié : Dr Arnold Nkafu — jamais "
+                                    "« Dr Njie », ce prénom n'existe dans aucun fichier"),
     "midas-touch-optic-center-mitoc": ("2026-09-21", "FU2 fixée lun 21"),
     "baird-memorial-college": ("2026-09-21", "FU2 fixée lun 21 (même lot que MITOC)"),
-    "labiomed-deido": ("2026-09-24", "PREMIER OUI DE LA CAMPAGNE (« Oui », 19/09 19:43). Relance ENVOYÉE "
-                                      "le 22/09 à 16:22 (une coche) : la maquette toujours active + « on "
-                                      "valide le lancement cette semaine ? ». DÉCISION KING 16:30 : "
-                                      "prochaine vague — donc jeudi 24/09, une seule ligne, sans répéter le "
-                                      "16:22, et le prix (100 000 FCFA, 50/50) avec le lien à l'accord"),
+    "labiomed-deido": ("2026-10-01", "A RÉPONDU le 22/09 à 16:41 : « Non pas encore je ne suis pas en place » "
+                                      "· « Quand je serai la je vais vous contacter ». Ce n'est ni un oui ni un "
+                                      "refus — c'est un REPORT MOTIVÉ (pas encore installé). Réponse envoyée "
+                                      "dans l'heure ; on ne le relance plus d'ici le 1ᵉʳ octobre, et ce jour-là "
+                                      "sans prix ni question de validation : juste « vous êtes en place ? »"),
     "centre-medical-de-bonanjo": ("2026-09-24", "Page complète envoyée le 22/09 à 13:35 (deux coches) "
                                       "avec le prix posé, puis relance 16:24 (une coche) : « vos 9 services "
                                       "centralisés pour orienter les patients de Google vers votre "

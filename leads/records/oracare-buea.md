@@ -10,7 +10,7 @@
 | Type | clinic |
 | Ville | Buea (Molyo) |
 | Langue de contact | EN |
-| Étape | qualifying |
+| Étape | parked |
 | WhatsApp | 672 52 66 86 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |
@@ -23,15 +23,15 @@
 
 ## Notes
 
-Message 1 lundi 14/09. FU2 (M+4) prévue dim 20/09. Concept live : oracare-concept.vercel.app (v3, prix + assistant). ⚠️ N'a JAMAIS répondu : message non lu attribué à tort le 18/09, corrigé.
+Message 1 lundi 14/09. Concept live : oracare-concept.vercel.app (v3, prix + assistant). ⚠️ N'a JAMAIS répondu : message non lu attribué à tort le 18/09, corrigé. 21/09 17:43 — message de CLÔTURE envoyé (« last note from me, then I stop ») : le lead est PARKED, et cette phrase est classée « à ne plus jamais écrire » (Enregistrements-2026-09-21-SOIR.md). 22/09 — un brouillon de relance a été refusé par King : il appelait le dentiste « Dr Njie » alors que son nom est ARNOLD NKAFU (fichiers du 14/09), et il reprochait son silence un jour après avoir promis de se taire. UN SEUL message reste permis, lundi 28/09 : léger, sans reproche, justifié par du NEUF (les prix et la prise de RDV 24/7 sont sur la page).
 
 ## Prochaine action
 
-**1 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**Aucune.** Parqué. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 16 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 21 ligne(s).*
 
 `L3` · **Pourquoi ce fichier existe.** Le 18/09, j'ai écrit dans un résumé que « OraCare et MITOC ont répondu ». **C'est faux.** Oracle a écrit le contraire et j'ai parlé de mémoire au lieu de lire ce fichier. King a corrigé. Cette erreur a coûté du temps et de la confiance : ce journal remplace la mémoire par des faits vérifiables.
 `L13` · | lun 14/09 | **OraCare237** (672 52 66 86) | msg 1 | **Pas lu** | **Non** |
@@ -49,6 +49,11 @@ Message 1 lundi 14/09. FU2 (M+4) prévue dim 20/09. Concept live : oracare-conce
 `L832` · - `OraCare` : message de **clôture parti 17:43** → **`parked` le 21/09**, 3 relances au compteur, plus aucune
 `L848` · 2. **Un parqué ressortait « à relancer »** : OraCare pointait en « Relance 4/3 » dans la file du jour parce
 `L1119` · sur 6 concepts déjà livrés** (jusqu'à 32 findings sur `concept-oracare-v1`) → **patch remisé** (`git checkout`),
+`L1661` · **① les trois 2/3 en retard** (OraCare, The Skye, YAKS) · **② les neuf « lus sans réponse » du 19/09** (une
+`L1666` · 2K Labo (sa « réponse » était automatique). Rien n'a été envoyé par moi.## 2026-09-22 · 16:41 → 17:00 · Labiomed répond « pas encore », OraCare échappe à un mauvais message, et la vague de ce soir est corrigée
+`L1679` · **Puis King a envoyé la critique d'un brouillon — celui d'OraCare, dans la vague de 16:45 — et il a raison sur
+`L1693` · **Ce qui a changé dans la source, pas seulement dans le fichier du soir :** OraCare est enfin `parked` — la
+`L1706` · du jour (OraCare sorti), CRM reconstruit. Le profil des « oui » gagne une conséquence de plus, écrite dans
 
 ---
 

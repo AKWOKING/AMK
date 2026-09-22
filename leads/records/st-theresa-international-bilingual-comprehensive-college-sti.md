@@ -33,7 +33,7 @@ Walk-In-Batch-2026-09-15. Pain: parents find only FB/yahoo, no website. Bilingua
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 15 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 17 ligne(s).*
 
 `L17` · | mar 15/09 15:45 | **St. Theresa** (679 15 10 75) | msg 1 | Envoyé | ✅ **OUI — 20:44** |
 `L18` · | mar 15/09 22:25 | St. Theresa | accusé de réception | Envoyé | ✅ **22:51 — permission de revenir en octobre** |
@@ -50,6 +50,8 @@ Walk-In-Batch-2026-09-15. Pain: parents find only FB/yahoo, no website. Bilingua
 `L760` · | ② | **St. Theresa : oui, elle compte dans le PRR.** | Sa `Reply` porte le verbatim, pas un « yes » : la déduction ne la voyait pas. Forcée à la main (`reply_type=human`, verbatim des 15/09 20:44 + 22:51 dans la cellule). Le PRR passe de 4,4 % à **6,7 % (3/45)** — et retombe à **6,5 % (3/46)** quand AFRIQUE LABO entre au tableau (§2). Sa `stage_since` = **21/09**, la date de la décision de parking, pas celle de la réponse. |
 `L820` · la Page Facebook · le parrainage St. Theresa.
 `L1618` · — et il paie déjà pour du trafic sur `mondocteur237.com`), STIBCCOL (le seul établissement à avoir répondu
+`L1649` · - **STIBCCOL** (`st-theresa-…-sti`) — une parole a déjà été donnée (retour promis en **octobre**, 15/09). On
+`L1698` · aussi une clinique — plus STIBCCOL, dont la permission d'octobre sera honorée : on arrête d'ouvrir des écoles,
 
 ---
 

@@ -83,6 +83,14 @@ Concrètement, pour les deux leads en cours, ça veut dire : **on arrête d'atte
 
 ## 7 · Ce qu'on fait maintenant, avec ce profil
 
+**Décision de King, 22/09 16:45 : on laisse tomber les écoles.** Conséquence directe sur la liste
+ci-dessous : sur les 24 leads du profil, **23 sont des écoles** — elles sortent. Il ne reste **qu'un seul
+lead** : **MITOC** (opticien de Molyko, que le classeur d'origine classait « école », corrigé le 22/09),
+déjà en cours de relance. **Le gisement du profil est donc vide dans le CRM — non pas
+parce que le profil est faux, mais parce que 104 des 106 leads santé/optique n'ont jamais été
+vérifiés.** Le chantier de demain (remplir `Website` et `Facebook`, une minute par lead) devient donc la
+seule source possible de la prochaine vague.
+
 **a) La liste de ce soir / demain ne change pas d'angle, mais change de source.** Les 24 leads ci-dessous sont **déjà dans le CRM, déjà audités, et cochent le critère n°1 ou n°2 sans avoir répondu** — c'est le stock le plus chaud qu'on ait sous la main. (Beaucoup d'écoles : c'est notre pire segment, mais « école qui a payé un domaine » ≠ « école froide ».)
 
 | Score | Lead | Secteur | Ville | Ce qu'il a déjà | Étape |
@@ -112,7 +120,9 @@ Concrètement, pour les deux leads en cours, ça veut dire : **on arrête d'atte
 | 1 | St. Joseph's College Sasse (SJC Sasse) | école | Buea (Sasse/Small Soppo) | page FB | prospecting |
 | 1 | Summerset Bilingual College (SMBICOL) | école | Buea (Wokoko) | page FB | prospecting |
 
-**b) Une relance sur ces 24 = un message qui parle de CEUx-là, pas de nous.** « Votre site est en ligne mais ne s'ouvre pas sur mobile » / « votre page poste depuis 2 ans, personne ne peut réserver » / « le site que vous êtes en train de faire : voilà ce qui doit y figurer pour capter les appels ».
+**b) Une relance sur le profil = un message qui parle de CEUX-là, pas de nous** — et les deux écoles
+encore en fil gardent ce qui leur a été promis (STIBCCOL a notre permission de revenir en octobre,
+on l'honore) : on arrête d'ouvrir de nouvelles écoles, pas d'honorer une parole. « Votre site est en ligne mais ne s'ouvre pas sur mobile » / « votre page poste depuis 2 ans, personne ne peut réserver » / « le site que vous êtes en train de faire : voilà ce qui doit y figurer pour capter les appels ».
 
 **c) La vague du 18/09 ne sert plus de modèle.** 19 messages identiques partis dans le soir = **0 réponse en 4 jours**, et ils allaient pour la plupart à des leads sans aucune vitrine. Une vague ne se juge pas au nombre d'envois, mais au profil de ce qu'elle touche.
 

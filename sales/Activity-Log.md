@@ -1663,4 +1663,47 @@ question fermée, sept numéros à vérifier sur WhatsApp avant d'écrire) · **
 (troisième et dernière relance, texte unique, puis `parked` daté) · **④ les trois à part** — INSES,
 **MITOC** (EN) et **L'Opticien Bali** sur son propre créneau du mardi. **Cinq ne partent pas ce soir** :
 Meka, Interlabo, La Passerelle, Pathcare (distribués non lus depuis le 19 — on n'écrit pas par-dessus) et
-2K Labo (sa « réponse » était automatique). Rien n'a été envoyé par moi.
+2K Labo (sa « réponse » était automatique). Rien n'a été envoyé par moi.## 2026-09-22 · 16:41 → 17:00 · Labiomed répond « pas encore », OraCare échappe à un mauvais message, et la vague de ce soir est corrigée
+
+**16:41 — Labiomed a répondu**, dix-neuf minutes après la relance de 16:22 : « Bjr » · « **Non pas encore je
+ne suis pas en place** » · « Quand je serai la je vais vous contacter ». Ce n'est ni un oui ni un refus :
+il n'est pas encore installé. Deux conséquences écrites tout de suite :
+
+1. **Réponse dans l'heure** (§0 de la vague) : on lui dit que la maquette reste en ligne sans rien coûter, et
+   qu'on ne le relance pas d'ici le **1ᵉʳ octobre** — `JOUR_2209` et `views.py` portent la nouvelle échéance.
+2. **Le mot « premier OUI de la campagne » est corrigé là où il était écrit** : son « Oui » du 19/09 acceptait
+   un *aperçu*, pas un prix ; c'est un **report motivé**. Même famille d'erreur que le « Oui » de courtoisie —
+   un accord sur un fichier n'est pas un accord commercial. Le journal du matin disait « premier oui » : la
+   correction est ici, et dans la table, pas seulement dans une note.
+
+**Puis King a envoyé la critique d'un brouillon — celui d'OraCare, dans la vague de 16:45 — et il a raison sur
+les trois points :**
+- **Le prénom était inventé.** Le brouillon disait « Dr Njie ». Ce nom n'existe dans aucun fichier : le vrai
+  est **Dr Arnold Nkafu** (`Weekly-Plan-2026-09-14.md`, `Outreach-Pack-2026-09-14.md`). Inventer un prénom à un
+  dentiste coûte le message entier.
+- **Promettre le silence puis reprocher le silence.** Le 21/09 à 17:43, un message de **clôture** lui est parti
+  (« last note from me, then I stop ») — et notre propre journal avait déjà classé cette phrase « à ne plus
+  jamais écrire » (l. 129 des `Enregistrements-2026-09-21-SOIR.md`). Le brouillon du 22/09 disait « nobody has
+  replied since my last message » et « should I take it offline » : la promesse d'un côté, le reproche et la
+  menace de l'autre, vingt-quatre heures plus tard.
+- **Le ton, partout ailleurs.** « personne n'a répondu depuis ma relance », « on la retire ? » : réécrit pour
+  The Skye et YAKS (une question sur **leur** contenu — les horaires, les soins, les prix sont-ils justes —
+  jamais une remarque sur leur silence).
+
+**Ce qui a changé dans la source, pas seulement dans le fichier du soir :** OraCare est enfin `parked` — la
+décision du 21/09 n'était **jamais arrivée** dans le CRM (`stage` restait `qualifying`, et le plan du jour le
+reprogrammait donc en relance 2/3 : exactement le mode de panne d'Univers). Un seul message reste permis,
+**lundi 28/09**, léger et justifié par du **neuf** : les prix et la prise de rendez-vous 24/7 sont sur la page.
+Et **les écoles sortent** (décision de King 16:45) avec une exception assumée, INSES — dont le promoteur porte
+aussi une clinique — plus STIBCCOL, dont la permission d'octobre sera honorée : on arrête d'ouvrir des écoles,
+pas de tenir une parole.
+
+**La vague du soir** (`sales/Send-Vague-2026-09-22-16h45.md`, corrigée) : **33 messages + la réponse à
+Labiomed**, 5 à ne pas envoyer ce soir (Meka, Interlabo, La Passerelle, Pathcare — distribués non lus depuis le
+19 — et 2K Labo, dont la « réponse » était automatique). Les accroches du §B ont été réécrites pour retirer
+les affirmations d'absence : pour aucun de ces neuf laboratoires nous n'avons vérifié qu'ils sont absents des
+recherches, donc cette phrase ne s'écrit pas. `guard.py lock` + `rebuild.sh` rejoués : **38 actions** au plan
+du jour (OraCare sorti), CRM reconstruit. Le profil des « oui » gagne une conséquence de plus, écrite dans
+`sales/PROFIL-DES-OUI-2026-09-22.md` : avec les écoles écartées, il ne reste **qu'un** lead du profil dans le
+CRM — la prochaine vague dépend entièrement de la vérification `Website`/`Facebook` des 104 leads
+santé/optique, prévue demain.

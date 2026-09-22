@@ -40,7 +40,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 65 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 66 ligne(s).*
 
 `L51` · | **ven 18/09 20:02** | **Clinique de L'université** (Bassa, 694 36 02 03) | msg 1 — sans maquette | Envoyé | **Non** |
 `L113` · | 20:02 | Cabinet Dentaire Emmanuel · Clinique de L'université · MEDI LABO |
@@ -107,6 +107,7 @@
 `L1572` · rejoué après chaque changement voulu, `rebuild.sh` propre (42 actions, plus 43 : Univers est sorti tout
 `L1617` · Univers (domaine mort + fiche Google, 6 min), Labiomed (11 min), UNI-LABO (~2 h), Bonanjo (lendemain 08:44
 `L1623` · renseignée que pour **2** (Les Cristallin et Univers, vérifiés à la main) et `Facebook` est vide pour 105.
+`L1695` · reprogrammait donc en relance 2/3 : exactement le mode de panne d'Univers). Un seul message reste permis,
 
 ---
 

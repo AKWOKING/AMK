@@ -70,7 +70,7 @@
 `L1590` · la capture. Puis, à **16:30** : « **Labiomed et Bonanjo relancer prochaine vague** ».
 `L1599` · posé chez Bonanjo ; chez Labiomed on ne repose qu'une question de calendrier).
 `L1617` · Univers (domaine mort + fiche Google, 6 min), Labiomed (11 min), UNI-LABO (~2 h), Bonanjo (lendemain 08:44
-`L1636` · pour Labiomed, Bonanjo, Le Cristallin. **Aucun message envoyé par moi, aucun déploiement.**
+`L1636` · pour Labiomed, Bonanjo, Le Cristallin. **Aucun message envoyé par moi, aucun déploiement.**## 2026-09-22 · 16:45 · DÉCISION — « laisser tomber les écoles », et la vague du soir sort du plan
 
 ---
 

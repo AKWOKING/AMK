@@ -24,15 +24,15 @@
 | MEDI LABO | qualifying | 4 j | 0/3 | `L55` |
 | Laboratoire Meka | qualifying | 3 j | 0/3 | — |
 | Flemming Dream Labo | qualifying | 3 j | 0/3 | — |
-| Interlabo | qualifying | 3 j | 0/3 | `L469` |
-| Labo La Passerelle | qualifying | 3 j | 0/3 | `L469` |
+| Interlabo | qualifying | 3 j | 0/3 | `L1702` |
+| Labo La Passerelle | qualifying | 3 j | 0/3 | `L1702` |
 | Laboratoire Biodiagnostics | qualifying | 3 j | 0/3 | — |
 | Diagmed | qualifying | 3 j | 0/3 | — |
 | Labtag | qualifying | 3 j | 0/3 | — |
 | Laboratoire Sainte Anne | qualifying | 3 j | 0/3 | — |
 | Ctre d'Analyses Médicales Pasteur Medlas | qualifying | 3 j | 0/3 | `L761` |
 | 2K Labo | qualifying | 3 j | 0/3 | — |
-| Pathcare Diagnostics | qualifying | 3 j | 0/3 | — |
+| Pathcare Diagnostics | qualifying | 3 j | 0/3 | `L1702` |
 | CIDM St Joseph | qualifying | 3 j | 0/3 | — |
 | Cabinet Dentaire The Skye | qualifying | 4 j | 1/3 | `L53` |
 | Cabinet Dentaire YAKS | qualifying | 4 j | 1/3 | `L54` |

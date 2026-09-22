@@ -10,9 +10,9 @@
 | ④ Prix posé, en négociation | **1** |
 | ④ Offre posée | **1** |
 | ③ Aperçu envoyé | **1** |
-| ② Qualifié — en conversation | **44** |
+| ② Qualifié — en conversation | **43** |
 | ① Prospection — à qualifier | **85** |
-| ⏸ Parqué | **3** |
+| ⏸ Parqué | **4** |
 | ⛔ Écarté | **10** |
 | **Total** | **145** |
 
@@ -28,7 +28,7 @@
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| Univers Optique | Douala | 699 25 28 74 | `L1623` |
+| Univers Optique | Douala | 699 25 28 74 | `L1695` |
 
 ## ④ Offre posée — 1
 
@@ -42,7 +42,7 @@
 |---|---|---|---|
 | Le Cristallin | Douala | 699 90 55 77 | `L1636` |
 
-## ② Qualifié — en conversation — 44
+## ② Qualifié — en conversation — 43
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
@@ -71,12 +71,12 @@
 | Discovery Labs | Douala (Bassong) | 694 86 13 61 | `L110` |
 | Département Biologique | Douala (Akwa I) | 699 85 33 52 | `L110` |
 | Flemming Dream Labo | Douala (Bessenguè, feu rouge, Bld de la République) | 699 81 34 04 | — |
-| Interlabo | Douala (Akwa, 780 Rue E. Betote — R. Pau) | 677 75 54 21 | `L469` |
+| Interlabo | Douala (Akwa, 780 Rue E. Betote — R. Pau) | 677 75 54 21 | `L1702` |
 | J&E Memorial Polyclinic (JEMPO) | Douala (Deido/Bessengue) | 696 71 06 99 | `L24` |
 | Kamaïs Optic | Douala (Bessengue) | 678 435 460 | `L761` |
 | L'Opticien Bali SARL | Douala (Bali) | 670 27 60 65 | `L22` |
-| Labiomed | Douala (Deido, 104 Route Deido-Bassa) | 699 98 54 66 | `L1636` |
-| Labo La Passerelle | Douala (Deido, 820 Bld de la Réunification) | 694 71 91 22 | `L469` |
+| Labiomed | Douala (Deido, 104 Route Deido-Bassa) | 699 98 54 66 | `L1702` |
+| Labo La Passerelle | Douala (Deido, 820 Bld de la Réunification) | 694 71 91 22 | `L1702` |
 | Laboratoire Biodiagnostics | Douala (Sable, Rue Deido-Bonanjo) | 699 92 91 98 | — |
 | Laboratoire Meka | Douala (Bonamoussadi, 241 Rue 5N036) | 699 79 93 35 | — |
 | Laboratoire Sainte Anne | Douala (New-Bell, 152 Av de l'Indépendance) | 675 39 76 65 | — |
@@ -85,10 +85,9 @@
 | MEDI LABO | Douala (Akwa, 1927 Bld de la République) | 677 81 70 25 | `L55` |
 | Malia Labo | Douala | 694 56 22 44 | `L27` |
 | Midas Touch Optic Center (MITOC) | Buea (Molyko, opp former police station, Malingo) | 678908962 | `L14` |
-| OraCare Dental Clinic (Oracare237) | Buea (Molyo) | 672 52 66 86 | `L1119` |
-| Pathcare Diagnostics | Douala (Deido) | 680 00 88 45 | — |
+| Pathcare Diagnostics | Douala (Deido) | 680 00 88 45 | `L1702` |
 | Polyclinique de la Gare LE NID | Douala (Bessengue) | 699 987 775 | `L34` |
-| St. Theresa International Bilingual Comprehensive College (STIBCCOL) | Buea (Molyko) | 679151075 | `L1618` |
+| St. Theresa International Bilingual Comprehensive College (STIBCCOL) | Buea (Molyko) | 679151075 | `L1698` |
 | YONDJA ANALYSE | Douala | 696 88 88 23 | `L1324` |
 
 ## ① Prospection — à qualifier — 85
@@ -104,7 +103,7 @@
 | Biolex Labo | Douala (Deido, Rue Kotto) | 697 78 00 05 | `L460` |
 | Bioscan | Douala (New Bell) | 680 06 03 94 | `L460` |
 | Bishop Jules Peters Memorial College | Buea (Bokwaongo) | 683348856 | — |
-| Blessed Group of Schools (BGS / Blessed Anglo-Saxon) | Yaoundé (Simbock + Nomayos, BP 1839) | 680139453 | `L586` |
+| Blessed Group of Schools (BGS / Blessed Anglo-Saxon) | Yaoundé (Simbock + Nomayos, BP 1839) | 680139453 | `L1642` |
 | COMOBIL – Collège Moderne Bilingue Les Lauréats | Douala (Bonamoussadi) | — | `L1629` |
 | COSBINAL – Complexe Scolaire Bilingue NAL | Douala (Bonamoussadi, Kotto Bloc K) | 677786379 | — |
 | Caprice Optique | Douala | 675 06 16 23 | — |
@@ -114,7 +113,7 @@
 | Centre d'Imagerie Médicale Saint Joseph | Douala (Bonamoussadi) | 690 412 400 | `L49` |
 | Centre de Soins Médic-o-La Persévérance | Douala (Bonabéri) | 677 69 25 04 | `L48` |
 | Class-Optic | Douala | 691 17 18 17 | — |
-| Clinique Médico-Chirurgicale de L'Espoir (CEMECES) | Douala (Bonabéri Sodiko) | 674 93 66 04 | `L867` |
+| Clinique Médico-Chirurgicale de L'Espoir (CEMECES) | Douala (Bonabéri Sodiko) | 674 93 66 04 | `L1647` |
 | Clinique Traditionnelle Moderne du Dr Lecigah | Douala (Bonabéri Sodiko) | 699 96 95 77 | `L56` |
 | Clinique des Cités | Douala (Makepe, face Cinpharm) | 699 22 62 74 | `L46` |
 | College de l'Excellence de Limbe | Limbe | — | — |
@@ -173,7 +172,7 @@
 | Rainforest International School (RFIS) | Yaoundé (SIL, BP 1299) | 677937162 | — |
 | Saint Anne's High School Limbe (SAHISCOL) | Limbe (New Town) | 682122959 | `L694` |
 | Saint Bernard High School (SBHS) | Buea (Molyko) | — | — |
-| Salvation Bilingual High School (Molyko-Buea) | Buea (Molyko) | — | `L703` |
+| Salvation Bilingual High School (Molyko-Buea) | Buea (Molyko) | — | `L1656` |
 | St. Joseph's College Sasse (SJC Sasse) | Buea (Sasse/Small Soppo) | 677195500 | — |
 | St. Sylvester International College | Buea (Muea) | — | — |
 | Summerset Bilingual College (SMBICOL) | Buea (Wokoko) | — | — |
@@ -181,11 +180,12 @@
 | Wonders Medical Foundation | Douala (Bonamoussadi) | — | — |
 | École Privée Bilingue Les Génies | Douala (Akwa) | — | `L470` |
 
-## ⏸ Parqué — 3
+## ⏸ Parqué — 4
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
 | One Stop Medical Laboratory & Diagnostics | Buea (location TBD; co-owner based Buea) | 691632941 | — |
+| OraCare Dental Clinic (Oracare237) | Buea (Molyo) | 672 52 66 86 | `L1706` |
 | Presbyterian Comprehensive Secondary School (PCSS) Buea | Buea (Madam Namondo Alexander) | 652075229 | — |
 | Solidarity Health Foundation (Solidarity Clinic & Laboratory) | Buea (Untarred Malingo St / Molyko Checkpoint D61, P.O. Box 467; plus code 575J+7M) | 677615757 | `L761` |
 

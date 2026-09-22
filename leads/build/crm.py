@@ -902,10 +902,16 @@ ORACARE = dict(slug="oracare-buea", org="OraCare Dental Clinic (Oracare237)",
                city="Buea (Molyo)", org_type="clinic", language="EN",
                wa_number="672 52 66 86", wa_verified="yes", contact_channel="WhatsApp",
                source="content_video", source_detail="Premier lead de la campagne — vérifié par King",
-               stage="qualifying", contacted="Yes", reply="No", demo="Yes",
+               stage="parked", contacted="Yes", reply="No", demo="Yes",
                last_send_state="sent", follow_ups_sent="1",
-               notes="Message 1 lundi 14/09. FU2 (M+4) prévue dim 20/09. Concept live : oracare-concept.vercel.app "
-                     "(v3, prix + assistant). ⚠️ N'a JAMAIS répondu : message non lu attribué à tort le 18/09, corrigé.")
+               notes="Message 1 lundi 14/09. Concept live : oracare-concept.vercel.app (v3, prix + assistant). "
+                     "⚠️ N'a JAMAIS répondu : message non lu attribué à tort le 18/09, corrigé. 21/09 17:43 — "
+                     "message de CLÔTURE envoyé (« last note from me, then I stop ») : le lead est PARKED, et "
+                     "cette phrase est classée « à ne plus jamais écrire » (Enregistrements-2026-09-21-SOIR.md). "
+                     "22/09 — un brouillon de relance a été refusé par King : il appelait le dentiste « Dr Njie » "
+                     "alors que son nom est ARNOLD NKAFU (fichiers du 14/09), et il reprochait son silence un jour "
+                     "après avoir promis de se taire. UN SEUL message reste permis, lundi 28/09 : léger, sans "
+                     "reproche, justifié par du NEUF (les prix et la prise de RDV 24/7 sont sur la page).")
 
 
 def norm_slug(name: str) -> str:
@@ -1328,7 +1334,7 @@ JOUR_2209 = {
     #    non lus » du lot du 19/09.
     "labiomed-deido": {
         "last_send_state": "sent",
-        "Follow-up date": "2026-09-24",
+        "Follow-up date": "2026-10-01",
         "site_url": "https://labiomed.vercel.app",
         "Conversation_extra":
             "22/09 16:22 — relance ENVOYÉE par King : la carte du lien `labiomed.vercel.app` titrée "
@@ -1338,8 +1344,17 @@ JOUR_2209 = {
             "(vos horaires, vos examens et la prise de rendez-vous directe sur votre WhatsApp) » et la "
             "question fermée « Souhaitez-vous qu'on valide le lancement cette semaine ? ». Rappel du fil : "
             "« Ok je vous reviens des que je suis disponible » le 19/09 21:16, emoji 🙏 à 21:27, dernière "
-            "visite 21:40 — il avait donc LU la réponse de King. DÉCISION KING 16:30 : prochaine vague.",
+            "visite 21:40 — il avait donc LU la réponse de King. DÉCISION KING 16:30 : prochaine vague. "
+            "PUIS, 22/09 16:41, IL A RÉPONDU à la relance de 16:22, en trois messages : « Bjr » · « Non pas "
+            "encore je ne suis pas en place » · « Quand je serai la je vais vous contacter ». Ce n'est ni un "
+            "oui ni un refus : il n'est pas encore installé. Réponse de King dans l'heure (§0 de "
+            "sales/Send-Vague-2026-09-22-16h45.md), échéance repoussée au 1ᵉʳ octobre.",
         "Notes_extra":
+            "CORRECTION DU 22/09 16:41 — le mot « premier OUI DE LA CAMPAGNE » était trop fort : son « Oui » du "
+            "19/09 acceptait un APERÇU, et son « je vous reviens quand je serai disponible » était un report. "
+            "Sa phrase d'aujourd'hui le confirme : « pas encore, je ne suis pas en place ». On le classe donc "
+            "en REPORT MOTIVÉ, pas en oui commercial — c'est la même leçon que le « Oui » de courtoisie : un "
+            "accord sur un fichier n'est pas un accord sur un prix. "
             "Ce message du 16:22 ne contient PAS le prix (le prix du fil reste 100 000 FCFA, 50/50). "
             "À la prochaine vague, ne pas répéter le 16:22 : une seule ligne, et le prix avec le lien à "
             "l'accord. Ne jamais compter ce fil comme « quatre jours de silence » — il a reçu quelque "
