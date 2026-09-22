@@ -219,3 +219,65 @@ tombé à **2 blocs sur 12** (`chart` + `cmpgrid`, le moment écrit de cette pag
 sha256 `625ce76a78f9b341…`, 484 runs de texte, 0 finding de contraste, aperçu identique au octale près
 (`diff` = 0 ligne). Le message A/B du 21/09 reste valable tel quel : la panne était technique, pas
 commerciale — mais il faut **redonner le fichier**, sinon c'est la version cassée qu'il ouvrira.
+## 22/09 · 14:35 · audit de la page en ligne (?v=7) — quatre défauts trouvés chez le client, et l'hébergement tranché par le RDAP
+
+**Ce qui a été relu, pas reçu en résumé.** La page `https://lecristallin-concept.vercel.app/?v=7` a été
+ouverte et lue en entier (les deux moitiés), et `http://lecristallinoptique.com/` aussi. Le RDAP du domaine
+a été interrogé. Trois sources, aucune supposition.
+
+**La source de cette v7 n'est pas dans ce dépôt.** `demos/build_le_cristallin.py` et
+`concept-le-cristallin-v1.html` existent ici, mais aucun marqueur de la v7 (« OFFSHORE », « SUNU »,
+« 32 ans », « Grandes entreprises & sociétés », `?v=7`) n'y figure : la page publiée a été construite
+dans l'autre session. La règle de la maison tient ici : **pas de seconde source reconstituée à
+l'aveugle** — on livre la liste exacte des corrections, ou on reçoit le chemin du fichier et on applique
+avec les contrôles.
+
+**1 · Le mur des assurances compte faux, dans les deux sens.** La page affiche dix-sept badges et la FAQ
+répète « 17 partner insurers ». En face, ce que le client a écrit : 15 sociétés le 21/09 (dont « G.M.C.
+ASCOMA CAMEROUN » = UNE société) + 4 nouvelles le 22/09 = **19 distinctes**, deux noms orthographiés par
+lui-même (ROYAL ONYX, EXCA) étant des rectifications, pas des ajouts. Sur la page : `G.M.C.` et
+`Ascoma Cameroun` sont deux badges (doublon compté deux fois) et **SAAR, ALPHA, L.D.A. manquent**. Le
+chiffre 17 est donc exact par accident. À corriger : 19 badges, 19 dans la phrase de FAQ.
+
+**2 · Un bloc imprimé deux fois.** « ### Grandes entreprises & sociétés » + la ligne « 32 ans d'expérience…
+» apparaissent en double dans le HTML rendu ; la seconde occurrence n'a pas les quatre badges (CAMRAIL,
+SOCAPALM, SAFACAM, P.A.D.). Effet de bord visible sur mobile.
+
+**3 · Horaires : la page contredit son propre flyer.** Publié : `Lun–Ven 8h30–18h30 · Sam 8h30–13h30`.
+Flyer envoyé par lui le 21/09 à 18:02 : **09h30–19h30 / 09h30–13h30**. Une heure d'écart sur toute la
+semaine, sur le champ le plus consulté d'un site d'opticien. Le 21/09 à 20:10, le message d'envoi
+annonçait déjà « 8h30–13h30 » au client : l'erreur est antérieure à la v7, elle n'a jamais été
+corrigée depuis. Ce n'est pas à nous de trancher — une ligne à lui envoyer, et la réponse devient la
+source unique (tableau + `openingHoursSpecification` + bandeau, avec un contrôle qui refuse toute heure
+publiée qui la contredit, comme chez Univers).
+
+**4 · Trois âges qui ne s'accordent pas.** Sa page actuelle : « installé au Cameroun depuis 2010 » et
+« 24 ans d'expérience ». Son message du 21/09 21:13 : « 32 Ans d'expérience. ». La v7 : « 32 ans » dans
+le corps, « depuis 2010 » dans la description partagée. Formulation qui tient sans inventer, à valider
+par lui : « Cabinet installé à Douala depuis 2010, une équipe qui cumule 32 ans d'expérience en
+opticien-lunetterie. »
+
+**Les logos ne sont pas à attendre : ils sont déjà publiés par lui.** `http://lecristallinoptique.com/img/clients/`
+→ c1 MUTUELLES DES BRASSERIES · c2 (répété) · c3 GRAS SAVOYE · c4 ALPHA · c5 SAHAM · c6 CHANAS ·
+c7 + c13 ACTIVA (**doublon chez lui aussi**) · c8 BENEFICIAL GENERAL · c9 SAAR · c11 ZENITHE ·
+c12 SAMARITAN · c14 ASCOMA. Quatre de ces noms n'ont jamais été cités dans la conversation : les reprendre
+tels quels publierait des partenaires non validés → on lui demande lesquels il garde, en une ligne.
+
+**Hébergement et domaine : la question posée par King a une réponse écrite dans le registre, pas dans un
+devis.** `lecristallinoptique.com` — enregistré **13/06/2018**, expire **13/06/2027**, registrar **LWS
+(Ligne Web Services, IANA 1630)**, statut `clientTransferProhibited`, nameservers `ns1/ns2.lws-hosting.net`
++ `ns3/ns4.lwsdns.com`. Donc : domaine payé neuf ans d'avance, hébergement mutualisé LWS déjà en place
+(gestionnaire de fichiers / FTP), et **rien à acheter ni à facturer des deux côtés**. La route sûre est de
+**poser le fichier sur SON hébergement** et de ne pas toucher au DNS : son adresse
+`contact@lecristallinoptique.com` vit sur ce domaine et une bascule de nameservers l'emporterait (les MX
+aussi). Si on préfère garder l'hébergeur du concept (Vercel, TLS automatique — la page actuelle appelle
+toutes ses images en `http://` absolu, donc mixed content dès qu'on passe en https), on ne change qu'un
+`A`/`CNAME`, jamais les `NS`, et avec son accord écrit.
+
+**Ce qui se facture, et ce qui ne se facture pas.** Le travail : page, contenus, corrections jusqu'à
+validation, mise en ligne (forfait annoncé 100 000 FCFA, 50/50). L'option page/animation Facebook
+(+50 000). Éventuellement une maintenance (mises à jour, sauvegarde, surveillance du certificat) — le
+seul récurrent honnête ici. Pas d'hébergement, pas de domaine. Et la demande du client « où est
+l'assistant pour faire des modifications » (21/09 21:13) doit être répondue avant toute facture : il croit
+que le widget est un éditeur. Ce n'en est pas un ; s'il veut s'éditer lui-même, c'est un chantier à part,
+donc un prix à part — jamais dans le forfait.

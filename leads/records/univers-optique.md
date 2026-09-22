@@ -39,7 +39,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 54 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 57 ligne(s).*
 
 `L51` · | **ven 18/09 20:02** | **Clinique de L'université** (Bassa, 694 36 02 03) | msg 1 — sans maquette | Envoyé | **Non** |
 `L113` · | 20:02 | Cabinet Dentaire Emmanuel · Clinique de L'université · MEDI LABO |
@@ -94,7 +94,10 @@
 `L1469` · `demos/univers-optique-site-v2.html` 718 514 o, `…-sobre.html` 66 676 o, `concept-univers-optique-v2.html`
 `L1470` · 755 254 o (site + note). Feuille d’envoi du soir : `sales/Send-UNIVERS-OPTIQUE-2026-09-22-Soir.md`.
 `L1475` · `demos/concept-le-cristallin-v1.html` (la copie du dimanche était tronquée). Univers Optique reste en
-`L1480` · réduit **Univers Optique et Le Cristallin** à leur ligne d'annuaire : stage effacé, conversation vidée,
+`L1480` · réduit **Univers Optique et Le Cristallin** à leur ligne d'annuaire : closing effacé, conversation vidée,
+`L1505` · *Follow-up* reposés, Univers Optique laissé en `closing` (là, le prix a été dit le 21/09 à 18:08). Un
+`L1540` · sur `e4220c5`, les trois livrables d'Univers re-comparés aux mêmes empreintes (`ec91063bbe80604b`,
+`L1548` · `sales/Send-UNIVERS-OPTIQUE-2026-09-22-Soir.md` réécrit pour ne plus relancer le Cristallin à l'aveugle.
 
 ---
 

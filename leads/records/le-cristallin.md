@@ -10,17 +10,18 @@
 | Type | other |
 | Ville | Douala |
 | Langue de contact | FR |
-| Étape | closing |
+| Étape | demo |
 | WhatsApp | 699 90 55 77 |
 | Numéro vérifié | unknown |
 | Contact | MESSOUE LONTE Serge Nazaire — ASCOMA écrit « MESSOUA » : DEUX graphies connues, à caler sur sa pièce d'identité, jamais tranchées par nous |
 | Canal | WhatsApp |
 | Contacté | Yes |
-| Réponse | YES lun 21/09 17:53 « Ok » (2 min) puis 18:01 note VOCALE : il a un site ET une page Facebook, et il DEMANDE si on veut bien lui en créer une autre = signal d'achat. |
+| Réponse | OUI, et le fil est NOURRI par lui : 22/09 13:50 « Bonjour pour les assurances » + six noms, 13:55 vocale de 31 s. Il rectifie nos orthographes (ROYAL ONYX, EXCA), il réclame des ajouts (lunettes de sécurité OFFSHORE/ONSHORE, solaires, natation), il compte avec nous. Ce n'est plus un « je vous reviens » : il édite sa propre page par messages. |
 | Maquette / site | Yes |
 | Relances envoyées | 0 |
 | Source | directory |
 | Détail source | Annuaire officiel ONOC + Maligah |
+| Site vérifié le | 2026-09-22 |
 
 ## Contradiction résolue (M2)
 
@@ -30,15 +31,15 @@
 
 ## Notes
 
-| CONTRADICTION RÉSOLUE (M2) — retenu : lecristallinoptique.com est EN LIGNE et a été lu EN ENTIER le 21/09 (roi : « Le cristallin a déjà un site »), et IL A AUSSI UNE PAGE FACEBOOK — dite par lui dans sa note vocale de 18:01, absente de ma fiche : je n'avais pas cherché là où il me pointait. · FB : 515 likes · 44 en parlent · 98 y étaient (lus le 21/09 dans des annuaires publics, affichés sans enjoliver sur la maquette) · avis Google : 3 avis, note 3,0. ENVOI : envoyer LE FICHIER `demos/concept-le-cristallin-v1.html` (592 Ko, ≤ budget WhatsApp 1 100 Ko), PAS un lien — `amk-cm.vercel.app/cristallin/` répond 404 tant que rien n'est déployé. BLOQUÉ par UNE réponse de King : est-ce qu'AMK reprend la page Facebook du cabinet, et à 50 000 FCFA ? Réponse « A » (page seule) ou « B » (page + FB) → le message part. Feuille prête : `sales/Send-LE-CRISTALLIN-2026-09-21-Soir.md` (A sans prix / B : refonte 100 000 FCFA + reprise page FB 50 000 FCFA, 50/50, rien dû avant accord). S'il marchande : on ajuste le PÉRIMÈTRE, on ne baisse jamais les 100 000 FCFA. ADRESSE CLOSE à trois sources (site + flyer + annuaire ASCOMA) : Akwa, boulevard de la République, carrefour TIF, face ancien COMECI · 242 65 12 65 / 699 90 55 77 / 679 63 20 12 · contact@lecristallinoptique.com. MON « Bonapriso / CTFIC Mballa 2 » d'hier soir ne figurait dans AUCUNE des trois : retiré. La maquette ne corrige plus, elle DEMANDE s'il existe un second local.
+| CONTRADICTION RÉSOLUE (M2) — retenu : lecristallinoptique.com est EN LIGNE et a été lu EN ENTIER le 21/09 (roi : « Le cristallin a déjà un site »), et IL A AUSSI UNE PAGE FACEBOOK — dite par lui dans sa note vocale de 18:01, absente de ma fiche : je n'avais pas cherché là où il me pointait. · FB : 515 likes · 44 en parlent · 98 y étaient (lus le 21/09 dans des annuaires publics, affichés sans enjoliver sur la maquette) · avis Google : 3 avis, note 3,0. ENVOI : envoyer LE FICHIER `demos/concept-le-cristallin-v1.html` (592 Ko, ≤ budget WhatsApp 1 100 Ko), PAS un lien — `amk-cm.vercel.app/cristallin/` répond 404 tant que rien n'est déployé. BLOQUÉ par UNE réponse de King : est-ce qu'AMK reprend la page Facebook du cabinet, et à 50 000 FCFA ? Réponse « A » (page seule) ou « B » (page + FB) → le message part. Feuille prête : `sales/Send-LE-CRISTALLIN-2026-09-21-Soir.md` (A sans prix / B : refonte 100 000 FCFA + reprise page FB 50 000 FCFA, 50/50, rien dû avant accord). S'il marchande : on ajuste le PÉRIMÈTRE, on ne baisse jamais les 100 000 FCFA. ADRESSE CLOSE à trois sources (site + flyer + annuaire ASCOMA) : Akwa, boulevard de la République, carrefour TIF, face ancien COMECI · 242 65 12 65 / 699 90 55 77 / 679 63 20 12 · contact@lecristallinoptique.com. MON « Bonapriso / CTFIC Mballa 2 » d'hier soir ne figurait dans AUCUNE des trois : retiré. La maquette ne corrige plus, elle DEMANDE s'il existe un second local. · PAGE EN LIGNE (relue 22/09, ?v=7) : https://lecristallin-concept.vercel.app/?v=7 — bandeau « Aperçu de site par AMK — pas encore le site officiel » et widget « Réponses du site · réservation vers WhatsApp · DÉMO » : ces deux mentions tombent à la publication. QUATRE CORRECTIONS À FAIRE, toutes vérifiables : (1) le mur des assurances compte « 17 » en double-countant G.M.C. et Ascoma Cameroun (UNE seule société dans son message) et en omettant SAAR, ALPHA et L.D.A. — le compte réel de ce qu'il a donné est 19 distinctes (15 hier + 4 aujourd'hui, dont deux rectifications d'orthographe) ; (2) le bloc « Grandes entreprises & sociétés / 32 ans d'expérience » est imprimé DEUX FOIS, le second sans les quatre badges ; (3) HORAIRES : la page publie « Lun-Ven 8h30–18h30 · Sam 8h30–13h30 » alors que SON FLYER (envoyé 21/09 18:02) dit 09h30–19h30 et 09h30–13h30 — une heure d'écart sur toute la journée, à lui confirmer avant la publication, c'est le champ le plus consulté d'un site d'opticien ; (4) « depuis 2010 » (16 ans) cohabite avec « 32 ans d'expérience » et avec le « 24 ans » de son site actuel — trois chiffres, une phrase à écrire avec lui. LOGOS : il n'est PAS besoin de les attendre, son site actuel les sert déjà — http://lecristallinoptique.com/img/clients/c9.jpg (SAAR), c3.jpg (GRAS SAVOYE), c4.jpg (ALPHA), c5.jpg (SAHAM), c1.jpg (MUTUELLES DES BRASSERIES), c8.jpg (BENEFICIAL GENERAL), c11.jpg (ZENITHE), c12.jpg (SAMARITAN), c13.jpg + c7.jpg (ACTIVA — doublon chez lui aussi), c14.png (ASCOMA), c6.png (CHANAS). Quatre de ces noms n'ont jamais été cités dans la conversation (SAHAM, GRAS SAVOYE, MUTUELLES DES BRASSERIES, BENEFICIAL GENERAL) : à lui demander s'il les revendique encore, sinon le mur affiche des partenaires qu'il n'a pas validés. ASSOCIATION ATTENDUE : il a demandé où était l'assistant pour modifier la page — ce n'est pas un éditeur (il répond aux visiteurs à partir des infos du cabinet) ; s'il veut s'éditer lui-même, c'est un chantier à part, donc un prix à part. PAIEMENT : jamais abordé avec lui (rappel : la proposition A/B n'a pas été envoyée). HÉBERGEMENT + DOMAINE : rien d'acheté, rien à facturer — domaine payé jusqu'au 13/06/2027 (LWS, IANA 1630), hébergement LWS déjà en place (ns1/ns2.lws-hosting.net), donc la route sûre est de POSER le fichier sur SON hébergement sans toucher au DNS : son adresse contact@lecristallinoptique.com vit sur ce domaine et une bascule de nameservers l'emporterait. Ce qui se facture : la construction et la mise en ligne (forfeit annoncé 100 000 FCFA, 50/50), l'option page Facebook (+50 000), et une ligne de maintenance s'il en veut — le seul récurrent honnête, l'infra restant chez lui.
 
 ## Prochaine action
 
-**Répondre dans l'heure.** Une réponse humaine est en attente : c'est la priorité absolue (règle des 90 secondes).
+**0 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 53 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 59 ligne(s).*
 
 `L837` · - `Le Cristallin` 17:51 · `Univers Optique` 17:50 · `Disc Optique Médicale` 17:48 · `Tchaya Optique` 17:47 :
 `L881` · ## Lundi 21/09/2026 — 18:20 → 19:15 · « Ok » de Le Cristallin : le premier aperçu demandé, construit et branché sur le CRM
@@ -92,7 +93,13 @@
 `L1435` · **Et a ne pas perdre de vue** : LE CRISTALLIN attend toujours sa reponse **A / B** (100 000 · 100 000 +
 `L1473` · **Et ne pas perdre de vue.** LE CRISTALLIN attend sa réponse **A / B** (100 000 · ou 100 000 + 50 000 de
 `L1475` · `demos/concept-le-cristallin-v1.html` (la copie du dimanche était tronquée). Univers Optique reste en
-`L1480` · réduit **Univers Optique et Le Cristallin** à leur ligne d'annuaire : stage effacé, conversation vidée,
+`L1480` · réduit **Univers Optique et Le Cristallin** à leur ligne d'annuaire : closing effacé, conversation vidée,
+`L1494` · ## 2026-09-22 · 14:15 → 14:45 (horodatage du bac) · LE CRISTALLIN — l'aperçu est en ligne et le client l'édite avec nous : quatre défauts trouvés sur la page, et le prix n'a jamais été posé
+`L1511` · **Ensuite, ce que la page en ligne dit vraiment** (relue en entier, `?v=7`, et `lecristallinoptique.com`
+`L1525` · `lecristallinoptique.com` enregistré le **13/06/2018**, expire le **13/06/2027**, registrar **LWS (IANA
+`L1529` · `contact@lecristallinoptique.com` vit sur ce domaine et qu'une bascule de nameservers emporterait les MX.
+`L1546` · `sales/Send-LE-CRISTALLIN-2026-09-23-Matin.md` (les quatre points à valider avec lui, la clarification de
+`L1548` · `sales/Send-UNIVERS-OPTIQUE-2026-09-22-Soir.md` réécrit pour ne plus relancer le Cristallin à l'aveugle.
 
 ---
 

@@ -1491,4 +1491,58 @@ vrai). **Loi pour la suite : avant `rebuild.sh`, `git fetch` + merge de la branc
 qu'on croit en retard est une source qui réécrit l'histoire ; et le garde-fou `guard.py` n'est pas une
 formalité, c'est lui qui a rendu le doublon visible.**
 une sortie, on corrige la source — et un rebuild doit être sûr à n'importe quelle heure.**
+## 2026-09-22 · 14:15 → 14:45 (horodatage du bac) · LE CRISTALLIN — l'aperçu est en ligne et le client l'édite avec nous : quatre défauts trouvés sur la page, et le prix n'a jamais été posé
 
+**Ce que King a apporté.** Six captures du fil (21/09 17:51 → 22/09 15:08) et une question de marché, pas
+de technique : « il a déjà un site, donc on n'aura plus à lui facturer l'hébergement et le nom de domaine,
+n'est-ce pas ? on utilise ce qu'il a déjà ou ce n'est pas possible ? » — et une précision qui remet les
+choses à leur place : **le paiement n'a pas encore été abordé avec lui.**
+
+**D'abord la vérité du tableau.** Le CRM le tenait en `closing` avec une relance « A/B » à faire le 23/09.
+`closing`, dans cette maison, veut dire *prix posé*. Or la proposition A/B (100 000 · +50 000 Facebook) a
+été **rédigée ici le 21/09 au soir et jamais envoyée** — relue dans le fil : aucun message ne contient un
+chiffre. Le lead est donc redescendu à `demo` (aperçu envoyé, en cours de validation), `stage_since` et
+*Follow-up* reposés, Univers Optique laissé en `closing` (là, le prix a été dit le 21/09 à 18:08). Un
+tableau qui se donne trois jours d'avance ne se rattrape pas : il fait poser le prix au mauvais moment,
+ou ne pas le poser du tout. Écrit dans la source : table `JOUR_2209` + `_apply_jour()` dans
+`leads/build/crm.py` (mêmes lois que `EVENING_2109` : slug introuvable = construction refusée, les champs
+de récit s'**ajoutent**, les scalaires s'écrasent), verrou du garde-fou rejoué après validation.
+
+**Ensuite, ce que la page en ligne dit vraiment** (relue en entier, `?v=7`, et `lecristallinoptique.com`
+aussi) : quatre défauts, tous vérifiables en trente secondes. (1) le mur d'assurances affiche 17 badges
+en **comptant deux fois « G.M.C. » et « Ascoma Cameroun »** (une seule société dans son message) et en
+**omettant SAAR, ALPHA, L.D.A.** — le compte réel de ce qu'il a fourni est **19** ; (2) le bloc « Grandes
+entreprises & sociétés / 32 ans » est **imprimé deux fois**, la seconde sans les quatre badges ;
+(3) les horaires publiés (**8h30–18h30 · samedi 8h30–13h30**) **contredisent son flyer** qu'il a envoyé
+lui-même le 21/09 à 18:02 (**09h30–19h30 · 09h30–13h30**) — une heure d'écart sur le champ le plus
+consulté d'un site d'opticien, et l'erreur vient de notre message du 21/09, pas de sa relecture ;
+(4) « depuis 2010 » (16 ans), « 24 ans » (sa page actuelle) et « 32 ans » (son message) cohabitent.
+Ajouté : il faut répondre à sa question du 21/09 21:13 — il croit que l'**assistant** du bas de page est
+l'outil où **lui** modifie le site. Ce n'en est pas un ; s'il veut s'éditer lui-même, c'est un chantier à
+part, donc un prix à part, jamais dans le forfait.
+
+**Et la réponse à la question d'argent, cherchée au registre plutôt qu'au devis.** RDAP interrogé :
+`lecristallinoptique.com` enregistré le **13/06/2018**, expire le **13/06/2027**, registrar **LWS (IANA
+1630)**, nameservers `ns1/ns2.lws-hosting.net` → le domaine est payé neuf ans d'avance et l'hébergement
+mutualisé est déjà chez lui. **Donc oui : rien à acheter, rien à facturer des deux côtés** — et la route
+sûre est de poser le nouveau fichier sur SON hébergement, sans toucher au DNS, parce que
+`contact@lecristallinoptique.com` vit sur ce domaine et qu'une bascule de nameservers emporterait les MX.
+Ce qui se facture : la construction, les corrections jusqu'à validation, la mise en ligne ; l'option
+Facebook ; et une maintenance s'il en veut — le seul récurrent honnête. Ses logos, aussi, sont déjà publiés
+chez lui (`…/img/clients/c*.jpg|png`), donc inutiles de les attendre — mais quatre noms de ce mur n'ont
+jamais été cités par lui : on ne les reprend pas sans qu'il dise lesquels il garde.
+
+**La panne de ce bac, écrite parce qu'elle a faussé dix minutes de lecture.** À 14:15 l'espace de travail a
+été **restauré depuis un instantané** : `crm.py` revenu à une version antérieure, `guard.py` et
+`generators.lock.json` disparus du disque, les commits du jour absents de l'arbre — et mes premières
+recherches de « EVENING_2109 » ne trouvaient plus rien, ce qui faisait douter d'une vérification déjà
+faite. Rattrapé : `git fetch origin arena/01a0c495-amk` + `git reset --hard FETCH_HEAD` → HEAD de retour
+sur `e4220c5`, les trois livrables d'Univers re-comparés aux mêmes empreintes (`ec91063bbe80604b`,
+`b6ef949f2d74496c`, `e3d9243bd376fac0`), `guard.py check` rc 0. **Loi redite par les faits : avant
+`rebuild.sh`, la branche est mise à jour ; et une divergence de hash avec `generators.lock.json` se lit
+avant de lire le CSV.**
+
+**Rien d'envoyé, rien de déployé par mes soins.** Feuille prête pour demain matin :
+`sales/Send-LE-CRISTALLIN-2026-09-23-Matin.md` (les quatre points à valider avec lui, la clarification de
+l'assistant, le cadre de prix posé sur « vous ne payez rien de nouveau »), et l'item 3 de
+`sales/Send-UNIVERS-OPTIQUE-2026-09-22-Soir.md` réécrit pour ne plus relancer le Cristallin à l'aveugle.

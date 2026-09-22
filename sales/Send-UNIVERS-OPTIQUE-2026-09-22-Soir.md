@@ -92,9 +92,11 @@ vérifier les **718 514 octets** et `ec91063bbe…` avant de répondre à la rem
 2. **Photos réelles** : les six que la note réclame (façade avec l'enseigne, salle de vente au jour,
    atelier, ordonnance en main, équipe, vérificateur de lunetterie). Tant qu'elles manquent, les rendus
    disent « rendu de concept » — ils ne se font pas passer pour des photos du cabinet.
-3. **LE CRISTALLIN** : sa réponse **A / B** (page seule 100 000 · page + page Facebook 50 000) — relance
-   prévue le 23/09, et lui renvoyer `demos/concept-le-cristallin-v1.html` (620 492 o), sa copie du
-   dimanche étant cassée.
+3. **LE CRISTALLIN** — l'état a changé depuis ce soir, ne pas relancer à l'aveugle : son aperçu est **en
+   ligne et en cours d'édition avec lui** (`https://lecristallin-concept.vercel.app/?v=7`), et le prix n'a
+   **toujours pas été posé** (la proposition A/B n'a jamais été envoyée). Tout est repris dans
+   `sales/Send-LE-CRISTALLIN-2026-09-23-Matin.md` : quatre corrections de page (dont les horaires,
+   8h30 publié contre 09h30 sur son flyer), le mur d'assurances à 19 et le cadre de prix à ouvrir.
 4. **Feuille de leads** : le *Follow-up date* d'Univers passe du 22/09 au **23/09** dès ce fichier
    envoyé — à changer dans `leads/build/crm.py`, bloc `EVENING_2109` (la table d'état), **jamais dans
    `leads/CRM.csv`** : c'est une SORTIE, et le 22/09 à 08:31 un `rebuild.sh` lancé depuis une branche en

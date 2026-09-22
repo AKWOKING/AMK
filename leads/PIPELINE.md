@@ -7,8 +7,9 @@
 
 | Étape | Leads |
 |---|---|
-| ④ Prix posé, en négociation | **2** |
+| ④ Prix posé, en négociation | **1** |
 | ④ Offre posée | **1** |
+| ③ Aperçu envoyé | **1** |
 | ② Qualifié — en conversation | **44** |
 | ① Prospection — à qualifier | **85** |
 | ⏸ Parqué | **3** |
@@ -27,18 +28,23 @@
 
 > **Règle des 90 secondes.** Une réponse en attente passe avant tout le reste.
 
-## ④ Prix posé, en négociation — 2
+## ④ Prix posé, en négociation — 1
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| Le Cristallin | Douala | 699 90 55 77 | `L1480` |
-| Univers Optique | Douala | 699 25 28 74 | `L1480` |
+| Univers Optique | Douala | 699 25 28 74 | `L1548` |
 
 ## ④ Offre posée — 1
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
 | UNI-LABO | Douala (Bonamoussadi, Carrefour Etoo) | 696 13 98 19 | `L134` |
+
+## ③ Aperçu envoyé — 1
+
+| Lead | Ville | WhatsApp | Trace au journal |
+|---|---|---|---|
+| Le Cristallin | Douala | 699 90 55 77 | `L1548` |
 
 ## ② Qualifié — en conversation — 44
 
@@ -151,7 +157,7 @@
 | Lux Optique | Douala | 655 04 05 49 | — |
 | LyfyOptic | Douala | 699 98 06 66 | — |
 | Maff Optique | Douala | 699 93 19 56 | — |
-| Maison Optique | Douala | 657 73 70 45 | `L1345` |
+| Maison Optique | Douala | 657 73 70 45 | `L1502` |
 | Marthlo Comprehensive Bilingual College | Buea | — | — |
 | MegaOptic | Douala | 698 82 10 27 | `L815` |
 | Mel's Optic | Douala | 690 98 85 18 | — |

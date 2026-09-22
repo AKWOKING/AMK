@@ -1220,6 +1220,87 @@ EVENING_2109 = {
 }
 
 
+# ── JOUR 22/09 · le fil LE CRISTALLIN, relevé sur les captures de King (15:30) et la page en ligne.
+#    Pourquoi le stage REDESCEND de « closing » à « demo » : « closing » veut dire prix posé, en
+#    négociation. Le prix n'a jamais été posé avec lui — la proposition A/B (100 000 / +50 000 Facebook)
+#    a été rédigée ICI le 21/09 au soir et n'a JAMAIS été envoyée. Ce qui est vrai, c'est qu'un aperçu
+#    est en ligne et qu'il le travaille avec nous : « demo ». Faire semblant d'être plus avancé que le
+#    client ne rapporte rien et coûte la seule chose qui vaut : la vérité du tableau.
+JOUR_2209 = {
+    "le-cristallin": {
+        "stage": "demo",
+        "stage_since": "2026-09-22",
+        "Follow-up date": "2026-09-23",
+        "Contacted": "Yes",
+        "Demo made": "Yes",
+        "last_send_state": "delivered",
+        "site_checked_on": "2026-09-22",
+        "Website": "lecristallinoptique.com",
+        "Reply": "OUI, et le fil est NOURRI par lui : 22/09 13:50 « Bonjour pour les assurances » + six "
+                 "noms, 13:55 vocale de 31 s. Il rectifie nos orthographes (ROYAL ONYX, EXCA), il réclame "
+                 "des ajouts (lunettes de sécurité OFFSHORE/ONSHORE, solaires, natation), il compte avec "
+                 "nous. Ce n'est plus un « je vous reviens » : il édite sa propre page par messages.",
+        "reply_type": "human",
+        "Contact channel": "WhatsApp",
+        "Conversation_extra":
+            "21/09 20:10 le concept est envoyé (lien Vercel) · 20:33 « Ok » puis 20:49 VOCAL 1:00 · "
+            "21:13 « J'ai pas bien compris où est l'assistant pour faire des modifications » — IL CROIT "
+            "QUE L'ASSISTANT EST UN OUTIL OÙ LUI MODIFIE LA PAGE · 21:13 « Pour les sociétés : CAMRAIL, "
+            "SOCAPALM, SAFACAM, P.A.D. » · 21:13 douze assurances (G.M.C. ASCOMA CAMEROUN, CHANAS S.A., "
+            "SANHLAM, PASS24, A.G.C., ZENITHE, WILLIS TOWERS WATSON, G.G.A., EXCCA, ROYAL ONYX, ACTIVA, "
+            "OLEA) · 21:13 trois de plus (SAAR, ALPHA, L.D.A.) · 21:13 « 32 Ans d'expérience. » · "
+            "21:26 « Il faut mettre LUNETTES DE SÉCURITÉ ET DE PROTECTION OFFSHORE/ ONSHORE » · 21:29 "
+            "« Lunettes solaires », « Lunettes de Natation » · 21:34 son deuxième numéro : 679632012 · "
+            "21:35 carte de contact « B B Joe Mtn » · 21:47 King : deux numéros intégrés (679 63 20 12 et "
+            "681 49 45 89) clicables vers WhatsApp, 699 90 55 77 garde la priorité RDV · 21:50 « On va "
+            "continuer Demain » · 22/09 13:50 six assurances de plus (SUNU, A.F.G, ROYAL ONYX rectif, "
+            "EXCA rectif, LES MUTUELLES RÉUNIES S.A., SAMARITAN) · 14:43 King « je vais les ajouter » · "
+            "15:08 King : wall de logos + demande des logos officiels, photos et vidéos.",
+        "Notes_extra":
+            "PAGE EN LIGNE (relue 22/09, ?v=7) : https://lecristallin-concept.vercel.app/?v=7 — bandeau "
+            "« Aperçu de site par AMK — pas encore le site officiel » et widget « Réponses du site · "
+            "réservation vers WhatsApp · DÉMO » : ces deux mentions tombent à la publication. QUATRE "
+            "CORRECTIONS À FAIRE, toutes vérifiables : (1) le mur des assurances compte « 17 » en "
+            "double-countant G.M.C. et Ascoma Cameroun (UNE seule société dans son message) et en "
+            "omettant SAAR, ALPHA et L.D.A. — le compte réel de ce qu'il a donné est 19 distinctes "
+            "(15 hier + 4 aujourd'hui, dont deux rectifications d'orthographe) ; (2) le bloc « Grandes "
+            "entreprises & sociétés / 32 ans d'expérience » est imprimé DEUX FOIS, le second sans les "
+            "quatre badges ; (3) HORAIRES : la page publie « Lun-Ven 8h30–18h30 · Sam 8h30–13h30 » alors "
+            "que SON FLYER (envoyé 21/09 18:02) dit 09h30–19h30 et 09h30–13h30 — une heure d'écart sur "
+            "toute la journée, à lui confirmer avant la publication, c'est le champ le plus consulté "
+            "d'un site d'opticien ; (4) « depuis 2010 » (16 ans) cohabite avec « 32 ans d'expérience » "
+            "et avec le « 24 ans » de son site actuel — trois chiffres, une phrase à écrire avec lui. "
+            "LOGOS : il n'est PAS besoin de les attendre, son site actuel les sert déjà — "
+            "http://lecristallinoptique.com/img/clients/c9.jpg (SAAR), c3.jpg (GRAS SAVOYE), c4.jpg "
+            "(ALPHA), c5.jpg (SAHAM), c1.jpg (MUTUELLES DES BRASSERIES), c8.jpg (BENEFICIAL GENERAL), "
+            "c11.jpg (ZENITHE), c12.jpg (SAMARITAN), c13.jpg + c7.jpg (ACTIVA — doublon chez lui aussi), "
+            "c14.png (ASCOMA), c6.png (CHANAS). Quatre de ces noms n'ont jamais été cités dans la "
+            "conversation (SAHAM, GRAS SAVOYE, MUTUELLES DES BRASSERIES, BENEFICIAL GENERAL) : à lui "
+            "demander s'il les revendique encore, sinon le mur affiche des partenaires qu'il n'a pas "
+            "validés. ASSOCIATION ATTENDUE : il a demandé où était l'assistant pour modifier la page — "
+            "ce n'est pas un éditeur (il répond aux visiteurs à partir des infos du cabinet) ; s'il veut "
+            "s'éditer lui-même, c'est un chantier à part, donc un prix à part. PAIEMENT : jamais abordé "
+            "avec lui (rappel : la proposition A/B n'a pas été envoyée). HÉBERGEMENT + DOMAINE : rien "
+            "d'acheté, rien à facturer — domaine payé jusqu'au 13/06/2027 (LWS, IANA 1630), hébergement "
+            "LWS déjà en place (ns1/ns2.lws-hosting.net), donc la route sûre est de POSER le fichier sur "
+            "SON hébergement sans toucher au DNS : son adresse contact@lecristallinoptique.com vit sur ce "
+            "domaine et une bascule de nameservers l'emporterait. Ce qui se facture : la construction et "
+            "la mise en ligne (forfeit annoncé 100 000 FCFA, 50/50), l'option page Facebook (+50 000), "
+            "et une ligne de maintenance s'il en veut — le seul récurrent honnête, l'infra restant chez "
+            "lui.",
+        "Website status":
+            "VIVANT et consultable (relu EN ENTIER le 22/09) : domaine enregistré le 13/06/2018, expire le "
+            "13/06/2027, registrar LWS (Ligne Web Services, IANA 1630), nameservers ns1/ns2.lws-hosting.net "
+            "+ ns3/ns4.lwsdns.com → mutualisé LWS, gestionnaire de fichiers/FTP disponibles, donc le "
+            "nouveau fichier s'y remplace sans rien acheter. Défauts relevés sur SA page actuelle : toutes "
+            "ses images sont appelées en http:// absolu (mixed content bloqué dès qu'une page est servie en "
+            "https), le mur « Ils nous font confiance » est répété trois fois dans le même carrousel, "
+            "ACTIVAASSURANCES y figure deux fois, et le texte est collé sans espaces (« bonsde prise en "
+            "charge », « porte feuille », « ou quoi »). C'EST UNE REFONTE, PAS UNE CRÉATION.",
+    },
+}
+
+
 def _apply_evening(out: list) -> None:
     by = {r.get("slug"): r for r in out}
     missing = [k for k in EVENING_2109 if k not in by]
@@ -1235,6 +1316,27 @@ def _apply_evening(out: list) -> None:
             r["Notes"] = (str(r.get("Notes") or "") + " · " + extra).strip(" ·")
         r["stage_since"] = "2026-09-21"
         r["follow_ups_sent"] = r.get("follow_ups_sent") or "0"
+
+
+
+def _apply_jour(out: list) -> None:
+    """Le relevé du jour : il ÉCRASE les champs scalaires qu'il cite (il est plus récent que tout le
+    monde) et APPEND les deux champs de récit (`Conversation_extra`, `Notes_extra`) — un fil de
+    conversation ne se remplace pas, il se continue. Comme pour EVENING_2109, un slug introuvable fait
+    REFUSER la construction : une table d'état qui ne trouve pas sa ligne est une table menteuse."""
+    by = {r.get("slug"): r for r in out}
+    missing = [k for k in JOUR_2209 if k not in by]
+    if missing:
+        sys.exit(f"✗ JOUR_2209 : slug(s) introuvable(s) {missing} — rien n'a été écrit.")
+    for slug, patch in JOUR_2209.items():
+        r = by[slug]
+        for key in ("Conversation_extra", "Notes_extra"):
+            extra = patch.pop(key, "")
+            if extra:
+                r[key.replace("_extra", "")] = (str(r.get(key.replace("_extra", "")) or "")
+                                                + " · " + extra).strip(" ·")
+        for k, v in patch.items():
+            r[k] = v
 
 
 
@@ -1376,6 +1478,7 @@ def main() -> int:
     #      écraser ; après KEYMAP il ne pourrait plus rien poser. C'est LA place : rien, après,
     #      ne réécrit un fait d'échange.
     _apply_evening(out)
+    _apply_jour(out)
 
     cols = headers + NEW_FIELDS
     allowed = set(cols)
