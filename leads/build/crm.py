@@ -1314,7 +1314,9 @@ JOUR_2209 = {
     },
     "univers-optique": {
         "last_send_state": "sent",
-        "Follow-up date": "2026-09-23",
+        # 22/09 20:51 — IL A RÉPONDU, et il demande la réunion. Ce n'est plus une relance à
+        # calculer : l'échéance devient le jour du rendez-vous (vendredi 25/09, 10 h, son cabinet).
+        "Follow-up date": "2026-09-25",
         "site_url": "https://univers-optique-concept.vercel.app",
         "Conversation_extra":
             "22/09 14:35 — le message d'aperçu est PARTI, avec la carte du lien `univers-optique-concept"
@@ -1325,15 +1327,30 @@ JOUR_2209 = {
             "ambigu, l'ancien site hors ligne, la fiche pro à moitié remplie), et la promesse que cette "
             "seconde partie disparaît à la publication. UNE SEULE coche à 15:53 : distribué pas encore lu. "
             "Le prix n'a PAS été répété : il est posé depuis le 21/09 18:08 (100 000 FCFA, 50/50, rien dû "
-            "avant accord), et l'aperçu gratuit avait été promis la veille.",
+            "avant accord), et l'aperçu gratuit avait été promis la veille. "
+            "22/09 20:51 — IL RÉPOND, mot pour mot : « Je suis vraiment intéressé, il faudrait qu'on se "
+            "voie pour discuter. Vendredi matin 10h dans mon cabinet. Bonne nuit ». C'est le DEUXIÈME "
+            "prospect de la campagne à demander une réunion de lui-même (après UNI-LABO), et le premier "
+            "à fixer une HEURE sans qu'on la demande. L'aperçu a donc été lu et jugé : la question n'est "
+            "plus « est-ce que ça vous parle », c'est « combien, quand, et avec quoi ».",
         "Notes_extra":
+            "RENDEZ-VOUS VENDREDI 25/09 À 10 h, DANS SON CABINET (rue de Bépanda omnisports, entre "
+            "pharmacie Sass et Express Union) — fixé par lui, à son heure. Feuille de préparation : "
+            "`sales/RDV-UNIVERS-OPTIQUE-2026-09-25.md`. Ce qu'il faut sortir de la salle, dans l'ordre : "
+            "① le « oui » (il a déjà dit « vraiment intéressé » — la réunion sert à lever les six points "
+            "à trancher, pas à re-vendre) ; ② les RÉPONSES aux six points que la page lui pose "
+            "elle-même (préfixe du fixe, bannière 15 %, ordre de ses trois lignes, nom du titulaire, "
+            "l'e-mail qu'il lit vraiment, accès à sa fiche Google) — ce sont deux minutes chacun et "
+            "c'est ce qui rend la page publiable ; ③ l'acompte 50 000 FCFA (MoMo, manuel). "
+            "Le prix est DÉJÀ posé depuis le 21/09 (100 000 FCFA la page FR|EN, 50/50, rien dû avant "
+            "accord) : on ne le re-présente pas et on ne le baisse pas. "
             "LA PAGE PUBLIÉE CONTIENT LA NOTE AU CABINET, en bas, étiquetée « à ne pas publier » — choix "
             "assumé par King pour la discussion, différent du découpage en deux fichiers préparé ici. Les "
             "deux tiennent : si le client demande à ne voir que la page patient, on envoie "
             "`demos/univers-optique-site-v2.html` (718 514 o, sha `ec91063b…`, note retirée par "
-            "construction — un contrôle refuse le vocabulaire du dossier dans la page publique). Prochaine "
-            "action : une relance courte le 23/09 avant 11 h s'il n'a pas répondu, SANS re-proposer le prix "
-            "ni promettre une mise en ligne avant son accord.",
+            "construction — un contrôle refuse le vocabulaire du dossier dans la page publique), à envoyer "
+            "dans la minute s'il demande à ne voir que la page patient. AUCUNE relance d'ici vendredi : un "
+            "prospect qui a donné jour et heure n'est plus relancé, il est attendu.",
     },
     # ── LES QUATRE ENVOIS DU SOIR DU 22/09 (relevé de King à 17:31 : « MITOC, L'Opticien, Yaks, Skye »).
     "midas-touch-optic-center-mitoc": {

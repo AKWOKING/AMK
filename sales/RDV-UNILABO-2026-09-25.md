@@ -7,6 +7,9 @@
 
 **Étape du pipeline : `offer`** — `leads/CRM.csv`. **C'est le seul lead de la campagne à cette étape.**
 
+> ⚠️ **Vendredi 25/09 il y a DEUX rendez-vous** : celui-ci (UNI-LABO) et **Univers Optique, 10 h, son cabinet à Bépanda** — fixé par le client le 22/09 à 20:51 (« Je suis vraiment intéressé… vendredi matin 10h dans mon cabinet »), feuille `sales/RDV-UNIVERS-OPTIQUE-2026-09-25.md`.
+> **L'heure d'UNI-LABO manque toujours** — et c'est le seul point de logistique qui reste : les deux quartiers sont voisins (10-15 min), donc **si UNI-LABO propose le matin, viser 11 h 30 / 12 h**, jamais la même heure que Bépanda.
+
 ---
 
 ## Ce que ça vaut, sans exagérer

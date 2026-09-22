@@ -82,10 +82,13 @@ RELANCE_A_JOUR = {
     # Les deux fils « prix posé » du 21/09 : l'échéance vient de ce qui a été ÉCRIT au client,
     # pas d'un calcul M+2. Univers Optique = l'aperçu promis « d'ici demain ». Le Cristallin =
     # la réponse de King sur le périmètre FB attendue avant d'envoyer, relance 48 h après.
-    "univers-optique": ("2026-09-23", "APERÇU ENVOYÉ 22/09 14:35 (une seule coche à 15:53 : distribué, "
-                                      "pas encore lu). Le prix est déjà posé depuis le 21/09 18:08 — demain, "
-                                      "une relance COURTE avant 11 h, sans re-proposer le prix ni promettre "
-                                      "une date de mise en ligne avant son accord"),
+    # 22/09 20:51 : il a répondu — « Je suis vraiment intéressé … Vendredi matin 10h dans mon cabinet. »
+    # Comme UNI-LABO, ce n'est plus une relance à calculer, c'est une réunion à préparer.
+    "univers-optique": ("2026-09-25", "RENDEZ-VOUS fixé par le prospect — **vendredi 25/09 à 10 h, son "
+                                      "cabinet** (Bépanda). Feuille : `sales/RDV-UNIVERS-OPTIQUE-2026-09-25.md`. "
+                                      "Prix déjà posé le 21/09 (100 000 FCFA, 50/50) : on ne le re-présente "
+                                      "pas, on ne le baisse pas. À sortir de la salle : le « oui », les "
+                                      "réponses aux six points que la page demande, l'acompte"),
     "le-cristallin": ("2026-09-23", "quatre confirmations à lui demander sur la page en ligne "
                                      "(horaires vs son flyer, mur d'assurances à 19, logos déjà chez lui, "
                                      "l'assistant n'est pas un éditeur). CADRE VOULU PAR KING le 22/09 "

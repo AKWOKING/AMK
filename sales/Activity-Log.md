@@ -1920,3 +1920,50 @@ fait dans le même mouvement.
 
 **Suite immédiate : publication — King seul** (règle du calendrier). Sujet de la vidéo 07 déjà choisi par les
 chiffres du soir dans `content/pipeline/KEYWORDS-2026-09-22.md`.
+
+
+## 2026-09-22 · 20:51 → 20:20 (horodatage du bac) · UNIVERS OPTIQUE RÉPOND ET FIXE LUI-MÊME LA RÉUNION — vendredi 25/09 à 10 h, son cabinet. **DEUX rendez-vous vendredi.**
+
+**Le message est arrivé à 20:51**, mot pour mot :
+
+> **« Je suis vraiment intéressé, il faudrait qu'on se voie pour discuter. Vendredi matin 10h dans mon cabinet. Bonne nuit »**
+
+**Ce que ça vaut, remis dans les chiffres de la campagne** : 45 messages envoyés depuis le 14/09, **4 réponses
+humaines**, **2 demandes de réunion** — UNI-LABO et lui. UNI-LABO avait proposé *un jour* ; **lui donne un jour
+ET une heure, et écrit « vraiment intéressé » avant même de nous voir.** C'est le premier lead de la campagne à
+fixer une heure sans qu'on la demande. L'aperçu envoyé hier à 14:35 (la page patients + la « Note au cabinet »)
+a donc été **lu et jugé** : la réunion ne porte plus sur « est-ce que ça vous parle », elle porte sur le
+périmètre et le démarrage.
+
+**Ce qui est déjà réglé et qu'on ne rouvre pas** : le **prix est posé depuis le 21/09 18:08** — 100 000 FCFA la
+page complète FR+EN, 50 000 pour commencer + 50 000 à la mise en ligne, rien dû avant son accord, mise en ligne
+en 3 à 5 jours. Vendredi, on ne re-présente pas le prix et **on ne le baisse pas** : si on marchande, on ajuste
+le périmètre. Ce qui se signe vendredi, c'est la décision **et l'acompte de 50 000 FCFA** (MoMo, manuel).
+
+**Le vendredi 25/09 a maintenant DEUX rendez-vous** : **Univers Optique à 10 h** (Bépanda, rue de Bépanda
+omnisports) et **UNI-LABO** (Bonamoussadi, Carrefour Etoo) — dont **l'heure manque toujours**. Les deux quartiers
+sont voisins, 10-15 minutes de route : si UNI-LABO propose le matin, le créneau naturel est **11 h 30 / 12 h**,
+jamais la même heure. Feuilles prêtes : `sales/RDV-UNIVERS-OPTIQUE-2026-09-25.md` (avec le message de
+confirmation FR, les six points à trancher, ce qu'il ne faut pas dire) et `sales/RDV-UNILABO-2026-09-25.md`
+(croisée avec l'autre rendez-vous).
+
+**La réunion d'Univers a un ordre du jour tout trouvé** : la page lui pose elle-même, en bas, **six points qu'il
+est le seul à pouvoir trancher** — le préfixe du fixe (ses supports en donnent deux versions), la bannière
+« 15 % » de 2023, l'ordre de ses trois lignes, le nom du titulaire (« ETS UNIVERS OPTIQUE » ou « BAYANG BIHEN
+Calvin »), l'e-mail qu'il lit vraiment (deux sont publics), et **l'accès à sa fiche Google**. Chaque réponse
+rend la page publiable ; sans elles, l'aperçu reste un aperçu.
+
+**Vérifications faites avant de préparer** : l'aperçu `univers-optique-concept.vercel.app` est **vivant** et
+complet (partie patients FR+EN, bouton WhatsApp qui part déjà écrit au comptant du numéro 699 25 28 74, note au
+cabinet, six points à trancher, FAQ) ; **ses créneaux de rendez-vous sont calculés en JavaScript** (`new Date()`
+→ « mercredi 23, jeudi 24, vendredi 25, samedi 26, lundi 28 sept » aujourd'hui) : **vendredi la page affichera
+25/26/28/29/30, pas une date périmée** — la vérifier au téléphone reste la première case de la feuille.
+Et **`uni-labo.vercel.app` est bien en ligne** : la « présentation des services » de vendredi se fera sur leur
+propre site, ouvert sur un téléphone.
+
+**CRM et vues mis à jour dans le même mouvement** (`leads/build/crm.py`, `views.py`) : `univers-optique` garde
+`closing` mais son **échéance passe du 23/09 au 25/09 — jour du rendez-vous** ; la note de relance dit
+désormais « aucune relance d'ici vendredi : un prospect qui a donné jour et heure n'est plus relancé, il est
+attendu ». Verrou rejoué (`guard.py lock`) puis **CRM reconstruit à 20:12:20** — 149 lignes.
+
+**Rien n'a été envoyé.** Le message de confirmation est préparé pour King, pas envoyé par nous.

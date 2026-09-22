@@ -25,7 +25,7 @@ Le playbook §A4 disait « les 2 leads à 18 (COMOBIL, OraCare) ». **C'était f
 - **Cabinet Dentaire The Skye** — 2026-09-29 · Relance 2/3 envoyée le 22/09 au soir (réécrite sans reproche). DERNIÈRE touche : 29/09, puis parked daté
 - **Tchaya Optique** — 2026-09-23 · Message 1 parti le 21/09 à 17:47 (une coche, jamais enregistré avant le 22/09). Vitrine : deux pages Facebook, dont « TCHAYA OPTIQUE INTERNATIONAL » (2 390 mentions J'aime, opticien depuis 1974). Relance 1/3 : 23/09
 - **UNI-LABO** — 2026-09-25 · RENDEZ-VOUS demandé par le prospect — vendredi 25/09
-- **Univers Optique** — 2026-09-23 · APERÇU ENVOYÉ 22/09 14:35 (une seule coche à 15:53 : distribué, pas encore lu). Le prix est déjà posé depuis le 21/09 18:08 — demain, une relance COURTE avant 11 h, sans re-proposer le prix ni promettre une date de mise en ligne avant son accord
+- **Univers Optique** — 2026-09-25 · RENDEZ-VOUS fixé par le prospect — **vendredi 25/09 à 10 h, son cabinet** (Bépanda). Feuille : `sales/RDV-UNIVERS-OPTIQUE-2026-09-25.md`. Prix déjà posé le 21/09 (100 000 FCFA, 50/50) : on ne le re-présente pas, on ne le baisse pas. À sortir de la salle : le « oui », les réponses aux six points que la page demande, l'acompte
 - **Cabinet Dentaire YAKS** — 2026-09-29 · Relance 2/3 envoyée le 22/09 au soir. DERNIÈRE touche : 29/09, puis parked
 
 > Les échéances **déjà passées** sont dans `Daily-Plan.csv` — c'est la file de travail.
