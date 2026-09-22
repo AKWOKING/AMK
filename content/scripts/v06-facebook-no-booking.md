@@ -50,7 +50,18 @@ une **invitation à demander un aperçu**, pas une vente.
 - **Pas de « vous n'existez pas »** : c'est faux pour la cible (ils ont souvent une vitrine) et c'est ce qui a
   coûté un message tué ce soir même (INSES).
 
-## Livrables
-1. `Video_06_Facebook_No_Booking.mp4` — master muet ce soir, voix française dès que King a choisi la voix.
-2. Ce script, la voix off en clair, et le minutage réel — dans ce dossier.
-3. Le rapport du portique `tools/qa/audit_video_motion.py` (0 fenêtre figée exigée).
+## Livrables — LIVRÉS le 22/09 au soir
+1. `content/videos/v06-facebook-no-booking/Video_06_Facebook_No_Booking_VOIX.mp4` — **le livrable** :
+   38,61 s · 1080×1920 · 30 fps · voix française (`voice-01`, choisie par King) · **-15,9 LUFS / crête -1,5 dBFS**.
+   Version muette du même master : `Video_06_Facebook_No_Booking.mp4` (38,60 s).
+2. Ce script, la voix off en clair et le minutage **réel** : les six phrases ont été enregistrées puis mesurées,
+   `narration/timeline.json` porte les frontières (0 / 4,85 / 13,12 / 20,58 / 27,91 / 32,08) et `build.py`
+   s'y conforme — **le montage suit la voix**.
+3. Portique `tools/qa/audit_video_motion.py` sur la version **avec voix** : **OK, 0 fenêtre figée**.
+4. Relecture : `content/videos/v06-facebook-no-booking/apercus/planche-v06.jpg` (une image par plan).
+5. Statut complet, pièges et contrôles mesurés : `content/videos/v06-facebook-no-booking/STATUS.md`.
+
+**Deux mots ont changé entre le plan et le master final, volontairement** : la carte de fin dit
+« **Écrivez « APERÇU »** — en message privé » (et non « Dites « APERÇU » ») parce que le CTA doit dire *où*
+écrire ; et le rappel sous la carte dit « vous la regardez avant de décider » plutôt que « Vous décidez
+après » — même idée, plus concrète. Le reste du plan est tenu plan par plan.
