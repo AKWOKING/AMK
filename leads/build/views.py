@@ -328,6 +328,8 @@ def view_stale(rows, idx, date):
             continue
         if r.get("slug") in RELANCE_A_JOUR:
             continue          # une date a été fixée : ce n'est pas un lead endormi
+        if (r.get("org_type") or "") == "school" and r.get("slug") not in SCHOOLS_KEPT:
+            continue          # décision de King 22/09 16:45 : le segment école est écarté
         n += 1
         last, _ = idx.get(r["slug"], (None, 0))
         L.append(f"| {r['School']} | {r.get('stage','')} | {age} j | "
@@ -362,6 +364,21 @@ def view_sources(rows, date):
     return "\n".join(L)
 
 
+# ── DÉCISION DE KING — 22/09/2026, 16:45 : « laisser tomber les écoles » ────────────
+# Les 39 écoles sortent des vagues d'envoi et du plan du jour (raison chiffrée dans
+# sales/PROFIL-DES-OUI-2026-09-22.md : 2,6 % de réponse contre 11,1 % pour les prospects
+# qui paient déjà pour être visibles). Elles restent dans le CRM et dans leurs fiches.
+# Deux exceptions NOMMÉES, et elles ne sortent pas d'ici sans une décision :
+SCHOOLS_KEPT = {
+    "inses-douala":
+        "École de nom, mais la même affiche porte « LA CLINIQUE DE L'ESPOIR » : le message va au "
+        "cabinet (santé), pas à l'institut — et c'est un numéro vérifié.",
+    "st-theresa-international-bilingual-comprehensive-college-sti":
+        "Une parole a déjà été donnée : retour promis en OCTOBRE (15/09, « permission de revenir »). "
+        "On ne reprend pas un engagement pour appliquer une règle.",
+}
+
+
 def view_daily_plan(rows, date):
     out = ROOT / "leads" / "Daily-Plan.csv"
     with out.open("w", newline="", encoding="utf-8-sig") as f:
@@ -369,7 +386,19 @@ def view_daily_plan(rows, date):
         w.writerow(["# Généré le " + date + " par leads/build/views.py — ne pas modifier à la main"])
         w.writerow(["priorite", "action", "lead", "whatsapp", "ville", "etape", "note"])
         prio = 0
+        n_school = 0
+        n_kept = 0
         for r in rows:
+            # ── DÉCISION DE KING 22/09 16:45 : « laisser tomber les écoles ». Elles ne sont ni
+            #    relancées, ni contactées, ni listées ici — mais elles restent dans le CRM et
+            #    dans les fiches. Le seul engagement déjà pris à une école (STIBCCOL, retour
+            #    promis en octobre) reste dans kills/`RELANCE_A_JOUR` : on ne reprend pas une
+            #    parole donnée. Zero école ne disparaît en silence : le compte est imprimé.
+            if (r.get("org_type") or "") == "school" and r.get("slug") not in SCHOOLS_KEPT:
+                n_school += 1
+                continue
+            if (r.get("org_type") or "") == "school":
+                n_kept += 1
             action, note = "", ""
             if reply_pending(r):
                 prio += 1
@@ -389,6 +418,9 @@ def view_daily_plan(rows, date):
             if action:
                 w.writerow([prio, action, r["School"], r.get("wa_number", ""),
                             r.get("City", ""), r.get("stage", ""), note])
+    if n_school or n_kept:
+        print(f"  école(s) : {n_school} écartée(s) du plan (décision de King 22/09 16:45) · "
+              f"{n_kept} gardée(s) par exception écrite (SCHOOLS_KEPT)")
     return out
 
 

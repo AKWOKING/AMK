@@ -1633,4 +1633,34 @@ contacts pris uniquement dans ce profil, et on lit le résultat dans trois jours
 profil devient la loi du sourcing, ≤ 2 et on le classe comme une coïncidence de six cas.
 
 `guard.py lock` + `rebuild.sh` rejoués (CRM reconstruit, 40 actions, KILL-LIST à jour), fiches régénérées
-pour Labiomed, Bonanjo, Le Cristallin. **Aucun message envoyé par moi, aucun déploiement.**
+pour Labiomed, Bonanjo, Le Cristallin. **Aucun message envoyé par moi, aucun déploiement.**## 2026-09-22 · 16:45 · DÉCISION — « laisser tomber les écoles », et la vague du soir sort du plan
+
+King, 16:45 : « **je pense qu'on devrais laisser tomber les écoles** », et « en attendant envoie-moi la
+prochaine vague d'aujourd'hui ». Les deux sont appliqués dans la même minute.
+
+**Ce que la décision change dans la machine, et pas seulement dans une note** : `views.py` porte maintenant
+`SCHOOLS_KEPT` et un filtre sur `org_type == "school"` pour le plan du jour **et** pour STALE. Le
+`rebuild.sh` l'annonce à voix haute : « école(s) : **36 écartée(s)** du plan · **2 gardée(s)** par exception
+écrite ». Rien n'est effacé : les 39 écoles restent dans le CRM et dans leurs fiches, avec leur audit. Les
+deux exceptions sont **nommées et motivées**, jamais silencieuses :
+
+- **INSES** (`inses-douala`) — école de nom, mais la même affiche porte « LA CLINIQUE DE L'ESPOIR » : le
+  message part vers le cabinet, et c'est un numéro vérifié ;
+- **STIBCCOL** (`st-theresa-…-sti`) — une parole a déjà été donnée (retour promis en **octobre**, 15/09). On
+  ne reprend pas un engagement pour appliquer une règle.
+
+La raison de fond est celle du jour, chiffrée dans `sales/PROFIL-DES-OUI-2026-09-22.md` : **2,6 % de réponse
+sur les écoles**, contre 11,1 % chez les prospects qui ont déjà payé pour être visibles. **Un type mal posé a
+aussi été corrigé au passage** : les 38 lignes du classeur d'origine étaient toutes typées `school` par
+défaut, y compris **MITOC** — dont la page Facebook dit « we refract, prescribe n mount lenses ». C'est un
+opticien de Molyko, il redevient ce qu'il est (`WORKBOOK_TYPE_EXCEPTIONS`), et il est donc du bon côté du
+filtre.
+
+**Le plan régénéré : 39 actions** (40 moins Baird, plus INSES revenu). La vague du soir est écrite dans
+`sales/Send-Vague-2026-09-22-16h45.md` — **34 messages**, dans l'ordre de l'urgence réelle :
+**① les trois 2/3 en retard** (OraCare, The Skye, YAKS) · **② les neuf « lus sans réponse » du 19/09** (une
+question fermée, sept numéros à vérifier sur WhatsApp avant d'écrire) · **③ les dix-neuf du 18/09**
+(troisième et dernière relance, texte unique, puis `parked` daté) · **④ les trois à part** — INSES,
+**MITOC** (EN) et **L'Opticien Bali** sur son propre créneau du mardi. **Cinq ne partent pas ce soir** :
+Meka, Interlabo, La Passerelle, Pathcare (distribués non lus depuis le 19 — on n'écrit pas par-dessus) et
+2K Labo (sa « réponse » était automatique). Rien n'a été envoyé par moi.

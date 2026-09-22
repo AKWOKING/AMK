@@ -7,7 +7,7 @@
 | Champ | Valeur |
 |---|---|
 | Slug | midas-touch-optic-center-mitoc |
-| Type | school |
+| Type | other |
 | Ville | Buea (Molyko, opp former police station, Malingo) |
 | Langue de contact | Bilingual EN/FR |
 | Étape | qualifying |

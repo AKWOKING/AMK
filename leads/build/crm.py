@@ -1413,6 +1413,22 @@ def _apply_jour(out: list) -> None:
 
 
 
+# ── DÉCISION DE KING — 22/09/2026, 16:45 ──────────────────────────────────────
+# « je pense qu'on devrais laisser tomber les ecoles »
+#
+# Conséquence : les 39 écoles sortent des vagues d'envoi et du plan du jour. Ce n'est pas
+# un effacement de données — elles restent dans le CRM, avec leur audit, et l'histoire du
+# seul établissement scolaire qui a répondu (STIBCCOL, Buea, qui a demandé qu'on revienne
+# en octobre) est gardée telle quelle. La raison de fond est chiffrée le même jour dans
+# sales/PROFIL-DES-OUI-2026-09-22.md : les écoles répondent 2,6 % du temps, contre 11,1 %
+# pour les prospects qui ont déjà payé pour être visibles quelque part. On ne prospecte
+# plus ce segment ; on ne l'efface pas non plus.
+WORKBOOK_TYPE_EXCEPTIONS = {
+    # slug : type réel (le classeur les avait mis en « school » par défaut)
+    "midas-touch-optic-center-mitoc": "other",   # opticien de Molyko (Buea)
+}
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--csv", default=str(ROOT / "leads" / "CRM.csv"))
@@ -1425,7 +1441,10 @@ def main() -> int:
     for r in wb_rows:
         rec = {h: r.get(h) for h in headers}
         rec["slug"] = norm_slug(r.get("School", ""))
-        rec["org_type"] = "school"
+        # Le classeur d'origine est un lot d'écoles : « school » est le type PAR DÉFAUT, pas une
+        # lecture. Deux exceptions nommées, sinon on écrase une réalité (MITOC, 22/09 : la fiche dit
+        # « we refract, prescribe n mount lenses » — c'est un opticien, pas une école).
+        rec["org_type"] = WORKBOOK_TYPE_EXCEPTIONS.get(rec["slug"], "school")
         rec["wa_number"] = wa_number_for(r)
         rec["stage"] = stage_for(r)
         # wa_verified reste vide : personne n'a ouvert ces profils. On ne le devine pas.
