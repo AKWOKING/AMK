@@ -12,12 +12,12 @@ Le playbook §A4 disait « les 2 leads à 18 (COMOBIL, OraCare) ». **C'était f
 ## ⚡ Répondre d'abord
 
 - **Centre Médical de Bonanjo** — 694 57 22 77
+- **Univers Optique** — 699 25 28 74
 
 > **Règle des 90 secondes.**
 
 ## 📅 Décisions déjà prises — DATES À VENIR, ne rien faire maintenant
 
-- **Le Cristallin** — 2026-09-23 · relance M+2 après la réponse de King sur le périmètre (page seule / page + Facebook) ; fichier déjà prêt
 - **UNI-LABO** — 2026-09-25 · RENDEZ-VOUS demandé par le prospect — vendredi 25/09
 
 > Les échéances **déjà passées** sont dans `Daily-Plan.csv` — c'est la file de travail.

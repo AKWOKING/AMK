@@ -59,6 +59,14 @@ import urllib.parse
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 OUT = ROOT / "demos" / "concept-univers-optique-v2.html"
 IMGDIR = ROOT / "demos" / "img"
+_CJ = ROOT / "demos" / "univers_optique_content.py"
+_JSON = ROOT / "demos" / "univers_optique_content.json"
+# Le JSON est un ARTEFACT de la copie, pas une copie de travail : plus vieux que le module, il ment sur
+# ce qui est écrit aujourd'hui. « Penser à régénérer avant de construire » ne doit pas dépendre de ma
+# mémoire — la construction le fait elle-même, une fois, avant de lire.
+if not _JSON.exists() or _CJ.stat().st_mtime > _JSON.stat().st_mtime:
+    import subprocess
+    subprocess.run([sys.executable, str(_CJ)], cwd=str(ROOT), check=True, capture_output=True)
 C = json.loads((ROOT / "demos" / "univers_optique_content.json").read_text(encoding="utf-8"))["page"]
 V2 = C["v2"]
 WA = re.sub(r"\D", "", C["wa"])
@@ -1504,6 +1512,16 @@ def _outside_hidden(frag, needle):
                    for a, b in spans)
 
 
+check("l'horloge du moteur n'est pas réglée : aucune date figée dans le script (new Date() nu)",
+      not re.search(r"new Date\(\s*\d", JSSLOT) and "Date.UTC(" not in JSSLOT and
+      JSSLOT.count("new Date()") >= 2 and not re.search(r"\b20\d\d-\d\d-\d\d", JSSLOT),
+      "une date codée dans le script pourrit le lendemain comme une date codée dans le HTML")
+_WA_TPL = json.dumps(SITE["waMsg"], ensure_ascii=False)
+check("le gabarit du moteur n'a qu'un seul blanc, celui qu'il remplit : aucune accolade orpheline ne "
+      "part chez le client",
+      _WA_TPL.count("{when}") == 2 and not re.search(r"\{(?!when\})[a-zA-Z]", _WA_TPL) and
+      SITE["waMsg"]["fr"][:42] in JSSLOT, "un gabarit à remplir après coup est un gabarit qui se remplit "
+      "mal")
 check("le socle de créneaux est caché tant que le calcul n'a pas eu lieu : trois fois, sans exception",
       len(re.findall(r'<div class="pickslots"[^>]*>', PUBLIC)) == 3 and
       all(" hidden" in m for m in re.findall(r'<div class="pickslots"[^>]*>', PUBLIC)))

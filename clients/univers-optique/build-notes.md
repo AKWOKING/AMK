@@ -315,3 +315,61 @@ b7ec…`) · repli sobre **81 565 octets** (`6a07f2c4aee18b77…`) · 470 porté
 ligne** · `/univers/` pointe sur la v2, `/univers-v1/` garde le dossier pour la comparaison.
 **Aucun envoi fait par mes soins.** Aucun navigateur dans ce bac : pas de capture 1280×800 / 390×844 ni
 de console lue en réel — c'est écrit, pas caché (§13 : une mesure impossible s'écrit NON VÉRIFIÉE).
+## 22/09 · 2ᵉ passe (soir) — « are they dynamique ?? » : le créneau devient calculé, la copie redevient patiente
+
+**Ce que le roi a dit, mot pour mot.** « I love the designs of V2 they're beutiful, but.. » — puis deux
+points : « le créneau : are they dynamique??, do they auto update ? I hope they do if not they're useless »
+et « the things written on the site shows like we trying to tell what is and what was before the site, but
+that's not the objective of the site, the objectif of the site is so clients find, him his services,
+increase trust and they book easily ». Le visuel reste ; deux choses cassent.
+
+**Le défaut était réel, pas une impression.** Le module de copie portait `v2.steps.chipsDays` : cinq dates
+écrites à la main (« Mar 22 sept » … « Sam 26 sept ») et quatre heures figées (8h30, 10h00, 14h30, 16h00).
+Dès le 23, la page affirmait faux ; dès le 27, elle proposait un dimanche. La promesse « les créneaux se
+prennent sans JavaScript » était vraie côté liens, fausse côté dates.
+
+**Ce que la machine garantit maintenant.**
+- `C["hours"]` (getDay() → minutes d’ouverture et de fermeture, `None` le dimanche) est LA source unique :
+  le tableau publié, le `openingHoursSpecification` du JSON-LD et le moteur lisent le même objet. Une heure
+  affichée qui contredit la grille fait échouer la construction.
+- Le moteur embarqué : `new Date()` nu (un contrôle refuse `new Date(2026,…)` et toute date ISO dans le
+  script), cinq journées encore réservables, dimanche jamais proposé, une journée entamée n’est proposée que
+  s’il reste deux heures de comptoir, l’heure tombe dans [ouverture, fermeture − 60 min] arrondie à la
+  demi-heure, et chaque pastille est UN lien `wa.me` réel avec le message déjà écrit.
+- Aucun fichier public ne contient de date absolue : un contrôle balaie le `<main>` publié et refuse
+  `jj/mm/aaaa`, « 22 sept », « septembre 22 ». Le contrôle a été muté, et il a mordu.
+- Sans script : le socle de créneaux porte `hidden` (il disparaît, il ne reste pas vide) et la ligne de
+  repli est vérifiée HORS de tout conteneur caché par un parseur de proximité — un repli avalé par le bloc
+  qu’il est censé remplacer n’est plus un repli.
+- `univers_optique_content.json` est devenu un artefact périmable : si le module de copie est plus récent,
+  le constructeur le régénère avant de le lire. Quatre mutations avaient traversé la construction
+  exactement pour cette raison — on ne construit plus sur la copie d’hier.
+
+**La faute découverte en chemin, plus grave que ce qui était demandé.** `wa_url()` fabriquait
+`https://wa.me/699252874` : le numéro à neuf chiffres, sans indicatif. L’API WhatsApp exige le format
+E.164 — depuis le premier fichier (v1 et v2, donc l’envoi de ce matin), chaque appel à l’action ouvrait
+« numéro invalide ». `WA_INTL = "237" + WA` est désormais la seule forme embarquée, le moteur reçoit la
+même, et un contrôle refuse toute URL qui ne matche pas `wa.me/237XXXXXXXXX`. Ce qui reste non vérifié ici :
+le clic réel depuis un téléphone (aucun navigateur dans ce bac) — à faire une fois, par King, avant l’envoi.
+
+**La copie sépare les deux lecteurs, elle ne touche aucun fait.** Le bloc `C["site"]` (34 clés) porte la
+page publique : pilule, titre, promesse, trois repères, les trois pas du client, les dix actes en trois
+paquets avec une raison dite AU client, « ce qu’il faut apporter » et la phrase qui manque rarement — nous
+ne posons pas de diagnostic médical —, l’adresse et le repère, les prothèses dites aux personnes qui les
+cherchent, le rendez-vous, quatre questions de comptoir, le pied de page. Les six constats, la note de 3,3
+sur six avis, le comparatif, les six questions à trancher et la liste des photos manquantes ne disparaissent
+pas : ils vivent dans une « note au cabinet » (`C["brief"]`) absente du fichier publié, et un contrôle
+refuse que le vocabulaire du dossier (3,3 · votre fiche · à trancher · annuaire · domaine · hors ligne ·
+à confirmer) passe dans le `<main>` public.
+
+**Preuves.** 92 contrôles, 0 faute · 10/10 mutations refusées (faute nommée, fichiers livrés intacts, md5
+comparé) · moteur rejoué dans node sur six instants figés : mardi 14h30 (le jour même est proposé à 15h30),
+mardi 17h45 (le jour même saute), samedi 11h00 (le prochain lundi), dimanche 10h00 (« ferme · rouvre lundi
+8h00 »), lundi 28 décembre (bascule de mois et d’année : 31 déc. puis 1ᵉʳ janv.), et mardi en anglais —
+étiquettes, URL, message et état du comptoir vérifiés à chaque fois · `audit_html` 0 finding sur les trois
+fichiers · `check_inline_js` 5 blocs, 0 faute · `diff` démo ↔ aperçu = 0 ligne sur `/univers/`,
+`/univers-note/`, `/univers-v1/`.
+
+**Les fichiers.** `demos/univers-optique-site-v2.html` 718 514 o (le site, ce que lit un client) ·
+`demos/univers-optique-site-v2-sobre.html` 66 676 o (repli d’envoi, 0 visuel, même copie) ·
+`demos/concept-univers-optique-v2.html` 755 254 o (le site + la note au cabinet, document de travail).

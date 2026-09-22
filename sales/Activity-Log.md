@@ -1435,3 +1435,57 @@ sobre **81 565** (`6a07f2c4aee18b77…`) · `audit_html.py` **0 constat** (470 p
 **Et a ne pas perdre de vue** : LE CRISTALLIN attend toujours sa reponse **A / B** (100 000 · 100 000 +
 50 000) — relance le 23/09, et son fichier doit etre renvoyé (la copie du dimanche est cassee). Univers
 est en phase `closing` : la balle est dans son camp des que la v2 est transmise.
+## 2026-09-22 · 08:10 → 08:50 (horloge du bac) · UNIVERS OPTIQUE — le roi garde la v2, casse le créneau et la copie : les deux sont refaits
+
+**Ce qui était demandé, en deux phrases.** Garder le design (« I love the designs of V2 they're beutiful,
+but.. ») et répondre à deux objections : les dates du bloc « le créneau » étaient-elles calculées (« are
+they dynamique??, do they auto update ? I hope they do if not they're useless »), et pourquoi la page
+racontait l’avant au lieu de vendre l’après (« the objectif of the site is so clients find, him his
+services, increase trust and they book easily »).
+
+**Était-ce vrai ?** Oui, et plus grave qu’une impression : `chipsDays` était une liste de cinq dates tapées
+à la main. Dès le 23 septembre la page mentait, dès le 27 elle proposait un dimanche. Corrigé dans la
+machine, pas dans les intentions : la grille `C["hours"]` devient la seule source, le moteur calcule cinq
+journées réservables depuis `new Date()`, le dimanche n’est jamais proposé, une journée entamée saute s’il
+reste moins de deux heures, chaque pastille est un lien WhatsApp réel, et le socle reste caché quand le
+script ne tourne pas — avec une ligne de repli vérifiée hors de tout conteneur caché. Aucune date absolue
+ne peut plus entrer dans le fichier public : un contrôle le refuse, et la mutation qui la réintroduit a été
+refusée.
+
+**Et au passage, une faute que personne n’avait signalée.** Les boutons WhatsApp portaient le numéro sans
+indicatif (`wa.me/699252874`) ; l’API exige le format international. Chaque appel à l’action de la version
+envoyée ce matin ouvrait donc « numéro invalide ». Corrigé en `+237`, et désormais contrôlé : une URL sans
+indicatif fait échouer la construction. Le clic réel depuis un téléphone reste à faire une fois — aucun
+navigateur dans ce bac, c’est écrit, pas caché.
+
+**La copie change de destinataire, pas de vérité.** Le site parle au client : trouver ce qu’il cherche,
+comprendre ce qui se passe à la boutique, savoir quoi apporter, où nous trouver, écrire pour un créneau.
+Les six constats, le 3,3 sur six avis, le comparatif et les six questions à trancher ne sont pas effacés :
+ils passent dans une « note au cabinet » qui n’existe pas dans le fichier publié. Deux fichiers, deux
+lecteurs — et un contrôle qui refuse que le vocabulaire du dossier fuie dans la page du client.
+
+**Chiffres de la passe.** 92 contrôles, 0 faute · 10/10 mutations refusées · moteur rejoué sur six instants
+figés dans node, 0 faute · `audit_html` 0 finding sur les trois fichiers · `diff` démo ↔ aperçu 0 ligne ·
+`demos/univers-optique-site-v2.html` 718 514 o, `…-sobre.html` 66 676 o, `concept-univers-optique-v2.html`
+755 254 o (site + note). Feuille d’envoi du soir : `sales/Send-UNIVERS-OPTIQUE-2026-09-22-Soir.md`.
+**Aucun envoi fait par mes soins — King envoie lui-même.**
+
+**Et ne pas perdre de vue.** LE CRISTALLIN attend sa réponse **A / B** (100 000 · ou 100 000 + 50 000 de
+budget Facebook) : relance prévue le 23/09, et son fichier doit être renvoyé depuis
+`demos/concept-le-cristallin-v1.html` (la copie du dimanche était tronquée). Univers Optique reste en
+`closing` : dès que le roi transmet la v3, la balle est dans le camp du cabinet — et son *Follow-up date*
+devra passer au 23/09 dans la feuille de leads.
+
+**Et la faute commise ici, écrite parce qu'elle est réelle.** À 08:31, `bash leads/build/rebuild.sh` a
+réduit **Univers Optique et Le Cristallin** à leur ligne d'annuaire : stage effacé, conversation vidée,
+follow-up perdu, prix annoncé disparu. Le générateur n'était pas cassé — l'enrichissement n'avait jamais
+été écrit dedans, il vivait à la main dans `leads/CRM.csv`, qui est une SORTIE. Rétabli par
+`git checkout HEAD -- leads/CRM.csv …`, puis **rapporté à la source** : bloc `ETAT_21_2209` dans
+`leads/build/crm.py` (25 + 22 champs recopiés à l'octet près), et le contrôle est simple — le CSV
+régénéré est **identique à l'état vérifié, `diff` = 0 ligne**. Deuxième trou trouvé dans le même
+mouvement : `leads/build/views.py` ne connaissait pas l'étape `closing`, donc un lead en négociation de
+prix ne s'affichait **nulle part** (ni PIPELINE, ni plan du jour) ; la section « Prix posé, en
+négociation » était tenue à la main depuis le 21/09. Ajoutée dans la machine : `④′ Prix posé, en
+négociation — 2` rend les deux leads avec leur trace au journal. **Loi pour la suite : on ne corrige pas
+une sortie, on corrige la source — et un rebuild doit être sûr à n'importe quelle heure.**
+

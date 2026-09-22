@@ -41,11 +41,17 @@ STAGE_LABEL = {
     "qualifying": "② Qualifié — en conversation",
     "demo": "③ Démo envoyée",
     "offer": "④ Offre posée",
+    # « closing » a manqué du 21 au 22/09 : les deux leads en négociation de prix (Univers Optique,
+    # Le Cristallin) ne s'affichaient NULLE PART — ni PIPELINE, ni Daily-Plan — alors que le CSV les
+    # donnait en closing avec une réponse humaine en attente. La section portait ce titre à la main
+    # (journal `L1235` : « ④ Prix posé, en négociation — 2 ») ; un rebuild l'a effacée. Le voilà dans
+    # la machine. Le ④′ dit ce qu'il est : le cran d'après de l'offre, pas une offre fraîche.
+    "closing": "④′ Prix posé, en négociation",
     "delivered": "⑤ Livré",
     "parked": "⏸ Parqué",
     "disqualified": "⛔ Écarté",
 }
-STAGE_ORDER = ["offer", "demo", "qualifying", "prospecting", "parked", "disqualified"]
+STAGE_ORDER = ["offer", "closing", "demo", "qualifying", "prospecting", "parked", "disqualified"]
 
 # Décisions humaines qui priment sur les règles automatiques : slug -> (échéance ISO, note)
 RELANCE_A_JOUR = {

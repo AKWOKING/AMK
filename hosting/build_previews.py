@@ -36,8 +36,13 @@ SLUGS = {
     # Le domaine du cabinet ne répond plus : la copie partagée porte donc le constat + l'aperçu.
     # 22/09 — la direction « GRANDE PHOTO » (v2) devient l'aperçu de travail ; le dossier v1 reste
     # consultable sous /univers-v1/ pour que la comparaison des deux directions soit possible sur place.
-    "univers": ("demos/concept-univers-optique-v2.html",
-                "Univers Optique, opticien à Bépanda Douala — aperçu de reprise (v2)"),
+    # 22/09 soir — deux fichiers, deux lecteurs. `/univers/` est LA PAGE telle qu'un client la lira
+    # (aucun mot de dossier, créneaux calculés à l'ouverture) ; `/univers-note/` y ajoute la note au
+    # cabinet — les six constats, le 3,3 sur six avis, le comparatif, les questions à trancher.
+    "univers": ("demos/univers-optique-site-v2.html",
+                 "Univers Optique, opticien à Bépanda Douala — le site (v3, créneaux calculés)"),
+    "univers-note": ("demos/concept-univers-optique-v2.html",
+                      "Univers Optique — le site + la note au cabinet (document de travail)"),
     "univers-v1": ("demos/concept-univers-optique-v1.html",
                    "Univers Optique, opticien à Bépanda Douala — dossier v1"),
 }

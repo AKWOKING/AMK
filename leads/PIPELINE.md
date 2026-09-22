@@ -7,8 +7,8 @@
 
 | Étape | Leads |
 |---|---|
-| ④ Prix posé, en négociation | **2** |
 | ④ Offre posée | **1** |
+| ④′ Prix posé, en négociation | **2** |
 | ② Qualifié — en conversation | **44** |
 | ① Prospection — à qualifier | **85** |
 | ⏸ Parqué | **3** |
@@ -24,21 +24,22 @@
 | Lead | WhatsApp | Ce qu'il a dit |
 |---|---|---|
 | **Centre Médical de Bonanjo** | 694 57 22 77 | Yes |
+| **Univers Optique** | 699 25 28 74 | Yes — lun 21/09 17:56 : « Combien ça me coûte » (2ᵉ question de prix de la campa |
 
 > **Règle des 90 secondes.** Une réponse en attente passe avant tout le reste.
-
-## ④ Prix posé, en négociation — 2
-
-| Lead | Ville | WhatsApp | Trace au journal |
-|---|---|---|---|
-| Le Cristallin | Douala | 699 90 55 77 | `L1435` |
-| Univers Optique | Douala | 699 25 28 74 | `L1436` |
 
 ## ④ Offre posée — 1
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
 | UNI-LABO | Douala (Bonamoussadi, Carrefour Etoo) | 696 13 98 19 | `L134` |
+
+## ④′ Prix posé, en négociation — 2
+
+| Lead | Ville | WhatsApp | Trace au journal |
+|---|---|---|---|
+| Le Cristallin | Douala | 699 90 55 77 | `L1475` |
+| Univers Optique | Douala | 699 25 28 74 | `L1475` |
 
 ## ② Qualifié — en conversation — 44
 
@@ -158,7 +159,7 @@
 | Mouscou Optique Médicale | Douala | 696 65 41 64 | — |
 | Médina Optic | Douala | 699 93 93 34 | `L1243` |
 | NABESK Comprehensive College | Buea (Bonduma) | — | — |
-| National Comprehensive High School (NCHS) Limbe | Limbe (near Atlantic Technical & Commercial) | — | `L593` |
+| National Comprehensive High School (NCHS) Limbe | Limbe (near Atlantic Technical & Commercial) | — | `L1456` |
 | New Horizon International Comprehensive High School (NHICHS) | Limbe (Cité Sonara, Bota) | 680738111 | — |
 | Niva Labo | Douala (Akwa, Av King Akwa — face Meche a meche) | 679 03 13 30 | — |
 | OMB Optique | Douala | 699 77 02 34 | — |

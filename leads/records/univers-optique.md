@@ -39,7 +39,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 48 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 54 ligne(s).*
 
 `L51` · | **ven 18/09 20:02** | **Clinique de L'université** (Bassa, 694 36 02 03) | msg 1 — sans maquette | Envoyé | **Non** |
 `L113` · | 20:02 | Cabinet Dentaire Emmanuel · Clinique de L'université · MEDI LABO |
@@ -89,6 +89,12 @@
 `L1430` · **Etat verifie** : `concept-univers-optique-v2.html` **734 727 octets** (`ca52d3c5f6ccb7ec…`) · repli
 `L1433` · `sales/Send-UNIVERS-OPTIQUE-2026-09-22-Matin.md`. **Aucun envoi fait par mes soins ; aucun lien envoye.**
 `L1436` · 50 000) — relance le 23/09, et son fichier doit etre renvoyé (la copie du dimanche est cassee). Univers
+`L1438` · ## 2026-09-22 · 08:10 → 08:50 (horloge du bac) · UNIVERS OPTIQUE — le roi garde la v2, casse le créneau et la copie : les deux sont refaits
+`L1456` · indicatif (`wa.me/699252874`) ; l’API exige le format international. Chaque appel à l’action de la version
+`L1469` · `demos/univers-optique-site-v2.html` 718 514 o, `…-sobre.html` 66 676 o, `concept-univers-optique-v2.html`
+`L1470` · 755 254 o (site + note). Feuille d’envoi du soir : `sales/Send-UNIVERS-OPTIQUE-2026-09-22-Soir.md`.
+`L1475` · `demos/concept-le-cristallin-v1.html` (la copie du dimanche était tronquée). Univers Optique reste en
+`L1480` · réduit **Univers Optique et Le Cristallin** à leur ligne d'annuaire : stage effacé, conversation vidée,
 
 ---
 
