@@ -1202,13 +1202,13 @@ EVENING_2109 = {
         "last_send_state": "delivered",
         "Demo made": "Yes",
         "Follow-up date": "2026-09-22",
-        "Notes_extra": "ENVOI DÛ : `demos/concept-univers-optique-v1.html` (722 Ko / 740 056 octets, sha256 719f8b60283184b6…, aperçu promis « d'ici "
+        "Notes_extra": "ENVOI DÛ : **la V2** `demos/concept-univers-optique-v2.html` (718 Ko / 734 727 octets, sha256 ca52d3c5f6ccb7ec…) — la v1 `concept-univers-optique-v1.html` (740 056 octets, sha256 719f8b60283184b6…) est gardée pour la comparaison des deux directions et NE part plus ; aperçu promis « d'ici "
                        "demain ») AVANT 09:00 mardi 22/09, et en repartant du fichier DU 22/09 : la version du 21 au soir "
                        "ne peignait son contenu que si le JavaScript s'exécutait (défaut trouvé par King, corrigé "
                        "à la source ; loi consignée design/LESSONS.md du 22/09). Repli si WhatsApp refuse la "
                        "pièce jointe : la "
                        "version sobre sans visuels, JAMAIS un lien non déployé. Feuille : "
-                       "`sales/Send-UNIVERS-OPTIQUE-2026-09-22-Soir.md`. Ne PAS répéter « absent du web » "
+                       "`sales/Send-UNIVERS-OPTIQUE-2026-09-22-Matin.md` (la Soir reste archive : elle décrit la v1). Ne PAS répéter « absent du web » "
                        "(faux — voir la contradiction M2 de cette ligne) ; la page pose SIX questions qu'il "
                        "doit trancher avant publication (fixe publié en deux versions, offre « 15 % », ordre "
                        "des trois lignes, nom du titulaire, e-mail unique, accès à sa fiche Google). "

@@ -1,6 +1,6 @@
 # Le Cristallin
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-21. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-22. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -38,7 +38,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 49 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 50 ligne(s).*
 
 `L837` · - `Le Cristallin` 17:51 · `Univers Optique` 17:50 · `Disc Optique Médicale` 17:48 · `Tchaya Optique` 17:47 :
 `L881` · ## Lundi 21/09/2026 — 18:20 → 19:15 · « Ok » de Le Cristallin : le premier aperçu demandé, construit et branché sur le CRM
@@ -89,6 +89,7 @@
 `L1376` · **86 954** (`1ff52ae6be71dc4d…`) · Le Cristallin **620 492** (`625ce76a78f9b341…`) · `audit_html.py`
 `L1378` · `diff` démo ↔ aperçu = **0 ligne** aux deux clients · `:4173/univers/` et `:4173/cristallin/` = **200**.
 `L1383` · par mes soins.** La promesse tient : aperçu UNIVERS OPTIQUE **avant 09:00** ; LE CRISTALLIN attend toujours sa
+`L1435` · **Et a ne pas perdre de vue** : LE CRISTALLIN attend toujours sa reponse **A / B** (100 000 · 100 000 +
 
 ---
 

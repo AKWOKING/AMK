@@ -241,3 +241,77 @@ faut lui redonner la version d'aujourd'hui, et la feuille d'envoi porte désorma
 la place : les deux pages compilent (20 blocs `<script>`, 0 faute), 0 finding de contraste sur les cinq
 fichiers, `diff` démo ↔ aperçu = 0 ligne, `:4173/univers/` et `:4173/cristallin/` = 200, et — le point du
 jour — **le contenu ne dépend plus de JavaScript pour être peint**.
+
+
+---
+
+## 22/09/2026 · V2 — « take inspiration from all the attachments, read the design files once more, then
+## redo the site » (message de King, 22/09 au matin, quatre captures à l'appui)
+
+**Ce qui a été refusé, et pourquoi.** La v1 était juste sur le fond (faits sourcés, six questions, NAP
+exact) et fausse sur le registre : un DOSSIER dense à filets, ouvert sur une carte d'état, sans photo.
+Les captures renvoyées disaient autre chose : une fiche de gabarit « Grande Photo · Propre · Moderne »
+et trois écrans d'un site de santé américain (Function) — bandeau rouille, photo pleine largeur, titre
+serif avec un mot en italique, trois étapes 01/02/03 à cartes teintées, tableau comparatif à colonne
+surlignée. Le fichier `inspi.txt` annoncé n'était PAS sur le disque dans ce bac (seules les quatre
+images ont été lues) — consigné ici pour que l'absence soit un fait, pas un oubli.
+
+**La loi a été relue avant de toucher au code** (§2 dials, §3.1/§3.2 bans, §10 images, §11/§11b, §13
+contrôles, §15 visuels, §20 footer), et deux sections de `design/` ont été réintégrées au lieu de rester
+au niveau racine : `CRAFT-FLOOR.md` §3 (la pilule) et §11 (pas de tableau de dix lignes).
+
+**Direction retenue (Design Read §1, écrit dans l'en-tête du générateur)** : cabinet photographique chaud
+et éditorial, VARIANCE 6 · MOTION 4 · DENSITÉ 3 — l'air vient de la photo, pas du vide.
+
+**Overrides de loi, assumés et nommés (§4.4 : une référence est une contrainte, pas une permission)** :
+1. `crème + terracotta` — interdit comme RÉFLEXE, gardé comme DEMANDE : c'est la palette exacte des
+   captures. Consigné au registre de rotation, ligne du 22/09.
+2. `pilule au-dessus du H1` — interdite en régime serif (§3.4), gardée UNE fois parce que la référence en
+   porte une ; elle dit une chose fausable (horaires), pas une humeur.
+3. `Newsreader` plutôt qu'un sans-serif : la référence est un titre serif à mot italique. Ni Fraunces ni
+   Instrument Serif (§3.2) ; l'italique reste dans la même famille, jamais greffé.
+4. Légendes et badges : la référence pose des pastilles SUR la photo ; la maison les met DANS la légende
+   (§10.6 + §15). Le badge « rendu de concept » survit ainsi à une capture d'écran.
+
+**Deux pannes trouvées PAR LES CONTRÔLES, pas par l'œil (à retenir) :**
+· un `<div>` ouvert devant la pastille du pied de page n'était jamais refermé — 94 ouvrantes, 93
+  fermantes. Le contrôle d'appariement des balises l'a dit, la relecture non.
+· `audit_html.py` a sorti **8 contrastes cassés** que la table des paires déclarées du générateur laissait
+  passer, parce que ces textes-là étaient des couleurs **héritées** (le bouton du pied héritait du gris des
+  liens sur fond rouille ; le paragraphe du bandeau portait un crème tiède à 4,07:1). Réparés à la source :
+  la rouille passe de `#B4552B` à `#A94C23` (crème dessus : 4,59 → 5,21, une marge au lieu d'un fil) et la
+  table de contrastes du générateur a été complétée des paires héritées. Règle à retenir : **contrôler les
+  paires réellement peintes, pas les paires déclarées.**
+
+**Faits et copie : inchangés.** 6 constats sourcés, 6 questions à trancher, 8 lignes de face-à-face,
+10 actes (en trois paquets — la v2 de midi n'en montrait que 8, le compte a été remis à dix), note 3,3/5
+sur 6 avis telle quelle, aucune offre « 15 % » affirmée, aucun prix, aucun témoignage, même NAP
+(+237 699 25 28 74 · BP 4680 · rue de Bépanda), mêmes horaires, `noindex,nofollow`.
+
+**Visuels (loi §10.3 + §15, `design/WORKFLOW.md` étape 6)** : quatre rendus d'un seul monde (chêne, crème,
+terracotta, lumière de fin de journée, toits de Bépanda par la fenêtre), générés, **compressés à la taille
+d'affichage exacte, relus un à un**, puis câblés. Verdicts de relecture stockés dans `IMG_REVIEW` du
+générateur et **exigés par la machine** : pas de fiche → pas de build. Aucun lettrage, aucun logo, aucune
+broderie ; l'échelle d'optotypes est conservée (outil du métier, pas une marque). Le négatif demandé en
+bas à gauche du hero ne s'est PAS matérialisé → le titre est posé sur une **voile calculée** (opacité
+minimale 0,84 sur la colonne de texte, contrastes vérifiés au pire cas « image blanche », desktop et
+mobile).
+
+**Contrôles : 74 lignes, 0 faute, puis huit mutations refusées** (`rc=1`, md5 du livrable inchangé) —
+retrancher l'état caché du JavaScript, voler le hero à la révélation, écrire une couleur en dur, couper
+l'anglais, casser le JS, truquer les dimensions, casser une ancre, gonfler le poids. Le fichier de test
+de mutation vit hors dépôt (`/home/user/mutation_test_v2.py`) : c'est une preuve d'hier, pas un produit.
+
+**Deux rollbacks du bac en plein tour** (un entre le build et la relève des tailles, un pendant les
+tests de mutation) : `.git` re-cloné à `74542ab`, `leads/build/guard.py`, `generators.lock.json` et les
+sorties HTML effacés. Récupéré comme la loi le dit : `git fetch` → `reset --mixed FETCH_HEAD` (HEAD revenu
+à `951b752`) → `git checkout HEAD -- leads/build/` → `pip install openpyxl` → `guard.py check` rc=0 →
+`rebuild.sh` rc=0 (61 fiches) → re-build des pages. Un script idempotent de reprise a été laissé à
+`/home/user/recover_v2.py` pour ce cas précis.
+
+**État vérifié après coup** : `concept-univers-optique-v2.html` **734 727 octets** (sha256 `ca52d3c5f6cc
+b7ec…`) · repli sobre **81 565 octets** (`6a07f2c4aee18b77…`) · 470 portées de texte audité, **0 constat**
+· 4 blocs `<script>` compilés, 0 faute · `diff` démo ↔ `hosting/previews/univers/index.html` = **0
+ligne** · `/univers/` pointe sur la v2, `/univers-v1/` garde le dossier pour la comparaison.
+**Aucun envoi fait par mes soins.** Aucun navigateur dans ce bac : pas de capture 1280×800 / 390×844 ni
+de console lue en réel — c'est écrit, pas caché (§13 : une mesure impossible s'écrit NON VÉRIFIÉE).

@@ -1383,3 +1383,55 @@ corps manquant se lise comme un téléchargement tronqué et non comme « le sit
 par mes soins.** La promesse tient : aperçu UNIVERS OPTIQUE **avant 09:00** ; LE CRISTALLIN attend toujours sa
 réponse **A / B**. Aucun navigateur dans le bac : pas de capture 1280×800 / 390×844 ni de console lue en réel —
 c'est écrit, pas caché.
+
+
+## 2026-09-22 · 07:0x → 07:40 (horloge du bac ; la fenetre du bloc precedent, 08:05-08:55, est la meme
+## journee vue de l'exterieur — deux rollbacks ont mange des minutes, c'est raconte plus bas) ·
+## UNIVERS OPTIQUE — « take inspiration from all the attachments then read the design files once more,
+## then redo the site » : la redo « GRANDE PHOTO »
+
+**La consigne etait double : s'inspirer ET relire la loi.** Les quatre captures (une fiche de gabarit
+« Grande Photo · Propre · Moderne » + trois ecrans Function) ont ete lues ; le fichier `inspi.txt` annonce
+n'etait pas sur le disque — consigne comme absence, pas comme oubli. La loi a ete relue dans le depot, pas
+de memoire : `AMK-DESIGN-SKILLS.md` §1/§2/§3.1/§3.2/§3.4/§4.4/§10/§11/§13/§15/§20 + `design/CRAFT-FLOOR.md`
+§3 + `design/WORKFLOW.md` etapes 6, 8, 9 + `design/MOTION.md` §3.2.
+
+**Ce qui a ete fait** : nouvelle copie dans `demos/univers_optique_content.py` (hero, trois etapes,
+face-a-face 8 lignes, cabinet, trois paquets de dix actes, bandeau protheses, note des rendus, titre
+d'onglet raccourci a 61 caracteres mot-cle en tete) ; quatre rendus generes, compresses a la taille
+d'affichage, **relus un a un** ; `demos/build_univers_optique_v2.py` ecrit de zero (718 Ko, meme NAP,
+mêmes faits, `noindex,nofollow`) ; apercu `/univers/` bascule sur la v2, `/univers-v1/` garde le dossier.
+
+**Deux pannes trouvees par les controles, pas par l'ceil** : un `<div>` jamais referme au pied de page
+(94/93) et **huit contrastes casses** que la table des paires DECLAREES ne voyait pas, parce que ces
+textes heritaient d'une couleur voisine — reparer a la source (rouille `#B4552B` → `#A94C23`, creme
+dessus 4,59 → 5,21) et la table de controle completee des paires HERITEES. Loi implicite a retenir :
+**on controle ce qui est peint, pas ce qui est declare.** Et une faute de fond corrigee en relisant le
+plan : les paquets de services ne montraient que 8 actes sur les 10 verifies — remis a dix.
+
+**Sept controles repris pour cesser de mentir** : son plafond d'etiquettes etait calcule a la main (6 pour
+12 → ramene a une sur trois, cinq etiquettes retirees) ; le test des 15 % comptait les occurrences au lieu
+de verifier qu'elles sont attribuees ; le test de mot banni cherchait dans les balises `fr-only` (il cherche
+desormais le texte visible) ; le comptage des balises confondait `<p>` et `<path>` ; la parite FR|EN
+exigeait 300 portees (225 est le nombre reel de cette page) ; le test de domaines morts comptait les
+`mailto:` ; le test « pas de JS » tombait sur le bouton de langue, qui lui a le droit d'ecouter un clic.
+
+**Huit mutations, huit refus** (`rc=1`, md5 du livrable inchange) : etat cache retire du `html.js`,
+revelation volee au hero, couleur ecrite en dur, anglais coupe, JS non compilable, DIM truquees, ancre
+cassee, poids explose. Le fichier de test reste hors depot.
+
+**Deux rollbacks du bac en plein tour** : `.git` re-clone a `74542ab`, `leads/build/guard.py`,
+`generators.lock.json` et les sorties HTML effaces. Reprise conforme a la loi : `git fetch` →
+`reset --mixed FETCH_HEAD` (HEAD revenu a `951b752`) → `git checkout HEAD -- leads/build/` → openpyxl →
+`guard.py check` rc=0 → `rebuild.sh` rc=0 (61 fiches) → re-build. Script de reprise idempotent laisse a
+`/home/user/recover_v2.py`. Hygiene : `demos/_b64.txt` (337 Ko de base64 oublie la) et son script
+jetable `demos/apply_blue_rebrand.py` sortent du depot.
+
+**Etat verifie** : `concept-univers-optique-v2.html` **734 727 octets** (`ca52d3c5f6ccb7ec…`) · repli
+sobre **81 565** (`6a07f2c4aee18b77…`) · `audit_html.py` **0 constat** (470 portees) · `check_inline_js.py`
+**0 faute sur 4 blocs** · `diff` demo ↔ apercu = **0 ligne**. Feuille d'envoi :
+`sales/Send-UNIVERS-OPTIQUE-2026-09-22-Matin.md`. **Aucun envoi fait par mes soins ; aucun lien envoye.**
+
+**Et a ne pas perdre de vue** : LE CRISTALLIN attend toujours sa reponse **A / B** (100 000 · 100 000 +
+50 000) — relance le 23/09, et son fichier doit etre renvoyé (la copie du dimanche est cassee). Univers
+est en phase `closing` : la balle est dans son camp des que la v2 est transmise.

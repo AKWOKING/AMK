@@ -34,8 +34,12 @@ SLUGS = {
                    "Le Cristallin, opticien à Douala — refonte concept"),
     # 21/09 nuit — UNIVERS OPTIQUE (Bépanda) : dossier de REPRISE, pas une refonte d'un site vivant.
     # Le domaine du cabinet ne répond plus : la copie partagée porte donc le constat + l'aperçu.
-    "univers": ("demos/concept-univers-optique-v1.html",
-                "Univers Optique, opticien à Bépanda Douala — aperçu de reprise"),
+    # 22/09 — la direction « GRANDE PHOTO » (v2) devient l'aperçu de travail ; le dossier v1 reste
+    # consultable sous /univers-v1/ pour que la comparaison des deux directions soit possible sur place.
+    "univers": ("demos/concept-univers-optique-v2.html",
+                "Univers Optique, opticien à Bépanda Douala — aperçu de reprise (v2)"),
+    "univers-v1": ("demos/concept-univers-optique-v1.html",
+                   "Univers Optique, opticien à Bépanda Douala — dossier v1"),
 }
 
 NOINDEX = '<meta name="robots" content="noindex,nofollow">'

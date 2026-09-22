@@ -81,3 +81,35 @@ page Facebook à son nom · **les photos réelles** (devanture, comptoir, une me
 Les visuels de la page sont **étiquetés « Rendu de concept — votre photo le remplacera »**, en FR et EN,
 sur chaque image (consigne du 21/09, 20:20 : générer est autorisé, faire croire que c'est son magasin ne
 l'est pas).
+
+
+---
+
+## 22/09/2026 matin — la reference qui a declenche la redo v2 (consignee comme contrainte, pas comme gout)
+
+Quatre captures renvoyees par King apres la v1, plus un `inspi.txt` **annoncé mais absent du disque**
+(dit tel quel : ce qui n'a pas ete lu n'est pas invoque) :
+
+1. **Une fiche de gabarit « Grande Photo · Propre · Moderne »** — bleu / gris / blanc / noir annonce en
+   palette, hero photo pleine largeur, une seule famille de caracteres, un seul accent.
+2-4. **Trois ecrans d'un site de sante americain (Function)** — bandeau superieur rouille, navigation en
+   pilules, hero photo + titre serif dont un groupe de mots en italique, pilule au-dessus du titre,
+   trois etapes numerotees 01/02/03 en cartes teintees avec un widget reel dans chacune (selecteur de
+   jours, heures, cases cochees), tableau comparatif a trois colonnes avec la colonne de droite **surignee
+   en rouille**, blocs de stats a chiffres tabulaires, footer a quatre blocs.
+
+**Ce que la maison en a pris, et ce qu'elle n'a pas pris :**
+
+| La reference proposait | La page d'AMK fait | Pourquoi |
+|---|---|---|
+| palette creme + terracotta | **gardee, signe comme reference** | §3.1 interdit le reflexe non examine ; la palette est celle des captures du client de notre client |
+| pilule au-dessus du H1 | **gardee une fois**, et elle dit une chose fausable (horaires) | §3.4 : une pilule est normalement exclue quand le H1 est fort |
+| pastilles posees SUR les photos | **deplacees dans la legende** | §10.6/§15 : un badge dans la legende survit a la capture et ne salit pas l'image |
+| titre serif a mot italique | **Newsreader** (pas Fraunces, pas Instrument Serif), italique dans la meme famille | §3.2 : pas de serif greffe sur un titre sans-serif |
+| selecteur de creneaux en JS | **liens `wa.me` reels, ecrits en dur** | WORKFLOW etape 8 : la page se peint sans JavaScript |
+| tableau de dix lignes de services | **trois paquets, une raison par paquet, dix actes couverts** | §11 : une liste de plus de cinq items n'est pas un tableau a filets |
+
+**Aucun fait n'a ete change pour plaire a la reference** : note 3,3/5 sur 6 avis, six questions a trancher,
+NAP, horaires, dates d'archive, mention du domaine mort en texte seulement. La reference a change **la
+maniere de les montrer**, jamais ce qui est affirme. C'est la ligne de separation entre « s'inspirer » et
+« copier une maquette ».
