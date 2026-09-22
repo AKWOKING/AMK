@@ -31,7 +31,7 @@ Message 1 lundi 14/09. Concept live : oracare-concept.vercel.app (v3, prix + ass
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 25 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 26 ligne(s).*
 
 `L3` · **Pourquoi ce fichier existe.** Le 18/09, j'ai écrit dans un résumé que « OraCare et MITOC ont répondu ». **C'est faux.** Oracle a écrit le contraire et j'ai parlé de mémoire au lieu de lire ce fichier. King a corrigé. Cette erreur a coûté du temps et de la confiance : ce journal remplace la mémoire par des faits vérifiables.
 `L13` · | lun 14/09 | **OraCare237** (672 52 66 86) | msg 1 | **Pas lu** | **Non** |
@@ -58,6 +58,7 @@ Message 1 lundi 14/09. Concept live : oracare-concept.vercel.app (v3, prix + ass
 `L1751` · message du 19 » : sur le téléphone de King, **ces messages n'ont jamais été ouverts**. C'est la leçon OraCare
 `L1767` · (INSES), 1 message tué parce qu'il promettait le silence puis reprochait le silence (OraCare), et 33 fils
 `L1777` · programmée), `oracare-concept.vercel.app` (parked — le message prévu pour le 28/09 propose justement de le
+`L1818` · que la critique d'OraCare nous a appris à éviter. Les deux ont d'ailleurs une vitrine (deux pages Facebook
 
 ---
 

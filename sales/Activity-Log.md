@@ -1830,4 +1830,47 @@ listé, donc personne n'a rien payé) et une vitrine (où quelqu'un a investi du
 vitrine à lui » est désormais **opérationnel** : il suffit d'une requête et de trente secondes de lecture.
 
 **Suite immédiate** : King envoie ces cinq, relève les coches dans ce journal, et on passe à la **création de
-contenu** — le prochain chantier, tel qu'il l'a annoncé à 17:56.
+contenu** — le prochain chantier, tel qu'il l'a annoncé à 17:56.## 2026-09-22 · 17:56 → 18:35 · « pourquoi demain ? » — la passe faite ce soir, un lot qui ne peut pas partir, et six sites à eux
+
+**King, 17:56** : « pourquoi demain, time now is just 17:56, we can send out one last batch don't you think,
+then perhaps move to content creation. » Il avait raison sur le fond : l'heure n'était pas le problème, la
+liste l'était. La passe prévue pour le 23 a donc été faite **ce soir**, et elle a produit **deux vagues**.
+
+**Vague 1** (`sales/Send-Dernier-Lot-2026-09-22-18h.md`, 5 messages) — cinq leads jamais contactés avec une
+vitrine **Facebook** : Niva Labo, Hyrus Labo (deux pages), Aube Labo, MegaOptic, Polyclinique Innova.
+
+**⚠️ Le contrôle qui sauve la soirée : trois de ces cinq numéros sont notés « PAS SUR WHATSAPP » depuis le
+19/09** dans la source (`PAS_SUR_WHATSAPP`) — Niva (679 03 13 30), Aube (693 06 81 84), Hyrus (699 76 01 18),
+`wa_verified = no`, `Contacted = No`. **Un lot de cinq messages dont trois ne peuvent pas être délivrés, c'est
+exactement le piège des 33 fils de ce matin : croire qu'on a parlé à quelqu'un.** C'est écrit en tête de la
+vague 2, avec le canal de rechange (message privé de la page Facebook, ou appel, texte en main).
+
+**Vague 2** (`sales/Send-Dernier-Lot-2-2026-09-22-18h30.md`, 6 messages) — ceux que la première passe n'avait
+pas vus : **des leads avec un VRAI SITE À EUX**, un domaine payé, pas seulement une page. LyfyOptic
+(`lyfyoptic.com` — deux titres du gabarit, « Premier texte » et « Deuxième texte », toujours sur la page
+d'accueil, et le numéro du site = celui du CRM), **BIOSCAN** (`bioscanlabo.com` — l'adresse de contact est
+écrite `bioscanlabo@g.mail.com`, un domaine qui n'existe pas, donc ce qui est envoyé là ne part pas ; et
+« +5 ans » face à « +100 patients par an »), **CMODN** (page Facebook et **aucun site**, « Site internet : - »
+sur deux annuaires), **ScientiLabo** (site complet, 34 ans, agrément n°25 — et **trois adresses e-mail
+différentes** publiées), **KYLAYA LABO** (site sérieux — « Douala » écrit « Doula » dans l'adresse),
+**Biomedicam** (site bilingue + page FB, labo ouvert en 1990, premier bébé éprouvette de la sous-région en
+1998). Plus **Optic Laser Medical**, trouvé avec un site mais **sans aucun numéro public** : `wa_number` vide,
+« à compléter », pas d'envoi possible — c'est noté, pas deviné.
+
+**Quatre leads qui n'existaient pas dans le CRM** (ScientiLabo, Kylaya, Biomedicam, Optic Laser Medical) et
+**11 nouvelles lectures de présence** sont entrées dans la source (`FICHE_2209`, `_sites_rows()`). Piège
+attrapé au passage : ma deuxième fournée avait créé **six clés en double** dans un dict — la seconde gagne en
+silence, et le garde-fou ne voit pas ce cas. Nettoyé, revérifié : **25 clés, zéro doublon**, CRM reconstruit
+(**147 lignes**). `openpyxl` avait disparu avec le snapshot : réinstallé, puis `guard.py lock` et
+`rebuild.sh` propres.
+
+**Et la restauration de snapshot, une fois de plus** : la copie locale était revenue au commit de base
+(`74542ab`) pendant que le distant portait déjà la passe du soir. Récupéré par `git fetch` + `git reset
+--hard FETCH_HEAD` après avoir mis de côté les fichiers modifiés (`/tmp/snap-safety/`). Le réflexe du matin a
+servi deux fois dans la même journée.
+
+**Prochaine étape annoncée par King : la création de contenu.** Le socle existe et il est cohérent avec ce
+qu'on vient d'apprendre : `content/strategy/CONTENT-STRATEGY.md` (v0.3 approuvée, cible = décideurs de
+cliniques et de labos) et un pipeline avec #4b livré à valider. **Le sujet qui s'impose est celui de ce soir :
+« votre page Facebook ne prend pas un rendez-vous »** — cinq des leads trouvés aujourd'hui avaient une
+vitrine, aucun n'avait de quoi convertir, et ce sont **nos propres données** qui le disent.

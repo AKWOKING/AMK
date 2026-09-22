@@ -1613,9 +1613,13 @@ FICHE_2209 = {
         '',
     ),
     "bioscan-newbell": (
-        'none found (22/09) — fiche Google 5/5 (3 avis) via annuaires',
+        'bioscanlabo.com — VIVANT (WordPress/OceanWP, monté en 2025) : services, galerie, blog, widget WhatsApp',
         '',
-        '',
+        "⚠️ DEUX FAITS VÉRIFIÉS le 22/09 sur son propre site : ① l'adresse de contact est écrite "
+        "`bioscanlabo@g.mail.com` — un domaine « g.mail.com » qui n'existe pas, donc les messages envoyés là "
+        "ne partent nulle part ; ② les chiffres se contredisent (« +5 ans d'expertise » vs « +100 patients "
+        "pris en charge chaque année »). Téléphone du site 680 060 394 = numéro du CRM. RAPPEL 19/09 : "
+        "numéro noté « PAS SUR WHATSAPP » → écrire par un autre canal, ou vérifier le profil avant.",
     ),
     "biolex-deido": (
         'none found (22/09)',
@@ -1657,7 +1661,77 @@ FICHE_2209 = {
         'facebook.com/people/DISC-Optique-Médical-DOM/100088156174066/',
         'DÉJÀ CONTACTÉ : message 1 parti le 21/09 à 17:48 (une coche), jamais enregistré — corrigé le 22/09. Vitrine : page Facebook « DISC Optique Médical - DOM » (Bali, rue des manguiers).',
     ),
+    # ── Deuxième passe du 22/09 au soir : on ne garde ici QUE les leads que la première passe n'avait
+    #    pas vus. Les autres (bioscan, biolex, horizon-optique, clinique-des-cites, imagerie-saint-joseph,
+    #    labo-phanuel) sont déjà dans la table ci-dessus — deux entrées pour une même clé dans un dict,
+    #    c'est la seconde qui gagne EN SILENCE. Le garde-fou ne voit pas ce piège ; la relecture, si.
+    "lyfyoptic": (
+        'lyfyoptic.com — VIVANT, mais GABARIT NON TERMINÉ : les titres « Premier texte » et « Deuxième texte » '
+        'sont restés sur la page d\'accueil (lu le 22/09)',
+        '',
+        "Vitrine : site à eux. Le numéro du site (699 98 06 66) est celui du CRM. Adresse publiée : "
+        "15086 Akwa-Bonadibong. « Assistance 24/24, 7j/7 » est leur argument — et rien sur la page ne permet "
+        "de prendre un rendez-vous.",
+    ),
+    "cmodn-makepe": (
+        'none found',
+        'facebook.com/profile.php?id=100063463571676 (page au nom du centre)',
+        "Vitrine : la page Facebook, PAS de site (« Site internet : - » chez maligah, « no website » chez "
+        "africabizinfo). Numéro 698 00 68 98 confirmé par deux annuaires. Profil : il entretient déjà une "
+        "vitrine qui ne lui appartient pas.",
+    ),
+    "espace-vision": (
+        'none found (22/09 : aucune page, aucun domaine — registre ONOC n° 030 + une fiche businesslist)',
+        '',
+        "Registre ONOC : BIYOUMA Théodore, 677 33 94 24. Hors profil d\'envoi pour l\'instant.",
+    ),
+    "clinique-saint-luc": (
+        'none found (22/09 : trois fiches d\'annuaire — maligah, hospitalby, medpages — aucune vitrine)',
+        '',
+        '',
+    ),
+    "faby-optique": ('none found (22/09 : aucun résultat sur son nom exact)', '', ''),
 }
+
+
+
+def _sites_rows():
+    """Les prospects TROUVÉS par la deuxième passe : ils ne figuraient pas dans le CRM."""
+    return [
+        dict(slug="scientilabo-akwa", org="ScientiLabo", city="Douala (Akwa, 1749 rue Gallieni)",
+             org_type="lab", language="FR", wa_number="696 423 477", wa_verified="unknown",
+             contact_channel="WhatsApp", stage="prospecting", contacted="No", reply="No", demo="No",
+             source="pass_vitrine", source_detail="2ᵉ passe du 22/09 (site à eux)",
+             Website="scientilabo.com — VIVANT et fourni (34 ans, ISO 15189, RDV en ligne, résultats en ligne)",
+             notes="Vitrine à lui → profil. Agréé n°25 du Ministère de la Santé, 34 ans d'existence, analyse "
+                   "des eaux et toxicologie en plus de la biologie ; TROIS adresses e-mail différentes sur le "
+                   "site (scientisom@yahoo.fr, scientilabo@gmail.com, contact@scientilabo.com) et deux numéros "
+                   "(696 423 477 / 680 934 010). Présent dans le réseau de soins AssurTous."),
+        dict(slug="kylaya-labo-bali", org="KYLAYA LABO", city="Douala (Bali, 189 rue des Manguiers)",
+             org_type="lab", language="FR", wa_number="696 78 77 78", wa_verified="unknown",
+             contact_channel="WhatsApp", stage="prospecting", contacted="No", reply="No", demo="No",
+             source="pass_vitrine", source_detail="2ᵉ passe du 22/09 (site à eux)",
+             Website="kylayalabo.com — VIVANT (analyses, RDV en ligne, espaces résultats patients ET médecins)",
+             notes="Vitrine à lui → profil. Site sérieux et complet : biochimie (≈70 analyses), marqueurs "
+                   "tumoraux, biologie moléculaire, prélèvements à domicile, résultats en ligne. Également "
+                   "dans le réseau de soins AssurTous."),
+        dict(slug="biomedicam-bonapriso", org="Laboratoire Biomedicam", city="Douala (Bonapriso)",
+             org_type="lab", language="FR/EN", wa_number="699 00 32 07", wa_verified="unknown",
+             contact_channel="WhatsApp", stage="prospecting", contacted="No", reply="No", demo="No",
+             source="pass_vitrine", source_detail="2ᵉ passe du 22/09 (site à eux)",
+             Website="biomedicam.com — VIVANT, bilingue FR/EN (labo ouvert depuis le 2 janvier 1990)",
+             Facebook="facebook.com/biomedicam",
+             notes="Vitrine à lui (site + page FB) → profil. Histoire vérifiable et forte : premier bébé "
+                   "éprouvette de la sous-région (14 avril 1998), biologie de la reproduction, tests ADN, "
+                   "biologie vétérinaire ; dirigeant Dr Christian Pany, 1058 avenue Paul Soppo-Priso."),
+        dict(slug="optic-laser-medical-akwa", org="Optic Laser Medical", city="Douala (Akwa, bd de la République)",
+             org_type="other", language="FR", wa_number="", wa_verified="unknown",
+             contact_channel="", stage="prospecting", contacted="No", reply="No", demo="No",
+             source="pass_vitrine", source_detail="2ᵉ passe du 22/09 (site à eux)",
+             Website="opticlasermedical.com — VIVANT (SARL fondée par M. Njumssa François)",
+             notes="⏸ PAS ENCORE ENVOYABLE : aucune coordonnée relevée sur la page publique. Le numéro est la "
+                   "première chose à trouver avant tout message."),
+    ]
 
 
 def _apply_fiche(out: list) -> None:
@@ -1731,6 +1805,11 @@ def main() -> int:
 
     # 2c · les numéros testés et écartés — la donnée qui évite de refaire le travail
     for p in _not_reachable_rows():
+        out.append({"School": p["org"], **p})
+
+    # 1c · les prospects TROUVÉS par la passe « vitrine » du 22/09 (ils n'étaient pas dans le CRM).
+    #      Ils passent AVANT la normalisation des clés : ils arrivent en forme courte, comme les autres.
+    for p in _sites_rows():
         out.append({"School": p["org"], **p})
 
     # 2d · les 19 laboratoires du pack du 19/09 au soir

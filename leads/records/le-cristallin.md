@@ -39,7 +39,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 66 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 67 ligne(s).*
 
 `L837` · - `Le Cristallin` 17:51 · `Univers Optique` 17:50 · `Disc Optique Médicale` 17:48 · `Tchaya Optique` 17:47 :
 `L881` · ## Lundi 21/09/2026 — 18:20 → 19:15 · « Ok » de Le Cristallin : le premier aperçu demandé, construit et branché sur le CRM
@@ -107,6 +107,7 @@
 `L1623` · renseignée que pour **2** (Les Cristallin et Univers, vérifiés à la main) et `Facebook` est vide pour 105.
 `L1636` · pour Labiomed, Bonanjo, Le Cristallin. **Aucun message envoyé par moi, aucun déploiement.**## 2026-09-22 · 16:45 · DÉCISION — « laisser tomber les écoles », et la vague du soir sort du plan
 `L1779` · - **à garder** : `uni-labo`, `mitoc-concept`, `lecristallin-concept`, `concept-skye`, `concept-yaks-v1`,
+`L1807` · | **MegaOptic** | page Facebook + **vidéo listant les assurances acceptées** | la liste est enfermée dans une vidéo — angle identique au Cristallin |
 
 ---
 
