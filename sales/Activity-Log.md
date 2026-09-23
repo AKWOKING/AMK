@@ -2308,3 +2308,58 @@ mais jamais chargée). En l'écrivant, un **sixième faux positif** a été évi
 rangée plus loin dans la déclaration (`'Nunito','Quicksand',…`) n'est pas un défaut — seule la **première**
 famille décide. Un « bloquant » reste attendu sur `site/mockup-hero.html` : c'est un **modèle à jetons**,
 et c'est la preuve qu'il est resté un modèle.
+
+## 2026-09-23 · 17:50 → 18:20 · TROIS DÉCISIONS DE KING : plus de publication, le dépôt se vide de 81 Mo, et les deux clients en cours sont GELÉS
+
+**Ce que King a décidé, mot pour mot :** ① « Je ne poste plus sauf si absolument nécessaire pour faire
+avancer l'agence. Video 06 restera dans le repo, retire les vidéos précédentes du repo, elles rendent le
+repo lourd inutilement. » ② « scan le repo aussi et débarrasse-toi des sites démo qu'on ne va plus user. »
+③ « Pour lecristallin et univers on ne touche plus rien jusqu'à ce que les prospects deviennent des
+clients payants. »
+
+**① Le dépôt n'est plus un disque dur : 81 Mo sortis.** Toutes les vidéos et leurs audio — v02, v03, v04
+(+ sources), v05 (+ narrations FR/EN), les preuves de mouvement `_technique`, les quatre pubs fondatrices
+de `sales/social/videos/`, le projet TikTok complet (`tiktok/`, 23 Mo) — plus les deux archives
+`amk-site*.zip` (régénérables par `hosting/build_site_zip.py`). **La vidéo 06 reste**, intacte, comme King
+l'a demandé. Chaque dossier de vidéo garde son `STATUS.md`, son script et sa timeline : le dossier garde sa
+mémoire, pas son poids. Un `.gitignore` neuf empêche les médias de revenir (`*.mp4|webm|mov|mp3|wav|…`),
+et `content/videos/README.md` dit comment restaurer n'importe quelle pièce en une commande.
+*À dire franchement : l'historique git contient toujours ces fichiers (`.git` ≈ 141 Mo), donc un clone
+complet reste lourd. Les enlever vraiment demanderait une réécriture d'historique — je ne la fais pas sans
+son accord explicite.*
+
+**② Neuf sites démo sortis du dépôt** — prospects morts ou parqués, versions remplacées, assets sans
+lecteur : JEMPO (jamais contacté), La Béthanie (parquée), SJC Sasse (parquée), COMOBIL (parquée depuis le
+14/09), SAHISCOL (site .org en 502, jamais déployé), la démo Collège La Retraite (jamais entrée au CRM),
+OraCare v1 (remplacée deux fois — v2 reste, c'est la dépendance du builder v3, et v3 est la page en ligne),
+L'Opticien v1 (remplacée par la variante réellement servie), plus leurs copies dans `hosting/previews/`,
+`demos/oc-assets`, `demos/assets` et une image orpheline. **Gardés, et la raison est écrite** : Le
+Cristallin, Univers Optique, UNI-LABO, et tous les aperçus de prospects qualifiés ou vivants (Skye, YAKS,
+Afrique Labo, L'Opticien, Labiomed, Bonanjo, MITOC) ; la bibliothèque publiable sans identité client
+(`/demo/`, `/mboacare-demo/`) parce qu'elle est petite et qu'elle sera la seule pièce montrable si une
+publication redevient nécessaire ; et **toutes les photos source du Cristallin et d'Univers** — ce sont les
+photos du client, on n'y touche pas. Tout est récupérable : `git checkout <sha> -- <chemin>`.
+
+**③ Le gel est écrit là où il se lit** : en tête de `hosting/previews/README.md`, et dans les deux dossiers
+`clients/`. Il dit ce que le gel interdit (modifier, retoucher, re-capturer, redéployer) et ce qu'il
+autorise (répondre, encaisser, préparer ce qui a été demandé). Et une chose qu'il fallait écrire noir sur
+blanc : **la page du Cristallin EN LIGNE est en avance sur notre copie du dépôt** — elle porte le slogan
+dans la barre, les textes d'origine sur les verres, l'adresse « Ancien COMECI / ECOTEX », et ses liens
+WhatsApp sont en `wa.me/237699905577` (donc corrects). **Redéployer depuis le dépôt écraserait ce que le
+client regarde.**
+
+**Correction d'une alerte de la veille, et elle est à nous.** Dans le lot précédent j'avais annoncé que la
+page du Cristallin « gardait son bouton mort » en ligne. **C'était faux** : la lecture de la page servie le
+23/09 montre des liens corrects. Le lien sans indicatif vivait dans **notre copie du dépôt**, pas sur la
+page que le client ouvre. Ce qui reste vrai : la page en ligne et notre copie ont divergé — d'où la règle
+« ne jamais redéployer depuis le dépôt ».
+
+**Le reste du tour :** le `13:30` de King à UNI-LABO est porté au CRM — créneau de 10 h pris, **14 h 30
+proposé**, **prix posé : 150 000 FCFA** (50 % = 75 000), **grille tarifaire standard jointe en PDF** —,
+la feuille du vendredi mise à jour, et le nom du client du Cristallin enfin lu dans le fil : **Monsieur
+Messoua**. Les quatre échéances du CRM disent maintenant le gel (Le Cristallin, Univers) et l'attente
+(UNI-LABO, 14 h 30 à confirmer).
+
+**Chronologie de la journée, tenue à jour :** 10 h le prix part chez Le Cristallin · 13 h 30 King propose
+14 h 30 à UNI-LABO avec la grille tarifaire · le soir, plus de publication, dépôt allégé, deux clients gelés.
+La suite tient en trois mots : **sourcing, vendredi, encaissement.**

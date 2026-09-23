@@ -8,7 +8,8 @@
 **Étape du pipeline : `offer`** — `leads/CRM.csv`. **C'est le seul lead de la campagne à cette étape.**
 
 > ⚠️ **Vendredi 25/09 il y a DEUX rendez-vous** : celui-ci (UNI-LABO) et **Univers Optique, 10 h, son cabinet à Bépanda** — fixé par le client le 22/09 à 20:51 (« Je suis vraiment intéressé… vendredi matin 10h dans mon cabinet »), feuille `sales/RDV-UNIVERS-OPTIQUE-2026-09-25.md`.
-> **L'heure d'UNI-LABO manque toujours** — et c'est le seul point de logistique qui reste : les deux quartiers sont voisins (10-15 min), donc **si UNI-LABO propose le matin, viser 11 h 30 / 12 h**, jamais la même heure que Bépanda.
+> ✅ **HEURE PROPOSÉE PAR KING LE 23/09 À 13:30 : 14 H 30**, à leur laboratoire (Carrefour Etoo) — le créneau de 10 h est pris par Univers Optique. **EN ATTENTE de leur « oui ».** Comme les deux quartiers sont voisins (10-15 min), l'enchaînement tient : **10 h Bépanda → 14 h 30 Bonamoussadi**.
+> **LE PRIX EST POSÉ dans le même message : 150 000 FCFA** (site bilingue complet avec formulaire de réservation WhatsApp), **50 % = 75 000 au démarrage, 50 % à la livraison**, avec la **grille tarifaire standard en PDF**. Donc vendredi il ne s'agit plus de présenter un prix : il s'agit de **répondre aux questions** et de prendre l'acompte.
 
 ---
 

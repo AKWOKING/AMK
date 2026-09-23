@@ -136,3 +136,26 @@ Douala, qui me recommandes-tu ? »*, noter les noms cités, refaire le relevé d
 **Interdit dans les trois cas** : promettre à un prospect qu'il sera « recommandé par ChatGPT » — nous ne
 contrôlons ni les modèles ni leurs réponses. La phrase vraie, et elle suffit : *« la page répond aux
 questions qu'on vous pose avant d'appeler. »*
+
+---
+
+## Décision finale de King — 23/09 au soir : **ON NE POSTE PLUS**
+
+> **« Je ne poste plus sauf si absolument nécessaire pour faire avancer l'agence. Video 06 restera dans le
+> repo. »**
+
+C'est plus strict que la décision du matin (geler la production, publier l'étagère) : **l'étagère ne se
+publie plus non plus.** Ce qui change concrètement :
+
+- **Le créneau de ce soir (mardi 23/09, 18:00–20:00) est ANNULÉ.** La vidéo 06 reste dans le dépôt,
+  montée et vérifiée, elle ne part pas.
+- **Aucune publication** (TikTok, Facebook, Instagram) tant qu'elle n'est pas *nécessaire pour faire
+  avancer l'agence* — c'est-à-dire : un envoi à un prospect, un événement commercial, ou un test décidé
+  par King. Une publication « pour tenir le rythme » n'existe plus.
+- **Le contenu cesse d'être un chantier.** Les heures vont à la prospection « profil vitrine » et aux deux
+  rendez-vous de vendredi.
+- **Les vidéos précédentes sont sorties du dépôt** (81 Mo) : la 06 y reste, les autres sont récupérables
+  par `git checkout <sha> -- <chemin>`. Le dépôt n'est plus un disque dur.
+- **Le relevé AEO** (poser la question du prix à trois assistants, noter qui est cité, recommencer dans
+  30 jours — `AMK-SEO-PLAYBOOK.md` §8.5) reste la seule action de « contenu » qui coûte zéro franc et qui
+  informe une décision. **Il attend toujours le feu vert de King.**

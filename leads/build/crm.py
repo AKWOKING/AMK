@@ -1455,6 +1455,44 @@ JOUR_2209 = {
 # +50 000 jamais posée), NI du fait que son domaine est déjà à lui jusqu'au 13/06/2027 et que
 # son hébergement LWS existe. À cadrer avant de facturer quoi que ce soit d'autre.
 JOUR_2309 = {
+    "univers-optique": {
+        "stage": "closing",
+        "stage_since": "2026-09-22",
+        "Follow-up date": "2026-09-25",
+        "Conversation_extra":
+            "22/09 20:51 — LUI : « Je suis vraiment intéressé, il faudrait qu'on se voit pour en discuter. "
+            "Vendredi matin 10h dans mon cabinet. Bonne nuit » · 22/09 21:22 — KING confirme : « c'est bien "
+            "noté pour ce vendredi à 10h dans votre cabinet ». · 23/09 au soir — GEL DÉCIDÉ PAR KING : plus "
+            "aucune modification de la page ni du dossier tant qu'il n'a pas payé. La page à montrer est "
+            "celle déjà en ligne ; on n'en reconstruit aucune.",
+        "Notes_extra":
+            "Prix posé le 21/09 (100 000 FCFA, 50/50) et jamais rebaissé. La préparation de la réunion est "
+            "faite (`sales/RDV-UNIVERS-OPTIQUE-2026-09-25.md` + le business case d'une page, à envoyer dans "
+            "l'heure qui suit) : elle ne demande plus aucun travail sur le site.",
+    },
+    "uni-labo-bonamoussadi": {
+        "stage": "offer",
+        "stage_since": "2026-09-23",
+        "Follow-up date": "2026-09-25",
+        "last_send_state": "delivered",
+        "Conversation_extra":
+            "22/09 21:15 — LUI : « Présentiel ». · 22/09 21:20 — KING : « D'accord ça marche pour moi ». · "
+            "22/09 21:24 — KING propose de se voir À SON LABORATOIRE (Carrefour Etoo) et demande le "
+            "créneau : « plutôt disponible en matinée (vers 10h) ou en début d'après-midi (vers 14h30) ? » · "
+            "23/09 13:30 — KING : le créneau de 10 h est pris par un autre rendez-vous client, il PROPOSE "
+            "DONC 14h30 pour vendredi, joint LA GRILLE TARIFAIRE STANDARD (PDF) et pose LE PRIX : "
+            "150 000 FCFA — « la création de votre site bilingue complet (avec le formulaire de "
+            "réservation WhatsApp direct) », 50 % d'acompte au démarrage et 50 % à la livraison. Il "
+            "demande une confirmation pour bloquer le créneau. EN ATTENTE DE SA RÉPONSE : rien d'autre "
+            "ne se prépare tant qu'il n'a pas dit oui à 14h30.",
+        "Notes_extra":
+            "LE SEUL DOSSIER SUR LEQUEL ON TRAVAILLE ENCORE VENDREDI : les deux autres (Le Cristallin, "
+            "Univers Optique) sont GELÉS jusqu'au paiement (décision de King du 23/09 au soir : « on ne "
+            "touche plus rien jusqu'à ce que les prospects deviennent des clients payants »). Prix posé : "
+            "150 000 FCFA (même tarif de référence que celui envoyé au Cristallin), acompte 75 000. La "
+            "grille tarifaire standard a été jointe en PDF : c'est elle qui fait foi si un écart apparaît "
+            "entre le message et le PDF.",
+    },
     "le-cristallin": {
         "stage": "closing",
         "stage_since": "2026-09-23",
@@ -1472,7 +1510,18 @@ JOUR_2309 = {
             "acompte de démarrage 50 % = 75 000 FCFA, solde à la livraison et mise en ligne "
             "(3 à 5 jours), et il demande l'accord du client pour transmettre les informations de "
             "règlement Mobile Money. AUCUNE RÉPONSE DE LUI à l'heure de ce relevé : on attend un "
-            "oui, un non ou une question — et on n'écrit plus rien d'autre entre-temps.",
+            "oui, un non ou une question — et on n'écrit plus rien d'autre entre-temps. · "
+            "PRÉCISION APPORTÉE PAR LA CAPTURE DU FIL (23/09 au soir) : à 21:58 le 22/09 il a "
+            "écrit « Pour le reste ne change encore rien puisque j'ai certains modifications "
+            "que tu as apporté sans mon ok » ; King a répondu « D'accord » à 22:07 ; le client "
+            "a mis « Vu » à 22:23. Sa demande est donc DÉJÀ une règle : rien ne se modifie sans "
+            "son accord. · NOM DU CLIENT, lu dans le message de King du 23/09 09:46 : "
+            "**Monsieur Messoua**. · GEL DÉCIDÉ PAR KING LE 23/09 AU SOIR : plus aucune "
+            "modification de la page ni du dossier tant qu'il n'a pas payé. IMPORTANT : la page "
+            "EN LIGNE est en AVANCE sur notre copie du dépôt (slogan dans la barre, textes "
+            "d'origine sur les verres, adresse « Ancien COMECI / ECOTEX », liens WhatsApp en "
+            "wa.me/237699905577 donc corrects) — NE JAMAIS la redéployer depuis ce dépôt, on "
+            "écraserait ce que le client regarde.",
         "Notes_extra":
             "À TRANCHER AVANT PUBLICATION — cinq écarts relevés en relisant la page en ligne "
             "(?v=10, 23/09), tous vérifiables : ① la FAQ annonce « 18 assurances » en français et "

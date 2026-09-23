@@ -373,3 +373,24 @@ fichiers · `check_inline_js` 5 blocs, 0 faute · `diff` démo ↔ aperçu = 0 l
 **Les fichiers.** `demos/univers-optique-site-v2.html` 718 514 o (le site, ce que lit un client) ·
 `demos/univers-optique-site-v2-sobre.html` 66 676 o (repli d’envoi, 0 visuel, même copie) ·
 `demos/concept-univers-optique-v2.html` 755 254 o (le site + la note au cabinet, document de travail).
+
+---
+
+## ⛔ GEL — décision de King, 23/09/2026 au soir
+
+> **« Pour lecristallin et univers on ne touche plus rien jusqu'à ce que les prospects deviennent des
+> clients payants. »**
+
+**Ce que ça veut dire :** aucune modification de la page, de son contenu, de ses photos, de ses styles, de
+son hébergement — **et aucune relance de travail gratuit** (pas d'ajustement « tant qu'on y est », pas de
+nouvelle capture, pas de nouvelle proposition). Tant que le prospect n'a pas payé :
+
+- on **répond** à ses messages, on **encaisse**, on **prépare** ce qui a été demandé ;
+- on **ne modifie rien** ;
+- on **ne redéploie rien** (pour Le Cristallin : la page en ligne est en avance sur notre copie du dépôt —
+  un déploiement depuis le dépôt écraserait le travail que le client regarde).
+
+**Le client l'a demandé lui-même, mot pour mot** (22/09 21:58, Le Cristallin) : « Pour le reste ne change
+encore rien puisque j'ai certains modifications que tu as apporté sans mon ok. »
+
+**Ce qui débloque le gel :** l'acompte. À ce moment-là, on repart de ce fichier et de `build-notes.md`.

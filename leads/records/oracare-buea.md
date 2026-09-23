@@ -31,7 +31,7 @@ Message 1 lundi 14/09. Concept live : oracare-concept.vercel.app (v3, prix + ass
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 27 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 28 ligne(s).*
 
 `L3` · **Pourquoi ce fichier existe.** Le 18/09, j'ai écrit dans un résumé que « OraCare et MITOC ont répondu ». **C'est faux.** Oracle a écrit le contraire et j'ai parlé de mémoire au lieu de lire ce fichier. King a corrigé. Cette erreur a coûté du temps et de la confiance : ce journal remplace la mémoire par des faits vérifiables.
 `L13` · | lun 14/09 | **OraCare237** (672 52 66 86) | msg 1 | **Pas lu** | **Non** |
@@ -60,6 +60,7 @@ Message 1 lundi 14/09. Concept live : oracare-concept.vercel.app (v3, prix + ass
 `L1777` · programmée), `oracare-concept.vercel.app` (parked — le message prévu pour le 28/09 propose justement de le
 `L1818` · que la critique d'OraCare nous a appris à éviter. Les deux ont d'ailleurs une vitrine (deux pages Facebook
 `L2007` · fin**), **0 DM** entrant enregistré, **1 seul lead jamais venu du contenu** (`oracare-buea`, qui n'a jamais
+`L2334` · OraCare v1 (remplacée deux fois — v2 reste, c'est la dépendance du builder v3, et v3 est la page en ligne),
 
 ---
 

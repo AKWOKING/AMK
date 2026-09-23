@@ -39,7 +39,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 72 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 92 ligne(s).*
 
 `L837` · - `Le Cristallin` 17:51 · `Univers Optique` 17:50 · `Disc Optique Médicale` 17:48 · `Tchaya Optique` 17:47 :
 `L881` · ## Lundi 21/09/2026 — 18:20 → 19:15 · « Ok » de Le Cristallin : le premier aperçu demandé, construit et branché sur le CRM
@@ -113,6 +113,26 @@
 `L1978` · le lien de vérification `lecristallin-concept.vercel.app/?v=10`, **puis le prix, pour la première fois écrit** :
 `L1993` · sinon `contact@lecristallinoptique.com` tombe. Tant qu'il n'a pas dit oui : on ne touche **ni au DNS, ni aux
 `L2070` · - `sales/BUSINESS-CASE-LE-CRISTALLIN-2026-09-23.md` — **prêt, à n'envoyer que s'il hésite** : les cinq écarts à
+`L2108` · Cristallin** : elle parle de « données structurées (le balisage `aggregateRating`) ». Plus « sans toucher au
+`L2118` · Facebook », « l'assistant pour faire des modifications » (Le Cristallin) · « je ne suis pas encore en place »
+`L2135` · options** (Goldilocks — et **seulement pour le Cristallin**, parce que lui seul a trois périmètres réels ;
+`L2141` · 23/09 sur Le Cristallin (à traduire en français simple au prochain passage de la page), et le business case du
+`L2142` · Cristallin le mentionne. Verrou rejoué, **CRM reconstruit à 12:39:40** — 149 lignes.
+`L2168` · l'aperçu d'Univers Optique a fait écrire « je suis vraiment intéressé », le Cristallin a validé son prix sur un
+`L2203` · ## 2026-09-23 · 14:20 → 15:05 · QUATRE VIDÉOS UX D'UN COUP — et la faute qu'aucune relecture n'avait vue : le bouton WhatsApp du Cristallin était MORT
+`L2213` · sur les pages : la page du Cristallin, **déjà envoyée au client**, portait `wa.me/699905577` — le numéro sans
+`L2221` · et la copie hébergée du Cristallin. Les `tel:` de ces mêmes fichiers partaient aussi sans `+237`.
+`L2224` · ① **Cristallin** : `wa.me/237699905577` (×3) et `tel:+237242651265` / `tel:+237679632012` ; ajout d'une **bande
+`L2254` · donc `lecristallin-concept.vercel.app` porte encore le bouton mort jusqu'au redéploiement. Le bac ne peut pas
+`L2317` · ③ « Pour lecristallin et univers on ne touche plus rien jusqu'à ce que les prospects deviennent des
+`L2337` · Cristallin, Univers Optique, UNI-LABO, et tous les aperçus de prospects qualifiés ou vivants (Skye, YAKS,
+`L2340` · publication redevient nécessaire ; et **toutes les photos source du Cristallin et d'Univers** — ce sont les
+`L2346` · blanc : **la page du Cristallin EN LIGNE est en avance sur notre copie du dépôt** — elle porte le slogan
+`L2348` · WhatsApp sont en `wa.me/237699905577` (donc corrects). **Redéployer depuis le dépôt écraserait ce que le
+`L2352` · page du Cristallin « gardait son bouton mort » en ligne. **C'était faux** : la lecture de la page servie le
+`L2359` · la feuille du vendredi mise à jour, et le nom du client du Cristallin enfin lu dans le fil : **Monsieur
+`L2360` · Messoua**. Les quatre échéances du CRM disent maintenant le gel (Le Cristallin, Univers) et l'attente
+`L2363` · **Chronologie de la journée, tenue à jour :** 10 h le prix part chez Le Cristallin · 13 h 30 King propose
 
 ---
 

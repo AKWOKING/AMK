@@ -7,4 +7,4 @@
 
 | Lead | Étape | Âge | Relances | Trace |
 |---|---|---|---|---|
-| Afrique Labo SARL | qualifying | 2 j | 1/3 | `L1776` |
+| Afrique Labo SARL | qualifying | 2 j | 1/3 | `L2338` |

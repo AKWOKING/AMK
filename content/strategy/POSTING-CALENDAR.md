@@ -1,5 +1,9 @@
 # AMK — POSTING CALENDAR
 
+> ⛔ **23/09/2026 au soir — King : « je ne poste plus sauf si absolument nécessaire pour faire avancer l'agence. »**
+> Ce calendrier devient un **journal**, pas un plan : les créneaux ne sont plus tenus, la vidéo 06 reste dans
+> le dépôt sans être publiée. Détail : `content/strategy/DECISION-CONTENU-2026-09-23.md`.
+
 **Version v0.3** · **APPROVED by King, 17 Sep 2026** · Posting is King-only.
 **Rule:** this file separates **confirmed** from **planned**. Nothing planned may ever be reported as posted.
 **Priority note (King, 17 Sep):** **outreach first.** Content posting resumes once today's WhatsApp sends are out.
@@ -27,7 +31,7 @@
 |---|---|---|---|---|---|
 | **Fri 18 Sep, 18:00–20:00** | **TikTok** | **V-05 FR — `Video_05_School_WhatsApp_v1.mp4`** (23,9 s, narration, portique OK) — **si King valide** | FR | hook « Un parent cherche votre école » | « Dites **PREVIEW** en DM pour un aperçu gratuit de page d'accueil. » |
 | **Sat 19 Sep, 12:00–14:00** | **Instagram Reels** | **V-05 EN — `Video_05_School_WhatsApp_EN.mp4`** (22,1 s, narration anglaise, portique OK) | EN | hook « A parent is looking for your school » | "DM **PREVIEW** for a free homepage concept." |
-| **Tue 23 Sep, 18:00–20:00** | **TikTok** | **V-06 FR — `content/videos/v06-facebook-no-booking/Video_06_Facebook_No_Booking_VOIX.mp4`** (38,6 s, voix FR, portique mouvement OK, son -15,9 LUFS) — **prête le 22/09 au soir ; publication King** | FR | hook « Votre page Facebook ne prend pas de rendez-vous » | « Écrivez **APERÇU** en message privé : aperçu gratuit de la page de votre laboratoire, clinique ou cabinet. » |
+| ~~**Tue 23 Sep, 18:00–20:00**~~ **ANNULÉ (King, 23/09 au soir : « je ne poste plus »)** | **TikTok** | **V-06 FR — `content/videos/v06-facebook-no-booking/Video_06_Facebook_No_Booking_VOIX.mp4`** (38,6 s, voix FR, portique mouvement OK, son -15,9 LUFS) — **prête le 22/09 au soir ; publication King** | FR | hook « Votre page Facebook ne prend pas de rendez-vous » | « Écrivez **APERÇU** en message privé : aperçu gratuit de la page de votre laboratoire, clinique ou cabinet. » |
 | **Wed 24 Sep, 12:00–14:00** | **Instagram Reels** | **V-05 EN (déjà prête)** ou la production suivante | EN | — | "DM **PREVIEW** for a free homepage concept." |
 | Thu 25 Sep | YouTube Shorts | **EN ATTENTE** (même raison) | search-first: « Pourquoi vos clients partent avant WhatsApp — site mobile Cameroun » | hook frame | link `?src=yt` |
 

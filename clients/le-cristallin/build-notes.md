@@ -281,3 +281,24 @@ seul récurrent honnête ici. Pas d'hébergement, pas de domaine. Et la demande 
 l'assistant pour faire des modifications » (21/09 21:13) doit être répondue avant toute facture : il croit
 que le widget est un éditeur. Ce n'en est pas un ; s'il veut s'éditer lui-même, c'est un chantier à part,
 donc un prix à part — jamais dans le forfait.
+
+---
+
+## ⛔ GEL — décision de King, 23/09/2026 au soir
+
+> **« Pour lecristallin et univers on ne touche plus rien jusqu'à ce que les prospects deviennent des
+> clients payants. »**
+
+**Ce que ça veut dire :** aucune modification de la page, de son contenu, de ses photos, de ses styles, de
+son hébergement — **et aucune relance de travail gratuit** (pas d'ajustement « tant qu'on y est », pas de
+nouvelle capture, pas de nouvelle proposition). Tant que le prospect n'a pas payé :
+
+- on **répond** à ses messages, on **encaisse**, on **prépare** ce qui a été demandé ;
+- on **ne modifie rien** ;
+- on **ne redéploie rien** (pour Le Cristallin : la page en ligne est en avance sur notre copie du dépôt —
+  un déploiement depuis le dépôt écraserait le travail que le client regarde).
+
+**Le client l'a demandé lui-même, mot pour mot** (22/09 21:58, Le Cristallin) : « Pour le reste ne change
+encore rien puisque j'ai certains modifications que tu as apporté sans mon ok. »
+
+**Ce qui débloque le gel :** l'acompte. À ce moment-là, on repart de ce fichier et de `build-notes.md`.
