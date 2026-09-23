@@ -26,9 +26,9 @@
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| Le Cristallin | Douala | 699 90 55 77 | `L2524` |
+| Le Cristallin | Douala | 699 90 55 77 | `L2656` |
 | UNI-LABO | Douala (Bonamoussadi, Carrefour Etoo) | 696 13 98 19 | `L134` |
-| Univers Optique | Douala | 699 25 28 74 | `L2525` |
+| Univers Optique | Douala | 699 25 28 74 | `L2656` |
 
 ## ② Qualifié — en conversation — 10
 
@@ -155,7 +155,7 @@
 | Centre Médical des Capucines | Douala (Bonapriso) | 699 72 36 93 | `L111` |
 | Clinique La Béthanie | Douala (Bonabéri) | 677 76 07 82 | `L2332` |
 | Clinique de L'université | Douala (Bassa) | 694 36 02 03 | `L113` |
-| Ctre d'Analyses Médicales Pasteur Medlas | Douala (Akwa, Bld de la République) | 677 45 99 97 | `L2453` |
+| Ctre d'Analyses Médicales Pasteur Medlas | Douala (Akwa, Bld de la République) | 677 45 99 97 | `L2629` |
 | DAS Group International | Douala (Akwa) | 680 100 626 | `L41` |
 | Diagmed | Douala (Bonabéri, Rue 4.352 — Route du Lycée) | 698 97 22 03 | — |
 | Discovery Labs | Douala (Bassong) | 694 86 13 61 | `L110` |
@@ -179,7 +179,7 @@
 | Polyclinique de la Gare LE NID | Douala (Bessengue) | 699 987 775 | `L34` |
 | Presbyterian Comprehensive Secondary School (PCSS) Buea | Buea (Madam Namondo Alexander) | 652075229 | — |
 | Solidarity Health Foundation (Solidarity Clinic & Laboratory) | Buea (Untarred Malingo St / Molyko Checkpoint D61, P.O. Box 467; plus code 575J+7M) | 677615757 | `L761` |
-| YONDJA ANALYSE | Douala | 696 88 88 23 | `L2569` |
+| YONDJA ANALYSE | Douala | 696 88 88 23 | `L2629` |
 
 ## ⛔ Écarté — 10
 

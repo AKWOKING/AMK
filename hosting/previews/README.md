@@ -65,6 +65,17 @@ Before any concept URL goes to a prospect, on a **phone** (not the laptop previe
 5. **Value provenance pass** (`§18.1`): each price/hour/count traced to a source or labelled sample; no orphan values.
 6. After any post-deploy fix, re-verify the same items on the live URL — the deployed file, not the local copy.
 
+**Ce que veut dire « sur un téléphone », depuis le 23/09 au soir** (`AMK-DESIGN-SKILLS.md` §24.3.5, d'après
+Jesse Showalter) : **la nuit**, **en plein soleil**, sur **Android** et sur **iOS**. C'est trois minutes
+de travail qui attrapent ce qu'aucun aperçu de bureau ne montre — et pour un laboratoire dont les patients
+consultent dehors, en journée, c'est le seul test qui compte.
+
+**Et deux critères d'œil, à faire une fois la page ouverte** (Flux Academy, §24.2) :
+1. regarder **chaque section seule**, à 390 px de large : est-ce qu'elle tiendrait, imprimée, comme une
+   affiche ? Si une section n'est qu'un empilement de paragraphes, elle n'est pas finie ;
+2. vérifier qu'il n'y a **qu'une seule action principale** par écran (§24.3.1 — s'il n'y a pas de « grand
+   cercle », la page a un problème partout).
+
 Not verified on a phone = not sent.
 
 ## Hosting priority (14 Sep 2026)

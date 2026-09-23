@@ -67,6 +67,11 @@ WhatsApp-first · mobile-first · EN|FR · Cameroon (Kumba/Douala/South-West) ·
 | 29 | 23 Sep 2026 | How to Attract HIGH PAYING Clients (Stop Selling Services) — Nicole & James (`youtu.be/Y_sPva_30XA`) | Sales / Offer | Absorbed (3 R + the service trap); coined product names rejected | `sales/AMK-Sales-Playbook-v2.md` **PART K** |
 | 30 | 23 Sep 2026 | 7 Web Design Styles That Make Sites Look Expensive In 2026 — Web Design Lab (`youtu.be/Fog8WpdTnYU`) | Design / Style | Absorbed as tests, not looks; kinetic + expressive restricted | `AMK-DESIGN-SKILLS.md` **§23.1–23.3** |
 | 31 | 23 Sep 2026 | 6 EASY Tips to 10x Any Site's Design — Self-Made Web Designer (`youtu.be/pbhLsV-Dyho`) | Design / Craft | **Absorbed — and it found a real drift on our own site** | `AMK-DESIGN-SKILLS.md` **§23.3–23.6** |
+| 32 | 23 Sep 2026 | The Secret to Mobile Web Conversion — Malewicz (`youtu.be/q8yUIbRiNRc`) | Design / Conversion (mobile) | **Absorbed** — 5 fautes + la fenêtre du bouton (52-64 px) + le poids des images | `AMK-DESIGN-SKILLS.md` **§24.1** · `demos/concept-unilabo-v1.html` |
+| 33 | 23 Sep 2026 | This is what mobile web design excellence looks like — Flux Academy (`youtu.be/1r4GHOd2THM`) | Design (mobile) | **Absorbed** — mobile n'est pas un bureau empilé ; « chaque panneau doit être une affiche » | `AMK-DESIGN-SKILLS.md` **§24.2** |
+| 34 | 23 Sep 2026 | Mobile Design 101: How to Design for Mobile First — Jesse Showalter (`youtu.be/q6qA_609UOE`, direct) | Design / Build (mobile) | **Absorbed** — distiller, la règle du pouce, la légibilité, le POIDS | `AMK-DESIGN-SKILLS.md` **§24.3** · `tools/qa/test_unilabo_page.mjs` |
+| 35 | 23 Sep 2026 | 40 of the Best Lab Websites — Thomas Digital (`thomasdigital.com/industry/lab-website-design`) | **Verticale** (labo / clinique) + concurrence | **Absorbed** — 7 principes ; **et une question à poser au client** (agrément) | `AMK-DESIGN-SKILLS.md` **§24.4** · `clients/uni-labo/AUDIT-2026-09-23.md` §9 |
+
 
 ## 4 · Entries (full reports)
 
@@ -802,3 +807,104 @@ la transformation se nomme dans les mots du client, sinon elle ne dit rien.
 - Les exemples de sites étrangers (parfum, café, mode) : les mécanismes sont transférables, les décors non.
 - Les pourcentages AEO cités comme des faits établis (voir §5 du présent fichier).
 
+---
+
+## Lot [25] · MOBILE-FIRST + LA VERTICALE LABO — 3 vidéos + 1 page (King, 23/09/2026, tard)
+
+**Pourquoi ce lot compte plus que les précédents.** Trois des quatre sources parlent du **téléphone**, qui
+est l'écran de nos clients et de leurs clients (Flux Academy : ~60 % du trafic mondial est mobile, et
+c'est plus au Cameroun). La quatrième parle de **laboratoires** — la verticale dans laquelle on vend
+vendredi. Les leçons sont donc allées directement dans la page en cours, pas dans un tiroir.
+
+### 1 · Malewicz — *The Secret to Mobile Web Conversion* (`youtu.be/q8yUIbRiNRc`)
+
+**Cinq fautes communes, plus un bonus, plus l'atterrissage des formulaires.**
+
+① **Entasser le hero du bureau dans le téléphone** : moins d'espace blanc, hiérarchie illisible, le
+cerveau se dit « ce n'est pas ce que je cherche » et part. ② **De l'animation lourde dans le hero** :
+« pretty damaging to your brand, especially on mobile ». ③ **Des cibles trop petites — ou trop grosses** :
+sur bureau 48-52 px ; **sur mobile au-dessus de 52 et en dessous de 64**, sinon on rate sa cible ou on
+déclenche la **cécité aux bannières** ; un élément de preuve sociale illisible sur téléphone se
+**supprime**, il ne se rétrécit pas. ④ **Un téléphone dans un téléphone** (« inception ») : montrer le
+problème résolu par un élément simple. ⑤ **La copie du bureau recopiée** : sur petit écran, **le texte
+grossit**, il ne rétrécit pas ; on réécrit la copie pour le téléphone, on change « click » en « tap »,
+et on baisse la friction du bouton.
+
+**Bonus, qui contredit une habitude à nous :** *éviter les éléments collants sur mobile* — ni logo ni menu
+épinglés pendant le défilement ; un petit bouton « retour en haut » suffit. **Formulaires :** moins de
+champs, **cases à cocher d'au moins 32×32**, et « plus de deux champs sur mobile = grosse chute de
+conversion » : convertir d'abord, demander le reste ensuite. **Et sa technique en test : micro-visuels sur
+mobile, visuels pleins sur bureau** — l'image de hero chasse le titre et le bouton hors de l'écran, donc
+elle ne gagne souvent rien.
+
+### 2 · Flux Academy — *This is what mobile web design excellence looks like* (`youtu.be/1r4GHOd2THM`)
+
+Dix exemples vivants. **Empiler les colonnes du bureau n'est pas du responsive, c'est un désastre** :
+le mobile a son propre rythme (une ou deux colonnes) et **chaque image a un rapport choisi pour le
+téléphone** (le portrait convient aux personnes, un bandeau devient 4:3). La **hiérarchie est
+grand → moyen → petit** avec un seul élément dominant par écran ; **l'espace blanc reste possible sur
+mobile** et c'est ce qui fait « premium » ; **chaque panneau doit pouvoir être une affiche** ; rien
+d'essentiel derrière des clics ; **le mobile n'est pas une raison de faire plat** (angles, cartes
+superposées, bandeau horizontal fonctionnent) ; et un **bouton de menu près du pouce**, en bas.
+
+### 3 · Jesse Showalter — *Mobile Design 101* (`youtu.be/q6qA_609UOE`, direct)
+
+**Cinq points :** ① **distiller l'offre** — un seul élément principal par page (son test : faire un grand
+cercle sur l'élément le plus important du bureau ; s'il n'y a pas de grand cercle, la page a un problème
+partout) ; le menu hamburger existe parce que tout montrer, ce n'est pas distiller. ② **Les boutons vivent
+sous le pouce** (la « règle du pouce » : bas confortable, milieu acceptable, haut mauvais). ③ **Typographie
+lisible** : pas de police display pour le texte, pas de famille mixée, rien de cursif, **jamais de graisse
+thin/light sur mobile**, et **jamais de noir pur sur blanc pur** (nos jetons y répondent déjà). ④
+**Optimiser images et vidéo** : redimensionner dans un constructeur ne réduit pas le **poids du fichier** —
+exporter une variante légère et laisser les balises choisir ; si l'image de hero ne peut pas être allégée,
+**la remplacer par une couleur de marque** (une valeur hexadécimale en CSS) ; **logo en SVG**. ⑤ **Tester
+sur de vrais appareils**, dans les vrais navigateurs, « at night, in bright sunlight, Android and iOS ».
+
+**Et trois nombres utilisés désormais :** dessiner la trame mobile vers **360-380 px** ; **420-450 px est
+la frontière du mobile** (sous laquelle : une colonne, moins d'images, fonction principale en avant,
+boutons plus bas) ; une grille mobile de **4 ou 6 colonnes, jamais 12** — et « make it till you break it »
+plutôt qu'un point de rupture par appareil.
+
+### 4 · Thomas Digital — *40 of the Best Lab Websites* (`thomasdigital.com/industry/lab-website-design`)
+
+**Sept principes, dont quatre nous concernent directement :** ① connaître **l'audience primaire** (un site
+de laboratoire sert au moins deux publics ; servir tout le monde également, c'est ne servir personne —
+le nôtre : le patient envoyé par son médecin) ; ② **mener avec le problème résolu, pas avec la science** ;
+③ **les signaux de crédibilité vont au-dessus de la ligne de flottaison** (agréments, personnes nommées,
+travaux publiés) — pour nous : l'autorisation réelle, le personnel nommé, horaires, adresse, téléphone,
+**jamais inventés ni empruntés** ; ④ **la navigation suit la décision du client**, pas l'organigramme ;
+⑤ **précision plutôt que décoration** — les clichés (fond sombre et molécules lumineuses, **photos de
+personnes en blouse blanche**) ne différencient personne ; ce qui marche est **spécifique au travail réel**
+(appareils, locaux, personnes réelles) ; ⑥ **plusieurs niveaux de profondeur** technique ; ⑦ **pour un
+laboratoire d'analyses, le chemin de conversion doit être explicite** : ce qu'il faut fournir, **ce qui se
+passe après l'envoi**, les délais — sa phrase : *« People don't fill out forms when they're uncertain about
+what comes next. »*
+
+**Ce que ce n'est pas.** Cette page est celle d'un **concurrent** (agence de San Francisco) : elle se lit
+pour ses principes et pour son angle commercial (« request a free mockup », l'aveu de ce qu'un site de
+labo doit faire). Ses exemples — biotech, capital-risque, publications — ne sont pas notre marché :
+**les mécanismes transfèrent, les décors non.** Ses délais (six à dix semaines) ne sont pas les nôtres,
+et son « WordPress » n'est pas notre méthode de livraison.
+
+### Ce que le lot a changé, tout de suite
+
+Sur `demos/concept-unilabo-v1.html`, la nuit même — détail et preuves en **§24.5** de
+`AMK-DESIGN-SKILLS.md` : texte de 16 → **17 px sur téléphone** ; boutons **48 px** bureau / **52 px**
+mobile et **56 px** pour le bandeau ; cases à cocher 17 → **21 px** ; le bandeau collant ramené à **une
+action primaire** + WhatsApp + une icône d'appel ; dans le hero, **la fiche passe avant la photo** sur
+téléphone ; **variantes légères des photos (482 Ko → 193 Ko sur un téléphone)** et trois graisses de
+police économisées ; et le formulaire dit désormais **ce qui se passe après l'envoi**. Enfin, les deux
+harnais de test qui vivaient dans `/tmp` (et qu'un rembobinage du bac a effacés) sont entrés au dépôt :
+`tools/qa/fake_dom.mjs` + `tools/qa/test_unilabo_page.mjs`, **23 assertions**, exécutables par
+`node tools/qa/test_unilabo_page.mjs`.
+
+### Déchets écartés
+
+- Les chiffres de revenus, formations et communautés payantes des trois chaînes ; le « 99 % de mobile »
+  que les commentateurs répètent (Flux Academy donne le vrai chiffre, ~60 %) ; les statistiques de
+  pourcentage sans source.
+- Les exemples de sites étrangers (parfum, robinetterie, danse, architectes) : les mécanismes sont
+  gardés, les décors non (§3.7 : pas d'image empruntée).
+- La tirade « l'IA va remplacer les designers juniors » : vraie sur le fond (elle vise la production),
+  mais ce n'est pas une leçon de design, et elle ne change aucune de nos décisions.
+- La page de Thomas Digital comme **argument de vente** : on ne cite pas un concurrent devant un prospect.

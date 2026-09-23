@@ -30,7 +30,7 @@ Envoyé 18/09 ~18:30, sans maquette. · ⚰️ MORT le 22/09 (lot du 18/09) — 
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 15 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 16 ligne(s).*
 
 `L30` · | **ven 18/09 ~18:30** | **YONDJA ANALYSE** (696 88 88 23) | msg 1 — **sans maquette** | Envoyé | **Non** |
 `L110` · | ~18:30 | Discovery Labs · UNI-LABO · YONDJA ANALYSE · Laboratoire du Château · Département Biologique · CAMERA · LE NID |
@@ -47,6 +47,7 @@ Envoyé 18/09 ~18:30, sans maquette. · ⚰️ MORT le 22/09 (lot du 18/09) — 
 `L2543` · le prélèvement sera utilisable du premier coup** — tout se joue *avant* l'arrivée, et une analyse mal
 `L2563` · **Deux fautes trouvées par les outils, pas par l'œil, pendant la passe :** l'analyseur HTML a mesuré
 `L2569` · **Ce qui vérifie tout ça, sans navigateur :** portique `0 constat`, analyseur HTML **415 textes mesurés,
+`L2629` · **Et une phrase qui manquait au formulaire.** Thomas Digital, sur les laboratoires d'analyses : *« People
 
 ---
 

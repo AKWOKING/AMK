@@ -1094,6 +1094,165 @@ never the deliverable** — and a direction is judged on a real section, not in 
 
 ---
 
+## §24 MOBILE-FIRST — and the vertical that pays for it (23 Sep 2026, late night — Lot [25])
+
+**Why this section exists.** King dropped three videos about the phone and one page about *laboratory*
+websites in the same message. The pairing is the point: **the phone is where our clients' customers
+already are** and the lab is the vertical we are selling into this week. Flux Academy's number, kept
+because it is the honest one: **~60 % of global web traffic is mobile** (47 % in the USA) — not the
+"99 %" the comments claim. In Cameroon the share is higher again, and our buyers live on WhatsApp on
+mid-range Androids. Everything below is checked against that phone, not against a laptop preview.
+
+### 24.1 The five mobile mistakes — Malewicz, *The Secret to Mobile Web Conversion*
+
+1. **Cramming the desktop hero into the phone.** Less white space → unclear hierarchy → the brain reads
+   the page as "not what I was looking for" and leaves. On mobile the hero carries **one** idea.
+2. **Heavy animation in the hero.** "Pretty damaging to your brand, especially on mobile." Our motion
+   budget already says this (§22.2, `design/MOTION.md`); this is the same rule from the conversion side.
+3. **Targets too small to tap — or too big to trust.** His numbers: buttons **48–52 px on desktop,
+   and on mobile above 52 but under 64**. Above that range the button starts to look like an advert and
+   the brain skips it ("banner blindness"). *If a social-proof element is too small to read on a phone,
+   delete it on the phone — do not shrink it.*
+4. **A phone inside a phone.** Never screen-mock a mobile app inside the mobile page: nobody can tell
+   what it does, and it reads as inception. **Show the problem being solved, with one simple element.**
+5. **Desktop copy, reused.** A smaller screen means **bigger type, not smaller** — simplify the object,
+   cut what is not essential, and rewrite the copy for the phone. He also rewrites the CTA for lower
+   friction ("see how it works" instead of "try for free") and changes **"click" to "tap"**. Our pages
+   say "appuyez" / "press" for exactly this reason — never "cliquez".
+
+**Bonus, and it contradicts a habit of ours:** *avoid sticky elements on mobile.* Do not keep the logo
+or the menu pinned while scrolling — use a small scroll-to-top control instead. See §24.6 for the
+arbitration we wrote for our WhatsApp bar.
+
+**Form and onboarding (same video).** Fewer fields on the phone; checkboxes **at least 32×32**;
+"a form with more than two fields on mobile gets a big conversion drop" — convert first, ask the rest
+later. And the technique he is testing: **micro visuals on mobile, full visuals on desktop** — the
+mobile hero image usually pushes the headline and button off-screen, so it often earns nothing.
+
+### 24.2 Mobile is its own layout, not a stacked desktop — Flux Academy, 10 live examples
+
+- Stacking desktop columns one under the other **is not responsive, it is a disaster** — mobile gets a
+  deliberate one- or two-column rhythm, and the **aspect ratio of every image is chosen for the phone**
+  (portrait crops suit full-length human shots; bands become 4:3).
+- **Hierarchy is big → medium → small**, and there is exactly **one** largest item per screen.
+- **Generous white space still works on a phone** — it is what makes a small screen read as premium.
+- **Every panel must be good enough to be a poster.** This is the cheapest quality test we have and it
+  goes in the King-eye checklist: look at each section alone at 390 px and ask if you would print it.
+- **Nothing essential behind layers of clicks** — "put the work up front".
+- Interest is not a luxury: angles, layered cards, a horizontal band still work on a phone. **Mobile is
+  not a reason to go plain.**
+- A **menu button near the thumb** (bottom) is a common, working pattern — and it is why our sticky bar
+  lives at the bottom.
+
+### 24.3 Mobile-first 101 — Jesse Showalter (live)
+
+1. **Distill the offer.** One primary thing per page. His test: screenshot the desktop, circle the ONE
+   most important element big, circle the supports small — *if there is no big circle, the page has a
+   problem on every screen, and a worse one on the phone.* The hamburger menu exists because showing
+   the whole navigation is **not** distilling.
+2. **Buttons live under the thumb.** The **rule of thumbs**: the bottom of the screen is comfortable, the
+   middle is acceptable, the top is bad. (Safari puts the URL bar at the bottom, Chrome at the top —
+   two different statements about what matters.)
+3. **Legible type, always.** No display face for body copy, no mixed families, nothing cursive or
+   handwritten; **never a thin / light / ultra-light weight on mobile** — it kills legibility. Use a
+   family with 7–8 weights available, pick strong ones, adjust letter-spacing when needed. And:
+   **never pure black on pure white, or pure white on pure black** — our `--ink #14151A` and the
+   off-black policy already satisfy this.
+4. **Optimise images and video.** Resizing inside a builder does **not** reduce the file's weight — the
+   browser still downloads the big one. **Export a smaller version and let the tags choose it.** When a
+   hero image cannot be made light, **ditch it for a brand colour** — a hex value in the CSS loads
+   instantly. **Use SVG for logos** (ours are text wordmarks, which weigh nothing at all).
+5. **Test on real devices, in the real browsers** — dev-tools device sizes at minimum, and the phone
+   itself: *at night, in bright sunlight, on Android and on iOS.* Trust the browser over the builder's
+   own preview.
+
+**From his Q&A, three numbers we now use:** design the narrow frame around **360–380 px** (the
+"Goldilocks" mid-size phone, not the biggest or the smallest); **~420–450 px is where mobile begins** —
+below that: single column, less imagery, primary function highlighted, buttons relocated lower;
+and a mobile grid of **4 or 6 columns, never 12** — and "make it till you break it" (Brad Frost) rather
+than one breakpoint per device.
+
+### 24.4 The lab / clinic vertical — Thomas Digital, *40 of the Best Lab Websites*
+
+A commercial testing lab is not a generic corporate site, and the same seven principles hold for the
+clinics and cabinets we sell to in Douala:
+
+1. **Know the primary audience, and design for it first.** Every lab site serves at least two audiences;
+   the site that serves everyone equally serves nobody. *Ours:* the patient sent by a doctor.
+2. **Lead with the problem you solve, not the science you do.** The hero's job is a human entry point —
+   what problem, who has it, why you are different. Detail lives one click deeper.
+3. **Credibility signals belong above the fold** — accreditations, named advisors, published work,
+   certifications. For a testing lab that means the real authorisation, named staff, hours, address,
+   phone. **Never invented, never borrowed** (§13): what the client has not given us is a *question to
+   ask*, not a badge to draw (§24.5).
+4. **Navigation must follow how decisions get made** — for a lab: which tests, which samples, what
+   turnaround, how to submit. Organised around the customer's decision, never around the internal org
+   chart.
+5. **Precision over decoration.** The clichés — dark backgrounds with glowing molecules, **generic stock
+   photography of people in white coats** — differentiate nobody and mean nothing. What works: clean
+   typographic hierarchy, meaningful white space, and **imagery specific to the actual work** (real
+   equipment, real facilities, real people). Where original photography does not exist, good scientific
+   illustration or clear data visualisation beats stock. Colour is a functional choice, and its only
+   test is whether it supports the message.
+6. **Technical content needs depth levels** — a plain-language summary at the top, then progressive
+   disclosure for the specialist (our `<details>` FAQ and the preparation tabs are exactly this).
+7. **For testing labs, the conversion path must be explicit.** Visitors arrive knowing roughly what they
+   need and then meet a generic "Contact us", a phone number and a PDF with **no guidance on which to
+   use or what happens next**. Saying what information is needed, **what happens after submitting**, and
+   what the turnaround looks like reduces friction and raises the quality of enquiries. His sentence,
+   kept in English because it is the rule: **"People don't fill out forms when they're uncertain about
+   what comes next."**
+
+Any lab/clinic **SEO** work follows from here too: a commercial lab has real, addressable local search
+demand (specific tests, service areas) → structured service pages plus local presence
+(`AMK-SEO-PLAYBOOK.md`), not generic keyword pages.
+
+### 24.5 What changed on UNI-LABO the same night (23 Sep 2026, `demos/concept-unilabo-v1.html`)
+
+| Lesson | Change, verifiable in the file |
+|---|---|
+| §24.1.5 — bigger type on mobile | the body copy stopped being hard-coded at `16px` and now takes the scale: **17 px below 760 px**, 16 above |
+| §24.1.3 — the button window | `.btn` 44 → **48 px** desktop, **52 px** on mobile; the sticky bar **56 px** (inside 52–64) |
+| §24.1 (onboarding) — the checkbox must be seen | 17 → **21 px** under 760 px; the tappable row stays 44 px and remains the real target |
+| §24.3.1 + §24.1.1 — one primary | the bar carried three competing labels; it now carries **one primary (Prendre RDV / Book a visit)**, one secondary (WhatsApp) and **a phone icon** with a bilingual `aria-label` |
+| §24.2 / §24.1 — the mobile hero | on a phone the **sheet comes before the photograph** in the hero: the object first, the décor after |
+| §24.3.4 — weight, not dimensions | every photo ships a light variant chosen by `srcset`/`sizes`: **a phone downloads 193 KB instead of 482 KB**; the font request lost 3 unused weights (8 → 5) |
+| §24.4.7 — what happens next | the form now says the message goes **from your WhatsApp to the lab's, which replies to confirm the time** — no invented delay |
+| §24.4.5 — specificity over cliché | noted as the first thing to replace with the lab's own photographs; the generated set stays labelled "mise en situation" |
+
+**The lab question this section creates (for Friday, 13 h):** 《 avez-vous une autorisation ou un agrément
+du ministère de la Santé, et une inscription à un contrôle de qualité externe ? 》 — §24.4.3 says those
+signals belong above the fold; §13 says we may not draw them. So it is a question with a price attached:
+a credibility strip is a real deliverable, and it belongs to the client's own facts.
+
+### 24.6 Two conflicts, arbitrated in writing (never silently)
+
+- **"Avoid sticky elements on mobile" (Malewicz) vs our bottom bar.** Arbitration: the rule targets
+  **chrome** — logo, menu, navigation pinned while scrolling. Our bar carries the page's single job
+  (get in touch) for a market where the phone call and WhatsApp *are* the conversion, and it sits in the
+  thumb zone (§24.3.2). **The bar stays. The navigation never sticks** — and the sticky chrome is exactly
+  one row, never a header.
+- **"More than two fields on mobile loses the conversion" vs a booking that needs three answers.**
+  Arbitration: **two of our three required interactions are taps** (a test, a time), and the fourth
+  field is optional and says so. The rule that survives is the one we will hold: **never add a fourth
+  required field**; if a future form needs one, it converts first and asks later.
+
+### 24.7 Honest limits
+
+- Nothing here was **seen**. No browser exists in this sandbox: the changes above are structural and
+  checkable in code (`tools/qa/audit_page.py`, `audit_html.py`, `check_inline_js.py`, and the two suites
+  in `tools/qa/test_unilabo_page.mjs`). **The phone check remains King's** — and §24.3.5 now names what
+  that check is: night, sunlight, Android, iOS.
+- "Each panel must be a poster" is a criterion for a human eye, not an assertion we can make.
+- Flux Academy's 10 examples are foreign, image-heavy studios and brands. The **mechanics** transfer
+  (columns, ratios, hierarchy, white space); the **décor does not** — our clients are a lab and a
+  cabinet in Douala, and §3.7's ban on borrowed imagery stands.
+- Malewicz's numbers (48–52 / 52–64 px, 32 px checkboxes, ~420–450 px) come from product landing pages
+  and app onboarding. We adopt them as **defaults with a stated reason**, not as measurements of our own
+  traffic — we have no traffic yet.
+
+---
+
 ## SOURCES
 - `design/vendor/bergside-skills/` — github.com/bergside/awesome-design-skills (TypeUI), 67 SKILL.md + DESIGN.md pairs, MIT (see `design/vendor/LICENSE-bergside`)
 - `design/vendor/taste/skills/` — github.com/Leonxlnx/taste-skill: taste-skill, redesign, output, brandkit, imagegen web/mobile, image-to-code, stitch, soft/minimalist/brutalist, MIT (`design/vendor/LICENSE-taste`)
@@ -1105,5 +1264,6 @@ never the deliverable** — and a direction is judged on a real section, not in 
 - YouTube lesson batch [21] (local SEO, 21 Sep 2026) → `AMK-SEO-PLAYBOOK.md`; log in `research/YouTube-Lessons.md` Lot [21]
 - YouTube lesson batch [22] (interaction contract / invisible timeline / design psychology, 23 Sep 2026) → this file **§22**; full log + junk filter in `research/YouTube-Lessons.md` Lot [23]; page portico `tools/qa/audit_page.py`
 - YouTube lesson batch [24] (design styles / the star / the anchor font, 23 Sep 2026) → this file **§23**; log in `research/YouTube-Lessons.md` Lot [24]; the AEO half of the same batch (Wes McDowell) → `AMK-SEO-PLAYBOOK.md` **§8**
+- YouTube lesson batch [25] (mobile conversion / mobile excellence / mobile-first 101, 23 Sep 2026) → this file **§24**; log in `research/YouTube-Lessons.md` Lot [25]; the lab vertical in the same batch is Thomas Digital's *40 of the Best Lab Websites* (thomasdigital.com), a **competitor page** — read for the seven principles, not for its portfolio
 - **§21 browser-support matrix (checked 18 Sep 2026):** addpipe.com "A Deep Dive into the Web Speech API" (Chrome 139+ on-device recognition, mobile matrix) · vocafuse.com "Web Speech API vs Cloud APIs" (free/no-key, audio sent to vendor servers, cloud at $0.006–0.024/min) · testmuai.com "Speech Synthesis API: Browser Support" (synthesis matrix, Firefox-Android gap). **No source was found for recognition accuracy on Cameroonian accents — that gap is stated in §21.2, not filled by assumption.**
 - In-house references: `sales/Monday-Outreach-Pack.md` (Concept Production Standard), `site/design-research.md` (AMK site research), OraCare v2/v3 (reference-override case studies)

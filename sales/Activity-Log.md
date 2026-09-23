@@ -2598,3 +2598,64 @@ refaite (carrelage, murs peints, cuisine à gaz, réfrigérateur, ventilateur, f
 relue, réinstallée **aux deux endroits** (le fichier canonique et la copie hébergée — même octet), et la
 leçon est écrite dans le dossier client : **une image générée doit montrer le client, pas le décor qu'on
 imagine pour lui.** Les trois autres photos (accueil, paillasse, résultat) n'ont pas été touchées.
+
+---
+
+## 2026-09-23 · 23:10 → 23:45 · TROIS VIDÉOS SUR LE TÉLÉPHONE ET UNE PAGE SUR LES LABORATOIRES — apprises, et appliquées le soir même
+
+**Ce que King a envoyé :** trois vidéos sur le **mobile** (Malewicz — *The Secret to Mobile Web Conversion* ;
+Flux Academy — *This is what mobile web design excellence looks like* ; Jesse Showalter — *Mobile Design
+101*, un direct) et **une page** sur les sites de laboratoires (Thomas Digital, *40 of the Best Lab
+Websites*). Les trois premières parlent de l'écran de nos clients ; la quatrième de la verticale dans
+laquelle on vend **vendredi**. Le rapport complet est `research/YouTube-Lessons.md` **lot [25]** ; les
+principes sont dans `AMK-DESIGN-SKILLS.md` **§24** ; ce que la page a changé est en **§24.5**.
+
+**Ce qui a été appliqué, et qui se vérifie dans le fichier.** Le corps de texte était **en dur à 16 px** :
+il prend maintenant l'échelle et passe à **17 px sur téléphone** (Malewicz : sur petit écran, le texte
+grossit, il ne rétrécit pas). Les boutons passent de 44 à **48 px** (bureau) et **52 px** (mobile) dans la
+fourchette 52-64, le bandeau collant à **56 px** ; les cases à cocher de 17 à **21 px** (la ligne tapable
+fait déjà 44 px et reste la vraie cible). Le bandeau collant portait **trois libellés concurrents** — il
+porte désormais **une action primaire** (« Prendre RDV »), WhatsApp, et **une icône d'appel** avec
+`aria-label` bilingue : c'est le « distiller l'offre » de Showalter. Et dans le hero, sur téléphone,
+**la fiche passe avant la photo** : l'objet d'abord, le décor ensuite.
+
+**Le gain qui compte pour un patient à Douala : le poids.** Les photos étaient servies en pleine
+résolution à tout le monde. Chacune a maintenant une variante légère choisie par `srcset`/`sizes` :
+**un téléphone télécharge 193 Ko au lieu de 482 Ko**, et la demande de police a perdu trois graisses que
+le CSS n'utilisait pas (8 → 5). C'est la règle de Showalter — redimensionner ne réduit pas le fichier, il
+faut exporter une variante et laisser la balise choisir — et elle vaut plus ici qu'ailleurs : chez nous,
+3G et Android d'entrée de gamme sont la norme, pas l'exception.
+
+**Et une phrase qui manquait au formulaire.** Thomas Digital, sur les laboratoires d'analyses : *« People
+don't fill out forms when they're uncertain about what comes next. »* Le formulaire dit maintenant ce qui
+se passe après l'envoi : le message part **du WhatsApp du patient vers celui du laboratoire, qui répond
+pour confirmer l'heure**. Aucun délai n'est promis — on ne connaît pas leur temps de réponse, et on
+n'invente rien.
+
+**Deux conflits, arbitrés par écrit plutôt qu'ignorés** (`§24.6`) : Malewicz recommande d'éviter les
+éléments collants sur mobile — son exemple vise l'en-tête, pas un bandeau d'action ; le nôtre porte le
+seul travail de la page et vit dans la zone du pouce, **il reste, et la navigation ne colle jamais**.
+Et la règle « plus de deux champs sur mobile = chute de conversion » heurte une prise de rendez-vous qui
+demande trois réponses : deux des trois sont des **tapes**, la quatrième est facultative et le dit — la
+règle qui nous engage devient donc **jamais un quatrième champ obligatoire**.
+
+**Une question, née de ces lectures, qui vaut un livrable.** Le principe « les signaux de crédibilité vont
+au-dessus de la ligne de flottaison » décrit exactement ce qu'un patient cherche avant d'appeler — et
+notre propre règle interdit d'inventer un badge. Donc on **demande**, en séance : *« avez-vous une
+autorisation ou un agrément du ministère de la Santé, et une inscription à un contrôle de qualité
+externe ? »* Si la réponse est oui, elle va en haut de la page : c'est sa meilleure preuve, et la plupart
+des laboratoires du quartier ne l'affichent pas. Question ajoutée à la feuille de séance et au CRM.
+
+**Deux outils sont entrés au dépôt, et c'est une leçon du rembobinage d'hier.** Les harnais de test qui
+rejouent le JavaScript de la page (formulaire dans six états, état d'ouverture sur cinq horloges, les deux
+langues) vivaient dans `/tmp` — un retour en arrière du bac les a effacés alors que la page, elle, était
+sauvegardée. Ils sont maintenant versionnés : **`tools/qa/fake_dom.mjs`** (un DOM minuscule, documenté) et
+**`tools/qa/test_unilabo_page.mjs`** (**23 assertions**, `node tools/qa/test_unilabo_page.mjs`). Un test
+qu'on ne peut pas relancer n'est pas un test.
+
+**Ce qui n'a pas été touché :** le Cristallin et Univers Optique (gel), les trois autres photos
+(accueil, paillasse, résultat) — mais la photo d'accueil est **la première à remplacer** par un cliché du
+laboratoire : Thomas Digital le dit sans détour, la photo générique de personne en blouse blanche ne
+différencie rien. Le portique d'envoi dit désormais ce que veut dire « vérifié sur un téléphone » :
+**la nuit, en plein soleil, sur Android et sur iOS** — et, à l'œil, chaque section seule à 390 px doit
+tenir comme une affiche.

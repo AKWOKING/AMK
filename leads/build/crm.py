@@ -1537,7 +1537,21 @@ JOUR_2309 = {
             "dans les deux langues). ⚠️ LE DOSSIER À DÉPLOYER A CHANGÉ : "
             "`hosting/previews/unilabo/` contient maintenant `index.html` + `og.jpg` + **`img/` "
             "(4 photos)** — glisser LE DOSSIER ENTIER sur Vercel, sinon la page s'affiche avec quatre "
-            "cadres vides. La page en ligne reste celle du 18/09 : ni formulaire, ni fiche, ni photos.",
+            "cadres vides. La page en ligne reste celle du 18/09 : ni formulaire, ni fiche, ni photos. "
+            "23/09 au soir — PASSE MOBILE (trois vidéos de King) + LA VERTICALE LABO (Thomas Digital) appliquées "
+            "à la page : texte 16→17 px sur téléphone, boutons 48/52 px et bandeau 56 px, cases à cocher "
+            "21 px, bandeau collant ramené à UNE action primaire (Prendre RDV) + WhatsApp + icône d'appel, "
+            "dans le hero la fiche passe avant la photo sur téléphone, variantes légères des photos via "
+            "srcset (482 Ko → 193 Ko sur un téléphone) et 3 graisses de police économisées, et le "
+            "formulaire dit ce qui se passe après l'envoi. Principes : `AMK-DESIGN-SKILLS.md` §24 ; "
+            "rapport complet : `research/YouTube-Lessons.md` lot [25]. Les deux harnais de test entrent "
+            "au dépôt (`tools/qa/fake_dom.mjs` + `tools/qa/test_unilabo_page.mjs`, 23 assertions). "
+            "⚠️ UNE QUESTION À POSER EN SÉANCE, ET ELLE VAUT UN LIVRABLE : « avez-vous une autorisation ou "
+            "un agrément du ministère de la Santé, et une inscription à un contrôle de qualité externe ? » "
+            "Les signaux de crédibilité sont ce qu'un patient cherche avant d'appeler (§24.4.3) et la "
+            "plupart des laboratoires du quartier ne les affichent pas. On n'invente jamais un badge : on "
+            "le demande, et si la réponse est oui, il va en haut de la page. Noter la réponse au CRM le "
+            "soir même.",
     },
     "le-cristallin": {
         "stage": "closing",

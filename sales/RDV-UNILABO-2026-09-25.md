@@ -201,6 +201,20 @@ maintenant dans les deux fichiers, testé dans les deux langues, **sans aucune d
 la fiche de prélèvement pendant qu'on le remplit. Reste la seule action mécanique : **redéployer le dossier
 `hosting/previews/unilabo/` en entier (il contient maintenant `img/`)** — voir ci-dessus.
 
+**①bis La question qui vaut un livrable : « avez-vous une autorisation, un agrément ? »** Elle vient des
+sources du 23/09 (nuit) sur les sites de laboratoires (`AMK-DESIGN-SKILLS.md` **§24.4.3**) : un patient qui hésite
+cherche d'abord **des signaux de crédibilité** — autorisation du ministère, inscription à un contrôle de
+qualité externe, nom du responsable. Nous ne pouvons pas les inventer : **on les demande.** Formule à dire
+en séance, sans y mettre de prix :
+
+> « Avez-vous une autorisation ou un agrément du ministère de la Santé, et êtes-vous inscrits à un contrôle
+> de qualité externe — ceux de Yaoundé, par exemple ? Ce sont les deux choses qu'un patient cherche avant
+> d'appeler, et la plupart des laboratoires du quartier ne les affichent pas. Si vous les avez, elles vont
+> en haut de la page : c'est votre meilleure preuve, elle est à vous. »
+
+Bénéfice double : c'est un vrai argument de vente, et la réponse (oui ou non) **change la page** —
+une bande de crédibilité en haut, ou rien. À noter dans le CRM le soir même.
+
 **② Quel abonnement on annonce en séance ?** Le Standard **30 000/mois** figure dans la grille qu'ils ont
 reçue. Le palier Essentiel **12 000/mois** (pour un client qui garde son domaine et son hébergement) est ma
 proposition — il n'est dans aucun document envoyé. **Deux paliers annoncés valent mieux qu'un seul** : on

@@ -40,7 +40,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 100 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 101 ligne(s).*
 
 `L51` · | **ven 18/09 20:02** | **Clinique de L'université** (Bassa, 694 36 02 03) | msg 1 — sans maquette | Envoyé | **Non** |
 `L113` · | 20:02 | Cabinet Dentaire Emmanuel · Clinique de L'université · MEDI LABO |
@@ -142,6 +142,7 @@
 `L2440` · **Ce que ça vaut en argent :** les deux séances de vendredi sont des **encaissements** — 50 000 FCFA (Univers,
 `L2466` · `univers-optique`, `uni-labo`), et c'est vérifié par `grep`. Leçon : un message de commit qui décrit une
 `L2525` · Univers tient : rien d'autre n'a été touché.
+`L2656` · **Ce qui n'a pas été touché :** le Cristallin et Univers Optique (gel), les trois autres photos
 
 ---
 
