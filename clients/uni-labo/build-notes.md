@@ -36,6 +36,10 @@ faire avant, comment je prends rendez-vous. La page répond dans cet ordre.
 ## 4 · Les règles appliquées, et où
 
 - **§15.bis** : quatre photos générées, relues, légendées « Mise en situation… » ; fichiers séparés (§15.6).
+  **La préparation a été regénérée le 23/09 sur correction de King** (« no one lives in that type of
+  house ») : la première version montrait une maison de village, la version retenue un intérieur de ville
+  (carrelage, cuisine à gaz, réfrigérateur, ventilateur sur pied). Le décor doit être celui du patient, pas
+  celui qu'on imagine pour lui.
 - **§13** : `prefers-reduced-motion`, focus visible sur tout le focusable, cibles 44 px, contraste AA
   (mesuré : encre/papier 16,7 · blanc/violet 8,98 · blanc/vert WhatsApp 5,43).
 - **§3.4** : trois étiquettes en casse de phrase au total, aucune numérotée, aucun point d'état décoratif

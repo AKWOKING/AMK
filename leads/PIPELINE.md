@@ -108,7 +108,7 @@
 | Lux Optique | Douala | 655 04 05 49 | — |
 | LyfyOptic | Douala | 699 98 06 66 | `L2104` |
 | Maff Optique | Douala | 699 93 19 56 | — |
-| Maison Optique | Douala | 657 73 70 45 | `L2276` |
+| Maison Optique | Douala | 657 73 70 45 | `L2596` |
 | Marthlo Comprehensive Bilingual College | Buea | — | — |
 | MegaOptic | Douala | 698 82 10 27 | `L1840` |
 | Mel's Optic | Douala | 690 98 85 18 | — |
@@ -124,7 +124,7 @@
 | OpticPlus | Douala | 699 37 91 50 | — |
 | Planète Optique | Douala | 699 85 58 35 | `L815` |
 | Polyclinique Innova | Douala | 674 145 740 | `L1840` |
-| Presbyterian Comprehensive Secondary School Bonamoussadi (PCSS) | Douala (Bonamoussadi) | — | `L1944` |
+| Presbyterian Comprehensive Secondary School Bonamoussadi (PCSS) | Douala (Bonamoussadi) | — | `L2596` |
 | Presbyterian Girls Secondary School (PGSS) Limbe | Limbe | — | — |
 | Rainforest International School (RFIS) | Yaoundé (SIL, BP 1299) | 677937162 | — |
 | Saint Anne's High School Limbe (SAHISCOL) | Limbe (New Town) | 682122959 | `L2333` |

@@ -2577,3 +2577,24 @@ liste du §7 de l'audit existe pour lui.
 **Il ne reste qu'une action, et elle n'est pas à moi :** redéployer **le dossier**
 `hosting/previews/unilabo/` — qui contient maintenant `index.html`, `og.jpg` et `img/` — sur son projet
 Vercel. La page en ligne est celle du 18/09 : elle n'a ni formulaire, ni fiche, ni photos.
+
+---
+
+## 2026-09-23 · 23:00 → 23:20 · L'INSTANTANÉ DU BAC S'EST REMBOBINÉ, et une photo était du mauvais monde
+
+**Le bac est revenu au point de branchement.** À la première commande de ce tour, `/home/user/AMK` était un
+clone neuf du commit `74542ab` : ni `clients/uni-labo/`, ni `sales/ORDRE-DES-OFFRES-2026-09-23.md`, ni les
+quatre photos — **tout le travail de la journée avait disparu du disque local**. **Rien n'a été perdu** :
+le distant portait `42ebbaf` (vérifié par `git ls-remote`), l'arbre plus ancien ne contenait aucun travail
+qui n'existe pas ailleurs, donc `git fetch` + `git reset --hard FETCH_HEAD` a tout restauré — page à
+92 020 caractères, audit, feuilles, photos, copie hébergée. **La règle qui a servi, et qu'il faut continuer
+d'appliquer : le distant est la source de vérité ; on vérifie `git log` + `git ls-remote` AVANT d'écrire
+quoi que ce soit, et on ne restaure que ce qui peut l'être.**
+
+**Et une correction de King, courte et juste :** la photo de préparation montrait un intérieur de village
+(murs de terre, tôle) — *« no one lives in that type of house lol »*. C'est un défaut de **classe sociale**,
+pas de goût : le patient d'un laboratoire privé de Bonamoussadi vit dans une maison de ville. La photo est
+refaite (carrelage, murs peints, cuisine à gaz, réfrigérateur, ventilateur, fenêtre à barreaux et rideaux),
+relue, réinstallée **aux deux endroits** (le fichier canonique et la copie hébergée — même octet), et la
+leçon est écrite dans le dossier client : **une image générée doit montrer le client, pas le décor qu'on
+imagine pour lui.** Les trois autres photos (accueil, paillasse, résultat) n'ont pas été touchées.
