@@ -351,22 +351,39 @@ def seo_graph():
     return json.dumps(g, ensure_ascii=False, separators=(",", ":"))
 
 def map_svg():
-    """Le plan dessiné du carrefour : il aide à trouver, il ne prétend pas être une photo."""
-    return """<svg viewBox="0 0 460 300" role="img" aria-label="Plan : le laboratoire au carrefour Etoo, Bonamoussadi">
-  <rect width="460" height="300" fill="#F5F6F8"/>
-  <path d="M0 118h460M186 0v300" stroke="#D8DBE2" stroke-width="26"/>
-  <path d="M0 118h460M186 0v300" stroke="#fff" stroke-width="2" stroke-dasharray="9 9"/>
-  <text x="14" y="108" font-family="Sora,sans-serif" font-size="11" fill="#5A6170">vers Makepe</text>
-  <text x="392" y="108" font-family="Sora,sans-serif" font-size="11" fill="#5A6170" text-anchor="end">vers Bonamoussadi</text>
-  <text x="196" y="292" font-family="Sora,sans-serif" font-size="11" fill="#5A6170">vers Bonabéri</text>
-  <rect x="30" y="140" width="130" height="120" rx="6" fill="#E7E3F8"/>
-  <rect x="216" y="20" width="120" height="72" rx="6" fill="#E7E3F8"/>
-  <circle cx="186" cy="118" r="34" fill="#5B21B6" opacity=".14"/>
-  <circle cx="186" cy="118" r="9" fill="#5B21B6"/>
-  <text x="200" y="112" font-family="Sora,sans-serif" font-size="13" font-weight="700" fill="#5B21B6">UNI-LABO</text>
-  <text x="200" y="130" font-family="Public Sans,sans-serif" font-size="11" fill="#5A6170">Rue 5N441</text>
-  <text x="40" y="180" font-family="Public Sans,sans-serif" font-size="11" fill="#5A6170">carrefour</text>
-  <text x="40" y="196" font-family="Public Sans,sans-serif" font-size="11" fill="#5A6170">Etoo</text>
+    """Le plan dessiné du carrefour : il AIDE à trouver, il ne prétend pas être une photo.
+
+    Contraintes tenues ici, et vérifiées par la suite 0 du harnais :
+      · un viewBox étroit (320×232) pour qu'à 360 px de large le dessin ne rétrécisse presque pas —
+        avec l'ancien 460×300, un texte de 11 unités s'affichait à 9 px sur un téléphone, illisible ;
+      · aucun texte sous 12 unités, et les deux repères qui comptent (UNI-LABO, carrefour Etoo) au-dessus ;
+      · une épingle à l'emplacement du laboratoire (la tache violette seule ne dit pas « c'est ici ») ;
+      · une flèche nord : un plan sans orientation se lit de travers.
+    """
+    return """<svg viewBox="0 0 320 232" role="img" aria-label="Plan : le laboratoire UNI-LABO au carrefour Etoo, Bonamoussadi (Rue 5N441)">
+  <rect width="320" height="232" fill="#F5F6F8"/>
+  <path d="M0 96h320M128 0v232" stroke="#D8DBE2" stroke-width="22"/>
+  <path d="M0 96h320M128 0v232" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="8 8"/>
+  <rect x="18" y="112" width="92" height="100" rx="6" fill="#E7E3F8"/>
+  <rect x="150" y="16" width="86" height="62" rx="6" fill="#E7E3F8"/>
+  <rect x="248" y="112" width="60" height="52" rx="6" fill="#E7E3F8"/>
+  <text x="10" y="88" font-family="Sora,sans-serif" font-size="12" fill="#57606E">vers Makepe</text>
+  <text x="312" y="88" font-family="Sora,sans-serif" font-size="12" fill="#57606E" text-anchor="end">vers Bonamoussadi</text>
+  <text x="138" y="226" font-family="Sora,sans-serif" font-size="12" fill="#57606E">vers Bonabéri</text>
+  <text x="24" y="136" font-family="Public Sans,sans-serif" font-size="14" fill="#14151A">carrefour</text>
+  <text x="24" y="154" font-family="Public Sans,sans-serif" font-size="15" font-weight="700" fill="#14151A">Etoo</text>
+  <circle cx="128" cy="96" r="30" fill="#5B21B6" opacity=".12"/>
+  <!-- l'épingle : un point de carte, pas une décoration -->
+  <path d="M128 62c-9 0-16 7-16 16 0 12 16 26 16 26s16-14 16-26c0-9-7-16-16-16Z" fill="#5B21B6"/>
+  <circle cx="128" cy="78" r="6" fill="#FFFFFF"/>
+  <rect x="152" y="60" width="106" height="34" rx="9" fill="#5B21B6"/>
+  <text x="163" y="83" font-family="Sora,sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">UNI-LABO</text>
+  <text x="152" y="114" font-family="Public Sans,sans-serif" font-size="13" fill="#14151A">Rue 5N441</text>
+  <!-- le nord : sans lui, un plan se lit de travers -->
+  <g transform="translate(292,26)">
+    <path d="M0 18 5 0l5 18-5-5z" fill="#14151A"/>
+    <text x="5" y="36" font-family="Sora,sans-serif" font-size="13" font-weight="700" fill="#14151A" text-anchor="middle">N</text>
+  </g>
 </svg>"""
 
 def build():

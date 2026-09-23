@@ -2673,7 +2673,7 @@ portaient sur des éléments, son regard portait sur la composition.** La leçon
 `AMK-DESIGN-SKILLS.md`, et elle tient en une phrase : *une photographie doit porter une seule
 signification ; sinon, on écrit une phrase à sa place.*
 
-**Ce qui a été fait, cette nuit :** page réécrite de zéro (`demos/concept-unilabo-v2.html`, **84 053 o** au
+**Ce qui a été fait, cette nuit :** page réécrite de zéro (`demos/concept-unilabo-v2.html`, **84 671 o** au
 lieu de 94 509) — hero **sans photo** (fond encre + titre), **cinq photographies** (une par famille
 d'analyses, plus la préparation) jamais derrière du texte, légendées « mise en situation », la préparation en
 **cinq accordéons natifs** (`<details>` : clavier et lecteur d'écran compris, zéro JavaScript), la fiche de
@@ -2686,7 +2686,7 @@ repris **mot pour mot** — c'est `tools/qa/extract_unilabo_js.py` qui les extra
 `python3 demos/build_unilabo_v2.py` écrit `demos/concept-unilabo-v2.html`.
 
 **Vérifié (aucun navigateur ici) :** portique **0 constat** (`--strict`, rc=0) · analyseur HTML **385 textes,
-0 constat** · `check_inline_js.py` **6 blocs, 0 faute** · harnais **38 assertions vertes**, dont une nouvelle
+0 constat** · `check_inline_js.py` **6 blocs, 0 faute** · harnais **42 assertions vertes**, dont une nouvelle
 **suite 0** qui refuse une page ne portant plus le contrat du JavaScript (18 identifiants, `.chips`,
 `data-fr`/`data-en`/`data-prep`, `data-alt-*`, liens WhatsApp, un seul `h1`) · copie hébergée **identique à
 la source, octet à octet**.
@@ -2714,7 +2714,13 @@ ouvrir l'ancienne page), et **il reste une action de King** : redéployer le dos
    encodée deux fois (`d%26%23x27;`) — le patient voyait `d&#x27;` dans WhatsApp. Le constructeur encode en un
    seul endroit, et **le harnais refuse désormais tout lien doublement encodé** : c'est vérifié, pas promis.
 
+4. **Le plan du carrefour était illisible sur un téléphone.** Il vivait dans un `viewBox` de 460 unités de
+   large avec des libellés de 11 : à 360 px, cela fait **9 px**. Redessiné en 320 unités, aucun libellé sous
+   12 (le nom du laboratoire et « carrefour Etoo » plus grands), avec une **épingle** à l'emplacement et une
+   **flèche nord** — un plan sans orientation se lit de travers. Quatre assertions empêchent le retour en
+   arrière.
+
 Au passage, deux attributs `value` portaient un `&` nu (HTML invalide que rien n'avait vu) — réparés. Le lien
 WhatsApp du pied de page, qui ouvrait un fil vide, porte lui aussi une phrase prête. La page passe de 80 764 à
-**84 053 octets**, le harnais de 32 à **38 assertions** : les chiffres sont alignés partout où ils étaient
+**84 671 octets**, le harnais de 32 à **42 assertions** : les chiffres sont alignés partout où ils étaient
 écrits (audit, notes de build, portique, feuille de séance, CRM, §25).

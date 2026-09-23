@@ -1321,7 +1321,7 @@ carried over unchanged. The rebuild replaced the shell.
 refuses a file that no longer carries the contract the JavaScript needs: eighteen ids, the `.chips` class,
 `data-fr`/`data-en`/`data-prep` on every checkbox and moment, `data-alt-*` on every image, WhatsApp links
 pointing at the laboratory's number, exactly one `h1`, and no link whose text was encoded twice.
-38 assertions, green. That is what makes a from-scratch
+42 assertions, green. That is what makes a from-scratch
 rebuild safe: the shell can change completely, and the page still cannot go mute.
 
 ### 25.3.bis The language of a message is the sender's choice
@@ -1343,7 +1343,7 @@ them adds layout rather than shrinking it.
 ### 25.5 Honest limits
 
 No browser exists in this sandbox: the rebuild was verified by the portico (`0 findings`, `--strict` rc=0),
-the HTML analyser (385 text runs, 0 findings), the inline-JS compiler (6 blocks, 0 faults), the 38
+the HTML analyser (385 text runs, 0 findings), the inline-JS compiler (6 blocks, 0 faults), the 42
 assertions, and a byte-for-byte comparison of the hosted copy. **King's eye is still the judge** — and this
 time it had already spoken once. The next honest step is five real photographs taken in their laboratory, on
 their own bench, replacing ours.

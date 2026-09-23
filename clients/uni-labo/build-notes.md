@@ -21,7 +21,7 @@ laboratoire. Prix posé : 150 000 FCFA (acompte 75 000).
 ```
 python3 demos/build_unilabo_v2.py       # écrit la page
 python3 hosting/build_previews.py       # écrit la copie hébergée (noindex)
-node    tools/qa/test_unilabo_page.mjs  # 38 assertions
+node    tools/qa/test_unilabo_page.mjs  # 42 assertions
 ```
 Toute image ajoutée doit avoir sa variante `-sm.jpg` **et être copiée dans `hosting/previews/unilabo/img/`** —
 la copie hébergée porte les fichiers, pas seulement le HTML.
@@ -103,7 +103,7 @@ La refonte repart donc de la structure, pas des détails :
    jamais le contrat. `tools/qa/extract_unilabo_js.py` prouve que les deux blocs sont identiques à ceux du
    commit `2d2ffe4`.
 
-Ce que la refonte a coûté, et ce qu'elle a rapporté : la page passe de 94 509 à **84 053 octets**, les images
+Ce que la refonte a coûté, et ce qu'elle a rapporté : la page passe de 94 509 à **84 671 octets**, les images
 d'un téléphone de 193 à **167 Ko** (et de 676 à 394 Ko sur ordinateur, parce que les fichiers ont été
 recadrés à 1024×640 — le ratio exact que la page déclare, plus de recadrage surprise), et les assertions
 passent de 23 à **32** (la nouvelle suite 0 interdit qu'une refonte suive le JavaScript d'un cran de trop).

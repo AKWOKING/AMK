@@ -81,7 +81,7 @@ le chiffre de rentabilité).
 
 **Le site est déjà construit et en ligne : `https://uni-labo.vercel.app`**
 *(page du 18/09 — **à redéployer** : la nôtre est maintenant la refonte, `demos/concept-unilabo-v2.html`,
-portique 0 constat / 385 textes / 38 assertions, noindex)*
+portique 0 constat / 385 textes / 42 assertions, noindex)*
 
 **À savoir avant d'ouvrir la page en séance (24/09, 00 h 30) :** King a regardé la version précédente et l'a
 refusée — *« the pictures seem to have spoiled everything »*. La page a été **réécrite de zéro** : mobile
@@ -174,7 +174,7 @@ entre *Nos analyses* et *Résultats*, dans les deux langues comme le reste de la
   la façon de le dire à voix haute : *« ces images sont là pour la démonstration ; vendredi ou après, on
   prend les vôtres »* — et c'est un vrai argument : le contenu photo n'est pas compris dans les 150 000.
 
-**Fichiers :** `demos/concept-unilabo-v2.html` (canonique généré, **84 053 o**) et
+**Fichiers :** `demos/concept-unilabo-v2.html` (canonique généré, **84 671 o**) et
 `hosting/previews/unilabo/index.html` (**la copie hébergée**, celle qui doit partir en ligne) — les deux sont
 **identiques, octet à octet**. Les photographies vivent dans `hosting/previews/unilabo/img/` (**dix
 fichiers**) : déployer le dossier entier, sinon la page s'affiche avec cinq cadres vides.

@@ -86,6 +86,21 @@ ok(`les ${waStatic.length} liens WhatsApp statiques portent leur message DANS LE
 ok("ces liens portent un href réel et utilisable SANS JavaScript (le français, langue du laboratoire)",
    waStatic.every((a) => /href="https:\/\/wa\.me\/237696139819\?text=.+"/.test(a)));
 
+/* ── LE PLAN ─────────────────────────────────────────────────────────────────────────────────────────
+   Un plan est du TEXTE dans un dessin : sur un téléphone de 360 px, un libellé de 11 unités dans un
+   viewBox de 460 s'affiche à 9 px — illisible, alors que le plan sert justement à trouver le laboratoire.
+   On refuse donc un plan dont un libellé passerait sous 12 unités, et un plan sans épingle ni nord. */
+/* on vise LE plan (role="img" + son rapport largeur/hauteur), pas la première icône venue */
+const svg = (html.match(/<svg viewBox="0 0 (\d+) (\d+)" role="img"[\s\S]*?<\/svg>/) || [])[0] || "";
+const svgW = parseInt((svg.match(/viewBox="0 0 (\d+)/) || [])[1] || "0", 10);
+const svgSizes = [...svg.matchAll(/font-size="(\d+)"/g)].map((m) => parseInt(m[1], 10));
+ok(`le plan est dessiné (${svgSizes.length} libellés, viewBox ${svgW} unités de large)`, svgSizes.length >= 6 && svgW > 0);
+ok("aucun libellé du plan ne passe sous 12 unités (≈ 13 px sur un téléphone)",
+   svgSizes.every((n) => n >= 12), "minimum : " + Math.min(...svgSizes));
+ok("le plan marque l'emplacement du laboratoire par une épingle, pas une tache",
+   /d="M\d+ \d+c-[\d.]+ 0-/.test(svg) && svg.includes('fill="#5B21B6"'));
+ok("le plan porte son nord", />N<|">N"</.test(svg));
+
 /* ───────────────────────────── suite 1 · le formulaire et la fiche ───────────────────────────── */
 const CHECKBOXES = [
   { "data-fr": "Glycémie (à jeun)", "data-en": "Glucose (fasting)", "data-prep": "jeun" },
