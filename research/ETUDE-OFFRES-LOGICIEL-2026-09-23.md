@@ -296,6 +296,9 @@ sans prospection nouvelle. **Mais aujourd'hui, on ne vend rien et on ne promet r
 | **F** | Site modifiable par le client | Oui (WordPress domine, 100 000) | 100 000-200 000 | 300 000+ (premium) | 50 % | ⚠️ **Plus tard**, et cher — sinon ça détruit l'offre C |
 | **G** | Facture électronique (LF 2026) | Personne encore (specs non publiées) | inconnu | mise en conformité (à chiffrer) | ? | 🔭 **Veille**, revue le 23/10 |
 
+**L'ordre que je recommande — expliqué en détail (quel problème chaque étape règle, et pourquoi pas dans un
+autre ordre) : `sales/ORDRE-DES-OFFRES-2026-09-23.md`.**
+
 **L'ordre que je recommande :**
 1. **C — le contrat d'entretien.** Disponible dès le prochain client payé, coût quasi nul, et c'est la seule ligne
    qui répond au problème « on travaille beaucoup et on encaisse une fois ».

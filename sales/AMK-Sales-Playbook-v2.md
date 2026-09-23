@@ -432,3 +432,15 @@ AGPL.** And never put "ERPNext" in our company, product or domain name (Frappe's
 the audit): whether we open the track at all (no / a public demo with invented data / a paid pilot — **never a
 free pilot**), **who pays the server and how** (Frappe Cloud or a VPS wants a foreign card; Mobile Money cannot
 pay for a VPS), and **which profile the demo shows** (lab or shop — I can only build one).
+
+**L.6 Which problem are we solving — the order, explained (King's question, 23 Sep).** Our problem #1 is not
+the client's: **we sell 150,000 once and then work for free.** Every offer was sorted by four questions —
+does it fix *our* recurring revenue, can it be sold this week, what does it cost us, does it produce a
+reference? The order that falls out is **C (monthly maintenance, sold on deals already on the table: three
+clients × 10,000 = 360,000 FCFA/year without prospecting) → D/E (the quote-PDF and invoice-link tooling that
+makes a subscription billable) → B (the lab pilot, the only offer whose price holds, and the one that produces
+a health reference) → A1 (resell a local SaaS for a commission) → A2 (out-of-standard, only if a distributor
+walks in) → F (client-editable site: **destroys the subscription**, premium only, later) → G (e-invoicing:
+watch, never promise "DGI-compliant")**. Full reasoning: `sales/ORDRE-DES-OFFRES-2026-09-23.md`. The tunnel,
+in one line: **the page opens the door, the subscription pays the bills, the tool is the next trade — in that
+order, never the reverse.**
