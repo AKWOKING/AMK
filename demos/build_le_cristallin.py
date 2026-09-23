@@ -27,8 +27,24 @@ C = json.loads((ROOT / "demos" / "le_cristallin_content.json").read_text(encodin
 #   comme le publie le flyer) y casse l'URL APRÈS l'espace — le lien s'ouvre sur wa.me/699 et le
 #   message pré-rempli disparaît. Le numéro CANONIQUE est donc les chiffres seuls ; l'affichage,
 #   lui, garde les espaces (c'est ce que lit un humain). Les deux viennent du même champ JSON.
-WA = re.sub(r"\D", "", C["wa"])
-assert len(WA) == 9 and WA.startswith("6"), f"numéro WhatsApp invalide : {WA!r}"
+# ⚠️⚠️ LEÇON DU 23/09 — CE LIEN ÉTAIT CASSÉ ET PERSONNE NE L'AVAIT VU.
+#   La page avait été écrite avec le numéro CAMEROUNAIS SEUL (699 90 55 77). WhatsApp refuse un numéro
+#   qui n'est pas au format international : le bouton principal de la page ouvrait donc une erreur —
+#   sur la page d'un client qui l'avait déjà reçue. Aucun des deux relecteurs ne l'a vu parce que
+#   **personne n'avait cliqué**. Leçon de la vidéo UX (Moradi) : « montrer un chemin sans l'avoir
+#   parcouru, c'est un rêve, pas un design ». Nos deux autres pages (Univers, UNI-LABO) portaient
+#   déjà 237… — c'est ce qui a mis la puce à l'oreille.
+#   Décision : l'indicatif est ajouté ICI, une seule fois, et une assertion empêche le retour du bug.
+WA9 = re.sub(r"\D", "", C["wa"])                      # 699905577 — ce que publie le flyer
+WA = WA9 if WA9.startswith("237") else "237" + WA9    # 237699905577 — ce que WhatsApp accepte
+assert len(WA) == 12 and WA.startswith("237"), f"numéro WhatsApp invalide : {WA!r}"
+
+
+def _intl(num: str) -> str:
+    """+237… à partir de n'importe quelle écriture d'un numéro camerounais (avec ou sans indicatif)."""
+    d = re.sub(r"\D", "", num)
+    return "+" + (d if d.startswith("237") else "237" + d)
+# Vérifiable en ligne de commande : python3 -c "import urllib.request;print(urllib.request.urlopen('https://wa.me/<num>?text=Bonjour').status)"
 
 
 def L(pair, index=0):
@@ -455,12 +471,20 @@ footer ul.fine a{color:#C6D7CD}
  justify-content:space-between;flex-wrap:wrap;font-size:.78rem;color:#9FB6AB}
 .badge{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bright);
  border:1px solid rgba(127,224,188,.3);border-radius:999px;padding:5px 10px;display:inline-block;margin-top:6px}
-.sticky-wa{position:fixed;inset:auto 0 0 0;z-index:50;display:flex;gap:9px;padding:10px 12px;
+.sticky-wa{position:fixed;inset:auto 0 0 0;z-index:50;display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:10px 12px;
  background:rgba(11,22,19,.95);backdrop-filter:blur(8px)}
 .sticky-wa a{flex:1;text-align:center;text-decoration:none;font-weight:620;font-size:.9rem;padding:12px;
  border-radius:11px}
 .sticky-wa .p{background:var(--bright);color:var(--ink)}
 .sticky-wa .c{border:1px solid rgba(255,255,255,.3);color:#fff}
+/* La barre du bas est en grille : la bande de retour se pose SUR TOUTE LA LARGEUR, au-dessus des deux
+   boutons. « hidden » ne suffisait pas (une grille étire un enfant caché) — c'est display:none qui la
+   sort du flux, et c'est la classe .on qui la fait revenir. (Piège attrapé au portique, pas en le lisant.) */
+.sticky-wa p.said{display:none;grid-column:1/-1;margin:0;text-align:center;font-size:.82rem;
+ color:var(--bright);background:rgba(127,224,188,.08);border:1px solid rgba(127,224,188,.28);
+ border-radius:9px;padding:9px 10px}
+.sticky-wa p.said[hidden]{display:none}
+html.js .sticky-wa.said-on p.said{display:block}
 /* Loi maison (design/WORKFLOW.md §3b « content-hiding fade-ins » ; design/CRAFT-FLOOR.md §2.5 et §3) :
    un état caché ne peut exister QUE sous `html.js`, classe posée par un script INLINE dans le <head>.
    Sans JS — coupé, rogné par une pièce jointe tronquée, aperçu qui n'exécute rien — la page doit se
@@ -532,6 +556,7 @@ JS = """
       ev.preventDefault();
       var svc=lang()==='fr'?r.dataset.svcFr:r.dataset.svcEn;
       window.open(msg('row',svc),'_blank','noopener');
+      say('row',svc);
     });
   });
   [].slice.call(document.querySelectorAll('.ask')).forEach(function(a){
@@ -539,11 +564,39 @@ JS = """
       ev.preventDefault();
       var svc=lang()==='fr'?a.dataset.svcFr:a.dataset.svcEn;
       window.open(msg('ask',svc),'_blank','noopener');
+      say('ask',svc);
     });
   });
 
   var links=[document.getElementById('wa-hero'), document.getElementById('wa-sticky')].filter(Boolean);
+  links.forEach(function(a){ a.addEventListener('click',function(){ say('generic'); }); });
   function paintHero(){ links.forEach(function(a){ a.href = msg('generic'); }); }
+
+  /* ── LA RÉPONSE (vidéo Kole Jain : « chaque interaction doit produire une réponse visible ») et
+     LA LIGNE DE TEMPS INVISIBLE (vidéo Moradi : « le plus dur de la livraison, c'est l'attente »).
+     Avant ce patch, cliquer sur une ligne de service ouvrait un onglet et **la page ne disait rien** :
+     sur un téléphone, l'onglet prend la main, l'utilisateur revient, et rien n'indique que son message
+     est parti pré-rempli. On écrit donc, sous ses yeux, ce qui vient de se passer et ce qui suit. */
+  var said=document.getElementById('wa-said'), bar=document.querySelector('[data-wa-bar]');
+  var saidTimer=null;
+  // ⚠️ Apostrophes en CHAÎNES DOUBLE (piège du 23/09) : ce bloc vit dans un triple-quote Python, donc
+  //    un \' y perd son antislash et casse le JS. Le portique du builder l'a arrêté avant écriture.
+  function say(kind,svc){
+    if(!said) return;
+    var l=lang();
+    var t;
+    if(kind==="ask"){ t = (l==="fr") ? "WhatsApp s'ouvre avec votre question déjà écrite"
+                                     : "WhatsApp opens with your question already written"; }
+    else            { t = (l==="fr") ? "WhatsApp s'ouvre avec votre demande déjà écrite"
+                                     : "WhatsApp opens with your request already written"; }
+    if(svc){ t += (l==="fr" ? " : " : ": ") + svc; }
+    t += (l==="fr") ? ". Le cabinet répond pendant les heures d'ouverture."
+                    : ". The practice answers during opening hours.";
+    said.textContent=t;
+    said.hidden=false; if(bar){ bar.classList.add('said-on'); }
+    if(saidTimer){ clearTimeout(saidTimer); }
+    saidTimer=setTimeout(function(){ said.hidden=true; if(bar){ bar.classList.remove('said-on'); } }, 6000);
+  }
   var ins=document.getElementById('ins'), st=document.getElementById('ins-state'),
       go=document.getElementById('ins-go'), NAMES=__NAMES__;
   function paint(){
@@ -740,7 +793,7 @@ PAGE = """<!doctype html>
       <table><tbody>
         <tr><td>WhatsApp @@K_FAST@@</td><td><a href="https://wa.me/@@WA@@">@@WADISP@@</a></td></tr>
         <tr><td>@@K_TEL@@</td><td><a href="tel:@@TELF@@">@@TELDISP@@</a></td></tr>
-        <tr><td>@@K_TEL@@</td><td><a href="tel:@@TEL2@@">@@TEL2DISP@@</a></td></tr>
+        <tr><td>@@K_TEL@@</td><td><a href="tel:@@TEL2_INTL@@">@@TEL2DISP@@</a></td></tr>
         <tr><td>@@K_MAIL@@</td><td><a href="mailto:@@MAIL@@">@@MAIL@@</a></td></tr>
         <tr><td>@@K_SITE@@</td><td><a href="https://lecristallinoptique.com/" rel="noopener">lecristallinoptique.com</a></td></tr>
         <tr><td>@@K_FBQ@@</td><td><a href="@@FBHREF@@" rel="noopener">@@SOCIAL_TXT@@</a></td></tr>
@@ -767,9 +820,10 @@ PAGE = """<!doctype html>
   </div>
 </div></footer>
 
-<div class="sticky-wa">
+<div class="sticky-wa" data-wa-bar>
+  <p class="said" id="wa-said" role="status" aria-live="polite" hidden></p>
   <a class="p" id="wa-sticky" target="_blank" rel="noopener" href="https://wa.me/@@WA@@?text=@@HEROMSG@@">@@F_WA@@</a>
-  <a class="c" href="tel:@@TELF@@">@@F_CALL@@</a>
+  <a class="c" href="tel:@@TELF_INTL@@">@@F_CALL@@</a>
 </div>
 <script>@@JS@@</script>
 <script>@@JSREV@@</script>
@@ -807,6 +861,10 @@ REPL = {
     "BAR_H1": L(C["bar"]["hours1"]), "BAR_H2": L(C["bar"]["hours2"]),
     "BAR_OK": L(C["bar"]["confirm"]), "BAR_ADDR": L(C["bar"]["addr"]),
     "TELF": C["telFixe"], "TELDISP": "(+237) 242 65 12 65",
+    # tel: exige l'indicatif pour un appel depuis un autre pays ou une autre messagerie.
+    # ⚠️ Piège attrapé au portique (23/09) : `.lstrip("237")` retire des CARACTÈRES, pas un PRÉFIXE —
+    #    « 237242651265 » devenait « +23742651265 ». On teste donc le préfixe explicitement.
+    "TELF_INTL": _intl(C["telFixe"]), "TEL2_INTL": _intl(C["tel2"]),
     "TEL2": C["tel2"], "TEL2DISP": "679 63 20 12", "MAIL": C["mail"],
     "WA": WA, "WADISP": C["wa"], "EYE": EYE, "NAVLBL": T(C["a11y"]["nav"]), "NAV": NAV,
     "CTANAV": L(C["ctaNav"]),

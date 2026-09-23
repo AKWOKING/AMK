@@ -26,13 +26,27 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 OUT = ROOT / "demos" / "concept-univers-optique-v1.html"
+# ⚠️ ÉTAT AU 23/09/2026 — ce builder NE TOURNE PLUS : `univers_optique_content.py` a évolué depuis
+#    (la clé `waMsg["slot"]` n'existe plus → KeyError ligne ~640). Les fichiers v1 sont donc **figés**,
+#    corrigés directement dans le HTML, et servent d'archive de la première direction (le dossier v1
+#    reste en ligne sous /univers-v1/ pour la comparaison pendant le RDV du 25/09). Ne pas lancer ce
+#    script : il ne peut produire qu'un fichier incomplet. S'il faut un jour repartir de v1, il faut
+#    d'abord réaligner la source de contenu.
 sys.path.insert(0, str(ROOT / "demos"))
 from univers_optique_content import C  # noqa: E402
 
 # ── le numéro WhatsApp : chiffres seuls. Un espace dans l'URL tue le message pré-rempli. ──
 WA = re.sub(r"\D", "", C["wa"])
 assert len(WA) == 9 and WA.startswith("6"), f"numéro WhatsApp invalide : {WA!r}"
-TEL = WA  # le portable du cabinet sert aussi de lien tel:
+# ⚠️ 23/09 — CE BUILDER ÉCRIVAIT UN LIEN MORT. `wa.me/699252874` (numéro local, sans indicatif) : WhatsApp
+#    refuse un numéro non international, donc chaque bouton de cette page ouvrait une erreur. Le bug a
+#    survécu dans v1 ET dans la copie `/univers-v1/` EN LIGNE, que King ouvre sur son téléphone devant le
+#    client vendredi 25/09 pour comparer les deux directions. Attrapé par `tools/qa/audit_page.py` en
+#    balayant les 47 pages du dépôt — pas en relisant la page. Loi : un lien qu'on n'a jamais ouvert
+#    n'a jamais été vérifié.
+WA_INTL = WA if WA.startswith("237") else "237" + WA
+assert len(WA_INTL) == 12, f"numéro WhatsApp international invalide : {WA_INTL!r}"
+TEL = "+" + WA_INTL  # le portable du cabinet sert aussi de lien tel: (indicatif requis)
 
 MAPS = ("https://www.google.com/maps/search/?api=1&query=Univers%20Optique%20"
         "B%C3%A9panda%20Douala")
@@ -59,7 +73,7 @@ def pair(pair_):
 
 
 def wa_url(text):
-    return "https://wa.me/%s?text=%s" % (WA, text)
+    return "https://wa.me/%s?text=%s" % (WA_INTL, text)
 
 
 def wa_msg(d):
@@ -614,7 +628,7 @@ for r in D["rows"]:
 svc_rows = []
 for r in S["rows"]:
     msg = wa_msg(dict(C["waMsg"]["row"], svc=r[0])) if False else (
-        "https://wa.me/%s?text=%s" % (WA, __import__("urllib.parse", fromlist=["quote"])
+        "https://wa.me/%s?text=%s" % (WA_INTL, __import__("urllib.parse", fromlist=["quote"])
                                        .quote(C["waMsg"]["row"]["fr"].replace("{svc}", r[0]), safe="")))
     svc_rows.append(
         '<li class="row" tabindex="0" role="link" data-msg="%s" data-svc-fr="%s" data-svc-en="%s" '
@@ -629,7 +643,7 @@ slot_rows = []
 from urllib.parse import quote as _q  # noqa: E402
 for i, sl in enumerate(B["slots"]):
     shut = "Fermé" in sl[2]
-    msg = ("https://wa.me/%s?text=%s" % (WA, _q(
+    msg = ("https://wa.me/%s?text=%s" % (WA_INTL, _q(
         C["waMsg"]["slot"]["fr"].replace("{slot}", "%s %s" % (sl[0], sl[2])).replace(
             "{when}", "cet après-midi" if i == 0 else "samedi"), safe="")))
     slot_rows.append(
@@ -689,7 +703,7 @@ for i, it in enumerate(P["items"]):
 # ── questions ouvertes ─────────────────────────────────────────────────────
 ask_rows = []
 for it in O["items"]:
-    msg = "https://wa.me/%s?text=%s" % (WA, _q(
+    msg = "https://wa.me/%s?text=%s" % (WA_INTL, _q(
         "Bonjour, pour Univers Optique — point « %s » : %s" % (it[0], "ma réponse"), safe=""))
     ask_rows.append(
         '<li><div><span class="qq">%s</span><h3>%s</h3><p>%s</p></div>'
@@ -927,8 +941,8 @@ T = {
                "@@JSREV@@": JSREV,
     "@@JSONLD@@": json.dumps(SCHEMA, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"),
     "@@LOGO@@": LOGO,
-    "@@WA@@": WA,
-    "@@TEL@@": TEL, "@@TEL2@@": C["tel2"], "@@TEL2D@@": esc(C["tel2Disp"]),
+    "@@WA@@": WA_INTL,
+    "@@TEL@@": TEL, "@@TEL2@@": ("+" + re.sub(r"\D", "", C["tel2"]) if not str(C["tel2"]).startswith("+") else C["tel2"]), "@@TEL2D@@": esc(C["tel2Disp"]),
     "@@WADISP@@": esc(C["waDisp"]),
     "@@MAIL1@@": C["mail1"], "@@MAIL2@@": C["mail2"],
     "@@QMAIL@@" + "": bi("à confirmer", "to confirm"),

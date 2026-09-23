@@ -45,6 +45,12 @@ SLUGS = {
                       "Univers Optique — le site + la note au cabinet (document de travail)"),
     "univers-v1": ("demos/concept-univers-optique-v1.html",
                    "Univers Optique, opticien à Bépanda Douala — dossier v1"),
+    # 23/09 — UNI-LABO : le dossier `unilabo/` est la racine du projet Vercel `uni-labo.vercel.app`
+    # (déployé par King le 18/09) et porte aussi `og.jpg`. Il n'était PAS dans cette liste, donc il
+    # restait sur la version du 18/09 pendant que le fichier canonique évoluait — exactement le genre
+    # d'écart qui fait qu'on vérifie une page et qu'on en déploie une autre. Il y est désormais.
+    "unilabo": ("demos/concept-unilabo-v1.html",
+                "UNI-LABO, laboratoire d'analyses à Bonamoussadi Douala — concept"),
 }
 
 NOINDEX = '<meta name="robots" content="noindex,nofollow">'

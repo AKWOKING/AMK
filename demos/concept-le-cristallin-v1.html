@@ -240,12 +240,20 @@ footer ul.fine a{color:#C6D7CD}
  justify-content:space-between;flex-wrap:wrap;font-size:.78rem;color:#9FB6AB}
 .badge{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bright);
  border:1px solid rgba(127,224,188,.3);border-radius:999px;padding:5px 10px;display:inline-block;margin-top:6px}
-.sticky-wa{position:fixed;inset:auto 0 0 0;z-index:50;display:flex;gap:9px;padding:10px 12px;
+.sticky-wa{position:fixed;inset:auto 0 0 0;z-index:50;display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:10px 12px;
  background:rgba(11,22,19,.95);backdrop-filter:blur(8px)}
 .sticky-wa a{flex:1;text-align:center;text-decoration:none;font-weight:620;font-size:.9rem;padding:12px;
  border-radius:11px}
 .sticky-wa .p{background:var(--bright);color:var(--ink)}
 .sticky-wa .c{border:1px solid rgba(255,255,255,.3);color:#fff}
+/* La barre du bas est en grille : la bande de retour se pose SUR TOUTE LA LARGEUR, au-dessus des deux
+   boutons. « hidden » ne suffisait pas (une grille étire un enfant caché) — c'est display:none qui la
+   sort du flux, et c'est la classe .on qui la fait revenir. (Piège attrapé au portique, pas en le lisant.) */
+.sticky-wa p.said{display:none;grid-column:1/-1;margin:0;text-align:center;font-size:.82rem;
+ color:var(--bright);background:rgba(127,224,188,.08);border:1px solid rgba(127,224,188,.28);
+ border-radius:9px;padding:9px 10px}
+.sticky-wa p.said[hidden]{display:none}
+html.js .sticky-wa.said-on p.said{display:block}
 /* Loi maison (design/WORKFLOW.md §3b « content-hiding fade-ins » ; design/CRAFT-FLOOR.md §2.5 et §3) :
    un état caché ne peut exister QUE sous `html.js`, classe posée par un script INLINE dans le <head>.
    Sans JS — coupé, rogné par une pièce jointe tronquée, aperçu qui n'exécute rien — la page doit se
@@ -372,7 +380,7 @@ html.js .reveal.in{opacity:1;transform:none}
     <h1><span class="fr-only">Vous lisez la dernière ligne ?</span><span class="en-only">Can you read the last line?</span></h1>
     <p class="lede" style="margin-top:14px"><span class="fr-only">La planche ci-contre est la vôtre : chaque ligne est un acte du cabinet. Lisez-la comme chez l'opticien — la plus petite ligne est notre spécialité : <b class="h1hl">l'équipement complet, monté ici, au laboratoire du cabinet.</b></span><span class="en-only">The chart beside you is ours: each line is one thing the practice does. Read it as you would at the optician - the smallest line is our specialty: <b class="h1hl">full eyewear, glazed here, in the practice's own lab.</b></span></p>
     <div class="actions">
-      <a class="btn btn-primary" id="wa-hero" target="_blank" rel="noopener" href="https://wa.me/699905577?text=Bonjour%20Le%20Cristallin%2C%20je%20souhaite%20r%C3%A9server%20un%20examen%20de%20la%20vue.%20Quels%20sont%20vos%20prochains%20cr%C3%A9neaux%20%3F"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg> <span><span class="fr-only">Réserver un examen de vue</span><span class="en-only">Book an eye exam</span></span></a>
+      <a class="btn btn-primary" id="wa-hero" target="_blank" rel="noopener" href="https://wa.me/237699905577?text=Bonjour%20Le%20Cristallin%2C%20je%20souhaite%20r%C3%A9server%20un%20examen%20de%20la%20vue.%20Quels%20sont%20vos%20prochains%20cr%C3%A9neaux%20%3F"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg> <span><span class="fr-only">Réserver un examen de vue</span><span class="en-only">Book an eye exam</span></span></a>
       <a class="btn btn-ghost" href="#couverture"><span class="fr-only">Je suis assuré</span><span class="en-only">I am insured</span></a>
     </div>
     <div class="facts">
@@ -687,7 +695,7 @@ html.js .reveal.in{opacity:1;transform:none}
     <div class="icard">
       <h3><span class="fr-only">Nous joindre</span><span class="en-only">Reach us</span></h3>
       <table><tbody>
-        <tr><td>WhatsApp <span class="fr-only">(le plus rapide)</span><span class="en-only">(fastest)</span></td><td><a href="https://wa.me/699905577">699 90 55 77</a></td></tr>
+        <tr><td>WhatsApp <span class="fr-only">(le plus rapide · votre message part déjà écrit ; réponse aux heures d'ouverture)</span><span class="en-only">(fastest · your message leaves already written; answer during opening hours)</span></td><td><a href="https://wa.me/237699905577">699 90 55 77</a></td></tr>
         <tr><td><span class="fr-only">Téléphone</span><span class="en-only">Phone</span></td><td><a href="tel:+237242651265">(+237) 242 65 12 65</a></td></tr>
         <tr><td><span class="fr-only">Téléphone</span><span class="en-only">Phone</span></td><td><a href="tel:+237679632012">679 63 20 12</a></td></tr>
         <tr><td><span class="fr-only">E-mail</span><span class="en-only">Email</span></td><td><a href="mailto:contact@lecristallinoptique.com">contact@lecristallinoptique.com</a></td></tr>
@@ -742,13 +750,14 @@ html.js .reveal.in{opacity:1;transform:none}
   </div>
 </div></footer>
 
-<div class="sticky-wa">
-  <a class="p" id="wa-sticky" target="_blank" rel="noopener" href="https://wa.me/699905577?text=Bonjour%20Le%20Cristallin%2C%20je%20souhaite%20r%C3%A9server%20un%20examen%20de%20la%20vue.%20Quels%20sont%20vos%20prochains%20cr%C3%A9neaux%20%3F"><span class="fr-only">Réserver un examen de vue</span><span class="en-only">Book an eye exam</span></a>
+<div class="sticky-wa" data-wa-bar>
+  <p class="said" id="wa-said" role="status" aria-live="polite" hidden></p>
+  <a class="p" id="wa-sticky" target="_blank" rel="noopener" href="https://wa.me/237699905577?text=Bonjour%20Le%20Cristallin%2C%20je%20souhaite%20r%C3%A9server%20un%20examen%20de%20la%20vue.%20Quels%20sont%20vos%20prochains%20cr%C3%A9neaux%20%3F"><span class="fr-only">Réserver un examen de vue</span><span class="en-only">Book an eye exam</span></a>
   <a class="c" href="tel:+237242651265"><span class="fr-only">Appeler</span><span class="en-only">Call</span></a>
 </div>
 <script>
 (function(){
-  var html=document.documentElement, KEY='cristallin-lang', WA='699905577';
+  var html=document.documentElement, KEY='cristallin-lang', WA='237699905577';
   var MSG={"row": {"fr": "Bonjour Le Cristallin, je souhaite réserver : {svc}. Quels sont vos prochains créneaux ?", "en": "Hello Le Cristallin, I would like to book: {svc}. What are your next slots?"}, "ask": {"fr": "Bonjour Le Cristallin, votre site propose : {svc}. Est-ce que je peux passer cette semaine ?", "en": "Hello Le Cristallin, your site lists: {svc}. Can I come this week?"}, "ins": {"fr": "Bonjour Le Cristallin, je suis assuré(e) chez {n}. Je souhaite faire vérifier ma prise en charge pour des lunettes. Quand puis-je passer ?", "en": "Hello Le Cristallin, I am covered by {n}. I would like my lens cover checked. When can I come?"}, "generic": {"fr": "Bonjour Le Cristallin, je souhaite réserver un examen de la vue. Quels sont vos prochains créneaux ?", "en": "Hello Le Cristallin, I would like to book an eye examination. What are your next slots?"}};
   function lang(){return html.getAttribute('data-lang')||'fr';}
   function setLang(l){
@@ -772,6 +781,7 @@ html.js .reveal.in{opacity:1;transform:none}
       ev.preventDefault();
       var svc=lang()==='fr'?r.dataset.svcFr:r.dataset.svcEn;
       window.open(msg('row',svc),'_blank','noopener');
+      say('row',svc);
     });
   });
   [].slice.call(document.querySelectorAll('.ask')).forEach(function(a){
@@ -779,11 +789,39 @@ html.js .reveal.in{opacity:1;transform:none}
       ev.preventDefault();
       var svc=lang()==='fr'?a.dataset.svcFr:a.dataset.svcEn;
       window.open(msg('ask',svc),'_blank','noopener');
+      say('ask',svc);
     });
   });
 
   var links=[document.getElementById('wa-hero'), document.getElementById('wa-sticky')].filter(Boolean);
+  links.forEach(function(a){ a.addEventListener('click',function(){ say('generic'); }); });
   function paintHero(){ links.forEach(function(a){ a.href = msg('generic'); }); }
+
+  /* ── LA RÉPONSE (vidéo Kole Jain : « chaque interaction doit produire une réponse visible ») et
+     LA LIGNE DE TEMPS INVISIBLE (vidéo Moradi : « le plus dur de la livraison, c'est l'attente »).
+     Avant ce patch, cliquer sur une ligne de service ouvrait un onglet et **la page ne disait rien** :
+     sur un téléphone, l'onglet prend la main, l'utilisateur revient, et rien n'indique que son message
+     est parti pré-rempli. On écrit donc, sous ses yeux, ce qui vient de se passer et ce qui suit. */
+  var said=document.getElementById('wa-said'), bar=document.querySelector('[data-wa-bar]');
+  var saidTimer=null;
+  // ⚠️ Apostrophes en CHAÎNES DOUBLE (piège du 23/09) : ce bloc vit dans un triple-quote Python, donc
+  //    un ' y perd son antislash et casse le JS. Le portique du builder l'a arrêté avant écriture.
+  function say(kind,svc){
+    if(!said) return;
+    var l=lang();
+    var t;
+    if(kind==="ask"){ t = (l==="fr") ? "WhatsApp s'ouvre avec votre question déjà écrite"
+                                     : "WhatsApp opens with your question already written"; }
+    else            { t = (l==="fr") ? "WhatsApp s'ouvre avec votre demande déjà écrite"
+                                     : "WhatsApp opens with your request already written"; }
+    if(svc){ t += (l==="fr" ? " : " : ": ") + svc; }
+    t += (l==="fr") ? ". Le cabinet répond pendant les heures d'ouverture."
+                    : ". The practice answers during opening hours.";
+    said.textContent=t;
+    said.hidden=false; if(bar){ bar.classList.add('said-on'); }
+    if(saidTimer){ clearTimeout(saidTimer); }
+    saidTimer=setTimeout(function(){ said.hidden=true; if(bar){ bar.classList.remove('said-on'); } }, 6000);
+  }
   var ins=document.getElementById('ins'), st=document.getElementById('ins-state'),
       go=document.getElementById('ins-go'), NAMES=["CHANAS Assurances", "Activa Assurances", "Beneficial General Insurance", "SAAR Assurances", "Ascoma Cameroun", "Zénith Insurance SA", "Samaritan Insurance Inc.", "Mutuelle des Brasseries du Cameroun", "Gras Savoye Cameroun", "Alpha Assurances", "Saham Assurances", "GMC Assurances"];
   function paint(){

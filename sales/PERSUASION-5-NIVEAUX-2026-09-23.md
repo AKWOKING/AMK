@@ -1,5 +1,5 @@
 # PERSUASION — les cinq niveaux, appliqués à nos messages
-### D'après « How To Use Persuasion To Drastically Change Your Life » — Joanna Wiebe, 12/02/2026 (11 min 36)
+### D'après « How To Use Persuasion To Drastically Change Your Life » — Joanna Wiebe, 12/02/2026 (11 min 36) · `youtu.be/cT82oNk49ks`
 ### Écrit le 23/09/2026 · version AMK, avec nos propres messages audités
 
 ---

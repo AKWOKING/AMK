@@ -56,6 +56,13 @@ WhatsApp-first · mobile-first · EN|FR · Cameroon (Kumba/Douala/South-West) ·
 | 18 | 17 Sep 2026 | Everything About: Footers In Web Design — The Website Architect | Design / Build (footers) | Absorbed (anatomy + SEO rules; A/B stats rejected) | `AMK-DESIGN-SKILLS.md` **§20 · §13** |
 | 19 | 17 Sep 2026 | Website Footer Design Inspiration (Best practices) — Flux Academy | Design (footers) | Absorbed (footer as designed screen; mobile caveat) | `AMK-DESIGN-SKILLS.md` **§20** |
 | 20 | 18 Sep 2026 | How I sell "Talking Websites" to local businesses for 499/mo — Pavlo | Build (voice) / Sales (offer model) | **Absorbed with a hard limit** — voice layer yes, SaaS stack no; recurring model **pending King** | `AMK-DESIGN-SKILLS.md` **§21** · `sales/Voice-Offer-Decision-2026-09-18.md` |
+| 21 | 23 Sep 2026 | Sales system — Will Barron (`youtu.be/5swDtQFyIws`) | Sales / Close | Absorbed (6 pieces + 6-step discovery) | `sales/SYSTEME-DE-VENTE-AMK-2026-09-23.md` · `sales/RDV-*.md` |
+| 22 | 23 Sep 2026 | The 5 levels of persuasion — Joanna Wiebe (`youtu.be/cT82oNk49ks`) | Sales / Copy | Absorbed — audit of **our own** messages, 5 rewrites | `sales/PERSUASION-5-NIVEAUX-2026-09-23.md` · `sales/MESSAGES-2026-09-23-PERSUASION.md` |
+| 23 | 23 Sep 2026 | Words That SELL — Joanna Wiebe (`youtu.be/7gjtI1rnds4`) | Sales / Copy | Absorbed (9 triggers declined to our real messages) | `sales/DECLINAISON-9-DECLENCHEURS-2026-09-23.md` · MESSAGES §8 |
+| 24 | 23 Sep 2026 | What I Wish I Knew Before 10 Years in UX (The 3 Levels) — Amir Moradi (`youtu.be/gr0Val2QSbM`) | Design / UX | Absorbed (the invisible timeline) | `AMK-DESIGN-SKILLS.md` **§22.1** |
+| 25 | 23 Sep 2026 | Every UI/UX Concept Explained in Under 10 Minutes — Kole Jain (`youtu.be/EcbgbKtOELY`) | Design / Build | **Absorbed — the four states + the response** | `AMK-DESIGN-SKILLS.md` **§22.2** · `tools/qa/audit_page.py` |
+| 26 | 23 Sep 2026 | The UX Psychology Behind Apps People Can't Stop Using — uxpeak (`youtu.be/2TlIg3VokY8`) | Design / Psychology | Absorbed, **honest half only** | `AMK-DESIGN-SKILLS.md` **§22.3** |
+| 27 | 23 Sep 2026 | The Psychology of a PERFECT Website — Self-Made Web Designer (`youtu.be/d-IaU9qcDGg`) | Design / Psychology | Absorbed (3 friends, mental models, MAYA, chunking, ladders) | `AMK-DESIGN-SKILLS.md` **§22.3/§22.4** |
 
 ## 4 · Entries (full reports)
 
@@ -640,3 +647,78 @@ construction vivent dans le playbook, pas ici.
   sont transférables, les tactiques non.** Aucun de ces intervenants n'a jamais fait de SEO à Douala.
 - Les « pourcentages » présentés comme des poids officiels : c'est une **enquête d'opinion** auprès de ~50 experts.
 
+---
+
+## Lot [22] · Vente — 3 vidéos (King, 23/09/2026)
+
+Analyse complète et application : **`sales/SYSTEME-DE-VENTE-AMK-2026-09-23.md`**,
+**`sales/PERSUASION-5-NIVEAUX-2026-09-23.md`**, **`sales/DECLINAISON-9-DECLENCHEURS-2026-09-23.md`**.
+Ce qui suit n'est qu'un repère : les règles vivent dans les fichiers `sales/`, pas ici.
+
+| # | Vidéo | Chaîne | Ce qu'elle apporte |
+|---|---|---|---|
+| 22.1 | *Sales system* (`youtu.be/5swDtQFyIws`) | Will Barron | les 6 pièces d'un système de vente, une découverte en 6 pas (douleur → déclencheur → futur → ROI rugueux → budget → étape datée), le rythme hebdomadaire |
+| 22.2 | *5 niveaux de persuasion* (`youtu.be/cT82oNk49ks`) | Joanna Wiebe | ne pas parler de soi (6 s) · biais · identité et « money words » · les péages · l'histoire = le client en héros |
+| 22.3 | *Words That SELL* (`youtu.be/7gjtI1rnds4`) | Joanna Wiebe | 9 déclencheurs par étage du tunnel : cadrage, identité, fluidité / mécanisme unique, typiquement atypique, ennuyeux par dessein / 3 options, compromis transparents, une grosse preuve |
+
+**Ce qui a changé chez nous le jour même :** message 1 réécrit (« je la construis d'abord, vous décidez
+après ») · règle **une seule question OU trois choix — jamais les deux** (jamais 2 options) · les
+compromis transparents posés dans `MESSAGES-2026-09-23-PERSUASION.md` §8, **à valider par King** ·
+notre mécanisme unique nommé : **« L'aperçu d'abord »**.
+
+**Déchets écartés :** les promotions de leurs formations ; le vocabulaire SaaS/US (le « wall of love », les
+séquences automatisées) ; tout chiffre de marché non vérifiable localement.
+
+---
+
+## Lot [23] · UX/UI et psychologie du design — 4 vidéos (King, 23/09/2026)
+
+Règles de construction : **`AMK-DESIGN-SKILLS.md` §22**. Portique de contrôle : **`tools/qa/audit_page.py`**.
+
+| # | Vidéo | Chaîne | Ce qu'elle apporte |
+|---|---|---|---|
+| 23.1 | *What I Wish I Knew Before 10 Years in UX (The 3 Levels)* | Amir Moradi | les trois niveaux (surface · **la ligne de temps invisible** · stratégie) ; « un chemin heureux sans échec, c'est un rêve » |
+| 23.2 | *Every UI/UX Concept Explained in Under 10 Minutes* | Kole Jain | affordances, hiérarchie, grilles, typo, couleur, ombres, **4 états du bouton**, **chaque interaction a une réponse**, micro-interactions, overlays lisibles |
+| 23.3 | *The UX Psychology Behind Apps People Can't Stop Using* | uxpeak | 6 principes : défauts intelligents · gradient d'objectif · réciprocité · effet IKEA · aversion à la perte · contraste |
+| 23.4 | *The Psychology of a PERFECT Website* | Self-Made Web Designer | les 3 amis (survie → émotion → raison) · modèles mentaux · MAYA · chunking · paliers de prix |
+
+### Ce que le lot a mis en évidence, et que nous avons payé
+
+**Un lien WhatsApp sans indicatif pays vivait dans une page déjà envoyée à un client** (`wa.me/699905577`
+au lieu de `wa.me/237699905577`) : le bouton central du Cristallin ouvrait une erreur. Deux relectures
+humaines ne l'avaient pas vu, **parce que personne n'avait cliqué**. Le même défaut dormait dans les
+archives v1 d'Univers Optique — la copie que King ouvre devant le client vendredi pour comparer les deux
+directions. C'est le principe 23.2 appliqué à nous-mêmes : *une page sans réponse après le clic est une page
+qui n'a pas de chemin.* Les trois pages corrigées, les trois pages passées au portique : voir §22.4.
+
+### Affirmations centrales retenues
+
+- **Quatre états par bouton** (repos, survol, appui, inactif) + un état d'attente quand l'action attend
+  quelque chose. Un bouton sans état d'appui ne répond pas au doigt.
+- **Chaque interaction produit une réponse** — pas un spinner décoratif : des mots qui disent ce qui vient
+  de se passer et ce qui suit.
+- **Les défauts intelligents et la réciprocité sont notre modèle économique**, pas un tour de passe-passe :
+  l'aperçu est construit **avant** qu'on demande quoi que ce soit, et le message WhatsApp part **déjà écrit**.
+- **Jamais créatif sur les conventions** (modèles mentaux) : navigation, logo, horaires, adresse, numéro.
+- **MAYA** : structure prévisible + une ou deux surprises (les micro-interactions), jamais la charpente.
+- **Chunking** : 3 à 4 éléments par bloc, un numéro de téléphone en trois groupes.
+- **Le premier vote est la survie** : nom, métier, ville, horaires, un numéro qui répond — avant l'esthétique.
+
+### Contradictions avec nos fichiers
+
+- **Aucune contradiction de fond** avec `AMK-DESIGN-SKILLS.md` ; le lot **arme** des règles qui étaient
+  implicites (les états, la réponse, la ligne de temps).
+- **Tension réglée par l'éthique :** les six principes psychologiques ont tous une forme honnête et une
+  forme malhonnête. La forme malhonnête (fausse urgence, fausse rareté, faux progrès, avis inventés, séries
+  et culpabilité) est **bannie** — elle contredit la loi d'exactitude et détruirait le seul actif qu'on a :
+  être celui qui dit la vérité. Les formes honnêtes sont dans §22.3.
+
+### Déchets écartés
+
+- Le conseil de carrière des quatre vidéos (portfolios, salaires, freelance).
+- Les exemples d'apps grand public (Duolingo, cartes de fidélité, applications à notifications) : le
+  mécanisme est transférable, la mécanique non — un laboratoire d'analyses à Douala ne relance personne
+  par notification.
+- Les chiffres cités comme preuves de marché (l'étude des confitures, 70–90 % de défauts inchangés) : gardés
+  comme **calibration interne**, jamais cités à un prospect — même règle que [16] et [18].
+- Les gabarits de sites « parfaits » montrés en exemple : on ne copie pas un gabarit, on applique des règles.

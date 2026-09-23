@@ -840,6 +840,137 @@ In this market nobody fills a calendar. The assistant's job is to end with **Wha
 
 ---
 
+## §22 INTERACTION CONTRACT, INVISIBLE TIMELINE, PSYCHOLOGY LAYER — 4 videos (23 Sep 2026)
+
+Folded from four videos King dropped in one go (UX/UI + design psychology). Verdicts, junk filter and
+the full log: `research/YouTube-Lessons.md` **Lot [23]**. §22 is the build-side law that came out of them.
+
+**The four, and what each one is for:**
+
+| # | Video | What we took | What we left |
+|---|---|---|---|
+| 22.a | Amir Moradi — *What I Wish I Knew Before 10 Years in UX (The 3 Levels)* | the three levels; the invisible timeline; "happy path only = dreamer" | career-path advice |
+| 22.b | Kole Jain — *Every UI/UX Concept Explained in Under 10 Minutes* | the interaction contract: 4 states per button, a response per interaction, numbers that are checkable | generic tutorial framing |
+| 22.c | uxpeak — *The UX Psychology Behind Apps People Can't Stop Using* | 6 principles — the honest half only | dark patterns, streak/guilt mechanics, fake progress |
+| 22.d | Self-Made Web Designer — *The Psychology of a PERFECT Website* | 3 friends, mental models, MAYA, chunking, price ladders | nothing structural; the tone is a hook |
+
+### 22.1 The three levels (22.a) — and the one we kept failing
+
+**Surface** — UI is not UX. *"Screens, AI can do. Designing decisions, that is the job."* Our concepts are not
+screens: every section has to answer a question the visitor actually has (hours? price? can I trust this?)
+before it is allowed to be pretty.
+
+**Timeline** — *the hardest part of delivery is the waiting*. State the state; show the progress; a happy-path-only
+build is a dream. **This is where we were failing, and where the worst bug of the quarter was born:** the
+Cristallin page carried a WhatsApp link with no country code (`wa.me/699905577`), on a page already in the
+client's hands, and **nobody had clicked it**. Two people had "reviewed" the page. A path nobody has walked
+is not a design, it is a hope.
+
+**Strategy** — business × technology × psychology; *everything holds except the human*. The other three
+principles in this file are the technology; 22.3 is the psychology; the business is the price and the
+perimeter (see `sales/`).
+
+### 22.2 The interaction contract (22.b) — non-negotiable per page
+
+1. **Four states per button, always** — default, hover, active, disabled — plus **loading** where the action
+   waits on something. Our house set, copied straight from the Cristallin build:
+   `.btn{transition:...}` · `.btn:hover{translateY(-1px)}` · `.btn:active{transform:scale(.97)}` ·
+   `.btn.is-off{opacity:.55;cursor:not-allowed;pointer-events:none}` · `:focus-visible{outline:3px}`.
+2. **Every interaction produces a response.** Not a spinner for show: *words*. Our pattern is the
+   **`.said` band** — after a click that leaves the page (WhatsApp, `tel:`), the page says, in the visitor's
+   language, **what just opened and what happens next** ("WhatsApp opens with your request already written.
+   The practice answers during opening hours."), then hides itself after 6 s. Implemented with
+   `role="status" aria-live="polite"` so it is heard, not only seen.
+3. **Never a visible control with no effect.** `href="#"`, a dead button, a form with no state — a false
+   signifier; the visitor reads the whole page as broken.
+4. **Every path out of the page is checkable and complete**: `wa.me/237…` (country code, digits only, no
+   spaces), `tel:+237…`. Both are now **blocking** checks in `tools/qa/audit_page.py`.
+5. **Numbers from the video that we hold ourselves to**: one type family; ≤6 sizes per page (see the caveat
+   in 22.6); icons at line height (24 px); padding ≈ 2× the button height; **shadows at low opacity with a
+   large blur — if the shadow is the first thing you notice, it is wrong**; dark mode = card lighter than the
+   background, *lower* saturation; overlays carry a gradient under the text so the words stay legible.
+6. **State where the user is**: focus rings on every field (`:focus`), an error state that says *why*, and a
+   confirmation micro-interaction after an action (the video's "Copied" chip). Our equivalent today is the
+   `.said` band; a copy-to-clipboard chip is the next one to build.
+
+### 22.3 The psychology layer (22.c, 22.d) — used honestly, or not at all
+
+The six principles are real, and **every one of them has an honest form and a dishonest form**. We ship the
+honest form only; the dishonest ones are named in `research/YouTube-Lessons.md` §5.
+
+| Principle | The dishonest form | Our legitimate form |
+|---|---|---|
+| **Smart defaults** (70–90 % never change the default) | a pre-ticked paid extra | **the WhatsApp message arrives pre-written** in the visitor's language; the default is the action they already wanted |
+| **Goal gradient** (a card with 2 of 10 stamps pre-filled ≈ ×2 completion) | fake progress bars | **the preview is already built** before anything is asked: they start at "almost there", because it is true |
+| **Reciprocity** (value before the ask — Cialdini) | "free" behind a signup wall | the concept page itself, sent with **no account, no form, no deposit** |
+| **IKEA / endowment** (people value what they helped build) | labour disguised as a game | they choose the 6 points, the photos, the perimeter — the page becomes *theirs* before the invoice |
+| **Loss aversion** (a loss weighs ≈2× a gain — Kahneman) | invented lost revenue | **true** losses only: what a client who cannot be found actually loses; never an unverifiable number |
+| **Contrast / anchoring** | a fake crossed-out price | our real price ladder and the real alternative (print, ads, the rent of a shop window) |
+
+**Mental models (22.d).** Never be creative with a convention: the navigation goes where navigation goes, the
+logo goes home, the phone number is a phone number. Our version: hours in a table, one address only, the
+WhatsApp button in the same place on every page. Creativity is spent on the one thing they cannot get
+elsewhere — the craft of *their* page.
+
+**MAYA** — *most advanced yet acceptable*: a familiar structure with small surprises. Our surprises are the
+micro-interactions (the `.said` line, the chart frame on the Cristallin, the computed slots on Univers),
+never the skeleton.
+
+**Chunking (22.d).** 3–4 items maximum per block; a phone number is written in three groups; a list of six
+becomes two blocks of three. Applies to footers, hours, prices, FAQ answers.
+
+**Price ladders (22.d).** When two or three options are shown, describe the difference as *"everything below,
+plus this"* — never repeat the same list twice. (Our two-tier AMK ladder and the Cristallin's three-option
+rule, `sales/DECLINAISON-9-DECLENCHEURS-2026-09-23.md`.)
+
+**The three friends (22.d)** — the visitor decides in three passes: *survival* (is this a real business? is it
+safe? can I see it?), then *emotion* (do I like it?), then *reason* (is it worth it?). The first vote is
+therefore **safety first, aesthetics last**: name, trade, town, hours, a reachable number and proof of
+existence come before the animation budget. It is also why one line of plainly written truth ("we have no
+team — you deal with the person who built the page") beats an invented corporate voice.
+
+### 22.4 What actually changed on our three pages (23 Sep 2026)
+
+| Page | Before | After |
+|---|---|---|
+| **Cristallin** (client-facing, already sent) | `wa.me/699905577` ×3 — **a link that errors**; `tel:` with no country code; no response after a click | `wa.me/237699905577` ×3; `tel:+237…`; `.said` band (`role=status`, `aria-live`, 6 s); the WhatsApp row now says what happens after the click |
+| **Univers Optique** (Friday 10:00) | the same fallback sentence printed **twice**, word for word; the live-status line was written for eyes only | two distinct fallback sentences, one per card; `role="status" aria-live="polite"` on the live-status line; **the v1 archive also carried the broken link** — fixed, it is opened in front of the client for the A/B comparison |
+| **UNI-LABO** (Friday, hour TBC) | 3 `:hover`, **0 `:active`, 0 transitions**; no response after a click; chips only had a colour state | the full four-state set + transitions; `.said` band inside the sticky bar; `aria-pressed` on the preparation chips |
+
+### 22.5 The gate — `tools/qa/audit_page.py`
+
+Built the same night, for the same reason as the deploy gate (§18.4): the bug was invisible to reading.
+Run it **before any page goes to a prospect**:
+
+```bash
+python3 tools/qa/audit_page.py demos/concept-*.html hosting/previews/*/index.html   # rc=1 if blocking
+```
+
+Blocking: WhatsApp number without country code · no `<h1>` · no `<title>` · a template placeholder left in
+the visible text. Warnings: no `aria-live`/`role="status"` · no focus state · no "what happens next"
+sentence · images without `alt` · >8 text sizes · a sentence printed twice · a field with no error state ·
+more than two `href="#"`.
+
+Two lessons came from writing *the checker itself*: it first flagged three healthy pages as broken because
+it searched the **raw HTML** (base64 images contain every character sequence, including "XXX"), and it
+flagged every sentence as duplicated because **our pages are bilingual** (FR and EN carry the same sentence).
+Both were false alarms, and *a checker that cries wolf is not read the third time* — so the tool now reads
+the visible text and removes the other language before comparing.
+
+### 22.6 Honest limits of this section
+
+- The **"≤6 font sizes"** check reports **25–37** on our pages. It is counting raw CSS declarations, not steps
+  of a scale (our type ramp is deliberate). Do not "fix" it mechanically; the rule that binds is *do not add
+  new sizes without a reason*.
+- **There is no browser in this sandbox** (no chromium available; the download is blocked). So §22 can be
+  checked structurally and the pages compile clean, but **looking at the rendered page on a phone remains
+  King's step** — the portico is a pre-screen, never a substitute for the deploy gate.
+- The psychology principles are used **only** in their honest form. No fake urgency, no fake scarcity, no
+  invented reviews, no streaks, no guilt, no progress we did not actually make. A dark pattern that works in
+  California destroys the one asset we have in Douala: being the person who tells the truth.
+
+---
+
 ## SOURCES
 - `design/vendor/bergside-skills/` — github.com/bergside/awesome-design-skills (TypeUI), 67 SKILL.md + DESIGN.md pairs, MIT (see `design/vendor/LICENSE-bergside`)
 - `design/vendor/taste/skills/` — github.com/Leonxlnx/taste-skill: taste-skill, redesign, output, brandkit, imagegen web/mobile, image-to-code, stitch, soft/minimalist/brutalist, MIT (`design/vendor/LICENSE-taste`)
@@ -848,5 +979,7 @@ In this market nobody fills a calendar. The assistant's job is to end with **Wha
 - AMK playbooks: `design/WORKFLOW.md` (pipeline), `design/STYLE-TOKENS.md` (vertical starters + rotation ledger), `design/MOTION.md` (motion standard)
 - YouTube lesson batches [18][19] (footers, 17 Sep 2026) → this file §20; full log + rejections in `research/YouTube-Lessons.md`
 - YouTube lesson batch [20] (talking websites / voice, 18 Sep 2026) → this file **§21**; offer-model decision in `sales/Voice-Offer-Decision-2026-09-18.md`
+- YouTube lesson batch [21] (local SEO, 21 Sep 2026) → `AMK-SEO-PLAYBOOK.md`; log in `research/YouTube-Lessons.md` Lot [21]
+- YouTube lesson batch [22] (interaction contract / invisible timeline / design psychology, 23 Sep 2026) → this file **§22**; full log + junk filter in `research/YouTube-Lessons.md` Lot [23]; page portico `tools/qa/audit_page.py`
 - **§21 browser-support matrix (checked 18 Sep 2026):** addpipe.com "A Deep Dive into the Web Speech API" (Chrome 139+ on-device recognition, mobile matrix) · vocafuse.com "Web Speech API vs Cloud APIs" (free/no-key, audio sent to vendor servers, cloud at $0.006–0.024/min) · testmuai.com "Speech Synthesis API: Browser Support" (synthesis matrix, Firefox-Android gap). **No source was found for recognition accuracy on Cameroonian accents — that gap is stated in §21.2, not filled by assumption.**
 - In-house references: `sales/Monday-Outreach-Pack.md` (Concept Production Standard), `site/design-research.md` (AMK site research), OraCare v2/v3 (reference-override case studies)

@@ -1,5 +1,5 @@
 # LES NEUF DÉCLENCHEURS — déclinés pour AMK, prêts à coller
-### D'après « Words That SELL (Psychology-Backed) » — Joanna Wiebe, 12/03/2026 (14 min 11)
+### D'après « Words That SELL (Psychology-Backed) » — Joanna Wiebe, 12/03/2026 (14 min 11) · `youtu.be/7gjtI1rnds4`
 ### Écrit le 23/09/2026 · **c'est la pièce qui manquait** : les niveaux expliquent POURQUOI, les neuf déclencheurs disent QUOI ÉCRIRE
 
 ---

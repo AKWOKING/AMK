@@ -683,8 +683,12 @@ def hours_only():
         _cls = "h closed" if "Ferm" in _txt else "h"
         rows += ('<div><span class="d">' + bi(_fr, _en) + '</span><span class="' + _cls + '">' + esc(_txt)
                  + '</span></div>')
+    # `role="status" aria-live="polite"` : ce paragraphe est rempli par le moteur (« ouvert maintenant,
+    # ferme à 18h »). C'est la seule réponse vivante de la page — autrefois écrite à l'écran pour les
+    # yeux seuls ; elle est maintenant annoncée aussi (vidéo Kole Jain : « chaque interaction doit
+    # produire une réponse », et une réponse que personne n'entend n'existe qu'à moitié).
     return ('<div class="slots">' + rows + '</div>'
-            '<p class="openstate" data-openstate hidden></p>')
+            '<p class="openstate" data-openstate role="status" aria-live="polite" hidden></p>')
 
 
 def pick_block(ident, cap=None):
@@ -697,8 +701,23 @@ def pick_block(ident, cap=None):
             '<p class="msglbl">' + L(C["book"]["msgHead"]) + '</p><p class="msg" data-msg></p></div>')
 
 
-def alt_line():
-    """La phrase qui reste vraie quand le script ne tourne pas, avec son lien réel hors de tout caché."""
+def alt_line(where="hero"):
+    """La phrase qui reste vraie quand le script ne tourne pas, avec son lien réel hors de tout caché.
+
+    ⚠️ 23/09 — LES DEUX CARTES DISAIENT LA MÊME PHRASE, MOT POUR MOT. C'était volontaire (chaque carte
+    horaire a besoin de son repli sans JavaScript — le contrôle plus bas exige les deux), mais à l'écran
+    le visiteur lisait le même paragraphe deux fois, à 500 px d'intervalle : le défaut « bloc dupliqué »
+    que la vidéo UX signale comme ce qui fait douter de tout le reste. Deux replis, donc, mais deux
+    phrases distinctes — chacune vraie dans SA carte."""
+    if where == "book":
+        # dans la carte « rendez-vous », les mots « ci-dessus » seraient faux : le socle de créneaux
+        # est plus haut. On dit la seule chose utile : sans script, rien n'est calculé — on écrit.
+        return ('<p class="alt">' + L({
+            "fr": "Sans script, la page ne calcule aucun créneau : écrivez, la proposition de date "
+                  "revient par WhatsApp.",
+            "en": "Without a script the page computes no slot: write, and the date comes back on WhatsApp.",
+        }) + ' <a href="' + WA_PROPOSE + '" target="_blank"'
+            ' rel="noopener">' + L(SITE["caps"]["ecrire"]) + '</a></p>')
     return ('<p class="alt">' + L(SITE["fallback"]) + ' <a href="' + WA_PROPOSE + '" target="_blank"'
             ' rel="noopener">' + L(SITE["caps"]["ecrire"]) + '</a></p>')
 
@@ -961,7 +980,7 @@ S.append('<section id="rendez-vous"><div class="wrap">'
          '<div class="book"><div>'
          + pick_block("book") + hours_only() +
          '<p class="fine">' + L(SITE["book"]["fine"]) + '</p>'
-         + alt_line() +
+         + alt_line("book") +
          '</div><div class="card"><h3>' + L(SITE["book"]["msgHead"]) + '</h3><ul class="msgrows">' +
          "".join('<li><b>' + str(_i) + '</b><span>' + bi(fr, en) + '</span></li>'
                  for _i, (fr, en) in enumerate(SITE["book"]["msgRows"], 1)) +

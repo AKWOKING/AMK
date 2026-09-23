@@ -2199,3 +2199,55 @@ phrases plates et les compromis, et sa note de correction.
 recouvrent — la première donne l'**ossature** (six pièces), la deuxième le **pourquoi** (cinq niveaux), la
 troisième le **quoi écrire** (neuf déclencheurs, rangés par étage). C'est le troisième qui sert le plus vite,
 parce qu'il produit des phrases, pas des principes.
+
+## 2026-09-23 · 14:20 → 15:05 · QUATRE VIDÉOS UX D'UN COUP — et la faute qu'aucune relecture n'avait vue : le bouton WhatsApp du Cristallin était MORT
+
+**Ce que King a envoyé** : quatre liens d'un coup, sans texte — Amir Moradi, *les trois niveaux de l'UX* (5 min 16) ·
+Kole Jain, *tous les concepts UI/UX en dix minutes* (9 min 23) · uxpeak, *la psychologie derrière les applis
+qu'on n'arrête pas d'ouvrir* (11 min 34) · Self-Made Web Designer, *la psychologie d'un site parfait* (8 min 07).
+Même traitement que les précédents : lues en entier, traduites en gestes, appliquées le jour même.
+
+**LE CONSTAT QUI COMPTE — un lien mort sur une page déjà livrée.** La première règle de Kole Jain (« chaque
+interaction doit produire une réponse ») et la deuxième de Moradi (« si tu ne dessines que le chemin heureux,
+tu n'es pas un designer, tu es un rêveur ») disent la même chose : **on n'a jamais cliqué**. Vérification faite
+sur les pages : la page du Cristallin, **déjà envoyée au client**, portait `wa.me/699905577` — le numéro sans
+indicatif pays, que WhatsApp refuse. Le bouton principal de la page ouvrait une erreur. Nos deux autres pages
+(Univers, UNI-LABO) portaient déjà `237…` : c'est ce détail qui a mis la puce à l'oreille. **Deux relectures
+humaines ne l'avaient pas vu parce que personne n'avait appuyé sur le bouton.**
+
+**Plus grave : le même défaut dormait ailleurs.** Balayage des **47 pages HTML** du dépôt : cinq fichiers
+portaient un numéro sans indicatif — les trois archives d'Univers Optique (v1, v1-sobre, v2-sobre), la copie
+en ligne `/univers-v1/` (**celle que King ouvre devant le client vendredi pour comparer les deux directions**)
+et la copie hébergée du Cristallin. Les `tel:` de ces mêmes fichiers partaient aussi sans `+237`.
+
+**Ce qui a été corrigé, page par page.**
+① **Cristallin** : `wa.me/237699905577` (×3) et `tel:+237242651265` / `tel:+237679632012` ; ajout d'une **bande
+de retour** sous les yeux (« WhatsApp s'ouvre avec votre demande déjà écrite. Le cabinet répond pendant les
+heures d'ouverture. »), en `role="status" aria-live="polite"`, qui s'efface au bout de 6 s — c'est la « ligne
+de temps invisible » de Moradi : le visiteur attend, donc la page parle. La ligne WhatsApp de la section
+contact dit désormais elle aussi ce qui se passe après le clic.
+② **Univers Optique** : la même phrase de repli était imprimée **deux fois, mot pour mot**, à 500 px
+d'intervalle (le défaut « bloc dupliqué ») — les deux replis restent (ils sont obligatoires pour qui n'a pas
+JavaScript) mais disent deux choses différentes ; la ligne d'état (« ouvert maintenant, ferme à 18 h ») est
+désormais annoncée, pas seulement affichée ; les archives v1 réparent leurs liens.
+③ **UNI-LABO** : c'était la page la plus pauvre des trois — **3 `:hover`, zéro `:active`, zéro transition**.
+Elle reçoit la grammaire complète : quatre états (repos · survol · appui `scale(.97)` · inactif), 160 ms de
+transition, la même bande de retour dans la barre du bas, et `aria-pressed` sur les pastilles de préparation.
+
+**Deux outils nés de cette nuit.** (a) **`tools/qa/audit_page.py`** — un portique de PAGE, frère du portique
+vidéo : bloque sur un numéro WhatsApp sans indicatif, une page sans `h1`/`title`, un texte de gabarit resté
+en place ; avertit sur l'absence de `aria-live`, de focus, de phrase « et après ? », les images sans `alt`, les
+phrases imprimées deux fois. **Les trois pages passent : 0 bloquant.** (b) Deux pièges du portique lui-même,
+écrits dans son code : il criait « gabarit resté en place » parce qu'il cherchait dans le HTML brut (les images
+en base64 contiennent n'importe quelle suite de caractères) et « phrase dupliquée » sur **chaque** phrase parce
+que nos pages sont bilingues. *Un contrôle qui crie au loup n'est pas lu la troisième fois.*
+
+**Ce qui est écrit.** `AMK-DESIGN-SKILLS.md` **§22** (le contrat d'interaction, la ligne de temps invisible,
+la couche psychologique — avec la moitié honnête des six principes seulement, l'autre moitié nommée et
+bannie) · `research/YouTube-Lessons.md` **Lot [23]** (les quatre vidéos, plus les trois vidéos de vente
+loggées enfin au registre, **Lot [22]**, qui n'y étaient pas).
+
+**Reste, et c'est King** : **redéployer les aperçus** — le bac ne peut pas déployer (aucun jeton Vercel),
+donc `lecristallin-concept.vercel.app` porte encore le bouton mort jusqu'au redéploiement. Le bac ne peut pas
+non plus prendre de capture (aucun navigateur installable : le téléchargement de Chromium est bloqué) : la
+vérification « au téléphone » du deploy-gate reste la sienne.

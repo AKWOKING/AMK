@@ -1,5 +1,5 @@
 # SYSTÈME DE VENTE AMK — les six pièces, où on en est, et ce qui manque
-### D'après « If You Don't Understand Sales Systems, You Don't Understand Business » (Will Barron, 30/08/2026)
+### D'après « If You Don't Understand Sales Systems, You Don't Understand Business » (Will Barron, 30/08/2026 · `youtu.be/5swDtQFyIws`)
 ### Écrit le 23/09/2026, avec NOS chiffres — pas ceux de quelqu'un d'autre
 
 ---
