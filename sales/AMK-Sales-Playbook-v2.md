@@ -386,3 +386,49 @@ hosting year: they belong in the *what's included* block, after the outcome.
 The course/community funnel, the $30k/month income claims, the "gamify your way to 30K" framing, USD
 pricing, the referral-dependency angle (our pipeline is outbound — referrals are a *result* to earn, not
 the channel we start from). Rejections logged in `research/YouTube-Lessons.md` §5.
+
+---
+
+## PART L · THE SECOND PRODUCT — WHY THE BACK-OFFICE IS A DIFFERENT BUSINESS (v2.4, 23 Sep, from the ERPNext audit)
+
+**Context:** King sent `github.com/frappe/erpnext`. I read the repo itself (not the marketing pages). Full
+audit: **`research/ERPNext-AUDIT-2026-09-23.md`**. The playbook only keeps the selling rules that came out of it.
+
+**L.1 The one thing that must never happen.** ERPNext is free, mature (39.5k ★, stable v16 released 15/09),
+and runs on a **server**, not Vercel. It contains the **Cameroonian SYSCOHADA chart of accounts (1,329 coded
+accounts)** and **VAT 19.25 %**, straight out of the installer. The temptation is therefore to sell an "ERP" on
+Monday. **Do not.** Our 47 leads buy **being found**, at 100–150k FCFA, one time. An ERP buyer is a different
+animal: 10–30 staff, several sites, invoicing every day, and a **monthly** budget. **Selling the wrong one to
+the wrong man loses the account we already have.**
+
+**L.2 What the audit actually gives us to sell — in order.**
+
+| | Offer | Price (proposal, King validates — never a discount, we adjust scope) | Why it is credible here |
+|---|---|---|---|
+| **A** | **Caisse + factures + stock** (shop / optician, 3–8 staff) | **250 000 FCFA** + **25 000/month** | Every franc that comes in is recorded, MoMo included, without a spreadsheet |
+| **B** | **Dossier + résultats + factures** (lab / clinic, 10–30 staff, via the Marley health app) | **450 000–600 000 FCFA** + **40 000/month** | The only segment that invoices daily and where "quality" is already a purchase motive |
+| **C** | **The monthly maintenance contract** | **25 000–40 000/month** | Ten contracts = 250–400k FCFA/month without prospecting. **This is the first credible recurring revenue AMK has ever had.** |
+
+**L.3 The four sentences we are not allowed to say** (each one is a call-back we would deserve):
+"Ndou payez en ligne / par Mobile Money" — **no MoMo gateway exists**: we record the MoMo transaction reference
+in the accounting instead. · "Ça marche sans internet" — the standard POS needs the network **to load**: we test
+the client's connection *before* selling a till. · "Envoyez vos factures par WhatsApp automatiquement" — that
+needs a **dedicated number, Meta verification, approved templates and a cost per conversation**: an option for a
+big client, a project in itself. · "C'est entièrement en français" — measured: **47 % (ERPNext) / 73 %
+(framework)**; translating the fifteen screens that matter **is part of the job**, and can be billed.
+
+**L.4 What we keep even if we never sell one licence.**
+① **The business model** — Frappe sells **hosting, backups and updates, every month**, not licences: copy it,
+including for the 150k pages (hébergement + retouches, 10–15k/month). ② **The branded PDF** — today our quotes
+are plain WhatsApp text; a real PDF with our logo changes how the agency is perceived from the next client on.
+③ **"The invoice link that opens in WhatsApp"** — the invoice is hosted, the `wa.me` message carries the link,
+the client taps and reads it: no Meta API, no per-message cost, **and it works on the number he already has**.
+That one is ours, and it sells to every trade that issues bills. ④ **Licence hygiene**: ERPNext/HRMS/Marley are
+GPL-3.0, the framework/Builder are MIT, **CRM/Helpdesk/Books/Insights/Print Designer are AGPL** — a modified
+AGPL app served to users over the network owes them its source. **We never promise a closed product built on
+AGPL.** And never put "ERPNext" in our company, product or domain name (Frappe's trademark policy), nor in ads.
+
+**L.5 Before any of this is offered to a human being — three decisions belong to King** (listed at the end of
+the audit): whether we open the track at all (no / a public demo with invented data / a paid pilot — **never a
+free pilot**), **who pays the server and how** (Frappe Cloud or a VPS wants a foreign card; Mobile Money cannot
+pay for a VPS), and **which profile the demo shows** (lab or shop — I can only build one).
