@@ -1,15 +1,14 @@
 # PIPELINE — où en est chaque lead
 
-> ⚙️ **Généré le 2026-09-22 par `leads/build/views.py` — ne pas modifier à la main.**
+> ⚙️ **Généré le 2026-09-23 par `leads/build/views.py` — ne pas modifier à la main.**
 > Toute correction se fait dans `leads/build/crm.py` ou `sales/Activity-Log.md`, puis on relance `leads/build/rebuild.sh`.
 
 ## Compteur
 
 | Étape | Leads |
 |---|---|
-| ④ Prix posé, en négociation | **1** |
+| ④ Prix posé, en négociation | **2** |
 | ④ Offre posée | **1** |
-| ③ Aperçu envoyé | **1** |
 | ② Qualifié — en conversation | **10** |
 | ① Prospection — à qualifier | **88** |
 | ⏸ Parqué | **38** |
@@ -24,23 +23,18 @@
 
 *Rien en attente.*
 
-## ④ Prix posé, en négociation — 1
+## ④ Prix posé, en négociation — 2
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| Univers Optique | Douala | 699 25 28 74 | `L1780` |
+| Le Cristallin | Douala | 699 90 55 77 | `L1807` |
+| Univers Optique | Douala | 699 25 28 74 | `L1964` |
 
 ## ④ Offre posée — 1
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
 | UNI-LABO | Douala (Bonamoussadi, Carrefour Etoo) | 696 13 98 19 | `L134` |
-
-## ③ Aperçu envoyé — 1
-
-| Lead | Ville | WhatsApp | Trace au journal |
-|---|---|---|---|
-| Le Cristallin | Douala | 699 90 55 77 | `L1807` |
 
 ## ② Qualifié — en conversation — 10
 
@@ -136,7 +130,7 @@
 | OpticPlus | Douala | 699 37 91 50 | — |
 | Planète Optique | Douala | 699 85 58 35 | `L815` |
 | Polyclinique Innova | Douala | 674 145 740 | `L1840` |
-| Presbyterian Comprehensive Secondary School Bonamoussadi (PCSS) | Douala (Bonamoussadi) | — | `L806` |
+| Presbyterian Comprehensive Secondary School Bonamoussadi (PCSS) | Douala (Bonamoussadi) | — | `L1944` |
 | Presbyterian Girls Secondary School (PGSS) Limbe | Limbe | — | — |
 | Rainforest International School (RFIS) | Yaoundé (SIL, BP 1299) | 677937162 | — |
 | Saint Anne's High School Limbe (SAHISCOL) | Limbe (New Town) | 682122959 | `L694` |

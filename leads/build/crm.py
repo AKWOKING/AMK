@@ -1445,6 +1445,54 @@ JOUR_2209 = {
 }
 
 
+# ── LE RELEVÉ DU 23/09/2026 (matin) ────────────────────────────────────────────
+# Le Cristallin : King a mis le PRIX sur la table. C'était la règle posée le 22/09 à 15:53
+# (« prix, hébergement et logins LWS seulement à la fin, après son accord ») — la fin est
+# arrivée : l'aperçu est validé sur le fond, le client demande des ajustements depuis trois
+# jours, et on ne continue pas à travailler gratuitement sans savoir s'il a le budget.
+# ⚠️ CE QUE LE MESSAGE DIT ET NE DIT PAS : il annonce 150 000 FCFA « bilingue, hébergement
+# 1 an, nom de domaine et assistant WhatsApp » — il ne parle NI de la page Facebook (l'option
+# +50 000 jamais posée), NI du fait que son domaine est déjà à lui jusqu'au 13/06/2027 et que
+# son hébergement LWS existe. À cadrer avant de facturer quoi que ce soit d'autre.
+JOUR_2309 = {
+    "le-cristallin": {
+        "stage": "closing",
+        "stage_since": "2026-09-23",
+        "Follow-up date": "2026-09-24",
+        "last_send_state": "delivered",
+        "Conversation_extra":
+            "22/09 22:23 — LUI, mot pour mot : « Pour le reste ne change encore rien puisque j'ai "
+            "certaines modifications que tu va apporter sans mon ok » : il annonce d'autres "
+            "modifications et demande de ne rien figer. · "
+            "23/09 09:46 — KING ENVOIE LES TROIS AJUSTEMENTS DEMANDÉS (slogan dans la barre de "
+            "navigation, ses textes d'origine sur les verres conservés, adresse corrigée « Ancien "
+            "COMECI / ECOTEX »), le lien de vérification `lecristallin-concept.vercel.app/?v=10`, "
+            "puis LE PRIX POUR LA PREMIÈRE FOIS ÉCRIT : 150 000 FCFA — « création du site web "
+            "officiel (bilingue, hébergement 1 an, nom de domaine et assistant WhatsApp) », "
+            "acompte de démarrage 50 % = 75 000 FCFA, solde à la livraison et mise en ligne "
+            "(3 à 5 jours), et il demande l'accord du client pour transmettre les informations de "
+            "règlement Mobile Money. AUCUNE RÉPONSE DE LUI à l'heure de ce relevé : on attend un "
+            "oui, un non ou une question — et on n'écrit plus rien d'autre entre-temps.",
+        "Notes_extra":
+            "À TRANCHER AVANT PUBLICATION — cinq écarts relevés en relisant la page en ligne "
+            "(?v=10, 23/09), tous vérifiables : ① la FAQ annonce « 18 assurances » en français et "
+            "« 17 » en anglais, sur la même page ; ② le mur « Ils nous font confiance » en affiche "
+            "19 ; ③ le bloc « Grandes entreprises & sociétés · 32 ans d'expérience » est TOUJOURS "
+            "imprimé DEUX FOIS (défaut relevé le 22/09, non corrigé) ; ④ les horaires publiés "
+            "(lun–ven 8h30–18h30, sam 8h30–13h30) contredisent son propre flyer (09h30–19h30, "
+            "09h30–13h30) — c'est à LUI de trancher ; ⑤ « depuis 2010 » (16 ans) cohabite avec "
+            "« 32 ans d'expérience ». PÉRIMÈTRE DU PRIX, à cadrer : le message de 150 000 FCFA ne "
+            "mentionne PAS la page Facebook (l'option +50 000 reste non posée) ; « hébergement 1 an "
+            "+ nom de domaine » doit être cadré puisqu'il POSSÈDE déjà son domaine jusqu'au "
+            "13/06/2027 et son hébergement LWS (ns1/ns2.lws-hosting.net) — on pose le fichier sur "
+            "SON hébergement sans toucher au DNS, sinon son adresse "
+            "contact@lecristallinoptique.com tombe. Mise en ligne annoncée 3 à 5 jours après "
+            "l'acompte. Tant qu'il n'a pas dit oui, on ne touche ni au DNS, ni aux accès LWS, ni "
+            "à l'ancien site.",
+    },
+}
+
+
 def _apply_evening(out: list) -> None:
     by = {r.get("slug"): r for r in out}
     missing = [k for k in EVENING_2109 if k not in by]
@@ -1463,24 +1511,37 @@ def _apply_evening(out: list) -> None:
 
 
 
-def _apply_jour(out: list) -> None:
-    """Le relevé du jour : il ÉCRASE les champs scalaires qu'il cite (il est plus récent que tout le
-    monde) et APPEND les deux champs de récit (`Conversation_extra`, `Notes_extra`) — un fil de
-    conversation ne se remplace pas, il se continue. Comme pour EVENING_2109, un slug introuvable fait
-    REFUSER la construction : une table d'état qui ne trouve pas sa ligne est une table menteuse."""
+def _apply_state(out: list, table: dict, name: str) -> None:
+    """Applique une table d'état au relevé : elle ÉCRASE les champs scalaires qu'elle cite (elle est
+    plus récente que tout le monde) et APPEND les deux champs de récit (`Conversation_extra`,
+    `Notes_extra`) — un fil de conversation ne se remplace pas, il se continue. Un slug introuvable
+    fait REFUSER la construction : une table d'état qui ne trouve pas sa ligne est une table
+    menteuse.
+
+    ⚠️ On travaille sur une COPIE de l'entrée. L'ancienne version faisait `patch.pop("…_extra")`
+    DIRECTEMENT dans la table du module : le deuxième passage dans le même processus trouvait la
+    table vidée de ses récits et les perdait en silence. Invisible tant qu'on ne lance le script
+    qu'une fois — donc invisible jusqu'au jour où un rebuild enchaîne deux passes."""
     by = {r.get("slug"): r for r in out}
-    missing = [k for k in JOUR_2209 if k not in by]
+    missing = [k for k in table if k not in by]
     if missing:
-        sys.exit(f"✗ JOUR_2209 : slug(s) introuvable(s) {missing} — rien n'a été écrit.")
-    for slug, patch in JOUR_2209.items():
+        sys.exit(f"✗ {name} : slug(s) introuvable(s) {missing} — rien n'a été écrit.")
+    for slug, entry in table.items():
+        patch = dict(entry)
         r = by[slug]
         for key in ("Conversation_extra", "Notes_extra"):
             extra = patch.pop(key, "")
             if extra:
-                r[key.replace("_extra", "")] = (str(r.get(key.replace("_extra", "")) or "")
-                                                + " · " + extra).strip(" ·")
+                base = key.replace("_extra", "")
+                r[base] = (str(r.get(base) or "") + " · " + extra).strip(" ·")
         for k, v in patch.items():
             r[k] = v
+
+
+def _apply_jour(out: list) -> None:
+    """Les deux relevés, dans l'ordre : 22/09 (soir) puis 23/09 (matin)."""
+    _apply_state(out, JOUR_2209, "JOUR_2209")
+    _apply_state(out, JOUR_2309, "JOUR_2309")
 
 
 

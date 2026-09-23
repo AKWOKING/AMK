@@ -1,6 +1,6 @@
 # Univers Optique
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-22. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-23. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -40,7 +40,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 69 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 77 ligne(s).*
 
 `L51` · | **ven 18/09 20:02** | **Clinique de L'université** (Bassa, 694 36 02 03) | msg 1 — sans maquette | Envoyé | **Non** |
 `L113` · | 20:02 | Cabinet Dentaire Emmanuel · Clinique de L'université · MEDI LABO |
@@ -111,6 +111,14 @@
 `L1711` · **King a montré `univ-inses.com` : « is a university and they already have a site ».** Notre premier message
 `L1715` · fiche WhatsApp Business « Insés » (Education · University, catalogue CQP/BTS) portant le **même numéro
 `L1780` · `univers-optique-concept`, `labiomed`, `bonanjo`, `amk-cm.vercel.app/opticien/`.
+`L1925` · ## 2026-09-22 · 20:51 → 20:20 (horodatage du bac) · UNIVERS OPTIQUE RÉPOND ET FIXE LUI-MÊME LA RÉUNION — vendredi 25/09 à 10 h, son cabinet. **DEUX rendez-vous vendredi.**
+`L1943` · **Le vendredi 25/09 a maintenant DEUX rendez-vous** : **Univers Optique à 10 h** (Bépanda, rue de Bépanda
+`L1946` · jamais la même heure. Feuilles prêtes : `sales/RDV-UNIVERS-OPTIQUE-2026-09-25.md` (avec le message de
+`L1950` · **La réunion d'Univers a un ordre du jour tout trouvé** : la page lui pose elle-même, en bas, **six points qu'il
+`L1952` · « 15 % » de 2023, l'ordre de ses trois lignes, le nom du titulaire (« ETS UNIVERS OPTIQUE » ou « BAYANG BIHEN
+`L1956` · **Vérifications faites avant de préparer** : l'aperçu `univers-optique-concept.vercel.app` est **vivant** et
+`L1957` · complet (partie patients FR+EN, bouton WhatsApp qui part déjà écrit au comptant du numéro 699 25 28 74, note au
+`L1964` · **CRM et vues mis à jour dans le même mouvement** (`leads/build/crm.py`, `views.py`) : `univers-optique` garde
 
 ---
 

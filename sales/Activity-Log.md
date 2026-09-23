@@ -1967,3 +1967,62 @@ désormais « aucune relance d'ici vendredi : un prospect qui a donné jour et h
 attendu ». Verrou rejoué (`guard.py lock`) puis **CRM reconstruit à 20:12:20** — 149 lignes.
 
 **Rien n'a été envoyé.** Le message de confirmation est préparé pour King, pas envoyé par nous.
+
+
+## 2026-09-23 · 09:15 → 10:30 (horloge du bac) · LE CRISTALLIN : LE PRIX EST SUR LA TABLE (150 000 FCFA) — et la question de King « à quoi bon le contenu ? » reçoit une réponse chiffrée
+
+**Ce qui s'est passé côté client.** Le 22/09 à 22:23, Le Cristallin écrit : « Pour le reste ne change encore
+rien puisque j'ai certaines modifications que tu va apporter sans mon ok » — il annonce d'autres modifications et
+**demande de ne rien figer**. Le 23/09 à 09:46, King envoie : les **trois ajustements demandés** (slogan dans la
+barre de navigation, ses textes d'origine sur les verres conservés, adresse corrigée « Ancien COMECI / ECOTEX »),
+le lien de vérification `lecristallin-concept.vercel.app/?v=10`, **puis le prix, pour la première fois écrit** :
+**150 000 FCFA** — « création du site officiel (bilingue, hébergement 1 an, nom de domaine et assistant
+WhatsApp) », **50 % = 75 000 FCFA** pour démarrer, solde à la livraison et mise en ligne (3 à 5 jours), et il
+demande l'accord du client pour transmettre les informations **Mobile Money**.
+
+**Pourquoi c'est le bon moment, dit par King lui-même :** *« on travaille avec lui depuis lundi, on optimise la
+démo — il était temps de parler d'argent avant de continuer, pour ne pas travailler sans savoir s'il a le
+budget. »* C'est exactement la règle posée le 22/09 à 15:53 (« prix, hébergement et logins LWS seulement à la
+fin ») : **la fin est arrivée** — l'aperçu est validé sur le fond, le fil est nourri par le client depuis trois
+jours, et huit jours d'allers-retours gratuits sans prix, c'est du travail non facturé.
+
+**Ce que le message dit et NE dit PAS** (porté au CRM pour ne pas se réveiller avec un malentendu) : il ne
+mentionne **pas** la page Facebook (l'option +50 000 n'a jamais été posée), et « hébergement 1 an + nom de
+domaine » doit être **cadré** : il **possède déjà** son domaine jusqu'au **13/06/2027** (LWS) et son hébergement
+LWS existe. La route sûre ne rachète rien : on **pose le fichier sur SON hébergement sans toucher au DNS** —
+sinon `contact@lecristallinoptique.com` tombe. Tant qu'il n'a pas dit oui : on ne touche **ni au DNS, ni aux
+accès LWS, ni à l'ancien site**.
+
+**Cinq écarts relevés en relisant la page en ligne (?v=10), à trancher avant publication** : ① la FAQ annonce
+« 18 assurances » en français et « 17 » en anglais sur la même page ; ② le mur « Ils nous font confiance » en
+affiche 19 ; ③ le bloc « Grandes entreprises & sociétés · 32 ans d'expérience » est **toujours imprimé deux
+fois** (défaut relevé le 22/09, non corrigé) ; ④ les horaires publiés (lun–ven 8h30–18h30, sam 8h30–13h30)
+contredisent **son propre flyer** (09h30–19h30) — c'est à lui de trancher ; ⑤ « depuis 2010 » cohabite avec
+« 32 ans d'expérience ». Portés au CRM (`JOUR_2309`), avec l'échéance du fil passée au **24/09** (une seule
+relance courte s'il ne répond pas, sans rebaisser le prix ni reprocher le silence).
+
+**Deuxième sujet du tour, et il est stratégique : King demande s'il faut continuer à produire du contenu.**
+*« Content creation has given us no lead till now. »* **Vérification faite dans nos données : c'est vrai.**
+5 vidéos publiées → **602 vues cumulées**, meilleure à 156 vues (6,2 s de lecture moyenne, **4,35 % jusqu'à la
+fin**), **0 DM** entrant enregistré, **1 seul lead jamais venu du contenu** (`oracare-buea`, qui n'a jamais
+répondu et est parqué) ; Google : 6 impressions / 3 mois, 0 clic. En face, la prospection : **47 prospects
+contactés**, **4 réponses humaines (≈ 8,5 %)**, **2 rendez-vous** (vendredi 25/09) et **2 prix posés**. Le
+journal dit le reste : **10 des 39 sections (26 %) portent sur la production vidéo** — le poste le plus lourd de
+la semaine et le seul qui n'a rien rapporté.
+
+**Réponse écrite, avec la recommandation :** `content/strategy/DECISION-CONTENU-2026-09-23.md` — **geler
+l'usine, publier l'étagère** : publier la vidéo 06 (déjà faite, coût marginal nul) et #4b (jamais publiée sur
+IG/Shorts), **arrêter toute nouvelle production**, et rediriger les heures vers **le sourcing** — le vrai goulot
+(24 leads lus pour 5 frais exploitables, 21 %). Règle de falsification écrite d'avance : si ces publications ne
+produisent **aucun DM « APERÇU »** et restent sous **500 vues** d'ici le **7 octobre**, le contenu passe en
+dormance. Deux alternatives sont posées noir sur blanc (arrêt total / usage privé en pièce jointe des messages),
+pour que la décision soit à King et pas à moi.
+
+**Et le bac a encore rembobiné (3ᵉ fois).** Au réveil, la copie locale était revenue au **commit de base**
+(`74542ab`) alors que le distant portait `28bb620` : `crm.py` avait perdu les tables du 22/09 (`FICHE_2209`,
+`SITE_NOTES_2209`) et le CRM local ne se reproduisait plus depuis sa source (145 lignes contre 149). Traité avec
+le réflexe écrit la veille : `git log` D'ABORD, arbre mis de côté (`/tmp/snap-safety/rollback-2309/` : patch des
+4471 lignes modifiées + liste des 77 fichiers non suivis + copie du CSV), puis `git fetch origin <branche>` +
+`git reset --hard FETCH_HEAD`. Vérifié après coup par les marqueurs : `FICHE_2209` et `SITE_NOTES_2209` de
+retour dans `crm.py`, **CRM.csv à 149 lignes**, vidéo 06 et sa version voix présentes. Verrou rejoué,
+**CRM reconstruit à 09:18:38** avec `JOUR_2309`.

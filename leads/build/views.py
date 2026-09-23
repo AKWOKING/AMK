@@ -89,11 +89,17 @@ RELANCE_A_JOUR = {
                                       "Prix déjà posé le 21/09 (100 000 FCFA, 50/50) : on ne le re-présente "
                                       "pas, on ne le baisse pas. À sortir de la salle : le « oui », les "
                                       "réponses aux six points que la page demande, l'acompte"),
-    "le-cristallin": ("2026-09-23", "quatre confirmations à lui demander sur la page en ligne "
-                                     "(horaires vs son flyer, mur d'assurances à 19, logos déjà chez lui, "
-                                     "l'assistant n'est pas un éditeur). CADRE VOULU PAR KING le 22/09 "
-                                     "15:53 : toutes les modifications pendant l'aperçu, sans compter ; "
-                                     "prix, hébergement et accès LWS à la fin, après son accord"),
+    # 23/09 09:46 : le prix est PARTI (150 000 FCFA, 75 000 pour démarrer). On attend sa réponse ;
+    # s'il ne dit rien, une relance courte le 24/09 — et rien d'autre entre-temps.
+    "le-cristallin": ("2026-09-24", "**PRIX POSÉ le 23/09 09:46** : 150 000 FCFA (site bilingue, "
+                                     "hébergement 1 an, nom de domaine, assistant WhatsApp), 50 % = 75 000 "
+                                     "pour démarrer, solde à la livraison. On attend un oui. S'il ne répond "
+                                     "pas : UNE relance courte le 24/09, sans rebaisser le prix et sans "
+                                     "reprocher le silence. Cinq écarts à trancher AVANT publication "
+                                     "(compte d'assurances FR 18 / EN 17, mur à 19, bloc « 32 ans » en "
+                                     "double, horaires vs son flyer, « depuis 2010 ») et le périmètre "
+                                     "« hébergement + domaine » à cadrer : son domaine est à lui jusqu'au "
+                                     "13/06/2027"),
     # UNI-LABO a DEMANDÉ un rendez-vous : ce n'est plus une relance à calculer.
     "uni-labo-bonamoussadi": ("2026-09-25", "RENDEZ-VOUS demandé par le prospect — vendredi 25/09"),
     "tchaya-optique": ("2026-09-23", "Message 1 parti le 21/09 à 17:47 (une coche, jamais enregistré avant le "
