@@ -76,7 +76,17 @@ def audit(path: str) -> tuple[list[tuple[str, str, str]], int]:
     findings: list[tuple[str, str, str]] = []
 
     # ① LE CHEMIN — liens sortants
+    #    Les pages de DÉMONSTRATION (MboaCare, la bibliothèque publiable) portent un numéro factice
+    #    volontairement espacé — « wa.me/6 00 00 00 00 » — pour qu'aucun vrai numéro n'apparaisse et que
+    #    chacun voie que ce n'est pas un prestataire réel. Ce n'est pas un bug, c'est une décision : on le
+    #    dit, on ne le bloque pas. Le repère est mécanique — un espace à l'intérieur de l'URL : un vrai
+    #    numéro n'en contient jamais.
+    demo_links = re.findall(r'wa\.me/[^"\s]*\s', html)
     bad_wa = sorted({n for n in WA_RE.findall(html) if len(n) < 11})
+    if bad_wa and demo_links:
+        findings.append(("info", f"page de démonstration : numéro WhatsApp factice assumé ({len(demo_links)} liens)",
+                         "aucune action — la page est une fiction déclarée, sans numéro réel."))
+        bad_wa = []
     if bad_wa:
         findings.append((BLOCKING, f"WhatsApp sans indicatif pays : {', '.join('wa.me/' + n for n in bad_wa)}",
                          "WhatsApp refuse un numéro non international. Écrire 237 + les 9 chiffres "
@@ -130,10 +140,16 @@ def audit(path: str) -> tuple[list[tuple[str, str, str]], int]:
     if no_alt:
         findings.append((WARN, f"{len(no_alt)} image(s) sans alt", "l'alt est lu par Google et par les lecteurs d'écran."))
     for ph in PLACEHOLDERS:
-        if ph in txt:
-            findings.append((BLOCKING, f"texte de gabarit resté en place : « {ph} »",
-                             "c'est la première chose qu'un client voit — LyfyOptic l'a payé."))
-            break
+        if ph not in txt:
+            continue
+        # Deuxième faux positif payé le 23/09 : « OC-XXXX » n'est pas un gabarit resté en place, c'est
+        # un CODE DE RÉFÉRENCE de démonstration (la plaque d'immatriculation de la demande, montrée en
+        # exemple). On ne bloque donc que si le marqueur n'est pas précédé d'un préfixe de code.
+        if ph == "XXX" and re.search(r"[A-Z]{2,4}-XXXX", txt):
+            continue
+        findings.append((BLOCKING, f"texte de gabarit resté en place : « {ph} »",
+                         "c'est la première chose qu'un client voit — LyfyOptic l'a payé."))
+        break
     sizes = {v for v, _u in FONTSIZE_RE.findall(html)}
     if len(sizes) > 8:
         findings.append((WARN, f"{len(sizes)} tailles de texte distinctes",
@@ -155,6 +171,10 @@ def audit(path: str) -> tuple[list[tuple[str, str, str]], int]:
                          "un champ qui refuse sans dire pourquoi fait abandonner le formulaire."))
 
     return findings, (1 if any(f[0] == BLOCKING for f in findings) else 0)
+
+
+# ni commentaire de docstring ni rien : la fonction ci-dessus renvoie (constats, code) ; le code ne
+# regarde QUE les constats bloquants. Une information (démo assumée) ne bloque pas un envoi.
 
 
 def main() -> int:

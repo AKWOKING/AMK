@@ -947,15 +947,19 @@ python3 tools/qa/audit_page.py demos/concept-*.html hosting/previews/*/index.htm
 ```
 
 Blocking: WhatsApp number without country code · no `<h1>` · no `<title>` · a template placeholder left in
-the visible text. Warnings: no `aria-live`/`role="status"` · no focus state · no "what happens next"
+the visible text. Output is three-level: **blocking** · **to fix** · **info** (an intentional demo is *info*, never a
+blocker). Warnings: no `aria-live`/`role="status"` · no focus state · no "what happens next"
 sentence · images without `alt` · >8 text sizes · a sentence printed twice · a field with no error state ·
 more than two `href="#"`.
 
-Two lessons came from writing *the checker itself*: it first flagged three healthy pages as broken because
-it searched the **raw HTML** (base64 images contain every character sequence, including "XXX"), and it
-flagged every sentence as duplicated because **our pages are bilingual** (FR and EN carry the same sentence).
-Both were false alarms, and *a checker that cries wolf is not read the third time* — so the tool now reads
-the visible text and removes the other language before comparing.
+Four false alarms came from writing *the checker itself*, and all four are worth keeping in mind:
+it flagged healthy pages as broken because it searched the **raw HTML** (base64 images contain every
+character sequence, including "XXX"); it called every sentence duplicated because **our pages are bilingual**
+(FR and EN carry the same sentence); it blocked the **publishable demo pages** because their WhatsApp number
+is *deliberately* fake and spaced (`wa.me/6 00 00 00 00` — no real number may appear on a fictional clinic);
+and it read `OC-XXXX` as a leftover placeholder when it is a **demo reference code**. All four are fixed in
+the tool. The lesson is bigger than the tool: *a checker that cries wolf is not read the third time* — every
+false positive is paid for by the next real finding that nobody looks at.
 
 ### 22.6 Honest limits of this section
 

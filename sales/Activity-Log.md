@@ -2237,10 +2237,13 @@ transition, la même bande de retour dans la barre du bas, et `aria-pressed` sur
 **Deux outils nés de cette nuit.** (a) **`tools/qa/audit_page.py`** — un portique de PAGE, frère du portique
 vidéo : bloque sur un numéro WhatsApp sans indicatif, une page sans `h1`/`title`, un texte de gabarit resté
 en place ; avertit sur l'absence de `aria-live`, de focus, de phrase « et après ? », les images sans `alt`, les
-phrases imprimées deux fois. **Les trois pages passent : 0 bloquant.** (b) Deux pièges du portique lui-même,
-écrits dans son code : il criait « gabarit resté en place » parce qu'il cherchait dans le HTML brut (les images
-en base64 contiennent n'importe quelle suite de caractères) et « phrase dupliquée » sur **chaque** phrase parce
-que nos pages sont bilingues. *Un contrôle qui crie au loup n'est pas lu la troisième fois.*
+phrases imprimées deux fois. **Les pages client passent : 0 bloquant.** (b) **Quatre faux positifs du portique
+lui-même**, tous corrigés et écrits dans son code : il cherchait dans le HTML brut (les images en base64
+contiennent n'importe quelle suite de caractères, dont « XXX ») · il voyait « phrase dupliquée » sur **chaque**
+phrase parce que nos pages sont bilingues · il bloquait la bibliothèque de démos publiables, qui porte un numéro
+factice assumé (`wa.me/6 00 00 00 00`) · il lisait `OC-XXXX` comme un gabarit oublié alors que c'est un code de
+référence de démonstration. *Un contrôle qui crie au loup n'est pas lu la troisième fois* — c'est pour ça que
+les trois niveaux existent maintenant : bloquant · à corriger · information.
 
 **Ce qui est écrit.** `AMK-DESIGN-SKILLS.md` **§22** (le contrat d'interaction, la ligne de temps invisible,
 la couche psychologique — avec la moitié honnête des six principes seulement, l'autre moitié nommée et
