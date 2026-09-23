@@ -975,6 +975,125 @@ false positive is paid for by the next real finding that nobody looks at.
 
 ---
 
+## §23 STYLE CHOICE, THE STAR, THE ANCHOR FONT — 2 videos (23 Sep 2026)
+
+Folded from Web Design Lab (*7 Web Design Styles That Make Sites Look Expensive In 2026*) and Self-Made
+Web Designer (*6 EASY Tips to 10x Any Site's Design*). Log + rejection list: `research/YouTube-Lessons.md`
+**Lot [24]**. §22 said *how a page answers a finger*; §23 says *how a page chooses its look and carries
+one idea through*.
+
+### 23.1 Styles are chosen, not invented
+
+*"The designers didn't invent the web design styles either. They just chose the right one."* Seven
+transitions, and our arbitration for a Douala clinic/school page (mobile-first, 3G, one page, WhatsApp-first,
+and a client who must recognise themselves in it):
+
+| Transition | What it actually is | For us |
+|---|---|---|
+| Flat → **neoskeuomorphism** | tactile depth back: soft shadows, floating cards, glass nav, **and above all a hover/press state** | **Adopted, lightly** — depth without gloss. It is also the same rule as §22.2: the cheapest "expensive" signal is a response to the finger, not an effect |
+| Static → **kinetic typography** | type becomes a visual element (scroll-linked scale/weight) | **Limited.** Our headlines are long and French; body must stay static. Adopted only as the §9 reveal we already run. Never on body copy |
+| Template SaaS → **intentional minimalism** | remove the noise, keep the character: 2–3 signature cues, repeated | **Adopted as law** — see 23.3 |
+| Rigid grid → **editorial design** | bold type, contrasting scale, breathing room; build the grid, then let **one** element break it | **Adopted for our own site and premium briefs**; a clinic page keeps its grid. "Freedom doesn't mean chaos" |
+| Decorative → **story-driven animation** | motion must make you notice, grasp or understand something | **Adopted as a test**, not a style: *does this animation help the visitor? If not, remove it* |
+| AI-generated → **human-made** | sketches, process, raw photos, authentic textures — "when perfection becomes cheap, authenticity is the real luxury" | **Already our market position** (§3 anti-slop, and our own photos-in-concepts rule). New: make the *process itself* visible — the same client page shown before/after |
+| Safe → **expressive** | pick audience + feeling first, then one strong direction | **Client's call, never ours.** We do not impose expression on a clinic that needs trust |
+
+**The rule that governs all seven, in the video's own words:** *"A trend becomes a problem when it turns
+into a recipe."* So we never ask *what is trending*; we ask **what emotion does this business give, and
+which style delivers it** — and we write that sentence in the build file before the first block.
+
+### 23.2 The swap test (brand or template?)
+
+Take the page, **swap the logo and the name for a competitor's**, and read it again. If the page still
+feels natural, the visual language carries no brand.
+
+Applied to our three live concepts: **Cristallin** passes — the acuity chart is *theirs* (the smallest line
+is the specialty). **Univers Optique** passes on structure (computed slots + the six points to decide) but
+not on form. **UNI-LABO does not pass**: nothing on it belongs to UNI-LABO alone — this is the page whose
+visual language is generic. It is also the page with the least time invested (48 KB, built in one pass).
+**Recorded as a gap, not hidden:** the next UNI-LABO-style build starts by naming its signature cue.
+
+### 23.3 Signature cues and the star of the show
+
+Two rules, and they are the same rule at two scales:
+
+- **The star of the show** (SMWD): the one element that makes someone stop — and it must be *connected to
+  the story*, not chosen because it looks cool. The video's own method: start from the product's core idea
+  ("taking a mess of data and making it feel simple" → the star is an abstract chart). Our version of that
+  question, already written into the builds: **what does this practice do that nobody else does?**
+- **Visual rhyming**: repeat **a component of the star** (a shape, a colour, a texture, an icon) in 2–3
+  other places, so the page feels like one universe. Not the whole element — a component of it.
+
+**Audit of 23 Sep, on our own pages:**
+
+| Page | The star | The rhyme |
+|---|---|---|
+| Cristallin | the acuity chart in the hero | the `E F P T Z O` row repeats as a graphic device; strong |
+| Univers Optique | the computed slot ("the page proposes a real hour") | the counter-hours block repeats on two cards; **was broken** — the two cards printed the same fallback sentence (fixed, §22.4) |
+| UNI-LABO | none identified | none — the honest state of the page |
+| **Our own site** | the browser-frame preview of a real concept | the frame already repeats (4 concept cards) **but its signature detail — the three coloured dots — appeared once**. Fixed today: the dots now rhyme. |
+
+### 23.4 The anchor font — start from the HEADLINE
+
+The video's tip 1, and the fastest win of the six: **anchor the headline font first**, not the body font —
+the headline sets the personality of the page, the body only carries the reading. Then add a second face
+that is *different enough* to create contrast (the video's counter-example: Georgia with Times New Roman —
+"so close, but very different; it feels unintentional"). Resource named: Fonts In Use.
+
+**Our audited state (23 Sep):**
+
+| Page | Display | Body | Verdict |
+|---|---|---|---|
+| Univers Optique | Newsreader (serif) | Public Sans | **the reference pairing** — real contrast, a clear voice |
+| Cristallin | Archivo | Instrument Sans | **two grotesques**: legible, but the headline brings almost no personality of its own |
+| UNI-LABO | Sora (500-700) | Inter | two sans; Sora is distinctive but the pairing is mild |
+| **Our own site** | — *(none)* | system stack | **worse than a bad pairing: no choice at all.** Zero of our own house font (§5: Outfit) |
+
+**Fixed today:** `site/index.html` now loads Outfit (400-800, `display=swap`) and sets
+`font-family:'Outfit',-apple-system,…` — the exact house pattern our school/clinic pages already use,
+identical fallback chain, so a failed font request leaves the page exactly as it was. This was a **drift
+from our own written standard**, not a taste opinion: §5 has said "Outfit house font" since the library
+was created, and every other page respected it.
+
+**And a check worth keeping:** a page can *declare* a font it never loads — the text then silently falls
+back to the device font and nobody notices. That class of bug is now a warning in `tools/qa/audit_page.py`
+(with the system-family list corrected, because the first run flagged `"Helvetica Neue"` as missing —
+a false alarm of exactly the kind §22.5 warns about).
+
+### 23.5 Depth (tip 4) and hierarchy by opacity (tip 5)
+
+- **Depth** — texture, noise, glass: *"it needs to be subtle; we don't want to compete with the star of the
+  show."* Practical, weight-free recipe for our single-file pages: a `feTurbulence` SVG as a data-URI
+  (a few hundred bytes, no image file) at 2–4 % opacity, **never** over the star. Our pages have no texture
+  today; the recipe is written here so the next build can use it **with eyes on the result** — we will not
+  add a visual effect we cannot look at (no browser in this sandbox, §22.6).
+- **Hierarchy by opacity** (taken from Material Design as the video reads it): don't print everything at
+  100 %. High-emphasis ≈ 87 %, medium ≈ 60 %; headline at 100 %, subheading ≈ 70 %. Our builds express the
+  same three levels with named colours (`--ink`, mute, `--line`) instead of alpha — equivalent, *and*
+  easier to keep consistent. **Rule: three levels of emphasis, named once in the token block, never ad hoc.**
+
+### 23.6 Push past the first idea (tip 6)
+
+The video's music-production analogy: the best producers make the artist sing the song faster, slower, in
+another key — "you can't get to the best version by tweaking the first one". He built **12 versions** of a
+single hero element.
+
+Our equivalent already exists and is worth naming as deliberate practice: Univers Optique has **two
+complete directions** on disk (v1 sober, v2 big-photo) plus two size-light variants for sending; the
+Cristallin has a chart-led direction that was itself a second pass. **Rule: the first version is a draft,
+never the deliverable** — and a direction is judged on a real section, not in the abstract.
+
+### 23.7 Honest limits
+
+- Two of the seven styles (kinetic typography, expressive design) are shown on sites whose budget and
+  audience are not ours. Adopted as **tests**, not as looks.
+- The video's own warning applies to the *human-made* style it recommends: it is already becoming a
+  template. Being human-made is our substance, not a filter we apply to photos.
+- Nothing in §23 can be verified visually from this sandbox. Fonts, dots and structure are checked in
+  code; **the eye check remains King's**, as in §22.6.
+
+---
+
 ## SOURCES
 - `design/vendor/bergside-skills/` — github.com/bergside/awesome-design-skills (TypeUI), 67 SKILL.md + DESIGN.md pairs, MIT (see `design/vendor/LICENSE-bergside`)
 - `design/vendor/taste/skills/` — github.com/Leonxlnx/taste-skill: taste-skill, redesign, output, brandkit, imagegen web/mobile, image-to-code, stitch, soft/minimalist/brutalist, MIT (`design/vendor/LICENSE-taste`)
@@ -985,5 +1104,6 @@ false positive is paid for by the next real finding that nobody looks at.
 - YouTube lesson batch [20] (talking websites / voice, 18 Sep 2026) → this file **§21**; offer-model decision in `sales/Voice-Offer-Decision-2026-09-18.md`
 - YouTube lesson batch [21] (local SEO, 21 Sep 2026) → `AMK-SEO-PLAYBOOK.md`; log in `research/YouTube-Lessons.md` Lot [21]
 - YouTube lesson batch [22] (interaction contract / invisible timeline / design psychology, 23 Sep 2026) → this file **§22**; full log + junk filter in `research/YouTube-Lessons.md` Lot [23]; page portico `tools/qa/audit_page.py`
+- YouTube lesson batch [24] (design styles / the star / the anchor font, 23 Sep 2026) → this file **§23**; log in `research/YouTube-Lessons.md` Lot [24]; the AEO half of the same batch (Wes McDowell) → `AMK-SEO-PLAYBOOK.md` **§8**
 - **§21 browser-support matrix (checked 18 Sep 2026):** addpipe.com "A Deep Dive into the Web Speech API" (Chrome 139+ on-device recognition, mobile matrix) · vocafuse.com "Web Speech API vs Cloud APIs" (free/no-key, audio sent to vendor servers, cloud at $0.006–0.024/min) · testmuai.com "Speech Synthesis API: Browser Support" (synthesis matrix, Firefox-Android gap). **No source was found for recognition accuracy on Cameroonian accents — that gap is stated in §21.2, not filled by assumption.**
 - In-house references: `sales/Monday-Outreach-Pack.md` (Concept Production Standard), `site/design-research.md` (AMK site research), OraCare v2/v3 (reference-override case studies)

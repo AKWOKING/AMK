@@ -1,6 +1,8 @@
 # UNIVERS OPTIQUE — RENDEZ-VOUS FIXÉ PAR LUI · **vendredi 25 septembre 2026, 10 h, son cabinet**
 
 **Prospect :** Univers Optique — rue de Bépanda omnisports (entre pharmacie Sass et Express Union, BP 4680), Douala
+
+
 *(plus code 3P3G+JCG)* · **WhatsApp 699 25 28 74** · titulaire public : **BAYANG BIHEN Calvin** (« Monsieur Bayang »)
 **Étape : `closing`** — prix posé, aperçu lu, décision à prendre. `leads/CRM.csv`, mise à jour le 22/09 à 20:12.
 
@@ -10,6 +12,14 @@
 > naturel est **11 h 30 / 12 h** — proposer l'un OU l'autre, jamais les deux à la même heure.
 
 ---
+
+## 0 · La phrase d'offre (à dire, pas à réciter) — ajoutée le 23/09 (PART K du playbook)
+
+> **« On vous trouve, on vous fait confiance, on vous écrit sur WhatsApp — et la page est déjà faite avant
+> que vous ayez payé un franc. »**
+
+Les cinq sections, le bilingue, les 3-5 jours : ce sont des **preuves**, pas l'argument. L'argument est le
+résultat. Le budget se **demande** à l'étape budget de la séquence — il ne se devine jamais.
 
 ## Ce qui vient de se passer
 

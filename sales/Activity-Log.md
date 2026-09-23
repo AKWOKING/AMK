@@ -2254,3 +2254,57 @@ loggées enfin au registre, **Lot [22]**, qui n'y étaient pas).
 donc `lecristallin-concept.vercel.app` porte encore le bouton mort jusqu'au redéploiement. Le bac ne peut pas
 non plus prendre de capture (aucun navigateur installable : le téléchargement de Chromium est bloqué) : la
 vérification « au téléphone » du deploy-gate reste la sienne.
+
+## 2026-09-23 · 15:05 → 15:50 · QUATRE NOUVELLES VIDÉOS (stratégie, offre, style) — et notre propre site ne chargeait AUCUNE police
+
+**Rembobinage n° 6, réparé avant d'écrire.** En ouvrant le tour : HEAD revenu à `74542ab`, dossier de
+sauvegarde `/tmp/snap-safety/` **effacé**, `leads/build/guard.py` et `generators.lock.json` disparus,
+et le patch de police posé sur `site/index.html` **déjà perdu**. Réflexe appliqué : copie des fichiers du
+tour dans le dépôt (`recovery-2309-turn6/`), `git fetch` → `reset --hard FETCH_HEAD` (**`1bb5f5e`**),
+repose, vérification des marqueurs (guard ✓, lock ✓, CRM 150 lignes, `JOUR_2309` ×2, les trois pages
+corrigées ✓, `Lot [23]` ✓), **openpyxl réinstallé**, patch de police reposé. *Leçon : sauvegarder DANS le
+dépôt et non dans `/tmp` — `/tmp` ne survit pas au rembobinage, et c'est la deuxième fois.*
+
+**Les quatre vidéos de King**, traitées comme les précédentes (lues en entier, traduites, appliquées) :
+① **Wes McDowell** — *Your Website Won't Matter in 2027* (20 min 02) · ② **Nicole & James** — *How to
+Attract HIGH PAYING Clients* (5 min 37) · ③ **Web Design Lab** — *7 Web Design Styles That Make Sites Look
+Expensive In 2026* (11 min 19) · ④ **Self-Made Web Designer** — *6 EASY Tips to 10x Any Site's Design*
+(15 min 30).
+
+**LA TROUVAILLE — et elle est sur nous.** La règle n° 1 de la 4ᵉ vidéo dit : *choisissez la police du
+TITRE en premier, elle porte la personnalité de la page.* Vérification faite : le §5 de nos design skills
+dit **« Outfit, police maison »** depuis toujours, et nos pages écoles/cliniques la chargent bien — **mais
+`site/index.html`, notre portfolio, ne déclarait AUCUNE police** : titres en police de téléphone. La page
+qui vend AMK était celle qui suivait le moins notre propre standard. **Corrigé** (Outfit 400-800,
+`display=swap`, chaîne de repli identique à avant : si la police ne se charge pas, la page est exactement
+celle d'hier).
+
+**Et deux demi-faits du même genre, corrigés aussi.** (a) Le cadre de navigateur de notre hero se répète
+sur les quatre cartes de concepts, mais ses **trois pastilles rouge/ambre/vert** n'apparaissaient qu'une
+fois — *une rime qui s'arrête à la silhouette ne rime qu'à moitié* : les pastilles sont maintenant dans les
+quatre cartes. (b) Les **deux pages SEO service** (écoles, cliniques) et le **modèle de maquette d'accueil**
+déclaraient des polices qu'ils ne chargeaient jamais (Inter, Open Sans) : corrigés, `mockup-hero.html`
+rechargera Inter comme dessiné, sur n'importe quel appareil.
+
+**Ce qui est écrit.** `AMK-DESIGN-SKILLS.md` **§23** (les sept styles avec notre arbitrage, le test du
+logo, l'étoile du spectacle, la rime visuelle, la police d'ancrage, la profondeur, la hiérarchie par
+opacité, dépasser la première idée) · `AMK-SEO-PLAYBOOK.md` **§8** (AEO, la grille « une question par
+section », le protocole de relevé) · `sales/AMK-Sales-Playbook-v2.md` **PART K** (l'offre signature, les
+trois R, le piège du service) · `research/YouTube-Lessons.md` **Lot [24]** + registre lignes 28-31 + huit
+rejets nommés · `content/strategy/DECISION-CONTENU-2026-09-23.md` (addendum).
+
+**Le point qui demande une décision de King — dit sans arrondir.** Sa décision du 23/09 (geler la
+production de contenu) repose sur une mesure de **trafic humain** : 5 vidéos → 602 vues → 0 message. La
+vidéo de Wes McDowell affirme que le mécanisme est ailleurs (les modèles liraient une vidéo le jour de sa
+publication, sans rapport avec les vues). Donc **notre expérience ne réfute pas cette thèse — elle ne l'a
+jamais testée. Mais elle ne la prouve pas non plus.** Le gel tient, et la seule action gratuite recommandée
+est un **relevé AEO** : poser à trois assistants « qui recommandes-tu pour le site d'une clinique à
+Douala ? », noter les noms, recommencer dans 30 jours. **Le bac peut le faire (accès web) — j'attends son
+feu vert.** Interdit dans tous les cas : promettre à un prospect qu'il sera « recommandé par ChatGPT ».
+
+**Le portique s'est encore amélioré.** Il contrôle désormais la **police d'ancrage** (une famille déclarée
+mais jamais chargée). En l'écrivant, un **sixième faux positif** a été évité *avant* de l'exécuter :
+`Helvetica Neue` et `Times New Roman` vivaient dans l'appareil, pas dans le vide ; et une famille de secours
+rangée plus loin dans la déclaration (`'Nunito','Quicksand',…`) n'est pas un défaut — seule la **première**
+famille décide. Un « bloquant » reste attendu sur `site/mockup-hero.html` : c'est un **modèle à jetons**,
+et c'est la preuve qu'il est resté un modèle.

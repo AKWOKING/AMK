@@ -63,6 +63,10 @@ WhatsApp-first · mobile-first · EN|FR · Cameroon (Kumba/Douala/South-West) ·
 | 25 | 23 Sep 2026 | Every UI/UX Concept Explained in Under 10 Minutes — Kole Jain (`youtu.be/EcbgbKtOELY`) | Design / Build | **Absorbed — the four states + the response** | `AMK-DESIGN-SKILLS.md` **§22.2** · `tools/qa/audit_page.py` |
 | 26 | 23 Sep 2026 | The UX Psychology Behind Apps People Can't Stop Using — uxpeak (`youtu.be/2TlIg3VokY8`) | Design / Psychology | Absorbed, **honest half only** | `AMK-DESIGN-SKILLS.md` **§22.3** |
 | 27 | 23 Sep 2026 | The Psychology of a PERFECT Website — Self-Made Web Designer (`youtu.be/d-IaU9qcDGg`) | Design / Psychology | Absorbed (3 friends, mental models, MAYA, chunking, ladders) | `AMK-DESIGN-SKILLS.md` **§22.3/§22.4** |
+| 28 | 23 Sep 2026 | Your Website Won't Matter in 2027. Prepare Now. — Wes McDowell (`youtu.be/VXGDHZIGf40`) | Strategy / Search (AEO) | Absorbed as analysis; **a decision for King** (content freeze stands) | `AMK-SEO-PLAYBOOK.md` **§8** |
+| 29 | 23 Sep 2026 | How to Attract HIGH PAYING Clients (Stop Selling Services) — Nicole & James (`youtu.be/Y_sPva_30XA`) | Sales / Offer | Absorbed (3 R + the service trap); coined product names rejected | `sales/AMK-Sales-Playbook-v2.md` **PART K** |
+| 30 | 23 Sep 2026 | 7 Web Design Styles That Make Sites Look Expensive In 2026 — Web Design Lab (`youtu.be/Fog8WpdTnYU`) | Design / Style | Absorbed as tests, not looks; kinetic + expressive restricted | `AMK-DESIGN-SKILLS.md` **§23.1–23.3** |
+| 31 | 23 Sep 2026 | 6 EASY Tips to 10x Any Site's Design — Self-Made Web Designer (`youtu.be/pbhLsV-Dyho`) | Design / Craft | **Absorbed — and it found a real drift on our own site** | `AMK-DESIGN-SKILLS.md` **§23.3–23.6** |
 
 ## 4 · Entries (full reports)
 
@@ -591,6 +595,14 @@ WhatsApp-first · mobile-first · EN|FR · Cameroon (Kumba/Douala/South-West) ·
 | "Average website converts at 2–3 %" quoted to a prospect | [20] | Unverifiable for Cameroon; internal calibration only (same ruling as [16][18]). |
 | Full-viewport footer on mobile | [19] | Scroll cost beats drama on a 390px screen → desktop-only (§20.3). |
 | Hidden/faded anchor text and keyword-anchor agency credit | [18] | Named as black-hat (Google's own guidelines) → banned outright in §20.5. Credit lines are brand text only. |
+| AEO percentages quoted to a prospect (43 %, 1 in 4, 30 % of AI answers, 1.3 bn clicks) | [28] | Single-source US self-reported data; our accuracy law bans unverifiable stats. **Internal calibration only.** |
+| "You will be recommended by ChatGPT" (as a promise to a client or on our site) | [28] | We control neither the models nor their answers. The honest version: *the page answers the questions people ask before calling* (SEO playbook §8.5). |
+| "A website is useless now / will be dead in 2027" | [28] | The video's own thesis is that the website's job *changes* (it closes the deal); we do not sell fear with a date on it — same rule as "no invented deadline" (Cristallin 22/09). |
+| Coined offer names ("Brand Visibility Accelerator", "Launch Copy Lab") | [29] | US course-market naming; our market reads plain French and §11 bans invented vocabulary. The transformation is named in the client's words. |
+| The course/community funnel, $30k-a-month claims, "gamify to 30K" | [29] | Upsells and income claims; nothing transferable to a Douala outbound pipeline. |
+| Kinetic typography as a look, expressive/brutalist direction as a default | [30] | Long French headlines at 3G on a mid-range Android: type that moves costs readability. Kept as a test (does it help notice/grasp/understand?), never as a house style. |
+| Spline / Unicorn Studio 3D scenes, "12 versions" of a hero as a weekly habit | [30] | External embeds break the single-file rule; and our build budget is one pass + one revision, not twelve — the *principle* (first version is a draft) is what we keep. |
+| "Handmade/human-made" as a photo filter or a moodboard | [30] | Already at risk of becoming the next template (the video says so itself). Ours is substance: real photos of the real practice, or nothing. |
 
 ## 6 · Weekly ritual (Mondays, before the outreach pack goes out)
 
@@ -722,3 +734,71 @@ qui n'a pas de chemin.* Les trois pages corrigées, les trois pages passées au 
 - Les chiffres cités comme preuves de marché (l'étude des confitures, 70–90 % de défauts inchangés) : gardés
   comme **calibration interne**, jamais cités à un prospect — même règle que [16] et [18].
 - Les gabarits de sites « parfaits » montrés en exemple : on ne copie pas un gabarit, on applique des règles.
+
+---
+
+## Lot [24] · Stratégie, offre et style — 4 vidéos (King, 23/09/2026)
+
+Règles de construction : `AMK-DESIGN-SKILLS.md` **§23** (style, étoile, police d'ancrage) ·
+`AMK-SEO-PLAYBOOK.md` **§8** (AEO) · `sales/AMK-Sales-Playbook-v2.md` **PART K** (offre signature).
+
+| # | Vidéo | Chaîne | Ce qu'elle apporte |
+|---|---|---|---|
+| 24.1 | *Your Website Won't Matter in 2027. Prepare Now.* | Wes McDowell | la thèse AEO : l'IA comme premier vendeur, YouTube comme source la plus citée, le site réduit à la dernière étape |
+| 24.2 | *How to Attract HIGH PAYING Clients (Stop Selling Services)* | Nicole & James | le piège du service, les trois R (affiner · rechercher · repositionner), vendre une transformation |
+| 24.3 | *7 Web Design Styles That Make Sites Look Expensive In 2026* | Web Design Lab | sept choix de style, le test du logo, l'anti-recette |
+| 24.4 | *6 EASY Tips to 10x Any Site's Design* | Self-Made Web Designer | police d'ancrage, étoile du spectacle, rime visuelle, profondeur, hiérarchie par opacité, dépasser la première idée |
+
+### Ce que ce lot a trouvé dans notre propre travail
+
+**24.4 a mis le doigt sur une dérive contre notre propre règle.** Le §5 de nos design skills dit « Outfit,
+police maison », et nos pages écoles/cliniques la chargent bien. **Notre propre site ne déclarait AUCUNE
+police** : titres en police de téléphone. La page qui sert de portfolio était celle qui suivait le moins
+notre standard. **Corrigé le jour même** (Outfit 400-800, même chaîne de repli : si la police ne se charge
+pas, la page est identique à avant).
+
+**Et un demi-motif.** Le cadre de navigateur du hero se répétait déjà sur les quatre cartes de concepts,
+mais ses **trois pastilles rouge/ambre/vert** n'apparaissaient qu'une fois. Une rime qui s'arrête à la
+silhouette ne rime qu'à moitié : les pastilles sont maintenant dans les quatre cartes.
+
+**24.1 touche une décision de King — et il faut le dire sans arrondir.** Sa décision du 23/09 (geler la
+production de contenu) repose sur une mesure de **trafic humain** (5 vidéos → 602 vues → 0 message). La
+vidéo affirme que le mécanisme est ailleurs : les modèles lisent une vidéo **le jour de sa publication**,
+sans rapport avec les vues. Donc **notre expérience ne réfute pas la thèse — elle ne l'a jamais testée**.
+Mais **elle ne la prouve pas non plus**, et le gel reste la décision par défaut : la seule action gratuite
+recommandée est un **relevé AEO** (poser la question du prix à trois assistants, noter qui est cité,
+recommencer dans 30 jours). Détail et options : `AMK-SEO-PLAYBOOK.md` §8.3.
+
+**24.3 et 24.2 ont chacun une limite écrite.** Les deux styles les plus spectaculaires (typo cinétique,
+design expressif) sont retenus comme **tests**, pas comme looks : nos titres sont longs, en français, lus
+sur un Android d'entrée de gamme. Et l'offre signature ne devient **pas** un nom inventé à l'américaine :
+la transformation se nomme dans les mots du client, sinon elle ne dit rien.
+
+### Affirmations centrales retenues
+
+- **Le site change de métier** : il ferme la décision au lieu de la créer. Une page qui « ne gêne pas »
+  bat une page qui impressionne.
+- **Vendre un résultat, pas un livrable** : les cinq sections et le bilingue sont des preuves, pas
+  l'argument. Le prix s'accroche au résultat, jamais aux heures.
+- **Les styles se choisissent, ils ne s'inventent pas** ; et **une tendance devient un problème quand elle
+  devient une recette**.
+- **L'étoile du spectacle** : un élément, relié à l'histoire de la maison, pas choisi parce que c'est joli ;
+  puis on en répète un **composant** ailleurs (rime visuelle).
+- **La police d'ancrage se choisit sur le TITRE d'abord**, et le second choix doit contraster franchement.
+- **Hiérarchie par niveaux d'emphase** (100 / ~87 / ~60) plutôt que tout au même poids.
+- **Dépasser la première idée** : la première version est un brouillon, jamais le livrable.
+
+### Contradictions avec nos fichiers
+
+- **Avec la décision contenu du 23/09** : voir ci-dessus — nuance de méthode, décision inchangée, à King.
+- **Avec notre §11 (copie)** : l'offre signature américaine pousse à des noms inventés. Notre règle gagne.
+- **Avec §22.6 (honnêteté sur nos limites)** : la vidéo 24.4 suppose de *voir* les variations ; dans ce
+  bac, il n'y a pas de navigateur. Les corrections faites cette nuit sont **structurelles et vérifiables
+  en code** (police chargée, rythme, pastilles) — **le regard reste celui de King**.
+
+### Déchets écartés
+
+- Les formations, communautés et offres payantes des quatre chaînes ; les chiffres de revenus personnels.
+- Les exemples de sites étrangers (parfum, café, mode) : les mécanismes sont transférables, les décors non.
+- Les pourcentages AEO cités comme des faits établis (voir §5 du présent fichier).
+

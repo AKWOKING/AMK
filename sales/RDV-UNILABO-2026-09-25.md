@@ -12,6 +12,14 @@
 
 ---
 
+## 0 · La phrase d'offre (à dire, pas à réciter) — ajoutée le 23/09 (PART K du playbook)
+
+> **« On vous trouve, on vous fait confiance, on vous écrit sur WhatsApp — et la page est déjà faite avant
+> que vous ayez payé un franc. »**
+
+Les cinq sections, le bilingue, les 3-5 jours : ce sont des **preuves**, pas l'argument. L'argument est le
+résultat. Le budget se **demande** à l'étape budget de la séquence — il ne se devine jamais.
+
 ## Ce que ça vaut, sans exagérer
 
 | | |

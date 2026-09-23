@@ -319,3 +319,70 @@ This is not a scare line: it's the reason a real site + WhatsApp flow *wins* wit
 **Always make the ask.** A sale we never asked for is a sale we never made. The 3A reframe (Part I) is what lets us ask repeatedly without burning rapport: ask, reframe, ask again.
 
 **Solo version of the team cadence** (the video's huddle/1-on-1/leaderboard mechanics are for teams — parked in the register, not in the playbook): Friday, re-read the week's best and worst exchange, write one line on each into `sales/swipe/README.md`, and update the objection log. That is our call-recording discipline.
+
+---
+
+## PART K · THE SIGNATURE OFFER — FROM "A WEBSITE" TO A NAMED RESULT (v2.3, 23 Sep, from Nicole & James [24])
+
+**The video's diagnosis, in one line:** *premium prices do not come from how long something takes — they
+come from how deeply it changes somebody's business.* Selling **deliverables** ("a 5-section homepage",
+"a bilingual site") puts you in the **service trap**: every project is custom, you quote by hand, the
+client hears a cost, and you end up positioned as **an extra pair of hands** instead of the person they
+call for results.
+
+**The framework — three R, applied to AMK with our own numbers:**
+
+| | What the video says | Ours, verified |
+|---|---|---|
+| **R — Refine** | pick a niche you like, where you can offer the biggest transformation, **and who can pay** | already done: **schools & clinics**, narrowed to the **vitrine profile** — that profile answers **11,1 %** (3/27) against **2,5 %** (3/118). "Who can pay" is not an assumption for us: it is the **budget step** of the 6-step discovery, asked out loud, never guessed |
+| **R — Research** | pains, desires, what keeps them up at night, the one thing | we have the verbatims, in the client's own words: « je suis vraiment intéressé » (Univers Optique), « Ok » (Le Cristallin, on a site he had not paid for). Their night-time worry is not "I want a website" — it is **"est-ce que quelqu'un me trouve et me fait confiance ?"** |
+| **R — Reposition** | reframe the same skills around that transformation | the offer is **built already, before a franc is discussed** — "L'aperçu d'abord", the unique mechanism from `DECLINAISON-9-DECLENCHEURS-2026-09-23.md` |
+
+### K.1 The offer, in the client's words (never in ours)
+
+**The transformation we sell, one sentence, plain French, no jargon:**
+
+> **« On vous trouve, on vous fait confiance, on vous écrit sur WhatsApp — et la page est déjà faite avant
+> que vous ayez payé un franc. »**
+
+**The three things that actually change for the client** (this is the answer to "what am I buying?", and it
+is what the business case measures):
+1. **Trouvable** — le nom, le métier, le quartier, les horaires, une réponse chiffrée à la question du prix.
+2. **Rassuré avant de venir** — photos réelles, conditions écrites, ce qui se passe après le message.
+3. **Un chemin de rendez-vous** — WhatsApp pré-rempli, appel en un tap, aucune inscription.
+
+**The deliverables are the proof, not the pitch.** The 5 sections, the bilingual build, the 3–5 days, the
+hosting year: they belong in the *what's included* block, after the outcome.
+
+### K.2 What this changes in what we say (and what stays frozen)
+
+- **The first line of every message is the outcome, not the artefact.** Before: « je crée des sites web
+  bilingues ». After: « on vous trouve et on vous écrit — voici la page, elle est déjà faite ».
+  (The rewritten message 1 in `MESSAGES-2026-09-23-PERSUASION.md` already does this; this makes it a rule.)
+- **Price stays a number attached to the outcome, never to hours.** Our prices are fixed and public in the
+  room: **100 000** (Univers Optique, frozen 21/09) and **150 000** (Le Cristallin, sent 23/09). We never
+  discount — **if the scope is too big for the budget, the scope shrinks** (that is already the rule; the
+  video is the reason to keep it).
+- **The business case is the reposition, written down.** `BUSINESS-CASE-*.md` = "here is what changes for
+  you, in your numbers" — that is the document a high-paying client signs, not a feature list.
+- **We do NOT rename our offer into an "accelerator".** The US version of this framework lives on coined
+  product names (« Brand Visibility Accelerator »). Our market reads French, distrusts jargon, and our own
+  §11 copy rules ban invented vocabulary. The transformation is named **in their words**, which is what
+  actually makes it land.
+
+### K.3 The two traps of this video, closed by name
+
+- **"Who can pay premium prices"** can quietly become *"skip the small ones"*. Ours: every lead gets the
+  same message; **budget is a question in discovery, not a filter in sourcing**. Cost of being wrong the
+  other way (pitching a school that cannot pay) is one message; the cost of excluding by assumption is a
+  dead pipeline.
+- **The invented-prestige trap.** A big name with nothing behind it is the exact thing our accuracy law
+  bans. The offer is credible for one reason only, and it is checkable: **the page exists before the
+  invoice** — UNI-LABO is live, Univers Optique wrote back, Le Cristallin validated a price on a site he
+  had not paid for.
+
+### K.4 What was rejected
+
+The course/community funnel, the $30k/month income claims, the "gamify your way to 30K" framing, USD
+pricing, the referral-dependency angle (our pipeline is outbound — referrals are a *result* to earn, not
+the channel we start from). Rejections logged in `research/YouTube-Lessons.md` §5.

@@ -22,6 +22,11 @@ Ce portique applique les règles apprises dans les quatre vidéos UX/UI du 23/09
                 pas de bloc dupliqué, pas plus de six tailles de texte
   · les ÉTATS — les champs d'un formulaire ont un état de focus (et d'erreur s'il y a validation)
 
+Un seul « bloquant » est attendu sur un fichier du dépôt : `site/mockup-hero.html`, qui est un MODÈLE À
+JETONS (`{{NOM_DE_LA_MAISON}}`) rempli par `tools/outreach/mockup.py` avant tout envoi. Sur ce fichier,
+la ligne « texte de gabarit resté en place » est la preuve que le modèle est bien resté un modèle — on ne
+la corrige pas, on ne l'envoie pas tel quel. Partout ailleurs, un bloquant se corrige.
+
 Usage :
     python3 tools/qa/audit_page.py demos/concept-le-cristallin-v1.html
     python3 tools/qa/audit_page.py demos/*.html hosting/previews/*/index.html
@@ -40,6 +45,7 @@ from collections import Counter
 # ── ce qui casse une page pour un vrai visiteur : BLOQUANT
 BLOCKING = "bloquant"
 WARN = "à corriger"
+INFO = "information"
 
 WA_RE = re.compile(r'wa\.me/(\d+)')
 TEL_RE = re.compile(r'href="tel:([^"]+)"')
@@ -68,6 +74,29 @@ def text_of(html: str) -> str:
         h = re.sub(r'<span[^>]*class="[^"]*en-only[^"]*"[^>]*>.*?</span>', ' ', h, flags=re.S | re.I)
     h = re.sub(r'<[^>]+>', ' ', h)
     return re.sub(r'\s+', ' ', h)
+
+
+# Les familles qui vivent DANS l'appareil : les déclarer sans les charger est normal, ce n'est pas un bug.
+# (Corrigé avant la première exécution : « Helvetica Neue » et « Times New Roman » sortaient en « manquantes »
+# sur trois pages saines. Cinquième faux positif évité en le cherchant.)
+SYSTEM_FAMILIES = {
+    "system-ui", "-apple-system", "blinkmacsystemfont", "segoe ui", "roboto", "noto sans", "helvetica",
+    "helvetica neue", "arial", "arial rounded mt bold", "sans-serif", "serif", "monospace", "ui-monospace",
+    "ui-rounded", "sfmono-regular", "menlo", "monaco", "consolas", "courier new", "georgia",
+    "times new roman", "times", "verdana", "tahoma", "trebuchet ms", "inherit", "initial", "revert",
+}
+
+
+def loaded_families(html: str) -> set[str]:
+    """Les polices réellement chargées : Google Fonts et @font-face."""
+    fams: set[str] = set()
+    for m in re.finditer(r'fonts\.googleapis\.com/css2\?([^"\']+)', html):
+        for part in m.group(1).split("&"):
+            if part.startswith("family="):
+                fams.add(part[7:].split(":")[0].replace("+", " ").strip().lower())
+    for m in re.finditer(r'@font-face\s*\{[^}]*font-family\s*:\s*[\'"]([^\'"]+)', html, re.S):
+        fams.add(m.group(1).strip().lower())
+    return fams
 
 
 def audit(path: str) -> tuple[list[tuple[str, str, str]], int]:
@@ -150,6 +179,31 @@ def audit(path: str) -> tuple[list[tuple[str, str, str]], int]:
         findings.append((BLOCKING, f"texte de gabarit resté en place : « {ph} »",
                          "c'est la première chose qu'un client voit — LyfyOptic l'a payé."))
         break
+    # ④ bis LA POLICE D'ANCRAGE — une famille déclarée mais jamais chargée tombe en silence sur la police
+    # de l'appareil : la page perd sa personnalité typographique et personne ne le voit. (Trouvé le 23/09 sur
+    # notre propre site : §5 dit « Outfit », il ne chargeait rien.)
+    _loaded = loaded_families(html)
+    # ⚠️ On ne regarde QUE LA PREMIÈRE famille de chaque déclaration : c'est elle qui s'affiche. Une famille
+    #    de secours rangée plus loin (ex. « 'Nunito','Quicksand',ui-rounded,… ») ne casse rien du tout —
+    #    la signaler serait du bruit, et le bruit tue le portique (leçon des cinq faux positifs de la nuit).
+    primary: set[str] = set()
+    for m in re.finditer(r'font-family\s*:\s*([^;}]+)', html):
+        fam = m.group(1).split(",")[0].strip().strip('\'"').strip().lower()
+        if not fam or fam.startswith("var(") or fam.startswith("--") or fam in SYSTEM_FAMILIES:
+            continue
+        primary.add(fam)
+    missing = sorted(f for f in primary if f not in _loaded)
+    if missing:
+        findings.append((WARN, "police de titre/texte jamais chargée : " + ", ".join(missing),
+                         "c'est la PREMIÈRE famille de la déclaration, donc celle qui décide : si elle ne se "
+                         "charge pas, le texte tombe en silence sur la police de l'appareil. Soit on la "
+                         "charge (Google Fonts / @font-face), soit on l'enlève de la déclaration."))
+    if not _loaded:
+        findings.append((INFO, "aucune police chargée : page en police système",
+                         "si c'est un choix, très bien (c'est le plus rapide en 3G). Si c'est un oubli, "
+                         "c'est la dérive « aucune personnalité typographique » de §23.4 — notre propre site "
+                         "l'a portée jusqu'au 23/09 alors que §5 dit « Outfit »."))
+
     sizes = {v for v, _u in FONTSIZE_RE.findall(html)}
     if len(sizes) > 8:
         findings.append((WARN, f"{len(sizes)} tailles de texte distinctes",

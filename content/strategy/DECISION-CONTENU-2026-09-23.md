@@ -98,3 +98,41 @@ après une vidéo qu'après un texte ?** Compatible avec B (l'étagère sert deu
   (`content/strategy/POSTING-CALENDAR.md`).
 
 **Si tu veux l'option A (arrêt total) ou C (usage privé), dis-le en un mot — je bascule.**
+
+---
+
+## Addendum · 23/09 en fin de journée — une vidéo est arrivée qui parle exactement de ça (et elle ne dégèle rien)
+
+**Ce qui est arrivé** : King a envoyé *Your Website Won't Matter in 2027. Prepare Now.* (Wes McDowell,
+22/09). Elle soutient que le contenu vidéo n'a pas fini de servir — mais pas pour la raison que nous
+mesurions. **Analyse complète : `AMK-SEO-PLAYBOOK.md` §8.**
+
+**La nuance, et elle est de méthode, pas de confort :** notre conclusion reposait sur **5 vidéos → 602 vues
+→ 0 message**. C'est du **trafic humain**. La vidéo affirme que le mécanisme est ailleurs : les assistants
+liraient une vidéo **le jour où elle paraît**, indépendamment des vues. Donc :
+
+- **notre expérience ne réfute pas cette thèse — elle ne l'a jamais testée** ;
+- **et elle ne la prouve pas non plus.** Nous n'avons jamais posé la question n° 1 (le prix) dans une
+  vidéo, et jamais vérifié ce qu'un assistant répond sur « création de site web Douala ».
+
+**Ce qui ne change pas aujourd'hui : le gel tient.** Aucune vidéo nouvelle n'est produite, l'étagère
+(vidéo 06 + #4b) est publiée par King, et les heures vont au sourcing « profil vitrine ». C'est la
+décision du 23/09, et rien dans cette vidéo ne la contredit.
+
+**Ce qui coûte zéro franc et qu'on peut faire quand même — le relevé AEO** (protocole détaillé au §8.5 du
+playbook SEO) : poser à trois assistants *« je cherche quelqu'un pour créer le site d'une clinique à
+Douala, qui me recommandes-tu ? »*, noter les noms cités, refaire le relevé dans 30 jours. Sans ce relevé,
+« l'IA nous ignore » resterait une impression — exactement le défaut que ce dossier a été écrit pour
+éviter. **Je peux le faire dans le bac (accès web) : dis-moi si je le lance.**
+
+**Les trois options restent les mêmes, et la troisième a maintenant un contenu précis :**
+
+| | Option | Coût | Ce qu'elle demande |
+|---|---|---|---|
+| A | **Gel total** (statu quo renforcé) | zéro | rien — c'est le défaut |
+| B | **Étagère seulement** *(recommandé)* | zéro | ton clic sur la vidéo 06 ce soir, 18:00–20:00 |
+| C | **Une seule vidéo : la question n° 1** — « Combien coûte un site web à Douala ? », écrite **uniquement** avec des chiffres déjà publiés (100 000 / 50-50, aperçu gratuit 24 h, 3-5 jours, 15 000/mois) | une soirée de production | ta levée explicite du gel |
+
+**Interdit dans les trois cas** : promettre à un prospect qu'il sera « recommandé par ChatGPT » — nous ne
+contrôlons ni les modèles ni leurs réponses. La phrase vraie, et elle suffit : *« la page répond aux
+questions qu'on vous pose avant d'appeler. »*
