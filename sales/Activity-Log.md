@@ -2363,3 +2363,17 @@ Messoua**. Les quatre échéances du CRM disent maintenant le gel (Le Cristallin
 **Chronologie de la journée, tenue à jour :** 10 h le prix part chez Le Cristallin · 13 h 30 King propose
 14 h 30 à UNI-LABO avec la grille tarifaire · le soir, plus de publication, dépôt allégé, deux clients gelés.
 La suite tient en trois mots : **sourcing, vendredi, encaissement.**
+
+**Trois messages prêts pour ce soir — et un écart de compteur qui cachait une action due.**
+`sales/Send-Soir-2026-09-23.md`. Le plan du jour n'affichait que **deux** lignes ; il y en a **trois**.
+**AFRIQUE LABO** avait reçu sa **FU2 le 21/09 à 17:39** — le journal du 21/09 au soir disait
+`follow_ups_sent 1 → 2` et fixait **« FU3 mer 23/09 max, palier des 3 messages atteint »** — mais **la source
+est restée à 1** : le calcul M+4 croyait donc l'échéance pas encore due, et l'action du jour n'existait que
+dans la prose du journal. Corrigé à la source (`follow_ups_sent=2`) **et** inscrit au `RELANCE_A_JOUR`, parce
+qu'un calcul ne peut pas inventer une décision humaine — c'est exactement la leçon des 33 fils `parked` du
+22/09. Le plan affiche maintenant `Relance 1/3 Disc Optique` · `Relance 1/3 Tchaya Optique` ·
+`Relance 3/3 Afrique Labo` (dernière touche). Les trois messages sont écrits, une seule demande chacun, aucune
+affirmation non vérifiée, et pour chacun ce qu'il ne faut pas écrire (pour Tchaya : **jamais « vous n'existez
+pas en ligne »**, il a deux pages Facebook à 2 390 mentions J'aime ; pour Disc : on n'affirme pas qu'il perd
+des patients ; pour Afrique Labo : son site existe, l'angle part de ce qu'il a). **Toujours rien envoyé
+d'ici** : King envoie, et je consigne dans le même tour.

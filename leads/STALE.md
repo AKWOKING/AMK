@@ -7,4 +7,6 @@
 
 | Lead | Étape | Âge | Relances | Trace |
 |---|---|---|---|---|
-| Afrique Labo SARL | qualifying | 2 j | 1/3 | `L2338` |
+| *(aucun)* | | | | |
+
+**Aucun lead ne dort.** Tous les envois du 18 et 19/09 ont moins de deux jours — **et c'est exactement pour ça que ce fichier est généré : demain, il changera tout seul.**

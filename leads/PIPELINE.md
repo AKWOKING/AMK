@@ -40,7 +40,7 @@
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| Afrique Labo SARL | Douala (Bessengue) | 690 54 70 93 | `L2338` |
+| Afrique Labo SARL | Douala (Bessengue) | 690 54 70 93 | `L2378` |
 | Baird Memorial College | Buea (Bonduma) | 677875395 | `L16` |
 | Baptist Comprehensive College | Buea (Great Soppo) | 679650707 | `L15` |
 | Cabinet Dentaire The Skye | Douala (Bonamoussadi) | 677 79 69 99 | `L53` |
@@ -140,7 +140,7 @@
 | St. Joseph's College Sasse (SJC Sasse) | Buea (Sasse/Small Soppo) | 677195500 | `L1775` |
 | St. Sylvester International College | Buea (Muea) | — | — |
 | Summerset Bilingual College (SMBICOL) | Buea (Wokoko) | — | — |
-| Tchaya Optique | Douala | 696 79 01 73 | `L1819` |
+| Tchaya Optique | Douala | 696 79 01 73 | `L2376` |
 | Wonders Medical Foundation | Douala (Bonamoussadi) | — | — |
 | École Privée Bilingue Les Génies | Douala (Akwa) | — | `L470` |
 

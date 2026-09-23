@@ -17,21 +17,21 @@
 | Contacté | Yes |
 | Réponse | No |
 | Maquette / site | Yes |
-| Relances envoyées | 1 |
+| Relances envoyées | 2 |
 | Source | directory |
 | Détail source | maligah/pagespratiques — numéro joignable vérifié |
 
 ## Notes
 
-Message 1 envoyé 17/09 13:24. **FU1 (M+2) ENVOYÉE par King le 19/09** (confirmé par lui : « I have already sent message de relance »). FU2 (M+4) = lundi 21/09, angle résultats WhatsApp. Concept live : concept-afriquelabo-v1.vercel.app. Numéros interdits : 699 73 36 25 et 674 46 62 15 (secours seulement si l'invitation vient d'eux). · ⚠️ CORRECTION : la fiche le donnait sans site, et un concept lui a même été construit et déployé. Afrique Labo a une vitrine À LUI → profil « a déjà une vitrine », donc plus jamais « vous n'existez pas ». Site simple (valeurs, contact) sans prise de rendez-vous. Le concept déployé peut encore servir, mais l'angle change : partir de ce qu'il a déjà, pas de ce qui lui manque.
+Message 1 envoyé 17/09 13:24. **FU1 (M+2) ENVOYÉE par King le 19/09** (confirmé par lui : « I have already sent message de relance »). **FU2 partie le 21/09 à 17:39** (éditée, une coche), angle résultats WhatsApp. ⚠️ LE COMPTEUR EST RESTÉ À 1 JUSQU'AU 23/09 : le journal disait 2 (21/09 au soir), la source disait 1 — conséquence réelle, le calcul M+4 croyait la FU3 pas encore due alors que sa date écrite était le 23/09. Corrigé ici et inscrit au `RELANCE_A_JOUR` (views.py) le 23/09 : **FU3 = DERNIÈRE TOUCHE, due le 23/09**, le palier des 3 relances est atteint après elle. Concept live : concept-afriquelabo-v1.vercel.app. Numéros interdits : 699 73 36 25 et 674 46 62 15 (secours seulement si l'invitation vient d'eux). · ⚠️ CORRECTION : la fiche le donnait sans site, et un concept lui a même été construit et déployé. Afrique Labo a une vitrine À LUI → profil « a déjà une vitrine », donc plus jamais « vous n'existez pas ». Site simple (valeurs, contact) sans prise de rendez-vous. Le concept déployé peut encore servir, mais l'angle change : partir de ce qu'il a déjà, pas de ce qui lui manque.
 
 ## Prochaine action
 
-**1 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**2 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 25 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 28 ligne(s).*
 
 `L61` · | jeu 17/09 13:24 | AFRIQUE LABO (690 54 70 93) | msg 1 | Envoyé, 2 coches | **Non** |
 `L78` · - **Fils ouverts sans réponse au 18/09 :** OraCare · MITOC · Baptist Comprehensive · Baird Memorial · The Skye · YAKS · AFRIQUE LABO · L'Opticien · La Béthanie · JEMPO. **31 fils ouverts · 2 réponses humaines (St. Theresa, UNI-LABO) · PRR = 2/31 = 6,5 %.**
@@ -58,6 +58,9 @@ Message 1 envoyé 17/09 13:24. **FU1 (M+2) ENVOYÉE par King le 19/09** (confirm
 `L1244` · AFRIQUE LABO. `amk-cm.vercel.app/univers/` répond **404** tant que King n'a pas déployé.
 `L1776` · - à trancher, pas dans le lot : `concept-afriquelabo-v1.vercel.app` (Afrique Labo, `qualifying`, aucune action
 `L2338` · Afrique Labo, L'Opticien, Labiomed, Bonanjo, MITOC) ; la bibliothèque publiable sans identité client
+`L2369` · **AFRIQUE LABO** avait reçu sa **FU2 le 21/09 à 17:39** — le journal du 21/09 au soir disait
+`L2375` · `Relance 3/3 Afrique Labo` (dernière touche). Les trois messages sont écrits, une seule demande chacun, aucune
+`L2378` · des patients ; pour Afrique Labo : son site existe, l'angle part de ce qu'il a). **Toujours rien envoyé
 
 ---
 

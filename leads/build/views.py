@@ -102,6 +102,15 @@ RELANCE_A_JOUR = {
                                      "13/06/2027"),
     # UNI-LABO a DEMANDÉ un rendez-vous : ce n'est plus une relance à calculer.
     "uni-labo-bonamoussadi": ("2026-09-25", "RENDEZ-VOUS demandé par le prospect — vendredi 25/09"),
+    # Le calcul M+4 ne voyait pas cette échéance : le compteur de la source disait 1 relance au lieu de 2
+    # (FU1 19/09 + FU2 21/09 17:39). Le journal, lui, disait « FU3 mer 23/09 max, palier des 3 messages
+    # atteint » depuis le 21/09. Décision humaine inscrite ici le 23/09 — c'est la DERNIÈRE touche.
+    "afrique-labo-douala": ("2026-09-23", "**FU3 = DERNIÈRE TOUCHE** (le compteur était faux : FU1 19/09 + FU2 "
+                                         "21/09 17:39 = 2, la source disait 1 → l'échéance écrite au journal "
+                                         "depuis le 21/09 n'était calculée nulle part). Message prêt : "
+                                         "`sales/Send-Soir-2026-09-23.md` §③. Après cet envoi : plus aucune "
+                                         "relance, on attend. Vitrine À LUI (`afriqlabo.com`) : l'angle part de "
+                                         "ce qu'il a, jamais de ce qui lui manque"),
     "tchaya-optique": ("2026-09-23", "Message 1 parti le 21/09 à 17:47 (une coche, jamais enregistré avant le "
                                      "22/09). Vitrine : deux pages Facebook, dont « TCHAYA OPTIQUE INTERNATIONAL » "
                                      "(2 390 mentions J'aime, opticien depuis 1974). Relance 1/3 : 23/09"),
