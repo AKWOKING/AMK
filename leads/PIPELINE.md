@@ -27,8 +27,8 @@
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| Le Cristallin | Douala | 699 90 55 77 | `L2363` |
-| Univers Optique | Douala | 699 25 28 74 | `L2360` |
+| Le Cristallin | Douala | 699 90 55 77 | `L2428` |
+| Univers Optique | Douala | 699 25 28 74 | `L2426` |
 
 ## ④ Offre posée — 1
 

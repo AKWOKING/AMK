@@ -2377,3 +2377,53 @@ affirmation non vérifiée, et pour chacun ce qu'il ne faut pas écrire (pour Tc
 pas en ligne »**, il a deux pages Facebook à 2 390 mentions J'aime ; pour Disc : on n'affirme pas qu'il perd
 des patients ; pour Afrique Labo : son site existe, l'angle part de ce qu'il a). **Toujours rien envoyé
 d'ici** : King envoie, et je consigne dans le même tour.
+
+## 2026-09-23 · 20:30 · REVUE DES CONTRATS ET DE LA GRILLE — six corrections, et un écart avec ce qui a déjà été envoyé
+
+**King a envoyé quatre documents** (deux contrats, deux grilles tarifaires) et demandé « what do you think ? ».
+Les fichiers ne sont pas arrivés sur le disque, mais **le texte des trois premiers est dans la conversation** :
+lecture faite sur ce texte, revue écrite ligne par ligne dans `sales/REVUE-CONTRATS-GRILLE-2026-09-23.md`.
+
+**Ce qui est bon, et il faut le dire :** la ligne d'abonnement existe enfin (30 000 FCFA/mois) — c'est la
+décision qui corrige « vendu une fois, entretenu à vie ». 50/50, propriété au paiement intégral, deux séries
+de révisions, droit de portfolio, et la meilleure phrase des trois documents : la note qui distingue le
+**formulaire de réservation WhatsApp** de l'**assistant automatique** — cette phrase nous protège d'une
+promesse qu'on ne peut pas tenir.
+
+**Six corrections proposées, par gravité :**
+① « **propulsées par l'IA** » sur la grille — on ne livre aucune IA, et **UNI-LABO a déjà la grille depuis
+13:30** : à retirer avant qu'il pose la question. ② Le **programme de recommandation** crée un **prix public à
+100 000** avec une condition invérifiable, contredit la règle « jamais de remise » et percute Univers Optique
+(déjà à 100 000 sans recommandation) → remplacé par « un mois d'abonnement offert au parrain, prix normal pour
+le nouveau client », et les 100 000 d'Univers expliqués comme **offre de lancement close**.
+③ Le délai court **à partir du seul acompte** : il doit courir **aussi** à partir de la réception des contenus,
+sinon le client nous tient un retard alors que c'est lui qui n'a pas envoyé ses textes.
+④ Les **éléments fournis par le client** (textes, photos, accès, délai) ne sont écrits nulle part.
+⑤ « Mises à jour mineures » **sans plafond** et « surveillance du site » promise pour de vrai → plafonnées à
+2 h/mois, minor/majeur définis, réponse sous 24 h. ⑥ Il manque cinq clauses : **impayé/suspension**,
+**domaine et DNS** (le cas du Cristallin : son e-mail pro vit sur son domaine jusqu'au 13/06/2027),
+**WhatsApp = obligation de moyens**, **résiliation de l'abonnement**, **données** (obligatoire avant tout
+pilote labo) — plus la **liste des exclusions**, l'ajout le plus rentable des six.
+
+**Le tableau des écarts, contre ce qui est réellement parti :** Le Cristallin s'est vu promettre « hébergement
+1 an, nom de domaine et assistant WhatsApp » (23/09 09:46) alors que la grille **exclut** l'assistant et que
+**deux de ces trois items n'ont pas d'objet** (il possède déjà son domaine et son hébergement) → trois
+éléments de remplacement à valeur réelle, sans toucher au prix : configuration WhatsApp Business complète
+(qui rend vraie la phrase « assistant WhatsApp » sans API payante), renouvellement de son domaine en 2027 pris
+en charge, fiche Google complétée. **Rien de tout cela ne part avant son feu vert** — il a dit « ne change
+rien sans mon ok ». · UNI-LABO a le formulaire ✅ et **la grille entière entre les mains**. · Univers Optique
+a « 100 000 la page complète FR|EN » (21/09 18:08), soit **le tarif du programme de recommandation sans
+recommandation**.
+
+**Mon avis sur les 30 000/mois, tranché :** c'est le haut du marché pour une page (hébergement local
+3 900-25 000/mois ; logiciels de gestion camerounais 10-25 000/mois mais ils vendent un logiciel entier ;
+éditeurs santé 400-600 000/an). Tenable **si** l'abonnement contient du travail visible chaque mois →
+je recommande **deux paliers** : **Essentiel 12 000/mois** (domaine + veille + 30 min de modifications) pour
+les clients qui possèdent déjà domaine et hébergement (Cristallin, Univers), **Standard 30 000/mois** (2 h,
+sauvegardes, assistance 24 h, rapport mensuel) pour UNI-LABO et les clients avec données. Ajustement de
+périmètre, jamais une remise.
+
+**Vendredi, dans l'ordre :** Univers 10 h → contrat Fondateur 100 000 (offre de lancement close) ;
+UNI-LABO 14 h 30 → contrat Standard 150 000 + abonnement à choisir + périmètre écrit ; **contrats imprimés en
+deux exemplaires et grille corrigée**. Le Cristallin reste gelé — mais le contrat est justement l'instrument
+qui lève le gel, prêt dans le dossier, en attente de l'accord de King.

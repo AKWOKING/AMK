@@ -1,158 +1,253 @@
-# REVUE DES CONTRATS ET DE LA GRILLE TARIFAIRE — **la grille de contrôle**
+# REVUE DES CONTRATS ET DE LA GRILLE — **lecture ligne par ligne** (v2)
 
-**23/09/2026** · réponse à « what do you think ? » sur `AMK_Contrat_Prestation.pdf`,
-`AMK_Contrat_Standard.pdf`, `AMK_Grille_Tarifaire.pdf`, `AMK_Grille_Tarifaire_Standard.pdf`.
-
----
-
-## 0 · D'abord, la vérité : **je n'ai pas pu les ouvrir**
-
-Les quatre fichiers ne sont pas sur mon disque. J'ai cherché dans le dossier de travail **et** sur tout le
-système (`find / -iname "*.pdf"` → **aucun résultat**), et mon dossier d'accueil ne contient même pas de
-répertoire `uploads`. C'est exactement le même incident que les captures WhatsApp du 23/09 : **le fichier
-existe dans ta conversation, pas dans mon environnement.**
-
-Donc : **je ne donne aucun avis sur ce qu'ils contiennent.** Inventer une opinion sur un contrat que je n'ai
-pas lu serait la faute la plus coûteuse de cette session — c'est ce genre de document qui engage l'agence
-pendant des mois.
-
-**Pour que je les lise vraiment, au choix :**
-1. **colle le texte** des quatre documents dans le message (le plus fiable — les PDF créés par un générateur
-   ou un scan ne s'extraient pas toujours) ;
-2. ou **joins-les à nouveau** : parfois le second envoi arrive ;
-3. ou **dépose-les dans le dépôt** (`sales/`) via l'interface, et je les ouvre en local.
-
-En attendant, voilà **ce que je pense déjà**, parce que ça ne dépend pas de leur contenu — ça dépend du fait
-qu'ils existent, et de ce qu'ils devront dire pour être utilisables vendredi.
+**23/09/2026** · remplace la version « liste de contrôle » du même jour : j'ai maintenant le texte.
+Documents lus : **Contrat « Client Fondateur »** · **Contrat « Client Standard »** · **Grille tarifaire**
+(la grille collée — je n'ai reçu le texte que d'**une** des deux grilles ; voir §5).
 
 ---
 
-## 1 · Ce que je pense de la situation, en trois points
+## 0 · Mon avis en cinq lignes
 
-### ① **Deux contrats + deux grilles = deux prix qui circulent.** C'est un risque, pas une richesse.
+**C'est un vrai pas en avant, et il corrige le défaut le plus coûteux d'AMK : la ligne d'abonnement existe.**
+Le squelette est bon : 50/50, propriété au paiement intégral, deux séries de révisions, cinq jours ouvrés,
+droit de portfolio, et — la meilleure phrase des trois documents — **la clarification « formulaire de
+réservation WhatsApp ≠ assistant IA »**, qui supprime l'ambiguïté la plus dangereuse de notre offre.
 
-Nous avons déjà **trois prix posés, tous différents** :
+**Il reste six choses à corriger avant la première signature**, dont deux qui se voient en dix secondes :
+**« propulsées par l'IA »** (on ne livre aucune IA) et le **programme de recommandation à 100 000** (il crée
+un prix public 33 % en dessous de la grille et contredit la règle « jamais de remise »).
 
-| Client | Prix posé | Quand | Périmètre annoncé |
+Et une chose à décider, qui est un vrai choix de patron et pas une correction : **30 000 FCFA/mois** — c'est
+trois fois le chiffre que je proposais. Mon avis honnête est au §3.
+
+---
+
+## 1 · Ce qui est déjà bien (à ne pas retoucher)
+
+| Élément | Pourquoi c'est juste |
+|---|---|
+| **L'abonnement mensuel dans la grille ET dans le contrat** | C'est **la** décision structurante : sans elle, on vend une fois et on entretient à vie. Elle est là. |
+| 50 % à la commande / 50 % à la livraison | Conforme aux trois prix déjà annoncés. |
+| Propriété au **paiement intégral** | Bon réflexe : le levier reste chez nous jusqu'au dernier franc. |
+| 2 séries de révisions mineures avant livraison | Nous avons besoin de cette limite, et elle est écrite. |
+| Droit de portfolio | Raisonnable, et suffisant. |
+| **La note sur le formulaire WhatsApp** | Elle dit exactement ce qu'il faut : ce n'est pas un assistant automatique, et l'assistant est un service **futur**. Cette phrase nous protège d'une promesse qu'on ne peut pas tenir. |
+| Le pied de page « ne remplace pas un conseil juridique professionnel » | Honnête. On la garde. |
+
+---
+
+## 2 · Les six corrections avant la première signature
+
+### ① « propulsées par l'IA » → **à retirer** (et vite : c'est déjà chez UNI-LABO)
+
+**Le problème.** L'en-tête de la grille dit « Sites web et solutions digitales **propulsées par l'IA** ».
+Or **rien** de ce qu'on livre n'utilise l'IA : le formulaire de réservation est un lien `wa.me` avec un texte
+prérempli. Et la grille est **déjà partie** : UNI-LABO l'a reçue aujourd'hui à **13:30**.
+
+**Le risque.** Un directeur de laboratoire lit « propulsé par l'IA » et demande « **laquelle ?** ». On n'a pas
+de réponse. C'est exactement la faute que notre propre loi interdit : ne rien écrire qu'on ne peut pas montrer.
+
+**Le remplacement, mot pour mot :**
+> **Sites web et prises de rendez-vous WhatsApp pour entreprises locales**
+> *AI-powered* → *Websites & WhatsApp booking for local businesses*
+
+Si l'assistant automatique se vend un jour, il s'écrit **à part** : « Assistant WhatsApp automatique —
+service séparé, sur devis ».
+
+### ② Le programme de recommandation → **il crée un prix public à 100 000**
+
+**Le problème.** « Si le Client recommande un nouveau client **au moment même de la négociation**, le nouveau
+site est proposé à **100 000 au lieu de 150 000**. » Trois défauts, dans l'ordre de gravité :
+1. **C'est une remise, pas un ajustement de périmètre** — la règle posée avec King est « **jamais de remise** ».
+2. **La condition est invérifiable** : « au moment même de la négociation ». N'importe quel client peut dire
+   « je vais vous recommander à quelqu'un » et obtenir 33 % de baisse. Elle devient le prix réel.
+3. **Elle percute Univers Optique**, qui a déjà **100 000 sans aucune recommandation**. Le jour où un client
+   à 150 000 voit cette ligne, la seule question qui compte est : « alors pourquoi je paie plus ? »
+
+**Ce que je propose (l'incitation reste, le prix tient) :**
+> **PROGRAMME DE RECOMMANDATION**
+> Un client qui nous présente une entreprise reçoit **UN MOIS D'ABONNEMENT OFFERT** (30 000 FCFA de valeur),
+> versé après la signature du nouveau client.
+> **Le nouveau client paie le tarif normal de la grille.** Aucun rabais sur la création : le prix est le
+> même pour tous, c'est ce qui le rend crédible.
+
+Et pour expliquer les 100 000 d'Univers Optique **sans ouvrir un prix parallèle** :
+> **OFFRE DE LANCEMENT — 3 PREMIERS CLIENTS (close)**
+> Les trois premières entreprises qui nous ont fait confiance ont bénéficié d'un tarif fondateur.
+> Cette offre est terminée et ne figure plus dans la grille.
+
+### ③ Le délai court **à partir du seul acompte**
+
+**Le problème.** §3 : « livré dans un délai de **5 jours ouvrés** à compter de la réception de l'acompte ».
+Or **le vrai goulot d'étranglement, c'est le contenu du client** — nous en avons la preuve vivante : trois
+jours après le début, Le Cristallin fournit encore ses textes. Écrit tel quel, **le client tient un retard
+contre nous alors que c'est lui qui n'a rien envoyé.**
+
+**Le remplacement :**
+> Le site est livré dans un délai de **5 jours ouvrés à compter de la réception de l'acompte ET de l'ensemble
+> des éléments fournis par le Client** (textes, photos, logo, horaires, services, prix, coordonnées, accès).
+> **Tant que ces éléments ne sont pas réunis, le délai est suspendu.**
+
+### ④ Les éléments fournis par le client n'existent nulle part
+
+**Le problème.** Aucun document ne dit **qui** fournit les textes, les photos et les prix, ni **ce qui se
+passe si le client ne les fournit jamais**. C'est le premier motif de conflit sur ce type de projet.
+
+**À ajouter (§ nouveau) :**
+> **Éléments fournis par le Client.** Le Client fournit les textes, photos, logo, horaires, liste des services
+> et prix, ainsi que ses accès (page Facebook, fiche Google) dans un délai de **10 jours** après la signature.
+> Passé ce délai, le Prestataire peut facturer des **frais de relance de 5 000 FCFA par semaine de retard**, ou
+> clore le projet avec le contenu disponible.
+
+*(Le montant est une **proposition** : à valider ou à changer — je ne fixe pas de prix.)*
+
+### ⑤ « Mises à jour mineures » sans plafond, et une surveillance qu'il faut réellement assurer
+
+**Le problème.** L'abonnement à 30 000 promet « mises à jour mineures (horaires, prix, textes) » **sans
+limite**, « assistance en cas de problème technique » **sans délai de réponse**, et « **surveillance de la
+disponibilité du site** ». Trois engagements ouverts : un client qui écrit chaque semaine mange le mois, et
+« surveillance » n'existe chez nous que si on met réellement un contrôle en place.
+
+**Le remplacement :**
+> **Révisions et abonnement.** Le tarif de création inclut **deux (2) séries de révisions mineures** avant la
+> livraison finale. Est **mineur** : un texte, un horaire, un prix, une photo, une coordonnée. Ne sont **pas
+> mineurs** : ajouter une section ou une page, changer la direction visuelle, ajouter une langue.
+> L'abonnement mensuel couvre **jusqu'à 2 heures de modifications mineures par mois, non cumulables**, le
+> renouvellement du nom de domaine, la **surveillance de disponibilité** et l'assistance technique
+> (**réponse sous 24 h ouvrées**). Au-delà de 2 heures dans le mois, les modifications sont facturées
+> **[tarif à fixer — je propose 10 000 FCFA l'heure]**, toujours après accord écrit.
+
+### ⑥ Il manque les cinq clauses qui protègent vraiment
+
+Aucune n'est polémique, toutes se sont déjà présentées chez nous :
+
+| # | Clause manquante | Ce qu'elle règle, chez nous |
+|---|---|---|
+| **a** | **Impayé / suspension** — « Les accès techniques (hébergement, domaine, comptes) restent sous le contrôle du Prestataire jusqu'au paiement intégral. Après rappel écrit de 15 jours, le Prestataire peut suspendre la mise en ligne sans que cela constitue une rupture. Le site est rétabli à la régularisation. » | Aujourd'hui, si le solde ne vient jamais, le contrat ne dit pas ce qu'on peut faire. |
+| **b** | **Domaine et DNS** — « Si le Client possède déjà un nom de domaine et/ou un hébergement, le Prestataire **n'intervient ni sur le DNS ni sur les serveurs sans son accord écrit**, afin de ne pas interrompre les services existants (notamment les adresses e-mail professionnelles). » | **Le cas du Cristallin** : son domaine est à lui jusqu'au **13/06/2027** et son e-mail pro vit dessus. Une bascule de DNS tue son adresse. |
+| **c** | **WhatsApp = obligation de moyens** — « Le Prestataire n'est pas un opérateur WhatsApp. Le numéro et le compte restent ceux du Client. Le Prestataire ne peut être tenu responsable d'une suspension ou d'une restriction décidée par WhatsApp/Meta. » | On ne veut pas être responsables d'une plateforme qu'on ne contrôle pas. |
+| **d** | **Résiliation de l'abonnement** — « Sans engagement, résiliable par l'une ou l'autre partie avec **30 jours de préavis**. Les données et le nom de domaine restent au Client ; les fichiers du site lui sont remis sur demande. » | Sinon l'abonnement est un piège, et un piège ne se signe pas. |
+| **e** | **Données (laboratoires, cliniques)** — « Qui héberge, où, quelle sauvegarde, quelle restitution à la fin. » | **Obligatoire avant tout pilote labo** : on ne met pas des résultats d'analyses dans un serveur sans l'écrire. |
+
+**Et une liste d'exclusions — c'est l'ajout le plus rentable des six :**
+> **Non compris dans le tarif de création :** la rédaction de contenus supplémentaires, les photos
+> professionnelles, la publicité payante (Facebook/Google Ads), **toute garantie de position ou de classement
+> sur Google**, la boutique en ligne, les adresses e-mail professionnelles, l'assistant WhatsApp automatique
+> (IA), la traduction au-delà des langues prévues, et toute formation au-delà d'une heure.
+> **Inclus :** une séance de prise en main d'**une heure** à la livraison (sur place ou par appel vidéo).
+
+---
+
+## 3 · Les 30 000 FCFA/mois : mon avis honnête (et ce n'est pas une correction)
+
+Je proposais **10 000/mois**. King met **30 000**. Voici les faits, et mon avis **tranche** :
+
+**Ce que dit le marché** (relevé du 23/09) : l'hébergement local va de **3 900 à 25 000 FCFA/mois** (ECS
+Informatique) ; les logiciels de gestion camerounais coûtent **10 000 à 25 000/mois** — mais ils vendent un
+**logiciel entier**, pas un entretien ; les éditeurs de santé facturent **400 000 à 600 000 FCFA/an**
+(soit 33 000 à 50 000/mois) pour de la maintenance réelle.
+
+**Donc : 30 000/mois n'est pas absurde — mais c'est le haut du marché pour une page**, et **il faut que
+l'abonnement contienne du travail visible chaque mois**, sinon le client le coupe au troisième mois. Le
+mauvais calcul : 30 000 pour « renouvellement de domaine (~13 000/an, soit ~1 100/mois) + surveillance +
+quelques textes ». Le bon : 30 000 pour **2 h de modifications garanties + sauvegardes vérifiées + veille de
+disponibilité + réponse sous 24 h**, c'est-à-dire la §2⑤ ci-dessus.
+
+**Ma recommandation : deux paliers, pas un seul** — ce n'est pas une remise, c'est **un ajustement de
+périmètre**, exactement la règle de la maison :
+
+| Palier | Prix | Contenu | Pour qui, chez nous |
 |---|---|---|---|
-| **Le Cristallin** | **150 000** (50 % = 75 000) | 23/09 **09:46** | site bilingue, hébergement 1 an, nom de domaine, assistant WhatsApp |
-| **Univers Optique** | **100 000** (50/50) | 21/09, **jamais rebaissé** | une page, direction « grande photo » (v2) |
-| **UNI-LABO** | **150 000** (50 % = 75 000) | 23/09 **13:30** | site bilingue complet + formulaire de réservation WhatsApp, **grille tarifaire standard jointe** |
+| **Essentiel** | **12 000/mois** *(proposition)* | domaine + veille de disponibilité + **30 min** de modifications/mois | Une page simple **dont le client possède déjà le domaine et l'hébergement** → **Le Cristallin** (son domaine court jusqu'en 2027, son hébergement est chez LWS) et **Univers Optique** |
+| **Standard** | **30 000/mois** (celui de la grille) | **2 h** de modifications, sauvegardes vérifiées, veille, assistance 24 h, **rapport mensuel d'une page** | Un site qui produit des rendez-vous et du contenu à tenir → **UNI-LABO**, et plus tard un labo ou une clinique |
 
-Le fait le plus important de cette liste : **UNI-LABO a déjà le PDF de la grille « standard » entre les
-mains.** Le message du 13:30 et le PDF partent ensemble — **si les deux ne disent pas la même chose, c'est
-nous qui avons tort, pas le client**. Et comme je l'ai écrit au CRM, dans un écart **c'est la grille qui
-fait foi**.
-
-Donc la première question à trancher : **à quoi sert la seconde grille ?** Si `AMK_Grille_Tarifaire.pdf` est
-une version enrichie ou plus chère de la « standard », il faut décider **laquelle est publique**, laquelle
-reste interne, et laquelle a été envoyée à qui. Deux grilles publiques avec des prix différents, dans le même
-métier et la même ville, c'est la façon la plus rapide de perdre la confiance d'un client qui compare avec
-son voisin — et plusieurs de nos prospects se connaissent (l'ordre des opticiens, les labos de Douala).
-
-### ② **Un contrat sans ligne mensuelle ne règle pas notre problème n° 1.**
-
-C'est le sujet de `sales/ORDRE-DES-OFFRES-2026-09-23.md` : **on vend 150 000 une fois, puis on travaille
-gratuitement.** Un contrat de prestation classique — livrable contre paiement — **grave ce défaut dans le
-marbre**, et le rend opposable : chaque appel du client devient une obligation contractuelle non facturée.
-
-**Ce que je chercherai en premier dans les documents :** la présence (ou l'absence) d'une **ligne
-d'abonnement / d'entretien** — hébergement, sauvegardes vérifiées, 2 h de modifications par mois. Ma
-proposition reste **10 000 FCFA/mois** pour une page hébergée, **25 000 à 35 000/mois** pour une instance qui
-contient des données. Si elle n'y est pas, mon avis sera : **c'est la première chose à ajouter, avant même
-de parler des clauses**. (Et rappel : **jamais de remise** — on ajuste le périmètre.)
-
-### ③ **Un contrat standard est un progrès réel — s'il est court et lisible par le client.**
-
-Un opticien de Bépanda ne signe pas 6 pages de clauses. Ce qui gagne, c'est : **une page de périmètre, une
-ligne de prix, une date, et une phrase d'acompte.** Si les deux contrats font 4 pages de « conditions
-générales », ils seront signés sans être lus — c'est-à-dire qu'ils ne protégeront personne. **Le bon contrat
-est celui que le client peut expliquer à son comptable au téléphone.**
+**Le calcul, sans illusion :** trois clients au Standard = **90 000/mois**. Le scénario réaliste
+(2 Essentiel + 1 Standard) = **54 000/mois**, soit **648 000 FCFA/an sur des clients déjà gagnés**. Les deux
+chiffres valent mieux que zéro — mais le second est celui qui **tient dans le temps**.
 
 ---
 
-## 2 · La grille de contrôle — ce que je vérifierai, ligne par ligne
+## 4 · Le tableau des écarts — document ↔ **ce qui a réellement été envoyé**
 
-### A · Les documents de prix (les deux grilles)
+C'est la partie la plus importante : ces trois messages sont déjà partis, ils ne se réécrivent plus.
 
-| # | Ce qu'on vérifie | Pourquoi |
+| Ce qui a été envoyé | Quand | Ce que dit la grille / le contrat | Écart à traiter |
+|---|---|---|---|
+| **Le Cristallin** — « création du site web officiel (**bilingue, hébergement 1 an, nom de domaine et assistant WhatsApp**) », 150 000, acpte 75 000, solde à la livraison, mise en ligne **3 à 5 jours** | 23/09 **09:46** | La grille inclut : bilingue ✅, **domaine .com 1ʳᵉ année** ⚠️, mise en ligne ✅ — mais **l'assistant WhatsApp est explicitement EXCLU** (« distinct de l'assistant IA »), et **l'hébergement 1 an n'apparaît nulle part** | **Deux items promis, deux problèmes.** ① « assistant WhatsApp » ≠ formulaire ; ② « hébergement 1 an » + « nom de domaine » **n'ont pas d'objet** : il possède déjà les deux (domaine jusqu'au **13/06/2027**, hébergement LWS) |
+| **UNI-LABO** — « la création de votre site bilingue complet (**avec le formulaire de réservation WhatsApp direct**) », 150 000, 50/50, **+ la grille standard en PDF** | 23/09 **13:30** | Formulaire ✅. Le délai n'a pas été annoncé. **La grille entière est entre ses mains** : 30 000/mois, programme de recommandation, « propulsées par l'IA » | C'est **le client le plus avancé sur l'abonnement** — alors il faut que la grille soit juste **avant vendredi** |
+| **Univers Optique** — « **100 000 FCFA la page complète FR\|EN**, mise en ligne 3 à 5 jours, 50 000 pour commencer + 50 000 à la mise en ligne, rien dû avant accord » | 21/09 **18:08** | La grille dit **150 000** standard | 100 000 = **le prix d'un programme de recommandation sans recommandation**. À documenter comme **offre de lancement close**, jamais comme un tarif public |
+
+**Résolution concrète pour Le Cristallin** (à appliquer **quand le gel sera levé**, pas avant) : il a été
+promis deux choses sans objet. La règle est « jamais de remise, on ajuste le périmètre » — donc on **remplace
+par de la valeur équivalente**, sans toucher aux 150 000 :
+1. **Configuration WhatsApp Business** complète : message d'accueil, réponses rapides, catalogue des verres
+   et des services, horaires. *(C'est gratuit, ça se fait en 30 minutes, et **ça rend vraie** la phrase
+   « assistant WhatsApp » du message de 09:46 — sans API payante.)*
+2. **Renouvellement de son domaine en juin 2027 pris en charge** (~13 000 FCFA) — c'est l'équivalent honnête
+   de l'« hébergement 1 an » promis, qu'il n'a pas besoin d'acheter.
+3. **Fiche Google (Google Business Profile)** complétée et vérifiée — deux minutes, et c'est exactement
+   le « on vous trouve » qu'on lui vend.
+
+*Ce sont trois choses réelles, vérifiables, et qui ne coûtent pas un franc de prix : elles remplacent deux
+promesses sans objet. Rien de tout cela ne part chez lui avant son feu vert — il a dit « ne change rien sans
+mon ok ».*
+
+---
+
+## 5 · Deux contrats, deux grilles : il faut trancher
+
+**Ce que j'ai reçu** : les **deux contrats** (texte complet) et **une seule grille** (texte). La 4ᵉ pièce
+(`AMK_Grille_Tarifaire.pdf` vs `AMK_Grille_Tarifaire_Standard.pdf`) — **je ne sais pas ce qu'elle contient**.
+Si les deux grilles diffèrent, il y a **deux vérités** et c'est la garantie d'un conflit. Règle simple :
+**une seule grille publique**, avec **un numéro de version et une date imprimés** (« Grille Standard — v1 —
+23/09/2026 »). Le contrat dit « *tels que présentés dans la grille tarifaire jointe* » : **la grille est une
+annexe contractuelle**. Un vieux PDF dans le téléphone d'un client devient donc une pièce opposable.
+
+**Les deux contrats, et leurs deux problèmes croisés :**
+
+| | Contrat **Fondateur** | Contrat **Standard** |
 |---|---|---|
-| **A1** | Le prix **« page simple »** = **100 000** (celui d'Univers Optique) et le prix **« site bilingue complet »** = **150 000** (Cristallin, UNI-LABO) | ce sont les deux seuls prix déjà annoncés à des clients ; toute grille qui dit autre chose **crée une contradiction** |
-| **A2** | Ce qui est **inclus** dans chaque ligne : hébergement 1 an ? nom de domaine ? assistant WhatsApp ? formulaire de réservation ? nombre de pages ? nombre de retouches ? | nos trois annonces ne couvrent pas exactement le même périmètre ; la grille doit le dire noir sur blanc |
-| **A3** | L'acompte **50 %** et le solde **à la livraison** | écrit dans les trois messages envoyés |
-| **A4** | Le délai annoncé : **3 à 5 jours après l'acompte** | c'est ce qui est parti au Cristallin |
-| **A5** | Les **options** : page Facebook (**+50 000**, **jamais posée au Cristallin**), pages supplémentaires, bilingue EN, catalogue de tests, prise de rendez-vous | ce sont nos marges futures ; si elles ne sont pas dans la grille, elles n'existent pas au moment de la négociation |
-| **A6** | **La ligne d'entretien mensuel** (voir §1②) | le revenu récurrent, sinon rien |
-| **A7** | Les **mentions légales/fiscales** : NIU, TVA 19,25 % si on facture en règle, coordonnées Mobile Money | un client qui paie 150 000 dans le formel veut une facture ; l'informel s'en moque — **mais il faut trancher** |
-| **A8** | Aucune promesse invérifiable : pas de « conforme DGI » (facture électronique LF 2026, spécifications non publiées), pas de « garantie de leads », pas de « n° 1 » | notre loi interne : rien d'écrit qui ne soit vérifiable |
+| §2 Abonnement | « Abonnement mensuel (le cas échéant) » — **aucun tarif de référence** | **150 000 + 30 000/mois** ✅ |
+| §6 | **Témoignage en échange d'« un tarif préférentiel »** | Programme de recommandation |
 
-### B · Les contrats
-
-| # | La clause | Ce que je vérifie, précisément |
-|---|---|---|
-| **B1** | **Objet et périmètre** | ce qui est livré, **et ce qui ne l'est pas** (le plus important : sans liste d'exclusions, tout devient « inclus ») |
-| **B2** | **Prix, acompte, échéances** | 50 % au démarrage, 50 % à la livraison ; **que se passe-t-il si le client ne paie pas le solde** (le site reste-t-il en ligne ? qui garde l'accès ?) |
-| **B3** | **Délai** | à partir de quand il court (**réception de l'acompte ET des contenus du client** — sinon le retard du client nous est imputé) |
-| **B4** | **Contenus du client** | qui fournit les textes, les photos, les prix ; que se passe-t-il si le client ne les envoie jamais |
-| **B5** | **Modifications** | combien sont incluses, et à partir de quand elles sont facturées. **Nous avons un cas réel** : Le Cristallin demande « ne change rien sans mon ok » — le contrat doit dire que **toute modification passe par un accord écrit (WhatsApp)** |
-| **B6** | **Domaine et hébergement** | ⚠️ **le cas du Cristallin** : il **possède déjà** son domaine (jusqu'au **13/06/2027** chez LWS) et son hébergement — le contrat doit dire qu'**on ne touche pas au DNS**, sinon son adresse e-mail professionnelle tombe. Idem : à qui appartient le domaine si on l'achète pour lui |
-| **B7** | **Propriété** | le client devient propriétaire de **quoi**, à **quel moment** (à la livraison ? à la livraison **payée** ?) — et nous, on garde quoi (les outils, les gabarits, le code réutilisable) |
-| **B8** | **Données et confidentialité** | si on héberge des données (labo, clinique) : qui est responsable, où sont les sauvegardes, que se passe-t-il à la fin du contrat |
-| **B9** | **WhatsApp : nous ne sommes pas Meta** | obligation de **moyens**, pas de résultat ; un compte WhatsApp peut être suspendu sans que ce soit notre faute ; le client garde la propriété de son compte et de son numéro |
-| **B10** | **Résiliation** | par le client, par nous ; préavis ; ce qui se passe pour l'abonnement en cours |
-| **B11** | **Retard de paiement / impayé** | rappel, suspension du service, et le fait qu'on **ne travaille pas gratuitement indéfiniment** |
-| **B12** | **Clause de non-dénigrement inverse** : la mention « réalisé par AMK » en pied de page | c'est notre publicité ; il faut qu'elle soit **écrite**, pas supposée |
-| **B13** | **Droit applicable** | droit camerounais ; et quel tribunal / quel mode de règlement en cas de litige |
-
-### C · Les deux contrats ensemble
-
-| # | Question | Pourquoi ça compte |
-|---|---|---|
-| **C1** | **Lequel pour qui ?** | Le Cristallin et UNI-LABO = périmètre « bilingue complet » ; Univers Optique = page simple. Si « Standard » est le contrat du petit périmètre, **nos deux plus gros clients signent l'autre** — et il doit être prêt |
-| **C2** | **Les deux se contredisent-ils ?** | deux documents, c'est deux occasions d'écrire deux règles différentes sur l'acompte, le délai ou la propriété. **Une seule règle doit exister par sujet** |
-| **C3** | **Lequel a été envoyé à UNI-LABO ?** | la capture du 23/09 13:30 dit « **la grille tarifaire standard** (PDF) ». Donc, à ce jour, **c'est `AMK_Grille_Tarifaire_Standard.pdf` le document de référence** — tout écart entre les deux grilles se tranche en sa faveur tant qu'il n'a pas été corrigé auprès du client |
+**⚠️ Le piège du contrat Fondateur :** il demande un témoignage « **en échange d'un tarif préférentiel** ».
+Or si on l'envoie au **Cristallin**, qui a payé **150 000 = le tarif standard**, la phrase est **fausse** : il
+n'a reçu aucun tarif préférentiel. Demander un témoignage contre une remise qu'il n'a pas eue, c'est le
+meilleur moyen de le refroidir à la livraison. **Deux solutions honnêtes :**
+① garder le contrat Fondateur **pour Univers Optique**, qui a réellement payé moins cher (100 000) ;
+② pour Le Cristallin, utiliser le **contrat Standard** et demander le témoignage **librement, en plus des
+trois éléments du §4** — on demande, on n'achète pas, et **on n'invente jamais un témoignage**.
 
 ---
 
-## 3 · Ce que j'ajouterais de toute façon, même si tout le reste est bon
+## 6 · Ce que je ferais, concrètement, avant vendredi
 
-1. **Une ligne d'abonnement, dans la grille ET dans le contrat** — 10 000 FCFA/mois (page) ou 25 000-35 000
-   (instance avec données) : hébergement, **sauvegardes vérifiées**, **2 h de modifications par mois**.
-   Sans ça, on reste dans le piège « vendu une fois, entretenu pour toujours ».
-2. **Une phrase sur les modifications** : *« toute modification demandée après la livraison est faite sur
-   accord écrit (WhatsApp) ; au-delà de 2 h dans le mois, elle est facturée au tarif de la grille ».* C'est
-   exactement ce que Le Cristallin a demandé de son côté (« ne change rien sans mon ok ») — le contrat le dit
-   dans les deux sens.
-3. **Une phrase sur le domaine** : *« le nom de domaine reste la propriété du client ; s'il en possède déjà
-   un, nous n'intervenons pas sur le DNS sans son accord écrit ».* C'est du vécu, pas de la théorie : son
-   adresse e-mail professionnelle en dépend.
-4. **Un devis à notre marque (offre D)** — aujourd'hui nos devis sont du texte WhatsApp. Une grille PDF est
-   un début, mais **le contrat doit arriver accompagné d'un devis nominatif** : c'est lui que le client
-   montre à son comptable, et c'est lui qui rend l'abonnement crédible.
+1. **Corriger l'en-tête et le programme de recommandation** (§2① et §2②) — 20 minutes, et la grille devient
+   présentable à un client qui l'a déjà dans son téléphone : **UNI-LABO**.
+2. **Reprendre les cinq clauses manquantes** (§2⑥) et les **exclusions** — c'est ce qui fera la différence
+   dans six mois, pas dans six jours.
+3. **Ajouter les deux paliers d'abonnement** (§3) : Essentiel 12 000 / Standard 30 000.
+4. **Remplir la « Description du projet »** par client, noir sur blanc — c'est le champ le plus important du
+   contrat, et il est vide aujourd'hui. Le piège qu'il ferme : la grille dit « Site web bilingue » **sans
+   dire combien de pages**. Nos trois projets sont, en réalité, **une page longue** — si ce n'est pas écrit,
+   un client pourra réclamer dix pages.
+5. **Vendredi, dans cet ordre** : Univers **10 h** (contrat Fondateur à 100 000, offre de lancement close) →
+   UNI-LABO **14 h 30** (contrat Standard, 150 000, abonnement à choisir, périmètre écrit). **Apporter les
+   contrats imprimés en deux exemplaires**, et **la grille corrigée**.
+6. **Le Cristallin : rien, pour l'instant.** Le gel s'applique — mais il faut noter que **le contrat est
+   justement l'instrument qui lève le gel** (c'est l'acompte qui débloque). Donc : prêt, dans le dossier,
+   **en attente de l'accord de King**.
 
----
-
-## 4 · Une réserve que je dois dire clairement
-
-**Je ne suis pas juriste.** Ce document est une **liste de contrôle commerciale**, pas un avis juridique.
-Le jour où ces contrats doivent servir **en série** (et pas seulement pour trois clients connus), **une
-relecture par un juriste camerounais vaut son prix** : droit OHADA, clause pénale, recouvrement d'impayé,
-responsabilité en cas de perte de données pour un laboratoire. C'est un coût réel — et c'est un coût qu'on
-peut **mettre dans le prix d'une mission** plutôt que de le payer en litige.
+**Et une question qui reste ouverte, mais qui compte de plus en plus :** **AMK facture-t-elle en règle
+(NIU, TVA 19,25 %) ?** Un laboratoire ou une clinique demandera une **facture** — pas un reçu WhatsApp. Si
+la réponse est non, ce n'est pas bloquant aujourd'hui : ça le deviendra au premier client qui a un service
+comptable.
 
 ---
 
-## 5 · Ce que je fais dès que j'ai le texte
+## 7 · Ce que je ne peux pas juger, et qu'il faut faire relire
 
-1. **Lecture ligne par ligne** des quatre documents.
-2. **Tableau des écarts** : ce que dit chaque document ↔ ce qui a réellement été envoyé aux trois clients
-   (je peux le prouver, tout est au CRM et au journal).
-3. **Corrections proposées**, par ordre de gravité — en commençant par tout ce qui peut **contredire un
-   message déjà parti**.
-4. **La grille de prix unifiée** (une seule page : périmètre, prix, options, abonnement) — parce que c'est
-   elle qui sert en rendez-vous, pas le contrat.
-
-**Et une question directe, en attendant :** ces documents, **tu les as faits avec qui** — un juriste, un
-autre outil, ou toi ? Selon la réponse, ma relecture ne porte pas sur la même chose (un document rédigé par
-un juriste se relit sur les **faits commerciaux** ; un document fait maison se relit **aussi** sur la
-solidité des clauses).
+**Je ne suis pas juriste.** Cette revue est **commerciale** : périmètre, prix, écarts avec ce qui a été
+promis, clauses qui manquent à l'expérience. Pour les clauses elles-mêmes — clause pénale, recouvrement
+d'impayé, responsabilité en cas de perte de données dans un laboratoire — **une relecture par un juriste
+camerounais vaut son prix**, et ce coût se met **dans le prix d'une mission**, pas en litige.

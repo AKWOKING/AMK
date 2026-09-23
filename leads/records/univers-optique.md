@@ -40,7 +40,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 91 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 96 ligne(s).*
 
 `L51` · | **ven 18/09 20:02** | **Clinique de L'université** (Bassa, 694 36 02 03) | msg 1 — sans maquette | Envoyé | **Non** |
 `L113` · | 20:02 | Cabinet Dentaire Emmanuel · Clinique de L'université · MEDI LABO |
@@ -133,6 +133,11 @@
 `L2337` · Cristallin, Univers Optique, UNI-LABO, et tous les aperçus de prospects qualifiés ou vivants (Skye, YAKS,
 `L2340` · publication redevient nécessaire ; et **toutes les photos source du Cristallin et d'Univers** — ce sont les
 `L2360` · Messoua**. Les quatre échéances du CRM disent maintenant le gel (Le Cristallin, Univers) et l'attente
+`L2396` · 100 000** avec une condition invérifiable, contredit la règle « jamais de remise » et percute Univers Optique
+`L2398` · le nouveau client », et les 100 000 d'Univers expliqués comme **offre de lancement close**.
+`L2414` · rien sans mon ok ». · UNI-LABO a le formulaire ✅ et **la grille entière entre les mains**. · Univers Optique
+`L2422` · les clients qui possèdent déjà domaine et hébergement (Cristallin, Univers), **Standard 30 000/mois** (2 h,
+`L2426` · **Vendredi, dans l'ordre :** Univers 10 h → contrat Fondateur 100 000 (offre de lancement close) ;
 
 ---
 

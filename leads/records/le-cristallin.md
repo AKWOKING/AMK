@@ -39,7 +39,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 92 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 96 ligne(s).*
 
 `L837` · - `Le Cristallin` 17:51 · `Univers Optique` 17:50 · `Disc Optique Médicale` 17:48 · `Tchaya Optique` 17:47 :
 `L881` · ## Lundi 21/09/2026 — 18:20 → 19:15 · « Ok » de Le Cristallin : le premier aperçu demandé, construit et branché sur le CRM
@@ -133,6 +133,10 @@
 `L2359` · la feuille du vendredi mise à jour, et le nom du client du Cristallin enfin lu dans le fil : **Monsieur
 `L2360` · Messoua**. Les quatre échéances du CRM disent maintenant le gel (Le Cristallin, Univers) et l'attente
 `L2363` · **Chronologie de la journée, tenue à jour :** 10 h le prix part chez Le Cristallin · 13 h 30 King propose
+`L2404` · **domaine et DNS** (le cas du Cristallin : son e-mail pro vit sur son domaine jusqu'au 13/06/2027),
+`L2408` · **Le tableau des écarts, contre ce qui est réellement parti :** Le Cristallin s'est vu promettre « hébergement
+`L2422` · les clients qui possèdent déjà domaine et hébergement (Cristallin, Univers), **Standard 30 000/mois** (2 h,
+`L2428` · deux exemplaires et grille corrigée**. Le Cristallin reste gelé — mais le contrat est justement l'instrument
 
 ---
 
