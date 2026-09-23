@@ -8,3 +8,21 @@ tools/shots/out/
 
 # video compositor working files
 tools/record/node_modules/
+
+# ── MÉDIAS LOURDS (règle du 23/09/2026, demande de King : « retire les vidéos précédentes,
+#    elles rendent le repo lourd inutilement »). Le dépôt n'est pas un disque dur : les vidéos
+#    finies et leurs sources audio vivent hors du dépôt (King les garde), et seule la vidéo en
+#    cours d'usage reste suivie. 71 Mo retirés le 23/09 ; ils sont récupérables par git si besoin.
+*.mp4
+*.webm
+*.mov
+*.mkv
+*.mp3
+*.wav
+*.m4a
+*.flac
+# la vidéo 06 est déjà suivie et doit le rester (exception explicite, pour la lisibilité)
+!content/videos/v06-facebook-no-booking/**
+# archives d'export : produites par un script, jamais versionnées
+/amk-site*.zip
+/site/*.zip

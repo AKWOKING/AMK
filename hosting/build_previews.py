@@ -16,16 +16,10 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "hosting" / "previews"
 
 SLUGS = {
-    "oracare": ("demos/concept-oracare-v3.html", "OraCare Dental Clinic, Buea — concept"),
     "skye":    ("demos/concept-skye-v1.html",    "Cabinet Dentaire The Skye, Douala — concept"),
     "yaks":    ("demos/concept-yaks-v1.html",    "Cabinet Dentaire YAKS, Logbessou Douala — concept"),
-    "sasse":   ("demos/sjc-sasse-v2.html",       "St. Joseph's College, Sasse — concept"),
-    "comobil": ("demos/concept-comobil-v1.html", "COMOBIL Les Lauréats, Douala — concept"),
-    "sah":     ("demos/concept-sahiscol-v1.html","Saint Ann's High School, Limbe — concept"),
     "afriquelabo": ("demos/concept-afriquelabo-v1.html", "Afrique Labo SARL, Bessengue Douala — concept"),
     "opticien": ("demos/concept-opticien-lopticien.html", "Votre Opticien — concept pour L'Opticien, Bali Douala"),
-    "labethanie": ("demos/concept-labethanie-v1.html", "Clinique La Béthanie, Bonabéri Douala — concept"),
-    "jempo": ("demos/concept-jempo-v1.html", "J&E Memorial Polyclinic (JEMPO), Deido Douala — concept"),
     # 21/09 soir — LE CRISTALLIN : le premier prospect qui a dit « Ok » à l'aperçu (21/09 17:53).
     # Attention : c'est une REFONTE d'un site qui existe déjà (lecristallinoptique.com), pas un
     # concept « introuvable ». Privé, noindex, partagé un-à-un uniquement (aucun droit public sur

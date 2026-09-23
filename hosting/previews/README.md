@@ -1,5 +1,29 @@
 # AMK — Client preview hosting (King self-hosts)
 
+## ⛔ GEL — Le Cristallin et Univers Optique (décision de King, 23/09/2026 au soir)
+
+> **« Pour lecristallin et univers on ne touche plus rien jusqu'à ce que les prospects deviennent des
+> clients payants. »**
+
+Ce que ça veut dire concrètement dans ce dossier :
+
+1. **Aucune modification** de `demos/concept-le-cristallin-v1.html`, `demos/univers-optique-site-v2.html`,
+   des fichiers `concept-univers-optique-v*.html` et de leurs builders. Pas d'ajustement, pas de « petite
+   retouche », pas de rebuild.
+2. **Ne JAMAIS redéployer le Cristallin depuis ce dépôt.** La page en ligne
+   (`lecristallin-concept.vercel.app`, projet Vercel de King) est **en avance sur notre copie** : elle porte
+   déjà le slogan dans la barre, les textes d'origine sur les verres et l'adresse Ancien COMECI / ECOTEX,
+   et ses liens WhatsApp sont en `wa.me/237699905577` (corrects). Notre copie locale **ne les a pas** :
+   un déploiement depuis ce dépôt **écraserait le travail que le client regarde**.
+   *Vérifié le 23/09 par lecture de la page en ligne — notre alerte « bouton mort » d'hier concernait
+   notre copie locale, pas la page servie.*
+3. La règle du client complète la nôtre, mot pour mot (21:58, 22/09) : « Pour le reste ne change encore rien
+   puisque j'ai certains modifications que tu as apporté sans mon ok. »
+4. **Ce qui reste permis** : les marquer comme clients, encaisser, répondre à leurs messages. **Rien
+   d'autre** tant qu'ils n'ont pas payé.
+5. Quand ils paient, le dossier de reprise est `clients/<slug>/build-notes.md` — pas ce dossier-ci.
+
+
 This folder is a **drag-and-drop deploy bundle**. Every concept is a single self-contained `index.html` (base64 images, no local assets), so any static host works.
 
 ## URLs after deploy (example project name: `amk-previews`)
@@ -88,3 +112,11 @@ Go to app.netlify.com/drop and drag the **`hosting/previews`** folder. Subfolder
 - HTTPS and mobile viewport already work on all these hosts; the links open full-screen on a phone, which is the whole pitch.
 
 — Akwo King / AMK – Web Development & Digital Solutions
+
+## Nettoyage du 23/09/2026
+
+Les aperçus des prospects **parqués / morts** ont été retirés du dépôt (et de la liste de génération) :
+JEMPO, La Béthanie, SJC Sasse, COMOBIL, SAHISCOL, la démo Collège La Retraite, OraCare v1 et la copie
+bundle `/oracare/` (le projet Vercel d'OraCare v3 reste en ligne, indépendant), L'Opticien v1.
+Les **démos publiables sans identité client** (`/demo/`, `/mboacare-demo/`) sont **gardées** : ce sont les
+seules pièces qu'on peut montrer sans le nom d'un client. Tout est récupérable depuis l'historique git.
