@@ -2146,3 +2146,56 @@ revenu à sa version sans les tables du 22/09 et 23/09, `HEAD` au commit de base
 fois pour toutes (sauver l'arbre modifié → `git fetch` → `reset --hard FETCH_HEAD` → reposer → revérifier par
 marqueurs → réinstaller `openpyxl` → reconstruire). **Aucun travail perdu** : les deux documents et l'édition du
 business case étaient hors de git, donc hors de portée du rembobinage.
+
+
+## 2026-09-23 · 13:30 → 14:20 · LES NEUF DÉCLENCHEURS — la pièce qui manquait : les niveaux disaient POURQUOI, celle-ci dit QUOI ÉCRIRE
+
+**Ce que King a envoyé** : « Words That SELL (Psychology-Backed) » (Joanna Wiebe, 12/03/2026, 14 min 11, lue en
+entier). **Neuf déclencheurs rangés par étage de l'entonnoir** — ① cadrage, ② correspondance d'identité,
+③ fluidité (haut) · ④ mécanisme unique, ⑤ typiquement atypique, ⑥ ennuyeux par dessein (milieu) · ⑦ cadrage du
+choix, ⑧ compromis transparents, ⑨ une grosse preuve une petite bouchée (bas).
+
+**Ce que ça change chez nous, et d'abord la faute qu'on n'avait pas nommée** : le déclencheur ② dit qu'un
+message qui laisse entendre que **le client se trompe** le fait se défendre — « on achète quand on se sent
+compris, pas quand on se sent attaqué ». **C'est exactement la pente que prennent nos messages quand la cible
+est lente à répondre** (« vous perdez des clients », « votre page ne sert à rien ») — et elle a déjà coûté un
+message tué (INSES). **Table avant/après écrite** : « Votre page Facebook est vivante — c'est la partie qui
+manque, après » au lieu de « votre page ne sert à rien ».
+
+**Le mécanisme unique était devant nous depuis le 21/09** : **« L'aperçu d'abord — la page est construite avant
+qu'un franc soit discuté. »** Test de la vidéo (« notre solution marche grâce à [mécanisme], ce qui donne
+[résultat précis] ») : **ça passe en dix mots**, et c'est prouvable — le site d'UNI-LABO **est en ligne**,
+l'aperçu d'Univers Optique a fait écrire « je suis vraiment intéressé », le Cristallin a validé son prix sur un
+site qu'il n'a pas payé.
+
+**Nos trois phrases plates** (déclencheur ⑥) pour nos trois vraies objections : « **Je ne demande rien avant
+votre accord** » · « **Le site est à vous, une fois en ligne je ne le touche plus** » · « **Vous n'avez rien à
+faire : je construis, vous regardez** ». Elles se disent **sans emphase** — c'est le ton qui tue la peur, pas
+le contenu.
+
+**Les compromis transparents** (⑧) sont listés et **attendront l'accord de King** avant d'être dits : « je
+construis en 3 à 5 jours, mais je n'ai pas d'équipe — c'est moi » · « vous devrez valider six points et envoyer
+deux photos » · « **je ne promets aucune place sur Google** » · « le suivi n'est pas inclus ». Ils se placent
+**juste avant la clôture**, jamais en ouverture.
+
+**La preuve unique** (⑨) : une seule, massive, vérifiable — « **UNI-LABO : “Peut-on prendre un rendez-vous
+vendredi ?” — le site est en ligne, et la réunion est vendredi.** » Jamais deux preuves : le reste est du bruit.
+
+**Et une contradiction à moi, corrigée** : j'avais écrit « une seule demande par message » **et** la réponse à
+« c'est cher » en trois options. **Les deux ne tiennent pas ensemble.** Règle tranchée et écrite : **une seule
+QUESTION ouverte par message** (un « oui » suffit) — **ou** un **choix parmi trois** quand le prospect a déjà
+dit oui au principe, **jamais les deux**. Et **jamais deux options** : deux, c'est un ultimatum déguisé ;
+quatre, c'est la paralysie.
+
+**Intégration faite, pas seulement apprise** : le gabarit du message 1 est réécrit (catégorie précise en
+première ligne, reflet au lieu d'attaque, phrases courtes, et le mécanisme « je la construis d'abord, vous
+décidez après » qui remplace « aperçu » — un mot que le client n'a jamais prononcé). Le document
+`sales/DECLINAISON-9-DECLENCHEURS-2026-09-23.md` porte les neuf déclencheurs déclinés AMK, la table
+attaque/reflet, le traducteur de péages, les trois options (réservées aux deux cas où elles existent vraiment),
+la liste des compromis et la preuve unique. `MESSAGES-2026-09-23-PERSUASION.md` reçoit un §8 avec les trois
+phrases plates et les compromis, et sa note de correction.
+
+**Constat de méthode, écrit pour nous** : ces trois vidéos (systèmes de vente, persuasion, déclencheurs) se
+recouvrent — la première donne l'**ossature** (six pièces), la deuxième le **pourquoi** (cinq niveaux), la
+troisième le **quoi écrire** (neuf déclencheurs, rangés par étage). C'est le troisième qui sert le plus vite,
+parce qu'il produit des phrases, pas des principes.

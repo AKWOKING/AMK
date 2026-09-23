@@ -18,20 +18,29 @@ WhatsApp affiche avant « Lire la suite ».)*
 démentable en une seconde.)*
 
 ```
-Un patient qui cherche [MÉTIER] à [QUARTIER] tombe sur [LE FAIT VÉRIFIÉ — ce qu'il voit vraiment] :
-pas de quoi écrire, pas de quoi réserver, [LE DÉTAIL QUI COÛTE — ex. « deux titres restés du modèle »,
-« une adresse de contact qui ne reçoit rien »].
+Pour un [MÉTIER] à [QUARTIER], un patient qui cherche sur son téléphone tombe sur [LE FAIT VÉRIFIÉ] :
+pas de quoi écrire, pas de quoi réserver.
 
 Vos [CE QU'IL A DÉJÀ — ex. montures, examens, horaires] y sont déjà : il ne manque que le moment
 où le patient peut vous joindre — un bouton qui ouvre WhatsApp avec sa demande déjà écrite.
 
-Je vous en prépare l'aperçu, sans frais : vous le regardez, vous décidez après.
+Je la construis d'abord, vous la regardez sur votre téléphone, vous décidez après.
 Je vous l'envoie ?
 ```
+
+**Les neuf déclencheurs qui travaillent ici** (déclinaison complète : `DECLINAISON-9-DECLENCHEURS-2026-09-23.md`) :
+① **la catégorie est nommée** (« un opticien à Bépanda » — le cerveau range, ou il passe) · ② **on le reflète**
+(« vos montures y sont déjà » — jamais « il vous manque tout ») · ③ **phrases courtes, zéro jargon, test à voix
+haute** · ④ **le mécanisme est nommé** (« je la construis d'abord, vous décidez après ») · ⑤ **aucun résultat
+miraculeux** (on ne promet jamais de clients, seulement une page) · ⑥ **une phrase plate tue la peur du moment**
+(« vous ne payez rien avant votre accord ») · ⑨ **une seule preuve** (UNI-LABO, qui est en ligne).
 
 **Pourquoi c'est écrit comme ça :** ① les six premiers mots = **son patient**, pas nous · ② une **perte**
 (« pas de quoi réserver »), jamais un gain abstrait · ③ **ses mots** : patient, quartier, WhatsApp ·
 ④ **un seul péage** : une question à laquelle un « oui » suffit · ⑤ le héros, c'est lui.
+*(Et une correction apportée le 23/09 avec la vidéo sur les neuf déclencheurs : le corps du message ne dit plus
+« je vous prépare l'aperçu » mais **« je la construis d'abord, vous décidez après »** — le mécanisme unique,
+dit en dix mots, au lieu d'un mot que le client n'a jamais prononcé.)*
 
 **Interdits sur ce message :** aucun prix · jamais « vous n'existez pas » · aucun nom d'un autre opticien ·
 une seule question · ne pas joindre de fichier au premier message (l'image, c'est le tour suivant).
@@ -76,6 +85,11 @@ Trois façons de le faire, à vous de choisir :
 
 Dans les trois cas : la moitié pour commencer, la moitié à la mise en ligne.
 ```
+
+⚠️ **Règle tranchée (elle corrige une contradiction entre deux de mes documents d'hier)** : **une seule
+QUESTION ouverte par message** (un « oui » suffit) — **ou** un **choix parmi trois**, quand le prospect a déjà
+dit oui au principe. **Jamais les deux dans le même message.** Et **jamais deux options** : deux, c'est un
+ultimatum déguisé ; quatre, c'est la paralysie.
 
 **Ce que fait ce message, niveau par niveau :** le **milieu** est l'option qu'on veut vendre (Goldilocks) ·
 l'écart 150 → 200 est plus facile à accepter que 0 → 200 · le prix le plus élevé **en bas** donne à 200 l'air
@@ -140,3 +154,22 @@ et vous me dites ce qui est faux. On ne publie rien avant que vous ayez dit oui.
   mensonge le plus rentable à court terme est celui qui coûte la campagne entière.
 - **Aucun « je vous relance une dernière fois puis j'arrête »** suivi d'une relance — la règle tient : quand on
   l'écrit, on s'y tient.
+
+---
+
+## 8 · Les trois phrases plates (déclencheur ⑥) — à dire sans emphase, presque ennuyeusement
+
+Ce sont les trois objections qu'on entend vraiment. **Elles existent qu'on les dise ou non** ; les dire
+**sans drame** est ce qui les enlève.
+
+| Ce qu'il pense | Ce qu'on dit, platement |
+|---|---|
+| « Encore un qui va disparaître avec mon argent » | **« Je ne demande rien avant votre accord. »** |
+| « Il va vouloir changer mon site tous les deux mois » | **« Le site est à vous, une fois en ligne je ne le touche plus. »** |
+| « Je n'ai pas le temps de m'occuper de ça » | **« Vous n'avez rien à faire : je construis, vous regardez. »** |
+
+**Et les compromis qu'on assume nous-mêmes** (déclencheur ⑧ — **à faire valider par King**, et **à dire juste
+avant la clôture, jamais en ouverture**) : « je construis en 3 à 5 jours, mais je n'ai pas d'équipe — c'est moi,
+et en déplacement ça prend un jour de plus » · « vous devrez quand même valider six points et envoyer deux
+photos » · « **je ne promets aucune place sur Google** » · « le suivi n'est pas inclus, c'est une ligne séparée
+et vous pouvez l'arrêter ».
