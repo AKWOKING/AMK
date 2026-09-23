@@ -134,20 +134,54 @@ le chiffre de rentabilité).
 
 ---
 
-## Ce qui doit être tranché **avant vendredi** (deux décisions de King)
+## Le formulaire de réservation — **construit le 23/09 au soir**, et comment le montrer en séance
 
-**① Le formulaire de réservation existe-t-il, oui ou non ?**
-La page en ligne (relue le 23/09 au soir) est bilingue et complète — héros, 4 étapes, préparation par onglets,
-4 familles d'analyses, résultats, FAQ — mais elle **n'a aucun formulaire** : ses 12 liens WhatsApp sont des
-questions (« Demander le tarif »), pas un formulaire où le patient laisse ses informations. Or le message de
-13:30 promet **« la création de votre site bilingue complet (avec le formulaire de réservation WhatsApp
-direct) »** à 150 000 FCFA. Trois issues, dans l'ordre de solidité :
-**(a)** on le construit **avant vendredi** et on le montre en séance — c'est la démonstration qui ferme ;
-**(b)** on le présente comme **la première livraison après l'acompte** (3 à 5 jours) ;
-**(c)** on livre la page telle quelle en disant que le formulaire est dedans — **à ne pas faire**, ce serait
-vendre ce qui n'existe pas.
-*Je peux le construire : c'est l'ajout d'une section + une trentaine de lignes de JavaScript, sur un fichier
-que nous maîtrisons, et le portique de page le vérifie avant toute mise en ligne.*
+Il n'existait pas (voir la décision ① ci-dessous) : il est fait. Section **« Prendre rendez-vous »**, insérée
+entre *Nos analyses* et *Résultats*, dans les deux langues comme le reste de la page :
+
+- **18 cases d'analyses** — les 4 familles publiées (biochimie, hématologie, sérologie & immunologie,
+  hormonologie), plus « Autre analyse » et « J'ai une ordonnance — conseillez-moi » ;
+- **le nom**, **le moment souhaité** (matin 7h–12h / après-midi 12h–16h / samedi matin 7h–13h / peu importe),
+  **une précision facultative** (« pour ma mère, à jeun depuis hier soir ») ;
+- **un bouton WhatsApp qui s'allume** seulement quand une analyse est cochée, le nom écrit et le moment
+  choisi — et le message part **déjà rédigé** vers `wa.me/237696139819` :
+  `Bonjour UNI-LABO, je souhaite prendre rendez-vous. / Nom : … / Analyses : … / Moment souhaité : …` ;
+- **rien n'est enregistré sur le site** : pas de serveur, pas de base, pas de compte. C'est le téléphone du
+  patient qui envoie le message depuis SON WhatsApp. C'est exactement ce que la promesse de 13:30 décrit,
+  et c'est aussi ce qu'il faut dire si on nous demande « où vont les données ? » ;
+- à droite du formulaire, un rappel utile : adresse, horaires, quoi apporter, et **le numéro à appeler**.
+
+**Fichiers :** `demos/concept-unilabo-v1.html` (canonique, 65 Ko) et `hosting/previews/unilabo/index.html`
+(**la copie hébergée**, celle qui doit partir en ligne).
+
+### ⛔ Une seule action de King avant vendredi : **redéployer la page**
+
+`uni-labo.vercel.app` est en ligne et **ne changera pas toute seule** : la page qui s'affiche aujourd'hui est
+celle du 18/09, sans formulaire. Le dossier à redéployer est **`hosting/previews/unilabo/`** (racine du projet
+Vercel, avec `og.jpg`) — glisser-déposer sur vercel.com, aucun outil en ligne de commande nécessaire.
+**Puis ouvrir `uni-labo.vercel.app` sur son propre téléphone** et vérifier de ses yeux qu'on coche, qu'on
+écrit, que le bouton s'allume. C'est la démonstration de la séance — pas une capture d'écran.
+
+**Si le redéploiement n'est pas fait vendredi**, on dit la vérité et elle est bonne : *« le formulaire est
+prêt, je vous le montre dès que la page est republiée — c'est la première livraison, avec l'acompte. »*
+Ce qu'on ne fait pas : montrer l'ancienne page en disant que le formulaire est dedans.
+
+### Un détail relevé au passage, à retenir pour le jour de la livraison
+
+La page porte `noindex,nofollow` : c'est **voulu** aujourd'hui (elle n'est pas publique), mais **il faudra le
+retirer le jour où c'est LEUR site**, sinon il n'apparaîtra jamais dans Google — et la « fiche Google » qu'on
+leur vend ne sert à rien sans ça. À faire au moment de la mise en ligne sur leur domaine, pas avant.
+
+---
+
+## Ce qui doit être tranché **avant vendredi** (une décision de King)
+
+**① Le formulaire de réservation — RÉGLÉ : il est construit** (section ci-dessus). Il n'existait pas dans
+la page en ligne : ses 12 liens WhatsApp étaient des questions (« Demander le tarif »), pas un formulaire où
+le patient laisse ses informations — alors que le message de 13:30 promet **« la création de votre site
+bilingue complet (avec le formulaire de réservation WhatsApp direct) »** à 150 000 FCFA. Il est maintenant
+dans les deux fichiers, testé dans les deux langues, **sans aucune donnée stockée**. Reste la seule action
+mécanique : **redéployer `hosting/previews/unilabo/`** (voir ci-dessus).
 
 **② Quel abonnement on annonce en séance ?** Le Standard **30 000/mois** figure dans la grille qu'ils ont
 reçue. Le palier Essentiel **12 000/mois** (pour un client qui garde son domaine et son hébergement) est ma

@@ -224,6 +224,40 @@ footer{background:var(--ink);color:#fff;padding:44px 0 0;margin-top:10px}
 @media (min-width:760px){ .sticky-wa{display:none} }
 body{padding-bottom:84px}
 @media (min-width:760px){ body{padding-bottom:0} }
+
+/* ── FORMULAIRE DE RÉSERVATION (ajouté le 23/09 au soir) ─────────────────────────
+   Promis à 150 000 dans le message de 13:30 (« formulaire de réservation WhatsApp
+   direct ») et absent de la page jusqu'ici. Principe : tout se passe dans le
+   navigateur du patient — aucune donnée n'est envoyée ni stockée ici, le message
+   part de SON WhatsApp vers le laboratoire. */
+.rdv{margin-top:2px}
+.rdv-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.rdv h3{margin:0 0 4px;font-size:1.02rem}
+.rdv .grp{margin-top:16px}
+.rdv .grp>p.mono{color:var(--mute);margin:0 0 8px}
+.rdv .fams{display:grid;gap:10px}
+.rdv .fams>div{border:1px solid var(--line);border-radius:12px;padding:11px 12px}
+.rdv .fams b{display:block;font-size:.86rem;margin-bottom:6px}
+.rdv label.chk{display:flex;gap:9px;align-items:flex-start;font-size:.9rem;line-height:1.4;padding:3px 0;cursor:pointer}
+.rdv input[type=checkbox],.rdv input[type=radio]{flex:0 0 auto;width:17px;height:17px;margin:2px 0 0;accent-color:var(--signal)}
+.rdv input[type=text]{width:100%;font:inherit;padding:12px 13px;border:1.5px solid var(--line);
+  border-radius:12px;background:#fff;color:var(--ink)}
+.rdv input[type=text]:focus{outline:none;border-color:var(--signal);box-shadow:0 0 0 3px var(--tint)}
+.rdv .mom{display:grid;gap:2px;grid-template-columns:1fr 1fr}
+.rdv button.btn{border:0;cursor:pointer;font:inherit;margin-top:18px}
+.rdv button.btn[aria-disabled=true]{opacity:.55;cursor:not-allowed;filter:grayscale(.3)}
+.rdv .hint{font-size:.85rem;color:var(--mute);margin:10px 0 0}
+.rdv .grp.is-err>p.mono,.rdv .fams>div.is-err b{color:#B42318}
+.rdv .fams>div.is-err{border-color:#B42318}
+.rdv input[aria-invalid=true]{outline:2px solid #B42318;outline-offset:2px}
+.rdv-said{margin:12px 0 0;font-size:.88rem;color:var(--wa);font-weight:600}
+.rdv-side{background:var(--ink);color:#fff;border-radius:var(--r);padding:22px}
+.rdv-side .mono{color:var(--mute-on-ink)}
+.rdv-side p{color:#E7E9EF}
+.rdv-side a{color:#fff}
+.rdv-side ul{margin:12px 0 0;padding-left:18px;color:#E7E9EF;font-size:.92rem}
+.rdv-side li{margin:4px 0}
+@media (max-width:759px){.rdv .mom{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -246,7 +280,8 @@ body{padding-bottom:84px}
   <nav>
     <a href="#avant"><span class="fr-only">Avant de venir</span><span class="en-only">Before you come</span></a>
     <a href="#analyses"><span class="fr-only">Nos analyses</span><span class="en-only">Our tests</span></a>
-    <a href="#resultats"><span class="fr-only">Résultats</span><span class="en-only">Results</span></a>
+    <a href="#rendez-vous"><span class="fr-only">Prendre rendez-vous</span><span class="en-only">Book a visit</span></a>
+      <a href="#resultats"><span class="fr-only">Résultats</span><span class="en-only">Results</span></a>
     <a href="#acces"><span class="fr-only">Nous trouver</span><span class="en-only">Find us</span></a>
   </nav>
   <div class="lang" role="group" aria-label="Langue / Language">
@@ -392,6 +427,100 @@ body{padding-bottom:84px}
     </div>
   </div>
   <p class="note" style="margin-top:16px"><span class="fr-only">Votre analyse n'est pas dans cette liste ? Elle l'est probablement quand même : envoyez-nous l'ordonnance en photo, nous vous répondons avec le tarif et la préparation.</span><span class="en-only">Not seeing your test? It is probably still here: send us a photo of the request and we reply with the price and the preparation.</span></p>
+</div></section>
+
+<section id="rendez-vous" class="hair"><div class="wrap">
+  <div class="sec-head">
+    <p class="mono" style="color:var(--signal)"><span class="fr-only">Prendre rendez-vous</span><span class="en-only">Book a visit</span></p>
+    <h2><span class="fr-only">Dites-nous ce que vous venez chercher.</span><span class="en-only">Tell us what you are coming for.</span></h2>
+    <p class="lead"><span class="fr-only">Choisissez vos analyses, écrivez votre nom, choisissez un moment : le message part déjà écrit vers notre WhatsApp. <strong>Rien n'est enregistré sur ce site</strong> — c'est votre téléphone qui envoie le message, et nous répondons avec le prix et la préparation.</span><span class="en-only">Pick your tests, write your name, choose a time: the message leaves already written to our WhatsApp. <strong>Nothing is stored on this site</strong> — your phone sends the message, and we reply with the price and the preparation.</span></p>
+  </div>
+
+  <div class="split">
+    <form class="rdv rdv-card" id="rdv" novalidate>
+      <h3><span class="fr-only">Votre demande</span><span class="en-only">Your request</span></h3>
+      <p class="hint" style="margin-top:4px"><span class="fr-only">Vous ne savez pas quoi cocher ? Cochez « Autre » et envoyez la photo de votre ordonnance sur WhatsApp.</span><span class="en-only">Not sure what to tick? Tick “Other” and send a photo of your request on WhatsApp.</span></p>
+
+      <div class="grp" id="rdv-g1">
+        <p class="mono"><span class="fr-only">1 · Vos analyses</span><span class="en-only">1 · Your tests</span></p>
+        <div class="fams">
+      <div>
+        <b><span class="fr-only">Biochimie</span><span class="en-only">Biochemistry</span></b>
+        <label class="chk"><input type="checkbox" data-fr="Glycémie (à jeun)" data-en="Glucose (fasting)" value="Glycémie (à jeun)"><span><span class="fr-only">Glycémie (à jeun)</span><span class="en-only">Glucose (fasting)</span></span></label>
+        <label class="chk"><input type="checkbox" data-fr="Cholestérol & triglycérides" data-en="Cholesterol &amp; triglycerides" value="Cholestérol & triglycérides"><span><span class="fr-only">Cholestérol & triglycérides</span><span class="en-only">Cholesterol &amp; triglycerides</span></span></label>
+        <label class="chk"><input type="checkbox" data-fr="Créatinine et urée" data-en="Creatinine and urea" value="Créatinine et urée"><span><span class="fr-only">Créatinine et urée</span><span class="en-only">Creatinine and urea</span></span></label>
+        <label class="chk"><input type="checkbox" data-fr="Transaminases (foie)" data-en="Transaminases (liver)" value="Transaminases (foie)"><span><span class="fr-only">Transaminases (foie)</span><span class="en-only">Transaminases (liver)</span></span></label>
+      </div>
+      <div>
+        <b><span class="fr-only">Hématologie</span><span class="en-only">Haematology</span></b>
+        <label class="chk"><input type="checkbox" data-fr="Hémogramme complet (NFS)" data-en="Complete blood count (CBC)" value="Hémogramme complet (NFS)"><span><span class="fr-only">Hémogramme complet (NFS)</span><span class="en-only">Complete blood count (CBC)</span></span></label>
+        <label class="chk"><input type="checkbox" data-fr="Groupe sanguin et rhésus" data-en="Blood group and rhesus" value="Groupe sanguin et rhésus"><span><span class="fr-only">Groupe sanguin et rhésus</span><span class="en-only">Blood group and rhesus</span></span></label>
+        <label class="chk"><input type="checkbox" data-fr="Vitesse de sédimentation" data-en="Erythrocyte sedimentation rate" value="Vitesse de sédimentation"><span><span class="fr-only">Vitesse de sédimentation</span><span class="en-only">Erythrocyte sedimentation rate</span></span></label>
+        <label class="chk"><input type="checkbox" data-fr="Plaquettes" data-en="Platelet count" value="Plaquettes"><span><span class="fr-only">Plaquettes</span><span class="en-only">Platelet count</span></span></label>
+      </div>
+      <div>
+        <b><span class="fr-only">Sérologie &amp; immunologie</span><span class="en-only">Serology &amp; immunology</span></b>
+        <label class="chk"><input type="checkbox" data-fr="Widal (typhoïde)" data-en="Widal (typhoid)" value="Widal (typhoïde)"><span><span class="fr-only">Widal (typhoïde)</span><span class="en-only">Widal (typhoid)</span></span></label>
+        <label class="chk"><input type="checkbox" data-fr="Hépatites B et C" data-en="Hepatitis B and C" value="Hépatites B et C"><span><span class="fr-only">Hépatites B et C</span><span class="en-only">Hepatitis B and C</span></span></label>
+        <label class="chk"><input type="checkbox" data-fr="VIH 1 &amp; 2" data-en="HIV 1 &amp; 2" value="VIH 1 &amp; 2"><span><span class="fr-only">VIH 1 &amp; 2</span><span class="en-only">HIV 1 &amp; 2</span></span></label>
+        <label class="chk"><input type="checkbox" data-fr="CRP (inflammation)" data-en="CRP (inflammation)" value="CRP (inflammation)"><span><span class="fr-only">CRP (inflammation)</span><span class="en-only">CRP (inflammation)</span></span></label>
+      </div>
+      <div>
+        <b><span class="fr-only">Hormonologie</span><span class="en-only">Hormonology</span></b>
+        <label class="chk"><input type="checkbox" data-fr="TSH, T3, T4 (thyroïde)" data-en="TSH, T3, T4 (thyroid)" value="TSH, T3, T4 (thyroïde)"><span><span class="fr-only">TSH, T3, T4 (thyroïde)</span><span class="en-only">TSH, T3, T4 (thyroid)</span></span></label>
+        <label class="chk"><input type="checkbox" data-fr="Prolactine" data-en="Prolactin" value="Prolactine"><span><span class="fr-only">Prolactine</span><span class="en-only">Prolactin</span></span></label>
+        <label class="chk"><input type="checkbox" data-fr="Bêta-HCG (grossesse)" data-en="Beta-HCG (pregnancy)" value="Bêta-HCG (grossesse)"><span><span class="fr-only">Bêta-HCG (grossesse)</span><span class="en-only">Beta-HCG (pregnancy)</span></span></label>
+        <label class="chk"><input type="checkbox" data-fr="FSH et LH" data-en="FSH and LH" value="FSH et LH"><span><span class="fr-only">FSH et LH</span><span class="en-only">FSH and LH</span></span></label>
+      </div>
+      <div>
+        <b><span class="fr-only">Autre, ou je ne sais pas encore</span><span class="en-only">Other, or I am not sure yet</span></b>
+        <label class="chk"><input type="checkbox" data-fr="Autre analyse / à préciser" data-en="Other test / to be specified" value="Autre analyse"><span><span class="fr-only">Autre analyse — je précise sur WhatsApp</span><span class="en-only">Another test — I will specify on WhatsApp</span></span></label>
+        <label class="chk"><input type="checkbox" data-fr="J'ai une ordonnance, choisissez pour moi" data-en="I have a prescription, advise me" value="Ordonnance"><span><span class="fr-only">J'ai une ordonnance — conseillez-moi</span><span class="en-only">I have a prescription — advise me</span></span></label>
+      </div>
+        </div>
+      </div>
+
+      <div class="grp" id="rdv-g2">
+        <p class="mono"><span class="fr-only">2 · Votre nom</span><span class="en-only">2 · Your name</span></p>
+        <input type="text" id="rdv-nom" name="nom" autocomplete="name" placeholder="Nom et prénom">
+      </div>
+
+      <div class="grp" id="rdv-g3">
+        <p class="mono"><span class="fr-only">3 · Moment souhaité</span><span class="en-only">3 · Preferred time</span></p>
+        <div class="mom">
+          <label class="chk"><input type="radio" name="moment" data-fr="Matin (7h–12h)" data-en="Morning (7am–12pm)" value="Matin"><span><span class="fr-only">Matin (7h–12h)</span><span class="en-only">Morning (7am–12pm)</span></span></label>
+          <label class="chk"><input type="radio" name="moment" data-fr="Après-midi (12h–16h)" data-en="Afternoon (12pm–4pm)" value="Après-midi"><span><span class="fr-only">Après-midi (12h–16h)</span><span class="en-only">Afternoon (12pm–4pm)</span></span></label>
+          <label class="chk"><input type="radio" name="moment" data-fr="Samedi matin (7h–13h)" data-en="Saturday morning (7am–1pm)" value="Samedi matin"><span><span class="fr-only">Samedi matin (7h–13h)</span><span class="en-only">Saturday morning (7am–1pm)</span></span></label>
+          <label class="chk"><input type="radio" name="moment" data-fr="Peu importe, le plus tôt possible" data-en="Any time, as soon as possible" value="Peu importe"><span><span class="fr-only">Peu importe, le plus tôt possible</span><span class="en-only">Any time, as soon as possible</span></span></label>
+        </div>
+      </div>
+
+      <div class="grp">
+        <p class="mono"><span class="fr-only">4 · Une précision (facultatif)</span><span class="en-only">4 · Anything else (optional)</span></p>
+        <input type="text" id="rdv-note" name="note" placeholder="">
+      </div>
+
+      <button class="btn btn-wa" id="rdv-go" type="submit" aria-disabled="true">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.5-1.2-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.4.1.6-.1l.9-1c.2-.2.4-.2.6-.1l1.8.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
+        <span><span class="fr-only">Ouvrir WhatsApp avec ma demande</span><span class="en-only">Open WhatsApp with my request</span></span>
+      </button>
+      <p class="hint"><span class="fr-only">Le bouton s'active dès que vous avez coché une analyse, écrit votre nom et choisi un moment. Vous relisez le message avant de l'envoyer.</span><span class="en-only">The button turns on once you have ticked a test, written your name and chosen a time. You read the message before sending it.</span></p>
+      <p class="rdv-said" id="rdv-said" role="status" aria-live="polite" hidden></p>
+    </form>
+
+    <aside class="rdv-side">
+      <p class="mono"><span class="fr-only">Nous trouver</span><span class="en-only">Finding us</span></p>
+      <p><strong>Carrefour Etoo, Bonamoussadi</strong><br>Douala</p>
+      <p><span class="fr-only">Lundi – Vendredi : <strong>7h – 19h</strong><br>Samedi : <strong>7h – 13h</strong></span><span class="en-only">Monday – Friday: <strong>7am – 7pm</strong><br>Saturday: <strong>7am – 1pm</strong></span></p>
+      <ul>
+        <li><span class="fr-only">Apportez votre ordonnance si vous en avez une.</span><span class="en-only">Bring your prescription if you have one.</span></li>
+        <li><span class="fr-only">Pour les analyses à jeun, venez le matin sans manger.</span><span class="en-only">For fasting tests, come in the morning without eating.</span></li>
+        <li><span class="fr-only">Paiement sur place, après le prélèvement.</span><span class="en-only">Payment on site, after the sample.</span></li>
+      </ul>
+      <p style="margin-top:16px"><span class="fr-only">Vous préférez appeler ?</span><span class="en-only">Would rather call?</span><br>
+        <a href="tel:+237696139819"><strong>696 13 98 19</strong></a></p>
+    </aside>
+  </div>
 </div></section>
 
 <section id="resultats"><div class="wrap">
@@ -620,6 +749,99 @@ body{padding-bottom:84px}
     if(h.indexOf('https://wa.me/')===0 || h.indexOf('tel:')===0){
       a.addEventListener('click',function(){ say(h.indexOf('tel:')===0 ? 'call' : 'wa'); });
     }
+  });
+})();
+</script>
+<script>
+/* ── FORMULAIRE DE RÉSERVATION — construit le message WhatsApp, rien de plus ─────
+   Ajouté le 23/09. Aucun envoi réseau depuis cette page : on remplit seulement le
+   lien wa.me que le patient ouvre lui-même. */
+(function(){
+  var form=document.getElementById('rdv'); if(!form) return;
+  var go=document.getElementById('rdv-go');
+  var said=document.getElementById('rdv-said');
+  var NUM='237696139819';
+  var timer=null;
+  function lg(){ return document.documentElement.getAttribute('data-lang')==='en' ? 'en' : 'fr'; }
+  function val(sel,attr){
+    var el=form.querySelector(sel); if(!el) return '';
+    return el.getAttribute(attr) || el.value || '';
+  }
+  function build(){
+    var l=lg();
+    var boxes=[].slice.call(form.querySelectorAll('input[type=checkbox]:checked'));
+    var tests=boxes.map(function(c){ return c.getAttribute('data-'+l) || c.value; });
+    var nom=(form.querySelector('#rdv-nom').value||'').replace(/\s+/g,' ').trim();
+    var note=(form.querySelector('#rdv-note').value||'').replace(/\s+/g,' ').trim();
+    var m=form.querySelector('input[name="moment"]:checked');
+    var moment=m ? (m.getAttribute('data-'+l) || m.value) : '';
+    var ok = tests.length>0 && nom.length>=2 && moment!=='';
+    var L = l==='en'
+      ? ['Hello UNI-LABO, I would like to book a visit.','Name: ','Tests: ','Preferred time: ','Anything else: ','(Sent from your website.)']
+      : ['Bonjour UNI-LABO, je souhaite prendre rendez-vous.','Nom : ','Analyses : ','Moment souhaité : ','Précision : ','(Envoyé depuis votre site.)'];
+    var msg=L[0];
+    if(nom) msg+='\n'+L[1]+nom;
+    if(tests.length) msg+='\n'+L[2]+tests.join(', ');
+    if(moment) msg+='\n'+L[3]+moment;
+    if(note) msg+='\n'+L[4]+note;
+    msg+='\n'+L[5];
+    return {ok:ok, url:'https://wa.me/'+NUM+'?text='+encodeURIComponent(msg),
+            need:{tests:tests.length===0, nom:nom.length<2, moment:moment===''}};
+  }
+  /* L'erreur se voit : le groupe fautif passe en rouge et le champ porte aria-invalid.
+     Le portique de page refuse une page à champs sans état d'erreur repérable — et c'est
+     juste : un bouton qui reste éteint sans dire pourquoi fait abandonner le formulaire. */
+  function paint(need,on){
+    var map={tests:'#rdv-g1', nom:'#rdv-g2', moment:'#rdv-g3'};
+    Object.keys(map).forEach(function(k){
+      var g=document.querySelector(map[k]); if(!g) return;
+      if(on && need && need[k]) g.classList.add('is-err'); else g.classList.remove('is-err');
+    });
+    var bad = on && need ? need : {};
+    var n=document.querySelector('#rdv-nom');
+    if(n) n.setAttribute('aria-invalid', bad.nom ? 'true' : 'false');
+    var cb=form.querySelector('input[type=checkbox]');
+    if(cb) cb.setAttribute('aria-invalid', bad.tests ? 'true' : 'false');
+    var rd=form.querySelector('input[name="moment"]');
+    if(rd) rd.setAttribute('aria-invalid', bad.moment ? 'true' : 'false');
+  }
+  function refresh(){
+    var r=build();
+    go.setAttribute('aria-disabled', r.ok ? 'false' : 'true');
+    go.setAttribute('href', r.url);
+    paint(r.need,false);
+    if(r.ok && said && !said.hidden) said.hidden=true;
+  }
+  ['input','change'].forEach(function(ev){ form.addEventListener(ev,refresh); });
+  refresh();
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var r=build();
+    if(!r.ok){
+      paint(r.need,true);
+      if(said){
+        said.hidden=false;
+        said.textContent = lg()==='en'
+          ? 'Tick at least one test, write your name and choose a time.'
+          : 'Cochez au moins une analyse, écrivez votre nom et choisissez un moment.';
+        if(timer) clearTimeout(timer);
+        timer=setTimeout(function(){ said.hidden=true; },6000);
+      }
+      return;
+    }
+    if(said){
+      said.hidden=false;
+      said.textContent = lg()==='en'
+        ? 'WhatsApp opens with your request already written — read it, then send.'
+        : 'WhatsApp s\'ouvre avec votre demande déjà écrite — relisez, puis envoyez.';
+      if(timer) clearTimeout(timer);
+      timer=setTimeout(function(){ said.hidden=true; },8000);
+    }
+    window.location.href=r.url;
+  });
+  ['btn-fr','btn-en'].forEach(function(id){
+    var b=document.getElementById(id);
+    if(b) b.addEventListener('click',function(){ setTimeout(refresh,0); });
   });
 })();
 </script>

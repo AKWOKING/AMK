@@ -2470,3 +2470,47 @@ intention n'est pas une preuve ; seule la relecture du fichier l'est.
 2310 lignes, pas de `JOUR_2309`, pas de `guard.py`). Tout le travail du soir n'existait que sur le distant —
 récupéré par `fetch` + `reset --hard FETCH_HEAD` (4eaa7ac), marqueurs vérifiés, puis le tour a été rejoué.
 Effet de bord connu : `openpyxl` disparaît avec l'instantané et doit être réinstallé avant `rebuild.sh`.
+
+## 2026-09-23 · 22:0x · LE FORMULAIRE DE RÉSERVATION EXISTE — construit, testé, il ne reste qu'un redéploiement
+
+**Pourquoi ce n'était pas optionnel.** Le message de 13:30 promet à UNI-LABO, pour 150 000 FCFA, « la
+création de votre site bilingue complet **(avec le formulaire de réservation WhatsApp direct)** ». La page
+en ligne n'en avait aucun : douze liens `wa.me` posant des questions (« Demander le tarif »). Le rendez-vous
+est vendredi à 13 h : on ne peut pas arriver avec une promesse et une page qui la contredit.
+
+**Ce qui a été construit** — une section « Prendre rendez-vous » dans `demos/concept-unilabo-v1.html`
+(48 Ko → 66 Ko), bilingue comme le reste de la page :
+- **18 cases** : les 4 familles publiées (biochimie, hématologie, sérologie & immunologie, hormonologie),
+  plus « Autre analyse » et « J'ai une ordonnance — conseillez-moi » ;
+- **le nom**, **le moment souhaité** (matin 7h–12h / après-midi 12h–16h / samedi matin 7h–13h / peu importe),
+  **une précision facultative** ;
+- **un bouton WhatsApp éteint tant que la demande est incomplète**, qui s'allume quand une analyse est
+  cochée, le nom écrit et le moment choisi — et le message part **déjà rédigé** :
+  `Bonjour UNI-LABO, je souhaite prendre rendez-vous. / Nom : … / Analyses : … / Moment souhaité : …` ;
+- **aucun serveur, aucune base, aucun compte** : rien n'est enregistré sur le site, c'est le téléphone du
+  patient qui envoie depuis SON WhatsApp. C'est la réponse à « où vont les données ? » — et c'est vrai ;
+- à côté du formulaire : adresse, horaires, quoi apporter, et le numéro à appeler.
+
+**Comment on sait que ça marche, sans navigateur ici.** Le JavaScript a été rejoué **hors navigateur** (Node
++ faux DOM) sur quatre cas — vide, nom seul, demande complète en français, demande complète en anglais — et
+sur les deux états d'erreur : bouton éteint et groupes fautifs marqués quand il manque une analyse, un nom ou
+un moment ; erreur effacée et bouton allumé dès que la demande est complète. Messages produits vérifiés mot
+pour mot dans les deux langues.
+
+**Un constat du portique de page, corrigé, et il était juste.** `tools/qa/audit_page.py` a signalé « 24
+champs sans état d'erreur repérable » : un bouton qui reste éteint sans dire pourquoi fait abandonner le
+formulaire. Les trois groupes manquants passent maintenant en rouge, les champs portent
+`aria-invalid="true"`, et le texte d'aide annonce une fois pour toutes les trois conditions. La page repasse
+**sans constat nouveau** (le seul restant, « 20 tailles de texte distinctes », est antérieur).
+
+**Une seule action reste, et elle n'est pas à moi : le redéploiement.** `uni-labo.vercel.app` affiche la page
+du 18/09 et ne bougera pas toute seule. Le dossier à republier est `hosting/previews/unilabo/` (racine du
+projet Vercel, avec `og.jpg`) — glisser-déposer sur vercel.com, pas de ligne de commande. **Ensuite ouvrir la
+page sur son téléphone et le montrer en direct** : c'est la démonstration qui ferme la séance de 13 h. Si ce
+n'est pas fait vendredi, on dit la vérité — « le formulaire est prêt, je vous le montre dès qu'elle est
+republiée, c'est la première livraison » — mais **on ne montre jamais l'ancienne page en disant qu'il est
+dedans**.
+
+**Détail à retenir pour le jour de la livraison :** la page porte `noindex,nofollow` — voulu tant qu'elle
+n'est pas publique, **à retirer le jour où c'est LEUR site sur leur domaine**, sinon aucune « fiche Google »
+n'aura d'effet. Relevé au passage, noté dans la feuille pour ne pas l'oublier ce jour-là.

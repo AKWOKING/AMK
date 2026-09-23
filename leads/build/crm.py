@@ -1505,9 +1505,19 @@ JOUR_2309 = {
             "FORMULAIRE DE RÉSERVATION : ses 12 liens WhatsApp sont des questions (« demander le tarif »), "
             "pas un formulaire où le patient laisse ses informations. Or le message de 13:30 promet « la "
             "création de votre site bilingue complet (avec le formulaire de réservation WhatsApp direct) » "
-            "à 150 000 FCFA. Il faut donc SOIT le construire avant vendredi et le montrer en séance, SOIT "
-            "l'annoncer comme la première livraison après l'acompte — jamais livrer la page telle quelle en "
-            "disant que le formulaire est dedans. Décision à King.",
+            "à 150 000 FCFA. → CORRIGÉ LE 23/09 AU SOIR : LE FORMULAIRE EST CONSTRUIT "
+            "(`demos/concept-unilabo-v1.html` + la copie hébergée `hosting/previews/unilabo/index.html`) : "
+            "18 cases d'analyses (les 4 familles publiées + « autre / j'ai une ordonnance »), le nom, le "
+            "moment souhaité (matin / après-midi / samedi matin / peu importe) et une précision facultative ; "
+            "le bouton s'allume quand une analyse est cochée, le nom écrit et le moment choisi, et le "
+            "message part DÉJÀ RÉDIGÉ vers leur WhatsApp (wa.me/237696139819). RIEN n'est enregistré sur le "
+            "site : c'est le téléphone du patient qui envoie. RESTE UNE ACTION DE KING AVANT VENDREDI : "
+            "redéployer le dossier `hosting/previews/unilabo/` sur le projet Vercel `uni-labo.vercel.app` "
+            "(glisser-déposer, pas de CLI) — la page en ligne est celle du 18/09 et ne bougera pas seule — "
+            "puis ouvrir la page sur son téléphone et le montrer EN DIRECT en séance. Jamais montrer "
+            "l'ancienne page en disant que le formulaire est dedans. Détail relevé au passage : la page "
+            "porte `noindex,nofollow` (voulu tant qu'elle n'est pas publique) — À RETIRER le jour où c'est "
+            "LEUR site sur leur domaine, sinon aucune fiche Google ne sert à rien.",
     },
     "le-cristallin": {
         "stage": "closing",
