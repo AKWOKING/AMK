@@ -134,7 +134,7 @@ le chiffre de rentabilité).
 
 ---
 
-## Le formulaire de réservation — **construit le 23/09 au soir**, et comment le montrer en séance
+## Le formulaire de réservation — **construit le 23/09, retravaillé la même nuit** : ce qu'on montre en séance
 
 Il n'existait pas (voir la décision ① ci-dessous) : il est fait. Section **« Prendre rendez-vous »**, insérée
 entre *Nos analyses* et *Résultats*, dans les deux langues comme le reste de la page :
@@ -151,14 +151,31 @@ entre *Nos analyses* et *Résultats*, dans les deux langues comme le reste de la
   et c'est aussi ce qu'il faut dire si on nous demande « où vont les données ? » ;
 - à droite du formulaire, un rappel utile : adresse, horaires, quoi apporter, et **le numéro à appeler**.
 
-**Fichiers :** `demos/concept-unilabo-v1.html` (canonique, 65 Ko) et `hosting/previews/unilabo/index.html`
-(**la copie hébergée**, celle qui doit partir en ligne).
+**Et depuis la même nuit — trois choses de plus à montrer, parce qu'elles font la différence en séance :**
+
+- **la fiche vivante.** Le formulaire n'envoie pas seulement un message : il **écrit la fiche de
+  prélèvement sous les yeux du patient**. Cochez « Glycémie » → la ligne *Préparation* s'écrit toute seule
+  « À jeun 8 à 12 h, l'eau est permise ». Cochez « Analyse d'urines » → « recueil au laboratoire, flacon
+  remis sur place ». **Ce ne sont pas nos phrases : ce sont les leurs**, reprises de leurs cinq panneaux.
+  C'est leur expertise rendue avant même l'envoi du message — et c'est ce qui se dit en une phrase :
+  *« le patient sait déjà quoi faire avant d'avoir écrit »* ;
+- **si la demande est incomplète, la page le DIT** : les groupes fautifs passent en rouge, le champ porte
+  `aria-invalid`, et un message explique quoi compléter. Un bouton éteint sans raison fait abandonner ;
+- **quatre photos** (accueil, préparation, paillasse, résultat) — **« mise en situation » écrit sous
+  chacune**, et la phrase qui invite : *« la photo définitive sera prise dans votre laboratoire »*. C'est
+  la façon de le dire à voix haute : *« ces images sont là pour la démonstration ; vendredi ou après, on
+  prend les vôtres »* — et c'est un vrai argument : le contenu photo n'est pas compris dans les 150 000.
+
+**Fichiers :** `demos/concept-unilabo-v1.html` (canonique, 90 Ko) et `hosting/previews/unilabo/index.html`
+(**la copie hébergée**, celle qui doit partir en ligne) — les deux sont identiques, régénérées ensemble.
 
 ### ⛔ Une seule action de King avant vendredi : **redéployer la page**
 
 `uni-labo.vercel.app` est en ligne et **ne changera pas toute seule** : la page qui s'affiche aujourd'hui est
-celle du 18/09, sans formulaire. Le dossier à redéployer est **`hosting/previews/unilabo/`** (racine du projet
-Vercel, avec `og.jpg`) — glisser-déposer sur vercel.com, aucun outil en ligne de commande nécessaire.
+celle du 18/09, sans formulaire. Le dossier à redéployer est **`hosting/previews/unilabo/`** — racine du projet
+Vercel, et il contient désormais **trois choses** : `index.html`, `og.jpg` et **`img/` (les quatre photos)**.
+**Glisser LE DOSSIER ENTIER** sur vercel.com (pas seulement `index.html`, sinon la page s'affiche avec quatre
+cadres vides) ; aucun outil en ligne de commande nécessaire.
 **Puis ouvrir `uni-labo.vercel.app` sur son propre téléphone** et vérifier de ses yeux qu'on coche, qu'on
 écrit, que le bouton s'allume. C'est la démonstration de la séance — pas une capture d'écran.
 
@@ -176,12 +193,13 @@ leur vend ne sert à rien sans ça. À faire au moment de la mise en ligne sur l
 
 ## Ce qui doit être tranché **avant vendredi** (une décision de King)
 
-**① Le formulaire de réservation — RÉGLÉ : il est construit** (section ci-dessus). Il n'existait pas dans
-la page en ligne : ses 12 liens WhatsApp étaient des questions (« Demander le tarif »), pas un formulaire où
-le patient laisse ses informations — alors que le message de 13:30 promet **« la création de votre site
-bilingue complet (avec le formulaire de réservation WhatsApp direct) »** à 150 000 FCFA. Il est maintenant
-dans les deux fichiers, testé dans les deux langues, **sans aucune donnée stockée**. Reste la seule action
-mécanique : **redéployer `hosting/previews/unilabo/`** (voir ci-dessus).
+**① Le formulaire de réservation — RÉGLÉ, et au-delà : il est construit** (section ci-dessus). Il n'existait
+pas dans la page en ligne : ses 12 liens WhatsApp étaient des questions (« Demander le tarif »), pas un
+formulaire où le patient laisse ses informations — alors que le message de 13:30 promet **« la création de
+votre site bilingue complet (avec le formulaire de réservation WhatsApp direct) »** à 150 000 FCFA. Il est
+maintenant dans les deux fichiers, testé dans les deux langues, **sans aucune donnée stockée** — et il écrit
+la fiche de prélèvement pendant qu'on le remplit. Reste la seule action mécanique : **redéployer le dossier
+`hosting/previews/unilabo/` en entier (il contient maintenant `img/`)** — voir ci-dessus.
 
 **② Quel abonnement on annonce en séance ?** Le Standard **30 000/mois** figure dans la grille qu'ils ont
 reçue. Le palier Essentiel **12 000/mois** (pour un client qui garde son domaine et son hébergement) est ma

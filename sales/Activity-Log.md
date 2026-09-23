@@ -2514,3 +2514,66 @@ dedans**.
 **Détail à retenir pour le jour de la livraison :** la page porte `noindex,nofollow` — voulu tant qu'elle
 n'est pas publique, **à retirer le jour où c'est LEUR site sur leur domaine**, sinon aucune « fiche Google »
 n'aura d'effet. Relevé au passage, noté dans la feuille pour ne pas l'oublier ce jour-là.
+
+---
+
+## 2026-09-23 · 22:15 → 23:30 · L'AUDIT D'UNI-LABO, PUIS LA PASSE — la page devient **la fiche de prélèvement**, et quatre photos remplacent la page de texte
+
+**La consigne :** « put that all into practice into the unilabo website » — relire les règles, **auditer**,
+puis améliorer. Le dossier de travail est `clients/uni-labo/AUDIT-2026-09-23.md` (168 lignes, écrit avant
+d'écrire une seule ligne de la page) ; la passe est décrite en §8 du même document. Le gel Cristallin /
+Univers tient : rien d'autre n'a été touché.
+
+**Ce que l'audit a trouvé, et qui ne se voyait pas au portique.** Le portique officiel disait « OK » : les
+numéros sont internationaux, une seule `<h1>`, aucun texte de gabarit. Mais il ne mesure ni la police, ni
+les sourcils, ni les cibles, ni le mouvement, ni la schéma, ni la signature. Douze défauts mesurés — dont
+`Inter` en police de texte alors que §3.2 la **bannit**, 7 sourcils pour un plafond de 3, aucun
+`prefers-reduced-motion`, aucun `text-wrap:balance`, aucun chiffre tabulaire alors que la page n'affiche que
+des horaires, une seule règle de focus pour quarante éléments focusables, des lignes de cases à 26 px, et
+**le bouton d'envoi du formulaire sans URL dans le HTML** (règle des 21/09). Trouvé aussi, à la lecture et
+que personne ne mesurait : **un lien dont le message arrivera avec `j&#x27;ai` dedans** (l'apostrophe
+doublement encodée), une schéma pauvre (`MedicalBusiness`, pas de `FAQPage`), et — sur téléphone — **un
+formulaire inatteignable** parce que la barre de navigation est masquée et que le bandeau collant ne
+proposait que WhatsApp et Appeler.
+
+**Le vrai sujet, c'était la signature.** §23.2 le disait déjà de nos propres fiches : UNI-LABO échouait au
+**test de l'échange** — remplacez son nom par celui d'un autre laboratoire, la page tenait toujours debout.
+Rien sur elle n'appartenait à UNI-LABO seul. Or l'audit a posé la question de la vidéo : *qu'est-ce qu'un
+laboratoire fait que personne d'autre ne fait ?* Il ne vend pas des analyses : il vend **la certitude que
+le prélèvement sera utilisable du premier coup** — tout se joue *avant* l'arrivée, et une analyse mal
+préparée, c'est un déplacement perdu et une piqûre pour rien. Le patient apporte une ordonnance et repart
+avec un prélèvement propre ; **entre les deux, il y a un bout de papier**. Décision : **la page devient ce
+papier.** La fiche apparaît trois fois, à trois états — l'**exemple** dans le hero, la **consigne** dans
+« Avant de venir », et **la fiche vivante** du formulaire, qui se remplit à chaque case cochée et dont la
+ligne *Préparation* se déduit de leurs propres textes publiés (« À jeun 8 à 12 h, l'eau est permise »,
+« recueil au laboratoire, flacon remis sur place »). Aucune phrase inventée : leurs cinq panneaux, remis
+dans l'objet qui les rend utiles. La marge graduée de la fiche revient sur la consigne affichée : c'est la
+**rime** que §23.3 exige, faite du composant de l'étoile et non de l'étoile entière.
+
+**Les images : j'avais écrit une bêtise dans l'audit, et le §3.7 dit exactement l'inverse.** J'avais
+conclu « aucune photo inventée » en citant §3.7. Relu : *« NO pure-text minimalism — even minimal sites
+need 2-3 real images. **Use generated images (our standard)** »* — et §15.bis est plus direct : *« A
+delivered page with no photograph is an unfinished page »*, avec le reproche de King du 19/09 sur la page
+de Bonanjo noir sur blanc. **Quatre images donc** — accueil, préparation (un homme qui attend, un verre
+d'eau, une horloge), paillasse, résultat — générées, **relues une par une**, et légendées de la phrase que
+§15.bis impose : *« Mise en situation. La photo définitive sera prise dans votre laboratoire. »* Fichiers
+séparés (§15.6), ~500 Ko au total, et la copie hébergée porte son dossier `img/`. C'est aussi l'argument
+de la séance : les photos définitives ne sont pas dans les 150 000, la page le dit déjà.
+
+**Deux fautes trouvées par les outils, pas par l'œil, pendant la passe :** l'analyseur HTML a mesuré
+**1,00:1 — blanc sur blanc** sur le mot « UNI-LABO » de la fiche du hero (la carte héritait du blanc du hero
+sombre ; elle porte maintenant sa propre couleur), et la **bande de retour** (« WhatsApp s'ouvre avec votre
+message déjà écrit ») vivait *dans* le bandeau collant, masqué au-delà de 760 px : elle ne s'affichait donc
+**jamais sur ordinateur**. Elle est désormais fixée en bas de fenêtre, visible partout.
+
+**Ce qui vérifie tout ça, sans navigateur :** portique `0 constat`, analyseur HTML **415 textes mesurés,
+0 constat**, `check_inline_js.py` **8 blocs, 0 faute**, contrastes AA vérifiés sur les deux palettes, et
+**deux harnais Node + faux DOM qui rejouent le vrai JavaScript du fichier** — le formulaire dans six états
+(vide, partiel, complet FR, complet EN, refus expliqué, bascule de langue : le message généré a été lu mot
+pour mot) et l'état d'ouverture sur cinq horloges (lundi 10 h, lundi 22 h, samedi 10 h, samedi 15 h,
+dimanche 11 h), dans les deux langues. **Aucun rendu n'a été regardé** — l'œil reste celui de King, et la
+liste du §7 de l'audit existe pour lui.
+
+**Il ne reste qu'une action, et elle n'est pas à moi :** redéployer **le dossier**
+`hosting/previews/unilabo/` — qui contient maintenant `index.html`, `og.jpg` et `img/` — sur son projet
+Vercel. La page en ligne est celle du 18/09 : elle n'a ni formulaire, ni fiche, ni photos.

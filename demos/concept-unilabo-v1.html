@@ -23,7 +23,7 @@
    rien de ce qui dépend du script ne s'affiche. */document.documentElement.classList.add("js")</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --paper:#F4F5F7;      /* neutral base — cool light, never cream */
@@ -38,32 +38,63 @@
   --line:rgba(20,21,26,.12);
   --wa:#0B7A3E;
   --r:16px; --max:1100px;
+  /* ── LES DEUX VOIX (23/09) ────────────────────────────────────────────────────────────────────────
+     Ancre : **Sora** porte les titres et les étiquettes — c'est elle qui donne le caractère (§23.4).
+     Lecture : **Public Sans**, qui remplace `Inter` — banni par défaut (§3.2), et qui apporte un
+     squelette humaniste, donc un vrai contraste avec le géométrique de Sora (Sora + Inter = deux sans
+     trop proches : c'était le constat de l'audit de §23.4). */
+  --f-display:"Sora",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  --f-body:'Public Sans',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  /* ── L'ÉCHELLE (10 pas, nommés une fois) ─────────────────────────────────────────────────────────
+     Avant : 20 tailles distinctes déclarées au fil du fichier, donc aucune hiérarchie décidable.
+     Maintenant : dix pas, et rien d'autre. `font-size:var(--fs-…)` ne compte pas comme une taille au
+     portique — c'est voulu : une échelle n'est pas du bruit, une valeur ad hoc en est. */
+  --fs-h1:clamp(2.05rem,6.6vw,3.35rem);
+  --fs-h2:clamp(1.5rem,4.4vw,2.1rem);
+  --fs-h3:1.06rem;
+  --fs-lead:1.05rem;
+  --fs-base:1rem;
+  --fs-sm:.92rem;
+  --fs-xs:.85rem;
+  --fs-btn:.94rem;
+  --fs-label:.72rem;
+  --fs-bar:.8rem;
+  /* ── LE MOUVEMENT (§22.2, design/MOTION.md) ─────────────────────────────────────────────────────── */
+  --ease-out:cubic-bezier(.23,1,.32,1);
+  --dur-press:140ms;   /* maison : 100-160 ms ; 70 ms était trop court pour être senti */
+  --dur-state:180ms;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);
-  font:16px/1.62 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  font:16px/1.62 var(--f-body);
   -webkit-font-smoothing:antialiased}
-h1,h2,h3,.display{font-family:"Sora",Inter,sans-serif;line-height:1.1;margin:0;letter-spacing:-.02em}
-h1{font-size:clamp(2rem,7vw,3.35rem);font-weight:700}
-h2{font-size:clamp(1.45rem,4.4vw,2.1rem);font-weight:700}
-h3{font-size:1.06rem;font-weight:600;letter-spacing:-.01em}
-p{margin:.6rem 0 0}
+h1,h2,h3,.display{font-family:var(--f-display);line-height:1.12;margin:0;letter-spacing:-.02em;
+  text-wrap:balance}                       /* §3.2 : balance tue les orphelines */
+h1{font-size:var(--fs-h1);font-weight:700}
+h2{font-size:var(--fs-h2);font-weight:700}
+h3{font-size:var(--fs-h3);font-weight:600;letter-spacing:-.01em}
+p{margin:.6rem 0 0;text-wrap:pretty}
+/* les données s'alignent : horaires, numéros, fiche (§3.2) */
+.tnum,.bar,.rowmap,.fiche,.said{font-variant-numeric:tabular-nums}
 a{color:inherit}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
 section{padding:50px 0}
 .hair{border-top:1px solid var(--line)}
-.mono{font-family:"Sora",Inter,sans-serif;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
-.lead{font-size:1.04rem}
+.mono{font-family:var(--f-display);font-size:var(--fs-label);letter-spacing:.01em;font-weight:600}
+.lead{font-size:var(--fs-lead)}
 /* language visibility — display:revert keeps each element's native display */
 html[data-lang="fr"] .en-only{display:none !important}
 html[data-lang="en"] .fr-only{display:none !important}
 html[data-lang="en"] .en-only{display:revert !important}
 html[data-lang="fr"] .fr-only{display:revert !important}
-:is(a,button,summary):focus-visible{outline:3px solid var(--signal-2);outline-offset:2px;border-radius:8px}
+:is(a,button,summary,input,select,textarea,[tabindex]):focus-visible{
+  outline:3px solid var(--signal-2);outline-offset:2px;border-radius:8px}
+:is(a,button,summary,input,label.chk):focus-visible{outline-offset:2px}
+/* §2.6 : les champs d'un formulaire se voient au clavier — jamais `outline:none` sans remplacement */
 
 /* top bar */
-.bar{background:var(--ink);color:var(--mute-on-ink);font-size:.8rem}
+.bar{background:var(--ink);color:var(--mute-on-ink);font-size:var(--fs-bar)}
 .bar .wrap{display:flex;gap:12px;justify-content:space-between;align-items:center;padding:9px 18px;flex-wrap:wrap}
 .bar a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35)}
 .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#34D399;margin-right:7px;vertical-align:1px}
@@ -73,17 +104,16 @@ html[data-lang="fr"] .fr-only{display:revert !important}
 .nav .wrap{display:flex;align-items:center;gap:12px;padding:11px 18px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
 .brand b{font-family:"Sora",sans-serif;font-size:1rem;letter-spacing:-.01em;display:block;line-height:1.1}
-.brand .sub{display:block;font-size:.66rem;color:var(--mute);letter-spacing:.08em;text-transform:uppercase}
-.nav nav{margin-left:auto;display:none;gap:18px;font-size:.9rem}
+.brand .sub{display:block;font-size:var(--fs-label);color:var(--mute);letter-spacing:.01em}
+.nav nav{margin-left:auto;display:none;gap:18px;font-size:var(--fs-sm)}
 .nav nav a{text-decoration:none;color:var(--ink-2);opacity:.85}
-.nav nav a:hover{opacity:1;color:var(--signal)}
 .lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:#fff}
-.lang button{border:0;background:transparent;padding:7px 12px;font:600 .78rem Inter,sans-serif;color:var(--mute);cursor:pointer}
+.lang button{border:0;background:transparent;padding:8px 13px;font:600 var(--fs-label) var(--f-display);color:var(--mute);cursor:pointer}
 .lang button.is-on{background:var(--signal);color:#fff}
 
 /* buttons */
-.btn{display:inline-flex;align-items:center;gap:8px;justify-content:center;text-decoration:none;
-  border-radius:12px;padding:13px 18px;font-weight:600;font-size:.94rem;border:1.5px solid transparent}
+.btn{display:inline-flex;align-items:center;gap:8px;justify-content:center;text-decoration:none;min-height:44px;
+  border-radius:12px;padding:13px 18px;font-weight:600;font-size:var(--fs-btn);border:1.5px solid transparent}
 .btn-primary{background:var(--signal);color:#fff;box-shadow:0 8px 20px rgba(91,33,182,.22)}
 .btn-primary:hover{background:var(--signal-2)}
 .btn-ghost{background:#fff;color:var(--ink);border-color:var(--line)}
@@ -92,25 +122,33 @@ html[data-lang="fr"] .fr-only{display:revert !important}
    Repos · survol · appui · inactif. Avant ce patch, UNI-LABO n'avait ni appui ni transition : le doigt
    appuyait et rien ne bougeait. `scale(.97)` sur l'appui + 160 ms de transition = la même grammaire que
    la page du Cristallin, qui l'avait déjà. (Vidéo Kole Jain, vidéo Moradi : « tout tient sauf l'humain ».) */
-.btn{transition:background-color .16s ease,color .16s ease,border-color .16s ease,box-shadow .16s ease,transform .07s ease}
-.btn:hover{transform:translateY(-1px)}
+/* Quatre états, et les survols ne s'appliquent QUE là où il y a un vrai pointeur : sur un téléphone,
+   un tap laissait sinon un état de survol collé (§13). L'appui passe à 140 ms (maison 100-160). */
+.btn{transition:background-color var(--dur-state) var(--ease-out),color var(--dur-state) var(--ease-out),border-color var(--dur-state) var(--ease-out),box-shadow var(--dur-state) var(--ease-out),transform var(--dur-press) var(--ease-out)}
 .btn:active{transform:scale(.97)}
-.btn-primary:hover{background:var(--signal-2);box-shadow:0 12px 26px rgba(91,33,182,.28)}
-.btn-wa:hover{filter:brightness(1.08);box-shadow:0 12px 26px rgba(37,211,102,.28)}
-.btn-ghost:hover{background:#F6F4FE;border-color:var(--signal)}
+@media (hover:hover) and (pointer:fine){
+  .btn:hover{transform:translateY(-1px)}
+  .btn-primary:hover{background:var(--signal-2);box-shadow:0 12px 26px rgba(91,33,182,.28)}
+  .btn-wa:hover{filter:brightness(1.08);box-shadow:0 12px 26px rgba(37,211,102,.28)}
+  .btn-ghost:hover{background:#F6F4FE;border-color:var(--signal)}
+  .chip:hover{border-color:var(--signal);color:var(--signal)}
+  .nav nav a:hover{opacity:1;color:var(--signal)}
+  .f-nav a:hover{opacity:1;text-decoration:underline}
+}
 /* le quatrième état, celui qu'aucune de nos pages n'avait : un bouton qui ne peut pas être cliqué */
 .btn.is-off{opacity:.55;cursor:not-allowed;pointer-events:none;filter:grayscale(.3)}
-.chip{transition:background-color .16s ease,border-color .16s ease,color .16s ease,transform .07s ease}
-.chip:hover{border-color:var(--signal);color:var(--signal)}
+.chip{transition:background-color var(--dur-state) var(--ease-out),border-color var(--dur-state) var(--ease-out),color var(--dur-state) var(--ease-out),transform var(--dur-press) var(--ease-out)}
 .chip:active{transform:scale(.97)}
 .chip.is-on{box-shadow:0 6px 16px rgba(91,33,182,.18)}
 /* la bande de retour : elle n'apparaît qu'après un clic, et se retire toute seule */
-.said{display:none;margin:14px 0 0;font-size:.86rem;line-height:1.5;color:var(--signal);
+.said{display:none;margin:14px 0 0;font-size:var(--fs-xs);line-height:1.5;color:var(--signal);
  background:#F3EFFF;border:1.5px solid #D8CCFA;border-radius:12px;padding:11px 13px}
 html.js .said.on{display:block}
-/* dans la barre collante : pleine largeur au-dessus des deux boutons, sur fond sombre */
-.sticky-wa .said{grid-column:1/-1;margin:0;color:#EAFBEF;background:rgba(37,211,102,.16);
- border-color:rgba(37,211,102,.4)}
+/* LA BANDE DE RETOUR (la réponse après un clic) : au-dessus du bandeau sur téléphone, en bas à
+   droite sur ordinateur. Elle vivait DANS le bandeau collant, donc invisible au-delà de 760 px. */
+#wa-said{position:fixed;left:12px;right:12px;bottom:84px;z-index:60;margin:0;
+  box-shadow:0 12px 30px rgba(20,21,26,.16)}
+@media (min-width:760px){#wa-said{left:auto;right:24px;bottom:24px;max-width:390px}}
 .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
 
 /* hero */
@@ -118,10 +156,10 @@ html.js .said.on{display:block}
 .hero-grid{display:grid;gap:30px;align-items:center}
 .eyebrow{color:#C4B5FD;margin:0}
 .hero h1 em{font-style:normal;color:#C4B5FD}
-.hero .sub{color:var(--mute-on-ink);font-size:1.02rem;max-width:56ch}
-.hero .who{display:flex;align-items:center;gap:10px;margin-top:18px;color:#fff;font-weight:600;font-size:.94rem}
+.hero .sub{color:var(--mute-on-ink);font-size:var(--fs-lead);max-width:56ch}
+.hero .who{display:flex;align-items:center;gap:10px;margin-top:18px;color:#fff;font-weight:600;font-size:var(--fs-btn)}
 .hero .who span.badge{background:rgba(124,58,237,.28);border:1px solid rgba(196,181,253,.5);
-  border-radius:999px;padding:5px 11px;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:#DDD6FE}
+  border-radius:999px;padding:5px 11px;font-size:var(--fs-label);letter-spacing:.01em;color:#DDD6FE}
 
 /* journey strip — the build's one ingredient */
 .journey{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
@@ -130,8 +168,8 @@ html.js .said.on{display:block}
 .journey li{display:flex;gap:13px;align-items:flex-start}
 .journey .ic{flex:0 0 42px;width:42px;height:42px;border-radius:12px;background:var(--tint);
   display:grid;place-items:center}
-.journey b{display:block;font-size:.95rem}
-.journey p{margin:.15rem 0 0;font-size:.88rem;color:var(--mute)}
+.journey b{display:block;font-size:var(--fs-sm)}
+.journey p{margin:.15rem 0 0;font-size:var(--fs-xs);color:var(--mute)}
 
 /* steps heading */
 .sec-head{max-width:62ch}
@@ -140,13 +178,13 @@ html.js .said.on{display:block}
 /* prep chips */
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 0}
 .chip{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:9px 15px;
-  font:600 .85rem Inter,sans-serif;color:var(--ink-2);cursor:pointer}
+  font:600 var(--fs-xs) var(--f-body);color:var(--ink-2);cursor:pointer;min-height:44px;display:inline-flex;align-items:center
 .chip.is-on{background:var(--signal);border-color:var(--signal);color:#fff}
 .prep{margin-top:16px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
 .prep h3{margin-bottom:2px}
-.prep p{color:var(--mute);font-size:.94rem}
+.prep p{color:var(--mute);font-size:var(--fs-sm)}
 .prep .always{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line);
-  font-size:.88rem;color:var(--signal);font-weight:600}
+  font-size:var(--fs-xs);color:var(--signal);font-weight:600}
 .prep-panel{display:none}
 .prep-panel.is-on{display:block}
 
@@ -155,57 +193,56 @@ html.js .said.on{display:block}
 .cat{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
 .cat h3{display:flex;align-items:center;gap:9px}
 .cat .k{width:8px;height:8px;border-radius:2px;background:var(--signal);display:inline-block;flex:none}
-.cat ul{margin:12px 0 0;padding-left:18px;color:var(--mute);font-size:.92rem}
+.cat ul{margin:12px 0 0;padding-left:18px;color:var(--mute);font-size:var(--fs-sm)}
 .cat ul li{margin:.2rem 0}
-.cat .ask{margin-top:14px;font-size:.85rem}
+.cat .ask{margin-top:14px;font-size:var(--fs-xs)}
 .cat .ask a{color:var(--signal);font-weight:600;text-decoration:none;border-bottom:1px solid var(--signal)}
-.note{font-size:.86rem;color:var(--mute)}
+.note{font-size:var(--fs-xs);color:var(--mute)}
 
 /* results + biologist split */
 .split{display:grid;gap:18px;margin-top:20px}
 .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
-.panel ul{margin:12px 0 0;padding-left:18px;color:var(--mute);font-size:.93rem}
+.panel ul{margin:12px 0 0;padding-left:18px;color:var(--mute);font-size:var(--fs-sm)}
 .panel ul li{margin:.35rem 0}
-.quote{border-left:3px solid var(--signal);padding-left:14px;color:var(--ink-2);font-size:.98rem}
+.quote{border-left:3px solid var(--signal);padding-left:14px;color:var(--ink-2);font-size:var(--fs-lead)}
 
 /* access */
 .access{display:grid;gap:18px;margin-top:20px}
 .rowmap{display:grid;gap:10px;margin-top:12px}
-.row{display:flex;gap:10px;font-size:.93rem}
+.row{display:flex;gap:10px;font-size:var(--fs-sm)}
 .row .k{flex:0 0 118px;color:var(--mute)}
 .map{border:1px solid var(--line);border-radius:var(--r);background:#fff;overflow:hidden}
 .map svg{display:block;width:100%;height:auto}
 
 /* faq */
 details.faq{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 18px;margin-top:11px}
-details.faq summary{cursor:pointer;font-weight:600;font-size:.96rem}
-details.faq p{color:var(--mute);font-size:.92rem}
+details.faq summary{cursor:pointer;font-weight:600;font-size:var(--fs-base);min-height:44px;display:flex;align-items:center}
+details.faq p{color:var(--mute);font-size:var(--fs-sm)}
 
 /* footer §20 */
 footer{background:var(--ink);color:#fff;padding:44px 0 0;margin-top:10px}
 .f-grid{display:grid;gap:26px}
-.f-block h4{font-family:"Sora",sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+.f-block h4{font-family:"Sora",sans-serif;font-size:var(--fs-label);letter-spacing:.01em;
   color:#C4B5FD;margin:0 0 12px;font-weight:600}
 .f-brand{display:flex;align-items:center;gap:11px}
 .f-brand b{font-family:"Sora",sans-serif;font-size:1.16rem;letter-spacing:-.01em}
-.f-line{color:var(--mute-on-ink);font-size:.9rem;margin-top:12px;max-width:34ch}
-.f-nav{display:grid;gap:9px;font-size:.92rem}
+.f-line{color:var(--mute-on-ink);font-size:var(--fs-sm);margin-top:12px;max-width:36ch}
+.f-nav{display:grid;gap:9px;font-size:var(--fs-sm)}
 .f-nav a{color:#fff;text-decoration:none;opacity:.9}
-.f-nav a:hover{opacity:1;text-decoration:underline}
 .f-cta .btn{width:100%}
-.f-tel{margin-top:11px;font-size:.86rem;color:var(--mute-on-ink)}
+.f-tel{margin-top:11px;font-size:var(--fs-xs);color:var(--mute-on-ink)}
 .f-tel a{color:#fff}
-.f-contact{display:grid;gap:8px;font-size:.92rem;color:var(--mute-on-ink)}
+.f-contact{display:grid;gap:8px;font-size:var(--fs-sm);color:var(--mute-on-ink)}
 .f-contact b{color:#fff;font-weight:600}
 .f-strip{border-top:1px solid rgba(255,255,255,.14);margin-top:34px;padding:16px 0;
   display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap;
-  font-size:.78rem;color:#9AA1B0}
+  font-size:var(--fs-xs);color:#9AA1B0}
 .f-strip a{color:#C4B5FD;text-decoration:none}
 
 /* sticky mobile action bar */
 .sticky-wa{position:fixed;left:12px;right:12px;bottom:12px;z-index:50;display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .sticky-wa a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;
-  border-radius:13px;padding:13px 14px;font-weight:700;font-size:.9rem;box-shadow:0 10px 26px rgba(0,0,0,.22)}
+  border-radius:13px;padding:13px 14px;font-weight:700;font-size:var(--fs-sm);min-height:48px;box-shadow:0 10px 26px rgba(0,0,0,.22)}
 .sticky-wa .w{background:var(--wa);color:#fff}
 .sticky-wa .c{background:#fff;color:var(--ink);flex:0 0 38%}
 .sticky-wa svg{width:17px;height:17px;fill:currentColor}
@@ -222,6 +259,17 @@ footer{background:var(--ink);color:#fff;padding:44px 0 0;margin-top:10px}
   .f-strip{margin-top:40px}
 }
 @media (min-width:760px){ .sticky-wa{display:none} }
+/* ── LE MOUVEMENT RÉDUIT (§13, design/MOTION.md) ──────────────────────────────────────────────────
+   Il n'existait AUCUN bloc `prefers-reduced-motion` sur cette page : un visiteur qui a réglé son
+   téléphone pour éviter le mouvement n'était pas écouté. Le défilement redevient instantané et les
+   transitions tombent à zéro — les changements d'état restent (couleur, bordure, texte), parce qu'ils
+   portent l'information ; c'est le DÉPLACEMENT qui disparaît. */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;scroll-behavior:auto !important}
+  .btn:hover,.btn:active,.chip:active{transform:none}
+}
 body{padding-bottom:84px}
 @media (min-width:760px){ body{padding-bottom:0} }
 
@@ -232,38 +280,115 @@ body{padding-bottom:84px}
    part de SON WhatsApp vers le laboratoire. */
 .rdv{margin-top:2px}
 .rdv-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
-.rdv h3{margin:0 0 4px;font-size:1.02rem}
+.rdv h3{margin:0 0 4px;font-size:var(--fs-h3)}
 .rdv .grp{margin-top:16px}
-.rdv .grp>p.mono{color:var(--mute);margin:0 0 8px}
+.rdv .grp>legend,.rdv .grp>label{color:var(--mute);margin:0 0 8px;display:block;font-weight:600}
 .rdv .fams{display:grid;gap:10px}
 .rdv .fams>div{border:1px solid var(--line);border-radius:12px;padding:11px 12px}
-.rdv .fams b{display:block;font-size:.86rem;margin-bottom:6px}
-.rdv label.chk{display:flex;gap:9px;align-items:flex-start;font-size:.9rem;line-height:1.4;padding:3px 0;cursor:pointer}
+.rdv .fams b{display:block;font-size:var(--fs-xs);margin-bottom:6px}
+.rdv label.chk{display:flex;gap:10px;align-items:center;font-size:var(--fs-sm);line-height:1.4;padding:9px 0;min-height:44px;cursor:pointer}
 .rdv input[type=checkbox],.rdv input[type=radio]{flex:0 0 auto;width:17px;height:17px;margin:2px 0 0;accent-color:var(--signal)}
 .rdv input[type=text]{width:100%;font:inherit;padding:12px 13px;border:1.5px solid var(--line);
   border-radius:12px;background:#fff;color:var(--ink)}
-.rdv input[type=text]:focus{outline:none;border-color:var(--signal);box-shadow:0 0 0 3px var(--tint)}
+.rdv input[type=text]:focus{border-color:var(--signal);box-shadow:0 0 0 3px var(--tint)}
+.rdv input[type=text]{font-size:var(--fs-base)}
 .rdv .mom{display:grid;gap:2px;grid-template-columns:1fr 1fr}
-.rdv button.btn{border:0;cursor:pointer;font:inherit;margin-top:18px}
-.rdv button.btn[aria-disabled=true]{opacity:.55;cursor:not-allowed;filter:grayscale(.3)}
-.rdv .hint{font-size:.85rem;color:var(--mute);margin:10px 0 0}
-.rdv .grp.is-err>p.mono,.rdv .fams>div.is-err b{color:#B42318}
+.rdv .btn{margin-top:18px}
+.rdv .btn[aria-disabled=true]{opacity:.55;cursor:not-allowed;filter:grayscale(.3)}
+.rdv .hint{font-size:var(--fs-xs);color:var(--mute);margin:10px 0 0}
+.rdv .grp.is-err>legend,.rdv .grp.is-err>label,.rdv .fams>div.is-err b{color:#B42318}
 .rdv .fams>div.is-err{border-color:#B42318}
 .rdv input[aria-invalid=true]{outline:2px solid #B42318;outline-offset:2px}
-.rdv-said{margin:12px 0 0;font-size:.88rem;color:var(--wa);font-weight:600}
-.rdv-side{background:var(--ink);color:#fff;border-radius:var(--r);padding:22px}
-.rdv-side .mono{color:var(--mute-on-ink)}
-.rdv-side p{color:#E7E9EF}
-.rdv-side a{color:#fff}
-.rdv-side ul{margin:12px 0 0;padding-left:18px;color:#E7E9EF;font-size:.92rem}
-.rdv-side li{margin:4px 0}
+.rdv-said{margin:12px 0 0;font-size:var(--fs-xs);color:var(--wa);font-weight:600}
+/* la fiche vivante occupe la colonne de droite ; rien n'est inventé : elle reflète le formulaire */
+.fiche-live{position:sticky;top:86px}
+/* sur téléphone, la fiche passe AU-DESSUS du formulaire : on voit ce qui va se remplir avant de le
+   remplir, et elle reste à l'écran pendant les premières cases */
+@media (max-width:860px){ .split>.fiche-live{order:-1;position:static} }
+.bring{border-top:1px solid var(--line);margin-top:18px;padding-top:16px}
+.bring a{color:var(--signal);font-weight:600}
 @media (max-width:759px){.rdv .mom{grid-template-columns:1fr}}
+
+/* ── LA FICHE (l'étoile du build, 23/09) ──────────────────────────────────────────────────────────
+   Le patient apporte une ordonnance et repart avec un prélèvement utilisable ; entre les deux, il y a
+   un bout de papier. La page devient ce papier. Trois états, trois endroits : l'exemple (hero), la
+   consigne (préparation), la fiche vivante (prise de rendez-vous). La marge graduée est le
+   détail-signature ; « UNI-LABO » en tête et la ligne « préparation » la relient au laboratoire. */
+.fiche{position:relative;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:18px 20px 20px 32px;box-shadow:0 16px 40px rgba(20,21,26,.14);overflow:hidden}
+.fiche::before{content:"";position:absolute;left:15px;top:0;bottom:0;width:5px;
+  background:repeating-linear-gradient(to bottom,var(--line) 0 1px,transparent 1px 9px)}
+.fiche-top{display:flex;align-items:center;gap:10px;margin:0 0 12px;padding-bottom:10px;
+  border-bottom:2px solid var(--ink)}
+.fiche-lab{font-family:var(--f-display);font-weight:700;font-size:var(--fs-h3);letter-spacing:-.01em}
+.fiche-tag{margin-left:auto;font-size:var(--fs-label);color:var(--mute);background:var(--paper);
+  border:1px solid var(--line);border-radius:999px;padding:3px 10px;white-space:nowrap}
+.fiche-tag.is-ready{background:var(--wa);border-color:var(--wa);color:#fff}
+.fiche-rows{margin:0;display:grid;gap:10px}
+.fiche-rows>div{display:grid;gap:2px}
+.fiche-rows dt{font-size:var(--fs-label);color:var(--mute);font-weight:600}
+.fiche-rows dd{margin:0;font-size:var(--fs-sm);color:var(--ink);line-height:1.45}
+.fiche-rows dd.is-empty{color:var(--mute)}
+.fiche-name{margin:14px 0 0;padding-top:12px;border-top:1px solid var(--line);display:flex;gap:9px;
+  align-items:baseline;font-size:var(--fs-sm);color:var(--mute)}
+.fiche-name .rule{flex:1;border-bottom:1px dashed var(--line);transform:translateY(-3px)}
+.fiche-foot{margin:12px 0 0;font-size:var(--fs-xs);color:var(--signal);font-weight:600}
+.fiche-hero{box-shadow:0 26px 60px rgba(0,0,0,.4)}
+@media (min-width:760px){.fiche-rows>div{grid-template-columns:112px 1fr;gap:12px;align-items:baseline}}
+/* la même règle graduée revient sur la consigne affichée : c'est la rime (§23.3) */
+.prep-panel.is-on{position:relative;padding-left:20px}
+.prep-panel.is-on::before{content:"";position:absolute;left:2px;top:2px;bottom:2px;width:5px;
+  background:repeating-linear-gradient(to bottom,var(--signal) 0 2px,transparent 2px 10px);opacity:.35}
+/* la frise des quatre étapes, désormais sous le hero et à quatre colonnes */
+.journey{margin-top:34px;box-shadow:0 20px 50px rgba(0,0,0,.28)}
+.band-label{font-family:var(--f-display);font-size:var(--fs-label);font-weight:600;
+  color:var(--signal);margin:0 0 14px}
+@media (min-width:760px){ .journey ol{grid-template-columns:repeat(4,1fr);gap:18px}
+  .journey li{display:block} .journey .ic{margin-bottom:10px} }
+/* l'état réel d'ouverture — un vrai état, jamais un point décoratif (§3.4) */
+.open-state{font-weight:600;color:#fff}
+.dot.closed{background:#FBBF24}
+.trust{color:#C4B5FD;font-size:var(--fs-xs);font-weight:600;margin:0 0 12px}
+/* ce qu'il faut apporter, sous le formulaire : trois cellules, pas trois cartes */
+.bring{display:grid;gap:12px}
+.bring h4{margin:0;font-family:var(--f-display);font-size:var(--fs-label);color:var(--mute);font-weight:600}
+.bring p{margin:.2rem 0 0;font-size:var(--fs-sm)}
+/* le bandeau collant : trois cibles, la nouvelle en violet */
+.sticky-wa{grid-template-columns:1.15fr 1fr .9fr}
+.sticky-wa .r{background:var(--signal);color:#fff}
+.sticky-wa .c{flex:none}
+/* les groupes du formulaire deviennent des fieldsets : mêmes marges, sémantique en plus */
+.rdv fieldset{border:0;margin:0;padding:0;min-width:0}
+.rdv legend{padding:0;color:var(--mute);margin:0 0 8px}
+
+/* ── LES PHOTOS (§15.bis) ────────────────────────────────────────────────────────────────────────
+   « A delivered page with no photograph is an unfinished page. » Une image par section, composée et
+   relue avant d'être posée. Les personnes sont des modèles, et la page LE DIT sous chaque image : c'est
+   la règle d'honnêteté du §15.bis — et la phrase qui invite le laboratoire à fournir ses propres
+   photos. Ces fichiers restent séparés (jamais cinq photos en base64 dans un seul fichier, §15.6). */
+figure{margin:0}
+img{max-width:100%;height:auto;display:block}
+.photo{border-radius:var(--r);object-fit:cover}
+.photo-cap{margin:9px 0 0;font-size:var(--fs-xs);color:var(--mute)}
+/* le hero est sombre : la photo s'y pose, sa légende reste lisible */
+.hero-media-col{display:grid;gap:20px;align-content:start}
+.hero-media img{aspect-ratio:16/10;box-shadow:0 26px 60px rgba(0,0,0,.45)}
+.hero-media .photo-cap{color:var(--mute-on-ink)}
+/* la préparation : la photo en face des puces et du panneau */
+.prep-layout{display:grid;gap:20px;margin-top:18px}
+.prep-media img{aspect-ratio:4/3}
+@media (min-width:860px){.prep-layout{grid-template-columns:.85fr 1.15fr;gap:26px;align-items:start}}
+/* les deux bandeaux */
+.band{margin-top:22px}
+.band-wide img{aspect-ratio:2.5/1}
+.band-mid img{aspect-ratio:2.33/1}
+@media (max-width:600px){.band-wide img,.band-mid img{aspect-ratio:4/3}}
 </style>
 </head>
 <body>
 
 <div class="bar"><div class="wrap">
-  <span><span class="dot"></span><span class="fr-only">Lun–Ven 07h–19h · Sam 07h–13h · Carrefour Etoo, Bonamoussadi</span><span class="en-only">Mon–Fri 7am–7pm · Sat 7am–1pm · Carrefour Etoo, Bonamoussadi</span></span>
+  <span><span id="open-state"></span><span class="fr-only">Lun–Ven 07h–19h · Sam 07h–13h · Carrefour Etoo, Bonamoussadi</span><span class="en-only">Mon–Fri 7am–7pm · Sat 7am–1pm · Carrefour Etoo, Bonamoussadi</span></span>
   <a href="tel:+237696139819">696 13 98 19</a>
 </div></div>
 
@@ -297,9 +422,9 @@ body{padding-bottom:84px}
 
 <section class="hero"><div class="wrap hero-grid">
   <div>
-    <p class="mono eyebrow"><span class="fr-only">Laboratoire d'analyses de biologie médicale · Bonamoussadi, Douala</span><span class="en-only">Medical biology laboratory · Bonamoussadi, Douala</span></p>
+    <p class="trust"><span class="fr-only">Laboratoire d'analyses de biologie médicale · Bonamoussadi, Douala</span><span class="en-only">Medical biology laboratory · Bonamoussadi, Douala</span></p>
     <h1 style="margin-top:14px"><span class="fr-only">Un diagnostic sûr commence <em>par une analyse fiable.</em></span><span class="en-only">A confident diagnosis starts <em>with a reliable test.</em></span></h1>
-    <p class="sub"><span class="fr-only">Vous arrivez avec l'ordonnance de votre médecin : nous réalisons l'analyse, puis nous vous remettons le résultat au laboratoire. Carrefour Etoo, Bonamoussadi — en français et en anglais.</span><span class="en-only">You come with your doctor's request: we run the test and hand you the result at the laboratory. Carrefour Etoo, Bonamoussadi — in English and in French.</span></p>
+    <p class="sub"><span class="fr-only">Vous arrivez avec l'ordonnance de votre médecin : nous réalisons l'analyse, puis nous vous remettons le résultat au laboratoire. Carrefour Etoo, Bonamoussadi — en français et en anglais.</span><span class="en-only">You come with your doctor's request: we run the test and hand you the result at the laboratory. Carrefour Etoo, Bonamoussadi, in English and in French.</span></p>
     <div class="who">
       <span class="badge"><span class="fr-only">Biologiste</span><span class="en-only">Biologist</span></span>
       <span>Dr Tientcheu Philomène</span>
@@ -314,8 +439,30 @@ body{padding-bottom:84px}
     </div>
   </div>
 
-  <div class="journey">
-    <p class="mono" style="color:var(--signal);margin:0 0 14px"><span class="fr-only">Comment ça se passe</span><span class="en-only">How it works</span></p>
+  <div class="hero-media-col">
+    <figure class="hero-media">
+      <img class="photo" src="img/unilabo-hero.jpg" width="1400" height="875" data-alt-fr="Une technicienne de laboratoire remet un formulaire à une patiente, au comptoir d'accueil." data-alt-en="A laboratory technician hands a form to a patient at the reception counter." alt="Une technicienne de laboratoire remet un formulaire à une patiente, au comptoir d'accueil." decoding="async">
+      <figcaption class="photo-cap"><span class="fr-only">Mise en situation. La photo définitive sera prise dans votre laboratoire.</span><span class="en-only">Staged image. The final photograph will be taken in your laboratory.</span></figcaption>
+    </figure>
+    <div class="fiche fiche-hero">
+    <p class="fiche-top"><span class="fiche-lab">UNI-LABO</span>
+      <span class="fiche-tag"><span class="fr-only">Exemple</span><span class="en-only">Example</span></span></p>
+    <dl class="fiche-rows">
+      <div><dt><span class="fr-only">Analyses</span><span class="en-only">Tests</span></dt>
+        <dd><span class="fr-only">Glycémie · Hémogramme complet (NFS)</span><span class="en-only">Glucose · Complete blood count (CBC)</span></dd></div>
+      <div><dt><span class="fr-only">Préparation</span><span class="en-only">Preparation</span></dt>
+        <dd><span class="fr-only">À jeun 8 à 12 h, l'eau est permise</span><span class="en-only">Fasting 8 to 12 h, water allowed</span></dd></div>
+      <div><dt><span class="fr-only">Moment</span><span class="en-only">Time</span></dt>
+        <dd><span class="fr-only">Lundi–vendredi 7h–19h · samedi 7h–13h</span><span class="en-only">Monday–Friday 7am–7pm · Saturday 7am–1pm</span></dd></div>
+    </dl>
+    <p class="fiche-name"><span><span class="fr-only">Nom</span><span class="en-only">Name</span></span><span class="rule"></span></p>
+    <p class="fiche-foot"><span class="fr-only">Le formulaire remplit cette fiche avec vos analyses, et l'envoie sur WhatsApp.</span><span class="en-only">The form fills this sheet with your tests and sends it on WhatsApp.</span></p>
+  </div>
+  </div>
+</div>
+<div class="wrap">
+<div class="journey">
+    <p class="band-label"><span class="fr-only">Comment ça se passe</span><span class="en-only">How it works</span></p>
     <ol>
       <li>
         <span class="ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 3h7l5 5v13H7z" stroke="#5B21B6" stroke-width="1.7"/><path d="M14 3v5h5" stroke="#5B21B6" stroke-width="1.7"/><path d="M9.5 13h6M9.5 16.5h4" stroke="#5B21B6" stroke-width="1.7" stroke-linecap="round"/></svg></span>
@@ -331,20 +478,24 @@ body{padding-bottom:84px}
       </li>
       <li>
         <span class="ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5 9.2 17 19 7" stroke="#5B21B6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <div><b><span class="fr-only">4 · Vous repartez avec le résultat</span><span class="en-only">4 · You leave with the result</span></b><p><span class="fr-only">Remis au laboratoire, sur présentation du reçu — et expliqué par la biologiste si vous le souhaitez.</span><span class="en-only">Handed to you at the laboratory on the receipt — and explained by the biologist if you wish.</span></p></div>
+        <div><b><span class="fr-only">4 · Vous repartez avec le résultat</span><span class="en-only">4 · You leave with the result</span></b><p><span class="fr-only">Remis au laboratoire, sur présentation du reçu — et expliqué par la biologiste si vous le souhaitez.</span><span class="en-only">Handed to you at the laboratory on the receipt, and explained by the biologist if you wish.</span></p></div>
       </li>
     </ol>
   </div>
-</div></section>
-
-<section id="avant"><div class="wrap">
+</div></section><section id="avant"><div class="wrap">
   <div class="sec-head">
     <p class="mono" style="color:var(--signal)"><span class="fr-only">Avant de venir</span><span class="en-only">Before you come</span></p>
     <h2><span class="fr-only">La préparation, écrite noir sur blanc.</span><span class="en-only">The preparation, written plainly.</span></h2>
-    <p class="lead"><span class="fr-only">La plupart des analyses ratées le sont pour une seule raison : la préparation. Choisissez ce qui vous concerne — et si vous avez un doute, écrivez-nous : nous répondons avec la consigne exacte.</span><span class="en-only">Most spoiled tests fail for one reason only: preparation. Pick what applies to you — and if in doubt, message us: we answer with the exact instruction.</span></p>
+    <p class="lead"><span class="fr-only">La plupart des analyses ratées le sont pour une seule raison : la préparation. Choisissez ce qui vous concerne — et si vous avez un doute, écrivez-nous : nous répondons avec la consigne exacte.</span><span class="en-only">Most spoiled tests fail for one reason only: preparation. Pick what applies to you, and if in doubt, message us: we answer with the exact instruction.</span></p>
   </div>
 
-  <div class="chips" role="group" aria-label="Préparation">
+  <div class="prep-layout">
+    <figure class="prep-media">
+      <img class="photo" src="img/unilabo-preparation.jpg" width="1100" height="825" data-alt-fr="Un homme attend, un verre d'eau et une horloge devant lui, avant une analyse à jeun." data-alt-en="A man waits with a glass of water and a clock in front of him before a fasting test." alt="Un homme attend, un verre d'eau et une horloge devant lui, avant une analyse à jeun." loading="lazy" decoding="async">
+      <figcaption class="photo-cap"><span class="fr-only">Mise en situation. La photo définitive sera prise dans votre laboratoire.</span><span class="en-only">Staged image. The final photograph will be taken in your laboratory.</span></figcaption>
+    </figure>
+  <div class="prep-col">
+    <div class="chips" role="group" aria-label="Préparation">
     <button class="chip is-on" type="button" data-prep="jeun"><span class="fr-only">À jeun</span><span class="en-only">Fasting</span></button>
     <button class="chip" type="button" data-prep="urines"><span class="fr-only">Urines</span><span class="en-only">Urine</span></button>
     <button class="chip" type="button" data-prep="hormones"><span class="fr-only">Hormones</span><span class="en-only">Hormones</span></button>
@@ -359,7 +510,7 @@ body{padding-bottom:84px}
     </div>
     <div class="prep-panel" id="prep-urines">
       <h3><span class="fr-only">Analyses d'urines</span><span class="en-only">Urine tests</span></h3>
-      <p><span class="fr-only">Le recueil se fait <b>au laboratoire</b> : nous vous remettons le flacon propre et la consigne au moment du dépôt. Pour certains examens, on demande la première urine du matin — nous vous le dirons à l'avance.</span><span class="en-only">The sample is collected <b>at the laboratory</b>: we hand you the clean container and the instruction when you arrive. Some tests need the first urine of the morning — we will tell you in advance.</span></p>
+      <p><span class="fr-only">Le recueil se fait <b>au laboratoire</b> : nous vous remettons le flacon propre et la consigne au moment du dépôt. Pour certains examens, on demande la première urine du matin — nous vous le dirons à l'avance.</span><span class="en-only">The sample is collected <b>at the laboratory</b>: we hand you the clean container and the instruction when you arrive. Some tests need the first urine of the morning, we will tell you in advance.</span></p>
     </div>
     <div class="prep-panel" id="prep-hormones">
       <h3><span class="fr-only">Dosages hormonaux</span><span class="en-only">Hormone tests</span></h3>
@@ -367,23 +518,29 @@ body{padding-bottom:84px}
     </div>
     <div class="prep-panel" id="prep-enfant">
       <h3><span class="fr-only">Pour un enfant</span><span class="en-only">For a child</span></h3>
-      <p><span class="fr-only">Précisez <b>l'âge</b> à l'accueil : les valeurs normales ne sont pas les mêmes que chez l'adulte. Pour les tout-petits, venez si possible à deux et dites-le nous à l'avance — nous vous dirons le meilleur moment de la journée.</span><span class="en-only">Mention the <b>age</b> at reception: normal values differ from an adult's. For very young children, come with a second person if you can and tell us in advance — we will advise the best time of day.</span></p>
+      <p><span class="fr-only">Précisez <b>l'âge</b> à l'accueil : les valeurs normales ne sont pas les mêmes que chez l'adulte. Pour les tout-petits, venez si possible à deux et dites-le nous à l'avance — nous vous dirons le meilleur moment de la journée.</span><span class="en-only">Mention the <b>age</b> at reception: normal values differ from an adult's. For very young children, come with a second person if you can and tell us in advance, we will advise the best time of day.</span></p>
     </div>
     <div class="prep-panel" id="prep-suivi">
       <h3><span class="fr-only">Suivi d'un traitement</span><span class="en-only">Treatment follow-up</span></h3>
-      <p><span class="fr-only">Apportez <b>le résultat précédent</b> : la comparaison avec le nouveau est ce qui montre si le traitement agit. C'est aussi la question que votre médecin posera — autant l'avoir sous la main.</span><span class="en-only">Bring <b>the previous result</b>: comparing it with the new one is what shows whether the treatment is working. It is also the first question your doctor will ask — worth having it at hand.</span></p>
+      <p><span class="fr-only">Apportez <b>le résultat précédent</b> : la comparaison avec le nouveau est ce qui montre si le traitement agit. C'est aussi la question que votre médecin posera — autant l'avoir sous la main.</span><span class="en-only">Bring <b>the previous result</b>: comparing it with the new one is what shows whether the treatment is working. It is also the first question your doctor will ask, worth having it at hand.</span></p>
     </div>
     <p class="always"><span class="fr-only">Dans tous les cas : demandez-nous la consigne avant de venir. Une question sur WhatsApp coûte une minute et évite un déplacement pour rien.</span><span class="en-only">In every case: ask us before you come. A question on WhatsApp takes a minute and saves you a wasted trip.</span></p>
   </div>
-</div></section>
+</div>
+  </div>
+  </div>
+</section>
 
 <section id="analyses" class="hair"><div class="wrap">
   <div class="sec-head">
-    <p class="mono" style="color:var(--signal)"><span class="fr-only">Nos analyses</span><span class="en-only">Our tests</span></p>
     <h2><span class="fr-only">Ce que nous dosons.</span><span class="en-only">What we run.</span></h2>
-    <p class="lead"><span class="fr-only">Les analyses prescrites par votre médecin, dans quatre grands domaines. <b>Aucun tarif n'est affiché ici</b> : le prix dépend de l'analyse et du réactif du jour — demandez-le sur WhatsApp, vous l'aurez en une réponse.</span><span class="en-only">The tests your doctor prescribes, across four areas. <b>No prices are shown here</b>: the price depends on the test and the day's reagent — ask on WhatsApp and you will have it in one reply.</span></p>
+    <p class="lead"><span class="fr-only">Les analyses prescrites par votre médecin, dans quatre grands domaines. <b>Aucun tarif n'est affiché ici</b> : le prix dépend de l'analyse et du réactif du jour — demandez-le sur WhatsApp, vous l'aurez en une réponse.</span><span class="en-only">The tests your doctor prescribes, across four areas. <b>No prices are shown here</b>: the price depends on the test and the day's reagent, ask on WhatsApp and you will have it in one reply.</span></p>
   </div>
 
+    <figure class="band band-wide">
+      <img class="photo" src="img/unilabo-analyses.jpg" width="1600" height="640" data-alt-fr="Des tubes de prélèvement posés dans un portoir, sur la paillasse du laboratoire." data-alt-en="Sample tubes in a rack on the laboratory bench." alt="Des tubes de prélèvement posés dans un portoir, sur la paillasse du laboratoire." loading="lazy" decoding="async">
+      <figcaption class="photo-cap"><span class="fr-only">Mise en situation. La photo définitive sera prise dans votre laboratoire.</span><span class="en-only">Staged image. The final photograph will be taken in your laboratory.</span></figcaption>
+    </figure>
   <div class="cats">
     <div class="cat">
       <h3><span class="k"></span><span class="fr-only">Biochimie</span><span class="en-only">Biochemistry</span></h3>
@@ -431,23 +588,22 @@ body{padding-bottom:84px}
 
 <section id="rendez-vous" class="hair"><div class="wrap">
   <div class="sec-head">
-    <p class="mono" style="color:var(--signal)"><span class="fr-only">Prendre rendez-vous</span><span class="en-only">Book a visit</span></p>
     <h2><span class="fr-only">Dites-nous ce que vous venez chercher.</span><span class="en-only">Tell us what you are coming for.</span></h2>
-    <p class="lead"><span class="fr-only">Choisissez vos analyses, écrivez votre nom, choisissez un moment : le message part déjà écrit vers notre WhatsApp. <strong>Rien n'est enregistré sur ce site</strong> — c'est votre téléphone qui envoie le message, et nous répondons avec le prix et la préparation.</span><span class="en-only">Pick your tests, write your name, choose a time: the message leaves already written to our WhatsApp. <strong>Nothing is stored on this site</strong> — your phone sends the message, and we reply with the price and the preparation.</span></p>
+    <p class="lead"><span class="fr-only">Choisissez vos analyses, écrivez votre nom, choisissez un moment : le message part déjà écrit vers notre WhatsApp. <strong>Rien n'est enregistré sur ce site</strong> — c'est votre téléphone qui envoie le message, et nous répondons avec le prix et la préparation.</span><span class="en-only">Pick your tests, write your name, choose a time: the message leaves already written to our WhatsApp. <strong>Nothing is stored on this site</strong>, your phone sends the message, and we reply with the price and the preparation.</span></p>
   </div>
 
   <div class="split">
     <form class="rdv rdv-card" id="rdv" novalidate>
       <h3><span class="fr-only">Votre demande</span><span class="en-only">Your request</span></h3>
-      <p class="hint" style="margin-top:4px"><span class="fr-only">Vous ne savez pas quoi cocher ? Cochez « Autre » et envoyez la photo de votre ordonnance sur WhatsApp.</span><span class="en-only">Not sure what to tick? Tick “Other” and send a photo of your request on WhatsApp.</span></p>
+      <p class="hint" id="rdv-hint" style="margin-top:4px"><span class="fr-only">Vous ne savez pas quoi cocher ? Cochez « Autre » et envoyez la photo de votre ordonnance sur WhatsApp.</span><span class="en-only">Not sure what to tick? Tick “Other” and send a photo of your request on WhatsApp.</span></p>
 
-      <div class="grp" id="rdv-g1">
-        <p class="mono"><span class="fr-only">1 · Vos analyses</span><span class="en-only">1 · Your tests</span></p>
+      <fieldset class="grp" id="rdv-g1">
+        <legend><span class="fr-only">1 · Vos analyses</span><span class="en-only">1 · Your tests</span></legend>
         <div class="fams">
       <div>
         <b><span class="fr-only">Biochimie</span><span class="en-only">Biochemistry</span></b>
-        <label class="chk"><input type="checkbox" data-fr="Glycémie (à jeun)" data-en="Glucose (fasting)" value="Glycémie (à jeun)"><span><span class="fr-only">Glycémie (à jeun)</span><span class="en-only">Glucose (fasting)</span></span></label>
-        <label class="chk"><input type="checkbox" data-fr="Cholestérol & triglycérides" data-en="Cholesterol &amp; triglycerides" value="Cholestérol & triglycérides"><span><span class="fr-only">Cholestérol & triglycérides</span><span class="en-only">Cholesterol &amp; triglycerides</span></span></label>
+        <label class="chk"><input type="checkbox" data-fr="Glycémie (à jeun)" data-en="Glucose (fasting)" value="Glycémie (à jeun)" data-prep="jeun"><span><span class="fr-only">Glycémie (à jeun)</span><span class="en-only">Glucose (fasting)</span></span></label>
+        <label class="chk"><input type="checkbox" data-fr="Cholestérol & triglycérides" data-en="Cholesterol &amp; triglycerides" value="Cholestérol & triglycérides" data-prep="jeun"><span><span class="fr-only">Cholestérol & triglycérides</span><span class="en-only">Cholesterol &amp; triglycerides</span></span></label>
         <label class="chk"><input type="checkbox" data-fr="Créatinine et urée" data-en="Creatinine and urea" value="Créatinine et urée"><span><span class="fr-only">Créatinine et urée</span><span class="en-only">Creatinine and urea</span></span></label>
         <label class="chk"><input type="checkbox" data-fr="Transaminases (foie)" data-en="Transaminases (liver)" value="Transaminases (foie)"><span><span class="fr-only">Transaminases (foie)</span><span class="en-only">Transaminases (liver)</span></span></label>
       </div>
@@ -467,67 +623,84 @@ body{padding-bottom:84px}
       </div>
       <div>
         <b><span class="fr-only">Hormonologie</span><span class="en-only">Hormonology</span></b>
-        <label class="chk"><input type="checkbox" data-fr="TSH, T3, T4 (thyroïde)" data-en="TSH, T3, T4 (thyroid)" value="TSH, T3, T4 (thyroïde)"><span><span class="fr-only">TSH, T3, T4 (thyroïde)</span><span class="en-only">TSH, T3, T4 (thyroid)</span></span></label>
-        <label class="chk"><input type="checkbox" data-fr="Prolactine" data-en="Prolactin" value="Prolactine"><span><span class="fr-only">Prolactine</span><span class="en-only">Prolactin</span></span></label>
-        <label class="chk"><input type="checkbox" data-fr="Bêta-HCG (grossesse)" data-en="Beta-HCG (pregnancy)" value="Bêta-HCG (grossesse)"><span><span class="fr-only">Bêta-HCG (grossesse)</span><span class="en-only">Beta-HCG (pregnancy)</span></span></label>
-        <label class="chk"><input type="checkbox" data-fr="FSH et LH" data-en="FSH and LH" value="FSH et LH"><span><span class="fr-only">FSH et LH</span><span class="en-only">FSH and LH</span></span></label>
+        <label class="chk"><input type="checkbox" data-fr="TSH, T3, T4 (thyroïde)" data-en="TSH, T3, T4 (thyroid)" value="TSH, T3, T4 (thyroïde)" data-prep="hormones"><span><span class="fr-only">TSH, T3, T4 (thyroïde)</span><span class="en-only">TSH, T3, T4 (thyroid)</span></span></label>
+        <label class="chk"><input type="checkbox" data-fr="Prolactine" data-en="Prolactin" value="Prolactine" data-prep="hormones"><span><span class="fr-only">Prolactine</span><span class="en-only">Prolactin</span></span></label>
+        <label class="chk"><input type="checkbox" data-fr="Bêta-HCG (grossesse)" data-en="Beta-HCG (pregnancy)" value="Bêta-HCG (grossesse)" data-prep="hormones"><span><span class="fr-only">Bêta-HCG (grossesse)</span><span class="en-only">Beta-HCG (pregnancy)</span></span></label>
+        <label class="chk"><input type="checkbox" data-fr="FSH et LH" data-en="FSH and LH" value="FSH et LH" data-prep="hormones"><span><span class="fr-only">FSH et LH</span><span class="en-only">FSH and LH</span></span></label>
       </div>
       <div>
         <b><span class="fr-only">Autre, ou je ne sais pas encore</span><span class="en-only">Other, or I am not sure yet</span></b>
-        <label class="chk"><input type="checkbox" data-fr="Autre analyse / à préciser" data-en="Other test / to be specified" value="Autre analyse"><span><span class="fr-only">Autre analyse — je précise sur WhatsApp</span><span class="en-only">Another test — I will specify on WhatsApp</span></span></label>
-        <label class="chk"><input type="checkbox" data-fr="J'ai une ordonnance, choisissez pour moi" data-en="I have a prescription, advise me" value="Ordonnance"><span><span class="fr-only">J'ai une ordonnance — conseillez-moi</span><span class="en-only">I have a prescription — advise me</span></span></label>
+        <label class="chk"><input type="checkbox" data-fr="Analyse d'urines" data-en="Urine test" value="Urine" data-prep="urines"><span><span class="fr-only">Analyse d'urines (recueil sur place)</span><span class="en-only">Urine test (collected on site)</span></span></label>
+        <label class="chk"><input type="checkbox" data-fr="Autre analyse / à préciser" data-en="Other test / to be specified" value="Autre analyse" data-prep="autre"><span><span class="fr-only">Autre analyse — je précise sur WhatsApp</span><span class="en-only">Another test, I will specify on WhatsApp</span></span></label>
+        <label class="chk"><input type="checkbox" data-fr="J'ai une ordonnance, choisissez pour moi" data-en="I have a prescription, advise me" value="Ordonnance" data-prep="ordonnance"><span><span class="fr-only">J'ai une ordonnance — conseillez-moi</span><span class="en-only">I have a prescription, advise me</span></span></label>
       </div>
         </div>
-      </div>
+      </fieldset>
 
       <div class="grp" id="rdv-g2">
-        <p class="mono"><span class="fr-only">2 · Votre nom</span><span class="en-only">2 · Your name</span></p>
-        <input type="text" id="rdv-nom" name="nom" autocomplete="name" placeholder="Nom et prénom">
+        <label for="rdv-nom"><span class="fr-only">2 · Votre nom</span><span class="en-only">2 · Your name</span></label>
+        <input type="text" id="rdv-nom" name="nom" autocomplete="name" aria-describedby="rdv-hint">
       </div>
 
-      <div class="grp" id="rdv-g3">
-        <p class="mono"><span class="fr-only">3 · Moment souhaité</span><span class="en-only">3 · Preferred time</span></p>
+      <fieldset class="grp" id="rdv-g3">
+        <legend><span class="fr-only">3 · Moment souhaité</span><span class="en-only">3 · Preferred time</span></legend>
         <div class="mom">
-          <label class="chk"><input type="radio" name="moment" data-fr="Matin (7h–12h)" data-en="Morning (7am–12pm)" value="Matin"><span><span class="fr-only">Matin (7h–12h)</span><span class="en-only">Morning (7am–12pm)</span></span></label>
-          <label class="chk"><input type="radio" name="moment" data-fr="Après-midi (12h–16h)" data-en="Afternoon (12pm–4pm)" value="Après-midi"><span><span class="fr-only">Après-midi (12h–16h)</span><span class="en-only">Afternoon (12pm–4pm)</span></span></label>
-          <label class="chk"><input type="radio" name="moment" data-fr="Samedi matin (7h–13h)" data-en="Saturday morning (7am–1pm)" value="Samedi matin"><span><span class="fr-only">Samedi matin (7h–13h)</span><span class="en-only">Saturday morning (7am–1pm)</span></span></label>
-          <label class="chk"><input type="radio" name="moment" data-fr="Peu importe, le plus tôt possible" data-en="Any time, as soon as possible" value="Peu importe"><span><span class="fr-only">Peu importe, le plus tôt possible</span><span class="en-only">Any time, as soon as possible</span></span></label>
+        <label class="chk"><input type="radio" name="moment" data-fr="Matin (7h–12h)" data-en="Morning (7am–12pm)" value="Matin"><span><span class="fr-only">Matin (7h–12h)</span><span class="en-only">Morning (7am–12pm)</span></span></label>
+        <label class="chk"><input type="radio" name="moment" data-fr="Après-midi (12h–16h)" data-en="Afternoon (12pm–4pm)" value="Après-midi"><span><span class="fr-only">Après-midi (12h–16h)</span><span class="en-only">Afternoon (12pm–4pm)</span></span></label>
+        <label class="chk"><input type="radio" name="moment" data-fr="Samedi matin (7h–13h)" data-en="Saturday morning (7am–1pm)" value="Samedi matin"><span><span class="fr-only">Samedi matin (7h–13h)</span><span class="en-only">Saturday morning (7am–1pm)</span></span></label>
+        <label class="chk"><input type="radio" name="moment" data-fr="Peu importe, le plus tôt possible" data-en="Any time, as soon as possible" value="Peu importe"><span><span class="fr-only">Peu importe, le plus tôt possible</span><span class="en-only">Any time, as soon as possible</span></span></label>
         </div>
+      </fieldset>
+
+      <div class="grp" id="rdv-g4">
+        <label for="rdv-note"><span class="fr-only">4 · Une précision (facultatif)</span><span class="en-only">4 · Anything else (optional)</span></label>
+        <input type="text" id="rdv-note" name="note">
       </div>
 
-      <div class="grp">
-        <p class="mono"><span class="fr-only">4 · Une précision (facultatif)</span><span class="en-only">4 · Anything else (optional)</span></p>
-        <input type="text" id="rdv-note" name="note" placeholder="">
-      </div>
-
-      <button class="btn btn-wa" id="rdv-go" type="submit" aria-disabled="true">
+      <a class="btn btn-wa" id="rdv-go" href="https://wa.me/237696139819?text=Bonjour%20UNI-LABO%2C%20je%20souhaite%20prendre%20rendez-vous." aria-disabled="true">
         <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.5-1.2-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.4.1.6-.1l.9-1c.2-.2.4-.2.6-.1l1.8.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
         <span><span class="fr-only">Ouvrir WhatsApp avec ma demande</span><span class="en-only">Open WhatsApp with my request</span></span>
-      </button>
+      </a>
       <p class="hint"><span class="fr-only">Le bouton s'active dès que vous avez coché une analyse, écrit votre nom et choisi un moment. Vous relisez le message avant de l'envoyer.</span><span class="en-only">The button turns on once you have ticked a test, written your name and chosen a time. You read the message before sending it.</span></p>
       <p class="rdv-said" id="rdv-said" role="status" aria-live="polite" hidden></p>
     </form>
 
-    <aside class="rdv-side">
-      <p class="mono"><span class="fr-only">Nous trouver</span><span class="en-only">Finding us</span></p>
-      <p><strong>Carrefour Etoo, Bonamoussadi</strong><br>Douala</p>
-      <p><span class="fr-only">Lundi – Vendredi : <strong>7h – 19h</strong><br>Samedi : <strong>7h – 13h</strong></span><span class="en-only">Monday – Friday: <strong>7am – 7pm</strong><br>Saturday: <strong>7am – 1pm</strong></span></p>
-      <ul>
-        <li><span class="fr-only">Apportez votre ordonnance si vous en avez une.</span><span class="en-only">Bring your prescription if you have one.</span></li>
-        <li><span class="fr-only">Pour les analyses à jeun, venez le matin sans manger.</span><span class="en-only">For fasting tests, come in the morning without eating.</span></li>
-        <li><span class="fr-only">Paiement sur place, après le prélèvement.</span><span class="en-only">Payment on site, after the sample.</span></li>
-      </ul>
-      <p style="margin-top:16px"><span class="fr-only">Vous préférez appeler ?</span><span class="en-only">Would rather call?</span><br>
-        <a href="tel:+237696139819"><strong>696 13 98 19</strong></a></p>
-    </aside>
+    <div class="fiche-live">
+      <div class="fiche" id="fiche">
+        <p class="fiche-top"><span class="fiche-lab">UNI-LABO</span>
+          <span class="fiche-tag" id="fiche-state"><span class="fr-only">à compléter</span><span class="en-only">to fill in</span></span></p>
+        <dl class="fiche-rows">
+          <div><dt><span class="fr-only">Nom</span><span class="en-only">Name</span></dt>
+            <dd id="fiche-nom" class="is-empty">—</dd></div>
+          <div><dt><span class="fr-only">Analyses</span><span class="en-only">Tests</span></dt>
+            <dd id="fiche-tests" class="is-empty">—</dd></div>
+          <div><dt><span class="fr-only">Préparation</span><span class="en-only">Preparation</span></dt>
+            <dd id="fiche-prep" class="is-empty">—</dd></div>
+          <div><dt><span class="fr-only">Moment</span><span class="en-only">Time</span></dt>
+            <dd id="fiche-moment" class="is-empty">—</dd></div>
+        </dl>
+        <p class="fiche-foot" id="fiche-foot"><span class="fr-only">Cochez vos analyses : cette fiche se remplit sous vos yeux, puis part sur WhatsApp.</span><span class="en-only">Tick your tests: this sheet fills in as you go, then leaves on WhatsApp.</span></p>
+      </div>
+      <div class="bring">
+        <div><h4><span class="fr-only">Où</span><span class="en-only">Where</span></h4>
+          <p><span class="fr-only">Carrefour Etoo, Bonamoussadi (Makepe Bloc L), Douala.</span><span class="en-only">Carrefour Etoo, Bonamoussadi (Makepe Bloc L), Douala.</span></p></div>
+        <div><h4><span class="fr-only">Quand</span><span class="en-only">When</span></h4>
+          <p><span class="fr-only">Lundi–vendredi 7h–19h · samedi 7h–13h.</span><span class="en-only">Monday-Friday 7am-7pm · Saturday 7am-1pm.</span></p></div>
+        <div><h4><span class="fr-only">Quoi apporter</span><span class="en-only">What to bring</span></h4>
+          <p><span class="fr-only">L'ordonnance si vous en avez une, et votre carte de couverture si vous en avez une. Une question ? <a href="tel:+237696139819">696 13 98 19</a></span><span class="en-only">Your prescription if you have one, and your cover card if you have one. A question? <a href="tel:+237696139819">696 13 98 19</a></span></p></div>
+      </div>
+    </div>
   </div>
 </div></section>
 
 <section id="resultats"><div class="wrap">
   <div class="sec-head">
-    <p class="mono" style="color:var(--signal)"><span class="fr-only">Vos résultats</span><span class="en-only">Your results</span></p>
     <h2><span class="fr-only">Où et quand récupérer le résultat.</span><span class="en-only">Where and when to collect your result.</span></h2>
   </div>
+    <figure class="band band-mid">
+      <img class="photo" src="img/unilabo-resultats.jpg" width="1400" height="600" data-alt-fr="Une biologiste lit une feuille de résultats à son bureau, près du microscope." data-alt-en="A biologist reads a result sheet at her desk, next to the microscope." alt="Une biologiste lit une feuille de résultats à son bureau, près du microscope." loading="lazy" decoding="async">
+      <figcaption class="photo-cap"><span class="fr-only">Mise en situation. La photo définitive sera prise dans votre laboratoire.</span><span class="en-only">Staged image. The final photograph will be taken in your laboratory.</span></figcaption>
+    </figure>
   <div class="split">
     <div class="panel">
       <h3><span class="fr-only">Retrait au laboratoire</span><span class="en-only">Collection at the laboratory</span></h3>
@@ -536,14 +709,14 @@ body{padding-bottom:84px}
         <li><span class="fr-only">Le <b>délai dépend de l'analyse</b> : nous vous le confirmons au moment du prélèvement, pour que vous sachiez quand revenir.</span><span class="en-only">The <b>turnaround depends on the test</b>: we confirm it when the sample is taken, so you know when to come back.</span></li>
         <li><span class="fr-only">Si quelqu'un vient à votre place, prévenez-nous : nous vous dirons ce qu'il faut apporter.</span><span class="en-only">If someone collects it for you, tell us first: we will say what they need to bring.</span></li>
       </ul>
-      <p class="note" style="margin-top:14px"><span class="fr-only">Un doute sur un résultat déjà retiré ? Écrivez-nous avec la date du prélèvement — c'est plus rapide qu'un déplacement.</span><span class="en-only">A question about a result you already collected? Message us with the sample date — faster than a trip.</span></p>
+      <p class="note" style="margin-top:14px"><span class="fr-only">Un doute sur un résultat déjà retiré ? Écrivez-nous avec la date du prélèvement — c'est plus rapide qu'un déplacement.</span><span class="en-only">A question about a result you already collected? Message us with the sample date. Faster than a trip.</span></p>
     </div>
     <div class="panel">
       <h3><span class="fr-only">La biologiste</span><span class="en-only">The biologist</span></h3>
       <p class="quote"><span class="fr-only">« Réaliser les analyses biologiques prescrites par un médecin, en vue de confirmer ou d'infirmer un diagnostic, de traiter une maladie ou d'assurer un suivi thérapeutique. »</span><span class="en-only">“To run the biological tests a doctor prescribes, in order to confirm or rule out a diagnosis, to treat an illness, or to follow a treatment.”</span></p>
       <p class="note" style="margin-top:12px"><span class="fr-only">C'est la mission du laboratoire, écrite par le laboratoire. Dr Tientcheu Philomène, biologiste, conduit les analyses et peut vous expliquer un résultat sur place.</span><span class="en-only">That is the laboratory's mission, in its own words. Dr Tientcheu Philomène, biologist, runs the tests and can explain a result to you on site.</span></p>
       <div class="actions" style="margin-top:16px">
-        <a class="btn btn-primary" href="https://wa.me/237696139819?text=Bonjour%20Dr%20Tientcheu%2C%20j%26%23x27%3Bai%20une%20question%20sur%20une%20analyse."><span class="fr-only">Poser une question</span><span class="en-only">Ask a question</span></a>
+        <a class="btn btn-primary" href="https://wa.me/237696139819?text=Bonjour%20Dr%20Tientcheu%2C%20j%27ai%20une%20question%20sur%20une%20analyse."><span class="fr-only">Poser une question</span><span class="en-only">Ask a question</span></a>
       </div>
     </div>
   </div>
@@ -551,7 +724,6 @@ body{padding-bottom:84px}
 
 <section id="acces" class="hair"><div class="wrap">
   <div class="sec-head">
-    <p class="mono" style="color:var(--signal)"><span class="fr-only">Nous trouver</span><span class="en-only">Find us</span></p>
     <h2><span class="fr-only">Carrefour Etoo, Bonamoussadi.</span><span class="en-only">Carrefour Etoo, Bonamoussadi.</span></h2>
   </div>
   <div class="access">
@@ -598,16 +770,15 @@ body{padding-bottom:84px}
 
 <section class="hair"><div class="wrap">
   <div class="sec-head">
-    <p class="mono" style="color:var(--signal)"><span class="fr-only">Questions fréquentes</span><span class="en-only">Frequently asked</span></p>
     <h2><span class="fr-only">Ce qu'on nous demande au guichet, écrit ici.</span><span class="en-only">What people ask at the desk, written here.</span></h2>
   </div>
   <details class="faq">
     <summary><span class="fr-only">Faut-il être à jeun ?</span><span class="en-only">Do I need to fast?</span></summary>
-    <p><span class="fr-only">Pour la glycémie, le cholestérol et les triglycérides : 8 à 12 heures sans manger, l'eau est permise. Pour les autres analyses, ce n'est pas toujours nécessaire — demandez-nous avant de venir. Si votre médecin a donné une consigne précise, c'est la sienne qui compte.</span><span class="en-only">For glucose, cholesterol and triglycerides: 8 to 12 hours without food, water is allowed. For other tests it is not always needed — ask us before coming. If your doctor gave a specific instruction, that one wins.</span></p>
+    <p><span class="fr-only">Pour la glycémie, le cholestérol et les triglycérides : 8 à 12 heures sans manger, l'eau est permise. Pour les autres analyses, ce n'est pas toujours nécessaire — demandez-nous avant de venir. Si votre médecin a donné une consigne précise, c'est la sienne qui compte.</span><span class="en-only">For glucose, cholesterol and triglycerides: 8 to 12 hours without food, water is allowed. For other tests it is not always needed, so ask us before coming. If your doctor gave a specific instruction, that one wins.</span></p>
   </details>
   <details class="faq">
     <summary><span class="fr-only">Quand venir pour un dosage hormonal ?</span><span class="en-only">When should I come for a hormone test?</span></summary>
-    <p><span class="fr-only">Souvent le matin, et parfois à un jour précis du cycle. Écrivez-nous le nom de l'analyse : nous vous donnons la date et l'heure exactes — c'est la seule façon d'éviter un déplacement pour rien.</span><span class="en-only">Often in the morning, and sometimes on a specific day of the cycle. Message us the name of the test: we give you the exact date and time — the only way to avoid a wasted trip.</span></p>
+    <p><span class="fr-only">Souvent le matin, et parfois à un jour précis du cycle. Écrivez-nous le nom de l'analyse : nous vous donnons la date et l'heure exactes — c'est la seule façon d'éviter un déplacement pour rien.</span><span class="en-only">Often in the morning, and sometimes on a specific day of the cycle. Message us the name of the test: we give you the exact date and time, the only way to avoid a wasted trip.</span></p>
   </details>
   <details class="faq">
     <summary><span class="fr-only">Qu'est-ce que j'apporte ?</span><span class="en-only">What should I bring?</span></summary>
@@ -619,7 +790,7 @@ body{padding-bottom:84px}
   </details>
   <details class="faq">
     <summary><span class="fr-only">Où se trouve exactement le laboratoire ?</span><span class="en-only">Where exactly is the laboratory?</span></summary>
-    <p><span class="fr-only">À Bonamoussadi, au carrefour Etoo — Rue 5N441 (Makepe Bloc L), Douala. Le plan ci-dessus montre le carrefour : le laboratoire est indiqué en violet.</span><span class="en-only">In Bonamoussadi, at Carrefour Etoo — Rue 5N441 (Makepe Bloc L), Douala. The sketch above shows the junction: the laboratory is marked in violet.</span></p>
+    <p><span class="fr-only">À Bonamoussadi, au carrefour Etoo — Rue 5N441 (Makepe Bloc L), Douala. Le plan ci-dessus montre le carrefour : le laboratoire est indiqué en violet.</span><span class="en-only">In Bonamoussadi, at Carrefour Etoo, Rue 5N441 (Makepe Bloc L), Douala. The sketch above shows the junction: the laboratory is marked in violet.</span></p>
   </details>
 </div></section>
 
@@ -636,7 +807,7 @@ body{padding-bottom:84px}
         </svg>
         <b>UNI-LABO</b>
       </div>
-      <p class="f-line"><span class="fr-only">Laboratoire d'analyses de biologie médicale à Bonamoussadi, Douala — Carrefour Etoo. Analyses prescrites par votre médecin, résultats remis au laboratoire.</span><span class="en-only">Medical biology laboratory in Bonamoussadi, Douala — Carrefour Etoo. Tests prescribed by your doctor, results handed over at the laboratory.</span></p>
+      <p class="f-line"><span class="fr-only">Laboratoire d'analyses de biologie médicale à Bonamoussadi, Douala — Carrefour Etoo. Analyses prescrites par votre médecin, résultats remis au laboratoire.</span><span class="en-only">Medical biology laboratory in Bonamoussadi, Douala, Carrefour Etoo. Tests prescribed by your doctor, results handed over at the laboratory.</span></p>
     </div>
 
     <div class="f-block">
@@ -661,7 +832,7 @@ body{padding-bottom:84px}
     <div class="f-block">
       <h4><span class="fr-only">Nous trouver</span><span class="en-only">Find us</span></h4>
       <div class="f-contact">
-        <span><b><span class="fr-only">Adresse</span><span class="en-only">Address</span></b><br><span class="fr-only">Rue 5N441, Bonamoussadi (Makepe Bloc L) — repère Carrefour Etoo, Douala</span><span class="en-only">Rue 5N441, Bonamoussadi (Makepe Bloc L) — landmark Carrefour Etoo, Douala</span></span>
+        <span><b><span class="fr-only">Adresse</span><span class="en-only">Address</span></b><br><span class="fr-only">Rue 5N441, Bonamoussadi (Makepe Bloc L) — repère Carrefour Etoo, Douala</span><span class="en-only">Rue 5N441, Bonamoussadi (Makepe Bloc L), landmark Carrefour Etoo, Douala</span></span>
         <span><b><span class="fr-only">Horaires</span><span class="en-only">Hours</span></b><br><span class="fr-only">Lundi–vendredi 07h–19h · Samedi 07h–13h</span><span class="en-only">Monday–Friday 7am–7pm · Saturday 7am–1pm</span></span>
         <span><b><span class="fr-only">Téléphone</span><span class="en-only">Phone</span></b><br><a href="tel:+237696139819" style="color:#fff">696 13 98 19</a> · <a href="tel:+237233470068" style="color:#fff">233 47 00 68</a></span>
       </div>
@@ -670,13 +841,14 @@ body{padding-bottom:84px}
 
   <div class="f-strip">
     <span>© 2026 UNI-LABO</span>
-    <span><span class="fr-only">Maquette préparée par AMK pour UNI-LABO — horaires, services et mentions à valider par le laboratoire avant mise en ligne.</span><span class="en-only">Mockup prepared by AMK for UNI-LABO — hours, services and wording to be validated by the laboratory before going live.</span></span>
+    <span><span class="fr-only">Maquette préparée par AMK pour UNI-LABO — horaires, services et mentions à valider par le laboratoire avant mise en ligne.</span><span class="en-only">Mockup prepared by AMK for UNI-LABO: hours, services and wording to be validated by the laboratory before going live.</span></span>
     <span>Site par AMK — Développement Web &amp; Solutions Digitales · <a href="#top"><span class="fr-only">Haut de page ↑</span><span class="en-only">Back to top ↑</span></a></span>
   </div>
 </div></footer>
 
+<p class="said" id="wa-said" role="status" aria-live="polite" hidden></p>
 <div class="sticky-wa" data-wa-bar>
-  <p class="said" id="wa-said" role="status" aria-live="polite" hidden></p>
+  <a class="r" href="#rendez-vous"><span class="fr-only">Réserver</span><span class="en-only">Book</span></a>
   <a class="w" href="https://wa.me/237696139819?text=Bonjour%20UNI-LABO%2C%20je%20souhaite%20faire%20une%20analyse.">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a11 11 0 0 1-5.6-4.9c-.4-.7-.6-1.4-.5-2 .1-.6.6-1.4 1.1-1.7.3-.2.7-.2.9.2l.8 1.4c.1.3.1.5-.1.8l-.4.5c-.2.2-.2.4-.1.6.4.8 1.5 2 2.4 2.4.2.1.4.1.6-.1l.5-.5c.2-.2.5-.3.8-.1l1.4.8c.4.2.4.6.2.9Z"/></svg>
     <span class="fr-only">WhatsApp</span><span class="en-only">WhatsApp</span>
@@ -684,15 +856,9 @@ body{padding-bottom:84px}
   <a class="c" href="tel:+237696139819"><span class="fr-only">Appeler</span><span class="en-only">Call</span></a>
 </div>
 
+<!-- À LA MISE EN LIGNE : remplacer l'URL par leur domaine et retirer noindex,nofollow. -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[
- {"@type":"MedicalBusiness","name":"UNI-LABO","description":"Laboratoire d'analyses de biologie médicale à Bonamoussadi, Douala.",
-  "telephone":"+237696139819","email":"u.labo@yahoo.fr",
-  "address":{"@type":"PostalAddress","streetAddress":"Rue 5N441, Bonamoussadi (Makepe Bloc L)","addressLocality":"Douala","addressCountry":"CM"},
-  "areaServed":"Douala",
-  "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"19:00"},
-   {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"07:00","closes":"13:00"}]}
-]}
+{"@context":"https://schema.org","@graph":[{"@type":"MedicalLaboratory","@id":"#uni-labo","name":"UNI-LABO","description":"Laboratoire d'analyses de biologie médicale à Bonamoussadi, Douala.","url":"https://uni-labo.vercel.app/","telephone":"+237696139819","email":"u.labo@yahoo.fr","address":{"@type":"PostalAddress","streetAddress":"Rue 5N441, Bonamoussadi (Makepe Bloc L)","addressLocality":"Douala","addressCountry":"CM"},"areaServed":"Douala","availableLanguage":["fr","en"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"07:00","closes":"13:00"}]},{"@type":"FAQPage","@id":"#faq","mainEntity":[{"@type":"Question","name":"Faut-il être à jeun ?","acceptedAnswer":{"@type":"Answer","text":"Pour la glycémie, le cholestérol et les triglycérides : 8 à 12 heures sans manger, l'eau est permise. Pour les autres analyses, ce n'est pas toujours nécessaire — demandez-nous avant de venir. Si votre médecin a donné une consigne précise, c'est la sienne qui compte."}},{"@type":"Question","name":"Quand venir pour un dosage hormonal ?","acceptedAnswer":{"@type":"Answer","text":"Souvent le matin, et parfois à un jour précis du cycle. Écrivez-nous le nom de l'analyse : nous vous donnons la date et l'heure exactes — c'est la seule façon d'éviter un déplacement pour rien."}},{"@type":"Question","name":"Qu'est-ce que j'apporte ?","acceptedAnswer":{"@type":"Answer","text":"L'ordonnance de votre médecin (ou sa photo), votre carte de couverture si vous en avez une, et votre ancien résultat s'il s'agit d'un suivi."}},{"@type":"Question","name":"Combien coûte une analyse ?","acceptedAnswer":{"@type":"Answer","text":"Le tarif dépend de l'analyse et du réactif utilisé. Envoyez-nous le nom de l'analyse (ou l'ordonnance en photo) sur WhatsApp : nous vous répondons avec le prix avant que vous vous déplaciez."}},{"@type":"Question","name":"Où se trouve exactement le laboratoire ?","acceptedAnswer":{"@type":"Answer","text":"À Bonamoussadi, au carrefour Etoo — Rue 5N441 (Makepe Bloc L), Douala. Le plan ci-dessus montre le carrefour : le laboratoire est indiqué en violet."}}]}]}
 </script>
 
 <script>
@@ -707,6 +873,50 @@ body{padding-bottom:84px}
   document.getElementById('btn-fr').addEventListener('click',function(){setLang('fr')});
   document.getElementById('btn-en').addEventListener('click',function(){setLang('en')});
   try{ var saved=localStorage.getItem(k); if(saved) setLang(saved); }catch(e){}
+
+  /* ── L'ÉTAT RÉEL DU LABORATOIRE (23/09 soir) ──────────────────────────────────────────────────────
+     La barre du haut portait un point vert décoratif à côté des horaires : à 22 h il annonçait donc
+     « ouvert » sans rien savoir. §3.4 interdit les points d'état décoratifs ; celui-ci devient un état
+     calculé à l'heure de Douala (UTC+1) — et sans JavaScript il ne s'affiche pas du tout : la page
+     retombe sur les horaires écrits, qui eux sont toujours vrais. */
+  var barState=document.getElementById('open-state');
+  function drawOpen(){
+    if(!barState) return;
+    var l=(html.getAttribute('data-lang')==='en')?'en':'fr';
+    var now=new Date();
+    var cm=new Date(now.getTime()+(now.getTimezoneOffset()+60)*60000);
+    var d=cm.getDay(), h=cm.getHours()+cm.getMinutes()/60;
+    var open=false, closes='', opens='';
+    if(d>=1&&d<=5){ open=(h>=7&&h<19); closes='19'; opens=(h<7?'today':'tomorrow'); }
+    else if(d===6){ open=(h>=7&&h<13); closes='13'; opens=(h<7?'today':'monday'); }
+    else { opens='monday'; }
+    var word, extra='';
+    if(open){
+      word=(l==='en' ? 'Open now, until '+(closes==='19'?'7pm':'1pm')
+                     : 'Ouvert maintenant, jusqu\'à '+closes+'h');
+    }else{
+      extra=' closed';
+      var when = opens==='today'    ? (l==='en'?'today at 7am':'aujourd\'hui à 7h')
+               : opens==='tomorrow' ? (l==='en'?'tomorrow at 7am':'demain à 7h')
+               :                      (l==='en'?'Monday at 7am':'lundi à 7h');
+      word=(l==='en'?'Closed, we open ':'Fermé, nous rouvrons ')+when;
+    }
+    barState.innerHTML='<span class="dot'+extra+'"></span><span>'+word+'</span> · ';
+  }
+  function labelChips(){
+    var g=document.querySelector('.chips'); if(!g) return;
+    g.setAttribute('aria-label',(html.getAttribute('data-lang')==='en')?'Preparation':'Préparation');
+  }
+  function labelMedia(){
+    [].slice.call(document.querySelectorAll('img[data-alt-fr]')).forEach(function(im){
+      im.setAttribute('alt', html.getAttribute('data-lang')==='en'
+        ? im.getAttribute('data-alt-en') : im.getAttribute('data-alt-fr'));
+    });
+  }
+  drawOpen(); labelChips(); labelMedia();
+  [document.getElementById('btn-fr'),document.getElementById('btn-en')].forEach(function(b){
+    if(b) b.addEventListener('click',function(){ drawOpen(); labelChips(); labelMedia(); });
+  });
 
   // preparation chips — one answer at a time, no scrolling required
   var chips=[].slice.call(document.querySelectorAll('.chip'));
@@ -753,96 +963,151 @@ body{padding-bottom:84px}
 })();
 </script>
 <script>
-/* ── FORMULAIRE DE RÉSERVATION — construit le message WhatsApp, rien de plus ─────
-   Ajouté le 23/09. Aucun envoi réseau depuis cette page : on remplit seulement le
-   lien wa.me que le patient ouvre lui-même. */
+/* ── LA FICHE VIVANTE (23/09, soir) ───────────────────────────────────────────────────────────────
+   Le formulaire ne fait pas que composer un message : il ÉCRIT LA FICHE sous les yeux du visiteur, et
+   la ligne « Préparation » se déduit des consignes que le laboratoire publie déjà lui-même. Rien n'est
+   inventé : chaque phrase de `PREP` résume un panneau de la section « Avant de venir », et l'absence de
+   consigne est DITE (« pas de consigne particulière publiée ») au lieu d'être comblée.
+   Aucun envoi réseau depuis cette page : on remplit le lien `wa.me` déjà présent dans le HTML, que le
+   visiteur ouvre lui-même. Le bloc se protège : une erreur ici ne peut pas casser la langue, les
+   puces ni la bande de retour — l'ancre garde son href générique. */
 (function(){
+  try{
   var form=document.getElementById('rdv'); if(!form) return;
   var go=document.getElementById('rdv-go');
   var said=document.getElementById('rdv-said');
   var NUM='237696139819';
+  var GENERIC='https://wa.me/'+NUM+'?text='+encodeURIComponent(
+    'Bonjour UNI-LABO, je souhaite prendre rendez-vous.');
   var timer=null;
   function lg(){ return document.documentElement.getAttribute('data-lang')==='en' ? 'en' : 'fr'; }
-  function val(sel,attr){
-    var el=form.querySelector(sel); if(!el) return '';
-    return el.getAttribute(attr) || el.value || '';
+  function set(id, value, empty){
+    var el=document.getElementById(id); if(!el) return;
+    el.textContent=value;
+    if(empty) el.classList.add('is-empty'); else el.classList.remove('is-empty');
   }
+  /* LES CONSIGNES — résumés fidèles des panneaux publiés par le laboratoire */
+  var PREP={
+    jeun:{fr:"À jeun 8 à 12 h, l'eau est permise",en:"Fasting 8 to 12 h, water allowed"},
+    urines:{fr:"Recueil au laboratoire, flacon remis sur place",en:"Collected at the laboratory, container given on site"},
+    hormones:{fr:"Souvent le matin, parfois un jour précis du cycle",en:"Often in the morning, sometimes a specific cycle day"},
+    enfant:{fr:"Précisez l'âge à l'accueil",en:"Tell us the age at reception"},
+    suivi:{fr:"Apportez le résultat précédent",en:"Bring the previous result"},
+    ordonnance:{fr:"Apportez l'ordonnance (ou une photo nette)",en:"Bring the prescription (or a clear photo)"},
+    autre:{fr:"Nous vous confirmons la consigne par message",en:"We confirm the instruction by message"}
+  };
+  var ORDER=['jeun','urines','hormones','enfant','suivi','ordonnance','autre'];
   function build(){
     var l=lg();
-    var boxes=[].slice.call(form.querySelectorAll('input[type=checkbox]:checked'));
-    var tests=boxes.map(function(c){ return c.getAttribute('data-'+l) || c.value; });
-    var nom=(form.querySelector('#rdv-nom').value||'').replace(/\s+/g,' ').trim();
-    var note=(form.querySelector('#rdv-note').value||'').replace(/\s+/g,' ').trim();
+    var picked=[].slice.call(form.querySelectorAll('input[type=checkbox]:checked'));
+    var tests=picked.map(function(c){ return c.getAttribute('data-'+l) || c.value; });
+    var nomEl=form.querySelector('#rdv-nom'), noteEl=form.querySelector('#rdv-note');
+    var nom=(nomEl && nomEl.value || '').replace(/\s+/g,' ').trim();
+    var note=(noteEl && noteEl.value || '').replace(/\s+/g,' ').trim();
     var m=form.querySelector('input[name="moment"]:checked');
     var moment=m ? (m.getAttribute('data-'+l) || m.value) : '';
+    var keys=[];
+    picked.forEach(function(c){ var p=c.getAttribute('data-prep'); if(p && PREP[p] && keys.indexOf(p)<0) keys.push(p); });
+    keys.sort(function(a,b){ return ORDER.indexOf(a)-ORDER.indexOf(b); });
+    var prep;
+    if(keys.length) prep=keys.slice(0,2).map(function(p){ return PREP[p][l]; }).join(' · ');
+    else prep = tests.length
+      ? (l==='en' ? 'No particular preparation stated: we confirm by message'
+                  : 'Pas de consigne particulière publiée : nous confirmons par message')
+      : '';
     var ok = tests.length>0 && nom.length>=2 && moment!=='';
     var L = l==='en'
-      ? ['Hello UNI-LABO, I would like to book a visit.','Name: ','Tests: ','Preferred time: ','Anything else: ','(Sent from your website.)']
-      : ['Bonjour UNI-LABO, je souhaite prendre rendez-vous.','Nom : ','Analyses : ','Moment souhaité : ','Précision : ','(Envoyé depuis votre site.)'];
+      ? ['Hello UNI-LABO, I would like to book a visit.','Name: ','Tests: ','Preferred time: ','Preparation: ','Anything else: ','(Sent from your website.)']
+      : ['Bonjour UNI-LABO, je souhaite prendre rendez-vous.','Nom : ','Analyses : ','Moment souhaité : ','Préparation : ','Précision : ','(Envoyé depuis votre site.)'];
     var msg=L[0];
     if(nom) msg+='\n'+L[1]+nom;
     if(tests.length) msg+='\n'+L[2]+tests.join(', ');
     if(moment) msg+='\n'+L[3]+moment;
-    if(note) msg+='\n'+L[4]+note;
-    msg+='\n'+L[5];
+    if(prep) msg+='\n'+L[4]+prep;
+    if(note) msg+='\n'+L[5]+note;
+    msg+='\n'+L[6];
     return {ok:ok, url:'https://wa.me/'+NUM+'?text='+encodeURIComponent(msg),
-            need:{tests:tests.length===0, nom:nom.length<2, moment:moment===''}};
+            need:{tests:tests.length===0, nom:nom.length<2, moment:moment===''},
+            nom:nom, tests:tests, moment:moment, prep:prep, l:l};
   }
-  /* L'erreur se voit : le groupe fautif passe en rouge et le champ porte aria-invalid.
-     Le portique de page refuse une page à champs sans état d'erreur repérable — et c'est
-     juste : un bouton qui reste éteint sans dire pourquoi fait abandonner le formulaire. */
-  function paint(need,on){
+  /* LA FICHE — le miroir du formulaire. Elle n'est pas annoncée à chaque case cochée (bavardage) : la
+     bande `.rdv-said` parle quand il y a vraiment quelque chose à dire. */
+  function paintFiche(r){
+    var l=r.l;
+    set('fiche-nom', r.nom || '—', !r.nom);
+    set('fiche-tests', r.tests.length ? r.tests.join(' · ') : '—', !r.tests.length);
+    set('fiche-prep', r.prep || '—', !r.prep);
+    set('fiche-moment', r.moment || '—', !r.moment);
+    var tag=document.getElementById('fiche-state');
+    if(tag){
+      tag.textContent = r.ok ? (l==='en'?'ready to send':'prête à envoyer')
+                             : (l==='en'?'to fill in':'à compléter');
+      if(r.ok) tag.classList.add('is-ready'); else tag.classList.remove('is-ready');
+    }
+    var foot=document.getElementById('fiche-foot');
+    if(foot) foot.textContent = r.ok
+      ? (l==='en' ? 'This is exactly what leaves on WhatsApp when you press the button.'
+                  : 'C\'est exactement ce qui part sur WhatsApp quand vous appuyez sur le bouton.')
+      : (l==='en' ? 'Tick your tests: this sheet fills in as you go, then leaves on WhatsApp.'
+                  : 'Cochez vos analyses : cette fiche se remplit sous vos yeux, puis part sur WhatsApp.');
+  }
+  /* LE REFUS EXPLIQUÉ — le groupe fautif passe en rouge, le champ porte aria-invalid */
+  function paintErr(need, on){
     var map={tests:'#rdv-g1', nom:'#rdv-g2', moment:'#rdv-g3'};
     Object.keys(map).forEach(function(k){
       var g=document.querySelector(map[k]); if(!g) return;
       if(on && need && need[k]) g.classList.add('is-err'); else g.classList.remove('is-err');
     });
-    var bad = on && need ? need : {};
-    var n=document.querySelector('#rdv-nom');
-    if(n) n.setAttribute('aria-invalid', bad.nom ? 'true' : 'false');
-    var cb=form.querySelector('input[type=checkbox]');
-    if(cb) cb.setAttribute('aria-invalid', bad.tests ? 'true' : 'false');
+    var bad = (on && need) ? need : {};
+    var n1=document.querySelector('#rdv-nom');
+    if(n1) n1.setAttribute('aria-invalid', bad.nom ? 'true' : 'false');
     var rd=form.querySelector('input[name="moment"]');
     if(rd) rd.setAttribute('aria-invalid', bad.moment ? 'true' : 'false');
+    var cb=form.querySelector('input[type=checkbox]');
+    if(cb) cb.setAttribute('aria-invalid', bad.tests ? 'true' : 'false');
+  }
+  function hideSaid(){
+    if(!said) return;
+    said.hidden=true; said.classList.remove('on');
   }
   function refresh(){
     var r=build();
     go.setAttribute('aria-disabled', r.ok ? 'false' : 'true');
-    go.setAttribute('href', r.url);
-    paint(r.need,false);
-    if(r.ok && said && !said.hidden) said.hidden=true;
+    /* incomplet : le lien garde le message générique — un clic droit ne peut pas envoyer un brouillon */
+    go.setAttribute('href', r.ok ? r.url : GENERIC);
+    paintErr(r.need, false);
+    paintFiche(r);
+    if(r.ok) hideSaid();
   }
-  ['input','change'].forEach(function(ev){ form.addEventListener(ev,refresh); });
+  function announce(text){
+    if(!said) return;
+    said.hidden=false; said.classList.add('on'); said.textContent=text;
+    if(timer) clearTimeout(timer);
+    timer=setTimeout(hideSaid, 8000);
+  }
+  ['input','change'].forEach(function(ev){ form.addEventListener(ev, refresh); });
   refresh();
+  /* L'ancre a une URL RÉELLE dans le HTML : sans JavaScript elle ouvre déjà WhatsApp avec le message
+     générique. Avec JavaScript elle fait mieux, et si la demande est incomplète elle refuse en disant
+     pourquoi — au lieu d'envoyer un message à moitié vide au laboratoire. */
+  go.addEventListener('click',function(e){
+    var r=build();
+    if(r.ok) return;
+    e.preventDefault();
+    paintErr(r.need, true);
+    announce(lg()==='en' ? 'Tick at least one test, write your name and choose a time.'
+                         : 'Cochez au moins une analyse, écrivez votre nom et choisissez un moment.');
+  });
   form.addEventListener('submit',function(e){
     e.preventDefault();
     var r=build();
-    if(!r.ok){
-      paint(r.need,true);
-      if(said){
-        said.hidden=false;
-        said.textContent = lg()==='en'
-          ? 'Tick at least one test, write your name and choose a time.'
-          : 'Cochez au moins une analyse, écrivez votre nom et choisissez un moment.';
-        if(timer) clearTimeout(timer);
-        timer=setTimeout(function(){ said.hidden=true; },6000);
-      }
-      return;
-    }
-    if(said){
-      said.hidden=false;
-      said.textContent = lg()==='en'
-        ? 'WhatsApp opens with your request already written — read it, then send.'
-        : 'WhatsApp s\'ouvre avec votre demande déjà écrite — relisez, puis envoyez.';
-      if(timer) clearTimeout(timer);
-      timer=setTimeout(function(){ said.hidden=true; },8000);
-    }
-    window.location.href=r.url;
+    if(r.ok) window.location.href=r.url;
   });
   ['btn-fr','btn-en'].forEach(function(id){
     var b=document.getElementById(id);
     if(b) b.addEventListener('click',function(){ setTimeout(refresh,0); });
   });
+  }catch(err){ /* la page reste utilisable : l'ancre garde son href générique */ }
 })();
 </script>
 </body>

@@ -34,7 +34,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 39 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 40 ligne(s).*
 
 `L43` · | **ven 18/09 19:42** | **Centre Médical de Bonanjo** (Bonapriso, 694 57 22 77) | msg 1 — sans maquette | Envoyé | **Non** |
 `L112` · | 19:42 | Centre Médical de Bonanjo · Kamaïs Optic |
@@ -75,6 +75,7 @@
 `L1726` · **Bonanjo** passe au **lun 28/09** (le message de ce soir a consommé la relance de jeudi : on ne double pas),
 `L1780` · `univers-optique-concept`, `labiomed`, `bonanjo`, `amk-cm.vercel.app/opticien/`.
 `L2338` · Afrique Labo, L'Opticien, Labiomed, Bonanjo, MITOC) ; la bibliothèque publiable sans identité client
+`L2557` · de Bonanjo noir sur blanc. **Quatre images donc** — accueil, préparation (un homme qui attend, un verre
 
 ---
 

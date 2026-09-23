@@ -217,7 +217,8 @@ SENT_1809 = [
                "campagne qui demande a nous voir. RENDEZ-VOUS = VENDREDI 25/09. "
                "ATTENTION : LE SITE EST DEJA CONSTRUIT ET EN LIGNE (https://uni-labo.vercel.app) - "
                "la presentation des services se fera donc sur LEUR PROPRE site, ouvert sur un telephone. "
-               "C est une seance de CLOTURE, pas un premier contact. Prix a poser : 100 000 FCFA, 50/50. "
+               "C est une seance de CLOTURE, pas un premier contact. PRIX POSE le 23/09 a 13:30 : 150 000 FCFA, "
+               "acompte 75 000, la grille tarifaire standard est deja entre leurs mains. "
                "Ce qui rend ce lead unique : il avait ecrit « Bsr » le 18/09 a 20:57, nous avons envoye "
                "le lien a 21:47 puis 22:05, et il est revenu DE LUI-MEME 24 h plus tard. "
                "Message 1 envoye le 18/09 a 18:41 (2 coches)."),
@@ -1517,7 +1518,26 @@ JOUR_2309 = {
             "puis ouvrir la page sur son téléphone et le montrer EN DIRECT en séance. Jamais montrer "
             "l'ancienne page en disant que le formulaire est dedans. Détail relevé au passage : la page "
             "porte `noindex,nofollow` (voulu tant qu'elle n'est pas publique) — À RETIRER le jour où c'est "
-            "LEUR site sur leur domaine, sinon aucune fiche Google ne sert à rien.",
+            "LEUR site sur leur domaine, sinon aucune fiche Google ne sert à rien. "
+            "23/09 ~22 h — LA PAGE EST RETRAVAILLÉE APRÈS AUDIT (consigne de King : « put that all into "
+            "practice into the unilabo website » : relire les règles, auditer, améliorer). L'audit "
+            "(`clients/uni-labo/AUDIT-2026-09-23.md`, 168 l.) et les notes de build "
+            "(`clients/uni-labo/build-notes.md`) gardent la trace. Ce que la page porte désormais : une "
+            "**fiche de prélèvement** en trois états (l'exemple au hero, la consigne dans « Avant de "
+            "venir », et surtout **la fiche VIVANTE du formulaire** — elle se remplit à chaque case cochée "
+            "et la ligne « Préparation » se déduit de LEURS propres textes) ; **quatre photos** « mise en "
+            "situation » légendées comme §15.bis l'exige ; l'**état d'ouverture réel** calculé à l'heure "
+            "de Douala dans la barre du haut (le point n'est plus décoratif) ; **l'erreur du formulaire "
+            "expliquée** au lieu d'un bouton éteint sans raison ; `text-wrap:balance`, chiffres "
+            "tabulaires, anneau de focus partout, cibles 44 px, `prefers-reduced-motion` ; schéma "
+            "`MedicalLaboratory` + `FAQPage` (les 5 questions visibles) ; l'apostrophe du lien « Poser "
+            "une question » corrigée (le message arrivait avec `j&#x27;ai`). Vérifié sans navigateur : "
+            "portique 0 constat, analyseur HTML 415 textes / 0 constat, 8 blocs JS au compilateur, 0 faute, "
+            "et deux harnais Node + faux DOM (formulaire dans 6 états, état d'ouverture sur 5 horloges, "
+            "dans les deux langues). ⚠️ LE DOSSIER À DÉPLOYER A CHANGÉ : "
+            "`hosting/previews/unilabo/` contient maintenant `index.html` + `og.jpg` + **`img/` "
+            "(4 photos)** — glisser LE DOSSIER ENTIER sur Vercel, sinon la page s'affiche avec quatre "
+            "cadres vides. La page en ligne reste celle du 18/09 : ni formulaire, ni fiche, ni photos.",
     },
     "le-cristallin": {
         "stage": "closing",
