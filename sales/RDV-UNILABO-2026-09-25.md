@@ -53,6 +53,16 @@ commencer, la moitié à la mise en ligne. Rien n'est dû avant votre accord.
 
 ---
 
+## La même séquence que pour Univers (même jour, mêmes règles)
+
+`sales/SYSTEME-DE-VENTE-AMK-2026-09-23.md` §3 · pièce ⑤ : **questions d'abord, solutions ensuite**. Douleur →
+déclencheur → futur souhaité → ROI (chiffres rugueux) → **budget** → **prochaine étape dans les deux agendas**.
+Ici la nuance est l'inverse d'Univers : **ils ont déjà leur site en ligne** (`uni-labo.vercel.app`), donc la
+démonstration se fait sur **leur propre site ouvert sur un téléphone**, et la question n'est pas « est-ce que ça
+vous plaît » mais « **qu'est-ce qui est inexact, et quand est-ce qu'on publie** ». Business case : à écrire
+**après** la réunion, une fois qu'on connaît leurs corrections et leur volume d'analyses (c'est ce qui donnera
+le chiffre de rentabilité).
+
 ## Préparer la réunion — ce que King doit avoir sous la main
 
 **Le site est déjà construit et en ligne : `https://uni-labo.vercel.app`**

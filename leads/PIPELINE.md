@@ -27,8 +27,8 @@
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| Le Cristallin | Douala | 699 90 55 77 | `L1807` |
-| Univers Optique | Douala | 699 25 28 74 | `L1964` |
+| Le Cristallin | Douala | 699 90 55 77 | `L2070` |
+| Univers Optique | Douala | 699 25 28 74 | `L2073` |
 
 ## ④ Offre posée — 1
 
@@ -180,7 +180,7 @@
 | MEDI LABO | Douala (Akwa, 1927 Bld de la République) | 677 81 70 25 | `L55` |
 | Malia Labo | Douala | 694 56 22 44 | `L27` |
 | One Stop Medical Laboratory & Diagnostics | Buea (location TBD; co-owner based Buea) | 691632941 | — |
-| OraCare Dental Clinic (Oracare237) | Buea (Molyo) | 672 52 66 86 | `L1818` |
+| OraCare Dental Clinic (Oracare237) | Buea (Molyo) | 672 52 66 86 | `L2007` |
 | Pathcare Diagnostics | Douala (Deido) | 680 00 88 45 | `L1761` |
 | Polyclinique de la Gare LE NID | Douala (Bessengue) | 699 987 775 | `L34` |
 | Presbyterian Comprehensive Secondary School (PCSS) Buea | Buea (Madam Namondo Alexander) | 652075229 | — |

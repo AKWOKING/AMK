@@ -39,7 +39,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 67 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 72 ligne(s).*
 
 `L837` · - `Le Cristallin` 17:51 · `Univers Optique` 17:50 · `Disc Optique Médicale` 17:48 · `Tchaya Optique` 17:47 :
 `L881` · ## Lundi 21/09/2026 — 18:20 → 19:15 · « Ok » de Le Cristallin : le premier aperçu demandé, construit et branché sur le CRM
@@ -108,6 +108,11 @@
 `L1636` · pour Labiomed, Bonanjo, Le Cristallin. **Aucun message envoyé par moi, aucun déploiement.**## 2026-09-22 · 16:45 · DÉCISION — « laisser tomber les écoles », et la vague du soir sort du plan
 `L1779` · - **à garder** : `uni-labo`, `mitoc-concept`, `lecristallin-concept`, `concept-skye`, `concept-yaks-v1`,
 `L1807` · | **MegaOptic** | page Facebook + **vidéo listant les assurances acceptées** | la liste est enfermée dans une vidéo — angle identique au Cristallin |
+`L1972` · ## 2026-09-23 · 09:15 → 10:30 (horloge du bac) · LE CRISTALLIN : LE PRIX EST SUR LA TABLE (150 000 FCFA) — et la question de King « à quoi bon le contenu ? » reçoit une réponse chiffrée
+`L1974` · **Ce qui s'est passé côté client.** Le 22/09 à 22:23, Le Cristallin écrit : « Pour le reste ne change encore
+`L1978` · le lien de vérification `lecristallin-concept.vercel.app/?v=10`, **puis le prix, pour la première fois écrit** :
+`L1993` · sinon `contact@lecristallinoptique.com` tombe. Tant qu'il n'a pas dit oui : on ne touche **ni au DNS, ni aux
+`L2070` · - `sales/BUSINESS-CASE-LE-CRISTALLIN-2026-09-23.md` — **prêt, à n'envoyer que s'il hésite** : les cinq écarts à
 
 ---
 

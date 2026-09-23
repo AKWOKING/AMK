@@ -2026,3 +2026,60 @@ le réflexe écrit la veille : `git log` D'ABORD, arbre mis de côté (`/tmp/sna
 `git reset --hard FETCH_HEAD`. Vérifié après coup par les marqueurs : `FICHE_2209` et `SITE_NOTES_2209` de
 retour dans `crm.py`, **CRM.csv à 149 lignes**, vidéo 06 et sa version voix présentes. Verrou rejoué,
 **CRM reconstruit à 09:18:38** avec `JOUR_2309`.
+
+
+## 2026-09-23 · 10:30 → 11:15 · LE SYSTÈME DE VENTE — King envoie une vidéo sur les systèmes de vente ; elle est traduite en procédure AMK, avec nos chiffres
+
+**Ce que King a envoyé** : « If You Don't Understand Sales Systems, You Don't Understand Business »
+(Will Barron, 30/08/2026, 24 min — lue en entier, transcript). **Thèse :** un service business a deux moitiés —
+la livraison (processus écrit, ça tourne) et la vente (**improvisée**, elle tourne quand on panique) — d'où le
+cycle « mois brillant / mois mort ». **La cause n'est pas le manque de temps : c'est l'absence de système qui
+crée le manque de temps.** Six pièces : **ICP · génération de leads toujours allumée · prise de rendez-vous ·
+endoctrinement · appel de découverte · business case**. Et la phrase qui tranche : *« chaque point de contact a
+UN objectif — obtenir un rendez-vous ; tu n'es pas là pour pitcher ton service. »*
+
+**Traduction faite, pièce par pièce, avec NOS données** (`sales/SYSTEME-DE-VENTE-AMK-2026-09-23.md`) :
+- **① ICP — trouvé** : le profil « vitrine » répond **11,1 %** contre 2,5 % (les quatre réponses humaines de la
+  campagne y sont toutes).
+- **② Toujours allumé — absent, et c'est notre vrai trou** : 47 prospects contactés, mais **en trois soirées**
+  déclenchées par l'urgence (11 messages le 22/09 au soir, **0 le 23/09 au matin**). Aucun rythme.
+- **③ Prise de rendez-vous — partiel** : le chemin marche (47 contacts → 4 réponses → **2 rendez-vous**) mais
+  n'est pas écrit, donc dépend du souvenir de King.
+- **④ Endoctrinement — notre point fort, sans le savoir** : l'**aperçu gratuit** fait exactement ce que la vidéo
+  décrit — Univers Optique a répondu « **je suis vraiment intéressé** » avant toute réunion.
+- **⑤ Appel de découverte — absent jusqu'à ce matin** : les deux premiers rendez-vous de la campagne sont
+  **vendredi**.
+- **⑥ Business case — absent** : deux prix sur la table, **zéro chiffre en face**.
+
+**L'arithmétique du pipeline, calculée sur nos vrais taux** : 47 contacts → 4 réponses (8,5 %) → 2 rendez-vous
+(4,3 %) → 2 prix. **≈ 23 contacts par rendez-vous**, et comme le sourcing rend 21 % d'exploitables,
+**≈ 110 fiches lues par rendez-vous**. Trois cadences chiffrées sont posées dans le document (réaliste ~30
+fiches/semaine ≈ 1 rendez-vous/mois · ambitieux ~55 ≈ 2 · insoutenable seul ~110). **Recommandation : ~30
+fiches/semaine tenues quatre semaines** — un rythme modeste tenu bat une rafale brillante suivie de dix jours de
+silence, ce qui est précisément ce qu'on vient de vivre.
+
+**Ce que j'ai fabriqué avec ça, tout de suite :**
+- `sales/SYSTEME-DE-VENTE-AMK-2026-09-23.md` — les six pièces, l'état de chacune, l'arithmétique, le rythme
+  hebdomadaire (lundi/mercredi/samedi sourcing · mardi et jeudi messages prêts · vendredi rendez-vous · vendredi
+  soir CRM), les règles qui tiennent le système, **et ce que la vidéo ne règle pas pour nous** (ses volumes
+  visent 1 M$ et des offres de 5-10 k$ — les nôtres sont à 150 000 FCFA ; son canal est LinkedIn/e-mail, le
+  nôtre est WhatsApp + annuaires).
+- `sales/BUSINESS-CASE-UNIVERS-OPTIQUE-2026-09-25.md` — **une page pour vendredi** : sa propre citation en
+  ouverture, la table de rentabilité où **la seule ligne manquante est sa marge, qu'il remplit lui-même**, la
+  FAQ des objections, et la prochaine étape datée.
+- `sales/BUSINESS-CASE-LE-CRISTALLIN-2026-09-23.md` — **prêt, à n'envoyer que s'il hésite** : les cinq écarts à
+  trancher, le périmètre exact des 150 000 (et **ce qui n'y est pas** : la page Facebook, un hébergement neuf
+  inutile puisqu'il a déjà les siens jusqu'au 13/06/2027).
+- Les deux feuilles de rendez-vous (`RDV-UNIVERS-OPTIQUE`, `RDV-UNILABO`) reçoivent **la séquence de découverte
+  en six pas** et l'interdit qui va avec : **ne pas pitcher, ne pas dérouler les livrables** — un seul objectif
+  par échange, la prochaine étape datée.
+
+**La réconciliation avec la question du contenu (22/09)** : les chiffres disaient d'arrêter la **production**
+(602 vues, 0 DM, 1 lead jamais converti) — la vidéo ajoute une nuance qui change **l'usage** : elle recommande
+de pousser des vidéos aux prospects **avant** l'appel pour qu'ils arrivent endoctrinés. Donc **la vidéo 06
+devient une pièce du système de vente** (pièce jointe aux prospects « profil vitrine », avant ou après l'aperçu),
+pas un média publicitaire. **Le contenu n'était pas mauvais : il était mal placé.**
+
+**Le point mort reste entier et il est écrit noir sur blanc dans le document** : deux rendez-vous, **zéro
+client**. La vidéo apprend à **obtenir** des rendez-vous, pas à les fermer — le vrai test du système est
+**vendredi**, et il se mesure en acomptes, pas en bonnes intentions.

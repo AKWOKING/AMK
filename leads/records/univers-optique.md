@@ -40,7 +40,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 77 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 80 ligne(s).*
 
 `L51` · | **ven 18/09 20:02** | **Clinique de L'université** (Bassa, 694 36 02 03) | msg 1 — sans maquette | Envoyé | **Non** |
 `L113` · | 20:02 | Cabinet Dentaire Emmanuel · Clinique de L'université · MEDI LABO |
@@ -119,6 +119,9 @@
 `L1956` · **Vérifications faites avant de préparer** : l'aperçu `univers-optique-concept.vercel.app` est **vivant** et
 `L1957` · complet (partie patients FR+EN, bouton WhatsApp qui part déjà écrit au comptant du numéro 699 25 28 74, note au
 `L1964` · **CRM et vues mis à jour dans le même mouvement** (`leads/build/crm.py`, `views.py`) : `univers-optique` garde
+`L2049` · décrit — Univers Optique a répondu « **je suis vraiment intéressé** » avant toute réunion.
+`L2067` · - `sales/BUSINESS-CASE-UNIVERS-OPTIQUE-2026-09-25.md` — **une page pour vendredi** : sa propre citation en
+`L2073` · - Les deux feuilles de rendez-vous (`RDV-UNIVERS-OPTIQUE`, `RDV-UNILABO`) reçoivent **la séquence de découverte
 
 ---
 

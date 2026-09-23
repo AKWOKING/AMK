@@ -43,6 +43,26 @@ le chiffre.
 
 ---
 
+## Avant d'entrer : la séquence de découverte (ne pas l'improviser)
+
+Le système de vente est écrit dans `sales/SYSTEME-DE-VENTE-AMK-2026-09-23.md` (§3 · pièce ⑤). Les six pas, dans
+l'ordre — **questions d'abord, solutions ensuite** :
+
+1. **Douleur** — « Qu'est-ce que ça vous coûte quand un patient ne peut pas réserver ? » **Le laisser parler.**
+2. **Déclencheur** — « Qu'est-ce qui vous a fait dire oui à cette réunion maintenant ? »
+3. **Futur souhaité** — « Dans six mois, qu'est-ce qui a changé pour le cabinet ? » (qu'il le décrive lui-même)
+4. **ROI, chiffres rugueux** — la table de rentabilité du business case, **avec SA marge à lui**
+5. **Budget** — le prix est **déjà écrit** (100 000, 50/50) : la question devient « **les 50 000, on les met quand ?** »
+6. **Prochaine étape verrouillée** — date et heure dans les deux agendas, pas « on se rappelle »
+
+**Interdits pendant la réunion** : ne pas pitcher le service, ne pas dérouler les livrables, ne pas expliquer
+nos méthodes. **Un seul objectif par échange : la prochaine étape datée.** S'il demande « comment on démarre ? »,
+c'est gagné.
+
+**Le business case est prêt** : `sales/BUSINESS-CASE-UNIVERS-OPTIQUE-2026-09-25.md` — une page, avec **sa propre
+citation** en ouverture, la table de rentabilité (seule sa marge manque, il la remplit), la FAQ des objections.
+**À lui envoyer dans l'heure qui suit la réunion**, pas pendant.
+
 ## La réunion, dans l'ordre (30 à 40 minutes)
 
 **1 · Ouvrir sa propre page sur SON téléphone (3 min).** Rien à raconter : la page parle. Faire défiler la
