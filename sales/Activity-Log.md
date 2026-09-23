@@ -2083,3 +2083,66 @@ pas un média publicitaire. **Le contenu n'était pas mauvais : il était mal pl
 **Le point mort reste entier et il est écrit noir sur blanc dans le document** : deux rendez-vous, **zéro
 client**. La vidéo apprend à **obtenir** des rendez-vous, pas à les fermer — le vrai test du système est
 **vendredi**, et il se mesure en acomptes, pas en bonnes intentions.
+
+
+## 2026-09-23 · 12:30 → 13:15 · LA PERSUASION EN CINQ NIVEAUX — appliquée à nos propres messages, et deux fautes trouvées dans les nôtres
+
+**Ce que King a envoyé** : « How To Use Persuasion To Drastically Change Your Life » (Joanna Wiebe, 12/02/2026,
+11 min 36, lue en entier). **Les cinq niveaux** : ① *le vendeur junior* — arrêter de parler de soi, la première
+phrase doit répondre à « qu'est-ce que j'y gagne » et le cerveau tranche **en 6 secondes** ; ② *l'astucieux* —
+ancrage, aversion à la perte, preuve sociale, principe de Goldilocks (trois choix, le nôtre au milieu), avec le
+piège : **une urgence fausse déclenche le doute** ; ③ *l'influenceur* — l'identité et les « money words »
+(le panneau de Napoléon, « la batterie des hommes sans peur », ne demande pas de mourir, **il demande qui ils
+sont**) et la méthode : prendre **leurs** mots, pas ceux qu'on imagine ; ④ *le stratège* — Système 1 rapide,
+Système 2 paresseux qui ne se réveille que devant le **danger ou la confusion** : on passe de « obtenir le oui »
+à **« ne pas provoquer le non »** en supprimant les péages ; ⑤ *le conteur* — l'histoire, eux en héros, nous en
+guide. **Et son test éthique, adopté tel quel** : « voudrais-je qu'il dise oui s'il réfléchissait complètement ? »
+
+**Audit de nos vrais messages** (`sales/Send-Dernier-Lot-2-2026-09-22-18h30.md` et les miens) — deux fautes,
+une réussite :
+- ❌ **La même faute dans tous les messages : la première ligne parle de nous.** « Bonjour. **Akwo King, AMK —
+  Développement Web, Douala.** J'ai ouvert lyfyoptic.com… » C'est la fenêtre des 6 secondes dépensée en
+  présentation, alors que la signature est déjà en bas. Correction posée : **le nom passe à la fin, les six
+  premiers mots parlent de leur patient, de leur quartier, de leur page.**
+- ❌ **Cinq péages écrits de nos mains, en jargon, face client** — dont un **sur la page en ligne du
+  Cristallin** : elle parle de « données structurées (le balisage `aggregateRating`) ». Plus « sans toucher au
+  DNS », « la page est noindex », « hébergement mutualisé / FTP », et le mot « aperçu » employé partout sans
+  jamais être défini. Table de traduction écrite (« votre adresse e-mail continue de fonctionner »,
+  « personne ne la trouve tant que vous n'avez pas dit oui »).
+- ✅ **Ce qui était déjà juste, et qu'on garde** : « deux détails qui **coûtent des patients** sans faire de
+  bruit » (BIOSCAN — c'est exactement l'aversion à la perte), « c'est gratuit, et sans engagement… vous décidez
+  après » (le péage le moins cher possible), et « deux titres restés du modèle » (leurs mots, pas « gabarit »).
+
+**Les money words**, pris **dans notre CRM**, pas inventés : « prendre un rendez-vous » et « nous présenter vos
+services » (UNI-LABO, verbatim) · « combien ça me coûte » (Univers Optique) · « j'ai un site web et une adresse
+Facebook », « l'assistant pour faire des modifications » (Le Cristallin) · « je ne suis pas encore en place »
+(Labiomed) · « les bons de prise en charge », « au comptoir », « les montures », « l'atelier ». **Et le panneau
+de Napoléon, version Douala** : nos quatre répondeurs ont tous en commun d'être **déjà quelqu'un** — donc
+l'identité à proposer n'est pas « soyez modernes » (vague et vexant) mais **« le cabinet où on peut réserver »**.
+Cinq phrases à répéter 38 fois (l'étude de Yale citée par la vidéo) sont listées pour King.
+
+**La limite que j'ai posée, et qui compte plus que le reste** : le niveau 5 raconte une histoire de client —
+**chez nous, une histoire de patient inventée serait un témoignage inventé**, interdit depuis le premier jour.
+Donc **on garde la structure et on jette la fabrication** : le héros de l'histoire, c'est **le prospect**, avec
+ses vraies données (année d'ouverture, quartier, acte rare), et la transformation reste vérifiable.
+
+**Deux documents écrits** :
+- `sales/PERSUASION-5-NIVEAUX-2026-09-23.md` — les cinq niveaux, l'audit de nos messages, la table des péages,
+  les money words du CRM, le gabarit d'histoire en trois phrases, **et la checklist de cinq lignes à passer
+  avant chaque envoi** (dont le test éthique : si la réponse est non, on réécrit, jamais « envoyer quand même »).
+- `sales/MESSAGES-2026-09-23-PERSUASION.md` — **messages prêts, en français** : le message 1 « profil vitrine »
+  réécrit (six premiers mots pour eux), la relance sans reproche, la **réponse à « c'est cher » avec trois
+  options** (Goldilocks — et **seulement pour le Cristallin**, parce que lui seul a trois périmètres réels ;
+  pour Univers Optique on n'invente pas un menu), **l'urgence vraie de la rentrée** pour les opticiens
+  (septembre-octobre uniquement, jamais pour un labo), l'angle « site à eux mais cassé », et le mot de la fin
+  qui retire le dernier péage.
+
+**Porté au CRM dans le même mouvement** : le jargon `aggregateRating` devient le **6ᵉ point** du relevé du
+23/09 sur Le Cristallin (à traduire en français simple au prochain passage de la page), et le business case du
+Cristallin le mentionne. Verrou rejoué, **CRM reconstruit à 12:39:40** — 149 lignes.
+
+**Et le bac a rembobiné une 5ᵉ fois, cette fois en pleine écriture** : `guard.py` avait disparu, `crm.py` était
+revenu à sa version sans les tables du 22/09 et 23/09, `HEAD` au commit de base. Traité par le réflexe écrit une
+fois pour toutes (sauver l'arbre modifié → `git fetch` → `reset --hard FETCH_HEAD` → reposer → revérifier par
+marqueurs → réinstaller `openpyxl` → reconstruire). **Aucun travail perdu** : les deux documents et l'édition du
+business case étaient hors de git, donc hors de portée du rembobinage.

@@ -30,6 +30,8 @@ assurances**, il a envoyé son flyer et ses chiffres. **Ce n'est pas un prospect
 
 **Aucun de ces cinq points ne coûte d'argent à régler. Tous les cinq bloquent la publication.**
 
+**Sixième point, de forme, à corriger au prochain passage** : la page parle encore de « **données structurées (le balisage `aggregateRating`)** » en clair, face client. C'est du jargon de développeur sur la page d'un opticien — à traduire en français simple (voir la table des péages, `sales/PERSUASION-5-NIVEAUX-2026-09-23.md` §2).
+
 ---
 
 ## 2 · Le chiffre
