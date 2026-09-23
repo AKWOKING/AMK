@@ -2673,7 +2673,7 @@ portaient sur des éléments, son regard portait sur la composition.** La leçon
 `AMK-DESIGN-SKILLS.md`, et elle tient en une phrase : *une photographie doit porter une seule
 signification ; sinon, on écrit une phrase à sa place.*
 
-**Ce qui a été fait, cette nuit :** page réécrite de zéro (`demos/concept-unilabo-v2.html`, **80 764 o** au
+**Ce qui a été fait, cette nuit :** page réécrite de zéro (`demos/concept-unilabo-v2.html`, **84 053 o** au
 lieu de 94 509) — hero **sans photo** (fond encre + titre), **cinq photographies** (une par famille
 d'analyses, plus la préparation) jamais derrière du texte, légendées « mise en situation », la préparation en
 **cinq accordéons natifs** (`<details>` : clavier et lecteur d'écran compris, zéro JavaScript), la fiche de
@@ -2686,7 +2686,7 @@ repris **mot pour mot** — c'est `tools/qa/extract_unilabo_js.py` qui les extra
 `python3 demos/build_unilabo_v2.py` écrit `demos/concept-unilabo-v2.html`.
 
 **Vérifié (aucun navigateur ici) :** portique **0 constat** (`--strict`, rc=0) · analyseur HTML **385 textes,
-0 constat** · `check_inline_js.py` **5 blocs, 0 faute** · harnais **32 assertions vertes**, dont une nouvelle
+0 constat** · `check_inline_js.py` **6 blocs, 0 faute** · harnais **38 assertions vertes**, dont une nouvelle
 **suite 0** qui refuse une page ne portant plus le contrat du JavaScript (18 identifiants, `.chips`,
 `data-fr`/`data-en`/`data-prep`, `data-alt-*`, liens WhatsApp, un seul `h1`) · copie hébergée **identique à
 la source, octet à octet**.
@@ -2701,3 +2701,20 @@ ouvrir l'ancienne page), et **il reste une action de King** : redéployer le dos
 `hosting/previews/unilabo/` **entier** (`index.html` + `og.jpg` + `img/`, dix fichiers) sur le projet Vercel
 `uni-labo.vercel.app` — la page en ligne est toujours celle du 18/09.
 
+**La passe de finition, dans la même nuit (00 h 40 → 01 h 10), trois choses trouvées en relisant le travail :**
+
+1. **L'anglais portait la ponctuation du français.** Dix-sept chaînes anglaises avaient le tiret cadratin que
+   §3.5 demande de minimiser, et des plages écrites avec le tiret long. Corrigées : point, virgule,
+   deux-points, et `Monday-Friday 7am-7pm` en trait d'union.
+2. **Un lecteur anglais envoyait un message français.** Les liens statiques (« Demander le tarif », « Poser une
+   question ») portent maintenant leurs deux messages, et un troisième bloc de JavaScript — le seul écrit pour
+   la refonte — échange le texte quand la page est en anglais. Le HTML garde toujours un lien réel et
+   utilisable **sans** JavaScript : le français, langue du personnel.
+3. **La classe de bug de l'ancienne page est fermée par un test.** Ses liens de tarif portaient une apostrophe
+   encodée deux fois (`d%26%23x27;`) — le patient voyait `d&#x27;` dans WhatsApp. Le constructeur encode en un
+   seul endroit, et **le harnais refuse désormais tout lien doublement encodé** : c'est vérifié, pas promis.
+
+Au passage, deux attributs `value` portaient un `&` nu (HTML invalide que rien n'avait vu) — réparés. Le lien
+WhatsApp du pied de page, qui ouvrait un fil vide, porte lui aussi une phrase prête. La page passe de 80 764 à
+**84 053 octets**, le harnais de 32 à **38 assertions** : les chiffres sont alignés partout où ils étaient
+écrits (audit, notes de build, portique, feuille de séance, CRM, §25).

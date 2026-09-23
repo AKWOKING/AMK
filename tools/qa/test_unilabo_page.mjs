@@ -11,11 +11,13 @@
  * Voir `design/LESSONS.md` (un compilateur voit ce qu'un auditeur de contraste ne voit pas).
  *
  * 24/09 — LA REFONTE. La page a été réécrite de zéro (mobile d'abord, cinq photographies au lieu de
- * quinze, texte plus jamais posé sur une image). Les deux blocs de JavaScript, eux, sont repris MOT POUR
- * MOT de la version précédente : ce sont eux qui portent la fiche vivante et l'état d'ouverture, et ce
+ * quinze, texte plus jamais posé sur une image). Les deux blocs de JavaScript qui portent le formulaire et
+ * l'état d'ouverture sont repris MOT POUR MOT de la version précédente : ce sont eux qui portent la fiche vivante et l'état d'ouverture, et ce
  * sont eux que ce fichier protège. Le contrat qu'ils exigent de la page — dix-huit identifiants, la classe
  * `.chips`, les attributs `data-fr`/`data-en`/`data-prep`, les images `data-alt-fr` — est vérifié par la
- * SUITE 0 de ce fichier, contre le HTML lui-même. Si un test tombe ici, c'est la page qui a bougé, pas le test.
+ * SUITE 0 de ce fichier, contre le HTML lui-même — auquel s'ajoute un troisième bloc, ÉCRIT pour la
+ * refonte (les liens WhatsApp statiques qui prennent la langue du visiteur, suite 3). Si un test tombe ici,
+ * c'est la page qui a bougé, pas le test.
  *
  * Usage :  node tools/qa/test_unilabo_page.mjs
  */
@@ -28,12 +30,13 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", ".
 const PAGE = path.join(ROOT, "demos", "concept-unilabo-v2.html");
 const html = fs.readFileSync(PAGE, "utf8");
 const formSrc = scriptAfter(html, "LA FICHE VIVANTE");
+const linksSrc = scriptAfter(html, "LES LIENS WHATSAPP QUI PARLENT LA LANGUE");
 /* Le marqueur du bloc principal : la page commence par un micro-script qui retire `no-js` ; viser
    « (function(){ » tomberait dessus depuis la refonte. On vise un commentaire propre au bloc. */
 const mainSrc = scriptAfter(html, "L'ÉTAT RÉEL DU LABORATOIRE");
 
 /* ───────────────────────────── suite 0 · le contrat page ⇄ JavaScript ─────────────────────────────
-   Les deux blocs ci-dessus ne parlent à la page que par des identifiants, des classes et trois attributs.
+   Les blocs ci-dessus ne parlent à la page que par des identifiants, des classes et quelques attributs.
    Ces quelques lignes refusent une page qui ne les porte plus : sans elles, une refonte peut être
    parfaitement valide et laisser la fiche vivante muette — l'écran ne le montrerait qu'au visiteur. */
 console.log("═══ 0 · le contrat que la page doit au JavaScript ═══");
@@ -66,6 +69,22 @@ const waLinks = [...html.matchAll(/https:\/\/wa\.me\/(\d+)/g)].map((m) => m[1]);
 ok(`tous les liens WhatsApp pointent le numéro du laboratoire (${waLinks.length} liens)`,
    waLinks.length > 0 && waLinks.every((n) => n === "237696139819"));
 ok("la page ne déclare qu'un seul titre de niveau 1", (html.match(/<h1[\s>]/g) || []).length === 1);
+
+/* ── LA CLASSE DE BUG RELEVÉE DANS LA VERSION PRÉCÉDENTE ──────────────────────────────────────────────
+   Ses liens « Demander le tarif » portaient une apostrophe encodée DEUX fois : l'URL disait d%26%23x27;,
+   et WhatsApp affichait « le tarif d&#x27;… » au patient. Le constructeur encode désormais chaque message
+   en un seul endroit, mais une régression silencieuse reste possible : on la refuse ici. */
+const hrefs = [...html.matchAll(/href="([^"]*)"/g)].map((m) => m[1]);
+const doubleEncoded = hrefs.filter((h) => /%26%23|&#x|&amp;#|%23x27/.test(h));
+ok("aucun lien ne porte une apostrophe (ou une esperluette) encodée deux fois",
+   doubleEncoded.length === 0, doubleEncoded.slice(0, 2).join(" | "));
+
+const waStatic = [...html.matchAll(/<a[^>]*data-wa[^>]*>/g)].map((m) => m[0]);
+ok(`les ${waStatic.length} liens WhatsApp statiques portent leur message DANS LES DEUX LANGUES`,
+   waStatic.length >= 4 && waStatic.every((a) => a.includes("data-fr-text=") && a.includes("data-en-text=")),
+   waStatic.filter((a) => !a.includes("data-en-text=")).length + " sans version anglaise");
+ok("ces liens portent un href réel et utilisable SANS JavaScript (le français, langue du laboratoire)",
+   waStatic.every((a) => /href="https:\/\/wa\.me\/237696139819\?text=.+"/.test(a)));
 
 /* ───────────────────────────── suite 1 · le formulaire et la fiche ───────────────────────────── */
 const CHECKBOXES = [
@@ -179,5 +198,38 @@ for (const [iso, lang, label, want] of CASES) {
 const { reg: regEn, im } = runOpening("2026-09-28T09:15:00Z", "en");
 ok("l'étiquette du groupe de puces suit la langue", regEn["Q:.chips"].getAttribute("aria-label") === "Preparation");
 ok("le texte alternatif des photos suit la langue", im.getAttribute("alt") === "EN alt");
+
+/* ───────────────────────── suite 3 · les liens WhatsApp suivent la langue ───────────────────────── */
+console.log("\n═══ 3 · les liens WhatsApp, dans la langue du visiteur ═══");
+
+function runLinks(lang) {
+  const messages = [
+    { fr: "Bonjour UNI-LABO, je voudrais connaître le tarif de cette analyse : ",
+      en: "Hello UNI-LABO, I would like to know the price of this test: " },
+    { fr: "Bonjour Dr Tientcheu, j'ai une question sur une analyse.",
+      en: "Hello Dr Tientcheu, I have a question about a test." },
+  ];
+  const anchors = messages.map((m) => {
+    const a = el("a");
+    a.setAttribute("data-fr-text", m.fr);
+    a.setAttribute("data-en-text", m.en);
+    a.setAttribute("href", "https://wa.me/237696139819?text=" + encodeURIComponent(m.fr));
+    return a;
+  });
+  const document = doc({ "QA:a[data-wa][data-fr-text]": anchors, "btn-fr": el("button"), "btn-en": el("button") }, lang);
+  new Function("document", linksSrc)(document);
+  return anchors;
+}
+
+let anchors = runLinks("fr");
+ok("page en français — le lien reste français et la phrase est encodée UNE fois",
+   waMessage(anchors[0].getAttribute("href")) === "Bonjour UNI-LABO, je voudrais connaître le tarif de cette analyse : ",
+   waMessage(anchors[0].getAttribute("href")));
+anchors = runLinks("en");
+ok("page en anglais — le lien s'écrit en anglais (l'apostrophe revient en clair)",
+   waMessage(anchors[1].getAttribute("href")) === "Hello Dr Tientcheu, I have a question about a test.",
+   waMessage(anchors[1].getAttribute("href")));
+ok("page en anglais — le numéro ne change jamais",
+   anchors.every((a) => a.getAttribute("href").indexOf("https://wa.me/237696139819?text=") === 0));
 
 console.log(process.exitCode ? "\nDES ÉCHECS — voir ci-dessus." : "\nTout est vert.");

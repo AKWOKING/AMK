@@ -34,15 +34,34 @@ from _unilabo_v2_content import (LAB, HERO, FICHE, JOURNEY, FAMILIES, PREP, PREP
 OUT = os.path.join(ROOT, "demos", "concept-unilabo-v2.html")
 JS_MAIN = io.open(os.path.join(ROOT, "demos", "_unilabo_v2_js_main.js"), encoding="utf-8").read()
 JS_FORM = io.open(os.path.join(ROOT, "demos", "_unilabo_v2_js_form.js"), encoding="utf-8").read()
+# le seul bloc ÉCRIT pour la refonte : les liens WhatsApp statiques qui suivent la langue du visiteur.
+JS_LINKS = io.open(os.path.join(ROOT, "demos", "_unilabo_v2_js_links.js"), encoding="utf-8").read()
 
 def bi(fr, en):
     """Les deux langues, dans les trois endroits qu'exige §20.8 (le nœud visible étant le français)."""
     return '<span class="fr-only">%s</span><span class="en-only">%s</span>' % (fr, en)
 
-def wa(msg_fr, msg_en=None):
-    """Un lien WhatsApp à message pré-rempli — le français par défaut, l'anglais si le visiteur l'a choisi."""
+def wa(msg_fr):
+    """L'URL WhatsApp française, encodée par `quote` — jamais à la main.
+
+    C'est ici que la classe de bug relevée dans la version précédente devient impossible : ses liens
+    « Demander le tarif » portaient `d%26%23x...` — une apostrophe encodée deux fois, qui arrivait dans
+    WhatsApp sous la forme `d&#x27;...`. Un seul point d'encodage, et le bug ne peut plus exister."""
     import urllib.parse
     return "%s?text=%s" % (LAB["wa"], urllib.parse.quote(msg_fr))
+
+def _attr(s):
+    """Une valeur d'attribut HTML propre (`"` et `&` échappés) — utilisée pour les messages des liens."""
+    return s.replace("&", "&amp;").replace('"', "&quot;").replace("<", "&lt;")
+
+def wa_link(cls, label, msg_fr, msg_en):
+    """Un lien WhatsApp STATIQUE (demander un tarif, poser une question…).
+
+    Il porte le lien français réel — utilisable sans JavaScript — et ses deux messages, pour que le
+    troisième bloc les échange quand le visiteur lit la page en anglais."""
+    en = msg_en if msg_en is not None else msg_fr
+    return ('<a class="%s" href="%s" data-wa data-fr-text="%s" data-en-text="%s">%s</a>'
+            % (cls, wa(msg_fr), _attr(msg_fr), _attr(en), label))
 
 # ══════════════════════════════════════════════════════════════════════════════════════════════════
 # LA FEUILLE DE STYLE — écrite pour le téléphone, étendue au bureau
@@ -412,8 +431,9 @@ def build():
       % (bi("Biologiste", "Biologist"), LAB["biologiste"], LAB["tel"], LAB["tel_wa"]))
     A('<div class="actions">')
     A('<a class="btn btn-primary" href="#rendez-vous">%s</a>' % bi(HERO["cta_fr"], HERO["cta_en"]))
-    A('<a class="btn btn-ghost" href="%s" data-wa>%s</a>'
-      % (wa("Bonjour UNI-LABO, je souhaite faire une analyse."), bi(HERO["cta2_fr"], HERO["cta2_en"])))
+    A(wa_link("btn btn-ghost", bi(HERO["cta2_fr"], HERO["cta2_en"]),
+              "Bonjour UNI-LABO, je souhaite faire une analyse.",
+              "Hello UNI-LABO, I would like to have a test done."))
     A('</div></div>')
     # la fiche, exemple : c'est elle la signature, pas une photo
     A('<div class="fiche">')
@@ -444,13 +464,13 @@ def build():
         "Les analyses prescrites par votre médecin, dans quatre domaines. <b>Aucun tarif n'est affiché ici</b> : "
         "le prix dépend de l'analyse et du réactif — demandez-le sur WhatsApp, la réponse arrive avant que vous vous déplaciez.",
         "The tests your doctor prescribes, across four areas. <b>No prices are shown here</b>: the price depends on the "
-        "test and the day's reagent — ask on WhatsApp, the answer comes before you travel."))
+        "test and the day's reagent: ask on WhatsApp, the answer comes before you travel."))
     A('<div class="fams">')
     for f in FAMILIES:
         A('<figure class="fam">')
         A(img("unilabo-f-" + f["slug"], "", 800, 500,
               "Photo d'illustration de laboratoire — %s." % re.sub("&amp;", "et", f["fr"]),
-              "Laboratory illustration photo — %s." % re.sub("&amp;", "and", f["en"]),
+              "Laboratory illustration photo: %s." % re.sub("&amp;", "and", f["en"]),
               sm_w=640, sizes="(min-width:820px) 520px, 92vw"))
         A('<figcaption class="fam-b">')
         A('<h3>%s</h3>' % bi(f["fr"], f["en"]))
@@ -459,9 +479,9 @@ def build():
         for it_fr, it_en in f["items"]:
             A('<li>%s</li>' % bi(it_fr, it_en))
         A('</ul>')
-        A('<a class="ask" href="%s" data-wa>%s →</a>'
-          % (wa("Bonjour UNI-LABO, je voudrais le tarif de cette analyse : "),
-             bi("Demander le tarif", "Ask the price")))
+        A(wa_link("ask", bi("Demander le tarif", "Ask the price") + " →",
+                  "Bonjour UNI-LABO, je voudrais connaître le tarif de cette analyse : ",
+                  "Hello UNI-LABO, I would like to know the price of this test: "))
         A('</figcaption></figure>')
     A('</div>')
     A('<p class="photo-cap">%s</p>' % bi(
@@ -505,7 +525,7 @@ def build():
         "Cochez vos analyses, écrivez votre nom, choisissez un moment : la fiche se remplit sous vos yeux et part "
         "sur WhatsApp déjà rédigée. <b>Rien n'est enregistré sur ce site</b> — c'est votre téléphone qui envoie.",
         "Tick your tests, write your name, choose a time: the sheet fills in as you go and leaves on WhatsApp already "
-        "written. <b>Nothing is stored on this site</b> — your phone sends it."))
+        "written. <b>Nothing is stored on this site</b>: your phone sends it."))
     A('<div class="rdv-grid">')
     A(build_form())
     A('<div class="fiche-live">')
@@ -540,9 +560,10 @@ def build():
     A('<div class="panel"><h3>%s</h3><p>%s</p></div>' % (bi(RESULTATS["b_t_fr"], RESULTATS["b_t_en"]),
                                                        bi(RESULTATS["b_p_fr"], RESULTATS["b_p_en"])))
     A('</div>')
-    A('<div class="actions"><a class="btn btn-line" href="%s" data-wa>%s</a></div>'
-      % (wa("Bonjour Dr Tientcheu, j'ai une question sur une analyse."),
-         bi("Poser une question", "Ask a question")))
+    A('<div class="actions">%s</div>'
+      % wa_link("btn btn-line", bi("Poser une question", "Ask a question"),
+                "Bonjour Dr Tientcheu, j'ai une question sur une analyse.",
+                "Hello Dr Tientcheu, I have a question about a test."))
     A('</div></section>')
 
     # ── nous trouver ────────────────────────────────────────────────────────────────────────────
@@ -589,7 +610,11 @@ def build():
         A('<li><a href="%s">%s</a></li>' % (href, bi(l_fr, l_en)))
     A('</ul></div>')
     A('<div><h4>%s</h4><ul>' % bi("Nous joindre", "Reach us"))
-    A('<li><a href="%s" data-wa>%s</a></li>' % (LAB["wa"], bi("WhatsApp " + LAB["tel_wa"], "WhatsApp " + LAB["tel_wa"])))
+    # le lien du pied de page portait autrefois une URL nue : le visiteur arrivait dans WhatsApp avec un
+    # fil vide, et il devait écrire lui-même. C'est le même lien que les autres maintenant.
+    A('<li>%s</li>' % wa_link("", bi("WhatsApp " + LAB["tel_wa"], "WhatsApp " + LAB["tel_wa"]),
+                              "Bonjour UNI-LABO, je vous écris depuis votre site.",
+                              "Hello UNI-LABO, I am writing from your website."))
     A('<li><a href="tel:%s">%s</a></li>' % (LAB["tel"], bi("Appeler " + LAB["tel_wa"], "Call " + LAB["tel_wa"])))
     A('<li><a href="tel:%s">%s</a></li>' % (LAB["tel_fixe_intl"], LAB["tel_fixe"]))
     A('<li><a href="mailto:%s">%s</a></li>' % (LAB["mail"], LAB["mail"]))
@@ -604,8 +629,9 @@ def build():
     A('<p id="wa-said" role="status" aria-live="polite"></p>')
     A('<div class="sticky-wa" data-wa-bar>')
     A('<a class="r" href="#rendez-vous">%s</a>' % bi("Prendre RDV", "Book a visit"))
-    A('<a class="w" href="%s" data-wa>%s</a>' % (wa("Bonjour UNI-LABO, je souhaite faire une analyse."),
-                                                 bi("WhatsApp", "WhatsApp")))
+    A(wa_link("w", bi("WhatsApp", "WhatsApp"),
+              "Bonjour UNI-LABO, je souhaite faire une analyse.",
+              "Hello UNI-LABO, I would like to have a test done."))
     A('<a class="c" href="tel:%s" aria-label="Appeler le laboratoire · Call the laboratory" title="Appeler le laboratoire · Call the laboratory">'
       '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></a>'
       % LAB["tel"])
@@ -625,6 +651,7 @@ def build():
       's();["btn-fr","btn-en"].forEach(function(i){var e=document.getElementById(i);'
       'if(e)e.addEventListener("click",function(){setTimeout(s,0);});});})();</script>')
     A('<script>' + JS_FORM + '</script>')
+    A('<script>' + JS_LINKS + '</script>')
     A('</body></html>')
     return "\n".join(P) + "\n"
 
@@ -645,10 +672,11 @@ def build_form():
         A('<div>')
         A('<b>%s</b>' % bi(g_fr, g_en))
         for it_fr, it_en, prep in items:
+            # `value` reprend le libellé DÉJÀ échappé (`&amp;`), jamais un `&` nu : un attribut HTML
+            # doit être valide même si c'est le JavaScript qui décide, pas le navigateur qui devine.
             A('<label class="chk"><input type="checkbox" data-fr="%s" data-en="%s" value="%s"%s>'
               '<span>%s</span></label>'
-              % (it_fr, it_en, re.sub("&amp;", "&", it_fr), ' data-prep="%s"' % prep if prep else "",
-                 bi(it_fr, it_en)))
+              % (it_fr, it_en, it_fr, ' data-prep="%s"' % prep if prep else "", bi(it_fr, it_en)))
         A('</div>')
     A('</div></fieldset>')
     A('<div class="grp" id="rdv-g2">')

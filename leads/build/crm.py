@@ -1557,7 +1557,7 @@ JOUR_2309 = {
             "site from scratch » (six captures d'anresco.com en main ; seconde référence : animate.bio). "
             "Nos outils étaient verts et la page était quand même rejetée : huit photographies, dont quatre "
             "en bandeaux, certaines avec du texte posé dessus — nos mesures portaient sur des éléments, son "
-            "regard portait sur la composition. Nouvelle page : `demos/concept-unilabo-v2.html` (80 764 o au "
+            "regard portait sur la composition. Nouvelle page : `demos/concept-unilabo-v2.html` (84 053 o au "
             "lieu de 94 509), hero SANS photo, CINQ photographies (une par famille d'analyses + la "
             "préparation) jamais derrière du texte et légendées « mise en situation », préparation en cinq "
             "accordéons natifs, mobile d'abord pour de vrai (une colonne par défaut, colonnes à partir de "
@@ -1565,13 +1565,15 @@ JOUR_2309 = {
             "ordinateur (676 avant). Le contenu du laboratoire et ses deux blocs de JavaScript sont repris "
             "MOT POUR MOT (extraits par `tools/qa/extract_unilabo_js.py`, identiques au commit 2d2ffe4) : "
             "la refonte change la coquille, jamais le contrat. Vérifié : portique 0 constat (--strict rc=0), "
-            "analyseur HTML 385 textes / 0 constat, 5 blocs JS / 0 faute, harnais 32 assertions vertes dont "
+            "analyseur HTML 385 textes / 0 constat, 6 blocs JS / 0 faute, harnais 38 assertions vertes dont "
             "une suite 0 qui refuse une page ne portant plus le contrat, copie hébergée identique octet à "
             "octet. La règle est écrite en §25 de `AMK-DESIGN-SKILLS.md` : une photographie doit porter une "
             "seule signification ; sinon, on écrit une phrase à sa place. EN SÉANCE : montrer la REFONTE, "
             "jamais l'ancienne page. ACTION DE KING AVANT VENDREDI : redéployer le dossier "
             "`hosting/previews/unilabo/` ENTIER (index.html + og.jpg + img/, dix fichiers) sur le projet "
-            "Vercel `uni-labo.vercel.app`.",
+            "Vercel `uni-labo.vercel.app`. AJOUTÉ DANS LA FOULÉE : les liens WhatsApp statiques portent leurs DEUX "
+            "messages et suivent la langue du visiteur, et la classe de bug de la version précédente "
+            "(apostrophe encodée deux fois dans les liens de tarif) est fermée par un test.",
     },
     "le-cristallin": {
         "stage": "closing",

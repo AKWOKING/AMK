@@ -1320,8 +1320,18 @@ carried over unchanged. The rebuild replaced the shell.
 **Then we made the guarantee checkable.** The harness gained a **suite 0** that reads the page's HTML and
 refuses a file that no longer carries the contract the JavaScript needs: eighteen ids, the `.chips` class,
 `data-fr`/`data-en`/`data-prep` on every checkbox and moment, `data-alt-*` on every image, WhatsApp links
-pointing at the laboratory's number, exactly one `h1`. 32 assertions, green. That is what makes a from-scratch
+pointing at the laboratory's number, exactly one `h1`, and no link whose text was encoded twice.
+38 assertions, green. That is what makes a from-scratch
 rebuild safe: the shell can change completely, and the page still cannot go mute.
+
+### 25.3.bis The language of a message is the sender's choice
+
+A bilingual laboratory does not make the visitor bilingual. The rebuilt page gives every static WhatsApp link
+its message in **both** languages (`data-fr-text` / `data-en-text`) and a third, written-for-the-rebuild
+script swaps it when the page is read in English; the HTML always carries a real, working link (French, the
+language of the staff) so the page works with JavaScript off. And the encoding rule from the rejected file is
+now enforced by the harness: one apostrophe, encoded once. Its old links carried `d%26%23x27;`, which landed
+in WhatsApp as `d&#x27;` in front of the patient.
 
 ### 25.4 Mobile-first, stated as a rule for the CSS
 
@@ -1333,7 +1343,7 @@ them adds layout rather than shrinking it.
 ### 25.5 Honest limits
 
 No browser exists in this sandbox: the rebuild was verified by the portico (`0 findings`, `--strict` rc=0),
-the HTML analyser (385 text runs, 0 findings), the inline-JS compiler (5 blocks, 0 faults), the 32
+the HTML analyser (385 text runs, 0 findings), the inline-JS compiler (6 blocks, 0 faults), the 38
 assertions, and a byte-for-byte comparison of the hosted copy. **King's eye is still the judge** — and this
 time it had already spoken once. The next honest step is five real photographs taken in their laboratory, on
 their own bench, replacing ours.

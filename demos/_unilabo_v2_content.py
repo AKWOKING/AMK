@@ -15,14 +15,14 @@ LAB = {
     "qualif_fr": "Laboratoire d'analyses de biologie médicale",
     "qualif_en": "Medical biology laboratory",
     "ville_fr": "Bonamoussadi, Douala — Carrefour Etoo",
-    "ville_en": "Bonamoussadi, Douala — Carrefour Etoo",
+    "ville_en": "Bonamoussadi, Douala (Carrefour Etoo)",
     "tel_fixe": "233 47 00 68", "tel_wa": "696 13 98 19",
     "wa": "https://wa.me/237696139819", "tel": "+237696139819", "tel_fixe_intl": "+237233470068",
     "mail": "u.labo@yahoo.fr",
     "adresse_fr": "Rue 5N441, Bonamoussadi (Makepe Bloc L) — repère Carrefour Etoo, Douala",
-    "adresse_en": "Rue 5N441, Bonamoussadi (Makepe Bloc L) — landmark Carrefour Etoo, Douala",
+    "adresse_en": "Rue 5N441, Bonamoussadi (Makepe Bloc L), landmark Carrefour Etoo, Douala",
     "horaires_fr": "Lundi–vendredi 07h–19h · samedi 07h–13h",
-    "horaires_en": "Monday–Friday 7am–7pm · Saturday 7am–1pm",
+    "horaires_en": "Monday-Friday 7am-7pm · Saturday 7am-1pm",
     "biologiste": "Dr Tientcheu Philomène",
 }
 
@@ -44,7 +44,7 @@ HERO = {
 FICHE = [
     ("Analyses", "Tests", "Glycémie · Hémogramme complet (NFS)", "Glucose · Complete blood count (CBC)"),
     ("Préparation", "Preparation", "À jeun 8 à 12 h, l'eau est permise", "Fasting 8 to 12 h, water allowed"),
-    ("Moment", "Time", "Lundi–vendredi 7h–19h · samedi 7h–13h", "Monday–Friday 7am–7pm · Saturday 7am–1pm"),
+    ("Moment", "Time", "Lundi–vendredi 7h–19h · samedi 7h–13h", "Monday-Friday 7am-7pm · Saturday 7am-1pm"),
 ]
 
 # ── Les quatre étapes ────────────────────────────────────────────────────────────────────────────
@@ -60,7 +60,7 @@ JOURNEY = [
      "At the laboratory, Carrefour Etoo. We confirm the turnaround when you drop off the sample."),
     ("Vous repartez avec le résultat", "You leave with the result",
      "Remis au laboratoire, sur présentation du reçu — et expliqué par la biologiste si vous le souhaitez.",
-     "Handed over at the laboratory on presentation of the receipt — and explained by the biologist if you wish."),
+     "Handed over at the laboratory on presentation of the receipt, and explained by the biologist if you wish."),
 ]
 
 # ── Les quatre familles d'analyses (contenu publié par le laboratoire, repris mot pour mot) ──────
@@ -103,7 +103,7 @@ PREP = [
      "<b>Le recueil se fait au laboratoire</b> : nous vous remettons le flacon propre et la consigne au moment du dépôt. "
      "Pour certains examens, on demande la première urine du matin — nous vous le dirons à l'avance.",
      "<b>The sample is collected at the laboratory</b>: we hand you the clean container and the instruction when you arrive. "
-     "Some tests need the first urine of the morning — we will tell you in advance.",
+     "Some tests need the first urine of the morning, and we will tell you in advance.",
      None),
     ("Dosages hormonaux", "Hormone tests",
      "Plusieurs dosages hormonaux <b>se font le matin</b>, et certains dépendent du jour du cycle ou d'un moment précis de la journée. "
@@ -115,13 +115,13 @@ PREP = [
      "<b>Précisez l'âge à l'accueil</b> : les valeurs normales ne sont pas les mêmes que chez l'adulte. Pour les tout-petits, "
      "venez si possible à deux et dites-le nous à l'avance — nous vous dirons le meilleur moment de la journée.",
      "<b>Mention the age at reception</b>: normal values differ from an adult's. For very young children, come with a second "
-     "person if you can and tell us in advance — we will advise the best time of day.",
+     "person if you can and tell us in advance, and we will advise the best time of day.",
      None),
     ("Suivi d'un traitement", "Treatment follow-up",
      "<b>Apportez le résultat précédent</b> : la comparaison avec le nouveau est ce qui montre si le traitement agit. "
      "C'est aussi la question que votre médecin posera — autant l'avoir sous la main.",
      "<b>Bring the previous result</b>: comparing it with the new one is what shows whether the treatment is working. "
-     "It is also the first question your doctor will ask — worth having it at hand.",
+     "It is also the first question your doctor will ask, so worth having it at hand.",
      None),
 ]
 
@@ -150,7 +150,7 @@ LIEU = [
     ("Quartier", "Quarter", "Bonamoussadi (Makepe Bloc L), Douala", "Bonamoussadi (Makepe Bloc L), Douala"),
     ("Repère", "Landmark", "Carrefour Etoo", "Carrefour Etoo"),
     ("Rue", "Street", "Rue 5N441 · BP 2592 Douala", "Rue 5N441 · BP 2592 Douala"),
-    ("Horaires", "Hours", "Lundi–vendredi 07h–19h · Samedi 07h–13h", "Monday–Friday 7am–7pm · Saturday 7am–1pm"),
+    ("Horaires", "Hours", "Lundi–vendredi 07h–19h · Samedi 07h–13h", "Monday-Friday 7am-7pm · Saturday 7am-1pm"),
     ("WhatsApp", "WhatsApp", "696 13 98 19", "696 13 98 19"),
     ("Fixe", "Landline", "233 47 00 68", "233 47 00 68"),
     ("E-mail", "E-mail", "u.labo@yahoo.fr", "u.labo@yahoo.fr"),
@@ -164,12 +164,12 @@ FAQ = [
      "Pour la glycémie, le cholestérol et les triglycérides : 8 à 12 heures sans manger, l'eau est permise. Pour les autres "
      "analyses, ce n'est pas toujours nécessaire — demandez-nous avant de venir. Si votre médecin a donné une consigne précise, c'est elle qui compte.",
      "For glucose, cholesterol and triglycerides: 8 to 12 hours without food, water is allowed. For other tests it is not always "
-     "needed — ask us before coming. If your doctor gave a specific instruction, that one prevails."),
+     "needed: ask us before coming. If your doctor gave a specific instruction, that one prevails."),
     ("Quand venir pour un dosage hormonal ?", "When should I come for a hormone test?",
      "Souvent le matin, et parfois à un jour précis du cycle. Écrivez-nous le nom de l'analyse : nous vous donnons la date et "
      "l'heure exactes — c'est la seule façon d'éviter un déplacement pour rien.",
      "Often in the morning, and sometimes on a specific day of the cycle. Message us the name of the test: we give you the exact "
-     "date and time — the only way to avoid a wasted trip."),
+     "date and time, the only way to avoid a wasted trip."),
     ("Qu'est-ce que j'apporte ?", "What should I bring?",
      "L'ordonnance de votre médecin (ou sa photo), votre carte de couverture si vous en avez une, et votre ancien résultat s'il "
      "s'agit d'un suivi.",
@@ -182,7 +182,7 @@ FAQ = [
     ("Où se trouve exactement le laboratoire ?", "Where exactly is the laboratory?",
      "À Bonamoussadi, au carrefour Etoo — Rue 5N441 (Makepe Bloc L), Douala. Le plan ci-dessus montre le carrefour : le "
      "laboratoire est indiqué en violet.",
-     "In Bonamoussadi, at Carrefour Etoo — Rue 5N441 (Makepe Bloc L), Douala. The sketch above shows the junction: the "
+     "In Bonamoussadi, at Carrefour Etoo (Rue 5N441, Makepe Bloc L), Douala. The sketch above shows the junction: the "
      "laboratory is marked in violet."),
 ]
 
@@ -213,16 +213,16 @@ FAM_GROUPS = [
         ("Autre analyse / à préciser", "Another test / to be specified", "autre"),
         ("J'ai une ordonnance, choisissez pour moi", "I have a prescription, advise me", "ordonnance")]),
 ]
-MOMENTS = [("Matin (7h–12h)", "Morning (7am–12pm)"),
-           ("Après-midi (12h–16h)", "Afternoon (12pm–4pm)"),
-           ("Samedi matin (7h–13h)", "Saturday morning (7am–1pm)"),
+MOMENTS = [("Matin (7h–12h)", "Morning (7am-12pm)"),
+           ("Après-midi (12h–16h)", "Afternoon (12pm-4pm)"),
+           ("Samedi matin (7h–13h)", "Saturday morning (7am-1pm)"),
            ("Peu importe, le plus tôt possible", "Any time, as soon as possible")]
 
 # ── Pied de page ────────────────────────────────────────────────────────────────────────────────
 FOOT = {
     "pres_fr": "Laboratoire d'analyses de biologie médicale à Bonamoussadi, Douala — Carrefour Etoo. "
                "Analyses prescrites par votre médecin, résultats remis au laboratoire.",
-    "pres_en": "Medical biology laboratory in Bonamoussadi, Douala — Carrefour Etoo. Tests prescribed by "
+    "pres_en": "Medical biology laboratory in Bonamoussadi, Douala, at Carrefour Etoo. Tests prescribed by "
                "your doctor, results handed over at the laboratory.",
     "note_fr": "Maquette préparée par AMK pour UNI-LABO — horaires, services et mentions à valider par le laboratoire avant mise en ligne.",
     "note_en": "Mockup prepared by AMK for UNI-LABO: hours, services and wording to be validated by the laboratory before going live.",
