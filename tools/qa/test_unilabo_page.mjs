@@ -1,5 +1,5 @@
 /**
- * test_unilabo_page.mjs — rejoue le VRAI JavaScript de `demos/concept-unilabo-v1.html` hors navigateur.
+ * test_unilabo_page.mjs — rejoue le VRAI JavaScript de `demos/concept-unilabo-v2.html` hors navigateur.
  *
  * Deux suites, celles qui protègent les deux seules choses dynamiques de la page :
  *   1. LE FORMULAIRE ET LA FICHE VIVANTE — six états (vide, partiel, complet FR, complet EN,
@@ -10,6 +10,13 @@
  * Ce que ça n'est pas : un test de rendu. Le CSS, la mise en page et l'œil restent à King.
  * Voir `design/LESSONS.md` (un compilateur voit ce qu'un auditeur de contraste ne voit pas).
  *
+ * 24/09 — LA REFONTE. La page a été réécrite de zéro (mobile d'abord, cinq photographies au lieu de
+ * quinze, texte plus jamais posé sur une image). Les deux blocs de JavaScript, eux, sont repris MOT POUR
+ * MOT de la version précédente : ce sont eux qui portent la fiche vivante et l'état d'ouverture, et ce
+ * sont eux que ce fichier protège. Le contrat qu'ils exigent de la page — dix-huit identifiants, la classe
+ * `.chips`, les attributs `data-fr`/`data-en`/`data-prep`, les images `data-alt-fr` — est vérifié par la
+ * SUITE 0 de ce fichier, contre le HTML lui-même. Si un test tombe ici, c'est la page qui a bougé, pas le test.
+ *
  * Usage :  node tools/qa/test_unilabo_page.mjs
  */
 import fs from "node:fs";
@@ -18,10 +25,47 @@ import { fileURLToPath } from "node:url";
 import { el, doc, localStorageStub, fixedClock, scriptAfter, waMessage, ok } from "./fake_dom.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const PAGE = path.join(ROOT, "demos", "concept-unilabo-v1.html");
+const PAGE = path.join(ROOT, "demos", "concept-unilabo-v2.html");
 const html = fs.readFileSync(PAGE, "utf8");
 const formSrc = scriptAfter(html, "LA FICHE VIVANTE");
-const mainSrc = scriptAfter(html, "(function(){");
+/* Le marqueur du bloc principal : la page commence par un micro-script qui retire `no-js` ; viser
+   « (function(){ » tomberait dessus depuis la refonte. On vise un commentaire propre au bloc. */
+const mainSrc = scriptAfter(html, "L'ÉTAT RÉEL DU LABORATOIRE");
+
+/* ───────────────────────────── suite 0 · le contrat page ⇄ JavaScript ─────────────────────────────
+   Les deux blocs ci-dessus ne parlent à la page que par des identifiants, des classes et trois attributs.
+   Ces quelques lignes refusent une page qui ne les porte plus : sans elles, une refonte peut être
+   parfaitement valide et laisser la fiche vivante muette — l'écran ne le montrerait qu'au visiteur. */
+console.log("═══ 0 · le contrat que la page doit au JavaScript ═══");
+
+const IDS = ["rdv", "rdv-go", "rdv-said", "fiche-state", "fiche-nom", "fiche-tests", "fiche-prep",
+             "fiche-moment", "fiche-foot", "btn-fr", "btn-en", "open-state", "wa-said",
+             "rdv-g1", "rdv-g2", "rdv-g3", "rdv-nom", "rdv-note"];
+const missing = IDS.filter((id) => !html.includes(`id="${id}"`));
+ok(`les ${IDS.length} identifiants attendus sont dans la page`, missing.length === 0, "manquants : " + missing.join(", "));
+ok("le groupe de préparation porte la classe .chips (son étiquette de langue)",
+   /class="[^"]*\bchips\b/.test(html));
+ok("la bande de retour est marquée [data-wa-bar]", html.includes("data-wa-bar"));
+
+const boxes = [...html.matchAll(/<input type="checkbox"[^>]*>/g)].map((m) => m[0]);
+ok(`les ${boxes.length} cases à cocher portent data-fr ET data-en`,
+   boxes.length > 0 && boxes.every((b) => b.includes("data-fr=") && b.includes("data-en=")));
+const PREPS = ["jeun", "urines", "hormones", "enfant", "suivi", "ordonnance", "autre"];
+const badPrep = boxes.map((b) => (b.match(/data-prep="([^"]+)"/) || [])[1]).filter((v) => v && !PREPS.includes(v));
+ok("chaque data-prep appartient au vocabulaire connu du formulaire", badPrep.length === 0, badPrep.join(", "));
+
+const moments = [...html.matchAll(/<input type="radio" name="moment"[^>]*>/g)].map((m) => m[0]);
+ok(`les ${moments.length} moments portent data-fr ET data-en`,
+   moments.length === 4 && moments.every((m) => m.includes("data-fr=") && m.includes("data-en=")));
+
+const altables = [...html.matchAll(/<img[^>]*data-alt-fr[^>]*>/g)].map((m) => m[0]);
+ok(`les ${altables.length} photographies ont leur texte alternatif dans les deux langues`,
+   altables.length > 0 && altables.every((i) => i.includes("data-alt-en=")));
+
+const waLinks = [...html.matchAll(/https:\/\/wa\.me\/(\d+)/g)].map((m) => m[1]);
+ok(`tous les liens WhatsApp pointent le numéro du laboratoire (${waLinks.length} liens)`,
+   waLinks.length > 0 && waLinks.every((n) => n === "237696139819"));
+ok("la page ne déclare qu'un seul titre de niveau 1", (html.match(/<h1[\s>]/g) || []).length === 1);
 
 /* ───────────────────────────── suite 1 · le formulaire et la fiche ───────────────────────────── */
 const CHECKBOXES = [

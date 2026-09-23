@@ -1265,5 +1265,76 @@ a credibility strip is a real deliverable, and it belongs to the client's own fa
 - YouTube lesson batch [22] (interaction contract / invisible timeline / design psychology, 23 Sep 2026) → this file **§22**; full log + junk filter in `research/YouTube-Lessons.md` Lot [23]; page portico `tools/qa/audit_page.py`
 - YouTube lesson batch [24] (design styles / the star / the anchor font, 23 Sep 2026) → this file **§23**; log in `research/YouTube-Lessons.md` Lot [24]; the AEO half of the same batch (Wes McDowell) → `AMK-SEO-PLAYBOOK.md` **§8**
 - YouTube lesson batch [25] (mobile conversion / mobile excellence / mobile-first 101, 23 Sep 2026) → this file **§24**; log in `research/YouTube-Lessons.md` Lot [25]; the lab vertical in the same batch is Thomas Digital's *40 of the Best Lab Websites* (thomasdigital.com), a **competitor page** — read for the seven principles, not for its portfolio
+- **§25 rebuild of 24 Sep 2026** (not a video batch — King's verdict on the §24 page, with anresco.com and animate.bio as references) → this file **§25**; the page itself is `demos/concept-unilabo-v2.html`, its audit trail is §9 of `clients/uni-labo/AUDIT-2026-09-23.md`, and the contract it must keep is now checked by suite 0 of `tools/qa/test_unilabo_page.mjs`
 - **§21 browser-support matrix (checked 18 Sep 2026):** addpipe.com "A Deep Dive into the Web Speech API" (Chrome 139+ on-device recognition, mobile matrix) · vocafuse.com "Web Speech API vs Cloud APIs" (free/no-key, audio sent to vendor servers, cloud at $0.006–0.024/min) · testmuai.com "Speech Synthesis API: Browser Support" (synthesis matrix, Firefox-Android gap). **No source was found for recognition accuracy on Cameroonian accents — that gap is stated in §21.2, not filled by assumption.**
 - In-house references: `sales/Monday-Outreach-Pack.md` (Concept Production Standard), `site/design-research.md` (AMK site research), OraCare v2/v3 (reference-override case studies)
+
+---
+
+## §25 PHOTOGRAPHS MUST CARRY ONE MEANING — the UNI-LABO rebuild (24 Sep 2026, 00 h 30)
+
+**Origin, verbatim.** King looked at the mobile pass of §24 and said: *« the page isn't mobile friendly, the
+pictures seem to have spoiled everything, redesign the site from scratch »* — with six screenshots of
+**anresco.com** (an American laboratory) and **animate.bio** as the references. The rebuild is in
+`demos/concept-unilabo-v2.html`; the audit trail is §9 of `clients/uni-labo/AUDIT-2026-09-23.md`.
+
+**Why this section exists.** §24 was correct on every mobile measurement — 17 px body, 52 px buttons,
+193 KB of images, 23 green assertions — and the page was still rejected. The lesson is not "measure more".
+It is that **we were editing elements while the client was judging a composition.** Eight photographs in one
+page, four of them full-width bands, some with text laid over them, means three screens of photo and one of
+content on a phone. Pictures had stopped being evidence and become the page.
+
+### 25.1 The rule
+
+**One photograph, one meaning — and if it carries none, write a sentence instead.** Before an image goes in,
+finish this line out loud: *this photograph is here because it shows `______`.* If the blank holds "it looks
+professional", "it fills the space", or "the page looked empty without it", the answer is text, a table, or
+nothing. On UNI-LABO the count went 8 → **5**, and each survivor names something: biochemistry, haematology,
+serology, hormonology, and preparation at home.
+
+### 25.2 Corollaries that decided the rebuild
+
+1. **No text over a photograph, ever.** A photo is a variable surface — a phone in sunlight, a cracked
+   screen, a slow connection — and text on it is the first thing to disappear. It was also the one thing the
+   reference does that we must not copy for this audience.
+2. **The hero may have no image at all.** A dark, typographic hero is a design decision, not a missing
+   asset. If no honest photograph exists for the first screen, a generated one at that size is a lie of
+   omission.
+3. **Every staged image says so, in the caption.** « Mise en situation. La photo définitive sera prise dans
+   votre laboratoire. » It is honest, and it is an argument: photography is not in the 150 000.
+4. **Cut the files to the ratio the page declares.** UNI-LABO's tiles are declared 16/10 and the files are now
+   cropped to exactly 1024×640 — no surprise recrop in the browser, and the phone variant (`-sm`, 640 px)
+   plus the full one together weigh less than the old set (167 KB vs 193 KB on a phone; 394 KB vs 676 KB on a
+   laptop).
+5. **A `<details>` is a mobile control.** Five preparation panels became five native accordions: no chips to
+   hunt for, keyboard and screen-reader behaviour included, zero JavaScript. Reach for the element before
+   reaching for a script.
+
+### 25.3 "Redesign from scratch" does not mean rewriting the contract
+
+The order was to rebuild the site, and the tested machinery was kept **word for word**: the two JavaScript
+blocks were extracted from the previous file (`tools/qa/extract_unilabo_js.py`) rather than retyped, and the
+client's own content — four test families, five preparation panels, five questions, access, hours — was
+carried over unchanged. The rebuild replaced the shell.
+
+**Then we made the guarantee checkable.** The harness gained a **suite 0** that reads the page's HTML and
+refuses a file that no longer carries the contract the JavaScript needs: eighteen ids, the `.chips` class,
+`data-fr`/`data-en`/`data-prep` on every checkbox and moment, `data-alt-*` on every image, WhatsApp links
+pointing at the laboratory's number, exactly one `h1`. 32 assertions, green. That is what makes a from-scratch
+rebuild safe: the shell can change completely, and the page still cannot go mute.
+
+### 25.4 Mobile-first, stated as a rule for the CSS
+
+Write the **single column as the default** and let `min-width` media queries *add* columns — never the
+reverse. One typographic scale that **grows** on small screens (`clamp`), one violet, one accent green
+reserved for sending actions. On UNI-LABO the only breakpoints are 560 / 760 / 820 / 900 px, and every one of
+them adds layout rather than shrinking it.
+
+### 25.5 Honest limits
+
+No browser exists in this sandbox: the rebuild was verified by the portico (`0 findings`, `--strict` rc=0),
+the HTML analyser (385 text runs, 0 findings), the inline-JS compiler (5 blocks, 0 faults), the 32
+assertions, and a byte-for-byte comparison of the hosted copy. **King's eye is still the judge** — and this
+time it had already spoken once. The next honest step is five real photographs taken in their laboratory, on
+their own bench, replacing ours.
+

@@ -2659,3 +2659,45 @@ laboratoire : Thomas Digital le dit sans détour, la photo générique de person
 différencie rien. Le portique d'envoi dit désormais ce que veut dire « vérifié sur un téléphone » :
 **la nuit, en plein soleil, sur Android et sur iOS** — et, à l'œil, chaque section seule à 390 px doit
 tenir comme une affiche.
+
+## 2026-09-23 · 23:50 → 24/09 00:40 · LA PAGE UNI-LABO REPRISE DE ZÉRO — « les photos ont tout gâché »
+
+**Ce que King a dit, mot pour mot (six captures d'anresco.com en main) :** *« the page isn't mobile friendly
+the pictures seem to have spoiled everything redesign the site from scratch »*. Références données :
+**anresco.com** et **animate.bio**.
+
+**Ce que ça veut dire, et pourquoi ça compte plus que nos outils.** Le lot [25] venait de passer la page au
+crible mobile et les 23 assertions étaient vertes. Elles le sont restées — et la page était quand même
+refusée : huit photographies, dont quatre en bandeaux, certaines avec du texte posé dessus. **Nos mesures
+portaient sur des éléments, son regard portait sur la composition.** La leçon est écrite en **§25** de
+`AMK-DESIGN-SKILLS.md`, et elle tient en une phrase : *une photographie doit porter une seule
+signification ; sinon, on écrit une phrase à sa place.*
+
+**Ce qui a été fait, cette nuit :** page réécrite de zéro (`demos/concept-unilabo-v2.html`, **80 764 o** au
+lieu de 94 509) — hero **sans photo** (fond encre + titre), **cinq photographies** (une par famille
+d'analyses, plus la préparation) jamais derrière du texte, légendées « mise en situation », la préparation en
+**cinq accordéons natifs** (`<details>` : clavier et lecteur d'écran compris, zéro JavaScript), la fiche de
+prélèvement comme seul motif, les photos recadrées au ratio exact déclaré (1024×640) et leurs variantes
+légères refaites : **167 Ko sur un téléphone** (contre 193) et 394 Ko sur ordinateur (contre 676).
+
+**Ce qui n'a pas bougé, et ne devait pas :** le contenu du laboratoire et **ses deux blocs de JavaScript**,
+repris **mot pour mot** — c'est `tools/qa/extract_unilabo_js.py` qui les extrait de l'ancienne page et
+`git` qui prouve qu'ils sont identiques au commit `2d2ffe4`. La page est désormais **générée** :
+`python3 demos/build_unilabo_v2.py` écrit `demos/concept-unilabo-v2.html`.
+
+**Vérifié (aucun navigateur ici) :** portique **0 constat** (`--strict`, rc=0) · analyseur HTML **385 textes,
+0 constat** · `check_inline_js.py` **5 blocs, 0 faute** · harnais **32 assertions vertes**, dont une nouvelle
+**suite 0** qui refuse une page ne portant plus le contrat du JavaScript (18 identifiants, `.chips`,
+`data-fr`/`data-en`/`data-prep`, `data-alt-*`, liens WhatsApp, un seul `h1`) · copie hébergée **identique à
+la source, octet à octet**.
+
+**Ménage, sur preuve :** l'ancienne page (`concept-unilabo-v1.html`) et les **trois photographies qu'elle
+était seule à utiliser** (`unilabo-hero`, `-analyses`, `-resultats` et leurs variantes) ont quitté le dépôt
+— après un `grep` montrant que plus rien ne les citait, et avec la commande qui les récupère :
+`git show 2d2ffe4:demos/concept-unilabo-v1.html`.
+
+**Pour vendredi 13 h :** la feuille de séance est à jour, l'aperçu à montrer est la **refonte** (ne pas
+ouvrir l'ancienne page), et **il reste une action de King** : redéployer le dossier
+`hosting/previews/unilabo/` **entier** (`index.html` + `og.jpg` + `img/`, dix fichiers) sur le projet Vercel
+`uni-labo.vercel.app` — la page en ligne est toujours celle du 18/09.
+

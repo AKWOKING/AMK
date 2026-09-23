@@ -80,7 +80,15 @@ le chiffre de rentabilité).
 ## Préparer la réunion — ce que King doit avoir sous la main
 
 **Le site est déjà construit et en ligne : `https://uni-labo.vercel.app`**
-*(build du 18/09, `demos/concept-unilabo-v1.html` — audit 0 finding / 285 passages, FR|EN 126/126, noindex)*
+*(page du 18/09 — **à redéployer** : la nôtre est maintenant la refonte, `demos/concept-unilabo-v2.html`,
+portique 0 constat / 385 textes / 32 assertions, noindex)*
+
+**À savoir avant d'ouvrir la page en séance (24/09, 00 h 30) :** King a regardé la version précédente et l'a
+refusée — *« the pictures seem to have spoiled everything »*. La page a été **réécrite de zéro** : mobile
+d'abord, **cinq photographies** cantonnées (une par famille d'analyses, jamais de texte dessus), **hero sans
+photo**, la fiche de prélèvement comme seul motif. **Ne pas montrer l'ancienne page** : si la question vient,
+la réponse est simple — *« on l'a reprise, elle était trop chargée en photos ; voilà la nouvelle »*. Le
+contenu et le formulaire sont les mêmes, en mieux rangés. Le détail est en **§9** de l'audit.
 
 **Ce qu'il faut vérifier sur le téléphone AVANT la réunion :**
 - [ ] Le site s'ouvre en moins de 3 secondes sur données mobiles
@@ -166,8 +174,10 @@ entre *Nos analyses* et *Résultats*, dans les deux langues comme le reste de la
   la façon de le dire à voix haute : *« ces images sont là pour la démonstration ; vendredi ou après, on
   prend les vôtres »* — et c'est un vrai argument : le contenu photo n'est pas compris dans les 150 000.
 
-**Fichiers :** `demos/concept-unilabo-v1.html` (canonique, 90 Ko) et `hosting/previews/unilabo/index.html`
-(**la copie hébergée**, celle qui doit partir en ligne) — les deux sont identiques, régénérées ensemble.
+**Fichiers :** `demos/concept-unilabo-v2.html` (canonique généré, **80 764 o**) et
+`hosting/previews/unilabo/index.html` (**la copie hébergée**, celle qui doit partir en ligne) — les deux sont
+**identiques, octet à octet**. Les photographies vivent dans `hosting/previews/unilabo/img/` (**dix
+fichiers**) : déployer le dossier entier, sinon la page s'affiche avec cinq cadres vides.
 
 ### ⛔ Une seule action de King avant vendredi : **redéployer la page**
 

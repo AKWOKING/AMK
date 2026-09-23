@@ -43,8 +43,13 @@ SLUGS = {
     # (déployé par King le 18/09) et porte aussi `og.jpg`. Il n'était PAS dans cette liste, donc il
     # restait sur la version du 18/09 pendant que le fichier canonique évoluait — exactement le genre
     # d'écart qui fait qu'on vérifie une page et qu'on en déploie une autre. Il y est désormais.
-    "unilabo": ("demos/concept-unilabo-v1.html",
-                "UNI-LABO, laboratoire d'analyses à Bonamoussadi Douala — concept"),
+    # 23/09 nuit — LA REFONTE. King, captures d'anresco.com en main : « the page isn't mobile friendly,
+    # the pictures seem to have spoiled everything, redesign the site from scratch ». La page a été
+    # réécrite de zéro (mobile d'abord, cinq photographies au lieu de quinze, texte jamais posé sur une
+    # image), le contenu et le JavaScript du laboratoire repris mot pour mot. L'ancienne page reste
+    # consultable dans git :  git show 2d2ffe4:demos/concept-unilabo-v1.html > /tmp/ancienne.html
+    "unilabo": ("demos/concept-unilabo-v2.html",
+                "UNI-LABO, laboratoire d'analyses à Bonamoussadi Douala — refonte (mobile d'abord)"),
 }
 
 NOINDEX = '<meta name="robots" content="noindex,nofollow">'
