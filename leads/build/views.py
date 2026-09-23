@@ -84,14 +84,16 @@ RELANCE_A_JOUR = {
     # la réponse de King sur le périmètre FB attendue avant d'envoyer, relance 48 h après.
     # 22/09 20:51 : il a répondu — « Je suis vraiment intéressé … Vendredi matin 10h dans mon cabinet. »
     # Comme UNI-LABO, ce n'est plus une relance à calculer, c'est une réunion à préparer.
-    "univers-optique": ("2026-09-25", "RENDEZ-VOUS fixé par le prospect — **vendredi 25/09 à 10 h, son "
+    "univers-optique": ("2026-09-25", "**GELÉ (King, 23/09 au soir)** : plus aucun travail sur le site ni "
+                                      "le dossier avant le paiement. " + "RENDEZ-VOUS fixé par le prospect — **vendredi 25/09 à 10 h, son "
                                       "cabinet** (Bépanda). Feuille : `sales/RDV-UNIVERS-OPTIQUE-2026-09-25.md`. "
                                       "Prix déjà posé le 21/09 (100 000 FCFA, 50/50) : on ne le re-présente "
                                       "pas, on ne le baisse pas. À sortir de la salle : le « oui », les "
                                       "réponses aux six points que la page demande, l'acompte"),
     # 23/09 09:46 : le prix est PARTI (150 000 FCFA, 75 000 pour démarrer). On attend sa réponse ;
     # s'il ne dit rien, une relance courte le 24/09 — et rien d'autre entre-temps.
-    "le-cristallin": ("2026-09-24", "**PRIX POSÉ le 23/09 09:46** : 150 000 FCFA (site bilingue, "
+    "le-cristallin": ("2026-09-24", "**GELÉ (King, 23/09 au soir)** : aucune modification de la page ni du "
+                                     "dossier jusqu'au paiement. **PRIX POSÉ le 23/09 09:46** : 150 000 FCFA (site bilingue, "
                                      "hébergement 1 an, nom de domaine, assistant WhatsApp), 50 % = 75 000 "
                                      "pour démarrer, solde à la livraison. On attend un oui. S'il ne répond "
                                      "pas : UNE relance courte le 24/09, sans rebaisser le prix et sans "
@@ -101,7 +103,13 @@ RELANCE_A_JOUR = {
                                      "« hébergement + domaine » à cadrer : son domaine est à lui jusqu'au "
                                      "13/06/2027"),
     # UNI-LABO a DEMANDÉ un rendez-vous : ce n'est plus une relance à calculer.
-    "uni-labo-bonamoussadi": ("2026-09-25", "RENDEZ-VOUS demandé par le prospect — vendredi 25/09"),
+    "uni-labo-bonamoussadi": ("2026-09-25", "**RENDEZ-VOUS CONFIRMÉ — vendredi 25/09 à 13 h**, à leur "
+                                            "laboratoire (Carrefour Etoo). Il a choisi 13 h lui-même le "
+                                            "23/09 à 21:42 (« 13h c'est bon pour moi »), King a accepté à "
+                                            "21:47. Prix posé le 23/09 13:30 : 150 000 FCFA, **acompte 75 000 à "
+                                            "prendre en séance**, grille tarifaire standard déjà envoyée. À "
+                                            "emporter : contrat Standard ×2, grille corrigée, et le formulaire de "
+                                            "réservation — promis dans le message de 13:30, PAS ENCORE CONSTRUIT"),
     # Le calcul M+4 ne voyait pas cette échéance : le compteur de la source disait 1 relance au lieu de 2
     # (FU1 19/09 + FU2 21/09 17:39). Le journal, lui, disait « FU3 mer 23/09 max, palier des 3 messages
     # atteint » depuis le 21/09. Décision humaine inscrite ici le 23/09 — c'est la DERNIÈRE touche.

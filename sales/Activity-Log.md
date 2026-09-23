@@ -2427,3 +2427,46 @@ périmètre, jamais une remise.
 UNI-LABO 14 h 30 → contrat Standard 150 000 + abonnement à choisir + périmètre écrit ; **contrats imprimés en
 deux exemplaires et grille corrigée**. Le Cristallin reste gelé — mais le contrat est justement l'instrument
 qui lève le gel, prêt dans le dossier, en attente de l'accord de King.
+
+## 2026-09-23 · 21:42 → 21:50 · UNI-LABO CONFIRME LE RENDEZ-VOUS **À 13 H** — et deux pièges trouvés dans nos propres documents
+
+**Le fait, mot pour mot.** King avait proposé 14h30 (13:30). À **21:42** le laboratoire a répondu :
+« **Bonsoir Mr** » puis « **13h c'est bon pour moi** » — il choisit 13 h, ni 10 h ni 14h30. King a accepté dans
+la minute, à **21:47** ✓✓ : « D'accord ! C'est bien noté pour ce vendredi à 13h à votre laboratoire. Bonne
+soirée et à vendredi ! » → **VENDREDI 25/09 : 10 h Univers Optique (Bépanda), 13 h UNI-LABO (Carrefour Etoo)**,
+trois heures d'écart pour 10-15 minutes de route. Le dossier passe en **`closing`** (prix posé + rendez-vous
+confirmé), comme les deux autres. Portique d'avant-envoi passé : le profil WhatsApp s'identifie « Uni Labo ».
+
+**Ce que ça vaut en argent :** les deux séances de vendredi sont des **encaissements** — 50 000 FCFA (Univers,
+sur 100 000) et **75 000 FCFA** (UNI-LABO, sur 150 000), soit **125 000 FCFA d'acomptes** pour 250 000 FCFA de
+contrats signés. C'est le premier argent de la campagne qui ne soit pas une promesse.
+
+**Piège n° 1, trouvé en préparant la séance — et il coûtait 50 000 FCFA.** La feuille
+`sales/RDV-UNILABO-2026-09-25.md` portait **deux prix contradictoires** : l'en-tête disait 150 000 / 75 000
+(mis à jour ce matin), mais le corps du document — le texte du message, la ligne de l'acompte et la ligne
+« jamais de remise » — disait encore **100 000 / 50 000**, la version d'avant le message de 13:30. **Si King
+avait lu sa feuille en séance, il aurait annoncé le mauvais prix.** Corrigé partout, et le brouillon du 22/09
+est désormais marqué **PÉRIMÉ, NE PAS ENVOYER**.
+
+**Piège n° 2 — le formulaire de réservation n'existe pas.** La page en ligne (`uni-labo.vercel.app`, relue ce
+soir) est bilingue et complète : héros, 4 étapes, préparation par onglets (à jeun, urines, hormones, enfant,
+suivi), 4 familles d'analyses, résultats, adresse, FAQ. **Mais zéro formulaire** : ses 12 liens WhatsApp sont
+des questions (« Demander le tarif »), pas un formulaire où le patient laisse ses informations. Or le message
+de 13:30 promet « la création de votre site bilingue complet **(avec le formulaire de réservation WhatsApp
+direct)** » à 150 000 FCFA. Trois issues : **(a)** le construire avant vendredi et le montrer en séance,
+**(b)** l'annoncer comme la première livraison après l'acompte, **(c)** livrer la page telle quelle en disant
+que le formulaire est dedans — **à ne pas faire**. Décision à King, écrite dans la feuille avec le texte
+exact à coller dans la « Description du projet » du contrat (ce champ était vide, et c'est lui qui empêche les
+malentendus de livraison : la grille dit « site bilingue » sans dire combien de pages, et nos projets sont
+**une page longue**).
+
+**Une correction sur mon propre travail.** Le message du commit du 20 h (`d68cb31`) annonçait que « les
+échéances disent le gel » — **c'était faux** : le patch de `views.py` avait échoué dans ce lot et je ne l'ai
+pas vérifié. Le gel est maintenant **réellement** écrit dans les trois échéances du plan (`le-cristallin`,
+`univers-optique`, `uni-labo`), et c'est vérifié par `grep`. Leçon : un message de commit qui décrit une
+intention n'est pas une preuve ; seule la relecture du fichier l'est.
+
+**Rembobinage n° 9 en début de tour** : HEAD retombé à `74542ab`, arbre d'une époque antérieure (journal à
+2310 lignes, pas de `JOUR_2309`, pas de `guard.py`). Tout le travail du soir n'existait que sur le distant —
+récupéré par `fetch` + `reset --hard FETCH_HEAD` (4eaa7ac), marqueurs vérifiés, puis le tour a été rejoué.
+Effet de bord connu : `openpyxl` disparaît avec l'instantané et doit être réinstallé avant `rebuild.sh`.

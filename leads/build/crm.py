@@ -1476,7 +1476,7 @@ JOUR_2309 = {
             "l'heure qui suit) : elle ne demande plus aucun travail sur le site.",
     },
     "uni-labo-bonamoussadi": {
-        "stage": "offer",
+        "stage": "closing",
         "stage_since": "2026-09-23",
         "Follow-up date": "2026-09-25",
         "last_send_state": "delivered",
@@ -1485,18 +1485,29 @@ JOUR_2309 = {
             "22/09 21:24 — KING propose de se voir À SON LABORATOIRE (Carrefour Etoo) et demande le "
             "créneau : « plutôt disponible en matinée (vers 10h) ou en début d'après-midi (vers 14h30) ? » · "
             "23/09 13:30 — KING : le créneau de 10 h est pris par un autre rendez-vous client, il PROPOSE "
-            "DONC 14h30 pour vendredi, joint LA GRILLE TARIFAIRE STANDARD (PDF) et pose LE PRIX : "
-            "150 000 FCFA — « la création de votre site bilingue complet (avec le formulaire de "
-            "réservation WhatsApp direct) », 50 % d'acompte au démarrage et 50 % à la livraison. Il "
-            "demande une confirmation pour bloquer le créneau. EN ATTENTE DE SA RÉPONSE : rien d'autre "
-            "ne se prépare tant qu'il n'a pas dit oui à 14h30.",
+            "DONC 14h30 pour vendredi, joint LA GRILLE TARIFAIRE STANDARD (PDF, 1 page, 52 Ko) et pose LE "
+            "PRIX : 150 000 FCFA — « la création de votre site bilingue complet (avec le formulaire de "
+            "réservation WhatsApp direct) », 50 % d'acompte au démarrage et 50 % à la livraison finale. · "
+            "23/09 21:42 — LUI, mot pour mot : « Bonsoir Mr » puis « 13h c'est bon pour moi » — IL CHOISIT "
+            "13H, ni 10 h ni 14h30 (il répond à la place qu'on lui propose, pas à la question du créneau). · "
+            "23/09 21:47 — KING accepte dans la minute : « D'accord ! C'est bien noté pour ce vendredi à "
+            "13h à votre laboratoire. Bonne soirée et à vendredi ! » → RENDEZ-VOUS CONFIRMÉ PAR LES DEUX "
+            "PARTIES, vendredi 25/09 à 13 h, à leur laboratoire (Carrefour Etoo, Bonamoussadi). "
+            "Portique d'avant-envoi passé : le profil WhatsApp s'identifie « Uni Labo ».",
         "Notes_extra":
-            "LE SEUL DOSSIER SUR LEQUEL ON TRAVAILLE ENCORE VENDREDI : les deux autres (Le Cristallin, "
-            "Univers Optique) sont GELÉS jusqu'au paiement (décision de King du 23/09 au soir : « on ne "
-            "touche plus rien jusqu'à ce que les prospects deviennent des clients payants »). Prix posé : "
-            "150 000 FCFA (même tarif de référence que celui envoyé au Cristallin), acompte 75 000. La "
-            "grille tarifaire standard a été jointe en PDF : c'est elle qui fait foi si un écart apparaît "
-            "entre le message et le PDF.",
+            "Vendredi 13 h : la seule séance de la journée où l'on peut ENCAISSER un acompte de 75 000 FCFA "
+            "(Univers Optique, 10 h, c'est 50 000). Ce n'est plus une présentation : le prix est posé depuis "
+            "le 23/09 13:30 et la grille tarifaire standard est déjà entre leurs mains — c'est elle qui fait "
+            "foi en cas d'écart. à apporter : contrat Standard en deux exemplaires, grille corrigée, et de "
+            "quoi montrer le formulaire de réservation. ⚠️ ÉCART À COMBLER, relevé le 23/09 au soir : la "
+            "page en ligne (uni-labo.vercel.app, relue ce soir) est bilingue et complète — héros, 4 étapes, "
+            "préparation par onglets, 4 familles d'analyses, résultats, FAQ — mais elle N'A AUCUN "
+            "FORMULAIRE DE RÉSERVATION : ses 12 liens WhatsApp sont des questions (« demander le tarif »), "
+            "pas un formulaire où le patient laisse ses informations. Or le message de 13:30 promet « la "
+            "création de votre site bilingue complet (avec le formulaire de réservation WhatsApp direct) » "
+            "à 150 000 FCFA. Il faut donc SOIT le construire avant vendredi et le montrer en séance, SOIT "
+            "l'annoncer comme la première livraison après l'acompte — jamais livrer la page telle quelle en "
+            "disant que le formulaire est dedans. Décision à King.",
     },
     "le-cristallin": {
         "stage": "closing",

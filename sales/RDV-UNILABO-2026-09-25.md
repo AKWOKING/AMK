@@ -1,4 +1,4 @@
-# UNI-LABO — RENDEZ-VOUS DEMANDÉ · vendredi 25 septembre 2026
+# UNI-LABO — **RENDEZ-VOUS CONFIRMÉ · vendredi 25 septembre 2026 à 13 h**, à leur laboratoire (Carrefour Etoo)
 
 **Prospect :** UNI-LABO — Carrefour Etoo, Bonamoussadi, Douala · **696 13 98 19** (WhatsApp Business)
 **Ce qui vient de se passer :** le 19/09 à 20:20, ils ont écrit :
@@ -36,7 +36,12 @@ résultat. Le budget se **demande** à l'étape budget de la séquence — il ne
 
 ---
 
-## Message à envoyer — FR, et il pose le prix
+## ⛔ Message du 22/09 — **PÉRIMÉ, NE PAS ENVOYER** (le prix a changé)
+
+> Ce texte a servi à demander la réunion. **King a envoyé autre chose le 23/09 à 13:30** : il propose 14h30,
+> joint la **grille tarifaire standard**, et pose **150 000 FCFA** (50 % = 75 000). Le client a répondu à
+> 21:42 « **13h c'est bon pour moi** ». **Le prix de ce brouillon (100 000) n'est plus le bon** — il est
+> conservé pour mémoire, et **il ne doit pas être lu en séance**.
 
 ```
 Bonjour 👋 Avec plaisir — vendredi nous convient.
@@ -47,7 +52,7 @@ Ce que je vous montre, concrètement : le site, déjà en ligne, ouvert sur votr
 téléphone — vos horaires, le Carrefour Etoo, la préparation des examens, et le
 bouton WhatsApp. Vous me dites devant moi ce qui est inexact et je corrige.
 
-Un seul prix, pour que vous le sachiez avant : 100 000 FCFA. La moitié pour
+Un seul prix, pour que vous le sachiez avant : 150 000 FCFA. La moitié pour
 commencer, la moitié à la mise en ligne. Rien n'est dû avant votre accord.
 
 — Akwo King / AMK – Développement Web & Solutions Digitales
@@ -87,9 +92,67 @@ le chiffre de rentabilité).
 **Les 3 choses à obtenir en sortie de réunion, dans cet ordre :**
 1. **Le « oui » sur le principe** — ils ont demandé la réunion, le travail est fait, il ne reste qu'à décider.
 2. **Les corrections** (horaires, analyses, adresse) — les avoir faites EN DIRECT fait d'eux des participants, pas des spectateurs.
-3. **L'acompte 50 000 FCFA** — MoMo, manuel. *(Encaissement manuel au début : `research/Pricing-Model-Cameroon-2026-09-18.md`)*
+3. **L'acompte 75 000 FCFA** (50 % de 150 000) — MoMo, manuel. *(Encaissement manuel au début : `research/Pricing-Model-Cameroon-2026-09-18.md`)*
 
-**Ce qu'il ne faut PAS faire :** remettre le prix à plus tard. **100 000 FCFA, 50/50, jamais de remise** (règle 43). Si on demande une réduction, la réponse est non — et elle est décidée d'avance.
+**Ce qu'il ne faut PAS faire :** remettre le prix à plus tard, ni le baisser. **150 000 FCFA, 50/50, jamais de remise** (règle 43) — la grille standard est déjà dans leurs mains. Si on demande une réduction, la réponse est non — et elle est décidée d'avance.
+
+---
+
+---
+
+## La séance de 13 h, dans l'ordre (30 à 40 minutes)
+
+| # | Ce qu'on fait | Pourquoi dans cet ordre |
+|---|---|---|
+| **1** | **Ouvrir LEUR site sur un téléphone** — pas une présentation, leur laboratoire à l'écran (héros, 4 étapes, préparation, analyses, résultats) | ils ont demandé la réunion : le travail est déjà fait, on le montre avant de parler d'argent |
+| **2** | **Faire corriger devant nous** : horaires, liste des analyses, adresse, nom de la biologiste | ils repartent avec des corrections faites — c'est ce qui transforme un spectateur en participant |
+| **3** | **Montrer le formulaire de réservation** (voir « à trancher » ci-dessous) | c'est la pièce que le prix de 150 000 couvre explicitement |
+| **4** | **La question qui compte, dans cet ordre :** « quand est-ce qu'on publie ? » puis « **les 75 000, on les met quand ?** » | le prix est posé depuis le 23/09 : on ne le re-présente pas, on ne le baisse pas |
+| **5** | **Le contrat** : remplir la « Description du projet » **avec eux**, signer en deux exemplaires | c'est le champ qui empêche les malentendus de livraison (voir le texte à coller plus bas) |
+| **6** | **Encaisser les 75 000 en MoMo** (MTN 677 78 96 31 / Orange 692 89 07 47) | la mise en ligne annoncée est de 3 à 5 jours **après l'acompte** |
+| **7** | **Proposer l'abonnement** : Standard **30 000/mois** (2 h de modifications, sauvegardes vérifiées, assistance sous 24 h) ou Essentiel **12 000/mois** (domaine + veille + 30 min) | c'est maintenant qu'il se décide, pas après la livraison |
+
+**À emporter :** le contrat Standard **imprimé en deux exemplaires**, la **grille corrigée** imprimée, le téléphone chargé avec la page ouverte, et les numéros MoMo écrits sur la feuille.
+
+---
+
+## À coller dans le contrat — **Description du projet** (le champ le plus important, aujourd'hui vide)
+
+> Site web une page, **bilingue français / anglais** (bascule FR|EN sur la page), comprenant : la présentation
+> du laboratoire et de la biologiste ; le parcours du patient en quatre étapes ; la préparation des analyses
+> (à jeun, urines, hormones, enfant, suivi de traitement) ; les familles d'analyses proposées ; les modalités
+> de retrait des résultats ; l'adresse et le repère d'accès (Carrefour Etoo, Bonamoussadi) ; les horaires
+> d'ouverture ; une foire aux questions ; et un **formulaire de réservation WhatsApp** permettant au patient de
+> **sélectionner une ou plusieurs analyses, d'indiquer son nom et le moment souhaité**, puis d'envoyer le tout
+> sur le numéro WhatsApp du laboratoire **en un seul message prérempli** — sans création de compte et sans
+> stockage de données sur le site.
+> **Mise en ligne** sur le nom de domaine du laboratoire, hébergée par le Prestataire. **Une séance de prise en
+> main d'une heure** à la livraison.
+> **NON COMPRIS :** page Facebook, boutique en ligne, assistant WhatsApp automatique, publicité payante,
+> photographies professionnelles, adresses e-mail professionnelles, pages supplémentaires, toute garantie de
+> position sur Google.
+
+---
+
+## Ce qui doit être tranché **avant vendredi** (deux décisions de King)
+
+**① Le formulaire de réservation existe-t-il, oui ou non ?**
+La page en ligne (relue le 23/09 au soir) est bilingue et complète — héros, 4 étapes, préparation par onglets,
+4 familles d'analyses, résultats, FAQ — mais elle **n'a aucun formulaire** : ses 12 liens WhatsApp sont des
+questions (« Demander le tarif »), pas un formulaire où le patient laisse ses informations. Or le message de
+13:30 promet **« la création de votre site bilingue complet (avec le formulaire de réservation WhatsApp
+direct) »** à 150 000 FCFA. Trois issues, dans l'ordre de solidité :
+**(a)** on le construit **avant vendredi** et on le montre en séance — c'est la démonstration qui ferme ;
+**(b)** on le présente comme **la première livraison après l'acompte** (3 à 5 jours) ;
+**(c)** on livre la page telle quelle en disant que le formulaire est dedans — **à ne pas faire**, ce serait
+vendre ce qui n'existe pas.
+*Je peux le construire : c'est l'ajout d'une section + une trentaine de lignes de JavaScript, sur un fichier
+que nous maîtrisons, et le portique de page le vérifie avant toute mise en ligne.*
+
+**② Quel abonnement on annonce en séance ?** Le Standard **30 000/mois** figure dans la grille qu'ils ont
+reçue. Le palier Essentiel **12 000/mois** (pour un client qui garde son domaine et son hébergement) est ma
+proposition — il n'est dans aucun document envoyé. **Deux paliers annoncés valent mieux qu'un seul** : on
+ajuste le périmètre, jamais le prix de la création.
 
 ---
 

@@ -6,10 +6,11 @@
 *(plus code 3P3G+JCG)* · **WhatsApp 699 25 28 74** · titulaire public : **BAYANG BIHEN Calvin** (« Monsieur Bayang »)
 **Étape : `closing`** — prix posé, aperçu lu, décision à prendre. `leads/CRM.csv`, mise à jour le 22/09 à 20:12.
 
-> ⚠️ **Vendredi 25/09, il y a DEUX rendez-vous.** Celui-ci (**10 h, Bépanda**) et **UNI-LABO**
-> (Bonamoussadi, Carrefour Etoo — **heure encore à confirmer**, feuille : `sales/RDV-UNILABO-2026-09-25.md`).
-> Les deux quartiers sont voisins : **10 à 15 minutes de route**. Si UNI-LABO propose le matin, le créneau
-> naturel est **11 h 30 / 12 h** — proposer l'un OU l'autre, jamais les deux à la même heure.
+> ⚠️ **Vendredi 25/09, il y a DEUX rendez-vous.** Celui-ci (**10 h, son cabinet, Bépanda**) et **UNI-LABO**
+> (**13 h, leur laboratoire, Carrefour Etoo** — confirmé par eux le 23/09 à 21:42, feuille :
+> `sales/RDV-UNILABO-2026-09-25.md`). Les deux quartiers sont voisins : **10 à 15 minutes de route**.
+> L'enchaînement tient largement — **10 h → 13 h**, trois heures d'écart. **Les deux séances sont des
+> encaissements** : 50 000 ici, 75 000 là-bas.
 
 ---
 

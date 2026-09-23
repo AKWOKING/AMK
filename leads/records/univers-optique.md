@@ -40,7 +40,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 96 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 99 ligne(s).*
 
 `L51` · | **ven 18/09 20:02** | **Clinique de L'université** (Bassa, 694 36 02 03) | msg 1 — sans maquette | Envoyé | **Non** |
 `L113` · | 20:02 | Cabinet Dentaire Emmanuel · Clinique de L'université · MEDI LABO |
@@ -138,6 +138,9 @@
 `L2414` · rien sans mon ok ». · UNI-LABO a le formulaire ✅ et **la grille entière entre les mains**. · Univers Optique
 `L2422` · les clients qui possèdent déjà domaine et hébergement (Cristallin, Univers), **Standard 30 000/mois** (2 h,
 `L2426` · **Vendredi, dans l'ordre :** Univers 10 h → contrat Fondateur 100 000 (offre de lancement close) ;
+`L2436` · soirée et à vendredi ! » → **VENDREDI 25/09 : 10 h Univers Optique (Bépanda), 13 h UNI-LABO (Carrefour Etoo)**,
+`L2440` · **Ce que ça vaut en argent :** les deux séances de vendredi sont des **encaissements** — 50 000 FCFA (Univers,
+`L2466` · `univers-optique`, `uni-labo`), et c'est vérifié par `grep`. Leçon : un message de commit qui décrit une
 
 ---
 

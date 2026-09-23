@@ -232,7 +232,8 @@ trois éléments du §4** — on demande, on n'achète pas, et **on n'invente ja
    dire combien de pages**. Nos trois projets sont, en réalité, **une page longue** — si ce n'est pas écrit,
    un client pourra réclamer dix pages.
 5. **Vendredi, dans cet ordre** : Univers **10 h** (contrat Fondateur à 100 000, offre de lancement close) →
-   UNI-LABO **14 h 30** (contrat Standard, 150 000, abonnement à choisir, périmètre écrit). **Apporter les
+   UNI-LABO **13 h** (contrat Standard, 150 000, abonnement à choisir, périmètre écrit — **et le périmètre doit
+   nommer le formulaire de réservation WhatsApp, promis dans le message de 13:30**). **Apporter les
    contrats imprimés en deux exemplaires**, et **la grille corrigée**.
 6. **Le Cristallin : rien, pour l'instant.** Le gel s'applique — mais il faut noter que **le contrat est
    justement l'instrument qui lève le gel** (c'est l'acompte qui débloque). Donc : prêt, dans le dossier,

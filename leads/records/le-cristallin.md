@@ -39,7 +39,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 96 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 97 ligne(s).*
 
 `L837` · - `Le Cristallin` 17:51 · `Univers Optique` 17:50 · `Disc Optique Médicale` 17:48 · `Tchaya Optique` 17:47 :
 `L881` · ## Lundi 21/09/2026 — 18:20 → 19:15 · « Ok » de Le Cristallin : le premier aperçu demandé, construit et branché sur le CRM
@@ -137,6 +137,7 @@
 `L2408` · **Le tableau des écarts, contre ce qui est réellement parti :** Le Cristallin s'est vu promettre « hébergement
 `L2422` · les clients qui possèdent déjà domaine et hébergement (Cristallin, Univers), **Standard 30 000/mois** (2 h,
 `L2428` · deux exemplaires et grille corrigée**. Le Cristallin reste gelé — mais le contrat est justement l'instrument
+`L2465` · pas vérifié. Le gel est maintenant **réellement** écrit dans les trois échéances du plan (`le-cristallin`,
 
 ---
 

@@ -224,8 +224,9 @@ une facture PDF.**
 
 ## 6 · Les trois dépendances qui peuvent casser l'ordre
 
-1. **L'argent de vendredi doit rentrer.** Univers 10 h, UNI-LABO 14 h 30 : 250 000 FCFA sur la table. **Sans
-   ça, tout ce document est de la théorie.** C'est la priorité absolue de la semaine.
+1. **L'argent de vendredi doit rentrer.** Univers **10 h** et UNI-LABO **13 h** (confirmé par eux le 23/09 à
+   21:42) : **250 000 FCFA de contrats, dont 125 000 d'acomptes encaissables en séance** (50 000 + 75 000).
+   **Sans ça, tout ce document est de la théorie.** C'est la priorité absolue de la semaine.
 2. **Le pilote B exige une visite**, pas un message WhatsApp. Tant que la visite n'est pas faite, je ne peux
    préparer qu'un cahier des charges, pas un devis.
 3. **L'abonnement doit être livré**, mois après mois. C'est la seule chose qui, si elle est mal faite, nous
@@ -235,7 +236,7 @@ une facture PDF.**
 
 ## 7 · Ce que je propose comme prochaine action, de chaque côté
 
-**King :** ① les deux rendez-vous de vendredi (Univers 10 h, UNI-LABO 14 h 30) et l'encaissement ;
+**King :** ① les deux rendez-vous de vendredi (Univers 10 h, UNI-LABO 13 h) et l'encaissement des deux acomptes ;
 ② valider le principe de l'abonnement à 10 000/mois, pour qu'il soit proposé **au moment de la livraison
 payée** — pas avant ; ③ me dire **quel laboratoire** je visite, et quand.
 
