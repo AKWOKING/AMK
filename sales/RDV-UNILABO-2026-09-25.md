@@ -83,7 +83,7 @@ le chiffre de rentabilité).
 *(page du 18/09 — **à redéployer** : la nôtre est maintenant la refonte, `demos/concept-unilabo-v2.html`,
 portique 0 constat / 385 textes / 42 assertions, noindex)*
 
-**À savoir avant d'ouvrir la page en séance (24/09, 00 h 30) :** King a regardé la version précédente et l'a
+**À savoir avant d'ouvrir la page en séance (nuit du 23 au 24/09, commit `e936a03` à 00:03) :** King a regardé la version précédente et l'a
 refusée — *« the pictures seem to have spoiled everything »*. La page a été **réécrite de zéro** : mobile
 d'abord, **cinq photographies** cantonnées (une par famille d'analyses, jamais de texte dessus), **hero sans
 photo**, la fiche de prélèvement comme seul motif. **Ne pas montrer l'ancienne page** : si la question vient,
@@ -236,3 +236,22 @@ ajuste le périmètre, jamais le prix de la création.
 
 **Une seule relance, et elle est douce :** *« Pas de souci — je vous garde le créneau de vendredi, dites-moi quand vous êtes disponible. Le site reste en ligne, il ne bouge pas. »*
 **Puis M+4** (mardi 29/09), **puis stop.** Un prospect qui a demandé une réunion ne se relance pas comme un fil froid : **on tient parole, on ne poursuit pas.**
+
+---
+
+## Annexe — la question que je ne peux pas trancher seul (lot [30], 24/09)
+
+Trois vidéos Google Business Profile lues ce jour (`sales/FICHE-GOOGLE-PROFILE.md`). Une seule chose
+concerne cette séance, et elle tient en une question à poser **au laboratoire**, pas à supposer :
+
+> « Est-ce que le laboratoire a une fiche Google (celle qui apparaît sur Maps quand on cherche le nom) —
+> et si oui, qui a le mot de passe du compte ? »
+
+- Si **oui** : la fiche est le premier endroit où un patient trouve le laboratoire ; son champ « site web »
+  peut pointer vers la page que nous venons de livrer, et son chat accepte **SMS et WhatsApp** — à condition
+  d'y coller un lien `wa.me/237696139819`, jamais le numéro (le numéro ne fonctionne pas).
+- Si **non** : créer une fiche est gratuit et prend un quart d'heure, mais la vérification (code par SMS ou
+  vidéo) appartient **au laboratoire seul**.
+
+**Rien de tout cela n'est dans le prix de 150 000 FCFA et rien de tout cela n'est une remise.** C'est une
+porte qu'on montre du doigt, à King de décider s'il en parle en séance, après l'acompte.

@@ -1554,7 +1554,7 @@ JOUR_2309 = {
             "plupart des laboratoires du quartier ne les affichent pas. On n'invente jamais un badge : on "
             "le demande, et si la réponse est oui, il va en haut de la page. Noter la réponse au CRM le "
             "soir même. "
-            "24/09 00 h 30 — LA PAGE A ÉTÉ REPRISE DE ZÉRO. King a regardé l'aperçu mobile et l'a refusé : "
+            "24/09, nuit du 23 au 24 (commit `e936a03`, 00:03 à Douala) — LA PAGE A ÉTÉ REPRISE DE ZÉRO. King a regardé l'aperçu mobile et l'a refusé : "
             "« the page isn't mobile friendly the pictures seem to have spoiled everything redesign the "
             "site from scratch » (six captures d'anresco.com en main ; seconde référence : animate.bio). "
             "Nos outils étaient verts et la page était quand même rejetée : huit photographies, dont quatre "

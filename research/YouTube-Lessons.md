@@ -1233,6 +1233,75 @@ interdit depuis le premier jour**. Ce qu'on a est vérifiable : cinq pages réel
 ouvrir, les mots du laboratoire, et le fait que le visiteur regarde son propre futur site. Écrit ici pour
 le jour où la question viendra.
 
+---
+
+## Lot [30] · LA FICHE GOOGLE, ET LE LIEN D'ÉVITEMENT MORT — 4 vidéos (24/09/2026, quatrième lot du jour)
+
+Quatre liens sans texte. Trois sur la **fiche Google** — Santrel Media (1,13 M d'abonnés, l'installation
+pas à pas), Ignite Visibility (64,9 K, vingt points de contrôle), Zanet Design (36,2 K, une compilation
+présentée comme une masterclass) — et une sur l'**accessibilité** : Imran Siddiq, Web Squadron (195 K),
+une démonstration complète dans Elementor. Toutes parlantes, lues en entier (la première a demandé deux
+tentatives : YouTube bloque les sites de transcription par intermittence).
+
+**Ce que le lot [26] avait déjà dit, et que je ne revends pas** : la prospection par Google Maps, le
+mobile avant la ligne fixe, les trois cibles, les ouvertures d'appel. Le lot [26] avait établi *où
+trouver* les prospects ; celui-ci établit **quoi faire de leur fiche Google** — un sujet neuf.
+
+### Ce que chaque source apporte
+
+| source | l'apport | ce qu'on en garde |
+|---|---|---|
+| **Santrel Media** — l'installation | le pas-à-pas filmé, écran partagé | on **cherche d'abord sur Maps** : si la fiche existe, on la REVENDIQUE, on ne crée pas de doublon ; un compte Google professionnel, pas le personnel ; les services et produits remplis « sans lésiner » ; la description (750 caractères, quelques centaines au minimum) ; au moins cinq ou six photos, et les clients en ajouteront ensuite ; **la vérification** par téléphone, courrier ou vidéo — c'est le client seul qui peut la faire ; et cette phrase qui nous concerne : « les gens cliquent presque toujours sur le lien du site » |
+| **Ignite Visibility** — 20 points | une liste récitée vite, utile comme inventaire | le **NAP** (nom, adresse, téléphone) identique partout sur le web ; des **avis réguliers** ; les **horaires** qui commandent la visibilité ; la **FAQ** sur la fiche **et** sur la page ; une URL qui contient la ville et le service ; la carte du site qui renvoie à la fiche et l'inverse ; les **images locales** ; le texte alternatif **dans la fiche et dans le HTML** ; 3 à 5 **vidéos courtes** ; un appel à l'action dans le texte ; le **schéma `LocalBusiness`** sur la page d'arrivée ; les publications régulières pour que la fiche reste vivante ; et la conclusion : « traitez votre fiche comme son propre site web » |
+| **Zanet Design** — la masterclass | le plus long, et le seul qui parle de **suspension** et de **couleurs de performance** | la **catégorie principale est le plus gros facteur** (et sa méthode : regarder celles des concurrents du quartier) ; le nom réel, jamais de mots-clés collés ; **les 13 pièges de suspension** ; le **chat** rouvert (SMS et WhatsApp — avec un **lien `wa.me`**, pas un numéro, sinon ça ne marche pas) ; le champ « **date d'ouverture** » que presque personne ne remplit ; la **vérification** ; « personnes et accès » pour déléguer la gestion ; le **cercle de couleur** des statistiques (mobile, ordinateur, Maps) pour savoir comment SES clients le trouvent ; et sur les avis : **Google n'utilise que ce que les clients écrivent**, pas ce que le commerçant répond — un avis frais pèse plus que des mois de travail, et un avis avec photo vaut dix avis de texte |
+| **Imran Siddiq** — l'accessibilité | une démonstration, pas une liste | le **lien d'évitement mort** (voir ci-dessous) ; une **étiquette masquée est permise, une étiquette vide non** ; le **contraste dépend de la taille** (16 px échoue, 24 px passe, 23 px échoue encore) ; l'accordéon n'est pas tabulable — **mais notre FAQ est en `<details>` natif**, donc concernée par rien ; les vidéos ont besoin de sous-titres et d'un bouton pause ; et la règle d'or de l'`aria-label` : **seulement quand l'icône est le seul nom** |
+
+### Ce que j'ai fait de vérifiable — et ce que j'ai refusé de faire
+
+**Ajouté** : deux contrôles durcis dans `tools/qa/audit_a11y.py` — un lien d'évitement dont **la cible
+n'existe pas** est une faute, un lien d'évitement **caché pour toujours** aussi, et une **étiquette vide**
+aussi. Trois témoins fautifs neufs, deux assertions de plus, et le témoin sain qui verrouille le motif
+réel de nos pages (`.skip{left:-9999px}` + `.skip:focus{left:0}`). Nos quatre pages passent : elles ne
+mentaient donc pas, mais **notre contrôle, lui, ne le savait pas** — il acceptait n'importe quel lien vers
+nulle part.
+
+**Refusé, exprès** : un second contrôle de contraste. `audit_html.py` calcule déjà les ratios depuis le CSS
+du fichier, avec la nuance de taille (4,5:1, puis **3:1 au-delà de 24 px ou 18,66 px gras**) et la
+composition des transparences. La vidéo **confirme** notre règle, elle ne la change pas ; deux outils qui
+mesurent la même chose finissent par se contredire.
+
+**Écarté, parce que ça ne nous concerne pas** : l'accordéon d'Elementor (notre FAQ est du `<details>`
+natif, tabulable normalement — aucun texte caché n'est dû), et les sous-titres vidéo (nous n'embarquons
+aucune vidéo : zéro élément `<video>` sur les six pages ; la règle est écrite en §30.2 pour le jour où un
+client nous donnera des images).
+
+### Les deux corrections que ce lot m'a values
+
+1. **Ma quatrième erreur d'instrument.** Un script rapide a annoncé « 2 liens-icônes sans nom » sur la
+   page école : faux, tous deux sont nommés par leur **texte**, et l'outil d'audit compte le nom comme
+   attribut **ou** contenu depuis le lot [28]. Rien corrigé sur la page, et la règle est écrite.
+2. **Une affirmation que j'avais écrite sans preuve.** J'avais rédigé, dans le nouveau document, que
+   UNI-LABO avait une fiche Google « trouvée par notre relevé Maps ». La ligne du CRM dit
+   `source : directory`, et la vignette que je regardais (`clients/douala-cliniques/07-unilabo.jpg`) est
+   **notre propre maquette**. Corrigé dans le document, avec la correction datée : le cas prouvé du
+   pipeline, c'est **Univers Optique** — fiche Google notée 3,3/5, **champ « site web » vide**, domaine
+   mort depuis janvier 2024, et rendez-vous vendredi 10 h où la question est déjà posée.
+
+### Le verdict d'absorption
+
+**Absorbé** : les 20 points d'Ignite Visibility (inventaire), l'ordre d'installation de Santrel, la
+catégorie et les pièges de Zanet, la règle du `wa.me`, et les trois règles d'Imran devenues des contrôles.
+**Retenu avec réserve** : les conseils d'avis des trois vidéos — nous ne dictons pas le vocabulaire d'un
+avis, nous ne l'achetons pas, nous ne l'échangeons pas contre un prix (voir §30.4, point 1).
+**Écarté** : le vocabulaire de vente des trois chaînes américaines (le « donut », les outils payants cités
+— Local Falcon, GMB Everywhere, Answer Socrates, Lo — que nous ne pouvons ni acheter ni vérifier depuis
+Douala), et leurs promesses de classement.
+
+**Ce qui reste non vérifié, et donc jamais écrit dans une offre** : les méthodes de vérification
+réellement disponibles au Cameroun, la présence du chat SMS/WhatsApp dans les profils du pays, les
+catégories disponibles en français. Trois sources américaines et britanniques ne prouvent rien sur une
+fiche camerounaise.
+
 **Le désaccord méthodologique à noter :** pour 5 et 6, les sources utiles ne sont pas des vidéos YouTube.
 Le lot [26] a montré le plafond de ce format (deux vidéos sur cinq muettes, et les autres vendent une
 communauté payante). Les meilleures sources sont les documents officiels (Google, WhatsApp, W3C) et

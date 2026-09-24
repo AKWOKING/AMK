@@ -94,7 +94,9 @@ publiable** :
    **On n'en met qu'un — et pas un nom qu'il ne signerait pas.**
 5. **Les e-mails** : deux sont publics (`universoptique@yahoo.fr`, `universoptique.uo@gmail.com`).
    **Une seule adresse sera affichée : celle qu'il lit vraiment.**
-6. **Sa fiche Google — a-t-il la main dessus ?** Si oui : on la complète (site, horaires, photos, **réponses aux
+6. **Sa fiche Google — a-t-il la main dessus ?** *(trois vidéos lues le 24/09 ont produit la marche à
+   suivre exacte : `sales/FICHE-GOOGLE-PROFILE.md` — ordre d'installation, les 13 pièges de suspension,
+   le lien `wa.me` du chat. Si la réponse est « oui », on sait quoi faire sans re-regarder une vidéo.)* Si oui : on la complète (site, horaires, photos, **réponses aux
    six avis**) dans la même séance. Si non : **c'est la première chose à récupérer, AVANT le site** — Google
    lui envoie plus de visiteurs que n'importe quelle page.
 

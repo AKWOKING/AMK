@@ -26,9 +26,9 @@
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| Le Cristallin | Douala | 699 90 55 77 | `L2831` |
+| Le Cristallin | Douala | 699 90 55 77 | `L2880` |
 | UNI-LABO | Douala (Bonamoussadi, Carrefour Etoo) | 696 13 98 19 | `L134` |
-| Univers Optique | Douala | 699 25 28 74 | `L2830` |
+| Univers Optique | Douala | 699 25 28 74 | `L2998` |
 
 ## ② Qualifié — en conversation — 10
 
@@ -108,7 +108,7 @@
 | Lux Optique | Douala | 655 04 05 49 | — |
 | LyfyOptic | Douala | 699 98 06 66 | `L2104` |
 | Maff Optique | Douala | 699 93 19 56 | — |
-| Maison Optique | Douala | 657 73 70 45 | `L2596` |
+| Maison Optique | Douala | 657 73 70 45 | `L2972` |
 | Marthlo Comprehensive Bilingual College | Buea | — | — |
 | MegaOptic | Douala | 698 82 10 27 | `L1840` |
 | Mel's Optic | Douala | 690 98 85 18 | — |
@@ -179,7 +179,7 @@
 | Polyclinique de la Gare LE NID | Douala (Bessengue) | 699 987 775 | `L34` |
 | Presbyterian Comprehensive Secondary School (PCSS) Buea | Buea (Madam Namondo Alexander) | 652075229 | — |
 | Solidarity Health Foundation (Solidarity Clinic & Laboratory) | Buea (Untarred Malingo St / Molyko Checkpoint D61, P.O. Box 467; plus code 575J+7M) | 677615757 | `L761` |
-| YONDJA ANALYSE | Douala | 696 88 88 23 | `L2695` |
+| YONDJA ANALYSE | Douala | 696 88 88 23 | `L2904` |
 
 ## ⛔ Écarté — 10
 

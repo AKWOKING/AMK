@@ -13,14 +13,22 @@ critères un par un, dans l'ordre, et on écrit ce qu'on a vérifié.
 
 Ce que cet outil fait : la part **vérifiable en code**, avec le numéro du critère à côté de chaque
 constat — pour qu'une phrase comme « 1.4.4 Resize Text » veuille dire quelque chose dans un rapport.
-Ce qu'il ne fait pas, et qui est écrit ici pour ne pas mentir : le contraste (c'est `audit_html.py`),
-le rendu réel, l'ordre de tabulation au clavier, la qualité d'un texte alternatif. **Ces quatre-là
-demandent un humain** (et King reste l'œil).
+Ce qu'il ne fait pas, et qui est écrit ici pour ne pas mentir : le rendu réel, l'ordre de tabulation au
+clavier, la qualité d'un texte alternatif. **Ces trois-là demandent un humain** (et King reste l'œil).
+Le contraste, lui, est calculé — mais par `audit_html.py`, qui applique le seuil WCAG **en fonction de la
+taille** (4,5:1, et 3:1 au-delà de 24 px, ou 18,66 px en gras) : c'est bien la règle que la vidéo d'Imran
+Siddiq explique avec son curseur de couleur (« à 16 px ça ne passe pas, à 24 px ça passe »), et elle est
+vérifiée depuis le premier jour. Ne pas la rejouer ici en double : deux outils qui mesurent la même chose
+finissent par se contredire.
 
 Deux contrôles ajoutés le 24/09 au soir, après les sources de King (lot [28]) : les **repères de
 navigation** et les **groupes nommés**. Les deux viennent de la même phrase d'un tutoriel NVDA — une page
 sans repère principal est annoncée « page blank », et un ensemble de cases à cocher sans nom de groupe est
 annoncé comme des cases isolées (« personal radio button, one of two » sans dire de quoi il s'agit).
+
+Trois contrôles durcis le 24/09 (lot [30]) par la même vidéo : un lien d'évitement **mort** (la cible
+n'existe pas) ou **caché pour toujours** est désormais une faute, et une **étiquette vide** aussi — masquer
+une étiquette est permis, l'écrire est obligatoire.
 
 Ce qu'on vise : **WCAG 2.2 niveau AA**. Pas AAA (Silktide : « reaching for the stars ») — AAA demande
 des choses qu'une page commerciale ne peut pas honorer (langue des signes, 7:1 partout, 44 px partout).
@@ -143,6 +151,16 @@ def audit(path):
         add("ERR", "3.3.2", "%d champ(s) sans étiquette associée (ni <label for>, ni aria-label)" % len(unlabeled))
     elif inputs:
         good("3.3.2", "les %d champs de saisie ont une étiquette" % len(inputs))
+    # LOT [30] — UNE ÉTIQUETTE VIDE NE NOMME RIEN. La vidéo d'Imran Siddiq le dit dans cet ordre :
+    #masquer l'étiquette à l'écran est parfaitement permis, la laisser VIDE ne l'est pas — le champ
+    # perd alors son nom et le lecteur d'écran annonce « zone de saisie » sans dire de quoi. Le
+    # contrôle d'hier ne regardait que la présence du `for=` ; celui-ci regarde le contenu.
+    empty_labels = [m.group(1) for m in re.finditer(r"<label\b([^>]*)>(.*?)</label>", html, re.S | re.I)
+                    if not re.sub(r"<[^>]+>", "", m.group(2)).strip()
+                    and not re.search(r'aria-label\s*=\s*["\'][^"\']+["\']', m.group(1), re.I)]
+    if empty_labels:
+        add("ERR", "3.3.2", "%d étiquette(s) VIDE(S) : le champ est relié à un <label> qui ne dit rien "
+                            "(le masquer est permis, l'écrire est obligatoire)" % len(empty_labels))
 
     if re.search(r'type\s*=\s*["\'](radio|checkbox)["\']', html, re.I):
         if "<fieldset" not in html.lower():
@@ -193,8 +211,44 @@ def audit(path):
         add("ERR", "2.2.2", "animation infinie sans prefers-reduced-motion : impossible à mettre en pause")
 
     # ── 2.4.1 Bypass Blocks ───────────────────────────────────────────────────────────────────────
-    if re.search(r'<a[^>]+href\s*=\s*["\']#', html, re.I) and re.search(r"skip|aller au contenu|passer", html, re.I):
-        good("2.4.1", "un lien d'évitement existe")
+    # LOT [30] — LE LIEN D'ÉVITEMENT PEUT ÊTRE PRÉSENT ET MORT. C'est la démonstration de la vidéo
+    # d'Imran Siddiq (Web Squadron) : sur un gabarit « pleine largeur », le lien « skip to content »
+    # s'affiche, on le tabule, on l'active — et rien ne bouge, parce que la cible n'existe pas. Un lien
+    # d'évitement mort est pire que pas de lien du tout : celui qui navigue au clavier perd confiance et
+    # retape son chemin à travers tout le menu à chaque page. Le contrôle précédent (lot [27]) se
+    # contentait de chercher un `href="#"` et le mot « skip » n'importe où dans le fichier : il disait
+    # « conforme » sur un lien cassé. Deux vérifications maintenant, la cible et l'atteignabilité.
+    SKIP_WORDS = re.compile(r"skip\s+to\s+content|aller au contenu|passer au contenu", re.I)
+    skip_links = []
+    for m in re.finditer(r"<a\b([^>]*)>(.*?)</a>", html, re.S | re.I):
+        attrs, inner = m.group(1), m.group(2)
+        cls = (re.search(r'class\s*=\s*["\']([^"\']*)["\']', attrs, re.I) or [None, ""])[1]
+        if "skip" in cls.lower() or SKIP_WORDS.search(attrs) or SKIP_WORDS.search(inner):
+            href = re.search(r'href\s*=\s*["\']#([^"\']+)["\']', attrs, re.I)
+            skip_links.append((cls, href.group(1) if href else None))
+    if skip_links:
+        dead = [t for _, t in skip_links
+                if not (t and re.search(r'id\s*=\s*["\']%s["\']' % re.escape(t), html, re.I))]
+        hidden_hard = []
+        for cls, _ in skip_links:
+            for sel in cls.split():
+                rule = re.search(r"\.%s\s*\{([^}]*)\}" % re.escape(sel), css)
+                if rule and re.search(r"(display\s*:\s*none|visibility\s*:\s*hidden)", rule.group(1), re.I):
+                    back = re.search(
+                        r"\.%s:(focus|focus-visible|focus-within)[^{]*\{[^}]*"
+                        r"(display\s*:\s*(?!none)|visibility\s*:\s*(?!hidden)|left\s*:|top\s*:|transform)"
+                        % re.escape(sel), css, re.I)
+                    if not back:
+                        hidden_hard.append(sel)
+        if dead:
+            add("ERR", "2.4.1", "lien d'évitement MORT : sa cible #%s n'existe pas dans la page "
+                                "(on le tabule, on l'active, rien ne bouge)" % dead[0])
+        if hidden_hard:
+            add("ERR", "2.4.1", "lien d'évitement caché pour toujours (.%s) : aucune règle :focus ne le "
+                                "fait réapparaître — inutilisable au clavier" % hidden_hard[0])
+        if not dead and not hidden_hard:
+            good("2.4.1", "le lien d'évitement mène à une cible qui existe et réapparaît au focus "
+                          "(le « présent mais mort » de la vidéo est écarté)")
     elif "<main" in html.lower() and "<nav" in html.lower():
         add("WARN", "2.4.1", "pas de lien d'évitement (le contenu principal et la navigation existent)")
 

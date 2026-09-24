@@ -2,7 +2,7 @@
 
 **Client :** UNI-LABO, laboratoire d'analyses de biologie médicale — Carrefour Etoo, Bonamoussadi (Makepe
 Bloc L), Douala · Rue 5N441 · BP 2592 · 07h–19h (sam. 13h) · WhatsApp 696 13 98 19.
-**Fichiers (depuis la refonte du 24/09, 00 h 30) :** `demos/concept-unilabo-v2.html` (canonique, **généré**)
+**Fichiers (depuis la refonte de la nuit du 23 au 24/09 — commit `e936a03`, 00:03 à Douala) :** `demos/concept-unilabo-v2.html` (canonique, **généré**)
 → `hosting/previews/unilabo/index.html` (+ `og.jpg`, + `img/` : cinq photos et leurs variantes légères) →
 **racine du projet Vercel `uni-labo.vercel.app`**.
 **État :** page **réécrite de zéro** le 24/09 au petit matin (audit `AUDIT-2026-09-23.md` → **§9**), après le
@@ -79,7 +79,7 @@ faire avant, comment je prends rendez-vous. La page répond dans cet ordre.
 4. Couleurs, si le client veut les siennes : la famille violette vient de l'aperçu du 18/09, elle n'est pas
    un choix de leur charte.
 
-## 9 · La refonte (24/09, 00 h 30) — pourquoi tout réécrire plutôt que corriger
+## 9 · La refonte (nuit du 23 au 24/09) — pourquoi tout réécrire plutôt que corriger
 
 La passe précédente (§8) avait corrigé vingt détails sur la même page. King a regardé la page et a dit :
 *« the pictures seem to have spoiled everything »*. Les deux constats se tiennent : **nos corrections

@@ -39,7 +39,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 101 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 102 ligne(s).*
 
 `L837` · - `Le Cristallin` 17:51 · `Univers Optique` 17:50 · `Disc Optique Médicale` 17:48 · `Tchaya Optique` 17:47 :
 `L881` · ## Lundi 21/09/2026 — 18:20 → 19:15 · « Ok » de Le Cristallin : le premier aperçu demandé, construit et branché sur le CRM
@@ -140,8 +140,9 @@
 `L2465` · pas vérifié. Le gel est maintenant **réellement** écrit dans les trois échéances du plan (`le-cristallin`,
 `L2524` · d'écrire une seule ligne de la page) ; la passe est décrite en §8 du même document. Le gel Cristallin /
 `L2656` · **Ce qui n'a pas été touché :** le Cristallin et Univers Optique (gel), les trois autres photos
-`L2830` · **Le Cristallin et Univers Optique n'ont pas été touchés** : leurs constats (saut de titre pour Univers,
-`L2831` · icône dans un lien pour le Cristallin) sont **notés** dans le test du contrôle, pas corrigés — gel.
+`L2826` · **Le Cristallin et Univers Optique n'ont pas été touchés** : leurs constats (saut de titre pour Univers,
+`L2827` · icône dans un lien pour le Cristallin) sont **notés** dans le test du contrôle, pas corrigés — gel.
+`L2880` · redéployer, comme le dossier UNI-LABO. **Le Cristallin et Univers Optique restent gelés** (constats notés, non
 
 ---
 

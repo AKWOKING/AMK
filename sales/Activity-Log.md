@@ -2927,3 +2927,81 @@ copiera pas : la preuve sociale inventée), cette entrée, et la ligne de route 
 **Vérifié** : `test_audit_hero.py` **12 assertions** vertes (dont les 5 neuves) · `audit_hero` 0 constat sur
 les 6 pages · `audit_a11y --strict` rc=0 · `test_audit_a11y.py` 23 témoins · `test_site_a11y_behaviour.mjs`
 31 assertions · harnais UNI-LABO 42/42 · `audit_html` 0 constat.
+
+## 2026-09-24 · LA FICHE GOOGLE ET LE LIEN D'ÉVITEMENT MORT — quatre vidéos, trois marches à suivre
+
+*(heure de cette entrée : celle du commit qui la porte — la convention de la maison, depuis que j'ai
+inventé « 09:40 → 11:10 » plus tôt dans la journée sur des heures qui n'existaient pas.)*
+
+Quatre liens de King, sans un mot. **Trois sur la fiche Google** (Santrel Media 1,13 M — l'installation
+filmée ; Ignite Visibility 64,9 K — vingt points de contrôle ; Zanet Design 36,2 K — une compilation
+« masterclass » qui parle suspension et statistiques) et **une sur l'accessibilité** (Imran Siddiq, Web
+Squadron 195 K — une démonstration complète). Lues en entier ; la première a demandé deux tentatives,
+YouTube bloquant les sites de transcription par intermittence.
+
+### Ce que j'ai fait de vérifiable
+
+**Deux contrôles durcis dans `tools/qa/audit_a11y.py`, à cause d'un échec montré à l'écran** : dans la
+vidéo, le lien « skip to content » s'affiche, se tabule, s'active — **et rien ne bouge**, parce que sa
+cible n'existe pas. Le nôtre disait « conforme » dès qu'un `href="#"` et le mot « skip » coexistaient
+quelque part dans le fichier : un lien vers nulle part passait l'audit. Désormais la cible doit exister,
+le lien doit être atteignable (caché → une règle `:focus` doit le ramener), et une **étiquette vide** est
+une faute — « masquer une étiquette est permis, la laisser vide non ». Trois témoins fautifs neufs, deux
+assertions de plus, et le témoin sain verrouille le motif réel de nos pages (`.skip{left:-9999px}` +
+`.skip:focus{left:0}`).
+
+*(Le compte est mesuré, pas estimé : 23 avant ce lot, 26 après.)*
+
+**Refusé exprès** : un second contrôle de contraste. `audit_html.py` applique déjà la règle exacte de la
+vidéo — 4,5:1, et 3:1 au-delà de 24 px ou 18,66 px en gras, transparences composées — depuis sa première
+version. La source confirme, elle ne change rien. Deux instruments sur la même mesure finissent par se
+contredire.
+
+**Écarté** : l'avertissement sur les accordéons (notre FAQ est en `<details>` natif, donc tabulable —
+aucun texte caché n'est dû) et les sous-titres vidéo (nous n'embarquons aucune vidéo).
+
+### Ce que les trois vidéos Google changent pour nous
+
+La fiche Google est **une page que nous ne possédons pas et qui décide de tout** : c'est là qu'un client
+local trouve un commerce, à un clic de la page que nous vendons. J'en ai fait un document opérationnel —
+`sales/FICHE-GOOGLE-PROFILE.md` : l'ordre d'installation, la revendication avant création (un doublon
+mène à la suspension), les **13 pièges de suspension**, le champ « date d'ouverture », la règle du **lien
+`wa.me`** dans le chat WhatsApp (le numéro seul ne marche pas), et ce qui appartient au client — la
+vérification, le code par SMS, la vidéo de sa porte — parce que nous ne pouvons pas la faire à sa place.
+
+**Deux règles de la maison qui ne sont PAS dans les vidéos, et que je garde** : nous ne dictons jamais le
+texte d'un avis (les trois chaînes conseillent de souffler les mots-clés au client ; dès qu'on souffle,
+l'avis est à moitié le nôtre), et nous ne vendons jamais un classement — Zanet vend du référencement, son
+propre matériel dit « plus de 200 facteurs », nous ne pouvons promettre que ce que nous faisons.
+
+### Deux corrections que je dois signaler
+
+1. **Une affirmation écrite sans preuve, corrigée dans le document et datée.** J'avais écrit que UNI-LABO
+   avait une fiche Google « trouvée par notre relevé Maps ». Faux : la ligne du CRM dit
+   `source : directory` (Remote-Sweep), et la vignette que je regardais est **notre propre maquette**. Le
+   cas prouvé du pipeline, c'est **Univers Optique** : fiche notée 3,3/5, **champ « site web » vide**,
+   domaine mort depuis janvier 2024 — et c'est déjà l'un des six points du rendez-vous de vendredi 10 h.
+   La correction reste **écrite** dans le document plutôt qu'effacée : une affirmation fausse qui
+   disparaît sans trace revient toujours.
+2. **Ma quatrième erreur d'instrument.** Un script rapide a accusé la page école de porter « 2
+   liens-icônes sans nom ». Faux — les deux sont nommés par leur texte, et l'outil compte le nom comme
+   attribut **ou** contenu depuis le lot [28]. Rien n'a été modifié sur la page : c'est la première fois
+   que la leçon « un faux positif coûte plus qu'un défaut manqué » sert à **ne pas** toucher une page.
+
+### L'heure inventée, réparée partout
+
+`00 h 30` figurait dans six documents pour la refonte UNI-LABO de la nuit. Le dépôt donne l'heure vraie :
+commit `e936a03` à **00:03** à Douala. Remplacé dans `AMK-DESIGN-SKILLS.md` (§25), `clients/uni-labo/AUDIT`
+(§9), `clients/uni-labo/build-notes.md` (deux endroits), `sales/RDV-UNILABO-2026-09-25.md` et
+`hosting/previews/README.md` — puis dans la **source du CRM** (`leads/build/crm.py`), reconstruite et
+reverrouillée. Le CRM ressort à 149 × 52, mêmes étapes (88 prospecting · 38 parked · 10 qualifying ·
+10 disqualified · 3 closing), UNI-LABO et Univers en `closing`.
+
+### Vérifié
+
+`test_audit_a11y.py` **26 assertions** vertes (dont 3 neuves, portées par 3 témoins neufs) · `audit_a11y --strict`
+rc=0 sur les quatre pages · `audit_html` 0 constat · `test_audit_hero` 14 · harnais UNI-LABO 42/42 ·
+`check_inline_js` 0 faute · CRM reconstruit et verrou conforme.
+
+**Ce qui n'a pas changé : aucune page du site n'a été modifiée.** L'accessibilité était déjà tenue ; c'est
+le contrôle qui ne le savait pas.

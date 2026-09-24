@@ -1272,7 +1272,7 @@ a credibility strip is a real deliverable, and it belongs to the client's own fa
 
 ---
 
-## §25 PHOTOGRAPHS MUST CARRY ONE MEANING — the UNI-LABO rebuild (24 Sep 2026, 00 h 30)
+## §25 PHOTOGRAPHS MUST CARRY ONE MEANING — the UNI-LABO rebuild (24 Sep 2026 — commit `e936a03`, 00:03 à Douala)
 
 **Origin, verbatim.** King looked at the mobile pass of §24 and said: *« the page isn't mobile friendly, the
 pictures seem to have spoiled everything, redesign the site from scratch »* — with six screenshots of
@@ -1719,3 +1719,114 @@ hero, show the name next to the icon, and never lock themselves at `100vh` with 
 never happened before in this repo — five batches in a row each found real defects in our own work. It is
 also not a reason to relax: the checks are from sources read the same day, and the next page (the school,
 in October) starts from a blank file, where none of this is inherited.
+
+---
+
+## §30 THE DEAD SKIP LINK, AND THE PAGE WE DO NOT OWN (24 Sep 2026, learning batch [30])
+
+King sent four links with no text: **three about the Google Business Profile** (Santrel Media, 1.13M —
+the step-by-step install; Ignite Visibility, 64.9K — twenty checkpoints; Zanet Design, 36.2K — a
+compilation billed as a masterclass) and **one about accessibility** (Imran Siddiq, Web Squadron, 195K —
+a full walkthrough built inside Elementor).
+
+### 30.1 · The skip-link lesson: present is not the same as working
+
+The accessibility video exists because the **European Accessibility Act** now pressures agencies. Imran
+does not hand out a checklist; he builds a page and shows the failures. The sharpest one is a failure our
+own control could not see:
+
+> He tabs to **“skip to content”**, presses Enter — and **nothing happens**. The link is there, visible,
+> in the tab order; its target is not. He demonstrates it across template types: default works, canvas has
+> nothing to skip, **full width shows the link and swallows the click**. His words: *“if your header
+> template was 50 % of your screen, they'll keep clicking it and they will get very frustrated and they
+> will lose trust in your website.”*
+
+That is worse than having no skip link at all, because a keyboard user pays the cost of trusting it. Our
+control said *compliant* on any page containing a `href="#"` and the word “skip” somewhere in the file — a
+link to nowhere passed. Since lot [30] it checks two things: **the target exists** (`#contenu` must be an
+id in the page) and **the link is reachable** (a rule that hides it must have a matching `:focus` rule
+that brings it back). Our pages pass on both counts, and the healthy test witness now carries the exact
+production pattern (`.skip{position:absolute;left:-9999px}` + `.skip:focus{left:0}`), so the guard rail
+locks the real thing instead of an approximation.
+
+Two neighbouring lessons from the same video, both turned into rules:
+
+- **A hidden label is allowed. An empty label is not.** *“If you hide the label … as long as it is
+  completed somewhere.”* A form now fails the audit if a `<label>` is empty even when the `for=` is
+  correct — the field would be announced with no name.
+- **Contrast depends on size.** His colour-picker demo: a pinkish red fails at 16 px, passes at 24 px,
+  fails again at 23 px. `audit_html.py` has applied exactly this since we built it — 4.5:1, dropping to
+  **3:1 at 24 px or at 18.66 px bold** — and it composites opacity before comparing. The video confirms
+  our number; it does not change it. **We deliberately did not add a second contrast check**: two
+  instruments measuring the same thing eventually contradict each other, and the honest place for that
+  number is the tool that already computes it from the file's own CSS.
+
+### 30.2 · What the video says that does not apply to us
+
+- **The accordion warning.** He shows that tabbing an Elementor accordion jumps from item 1 to the bottom,
+  skipping 2 and 3, and that only arrow keys work — so he injects an `sr-only` hint telling screen-reader
+  users to use arrows. That is a defect of an ARIA `tablist` pattern implemented as a widget. **Our FAQ is
+  ten native `<details><summary>` pairs per page** (five on the école page): every `<summary>` is its own
+  tab stop, tabbing moves through them in order, and no hint is owed. Rule kept for the day we build a
+  tablist: if we ever do, the hint is mandatory.
+- **Videos.** Captions are required, player controls must stay, and a **background video must offer a
+  pause** (he links a nine-minute video on how to add one). We produce and embed **no video anywhere**
+  (zero `<video>` elements across the pages), so there is no control to write today — a control over
+  content we never make is dead code. The rule is written here to be applied the first time a client hands
+  us footage.
+- **Icon names.** Social icons are ambiguous: does the Facebook icon share *this post*, or open *our
+  page*? His answer is `aria-label` when the icon is the only name. Our pages have one, three and two icon
+  links, all named — by `aria-label` or by visible text. **Checked, nothing to fix.**
+
+### 30.3 · The instrument lied for the fourth time
+
+My quick script announced “**2 icon links with no name**” on the école page. False: both are named by
+their **text** (“Recevoir mon aperçu gratuit”, “Aperçu gratuit 24h”), and the audit tool counts a name as
+attribute **or** content — the very lesson of lot [28]. Fourth occurrence of the same family, now with a
+rule attached: *a quick script of mine is not an instrument; if it accuses a page, the accusation is
+checked against the tool that has witnesses before anything is “fixed”.* Nothing was changed on the page.
+Nothing needed to be.
+
+### 30.4 · The Google profile is a page we do not own — and it is the first screen of local search
+
+The three Google Business Profile videos matter to us for one reason: **that profile is where a local
+client finds a business, and it is one click away from the page we sell**. Santrel says it plainly — people
+on Maps *“almost always go and click on the website link”* — so the profile is the door and our page is
+the room. Zanet sharpens it: **70 % of what Google serves a customer no longer goes through the website at
+all** (reviews, hours, photos, questions), yet the click that decides everything still lands on the site.
+
+Read as a designer, the profile is just another **first screen**, and the rules of §26/§29 apply to it
+unchanged:
+
+| our rule for a page | the same rule on the profile |
+|---|---|
+| one clear title, real words | the **name** exactly as it is — keyword-stuffing it is both what Google punishes and what we refuse to do for a client |
+| no invented claim | true hours, true service area, true category. All three videos warn about people faking a four-hour service radius; Google checks |
+| the hero carries the promise, the proof lives below (90/10, §29) | photo + category + hours carry the profile; **the reviews do the “clearing doubts” below** |
+| a photo must carry one meaning (§25) | the façade photo is the first thing seen on Maps: real place, real people, real work — and Google Images (“*trade + neighbourhood*”) is an honest way to see what Google rewards, in order to photograph one's own version of it |
+| write the words the customer uses | the description (750 characters) is the profile's about-page: services, neighbourhoods, verifiable history |
+
+And two rules of ours that the videos do **not** contain, kept explicitly:
+
+1. **We never script a review.** All three push towards guiding the customer's vocabulary (“ask them to
+   mention *fast service*”). We ask for an honest review, we show how to post it, and we stop there.
+   Buying one, rewarding one, or writing it for a client is a suspension risk for them and a lie for us.
+2. **We never sell a ranking.** Zanet sells SEO consultancy; his own material says Google weighs *“over
+   200 factors”*. We can keep a profile clean and complete, and we can say exactly what we changed. We
+   cannot promise a position in the top three, so we never put one in an offer.
+
+The operational version — install order, the thirteen suspension traps, the `wa.me` rule for the profile's
+WhatsApp chat, and what belongs to the client rather than to us — is in
+**`sales/FICHE-GOOGLE-PROFILE.md`**, written the same day.
+
+### 30.5 · What today's reading changed in the repository
+
+- 3 controls hardened in `tools/qa/audit_a11y.py` (dead skip link, unreachable skip link, empty label),
+  3 negative witnesses and 3 new assertions (26 in all) — see §30.1.
+- 1 invented hour replaced by a commit hour in 6 places (`00 h 30` → *nuit du 23 au 24, commit `e936a03` à
+  00:03*), plus the CRM source, rebuilt and re-locked.
+- 1 new operational document (`sales/FICHE-GOOGLE-PROFILE.md`), 2 meeting sheets cross-referenced.
+- 1 false claim of mine corrected **in writing** rather than deleted: I had written that UNI-LABO had a
+  Google listing “found by our Maps sweep”. The CRM line says `source: directory`, and the thumbnail I was
+  looking at is our own mock-up. The correction is dated in `sales/FICHE-GOOGLE-PROFILE.md` §1.
+- **Nothing changed on the pages themselves.** Four pages audited: 0 fault, 0 warning — before and after.

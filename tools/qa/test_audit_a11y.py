@@ -55,6 +55,7 @@ a:focus{outline:none}
 <form>
   <input type="text" id="sans-etiquette">
   <input type="tel" id="tel-sans-autocomplete">
+  <label for="etiquette-vide"></label><input type="text" id="etiquette-vide">
   <button><svg viewBox="0 0 24 24"><path d="M0 0h24v24H0z"/></svg></button>
 </form>
 <div onclick="alert(1)">Cliquable mais pas focalisable</div>
@@ -72,6 +73,8 @@ a:focus-visible,button:focus-visible{outline:3px solid #5B21B6;outline-offset:2p
 .btn{min-height:52px;display:inline-flex;align-items:center;padding:0 20px}
 .btn svg{width:19px;height:19px}            /* une icône DANS un bouton : pas une cible */
 .nav a:hover{color:#5B21B6;opacity:1}       /* un changement de couleur : pas du contenu caché */
+.skip{position:absolute;left:-9999px;top:0;background:#0B1120;color:#fff;padding:12px 20px}
+.skip:focus{left:0}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms !important}}
 </style></head><body>
 <a class="skip" href="#contenu">Aller au contenu</a>
@@ -122,6 +125,7 @@ attendu = [
     ("ERR", "1.1.1", "un alt qui est un nom de fichier ou un mot vide"),
     ("ERR", "1.3.1", "deux h1"),
     ("ERR", "3.3.2", "un champ sans étiquette"),
+    ("ERR", "3.3.2", "une étiquette présente mais vide"),
     ("ERR", "4.1.2", "un bouton-icône sans nom"),
     ("ERR", "1.4.4", "le zoom bloqué"),
     ("ERR", "2.4.7", "outline:none sans remplacement"),
@@ -158,6 +162,33 @@ t3 = {(l, s) for l, s, _ in F3}
 check("ERR/WARN 2.4.1 — page sans repère principal (le « page blank » du test NVDA)", ("WARN", "2.4.1") in t3)
 check("ERR/WARN 1.3.1 — groupe de cases sans <legend>", ("WARN", "1.3.1") in t3)
 
+print("\n═══ et les deux contrôles durcis du lot [30] ont leur témoin fautif ═══")
+# La vidéo d'Imran Siddiq montre le cas le plus vicieux : un lien d'évitement qui EXISTE et ne MÈNE NULLE
+# PART. Deux façons de le rater, donc deux témoins — et la page saine ci-dessus garde le motif correct.
+MORT = """<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><title>Le lien qui ne mène nulle part</title>
+<style>.skip{position:absolute;left:-9999px;top:0}.skip:focus{left:0}
+a:focus-visible{outline:2px solid red}.nav a:hover{color:blue}</style></head><body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<nav class="nav"><a href="/">Accueil</a></nav>
+<main><h1>La cible #contenu n'existe pas sur cette page</h1>
+<form><label for="n">Nom</label><input type="text" id="n" autocomplete="name">
+<fieldset><legend>Moment</legend><input type="radio" id="r1" name="m"><label for="r1">Matin</label></fieldset>
+</form></main></body></html>"""
+CACHE = MORT.replace('<style>.skip{position:absolute;left:-9999px;top:0}.skip:focus{left:0}',
+                     '<style>.skip{display:none}').replace('href="#contenu"', 'href="#contenu" id="x"') \
+            .replace('<main><h1>La cible #contenu n\'existe pas sur cette page</h1>',
+                     '<main id="contenu"><h1>Le lien est caché pour toujours</h1>')
+for nom, contenu in (("lien-mort", MORT), ("lien-cache", CACHE)):
+    q = os.path.join(tmp, nom + ".html"); io.open(q, "w", encoding="utf-8").write(contenu)
+    Fq, _ = a11y.audit(pathlib.Path(q)); tq = {(l, s_) for l, s_, _ in Fq}
+    mq = " | ".join(m for _, _, m in Fq)
+    if nom == "lien-mort":
+        check("ERR 2.4.1 — lien d'évitement mort (cible absente) : « on l'active, rien ne bouge »",
+              ("ERR", "2.4.1") in tq and "MORT" in mq, mq)
+    else:
+        check("ERR 2.4.1 — lien d'évitement caché pour toujours (aucune règle :focus)",
+              ("ERR", "2.4.1") in tq and "toujours" in mq, mq)
+
 print("\n═══ et contre NOS pages ═══")
 root = HERE.parent.parent
 nos = [root / "site/index.html", root / "site/creation-site-web-clinique-cameroun.html",
@@ -178,4 +209,4 @@ print()
 if fails:
     print("DES ÉCHECS : " + " · ".join(fails))
     sys.exit(1)
-print("Tout est vert — le contrôle refuse les seize défauts, et il ne mord plus à côté.")
+print("Tout est vert — le contrôle refuse les dix-huit défauts, et il ne mord plus à côté.")

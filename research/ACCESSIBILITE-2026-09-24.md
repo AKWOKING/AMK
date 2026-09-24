@@ -149,7 +149,56 @@ en corrigeant**, et **1 fausse alerte** que j'ai dû retirer. Les trois catégor
 | **Le rendu à 200 % de zoom** | ⚠️ les critères de reflux sont vérifiables en CSS, rien ne remplace le regard. |
 | **La qualité d'un texte alternatif** | ✅ traité à la main cette fois (les quatre photos ont été regardées), ⚠️ et à refaire **le jour où le laboratoire nous envoie ses propres photos** : un alt se réécrit à chaque nouvelle image. |
 
+
+## 5 bis · Troisième passe (lot [30], 24/09) — le lien d'évitement mort, et pourquoi le contraste n'a pas bougé
+
+Une quatrième source d'accessibilité, arrivée le même jour qu'un lot sur la fiche Google : **Imran
+Siddiq — Web Squadron** (195 K abonnés), une démonstration complète dans Elementor, motivée par le
+**European Accessibility Act**. Elle a produit trois contrôles de plus et deux constats.
+
+**1. Deux contrôles durcis — le lien d'évitement.** La démonstration la plus utile de la vidéo est un
+échec : le lien « skip to content » **s'affiche, se tabule, s'active — et rien ne bouge**, parce que la
+cible n'existe pas dans la page (il le montre sur un gabarit « pleine largeur »). Notre contrôle, écrit au
+lot [27], disait « conforme » dès qu'un `href="#"` et le mot « skip » coexistaient quelque part dans le
+fichier : **un lien vers nulle part passait**. Depuis : la cible doit exister (`#contenu` doit être un id
+de la page) **et** le lien doit être atteignable (une règle qui le cache doit avoir une règle `:focus` qui
+le ramène). Trois témoins fautifs neufs les verrouillent.
+
+**2. Une étiquette VIDE est une faute.** « Masquer l'étiquette est permis, la laisser vide ne l'est
+pas » : le champ perd son nom et le lecteur d'écran annonce « zone de saisie » sans dire de quoi. Nos 28
+étiquettes étaient déjà remplies — mais le contrôle ne le savait pas.
+
+**3. Le contraste : rien à ajouter, et c'est volontaire.** La vidéo insiste beaucoup sur le contraste, avec
+une démonstration de curseur de couleur : à 16 px la teinte échoue, à 24 px elle passe, à 23 px elle
+échoue de nouveau. C'est **exactement la règle que `audit_html.py` applique depuis sa première version** :
+4,5:1 pour le texte courant, **3:1 au-delà de 24 px ou de 18,66 px en gras**, avec composition des
+transparences avant comparaison. La source **confirme** notre règle ; elle ne la modifie pas. **Aucun
+second contrôle de contraste n'a été ajouté** : deux instruments qui mesurent la même chose finissent par
+se contredire, et c'est au même endroit que doit vivre ce chiffre.
+
+**4. Ce qui ne nous concerne pas, et qui est écrit pour ne pas y revenir.** L'accordéon d'Elementor (il
+faut prévenir par un texte caché que les flèches naviguent) — **notre FAQ est en `<details><summary>`
+natif**, chaque `<summary>` est un arrêt de tabulation, aucun texte caché n'est dû. Les vidéos (sous-titres
+obligatoires, boutons de lecture conservés, bouton pause pour une vidéo d'arrière-plan) — nous n'embarquons
+**aucune vidéo** (zéro élément `<video>` sur les six pages) : la règle est écrite, le contrôle viendra avec
+la première vidéo d'un client.
+
+**5. La quatrième erreur d'instrument du jour.** Un script rapide a accusé la page école de porter « 2
+liens-icônes sans nom ». Faux : les deux sont nommés par leur **texte**, et notre outil compte le nom
+comme attribut **ou** contenu depuis le lot [28]. Rien n'a été « corrigé » sur la page — la leçon du lot
+[28] (« un faux positif coûte plus qu'un défaut manqué ») a servi pour la première fois à **ne pas**
+modifier une page.
+
+**Bilan de la troisième passe sur nos pages : aucun défaut réel, aucun avertissement, avant comme après.**
+Les deux contrôles neufs ne mordent pas chez nous — c'est le témoin fautif qui prouve qu'ils mordent
+quelque part.
+
 ## 6 · La leçon d'outillage (elle vaut pour tous nos contrôles)
+
+*Quatrième confirmation le 24/09 au soir (lot [30]) : trois lots d'affilée où c'est l'instrument qui
+s'était trompé, et une quatrième fois avec un script jetable. L'ordre est maintenant écrit une fois pour
+toutes : **un contrôle qui accuse → on soupçonne l'instrument → on le confronte au témoin → et seulement
+ensuite on touche à la page.***
 
 Le premier jet de `audit_a11y.py` a produit **six faux positifs** — un lien-icône qui *avait* bien un
 `aria-label` ; une icône de 19 px **à l'intérieur** d'un bouton (la cible, c'est le bouton, pas le glyphe) ;
@@ -208,6 +257,15 @@ manquaient :
 **Ce que le dossier ne peut pas encore prouver, et qu'on dit plutôt que de le maquiller :** ni NVDA ni
 TalkBack ne tournent dans ce bac à sable (pas de Windows, pas d'Android, pas de navigateur installable).
 Le protocole existe, il est écrit pour être exécuté par un humain — **et la première exécution reste à faire**.
+
+## 8 bis · Les sources du lot [30]
+
+- **`h0ekMnui2Hg` — Imran Siddiq, Web Squadron (195 K abonnés)** : démonstration complète dans Elementor
+  (repères, logo et `aria-label`, hiérarchie des titres, contraste et taille de police, boutons et icônes,
+  images et images de fond, accordéon, formulaires, vidéos, lien d'évitement et focus). Lue en entier, en
+  deux tentatives (YouTube bloque les sites de transcription par intermittence).
+- Les trois autres sources du lot [30] portent sur la fiche Google : voir `sales/FICHE-GOOGLE-PROFILE.md`
+  et §30 de `AMK-DESIGN-SKILLS.md`.
 
 ## 9 · Ce que ça vaut pour un client, en un paragraphe honnête
 

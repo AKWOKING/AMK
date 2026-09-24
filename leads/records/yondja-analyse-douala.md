@@ -30,7 +30,7 @@ Envoyé 18/09 ~18:30, sans maquette. · ⚰️ MORT le 22/09 (lot du 18/09) — 
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 19 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 21 ligne(s).*
 
 `L30` · | **ven 18/09 ~18:30** | **YONDJA ANALYSE** (696 88 88 23) | msg 1 — **sans maquette** | Envoyé | **Non** |
 `L110` · | ~18:30 | Discovery Labs · UNI-LABO · YONDJA ANALYSE · Laboratoire du Château · Département Biologique · CAMERA · LE NID |
@@ -51,6 +51,8 @@ Envoyé 18/09 ~18:30, sans maquette. · ⚰️ MORT le 22/09 (lot du 18/09) — 
 `L2678` · d'analyses, plus la préparation) jamais derrière du texte, légendées « mise en situation », la préparation en
 `L2688` · **Vérifié (aucun navigateur ici) :** portique **0 constat** (`--strict`, rc=0) · analyseur HTML **385 textes,
 `L2695` · était seule à utiliser** (`unilabo-hero`, `-analyses`, `-resultats` et leurs variantes) ont quitté le dépôt
+`L2870` · sur le site ; « *1 · Vos analyses, groupe de cases à cocher, 1 sur 19* » sur UNI-LABO), les gestes TalkBack, la
+`L2904` · trou bouché : quand l'outil ne trouve pas de premier écran à analyser, il le **dit** maintenant, au lieu de
 
 ---
 
