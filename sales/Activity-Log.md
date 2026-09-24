@@ -4097,3 +4097,37 @@ dégradés. `--url https://dmoptic.vercel.app` recollée → `og:url` et `og:ima
 mais il porte encore la v1, celle qui parlait au cabinet), puis le message de
 `sales/Send-DM-OPTIC-2026-09-24.md` **§1** — écrit pour cette v2. **Un seul redéploiement.** Aucune
 adresse devinée, aucune relance-reproche, et rien d'envoyé par nous.
+
+---
+
+## 2026-09-24 (soir, très tard) — **DM OPTIC v2.1 : LES SERVICES LISTÉS, LES MONTURES MONTRÉES, LE REGISTRE REMISÉ**
+
+**Retour de King** : « on parlait aussi de listé ces services et montré ses montures et lunettes au
+patient » ; « je ne pense pas que tout les détails de lui dans l'ordre soit nécessaire » ; « look for
+optic clinics and shop on the Web to see how they showcase and write on their sites ».
+
+**Recherche d'abord** (la règle du dépôt : on lit avant d'écrire) : trois recherches, **deux sites
+d'opticiens lus en entier** — `queenoptique.com` (Montréal) et `optiquebj.com` (Rennes) — plus les
+structures de sept autres et quatre guides. Le motif est constant : liste de services explicite,
+vitrine des montures par familles, essayage comme argument, prix jamais affiché, bouton de rendez-vous
+toujours visible. Détail dans `clients/dm-optic/inspiration.md` § « Second passage ».
+
+**Ce qui a changé sur la page** : section neuve « **Les montures et les lunettes** » (vue · soleil ·
+enfants — une photo, un conseil d'essayage et un « à demander » par famille, trois conseils du choix,
+une seule action WhatsApp « avez-vous cette monture en boutique : ») ; « **Nos services**, et ce qu'il
+faut apporter » ; sixième question fréquente (l'essayage) ; **le registre sort du texte visible** —
+n° 021/2016, arrêté 0382, « Littoral ligne 102 », *Echos Santé* : supprimés ; il reste « Opticien
+inscrit à l'Ordre des opticiens du Cameroun depuis 2016 », une phrase, et l'identifiant **conservé dans
+les données structurées** pour les moteurs. La photo de l'instrument de mesure entre dans la bande des
+étapes. Trois images de vitrine ont été générées (aucun visage, aucune marque) et sont légendées « Photo
+d'illustration » : la page ne prétend pas montrer des montures du cabinet qu'on n'a pas vues.
+
+**Contrôles** : `audit_html` **0 constat** (258 passages) · `audit_a11y --strict` **0/0** · `audit_hero`
+**0/0** · `check_inline_js` **rc 0** · `audit_aeo` ✓ (6 questions, schéma mot pour mot) ·
+`test_dmoptic_page.mjs` **45/45** (trois assertions neuves : trois familles dans la vitrine ; aucune
+marque ni prix ; les numéros du registre hors du texte visible mais conservés dans les données). Poids :
+**328 Ko**, cinq images embarquées à 900 px.
+
+**Reste** : **King redéploie** `hosting/previews/dmoptic/` (le lien est en ligne mais porte encore la
+v1), puis envoie le message de `sales/Send-DM-OPTIC-2026-09-24.md` §1 — réécrit pour la v2.1. Les neuf
+informations attendues sont dans `clients/dm-optic/a-completer.md`. **Un seul redéploiement.**

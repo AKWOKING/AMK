@@ -3,8 +3,9 @@
 """DM OPTIC — le constructeur de l'aperçu (24/09/2026).
 
 Ce que fait ce script, dans l'ordre :
- 1. il prépare les deux photographies d'illustration (16/10 pour la bande des actes, 4/3 pour le
-    titulaire) et les emballe en base64 dans le gabarit `demos/dmoptic-v1.tpl.html` ;
+ 1. il prépare les cinq photographies d'illustration (quatre en 16/10 — services, vitrine des montures —
+    et une en 4/3 pour l'examen de la vue) et les emballe en base64 dans le gabarit
+    `demos/dmoptic-v1.tpl.html` ;
  2. il écrit **l'adresse WhatsApp de chaque lien à partir de son `data-fr`** — c'est la seule source du
     message, donc l'adresse écrite dans le HTML et celle que le JavaScript fabrique sont identiques au
     caractère près (même jeu de caractères que `encodeURIComponent`) ;
@@ -13,8 +14,10 @@ Ce que fait ce script, dans l'ordre :
     (`og.jpg`) que WhatsApp affichera avant d'ouvrir le lien (§20.7).
 
 Rien n'est inventé ici. Les seuls faits du cabinet viennent du registre de l'Ordre (inscription
-021/2016, arrêté 0382, titulaire M. Domche Noumbi, Douala) : adresse, horaires, prix, marques et photos
-sont des champs « à confirmer », écrits comme tels.
+021/2016, arrêté 0382, titulaire M. Domche Noumbi, Douala). Depuis la v2.1, ces détails de registre ne
+sont PLUS écrits sur la page (ils restent dans les données structurées) : le patient n'en a pas besoin.
+Adresse, horaires, prix, marques : jamais inventés — la page renvoie au cabinet. Les cinq photos sont
+des mises en situation, légendées « Photo d'illustration ».
 
 Usage :
   python3 demos/build_dmoptic.py                       # écrit l'aperçu, og.jpg sans adresse
@@ -43,10 +46,15 @@ WA_BASE = "https://wa.me/237656122239?text="
 # coûté un contrôle le 24/09).
 SAFE = "!'()*-._~"
 
-# Une image = une signification (§25). Ici : l'objet qu'on vient chercher, et l'instrument qui mesure.
+# Une image = une signification (§25) : l'objet qu'on vient chercher, la vitrine des montures (trois
+# familles), et l'instrument qui mesure. Cinq images, toutes des MISES EN SITUATION — aucune photo du
+# cabinet n'existe encore, et la page le dit (« Photos d'illustration »).
 PHOTOS = {
-    " __IMG_LUNETTES__": ("dmoptic-lunettes.jpg", "1024x640", "58"),   # 16/10 — la bande des actes
-    "__IMG_MESURE__": ("dmoptic-mesure.jpg", "1024x768", "58"),        # 4/3  — le titulaire
+    "__IMG_LUNETTES__": ("dmoptic-lunettes.jpg", "900x563", "50"),   # 16/10 — les services
+    "__IMG_MONTURES__": ("dmoptic-montures.jpg", "900x563", "50"),   # 16/10 — la vitrine : lunettes de vue
+    "__IMG_SOLAIRES__": ("dmoptic-solaires.jpg", "900x563", "50"),   # 16/10 — la vitrine : solaires
+    "__IMG_ENFANTS__":  ("dmoptic-enfants.jpg", "900x563", "50"),   # 16/10 — la vitrine : enfants
+    "__IMG_MESURE__":   ("dmoptic-mesure.jpg",  "900x675", "50"),   # 4/3  — l'examen de la vue (bande)
 }
 
 

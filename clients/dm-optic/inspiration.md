@@ -84,3 +84,45 @@ d'identification + bande « hier / maintenant ») · palette (papier froid + mar
 aucun ambre) · typographie (Schibsted Grotesk / IBM Plex Sans / IBM Plex Mono) · traitement d'image
 (aucun visage, deux natures mortes d'instruments, jamais de texte sur la photo) · ton (l'aveu :
 « le registre vous connaît, le web non »).
+
+---
+
+## Second passage (24/09, soir) — **comment écrivent les vrais opticiens**
+
+Retour de King : *« on parlait aussi de listé ces services et montré ses montures et lunettes au
+patient »* et *« look for optic clinics and shop on the Web to see how they showcase and write on their
+sites »*. Trois recherches, et **deux sites lus en entier** — pas des listicles : des boutiques
+indépendantes.
+
+**Ce qu'ils font tous, et qu'on a repris :**
+
+| Ce qu'on voit chez eux | Chez nous (v2.1) |
+|---|---|
+| Un titre qui dit le métier **et** la ville, puis un positionnement en une phrase (« Des lunettes à votre image, tout simplement » — L'Opticien Angers ; « Pour trouver lunettes à son nez, Rennes a son adresse » — Optique BJ) | « DM OPTIC, votre opticien à Douala. », puis « Lunettes de vue, lunettes de soleil, montures pour enfants… » |
+| Une section **« Nos services »** qui liste des gestes, pas des produits (examen de la vue · choix de montures · montage · ajustement · réparation — Optique BJ) | « **Nos services, et ce qu'il faut apporter** » : six services, chacun avec la liste de ce qu'on apporte |
+| Une **vitrine des montures** par familles, avec une photo et un mot sur chacune (« Lunetterie, opticien visagiste » — Queen Optique ; « Des montures qui ont du caractère » — Optique BJ) | « **Les montures et les lunettes** » : trois familles (vue · soleil · enfants), une photo et un conseil chacune |
+| L'**essayage** comme argument, pas comme option | « elles s'essayent au cabinet, sur votre visage, avec quelqu'un qui vous regarde — pas sur un écran » |
+| Un conseil qui nomme la **forme du visage** et le **réglage** (Queen Optique : « opticiens visagistes ») | trois conseils : la forme du visage · la largeur et l'appui · ce que vous en faites |
+| **Aucun prix affiché**, la question renvoyée à la boutique | sixième question fréquente (« Combien coûte une paire de lunettes ? ») → la réponse utile, pas un tarif inventé |
+
+**Ce qu'ils font et qu'on n'a PAS copié — avec la raison :**
+
+- **Les marques** (Optique BJ nomme six marques françaises, une page chacune ; Optic Duroc « toutes nos
+  marques ») : nous n'avons **aucune** liste pour DM OPTIC → la vitrine ne nomme rien, et la page dit
+  « Vous cherchez une marque précise ? Demandez-la : la réponse arrive dans la conversation WhatsApp ».
+  On n'invente pas un portefeuille de marques.
+- **Les avis clients** (Optique BJ : Mathilde T., Jérôme L., Inès M., cinq étoiles) : interdits tant
+  qu'ils ne viennent pas de vrais patients. On en a **zéro** → zéro avis sur la page.
+- **La promesse de délai** (« votre monture, vos verres, prêtes en 1 heure » — Queen Optique) : elle
+  suppose une banque de verres et un atelier de taillage qu'on n'a pas vus. On ne promet pas le délai
+  d'un autre.
+- **Le rendez-vous en ligne** (Doctolib, formulaires) : le cabinet n'a pas d'agenda en ligne. Les deux
+  gestes restent WhatsApp et le téléphone — ceux qu'il utilise vraiment.
+
+**Sources lues** : `queenoptique.com` (Montréal — deux univers, adultes + Kidoptiks) et `optiquebj.com`
+(Rennes — trois cartes de services, six marques, avis, accès) ; structures relevées chez
+`lopticien-angers.com`, `lopticien-nantes.com`, `monoptique-opticien.com`, `opticduroc.com`,
+`lopticien.ca`, `generale-optique.com`, `optoplus.com` ; guides `madebyevoke.com`, `imatrix.com`,
+`optifyonline.com`, `webdesignstudio.london`. Tous disent la même chose : **la section montures est le
+différenciateur d'un opticien indépendant**, et l'accueil doit porter le nom, la ville, une liste de
+services explicite — et un bouton toujours visible.

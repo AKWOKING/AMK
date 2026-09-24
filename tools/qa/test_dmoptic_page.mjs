@@ -34,13 +34,13 @@ const revealSrc = scriptAfter(html, "IntersectionObserver, jamais d'écouteur de
 console.log("═══ 0 · le contrat page ⇄ JavaScript ═══");
 
 const IDS = ["btn-fr", "btn-en", "say", "copy2", "vcard", "main", "top", "h-hero",
-             "actes", "etapes", "cabinet", "questions", "contact"];
+             "actes", "etapes", "montures", "questions", "contact"];
 const missing = IDS.filter((id) => !html.includes('id="' + id + '"'));
 ok(`les ${IDS.length} identifiants attendus sont dans la page`, missing.length === 0, "manquants : " + missing.join(", "));
 
 const waTags = [...html.matchAll(/<a class="[^"]*\bwa\b[^"]*"[^>]*>/g)].map((m) => m[0]);
 ok(`les ${waTags.length} liens WhatsApp portent data-fr ET data-en`,
-   waTags.length >= 4 && waTags.every((t) => t.includes("data-fr=") && t.includes("data-en=")));
+   waTags.length >= 6 && waTags.every((t) => t.includes("data-fr=") && t.includes("data-en=")));
 
 /* L'ADRESSE ÉCRITE DANS LE HTML DOIT ÊTRE CELLE QUE LE JAVASCRIPT FABRIQUERA.
    C'est ici que se cache l'écart entre `quote()` de Python et `encodeURIComponent()`. */
@@ -58,7 +58,22 @@ ok("un seul numéro dans toute la page : celui du cabinet, avec l'indicatif",
 
 const imgs = [...html.matchAll(/<img[^>]*data-alt-fr[^>]*>/g)].map((m) => m[0]);
 ok(`les ${imgs.length} images portent data-alt-fr ET data-alt-en`,
-   imgs.length === 2 && imgs.every((t) => t.includes("data-alt-en=") && !/alt=""/.test(t)));
+   imgs.length === 5 && imgs.every((t) => t.includes("data-alt-en=") && !/alt=""/.test(t)));
+
+/* ── la vitrine des montures (v2.1) : trois familles, trois conseils, et aucune marque inventée ───── */
+const showcase = (html.match(/<section id="montures"[\s\S]*?<\/section>/) || [""])[0];
+const cards = showcase.match(/<article class="frame[\s\S]*?<\/article>/g) || [];
+ok("la vitrine montre trois familles de montures, une photo et un titre chacune",
+   cards.length === 3 && cards.every((c) => c.includes("<img") && c.includes("<h3>")),
+   "cartes : " + cards.length);
+ok("la vitrine dit que les photos sont des illustrations (jamais des montures du cabinet)",
+   /Photos d'illustration\./.test(showcase) && /Illustration photos\./.test(showcase));
+ok("la vitrine ne nomme AUCUNE marque et n'affiche AUCUN prix",
+   !/Ray-Ban|Oakley|Gucci|Tom Ford|Oliver Peoples|Essilor|Zeiss/i.test(showcase) && !/\d{3,}\s?(FCFA|XAF)/i.test(showcase));
+ok("la vitrine porte une seule action (le reste du choix se fait au cabinet)",
+   (showcase.match(/class="btn /g) || []).length === 1);
+ok("les trois conseils du choix sont là (forme du visage, appui, usage)",
+   (showcase.match(/<div>\s*<h3>/g) || []).length >= 3);
 
 const structural = ["summary", "legend", "option", "title", "caption", "details"];
 const onStructural = structural.filter((t) => new RegExp("<" + t + "[^>]*class=\"[^\"]*(fr-only|en-only)").test(html));
@@ -75,6 +90,13 @@ ok("le schéma décrit le cabinet (Optician, téléphone, ville, inscription) �
    opticien.identifier.value === "021/2016");
 ok("aucune note, aucun avis, aucun horaire inventé dans le schéma",
    !/aggregateRating|ratingValue|openingHours/.test(html));
+/* §31 AEO : l'entité garde son identifiant (machine), le PATIENT n'a pas à lire l'arrêté ministériel
+   (décision de King, 24/09 : « tout les détails de lui dans l'ordre » n'ont pas à être sur la page). */
+const visible = html.replace(/<script[\s\S]*?<\/script>/g, "").replace(/<!--[\s\S]*?-->/g, "");
+ok("les numéros du registre (021/2016, arrêté 0382) ne sont plus écrits dans le texte visible",
+   !/021\/2016|0382|Littoral, ligne 102/.test(visible));
+ok("mais l'entité garde son identifiant dans les données structurées (021/2016)",
+   /021\/2016/.test(html) && opticien.identifier.value === "021/2016");
 ok("aucun lien mort : pas un seul href=\"#\"", !/href="#"/.test(html));
 ok("aucun prix dans le texte visible",
    !/\b\d{2,3}\s?\d{3}\s?(FCFA|XAF|fcfa)\b/i.test(html) && !/priceRange/.test(html));
@@ -83,7 +105,7 @@ ok("aucun prix dans le texte visible",
 const details = [...html.matchAll(/<details>[\s\S]*?<\/details>/g)].map((m) => m[0]);
 const summaries = details.map((d) => (d.match(/<summary[\s>]/g) || []).length);
 ok(`les ${details.length} accordéons ont UN seul <summary> chacun (§20.11)`,
-   details.length === 5 && summaries.every((n) => n === 1), "summary par bloc : " + summaries.join(", "));
+   details.length === 6 && summaries.every((n) => n === 1), "summary par bloc : " + summaries.join(", "));
 ok("chaque <summary> porte ses DEUX langues à l'intérieur (jamais la classe de langue sur lui)",
    details.every((d) => {
      const s = (d.match(/<summary>[\s\S]*?<\/summary>/) || [""])[0];
@@ -95,7 +117,7 @@ const plain = (x) => x.replace(/<[^>]+>/g, " ").replace(/&nbsp;|\u00a0/g, " ").r
 const qVisible = [...html.matchAll(/<summary><span><span class="fr-only"[^>]*>([\s\S]*?)<\/span>/g)].map((m) => plain(m[1]));
 const aVisible = [...html.matchAll(/<\/summary>\s*<p><span class="fr-only"[^>]*>([\s\S]*?)<\/span>/g)].map((m) => plain(m[1]));
 ok(`les ${faq.length} questions du schéma sont mot pour mot celles de la page`,
-   faq.length === 5 && faq.every((q, i) => plain(q.name) === qVisible[i]),
+   faq.length === 6 && faq.every((q, i) => plain(q.name) === qVisible[i]),
    "vues : " + qVisible.length);
 ok("les réponses du schéma sont mot pour mot celles de la page",
    faq.every((q, i) => plain(q.acceptedAnswer.text) === aVisible[i]),
@@ -119,6 +141,8 @@ console.log("\n═══ 1 · la bascule, et ce qu'elle change vraiment ══�
 const MESSAGES = [
   ["Bonjour DM OPTIC, je voudrais prendre un rendez-vous pour un examen de la vue.",
    "Hello DM OPTIC, I would like to book an eye examination."],
+  ["Bonjour DM OPTIC, avez-vous cette monture en boutique : ",
+   "Hello DM OPTIC, do you have this frame in store: "],
   ["Bonjour DM OPTIC, voici ce qui ne va pas : ", "Hello DM OPTIC, this is what is wrong: "],
   ["Bonjour DM OPTIC, je voudrais passer vous voir. Quels sont vos horaires ?",
    "Hello DM OPTIC, I would like to come and see you. What are your opening hours?"],
@@ -164,7 +188,7 @@ ok("départ en français : la page se déclare en français",
 ok("départ en français : FR est enfoncé, EN ne l'est pas",
    r.buttons["btn-fr"].getAttribute("aria-pressed") === "true" &&
    r.buttons["btn-en"].getAttribute("aria-pressed") === "false");
-ok("départ en français : les messages WhatsApp restent français",
+ok("départ en français : les six messages WhatsApp restent français",
    r.anchors.every((a) => waMessage(a.getAttribute("href")).indexOf("Bonjour DM OPTIC") === 0) &&
    waMessage(r.anchors[2].getAttribute("href")) === MESSAGES[2][0]);
 ok("départ en français : le texte de remplacement des images est français",
@@ -176,7 +200,7 @@ ok("clic sur EN : la page bascule et se déclare en anglais",
 ok("clic sur EN : les deux boutons disent leur état (aria-pressed)",
    r.buttons["btn-en"].getAttribute("aria-pressed") === "true" &&
    r.buttons["btn-fr"].getAttribute("aria-pressed") === "false");
-ok("clic sur EN : les 5 messages WhatsApp passent en anglais, numéro inchangé",
+ok("clic sur EN : les 6 messages WhatsApp passent en anglais, numéro inchangé",
    r.anchors.every((a, i) => waMessage(a.getAttribute("href")) === MESSAGES[i][1]) &&
    r.anchors.every((a) => a.getAttribute("href").indexOf(WA) === 0));
 ok("clic sur EN : le texte de remplacement de l'image passe en anglais",

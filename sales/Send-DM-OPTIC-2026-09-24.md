@@ -1,4 +1,4 @@
-# DM OPTIC — le message à envoyer après le redéploiement (v2, patient)
+# DM OPTIC — le message à envoyer après le redéploiement (v2.1 : patient + vitrine des montures)
 
 **Pour qui :** M. Domche Noumbi, DM OPTIC, Douala — **656 122 239** (WhatsApp).
 **Où :** la page est **déjà en ligne** — https://dmoptic.vercel.app/ — mais elle porte encore la
@@ -6,8 +6,11 @@
 
 **Ce que King a dit le 24/09, et ce qu'on en a fait** : *« the demo seems to speak more to the prospect,
 but it's supposed to speak to the patient »* → la page a été **réécrite de zéro, patient d'abord**
-(titres, actes, questions fréquentes, contact), et le hero a reçu ses **deux dégradés animés**.
-Le détail de ce qui a changé : `clients/dm-optic/build-notes.md` §7.
+(titres, actes, questions fréquentes, contact), et le hero a reçu ses **deux dégradés animés** (§7 des
+notes). Puis : *« on parlait aussi de listé ces services et montré ses montures et lunettes au patient »*
+et *« je ne pense pas que tout les détails de lui dans l'ordre soit nécessaire »* → **v2.1** : une
+**vitrine des montures** (vue · soleil · enfants), « Nos services », et **le registre sorti du texte
+visible** (§8 des notes).
 
 > **Attention, ne pas se tromper de destinataire :** la **page** parle au **patient**. Le **message
 > WhatsApp ci-dessous**, lui, s'adresse bien à **M. Domche** — c'est lui qui le reçoit. Les deux règles
@@ -27,17 +30,20 @@ Le détail de ce qui a changé : `clients/dm-optic/build-notes.md` §7.
 ```
 La page est retravaillée, à la même adresse : https://dmoptic.vercel.app/
 
-J'ai changé une chose importante : elle ne parle plus au cabinet, elle parle à vos
-patients. Ce qu'un patient veut savoir avant de venir — ce que vous faites, ce qu'il
-faut apporter, comment ça se passe, et vos réponses aux questions qu'on vous pose tous
-les jours — est maintenant sur la page, dans ses mots. Vos deux boutons sont là :
-WhatsApp (le message part déjà écrit) et l'appel direct.
+Deux choses ont changé. D'abord, elle ne parle plus au cabinet : elle parle à vos
+patients — vos services, ce qu'il faut apporter, comment ça se passe, et vos réponses
+aux six questions qu'on vous pose tous les jours. Ensuite, elle montre maintenant les
+montures et les lunettes : lunettes de vue, lunettes de soleil, enfants, avec un mot
+sur chacune et un bouton pour vous demander si vous avez un modèle.
 
-Il me manque encore huit choses vraies, et je n'en inventerai aucune : l'adresse
-exacte, les horaires, vos moyens de paiement, les assurances que vous acceptez, les
-marques de montures que vous vendez, des photos du cabinet, la liste des actes à
-valider, et une phrase de vous sur ce que vous dites à vos patients. Envoyez-moi ce
-que vous avez — le reste s'affiche le jour même.
+J'ai retiré les détails administratifs (numéro d'inscription, arrêté ministériel) :
+ils ne servent pas un patient.
+
+Il me manque encore neuf choses vraies, et je n'en inventerai aucune. Les premières,
+ce sont des photos : trois ou quatre du cabinet, et six à huit de vos montures, par
+famille. Puis l'adresse exacte, les horaires, les moyens de paiement, les assurances
+que vous acceptez, les marques que vous vendez, et la liste de vos services à valider.
+Envoyez-moi ce que vous avez — le reste s'affiche le jour même.
 
 Ouvrez-la sur votre téléphone et dites-moi ce qui manque ou ce qui est faux.
 — Akwo King / AMK – Développement Web & Solutions Digitales
@@ -50,12 +56,13 @@ pas un constat de faute.
 
 ---
 
-## 2 · Les huit informations qu'on attend (et qu'on ne devinera pas)
+## 2 · Les neuf informations qu'on attend (et qu'on ne devinera pas)
 
 Elles vivent dans **`clients/dm-optic/a-completer.md`**, qui est le document à recopier si M. Domche
-demande la liste. En résumé : **① adresse + point de repère · ② horaires · ③ photos du cabinet ·
-④ moyens de paiement · ⑤ assurances/mutuelles · ⑥ marques de montures · ⑦ validation des six actes
-listés sur la page · ⑧ une phrase de lui, ses mots, sur ce qu'il dit à ses patients.**
+demande la liste. En résumé : **① adresse exacte + point de repère · ② horaires · ③ trois ou quatre photos du
+cabinet · ④ six à huit photos de ses montures (vue · soleil · enfants) · ⑤ moyens de paiement ·
+⑥ assurances/mutuelles · ⑦ marques de montures vendues · ⑧ validation des six services listés sur la
+page · ⑨ une phrase de lui, ses mots, sur ce qu'il dit à ses patients.**
 
 Une fois reçues : `python3 demos/build_dmoptic.py --url https://dmoptic.vercel.app` (les faits entrent
 dans la page), **un seul redéploiement**, et on lui renvoie la page complétée.

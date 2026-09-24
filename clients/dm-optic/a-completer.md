@@ -1,19 +1,20 @@
 # DM OPTIC — ce qu'il reste à nous envoyer
 
 **Document de travail. Il part dans la conversation WhatsApp — il n'est plus sur la page.**
-Depuis la v2 (24/09 au soir), la page parle **au patient** : elle ne contient plus aucune section
-adressée au cabinet. La liste de ce qui manque vit donc ici.
+Depuis la v2.1 (24/09 au soir), la page parle **au patient** : six services listés, une vitrine de
+montures, et plus aucun détail administratif du titulaire. La liste de ce qui manque vit donc ici.
 
 | # | Ce qu'on attend de M. Domche | Ce que ça change sur la page | État |
 |---|---|---|---|
 | 1 | **Adresse exacte** + le point de repère (« en face de… », « à côté de… ») | La question n° 1 d'un patient ; c'est aussi ce qui alimente un bouton d'itinéraire | à confirmer |
-| 2 | **Horaires** : jours et heures d'ouverture | La question n° 2 ; une des cinq questions fréquentes de la page attend cette réponse | à confirmer |
-| 3 | **Trois ou quatre photos du cabinet** (téléphone, lumière du jour) | Elles remplacent les deux images d'illustration légendées « mise en situation » | à confirmer |
-| 4 | **Moyens de paiement** acceptés (espèces, MTN MoMo, Orange Money) | Évite au patient de venir sans pouvoir payer | à confirmer |
-| 5 | **Assurances / mutuelles** prises en charge | Décide le patient assuré, et distingue le cabinet de ses voisins | à confirmer |
-| 6 | **Marques de montures** qu'il aime vendre | Donne de la matière à la bande des actes | à confirmer |
-| 7 | **La liste des actes** : confirmer ou retirer, parmi les six de la page (examen de la vue · verres sur ordonnance · montures · lunettes de soleil · réparation et entretien · lentilles de contact) | Aujourd'hui la page liste les six actes **types** d'un cabinet d'optique. Un cabinet ne fait pas tout : ce qu'il retire disparaît, ce qu'il ajoute s'écrit | à valider |
-| 8 | *(facultatif)* **Une phrase de lui**, ses mots à lui, sur ce qu'il dit à ses patients | La page n'a **aucun avis** (on n'en invente pas) ; une vraie phrase, signée de son nom, vaut mieux que dix citations inventées | à demander |
+| 2 | **Horaires** : jours et heures d'ouverture | La question n° 2 ; une des **six** questions fréquentes attend cette réponse | à confirmer |
+| 3 | **Trois ou quatre photos du cabinet** (téléphone, lumière du jour) | Elles remplacent les photos d'illustration de la page | à confirmer |
+| 4 | **Six à huit photos de vos montures et de vos lunettes** — par famille : vue, soleil, enfants (posées, ou la vitrine du magasin) | C'est la **vitrine** de la page : aujourd'hui elle montre trois illustrations. Les vraies montures du cabinet prennent leur place, et le patient voit ce que vous vendez **avant** de venir | à demander |
+| 5 | **Moyens de paiement** acceptés (espèces, MTN MoMo, Orange Money) | Évite au patient de venir sans pouvoir payer | à confirmer |
+| 6 | **Assurances / mutuelles** prises en charge | Décide le patient assuré, et distingue le cabinet de ses voisins | à confirmer |
+| 7 | **Marques de montures** que vous vendez | La page ne nomme aujourd'hui **aucune marque** (on n'en invente aucune). Avec votre liste, on peut écrire « nous portons… » ; sans elle, la vitrine renvoie la question au WhatsApp | à confirmer |
+| 8 | **La liste des services** : confirmer ou retirer, parmi les six de la page (examen de la vue · verres sur ordonnance · montures · lunettes de soleil · réparation et entretien · lentilles de contact) | Aujourd'hui la page liste les six services **types** d'un cabinet d'optique. Un cabinet ne fait pas tout : ce qu'on retire disparaît, ce qu'on ajoute s'écrit | à valider |
+| 9 | *(facultatif)* **Une phrase de vous**, vos mots, sur ce que vous dites à vos patients | La page n'a **aucun avis** (on n'en invente pas) ; une vraie phrase, signée de votre nom, vaut mieux que dix citations inventées | à demander |
 
 ## Ce qu'on fait dès qu'on reçoit
 

@@ -205,3 +205,59 @@ portique : *« Not verified on a phone = not sent. »*
 `hosting/previews/dmoptic/` (**le dossier entier**, `index.html` + `og.jpg`) → `--url
 https://dmoptic.vercel.app` déjà recollée dans le fichier construit (`og:url`, `og:image`) → puis le
 message de `sales/Send-DM-OPTIC-2026-09-24.md` §1. **Un seul redéploiement.**
+
+---
+
+# 8 · v2.1 — « listez ces services, montrez ses montures » (24/09, soir)
+
+## 8.1 Le retour de King, et ce qu'il déplace
+
+> *« on parlait aussi de listé ces services et montré ses montures et lunettes au patient »*
+> *« je ne pense pas que tout les détails de lui dans l'ordre sois nécessaire »*
+> *« look for optic clinics and shop on the Web to see how they showcase and write on their sites »*
+
+Trois conséquences, dans cet ordre :
+
+1. une **section vitrine** — « Les montures et les lunettes » : trois familles, une photo, un conseil
+   chacune, et une seule action (« Demander si c'est en boutique ») ;
+2. le **registre sort du texte visible** : n° 021/2016, arrêté 0382, « Littoral, ligne 102 », *Echos
+   Santé* — supprimés. Ce qui reste : « Opticien inscrit à l'Ordre des opticiens du Cameroun depuis
+   2016 » (une phrase, dans la carte et le pied de page), et le nom du titulaire dans la carte. **La
+   donnée structurée garde l'identifiant 021/2016** : la machine peut vérifier l'entité, le patient n'a
+   pas à lire un arrêté ministériel ;
+3. **recherche avant écriture** (règle du dépôt) : trois recherches, deux sites d'opticiens lus en
+   entier — `queenoptique.com` (Montréal) et `optiquebj.com` (Rennes) —, motifs consignés dans
+   `inspiration.md` § « Second passage ». Ce qu'on a copié : la liste de services explicite, la vitrine
+   par familles, l'essayage comme argument, les trois conseils (visage · appui · usage), le prix jamais
+   affiché. Ce qu'on n'a **pas** copié : les marques (on n'en a aucune), les avis (on n'en a aucun), la
+   promesse de délai (« en 1 heure »), le rendez-vous en ligne (le cabinet n'a pas d'agenda).
+
+## 8.2 Ce que la page porte de neuf
+
+| | |
+|---|---|
+| Premier écran | les trois faits deviennent **Où (Douala) · Sur WhatsApp (656 122 239) · Opticien inscrit depuis 2016** ; la carte ne garde que **deux lignes** (L'opticien, Où) et son pied dit « Adresse exacte et horaires : demandez-les sur WhatsApp ou au téléphone » |
+| Services | « **Nos services**, et ce qu'il faut apporter » (six services, chacun avec « À apporter ») |
+| Vitrine (neuve) | « **Les montures et les lunettes** » : lunettes de vue · lunettes de soleil · enfants — une photo, un conseil d'essayage et un « À demander » par famille ; trois conseils du choix ; **une seule action** (« avez-vous cette monture en boutique : ») ; **aucune marque, aucun prix** |
+| Comment ça se passe | la photo de l'instrument de mesure y entre — la bande sombre s'ouvre sur une image |
+| Questions | **six** (ajout : « Peut-on essayer plusieurs montures avant de choisir ? »), les six dans le schéma `FAQPage`, mot pour mot |
+| Légendes | les cinq photos disent « **Photo d'illustration** » — plus de « mise en situation : la photo définitive sera prise dans votre cabinet », qui parlait au patron |
+| Poids | **328 Ko** — cinq images embarquées, 900 px de large, qualité 50 (contre 170 Ko en v1, deux images) |
+
+## 8.3 Les contrôles de la v2.1
+
+| Contrôle | Résultat |
+|---|---|
+| `audit_html.py` | **0 constat** — 258 passages de texte (desktop et mobile) |
+| `audit_a11y.py --strict` | **0 faute A/AA, 0 avertissement** |
+| `audit_hero.py` | **0 faute, 0 avertissement** |
+| `check_inline_js.py` | **rc 0** — 4 blocs compilés |
+| `audit_aeo.py` | ✓ `Optician` + `FAQPage` · **6 questions** atomiques · `noindex` voulu |
+| `test_dmoptic_page.mjs` | **45/45** — trois assertions neuves : la vitrine montre trois familles (photo + titre) ; elle ne nomme **aucune marque** et n'affiche **aucun prix** ; les numéros du registre ne sont plus dans le **texte visible** alors que l'identifiant reste dans les **données structurées** |
+
+**Assumé** : les photos de la vitrine sont des illustrations — le cabinet n'a pas encore envoyé les
+siennes. La demande est dans `clients/dm-optic/a-completer.md` (six à huit photos par famille) et le
+message qui part avec le lien la porte. Le jour où elles arrivent, elles remplacent les trois.
+
+**Toujours pas fait, et qu'on dit** : aucune capture d'écran, aucun mockup (le bac n'a pas de
+navigateur). Le premier écran, les dégradés en vrai, la vitrine : c'est King, sur un téléphone.

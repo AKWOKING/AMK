@@ -216,7 +216,27 @@ html.js .band::before{animation:drift 32s ease-in-out infinite alternate}
 .band .actions{margin-top:30px}
 .band .note{color:var(--on-night-2)}
 
-/* ── LE TITULAIRE ─────────────────────────────────────────────────────────────────────────────────── */
+/* ── LES MONTURES : la vitrine — trois familles, puis les trois conseils du choix ────────────────────
+   Trois photos d'illustration légendées comme telles (aucune photo du cabinet n'existe encore), et
+   aucune marque, aucun prix : la vitrine dit ce qu'on vient essayer, pas ce qui est en stock. */
+.grid3{display:grid;gap:16px;margin-top:30px}
+@media (min-width:780px){ .grid3{grid-template-columns:repeat(3,1fr);gap:22px} }
+.frame{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column}
+.frame img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border-bottom:1px solid var(--line)}
+.frame .body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.frame h3{margin:0}
+.frame p{margin:0;color:var(--ink-2);font-size:var(--fs-sm)}
+.frame .ask{margin-top:auto;padding-top:10px;border-top:1px solid var(--line-2);font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
+.advice{display:grid;gap:16px;margin-top:30px}
+@media (min-width:780px){ .advice{grid-template-columns:repeat(3,1fr);gap:22px} }
+.advice>div{padding-left:14px;border-left:2px solid var(--ember)}
+.advice h3{margin:0;font-size:1rem}
+.advice p{margin:.45rem 0 0;color:var(--ink-2);font-size:var(--fs-sm)}
+figure.bandfig{margin:30px 0 0}
+figure.bandfig img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--r-lg);border:1px solid var(--night-line)}
+figure.bandfig figcaption{margin-top:12px;font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--on-night-2)}
+
+/* ── LE TITULAIRE (retiré le 24/09 — la vitrine a pris sa place) ──────────────────────────────────── */
 .split{display:grid;gap:30px}
 @media (min-width:900px){ .split{grid-template-columns:1.05fr .95fr;gap:48px;align-items:center} }
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
@@ -305,7 +325,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
     <nav class="nav" aria-label="Sections">
       <a href="#actes"><span class="fr-only" lang="fr">Ce que nous faisons</span><span class="en-only" lang="en">What we do</span></a>
       <a href="#etapes"><span class="fr-only" lang="fr">Comment ça se passe</span><span class="en-only" lang="en">How it works</span></a>
-      <a href="#cabinet"><span class="fr-only" lang="fr">Le cabinet</span><span class="en-only" lang="en">The practice</span></a>
+      <a href="#montures"><span class="fr-only" lang="fr">Nos montures</span><span class="en-only" lang="en">Our frames</span></a>
       <a href="#questions"><span class="fr-only" lang="fr">Questions</span><span class="en-only" lang="en">Questions</span></a>
       <a href="#contact"><span class="fr-only" lang="fr">Contact</span><span class="en-only" lang="en">Contact</span></a>
     </nav>
@@ -354,17 +374,17 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
           </a>
         </div>
         <dl class="facts rv">
-          <div>
-            <dt><span class="fr-only" lang="fr">Inscrit à l'Ordre</span><span class="en-only" lang="en">Registered</span></dt>
-            <dd><span class="fr-only" lang="fr">n° 021/2016 · arrêté 0382</span><span class="en-only" lang="en">no. 021/2016 · decree 0382</span></dd>
-          </div>
-          <div>
-            <dt><span class="fr-only" lang="fr">Ville</span><span class="en-only" lang="en">City</span></dt>
+                    <div>
+            <dt><span class="fr-only" lang="fr">Où</span><span class="en-only" lang="en">Where</span></dt>
             <dd><span class="fr-only" lang="fr">Douala, Littoral</span><span class="en-only" lang="en">Douala, Littoral</span></dd>
           </div>
           <div>
-            <dt><span class="fr-only" lang="fr">Titulaire</span><span class="en-only" lang="en">Owner</span></dt>
-            <dd><span class="fr-only" lang="fr">M. Domche Noumbi</span><span class="en-only" lang="en">Mr Domche Noumbi</span></dd>
+            <dt><span class="fr-only" lang="fr">Sur WhatsApp</span><span class="en-only" lang="en">On WhatsApp</span></dt>
+            <dd>656 122 239</dd>
+          </div>
+          <div>
+            <dt><span class="fr-only" lang="fr">Opticien inscrit</span><span class="en-only" lang="en">Registered optician</span></dt>
+            <dd><span class="fr-only" lang="fr">depuis 2016</span><span class="en-only" lang="en">since 2016</span></dd>
           </div>
         </dl>
       </div>
@@ -379,25 +399,21 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
           <p class="idkind"><span class="fr-only" lang="fr">Cabinet d'optique médicale</span><span class="en-only" lang="en">Optical practice</span></p>
           <dl class="idrows">
             <div>
-              <dt><span class="fr-only" lang="fr">N° d'inscription</span><span class="en-only" lang="en">Registration no.</span></dt>
-              <dd>021/2016</dd>
-            </div>
-            <div>
-              <dt><span class="fr-only" lang="fr">Arrêté ministériel</span><span class="en-only" lang="en">Ministry decree</span></dt>
-              <dd>0382</dd>
-            </div>
-            <div>
-              <dt><span class="fr-only" lang="fr">Titulaire</span><span class="en-only" lang="en">Owner</span></dt>
-              <dd><span class="fr-only" lang="fr">M. Domche Noumbi</span><span class="en-only" lang="en">Mr Domche Noumbi</span></dd>
-            </div>
+                <dt><span class="fr-only" lang="fr">L'opticien</span><span class="en-only" lang="en">The optician</span></dt>
+                <dd><span class="fr-only" lang="fr">M. Domche Noumbi</span><span class="en-only" lang="en">Mr Domche Noumbi</span></dd>
+              </div>
+              <div>
+                <dt><span class="fr-only" lang="fr">Où</span><span class="en-only" lang="en">Where</span></dt>
+                <dd><span class="fr-only" lang="fr">Douala, Littoral</span><span class="en-only" lang="en">Douala, Littoral</span></dd>
+              </div>
             <div>
               <dt><span class="fr-only" lang="fr">Téléphone &amp; WhatsApp</span><span class="en-only" lang="en">Phone &amp; WhatsApp</span></dt>
               <dd>656 122 239</dd>
             </div>
           </dl>
-          <p class="idfoot"><span class="fr-only" lang="fr">Adresse et horaires&nbsp;: à confirmer avec le cabinet.</span><span class="en-only" lang="en">Address and opening hours: to be confirmed with the practice.</span></p>
+          <p class="idfoot"><span class="fr-only" lang="fr">Adresse exacte et horaires&nbsp;: demandez-les sur WhatsApp ou au téléphone.</span><span class="en-only" lang="en">Exact address and opening hours: ask on WhatsApp or by phone.</span></p>
         </div>
-        <figcaption><span class="fr-only as-block" lang="fr">Cabinet inscrit au registre de l'Ordre national des opticiens du Cameroun — Littoral, ligne 102, relevé le 24/09/2026.</span><span class="en-only as-block" lang="en">Practice on the register of the National Order of Opticians of Cameroon: Littoral, line 102, read on 24/09/2026.</span></figcaption>
+        <figcaption><span class="fr-only as-block" lang="fr">Opticien inscrit à l'Ordre national des opticiens du Cameroun.</span><span class="en-only as-block" lang="en">Optician registered with the National Order of Opticians of Cameroon.</span></figcaption>
       </figure>
     </div>
   </section>
@@ -406,18 +422,18 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
   <section id="actes" aria-labelledby="h-actes">
     <div class="wrap">
       <h2 id="h-actes" class="rv">
-        <span class="fr-only" lang="fr">Ce que nous faisons, et ce qu'il faut apporter.</span>
-        <span class="en-only" lang="en">What we do, and what to bring.</span>
+        <span class="fr-only" lang="fr">Nos services, et ce qu'il faut apporter.</span>
+          <span class="en-only" lang="en">Our services, and what to bring.</span>
       </h2>
       <p class="lede rv">
         <span class="fr-only" lang="fr">Six raisons de pousser la porte. À chaque fois, la liste de ce qu'on vous demandera.</span>
         <span class="en-only" lang="en">Six reasons to walk in. Each one comes with the list of what you will be asked for.</span>
       </p>
       <figure class="band-fig rv">
-        <img src="data:image/jpeg;base64,__IMG_LUNETTES__" width="1024" height="640" loading="lazy" decoding="async"
+        <img src="data:image/jpeg;base64,__IMG_LUNETTES__" width="900" height="563" loading="lazy" decoding="async"
           data-alt-fr="Une paire de lunettes de vue posée sur une surface claire, lumière douce." data-alt-en="A pair of prescription glasses resting on a pale surface in soft light."
           alt="Une paire de lunettes de vue posée sur une surface claire, lumière douce.">
-        <figcaption><span class="fr-only as-block" lang="fr">Mise en situation&nbsp;: la photo définitive sera prise dans votre cabinet.</span><span class="en-only as-block" lang="en">Staged illustration: the final photo will be taken in your practice.</span></figcaption>
+        <figcaption><span class="fr-only as-block" lang="fr">Photo d'illustration.</span><span class="en-only as-block" lang="en">Illustration photo.</span></figcaption>
       </figure>
       <ul class="strip">
         <li class="act rv">
@@ -487,7 +503,13 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
           <h3><span class="fr-only" lang="fr">Vous passez au cabinet</span><span class="en-only" lang="en">You come to the practice</span></h3>
           <p><span class="fr-only" lang="fr">Vous ne venez pas à l'aveugle&nbsp;: vous savez déjà ce qui vous attend, et ce que ça va demander.</span><span class="en-only" lang="en">You do not come in blind: you already know what awaits you, and what it will take.</span></p>
         </li>
-      </ol>
+            </ol>
+      <figure class="bandfig rv">
+        <img src="data:image/jpeg;base64,__IMG_MESURE__" width="900" height="675" loading="lazy" decoding="async"
+          data-alt-fr="Détail d'un instrument de mesure de la vue posé sur un comptoir sombre." data-alt-en="Close-up of an eye-measuring instrument resting on a dark counter."
+          alt="Détail d'un instrument de mesure de la vue posé sur un comptoir sombre.">
+        <figcaption><span class="fr-only as-block" lang="fr">Photo d'illustration.</span><span class="en-only as-block" lang="en">Illustration photo.</span></figcaption>
+      </figure>
       <div class="actions rv">
         <a class="btn btn-wa wa" data-fr="Bonjour DM OPTIC, voici ce qui ne va pas : " data-en="Hello DM OPTIC, this is what is wrong: " href="__WA__">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
@@ -498,33 +520,71 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
     </div>
   </section>
 
-  <!-- ══ 4 · LE CABINET : un nom, une inscription, une source ═══════════════════════════════════════ -->
-  <section id="cabinet" aria-labelledby="h-cabinet">
-    <div class="wrap split">
-      <div>
-        <h2 id="h-cabinet" class="rv">
-          <span class="fr-only" lang="fr">Un opticien inscrit, un titulaire nommé.</span>
-          <span class="en-only" lang="en">A registered optician, a named owner.</span>
-        </h2>
-        <p class="lede rv">
-          <span class="fr-only" lang="fr">DM OPTIC est un cabinet d'optique médicale à Douala, inscrit au registre de l'Ordre national des opticiens du Cameroun depuis 2016&nbsp;: inscription n° 021/2016, arrêté ministériel n° 0382. Le titulaire est M. Domche Noumbi.</span>
-          <span class="en-only" lang="en">DM OPTIC is an optical practice in Douala, on the register of the National Order of Opticians of Cameroon since 2016: registration no. 021/2016, ministry decree no. 0382. The owner is Mr Domche Noumbi.</span>
-        </p>
-        <p class="rv">
-          <span class="fr-only" lang="fr">Son nom apparaît, en mars 2023, dans la liste des opticiens de Douala cités par la presse de la profession (<em>Echos Santé</em>) — au moment où l'Ordre menait la lutte contre l'exercice illégal dans le Littoral.</span>
-          <span class="en-only" lang="en">His name appears, in March 2023, in the list of Douala opticians quoted by the trade press (<em>Echos Santé</em>), at the time the Order was fighting illegal practice in the Littoral region.</span>
-        </p>
-        <div class="chips rv">
-          <span class="chip"><span class="fr-only" lang="fr">Ordre n° 021/2016</span><span class="en-only" lang="en">Register no. 021/2016</span></span>
-          <span class="chip"><span class="fr-only" lang="fr">Presse&nbsp;: Echos Santé, mars 2023</span><span class="en-only" lang="en">Press: Echos Santé, March 2023</span></span>
+  <!-- ══ 4 · LES MONTURES : ce qu'on vient essayer — trois familles, trois conseils ═════════════════ -->
+  <section id="montures" aria-labelledby="h-montures">
+    <div class="wrap">
+      <h2 id="h-montures" class="rv">
+        <span class="fr-only" lang="fr">Les montures et les lunettes.</span>
+        <span class="en-only" lang="en">Frames and sunglasses.</span>
+      </h2>
+      <p class="lede rv">
+        <span class="fr-only" lang="fr">Lunettes de vue, lunettes de soleil, montures pour enfants&nbsp;: elles s'essayent au cabinet, sur votre visage, avec quelqu'un qui vous regarde — pas sur un écran.</span>
+        <span class="en-only" lang="en">Spectacles, sunglasses, children's frames: you try them on at the practice, on your face, with someone looking at you — not on a screen.</span>
+      </p>
+      <div class="grid3">
+        <article class="frame rv">
+          <img src="data:image/jpeg;base64,__IMG_MONTURES__" width="900" height="563" loading="lazy" decoding="async"
+            data-alt-fr="Six montures de formes et de couleurs différentes alignées sur un tissu clair." data-alt-en="Six frames of different shapes and colours lined up on pale fabric."
+            alt="Six montures de formes et de couleurs différentes alignées sur un tissu clair.">
+          <div class="body">
+            <h3><span class="fr-only" lang="fr">Lunettes de vue</span><span class="en-only" lang="en">Spectacles</span></h3>
+            <p><span class="fr-only" lang="fr">Rondes, fines, écaille, métal, colorées&nbsp;: la monture se choisit avec la forme de votre visage et votre ordonnance.</span><span class="en-only" lang="en">Round, thin, tortoiseshell, metal, colourful: the frame is chosen together with your face shape and your prescription.</span></p>
+            <p class="ask"><span class="fr-only" lang="fr">À demander&nbsp;: le réglage sur le nez et derrière les oreilles, avant de sortir.</span><span class="en-only" lang="en">Ask for the frame to be adjusted on your nose and behind your ears before you leave.</span></p>
+          </div>
+        </article>
+        <article class="frame rv">
+          <img src="data:image/jpeg;base64,__IMG_SOLAIRES__" width="900" height="563" loading="lazy" decoding="async"
+            data-alt-fr="Trois paires de lunettes de soleil posées sur un mur clair, au soleil." data-alt-en="Three pairs of sunglasses resting on a pale wall in the sun."
+            alt="Trois paires de lunettes de soleil posées sur un mur clair, au soleil.">
+          <div class="body">
+            <h3><span class="fr-only" lang="fr">Lunettes de soleil</span><span class="en-only" lang="en">Sunglasses</span></h3>
+            <p><span class="fr-only" lang="fr">Sous le soleil de Douala comme au bord de l'eau, la lumière est forte&nbsp;: le verre teinté se choisit selon ce que vous faites dehors.</span><span class="en-only" lang="en">Under the Douala sun, or out on the water, the light is strong: the tint is chosen according to what you do outdoors.</span></p>
+            <p class="ask"><span class="fr-only" lang="fr">À demander&nbsp;: la teinte et la catégorie du verre, et si votre correction peut y être montée.</span><span class="en-only" lang="en">Ask about the tint and the lens category, and whether your prescription can be fitted.</span></p>
+          </div>
+        </article>
+        <article class="frame rv">
+          <img src="data:image/jpeg;base64,__IMG_ENFANTS__" width="900" height="563" loading="lazy" decoding="async"
+            data-alt-fr="Deux petites montures d'enfant colorées posées sur un tissu clair, à côté d'un étui." data-alt-en="Two small colourful children's frames on pale fabric beside a pouch."
+            alt="Deux petites montures d'enfant colorées posées sur un tissu clair, à côté d'un étui.">
+          <div class="body">
+            <h3><span class="fr-only" lang="fr">Enfants</span><span class="en-only" lang="en">Children</span></h3>
+            <p><span class="fr-only" lang="fr">Des montures à la bonne taille, qui tiennent sur un petit nez et survivent à la récréation.</span><span class="en-only" lang="en">Frames in the right size, ones that stay on a small nose and survive playtime.</span></p>
+            <p class="ask"><span class="fr-only" lang="fr">À apporter&nbsp;: l'ordonnance de l'enfant, et ses lunettes actuelles si elles bougent.</span><span class="en-only" lang="en">Bring the child's prescription, and their current glasses if they slip.</span></p>
+          </div>
+        </article>
+      </div>
+      <p class="note rv"><span class="fr-only" lang="fr">Photos d'illustration.</span><span class="en-only" lang="en">Illustration photos.</span></p>
+      <div class="advice rv">
+        <div>
+          <h3><span class="fr-only" lang="fr">La forme du visage</span><span class="en-only" lang="en">Your face shape</span></h3>
+          <p><span class="fr-only" lang="fr">Rond, ovale, carré, cœur&nbsp;: c'est la forme du visage qui guide la forme de la monture. C'est pour ça qu'on essaie — une photo ne dit pas tout.</span><span class="en-only" lang="en">Round, oval, square, heart: your face shape guides the shape of the frame. That is why you try them on — a photo does not tell the whole story.</span></p>
+        </div>
+        <div>
+          <h3><span class="fr-only" lang="fr">La largeur, et l'appui</span><span class="en-only" lang="en">Width and support</span></h3>
+          <p><span class="fr-only" lang="fr">Une monture bien réglée ne glisse pas sur le nez et ne serre pas derrière les oreilles. Demandez le réglage, même sur des lunettes qui ne viennent pas d'ici.</span><span class="en-only" lang="en">A well-adjusted frame does not slip down your nose or press behind your ears. Ask for the adjustment, even on glasses that did not come from here.</span></p>
+        </div>
+        <div>
+          <h3><span class="fr-only" lang="fr">Ce que vous en faites</span><span class="en-only" lang="en">What you do with them</span></h3>
+          <p><span class="fr-only" lang="fr">Écran toute la journée, conduite, lecture, sport, soleil&nbsp;: l'usage change le verre, pas seulement la monture. Dites-le en arrivant.</span><span class="en-only" lang="en">Screens all day, driving, reading, sport, sun: the use changes the lens, not just the frame. Say so when you arrive.</span></p>
         </div>
       </div>
-      <figure class="fig-43 rv">
-        <img src="data:image/jpeg;base64,__IMG_MESURE__" width="1024" height="768" loading="lazy" decoding="async"
-          data-alt-fr="Détail d'un instrument de mesure de la vue posé sur un comptoir sombre." data-alt-en="Close-up of an eye-measuring instrument resting on a dark counter."
-          alt="Détail d'un instrument de mesure de la vue posé sur un comptoir sombre.">
-        <figcaption><span class="fr-only as-block" lang="fr">Mise en situation&nbsp;: la photo définitive sera prise dans votre cabinet.</span><span class="en-only as-block" lang="en">Staged illustration: the final photo will be taken in your practice.</span></figcaption>
-      </figure>
+      <div class="actions rv">
+        <a class="btn btn-wa wa" data-fr="Bonjour DM OPTIC, avez-vous cette monture en boutique : " data-en="Hello DM OPTIC, do you have this frame in store: " href="__WA__">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
+          <span class="fr-only" lang="fr">Demander si c'est en boutique</span><span class="en-only" lang="en">Ask if it is in store</span>
+        </a>
+      </div>
+      <p class="note rv"><span class="fr-only" lang="fr">Vous cherchez une marque précise&nbsp;? Demandez-la&nbsp;: la réponse arrive dans la conversation WhatsApp.</span><span class="en-only" lang="en">Looking for a particular brand? Just ask: the answer comes back in the WhatsApp conversation.</span></p>
     </div>
   </section>
 
@@ -560,6 +620,11 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
           <summary><span><span class="fr-only" lang="fr">Combien coûte une paire de lunettes&nbsp;?</span><span class="en-only" lang="en">How much do a pair of glasses cost?</span></span>
             <svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
           <p><span class="fr-only" lang="fr">Le prix dépend de vos verres et de la monture que vous choisissez. Posez la question sur WhatsApp en décrivant votre besoin&nbsp;: c'est la réponse la plus utile.</span><span class="en-only" lang="en">The price depends on your lenses and the frame you choose. Ask on WhatsApp and describe what you need: that is the most useful answer.</span></p>
+        </details>
+              <details>
+          <summary><span><span class="fr-only" lang="fr">Peut-on essayer plusieurs montures avant de choisir&nbsp;?</span><span class="en-only" lang="en">Can I try several frames before choosing?</span></span>
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <p><span class="fr-only" lang="fr">Oui, et c'est même la seule bonne façon de choisir&nbsp;: vous les essayez au cabinet, devant un miroir, et vous demandez à voir les formes qui vont à votre visage.</span><span class="en-only" lang="en">Yes, and it is the only good way to choose: you try them on at the practice, in front of a mirror, and ask to see the shapes that suit your face.</span></p>
         </details>
       </div>
     </div>
@@ -623,14 +688,14 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
           <span class="brandtxt">DM <span class="thin">OPTIC</span></span>
           <span class="mark" aria-hidden="true"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><circle class="o" cx="20" cy="20" r="16"></circle><circle class="i" cx="20" cy="20" r="10.5"></circle><path class="glint" d="M11.6 14.2a10.5 10.5 0 0 1 8.4-4.1"></path></svg></span>
         </a>
-        <p><span class="fr-only" lang="fr">Cabinet d'optique médicale à Douala, inscrit au registre de l'Ordre national des opticiens du Cameroun depuis 2016.</span><span class="en-only" lang="en">Optical practice in Douala, on the register of the National Order of Opticians of Cameroon since 2016.</span></p>
+        <p><span class="fr-only" lang="fr">Cabinet d'optique médicale à Douala. Opticien inscrit à l'Ordre national des opticiens du Cameroun depuis 2016.</span><span class="en-only" lang="en">Optical practice in Douala. Optician registered with the National Order of Opticians of Cameroon since 2016.</span></p>
       </div>
       <div>
         <h3><span class="fr-only" lang="fr">La page</span><span class="en-only" lang="en">This page</span></h3>
         <ul class="fnav">
           <li><a href="#actes"><span class="fr-only" lang="fr">Ce que nous faisons</span><span class="en-only" lang="en">What we do</span></a></li>
           <li><a href="#etapes"><span class="fr-only" lang="fr">Comment ça se passe</span><span class="en-only" lang="en">How it works</span></a></li>
-          <li><a href="#cabinet"><span class="fr-only" lang="fr">Le cabinet</span><span class="en-only" lang="en">The practice</span></a></li>
+          <li><a href="#montures"><span class="fr-only" lang="fr">Nos montures</span><span class="en-only" lang="en">Our frames</span></a></li>
           <li><a href="#questions"><span class="fr-only" lang="fr">Les questions qu'on nous pose</span><span class="en-only" lang="en">Questions we are asked</span></a></li>
         </ul>
       </div>
@@ -649,13 +714,13 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
         <ul class="fcontact">
           <li><a href="tel:+237656122239">+237 656 122 239</a></li>
           <li><span class="fr-only" lang="fr">Douala, Littoral — Cameroun</span><span class="en-only" lang="en">Douala, Littoral — Cameroon</span></li>
-          <li><span class="fr-only" lang="fr">Adresse et horaires&nbsp;: à confirmer</span><span class="en-only" lang="en">Address and hours: to be confirmed</span></li>
+          <li><span class="fr-only" lang="fr">Adresse exacte et horaires&nbsp;: à demander au cabinet</span><span class="en-only" lang="en">Exact address and hours: ask the practice</span></li>
         </ul>
       </div>
     </div>
     <div class="stripbar">
       <span>© 2026 DM OPTIC</span>
-      <span><span class="fr-only" lang="fr">Aperçu préparé par AMK pour DM OPTIC — actes, adresse, horaires et photos à valider par le cabinet avant la mise en ligne.</span><span class="en-only" lang="en">Preview prepared by AMK for DM OPTIC: services, address, hours and photos to be validated by the practice before going live.</span></span>
+      <span><span class="fr-only" lang="fr">Aperçu préparé par AMK pour DM OPTIC — adresse, horaires et photos à valider par le cabinet avant la mise en ligne.</span><span class="en-only" lang="en">Preview prepared by AMK for DM OPTIC: address, hours and photos to be validated by the practice before going live.</span></span>
       <a href="#top"><span class="fr-only" lang="fr">Haut de page ↑</span><span class="en-only" lang="en">Back to top ↑</span></a>
     </div>
   </div>
@@ -803,7 +868,8 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
   {"@type":"Question","name":"Faut-il une ordonnance pour avoir des lunettes ?","acceptedAnswer":{"@type":"Answer","text":"Pour des verres correcteurs, oui : apportez l'ordonnance de votre ophtalmologue. Pour des lunettes de soleil, un réglage ou une réparation, non."}},
   {"@type":"Question","name":"Ma monture est cassée : est-ce réparable ?","acceptedAnswer":{"@type":"Answer","text":"Envoyez une photo de la monture sur WhatsApp. La réponse vous dit si c'est réparable, et si le déplacement en vaut la peine."}},
   {"@type":"Question","name":"Quels sont les horaires d'ouverture ?","acceptedAnswer":{"@type":"Answer","text":"Ils s'affichent ici dès que le cabinet nous les confirme. Avant de vous déplacer, demandez sur WhatsApp : on vous dit s'il est ouvert maintenant."}},
-  {"@type":"Question","name":"Combien coûte une paire de lunettes ?","acceptedAnswer":{"@type":"Answer","text":"Le prix dépend de vos verres et de la monture que vous choisissez. Posez la question sur WhatsApp en décrivant votre besoin : c'est la réponse la plus utile."}}]}
+    {"@type":"Question","name":"Combien coûte une paire de lunettes ?","acceptedAnswer":{"@type":"Answer","text":"Le prix dépend de vos verres et de la monture que vous choisissez. Posez la question sur WhatsApp en décrivant votre besoin : c'est la réponse la plus utile."}},
+  {"@type":"Question","name":"Peut-on essayer plusieurs montures avant de choisir ?","acceptedAnswer":{"@type":"Answer","text":"Oui, et c'est même la seule bonne façon de choisir : vous les essayez au cabinet, devant un miroir, et vous demandez à voir les formes qui vont à votre visage."}}]}
 ]}
 </script>
 </body>
