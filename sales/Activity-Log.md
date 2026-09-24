@@ -2928,10 +2928,11 @@ copiera pas : la preuve sociale inventée), cette entrée, et la ligne de route 
 les 6 pages · `audit_a11y --strict` rc=0 · `test_audit_a11y.py` 23 témoins · `test_site_a11y_behaviour.mjs`
 31 assertions · harnais UNI-LABO 42/42 · `audit_html` 0 constat.
 
-## 2026-09-24 · LA FICHE GOOGLE ET LE LIEN D'ÉVITEMENT MORT — quatre vidéos, trois marches à suivre
+## 2026-09-24 · 08:39 (heure de Douala, celle du commit `aaa4b90`) · LA FICHE GOOGLE ET LE LIEN D'ÉVITEMENT MORT — quatre vidéos, trois marches à suivre
 
-*(heure de cette entrée : celle du commit qui la porte — la convention de la maison, depuis que j'ai
-inventé « 09:40 → 11:10 » plus tôt dans la journée sur des heures qui n'existaient pas.)*
+*(L'heure de cette entrée est celle du commit qui la porte, pas une estimation. Depuis que j'ai inventé
+« 09:40 → 11:10 » plus tôt dans la journée sur des heures qui n'existaient pas, c'est la règle : une heure
+dans un document vient d'un commit.)*
 
 Quatre liens de King, sans un mot. **Trois sur la fiche Google** (Santrel Media 1,13 M — l'installation
 filmée ; Ignite Visibility 64,9 K — vingt points de contrôle ; Zanet Design 36,2 K — une compilation

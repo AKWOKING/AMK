@@ -146,8 +146,8 @@
 `L2732` · **Les deux muettes :** les tutoriels d'UI UNIVERSITY (`iDzt8VWqjEg`, `nbBQCeOCMmQ`). Leurs sous-titres ne
 `L2826` · **Le Cristallin et Univers Optique n'ont pas été touchés** : leurs constats (saut de titre pour Univers,
 `L2880` · redéployer, comme le dossier UNI-LABO. **Le Cristallin et Univers Optique restent gelés** (constats notés, non
-`L2982` · cas prouvé du pipeline, c'est **Univers Optique** : fiche notée 3,3/5, **champ « site web » vide**,
-`L2998` · 10 disqualified · 3 closing), UNI-LABO et Univers en `closing`.
+`L2983` · cas prouvé du pipeline, c'est **Univers Optique** : fiche notée 3,3/5, **champ « site web » vide**,
+`L2999` · 10 disqualified · 3 closing), UNI-LABO et Univers en `closing`.
 
 ---
 
