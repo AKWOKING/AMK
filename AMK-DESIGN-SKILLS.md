@@ -1417,3 +1417,85 @@ mechanical (the four defects above, now automated). **The eye that decides remai
 next build it will be applied to is the school in October, on a blank page, not by re-opening a page
 that was just approved.
 
+## §27 ACCESSIBILITY — the level we promise, and the four things a machine cannot check (24 Sep 2026, learning batch [27])
+
+**Origin.** King: *« start with accessibility, I guess you will do research online, I'll add what I can
+find »*. The batch began with the two sources he sent — a Silktide explainer on the three levels and
+**Accessible Web's course of 55 videos, one per success criterion** — and continued into the two
+authorities: the **W3C** specification and quick reference, and **MDN**'s guides on keyboard access and
+accessible names. Full log with sources: **Lot [27]** of `research/YouTube-Lessons.md`. What came out of
+it: this doctrine, a machine check — **`tools/qa/audit_a11y.py`** (+ `tools/qa/test_audit_a11y.py`) — and
+**eleven real defects repaired on pages we had already shipped**. A checker that finds nothing on your own
+work was not worth writing.
+
+### 27.1 The level we promise is AA, and we say the number out loud
+
+Silktide names the three levels the way a client hears them: **A is "must do", AA is "should do", AAA is
+"reaching for the stars"** (sign-language video, 7:1 contrast everywhere, 44 px targets everywhere). AAA
+cannot be honoured by a commercial page and no laboratory or school here would pay for it. **AA is the
+level a law, a tender or a ministry asks for.** So we state **WCAG 2.2 level AA** — and always
+**standard + level**, never the adjective alone. "Our sites are accessible" is a claim; "built to WCAG 2.2
+AA, checked criterion by criterion" is a sentence that survives a question.
+
+### 27.2 The shape of an audit: one criterion, one number, at a time
+
+The useful thing in a 55-video course is not any single video, it is its **form**: 55 criteria, each one
+tested on its own, in order, and written down. That is how an audit is read, and how it differs from an
+opinion. Every line our checker prints therefore carries its number — `[1.1.1]`, `[2.4.7]`, `[3.3.2]` —
+and it prints what **passed** as well as what failed. A report that only lists faults cannot be trusted by
+the person who has to sign it.
+
+### 27.3 The four principles, mapped to what we actually test
+
+| principle | what it protects | criteria we test in code |
+|---|---|---|
+| **Perceivable** | seeing and hearing the content | `1.1.1` every image has an alt, and the alt is not a filename ("hero.jpg") or a filler word ("image"); `1.4.4` the viewport never blocks zoom; `1.4.10` no fixed 4-digit width without a media query; `1.4.13` nothing appears on hover only |
+| **Operable** | using it without a mouse | `2.1.1` no `onclick` on a non-interactive element; `2.4.3` never a positive `tabindex`; `2.4.7` `outline:none` demands a visible replacement; `2.5.8` targets ≥ 24 px; `2.2.2` no infinite animation without `prefers-reduced-motion` |
+| **Understandable** | knowing what is happening | `3.1.1` a `lang` on `<html>` (and the page sets it when the visitor switches language); `3.3.2` every field has a **associated** label — a placeholder is not a label; `3.3.1` a live region announces what happens after a click |
+| **Robust** | working with the tools people own | `4.1.2` every button has a name — an icon-only button needs `aria-label`, and text injected by JavaScript counts as no text at all |
+
+Three of these were found **on our own pages** and are the kind of thing that is invisible until someone
+looks for it: buttons whose whole label was written by JavaScript at runtime (so a screen reader and a
+crawler saw an empty button), a form whose two labels were next to the fields instead of attached to them,
+and a footer jumping from `h2` to `h4`.
+
+### 27.4 The four things a machine cannot check — and who checks them
+
+1. **Contrast.** Already covered elsewhere: `tools/qa/audit_html.py` computes the WCAG ratio of every text
+   run from the file's own CSS, in desktop and mobile contexts. Same standard, different tool.
+2. **The real tab order.** No script here has a browser. We can prove there is no positive `tabindex` and
+   that a focus style exists; that the order *feels* right needs a keyboard and a minute of patience.
+3. **200 % zoom / a narrow screen.** The reflow criteria are checkable in CSS, but nothing replaces looking.
+4. **The quality of an alt text.** This one we did not leave to a rule. The four family photos on the
+   UNI-LABO page carried the alt *"Photo d'illustration de laboratoire — Biochimie"* — which repeats the
+   tile text printed right underneath and tells a blind visitor nothing about the picture. **We opened the
+   four images and wrote what is actually in them** ("Six blue-capped tubes of yellow liquid in a purple
+   rack, with a micropipette lying beside them"). The rule is: describe the photograph, do not repeat the
+   label that is already next to it. *(A person still has the last word — the images and their alts are in
+   `demos/_unilabo_v2_content.py`, four lines, easy to correct.)*
+
+### 27.5 An automated accessibility test lies in both directions — so it is tested too
+
+Five false positives turned up the first time the checker ran on real pages, and all five were fixed in the
+tool rather than tolerated: an icon-only link that *did* carry an `aria-label`; a 19 px icon **inside** a
+button (the target is the button, not its glyph); a free-text field with no `autocomplete` (criterion 1.3.5
+only concerns data with a known meaning — name, e-mail, phone); a colour change on hover (that is not hidden
+content); and an icon inside a link that is already named. And one false **negative**: `a:focus{outline:none}`
+was satisfying our own "there is a focus rule" test — the exact rule that removes the focus ring. Lesson,
+now written into `tools/qa/test_audit_a11y.py`: **a checker is only trusted once it has been shown to
+refuse a deliberately broken page, to accept a deliberately clean one, and to run without complaint on our
+own pages.**
+
+### 27.6 What this is worth commercially, in one honest paragraph
+
+No Cameroonian law obliges a laboratory or a school to be accessible today, so **the reason to do it is not
+the law, it is the visitor**. The same work that a blind patient needs — real text instead of text inside an
+image, labels attached to fields, a page that survives 200 % zoom, targets big enough for a thumb, text that
+reads in bright sun on a cheap screen — is what everyone needs on a 3G phone in Bonamoussadi. It is also the
+one visible quality difference between our 150 000 FCFA page and a template, and it costs nothing extra to
+keep. For the October school, it becomes an argument: a school that receives parents with disabilities is
+not served by a site those parents cannot use.
+
+**What we do NOT claim:** that a page passed "an accessibility audit". We claim what we ran, on which
+criteria, and we say which four things still need a human eye. §26 ends on the same note: the eye that
+decides remains King's.

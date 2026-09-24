@@ -2768,3 +2768,64 @@ mord — vérifié : rc=1 sur les deux tutoriels, rc=0 sur nos pages).
 **Rien n'a été touché sur UNI-LABO.** Les leçons du premier écran sont du vocabulaire : elles serviront
 sur une page blanche (l'école d'octobre), pas à rouvrir une page que King vient de regarder.
 
+## 2026-09-24 · 09:40 → 11:10 · ACCESSIBILITÉ : le contrôle critère par critère, et onze défauts réparés sur nos propres pages
+
+Consigne de King : **« start with accessibility, I guess you will do research online, I'll add what I can
+find »**. Deux sources de lui (Silktide sur les trois niveaux, et le cours d'audit d'Accessible Web — **55
+vidéos, une par critère de succès**), puis les documents qui font foi : la spécification **W3C** (WCAG 2.1,
+et le quickref de la **2.2**, la plus récente) et les guides **MDN** (clavier, noms accessibles). Rien
+n'est enregistré d'une vidéo avant d'avoir été lu — la règle du lot [26] tient.
+
+**Ce qu'on vise, écrit noir sur blanc : WCAG 2.2 niveau AA.** Silktide nomme les niveaux comme un client
+les entend : A = « must do », AA = « should do », AAA = « reaching for the stars » (langue des signes,
+contraste 7:1 partout, cibles 44 px partout). AAA n'est pas tenable sur une page commerciale ; **AA est le
+niveau qu'un appel d'offres ou un ministère exige**. On annonce donc un **standard ET un niveau**, jamais
+l'adjectif tout seul.
+
+**L'outil** : `tools/qa/audit_a11y.py` — chaque constat porte le **numéro du critère** (`[1.1.1]`, `[2.4.7]`,
+`[3.3.2]`…), parce que c'est ainsi qu'un audit se lit et se conteste, et il **dit aussi ce qui est
+conforme**. Testé par `tools/qa/test_audit_a11y.py` : douze défauts attendus sur une page fautive, zéro
+alerte sur une page saine. Intégré à la **route « website build »** du PRE-FLIGHT et à la **porte technique
+§1b** (`--strict` : rc=1 dès une faute de niveau A ou AA).
+
+**Onze défauts trouvés sur nos propres pages, et réparés** — c'est la seule preuve qui compte :
+
+1. Sur le site AMK, **deux boutons dont tout le texte était écrit par le JavaScript** (langue, widget
+   vocal) : dans le HTML ils n'avaient **aucun nom**. Aucun lecteur d'écran, aucun moteur de recherche ne
+   voyait quoi que ce soit. → `aria-label` bilingue.
+2. Un **bouton micro en icône seule** sans nom (4.1.2).
+3. **Deux champs du formulaire du site dont l'étiquette n'était pas attachée** au champ (label voisin, sans
+   `for`) : un lecteur d'écran annonçait « champ de texte » sans dire lequel (3.3.2). → `for=` + deux
+   `autocomplete`. Et le formulaire **écrit maintenant sa réponse** après le clic (zone vivante) avec un
+   rattrapage si le navigateur bloque la fenêtre — c'est la leçon d'UX du lot [22], côté accessibilité.
+4. **Des sauts de niveau dans les titres** : `h2`→`h4` et `h2`→`h5` sur le site, `h2`→`h4` au pied de page
+   d'UNI-LABO (1.3.1). Pour qui navigue de titre en titre, c'est le sommaire qui perd une rubrique.
+5. **Dix icônes décoratives** non marquées `aria-hidden` : le lecteur d'écran disait « image » avant chaque
+   lien (1.1.1).
+6. **Le menu mobile ne disait pas qu'il s'ouvrait** (pas d'`aria-expanded`, pas de touche Échap pour le
+   fermer) et **les boutons de langue ne disaient pas lequel était actif** → `aria-pressed`.
+7. **Les quatre photos de familles d'UNI-LABO** portaient un texte alternatif qui répétait le titre déjà
+   imprimé sous la photo. **Les images ont été ouvertes une par une** et les alts disent maintenant ce
+   qu'elles montrent.
+
+La page UNI-LABO passe de 84 671 à **85 299 octets** (les alts descriptifs et les titres du pied de page),
+**82 912 caractères** ; copie hébergée resynchronisée. Le compte rendu du constructeur affichait des
+*caractères* en annonçant des *octets* : corrigé, il donne les deux.
+
+**Vérifié après coup, sur les six pages** : `audit_a11y.py --strict` → **0 faute A/AA** ; `audit_html.py`
+→ **0 constat** (structure **et** contraste de chaque texte, desktop et mobile : 268 textes sur le site,
+385 sur UNI-LABO) ; `check_inline_js` → 3 blocs, 0 faute ; harnais UNI-LABO **42/42** ; portique `--strict`
+rc=0. **Ce que ça ne prouve pas, et qui est écrit dans le rapport** : le contraste (autre outil), l'ordre de
+tabulation réel, le rendu à 200 % de zoom, la qualité d'un alt — quatre choses qui demandent un œil humain.
+
+**Écrit** : §27 de `AMK-DESIGN-SKILLS.md` (le niveau promis, la forme d'un audit, les 4 principes, les 4
+choses qu'une machine ne vérifie pas, les **5 faux positifs** de mon propre outil — dont un faux *négatif*
+où `a:focus{outline:none}` satisfaisait son test « une règle de focus existe ») ; lot [27] de
+`research/YouTube-Lessons.md` (les sources, ce que chacune a apporté, ce qu'elle ne prouve pas) ;
+**§10** de `clients/uni-labo/AUDIT-2026-09-23.md` (ce que la passe change pour le laboratoire, et **rien à
+dire en séance sauf si la question vient**).
+
+⚠️ **Deux pages modifiées devront être redéployées par King** : le site AMK (`site/index.html`) et le
+dossier UNI-LABO entier (`hosting/previews/unilabo/`, dix fichiers) — comme prévu avant vendredi.
+**Le Cristallin et Univers Optique n'ont pas été touchés** : leurs constats (saut de titre pour Univers,
+icône dans un lien pour le Cristallin) sont **notés** dans le test du contrôle, pas corrigés — gel.

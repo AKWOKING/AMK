@@ -1,6 +1,6 @@
 # Univers Optique
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-23. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-24. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -40,7 +40,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 101 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 103 ligne(s).*
 
 `L51` · | **ven 18/09 20:02** | **Clinique de L'université** (Bassa, 694 36 02 03) | msg 1 — sans maquette | Envoyé | **Non** |
 `L113` · | 20:02 | Cabinet Dentaire Emmanuel · Clinique de L'université · MEDI LABO |
@@ -143,6 +143,8 @@
 `L2466` · `univers-optique`, `uni-labo`), et c'est vérifié par `grep`. Leçon : un message de commit qui décrit une
 `L2525` · Univers tient : rien d'autre n'a été touché.
 `L2656` · **Ce qui n'a pas été touché :** le Cristallin et Univers Optique (gel), les trois autres photos
+`L2732` · **Les deux muettes :** les tutoriels d'UI UNIVERSITY (`iDzt8VWqjEg`, `nbBQCeOCMmQ`). Leurs sous-titres ne
+`L2830` · **Le Cristallin et Univers Optique n'ont pas été touchés** : leurs constats (saut de titre pour Univers,
 
 ---
 

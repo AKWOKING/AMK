@@ -1103,7 +1103,9 @@ DOSSIERS = {
     "adonai-douala": "clients/douala-cliniques/04-adonai.jpg",
     "qualitech-douala": "clients/douala-cliniques/05-qualitech.jpg",
     "malia-labo-douala": "clients/douala-cliniques/06-malia-labo.jpg",
-    "uni-labo-bonamoussadi": "clients/douala-cliniques/07-unilabo.jpg",
+    # le dossier de travail RÉEL du lead le plus actif (audit, notes de build, concept) — c'était
+    # une vignette de maquette qui était liée ici, et le dossier `clients/uni-labo/` restait orphelin : M4 le refusait, à raison.
+    "uni-labo-bonamoussadi": "clients/uni-labo/",
     "centre-medical-de-bonanjo": "clients/_mockups/bonanjo.jpg",
     "2k-labo-yassa": "clients/_mockups/labs/2k-labo.jpg",
     "interlabo-akwa": "clients/_mockups/labs/interlabo.jpg",
@@ -1557,7 +1559,7 @@ JOUR_2309 = {
             "site from scratch » (six captures d'anresco.com en main ; seconde référence : animate.bio). "
             "Nos outils étaient verts et la page était quand même rejetée : huit photographies, dont quatre "
             "en bandeaux, certaines avec du texte posé dessus — nos mesures portaient sur des éléments, son "
-            "regard portait sur la composition. Nouvelle page : `demos/concept-unilabo-v2.html` (84 671 o au "
+            "regard portait sur la composition. Nouvelle page : `demos/concept-unilabo-v2.html` (85 299 o au "
             "lieu de 94 509), hero SANS photo, CINQ photographies (une par famille d'analyses + la "
             "préparation) jamais derrière du texte et légendées « mise en situation », préparation en cinq "
             "accordéons natifs, mobile d'abord pour de vrai (une colonne par défaut, colonnes à partir de "

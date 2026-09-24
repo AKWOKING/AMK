@@ -1004,12 +1004,68 @@ que deux vidéos sur cinq n'en avaient aucune).
 
 | priorité | sujet | le manque que ça comble | sources (à lire avant d'enregistrer) |
 |---|---|---|---|
-| 1 | **L'accessibilité (WCAG) sur nos pages** | le lot [26] a trouvé des mots écrits dans le CSS, invisibles aux lecteurs d'écran. Nos clients sont des **institutions** (écoles, labos) : l'accessibilité y est un argument de sérieux, pas une mode | W3C WAI (référence officielle) · web.dev (Learn Accessibility) · les rapports de l'auditeur `tools/qa/audit_page.py` |
+| 1 **(choisie, faite — lot [27])** | **L'accessibilité (WCAG) sur nos pages** | le lot [26] a trouvé des mots écrits dans le CSS, invisibles aux lecteurs d'écran. Nos clients sont des **institutions** (écoles, labos) : l'accessibilité y est un argument de sérieux, pas une mode | W3C WAI (référence officielle) · web.dev (Learn Accessibility) · les rapports de l'auditeur `tools/qa/audit_page.py` |
 | 2 | **Google Business Profile à fond** (fiche établissement, avis, photos, horaires) | c'est la troisième cible du lot [26] (les avis) et la première chose qu'un patient ou un parent voit. Aujourd'hui on l'évoque, on ne le vend pas | documentation officielle Google Business Profile · `AMK-SEO-PLAYBOOK.md` §8 en regard |
 | 3 | **WhatsApp Business pour un commerce** (catalogue, messages d'accueil, réponses rapides, étiquettes) | nous vendons « formulaire WhatsApp » ; si le client n'a pas configuré son WhatsApp Business, l'expérience s'arrête à l'envoi | WhatsApp Business — aide officielle (faq.whatsapp.com) · tutoriels de commerçants |
 | 4 | **Photographier un labo/un cabinet avec un téléphone** | la photo n'est pas comprise dans les 150 000 et nous allons devoir la prendre nous-mêmes, dans leur lumière, sans mentir | à chercher et vérifier (éclairage naturel, plans serrés, arrière-plan) — je proposerai trois candidats lus d'avance |
 | 5 | **Prix et récurrence** (comment vendre un abonnement sans remiser) | une décision est ouverte : l'échelonnement du paiement au prix plein, ou le site compris dans 12 mois d'abonnement (§5 de `sales/APPELS-GOOGLE-MAPS-2026-09-24.md`) | études de cas d'agences, hors marchés US si possible — à filtrer sévèrement |
 | 6 | **Le français d'ici** (écrire pour un commerçant de Douala) | nos textes sont propres mais parfois « traduits » ; les clients parlent un français plus direct | à construire **nous-mêmes** : relire nos 20 meilleurs messages et extraire nos propres règles, avec les mots des clients (le journal en est plein) |
+
+---
+
+## Lot [27] · ACCESSIBILITÉ (WCAG) — 2 sources de King + les documents officiels (King, 24/09/2026)
+
+**Déclencheur.** King : *« start with accessibility, I guess you will do research online, I'll add what I
+can find »*. Il a envoyé deux sources ; le reste, je suis allé le chercher aux endroits qui font foi (W3C,
+MDN) plutôt que chez ceux qui vendent un service. C'était la priorité n° 1 de la liste « apprendre
+ensuite » écrite la veille dans ce même fichier.
+
+### Les sources lues, et ce que chacune a apporté
+
+| source | ce qu'elle apporte réellement | ce qu'on en garde |
+|---|---|---|
+| **Silktide**, *WCAG explained* (`youtu.be/5H1JGdqLrWo`, 1:50) | la façon dont un client entend les niveaux : **A = « must do », AA = « should do », AAA = « reaching for the stars »** | le vocabulaire. On annonce **WCAG 2.2 niveau AA** : un standard **et** un niveau, jamais l'adjectif seul |
+| **Accessible Web**, *Manual WCAG Auditing Tutorial* (playlist `PLqQI0lmiVs1jhQQNAprIPCjFUYVBB7tY8`, **55 vidéos**) | une vidéo par **critère de succès**, intitulée *« Testing X.Y.Z… »* ; la playlist couvre WCAG 2.2 (2.4.11, 2.5.7, 2.5.8, 3.2.6, 3.3.7, 3.3.8, 4.1.2, 4.1.3) | **la forme d'un audit** : on passe les critères un par un, dans l'ordre, et on écrit ce qu'on a vérifié. Leur outil RAMP et les rappels d'extension sont écartés (marketing) |
+| **W3C**, `TR/WCAG21` + `WAI/WCAG22/quickref` | les critères eux-mêmes, leur numéro, leurs techniques ; la 2.2 est la plus récente (2.1 et 2.0 restent valides) | la numérotation est la langue commune — c'est elle qui rend un rapport vérifiable |
+| **MDN**, *Understanding WCAG* + *Keyboard accessible* + *Text labels and names* | les 4 principes **POUR** ; « un élément focusable doit être interactif » ; **jamais `tabindex` positif** ; un clic doit avoir un équivalent clavier ; un `<title>` est obligatoire ; un dialogue a un nom | les règles de terrain, plus lisibles que la spécification pour décider vite |
+
+### Ce que l'audit a trouvé SUR NOS PAGES (et qui a été réparé)
+
+Un contrôle d'accessibilité qui ne trouve rien sur ce qu'on a déjà livré ne valait pas la peine d'être écrit.
+Onze défauts, sur quatre pages, dont trois invisibles à l'œil :
+
+1. **Deux boutons dont tout le texte venait du JavaScript** (site AMK : le bouton de langue et celui du
+   widget vocal). Dans le HTML, ils n'avaient **aucun nom** : ni un lecteur d'écran ni un moteur de recherche
+   ne voyaient quoi que ce soit. → `aria-label` bilingue.
+2. **Un bouton micro en icône seule**, sans nom (WCAG 4.1.2).
+3. **Deux champs du formulaire du site dont l'étiquette n'était pas attachée** (`<label>` voisin, sans
+   `for`). Un lecteur d'écran annonçait « champ de texte », sans dire lequel (WCAG 3.3.2). → `for=` + deux
+   `autocomplete`. Et le formulaire écrit maintenant sa réponse après le clic, avec un rattrapage si le
+   navigateur bloque la fenêtre (WCAG 3.3.1 : la leçon d'UX du lot [22], côté accessibilité).
+4. **Des sauts de niveau dans les titres** : `h2` → `h4` et `h2`→`h5` sur le site, `h2`→`h4` au pied de page
+   d'UNI-LABO. La hiérarchie est la carte du document pour qui navigue de titre en titre (WCAG 1.3.1).
+5. **Dix icônes décoratives non marquées** `aria-hidden` : le lecteur d'écran annonçait « image » sans rien
+   dire avant chaque lien (WCAG 1.1.1).
+6. **Un menu mobile qui ne disait pas qu'il s'ouvrait** : pas d'`aria-expanded`, et la touche Échap ne le
+   fermait pas. Les boutons de langue ne disaient pas lequel était actif (`aria-pressed`).
+7. **Les quatre photos de familles d'UNI-LABO** portaient un alt qui répétait le texte déjà imprimé sous la
+   photo (« Photo d'illustration de laboratoire — Biochimie »). **On a ouvert les images** et écrit ce
+   qu'elles montrent : six tubes à bouchon bleu dans un portoir violet avec une micropipette ; un frottis
+   sanguin ; une pipette sur une plaque à puits violets ; un automate à bras mécanique au-dessus d'un
+   carrousel de tubes.
+
+### Ce que ça a produit, et ce que ça ne prouve pas
+
+- **Le contrôle `tools/qa/audit_a11y.py`** (WCAG 2.2 AA), testé par `tools/qa/test_audit_a11y.py` : douze
+  défauts attendus sur une page fautive, zéro alerte sur une page saine, et il **dit aussi ce qui est
+  conforme**. Les pages AMK et UNI-LABO sortent à **0 faute A/AA**. La doctrine est en **§27**.
+- **Ce que ça ne prouve pas** : le contraste (couvert par `audit_html.py`), l'ordre de tabulation réel, le
+  rendu à 200 %, et la qualité d'un alt — les quatre demandent un œil. On l'écrit dans le rapport, on ne le
+  cache pas.
+- **Une leçon d'outillage** : le premier jet de mon contrôle a produit **cinq faux positifs** (et un faux
+  négatif : `a:focus{outline:none}` satisfaisait son propre test « une règle de focus existe »). Corrigés
+  dans l'outil, jamais tolérés. C'est la même leçon qu'au lot [26] avec les deux vidéos muettes : **vérifier
+  l'instrument avant de croire la mesure.**
 
 **Le désaccord méthodologique à noter :** pour 5 et 6, les sources utiles ne sont pas des vidéos YouTube.
 Le lot [26] a montré le plafond de ce format (deux vidéos sur cinq muettes, et les autres vendent une

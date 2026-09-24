@@ -287,7 +287,7 @@ details.faq p{margin:0 0 20px;color:var(--mute);font-size:var(--fs-sm);max-width
 .foot a{color:#fff;text-decoration:none}
 .foot-grid{display:grid;gap:30px}
 @media (min-width:760px){ .foot-grid{grid-template-columns:1.4fr 1fr 1fr} }
-.foot h4{margin:0 0 12px;font-family:var(--f-display);font-size:var(--fs-label);letter-spacing:.06em;
+.foot h3.foot-h{margin:0 0 12px;font-family:var(--f-display);font-size:var(--fs-label);letter-spacing:.06em;
   text-transform:uppercase;color:var(--mute-on-ink)}
 .foot ul{margin:0;padding:0;list-style:none;display:grid;gap:10px;font-size:var(--fs-sm)}
 .foot .pres{color:var(--mute-on-ink);font-size:var(--fs-sm);margin:.6rem 0 0;max-width:44ch}
@@ -486,8 +486,8 @@ def build():
     for f in FAMILIES:
         A('<figure class="fam">')
         A(img("unilabo-f-" + f["slug"], "", 800, 500,
-              "Photo d'illustration de laboratoire — %s." % re.sub("&amp;", "et", f["fr"]),
-              "Laboratory illustration photo: %s." % re.sub("&amp;", "and", f["en"]),
+              f.get("alt_fr", f["fr"]),
+              f.get("alt_en", f["en"]),
               sm_w=640, sizes="(min-width:820px) 520px, 92vw"))
         A('<figcaption class="fam-b">')
         A('<h3>%s</h3>' % bi(f["fr"], f["en"]))
@@ -618,7 +618,7 @@ def build():
     A('<div class="foot-grid">')
     A('<div><a class="brand" href="#top" style="color:#fff"><b style="color:#fff">UNI-LABO</b></a>'
       '<p class="pres">%s</p></div>' % bi(FOOT["pres_fr"], FOOT["pres_en"]))
-    A('<div><h4>%s</h4><ul>' % bi("Sur cette page", "On this page"))
+    A('<div><h3 class="foot-h">%s</h3><ul>' % bi("Sur cette page", "On this page"))
     for href, l_fr, l_en in (("#analyses", "Nos analyses", "Our tests"),
                              ("#preparation", "Préparation", "Preparation"),
                              ("#rendez-vous", "Prendre rendez-vous", "Book a visit"),
@@ -626,7 +626,7 @@ def build():
                              ("#trouver", "Nous trouver", "Find us")):
         A('<li><a href="%s">%s</a></li>' % (href, bi(l_fr, l_en)))
     A('</ul></div>')
-    A('<div><h4>%s</h4><ul>' % bi("Nous joindre", "Reach us"))
+    A('<div><h3 class="foot-h">%s</h3><ul>' % bi("Nous joindre", "Reach us"))
     # le lien du pied de page portait autrefois une URL nue : le visiteur arrivait dans WhatsApp avec un
     # fil vide, et il devait écrire lui-même. C'est le même lien que les autres maintenant.
     A('<li>%s</li>' % wa_link("", bi("WhatsApp " + LAB["tel_wa"], "WhatsApp " + LAB["tel_wa"]),
@@ -731,7 +731,7 @@ def build_form():
 if __name__ == "__main__":
     html = build()
     io.open(OUT, "w", encoding="utf-8").write(html)
-    print("écrit : %s — %d octets" % (OUT, len(html)))
+    print("écrit : %s — %d caractères / %d octets" % (OUT, len(html), len(html.encode("utf-8"))))
     for probe, label in (('id="rdv-go"', "bouton d'envoi"), ('id="fiche-tests"', "fiche vivante"),
                          ('id="open-state"', "état d'ouverture"), ("srcset=", "variantes d'images"),
                          ('class="fr-only"', "bilingue")):

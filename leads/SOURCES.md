@@ -1,6 +1,6 @@
 # SOURCES — d'où viennent les leads
 
-> ⚙️ **Généré le 2026-09-23 par `leads/build/views.py` — ne pas modifier à la main.**
+> ⚙️ **Généré le 2026-09-24 par `leads/build/views.py` — ne pas modifier à la main.**
 > Toute correction se fait dans `leads/build/crm.py` ou `sales/Activity-Log.md`, puis on relance `leads/build/rebuild.sh`.
 
 | Source | Leads | Ce que ça dit |

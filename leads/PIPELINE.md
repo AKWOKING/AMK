@@ -1,6 +1,6 @@
 # PIPELINE — où en est chaque lead
 
-> ⚙️ **Généré le 2026-09-23 par `leads/build/views.py` — ne pas modifier à la main.**
+> ⚙️ **Généré le 2026-09-24 par `leads/build/views.py` — ne pas modifier à la main.**
 > Toute correction se fait dans `leads/build/crm.py` ou `sales/Activity-Log.md`, puis on relance `leads/build/rebuild.sh`.
 
 ## Compteur
@@ -26,9 +26,9 @@
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| Le Cristallin | Douala | 699 90 55 77 | `L2656` |
+| Le Cristallin | Douala | 699 90 55 77 | `L2831` |
 | UNI-LABO | Douala (Bonamoussadi, Carrefour Etoo) | 696 13 98 19 | `L134` |
-| Univers Optique | Douala | 699 25 28 74 | `L2656` |
+| Univers Optique | Douala | 699 25 28 74 | `L2830` |
 
 ## ② Qualifié — en conversation — 10
 

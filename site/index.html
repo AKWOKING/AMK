@@ -531,7 +531,7 @@ details[open] summary::after{transform:rotate(45deg);color:var(--amber)}
 .ap p{font-size:15px;color:#B6C2D6}
 .ap p b{color:#fff}
 .direct{margin-top:36px;padding:24px;border:1px solid var(--navy3);border-radius:16px;background:rgba(30,41,59,.4)}
-.direct h4{font-size:15px;margin-bottom:8px}
+.direct h3{font-size:15px;margin-bottom:8px}
 .direct p{font-size:15px;margin:4px 0;color:#CBD5E1}
 .direct a{color:var(--amber-l);font-weight:700}
 .form-card{background:#fff;color:var(--ink);border-radius:20px;padding:32px;box-shadow:0 40px 80px rgba(0,0,0,.4)}
@@ -552,7 +552,8 @@ footer{background:var(--navy);color:#94A3B8;padding:70px 0 30px;border-top:1px s
 .f-brand{display:flex;align-items:center;gap:11px;margin-bottom:16px}
 .f-brand svg{width:38px;height:38px}
 .f-brand .t{color:#fff;font-weight:800;font-size:17px}
-.f-grid h5{color:#fff;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px}
+.f-status{margin:10px 0 0;font-size:13.5px;color:var(--green,#0B7A3E);font-weight:600;min-height:0}
+.f-grid h3{color:#fff;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px}
 .f-grid a{display:block;padding:5px 0;font-size:14.5px;transition:.15s}
 .f-grid a:hover{color:var(--amber-l)}
 .f-bottom{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:13px;padding-top:24px;border-top:1px solid var(--navy3)}
@@ -611,7 +612,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
 <header id="hdr">
   <div class="wrap h-in">
     <a class="brand" href="#top" aria-label="AMK">
-      <svg viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1E293B"/><circle cx="32" cy="30" r="17" fill="none" stroke="#F59E0B" stroke-width="2.4"/><path d="M32 16v28M32 30L18 44M32 30l14 14" stroke="#FCD34D" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="16" r="3" fill="#F59E0B"/><circle cx="18" cy="44" r="3" fill="#F59E0B"/><circle cx="46" cy="44" r="3" fill="#F59E0B"/></svg>
+      <svg aria-hidden="true" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1E293B"/><circle cx="32" cy="30" r="17" fill="none" stroke="#F59E0B" stroke-width="2.4"/><path d="M32 16v28M32 30L18 44M32 30l14 14" stroke="#FCD34D" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="16" r="3" fill="#F59E0B"/><circle cx="18" cy="44" r="3" fill="#F59E0B"/><circle cx="46" cy="44" r="3" fill="#F59E0B"/></svg>
       <span class="t">AMK<small data-en="Web Development & Digital Solutions" data-fr="Développement Web & Solutions Digitales">Web Development & Digital Solutions</small></span>
     </a>
     <nav class="main">
@@ -623,23 +624,23 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
       <a href="#faq" data-en="FAQ" data-fr="FAQ">FAQ</a>
     </nav>
     <div class="lang-sw">
-      <button id="btn-en" class="on" onclick="setLang('en')">EN</button>
-      <button id="btn-fr" onclick="setLang('fr')">FR</button>
+      <button id="btn-en" class="on" aria-pressed="true" onclick="setLang('en')">EN</button>
+      <button id="btn-fr" aria-pressed="false" onclick="setLang('fr')">FR</button>
     </div>
     <a href="#audit" class="btn btn-amber h-cta" data-en="Free 24h preview" data-fr="Aperçu gratuit 24h">Free 24h preview</a>
-    <button id="m-btn" aria-label="Menu" onclick="document.getElementById('m-nav').classList.add('open')"><span></span><span></span><span></span></button>
+    <button id="m-btn" aria-label="Menu" aria-controls="m-nav" aria-expanded="false" onclick="openM()"><span></span><span></span><span></span></button>
   </div>
 </header>
 <div class="m-nav" id="m-nav">
-  <button class="m-close" aria-label="Close menu" onclick="document.getElementById('m-nav').classList.remove('open')">×</button>
+  <button class="m-close" aria-label="Close menu" onclick="closeM()">×</button>
   <a href="#work" onclick="closeM()" data-en="Work" data-fr="Réalisations">Work</a>
   <a href="#process" onclick="closeM()" data-en="Process" data-fr="Processus">Process</a>
   <a href="#pricing" onclick="closeM()" data-en="Pricing" data-fr="Tarif">Pricing</a>
   <a href="#faq" onclick="closeM()" data-en="FAQ" data-fr="FAQ">FAQ</a>
   <a href="#audit" class="btn btn-amber" onclick="closeM()" data-en="Get my free 24h preview" data-fr="Recevoir mon aperçu gratuit 24h">Get my free 24h preview</a>
   <div class="lang-sw" style="align-self:center;margin-top:20px">
-    <button id="btn-en-m" class="on" onclick="setLang('en')">EN</button>
-    <button id="btn-fr-m" onclick="setLang('fr')">FR</button>
+    <button id="btn-en-m" class="on" aria-pressed="true" onclick="setLang('en')">EN</button>
+    <button id="btn-fr-m" aria-pressed="false" onclick="setLang('fr')">FR</button>
   </div>
 </div>
 
@@ -717,9 +718,9 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
       <p class="sub" data-en="Broken, invisible on mobile, or missing from Google — any one of them sends parents and patients to the institution next door." data-fr="Cassé, invisible sur mobile, ou absent de Google — chacune de ces failles envoie les parents et les patients à l'établissement d'à côté.">Broken, invisible on mobile, or missing from Google — any one of them sends parents and patients to the institution next door.</p>
     </div>
     <div class="cards3">
-      <div class="pcard rv"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2"><path d="M12 9v4m0 4h.01M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg></div><h3 data-en="The broken link" data-fr="Le lien cassé">The broken link</h3><p data-en="Expired domain, error page, dead phone number. Every parent or patient who stumbles on it keeps the address of the school or clinic next door." data-fr="Domaine expiré, page d'erreur, numéro injoignable. Chaque parent ou patient qui tombe dessus retient l'adresse de l'école ou de la clinique d'à côté.">Expired domain, error page, dead phone number. Every parent or patient who stumbles on it keeps the address of the school or clinic next door.</p></div>
-      <div class="pcard rv" data-d="100"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div><h3 data-en="The phone-size problem" data-fr="Le problème du téléphone">The phone-size problem</h3><p data-en="Your visitors scroll on phones, at night, on 3G. If your site doesn't load there in seconds, you're not in the conversation." data-fr="Vos visiteurs consultent sur téléphone, le soir, en 3G. Si votre site ne s'y charge pas en quelques secondes, vous n'êtes pas dans la conversation.">Your visitors scroll on phones, at night, on 3G. If your site doesn't load there in seconds, you're not in the conversation.</p></div>
-      <div class="pcard rv" data-d="200"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M8 11h6"/></svg></div><h3 data-en="The Google invisibility" data-fr="L'invisibilité sur Google">The Google invisibility</h3><p data-en="Slow, hard to read, one language? Google ranks the school or clinic with the better site first — even when yours is better." data-fr="Lent, difficile à lire, une seule langue ? Google classe d'abord l'école ou la clinique au meilleur site — même quand la vôtre est meilleure.">Slow, hard to read, one language? Google ranks the school or clinic with the better site first — even when yours is better.</p></div>
+      <div class="pcard rv"><div class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2"><path d="M12 9v4m0 4h.01M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg></div><h3 data-en="The broken link" data-fr="Le lien cassé">The broken link</h3><p data-en="Expired domain, error page, dead phone number. Every parent or patient who stumbles on it keeps the address of the school or clinic next door." data-fr="Domaine expiré, page d'erreur, numéro injoignable. Chaque parent ou patient qui tombe dessus retient l'adresse de l'école ou de la clinique d'à côté.">Expired domain, error page, dead phone number. Every parent or patient who stumbles on it keeps the address of the school or clinic next door.</p></div>
+      <div class="pcard rv" data-d="100"><div class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div><h3 data-en="The phone-size problem" data-fr="Le problème du téléphone">The phone-size problem</h3><p data-en="Your visitors scroll on phones, at night, on 3G. If your site doesn't load there in seconds, you're not in the conversation." data-fr="Vos visiteurs consultent sur téléphone, le soir, en 3G. Si votre site ne s'y charge pas en quelques secondes, vous n'êtes pas dans la conversation.">Your visitors scroll on phones, at night, on 3G. If your site doesn't load there in seconds, you're not in the conversation.</p></div>
+      <div class="pcard rv" data-d="200"><div class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M8 11h6"/></svg></div><h3 data-en="The Google invisibility" data-fr="L'invisibilité sur Google">The Google invisibility</h3><p data-en="Slow, hard to read, one language? Google ranks the school or clinic with the better site first — even when yours is better." data-fr="Lent, difficile à lire, une seule langue ? Google classe d'abord l'école ou la clinique au meilleur site — même quand la vôtre est meilleure.">Slow, hard to read, one language? Google ranks the school or clinic with the better site first — even when yours is better.</p></div>
     </div>
     <div class="cmp rv">
       <div class="cmp-head" data-en="An old-school website vs. what we build" data-fr="Un site à l'ancienne vs. ce que nous construisons">An old-school website vs. what we build</div>
@@ -810,10 +811,10 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
       <h2 data-en="Everything a school or clinic needs. Nothing it doesn't." data-fr="Tout ce qu'une école ou une clinique a besoin. Rien de superflu.">Everything a school or clinic needs. Nothing it doesn't.</h2>
     </div>
     <div class="svc-grid">
-      <div class="svc rv"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FCD34D" stroke-width="2"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3zM12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></div><div><h3 data-en="Custom website & branding" data-fr="Site web sur mesure & identité">Custom website & branding</h3><p data-en="Designed around your logo, your colors, your story — and built to be found for “school in Buea”, “dentist in Buea” or “école privée à Douala”. Fast on 3G, clean structure Google rewards." data-fr="Conçu autour de votre logo, vos couleurs, votre histoire — et pensé pour être trouvé sur « école à Buea », « dentiste à Buea » ou « école privée à Douala ». Rapide en 3G, structure propre que Google récompense.">Designed around your logo, your colors, your story — and built to be found for “school in Buea”, “dentist in Buea” or “école privée à Douala”. Fast on 3G, clean structure Google rewards.</p></div></div>
-      <div class="svc rv" data-d="80"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FCD34D" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.9 5.7 3.9 9S14.5 18.4 12 21c-2.5-2.6-3.9-5.7-3.9-9S9.5 5.6 12 3z"/></svg></div><div><h3 data-en="Bilingual EN|FR — standard, included" data-fr="Bilingue EN|FR — standard, inclus">Bilingual EN|FR — standard, included</h3><p data-en="Cameroon is a bilingual country, so is your website. Every page in both languages, one click. No upsell, ever." data-fr="Le Cameroun est bilingue, votre site aussi. Chaque page dans les deux langues, un clic. Jamais d'option payante.">Cameroon is a bilingual country, so is your website. Every page in both languages, one click. No upsell, ever.</p></div></div>
-      <div class="svc rv" data-d="160"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FCD34D" stroke-width="2"><path d="M21 11.5a8.5 8.5 0 01-8.5 8.5c-1.6 0-3.1-.4-4.4-1.2L3 20l1.2-5.1A8.5 8.5 0 1121 11.5z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/></svg></div><div><h3 data-en="WhatsApp-first: booking that works" data-fr="WhatsApp d'abord : une prise de rendez-vous qui fonctionne">WhatsApp-first: booking that works</h3><p data-en="Every button on every screen routes to your WhatsApp — admissions, appointments, questions. The channel your visitors already live in." data-fr="Chaque bouton de chaque écran mène à votre WhatsApp — admissions, rendez-vous, questions. Le canal où vos visiteurs vivent déjà.">Every button on every screen routes to your WhatsApp — admissions, appointments, questions. The channel your visitors already live in.</p></div></div>
-      <div class="svc rv" data-d="240"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FCD34D" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div><div><h3 data-en="Domain, hosting & training" data-fr="Domaine, hébergement & formation">Domain, hosting & training</h3><p data-en="Secure SSL hosting, 99.9% uptime, 30-minute staff training, and WhatsApp support when you need us." data-fr="Hébergement sécurisé SSL, disponibilité 99,9 %, formation du personnel en 30 min, et support WhatsApp quand il faut.">Secure SSL hosting, 99.9% uptime, 30-minute staff training, and WhatsApp support when you need us.</p></div></div>
+      <div class="svc rv"><div class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FCD34D" stroke-width="2"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3zM12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></div><div><h3 data-en="Custom website & branding" data-fr="Site web sur mesure & identité">Custom website & branding</h3><p data-en="Designed around your logo, your colors, your story — and built to be found for “school in Buea”, “dentist in Buea” or “école privée à Douala”. Fast on 3G, clean structure Google rewards." data-fr="Conçu autour de votre logo, vos couleurs, votre histoire — et pensé pour être trouvé sur « école à Buea », « dentiste à Buea » ou « école privée à Douala ». Rapide en 3G, structure propre que Google récompense.">Designed around your logo, your colors, your story — and built to be found for “school in Buea”, “dentist in Buea” or “école privée à Douala”. Fast on 3G, clean structure Google rewards.</p></div></div>
+      <div class="svc rv" data-d="80"><div class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FCD34D" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.9 5.7 3.9 9S14.5 18.4 12 21c-2.5-2.6-3.9-5.7-3.9-9S9.5 5.6 12 3z"/></svg></div><div><h3 data-en="Bilingual EN|FR — standard, included" data-fr="Bilingue EN|FR — standard, inclus">Bilingual EN|FR — standard, included</h3><p data-en="Cameroon is a bilingual country, so is your website. Every page in both languages, one click. No upsell, ever." data-fr="Le Cameroun est bilingue, votre site aussi. Chaque page dans les deux langues, un clic. Jamais d'option payante.">Cameroon is a bilingual country, so is your website. Every page in both languages, one click. No upsell, ever.</p></div></div>
+      <div class="svc rv" data-d="160"><div class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FCD34D" stroke-width="2"><path d="M21 11.5a8.5 8.5 0 01-8.5 8.5c-1.6 0-3.1-.4-4.4-1.2L3 20l1.2-5.1A8.5 8.5 0 1121 11.5z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/></svg></div><div><h3 data-en="WhatsApp-first: booking that works" data-fr="WhatsApp d'abord : une prise de rendez-vous qui fonctionne">WhatsApp-first: booking that works</h3><p data-en="Every button on every screen routes to your WhatsApp — admissions, appointments, questions. The channel your visitors already live in." data-fr="Chaque bouton de chaque écran mène à votre WhatsApp — admissions, rendez-vous, questions. Le canal où vos visiteurs vivent déjà.">Every button on every screen routes to your WhatsApp — admissions, appointments, questions. The channel your visitors already live in.</p></div></div>
+      <div class="svc rv" data-d="240"><div class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FCD34D" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div><div><h3 data-en="Domain, hosting & training" data-fr="Domaine, hébergement & formation">Domain, hosting & training</h3><p data-en="Secure SSL hosting, 99.9% uptime, 30-minute staff training, and WhatsApp support when you need us." data-fr="Hébergement sécurisé SSL, disponibilité 99,9 %, formation du personnel en 30 min, et support WhatsApp quand il faut.">Secure SSL hosting, 99.9% uptime, 30-minute staff training, and WhatsApp support when you need us.</p></div></div>
     </div>
   </div>
 </section>
@@ -989,7 +990,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
       <div class="ap"><span class="b">2</span><p data-en="<b>Yours.</b> Your logo, your colors, your story — not a generic template." data-fr="<b>Vôtre.</b> Votre logo, vos couleurs, votre histoire — pas un template générique."><b>Yours.</b> Your logo, your colors, your story — not a generic template.</p></div>
       <div class="ap"><span class="b">3</span><p data-en="<b>Fast.</b> Preview in 24h. Full site live in 3–5 days." data-fr="<b>Rapide.</b> Aperçu en 24h. Site complet en ligne en 3–5 jours."><b>Fast.</b> Preview in 24h. Full site live in 3–5 days.</p></div>
       <div class="direct">
-        <h4 data-en="Prefer to talk now?" data-fr="Vous préférez parler maintenant ?">Prefer to talk now?</h4>
+        <h3 data-en="Prefer to talk now?" data-fr="Vous préférez parler maintenant ?">Prefer to talk now?</h3>
         <p data-en="WhatsApp / call:" data-fr="WhatsApp / appel :">WhatsApp / call:</p>
         <p><a href="tel:+237677789631">+237 677 789 631</a></p>
         <p><a href="mailto:akwo.king.dev@gmail.com">akwo.king.dev@gmail.com</a></p>
@@ -999,7 +1000,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
     <form class="form-card rv" data-d="150" onsubmit="return sendAudit(event)">
       <h3 data-en="Get my free preview" data-fr="Recevoir mon aperçu gratuit">Get my free preview</h3>
       <p class="fc-sub" data-en="Sent to us on WhatsApp — 60 seconds, no email needed." data-fr="Envoyé directement sur notre WhatsApp — 60 secondes, pas d'e-mail nécessaire.">Sent to us on WhatsApp — 60 seconds, no email needed.</p>
-      <div class="fld"><label data-en="School or clinic name *" data-fr="Nom de l'école ou de la clinique *">School or clinic name *</label><input type="text" id="f-school" required placeholder="e.g. St. Anne College · or a clinic name"></div>
+      <div class="fld"><label for="f-school" data-en="School or clinic name *" data-fr="Nom de l'école ou de la clinique *">School or clinic name *</label><input type="text" id="f-school" autocomplete="organization" required placeholder="e.g. St. Anne College · or a clinic name"></div>
       <div class="fld">
         <label data-en="This is a…" data-fr="Il s'agit d'une…">This is a…</label>
         <div class="f-types" role="group" aria-label="School or clinic">
@@ -1007,8 +1008,9 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
           <button type="button" class="f-type" data-type="clinic" onclick="setNiche('clinic')">🩺 <span data-en="Clinic" data-fr="Clinique">Clinic</span></button>
         </div>
       </div>
-      <div class="fld"><label data-en="Your WhatsApp number" data-fr="Votre numéro WhatsApp">Your WhatsApp number</label><input type="tel" id="f-phone" inputmode="tel" placeholder="+237 6XX XXX XXX"></div>
+      <div class="fld"><label for="f-phone" data-en="Your WhatsApp number" data-fr="Votre numéro WhatsApp">Your WhatsApp number</label><input type="tel" id="f-phone" autocomplete="tel" inputmode="tel" placeholder="+237 6XX XXX XXX"></div>
       <button type="submit" class="btn btn-amber" data-en="Get my free preview on WhatsApp →" data-fr="Recevoir mon aperçu gratuit sur WhatsApp →">Get my free preview on WhatsApp →</button>
+      <p class="f-status" role="status" aria-live="polite"></p>
       <p class="form-small" data-en="This opens WhatsApp with your message already written. You stay in control — nothing is sent without you. Town and other details are asked in the chat." data-fr="Ceci ouvre WhatsApp avec votre message déjà rédigé. Vous restez maître — rien n'est envoyé sans vous. La ville et les autres détails sont demandés dans la discussion.">This opens WhatsApp with your message already written. You stay in control — nothing is sent without you. Town and other details are asked in the chat.</p>
     </form>
   </div>
@@ -1022,21 +1024,21 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
     <div class="f-grid">
       <div>
         <div class="f-brand">
-          <svg viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1E293B"/><circle cx="32" cy="30" r="17" fill="none" stroke="#F59E0B" stroke-width="2.4"/><path d="M32 16v28M32 30L18 44M32 30l14 14" stroke="#FCD34D" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="16" r="3" fill="#F59E0B"/><circle cx="18" cy="44" r="3" fill="#F59E0B"/><circle cx="46" cy="44" r="3" fill="#F59E0B"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1E293B"/><circle cx="32" cy="30" r="17" fill="none" stroke="#F59E0B" stroke-width="2.4"/><path d="M32 16v28M32 30L18 44M32 30l14 14" stroke="#FCD34D" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="16" r="3" fill="#F59E0B"/><circle cx="18" cy="44" r="3" fill="#F59E0B"/><circle cx="46" cy="44" r="3" fill="#F59E0B"/></svg>
           <span class="t">AMK</span>
         </div>
         <p style="font-size:14.5px" data-en="AMK – Web Development & Digital Solutions" data-fr="AMK – Développement Web & Solutions Digitales">AMK – Web Development & Digital Solutions</p>
         <p style="margin-top:8px;font-size:14px" data-en="Modern, bilingual websites for schools and clinics that are ready to be found." data-fr="Des sites modernes et bilingues pour les écoles et les cliniques prêtes à être trouvées.">Modern, bilingual websites for schools and clinics that are ready to be found.</p>
       </div>
       <div>
-        <h5 data-en="Explore" data-fr="Explorer">Explore</h5>
+        <h3 data-en="Explore" data-fr="Explorer">Explore</h3>
         <a href="#work" data-en="Work" data-fr="Réalisations">Work</a>
         <a href="#services" data-en="Services" data-fr="Services">Services</a>
         <a href="#pricing" data-en="Pricing" data-fr="Tarif">Pricing</a>
         <a href="#faq" data-en="FAQ" data-fr="FAQ">FAQ</a>
       </div>
       <div>
-        <h5 data-en="Contact & concepts" data-fr="Contact & concepts">Contact & concepts</h5>
+        <h3 data-en="Contact & concepts" data-fr="Contact & concepts">Contact & concepts</h3>
         <a href="tel:+237677789631">+237 677 789 631</a>
         <a href="mailto:akwo.king.dev@gmail.com">akwo.king.dev@gmail.com</a>
         <a href="sample-school.html" data-en="Academy concept ↗" data-fr="Concept académie ↗">Academy concept ↗</a>
@@ -1074,17 +1076,25 @@ function setLang(l){
     if (!b) return;
     var isEn = id.indexOf("en") !== -1;
     b.classList.toggle("on", (l === "en") === isEn);
+    b.setAttribute("aria-pressed", ((l === "en") === isEn) ? "true" : "false");
   });
   try{ localStorage.setItem("amk-lang", l); }catch(e){}
   wireWaLinks();
 }
+document.addEventListener("keydown", function(e){ if (e.key === "Escape") closeM(); });
 function setNiche(n){
   document.querySelectorAll(".niche-btn").forEach(function(b){ b.classList.toggle("on", b.dataset.niche === n); b.setAttribute("aria-selected", b.dataset.niche === n ? "true":"false"); });
   document.querySelectorAll(".f-type").forEach(function(b){ b.classList.toggle("on", b.dataset.type === n); b.setAttribute("aria-pressed", b.dataset.type === n ? "true":"false"); });
   document.querySelectorAll(".h-panel").forEach(function(p){ p.classList.toggle("active", p.dataset.niche === n); });
   document.querySelectorAll(".h-shot").forEach(function(im){ im.classList.toggle("active", im.dataset.niche === n); });
 }
-function closeM(){ document.getElementById("m-nav").classList.remove("open"); }
+function setMenu(open){
+  var nav = document.getElementById("m-nav"), b = document.getElementById("m-btn");
+  nav.classList.toggle("open", open);
+  if (b) b.setAttribute("aria-expanded", open ? "true" : "false");
+}
+function openM(){ setMenu(true); }
+function closeM(){ setMenu(false); }
 function waMessage(fr, kind){
   var srcLine = SRC_LABEL ? (fr ? " (vu sur " + SRC_LABEL + ")" : " (from " + SRC_LABEL + ")") : (fr ? " (depuis le site)" : " (from the website)");
   if (kind === "bar"){
@@ -1138,7 +1148,7 @@ function runCount(el){
 }
 // graceful image fallback — if the host 404s any asset, show a branded panel instead of a broken icon
 var AMK_FB = "data:image/svg+xml," + encodeURIComponent(
-  '<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800"><rect width="1280" height="800" fill="#0F172A"/><circle cx="640" cy="350" r="86" fill="none" stroke="#F59E0B" stroke-width="4"/><path d="M640 268v164M640 350l-66 82M640 350l66 82" stroke="#FCD34D" stroke-width="6" stroke-linecap="round" fill="none"/><text x="640" y="545" text-anchor="middle" fill="#94A3B8" font-family="Arial,sans-serif" font-size="30" font-weight="bold">AMK — concept preview</text></svg>'
+  '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1280" height="800"><rect width="1280" height="800" fill="#0F172A"/><circle cx="640" cy="350" r="86" fill="none" stroke="#F59E0B" stroke-width="4"/><path d="M640 268v164M640 350l-66 82M640 350l66 82" stroke="#FCD34D" stroke-width="6" stroke-linecap="round" fill="none"/><text x="640" y="545" text-anchor="middle" fill="#94A3B8" font-family="Arial,sans-serif" font-size="30" font-weight="bold">AMK — concept preview</text></svg>'
 );
 document.querySelectorAll("img").forEach(function(im){
   if (im.dataset.fbDone) return;
@@ -1158,7 +1168,16 @@ function sendAudit(e){
   var msg = fr
     ? "Bonjour AMK ! Je veux mon APERÇU GRATUIT de site web sous 24h.\n\nÉtablissement : " + biz + "\nType : " + (kind === "clinic" ? "Clinique / laboratoire" : "École") + (phone ? "\nMon WhatsApp : " + phone : "") + srcLine + "\n\nMerci !"
     : "Hello AMK! I'd like my FREE 24h website preview.\n\nInstitution: " + biz + "\nType: " + (kind === "clinic" ? "Clinic / laboratory" : "School") + (phone ? "\nMy WhatsApp: " + phone : "") + srcLine + "\n\nThank you!";
-  window.open("https://wa.me/" + WA_NUM + "?text=" + encodeURIComponent(msg), "_blank");
+  var url = "https://wa.me/" + WA_NUM + "?text=" + encodeURIComponent(msg);
+  var w = window.open(url, "_blank");
+  var st = document.getElementById("f-status");
+  if (st) {
+    st.textContent = fr
+      ? "WhatsApp s'ouvre avec votre message déjà écrit. Rien ne s'ouvre ? Autorisez les fenêtres surgissantes."
+      : "WhatsApp opens with your message already written. Nothing opening? Allow pop-ups.";
+  }
+  // fenêtre bloquée : on emmène le visiteur nous-même, plutôt que de le laisser devant rien
+  if (!w) location.href = url;
   return false;
 }
 // initial language: ?lang= wins, then saved preference
@@ -1187,7 +1206,7 @@ function sendAudit(e){
   </div>
   <p class="vx-note" data-en="Demo — it only answers with what is written on this page." data-fr="Démo — il ne répond qu'avec ce qui est écrit sur cette page.">Demo — it only answers with what is written on this page.</p>
 
-  <button class="vx-mic" id="vx-mic" type="button">
+  <button class="vx-mic" id="vx-mic" type="button" aria-label="Parler au micro · Speak">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v4"/></svg>
     <span id="vx-mic-label" data-en="Tap to speak" data-fr="Appuyez pour parler">Tap to speak</span>
   </button>

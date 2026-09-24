@@ -174,7 +174,7 @@ entre *Nos analyses* et *Résultats*, dans les deux langues comme le reste de la
   la façon de le dire à voix haute : *« ces images sont là pour la démonstration ; vendredi ou après, on
   prend les vôtres »* — et c'est un vrai argument : le contenu photo n'est pas compris dans les 150 000.
 
-**Fichiers :** `demos/concept-unilabo-v2.html` (canonique généré, **84 671 o**) et
+**Fichiers :** `demos/concept-unilabo-v2.html` (canonique généré, **85 299 o**) et
 `hosting/previews/unilabo/index.html` (**la copie hébergée**, celle qui doit partir en ligne) — les deux sont
 **identiques, octet à octet**. Les photographies vivent dans `hosting/previews/unilabo/img/` (**dix
 fichiers**) : déployer le dossier entier, sinon la page s'affiche avec cinq cadres vides.
