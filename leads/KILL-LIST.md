@@ -11,7 +11,9 @@ Le playbook §A4 disait « les 2 leads à 18 (COMOBIL, OraCare) ». **C'était f
 
 ## ⚡ Répondre d'abord
 
-*Rien en attente.*
+- **Cavisa Optique** — 699 95 90 52
+
+> **Règle des 90 secondes.**
 
 ## 📅 Décisions déjà prises — DATES À VENIR, ne rien faire maintenant
 

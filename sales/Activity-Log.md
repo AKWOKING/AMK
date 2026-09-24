@@ -3547,3 +3547,36 @@ annuaires locaux (DoualaTour, Mont-Pandi) et le PDF du réseau de soins WTW / So
 lui — hors profil d'envoi ». Réglé par une table `REVISION_2409` appliquée **après** la passe qu'elle corrige.
 Leçon : une correction qui doit changer un calcul doit aussi arriver **dans le bon ordre** — sinon elle
 disparaît sans un mot.
+
+---
+
+## 24/09/2026 · 13:16 — CAVISA OPTIQUE A REGARDÉ L'APERÇU — et il a répondu
+
+**Le fait.** À **13:09**, King envoie à M. Dongmo le lien de son aperçu : `https://cavisa.vercel.app/`
+(carte de lien affichée : le titre et la description sont passés, **la vignette non** — `og:image` était
+encore commenté, c'est corrigé depuis). À **13:16**, la réponse, **mot pour mot** :
+
+> **« Beaucoup de manquement mais c'est appréciable. »**
+
+**Comment on la lit.** Ce n'est pas un refus : il a ouvert la page, il l'a jugée, et il demande le reste.
+« Manquement » = ce qui manque, et une partie est **visible exprès** sur la page : son **adresse exacte** et
+ses **horaires** affichent « à confirmer ». On ne les a pas inventés. **Et une cause qu'on assume** : le
+message d'envoi promettait *« votre localisation »* et *« vos services et horaires »* — la page, elle, les
+marque « à confirmer ». Un client qui lit la promesse puis la page appelle ça un manquement, et il a raison.
+La leçon est écrite le jour même (`sales/MESSAGES-2026-09-23-PERSUASION.md` §2).
+
+**Ce qu'on fait, dans l'heure.** La réponse est préparée dans **`sales/Reponse-CAVISA-2026-09-24.md`** :
+remercier, nommer les deux lignes qu'on n'invente pas, et lui demander ses quatre compléments — **adresse
+exacte avec un repère** (ou sa position WhatsApp, un appui), **horaires**, ce qui manque dans nos services,
+**2-3 photos de la boutique** — plus **une** question : prix affichés ou gardés en conversation. La réponse est
+écrite, **rien n'est envoyé par nous** : King l'envoie, comme toujours.
+
+**CRM.** `REPONSE_2409` dans `leads/build/crm.py` : `Reply = Yes`, `reply_type = positive — demande de
+compléments`, `last_send_state = replied`, **`stage = demo`**, `stage_since = 2026-09-24`. C'est la **première
+réponse du premier lot d'opticiens** — sur cinq envoyés. Dossier client : `clients/cavisa/`.
+
+**Ce qui reste ouvert.** ① King redéploie `hosting/previews/cavisa/` **en entier** (vignette + photos du
+24/09 + état du jour) ; ② il envoie le message de `sales/Reponse-CAVISA-2026-09-24.md` ; ③ quand les
+informations arrivent, la page se complète (§3 du même fichier). **La fiche Google de Cavisa n'existe pas**
+(« Google Maps can't find… ») : c'est un projet séparé, pas un cadeau de finition — on le garde pour la
+clôture.

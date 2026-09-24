@@ -10,13 +10,13 @@
 | Type | other |
 | Ville | Douala |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | demo |
 | WhatsApp | 699 95 90 52 |
 | Numéro vérifié | yes |
 | Contact | DONGMO Jean René |
 | Canal | WhatsApp |
 | Contacté | Yes |
-| Réponse | No |
+| Réponse | Yes |
 | Maquette / site | No |
 | Source | directory |
 | Détail source | Annuaire officiel ONOC + Maligah |
@@ -27,15 +27,22 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : DONGMO Jean René. Probleme : etre
 
 ## Prochaine action
 
-**0 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**Répondre dans l'heure.** Une réponse humaine est en attente : c'est la priorité absolue (règle des 90 secondes).
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 3 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 10 ligne(s).*
 
 `L3453` · **Médina Optic** (Balla, 699 93 93 34) et **Cavisa Optique** (Dongmo, 699 95 90 52). Tous jamais contactés,
 `L3461` · le 24/09** ; pour Cavisa, la seule page au monde qui porte son nom est **vide** ; pour Médina, on dit
 `L3520` · Espace Lunetterie 12:00 · MegaOptic 12:03 · Médina 12:08 · Cavisa 12:10**. Tous **livrés** (✓✓), tous sur des
+`L3553` · ## 24/09/2026 · 13:16 — CAVISA OPTIQUE A REGARDÉ L'APERÇU — et il a répondu
+`L3555` · **Le fait.** À **13:09**, King envoie à M. Dongmo le lien de son aperçu : `https://cavisa.vercel.app/`
+`L3568` · **Ce qu'on fait, dans l'heure.** La réponse est préparée dans **`sales/Reponse-CAVISA-2026-09-24.md`** :
+`L3576` · réponse du premier lot d'opticiens** — sur cinq envoyés. Dossier client : `clients/cavisa/`.
+`L3578` · **Ce qui reste ouvert.** ① King redéploie `hosting/previews/cavisa/` **en entier** (vignette + photos du
+`L3579` · 24/09 + état du jour) ; ② il envoie le message de `sales/Reponse-CAVISA-2026-09-24.md` ; ③ quand les
+`L3580` · informations arrivent, la page se complète (§3 du même fichier). **La fiche Google de Cavisa n'existe pas**
 
 ---
 

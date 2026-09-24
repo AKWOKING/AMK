@@ -8,19 +8,24 @@
 | Étape | Leads |
 |---|---|
 | ④ Prix posé, en négociation | **3** |
-| ② Qualifié — en conversation | **17** |
+| ③ Aperçu envoyé | **1** |
+| ② Qualifié — en conversation | **16** |
 | ① Prospection — à qualifier | **81** |
 | ⏸ Parqué | **38** |
 | ⛔ Écarté | **10** |
 | **Total** | **149** |
 
-- **Contactés :** 54 · **Réponses humaines :** 4 · **Taux de réponse : 7.4 %**
+- **Contactés :** 54 · **Réponses humaines :** 5 · **Taux de réponse : 9.3 %**
 - **Réponses automatiques (hors PRR) :** 1
 - **Clients :** 0 · **Revenu :** 0 FCFA
 
 ## ⚡ Répondre d'abord
 
-*Rien en attente.*
+| Lead | WhatsApp | Ce qu'il a dit |
+|---|---|---|
+| **Cavisa Optique** | 699 95 90 52 | Yes |
+
+> **Règle des 90 secondes.** Une réponse en attente passe avant tout le reste.
 
 ## ④ Prix posé, en négociation — 3
 
@@ -30,7 +35,13 @@
 | UNI-LABO | Douala (Bonamoussadi, Carrefour Etoo) | 696 13 98 19 | `L134` |
 | Univers Optique | Douala | 699 25 28 74 | `L3442` |
 
-## ② Qualifié — en conversation — 17
+## ③ Aperçu envoyé — 1
+
+| Lead | Ville | WhatsApp | Trace au journal |
+|---|---|---|---|
+| Cavisa Optique | Douala | 699 95 90 52 | `L3580` |
+
+## ② Qualifié — en conversation — 16
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
@@ -39,7 +50,6 @@
 | Baptist Comprehensive College | Buea (Great Soppo) | 679650707 | `L15` |
 | Cabinet Dentaire The Skye | Douala (Bonamoussadi) | 677 79 69 99 | `L53` |
 | Cabinet Dentaire YAKS | Douala (Logbessou) | 672 70 20 78 | `L54` |
-| Cavisa Optique | Douala | 699 95 90 52 | `L3520` |
 | Centre Médical de Bonanjo | Douala (Bonapriso, ancien aéroport) | 694 57 22 77 | `L2557` |
 | Disc Optique Médicale | Douala | 677 53 35 68 | — |
 | Espace Lunetterie | Douala | 677 34 24 62 | `L3452` |

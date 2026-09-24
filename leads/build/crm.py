@@ -1106,6 +1106,9 @@ DOSSIERS = {
     # le dossier de travail RÉEL du lead le plus actif (audit, notes de build, concept) — c'était
     # une vignette de maquette qui était liée ici, et le dossier `clients/uni-labo/` restait orphelin : M4 le refusait, à raison.
     "uni-labo-bonamoussadi": "clients/uni-labo/",
+    # le dossier de travail RÉEL de Cavisa (inspiration, notes de build) — il est passé en `demo`
+    # le 24/09 à 13:16, quand M. Dongmo a répondu : « Beaucoup de manquement mais c'est appréciable. »
+    "cavisa-optique": "clients/cavisa/",
     "centre-medical-de-bonanjo": "clients/_mockups/bonanjo.jpg",
     "2k-labo-yassa": "clients/_mockups/labs/2k-labo.jpg",
     "interlabo-akwa": "clients/_mockups/labs/interlabo.jpg",
@@ -1674,6 +1677,20 @@ def _apply_state(out: list, table: dict, name: str) -> None:
             r[k] = v
 
 
+# ── LE VOCABULAIRE FERMÉ DE `reply_type` ────────────────────────────────────────────────────────
+# Ajouté le 24/09 après l'avoir vu presque passer : l'entonnoir (`views.py`) compte les réponses
+# humaines par `reply_type == "human"`. Une valeur libre n'est pas comptée, et **personne ne le voit**.
+REPLY_TYPES = ("human", "auto", "none", "")
+
+
+def check_reply_types(out: list) -> None:
+    """Refuse toute valeur hors vocabulaire : l'entonnoir se remplit ou se vide en silence, sinon."""
+    bad = sorted({str(r.get("reply_type")) for r in out if str(r.get("reply_type") or "") not in REPLY_TYPES})
+    if bad:
+        sys.exit("✗ reply_type hors vocabulaire %s %s — valeurs admises : %s. Rien n'a été écrit."
+                 % (bad, ":", " · ".join(x or "(vide)" for x in REPLY_TYPES)))
+
+
 def _apply_jour(out: list) -> None:
     """Les relevés, dans l'ordre : 22/09 (soir), 23/09 (matin), 24/09 (le fil Le Cristallin), puis
     24/09 (la fiche Google d'Univers Optique, relue avant la réunion)."""
@@ -1685,6 +1702,7 @@ def _apply_jour(out: list) -> None:
     _apply_state(out, BATCH_2409, "BATCH_2409")
     _apply_state(out, ENVOI_2409, "ENVOI_2409")
     _apply_state(out, CORRECTIF_2409, "CORRECTIF_2409")
+    _apply_state(out, REPONSE_2409, "REPONSE_2409")
     _apply_state(out, BATCH_2409_2, "BATCH_2409_2")
     _apply_state(out, ECARTES_2409, "ECARTES_2409")
 
@@ -2319,6 +2337,39 @@ def _apply_fiche(out: list) -> None:
 # prémisse tombe, donc la conséquence aussi. Une correction qui doit changer un calcul vit ici, pas
 # dans un .md — et elle doit passer APRÈS la passe qu'elle corrige, sinon la passe l'écrase en
 # silence (c'est exactement ce qui vient d'arriver : le premier patch a été recouvert).
+# ── LA PREMIÈRE RÉPONSE DU LOT 1 — 24/09, 13:16 ────────────────────────────────────────────────
+# M. Dongmo a regardé l'aperçu (https://cavisa.vercel.app/) et a écrit, mot pour mot :
+# « Beaucoup de manquement mais c'est appréciable. »
+# Ce n'est pas un refus : c'est un client qui a ouvert la page, l'a jugée, et demande le reste.
+# Ce que la page laisse volontairement vide — son adresse et ses horaires — est exactement ce qu'il
+# appelle « manquement ». On ne devine pas sa liste : on la lui demande, avec les quatre points que
+# nous savons manquants. La réponse est écrite dans `sales/Reponse-CAVISA-2026-09-24.md`.
+REPONSE_2409 = {
+    "cavisa-optique": {
+        # ⚠️ `reply_type` a un VOCABULAIRE FERMÉ : `human` · `auto` · `none` · vide.
+        # `views.py` compte les réponses humaines sur l'égalité stricte `== "human"` : une valeur
+        # écrite en prose (« positive — demande de compléments ») laisse la réponse HORS de
+        # l'entonnoir, sans erreur et sans avertissement. Attrapé le 24/09 en relisant FUNNEL.md.
+        # La nuance vit dans `Conversation`, jamais dans cette case.
+        "Contacted": "Yes", "Reply": "Yes", "reply_type": "human",
+        "last_send_state": "replied", "stage": "demo", "stage_since": "2026-09-24",
+        "Conversation_extra":
+            "24/09 13:09 — King envoie le lien de l'aperçu (https://cavisa.vercel.app/), avec la carte "
+            "de lien WhatsApp (titre + description : ils se sont affichés, la vignette non — `og:image` "
+            "était encore commenté, corrigé depuis : redéploiement nécessaire). "
+            "24/09 13:16 — RÉPONSE DE M. DONGMO, mot pour mot : « Beaucoup de manquement mais c'est "
+            "appréciable. » Ni oui, ni non : il a regardé et il veut le reste. Réponse préparée le jour "
+            "même (`sales/Reponse-CAVISA-2026-09-24.md`) : remercier, nommer les deux lignes que la "
+            "page n'invente pas (adresse exacte, horaires), et lui demander ses quatre compléments "
+            "(adresse + repère · horaires · ce qui manque dans nos services, marques et solaires · "
+            "2-3 photos de la boutique · décision sur les prix). "
+            "⚠️ Le message d'envoi du 13:09 promettait « votre localisation » et « vos services et "
+            "horaires » : la page, elle, les affiche « à confirmer » — c'est très probablement ce "
+            "qu'il a vu comme manquement. Leçon écrite dans `sales/MESSAGES-2026-09-23-PERSUASION.md` §2.",
+    },
+}
+
+
 REVISION_2409 = {
     "horizon-optique": {
         "Website":
@@ -2480,6 +2531,7 @@ def main() -> int:
     _apply_dead(out)
     _apply_fiche(out)
     _apply_state(out, REVISION_2409, "REVISION_2409")
+    check_reply_types(out)
 
     cols = headers + NEW_FIELDS
     allowed = set(cols)

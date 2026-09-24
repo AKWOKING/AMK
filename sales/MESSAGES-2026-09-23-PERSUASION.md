@@ -173,3 +173,24 @@ avant la clôture, jamais en ouverture**) : « je construis en 3 à 5 jours, mai
 et en déplacement ça prend un jour de plus » · « vous devrez quand même valider six points et envoyer deux
 photos » · « **je ne promets aucune place sur Google** » · « le suivi n'est pas inclus, c'est une ligne séparée
 et vous pouvez l'arrêter ».
+
+---
+
+## §2 · LE LIEN NE PROMET PAS PLUS QUE LA PAGE (24/09/2026 — la réponse de Cavisa)
+
+**Ce qui s'est passé.** Le message qui portait le lien de l'aperçu annonçait *« vos informations et votre
+localisation à Douala »* et *« la présentation de vos services et horaires »*. La page, elle, affichait
+**« à confirmer »** sur l'adresse et les horaires — parce que ces informations n'existent que dans la tête du
+client, et qu'on n'invente rien. Réponse de M. Dongmo : **« Beaucoup de manquement mais c'est appréciable. »**
+Il a raison. Le manquement, il ne l'a pas inventé : **on le lui a annoncé**.
+
+**La règle, en trois lignes :**
+1. **Avant d'écrire le message d'envoi, relire la page qu'on envoie** et ne promettre que ce qu'elle contient.
+2. Ce qu'elle attend du client se demande **dans le même message**, au même endroit — pas « on verra plus tard ».
+   La formulation qui marche : *« ce sont vos informations, pas les miennes — je n'ai pas voulu les inventer »*.
+3. **Ne jamais écrire « votre localisation » quand la page n'a pas d'adresse**, ni « vos horaires » quand ils
+   sont « à confirmer ». Dire : *« il manque deux lignes que vous seul avez »* — la même phrase devient alors
+   le service rendu, au lieu de la faille.
+
+**Ce qui n'a pas bougé :** une seule question par message, aucun prix, le nom à la fin, et jamais une promesse
+de classement. **Le lien est une preuve, pas une annonce** — il montre ce qui existe, et il dit ce qui manque.
