@@ -3770,3 +3770,39 @@ Le § 9 du dossier d'envoi du lot 3 porte les trois portes (SMS · appel · e-ma
 **vérifié par l'instrument** et donné en deux longueurs. L'accroche : **« votre site ne s'ouvre plus »** —
 jamais « votre domaine a expiré » (faux : il court jusqu'au 17/08/2027). Rien n'est envoyé : c'est King
 qui envoie, comme toujours.
+
+## 24/09/2026 (nuit) — LES DEUX ENVOIS DE KING : K VISION PAR SMS, LA COURTOISIE À BELY
+
+**Récit de King, mot pour mot** : *« Je voulais dire k vision… message envoyé à k vision et Bely. »* Deux
+envois à consigner, et deux seulement — rien d'autre n'a bougé.
+
+**① K VISION CARE — le premier contact part, et il part par SMS.** WhatsApp n'offre pas de bouton
+« Message » sur cette fiche Business : c'est donc le **SMS au 677 077 159** qui a ouvert la porte, avec le
+message du **§ 9.a** (corrigé GSM-7 le même soir — voir l'entrée précédente). CRM : `Contacted = Yes`,
+`Contact channel = « SMS (WhatsApp Business sans bouton « Message ») »`, `last_send_state = sent`,
+**`stage = qualifying`**. ⚠️ **`sent`, pas `delivered`** : un SMS n'affiche pas d'accusé, et personne ne
+l'a relevé. C'est le quatrième lead du lot 3 à partir — **4 sur 5**, et le seul de la journée joint
+autrement que par WhatsApp.
+
+**La suite, écrite d'avance pour ne pas la laisser au hasard** : si la réponse ne vient pas, la porte
+suivante est **l'APPEL** (§ 9.b), puis **l'e-mail** `kvisioncare05@gmail.com` (§ 9.c). **Jamais un second
+SMS identique** — ce serait une relance à froid sur un premier contact, exactement ce qu'on s'interdit.
+
+**② BELY OPTIQUE — la courtoisie est envoyée.** La réponse au « Non Merci » (14:17) est partie le soir
+même. La variante employée n'a pas été précisée — les trois disent la même chose — et **ça n'a aucune
+importance** : ce qui compte est ce qui suit, et ce qui suit est **rien**. Le fil est clos, la politesse
+est rendue, et l'engagement tient : plus rien sur ce lead, sauf si elle écrit elle-même.
+
+### L'état des compteurs après ces deux envois (reconstruits, pas estimés)
+
+| | Avant | Après |
+|---|---|---|
+| Contactés | 61 (39,1 %) | **62 (39,7 %)** |
+| Réponses humaines | 6 | **6 (9,7 % des contactés)** |
+| Lot 3 parti | 3 / 5 | **4 / 5** (1 par SMS) |
+| Portes encore fermées dans le lot 3 | 2 | **1** — Royal Optic, repli **691 219 986** à essayer |
+
+**Et ce que la file du jour dit encore, puisqu'elle ne se tait pas toute seule** : **① Cavisa attend sa
+réponse** (`sales/Reponse-CAVISA-2026-09-24.md` — Dongmo a écrit à 13:16, la réponse est écrite depuis,
+elle n'est pas encore partie) ; **② les trois relances du soir** restent à envoyer (Disc · Tchaya ·
+Afrique Labo). Le CRM ne les oubliera pas ; King non plus, maintenant que c'est écrit.

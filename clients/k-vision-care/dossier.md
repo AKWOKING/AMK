@@ -8,6 +8,10 @@ toute la campagne.
 **Contact** : **+237 677 07 71 59** (WhatsApp Business — profil « K Vision Care », vu par King le 24/09 à
 14:14) · **kvisioncare05@gmail.com** · trois magasins à Douala.
 
+**✔ Premier contact ENVOYÉ le 24/09 (soir), par SMS** (la fiche Business n'offre pas de bouton
+« Message »). Accusé non relevé → `sent`. **S'il ne répond pas : l'appel (§ 9.b du dossier d'envoi),
+puis l'e-mail (§ 9.c) — jamais un second SMS identique.**
+
 ---
 
 ## 1 · Ce qui est vérifié, et par quel instrument

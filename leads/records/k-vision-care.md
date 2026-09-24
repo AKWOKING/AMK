@@ -10,10 +10,11 @@
 | Type | other |
 | Ville | Douala (Bessengue · Ancien 3e · Ndogpassi) |
 | Langue de contact | FR |
-| Étape | prospecting |
+| Étape | qualifying |
 | WhatsApp | 677 077 159 |
 | Numéro vérifié | yes |
-| Contacté | No |
+| Canal | SMS (WhatsApp Business sans bouton « Message ») |
+| Contacté | Yes |
 | Réponse | No |
 | Maquette / site | No |
 | Source | directory |
@@ -23,11 +24,11 @@
 
 ## Notes
 
-LOT 3 (préparé le 24/09, PAS ENVOYÉ). ⚠️ L'ANNONCE SE CONTREDIT : le texte publie 677 077 459, le lien de la même fiche écrit 677 077 159 — un chiffre d'écart. VERR : 677 077 459 et 3ᵉ numéro 695 865 346, et n'envoyer qu'après avoir vu le nom du profil à l'écran. Trois magasins publiés : Bessengue (rue de la Réunification) · entre Ancien 3e et le marché Congo, en face de l'hôpital Congo 2 (en haut à l'étage) · marché Ndogpassi. Horaires publiés 08:00→18:00. · 24/09 — TROISIÈME LOT : ENVOI IMPOSSIBLE. WhatsApp refuse d'abord 677 077 459 (numéro d'annuaire) ; King ouvre ensuite 677 077 159 dans l'application : le profil est bien « K Vision Care », mais le chat n'est pas ouvert (pas de bouton Message, appels vocaux proposés). ⚠️ **Prospect de premier ordre** : ils ONT un domaine payé jusqu'au 17/08/2027 (RDAP Verisign : enregistré 17/08/2024 chez Hostinger, renouvelé le 18/08/2026) et un vrai site WordPress que la Wayback a capturé 14 fois entre le 17/08/2024 et le 12/07/2025 — aujourd'hui le DNS est sur NS1.DNS-EXPIRED.COM et le site ne s'ouvre plus. Leur ancien site publiait : montures à partir de 10 000 F, lunettes médicales à partir de 25 000 F, « nous acceptons toutes les assurances », trois magasins, et le nom du responsable — **KAKEU Djounessi** (Général Manager / opticien réfractionniste). Dossier complet : `clients/k-vision-care/dossier.md`. ⚠️ Ne jamais reprendre les faux avis de leur ancien site (gabarits de thème : 1 860 / 1 630 / 2 100 avis, lorem ipsum, photos de banque d'images).
+LOT 3 (préparé le 24/09, PAS ENVOYÉ). ⚠️ L'ANNONCE SE CONTREDIT : le texte publie 677 077 459, le lien de la même fiche écrit 677 077 159 — un chiffre d'écart. VERR : 677 077 459 et 3ᵉ numéro 695 865 346, et n'envoyer qu'après avoir vu le nom du profil à l'écran. Trois magasins publiés : Bessengue (rue de la Réunification) · entre Ancien 3e et le marché Congo, en face de l'hôpital Congo 2 (en haut à l'étage) · marché Ndogpassi. Horaires publiés 08:00→18:00. · 24/09 — TROISIÈME LOT : ENVOI IMPOSSIBLE. WhatsApp refuse d'abord 677 077 459 (numéro d'annuaire) ; King ouvre ensuite 677 077 159 dans l'application : le profil est bien « K Vision Care », mais le chat n'est pas ouvert (pas de bouton Message, appels vocaux proposés). ⚠️ **Prospect de premier ordre** : ils ONT un domaine payé jusqu'au 17/08/2027 (RDAP Verisign : enregistré 17/08/2024 chez Hostinger, renouvelé le 18/08/2026) et un vrai site WordPress que la Wayback a capturé 14 fois entre le 17/08/2024 et le 12/07/2025 — aujourd'hui le DNS est sur NS1.DNS-EXPIRED.COM et le site ne s'ouvre plus. Leur ancien site publiait : montures à partir de 10 000 F, lunettes médicales à partir de 25 000 F, « nous acceptons toutes les assurances », trois magasins, et le nom du responsable — **KAKEU Djounessi** (Général Manager / opticien réfractionniste). Dossier complet : `clients/k-vision-care/dossier.md`. ⚠️ Ne jamais reprendre les faux avis de leur ancien site (gabarits de thème : 1 860 / 1 630 / 2 100 avis, lorem ipsum, photos de banque d'images). · 24/09 (soir) — **SMS ENVOYÉ par King** au 677 077 159 (récit de King ce soir-là). Accusé non relevé : un SMS n'affiche pas de ✓✓ → `sent`, pas `delivered`. ⚠️ Si la réponse ne vient pas, la suite naturelle est **l'APPEL** (§9.b du dossier d'envoi) — **jamais un second SMS identique** — et l'e-mail `kvisioncare05@gmail.com` est la troisième porte (§9.c). Rien d'automatique : King décide.
 
 ## Prochaine action
 
-**Prospecter** : vérifier l'identité du numéro sur WhatsApp avant d'écrire (nom + catégorie).
+**0 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
 
 ## Historique — lignes du journal qui citent ce lead
 

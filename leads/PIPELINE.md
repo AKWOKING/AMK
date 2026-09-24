@@ -9,14 +9,14 @@
 |---|---|
 | ④ Prix posé, en négociation | **3** |
 | ③ Aperçu envoyé | **1** |
-| ② Qualifié — en conversation | **22** |
-| ① Prospection — à qualifier | **78** |
+| ② Qualifié — en conversation | **23** |
+| ① Prospection — à qualifier | **77** |
 | ❌ Perdu | **1** |
 | ⏸ Parqué | **39** |
 | ⛔ Écarté | **12** |
 | **Total** | **156** |
 
-- **Contactés :** 61 · **Réponses humaines :** 6 · **Taux de réponse : 9.8 %**
+- **Contactés :** 62 · **Réponses humaines :** 6 · **Taux de réponse : 9.7 %**
 - **Réponses automatiques (hors PRR) :** 1
 - **Clients :** 0 · **Revenu :** 0 FCFA
 
@@ -42,7 +42,7 @@
 |---|---|---|---|
 | Cavisa Optique | Douala | 699 95 90 52 | `L3716` |
 
-## ② Qualifié — en conversation — 22
+## ② Qualifié — en conversation — 23
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
@@ -59,6 +59,7 @@
 | El Roï Optique Médicale | Douala (Village) | 693 127 302 | `L3651` |
 | Espace Lunetterie | Douala | 677 34 24 62 | `L3452` |
 | Fashion Vision | Douala | 656 22 38 63 | `L3637` |
+| K Vision Care | Douala (Bessengue · Ancien 3e · Ndogpassi) | 677 077 159 | `L3707` |
 | L'Opticien Bali SARL | Douala (Bali) | 670 27 60 65 | `L22` |
 | Labiomed | Douala (Deido, 104 Route Deido-Bassa) | 699 98 54 66 | `L2338` |
 | Maff Optique | Douala | 699 93 19 56 | `L3451` |
@@ -69,7 +70,7 @@
 | St. Theresa International Bilingual Comprehensive College (STIBCCOL) | Buea (Molyko) | 679151075 | `L1698` |
 | Tchaya Optique | Douala | 696 79 01 73 | `L3524` |
 
-## ① Prospection — à qualifier — 78
+## ① Prospection — à qualifier — 77
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
@@ -114,7 +115,6 @@
 | Inter Comprehensive High School (ICHS) Great Soppo | Buea (Great Soppo) | — | — |
 | Isalyd Corporation | Douala | 694 85 87 46 | — |
 | JiredOptic Med | Douala | 696 26 50 31 | — |
-| K Vision Care | Douala (Bessengue · Ancien 3e · Ndogpassi) | 677 077 159 | `L3707` |
 | KYLAYA LABO | Douala (Bali, 189 rue des Manguiers) | 696 78 77 78 | — |
 | L'Opticien SARL | Douala | 694 33 65 82 | — |
 | LABO-PHANUEL | Douala (Akwa) | 243 17 94 71 | `L60` |
@@ -138,7 +138,7 @@
 | OpticPlus | Douala | 699 37 91 50 | — |
 | Planète Optique | Douala | 699 85 58 35 | `L815` |
 | Polyclinique Innova | Douala | 674 145 740 | `L1840` |
-| Presbyterian Comprehensive Secondary School Bonamoussadi (PCSS) | Douala (Bonamoussadi) | — | `L2596` |
+| Presbyterian Comprehensive Secondary School Bonamoussadi (PCSS) | Douala (Bonamoussadi) | — | `L3725` |
 | Presbyterian Girls Secondary School (PGSS) Limbe | Limbe | — | — |
 | Rainforest International School (RFIS) | Yaoundé (SIL, BP 1299) | 677937162 | — |
 | Royal Optic | Douala (Bali) | 676 250 409 | `L3655` |
@@ -156,7 +156,7 @@
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| Bely Optique Médicale | Douala | 696 85 52 42 | `L3589` |
+| Bely Optique Médicale | Douala | 696 85 52 42 | `L3754` |
 
 ## ⏸ Parqué — 39
 

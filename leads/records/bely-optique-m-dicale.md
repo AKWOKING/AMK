@@ -36,11 +36,14 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : NGATCHA ZOE Rosalie. (2e : 651 61 
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 3 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 6 ligne(s).*
 
 `L840` · - `Bely Optique Médicale` : **696 85 52 42 n'est pas sur WhatsApp** → incident de canal, `Contacted=No`,
 `L3530` · + premier message, **rien n'est envoyé** : ① Doyoan Optic (653 85 27 49) ② Bely Optique Médicale (696 85 52 42)
 `L3589` · cette heure) : **Doyoan Optic** (653 85 27 49) · **Bely Optique Médicale** (696 85 52 42 ; repli 699 89 57 21
+`L3730` · parti** (le 696 85 52 42 n'était pas sur WhatsApp — incident de canal du 21/09, `Contacted=No`). C'était
+`L3753` · principal (696 85 52 42) ; le repli 699 89 57 21 n'a pas eu à servir ». **Rien ne le prouve** — la
+`L3754` · capture montre le fil « BELY OPTIQUE MÉDI… » **sans le numéro**, et le 696 85 52 42 n'était pas sur
 
 ---
 

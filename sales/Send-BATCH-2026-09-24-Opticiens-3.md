@@ -10,13 +10,13 @@ dans l'application : **677 077 159**, profil « K Vision Care », Business Accou
 complet : `clients/k-vision-care/dossier.md`. Approche réécrite au **§ 9** — la porte WhatsApp est fermée,
 les portes SMS, appel et e-mail sont ouvertes.
 
-**✔ PARTI LE 24/09 — trois sur cinq.** Envoyés par King : **El Roï Optique Médicale, Net Optique
-Médical, Cabinet d'Optique la Rétine** (heures non relevées, accusés non relevés → CRM en `sent`, pas
-`delivered`). **DEUX PORTES FERMÉES sur WhatsApp : Royal Optic (676 250 409) et K Vision Care
-(677 077 459).** Royal Optic a un autre numéro publié à essayer (**§ 7.a**) ; pour K Vision Care, **le
-numéro est désormais connu** (677 077 159, ouvert par King à 14:14) mais **le chat l'est pas** : on y
-entre par **SMS, appel ou e-mail** (**§ 9**).
-CRM : `ENVOI_2409_3`.
+**✔ PARTI LE 24/09 — QUATRE sur cinq, dont un par SMS.** Trois par WhatsApp : **El Roï Optique
+Médicale, Net Optique Médical, Cabinet d'Optique la Rétine** (heures et accusés non relevés → CRM en
+`sent`, pas `delivered`). Le quatrième est **K VISION CARE — parti par SMS** au **677 077 159** en début
+de soirée (§ 9) : c'est le seul lead de la journée à qui on n'a pas pu écrire sur WhatsApp.
+**RESTE UNE PORTE FERMÉE : Royal Optic (676 250 409)** — son second numéro publié, **691 219 986**,
+est à essayer (§ 7.a).
+CRM : `ENVOI_2409_3` + l'envoi du soir dans `REVISION_2409` (la table appliquée en dernier).
 
 > ⚠️ **ÉTAPE 0 — LA PORTE A, AVANT TOUT.** Cinq numéros **d'annuaire**, jamais vus sur WhatsApp. Depuis le
 > 24/09 (Horizon Optique : WhatsApp indisponible sur un numéro du registre), **la porte se vérifie dans
@@ -241,7 +241,7 @@ d'autres numéros**, et c'est là qu'on essaie.
 
 Le message ne change pas d'un mot : c'est le §3 ci-dessus. Seul le destinataire change.
 
-### 7.b · K VISION CARE — **tranché le 24/09 à 14:14 : le numéro est 677 077 159**, et la porte est ailleurs
+### 7.b · K VISION CARE — **677 077 159 confirmé le 24/09 à 14:14, et ENVOYÉ PAR SMS le soir même** (voir § 9)
 
 King a ouvert **677 077 159** : le profil est bien **« K Vision Care »**, Business Account, catégorie
 « Medical & health, Optician ». **Le numéro est donc confirmé** — et c'est aussi celui que **leur propre
@@ -324,7 +324,10 @@ sans que personne ne le voie.
 > 2027) et c'est le genre de faute qui tue un premier contact chez quelqu'un qui a payé son renouvellement.
 > On dit ce qu'un visiteur voit : **le site ne s'ouvre pas.**
 
-### 9.a · LE SMS (porte n° 1 — 677 07 71 59)
+### 9.a · LE SMS (porte n° 1 — 677 07 71 59) — **✔ ENVOYÉ LE 24/09 (soir)** par King
+
+> Accusé non relevé : un SMS n'affiche pas de ✓✓ → le CRM dit `sent`, jamais `delivered`.
+> **S'il ne répond pas, la suite est l'APPEL (§ 9.b) — pas un second SMS identique.**
 
 **Version à envoyer (neutre — le nom du responsable n'est pas employé, voir ci-dessous) :**
 

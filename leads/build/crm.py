@@ -2622,6 +2622,21 @@ REVISION_2409 = {
     # ⚠️ Le marqueur « FIL CLOS » n'est pas décoratif : `views.py` s'en sert pour sortir le lead de la
     # file « ⚡ Répondre d'abord », où il serait resté TOUS LES JOURS (une réponse `human` reste
     # « en attente » tant que rien ne dit le contraire). Voir le commentaire dans `reply_pending`.
+    # ── 24/09 (soir) — LE SMS EST PARTI, ET IL EST PARTI AUTREMENT (récit de King : « message
+    #    envoyé à K Vision et Bely »). WhatsApp n'offre pas de bouton « Message » sur cette fiche
+    #    Business : c'est le SMS qui a ouvert la porte, au numéro confirmé 677 077 159. On ne marque
+    #    PAS `delivered` : un SMS n'a pas d'accusé visible, et personne ne l'a relevé.
+    "k-vision-care": {
+        "Contacted": "Yes", "Contact channel": "SMS (WhatsApp Business sans bouton « Message »)",
+        "wa_verified": "yes", "last_send_state": "sent",
+        "stage": "qualifying", "stage_since": "2026-09-24",
+        "Notes_extra":
+            "24/09 (soir) — **SMS ENVOYÉ par King** au 677 077 159 (récit de King ce soir-là). "
+            "Accusé non relevé : un SMS n'affiche pas de ✓✓ → `sent`, pas `delivered`. "
+            "⚠️ Si la réponse ne vient pas, la suite naturelle est **l'APPEL** (§9.b du dossier "
+            "d'envoi) — **jamais un second SMS identique** — et l'e-mail `kvisioncare05@gmail.com` est "
+            "la troisième porte (§9.c). Rien d'automatique : King décide.",
+    },
     "bely-optique-m-dicale": {
         "Reply": "Yes", "reply_type": "human", "last_send_state": "replied",
         "stage": "lost", "stage_since": "2026-09-24",
@@ -2641,7 +2656,11 @@ REVISION_2409 = {
             "**Premier refus explicite de la campagne.** Accepté tel quel : la réponse de courtoisie "
             "est écrite (`sales/Reponse-BELY-2026-09-24.md` §① — remercier, se retirer, laisser la "
             "porte ouverte, ne rien redemander) et c'est le SEUL message qui part. "
-            "**FIL CLOS** : après lui, plus rien, jamais. Si elle revient d'elle-même, le fil rouvre.",
+            "**FIL CLOS** : après lui, plus rien, jamais. Si elle revient d'elle-même, le fil rouvre. "
+            "24/09 (soir) — **RÉPONSE DE COURTOISIE ENVOYÉE par King** (récit de King le même soir). "
+            "La variante employée n'a pas été précisée — les deux disent la même chose. La politesse "
+            "est rendue, le fil reste clos, et l'engagement tient : **plus rien sur ce lead**, sauf si "
+            "elle écrit elle-même.",
     },
     "horizon-optique": {
         "Website":
