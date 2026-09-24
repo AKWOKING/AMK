@@ -1595,3 +1595,127 @@ the result. Its §6 states the limits: **neither of us is an experienced screen-
 mechanics, not the lived experience — and we never test on the client's real page. What we write is what we
 heard, on which page, with which version. Same rule as every other measurement in this repo: **a number you
 did not take yourself does not enter a report.**
+
+## §29 THE HERO, SECOND PASS — the process, the gaze, and the 90/10 (24 Sep 2026, learning batch [29])
+
+**Origin.** Five videos from King, all about the first screen: three from **Flux Academy** (1.09 M
+subscribers — a process video, 21 real layouts, and episode 10 of their web-design course), one from
+**Ahmed Alsayad** (conversion blueprint, with a to-do list), one from **Malewicz** (25 years of design,
+500 hours of Hotjar recordings). Full log: **lot [29]**. Unusually, this batch **overlaps** the hero batch
+already absorbed in §26 — so this section is written as *what the first pass did not have*, not as a
+second telling.
+
+### 29.1 What is genuinely new
+
+§26 (Payton Clark Smith, 39 layouts) gave the **grammar**: text left by default, never text on a photo, an
+image cut by the fold invites scrolling, social proof belongs below, a hamburger on desktop is a fault.
+This batch adds four things that are not in it: **the process that produces a hero**, **the mechanics of
+directing an eye**, **the division of labour between the hero and the rest of the page**, and **the
+cognitive-load failure**. Two of those are now machine-checked.
+
+### 29.2 The process — and why a grey wireframe fails with real clients (Flux Academy)
+
+Six steps, in this order: **strategy → wireframe → 3 concepts → imagery → design → optimization**.
+
+The strategy step is a conversation with the client, and its questions are the ones we should be asking
+anyway: *what are you selling, why did you start this, who are you trying to help, what should people do
+on this site*. Flux distils the answers into **one clear value proposition and one action** — before
+opening a design tool.
+
+Then the wireframe, and here is the sentence worth keeping: **the wireframe is not pretty and is not
+supposed to be.** It is the content, placed, so the client can say *yes, that is what we do* before anyone
+argues about colours. And the second sentence, which contradicts the first: clients do not understand
+grey boxes. Malewicz calls his answer **type framing** — start with the copy at real size and real
+hierarchy, then choose the visual to match the copy, never the other way round. Applied to us: when we
+show a laboratory or a school its own hero, the words are already theirs (that is the live sheet), so
+what we are really asking is *does this say what you do* — the fastest approval we have ever got.
+
+The step we were skipping: **three rough concepts, sketched with shapes, before any design.** The point is
+not decoration, it is to check *whether there is room for the text next to the image* — a hero concept
+that only works with the text on top of the photo dies here, on a napkin, instead of after a rebuild. We
+already do three directions in the uniqueness protocol (§2 of `PRE-FLIGHT.md`); this makes it three
+*drawn* concepts, shown to the client, before the build.
+
+Finally, optimization: *free* ("join for free"), **social proof with a number and faces**, "featured on"
+logos, and a **ghost button** for the secondary action so it does not compete with the primary one.
+
+### 29.3 The anatomy, and the charge mentale (Ahmed Alsayad)
+
+The hero carries five elements: **headline, subheading, visual, trust signal, call to action** (primary,
+plus optionally a secondary). The purpose is a single sentence repeated in different words by every source
+in this batch: *what is this, who is it for, what do I get, why should I care* — answered in the time it
+takes someone to decide whether to stay (Flux's **15-second rule**: 80–90 % of visitors leave before that).
+
+The failure mode he names is the one our own pages could fall into: **cognitive overload**, which he
+defines precisely as *the visitor is given many options and therefore chooses none*. Its symptoms are all
+mechanical: several CTAs, several colours, no clear hierarchy, everything crowded in because "this is the
+hero, let's put it all here", and — worse — **hidden CTAs**. His second family of faults is more
+instructive because it looks successful: the award-chasing hero. Heavy parallax "looks great when you
+showcase it, but it either kills usability or kills performance"; clever headings that are not clear;
+background video and 3D. *It wins a prize; it does not get a client.*
+
+So five of his rules became checks in `tools/qa/audit_hero.py`: a hero with **no subheading**, a hero with
+**no action at all**, a hero with **more than two actions**, an **icon-only logo**, and a hero locked at
+`height:100vh` with nothing (an arrow, a word, the top of the next section) to say that there is
+something below.
+
+### 29.4 Directing an eye — three mechanical techniques (Malewicz)
+
+This is the part we cannot check in code and should apply the next time we shoot a photograph or pick
+one. All three are concrete:
+
+1. **The gaze principle.** A person looking at the camera puts the attention on their eyes. A person
+   looking *towards* the copy or the button makes us follow their gaze to it. On mobile, the same photo
+   recropped so the person looks **up** at the CTA puts the reader's eye exactly where we want it —
+   and this is why the pivot from phone screenshot to a real photo matters: we can control where a person
+   is looking, we cannot control where a screenshot points.
+2. **The optical guide.** The right edge of a block of text, if it forms a soft diagonal, is a funnel
+   that leads the eye down to whatever is next. A jagged edge is a wall.
+3. **CTA colour matching.** Take the colour of the main button, find it in the photograph — *recolour a
+   garment to a hue near it*, keep every other garment muted (colour the whole outfit and it reads as a
+   uniform). The visual then connects to the action subconsciously instead of by decoration.
+
+The trend he warns against is exactly the one that costs us nothing to avoid: **gradient shapes and
+lighting effects instead of people**. "It has nothing to do with amplifying the message… it is just a
+distraction." And the image that works is not the prettiest one: it is the one whose person **matches the
+target audience** ("it can't be a random image") — King said the same thing on 24/09 about the house in a
+generated photo, from the opposite direction.
+
+### 29.5 The 90/10 rule, or why our proof is not in the hero
+
+Malewicz, from 500 hours of session recordings: **the hero does 90 % of the persuasion; the remaining 10 %
+is done below it by "clearing doubts"** — social proof, examples, use cases. One confirms a sale only
+when the two are added together. This is precisely why §26 already put social proof *below* the hero, and
+why our pages are built the way they are: the hero states one thing, and the sections underneath answer
+the objections (the live sheet, the results, the five questions). **A hero that tries to carry the proof
+as well as the promise is a crowded hero** — the fault in 29.3, arriving from the other direction.
+
+### 29.6 "Do not put your app in the hero" — and why we are the exception
+
+Malewicz's most contrarian rule: a big screenshot of the product in the hero is often *bad*, because the
+visitor does not know your product and does not care how it looks. Show a person and the problem being
+solved; show one small panel if you must; show the whole interface **further down**.
+
+That is a real trap for us — our concept pages sell *websites*, so their hero could easily be one enormous
+screenshot — and we are the exception for the reason §26 already gives: **an image may take the first
+glance when the image IS the product.** A screen of the site we built is the product; a dashboard is not,
+for someone who has never heard of the dashboard. Worth saying out loud in a meeting, because the two
+cases look identical on a moodboard.
+
+### 29.7 What we will not copy: the invented number
+
+Flux builds trust with "Obi-Wan and 4,000 others have already joined" and logos of TV stations. It works.
+We have no reviews, no client count and no press — and inventing any of the three is forbidden (and has
+been since the first day: no invented price, no invented testimonial). What we have is honest and
+checkable: **five real pages anyone can open**, the laboratory's own words, and the fact that the visitor
+is looking at their own future site. So "not yet" is written here for the day someone asks why our hero
+does not carry a row of numbers.
+
+### 29.8 Honest note: on 24/09 the audit found nothing on our pages
+
+Twelve checks (the five new ones included) run over the six pages we own: **zero findings**. The three
+site pages and UNI-LABO already answer who/where, carry a subheading, hold at most two actions in the
+hero, show the name next to the icon, and never lock themselves at `100vh` with no way down. That has
+never happened before in this repo — five batches in a row each found real defects in our own work. It is
+also not a reason to relax: the checks are from sources read the same day, and the next page (the school,
+in October) starts from a blank file, where none of this is inherited.

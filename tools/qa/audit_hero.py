@@ -22,6 +22,20 @@ D'où viennent ces règles (lot [26] de `research/YouTube-Lessons.md`) :
     sur une photo** (« old school », illisible) ; le hamburger sur ordinateur est presque toujours une
     faute : il cache la navigation à quelqu'un qui a la place de la voir.
 
+  · **Cinq vidéos du lot [29]** (Flux Academy ×3, Ahmed Alsayad, Malewicz) ajoutent l'ANATOMIE et la
+    CHARGE MENTALE, toutes deux vérifiables :
+      – **l'anatomie** : un premier écran doit répondre en une seconde à *qui êtes-vous*, *que faites-vous*,
+        *qu'est-ce que j'y gagne*. Il lui faut donc un titre, une phrase d'appui et une action. Un titre
+        seul, ou un premier écran sans rien à faire, laisse le visiteur repartir (la « règle des 15
+        secondes » : 80 à 90 % des visiteurs partent avant).
+      – **la charge mentale** : « plusieurs boutons, plusieurs couleurs, tout entassé » ne fait pas riche,
+        cela fait partir. Au-delà de deux actions dans le premier écran, le visiteur ne choisit plus.
+      – **le logo en icône seule** : un logo sans le NOM écrit ne répond pas à « où suis-je ». Nos trois
+        pages du site portent une icône ET le nom en texte — c'est la règle.
+      – **l'écran qui prend toute la hauteur** sans rien pour dire qu'il y a une suite : le visiteur ne
+        descend pas. Les 21 mises en page du lot [29] montrent l'inverse neuf fois sur dix : un haut de
+        page compact, dont on voit le début de la section suivante.
+
 Ce que cet outil ne fait pas : il ne juge pas le goût. Il refuse ce qui est mécaniquement vérifiable,
 et il SIGNALE, sans trancher, ce qui demande un œil (texte sur une photo de fond).
 """
@@ -38,6 +52,9 @@ VH_HERO = re.compile(r"height\s*:\s*100(?:vh|dvh|svh)", re.I)
 ABS_BIG_TYPE = re.compile(r"font-size\s*:\s*(1[2-9]\d|2\d\d)px", re.I)
 MEDIA = re.compile(r"@media", re.I)
 REDUCED = re.compile(r"prefers-reduced-motion", re.I)
+CTA_CLASS = re.compile(r'class\s*=\s*["\'][^"\']*\b(?:btn|cta|button)\b', re.I)
+SCROLL_CUE = re.compile(r'chevron|scroll|défiler|defiler|↓|\bdown\b', re.I)
+EXACT_100VH = re.compile(r"(?<!min-)\bheight\s*:\s*100(?:vh|dvh|svh)\b", re.I)
 KEYFRAMES_ON_LAYOUT = re.compile(
     r"@keyframes\s+[\w-]+\s*\{[^}]*(?:top|bottom|left|right|width|height|margin)\s*:", re.I | re.S)
 
@@ -93,6 +110,57 @@ def audit(path):
         findings.append(("INFO", "le premier écran est un fond photo sans <img> dans le HTML — vérifier "
                                  "à l'œil que le texte reste lisible en plein soleil"))
 
+    # ── LOT [29] : l'anatomie du premier écran et la charge mentale ────────────────────────────────
+    if not hero:
+        findings.append(("INFO", "premier écran non identifié (aucune section class=\"hero|banner|top\") : "
+                                 "les règles d'anatomie et de charge mentale ne peuvent pas tourner"))
+    if hero:
+        # 7 · l'anatomie : un titre, une phrase d'appui, une action. Les trois, pas deux.
+        titre = re.search(r"<h1[^>]*>(.*?)</h1>", hero, re.S | re.I)
+        phrase = [p for p in re.findall(r"<p[^>]*>(.*?)</p>", hero, re.S | re.I)
+                  if len(re.sub(r"<[^>]+>", "", p).strip()) > 30]
+        action = re.findall(r"<a\b[^>]*class\s*=\s*[\"'][^\"']*\b(?:btn|cta)\b", hero, re.I) + \
+                 re.findall(r"<button\b", hero, re.I)
+        if not titre:
+            findings.append(("ERR", "aucun titre dans le premier écran : la première question (\"où suis-je ?\") "
+                                    "n'a pas de réponse"))
+        if not phrase:
+            findings.append(("WARN", "premier écran sans phrase d'appui : le titre doit porter seul le quoi, "
+                                     "le pour qui et le pourquoi — c'est beaucoup pour une ligne"))
+        if not action:
+            findings.append(("WARN", "le premier écran ne propose AUCUNE action : le visiteur comprend où il est "
+                                     "et ne peut rien faire"))
+
+        # 8 · la charge mentale : au-delà de deux actions, on ne choisit plus
+        n_cta = len(set(re.findall(r'<a\b[^>]*href\s*=\s*["\']([^"\']+)["\'][^>]*class\s*=\s*["\'][^"\']*\b(?:btn|cta)\b',
+                                  hero, re.I))) or len(action)
+        if n_cta > 2:
+            findings.append(("WARN", "%d actions dans le premier écran : au-delà de deux, le visiteur ne "
+                                     "choisit plus (charge mentale)" % n_cta))
+
+        # 9 · l'action est-elle visible, ou cachée en bas ?
+        bas = hero[-400:]
+        if action and not re.search(r'class\s*=\s*["\'][^"\']*\b(?:btn|cta)\b', hero, re.I):
+            findings.append(("INFO", "action présente mais sans classe de bouton — vérifier qu'elle se voit"))
+
+    # 10 · le logo en icône seule : le nom doit être écrit quelque part dans l'en-tête
+    entete = re.search(r"<header\b.*?</header>", html, re.S | re.I)
+    if entete:
+        marque = re.search(r'<(?:a|div|span)\b[^>]*class\s*=\s*["\'][^"\']*\b(?:brand|logo)\b[^"\']*["\'][^>]*>(.*?)</(?:a|div|span)>',
+                           entete.group(0), re.S | re.I)
+        if marque:
+            texte = re.sub(r"\s+", " ", re.sub(r"<(?:svg|img|path|rect|circle|g)[^>]*>.*?</(?:svg|g)>", " ",
+                                                 marque.group(1), flags=re.S | re.I))
+            texte = re.sub(r"<[^>]+>", " ", texte).strip()
+            if len(texte) < 2:
+                findings.append(("ERR", "la marque de l'en-tête est une icône SANS son nom écrit : le visiteur "
+                                        "ne sait pas où il est (règle des 15 secondes)"))
+
+    # 11 · l'écran qui prend toute la hauteur, sans rien pour dire qu'il y a une suite
+    if EXACT_100VH.search(css) and not SCROLL_CUE.search(hero or ""):
+        findings.append(("WARN", "premier écran en height:100vh exact et RIEN (flèche, mot, amorce) pour dire "
+                                 "qu'il y a une suite : le visiteur ne descend pas"))
+
     # 6 · ce qui est déjà bien, et qu'on veut voir écrit noir sur blanc
     goods = []
     if hero and re.search(r"<h1", hero, re.I):
@@ -126,6 +194,9 @@ def main():
             print("     %-4s %s" % (lvl, msg))
 
     print("\n%d faute(s) franche(s) · %d avertissement(s)" % (errs, warns))
+    print("non vérifiable ici : le GOÛT, la hiérarchie visuelle réelle, et l'effet d'un regard (principe de "
+          "la direction du regard,\nle guide optique) — ces trois-là demandent un œil. Sources : lot [29] de "
+          "research/YouTube-Lessons.md.")
     if strict and errs:
         sys.exit(1)
 

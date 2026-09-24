@@ -52,14 +52,41 @@ h1{font-size:clamp(2.1rem,7.4vw,3.5rem);margin:0}
 @media (min-width:900px){.hero-grid{grid-template-columns:1.05fr .95fr}}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms !important}}
 </style></head><body>
+<header><a class="brand" href="/">UNI-LABO — Bonamoussadi, Douala</a></header>
 <section class="hero"><div class="hero-grid"><div>
 <p class="sur">Bonamoussadi, Douala</p><h1>Le résultat juste, du premier coup.</h1>
-<p>Vous arrivez avec l'ordonnance de votre médecin.</p></div></section>
+<p>Vous arrivez avec l'ordonnance de votre médecin.</p>
+<a class="btn" href="#rdv">Prendre rendez-vous</a></div></section>
 <details><summary>Analyses à jeun</summary><p>8 à 12 heures sans manger.</p></details></body></html>"""
+
+# ── 4 · les quatre défauts du lot [29] : l'anatomie, la charge mentale, la marque, la hauteur ─────
+LOGO_ICONE = """<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><title>Marque en icône</title>
+<style>.btn{min-height:44px}</style></head><body>
+<header><a class="brand" href="/" aria-label="AMK"><svg viewBox="0 0 64 64"><rect width="64" height="64"/></svg></a></header>
+<section class="hero"><h1>Un titre clair</h1><p>Une phrase d'appui qui explique ce que nous faisons et pour qui.</p>
+<a class="btn" href="#contact">Nous écrire</a></section></body></html>"""
+
+ANATOMIE_NUE = """<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><title>Titre seul</title></head><body>
+<header><a class="brand" href="/">AMK</a></header>
+<section class="hero"><h1>Nous construisons des solutions pour l'avenir</h1></section></body></html>"""
+
+CHARGE_MENTALE = """<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><title>Quatre boutons</title></head><body>
+<header><a class="brand" href="/">AMK</a></header>
+<section class="hero"><h1>Un titre clair</h1><p>Une phrase d'appui qui explique ce que nous faisons et pour qui.</p>
+<a class="btn" href="#a">Acheter</a><a class="btn" href="#b">Essayer</a><a class="btn" href="#c">Appeler</a>
+<a class="btn" href="#d">Voir les tarifs</a></section></body></html>"""
+
+PLEIN_ECRAN = """<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><title>Tout l'écran</title>
+<style>.hero{height:100vh}.btn{min-height:44px}</style></head><body>
+<header><a class="brand" href="/">AMK</a></header>
+<section class="hero"><h1>Un titre clair</h1><p>Une phrase d'appui qui explique ce que nous faisons et pour qui.</p>
+<a class="btn" href="#a">Commencer</a></section></body></html>"""
 
 tmp = tempfile.mkdtemp()
 paths = {}
-for name, content in (("fautive1", FAUTIVE_1), ("fautive2", FAUTIVE_2), ("saine", SAINE)):
+for name, content in (("fautive1", FAUTIVE_1), ("fautive2", FAUTIVE_2), ("saine", SAINE),
+                      ("logo_icone", LOGO_ICONE), ("anatomie_nue", ANATOMIE_NUE),
+                      ("charge_mentale", CHARGE_MENTALE), ("plein_ecran", PLEIN_ECRAN)):
     p = os.path.join(tmp, name + ".html")
     io.open(p, "w", encoding="utf-8").write(content)
     paths[name] = p
@@ -69,6 +96,10 @@ def check(label, cond, detail=""):
     print("  %s %s%s" % ("ok  " if cond else "FAIL", label, ("  — " + detail) if detail and not cond else ""))
     if not cond:
         fails.append(label)
+
+def msg_of(path):
+    return " | ".join(m for _, m in audit_hero.audit(pathlib.Path(path))[0])
+
 
 def levels(path):
     findings, _ = audit_hero.audit(pathlib.Path(path))
@@ -99,8 +130,32 @@ for p in ours:
         lv, ff = levels(p)
         check("%s — aucun constat" % p.name, not ff, str(ff))
 
+print("\n═══ les règles du lot [29] : l'anatomie, la charge mentale, la marque, la hauteur ═══")
+# NOTE D'ATELIER, gardée exprès : ces assertions ont d'abord été écrites de travers — `levels()`
+# renvoie un COUPLE (niveaux, constats) et non un ensemble, et je cherchais « aucune action » en
+# minuscules alors que le message dit « AUCUNE action ». Trois échecs, trois fois la même leçon que les
+# lots [27] et [28] : quand un contrôle accuse, c'est l'instrument qu'il faut soupçonner d'abord.
+def constats(path):
+    return " ".join(levels(path)[0])
+
+
+l_logo = constats(paths["logo_icone"])
+check("marque en icône seule → ERREUR (le nom doit être écrit)",
+      "ERR" in l_logo and "icône SANS son nom" in msg_of(paths["logo_icone"]))
+l_ana = constats(paths["anatomie_nue"])
+check("titre seul, sans phrase d'appui → signalé",
+      "WARN" in l_ana and "phrase d'appui" in msg_of(paths["anatomie_nue"]))
+check("titre seul, aucune action → signalé",
+      "AUCUNE action" in msg_of(paths["anatomie_nue"]))
+l_chg = constats(paths["charge_mentale"])
+check("quatre boutons → charge mentale signalée",
+      "charge mentale" in msg_of(paths["charge_mentale"]))
+l_plein = constats(paths["plein_ecran"])
+check("100vh exact sans amorce de suite → signalé",
+      "il y a une suite" in msg_of(paths["plein_ecran"]))
+
 print()
 if fails:
     print("DES ÉCHECS : " + " · ".join(fails))
     sys.exit(1)
-print("Tout est vert — l'outil refuse ce qu'il doit refuser et accepte ce qu'il doit accepter.")
+print("Tout est vert — l'outil refuse ce qu'il doit refuser (dont les cinq règles du lot [29])\net accepte ce qu'il doit accepter, y compris nos propres pages.")

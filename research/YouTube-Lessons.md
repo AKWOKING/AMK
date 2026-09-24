@@ -1138,6 +1138,76 @@ le code et muette à l'oreille.** Le lot [27] l'avait trouvé en lisant les crit
 comparant un formulaire fautif et un formulaire Apple. C'est la raison d'être du protocole manuel : il n'y a
 pas d'outil qui entende à notre place.
 
+---
+
+## Lot [29] · LE PREMIER ÉCRAN, DEUXIÈME PASSE — le processus, le regard, et la règle des 90/10 (24/09/2026)
+
+Cinq vidéos de King, toutes sur le premier écran. **Trois viennent de Flux Academy** (1,09 M d'abonnés) :
+un processus complet, 21 mises en page réelles décortiquées, et l'épisode 10 de leur cours gratuit. Les deux
+autres : **Ahmed Alsayad** (plan de conversion + liste de contrôle) et **Malewicz** (25 ans de métier,
+500 heures d'enregistrements de sessions).
+
+**Ce lot recoupe le lot [26]** (Payton Clark Smith, 39 heros) — je le dis parce que c'est vrai, et parce que
+répéter une leçon en la faisant passer pour neuve est une façon de grossir un journal. Le lot [26] avait
+donné la **grammaire** (texte à gauche, jamais de texte sur une photo, image coupée par le pli, preuve
+sociale en dessous, pas de hamburger sur ordinateur). Celui-ci ajoute quatre choses qui n'y étaient pas :
+**le processus qui fabrique un premier écran**, **la mécanique pour diriger un œil**, **le partage du
+travail entre le haut de page et le reste**, et **l'échec par surcharge mentale**. Deux de ces apports sont
+maintenant vérifiés par la machine.
+
+### Ce que chaque source apporte
+
+| source | l'apport | ce qu'on en garde |
+|---|---|---|
+| **Flux Academy — le processus** (`LJbkLdtEW00`) | six étapes, dans l'ordre : **stratégie → maquette → 3 concepts → imagerie → design → optimisation** | les questions de la séance de stratégie (ce que vous vendez, pourquoi vous avez commencé, qui vous aidez, que doivent faire les gens) réduites à **une promesse et une action** ; **la maquette n'est pas jolie et ne doit pas l'être** ; **trois concepts dessinés à la main avant tout design**, pour vérifier qu'il y a la place du texte à côté de l'image ; à l'optimisation : le mot « gratuit », la preuve sociale, le **bouton fantôme** pour l'action secondaire |
+| **Flux Academy — 21 mises en page** (`Kg2ioQMjtIA`) | 21 heros de vrais sites, expliqués | on ne veut pas **une rangée d'éléments moyens** : quelque chose de très grand, quelque chose de très petit, le contraste fait l'échelle ; l'image peut passer **sous** le titre (intégration, pas « posée à droite ») ; le haut de page **compact**, dont on voit l'amorce de la section suivante ; le concept qui porte (la carte d'embarquement de Runway) ; et le « **hero sans hero** » quand la marque est connue et le contenu change (MoMA, un journal) |
+| **Flux Academy — épisode 10** (`flAcHu-squc`) | **la règle des 15 secondes** (80 à 90 % partent avant) et les trois questions : *qu'est-ce que c'est / que faites-vous / qu'est-ce que j'y gagne* | un logo **en icône seule ne répond pas à « où suis-je »** : le nom doit être écrit ; une police d'affichage va bien à 60 px et devient illisible à 16 px (deux polices, ou deux graisses) ; le sous-titre fait la même largeur que le titre, sans mot orphelin ; l'image se choisit pour **la place qu'elle laisse au texte** (un fond chargé est un mauvais choix), quitte à recadrer et à étendre le ciel |
+| **Ahmed Alsayad — le plan** (`gNWOBI67XnQ`) | l'anatomie et les deux familles de fautes | l'anatomie : **titre, sous-titre, visuel, signal de confiance, action** ; la faute n° 1 est la **surcharge mentale** — « beaucoup d'options, donc aucune choisie » : plusieurs boutons, plusieurs couleurs, pas de hiérarchie, tout entassé, et pire, des **actions cachées** ; la faute n° 2 est le site primé qui ne convertit pas (parallaxe lourde : « ça tue l'usage ou la performance » ; titres « malins » mais obscurs) ; et sa liste de contrôle finit sur **mobile** et **chargement rapide** (webp, lottie plutôt que mp4) |
+| **Malewicz — le regard** (`nWbBZPjev_0`) | trois techniques mécaniques et une règle de partage | **principe du regard** : une personne qui regarde l'objectif met l'attention sur ses yeux, une personne qui regarde le bouton nous y conduit — et sur téléphone on recadre la même photo pour qu'elle **lève les yeux vers l'action** ; **guide optique** : le bord droit d'un texte qui descend en biais est un entonnoir vers la suite ; **accord de couleur** : recolorer **un** vêtement d'une teinte proche du bouton principal (tout recolorer donne un uniforme) ; et la règle **90/10** : le haut de page fait 90 % de la persuasion, **les 10 % restants se font en dessous** (« clearing doubts ») |
+
+### Les quatre règles nouvelles dans `tools/qa/audit_hero.py`
+
+Cinq contrôles, tous nés de phrases précises, tous vérifiés par des témoins fautifs construits exprès
+(`tools/qa/test_audit_hero.py`, cinq assertions de plus) :
+
+1. **un premier écran sans phrase d'appui** → avertissement (le titre doit porter seul le quoi, le pour qui
+   et le pourquoi : c'est beaucoup pour une ligne) ;
+2. **un premier écran sans aucune action** → avertissement (« le visiteur comprend où il est et ne peut rien
+   faire ») ;
+3. **plus de deux actions** dans le premier écran → avertissement de **charge mentale** ;
+4. **une marque en icône sans son nom écrit** → **faute franche** (la règle des 15 secondes) ;
+5. **`height:100vh` exact sans rien** (flèche, mot, amorce de section) → avertissement : le visiteur ne
+   descend pas.
+
+Un trou a été bouché au passage : quand l'outil **ne trouve pas** de premier écran à analyser, il le dit
+maintenant (`INFO`), au lieu de laisser cinq règles se taire en silence — un contrôle muet ressemble à un
+contrôle satisfait.
+
+### Le résultat honnête, et il est inhabituel
+
+**Les six pages passent les douze contrôles sans un seul constat.** C'est la première fois depuis le début
+de ces lots : cinq lots d'affilée avaient trouvé de vrais défauts dans notre propre travail. Les pages
+répondent déjà aux trois questions, portent une phrase d'appui, tiennent en deux actions, montrent leur nom
+à côté de l'icône et ne s'enferment pas dans un écran plein. **Ce n'est pas une raison de se relâcher** :
+ces règles viennent de sources lues aujourd'hui, et la prochaine page — l'école, en octobre — part d'un
+fichier blanc, où rien de tout cela n'est hérité.
+
+### Et une troisième fois, l'instrument avait tort
+
+Mes cinq assertions ont d'abord produit **trois échecs** sur des témoins que l'outil refusait
+correctement : `levels()` renvoie un **couple** (niveaux, constats) et non un ensemble, et je cherchais
+« aucune action » en minuscules quand le message dit « AUCUNE action ». Trois fois la même leçon que les
+lots [27] et [28] — **quand un contrôle accuse, c'est l'instrument qu'il faut soupçonner d'abord** — et
+elle est écrite dans le test, à l'endroit exact où je me suis trompé.
+
+### Ce qu'on n'a pas copié
+
+Flux construit la confiance avec « Obi-Wan et 4 000 autres nous ont déjà rejoints », Malewicz avec une
+rangée de chiffres. Nous n'avons ni avis, ni nombre de clients, ni presse — **et en inventer un est
+interdit depuis le premier jour**. Ce qu'on a est vérifiable : cinq pages réelles que n'importe qui peut
+ouvrir, les mots du laboratoire, et le fait que le visiteur regarde son propre futur site. Écrit ici pour
+le jour où la question viendra.
+
 **Le désaccord méthodologique à noter :** pour 5 et 6, les sources utiles ne sont pas des vidéos YouTube.
 Le lot [26] a montré le plafond de ce format (deux vidéos sur cinq muettes, et les autres vendent une
 communauté payante). Les meilleures sources sont les documents officiels (Google, WhatsApp, W3C) et

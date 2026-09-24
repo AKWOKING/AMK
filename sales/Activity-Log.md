@@ -2725,7 +2725,7 @@ WhatsApp du pied de page, qui ouvrait un fil vide, porte lui aussi une phrase pr
 **84 671 octets**, le harnais de 32 à **42 assertions** : les chiffres sont alignés partout où ils étaient
 écrits (audit, notes de build, portique, feuille de séance, CRM, §25).
 
-## 2026-09-24 · 08:10 → 09:30 · CINQ VIDÉOS, DONT DEUX MUETTES — le premier écran, et la prospection par Maps
+## 2026-09-24 · CINQ VIDÉOS, DONT DEUX MUETTES — le premier écran, et la prospection par Maps *(commit 1dafa65, 07:25 Douala)*
 
 **Le lot du matin (King) :** cinq liens. Trois portent une parole, deux n'en portent aucune.
 
@@ -2768,7 +2768,7 @@ mord — vérifié : rc=1 sur les deux tutoriels, rc=0 sur nos pages).
 **Rien n'a été touché sur UNI-LABO.** Les leçons du premier écran sont du vocabulaire : elles serviront
 sur une page blanche (l'école d'octobre), pas à rouvrir une page que King vient de regarder.
 
-## 2026-09-24 · 09:40 → 11:10 · ACCESSIBILITÉ : le contrôle critère par critère, et onze défauts réparés sur nos propres pages
+## 2026-09-24 · ACCESSIBILITÉ : le contrôle critère par critère, et les défauts réparés sur nos propres pages *(commit af2c2f5, 07:43 Douala)*
 
 Consigne de King : **« start with accessibility, I guess you will do research online, I'll add what I can
 find »**. Deux sources de lui (Silktide sur les trois niveaux, et le cours d'audit d'Accessible Web — **55
@@ -2826,7 +2826,7 @@ dossier UNI-LABO entier (`hosting/previews/unilabo/`, dix fichiers) — comme pr
 **Le Cristallin et Univers Optique n'ont pas été touchés** : leurs constats (saut de titre pour Univers,
 icône dans un lien pour le Cristallin) sont **notés** dans le test du contrôle, pas corrigés — gel.
 
-## 2026-09-24 · 11:20 → 12:40 · ACCESSIBILITÉ, DEUXIÈME PASSE — ce que le lecteur d'écran entend, et le formulaire qui se taisait
+## 2026-09-24 · ACCESSIBILITÉ, DEUXIÈME PASSE — ce que le lecteur d'écran entend, et le formulaire qui se taisait *(commit 9cc043c, 08:07 Douala)*
 
 King a envoyé quatre sources qui tombaient pile sur les deux angles que le rapport du matin donnait comme
 manquants : **le test réel au lecteur d'écran** et **les formulaires**. Elles sont lues, appliquées et
@@ -2879,3 +2879,51 @@ témoins** · harnais UNI-LABO 42/42.
 ⚠️ **Les trois pages du site ont changé** : `<main>`, lien d'évitement, formulaire qui parle. Elles sont à
 redéployer, comme le dossier UNI-LABO. **Le Cristallin et Univers Optique restent gelés** (constats notés, non
 corrigés).
+
+*Note du 24/09, écrite à la main : les trois en-têtes ci-dessus portaient des heures que j'avais estimées
+(« 09:40 → 11:10 ») au lieu de les mesurer. Elles sont remplacées par l'heure réelle du commit, en heure de
+Douala — c'est vérifiable (`git log --date=format-local:"%H:%M"`), et une heure inventée dans un journal est
+exactement le genre de chiffre qui finit par être cité devant un client.*
+
+## 2026-09-24 · LE PREMIER ÉCRAN, DEUXIÈME PASSE — cinq vidéos, quatre techniques, et une correction de mes propres heures
+
+Cinq vidéos envoyées par King, toutes sur le premier écran : **trois de Flux Academy** (1,09 M d'abonnés —
+le processus complet, 21 mises en page réelles, l'épisode 10 du cours), **Ahmed Alsayad** (plan de
+conversion) et **Malewicz** (25 ans de métier, 500 heures d'enregistrements de sessions). Toutes portent
+une vraie parole — pas de vidéo muette cette fois.
+
+**Ce que le lot [26] n'avait pas, et que celui-ci apporte** : le **processus** qui fabrique un premier
+écran (stratégie → maquette → **trois concepts dessinés** → imagerie → design → optimisation) ; la
+**mécanique pour diriger un œil** (principe du regard, guide optique, accord de couleur avec le bouton) ;
+le **partage 90/10** (le haut de page persuade, **le dessous lève les doutes**) ; et la faute par
+**surcharge mentale** — « beaucoup d'options, donc aucune choisie ».
+
+**Cinq règles de plus dans `tools/qa/audit_hero.py`**, chacune née d'une phrase précise : pas de phrase
+d'appui → signalé ; pas d'action du tout → signalé ; **plus de deux actions** → charge mentale ; **marque
+en icône sans son nom écrit** → faute franche ; **`100vh` exact sans amorce de suite** → signalé. Et un
+trou bouché : quand l'outil ne trouve pas de premier écran à analyser, il le **dit** maintenant, au lieu de
+laisser cinq règles se taire en silence.
+
+**Résultat inhabituel : les six pages passent les douze contrôles sans un seul constat.** Depuis le début
+de ces lots, c'est la première fois qu'un audit ne trouve rien chez nous (les cinq lots précédents avaient
+tous trouvé du vrai). À ne pas confondre avec une bonne nouvelle définitive : ces règles viennent d'être
+lues, et la page suivante — l'école, en octobre — partira d'un fichier blanc.
+
+**Deux corrections que je dois signaler :**
+
+1. **`levels()` renvoie un couple**, pas un ensemble, et je cherchais « aucune action » en minuscules quand
+   le message dit « AUCUNE action » : mes cinq assertions ont produit **trois échecs sur des témoins que
+   l'outil refusait correctement**. Troisième lot d'affilée où c'est mon instrument qui avait tort —
+   la note est écrite dans le test, à l'endroit exact de l'erreur.
+2. **Les trois en-têtes de mes entrées du jour portaient des heures que j'avais estimées** (« 09:40 →
+   11:10 », « 11:20 → 12:40 »). Il était **08:30 à Douala** quand je les relisais : ces heures étaient
+   fausses. Remplacées par l'heure réelle des commits, vérifiable (`git log --date=format-local`). Une
+   heure inventée dans un journal finit citée devant un client ; c'est exactement ce que la règle interdit
+   pour un prix ou un témoignage, et elle vaut pour une horloge.
+
+**Écrit** : lot [29] des leçons, **§29** des skills (ce qui est nouveau par rapport à §26, et ce qu'on ne
+copiera pas : la preuve sociale inventée), cette entrée, et la ligne de route du PRE-FLIGHT.
+
+**Vérifié** : `test_audit_hero.py` **12 assertions** vertes (dont les 5 neuves) · `audit_hero` 0 constat sur
+les 6 pages · `audit_a11y --strict` rc=0 · `test_audit_a11y.py` 23 témoins · `test_site_a11y_behaviour.mjs`
+31 assertions · harnais UNI-LABO 42/42 · `audit_html` 0 constat.
