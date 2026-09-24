@@ -41,7 +41,7 @@ Je vous l'envoie ?
 — Akwo King / AMK – Développement Web & Solutions Digitales
 ```
 
-**Repli SMS** (1 segment — mesuré par `tools/qa/check_sms.py`) : `Bonjour. Deux cabinets, Brazzaville et Akwa : rien a voir avant de venir. Je construis votre page, vous la regardez, vous decidez. Je l'envoie ? - Akwo King, AMK`
+**Repli SMS** (1 segment — mesuré par `tools/qa/check_sms.py`) : `Bonjour. Deux cabinets, Brazzaville et Akwa : rien a voir avant de venir. Je construis votre page, vous la regardez, vous decidez. Je l'envoie ? - King, AMK`
 
 **Portes** : A = **à vérifier à l'écran** (3 numéros, le principal est un mobile) · B = **passe** (fiche
 détaillée + repères publiés) · C = titulaire nommé au registre.
