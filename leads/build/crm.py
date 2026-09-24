@@ -2615,6 +2615,34 @@ REPONSE_2409 = {
 
 
 REVISION_2409 = {
+    # ── 24/09, 14:17 — LE PREMIER REFUS EXPLICITE DE LA CAMPAGNE ────────────────────────────────
+    # Bely Optique Médicale répond, mot pour mot : « Non Merci ». `lost` et non `disqualified` : ils ne
+    # sont pas écartés pour données fausses — ils ont dit non. Conséquence voulue : `records.py` ne
+    # propose plus AUCUNE action sur ce lead (« Aucune. Lead écarté — motif dans le CRM »).
+    # ⚠️ Le marqueur « FIL CLOS » n'est pas décoratif : `views.py` s'en sert pour sortir le lead de la
+    # file « ⚡ Répondre d'abord », où il serait resté TOUS LES JOURS (une réponse `human` reste
+    # « en attente » tant que rien ne dit le contraire). Voir le commentaire dans `reply_pending`.
+    "bely-optique-m-dicale": {
+        "Reply": "Yes", "reply_type": "human", "last_send_state": "replied",
+        "stage": "lost", "stage_since": "2026-09-24",
+        "disqualification_reason": "refus explicite (« Non Merci », 24/09 14:17) — aucune relance, "
+                                   "aucun réessai, aucune question",
+        "wa_number_note":
+            "⚠️ LE NUMÉRO QUI A REÇU LE MESSAGE N'EST PAS ÉTABLI — la capture de King montre le fil "
+            "« BELY OPTIQUE MÉDI… » sans le numéro. Or le 696 85 52 42 n'était PAS sur WhatsApp le "
+            "21/09 (vague 1 jamais partie, `Contacted=No`). L'envoi du 24/09 est donc très "
+            "probablement passé par le repli 699 89 57 21 — celui que notre message citait. "
+            "La fiche le dit au lieu d'affirmer : à confirmer par King.",
+        "Conversation_extra":
+            "24/09 13:16 — notre message part et il est livré (✓✓). C'était le PREMIER contact réel "
+            "de cette boutique : le message du 21/09 n'était jamais parti (696 85 52 42 absent de "
+            "WhatsApp). "
+            "24/09 14:17 — RÉPONSE, mot pour mot : « Non Merci ». UNE HEURE après notre message. "
+            "**Premier refus explicite de la campagne.** Accepté tel quel : la réponse de courtoisie "
+            "est écrite (`sales/Reponse-BELY-2026-09-24.md` §① — remercier, se retirer, laisser la "
+            "porte ouverte, ne rien redemander) et c'est le SEUL message qui part. "
+            "**FIL CLOS** : après lui, plus rien, jamais. Si elle revient d'elle-même, le fil rouvre.",
+    },
     "horizon-optique": {
         "Website":
             "aucun site — fiche DoualaTour (24/09) : « HORIZON Optique », Akwa RUE FOCH, opticien "

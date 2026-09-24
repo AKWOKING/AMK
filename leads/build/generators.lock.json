@@ -1,7 +1,7 @@
 {
  "digests": {
-  "leads/build/crm.py": "1592da47913d11fd",
-  "leads/build/views.py": "1c18139a7f9a92bd",
+  "leads/build/crm.py": "878a5fd7109162be",
+  "leads/build/views.py": "b36b6f97f01f0e74",
   "leads/build/records.py": "7c77bd2042d527ac",
   "leads/build/rebuild.sh": "e1bbf5d8a26f5aba",
   "leads/build/guard.py": "608235c31dbd799f"

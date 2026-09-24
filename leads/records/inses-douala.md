@@ -29,12 +29,13 @@ JAMAIS contacté, et le 22/09 le premier message préparé a été RETIRÉ avant
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 4 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 5 ligne(s).*
 
 `L58` · | *(non envoyé)* | *CEMECES « Clinique de L'Espoir » (674 93 66 04)* | ***NUMÉRO ERRONÉ*** : ce numéro est celui d'**INSES**, un institut supérieur (capture de King). Ma fiche Maligah attribuait le mobile de l'école à la clinique. | — | — |
 `L59` · | *(piste ouverte)* | **INSES — institut supérieur, Douala** (674 93 66 04) | Numéro identifié comme celui de l'école. **Filières BTS · HND · Licence · Master.** La même affiche porte « **LA CLINIQUE DE L'ESPOIR** » → promoteur probablement commun école + clinique. | À traiter | — |
 `L866` · **Le garde-fou a mordu tout de suite :** `674 93 66 04` était sur DEUX lignes (CEMECES et INSES) — l'erreur
 `L1716` · 674 93 66 04**. L'INSES est donc **un lead du profil « a déjà une vitrine à lui »** — le meilleur profil de
+`L3718` · C'est aussi un client de **refonte** (comme Le Cristallin) — donc un palier supérieur à une page simple.
 
 ---
 

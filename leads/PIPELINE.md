@@ -9,13 +9,14 @@
 |---|---|
 | ④ Prix posé, en négociation | **3** |
 | ③ Aperçu envoyé | **1** |
-| ② Qualifié — en conversation | **23** |
+| ② Qualifié — en conversation | **22** |
 | ① Prospection — à qualifier | **78** |
+| ❌ Perdu | **1** |
 | ⏸ Parqué | **39** |
 | ⛔ Écarté | **12** |
 | **Total** | **156** |
 
-- **Contactés :** 61 · **Réponses humaines :** 5 · **Taux de réponse : 8.2 %**
+- **Contactés :** 61 · **Réponses humaines :** 6 · **Taux de réponse : 9.8 %**
 - **Réponses automatiques (hors PRR) :** 1
 - **Clients :** 0 · **Revenu :** 0 FCFA
 
@@ -31,7 +32,7 @@
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| Le Cristallin | Douala | 699 90 55 77 | `L3426` |
+| Le Cristallin | Douala | 699 90 55 77 | `L3718` |
 | UNI-LABO | Douala (Bonamoussadi, Carrefour Etoo) | 696 13 98 19 | `L134` |
 | Univers Optique | Douala | 699 25 28 74 | `L3442` |
 
@@ -39,9 +40,9 @@
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| Cavisa Optique | Douala | 699 95 90 52 | `L3618` |
+| Cavisa Optique | Douala | 699 95 90 52 | `L3716` |
 
-## ② Qualifié — en conversation — 23
+## ② Qualifié — en conversation — 22
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
@@ -49,7 +50,6 @@
 | Afrique Labo SARL | Douala (Bessengue) | 690 54 70 93 | `L3317` |
 | Baird Memorial College | Buea (Bonduma) | 677875395 | `L16` |
 | Baptist Comprehensive College | Buea (Great Soppo) | 679650707 | `L15` |
-| Bely Optique Médicale | Douala | 696 85 52 42 | `L3589` |
 | Cabinet Dentaire The Skye | Douala (Bonamoussadi) | 677 79 69 99 | `L53` |
 | Cabinet Dentaire YAKS | Douala (Logbessou) | 672 70 20 78 | `L54` |
 | Cabinet d'Optique la Rétine | Douala (Akwa) | 695 474 364 | `L3652` |
@@ -114,7 +114,7 @@
 | Inter Comprehensive High School (ICHS) Great Soppo | Buea (Great Soppo) | — | — |
 | Isalyd Corporation | Douala | 694 85 87 46 | — |
 | JiredOptic Med | Douala | 696 26 50 31 | — |
-| K Vision Care | Douala (Bessengue · Ancien 3e · Ndogpassi) | 677 077 159 | `L3657` |
+| K Vision Care | Douala (Bessengue · Ancien 3e · Ndogpassi) | 677 077 159 | `L3707` |
 | KYLAYA LABO | Douala (Bali, 189 rue des Manguiers) | 696 78 77 78 | — |
 | L'Opticien SARL | Douala | 694 33 65 82 | — |
 | LABO-PHANUEL | Douala (Akwa) | 243 17 94 71 | `L60` |
@@ -152,6 +152,12 @@
 | Wonders Medical Foundation | Douala (Bonamoussadi) | — | — |
 | École Privée Bilingue Les Génies | Douala (Akwa) | — | `L3122` |
 
+## ❌ Perdu — 1
+
+| Lead | Ville | WhatsApp | Trace au journal |
+|---|---|---|---|
+| Bely Optique Médicale | Douala | 696 85 52 42 | `L3589` |
+
 ## ⏸ Parqué — 39
 
 | Lead | Ville | WhatsApp | Trace au journal |
@@ -169,13 +175,13 @@
 | Centre Médical des Capucines | Douala (Bonapriso) | 699 72 36 93 | `L111` |
 | Clinique La Béthanie | Douala (Bonabéri) | 677 76 07 82 | `L2332` |
 | Clinique de L'université | Douala (Bassa) | 694 36 02 03 | `L113` |
-| Ctre d'Analyses Médicales Pasteur Medlas | Douala (Akwa, Bld de la République) | 677 45 99 97 | `L2678` |
+| Ctre d'Analyses Médicales Pasteur Medlas | Douala (Akwa, Bld de la République) | 677 45 99 97 | `L3691` |
 | DAS Group International | Douala (Akwa) | 680 100 626 | `L41` |
 | Diagmed | Douala (Bonabéri, Rue 4.352 — Route du Lycée) | 698 97 22 03 | — |
 | Discovery Labs | Douala (Bassong) | 694 86 13 61 | `L110` |
 | Département Biologique | Douala (Akwa I) | 699 85 33 52 | `L110` |
 | Flemming Dream Labo | Douala (Bessenguè, feu rouge, Bld de la République) | 699 81 34 04 | — |
-| INSES — Institut Supérieur de l'Espoir | Douala (Bonabéri) | 674 93 66 04 | `L1716` |
+| INSES — Institut Supérieur de l'Espoir | Douala (Bonabéri) | 674 93 66 04 | `L3718` |
 | Interlabo | Douala (Akwa, 780 Rue E. Betote — R. Pau) | 677 75 54 21 | `L1761` |
 | J&E Memorial Polyclinic (JEMPO) | Douala (Deido/Bessengue) | 696 71 06 99 | `L24` |
 | Jucia Optics | Douala (Akwa) | 653 449 349 | `L3638` |

@@ -3718,3 +3718,55 @@ magasins, un réseau d'assureurs, un responsable identifié, et **un manque visi
 C'est aussi un client de **refonte** (comme Le Cristallin) — donc un palier supérieur à une page simple.
 
 **Rien n'est envoyé.** Les trois scripts sont prêts ; l'envoi appartient à King, comme toujours.
+
+## 24/09/2026 (soir) — ⭐ PREMIER REFUS EXPLICITE : BELY OPTIQUE DIT « Non Merci »
+
+**14:17 — deux mots, une heure après notre message.** Notre premier contact part à **13:16**, livré (✓✓) ;
+**Bely Optique Médicale** (Bonamoussadi, Mme NGATCHA ZOE Rosalie) répond **« Non Merci »**. C'est le
+**premier refus explicite de la campagne** : jusqu'ici on avait des oui, des « je reviens vers toi », un
+« on se voit en octobre », et du silence. Maintenant on sait aussi à quoi ressemble un non.
+
+**Ce que ce n'était PAS.** Ce n'était pas une deuxième sollicitation : le message du **21/09 n'est jamais
+parti** (le 696 85 52 42 n'était pas sur WhatsApp — incident de canal du 21/09, `Contacted=No`). C'était
+donc **le premier message** que cette boutique recevait de nous.
+
+**La décision — on ne discute pas un non.** Réponse de courtoisie écrite dans
+`sales/Reponse-BELY-2026-09-24.md` §① : **remercier, se retirer explicitement** (« je ne vous relance
+pas »), laisser la porte ouverte en **une** phrase au conditionnel, **ne rien redemander**. C'est le seul
+message qui part ; **après lui, plus rien, jamais** — ni relance, ni « juste pour savoir ». Au CRM :
+`Reply = Yes`, `reply_type = human`, `last_send_state = replied`, **`stage = lost`** (perdu, et non
+« écarté » : ils ne sont pas sortis pour données fausses, ils ont dit non), motif écrit noir sur blanc.
+`records.py` ne propose désormais **aucune** action sur ce lead — c'est exactement le but.
+
+**L'instrument corrigé au passage (`views.py`) — un refus écrit n'est pas une réponse à traiter.** Une
+réponse `human` reste « en attente » dans la file « ⚡ Répondre d'abord » tant que rien ne dit le
+contraire : Bely y serait restée **tous les jours, pour toujours**, et un jour la file aurait fait
+écrire à quelqu'un qui avait dit non. D'où le marqueur **« fil clos »**, posé à la main dans la
+conversation comme l'est déjà « parked » — une décision humaine, pas une déduction. ⚠️ On ne filtre
+**pas** sur `stage` : un lead en `lost` peut revenir de lui-même, et ce jour-là il doit réapparaître en
+tête de file. Vérifié après reconstruction : **« ❌ Perdu — 1 »** au tableau de bord, **absent du plan du
+jour**, et l'entonnoir passe à **6 réponses humaines** (9,8 % des contactés).
+
+### Deux vérités à corriger, trouvées en écrivant ce message
+
+1. **⚠️ Le numéro qui a reçu le message n'est pas établi.** La fiche affirmait : « numéro utilisé : le
+   principal (696 85 52 42) ; le repli 699 89 57 21 n'a pas eu à servir ». **Rien ne le prouve** — la
+   capture montre le fil « BELY OPTIQUE MÉDI… » **sans le numéro**, et le 696 85 52 42 n'était pas sur
+   WhatsApp le 21/09. L'envoi est donc **très probablement passé par le repli 699 89 57 21**. Le CRM le
+   dit maintenant au lieu de l'affirmer. *Même faute que d'habitude, sous une autre forme : une ligne qui
+   affirme plus que ce qu'on a vu.*
+2. **⚠️ Mon propre message de premier contact pour K Vision était faux — à 5 segments au lieu de 2.** Il
+   annonçait « 291 caractères → 2 segments ». Il portait des **tirets cadratins** `—`, caractère absent
+   de l'alphabet **GSM-7** : sa seule présence fait encoder **tout** le SMS en **UCS-2**, où un segment ne
+   fait plus 160 caractères mais **70**. Le message passait donc à **5 segments** — cinq SMS facturés
+   pour un seul. Un compteur de caractères ne le dit pas. **L'instrument, si** : `tools/qa/check_sms.py`,
+   écrit pour ça, qui mesure en unités GSM-7/UCS-2 et refuse les caractères qui font basculer.
+   Le message corrigé (100 % GSM-7) fait **289 unités → 2 segments**, et une variante **160 unités → 1
+   segment** est prête. **Règle : tout message destiné au SMS passe par l'instrument avant livraison.**
+
+### Et le premier message pour K Vision est prêt
+
+Le § 9 du dossier d'envoi du lot 3 porte les trois portes (SMS · appel · e-mail) ; le SMS est maintenant
+**vérifié par l'instrument** et donné en deux longueurs. L'accroche : **« votre site ne s'ouvre plus »** —
+jamais « votre domaine a expiré » (faux : il court jusqu'au 17/08/2027). Rien n'est envoyé : c'est King
+qui envoie, comme toujours.

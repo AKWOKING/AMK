@@ -10,16 +10,21 @@
 | Type | other |
 | Ville | Douala |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | lost |
 | WhatsApp | 696 85 52 42 |
 | Numéro vérifié | yes |
 | Contact | NGATCHA ZOE Rosalie |
 | Canal | WhatsApp |
 | Contacté | Yes |
-| Réponse | No |
+| Réponse | Yes |
 | Maquette / site | No |
 | Source | directory |
 | Détail source | Annuaire officiel ONOC + Maligah |
+| Numéro inutilisable | ⚠️ LE NUMÉRO QUI A REÇU LE MESSAGE N'EST PAS ÉTABLI — la capture de King montre le fil « BELY OPTIQUE MÉDI… » sans le numéro. Or le 696 85 52 42 n'était PAS sur WhatsApp le 21/09 (vague 1 jamais partie, `Contacted=No`). L'envoi du 24/09 est donc très probablement passé par le repli 699 89 57 21 — celui que notre message citait. La fiche le dit au lieu d'affirmer : à confirmer par King. |
+
+## Pourquoi il est écarté
+
+refus explicite (« Non Merci », 24/09 14:17) — aucune relance, aucun réessai, aucune question
 
 ## Notes
 
@@ -27,7 +32,7 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : NGATCHA ZOE Rosalie. (2e : 651 61 
 
 ## Prochaine action
 
-**0 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**Aucune.** Lead écarté — refus explicite (« Non Merci », 24/09 14:17) — aucune relance, aucun réessai, aucune question
 
 ## Historique — lignes du journal qui citent ce lead
 

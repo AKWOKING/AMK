@@ -223,6 +223,14 @@ def reply_pending(r) -> bool:
     conv = str(r.get("Conversation") or "").lower()
     if "parked" in conv or "await" in conv:
         return False
+    # 24/09 — UN REFUS ÉCRIT N'EST PAS UNE RÉPONSE À TRAITER. Bely Optique a répondu « Non Merci » ;
+    # sans ce marqueur, la file « ⚡ Répondre d'abord » l'aurait portée TOUS LES JOURS, pour toujours,
+    # et aurait fini par faire écrire à quelqu'un qui a dit non — précisément ce qu'on s'interdit.
+    # Marqueur posé à la main dans `Conversation` (« fil clos »), comme « parked » : une décision
+    # humaine, pas une déduction. ⚠️ On ne filtre PAS sur `stage` : un lead en `lost` peut revenir de
+    # lui-même, et ce jour-là il doit réapparaître en tête de file.
+    if "fil clos" in conv:
+        return False
     if r.get("slug") in RELANCE_A_JOUR:
         return False          # une date a été fixée : le fil est organisé
     return True

@@ -330,22 +330,39 @@ sans que personne ne le voie.
 
 ```
 Bonjour. Votre site kvisioncare.com ne s'ouvre plus : erreur de connexion sécurisée. Le
-domaine est bien à vous, payé jusqu'en 2027 — c'est la vitrine qui est fermée, pas le nom.
+domaine est bien à vous, payé jusqu'en 2027 : c'est la vitrine qui est fermée, pas le nom.
 Je la remets en ligne proprement, sous votre nom. Je vous explique quand vous voulez ?
-— Akwo King / AMK, Douala
+- Akwo King, AMK Douala
 ```
 
-**291 caractères → 2 segments** (compté, pas estimé). Les six premiers mots sont pour **lui** (son site), le fait est
-vérifiable en dix secondes, aucun prix, **une seule** demande, le nom à la fin.
+**289 unités → 2 segments** (mesuré par `tools/qa/check_sms.py`, pas estimé). Les six premiers mots sont
+pour **lui** (son site), le fait est vérifiable en dix secondes, aucun prix, **une seule** demande, le
+nom à la fin.
+
+> ⚠️ **Correction du 24/09 — mon premier jet était faux, et personne ne l'aurait vu.** La version
+> ci-dessus portait des **tirets cadratins** `—`. Ce caractère n'existe pas dans l'alphabet **GSM-7**
+> (norme 03.38) : sa seule présence fait encoder **tout** le message en **UCS-2**, où un segment ne fait
+> plus 160 caractères mais **70**. Le message passait donc de **2 à 5 segments** — cinq SMS facturés pour
+> un seul message. Un compteur de caractères ne le dit pas ; **l'instrument, si** :
+> `python3 tools/qa/check_sms.py "..."` (écrit le 24/09 pour ça). Tout message destiné au SMS passe par
+> lui avant d'être livré.
 
 **Variante nominative — à n'employer que si on est sûr de qui décroche :**
 
 ```
 Bonjour Monsieur Kakeu. Votre site kvisioncare.com ne s'ouvre plus : erreur de connexion
-sécurisée. Le domaine est payé jusqu'en 2027 — c'est la vitrine qui est fermée.
+sécurisée. Le domaine est payé jusqu'en 2027 : c'est la vitrine qui est fermée.
 Je la remets en ligne proprement, sous votre nom. Je vous explique quand vous voulez ?
-— Akwo King / AMK, Douala
+- Akwo King, AMK Douala
 ```
+
+**Variante en UN SEUL segment** (160 unités → 1 SMS), si on veut le strict minimum :
+
+```
+Bonjour. Votre site kvisioncare.com ne s'ouvre plus : erreur de connexion. Je le remets en
+ligne proprement, sous votre nom. Je vous explique ? - Akwo King, AMK
+```
+
 
 ⚠️ **Pourquoi la version neutre part en premier** : le nom **KAKEU Djounessi** vient de **leur ancien
 site**, où il apparaissait comme *Général Manager*. C'était vrai **il y a deux ans** — on ne sait pas s'il

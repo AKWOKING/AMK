@@ -31,7 +31,7 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : DONGMO Jean René. Probleme : etre
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 12 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 13 ligne(s).*
 
 `L3453` · **Médina Optic** (Balla, 699 93 93 34) et **Cavisa Optique** (Dongmo, 699 95 90 52). Tous jamais contactés,
 `L3461` · le 24/09** ; pour Cavisa, la seule page au monde qui porte son nom est **vide** ; pour Médina, on dit
@@ -45,6 +45,7 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : DONGMO Jean René. Probleme : etre
 `L3580` · informations arrivent, la page se complète (§3 du même fichier). **La fiche Google de Cavisa n'existe pas**
 `L3614` · **① Cavisa — on ne redéploie pas maintenant.** King : *« Je vais redéployer Cavisa lorsque le prospect
 `L3618` · reste prêt dans `sales/Reponse-CAVISA-2026-09-24.md` — **rien n'est envoyé par nous**, et **aucune relance**
+`L3716` · **Pourquoi c'est le meilleur prospect de la campagne après Cavisa** : une entreprise réelle, trois
 
 ---
 

@@ -6,6 +6,11 @@
 (les opticiens préparés le 21/09, jamais envoyés), **aucun n'est dans `KILL-LIST.md` ni `STALE.md`**, aucun
 n'a reçu le message 1.
 
+**❌ BELY OPTIQUE A RÉPONDU « Non Merci » — 24/09, 14:17**, une heure après notre message (13:16). Premier
+refus explicite de la campagne. Il s'accepte tel quel : la réponse de courtoisie est écrite
+(`sales/Reponse-BELY-2026-09-24.md` §①), c'est le **seul** message qui part, et **après lui plus rien**.
+CRM : `stage = lost`, `Reply = Yes`, marqueur « fil clos » dans la conversation.
+
 **✔ PARTI LE 24/09 — quatre sur cinq.** King a envoyé **Doyoan, Bely, 4M Optique Akwa et Fashion Vision**
 (heure de chaque envoi non relevée ; accusés de réception non relevés à cette heure → CRM en `sent`, pas
 `delivered`). **HORIZON OPTIQUE N'EST PAS PARTI : WhatsApp refuse le 677 44 74 17** — voir § 4 et le § 6
@@ -82,7 +87,7 @@ Je vous l'envoie ?
 
 ---
 
-## 2 · BELY OPTIQUE MÉDICALE — Madame Ngatcha — **696 85 52 42** *(repli : 699 89 57 21)*
+## 2 · BELY OPTIQUE MÉDICALE — Madame Ngatcha — ❌ **REFUS le 24/09 à 14:17** *(message parti à 13:16)*
 
 **La recherche.** Registre de l'Ordre : *Bely Optique Médicale*, titulaire public **NGATCHA ZOE Rosalie** —
 **consultation oculaire déclarée et vente de montures** (les deux moitiés du métier), Bonamoussadi, entrée
@@ -104,6 +109,37 @@ Je vous la construis d'abord, vous la regardez sur votre téléphone, vous déci
 Je vous l'envoie ?
 — Akwo King / AMK – Développement Web & Solutions Digitales
 ```
+
+### Ce qui est réellement parti (texte exact, lu sur la capture de King)
+
+King a raccourci et durci la deuxième ligne avant d'envoyer. **Le message qui est parti dit :**
+
+```
+Bonjour Madame Ngatcha. Pour un opticien à Bonamoussadi, un patient assuré qui cherche dans le
+réseau santé de sa société tombe sur « Bely Optique Médicale Sarl — Bonamoussadi, Sable », avec
+un numéro : 699 89 57 21. Sur la liste de l'Ordre, c'est le 696 85 52 42 qui est publié.
+Deux numéros différents pour vous joindre, et aucune monture à visualiser : un patient assuré
+qui hésite finit par appeler un autre cabinet.
+Il ne manque que la page où vos examens de vue et vos modèles sont réunis avec un bouton
+WhatsApp direct.
+Je vous la construis d'abord, vous la regardez sur votre téléphone, vous décidez après.
+Je vous l'envoie ?
+```
+
+**Livré (✓✓) à 13:16. Réponse à 14:17, mot pour mot : « Non Merci ».**
+
+> ⚠️ **C'était le PREMIER message que cette boutique recevait de nous.** Celui de la vague 1 (21/09)
+> n'était **jamais parti** : le 696 85 52 42 n'était pas sur WhatsApp (`Contacted=No`, incident de canal
+> consigné le 21/09). Ce n'est donc pas un « non » à une deuxième sollicitation — c'est un non au premier
+> contact. ⚠️ Et **le numéro qui a reçu ce message n'est pas établi** : la capture ne le montre pas, et le
+> 696 85 52 42 n'était pas sur WhatsApp quatre jours plus tôt — l'envoi est très probablement passé par
+> le **repli 699 89 57 21**. Le CRM le dit maintenant au lieu de l'affirmer.
+>
+> **La leçon de rédaction** (hypothèse, écrite en entier dans `sales/Reponse-BELY-2026-09-24.md`) : le
+> message partait d'un **manquement** (« deux numéros différents… aucune monture à visualiser »), vrai
+> mais lu comme un reproche par quelqu'un qui n'avait rien demandé. Les premiers messages à venir
+> ouvrent par **un fait neutre et vérifiable**, une seule idée, puis la demande. Le manquement — s'il
+> faut le dire — passe **en deuxième**.
 
 ---
 
