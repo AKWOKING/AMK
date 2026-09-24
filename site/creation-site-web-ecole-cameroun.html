@@ -82,6 +82,9 @@
 }
 </script>
 <style>
+.skip{position:absolute;left:-9999px;top:0;z-index:200;background:#0B1120;color:#fff;padding:12px 20px;font-weight:700;border-radius:0 0 12px 0}
+.skip:focus{left:0}
+main{display:block}
 :root{
   --navy:#0F172A; --navy2:#1E293B; --navy3:#334155; --navy4:#0B1120;
   --amber:#F59E0B; --amber-l:#FCD34D; --amber-t:#FFFBEB;
@@ -192,6 +195,7 @@ footer .nap{color:#E2E8F0}
 </style>
 </head>
 <body>
+<a class="skip" href="#contenu" data-en="Skip to content" data-fr="Aller au contenu">Aller au contenu</a>
 <header id="hdr">
   <div class="wrap h-in">
     <a class="brand" href="index.html" aria-label="AMK">
@@ -212,6 +216,7 @@ footer .nap{color:#E2E8F0}
   </div>
 </header>
 
+<main id="contenu">
 <section class="hero" id="top">
   <div class="wrap">
     <div class="center"><span class="kicker" data-en="Website for schools · Cameroon" data-fr="Site web pour écoles · Cameroun">Site web pour écoles · Cameroun</span></div>
@@ -364,6 +369,7 @@ footer .nap{color:#E2E8F0}
   </div>
 </div>
 
+</main>
 <footer>
   <div class="wrap">
     <div class="f-grid">

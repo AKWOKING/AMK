@@ -1063,6 +1063,81 @@ Onze défauts, sur quatre pages, dont trois invisibles à l'œil :
   dans l'outil, jamais tolérés. C'est la même leçon qu'au lot [26] avec les deux vidéos muettes : **vérifier
   l'instrument avant de croire la mesure.**
 
+---
+
+## Lot [28] · LE LECTEUR D'ÉCRAN ET LES FORMULAIRES — 4 sources de King (24/09/2026, dans la journée)
+
+Suite directe du lot [27] : King a envoyé exactement les deux angles que le rapport d'accessibilité
+signalait comme manquants — **le test réel au lecteur d'écran** et **les formulaires**. Quatre sources,
+dont une qui n'a pas pu être lue (dit plus bas, sans détour).
+
+| source | ce qu'elle apporte | ce qu'on en garde |
+|---|---|---|
+| **`youtu.be/aAh1PFsgcBY`** — *NVDA Screen Reader Tutorial: How to Use It for Accessibility Testing* (Software Testing 101, 18,5 k abonnés, lu en entier) | le mode d'emploi du test à l'oreille, et **la comparaison la plus utile qui soit** : le même formulaire chez eux (fautif) puis chez Apple (irréprochable) | les touches (**D** repères, **H** titres, **K** liens, **F** champs, **NVDA+Tab** où suis-je), l'astuce des **trois couleurs** (bleu = focus, rouge = lecture, jaune = revue) qui rend le test possible pour quelqu'un qui voit, et le vocabulaire des pannes |
+| **`kortic.com`** — *Formulaires et messages d'erreurs accessibles* (Anthony Ladeuil, FR, licence CC BY-NC-SA) | tout l'article porte sur ce que personne ne fait : **gérer les erreurs de saisie** | étiquette liée et à proximité · format annoncé · **le placeholder n'est pas une étiquette** · `type` + `autocomplete` · `fieldset`/`legend` pour les groupes · pas de CAPTCHA (un honeypot à la place) · **marquer les champs FACULTATIFS plutôt que d'astérisquer les obligatoires** · et le patron complet du **résumé d'erreurs** : un conteneur focalisé, une liste où chaque erreur est un **bouton qui amène au champ** et le marque `aria-invalid` |
+| **`github.com/videvelopers/TalkBack-Sound-effect-for-NVDA-`** | un module NVDA (Python, MIT, 2023) qui imite les sons de TalkBack : **un son par objet** quand on se déplace | l'idée qui compte n'est pas le module, c'est ce qu'il imite : **sur Android, on explore élément par élément**. Ce qui n'est pas atteignable au balayage n'existe pas — et c'est le téléphone que nos clients ont |
+| **`faq.whatsapp.com/3614672068767202`** | ❓ **PAGE NON LUE** | voir ci-dessous |
+
+### La source qui n'a pas pu être lue — et pourquoi je l'écris
+
+Le lien du centre d'aide WhatsApp (plateforme Android, locale fr_FR) **répond 403** à notre outil de fetch,
+et le bac à sable n'a **aucun réseau en ligne de commande** (vérifié : `curl` répond `000` même pour
+`example.com`). Quatre tentatives : URL d'origine, sans paramètres, en `fr_FR`, en `en_US`. **Je n'ai pas
+lu cette page, je ne vais donc pas résumer ce qu'elle dit.** Ce qu'on peut affirmer sans l'avoir lue : WhatsApp
+fonctionne avec TalkBack et VoiceOver (c'est documenté par des sources tierces, et Android Accessibility Suite
+le décrit). **Si King veut que son contenu entre dans le dossier, il suffit de coller le texte ici** — et il
+sera intégré comme les autres.
+
+### Ce que ces sources ont fait changer dans le code, le jour même
+
+Quatre vrais défauts trouvés sur nos pages, tous invisibles à l'œil :
+
+1. **Les trois pages du site n'avaient AUCUN repère `<main>`.** C'est le tout premier constat du tutoriel :
+   sans repère principal, le lecteur annonce l'en-tête, le menu, le pied de page… et **« page blank »** au
+   milieu. Corrigé : `<main id="contenu">` + `main{display:block}`.
+2. **Deux de ces pages n'avaient pas de lien d'évitement** (« Aller au contenu ») — le critère **2.4.1, qui
+   est de niveau A**. Corrigé : le lien est en première position dans le `<body>`, donc au premier `Tab`.
+3. **Le formulaire du site échouait en SILENCE** : `if (!biz) return false;` — un clic sur « Recevoir mon
+   aperçu » sans nom ne produisait **rien** : pas de message, pas de focus, aucune annonce. C'est
+   exactement le défaut que le tutoriel NVDA décrit (« *it does not introduce an error message… only says
+   blank* ») et que tout l'article de Kortic traite. Et il y avait un cas vicieux : un champ rempli
+   d'**espaces** passait la validation native du navigateur (`required`), donc le JavaScript était le seul
+   filet — et il ne disait rien. Corrigé : la zone vivante **annonce** ce qui manque, le champ est marqué
+   `aria-invalid`, et **le focus y est amené**.
+4. **L'astérisque des champs obligatoires** (« Nom de l'école ou de la clinique \* ») n'était expliqué **nulle
+   part** — or un astérisque ne se vocalise pas et sa signification doit être donnée *avant* le formulaire.
+   Appliqué la règle de Kortic : on ne marque plus l'obligatoire, on marque le **facultatif** (« Votre numéro
+   WhatsApp (facultatif) »).
+
+Deux contrôles neufs dans l'outil, nés de la même phrase :
+
+- **2.4.1 — les repères** : sans `<main>`, la page est signalée (« la navigation au lecteur d'écran annonce
+  l'en-tête, le menu, le pied de page, et rien au milieu ») ;
+- **1.3.1 — les groupes nommés** : un `<fieldset>` **sans `<legend>`** ne nomme rien ; le lecteur annonce
+  alors des cases isolées (« *personal radio button, one of two* ») sans dire de quoi il s'agit.
+
+Et un contrôle qui passe d'avertissement à vérification : **3.1.2** regarde maintenant **comment** la page
+bilingue cache l'autre langue. `display:none` la retire de l'arbre d'accessibilité ; `opacity:0` ou
+`visibility:hidden` la laissent dedans — le lecteur annonce alors **les deux langues à la suite**. Sur
+UNI-LABO c'est `display:none` ✅, sur le site une seule langue est dans le document à la fois ✅.
+
+### Le livrable qui manquait
+
+**`tools/qa/PROTOCOLE-LECTEUR-ECRAN.md`** — le test à l'oreille, en 5 minutes, fait par un humain : quoi
+installer (NVDA gratuit, TalkBack préinstallé), les **huit touches** qui comptent, **ce qu'on doit entendre
+sur nos pages** (avec les vrais chiffres : 44 titres et 42 liens sur le site, « *1 · Vos analyses, groupe de
+cases à cocher, 1 sur 19* » sur UNI-LABO), les gestes TalkBack sur Android — et la question qui compte pour
+nous : **le double tap ouvre-t-il WhatsApp ?** — plus trois limites écrites noir sur blanc (nous ne sommes pas
+des utilisateurs expérimentés de lecteur d'écran ; on ne teste jamais sur la vraie page du client ; le
+protocole complète l'audit automatique, il ne le remplace pas).
+
+### Ce que le lot [28] confirme du lot [27]
+
+Les deux lots se rejoignent sur un point, par deux chemins indépendants : **une page peut être parfaite dans
+le code et muette à l'oreille.** Le lot [27] l'avait trouvé en lisant les critères ; le lot [28] le montre en
+comparant un formulaire fautif et un formulaire Apple. C'est la raison d'être du protocole manuel : il n'y a
+pas d'outil qui entende à notre place.
+
 **Le désaccord méthodologique à noter :** pour 5 et 6, les sources utiles ne sont pas des vidéos YouTube.
 Le lot [26] a montré le plafond de ce format (deux vidéos sur cinq muettes, et les autres vendent une
 communauté payante). Les meilleures sources sont les documents officiels (Google, WhatsApp, W3C) et

@@ -232,6 +232,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap">
 <style>
+.skip{position:absolute;left:-9999px;top:0;z-index:200;background:#0B1120;color:#fff;padding:12px 20px;font-weight:700;border-radius:0 0 12px 0}
+.skip:focus{left:0}
+main{display:block}
 :root{
   --navy:#0F172A; --navy2:#1E293B; --navy3:#334155; --navy4:#0B1120;
   --amber:#F59E0B; --amber-l:#FCD34D; --amber-t:#FFFBEB;
@@ -553,6 +556,7 @@ footer{background:var(--navy);color:#94A3B8;padding:70px 0 30px;border-top:1px s
 .f-brand svg{width:38px;height:38px}
 .f-brand .t{color:#fff;font-weight:800;font-size:17px}
 .f-status{margin:10px 0 0;font-size:13.5px;color:var(--green,#0B7A3E);font-weight:600;min-height:0}
+.f-status.err{color:#B3261E}
 .f-grid h3{color:#fff;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px}
 .f-grid a{display:block;padding:5px 0;font-size:14.5px;transition:.15s}
 .f-grid a:hover{color:var(--amber-l)}
@@ -607,6 +611,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
 </style>
 </head>
 <body>
+<a class="skip" href="#contenu" data-en="Skip to content" data-fr="Aller au contenu">Aller au contenu</a>
 <div id="progress"></div>
 
 <header id="hdr">
@@ -644,6 +649,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
   </div>
 </div>
 
+<main id="contenu">
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="wrap">
@@ -1000,7 +1006,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
     <form class="form-card rv" data-d="150" onsubmit="return sendAudit(event)">
       <h3 data-en="Get my free preview" data-fr="Recevoir mon aperçu gratuit">Get my free preview</h3>
       <p class="fc-sub" data-en="Sent to us on WhatsApp — 60 seconds, no email needed." data-fr="Envoyé directement sur notre WhatsApp — 60 secondes, pas d'e-mail nécessaire.">Sent to us on WhatsApp — 60 seconds, no email needed.</p>
-      <div class="fld"><label for="f-school" data-en="School or clinic name *" data-fr="Nom de l'école ou de la clinique *">School or clinic name *</label><input type="text" id="f-school" autocomplete="organization" required placeholder="e.g. St. Anne College · or a clinic name"></div>
+      <div class="fld"><label for="f-school" data-en="School or clinic name" data-fr="Nom de l'école ou de la clinique">School or clinic name</label><input type="text" id="f-school" autocomplete="organization" required placeholder="e.g. St. Anne College · or a clinic name"></div>
       <div class="fld">
         <label data-en="This is a…" data-fr="Il s'agit d'une…">This is a…</label>
         <div class="f-types" role="group" aria-label="School or clinic">
@@ -1008,7 +1014,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
           <button type="button" class="f-type" data-type="clinic" onclick="setNiche('clinic')">🩺 <span data-en="Clinic" data-fr="Clinique">Clinic</span></button>
         </div>
       </div>
-      <div class="fld"><label for="f-phone" data-en="Your WhatsApp number" data-fr="Votre numéro WhatsApp">Your WhatsApp number</label><input type="tel" id="f-phone" autocomplete="tel" inputmode="tel" placeholder="+237 6XX XXX XXX"></div>
+      <div class="fld"><label for="f-phone" data-en="Your WhatsApp number (optional)" data-fr="Votre numéro WhatsApp (facultatif)">Your WhatsApp number (optional)</label><input type="tel" id="f-phone" autocomplete="tel" inputmode="tel" placeholder="+237 6XX XXX XXX"></div>
       <button type="submit" class="btn btn-amber" data-en="Get my free preview on WhatsApp →" data-fr="Recevoir mon aperçu gratuit sur WhatsApp →">Get my free preview on WhatsApp →</button>
       <p class="f-status" id="f-status" role="status" aria-live="polite"></p>
       <p class="form-small" data-en="This opens WhatsApp with your message already written. You stay in control — nothing is sent without you. Town and other details are asked in the chat." data-fr="Ceci ouvre WhatsApp avec votre message déjà rédigé. Vous restez maître — rien n'est envoyé sans vous. La ville et les autres détails sont demandés dans la discussion.">This opens WhatsApp with your message already written. You stay in control — nothing is sent without you. Town and other details are asked in the chat.</p>
@@ -1016,6 +1022,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
   </div>
 </section>
 
+</main>
 <!-- FOOTER -->
 <footer>
   <div class="wrap">
@@ -1158,19 +1165,37 @@ document.querySelectorAll("img").forEach(function(im){
 // WA form
 function sendAudit(e){
   e.preventDefault();
-  var biz = document.getElementById("f-school").value.trim();
-  if (!biz) return false;
+  var fr = document.documentElement.lang === "fr";
+  var champNom = document.getElementById("f-school");
+  var st = document.getElementById("f-status");
+  var biz = champNom.value.trim();
+  /* Un champ qui n'est QUE des espaces passe la validation native du navigateur (« required »), et
+     c'est ici qu'on le rattrape. Avant : `return false` — le clic ne produisait STRICTEMENT RIEN :
+     pas de message, pas de focus, aucune annonce. C'est le défaut que le test NVDA décrit (« it does
+     not introduce an error message… only says blank ») et que tout l'article de Kortic traite.
+     Maintenant : on annonce (zone vivante), on marque le champ, et on y amène le focus. */
+  if (!biz) {
+    if (st) {
+      st.textContent = fr
+        ? "Il manque le nom de votre établissement : écrivez-le dans le premier champ, puis renvoyez."
+        : "The name of your school or clinic is missing: type it in the first field, then send again.";
+      st.classList.add("err");
+    }
+    champNom.setAttribute("aria-invalid", "true");
+    champNom.focus();
+    return false;
+  }
+  champNom.removeAttribute("aria-invalid");
+  if (st) st.classList.remove("err");
   var phone = document.getElementById("f-phone").value.trim();
   var kindBtn = document.querySelector(".f-type.on");
   var kind = kindBtn ? kindBtn.dataset.type : "school";
-  var fr = document.documentElement.lang === "fr";
   var srcLine = SRC_LABEL ? (fr ? "\nSource : " + SRC_LABEL : "\nSource: " + SRC_LABEL) : "";
   var msg = fr
     ? "Bonjour AMK ! Je veux mon APERÇU GRATUIT de site web sous 24h.\n\nÉtablissement : " + biz + "\nType : " + (kind === "clinic" ? "Clinique / laboratoire" : "École") + (phone ? "\nMon WhatsApp : " + phone : "") + srcLine + "\n\nMerci !"
     : "Hello AMK! I'd like my FREE 24h website preview.\n\nInstitution: " + biz + "\nType: " + (kind === "clinic" ? "Clinic / laboratory" : "School") + (phone ? "\nMy WhatsApp: " + phone : "") + srcLine + "\n\nThank you!";
   var url = "https://wa.me/" + WA_NUM + "?text=" + encodeURIComponent(msg);
   var w = window.open(url, "_blank");
-  var st = document.getElementById("f-status");
   if (st) {
     st.textContent = fr
       ? "WhatsApp s'ouvre avec votre message déjà écrit. Rien ne s'ouvre ? Autorisez les fenêtres surgissantes."

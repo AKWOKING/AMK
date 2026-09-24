@@ -1507,3 +1507,91 @@ not served by a site those parents cannot use.
 **What we do NOT claim:** that a page passed "an accessibility audit". We claim what we ran, on which
 criteria, and we say which four things still need a human eye. §26 ends on the same note: the eye that
 decides remains King's.
+
+## §28 WHAT A SCREEN READER HEARS — the second accessibility batch (24 Sep 2026, learning batch [28])
+
+**Origin.** The day the accessibility report was published, King sent exactly the two things it named as
+missing: **a real screen-reader test** and **forms**. Four sources: a full NVDA tutorial, a French article on
+accessible forms and error messages (Kortic), an NVDA add-on that imitates TalkBack's per-object sounds, and
+a WhatsApp help-centre page. Lot [28] of `research/YouTube-Lessons.md` holds the detail. One of the four
+could not be read at all (the WhatsApp page answers **403** to our fetcher, and this sandbox has no
+command-line network) — **so it is written down as unread rather than summarised from memory.**
+
+### 28.1 A page can be perfect in code and mute in the ear
+
+The NVDA tutorial does one thing better than any specification: it plays **the same form twice** — once as
+the author built it, once as Apple did — and lets you hear the difference. On the faulty form the screen
+reader announces *"page blank"* on a page that visibly contains a whole form; the radio buttons are read as
+*"personal radio button, one of two"* with **no group name**; the terms checkbox is announced *"blank"*; and
+when the form is submitted with a missing field, **no error is announced at all**. Every one of those is a
+criterion we already check statically — but here is what they *sound* like, which is the only way to judge
+whether a page works for someone who cannot see it. Two batches, two independent roads to the same sentence:
+**the machine checks the code, a person checks the ear.** There is no tool that listens for us.
+
+### 28.2 Landmarks: the first thing to break, and the cheapest to fix
+
+The tutorial's very first finding is the worst one, and it is invisible: **no landmark means the screen
+reader finds nothing in the middle of the page.** It reads the header, the menu, the footer — and calls the
+page blank. Our site's three pages had **no `<main>`** at all. They have one now, and NVDA's `D` key has
+somewhere to land. This is also why the skip link matters (`2.4.1`, **level A**, not a nicety): the second
+press of a key should not be the only way past a menu.
+
+### 28.3 A group has to say what it is a group of
+
+Nineteen checkboxes for nineteen analyses, each individually perfectly labelled, can still be an
+inaccessible form: the reader announces *"Biochemistry, checkbox, not checked, one of nineteen"* and never
+says **what the nineteen belong to**. A `<fieldset>` with a real `<legend>` fixes it — UNI-LABO has had
+both since the rebuild (`1 · Vos analyses`, `3 · Moment souhaité`), and our checker now refuses a
+`fieldset` whose `legend` is empty. The rule: **a label names the field; a legend names the question.**
+
+### 28.4 Errors are part of the interface, not an afterthought (Kortic)
+
+Anthony Ladeuil's article is the best French-language treatment we have found of the part everyone skips.
+What we adopted, in his order:
+
+1. **A label, linked and adjacent** — and **the placeholder is not a label**: it disappears as you type,
+   and its contrast is usually too low to read. (`1.3.1`, `3.3.2`)
+2. **Announce the expected format** — and for dates, never as `jj/mm/aaaa`: a French voice reads that as
+   *"gigi barre oblique aime aime barre oblique ah ah ah ah"*. Give a real date. *(This line alone was worth
+   the article.)* 
+3. **`type` and `autocomplete`** — they bring the right keyboard on a phone and let the browser help instead
+   of making a thumb do the work. (`1.3.5`)
+4. **`fieldset` + `legend` for groups**, as above.
+5. **No CAPTCHA** if it can be avoided (a honeypot instead) — CAPTCHAs are where accessibility goes to die.
+6. **Mark the optional fields, not the required ones.** The asterisk is a 1999 habit: it does not vocalise,
+   and its meaning has to be explained *before* the form, which nobody does. Our own form had a naked
+   asterisk on "School or clinic name" with no explanation anywhere. Now the one optional field says
+   *(optional)* and the required one says nothing — which, in a two-field form, is all it needs.
+7. **The error summary**: a container that receives focus, one line per error, and — the good part — each
+   line is **a button that takes you to the offending field** and marks it `aria-invalid`.
+
+### 28.5 The defect that was in our own form, and it was the exact one described
+
+Our site's form had `if (!biz) return false;`. Click "Get my free preview" with an empty name and **nothing
+happens**: no message, no focus, no announcement. That is the tutorial's *"it does not introduce an error
+message… only says blank"*, written by me, in production, on the page we send to every prospect. And there
+was a nastier corner: a field filled with **spaces** passes the browser's native `required` check, so the
+JavaScript was the only safety net — and it stayed silent. Fixed the way both sources describe: the live
+region announces what is missing, the field is marked `aria-invalid`, and **focus moves to it**. The
+behaviour test now asserts all of it, including the spaces case, because this is exactly the kind of "fix"
+that can look right in a diff and do nothing at runtime.
+
+### 28.6 TalkBack is the reader our market actually has
+
+The third source is a small NVDA add-on that reproduces TalkBack's sound per object. The add-on itself is
+not what matters — what matters is what it imitates: **on Android, you explore element by element, with a
+sound for each object.** Anything not reachable by swiping does not exist. That sentence should sit next to
+every design decision we make, because the phone in Bonamoussadi runs Android, and the same work that serves
+a blind patient — real text, attached labels, one message per element — is the work that serves everyone on
+a 3G connection. Which is why the protocol below ends on the only question that pays our bills: **does the
+double tap open WhatsApp?**
+
+### 28.7 The protocol, and its limits
+
+**`tools/qa/PROTOCOLE-LECTEUR-ECRAN.md`** — a 5-minute manual test: what to install, the eight keys that
+matter, *what we should hear on our own pages* (with the real counts: 44 headings and 42 links on the site;
+"*1 · Vos analyses, group of checkboxes, 1 of 19*" on UNI-LABO), the TalkBack gestures, and where to write
+the result. Its §6 states the limits: **neither of us is an experienced screen-reader user** — we test the
+mechanics, not the lived experience — and we never test on the client's real page. What we write is what we
+heard, on which page, with which version. Same rule as every other measurement in this repo: **a number you
+did not take yourself does not enter a report.**

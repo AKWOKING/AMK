@@ -2825,3 +2825,57 @@ dire en séance sauf si la question vient**).
 dossier UNI-LABO entier (`hosting/previews/unilabo/`, dix fichiers) — comme prévu avant vendredi.
 **Le Cristallin et Univers Optique n'ont pas été touchés** : leurs constats (saut de titre pour Univers,
 icône dans un lien pour le Cristallin) sont **notés** dans le test du contrôle, pas corrigés — gel.
+
+## 2026-09-24 · 11:20 → 12:40 · ACCESSIBILITÉ, DEUXIÈME PASSE — ce que le lecteur d'écran entend, et le formulaire qui se taisait
+
+King a envoyé quatre sources qui tombaient pile sur les deux angles que le rapport du matin donnait comme
+manquants : **le test réel au lecteur d'écran** et **les formulaires**. Elles sont lues, appliquées et
+documentées (lot [28] des leçons, §28 des skills).
+
+**Les sources, et ce que chacune a donné :**
+
+- **Le tutoriel NVDA** (`youtu.be/aAh1PFsgcBY`, lu en entier) : les touches du test à l'oreille (**D** repères,
+  **H** titres, **K** liens, **F** champs, **NVDA+Tab** où suis-je), l'astuce des **trois couleurs** qui rend le
+  test possible pour quelqu'un qui voit — et sa meilleure idée : **le même formulaire joué deux fois**, fautif
+  puis irréprochable. Là on entend « *page blank* » sur une page pleine, des cases annoncées sans leur groupe,
+  et **aucune erreur annoncée**.
+- **Kortic** (article FR sur les formulaires et les erreurs) : la doctrine des champs (marquer le **facultatif**,
+  pas l'obligatoire), `fieldset`/`legend`, `type`/`autocomplete`, pas de CAPTCHA, le patron du **résumé
+  d'erreurs** — et la phrase sur les dates en `jj/mm/aaaa` qui se vocalisent « *gigi barre oblique aime aime…* ».
+- **Le module TalkBack-NVDA** : ce qu'il imite compte plus que lui — **sur Android on explore élément par
+  élément**. Ce qui n'est pas atteignable au balayage n'existe pas.
+- **Le FAQ WhatsApp** : ❓ **NON LUE.** Elle répond 403 à notre outil (quatre tentatives) et le bac à sable n'a
+  aucun réseau en ligne de commande. Écrit comme tel dans les leçons, **pas résumé de mémoire**. Coller le
+  texte suffit à l'intégrer.
+
+**Quatre vrais défauts trouvés sur nos pages, et réparés :**
+
+1. **Les trois pages du site n'avaient aucun repère `<main>`** — le « page blank » du tutoriel. Corrigé.
+2. **Deux de ces pages n'avaient pas de lien d'évitement** (« Aller au contenu ») : **critère 2.4.1, niveau A**.
+   Il est maintenant la première chose qu'atteint un `Tab`.
+3. **Le formulaire du site échouait en silence** : `if (!biz) return false;` — un clic sans nom ne produisait
+   rien, ni message, ni focus, ni annonce. C'est **exactement** le défaut que les deux sources décrivent. Cas
+   vicieux : un champ rempli d'espaces passe la validation native du navigateur, donc ce JavaScript était le
+   seul filet. Corrigé : la zone vivante annonce, le champ passe en `aria-invalid`, le focus y va.
+4. **L'astérisque d'obligation n'était expliqué nulle part** : remplacé par la mention **(facultatif)** sur le
+   seul champ qui l'est.
+
+**L'outil gagne trois contrôles** : les **repères** (2.4.1), les **groupes nommés** (1.3.1 — un `fieldset` sans
+`legend` ne nomme rien), et le contrôle **3.1.2** qui vérifie désormais *comment* une page bilingue cache
+l'autre langue (`display:none` la retire de l'arbre d'accessibilité ; `opacity:0` la laisse dedans et le
+lecteur annonce les deux langues). UNI-LABO : `display:none` ✅.
+
+**Le livrable qui manquait : `tools/qa/PROTOCOLE-LECTEUR-ECRAN.md`** — cinq minutes, à la main, par un humain :
+quoi installer, les huit touches qui comptent, **ce qu'on doit entendre sur nos pages** (44 titres et 42 liens
+sur le site ; « *1 · Vos analyses, groupe de cases à cocher, 1 sur 19* » sur UNI-LABO), les gestes TalkBack, la
+question qui compte (**le double tap ouvre-t-il WhatsApp ?**), et trois limites écrites noir sur blanc — dont
+celle-ci : ni NVDA ni TalkBack ne tournent dans ce bac à sable, **la première exécution reste à faire**.
+
+**Vérifié** : `audit_a11y --strict` → **0 faute et 0 avertissement** sur les quatre pages · `audit_html` → 0
+constat (contraste inclus : 269 textes sur le site) · `check_inline_js` 7 blocs / 0 faute · test de comportement
+**23 assertions** (dont les 7 nouvelles sur le champ vide, les espaces et la reprise) · test de l'outil **16
+témoins** · harnais UNI-LABO 42/42.
+
+⚠️ **Les trois pages du site ont changé** : `<main>`, lien d'évitement, formulaire qui parle. Elles sont à
+redéployer, comme le dossier UNI-LABO. **Le Cristallin et Univers Optique restent gelés** (constats notés, non
+corrigés).

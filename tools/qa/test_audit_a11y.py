@@ -74,7 +74,9 @@ a:focus-visible,button:focus-visible{outline:3px solid #5B21B6;outline-offset:2p
 .nav a:hover{color:#5B21B6;opacity:1}       /* un changement de couleur : pas du contenu caché */
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms !important}}
 </style></head><body>
-<a class="skip" href="#main">Aller au contenu</a>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header><nav aria-label="Principale"><a href="#analyses">Analyses</a> <a href="#rdv">Rendez-vous</a></nav></header>
+<main id="contenu">
 <h1>Le résultat juste, du premier coup.</h1>
 <h2>Ce que nous dosons</h2>
 <h3>Biochimie</h3>
@@ -86,9 +88,15 @@ a:focus-visible,button:focus-visible{outline:3px solid #5B21B6;outline-offset:2p
 <form>
   <label for="nom">Votre nom</label>
   <input type="text" id="nom" name="nom" autocomplete="name">
+  <fieldset><legend>Moment souhaité</legend>
+    <input type="radio" id="m1" name="moment" value="matin"><label for="m1">Matin</label>
+    <input type="radio" id="m2" name="moment" value="soir"><label for="m2">Soir</label>
+  </fieldset>
   <p role="status" aria-live="polite"></p>
 </form>
 <svg viewBox="0 0 320 232" role="img" aria-label="Plan : le laboratoire au carrefour Etoo"><path d="M0 0h1v1z"/></svg>
+</main>
+<footer><p>UNI-LABO, Bonamoussadi</p></footer>
 </body></html>"""
 
 tmp = tempfile.mkdtemp()
@@ -136,6 +144,20 @@ check("page saine — aucune faute A/AA", not errs2, errs2)
 check("page saine — aucun avertissement non plus", not warns2, warns2)
 check("page saine — l'outil dit aussi ce qui est conforme", len(OK2) >= 4, OK2)
 
+print("\n═══ et les deux nouveaux contrôles du lot [28] ont leur témoin fautif ═══")
+PIEDS = """<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><title>Une page sans repère principal</title>
+<style>a:focus-visible{outline:2px solid red}</style></head><body>
+<nav><a href="/">Accueil</a></nav>
+<h1>Une page qui a un menu, un pied de page et rien au milieu</h1>
+<form><fieldset><input type="checkbox" id="c1"><label for="c1">J'accepte</label></fieldset></form>
+<footer><p>Pied</p></footer></body></html>"""
+pf = os.path.join(tmp, "sans-repere.html")
+io.open(pf, "w", encoding="utf-8").write(PIEDS)
+F3, _ = a11y.audit(pathlib.Path(pf))
+t3 = {(l, s) for l, s, _ in F3}
+check("ERR/WARN 2.4.1 — page sans repère principal (le « page blank » du test NVDA)", ("WARN", "2.4.1") in t3)
+check("ERR/WARN 1.3.1 — groupe de cases sans <legend>", ("WARN", "1.3.1") in t3)
+
 print("\n═══ et contre NOS pages ═══")
 root = HERE.parent.parent
 nos = [root / "site/index.html", root / "site/creation-site-web-clinique-cameroun.html",
@@ -156,4 +178,4 @@ print()
 if fails:
     print("DES ÉCHECS : " + " · ".join(fails))
     sys.exit(1)
-print("Tout est vert — le contrôle refuse les douze défauts, et il ne mord plus à côté.")
+print("Tout est vert — le contrôle refuse les seize défauts, et il ne mord plus à côté.")

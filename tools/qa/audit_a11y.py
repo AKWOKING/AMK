@@ -17,6 +17,11 @@ Ce qu'il ne fait pas, et qui est écrit ici pour ne pas mentir : le contraste (c
 le rendu réel, l'ordre de tabulation au clavier, la qualité d'un texte alternatif. **Ces quatre-là
 demandent un humain** (et King reste l'œil).
 
+Deux contrôles ajoutés le 24/09 au soir, après les sources de King (lot [28]) : les **repères de
+navigation** et les **groupes nommés**. Les deux viennent de la même phrase d'un tutoriel NVDA — une page
+sans repère principal est annoncée « page blank », et un ensemble de cases à cocher sans nom de groupe est
+annoncé comme des cases isolées (« personal radio button, one of two » sans dire de quoi il s'agit).
+
 Ce qu'on vise : **WCAG 2.2 niveau AA**. Pas AAA (Silktide : « reaching for the stars ») — AAA demande
 des choses qu'une page commerciale ne peut pas honorer (langue des signes, 7:1 partout, 44 px partout).
 AA, c'est le niveau qu'une loi ou un appel d'offres exige.
@@ -139,8 +144,18 @@ def audit(path):
     elif inputs:
         good("3.3.2", "les %d champs de saisie ont une étiquette" % len(inputs))
 
-    if re.search(r'type\s*=\s*["\'](radio|checkbox)["\']', html, re.I) and "<fieldset" not in html.lower():
-        add("WARN", "1.3.1", "des cases/radios sans <fieldset><legend> : le groupe n'est pas nommé")
+    if re.search(r'type\s*=\s*["\'](radio|checkbox)["\']', html, re.I):
+        if "<fieldset" not in html.lower():
+            add("WARN", "1.3.1", "des cases/radios sans <fieldset><legend> : le groupe n'est pas nommé")
+        else:
+            # un <fieldset> sans <legend> textuel ne nomme rien : NVDA annonce alors des cases isolées
+            sans_legende = [fs for fs in re.findall(r"<fieldset\b[^>]*>(.*?)</fieldset>", html, re.S | re.I)
+                            if not re.search(r"<legend[^>]*>\s*\S", fs, re.I)]
+            if sans_legende:
+                add("WARN", "1.3.1", "%d groupe(s) de champs sans <legend> : le lecteur d'écran annonce "
+                                     "des cases isolées au lieu d'un ensemble nommé" % len(sans_legende))
+            else:
+                good("1.3.1", "les groupes de cases/radios sont nommés")
 
     # ── 1.3.5 Identify Input Purpose ──────────────────────────────────────────────────────────────
     # 1.3.5 ne vise QUE les champs qui collectent une donnée dont le sens est connu (nom, e-mail,
@@ -182,6 +197,21 @@ def audit(path):
         good("2.4.1", "un lien d'évitement existe")
     elif "<main" in html.lower() and "<nav" in html.lower():
         add("WARN", "2.4.1", "pas de lien d'évitement (le contenu principal et la navigation existent)")
+
+    # ── 2.4.1 Bypass Blocks — par la réalité du lecteur d'écran ──────────────────────────────────
+    # Le PREMIER constat du tutoriel NVDA du lot [28] : la page contenait un formulaire complet et le
+    # lecteur annonçait « page blank », parce que rien n'était dans un repère. Sans <main>, la touche D
+    # fait le tour de l'en-tête, de la navigation et du pied de page… et ne trouve rien au milieu.
+    a_main = bool(re.search(r"<main\b", html, re.I)) or bool(re.search(r'role\s*=\s*["\']main["\']', html, re.I))
+    autres = sum(1 for bal in ("nav", "header", "footer") if re.search(r"<%s\b" % bal, html, re.I))
+    if not a_main:
+        if autres:
+            add("WARN", "2.4.1", "aucun repère principal (<main>) : la navigation au lecteur d'écran "
+                                 "annonce l'en-tête, le menu, le pied de page, et rien au milieu")
+        else:
+            add("WARN", "2.4.1", "aucun repère de navigation (ni <main>, ni <nav>, ni <header>)")
+    else:
+        good("2.4.1", "le contenu principal est un repère identifiable")
 
     # ── 2.4.2 Page Titled ─────────────────────────────────────────────────────────────────────────
     m = re.search(r"<title[^>]*>(.*?)</title>", html, re.S | re.I)
@@ -228,9 +258,20 @@ def audit(path):
         add("WARN", "3.1.1", "lang peu lisible : « %s »" % lang.group(1))
     else:
         good("3.1.1", "lang=\"%s\"" % lang.group(1))
-    # les passages dans l'AUTRE langue doivent être marqués
-    if 'class="en-only"' in html or 'class="fr-only"' in html:
-        add("INFO", "3.1.2", "page bilingue : les passages de l'autre langue sont-ils marqués par lang= ?")
+    # ── 3.1.2 Language of Parts — la façon dont on cache l'autre langue COMPTE ────────────────────
+    # Deux pages bilingues ne se cachent pas de la même façon : `display:none` retire le texte de
+    # l'arbre d'accessibilité (le lecteur d'écran ne le lit pas), tandis qu'`opacity:0` ou
+    # `visibility:hidden` le laissent dans le flux — le lecteur annonce alors les DEUX langues à la
+    # suite. Vérifié sur nos pages : UNI-LABO cache par `display:none` (reste à confirmer à l'oreille).
+    if "en-only" in html or "fr-only" in html:
+        cache_propre = re.search(r"\.(en|fr)-only\s*\{[^}]*display\s*:\s*none", css, re.I)
+        if cache_propre:
+            good("3.1.2", "page bilingue : l'autre langue est retirée de l'affichage (display:none)")
+        else:
+            add("WARN", "3.1.2", "page bilingue : l'autre langue semble masquée sans display:none "
+                                 "(opacité ? visibilité ?) — un lecteur d'écran peut annoncer les deux")
+    elif re.search(r'data-(en|fr)\s*=', html):
+        good("3.1.2", "page bilingue : une seule langue est dans la page à la fois (l'autre vient d'un attribut)")
 
     # ── 1.4.13 Content on Hover or Focus ──────────────────────────────────────────────────────────
     if HOVER_ONLY.search(css) and not re.search(r":focus(-within)?\b[^{]*\{[^}]*(display|visibility)", css, re.I):
@@ -285,7 +326,9 @@ def main():
             print("     %-4s [%s] %s" % (lvl, sc, msg))
     print("\n%d faute(s) de niveau A/AA · %d avertissement(s)" % (errs, warns))
     print("non vérifiable ici, et assumé : contraste (voir audit_html.py), ordre de tabulation réel,\n"
-          "rendu à 200 % de zoom, qualité d'un texte alternatif — ces quatre-là demandent un humain.")
+          "rendu à 200 % de zoom, qualité d'un texte alternatif.\n"
+          "Les deux derniers se vérifient à la main, en cinq minutes : tools/qa/PROTOCOLE-LECTEUR-ECRAN.md\n"
+          "(NVDA sur Windows, TalkBack sur Android — avec les annonces attendues page par page).")
     if strict and errs:
         sys.exit(1)
 

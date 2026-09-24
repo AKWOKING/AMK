@@ -73,10 +73,38 @@ w.sendAudit(e);
 ok(status.textContent.trim().length > 10, 'après envoi : la zone vivante écrit ce qui vient de se passer');
 ok(/WhatsApp/i.test(status.textContent), 'et elle nomme WhatsApp, pas un mot technique');
 
+console.log('\n═══ le champ obligatoire VIDE : le formulaire le dit-il ? (WCAG 3.3.1 / 3.3.3) ═══');
+// Le défaut que le test NVDA décrit (« it does not introduce an error message… only says blank ») et
+// que tout l'article de Kortic traite. Avant : un clic sans nom ne produisait RIEN — pas de message,
+// pas de focus, aucune annonce. On vérifie maintenant le comportement, pas le code.
+const nomChamp = d.getElementById('f-school');
+nomChamp.value = '';
+if (status) { status.textContent = ''; status.classList.remove('err'); }
+w.sendAudit({ preventDefault() {} });
+ok(status && status.textContent.trim().length > 10, 'champ vide : la zone vivante ANNONCE ce qui manque');
+ok(/nom|name/i.test(status.textContent), 'et elle dit QUEL champ manque, pas « erreur »');
+ok(nomChamp.getAttribute('aria-invalid') === 'true', 'le champ est marqué aria-invalid="true"');
+ok(d.activeElement === nomChamp, 'et le focus est amené SUR le champ fautif');
+// le cas vicieux : des espaces passent la validation native du navigateur (« required »)
+nomChamp.value = '   ';
+w.sendAudit({ preventDefault() {} });
+ok(nomChamp.getAttribute('aria-invalid') === 'true', 'des ESPACES seuls sont traités comme un champ vide');
+// et quand tout va bien : le message d'erreur disparaît, la marque aussi
+nomChamp.value = 'Institut Test';
+w.sendAudit({ preventDefault() {} });
+ok(nomChamp.getAttribute('aria-invalid') === null, 'champ rempli : la marque d\'erreur est retirée');
+ok(status && !status.classList.contains('err'), 'et la couleur d\'erreur aussi');
+
 console.log('\n═══ les étiquettes de champs sont attachées (WCAG 3.3.2) ═══');
 for (const id of ['f-school', 'f-phone']) {
   const lab = d.querySelector('label[for="' + id + '"]');
   ok(!!lab && lab.textContent.trim().length > 2, 'le champ #' + id + ' a une étiquette qui lui est LIÉE : « ' + (lab ? lab.textContent.trim() : '') + ' »');
+}
+
+console.log('\n═══ les repères de navigation (NVDA : la touche D) ═══');
+// Le TOUT PREMIER constat du tutoriel NVDA : sans repère principal, le lecteur annonce « page blank ».
+for (const [sel, quoi] of [['main', 'le contenu principal (<main>)'], ['nav', 'la navigation'], ['header', 'l\'en-tête'], ['footer', 'le pied de page']]) {
+  ok(d.querySelectorAll(sel).length >= 1, quoi + ' est un repère identifiable');
 }
 
 console.log('\n═══ les noms accessibles (WCAG 4.1.2) ═══');
