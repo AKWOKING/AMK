@@ -118,7 +118,8 @@ contenu et le formulaire sont les mêmes, en mieux rangés. Le détail est en **
 | **4** | **La question qui compte, dans cet ordre :** « quand est-ce qu'on publie ? » puis « **les 75 000, on les met quand ?** » | le prix est posé depuis le 23/09 : on ne le re-présente pas, on ne le baisse pas |
 | **5** | **Le contrat** : remplir la « Description du projet » **avec eux**, signer en deux exemplaires | c'est le champ qui empêche les malentendus de livraison (voir le texte à coller plus bas) |
 | **6** | **Encaisser les 75 000 en MoMo** (MTN 677 78 96 31 / Orange 692 89 07 47) | la mise en ligne annoncée est de 3 à 5 jours **après l'acompte** |
-| **7** | **Proposer l'abonnement** : Standard **30 000/mois** (2 h de modifications, sauvegardes vérifiées, assistance sous 24 h) ou Essentiel **12 000/mois** (domaine + veille + 30 min) | c'est maintenant qu'il se décide, pas après la livraison |
+| **7** | **S'il demande « et si on dépasse les deux heures ? »** — la réponse est tranchée (24/09) : *« on ne facture pas à l'heure : ce qui dépasse attend le mois suivant, et si c'est un vrai morceau neuf — une page, une langue, une nouvelle direction — je vous fais un devis à part. »* |
+| **8** | **Proposer l'abonnement** : Standard **30 000/mois** (2 h de modifications, sauvegardes vérifiées, assistance sous 24 h) ou Essentiel **12 000/mois** (domaine + veille + 30 min) | c'est maintenant qu'il se décide, pas après la livraison |
 
 **À emporter :** le contrat Standard **imprimé en deux exemplaires**, la **grille corrigée** imprimée, le téléphone chargé avec la page ouverte, et les numéros MoMo écrits sur la feuille.
 
@@ -264,8 +265,11 @@ La page le dit elle-même sous ses images : *« la photo définitive sera prise 
 Vendredi, on y est. Si la séance se finit bien et que quelqu'un peut nous accompagner, **quinze minutes
 suffisent** pour les cinq photos que la page attend — et c'est la seule occasion gratuite avant longtemps.
 
-**Ce qu'on demande, en une phrase :** *« Est-ce que je peux prendre cinq photos de votre paillasse avant
-de partir ? Aucun patient, aucun nom, aucun écran — juste le matériel et le lieu. »*
+**D'abord on demande — décision de King du 24/09 :** *« Est-ce que vous avez déjà des photos du
+laboratoire ? »* **S'ils en ont, on prend les leurs** (on les vérifie ensuite : récentes, sans patient, sans
+étiquette lisible, poids et métadonnées — c'est le rôle de `audit_images.py`). **S'ils n'en ont pas**, on
+propose la séance de quinze minutes : *« Est-ce que je peux prendre cinq photos de votre paillasse avant de
+partir ? Aucun patient, aucun nom, aucun écran — juste le matériel et le lieu. »*
 
 **Ce qu'on prend :** la paillasse de biochimie avec un portoir de tubes ; le poste d'hématologie (écran
 éteint) ; les plaques de sérologie ; une pipette au-dessus d'un portoir ; le kit remis au patient sur une

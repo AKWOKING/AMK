@@ -3141,3 +3141,19 @@ visibles, datés, et renvoient au nouveau document. Une grille ne se corrige pas
 
 `test_audit_images.py` 13/13 · `audit_images.py` sur les trois pages et deux dossiers livrés · le reste de
 la batterie repassé avant commit.
+
+### Les quatre réponses de King (24/09, après le lot [32])
+
+1. **Paliers d'abonnement : « autre », sans texte.** Je ne devine pas — la question reste ouverte, et **à
+   défaut de réponse avant vendredi 13 h, la séance se tient sur la grille déjà envoyée : Standard
+   30 000 seul.**
+2. **L'heure au-delà des 2 h comprises : on ne facture pas.** Écrit tel quel, avec la protection qui va
+   avec : ce qui dépasse **attend le mois suivant**, et seul un **morceau neuf** (page, section, langue,
+   direction visuelle) part en devis séparé. Sans cette phrase, les 2 h sont un forfait illimité.
+   La phrase est ajoutée au déroulé de vendredi, à l'étape 7 bis.
+3. **Les photos : on demande d'abord au client.** S'ils en ont, on prend les leurs (vérifiées : récentes,
+   sans patient, sans étiquette lisible — poids et métadonnées par `audit_images.py`) ; sinon, la séance de
+   quinze minutes. L'annexe photo du RDV commence maintenant par la question, pas par le plan de prise de vue.
+4. **La grille : une seule compte** — celle envoyée à UNI-LABO (Standard, 150 000 + 30 000/mois). La
+   seconde n'est plus une pièce à considérer ; il reste à imprimer **un numéro de version et une date**
+   sur la grille de référence, pour qu'aucun vieux PDF ne puisse la contredire.

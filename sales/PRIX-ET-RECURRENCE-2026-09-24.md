@@ -64,15 +64,15 @@ ne se réécrivent pas).
 
 | # | La question | Si on ne tranche pas |
 |---|---|---|
-| **1** | **Quel(s) palier(s) annoncer à UNI-LABO** : le Standard seul (celui de la grille), ou les deux (12 000 + 30 000) ? | on annonce la grille telle qu'envoyée, **Standard 30 000 seul**. C'est tenable — mais un laboratoire qui possède déjà domaine et hébergement n'a alors aucune raison de payer pour ce qu'il a déjà, et la conversation s'arrête là |
-| **2** | **Le prix de l'heure au-delà des 2 h comprises** : proposition **10 000/h**, jamais validée | tout dépassement est **gratuit**, et le Standard devient un forfait illimité de fait |
+| **1** | **Quel(s) palier(s) annoncer à UNI-LABO** : le Standard seul (celui de la grille), ou les deux (12 000 + 30 000) ? *(réponse de King le 24/09 : « autre », sans texte — **la question reste ouverte**, je ne devine pas)* | on annonce la grille telle qu'envoyée, **Standard 30 000 seul**. C'est tenable — mais un laboratoire qui possède déjà domaine et hébergement n'a alors aucune raison de payer pour ce qu'il a déjà, et la conversation s'arrête là |
+| **2** | ~~Le prix de l'heure au-delà des 2 h~~ — **TRANCHÉ par King le 24/09 : on ne facture pas l'heure.** La règle qui protège quand même, à écrire telle quelle : au-delà des 2 h comprises, **le travail n'est pas facturé à l'heure — il attend le mois suivant** ; seul un **morceau neuf** (une page, une section, une langue, une direction visuelle) part en **devis séparé**. Sans cette précision, les 2 h deviennent un forfait illimité | tout dépassement est absorbé, et c'est la porte ouverte à un client qui écrit chaque semaine |
 
 ### B · Une seule feuille, une seule vérité
 
 | # | La question |
 |---|---|
 | **3** | **Lesquels des quatre prix survivent ?** (10 000 / 12 000 / 30 000 / 35 000 — §2 ci-dessus) |
-| **4** | **Le 4ᵉ PDF** : la deuxième grille (`AMK_Grille_Tarifaire.pdf` vs `..._Standard.pdf`) n'a jamais été lue. Si les deux diffèrent, il y a **deux vérités**, et un vieux PDF dans le téléphone d'un client devient une pièce opposable |
+| **4** | ~~Le 4ᵉ PDF~~ — **TRANCHÉ par King le 24/09 : une seule grille compte.** La grille de référence est **celle qui a été envoyée à UNI-LABO** (Standard : 150 000 + 30 000/mois) ; la seconde n'est pas une pièce à considérer. Il reste la partie mécanique : **imprimer un numéro de version et une date sur cette grille**, pour qu'aucun vieux PDF ne puisse la contredire |
 | **5** | **Le prépaiement** : l'ancien plan vendait **100 000/an « 2 mois offerts »** — c'est une remise de 17 %, contraire à la règle. Le paiement annuel est-il autorisé, et à quel prix ? *(Ma proposition : oui, au prix plein — payer 12 mois d'avance est un service de trésorerie, pas un rabais.)* |
 | **6** | **Le trimestre** : l'ancien plan vendait 30 000/trimestre. La grille ne parle que du mois. Un client qui préfère payer tous les trois mois paie-t-il 3 × le mensuel (oui, si on ne remise pas) ? |
 | **7** | **L'hébergement** : qui le paie, et où vit-il ? Ni l'Essentiel ni le Standard ne le disent (seul l'**ancien** plan l'incluait). Aujourd'hui, la page de démonstration vit sur un hébergement gratuit — **un hébergement gratuit n'est pas un plan**, et un site de client qui paie ne se pose pas sur un compte personnel |
@@ -105,9 +105,10 @@ ne se réécrivent pas).
    **périmètres**, pas des remises.
 2. **Prépaiement autorisé au prix plein** (12 × mensuel), **trimestre autorisé au prix plein** ; la
    mention « 2 mois offerts » de l'ancien plan est **morte** — elle contredit la règle de King.
-3. **10 000 FCFA l'heure** au-delà des 2 h ; **5 000 FCFA par semaine** quand c'est le client qui bloque
-   le projet en n'envoyant pas ses éléments (les deux sont des propositions de la revue du 23/09, non
-   validées).
+3. **Rien à l'heure — décision de King du 24/09.** Au-delà des 2 h comprises, le travail **attend le mois
+   suivant** ; seuls les morceaux neufs (page, section, langue, direction visuelle) partent en **devis
+   séparé**. Reste en proposition, non tranché : **5 000 FCFA par semaine** quand c'est le client qui
+   bloque le projet en n'envoyant pas ses éléments.
 4. **Domaine toujours au nom du client**, même quand nous l'achetons pour lui — et une phrase de sortie :
    *« à tout moment, le domaine et les fichiers sont à vous ; vous réglez ce qui reste dû, on vous remet
    tout. »*
