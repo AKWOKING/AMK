@@ -3643,3 +3643,29 @@ communautaire se trompe, et il se trompe en silence**. Troisième instrument qui
 la lecture Maps et le comptage des réponses humaines) : **la donnée molle se vérifie à la source vivante —
 l'application — avant d'écrire.** D'où l'**étape 0** en tête du lot : la porte A se vérifie à l'écran, par
 King, avant l'envoi.
+
+---
+
+## 24/09/2026 (soir) — LOT 3 : TROIS SUR CINQ PARTIS, DEUX PORTES FERMÉES AVEC UNE PORTE DE SORTIE
+
+**Partis** (King, heures et accusés non relevés → CRM en `sent`) : **El Roï Optique Médicale** (693 127 302) ·
+**Net Optique Médical** (675 785 930) · **Cabinet d'Optique la Rétine** (695 474 364).
+CRM `ENVOI_2409_3` : `Contacted = Yes`, `wa_verified = yes`, `stage = qualifying`.
+
+**Portes fermées : Royal Optic (676 250 409) et K Vision Care (677 077 459)** — WhatsApp indisponible,
+constaté par King. **Rien n'a été envoyé.** Mais contrairement à Horizon, **les deux publient d'autres
+numéros** : Royal Optic **691 219 986**, et pour K Vision Care **677 077 159** (celui que l'annonce met dans
+son propre lien, alors que son texte publie celui qui vient d'échouer) puis **695 865 346**. Les deux
+messages sont prêts au **§7** de `sales/Send-BATCH-2026-09-24-Opticiens-3.md` : mêmes textes, autre
+destinataire, **après contrôle du nom de profil à l'écran**. Si aucun ne porte la boutique, les deux passent
+**en réserve** — pas en disqualification : ce ne sont pas des boutiques mortes, ce sont des numéros mal
+recopiés.
+
+**Les chiffres du jour, et ce qu'ils imposent** (écrits au §8 du même fichier) : **15 numéros d'annuaire
+essayés, 12 joignables (80 %)**. Lot 1 (registre ONOC) : 5/5. Lot 2 : 4/5. **Lot 3 (annuaire
+communautaire) : 3/5.** Plus la source est générale, plus le numéro est périmé. D'où la règle : **préparer
+SEPT numéros pour en envoyer cinq** — sinon chaque lot perd une à deux boutiques, et c'est du temps de
+préparation perdu.
+
+**Ce qui n'a pas changé** : aucune relance, aucun réessai sur un numéro qui a échoué, rien n'est envoyé par
+nous. Entonnoir : contactés **58 → 61** (39,1 % de la base).

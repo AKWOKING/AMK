@@ -1822,6 +1822,7 @@ def _apply_jour(out: list) -> None:
     _apply_state(out, REPONSE_2409, "REPONSE_2409")
     _apply_state(out, BATCH_2409_2, "BATCH_2409_2")
     _apply_state(out, ENVOI_2409_2, "ENVOI_2409_2")
+    _apply_state(out, ENVOI_2409_3, "ENVOI_2409_3")
     _apply_state(out, ECARTES_2409, "ECARTES_2409")
 
 
@@ -2455,6 +2456,57 @@ def _apply_fiche(out: list) -> None:
 # prémisse tombe, donc la conséquence aussi. Une correction qui doit changer un calcul vit ici, pas
 # dans un .md — et elle doit passer APRÈS la passe qu'elle corrige, sinon la passe l'écrase en
 # silence (c'est exactement ce qui vient d'arriver : le premier patch a été recouvert).
+# ── LE TROISIÈME LOT D'OPTICIENS — 24/09, fin d'après-midi ─────────────────────────────────────
+# King a envoyé trois des cinq. Deux portes fermées, et cette fois **elles ont d'autres numéros
+# publiés** : Royal Optic (repli 691 219 986) et K Vision Care (deux autres numéros, dont celui du
+# lien, qui contredit le texte de l'annonce). Les replis partent au §7 du dossier d'envoi.
+# Heures non relevées ; accusés non relevés → `sent`, jamais `delivered`.
+ENVOI_2409_3 = {
+    "el-roi-optique-medicale": {
+        "Contacted": "Yes", "Contact channel": "WhatsApp", "wa_verified": "yes",
+        "last_send_state": "sent", "stage": "qualifying", "stage_since": "2026-09-24",
+        "Notes_extra":
+            "24/09 — TROISIÈME LOT, ENVOYÉ par King (heure et accusé de réception non relevés). "
+            "Numéro utilisé : 693 127 302. Repli publié toujours disponible : 670 790 215.",
+    },
+    "net-optique-medical": {
+        "Contacted": "Yes", "Contact channel": "WhatsApp", "wa_verified": "yes",
+        "last_send_state": "sent", "stage": "qualifying", "stage_since": "2026-09-24",
+        "Notes_extra":
+            "24/09 — TROISIÈME LOT, ENVOYÉ par King (heure et accusé de réception non relevés). "
+            "Numéro utilisé : 675 785 930. Aucun second numéro publié.",
+    },
+    "cabinet-optique-la-retine": {
+        "Contacted": "Yes", "Contact channel": "WhatsApp", "wa_verified": "yes",
+        "last_send_state": "sent", "stage": "qualifying", "stage_since": "2026-09-24",
+        "Notes_extra":
+            "24/09 — TROISIÈME LOT, ENVOYÉ par King (heure et accusé de réception non relevés). "
+            "Numéro utilisé : 695 474 364. Aucun second numéro publié.",
+    },
+    "royal-optic-bali": {
+        "Contacted": "No", "wa_verified": "no", "last_send_state": "not_sent",
+        "wa_number_note": "WHATSAPP INDISPONIBLE au 676 250 409 (constaté par King, 24/09). "
+                          "REPLI PUBLIÉ : 691 219 986 — à vérifier dans l'application avant d'envoyer.",
+        "Notes_extra":
+            "24/09 — TROISIÈME LOT : ENVOI IMPOSSIBLE sur le numéro principal. WhatsApp refuse "
+            "676 250 409. Contrairement à Horizon, la boutique publie un SECOND numéro : 691 219 986. "
+            "Étape suivante : ouvrir ce numéro dans l'application et lire le nom du profil ; si c'est "
+            "Royal Optic, envoyer le même message (§7 du dossier d'envoi).",
+    },
+    "k-vision-care": {
+        "Contacted": "No", "wa_verified": "no", "last_send_state": "not_sent",
+        "wa_number_note": "WHATSAPP INDISPONIBLE au 677 077 459 (constaté par King, 24/09). "
+                          "DEUX AUTRES NUMÉROS PUBLIÉS : 677 077 159 (celui du lien de l'annonce, qui "
+                          "contredit son propre texte) et 695 865 346 — à vérifier dans l'application.",
+        "Notes_extra":
+            "24/09 — TROISIÈME LOT : ENVOI IMPOSSIBLE sur le numéro principal. WhatsApp refuse "
+            "677 077 459 — exactement le numéro dont l'annonce se contredisait (texte 677 077 459, lien "
+            "677 077 159), ce qui rend le contrôle à l'écran encore plus nécessaire. Deux autres numéros "
+            "à essayer : 677 077 159 et 695 865 346. Le message reste celui du §5 du dossier d'envoi.",
+    },
+}
+
+
 # ── LE DEUXIÈME LOT D'OPTICIENS — 24/09, après-midi ────────────────────────────────────────────
 # King a envoyé quatre des cinq messages préparés. Le cinquième est tombé sur une porte fermée :
 # **WhatsApp refuse le 677 44 74 17 de Horizon Optique** (« indisponible »). Rien n'est envoyé à

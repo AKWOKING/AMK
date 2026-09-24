@@ -4,7 +4,11 @@
 été trouvés et lus le 24/09 dans la catégorie **« Opticiens »** de l'annuaire communautaire **Mont-Pandi**
 (fiches 678, 761, 763, 672, 666). Tous à Douala, tous des boutiques de quartier.
 
-**Rien n'est envoyé à ce stade : ce fichier est la préparation. King envoie.**
+**✔ PARTI LE 24/09 — trois sur cinq.** Envoyés par King : **El Roï Optique Médicale, Net Optique
+Médical, Cabinet d'Optique la Rétine** (heures non relevées, accusés non relevés → CRM en `sent`, pas
+`delivered`). **DEUX PORTES FERMÉES : Royal Optic (676 250 409) et K Vision Care (677 077 459) —
+WhatsApp indisponible.** Les deux ont **d'autres numéros publiés** : les replis sont au **§ 7**.
+CRM : `ENVOI_2409_3`.
 
 > ⚠️ **ÉTAPE 0 — LA PORTE A, AVANT TOUT.** Cinq numéros **d'annuaire**, jamais vus sur WhatsApp. Depuis le
 > 24/09 (Horizon Optique : WhatsApp indisponible sur un numéro du registre), **la porte se vérifie dans
@@ -206,3 +210,57 @@ d'annuaire : recopier le numéro, et le vérifier à l'écran.**
    numéros candidats **avec tous ceux déjà contactés** — pas seulement avec les noms.
 3. **Deux numéros publiés = un principal, un repli** : El Roï et Royal Optic en ont deux, on n'en utilise
    qu'un le premier jour (règle du 24/09).
+
+---
+
+## 7 · LES DEUX REPLIS (Royal Optic · K Vision Care)
+
+**Le constat, tel quel :** WhatsApp refuse **676 250 409** (Royal Optic) et **677 077 459** (K Vision Care).
+Rien n'a été envoyé à ces deux boutiques. Mais — contrairement à Horizon du lot 2 — **les deux annoncent
+d'autres numéros**, et c'est là qu'on essaie.
+
+> ⚠️ **À FAIRE AVANT D'ENVOYER, une minute each dans l'application :** ouvrir le numéro, **lire le nom du
+> profil**. Si le nom correspond à la boutique, envoyer le message. Si le profil est vide ou porte un autre
+> nom, **on ne devine pas** : la ligne reste en réserve.
+
+### 7.a · ROYAL OPTIC — essayer **691 219 986** (le second numéro publié par la boutique)
+
+Le message ne change pas d'un mot : c'est le §3 ci-dessus. Seul le destinataire change.
+
+### 7.b · K VISION CARE — essayer **677 077 159**, puis **695 865 346**
+
+**677 077 159 est le numéro que l'annonce met dans son propre lien WhatsApp**, alors que son texte publie
+**677 077 459** — celui qui vient d'échouer. C'est donc **677 077 159 qui a le plus de chances d'être le
+bon**, et c'est la première chose que le contrôle à l'écran doit trancher. Le troisième, **695 865 346**,
+reste en second.
+
+Le message ne change pas d'un mot : c'est le §5 ci-dessus.
+
+### 7.c · Si aucun des replis ne porte la boutique
+
+Les deux lignes passent **en réserve** (`stage = prospecting`, `wa_verified = no`) — **pas** en
+disqualification : ce ne sont pas des boutiques mortes, ce sont des numéros d'annuaire mal recopiés. On y
+revient quand un numéro fiable apparaît (une fiche Google, une carte de visite, un repérage). **Aucune
+relance, aucun réessai sur les numéros qui ont échoué.**
+
+---
+
+## 8 · CE QUE CES ÉCHECS CHANGENT POUR LES LOTS SUIVANTS (chiffres réels, 24/09)
+
+| Lot | Numéros d'annuaire essayés | Joignables sur WhatsApp | Taux |
+|---|---|---|---|
+| Lot 1 (registre ONOC) | 5 | **5** | 100 % |
+| Lot 2 (registre + annuaires) | 5 | **4** | 80 % |
+| Lot 3 (annuaire communautaire) | 5 | **3** | 60 % |
+| **Total du jour** | **15** | **12** | **80 %** |
+
+**La règle qui en sort : préparer SEPT numéros pour en envoyer cinq.** Un numéro sur cinq n'a pas WhatsApp,
+et le lot 3 montre que **plus la source est une annuaire communautaire, plus le taux baisse** (60 %). Un lot
+préparé à cinq exactement perd donc une à deux boutiques par jour — et c'est du temps de préparation perdu,
+pas du temps de vente.
+
+**Et une conclusion qui vaut pour la prospection entière :** en trois lots, **trois boutiques ont été
+trouvées parfaitement valides et sont restées injoignables** (Horizon, Royal Optic, K Vision Care) — toutes
+les trois à cause du même maillon : **le numéro**. Le problème n'est pas le message, ni la cible : c'est la
+**source du numéro**. Les deux numéros qui ont marché à 100 % venaient d'un **registre professionnel**
+(ONOC) ; les annuaires généralistes donnent des coordonnées qui ont parfois deux ans.
