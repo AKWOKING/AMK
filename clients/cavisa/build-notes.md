@@ -89,6 +89,12 @@ python3 demos/build_cavisa.py     # regénère la page ET le dossier de déploie
 Le dossier **`hosting/previews/cavisa/`** contient `index.html` (autonome, 279 Ko) et `og.jpg` (1200×630). Il se déploie tel quel (Netlify Drop, Vercel, n'importe quel hébergeur statique).
 
 1. Déployer → relever l'adresse réelle.
+0. **DÉCISION DE KING (24/09) : on ne redéploie pas maintenant.** Le redéploiement se fera **une seule
+   fois**, quand M. Dongmo aura dit **les changements qu'il veut**. Ce redéploiement-là emportera tout d'un
+   coup : ses informations (adresse, horaires, photos), la vignette du lien (`og:image`) et les photos 2026.
+   Conséquence à assumer : tant que ce déploiement n'a pas eu lieu, le lien déjà envoyé s'affiche **sans
+   vignette** — c'est le prix d'un seul redéploiement au lieu de deux.
+
 2. **Décommenter le bloc `og:image` / `og:url`** en tête de `demos/cavisa-v1.tpl.html`, y coller l'adresse, relancer le builder **et redéployer** — sinon le lien s'affiche chez Cavisa comme une carte grise sans vignette (§20.7). *(Les deux balises sont commentées volontairement : WhatsApp ne résout pas les URL relatives, on ne peut donc pas les écrire avant de connaître l'adresse.)*
 3. Ouvrir le lien **sur un téléphone**, la nuit et en plein soleil (§24.3.5), puis envoyer **le lien seul**, sans pièce jointe, à M. Dongmo — c'est King qui envoie, jamais nous.
 

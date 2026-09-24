@@ -7,8 +7,8 @@
 
 | Étape | Nombre | Taux |
 |---|---|---|
-| Base (leads au fichier) | **149** | — |
-| Contactés | **58** | 38.9 % de la base |
+| Base (leads au fichier) | **156** | — |
+| Contactés | **58** | 37.2 % de la base |
 | Réponses humaines | **5** | 8.6 % des contactés |
 | Réponses automatiques | 1 | — |
 | Aperçus produits | **21** | (hors chaîne : souvent produits AVANT contact) |
@@ -19,7 +19,7 @@
 
 | Source | Leads | Contactés | Réponses humaines | Taux de réponse |
 |---|---|---|---|---|
-| directory | 102 | 51 | **5** | 9.8 % |
+| directory | 109 | 51 | **5** | 9.8 % |
 | (non renseigné) | 38 | 4 | **0** | 0.0 % |
 | google_maps | 2 | 2 | **0** | 0.0 % |
 | content_video | 1 | 1 | **0** | 0.0 % |
@@ -29,7 +29,7 @@
 
 ## Le diagnostic, en trois lignes
 
-1. **Le volume contacté est le premier goulot** : 91 lead(s) sur 149 n'ont jamais reçu un message (61 % de la base). Aucune amélioration de texte ne compense un lead jamais contacté.
+1. **Le volume contacté est le premier goulot** : 98 lead(s) sur 156 n'ont jamais reçu un message (63 % de la base). Aucune amélioration de texte ne compense un lead jamais contacté.
 2. **Le taux de réponse humain** est de 8.6 % des contactés — c'est le chiffre à surveiller d'un envoi à l'autre (il se lit avec `SOURCES.md` : quelle liste répond).
 3. **La conversion en rendez-vous, elle, ne fuit pas** : 3 des 5 réponses humaines ont donné un rendez-vous ou un prix posé. Le travail n'est donc pas de « mieux closer », il est de **contacter plus**, et de choisir les bonnes listes.
 

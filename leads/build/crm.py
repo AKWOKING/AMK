@@ -622,6 +622,85 @@ LABS_ECARTES = [
 ]
 
 
+# ── LOT 3 · LES OPTICIENS NEUFS DU 24/09 (source : mont-pandi, catégorie Opticiens) ────────────
+# Sept fiches lues le 24/09 dans la catégorie « Opticiens » de l'annuaire communautaire Mont-Pandi.
+# Cinq entrent dans le lot 3 ; deux sont ÉCARTÉES le jour même et restent tracées ici.
+# ⚠️ Ce sont des numéros d'ANNUAIRE, jamais vérifiés sur WhatsApp : la porte A se vérifie dans
+# l'application, par King, AVANT l'envoi (leçon Horizon du 24/09). L'annuaire se trompe parfois —
+# il se trompe même trois fois dans ce lot-ci (voir `wa_number_note`).
+BATCH_2409_3_NEW = [
+    dict(slug="el-roi-optique-medicale", org="El Roï Optique Médicale", city="Douala (Village)",
+         org_type="other", language="FR", wa_number="693 127 302", wa_verified="unknown",
+         stage="prospecting", contacted="No", reply="No", demo="No",
+         source="directory", source_detail="Mont-Pandi, catégorie Opticiens (fiche 678), lue le 24/09",
+         contact_name="",
+         notes="LOT 3 (préparé le 24/09, PAS ENVOYÉ). Repères publiés par la boutique elle-même : « à 200 m "
+               "de la Elf axe lourd, en face du Collège Pozam et à côté de la Pharmacie Saint-Pierre ». "
+               "Services publiés : examen de la vue · vente de lunettes · accessoires et réparation · "
+               "conseil et orientation. Horaires publiés 08:00→18:00. Second numéro publié : 670 790 215 "
+               "(repli). Le message part sur 693 127 302."),
+    dict(slug="net-optique-medical", org="Net Optique Médical", city="Douala (Akwa)",
+         org_type="other", language="FR", wa_number="675 785 930", wa_verified="unknown",
+         stage="prospecting", contacted="No", reply="No", demo="No",
+         source="directory", source_detail="Mont-Pandi, catégorie Opticiens (fiche 761), lue le 24/09",
+         notes="LOT 3 (préparé le 24/09, PAS ENVOYÉ). Adresse publiée : Akwa, boulevard de la Liberté. "
+               "Services publiés : ophtalmologie · lunetterie · optique · horlogerie · conseil. Horaires "
+               "publiés 08:00→18:30."),
+    dict(slug="royal-optic-bali", org="Royal Optic", city="Douala (Bali)",
+         org_type="other", language="FR", wa_number="676 250 409", wa_verified="unknown",
+         stage="prospecting", contacted="No", reply="No", demo="No",
+         source="directory", source_detail="Mont-Pandi, catégorie Opticiens (fiche 763), lue le 24/09",
+         notes="LOT 3 (préparé le 24/09, PAS ENVOYÉ). Se présente comme « Cabinet d'Optique Médicale ». "
+               "Repères publiés : « Bali, Alimentation Koumassi, en face Le Phoenix, à côté de la Direction "
+               "Générale de Zenith Assurances ». Horaires publiés 08:00→18:30. Second numéro publié : "
+               "691 219 986 (repli). Le message part sur 676 250 409."),
+    dict(slug="k-vision-care", org="K Vision Care", city="Douala (Bessengue · Ancien 3e · Ndogpassi)",
+         org_type="other", language="FR", wa_number="677 077 459", wa_verified="unknown",
+         stage="prospecting", contacted="No", reply="No", demo="No",
+         source="directory", source_detail="Mont-Pandi, catégorie Opticiens (fiche 672), lue le 24/09",
+         notes="LOT 3 (préparé le 24/09, PAS ENVOYÉ). ⚠️ L'ANNONCE SE CONTREDIT : le texte publie "
+               "677 077 459, le lien de la même fiche écrit 677 077 159 — un chiffre d'écart. "
+               "VERR : 677 077 459 et 3ᵉ numéro 695 865 346, et n'envoyer qu'après avoir vu le nom du "
+               "profil à l'écran. Trois magasins publiés : Bessengue (rue de la Réunification) · entre "
+               "Ancien 3e et le marché Congo, en face de l'hôpital Congo 2 (en haut à l'étage) · marché "
+               "Ndogpassi. Horaires publiés 08:00→18:00."),
+    dict(slug="cabinet-optique-la-retine", org="Cabinet d'Optique la Rétine", city="Douala (Akwa)",
+         org_type="other", language="FR", wa_number="695 474 364", wa_verified="unknown",
+         stage="prospecting", contacted="No", reply="No", demo="No",
+         source="directory", source_detail="Mont-Pandi, catégorie Opticiens (fiche 666), lue le 24/09",
+         notes="LOT 3 (préparé le 24/09, PAS ENVOYÉ). Repère publié : Akwa, « non loin de l'ancien Cinéma "
+               "Étoile ». Horaires publiés 08:00→18:00."),
+]
+
+# Deux fiches lues le même jour et ÉCARTÉES — elles restent au dossier pour que personne ne les
+# « redécouvre » comme une bonne idée.
+BATCH_2409_3_ECARTES = [
+    dict(slug="valdoz-optic-douala", org="Valdoz Optic Douala", city="Douala (Akwa)",
+         org_type="other", language="FR", wa_number="682 833 319", wa_verified="unknown",
+         stage="disqualified", contacted="No", reply="No", demo="No",
+         source="directory", source_detail="Mont-Pandi, catégorie Opticiens (fiche 676), lue le 24/09",
+         disqualification_reason="numéro ambigu — un des numéros publiés est celui d'un lead DÉJÀ contacté",
+         notes="⛔ ÉCARTÉ DU LOT 3 (décision du 24/09). La fiche publie « 682833319/682411637 » en texte, mais son lien "
+               "WhatsApp pointe sur 682 833 319 / 656 223 863 — et 656 22 38 63 est le numéro de "
+               "**Fashion Vision**, déjà contacté le 24/09. Soit les deux boutiques partagent la ligne, "
+               "soit l'annuaire a recopié le mauvais numéro. Dans les deux cas, envoyer ici risquerait un "
+               "SECOND message à une boutique déjà sollicitée. À trancher par King avant toute reprise : "
+               "si Valdoz et Fashion Vision sont la même maison, il n'y a pas deux prospects."),
+    dict(slug="jucia-optics", org="Jucia Optics", city="Douala (Akwa)",
+         org_type="other", language="FR", wa_number="653 449 349", wa_verified="unknown",
+         stage="parked", contacted="No", reply="No", demo="No",
+         source="directory", source_detail="Mont-Pandi, catégorie Opticiens (fiche 759), lue le 24/09",
+         notes="EN RÉSERVE POUR LE LOT 4 (décision du 24/09), pas écarté : la boutique est crédible (Akwa 1, ancien 3e ; "
+               "consultations, examen, lunettes, accessoires, entretien, conseils ; 08:00→18:30), mais "
+               "**son numéro se contredit** — le texte publie 653 449 349, le lien écrit 653 449 385. "
+               "Deux numéros à vérifier dans l'application avant d'écrire quoi que ce soit."),
+]
+
+
+def _batch_2409_3_rows():
+    return BATCH_2409_3_NEW + BATCH_2409_3_ECARTES
+
+
 def _labs_ecartes_rows():
     out = []
     for slug, org, city, num, site, why in LABS_ECARTES:
@@ -1683,6 +1762,44 @@ def _apply_state(out: list, table: dict, name: str) -> None:
 REPLY_TYPES = ("human", "auto", "none", "")
 
 
+def doublons_de_cle(source: str) -> list:
+    """Rend les clés écrites DEUX fois dans un littéral de dict de ce source.
+
+    L'instrument, et pourquoi c'est celui-là : un dict Python **supprime** la clé dupliquée avant qu'on
+    puisse la compter — la table assemblée ne dit plus rien. `Counter` sur un dict compte même autre
+    chose (il lit les VALEURS comme des effectifs, et plante dès qu'une valeur est un dict : première
+    version écrite le 24/09, plantée au premier essai). Le seul endroit où le doublon existe encore,
+    c'est **le texte du fichier** — donc on lit le source avec `ast`, on regarde chaque dict assigné à
+    un nom, et on compte ses clés constantes.
+    """
+    import ast
+    tree = ast.parse(source)
+    out = []
+    for node in ast.walk(tree):
+        if not isinstance(node, ast.Assign) or not isinstance(node.value, ast.Dict):
+            continue
+        names = [t.id for t in node.targets if isinstance(t, ast.Name)]
+        keys = [k.value for k in node.value.keys if isinstance(k, ast.Constant)]
+        dups = sorted({k for k in keys if keys.count(k) > 1})
+        if dups:
+            out.append(f"{names[0] if names else '?'} (ligne {node.lineno}) : {dups}")
+    return out
+
+
+def check_tables_sans_doublon() -> None:
+    """Refuse une clé présente DEUX fois dans une table d'état.
+
+    Pourquoi ce contrôle existe (24/09, vu en direct) : une entrée `"horizon-optique"` ajoutée à
+    `REVISION_2409` alors qu'elle y était déjà — en Python la **dernière** gagne, la mienne mourait en
+    silence, le CRM restait en `prospecting`, et rien ne le disait. Le remède n'est pas de faire
+    attention : c'est de compter.
+    """
+    souci = doublons_de_cle(pathlib.Path(__file__).read_text(encoding="utf-8"))
+    if souci:
+        sys.exit("✗ clé(s) DUPLIQUÉE(S) dans un littéral de table — la seconde écrase la première en "
+                 "silence :\n   " + "\n   ".join(souci))
+
+
 def check_reply_types(out: list) -> None:
     """Refuse toute valeur hors vocabulaire : l'entonnoir se remplit ou se vide en silence, sinon."""
     bad = sorted({str(r.get("reply_type")) for r in out if str(r.get("reply_type") or "") not in REPLY_TYPES})
@@ -2432,7 +2549,21 @@ REVISION_2409 = {
             "aucun site — fiche DoualaTour (24/09) : « HORIZON Optique », Akwa RUE FOCH, opticien "
             "et horlogerie, sans photo, et le numéro n'apparaît qu'après avoir laissé ses propres "
             "coordonnées",
-        "disqualification_reason": "",
+        # 24/09 — DÉCISION DE KING : « on laisse tomber Horizon ». La tentative reste écrite (elle a
+        # eu lieu), le prospect sort de la file, et la table est la DERNIÈRE appliquée — donc le seul
+        # endroit où la passe « vitrine » du 22/09 ne recouvrira pas la raison.
+        "stage": "disqualified", "stage_since": "2026-09-24",
+        # ⚠️ dans une TABLE D'ÉTAT les clés sont des NOMS DE COLONNES : `decision` ne serait pas
+        # remappé (la normalisation est déjà passée) et ferait REFUSER la construction.
+        "Decision maker": "abandonné — King, 24/09",
+        "disqualification_reason": "abandonné sur décision de King (24/09) — WhatsApp indisponible au "
+                                  "677 44 74 17 et aucune autre trace de la boutique",
+        "Notes_extra":
+            "24/09 — ABANDONNÉ sur décision de King (« on laisse tomber Horizon, passons à la prochaine "
+            "vague »). Le message préparé n'est jamais parti (WhatsApp indisponible) ; la route de repli "
+            "(SMS + script d'appel) reste écrite dans `sales/Send-BATCH-2026-09-24-Opticiens-2.md` §6 sans "
+            "être exécutée. Aucune relance, aucun réessai : si un numéro ou une fiche apparaît un jour, le "
+            "lead repart de `prospecting`.",
     },
 }
 
@@ -2508,6 +2639,10 @@ def main() -> int:
     _apply_envois(out)
 
     # 2e · les 5 laboratoires ÉCARTÉS pour site vivant — la donnée qui évite de refaire le travail
+    # 1e · le lot 3 du 24/09 (opticiens neufs de Mont-Pandi) + les deux fiches écartées.
+    for p in _batch_2409_3_rows():
+        out.append({"School": p["org"], **p})
+
     for p in _labs_ecartes_rows():
         out.append({"School": p["org"], **p})
 
@@ -2588,6 +2723,7 @@ def main() -> int:
     _apply_fiche(out)
     _apply_state(out, REVISION_2409, "REVISION_2409")
     check_reply_types(out)
+    check_tables_sans_doublon()
 
     cols = headers + NEW_FIELDS
     allowed = set(cols)

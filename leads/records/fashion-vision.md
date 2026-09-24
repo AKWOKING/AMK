@@ -31,10 +31,13 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : PUILLE Nicolas. Probleme : etre da
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 2 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 5 ligne(s).*
 
 `L815` · j'écris les 5 suivants (Optic Laser · Planète · Médina · Fashion · MegaOptic) dans la foulée.
 `L3531` · ③ 4M Optique Akwa (679 27 06 64) ④ Horizon Optique (677 44 74 17) ⑤ Fashion Vision (656 22 38 63). Ordre
+`L3590` · gardé) · **4M Optique Akwa** (679 27 06 64 ; replis 699 09 25 23 et 675 01 07 82 gardés) · **Fashion Vision**
+`L3591` · (656 22 38 63). CRM : `ENVOI_2409_2` → `Contacted = Yes`, `wa_verified = yes`, `last_send_state = sent`,
+`L3637` · ses numéros publiés — 656 22 38 63 — **est celui de Fashion Vision, déjà contacté** : envoyer aurait
 
 ---
 

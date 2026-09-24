@@ -3606,3 +3606,40 @@ avant le message, pas après** — et pour tout numéro qui ne vient que d'un re
 prépare d'emblée.
 
 **Entonnoir** : contactés **54 → 58** (38,9 % de la base).
+
+---
+
+## 24/09/2026 (fin d'après-midi) — DEUX DÉCISIONS DE KING, ET LE TROISIÈME LOT PRÉPARÉ
+
+**① Cavisa — on ne redéploie pas maintenant.** King : *« Je vais redéployer Cavisa lorsque le prospect
+m'aura dit les changements qu'il voudrait qu'on apporte au site. »* Un **seul** redéploiement, qui emportera
+d'un coup ses informations, la vignette du lien (`og:image`) et les photos 2026. Conséquence assumée et
+écrite : le lien déjà reçu par M. Dongmo reste **sans vignette** jusque-là. Le message de réponse du 24/09
+reste prêt dans `sales/Reponse-CAVISA-2026-09-24.md` — **rien n'est envoyé par nous**, et **aucune relance**
+n'est due tant qu'il n'a pas répondu.
+
+**② Horizon Optique — abandonné.** King : *« on laisse tomber Horizon, passons à la prochaine vague. »*
+CRM : `stage = disqualified`, `decision = abandonné — King, 24/09`, raison écrite (WhatsApp indisponible au
+677 44 74 17, aucune autre trace). Le message préparé n'est jamais parti ; la route de repli (SMS + script
+d'appel, §6 du lot 2) **reste écrite sans être exécutée**. Aucun réessai.
+
+**③ Le troisième lot est préparé** — `sales/Send-BATCH-2026-09-24-Opticiens-3.md` : **cinq opticiens NEUFS,
+jamais contactés, 0 doublon**, trouvés et lus le 24/09 dans la catégorie « Opticiens » de l'annuaire
+**Mont-Pandi** (fiches 678, 761, 763, 672, 666) :
+
+1. **El Roï Optique Médicale** (Village) · 693 127 302 — repli publié 670 790 215
+2. **Net Optique Médical** (Akwa, boulevard de la Liberté) · 675 785 930
+3. **Royal Optic** (Bali) · 676 250 409 — repli publié 691 219 986
+4. **Cabinet d'Optique la Rétine** (Akwa) · 695 474 364
+5. **K Vision Care** (Bessengue · Ancien 3e · Ndogpassi) · 677 077 459 — ⚠️ **numéro à trancher à l'écran**
+
+**Deux fiches écartées le jour même**, tracées dans `BATCH_2409_3_ECARTES` : **Valdoz Optic Douala** (un de
+ses numéros publiés — 656 22 38 63 — **est celui de Fashion Vision, déjà contacté** : envoyer aurait
+risqué un second message à la même boutique) et **Jucia Optics** (en réserve : texte 653 449 349 contre lien
+653 449 385).
+
+**Trois anomalies sur sept fiches lues** — c'est la leçon du jour, écrite dans le lot : **un annuaire
+communautaire se trompe, et il se trompe en silence**. Troisième instrument qui dérive aujourd'hui (après
+la lecture Maps et le comptage des réponses humaines) : **la donnée molle se vérifie à la source vivante —
+l'application — avant d'écrire.** D'où l'**étape 0** en tête du lot : la porte A se vérifie à l'écran, par
+King, avant l'envoi.
