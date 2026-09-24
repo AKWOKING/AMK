@@ -1192,6 +1192,31 @@ répondent déjà aux trois questions, portent une phrase d'appui, tiennent en d
 ces règles viennent de sources lues aujourd'hui, et la prochaine page — l'école, en octobre — part d'un
 fichier blanc, où rien de tout cela n'est hérité.
 
+### La lecture à l'œil — ce qu'aucun contrôle ne pouvait voir
+
+Les cinq règles ci-dessus sont mécaniques. La **règle des 15 secondes**, elle, se juge en lisant le premier
+écran comme quelqu'un qui ne connaît ni l'entreprise ni le quartier. Je l'ai faite, et voilà ce qu'elle
+donne :
+
+- **UNI-LABO** répond aux trois questions avant la première ligne du titre, parce que sa marque porte le
+  métier : « **UNI-LABO — Laboratoire d'analyses de biologie médicale** », puis le lieu (« Bonamoussadi,
+  Douala »), puis la promesse (« Le résultat juste, du premier coup »), puis ce qui se passe concrètement
+  (« vous arrivez avec l'ordonnance… vous repartez en sachant quand revenir »). *« Où suis-je », « que
+  faites-vous », « qu'est-ce que j'y gagne » : les trois sont là.* Le nom du biologiste et le numéro
+  suivent — la confiance est nommée, pas suggérée.
+- **Le site AMK** répond aussi aux trois, avec une nuance : **l'accroche et le titre disent la même chose**
+  (« Développement web — écoles & cliniques · Cameroun » puis « Création de sites web pour écoles et
+  cliniques au Cameroun »). Or l'accroche est une place précieuse : chez Malewicz elle sert à **planter la
+  preuve** avant le titre ; chez Flux, à donner le contexte. Aujourd'hui elle répète.
+
+  **Je ne l'ai pas changée.** C'est une décision de positionnement, pas un défaut mécanique : notre propre
+  page n'est pas dans la réunion de vendredi, je n'ai aucune donnée qui dise qu'une version fait mieux, et
+  la règle de la maison est de ne pas rouvrir une page qu'on vient de livrer sur un avis personnel. **La
+  question est posée à King**, avec deux pistes honnêtes et vérifiables : y mettre le **lieu**
+  (« Douala · Yaoundé · Buea · Limbé », qui est déjà dans le titre de la page) ou y mettre un **fait
+  vérifiable** (« 5 sites en ligne qu'on peut ouvrir »). Rien d'inventé dans les deux cas — et rien
+  d'appliqué sans son accord.
+
 ### Et une troisième fois, l'instrument avait tort
 
 Mes cinq assertions ont d'abord produit **trois échecs** sur des témoins que l'outil refusait
