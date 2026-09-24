@@ -186,3 +186,85 @@ ne savons pas promettre une position dans les trois premiers.
 - **En séance vendredi** (UNI-LABO, 13 h) : point **facultatif**, à trancher par King — si le laboratoire a
   une fiche, proposer d'y poser le lien `wa.me` du chat (§3). Ce n'est pas dans le prix de 150 000 FCFA et
   ce n'est pas une remise : c'est la première brique de la suite, si le client veut qu'on aille plus loin.
+
+---
+
+## 9 · Ce que les sources officielles ajoutent (lot [31], 24/09)
+
+Le premier document de cette fiche reposait sur trois vidéos. King a envoyé depuis **la documentation de
+Google elle-même** et le guide le plus complet du paquet. Ce qui change, et ce qui ne change pas.
+
+### 9.1 · Les trois facteurs de classement, chez Google
+
+Google ne classe pas une fiche « au mérite ». Trois facteurs, cités depuis son aide officielle :
+
+| facteur | ce que c'est | ce que nous pouvons faire |
+|---|---|---|
+| **pertinence** | la fiche correspond-elle à ce qui a été cherché | la **catégorie principale** (le signal le plus fort), les services, les produits, la description. C'est notre terrain |
+| **distance** | la distance entre le chercheur et le lieu | **rien** — et c'est important : personne ne peut la « tricher », et nous n'essaierons pas |
+| **notoriété** | à quel point l'entreprise paraît connue et active | les avis (nombre, note, **fraîcheur**), la régularité des publications, la présence ailleurs sur le web |
+
+La conséquence pratique est un garde-fou : **nous ne promettons jamais la première place**, puisque deux
+des trois facteurs ne dépendent pas de nous (la distance) ou dépendent des clients (la notoriété).
+
+### 9.2 · La vérification : cinq méthodes, et ce que la vidéo exige
+
+Les vidéos en donnaient trois ; la réalité en compte cinq : **appel ou SMS**, **e-mail**, **courrier**
+(le délai annoncé varie selon les sources : cinq à sept jours ouvrés, ou une à deux semaines),
+**enregistrement vidéo**, **appel vidéo en direct**.
+
+Ce que la vérification vidéo exige, pour ne pas faire perdre une heure au client : **une seule prise, non
+montée**, qui prouve trois choses — que le lieu existe, que la personne y a bien accès, et que l'activité
+est réelle. Le parcours qui marche : l'**enseigne à l'extérieur**, puis l'intérieur (matériel, poste de
+travail), puis une preuve d'activité quotidienne (un cahier, un système de rendez-vous, un terminal de
+paiement). **Rien de monté, aucun fichier repris dans la galerie du téléphone.** Et trois choses à tenir
+**hors du cadre** : les visages, les informations de clients, les documents bancaires.
+
+Conséquence pour nous : quand un client sera vérifié, c'est **lui** qui filme ; notre travail consiste à
+lui donner la liste ci-dessus avant qu'il commence.
+
+### 9.3 · Quand la fiche appartient à quelqu'un d'autre
+
+C'est le cas d'Univers Optique (fiche notée, champ site vide, gestionnaire inconnu) et le cas le plus
+fréquent sur les fiches anciennes : un ancien employé, une ancienne agence, un compte oublié. La marche à
+suivre, documentée :
+
+1. chercher le nom sur Google ou Maps ;
+2. si la fiche est **libre** (« Revendiquer cet établissement ») → la revendiquer puis vérifier ;
+3. si **quelqu'un la gère** → **demander l'accès** (nom, relation avec l'entreprise, niveau demandé) ;
+4. le gestionnaire actuel a **trois jours** pour accepter ou refuser ; **sans réponse**, Google peut
+   laisser la fiche être revendiquée, par la procédure indiquée dans l'e-mail de suivi.
+
+Pour la séance de vendredi 10 h, la question posée à Univers Optique reste la même — « avez-vous la main
+sur cette fiche ? » — mais elle a maintenant **trois réponses possibles**, et une procédure pour chacune.
+
+### 9.4 · Ce que la documentation officielle ferme
+
+L'API Business Profile existe, mais son accès exige **un compte Google valide, un motif professionnel
+valide, un projet Google Cloud et une URL de site d'entreprise valide**. Autrement dit : **il n'y a pas
+d'automatisation possible pour nous aujourd'hui.** Tout se fait dans l'interface, avec le compte du
+client. Cette phrase remplace la ligne « il faudra peut-être un jour un outil » qui traînait dans ma tête.
+
+### 9.5 · Les petits champs qui rapportent
+
+- **Les attributs** : accessibilité, équipements, identité (entreprise féminine, etc.). Ils servent de
+  **filtres** aux clients et donnent une raison de plus de choisir. À remplir une fois, à vérifier ensuite.
+- **Les publications** : une par semaine ou par quinzaine suffit ; les liens suivis montrent le trafic
+  envoyé.
+- **Le tableau de bord** donne cinq chiffres : **recherches, vues, appels, itinéraires, clics vers le
+  site**. Le plus utile pour nous est le dernier — c'est la preuve, chiffrée, que la porte de la fiche
+  mène bien à la page que nous avons construite.
+- **Une entreprise, une fiche.** Les vidéos parlaient de doublons comme d'une cause de suspension ; les
+  guides ajoutent la règle complète : plusieurs fiches seulement pour des **adresses distinctes** ou des
+  **activités réellement distinctes**, chacune avec ses propres informations. Un doublon volontaire pour
+  « occuper le terrain » nuit et fait suspendre.
+- **Les fiches ont une date de naissance** : le champ « date d'ouverture » nourrit la notoriété, et
+  presque personne ne le remplit.
+
+### 9.6 · Ce qui reste non vérifié (inchangé depuis §7)
+
+Les méthodes de vérification réellement proposées **au Cameroun**, la présence du chat SMS/WhatsApp dans
+les fiches du pays, les catégories disponibles en français, et la forme du tableau de performance pour un
+compte non revendiqué. **Trois sources américaines et britanniques plus la documentation de Google ne
+prouvent toujours rien sur une fiche camerounaise** — la documentation dit ce que le produit sait faire,
+pas ce qu'il déploie ici.

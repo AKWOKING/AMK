@@ -3,6 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- LOT [31] — CETTE PAGE EST UN GABARIT, PAS UNE PAGE. Elle part dans le zip de déploiement
+     (hosting/build_site_zip.py prend tout `site/*.html`) et porte 18 jetons {{...}} : si Google
+     l'indexait, un prospect tomberait sur « {{NAME}} ». Le noindex n'est pas une précaution de
+     style, c'est la seule chose qui empêche un brouillon de devenir la vitrine. -->
+<meta name="robots" content="noindex,nofollow">
 <title>{{NAME}} — Maquette d'accueil AMK</title>
 <!--
   MODÈLE DE MAQUETTE AMK — page d'accueil responsive (téléphone + ordinateur).

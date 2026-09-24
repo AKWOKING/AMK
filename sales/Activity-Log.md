@@ -3006,3 +3006,72 @@ rc=0 sur les quatre pages · `audit_html` 0 constat · `test_audit_hero` 14 · h
 
 **Ce qui n'a pas changé : aucune page du site n'a été modifiée.** L'accessibilité était déjà tenue ; c'est
 le contrôle qui ne le savait pas.
+
+## 2026-09-24 · AEO, ET LE GABARIT QUI ALLAIT DEVENIR LA VITRINE — six sources, un portique neuf, un vrai défaut trouvé
+
+*(L'heure de cette entrée est celle du commit qui la porte.)*
+
+Six liens de King, dont **la documentation officielle de Google** — une classe de source que nous n'avions
+jamais eue sur ce sujet — et une vidéo qui ne parlait pas de la fiche Google du tout : **Ahrefs, « Learn
+80 % of AEO in 19 Minutes »**. J'avais écrit la veille qu'un quatrième lot sur la fiche n'apporterait
+rien ; **je me suis trompé, et c'est écrit ici**.
+
+### Ce que j'ai construit
+
+**`tools/qa/audit_aeo.py`** (+ son test, 12 assertions, quatre témoins fautifs) : quatre contrôles
+seulement, parce que ce sont les seuls vérifiables en machine — **aucun robot IA bloqué**, **aucune page
+publique en `noindex`**, **des données structurées** présentes, **des questions** dans la page. L'outil
+imprime aussi ce qu'il ne peut pas vérifier (la consensus entre sites, la fraîcheur réelle, YouTube, la
+qualité d'écriture, le fait d'être cité par une IA) et **la liste des dix-huit pages de travail à
+débloquer le jour du déploiement**.
+
+### Le vrai défaut, trouvé chez nous le jour même
+
+`site/mockup-hero.html` — notre **page-modèle d'accueil** — part dans le zip de déploiement
+(`hosting/build_site_zip.py` prend tous les `site/*.html`) et portait **18 jetons `{{...}}` sans
+`noindex`**. Un moteur qui l'explorait indexait une page dont le titre visible est « {{NAME}} — Maquette
+d'accueil AMK ». Corrigé (noindex + commentaire expliquant pourquoi), et le contrôle sait maintenant
+attraper la classe entière : **un gabarit à jetons ne doit jamais être indexable**.
+
+**Puis l'outil a accusé ma correction** : avec le `noindex` posé, il annonçait « page publique invisible —
+débloquer avant déploiement ». Ma règle de périmètre était trop grossière — un gabarit est la seule page
+livrée qui doit **rester** en `noindex`. Deux leçons consignées : **le périmètre d'un contrôle doit
+correspondre au déploiement réel** (j'avais supposé que `site/` était « le public » et `demos/` « le
+travail » ; le zip prouve que `site/` part en ligne), et **un contrôle qui crie au loup cesse d'être lu**
+(demander du JSON-LD à un gabarit dont le contenu viendra du client produisait un avertissement à chaque
+exécution).
+
+### Deux erreurs d'instrument de plus
+
+Mon lecteur de `robots.txt` **excluait `Disallow: /`** — la règle qui bloque tout. C'est le témoin qui l'a
+attrapée, pas une relecture. Et mon assertion cherchait « GPTBot » en majuscules quand le message écrit
+« gptbot » : **cinquième fois** qu'une assertion mord sur une casse, même famille que le lot [29].
+
+### Ce que les sources écrites apportent, au-delà de la vidéo
+
+- **Google, documentation officielle** : l'API Business Profile exige un compte Google, un motif
+  professionnel, un projet Cloud et une URL de site → **pas d'automatisation de fiche client**. La porte
+  est fermée proprement, au lieu de rester entrouverte dans ma tête.
+- **Le guide localimpact** : les **trois facteurs de classement** (pertinence, distance, notoriété — cités
+  de l'aide Google), les **cinq** méthodes de vérification, ce que la **vérification vidéo** exige (une
+  seule prise non montée : enseigne → intérieur → preuve d'activité ; visages, clients et relevés
+  bancaires hors cadre), la **demande d'accès** quand un tiers gère la fiche (**3 jours** pour répondre,
+  sinon Google peut laisser revendiquer), et les cinq métriques du tableau de bord.
+- **Trois blogs d'agences** (Valve+Meter, FieldPulse, Ignite Visibility) : lus et **écartés** — ils
+  recyclent les mêmes conseils pour vendre leur service. Quand trois sources se recopient, la quatrième
+  (la doc de Google) est la seule qui fasse autorité.
+
+### Ce que je n'ai pas fait
+
+Pas de « nettoyage AEO » des pages : elles sont indexables, structurées (`LocalBusiness`,
+`MedicalLaboratory`, `FAQPage`) et pleines de questions — un chantier aurait été décoratif. Pas de relance
+de la production de contenu, alors que YouTube est le levier n° 1 de la source : **la décision de King de
+ne plus produire repose sur notre marché, pas sur une corrélation américaine** (le chiffre est consigné,
+la décision n'est pas contournée). Et **rien ne sera jamais promis en séance** : ni classement, ni
+citation, ni « visibilité IA ».
+
+### Vérifié
+
+`test_audit_aeo.py` 12 assertions vertes (4 témoins fautifs) · `audit_aeo --strict` : 10 pages publiques,
+0 faute, 0 avertissement · `audit_a11y` inchangé sur la page-modèle corrigée (`+5 lignes`, aucun contenu
+touché) · le reste de la batterie repassé avant commit.

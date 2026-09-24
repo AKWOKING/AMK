@@ -1830,3 +1830,96 @@ WhatsApp chat, and what belongs to the client rather than to us — is in
   Google listing “found by our Maps sweep”. The CRM line says `source: directory`, and the thumbnail I was
   looking at is our own mock-up. The correction is dated in `sales/FICHE-GOOGLE-PROFILE.md` §1.
 - **Nothing changed on the pages themselves.** Four pages audited: 0 fault, 0 warning — before and after.
+
+---
+
+## §31 THE ANSWER, NOT THE ADJECTIVE — and the template that was about to become the shop window (24 Sep 2026, batch [31])
+
+King answered my note ("a fourth batch on Google Business Profile would not add much") by sending a
+fourth batch. **I was wrong, and it is worth writing down why**: the batch contained **Google's own
+developer documentation** — a different class of source, which turned four YouTubers' claims into
+checkable facts — and **one video on a subject nobody had covered**: Ahrefs' *Learn 80 % of AEO in 19
+Minutes*. Two of the four links in this batch changed something real in the repository.
+
+### 31.1 · AEO, in one line, and why it is not SEO
+
+SEO wants the click. **AEO wants to be named inside the answer.** An assistant does not run a query, it
+**fans one prompt out into dozens of searches** (the video cites 420 searches behind a single question
+about a phone case), then writes an answer from many sources. Being ranked for one keyword is therefore
+not the same as being *present on a subject*.
+
+Three things decide who gets named, according to Ahrefs' own research (174,000 pages cited in AI
+Overviews; 75,000 brands):
+
+- **consensus** — the same thing said about a brand in more places;
+- **freshness** — cited content is on average **25.7 % fresher** than what ranks in classic search;
+- **authority** — **76 % of AI Overview citations come from pages already in Google's top 10**. AI search
+  is built on top of SEO, not beside it.
+
+And four writing rules that transfer to everything we write for a client (§31.3).
+
+### 31.2 · The template that was one crawl away from being our shop window
+
+The AEO video's most useful line is not about ranking: **5.9 % of 140 million sites block GPTBot without
+knowing it**, usually through an inherited `robots.txt` or a default Cloudflare setting. A blocked site
+cannot be cited — and nobody notices, because there is nothing to measure.
+
+So we built `tools/qa/audit_aeo.py` (four machine-checkable rules, four negative witnesses, 12
+assertions). **It found a real defect in our own repository on the day it was written**:
+`site/mockup-hero.html` — our homepage **template** — ships inside the deploy zip
+(`hosting/build_site_zip.py` takes every `site/*.html`) and carried **18 unfilled `{{...}}` tokens with no
+`noindex`**. Any crawl would have indexed a page whose visible title is *"{{NAME}} — Maquette d'accueil
+AMK"*. Fixed with a `noindex,nofollow` and a comment that says why; the control now catches the whole
+class: **a template with unfilled tokens must never be indexable.**
+
+Then the tool accused our own fix: with the `noindex` in place it declared *"public page with noindex —
+unblock before deployment"*. That was the instrument being too coarse, not the page being wrong, and the
+correction is the interesting part: **a template is the one shipped page that *must* stay `noindex`**, so
+it is now judged in both directions — indexable template = fault, visible template = fault. The
+deployment reminder lists the pages to unblock and deliberately **skips templates**, because a template is
+never unblocked.
+
+Two lessons worth more than the tool:
+
+1. **Scope must match the deployment, not my idea of the folders.** I had assumed `site/` was our public
+   site and `demos/` was work. `site/` really does ship — the mockup proved it. A control whose scope
+   contradicts reality is an instrument error waiting to fire.
+2. **A control that cries wolf dies.** Once the template was correctly `noindex`, the tool kept asking it
+   for structured data and for questions — things a template cannot have, since its content comes from the
+   client. Those two checks are now *informational* on templates. A warning that fires every run is a
+   warning nobody reads.
+
+### 31.3 · The four writing rules, which are the part we keep
+
+Ahrefs' micro-structure advice, applied to French and English pages alike:
+
+| rule | what it means | what it looks like in our pages |
+|---|---|---|
+| **BLUF** — bottom line up front | every section starts with the answer, not the backstory; both humans and models weigh the start and the end of a passage more than the middle | *"Le résultat juste, du premier coup."* comes before the explanation, not after |
+| **atomic sections** | the model chunks the page and we do not control where the scissors fall, so every section must survive alone | our five FAQ answers each make sense with no neighbours |
+| **entity-rich writing** | name the things: *"Cet outil aide au référencement"* tells an AI nothing; *"UNI-LABO, à Bonamoussadi (Douala), réalise un hémogramme complet en une journée"* gives it relations | already our house style: *Carrefour Etoo, Rue 5N441, Makepe Bloc L*, *Dr Tientcheu Philomène*, *lun-ven 07h-19h* |
+| **simple declarative sentences** | one idea per sentence, subject-verb-object; *if a sentence takes two reads, it is too complex* | the bilingual constraint enforces it: a short French sentence is almost always a short English one |
+
+**This is a reading criterion, not a redesign.** No page was rewritten for AEO, and none needed to be:
+they are indexable, structured (`LocalBusiness`, `MedicalLaboratory`, `FAQPage`), and full of questions.
+
+### 31.4 · What we do not sell, and the batch that contained no new idea
+
+Three of the six sources this time were **agency and software-vendor blogs** (Valve+Meter, FieldPulse,
+Ignite Visibility). They recycle the same advice as the videos, with the apparent purpose of selling
+their service. Read, logged, **and set aside** — which is itself the lesson: when three sources copy each
+other, the fourth (Google's documentation) is the only one with authority.
+
+Two things we will not do with AEO, written down before anyone asks:
+
+1. **We do not sell AEO in Douala.** Ahrefs' headline number (0.5 % of their traffic from AI, but 12.1 %
+   of their sign-ups) describes an English-language SaaS market. A laboratory in Bonamoussadi will not be
+   recommended by an assistant tomorrow. What transfers is the writing discipline and the crawler check.
+2. **We do not promise ranking, citation or "AI visibility".** We can say exactly what we fixed — robots,
+   `noindex`, structured data, questions — and that is all.
+
+**And the honest note on YouTube**: the same video shows YouTube is the single strongest lever for being
+cited (the most-cited domain in AI Overviews; a 0.737 correlation with ChatGPT visibility; GPT-4 trained
+on a million hours of transcripts). King stopped content production in September because it produced no
+leads. **An American correlation does not overturn a decision made from our own market** — the number is
+logged here so that the decision stays informed, not so that a channel gets resurrected behind his back.

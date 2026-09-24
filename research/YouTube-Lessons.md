@@ -1302,6 +1302,83 @@ réellement disponibles au Cameroun, la présence du chat SMS/WhatsApp dans les 
 catégories disponibles en français. Trois sources américaines et britanniques ne prouvent rien sur une
 fiche camerounaise.
 
+---
+
+## Lot [31] · AEO, ET LE GABARIT QUI ALLAIT DEVENIR LA VITRINE — 1 vidéo + 5 sources écrites (24/09/2026)
+
+Six liens. **Je venais d'écrire à King qu'un quatrième lot sur la fiche Google n'apporterait rien** : il en
+a envoyé un, et il avait raison. Le paquet contenait **la documentation officielle de Google** (une classe
+de source différente : elle transforme quatre affirmations de vidéastes en faits vérifiables) et **une
+vidéo sur un sujet que personne n'avait couvert** — l'AEO, l'optimisation pour les moteurs de réponse.
+Deux des six liens ont changé quelque chose de réel dans le dépôt.
+
+### Les sources, et ce que chacune vaut
+
+| source | ce que c'est | verdict |
+|---|---|---|
+| **`58MR03s0ev8` — Ahrefs, « Learn 80 % of AEO in 19 Minutes »** (679 K abonnés) | AEO : comment les assistants choisissent qui citer. Recherche maison : 174 000 pages citées, 75 000 marques, 140 M de sites scannés pour le blocage de robots | **absorbé** — nouveau sujet ; doc de référence : `research/AEO-2026-09-24.md`, règles d'écriture en §31 de `AMK-DESIGN-SKILLS.md` |
+| **`developers.google.com/my-business/content/overview`** | la documentation **officielle** de l'API Business Profile | **absorbé** — et il **ferme une porte** : l'accès exige un compte Google, un motif professionnel, un projet Google Cloud et une URL de site. **Pas d'automatisation de fiche client pour nous** (FICHE §9.4) |
+| **`localimpact.com`** — « Google Business Profile in 2026 » | le guide le plus complet du paquet | **absorbé** — les trois facteurs de classement (pertinence, distance, notoriété, cités de l'aide Google), les **cinq** méthodes de vérification, ce que la **vérification vidéo** exige (une seule prise, enseigne → intérieur → preuve d'activité, pas de visages ni de documents bancaires), la **demande d'accès** quand un tiers gère la fiche (3 jours), les cinq métriques du tableau de bord (FICHE §9) |
+| **`valveandmeter.com`, `fieldpulse.com`, `ignitevisibility.com`** | trois blogs d'agences et d'éditeurs de logiciels | **écartés** — ils recyclent les mêmes conseils avec l'objectif apparent de vendre leur service. Rien de neuf, et une leçon de méthode : quand trois sources se recopient, la quatrième (la doc de Google) est la seule qui fasse autorité |
+
+### Ce que la vidéo Ahrefs dit, en cinq points
+
+1. **Un prompt n'est pas une requête.** L'assistant le découpe en dizaines de recherches (« query
+   fan-out ») : 420 recherches derrière une seule question sur une coque de téléphone dans ChatGPT. Se
+   classer sur un mot-clé ne suffit pas ; il faut exister sur un sujet.
+2. **Trois facteurs de citation** : la **consensus** (la même chose dite sur soi à plusieurs endroits),
+   la **fraîcheur** (le contenu cité est 25,7 % plus récent), l'**autorité** (76 % des citations d'AI
+   Overviews viennent de pages déjà dans le top 10 de Google).
+3. **Le contenu :** la longueur ne corrèle pas (174 000 pages analysées — plus de la moitié des pages
+   citées font moins de 1 000 mots), la fraîcheur compte beaucoup, et 43,8 % des pages citées sont des
+   **listes, comparatifs et avis**.
+4. **Quatre règles d'écriture** : la réponse d'abord (BLUF), des sections **atomiques** (chaque section
+   doit tenir hors contexte), des **entités nommées** (des noms, des lieux, des durées — pas des
+   adjectifs), des **phrases déclaratives simples** (une idée par phrase ; si une phrase demande deux
+   lectures, elle est trop compliquée).
+5. **Le piège technique** : 5,9 % des sites bloquent GPTBot **sans le savoir**, par héritage d'un
+   `robots.txt` ou d'un réglage par défaut. Un site bloqué ne peut pas être cité — et rien ne le montre,
+   puisqu'il n'y a rien à mesurer. YouTube, lui, est le domaine le plus cité dans les AI Overviews
+   (corrélation 0,737 avec la visibilité ChatGPT) — **et nous n'avons pas de chaîne** (voir §31.4).
+
+### Ce que j'ai construit — et le défaut qu'il a trouvé chez nous le jour même
+
+`tools/qa/audit_aeo.py` + `test_audit_aeo.py` (12 assertions, **quatre témoins fautifs**). Quatre
+contrôles seulement, parce que ce sont les seuls vérifiables en machine : aucun robot IA bloqué, aucune
+page publique en `noindex`, des données structurées présentes (et un `FAQPage` qui contient vraiment des
+questions et des réponses), et des questions dans la page. L'outil imprime aussi ce qu'il **ne peut pas**
+vérifier (consensus, fraîcheur, YouTube, qualité d'écriture, citations réelles) et **la liste des pages de
+travail à débloquer le jour du déploiement** — dix-huit aujourd'hui.
+
+**Il a trouvé un vrai défaut en quelques minutes** : `site/mockup-hero.html`, la page-modèle d'accueil,
+part dans le zip de déploiement avec **18 jetons `{{...}}` et aucun `noindex`**. Un robot qui l'aurait
+explorée aurait indexé une page dont le titre visible est « {{NAME}} — Maquette d'accueil AMK ».
+Corrigé, et le contrôle a été étendu à cette classe (un gabarit indexable est une faute).
+
+**Puis l'outil a accusé ma propre correction** (« page publique en noindex : débloquer avant
+déploiement ») : ma règle de périmètre était trop grossière. Un gabarit est la seule page livrée qui
+**doit** rester en `noindex` — il est donc jugé dans les deux sens. Deux leçons : **le périmètre d'un
+contrôle doit correspondre au déploiement réel** (j'avais supposé que `demos/` était du travail et `site/`
+du public ; le zip prouve que `site/` part en ligne), et **un contrôle qui crie au loup cesse d'être lu**
+(les questions et le JSON-LD sont devenus de simples informations sur un gabarit).
+
+### Deux erreurs d'instrument de plus — la cinquième et la sixième
+
+- Mon premier `blocked_bots()` **excluait `Disallow: /`** — c'est-à-dire la règle qui bloque tout. Le
+  témoin l'a attrapée ; aucune relecture ne l'aurait fait.
+- Mon assertion cherchait « **GPTBot** » en majuscules quand le message dit « gptbot ». **Cinquième fois**
+  qu'une assertion mord sur une casse (lot [29] : « AUCUNE action » contre « aucune action »). La règle
+  est maintenant écrite dans le test, à l'endroit de l'erreur.
+
+### Le verdict d'absorption
+
+**Absorbé** : les quatre règles d'écriture (BLUF, atomique, entités, phrases déclaratives), le contrôle des
+robots IA, les trois facteurs de classement, les cinq méthodes de vérification, la procédure d'accès, les
+cinq métriques du tableau de bord.
+**Écarté** : les trois blogs d'agences, et le levier YouTube que nous ne pouvons pas actionner (décision de
+King : plus de production de contenu par défaut).
+**Jamais promis** : un classement, une citation, une « visibilité IA ».
+
 **Le désaccord méthodologique à noter :** pour 5 et 6, les sources utiles ne sont pas des vidéos YouTube.
 Le lot [26] a montré le plafond de ce format (deux vidéos sur cinq muettes, et les autres vendent une
 communauté payante). Les meilleures sources sont les documents officiels (Google, WhatsApp, W3C) et
