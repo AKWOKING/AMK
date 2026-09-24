@@ -2042,3 +2042,57 @@ channel of collection; what happens after an unpaid month; exit; VAT and receipt
 **What does not move**: never a discount (adjust the scope), **never a price invented in a meeting**,
 never two grids in circulation, and the two old sheets are now **annotated, not rewritten** — dated,
 pointed at the new document, with their numbers left visible as history.
+
+---
+
+## §33 THE QUESTIONNAIRE THAT CHANGES FILES — three questions blocks for Friday (24 Sep 2026, batch [32])
+
+King, the night before the two meetings: *"je crois que on dois preparer un questionnaire pour nos reunions
+de vendredi — 1. pour la personalization du site 2. d'autres services que il's aimerait que AMK provide (une
+automatisation, logiciel, contenu anime) 3. and any other thing relevant information that can help both us
+and the client for a succesful and long collaboration on this project and others"*.
+
+Two meetings sit less than three hours apart (Univers Optique 10:00, UNI-LABO 13:00), each with a tight
+agenda already written. A questionnaire that ignores that becomes a form the client fills instead of a
+decision he takes. So the document `sales/QUESTIONNAIRE-REUNIONS-2026-09-25.md` is built on four rules, and
+they are the part worth keeping:
+
+1. **A question is only asked if its answer changes a file.** The page, the contract, the CRM, the
+   subscription line, the Google profile — or nothing. Every question in the document carries its
+   destination (`→`). This is the same discipline as §31 (scope must match the deployment) applied to
+   conversation: an answer with nowhere to go is an answer we will forget, and a question that changes
+   nothing spends the client's goodwill for nothing.
+2. **Eight minutes in the room, the rest on a sheet.** The long block travels as **Annexe A**, a
+   client-facing one-pager that comes back by WhatsApp. The meetings keep their order: facts first, money
+   second, curiosity last.
+3. **Interrogate problems, never tools.** *"Do you want AI?"* produces a yes we cannot honour — our own
+   grid was already caught saying "AI-powered" when nothing we ship uses it. So the services block asks
+   where the **time** goes, what gets **lost** (results, samples, orders, invoices, appointments), and
+   what their **customers ask for that they cannot give**. The mapping to our own offer order is ours to
+   do afterwards (C → D/E → B → A1 → A2 → F).
+4. **If the question implies a price, the answer is written afterwards.** *"Je vous l'écris"* — never an
+   improvised figure in the room (see the pricing audit of the same day: four monthly prices for one
+   service is what happens when numbers are said out loud).
+
+Three blocks, and what each one is *for*:
+
+- **A — personalisation (5 min).** Not design taste: the things only the client knows. Do they have real
+  photographs (and if not, the fifteen minutes from §32)? The ministry authorisation and the external
+  quality control (UNI-LABO) — a credibility band at the top of the page, or nothing. The 2023 "-15 %"
+  (Univers) — published only with written consent. The one sentence a customer should remember, **in their
+  words**. The three questions their counter hears most — that is the FAQ, with their answers, not ours.
+  What must never be published. The tone and the FR|EN switch.
+- **B — other services (3 min).** The three problem questions above, nothing else. Two honest limits are
+  written into the document: **animated content is not in our offer** (if the need surfaces, it is logged
+  as research, not sold), and the automatic assistant is a separate line, on quotation, **never "included"**.
+- **C — the long collaboration.** Who decides (the zombie check), who holds the Google password, whose name
+  the domain is in and when it expires, the channel and the accepted delay for a correction, **what would
+  make them stop** (our failure signal, asked without defending ourselves), how their customers find them
+  today (the attribution question of §31 applied to their clients), and the referral and portfolio
+  questions — asked freely, **never bought**.
+
+**What the questionnaire refuses to ask** is written down too, because a question is also a promise: no "do
+you want AI", no "what is it worth to you", no price for a service that has no grid, no testimonial in
+exchange for something, no personal or patient documents, no "do you want a video", and never a promise of
+ranking. §33 is the companion of §25 (the page must show the real client) — this is how we find out what
+"real" means, without inventing it.

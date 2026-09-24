@@ -3157,3 +3157,37 @@ la batterie repassé avant commit.
 4. **La grille : une seule compte** — celle envoyée à UNI-LABO (Standard, 150 000 + 30 000/mois). La
    seconde n'est plus une pièce à considérer ; il reste à imprimer **un numéro de version et une date**
    sur la grille de référence, pour qu'aucun vieux PDF ne puisse la contredire.
+
+## 2026-09-24 · LE QUESTIONNAIRE DES DEUX RENDEZ-VOUS — personnalisation, autres services, relation
+
+*(Après le lot [32].)* King : *« je crois que on dois preparer un questionnaire pour nos reunions de
+vendredi »* — personnalisation du site, autres services (automatisation, logiciel, contenu animé), et tout
+ce qui sert une collaboration longue.
+
+`sales/QUESTIONNAIRE-REUNIONS-2026-09-25.md` : trois blocs courts en séance (8 minutes au total), et **une
+feuille à laisser** (Annexe A, douze questions, à renvoyer par WhatsApp). La règle qui gouverne le
+document : **une question ne se pose que si sa réponse change un fichier** — la page, le contrat, le CRM,
+la ligne d'abonnement, la fiche Google. Chaque question porte sa destination.
+
+- **A · personnalisation** — leurs photos (sinon les quinze minutes du lot [32]) ; l'autorisation du
+  ministère et le contrôle de qualité externe (UNI-LABO : une bande de crédibilité, ou rien) ; les 15 % de
+  2023 (Univers : rien ne part sans accord écrit) ; **la phrase qu'un client doit retenir, dans leurs
+  mots** ; **les trois questions que leur comptoir entend le plus** (c'est la FAQ — les vraies) ; ce qu'il
+  ne faut pas publier ; le ton et la bascule FR|EN.
+- **B · autres services** — on n'interroge **jamais les outils** (« voulez-vous de l'IA ? » produit un oui
+  qu'on ne peut pas honorer : notre grille s'est déjà fait prendre avec « propulsées par l'IA »). Trois
+  questions de problème : où le **temps** se perd, ce qui **se perd** (résultats, échantillons, commandes,
+  factures), ce que leurs clients demandent et qu'ils ne peuvent pas donner. Le rangement dans nos offres
+  (C → D/E → B → A1 → A2 → F) est notre travail d'après. **Le contenu animé n'est pas dans nos offres** —
+  noté comme sujet de recherche, pas vendu ; l'assistant automatique = ligne à part, jamais « compris ».
+- **C · la relation** — qui décide (zombie check), qui a le mot de passe de la fiche Google, le domaine et
+  son échéance, le canal et le délai réels d'une correction, **ce qui les ferait arrêter** (notre signal
+  d'échec, posé sans se défendre), comment leurs patients les trouvent aujourd'hui, et le parrainage —
+  demandé librement, **jamais acheté**.
+
+Et la liste de ce qu'on **ne demande pas**, parce qu'une question est aussi une promesse : pas d'IA, pas de
+« ça vaut combien pour vous », pas de prix sans grille, pas de témoignage contre quelque chose, aucun
+document patient, pas de « voulez-vous une vidéo », jamais de garantie de classement.
+
+Les deux documents de vendredi portent maintenant le bloc, à l'endroit où il se pose : Univers l'insère
+après les six points factuels, UNI-LABO après la démonstration et les corrections.

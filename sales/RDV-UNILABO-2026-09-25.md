@@ -233,6 +233,16 @@ ajuste le périmètre, jamais le prix de la création.
 
 ---
 
+## Le questionnaire (5 à 8 minutes, ajouté le 24/09)
+
+`sales/QUESTIONNAIRE-REUNIONS-2026-09-25.md` — après la démonstration et les corrections, avant de partir.
+**A2** (autorisation du ministère, contrôle de qualité externe) est la question qui vaut un livrable : la
+réponse ajoute — ou non — une bande de crédibilité en haut de la page. Puis **B** (où le temps se perd, ce
+qui se perd : résultats, échantillons, comptes des entreprises) et **C** (qui décide, le domaine, la fiche
+Google, comment les patients les trouvent). **La feuille de l'Annexe A se laisse** au laboratoire.
+
+---
+
 ## Si le rendez-vous est annulé ou décalé
 
 **Une seule relance, et elle est douce :** *« Pas de souci — je vous garde le créneau de vendredi, dites-moi quand vous êtes disponible. Le site reste en ligne, il ne bouge pas. »*

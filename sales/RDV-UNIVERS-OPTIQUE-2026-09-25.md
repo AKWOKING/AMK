@@ -118,6 +118,17 @@ réunion réussie en client. Le reste peut attendre vendredi soir ; ça, non.
 
 ---
 
+## Le questionnaire (5 à 8 minutes, ajouté le 24/09)
+
+`sales/QUESTIONNAIRE-REUNIONS-2026-09-25.md` — à poser **après** les six points factuels, quand la page est
+propre. Trois blocs courts : **A** personnalisation (ses photos, les 15 %, la phrase qu'un client doit
+retenir, les questions qu'on lui pose au comptoir), **B** les autres services (où son temps se perd, ce qui
+se perd chez lui), **C** la relation (qui décide, le domaine, la fiche Google, comment ses clients le
+trouvent). **La feuille de l'Annexe A se laisse** : elle se remplit tranquillement et revient par WhatsApp.
+Aucun prix improvisé, aucune promesse de classement.
+
+---
+
 ## À avoir sur soi, avant de partir
 
 - [ ] **Le téléphone chargé**, données mobiles, la page ouverte **en onglet** — `univers-optique-concept.vercel.app`
