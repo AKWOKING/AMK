@@ -125,11 +125,11 @@ publiable** :
    **On n'en met qu'un — et pas un nom qu'il ne signerait pas.**
 5. **Les e-mails** : deux sont publics (`universoptique@yahoo.fr`, `universoptique.uo@gmail.com`).
    **Une seule adresse sera affichée : celle qu'il lit vraiment.**
-6. **Sa fiche Google — a-t-il la main dessus ?** *(trois vidéos lues le 24/09 ont produit la marche à
-   suivre exacte : `sales/FICHE-GOOGLE-PROFILE.md` — ordre d'installation, les 13 pièges de suspension,
-   le lien `wa.me` du chat. Si la réponse est « oui », on sait quoi faire sans re-regarder une vidéo.)* Si oui : on la complète (site, horaires, photos, **réponses aux
-   six avis**) dans la même séance. Si non : **c'est la première chose à récupérer, AVANT le site** — Google
-   lui envoie plus de visiteurs que n'importe quelle page.
+6. **Sa fiche Google — qui la revendique ?** **Relu le 24/09 : la fiche n'est gérée par personne** (elle
+   affiche « Revendiquer cet établissement » ; champ « site web » vide ; 21 photos ; horaires à jour). La
+   question n'est donc plus « avez-vous la main ? » mais « **qui la revendique ?** » — et la réponse est :
+   **lui, sous son compte** (Google vérifie le propriétaire). On propose de le faire **ensemble, à la fin de
+   la séance, sans supplément** → voir « Le geste », plus bas.
 
 **3 · Les deux choses à dire sur les avis, et une qu'il ne faut pas dire (3 min).** Six avis, **3,3 sur 5**, zéro
 réponse publique : ça, on l'affiche **tel quel**, on ne l'enjolive pas. Ce qu'on propose : répondre aux six
@@ -146,6 +146,37 @@ géolocalisée, reliée à sa fiche et à son site).
 
 **6 · L'acompte : 50 000 FCFA, MoMo, encaissement manuel (2 min).** C'est la seule chose qui transforme une
 réunion réussie en client. Le reste peut attendre vendredi soir ; ça, non.
+
+---
+
+## Le geste — revendiquer sa fiche avec lui (décision de King, 24/09 : offert, borné, une fois)
+
+**Pourquoi c'est le bon geste.** Sa fiche n'appartient à personne : c'est le cas ② du §9.3 de
+`FICHE-GOOGLE-PROFILE.md`. Sans revendication, il n'a **ni champ site sous son contrôle, ni réponse aux six
+avis** — donc les deux choses que le business case promet *dépendent* de ce geste. Le faire gratuitement
+**n'est pas une remise** : le prix de la page ne bouge pas d'un franc. C'est une **mise en route bornée** — et
+c'est aussi ce qui rend le site utile : une fois sa fiche à lui, le champ « site web » restera **vide** tant que
+la page n'est pas payée. **Le geste révèle le problème suivant ; il ne le remplace pas.**
+
+**Ce qui est offert (une fois) :** la séance de revendication, et la mise à jour des informations de base —
+**nom, catégorie, horaires, téléphone** — rédigées à partir de SES réponses aux six points (§2).
+
+**Ce qui n'est PAS offert, et ne doit pas le devenir :** le compte Google (le sien), le code ou la vidéo de
+vérification (les siens — §6 de `FICHE-GOOGLE-PROFILE.md`), les **réponses aux six avis** (elles font partie de
+la page payée), les photos en continu, la publication, et **tout ce qui est mensuel**. On ne repart pas avec un
+mandat ouvert sur sa fiche : sinon le geste d'aujourd'hui devient le travail gratuit de l'année.
+
+**Quand, dans la séance.** On l'**annonce tôt** — c'est la preuve de bonne foi, et ça ne coûte rien à dire — et
+on l'**exécute à la fin**, après que la prochaine étape est datée. Si la réunion se refroidit et qu'il n'y a pas
+de suite, **on ne l'exécute pas ce jour-là** : la fiche ne va nulle part, et le geste garde son sens.
+
+**Les mots, tels quels :** « Votre fiche n'est gérée par personne en ce moment — c'est vous qui pouvez la
+revendiquer, et je vous montre comment. On peut le faire tout de suite, ensemble, sans supplément : il faut
+votre compte Google et votre téléphone pour le code. Moi, je prépare le texte, la catégorie, les horaires, et
+la liste de ce qu'il faut filmer si Google demande une vidéo. »
+
+**Ce qu'on ne promet jamais :** ni la méthode de vérification, ni un délai, ni que Google acceptera (§9.2 de
+`FICHE-GOOGLE-PROFILE.md`). On promet la préparation, la séance, et le suivi jusqu'au bout.
 
 ---
 
@@ -182,6 +213,11 @@ Aucun prix improvisé, aucune promesse de classement.
   sort de la salle).
 - **Ne pas repartir sans les réponses aux six points** — sans elles, la page reste en aperçu un jour de plus.
 - **Ne pas promettre la bannière « 15 % »** ni reprendre une offre commerciale qui n'est pas la sienne.
+- **Ne pas présenter le geste sur sa fiche comme une remise** : c'est une mise en route offerte **une fois**
+  (nom, catégorie, horaires, téléphone), le prix de la page ne bouge pas — et **on ne repart pas avec un mandat
+  ouvert** sur sa fiche.
+- **Ne pas promettre la vérification Google** : la méthode (SMS, courrier, vidéo), le délai et l'acceptation
+  appartiennent à Google. Nous préparons tout ; **lui** revendique et vérifie.
 
 ---
 

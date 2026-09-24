@@ -75,13 +75,20 @@ qu'on sait faire aujourd'hui : la page, les textes, les photos, la fiche Google,
 | # | La question | Ce que ça change |
 |---|---|---|
 | **C1** | *« Pour les textes et les corrections, qui décide, vous ou quelqu'un d'autre ? »* (associé, conjoint, direction — le « zombie check » du playbook) | qui on appelle, qui signe ; évite un « laisse-moi en parler à… » à la livraison |
-| **C2** | *« La fiche Google — qui a le mot de passe du compte ? »* | `sales/FICHE-GOOGLE-PROFILE.md` : sans la main sur la fiche, la marche à suivre prend 3 jours de demande d'accès |
+| **C2** | *(Univers — reformulée le 24/09)* *« Votre fiche Google n'est gérée par personne — c'est vous qui pouvez la revendiquer. On la fait ensemble, et sous quel compte Google ? »* · *(UNI-LABO)* *« La fiche Google — qui a le mot de passe du compte ? »* | ⚠️ **cette entrée a changé le 24/09** : chez Univers la fiche est **libre** (« Revendiquer cet établissement », lu sur Maps) — il n'y a **pas de mot de passe à demander**, il y a une revendication à faire **sous son compte** (jamais le nôtre). Chez UNI-LABO, la fiche peut exister et être revendiquée : la question du mot de passe reste posée. Sans la main sur la fiche, la marche à suivre prend 3 jours de demande d'accès (`sales/FICHE-GOOGLE-PROFILE.md` §9.3) |
 | **C3** | *« Votre nom de domaine, et votre hébergement — qui paie, à quel nom, et il expire quand ? »* (Univers : LWS ; Le Cristallin : 13/06/2027) — ⚠️ **à UNI-LABO, cette question passe AVANT l'abonnement : c'est elle qui choisit le palier** (ni l'un ni l'autre → Standard 30 000 ; les deux → Essentiel 12 000 — décision de King, 24/09) | la clause domaine/DNS, la ligne d'abonnement, et **le prix annoncé demain** |
 | **C4** | *« Pour une correction, je vous écris sur ce numéro — et sous quel délai une correction vous suffit-elle ? »* | le canal et le délai réels de l'abonnement (nous promettons 24 h ouvrées) |
 | **C5** | *« Qu'est-ce qui vous ferait arrêter ? Qu'est-ce qui serait inacceptable pour vous ? »* | notre **signal d'échec** : c'est la seule question qui nous dit où nous allons décevoir — et elle se pose sans défense |
 | **C6** | *« Comment vos patients vous trouvent-ils aujourd'hui — bouche-à-oreille, Facebook, Google, quelqu'un qui passe devant ? »* | ce que la page et la fiche doivent remplacer ; et la question d'attribution du 24/09 (« comment nous avez-vous connus ? ») appliquée à **leur** clientèle |
 | **C7** | *« Si quelqu'un vous demandait un site comme celui-ci, vous nous enverriez à qui ? »* | le parrainage : **un mois d'abonnement offert au parrain**, prix normal pour le filleul — on demande, on ne quémande pas |
 | **C8** | *« Après la livraison, est-ce que je peux montrer votre site comme exemple — ou vous préférez attendre ? »* | le droit de portfolio (il est déjà au contrat), et un témoignage **libre, jamais acheté** |
+
+**Ce que la lecture de la fiche du 24/09 a changé — et ce qu'elle n'a PAS changé.** Une seule entrée a bougé :
+**C2**, et sa jumelle de l'Annexe A (§10). **Aucune question n'est ajoutée.** En particulier, on n'ajoute PAS
+« qui va s'occuper de la fiche chaque mois ? » : l'abonnement ne se propose **jamais** avant la livraison payée
+(précédent Le Cristallin, 23/09), et poser la question demain reviendrait à vendre le service *suivant* avant
+d'avoir livré le premier. La règle de la maison tient : **une question ne se pose que si sa réponse change un
+fichier** — et celle-là ne changerait rien demain, elle déplacerait la conversation.
 
 ---
 
@@ -96,6 +103,7 @@ qu'on sait faire aujourd'hui : la page, les textes, les photos, la fiche Google,
 | Des documents personnels, des registres, des dossiers patients | jamais dans un cadre photo, jamais dans un dossier — et on ne les demande pas |
 | « Est-ce que vous voulez une vidéo ? » | même piège que l'IA : on demande le **besoin**, pas le format |
 | Une promesse de classement Google | on ne promet jamais de position ni de citation (`sales/FICHE-GOOGLE-PROFILE.md`, `research/AEO-2026-09-24.md`) |
+| Une promesse sur la revendication elle-même | **ni la méthode de vérification, ni un délai, ni que Google acceptera** : nous préparons tout, **lui** revendique et vérifie (§6 et §9.2 de `sales/FICHE-GOOGLE-PROFILE.md`) |
 
 ---
 
@@ -134,7 +142,9 @@ qu'on sait faire aujourd'hui : la page, les textes, les photos, la fiche Google,
 > 8. Qu'est-ce qui vous prend le plus de temps dans une journée, et que vous aimeriez ne plus faire
 >    vous-même ?
 > 9. Votre nom de domaine et votre hébergement : à quel nom, payés jusqu'à quand ?
-> 10. La fiche Google de l'entreprise : est-ce vous qui avez le mot de passe du compte ?
+> 10. *(Univers)* Votre fiche Google n'est gérée par personne aujourd'hui : **souhaitez-vous qu'on la
+>     revendique ensemble**, et quel compte Google voulez-vous utiliser ?
+>     *(UNI-LABO)* La fiche Google de l'entreprise : est-ce vous qui avez le mot de passe du compte ?
 >
 > **Et pour la suite**
 > 11. Qu'est-ce qui vous ferait arrêter de travailler avec nous — qu'est-ce qui serait inacceptable ?

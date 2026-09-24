@@ -59,7 +59,7 @@ d'un mois.
 | **Mise en ligne** | **3 à 5 jours** après l'acompte |
 | **Ce qu'il n'est pas** | Pas un abonnement, pas un loyer, pas de frais cachés. Le site est à lui. |
 | **Son nom de domaine** | `univers-optique.com` ne répond plus. Deux options, **à lui de choisir** : le remettre en service s'il est encore à lui (vérifié en une heure), ou repartir sur un nom qui porte son quartier — plus fort pour une recherche locale. Dans les deux cas, **l'adresse imprimée sur ses papiers doit conduire quelque part.** |
-| **Après** | Sa fiche Google reste sa première vitrine : **on la revendique ensemble** (aujourd'hui, elle n'est pilotée par personne), puis on la complète — site, horaires, photos, **réponses aux six avis** — et le site lui renvoie les visiteurs |
+| **Après** | Sa fiche Google reste sa première vitrine : **on la revendique ensemble** — cette mise en route est **offerte, une fois**, et elle ne change pas le prix de la page — puis on la complète : site, horaires, photos, **réponses aux six avis** *dès que Google a validé la fiche* (la méthode et le délai de vérification lui appartiennent) |
 
 **Les six points que lui seul peut trancher** (ils sont déjà écrits en bas de l'aperçu, et deux minutes chacun) :
 le préfixe du fixe · la bannière « 15 % » de 2023 · l'ordre de ses trois lignes · le nom affiché (« ETS UNIVERS
@@ -86,7 +86,9 @@ avis ignorés, même à 3,3. Et pour pouvoir répondre, il faut d'abord être le
 la première chose qu'on règle ensemble**.
 
 **« Et après, je suis seul avec le site ? »** Le site est à lui, chez lui. La maintenance est une **ligne
-séparée** — jamais incluse de force, jamais un abonnement caché.
+séparée** — jamais incluse de force, jamais un abonnement caché. Sa fiche Google suit la même règle : **on la
+met en route une fois, offerte, et elle reste à vous** — et si vous voulez que quelqu'un s'en occupe chaque
+mois, c'est une ligne séparée, comme la maintenance.
 
 ---
 

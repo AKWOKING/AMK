@@ -241,6 +241,15 @@ suivre, documentée :
 Pour la séance de vendredi 10 h, la question posée à Univers Optique reste la même — « avez-vous la main
 sur cette fiche ? » — mais elle a maintenant **trois réponses possibles**, et une procédure pour chacune.
 
+**Décision de King, 24/09 — la revendication d'Univers Optique sera OFFERTE, une fois, et bornée.**
+Justification écrite : la fiche est libre (« Revendiquer cet établissement » → cas ②), et sans elle il n'y a ni
+champ site sous son contrôle ni réponse aux avis — **donc le geste débloque le travail payé au lieu de le
+remplacer** (« ne jamais résoudre le problème payant gratuitement », lot [34]). Bornes, à ne pas élargir : la
+**séance de revendication** et la **mise à jour des informations de base** (nom, catégorie, horaires, téléphone)
+depuis ses réponses. Le **compte Google**, le **code ou la vidéo de vérification**, les **réponses aux avis**,
+les photos en continu et **tout ce qui est mensuel** restent à lui ou restent payants. Aucune promesse sur la
+méthode, le délai ou l'acceptation de Google (§9.2). Et ce n'est pas une remise : la page reste à 100 000.
+
 ### 9.4 · Ce que la documentation officielle ferme
 
 L'API Business Profile existe, mais son accès exige **un compte Google valide, un motif professionnel

@@ -3410,3 +3410,34 @@ Optique » à **Hagondange (Moselle)**, 9 avis tous 5/5, gérant « Cyril » —
 Fichiers : `sales/RDV-UNIVERS-OPTIQUE-2026-09-25.md` (section « la fiche relue le 24/09 »), le business case
 (deux constats remplacés, « Après » et la FAQ des avis précisées), `FICHE-GOOGLE-PROFILE.md` §9.3 (cas ②
 confirmé), `DETECTION-FUITES-2026-09-24.md` §9, bloc `FICHE_2409` du CRM.
+
+## 2026-09-24 · APRÈS LE SCAN : UNE SEULE QUESTION CHANGE — et le geste offert sur la fiche, avec ses bornes
+
+Deux questions de King : « est-ce que ça change le questionnaire de demain, y a-t-il une question à
+ajouter ? » et une décision — **aider Univers Optique à revendiquer sa fiche Google, gratuitement s'il est
+d'accord**, pour installer la confiance.
+
+**Le questionnaire : une entrée change, aucune question ne s'ajoute.** C2 — et son jumeau, le n° 10 de
+l'Annexe A, la feuille que le client garde — devient **une question à deux branches**. Chez **Univers**, la
+fiche n'a pas de gestionnaire (« Revendiquer cet établissement ») : **on ne demande plus un mot de passe qui
+n'existe pas**, on demande *« qui la revendique, sous quel compte Google ? »*. Chez **UNI-LABO**, la fiche peut
+exister et être revendiquée : la question du mot de passe reste. **La question qu'on n'ajoute PAS** : « qui va
+s'occuper de la fiche chaque mois ? » — l'abonnement ne se propose jamais avant la livraison payée (précédent
+Le Cristallin), et la poser demain serait vendre le service suivant avant d'avoir livré le premier. Un refus de
+plus au fichier : **aucune promesse sur la revendication** (ni méthode, ni délai, ni acceptation de Google).
+
+**Le geste, et ses bornes.** Sans revendication, il n'a ni champ site sous son contrôle ni réponse aux avis —
+**les deux promesses du business case en dépendent**. Le geste **débloque** donc le travail payé au lieu de le
+remplacer (« ne jamais résoudre le problème payant gratuitement », lot [34]) : **offert, une fois** — la séance
+de revendication et les informations de base (nom, catégorie, horaires, téléphone) ; **jamais** le compte
+Google (le sien), le code de vérification (le sien), les six réponses aux avis (payées), les photos, la
+publication, le mensuel. Séquence : **annoncé tôt**, **exécuté à la fin** (après la prochaine étape datée), et
+pas exécuté du tout si la réunion refroidit. Ce n'est pas une remise : la page reste à 100 000 (50/50).
+
+**Ce qui doit porter la confiance, ce n'est pas le cadeau** : c'est de faire une chose concrète, de tenir le
+prix, et de laisser le geste **révéler le problème suivant** — la fiche revendiquée montrera un champ « site
+web » vide. C'est la mini-offre du lot [34], appliquée pour la première fois.
+
+Fichiers : `sales/QUESTIONNAIRE-REUNIONS-2026-09-25.md` (C2, Annexe A n° 10, un refus, la note « ce que le scan
+a changé »), `sales/RDV-UNIVERS-OPTIQUE-2026-09-25.md` (point 6 réécrit, section « Le geste », deux interdits),
+le business case (ligne « Après » + FAQ), `FICHE-GOOGLE-PROFILE.md` §9.3 (décision et bornes), bloc `GESTE_2409`.

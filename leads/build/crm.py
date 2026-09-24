@@ -1681,6 +1681,7 @@ def _apply_jour(out: list) -> None:
     _apply_state(out, JOUR_2309, "JOUR_2309")
     _apply_state(out, FIL_2409, "FIL_2409")
     _apply_state(out, FICHE_2409, "FICHE_2409")
+    _apply_state(out, GESTE_2409, "GESTE_2409")
 
 
 
@@ -1754,6 +1755,29 @@ FICHE_2409 = {
             "Littoral, ligne 94) : n° insc. **93** · arrêté **0346** · BAYANG BIHEN Calvin · Douala "
             "**699 252 874** (le numéro qu'on a déjà). HOMONYME Hagondange (Moselle) : 9 avis 5/5, "
             "gérant « Cyril » — jamais le nôtre.",
+    },
+}
+
+
+# ── LE 24/09 · DÉCISION DE KING — la revendication de la fiche d'Univers Optique sera OFFERTE ────────
+# « I have decided to help them set up/claim their google business profile for free if they agree. »
+# Bornes écrites le même soir : c'est une MISE EN ROUTE, UNE FOIS (séance de revendication + informations
+# de base : nom, catégorie, horaires, téléphone), pas une remise sur la page (100 000, 50/50 — le prix ne
+# bouge pas d'un franc) et pas un mandat ouvert sur la fiche (compte Google, code/vidéo de vérification,
+# réponses aux avis, photos, mensuel : à lui ou payants). Le geste DÉBLOQUE le travail payé, il ne le
+# remplace pas — et il révèle le problème suivant : la fiche revendiquée montrera un champ « site » vide.
+# Aucune promesse sur la méthode, le délai ou l'acceptation de Google. Séquence : annoncé tôt dans la
+# séance, exécuté à la fin (après la prochaine étape datée), et pas exécuté du tout si la réunion refroidit.
+GESTE_2409 = {
+    "univers-optique": {
+        "Notes_extra":
+            "24/09 — DÉCISION DE KING : sa fiche Google (libre) se revendique AVEC lui, **offert une fois**, "
+            "à la fin de la séance si la suite est datée. Le geste = revendication + nom/catégorie/horaires/"
+            "téléphone depuis SES réponses ; **en dehors du geste** : compte Google, code de vérification, "
+            "six réponses aux avis, photos, mensuel — aucune promesse sur la méthode, le délai ou "
+            "l'acceptation de Google. Ce n'est PAS une remise (page à 100 000, 50/50). Effet miroir "
+            "assumé : la fiche revendiquée montrera un champ « site web » vide. Question C2 du "
+            "questionnaire réécrite (branche Univers ; mot de passe non demandé là où il n'existe pas).",
     },
 }
 
