@@ -3669,3 +3669,52 @@ préparation perdu.
 
 **Ce qui n'a pas changé** : aucune relance, aucun réessai sur un numéro qui a échoué, rien n'est envoyé par
 nous. Entonnoir : contactés **58 → 61** (39,1 % de la base).
+
+## 24/09/2026 (nuit) — K VISION CARE : ON CREUSE, ET L'APPROCHE CHANGE DE PORTE
+
+**Ce qu'on croyait ce soir** : un opticien de plus, injoignable, avec un numéro qui se contredit — un lead
+à mettre en réserve. **Ce que King a demandé** : « K vision optique WhatsApp number: 677 077 159 and they
+seem to have a site … or at least they had. So I think you should look more into them. » On a creusé.
+Tout est vérifié par instrument, rien par souvenir.
+
+**Ce qui est établi, et par quoi :**
+
+- **677 077 159 est bien à eux** — profil WhatsApp **Business** « K Vision Care », 09:00–18:00,
+  « Bd de la Réunification, Douala » (capture de King, 14:14). Le numéro d'annuaire **677 077 459**,
+  lui, reste injoignable : c'est celui dont la fiche se contredisait avec son propre lien.
+- **Le domaine `kvisioncare.com` leur appartient et est payé jusqu'au 17/08/2027** (RDAP Verisign :
+  enregistré le 17/08/2024 chez Hostinger, renouvelé le 18/08/2026). **Le site, lui, ne s'ouvre plus** :
+  `ERR_SSL_PROTOCOL_ERROR` (capture de King, 14:12) et la page servie annonce « Your domain is expired »
+  — le DNS est resté sur les serveurs de stationnement.
+- **Ils avaient un vrai site WordPress** : **14 captures Wayback** entre le 17/08/2024 et le 12/07/2025.
+  On y lit, publié **par eux** : trois magasins, l'examen de vue, **montures dès 10 000 F / lunettes
+  médicales dès 25 000 F**, « nous acceptons toutes les assurances », et le nom du responsable —
+  **KAKEU Djounessi**, *Général Manager*, opticien réfractionniste.
+
+**Les cinq décisions.**
+
+1. **Le dossier de recherche est écrit et lié** : `clients/k-vision-care/dossier.md`, relié au CRM
+   (`wa_verified = yes`, `677 077 159`, `site_url` renseigné). Le contrôle `M4` repasse au vert —
+   23 dossiers liés.
+2. **L'accroche change de nature.** Celle du lot (« trois magasins, lequel est le plus proche ? ») était
+   bonne pour un opticien **sans** site. Lui en a un — **et il est fermé**. Nouvelle accroche :
+   **« votre site ne s'ouvre plus »**. Pour la première fois, le problème se voit de l'extérieur : le
+   prospect ouvre le lien et tombe sur une erreur, sans avoir à nous croire.
+3. **Une phrase est interdite** : « votre domaine a expiré ». C'est **faux** (il court jusqu'en 2027) et
+   c'est exactement la faute qui tue un premier contact chez quelqu'un qui a payé son renouvellement.
+   On dit ce qu'un visiteur voit, rien de plus.
+4. **On change de porte** : WhatsApp est fermé (pas de bouton « Message » sur la fiche, seulement
+   « Voice »). Trois portes écrites au §9 du dossier d'envoi : **SMS** au 677 077 159 (291 caractères,
+   2 segments) → **appel** → **e-mail** à `kvisioncare05@gmail.com`, publié par eux. Le SMS part en
+   version **neutre** : le nom du responsable vient d'une page vieille de deux ans, on ne l'emploie
+   qu'après l'appel.
+5. **On ne reprend rien de leur ancien site tel quel.** Les avis affichés (1 860 / 1 630 / 2 100) sont des
+   gabarits de thème, les photos viennent de banques d'images : **on n'y touche pas, on ne les compte
+   pas, on ne les cite pas**. Les prix, les adresses et la fonction de M. Kakeu **se demandent** — ils ne
+   se recopient pas.
+
+**Pourquoi c'est le meilleur prospect de la campagne après Cavisa** : une entreprise réelle, trois
+magasins, un réseau d'assureurs, un responsable identifié, et **un manque visible en dix secondes**.
+C'est aussi un client de **refonte** (comme Le Cristallin) — donc un palier supérieur à une page simple.
+
+**Rien n'est envoyé.** Les trois scripts sont prêts ; l'envoi appartient à King, comme toujours.
