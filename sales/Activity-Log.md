@@ -3441,3 +3441,37 @@ web » vide. C'est la mini-offre du lot [34], appliquée pour la première fois.
 Fichiers : `sales/QUESTIONNAIRE-REUNIONS-2026-09-25.md` (C2, Annexe A n° 10, un refus, la note « ce que le scan
 a changé »), `sales/RDV-UNIVERS-OPTIQUE-2026-09-25.md` (point 6 réécrit, section « Le geste », deux interdits),
 le business case (ligne « Après » + FAQ), `FICHE-GOOGLE-PROFILE.md` §9.3 (décision et bornes), bloc `GESTE_2409`.
+
+## 2026-09-24 · PREMIER LOT D'OUTREACH — 5 opticiens, préparé (rien n'est envoyé)
+
+King a demandé le premier lot de 5 avec **le numéro, la recherche et le premier message, dans le chat**. Le
+goulot du funnel est le volume (102 lignes `directory` jamais contactées) : le lot attaque exactement ça.
+
+**Le choix, et pourquoi.** Les 5 sortent du **tableau de l'Ordre relu le 24/09 — 186 cabinets numérotés**
+(dont le titulaire public, ce qui rend la personnalisation honnête) : **Maff Optique** (Manfo, 699 93 19 56),
+**Espace Lunetterie** (Boudjeu, 677 34 24 62), **MegaOptic** (Mveng Ateba, 698 82 10 27, repli 697 82 42 55),
+**Médina Optic** (Balla, 699 93 93 34) et **Cavisa Optique** (Dongmo, 699 95 90 52). Tous jamais contactés,
+aucun dans `KILL-LIST.md` ni `STALE.md` — et surtout **les cinq étaient déjà préparés dans la vague opticiens
+du 21/09, qui n'est jamais partie** (Disc et Tchaya, eux, l'ont reçue : ils sont en relance, pas ici).
+
+**Chaque message porte une accroche VÉRIFIÉE, jamais une absence supposée** : pour Maff, un centre médical de
+Bonadibong donne son adresse comme « derrière MAFF optique » (la boutique est un repère du quartier) ; pour
+Espace Lunetterie, la fiche `medicoor` affiche **un autre numéro** que celui de l'Ordre ; pour MegaOptic, le
+lien « site web » de sa page Facebook (**3 280 likes**) — `mega-optic.business.site` — est **une 404 vérifiée
+le 24/09** ; pour Cavisa, la seule page au monde qui porte son nom est **vide** ; pour Médina, on dit
+honnêtement « je n'ai rien trouvé à votre nom — si je me trompe, dites-le-moi ».
+
+**Deux pièges attrapés pendant la recherche, et écrits dans le lot** : ① l'Ordre liste un **MEGA OPTIC à
+Limbe** (MVENG ATEBA **Lionel**, 698 915 192) à côté du **MegaOptic de Douala** (MVENG ATEBA **Zénon**,
+698 82 10 27) — même nom, même famille, autre ville : le message parle de la page Facebook, qui est celle de
+Douala, et si la réponse vient de Limbe on s'arrête ; ② **Médina Optic et Star Optic partagent le même numéro**
+dans le tableau (699 939 334), donc la personne qui répond peut être l'un ou l'autre.
+
+**Ce qui n'est pas dans les messages** : aucun prix, aucune promesse de classement, aucune citation d'un autre
+prospect, et **jamais** le statut administratif lu dans le registre (« arrêté en cours » pour Médina) — une
+inscription ne se commente pas chez un client. Trois règles écrites en tête du lot : vérifier le numéro sur
+WhatsApp avant d'écrire (`wa_verified = unknown` pour les cinq), ne rien affirmer qui n'a pas été lu, traiter
+la réponse dans l'heure.
+
+Fichiers : `sales/Send-BATCH-2026-09-24-Opticiens.md` (les 5, avec sources et messages), bloc `BATCH_2409` du
+CRM (préparé ≠ envoyé), journal. **Rien n'est envoyé : prep/queue only, King envoie.**

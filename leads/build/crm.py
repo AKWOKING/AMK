@@ -1682,6 +1682,7 @@ def _apply_jour(out: list) -> None:
     _apply_state(out, FIL_2409, "FIL_2409")
     _apply_state(out, FICHE_2409, "FICHE_2409")
     _apply_state(out, GESTE_2409, "GESTE_2409")
+    _apply_state(out, BATCH_2409, "BATCH_2409")
 
 
 
@@ -1778,6 +1779,50 @@ GESTE_2409 = {
             "l'acceptation de Google. Ce n'est PAS une remise (page à 100 000, 50/50). Effet miroir "
             "assumé : la fiche revendiquée montrera un champ « site web » vide. Question C2 du "
             "questionnaire réécrite (branche Univers ; mot de passe non demandé là où il n'existe pas).",
+    },
+}
+
+
+# ── LE 24/09 (soir) · LE PREMIER LOT D'OUTREACH — préparé, RIEN N'EST ENVOYÉ ─────────────────
+# Cinq opticiens de Douala jamais contactés, choisis dans le tableau de l'Ordre relu le 24/09
+# (186 cabinets). Les notes ci-dessous existent pour qu'une prochaine séance sache que ce lot a
+# été PRÉPARÉ et ne le prépare pas deux fois — et pour qu'aucun « premier message » ne reparte sur
+# quelqu'un qu'on a déjà écrit. Le passage en `Contacted` se fait quand King rapporte l'envoi.
+BATCH_2409 = {
+    "maff-optique": {
+        "Notes_extra":
+            "24/09 — PREMIER LOT D'OUTREACH (préparé, PAS ENCORE ENVOYÉ) : numéro du tableau de "
+            "l'Ordre (699 93 19 56), titulaire public MANFO Hélène. Recherche et message écrits dans "
+            "`sales/Send-BATCH-2026-09-24-Opticiens.md` ; vérifier le numéro sur WhatsApp avant "
+            "d'envoyer (wa_verified = unknown).",
+    },
+    "espace-lunetterie": {
+        "Notes_extra":
+            "24/09 — PREMIER LOT D'OUTREACH (préparé, PAS ENCORE ENVOYÉ) : numéro du tableau de "
+            "l'Ordre (677 34 24 62), titulaire public BOUDJEU TCHAKOUNTE Edwige. Recherche et message écrits dans "
+            "`sales/Send-BATCH-2026-09-24-Opticiens.md` ; vérifier le numéro sur WhatsApp avant "
+            "d'envoyer (wa_verified = unknown).",
+    },
+    "megaoptic": {
+        "Notes_extra":
+            "24/09 — PREMIER LOT D'OUTREACH (préparé, PAS ENCORE ENVOYÉ) : numéro du tableau de "
+            "l'Ordre (698 82 10 27), titulaire public MVENG ATEBA Zénon. Recherche et message écrits dans "
+            "`sales/Send-BATCH-2026-09-24-Opticiens.md` ; vérifier le numéro sur WhatsApp avant "
+            "d'envoyer (wa_verified = unknown).",
+    },
+    "m-dina-optic": {
+        "Notes_extra":
+            "24/09 — PREMIER LOT D'OUTREACH (préparé, PAS ENCORE ENVOYÉ) : numéro du tableau de "
+            "l'Ordre (699 93 93 34), titulaire public BALLA Saïdou. Recherche et message écrits dans "
+            "`sales/Send-BATCH-2026-09-24-Opticiens.md` ; vérifier le numéro sur WhatsApp avant "
+            "d'envoyer (wa_verified = unknown).",
+    },
+    "cavisa-optique": {
+        "Notes_extra":
+            "24/09 — PREMIER LOT D'OUTREACH (préparé, PAS ENCORE ENVOYÉ) : numéro du tableau de "
+            "l'Ordre (699 95 90 52), titulaire public DONGMO Jean René. Recherche et message écrits dans "
+            "`sales/Send-BATCH-2026-09-24-Opticiens.md` ; vérifier le numéro sur WhatsApp avant "
+            "d'envoyer (wa_verified = unknown).",
     },
 }
 
