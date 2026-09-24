@@ -2031,9 +2031,15 @@ not**, and our own files disagree with each other.
 | **30 000** (Standard) | 2 h + backups + monitoring + 24 h support + report | the grid **UNI-LABO received on 23/09** | the only one a client has read |
 | **35 000** | lab pilot (results, invoices, MoMo) | offers order (23/09) | internal proposal, unvalidated |
 
-`sales/PRIX-ET-RECURRENCE-2026-09-24.md` lists **sixteen open questions** in four groups — three of them
-block Friday 13:00 (which tier(s) to announce, the hourly rate beyond the included two hours, and the
-5 000/week late-content fee). The rest are structural: which of the four monthly prices survives; the
+`sales/PRIX-ET-RECURRENCE-2026-09-24.md` lists **sixteen open questions** in four groups. Two of the three
+that blocked Friday 13:00 were settled the same day: **the hourly rate beyond the included two hours — we do
+not bill by the hour, the overflow waits for the next month and only genuinely new work goes to a separate
+quote** — and **the tier: Standard 30 000/month if the laboratory has neither domain nor hosting (we take
+both on), Essentiel 12 000/month if it keeps its own**; the question is therefore asked *before* the price is
+announced, and only one tier is ever announced. The domain check that came with it: `unilabo.cm` and
+`uni-labo.cm` are **free** (registry RDAP, 24/09 — verified against a real domain to prove the register can
+say no), while `unilabo.com` is parked for sale and `uni-labo.com` belongs to a Japanese registrant. Only
+the 5 000/week late-content fee remains open. The rest are structural: which of the four monthly prices survives; the
 never-read fourth PDF (two grids in circulation is two truths); prepayment (the old "2 months free" is a
 17 % discount and therefore dead); who pays hosting; whose name the domain is registered in; the day and
 channel of collection; what happens after an unpaid month; exit; VAT and receipts; and the boundary between

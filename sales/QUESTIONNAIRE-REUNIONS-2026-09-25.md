@@ -76,7 +76,7 @@ qu'on sait faire aujourd'hui : la page, les textes, les photos, la fiche Google,
 |---|---|---|
 | **C1** | *« Pour les textes et les corrections, qui décide, vous ou quelqu'un d'autre ? »* (associé, conjoint, direction — le « zombie check » du playbook) | qui on appelle, qui signe ; évite un « laisse-moi en parler à… » à la livraison |
 | **C2** | *« La fiche Google — qui a le mot de passe du compte ? »* | `sales/FICHE-GOOGLE-PROFILE.md` : sans la main sur la fiche, la marche à suivre prend 3 jours de demande d'accès |
-| **C3** | *« Votre nom de domaine, et votre hébergement — qui paie, à quel nom, et il expire quand ? »* (Univers : LWS ; Le Cristallin : 13/06/2027) | la clause domaine/DNS et la ligne d'abonnement |
+| **C3** | *« Votre nom de domaine, et votre hébergement — qui paie, à quel nom, et il expire quand ? »* (Univers : LWS ; Le Cristallin : 13/06/2027) — ⚠️ **à UNI-LABO, cette question passe AVANT l'abonnement : c'est elle qui choisit le palier** (ni l'un ni l'autre → Standard 30 000 ; les deux → Essentiel 12 000 — décision de King, 24/09) | la clause domaine/DNS, la ligne d'abonnement, et **le prix annoncé demain** |
 | **C4** | *« Pour une correction, je vous écris sur ce numéro — et sous quel délai une correction vous suffit-elle ? »* | le canal et le délai réels de l'abonnement (nous promettons 24 h ouvrées) |
 | **C5** | *« Qu'est-ce qui vous ferait arrêter ? Qu'est-ce qui serait inacceptable pour vous ? »* | notre **signal d'échec** : c'est la seule question qui nous dit où nous allons décevoir — et elle se pose sans défense |
 | **C6** | *« Comment vos patients vous trouvent-ils aujourd'hui — bouche-à-oreille, Facebook, Google, quelqu'un qui passe devant ? »* | ce que la page et la fiche doivent remplacer ; et la question d'attribution du 24/09 (« comment nous avez-vous connus ? ») appliquée à **leur** clientèle |
@@ -152,8 +152,7 @@ lignes · le nom du titulaire · l'e-mail · la fiche Google) → ② signature 
 A4, A5) → ④ **bloc B** en trois questions → ⑤ **bloc C** (C1, C3, C6) → ⑥ la feuille A, à laisser.
 
 **UNI-LABO — 13 h.** ① la démonstration et les corrections → ② **A2** (autorisation, contrôle qualité) →
-③ le contrat et les 75 000 → ④ l'abonnement (Standard 30 000, et la phrase du dépassement : *ce qui dépasse
-attend le mois suivant*) → ⑤ **A1** (leurs photos, sinon les quinze minutes) → ⑥ **bloc B** → ⑦ la feuille
+③ le contrat et les 75 000 → **④ LA QUESTION du domaine et de l'hébergement, PUIS l'abonnement** (Standard 30 000 s'il n'a rien, Essentiel 12 000 s'il a les deux — décision de King, 24/09), avec la phrase du dépassement : *ce qui dépasse attend le mois suivant* → ⑤ **A1** (leurs photos, sinon les quinze minutes) → ⑥ **bloc B** → ⑦ la feuille
 A, à laisser.
 
 **Ce qu'on emporte** : cette feuille, les deux numéros MoMo écrits à la main, et la règle qui ne bouge pas —

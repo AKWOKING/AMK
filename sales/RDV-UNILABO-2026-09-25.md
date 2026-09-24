@@ -119,7 +119,9 @@ contenu et le formulaire sont les mêmes, en mieux rangés. Le détail est en **
 | **5** | **Le contrat** : remplir la « Description du projet » **avec eux**, signer en deux exemplaires | c'est le champ qui empêche les malentendus de livraison (voir le texte à coller plus bas) |
 | **6** | **Encaisser les 75 000 en MoMo** (MTN 677 78 96 31 / Orange 692 89 07 47) | la mise en ligne annoncée est de 3 à 5 jours **après l'acompte** |
 | **7** | **S'il demande « et si on dépasse les deux heures ? »** — la réponse est tranchée (24/09) : *« on ne facture pas à l'heure : ce qui dépasse attend le mois suivant, et si c'est un vrai morceau neuf — une page, une langue, une nouvelle direction — je vous fais un devis à part. »* |
-| **8** | **Proposer l'abonnement** : Standard **30 000/mois** (2 h de modifications, sauvegardes vérifiées, assistance sous 24 h) ou Essentiel **12 000/mois** (domaine + veille + 30 min) | c'est maintenant qu'il se décide, pas après la livraison |
+| **8** | **LA QUESTION D'ABORD** — *« Est-ce que le laboratoire a déjà un nom de domaine et un hébergement ? »* **(décision de King, 24/09 : le palier dépend de la réponse)** | c'est la réponse qui choisit le prix, pas nous |
+| **8 bis** | **Puis annoncer UN SEUL palier**, celui que la réponse appelle. **Ni domaine ni hébergement → Standard 30 000/mois** : *« on s'occupe du nom de domaine et de l'hébergement, plus 2 h de modifications par mois, les sauvegardes vérifiées, la surveillance, l'assistance sous 24 h et un rapport mensuel. »* — **Domaine et hébergement déjà en place → Essentiel 12 000/mois** : *« on garde votre domaine et votre hébergement, on veille sur la page et on fait vos modifications, 30 minutes par mois. »* | jamais les deux « pour voir » — c'est la porte ouverte à choisir le moins cher sans raison |
+| **8 ter** | **S'ils n'ont rien : montrer les noms libres dressés le 24/09** — **`unilabo.cm`** (libre, vérifié au registre) est la proposition ; `uni-labo.cm` en réserve. **Ne pas parler de `unilabo.com`** : il est en vente chez un courtier | un nom vérifié au registre vaut mieux qu'une promesse de nom |
 
 **À emporter :** le contrat Standard **imprimé en deux exemplaires**, la **grille corrigée** imprimée, le téléphone chargé avec la page ouverte, et les numéros MoMo écrits sur la feuille.
 
@@ -226,10 +228,19 @@ en séance, sans y mettre de prix :
 Bénéfice double : c'est un vrai argument de vente, et la réponse (oui ou non) **change la page** —
 une bande de crédibilité en haut, ou rien. À noter dans le CRM le soir même.
 
-**② Quel abonnement on annonce en séance ?** Le Standard **30 000/mois** figure dans la grille qu'ils ont
-reçue. Le palier Essentiel **12 000/mois** (pour un client qui garde son domaine et son hébergement) est ma
-proposition — il n'est dans aucun document envoyé. **Deux paliers annoncés valent mieux qu'un seul** : on
-ajuste le périmètre, jamais le prix de la création.
+**② Quel abonnement on annonce en séance ? — TRANCHÉ PAR KING (24/09).** **La question d'abord :**
+*« avez-vous déjà un nom de domaine et un hébergement ? »* Puis **un seul palier**, celui que la réponse
+appelle :
+
+| La réponse | Le palier annoncé | Ce qu'on dit |
+|---|---|---|
+| **Ni domaine ni hébergement en cours** | **Standard 30 000/mois** | *« on s'occupe du domaine et de l'hébergement, plus 2 h de modifications, sauvegardes vérifiées, surveillance, assistance sous 24 h, rapport mensuel. »* |
+| **Domaine ET hébergement déjà en place** | **Essentiel 12 000/mois** | *« on garde votre domaine et votre hébergement, on veille et on fait vos modifications, 30 minutes par mois. »* |
+
+Le Standard figure dans la grille qu'ils ont déjà reçue ; l'Essentiel n'est dans aucun document envoyé — il
+se dit **de vive voix**, et il s'écrit ensuite. On **n'annonce jamais les deux** : c'est la porte ouverte à
+choisir le moins cher sans raison. Rappel du calcul : `30 000 − hébergement (5 000 à 10 000) − domaine
+(~1 100/mois)` ≈ **19 000 à 24 000 FCFA/mois** pour les 2 h et le reste (`sales/PRIX-ET-RECURRENCE-2026-09-24.md` §3·E).
 
 ---
 

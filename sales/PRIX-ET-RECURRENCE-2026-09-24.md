@@ -64,7 +64,7 @@ ne se réécrivent pas).
 
 | # | La question | Si on ne tranche pas |
 |---|---|---|
-| **1** | **Quel(s) palier(s) annoncer à UNI-LABO** : le Standard seul (celui de la grille), ou les deux (12 000 + 30 000) ? *(réponse de King le 24/09 : « autre », sans texte — **la question reste ouverte**, je ne devine pas)* | on annonce la grille telle qu'envoyée, **Standard 30 000 seul**. C'est tenable — mais un laboratoire qui possède déjà domaine et hébergement n'a alors aucune raison de payer pour ce qu'il a déjà, et la conversation s'arrête là |
+| **1** | ~~Quel(s) palier(s) annoncer à UNI-LABO~~ — **TRANCHÉ par King le 24/09** : **Standard 30 000/mois si le laboratoire n'a ni domaine ni hébergement en cours** (c'est nous qui les prenons en charge) ; le palier **Essentiel 12 000/mois** est celui d'un client qui **garde** son domaine et son hébergement. La question à poser demain **avant** d'annoncer un prix : *« avez-vous déjà un nom de domaine et un hébergement ? »* | on n'annonce **qu'un seul palier**, celui que la réponse appelle — jamais les deux « pour voir » : c'est la porte ouverte à choisir le moins cher sans raison |
 | **2** | ~~Le prix de l'heure au-delà des 2 h~~ — **TRANCHÉ par King le 24/09 : on ne facture pas l'heure.** La règle qui protège quand même, à écrire telle quelle : au-delà des 2 h comprises, **le travail n'est pas facturé à l'heure — il attend le mois suivant** ; seul un **morceau neuf** (une page, une section, une langue, une direction visuelle) part en **devis séparé**. Sans cette précision, les 2 h deviennent un forfait illimité | tout dépassement est absorbé, et c'est la porte ouverte à un client qui écrit chaque semaine |
 
 ### B · Une seule feuille, une seule vérité
@@ -75,7 +75,7 @@ ne se réécrivent pas).
 | **4** | ~~Le 4ᵉ PDF~~ — **TRANCHÉ par King le 24/09 : une seule grille compte.** La grille de référence est **celle qui a été envoyée à UNI-LABO** (Standard : 150 000 + 30 000/mois) ; la seconde n'est pas une pièce à considérer. Il reste la partie mécanique : **imprimer un numéro de version et une date sur cette grille**, pour qu'aucun vieux PDF ne puisse la contredire |
 | **5** | **Le prépaiement** : l'ancien plan vendait **100 000/an « 2 mois offerts »** — c'est une remise de 17 %, contraire à la règle. Le paiement annuel est-il autorisé, et à quel prix ? *(Ma proposition : oui, au prix plein — payer 12 mois d'avance est un service de trésorerie, pas un rabais.)* |
 | **6** | **Le trimestre** : l'ancien plan vendait 30 000/trimestre. La grille ne parle que du mois. Un client qui préfère payer tous les trois mois paie-t-il 3 × le mensuel (oui, si on ne remise pas) ? |
-| **7** | **L'hébergement** : qui le paie, et où vit-il ? Ni l'Essentiel ni le Standard ne le disent (seul l'**ancien** plan l'incluait). Aujourd'hui, la page de démonstration vit sur un hébergement gratuit — **un hébergement gratuit n'est pas un plan**, et un site de client qui paie ne se pose pas sur un compte personnel |
+| **7** | **L'hébergement** — **tranché le 24/09 pour le principe, ouvert pour le détail** : dans le **Standard** il est **compris** (avec le nom de domaine) pour un client qui n'en a pas ; dans l'**Essentiel** il reste au client. Restent à écrire : **le plan exact**, son prix, et **à quel nom** domaine et hébergement sont souscrits (voir §3·E) | sans plan choisi, un Standard à 30 000 peut coûter plus qu'il ne rapporte |
 | **8** | **Le domaine** : qui l'enregistre — nous ou le client —, **à quel nom**, et que se passe-t-il à la sortie ? La clause (b) protège le DNS d'un client qui a déjà son domaine (Le Cristallin : LWS, payé jusqu'au 13/06/2027) ; **rien** n'est écrit sur un domaine que nous achèterions nous-mêmes |
 | **9** | **Le prix de la fiche Google et des photos** : la fiche a été **offerte** au Cristallin en compensation ; aucune ligne tarifaire n'existe pour les autres. Or c'est notre seul service récurrent facile (mise à jour, publications, photos). Offert, option payante, ou compris dans le Standard ? *(Le principe est dans `sales/FICHE-GOOGLE-PROFILE.md` ; le prix, nulle part.)* |
 | **10** | **Le pilote labo** : 400 000 + 35 000/mois est une **proposition interne**. Peut-on la citer si un laboratoire la demande ? Et le serveur (10 000 à 15 000/mois) est-il **dans** le 35 000 ou en plus ? |
@@ -98,6 +98,45 @@ ne se réécrivent pas).
 
 ---
 
+### E · Le domaine et l'hébergement — ce qui est libre, vérifié le 24/09
+
+Puisque le Standard peut désormais inclure le nom de domaine, la première question de demain est factuelle :
+**en ont-ils un ?** Et la seconde : **si non, lequel ?** Vérifié au registre (RDAP), pas dans un moteur de
+recherche :
+
+| Nom | État (24/09) | Ce que ça veut dire |
+|---|---|---|
+| **`unilabo.cm`** | **LIBRE** — le registre `.cm` répond « no results » | le nom exact du laboratoire, dans le domaine national : c'est la proposition à montrer demain |
+| **`uni-labo.cm`** | **LIBRE** | la variante avec tiret, gardée en réserve |
+| `unilabo.com` | **en vente** (parking HugeDomains, expiration 30/03/2027) | on n'achète pas un domaine au prix d'un courtier pour une page |
+| `uni-labo.com` | **pris** (registrar japonais, enregistré en 2001) | intouchable |
+| `unilabocameroun.com`, `unilabocm.com` | RDAP muet *(probablement libres)* | à confirmer **au moment de l'achat**, jamais avant de l'annoncer au client |
+
+**Instrument vérifié avant de conclure** : le même RDAP, interrogé sur un domaine réellement pris
+(`douala.cm`, enregistré en 2016 au nom de la Communauté urbaine de Douala), répond avec un dossier complet
+et son registrar. Donc un « no results » veut bien dire **libre**. *(Règle du dépôt : quand un contrôle rend
+un résultat tranché, on prouve d'abord qu'il sait dire non.)*
+
+**Ce que je recommande, et qui reste à trancher par King :**
+
+1. **Domaine et hébergement au nom du laboratoire**, avec son adresse e-mail comme contact, **gérés par
+   nous** : le jour où il veut partir, rien n'est retenu contre lui — c'est déjà à lui. C'est notre position
+   (« on ne garde pas un client par la technique ») en version opérationnelle.
+2. **Un hébergement mutualisé modeste** (le relevé du 23/09 : **3 900 à 25 000 FCFA/mois** chez un hébergeur
+   local) suffit largement pour une page bilingue. **Jamais l'offre la plus chère**, et **jamais un
+   hébergement gratuit présenté comme un plan** : le gratuit de Vercel reste ce qu'il est — **l'aperçu** —, pas
+   l'endroit où vit le site d'un client qui paie.
+3. **Le calcul à avoir en tête avant d'annoncer** : `30 000 − hébergement (5 000 à 10 000) − domaine
+   (~1 100/mois pour un nom à ~13 000/an, comme celui du Cristallin) ≈ **19 000 à 24 000 FCFA/mois**` pour
+   les 2 h comprises, les sauvegardes, la veille, l'assistance et le rapport mensuel. C'est tenable ; ça ne
+   l'est plus si l'hébergement coûte 25 000.
+4. **Trois questions neuves, nées de cette décision** (à trancher avant l'achat, pas demain) : **à quel nom**
+   exactement (le laboratoire, ou AMK avec engagement écrit de transfert) ; **qui figure comme contact
+   technique** (leur e-mail ou le nôtre) ; et **quand l'abonnement commence** si c'est nous qui payons le
+   domaine et l'hébergement **avant** le premier versement — à la livraison, ou au premier jour en ligne ?
+
+---
+
 ## 4 · Mon avis, tranché (et ce n'est pas une décision)
 
 1. **Une seule feuille, versionnée et datée**, avec **deux paliers** : Essentiel 12 000 (le client garde
@@ -112,8 +151,10 @@ ne se réécrivent pas).
 4. **Domaine toujours au nom du client**, même quand nous l'achetons pour lui — et une phrase de sortie :
    *« à tout moment, le domaine et les fichiers sont à vous ; vous réglez ce qui reste dû, on vous remet
    tout. »*
-5. **L'hébergement est une ligne séparée** : soit le client paie son hébergeur, soit l'abonnement le
-   comprend et c'est écrit noir sur blanc avec le prix de revient.
+5. **L'hébergement** : décision de King (24/09) — **compris dans le Standard** pour un client qui n'a ni
+   domaine ni hébergement, **au client** dans l'Essentiel. Ce qu'il reste à écrire avant d'encaisser : le
+   **plan** choisi et son prix de revient (§3·E), parce que `30 000 − hébergement − domaine` = la vraie marge
+   des 2 h.
 6. **La fiche Google** : offerte en **geste de lancement** aux trois premiers abonnés (elle coûte deux
    heures), puis ligne à part — jamais promise « pour toujours ».
 7. **Le Standard doit être outillé avant d'être vendu deux fois** : rapport mensuel réécrit aux bons

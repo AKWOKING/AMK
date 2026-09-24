@@ -3239,3 +3239,41 @@ fichier** : le CSV est *préservé* à l'identique, aucune rétrogradation.
 fichier. C'est la sixième fois qu'un constat se révèle être un défaut d'instrument, et la première où
 l'instrument, c'était le dépôt lui-même. `openpyxl` a été réinstallé au passage
 (`pip install --break-system-packages openpyxl`) — le recul emporte pip, comme d'habitude.
+
+## 2026-09-24 · UNI-LABO — LE PALIER DÉPEND D'UNE QUESTION, PAS D'UNE PRÉFÉRENCE
+
+Décision de King : *« pour UNI-LABO demain 13 h standard 30000 si elle n'a pas de domaine et hebergement en
+cour »*. Elle ferme la dernière question qui bloquait la séance de vendredi, et elle en crée trois petites —
+écrites avant qu'elles ne se posent devant le client.
+
+**La règle, telle qu'elle se dira demain :** on **demande d'abord** — *« est-ce que le laboratoire a déjà un
+nom de domaine et un hébergement ? »* — puis on annonce **un seul palier** :
+
+| La réponse | Le palier | Ce qu'on dit |
+|---|---|---|
+| **Ni l'un ni l'autre** | **Standard 30 000/mois** | *« on s'occupe du domaine et de l'hébergement, plus 2 h de modifications, sauvegardes vérifiées, surveillance, assistance sous 24 h, rapport mensuel. »* |
+| **Les deux déjà en place** | **Essentiel 12 000/mois** | *« on garde votre domaine et votre hébergement, on veille, 30 minutes de modifications par mois. »* |
+
+Jamais les deux annoncés ensemble : c'est la porte ouverte à choisir le moins cher sans raison.
+
+**Ce que ça ferme, et ce que ça ouvre.** Fermé : « qui paie l'hébergement » (compris dans le Standard,
+au client dans l'Essentiel) — c'était la question 7 des seize. Ouvert, et écrit dans le document des prix :
+**le plan exact** (le relevé du 23/09 donne 3 900 à 25 000 FCFA/mois chez un hébergeur local — un mutualisé
+modeste suffit, et un hébergement gratuit n'est pas un plan : Vercel reste l'aperçu, pas le domicile du site
+d'un client qui paie) ; **le calcul de marge** — `30 000 − hébergement (5 000 à 10 000) − domaine (~1 100/mois)`
+≈ **19 000 à 24 000 FCFA/mois** pour les 2 h et le reste, tenable seulement si l'hébergement reste modeste ;
+et **à quel nom** domaine et hébergement sont souscrits.
+
+**Le nom, vérifié au registre aujourd'hui** (RDAP, pas un moteur de recherche) : **`unilabo.cm` est LIBRE**, et
+**`uni-labo.cm` aussi** — la proposition à montrer demain si le laboratoire n'a rien. `unilabo.com` est **en
+vente** chez un courtier (parking HugeDomains) et `uni-labo.com` appartient à un titulaire japonais depuis
+2001 : on n'achète pas un domaine au prix d'un courtier pour une page. **L'instrument a été vérifié avant de
+conclure** : le même registre, interrogé sur `douala.cm` (réellement pris, Communauté urbaine de Douala),
+répond avec un dossier complet — donc « no results » veut bien dire libre.
+
+**Écrit dans les documents de demain** : le déroulé d'UNI-LABO gagne **l'étape 8 (la question)**, **8 bis (le
+seul palier annoncé)** et **8 ter (les noms libres à montrer)** ; la section « Quel abonnement on annonce en
+séance ? » est réécrite avec les deux branches ; et dans le questionnaire, **C3 (domaine et hébergement) passe
+AVANT l'abonnement** — c'est elle qui choisit le prix. Recommandation maintenue, à trancher avant l'achat :
+domaine et hébergement **au nom du laboratoire**, gérés par nous — le jour où il veut partir, rien n'est
+retenu contre lui.
