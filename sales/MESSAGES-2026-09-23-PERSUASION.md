@@ -194,3 +194,31 @@ Il a raison. Le manquement, il ne l'a pas inventé : **on le lui a annoncé**.
 
 **Ce qui n'a pas bougé :** une seule question par message, aucun prix, le nom à la fin, et jamais une promesse
 de classement. **Le lien est une preuve, pas une annonce** — il montre ce qui existe, et il dit ce qui manque.
+
+---
+
+## §3 · LA PORTE A SE VÉRIFIE AVANT LE MESSAGE (24/09/2026 — Horizon Optique)
+
+**Ce qui s'est passé.** Sur les cinq opticiens du deuxième lot, **quatre sont partis** ; le cinquième,
+**Horizon Optique**, est tombé sur une porte fermée : **WhatsApp répond que le 677 44 74 17 est
+indisponible**. Le numéro venait du **registre de l'Ordre**, et c'était sa seule trace exploitable : pas de
+fiche Google, une fiche DoualaTour dont le numéro se cache derrière un formulaire, rien dans les annuaires
+testés le lendemain (et quatre homonymes européens et dakarois écartés).
+
+**Ce que ça coûte.** Un message écrit, relu, passé à la checklist de cinq lignes — et une porte qui ne
+s'ouvre pas. Rien de grave **parce qu'il n'était qu'un sur cinq** ; mais si le lot avait été composé de cinq
+numéros « registre uniquement », la préparation entière partait à la poubelle.
+
+**La règle, en quatre lignes :**
+1. **La porte A (un numéro joignable sur WhatsApp) ne se vérifie PAS depuis le bac.** Elle se vérifie dans
+   l'application, par King, **avant** que le message soit écrit — pas après.
+2. **Un numéro qui ne vient que d'un registre ou d'un annuaire est un numéro à risque.** Pour ceux-là, on
+   prépare **d'emblée** la variante de repli (SMS court, ou script d'appel de trente secondes).
+3. **Un numéro sans WhatsApp n'est pas un numéro mort** : c'est très souvent une ligne mobile qui n'a
+   jamais installé l'application. Le SMS et l'appel passent là où WhatsApp échoue. On change de porte, on
+   n'abandonne pas le prospect.
+4. **Deux numéros = un principal et un repli.** On envoie au principal et **on ne gaspille pas le repli le
+   même jour** (Bely, 4M : c'est exactement pour ça qu'ils sont notés « en réserve »).
+
+**Ce que ça ne change pas :** aucun envoi par nous · aucune relance-reproche · le prospect non joignable
+reste dans la file, sans relance, et n'y revient que si un autre numéro apparaît.

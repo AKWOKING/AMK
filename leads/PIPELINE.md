@@ -9,13 +9,13 @@
 |---|---|
 | ④ Prix posé, en négociation | **3** |
 | ③ Aperçu envoyé | **1** |
-| ② Qualifié — en conversation | **16** |
-| ① Prospection — à qualifier | **81** |
+| ② Qualifié — en conversation | **20** |
+| ① Prospection — à qualifier | **77** |
 | ⏸ Parqué | **38** |
 | ⛔ Écarté | **10** |
 | **Total** | **149** |
 
-- **Contactés :** 54 · **Réponses humaines :** 5 · **Taux de réponse : 9.3 %**
+- **Contactés :** 58 · **Réponses humaines :** 5 · **Taux de réponse : 8.6 %**
 - **Réponses automatiques (hors PRR) :** 1
 - **Clients :** 0 · **Revenu :** 0 FCFA
 
@@ -41,18 +41,22 @@
 |---|---|---|---|
 | Cavisa Optique | Douala | 699 95 90 52 | `L3580` |
 
-## ② Qualifié — en conversation — 16
+## ② Qualifié — en conversation — 20
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
+| 4M Optique Akwa | Douala | 679 27 06 64 | `L3531` |
 | Afrique Labo SARL | Douala (Bessengue) | 690 54 70 93 | `L3317` |
 | Baird Memorial College | Buea (Bonduma) | 677875395 | `L16` |
 | Baptist Comprehensive College | Buea (Great Soppo) | 679650707 | `L15` |
+| Bely Optique Médicale | Douala | 696 85 52 42 | `L3530` |
 | Cabinet Dentaire The Skye | Douala (Bonamoussadi) | 677 79 69 99 | `L53` |
 | Cabinet Dentaire YAKS | Douala (Logbessou) | 672 70 20 78 | `L54` |
 | Centre Médical de Bonanjo | Douala (Bonapriso, ancien aéroport) | 694 57 22 77 | `L2557` |
 | Disc Optique Médicale | Douala | 677 53 35 68 | — |
+| Doyoan Optic | Douala | 653 85 27 49 | `L3530` |
 | Espace Lunetterie | Douala | 677 34 24 62 | `L3452` |
+| Fashion Vision | Douala | 656 22 38 63 | `L3531` |
 | L'Opticien Bali SARL | Douala (Bali) | 670 27 60 65 | `L22` |
 | Labiomed | Douala (Deido, 104 Route Deido-Bassa) | 699 98 54 66 | `L2338` |
 | Maff Optique | Douala | 699 93 19 56 | `L3451` |
@@ -62,16 +66,14 @@
 | St. Theresa International Bilingual Comprehensive College (STIBCCOL) | Buea (Molyko) | 679151075 | `L1698` |
 | Tchaya Optique | Douala | 696 79 01 73 | `L3524` |
 
-## ① Prospection — à qualifier — 81
+## ① Prospection — à qualifier — 77
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| 4M Optique Akwa | Douala | 679 27 06 64 | `L3531` |
 | Africa Optic | Douala | 691 28 02 37 | — |
 | American School of Douala (ASD) | Douala (BP 1909) | 677717083 | — |
 | Aube Labo | Douala (Akwa II) | 693 06 81 84 | `L1843` |
 | Baptist High School (BHS) Awae | Yaoundé (Awae) | 677647802 | — |
-| Bely Optique Médicale | Douala | 696 85 52 42 | `L3530` |
 | Biolex Labo | Douala (Deido, Rue Kotto) | 697 78 00 05 | `L460` |
 | Bioscan | Douala (New Bell) | 680 06 03 94 | `L2113` |
 | Bishop Jules Peters Memorial College | Buea (Bokwaongo) | 683348856 | — |
@@ -93,12 +95,10 @@
 | Cristalys Optic | Douala | 690 94 51 50 | `L3535` |
 | Divine Success Comprehensive College (DSCC) | Douala (Ngodi) | 696023696 | `L466` |
 | Douala clinic | Douala (Makepe BM, rue des pavés) | 650 34 32 01 | `L45` |
-| Doyoan Optic | Douala | 653 85 27 49 | `L3530` |
 | Dumbu Lunetterie | Douala | 690 11 43 23 | — |
 | Espace Vision | Douala | 677 33 94 24 | — |
 | Express Optic | Douala | 675 77 61 25 | `L1159` |
 | Faby Optique | Douala | 692 08 00 55 | — |
-| Fashion Vision | Douala | 656 22 38 63 | `L3531` |
 | Frankfils Comprehensive College | Buea | — | — |
 | Gift Optical | Douala | 673 52 17 35 | `L3536` |
 | Gilles-André Vision | Douala | 699 88 31 78 | — |

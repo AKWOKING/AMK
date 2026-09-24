@@ -6,7 +6,10 @@
 (les opticiens préparés le 21/09, jamais envoyés), **aucun n'est dans `KILL-LIST.md` ni `STALE.md`**, aucun
 n'a reçu le message 1.
 
-**Rien n'est envoyé à ce stade : ce fichier est la préparation. King envoie.**
+**✔ PARTI LE 24/09 — quatre sur cinq.** King a envoyé **Doyoan, Bely, 4M Optique Akwa et Fashion Vision**
+(heure de chaque envoi non relevée ; accusés de réception non relevés à cette heure → CRM en `sent`, pas
+`delivered`). **HORIZON OPTIQUE N'EST PAS PARTI : WhatsApp refuse le 677 44 74 17** — voir § 4 et le § 6
+(route de repli). CRM : `ENVOI_2409_2`.
 
 ---
 
@@ -132,7 +135,12 @@ Je vous l'envoie ?
 
 ---
 
-## 4 · HORIZON OPTIQUE — Monsieur Djeumo Feunou — **677 44 74 17**
+## 4 · HORIZON OPTIQUE — Monsieur Djeumo Feunou — **677 44 74 17** — ⛔ WHATSAPP INDISPONIBLE
+
+> **24/09 — LE MESSAGE N'EST PAS PARTI.** King a tenté : **WhatsApp répond que le 677 44 74 17 est
+> indisponible.** Rien n'a été envoyé, et **on ne réessaie pas sur ce numéro** : le registre de l'Ordre
+> donne une ligne, pas une preuve que cette ligne a WhatsApp. La suite est au **§ 6 — route de repli**.
+
 
 **La recherche.** Registre de l'Ordre : *Horizon Optique*, titulaire public **DJEUMO FEUNOU Siméon**,
 Douala. Sur **DoualaTour** (l'annuaire local), il a une fiche : « **HORIZON Optique** », quartier **Akwa,
@@ -209,3 +217,62 @@ qu'il aura répondu.
 classement · de quelqu'un d'autre · le statut administratif lu dans un registre · **« notre liste »** en
 parlant du réseau santé (c'est un PDF public de la banque, on le cite comme tel) · une rue que deux sources
 se disputent · un avis avec un nom dessus.
+
+---
+
+## 6 · HORIZON — LA ROUTE DE REPLI (SMS ou appel)
+
+**Le constat, tel quel :** WhatsApp refuse **677 44 74 17**. Ce numéro vient du **registre de l'Ordre**, et
+c'est la **seule** trace exploitable de la boutique : pas de fiche Google, une fiche DoualaTour dont le
+numéro se cache derrière un formulaire, rien dans les annuaires testés le 24/09 (`businesslist` renvoie
+404, la recherche DoualaTour ne rend rien, et les « Horizon Optique » de Dakar, Grenoble, Tanger, Verny
+sont des homonymes).
+
+**⚠️ Un numéro sans WhatsApp n'est pas un numéro mort.** C'est très souvent une ligne mobile qui n'a
+simplement jamais installé l'application — donc un **SMS** ou un **appel** peut passer là où WhatsApp
+échoue. On ne renonce pas au prospect : on change de porte.
+
+### 6.a · Le SMS (à envoyer au 677 44 74 17)
+
+Court, sans lien (il n'y a pas encore de page à lui montrer), une seule question, le nom à la fin :
+
+```
+Bonjour Monsieur Djeumo. Opticien à Akwa, rue Foch : votre fiche DoualaTour cache
+votre numéro derrière un formulaire, et on n'y voit aucune monture.
+Je vous construis d'abord, vous regardez sur votre téléphone, vous décidez après.
+Je vous l'envoie ? — Akwo King / AMK, Douala
+```
+
+**276 caractères → 2 segments GSM** (une facturation de deux SMS, c'est voulu : tenir en un seul
+segment obligerait à sacrifier soit la rue Foch, soit la signature).
+
+**Pourquoi ce texte :** les six premiers mots parlent de **lui** (son métier, sa rue) · aucune promesse ·
+**une seule** question · aucun prix · pas de lien (un lien dans un premier SMS ressemble à du démarchage de
+masse — et il n'y aurait rien à ouvrir) · la signature tient en une ligne.
+
+### 6.b · S'il décroche (script d'appel, 30 secondes)
+
+> « Bonjour, Akwo King, je suis développeur à Douala. Je vous appelle parce que j'ai cherché un opticien
+> à Akwa et je suis tombé sur votre fiche DoualaTour : votre nom, la rue Foch, opticien et horlogerie.
+> Pour voir votre numéro, il faut d'abord laisser ses coordonnées — beaucoup s'arrêtent là.
+> Je construis en ce moment des pages pour des boutiques de Douala. Je peux vous en faire une, vous la
+> regardez sur votre téléphone, et si ça ne vous plaît pas vous ne payez rien et on n'en parle plus.
+> Je vous l'envoie sur WhatsApp, ce numéro-là ? »
+
+**Ce qu'on ne dit pas au téléphone :** aucun prix (il se pose en réunion), aucune promesse de classement,
+aucun nom d'un autre opticien, et **jamais** le statut lu dans le registre.
+
+### 6.c · S'il ne répond ni au SMS ni à l'appel
+
+Le prospect **reste dans la file, sans relance**. On note la tentative dans `sales/Activity-Log.md`, le CRM
+garde `wa_verified = no`, et on n'y revient **que** si un autre numéro apparaît (une fiche Google un jour,
+une carte de visite, le bouche-à-oreille d'un autre opticien). **Aucune relance-reproche.**
+
+### 6.d · Et la leçon pour les lots suivants
+
+**La porte A — un numéro joignable sur WhatsApp — ne se vérifie pas depuis le bac : elle se vérifie dans
+l'application, par King, AVANT d'écrire le message.** Ici, quatre sur cinq sont passés ; le cinquième
+aurait pu coûter la préparation entière. Deux conséquences pratiques, écrites dans
+`sales/MESSAGES-2026-09-23-PERSUASION.md` §3 : ① quand un numéro ne vient **que** d'un registre ou d'un
+annuaire, préparer **d'emblée** la variante SMS ; ② quand deux numéros existent (Bely, 4M), **envoyer au
+principal et garder le repli en réserve**, sans le gaspiller le même jour.

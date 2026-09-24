@@ -3580,3 +3580,29 @@ réponse du premier lot d'opticiens** — sur cinq envoyés. Dossier client : `c
 informations arrivent, la page se complète (§3 du même fichier). **La fiche Google de Cavisa n'existe pas**
 (« Google Maps can't find… ») : c'est un projet séparé, pas un cadeau de finition — on le garde pour la
 clôture.
+
+---
+
+## 24/09/2026 (après-midi) — DEUXIÈME LOT : QUATRE SUR CINQ PARTIS, ET UNE PORTE FERMÉE
+
+**Partis** (envoyés par King, **heure de chaque envoi non relevée**, accusés de réception non relevés à
+cette heure) : **Doyoan Optic** (653 85 27 49) · **Bely Optique Médicale** (696 85 52 42 ; repli 699 89 57 21
+gardé) · **4M Optique Akwa** (679 27 06 64 ; replis 699 09 25 23 et 675 01 07 82 gardés) · **Fashion Vision**
+(656 22 38 63). CRM : `ENVOI_2409_2` → `Contacted = Yes`, `wa_verified = yes`, `last_send_state = sent`,
+`stage = qualifying`. **On écrit `sent`, pas `delivered`** : personne n'a vu les ✓✓ de ces quatre messages, et
+une case cochée à tort est une erreur qui se paie plus tard.
+
+**Pas parti — HORIZON OPTIQUE (677 44 74 17) : WhatsApp répond « indisponible ».** Rien n'a été envoyé, et
+**on ne réessaie pas sur ce numéro**. Le numéro vient du registre de l'Ordre ; c'est la seule trace de la
+boutique (pas de fiche Google, fiche DoualaTour sans numéro visible, annuaires muets le 24/09, homonymes de
+Dakar / Grenoble / Tanger / Verny écartés — vérifiés ce jour). **Route de repli préparée**, dans
+`sales/Send-BATCH-2026-09-24-Opticiens-2.md` **§6** : un **SMS de 276 caractères** (2 segments) et un
+**script d'appel de trente secondes**. Un numéro sans WhatsApp reste très souvent une ligne valide : on
+change de porte, on n'abandonne pas le prospect. CRM : `wa_verified = no`, `last_send_state = not_sent`,
+`stage = prospecting`, tentative notée.
+
+**La leçon, écrite le jour même** (`sales/MESSAGES-2026-09-23-PERSUASION.md` §3) : **la porte A se vérifie
+avant le message, pas après** — et pour tout numéro qui ne vient que d'un registre, la variante SMS se
+prépare d'emblée.
+
+**Entonnoir** : contactés **54 → 58** (38,9 % de la base).

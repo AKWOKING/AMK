@@ -1704,6 +1704,7 @@ def _apply_jour(out: list) -> None:
     _apply_state(out, CORRECTIF_2409, "CORRECTIF_2409")
     _apply_state(out, REPONSE_2409, "REPONSE_2409")
     _apply_state(out, BATCH_2409_2, "BATCH_2409_2")
+    _apply_state(out, ENVOI_2409_2, "ENVOI_2409_2")
     _apply_state(out, ECARTES_2409, "ECARTES_2409")
 
 
@@ -2337,6 +2338,61 @@ def _apply_fiche(out: list) -> None:
 # prémisse tombe, donc la conséquence aussi. Une correction qui doit changer un calcul vit ici, pas
 # dans un .md — et elle doit passer APRÈS la passe qu'elle corrige, sinon la passe l'écrase en
 # silence (c'est exactement ce qui vient d'arriver : le premier patch a été recouvert).
+# ── LE DEUXIÈME LOT D'OPTICIENS — 24/09, après-midi ────────────────────────────────────────────
+# King a envoyé quatre des cinq messages préparés. Le cinquième est tombé sur une porte fermée :
+# **WhatsApp refuse le 677 44 74 17 de Horizon Optique** (« indisponible »). Rien n'est envoyé à
+# Horizon, et on ne réessaie pas sur ce numéro : la route de repli (SMS ou appel) est préparée dans
+# `sales/Send-BATCH-2026-09-24-Opticiens-2.md` §6.
+# Heures : King n'a pas relevé l'heure de chaque envoi (contrairement au lot 1, qui a des captures) ;
+# on l'écrit telle quelle plutôt que d'inventer une heure.
+# Accusés de réception (✓✓) : non relevés à cette heure → `last_send_state = "sent"`, pas "delivered".
+ENVOI_2409_2 = {
+    "doyoan-optic": {
+        "Contacted": "Yes", "Contact channel": "WhatsApp", "wa_verified": "yes",
+        "last_send_state": "sent", "stage": "qualifying", "stage_since": "2026-09-24",
+        "Notes_extra":
+            "24/09 — DEUXIÈME LOT, ENVOYÉ par King (heure non relevée). Accusé de réception non relevé "
+            "à cette heure. Toute réponse se traite dans l'heure et s'écrit dans `sales/Activity-Log.md`.",
+    },
+    "bely-optique-m-dicale": {
+        "Contacted": "Yes", "Contact channel": "WhatsApp", "wa_verified": "yes",
+        "last_send_state": "sent", "stage": "qualifying", "stage_since": "2026-09-24",
+        "Notes_extra":
+            "24/09 — DEUXIÈME LOT, ENVOYÉ par King (heure non relevée). Numéro utilisé : le principal "
+            "(696 85 52 42) ; le repli 699 89 57 21 n'a pas eu à servir.",
+    },
+    "4m-optique-akwa": {
+        "Contacted": "Yes", "Contact channel": "WhatsApp", "wa_verified": "yes",
+        "last_send_state": "sent", "stage": "qualifying", "stage_since": "2026-09-24",
+        "Notes_extra":
+            "24/09 — DEUXIÈME LOT, ENVOYÉ par King (heure non relevée). Numéro utilisé : 679 27 06 64 ; "
+            "replis disponibles (699 09 25 23 du PDF WTW, 675 01 07 82 de l'annuaire d'entreprises).",
+    },
+    "fashion-vision": {
+        "Contacted": "Yes", "Contact channel": "WhatsApp", "wa_verified": "yes",
+        "last_send_state": "sent", "stage": "qualifying", "stage_since": "2026-09-24",
+        "Notes_extra":
+            "24/09 — DEUXIÈME LOT, ENVOYÉ par King (heure non relevée). Numéro utilisé : 656 22 38 63.",
+    },
+    "horizon-optique": {
+        # Ni `disqualification_reason` ni `stage` ici : la passe « vitrine » du 22/09 s'exécute APRÈS
+        # cette table et réécrirait la raison. Le fait vit dans `wa_number_note` et `Notes_extra`.
+        "Contacted": "No", "Contact channel": "WhatsApp indisponible — SMS ou appel à tenter",
+        "wa_verified": "no", "last_send_state": "not_sent",
+        "wa_number_note": "WHATSAPP INDISPONIBLE au 677 44 74 17 (constaté par King, 24/09) — numéro lu "
+                          "dans le registre de l'Ordre ; aucun second numéro trouvé.",
+        "Notes_extra":
+            "24/09 — DEUXIÈME LOT : ENVOI IMPOSSIBLE. WhatsApp refuse le 677 44 74 17 (« indisponible »). "
+            "Aucune autre trace de la boutique : pas de fiche Google, une fiche DoualaTour dont le numéro "
+            "se cache derrière un formulaire, et rien dans les annuaires testés ce jour (businesslist 404, "
+            "recherche doualatour sans résultat ; les « Horizon Optique » de Dakar, Grenoble, Tanger et "
+            "Verny sont des homonymes, écartés). ⚠️ Un numéro sans WhatsApp reste souvent une ligne "
+            "valide : la route de repli est un SMS court ou un appel, scripts prêts dans "
+            "`sales/Send-BATCH-2026-09-24-Opticiens-2.md` §6. Ne pas réessayer sur WhatsApp sans nouveau numéro.",
+    },
+}
+
+
 # ── LA PREMIÈRE RÉPONSE DU LOT 1 — 24/09, 13:16 ────────────────────────────────────────────────
 # M. Dongmo a regardé l'aperçu (https://cavisa.vercel.app/) et a écrit, mot pour mot :
 # « Beaucoup de manquement mais c'est appréciable. »
