@@ -121,3 +121,86 @@ vérifié ici, le rendu final reste à l'œil de King, sur un téléphone.
 
 **Contrôles après cette passe** : `audit_html` **0 constat** · `a11y --strict` **0/0** ·
 `test_laligne_page.mjs` **53/53**.
+
+## 9 · Passe 3 — les trois retours de King, et ce qu'ils ont changé
+
+**Ses mots :** ① *« the first head why is it there »* · ② *« it could be a 2d or better yet 3d avatar head
+with the different types of glasses that fit the shape of the head swiping showing the different shapes
+and glasses »* · ③ *« I find it too simple, we could put some life in it, with animated gradient colors
+for example »*.
+
+### ① Le premier écran ne dessine plus de tête
+
+Il n'y était pas par hasard, mais il n'y avait pas de raison : un visage **sans monture**, dans une page
+dont la promesse est qu'une monture se choisit **sur** un visage — la démonstration venait avant l'idée.
+Le premier écran montre maintenant **la ligne** : une règle graduée qui traverse l'écran, et un **verre**
+( deux cercles concentriques + un réticule ) posé dessus. C'est le nom du cabinet, littéralement — *La
+Ligne* — et ça ne raconte plus rien de faux. Les visages sont dans le miroir, **là où ils servent**.
+
+### ② Le miroir : un buste dessiné, cinq formes, on glisse
+
+Les cinq vignettes (une par panneau) sont remplacées par **un seul buste** — épaules, cou, tête, oreilles,
+sourcils, yeux, nez, bouche, et **trois calques d'ombres** qui donnent un peu de volume (2D, mais qui
+respire) — plus **cinq silhouettes de tête**, chacune avec **sa** monture dessinée dessus. Le fondu entre
+deux formes passe par un **voile de 2px de flou** (MOTION §3.6) et une micro-rotation : c'est ce qui
+évite l'effet « deux visages superposés ».
+
+**On glisse** : `pointerdown`/`pointerup` (à la souris comme au doigt), **40px de seuil** pour ne pas
+changer de forme sur un simple appui, et `touch-action:pan-y` pour que **le défilement vertical reste au
+navigateur** (51 % du trafic est sur un téléphone : c'est le geste qu'on ne casse pas). Deux flèches et
+cinq pastilles font la même chose, et le changement est **annoncé** dans la région vive, dans la langue de
+la page (« Forme du visage : rond. Les lignes conseillées et votre message WhatsApp ont changé plus
+bas. »).
+
+**Sans JavaScript, le miroir fonctionne** : ce sont les **pastilles radio** qui commandent, en CSS pur
+(`:checked ~ .mirror-wrap .h-…{opacity:1}`). On perd le glissement, pas le contenu — et c'est pour ça que
+le visage et les cinq silhouettes sont dans le balisage, pas construits par le script.
+
+### ③ La vie : deux lueurs, et les jetons de mouvement
+
+`design/MOTION.md` relu avant d'écrire (la porte §0 : fréquence · but · vitesse · fonction). Deux ajouts,
+pas un de plus — le budget de la maison est de 5 à 7 moments par page, et cette page en compte
+**cinq** : le système de révélations (1), le tracé de la ligne du premier écran (2), la **lueur du
+premier écran** (3), le **halo du miroir** (4), le **fondu-rotation du miroir** (5).
+
+- **La lueur du premier écran** : quatre dégradés radiaux (laque, terre cuite ×2, graphite), très dilués
+  (10-17 % d'opacité), qui dérivent en 34 s. Elle est **derrière** (`z-index:0`) — jamais sous le texte
+  de lecture : les têtes de section restent sur la craie nue, et c'est mesuré : `audit_html` repasse
+  **0 constat** sur **314 passages** de texte.
+- **Le halo du miroir** : un `conic-gradient` flouté (34px) qui tourne en 30 s derrière le buste.
+- Les deux sont `aria-hidden`, `pointer-events:none`, animés **seulement sous `html.js`**, et **arrêtés**
+  par `prefers-reduced-motion` (avec le tracé et les révélations : quatre arrêts vérifiés par le test).
+
+**Ce qu'on n'a pas fait** : pas de lueur dans la section des réponses ni dans les questions (on y lit des
+phrases utiles — MOTION §0.4 : sur ce qu'on lit, le mouvement gêne) ; pas de couleur qui tourne en boucle
+fort (le rouge laque reste **rare**) ; pas de 3D réelle (un objet WebGL dans une page d'opticien, c'est
+500 Ko et une dépendance qui peut casser sur un téléphone d'Akwa — le buste dessiné donne la même
+lecture, pèse 4 Ko, et **fonctionne sans JavaScript**).
+
+### Contrôles après cette passe
+
+`audit_html` **0 constat** (314 passages) · `a11y --strict` **0/0** · `hero` **0/0** · `inline_js` rc 0 ·
+`aeo` ✓ · `images` 0/0 · **`test_laligne_page.mjs` 68/68** — dont onze assertions neuves : le premier
+écran ne contient **aucune** tête ; la lueur existe **une fois**, non cliquable, animée sous `html.js`
+seulement et arrêtée en mouvement réduit ; le miroir a **5 têtes et 5 tracés différents**, chacune avec
+sa monture ; le visage affiché est commandé **en CSS pur** ; le seuil de 40px ; les flèches qui font le
+tour ; et l'annonce en français puis en anglais.
+
+**`render_svg.py` a dû apprendre trois choses** pour qu'on puisse regarder tout ça (voir §10).
+
+## 10 · L'outil de contrôle a grandi avec le dessin
+
+Le rastériseur écrit la veille (`tools/qa/render_svg.py`) ne savait pas lire les courbes lisses : il a
+fallu lui apprendre `S` (« le point de contrôle est le miroir du précédent ») et `A` (les arcs), puis
+**remplir les formes fermées** — les ombres du buste et les verres teintés sont en `rgba()`, il fallait
+donc aussi résoudre les `rgba` et les **mélanger au papier**, comme le ferait un navigateur.
+
+**Et il a menti une fois.** Pour regarder **un** état du miroir, le premier filtre retirait les autres
+têtes par expression régulière — mais la recherche non-gourmande s'arrête au premier `</g>`, qui est celui
+d'un groupe **enfant** (`<g class="frame">`). Le dessin restant était tronqué : on croyait voir un visage
+**sans monture** alors que la page était juste. Réécrit en **comptant les groupes**, comme un analyseur.
+**Leçon** : un outil de contrôle qui peut mentir est plus dangereux que pas d'outil du tout — quand il
+contredit la page, c'est lui qu'on vérifie d'abord.
+
+La planche finale est dans `clients/la-ligne/dessins-controle.png` : le premier écran, puis les cinq
+visages du miroir, côte à côte.

@@ -88,3 +88,23 @@ miroir.
 | Les cinq formes de visage et les lignes conseillées | **quatre guides américains recoupés** (voir plus haut), réécrits en conseil de style |
 | Le numéro d'inscription et l'arrêté (0533) | **registre ONOC** — **données structurées seulement**, jamais dans le texte visible |
 | Horaires, prix, marques, photos, moyens de paiement | **jamais écrits** : inconnus → `a-completer.md` |
+
+## Second passage (nuit du 24/09) — ce que le miroir doit aux guides américains
+
+Le retour de King (« a 2d or 3d avatar head with the different types of glasses that fit the shape of the
+head, swiping ») a rouvert la question du visagisme. Ce qu'on garde des quatre guides lus la première
+fois : **la correspondance forme → ligne**, qu'ils donnent tous les quatre de la même façon. Ce qu'on
+prend aux marques américaines, cette fois :
+
+- **Warby Parker** (leur essayage en ligne) : on ne montre jamais une monture seule — **toujours sur un
+  visage**. C'est exactement ce que King demandait, et c'est pour ça que le miroir est **un seul buste**
+  qui change, plutôt que cinq vignettes côte à côte : la comparaison porte sur **le même visage**.
+- **KREWE** et **Caddis** : l'objet qui a un **nom** et un caractère. Ici, le nom n'est pas la monture
+  (on n'en connaît aucune) : c'est **la forme du visage** — « visage carré », « visage en cœur » — que la
+  visagiste reconnaîtra dans le message WhatsApp.
+- **Felix Gray** : une idée par écran. Le miroir devient **l'écran du geste** : on glisse, la forme
+  change, les lignes conseillées changent, le message WhatsApp change.
+
+**Ce qu'on rejette toujours** : le 3D temps réel (WebGL = poids et dépendance qui peut casser sur un
+téléphone d'Akwa), le mannequin photographié, le panier, les prix. Le buste est **dessiné à la ligne**,
+comme le reste de la page — et il fonctionne sans JavaScript.

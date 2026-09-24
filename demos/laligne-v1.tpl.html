@@ -44,6 +44,10 @@ var l=localStorage.getItem("laligne-lang");if(l==="en"||l==="fr")h.setAttribute(
   --fs-xs:.79rem; --fs-sm:.94rem; --fs-lg:1.06rem;
   --shadow:0 1px 2px rgba(20,19,15,.05),0 10px 30px rgba(20,19,15,.07);
   --ease:cubic-bezier(.22,.7,.25,1);
+  /* les jetons de la maison (design/MOTION.md §1) */
+  --ease-out:cubic-bezier(.23,1,.32,1);
+  --ease-in-out:cubic-bezier(.77,0,.175,1);
+  --dur-press:140ms; --dur-menu:220ms; --dur-panel:320ms; --dur-reveal:520ms;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -114,7 +118,24 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
 .actions.center{justify-content:flex-start}
 
 /* ── LE PREMIER ÉCRAN — le dessin, et la ligne ────────────────────────────────────────────────────── */
-.hero{padding:clamp(34px,6vw,62px) 0 clamp(44px,7vw,76px)}
+.hero{position:relative;overflow:hidden;padding:clamp(34px,6vw,62px) 0 clamp(44px,7vw,76px)}
+/* ── LA LUEUR DU PREMIER ÉCRAN ─────────────────────────────────────────────────────────────────────
+   Trois teintes de la maison (laque, terre cuite, graphite) très diluées, qui dérivent lentement :
+   c'est ce qui donne vie à la craie sans jamais toucher au texte — elle est DERRIÈRE (z-index 0), le
+   contenu passe au-dessus, elle est `aria-hidden` et `pointer-events:none`. Elle ne s'anime que sous
+   `html.js` et s'arrête sous `prefers-reduced-motion`. */
+.wash{position:absolute;z-index:0;inset:-32% -22% auto -22%;height:150%;pointer-events:none;
+  background:
+    radial-gradient(32% 40% at 76% 20%, rgba(142,43,34,.17), rgba(142,43,34,0) 70%),
+    radial-gradient(28% 34% at 93% 64%, rgba(196,100,63,.16), rgba(196,100,63,0) 72%),
+    radial-gradient(34% 42% at 56% 96%, rgba(95,90,78,.13), rgba(95,90,78,0) 74%),
+    radial-gradient(26% 30% at 16% 86%, rgba(142,43,34,.10), rgba(142,43,34,0) 72%)}
+html.js .wash{animation:washdrift 34s ease-in-out infinite alternate}
+@keyframes washdrift{
+  0%{transform:translate3d(-2%,-1%,0) scale(1.03)}
+  50%{transform:translate3d(3%,2%,0) scale(1.10)}
+  100%{transform:translate3d(-1%,3%,0) scale(1.05)}}
+.hero .wrap{position:relative;z-index:1}
 .hero .grid{display:grid;gap:30px}
 @media (min-width:900px){ .hero .grid{grid-template-columns:1.08fr .92fr;gap:48px;align-items:center} }
 .hero h1{margin-top:18px;max-width:20ch}
@@ -125,12 +146,12 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
 .facts dd{margin:5px 0 0;font-weight:600;font-size:.97rem}
 .facts .wide{grid-column:1/-1}
 .draw{display:block;margin:0 auto;width:100%;max-width:420px}
-.draw .stroke{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.draw *{fill:none;stroke-linecap:round;stroke-linejoin:round}
 .draw .rule{stroke:var(--ink-3);stroke-width:1.6}
 .draw .tick{stroke:var(--ink-3);stroke-width:1.6}
-.draw .face{stroke:var(--ink);stroke-width:2.6}
 .draw .frame{stroke:var(--laque);stroke-width:4}
 .draw .sight{stroke:var(--laque);stroke-width:1.4;stroke-dasharray:5 6}
+.draw .dot{fill:var(--laque)}
 html.js .draw [data-draw]{stroke-dasharray:1400;stroke-dashoffset:1400}
 html.js .draw.is-on [data-draw]{animation:drawline 1.15s var(--ease) forwards;animation-delay:var(--dl,0s)}
 @keyframes drawline{to{stroke-dashoffset:0}}
@@ -166,12 +187,60 @@ h2{margin-top:14px;max-width:26ch}
 .panel{display:none;gap:26px;padding:22px;background:var(--card);border:1px solid var(--rule);border-radius:var(--r-lg)}
 #f-ovale:checked ~ .panels .p-ovale,#f-rond:checked ~ .panels .p-rond,#f-carre:checked ~ .panels .p-carre,
 #f-coeur:checked ~ .panels .p-coeur,#f-oblong:checked ~ .panels .p-oblong{display:grid}
-@media (min-width:760px){ .panel{grid-template-columns:190px 1fr;align-items:center;gap:30px;padding:28px} }
+@media (min-width:760px){ .panel{padding:28px 30px} }
+.panel h3{font-size:1.28rem}
+.panel .lines{margin-top:10px}
 .panel .mini{width:100%;max-width:200px;margin:0 auto}
 .panel .lines{margin-top:12px;font:600 var(--fs-xs)/1.7 var(--f-b);letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3)}
 .panel .avoid{margin-top:12px;padding-top:12px;border-top:1px solid var(--rule-2);color:var(--ink-2);font-size:var(--fs-sm)}
 .panel .cta{margin-top:16px}
 .facenote{display:grid;gap:6px;margin-top:20px}
+
+/* ── LE MIROIR — un seul visage, cinq formes, on glisse ─────────────────────────────────────────────
+   Remplace les cinq vignettes : un **buste dessiné** (SVG, avec ombres, reflets et verres teintés) qui
+   change de forme quand on glisse, avec les montures qui vont avec. Deux états superposés qu'on
+   enchaîne par `opacity` — le fondu se fait sous un voile de 2px de flou (MOTION §3.6), ce qui évite
+   l'effet « deux visages qui se chevauchent ». Tout tient sur les radios : **sans JavaScript, le
+   premier visage s'affiche et les pastilles changent de panneau.** */
+.mirror-wrap{margin-top:26px}
+.mirror{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--rule);
+  border-radius:var(--r-lg);padding:16px 16px 8px;touch-action:pan-y;cursor:grab;
+  transition:transform var(--dur-panel) var(--ease-out),box-shadow var(--dur-panel) var(--ease-out)}
+.mirror.is-swap{transform:rotate(-1.4deg) scale(.995)}
+@media (hover:hover) and (pointer:fine){ .mirror:hover{border-color:var(--ink-3)} }
+.mirror .halo{position:absolute;z-index:0;left:50%;top:44%;width:150%;aspect-ratio:1;margin:-75% 0 0 -75%;
+  pointer-events:none;
+  background:conic-gradient(from 0deg, rgba(142,43,34,.20), rgba(196,100,63,.18), rgba(95,90,78,.12),
+    rgba(142,43,34,.10), rgba(142,43,34,.20));
+  filter:blur(34px);opacity:.85}
+html.js .mirror .halo{animation:halospin 30s linear infinite}
+@keyframes halospin{to{transform:rotate(360deg)}}
+.avatar{position:relative;z-index:1;display:block;width:100%;max-width:400px;margin:0 auto}
+.avatar *{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.avatar .body{stroke:var(--ink-3);stroke-width:2.2}
+.avatar .headpath{stroke:var(--ink);stroke-width:2.6;opacity:1}
+.avatar .shade{fill:rgba(20,19,15,.055);stroke:none}
+.avatar .lens{fill:rgba(142,43,34,.08);stroke:none}
+.avatar .frame{stroke:var(--laque);stroke-width:3.6}
+.avatar .temple{stroke:var(--laque);stroke-width:2.6;opacity:.75}
+.avatar .feat{stroke:var(--ink);stroke-width:2.2}
+.avatar .pupil{fill:var(--ink);stroke:none}
+.avatar .glint{stroke:var(--paper);stroke-width:1.6;opacity:.9}
+.avatar .head{opacity:0;transition:opacity var(--dur-panel) var(--ease-out)}
+#f-ovale:checked ~ .mirror-wrap .h-ovale,#f-rond:checked ~ .mirror-wrap .h-rond,
+#f-carre:checked ~ .mirror-wrap .h-carre,#f-coeur:checked ~ .mirror-wrap .h-coeur,
+#f-oblong:checked ~ .mirror-wrap .h-oblong{opacity:1}
+.mnav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:12px}
+.mnav .mbtn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;
+  border-radius:999px;border:1px solid var(--rule);background:var(--card);color:var(--ink);cursor:pointer;
+  transition:transform var(--dur-press) var(--ease-out),border-color .18s var(--ease-out)}
+.mnav .mbtn:active{transform:scale(.94)}
+@media (hover:hover) and (pointer:fine){ .mnav .mbtn:hover{border-color:var(--ink)} }
+.mnav .mbtn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.dots{display:flex;align-items:center;gap:7px}
+.dots i{display:block;width:8px;height:8px;border-radius:999px;background:var(--rule);transition:background-color .2s var(--ease-out),transform .2s var(--ease-out)}
+.dots i.is-on{background:var(--laque);transform:scale(1.35)}
+.mhint{margin-top:10px;text-align:center;font:500 var(--fs-xs)/1.6 var(--f-b);letter-spacing:.05em;color:var(--ink-3)}
 
 /* ── LE PASSAGE — quatre temps ────────────────────────────────────────────────────────────────────── */
 .steps{list-style:none;counter-reset:s;margin:34px 0 0;padding:0;display:grid;gap:0}
@@ -244,6 +313,9 @@ html.js .rv.in{opacity:1;transform:none;transition:opacity .5s var(--ease) var(-
   html{scroll-behavior:auto}
   html.js .rv{opacity:1;transform:none;transition:none}
   html.js .draw [data-draw]{stroke-dasharray:none;stroke-dashoffset:0;animation:none}
+  html.js .wash{animation:none}
+  html.js .mirror .halo{animation:none}
+  .mirror{transition:none}
   *{transition-duration:.01ms !important}
 }
 @media print{ .dock,header.site{display:none} }
@@ -277,6 +349,7 @@ html.js .rv.in{opacity:1;transform:none;transition:opacity .5s var(--ease) var(-
 
   <!-- ══ 1 · LE PREMIER ÉCRAN — le visage dessiné, et la ligne du regard ═══════════════════════════ -->
   <section class="hero" id="top" aria-labelledby="h-hero">
+    <div class="wash" aria-hidden="true"></div>
     <div class="wrap grid">
       <div>
         <p class="kick rv"><span class="fr-only" lang="fr">Optique &amp; lunetterie · Akwa, Douala</span><span class="en-only" lang="en">Optics &amp; eyewear · Akwa, Douala</span></p>
@@ -314,18 +387,13 @@ html.js .rv.in{opacity:1;transform:none;transition:opacity .5s var(--ease) var(-
         </dl>
       </div>
       <div class="rv">
-        <svg class="draw" viewBox="0 0 320 360" aria-hidden="true" focusable="false">
-          <path class="stroke rule" data-draw="1" style="--dl:.05s" d="M8 172h304"/>
-          <path class="stroke tick" data-draw="1" style="--dl:.15s" d="M8 164v16M312 164v16"/>
-          <path class="stroke face" data-draw="1" style="--dl:.3s" d="M160 20C224 20 252 78 252 148C252 226 214 302 160 302C106 302 68 226 68 148C68 78 96 20 160 20Z"/>
-          <path class="stroke face" data-draw="1" style="--dl:.45s" d="M132 66c-10 0-18 5-22 12M188 66c10 0 18 5 22 12"/>
-          <g class="stroke frame" data-draw="1" style="--dl:.6s">
-            <rect x="92" y="152" width="50" height="38" rx="8"/>
-            <rect x="178" y="152" width="50" height="38" rx="8"/>
-            <path d="M142 160q18-9 36 0"/>
-            <path d="M92 158l-22-9M228 158l22-9"/>
-          </g>
-          <path class="stroke sight" d="M74 172h-8M254 172h-8M62 156v32M258 156v32"/>
+        <svg class="draw" viewBox="0 0 560 260" aria-hidden="true" focusable="false">
+          <path class="ln rule" data-draw="1" style="--dl:.05s" d="M0 130h560"/>
+          <path class="ln tick" data-draw="1" style="--dl:.18s" d="M56 112v36M176 120v20M296 112v36M424 120v20M520 114v32"/>
+          <circle class="ln frame" data-draw="1" style="--dl:.34s" cx="352" cy="130" r="66"/>
+          <circle class="ln frame" data-draw="1" style="--dl:.46s" cx="352" cy="130" r="49"/>
+          <path class="ln sight" d="M330 130h-18M374 130h18M352 108v-18M352 152v18"/>
+          <circle class="ln dot" cx="352" cy="130" r="6"/>
         </svg>
       </div>
     </div>
@@ -412,13 +480,86 @@ html.js .rv.in{opacity:1;transform:none;transition:opacity .5s var(--ease) var(-
           <label for="f-coeur"><span class="fr-only" lang="fr">Cœur</span><span class="en-only" lang="en">Heart</span></label>
           <label for="f-oblong"><span class="fr-only" lang="fr">Oblong</span><span class="en-only" lang="en">Oblong</span></label>
         </div>
+        <div class="mirror-wrap">
+          <div class="mirror rv" id="mirror">
+            <div class="halo" aria-hidden="true"></div>
+            <svg class="avatar" viewBox="0 0 320 400" aria-hidden="true" focusable="false">
+              <path class="body" d="M52 400c0-36 42-60 108-60s108 24 108 60"/>
+              <path class="body" d="M104 400c14-14 34-22 56-22s42 8 56 22" opacity=".55"/>
+              <path class="body" d="M136 306v40M184 306v40"/>
+
+              <g class="head h-ovale">
+                <ellipse class="shade" cx="196" cy="150" rx="26" ry="54"/>
+                <path class="headpath" d="M160 44c46 0 72 34 72 84 0 58-30 110-72 110S88 186 88 128c0-50 26-84 72-84z"/>
+                <path class="feat" d="M88 142c-12-4-18 6-14 16 4 10 12 16 20 14M232 142c12-4 18 6 14 16-4 10-12 16-20 14"/>
+                <path class="lens" d="M112 136h46v28a8 8 0 0 1-8 8h-30a8 8 0 0 1-8-8zM162 136h46v28a8 8 0 0 1-8 8h-30a8 8 0 0 1-8-8z"/>
+                <path class="frame" d="M112 136h46v28a8 8 0 0 1-8 8h-30a8 8 0 0 1-8-8zM162 136h46v28a8 8 0 0 1-8 8h-30a8 8 0 0 1-8-8zM158 146h4"/>
+                <path class="temple" d="M112 142l-24-11M208 142l24-11"/>
+              </g>
+
+              <g class="head h-rond">
+                <ellipse class="shade" cx="200" cy="150" rx="24" ry="52"/>
+                <path class="headpath" d="M160 50c50 0 80 32 80 78 0 48-34 86-80 86S80 176 80 128c0-46 30-78 80-78z"/>
+                <path class="feat" d="M80 142c-12-4-18 6-14 16 4 10 12 16 20 14M240 142c12-4 18 6 14 16-4 10-12 16-20 14"/>
+                <path class="lens" d="M104 136h52v24a6 6 0 0 1-6 6h-40a6 6 0 0 1-6-6zM164 136h52v24a6 6 0 0 1-6 6h-40a6 6 0 0 1-6-6z"/>
+                <path class="frame" d="M104 136h52v24a6 6 0 0 1-6 6h-40a6 6 0 0 1-6-6zM164 136h52v24a6 6 0 0 1-6 6h-40a6 6 0 0 1-6-6zM156 146h8"/>
+                <path class="temple" d="M104 142l-22-10M216 142l22-10"/>
+              </g>
+
+              <g class="head h-carre">
+                <ellipse class="shade" cx="204" cy="152" rx="24" ry="50"/>
+                <path class="headpath" d="M104 52h112c4 0 6 2 6 6v72c0 48-28 80-62 80s-62-32-62-80V58c0-4 2-6 6-6z"/>
+                <path class="feat" d="M104 144c-12-4-18 6-14 16 4 10 12 16 20 14M216 144c12-4 18 6 14 16-4 10-12 16-20 14"/>
+                <ellipse class="lens" cx="133" cy="152" rx="25" ry="21"/>
+                <ellipse class="lens" cx="187" cy="152" rx="25" ry="21"/>
+                <g class="frame"><ellipse cx="133" cy="152" rx="25" ry="21"/><ellipse cx="187" cy="152" rx="25" ry="21"/><path d="M158 146h4"/></g>
+                <path class="temple" d="M108 144l-22-9M212 144l22-9"/>
+              </g>
+
+              <g class="head h-coeur">
+                <ellipse class="shade" cx="196" cy="152" rx="24" ry="50"/>
+                <path class="headpath" d="M96 118c0-38 28-68 64-68s64 30 64 68c0 46-38 78-64 100-26-22-64-54-64-100z"/>
+                <path class="feat" d="M106 142c-12-4-18 6-14 16 4 10 12 16 20 14M214 142c12-4 18 6 14 16-4 10-12 16-20 14"/>
+                <ellipse class="lens" cx="133" cy="154" rx="23" ry="20"/>
+                <ellipse class="lens" cx="187" cy="154" rx="23" ry="20"/>
+                <g class="frame"><ellipse cx="133" cy="154" rx="23" ry="20"/><ellipse cx="187" cy="154" rx="23" ry="20"/><path d="M156 148h8"/><path d="M110 140h100" opacity=".55"/></g>
+                <path class="temple" d="M110 146l-22-9M210 146l22-9"/>
+              </g>
+
+              <g class="head h-oblong">
+                <ellipse class="shade" cx="190" cy="152" rx="22" ry="54"/>
+                <path class="headpath" d="M160 38c30 0 48 26 48 70v72c0 44-20 74-48 74s-48-30-48-74v-72c0-44 18-70 48-70z"/>
+                <path class="feat" d="M114 142c-11-4-17 6-13 16 4 10 11 15 19 13M206 142c11-4 17 6 13 16-4 10-11 15-19 13"/>
+                <path class="lens" d="M112 128h44v40a8 8 0 0 1-8 8h-28a8 8 0 0 1-8-8zM164 128h44v40a8 8 0 0 1-8 8h-28a8 8 0 0 1-8-8z"/>
+                <path class="frame" d="M112 128h44v40a8 8 0 0 1-8 8h-28a8 8 0 0 1-8-8zM164 128h44v40a8 8 0 0 1-8 8h-28a8 8 0 0 1-8-8zM156 138h8"/>
+                <path class="temple" d="M112 134l-26-13M208 134l26-13"/>
+              </g>
+
+              <path class="feat" d="M124 146c7-6 16-6 23 0M174 146c7-6 16-6 23 0"/>
+              <circle class="pupil" cx="135" cy="153" r="4.4"/>
+              <circle class="pupil" cx="185" cy="153" r="4.4"/>
+              <circle class="glint" cx="137" cy="151" r="1.5"/>
+              <circle class="glint" cx="187" cy="151" r="1.5"/>
+              <path class="feat" d="M122 130c9-7 20-7 28-2M172 128c9-5 20-5 28 2"/>
+              <path class="feat" d="M160 156v22c0 6 4 9 10 9"/>
+              <path class="feat" d="M144 214c10 8 22 8 32 0"/>
+            </svg>
+          </div>
+          <div class="mnav">
+            <button class="mbtn" id="mprev" type="button" aria-label="Visage précédent">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7"/></svg>
+            </button>
+            <span class="dots" aria-hidden="true"><i class="is-on"></i><i></i><i></i><i></i><i></i></span>
+            <button class="mbtn" id="mnext" type="button" aria-label="Visage suivant">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+          <p class="mhint rv"><span class="fr-only" lang="fr">Glissez sur le visage, ou utilisez les flèches — chaque forme a sa ligne de monture.</span><span class="en-only" lang="en">Swipe the face, or use the arrows — every shape has its own frame line.</span></p>
+        </div>
+
         <div class="panels">
 
           <article class="panel p-ovale">
-            <svg class="mini" viewBox="0 0 160 190" aria-hidden="true" focusable="false">
-              <path class="stroke face" d="M80 14C112 14 126 46 126 88C126 132 108 176 80 176C52 176 34 132 34 88C34 46 48 14 80 14Z"/>
-              <g class="stroke frame"><rect x="40" y="76" width="34" height="24" rx="5"/><rect x="86" y="76" width="34" height="24" rx="5"/><path d="M74 80q6-5 12 0"/><path d="M40 80l-14-8M120 80l14-8"/></g>
-            </svg>
             <div>
               <h3><span class="fr-only" lang="fr">Visage ovale</span><span class="en-only" lang="en">Oval face</span></h3>
               <p class="lines"><span class="fr-only" lang="fr">Lignes conseillées : rectangulaire · papillon · ronde</span><span class="en-only" lang="en">Lines that suit it: rectangular · cat-eye · round</span></p>
@@ -432,10 +573,6 @@ html.js .rv.in{opacity:1;transform:none;transition:opacity .5s var(--ease) var(-
           </article>
 
           <article class="panel p-rond">
-            <svg class="mini" viewBox="0 0 160 190" aria-hidden="true" focusable="false">
-              <path class="stroke face" d="M80 24C114 24 142 52 142 92C142 128 116 164 80 164C44 164 18 128 18 92C18 52 46 24 80 24Z"/>
-              <g class="stroke frame"><rect x="36" y="76" width="36" height="26" rx="3"/><rect x="88" y="76" width="36" height="26" rx="3"/><path d="M72 80q8-5 16 0"/><path d="M36 80l-14-8M124 80l14-8"/></g>
-            </svg>
             <div>
               <h3><span class="fr-only" lang="fr">Visage rond</span><span class="en-only" lang="en">Round face</span></h3>
               <p class="lines"><span class="fr-only" lang="fr">Lignes conseillées : rectangulaire · carrée · un peu d'angle</span><span class="en-only" lang="en">Lines that suit it: rectangular · square · a little angle</span></p>
@@ -449,10 +586,6 @@ html.js .rv.in{opacity:1;transform:none;transition:opacity .5s var(--ease) var(-
           </article>
 
           <article class="panel p-carre">
-            <svg class="mini" viewBox="0 0 160 190" aria-hidden="true" focusable="false">
-              <path class="stroke face" d="M34 18H126V104C126 146 106 174 80 174C54 174 34 146 34 104Z"/>
-              <g class="stroke frame"><ellipse cx="57" cy="88" rx="18" ry="15"/><ellipse cx="103" cy="88" rx="18" ry="15"/><path d="M75 84q5-5 10 0"/><path d="M39 84l-13-8M121 84l13-8"/></g>
-            </svg>
             <div>
               <h3><span class="fr-only" lang="fr">Visage carré</span><span class="en-only" lang="en">Square face</span></h3>
               <p class="lines"><span class="fr-only" lang="fr">Lignes conseillées : ronde · ovale · monture fine et claire</span><span class="en-only" lang="en">Lines that suit it: round · oval · a thin, light frame</span></p>
@@ -466,10 +599,6 @@ html.js .rv.in{opacity:1;transform:none;transition:opacity .5s var(--ease) var(-
           </article>
 
           <article class="panel p-coeur">
-            <svg class="mini" viewBox="0 0 160 190" aria-hidden="true" focusable="false">
-              <path class="stroke face" d="M80 176C54 152 30 124 30 86C30 46 52 14 80 14C108 14 130 46 130 86C130 124 106 152 80 176Z"/>
-              <g class="stroke frame"><ellipse cx="57" cy="86" rx="17" ry="19"/><ellipse cx="103" cy="86" rx="17" ry="19"/><path d="M74 82q6-5 12 0"/><path d="M40 82l-13-8M120 82l13-8"/></g>
-            </svg>
             <div>
               <h3><span class="fr-only" lang="fr">Visage en cœur</span><span class="en-only" lang="en">Heart-shaped face</span></h3>
               <p class="lines"><span class="fr-only" lang="fr">Lignes conseillées : ovale · monture plus large en bas · fine et claire</span><span class="en-only" lang="en">Lines that suit it: oval · a frame wider at the bottom · thin and light</span></p>
@@ -483,10 +612,6 @@ html.js .rv.in{opacity:1;transform:none;transition:opacity .5s var(--ease) var(-
           </article>
 
           <article class="panel p-oblong">
-            <svg class="mini" viewBox="0 0 160 190" aria-hidden="true" focusable="false">
-              <path class="stroke face" d="M80 10C106 10 118 48 118 96C118 140 102 178 80 178C58 178 42 140 42 96C42 48 54 10 80 10Z"/>
-              <g class="stroke frame"><path d="M38 92C38 78 48 70 60 72C70 74 76 80 76 92C76 102 62 108 52 108C42 108 38 100 38 92Z"/><path d="M122 92C122 78 112 70 100 72C90 74 84 80 84 92C84 102 98 108 108 108C118 108 122 100 122 92Z"/><path d="M76 86q4-5 8 0"/><path d="M38 88l-14-9M122 88l14-9"/></g>
-            </svg>
             <div>
               <h3><span class="fr-only" lang="fr">Visage oblong</span><span class="en-only" lang="en">Oblong face</span></h3>
               <p class="lines"><span class="fr-only" lang="fr">Lignes conseillées : monture haute · papillon · branches larges</span><span class="en-only" lang="en">Lines that suit it: a tall frame · cat-eye · wide temples</span></p>
@@ -787,6 +912,66 @@ html.js .rv.in{opacity:1;transform:none;transition:opacity .5s var(--ease) var(-
   },{threshold:.25});
   draws.forEach(function(n){ io2.observe(n); });
 }catch(e){ try{ [].forEach.call(document.querySelectorAll('.rv'),function(n){n.classList.add('in');}); }catch(e2){} }})();
+</script>
+
+<script>/* ── LE MIROIR — glisser pour changer de visage, et le dire ────────────────────────────────────────
+   Ce script ne DESSINE rien : il coche la bonne pastille radio, et c'est le CSS qui change le visage,
+   les lunures, le panneau de texte et le message WhatsApp. Conséquence voulue : **sans JavaScript, la
+   page reste complète** (le premier visage, son panneau, son message) — on perd le glissement, pas le
+   contenu. Le geste est horizontal seulement (`touch-action:pan-y` laisse le défilement vertical natif),
+   et il faut 40px pour éviter de changer de forme sur un simple appui. */
+(function(){try{
+  var stage=document.getElementById('mirror'); if(!stage) return;
+  var html=document.documentElement, sayEl=document.getElementById('say');
+  var IDS=['f-ovale','f-rond','f-carre','f-coeur','f-oblong'];
+  /* [français, anglais] — la forme du visage, telle qu'on la nomme au patient */
+  var NAMES=[['ovale','oval'],['rond','round'],['carré','square'],['cœur','heart-shaped'],['oblong','oblong']];
+  var dots=document.querySelectorAll('.dots i');
+  function lang(){return html.getAttribute('data-lang')==='en'?'en':'fr';}
+  function idx(){
+    for(var i=0;i<IDS.length;i++){ var el=document.getElementById(IDS[i]); if(el&&el.checked) return i; }
+    return 0;
+  }
+  function sync(){
+    var i=idx();
+    [].forEach.call(dots,function(d,k){ if(d.classList) d.classList.toggle('is-on',k===i); });
+  }
+  function announce(){
+    var i=idx(), en=(lang()==='en');
+    if(sayEl) sayEl.textContent=(en? 'Face shape: ' : 'Forme du visage : ')+NAMES[i][en?1:0]+
+      (en? '. The recommended lines and your WhatsApp message have changed below.'
+          : '. Les lignes conseillées et votre message WhatsApp ont changé plus bas.');
+  }
+  function glow(){
+    if(!stage.classList) return;
+    stage.classList.add('is-swap');
+    setTimeout(function(){ try{stage.classList.remove('is-swap');}catch(e){} },260);
+  }
+  function select(i){
+    i=(i+IDS.length)%IDS.length;
+    var el=document.getElementById(IDS[i]); if(!el) return;
+    /* Un navigateur décoche les autres tout seul dans un groupe de radios ; on l'écrit quand même,
+       parce que c'est CE que la page veut dire — et parce qu'un DOM de test ne le fait pas. */
+    for(var k=0;k<IDS.length;k++){ var r=document.getElementById(IDS[k]); if(r) r.checked=(k===i); }
+    sync(); announce(); glow();
+  }
+  [].forEach.call(document.querySelectorAll('input[name="face"]'),function(r){
+    r.addEventListener('change',function(){ sync(); announce(); });
+  });
+  var startX=null;
+  stage.addEventListener('pointerdown',function(ev){ startX=(ev&&typeof ev.clientX==='number')?ev.clientX:null; });
+  stage.addEventListener('pointerup',function(ev){
+    if(startX===null||!ev||typeof ev.clientX!=='number'){ startX=null; return; }
+    var d=ev.clientX-startX; startX=null;
+    if(Math.abs(d)<40) return;
+    select(idx()+(d<0?1:-1));
+  });
+  stage.addEventListener('pointercancel',function(){ startX=null; });
+  var prev=document.getElementById('mprev'), next=document.getElementById('mnext');
+  if(prev) prev.addEventListener('click',function(){ select(idx()-1); });
+  if(next) next.addEventListener('click',function(){ select(idx()+1); });
+  sync();
+}catch(e){}})();
 </script>
 
 <script type="application/ld+json">

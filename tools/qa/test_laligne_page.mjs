@@ -54,6 +54,11 @@ const langSrc = scriptAfter(html, "LES DEUX LANGUES, LES ADRESSES WHATSAPP, ET C
 const bootSrc = scriptAfter(html, "Avant le premier rendu");
 const revealSrc = scriptAfter(html, "IntersectionObserver, jamais d'écouteur de défilement");
 
+/* Le bloc `prefers-reduced-motion` de la page : plusieurs assertions vérifient qu'il arrête bien
+   CHAQUE mouvement (le tracé, les révélations, la lueur, le halo). Il est lu ici, avant tout usage. */
+const CALM = (html.match(/@media \(prefers-reduced-motion:reduce\)\{[\s\S]*?\n\}/) || [""])[0];
+
+
 /* Le TEXTE seul : ni les scripts, ni les commentaires, ni (au cas où) un quelconque base64 — une
    recherche naïve sur le fichier entier trouve n'importe quelle suite de lettres dans une image. */
 const text = html.replace(/data:image\/[a-z+]+;base64,[^"]+/gi, "«img»")
@@ -97,28 +102,56 @@ ok(`les ${svgs.length} dessins sont décoratifs et annoncés comme tels (aria-hi
    svgs.length >= 12 && svgs.every((s) => s.includes('aria-hidden="true"') && s.includes('focusable="false"')));
 
 const draws = [...html.matchAll(/data-draw="1"/g)].length;
-ok(`la ligne du premier écran se TRACE (${draws} traits), et le tracé passe par stroke-dashoffset`,
-   draws >= 5 && /@keyframes drawline\{to\{stroke-dashoffset:0\}\}/.test(html) &&
+ok(`la ligne du premier écran se TRACE (${draws} traits : la règle, ses graduations, les deux cercles du verre)`,
+   draws >= 4 && /@keyframes drawline\{to\{stroke-dashoffset:0\}\}/.test(html) &&
    /html\.js \.draw \[data-draw\]\{stroke-dasharray/.test(html));
 ok("les dessins ne s'animent que si le JavaScript est là",
    /html\.js \.draw\.is-on \[data-draw\]\{animation/.test(html) &&
    !/^\.draw \[data-draw\]\{animation/m.test(html));
+/* La question de King, mot pour mot : « the first head why is it there ». Réponse : elle n'y est plus.
+   Le premier écran montre LA LIGNE (le nom du cabinet) ; les visages vivent dans le miroir, plus bas,
+   là où ils servent à quelque chose. */
+ok("le premier écran ne dessine AUCUNE tête : la ligne, et elle seule",
+   (html.match(/<svg class="draw"[\s\S]*?<\/svg>/) || [""])[0].indexOf("headpath") === -1);
+
+/* ── LA LUEUR : de la vie, mais derrière le texte ───────────────────────────────────────────────── */
+ok("la lueur du premier écran est là, une seule fois, décorative et non cliquable",
+   (html.match(/<div class="wash" aria-hidden="true"><\/div>/g) || []).length === 1 &&
+   /\.wash\{[^}]*pointer-events:none/.test(html) && /z-index:0/.test(html));
+ok("la lueur ne tourne que sous html.js, et s'arrête en mouvement réduit",
+   /html\.js \.wash\{animation:washdrift/.test(html) &&
+   /@keyframes washdrift\{[\s\S]*?translate3d/.test(html) &&
+   CALM.includes("html.js .wash{animation:none}"));
+
+/* ── LE MIROIR : un buste, cinq formes, et le geste ─────────────────────────────────────────────── */
+const avatar = (html.match(/<svg class="avatar"[\s\S]*?<\/svg>/) || [""])[0];
+const heads = [...avatar.matchAll(/<g class="head h-([a-z]+)"/g)].map((m) => m[1]);
+ok(`le miroir dessine UN buste et ${heads.length} formes de visage`,
+   heads.length === 5 && ["ovale", "rond", "carre", "coeur", "oblong"].every((h) => heads.includes(h)) &&
+   avatar.includes('class="body"') && avatar.includes('class="shade"') && avatar.includes('class="lens"'));
+const headPaths = [...avatar.matchAll(/<path class="headpath" d="([^"]+)"/g)].map((m) => m[1]);
+ok("les cinq visages sont cinq tracés DIFFÉRENTS (aucun copié-collé)",
+   headPaths.length === 5 && new Set(headPaths).size === 5);
+ok("chaque visage porte SA monture, dessinée dans son propre groupe",
+   [...avatar.matchAll(/<g class="head h-[a-z]+"[\s\S]*?<\/g>/g)].filter((b) => b[0].includes('class="frame"')).length === 5);
+ok("le visage affiché est commandé par les pastilles, en CSS pur (donc sans JavaScript)",
+   /#f-carre:checked ~ \.mirror-wrap \.h-carre/.test(html) &&
+   /#f-oblong:checked ~ \.mirror-wrap \.h-oblong\{opacity:1\}/.test(html) &&
+   /\.avatar \.head\{opacity:0/.test(html));
+ok("le geste laisse le défilement vertical au navigateur (touch-action:pan-y)",
+   /\.mirror\{[^}]*touch-action:pan-y/.test(html));
+ok("le halo du miroir est un élément décoratif, animé seulement sous html.js, arrêté en mouvement réduit",
+   (html.match(/<div class="halo" aria-hidden="true"><\/div>/g) || []).length === 1 &&
+   /html\.js \.mirror \.halo\{animation:halospin/.test(html) &&
+   CALM.includes("html.js .mirror .halo{animation:none}"));
 
 const radios = [...html.matchAll(/<input class="fh" type="radio" name="face" id="f-[a-z]+"/g)].map((m) => m[0]);
 const labels = [...html.matchAll(/<label for="f-[a-z]+">/g)].map((m) => m[0]);
 const panels = [...html.matchAll(/<article class="panel p-[a-z]+">/g)].map((m) => m[0]);
 ok("cinq formes de visage : cinq boutons radio, cinq étiquettes, cinq panneaux",
    radios.length === 5 && labels.length === 5 && panels.length === 5);
-/* Les cinq visages doivent être CINQ dessins différents : une copie-collée est l'erreur la plus facile
-   ici (le visage « rond » était en réalité ovale dans le premier jet — vu à l'œil, sur la planche de
-   contrôle, pas par un audit). */
-const minis = [...html.matchAll(/<svg class="mini"[\s\S]*?<\/svg>/g)].map((m) => m[0]);
-const headPaths = minis.map((m) => ((m.match(/class="stroke face" d="([^"]+)"/) || [])[1]));
-ok("les cinq visages sont cinq tracés DIFFÉRENTS (aucun copié-collé)",
-   headPaths.length === 5 && new Set(headPaths).size === 5);
-
-ok("chaque panneau a SON titre et SON dessin",
-   (html.match(/<article class="panel[^"]*">[\s\S]*?<\/article>/g) || []).every((p) => (p.match(/<h3>/g) || []).length === 1 && p.includes("<svg")));
+ok("chaque panneau a SON titre (le dessin du visage vit dans le miroir, pas cinq fois)",
+   (html.match(/<article class="panel[^"]*">[\s\S]*?<\/article>/g) || []).every((p) => (p.match(/<h3>/g) || []).length === 1));
 
 /* ── les faits qu'on s'interdit d'inventer ─────────────────────────────────────────────────────── */
 ok("les quatre gestes du cabinet sont ceux qu'il annonce, mot pour mot",
@@ -277,6 +310,58 @@ seen = [];
 const live = runReveal({ window: { matchMedia: () => ({ matches: false }), IntersectionObserver: IO }, IO });
 ok("sinon : les blocs sont confiés à l'observateur, pas allumés d'avance",
    live.every((n) => !n.classList.contains("in")) && seen.length === 4);
+
+/* ═════════════ 2b · le miroir : glisser change de visage, et la page le dit ═════════════ */
+console.log("\n═══ 2b · le miroir, le geste, et l'annonce ═══");
+
+const mirrorSrc = scriptAfter(html, "LE MIROIR — glisser pour changer de visage");
+const FACE_IDS = ["f-ovale", "f-rond", "f-carre", "f-coeur", "f-oblong"];
+
+function runMirror(startIndex) {
+  const radios = FACE_IDS.map((id, i) => {
+    const r = el("input");
+    r.checked = i === startIndex;
+    return r;
+  });
+  const stage = el("div");
+  const say = el("p");
+  const dots = [0, 1, 2, 3, 4].map(() => el("i"));
+  const registry = { mirror: stage, say, mprev: el("button"), mnext: el("button"), "QA:.dots i": dots };
+  FACE_IDS.forEach((id, i) => { registry[id] = radios[i]; });
+  registry["QA:input[name=\"face\"]"] = radios;
+  const document = doc(registry, "fr");
+  new Function("document", "window", "localStorage", mirrorSrc)(
+    document, { matchMedia: () => ({ matches: false }) }, localStorageStub());
+  return { radios, stage, dots, say, registry };
+}
+
+const onIdx = (mm) => mm.radios.findIndex((r) => r.checked);
+const mir = runMirror(0);
+ok("au départ : la première forme est cochée, et sa pastille est allumée",
+   onIdx(mir) === 0 && mir.dots[0].classList.contains("is-on") && !mir.dots[1].classList.contains("is-on"));
+
+mir.stage.fire("pointerdown", { clientX: 300 });
+mir.stage.fire("pointerup", { clientX: 120 });
+ok("glisser vers la gauche : c'est la forme SUIVANTE qui est cochée",
+   onIdx(mir) === 1 && mir.dots[1].classList.contains("is-on") && !mir.dots[0].classList.contains("is-on"));
+ok("le glissement l'annonce au lecteur d'écran, dans la langue de la page",
+   /Forme du visage : rond/.test(mir.say.textContent), "dit : " + mir.say.textContent);
+
+mir.stage.fire("pointerdown", { clientX: 120 });
+mir.stage.fire("pointerup", { clientX: 300 });
+ok("glisser vers la droite : on revient à la forme précédente", onIdx(mir) === 0);
+
+mir.stage.fire("pointerdown", { clientX: 200 });
+mir.stage.fire("pointerup", { clientX: 210 });
+ok("un appui de 10px ne change RIEN : il faut 40px pour changer de forme", onIdx(mir) === 0);
+
+mir.registry.mnext.fire("click");
+mir.registry.mprev.fire("click");
+mir.registry.mprev.fire("click");
+ok("les flèches font le tour du cercle (en reculant depuis la première, on arrive à la dernière)",
+   onIdx(mir) === 4, "index : " + onIdx(mir));
+ok("les cinq noms de formes existent en français ET en anglais dans le script",
+   /\['ovale','oval'\]/.test(mirrorSrc) && /\['cœur','heart-shaped'\]/.test(mirrorSrc));
 
 /* ═════════════ 3 · les deux utilitaires : copier, enregistrer ═════════════ */
 console.log("\n═══ 3 · copier le numéro, enregistrer le contact ═══");

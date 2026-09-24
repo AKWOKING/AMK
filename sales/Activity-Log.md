@@ -4352,3 +4352,46 @@ premier écran). La leçon est écrite dans `design/WORKFLOW.md` pour servir aux
 **Le portique ne change pas** : le dessin est vérifié ici ; *not verified on a phone = not sent*.
 
 **Contrôles** : `audit_html` **0 constat** · `a11y --strict` **0/0** · `test_laligne_page.mjs` **53/53**.
+
+---
+
+## 2026-09-24 (nuit) — **LA LIGNE OPTIC, PASSE 3 : LE MIROIR, LA LUEUR — ET LA TÊTE QUI N'AVAIT RIEN À FAIRE LÀ**
+
+Trois retours de King sur l'aperçu, mot pour mot : *« the first head why is it there »* · *« it could be
+a 2d or better yet 3d avatar head with the different types of glasses that fit the shape of the head
+swiping showing the different shapes and glasses »* · *« I find it too simple, we could put some life in
+it, with animated gradient colors for example »*.
+
+**① La tête du premier écran est partie.** Elle montrait un visage **sans monture**, dans une page dont la
+promesse est qu'une monture se choisit **sur** un visage : la démonstration venait avant l'idée. Le
+premier écran montre maintenant **la ligne** — une règle graduée qui traverse l'écran, un **verre** posé
+dessus, un réticule. C'est le nom du cabinet, littéralement.
+
+**② Le miroir remplace les cinq vignettes.** Un **seul buste** dessiné (épaules, cou, tête, oreilles,
+sourcils, yeux, nez, bouche, **trois calques d'ombres**) et **cinq silhouettes de tête**, chacune avec
+**sa** monture. On **glisse** au doigt ou à la souris (seuil de 40px, `touch-action:pan-y` pour ne pas
+casser le défilement vertical), les flèches et cinq pastilles font la même chose, et le changement est
+**annoncé** dans la région vive, dans la langue de la page. Le fondu passe par un voile de 2px de flou.
+**Décision écrite** : pas de 3D temps réel (WebGL = poids + dépendance qui peut casser sur un téléphone
+d'Akwa) ; le buste dessiné donne la même lecture, pèse 4 Ko, et **fonctionne sans JavaScript** — ce sont
+les pastilles radio qui commandent, en CSS pur.
+
+**③ La vie, avec la porte de `design/MOTION.md` relue avant d'écrire.** Deux lueurs, pas une de plus :
+la **lueur du premier écran** (quatre dégradés radiaux laque/terre cuite/graphite, 10-17 % d'opacité,
+dérive de 34 s) et le **halo du miroir** (`conic-gradient` flouté, 30 s). Les deux sont derrière le
+contenu, `aria-hidden`, `pointer-events:none`, animées **seulement sous `html.js`** et arrêtées par
+`prefers-reduced-motion`. Le budget de la maison est de 5-7 moments par page : celle-ci en compte **cinq**
+(les révélations, le tracé, la lueur, le halo, le fondu du miroir). **Rien n'a été ajouté aux sections de
+lecture** (réponses, questions) — MOTION §0.4 : sur ce qu'on lit, le mouvement gêne.
+
+**Contrôles** : `audit_html` **0 constat** (314 passages) · `a11y --strict` **0/0** · `hero` **0/0** ·
+`inline_js` rc 0 · `aeo` ✓ · `images` 0/0 · **`test_laligne_page.mjs` 68/68** (onze assertions neuves,
+dont : aucune tête dans le premier écran ; le seuil de 40px ; les flèches qui font le tour ; l'annonce en
+français puis en anglais ; les cinq têtes aux cinq tracés différents ; le miroir commandé en CSS pur).
+Poids **90,9 Ko**. Les deux autres pages du jour n'ont pas bougé (audits 0, tests verts).
+
+**`render_svg.py` a dû apprendre les courbes lisses `S`, les arcs `A` et le remplissage des formes**
+(ombres et verres teintés en `rgba()`, mélangés au papier comme le ferait un navigateur). **Et il a menti
+une fois** : son filtre par état s'arrêtait au premier `</g>` — celui d'un groupe enfant — et montrait un
+visage **sans monture** alors que la page était juste. Réécrit en comptant les groupes. Leçon du soir :
+*un outil de contrôle qui peut mentir est plus dangereux que pas d'outil du tout.*
