@@ -207,3 +207,45 @@ et 5 ans**. Trois conclusions, dans l'ordre d'importance :
 **La règle qui ressort :** la répétition est le signal (§1) — mais quand il n'y a pas de répétition, la réponse
 honnête est « il n'y a pas de fuite ici », et on se tait sur les avis. Le scan a refusé pour de vrai, sur des
  données réelles : c'est le garde-fou qui a produit le résultat, pas un jugement humain.
+
+## 10 · L'instrument du 24/09 — lire une fiche entière, et surtout ce qui lui manque
+
+**Ce qu'on croyait** : qu'une fiche Google ne se lisait que par `maps/place/?q=place_id:…` (leçon du §9).
+**Ce qui est vrai** : **`google.com/maps/search/<nom de l'établissement>` rend la fiche entière.** Ce que la
+page donne, pour un opticien de Douala, sans compte et sans outil : nom, catégorie, adresse, téléphone,
+horaires jour par jour, nombre de photos, note, **avis avec les réponses du propriétaire** — et surtout
+**ce qui MANQUE**, parce que Google énumère ses propres trous :
+
+- « **Ajouter un site Web** » → le champ site est vide ;
+- « Ajouter le numéro de téléphone du lieu » · « Ajouter des horaires » · « Ajouter une photo » → tout ce qui
+  n'a jamais été rempli ;
+- « **Revendiquer cet établissement** » → la fiche n'est pas revendiquée (§9.3 : fiche LIBRE, donc la première
+  étape appartient au client — le geste borné de `RDV-UNIVERS-OPTIQUE-2026-09-25.md`).
+
+**Quatre hooks du deuxième lot d'opticiens sortent de là** — et deux d'entre eux n'existaient nulle part
+ailleurs : **Doyoan Optic** (fiche tenue : 31 photos, 4,2/6, réponses à chaque avis — et « Ajouter un site
+Web » encore proposé) et **4M Optique** (fiche **nue et non revendiquée** : pas de numéro, pas d'horaires, pas
+une photo).
+
+**Trois lectures à ne pas confondre** : la fiche **qui n'existe pas** (rien ne se lit, donc rien ne s'affirme) ·
+la fiche qui existe et qui est **nue** (ce que Google propose d'ajouter EST le fait) · la fiche qui existe et
+qui est **tenue** (on le dit — c'est un compliment vérifiable, et il ouvre la porte mieux qu'un reproche).
+
+**Deux annuaires locaux, utiles et piégeux** : **DoualaTour** donne les opticiens d'un quartier avec la rue et
+l'activité, mais **cache le numéro derrière un formulaire** (« Saisissez vos coordonnées… ») ; **Mont-Pandi**
+donne une fiche par commerce (repère d'adresse, horaires, téléphone) — et c'est là qu'on a lu l'e-mail amputé
+`fvisiondouala@oulock.fr`. Les deux sont des annuaires : on y lit des faits, on n'en déduit pas la santé d'un
+commerce.
+
+**Et une source tierce fraîche, qui vaut mieux qu'un annuaire** : le **réseau de soins WTW / Société Générale**
+publie son annuaire de prestataires (édition **15/09/2026**) : nom, activité, quartier précis, numéro — pour
+Douala, une ligne par opticien. C'est de là que viennent « 4M OPTIQUE SARL · Akwa, à côté de Vision Confort,
+axe Douala Bercy · 699 09 25 23 » et « BELY OPTIQUE MEDICALE SARL · Bonamoussadi, Sable · 699 89 57 21 » —
+**deux numéros différents de ceux du registre de l'Ordre**, donc deux chemins pour joindre la même maison.
+
+**L'instrument a aussi servi dans l'autre sens : écarter, avant d'écrire.** Trois candidats préparés le 21/09
+ont un **site vivant** : **Lyfy Optic** (`lyfyoptic.com` — même adresse et même numéro que le CRM, donc c'est
+bien lui), **Cristalys Optic** (`cristalysoptic.com`, deux magasins, site qui ne publie pas la ligne du
+registre — à confirmer) et **Gift Optical** (domaine `giftopticalsarl.com` publié sur sa propre fiche
+d'entreprise, **muet** au test du 24/09 — un domaine muet n'est pas un domaine mort : King tranche). La porte
+n° 2 de la vague aura coûté trois vérifications et évité trois messages gênants.

@@ -3511,3 +3511,39 @@ la faute y est historique, on ne réécrit pas l'histoire ; le fichier-modèle d
 ② une perte (« pas de quoi voir vos montures, pas de quoi écrire »), pas un gain vague ✓ ③ **une seule
 demande** — « Je vous l'envoie ? » ✓ ④ ses mots (patient, quartier, montures, rendez-vous) ✓ ⑤ le test
 éthique : oui ✓.
+
+---
+
+## 2026-09-24 (soir) — LE PREMIER LOT PART, LE DEUXIÈME SE PRÉPARE, ET TROIS OPTICIENS SORTENT
+
+**Le premier lot est parti.** King a envoyé les cinq messages du lot 1, captures à l'appui : **Maff 11:56 ·
+Espace Lunetterie 12:00 · MegaOptic 12:03 · Médina 12:08 · Cavisa 12:10**. Tous **livrés** (✓✓), tous sur des
+profils qui s'identifient (deux **Business Account** : Maff et Espace Lunetterie). **La porte A du §8b est
+franchie pour les cinq — par King, sur l'application**, comme elle doit se franchir. Aucune réponse au relevé.
+
+**Deux correctifs de données, le même soir.** Disc Optique Médicale et Tchaya Optique ont reçu le message 1 le
+21/09 et sont **en relance** — mais le CRM les portait « Contacted = No, stage = prospecting », donc le calcul
+« 60 leads jamais contactés » les comptait encore, et un lot suivant aurait pu leur réécrire un premier
+message. Corrigé **dans le générateur** (`CORRECTIF_2409`), pas dans un .md : **la file tombe de 60 à 53**.
+
+**Le deuxième lot est écrit** (`sales/Send-BATCH-2026-09-24-Opticiens-2.md`) — 5 opticiens, numéro + recherche
++ premier message, **rien n'est envoyé** : ① Doyoan Optic (653 85 27 49) ② Bely Optique Médicale (696 85 52 42)
+③ 4M Optique Akwa (679 27 06 64) ④ Horizon Optique (677 44 74 17) ⑤ Fashion Vision (656 22 38 63). Ordre
+d'envoi : le plus lisible d'abord, le plus délicat en dernier. CRM : `BATCH_2409_2`.
+
+**Trois opticiens écartés avant d'écrire — site vivant (porte n° 2 de la vague)** : Lyfy Optic
+(`lyfyoptic.com`, même adresse et même numéro que le CRM), Cristalys Optic (`cristalysoptic.com`, deux
+magasins), Gift Optical (`giftopticalsarl.com` publié sur sa fiche d'entreprise, muet au test du jour — **King
+tranche**). Tracés dans `ECARTES_2409` ; ils ne sont pas effacés.
+
+**L'instrument du jour : `google.com/maps/search/<nom>` rend la fiche entière** — horaires, photos, avis,
+réponses du propriétaire, et **ce que Google propose encore d'ajouter** (donc ce qui manque) : « Ajouter un
+site Web », « Ajouter le numéro de téléphone du lieu », « Revendiquer cet établissement ». On croyait que
+seule la lecture par `place_id` marchait. Écrit au §10 de `sales/DETECTION-FUITES-2026-09-24.md`, avec les deux
+annuaires locaux (DoualaTour, Mont-Pandi) et le PDF du réseau de soins WTW / Société Générale (15/09/2026).
+
+**Une correction recouverte en silence — et pourquoi.** Le patch qui corrigeait Horizon Optique a d'abord été
+**écrasé** par la passe « vitrine » du 22/09, qui s'exécute après lui : le CRM réaffichait « aucune vitrine à
+lui — hors profil d'envoi ». Réglé par une table `REVISION_2409` appliquée **après** la passe qu'elle corrige.
+Leçon : une correction qui doit changer un calcul doit aussi arriver **dans le bon ordre** — sinon elle
+disparaît sans un mot.

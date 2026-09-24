@@ -161,3 +161,19 @@ le mot exact dans `sales/Activity-Log.md` — c'est ce qui met le CRM à jour. *
 **Ce qu'on n'écrit jamais dans ce lot** : « je vois que vous n'avez pas de site » (faux pour MegaOptic, non
 vérifié pour les autres) · un prix · une promesse de classement · le statut administratif lu dans le
 registre · le nom d'un autre opticien.
+
+---
+
+## ✔ PARTI LE 24/09 — 11:56 → 12:10 (captures de King)
+
+**Les cinq sont partis, les cinq sont arrivés.** Maff **11:56** · Espace Lunetterie **12:00** · MegaOptic
+**12:03** · Médina **12:08** · Cavisa **12:10** — tous **livrés** (✓✓). Deux profils s'affichent
+**« Business Account »** (Maff, Espace Lunetterie) ; les trois autres portent le nom de la boutique
+(« MEGA Optique », « MÉDINA OPTIC », « CAVISA OPTIQUE »). **La porte A — un numéro vérifié sur WhatsApp —
+est donc franchie pour les cinq**, par King, sur l'application : c'est la seule façon dont elle se franchit.
+
+CRM à jour (`ENVOI_2409` dans `leads/build/crm.py`) : `Contacted = Yes`, `stage = qualifying`,
+`last_send_state = delivered`, `wa_verified = yes`. **Aucune réponse au relevé du soir.**
+
+**La suite :** `sales/Send-BATCH-2026-09-24-Opticiens-2.md` — 5 autres opticiens, préparés, **rien n'est
+envoyé**.

@@ -1683,6 +1683,10 @@ def _apply_jour(out: list) -> None:
     _apply_state(out, FICHE_2409, "FICHE_2409")
     _apply_state(out, GESTE_2409, "GESTE_2409")
     _apply_state(out, BATCH_2409, "BATCH_2409")
+    _apply_state(out, ENVOI_2409, "ENVOI_2409")
+    _apply_state(out, CORRECTIF_2409, "CORRECTIF_2409")
+    _apply_state(out, BATCH_2409_2, "BATCH_2409_2")
+    _apply_state(out, ECARTES_2409, "ECARTES_2409")
 
 
 
@@ -1823,6 +1827,207 @@ BATCH_2409 = {
             "l'Ordre (699 95 90 52), titulaire public DONGMO Jean René. Recherche et message écrits dans "
             "`sales/Send-BATCH-2026-09-24-Opticiens.md` ; vérifier le numéro sur WhatsApp avant "
             "d'envoyer (wa_verified = unknown).",
+    },
+}
+
+
+
+
+# ── LE 24/09 · LE PREMIER LOT EST PARTI (11:56 → 12:10, captures de King) ────────────────────────
+# Cinq messages, cinq numéros, cinq profils WhatsApp qui portent bien le nom de la boutique :
+# « MAFF optique » (Business Account) · « Espace Lunetterie » (Business Account) · « MEGA Optique » ·
+# « MÉDINA OPTIC » · « CAVISA OPTIQUE ». Tous livrés (✓✓). Aucune réponse au relevé du soir.
+# Conséquence : la porte A des trois portes (§8b) est FRANCHIE pour les cinq — par King, sur
+# l'application, sur des profils qui s'identifient. C'est la seule façon dont cette porte se franchit ;
+# aucun raisonnement à distance ne la remplace.
+ENVOI_2409 = {
+    "maff-optique": {
+        "Contacted": "Yes", "Contact channel": "WhatsApp", "wa_verified": "yes",
+        "last_send_state": "delivered", "stage": "qualifying", "stage_since": "2026-09-24",
+        "Notes_extra":
+            "24/09 11:56 — PREMIER LOT, ENVOYÉ par King. Message livré (✓✓). Profil WhatsApp : "
+            "« MAFF optique », Business Account. Aucune réponse au relevé du soir ; toute réponse se "
+            "traite dans l'heure et s'écrit dans `sales/Activity-Log.md`.",
+    },
+    "espace-lunetterie": {
+        "Contacted": "Yes", "Contact channel": "WhatsApp", "wa_verified": "yes",
+        "last_send_state": "delivered", "stage": "qualifying", "stage_since": "2026-09-24",
+        "Notes_extra":
+            "24/09 12:00 — PREMIER LOT, ENVOYÉ par King. Message livré (✓✓). Profil WhatsApp : "
+            "« Espace Lunetterie », Business Account. Aucune réponse au relevé du soir.",
+    },
+    "megaoptic": {
+        "Contacted": "Yes", "Contact channel": "WhatsApp", "wa_verified": "yes",
+        "last_send_state": "delivered", "stage": "qualifying", "stage_since": "2026-09-24",
+        "Notes_extra":
+            "24/09 12:03 — PREMIER LOT, ENVOYÉ par King. Message livré (✓✓). Profil WhatsApp : "
+            "« MEGA Optique » (numéro non enregistré dans le téléphone : le nom vient du profil, "
+            "donc c'est bien la boutique). Aucune réponse au relevé du soir. Rappel du piège : un "
+            "MEGA OPTIC de Limbe existe (Mveng Ateba Lionel, 698 915 192) — si la réponse vient de "
+            "Limbe, on s'arrête.",
+    },
+    "m-dina-optic": {
+        "Contacted": "Yes", "Contact channel": "WhatsApp", "wa_verified": "yes",
+        "last_send_state": "delivered", "stage": "qualifying", "stage_since": "2026-09-24",
+        "Notes_extra":
+            "24/09 12:08 — PREMIER LOT, ENVOYÉ par King. Message livré (✓✓). Profil WhatsApp : "
+            "« MÉDINA OPTIC ». Aucune réponse au relevé du soir. Rappel : le 699 939 334 est partagé "
+            "avec Star Optic dans le tableau de l'Ordre — un « ce n'est pas nous » arrête tout.",
+    },
+    "cavisa-optique": {
+        "Contacted": "Yes", "Contact channel": "WhatsApp", "wa_verified": "yes",
+        "last_send_state": "delivered", "stage": "qualifying", "stage_since": "2026-09-24",
+        "Notes_extra":
+            "24/09 12:10 — PREMIER LOT, ENVOYÉ par King. Message livré (✓✓). Profil WhatsApp : "
+            "« CAVISA OPTIQUE ». Aucune réponse au relevé du soir.",
+    },
+}
+
+
+# ── LE 24/09 · DEUX CORRECTIFS DE DONNÉES (la file des « jamais contactés » mentait de 2 lignes) ──
+# Disc et Tchaya ont REÇU le message 1 le 21/09 (vague opticiens) : ils sont en relance, et leur
+# relance est écrite dans `sales/Send-Soir-2026-09-23.md`. Le CRM les portait pourtant
+# « Contacted = No, stage = prospecting » — donc le calcul « 60 leads jamais contactés » les comptait
+# encore, et un lot suivant aurait pu leur réécrire un PREMIER message.
+# C'est la leçon COMOBIL qui revient : une décision qui doit changer un calcul vit ICI, pas dans un .md.
+CORRECTIF_2409 = {
+    "disc-optique-m-dicale": {
+        "Contacted": "Yes", "wa_verified": "yes", "last_send_state": "sent",
+        "stage": "qualifying", "stage_since": "2026-09-21",
+        "Notes_extra":
+            "CORRECTIF du 24/09 : le message 1 est PARTI le 21/09 (vague opticiens). Il est en "
+            "RELANCE — relance écrite dans `sales/Send-Soir-2026-09-23.md`, à envoyer par King. Ne "
+            "jamais lui réécrire un premier message.",
+    },
+    "tchaya-optique": {
+        "Contacted": "Yes", "wa_verified": "yes", "last_send_state": "sent",
+        "stage": "qualifying", "stage_since": "2026-09-21",
+        "Notes_extra":
+            "CORRECTIF du 24/09 : le message 1 est PARTI le 21/09 (vague opticiens). En RELANCE — "
+            "relance écrite dans `sales/Send-Soir-2026-09-23.md`. Boutique de 1974, rue Pau, Akwa : "
+            "ne jamais lui réécrire un premier message.",
+    },
+}
+
+
+# ── LE 24/09 · DEUXIÈME LOT D'OUTREACH — OPTICIENS (préparé, RIEN N'EST ENVOYÉ) ──────────────────
+# Numéro + recherche + premier message : `sales/Send-BATCH-2026-09-24-Opticiens-2.md`.
+# Quatre des cinq hooks viennent d'un instrument dont on ne connaissait pas la portée :
+# `google.com/maps/search/<nom>` rend la fiche ENTIÈRE — et surtout ce qui lui MANQUE, parce que
+# Google énumère ses propres trous (« Ajouter un site Web », « Ajouter des horaires »…) et propose
+# « Revendiquer cet établissement » quand la fiche n'est pas revendiquée. Le cinquième hook vient du
+# PDF public du réseau de soins WTW / Société Générale (édition 15/09/2026) : il donne, pour chaque
+# opticien de Douala, le quartier précis et un numéro — parfois différent de celui du registre.
+BATCH_2409_2 = {
+    "doyoan-optic": {
+        "Website":
+            "aucun site — fiche Google soignée (24/09) : 31 photos, 4,2/5 sur 6 avis, tous les "
+            "horaires, réponses du propriétaire à chaque avis, et Google propose encore "
+            "« Ajouter un site Web »",
+        "Notes_extra":
+            "24/09 — DEUXIÈME LOT (préparé, PAS ENCORE ENVOYÉ) : numéro du registre de l'Ordre "
+            "(653 85 27 49 = le numéro de sa fiche Google). Titulaire public MEZAFO Gildas. "
+            "Recherche et message dans `sales/Send-BATCH-2026-09-24-Opticiens-2.md` ; vérifier le "
+            "numéro sur WhatsApp avant d'envoyer (wa_verified = unknown).",
+    },
+    "bely-optique-m-dicale": {
+        "Website":
+            "aucun site — réseau de soins WTW / Société Générale (édition 15/09/2026) : "
+            "« BELY OPTIQUE MEDICALE SARL · OPTIQUE · BONAMOUSSADI, SABLE · +237699895721 »",
+        "Notes_extra":
+            "24/09 — DEUXIÈME LOT (préparé, PAS ENCORE ENVOYÉ) : numéro du registre (696 85 52 42), "
+            "repli 699 89 57 21 (réseau de soins). Titulaire public NGATCHA ZOE Rosalie ; "
+            "consultation oculaire déclarée + vente de montures. Recherche et message dans "
+            "`sales/Send-BATCH-2026-09-24-Opticiens-2.md` ; vérifier le numéro sur WhatsApp avant "
+            "d'envoyer (wa_verified = unknown).",
+    },
+    "4m-optique-akwa": {
+        "Website":
+            "aucun site — fiche Google NUE et NON REVENDIQUÉE (24/09 : pas de numéro, pas "
+            "d'horaires, pas de photo, « Revendiquer cet établissement ») ; réseau WTW / Société "
+            "Générale (15/09/2026) : « 4M OPTIQUE SARL · AKWA, À CÔTÉ DE VISION CONFORT, AXE DOUALA "
+            "BERCY · +237699092523 » ; fiche d'entreprise Yoooper : NIU M080900029528Y, "
+            "675 01 07 82",
+        "Notes_extra":
+            "24/09 — DEUXIÈME LOT (préparé, PAS ENCORE ENVOYÉ) : numéro du registre (679 27 06 64), "
+            "repli 699 09 25 23 (réseau de soins). Titulaire public KAPTUE TAFFO Virginie. Trois "
+            "numéros circulent — ne jamais dire que sa fiche Google n'existe pas : elle existe et "
+            "elle est vide. Recherche et message dans "
+            "`sales/Send-BATCH-2026-09-24-Opticiens-2.md` ; vérifier le numéro sur WhatsApp avant "
+            "d'envoyer (wa_verified = unknown).",
+    },
+    "horizon-optique": {
+        "disqualification_reason": "",
+        "Website":
+            "aucun site — fiche DoualaTour (24/09) : « HORIZON Optique », Akwa RUE FOCH, opticien "
+            "et horlogerie, sans photo, et le numéro n'apparaît qu'après avoir laissé ses propres "
+            "coordonnées",
+        "Notes_extra":
+            "24/09 — DEUXIÈME LOT (préparé, PAS ENCORE ENVOYÉ) : numéro du registre (677 44 74 17). "
+            "Titulaire public DJEUMO FEUNOU Siméon. Passe RÉVISÉE le 24/09 : le « aucune vitrine à "
+            "lui » du 22/09 était incomplet — une fiche DoualaTour existe (Akwa, rue Foch), donc la "
+            "raison de l'écarter tombe. Piège vivant : « horizon eyes clinic » sur Google Maps "
+            "(655 05 88 31, ouvert 24h/24) est un AUTRE établissement. Recherche et message dans "
+            "`sales/Send-BATCH-2026-09-24-Opticiens-2.md` ; vérifier le numéro sur WhatsApp avant "
+            "d'envoyer (wa_verified = unknown).",
+    },
+    "fashion-vision": {
+        "Website":
+            "aucun site — Instagram @fashionvisiondouala (24/09 : 2 034 abonnés, 207 publications) "
+            "+ fiche Mont-Pandi (Bonapriso, rue Afcodi, 08:00-18:00) ; l'e-mail publié sur sa fiche "
+            "d'entreprise est amputé : fvisiondouala@oulock.fr",
+        "Notes_extra":
+            "24/09 — DEUXIÈME LOT (préparé, PAS ENCORE ENVOYÉ) : numéro du registre (656 22 38 63, "
+            "aussi publié comme WhatsApp sur sa fiche d'entreprise ; 2e ligne 691 77 76 57). "
+            "Titulaire public PUILLE Nicolas. C'est le plus visible des cinq : le message ne lui "
+            "apprend pas qu'il existe, il lui montre ce qui manque. Recherche et message dans "
+            "`sales/Send-BATCH-2026-09-24-Opticiens-2.md` ; vérifier le numéro sur WhatsApp avant "
+            "d'envoyer (wa_verified = unknown).",
+    },
+}
+
+
+# ── LE 24/09 · TROIS OPTICIENS ÉCARTÉS — la porte n° 2 de la vague (site vivant) ────────────────
+# La vérification de 2 minutes qui évite un message gênant, appliquée au lot de ce soir : on a cherché
+# un site AVANT d'écrire, et trois des candidats préparés le 21/09 en ont un.
+ECARTES_2409 = {
+    "lyfyoptic": {
+        "Website":
+            "lyfyoptic.com — VIVANT (24/09) : vitrine + boutique, adresse 15086 Akwa Bonadibong et "
+            "numéro 699 98 06 66, les DEUX identiques au CRM",
+        "disqualification_reason":
+            "site vivant (lyfyoptic.com) — hors cible, comme Vision Care Center et Original Optique "
+            "(vérification du 24/09)",
+        "Notes_extra":
+            "24/09 — ÉCARTÉ : le site est bien le sien (même adresse, même numéro, page Facebook "
+            "« Lyfy-optic »). Ne pas lui proposer de vitrine.",
+    },
+    "cristalys-optic": {
+        "Website":
+            "cristalysoptic.com — VIVANT (24/09) : deux magasins (Bonapriso « Bonadouma Home » et "
+            "Bonamoussadi « Super Marché Carrefour »), page Facebook 230 likes ; le site publie "
+            "677 69 23 73 / 691 91 64 12 / 676 20 02 80, pas la ligne 690 94 51 50 du registre",
+        "disqualification_reason":
+            "enseigne avec site vivant (cristalysoptic.com) — hors cible JUSQU'À VÉRIFICATION que la "
+            "ligne 690 94 51 50 est bien la même enseigne (vérification du 24/09)",
+        "Notes_extra":
+            "24/09 — ÉCARTÉ (sous réserve) : enseigne établie depuis 2003, site vivant. Si King "
+            "confirme que 690 94 51 50 est une autre boutique du même nom, la raison tient ; sinon "
+            "on rouvre.",
+    },
+    "gift-optical": {
+        "Website":
+            "giftopticalsarl.com — DÉCLARÉ sur sa propre fiche d'entreprise (Yoooper, « Gift Optical "
+            "Sarl », numéro WhatsApp 237675521735, gift.optical@gmail.com) ; le domaine n'a PAS "
+            "répondu au test du 24/09 (ni vivant constaté, ni mort constaté)",
+        "disqualification_reason":
+            "site déclaré sur sa fiche d'entreprise — hors cible TANT QUE King n'a pas tranché "
+            "(le domaine est muet au test du 24/09, mais un domaine muet n'est pas un domaine mort)",
+        "Notes_extra":
+            "24/09 — EN ATTENTE D'ARBITRAGE : la chaîne a des agences à Bertoua et Ngaoundéré (même "
+            "source) et un domaine à son nom. À vérifier sur un téléphone avant tout envoi : si le "
+            "site est mort, c'est un excellent prospect (hook du lien mort, comme MegaOptic) ; s'il "
+            "vit, c'est un écarté de plus.",
     },
 }
 
@@ -2108,6 +2313,23 @@ def _apply_fiche(out: list) -> None:
             r["disqualification_reason"] = "aucune vitrine à lui (passe du 22/09) — hors profil d'envoi"
 
 
+# ── LA RÉVISION DU 24/09 — elle s'applique APRÈS la passe du 22/09, et c'est voulu ───────────────
+# La passe « vitrine » du 22/09 avait classé Horizon Optique « aucune vitrine à lui — hors profil
+# d'envoi ». Le 24/09, sa fiche DoualaTour a été trouvée (Akwa, rue Foch, opticien + horlogerie) : la
+# prémisse tombe, donc la conséquence aussi. Une correction qui doit changer un calcul vit ici, pas
+# dans un .md — et elle doit passer APRÈS la passe qu'elle corrige, sinon la passe l'écrase en
+# silence (c'est exactement ce qui vient d'arriver : le premier patch a été recouvert).
+REVISION_2409 = {
+    "horizon-optique": {
+        "Website":
+            "aucun site — fiche DoualaTour (24/09) : « HORIZON Optique », Akwa RUE FOCH, opticien "
+            "et horlogerie, sans photo, et le numéro n'apparaît qu'après avoir laissé ses propres "
+            "coordonnées",
+        "disqualification_reason": "",
+    },
+}
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--csv", default=str(ROOT / "leads" / "CRM.csv"))
@@ -2257,6 +2479,7 @@ def main() -> int:
     _apply_jour(out)
     _apply_dead(out)
     _apply_fiche(out)
+    _apply_state(out, REVISION_2409, "REVISION_2409")
 
     cols = headers + NEW_FIELDS
     allowed = set(cols)
