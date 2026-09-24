@@ -12,15 +12,17 @@ les portes SMS, appel et e-mail sont ouvertes.
 
 **✔ PARTI LE 24/09 — trois sur cinq.** Envoyés par King : **El Roï Optique Médicale, Net Optique
 Médical, Cabinet d'Optique la Rétine** (heures non relevées, accusés non relevés → CRM en `sent`, pas
-`delivered`). **DEUX PORTES FERMÉES : Royal Optic (676 250 409) et K Vision Care (677 077 459) —
-WhatsApp indisponible.** Les deux ont **d'autres numéros publiés** : les replis sont au **§ 7**.
+`delivered`). **DEUX PORTES FERMÉES sur WhatsApp : Royal Optic (676 250 409) et K Vision Care
+(677 077 459).** Royal Optic a un autre numéro publié à essayer (**§ 7.a**) ; pour K Vision Care, **le
+numéro est désormais connu** (677 077 159, ouvert par King à 14:14) mais **le chat l'est pas** : on y
+entre par **SMS, appel ou e-mail** (**§ 9**).
 CRM : `ENVOI_2409_3`.
 
 > ⚠️ **ÉTAPE 0 — LA PORTE A, AVANT TOUT.** Cinq numéros **d'annuaire**, jamais vus sur WhatsApp. Depuis le
 > 24/09 (Horizon Optique : WhatsApp indisponible sur un numéro du registre), **la porte se vérifie dans
 > l'application, pas dans le bac** : ouvre chaque numéro, regarde **le nom du profil**, et envoie seulement
-> si l'identité correspond. **K Vision Care porte deux numéros qui se contredisent** — à trancher à l'écran
-> avant d'écrire (§4).
+> si l'identité correspond. **K Vision Care portait deux numéros qui se contredisaient** : c'est **tranché**
+> — 677 077 159, confirmé par King le 24/09 à 14:14 (§ 7.b).
 
 ---
 
@@ -145,17 +147,21 @@ Je vous l'envoie ?
 Réunification »* · *« entre Ancien 3e et le marché Congo, juste en face de l'hôpital de Congo 2, en haut à
 l'étage »* · *« marché Ndogpassi »*. Horaires publiés : **08:00 → 18:00**.
 
-> ⚠️ **LA FICHE SE CONTREDIT SUR LE NUMÉRO** : le texte publie **677 077 459**, le lien de la **même**
-> fiche écrit **677 077 159** (un chiffre d'écart). Un troisième numéro est publié : **695 865 346**.
-> **Ne rien envoyer avant d'avoir ouvert les numéros dans l'application et lu le nom du profil.**
-> Si aucun des trois ne porte la boutique, le lead passe en réserve (comme Jucia Optics) — **on ne
-> devine pas**.
+~~⚠️ **LA FICHE SE CONTREDIT SUR LE NUMÉRO** : le texte publie **677 077 459**, le lien de la **même**
+fiche écrit **677 077 159** (un chiffre d'écart). Un troisième numéro est publié : **695 865 346**.~~
+**→ TRANCHÉ le 24/09 à 14:14 : 677 077 159 porte bien la boutique** (profil « K Vision Care », Business
+Account) mais **le chat n'est pas ouvert**. Voir § 7.b, et la nouvelle approche au **§ 9**.
 
-**L'accroche.** Trois boutiques, et **un patient ne peut pas savoir laquelle est la plus proche de lui**,
-ni laquelle est ouverte à 17 h. C'est le seul du lot à qui une page donne quelque chose de
-**mesurable** — et c'est aussi le plus délicat, donc il part en dernier.
+**L'accroche — remplacée le 24/09.** Celle qui avait été écrite pour ce lot (laquelle des trois boutiques
+est la plus proche, laquelle est ouverte à 17 h) était **la bonne accroche pour un opticien qui n'a rien en
+ligne**. La recherche a montré mieux : **il a un site, et il est fermé.** La nouvelle accroche est au § 9 :
+*« votre site ne s'ouvre plus »* — un fait que le prospect peut vérifier lui-même en dix secondes, et qui
+parle de sa vitrine, pas de nos idées.
 
-**Le message** (à n'envoyer qu'après vérification du numéro) :
+**Le message ci-dessous est donc SUSPENDU** : la porte WhatsApp est fermée (§ 7.b). Il reste au dossier,
+prêt, pour le jour où le chat s'ouvrira — c'est le bon message pour ce canal-là :
+
+*[message du 24/09, non envoyé — accroche « trois magasins ».]*
 ```
 Bonjour. Trois magasins à Douala — Bessengue, Ancien 3e, Ndogpassi — et un patient ne peut pas
 savoir lequel est le plus proche de lui, ni lequel est ouvert quand il passe. Ce qui existe en
@@ -174,7 +180,9 @@ Je vous l'envoie ?
 **1 → El Roï** (les repères les plus précis : le message se vérifie en le lisant) · **2 → Net Optique
 Médical** (l'activité la plus large : la plus grosse surprise pour un patient) · **3 → Royal Optic**
 (« cabinet d'optique médicale », trois repères) · **4 → La Rétine** (le repère qui demande une phrase) ·
-**5 → K Vision Care** en dernier, **et seulement si un des numéros porte la boutique à l'écran**.
+**5 → K Vision Care** en dernier, **et seulement si un des numéros porte la boutique à l'écran** —
+**non envoyé** : le numéro est confirmé (677 077 159) mais la porte WhatsApp est fermée. On y entre par
+**SMS / appel / e-mail**, § 9.
 
 **Après l'envoi** : les cinq passent en `Contacted = Yes`, `wa_verified = yes` (seulement si le profil a été
 vu), `last_send_state = sent`, `stage = qualifying` — table `ENVOI_2409_3` (à créer). **Toute réponse se
@@ -253,10 +261,16 @@ fois aujourd'hui. Le numéro confirmé, c'est 677 077 159.
 
 ### 7.c · Si aucun des replis ne porte la boutique
 
-Les deux lignes passent **en réserve** (`stage = prospecting`, `wa_verified = no`) — **pas** en
-disqualification : ce ne sont pas des boutiques mortes, ce sont des numéros d'annuaire mal recopiés. On y
-revient quand un numéro fiable apparaît (une fiche Google, une carte de visite, un repérage). **Aucune
-relance, aucun réessai sur les numéros qui ont échoué.**
+**Royal Optic** reste **en réserve** (`stage = prospecting`, `wa_verified = no`) si 691 219 986 ne
+répond pas non plus — **pas** en disqualification : ce n'est pas une boutique morte, c'est un numéro
+d'annuaire mal recopié. On y revient quand un numéro fiable apparaît (une fiche Google, une carte de
+visite, un repérage).
+
+**K Vision Care, lui, n'est plus en réserve du tout** : son numéro est **confirmé** (`wa_verified = yes`)
+et ses portes de secours sont écrites au **§ 9**. C'est le seul prospect de la journée dont on sait, à
+coup sûr, à qui on parle.
+
+**Aucune relance, aucun réessai sur les numéros qui ont échoué.**
 
 ---
 
@@ -312,15 +326,31 @@ sans que personne ne le voie.
 
 ### 9.a · LE SMS (porte n° 1 — 677 07 71 59)
 
+**Version à envoyer (neutre — le nom du responsable n'est pas employé, voir ci-dessous) :**
+
 ```
-Bonjour Monsieur Kakeu. Votre site kvisioncare.com ne s'ouvre plus : erreur de connexion
-sécurisée. Le domaine est payé jusqu'en 2027 — c'est la vitrine qui est fermée.
-Je la remets en ligne proprement, sur votre nom. Je vous explique quand vous voulez ?
+Bonjour. Votre site kvisioncare.com ne s'ouvre plus : erreur de connexion sécurisée. Le
+domaine est bien à vous, payé jusqu'en 2027 — c'est la vitrine qui est fermée, pas le nom.
+Je la remets en ligne proprement, sous votre nom. Je vous explique quand vous voulez ?
 — Akwo King / AMK, Douala
 ```
 
-**247 caractères → 2 segments.** Six premiers mots pour **lui** (son nom, son site), un fait vérifiable,
-aucun prix, **une seule** demande, le nom à la fin.
+**291 caractères → 2 segments** (compté, pas estimé). Les six premiers mots sont pour **lui** (son site), le fait est
+vérifiable en dix secondes, aucun prix, **une seule** demande, le nom à la fin.
+
+**Variante nominative — à n'employer que si on est sûr de qui décroche :**
+
+```
+Bonjour Monsieur Kakeu. Votre site kvisioncare.com ne s'ouvre plus : erreur de connexion
+sécurisée. Le domaine est payé jusqu'en 2027 — c'est la vitrine qui est fermée.
+Je la remets en ligne proprement, sous votre nom. Je vous explique quand vous voulez ?
+— Akwo King / AMK, Douala
+```
+
+⚠️ **Pourquoi la version neutre part en premier** : le nom **KAKEU Djounessi** vient de **leur ancien
+site**, où il apparaissait comme *Général Manager*. C'était vrai **il y a deux ans** — on ne sait pas s'il
+est encore là. Le SMS neutre arrive quand même à la bonne personne ; le SMS nominatif, lui, se trompe de
+personne s'il est parti. **Après l'appel (§ 9.b), on saura qui parle : c'est là que le nom s'emploie.**
 
 ### 9.b · L'APPEL (porte n° 2 — même numéro, les appels vocaux sont ouverts)
 
