@@ -8,6 +8,12 @@ partie (Disc Optique Médicale et Tchaya Optique, eux, ont reçu le message 1 le
 public est nommé pour les cinq : c'est ce qui rend la personnalisation honnête. **Rien n'est envoyé à ce
 stade : ce fichier est la préparation, King envoie.**
 
+> ### La règle d'ouverture — d'abord (règle du 23/09, `sales/MESSAGES-2026-09-23-PERSUASION.md` §1)
+> **Le nom et le titre passent à la fin. Les six premiers mots sont pour lui** : son patient, son quartier,
+> sa page, son comptoir. Cinq messages de ce lot ont d'abord été écrits à l'ancienne mode (le nom en
+> ouverture, réutilisée de la vague du 21/09, qui est antérieure à la règle) — corrigés le 24/09 au soir.
+> Et **une seule demande** : « Je vous l'envoie ? » — pas « un oui suffit » + une porte de sortie.
+>
 > ### Les trois règles de ce lot
 > 1. **Vérifier le numéro sur WhatsApp avant d'écrire.** `wa_verified = unknown` pour les cinq : le numéro
 >    est celui publié par l'Ordre, pas un numéro confirmé sur WhatsApp. Un numéro sans compte, ça se voit en
@@ -30,14 +36,14 @@ son adresse comme « **derrière MAFF optique** » (`ayilaa.com`) — la boutiqu
 
 **Le message :**
 ```
-Bonjour Madame Manfo. Akwo King, AMK — Développement Web, Douala.
-Je fais les sites des opticiens : vos montures en photos, l'examen de la vue sur
-rendez-vous, et le contact en un clic sur WhatsApp.
-Un détail que j'ai remarqué : un centre médical de Bonadibong donne son adresse
-comme « derrière MAFF optique » — vous êtes un repère du quartier. Mais en ligne,
-tout ce qu'on trouve sur vous, ce sont deux annuaires d'entreprises avec un
-numéro de fixe : nulle part on ne voit vos montures.
-Je vous prépare un aperçu gratuit ? Un « oui » suffit.
+Bonjour Madame Manfo. Pour un opticien à Bonadibong, un patient qui cherche sur son
+téléphone tombe sur deux annuaires d'entreprises avec un numéro de fixe : pas de quoi
+voir vos montures, pas de quoi écrire.
+Votre boutique, elle, est déjà un repère : un centre médical voisin donne son adresse comme
+« derrière MAFF optique ». Il ne manque que le moment où un patient peut vous joindre —
+un bouton qui ouvre WhatsApp avec sa demande déjà écrite.
+Je vous la construis d'abord, vous la regardez sur votre téléphone, vous décidez après.
+Je vous l'envoie ?
 — Akwo King / AMK – Développement Web & Solutions Digitales
 ```
 
@@ -54,14 +60,13 @@ le vôtre — ne jamais le mentionner.)*
 
 **Le message :**
 ```
-Bonjour Madame Boudjeu. Akwo King, AMK — Développement Web, Douala.
-Je fais les sites des opticiens : vos montures en photos, l'examen de la vue sur
-rendez-vous, et le contact en un clic sur WhatsApp.
-Je vous ai trouvés sur une plateforme de rendez-vous en ligne : votre cabinet y
-est listé à Akwa, mais avec un numéro différent de celui de l'Ordre. Selon
-l'endroit où l'on vous trouve, ce n'est pas le même numéro.
-Une page à vous, avec un seul numéro et un bouton WhatsApp, règle ça.
-Je vous prépare un aperçu gratuit ? Un « oui » suffit.
+Bonjour Madame Boudjeu. Pour un opticien à Akwa, un patient qui cherche sur son téléphone
+tombe sur deux numéros différents — celui de la plateforme de rendez-vous n'est pas celui du
+tableau de l'Ordre : au mieux il hésite, au pire il n'appelle pas.
+Votre cabinet, vos montures et vos horaires existent déjà. Il ne manque que la page où tout est
+à la même place — avec un bouton qui ouvre WhatsApp et la demande déjà écrite.
+Je vous la construis d'abord, vous la regardez sur votre téléphone, vous décidez après.
+Je vous l'envoie ?
 — Akwo King / AMK – Développement Web & Solutions Digitales
 ```
 
@@ -83,13 +88,13 @@ la même adresse avec des numéros encore différents.
 
 **Le message :**
 ```
-Bonjour Monsieur Mveng Ateba. Akwo King, AMK — Développement Web, Douala.
-Je fais les sites des opticiens : vos montures en photos, l'examen de la vue sur
-rendez-vous, et le contact en un clic sur WhatsApp.
-Votre page Facebook vit bien — plus de 3 000 personnes la suivent. Mais le lien
-« site web » qu'elle porte ne mène plus nulle part : je viens de le vérifier,
-erreur 404. Un client qui clique dessus tombe sur une page d'erreur.
-Je vous prépare un aperçu gratuit ? Un « oui » suffit.
+Bonjour Monsieur Mveng Ateba. Pour un opticien à Akwa, un patient qui cherche sur son
+téléphone tombe sur votre page Facebook — plus de 3 000 personnes la suivent — mais le lien
+« site web » qu'elle porte ne mène plus nulle part : erreur 404, vérifiée aujourd'hui.
+Vos montures, vos horaires et votre équipe y sont déjà. Il ne manque que le moment où un
+patient peut vous joindre — un bouton qui ouvre WhatsApp avec sa demande déjà écrite.
+Je vous la construis d'abord, vous la regardez sur votre téléphone, vous décidez après.
+Je vous l'envoie ?
 — Akwo King / AMK – Développement Web & Solutions Digitales
 ```
 
@@ -109,14 +114,14 @@ cabinet ; une inscription administrative ne se commente jamais chez un client.
 
 **Le message :**
 ```
-Bonjour Monsieur Balla. Akwo King, AMK — Développement Web, Douala.
-Je fais les sites des opticiens : vos montures en photos, l'examen de la vue sur
-rendez-vous, et le contact en un clic sur WhatsApp.
-Vous êtes inscrit au tableau de l'Ordre — et c'est à peu près tout : quand on
-cherche votre nom sur un téléphone, on ne trouve rien de vous à Douala (si je me
-trompe, dites-le-moi). L'annuaire de l'Ordre compte 186 cabinets : personne ne
-lit jusqu'à une ligne.
-Je vous prépare un aperçu gratuit ? Un « oui » suffit.
+Bonjour Monsieur Balla. Pour un opticien à Douala, un patient qui cherche sur son téléphone
+ne tombe sur rien de vous — j'ai cherché, je n'ai trouvé que des homonymes au Maroc ; si je me
+trompe, dites-le-moi. Pas de quoi voir vos montures, pas de quoi écrire.
+Vous êtes inscrit au tableau de l'Ordre, parmi 186 cabinets : personne ne lit jusqu'à votre
+ligne. Il ne manque que l'endroit où un patient vous trouve et vous écrit d'un coup — un bouton
+qui ouvre WhatsApp avec sa demande déjà écrite.
+Je vous la construis d'abord, vous la regardez sur votre téléphone, vous décidez après.
+Je vous l'envoie ?
 — Akwo King / AMK – Développement Web & Solutions Digitales
 ```
 
@@ -131,14 +136,13 @@ son menu de navigation). Aucune page à eux, nulle part.
 
 **Le message :**
 ```
-Bonjour Monsieur Dongmo. Akwo King, AMK — Développement Web, Douala.
-Je fais les sites des opticiens : vos montures en photos, l'examen de la vue sur
-rendez-vous, et le contact en un clic sur WhatsApp.
-Aujourd'hui, la seule page au monde qui porte « Cavisa Optique » est vide — elle
-est hébergée chez un site de conseil étranger, et il n'y a rien dessus. C'est
-exactement ce qui manque : une page à votre nom, avec vos montures et un bouton
-WhatsApp.
-Je vous prépare un aperçu gratuit ? Un « oui » suffit.
+Bonjour Monsieur Dongmo. Pour un opticien à Douala, un patient qui cherche sur son téléphone
+tombe sur une page vide — la seule qui porte « Cavisa Optique », hébergée chez un site de conseil
+étranger : pas de quoi voir une monture, pas de quoi écrire.
+Votre cabinet et vos montures, eux, existent déjà. Il ne manque que l'endroit où on les voit et où
+un patient peut vous joindre — un bouton qui ouvre WhatsApp avec sa demande déjà écrite.
+Je vous la construis d'abord, vous la regardez sur votre téléphone, vous décidez après.
+Je vous l'envoie ?
 — Akwo King / AMK – Développement Web & Solutions Digitales
 ```
 

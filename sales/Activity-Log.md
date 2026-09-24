@@ -3475,3 +3475,39 @@ la réponse dans l'heure.
 
 Fichiers : `sales/Send-BATCH-2026-09-24-Opticiens.md` (les 5, avec sources et messages), bloc `BATCH_2409` du
 CRM (préparé ≠ envoyé), journal. **Rien n'est envoyé : prep/queue only, King envoie.**
+
+## 2026-09-24 · LA FAUTE D'OUVERTURE — « le nom et le titre passent à la fin » (attrapée par King)
+
+King a attrapé une faute que je venais de commettre **cinq fois dans le lot d'outreach du soir** : les
+messages ouvraient sur « Bonjour Madame Manfo. **Akwo King, AMK — Développement Web, Douala.** ». La règle
+existait pourtant, écrite le **23/09** : `sales/MESSAGES-2026-09-23-PERSUASION.md` §1 — **« Le nom et le titre
+passent à la fin. Les six premiers mots sont pour eux : leur patient, leur quartier, leur page, leur
+comptoir. »** (C'est la fenêtre des six secondes de WhatsApp dépensée en présentation, alors que la signature
+est déjà en bas.)
+
+**D'où venait la rechute, et c'est la vraie leçon** : j'ai réutilisé le gabarit de
+`sales/Vague1-Opticiens-2026-09-21.md` — **un modèle antérieur à la règle**. Un fichier validé avant la règle
+la réintroduit en silence dès qu'on le réutilise. **Conséquence : les fichiers-modèles portent désormais un
+avertissement en tête quand ils sont antérieurs à une règle qui les contredit** (fait pour la vague opticiens).
+
+**Ce qui a été corrigé — quatre fichiers vivants, pas les archives :**
+- **`sales/Send-BATCH-2026-09-24-Opticiens.md`** : les 5 messages réécrits sur le gabarit à jour — **six
+  premiers mots pour eux** (« Pour un opticien à Bonadibong, un patient qui cherche sur son téléphone… »),
+  le corps garde l'accroche vérifiée de chacun, et le mécanisme est dit en dix mots : **« Je vous la
+  construis d'abord, vous la regardez sur votre téléphone, vous décidez après. Je vous l'envoie ? »** (au
+  lieu de « je vous prépare un aperçu gratuit ? un oui suffit »). Signature en bas.
+- **`sales/Send-Soir-2026-09-23.md`** — les **trois relances qui partent demain** : le nom sort de
+  l'ouverture, **le reste est intact, mot pour mot** (elles restent sans reproche). Une note de correction
+  est en tête du fichier.
+- **`sales/DETECTION-FUITES-2026-09-24.md` §5** : le message type du cas « fuite » ouvrait aussi sur notre
+  nom — corrigé (c'est un modèle qu'on réutilisera).
+- **`PRE-FLIGHT.md`** : une route de plus — **« Écrire ou relire un message avant envoi »** → la règle de la
+  première ligne + la checklist de cinq lignes. C'est là que la prochaine rechute se fera arrêter.
+
+**Ce qu'on ne touche pas** : les packs du **18, 19, 21 et 22/09** (archives d'envois passés ou annulés) —
+la faute y est historique, on ne réécrit pas l'histoire ; le fichier-modèle du 21/09 porte un avertissement.
+
+**La checklist passée sur les 5 messages, comme prévu (30 secondes chacun)** : ① six premiers mots pour lui ✓
+② une perte (« pas de quoi voir vos montures, pas de quoi écrire »), pas un gain vague ✓ ③ **une seule
+demande** — « Je vous l'envoie ? » ✓ ④ ses mots (patient, quartier, montures, rendez-vous) ✓ ⑤ le test
+éthique : oui ✓.

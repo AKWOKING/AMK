@@ -84,15 +84,15 @@ C'est la table que `tools/outreach/scan_reviews.py` applique au texte qu'on lui 
 
 Ce qu'on dit — **au patron, en privé, une seule fois** :
 
-> Bonjour [nom], Akwo King, AMK — Développement Web, Douala.
-> Je regardais les avis publics de [établissement] avant de vous écrire : **trois personnes y racontent la
+> Bonjour [nom]. Pour un [métier] à [quartier], un patient qui cherche sur son téléphone tombe sur des avis
+> qui parlent de vous — et **trois personnes y racontent la
 > même chose** — on les appelle et personne ne rappelle.
 > Ce n'est pas une question de personnes, c'est un trou dans le parcours : pendant une consultation, un
 > appel qui tombe ne se rattrape pas, alors qu'un message écrit attend votre réponse.
 > Je ne propose pas de « corriger vos avis ». Je propose que le patient puisse **écrire et réserver à
 > n'importe quelle heure**, et que ça arrive sur le téléphone qui est déjà dans votre poche.
-> Je vous prépare un aperçu, gratuitement ? Un « oui » suffit — et si ce n'est pas le moment, dites-le
-> simplement, je m'arrête là.
+> Je vous la construis d'abord, vous la regardez sur votre téléphone, vous décidez après. Je vous l'envoie ?
+> — Akwo King / AMK – Développement Web & Solutions Digitales
 
 **Ce qu'on ne met jamais dans ce message :**
 
