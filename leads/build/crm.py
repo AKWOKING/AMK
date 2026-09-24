@@ -1675,9 +1675,10 @@ def _apply_state(out: list, table: dict, name: str) -> None:
 
 
 def _apply_jour(out: list) -> None:
-    """Les deux relevés, dans l'ordre : 22/09 (soir) puis 23/09 (matin)."""
+    """Les relevés, dans l'ordre : 22/09 (soir), 23/09 (matin), puis 24/09 (le fil Le Cristallin)."""
     _apply_state(out, JOUR_2209, "JOUR_2209")
     _apply_state(out, JOUR_2309, "JOUR_2309")
+    _apply_state(out, FIL_2409, "FIL_2409")
 
 
 
@@ -1691,6 +1692,41 @@ def _apply_jour(out: list) -> None:
 # sales/PROFIL-DES-OUI-2026-09-22.md : les écoles répondent 2,6 % du temps, contre 11,1 %
 # pour les prospects qui ont déjà payé pour être visibles quelque part. On ne prospecte
 # plus ce segment ; on ne l'efface pas non plus.
+# ── LE 24/09 · LA RÉPONSE DE LE CRISTALLIN — et ce n'est pas une réponse commerciale ──────────
+# 10:10 « Bonjour je vais te revenir » · 10:11 « Je suis malade » · 10:13 King répond par la santé,
+# sans un mot du projet, sans relance, sans prix. Décision : ON NE RELANCE PAS un malade. Le prochain
+# message est un message de santé, lundi 29/09, et le projet attend — le prix reste posé, il n'est ni
+# accepté ni refusé. On ne touche à RIEN sur sa page (son « ne change encore rien sans mon ok » du
+# 22/09 tient), et les trois compensations (WhatsApp Business, domaine 2027, fiche Google) restent
+# parquées jusqu'au dégel.
+FIL_2409 = {
+    "le-cristallin": {
+        "stage": "closing",            # rien n'est refusé : le prix est sur la table, le fil vit
+        "stage_since": "2026-09-23",   # l'étape n'a pas bougé — seule l'attente change de nature
+        "Follow-up date": "2026-09-29",
+        "last_send_state": "delivered",
+        "Reply": "24/09 10:10-10:11 — LUI : « Bonjour je vais te revenir » puis « Je suis malade ». "
+                 "Ce n'est PAS une réponse commerciale : ni un oui, ni un non, ni une question sur "
+                 "les 150 000. Conséquence écrite : aucune relance du projet d'ici lundi 29/09, et "
+                 "le message du 29/09 parle de sa santé avant tout.",
+        "Conversation_extra":
+            "24/09 (capture du fil) — 10:10 LUI : « Bonjour je vais te revenir » · 10:11 LUI : "
+            "« Je suis malade » · 10:13 KING, mot pour mot : « Bonjour Monsieur Messoua, Navré "
+            "d'apprendre cela. Je vous souhaite un prompt rétablissement ! Prenez tout le temps de "
+            "vous reposer, la santé passe avant tout. Le projet attendra votre retour en forme. Bon "
+            "courage et à très bientôt ! » → AUCUNE QUESTION, AUCUN PRIX, AUCUNE DATE : la bonne "
+            "réponse, et elle est déjà partie. Notre silence tient jusqu'au 29/09.",
+        "Notes_extra":
+            "État figé À DESSEIN : la page `lecristallin-concept.vercel.app` reste TELLE QUELLE "
+            "(gel décidé par King le 23/09 : « on ne touche plus rien »), les trois compensations du "
+            "§4 de `REVUE-CONTRATS-GRILLE-2026-09-23.md` (WhatsApp Business, domaine 2027, fiche "
+            "Google) restent parquées jusqu'au paiement, et l'abonnement ne se propose QU'À la "
+            "livraison payée. Message de santé prêt, à envoyer par King lundi 29/09 : "
+            "`sales/Queue-CRISTALLIN-2026-09-29.md`.",
+    },
+}
+
+
 WORKBOOK_TYPE_EXCEPTIONS = {
     # slug : type réel (le classeur les avait mis en « school » par défaut)
     "midas-touch-optic-center-mitoc": "other",   # opticien de Molyko (Buea)

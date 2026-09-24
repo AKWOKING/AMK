@@ -3191,3 +3191,51 @@ document patient, pas de « voulez-vous une vidéo », jamais de garantie de cla
 
 Les deux documents de vendredi portent maintenant le bloc, à l'endroit où il se pose : Univers l'insère
 après les six points factuels, UNI-LABO après la démonstration et les corrections.
+
+## 2026-09-24 · LE CRISTALLIN A RÉPONDU — et ce n'est pas une réponse commerciale
+
+*(Capture du fil fournie par King.)* **10:10** il écrit *« Bonjour je vais te revenir »*, **10:11**
+*« Je suis malade »*. À **10:13**, King répond : *« Bonjour Monsieur Messoua, Navré d'apprendre cela. Je
+vous souhaite un prompt rétablissement ! Prenez tout le temps de vous reposer, la santé passe avant tout.
+Le projet attendra votre retour en forme. Bon courage et à très bientôt ! »* — **aucune question, aucun
+prix, aucune date**. C'est la bonne réponse, et elle est déjà partie.
+
+### La décision, écrite pour ne pas être réinventée dans trois jours
+
+**On ne relance pas un malade.** Un seul message, **lundi 29/09** (`sales/Queue-CRISTALLIN-2026-09-29.md`
+— la version à envoyer est dedans, King envoie) : il parle de sa santé **avant** le projet, ne repose pas
+le prix, ne demande pas de nouvelles du site, n'ajoute aucune échéance et ne promet pas de relance. S'il ne
+répond pas : on attend son retour, avec une seule exception au 8/10, du même genre. Au-delà, plus rien —
+un client qui a le devis en main et une raison humaine de se taire n'a pas besoin qu'on lui rappelle qu'on
+existe.
+
+**Ce qui ne bouge pas :** la page reste **telle quelle** (gel de King ; son *« ne change encore rien sans
+mon ok »* du 22/09 tient) ; le prix reste **150 000, 50/50, jamais de remise** ; les trois compensations
+(WhatsApp Business, domaine 2027, fiche Google) restent **parquées à la livraison payée** ; l'abonnement ne
+se propose qu'à la livraison payée.
+
+### Enregistré dans le générateur, pas dans le CSV
+
+Nouveau bloc **`FIL_2409`** dans `leads/build/crm.py`, branché dans `_apply_jour` **après** les relevés du
+22 et du 23 : `stage=closing` (rien n'est refusé — le prix est sur la table, le fil vit), `stage_since`
+inchangé (l'étape n'a pas bougé, seule l'attente change de nature), **`Follow-up date = 2026-09-29`**, le
+verbatim des trois messages dans `Conversation`, et le renvoi vers la feuille du 29/09. Rebuild passé,
+verrou conforme : le CSV porte bien la nouvelle date et le nouveau texte. **La date de relance d'aujourd'hui
+(`2026-09-24`) est donc effacée au bon endroit** — sinon le plan du jour aurait demandé de relancer un
+client au lit.
+
+### ⚠️ Un recul du bac à sable m'a presque fait annoncer un faux défaut
+
+Avant d'écrire ce bloc, `leads/build/guard.py` avait **disparu** du disque et un test de `crm.py` produisait
+`stage=prospecting` pour nos **trois affaires** au lieu de `closing`. Première lecture possible : « le
+générateur rétrograde nos deals, c'est un défaut grave ». **C'était faux** : `git log` montrait un HEAD
+local au **commit de base** (`74542ab`), pendant que le distant était à `4bb010b` — le bac à sable avait
+reculé et faisait tourner un `crm.py` d'avant. Restauration par la procédure connue
+(`git fetch origin arena/01a0c495-amk` + `git reset --hard FETCH_HEAD`), puis **le test refait sur le bon
+fichier** : le CSV est *préservé* à l'identique, aucune rétrogradation.
+
+**La leçon, et elle est générale :** quand un instrument accuse le code committé, **compter d'abord
+`git log -1` contre `git ls-remote`** — sinon on part réparer un défaut qui n'existe que dans un vieux
+fichier. C'est la sixième fois qu'un constat se révèle être un défaut d'instrument, et la première où
+l'instrument, c'était le dépôt lui-même. `openpyxl` a été réinstallé au passage
+(`pip install --break-system-packages openpyxl`) — le recul emporte pip, comme d'habitude.

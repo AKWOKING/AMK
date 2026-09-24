@@ -2096,3 +2096,46 @@ you want AI", no "what is it worth to you", no price for a service that has no g
 exchange for something, no personal or patient documents, no "do you want a video", and never a promise of
 ranking. §33 is the companion of §25 (the page must show the real client) — this is how we find out what
 "real" means, without inventing it.
+
+---
+
+## §34 THE REPLY THAT IS NOT AN ANSWER — and the day the repository lied to me (24 Sep 2026, batch [33])
+
+King forwarded the WhatsApp thread: **Le Cristallin** wrote at 10:10 *"Bonjour je vais te revenir"* and at
+10:11 *"Je suis malade"*. At 10:13 he had already answered — health first, no question, no price, no date:
+*"Prenez tout le temps de vous reposer, la santé passe avant tout. Le projet attendra votre retour en
+forme."* Two lessons came out of a thread where nothing commercial happened.
+
+### 34.1 A human reply stops the clock
+
+A "reply" in a CRM is usually a buying signal. This one was the opposite: **a human event that suspends the
+commercial clock**, and treating it as an opening would have been the worst thing we could do. So the state
+is written so that it cannot be reinvented three days from now by whoever reads the pipeline:
+
+- **the stage does not move** — `closing` is still true (the price is on the table, neither accepted nor
+  refused); what changed is the *nature of the wait*, and the field that records it is the date, not the
+  stage. Downgrading the deal because the client is ill would be a lie in the other direction;
+- **the follow-up date moves to a health-first message** (Monday 29/09), whose full text is written and
+  waits in `sales/Queue-CRISTALLIN-2026-09-29.md`: it asks nothing, offers nothing, promises no call back,
+  and does not even mention the project beyond *"nothing is urgent"*;
+- **if he does not answer, we do not chase.** One exception at M+14 days, same tone. A client holding a
+  quote who has a human reason to be silent does not need to be reminded that we exist;
+- **nothing else moves either**: the page stays exactly as it is (his *"ne change encore rien sans mon ok"*
+  of 22/09 still stands, and a sick client is the worst possible moment to change anything), the price
+  stays 150 000 with no discount, and the three compensations stay parked until a paid delivery.
+
+### 34.2 And the day the repository lied to me
+
+Before writing that state, `leads/build/guard.py` had vanished and a test run of `crm.py` reported
+`stage=prospecting` for **all three of our live deals** instead of `closing`. The obvious reading — "the
+generator silently downgrades our deals, that is a serious defect" — was **wrong**: `git log` showed the
+local HEAD sitting at the branch's **base commit** while the remote was twelve commits ahead. The sandbox
+had rolled back, and I was testing a `crm.py` from before the state blocks existed. Recovery is the known
+procedure (`git fetch origin arena/01a0c495-amk` + `git reset --hard FETCH_HEAD`); then the same test on
+the real file showed the CSV is preserved byte for byte. **No defect existed.**
+
+The rule, and it is the sixth member of the same family (after the six false positives of `audit_a11y`, the
+mismeasured button names, the two failed witnesses and the template that "blocked" itself): **when an
+instrument accuses committed code, compare `git log -1` against `git ls-remote` before touching anything.**
+The repository itself is an instrument, and a rolled-back workspace is an instrument that lies about what
+we shipped. `openpyxl` was reinstalled in passing — a rollback always takes pip with it.
