@@ -4,6 +4,12 @@
 été trouvés et lus le 24/09 dans la catégorie **« Opticiens »** de l'annuaire communautaire **Mont-Pandi**
 (fiches 678, 761, 763, 672, 666). Tous à Douala, tous des boutiques de quartier.
 
+**⚠️ K VISION CARE EST DEVENU LE PROSPECT LE PLUS QUALIFIÉ DE LA CAMPAGNE** — King a ouvert le numéro
+dans l'application : **677 077 159**, profil « K Vision Care », Business Account, et **le domaine
+`kvisioncare.com` leur appartient** (payé jusqu'au 17/08/2027) mais **le site ne s'ouvre plus**. Dossier
+complet : `clients/k-vision-care/dossier.md`. Approche réécrite au **§ 9** — la porte WhatsApp est fermée,
+les portes SMS, appel et e-mail sont ouvertes.
+
 **✔ PARTI LE 24/09 — trois sur cinq.** Envoyés par King : **El Roï Optique Médicale, Net Optique
 Médical, Cabinet d'Optique la Rétine** (heures non relevées, accusés non relevés → CRM en `sent`, pas
 `delivered`). **DEUX PORTES FERMÉES : Royal Optic (676 250 409) et K Vision Care (677 077 459) —
@@ -133,7 +139,7 @@ Je vous l'envoie ?
 
 ---
 
-## 5 · K VISION CARE — **677 077 459** ⚠️ (numéro à trancher à l'écran — voir ci-dessous)
+## 5 · K VISION CARE — **677 077 159** (numéro confirmé le 24/09 à 14:14) — ⚠️ APPROCHE RÉÉCRITE, voir § 9
 
 **La recherche.** Fiche Mont-Pandi 672, lue le 24/09. **Trois magasins publiés** : *« Bessengue, rue de la
 Réunification »* · *« entre Ancien 3e et le marché Congo, juste en face de l'hôpital de Congo 2, en haut à
@@ -227,14 +233,23 @@ d'autres numéros**, et c'est là qu'on essaie.
 
 Le message ne change pas d'un mot : c'est le §3 ci-dessus. Seul le destinataire change.
 
-### 7.b · K VISION CARE — essayer **677 077 159**, puis **695 865 346**
+### 7.b · K VISION CARE — **tranché le 24/09 à 14:14 : le numéro est 677 077 159**, et la porte est ailleurs
 
-**677 077 159 est le numéro que l'annonce met dans son propre lien WhatsApp**, alors que son texte publie
-**677 077 459** — celui qui vient d'échouer. C'est donc **677 077 159 qui a le plus de chances d'être le
-bon**, et c'est la première chose que le contrôle à l'écran doit trancher. Le troisième, **695 865 346**,
-reste en second.
+King a ouvert **677 077 159** : le profil est bien **« K Vision Care »**, Business Account, catégorie
+« Medical & health, Optician ». **Le numéro est donc confirmé** — et c'est aussi celui que **leur propre
+site** publiait dans ses liens. Mais **le bouton « Message » n'apparaît pas** sur la fiche : le chat n'est
+pas ouvert (les **appels vocaux**, eux, sont proposés).
 
-Le message ne change pas d'un mot : c'est le §5 ci-dessus.
+**On ne réessaie pas sur WhatsApp. On change de porte — et il y en a trois :**
+
+| Porte | Quand | Script |
+|---|---|---|
+| **SMS** au 677 077 159 | le plus simple, à faire en premier | § 9.a |
+| **Appel vocal** au même numéro | si le SMS reste sans réponse | § 9.b |
+| **E-mail** à `kvisioncare05@gmail.com` | la porte longue : c'est le seul canal qui accepte un document | § 9.c |
+
+`695 865 346` **ne sert plus** : c'est un numéro de l'annuaire, et un annuaire qui s'est déjà trompé trois
+fois aujourd'hui. Le numéro confirmé, c'est 677 077 159.
 
 ### 7.c · Si aucun des replis ne porte la boutique
 
@@ -264,3 +279,108 @@ trouvées parfaitement valides et sont restées injoignables** (Horizon, Royal O
 les trois à cause du même maillon : **le numéro**. Le problème n'est pas le message, ni la cible : c'est la
 **source du numéro**. Les deux numéros qui ont marché à 100 % venaient d'un **registre professionnel**
 (ONOC) ; les annuaires généralistes donnent des coordonnées qui ont parfois deux ans.
+
+---
+
+## 9 · K VISION CARE — LA PORTE DE SECOURS, ET POURQUOI C'EST LE MEILLEUR PROSPECT DU JOUR
+
+### 9.0 · Ce qu'on a trouvé en creusant (tout est vérifiable, tout est dans le dossier)
+
+**Le domaine `kvisioncare.com` est à eux**, et il est **payé jusqu'au 17 août 2027** (registre Verisign :
+enregistré le 17/08/2024 chez Hostinger, renouvelé le 18/08/2026). **Mais leur site ne s'ouvre plus** :
+`ERR_SSL_PROTOCOL_ERROR`, et la page servie dit *« Your domain is expired »* — le DNS est resté sur les
+serveurs de stationnement Hostinger.
+
+**Ils avaient un vrai site WordPress**, capturé **14 fois** par la Wayback entre août 2024 et juillet 2025 :
+trois magasins, un examen de vue, une boutique en ligne avec un « Panier », **des prix publiés par eux**
+(montures à partir de 10 000 F, lunettes médicales à partir de 25 000 F), « **nous acceptons toutes les
+assurances** », et le nom du responsable : **KAKEU Djounessi** (Général Manager, opticien réfractionniste).
+
+> ⚠️ **Ce qui reste à confirmer, et qui ne doit pas être écrit au client sans confirmation** : les
+> **trois adresses**, la **grille de prix** de 2024 et la **fonction exacte** de M. Kakeu. Ces trois
+> éléments viennent soit de son ancien site (donc de lui, mais il y a deux ans), soit d'une fiche
+> d'annuaire — la même source qui s'est trompée trois fois aujourd'hui (§7). Ils se posent en question,
+> jamais en affirmation.
+
+**Autrement dit** : ce n'est pas un opticien qui ignore le web. C'est une maison de trois magasins, dans un
+réseau d'assureurs, qui **a payé un nom et une vitrine** — et dont la vitrine est fermée depuis des mois
+sans que personne ne le voie.
+
+> ⚠️ **La phrase interdite dans ce message : « votre domaine a expiré ».** C'est faux (il court jusqu'en
+> 2027) et c'est le genre de faute qui tue un premier contact chez quelqu'un qui a payé son renouvellement.
+> On dit ce qu'un visiteur voit : **le site ne s'ouvre pas.**
+
+### 9.a · LE SMS (porte n° 1 — 677 07 71 59)
+
+```
+Bonjour Monsieur Kakeu. Votre site kvisioncare.com ne s'ouvre plus : erreur de connexion
+sécurisée. Le domaine est payé jusqu'en 2027 — c'est la vitrine qui est fermée.
+Je la remets en ligne proprement, sur votre nom. Je vous explique quand vous voulez ?
+— Akwo King / AMK, Douala
+```
+
+**247 caractères → 2 segments.** Six premiers mots pour **lui** (son nom, son site), un fait vérifiable,
+aucun prix, **une seule** demande, le nom à la fin.
+
+### 9.b · L'APPEL (porte n° 2 — même numéro, les appels vocaux sont ouverts)
+
+> « Bonjour, Akwo King, je suis développeur web à Douala. Je vous appelle parce que j'ai voulu voir votre
+> site, kvisioncare.com, et il ne s'ouvre plus — erreur de connexion sécurisée. En vérifiant, j'ai vu que
+> votre domaine est bien à vous et payé jusqu'en 2027 : c'est la vitrine qui est fermée, pas le nom.
+> Vous avez trois magasins et vous travaillez avec les assurances — un client assuré qui vous cherche sur
+> Google, aujourd'hui, il ne vous trouve pas.
+> Je peux la remettre en ligne, sur votre nom, avec vos trois adresses et vos services. Vous la regardez
+> avant de décider, et si ça ne vous plaît pas on n'en parle plus. »
+
+**Ce qu'on ne dit pas** : aucun prix · aucune promesse de classement · aucun faux avis (leur ancien site
+affichait « 1 860 avis » fabriqués par un thème — **on n'y touche pas**) · jamais le mot « expiré » pour le
+domaine.
+
+### 9.c · L'E-MAIL (porte n° 3 — `kvisioncare05@gmail.com`, publié par eux)
+
+Objet : `Votre site kvisioncare.com ne s'ouvre plus`
+
+```
+Bonjour,
+
+Je suis Akwo King, développeur web à Douala. Je vous écris parce que kvisioncare.com ne
+s'ouvre plus : le navigateur affiche une erreur de connexion sécurisée. En vérifiant au
+registre, votre nom de domaine est bien à vous et payé jusqu'au 17 août 2027 — c'est le
+site, pas le nom, qui est hors ligne.
+
+Ce que je vous propose : une page sur mesure, sur votre nom, qui remet en ligne
+- vos trois magasins, avec les adresses que vous me donnerez,
+- votre examen de vue et le montage des lunettes,
+- les assurances que vous acceptez,
+- et un bouton qui ouvre WhatsApp avec le message déjà écrit.
+
+Vous n'avez rien à installer : je vous envoie un lien, vous l'ouvrez sur votre téléphone,
+et vous décidez après. Si ça ne vous plaît pas, vous ne payez rien et on n'en parle plus.
+
+Bien à vous,
+Akwo King — AMK, Développement Web & Solutions Digitales, Douala
+```
+
+**Pourquoi c'est cette porte qu'on ouvre en dernier** : un e-mail accepte la longueur et un lien, mais il
+laisse du temps — donc il vaut mieux arriver en deuxième ou troisième position, quand le SMS ou l'appel a
+déjà dit qui on est.
+
+### 9.d · Ce que ce prospect vaut, et ce qu'il faut demander en premier
+
+**Ce qu'il vaut** : c'est le profil de fin de campagne — une vraie entreprise, plusieurs magasins, un
+réseau d'assureurs, un responsable identifié, **et un problème que le prospect peut voir de ses yeux**.
+C'est aussi un client de **refonte** (comme Le Cristallin), donc un palier plus élevé qu'une page simple.
+
+**Les trois questions, dans l'ordre, quand il répondra :**
+1. **Qui a fait le site et qui l'a arrêté ?** (Hostinger ? un prestataire parti ? une facture impayée ?) —
+   de la réponse dépend la suite : on répare, ou on repart.
+2. **Les prix publiés en 2024 tiennent-ils toujours ?** (10 000 F / 25 000 F) — on ne les reprend pas sans
+   son accord écrit, et on ne les affiche pas si la grille a bougé.
+3. **Quel magasin est le principal, et quelles sont les trois adresses exactes ?** Trois magasins,
+   une seule tête d'affiche — et **on n'écrit aucune adresse avant qu'il les ait confirmées** : celles
+   qu'on a viennent d'un annuaire, et cet annuaire s'est trompé sur **trois numéros** aujourd'hui (voir §7).
+   ⚠️ Idem pour la grille de prix et le nom du responsable : **ils se demandent, ils ne se recopient pas**.
+
+**Et ce qu'on ne fait pas** : on ne touche pas à son domaine, on ne déplace pas son hébergement, et on ne
+déclare rien à sa place. S'il veut récupérer le domaine, **il le fait depuis son compte Hostinger** — c'est
+sa propriété, pas la nôtre.

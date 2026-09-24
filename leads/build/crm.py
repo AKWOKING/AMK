@@ -1188,6 +1188,8 @@ DOSSIERS = {
     # le dossier de travail RÉEL de Cavisa (inspiration, notes de build) — il est passé en `demo`
     # le 24/09 à 13:16, quand M. Dongmo a répondu : « Beaucoup de manquement mais c'est appréciable. »
     "cavisa-optique": "clients/cavisa/",
+    # le dossier de recherche le plus complet de la campagne (RDAP + Wayback + captures de King)
+    "k-vision-care": "clients/k-vision-care/",
     "centre-medical-de-bonanjo": "clients/_mockups/bonanjo.jpg",
     "2k-labo-yassa": "clients/_mockups/labs/2k-labo.jpg",
     "interlabo-akwa": "clients/_mockups/labs/interlabo.jpg",
@@ -2494,15 +2496,32 @@ ENVOI_2409_3 = {
             "Royal Optic, envoyer le même message (§7 du dossier d'envoi).",
     },
     "k-vision-care": {
-        "Contacted": "No", "wa_verified": "no", "last_send_state": "not_sent",
-        "wa_number_note": "WHATSAPP INDISPONIBLE au 677 077 459 (constaté par King, 24/09). "
-                          "DEUX AUTRES NUMÉROS PUBLIÉS : 677 077 159 (celui du lien de l'annonce, qui "
-                          "contredit son propre texte) et 695 865 346 — à vérifier dans l'application.",
+        # ⚠️ LE NUMÉRO CHANGE : 677 077 459 (annuaire, injoignable) → **677 077 159**, celui que King a
+        # ouvert dans l'application le 24/09 à 14:14 (profil « K Vision Care », Business Account) et
+        # celui que leur PROPRE ancien site publiait dans ses liens WhatsApp. `wa_verified = "yes"` :
+        # le numéro est bien à eux. Mais **le chat n'est pas ouvert** — voir `last_send_state`.
+        "Contacted": "No", "wa_verified": "yes", "wa_number": "677 077 159",
+        "last_send_state": "not_sent",
+        "wa_number_note": "NUMÉRO CONFIRMÉ : 677 077 159 (profil « K Vision Care », Business Account, "
+                          "vu par King le 24/09 14:14 ; même numéro dans les liens de leur propre site). "
+                          "⚠️ Le bouton « Message » n'apparaît pas sur la fiche — le chat n'est pas "
+                          "ouvert ; les appels vocaux sont proposés. Portes restantes : SMS · appel · "
+                          "e-mail kvisioncare05@gmail.com.",
+        "site_url": "kvisioncare.com — DOMAINE À EUX, SITE HORS LIGNE (ERR_SSL_PROTOCOL_ERROR)",
         "Notes_extra":
-            "24/09 — TROISIÈME LOT : ENVOI IMPOSSIBLE sur le numéro principal. WhatsApp refuse "
-            "677 077 459 — exactement le numéro dont l'annonce se contredisait (texte 677 077 459, lien "
-            "677 077 159), ce qui rend le contrôle à l'écran encore plus nécessaire. Deux autres numéros "
-            "à essayer : 677 077 159 et 695 865 346. Le message reste celui du §5 du dossier d'envoi.",
+            "24/09 — TROISIÈME LOT : ENVOI IMPOSSIBLE. WhatsApp refuse d'abord 677 077 459 (numéro "
+            "d'annuaire) ; King ouvre ensuite 677 077 159 dans l'application : le profil est bien « K "
+            "Vision Care », mais le chat n'est pas ouvert (pas de bouton Message, appels vocaux "
+            "proposés). ⚠️ **Prospect de premier ordre** : ils ONT un domaine payé jusqu'au 17/08/2027 "
+            "(RDAP Verisign : enregistré 17/08/2024 chez Hostinger, renouvelé le 18/08/2026) et un vrai "
+            "site WordPress que la Wayback a capturé 14 fois entre le 17/08/2024 et le 12/07/2025 — "
+            "aujourd'hui le DNS est sur NS1.DNS-EXPIRED.COM et le site ne s'ouvre plus. Leur ancien site "
+            "publiait : montures à partir de 10 000 F, lunettes médicales à partir de 25 000 F, "
+            "« nous acceptons toutes les assurances », trois magasins, et le nom du responsable — "
+            "**KAKEU Djounessi** (Général Manager / opticien réfractionniste). Dossier complet : "
+            "`clients/k-vision-care/dossier.md`. ⚠️ Ne jamais reprendre les faux avis de leur ancien "
+            "site (gabarits de thème : 1 860 / 1 630 / 2 100 avis, lorem ipsum, photos de banque "
+            "d'images).",
     },
 }
 

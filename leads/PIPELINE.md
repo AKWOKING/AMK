@@ -52,11 +52,11 @@
 | Bely Optique Médicale | Douala | 696 85 52 42 | `L3589` |
 | Cabinet Dentaire The Skye | Douala (Bonamoussadi) | 677 79 69 99 | `L53` |
 | Cabinet Dentaire YAKS | Douala (Logbessou) | 672 70 20 78 | `L54` |
-| Cabinet d'Optique la Rétine | Douala (Akwa) | 695 474 364 | `L3633` |
+| Cabinet d'Optique la Rétine | Douala (Akwa) | 695 474 364 | `L3652` |
 | Centre Médical de Bonanjo | Douala (Bonapriso, ancien aéroport) | 694 57 22 77 | `L2557` |
 | Disc Optique Médicale | Douala | 677 53 35 68 | — |
 | Doyoan Optic | Douala | 653 85 27 49 | `L3589` |
-| El Roï Optique Médicale | Douala (Village) | 693 127 302 | `L3630` |
+| El Roï Optique Médicale | Douala (Village) | 693 127 302 | `L3651` |
 | Espace Lunetterie | Douala | 677 34 24 62 | `L3452` |
 | Fashion Vision | Douala | 656 22 38 63 | `L3637` |
 | L'Opticien Bali SARL | Douala (Bali) | 670 27 60 65 | `L22` |
@@ -65,7 +65,7 @@
 | MegaOptic | Douala | 698 82 10 27 | `L3520` |
 | Midas Touch Optic Center (MITOC) | Buea (Molyko, opp former police station, Malingo) | 678908962 | `L14` |
 | Médina Optic | Douala | 699 93 93 34 | `L3520` |
-| Net Optique Médical | Douala (Akwa) | 675 785 930 | `L3631` |
+| Net Optique Médical | Douala (Akwa) | 675 785 930 | `L3652` |
 | St. Theresa International Bilingual Comprehensive College (STIBCCOL) | Buea (Molyko) | 679151075 | `L1698` |
 | Tchaya Optique | Douala | 696 79 01 73 | `L3524` |
 
@@ -114,7 +114,7 @@
 | Inter Comprehensive High School (ICHS) Great Soppo | Buea (Great Soppo) | — | — |
 | Isalyd Corporation | Douala | 694 85 87 46 | — |
 | JiredOptic Med | Douala | 696 26 50 31 | — |
-| K Vision Care | Douala (Bessengue · Ancien 3e · Ndogpassi) | 677 077 459 | `L3634` |
+| K Vision Care | Douala (Bessengue · Ancien 3e · Ndogpassi) | 677 077 159 | `L3657` |
 | KYLAYA LABO | Douala (Bali, 189 rue des Manguiers) | 696 78 77 78 | — |
 | L'Opticien SARL | Douala | 694 33 65 82 | — |
 | LABO-PHANUEL | Douala (Akwa) | 243 17 94 71 | `L60` |
@@ -141,7 +141,7 @@
 | Presbyterian Comprehensive Secondary School Bonamoussadi (PCSS) | Douala (Bonamoussadi) | — | `L2596` |
 | Presbyterian Girls Secondary School (PGSS) Limbe | Limbe | — | — |
 | Rainforest International School (RFIS) | Yaoundé (SIL, BP 1299) | 677937162 | — |
-| Royal Optic | Douala (Bali) | 676 250 409 | `L3632` |
+| Royal Optic | Douala (Bali) | 676 250 409 | `L3655` |
 | Saint Anne's High School Limbe (SAHISCOL) | Limbe (New Town) | 682122959 | `L2333` |
 | Saint Bernard High School (SBHS) | Buea (Molyko) | — | — |
 | Salvation Bilingual High School (Molyko-Buea) | Buea (Molyko) | — | `L1656` |

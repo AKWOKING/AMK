@@ -30,9 +30,10 @@ LOT 3 (préparé le 24/09, PAS ENVOYÉ). Repères publiés par la boutique elle-
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 1 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 2 ligne(s).*
 
 `L3630` · 1. **El Roï Optique Médicale** (Village) · 693 127 302 — repli publié 670 790 215
+`L3651` · **Partis** (King, heures et accusés non relevés → CRM en `sent`) : **El Roï Optique Médicale** (693 127 302) ·
 
 ---
 

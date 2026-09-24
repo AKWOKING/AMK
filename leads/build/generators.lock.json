@@ -1,6 +1,6 @@
 {
  "digests": {
-  "leads/build/crm.py": "25129084a9cf8051",
+  "leads/build/crm.py": "1592da47913d11fd",
   "leads/build/views.py": "1c18139a7f9a92bd",
   "leads/build/records.py": "7c77bd2042d527ac",
   "leads/build/rebuild.sh": "e1bbf5d8a26f5aba",

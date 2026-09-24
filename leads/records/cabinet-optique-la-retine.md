@@ -30,9 +30,10 @@ LOT 3 (préparé le 24/09, PAS ENVOYÉ). Repère publié : Akwa, « non loin de 
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 1 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 2 ligne(s).*
 
 `L3633` · 4. **Cabinet d'Optique la Rétine** (Akwa) · 695 474 364
+`L3652` · **Net Optique Médical** (675 785 930) · **Cabinet d'Optique la Rétine** (695 474 364).
 
 ---
 
