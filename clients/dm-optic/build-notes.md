@@ -131,3 +131,77 @@ règle du portique de déploiement : *« Not verified on a phone = not sent. »*
 - **Aucune promesse** de classement, de délai, de nombre de patients.
 - Les deux images sont des **mises en situation** : dès qu'il envoie ses photos, elles prennent leur
   place (c'est écrit sur la page, sous les deux images).
+
+---
+
+# 7 · v2 — le virage patient, et les dégradés animés (24/09, après la v1)
+
+## 7.1 La phrase de King, et ce qu'elle a déplacé
+
+> *« the demo seems to speak more to the prospect, but it's supposed to speak to the patient »*
+
+King a raison, et la faute était de conception, pas de style : la v1 racontait **au cabinet** sa propre
+histoire (« le registre vous connaît depuis 2016, le web non », « voici les six champs qu'il vous
+manque »). Un patient qui tombe sur cette page apprend que l'opticien n'avait pas de page — il
+n'apprend pas **quoi apporter, ni comment prendre rendez-vous**. La v2 part de la seule question qui
+compte : *« puis-je venir, et comment ? »*
+
+**Règle retenue, valable pour tous les cabinets de santé :** la preuve (registre, inscription, presse)
+ne disparaît pas, elle **change de rôle** — elle ne vend plus le travail au patron, elle **rassure le
+patient** (« un opticien inscrit, un titulaire nommé »). Le texte qui s'adresse au propriétaire ne vit
+plus sur la page : il vit dans `clients/dm-optic/a-completer.md`, un document qui part dans la
+conversation WhatsApp.
+
+## 7.2 Ce qui a changé sur la page, section par section
+
+| Section | v1 (écartée) | v2 (en ligne après redéploiement) |
+|---|---|---|
+| Premier écran | la phrase au cabinet + la carte d'identité | **« DM OPTIC, votre opticien à Douala. »** · surtitre porteur du mot-clé (« Opticien à Douala · inscrit à l'Ordre depuis 2016 ») · une phrase de service, puis **deux gestes** : écrire sur WhatsApp (message pré-rempli), appeler |
+| Les actes | six cartes, une image | six actes **avec « À apporter »** sur chacun (ordonnance, ancienne monture…) — c'est ce qui manquait au patient |
+| Le déroulé | absent | **trois étapes** : WhatsApp → la réponse → la visite |
+| La preuve | « le registre vous connaît, le web non » | **« Un opticien inscrit, un titulaire nommé »** : n° 021/2016, arrêté 0382, M. Domche Noumbi, *Echos Santé* mars 2023 |
+| Les questions | absent | **cinq questions fréquentes** de patient : où · faut-il une ordonnance · une monture cassée · les horaires · le prix — les cinq sont dans le schéma `FAQPage`, **mot pour mot** |
+| Contact | deux utilitaires | deux gestes, puis **copier le numéro** et **enregistrer la fiche .vcf** ; barre d'action fixe en bas d'écran sur téléphone |
+| Note au cabinet | six champs « à confirmer » **sur la page** | **sortie de la page** → `clients/dm-optic/a-completer.md` (huit points, dont la validation des actes et une phrase de lui) |
+
+**Ce qu'on n'a pas inventé** (inchangé, et c'est le cœur du dossier) : aucune adresse, aucun horaire,
+aucun prix, aucune marque, aucune assurance, **aucun avis**. Le prix est traité comme une question de
+patient (« combien coûte une paire ») dont la réponse renvoie au cabinet — pas comme un tarif affiché.
+
+## 7.3 Les dégradés animés du premier écran (la demande de King)
+
+Trois couches, **transform uniquement** (aucun `filter`, aucun repaint), toutes coupées par
+`prefers-reduced-motion` et jamais allumées sans JavaScript :
+
+| Couche | Ce que c'est | Mouvement |
+|---|---|---|
+| `.wash` | trois `radial-gradient` (cachet `#1A3F86` 20 % · braise `#E0703A` 12 % · bleu clair `#4E7BD8` 15 %) | `drift` **26 s** ease-in-out alternate — translation + échelle ±3 % |
+| `.lensring` | anneau SVG, dégradé linéaire `#7FA6E8 → #2A5CB8 → #E0703A`, deux cercles | `spin` **24 s** linéaire — la rotation d'un verre |
+| `.band::before` | le même lavis, sur la bande sombre | `drift` **32 s** |
+
+Budget de mouvement toujours respecté : **un** moment d'entrée (la carte qui se pose, l'anneau qui se
+trace en 950 ms), les révélations au défilement (IntersectionObserver, jamais d'écouteur de défilement),
+deux retours d'état. Les dégradés sont **du décor** : ils vivent sous le contenu, en `z-index: 0`,
+`pointer-events: none`, et ne portent aucune information.
+
+## 7.4 Les contrôles du 24/09 au soir (après réécriture)
+
+| Contrôle | Résultat |
+|---|---|
+| `audit_html.py` | **0 constat** sur **229 passages de texte** (bureau et mobile) |
+| `audit_a11y.py --strict` | **0 faute A/AA, 0 avertissement** |
+| `audit_hero.py` | **0 faute, 0 avertissement** |
+| `check_inline_js.py` | **rc 0** — 4 blocs `<script>` compilés |
+| `audit_images.py` | 0 faute (0 image comptée : les deux photos sont embarquées en base64 — limite connue de l'outil) |
+| `audit_aeo.py` | ✓ schéma complet (`Optician`, `PostalAddress`, `ContactPoint`, `Person`, `PropertyValue`, `FAQPage` + 5 `Question`) · `noindex` voulu sur une page de travail |
+| `node tools/qa/test_dmoptic_page.mjs` | **38/38** — dont : chaque adresse WhatsApp statique = le texte français **encodé exactement comme le fera le JavaScript**, les 5 questions du schéma **mot pour mot** celles de la page, le bloc `prefers-reduced-motion` qui arrête **aussi** `.wash` et `.lensring`, et la page qui reste lisible si le script de mouvement plante |
+
+**Toujours pas fait, et qu'on dit** : aucune capture d'écran, aucun mockup — le bac n'a **pas de
+navigateur**. Le premier écran, les dégradés en vrai, l'œil : c'est King, sur un téléphone. Règle du
+portique : *« Not verified on a phone = not sent. »*
+
+## 7.5 Après le redéploiement
+
+`hosting/previews/dmoptic/` (**le dossier entier**, `index.html` + `og.jpg`) → `--url
+https://dmoptic.vercel.app` déjà recollée dans le fichier construit (`og:url`, `og:image`) → puis le
+message de `sales/Send-DM-OPTIC-2026-09-24.md` §1. **Un seul redéploiement.**

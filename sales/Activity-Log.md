@@ -4055,3 +4055,45 @@ page est en ligne et qu'il a répondu — la donnée dit maintenant la vérité 
 **Ce qui reste** : déployer le dossier (King), recoller l'adresse (`--url`), ouvrir le lien sur un
 téléphone — **puis** envoyer la carte du lien et le texte de `sales/Send-DM-OPTIC-2026-09-24.md`.
 **On n'envoie pas une adresse devinée.**
+
+---
+
+## 2026-09-24 (soir, tard) — **DM OPTIC : LA PAGE NE PARLAIT PAS AU BON MONDE — RÉÉCRITE PATIENT, PREMIER ÉCRAN EN DÉGRADÉS ANIMÉS**
+
+**Le mot de King** (verdict, et il prime) : *« the demo seems to speak more to the prospect, but it's
+supposed to speak to the patient »* — plus deux demandes : **des dégradés animés dans le premier
+écran**, et une **relecture des documents** (SEO/AEO §31, SITE COPY LAW §11/§11b) avant d'écrire.
+
+**La faute était de conception, pas de style.** La v1 racontait au cabinet sa propre histoire (« le
+registre vous connaît depuis 2016, le web non » ; « voici les six champs qu'il vous manque »). Un
+patient qui tombe dessus apprend que l'opticien n'avait pas de page ; il n'apprend pas **quoi apporter,
+ni comment venir**. Réécriture complète de `demos/dmoptic-v1.tpl.html` : h1 **« DM OPTIC, votre
+opticien à Douala. »**, surtitre porteur du mot-clé, six actes **avec « À apporter »**, **trois étapes**
+(WhatsApp → réponse → visite), la preuve requalifiée en **réassurance patient** (« Un opticien inscrit,
+un titulaire nommé » : n° 021/2016, arrêté 0382, M. Domche Noumbi, *Echos Santé* mars 2023), **cinq
+questions fréquentes de patient**, contact à deux gestes + **copier le numéro** + **fiche .vcf**, barre
+d'action fixe sur téléphone.
+
+**Les dégradés animés** (demande explicite) : `.wash` — trois `radial-gradient` (cachet, braise, bleu
+clair) animés par `drift` **26 s** ; `.lensring` — anneau SVG au dégradé `#7FA6E8 → #2A5CB8 → #E0703A`,
+`spin` **24 s** ; `.band::before`, `drift` **32 s**. **Transform uniquement**, jamais de `filter`,
+**coupés par `prefers-reduced-motion`**, et jamais allumés sans JavaScript.
+
+**Ce qui est sorti de la page** : la note au cabinet (huit informations manquantes, dont la validation
+des actes et une phrase de lui). Elle vit maintenant dans **`clients/dm-optic/a-completer.md`**, un
+document qui part dans la conversation — la règle retenue est écrite dans `clients/dm-optic/build-notes.md`
+§7 et vaut pour tous les cabinets de santé : *la preuve change de rôle, elle rassure le patient au lieu
+de vendre le travail au patron*.
+
+**Contrôles (24/09 au soir)** : `audit_html` **0 constat** (229 passages) · `audit_a11y --strict` **0** ·
+`audit_hero` **0** · `check_inline_js` **rc 0** (4 blocs) · `audit_aeo` ✓ (`Optician` + `FAQPage`, 5
+questions mot pour mot) · `test_dmoptic_page.mjs` **38/38** (25 auparavant) — dont un contrôle neuf qui
+compare **chaque adresse WhatsApp écrite dans le HTML au texte français encodé exactement comme le fera
+le JavaScript**, et un autre qui vérifie que le bloc `prefers-reduced-motion` arrête **aussi** les deux
+dégradés. `--url https://dmoptic.vercel.app` recollée → `og:url` et `og:image` en absolu, vignette
+1200×630 reconstruite.
+
+**Reste à faire** : **King redéploie** le dossier `hosting/previews/dmoptic/` (le lien est déjà en ligne
+mais il porte encore la v1, celle qui parlait au cabinet), puis le message de
+`sales/Send-DM-OPTIC-2026-09-24.md` **§1** — écrit pour cette v2. **Un seul redéploiement.** Aucune
+adresse devinée, aucune relance-reproche, et rien d'envoyé par nous.

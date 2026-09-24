@@ -4,18 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
-<title>DM OPTIC — opticien à Douala : examen de la vue, verres, montures</title>
-<meta name="description" content="Cabinet d'optique médicale à Douala, inscrit au registre de l'Ordre national des opticiens du Cameroun depuis 2016. Un numéro, WhatsApp, et un titulaire nommé : M. Domche Noumbi.">
+<title>Opticien à Douala — DM OPTIC : vue, verres, montures</title>
+<meta name="description" content="Cabinet d'optique médicale à Douala, inscrit au registre de l'Ordre depuis 2016. Examen de la vue, verres sur ordonnance, montures, réparation. Écrivez sur WhatsApp : le message part déjà écrit.">
 <meta name="theme-color" content="#0A1220">
 <meta property="og:type" content="website"><meta property="og:locale" content="fr_FR"><meta property="og:locale:alternate" content="en_US">
-<meta property="og:title" content="DM OPTIC — opticien à Douala, enfin trouvable">
-<meta property="og:description" content="Cabinet d'optique médicale à Douala, inscrit à l'Ordre depuis 2016. Examen de la vue, verres sur ordonnance, montures, entretien.">
-<!-- LA VIGNETTE DU LIEN (PRE-FLIGHT §20.7) — à remplir APRÈS le déploiement, avec l'adresse réelle.
-     Le script `demos/build_dmoptic.py --url https://<adresse>` écrit ces trois lignes et refait `og.jpg`
-     en 1200×630. Tant que la page n'est pas en ligne, on n'envoie pas le lien : une URL devinée est un
-     lien mort, et une URL morte coûte plus qu'une heure d'attente. -->
-<meta property="og:url" content="">
-<meta property="og:image" content="">
+<meta property="og:title" content="DM OPTIC — opticien à Douala : vue, verres, montures">
+<meta property="og:description" content="Examen de la vue, verres sur ordonnance, montures, réparation. Un opticien inscrit à l'Ordre depuis 2016. WhatsApp : le message part déjà écrit.">
+<!-- LA VIGNETTE DU LIEN (PRE-FLIGHT §20.7) — remplie par `python3 demos/build_dmoptic.py --url <adresse>`
+     après le déploiement. Tant que l'adresse n'est pas connue, on n'envoie pas le lien : une URL devinée
+     est un lien mort, et un lien mort coûte plus qu'une heure d'attente. -->
+<meta property="og:url" content="https://dmoptic.vercel.app/">
+<meta property="og:image" content="https://dmoptic.vercel.app/og.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="DM OPTIC — cabinet d'optique médicale à Douala, inscrit à l'Ordre depuis 2016.">
 <meta name="twitter:card" content="summary_large_image">
@@ -30,8 +29,8 @@ var l=localStorage.getItem("dmoptic-lang");if(l==="en"||l==="fr")h.setAttribute(
 :root{
   /* ── LA COULEUR : « papier froid, encre marine, un braise » ────────────────────────────────────────
      Aucun ambre (Cavisa), aucun vert (Cristallin), aucune crème (L'Opticien), aucun pétrole (Univers).
-     Le bleu est la couleur du cabinet : c'est celle du cachet de l'Ordre. Le braise n'apparaît qu'une
-     fois, sur la seule chose qui manque. */
+     Le bleu est la couleur du cabinet — celle du cachet de l'Ordre ; la braise n'apparaît qu'une fois,
+     sur ce qui manque encore. Le dégradé du premier écran vit dans le bleu, jamais dans le violet. */
   --paper:#EEF1F5; --card:#FFFFFF; --card-2:#F7F9FC;
   --ink:#0C1524; --ink-2:#43506A; --ink-3:#586476;
   --line:#D6DDE7; --line-2:#E6EBF2; --line-strong:#B9C4D4;
@@ -44,7 +43,7 @@ var l=localStorage.getItem("dmoptic-lang");if(l==="en"||l==="fr")h.setAttribute(
   --f-d:"Schibsted Grotesk","Archivo",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --f-b:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --f-m:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-  --fs-h1:clamp(2.05rem,8.4vw,3.4rem);
+  --fs-h1:clamp(2rem,8vw,3.25rem);
   --fs-h2:clamp(1.55rem,5.4vw,2.3rem);
   --fs-h3:clamp(1.05rem,3.4vw,1.2rem);
   --fs-lead:clamp(1.05rem,2.9vw,1.18rem);
@@ -63,7 +62,7 @@ body{margin:0;background:var(--paper);color:var(--ink);
 img{max-width:100%;height:auto;display:block}
 a{color:var(--brand)}
 h1,h2,h3{font-family:var(--f-d);font-weight:700;margin:0;letter-spacing:-.02em;text-wrap:balance;line-height:1.06}
-h1{font-size:var(--fs-h1);line-height:1.02}
+h1{font-size:var(--fs-h1);line-height:1.04}
 h2{font-size:var(--fs-h2)}
 h3{font-size:var(--fs-h3);line-height:1.25}
 p{margin:.72rem 0 0;text-wrap:pretty}
@@ -87,7 +86,7 @@ html[data-lang="en"] .en-only{display:inline}
 html[data-lang="en"] .en-only.as-block{display:block}
 
 /* ── L'EN-TÊTE ────────────────────────────────────────────────────────────────────────────────────── */
-header.site{background:var(--paper);border-bottom:1px solid var(--line)}
+header.site{background:var(--paper);border-bottom:1px solid var(--line);position:relative;z-index:5}
 header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:66px}
 .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);
   font-family:var(--f-d);font-weight:700;font-size:1.06rem;letter-spacing:.06em;white-space:nowrap}
@@ -118,13 +117,9 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
 .btn:active{transform:scale(.98)}
 .btn svg{width:19px;height:19px;flex:none;fill:currentColor}
 .btn-wa{background:var(--wa);border-color:var(--wa);color:#fff}
-.btn-brand{background:var(--brand);border-color:var(--brand);color:#fff}
-.btn-quiet{background:transparent;border-color:var(--line-strong);color:var(--ink-2);font-size:var(--fs-sm);min-height:46px}
 .btn-night{border-color:rgba(255,255,255,.3);background:transparent;color:var(--on-night)}
 @media (hover:hover) and (pointer:fine){
   .btn-wa:hover{background:var(--wa-2);border-color:var(--wa-2)}
-  .btn-brand:hover{background:var(--brand-2);border-color:var(--brand-2)}
-  .btn-quiet:hover{border-color:var(--ink);color:var(--ink)}
   .btn-night:hover{border-color:#fff}
 }
 .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
@@ -132,14 +127,31 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
 .lede{font-size:var(--fs-lead);color:var(--ink-2);max-width:56ch;margin-top:16px}
 .chip{display:inline-block;font:500 var(--fs-label)/1 var(--f-m);letter-spacing:.08em;text-transform:uppercase;
   color:var(--ink-2);background:var(--card-2);border:1px solid var(--line);border-radius:999px;padding:8px 12px}
-.chip-ember{color:#8A3A12;border-color:rgba(224,112,58,.42);background:rgba(224,112,58,.09)}
-.on-night .chip{color:var(--on-night-2);background:rgba(255,255,255,.05);border-color:var(--night-line)}
 .note{font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3);margin-top:18px}
 
-/* ── LE PREMIER ÉCRAN (§26, §29) : le texte à gauche, la carte à droite — et rien sur une photo ──── */
-.hero{padding-top:40px}
+/* ── LE PREMIER ÉCRAN (§26, §29) : texte à gauche, preuve à droite — et deux dégradés animés ───────
+   Le premier dégradé est un lavis large qui dérive lentement derrière le texte (bleu de cachet et une
+   pointe de braise, jamais de violet) ; le second est l'anneau de verre qui tourne, posé derrière la
+   carte. Les deux ne bougent QUE par `transform` (composé par le GPU, pas de `filter:blur` sur grand
+   écran) et s'arrêtent net si le visiteur demande moins de mouvement. */
+.hero{position:relative;overflow:hidden;padding-top:40px}
 @media (min-width:780px){ .hero{padding-top:72px} }
-.hero-grid{display:grid;gap:34px}
+.wash{position:absolute;z-index:0;inset:-28% -18% auto -18%;height:150%;pointer-events:none;
+  background:
+    radial-gradient(34% 40% at 24% 30%, rgba(26,63,134,.20), rgba(26,63,134,0) 70%),
+    radial-gradient(26% 32% at 82% 14%, rgba(224,112,58,.12), rgba(224,112,58,0) 72%),
+    radial-gradient(40% 44% at 64% 82%, rgba(78,123,212,.15), rgba(78,123,212,0) 74%)}
+html.js .wash{animation:drift 26s ease-in-out infinite alternate}
+@keyframes drift{
+  0%{transform:translate3d(-2%,-1.5%,0) scale(1.02)}
+  50%{transform:translate3d(3%,2.5%,0) scale(1.09)}
+  100%{transform:translate3d(-1%,3%,0) scale(1.04)}
+}
+.lensring{position:absolute;z-index:0;right:-88px;top:34px;width:290px;height:290px;pointer-events:none}
+html.js .lensring{animation:spin 24s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (min-width:780px){ .lensring{right:-60px;top:20px;width:380px;height:380px} }
+.hero-grid{position:relative;z-index:1;display:grid;gap:34px}
 @media (min-width:980px){ .hero-grid{grid-template-columns:1.02fr .98fr;gap:54px;align-items:start} }
 .hero h1{margin-top:18px}
 .hero .hl{color:var(--brand)}
@@ -148,7 +160,7 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
 .facts dt{font:500 var(--fs-label)/1.7 var(--f-m);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
 .facts dd{margin:0;font-weight:600;font-size:var(--fs-sm);text-align:right}
 
-/* ── LA CARTE : le seul actif vérifié du cabinet, mis en page comme une pièce d'identité ───────────── */
+/* ── LA CARTE : la preuve du cabinet (registre de l'Ordre), à côté de l'affirmation qu'elle prouve ── */
 .idcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow);
   padding:22px;position:relative;overflow:hidden;
   transition:transform .28s var(--ease),box-shadow .28s var(--ease)}
@@ -164,34 +176,12 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
 .idrows div{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:11px 0;border-bottom:1px solid var(--line-2)}
 .idrows dt{font:500 var(--fs-label)/1.7 var(--f-m);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
 .idrows dd{margin:0;font:500 var(--fs-sm)/1.5 var(--f-m);text-align:right;color:var(--ink)}
-.idtools{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
 .idfoot{margin-top:16px;font-size:var(--fs-xs);color:var(--ink-3)}
 .idwrap{margin:0}
 .idwrap figcaption{margin-top:12px;font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
 
-/* ── LA BANDE SOMBRE : hier / maintenant ──────────────────────────────────────────────────────────── */
-.band{background:var(--night);color:var(--on-night)}
-.band h2,.band h3{color:#fff}
-.band .lede{color:var(--on-night-2)}
-.panels{display:grid;gap:18px;margin-top:34px}
-@media (min-width:780px){ .panels{grid-template-columns:1fr 1fr;gap:24px} }
-.panel{background:var(--night-2);border:1px solid var(--night-line);border-radius:var(--r-lg);padding:22px}
-.panel-tag{font:500 var(--fs-label)/1 var(--f-m);letter-spacing:.14em;text-transform:uppercase;margin:0 0 16px;color:var(--on-night-2)}
-.empty{border:1.5px dashed rgba(224,112,58,.62);border-radius:var(--r);padding:26px 20px;text-align:center}
-.empty .zero{margin:0;font:500 var(--fs-label)/1.4 var(--f-m);letter-spacing:.16em;text-transform:uppercase;color:var(--ember-2)}
-.empty ul{margin-top:14px;color:var(--on-night-2);font-size:var(--fs-sm)}
-.empty li{padding:5px 0}
-.mini{display:flex;align-items:center;gap:14px}
-.mini .mark svg{width:30px;height:30px}
-.mini .mark .o{stroke:#fff}.mini .mark .i{stroke:#fff}.mini .mark .glint{stroke:var(--ember-2)}
-.mini-name{font-family:var(--f-d);font-weight:700;letter-spacing:.06em}
-.mini-sub{font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--on-night-2)}
-.mini-links{display:flex;flex-wrap:wrap;gap:18px;margin-top:18px;font-size:var(--fs-sm)}
-.mini-links a{color:var(--on-night);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.34);padding-bottom:2px}
-.verified{color:var(--on-night-2);font:500 var(--fs-xs)/1.6 var(--f-m);margin-top:22px}
-
 /* ── LES ACTES : six cartes en bande glissante sur téléphone, trois colonnes sur ordinateur ──────── */
-.strip{display:grid;grid-auto-flow:column;grid-auto-columns:78%;gap:14px;overflow-x:auto;margin-top:30px;
+.strip{display:grid;grid-auto-flow:column;grid-auto-columns:80%;gap:14px;overflow-x:auto;margin-top:30px;
   padding-bottom:10px;scroll-snap-type:x mandatory;scrollbar-width:thin;
   -webkit-mask-image:linear-gradient(90deg,#000 86%,transparent);mask-image:linear-gradient(90deg,#000 86%,transparent)}
 .strip>*{scroll-snap-align:start}
@@ -203,9 +193,28 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
 .act .n{font:500 var(--fs-label)/1 var(--f-m);letter-spacing:.12em;color:var(--brand)}
 .act h3{margin-top:6px}
 .act p{margin:0;color:var(--ink-2);font-size:var(--fs-sm)}
+.act .bring{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--line-2);
+  font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
 figure.band-fig{margin:34px 0 0}
 figure.band-fig img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:var(--r-lg);border:1px solid var(--line)}
 figure.band-fig figcaption{margin-top:12px;font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
+
+/* ── LA BANDE SOMBRE : comment ça se passe (trois étapes, une seule action) ──────────────────────── */
+.band{background:var(--night);color:var(--on-night);position:relative;overflow:hidden}
+.band h2,.band h3{color:#fff}
+.band .lede{color:var(--on-night-2)}
+.band::before{content:"";position:absolute;z-index:0;inset:auto -20% -60% 40%;height:120%;pointer-events:none;
+  background:radial-gradient(40% 50% at 50% 50%, rgba(42,92,184,.28), rgba(42,92,184,0) 72%)}
+html.js .band::before{animation:drift 32s ease-in-out infinite alternate}
+.band .wrap{position:relative;z-index:1}
+.steps{display:grid;gap:16px;margin-top:34px}
+@media (min-width:780px){ .steps{grid-template-columns:repeat(3,1fr);gap:22px} }
+.step{background:var(--night-2);border:1px solid var(--night-line);border-radius:var(--r-lg);padding:22px}
+.step .n{font:500 var(--fs-label)/1 var(--f-m);letter-spacing:.14em;color:var(--ember-2)}
+.step h3{margin-top:12px;font-size:1.1rem}
+.step p{margin:.5rem 0 0;color:var(--on-night-2);font-size:var(--fs-sm)}
+.band .actions{margin-top:30px}
+.band .note{color:var(--on-night-2)}
 
 /* ── LE TITULAIRE ─────────────────────────────────────────────────────────────────────────────────── */
 .split{display:grid;gap:30px}
@@ -215,14 +224,18 @@ figure.fig-43{margin:0}
 figure.fig-43 img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r-lg);border:1px solid var(--line)}
 figure.fig-43 figcaption{margin-top:12px;font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
 
-/* ── LA NOTE AU CABINET : les six champs qui manquent ─────────────────────────────────────────────── */
-.tocard{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:24px;box-shadow:var(--shadow)}
-.slots{margin-top:22px;border-top:1px solid var(--line-2)}
-.slots li{display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:13px 0;border-bottom:1px solid var(--line-2)}
-.slots .lbl{font-size:var(--fs-sm);color:var(--ink)}
-.slots .todo{font:500 var(--fs-label)/1 var(--f-m);letter-spacing:.08em;text-transform:uppercase;color:#8A3A12;
-  border:1px solid rgba(224,112,58,.42);background:rgba(224,112,58,.09);border-radius:999px;padding:6px 10px;white-space:nowrap}
+/* ── LES QUESTIONS (§31.3 : une question par bloc, la réponse d'abord, le bloc survit seul) ───────── */
+.faq{margin-top:28px;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;
+  padding:18px 0;cursor:pointer;list-style:none;font-family:var(--f-d);font-weight:700;font-size:1.02rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .chev{margin-top:3px;flex:none;width:18px;height:18px;transition:transform .22s var(--ease)}
+.faq details[open] summary .chev{transform:rotate(180deg)}
+.faq p{padding:0 0 20px;max-width:72ch;color:var(--ink-2)}
+.faq summary:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
 
+/* ── LE CONTACT ───────────────────────────────────────────────────────────────────────────────────── */
 .micro{display:flex;flex-wrap:wrap;gap:18px;margin-top:20px}
 .microbtn{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:0 2px;background:none;border:0;
   border-bottom:1px solid var(--line-strong);color:var(--ink-2);font:600 var(--fs-sm)/1 var(--f-b);cursor:pointer;
@@ -230,8 +243,6 @@ figure.fig-43 figcaption{margin-top:12px;font:500 var(--fs-xs)/1.6 var(--f-m);co
 .microbtn svg{width:17px;height:17px;flex:none}
 .microbtn:active{border-color:var(--ink)}
 @media (hover:hover) and (pointer:fine){ .microbtn:hover{color:var(--ink);border-color:var(--ink)} }
-
-/* ── LE CONTACT ───────────────────────────────────────────────────────────────────────────────────── */
 .cgrid{display:grid;gap:0;margin-top:30px;border-top:1px solid var(--line)}
 .cgrid div{display:flex;justify-content:space-between;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
 .cgrid dt{font:500 var(--fs-label)/1.7 var(--f-m);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
@@ -267,7 +278,7 @@ footer.site p{color:var(--on-night-2);font-size:var(--fs-sm)}
 .dock .btn{min-height:52px}
 @media (min-width:900px){ .dock{display:none} }
 
-/* ── LE MOUVEMENT : une seule entrée par écran, et le droit de ne rien voir ───────────────────────── */
+/* ── LE MOUVEMENT : une entrée par écran, deux dégradés lents, et le droit de ne rien voir ────────── */
 html.js .rv{opacity:0;transform:translateY(14px);transition:opacity .62s var(--ease),transform .62s var(--ease)}
 html.js .rv.in{opacity:1;transform:none}
 html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s .3s var(--ease) forwards}
@@ -276,6 +287,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
   html{scroll-behavior:auto}
   html.js .rv{opacity:1;transform:none;transition:none}
   html.js .glint{animation:none;stroke-dasharray:none;stroke-dashoffset:0}
+  html.js .wash,html.js .lensring,html.js .band::before{animation:none}
   *{transition-duration:.01ms !important}
 }
 </style>
@@ -289,13 +301,12 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
     <a class="brand" href="#top">
       <span class="brandtxt">DM <span class="thin">OPTIC</span></span>
       <span class="mark" aria-hidden="true"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><circle class="o" cx="20" cy="20" r="16"></circle><circle class="i" cx="20" cy="20" r="10.5"></circle><path class="glint" d="M11.6 14.2a10.5 10.5 0 0 1 8.4-4.1"></path></svg></span>
-      <span>DM <span class="thin">OPTIC</span></span>
     </a>
     <nav class="nav" aria-label="Sections">
-      <a href="#constat"><span class="fr-only" lang="fr">Le constat</span><span class="en-only" lang="en">The problem</span></a>
-      <a href="#actes"><span class="fr-only" lang="fr">Les actes</span><span class="en-only" lang="en">Services</span></a>
-      <a href="#titulaire"><span class="fr-only" lang="fr">Le titulaire</span><span class="en-only" lang="en">The optician</span></a>
-      <a href="#completer"><span class="fr-only" lang="fr">À compléter</span><span class="en-only" lang="en">To complete</span></a>
+      <a href="#actes"><span class="fr-only" lang="fr">Ce que nous faisons</span><span class="en-only" lang="en">What we do</span></a>
+      <a href="#etapes"><span class="fr-only" lang="fr">Comment ça se passe</span><span class="en-only" lang="en">How it works</span></a>
+      <a href="#cabinet"><span class="fr-only" lang="fr">Le cabinet</span><span class="en-only" lang="en">The practice</span></a>
+      <a href="#questions"><span class="fr-only" lang="fr">Questions</span><span class="en-only" lang="en">Questions</span></a>
       <a href="#contact"><span class="fr-only" lang="fr">Contact</span><span class="en-only" lang="en">Contact</span></a>
     </nav>
     <div class="langbox" role="group" aria-label="Langue / Language">
@@ -308,21 +319,32 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
 <main id="main">
   <span id="top"></span>
 
-  <!-- ══ 1 · LE PREMIER ÉCRAN : la phrase, les deux gestes, et la carte du cabinet ══════════════════ -->
+  <!-- ══ 1 · LE PREMIER ÉCRAN : ce que c'est, pour qui, et les deux gestes ═════════════════════════ -->
   <section class="hero" aria-labelledby="h-hero">
+    <span class="wash" aria-hidden="true"></span>
+    <svg class="lensring" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+      <defs><linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#7FA6E8" stop-opacity="0"></stop>
+        <stop offset=".45" stop-color="#2A5CB8" stop-opacity=".55"></stop>
+        <stop offset=".78" stop-color="#E0703A" stop-opacity=".38"></stop>
+        <stop offset="1" stop-color="#E0703A" stop-opacity="0"></stop>
+      </linearGradient></defs>
+      <circle cx="100" cy="100" r="92" fill="none" stroke="url(#sheen)" stroke-width="9"></circle>
+      <circle cx="100" cy="100" r="70" fill="none" stroke="url(#sheen)" stroke-width="2.5" opacity=".8"></circle>
+    </svg>
     <div class="wrap hero-grid">
       <div>
-        <p class="kicker rv"><span class="fr-only" lang="fr">Cabinet d'optique médicale · Douala</span><span class="en-only" lang="en">Optical practice · Douala</span></p>
+        <p class="kicker rv"><span class="fr-only" lang="fr">Opticien à Douala · inscrit à l'Ordre depuis 2016</span><span class="en-only" lang="en">Optician in Douala · registered since 2016</span></p>
         <h1 id="h-hero" class="rv">
-          <span class="fr-only" lang="fr">Inscrit depuis 2016.<br><span class="hl">Trouvable depuis aujourd'hui.</span></span>
-          <span class="en-only" lang="en">Registered since 2016.<br><span class="hl">Findable as of today.</span></span>
+          <span class="fr-only" lang="fr">DM OPTIC, votre opticien à Douala.</span>
+          <span class="en-only" lang="en">DM OPTIC, your optician in Douala.</span>
         </h1>
         <p class="lede rv">
-          <span class="fr-only" lang="fr">DM OPTIC est un cabinet d'optique médicale à Douala&nbsp;: l'examen de la vue, les verres sur ordonnance, les montures, l'entretien. Un seul numéro pour tout, et il est sur WhatsApp.</span>
-          <span class="en-only" lang="en">DM OPTIC is an optical practice in Douala: eye examinations, lenses made to prescription, frames, aftercare. One number for all of it, and it is on WhatsApp.</span>
+          <span class="fr-only" lang="fr">Examen de la vue, verres sur ordonnance, montures, réparation. Vous écrivez sur WhatsApp&nbsp;: le message part déjà écrit, il ne reste qu'à l'envoyer.</span>
+          <span class="en-only" lang="en">Eye examinations, prescription lenses, frames, repairs. You write on WhatsApp: the message is already typed, you only have to send it.</span>
         </p>
         <div class="actions rv">
-          <a class="btn btn-wa wa" data-fr="Bonjour DM OPTIC, je cherche un opticien à Douala." data-en="Hello DM OPTIC, I am looking for an optician in Douala." href="https://wa.me/237656122239?text=Bonjour%20DM%20OPTIC%2C%20je%20cherche%20un%20opticien%20%C3%A0%20Douala.">
+          <a class="btn btn-wa wa" data-fr="Bonjour DM OPTIC, je voudrais prendre un rendez-vous pour un examen de la vue." data-en="Hello DM OPTIC, I would like to book an eye examination." href="https://wa.me/237656122239?text=Bonjour%20DM%20OPTIC%2C%20je%20voudrais%20prendre%20un%20rendez-vous%20pour%20un%20examen%20de%20la%20vue.">
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
             <span class="fr-only" lang="fr">Écrire sur WhatsApp</span><span class="en-only" lang="en">Write on WhatsApp</span>
           </a>
@@ -333,7 +355,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
         </div>
         <dl class="facts rv">
           <div>
-            <dt><span class="fr-only" lang="fr">Inscrit à l'Ordre</span><span class="en-only" lang="en">On the register</span></dt>
+            <dt><span class="fr-only" lang="fr">Inscrit à l'Ordre</span><span class="en-only" lang="en">Registered</span></dt>
             <dd><span class="fr-only" lang="fr">n° 021/2016 · arrêté 0382</span><span class="en-only" lang="en">no. 021/2016 · decree 0382</span></dd>
           </div>
           <div>
@@ -375,63 +397,21 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
           </dl>
           <p class="idfoot"><span class="fr-only" lang="fr">Adresse et horaires&nbsp;: à confirmer avec le cabinet.</span><span class="en-only" lang="en">Address and opening hours: to be confirmed with the practice.</span></p>
         </div>
-        <figcaption><span class="fr-only as-block" lang="fr">Repris du registre de l'Ordre national des opticiens du Cameroun — Littoral, ligne 102, relevé le 24/09/2026.</span><span class="en-only as-block" lang="en">Taken from the register of the National Order of Opticians of Cameroon: Littoral, line 102, read on 24/09/2026.</span></figcaption>
+        <figcaption><span class="fr-only as-block" lang="fr">Cabinet inscrit au registre de l'Ordre national des opticiens du Cameroun — Littoral, ligne 102, relevé le 24/09/2026.</span><span class="en-only as-block" lang="en">Practice on the register of the National Order of Opticians of Cameroon: Littoral, line 102, read on 24/09/2026.</span></figcaption>
       </figure>
     </div>
   </section>
 
-  <!-- ══ 2 · LE CONSTAT : la page qui n'existait pas ═════════════════════════════════════════════════ -->
-  <section id="constat" class="band on-night" aria-labelledby="h-constat">
-    <div class="wrap">
-      <h2 id="h-constat" class="rv">
-        <span class="fr-only" lang="fr">Le registre de l'Ordre vous connaît depuis 2016. Le web, non.</span>
-        <span class="en-only" lang="en">The Order's register has known you since 2016. The web does not.</span>
-      </h2>
-      <p class="lede rv">
-        <span class="fr-only" lang="fr">Un patient qui cherche un opticien depuis son téléphone ne vous trouve pas&nbsp;: pas de page, pas d'horaires, pas d'itinéraire. Trois questions restent sans réponse au moment où il décide.</span>
-        <span class="en-only" lang="en">A patient searching for an optician on their phone does not find you: no page, no opening hours, no directions. Three questions go unanswered at the moment they decide.</span>
-      </p>
-      <div class="panels">
-        <div class="panel rv">
-          <p class="panel-tag"><span class="fr-only" lang="fr">Hier</span><span class="en-only" lang="en">Yesterday</span></p>
-          <div class="empty">
-            <p class="zero"><span class="fr-only" lang="fr">Aucun résultat</span><span class="en-only" lang="en">No results</span></p>
-            <ul>
-              <li><span class="fr-only" lang="fr">Pas de page à votre nom.</span><span class="en-only" lang="en">No page under your name.</span></li>
-              <li><span class="fr-only" lang="fr">Pas d'horaires d'ouverture.</span><span class="en-only" lang="en">No opening hours.</span></li>
-              <li><span class="fr-only" lang="fr">Pas d'itinéraire jusqu'au cabinet.</span><span class="en-only" lang="en">No directions to the practice.</span></li>
-            </ul>
-          </div>
-        </div>
-        <div class="panel rv">
-          <p class="panel-tag"><span class="fr-only" lang="fr">Maintenant</span><span class="en-only" lang="en">Now</span></p>
-          <div class="mini">
-            <span class="mark" aria-hidden="true"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><circle class="o" cx="20" cy="20" r="16"></circle><circle class="i" cx="20" cy="20" r="10.5"></circle><path class="glint" d="M11.6 14.2a10.5 10.5 0 0 1 8.4-4.1"></path></svg></span>
-            <span>
-              <span class="mini-name">DM OPTIC</span><br>
-              <span class="mini-sub"><span class="fr-only" lang="fr">Douala · 656 122 239</span><span class="en-only" lang="en">Douala · 656 122 239</span></span>
-            </span>
-          </div>
-          <div class="mini-links">
-            <a class="wa" data-fr="Bonjour DM OPTIC, je voudrais un renseignement avant de passer." data-en="Hello DM OPTIC, I would like some information before coming." href="https://wa.me/237656122239?text=Bonjour%20DM%20OPTIC%2C%20je%20voudrais%20un%20renseignement%20avant%20de%20passer."><span class="fr-only" lang="fr">Écrire sur WhatsApp</span><span class="en-only" lang="en">Write on WhatsApp</span></a>
-            <a href="tel:+237656122239"><span class="fr-only" lang="fr">Appeler</span><span class="en-only" lang="en">Call</span></a>
-          </div>
-        </div>
-      </div>
-      <p class="verified"><span class="fr-only" lang="fr">Vérifié le 24/09/2026 : registre ONOC, ligne 102 du Littoral. Aucun site, aucune page, aucune fiche trouvés.</span><span class="en-only" lang="en">Checked on 24/09/2026: ONOC register, Littoral line 102. No website, no page, no listing found.</span></p>
-    </div>
-  </section>
-
-  <!-- ══ 3 · LES ACTES : six choses, et une photo qui dit une seule chose ════════════════════════════ -->
+  <!-- ══ 2 · CE QUE NOUS FAISONS : six actes, et pour chacun ce qu'il faut apporter ═════════════════ -->
   <section id="actes" aria-labelledby="h-actes">
     <div class="wrap">
       <h2 id="h-actes" class="rv">
-        <span class="fr-only" lang="fr">Ce qu'on vient chercher chez un opticien.</span>
-        <span class="en-only" lang="en">What people come to an optician for.</span>
+        <span class="fr-only" lang="fr">Ce que nous faisons, et ce qu'il faut apporter.</span>
+        <span class="en-only" lang="en">What we do, and what to bring.</span>
       </h2>
       <p class="lede rv">
-        <span class="fr-only" lang="fr">Six choses. Dites-moi lesquelles sont les vôtres&nbsp;: je retire les autres, et je garde vos mots.</span>
-        <span class="en-only" lang="en">Six things. Tell me which ones are yours: I will remove the rest, and keep your own words.</span>
+        <span class="fr-only" lang="fr">Six raisons de pousser la porte. À chaque fois, la liste de ce qu'on vous demandera.</span>
+        <span class="en-only" lang="en">Six reasons to walk in. Each one comes with the list of what you will be asked for.</span>
       </p>
       <figure class="band-fig rv">
         <img src="data:image/jpeg;base64,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" width="1024" height="640" loading="lazy" decoding="async"
@@ -442,50 +422,93 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
       <ul class="strip">
         <li class="act rv">
           <span class="n">01</span>
-          <h3><span class="fr-only" lang="fr">Examen de la vue</span><span class="en-only" lang="en">Vision test</span></h3>
-          <p><span class="fr-only" lang="fr">Mesurer ce que l'œil demande, avant de parler de monture.</span><span class="en-only" lang="en">Measure what the eye needs, before we talk about frames.</span></p>
+          <h3><span class="fr-only" lang="fr">Examen de la vue</span><span class="en-only" lang="en">Eye examination</span></h3>
+          <p><span class="fr-only" lang="fr">On mesure ce que votre œil demande, avant de parler de monture.</span><span class="en-only" lang="en">We measure what your eye needs, before anyone talks about frames.</span></p>
+          <p class="bring"><span class="fr-only" lang="fr">À apporter&nbsp;: vos anciennes lunettes, si vous en avez.</span><span class="en-only" lang="en">Bring: your current glasses, if you have any.</span></p>
         </li>
         <li class="act rv">
           <span class="n">02</span>
-          <h3><span class="fr-only" lang="fr">Verres correcteurs</span><span class="en-only" lang="en">Prescription lenses</span></h3>
+          <h3><span class="fr-only" lang="fr">Verres sur ordonnance</span><span class="en-only" lang="en">Prescription lenses</span></h3>
           <p><span class="fr-only" lang="fr">Taillés sur votre ordonnance, montés dans la monture que vous choisissez.</span><span class="en-only" lang="en">Cut to your prescription, fitted into the frame you choose.</span></p>
+          <p class="bring"><span class="fr-only" lang="fr">À apporter&nbsp;: l'ordonnance de votre ophtalmologue.</span><span class="en-only" lang="en">Bring: your ophthalmologist's prescription.</span></p>
         </li>
         <li class="act rv">
           <span class="n">03</span>
           <h3><span class="fr-only" lang="fr">Montures</span><span class="en-only" lang="en">Frames</span></h3>
-          <p><span class="fr-only" lang="fr">Homme, femme, enfant. On essaie, on ajuste, on reprend si ça ne tombe pas bien.</span><span class="en-only" lang="en">Men, women, children. You try them on, we adjust, we redo it if the fit is wrong.</span></p>
+          <p><span class="fr-only" lang="fr">Homme, femme, enfant. Vous essayez, on ajuste au visage, on reprend si ça ne tombe pas bien.</span><span class="en-only" lang="en">Men, women, children. You try them on, we adjust them to your face, we redo it if the fit is wrong.</span></p>
+          <p class="bring"><span class="fr-only" lang="fr">À apporter&nbsp;: rien. Venez comme vous êtes.</span><span class="en-only" lang="en">Bring: nothing. Come as you are.</span></p>
         </li>
         <li class="act rv">
           <span class="n">04</span>
           <h3><span class="fr-only" lang="fr">Lunettes de soleil</span><span class="en-only" lang="en">Sunglasses</span></h3>
-          <p><span class="fr-only" lang="fr">Y compris sur verres teintés à votre vue.</span><span class="en-only" lang="en">Including tinted lenses made to your prescription.</span></p>
+          <p><span class="fr-only" lang="fr">Y compris sur verres teintés à votre vue, pour conduire ou travailler dehors.</span><span class="en-only" lang="en">Including tinted lenses made to your prescription, for driving or working outdoors.</span></p>
+          <p class="bring"><span class="fr-only" lang="fr">À apporter&nbsp;: votre ordonnance, si vous les voulez à votre vue.</span><span class="en-only" lang="en">Bring: your prescription, if you want them made to your sight.</span></p>
         </li>
         <li class="act rv">
           <span class="n">05</span>
-          <h3><span class="fr-only" lang="fr">Lentilles de contact</span><span class="en-only" lang="en">Contact lenses</span></h3>
-          <p><span class="fr-only" lang="fr">Adaptation et suivi, si vous les proposez au cabinet.</span><span class="en-only" lang="en">Fitting and follow-up, if you offer them at the practice.</span></p>
+          <h3><span class="fr-only" lang="fr">Réparation et entretien</span><span class="en-only" lang="en">Repairs and care</span></h3>
+          <p><span class="fr-only" lang="fr">Réglage, changement de verres, nettoyage. Une monture abîmée n'est pas toujours une monture perdue.</span><span class="en-only" lang="en">Adjustments, lens changes, cleaning. Damaged frames are not always lost frames.</span></p>
+          <p class="bring"><span class="fr-only" lang="fr">À apporter&nbsp;: la monture — ou une photo, sur WhatsApp.</span><span class="en-only" lang="en">Bring: the frames, or a photo on WhatsApp.</span></p>
         </li>
         <li class="act rv">
           <span class="n">06</span>
-          <h3><span class="fr-only" lang="fr">Entretien &amp; réparation</span><span class="en-only" lang="en">Care &amp; repairs</span></h3>
-          <p><span class="fr-only" lang="fr">Réglage, changement de verres, nettoyage.</span><span class="en-only" lang="en">Adjustments, lens changes, cleaning.</span></p>
+          <h3><span class="fr-only" lang="fr">Lentilles de contact</span><span class="en-only" lang="en">Contact lenses</span></h3>
+          <p><span class="fr-only" lang="fr">Adaptation et suivi, pour ceux qui ne veulent pas de monture tous les jours.</span><span class="en-only" lang="en">Fitting and follow-up, for those who do not want frames every day.</span></p>
+          <p class="bring"><span class="fr-only" lang="fr">À apporter&nbsp;: votre ordonnance de lentilles, si vous en avez une.</span><span class="en-only" lang="en">Bring: your contact lens prescription, if you have one.</span></p>
         </li>
       </ul>
-      <p class="note"><span class="fr-only" lang="fr">Liste type d'un cabinet d'optique — à valider avec vous.</span><span class="en-only" lang="en">A typical optical practice list, to be confirmed with you.</span></p>
     </div>
   </section>
 
-  <!-- ══ 4 · LE TITULAIRE : un nom, une inscription, une source ══════════════════════════════════════ -->
-  <section id="titulaire" aria-labelledby="h-titulaire">
+  <!-- ══ 3 · COMMENT ÇA SE PASSE : trois étapes, une seule action ═══════════════════════════════════ -->
+  <section id="etapes" class="band" aria-labelledby="h-etapes">
+    <div class="wrap">
+      <h2 id="h-etapes" class="rv">
+        <span class="fr-only" lang="fr">Comment ça se passe, en trois étapes.</span>
+        <span class="en-only" lang="en">How it works, in three steps.</span>
+      </h2>
+      <p class="lede rv">
+        <span class="fr-only" lang="fr">Tout commence par un message. Vous n'avez pas besoin de connaître le vocabulaire de l'optique&nbsp;: dites ce qui ne va pas.</span>
+        <span class="en-only" lang="en">It starts with a message. You do not need any optical vocabulary: just say what is wrong.</span>
+      </p>
+      <ol class="steps">
+        <li class="step rv">
+          <span class="n">01</span>
+          <h3><span class="fr-only" lang="fr">Vous écrivez sur WhatsApp</span><span class="en-only" lang="en">You write on WhatsApp</span></h3>
+          <p><span class="fr-only" lang="fr">Vue qui baisse, ordonnance à monter, monture abîmée, lunettes de soleil&nbsp;: une phrase suffit, et une photo si vous en avez une.</span><span class="en-only" lang="en">Blurred sight, a prescription to be made up, damaged frames, sunglasses: one sentence is enough, plus a photo if you have one.</span></p>
+        </li>
+        <li class="step rv">
+          <span class="n">02</span>
+          <h3><span class="fr-only" lang="fr">Vous recevez la réponse</span><span class="en-only" lang="en">You get the answer</span></h3>
+          <p><span class="fr-only" lang="fr">Ce qu'il faut apporter, si la monture est réparable, et quand passer. Vous savez avant de sortir de chez vous.</span><span class="en-only" lang="en">What to bring, whether the frames can be repaired, and when to come. You know before you leave home.</span></p>
+        </li>
+        <li class="step rv">
+          <span class="n">03</span>
+          <h3><span class="fr-only" lang="fr">Vous passez au cabinet</span><span class="en-only" lang="en">You come to the practice</span></h3>
+          <p><span class="fr-only" lang="fr">Vous ne venez pas à l'aveugle&nbsp;: vous savez déjà ce qui vous attend, et ce que ça va demander.</span><span class="en-only" lang="en">You do not come in blind: you already know what awaits you, and what it will take.</span></p>
+        </li>
+      </ol>
+      <div class="actions rv">
+        <a class="btn btn-wa wa" data-fr="Bonjour DM OPTIC, voici ce qui ne va pas : " data-en="Hello DM OPTIC, this is what is wrong: " href="https://wa.me/237656122239?text=Bonjour%20DM%20OPTIC%2C%20voici%20ce%20qui%20ne%20va%20pas%20%3A%20">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
+          <span class="fr-only" lang="fr">Écrire sur WhatsApp</span><span class="en-only" lang="en">Write on WhatsApp</span>
+        </a>
+      </div>
+      <p class="note"><span class="fr-only" lang="fr">Le message part déjà écrit&nbsp;: vous pouvez le modifier, ou tout effacer, avant de l'envoyer. Le cabinet est à Douala, Littoral — 656 122 239.</span><span class="en-only" lang="en">The message is already typed: you can edit it, or delete it, before sending. The practice is in Douala, Littoral — 656 122 239.</span></p>
+    </div>
+  </section>
+
+  <!-- ══ 4 · LE CABINET : un nom, une inscription, une source ═══════════════════════════════════════ -->
+  <section id="cabinet" aria-labelledby="h-cabinet">
     <div class="wrap split">
       <div>
-        <h2 id="h-titulaire" class="rv">
+        <h2 id="h-cabinet" class="rv">
           <span class="fr-only" lang="fr">Un opticien inscrit, un titulaire nommé.</span>
           <span class="en-only" lang="en">A registered optician, a named owner.</span>
         </h2>
         <p class="lede rv">
-          <span class="fr-only" lang="fr">DM OPTIC figure au registre de l'Ordre national des opticiens du Cameroun depuis 2016&nbsp;: inscription n° 021/2016, arrêté ministériel n° 0382. Le titulaire est M. Domche Noumbi.</span>
-          <span class="en-only" lang="en">DM OPTIC has been on the register of the National Order of Opticians of Cameroon since 2016: registration no. 021/2016, ministry decree no. 0382. The owner is Mr Domche Noumbi.</span>
+          <span class="fr-only" lang="fr">DM OPTIC est un cabinet d'optique médicale à Douala, inscrit au registre de l'Ordre national des opticiens du Cameroun depuis 2016&nbsp;: inscription n° 021/2016, arrêté ministériel n° 0382. Le titulaire est M. Domche Noumbi.</span>
+          <span class="en-only" lang="en">DM OPTIC is an optical practice in Douala, on the register of the National Order of Opticians of Cameroon since 2016: registration no. 021/2016, ministry decree no. 0382. The owner is Mr Domche Noumbi.</span>
         </p>
         <p class="rv">
           <span class="fr-only" lang="fr">Son nom apparaît, en mars 2023, dans la liste des opticiens de Douala cités par la presse de la profession (<em>Echos Santé</em>) — au moment où l'Ordre menait la lutte contre l'exercice illégal dans le Littoral.</span>
@@ -493,7 +516,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
         </p>
         <div class="chips rv">
           <span class="chip"><span class="fr-only" lang="fr">Ordre n° 021/2016</span><span class="en-only" lang="en">Register no. 021/2016</span></span>
-          <span class="chip"><span class="fr-only" lang="fr">Presse : Echos Santé, mars 2023</span><span class="en-only" lang="en">Press: Echos Santé, March 2023</span></span>
+          <span class="chip"><span class="fr-only" lang="fr">Presse&nbsp;: Echos Santé, mars 2023</span><span class="en-only" lang="en">Press: Echos Santé, March 2023</span></span>
         </div>
       </div>
       <figure class="fig-43 rv">
@@ -505,28 +528,39 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
     </div>
   </section>
 
-  <!-- ══ 5 · LA NOTE AU CABINET : les six champs qui manquent (elle parle au titulaire) ═══════════════ -->
-  <section id="completer" aria-labelledby="h-completer">
+  <!-- ══ 5 · LES QUESTIONS : une question par bloc, la réponse d'abord (§31.3) ══════════════════════ -->
+  <section id="questions" aria-labelledby="h-questions">
     <div class="wrap">
-      <div class="tocard rv">
-        <p class="kicker"><span class="fr-only" lang="fr">Pour le cabinet</span><span class="en-only" lang="en">For the practice</span></p>
-        <h2 id="h-completer" style="margin-top:12px">
-          <span class="fr-only" lang="fr">Il manque six informations, et elles ne peuvent venir que de vous.</span>
-          <span class="en-only" lang="en">Six pieces of information are missing, and only you can provide them.</span>
-        </h2>
-        <p>
-          <span class="fr-only" lang="fr">Une page de santé qui invente une adresse ou un horaire coûte un patient, puis la confiance. Je n'ai rien inventé&nbsp;: ces six champs attendent vos réponses.</span>
-          <span class="en-only" lang="en">A health page that invents an address or an opening time costs a patient, then trust. I invented nothing: these six fields are waiting for your answers.</span>
-        </p>
-        <ul class="slots">
-          <li><span class="lbl"><span class="fr-only" lang="fr">Adresse exacte, et le point de repère qui aide à vous trouver</span><span class="en-only" lang="en">Exact address, and the landmark that helps people find you</span></span><span class="todo"><span class="fr-only" lang="fr">à confirmer</span><span class="en-only" lang="en">to confirm</span></span></li>
-          <li><span class="lbl"><span class="fr-only" lang="fr">Horaires&nbsp;: jours et heures d'ouverture</span><span class="en-only" lang="en">Opening hours: days and times</span></span><span class="todo"><span class="fr-only" lang="fr">à confirmer</span><span class="en-only" lang="en">to confirm</span></span></li>
-          <li><span class="lbl"><span class="fr-only" lang="fr">Trois ou quatre photos du cabinet</span><span class="en-only" lang="en">Three or four photos of the practice</span></span><span class="todo"><span class="fr-only" lang="fr">à confirmer</span><span class="en-only" lang="en">to confirm</span></span></li>
-          <li><span class="lbl"><span class="fr-only" lang="fr">Moyens de paiement acceptés</span><span class="en-only" lang="en">Accepted payment methods</span></span><span class="todo"><span class="fr-only" lang="fr">à confirmer</span><span class="en-only" lang="en">to confirm</span></span></li>
-          <li><span class="lbl"><span class="fr-only" lang="fr">Assurances et mutuelles prises en charge</span><span class="en-only" lang="en">Insurers and health schemes you accept</span></span><span class="todo"><span class="fr-only" lang="fr">à confirmer</span><span class="en-only" lang="en">to confirm</span></span></li>
-          <li><span class="lbl"><span class="fr-only" lang="fr">Marques de montures que vous aimez vendre</span><span class="en-only" lang="en">Frame brands you like to sell</span></span><span class="todo"><span class="fr-only" lang="fr">à confirmer</span><span class="en-only" lang="en">to confirm</span></span></li>
-        </ul>
-        <p class="note"><span class="fr-only" lang="fr">Envoyez-les&nbsp;: elles s'affichent ici le jour même — et vos photos remplacent les deux images d'illustration.</span><span class="en-only" lang="en">Send them and they appear here the same day, and your own photos replace the two illustrations.</span></p>
+      <h2 id="h-questions" class="rv">
+        <span class="fr-only" lang="fr">Les questions qu'on nous pose.</span>
+        <span class="en-only" lang="en">The questions we are asked.</span>
+      </h2>
+      <div class="faq rv">
+        <details>
+          <summary><span><span class="fr-only" lang="fr">Où se trouve le cabinet, à Douala&nbsp;?</span><span class="en-only" lang="en">Where is the practice in Douala?</span></span>
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <p><span class="fr-only" lang="fr">Le cabinet est à Douala (Littoral). Écrivez sur WhatsApp&nbsp;: la localisation exacte vous est envoyée dans la conversation, avec le point de repère.</span><span class="en-only" lang="en">The practice is in Douala (Littoral). Write on WhatsApp: the exact location is sent to you in the conversation, with the landmark.</span></p>
+        </details>
+        <details>
+          <summary><span><span class="fr-only" lang="fr">Faut-il une ordonnance pour avoir des lunettes&nbsp;?</span><span class="en-only" lang="en">Do I need a prescription to get glasses?</span></span>
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <p><span class="fr-only" lang="fr">Pour des verres correcteurs, oui&nbsp;: apportez l'ordonnance de votre ophtalmologue. Pour des lunettes de soleil, un réglage ou une réparation, non.</span><span class="en-only" lang="en">For prescription lenses, yes: bring your ophthalmologist's prescription. For sunglasses, an adjustment or a repair, no.</span></p>
+        </details>
+        <details>
+          <summary><span><span class="fr-only" lang="fr">Ma monture est cassée&nbsp;: est-ce réparable&nbsp;?</span><span class="en-only" lang="en">My frames are broken: can they be repaired?</span></span>
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <p><span class="fr-only" lang="fr">Envoyez une photo de la monture sur WhatsApp. La réponse vous dit si c'est réparable, et si le déplacement en vaut la peine.</span><span class="en-only" lang="en">Send a photo of the frames on WhatsApp. The answer tells you whether they can be repaired, and whether the trip is worth it.</span></p>
+        </details>
+        <details>
+          <summary><span><span class="fr-only" lang="fr">Quels sont les horaires d'ouverture&nbsp;?</span><span class="en-only" lang="en">What are the opening hours?</span></span>
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <p><span class="fr-only" lang="fr">Ils s'affichent ici dès que le cabinet nous les confirme. Avant de vous déplacer, demandez sur WhatsApp&nbsp;: on vous dit s'il est ouvert maintenant.</span><span class="en-only" lang="en">They will appear here as soon as the practice confirms them. Before you travel, ask on WhatsApp: you will be told whether it is open now.</span></p>
+        </details>
+        <details>
+          <summary><span><span class="fr-only" lang="fr">Combien coûte une paire de lunettes&nbsp;?</span><span class="en-only" lang="en">How much do a pair of glasses cost?</span></span>
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <p><span class="fr-only" lang="fr">Le prix dépend de vos verres et de la monture que vous choisissez. Posez la question sur WhatsApp en décrivant votre besoin&nbsp;: c'est la réponse la plus utile.</span><span class="en-only" lang="en">The price depends on your lenses and the frame you choose. Ask on WhatsApp and describe what you need: that is the most useful answer.</span></p>
+        </details>
       </div>
     </div>
   </section>
@@ -588,23 +622,22 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
         <a class="brand" href="#top">
           <span class="brandtxt">DM <span class="thin">OPTIC</span></span>
           <span class="mark" aria-hidden="true"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><circle class="o" cx="20" cy="20" r="16"></circle><circle class="i" cx="20" cy="20" r="10.5"></circle><path class="glint" d="M11.6 14.2a10.5 10.5 0 0 1 8.4-4.1"></path></svg></span>
-          <span>DM <span class="thin">OPTIC</span></span>
         </a>
         <p><span class="fr-only" lang="fr">Cabinet d'optique médicale à Douala, inscrit au registre de l'Ordre national des opticiens du Cameroun depuis 2016.</span><span class="en-only" lang="en">Optical practice in Douala, on the register of the National Order of Opticians of Cameroon since 2016.</span></p>
       </div>
       <div>
         <h3><span class="fr-only" lang="fr">La page</span><span class="en-only" lang="en">This page</span></h3>
         <ul class="fnav">
-          <li><a href="#constat"><span class="fr-only" lang="fr">Le constat</span><span class="en-only" lang="en">The problem</span></a></li>
-          <li><a href="#actes"><span class="fr-only" lang="fr">Les actes du cabinet</span><span class="en-only" lang="en">Services</span></a></li>
-          <li><a href="#titulaire"><span class="fr-only" lang="fr">Le titulaire</span><span class="en-only" lang="en">The optician</span></a></li>
-          <li><a href="#completer"><span class="fr-only" lang="fr">À compléter</span><span class="en-only" lang="en">To complete</span></a></li>
+          <li><a href="#actes"><span class="fr-only" lang="fr">Ce que nous faisons</span><span class="en-only" lang="en">What we do</span></a></li>
+          <li><a href="#etapes"><span class="fr-only" lang="fr">Comment ça se passe</span><span class="en-only" lang="en">How it works</span></a></li>
+          <li><a href="#cabinet"><span class="fr-only" lang="fr">Le cabinet</span><span class="en-only" lang="en">The practice</span></a></li>
+          <li><a href="#questions"><span class="fr-only" lang="fr">Les questions qu'on nous pose</span><span class="en-only" lang="en">Questions we are asked</span></a></li>
         </ul>
       </div>
       <div>
         <h3><span class="fr-only" lang="fr">Prendre contact</span><span class="en-only" lang="en">Get in touch</span></h3>
         <div class="fcta">
-          <a class="btn btn-wa wa" data-fr="Bonjour DM OPTIC, je cherche un opticien à Douala." data-en="Hello DM OPTIC, I am looking for an optician in Douala." href="https://wa.me/237656122239?text=Bonjour%20DM%20OPTIC%2C%20je%20cherche%20un%20opticien%20%C3%A0%20Douala.">
+          <a class="btn btn-wa wa" data-fr="Bonjour DM OPTIC, je voudrais prendre un rendez-vous pour un examen de la vue." data-en="Hello DM OPTIC, I would like to book an eye examination." href="https://wa.me/237656122239?text=Bonjour%20DM%20OPTIC%2C%20je%20voudrais%20prendre%20un%20rendez-vous%20pour%20un%20examen%20de%20la%20vue.">
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
             <span class="fr-only" lang="fr">Écrire sur WhatsApp</span><span class="en-only" lang="en">Write on WhatsApp</span>
           </a>
@@ -622,14 +655,14 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
     </div>
     <div class="stripbar">
       <span>© 2026 DM OPTIC</span>
-      <span><span class="fr-only" lang="fr">Aperçu préparé par AMK pour DM OPTIC — adresse, horaires, actes et photos à valider par le cabinet avant la mise en ligne.</span><span class="en-only" lang="en">Preview prepared by AMK for DM OPTIC: address, hours, services and photos to be validated by the practice before going live.</span></span>
+      <span><span class="fr-only" lang="fr">Aperçu préparé par AMK pour DM OPTIC — actes, adresse, horaires et photos à valider par le cabinet avant la mise en ligne.</span><span class="en-only" lang="en">Preview prepared by AMK for DM OPTIC: services, address, hours and photos to be validated by the practice before going live.</span></span>
       <a href="#top"><span class="fr-only" lang="fr">Haut de page ↑</span><span class="en-only" lang="en">Back to top ↑</span></a>
     </div>
   </div>
 </footer>
 
 <div class="dock">
-  <a class="btn btn-wa wa" data-fr="Bonjour DM OPTIC, je cherche un opticien à Douala." data-en="Hello DM OPTIC, I am looking for an optician in Douala." href="https://wa.me/237656122239?text=Bonjour%20DM%20OPTIC%2C%20je%20cherche%20un%20opticien%20%C3%A0%20Douala.">
+  <a class="btn btn-wa wa" data-fr="Bonjour DM OPTIC, je voudrais prendre un rendez-vous pour un examen de la vue." data-en="Hello DM OPTIC, I would like to book an eye examination." href="https://wa.me/237656122239?text=Bonjour%20DM%20OPTIC%2C%20je%20voudrais%20prendre%20un%20rendez-vous%20pour%20un%20examen%20de%20la%20vue.">
     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
     <span class="fr-only" lang="fr">Écrire</span><span class="en-only" lang="en">Write</span>
   </a>
@@ -651,7 +684,6 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
     if(timer){clearTimeout(timer);timer=null;}
     if(!persist){timer=setTimeout(function(){sayEl.textContent='';},6000);}
   }
-  window.__say=say;
   function paint(){
     var l=lg(); html.lang=l;
     [['btn-fr','fr'],['btn-en','en']].forEach(function(p){
@@ -663,9 +695,6 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
     });
     [].forEach.call(document.querySelectorAll('img[data-alt-fr]'),function(im){
       var t=im.getAttribute(l==='en'?'data-alt-en':'data-alt-fr'); if(t) im.setAttribute('alt',t);
-    });
-    [].forEach.call(document.querySelectorAll('[data-say-fr]'),function(n){
-      var t=n.getAttribute(l==='en'?'data-say-en':'data-say-fr'); if(t) n.setAttribute('data-say',t);
     });
   }
   function setLang(l){html.setAttribute('data-lang',l); try{localStorage.setItem(K,l)}catch(e){}
@@ -762,13 +791,19 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
  {"@type":"Optician","@id":"#dmoptic","name":"DM OPTIC","alternateName":"DM Optique",
-  "description":"Cabinet d'optique médicale à Douala : examen de la vue, verres sur ordonnance, montures, entretien. Inscrit au registre de l'Ordre national des opticiens du Cameroun depuis 2016.",
+  "description":"Cabinet d'optique médicale à Douala : examen de la vue, verres sur ordonnance, montures, réparation et entretien. Inscrit au registre de l'Ordre national des opticiens du Cameroun depuis 2016.",
   "telephone":"+237656122239","currenciesAccepted":"XAF",
   "identifier":{"@type":"PropertyValue","name":"N° d'inscription à l'Ordre national des opticiens du Cameroun","value":"021/2016"},
   "founder":{"@type":"Person","name":"Domche Noumbi"},
   "address":{"@type":"PostalAddress","addressLocality":"Douala","addressCountry":"CM"},
   "areaServed":{"@type":"City","name":"Douala"},
-  "contactPoint":{"@type":"ContactPoint","contactType":"customer service","telephone":"+237656122239","availableLanguage":["fr","en"]}}
+  "contactPoint":{"@type":"ContactPoint","contactType":"customer service","telephone":"+237656122239","availableLanguage":["fr","en"]}},
+ {"@type":"FAQPage","@id":"#questions","mainEntity":[
+  {"@type":"Question","name":"Où se trouve le cabinet, à Douala ?","acceptedAnswer":{"@type":"Answer","text":"Le cabinet est à Douala (Littoral). Écrivez sur WhatsApp : la localisation exacte vous est envoyée dans la conversation, avec le point de repère."}},
+  {"@type":"Question","name":"Faut-il une ordonnance pour avoir des lunettes ?","acceptedAnswer":{"@type":"Answer","text":"Pour des verres correcteurs, oui : apportez l'ordonnance de votre ophtalmologue. Pour des lunettes de soleil, un réglage ou une réparation, non."}},
+  {"@type":"Question","name":"Ma monture est cassée : est-ce réparable ?","acceptedAnswer":{"@type":"Answer","text":"Envoyez une photo de la monture sur WhatsApp. La réponse vous dit si c'est réparable, et si le déplacement en vaut la peine."}},
+  {"@type":"Question","name":"Quels sont les horaires d'ouverture ?","acceptedAnswer":{"@type":"Answer","text":"Ils s'affichent ici dès que le cabinet nous les confirme. Avant de vous déplacer, demandez sur WhatsApp : on vous dit s'il est ouvert maintenant."}},
+  {"@type":"Question","name":"Combien coûte une paire de lunettes ?","acceptedAnswer":{"@type":"Answer","text":"Le prix dépend de vos verres et de la monture que vous choisissez. Posez la question sur WhatsApp en décrivant votre besoin : c'est la réponse la plus utile."}}]}
 ]}
 </script>
 </body>

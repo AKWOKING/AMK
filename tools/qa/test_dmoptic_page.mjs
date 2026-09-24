@@ -3,9 +3,10 @@
  * avec le DOM minuscule du dépôt (`fake_dom.mjs`) : pas de jsdom, pas de dépendance à installer.
  *
  * Ce qu'il protège, dans l'ordre :
- *   suite 0 · le contrat que la PAGE doit au JavaScript (identifiants, adresses, langues, données) ;
+ *   suite 0 · le contrat que la PAGE doit au JavaScript (identifiants, adresses, langues, données, AEO) ;
  *   suite 1 · la bascule FR|EN : langue, boutons, message WhatsApp, texte de remplacement des images ;
- *   suite 2 · le mouvement : si le script plante ou si l'API manque, RIEN ne reste invisible ;
+ *   suite 2 · le mouvement : si le script plante ou si l'API manque, RIEN ne reste invisible — et les
+ *             deux dégradés animés du premier écran s'arrêtent quand le visiteur le demande ;
  *   suite 3 · les deux utilitaires du bloc contact : copier le numéro, enregistrer la fiche .vcf.
  *
  * Ce que ça n'est pas : un test de rendu. La mise en page et l'œil restent à King (le bac n'a pas de
@@ -25,15 +26,15 @@ const html = fs.readFileSync(PAGE, "utf8");
 const WA = "https://wa.me/237656122239?text=";
 const NUM = "+237656122239";
 const langSrc = scriptAfter(html, "LES DEUX LANGUES, LES ADRESSES WHATSAPP, ET CE QUE LA PAGE DIT");
-/* Le marqueur doit être UNIQUE : « LE MOUVEMENT » vit aussi dans une règle CSS, plus haut —
-   et `scriptAfter` remontait alors jusqu'au script de la langue (piège attrapé en écrivant ceci). */
+/* Le marqueur doit être UNIQUE : « LE MOUVEMENT » vit aussi dans une règle CSS, plus haut — et
+   `scriptAfter` remonterait alors jusqu'au script de la langue (piège attrapé le 24/09). */
 const revealSrc = scriptAfter(html, "IntersectionObserver, jamais d'écouteur de défilement");
 
 /* ═════════════ 0 · le contrat que la page doit au JavaScript ═════════════ */
 console.log("═══ 0 · le contrat page ⇄ JavaScript ═══");
 
 const IDS = ["btn-fr", "btn-en", "say", "copy2", "vcard", "main", "top", "h-hero",
-             "constat", "actes", "titulaire", "completer", "contact"];
+             "actes", "etapes", "cabinet", "questions", "contact"];
 const missing = IDS.filter((id) => !html.includes('id="' + id + '"'));
 ok(`les ${IDS.length} identifiants attendus sont dans la page`, missing.length === 0, "manquants : " + missing.join(", "));
 
@@ -69,7 +70,7 @@ ok(`autant de .fr-only que de .en-only (${frN} / ${enN})`, frN === enN && frN > 
 
 const ld = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
 const opticien = ld["@graph"].find((g) => g["@type"] === "Optician");
-ok("le schéma décrit bien le cabinet (type Optician, téléphone, ville, inscription)",
+ok("le schéma décrit le cabinet (Optician, téléphone, ville, inscription) — l'écriture « riche en entités » de l'AEO",
    !!opticien && opticien.telephone === NUM && opticien.address.addressLocality === "Douala" &&
    opticien.identifier.value === "021/2016");
 ok("aucune note, aucun avis, aucun horaire inventé dans le schéma",
@@ -78,13 +79,53 @@ ok("aucun lien mort : pas un seul href=\"#\"", !/href="#"/.test(html));
 ok("aucun prix dans le texte visible",
    !/\b\d{2,3}\s?\d{3}\s?(FCFA|XAF|fcfa)\b/i.test(html) && !/priceRange/.test(html));
 
+/* ── AEO (§31.3) : cinq questions visibles, cinq questions dans le schéma, mot pour mot ────────── */
+const details = [...html.matchAll(/<details>[\s\S]*?<\/details>/g)].map((m) => m[0]);
+const summaries = details.map((d) => (d.match(/<summary[\s>]/g) || []).length);
+ok(`les ${details.length} accordéons ont UN seul <summary> chacun (§20.11)`,
+   details.length === 5 && summaries.every((n) => n === 1), "summary par bloc : " + summaries.join(", "));
+ok("chaque <summary> porte ses DEUX langues à l'intérieur (jamais la classe de langue sur lui)",
+   details.every((d) => {
+     const s = (d.match(/<summary>[\s\S]*?<\/summary>/) || [""])[0];
+     return s.includes("fr-only") && s.includes("en-only");
+   }));
+
+const faq = ld["@graph"].find((g) => g["@type"] === "FAQPage").mainEntity;
+const plain = (x) => x.replace(/<[^>]+>/g, " ").replace(/&nbsp;|\u00a0/g, " ").replace(/\u2019/g, "'").replace(/\s+/g, " ").trim();
+const qVisible = [...html.matchAll(/<summary><span><span class="fr-only"[^>]*>([\s\S]*?)<\/span>/g)].map((m) => plain(m[1]));
+const aVisible = [...html.matchAll(/<\/summary>\s*<p><span class="fr-only"[^>]*>([\s\S]*?)<\/span>/g)].map((m) => plain(m[1]));
+ok(`les ${faq.length} questions du schéma sont mot pour mot celles de la page`,
+   faq.length === 5 && faq.every((q, i) => plain(q.name) === qVisible[i]),
+   "vues : " + qVisible.length);
+ok("les réponses du schéma sont mot pour mot celles de la page",
+   faq.every((q, i) => plain(q.acceptedAnswer.text) === aVisible[i]),
+   faq.map((q, i) => plain(q.acceptedAnswer.text) === aVisible[i] ? "" : "n°" + (i + 1)).join(" "));
+ok("chaque réponse commence par l'information, pas par le contexte (BLUF)",
+   faq.every((q) => plain(q.acceptedAnswer.text).split(" ").length >= 12));
+ok("la page reste une page de travail : noindex présent, et c'est voulu",
+   /<meta name="robots" content="noindex,nofollow">/.test(html));
+
+/* ── les deux dégradés animés du premier écran doivent pouvoir s'arrêter ───────────────────────── */
+const calmBlock = (html.match(/@media \(prefers-reduced-motion:reduce\)\{[\s\S]*?\n\}/) || [""])[0];
+ok("le bloc `prefers-reduced-motion` arrête AUSSI les deux dégradés du premier écran (.wash, .lensring)",
+   calmBlock.includes(".wash") && calmBlock.includes(".lensring"), calmBlock.slice(0, 60));
+ok("les dégradés ne bougent que par `transform` (composé par le GPU), jamais par `filter: blur`",
+   /@keyframes drift\{[\s\S]*?transform:/.test(html) && !/\.wash\{[^}]*filter/.test(html));
+
 /* ═════════════ 1 · la bascule FR | EN ═════════════ */
 console.log("\n═══ 1 · la bascule, et ce qu'elle change vraiment ═══");
 
+/* Les cinq messages, dans l'ORDRE DU DOCUMENT (premier écran, étapes, contact, pied, barre du bas). */
 const MESSAGES = [
-  ["Bonjour DM OPTIC, je cherche un opticien à Douala.", "Hello DM OPTIC, I am looking for an optician in Douala."],
-  ["Bonjour DM OPTIC, je voudrais un renseignement avant de passer.", "Hello DM OPTIC, I would like some information before coming."],
-  ["Bonjour DM OPTIC, je voudrais passer vous voir. Quels sont vos horaires ?", "Hello DM OPTIC, I would like to come and see you. What are your opening hours?"],
+  ["Bonjour DM OPTIC, je voudrais prendre un rendez-vous pour un examen de la vue.",
+   "Hello DM OPTIC, I would like to book an eye examination."],
+  ["Bonjour DM OPTIC, voici ce qui ne va pas : ", "Hello DM OPTIC, this is what is wrong: "],
+  ["Bonjour DM OPTIC, je voudrais passer vous voir. Quels sont vos horaires ?",
+   "Hello DM OPTIC, I would like to come and see you. What are your opening hours?"],
+  ["Bonjour DM OPTIC, je voudrais prendre un rendez-vous pour un examen de la vue.",
+   "Hello DM OPTIC, I would like to book an eye examination."],
+  ["Bonjour DM OPTIC, je voudrais prendre un rendez-vous pour un examen de la vue.",
+   "Hello DM OPTIC, I would like to book an eye examination."],
 ];
 const ALT = ["Une paire de lunettes de vue posée sur une surface claire, lumière douce.",
              "A pair of prescription glasses resting on a pale surface in soft light."];
@@ -108,7 +149,6 @@ function run(lang, stored) {
     say,
     "QA:a.wa": anchors,
     "QA:img[data-alt-fr]": [image],
-    "QA:[data-say-fr]": [],
     "QA:a.wa,a[href^=\"tel:\"]": anchors,
     "QA:.hero .btn": [],
   }, buttons);
@@ -136,7 +176,7 @@ ok("clic sur EN : la page bascule et se déclare en anglais",
 ok("clic sur EN : les deux boutons disent leur état (aria-pressed)",
    r.buttons["btn-en"].getAttribute("aria-pressed") === "true" &&
    r.buttons["btn-fr"].getAttribute("aria-pressed") === "false");
-ok("clic sur EN : les 3 messages WhatsApp passent en anglais, numéro inchangé",
+ok("clic sur EN : les 5 messages WhatsApp passent en anglais, numéro inchangé",
    r.anchors.every((a, i) => waMessage(a.getAttribute("href")) === MESSAGES[i][1]) &&
    r.anchors.every((a) => a.getAttribute("href").indexOf(WA) === 0));
 ok("clic sur EN : le texte de remplacement de l'image passe en anglais",
@@ -192,7 +232,7 @@ function runTools() {
   const say = el("p");
   const buttons = { "btn-fr": el("button"), "btn-en": el("button"), copy2: el("button"), vcard: el("button") };
   const document = doc(Object.assign({ say, "QA:a.wa": [], "QA:img[data-alt-fr]": [],
-    "QA:[data-say-fr]": [], "QA:a.wa,a[href^=\"tel:\"]": [], "QA:.hero .btn": [] }, buttons));
+    "QA:a.wa,a[href^=\"tel:\"]": [], "QA:.hero .btn": [] }, buttons));
   document.createElement = (tag) => el(tag);
   const body = el("body");
   body.appendChild = () => {}; body.removeChild = () => {};
