@@ -1675,10 +1675,12 @@ def _apply_state(out: list, table: dict, name: str) -> None:
 
 
 def _apply_jour(out: list) -> None:
-    """Les relevés, dans l'ordre : 22/09 (soir), 23/09 (matin), puis 24/09 (le fil Le Cristallin)."""
+    """Les relevés, dans l'ordre : 22/09 (soir), 23/09 (matin), 24/09 (le fil Le Cristallin), puis
+    24/09 (la fiche Google d'Univers Optique, relue avant la réunion)."""
     _apply_state(out, JOUR_2209, "JOUR_2209")
     _apply_state(out, JOUR_2309, "JOUR_2309")
     _apply_state(out, FIL_2409, "FIL_2409")
+    _apply_state(out, FICHE_2409, "FICHE_2409")
 
 
 
@@ -1723,6 +1725,35 @@ FIL_2409 = {
             "Google) restent parquées jusqu'au paiement, et l'abonnement ne se propose QU'À la "
             "livraison payée. Message de santé prêt, à envoyer par King lundi 29/09 : "
             "`sales/Queue-CRISTALLIN-2026-09-29.md`.",
+    },
+}
+
+
+# ── LE 24/09 · LA FICHE GOOGLE D'UNIVERS OPTIQUE — revendiquée par personne ─────────────────────
+# Relecture publique de la fiche (Maps, place_id ChIJ2VaDG-QNYRARYgzvNnK0kRA) avant la réunion du 25/09
+# à 10 h. Ce qui change : « gestionnaire inconnu » n'est plus l'inconnue — la page propose de la
+# REVENDIQUER, donc c'est le cas ② du §9.3 de FICHE-GOOGLE-PROFILE.md, une fiche LIBRE. La première étape
+# de tout le reste (champ site, réponse aux avis) est donc la revendication, et elle appartient à LUI :
+# nous guidons, nous ne la prenons pas à sa place.
+# Les avis : 6 · 3,3/5 — trois lisibles (8, 5 et 5 ans ; descriptifs ; aucune plainte ; aucune réponse du
+# propriétaire), trois derrière « Plus d'avis ». Les textes d'avis NE SE COPIENT PAS dans le dépôt (ils
+# portent des noms) : le scan a tourné sans nom et a REFUSÉ de conclure (3 < 5).
+# Piège d'homonyme, chiffré pour ne plus jamais être confondu : « Univers Optique » à HAGONDANGE
+# (Moselle) — 9 avis, tous 5/5, gérant « Cyril » (opticien.tel). Jamais le nôtre.
+FICHE_2409 = {
+    "univers-optique": {
+        "Notes_extra":
+            "24/09 — FICHE GOOGLE RELUE (Maps, `place_id:ChIJ2VaDG-QNYRARYgzvNnK0kRA`) : la page "
+            "publique propose « **Revendiquer cet établissement** » (`business.google.com/create?fp=…) "
+            "— la fiche n'est pilotée par personne (cas ② du §9.3 de `FICHE-GOOGLE-PROFILE.md`), donc "
+            "« gestionnaire inconnu » est tranché. Champ « site web » toujours vide, 21 photos, "
+            "horaires 08:00-18:00 (sam. 08:00-13:00). AVIS : 6 · 3,3/5, **3 lisibles** (8/5/5 ans, "
+            "descriptifs, **aucune plainte**, aucune réponse du propriétaire) et 3 derrière « Plus "
+            "d'avis (3) » — non lus, jamais cités. Scan lancé SANS LES NOMS sur les trois : **STOP, "
+            "échantillon trop petit (3 < 5)** — `DETECTION-FUITES-2026-09-24.md` §9. ONOC (tableau du "
+            "Littoral, ligne 94) : n° insc. **93** · arrêté **0346** · BAYANG BIHEN Calvin · Douala "
+            "**699 252 874** (le numéro qu'on a déjà). HOMONYME Hagondange (Moselle) : 9 avis 5/5, "
+            "gérant « Cyril » — jamais le nôtre.",
     },
 }
 

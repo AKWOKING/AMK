@@ -178,6 +178,8 @@ ne savons pas promettre une position dans les trois premiers.
   S'il a la main dessus, la séquence est : le site en ligne → **puis** le champ rempli → puis les horaires,
   les photos et la réponse aux six avis. S'il ne l'a pas, la première étape devient « revendiquer la
   fiche » (§2, étape 1) — et c'est *lui* qui peut le faire, pas nous.
+  **Relu le 24/09 : la fiche affiche « Revendiquer cet établissement » → cas ② du §9.3, elle est libre.**
+  Donc la séquence commence par la revendication, et la question en séance devient « qui la revendique ? ».
 - **Vendredi 13 h, UNI-LABO** : nous ne savons pas s'ils ont une fiche Google (ligne du CRM : `directory`).
   Donc on **demande**, on ne suppose pas — et si oui, le lien `wa.me` du chat (§3) est la première chose à
   corriger, avant tout le reste.
@@ -225,7 +227,8 @@ lui donner la liste ci-dessus avant qu'il commence.
 
 ### 9.3 · Quand la fiche appartient à quelqu'un d'autre
 
-C'est le cas d'Univers Optique (fiche notée, champ site vide, gestionnaire inconnu) et le cas le plus
+C'est le cas d'Univers Optique (fiche notée, champ site vide) — **tranché le 24/09 : la page propose de la
+revendiquer, donc cas ②, fiche libre** — et le cas le plus
 fréquent sur les fiches anciennes : un ancien employé, une ancienne agence, un compte oublié. La marche à
 suivre, documentée :
 

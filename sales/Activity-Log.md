@@ -3385,3 +3385,28 @@ Pour les prospects qu'on choisit dans `leads/Daily-Plan.csv` : ouvrir la fiche, 
 noms)**, passer le fichier au scan, lire le verdict **et s'y tenir** (« motif » → on approche par la fuite ;
 « isolé » ou « pas d'angle » → on approche autrement), puis noter au CRM **le fait qu'on a lu les avis**, pas
 leur contenu.
+
+## 2026-09-24 · UNIVERS OPTIQUE — « lance le scan sur les avis » : il n'y avait rien à scanner, et la fiche dit plus
+
+Demande de King : « run the scan on Univers Optique's pasted reviews ». **Aucun avis n'avait été collé** — et le
+dépôt n'en garde pas (un avis porte un nom de client). Ce que la fiche publique laisse lire : **3 avis sur 6**,
+tous anciens (8, 5 et 5 ans), descriptifs ou élogieux, **aucune plainte**, aucune réponse du propriétaire ; les
+trois autres sont derrière « Plus d'avis (3) ». Le scan a donc tourné sur les trois textes, **sans les noms**,
+et il a **REFUSÉ de conclure** (3 < 5 avis) — le garde-fou a produit le résultat, personne n'a jugé. Conclusion
+écrite : **la méthode « fuite » ne mord pas ici**, la réunion de vendredi 10 h ne parlera pas des avis.
+
+Ce que la même lecture a trouvé vaut plus que n'importe quel avis : la page affiche « **Revendiquer cet
+établissement** » → **la fiche n'est pilotée par personne** (champ site vide, 21 photos, horaires à jour).
+C'est le cas ② du §9.3 de `FICHE-GOOGLE-PROFILE.md`, et c'est **l'étape zéro** : sans revendication, ni champ
+site sous son contrôle, ni réponse aux avis — et **la revendication appartient à lui** (Google vérifie le
+propriétaire), nous guidons. La question de la réunion passe donc de « avez-vous la main ? » à **« qui la
+revendique ? »**.
+
+Deux vérifications de plus, pour ne plus jamais se tromper : l'Ordre (ONOC, tableau du Littoral) publie
+« Univers Optique · n° insc. 93 · arrêté 0346 · **BAYANG BIHEN Calvin** · Douala 699 252 874 » — c'est le nom
+du CRM et **le numéro déjà utilisé**, donc la bonne ligne WhatsApp. Et l'homonyme est chiffré : « Univers
+Optique » à **Hagondange (Moselle)**, 9 avis tous 5/5, gérant « Cyril » — jamais le nôtre, jamais cité.
+
+Fichiers : `sales/RDV-UNIVERS-OPTIQUE-2026-09-25.md` (section « la fiche relue le 24/09 »), le business case
+(deux constats remplacés, « Après » et la FAQ des avis précisées), `FICHE-GOOGLE-PROFILE.md` §9.3 (cas ②
+confirmé), `DETECTION-FUITES-2026-09-24.md` §9, bloc `FICHE_2409` du CRM.

@@ -115,6 +115,8 @@ Ce qu'on dit — **au patron, en privé, une seule fois** :
    « pas d'angle » → **on approche autrement** (le travail visible, la fiche, l'aperçu) et on ne parle pas
    des avis.
 5. **Noter au CRM** ce qui a été retenu — et **le fait qu'on a lu les avis**, pas leur contenu.
+6. **Le fichier d'avis ne vit jamais dans le dépôt.** `/tmp` suffit, et il se supprime après : le scan
+   lui-même n'écrit rien, et un avis porte un nom de client.
 
 **Ce que fait l'outil, et ce qu'il ne fait pas :** il **compte ce qui est écrit** dans le texte qu'on lui
 donne. Il n'invente rien, il ne note personne, il n'écrit **aucun fichier** (un avis contient un nom, et on
@@ -168,3 +170,40 @@ essaient de faire.
 **Ce qui change à table, en revanche** : les deux réunions de vendredi se jouent en présence. Là, la vidéo
 redevient utile sur un point — **écouter plus qu'on ne parle**, et poser les questions du questionnaire
 plutôt que de réciter la page.
+
+
+---
+
+## 9 · Premier cas réel — Univers Optique (24/09) : le scan refuse, et c'est la bonne réponse
+
+Demande de King : lancer le scan sur les avis d'Univers Optique, à trois jours de sa réunion. **Il n'y avait
+aucun avis « collé »** — le dépôt n'en garde pas, un avis portant un nom de client. Ce que la fiche laisse lire
+publiquement : **3 avis sur 6** (les trois autres sont derrière « Plus d'avis (3) »). Le scan a donc tourné sur
+ces trois textes, **noms retirés**, lus depuis l'entrée standard — aucun fichier écrit.
+
+Sortie réelle, mot pour mot :
+
+    SCAN DES AVIS PUBLICS — Univers Optique — 3 avis lisibles sur 6
+    3 avis analysé(s). Rien n'est enregistré : ce rapport ne vit que sur ton écran.
+
+    STOP — échantillon trop petit (3 avis, minimum 5 pour conclure quoi que ce soit).
+    Avec aussi peu d'avis, une plainte isolée peut venir d'une mauvaise journée. On note le
+    fait tel quel, on n'en fait pas un motif, et on n'en parle pas au client comme d'un
+    problème systématique.
+
+Les trois disent : deux décrivent le cabinet, un félicite l'accueil. **Aucune plainte**, et ils datent de **8
+et 5 ans**. Trois conclusions, dans l'ordre d'importance :
+
+1. **La méthode « fuite » ne mord pas ici, et on ne la force pas.** Pas de plainte répétée → pas de « voici ce
+   que ça vous coûte ». La réunion garde son angle (le site, la fiche), et **on n'ouvre pas le sujet des avis**.
+2. **Ce que la même lecture a trouvé est plus fort que n'importe quel avis** : la fiche affiche
+   « **Revendiquer cet établissement** » — **personne ne la pilote**. C'est le cas ② du §9.3 de
+   `FICHE-GOOGLE-PROFILE.md`, et c'est **l'étape zéro** de tout le reste : sans revendication, ni champ site
+   sous son contrôle, ni réponse aux avis.
+3. **Le piège d'homonyme est réel, et maintenant chiffré** : « Univers Optique » à **Hagondange (Moselle)** —
+   9 avis, tous 5/5, un gérant prénommé Cyril, un client qui remercie pour un « disque bleu de stationnement ».
+   Rien à voir. Le nom d'un dossier porte toujours sa ville.
+
+**La règle qui ressort :** la répétition est le signal (§1) — mais quand il n'y a pas de répétition, la réponse
+honnête est « il n'y a pas de fuite ici », et on se tait sur les avis. Le scan a refusé pour de vrai, sur des
+ données réelles : c'est le garde-fou qui a produit le résultat, pas un jugement humain.

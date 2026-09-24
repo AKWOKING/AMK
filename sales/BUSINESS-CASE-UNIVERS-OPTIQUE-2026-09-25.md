@@ -17,7 +17,8 @@ Prix posé le 21/09 : **100 000 FCFA**, 50 % pour démarrer, 50 % à la mise en 
 | Constat | Source |
 |---|---|
 | Son ancien site **ne répond plus** : `univers-optique.com` n'a **aucun enregistrement DNS** | vérifié le 21/09 ; dernière copie vivante : 02/11/2023 |
-| Sa fiche Google affiche **3,3 / 5 sur 6 avis**, et **aucune réponse publique** à ces avis | fiche Google, lue le 21/09 |
+| Sa fiche Google **n'est revendiquée par personne** : la page propose « Revendiquer cet établissement » | fiche Google, relue le 24/09 |
+| Sa fiche affiche **3,3 / 5 sur 6 avis** — les trois lisibles (8 et 5 ans) **ne lui reprochent rien**, et **aucune réponse publique** n'y figure | idem |
 | Le champ **« site web » de sa fiche Google est vide** | idem |
 | Son annuaire professionnel (Ordre) le liste — **mais un patient ne peut rien voir de son cabinet** | annuaire ONOC |
 | Aucune page Facebook, Instagram ou TikTok d'optique de Bépanda ne mène à son nom avec certitude | relu le 21/09 |
@@ -58,7 +59,7 @@ d'un mois.
 | **Mise en ligne** | **3 à 5 jours** après l'acompte |
 | **Ce qu'il n'est pas** | Pas un abonnement, pas un loyer, pas de frais cachés. Le site est à lui. |
 | **Son nom de domaine** | `univers-optique.com` ne répond plus. Deux options, **à lui de choisir** : le remettre en service s'il est encore à lui (vérifié en une heure), ou repartir sur un nom qui porte son quartier — plus fort pour une recherche locale. Dans les deux cas, **l'adresse imprimée sur ses papiers doit conduire quelque part.** |
-| **Après** | Sa fiche Google reste sa première vitrine : on la complète (site, horaires, photos, **réponses aux six avis**), et le site lui renvoie les visiteurs |
+| **Après** | Sa fiche Google reste sa première vitrine : **on la revendique ensemble** (aujourd'hui, elle n'est pilotée par personne), puis on la complète — site, horaires, photos, **réponses aux six avis** — et le site lui renvoie les visiteurs |
 
 **Les six points que lui seul peut trancher** (ils sont déjà écrits en bas de l'aperçu, et deux minutes chacun) :
 le préfixe du fixe · la bannière « 15 % » de 2023 · l'ordre de ses trois lignes · le nom affiché (« ETS UNIVERS
@@ -81,7 +82,8 @@ lui montrer.
 
 **« Et les avis à 3,3 ? »** On ne les enjolive pas : ils s'affichent tels quels. Ce qu'on propose, c'est de
 **répondre aux six** et de rendre facile d'en laisser un septième. Six avis répondus pèsent plus lourd que six
-avis ignorés, même à 3,3.
+avis ignorés, même à 3,3. Et pour pouvoir répondre, il faut d'abord être le propriétaire de la fiche — **c'est
+la première chose qu'on règle ensemble**.
 
 **« Et après, je suis seul avec le site ? »** Le site est à lui, chez lui. La maintenance est une **ligne
 séparée** — jamais incluse de force, jamais un abonnement caché.

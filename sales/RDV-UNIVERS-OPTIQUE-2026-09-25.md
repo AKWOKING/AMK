@@ -54,6 +54,37 @@ le chiffre.
 
 ---
 
+## La fiche Google, relue le 24/09 — et ce que ça change (une seule chose)
+
+**Ce que la fiche publique affiche, mot pour mot** (Google Maps, `place_id:ChIJ2VaDG-QNYRARYgzvNnK0kRA`, lu le
+24/09) :
+
+| Ce qu'on lit | Ce que ça veut dire |
+|---|---|
+| « **Revendiquer cet établissement** » (lien `business.google.com/create?fp=1193933778870799458`) | **la fiche n'est pilotée par personne** : c'est le cas ② du §9.3 de `FICHE-GOOGLE-PROFILE.md` — la fiche est *libre*. C'est de là que tout part : sans revendication, ni champ site sous son contrôle, ni réponse aux avis |
+| « Ajouter un site Web », dans « informations manquantes » | le champ « site web » est toujours vide — le constat du 21/09 tient |
+| 21 photos · horaires lun-ven 08:00-18:00, sam. 08:00-13:00 | la fiche vit (des photos y sont), mais personne ne la pilote |
+
+**Les avis — ce qu'on sait, et la seule chose à ne pas faire.** 6 avis · **3,3/5**. Trois sont lisibles
+publiquement : ils ont **8 et 5 ans**, ils décrivent le cabinet ou félicitent l'accueil, **aucun ne se plaint**,
+et **aucune réponse** n'apparaît dessous. Les trois autres sont derrière « Plus d'avis (3) » : nous ne les
+avons pas lus, et nous n'en parlerons pas. **On n'ouvre donc PAS le sujet des avis nous-mêmes**, et on ne cite
+jamais un avis (règle de la maison, `FICHE-GOOGLE-PROFILE.md` §5). S'il en parle, la réponse est écrite
+d'avance au business case (§4, « et les avis à 3,3 ? ») : on ne les enjolive pas, on propose de **répondre aux
+six** — ce qui suppose d'abord la revendication.
+
+**Ce que ça change à la réunion :** la question « avez-vous la main sur cette fiche ? » n'attend plus une
+inconnue ; la réponse attendue est « non, personne ne l'a ». La formulation : « votre fiche n'est gérée par
+personne — **c'est vous qui pouvez la revendiquer**, et je vous montre comment ». La revendication est **à
+lui** (Google vérifie l'identité du propriétaire) : nous guidons, nous ne la prenons pas à sa place.
+
+**Et l'identité, vérifiée :** l'Ordre (ONOC), au tableau du Littoral, publie « **Univers Optique** · n° insc.
+**93** · arrêté **0346** · **BAYANG BIHEN Calvin** · Douala **699 252 874** » — c'est le nom qu'on a déjà au
+CRM et **le numéro qu'on a déjà utilisé**, donc la bonne ligne. À ne pas réciter en séance (il en sait plus que
+nous) ; utile seulement si la personne en face n'est pas lui.
+
+---
+
 ## Avant d'entrer : la séquence de découverte (ne pas l'improviser)
 
 Le système de vente est écrit dans `sales/SYSTEME-DE-VENTE-AMK-2026-09-23.md` (§3 · pièce ⑤). Les six pas, dans
