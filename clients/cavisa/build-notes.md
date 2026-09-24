@@ -55,7 +55,18 @@ La page promet ce qu'une boutique peut tenir : **le prix, le délai, la réparab
 | Balayage mécanique (`design/MOTION.md` §6) | greps | `transition:all` 0 · `ease-in` 0 · `scale(0)` 0 · `animation:` 0 · animations de `gap` retirées · hover derrière `(hover:hover) and (pointer:fine)` ×2 · `.btn`/`.lang`/`.cardlink` ont leur `:active` |
 | Em-dash | grep | **0** dans les chaînes anglaises |
 
-**Poids** : page **279 Ko** (dont 225 Ko de base64 pour les deux photos, 84 Ko chacune avant encodage) — un concept « ~1 Mo acceptable » (§13), mais la moitié est ici, pour un téléphone en 3G.
+**Poids** : page **216 Ko** (dont 162 Ko de base64 pour les deux photos : 77 Ko et 44 Ko avant encodage) — un concept « ~1 Mo acceptable » (§13), mais la moitié est ici, pour un téléphone en 3G.
+
+### Les photographies — refaites le 24/09 après le verdict de King
+**Verdict :** *« elles font beaucoup année 90, Douala est bcp plus moderne »*. Les deux images ont été
+régénérées en direction 2026 : **boutique contemporaine** (étagères chêne + noir mat, éclairage LED encastré,
+comptoir en verre, sol béton ciré, grandes vitrines, plantes) et **salle d'examen à équipement numérique**
+(réfracteur avec écran, panneau lumineux, mur chêne). Le hero est un plan taille **au miroir** : la cliente
+essaie une monture, l'opticien guide — le cercle du miroir double le motif du verre de la page.
+Ce qui a changé dans le builder (`demos/build_cavisa.py`) : **recadrage au centre** (`-resize ^ -gravity
+center -extent`) au lieu des décalages écrits en dur — une photo se suit, l'autre casse.
+Rappel : ce sont **des mises en situation générées**, écrit sous chacune, à remplacer par les vraies photos
+de la boutique dès que M. Dongmo en fournit.
 
 ### Ce qui n'a PAS pu être fait dans le bac — écrit tel quel, jamais coché à tort (§13)
 - **Console navigateur sans erreur (Chromium, EN/FR, 390 px)** : **NON EXÉCUTÉ** — pas de navigateur dans le bac. Substitut : `check_inline_js` (les 4 scripts compilent) + `test_cavisa_page.mjs` (28 assertions sur le vrai JavaScript).

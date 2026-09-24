@@ -477,6 +477,19 @@ _Full specs: `design/vendor/bergside-skills/<slug>/` (SKILL.md + DESIGN.md). Tok
 - Image-first: images are core material, including full-bleed backgrounds; several sections must meaningfully include imagery.
 - **Anti-slop for image prompts:** no purple/blue AI glow, no blob spam, no glassmorphism-without-reason, no gradient headlines, no "luxury = beige serif", no fake-precision KPI columns, no "unleash/elevate/next-gen" copy in the comp, no Acme/NovaCore wordmarks, no identical card rows, no cloned left-text/right-image across sections, no infinity logo strips, no unreadable mosquito logos.
 
+**LE TEST DE L'ÉPOQUE (24 Sep 2026 — verdict de King sur Cavisa).** Verdict exact : *« Je n'aime pas les
+images que tu as généré elles font beaucoup année 90, Douala est bcp plus moderne voyons WE are in 2026 »*.
+Les deux premières photos montraient une boutique à comptoir de bois patiné, un ventilateur au plafond et
+une salle d'examen bleu ciel à affiches jaunies : **vrai quelque part à Douala, faux comme image de marque**
+— et faux pour le client qui veut se voir moderne. **Ce que la régénération a changé, mot pour mot dans le
+prompt :** éclairage LED encastré dans des étagères chêne + noir mat · comptoir en verre · sol béton ciré ·
+grandes vitrines, lumière du jour · plantes · **équipement d'examen numérique avec écran** · tenue
+contemporaine · et la liste négative écrite noir sur blanc (« no old furniture, no ceiling fan, no posters,
+no clutter, nothing vintage, no 1990s »). **Deux règles à garder :** ① une photo d'ambiance doit dater de
+**l'année du brief**, pas de la mémoire vague qu'on a d'une ville ; ② **un cadrage se recadre au centre**
+(`-resize WxH^ -gravity center -extent WxH`), jamais avec des décalages écrits en dur — la première version
+découpait en `+116+0`, ce qui suivait une photo et cassait la suivante.
+
 ### Mobile screens
 - Screen-first: generate app screens, not phone-shaped websites. Respect safe areas (status bar/home indicator regions), real navigation logic (tab bar / bottom sheet), touch-scale type (readable at 1x).
 - Enough screens: generate the full flow (onboarding → home → detail), not one pretty screen + filler.

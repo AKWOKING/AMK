@@ -30,19 +30,25 @@ OUT_OG = PREVIEW / "og.jpg"
 
 # Les deux photographies : la source, la découpe, le poids visé. Une photo = une signification (§25).
 PHOTOS = {
-    # jeton              source                découpe exacte      largeur  qualité
-    "__IMG_TRYON__": ("cavisa-tryon.jpg", "1080x675+116+0", "960x", "56"),   # le comptoir : on essaie (16:10)
-    "__IMG_EXAM__": ("cavisa-exam.jpg", "896x672+208+0", "840x", "56"),      # l'ordonnance : d'où elle vient (4:3)
+    # jeton              source                cible        qualité   rôle
+    "__IMG_TRYON__": ("cavisa-tryon.jpg", "960x600", "56"),   # le comptoir : on essaie (16:10)
+    "__IMG_EXAM__": ("cavisa-exam.jpg", "840x630", "56"),     # l'ordonnance : d'où elle vient (4:3)
 }
 
 
-def prepare(name, geometry, width, quality, out):
-    """Découpe et allège une photo. La découpe est déjà au bon rapport, le redimensionnement le garde."""
+def prepare(name, target, quality, out):
+    """Couvre la cible puis recadre AU CENTRE (`resize ^` + `extent`) : aucune découpe à décalage fixe.
+
+    Leçon du 24/09 : la première version découpait avec des offsets écrits en dur (`+116+0`), ce qui
+    marchait pour une photo et pas pour la suivante. Depuis le verdict de King sur l'époque des images,
+    les photos sont régénérées — un cadrage au centre suit une photo, l'autre non.
+    """
     src = IMG / name
     if not src.exists():
         sys.exit("photo manquante : %s" % src)
-    cmd = ["convert", str(src), "-auto-orient", "-crop", geometry, "+repage",
-           "-resize", width, "-strip", "-interlace", "Plane", "-quality", quality, str(out)]
+    cmd = ["convert", str(src), "-auto-orient", "-resize", target + "^",
+           "-gravity", "center", "-extent", target,
+           "-strip", "-interlace", "Plane", "-quality", quality, str(out)]
     subprocess.run(cmd, check=True)
     return out.stat().st_size
 
@@ -58,14 +64,14 @@ def main():
     tmp.mkdir(parents=True, exist_ok=True)
 
     html = TPL.read_text(encoding="utf-8")
-    for token, (name, geometry, width, quality) in PHOTOS.items():
+    for token, (name, target, quality) in PHOTOS.items():
         if token not in html:
             sys.exit("le gabarit ne porte plus le jeton %s" % token)
-        out = tmp / ("%s-%s.jpg" % (name.rsplit(".", 1)[0], width))
-        size = prepare(name, geometry, width, quality, out)
+        out = tmp / ("%s-%s.jpg" % (name.rsplit(".", 1)[0], target))
+        size = prepare(name, target, quality, out)
         html = html.replace(token, b64(out))
-        print("  %-18s %-5s q%-3s %5d Ko  →  base64 %.0f Ko" % (
-            name, width, quality, size / 1024, size * 4 / 3 / 1024))
+        print("  %-18s %-9s q%-3s %5d Ko  →  base64 %.0f Ko" % (
+            name, target, quality, size / 1024, size * 4 / 3 / 1024))
 
     if "__IMG_" in html:
         sys.exit("un jeton d'image n'a pas été remplacé")
