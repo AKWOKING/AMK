@@ -1,4 +1,6 @@
 # AMK — Sales Playbook v2.2 (09/12 · updated 17/09)
+
+> ⚠️ **Prix récurrent : voir `sales/PRIX-ET-RECURRENCE-2026-09-24.md`.** Les « 10–15k/month » cités ici pour l'hébergement et les retouches ne sont plus la référence ; la grille du 23/09 et les deux paliers Essentiel/Standard la remplacent. Rien n'est effacé : c'est daté.
 **Synthesized from 4 videos → optimized for AMK's exact context (WhatsApp-first, schools + clinics, free concept previews, ₦100k 50/50, King's standing rules).**
 
 > **v2.1 changelog (17 Sep 2026 — copywriting batch of 6 videos, see `research/YouTube-Lessons.md`):** added **Part H — the customer-language system** (customer interviews as ingredient harvest; the WhatsApp-default reframe; claim→proof discipline). No existing rule was deleted or overwritten. The copy law itself (Harry Dry's 3 questions, 2-Mississippi, read-aloud) lives in `sales/Monday-Outreach-Pack.md` (cold messages) and `AMK-DESIGN-SKILLS.md` §11b (site copy) — Part H is the sales-specific slice only.

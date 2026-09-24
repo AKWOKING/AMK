@@ -3075,3 +3075,69 @@ citation, ni « visibilité IA ».
 `test_audit_aeo.py` 12 assertions vertes (4 témoins fautifs) · `audit_aeo --strict` : 10 pages publiques,
 0 faute, 0 avertissement · `audit_a11y` inchangé sur la page-modèle corrigée (`+5 lignes`, aucun contenu
 touché) · le reste de la batterie repassé avant commit.
+
+## 2026-09-24 · PHOTOGRAPHIER LE LABORATOIRE AU TÉLÉPHONE — et l'audit de nos propres prix
+
+*(L'heure de cette entrée est celle du commit qui la porte.)*
+
+Demande de King : *« let's move to Photographing a lab with a phone (google pixel 8A) and the pricing and
+recurrence (what's there that's still unanswered) »*. Deux métiers différents dans une phrase — une
+technique, et un audit de notre propre argent.
+
+### La photo : le téléphone n'est pas le problème
+
+§25.5 attendait depuis la refonte : *les cinq vraies photos, prises dans leur laboratoire*. J'ai lu les
+relevés de l'appareil **avant d'écrire quoi que ce soit** (GSMArena 29/05/2024, DXOMARK 17/05/2024,
+PhoneArena, CNET) — et une ligne change tout : **l'ultra grand-angle du 8a est à mise au point fixe, il
+n'y a pas de macro** (c'est le Pixel 8 et le 8 Pro qui l'ont). L'instinct naturel dans un laboratoire est
+de coller le téléphone aux tubes : c'est exactement ce qui donne une photo molle. Les gros plans se font
+**au 1×**, puis on recadre. Trois autres faits utiles : les photos sortent en **16 Mpx** avec un zoom 2×
+sans perte (au-delà, on s'approche), **pas de mode Pro** sur le 8a (tout se rattrape après), et le flash
+**éteint** — sur du verre et de l'inox, il ne fait pas de la lumière, il fait des taches.
+
+**Les quatre outils créatifs du Pixel (Magic Editor, Best Take, Magic Eraser, Photo Unblur) sont
+interdits sur une photo de client** : ils fabriquent ce qui n'était pas là, et c'est précisément ce que
+§25.2③ interdit. On n'en a pas besoin : la force de cet appareil, d'après les tests, c'est justement ses
+couleurs et sa balance des blancs.
+
+Le document `research/PHOTO-LABO-PIXEL-8A-2026-09-24.md` contient le plan de prise de vue (cinq photos,
+trois minutes chacune, plus trois pour la fiche Google), la lumière d'un laboratoire (deux sources, deux
+couleurs ; exposer sur un gris, pas sur du blanc ; la feuille blanche de référence ; les néons qui
+scintillent), la vérification de soixante secondes avant de repartir — et **le piège WhatsApp** : envoyer
+en « document », jamais en « photo », sinon la photo de 16 Mpx arrive recompressée.
+
+### Le contrôle neuf, et ce qu'il a trouvé chez nous le jour même
+
+`tools/qa/audit_images.py` + `test_audit_images.py` (**13 assertions sur neuf pièges**, fabrique d'images
+sans Pillow — l'outil n'a aucune dépendance). Il vérifie le ratio annoncé, les `srcset`, le poids et
+**l'absence de métadonnées GPS** — la vie privée, pas le rangement.
+
+**Première exécution, premiers constats réels** : `site/img/clinic.png` (**405 Ko**) et
+`site/img/crestwood.png` (**626 Ko**) dépassaient le budget sur **notre propre page d'accueil** — converties
+dans l'heure en JPEG à 900 px (**74 Ko** et **89 Ko**, et `littleoaks.png` 224 → 49 Ko pour l'homogénéité),
+quatre `src` basculés, page re-auditée : **0 faute**. Les originaux PNG restent dans `site/img/` comme
+copies haute résolution. Et les deux copies d'UNI-LABO annoncent `800×500` / `800w` pour des fichiers qui
+font **1024 px de large**. Même
+ratio : rien ne casse, et **on ne rouvre pas la page** — King l'a regardée, le client la regarde vendredi.
+C'est noté pour après la livraison payée. Aucune faute de vie privée, en revanche : rien de ce qu'on a
+livré ne porte de GPS.
+
+### L'argent : le prix de la création est tranché, la récurrence non
+
+L'audit a trouvé rapidement : **notre propre dépôt porte quatre prix mensuels différents pour le même
+service** — 10 000 (l'ancien plan d'entretien, le seul qui incluait l'hébergement), 10–15 000 (playbook
+v2), 12 000 (Essentiel, jamais envoyé), **30 000 (le seul qu'un client a lu — la grille reçue par UNI-LABO
+le 23/09)** — plus 35 000 pour le pilote labo, non validé. `sales/PRIX-ET-RECURRENCE-2026-09-24.md` en
+tire **seize questions ouvertes**, en quatre groupes : trois bloquent vendredi 13 h (quel(s) palier(s)
+annoncer, le prix de l'heure au-delà des 2 h comprises, les frais de relance du client qui n'envoie pas
+ses éléments), le reste est structurel (la feuille unique, le 4ᵉ PDF jamais lu, le prépaiement, qui paie
+l'hébergement, à quel nom le domaine, le jour de l'encaissement, l'impayé, la sortie, la TVA et les
+factures, et la frontière entre « modification » et travail neuf).
+
+**Deux documents portant l'ancien prix ont été annotés, jamais réécrits** : les chiffres du 15/09 restent
+visibles, datés, et renvoient au nouveau document. Une grille ne se corrige pas en silence.
+
+### Vérifié
+
+`test_audit_images.py` 13/13 · `audit_images.py` sur les trois pages et deux dossiers livrés · le reste de
+la batterie repassé avant commit.

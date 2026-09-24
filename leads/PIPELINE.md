@@ -136,7 +136,7 @@
 | Summerset Bilingual College (SMBICOL) | Buea (Wokoko) | — | — |
 | Tchaya Optique | Douala | 696 79 01 73 | `L2376` |
 | Wonders Medical Foundation | Douala (Bonamoussadi) | — | — |
-| École Privée Bilingue Les Génies | Douala (Akwa) | — | `L470` |
+| École Privée Bilingue Les Génies | Douala (Akwa) | — | `L3122` |
 
 ## ⏸ Parqué — 38
 

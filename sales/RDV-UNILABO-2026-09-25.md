@@ -255,3 +255,26 @@ concerne cette séance, et elle tient en une question à poser **au laboratoire*
 
 **Rien de tout cela n'est dans le prix de 150 000 FCFA et rien de tout cela n'est une remise.** C'est une
 porte qu'on montre du doigt, à King de décider s'il en parle en séance, après l'acompte.
+
+---
+
+## Annexe 2 — les quinze minutes de photos (lot [32], 24/09) — **facultatif, à la fin**
+
+La page le dit elle-même sous ses images : *« la photo définitive sera prise dans votre laboratoire »*.
+Vendredi, on y est. Si la séance se finit bien et que quelqu'un peut nous accompagner, **quinze minutes
+suffisent** pour les cinq photos que la page attend — et c'est la seule occasion gratuite avant longtemps.
+
+**Ce qu'on demande, en une phrase :** *« Est-ce que je peux prendre cinq photos de votre paillasse avant
+de partir ? Aucun patient, aucun nom, aucun écran — juste le matériel et le lieu. »*
+
+**Ce qu'on prend :** la paillasse de biochimie avec un portoir de tubes ; le poste d'hématologie (écran
+éteint) ; les plaques de sérologie ; une pipette au-dessus d'un portoir ; le kit remis au patient sur une
+table propre. **Plus, si la fiche Google suit :** l'enseigne dehors, l'accueil.
+
+**Ce qu'on ne prend pas :** aucun patient, aucun visage sans accord écrit, aucun écran de résultats, aucun
+registre, aucune étiquette portant un nom. **On envoie en « document », pas en « photo »** (WhatsApp
+recompresse les images).
+
+**Et si personne n'est disponible :** on ne force pas, on ne photographie rien, et les images étiquetées
+« mise en situation » restent — elles sont honnêtes telles quelles. La séance se refera à la livraison.
+*(Voir `research/PHOTO-LABO-PIXEL-8A-2026-09-24.md` pour le plan complet et la fiche à montrer.)*

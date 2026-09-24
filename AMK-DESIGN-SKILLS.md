@@ -1923,3 +1923,122 @@ cited (the most-cited domain in AI Overviews; a 0.737 correlation with ChatGPT v
 on a million hours of transcripts). King stopped content production in September because it produced no
 leads. **An American correlation does not overturn a decision made from our own market** — the number is
 logged here so that the decision stays informed, not so that a channel gets resurrected behind his back.
+
+---
+
+## §32 PHOTOGRAPHING A LAB WITH A PHONE — and the four prices hiding in our own files (24 Sep 2026, batch [32])
+
+King: *"let's move to Photographing a lab with a phone (google pixel 8A) and the pricing and recurrence
+(what's there that's still unanswered)"*. Two different jobs in one sentence — a technique, and an audit of
+our own money.
+
+### 32.1 The device is not the problem
+
+§25.5 has been waiting since the rebuild: *"The next honest step is five real photographs taken in their
+laboratory, on their own bench, replacing ours."* The phone that will take them is a **Pixel 8a**, and its
+capabilities were read before anything was written about it (GSMArena full review 29/05/2024, DXOMARK
+camera test 17/05/2024, PhoneArena, CNET). Five facts change how we shoot:
+
+- **Main camera:** 64 MP, 1/1.73″, f/1.9, 26 mm, stabilised — and it **outputs 16 MP** by default, with
+  **2× lossless** zoom. Super Res Zoom reaches 8×, but that is computation, not optics: past 2×, walk
+  closer instead.
+- **The ultrawide is fixed focus: there is no macro on the 8a.** The Pixel 8 and 8 Pro have macro focus;
+  the 8a does not. This is the single most useful sentence in the datasheet, because the natural instinct
+  in a laboratory is to put the phone right against the tubes — and that produces a soft, useless frame.
+  Close-ups are made **at 1×**, as close as the autofocus accepts, then cropped.
+- **No Pro mode either** (manual focus, ISO and shutter are 8 Pro features). RAW exists;
+  brightness, shadows and white balance are corrected **after** the shot. Nobody needs to redo a session
+  over a setting.
+- **Flash off, always.** On glass, stainless steel and a laminate bench, the LED does not light the scene,
+  it punches holes in it. **Night Sight** is for an empty dim room — never for moving hands, and pointless
+  with the neons on.
+- **Magic Editor, Best Take, Magic Eraser and Photo Unblur are banned on a client photograph.** They
+  manufacture what was not there, and §25.2③ already forbids showing a client something other than what
+  is. The irony is that we do not need them: DXOMARK's verdict on this phone is precisely that its colour
+  rendering and skin tones are its strength, and GSMArena found its white balance "almost always
+  spot-on".
+
+### 32.2 Five house rules, applied to a place where people are ill
+
+One photograph, one meaning (§25). The real client — their sign, their bench, their tubes (§25, and King's
+*"no one lives in that type of house"*). **Never a patient** — not a face, not a back, not a hand on an
+arm; a laboratory is a place of care, and we photograph the room and the work. **No data anywhere in the
+frame**: a tube carries a name, a screen carries a result, a register carries a list — checked **at zoom,
+edges included**, because no tool does this check for us. And **a face needs written consent**, even from
+staff (a WhatsApp message is enough).
+
+### 32.3 The fifteen-minute shoot
+
+Five photographs, matching the five slots the page already declares (four analysis families + preparation),
+plus three for the Google profile (exterior sign, reception, team at work). Full table in
+`research/PHOTO-LABO-PIXEL-8A-2026-09-24.md` §3. The three that matter: **phone at bench height, not
+standing over it**; **screens switched off**; **two takes of everything**, because one is always the one
+that blinks.
+
+### 32.4 Laboratory light, in five sentences
+
+Two light sources, two colours (green neons + blue or golden window) — pick one and do not mix them in the
+same frame. Tap to expose on a **mid-grey** (a bench in shadow, a grey rack), never on white coats or a
+light box, or the meter shuts everything else off. Shoot a **white sheet** once, in the same light: it is
+not for the page, it is there to see the cast and correct it afterwards. Neons flicker — photographs survive
+it, **video must be checked on the spot** before leaving. And wipe the lens first: a phone lives in a
+pocket, and a diffuse haze on five photographs cannot be repaired.
+
+### 32.5 The check before leaving, and the trap of WhatsApp
+
+Sixty seconds: zoom into every frame for names, screens, badges, registers, filled prescriptions; look for
+a patient (even from behind, even blurred); confirm every face has its consent; and **send the files as
+documents, never as photos** — WhatsApp recompresses an image sent as an image, and a 16 MP photograph
+arrives with artefacts. Then keep the originals: until the page is published, the phone is the only copy.
+
+### 32.6 What we do with the files — and the control that was born with them
+
+Originals never enter the repository. Crops follow what the page declares (1024×640 for the four families,
+1100×825 for preparation), with phone variants (640×400), JPEG quality 74/62, **metadata stripped before
+publication** — that last one is privacy, not housekeeping: a phone photograph carries the time, the device
+and the GPS position.
+
+The new control is `tools/qa/audit_images.py` (+ `test_audit_images.py`, **13 assertions over nine traps**,
+fixtures built without Pillow so the tool has no dependency). It checks that the file exists and is what it
+claims to be, that **the ratio the page declares is the ratio of the file**, that `srcset` descriptors do
+not lie, that weight stays inside budget (400 KB full, 200 KB variant), and that **no GPS metadata ships**.
+
+**What it found on its first run, in our own repository** — which is why the tool exists:
+
+- `site/img/clinic.png` (**405 KB**) and `site/img/crestwood.png` (**626 KB**) were over budget on our own
+  homepage — converted the same hour to JPEG at 900 px (74 KB and 89 KB, with `littleoaks.png` 224 KB → 49
+  KB for consistency), the four `src` attributes switched, and the page re-audited: **0 findings**. One
+  conversion is not a policy: the originals stay in `site/img/` as the high-resolution copies;
+- both UNI-LABO copies declare `800×500` and a `800w` descriptor for files that are **1024 px wide** — same
+  ratio, so nothing breaks, but the declaration is false;
+- **no privacy fault**: nothing we have delivered so far carries GPS.
+
+The UNI-LABO page is **not reopened** for that: King has looked at it and the client sees it on Friday, and
+a false declaration with the right ratio is invisible. It is logged and will be fixed after the paying
+delivery. The two PNGs on our own homepage are a real weight defect, outside the client freeze.
+
+### 32.7 The pricing half: four prices for the same month
+
+The second half of King's request was not a technique, it was an audit — *"what's there that's still
+unanswered"*. The audit found the answer quickly: **the creation price is settled, the recurring price is
+not**, and our own files disagree with each other.
+
+| Price / month | Covers | Where it is written | Status |
+|---|---|---|---|
+| **10 000** | domain + hosting + monitoring + backup + 2 edits + report | the old care plan (15/09) | **contradicts the grid** — and it is the only one that includes hosting |
+| **10–15 000** | "hosting + touch-ups" on 150k pages | playbook v2 | never sent to anyone |
+| **12 000** (Essentiel) | domain + monitoring + 30 min | contracts review (23/09) | **never sent to anyone** |
+| **30 000** (Standard) | 2 h + backups + monitoring + 24 h support + report | the grid **UNI-LABO received on 23/09** | the only one a client has read |
+| **35 000** | lab pilot (results, invoices, MoMo) | offers order (23/09) | internal proposal, unvalidated |
+
+`sales/PRIX-ET-RECURRENCE-2026-09-24.md` lists **sixteen open questions** in four groups — three of them
+block Friday 13:00 (which tier(s) to announce, the hourly rate beyond the included two hours, and the
+5 000/week late-content fee). The rest are structural: which of the four monthly prices survives; the
+never-read fourth PDF (two grids in circulation is two truths); prepayment (the old "2 months free" is a
+17 % discount and therefore dead); who pays hosting; whose name the domain is registered in; the day and
+channel of collection; what happens after an unpaid month; exit; VAT and receipts; and the boundary between
+"a modification" and new work.
+
+**What does not move**: never a discount (adjust the scope), **never a price invented in a meeting**,
+never two grids in circulation, and the two old sheets are now **annotated, not rewritten** — dated,
+pointed at the new document, with their numbers left visible as history.
