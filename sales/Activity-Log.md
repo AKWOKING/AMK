@@ -3007,9 +3007,9 @@ rc=0 sur les quatre pages · `audit_html` 0 constat · `test_audit_hero` 14 · h
 **Ce qui n'a pas changé : aucune page du site n'a été modifiée.** L'accessibilité était déjà tenue ; c'est
 le contrôle qui ne le savait pas.
 
-## 2026-09-24 · AEO, ET LE GABARIT QUI ALLAIT DEVENIR LA VITRINE — six sources, un portique neuf, un vrai défaut trouvé
+## 2026-09-24 · 08:47 (heure de Douala, celle du commit `dac6d53`) · AEO, ET LE GABARIT QUI ALLAIT DEVENIR LA VITRINE — six sources, un portique neuf, un vrai défaut trouvé
 
-*(L'heure de cette entrée est celle du commit qui la porte.)*
+*(L'heure de cette entrée est celle du commit qui la porte — pas une estimation, pas une invention.)*
 
 Six liens de King, dont **la documentation officielle de Google** — une classe de source que nous n'avions
 jamais eue sur ce sujet — et une vidéo qui ne parlait pas de la fiche Google du tout : **Ahrefs, « Learn
