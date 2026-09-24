@@ -30,7 +30,7 @@ Envoyé 18/09 ~18:30, sans maquette. · ⚰️ MORT le 22/09 (lot du 18/09) — 
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 22 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 23 ligne(s).*
 
 `L30` · | **ven 18/09 ~18:30** | **YONDJA ANALYSE** (696 88 88 23) | msg 1 — **sans maquette** | Envoyé | **Non** |
 `L110` · | ~18:30 | Discovery Labs · UNI-LABO · YONDJA ANALYSE · Laboratoire du Château · Département Biologique · CAMERA · LE NID |
@@ -54,6 +54,7 @@ Envoyé 18/09 ~18:30, sans maquette. · ⚰️ MORT le 22/09 (lot du 18/09) — 
 `L2870` · sur le site ; « *1 · Vos analyses, groupe de cases à cocher, 1 sur 19* » sur UNI-LABO), les gestes TalkBack, la
 `L2904` · trou bouché : quand l'outil ne trouve pas de premier écran à analyser, il le **dit** maintenant, au lieu de
 `L3319` · analyse sur son propre téléphone) ; les impressions et les numéros MoMo ; puis **vendredi 10 h Univers, 13 h
+`L3349` · public** ; promettre de colmater une fuite qui n'est pas de notre métier (une analyse erronée).
 
 ---
 

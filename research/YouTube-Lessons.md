@@ -1445,6 +1445,76 @@ avantage est l'inverse : un message écrit à un patron qu'on a regardé, envoy�
 90 secondes. La leçon utile n'est donc pas le volume — c'est **la discipline de mesure** : savoir où le
 système fuit avant d'ajouter du carburant.
 
+---
+
+## Lot [35] · TROUVER L'ANGLE DANS LES AVIS PUBLICS — et l'audiobook qu'on ne répétera pas (24/09/2026)
+
+Deux liens, pas un mot. Le premier est une méthode de prospection concrète ; le second est un audiobook
+généré, bourré de chiffres invérifiables. Les deux ont été lus, et **le second servira surtout d'exemple de
+ce qu'on ne répète pas**.
+
+| source | ce que c'est | verdict |
+|---|---|---|
+| **`JLGHhsfzf7g` — Automate AI Consulting, « Their Reviews Show How Much Money They're Losing »** | chercher dans les **avis Google publics** la plainte **qui se répète**, en déduire la fuite de processus, puis approcher le patron avec *« voici ce que ça vous coûte »* | **absorbé** : `sales/DETECTION-FUITES-2026-09-24.md` + **`tools/outreach/scan_reviews.py`** (+ test, 12 assertions) |
+| **`CsXKAC4iYG4` — « Social Intelligence » (audiobook)** | un livre narré sur l'intelligence sociale : cinq composantes, lecture des gens, communication non-verbale | **absorbé avec méfiance** : les cinq composantes servent de liste de contrôle pour une réunion ; **aucun de ses chiffres ne sera répété** (§8 du document) |
+
+### Ce que la première vidéo apporte vraiment
+
+1. **La répétition est le signal.** Sa règle : **trois mentions indépendantes** de la même plainte = un trou
+   dans le parcours, pas une mauvaise journée. Une seule plainte ne prouve rien.
+2. **La « zone de fuite »** : viser les commerces entre **3,2 et 4,5 étoiles** avec un **vrai volume** d'avis.
+   Trop peu d'avis = une note qui ne veut rien dire ; 5 000 avis = trois plaintes noyées.
+3. **L'absence de réponse du patron est un fait**, pas une opinion : elle laisse chaque compliment et chaque
+   reproche « partir dans le silence ».
+4. **La formulation qui désarme :** *« ce n'est pas vos personnes, c'est un trou dans votre processus »* —
+   on ne juge personne, on décrit un parcours.
+5. **La phrase à retenir :** *« personne ne m'a jamais demandé mon site web ; ils voulaient savoir ce que le
+   problème leur coûtait »* — c'est notre doctrine du 23/09 (« which problem are we solving ? ») dite par
+   quelqu'un d'autre.
+
+### Ce qu'on adapte, et ce qu'on refuse
+
+**Adapté :** notre marché n'a pas 458 avis — beaucoup de laboratoires de Douala en ont 0 à 20. Le seuil est
+donc **5 avis minimum pour conclure**, et la règle des **3 mentions** tient telle quelle. Ce qui se lit
+**même sans volume** : le patron répond-il aux avis ? les horaires sont-ils à jour ? la fiche a-t-elle un
+site ?
+
+**Refusé, et écrit dans le document :** le **prix au pourcentage du chiffre d'affaires ajouté** (10-20 %,
+soit 8 600 $ sur son cas d'école) — nos prix sont fixes et nous ne promettons **aucun gain chiffré** ;
+l'**estimation en argent** de la fuite, faite avec les hypothèses du vendeur (nous ne connaissons ni la
+marge d'un laboratoire ni son nombre de patients) ; le démarchage **à partir d'un avis public** ; et toute
+promesse de « colmater » une fuite qu'on ne sait pas réparer (une analyse erronée n'est pas notre métier).
+
+### L'outil, et les deux pièges qu'il a révélés le jour même
+
+`tools/outreach/scan_reviews.py` compte ce qui est écrit dans les avis qu'on lui colle — **il n'invente rien,
+n'écrit aucun fichier** (un avis contient un nom) et **refuse de parler de motif** en dessous de 3 mentions
+ou de 5 avis. Son témoin (12 assertions, trois cas négatifs) a attrapé deux vrais défauts :
+
+1. **Je normalisais le texte mais pas les mots-clés** — « personne ne répond » (accentué) ne trouvait donc
+   jamais « personne ne repond ». Bug classique, invisible à la relecture, vu à la première exécution.
+2. **« résultat » attrapait les éloges.** Les avis positifs disent « résultats impeccables » : compter le
+   mot seul aurait annoncé une fuite chez un laboratoire **satisfait**. C'est le faux positif le plus
+   coûteux possible — accuser un commerce à tort. Les motifs sont donc devenus des **phrases de plainte**
+   (« résultat en retard », « pas de préts »), jamais des mots isolés.
+
+### La deuxième vidéo : ce qu'on garde, ce qu'on ne répétera jamais
+
+Les **cinq composantes** (conscience sociale, aisance sociale, cognition sociale, souplesse de comportement,
+présence sociale) font une **liste de contrôle utile pour une réunion** — et c'est tout ce qu'on en
+gardera comme méthode.
+
+Le reste est à ne jamais citer devant un client : « **93 % de la communication est non-verbale** » (un
+détournement de l'étude de Mehrabian, qui ne portait que sur la transmission d'attitudes dans une
+expérience précise), « l'intelligence sociale compte **deux fois plus** que les compétences techniques »,
+« **90 %** des meilleurs contre 20 % des moins bons », « **quatre fois** plus de chances de diriger ».
+**Un chiffre qu'on ne peut pas montrer ne sort pas de notre bouche.**
+
+**Et le retournement :** ce genre de vidéo répète que le non-verbal domine. Dans notre canal principal —
+WhatsApp — **il n'y a ni visage, ni voix, ni poignée de main** : nos mots *sont* notre non-verbal. C'est une
+raison de plus de soigner chaque message. À table, en revanche (les deux rendez-vous de vendredi), l'écoute
+reprend le dessus : on pose les questions du questionnaire au lieu de réciter la page.
+
 **Le désaccord méthodologique à noter :** pour 5 et 6, les sources utiles ne sont pas des vidéos YouTube.
 Le lot [26] a montré le plafond de ce format (deux vidéos sur cinq muettes, et les autres vendent une
 communauté payante). Les meilleures sources sont les documents officiels (Google, WhatsApp, W3C) et

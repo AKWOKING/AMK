@@ -3327,3 +3327,61 @@ de santé en file), le calcul une autre (`views.py` gardait l'échéance du 24/0
 compte : `RELANCE_A_JOUR` de `views.py`, avec la note qui explique pourquoi, `guard.py lock`, rebuild
 vérifié — **la file du jour ne contient plus que les trois vraies relances**. Règle confirmée (M7) : *une
 décision humaine qui doit arrêter une action s'écrit là où l'action se calcule.*
+
+## 2026-09-24 · TROUVER L'ANGLE DANS LES AVIS PUBLICS — et l'audiobook qu'on ne répétera pas
+
+Deux liens de King, pas un mot. Le premier est une méthode de prospection ; le second, un audiobook généré.
+
+### La méthode, et ce qu'elle change dans nos messages
+
+`JLGHhsfzf7g` (Automate AI Consulting) : chercher dans les **avis Google publics** la plainte **qui se
+répète** (sa règle : **3 mentions indépendantes**), en déduire la fuite de processus, et arriver avec
+*« voici ce que ça vous coûte »* au lieu de *« je fais des sites web »*. Son cas d'école : un commerce à
+**4,5 étoiles et 458 avis** — « qui va bien » — où quatre clients racontent la même chose : *on appelle,
+personne ne rappelle*. Sa phrase à garder : **« personne ne m'a jamais demandé mon site web ; ils voulaient
+savoir ce que le problème leur coûtait. »** C'est notre « which problem are we solving ?» du 23/09, dite par
+un étranger. Et sa formulation qui désarme : *ce n'est pas vos personnes, c'est un trou dans votre
+parcours* — on ne juge personne, on décrit un chemin.
+
+**Ce qu'on refuse, et c'est plus important que ce qu'on copie** : facturer **10 à 20 % du chiffre d'affaires
+ajouté** (nos prix sont fixes, et nous ne promettons aucun gain chiffré) ; **chiffrer la fuite** à la place
+du client (nous ne connaissons ni sa marge ni son nombre de patients) ; démarcher **à partir d'un avis
+public** ; promettre de colmater une fuite qui n'est pas de notre métier (une analyse erronée).
+
+**L'adaptation au marché de Douala, écrite noir sur blanc** : ici, beaucoup de laboratoires ont **0 à 20
+avis** — le seuil « 40 avis » de la vidéo ne s'applique pas. Le nôtre : **5 avis minimum pour conclure**, et
+la règle des **3 mentions** inchangée. Ce qui se lit même sans volume : le patron répond-il aux avis ? les
+horaires sont-ils à jour ? la fiche a-t-elle un site ?
+
+### L'outil, et les deux pièges qu'il a trouvés le jour même
+
+`tools/outreach/scan_reviews.py` (+ témoin, **12 assertions**, trois cas négatifs) compte les plaintes
+répétées dans les avis qu'on lui colle. Il n'invente rien, **n'écrit aucun fichier** (un avis contient un
+nom de client) et **refuse de parler de motif** sous 3 mentions ou 5 avis. Deux vrais défauts attrapés par
+le témoin avant tout usage :
+
+1. **je normalisais le texte mais pas les mots-clés** — « personne ne répond » ne trouvait jamais
+   « personne ne repond » ;
+2. **« résultat » attrapait les éloges** — les avis contents disent « résultats impeccables ». Compter le mot
+   seul aurait annoncé une fuite chez un laboratoire **satisfait** : le faux positif le plus coûteux
+   possible. Les motifs sont devenus des **phrases de plainte**, jamais des mots isolés.
+
+### L'audiobook : ce qu'on garde, ce qu'on ne répétera jamais
+
+`CsXKAC4iYG4` (« Social Intelligence ») : lu, et traité comme n'importe quelle source qui donne des chiffres
+invérifiables. **Ne seront jamais répétés** « 93 % de la communication est non-verbale » (détournement de
+l'étude de Mehrabian), « deux fois plus important que les compétences techniques », « 90 % des meilleurs
+contre 20 % », « quatre fois plus de chances de diriger ». Règle : **un chiffre qu'on ne peut pas montrer ne
+sort pas de notre bouche.** Ce qu'on garde : les **cinq composantes** (conscience, aisance, cognition,
+souplesse, présence) comme **liste de contrôle pour une réunion** — utile pour demain.
+
+**Et le retournement, écrit dans le document** : cette vidéo répète que le non-verbal domine. Sur WhatsApp,
+**il n'y a ni visage, ni voix, ni poignée de main** — nos mots *sont* notre non-verbal. À table, en revanche,
+l'écoute reprend le dessus : on pose les questions du questionnaire au lieu de réciter la page.
+
+### Le protocole des dix minutes, avant de contacter
+
+Pour les prospects qu'on choisit dans `leads/Daily-Plan.csv` : ouvrir la fiche, **copier les avis (sans les
+noms)**, passer le fichier au scan, lire le verdict **et s'y tenir** (« motif » → on approche par la fuite ;
+« isolé » ou « pas d'angle » → on approche autrement), puis noter au CRM **le fait qu'on a lu les avis**, pas
+leur contenu.

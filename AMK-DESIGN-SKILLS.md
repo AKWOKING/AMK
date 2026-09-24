@@ -2216,3 +2216,75 @@ suffice"* (M7). A human decision that must change a computation belongs **in the
 verified: the day's queue now lists exactly the three real relances, and Le Cristallin is out of it until
 29/09. **Any decision that stops an action must be written where the action is computed, not only where it
 is explained.**
+
+---
+
+## §36 THE ANGLE IS IN THE REVIEWS — and why a satisfaction score can hide a leak (24 Sep 2026, batch [35])
+
+A video from *Automate AI Consulting* ("Their Reviews Show How Much Money They're Losing") gave a prospecting
+method worth adopting, one pricing model worth refusing, and one cautionary tale about a generated audiobook.
+The full French working document is `sales/DETECTION-FUITES-2026-09-24.md`.
+
+### 36.1 The method, in four lines
+
+His case study is a property manager rated **4.5 stars on 458 reviews** — "doing great" — where four separate
+customers write the same thing: *you call, nobody calls back*. **The repetitive complaint is the signal**;
+one bitter review is a bad day, three independent mentions are a hole in the journey. He looks for
+businesses in a **"leak zone" of roughly 3.2–4.5 stars with real review volume** (too few reviews and one
+bad note skews everything; thousands of reviews and three complaints prove nothing), then quantifies the
+leak and offers the fix. And the line worth keeping for our own messages: *"nobody ever asked me for my
+website — they cared that I could tell them what their problem was actually costing them."* That is our own
+"which problem are we solving?" doctrine, said by a stranger.
+
+The framing he uses to disarm: **"It's not your people. It's not a moral failing. You have a leak in your
+process."** Nobody is judged; a journey is described.
+
+### 36.2 What we refuse, and it matters more than what we copy
+
+- **Pricing at 10–20 % of the first year's added revenue** (≈8,600 $ on his example). We never price on a
+  client's revenue, and we never promise a revenue figure. Our grid is fixed: 150,000 for the build, 12,000
+  or 30,000 per month for care.
+- **Quoting the leak in money.** We do not know a laboratory's margin or patient volume. A leak is
+  **described** ("four patients write that nobody picks up"), never **priced on their behalf**.
+- **Approaching someone from a public review.** We speak to the owner, once, privately, respectfully; never
+  in public, never commenting a review, never naming a patient.
+- **Promising to "plug" every leak.** A wrong analysis result is not ours to fix. We sell what we actually
+  do: the contact channel, the profile, the page, the monthly rhythm.
+
+### 36.3 The Cameroon thresholds — and the honesty that goes with them
+
+**Our market does not have 458 reviews.** Many Douala laboratories and practices have 0–20. So the volume
+threshold changes (the tool refuses to conclude under **5 reviews**) while the **3-mention rule** stands
+unchanged. What reads even without volume: does the owner answer reviews at all? Are the hours current? Does
+the profile carry a website? (Univers Optique: **3.3/5 on 6 reviews** and an empty website field — enough to
+work with, without ever discussing a dissatisfied customer.)
+
+### 36.4 The tool that counts, and the two traps it sprang the same day
+
+`tools/outreach/scan_reviews.py` (+ a 12-assertion witness with three negative cases) counts recurring
+complaint **phrases** in reviews pasted by hand. It invents nothing, writes no file (a review carries a
+customer's name), and refuses to call anything a pattern below three mentions or five reviews.
+
+Two real defects, both caught by the witness before any human saw the output:
+
+1. **I normalised the text but not the keywords** — accented "personne ne répond" could never match
+   normalised "personne ne repond". Invisible on re-reading, obvious on the first run.
+2. **A single word catches its opposite.** "Résultat" appears in *praise* — "résultats impeccables" — so a
+   keyword count would have announced a leak at a perfectly satisfied laboratory. The most expensive false
+   positive available: accusing a business wrongly. Patterns are therefore **complaint phrases**, never bare
+   words.
+
+### 36.5 The second video: an audiobook we will not quote
+
+*"Social Intelligence"* (an AI-narrated audiobook) repeats the genre's favourite numbers: **"93 % of
+communication is non-verbal"** (a misuse of Mehrabian's 7/38/55, which concerned the transmission of
+attitudes in one experiment), social intelligence being **"twice as important"** as technical skill, "**90 %
+of top performers**", "**four times** more likely to reach leadership". None is checkable, and our rule is
+flat: **a number we cannot show does not leave our mouth** — least of all in front of a client.
+
+What survives is a five-item checklist that is genuinely useful before a meeting — **social awareness,
+social facility, social cognition, behavioural flexibility, social presence** — and one inversion that
+matters more here than in the video: **on WhatsApp there is no face, no voice, no handshake. Our words are
+the non-verbal.** Punctuation, sentence length, not repeating a price, not reproaching a silence — that is
+the whole delivery. At a table, the balance flips back to listening, which is why Friday's two meetings run
+on the questionnaire rather than on the slide deck.

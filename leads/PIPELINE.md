@@ -179,7 +179,7 @@
 | Polyclinique de la Gare LE NID | Douala (Bessengue) | 699 987 775 | `L34` |
 | Presbyterian Comprehensive Secondary School (PCSS) Buea | Buea (Madam Namondo Alexander) | 652075229 | — |
 | Solidarity Health Foundation (Solidarity Clinic & Laboratory) | Buea (Untarred Malingo St / Molyko Checkpoint D61, P.O. Box 467; plus code 575J+7M) | 677615757 | `L761` |
-| YONDJA ANALYSE | Douala | 696 88 88 23 | `L3319` |
+| YONDJA ANALYSE | Douala | 696 88 88 23 | `L3349` |
 
 ## ⛔ Écarté — 10
 
