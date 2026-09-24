@@ -8,21 +8,25 @@
 | Étape | Leads |
 |---|---|
 | ④ Prix posé, en négociation | **3** |
-| ③ Aperçu envoyé | **1** |
-| ② Qualifié — en conversation | **25** |
+| ③ Aperçu envoyé | **2** |
+| ② Qualifié — en conversation | **24** |
 | ① Prospection — à qualifier | **78** |
 | ❌ Perdu | **1** |
 | ⏸ Parqué | **42** |
 | ⛔ Écarté | **13** |
 | **Total** | **163** |
 
-- **Contactés :** 67 · **Réponses humaines :** 6 · **Taux de réponse : 9.0 %**
+- **Contactés :** 67 · **Réponses humaines :** 7 · **Taux de réponse : 10.4 %**
 - **Réponses automatiques (hors PRR) :** 1
 - **Clients :** 0 · **Revenu :** 0 FCFA
 
 ## ⚡ Répondre d'abord
 
-*Rien en attente.*
+| Lead | WhatsApp | Ce qu'il a dit |
+|---|---|---|
+| **DM Optique** | 656 122 239 | Yes |
+
+> **Règle des 90 secondes.** Une réponse en attente passe avant tout le reste.
 
 ## ④ Prix posé, en négociation — 3
 
@@ -32,13 +36,14 @@
 | UNI-LABO | Douala (Bonamoussadi, Carrefour Etoo) | 696 13 98 19 | `L134` |
 | Univers Optique | Douala | 699 25 28 74 | `L3442` |
 
-## ③ Aperçu envoyé — 1
+## ③ Aperçu envoyé — 2
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| Cavisa Optique | Douala | 699 95 90 52 | `L3865` |
+| Cavisa Optique | Douala | 699 95 90 52 | `L4053` |
+| DM Optique | Douala | 656 122 239 | `L4019` |
 
-## ② Qualifié — en conversation — 25
+## ② Qualifié — en conversation — 24
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
@@ -49,7 +54,6 @@
 | Cabinet Dentaire YAKS | Douala (Logbessou) | 672 70 20 78 | `L54` |
 | Cabinet d'Optique la Rétine | Douala (Akwa) | 695 474 364 | `L3652` |
 | Centre Médical de Bonanjo | Douala (Bonapriso, ancien aéroport) | 694 57 22 77 | `L3943` |
-| DM Optique | Douala | 656 122 239 | `L3893` |
 | Doyoan Optic | Douala | 653 85 27 49 | `L3589` |
 | El Roï Optique Médicale | Douala (Village) | 693 127 302 | `L3651` |
 | Espace Lunetterie | Douala | 677 34 24 62 | `L3452` |

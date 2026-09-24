@@ -17,7 +17,7 @@
 | Canal | WhatsApp |
 | Contacté | Yes |
 | Réponse | Yes |
-| Maquette / site | No |
+| Maquette / site | Yes |
 | Source | directory |
 | Détail source | Annuaire officiel ONOC + Maligah |
 
@@ -31,7 +31,7 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : DONGMO Jean René. Probleme : etre
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 20 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 22 ligne(s).*
 
 `L3453` · **Médina Optic** (Balla, 699 93 93 34) et **Cavisa Optique** (Dongmo, 699 95 90 52). Tous jamais contactés,
 `L3461` · le 24/09** ; pour Cavisa, la seule page au monde qui porte son nom est **vide** ; pour Médina, on dit
@@ -53,6 +53,8 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : DONGMO Jean René. Probleme : etre
 `L3817` · ### ① CAVISA — la réponse est partie à 13:26 (je la croyais en attente)
 `L3820` · M. Dongmo. Texte exact, conservé dans `sales/Reponse-CAVISA-2026-09-24.md` avec le message de 13:09 et la
 `L3865` · **Une file du jour vide n'est pas un bug** : c'est ce que disent les décisions du jour — Cavisa a reçu sa
+`L4048` · `clients/dm-optic/`. ⚠️ Correction au passage : **Cavisa était resté à `Demo made = No`** alors que sa
+`L4053` · **23** · étape `demo` **2** (Cavisa, DM OPTIC) · file du jour : **une action — répondre à DM Optic**.
 
 ---
 

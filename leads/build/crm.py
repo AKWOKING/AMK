@@ -1287,6 +1287,9 @@ DOSSIERS = {
     # le dossier de travail RÉEL de Cavisa (inspiration, notes de build) — il est passé en `demo`
     # le 24/09 à 13:16, quand M. Dongmo a répondu : « Beaucoup de manquement mais c'est appréciable. »
     "cavisa-optique": "clients/cavisa/",
+    # le dossier de travail de DM OPTIC — ouvert le 24/09 au soir, quand M. Domche Noumbi a répondu
+    # « Ok Envoyé svp... » et que l'aperçu est parti en construction.
+    "dm-optique": "clients/dm-optic/",
     # le dossier de recherche le plus complet de la campagne (RDAP + Wayback + captures de King)
     "k-vision-care": "clients/k-vision-care/",
     "centre-medical-de-bonanjo": "clients/_mockups/bonanjo.jpg",
@@ -1925,6 +1928,7 @@ def _apply_jour(out: list) -> None:
     _apply_state(out, ENVOI_2409_2, "ENVOI_2409_2")
     _apply_state(out, ENVOI_2409_3, "ENVOI_2409_3")
     _apply_state(out, ENVOI_2409_4, "ENVOI_2409_4")
+    _apply_state(out, REPONSE_2409_DM, "REPONSE_2409_DM")
     _apply_state(out, ECARTES_2409, "ECARTES_2409")
 
 
@@ -2755,6 +2759,7 @@ REPONSE_2409 = {
         # l'entonnoir, sans erreur et sans avertissement. Attrapé le 24/09 en relisant FUNNEL.md.
         # La nuance vit dans `Conversation`, jamais dans cette case.
         "Contacted": "Yes", "Reply": "Yes", "reply_type": "human",
+        "Demo made": "Yes",
         "last_send_state": "replied", "stage": "demo", "stage_since": "2026-09-24",
         "Conversation_extra":
             "24/09 13:09 — King envoie le lien de l'aperçu (https://cavisa.vercel.app/), avec la carte "
@@ -2769,6 +2774,45 @@ REPONSE_2409 = {
             "⚠️ Le message d'envoi du 13:09 promettait « votre localisation » et « vos services et "
             "horaires » : la page, elle, les affiche « à confirmer » — c'est très probablement ce "
             "qu'il a vu comme manquement. Leçon écrite dans `sales/MESSAGES-2026-09-23-PERSUASION.md` §2.",
+    },
+}
+
+
+# ── LA DEUXIÈME RÉPONSE DU LOT 4 — 24/09, 15:54 ─────────────────────────────────────────────────
+# M. Domche Noumbi (DM OPTIC) répond au message de 15:31, mot pour mot : « Ok Envoyé svp... »
+# C'est un OUI sur le principe : envoyez l'aperçu. Aucune donnée de cabinet en plus — l'adresse et les
+# horaires restent introuvables — donc l'aperçu est bâti UNIQUEMENT sur ce qui est vérifié : le registre
+# de l'Ordre (inscription 021/2016, arrêté 0382, titulaire M. Domche Noumbi, Douala), le numéro, et le
+# fait qu'aucune page publique n'existe. Les six champs manquants sont écrits « à confirmer » SUR la page.
+# Le contrôle approfondi (règle de King du 24/09, MESSAGES §5) a été refait AVANT d'écrire — six
+# recherches, verdict écrit : rien d'autre n'existe publiquement sur ce cabinet.
+REPONSE_2409_DM = {
+    "dm-optique": {
+        "Contacted": "Yes", "Reply": "Yes", "reply_type": "human",
+        "Demo made": "Yes",
+        "last_send_state": "replied", "stage": "demo", "stage_since": "2026-09-24",
+        # le profil a été vu : c'est sur WhatsApp qu'il a répondu, et la capture de King montre le nom
+        # affiché « DM OPTIC ». On ne remplit `wa_verified` que sur une preuve — celle-ci en est une.
+        "wa_verified": "yes", "profile_name_seen": "DM OPTIC",
+        "value_kept":
+            "Le registre de l'Ordre comme seule matière vraie : inscription 021/2016, arrêté 0382, "
+            "titulaire M. Domche Noumbi, ville, un numéro — et la carte d'identité du cabinet en premier écran.",
+        "value_discarded":
+            "Aucune adresse, aucun horaire, aucun prix, aucune marque, aucune photo inventés : six champs "
+            "écrits « à confirmer » sur la page, et deux images d'illustration légendées « mise en situation ».",
+        "dossier": "clients/dm-optic/",
+        "Conversation_extra":
+            "24/09 15:31 — message 1 parti (capture de King : ✓✓). "
+            "24/09 15:54 — RÉPONSE DE M. DOMCHE NOUMBI, mot pour mot : « Ok Envoyé svp... » Deux mots : "
+            "envoyez-la. Aperçu construit le soir même (demos/concept-dmoptic-v1.html, gabarit + "
+            "demos/build_dmoptic.py + hosting/previews/dmoptic/). "
+            "CONTRÔLE APPROFONDI AVANT ÉCRITURE (règle du 24/09) : ONOC ligne 102 = seule source du "
+            "cabinet ; `dmoptique.com` et `dmoptic.com` existent mais ne servent rien, `dmoptique.cm` / "
+            "`dmoptic.cm` inexistants ; aucun Blogspot, WordPress, YouTube, X, Instagram, Facebook ; "
+            "aucune fiche d'annuaire ; une annonce afribobo de déc. 2019 (« DM optometrie », 2 500 F, "
+            "publiée par un particulier) NON retenue comme fait — elle n'est pas recoupée. Le nom du "
+            "titulaire apparaît en mars 2023 dans la liste des opticiens de Douala citée par Echos Santé. "
+            "⚠️ Ne jamais écrire d'adresse ni d'horaire pour ce lead tant qu'il ne les a pas donnés.",
     },
 }
 

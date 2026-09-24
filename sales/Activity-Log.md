@@ -4003,3 +4003,55 @@ contactés **67** (41,1 %) · réponses humaines **6** (9,0 %).
 
 **Réserves intactes** (contrôle approfondi **avant** d'écrire) : Capelli 675 26 89 81 · Optique Pro
 690 03 48 18 · Maranatha 658 163 190 · La Fibre 694 422 640 · Pagrot 699 90 46 91.
+
+---
+
+## 2026-09-24 (nuit) — DM OPTIC RÉPOND « OK ENVOYÉ SVP… » · L'APERÇU EST CONSTRUIT · LE CONTRÔLE APPROFONDI A PASSÉ AVANT L'ÉCRITURE
+
+**La réponse.** M. Domche Noumbi (DM OPTIC) a répondu au message de 15:31, mot pour mot : « **Ok Envoyé
+svp...** » (15:54, capture de King). Le message promettait « je vous construis votre page, d'abord : vous
+l'ouvrez sur votre téléphone, vous décidez après ». Deux mots, et la promesse devient un travail : **la
+page est construite le soir même**.
+
+**Le contrôle approfondi, cette fois AVANT d'écrire** (règle de King du 24/09 — première application
+complète). Six recherches, verdict écrit pour chaque affirmation :
+· registre ONOC (Littoral, **ligne 102**) : inscription **021/2016**, arrêté **0382**, titulaire
+**M. Domche Noumbi**, Douala, **656 122 239** — la seule source du cabinet ;
+· domaines : `dmoptique.com` et `dmoptic.com` **existent mais ne servent rien** ; `dmoptique.cm`,
+`dmoptic.cm`, `dm-optique.cm` **inexistants** ;
+· canaux discrets : aucun Blogspot, WordPress, YouTube, X, Instagram, Facebook ; aucune fiche d'annuaire
+(Maligah, Ayila'a, APIE, mont-pandi, afribobo) ;
+· une seule trace : une **annonce afribobo de déc. 2019** (« DM optometrie », 2 500 F, publiée par un
+particulier) — **non recoupée, donc non utilisée** : on n'écrit pas une donnée de santé sur une annonce
+anonyme ;
+· presse : le nom du titulaire apparaît en **mars 2023** dans la liste des opticiens de Douala cités par
+*Echos Santé* ;
+· **verdict** : « vous n'êtes nulle part » est vrai ; l'adresse et les horaires sont **inconnus** — donc
+écrits « à confirmer » **sur la page**, jamais devinés.
+
+**L'aperçu** (`demos/concept-dmoptic-v1.html`, 166 Ko, un seul fichier ; dossier déployable
+`hosting/previews/dmoptic/`) : premier écran = **la carte d'identité du cabinet** (registre de l'Ordre
+mis en page comme une pièce officielle), bande sombre « **hier / maintenant** » (l'encadré vide « aucun
+résultat » face à la fiche vivante), **six actes** en bande glissante, le titulaire avec sa source
+datée, une **note au cabinet à six champs « à confirmer »**, contact + **fiche .vcf**. Aucun prix, aucun
+horaire, aucune adresse, aucun avis, **aucun visage** : deux natures mortes d'instruments, légendées
+« mise en situation ». Aucune valeur sans source (§18.1).
+
+**Les contrôles** : `audit_html` **0 constat** (il a attrapé 13 textes à 3,92:1 → corrigés à 5,30:1) ·
+`audit_a11y --strict` **0 faute, 0 avertissement** · `audit_hero` **0 faute** (le nom écrit passe avant
+le dessin ; les deux utilitaires sont sortis du premier écran pour n'y laisser que **deux actions**) ·
+`check_inline_js` rc 0 · **`node tools/qa/test_dmoptic_page.mjs` 25/25**. ⚠️ **Aucune capture ni
+mockup** : le bac n'a pas de navigateur — l'œil de King sur un téléphone reste la dernière étape.
+
+**CRM** (table `REPONSE_2409_DM`, rebuild **15:18:04**) : `dm-optique` → `Reply = Yes`,
+`reply_type = human`, **`Demo made = Yes`**, `stage = demo`, `wa_verified = yes`, dossier
+`clients/dm-optic/`. ⚠️ Correction au passage : **Cavisa était resté à `Demo made = No`** alors que sa
+page est en ligne et qu'il a répondu — la donnée dit maintenant la vérité (les aperçus passent de 21 à
+**23**).
+
+**Compteurs** : base **163** · contactés **67** (41,1 %) · **réponses humaines 7 (10,4 %)** · aperçus
+**23** · étape `demo` **2** (Cavisa, DM OPTIC) · file du jour : **une action — répondre à DM Optic**.
+
+**Ce qui reste** : déployer le dossier (King), recoller l'adresse (`--url`), ouvrir le lien sur un
+téléphone — **puis** envoyer la carte du lien et le texte de `sales/Send-DM-OPTIC-2026-09-24.md`.
+**On n'envoie pas une adresse devinée.**
