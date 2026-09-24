@@ -51,37 +51,51 @@ Toute page qu'on livre passe par là.
 Contrôles complémentaires, tous verts : `audit_page --strict` rc=0 · `check_inline_js` 9 blocs / 0 faute ·
 harnais UNI-LABO **42/42** · `audit_html` 0 constat partout (structure **et** contraste).
 
-## 4 · Les onze défauts trouvés **sur nos propres pages**, et réparés
+## 4 · Les défauts trouvés **sur nos propres pages**, et réparés
 
 Un contrôle d'accessibilité qui ne trouve rien sur ce qu'on a déjà livré ne valait pas la peine d'être
 écrit. Trois de ces défauts étaient invisibles à l'œil nu.
 
-**Site AMK (`site/index.html`) — 9 corrections**
+> **Correction du 24/09 — à lire d'abord.** La première version de ce rapport annonçait « deux boutons
+> sans aucun nom, leur texte étant écrit par le JavaScript ». **C'était faux.** C'était un faux positif de
+> la première version de mon outil, qui lisait le contenu des boutons sans regarder leur `aria-label`, et
+> qui ignorait le `<span>` lisible du bouton micro (« Tap to speak »). Pire : la « correction » sortie de
+> cette fausse alerte a remplacé un nom bilingue qui **suivait la langue du visiteur** par un nom figé dans
+> les deux langues — elle a été **annulée**. **Huit défauts réels restent : six sur le site, deux sur
+> UNI-LABO.** Le faux positif, lui, s'est corrigé dans l'outil. Détail en **§6**.
 
-1. **Deux boutons dont tout le texte était écrit par le JavaScript** (le bouton de langue et celui du widget
-   vocal) : dans le HTML, ils n'avaient **aucun nom**. Aucun lecteur d'écran, aucun moteur de recherche ne
-   voyait quoi que ce soit. → nom accessible bilingue sur les deux.
-2. **Un bouton micro en icône seule**, sans nom (4.1.2).
-3. **Deux champs du formulaire dont l'étiquette n'était pas attachée** au champ (un `<label>` voisin, sans
-   `for=`) : un lecteur d'écran annonçait « champ de texte » sans dire lequel (3.3.2). → `for=` + deux
-   `autocomplete`.
-4. **Le formulaire ne disait pas ce qui se passe après le clic** : il écrit maintenant sa réponse dans une
-   zone vivante (`role="status"`), et **rattrape une fenêtre bloquée** en emmenant lui-même le visiteur vers
-   WhatsApp (3.3.1 — c'est la leçon d'UX du lot [22], côté accessibilité).
-5. **Des sauts de niveau dans les titres** : `h2`→`h4` puis `h2`→`h5` (1.3.1). La liste des titres est le
+**Site AMK (`site/index.html`) — 6 corrections réelles**
+
+1. **Deux champs du formulaire dont l'étiquette n'était pas attachée** au champ (un `<label>` voisin, sans
+   `for=`) : un lecteur d'écran annonçait « champ de texte » sans dire lequel (3.3.2) — plus deux
+   `autocomplete`, pour que le téléphone aide au lieu de faire taper.
+2. **Le formulaire ne disait pas ce qui se passe après le clic** : il écrit maintenant sa réponse dans une
+   zone vivante (`role="status"`), et **rattrape une fenêtre bloquée** en emmenant lui-même le visiteur
+   vers WhatsApp (3.3.1 — c'est la leçon d'UX du lot [22], côté accessibilité).
+3. **Des sauts de niveau dans les titres** : `h2`→`h4` puis `h2`→`h5` (1.3.1). La liste des titres est le
    sommaire du document pour qui navigue de titre en titre.
-6. **Dix icônes décoratives** non marquées `aria-hidden` : le lecteur d'écran annonçait « image » avant
+4. **Dix icônes décoratives** non marquées `aria-hidden` : le lecteur d'écran annonçait « image » avant
    chaque lien (1.1.1).
-7. **Le menu mobile ne disait pas qu'il s'ouvrait** : pas d'`aria-expanded`, et la touche **Échap** ne le
+5. **Le menu mobile ne disait pas qu'il s'ouvrait** : pas d'`aria-expanded`, et la touche **Échap** ne le
    fermait pas.
-8. **Les boutons de langue ne disaient pas lequel était actif** → `aria-pressed` (le visuel `.on` ne parle
+6. **Les boutons de langue ne disaient pas lequel était actif** → `aria-pressed` (le visuel `.on` ne parle
    qu'aux voyants).
-9. Une paire de balises de titre cassée **par ma propre correction** — rattrapée par `audit_html.py`, qui
-   refuse les balises orphelines. *Le contrôle a attrapé le correcteur.*
 
-**Page UNI-LABO (`demos/concept-unilabo-v2.html`) — 2 corrections**
+**…et deux défauts que j'ai introduits moi-même en corrigeant** — la ligne la plus utile de tout le lot :
 
-10. **Les quatre photos de familles** portaient un texte alternatif qui répétait le titre déjà imprimé sous
+8. Une paire de balises de titre **cassée par ma propre correction**, rattrapée par `audit_html.py` (qui
+   refuse les balises orphelines) ;
+9. une **zone de statut sans `id`** : le JavaScript la cherchait par son identifiant, ne la trouvait pas, et
+   n'écrivait donc jamais rien — une correction d'accessibilité qui ne faisait rien, sans le moindre
+   message d'erreur. Rattrapée par le **test de comportement** écrit dans la foulée
+   (`tools/qa/test_site_a11y_behaviour.mjs`), qui exécute vraiment le JavaScript de la page dans un DOM.
+
+*Le contrôle a attrapé le correcteur — deux fois.* C'est pour ça que la règle « on corrige la page, jamais
+l'assertion » a une sœur : **une correction non exécutée n'est pas une correction.**
+
+**Page UNI-LABO (`demos/concept-unilabo-v2.html`) — 2 corrections (7 et 8)**
+
+7. **Les quatre photos de familles** portaient un texte alternatif qui répétait le titre déjà imprimé sous
     la photo (*« Photo d'illustration de laboratoire — Biochimie »*) : il n'apprenait rien sur l'image.
     **Les images ont été ouvertes une par une et regardées**, et les alts disent maintenant ce qu'elles
     montrent :
@@ -89,7 +103,7 @@ Un contrôle d'accessibilité qui ne trouve rien sur ce qu'on a déjà livré ne
     - un frottis sanguin vu au microscope : globules rouges roses et globules blancs violets ;
     - une pipette qui dépose un échantillon dans les puits d'une plaque d'analyse à fond violet ;
     - un automate : un bras mécanique saisit un petit flacon au-dessus d'un carrousel de tubes à bouchons colorés.
-11. **Le pied de page sautait de `h2` à `h4`** → les trois rubriques sont en `h3`, style suivi.
+8. **Le pied de page sautait de `h2` à `h4`** → les trois rubriques sont en `h3`, style suivi.
 
 *Effet de bord, corrigé :* le constructeur annonçait des **caractères** en écrivant « octets » — le piège
 qui a déjà fait écrire de faux chiffres dans sept fichiers. Il donne maintenant les deux. La page passe de
@@ -106,11 +120,13 @@ qui a déjà fait écrire de faux chiffres dans sept fichiers. Il donne maintena
 
 ## 6 · La leçon d'outillage (elle vaut pour tous nos contrôles)
 
-Le premier jet de `audit_a11y.py` a produit **cinq faux positifs** — un lien-icône qui *avait* bien un
+Le premier jet de `audit_a11y.py` a produit **six faux positifs** — un lien-icône qui *avait* bien un
 `aria-label` ; une icône de 19 px **à l'intérieur** d'un bouton (la cible, c'est le bouton, pas le glyphe) ;
 un champ de texte libre sans `autocomplete` (le critère 1.3.5 ne concerne que les données à sens connu) ;
 un simple changement de couleur au survol (ce n'est pas du contenu caché) ; une icône dans un lien déjà
-nommé — **et un faux négatif plus grave** : `a:focus{outline:none}` satisfaisait son propre test « une règle
+nommé ; et **deux boutons du site déclarés « sans nom » alors que le nom était là** — dans un attribut
+`aria-label` pour l'un, dans un `<span>` visible pour l'autre (c'est le faux positif qui a fait écrire une
+fausse correction dans la première version de ce rapport) — **et un faux négatif plus grave** : `a:focus{outline:none}` satisfaisait son propre test « une règle
 de focus existe », c'est-à-dire que l'outil validait exactement la règle qui supprime le repère de focus.
 
 Tout a été corrigé **dans l'outil**, jamais toléré. D'où la règle écrite dans son test : *un contrôle n'est

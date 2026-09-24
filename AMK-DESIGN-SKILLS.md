@@ -1454,10 +1454,14 @@ the person who has to sign it.
 | **Understandable** | knowing what is happening | `3.1.1` a `lang` on `<html>` (and the page sets it when the visitor switches language); `3.3.2` every field has a **associated** label — a placeholder is not a label; `3.3.1` a live region announces what happens after a click |
 | **Robust** | working with the tools people own | `4.1.2` every button has a name — an icon-only button needs `aria-label`, and text injected by JavaScript counts as no text at all |
 
-Three of these were found **on our own pages** and are the kind of thing that is invisible until someone
-looks for it: buttons whose whole label was written by JavaScript at runtime (so a screen reader and a
-crawler saw an empty button), a form whose two labels were next to the fields instead of attached to them,
-and a footer jumping from `h2` to `h4`.
+Four of these were found **on our own pages**, and they are the kind of thing nobody sees until someone
+looks for it: a form whose two labels were sitting next to the fields instead of attached to them; a mobile
+menu that did not announce it was open (and that the Escape key could not close); a language switch that
+did not say which side was active; a footer jumping from `h2` to `h4`; and ten decorative icons read aloud
+as "image" before every link. **And two more were caused by the corrections themselves** — a heading pair
+broken by a find-and-replace, and a status region whose `id` did not match the one the JavaScript looked
+for, so that a well-meaning accessibility fix silently did nothing at all. The static checker caught the
+first, a small DOM-level behaviour test caught the second. *The control caught the corrector, twice.*
 
 ### 27.4 The four things a machine cannot check — and who checks them
 
@@ -1476,11 +1480,15 @@ and a footer jumping from `h2` to `h4`.
 
 ### 27.5 An automated accessibility test lies in both directions — so it is tested too
 
-Five false positives turned up the first time the checker ran on real pages, and all five were fixed in the
+Six false positives turned up the first time the checker ran on real pages, and all six were fixed in the
 tool rather than tolerated: an icon-only link that *did* carry an `aria-label`; a 19 px icon **inside** a
 button (the target is the button, not its glyph); a free-text field with no `autocomplete` (criterion 1.3.5
 only concerns data with a known meaning — name, e-mail, phone); a colour change on hover (that is not hidden
-content); and an icon inside a link that is already named. And one false **negative**: `a:focus{outline:none}`
+content); an icon inside a link that is already named; and **two buttons reported as nameless when the name was
+right there** — one in an `aria-label` attribute, one in a visible `<span>`. That last one is the most
+instructive of the six: it was written into a report before anyone checked it, and it produced a "fix" that
+removed a perfectly good bilingual label and replaced it with a frozen one. **A false positive costs more
+than a missed defect, because it makes you change something that was right.** And one false **negative**: `a:focus{outline:none}`
 was satisfying our own "there is a focus rule" test — the exact rule that removes the focus ring. Lesson,
 now written into `tools/qa/test_audit_a11y.py`: **a checker is only trusted once it has been shown to
 refuse a deliberately broken page, to accept a deliberately clean one, and to run without complaint on our

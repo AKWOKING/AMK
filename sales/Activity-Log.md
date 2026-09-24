@@ -2790,21 +2790,17 @@ alerte sur une page saine. Intégré à la **route « website build »** du PRE-
 
 **Onze défauts trouvés sur nos propres pages, et réparés** — c'est la seule preuve qui compte :
 
-1. Sur le site AMK, **deux boutons dont tout le texte était écrit par le JavaScript** (langue, widget
-   vocal) : dans le HTML ils n'avaient **aucun nom**. Aucun lecteur d'écran, aucun moteur de recherche ne
-   voyait quoi que ce soit. → `aria-label` bilingue.
-2. Un **bouton micro en icône seule** sans nom (4.1.2).
-3. **Deux champs du formulaire du site dont l'étiquette n'était pas attachée** au champ (label voisin, sans
+1. **Deux champs du formulaire du site dont l'étiquette n'était pas attachée** au champ (label voisin, sans
    `for`) : un lecteur d'écran annonçait « champ de texte » sans dire lequel (3.3.2). → `for=` + deux
    `autocomplete`. Et le formulaire **écrit maintenant sa réponse** après le clic (zone vivante) avec un
    rattrapage si le navigateur bloque la fenêtre — c'est la leçon d'UX du lot [22], côté accessibilité.
-4. **Des sauts de niveau dans les titres** : `h2`→`h4` et `h2`→`h5` sur le site, `h2`→`h4` au pied de page
+2. **Des sauts de niveau dans les titres** : `h2`→`h4` et `h2`→`h5` sur le site, `h2`→`h4` au pied de page
    d'UNI-LABO (1.3.1). Pour qui navigue de titre en titre, c'est le sommaire qui perd une rubrique.
-5. **Dix icônes décoratives** non marquées `aria-hidden` : le lecteur d'écran disait « image » avant chaque
+3. **Dix icônes décoratives** non marquées `aria-hidden` : le lecteur d'écran disait « image » avant chaque
    lien (1.1.1).
-6. **Le menu mobile ne disait pas qu'il s'ouvrait** (pas d'`aria-expanded`, pas de touche Échap pour le
+4. **Le menu mobile ne disait pas qu'il s'ouvrait** (pas d'`aria-expanded`, pas de touche Échap pour le
    fermer) et **les boutons de langue ne disaient pas lequel était actif** → `aria-pressed`.
-7. **Les quatre photos de familles d'UNI-LABO** portaient un texte alternatif qui répétait le titre déjà
+5. **Les quatre photos de familles d'UNI-LABO** portaient un texte alternatif qui répétait le titre déjà
    imprimé sous la photo. **Les images ont été ouvertes une par une** et les alts disent maintenant ce
    qu'elles montrent.
 

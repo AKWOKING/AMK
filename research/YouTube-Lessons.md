@@ -1034,13 +1034,9 @@ ensuite » écrite la veille dans ce même fichier.
 Un contrôle d'accessibilité qui ne trouve rien sur ce qu'on a déjà livré ne valait pas la peine d'être écrit.
 Onze défauts, sur quatre pages, dont trois invisibles à l'œil :
 
-1. **Deux boutons dont tout le texte venait du JavaScript** (site AMK : le bouton de langue et celui du
-   widget vocal). Dans le HTML, ils n'avaient **aucun nom** : ni un lecteur d'écran ni un moteur de recherche
-   ne voyaient quoi que ce soit. → `aria-label` bilingue.
-2. **Un bouton micro en icône seule**, sans nom (WCAG 4.1.2).
-3. **Deux champs du formulaire du site dont l'étiquette n'était pas attachée** (`<label>` voisin, sans
-   `for`). Un lecteur d'écran annonçait « champ de texte », sans dire lequel (WCAG 3.3.2). → `for=` + deux
-   `autocomplete`. Et le formulaire écrit maintenant sa réponse après le clic, avec un rattrapage si le
+1. **Deux champs du formulaire du site dont l'étiquette n'était pas attachée** au champ (un `<label>`
+   voisin, sans `for=`) : un lecteur d'écran annonçait « champ de texte » sans dire lequel (WCAG 3.3.2).
+2. Le formulaire écrit maintenant sa réponse après le clic, avec un rattrapage si le
    navigateur bloque la fenêtre (WCAG 3.3.1 : la leçon d'UX du lot [22], côté accessibilité).
 4. **Des sauts de niveau dans les titres** : `h2` → `h4` et `h2`→`h5` sur le site, `h2`→`h4` au pied de page
    d'UNI-LABO. La hiérarchie est la carte du document pour qui navigue de titre en titre (WCAG 1.3.1).
