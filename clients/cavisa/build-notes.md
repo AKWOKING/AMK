@@ -51,14 +51,14 @@ La page promet ce qu'une boutique peut tenir : **le prix, le délai, la réparab
 | Contrat de page | `python3 tools/qa/audit_page.py …` | **0 constat, 0 bloquant** |
 | Hero | `python3 tools/qa/audit_hero.py …` | 0 faute, 0 avertissement |
 | AEO / données structurées | `python3 tools/qa/audit_aeo.py …` | 0 faute (`Optician`, `FAQPage`, `PostalAddress`, `ContactPoint`, `City`) |
-| **Comportement (le vrai JavaScript)** | `node tools/qa/test_cavisa_page.mjs` | **26 assertions vertes** — bascule FR/EN, `aria-pressed`, messages WhatsApp dans la bonne langue, `alt` des images, `localStorage`, région vive, et **3 chemins de secours du mouvement** (API absente / script qui plante / mouvement réduit) |
+| **Comportement (le vrai JavaScript)** | `node tools/qa/test_cavisa_page.mjs` | **28 assertions vertes** — bascule FR/EN, `aria-pressed`, messages WhatsApp dans la bonne langue, `alt` des images, `localStorage`, région vive, et **3 chemins de secours du mouvement** (API absente / script qui plante / mouvement réduit) |
 | Balayage mécanique (`design/MOTION.md` §6) | greps | `transition:all` 0 · `ease-in` 0 · `scale(0)` 0 · `animation:` 0 · animations de `gap` retirées · hover derrière `(hover:hover) and (pointer:fine)` ×2 · `.btn`/`.lang`/`.cardlink` ont leur `:active` |
 | Em-dash | grep | **0** dans les chaînes anglaises |
 
 **Poids** : page **279 Ko** (dont 225 Ko de base64 pour les deux photos, 84 Ko chacune avant encodage) — un concept « ~1 Mo acceptable » (§13), mais la moitié est ici, pour un téléphone en 3G.
 
 ### Ce qui n'a PAS pu être fait dans le bac — écrit tel quel, jamais coché à tort (§13)
-- **Console navigateur sans erreur (Chromium, EN/FR, 390 px)** : **NON EXÉCUTÉ** — pas de navigateur dans le bac. Substitut : `check_inline_js` (les 4 scripts compilent) + `test_cavisa_page.mjs` (26 assertions sur le vrai JavaScript).
+- **Console navigateur sans erreur (Chromium, EN/FR, 390 px)** : **NON EXÉCUTÉ** — pas de navigateur dans le bac. Substitut : `check_inline_js` (les 4 scripts compilent) + `test_cavisa_page.mjs` (28 assertions sur le vrai JavaScript).
 - **Capture 1280×800 du hero → `demos/shots/`** : **NON EXÉCUTÉE** (pas de navigateur). À faire sur la machine de King : `node tools/video/capture.mjs --mode hero` puis recadrer en 1200×630 si l'on veut une vignette *de la page* au lieu de la photo du hero.
 - **Maquette laptop + téléphone** : **NON EXÉCUTÉE**, même raison.
 - **Débordement horizontal à 390/360 px** : **NON MESURÉ** (pas de navigateur). Ce qui est en place : colonne unique sous 860 px, `img{max-width:100%}`, `flex-wrap` sur les rangées de boutons et de puces.

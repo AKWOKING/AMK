@@ -73,6 +73,18 @@ const frN = (html.match(/class="[^"]*\bfr-only\b/g) || []).length;
 const enN = (html.match(/class="[^"]*\ben-only\b/g) || []).length;
 ok(`autant de .fr-only que de .en-only (${frN} / ${enN})`, frN === enN && frN > 30);
 
+/* Le schéma ne doit pas raconter une autre page que la page (§13 : « FAQ schema mirrors visible FAQs »).
+   Le 24/09, une correction de phrase visible avait laissé le JSON-LD en arrière — trouvé ici, pas à l'œil. */
+const ld = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+const faq = ld["@graph"].find((g) => g["@type"] === "FAQPage").mainEntity;
+const plain = (x) => x.replace(/<[^>]+>/g, " ").replace(/&nbsp;|\u00a0/g, " ").replace(/\u2019/g, "'").replace(/\s+/g, " ").trim();
+const qVisible = [...html.matchAll(/<summary><span><span class="fr-only"[^>]*>([\s\S]*?)<\/span>/g)].map((m) => plain(m[1]));
+const aVisible = [...html.matchAll(/<\/summary>\s*<p><span class="fr-only"[^>]*>([\s\S]*?)<\/span>/g)].map((m) => plain(m[1]));
+ok(`les ${faq.length} questions du schéma sont mot pour mot celles de la page`,
+   faq.length === 4 && qVisible.length === 4 && faq.every((q, i) => plain(q.name) === qVisible[i]));
+ok("les réponses du schéma sont mot pour mot celles de la page",
+   faq.every((q, i) => plain(q.acceptedAnswer.text) === aVisible[i]),
+   faq.map((q, i) => plain(q.acceptedAnswer.text) === aVisible[i] ? "" : "n°" + (i + 1)).join(" "));
 ok("le numéro de la boutique est celui de Cavisa, avec l'indicatif, partout",
    (html.match(/\+237699959052/g) || []).length >= 2 && !/wa\.me\/(?!237699959052)/.test(html));
 ok("aucun lien mort : pas un seul href=\"#\"", !/href="#"/.test(html));
