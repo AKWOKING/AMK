@@ -33,9 +33,10 @@ numéro ambigu — un des numéros publiés est celui d'un lead DÉJÀ contacté
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 1 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 2 ligne(s).*
 
 `L3636` · **Deux fiches écartées le jour même**, tracées dans `BATCH_2409_3_ECARTES` : **Valdoz Optic Douala** (un de
+`L3878` · (60 % de numéros joignables, trois fiches fausses en deux jours : Valdoz, Jucia, K Vision) pour le
 
 ---
 

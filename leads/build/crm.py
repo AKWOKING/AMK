@@ -2823,6 +2823,33 @@ REVISION_2409 = {
             "être exécutée. Aucune relance, aucun réessai : si un numéro ou une fiche apparaît un jour, le "
             "lead repart de `prospecting`.",
     },
+    # ── 24/09 (nuit) — LA PORTE A, PREMIERS RÉSULTATS DE KING SUR LE LOT 4 ──────────────────────
+    # King a ouvert les numéros dans l'application : c'est la seule vérification qui compte (Horizon).
+    "win-optic-plus": {
+        "wa_verified": "no",
+        "Notes_extra":
+            "24/09 (nuit) — PORTE A VÉRIFIÉE PAR KING : 699 12 59 06 N'EST PAS SUR WHATSAPP. "
+            "Le lot 4 prévoyait un repli SMS (1 segment) — dans l'ordre d'envoi, La Ligne Optic a pris "
+            "sa place. Aucun second numéro publié : ne pas réessayer à l'aveugle (un SMS ou un appel "
+            "restent possibles un autre jour, avec un message adapté).",
+    },
+    "golden-eyes-optic-douala": {
+        "stage": "disqualified", "stage_since": "2026-09-24", "wa_verified": "yes",
+        "disqualification_reason":
+            "A DÉJÀ UN SITE VIVANT DÉDIÉ À DOUALA (opticiendouala.com) — catalogue, services, "
+            "prise de rendez-vous WhatsApp sur 699 312 588, dépistage gratuit annoncé, agrément "
+            "MINSANTÉ. Hors cible du lot 4 : il n'y a pas de page à construire.",
+        "Notes_extra":
+            "24/09 (nuit) — recherche approfondie demandée par King (« look deeper into golden eyes »). "
+            "Ce qu'on croyait : « leur site parle de Yaoundé, Douala en une ligne ». Ce qui est vrai : "
+            "leur filiale de Douala a sa PROPRE page moderne (opticiendouala.com) et son adresse à "
+            "jour — Bonapriso, carrefour Hôtel de l'Air, à côté de la BICEC, face Pharmacie de l'Air — "
+            "exactement l'affiche « Nouvelle Adresse ! Douala » envoyée par King "
+            "(uploads/20260924_152507.jpg). ⚠️ PAS Bonamoussadi : affiche, nouveau site et ancien site "
+            "disent tous Bonapriso ; ce sont les annuaires (Maligah) qui sont restés à « Bonanjo, "
+            "Atrium, 2e étage ». C'est le prospect le MIEUX équipé de la liste — à revoir un jour avec "
+            "un autre angle, jamais avec « il vous manque une page ». wa_verified=yes : profil vu.",
+    },
 }
 
 

@@ -3919,3 +3919,42 @@ numéros n'a été vu dans l'application. C'est la leçon Horizon, et elle coût
 **Compteurs** (rebuild **14:08:07**) : ① Prospection **84** (77 → 84) · ② Qualifié **20** · ③ Aperçu
 envoyé 1 · ④ Prix posé 3 · ⏸ Parqué 42 · ❌ Perdu 1 · **total 163** · contactés **62** (39,7 %) ·
 réponses humaines **6** (9,7 %).
+
+---
+
+## 24/09/2026 (nuit) — **LA PORTE A PARLE : WIN OPTIC HORS WHATSAPP, GOLDEN EYES ÉCARTÉ**
+
+**Ce que King a vérifié dans l'application (lot 4).**
+· **Win Optic Plus — 699 12 59 06 : PAS sur WhatsApp.** Le repli SMS était écrit (1 segment) mais n'est
+pas parti ; dans la vague, **La Ligne Optic prend sa place**. CRM : `wa_verified = no`, note datée.
+Aucun second numéro publié → on ne réessaie pas à l'aveugle (SMS ou appel possibles un autre jour,
+avec un message adapté).
+· **Golden Eyes Optic — 699 312 588 : sur WhatsApp** (le profil a été vu) — mais **écarté du lot**
+après la recherche approfondie que King a demandée.
+
+**La recherche approfondie sur Golden Eyes (« look deeper into golden eyes »).** Ce qu'on croyait —
+« leur site parle de Yaoundé, Douala en une ligne » — était périmé : leur filiale de Douala a **son
+propre site**, `opticiendouala.com` : catalogue de montures, pages services, avis, agrément MINSANTÉ,
+dépistage gratuit annoncé, et un bouton **« Prenez Rendez-Vous » qui ouvre `wa.me/237699312588`**.
+L'adresse y est à jour — **Bonapriso, en face de la Pharmacie de l'Air** — exactement l'adresse de
+l'affiche « **Nouvelle Adresse ! Douala** » envoyée par King (`uploads/20260924_152507.jpg` :
+carrefour Hôtel de l'Air, à côté de la BICEC, en face de la pharmacie). ⚠️ **Ce n'est pas
+Bonamoussadi** : l'affiche, le nouveau site et l'ancien site disent tous **Bonapriso** ; ce sont les
+**annuaires** (Maligah) qui sont restés à « Bonanjo, hypermarché Atrium, 2ᵉ étage ».
+Conséquence : **pas de page à construire** → CRM `disqualified`, motif daté. C'est le prospect **le
+mieux équipé de la liste** (dépistage gratuit, RDV WhatsApp, catalogue, 13 ans) : à revoir un jour avec
+un **autre angle**, jamais avec « il vous manque une page ».
+
+**La vague, maintenant — cinq, et pas un de plus :** 1 · **Cinq Sens** · 2 · **SkyOptic** · 3 ·
+**Lumumba** · 4 · **La Ligne Optic** · 5 · **DM Optique**. Les deux remplaçants prévus sont entrés tous
+les deux : **il n'en reste plus aucun dans ce lot**. Si un numéro échoue à son tour, on puise dans les
+réserves (§9 du lot 4 : Capelli, Optique Pro, Maranatha, La Fibre, Pagrot — contrôle approfondi à faire
+avant d'écrire) ou dans les treize opticiens de la vague du 21/09 (§11).
+
+**Compteurs** (rebuild **14:36:32**) : ① Prospection **83** (84 → 83) · ⛔ Écarté **13** (12 → 13) ·
+② Qualifié 20 · ③ Aperçu envoyé 1 · ④ Prix posé 3 · ⏸ Parqué 42 · ❌ Perdu 1 · **total 163** ·
+contactés **62** · réponses humaines **6** (9,7 %).
+
+**Leçon pour la suite** : « regarder plus loin » veut dire ouvrir le **vrai domaine**, pas la page
+d'accueil du groupe — c'est exactement ce qui a évité d'envoyer « il vous manque une page » au prospect
+le mieux équipé.

@@ -17,6 +17,13 @@ le numéro publié.
 > peut porter une autre boutique (Valdoz/Fashion Vision, 656 22 38 63). **Sous chaque message : la
 > variante SMS**, pour ne pas perdre un lead sur une porte fermée.
 
+> ✅ **MISE À JOUR DU 24/09 (nuit) — LA PORTE A A PARLÉ, LA VAGUE EST À CINQ.** King a ouvert les
+> numéros dans l'application : **699 12 59 06 (Win Optic Plus) n'est pas sur WhatsApp** → il sort de
+> la vague (§4) ; **Golden Eyes a été écarté après recherche approfondie** (§5 : leur filiale de
+> Douala a déjà un site dédié et une prise de rendez-vous WhatsApp). Les **cinq à envoyer** sont donc :
+> **1 · Cinq Sens · 2 · SkyOptic · 3 · Lumumba · 4 · La Ligne Optic · 5 · DM Optique** — les deux
+> remplaçants sont entrés tous les deux ; s'il en manque encore un, on puise en §9/§11.
+
 ---
 
 ## 1 · RÉFÉRENCE OPTIQUE MÉDICALE CINQ SENS — **696 698 136** *(Akwa + Brazzaville)*
@@ -124,34 +131,37 @@ Je vous l'envoie ?
 **Repli SMS** (1 segment — mesuré par `tools/qa/check_sms.py`) : `Bonjour. Votre nom est sur Facebook, votre inscription au registre, mais rien a lire entre les deux. Une page a vous, a regarder avant d'envoyer ? - King, AMK`
 
 **Portes** : A = à vérifier · B = **passe** (page Facebook) · C = titulaire nommé.
+> ⛔ **PORTE A — vérifiée par King le 24/09 (nuit) : 699 12 59 06 n'est pas sur WhatsApp.** Le repli
+> SMS ci-dessus reste valable si on veut tenter le canal SMS (un numéro sans WhatsApp n'est pas un
+> numéro mort) — mais dans la vague, **La Ligne Optic (§6) prend sa place**.
 
 ---
 
-## 5 · GOLDEN EYES OPTIC — branche de Douala — **699 312 588** *(Bonanjo, Atrium)*
+## 5 · GOLDEN EYES OPTIC — **ÉCARTÉ le 24/09 (soir)**, après la recherche approfondie demandée par King
 
-**La recherche.** Registre ONOC n° 101 (inscription **090/2019**, arrêté 2622) : titulaire **DJON II
-Achille Arnaud**. ⚠️ **Ils ont un site, et il est vivant** : `goldeneyesoptic.com` — Yaoundé d'abord
-(« Notre siège situé à Yaoundé, Nkomkana »), et **Douala traité en une ligne** sur la page Contact :
-*« Douala : Bonanjo au centre commercial l'Atrium Spar, 2ᵉ étage »*. Le site publie les numéros de
-Douala (653 23 77 21 / 699 31 25 88 — le second est celui du registre).
+**699 312 588** · registre ONOC n° 101 (DJON II Achille Arnaud) — **on ne leur écrit pas.**
 
-**Le crochet.** Ce n'est pas « vous n'avez pas de site » — **c'est faux**. C'est : *votre site parle de
-Yaoundé, et Douala y est une ligne*.
+**Ce qu'on croyait** (déjà périmé) : « leur site parle de Yaoundé et Douala y tient en une ligne ».
+**Ce qui est vrai**, vérifié le 24/09 au soir :
 
-**Le message :**
-```
-Bonjour. Votre site existe, il est bien fait — et Douala y tient en une ligne : Bonanjo, Atrium Spar,
-2ᵉ étage. Un patient de Bonanjo qui cherche un opticien lit d'abord Yaoundé.
-Ce qui manque, c'est la page de la maison de Douala : vos montures, vos horaires, et un bouton qui
-vous écrit ici.
-Je vous la construis d'abord, sur votre nom : vous l'ouvrez sur votre téléphone, vous décidez après.
-Je vous l'envoie ?
-— Akwo King / AMK – Développement Web & Solutions Digitales
-```
+- leur filiale de Douala a **sa propre page moderne** : `opticiendouala.com` — catalogue de montures,
+  pages services, avis, et un bouton **« Prenez Rendez-Vous » qui ouvre WhatsApp sur 699 312 588** ;
+- l'adresse y est à jour : **Bonapriso, en face de la Pharmacie de l'Air** — exactement l'adresse de
+  l'affiche « **Nouvelle Adresse ! Douala** » envoyée par King (`uploads/20260924_152507.jpg` :
+  *carrefour Hôtel de l'Air, à côté de la BICEC, en face de la pharmacie*) ;
+- le vieux site `goldeneyesoptic.com` est lui aussi à jour côté Douala, et son `contact-us` renvoie
+  maintenant une **404** ;
+- ⚠️ **Ce n'est pas Bonamoussadi** : l'affiche, le nouveau site et le vieux site disent tous
+  **Bonapriso**. Ce sont les **annuaires** qui sont restés en arrière (Maligah écrit encore « Bonanjo,
+  hypermarché Atrium, 2ᵉ étage »).
 
-**Repli SMS** (1 segment — mesuré par `tools/qa/check_sms.py`) : `Bonjour. Votre site est bien fait, mais Douala y tient en une ligne : Bonanjo, Atrium. La page de la maison de Douala ? - Akwo King, AMK`
+**La décision.** C'est le prospect **le mieux équipé de la liste** — dépistage gratuit annoncé, RDV
+WhatsApp, catalogue, agrément MINSANTÉ, 13 ans d'ancienneté. Il n'y a **pas de page à construire** :
+écarté du lot (CRM : `disqualified`, motif daté). À revoir un jour avec un **autre angle** — jamais
+avec « il vous manque une page ».
 
-**Portes** : A = à vérifier · B = **passe (site vivant)** · C = titulaire nommé.
+**Ce que ça apprend pour les réserves** : avant d'écrire, chercher une page **dédiée** (pas seulement
+la page d'accueil du groupe) — deux minutes de recherche ont évité un message faux.
 
 ---
 
@@ -204,19 +214,23 @@ Je vous l'envoie ?
 
 ---
 
-## 8 · ORDRE D'ENVOI, ET CE QU'ON FAIT ENSUITE
+## 8 · ORDRE D'ENVOI (mis à jour le 24/09 au soir, après les vérifications de King)
 
 **1 → Cinq Sens** (deux cabinets : le message se vérifie en le lisant) · **2 → SkyOptic** · **3 →
-Lumumba** · **4 → Win Optic Plus** · **5 → Golden Eyes Douala** · **6 → La Ligne Optic** · **7 → DM
-Optique**. Les deux derniers ont la porte A la plus incertaine (aucune trace publique) : ce sont les
-**remplaçants** — si l'un des cinq premiers n'a pas WhatsApp, on descend d'un cran, on ne saute pas.
+Lumumba** · **4 → La Ligne Optic** · **5 → DM Optique**.
+
+**Ce qui a changé** : **Win Optic Plus** (n° 4) est sorti — *699 12 59 06 n'est pas sur WhatsApp* — et
+**Golden Eyes** (n° 5) a été **écarté** après recherche (§5). Les deux remplaçants prévus sont donc
+**entrés tous les deux** : il n'en reste plus aucun. Si un des cinq échoue à son tour, on puise dans
+les réserves (§9) ou dans les treize de la vague du 21/09 (§11) — King le dit, on écrit le remplaçant.
 
 **Après l'envoi** : la ligne passe `Contacted = Yes`, `wa_verified = yes` (seulement si le profil a été
 vu), `last_send_state = sent`, `stage = qualifying` — table `ENVOI_2409_4` à créer. **Toute réponse se
 traite dans l'heure** et s'écrit dans `sales/Activity-Log.md` avec l'heure et le mot exact.
 
-**Ce qu'on n'écrit jamais dans ce lot** : « vous n'avez pas de site » (faux pour Golden Eyes) · un prix
-· une promesse de classement · le nom d'un autre opticien · un avis · une promesse médicale.
+**Ce qu'on n'écrit jamais dans ce lot** : « vous n'avez pas de site » (faux deux fois — Golden Eyes en
+est la preuve) · un prix · une promesse de classement · le nom d'un autre opticien · un avis · une
+promesse médicale.
 
 ---
 
@@ -232,7 +246,7 @@ traite dans l'heure** et s'écrit dans `sales/Activity-Log.md` avec l'heure et l
 
 ---
 
-## 10 · CE QUE LE REGISTRE A APPRIS EN PASSANT (deux découvertes)
+## 10 · CE QUE LE REGISTRE A APPRIS EN PASSANT (trois découvertes)
 
 **① Le « troisième numéro » de K Vision Care appartient à un autre cabinet.** Mont-Pandi publiait
 **695 865 346** comme repli de K Vision. Le registre ONOC donne, à la ligne 111, **Optimat Vision Sarl**
@@ -245,6 +259,14 @@ numéro que **l'Ordre** publie pour K. Vision Care (n° 110, KAKEU DJOUNESSI).
 **② Le registre donne un nom à qui parler — pas une vitrine à juger.** Sur les sept fiches, six portent
 l'opticien responsable ; deux seulement ont une trace numérique (Facebook, site). C'est le profil
 « vitrine » du §8b : le registre ouvre la porte, le contrôle à l'écran dit si elle s'ouvre.
+
+---
+
+**③ « Regarder plus loin » veut dire : ouvrir le vrai domaine, pas la page d'accueil du groupe.**
+Golden Eyes semblait n'avoir qu'un site yaoundéen avec une ligne pour Douala. En cherchant le nom **et**
+la ville, on est tombé sur `opticiendouala.com` — un site dédié, moderne, avec prise de rendez-vous
+WhatsApp. Deux minutes de recherche ont évité un message faux adressé au prospect le mieux équipé de la
+liste.
 
 ---
 

@@ -10,10 +10,10 @@
 | ④ Prix posé, en négociation | **3** |
 | ③ Aperçu envoyé | **1** |
 | ② Qualifié — en conversation | **20** |
-| ① Prospection — à qualifier | **84** |
+| ① Prospection — à qualifier | **83** |
 | ❌ Perdu | **1** |
 | ⏸ Parqué | **42** |
-| ⛔ Écarté | **12** |
+| ⛔ Écarté | **13** |
 | **Total** | **163** |
 
 - **Contactés :** 62 · **Réponses humaines :** 6 · **Taux de réponse : 9.7 %**
@@ -48,12 +48,12 @@
 | Cabinet Dentaire The Skye | Douala (Bonamoussadi) | 677 79 69 99 | `L53` |
 | Cabinet Dentaire YAKS | Douala (Logbessou) | 672 70 20 78 | `L54` |
 | Cabinet d'Optique la Rétine | Douala (Akwa) | 695 474 364 | `L3652` |
-| Centre Médical de Bonanjo | Douala (Bonapriso, ancien aéroport) | 694 57 22 77 | `L3867` |
+| Centre Médical de Bonanjo | Douala (Bonapriso, ancien aéroport) | 694 57 22 77 | `L3891` |
 | Doyoan Optic | Douala | 653 85 27 49 | `L3589` |
 | El Roï Optique Médicale | Douala (Village) | 693 127 302 | `L3651` |
 | Espace Lunetterie | Douala | 677 34 24 62 | `L3452` |
 | Fashion Vision | Douala | 656 22 38 63 | `L3637` |
-| K Vision Care | Douala (Bessengue · Ancien 3e · Ndogpassi) | 677 077 159 | `L3780` |
+| K Vision Care | Douala (Bessengue · Ancien 3e · Ndogpassi) | 677 077 159 | `L3909` |
 | L'Opticien Bali SARL | Douala (Bali) | 670 27 60 65 | `L22` |
 | Labiomed | Douala (Deido, 104 Route Deido-Bassa) | 699 98 54 66 | `L3867` |
 | Maff Optique | Douala | 699 93 19 56 | `L3451` |
@@ -63,7 +63,7 @@
 | Net Optique Médical | Douala (Akwa) | 675 785 930 | `L3652` |
 | St. Theresa International Bilingual Comprehensive College (STIBCCOL) | Buea (Molyko) | 679151075 | `L1698` |
 
-## ① Prospection — à qualifier — 84
+## ① Prospection — à qualifier — 83
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
@@ -90,7 +90,7 @@
 | Collège Catholique Bilingue La Retraite | Yaoundé (159 Ave Konrad Adenauer) | — | `L2333` |
 | Complexe Scolaire et Universitaire Siantou | Yaoundé (Mvog-Mbi/Coron-Biteng, BP 04) | 668556755 | — |
 | Cristalys Optic | Douala | 690 94 51 50 | `L3535` |
-| DM Optique | Douala | 656 122 239 | — |
+| DM Optique | Douala | 656 122 239 | `L3893` |
 | Divine Success Comprehensive College (DSCC) | Douala (Ngodi) | 696023696 | `L466` |
 | Douala clinic | Douala (Makepe BM, rue des pavés) | 650 34 32 01 | `L45` |
 | Dumbu Lunetterie | Douala | 690 11 43 23 | — |
@@ -100,7 +100,6 @@
 | Frankfils Comprehensive College | Buea | — | — |
 | Gift Optical | Douala | 673 52 17 35 | `L3536` |
 | Gilles-André Vision | Douala | 699 88 31 78 | — |
-| Golden Eyes Optic (Douala) | Douala (Bonanjo, Atrium Spar) | 699 312 588 | — |
 | Groupe Scolaire La Semence | Douala (Bonamoussadi, Fin Goudron Bangue, BP 1661) | — | — |
 | Groupe Scolaire Moderne Bilingue WAFO | Douala (Denver-Bonamoussadi, BP 6081) | — | — |
 | Grâce Vision | Douala | 691 39 28 78 | — |
@@ -113,12 +112,12 @@
 | KYLAYA LABO | Douala (Bali, 189 rue des Manguiers) | 696 78 77 78 | — |
 | L'Opticien SARL | Douala | 694 33 65 82 | — |
 | LABO-PHANUEL | Douala (Akwa) | 243 17 94 71 | `L60` |
-| La Ligne Optic Akwa | Douala (Akwa) | 683 651 108 | — |
+| La Ligne Optic Akwa | Douala (Akwa) | 683 651 108 | `L3892` |
 | Laboratoire Biomedicam | Douala (Bonapriso) | 699 00 32 07 | `L1860` |
 | Le Paradis des Anges (PDA) | Douala (Makepe, Carrefour SNEC Bloc A) | 677378542 | `L1629` |
 | Le Samaritain Optique | Douala | 670 19 74 51 | — |
 | London Vision | Douala | 696 76 81 16 | — |
-| Lumumba Optique Médicale | Douala (Makepe) | 670 59 79 96 | — |
+| Lumumba Optique Médicale | Douala (Makepe) | 670 59 79 96 | `L3889` |
 | Lux Optique | Douala | 655 04 05 49 | — |
 | LyfyOptic | Douala | 699 98 06 66 | `L3535` |
 | Maison Optique | Douala | 657 73 70 45 | `L2973` |
@@ -139,16 +138,16 @@
 | Presbyterian Girls Secondary School (PGSS) Limbe | Limbe | — | — |
 | Rainforest International School (RFIS) | Yaoundé (SIL, BP 1299) | 677937162 | — |
 | Royal Optic | Douala (Bali) | 676 250 409 | `L3655` |
-| Référence Optique Médicale Cinq Sens | Douala (Akwa + Brazzaville) | 696 698 136 | `L3243` |
+| Référence Optique Médicale Cinq Sens | Douala (Akwa + Brazzaville) | 696 698 136 | `L3887` |
 | Saint Anne's High School Limbe (SAHISCOL) | Limbe (New Town) | 682122959 | `L2333` |
 | Saint Bernard High School (SBHS) | Buea (Molyko) | — | — |
 | Salvation Bilingual High School (Molyko-Buea) | Buea (Molyko) | — | `L1656` |
 | ScientiLabo | Douala (Akwa, 1749 rue Gallieni) | 696 423 477 | — |
-| SkyOptic Akwa (ETS Sky Optics) | Douala (Akwa) | 655 649 803 | — |
+| SkyOptic Akwa (ETS Sky Optics) | Douala (Akwa) | 655 649 803 | `L3888` |
 | St. Joseph's College Sasse (SJC Sasse) | Buea (Sasse/Small Soppo) | 677195500 | `L1775` |
 | St. Sylvester International College | Buea (Muea) | — | — |
 | Summerset Bilingual College (SMBICOL) | Buea (Wokoko) | — | — |
-| Win Optic Plus | Douala | 699 12 59 06 | — |
+| Win Optic Plus | Douala | 699 12 59 06 | `L3890` |
 | Wonders Medical Foundation | Douala (Bonamoussadi) | — | — |
 | École Privée Bilingue Les Génies | Douala (Akwa) | — | `L3122` |
 
@@ -187,7 +186,7 @@
 | Interlabo | Douala (Akwa, 780 Rue E. Betote — R. Pau) | 677 75 54 21 | `L1761` |
 | J&E Memorial Polyclinic (JEMPO) | Douala (Deido/Bessengue) | 696 71 06 99 | `L24` |
 | Jucia Optics | Douala (Akwa) | 653 449 349 | `L3638` |
-| Kamaïs Optic | Douala (Bessengue) | 678 435 460 | `L761` |
+| Kamaïs Optic | Douala (Bessengue) | 678 435 460 | `L3899` |
 | Labo La Passerelle | Douala (Deido, 820 Bld de la Réunification) | 694 71 91 22 | `L1761` |
 | Laboratoire Biodiagnostics | Douala (Sable, Rue Deido-Bonanjo) | 699 92 91 98 | — |
 | Laboratoire Meka | Douala (Bonamoussadi, 241 Rue 5N036) | 699 79 93 35 | — |
@@ -205,12 +204,13 @@
 | Tchaya Optique | Douala | 696 79 01 73 | `L3834` |
 | YONDJA ANALYSE | Douala | 696 88 88 23 | `L3349` |
 
-## ⛔ Écarté — 12
+## ⛔ Écarté — 13
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
 | Clinique des Anges | Douala | — | — |
 | Douala Labo | Douala (Akwa, 37 Av King Akwa) | 699 62 61 21 | — |
+| Golden Eyes Optic (Douala) | Douala (Bonanjo, Atrium Spar) | 699 312 588 | `L3891` |
 | Horizon Optique | Douala | 677 44 74 17 | `L3623` |
 | JOSS MEDI Clinic | Buea | — | — |
 | Kylaya Labo | Douala (Bali, 189 Rue des Manguiers) | 696 78 77 78 | — |
@@ -219,5 +219,5 @@
 | Le Bon Diagnostic | Douala (Elf, Axe-Lourd) | 699 95 67 32 | `L1321` |
 | Original Optique | Douala (Carrefour Dika) | 659 09 71 50 | `L611` |
 | Scientilabo | Douala (Akwa, Rue Gallieni) | 696 42 34 77 | — |
-| Valdoz Optic Douala | Douala (Akwa) | 682 833 319 | `L3636` |
+| Valdoz Optic Douala | Douala (Akwa) | 682 833 319 | `L3878` |
 | Vision Care Center | Douala (Akwa, rue Ernest Betote) | 698 55 80 34 | — |
