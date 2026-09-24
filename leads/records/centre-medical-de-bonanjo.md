@@ -34,7 +34,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 42 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 43 ligne(s).*
 
 `L43` · | **ven 18/09 19:42** | **Centre Médical de Bonanjo** (Bonapriso, 694 57 22 77) | msg 1 — sans maquette | Envoyé | **Non** |
 `L112` · | 19:42 | Centre Médical de Bonanjo · Kamaïs Optic |
@@ -78,6 +78,7 @@
 `L2557` · de Bonanjo noir sur blanc. **Quatre images donc** — accueil, préparation (un homme qui attend, un verre
 `L3867` · (OraCare et Bonanjo au 28/09, MITOC · Skye · Yaks et Le Cristallin au 29/09, Labiomed au 1ᵉʳ octobre,
 `L3891` · | 5 | **Golden Eyes Optic** — Douala (Bonanjo, Atrium) | 699 312 588 | DJON II Achille Arnaud | **ils ont un site vivant** : Yaoundé d'abord, Douala en une ligne |
+`L3943` · **annuaires** (Maligah) qui sont restés à « Bonanjo, hypermarché Atrium, 2ᵉ étage ».
 
 ---
 

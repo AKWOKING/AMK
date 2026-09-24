@@ -33,9 +33,13 @@ LOT 4 (préparé, PAS ENVOYÉ). Titulaire au registre : DJON II Achille Arnaud. 
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 1 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 5 ligne(s).*
 
 `L3891` · | 5 | **Golden Eyes Optic** — Douala (Bonanjo, Atrium) | 699 312 588 | DJON II Achille Arnaud | **ils ont un site vivant** : Yaoundé d'abord, Douala en une ligne |
+`L3925` · ## 24/09/2026 (nuit) — **LA PORTE A PARLE : WIN OPTIC HORS WHATSAPP, GOLDEN EYES ÉCARTÉ**
+`L3932` · · **Golden Eyes Optic — 699 312 588 : sur WhatsApp** (le profil a été vu) — mais **écarté du lot**
+`L3935` · **La recherche approfondie sur Golden Eyes (« look deeper into golden eyes »).** Ce qu'on croyait —
+`L3938` · dépistage gratuit annoncé, et un bouton **« Prenez Rendez-Vous » qui ouvre `wa.me/237699312588`**.
 
 ---
 

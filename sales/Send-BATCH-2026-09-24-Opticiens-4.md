@@ -24,6 +24,12 @@ le numéro publié.
 > **1 · Cinq Sens · 2 · SkyOptic · 3 · Lumumba · 4 · La Ligne Optic · 5 · DM Optique** — les deux
 > remplaçants sont entrés tous les deux ; s'il en manque encore un, on puise en §9/§11.
 
+> ✅ **ENVOYÉE — les cinq sont partis le 24/09 entre 15:15 et 15:31** (capture de King) :
+> **15:15 Cinq Sens ✓✓ · 15:16 SkyOptics ✓✓ · 15:18 Lumumba ✓ · 15:29 La Ligne Optic ✓✓ ·
+> 15:31 DM Optic ✓✓** — quatre délivrés, Lumumba parti (pas encore délivré). CRM : table
+> `ENVOI_2409_4` (`Contacted = Yes`, `stage = qualifying`). **Rien d'autre ne part sur ces cinq avant
+> qu'ils répondent.**
+
 ---
 
 ## 1 · RÉFÉRENCE OPTIQUE MÉDICALE CINQ SENS — **696 698 136** *(Akwa + Brazzaville)*
@@ -216,6 +222,8 @@ Je vous l'envoie ?
 
 ## 8 · ORDRE D'ENVOI (mis à jour le 24/09 au soir, après les vérifications de King)
 
+**✅ Fait le 24/09 :** les cinq messages sont partis (voir l'encadré en tête de dossier).
+
 **1 → Cinq Sens** (deux cabinets : le message se vérifie en le lisant) · **2 → SkyOptic** · **3 →
 Lumumba** · **4 → La Ligne Optic** · **5 → DM Optique**.
 
@@ -224,9 +232,10 @@ Lumumba** · **4 → La Ligne Optic** · **5 → DM Optique**.
 **entrés tous les deux** : il n'en reste plus aucun. Si un des cinq échoue à son tour, on puise dans
 les réserves (§9) ou dans les treize de la vague du 21/09 (§11) — King le dit, on écrit le remplaçant.
 
-**Après l'envoi** : la ligne passe `Contacted = Yes`, `wa_verified = yes` (seulement si le profil a été
-vu), `last_send_state = sent`, `stage = qualifying` — table `ENVOI_2409_4` à créer. **Toute réponse se
-traite dans l'heure** et s'écrit dans `sales/Activity-Log.md` avec l'heure et le mot exact.
+**Après l'envoi (fait)** : les cinq lignes sont passées `Contacted = Yes`, `stage = qualifying`, et
+`last_send_state` vaut `delivered` pour les quatre ✓✓ et `sent` pour Lumumba — table `ENVOI_2409_4`
+écrite dans `crm.py`. **Toute réponse se traite dans l'heure** et s'écrit dans `sales/Activity-Log.md`
+avec l'heure et le mot exact.
 
 **Ce qu'on n'écrit jamais dans ce lot** : « vous n'avez pas de site » (faux deux fois — Golden Eyes en
 est la preuve) · un prix · une promesse de classement · le nom d'un autre opticien · un avis · une
@@ -295,3 +304,23 @@ jamais reçu un mot**. C'est la première réserve si King veut un lot 5 sans no
 ⚠️ **Ne pas confondre avec `optic-laser-medical-akwa`** (autre fiche, `wa_number` vide, passe « site à
 eux » du 22/09 : `opticlasermedical.com`, à parquer) — deux fiches pour la même enseigne, exactement le
 piège que `check_tables_sans_doublon()` surveille.
+
+---
+
+## 12 · LE CONTRÔLE APPROFONDI — CE QU'IL DONNE SUR LES CINQ (fait après l'envoi)
+
+La règle est née le soir même, à la demande de King : **toujours** un contrôle approfondi sur chaque
+prospect (MESSAGES §5, RESEARCH-STANDARD §8c, PRE-FLIGHT §1c). Sur les cinq partis :
+
+| # | Prospect | Ce que le contrôle a trouvé | L'état du message |
+|---|---|---|---|
+| 1 | **Cinq Sens** | Blogspot à eux (dernier article **2021**), page Facebook, compte **X**, vidéo **YouTube** (2020), fiche Maligah avec horaires | ⚠️ « dans les mots de quelqu'un d'autre » — **fragile** |
+| 2 | **SkyOptic Akwa** | **`skyoptics.shop` vivant** : deux boutiques (Akwa face Beneficial · Bonamoussadi rond-point Maetur) + 3 numéros | ❌ « un patient ne les voit nulle part » — **faux** |
+| 3 | **Lumumba** | Deux pages Facebook confirmées (615 J'aime) + fiche APIE : **Bonamoussadi, face Parcours VITA** | ⚠️ le message dit « Makepe » — à corriger si réponse |
+| 4 | **La Ligne Optic** | Fiche Mont-Pandi (Akwa, Bd de la Liberté : consultation, réfraction, visagiste) | ⚠️ « le seul endroit… le tableau de l'Ordre » — à nuancer |
+| 5 | **DM Optic** | Rien de solide : une annonce de 2019 (« DM optometrie ») qui n'est peut-être pas eux | ✅ tient |
+
+**Ce qu'on fait, concrètement** : rien ne se renvoie, rien ne se corrige par un second message. **Si
+l'un des cinq répond** : on ne répète pas la phrase fragile, on pivote sur ce qui manque réellement
+(horaire à jour, catalogue, bouton WhatsApp). Et la règle s'applique au prochain prospect **avant**
+l'écriture — Golden Eyes a montré ce que ça évite.

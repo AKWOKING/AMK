@@ -56,6 +56,18 @@ téléphone pèse 3 à 6 Mo et porte la position GPS. Il vérifie la structure e
 beauté de la photo** (celle-là se juge à l'œil).
 Contrôle **structure** (sections imbriquées, équilibre) + **contraste WCAG** de chaque texte (desktop et mobile). Motif : un `</div>` perdu en insérant le miroir opticien a rendu du texte blanc sur fond blanc (déclaré par King). Détail : `tools/qa/AUDIT-2026-09-17.md`.
 
+## 1c · Contrôle approfondi — obligatoire sur CHAQUE prospect (King, 24 Sep 2026)
+
+> *« Mais à partir de maintenant fais toujours des contrôles approfondis sur chaque prospect. »*
+
+Six recherches **avant** d'écrire le message : nom exact + ville · le vrai domaine (pas la page
+d'accueil du groupe : `.com`, `.cm`, `.shop`, blogspot, Facebook) · les canaux discrets (Blogspot,
+WordPress.com, YouTube, X/Instagram, annuaires) · recoupement adresse/horaires/numéros (la source la
+plus récente gagne) · **le verdict écrit de chaque affirmation** qu'on s'apprête à faire · si une page
+dédiée existe → **écarté**, pas de message. Détail et les deux preuves du 24/09 (Golden Eyes écarté
+avant l'envoi ; SkyOptic et Cinq Sens fragilisés après l'envoi) :
+`sales/MESSAGES-2026-09-23-PERSUASION.md` §5 et `sales/RESEARCH-STANDARD.md` §8c.
+
 ## 2 · Uniqueness protocol (every website/design build, before a line of HTML)
 
 1. Load design + copywriting lessons (routing table rows above) and re-read `AMK-DESIGN-SKILLS.md` (dials §2, Design Read §1, anti-default §3/§3.8, pre-flight §13, §19).

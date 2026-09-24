@@ -3958,3 +3958,48 @@ contactés **62** · réponses humaines **6** (9,7 %).
 **Leçon pour la suite** : « regarder plus loin » veut dire ouvrir le **vrai domaine**, pas la page
 d'accueil du groupe — c'est exactement ce qui a évité d'envoyer « il vous manque une page » au prospect
 le mieux équipé.
+
+---
+
+## 2026-09-24 (soir) — LES CINQ SONT PARTIS · LA RÈGLE DU CONTRÔLE APPROFONDI · CE QUE LE CONTRÔLE A TROUVÉ
+
+**King a envoyé.** Capture à l'appui (`uploads/Screenshot_20260924-154540.png`) : **15:15 Cinq Sens ✓✓ ·
+15:16 SkyOptics ✓✓ · 15:18 Lumumba ✓ (pas encore délivré) · 15:29 La Ligne Optic ✓✓ · 15:31 DM Optic
+✓✓**. Quatre délivrés, un parti. **On ne renvoie rien sur ces cinq** — seules leurs réponses se
+traitent, dans l'heure.
+
+**La consigne de King, mot pour mot :** « *Mais à partir de maintenant fais toujours des contrôles
+approfondis sur chaque prospect.* » C'est une **règle permanente**, née le soir même : six recherches
+(~10 min) **avant** d'écrire — nom exact + ville · le **vrai domaine** (`.com`, `.cm`, `.shop`,
+blogspot, Facebook — pas la page d'accueil du groupe) · les **canaux discrets** (Blogspot, WordPress,
+YouTube, X/Instagram, annuaires) · le recoupement **adresse / horaires / numéros** (la source la plus
+récente gagne) · **le verdict écrit de chaque affirmation** qu'on s'apprête à faire · une page dédiée
+déjà en ligne → **écarté**, motif daté. Encodée dans **MESSAGES §5 · RESEARCH-STANDARD §8c ·
+PRE-FLIGHT §1c**.
+
+**Le contrôle, appliqué rétroactivement aux cinq — et il y avait à redire :**
+· **SkyOptic Akwa** — `skyoptics.shop` est **vivant** : deux boutiques (Akwa, bd de la République face
+Beneficial Life · Bonamoussadi, rond-point Maetur face Ola Energy) et trois numéros. Le message disait
+qu'on ne les voit nulle part : **faux**. C'est le prix d'un contrôle fait après l'écriture.
+· **Cinq Sens** — Blogspot à eux (dernier article **oct. 2021**), page Facebook « Référence Optique
+Médicale Cinq Sens SARL », compte **X `@MedicaleOptique`**, vidéo **YouTube** (nov. 2020), fiche
+Maligah (lun-sam 08h-18h). Les canaux existent : **fragile**, pas faux.
+· **Lumumba** — deux pages Facebook + fiche APIE : **Bonamoussadi, face Parcours VITA**. Le message
+dit **Makepe** : à corriger si réponse, pas à renvoyer.
+· **La Ligne Optic** — fiche Mont-Pandi (Akwa, bd de la Liberté : consultation, réfraction, visagiste).
+· **DM Optic** — rien de solide (une annonce afribobo de 2019 qui n'est peut-être pas eux) : **tient**.
+
+**La conduite si l'un des cinq répond** : ne jamais répéter la phrase fragile — pas de « on ne vous
+voit nulle part », pas de « vous n'avez pas de site ». On pivote sur ce qui manque vraiment : horaires
+à jour, catalogue lisible, bouton WhatsApp. Détail : lot 4 **§12** ; fragilités ligne à ligne dans
+`ENVOI_2409_4` (`Conversation_extra`).
+
+**CRM** (`ENVOI_2409_4`) : les cinq passent `Contacted = Yes`, `stage = qualifying` — `delivered` pour
+les quatre ✓✓, `sent` pour Lumumba (jamais `delivered` sans l'avoir vu). Rebuild **14:51:23**.
+
+**Compteurs (rebuild 14:51:23)** : ① Prospection **78** (83 → 78) · ② Qualifié **25** (20 → 25) ·
+③ Aperçu envoyé 1 · ④ Prix posé 3 · ⏸ Parqué 42 · ❌ Perdu 1 · ⛔ Écarté **13** · **total 163** ·
+contactés **67** (41,1 %) · réponses humaines **6** (9,0 %).
+
+**Réserves intactes** (contrôle approfondi **avant** d'écrire) : Capelli 675 26 89 81 · Optique Pro
+690 03 48 18 · Maranatha 658 163 190 · La Fibre 694 422 640 · Pagrot 699 90 46 91.

@@ -1924,6 +1924,7 @@ def _apply_jour(out: list) -> None:
     _apply_state(out, BATCH_2409_2, "BATCH_2409_2")
     _apply_state(out, ENVOI_2409_2, "ENVOI_2409_2")
     _apply_state(out, ENVOI_2409_3, "ENVOI_2409_3")
+    _apply_state(out, ENVOI_2409_4, "ENVOI_2409_4")
     _apply_state(out, ECARTES_2409, "ECARTES_2409")
 
 
@@ -2625,6 +2626,61 @@ ENVOI_2409_3 = {
             "`clients/k-vision-care/dossier.md`. ⚠️ Ne jamais reprendre les faux avis de leur ancien "
             "site (gabarits de thème : 1 860 / 1 630 / 2 100 avis, lorem ipsum, photos de banque "
             "d'images).",
+    },
+}
+
+
+# ── LE LOT 4 EST PARTI — les cinq envois de King, 24/09/2026 entre 15:15 et 15:31 ────────────────
+# Preuve : `Screenshot_20260924-154540.png` (capture de King). Horaires de la capture :
+#   15:15 Cinq Sens · 15:16 SkyOptics · 15:18 Lumumba · 15:29 La Ligne Optic · 15:31 DM Optic.
+# Quatre bulles portent ✓✓ (délivré), Lumumba un seul ✓ (parti, pas encore délivré).
+# ⚠️ LE CONTRÔLE APPROFONDI A ÉTÉ FAIT APRÈS L'ENVOI — la règle est née le soir même (décision de
+# King : « à partir de maintenant fais toujours des contrôles approfondis sur chaque prospect »).
+# Résultat : SkyOptic et Cinq Sens ont en réalité des canaux (site, blog) — les affirmations de leurs
+# messages sont FRAGILES. Si l'un des deux répond : ne pas répéter la phrase, pivoter sur ce qui
+# manque vraiment (horaires à jour, catalogue, bouton WhatsApp). MESSAGES §5, RESEARCH-STANDARD §8c.
+ENVOI_2409_4 = {
+    "cinq-sens-optique-medicale": {
+        "Contacted": "Yes", "stage": "qualifying", "last_send_state": "delivered",
+        "Conversation_extra":
+            "24/09 — message 1 parti à 15:15 (capture de King : ✓✓). ⚠️ Contrôle approfondi APRÈS "
+            "l'envoi : le cabinet a un Blogspot (dernier article 2021), une page Facebook, un compte X "
+            "et une vidéo YouTube de 2020 — la phrase « dans les mots de quelqu'un d'autre » est "
+            "FRAGILE. Si réponse : ne pas la répéter, pivoter sur les horaires à jour et le catalogue.",
+    },
+    "skyoptic-akwa": {
+        "Contacted": "Yes", "stage": "qualifying", "last_send_state": "delivered",
+        "Conversation_extra":
+            "24/09 — message 1 parti à 15:16 (capture de King : ✓✓). ⚠️ Contrôle approfondi APRÈS "
+            "l'envoi : ETS SKY OPTICS a un SITE VIVANT — `skyoptics.shop` — avec DEUX boutiques (Akwa, "
+            "Boulevard de la République face Beneficial · Bonamoussadi, rond-point Maetur face Ola "
+            "Energy) et trois numéros (698 18 42 82 · 698 86 46 93 · 653 98 32 09). Le message dit "
+            "« un patient ne les voit nulle part » : FAUX. Si réponse : ne pas répéter, pivoter sur ce "
+            "qui manque vraiment (horaires, catalogue à jour, bouton WhatsApp).",
+    },
+    "lumumba-optique-medicale": {
+        "Contacted": "Yes", "stage": "qualifying", "last_send_state": "sent",
+        "Conversation_extra":
+            "24/09 — message 1 parti à 15:18 (capture de King : un seul ✓, pas encore délivré). "
+            "Contrôle approfondi : deux pages Facebook confirmées (« Lunettes Lumumba » · « Lumumba "
+            "Optique Medicale », 615 mentions J'aime) + une fiche d'annuaire (APIE) qui le situe **en "
+            "face Parcours VITA, Bonamoussadi** — PAS Makepe : le message parle de Makepe, à corriger "
+            "si réponse. Autre numéro publié : 656 183 349.",
+    },
+    "la-ligne-optic-akwa": {
+        "Contacted": "Yes", "stage": "qualifying", "last_send_state": "delivered",
+        "Conversation_extra":
+            "24/09 — message 1 parti à 15:29 (capture de King : ✓✓). Contrôle approfondi : fiche "
+            "Mont-Pandi (Akwa, Boulevard de la Liberté — consultation, réfraction, visagiste, conseil). "
+            "Le message dit « le seul endroit où votre nom est écrit, c'est le tableau de l'Ordre » — "
+            "à nuancer si réponse (la fiche annuaire existe, mais elle n'est pas à eux).",
+    },
+    "dm-optique": {
+        "Contacted": "Yes", "stage": "qualifying", "last_send_state": "delivered",
+        "Conversation_extra":
+            "24/09 — message 1 parti à 15:31 (capture de King : ✓✓). Contrôle approfondi : rien de "
+            "solide — une petite annonce de 2019 (« DM optometrie », afribobo, 2 500 F la consultation) "
+            "qui n'est peut-être même pas eux. Le message (« on ne vous trouve pas ») tient.",
     },
 }
 

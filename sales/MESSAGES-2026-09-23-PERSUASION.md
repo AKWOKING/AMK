@@ -258,3 +258,32 @@ se justifie par un signal — et sans signal, on ne l'écrit pas.
 **Et une nuance à ne pas perdre :** cette règle s'applique aux messages **jamais ouverts**. Quelqu'un qui
 a **lu** et n'a pas répondu est dans un autre cas — il a vu, il a eu sa chance de répondre, et la relance
 prévue (sans reproche, une seule) reste légitime.
+
+---
+
+## §5 · LE CONTRÔLE APPROFONDI AVANT CHAQUE MESSAGE (décision de King — 24/09/2026)
+
+> *« Mais à partir de maintenant fais toujours des contrôles approfondis sur chaque prospect. »*
+
+**La règle.** Aucun message ne s'écrit avant que le prospect ait passé le contrôle approfondi — six
+recherches, dix minutes, **avant** la rédaction :
+
+1. chercher **le nom exact + la ville** (pas la marque seule) ;
+2. ouvrir **le vrai domaine**, pas la page d'accueil du groupe : `.com`, `.cm`, `.shop`, `blogspot`,
+   page Facebook ;
+3. chercher les **canaux discrets** : Blogspot, WordPress.com, YouTube, X/Instagram, annuaires
+   (Maligah, Ayila'a, APIE, afribobo…) ;
+4. **recouper adresse, horaires et numéros** — la source la plus récente gagne (site officiel > affiche
+   du prospect > annuaire) ;
+5. **écrire le verdict de chaque affirmation** qu'on s'apprête à faire : « vous n'avez pas de site »,
+   « on ne vous trouve pas », « votre adresse est introuvable » ;
+6. si une page **dédiée** existe → **écarté** (`disqualified`, motif daté), à revoir un jour avec un
+   autre angle.
+
+**Ce que ça a coûté de ne pas l'avoir fait — les deux preuves du 24/09.**
+· **Golden Eyes** : contrôle fait **avant** l'écriture → `opticiendouala.com` trouvé, message jamais
+envoyé, prospect le mieux équipé de la liste écarté proprement.
+· **SkyOptic Akwa** et **Cinq Sens** : messages partis **avant** le contrôle → les deux avaient des
+canaux réels, quoique anciens (`skyoptics.shop`, deux boutiques ; Blogspot de 2021 + Facebook + X +
+YouTube). Les affirmations de ces deux messages sont **fragiles** : si l'un des deux répond, **ne pas
+répéter la phrase** — pivoter sur ce qui manque vraiment (horaires à jour, catalogue, bouton WhatsApp).
