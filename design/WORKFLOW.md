@@ -114,3 +114,19 @@ Routing: WA <number>, ref prefix <XX-> · Deploy: <url / pending King redeploy>
 | 67-family structure/tokens | `design/vendor/bergside-skills/<family>/` + `registry-digest.json` |
 | Apple-style principles / vocabulary / RN / toasts / animation audits | `design/vendor/emil/skills/*` |
 | Full anti-slop long form, block patterns, redesign protocol, brand/logo boards, image-per-section comps | `design/vendor/taste/skills/*` |
+
+## Regarder un dessin sans navigateur (24/09/2026)
+
+Il n'y a **pas de navigateur** dans le bac, et depuis la page de **La Ligne Optic** une page AMK peut
+être **entièrement dessinée** (SVG). Ne pas pouvoir regarder ses propres dessins avant de les livrer
+serait une faute : `tools/qa/render_svg.py` les rastérise **avec PIL** (le seul moteur disponible),
+en surdimensionnant ×3 puis en réduisant pour remplacer l'antialiasing absent.
+
+```
+python3 tools/qa/render_svg.py demos/concept-<client>-v1.html --class draw -o /tmp/hero.png --width 420
+python3 tools/qa/render_svg.py demos/concept-<client>-v1.html --class mini --all -o /tmp/minis --width 200
+```
+
+Il lit les règles de classe de la page — **y compris les variables de `:root`** (sans quoi tout sort
+blanc sur blanc) et les **classes posées sur un `<g>`** (sans quoi les groupes sortent incolores). Il ne
+fait ni dégradés, ni transformations, ni polices : si un dessin en a besoin, l'étendre, pas le contourner.

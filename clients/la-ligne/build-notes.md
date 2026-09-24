@@ -94,3 +94,30 @@ invisible aux audits — visible pour un lecteur d'écran.
 3. **ouvrir sur un téléphone** : FR par défaut, bascule EN, le dessin qui se trace, les cinq onglets qui
    changent de panneau **sans JavaScript**, un vrai WhatsApp pré-rempli (683 651 108), aucun débordement ;
 4. envoyer le message de `sales/Send-LA-LIGNE-2026-09-24.md` §1, après la carte du lien.
+
+## 8 · La planche de contrôle — et le seul moyen de regarder nos propres dessins
+
+Une page **dessinée** pose une question nouvelle : comment vérifier un dessin quand le bac n'a **pas de
+navigateur** ? ImageMagick n'a ni `rsvg-convert` ni cairo ; `cairosvg`, `svglib` et le backend `renderPM`
+de reportlab échouent tous les trois (aucune bibliothèque de dessin système). Réponse : un outil à nous,
+**`tools/qa/render_svg.py`**, qui rastérise un SVG de la page **avec PIL**, en surdimensionnant ×3 puis en
+réduisant (c'est ce qui remplace l'antialiasing absent).
+
+**Ce qu'il a attrapé, et que rien d'autre n'aurait vu :**
+
+1. **Tout sortait blanc sur papier blanc.** Les traits sont écrits `stroke:var(--ink)` : le rastériseur
+   ne résolvait pas les variables. Corrigé dans l'outil — mais le piège est noté, parce qu'il a failli
+   faire conclure « le dessin est cassé » alors que la page était juste.
+2. **Les montures sortaient incolores.** Le style vivait sur un `<g class="stroke frame">`, et le
+   rastériseur ne lisait que l'élément. Corrigé : les classes d'un groupe descendent sur ses enfants.
+3. **Le visage « rond » n'était pas rond — il était ovale.** Copié-corrigé de la forme ovale, et
+   personne ne l'aurait vu à la lecture du code. Corrigé, et une assertion le protège désormais : **les
+   cinq visages doivent être cinq tracés différents**.
+
+La planche est gardée : `clients/la-ligne/dessins-controle.png` — les cinq visages + le premier écran,
+côte à côte. C'est la preuve qu'on a regardé avant de livrer, et le seul « œil » dont on dispose dans le
+bac. **La règle du portique ne change pas** : *not verified on a phone = not sent* — le dessin est
+vérifié ici, le rendu final reste à l'œil de King, sur un téléphone.
+
+**Contrôles après cette passe** : `audit_html` **0 constat** · `a11y --strict` **0/0** ·
+`test_laligne_page.mjs` **53/53**.

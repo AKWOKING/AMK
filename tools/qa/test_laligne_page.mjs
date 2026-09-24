@@ -109,6 +109,14 @@ const labels = [...html.matchAll(/<label for="f-[a-z]+">/g)].map((m) => m[0]);
 const panels = [...html.matchAll(/<article class="panel p-[a-z]+">/g)].map((m) => m[0]);
 ok("cinq formes de visage : cinq boutons radio, cinq étiquettes, cinq panneaux",
    radios.length === 5 && labels.length === 5 && panels.length === 5);
+/* Les cinq visages doivent être CINQ dessins différents : une copie-collée est l'erreur la plus facile
+   ici (le visage « rond » était en réalité ovale dans le premier jet — vu à l'œil, sur la planche de
+   contrôle, pas par un audit). */
+const minis = [...html.matchAll(/<svg class="mini"[\s\S]*?<\/svg>/g)].map((m) => m[0]);
+const headPaths = minis.map((m) => ((m.match(/class="stroke face" d="([^"]+)"/) || [])[1]));
+ok("les cinq visages sont cinq tracés DIFFÉRENTS (aucun copié-collé)",
+   headPaths.length === 5 && new Set(headPaths).size === 5);
+
 ok("chaque panneau a SON titre et SON dessin",
    (html.match(/<article class="panel[^"]*">[\s\S]*?<\/article>/g) || []).every((p) => (p.match(/<h3>/g) || []).length === 1 && p.includes("<svg")));
 

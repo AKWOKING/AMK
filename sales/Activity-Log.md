@@ -4328,3 +4328,27 @@ page avait raison, et l'assertion a été corrigée, pas la page.
 redéploiement**, l'œil de King sur un téléphone (les cinq onglets, la bascule EN, le tracé), puis le
 message de `sales/Send-LA-LIGNE-2026-09-24.md` §1. Les douze informations attendues sont dans
 `clients/la-ligne/a-completer.md`.
+
+---
+
+## 2026-09-24 (nuit, suite) — **REGARDER NOS PROPRES DESSINS : UN OUTIL, ET TROIS CHOSES QU'IL A ATTRAPÉES**
+
+La page de La Ligne Optic est **dessinée**, et le bac **n'a pas de navigateur** : impossible de voir le
+résultat avant de livrer. ImageMagick n'a ni `rsvg-convert` ni cairo ; `cairosvg`, `svglib` et `renderPM`
+échouent tous les trois (aucune bibliothèque de dessin système). **`tools/qa/render_svg.py`** comble le
+trou : il extrait un SVG de la page, lit les règles de style des classes visées — **y compris les
+variables de `:root`** — aplatit les Bézier, et rastérise avec **PIL** en surdimensionnant ×3 puis en
+réduisant (c'est ce qui remplace l'antialiasing absent).
+
+**Ce qu'il a attrapé, et que rien d'autre n'aurait vu :**
+
+① tout sortait **blanc sur papier blanc** (`stroke:var(--ink)` non résolu — piège d'outil, pas de page) ;
+② les **montures sortaient incolores** (le style vivait sur un `<g>`, et le rastériseur ne lisait que
+l'élément) ; ③ le visage « **rond** » n'était pas rond : **il était ovale**, copié-corrigé de la forme
+ovale. Une assertion le protège désormais — **les cinq visages doivent être cinq tracés différents**.
+
+La planche de contrôle est gardée dans `clients/la-ligne/dessins-controle.png` (les cinq visages + le
+premier écran). La leçon est écrite dans `design/WORKFLOW.md` pour servir aux prochaines pages dessinées.
+**Le portique ne change pas** : le dessin est vérifié ici ; *not verified on a phone = not sent*.
+
+**Contrôles** : `audit_html` **0 constat** · `a11y --strict` **0/0** · `test_laligne_page.mjs` **53/53**.
