@@ -19,6 +19,8 @@
 | Maquette / site | Yes |
 | Source | onoc_registry |
 | Détail source | Registre ONOC, annuaire 2024 — Littoral ligne 118 (inscription 115/2021, arrêté 1688), lu le 24/09 · fiche Mont-Pandi 671 |
+| Site vérifié le | 2026-09-24 |
+| Site existant | https://cinqsens.vercel.app |
 
 ## Notes
 
@@ -30,7 +32,7 @@ LOT 4 (préparé le 24/09 au soir, RIEN N'EST ENVOYÉ). Titulaire au registre : 
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 11 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 15 ligne(s).*
 
 `L559` · 4. **Section « Ce que nous faisons »** : site vitrine · bilingue · rendez-vous WhatsApp · référencement local ·
 `L967` · `DOSSIERS` du CRM (M4 : « 9 dossiers de travail, tous référencés ✓ »).
@@ -43,6 +45,10 @@ LOT 4 (préparé le 24/09 au soir, RIEN N'EST ENVOYÉ). Titulaire au registre : 
 `L3243` · ## 2026-09-24 · UNI-LABO — LE PALIER DÉPEND D'UNE QUESTION, PAS D'UNE PRÉFÉRENCE
 `L3887` · | 1 | Référence Optique Médicale **Cinq Sens** (Akwa + Brazzaville) | 696 698 136 | KOUGANG GUIFFO Casimir | deux cabinets, « tout sur la vue » — et aucune page à eux |
 `L3984` · · **Cinq Sens** — Blogspot à eux (dernier article **oct. 2021**), page Facebook « Référence Optique
+`L4162` · `clients/cinq-sens/inspiration.md` (trois références, ce qui est **pris**, ce qui est **rejeté** par
+`L4195` · et une constante définie **après** son premier usage en JavaScript (`ReferenceError` attrapé par le test,
+`L4220` · le 24/09 (le profil X publie lui-même le « numéro d'urgence » 696 698 136 — la page ne l'a pas inventé).
+`L4233` · les audits ne l'ont pas vue, le `ReferenceError` si. Règle notée dans `clients/cinq-sens/build-notes.md` §8.
 
 ---
 

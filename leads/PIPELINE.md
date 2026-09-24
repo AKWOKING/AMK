@@ -43,7 +43,7 @@
 |---|---|---|---|
 | Cavisa Optique | Douala | 699 95 90 52 | `L4053` |
 | DM Optique | Douala | 656 122 239 | `L4019` |
-| Référence Optique Médicale Cinq Sens | Douala (Akwa + Brazzaville) | 696 698 136 | `L3984` |
+| Référence Optique Médicale Cinq Sens | Douala (Akwa + Brazzaville) | 696 698 136 | `L4233` |
 
 ## ② Qualifié — en conversation — 23
 
@@ -54,7 +54,7 @@
 | Baptist Comprehensive College | Buea (Great Soppo) | 679650707 | `L15` |
 | Cabinet Dentaire The Skye | Douala (Bonamoussadi) | 677 79 69 99 | `L53` |
 | Cabinet Dentaire YAKS | Douala (Logbessou) | 672 70 20 78 | `L54` |
-| Cabinet d'Optique la Rétine | Douala (Akwa) | 695 474 364 | `L3652` |
+| Cabinet d'Optique la Rétine | Douala (Akwa) | 695 474 364 | `L4223` |
 | Centre Médical de Bonanjo | Douala (Bonapriso, ancien aéroport) | 694 57 22 77 | `L3943` |
 | Doyoan Optic | Douala | 653 85 27 49 | `L3589` |
 | El Roï Optique Médicale | Douala (Village) | 693 127 302 | `L3651` |

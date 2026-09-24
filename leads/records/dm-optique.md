@@ -19,6 +19,8 @@
 | Maquette / site | Yes |
 | Source | onoc_registry |
 | Détail source | Registre ONOC, Littoral ligne 102 (inscription 021/2016, arrêté 0382), lu le 24/09 — aucune autre trace publique trouvée |
+| Site vérifié le | 2026-09-24 |
+| Site existant | https://dmoptic-2.vercel.app |
 
 ## Notes
 

@@ -4231,3 +4231,42 @@ bougé (audit 0, test 45/45).
 
 **Deuxième fois** le même piège de test : une constante (`ORD`, `PROTH`) utilisée avant sa déclaration —
 les audits ne l'ont pas vue, le `ReferenceError` si. Règle notée dans `clients/cinq-sens/build-notes.md` §8.
+
+---
+
+## 2026-09-24 (nuit) — **CINQ SENS : LE LIEN EST PARTI (17:54) — ET LA PAGE SERVIE EST LA BONNE**
+
+King a déployé et **envoyé** : **https://cinqsens.vercel.app/#top**, à 17:54, sur le fil Cinq Sens
+(capture à l'appui). Son verdict au passage : *« I like the site »*. Il a écrit **son** message, en
+gardant deux choses qu'on lui avait préparées : l'angle **daté** (« le blog du cabinet ne publie plus
+depuis octobre 2021, et les patients qui vous cherchent tombent sur des annuaires passifs ») et la liste
+**courte** de ce qui manque (horaires, marques, paiements et assurances, trois ou quatre photos prises au
+téléphone, le nom à faire figurer). Aucune phrase fragile, aucun prix, aucune promesse.
+
+**La page servie a été relue** (lecture du HTML en ligne) : c'est bien la **passe 2** — la lueur du
+premier écran, le raccourci « Envoyer la photo de mon ordonnance », le raccourci prothèses « en privé »,
+six services dont « **Accessoires** » et son « À **demander** », et les six questions dans le schéma. Le
+déploiement est à jour : rien à reprendre.
+
+**Le seul écart, trouvé en relisant** : `og:url` et `og:image` étaient **vides** au moment de l'envoi — la
+carte du lien est donc partie **sans vignette** (c'est visible sur la capture : la carte verte n'a pas
+d'image). Les deux balises sont recollées sur l'adresse réelle
+(`https://cinqsens.vercel.app/og.jpg`, 1200×630) et commitées le même soir : **un seul redéploiement**
+suffit, et les partages suivants — WhatsApp, SMS, Facebook, LinkedIn — porteront l'image. WhatsApp garde
+en cache l'aperçu du message déjà parti : c'est pour les suivants que ça compte, et c'est gratuit.
+
+**CRM.** Les deux leads portent leur adresse réelle : `site_url = https://cinqsens.vercel.app` pour Cinq
+Sens (nouveau) et **`https://dmoptic-2.vercel.app`** pour DM OPTIC (la seconde adresse, celle qui sert la
+v2.1). Les mots exacts de King sur le fil DM OPTIC sont enregistrés — « Le voici ! Vous pouvez cliquer
+directement… » (17:05). Les deux lignes sont en **`demo`**, `wa_verified = yes`, et la file du jour les
+place en tête : **répondre d'abord**, si l'un des deux écrit.
+
+**Aucune relance n'est due sur ces deux fils** : les deux ont répondu, donc l'horloge de relance est
+arrêtée — la prochaine action est **la leur**. Si Cinq Sens renvoie les photos et les horaires :
+`python3 demos/build_cinqsens.py --url https://cinqsens.vercel.app`, **un seul redéploiement**, et la page
+devient entièrement vraie.
+
+**Note technique, pour le dossier** : l'instantané du bac est revenu une seconde fois au point de
+branchement (les fichiers non suivis avaient disparu, `HEAD` sur le commit de fusion). Tout a été
+restauré depuis `origin` — **`a729474`** — et rien n'est perdu : le travail poussé est la source de
+vérité. Leçon : pousser **à chaque tour**, pas en fin de session.

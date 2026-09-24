@@ -2805,6 +2805,7 @@ REPONSE_2409_DM = {
             "Aucune adresse, aucun horaire, aucun prix, aucune marque, aucune photo inventés : six champs "
             "écrits « à confirmer » sur la page, et deux images d'illustration légendées « mise en situation ».",
         "dossier": "clients/dm-optic/",
+        "site_url": "https://dmoptic-2.vercel.app", "site_checked_on": "2026-09-24",
         "Conversation_extra":
             "24/09 15:31 — message 1 parti (capture de King : ✓✓). "
             "24/09 15:54 — RÉPONSE DE M. DOMCHE NOUMBI, mot pour mot : « Ok Envoyé svp... » Deux mots : "
@@ -2817,7 +2818,8 @@ REPONSE_2409_DM = {
             "publiée par un particulier) NON retenue comme fait — elle n'est pas recoupée. Le nom du "
             "titulaire apparaît en mars 2023 dans la liste des opticiens de Douala citée par Echos Santé. "
             "⚠️ Ne jamais écrire d'adresse ni d'horaire pour ce lead tant qu'il ne les a pas donnés. "
-            "24/09 17:05 — LE LIEN EST PARTI, sur https://dmoptic-2.vercel.app/ (King a déployé le dossier "
+            "24/09 17:05 — LE LIEN EST PARTI. Les mots de King sur le fil, mot pour mot : « Le voici ! "
+            "Vous pouvez cliquer directement… » (capture à l'appui) — sur https://dmoptic-2.vercel.app/ (King a déployé le dossier "
             "sur un second projet Vercel ; l'ancienne adresse `dmoptic.vercel.app` sert encore la v1). "
             "La page en ligne est bien la v2.1 (vérifiée par lecture du HTML servi le 24/09 au soir) : "
             "services, vitrine des montures, six questions. En attente de son retour — aucune relance.",
@@ -2851,6 +2853,7 @@ REPONSE_2409_CS = {
             "aucun nom de responsable (inconnu) : les horaires sont écrits « annoncés » et restent hors du "
             "schéma, et les trois photos sont légendées illustrations.",
         "dossier": "clients/cinq-sens/",
+        "site_url": "https://cinqsens.vercel.app", "site_checked_on": "2026-09-24",
         "Conversation_extra":
             "24/09 15:15 — lot 4 (✓✓). 16:27 — LUI : « Bonjour / A qui ai je honneur ». 16:53 — King se "
             "présente et propose l'aperçu. 17:04 — LUI : « Ok ». "
@@ -2859,7 +2862,18 @@ REPONSE_2409_CS = {
             "Facebook ; deux annuaires concordants (Maligah, Mont-Pandi) ; 696 698 136 = numéro d'urgence "
             "qu'ils publient partout ET ligne 118 du registre ONOC du Littoral ; seconde ligne 655 163 365 "
             "(leurs publications) ; 694 408 495 (annuaire seul, non utilisé). "
-            "⚠️ Ne jamais écrire « vous n'avez pas de page » : ils en ont une — morte depuis 2021.",
+            "⚠️ Ne jamais écrire « vous n'avez pas de page » : ils en ont une — morte depuis 2021. "
+            "24/09 17:54 — **LE LIEN EST PARTI** : https://cinqsens.vercel.app/#top. King a déployé le "
+            "dossier sur Vercel et écrit son propre message, en gardant l'angle daté (« le blog du cabinet "
+            "ne publie plus depuis octobre 2021… les patients qui vous cherchent tombent sur des annuaires "
+            "passifs ») et la liste courte de ce qui manque (horaires, marques, paiements et assurances, "
+            "trois ou quatre photos, le nom à faire figurer). La page servie a été relue : c'est bien la "
+            "**passe 2** (lueur du premier écran, raccourci « envoyer la photo de mon ordonnance », "
+            "raccourci prothèses, six services dont « accessoires »). "
+            "⚠️ Ce qui manquait au moment de l'envoi : `og:url` et `og:image` étaient VIDES, donc la carte "
+            "du lien est partie sans vignette. Recollés sur l'adresse réelle et commités le même soir — "
+            "**un seul redéploiement** suffit, et l'aperçu des partages suivants portera l'image. "
+            "Aucune relance : la balle est chez lui.",
     },
 }
 
