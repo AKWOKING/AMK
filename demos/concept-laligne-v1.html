@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>La Ligne Optic — opticienne à Akwa, Douala : le visage d'abord, la monture ensuite</title>
+<meta name="description" content="La Ligne Optic, Akwa (boulevard de la Liberté), Douala : consultation, réfraction, conseil de visagiste. Dites-nous ce qui vous amène sur WhatsApp — le message part déjà écrit.">
+<meta name="theme-color" content="#F1EFE9">
+<meta property="og:type" content="website"><meta property="og:locale" content="fr_FR"><meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="La Ligne Optic — le visage d'abord, la monture ensuite">
+<meta property="og:description" content="Consultation, réfraction, conseil de visagiste à Akwa, Douala. Cinq formes de visage, les lignes qui vont avec — et le cabinet qui répond sur WhatsApp.">
+<!-- LA VIGNETTE DU LIEN (PRE-FLIGHT §20.7) — remplie par `python3 demos/build_laligne.py --url <adresse>`
+     après le déploiement. Tant que l'adresse n'est pas connue, on n'envoie pas le lien : une URL devinée
+     est un lien mort, et un lien mort coûte plus qu'une heure d'attente. -->
+<meta property="og:url" content="">
+<meta property="og:image" content="">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="La Ligne Optic — opticienne à Akwa, Douala : un visage dessiné et la ligne du regard.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+<script>/* Avant le premier rendu : on retire `no-js`, on pose `js` (c'est ce qui autorise les états d'entrée du
+   CSS, §13) et on remet la langue choisie la dernière fois. Sans JavaScript, la page s'affiche en
+   français, entière, lisible : rien n'est caché. */
+(function(){try{var h=document.documentElement;h.classList.remove("no-js");h.classList.add("js");
+var l=localStorage.getItem("laligne-lang");if(l==="en"||l==="fr")h.setAttribute("data-lang",l);}catch(e){}})();</script>
+<style>
+/* ══════════════════════════════════════════════════════════════════════════════════════════════════════
+   LA LIGNE OPTIC — la page est DESSINÉE. Aucune photographie : pas une seule, parce que le cabinet n'en a
+   publié aucune et qu'on ne fabrique pas la vitrine de quelqu'un d'autre. Tout ce qui se voit ici est un
+   trait : cinq visages, quatre lignes de monture, et la règle qui donne son nom au cabinet.
+   Palette : craie `#F1EFE9`, graphite `#14130F`, un seul rouge laque `#8E2B22` (il ne sert qu'à ce qui
+   agit), et le vert WhatsApp réservé aux envois. Typographie : Fraunces (display, optique variable) +
+   Archivo (texte et étiquettes).
+   ══════════════════════════════════════════════════════════════════════════════════════════════════════ */
+:root{
+  --paper:#F1EFE9; --card:#FFFFFF; --ink:#14130F; --ink-2:#3B372F; --ink-3:#635D51;
+  --rule:#D8D3C6; --rule-2:#E7E3D9; --laque:#8E2B22; --laque-2:#71201A;
+  --wa:#0E7A44; --wa-2:#0A6537;
+  --f-d:'Fraunces',Georgia,'Times New Roman',serif;
+  --f-b:'Archivo','Helvetica Neue',Arial,sans-serif;
+  --r:10px; --r-lg:16px;
+  --fs-xs:.79rem; --fs-sm:.94rem; --fs-lg:1.06rem;
+  --shadow:0 1px 2px rgba(20,19,15,.05),0 10px 30px rgba(20,19,15,.07);
+  --ease:cubic-bezier(.22,.7,.25,1);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1rem/1.62 var(--f-b);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{max-width:100%}
+h1,h2,h3{font-family:var(--f-d);font-weight:600;line-height:1.1;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(2.15rem,7.6vw,3.7rem)}
+h2{font-size:clamp(1.72rem,4.7vw,2.6rem)}
+h3{font-size:clamp(1.12rem,2.5vw,1.4rem)}
+p{margin:0}
+a{color:var(--laque)}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 20px}
+@media (min-width:640px){ .wrap{padding:0 28px} }
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+/* ── LES DEUX LANGUES ───────────────────────────────────────────────────────────────────────────────
+   Les deux textes vivent dans le HTML (c'est ce que lisent les moteurs, les lecteurs d'écran et le
+   presse-papier). `data-lang` sur <html> décide lequel s'affiche — avec `display:none`, jamais une
+   opacité : un lecteur d'écran doit pouvoir IGNORER l'autre langue. La classe de langue ne va jamais
+   sur un élément structurel (§20.11), toujours sur un <span> à l'intérieur. */
+.en-only{display:none}
+html[data-lang="en"] .fr-only{display:none}
+html[data-lang="en"] .en-only{display:inline}
+html[data-lang="en"] .en-only.as-block{display:block}
+.kick{font:600 var(--fs-xs)/1.5 var(--f-b);letter-spacing:.16em;text-transform:uppercase;color:var(--laque)}
+.lede{color:var(--ink-2);font-size:var(--fs-lg);max-width:62ch;margin-top:16px}
+.note{color:var(--ink-3);font-size:var(--fs-sm);max-width:66ch}
+.skiplink{position:absolute;left:-9999px;top:0;z-index:60;background:var(--laque);color:#fff;
+  padding:12px 18px;border-radius:0 0 var(--r) 0;font-weight:600}
+.skiplink:focus{left:0}
+:focus-visible{outline:3px solid var(--laque);outline-offset:3px}
+
+/* ── L'EN-TÊTE ────────────────────────────────────────────────────────────────────────────────────── */
+header.site{position:sticky;top:0;z-index:40;background:rgba(241,239,233,.92);backdrop-filter:saturate(1.2) blur(6px);
+  border-bottom:1px solid var(--rule)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:64px}
+.brand{display:inline-flex;align-items:baseline;gap:9px;text-decoration:none;color:var(--ink);
+  font-family:var(--f-d);font-weight:700;font-size:1.06rem;letter-spacing:.01em;white-space:nowrap}
+.brand .thin{font-family:var(--f-b);font-weight:500;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
+.nav{display:none}
+@media (min-width:900px){ .nav{display:flex;gap:22px;margin-left:auto;margin-right:8px} }
+.nav a{font:500 var(--fs-sm)/1 var(--f-b);color:var(--ink-2);text-decoration:none;padding-bottom:3px;
+  border-bottom:1px solid transparent}
+@media (hover:hover) and (pointer:fine){ .nav a:hover{border-bottom-color:var(--laque);color:var(--ink)} }
+.langbox{display:flex;align-items:center;gap:2px;border:1px solid var(--rule);border-radius:999px;padding:2px;background:var(--card)}
+.lang{font:600 .72rem/1 var(--f-b);letter-spacing:.08em;color:var(--ink-3);background:none;border:0;
+  padding:8px 11px;border-radius:999px;cursor:pointer}
+.lang.is-on{background:var(--ink);color:var(--paper)}
+.hdr-wa{display:none}
+@media (min-width:560px){ .hdr-wa{display:inline-flex} }
+
+/* ── LES BOUTONS ──────────────────────────────────────────────────────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:0 20px;
+  border-radius:var(--r);border:1px solid var(--rule);background:var(--card);color:var(--ink);
+  font:600 .97rem/1 var(--f-b);text-decoration:none;cursor:pointer;
+  transition:background-color .18s var(--ease),color .18s var(--ease),border-color .18s var(--ease),transform .12s var(--ease)}
+.btn:active{transform:translateY(1px)}
+.btn svg{width:18px;height:18px;flex:none;fill:currentColor}
+.btn-wa{background:var(--wa);border-color:var(--wa);color:#fff}
+.btn-ink{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+@media (hover:hover) and (pointer:fine){
+  .btn-wa:hover{background:var(--wa-2);border-color:var(--wa-2)}
+  .btn-ink:hover{background:#000}
+  .btn:not(.btn-wa):not(.btn-ink):hover{border-color:var(--ink)}
+}
+.btn.sm{min-height:44px;padding:0 15px;font-size:.9rem}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.actions.center{justify-content:flex-start}
+
+/* ── LE PREMIER ÉCRAN — le dessin, et la ligne ────────────────────────────────────────────────────── */
+.hero{padding:clamp(34px,6vw,62px) 0 clamp(44px,7vw,76px)}
+.hero .grid{display:grid;gap:30px}
+@media (min-width:900px){ .hero .grid{grid-template-columns:1.08fr .92fr;gap:48px;align-items:center} }
+.hero h1{margin-top:18px;max-width:20ch}
+.facts{display:grid;gap:0;margin-top:30px;border-top:1px solid var(--rule)}
+@media (min-width:560px){ .facts{grid-template-columns:1fr 1fr} }
+.facts div{border-bottom:1px solid var(--rule);padding:13px 0}
+.facts dt{font:600 .74rem/1.5 var(--f-b);letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3)}
+.facts dd{margin:5px 0 0;font-weight:600;font-size:.97rem}
+.facts .wide{grid-column:1/-1}
+.draw{display:block;margin:0 auto;width:100%;max-width:420px}
+.draw .stroke{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.draw .rule{stroke:var(--ink-3);stroke-width:1.6}
+.draw .tick{stroke:var(--ink-3);stroke-width:1.6}
+.draw .face{stroke:var(--ink);stroke-width:2.6}
+.draw .frame{stroke:var(--laque);stroke-width:4}
+.draw .sight{stroke:var(--laque);stroke-width:1.4;stroke-dasharray:5 6}
+html.js .draw [data-draw]{stroke-dasharray:1400;stroke-dashoffset:1400}
+html.js .draw.is-on [data-draw]{animation:drawline 1.15s var(--ease) forwards;animation-delay:var(--dl,0s)}
+@keyframes drawline{to{stroke-dashoffset:0}}
+
+/* ── LES SECTIONS ─────────────────────────────────────────────────────────────────────────────────── */
+.sec{padding:clamp(48px,8vw,92px) 0;border-top:1px solid var(--rule)}
+.sec-no{display:flex;align-items:center;gap:12px;font:600 var(--fs-xs)/1 var(--f-b);letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ink-3)}
+.sec-no::after{content:"";flex:1;height:1px;background:var(--rule)}
+h2{margin-top:14px;max-width:26ch}
+.sec .lede{margin-top:14px}
+
+/* les quatre gestes — une liste à filets, pas des cartes */
+.gestes{list-style:none;margin:34px 0 0;padding:0;border-top:1px solid var(--rule)}
+.gestes li{display:grid;gap:6px 22px;padding:22px 0;border-bottom:1px solid var(--rule)}
+@media (min-width:760px){ .gestes li{grid-template-columns:64px 1fr;gap:0 26px} }
+.gestes .n{font-family:var(--f-d);font-size:1.5rem;color:var(--laque);letter-spacing:.02em}
+.gestes p{margin-top:9px;color:var(--ink-2);font-size:var(--fs-sm);max-width:68ch}
+.gestes .ask{margin-top:10px;font:500 var(--fs-xs)/1.6 var(--f-b);letter-spacing:.02em;color:var(--ink-3)}
+.gestes .ask b{color:var(--ink);font-weight:600}
+
+/* ── LE VISAGE D'ABORD — le choix des cinq formes ─────────────────────────────────────────────────── */
+.faces{border:0;margin:32px 0 0;padding:0}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.tabs label{display:inline-flex;align-items:center;min-height:44px;padding:0 15px;border:1px solid var(--rule);
+  border-radius:999px;background:var(--card);font:600 .9rem/1 var(--f-b);color:var(--ink-2);cursor:pointer;
+  transition:background-color .16s var(--ease),color .16s var(--ease),border-color .16s var(--ease)}
+.fh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+#f-ovale:checked ~ .tabs label[for="f-ovale"],#f-rond:checked ~ .tabs label[for="f-rond"],
+#f-carre:checked ~ .tabs label[for="f-carre"],#f-coeur:checked ~ .tabs label[for="f-coeur"],
+#f-oblong:checked ~ .tabs label[for="f-oblong"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.fh:focus-visible ~ .tabs label[for="f-ovale"],.fh:focus-visible ~ .tabs label[for="f-rond"]{outline:3px solid var(--laque);outline-offset:3px}
+.panel{display:none;gap:26px;padding:22px;background:var(--card);border:1px solid var(--rule);border-radius:var(--r-lg)}
+#f-ovale:checked ~ .panels .p-ovale,#f-rond:checked ~ .panels .p-rond,#f-carre:checked ~ .panels .p-carre,
+#f-coeur:checked ~ .panels .p-coeur,#f-oblong:checked ~ .panels .p-oblong{display:grid}
+@media (min-width:760px){ .panel{grid-template-columns:190px 1fr;align-items:center;gap:30px;padding:28px} }
+.panel .mini{width:100%;max-width:200px;margin:0 auto}
+.panel .lines{margin-top:12px;font:600 var(--fs-xs)/1.7 var(--f-b);letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3)}
+.panel .avoid{margin-top:12px;padding-top:12px;border-top:1px solid var(--rule-2);color:var(--ink-2);font-size:var(--fs-sm)}
+.panel .cta{margin-top:16px}
+.facenote{display:grid;gap:6px;margin-top:20px}
+
+/* ── LE PASSAGE — quatre temps ────────────────────────────────────────────────────────────────────── */
+.steps{list-style:none;counter-reset:s;margin:34px 0 0;padding:0;display:grid;gap:0}
+@media (min-width:760px){ .steps{grid-template-columns:1fr 1fr;gap:0 40px} }
+.steps li{padding:20px 0;border-top:1px solid var(--rule)}
+.steps h3{font-size:1.14rem}
+.steps p{margin-top:8px;color:var(--ink-2);font-size:var(--fs-sm)}
+.steps .t{display:block;font:600 var(--fs-xs)/1 var(--f-b);letter-spacing:.16em;text-transform:uppercase;color:var(--laque);margin-bottom:9px}
+
+/* ── LES RÉPONSES QUI SE RÈGLENT EN UNE FOIS ──────────────────────────────────────────────────────── */
+.reps{display:grid;gap:0;margin-top:32px;border-top:1px solid var(--rule)}
+@media (min-width:760px){ .reps{grid-template-columns:1fr 1fr;gap:0 40px} }
+.reps div{padding:20px 0;border-bottom:1px solid var(--rule)}
+.reps h3{font-size:1.1rem}
+.reps p{margin-top:8px;color:var(--ink-2);font-size:var(--fs-sm)}
+
+/* ── LES QUESTIONS ────────────────────────────────────────────────────────────────────────────────── */
+.faq{margin-top:30px;border-top:1px solid var(--rule)}
+details{border-bottom:1px solid var(--rule)}
+summary{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;cursor:pointer;
+  padding:18px 2px;font-family:var(--f-d);font-weight:600;font-size:1.06rem;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--f-b);font-weight:500;color:var(--laque);font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{padding:0 2px 20px;color:var(--ink-2);font-size:var(--fs-sm);max-width:74ch}
+details p + p{padding-top:0}
+
+/* ── LE CONTACT ───────────────────────────────────────────────────────────────────────────────────── */
+.contact{background:var(--ink);color:var(--paper);border-top:0}
+.contact h2{color:var(--paper)}
+.contact .lede{color:rgba(241,239,233,.82)}
+.contact a{color:var(--paper)}
+.tools{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.tool{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border:1px solid rgba(241,239,233,.28);
+  background:transparent;color:var(--paper);border-radius:var(--r);font:500 .88rem/1 var(--f-b);cursor:pointer;
+  transition:border-color .18s var(--ease),background-color .18s var(--ease)}
+@media (hover:hover) and (pointer:fine){ .tool:hover{border-color:var(--paper);background:rgba(241,239,233,.06)} }
+.tool svg{width:16px;height:16px;fill:currentColor}
+.addr{margin-top:30px;padding-top:20px;border-top:1px solid rgba(241,239,233,.2);
+  display:grid;gap:7px;font-size:var(--fs-sm);color:rgba(241,239,233,.86)}
+.addr b{color:var(--paper)}
+.contact .btn:not(.btn-wa){background:transparent;border-color:rgba(241,239,233,.34);color:var(--paper)}
+@media (hover:hover) and (pointer:fine){ .contact .btn:not(.btn-wa):hover{border-color:var(--paper)} }
+
+/* ── LE PIED ──────────────────────────────────────────────────────────────────────────────────────── */
+footer.site{background:var(--ink);color:rgba(241,239,233,.78);padding:34px 0 100px;border-top:1px solid rgba(241,239,233,.16)}
+footer.site .cols{display:grid;gap:24px}
+@media (min-width:760px){ footer.site .cols{grid-template-columns:1.4fr 1fr 1fr} }
+footer.site .brand{color:var(--paper)}
+footer.site .brand .thin{color:rgba(241,239,233,.6)}
+footer.site p{font-size:var(--fs-sm);margin-top:12px;max-width:46ch}
+footer.site h3{margin:0 0 10px;font:600 var(--fs-xs)/1 var(--f-b);letter-spacing:.15em;text-transform:uppercase;color:rgba(241,239,233,.62)}
+footer.site ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+footer.site a{color:var(--paper);text-decoration:none;font-size:var(--fs-sm)}
+@media (hover:hover) and (pointer:fine){ footer.site a:hover{text-decoration:underline;text-underline-offset:3px} }
+.legal{margin-top:30px;padding-top:18px;border-top:1px solid rgba(241,239,233,.16);
+  display:grid;gap:8px;font:400 var(--fs-xs)/1.7 var(--f-b);color:rgba(241,239,233,.6)}
+
+/* ── LA BARRE DU BAS, SUR TÉLÉPHONE ───────────────────────────────────────────────────────────────── */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:45;display:grid;grid-template-columns:1fr 1fr;gap:8px;
+  padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(20,19,15,.96);
+  border-top:1px solid rgba(241,239,233,.18);backdrop-filter:blur(8px)}
+@media (min-width:640px){ .dock{display:none} }
+.dock .btn{min-height:48px;font-size:.94rem}
+
+/* ── LE MOUVEMENT, ET LE DROIT DE NE RIEN VOIR ───────────────────────────────────────────────────── */
+html.js .rv{opacity:0;transform:translateY(12px)}
+html.js .rv.in{opacity:1;transform:none;transition:opacity .5s var(--ease) var(--d,0s),transform .55s var(--ease) var(--d,0s)}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  html.js .rv{opacity:1;transform:none;transition:none}
+  html.js .draw [data-draw]{stroke-dasharray:none;stroke-dashoffset:0;animation:none}
+  *{transition-duration:.01ms !important}
+}
+@media print{ .dock,header.site{display:none} }
+</style>
+</head>
+<body>
+<a class="skiplink" href="#main"><span class="fr-only" lang="fr">Aller au contenu</span><span class="en-only" lang="en">Skip to content</span></a>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="fr-only" lang="fr">La Ligne</span><span class="en-only" lang="en">La Ligne</span> <span class="thin"><span class="fr-only" lang="fr">Optic</span><span class="en-only" lang="en">Optic</span></span></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#services"><span class="fr-only" lang="fr">Les quatre gestes</span><span class="en-only" lang="en">What we do</span></a>
+      <a href="#visagiste"><span class="fr-only" lang="fr">Le visage d'abord</span><span class="en-only" lang="en">Your face first</span></a>
+      <a href="#questions"><span class="fr-only" lang="fr">Questions</span><span class="en-only" lang="en">Questions</span></a>
+      <a href="#contact"><span class="fr-only" lang="fr">Contact</span><span class="en-only" lang="en">Contact</span></a>
+    </nav>
+    <div class="langbox">
+      <button class="lang" id="btn-fr" type="button" aria-pressed="true">FR</button>
+      <button class="lang" id="btn-en" type="button" aria-pressed="false">EN</button>
+    </div>
+    <a class="btn btn-wa sm hdr-wa wa" data-fr="Bonjour La Ligne Optic, je voudrais venir au cabinet. Comment se passe une visite ?" data-en="Hello La Ligne Optic, I would like to come to the practice. How does a visit work?" href="https://wa.me/237683651108?text=Bonjour%20La%20Ligne%20Optic%2C%20je%20voudrais%20venir%20au%20cabinet.%20Comment%20se%20passe%20une%20visite%20%3F">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
+      <span class="fr-only" lang="fr">Écrire</span><span class="en-only" lang="en">Write</span>
+    </a>
+    <p id="say" class="sr" role="status" aria-live="polite"></p>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ══ 1 · LE PREMIER ÉCRAN — le visage dessiné, et la ligne du regard ═══════════════════════════ -->
+  <section class="hero" id="top" aria-labelledby="h-hero">
+    <div class="wrap grid">
+      <div>
+        <p class="kick rv"><span class="fr-only" lang="fr">Optique &amp; lunetterie · Akwa, Douala</span><span class="en-only" lang="en">Optics &amp; eyewear · Akwa, Douala</span></p>
+        <h1 id="h-hero" class="rv">
+          <span class="fr-only" lang="fr">Votre visage d'abord. La monture ensuite.</span>
+          <span class="en-only" lang="en">Your face first. The frame afterwards.</span>
+        </h1>
+        <p class="lede rv">
+          <span class="fr-only" lang="fr">Consultation, réfraction, conseil de visagiste : ici, on regarde votre visage avant de vous tendre une monture. Écrivez-nous sur WhatsApp — le message part déjà écrit, il ne reste qu'à l'envoyer.</span>
+          <span class="en-only" lang="en">Consultation, refraction, styling advice: here we look at your face before handing you a frame. Write to us on WhatsApp — the message is already typed, you only have to send it.</span>
+        </p>
+        <div class="actions rv">
+          <a class="btn btn-wa wa" data-fr="Bonjour La Ligne Optic, je voudrais venir au cabinet. Comment se passe une visite ?" data-en="Hello La Ligne Optic, I would like to come to the practice. How does a visit work?" href="https://wa.me/237683651108?text=Bonjour%20La%20Ligne%20Optic%2C%20je%20voudrais%20venir%20au%20cabinet.%20Comment%20se%20passe%20une%20visite%20%3F">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
+            <span class="fr-only" lang="fr">Écrire sur WhatsApp</span><span class="en-only" lang="en">Write on WhatsApp</span>
+          </a>
+          <a class="btn" href="tel:+237683651108">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.6 3h2.7l1.6 4-2 1.4a12 12 0 0 0 6.7 6.7l1.4-2 4 1.6v2.7c0 1-.8 1.8-1.9 1.7C11.5 19.2 4.8 12.5 4.9 4.9 4.9 3.9 5.6 3 6.6 3z"/></svg>
+            <span class="fr-only" lang="fr">Appeler le 683 651 108</span><span class="en-only" lang="en">Call 683 651 108</span>
+          </a>
+        </div>
+        <dl class="facts rv">
+          <div>
+            <dt><span class="fr-only" lang="fr">Vous parlez à une opticienne</span><span class="en-only" lang="en">You speak to an optician</span></dt>
+            <dd><span class="fr-only" lang="fr">Inscrite à l'Ordre depuis 2017</span><span class="en-only" lang="en">Registered with the Order since 2017</span></dd>
+          </div>
+          <div>
+            <dt><span class="fr-only" lang="fr">Le service qui nous distingue</span><span class="en-only" lang="en">What sets us apart</span></dt>
+            <dd><span class="fr-only" lang="fr">Le conseil de visagiste</span><span class="en-only" lang="en">Styling advice for your face</span></dd>
+          </div>
+          <div class="wide">
+            <dt><span class="fr-only" lang="fr">Où nous sommes</span><span class="en-only" lang="en">Where we are</span></dt>
+            <dd><span class="fr-only" lang="fr">Akwa, boulevard de la Liberté — Douala. Écrivez : le repère exact et les horaires du jour arrivent dans la conversation.</span><span class="en-only" lang="en">Akwa, Boulevard de la Liberté — Douala. Write to us: the exact landmark and today's hours come back in the conversation.</span></dd>
+          </div>
+        </dl>
+      </div>
+      <div class="rv">
+        <svg class="draw" viewBox="0 0 320 360" aria-hidden="true" focusable="false">
+          <path class="stroke rule" data-draw="1" style="--dl:.05s" d="M8 172h304"/>
+          <path class="stroke tick" data-draw="1" style="--dl:.15s" d="M8 164v16M312 164v16"/>
+          <path class="stroke face" data-draw="1" style="--dl:.3s" d="M160 20C224 20 252 78 252 148C252 226 214 302 160 302C106 302 68 226 68 148C68 78 96 20 160 20Z"/>
+          <path class="stroke face" data-draw="1" style="--dl:.45s" d="M132 66c-10 0-18 5-22 12M188 66c10 0 18 5 22 12"/>
+          <g class="stroke frame" data-draw="1" style="--dl:.6s">
+            <rect x="92" y="152" width="50" height="38" rx="8"/>
+            <rect x="178" y="152" width="50" height="38" rx="8"/>
+            <path d="M142 160q18-9 36 0"/>
+            <path d="M92 158l-22-9M228 158l22-9"/>
+          </g>
+          <path class="stroke sight" d="M74 172h-8M254 172h-8M62 156v32M258 156v32"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 2 · LES QUATRE GESTES — leur liste, mot pour mot ═════════════════════════════════════════ -->
+  <section class="sec" id="services" aria-labelledby="h-services">
+    <div class="wrap">
+      <p class="sec-no"><span>01</span><span class="fr-only" lang="fr">Ce que le cabinet fait</span><span class="en-only" lang="en">What the practice does</span></p>
+      <h2 id="h-services" class="rv">
+        <span class="fr-only" lang="fr">Quatre gestes, dans cet ordre.</span>
+        <span class="en-only" lang="en">Four steps, in this order.</span>
+      </h2>
+      <p class="lede rv">
+        <span class="fr-only" lang="fr">Le cabinet annonce quatre services : consultation, réfraction, visagiste, conseil. Voilà ce que chacun veut dire pour vous — et ce que vous pouvez dire en arrivant.</span>
+        <span class="en-only" lang="en">The practice lists four services: consultation, refraction, styling, advice. Here is what each one means for you — and what you can say when you arrive.</span>
+      </p>
+      <ol class="gestes">
+        <li class="rv">
+          <span class="n" aria-hidden="true">01</span>
+          <div>
+            <h3><span class="fr-only" lang="fr">Consultation</span><span class="en-only" lang="en">Consultation</span></h3>
+            <p><span class="fr-only" lang="fr">On ouvre votre ordonnance ensemble et on regarde ce qu'elle demande. Pas d'ordonnance récente ? Dites-le franchement : on vous dit ce qui se fait ici, et ce qui doit passer par votre ophtalmologue.</span><span class="en-only" lang="en">We open your prescription together and read what it asks for. No recent prescription? Say so plainly: we will tell you what is done here, and what has to go through your ophthalmologist.</span></p>
+            <p class="ask"><span class="fr-only" lang="fr">À dire au cabinet : <b>« Je viens avec mon ordonnance »</b> — ou <b>« je n'en ai pas »</b>.</span><span class="en-only" lang="en">Say to the practice: <b>"I am coming with my prescription"</b> — or <b>"I do not have one"</b>.</span></p>
+          </div>
+        </li>
+        <li class="rv">
+          <span class="n" aria-hidden="true">02</span>
+          <div>
+            <h3><span class="fr-only" lang="fr">Réfraction</span><span class="en-only" lang="en">Refraction</span></h3>
+            <p><span class="fr-only" lang="fr">La mesure de votre vue, faite au cabinet, avant qu'on parle de monture. C'est elle qui dit ce que vos verres doivent corriger : sans elle, on choisirait une monture à l'aveugle.</span><span class="en-only" lang="en">The measurement of your sight, taken here, before anyone talks about frames. It is what tells us what your lenses must correct: without it, you would be choosing a frame blind.</span></p>
+            <p class="ask"><span class="fr-only" lang="fr">À dire au cabinet : <b>« je voudrais qu'on mesure ma vue »</b>.</span><span class="en-only" lang="en">Say to the practice: <b>"I would like my sight measured"</b>.</span></p>
+          </div>
+        </li>
+        <li class="rv">
+          <span class="n" aria-hidden="true">03</span>
+          <div>
+            <h3><span class="fr-only" lang="fr">Visagiste</span><span class="en-only" lang="en">Face-shape styling</span></h3>
+            <p><span class="fr-only" lang="fr">Une monture se choisit sur un visage, pas dans un catalogue. On regarde la forme de votre visage, sa largeur, la place de vos yeux — et on vous explique pourquoi telle ligne vous va, au lieu de vous dire qu'elle est « à la mode ».</span><span class="en-only" lang="en">A frame is chosen on a face, not in a catalogue. We look at the shape of your face, its width, where your eyes sit — and we explain why a given line suits you, instead of telling you it is "in fashion".</span></p>
+            <p class="ask"><span class="fr-only" lang="fr">À dire au cabinet : <b>« je cherche une monture qui me va »</b>.</span><span class="en-only" lang="en">Say to the practice: <b>"I am looking for a frame that suits me"</b>.</span></p>
+          </div>
+        </li>
+        <li class="rv">
+          <span class="n" aria-hidden="true">04</span>
+          <div>
+            <h3><span class="fr-only" lang="fr">Conseil</span><span class="en-only" lang="en">Advice</span></h3>
+            <p><span class="fr-only" lang="fr">Écrans, conduite, lecture, entretien de vos lunettes : dites-nous à quoi va servir la paire et combien d'heures par jour. C'est cela qui décide du verre — pas la couleur de la monture.</span><span class="en-only" lang="en">Screens, driving, reading, looking after your glasses: tell us what the pair is for and how many hours a day. That is what decides the lens — not the colour of the frame.</span></p>
+            <p class="ask"><span class="fr-only" lang="fr">À dire au cabinet : <b>« voici comment je m'en sers tous les jours »</b>.</span><span class="en-only" lang="en">Say to the practice: <b>"this is how I use them every day"</b>.</span></p>
+          </div>
+        </li>
+      </ol>
+      <div class="actions">
+        <a class="btn btn-wa wa" data-fr="Bonjour La Ligne Optic, je voudrais prendre rendez-vous pour une mesure de ma vue." data-en="Hello La Ligne Optic, I would like to book a sight measurement." href="https://wa.me/237683651108?text=Bonjour%20La%20Ligne%20Optic%2C%20je%20voudrais%20prendre%20rendez-vous%20pour%20une%20mesure%20de%20ma%20vue.">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
+          <span class="fr-only" lang="fr">Demander une mesure de ma vue</span><span class="en-only" lang="en">Ask for a sight measurement</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 3 · LE VISAGE D'ABORD — cinq formes, cinq lignes ══════════════════════════════════════════ -->
+  <section class="sec" id="visagiste" aria-labelledby="h-visagiste">
+    <div class="wrap">
+      <p class="sec-no"><span>02</span><span class="fr-only" lang="fr">Le visagiste</span><span class="en-only" lang="en">Face-shape styling</span></p>
+      <h2 id="h-visagiste" class="rv">
+        <span class="fr-only" lang="fr">Cinq visages, cinq lignes.</span>
+        <span class="en-only" lang="en">Five faces, five lines.</span>
+      </h2>
+      <p class="lede rv">
+        <span class="fr-only" lang="fr">Trouvez la forme qui ressemble le plus à votre visage : vous verrez la ligne de monture qui va avec, et pourquoi. C'est le conseil que la maison donne en boutique — ici, en avance.</span>
+        <span class="en-only" lang="en">Find the shape closest to your own face: you will see the frame line that goes with it, and why. This is the advice the practice gives in the shop — here, in advance.</span>
+      </p>
+      <fieldset class="faces rv">
+        <legend class="sr"><span class="fr-only" lang="fr">Choisissez la forme de votre visage</span><span class="en-only" lang="en">Choose your face shape</span></legend>
+        <input class="fh" type="radio" name="face" id="f-ovale" checked>
+        <input class="fh" type="radio" name="face" id="f-rond">
+        <input class="fh" type="radio" name="face" id="f-carre">
+        <input class="fh" type="radio" name="face" id="f-coeur">
+        <input class="fh" type="radio" name="face" id="f-oblong">
+        <div class="tabs">
+          <label for="f-ovale"><span class="fr-only" lang="fr">Ovale</span><span class="en-only" lang="en">Oval</span></label>
+          <label for="f-rond"><span class="fr-only" lang="fr">Rond</span><span class="en-only" lang="en">Round</span></label>
+          <label for="f-carre"><span class="fr-only" lang="fr">Carré</span><span class="en-only" lang="en">Square</span></label>
+          <label for="f-coeur"><span class="fr-only" lang="fr">Cœur</span><span class="en-only" lang="en">Heart</span></label>
+          <label for="f-oblong"><span class="fr-only" lang="fr">Oblong</span><span class="en-only" lang="en">Oblong</span></label>
+        </div>
+        <div class="panels">
+
+          <article class="panel p-ovale">
+            <svg class="mini" viewBox="0 0 160 190" aria-hidden="true" focusable="false">
+              <path class="stroke face" d="M80 14C112 14 126 46 126 88C126 132 108 176 80 176C52 176 34 132 34 88C34 46 48 14 80 14Z"/>
+              <g class="stroke frame"><rect x="40" y="76" width="34" height="24" rx="5"/><rect x="86" y="76" width="34" height="24" rx="5"/><path d="M74 80q6-5 12 0"/><path d="M40 80l-14-8M120 80l14-8"/></g>
+            </svg>
+            <div>
+              <h3><span class="fr-only" lang="fr">Visage ovale</span><span class="en-only" lang="en">Oval face</span></h3>
+              <p class="lines"><span class="fr-only" lang="fr">Lignes conseillées : rectangulaire · papillon · ronde</span><span class="en-only" lang="en">Lines that suit it: rectangular · cat-eye · round</span></p>
+              <p><span class="fr-only" lang="fr">C'est le visage qui pardonne le plus : presque toutes les lignes vous vont, et vous pouvez vous permettre une monture large. À l'essayage, on cherche surtout la bonne <b>largeur</b> — les bords de la monture doivent suivre le contour du visage.</span><span class="en-only" lang="en">It is the most forgiving face: almost every line suits you, and you can carry a wide frame. During the fitting we look above all for the right <b>width</b> — the edges of the frame should follow the outline of your face.</span></p>
+              <p class="avoid"><span class="fr-only" lang="fr"><b>Ce qu'on évite :</b> une monture si étroite qu'elle rétrécit le visage.</span><span class="en-only" lang="en"><b>What we avoid:</b> a frame so narrow that it shrinks the face.</span></p>
+              <p class="cta"><a class="btn btn-wa sm wa" data-fr="Bonjour La Ligne Optic, voici la photo de mon visage — je pense avoir un visage ovale. Quelle monture me conseillez-vous ?" data-en="Hello La Ligne Optic, here is the photo of my face — I think it is oval. Which frame would you recommend?" href="https://wa.me/237683651108?text=Bonjour%20La%20Ligne%20Optic%2C%20voici%20la%20photo%20de%20mon%20visage%20%E2%80%94%20je%20pense%20avoir%20un%20visage%20ovale.%20Quelle%20monture%20me%20conseillez-vous%20%3F">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
+                <span class="fr-only" lang="fr">Envoyer la photo de mon visage</span><span class="en-only" lang="en">Send the photo of my face</span>
+              </a></p>
+            </div>
+          </article>
+
+          <article class="panel p-rond">
+            <svg class="mini" viewBox="0 0 160 190" aria-hidden="true" focusable="false">
+              <path class="stroke face" d="M80 16C118 16 140 50 140 92C140 132 114 172 80 172C46 172 20 132 20 92C20 50 42 16 80 16Z"/>
+              <g class="stroke frame"><rect x="36" y="76" width="36" height="26" rx="3"/><rect x="88" y="76" width="36" height="26" rx="3"/><path d="M72 80q8-5 16 0"/><path d="M36 80l-14-8M124 80l14-8"/></g>
+            </svg>
+            <div>
+              <h3><span class="fr-only" lang="fr">Visage rond</span><span class="en-only" lang="en">Round face</span></h3>
+              <p class="lines"><span class="fr-only" lang="fr">Lignes conseillées : rectangulaire · carrée · un peu d'angle</span><span class="en-only" lang="en">Lines that suit it: rectangular · square · a little angle</span></p>
+              <p><span class="fr-only" lang="fr">Les lignes droites vous structurent : elles donnent au visage la longueur qu'il n'a pas. Une monture un peu haute fonctionne mieux qu'une monture basse, et on la pose juste au-dessus des pommettes.</span><span class="en-only" lang="en">Straight lines give you structure: they add the length the face does not have. A slightly tall frame works better than a low one, and we set it just above the cheekbones.</span></p>
+              <p class="avoid"><span class="fr-only" lang="fr"><b>Ce qu'on évite :</b> le petit rond, qui arrondit encore.</span><span class="en-only" lang="en"><b>What we avoid:</b> the small round frame, which rounds the face even more.</span></p>
+              <p class="cta"><a class="btn btn-wa sm wa" data-fr="Bonjour La Ligne Optic, voici la photo de mon visage — je pense avoir un visage rond. Quelle monture me conseillez-vous ?" data-en="Hello La Ligne Optic, here is the photo of my face — I think it is round. Which frame would you recommend?" href="https://wa.me/237683651108?text=Bonjour%20La%20Ligne%20Optic%2C%20voici%20la%20photo%20de%20mon%20visage%20%E2%80%94%20je%20pense%20avoir%20un%20visage%20rond.%20Quelle%20monture%20me%20conseillez-vous%20%3F">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
+                <span class="fr-only" lang="fr">Envoyer la photo de mon visage</span><span class="en-only" lang="en">Send the photo of my face</span>
+              </a></p>
+            </div>
+          </article>
+
+          <article class="panel p-carre">
+            <svg class="mini" viewBox="0 0 160 190" aria-hidden="true" focusable="false">
+              <path class="stroke face" d="M34 18H126V104C126 146 106 174 80 174C54 174 34 146 34 104Z"/>
+              <g class="stroke frame"><ellipse cx="57" cy="88" rx="18" ry="15"/><ellipse cx="103" cy="88" rx="18" ry="15"/><path d="M75 84q5-5 10 0"/><path d="M39 84l-13-8M121 84l13-8"/></g>
+            </svg>
+            <div>
+              <h3><span class="fr-only" lang="fr">Visage carré</span><span class="en-only" lang="en">Square face</span></h3>
+              <p class="lines"><span class="fr-only" lang="fr">Lignes conseillées : ronde · ovale · monture fine et claire</span><span class="en-only" lang="en">Lines that suit it: round · oval · a thin, light frame</span></p>
+              <p><span class="fr-only" lang="fr">Les courbes vous adoucissent : une monture ronde, fine, légère, qui ne répète pas les angles de la mâchoire. Les verres sans monture visible (percés ou semi-cerclés) marchent aussi très bien ici.</span><span class="en-only" lang="en">Curves soften you: a round, thin, light frame that does not repeat the angles of the jaw. Rimless and semi-rimless lenses also work very well here.</span></p>
+              <p class="avoid"><span class="fr-only" lang="fr"><b>Ce qu'on évite :</b> le carré, qui répète la mâchoire.</span><span class="en-only" lang="en"><b>What we avoid:</b> the square frame, which repeats the jaw.</span></p>
+              <p class="cta"><a class="btn btn-wa sm wa" data-fr="Bonjour La Ligne Optic, voici la photo de mon visage — je pense avoir un visage carré. Quelle monture me conseillez-vous ?" data-en="Hello La Ligne Optic, here is the photo of my face — I think it is square. Which frame would you recommend?" href="https://wa.me/237683651108?text=Bonjour%20La%20Ligne%20Optic%2C%20voici%20la%20photo%20de%20mon%20visage%20%E2%80%94%20je%20pense%20avoir%20un%20visage%20carr%C3%A9.%20Quelle%20monture%20me%20conseillez-vous%20%3F">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
+                <span class="fr-only" lang="fr">Envoyer la photo de mon visage</span><span class="en-only" lang="en">Send the photo of my face</span>
+              </a></p>
+            </div>
+          </article>
+
+          <article class="panel p-coeur">
+            <svg class="mini" viewBox="0 0 160 190" aria-hidden="true" focusable="false">
+              <path class="stroke face" d="M80 176C54 152 30 124 30 86C30 46 52 14 80 14C108 14 130 46 130 86C130 124 106 152 80 176Z"/>
+              <g class="stroke frame"><ellipse cx="57" cy="86" rx="17" ry="19"/><ellipse cx="103" cy="86" rx="17" ry="19"/><path d="M74 82q6-5 12 0"/><path d="M40 82l-13-8M120 82l13-8"/></g>
+            </svg>
+            <div>
+              <h3><span class="fr-only" lang="fr">Visage en cœur</span><span class="en-only" lang="en">Heart-shaped face</span></h3>
+              <p class="lines"><span class="fr-only" lang="fr">Lignes conseillées : ovale · monture plus large en bas · fine et claire</span><span class="en-only" lang="en">Lines that suit it: oval · a frame wider at the bottom · thin and light</span></p>
+              <p><span class="fr-only" lang="fr">Le front est plus large, le menton plus fin : on rééquilibre vers le bas. Une monture ovale, ou légèrement plus large en bas, ramène le regard au centre du visage ; les branches fines n'alourdissent rien.</span><span class="en-only" lang="en">The forehead is wider, the chin narrower: we balance the look downwards. An oval frame, or one slightly wider at the bottom, brings the eye back to the centre of the face; thin temples add no weight.</span></p>
+              <p class="avoid"><span class="fr-only" lang="fr"><b>Ce qu'on évite :</b> la monture lourde en haut, qui élargit encore le front.</span><span class="en-only" lang="en"><b>What we avoid:</b> a heavy frame at the top, which widens the forehead further.</span></p>
+              <p class="cta"><a class="btn btn-wa sm wa" data-fr="Bonjour La Ligne Optic, voici la photo de mon visage — je pense avoir un visage en cœur. Quelle monture me conseillez-vous ?" data-en="Hello La Ligne Optic, here is the photo of my face — I think it is heart-shaped. Which frame would you recommend?" href="https://wa.me/237683651108?text=Bonjour%20La%20Ligne%20Optic%2C%20voici%20la%20photo%20de%20mon%20visage%20%E2%80%94%20je%20pense%20avoir%20un%20visage%20en%20c%C5%93ur.%20Quelle%20monture%20me%20conseillez-vous%20%3F">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
+                <span class="fr-only" lang="fr">Envoyer la photo de mon visage</span><span class="en-only" lang="en">Send the photo of my face</span>
+              </a></p>
+            </div>
+          </article>
+
+          <article class="panel p-oblong">
+            <svg class="mini" viewBox="0 0 160 190" aria-hidden="true" focusable="false">
+              <path class="stroke face" d="M80 10C106 10 118 48 118 96C118 140 102 178 80 178C58 178 42 140 42 96C42 48 54 10 80 10Z"/>
+              <g class="stroke frame"><path d="M38 92C38 78 48 70 60 72C70 74 76 80 76 92C76 102 62 108 52 108C42 108 38 100 38 92Z"/><path d="M122 92C122 78 112 70 100 72C90 74 84 80 84 92C84 102 98 108 108 108C118 108 122 100 122 92Z"/><path d="M76 86q4-5 8 0"/><path d="M38 88l-14-9M122 88l14-9"/></g>
+            </svg>
+            <div>
+              <h3><span class="fr-only" lang="fr">Visage oblong</span><span class="en-only" lang="en">Oblong face</span></h3>
+              <p class="lines"><span class="fr-only" lang="fr">Lignes conseillées : monture haute · papillon · branches larges</span><span class="en-only" lang="en">Lines that suit it: a tall frame · cat-eye · wide temples</span></p>
+              <p><span class="fr-only" lang="fr">Un visage long, et une monture qui le coupe : on choisit une monture plus haute que large, et des branches larges qui ajoutent de la largeur. Les verres doivent couvrir le regard de haut en bas.</span><span class="en-only" lang="en">A long face, and a frame that breaks it up: choose a frame taller than it is wide, with wide temples that add width. The lenses should cover the eye from top to bottom.</span></p>
+              <p class="avoid"><span class="fr-only" lang="fr"><b>Ce qu'on évite :</b> l'étroite et la basse, qui allongent encore.</span><span class="en-only" lang="en"><b>What we avoid:</b> narrow and low frames, which stretch the face further.</span></p>
+              <p class="cta"><a class="btn btn-wa sm wa" data-fr="Bonjour La Ligne Optic, voici la photo de mon visage — je pense avoir un visage oblong. Quelle monture me conseillez-vous ?" data-en="Hello La Ligne Optic, here is the photo of my face — I think it is oblong. Which frame would you recommend?" href="https://wa.me/237683651108?text=Bonjour%20La%20Ligne%20Optic%2C%20voici%20la%20photo%20de%20mon%20visage%20%E2%80%94%20je%20pense%20avoir%20un%20visage%20oblong.%20Quelle%20monture%20me%20conseillez-vous%20%3F">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
+                <span class="fr-only" lang="fr">Envoyer la photo de mon visage</span><span class="en-only" lang="en">Send the photo of my face</span>
+              </a></p>
+            </div>
+          </article>
+
+        </div>
+      </fieldset>
+      <div class="facenote">
+        <p class="note"><span class="fr-only" lang="fr">C'est un <b>conseil de style</b>, pas un examen : le dernier mot revient à la visagiste, devant le miroir, avec vos cheveux, votre teint et la façon dont vous bougez la tête. Cette page vous fait gagner l'aller-retour, elle ne remplace personne.</span><span class="en-only" lang="en">This is <b>styling advice</b>, not an examination: the last word belongs to the stylist, in front of the mirror, with your hair, your colouring and the way you move your head. This page saves you the back-and-forth; it does not replace anyone.</span></p>
+        <p class="note"><span class="fr-only" lang="fr">Votre photo reste dans la conversation WhatsApp : elle ne va nulle part ailleurs, et vous pouvez l'envoyer ou non.</span><span class="en-only" lang="en">Your photo stays in the WhatsApp conversation: it goes nowhere else, and you can send it or not.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 4 · LE PASSAGE — comment se passe une visite ══════════════════════════════════════════════ -->
+  <section class="sec" id="passage" aria-labelledby="h-passage">
+    <div class="wrap">
+      <p class="sec-no"><span>03</span><span class="fr-only" lang="fr">Si vous venez</span><span class="en-only" lang="en">If you come in</span></p>
+      <h2 id="h-passage" class="rv">
+        <span class="fr-only" lang="fr">Comment ça se passe, en clair.</span>
+        <span class="en-only" lang="en">How it goes, plainly.</span>
+      </h2>
+      <ol class="steps">
+        <li class="rv">
+          <span class="t"><span class="fr-only" lang="fr">Premier temps</span><span class="en-only" lang="en">First</span></span>
+          <h3><span class="fr-only" lang="fr">Vous écrivez, ou vous entrez</span><span class="en-only" lang="en">You write, or you walk in</span></h3>
+          <p><span class="fr-only" lang="fr">Dites-nous ce qui vous amène : une ordonnance à monter, une vue qui a changé, une monture à choisir. Trois mots suffisent.</span><span class="en-only" lang="en">Tell us what brings you: a prescription to be made up, sight that has changed, a frame to choose. Three words are enough.</span></p>
+        </li>
+        <li class="rv">
+          <span class="t"><span class="fr-only" lang="fr">Deuxième temps</span><span class="en-only" lang="en">Second</span></span>
+          <h3><span class="fr-only" lang="fr">La mesure</span><span class="en-only" lang="en">The measurement</span></h3>
+          <p><span class="fr-only" lang="fr">La réfraction se fait au cabinet. C'est court, et ça ne se devine pas : c'est la base de tout ce qui suit.</span><span class="en-only" lang="en">The refraction is done in the practice. It is short, and it cannot be guessed: it is the basis of everything that follows.</span></p>
+        </li>
+        <li class="rv">
+          <span class="t"><span class="fr-only" lang="fr">Troisième temps</span><span class="en-only" lang="en">Third</span></span>
+          <h3><span class="fr-only" lang="fr">Le visage</span><span class="en-only" lang="en">The face</span></h3>
+          <p><span class="fr-only" lang="fr">L'essayage : on essaie plusieurs lignes, pas seulement celle qui est en vitrine. Vous regardez dans le miroir, on vous dit ce qui fonctionne, et pourquoi.</span><span class="en-only" lang="en">The fitting: we try several lines, not only the one in the window. You look in the mirror, we tell you what works, and why.</span></p>
+        </li>
+        <li class="rv">
+          <span class="t"><span class="fr-only" lang="fr">Quatrième temps</span><span class="en-only" lang="en">Fourth</span></span>
+          <h3><span class="fr-only" lang="fr">Vous repartez avec la suite claire</span><span class="en-only" lang="en">You leave with the next step clear</span></h3>
+          <p><span class="fr-only" lang="fr">Ce qui est disponible sur place, ce qui se commande, et le délai que le cabinet vous confirme. Le prix, lui, dépend de vos verres et de la monture choisie : il se dit à ce moment-là, pas avant.</span><span class="en-only" lang="en">What is available on the spot, what has to be ordered, and the timing the practice confirms to you. The price depends on your lenses and the frame you choose: it is given at that moment, not before.</span></p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ══ 5 · CE QUI SE RÈGLE EN UNE RÉPONSE — l'honnêteté comme preuve ═════════════════════════════ -->
+  <section class="sec" id="reponses" aria-labelledby="h-reponses">
+    <div class="wrap">
+      <p class="sec-no"><span>04</span><span class="fr-only" lang="fr">Ce que la page ne décide pas</span><span class="en-only" lang="en">What this page does not decide</span></p>
+      <h2 id="h-reponses" class="rv">
+        <span class="fr-only" lang="fr">Quatre choses qui se règlent en une réponse.</span>
+        <span class="en-only" lang="en">Four things settled in one reply.</span>
+      </h2>
+      <p class="lede rv">
+        <span class="fr-only" lang="fr">Une page web ne connaît ni le stock du jour, ni le prix de vos verres. Plutôt que d'écrire ici des chiffres qui seraient faux la semaine prochaine, le cabinet vous répond — et sa réponse est gratuite.</span>
+        <span class="en-only" lang="en">A web page knows neither today's stock nor the price of your lenses. Rather than printing figures here that would be wrong next week, the practice answers you — and the answer is free.</span>
+      </p>
+      <div class="reps">
+        <div class="rv">
+          <h3><span class="fr-only" lang="fr">Le tarif</span><span class="en-only" lang="en">The price</span></h3>
+          <p><span class="fr-only" lang="fr">Un verre simple et un verre progressif ne coûtent pas la même chose, et la monture change tout. Dites-nous ce que vous cherchez : le prix arrive dans la réponse.</span><span class="en-only" lang="en">A single-vision lens and a progressive one do not cost the same, and the frame changes everything. Tell us what you are looking for: the price comes back in the reply.</span></p>
+        </div>
+        <div class="rv">
+          <h3><span class="fr-only" lang="fr">Les marques en boutique</span><span class="en-only" lang="en">Brands in the shop</span></h3>
+          <p><span class="fr-only" lang="fr">Ce qui est en vitrine change au fil des arrivages. Plutôt qu'une liste qui serait fausse dans quinze jours, demandez : on vous dit ce qu'il y a aujourd'hui.</span><span class="en-only" lang="en">What is on display changes with each delivery. Rather than a list that would be wrong in a fortnight, just ask: we tell you what is in today.</span></p>
+        </div>
+        <div class="rv">
+          <h3><span class="fr-only" lang="fr">Les horaires</span><span class="en-only" lang="en">Opening hours</span></h3>
+          <p><span class="fr-only" lang="fr">Le cabinet vous confirme ses horaires du jour dans la conversation. C'est plus sûr qu'une ligne écrite ici il y a six mois, et ça prend dix secondes.</span><span class="en-only" lang="en">The practice confirms today's hours in the conversation. That is safer than a line written here six months ago, and it takes ten seconds.</span></p>
+        </div>
+        <div class="rv">
+          <h3><span class="fr-only" lang="fr">Votre monture actuelle</span><span class="en-only" lang="en">The glasses you wear now</span></h3>
+          <p><span class="fr-only" lang="fr">Une branche tordue, une vis perdue, des plaquettes qui marquent : envoyez une photo et dites ce qui ne va pas. La réponse vous dit si ça se règle au cabinet.</span><span class="en-only" lang="en">A bent temple, a lost screw, nose pads that leave marks: send a photo and say what is wrong. The reply tells you whether it can be put right at the practice.</span></p>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn btn-wa wa" data-fr="Bonjour La Ligne Optic, j'ai une question avant de venir : " data-en="Hello La Ligne Optic, I have a question before coming: " href="https://wa.me/237683651108?text=Bonjour%20La%20Ligne%20Optic%2C%20j'ai%20une%20question%20avant%20de%20venir%20%3A%20">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
+          <span class="fr-only" lang="fr">Poser ma question</span><span class="en-only" lang="en">Ask my question</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 6 · LES QUESTIONS — six, mot pour mot dans le schéma ══════════════════════════════════════ -->
+  <section class="sec" id="questions" aria-labelledby="h-questions">
+    <div class="wrap">
+      <p class="sec-no"><span>05</span><span class="fr-only" lang="fr">Les questions qu'on nous pose</span><span class="en-only" lang="en">Questions we are asked</span></p>
+      <h2 id="h-questions" class="rv">
+        <span class="fr-only" lang="fr">Six questions, six réponses.</span>
+        <span class="en-only" lang="en">Six questions, six answers.</span>
+      </h2>
+      <div class="faq rv">
+        <details>
+          <summary><span><span class="fr-only" lang="fr">Où se trouve le cabinet&nbsp;?</span><span class="en-only" lang="en">Where is the practice?</span></span></summary>
+          <p><span class="fr-only" lang="fr">À Akwa, sur le boulevard de la Liberté, à Douala. Écrivez-nous avant de venir : le repère exact et la localisation vous sont envoyés dans la conversation, et vous ne cherchez pas.</span><span class="en-only" lang="en">In Akwa, on Boulevard de la Liberté, Douala. Write to us before coming: the exact landmark and the location are sent to you in the conversation, so you do not have to hunt for it.</span></p>
+        </details>
+        <details>
+          <summary><span><span class="fr-only" lang="fr">Faut-il une ordonnance&nbsp;?</span><span class="en-only" lang="en">Do I need a prescription?</span></span></summary>
+          <p><span class="fr-only" lang="fr">Pour des verres correcteurs, oui : apportez l'ordonnance de votre ophtalmologue. Si elle est ancienne ou si vous n'en avez pas, dites-le — on vous dira ce qui est possible ici et ce qui doit passer par l'ophtalmologue.</span><span class="en-only" lang="en">For prescription lenses, yes: bring your ophthalmologist's prescription. If it is old, or if you do not have one, say so — we will tell you what is possible here and what needs the ophthalmologist.</span></p>
+        </details>
+        <details>
+          <summary><span><span class="fr-only" lang="fr">Qu'est-ce que la réfraction, exactement&nbsp;?</span><span class="en-only" lang="en">What exactly is refraction?</span></span></summary>
+          <p><span class="fr-only" lang="fr">C'est la mesure de votre vue, faite au cabinet : elle dit ce que vos verres doivent corriger. C'est un acte d'opticien, pas un examen médical — l'examen de vos yeux, lui, reste le travail de votre ophtalmologue, et nous vous y renvoyons sans détour.</span><span class="en-only" lang="en">It is the measurement of your sight, taken at the practice: it tells us what your lenses must correct. It is an optician's procedure, not a medical examination — examining your eyes remains your ophthalmologist's work, and we send you there without hesitation.</span></p>
+        </details>
+        <details>
+          <summary><span><span class="fr-only" lang="fr">C'est quoi, un conseil de visagiste&nbsp;?</span><span class="en-only" lang="en">What is face-shape styling?</span></span></summary>
+          <p><span class="fr-only" lang="fr">On regarde la forme de votre visage, sa largeur, la place de vos yeux, et on vous propose les lignes de monture qui vous vont — en expliquant pourquoi. C'est du style, pas de la médecine, et le dernier mot reste le vôtre, devant le miroir.</span><span class="en-only" lang="en">We look at the shape of your face, its width, where your eyes sit, and we suggest the frame lines that suit you — explaining why. It is styling, not medicine, and the last word stays yours, in front of the mirror.</span></p>
+        </details>
+        <details>
+          <summary><span><span class="fr-only" lang="fr">Puis-je envoyer une photo de mon visage&nbsp;?</span><span class="en-only" lang="en">Can I send a photo of my face?</span></span></summary>
+          <p><span class="fr-only" lang="fr">Oui, et c'est même la façon la plus rapide : une photo de face, en plein jour, sans lunettes si vous pouvez. La visagiste vous répond avec deux ou trois pistes avant même que vous vous déplaciez. Votre photo reste dans la conversation WhatsApp.</span><span class="en-only" lang="en">Yes, and it is the quickest way: a photo facing the camera, in daylight, without glasses if you can. The stylist replies with two or three directions before you even travel. Your photo stays in the WhatsApp conversation.</span></p>
+        </details>
+        <details>
+          <summary><span><span class="fr-only" lang="fr">Combien coûte une paire, et en combien de temps&nbsp;?</span><span class="en-only" lang="en">How much is a pair, and how long does it take?</span></span></summary>
+          <p><span class="fr-only" lang="fr">Le prix dépend de vos verres et de la monture que vous choisissez ; le délai dépend de ce qui est disponible sur place ou à commander. Écrivez-nous ce que vous cherchez : vous aurez les deux réponses d'un coup, gratuitement.</span><span class="en-only" lang="en">The price depends on your lenses and the frame you choose; the timing depends on what is in stock and what has to be ordered. Write and tell us what you are looking for: you will have both answers at once, and it is free.</span></p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 7 · LE CONTACT ═══════════════════════════════════════════════════════════════════════════ -->
+  <section class="sec contact" id="contact" aria-labelledby="h-contact">
+    <div class="wrap">
+      <p class="sec-no"><span style="color:rgba(241,239,233,.72)">06</span><span class="fr-only" lang="fr" style="color:rgba(241,239,233,.72)">Deux gestes</span><span class="en-only" lang="en" style="color:rgba(241,239,233,.72)">Two gestures</span></p>
+      <h2 id="h-contact" class="rv">
+        <span class="fr-only" lang="fr">Deux gestes suffisent : écrire, ou appeler.</span>
+        <span class="en-only" lang="en">Two gestures are enough: write, or call.</span>
+      </h2>
+      <p class="lede rv">
+        <span class="fr-only" lang="fr">Le cabinet répond sur le <b>683 651 108</b>. Le bouton WhatsApp ouvre la conversation avec le message déjà écrit : vous pouvez le modifier, ou tout effacer, avant de l'envoyer. C'est là que vous aurez les horaires du jour, le repère exact à Akwa, et ce qui est disponible.</span>
+        <span class="en-only" lang="en">The practice answers on <b>683 651 108</b>. The WhatsApp button opens the conversation with the message already typed: you can edit it, or delete it, before sending. That is where you will get today's hours, the exact landmark in Akwa, and what is in stock.</span>
+      </p>
+      <div class="actions">
+        <a class="btn btn-wa wa" data-fr="Bonjour La Ligne Optic, je voudrais passer au cabinet. Quels sont vos horaires aujourd'hui ?" data-en="Hello La Ligne Optic, I would like to come to the practice. What are your opening hours today?" href="https://wa.me/237683651108?text=Bonjour%20La%20Ligne%20Optic%2C%20je%20voudrais%20passer%20au%20cabinet.%20Quels%20sont%20vos%20horaires%20aujourd'hui%20%3F">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
+          <span class="fr-only" lang="fr">Écrire sur WhatsApp</span><span class="en-only" lang="en">Write on WhatsApp</span>
+        </a>
+        <a class="btn" href="tel:+237683651108">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.6 3h2.7l1.6 4-2 1.4a12 12 0 0 0 6.7 6.7l1.4-2 4 1.6v2.7c0 1-.8 1.8-1.9 1.7C11.5 19.2 4.8 12.5 4.9 4.9 4.9 3.9 5.6 3 6.6 3z"/></svg>
+          <span class="fr-only" lang="fr">Appeler maintenant</span><span class="en-only" lang="en">Call now</span>
+        </a>
+      </div>
+      <div class="tools">
+        <button class="tool" id="copy2" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 3h9a2 2 0 0 1 2 2v10h-2V5H9V3zm-3 4h9a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2zm0 2v10h9V9H6z"/></svg>
+          <span class="fr-only" lang="fr">Copier le numéro</span><span class="en-only" lang="en">Copy the number</span>
+        </button>
+        <button class="tool" id="vcard" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm2 3v2h2V7H6zm0 4v2h2v-2H6zm0 4v2h2v-2H6zm4-8v2h8V7h-8zm0 4v2h8v-2h-8zm0 4v2h8v-2h-8z"/></svg>
+          <span class="fr-only" lang="fr">Enregistrer la fiche contact</span><span class="en-only" lang="en">Save the contact card</span>
+        </button>
+      </div>
+      <div class="addr">
+        <p><b><span class="fr-only" lang="fr">Adresse</span><span class="en-only" lang="en">Address</span></b></p>
+        <p><span class="fr-only" lang="fr">Akwa, boulevard de la Liberté — Douala, Littoral, Cameroun</span><span class="en-only" lang="en">Akwa, Boulevard de la Liberté — Douala, Littoral, Cameroon</span></p>
+        <p><b><span class="fr-only" lang="fr">Téléphone</span><span class="en-only" lang="en">Phone</span></b></p>
+        <p><span class="fr-only" lang="fr">683 651 108 — appel et WhatsApp</span><span class="en-only" lang="en">683 651 108 — call and WhatsApp</span></p>
+        <p><b><span class="fr-only" lang="fr">La maison</span><span class="en-only" lang="en">The practice</span></b></p>
+        <p><span class="fr-only" lang="fr">Mme Joungo Line Chantale, opticienne — inscrite à l'Ordre des opticiens du Cameroun en 2017.</span><span class="en-only" lang="en">Mme Joungo Line Chantale, optician — registered with the Cameroon Order of Opticians in 2017.</span></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="#top">La Ligne <span class="thin">Optic</span></a>
+        <p><span class="fr-only" lang="fr">Optique et lunetterie à Akwa, Douala : consultation, réfraction, conseil de visagiste. Le visage d'abord, la monture ensuite.</span><span class="en-only" lang="en">Optics and eyewear in Akwa, Douala: consultation, refraction, face-shape styling. Your face first, the frame afterwards.</span></p>
+      </div>
+      <div>
+        <h3><span class="fr-only" lang="fr">La page</span><span class="en-only" lang="en">This page</span></h3>
+        <ul>
+          <li><a href="#services"><span class="fr-only" lang="fr">Les quatre gestes</span><span class="en-only" lang="en">What we do</span></a></li>
+          <li><a href="#visagiste"><span class="fr-only" lang="fr">Le visage d'abord</span><span class="en-only" lang="en">Your face first</span></a></li>
+          <li><a href="#passage"><span class="fr-only" lang="fr">Comment ça se passe</span><span class="en-only" lang="en">How it goes</span></a></li>
+          <li><a href="#questions"><span class="fr-only" lang="fr">Les six questions</span><span class="en-only" lang="en">The six questions</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h3><span class="fr-only" lang="fr">Prendre contact</span><span class="en-only" lang="en">Get in touch</span></h3>
+        <ul>
+          <li><a class="wa" data-fr="Bonjour La Ligne Optic, je voudrais passer au cabinet. Quels sont vos horaires aujourd'hui ?" data-en="Hello La Ligne Optic, I would like to come to the practice. What are your opening hours today?" href="https://wa.me/237683651108?text=Bonjour%20La%20Ligne%20Optic%2C%20je%20voudrais%20passer%20au%20cabinet.%20Quels%20sont%20vos%20horaires%20aujourd'hui%20%3F"><span class="fr-only" lang="fr">Écrire sur WhatsApp</span><span class="en-only" lang="en">Write on WhatsApp</span></a></li>
+          <li><a href="tel:+237683651108"><span class="fr-only" lang="fr">Appeler le 683 651 108</span><span class="en-only" lang="en">Call 683 651 108</span></a></li>
+          <li><span class="fr-only" lang="fr">Akwa, boulevard de la Liberté</span><span class="en-only" lang="en">Akwa, Boulevard de la Liberté</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <p><span class="fr-only" lang="fr">© 2026 La Ligne Optic — Akwa, Douala, Cameroun. Aperçu préparé par AMK pour La Ligne Optic : les marques, les photos et les tarifs seront ajoutés par le cabinet avant la mise en ligne.</span><span class="en-only" lang="en">© 2026 La Ligne Optic — Akwa, Douala, Cameroon. Preview prepared by AMK for La Ligne Optic: brands, photos and prices will be added by the practice before going live.</span></p>
+    </div>
+  </div>
+</footer>
+
+<div class="dock">
+  <a class="btn btn-wa wa" data-fr="Bonjour La Ligne Optic, je voudrais passer au cabinet. Quels sont vos horaires aujourd'hui ?" data-en="Hello La Ligne Optic, I would like to come to the practice. What are your opening hours today?" href="https://wa.me/237683651108?text=Bonjour%20La%20Ligne%20Optic%2C%20je%20voudrais%20passer%20au%20cabinet.%20Quels%20sont%20vos%20horaires%20aujourd'hui%20%3F">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
+    <span class="fr-only" lang="fr">Écrire</span><span class="en-only" lang="en">Write</span>
+  </a>
+  <a class="btn" href="tel:+237683651108">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.6 3h2.7l1.6 4-2 1.4a12 12 0 0 0 6.7 6.7l1.4-2 4 1.6v2.7c0 1-.8 1.8-1.9 1.7C11.5 19.2 4.8 12.5 4.9 4.9 4.9 3.9 5.6 3 6.6 3z"/></svg>
+    <span class="fr-only" lang="fr">Appeler</span><span class="en-only" lang="en">Call</span>
+  </a>
+</div>
+
+<script>/* ── LES DEUX LANGUES, LES ADRESSES WHATSAPP, ET CE QUE LA PAGE DIT APRÈS UN GESTE ──────────────────
+   Un seul endroit décide : `data-lang` sur <html>. Le français est dans le balisage (donc dans la page
+   pour un moteur, un lecteur d'écran ou un presse-papier) ; ce script ne fait que basculer l'affichage et
+   réécrire les adresses WhatsApp dans la langue choisie — l'adresse statique et l'adresse fabriquée sont
+   identiques au caractère près (même jeu de caractères que `encodeURIComponent`, voir `build_laligne.py`). */
+(function(){try{
+  var html=document.documentElement, WA='https://wa.me/237683651108?text=', NUM='+237683651108', K='laligne-lang';
+  var sayEl=document.getElementById('say');
+  function lg(){var l=html.getAttribute('data-lang');return l==='en'?'en':'fr';}
+  function say(fr,en){ if(!sayEl) return; sayEl.textContent=(lg()==='en'?en:fr); }
+  function paint(){
+    var l=lg(); html.lang=l;
+    [['btn-fr','fr'],['btn-en','en']].forEach(function(p){
+      var b=document.getElementById(p[0]);
+      if(b){var on=(l===p[1]); b.classList.toggle('is-on',on); b.setAttribute('aria-pressed',on?'true':'false');}
+    });
+    [].forEach.call(document.querySelectorAll('a.wa'),function(a){
+      var t=a.getAttribute(l==='en'?'data-en':'data-fr'); if(t) a.setAttribute('href',WA+encodeURIComponent(t));
+    });
+  }
+  function setLang(l){html.setAttribute('data-lang',l); try{localStorage.setItem(K,l)}catch(e){}
+    paint();
+    say('La page est maintenant en français.','The page is now in English.');
+  }
+  [['btn-fr','fr'],['btn-en','en']].forEach(function(p){
+    var b=document.getElementById(p[0]);
+    if(b) b.addEventListener('click',function(){ if(lg()!==p[1]) setLang(p[1]); });
+  });
+  paint();
+
+  /* ── COPIER LE NUMÉRO, ET LA FICHE CONTACT (.vcf) ─────────────────────────────────────────────────
+     Deux outils discrets, jamais deux boutons principaux. Le presse-papier peut être refusé (contexte
+     non sécurisé, permission) : on le dit alors au visiteur, sans casser la page. La fiche contact est
+     construite à la main — pas de Blob, pas de réseau, pas d'API qui puisse manquer. */
+  var copyBtn=document.getElementById('copy2');
+  if(copyBtn) copyBtn.addEventListener('click',function(){
+    var fr='Numéro copié : 683 651 108.', en='Number copied: 683 651 108.';
+    try{
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(NUM).then(function(){say(fr,en);},function(){say(fr,en);});
+      }else{ say('Le numéro est le 683 651 108.','The number is 683 651 108.'); }
+    }catch(e){ say('Le numéro est le 683 651 108.','The number is 683 651 108.'); }
+  });
+  var vcard=document.getElementById('vcard');
+  if(vcard) vcard.addEventListener('click',function(){
+    var fr='Fiche contact préparée : « La Ligne Optic ».', en='Contact card prepared: "La Ligne Optic".';
+    try{
+      var lines=['BEGIN:VCARD','VERSION:3.0','N:;La Ligne Optic;;;','FN:La Ligne Optic',
+        'ORG:La Ligne Optic','TEL;TYPE=CELL:'+NUM,
+        'ADR;TYPE=WORK:;;Boulevard de la Liberte, Akwa;Douala;;;Cameroun',
+        'NOTE:Optique et lunetterie. Consultation, refraction, conseil de visagiste.','END:VCARD'];
+      var txt=lines.join('\r\n');
+      var a=document.createElement('a');
+      a.setAttribute('href','data:text/vcard;charset=utf-8,'+encodeURIComponent(txt));
+      a.setAttribute('download','la-ligne-optic.vcf');
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      say(fr,en);
+    }catch(e){ say('Copiez plutôt le numéro : 683 651 108.','Copy the number instead: 683 651 108.'); }
+  });
+}catch(e){}})();
+</script>
+
+<script>/* ── LE MOUVEMENT — IntersectionObserver, jamais d'écouteur de défilement ────────────────────────────
+   Le contenu est visible par défaut : ce script ne fait que retarder une révélation, et il affiche tout
+   immédiatement si l'observateur manque, si le visiteur a demandé moins de mouvement, ou si quoi que ce
+   soit plante ici. Le dessin du premier écran se trace de la même façon — et reste entier sans nous. */
+(function(){try{
+  var items=[].slice.call(document.querySelectorAll('.rv'));
+  var draws=[].slice.call(document.querySelectorAll('.draw'));
+  function showAll(){ items.forEach(function(n){n.classList.add('in');}); draws.forEach(function(n){n.classList.add('is-on');}); }
+  var w=window||{};
+  var calm=(w.matchMedia&&w.matchMedia('(prefers-reduced-motion:reduce)').matches);
+  if(!('IntersectionObserver' in w)||calm){ showAll(); return; }
+  items.forEach(function(n,i){ n.setAttribute('style','--d:'+((i%3)*60)+'ms'); });
+  var io=new w.IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{rootMargin:'0px 0px -12% 0px',threshold:.12});
+  items.forEach(function(n){ io.observe(n); });
+  var io2=new w.IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-on'); io2.unobserve(e.target); } });
+  },{threshold:.25});
+  draws.forEach(function(n){ io2.observe(n); });
+}catch(e){ try{ [].forEach.call(document.querySelectorAll('.rv'),function(n){n.classList.add('in');}); }catch(e2){} }})();
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Optician","@id":"https://laligneoptic.example/#cabinet",
+  "name":"La Ligne Optic","alternateName":"La Ligne Optic Akwa",
+  "description":"Optique et lunetterie à Akwa, Douala : consultation, réfraction, conseil de visagiste.",
+  "telephone":"+237683651108",
+  "address":{"@type":"PostalAddress","streetAddress":"Boulevard de la Liberté","addressLocality":"Douala","addressRegion":"Littoral","addressCountry":"CM"},
+  "areaServed":{"@type":"City","name":"Douala"},
+  "availableLanguage":["fr","en"],
+  "identifier":"Inscription à l'Ordre des opticiens du Cameroun n° 025/2017",
+  "founder":{"@type":"Person","name":"Line Chantale Joungo","jobTitle":"Opticienne"},
+  "contactPoint":{"@type":"ContactPoint","contactType":"customer service","telephone":"+237683651108","availableLanguage":["fr","en"]}},
+ {"@type":"FAQPage","@id":"#questions","mainEntity":[
+  {"@type":"Question","name":"Où se trouve le cabinet ?","acceptedAnswer":{"@type":"Answer","text":"À Akwa, sur le boulevard de la Liberté, à Douala. Écrivez-nous avant de venir : le repère exact et la localisation vous sont envoyés dans la conversation, et vous ne cherchez pas."}},
+  {"@type":"Question","name":"Faut-il une ordonnance ?","acceptedAnswer":{"@type":"Answer","text":"Pour des verres correcteurs, oui : apportez l'ordonnance de votre ophtalmologue. Si elle est ancienne ou si vous n'en avez pas, dites-le — on vous dira ce qui est possible ici et ce qui doit passer par l'ophtalmologue."}},
+  {"@type":"Question","name":"Qu'est-ce que la réfraction, exactement ?","acceptedAnswer":{"@type":"Answer","text":"C'est la mesure de votre vue, faite au cabinet : elle dit ce que vos verres doivent corriger. C'est un acte d'opticien, pas un examen médical — l'examen de vos yeux, lui, reste le travail de votre ophtalmologue, et nous vous y renvoyons sans détour."}},
+  {"@type":"Question","name":"C'est quoi, un conseil de visagiste ?","acceptedAnswer":{"@type":"Answer","text":"On regarde la forme de votre visage, sa largeur, la place de vos yeux, et on vous propose les lignes de monture qui vous vont — en expliquant pourquoi. C'est du style, pas de la médecine, et le dernier mot reste le vôtre, devant le miroir."}},
+  {"@type":"Question","name":"Puis-je envoyer une photo de mon visage ?","acceptedAnswer":{"@type":"Answer","text":"Oui, et c'est même la façon la plus rapide : une photo de face, en plein jour, sans lunettes si vous pouvez. La visagiste vous répond avec deux ou trois pistes avant même que vous vous déplaciez. Votre photo reste dans la conversation WhatsApp."}},
+  {"@type":"Question","name":"Combien coûte une paire, et en combien de temps ?","acceptedAnswer":{"@type":"Answer","text":"Le prix dépend de vos verres et de la monture que vous choisissez ; le délai dépend de ce qui est disponible sur place ou à commander. Écrivez-nous ce que vous cherchez : vous aurez les deux réponses d'un coup, gratuitement."}}]}
+]}
+</script>
+</body>
+</html>
