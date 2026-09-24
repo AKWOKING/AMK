@@ -4207,3 +4207,27 @@ pas par les audits).
 
 **Aucune relance** n'est due sur ces deux fils : les deux ont répondu, donc l'horloge de relance est
 arrêtée (§34.1) — la prochaine action est **la leur**.
+
+---
+
+## 2026-09-24 (nuit, suite) — **CINQ SENS, PASSE 2 : LA LUEUR, DEUX RACCOURCIS — ET UNE PHRASE RETIRÉE**
+
+**Ajouté.** Une **lueur** dans le premier écran (les cinq teintes du nom très diluées, en dérive lente,
+`aria-hidden`, `pointer-events:none`, tenue à l'écart du surtitre, arrêtée par `prefers-reduced-motion`) ;
+le **rail** des cinq teintes qui entre en cascade ; **deux raccourcis de carte** avec leur propre message
+— « Envoyer la photo de mon ordonnance » (carte 02) et « Écrire au cabinet, en privé » (carte 05, aucune
+donnée clinique) ; et `sameAs` dans les données structurées : **blog + X + LinkedIn**, trois URL vérifiées
+le 24/09 (le profil X publie lui-même le « numéro d'urgence » 696 698 136 — la page ne l'a pas inventé).
+
+**Retiré.** La carte « Accessoires et **petites réparations** » et sa liste « cordes, étuis, produits
+d'entretien, vis et plaquettes » : la source ne dit que « **accessoires d'optique** ». Réécrite en
+question (« Vous cherchez… ? dites-le, on vous répond avec ce que le cabinet a en boutique »).
+**Leçon** : la spécificité inventée est la faute la plus facile à commettre quand on veut rendre une page
+vivante — ce que la source ne dit pas, la page le demande.
+
+**Contrôles** : `audit_html` **0 constat** (258 passages) · `a11y --strict` **0/0** · `hero` **0/0** ·
+`inline_js` rc 0 · `aeo` ✓ · `test_cinqsens_page.mjs` **53/53**. Poids **278,7 Ko**. Le DM OPTIC n'a pas
+bougé (audit 0, test 45/45).
+
+**Deuxième fois** le même piège de test : une constante (`ORD`, `PROTH`) utilisée avant sa déclaration —
+les audits ne l'ont pas vue, le `ReferenceError` si. Règle notée dans `clients/cinq-sens/build-notes.md` §8.

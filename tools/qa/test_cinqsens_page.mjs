@@ -22,6 +22,13 @@ const html = fs.readFileSync(PAGE, "utf8");
 
 const WA = "https://wa.me/237696698136?text=";
 const NUM = "+237696698136";
+
+/* Les deux raccourcis de carte servent DEUX fois : au contrôle du balisage (plus bas) et à la
+   simulation de la bascule de langue. Ils sont donc déclarés ici, avant tout usage. */
+const ORD = ["Bonjour Cinq Sens, voici la photo de mon ordonnance pour des lunettes de vue.",
+             "Hello Cinq Sens, here is the photo of my prescription for spectacles."];
+const PROTH = ["Bonjour Cinq Sens, je voudrais des informations sur les prothèses oculaires.",
+               "Hello Cinq Sens, I would like information about ocular prostheses."];
 const langSrc = scriptAfter(html, "LES DEUX LANGUES, LES ADRESSES WHATSAPP, ET CE QUE LA PAGE DIT");
 /* L'autre script de langue : celui du `<head>`, qui remet la langue choisie AVANT le premier rendu. Un
    vrai navigateur l'exécute en premier — le test doit faire pareil, sinon « la page se rouvre en
@@ -94,6 +101,16 @@ ok("les repères des deux cabinets sont ceux de leurs propres publications",
 ok("la livraison à domicile et la prothèse oculaire sont annoncées (services revendiqués par le cabinet)",
    /Livraison à domicile/.test(html) && /Prothèses oculaires/.test(html));
 
+/* ── les raccourcis de carte : un message écrit pour le geste qu'ils proposent ──────────────────── */
+const shortcuts = [...html.matchAll(/<a class="cardwa wa"[^>]*data-fr="([^"]*)"[^>]*data-en="([^"]*)"/g)]
+  .map((m) => [m[1], m[2]]);
+ok("les deux raccourcis de carte portent leur propre message (ordonnance en photo, prothèses)",
+   shortcuts.length === 2 && shortcuts[0][0] === ORD[0] && shortcuts[1][0] === PROTH[0] &&
+   shortcuts[0][1] === ORD[1] && shortcuts[1][1] === PROTH[1]);
+ok("le raccourci prothèses ne dit rien de clinique : il demande des informations, c'est tout",
+   /informations sur les prothèses/.test(shortcuts[1][0]) &&
+   !/mon cas|mon œil|je suis|perdu|accident/i.test(html));
+
 /* ── les faits qu'on s'interdit d'inventer ─────────────────────────────────────────────────────── */
 ok("aucun prix dans le texte visible",
    !/\b\d{2,3}\s?\d{3}\s?(FCFA|XAF|fcfa)\b/i.test(text) && !/priceRange/.test(text));
@@ -128,6 +145,10 @@ ok("le schéma décrit le cabinet (nom, téléphone, rue, ville, deux lieux) —
 ok("le schéma porte le nom complet de la raison sociale ET l'enseigne",
    /Référence Optique Médicale Cinq Sens SARL/.test(cabinet.name) && cabinet.alternateName === "Cinq Sens");
 
+ok("le schéma relie la page à leurs comptes RÉELS (blog, X, LinkedIn) et à eux seuls",
+   Array.isArray(cabinet.sameAs) && cabinet.sameAs.length === 3 &&
+   cabinet.sameAs.every((u) => /^https:\/\/(referenceoptiquemedicale\.blogspot\.com\/|x\.com\/MedicaleOptique|www\.linkedin\.com\/in\/)/.test(u)));
+
 const faq = ld["@graph"].find((g) => g["@type"] === "FAQPage").mainEntity;
 const plain = (x) => x.replace(/<[^>]+>/g, " ").replace(/&nbsp;|\u00a0/g, " ").replace(/\u2019/g, "'").replace(/\s+/g, " ").trim();
 const qVisible = [...html.matchAll(/<summary><span><span class="fr-only"[^>]*>([\s\S]*?)<\/span>/g)].map((m) => plain(m[1]));
@@ -142,20 +163,29 @@ ok("la page reste une page de travail : noindex présent, et c'est voulu",
 
 /* ── le mouvement doit pouvoir s'arrêter ───────────────────────────────────────────────────────── */
 const calmBlock = (html.match(/@media \(prefers-reduced-motion:reduce\)\{[\s\S]*?\n\}/) || [""])[0];
-ok("le bloc `prefers-reduced-motion` arrête AUSSI la bande d'arrivage (.tick-track)",
-   calmBlock.includes(".tick-track") && calmBlock.includes(".rv"), calmBlock.slice(0, 50));
+ok("le bloc `prefers-reduced-motion` arrête la bande, les révélations, la lueur ET le rail",
+   [".tick-track", ".rv", ".wash", ".rail i"].every((k) => calmBlock.includes(k)),
+   calmBlock.slice(0, 50));
 ok("la bande ne bouge que par `transform`",
    /@keyframes tickmove\{[\s\S]*?translate3d/.test(html) && !/\.tick-track\{[^}]*left/.test(html));
+ok("la lueur du premier écran est décorative : une seule, vide, et qui ne capte pas le clic",
+   (html.match(/<div class="wash" aria-hidden="true"><\/div>/g) || []).length === 1 &&
+   /\.wash\{[^}]*pointer-events:none/.test(html));
+ok("la lueur et le rail ne s'animent que si le JavaScript est là, et en `transform` seul",
+   /html\.js \.wash\{animation:washdrift/.test(html) && /html\.js \.rail i\{/.test(html) &&
+   /@keyframes washdrift\{[\s\S]*?translate3d/.test(html));
 
 /* ═════════════ 1 · la bascule FR | EN ═════════════ */
 console.log("\n═══ 1 · la bascule, et ce qu'elle change vraiment ═══");
 
-/* Les huit messages, dans l'ORDRE DU DOCUMENT (premier écran, services, arrivages, Akwa, Brazzaville,
-   contact, pied de page, barre du bas). */
+/* Les dix messages, dans l'ORDRE DU DOCUMENT (premier écran, raccourci ordonnance, raccourci prothèses,
+   services, arrivages, Akwa, Brazzaville, contact, pied de page, barre du bas). */
 const RDV = ["Bonjour Cinq Sens, je voudrais passer au cabinet. Quels sont vos horaires aujourd'hui ?",
              "Hello Cinq Sens, I would like to come to the practice. What are your opening hours today?"];
 const MESSAGES = [
   RDV,
+  ORD,
+  PROTH,
   ["Bonjour Cinq Sens, j'ai une ordonnance à monter. Que faut-il apporter ?",
    "Hello Cinq Sens, I have a prescription to be made up. What should I bring?"],
   ["Bonjour Cinq Sens, je cherche une monture. Voici ce que j'aimerais : ",
@@ -204,7 +234,7 @@ ok("départ en français : la page se déclare en français",
 ok("départ en français : FR est enfoncé, EN ne l'est pas",
    r.buttons["btn-fr"].getAttribute("aria-pressed") === "true" &&
    r.buttons["btn-en"].getAttribute("aria-pressed") === "false");
-ok("départ en français : les huit messages WhatsApp restent français",
+ok(`départ en français : les ${MESSAGES.length} messages WhatsApp restent français`,
    r.anchors.every((a, i) => waMessage(a.getAttribute("href")) === MESSAGES[i][0]));
 ok("départ en français : le texte de remplacement des images est français",
    r.image.getAttribute("alt") === ALT[0]);
@@ -215,7 +245,7 @@ ok("clic sur EN : la page bascule et se déclare en anglais",
 ok("clic sur EN : les deux boutons disent leur état (aria-pressed)",
    r.buttons["btn-en"].getAttribute("aria-pressed") === "true" &&
    r.buttons["btn-fr"].getAttribute("aria-pressed") === "false");
-ok("clic sur EN : les 8 messages WhatsApp passent en anglais, numéro inchangé",
+ok(`clic sur EN : les ${MESSAGES.length} messages WhatsApp passent en anglais, numéro inchangé`,
    r.anchors.every((a, i) => waMessage(a.getAttribute("href")) === MESSAGES[i][1]) &&
    r.anchors.every((a) => a.getAttribute("href").indexOf(WA) === 0));
 ok("clic sur EN : le texte de remplacement de l'image passe en anglais",

@@ -84,6 +84,27 @@ section{padding:56px 0}
 .rail i:nth-child(1){background:var(--c1)} .rail i:nth-child(2){background:var(--c2)}
 .rail i:nth-child(3){background:var(--c3)} .rail i:nth-child(4){background:var(--c4)}
 .rail i:nth-child(5){background:var(--c5)}
+html.js .rail i{transform-origin:50% 0;animation:railIn .65s var(--ease) both}
+html.js .rail i:nth-child(2){animation-delay:.07s} html.js .rail i:nth-child(3){animation-delay:.14s}
+html.js .rail i:nth-child(4){animation-delay:.21s} html.js .rail i:nth-child(5){animation-delay:.28s}
+@keyframes railIn{from{transform:scaleY(.12)}to{transform:scaleY(1)}}
+
+/* ── LA LUEUR DU PREMIER ÉCRAN ─────────────────────────────────────────────────────────────────────
+   Les cinq teintes du nom, très diluées, qui dérivent lentement sous le texte. Purement décorative :
+   `aria-hidden`, `pointer-events:none`, rien à lire dedans. Elle est tenue À L'ÉCART du coin en
+   haut à gauche, où vivent le surtitre et le titre — la lisibilité passe avant l'effet. Arrêtée par
+   `prefers-reduced-motion`, et sans JavaScript elle reste immobile (le fond statique est déjà beau). */
+.wash{position:absolute;z-index:0;inset:-30% -18% auto -18%;height:150%;pointer-events:none;
+  background:
+    radial-gradient(30% 38% at 78% 22%, rgba(255,46,126,.30), rgba(255,46,126,0) 70%),
+    radial-gradient(26% 32% at 94% 62%, rgba(44,107,255,.22), rgba(44,107,255,0) 72%),
+    radial-gradient(32% 40% at 58% 94%, rgba(255,197,49,.15), rgba(255,197,49,0) 74%),
+    radial-gradient(22% 28% at 22% 88%, rgba(18,184,134,.14), rgba(18,184,134,0) 72%)}
+html.js .wash{animation:washdrift 30s ease-in-out infinite alternate}
+@keyframes washdrift{
+  0%{transform:translate3d(-2%,-1%,0) scale(1.03)}
+  50%{transform:translate3d(3%,2%,0) scale(1.10)}
+  100%{transform:translate3d(-1%,3%,0) scale(1.05)}}
 
 /* ── L'EN-TÊTE ───────────────────────────────────────────────────────────────────────────────────── */
 header.site{position:sticky;top:0;z-index:40;background:var(--ink);color:var(--on-dark);
@@ -136,7 +157,9 @@ header.site .wrap{display:flex;align-items:center;gap:14px;min-height:66px;paddi
 .on-dark h2,.on-dark h3{color:var(--on-dark)}
 
 /* ── L'ENTRÉE DU MAGASIN (§19.2 : la hiérarchie d'abord, le décor ensuite) ────────────────────────── */
-.hero{background:var(--ink);color:var(--on-dark);padding-top:44px;padding-bottom:52px}
+.hero{position:relative;overflow:hidden;background:var(--ink);color:var(--on-dark);
+  padding-top:44px;padding-bottom:52px}
+.hero .wrap{position:relative;z-index:1}
 .hero h1{margin-top:16px;max-width:22ch}
 .hero h1 .pop{color:var(--pop)}
 .hero .lede{color:var(--on-dark-2)}
@@ -169,6 +192,10 @@ html.js .tick-track{animation:tickmove 42s linear infinite}
 .svc p{color:var(--txt-2);font-size:var(--fs-sm)}
 .svc .bring{margin-top:auto;padding-top:11px;border-top:1px solid var(--line-2);
   font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--txt-3)}
+.cardwa{display:inline-flex;align-items:center;gap:8px;font:600 var(--fs-xs)/1.4 var(--f-b);
+  color:var(--wa);text-decoration:underline;text-underline-offset:3px}
+.cardwa svg{width:15px;height:15px;flex:none;fill:currentColor}
+@media (hover:hover) and (pointer:fine){ .cardwa:hover{color:var(--wa-2)} }
 
 /* ── LES ARRIVAGES : la vitrine ──────────────────────────────────────────────────────────────────── */
 .plate{margin:30px 0 0}
@@ -258,6 +285,8 @@ html.js .rv.in{opacity:1;transform:none;transition:opacity .5s var(--ease) var(-
   html{scroll-behavior:auto}
   html.js .rv{opacity:1;transform:none;transition:none}
   html.js .tick-track{animation:none}
+  html.js .wash{animation:none}
+  html.js .rail i{animation:none}
   *{transition-duration:.01ms !important}
 }
 </style>
@@ -292,6 +321,7 @@ html.js .rv.in{opacity:1;transform:none;transition:opacity .5s var(--ease) var(-
 
   <!-- ══ 1 · LE PREMIER ÉCRAN : le nom, le métier, les deux adresses, une seule action ══════════════ -->
   <section class="hero" aria-labelledby="h-hero">
+    <div class="wash" aria-hidden="true"></div>
     <div class="wrap">
       <p class="kicker rv"><span class="fr-only" lang="fr">Opticien à Douala · Akwa &amp; Brazzaville</span><span class="en-only" lang="en">Optician in Douala · Akwa &amp; Brazzaville</span></p>
       <h1 id="h-hero" class="rv">
@@ -364,6 +394,9 @@ html.js .rv.in{opacity:1;transform:none;transition:opacity .5s var(--ease) var(-
           <h3><span class="fr-only" lang="fr">Lunettes de vue, homme et femme</span><span class="en-only" lang="en">Spectacles, for men and women</span></h3>
           <p><span class="fr-only" lang="fr">Des montures ajustées à votre visage. Vous essayez devant le miroir, on règle sur le nez et derrière les oreilles avant que vous sortiez.</span><span class="en-only" lang="en">Frames adjusted to your face. You try them on in front of the mirror, and we set them on your nose and behind your ears before you leave.</span></p>
           <p class="bring"><span class="fr-only" lang="fr">À apporter&nbsp;: l'ordonnance de votre ophtalmologue.</span><span class="en-only" lang="en">Bring: your ophthalmologist's prescription.</span></p>
+          <a class="cardwa wa" data-fr="Bonjour Cinq Sens, voici la photo de mon ordonnance pour des lunettes de vue." data-en="Hello Cinq Sens, here is the photo of my prescription for spectacles." href="https://wa.me/237696698136?text=Bonjour%20Cinq%20Sens%2C%20voici%20la%20photo%20de%20mon%20ordonnance%20pour%20des%20lunettes%20de%20vue."><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
+            <span class="fr-only" lang="fr">Envoyer la photo de mon ordonnance</span><span class="en-only" lang="en">Send the photo of my prescription</span>
+          </a>
         </article>
         <article class="svc rv">
           <span class="n" aria-hidden="true">03</span>
@@ -382,12 +415,15 @@ html.js .rv.in{opacity:1;transform:none;transition:opacity .5s var(--ease) var(-
           <h3><span class="fr-only" lang="fr">Prothèses oculaires</span><span class="en-only" lang="en">Ocular prostheses</span></h3>
           <p><span class="fr-only" lang="fr">Un œil artificiel réalisé et posé selon votre cas. Peu de cabinets le proposent à Douala&nbsp;: ici, c'est l'un de nos métiers.</span><span class="en-only" lang="en">An artificial eye made and fitted for your case. Few practices in Douala offer it: here, it is one of our trades.</span></p>
           <p class="bring"><span class="fr-only" lang="fr">À apporter&nbsp;: votre dossier médical et l'avis de votre ophtalmologue.</span><span class="en-only" lang="en">Bring: your medical file and your ophthalmologist's advice.</span></p>
+          <a class="cardwa wa" data-fr="Bonjour Cinq Sens, je voudrais des informations sur les prothèses oculaires." data-en="Hello Cinq Sens, I would like information about ocular prostheses." href="https://wa.me/237696698136?text=Bonjour%20Cinq%20Sens%2C%20je%20voudrais%20des%20informations%20sur%20les%20proth%C3%A8ses%20oculaires."><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
+            <span class="fr-only" lang="fr">Écrire au cabinet, en privé</span><span class="en-only" lang="en">Write to the practice, privately</span>
+          </a>
         </article>
         <article class="svc rv">
           <span class="n" aria-hidden="true">06</span>
-          <h3><span class="fr-only" lang="fr">Accessoires et petites réparations</span><span class="en-only" lang="en">Accessories and small repairs</span></h3>
-          <p><span class="fr-only" lang="fr">Cordes, étuis, produits d'entretien, vis et plaquettes&nbsp;: ce qui remet une paire en service pour longtemps.</span><span class="en-only" lang="en">Cords, cases, cleaning products, screws and nose pads: the small things that keep a pair going.</span></p>
-          <p class="bring"><span class="fr-only" lang="fr">À apporter&nbsp;: la monture — ou une photo, sur WhatsApp.</span><span class="en-only" lang="en">Bring: the frames, or a photo on WhatsApp.</span></p>
+          <h3><span class="fr-only" lang="fr">Accessoires</span><span class="en-only" lang="en">Accessories</span></h3>
+          <p><span class="fr-only" lang="fr">Vous cherchez une corde, un étui, un produit d'entretien&nbsp;? Dites-le&nbsp;: on vous répond avec ce que le cabinet a en boutique.</span><span class="en-only" lang="en">Looking for a cord, a case, a cleaning product? Just say so: we answer with what the practice has in store.</span></p>
+          <p class="bring"><span class="fr-only" lang="fr">À demander&nbsp;: une photo ou le nom du modèle — la réponse arrive sur WhatsApp.</span><span class="en-only" lang="en">To ask for: a photo or the model name — the answer comes on WhatsApp.</span></p>
         </article>
       </div>
       <div class="actions rv">
@@ -751,6 +787,7 @@ html.js .rv.in{opacity:1;transform:none;transition:opacity .5s var(--ease) var(-
   "telephone":"+237696698136",
   "address":{"@type":"PostalAddress","streetAddress":"Rue King Akwa","addressLocality":"Douala","addressRegion":"Littoral","addressCountry":"CM"},
   "areaServed":{"@type":"City","name":"Douala"},
+  "sameAs":["https://referenceoptiquemedicale.blogspot.com/","https://x.com/MedicaleOptique","https://www.linkedin.com/in/r%C3%A9f%C3%A9renceoptiquem%C3%A9dicalecinqsenssarl/"],
   "availableLanguage":["fr","en"],
   "location":[
     {"@type":"Place","name":"Cinq Sens — cabinet d'Akwa","address":{"@type":"PostalAddress","streetAddress":"Rue King Akwa, face au consulat centrafricain","addressLocality":"Douala","addressCountry":"CM"}},

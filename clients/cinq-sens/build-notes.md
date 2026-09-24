@@ -114,3 +114,35 @@ Règle du portique : *« Not verified on a phone = not sent. »*
 - **Aucune promesse** de classement, de délai, de nombre de patients.
 - La prothèse oculaire est un sujet sensible : la page en parle **comme d'un métier du cabinet**, jamais
   comme d'une promesse médicale, et renvoie au dossier médical du patient.
+
+## 8 · Passe 2, la même nuit — ce qui a été ajouté, et une phrase retirée
+
+**Ce qui a été ajouté.** ① Une **lueur** dans le premier écran : les cinq teintes du nom très diluées,
+qui dérivent lentement sous le texte (`radial-gradient` × 4, `translate3d` seulement, 30 s). Elle est
+`aria-hidden`, `pointer-events:none`, tenue **à l'écart du coin haut-gauche** où vivent le surtitre et le
+titre — la lisibilité passe avant l'effet — et le bloc `prefers-reduced-motion` l'arrête. ② Le **rail**
+entre en scène : les cinq segments grandissent en cascade (0,65 s), une fois, sous `html.js` seulement.
+③ Deux **raccourcis de carte**, avec un message qui n'appartient qu'à eux : « Envoyer la photo de mon
+ordonnance » (carte 02) et « Écrire au cabinet, en privé » (carte 05 — aucune donnée clinique dans le
+message, le patient garde la main). ④ `sameAs` dans les données structurées : le **blog**, **X** et
+**LinkedIn** — trois URL vérifiées le 24/09, et rien d'autre. Le profil X confirme au passage le
+« numéro d'urgence » écrit sur la page (il le publie dans sa bio, avec les deux numéros).
+
+**Ce qui a été retiré.** La carte « **Accessoires et petites réparations** » et sa liste
+« cordes, étuis, produits d'entretien, vis et plaquettes » : la source ne dit que « **accessoires
+d'optique** ». Personne ne nous a dit que le cabinet répare, ni ce qu'il a en rayon. Réécrit en
+question — « Vous cherchez une corde, un étui, un produit d'entretien ? Dites-le : on vous répond avec ce
+que le cabinet a en boutique » — et « À demander » remplace « À apporter ». **Leçon à garder** : quand on
+veut rendre une page vivante, la spécificité inventée est la faute la plus facile à commettre. Ce que la
+source ne dit pas, la page le demande.
+
+**Deuxième fois le même piège** : une constante JavaScript utilisée **avant** sa déclaration (`ORD`,
+`PROTH`) — les audits ne l'ont pas vue, le test l'a attrapée (`ReferenceError`). Règle : les constantes
+partagées se déclarent **en haut** du fichier de test, jamais au milieu.
+
+**Contrôles après la passe 2** : `audit_html` **0 constat** (258 passages) · `a11y --strict` **0/0** ·
+`hero` **0/0** · `inline_js` rc 0 · `aeo` ✓ · `test_cinqsens_page.mjs` **53/53** (dont : la lueur est
+vide et ne capte pas le clic ; le rail et la lueur ne s'animent que sous `html.js` ; le bloc
+`prefers-reduced-motion` arrête **les quatre** mouvements ; `sameAs` ne contient **que** les trois
+comptes connus ; le raccourci prothèses ne dit rien de clinique). Poids : **278,7 Ko**, dix liens
+WhatsApp, trois photos embarquées.
