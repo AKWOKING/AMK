@@ -2724,3 +2724,47 @@ Au passage, deux attributs `value` portaient un `&` nu (HTML invalide que rien n
 WhatsApp du pied de page, qui ouvrait un fil vide, porte lui aussi une phrase prête. La page passe de 80 764 à
 **84 671 octets**, le harnais de 32 à **42 assertions** : les chiffres sont alignés partout où ils étaient
 écrits (audit, notes de build, portique, feuille de séance, CRM, §25).
+
+## 2026-09-24 · 08:10 → 09:30 · CINQ VIDÉOS, DONT DEUX MUETTES — le premier écran, et la prospection par Maps
+
+**Le lot du matin (King) :** cinq liens. Trois portent une parole, deux n'en portent aucune.
+
+**Les deux muettes :** les tutoriels d'UI UNIVERSITY (`iDzt8VWqjEg`, `nbBQCeOCMmQ`). Leurs sous-titres ne
+contiennent que de la musique — vérifié deux fois, sur YouTube et sur le site de transcription. Plutôt
+que d'inventer des leçons, j'ai lu **leur code**, dans les deux dépôts cités par leurs descriptions.
+Verdict : le geste est joli, le code est fautif. Un titre visible écrit **dans le CSS**
+(`h1::before{content:'The'}`) — invisible au lecteur d'écran, à Google et au Ctrl+F ; un hero en
+`100vh` avec un titre à 222 px et **zéro `@media`** ; des animations `@keyframes` qui déplacent `bottom`
+sans `prefers-reduced-motion` ; du lorem ipsum dans le HTML. **C'est exactement la famille de défauts que
+King m'a reprochée sur UNI-LABO.** Ces quatre défauts sont désormais détectés automatiquement :
+`tools/qa/audit_hero.py` (+ `test_audit_hero.py`, qui les reproduit exprès pour prouver que le contrôle
+mord — vérifié : rc=1 sur les deux tutoriels, rc=0 sur nos pages).
+
+**Les trois qui parlent** (Payton Clark Smith × 2 + une sur Maps) donnent :
+1. **La grammaire du premier écran** (39 mises en page) : texte à gauche, image à droite — une image à
+   gauche vole le premier regard ; **jamais de texte posé sur une photo** (la vidéo dit « old school »,
+   King avait dit la même chose la nuit dernière — deux verdicts qui se rejoignent) ; une image coupée par
+   le pli fait descendre ; la preuve sociale descend du hero pour respirer ; centrer seulement si le
+   texte est court ; **hamburger sur ordinateur = une faute** ; une colonne qui avale la barre ou une
+   image qui déborde de sa colonne, ce sont des techniques à garder pour la **prochaine** page.
+2. **La prospection par Google Maps** : trois cibles (pas de site / site daté / avis négatifs), le mobile
+   avant le fixe, et la phrase qui compte — les 50 premiers appels sont mauvais pour tout le monde, c'est
+   la régularité qui fait la différence.
+
+**Ce que j'en ai fait, tout de suite :**
+- **`tools/qa/audit_hero.py`** — le contrôle du premier écran, avec son test de non-régression. Nos cinq
+  pages (les trois du site AMK + les démos) passent : 0 constat.
+- **`sales/APPELS-GOOGLE-MAPS-2026-09-24.md`** — les trois ouvertures d'appel, la règle du mobile
+  (18 mobiles et 4 lignes fixes sur 149 fiches), les **quatre fiches qu'on ne peut joindre que par un
+  fixe** — pour elles le travail n'est pas d'appeler mais de trouver le mobile —, les heures d'appel, et
+  la limite que je refuse de franchir : **on ne promet jamais de faire disparaître un avis**.
+- **Deux règles écrites** : §26 des skills (la grammaire du premier écran, et ce qu'un code-along
+  enseigne vraiment) ; lot [26] des leçons.
+- **Une décision renvoyée à King** : la vidéo conseille « site gratuit + abonnement » pour ouvrir une
+  porte. Chez nous c'est une remise — interdit. Deux variantes qui respectent la règle (paiement
+  échelonné au prix plein ; site compris dans un abonnement de 12 mois au prix standard) sont écrites
+  dans le document, **non appliquées**. Vendredi se tient sur la grille existante.
+
+**Rien n'a été touché sur UNI-LABO.** Les leçons du premier écran sont du vocabulaire : elles serviront
+sur une page blanche (l'école d'octobre), pas à rouvrir une page que King vient de regarder.
+

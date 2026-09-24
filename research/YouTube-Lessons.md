@@ -908,3 +908,112 @@ harnais de test qui vivaient dans `/tmp` (et qu'un rembobinage du bac a effacés
 - La tirade « l'IA va remplacer les designers juniors » : vraie sur le fond (elle vise la production),
   mais ce n'est pas une leçon de design, et elle ne change aucune de nos décisions.
 - La page de Thomas Digital comme **argument de vente** : on ne cite pas un concurrent devant un prospect.
+
+---
+
+## Lot [26] · LE PREMIER ÉCRAN, ET LA PROSPECTION PAR GOOGLE MAPS — 5 vidéos (King, 24/09/2026, au matin)
+
+Règles de construction : **`AMK-DESIGN-SKILLS.md` §26**. Contrôle : **`tools/qa/audit_hero.py`**
+(+ `tools/qa/test_audit_hero.py`, qui vérifie que ce contrôle refuse bien ce qu'il doit refuser).
+Prospection : **`sales/APPELS-GOOGLE-MAPS-2026-09-24.md`**.
+
+| # | Vidéo | Chaîne | Ce qu'elle apporte |
+|---|---|---|---|
+| 26.1 | *Mastering Landing Page UI Design: Tips, Tricks, and Best Practices* (`iDzt8VWqjEg`, 7:41, 2023) | UI UNIVERSITY | **AUCUNE PAROLE** — sous-titres de musique seulement (vérifié deux fois : YouTube et le site de transcription). Tutoriel de code-along : on lit le code, pas la vidéo. Voir 26.6. |
+| 26.2 | *How To Make Animated Website Design Using HTML And CSS Step By Step* (`nbBQCeOCMmQ`, 14:44, 2024) | UI UNIVERSITY | **AUCUNE PAROLE** non plus. L'idée retenue (deux moitiés de titre qui glissent l'une vers l'autre, image qui monte en place) ; l'implémentation est fautive. Voir 26.6. |
+| 26.3 | *18 Hero Section Designs You Can Steal* (`kJb6BZwqCGM`) | Payton Clark Smith | trois familles (fiables / centrées / fantasques), **l'image à gauche vole le premier regard**, et le verdict qui compte : **texte posé sur une photo = « old school », ça fait daté et le bouton devient invisible** |
+| 26.4 | *21 Brand New Hero Sections You Must Copy* (`z5yvZW8Ep-E`) | Payton Clark Smith | 16 mises en page : colonne qui **avale la barre de navigation**, image qui **déborde de sa colonne** (profondeur), **image coupée par le pli** (fait descendre), preuve sociale **descendue du hero** pour la laisser respirer, **hamburger sur ordinateur = presque toujours une faute**, ligne qui guide l'œil, rangée de **chiffres-clés** (prix · délai · nombre d'usagers · note) |
+| 26.5 | *How I Get Easy Web Design Clients From Google Maps* (`LxweAVqlFMM`) | Payton Clark Smith | **les trois cibles** (pas de site / site cassé · site daté · avis récents négatifs) · le mobile avant le fixe (**on joint le patron, pas la secrétaire**) · l'ouverture simple qui n'est pas un pitch · **les 50 à 100 premiers appels sont mauvais pour tout le monde** · « ton avantage, ce n'est plus de savoir construire, c'est ta distribution et tes gens » |
+
+### 26.3–26.4 · La grammaire du premier écran (39 mises en page, deux vidéos)
+
+Ce qu'on **garde**, et qui devient la règle de nos heros :
+
+1. **Texte d'abord, à gauche ; l'image à droite.** Si l'image passe à gauche, c'est la première chose
+   qu'on regarde et le titre perd la course. Une seule exception : quand l'image *est* le produit.
+2. **Jamais de texte posé sur une photographie** — la vidéo le classe « old school », et c'est aussi ce
+   que King a refusé la nuit dernière. Les deux verdicts se rejoignent : ce n'est pas un goût, c'est un
+   défaut de lisibilité, et le bouton est le premier à disparaître.
+3. **Image coupée par le pli = une invitation à descendre.** Nous l'avons déjà sur la photo de
+   préparation d'UNI-LABO (4/3, coupée par le bas de la section). À refaire exprès, pas par hasard.
+4. **La preuve sociale descend du hero.** Elle y étouffe le titre et se lit mal ; juste en dessous, elle
+   respire. (UNI-LABO n'a **aucun avis** : on n'en fabrique pas — cette règle attend le jour où il y en
+   aura.)
+5. **Centrer seulement quand le texte est court** ; dès deux phrases, on repasse à gauche. Le centrage
+   s'effondre avec la longueur.
+6. **Le hamburger sur ordinateur cache ce qu'on a la place de montrer.** Une exception honnête : une
+   page de vente unique où l'on veut retenir le visiteur.
+7. **La profondeur** (colonne qui avale la barre, image qui déborde de sa colonne, image qui raconte un
+   **processus** au lieu d'être un stock) : ce sont les techniques à ressortir pour la **prochaine**
+   construction (l'école d'octobre, la clinique suivante), pas à empiler sur une page qui marche.
+8. **La rangée de chiffres** (prix · délai · usagers · note) donne de la matière au premier écran sans
+   photographie. Sur un labo, l'équivalent honnête que nous avons déjà : horaires, préparation,
+   délai confirmé sur place, langues.
+
+### 26.5 · La prospection par Google Maps — ce qui manquait
+
+Nous faisions déjà deux des trois cibles (site absent ou cassé ; site daté) **mieux que la vidéo** :
+nous auditons avant d'approcher, nous arrivons avec un constat. La troisième — **les avis récents
+négatifs** — nous ne l'avions jamais essayée. Elle vaut une ligne d'offre, avec une limite tenue : on ne
+promet **jamais** de faire disparaître un avis (c'est faux, et contraire aux règles de Google). Ce qu'on
+peut honnêtement vendre : une demande d'avis après une visite réussie, la correction de la cause
+invoquée, et une réponse publique posée. Détail et phrases en `sales/APPELS-GOOGLE-MAPS-2026-09-24.md`.
+
+**Le mobile avant le fixe.** Sur 149 fiches du CRM, **22 portent un numéro** — 18 mobiles, 4 fixes. Le
+plan du jour n'appelle que des mobiles : la règle était déjà respectée dans les faits, elle est
+maintenant écrite. Et pour les quatre lignes fixes, le travail n'est pas d'appeler : c'est de **trouver
+le mobile** (Maps, Facebook), parce que notre canal est WhatsApp.
+
+### 26.6 · Ce qu'un tutoriel de code-along enseigne vraiment (les deux vidéos muettes)
+
+Les deux vidéos d'UI UNIVERSITY n'ont pas de parole : leurs sous-titres automatiques ne contiennent que
+la musique. Leur valeur est donc dans **leur code**, que j'ai lu ligne à ligne dans les deux dépôts
+cités par leurs descriptions (`JeeJu-Coding/agency`, `uiuniversity/animated-hero-section`). Verdict :
+
+- **`h1::before{content:'The'}` / `::after{content:'Agency'}`** — le titre visible est écrit **dans le
+  CSS**. Invisible pour un lecteur d'écran, ignoré par Google, introuvable au Ctrl+F. C'est la faute la
+  plus grave des deux dépôts, parce qu'elle ne se voit pas.
+- **`height:100vh` + un titre à 180 px (ou 222 px) en position absolue + zéro `@media`.** Magnifique sur
+  l'écran de celui qui l'a fait, cassé sur un téléphone — exactement le reproche que King m'a fait.
+- **Des `@keyframes` qui déplacent `bottom`** (une propriété de mise en page) sans
+  `prefers-reduced-motion`.
+- **Du lorem ipsum** et un `{{PLACEHOLDER}}` dans le HTML livré.
+
+La leçon utile n'est donc pas « voici comment on fait un hero » : c'est **le geste se garde, le code se
+jette**, et un tutoriel qui montre un beau résultat n'est pas une référence de qualité. Ces quatre
+défauts sont désormais **détectés automatiquement** par `tools/qa/audit_hero.py` — dont le test
+`test_audit_hero.py` les reproduit exprès pour prouver qu'il les attrape.
+
+### Déchets écartés
+
+- **L'offre « site gratuit + abonnement mensuel »** recommandée par 26.5 pour ouvrir une porte : elle
+  suppose de baisser le prix, et notre règle est de ne jamais remiser — on ajuste le périmètre. Notée
+  comme décision pour King (un étalement du paiement n'est pas une remise), pas appliquée.
+- **L'outil payant de la vidéo** (uglisitescraper) : il fait ce que nous faisons déjà à la main sur
+  Maps, et il est orienté États-Unis.
+- Les pourcentages de conversion et les montants (30 000 $ en dix jours) : non vérifiables ici, et pas
+  nécessaires — c'est la régularité qui compte, pas le chiffre.
+- Les 39 mises en page **comme modèles à copier** : ce sont des idées de composition. Aucune image, aucune
+  marque, aucun gabarit n'est repris (même règle que §3.7).
+
+### Ce qu'on pourrait apprendre ensuite — proposé le 24/09, à choisir par King
+
+Chaque ligne nomme **le manque réel** qu'elle comble, pas un sujet qui a l'air utile. Avant d'enregistrer
+une source, je la lis (et si c'est une vidéo, je vérifie qu'elle a une vraie parole — le lot [26] a montré
+que deux vidéos sur cinq n'en avaient aucune).
+
+| priorité | sujet | le manque que ça comble | sources (à lire avant d'enregistrer) |
+|---|---|---|---|
+| 1 | **L'accessibilité (WCAG) sur nos pages** | le lot [26] a trouvé des mots écrits dans le CSS, invisibles aux lecteurs d'écran. Nos clients sont des **institutions** (écoles, labos) : l'accessibilité y est un argument de sérieux, pas une mode | W3C WAI (référence officielle) · web.dev (Learn Accessibility) · les rapports de l'auditeur `tools/qa/audit_page.py` |
+| 2 | **Google Business Profile à fond** (fiche établissement, avis, photos, horaires) | c'est la troisième cible du lot [26] (les avis) et la première chose qu'un patient ou un parent voit. Aujourd'hui on l'évoque, on ne le vend pas | documentation officielle Google Business Profile · `AMK-SEO-PLAYBOOK.md` §8 en regard |
+| 3 | **WhatsApp Business pour un commerce** (catalogue, messages d'accueil, réponses rapides, étiquettes) | nous vendons « formulaire WhatsApp » ; si le client n'a pas configuré son WhatsApp Business, l'expérience s'arrête à l'envoi | WhatsApp Business — aide officielle (faq.whatsapp.com) · tutoriels de commerçants |
+| 4 | **Photographier un labo/un cabinet avec un téléphone** | la photo n'est pas comprise dans les 150 000 et nous allons devoir la prendre nous-mêmes, dans leur lumière, sans mentir | à chercher et vérifier (éclairage naturel, plans serrés, arrière-plan) — je proposerai trois candidats lus d'avance |
+| 5 | **Prix et récurrence** (comment vendre un abonnement sans remiser) | une décision est ouverte : l'échelonnement du paiement au prix plein, ou le site compris dans 12 mois d'abonnement (§5 de `sales/APPELS-GOOGLE-MAPS-2026-09-24.md`) | études de cas d'agences, hors marchés US si possible — à filtrer sévèrement |
+| 6 | **Le français d'ici** (écrire pour un commerçant de Douala) | nos textes sont propres mais parfois « traduits » ; les clients parlent un français plus direct | à construire **nous-mêmes** : relire nos 20 meilleurs messages et extraire nos propres règles, avec les mots des clients (le journal en est plein) |
+
+**Le désaccord méthodologique à noter :** pour 5 et 6, les sources utiles ne sont pas des vidéos YouTube.
+Le lot [26] a montré le plafond de ce format (deux vidéos sur cinq muettes, et les autres vendent une
+communauté payante). Les meilleures sources sont les documents officiels (Google, WhatsApp, W3C) et
+**nos propres archives** — le journal contient 79 citations de leads, c'est notre meilleur manuel de
+langue.
+

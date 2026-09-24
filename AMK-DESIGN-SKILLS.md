@@ -1265,6 +1265,7 @@ a credibility strip is a real deliverable, and it belongs to the client's own fa
 - YouTube lesson batch [22] (interaction contract / invisible timeline / design psychology, 23 Sep 2026) → this file **§22**; full log + junk filter in `research/YouTube-Lessons.md` Lot [23]; page portico `tools/qa/audit_page.py`
 - YouTube lesson batch [24] (design styles / the star / the anchor font, 23 Sep 2026) → this file **§23**; log in `research/YouTube-Lessons.md` Lot [24]; the AEO half of the same batch (Wes McDowell) → `AMK-SEO-PLAYBOOK.md` **§8**
 - YouTube lesson batch [25] (mobile conversion / mobile excellence / mobile-first 101, 23 Sep 2026) → this file **§24**; log in `research/YouTube-Lessons.md` Lot [25]; the lab vertical in the same batch is Thomas Digital's *40 of the Best Lab Websites* (thomasdigital.com), a **competitor page** — read for the seven principles, not for its portfolio
+- YouTube lesson batch [26] (hero systems, code-alongs, Google Maps prospecting, 24 Sep 2026) → this file **§26**; log in `research/YouTube-Lessons.md` Lot [26]; the machine check that came out of it is `tools/qa/audit_hero.py` + `tools/qa/test_audit_hero.py`; the prospecting half is `sales/APPELS-GOOGLE-MAPS-2026-09-24.md`
 - **§25 rebuild of 24 Sep 2026** (not a video batch — King's verdict on the §24 page, with anresco.com and animate.bio as references) → this file **§25**; the page itself is `demos/concept-unilabo-v2.html`, its audit trail is §9 of `clients/uni-labo/AUDIT-2026-09-23.md`, and the contract it must keep is now checked by suite 0 of `tools/qa/test_unilabo_page.mjs`
 - **§21 browser-support matrix (checked 18 Sep 2026):** addpipe.com "A Deep Dive into the Web Speech API" (Chrome 139+ on-device recognition, mobile matrix) · vocafuse.com "Web Speech API vs Cloud APIs" (free/no-key, audio sent to vendor servers, cloud at $0.006–0.024/min) · testmuai.com "Speech Synthesis API: Browser Support" (synthesis matrix, Firefox-Android gap). **No source was found for recognition accuracy on Cameroonian accents — that gap is stated in §21.2, not filled by assumption.**
 - In-house references: `sales/Monday-Outreach-Pack.md` (Concept Production Standard), `site/design-research.md` (AMK site research), OraCare v2/v3 (reference-override case studies)
@@ -1347,4 +1348,72 @@ the HTML analyser (385 text runs, 0 findings), the inline-JS compiler (6 blocks,
 assertions, and a byte-for-byte comparison of the hosted copy. **King's eye is still the judge** — and this
 time it had already spoken once. The next honest step is five real photographs taken in their laboratory, on
 their own bench, replacing ours.
+
+---
+
+## §26 THE FIRST SCREEN — and what a code-along really teaches (24 Sep 2026, learning batch [26])
+
+**Origin.** King's morning learning batch: five videos. Three of them carry real speech and are absorbed
+below (**26.1–26.4**); two are UI UNIVERSITY code-alongs whose captions contain nothing but music
+(verified twice, on YouTube and on the transcript site) — for those, I read **the code in the repositories
+their descriptions link to**, which turned out to be the more useful lesson. The full log, with quotes and
+the discarded junk, is **Lot [26]** of `research/YouTube-Lessons.md`. The machine check that came out of it
+is **`tools/qa/audit_hero.py`** (+ `tools/qa/test_audit_hero.py`).
+
+### 26.1 The grammar of a hero (39 layouts, two videos by Payton Clark Smith)
+
+1. **Text left, image right.** Our reading order is left to right: an image on the left is looked at
+   first and the headline loses the race. Reverse only when the image *is* the product.
+2. **Never text on a photograph.** Both the video ("old school", "makes websites feel outdated", the
+   call to action disappears) and King ("the pictures seem to have spoiled everything") say the same
+   thing from two directions. It is a legibility defect, not a matter of taste.
+3. **An image cut by the fold is an invitation to scroll.** Make it deliberate: the photo continues past
+   the bottom edge, or a line runs from one image into the next.
+4. **Social proof belongs *below* the hero**, given room. Inside it, it competes with the headline.
+   (And when there is no proof, there is no section: we never fabricate reviews.)
+5. **Centre only short text.** Two sentences and it must go back to the left.
+6. **No hamburger on desktop.** It hides navigation that fits. One honest exception: a single-purpose
+   sales page where you *want* people to stay.
+7. **Depth tricks worth reusing**: a column that swallows the nav bar; an image that overhangs its
+   column; and above all, **the image space telling a process** rather than showing stock.
+8. **A row of figures** (price · turnaround · users · rating) gives a hero substance without a
+   photograph. For a laboratory, the honest version we already have: hours, preparation, turnaround
+   confirmed on site, languages.
+
+### 26.2 What a code-along teaches (and what it does not)
+
+The two UI UNIVERSITY tutorials produce a spectacular hero and ship code that fails our own checklist.
+Read line by line, their repositories contain four defects:
+
+| defect | why it matters | our rule |
+|---|---|---|
+| `h1::before{content:'The'}` — real words in CSS | invisible to screen readers, to search engines, and to Ctrl+F; **the headline is not in the document** | text lives in the HTML. CSS may draw rules and marks, never words |
+| `height:100vh` + a 180 px (or 222 px) headline + **zero `@media`** | perfect on the maker's screen, broken on a phone — the exact complaint King made about our own page | single column by default; columns added by `min-width`; type that grows on small screens (§24, §25.4) |
+| `@keyframes` moving `bottom`/`top`, no `prefers-reduced-motion` | animating layout properties burns battery and drops frames; motion-sensitive visitors are ignored | animate `transform`/`opacity`; always honour `prefers-reduced-motion` |
+| lorem ipsum and `{{PLACEHOLDER}}` in the shipped HTML | "Jane Doe" effect (§3.6) | no placeholder text in anything a human will open |
+
+**The transferable lesson: the gesture is kept, the code is thrown away.** A tutorial that shows a
+beautiful result is not a quality reference. Which is why these four defects are now **detected by a
+tool**, not by memory: `python3 tools/qa/audit_hero.py --strict <pages…>` fails on any of them, and
+`python3 tools/qa/test_audit_hero.py` reproduces the two faulty tutorials on purpose to prove the check
+still bites. (Verified red on both tutorials, green on `site/index.html` and every demo.)
+
+### 26.3 The prospecting lesson, kept where it belongs
+
+Video 26.5 of that lot is about **getting clients from Google Maps**: three targets (no site or
+broken site · outdated site · recent negative reviews), the mobile-first ranking, and the honest
+observation that the first fifty calls are awkward for everyone and consistency is what separates you.
+Two of the three targets we already work better than the video (we audit before we approach). The third
+is new to us and lives in `sales/APPELS-GOOGLE-MAPS-2026-09-24.md`, with one rule I refuse to break: we
+never promise to remove a review. And its "free website + monthly fee" advice is recorded as a decision
+for King, **not** applied: our rule is no discounts, adjust the scope instead.
+
+### 26.4 Honest limits
+
+The hero grammar comes from two videos about other people's websites in other markets. It is vocabulary,
+not proof: nothing here says a Cameroonian clinic converts like a US SaaS page. What we adopted is the
+part that is structural (reading order, legibility, mobile-first, the fold) and the part that is
+mechanical (the four defects above, now automated). **The eye that decides remains King's** — and the
+next build it will be applied to is the school in October, on a blank page, not by re-opening a page
+that was just approved.
 
