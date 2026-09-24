@@ -130,3 +130,23 @@ python3 tools/qa/render_svg.py demos/concept-<client>-v1.html --class mini --all
 Il lit les règles de classe de la page — **y compris les variables de `:root`** (sans quoi tout sort
 blanc sur blanc) et les **classes posées sur un `<g>`** (sans quoi les groupes sortent incolores). Il ne
 fait ni dégradés, ni transformations, ni polices : si un dessin en a besoin, l'étendre, pas le contourner.
+
+## Peser ce qui est embarqué (24/09/2026, soir — La Ligne Optic)
+
+`tools/qa/audit_images.py` ne regardait que les **fichiers** : il ignorait les `data:image/…;base64`. La
+page de La Ligne Optic portait **dix images embarquées (249 Ko de JPEG)** et l'outil annonçait
+« **0 image(s)** » — un rapport vert sur un contrôle qui n'avait rien regardé. Il décode maintenant
+chaque image embarquée, la **pèse** (budget 400 Ko), lit ses **métadonnées** (GPS = ERR) et vérifie le
+**ratio annoncé**, exactement comme un fichier. Son témoin : **17 assertions**.
+
+**La règle à retenir** : avant de croire un « 0 constat », vérifier que l'outil **compte** ce qu'il
+prétend contrôler. Un contrôle qui ne voit rien et un contrôle qui ne trouve rien se ressemblent.
+
+## Regarder sa propre mise en page sans navigateur (24/09/2026, soir)
+
+Pour la passe 4 du premier écran (un verre, un cadran, un portrait dedans), il n'y a **toujours pas de
+navigateur** : la composition a été **remontée à la main en PIL** — mêmes coordonnées que le SVG, mêmes
+rayons, la vraie photo — avant d'écrire les nombres dans le gabarit. Deux erreurs vues à l'écran et
+corrigées avant tout build : le portrait était **trop petit** dans le verre (192 unités → 224), et le
+réticule à croix tombait **sur le nez** (une croix sur un visage, c'est une cible : les repères sont
+passés sur la ligne). `clients/la-ligne/dessins-controle.png` garde les deux planches.

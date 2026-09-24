@@ -108,3 +108,67 @@ prend aux marques américaines, cette fois :
 **Ce qu'on rejette toujours** : le 3D temps réel (WebGL = poids et dépendance qui peut casser sur un
 téléphone d'Akwa), le mannequin photographié, le panier, les prix. Le buste est **dessiné à la ligne**,
 comme le reste de la page — et il fonctionne sans JavaScript.
+
+## Troisième passage (24/09, après 22 h) — « inspiration for this type of clinic »
+
+King a demandé de chercher de l'inspiration **pour ce type de cabinet**, à la suite de la passe 4. Quatre
+angles, quatre références, et ce qu'on en garde — ou pas.
+
+### ① CUBITTS — `cubitts.com` · **Londres** (l'angle *atelier / le vocabulaire du métier*)
+
+Le seul site d'optique lu ce soir qui parle comme un atelier et pas comme un magasin : *« Your eyes are
+magnificent, dress them accordingly »* ; les tailles **XS à XL** et des fits « affinés pour une gamme
+hétérogène de nez magnifiques » ; le titane à 99,7 %, 5 g ; la gamme **Raw Edge**, qui **laisse les
+marques d'usinage** (*« spectacles with the making left in »*, 50+ étapes) ; leur rivet signature
+*« small, visible and structural »*.
+
+- **Pris** : la **voix d'atelier** — un détail matériel raconté simplement, sans adjectif publicitaire. Et
+  une idée de structure : **la fabrication comme preuve**. C'est déjà notre ton, il est confirmé.
+- **Pris aussi (la leçon la plus utile)** : **le nez et la largeur**. Cubitts admet que les visages
+  diffèrent — chez nous, cela devient la phrase de la visagiste (« les bords de la monture suivent le
+  contour du visage ») **et** un rendez-vous devant le miroir, pas une promesse de taille.
+- **Rejeté** : leur e-commerce (prix affichés, panier, collections), leurs noms de modèles, leurs
+  paysages urbains en photo. Rien de tout cela n'existe chez La Ligne Optic et rien n'a été inventé.
+
+### ② OPTICA — `optica.africa/pages/face-shape-guide` · **Afrique de l'Est (Kenya)** (l'angle *marché*)
+
+Un opticien **africain** qui publie exactement le même guide que les Américains : carré → rondes ou
+ovales, cœur → ovales et « montures fines et claires », rond → « carrées ou rectangulaires », oblong →
+« larges, façon aviateur ». Avec, en tête de page, la phrase qui nous va : *« these tips only serve as a
+general guideline … if you love them, you will feel good »*.
+
+- **Pris** : **la preuve que le conseil est le même à Nairobi et à Douala** — donc nous ne copions pas une
+  mode américaine, nous écrivons ce que le métier dit partout. Et le principe de **modestie** : des
+  « grandes lignes », pas des règles.
+- **Pris aussi** : ils **disent** que ce n'est qu'une indication — c'est notre phrase « c'est un conseil de
+  style, pas un examen », écrite avant de les lire, et confirmée par un pair du continent.
+- **Rejeté** : leur boutique (prix en KSh, remises « 5 % sur la première commande », collections),
+  leur bandeau d'accueil. Et leurs photos de visages : des visages **européens** sur une page africaine
+  — c'est précisément ce que la passe 4 corrige, avec cinq visages camerounais.
+
+### ③ LES DEUX SITES QUI RÉPÈTENT LA MÊME CHOSE (l'angle *standard du marché*)
+
+`warbyparker.com/learn/glasses-for-different-face-shapes` et le guide de `johnfellopticians.co.uk`
+rappellent ce que les quatre guides américains disaient déjà : **une forme → une famille de lignes**, et
+le mot qui revient partout : *« the shape that looks the most like yours »*. Rien de neuf, et c'est une
+information en soi : **la correspondance n'est pas une opinion, c'est une convention.**
+
+- **Pris** : le mot de **« le plus proche »** (« la forme qui ressemble le plus à la vôtre ») — déjà dans
+  la page, il est confirmé par deux sources de plus.
+- **Rejeté** : leurs essayages virtuels par webcam et leurs quiz (poids, dépendance à la caméra,
+  données du visiteur) — nous préférons **l'illustration + le miroir + WhatsApp**, qui marche sur un
+  téléphone d'entrée de gamme.
+
+### ④ CE QUE LA RECHERCHE A AUSSI CONFIRMÉ (l'angle *« ce type de clinique »*)
+
+Les listes de « meilleurs sites d'optométrie » (Colorlib, Zarla, iMatrix) décrivent toutes le même
+gabarit : **héro photo + prise de rendez-vous + avis + boutique** — et **aucune** ne raconte le
+visagisme. Les sites cités comme « premium » (Moscot, Occhiali New York) le sont par **soustraction** :
+peu de texte, un objet, une photo. Conclusion pour La Ligne Optic : **ne pas ajouter une section, mais
+rendre la seule section qui nous distingue plus vivante et plus réelle** — c'est exactement ce qu'a
+demandé King.
+
+**Ce que la passe 4 a changé dans la page, et d'où cela vient** : les visages réalistes (King, passe 4) ·
+la ligne du regard qui devient un instrument (le titre de la maison, Cubitts : *le vocabulaire du
+métier*) · le souci de modestie du guide (« grandes lignes, pas des règles » : Optica + les quatre
+guides) · pas de quiz, pas de caméra, pas de boutique (rejeté partout).

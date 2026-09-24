@@ -19,6 +19,7 @@ Règle de la maison, écrite ici parce qu'elle s'y est déjà cassée cinq fois 
 compare jamais une chaîne sensible à la casse** — on compare en minuscules.
 """
 
+import base64
 import os
 import struct
 import subprocess
@@ -153,7 +154,31 @@ def main():
     rc, out = run(os.path.join(tmp, "png.html"))
     check(rc == 0, "PNG correct : rc=0 (les deux formats sont lus)")
 
-    print("\n%d assertion(s) verte(s), %d échec(s) — le contrôle des images mord sur les neuf pièges."
+    # 11 · image EMBARQUÉE en base64 — elle échappait au contrôle jusqu'au 24/09 (La Ligne Optic :
+    # dix images embarquées, et l'outil annonçait « 0 image(s) »)
+    def b64(data):
+        return base64.b64encode(data).decode("ascii")
+
+    write_html(os.path.join(tmp, "b64-saine.html"),
+               '<img src="data:image/jpeg;base64,%s" width="1024" height="640">' % b64(jpeg(1024, 640)))
+    rc, out = run(os.path.join(tmp, "b64-saine.html"))
+    check(rc == 0 and "1 image(s)" in out, "base64 saine : comptée (1 image), aucun constat")
+    write_html(os.path.join(tmp, "b64-lourde.html"),
+               '<img src="data:image/jpeg;base64,%s" width="1024" height="640">'
+               % b64(jpeg(1024, 640, pad=420 * 1024)))
+    rc, out = run(os.path.join(tmp, "b64-lourde.html"))
+    check(rc == 1 and "budget" in out, "base64 de 420 Ko : ERR (budget 400 Ko)")
+    write_html(os.path.join(tmp, "b64-gps.html"),
+               '<img src="data:image/jpeg;base64,%s" width="1024" height="640">'
+               % b64(jpeg(1024, 640, exif="gps")))
+    rc, out = run(os.path.join(tmp, "b64-gps.html"))
+    check(rc == 1 and "gps" in out, "base64 avec GPS : ERR (vie privée)")
+    write_html(os.path.join(tmp, "b64-ratio.html"),
+               '<img src="data:image/jpeg;base64,%s" width="1024" height="512">' % b64(jpeg(1024, 640)))
+    rc, out = run(os.path.join(tmp, "b64-ratio.html"))
+    check(rc == 1 and "ratio annoncé" in out, "base64 : ratio annoncé faux = ERR")
+
+    print("\n%d assertion(s) verte(s), %d échec(s) — le contrôle des images mord sur les onze pièges."
           % (ok, fail))
     return 1 if fail else 0
 

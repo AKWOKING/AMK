@@ -204,3 +204,76 @@ contredit la page, c'est lui qu'on vérifie d'abord.
 
 La planche finale est dans `clients/la-ligne/dessins-controle.png` : le premier écran, puis les cinq
 visages du miroir, côte à côte.
+
+## 11 · Passe 4 — des visages réels, et un premier écran qui vit (24/09, après 22 h)
+
+Retour de King, sur capture : *« The hero section looks boring, told you I wanted animations, the heads
+can we make something more realistic can't you generate heads of those shapes with glasses »*, et
+*« Look for inspiration online for this type of clinic »*. Trois choses à réparer : le premier écran,
+les visages, et la recherche.
+
+### Les cinq visages sont des PHOTOGRAPHIES
+
+Le §10 se terminait sur un buste **dessiné** — quatre traits, lisible, sans une photographie, fidèle à
+« le cabinet n'a publié aucune photo ». King a tranché : **des visages réalistes**. On ne fabrique
+toujours pas la vitrine de quelqu'un d'autre — alors les portraits sont des **images d'illustration**
+générées pour la page, et **la page le dit elle-même** sous le miroir : « ce ne sont pas des clients du
+cabinet, et ce ne sont pas des montures de son stock ». C'est la règle de Cinq Sens (« mise en
+situation ») appliquée à un visage : la franchise est écrite dans la page, pas seulement dans le
+dossier.
+
+Cinq formes, cinq personnes, et **la monture que la forme appelle** — celle qu'un visagiste
+recommanderait, pas un accessoire au hasard :
+
+| Forme | Le visage | La monture |
+|---|---|---|
+| **ovale** | femme, début trentaine, mâchoire douce | rectangulaire aux coins arrondis, **écaille miel** |
+| **rond** | homme, quarantaine, joues pleines, sans angle | rectangulaire anguleuse, **acétate rouge laque** — la couleur de la maison sur un visage |
+| **carré** | femme, fin vingtaine, mâchoire droite | **or fin**, ovale étroit, cerclé léger |
+| **cœur** | femme, mi-trentaine, menton étroit | **or rose pâle**, petit ovale à cerclage fin, rien de lourd en haut |
+| **oblong** | homme, cinquantaine, visage long | **browline graphite**, verres hauts pour couper la longueur |
+
+Nous ne nommons **aucune marque** : les montures sont décrites par leur forme et leur couleur, jamais
+par un modèle. Le visage, lui, est centré sur le regard (cercle du verre : le carré central de 88,9 % ×
+71,1 % du portrait) — c'est le conseil qui compte, pas la coiffure.
+
+### Le premier écran : un seul objet, et il bouge
+
+Le premier écran n'est plus « un dessin à droite ». C'est **la page entière en un objet** : la ligne du
+regard, un verre, et **cinq visages qui passent dedans**, un cadran gradué autour, un pouls qui part du
+bord du verre. Autrement dit : *on regarde un visage à travers une ligne de vue* — exactement ce que
+promet le titre.
+
+Cinq mouvements, tous derrière la porte `html.js` et **tous arrêtés** en `prefers-reduced-motion`
+(le premier visage reste alors affiché, fixe) :
+
+| Mouvement | Durée | Pourquoi (MOTION §0 : un but nommé, sinon on supprime) |
+|---|---|---|
+| l'onde lumineuse balaie la règle | 9 s, `linear` | **explication** : la règle se lit comme un instrument en marche |
+| le cadran gradué tourne | 96 s, `linear` | **explication** : c'est un réglage, pas une décoration |
+| le pouls part du verre et se dilue | 3,6 s | **état** : le verre est vivant, et l'œil revient au centre |
+| les visages se relaient | 25 s (5 s/visage) | **explication** : cinq formes, une seule place — la thèse de la page |
+| la deuxième couche de dégradé tourne | 54 s, `linear` | **ambiance** derrière le texte, jamais dedans |
+
+Le fondu entre deux visages passe par le **pont de flou de 2 px** (MOTION §3.6) — sinon on voit deux
+visages l'un sur l'autre. Le réticule à croix a été **retiré du visage** : une croix sur un nez, c'est
+une cible ; les repères sont maintenant **sur la ligne**, à la rencontre du verre.
+
+### Le contrôle : 249 Ko de JPEG, et un angle mort refermé
+
+Chaque visage est monté **deux fois** — 720×900 (q 66, ≈ 36 Ko) pour le miroir, et le carré de 320×320
+(q 64, ≈ 10 Ko) pour le verre du premier écran. La page passe de 90 982 o à **424,7 Ko** (dont 249 Ko de
+JPEG) : c'est le prix de cinq visages réels, et il est tenu (budget 400 Ko par image).
+
+**`audit_images.py` ne voyait pas les images embarquées** : il annonçait « 0 image(s) » sur une page qui
+en porte dix. Corrigé le soir même — il décode chaque `data:image/…;base64`, la pèse, lit ses
+métadonnées et vérifie le ratio annoncé, exactement comme un fichier. Son témoin est passé de 13 à
+**17 assertions** (image embarquée saine, 420 Ko, GPS, ratio menteur).
+
+### Les contrôles de cette passe
+
+`audit_html` **0 constat** (330 passages) · `a11y --strict` **0/0** · `hero` **0/0** · `inline_js` rc 0 ·
+`aeo` ✓ · **`images` 0/0 sur 5 images comptées** · **`test_laligne_page.mjs` 77/77** (68 avant).
+
+La planche `dessins-controle.png` a été refaite : le premier écran monté à la main (PIL), puis les cinq
+portraits du miroir — parce qu'on ne livre pas un dessin qu'on n'a pas regardé.

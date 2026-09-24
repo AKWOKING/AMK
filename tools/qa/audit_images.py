@@ -30,6 +30,7 @@ Usage :
 `--strict` : rc=1 dès une faute OU un avertissement (porte technique).
 """
 
+import base64
 import os
 import re
 import struct
@@ -151,6 +152,43 @@ def check_file(path, label, findings, full=True):
     return facts
 
 
+DATA_URI = re.compile(r"^data:image/(jpeg|jpg|png);base64,\s*([A-Za-z0-9+/=\s]+)$", re.S)
+
+
+def check_data(src, label, findings):
+    """Une image EMBARQUÉE (base64) : on la pèse et on lit ses métadonnées, comme un fichier.
+
+    Elle échappait au contrôle jusqu'au 24/09 : la page de La Ligne Optic portait dix images
+    embarquées — 249 Ko de JPEG — et l'outil annonçait « 0 image(s) ». Une image qu'on ne pèse pas
+    est une image qu'on livre à 3 Mo sans le savoir."""
+    m = DATA_URI.match(src.strip())
+    if not m:
+        findings.append(("ERR", label, "data: URI qui n'est ni un JPEG ni un PNG en base64"))
+        return None
+    try:
+        raw = base64.b64decode(m.group(2))
+    except Exception:
+        findings.append(("ERR", label, "base64 illisible"))
+        return None
+    if not raw:
+        findings.append(("ERR", label, "image embarquée vide"))
+        return None
+    info = jpeg_info(raw) if m.group(1) in ("jpeg", "jpg") else png_info(raw)
+    if info is None:
+        findings.append(("ERR", label, "les octets embarqués ne forment pas une image lisible (%d o)"
+                         % len(raw)))
+        return None
+    if len(raw) > BUDGET_FULL:
+        findings.append(("ERR", label, "%d Ko embarqués pour un budget de %d Ko — à réduire avant "
+                                       "livraison" % (len(raw) / 1024, BUDGET_FULL / 1024)))
+    if info[3]:
+        findings.append(("ERR", label, "métadonnées GPS présentes — on ne publie pas l'endroit où la "
+                                       "photo a été prise (nettoyer avant le déploiement)"))
+    elif info[2]:
+        findings.append(("WARN", label, "métadonnées EXIF présentes (appareil, horodatage) — à nettoyer"))
+    return {"w": info[0], "h": info[1], "exif": info[2], "gps": info[3], "size": len(raw)}
+
+
 def audit_page(page, findings, strict=False):
     try:
         html = open(page, encoding="utf-8").read()
@@ -162,12 +200,17 @@ def audit_page(page, findings, strict=False):
     for tag in re.findall(r"<img\b[^>]*>", html, re.S):
         attrs = dict(re.findall(r'([\w:-]+)\s*=\s*"([^"]*)"', tag))
         src = attrs.get("src", "")
-        if not src or src.startswith(("http", "data:")):
+        if not src or src.startswith("http"):
             continue
-        n += 1
-        label = "%s → %s" % (page, src)
-        path = os.path.join(folder, src)
-        info = check_file(path, label, findings, full=not src.endswith("-sm.jpg"))
+        if src.startswith("data:image/"):
+            n += 1
+            label = "%s → image n°%d embarquée en base64" % (page, n)
+            info = check_data(src, label, findings)
+        else:
+            n += 1
+            label = "%s → %s" % (page, src)
+            path = os.path.join(folder, src)
+            info = check_file(path, label, findings, full=not src.endswith("-sm.jpg"))
         if not info:
             continue
         w, h = info["w"], info["h"]

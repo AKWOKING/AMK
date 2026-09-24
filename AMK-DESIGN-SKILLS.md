@@ -2301,3 +2301,37 @@ matters more here than in the video: **on WhatsApp there is no face, no voice, n
 the non-verbal.** Punctuation, sentence length, not repeating a price, not reproaching a silence — that is
 the whole delivery. At a table, the balance flips back to listening, which is why Friday's two meetings run
 on the questionnaire rather than on the slide deck.
+
+## §37 FACES, NOT FIGURES — what an optician's page owes a face, and the hero as one object (24 Sep 2026, batch [36])
+
+King, on the delivered La Ligne Optic page: *« The hero section looks boring, told you I wanted
+animations, the heads can we make something more realistic can't you generate heads of those shapes with
+glasses »*. Two lessons, one correction.
+
+**① Un conseil de visage se donne sur un visage.** La veille, nous avions dessiné cinq têtes en SVG —
+justes, lisibles, 4 Ko, sans dépendance — et c'était la mauvaise réponse : **une forme de visage ne se
+démontre pas par un tracé**. Un visage porte une monture ; un dessin porte une opinion. Pour un opticien
+(et pour tout métier dont l'objet est **posé sur le corps du client** : lunettes, prothèse, casque,
+maquillage), la page doit montrer **l'objet porté**, pas l'objet. Cinq portraits générés, un par forme,
+avec **la monture que la forme appelle** — et la mention écrite, dans la page, que ce sont des **images
+d'illustration et non des clients**. *Cette leçon vient avec une porte de sortie obligatoire : quand on
+génère un visage, on écrit ce qu'il est.* Sinon on fabrique une preuve.
+
+**② Le premier écran doit contenir la page entière en UN objet.** Le hero précédent montrait une règle
+et un verre : vrai, et muet. Le nouveau montre la règle **et cinq visages qui passent DANS le verre** —
+« on regarde un visage à travers une ligne de vue », c'est-à-dire le titre de la page, en objet. Le test
+pour la prochaine : *si je décris le hero en une phrase, est-ce la thèse du client, ou une décoration du
+sujet ?*
+
+**③ L'ambiance ne remplace pas la structure — elle la met en marche.** « Trop simple » ne se répare pas
+en ajoutant des sections : la page avait déjà sa thèse. Quatre boucles **nommées** (l'onde qui balaie la
+règle, le cadran qui tourne, le pouls qui part du verre, les visages qui se relaient) plus une deuxième
+couche de dégradé, toutes derrière `html.js`, toutes coupées en `prefers-reduced-motion` — où **un
+visage reste affiché, fixe**. Le pouls a été déplacé du centre du visage **vers le bord du verre** :
+une croix ou un point sur un nez, c'est une cible.
+
+**④ Le coût, chiffré.** Cinq visages × deux tailles = **249 Ko de JPEG** (720×900 q 66 ≈ 36 Ko ;
+carré 320×320 q 64 ≈ 10 Ko), page à **424,7 Ko** — sous le budget de 400 Ko par image, et c'est
+acceptable pour une seule page qu'on ouvre une fois. **Vérifier ce que le contrôle ne compte pas** :
+`audit_images.py` annonçait « 0 image(s) » sur dix images embarquées ; il les pèse et vérifie leur ratio
+depuis ce soir (témoin à 17 assertions, `design/WORKFLOW.md`).

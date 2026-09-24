@@ -16,7 +16,7 @@
 <meta property="og:url" content="__OG_URL__">
 <meta property="og:image" content="__OG_IMAGE__">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="La Ligne Optic — opticienne à Akwa, Douala : un visage dessiné et la ligne du regard.">
+<meta property="og:image:alt" content="La Ligne Optic — opticienne à Akwa, Douala : un visage portant des lunettes, dans le verre de l'instrument.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
@@ -27,9 +27,11 @@
 var l=localStorage.getItem("laligne-lang");if(l==="en"||l==="fr")h.setAttribute("data-lang",l);}catch(e){}})();</script>
 <style>
 /* ══════════════════════════════════════════════════════════════════════════════════════════════════════
-   LA LIGNE OPTIC — la page est DESSINÉE. Aucune photographie : pas une seule, parce que le cabinet n'en a
-   publié aucune et qu'on ne fabrique pas la vitrine de quelqu'un d'autre. Tout ce qui se voit ici est un
-   trait : cinq visages, quatre lignes de monture, et la règle qui donne son nom au cabinet.
+   LA LIGNE OPTIC — la page est DESSINÉE, et les cinq visages sont des PORTRAITS D'ILLUSTRATION générés
+   pour elle (la page le dit sous le miroir) : le cabinet n'a publié aucune photo de lui, et on ne
+   fabrique pas la vitrine de quelqu'un d'autre. L'instrument du premier écran — la règle graduée, le
+   cadran, le réticule — est un trait ; les visages qu'on regarde au travers sont des photographies,
+   parce qu'un visage porte une monture mieux que n'importe quel dessin.
    Palette : craie `#F1EFE9`, graphite `#14130F`, un seul rouge laque `#8E2B22` (il ne sert qu'à ce qui
    agit), et le vert WhatsApp réservé aux envois. Typographie : Fraunces (display, optique variable) +
    Archivo (texte et étiquettes).
@@ -117,7 +119,7 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
 .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
 .actions.center{justify-content:flex-start}
 
-/* ── LE PREMIER ÉCRAN — le dessin, et la ligne ────────────────────────────────────────────────────── */
+/* ── LE PREMIER ÉCRAN — la ligne, le verre, et les cinq visages qui passent dedans ─────────────────── */
 .hero{position:relative;overflow:hidden;padding:clamp(34px,6vw,62px) 0 clamp(44px,7vw,76px)}
 /* ── LA LUEUR DU PREMIER ÉCRAN ─────────────────────────────────────────────────────────────────────
    Trois teintes de la maison (laque, terre cuite, graphite) très diluées, qui dérivent lentement :
@@ -135,6 +137,14 @@ html.js .wash{animation:washdrift 34s ease-in-out infinite alternate}
   0%{transform:translate3d(-2%,-1%,0) scale(1.03)}
   50%{transform:translate3d(3%,2%,0) scale(1.10)}
   100%{transform:translate3d(-1%,3%,0) scale(1.05)}}
+/* La deuxième couche : un dégradé conique qui tourne, très flou, très dilué. C'est ce qui fait vivre
+   la craie — la couleur se déplace vraiment, l'œil le voit sans jamais lire un mot de travers.
+   (Le fond derrière le texte ne bouge pas : les deux couches sont sous le contenu, `z-index:0`.) */
+.wash2{position:absolute;z-index:0;inset:-40% -28%;pointer-events:none;filter:blur(40px);opacity:.85;
+  background:conic-gradient(from 210deg at 66% 34%,
+    rgba(142,43,34,.15), rgba(196,100,63,.10), rgba(95,90,78,.05), rgba(142,43,34,.12), rgba(142,43,34,.15))}
+html.js .wash2{animation:washspin 54s linear infinite}
+@keyframes washspin{to{transform:rotate(360deg)}}
 .hero .wrap{position:relative;z-index:1}
 .hero .grid{display:grid;gap:30px}
 @media (min-width:900px){ .hero .grid{grid-template-columns:1.08fr .92fr;gap:48px;align-items:center} }
@@ -145,13 +155,44 @@ html.js .wash{animation:washdrift 34s ease-in-out infinite alternate}
 .facts dt{font:600 .74rem/1.5 var(--f-b);letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3)}
 .facts dd{margin:5px 0 0;font-weight:600;font-size:.97rem}
 .facts .wide{grid-column:1/-1}
-.draw{display:block;margin:0 auto;width:100%;max-width:420px}
+/* ── L'INSTRUMENT — la règle, le verre, et les cinq visages qui passent dedans ─────────────────────
+   Le premier écran ne pose pas une tête « parce qu'il en faut une » : les visages sont DANS le verre,
+   c'est la page entière en un seul objet — on regarde un visage à travers une ligne de vue. Cinq
+   mouvements, tous derrière la porte `html.js`, tous arrêtés en `prefers-reduced-motion` :
+   ① la lueur dérive et tourne, ② l'onde lumineuse balaie la règle, ③ le cadran gradué tourne
+   lentement, ④ le réticule bat comme un pouls, ⑤ les cinq visages se relaient toutes les 5 s.
+   En mouvement réduit : aucun des cinq — et UN visage reste affiché, fixe. */
+.scope{position:relative;width:100%;max-width:470px;margin:0 auto;aspect-ratio:560/400}
+.draw{display:block;width:100%;height:auto}
 .draw *{fill:none;stroke-linecap:round;stroke-linejoin:round}
 .draw .rule{stroke:var(--ink-3);stroke-width:1.6}
 .draw .tick{stroke:var(--ink-3);stroke-width:1.6}
 .draw .frame{stroke:var(--laque);stroke-width:4}
-.draw .sight{stroke:var(--laque);stroke-width:1.4;stroke-dasharray:5 6}
 .draw .dot{fill:var(--laque)}
+.draw .glow{stroke:none}
+.draw .faces,.draw .faces image{stroke:none}
+.draw .dialtick{stroke:var(--ink-3);stroke-width:1.3;opacity:.7}
+.draw .dial{transform-box:view-box;transform-origin:290px 180px}
+html.js .draw .dial{animation:dialspin 96s linear infinite}
+@keyframes dialspin{to{transform:rotate(360deg)}}
+.draw .scan{fill:url(#beamg);stroke:none}
+html.js .draw .scan{animation:scanx 9s linear infinite}
+@keyframes scanx{from{transform:translateX(0)}to{transform:translateX(760px)}}
+/* le pouls : un anneau qui part du bord du verre et se dilue vers le cadran — jamais par-dessus le visage */
+.draw .ping{stroke:var(--laque);stroke-width:1.4;opacity:0;
+  transform-box:fill-box;transform-origin:center}
+html.js .draw .ping{animation:ping 3.6s cubic-bezier(.16,.8,.3,1) infinite}
+@keyframes ping{0%{transform:scale(.99);opacity:.5}70%{opacity:0}100%{transform:scale(1.25);opacity:0}}
+/* Sans JavaScript, le verre n'est pas vide : le premier visage reste affiché, fixe. Les autres
+   n'apparaissent qu'avec la relève, qui n'existe que sous `html.js`. */
+.draw .face{opacity:0}
+.draw .faces .face:first-child{opacity:1}
+html.js .draw .face{opacity:0;animation:facecycle 25s linear infinite}
+html.js .draw .face:nth-child(2){animation-delay:5s}
+html.js .draw .face:nth-child(3){animation-delay:10s}
+html.js .draw .face:nth-child(4){animation-delay:15s}
+html.js .draw .face:nth-child(5){animation-delay:20s}
+@keyframes facecycle{0%{opacity:0}1.8%{opacity:1}18.2%{opacity:1}20%{opacity:0}100%{opacity:0}}
 html.js .draw [data-draw]{stroke-dasharray:1400;stroke-dashoffset:1400}
 html.js .draw.is-on [data-draw]{animation:drawline 1.15s var(--ease) forwards;animation-delay:var(--dl,0s)}
 @keyframes drawline{to{stroke-dashoffset:0}}
@@ -197,11 +238,9 @@ h2{margin-top:14px;max-width:26ch}
 .facenote{display:grid;gap:6px;margin-top:20px}
 
 /* ── LE MIROIR — un seul visage, cinq formes, on glisse ─────────────────────────────────────────────
-   Remplace les cinq vignettes : un **buste dessiné** (SVG, avec ombres, reflets et verres teintés) qui
-   change de forme quand on glisse, avec les montures qui vont avec. Deux états superposés qu'on
-   enchaîne par `opacity` — le fondu se fait sous un voile de 2px de flou (MOTION §3.6), ce qui évite
-   l'effet « deux visages qui se chevauchent ». Tout tient sur les radios : **sans JavaScript, le
-   premier visage s'affiche et les pastilles changent de panneau.** */
+   Remplace les cinq vignettes : **un portrait par forme de visage**, un seul cadre, et la monture
+   qui va avec la forme — telle qu'un visagiste la conseillerait. On glisse sur la photo, ou on
+   appuie sur les flèches, ou on choisit la pastille. */
 .mirror-wrap{margin-top:26px}
 .mirror{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--rule);
   border-radius:var(--r-lg);padding:16px 16px 8px;touch-action:pan-y;cursor:grab;
@@ -215,21 +254,26 @@ h2{margin-top:14px;max-width:26ch}
   filter:blur(34px);opacity:.85}
 html.js .mirror .halo{animation:halospin 30s linear infinite}
 @keyframes halospin{to{transform:rotate(360deg)}}
-.avatar{position:relative;z-index:1;display:block;width:100%;max-width:400px;margin:0 auto}
-.avatar *{fill:none;stroke-linecap:round;stroke-linejoin:round}
-.avatar .body{stroke:var(--ink-3);stroke-width:2.2}
-.avatar .headpath{stroke:var(--ink);stroke-width:2.6;opacity:1}
-.avatar .shade{fill:rgba(20,19,15,.055);stroke:none}
-.avatar .lens{fill:rgba(142,43,34,.08);stroke:none}
-.avatar .frame{stroke:var(--laque);stroke-width:3.6}
-.avatar .temple{stroke:var(--laque);stroke-width:2.6;opacity:.75}
-.avatar .feat{stroke:var(--ink);stroke-width:2.2}
-.avatar .pupil{fill:var(--ink);stroke:none}
-.avatar .glint{stroke:var(--paper);stroke-width:1.6;opacity:.9}
-.avatar .head{opacity:0;transition:opacity var(--dur-panel) var(--ease-out)}
-#f-ovale:checked ~ .mirror-wrap .h-ovale,#f-rond:checked ~ .mirror-wrap .h-rond,
-#f-carre:checked ~ .mirror-wrap .h-carre,#f-coeur:checked ~ .mirror-wrap .h-coeur,
-#f-oblong:checked ~ .mirror-wrap .h-oblong{opacity:1}
+/* ── LES CINQ VISAGES — cinq portraits, une seule place ────────────────────────────────────────────
+   Ce sont des photographies : des **images d'illustration** générées pour la page, et la page le dit
+   sous le miroir. Elles montrent ce qu'un dessin ne montrait pas — un visage, et la monture POSÉE
+   dessus. Le fondu se fait sous un voile de 2 px de flou (MOTION §3.6), sinon on voit deux visages
+   l'un sur l'autre. Tout tient sur les radios : **sans JavaScript, le premier visage s'affiche et
+   les pastilles changent de panneau.** */
+.stage{position:relative;z-index:1;width:100%;max-width:380px;margin:0 auto;aspect-ratio:4/5;
+  border-radius:14px;overflow:hidden;background:var(--rule-2)}
+.shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;
+  transition:opacity var(--dur-panel) var(--ease-out),filter .22s var(--ease-out)}
+#f-ovale:checked ~ .mirror-wrap .s-ovale,#f-rond:checked ~ .mirror-wrap .s-rond,
+#f-carre:checked ~ .mirror-wrap .s-carre,#f-coeur:checked ~ .mirror-wrap .s-coeur,
+#f-oblong:checked ~ .mirror-wrap .s-oblong{opacity:1}
+.mirror.is-swap .shot{filter:blur(2px)}
+.mcap{margin:13px 0 2px;text-align:center;font:600 var(--fs-xs)/1.5 var(--f-b);letter-spacing:.15em;
+  text-transform:uppercase;color:var(--ink-3)}
+.mcap .m{display:none}
+#f-ovale:checked ~ .mirror-wrap .m-ovale,#f-rond:checked ~ .mirror-wrap .m-rond,
+#f-carre:checked ~ .mirror-wrap .m-carre,#f-coeur:checked ~ .mirror-wrap .m-coeur,
+#f-oblong:checked ~ .mirror-wrap .m-oblong{display:block}
 .mnav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:12px}
 .mnav .mbtn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;
   border-radius:999px;border:1px solid var(--rule);background:var(--card);color:var(--ink);cursor:pointer;
@@ -314,8 +358,16 @@ html.js .rv.in{opacity:1;transform:none;transition:opacity .5s var(--ease) var(-
   html.js .rv{opacity:1;transform:none;transition:none}
   html.js .draw [data-draw]{stroke-dasharray:none;stroke-dashoffset:0;animation:none}
   html.js .wash{animation:none}
+  html.js .wash2{animation:none}
   html.js .mirror .halo{animation:none}
-  .mirror{transition:none}
+  /* L'instrument s'arrête : plus d'onde, plus de cadran, plus de pouls — et UN visage reste, fixe. */
+  html.js .draw .scan{animation:none;opacity:0}
+  html.js .draw .dial{animation:none}
+  html.js .draw .ping{animation:none;opacity:0}
+  html.js .draw .face{animation:none}
+  html.js .draw .faces .face:first-child{opacity:1}
+  .mirror,.mirror .shot{transition:none}
+  .mirror.is-swap .shot{filter:none}
   *{transition-duration:.01ms !important}
 }
 @media print{ .dock,header.site{display:none} }
@@ -347,9 +399,10 @@ html.js .rv.in{opacity:1;transform:none;transition:opacity .5s var(--ease) var(-
 
 <main id="main">
 
-  <!-- ══ 1 · LE PREMIER ÉCRAN — le visage dessiné, et la ligne du regard ═══════════════════════════ -->
+  <!-- ══ 1 · LE PREMIER ÉCRAN — la ligne du regard, et les cinq visages dans le verre ══════════════ -->
   <section class="hero" id="top" aria-labelledby="h-hero">
     <div class="wash" aria-hidden="true"></div>
+    <div class="wash2" aria-hidden="true"></div>
     <div class="wrap grid">
       <div>
         <p class="kick rv"><span class="fr-only" lang="fr">Optique &amp; lunetterie · Akwa, Douala</span><span class="en-only" lang="en">Optics &amp; eyewear · Akwa, Douala</span></p>
@@ -387,14 +440,50 @@ html.js .rv.in{opacity:1;transform:none;transition:opacity .5s var(--ease) var(-
         </dl>
       </div>
       <div class="rv">
-        <svg class="draw" viewBox="0 0 560 260" aria-hidden="true" focusable="false">
-          <path class="ln rule" data-draw="1" style="--dl:.05s" d="M0 130h560"/>
-          <path class="ln tick" data-draw="1" style="--dl:.18s" d="M56 112v36M176 120v20M296 112v36M424 120v20M520 114v32"/>
-          <circle class="ln frame" data-draw="1" style="--dl:.34s" cx="352" cy="130" r="66"/>
-          <circle class="ln frame" data-draw="1" style="--dl:.46s" cx="352" cy="130" r="49"/>
-          <path class="ln sight" d="M330 130h-18M374 130h18M352 108v-18M352 152v18"/>
-          <circle class="ln dot" cx="352" cy="130" r="6"/>
-        </svg>
+        <div class="scope">
+          <svg class="draw" viewBox="0 0 560 400" aria-hidden="true" focusable="false">
+            <defs>
+              <radialGradient id="lensglow" cx="50%" cy="50%" r="50%">
+                <stop offset="0" stop-color="#8E2B22" stop-opacity=".18"/>
+                <stop offset="1" stop-color="#8E2B22" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="beamg" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#F1EFE9" stop-opacity="0"/>
+                <stop offset=".5" stop-color="#FFFFFF" stop-opacity=".85"/>
+                <stop offset="1" stop-color="#F1EFE9" stop-opacity="0"/>
+              </linearGradient>
+              <clipPath id="lensclip"><circle cx="290" cy="180" r="112"/></clipPath>
+            </defs>
+
+            <circle class="glow" cx="290" cy="180" r="172" fill="url(#lensglow)"/>
+
+            <!-- la ligne du regard : la règle, ses graduations, et l'onde qui la balaie -->
+            <path class="ln rule" data-draw="1" style="--dl:.05s" d="M0 180h560"/>
+            <path class="ln tick" data-draw="1" style="--dl:.18s" d="M40 160v40M110 168v24M460 168v24M530 160v40"/>
+            <rect class="scan" x="-190" y="10" width="170" height="340" fill="url(#beamg)"/>
+
+            <!-- le verre : les cinq visages s'y relaient, toutes les cinq secondes -->
+            <g class="faces" clip-path="url(#lensclip)">
+              <image class="face" x="178" y="68" width="224" height="224" href="data:image/jpeg;base64,__IMG_LENS_OVALE__" preserveAspectRatio="xMidYMid slice"/>
+              <image class="face" x="178" y="68" width="224" height="224" href="data:image/jpeg;base64,__IMG_LENS_ROND__" preserveAspectRatio="xMidYMid slice"/>
+              <image class="face" x="178" y="68" width="224" height="224" href="data:image/jpeg;base64,__IMG_LENS_CARRE__" preserveAspectRatio="xMidYMid slice"/>
+              <image class="face" x="178" y="68" width="224" height="224" href="data:image/jpeg;base64,__IMG_LENS_COEUR__" preserveAspectRatio="xMidYMid slice"/>
+              <image class="face" x="178" y="68" width="224" height="224" href="data:image/jpeg;base64,__IMG_LENS_OBLONG__" preserveAspectRatio="xMidYMid slice"/>
+            </g>
+
+            <!-- le cadran gradué du verre, qui tourne lentement -->
+            <g class="dial">
+              <path class="ln dialtick" d="M410 180L430 180M416 202L428 204M410 224L422 228M401 244L411 250M388 262L397 270M372 278L380 287M354 291L360 301M334 300L338 312M312 306L314 318M290 300L290 320M268 306L266 318M246 300L242 312M226 291L220 301M208 278L200 287M192 262L183 270M179 244L169 250M170 224L158 228M164 202L152 204M170 180L150 180M164 158L152 156M170 136L158 132M179 116L169 110M192 98L183 90M208 82L200 73M226 69L220 59M246 60L242 48M268 54L266 42M290 60L290 40M312 54L314 42M334 60L338 48M354 69L360 59M372 82L380 73M388 98L397 90M401 116L411 110M410 136L422 132M416 158L428 156"/>
+            </g>
+
+            <!-- la monture du verre, le réticule, et son pouls -->
+            <circle class="ln frame" data-draw="1" style="--dl:.34s" cx="290" cy="180" r="140"/>
+            <circle class="ln frame" data-draw="1" style="--dl:.46s" cx="290" cy="180" r="112"/>
+            <circle class="ping" cx="290" cy="180" r="112"/>
+            <circle class="ln dot" cx="150" cy="180" r="5"/>
+            <circle class="ln dot" cx="430" cy="180" r="5"/>
+          </svg>
+        </div>
       </div>
     </div>
   </section>
@@ -483,67 +572,20 @@ html.js .rv.in{opacity:1;transform:none;transition:opacity .5s var(--ease) var(-
         <div class="mirror-wrap">
           <div class="mirror rv" id="mirror">
             <div class="halo" aria-hidden="true"></div>
-            <svg class="avatar" viewBox="0 0 320 400" aria-hidden="true" focusable="false">
-              <path class="body" d="M52 400c0-36 42-60 108-60s108 24 108 60"/>
-              <path class="body" d="M104 400c14-14 34-22 56-22s42 8 56 22" opacity=".55"/>
-              <path class="body" d="M136 306v40M184 306v40"/>
-
-              <g class="head h-ovale">
-                <ellipse class="shade" cx="196" cy="150" rx="26" ry="54"/>
-                <path class="headpath" d="M160 44c46 0 72 34 72 84 0 58-30 110-72 110S88 186 88 128c0-50 26-84 72-84z"/>
-                <path class="feat" d="M88 142c-12-4-18 6-14 16 4 10 12 16 20 14M232 142c12-4 18 6 14 16-4 10-12 16-20 14"/>
-                <path class="lens" d="M112 136h46v28a8 8 0 0 1-8 8h-30a8 8 0 0 1-8-8zM162 136h46v28a8 8 0 0 1-8 8h-30a8 8 0 0 1-8-8z"/>
-                <path class="frame" d="M112 136h46v28a8 8 0 0 1-8 8h-30a8 8 0 0 1-8-8zM162 136h46v28a8 8 0 0 1-8 8h-30a8 8 0 0 1-8-8zM158 146h4"/>
-                <path class="temple" d="M112 142l-24-11M208 142l24-11"/>
-              </g>
-
-              <g class="head h-rond">
-                <ellipse class="shade" cx="200" cy="150" rx="24" ry="52"/>
-                <path class="headpath" d="M160 50c50 0 80 32 80 78 0 48-34 86-80 86S80 176 80 128c0-46 30-78 80-78z"/>
-                <path class="feat" d="M80 142c-12-4-18 6-14 16 4 10 12 16 20 14M240 142c12-4 18 6 14 16-4 10-12 16-20 14"/>
-                <path class="lens" d="M104 136h52v24a6 6 0 0 1-6 6h-40a6 6 0 0 1-6-6zM164 136h52v24a6 6 0 0 1-6 6h-40a6 6 0 0 1-6-6z"/>
-                <path class="frame" d="M104 136h52v24a6 6 0 0 1-6 6h-40a6 6 0 0 1-6-6zM164 136h52v24a6 6 0 0 1-6 6h-40a6 6 0 0 1-6-6zM156 146h8"/>
-                <path class="temple" d="M104 142l-22-10M216 142l22-10"/>
-              </g>
-
-              <g class="head h-carre">
-                <ellipse class="shade" cx="204" cy="152" rx="24" ry="50"/>
-                <path class="headpath" d="M104 52h112c4 0 6 2 6 6v72c0 48-28 80-62 80s-62-32-62-80V58c0-4 2-6 6-6z"/>
-                <path class="feat" d="M104 144c-12-4-18 6-14 16 4 10 12 16 20 14M216 144c12-4 18 6 14 16-4 10-12 16-20 14"/>
-                <ellipse class="lens" cx="133" cy="152" rx="25" ry="21"/>
-                <ellipse class="lens" cx="187" cy="152" rx="25" ry="21"/>
-                <g class="frame"><ellipse cx="133" cy="152" rx="25" ry="21"/><ellipse cx="187" cy="152" rx="25" ry="21"/><path d="M158 146h4"/></g>
-                <path class="temple" d="M108 144l-22-9M212 144l22-9"/>
-              </g>
-
-              <g class="head h-coeur">
-                <ellipse class="shade" cx="196" cy="152" rx="24" ry="50"/>
-                <path class="headpath" d="M96 118c0-38 28-68 64-68s64 30 64 68c0 46-38 78-64 100-26-22-64-54-64-100z"/>
-                <path class="feat" d="M106 142c-12-4-18 6-14 16 4 10 12 16 20 14M214 142c12-4 18 6 14 16-4 10-12 16-20 14"/>
-                <ellipse class="lens" cx="133" cy="154" rx="23" ry="20"/>
-                <ellipse class="lens" cx="187" cy="154" rx="23" ry="20"/>
-                <g class="frame"><ellipse cx="133" cy="154" rx="23" ry="20"/><ellipse cx="187" cy="154" rx="23" ry="20"/><path d="M156 148h8"/><path d="M110 140h100" opacity=".55"/></g>
-                <path class="temple" d="M110 146l-22-9M210 146l22-9"/>
-              </g>
-
-              <g class="head h-oblong">
-                <ellipse class="shade" cx="190" cy="152" rx="22" ry="54"/>
-                <path class="headpath" d="M160 38c30 0 48 26 48 70v72c0 44-20 74-48 74s-48-30-48-74v-72c0-44 18-70 48-70z"/>
-                <path class="feat" d="M114 142c-11-4-17 6-13 16 4 10 11 15 19 13M206 142c11-4 17 6 13 16-4 10-11 15-19 13"/>
-                <path class="lens" d="M112 128h44v40a8 8 0 0 1-8 8h-28a8 8 0 0 1-8-8zM164 128h44v40a8 8 0 0 1-8 8h-28a8 8 0 0 1-8-8z"/>
-                <path class="frame" d="M112 128h44v40a8 8 0 0 1-8 8h-28a8 8 0 0 1-8-8zM164 128h44v40a8 8 0 0 1-8 8h-28a8 8 0 0 1-8-8zM156 138h8"/>
-                <path class="temple" d="M112 134l-26-13M208 134l26-13"/>
-              </g>
-
-              <path class="feat" d="M124 146c7-6 16-6 23 0M174 146c7-6 16-6 23 0"/>
-              <circle class="pupil" cx="135" cy="153" r="4.4"/>
-              <circle class="pupil" cx="185" cy="153" r="4.4"/>
-              <circle class="glint" cx="137" cy="151" r="1.5"/>
-              <circle class="glint" cx="187" cy="151" r="1.5"/>
-              <path class="feat" d="M122 130c9-7 20-7 28-2M172 128c9-5 20-5 28 2"/>
-              <path class="feat" d="M160 156v22c0 6 4 9 10 9"/>
-              <path class="feat" d="M144 214c10 8 22 8 32 0"/>
-            </svg>
+            <div class="stage">
+              <img class="shot s-ovale" src="data:image/jpeg;base64,__IMG_FACE_OVALE__" alt="" width="720" height="900" decoding="async">
+              <img class="shot s-rond" src="data:image/jpeg;base64,__IMG_FACE_ROND__" alt="" width="720" height="900" decoding="async">
+              <img class="shot s-carre" src="data:image/jpeg;base64,__IMG_FACE_CARRE__" alt="" width="720" height="900" decoding="async">
+              <img class="shot s-coeur" src="data:image/jpeg;base64,__IMG_FACE_COEUR__" alt="" width="720" height="900" decoding="async">
+              <img class="shot s-oblong" src="data:image/jpeg;base64,__IMG_FACE_OBLONG__" alt="" width="720" height="900" decoding="async">
+            </div>
+            <p class="mcap">
+              <span class="m m-ovale"><span class="fr-only" lang="fr">Visage ovale</span><span class="en-only" lang="en">Oval face</span></span>
+              <span class="m m-rond"><span class="fr-only" lang="fr">Visage rond</span><span class="en-only" lang="en">Round face</span></span>
+              <span class="m m-carre"><span class="fr-only" lang="fr">Visage carré</span><span class="en-only" lang="en">Square face</span></span>
+              <span class="m m-coeur"><span class="fr-only" lang="fr">Visage en cœur</span><span class="en-only" lang="en">Heart-shaped face</span></span>
+              <span class="m m-oblong"><span class="fr-only" lang="fr">Visage oblong</span><span class="en-only" lang="en">Oblong face</span></span>
+            </p>
           </div>
           <div class="mnav">
             <button class="mbtn" id="mprev" type="button" aria-label="Visage précédent">
@@ -629,6 +671,7 @@ html.js .rv.in{opacity:1;transform:none;transition:opacity .5s var(--ease) var(-
       <div class="facenote">
         <p class="note"><span class="fr-only" lang="fr">C'est un <b>conseil de style</b>, pas un examen : le dernier mot revient à la visagiste, devant le miroir, avec vos cheveux, votre teint et la façon dont vous bougez la tête. Cette page vous fait gagner l'aller-retour, elle ne remplace personne.</span><span class="en-only" lang="en">This is <b>styling advice</b>, not an examination: the last word belongs to the stylist, in front of the mirror, with your hair, your colouring and the way you move your head. This page saves you the back-and-forth; it does not replace anyone.</span></p>
         <p class="note"><span class="fr-only" lang="fr">Votre photo reste dans la conversation WhatsApp : elle ne va nulle part ailleurs, et vous pouvez l'envoyer ou non.</span><span class="en-only" lang="en">Your photo stays in the WhatsApp conversation: it goes nowhere else, and you can send it or not.</span></p>
+        <p class="note"><span class="fr-only" lang="fr">Les cinq portraits de cette page sont des <b>images d'illustration</b>, faites pour montrer les formes de visage : ce ne sont pas des clients du cabinet, et ce ne sont pas des montures de son stock.</span><span class="en-only" lang="en">The five portraits on this page are <b>illustration images</b>, made to show the face shapes: they are not the practice's clients, and not frames from its stock.</span></p>
       </div>
     </div>
   </section>

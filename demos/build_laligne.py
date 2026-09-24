@@ -10,9 +10,14 @@ Ce que fait ce script, dans l'ordre :
  3. il en fait la copie déployable dans `hosting/previews/laligne/` et **dessine** la vignette 1200×630
     (`og.jpg`) que WhatsApp affichera avant d'ouvrir le lien (§20.7).
 
-**Il n'y a aucune photographie à préparer** : la page de La Ligne Optic est entièrement **dessinée**
-(SVG). Le cabinet n'a publié aucune photo, et on ne fabrique pas la vitrine de quelqu'un d'autre — voir
-`clients/la-ligne/dossier.md` §5. La vignette elle-même est un dessin, fait ici avec ImageMagick.
+Les cinq visages sont des **portraits d'illustration**, générés pour la page : le cabinet n'a publié
+aucune photo de lui, et on ne fabrique pas la vitrine de quelqu'un d'autre — voir
+`clients/la-ligne/dossier.md` §5. Chaque forme est montée DEUX fois, et les deux en base64 : une
+grande dans le miroir (720×900), une carrée dans le verre du premier écran (320×320, exactement le
+cadrage circulaire du verre). Le premier écran regarde un visage à travers une ligne de vue — c'est la
+page entière en un objet. La page dit noir sur blanc, sous le miroir, que ce sont des **images
+d'illustration** et non des clients du cabinet. La vignette du lien reprend le même portrait, rond,
+dans un anneau laque.
 
 Rien n'est inventé : tout ce que la page affirme vient du contrôle approfondi du 24/09
 (`clients/la-ligne/dossier.md`) — le registre de l'Ordre, l'annuaire où le cabinet écrit son adresse et
@@ -24,6 +29,7 @@ Usage :
   python3 demos/build_laligne.py --url https://…        # remplit og:url / og:image APRÈS déploiement
 """
 import argparse
+import base64
 import pathlib
 import re
 import subprocess
@@ -32,6 +38,7 @@ import urllib.parse
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DEMOS = ROOT / "demos"
+IMG = DEMOS / "img"
 TPL = DEMOS / "laligne-v1.tpl.html"
 OUT_CONCEPT = DEMOS / "concept-laligne-v1.html"
 PREVIEW = ROOT / "hosting" / "previews" / "laligne"
@@ -45,6 +52,47 @@ SAFE = "!'()*-._~"
 
 # Les couleurs de la page, reprises telles quelles dans la vignette : craie, graphite, laque.
 PAPER, INK, LAQUE, GREY = "#F1EFE9", "#14130F", "#8E2B22", "#5F5A4E"
+
+
+# ── LES CINQ PORTRAITS D'ILLUSTRATION ────────────────────────────────────────────────────────────────
+# Le suffixe est celui des radios de la page (`f-ovale`…), donc une forme = un nom, du gabarit au test.
+SHAPES = ["ovale", "rond", "carre", "coeur", "oblong"]
+
+# Le cadrage du verre : le cercle couvre le carré central de 88,9 % × 71,1 % du portrait (4:5), soit
+# 640 px dans les deux sens. C'est CE carré que le premier écran affiche, agrandi à 320 px.
+LENS_CROP = "88.9x71.1%"
+
+
+def prepare(name, target, quality, out):
+    """Couvre la cible puis recadre AU CENTRE (`resize ^` + `extent`) : aucun décalage écrit en dur."""
+    src = IMG / name
+    if not src.exists():
+        sys.exit("portrait manquant : %s" % src)
+    subprocess.run(["convert", str(src), "-auto-orient", "-resize", target + "^",
+                    "-gravity", "center", "-extent", target,
+                    "-strip", "-interlace", "Plane", "-quality", quality, str(out)], check=True)
+    return out.stat().st_size
+
+
+def prepare_lens(name, out, size=320, quality="64"):
+    """Le carré du verre : le centre du portrait, recadré sous le cercle du premier écran.
+
+    Le cercle du gabarit fait 192 unités de diamètre dans une boîte 4:5 : il couvre donc le carré
+    central de 88,9 % × 71,1 % de la photo, et rien d'autre. On le prépare ici une fois pour toutes —
+    le SVG n'a plus qu'à poser un carré sur un carré."""
+    src = IMG / name
+    if not src.exists():
+        sys.exit("portrait manquant : %s" % src)
+    subprocess.run(["convert", str(src), "-auto-orient",
+                    "-resize", "720x900^", "-gravity", "center", "-extent", "720x900",
+                    "-gravity", "center", "-crop", LENS_CROP, "+repage",
+                    "-resize", "%dx%d!" % (size, size),
+                    "-strip", "-quality", quality, str(out)], check=True)
+    return out.stat().st_size
+
+
+def b64(path):
+    return base64.b64encode(path.read_bytes()).decode("ascii")
 
 
 def fix_whatsapp(html):
@@ -62,31 +110,36 @@ def fix_whatsapp(html):
     return out
 
 
+def round_photo(name, size, out):
+    """Un portrait, rond : le carré central, masqué en cercle. Pas de navigateur dans le bac pour
+    faire une capture d'écran — alors on monte la vignette à la main, avec la vraie photo."""
+    r = size // 2
+    subprocess.run(["convert", str(IMG / name), "-auto-orient",
+                    "-resize", "%dx%d^" % (size, size), "-gravity", "center",
+                    "-extent", "%dx%d" % (size, size),
+                    "(", "-size", "%dx%d" % (size, size), "xc:none", "-fill", "white",
+                    "-draw", "circle %d,%d %d,4" % (r, r, r), ")",
+                    "-alpha", "off", "-compose", "CopyOpacity", "-composite",
+                    "-strip", str(out)], check=True)
+    return out
+
+
 def draw_og(out, url_label):
-    """La carte du lien : la craie, la ligne du regard, un visage et une monture DESSINÉS — et pas une
-    photographie, parce qu'il n'y en a pas. Pas de capture d'écran possible dans le bac (aucun
-    navigateur) : on la dessine, et elle est vraie."""
+    """La carte du lien : la craie, la ligne du regard, et le visage DANS le verre — le même motif que
+    le premier écran de la page. Le portrait est une image d'illustration, comme sur la page."""
     size = "1200x630"
+    face = round_photo("laligne-visage-carre.jpg", 256, "/tmp/laligne-og-face.png")
     args = ["convert", "-size", size, "xc:%s" % PAPER,
             # la règle du regard, d'un bord à l'autre — la signature de la page
             "-stroke", GREY, "-strokewidth", "2", "-fill", "none",
             "-draw", "line 0,352 1200,352",
             "-draw", "line 60,344 60,360", "-draw", "line 1140,344 1140,360",
-            # le visage, à droite
-            "-stroke", INK, "-strokewidth", "5",
-            "-draw", "ellipse 930,300 108,150 0,360",
-            "-stroke", GREY, "-strokewidth", "3",
-            "-draw", "path 'M 862,214 C 848,214 838,222 832,232'",
-            "-draw", "path 'M 998,214 C 1012,214 1022,222 1028,232'",
-            # la monture, par-dessus la ligne
-            "-stroke", LAQUE, "-strokewidth", "8",
-            "-draw", "roundrectangle 852,330 926,384 12,12",
-            "-draw", "roundrectangle 934,330 1008,384 12,12",
-            "-stroke", LAQUE, "-strokewidth", "6",
-            "-draw", "path 'M 926,340 q 16,-9 8,0'",
-            "-draw", "line 852,338 812,324", "-draw", "line 1008,338 1048,324"]
+            # le verre : son anneau posé SUR la ligne, et le portrait dedans
+            "-stroke", LAQUE, "-strokewidth", "5",
+            "-draw", "circle 1000,224 1000,93",
+            str(face), "-geometry", "+872+96", "-composite"]
     # les mots
-    args += ["-font", "DejaVu-Sans-Bold", "-pointsize", "92", "-fill", INK, "-stroke", "none",
+    args += ["-font", "DejaVu-Sans-Bold", "-pointsize", "78", "-fill", INK, "-stroke", "none",
              "-annotate", "+78+250", "LA LIGNE OPTIC",
              "-font", "DejaVu-Sans", "-pointsize", "30", "-fill", LAQUE,
              "-annotate", "+82+300", "Optique & lunetterie · Akwa, Douala",
@@ -111,6 +164,20 @@ def main():
 
     html = TPL.read_text(encoding="utf-8")
     html = fix_whatsapp(html)
+
+    # ── les cinq portraits : le grand pour le miroir, le carré pour le verre du premier écran ──────
+    tmp = pathlib.Path("/tmp/laligne-img")
+    tmp.mkdir(parents=True, exist_ok=True)
+    total = 0
+    for s in SHAPES:
+        name = "laligne-visage-%s.jpg" % s
+        big = tmp / ("%s-720.jpg" % s)
+        lens = tmp / ("%s-320.jpg" % s)
+        total += prepare(name, "720x900", "66", big)
+        total += prepare_lens(name, lens)
+        html = html.replace("__IMG_FACE_%s__" % s.upper(), b64(big))
+        html = html.replace("__IMG_LENS_%s__" % s.upper(), b64(lens))
+    print("✓ 5 portraits × 2 tailles, embarqués en base64 (%.0f Ko de JPEG)" % (total / 1024))
 
     if opts.url:
         url = opts.url.rstrip("/") + "/"

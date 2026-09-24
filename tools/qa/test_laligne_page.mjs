@@ -94,9 +94,26 @@ ok("un seul numéro WhatsApp dans toute la page : le 683 651 108",
 ok("un seul numéro appelable, et c'est le même",
    (html.match(/tel:\+237(\d+)/g) || []).every((t) => t === "tel:+237683651108"));
 
-/* ── LA SIGNATURE DE CETTE PAGE : elle est DESSINÉE ─────────────────────────────────────────────── */
-ok("aucune photographie : la page n'a pas un seul <img>, et rien en base64",
-   !/<img\b/i.test(html) && !/data:image/i.test(html));
+/* ── LES CINQ VISAGES SONT DES PHOTOGRAPHIES — retour de King, 24/09 au soir ───────────────────────
+   « the heads can we make something more realistic can't you generate heads of those shapes with
+   glasses ». Réponse : cinq portraits d'ILLUSTRATION (générés pour la page, et la page le dit), montés
+   en base64 — une grande dans le miroir, une carrée dans le verre du premier écran. Aucune image ne
+   vient d'ailleurs : pas une seule adresse externe. */
+const shots = [...html.matchAll(/<img class="shot s-([a-z]+)" src="data:image\/jpeg;base64,([^"]{500,})"/g)].map((m) => m[1]);
+ok(`les ${shots.length} portraits du miroir sont embarqués, un par forme de visage`,
+   shots.length === 5 && ["ovale", "rond", "carre", "coeur", "oblong"].every((s) => shots.includes(s)));
+const lensFaces = [...html.matchAll(/<image class="face" x="\d+" y="\d+" width="224" height="224" href="data:image\/jpeg;base64,([^"]{400,})"/g)];
+ok(`le verre du premier écran montre ${lensFaces.length} visages, cadrés pour le cercle (224 = 2 × 112)`,
+   lensFaces.length === 5);
+ok("aucune image ne vient d'ailleurs : ni <img> ni <image> qui pointe hors de la page",
+   !/<img[^>]+src="(?!data:image\/jpeg;base64,)/i.test(html) &&
+   !/<image[^>]+href="(?!data:image\/jpeg;base64,)/i.test(html));
+ok("les portraits sont annoncés comme des images d'illustration, jamais comme des clients du cabinet",
+   /images d'illustration/.test(text) && /not the practice's clients/.test(html) &&
+   /ce ne sont pas des clients du cabinet/.test(text));
+ok("les portraits du miroir sont décoratifs (alt vide) : le sens est dans la légende et les panneaux",
+   [...html.matchAll(/<img class="shot[^>]*>/g)].every((m) => /\balt=""/.test(m[0])) &&
+   !/<img(?![^>]*alt=)/i.test(html));
 const svgs = [...html.matchAll(/<svg\b[^>]*>/g)].map((m) => m[0]);
 ok(`les ${svgs.length} dessins sont décoratifs et annoncés comme tels (aria-hidden)`,
    svgs.length >= 12 && svgs.every((s) => s.includes('aria-hidden="true"') && s.includes('focusable="false"')));
@@ -123,21 +140,48 @@ ok("la lueur ne tourne que sous html.js, et s'arrête en mouvement réduit",
    /@keyframes washdrift\{[\s\S]*?translate3d/.test(html) &&
    CALM.includes("html.js .wash{animation:none}"));
 
-/* ── LE MIROIR : un buste, cinq formes, et le geste ─────────────────────────────────────────────── */
-const avatar = (html.match(/<svg class="avatar"[\s\S]*?<\/svg>/) || [""])[0];
-const heads = [...avatar.matchAll(/<g class="head h-([a-z]+)"/g)].map((m) => m[1]);
-ok(`le miroir dessine UN buste et ${heads.length} formes de visage`,
-   heads.length === 5 && ["ovale", "rond", "carre", "coeur", "oblong"].every((h) => heads.includes(h)) &&
-   avatar.includes('class="body"') && avatar.includes('class="shade"') && avatar.includes('class="lens"'));
-const headPaths = [...avatar.matchAll(/<path class="headpath" d="([^"]+)"/g)].map((m) => m[1]);
-ok("les cinq visages sont cinq tracés DIFFÉRENTS (aucun copié-collé)",
-   headPaths.length === 5 && new Set(headPaths).size === 5);
-ok("chaque visage porte SA monture, dessinée dans son propre groupe",
-   [...avatar.matchAll(/<g class="head h-[a-z]+"[\s\S]*?<\/g>/g)].filter((b) => b[0].includes('class="frame"')).length === 5);
+/* ── LE PREMIER ÉCRAN EST VIVANT — « the hero looks boring, told you I wanted animations » ─────────
+   Quatre mouvements dans l'instrument (l'onde qui balaie la règle, le cadran qui tourne, le pouls qui
+   part du verre, les visages qui se relaient) plus une deuxième couche de dégradé qui tourne. Comme
+   tout le reste : rien ne bouge sans `html.js`, et `prefers-reduced-motion` arrête les cinq. */
+ok("le premier écran est VIVANT : l'onde balaie la règle, le cadran tourne, le pouls bat, les visages passent",
+   /html\.js \.draw \.scan\{animation:scanx 9s/.test(html) && /@keyframes scanx\{/.test(html) &&
+   /html\.js \.draw \.dial\{animation:dialspin 96s/.test(html) && /@keyframes dialspin\{/.test(html) &&
+   /html\.js \.draw \.ping\{animation:ping 3.6s/.test(html) && /@keyframes ping\{/.test(html) &&
+   /html\.js \.draw \.face\{[^}]*animation:facecycle 25s/.test(html) && /@keyframes facecycle\{/.test(html) &&
+   (html.match(/\.face:nth-child\([2-5]\)\{animation-delay:\d+s\}/g) || []).length === 4);
+ok("sans JavaScript, le verre n'est pas vide : le premier visage reste affiché, fixe",
+   /\n\.draw \.faces \.face:first-child\{opacity:1\}/.test(html) &&      /* hors de la porte html.js */
+   /html\.js \.draw \.face\{opacity:0;animation:facecycle/.test(html));
+ok("ces mouvements ne tournent QUE sous html.js (une page sans JavaScript reste immobile et lisible)",
+   !/^\.draw \.scan\{animation/m.test(html) && !/^\.draw \.face\{animation/m.test(html) &&
+   !/^\.draw \.dial\{animation/m.test(html) && !/^\.draw \.ping\{animation/m.test(html));
+ok("la deuxième couche de dégradé tourne (54 s) et s'arrête en mouvement réduit",
+   /html\.js \.wash2\{animation:washspin 54s linear infinite\}/.test(html) &&
+   /@keyframes washspin\{to\{transform:rotate\(360deg\)\}\}/.test(html) &&
+   CALM.includes("html.js .wash2{animation:none}"));
+ok("en mouvement réduit, l'instrument s'arrête — et UN visage reste affiché, fixe",
+   CALM.includes("html.js .draw .scan{animation:none") &&
+   CALM.includes("html.js .draw .dial{animation:none}") &&
+   CALM.includes("html.js .draw .ping{animation:none") &&
+   CALM.includes("html.js .draw .face{animation:none}") &&
+   CALM.includes("html.js .draw .faces .face:first-child{opacity:1}"));
+
+/* ── LE MIROIR : une seule place, cinq visages, et le geste ─────────────────────────────────────── */
+ok("le miroir empile les cinq portraits dans le MÊME cadre (une place, pas cinq vignettes)",
+   /<div class="stage">/.test(html) && (html.match(/class="shot s-[a-z]+"/g) || []).length === 5 &&
+   /\.stage\{[^}]*aspect-ratio:4\/5/.test(html) && /\.shot\{[^}]*position:absolute/.test(html));
 ok("le visage affiché est commandé par les pastilles, en CSS pur (donc sans JavaScript)",
-   /#f-carre:checked ~ \.mirror-wrap \.h-carre/.test(html) &&
-   /#f-oblong:checked ~ \.mirror-wrap \.h-oblong\{opacity:1\}/.test(html) &&
-   /\.avatar \.head\{opacity:0/.test(html));
+   /#f-carre:checked ~ \.mirror-wrap \.s-carre/.test(html) &&
+   /#f-oblong:checked ~ \.mirror-wrap \.s-oblong\{opacity:1\}/.test(html) &&
+   /\.shot\{[^}]*opacity:0/.test(html));
+ok("la légende nomme le visage affiché, elle change avec lui, et une seule langue s'affiche",
+   /\.mcap \.m\{display:none\}/.test(html) &&
+   /#f-carre:checked ~ \.mirror-wrap \.m-carre/.test(html) &&
+   (html.match(/<span class="m m-[a-z]+">/g) || []).length === 5 &&
+   [...html.matchAll(/<span class="m m-[a-z]+">([\s\S]*?)<\/span><\/span>/g)].every((m) => m[1].includes("fr-only") && m[1].includes("en-only")));
+ok("le fondu entre deux visages passe sous un voile de 2 px de flou (MOTION §3.6)",
+   /\.mirror\.is-swap \.shot\{filter:blur\(2px\)\}/.test(html));
 ok("le geste laisse le défilement vertical au navigateur (touch-action:pan-y)",
    /\.mirror\{[^}]*touch-action:pan-y/.test(html));
 ok("le halo du miroir est un élément décoratif, animé seulement sous html.js, arrêté en mouvement réduit",
