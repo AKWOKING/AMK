@@ -226,3 +226,34 @@ interdit sa propre lecture tant que le JavaScript ne tourne pas.
 goût, c'est **que la page ne s'affiche pas comme je l'imagine**. Une maquette n'existe que de ce que le
 lecteur peut prouver ; et « je n'ai pas de navigateur dans le bac » n'autorise pas à livrer un fichier
 dont la lisibilité dépend d'un script que personne n'a compilé.
+
+---
+
+## 24 Sep 2026 · Cavisa Optique (`demos/build_cavisa.py`) — un test qui passe peut tester le mauvais script
+
+**Ce qui s'est passé.** Le harnais de cette page (`tools/qa/test_cavisa_page.mjs`, le premier écrit sans
+navigateur *ni* jsdom, sur le `fake_dom.mjs` du dépôt) a été écrit le jour même. Il a trouvé **trois pièges
+d'instrument**, pas trois défauts de page — et l'un des trois aurait rendu le test mensonger.
+
+1. **`quote()` de Python n'encode pas comme `encodeURIComponent()`.** La page écrit ses adresses WhatsApp en
+   clair dans le HTML (pour le visiteur sans JavaScript, et pour tout ce qui lit la page sans l'exécuter) et
+   les reconstruit en JavaScript. Les deux formes doivent être **identiques au caractère près** — la seule
+   différence était l'apostrophe : Python encode `'` en `%27`, JavaScript le laisse tel quel. Un test l'a
+   attrapé à la première exécution. **Correction** : les textes pré-remplis de cette page utilisent
+   l'apostrophe typographique `’` (encodée `%E2%80%99` par les deux), et le harnais vérifie désormais
+   `href === base + encodeURIComponent(data-fr)` sur **les dix liens**.
+2. **Le marqueur d'extraction existait deux fois.** `scriptAfter(html, "LE MOUVEMENT")` cherche le texte
+   partout : le commentaire **CSS** portait la même phrase que l'en-tête du **script**, donc l'extracteur a
+   renvoyé… le micro-script du `<head>`. Le test aurait alors vérifié un autre script, en vert. **Correction** :
+   le commentaire CSS a été renommé (« L'ENTRÉE EN SCÈNE ») — le mot du script n'existe plus qu'une fois dans
+   le fichier. *À retenir : un marqueur doit être unique au bloc qu'il désigne ; sinon on teste un voisin.*
+3. **Un faux `window` doit porter ce que le script interroge.** Le système de révélation teste
+   `'IntersectionObserver' in window` : en ne passant l'API que par le paramètre, on faisait prendre le
+   **chemin de secours** pour le chemin réel. Le harnais porte maintenant l'API dans le faux `window`.
+
+**Et une leçon de méthode, pas de code.** L'inspiration imposée (`godly.design/website/superpower/` →
+`superpower.com`) **n'est pas un opticien** : c'est un abonnement santé à 349 $/an. `PRE-FLIGHT.md` §2 exige
+trois références ; ici la troisième est le **marché réel de Douala** (les opticiens en ligne y sont des cartes
+de visite claires et génériques). La structure se transpose, **les chiffres non** : le bloc de comparaison de
+Superpower devient « Aucune surprise avant de vous déplacer », sans un seul nombre. C'est le travail, pas un
+obstacle — et c'est écrit dans `clients/cavisa/inspiration.md`.

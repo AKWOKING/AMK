@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Cavisa Optique — opticien à Douala : montures, verres, réparation</title>
+<meta name="description" content="Boutique d'optique à Douala : montures pour homme, femme et enfant, verres sur ordonnance, réparation et ajustage. Vous écrivez sur WhatsApp, le message part déjà écrit.">
+<meta name="theme-color" content="#14100D">
+<meta property="og:type" content="website"><meta property="og:locale" content="fr_FR"><meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Cavisa Optique — montures, verres et réparation à Douala">
+<meta property="og:description" content="Montures pour homme, femme et enfant, verres sur ordonnance, réparation et ajustage. Le message WhatsApp part déjà écrit.">
+<!-- À LA MISE EN LIGNE (PRE-FLIGHT §20.7) : WhatsApp ne résout pas les URL relatives, donc `og:image` et `og:url` ne peuvent être écrits qu'après le premier déploiement. La vignette 1200×630 est prête dans le dossier (`og.jpg`). Décommenter et coller l'adresse réelle :
+<meta property="og:url" content="https://ADRESSE-DU-SITE/">
+<meta property="og:image" content="https://ADRESSE-DU-SITE/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Une cliente essaie une monture au comptoir d'une boutique d'optique.">
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<script>/* Ce script s'exécute avant le premier rendu : il retire `no-js`, pose `js` (c'est ce qui autorise les
+   états d'entrée en CSS, §13) et remet la langue choisie la dernière fois. Sans JavaScript, rien de tout
+   ceci ne s'applique et la page s'affiche en français, entière, lisible. */
+(function(){try{var h=document.documentElement;h.classList.remove("no-js");h.classList.add("js");
+var l=localStorage.getItem("cavisa-lang");if(l==="en"||l==="fr")h.setAttribute("data-lang",l);}catch(e){}})();</script>
+<style>
+:root{
+  /* ── LA COULEUR : Black & Tan (§6.2, famille du pool, jamais utilisée dans la registre) ────────────
+     Un sol de nuit chaude, un seul ambre qui conduit l'œil, un ivoire chaud pour lire. Le vert est
+     réservé à une seule chose : les envois WhatsApp. */
+  --soot:#14100D; --soot-2:#1C1611; --card:#221A13; --card-2:#2A2118;
+  --ivory:#F7EDE1; --ivory-2:#E6D6C5; --mute:#C3AE9A;
+  --amber:#E9A544; --amber-2:#F3C078; --ring:rgba(233,165,68,.5);
+  --wa:#0C7F41; --wa-2:#0A6B37;
+  --paper:#F7EDE1; --ink:#1A120C; --ink-2:#4C3A2B;
+  --line:rgba(233,198,152,.17); --line-2:rgba(233,198,152,.09);
+  --r:20px; --max:1120px; --gut:20px;
+  /* ── LA TYPOGRAPHIE : l'en-tête d'abord (§23.4) — Instrument Serif, puis Karla pour lire ─────────── */
+  --f-display:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --f-body:"Karla",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --fs-h1:clamp(2.25rem,7.6vw,3.35rem);
+  --fs-h2:clamp(1.62rem,5.2vw,2.5rem);
+  --fs-h3:clamp(1.12rem,3.5vw,1.32rem);
+  --fs-lead:clamp(1.06rem,2.8vw,1.2rem);
+  --fs-base:1.0625rem; --fs-sm:.95rem; --fs-xs:.87rem; --fs-label:.73rem;
+  --ease:cubic-bezier(.23,1,.32,1);
+}
+@media (min-width:760px){ :root{--fs-base:1rem; --gut:28px; --r:24px} }
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+body{margin:0;background:var(--soot);color:var(--ivory);
+  font:var(--fs-base)/1.62 var(--f-body); font-variant-numeric:tabular-nums;
+  padding-bottom:82px}          /* la place de la barre du bas sur téléphone (§24) */
+@media (min-width:760px){ body{padding-bottom:0} }
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;margin:0;letter-spacing:-.015em;text-wrap:balance}
+h1{font-size:var(--fs-h1);line-height:1.03}
+h2{font-size:var(--fs-h2);line-height:1.06}
+h3{font-size:var(--fs-h3);line-height:1.2;font-family:var(--f-body);font-weight:700;letter-spacing:0}
+p{margin:.7rem 0 0;text-wrap:pretty}
+ul,ol{margin:0;padding:0;list-style:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+section{padding:54px 0; scroll-margin-top:76px}
+@media (min-width:760px){ section{padding:92px 0} }
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.mute{color:var(--mute)}
+.lede{font-size:var(--fs-lead);color:var(--ivory-2);max-width:60ch;margin-top:14px}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:8px}
+.skip{position:absolute;left:14px;top:-64px;z-index:90;background:var(--amber);color:#1A120C;
+  padding:13px 18px;border-radius:999px;text-decoration:none;font-weight:700;
+  transition:top .18s var(--ease)}
+.skip:focus{top:14px}
+
+/* ── LES DEUX LANGUES ───────────────────────────────────────────────────────────────────────────────
+   Les deux textes vivent dans le HTML (c'est ce que lisent Google, les lecteurs d'écran et le
+   presse-papier) ; `data-lang` sur <html> décide lequel s'affiche (§20.8, §20.9 : la classe de langue
+   ne va JAMAIS sur un élément dont l'affichage compte — toujours sur un <span> intérieur). */
+.en-only{display:none}
+html[data-lang="en"] .fr-only{display:none}
+html[data-lang="en"] .en-only{display:inline}
+html[data-lang="en"] .en-only.as-block{display:block}
+
+/* ── LA BARRE DU HAUT ET L'EN-TÊTE ───────────────────────────────────────────────────────────────── */
+.topbar{background:var(--soot-2);border-bottom:1px solid var(--line-2);font-size:var(--fs-xs);color:var(--ivory-2)}
+.topbar .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;min-height:44px;padding-top:5px;padding-bottom:5px}
+.topbar a{text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:1px}
+header.site{border-bottom:1px solid var(--line-2)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px;padding-top:9px;padding-bottom:9px}
+.brand{font-family:var(--f-display);font-size:1.42rem;letter-spacing:.06em;text-decoration:none;white-space:nowrap}
+.brand b{font-weight:400}
+.brand span{color:var(--amber)}
+.nav{display:none}
+@media (min-width:900px){
+  .nav{display:flex;gap:26px;font-size:var(--fs-sm)}
+  .nav a{text-decoration:none;color:var(--ivory-2);border-bottom:1px solid transparent;padding-bottom:2px;
+    transition:color .16s var(--ease),border-color .16s var(--ease)}
+}
+.langbox{display:flex;align-items:center;gap:2px;border:1px solid var(--line);border-radius:999px;padding:3px}
+.lang{font:700 var(--fs-label)/1 var(--f-body);letter-spacing:.1em;color:var(--ivory-2);
+  background:none;border:0;padding:9px 12px;border-radius:999px;cursor:pointer;
+  transition:background-color .16s var(--ease),color .16s var(--ease),transform .12s var(--ease)}
+.lang.is-on{background:var(--amber);color:#1A120C}
+.lang:active{transform:scale(.97)}
+
+/* ── LES BOUTONS : une seule action principale par écran (§16) ────────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 22px;
+  border-radius:999px;border:1px solid transparent;font-family:var(--f-body);font-weight:700;
+  font-size:1rem;text-decoration:none;cursor:pointer;
+  transition:background-color .18s var(--ease),color .18s var(--ease),border-color .18s var(--ease),transform .13s var(--ease)}
+.btn:active{transform:scale(.98)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-line{border-color:var(--ring);color:var(--ivory)}
+.btn svg{width:19px;height:19px;flex:none;fill:currentColor}
+@media (hover:hover) and (pointer:fine){
+  .btn-wa:hover{background:var(--wa-2)}
+  .btn-line:hover{border-color:var(--amber);color:var(--amber-2)}
+  .nav a:hover{color:var(--amber-2);border-color:var(--ring)}
+  .lang:hover{color:var(--amber-2)}
+  .card:hover{border-color:var(--ring)}
+  .cardlink:hover{color:var(--amber-2)}
+  .cardlink:hover svg{transform:translateX(3px)}
+  a.wa-row:hover{color:var(--amber-2)}
+}
+@media (min-width:760px){ .btn{min-height:50px} }
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+
+/* ── LE HERO ──────────────────────────────────────────────────────────────────────────────────────── */
+.hero{padding-top:38px}
+@media (min-width:760px){ .hero{padding-top:64px} }
+.hero-grid{display:grid;gap:30px;align-items:center}
+@media (min-width:860px){ .hero-grid{grid-template-columns:1.02fr .98fr;gap:54px} }
+.chip{display:inline-flex;align-items:center;gap:9px;margin:0;border:1px solid var(--line);
+  border-radius:999px;padding:7px 15px 7px 11px;font-size:var(--fs-xs);letter-spacing:.05em;color:var(--ivory-2)}
+.chip svg{width:15px;height:15px;flex:none}
+h1 em{font-style:italic;color:var(--amber)}
+.proof{display:flex;flex-wrap:wrap;gap:8px 10px;margin-top:26px}
+.proof li{font-size:var(--fs-xs);letter-spacing:.04em;color:var(--ivory-2);border:1px solid var(--line-2);
+  border-radius:999px;padding:6px 12px;background:var(--soot-2)}
+
+/* ── LE VERRE : le motif de la page (§23.3). Le héros montre le comptoir comme on regarde à travers un
+   verre : un anneau ambre, un reflet en biais, un halo chaud. Le même anneau revient sur la puce, sur
+   les numéros d'étape et sur la carte claire. */
+.lens{position:relative;margin:0;border-radius:var(--r);overflow:hidden;
+  box-shadow:0 0 0 1px var(--ring),0 26px 56px rgba(0,0,0,.55),0 0 110px rgba(233,165,68,.09)}
+.lens img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.lens::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(126deg,rgba(255,255,255,.15) 0,rgba(255,255,255,.04) 17%,transparent 33%)}
+.lens figcaption{font-size:var(--fs-xs);color:var(--mute);padding:11px 4px 0;line-height:1.5}
+.lens figcaption.as-block{display:block}
+
+/* ── LES SECTIONS ─────────────────────────────────────────────────────────────────────────────────── */
+.kick{font-size:var(--fs-label);font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--amber);margin:0 0 14px}
+.cards{display:grid;gap:14px;margin-top:30px}
+@media (min-width:620px){ .cards{grid-template-columns:repeat(2,1fr);gap:16px} }
+.card{background:var(--card);border:1px solid var(--line-2);border-radius:var(--r);padding:22px;
+  transition:border-color .18s var(--ease)}
+.card h3{color:var(--ivory)}
+.card p{font-size:var(--fs-sm);color:var(--ivory-2);margin-top:8px}
+.cardlink{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:var(--fs-sm);
+  font-weight:700;color:var(--amber);text-decoration:none;
+  transition:color .16s var(--ease),transform .12s var(--ease)}
+.cardlink:active{transform:scale(.98)}
+.cardlink svg{width:15px;height:15px;flex:none;fill:none;stroke:currentColor;stroke-width:2;
+  transition:transform .16s var(--ease)}
+
+.band{background:var(--soot-2);border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
+.steps{display:grid;gap:22px;margin-top:32px;counter-reset:st}
+@media (min-width:640px){ .steps{grid-template-columns:repeat(2,1fr);gap:26px} }
+@media (min-width:980px){ .steps{grid-template-columns:repeat(4,1fr)} }
+.steps li{counter-increment:st}
+.steps li::before{content:counter(st);display:grid;place-items:center;width:38px;height:38px;
+  border:1px solid var(--ring);border-radius:50%;color:var(--amber);font-family:var(--f-display);
+  font-size:1.32rem;line-height:1;margin-bottom:14px}
+.steps h3{font-family:var(--f-display);font-weight:400;font-size:1.3rem;letter-spacing:-.01em}
+.steps p{font-size:var(--fs-sm);color:var(--ivory-2);margin-top:7px}
+
+.split{display:grid;gap:28px;align-items:center}
+@media (min-width:860px){ .split{grid-template-columns:1.05fr .95fr;gap:50px} }
+.bring{margin-top:20px;display:grid;gap:10px}
+.bring li{display:flex;gap:11px;font-size:var(--fs-sm);color:var(--ivory-2)}
+.bring svg{width:17px;height:17px;flex:none;margin-top:4px;stroke:var(--amber);fill:none;stroke-width:2}
+.fig-43{border-radius:var(--r);overflow:hidden;position:relative;
+  box-shadow:0 0 0 1px var(--ring),0 22px 48px rgba(0,0,0,.5)}
+.fig-43 img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.fig-43::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(126deg,rgba(255,255,255,.13) 0,rgba(255,255,255,.03) 16%,transparent 30%)}
+.fig-43 figcaption{font-size:var(--fs-xs);color:var(--mute);padding:11px 4px 0;line-height:1.5}
+
+/* ── L'ENCADRÉ « AUCUNE SURPRISE » : la transposition honnête du bloc de comparaison de Superpower.
+   Là où leur page annonce un prix, la nôtre annonce ce qui sera dit, sans un seul chiffre. */
+.panel{background:var(--card);border:1px solid var(--ring);border-radius:var(--r);padding:26px}
+@media (min-width:760px){ .panel{padding:42px} }
+.panel ul{margin-top:24px;display:grid;gap:16px}
+@media (min-width:760px){ .panel ul{grid-template-columns:repeat(2,1fr);gap:20px 34px} }
+.panel li strong{display:block;font-family:var(--f-display);font-weight:400;font-size:1.28rem;color:var(--amber-2)}
+.panel li p{font-size:var(--fs-sm);color:var(--ivory-2);margin-top:5px}
+
+/* ── LA CARTE CLAIRE : les deux lignes qui manquent. C'est le seul aplat ivoire de la page, et c'est
+   volontaire : elle ne parle pas au patient, elle parle à la boutique (le wagon de tête). */
+.note{background:var(--paper);color:var(--ink);border-radius:var(--r);padding:26px}
+@media (min-width:760px){ .note{padding:40px} }
+.note-tag{display:inline-block;margin:0;border:1px dashed rgba(26,18,12,.4);border-radius:999px;
+  padding:5px 13px;font-size:var(--fs-label);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.note h2{margin-top:16px;color:var(--ink)}
+.note p{color:var(--ink-2)}
+.slots{margin-top:22px;display:grid;gap:12px}
+.slots li{display:flex;flex-wrap:wrap;align-items:center;gap:10px;justify-content:space-between;
+  border:1px dashed rgba(26,18,12,.35);border-radius:14px;padding:13px 16px;font-size:var(--fs-sm);
+  font-weight:700;color:var(--ink)}
+.slots span{font-weight:700;font-size:var(--fs-xs);letter-spacing:.08em;text-transform:uppercase;color:#7A5B34}
+.note small{display:block;margin-top:18px;font-size:var(--fs-xs);color:var(--ink-2);line-height:1.55}
+
+/* ── LES QUESTIONS ───────────────────────────────────────────────────────────────────────────────── */
+.faq{margin-top:26px;border-bottom:1px solid var(--line)}
+.faq details{border-top:1px solid var(--line)}
+.faq summary{display:flex;align-items:flex-start;gap:14px;justify-content:space-between;
+  padding:18px 2px;cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:11px;height:11px;margin-top:7px;
+  border-right:2px solid var(--amber);border-bottom:2px solid var(--amber);
+  transform:rotate(45deg);transition:transform .2s var(--ease)}
+.faq details[open] summary::after{transform:rotate(-135deg)}
+.faq details p{padding:0 2px 20px;font-size:var(--fs-sm);color:var(--ivory-2);max-width:70ch}
+
+/* ── LA PORTE — et le pied de page (§20.6 : 4 blocs + bandeau) ─────────────────────────────────────── */
+.door{background:var(--soot-2);border-top:1px solid var(--line-2)}
+.door .inner{max-width:62ch}
+.door .actions{margin-top:24px}
+.next{margin-top:20px;font-size:var(--fs-sm);color:var(--ivory-2)}
+footer{border-top:1px solid var(--line-2);padding:48px 0 26px;font-size:var(--fs-sm)}
+.fgrid{display:grid;gap:30px}
+@media (min-width:760px){ .fgrid{grid-template-columns:1.3fr 1fr 1fr 1.1fr;gap:34px} }
+footer h3{font-family:var(--f-display);font-weight:400;font-size:1.05rem;letter-spacing:.02em;color:var(--amber);margin-bottom:12px}
+footer ul{display:grid;gap:9px}
+footer a{text-decoration:none;color:var(--ivory-2);border-bottom:1px solid var(--line-2);padding-bottom:1px}
+footer .f-brand p{font-size:var(--fs-xs);color:var(--mute);margin-top:12px;max-width:34ch;line-height:1.6}
+.strip{margin-top:40px;padding-top:18px;border-top:1px solid var(--line-2);display:flex;flex-wrap:wrap;gap:10px 22px;
+  align-items:center;justify-content:space-between;font-size:var(--fs-xs);color:var(--mute)}
+.strip a{color:var(--mute)}
+@media (hover:hover) and (pointer:fine){ .strip a:hover,footer a:hover{color:var(--amber-2)} }
+
+/* ── LA BARRE DU BAS (téléphone) : la porte toujours à portée du pouce (§24.1) ─────────────────────── */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(20,16,13,.96);
+  border-top:1px solid var(--line);padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  display:flex;gap:10px;align-items:center}
+.dock .btn{flex:1}
+.dock .tel{flex:none;font-size:var(--fs-xs);color:var(--ivory-2);text-decoration:none;padding:12px 6px}
+@media (min-width:760px){ .dock{display:none} }
+
+/* ── L'ENTRÉE EN SCÈNE : révélée au défilement, et rien d'autre (§13, design/MOTION.md §6) ────────── */
+html.js .rv{opacity:0;transform:translateY(16px);
+  transition:opacity .55s var(--ease),transform .55s var(--ease)}
+html.js .rv.in{opacity:1;transform:none}
+html.js [data-stack] > .rv:nth-child(2){transition-delay:60ms}
+html.js [data-stack] > .rv:nth-child(3){transition-delay:120ms}
+html.js [data-stack] > .rv:nth-child(4){transition-delay:180ms}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  html.js .rv{opacity:1;transform:none;transition:none}
+  .btn,.card,.cardlink,.faq summary::after,.lang,a{transition:none}
+}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#contenu"><span class="fr-only" lang="fr">Aller au contenu</span><span class="en-only" lang="en">Skip to content</span></a>
+<p id="say" class="sr" role="status" aria-live="polite"></p>
+
+<div class="topbar">
+  <div class="wrap">
+    <span><span class="fr-only" lang="fr">Opticien à Douala, Cameroun</span><span class="en-only" lang="en">Optician in Douala, Cameroon</span></span>
+    <span><span class="fr-only" lang="fr">Montures, verres sur ordonnance, réparation</span><span class="en-only" lang="en">Frames, prescription lenses, repairs</span></span>
+    <a href="tel:+237699959052">+237 699 95 90 52</a>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top"><b>CAVISA</b> <span>OPTIQUE</span></a>
+    <nav class="nav" aria-label="Sections de la page">
+      <a href="#montures"><span class="fr-only" lang="fr">Ce qu'on trouve</span><span class="en-only" lang="en">What we stock</span></a>
+      <a href="#parcours"><span class="fr-only" lang="fr">Comment ça se passe</span><span class="en-only" lang="en">How it works</span></a>
+      <a href="#questions"><span class="fr-only" lang="fr">Questions</span><span class="en-only" lang="en">Questions</span></a>
+      <a href="#contact"><span class="fr-only" lang="fr">Nous écrire</span><span class="en-only" lang="en">Contact</span></a>
+    </nav>
+    <div class="langbox" role="group" aria-label="Langue / Language">
+      <button id="btn-fr" class="lang is-on" type="button" lang="fr" aria-pressed="true">FR</button>
+      <button id="btn-en" class="lang" type="button" lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="contenu">
+
+  <!-- ══ 1 · LE HERO ══════════════════════════════════════════════════════════════════════════════════ -->
+  <section class="hero" aria-labelledby="h-hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="chip">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" fill="none" stroke="#E9A544" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="#E9A544" stroke-width="1.2" opacity=".55"/></svg>
+          <span class="fr-only" lang="fr">Boutique d'optique à Douala</span><span class="en-only" lang="en">Optical shop in Douala</span>
+        </p>
+        <h1 id="h-hero" style="margin-top:18px">
+          <span class="fr-only" lang="fr">Choisissez votre monture. <em>On s'occupe du reste.</em></span>
+          <span class="en-only" lang="en">Pick your frames. <em>We handle the rest.</em></span>
+        </h1>
+        <p class="lede">
+          <span class="fr-only" lang="fr">Des montures pour homme, femme et enfant, des verres sur ordonnance, la réparation et l'ajustage. Vous écrivez sur WhatsApp&nbsp;: le message part déjà écrit, il ne reste qu'à l'envoyer.</span>
+          <span class="en-only" lang="en">Frames for men, women and children, prescription lenses, repairs and fitting. You write on WhatsApp: the message is already written, all you do is send it.</span>
+        </p>
+        <div class="actions">
+          <a class="btn btn-wa wa" data-fr="Bonjour Cavisa Optique, je cherche des lunettes." data-en="Hello Cavisa Optique, I am looking for glasses." href="https://wa.me/237699959052?text=Bonjour%20Cavisa%20Optique%2C%20je%20cherche%20des%20lunettes.">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
+            <span class="fr-only" lang="fr">Écrire sur WhatsApp</span><span class="en-only" lang="en">Write on WhatsApp</span>
+          </a>
+          <a class="btn btn-line" href="tel:+237699959052">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.6 3h2.2l1.6 4-2 1.3c.8 1.9 2.4 3.5 4.3 4.3l1.3-2 4 1.6v2.2c0 1.1-.9 2-2 2C10.2 16.4 4.6 10.8 4.6 5c0-1.1.9-2 2-2z"/></svg>
+            <span class="fr-only" lang="fr">Appeler le 699 95 90 52</span><span class="en-only" lang="en">Call 699 95 90 52</span>
+          </a>
+        </div>
+        <ul class="proof">
+          <li><span class="fr-only" lang="fr">Femme · Homme · Enfant</span><span class="en-only" lang="en">Women · Men · Children</span></li>
+          <li><span class="fr-only" lang="fr">Verres sur ordonnance</span><span class="en-only" lang="en">Prescription lenses</span></li>
+          <li><span class="fr-only" lang="fr">Réparation &amp; ajustage</span><span class="en-only" lang="en">Repairs &amp; fitting</span></li>
+          <li><span class="fr-only" lang="fr">Douala, Cameroun</span><span class="en-only" lang="en">Douala, Cameroon</span></li>
+        </ul>
+      </div>
+      <figure class="lens">
+        <img src="data:image/jpeg;base64,__IMG_TRYON__" width="960" height="600" fetchpriority="high" decoding="async"
+          data-alt-fr="Une cliente essaie une monture devant le miroir du comptoir, un opticien en blouse blanche à côté d'elle." data-alt-en="A customer tries on frames at the counter mirror, an optician in a white coat beside her."
+          alt="Une cliente essaie une monture devant le miroir du comptoir, un opticien en blouse blanche à côté d'elle.">
+        <figcaption><span class="fr-only as-block" lang="fr">Mise en situation&nbsp;: la photo définitive sera prise dans votre boutique.</span><span class="en-only as-block" lang="en">Staged illustration: the final photo will be taken in your shop.</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ══ 2 · CE QU'ON TROUVE AU COMPTOIR ═════════════════════════════════════════════════════════════ -->
+  <section id="montures" aria-labelledby="h-montures">
+    <div class="wrap">
+      <p class="kick"><span class="fr-only" lang="fr">Au comptoir</span><span class="en-only" lang="en">At the counter</span></p>
+      <h2 id="h-montures">
+        <span class="fr-only" lang="fr">Ce qu'on trouve dans la boutique</span>
+        <span class="en-only" lang="en">What you will find in the shop</span>
+      </h2>
+      <p class="lede">
+        <span class="fr-only" lang="fr">Dites-nous ce que vous cherchez&nbsp;: on vous répond avant que vous vous déplaciez.</span>
+        <span class="en-only" lang="en">Tell us what you are looking for: we answer before you travel.</span>
+      </p>
+      <ul class="cards" data-stack>
+        <li class="card rv">
+          <h3><span class="fr-only" lang="fr">Montures</span><span class="en-only" lang="en">Frames</span></h3>
+          <p><span class="fr-only" lang="fr">Femme, homme, enfant. On les essaie sur votre visage, pas sur une photo.</span><span class="en-only" lang="en">Women, men, children. You try them on your face, not on a picture.</span></p>
+          <a class="cardlink wa" data-fr="Bonjour Cavisa Optique, je voudrais voir les montures que vous avez dans la boutique." data-en="Hello Cavisa Optique, I would like to see the frames you have in the shop." href="https://wa.me/237699959052?text=Bonjour%20Cavisa%20Optique%2C%20je%20voudrais%20voir%20les%20montures%20que%20vous%20avez%20dans%20la%20boutique.">
+            <span class="fr-only" lang="fr">Voir ce qu'il y a en boutique</span><span class="en-only" lang="en">See what is in the shop</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 7l5 5-5 5"/></svg>
+          </a>
+        </li>
+        <li class="card rv">
+          <h3><span class="fr-only" lang="fr">Verres sur ordonnance</span><span class="en-only" lang="en">Prescription lenses</span></h3>
+          <p><span class="fr-only" lang="fr">Apportez votre ordonnance&nbsp;: on choisit le verre qui va avec, on le monte et on l'ajuste.</span><span class="en-only" lang="en">Bring your prescription: we choose the right lens, fit it and adjust it.</span></p>
+          <a class="cardlink wa" data-fr="Bonjour Cavisa Optique, j’ai une ordonnance et je voudrais des verres." data-en="Hello Cavisa Optique, I have a prescription and I would like lenses." href="https://wa.me/237699959052?text=Bonjour%20Cavisa%20Optique%2C%20j%E2%80%99ai%20une%20ordonnance%20et%20je%20voudrais%20des%20verres.">
+            <span class="fr-only" lang="fr">Envoyer mon ordonnance</span><span class="en-only" lang="en">Send my prescription</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 7l5 5-5 5"/></svg>
+          </a>
+        </li>
+        <li class="card rv">
+          <h3><span class="fr-only" lang="fr">Réparation &amp; ajustage</span><span class="en-only" lang="en">Repairs &amp; fitting</span></h3>
+          <p><span class="fr-only" lang="fr">Une branche cassée, une vis perdue, des lunettes qui glissent&nbsp;: une photo suffit pour savoir si c'est réparable.</span><span class="en-only" lang="en">A broken arm, a lost screw, glasses that keep slipping: one photo is enough to know whether it can be repaired.</span></p>
+          <a class="cardlink wa" data-fr="Bonjour Cavisa Optique, ma monture est abîmée. Je peux vous envoyer une photo ?" data-en="Hello Cavisa Optique, my frames are damaged. Can I send you a photo?" href="https://wa.me/237699959052?text=Bonjour%20Cavisa%20Optique%2C%20ma%20monture%20est%20ab%C3%AEm%C3%A9e.%20Je%20peux%20vous%20envoyer%20une%20photo%20%3F">
+            <span class="fr-only" lang="fr">Envoyer une photo</span><span class="en-only" lang="en">Send a photo</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 7l5 5-5 5"/></svg>
+          </a>
+        </li>
+        <li class="card rv">
+          <h3><span class="fr-only" lang="fr">Lunettes de soleil</span><span class="en-only" lang="en">Sunglasses</span></h3>
+          <p><span class="fr-only" lang="fr">Teintées, et à votre vue si vous en avez besoin.</span><span class="en-only" lang="en">Tinted, and made to your prescription if you need it.</span></p>
+          <a class="cardlink wa" data-fr="Bonjour Cavisa Optique, avez-vous des lunettes de soleil ?" data-en="Hello Cavisa Optique, do you have sunglasses?" href="https://wa.me/237699959052?text=Bonjour%20Cavisa%20Optique%2C%20avez-vous%20des%20lunettes%20de%20soleil%20%3F">
+            <span class="fr-only" lang="fr">Demander les modèles</span><span class="en-only" lang="en">Ask which models</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 7l5 5-5 5"/></svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══ 3 · COMMENT ÇA SE PASSE ═════════════════════════════════════════════════════════════════════ -->
+  <section id="parcours" class="band" aria-labelledby="h-parcours">
+    <div class="wrap">
+      <p class="kick"><span class="fr-only" lang="fr">Le parcours</span><span class="en-only" lang="en">The path</span></p>
+      <h2 id="h-parcours">
+        <span class="fr-only" lang="fr">Comment ça se passe</span>
+        <span class="en-only" lang="en">How it works</span>
+      </h2>
+      <p class="lede">
+        <span class="fr-only" lang="fr">Quatre étapes, et aucune surprise.</span>
+        <span class="en-only" lang="en">Four steps, and no surprises.</span>
+      </p>
+      <ol class="steps" data-stack>
+        <li class="rv">
+          <h3><span class="fr-only" lang="fr">Vous écrivez</span><span class="en-only" lang="en">You write</span></h3>
+          <p><span class="fr-only" lang="fr">Un message sur WhatsApp. Il est déjà écrit&nbsp;: vous le relisez, vous l'envoyez.</span><span class="en-only" lang="en">A message on WhatsApp. It is already written: you read it over and send it.</span></p>
+        </li>
+        <li class="rv">
+          <h3><span class="fr-only" lang="fr">On vous répond</span><span class="en-only" lang="en">We answer</span></h3>
+          <p><span class="fr-only" lang="fr">Ce qu'on a en boutique, ce qu'il faut apporter, et le prix avant que vous vous déplaciez.</span><span class="en-only" lang="en">What we have in the shop, what to bring, and the price before you travel.</span></p>
+        </li>
+        <li class="rv">
+          <h3><span class="fr-only" lang="fr">Vous passez essayer</span><span class="en-only" lang="en">You come and try</span></h3>
+          <p><span class="fr-only" lang="fr">Vous mettez les montures sur votre visage. On vous dit franchement ce qui va, et ce qui ne va pas.</span><span class="en-only" lang="en">You put the frames on your face. We tell you honestly what works, and what does not.</span></p>
+        </li>
+        <li class="rv">
+          <h3><span class="fr-only" lang="fr">Vous repartez avec</span><span class="en-only" lang="en">You leave with them</span></h3>
+          <p><span class="fr-only" lang="fr">Verres montés, branches ajustées à vos oreilles, et un numéro où écrire si quelque chose bouge.</span><span class="en-only" lang="en">Lenses fitted, arms adjusted to your ears, and a number to write to if anything moves.</span></p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ══ 4 · L'ORDONNANCE ════════════════════════════════════════════════════════════════════════════ -->
+  <section id="ordonnance" aria-labelledby="h-ordonnance">
+    <div class="wrap split">
+      <div>
+        <h2 id="h-ordonnance">
+          <span class="fr-only" lang="fr">Votre ordonnance, et ce qu'elle change</span>
+          <span class="en-only" lang="en">Your prescription, and what it changes</span>
+        </h2>
+        <p class="lede">
+          <span class="fr-only" lang="fr">Vous avez déjà votre ordonnance&nbsp;? Apportez-la&nbsp;: les verres se montent dessus. Vous n'en avez pas&nbsp;? Écrivez-nous, on vous dit où faire contrôler votre vue à Douala.</span>
+          <span class="en-only" lang="en">Already have your prescription? Bring it: your lenses are made from it. Do not have one? Write to us and we will tell you where to get your eyes checked in Douala.</span>
+        </p>
+        <p style="margin-top:22px;font-weight:700"><span class="fr-only" lang="fr">Ce qu'on vous demandera d'apporter&nbsp;:</span><span class="en-only" lang="en">What you will be asked to bring:</span></p>
+        <ul class="bring">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12.5l5 5L20 6.5"/></svg><span class="fr-only" lang="fr">Votre ordonnance, si vous en avez une.</span><span class="en-only" lang="en">Your prescription, if you have one.</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12.5l5 5L20 6.5"/></svg><span class="fr-only" lang="fr">Votre ancienne monture, si vous ne changez que les verres.</span><span class="en-only" lang="en">Your old frames, if you are only changing the lenses.</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12.5l5 5L20 6.5"/></svg><span class="fr-only" lang="fr">Le nom et l'âge du porteur, si les lunettes sont pour un enfant.</span><span class="en-only" lang="en">The wearer's name and age, if the glasses are for a child.</span></li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn-wa wa" data-fr="Bonjour Cavisa Optique, je voudrais un renseignement avant de passer." data-en="Hello Cavisa Optique, I would like some information before coming." href="https://wa.me/237699959052?text=Bonjour%20Cavisa%20Optique%2C%20je%20voudrais%20un%20renseignement%20avant%20de%20passer.">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
+            <span class="fr-only" lang="fr">Poser ma question</span><span class="en-only" lang="en">Ask my question</span>
+          </a>
+        </div>
+      </div>
+      <figure class="fig-43">
+        <img src="data:image/jpeg;base64,__IMG_EXAM__" width="840" height="630" loading="lazy" decoding="async"
+          data-alt-fr="Un opticien règle un réfracteur pendant un contrôle de la vue, dans un cabinet de quartier." data-alt-en="An optician adjusts a refractor during a vision check in a neighbourhood practice."
+          alt="Un opticien règle un réfracteur pendant un contrôle de la vue, dans un cabinet de quartier.">
+        <figcaption><span class="fr-only as-block" lang="fr">Mise en situation&nbsp;: à l'origine de votre ordonnance, un contrôle de la vue.</span><span class="en-only as-block" lang="en">Staged illustration: your prescription starts with a vision check.</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ══ 5 · AUCUNE SURPRISE (la transposition du bloc de comparaison de Superpower) ══════════════════ -->
+  <section id="sans-surprise" aria-labelledby="h-surprise">
+    <div class="wrap">
+      <div class="panel rv" data-stack>
+        <h2 id="h-surprise">
+          <span class="fr-only" lang="fr">Aucune surprise avant de vous déplacer</span>
+          <span class="en-only" lang="en">No surprises before you travel</span>
+        </h2>
+        <p class="lede">
+          <span class="fr-only" lang="fr">Voilà ce que vous saurez, dans la conversation WhatsApp, sans avoir bougé de chez vous.</span>
+          <span class="en-only" lang="en">Here is what you will know, in the WhatsApp conversation, without leaving your home.</span>
+        </p>
+        <ul>
+          <li class="rv">
+            <strong><span class="fr-only" lang="fr">Le prix</span><span class="en-only" lang="en">The price</span></strong>
+            <p><span class="fr-only" lang="fr">Le prix des verres et du montage, annoncé avant votre déplacement.</span><span class="en-only" lang="en">The price of the lenses and the fitting, given before you travel.</span></p>
+          </li>
+          <li class="rv">
+            <strong><span class="fr-only" lang="fr">Le délai</span><span class="en-only" lang="en">The waiting time</span></strong>
+            <p><span class="fr-only" lang="fr">Le temps qu'il faut pour avoir vos lunettes montées.</span><span class="en-only" lang="en">How long it takes to have your glasses ready.</span></p>
+          </li>
+          <li class="rv">
+            <strong><span class="fr-only" lang="fr">La réparation</span><span class="en-only" lang="en">The repair</span></strong>
+            <p><span class="fr-only" lang="fr">Si votre monture est réparable, ou s'il vaut mieux la remplacer.</span><span class="en-only" lang="en">Whether your frames can be repaired, or whether they are better replaced.</span></p>
+          </li>
+          <li class="rv">
+            <strong><span class="fr-only" lang="fr">Ce qu'il faut apporter</span><span class="en-only" lang="en">What to bring</span></strong>
+            <p><span class="fr-only" lang="fr">L'ordonnance, l'ancienne monture, la photo&nbsp;: la liste exacte pour votre cas.</span><span class="en-only" lang="en">The prescription, the old frames, the photo: the exact list for your case.</span></p>
+          </li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn-wa wa" data-fr="Bonjour Cavisa Optique, j’ai une question avant de passer." data-en="Hello Cavisa Optique, I have a question before coming." href="https://wa.me/237699959052?text=Bonjour%20Cavisa%20Optique%2C%20j%E2%80%99ai%20une%20question%20avant%20de%20passer.">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
+            <span class="fr-only" lang="fr">Écrire sur WhatsApp</span><span class="en-only" lang="en">Write on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 6 · LES DEUX LIGNES QUI MANQUENT (la carte claire : elle parle à la boutique) ═══════════════ -->
+  <section id="completer" aria-labelledby="h-completer">
+    <div class="wrap">
+      <div class="note">
+        <p class="note-tag"><span class="fr-only" lang="fr">Pour la boutique</span><span class="en-only" lang="en">For the shop</span></p>
+        <h2 id="h-completer">
+          <span class="fr-only" lang="fr">Deux lignes, et la page est complète</span>
+          <span class="en-only" lang="en">Two lines, and the page is complete</span>
+        </h2>
+        <p>
+          <span class="fr-only" lang="fr">Vos horaires d'ouverture et votre adresse exacte. Donnez-les-nous&nbsp;: elles s'affichent ici même. En attendant, la page n'invente rien — c'est la règle.</span>
+          <span class="en-only" lang="en">Your opening hours and your exact address. Give them to us and they appear right here. Until then the page invents nothing, that is the rule.</span>
+        </p>
+        <ul class="slots">
+          <li><span class="fr-only" lang="fr">Horaires d'ouverture</span><span class="en-only" lang="en">Opening hours</span><span class="fr-only" lang="fr">à confirmer</span><span class="en-only" lang="en">to confirm</span></li>
+          <li><span class="fr-only" lang="fr">Adresse exacte à Douala</span><span class="en-only" lang="en">Exact address in Douala</span><span class="fr-only" lang="fr">à confirmer</span><span class="en-only" lang="en">to confirm</span></li>
+        </ul>
+        <small><span class="fr-only" lang="fr">Et si vous préférez, vos vraies photos remplacent les deux images d'illustration.</span><span class="en-only" lang="en">And if you prefer, your own photos replace the two illustrations.</span></small>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 7 · LES QUESTIONS ═══════════════════════════════════════════════════════════════════════════ -->
+  <section id="questions" aria-labelledby="h-questions">
+    <div class="wrap">
+      <h2 id="h-questions">
+        <span class="fr-only" lang="fr">Les questions qu'on nous pose</span>
+        <span class="en-only" lang="en">The questions we are asked</span>
+      </h2>
+      <div class="faq">
+        <details>
+          <summary><span><span class="fr-only" lang="fr">Faut-il une ordonnance pour avoir des lunettes&nbsp;?</span><span class="en-only" lang="en">Do I need a prescription for glasses?</span></span></summary>
+          <p><span class="fr-only" lang="fr">Pour des verres correcteurs, oui&nbsp;: apportez l'ordonnance de votre ophtalmologue. Pour des lunettes de soleil, ou pour un simple changement de monture, non.</span><span class="en-only" lang="en">For prescription lenses, yes: bring your ophthalmologist's prescription. For sunglasses, or for a simple frame change, no.</span></p>
+        </details>
+        <details>
+          <summary><span><span class="fr-only" lang="fr">Ma monture est cassée. Est-ce réparable&nbsp;?</span><span class="en-only" lang="en">My frames are broken. Can they be repaired?</span></span></summary>
+          <p><span class="fr-only" lang="fr">Envoyez une photo sur WhatsApp. On vous dit si c'est réparable, ce que ça coûte et combien de temps ça prend, avant que vous vous déplaciez.</span><span class="en-only" lang="en">Send a photo on WhatsApp. We tell you whether it can be repaired, what it costs and how long it takes, before you travel.</span></p>
+        </details>
+        <details>
+          <summary><span><span class="fr-only" lang="fr">Je ne sais pas quelle monture me va.</span><span class="en-only" lang="en">I do not know which frames suit me.</span></span></summary>
+          <p><span class="fr-only" lang="fr">C'est le travail de la boutique. Une monture se choisit sur votre visage, jamais sur une photo&nbsp;: vous essayez, on vous dit franchement ce qui va. Écrivez-nous avant de passer, on vous attend.</span><span class="en-only" lang="en">That is the shop's job. Frames are chosen on your face, never from a picture: you try them on and we tell you honestly what works. Write to us before coming, we will be waiting.</span></p>
+        </details>
+        <details>
+          <summary><span><span class="fr-only" lang="fr">Où êtes-vous, à Douala&nbsp;?</span><span class="en-only" lang="en">Where are you in Douala?</span></span></summary>
+          <p><span class="fr-only" lang="fr">La boutique est à Douala. L'adresse exacte s'affiche ici dès qu'elle nous est confirmée&nbsp;; en attendant, écrivez-nous sur WhatsApp et on vous envoie la localisation.</span><span class="en-only" lang="en">The shop is in Douala. The exact address appears here as soon as it is confirmed; until then, write to us on WhatsApp and we will send you the location.</span></p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 8 · LA PORTE ════════════════════════════════════════════════════════════════════════════════ -->
+  <section id="contact" class="door" aria-labelledby="h-contact">
+    <div class="wrap inner">
+      <h2 id="h-contact">
+        <span class="fr-only" lang="fr">Écrivez-nous maintenant</span>
+        <span class="en-only" lang="en">Write to us now</span>
+      </h2>
+      <p class="lede">
+        <span class="fr-only" lang="fr">Le message s'ouvre déjà écrit dans votre WhatsApp&nbsp;: c'est vous qui appuyez sur envoyer.</span>
+        <span class="en-only" lang="en">The message opens already written in your WhatsApp: you press send.</span>
+      </p>
+      <div class="actions">
+        <a class="btn btn-wa wa" data-fr="Bonjour Cavisa Optique, je cherche des lunettes." data-en="Hello Cavisa Optique, I am looking for glasses." href="https://wa.me/237699959052?text=Bonjour%20Cavisa%20Optique%2C%20je%20cherche%20des%20lunettes.">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
+          <span class="fr-only" lang="fr">Écrire sur WhatsApp</span><span class="en-only" lang="en">Write on WhatsApp</span>
+        </a>
+        <a class="btn btn-line" href="tel:+237699959052">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.6 3h2.2l1.6 4-2 1.3c.8 1.9 2.4 3.5 4.3 4.3l1.3-2 4 1.6v2.2c0 1.1-.9 2-2 2C10.2 16.4 4.6 10.8 4.6 5c0-1.1.9-2 2-2z"/></svg>
+          <span class="fr-only" lang="fr">Appeler le 699 95 90 52</span><span class="en-only" lang="en">Call 699 95 90 52</span>
+        </a>
+      </div>
+      <p class="next">
+        <span class="fr-only" lang="fr">Ensuite&nbsp;: on vous répond, vous posez vos questions, et vous passez quand ça vous arrange. Boutique à Douala, Cameroun.</span>
+        <span class="en-only" lang="en">Then: we answer, you ask your questions, and you come when it suits you. Shop in Douala, Cameroon.</span>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="f-brand">
+        <h3>CAVISA OPTIQUE</h3>
+        <p><span class="fr-only" lang="fr">Boutique d'optique à Douala&nbsp;: montures, verres sur ordonnance, réparation et ajustage.</span><span class="en-only" lang="en">Optical shop in Douala: frames, prescription lenses, repairs and fitting.</span></p>
+      </div>
+      <div>
+        <h3><span class="fr-only" lang="fr">Aller à</span><span class="en-only" lang="en">Go to</span></h3>
+        <ul>
+          <li><a href="#montures"><span class="fr-only" lang="fr">Ce qu'on trouve dans la boutique</span><span class="en-only" lang="en">What you will find</span></a></li>
+          <li><a href="#parcours"><span class="fr-only" lang="fr">Comment ça se passe</span><span class="en-only" lang="en">How it works</span></a></li>
+          <li><a href="#questions"><span class="fr-only" lang="fr">Les questions qu'on nous pose</span><span class="en-only" lang="en">Questions we are asked</span></a></li>
+          <li><a href="#completer"><span class="fr-only" lang="fr">Ce qui reste à compléter</span><span class="en-only" lang="en">What is still to complete</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h3><span class="fr-only" lang="fr">Prendre contact</span><span class="en-only" lang="en">Get in touch</span></h3>
+        <ul>
+          <li><a class="wa" data-fr="Bonjour Cavisa Optique, je cherche des lunettes." data-en="Hello Cavisa Optique, I am looking for glasses." href="https://wa.me/237699959052?text=Bonjour%20Cavisa%20Optique%2C%20je%20cherche%20des%20lunettes."><span class="fr-only" lang="fr">Écrire sur WhatsApp</span><span class="en-only" lang="en">Write on WhatsApp</span></a></li>
+          <li><a href="tel:+237699959052"><span class="fr-only" lang="fr">Appeler la boutique</span><span class="en-only" lang="en">Call the shop</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h3><span class="fr-only" lang="fr">La boutique</span><span class="en-only" lang="en">The shop</span></h3>
+        <ul>
+          <li><a href="tel:+237699959052">+237 699 95 90 52</a></li>
+          <li><span class="fr-only" lang="fr">Douala, Cameroun</span><span class="en-only" lang="en">Douala, Cameroon</span></li>
+          <li><span class="fr-only" lang="fr">Français et anglais</span><span class="en-only" lang="en">French and English</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="strip">
+      <span>© 2026 Cavisa Optique</span>
+      <span><span class="fr-only" lang="fr">Maquette préparée par AMK pour Cavisa Optique — horaires, adresse et services à valider par la boutique avant la mise en ligne.</span><span class="en-only" lang="en">Mockup prepared by AMK for Cavisa Optique: hours, address and services to be validated by the shop before going live.</span></span>
+      <a href="#top"><span class="fr-only" lang="fr">Haut de page ↑</span><span class="en-only" lang="en">Back to top ↑</span></a>
+    </div>
+  </div>
+</footer>
+
+<div class="dock">
+  <a class="btn btn-wa wa" data-fr="Bonjour Cavisa Optique, je cherche des lunettes." data-en="Hello Cavisa Optique, I am looking for glasses." href="https://wa.me/237699959052?text=Bonjour%20Cavisa%20Optique%2C%20je%20cherche%20des%20lunettes.">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
+    <span class="fr-only" lang="fr">Écrire sur WhatsApp</span><span class="en-only" lang="en">Write on WhatsApp</span>
+  </a>
+  <a class="tel" href="tel:+237699959052"><span class="fr-only" lang="fr">Appeler</span><span class="en-only" lang="en">Call</span></a>
+</div>
+
+<script>/* ── LES DEUX LANGUES, LES ADRESSES WHATSAPP ET LES TEXTES DE REMPLACEMENT ────────────────────────
+   Une seule source pour chaque message : `data-fr` / `data-en` portent le texte pré-rempli, et le lien
+   est reconstruit avec `encodeURIComponent` — donc l'adresse FR écrite dans le HTML et celle fabriquée
+   ici sont identiques au caractère près (vérifié par `tools/qa/test_cavisa_page.mjs`). */
+(function(){try{
+  var html=document.documentElement, k='cavisa-lang', WA='https://wa.me/237699959052?text=';
+  function lg(){return html.getAttribute('data-lang')==='en'?'en':'fr';}
+  function paint(){
+    var l=lg(); html.lang=l;
+    [['btn-fr','fr'],['btn-en','en']].forEach(function(p){
+      var b=document.getElementById(p[0]);
+      if(b){var on=(l===p[1]); b.classList.toggle('is-on',on); b.setAttribute('aria-pressed',on?'true':'false');}
+    });
+    [].forEach.call(document.querySelectorAll('a.wa'),function(a){
+      var t=a.getAttribute(l==='en'?'data-en':'data-fr'); if(t) a.setAttribute('href',WA+encodeURIComponent(t));
+    });
+    [].forEach.call(document.querySelectorAll('img[data-alt-fr]'),function(im){
+      var t=im.getAttribute(l==='en'?'data-alt-en':'data-alt-fr'); if(t) im.setAttribute('alt',t);
+    });
+    var s=document.getElementById('say'); if(s) s.textContent=(l==='en')?'Language: English':'Langue : français';
+  }
+  function setLang(l){html.setAttribute('data-lang',l); try{localStorage.setItem(k,l)}catch(e){} paint();}
+  ['btn-fr','btn-en'].forEach(function(id){
+    var b=document.getElementById(id);
+    if(b) b.addEventListener('click',function(){setLang(id==='btn-fr'?'fr':'en');});
+  });
+  try{var saved=localStorage.getItem(k); if(saved==='en'||saved==='fr') html.setAttribute('data-lang',saved);}catch(e){}
+  paint();
+}catch(e){}})();
+</script>
+
+<script>/* ── LE MOUVEMENT : révélation au défilement, et rien d'autre ─────────────────────────────────────
+   IntersectionObserver, jamais d'écouteur de défilement. Si le navigateur n'a pas l'API, si le visiteur
+   a demandé moins de mouvement, ou si ce script plante, tout est affiché : on ne laisse jamais une page
+   blanche derrière un `opacity:0` (la leçon d'UNIVERS OPTIQUE, 22/09). */
+(function(){try{
+  var els=[].slice.call(document.querySelectorAll('.rv'));
+  var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function showAll(){els.forEach(function(e){e.classList.add('in')});}
+  if(rm||!('IntersectionObserver' in window)){showAll();return;}
+  var io=new IntersectionObserver(function(en){
+    en.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{rootMargin:'0px 0px -6% 0px',threshold:.08});
+  els.forEach(function(e){io.observe(e)});
+}catch(e){ var all=document.querySelectorAll('.rv'); for(var i=0;i<all.length;i++){all[i].classList.add('in');} }})();
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Optician","@id":"#cavisa","name":"Cavisa Optique",
+  "description":"Boutique d'optique à Douala : montures pour homme, femme et enfant, verres sur ordonnance, réparation et ajustage. Prise de contact sur WhatsApp.",
+  "telephone":"+237699959052","currenciesAccepted":"XAF",
+  "address":{"@type":"PostalAddress","addressLocality":"Douala","addressCountry":"CM"},
+  "areaServed":{"@type":"City","name":"Douala"},
+  "knowsLanguage":["fr","en"],
+  "contactPoint":{"@type":"ContactPoint","contactType":"customer service","telephone":"+237699959052","availableLanguage":["fr","en"]}},
+ {"@type":"FAQPage","@id":"#faq","mainEntity":[
+  {"@type":"Question","name":"Faut-il une ordonnance pour avoir des lunettes ?","acceptedAnswer":{"@type":"Answer","text":"Pour des verres correcteurs, oui : apportez l'ordonnance de votre ophtalmologue. Pour des lunettes de soleil, ou pour un simple changement de monture, non."}},
+  {"@type":"Question","name":"Ma monture est cassée. Est-ce réparable ?","acceptedAnswer":{"@type":"Answer","text":"Envoyez une photo sur WhatsApp. On vous dit si c'est réparable, ce que ça coûte et combien de temps ça prend, avant que vous vous déplaciez."}},
+  {"@type":"Question","name":"Je ne sais pas quelle monture me va.","acceptedAnswer":{"@type":"Answer","text":"C'est le travail de la boutique. Une monture se choisit sur votre visage, jamais sur une photo : vous essayez, on vous dit franchement ce qui va."}},
+  {"@type":"Question","name":"Où êtes-vous, à Douala ?","acceptedAnswer":{"@type":"Answer","text":"La boutique est à Douala. L'adresse exacte s'affiche ici dès qu'elle nous est confirmée ; en attendant, écrivez-nous sur WhatsApp et on vous envoie la localisation."}}]}
+]}
+</script>
+</body>
+</html>
