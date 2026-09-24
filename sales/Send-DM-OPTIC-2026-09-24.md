@@ -1,8 +1,10 @@
 # DM OPTIC — le message à envoyer après le redéploiement (v2.1 : patient + vitrine des montures)
 
 **Pour qui :** M. Domche Noumbi, DM OPTIC, Douala — **656 122 239** (WhatsApp).
-**Où :** la page est **déjà en ligne** — https://dmoptic.vercel.app/ — mais elle porte encore la
-**v1, écrite pour le cabinet**. King a redéployé le dossier v2 ; la même adresse, la page change.
+**Où :** ⚠️ **l'adresse réellement envoyée par King le 24/09 à 17:05 est https://dmoptic-2.vercel.app/**
+(second projet Vercel ; l'ancienne `dmoptic.vercel.app` sert encore la v1). La page en ligne est bien la
+**v2.1** — vérifié en lisant le HTML servi le 24/09 au soir (services, vitrine des montures, six
+questions). `og:url` / `og:image` ont été recollés sur cette adresse le même soir.
 
 **Ce que King a dit le 24/09, et ce qu'on en a fait** : *« the demo seems to speak more to the prospect,
 but it's supposed to speak to the patient »* → la page a été **réécrite de zéro, patient d'abord**

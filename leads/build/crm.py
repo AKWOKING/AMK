@@ -1290,6 +1290,9 @@ DOSSIERS = {
     # le dossier de travail de DM OPTIC — ouvert le 24/09 au soir, quand M. Domche Noumbi a répondu
     # « Ok Envoyé svp... » et que l'aperçu est parti en construction.
     "dm-optique": "clients/dm-optic/",
+    # le dossier de travail de CINQ SENS — ouvert le 24/09 au soir, quand le cabinet a répondu « OK »
+    # (17:04) au message de 16:53. Contrôle approfondi complet dans `clients/cinq-sens/dossier.md`.
+    "cinq-sens-optique-medicale": "clients/cinq-sens/",
     # le dossier de recherche le plus complet de la campagne (RDAP + Wayback + captures de King)
     "k-vision-care": "clients/k-vision-care/",
     "centre-medical-de-bonanjo": "clients/_mockups/bonanjo.jpg",
@@ -1929,6 +1932,7 @@ def _apply_jour(out: list) -> None:
     _apply_state(out, ENVOI_2409_3, "ENVOI_2409_3")
     _apply_state(out, ENVOI_2409_4, "ENVOI_2409_4")
     _apply_state(out, REPONSE_2409_DM, "REPONSE_2409_DM")
+    _apply_state(out, REPONSE_2409_CS, "REPONSE_2409_CS")
     _apply_state(out, ECARTES_2409, "ECARTES_2409")
 
 
@@ -2812,7 +2816,50 @@ REPONSE_2409_DM = {
             "aucune fiche d'annuaire ; une annonce afribobo de déc. 2019 (« DM optometrie », 2 500 F, "
             "publiée par un particulier) NON retenue comme fait — elle n'est pas recoupée. Le nom du "
             "titulaire apparaît en mars 2023 dans la liste des opticiens de Douala citée par Echos Santé. "
-            "⚠️ Ne jamais écrire d'adresse ni d'horaire pour ce lead tant qu'il ne les a pas donnés.",
+            "⚠️ Ne jamais écrire d'adresse ni d'horaire pour ce lead tant qu'il ne les a pas donnés. "
+            "24/09 17:05 — LE LIEN EST PARTI, sur https://dmoptic-2.vercel.app/ (King a déployé le dossier "
+            "sur un second projet Vercel ; l'ancienne adresse `dmoptic.vercel.app` sert encore la v1). "
+            "La page en ligne est bien la v2.1 (vérifiée par lecture du HTML servi le 24/09 au soir) : "
+            "services, vitrine des montures, six questions. En attente de son retour — aucune relance.",
+    },
+}
+
+
+REPONSE_2409_CS = {
+    # ── 24/09, 16:53 → 17:04 — CINQ SENS RÉPOND « OK » AU MESSAGE DU LOT 4 ───────────────────────────
+    # Séquence exacte, sur capture de King : 15:15 le message du lot 4 part (✓✓) ; 16:27 le cabinet
+    # demande « Bonjour / A qui ai je honneur » ; 16:53 King se présente et propose d'envoyer l'aperçu ;
+    # 17:04 « Ok ». Ce n'est ni un rendez-vous ni un prix : c'est un oui pour voir la page.
+    # ⚠️ Le message de 16:53 disait « il n'existait pas encore de page officielle réunissant vos deux
+    # cabinets ». FAUX au sens strict : leur blog Blogger existe, il mentionne les deux cabinets, et sa
+    # dernière publication est du 15/10/2021. Ne JAMAIS répéter cette phrase ; l'angle vrai est
+    # « votre blog s'arrête en octobre 2021 ». Le message de livraison est écrit en conséquence.
+    "cinq-sens-optique-medicale": {
+        "Contacted": "Yes", "Reply": "Yes", "reply_type": "human",
+        "Demo made": "Yes",
+        "last_send_state": "replied", "stage": "demo", "stage_since": "2026-09-24",
+        # le nom affiché à l'écran est tronqué (« Référence Optique M... ») : on écrit ce qu'on a vu
+        "wa_verified": "yes",
+        "profile_name_seen": "Référence Optique M... (tronqué à l'écran)",
+        "value_kept":
+            "Ce qu'ils sont déjà : deux cabinets (Akwa et Brazzaville), des repères publiés par eux-mêmes "
+            "(Collège King Akwa, snack le Kokotier, immeuble Flore service, carrefour Brazzaville, immeuble "
+            "Michelin), sept services réels (examen de la vue, montures homme/femme, solaires, lentilles, "
+            "prothèses oculaires, accessoires, livraison à domicile) et leurs propres phrases.",
+        "value_discarded":
+            "Aucune adresse inventée au-delà de leurs repères, aucun prix, aucune marque, aucun avis, "
+            "aucun nom de responsable (inconnu) : les horaires sont écrits « annoncés » et restent hors du "
+            "schéma, et les trois photos sont légendées illustrations.",
+        "dossier": "clients/cinq-sens/",
+        "Conversation_extra":
+            "24/09 15:15 — lot 4 (✓✓). 16:27 — LUI : « Bonjour / A qui ai je honneur ». 16:53 — King se "
+            "présente et propose l'aperçu. 17:04 — LUI : « Ok ». "
+            "CONTRÔLE APPROFONDI AVANT ÉCRITURE (règle du 24/09) : blog Blogger vivant mais arrêté au "
+            "15/10/2021 ; `cinqsens.cm` ne résout pas ; LinkedIn société (817 abonnés), X, YouTube (2020), "
+            "Facebook ; deux annuaires concordants (Maligah, Mont-Pandi) ; 696 698 136 = numéro d'urgence "
+            "qu'ils publient partout ET ligne 118 du registre ONOC du Littoral ; seconde ligne 655 163 365 "
+            "(leurs publications) ; 694 408 495 (annuaire seul, non utilisé). "
+            "⚠️ Ne jamais écrire « vous n'avez pas de page » : ils en ont une — morte depuis 2021.",
     },
 }
 

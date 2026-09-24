@@ -10,12 +10,13 @@
 | Type | other |
 | Ville | Douala (Akwa + Brazzaville) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | demo |
 | WhatsApp | 696 698 136 |
-| Numéro vérifié | unknown |
+| Numéro vérifié | yes |
+| Profil vu | Référence Optique M... (tronqué à l'écran) |
 | Contacté | Yes |
-| Réponse | No |
-| Maquette / site | No |
+| Réponse | Yes |
+| Maquette / site | Yes |
 | Source | onoc_registry |
 | Détail source | Registre ONOC, annuaire 2024 — Littoral ligne 118 (inscription 115/2021, arrêté 1688), lu le 24/09 · fiche Mont-Pandi 671 |
 
@@ -25,7 +26,7 @@ LOT 4 (préparé le 24/09 au soir, RIEN N'EST ENVOYÉ). Titulaire au registre : 
 
 ## Prochaine action
 
-**0 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**Répondre dans l'heure.** Une réponse humaine est en attente : c'est la priorité absolue (règle des 90 secondes).
 
 ## Historique — lignes du journal qui citent ce lead
 

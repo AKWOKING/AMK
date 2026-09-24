@@ -4131,3 +4131,79 @@ marque ni prix ; les numéros du registre hors du texte visible mais conservés 
 **Reste** : **King redéploie** `hosting/previews/dmoptic/` (le lien est en ligne mais porte encore la
 v1), puis envoie le message de `sales/Send-DM-OPTIC-2026-09-24.md` §1 — réécrit pour la v2.1. Les neuf
 informations attendues sont dans `clients/dm-optic/a-completer.md`. **Un seul redéploiement.**
+---
+
+## 2026-09-24 (nuit) — **LE LIEN DM OPTIC EST PARTI · CINQ SENS DIT « Ok » · LA PAGE EST CONSTRUITE DANS SON IMAGE**
+
+**17:05 — DM OPTIC.** King a déployé le dossier et **envoyé le lien : https://dmoptic-2.vercel.app/**.
+Un **second projet Vercel** est né ce soir-là ; l'ancienne adresse `dmoptic.vercel.app` sert toujours la
+v1 et n'est plus l'adresse du client. Le HTML servi a été lu : c'est bien la **v2.1** (services, vitrine
+des montures, six questions). `og:url` et `og:image` ont été recollés sur `dmoptic-2.vercel.app` le même
+soir — la vignette du lien montre désormais la bonne carte. Le lead passe en **`demo`** avec
+`profile_name_seen = « DM OPTIC »` : c'est la première preuve écrite du nom affiché. **Rien n'est
+relancé** : le fil attend son retour.
+
+**17:04 — CINQ SENS dit « Ok ».** Séquence exacte : 15:15 le message du lot 4 part ; **16:27** le cabinet
+répond « Bonjour / A qui ai je honneur » ; **16:53** King se présente et propose l'aperçu ; **17:04**
+« Ok ». C'est un oui pour **voir** la page, pas un prix ni un rendez-vous. Le lead passe de `qualifying`
+à **`demo`**, `reply_type = human`, `Demo made = Yes` (`leads/build/crm.py` → table `REPONSE_2409_CS`).
+
+> ⚠️ **Une phrase ne se répétera pas.** Le message de 16:53 disait « il n'existait pas encore de page
+> officielle réunissant vos deux cabinets ». C'est **faux au sens strict** : leur blog Blogger existe, il
+> mentionne les deux cabinets, et sa dernière publication est du **15 octobre 2021**. La correction est
+> écrite dans `crm.py`, dans `sales/Send-CINQ-SENS-2026-09-24.md` et dans les notes de construction.
+> L'angle vrai — daté, donc vérifiable — est : **« votre blog s'arrête en octobre 2021 »**.
+
+### La page, construite dans l'ordre demandé
+
+Recherche approfondie (`clients/cinq-sens/dossier.md`) → `PRE-FLIGHT.md` lu en entier → documents design
+AMK → **inspiration américaine** lue en entier : **KREWE** (La Nouvelle-Orléans), **Warby Parker**
+(New York), **DIFF Eyewear** (Los Angeles) → construction → audits. Détail dans
+`clients/cinq-sens/inspiration.md` (trois références, ce qui est **pris**, ce qui est **rejeté** par
+écriture, Design Read, réglages 8/6/5, trois directions, provenance de chaque valeur).
+
+**La direction retenue** : *le magasin à deux portes, écrit comme une affiche*. Le nom du client est pris
+au mot — **cinq teintes** en rail en haut de page (`#FF2E7E #2C6BFF #FFC531 #12B886 #FF6B2C`), une encre
+presque noire, du papier chaud, **Anton** pour les titres, et **une seule couleur autorisée à agir**, le
+rose vif. Premier écran noir qui assène, **bande d'arrivage** qui défile lentement, six services
+numérotés portant chacun « **ce qu'il faut apporter** », trois arrivages montrés de face avec la phrase
+qui explique pourquoi **aucune marque n'est nommée**, **les deux cabinets écrits comme deux portes** —
+chacune son repère publié par eux, son horaire *annoncé*, et **son** message WhatsApp —, la mission
+« toutes les bourses » avec leur citation en grand, six questions dans le schéma `FAQPage` **mot pour
+mot**, deux gestes utilitaires (copier le numéro, fiche `.vcf`), barre d'action fixe sur téléphone.
+
+**Ce qui n'est jamais écrit** : aucun prix, aucune marque, aucun avis, aucun nom de responsable (aucun
+n'est publié), aucune adresse au-delà de leurs propres repères, aucun horaire présenté comme officiel —
+et les horaires **restent hors du schéma** tant qu'ils ne les confirment pas. Les trois photos sont
+légendées illustrations.
+
+### Les contrôles, et ce qu'ils ont attrapé
+
+`audit_html` **0 constat** sur **254 passages** de texte — il a attrapé le kicker du premier écran à
+**3,06:1** (gris sur noir), corrigé. `audit_a11y --strict` **0 faute, 0 avertissement** — il a attrapé
+l'**absence des règles `display:none`** des deux langues : sans elles, un lecteur d'écran aurait lu le
+français **et** l'anglais. `audit_hero` **0/0** · `check_inline_js` **rc 0** · `audit_aeo` ✓
+(`Optician`, `Place` ×2, `FAQPage`, 6 questions) · `audit_images` 0 faute (0 image comptée : base64,
+limite connue) · `test_cinqsens_page.mjs` **48/48**, dont trois assertions qui comptent : chaque adresse
+WhatsApp statique est le texte français **encodé exactement comme le fera le JavaScript** ; les six
+questions du schéma sont **mot pour mot** celles de la page ; le script du `<head>` est rejoué **avant**
+le script principal, donc la page se rouvre bien dans la langue choisie.
+
+**Deux pièges attrapés dans la journée**, notés pour ne pas les revoir : le **base64 d'une photo** peut
+contenir n'importe quelle suite de lettres — le mot « Zeiss » y apparaissait, et le test cherchait dans
+le fichier entier (les contrôles « aucune marque / aucun prix » portent désormais **sur le texte seul**) ;
+et une constante définie **après** son premier usage en JavaScript (`ReferenceError` attrapé par le test,
+pas par les audits).
+
+### Ce qui reste
+
+1. **King déploie** `hosting/previews/cinqsens/` — **le dossier entier**, `index.html` **et** `og.jpg`
+   (projet `cinqsens`) ;
+2. `python3 demos/build_cinqsens.py --url https://<adresse>` puis **redéployer** ;
+3. l'œil de King sur un téléphone, en plein jour, FR puis EN — **il n'y a pas de navigateur dans le
+   bac**, donc aucune capture de notre côté : *not verified on a phone = not sent* ;
+4. le message de `sales/Send-CINQ-SENS-2026-09-24.md` **§1**, après la carte du lien.
+   **Un seul redéploiement.** Les douze informations attendues sont dans `clients/cinq-sens/a-completer.md`.
+
+**Aucune relance** n'est due sur ces deux fils : les deux ont répondu, donc l'horloge de relance est
+arrêtée (§34.1) — la prochaine action est **la leur**.

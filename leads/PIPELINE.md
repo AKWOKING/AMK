@@ -8,15 +8,15 @@
 | Étape | Leads |
 |---|---|
 | ④ Prix posé, en négociation | **3** |
-| ③ Aperçu envoyé | **2** |
-| ② Qualifié — en conversation | **24** |
+| ③ Aperçu envoyé | **3** |
+| ② Qualifié — en conversation | **23** |
 | ① Prospection — à qualifier | **78** |
 | ❌ Perdu | **1** |
 | ⏸ Parqué | **42** |
 | ⛔ Écarté | **13** |
 | **Total** | **163** |
 
-- **Contactés :** 67 · **Réponses humaines :** 7 · **Taux de réponse : 10.4 %**
+- **Contactés :** 67 · **Réponses humaines :** 8 · **Taux de réponse : 11.9 %**
 - **Réponses automatiques (hors PRR) :** 1
 - **Clients :** 0 · **Revenu :** 0 FCFA
 
@@ -24,6 +24,7 @@
 
 | Lead | WhatsApp | Ce qu'il a dit |
 |---|---|---|
+| **Référence Optique Médicale Cinq Sens** | 696 698 136 | Yes |
 | **DM Optique** | 656 122 239 | Yes |
 
 > **Règle des 90 secondes.** Une réponse en attente passe avant tout le reste.
@@ -36,14 +37,15 @@
 | UNI-LABO | Douala (Bonamoussadi, Carrefour Etoo) | 696 13 98 19 | `L134` |
 | Univers Optique | Douala | 699 25 28 74 | `L3442` |
 
-## ③ Aperçu envoyé — 2
+## ③ Aperçu envoyé — 3
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
 | Cavisa Optique | Douala | 699 95 90 52 | `L4053` |
 | DM Optique | Douala | 656 122 239 | `L4019` |
+| Référence Optique Médicale Cinq Sens | Douala (Akwa + Brazzaville) | 696 698 136 | `L3984` |
 
-## ② Qualifié — en conversation — 24
+## ② Qualifié — en conversation — 23
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
@@ -68,7 +70,6 @@
 | Midas Touch Optic Center (MITOC) | Buea (Molyko, opp former police station, Malingo) | 678908962 | `L14` |
 | Médina Optic | Douala | 699 93 93 34 | `L3520` |
 | Net Optique Médical | Douala (Akwa) | 675 785 930 | `L3652` |
-| Référence Optique Médicale Cinq Sens | Douala (Akwa + Brazzaville) | 696 698 136 | `L3984` |
 | SkyOptic Akwa (ETS Sky Optics) | Douala (Akwa) | 655 649 803 | `L3981` |
 | St. Theresa International Bilingual Comprehensive College (STIBCCOL) | Buea (Molyko) | 679151075 | `L1698` |
 
