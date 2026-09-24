@@ -1379,6 +1379,72 @@ cinq métriques du tableau de bord.
 King : plus de production de contenu par défaut).
 **Jamais promis** : un classement, une citation, une « visibilité IA ».
 
+---
+
+## Lot [34] · LES DEUX VIDÉOS QUI PARLENT D'OUTREACH — 2 vidéos, une pièce manquante trouvée (24/09/2026)
+
+King a envoyé deux liens le même jour et posé une question : *« what do we have planned for today ?? I
+suggest we continue outreach what do you say ? »*. Les deux vidéos parlent de la même chose — obtenir des
+rendez-vous — et l'une d'elles a nommé une pièce qui **manquait réellement** dans notre système.
+
+| source | ce que c'est | verdict |
+|---|---|---|
+| **`Mst4hreQYl0` — Alex Hormozi, « Watch This To Generate 1000s of Leads (In Any Niche) »** | la **mini-offre** (lead magnet) : ne pas demander l'achat à un trafic froid, mais offrir une solution complète à un problème étroit, qui **révèle** le problème suivant — celui que résout l'offre principale | **absorbé** — c'est déjà notre pratique (l'aperçu gratuit, les messages qui révèlent un problème) ; trois corrections nommées (nommer le résultat, qualifier, ne pas résoudre le problème payant) |
+| **`HUh1XqppRtU` — Charlie Morgan, « Beginner Guide To Cold Outreach »** | les **sept pièces** d'un système d'outreach : agenda · plateforme · stimuli · CRM · source de leads · **tableau de mesure** · mécanisme d'envoi | **absorbé — et il manquait une pièce** : le tableau de mesure. `leads/FUNNEL.md` est né ce soir |
+
+### Les trois types de mini-offre (Hormozi), et où nous sommes
+
+1. **Révéler un problème** — *« voici un problème que vous ne saviez pas avoir, et voilà ce qu'il coûte »*.
+   Nos messages le font déjà : l'appel qui tombe pendant une consultation et qu'on ne rappelle pas, la page
+   Facebook qui ne prend pas de rendez-vous. **Le bonus de la vidéo :** dire aussi **ce que ça donnerait
+   résolu** — « le patient réserve à 22 h, la secrétaire le confirme au matin ».
+2. **L'essai gratuit** — on donne, puis on retire. Notre aperçu suit ce modèle (une page réelle, en ligne,
+   qu'ils peuvent regarder), mais il est **cadré** : il montre la structure et l'angle, jamais le site fini.
+3. **Une étape d'un processus en plusieurs étapes** — l'aperçu est exactement ça : la page est l'étape 1, la
+   suite (fiche Google, abonnement, résultats en ligne) étant les étapes suivantes.
+
+### Ce que la vidéo dit et qui est vrai chez nous, mot pour mot
+
+- **« On ne vend pas au moment où la personne n'a plus soif. »** Nos messages n'arrivent jamais avec un prix
+  dans le premier contact (règle tenue depuis le 18/09) — le prix se pose quand la personne a déjà vu la page.
+- **« Quand quelqu'un paie avec son temps, il paiera ensuite avec son argent. »** C'est pourquoi l'aperçu
+  (qu'ils lisent, commentent, font corriger) précède la facture.
+- **« Un mauvais aimant ne prouve pas que les aimants ne marchent pas. »** Utile à garder en tête quand un
+  message ne reçoit pas de réponse : c'est **l'emballage** qu'on change, pas la stratégie.
+- **« L'emballage se teste plus que le contenu. »** Concrètement : nos trois ouvertures d'appel et nos
+  variantes de message sont trois emballages ; c'est ce qu'on mesure désormais par source dans `FUNNEL.md`.
+
+### Les sept pièces (Charlie Morgan) — notre état, sans embellir
+
+| # | La pièce | Chez nous | Verdict |
+|---|---|---|---|
+| 1 | Agenda de réservation | WhatsApp + le téléphone de King ; le formulaire de réservation construit pour UNI-LABO en est la version client | **adapté, pas copié** |
+| 2 | **UNE** plateforme | WhatsApp (+ les appels) | **conforme** — et c'est un choix, pas un manque |
+| 3 | Les stimuli (scripts) | trois ouvertures d'appel, messages écrits d'avance, jamais improvisés | **conforme** |
+| 4 | Un CRM en feuille | un CSV + des vues générées ; la leçon du jour : **un plan généré qui contredit une décision humaine est un danger** | **au-dessus** |
+| 5 | Une source de leads inépuisable | annuaires + fiches Google Maps ; **149 leads dont 102 jamais contactés** | **le gisement est déjà là** |
+| 6 | **Un tableau de mesure** | **il n'existait pas** — `leads/FUNNEL.md` créé le 24/09 | **trouvé et comblé** |
+| 7 | Le mécanisme d'envoi | manuel, par King | **assumé** : l'automatisation à froid n'a pas de sens sur WhatsApp |
+
+### Ce qu'on refuse des deux vidéos
+
+- **L'automatisation à froid** (Instantly, cold e-mail en masse, séquenceurs) : notre canal est WhatsApp, où
+  une réponse humaine arrive souvent en moins d'une heure. Automatiser ferait perdre exactement ce qui nous
+  distingue.
+- **Le travail gratuit « pour ouvrir une porte »** : l'aperçu est un livrable cadré, pas un chantier offert.
+  La règle « jamais de remise » tient — on ajuste le périmètre.
+- **Les métriques de vanité** : la vidéo parle de « 1000s of leads » ; notre chiffre utile est **8,5 % de
+  réponse sur 47 contactés** et **3 dossiers chauds sur 4 réponses humaines**. C'est petit, c'est vrai, et
+  ça se lit dans `leads/FUNNEL.md`.
+
+### Le désaccord méthodologique à noter
+
+Les deux vidéos viennent d'un marché où l'on atteint 50 000 rendez-vous avec des séquences automatisées et
+des listes de plusieurs milliers de contacts. **Notre marché n'a ni ces volumes ni ces canaux**, et notre
+avantage est l'inverse : un message écrit à un patron qu'on a regardé, envoyé à la main, avec une réponse en
+90 secondes. La leçon utile n'est donc pas le volume — c'est **la discipline de mesure** : savoir où le
+système fuit avant d'ajouter du carburant.
+
 **Le désaccord méthodologique à noter :** pour 5 et 6, les sources utiles ne sont pas des vidéos YouTube.
 Le lot [26] a montré le plafond de ce format (deux vidéos sur cinq muettes, et les autres vendent une
 communauté payante). Les meilleures sources sont les documents officiels (Google, WhatsApp, W3C) et

@@ -3277,3 +3277,53 @@ séance ? » est réécrite avec les deux branches ; et dans le questionnaire, *
 AVANT l'abonnement** — c'est elle qui choisit le prix. Recommandation maintenue, à trancher avant l'achat :
 domaine et hébergement **au nom du laboratoire**, gérés par nous — le jour où il veut partir, rien n'est
 retenu contre lui.
+
+## 2026-09-24 · « ON CONTINUE L'OUTREACH ? » — oui, et les chiffres disent où
+
+Question de King : *« what do we have planned for today ?? I suggest we continue outreach what do you
+say ? »* — avec deux vidéos (Hormozi, *Generate 1000s of Leads* ; Charlie Morgan, *Beginner Guide To Cold
+Outreach*). Réponse : **oui**, et pour la première fois avec un chiffre qui dit **où**.
+
+### La pièce qui manquait : un tableau de mesure
+
+Des sept pièces d'un système d'outreach (agenda, plateforme, stimuli, CRM, source de leads, **tableau de
+mesure**, mécanisme d'envoi), **une seule nous manquait réellement** : la mesure. `leads/FUNNEL.md` est créé
+ce soir, généré à chaque rebuild. Ce qu'il dit, et c'est le fait de la journée :
+
+> **149 leads au fichier · 47 contactés (31,5 %) · 4 réponses humaines (8,5 % des contactés) · 3 de ces 4
+> réponses ont donné un rendez-vous ou un prix posé · 0 vente.**
+
+**Le goulot est donc le volume contacté, pas la persuasion** : **102 leads n'ont jamais reçu un message**.
+La conversion en rendez-vous, elle, ne fuit pas du tout — trois réponses humaines sur quatre sont devenues
+des dossiers chauds. Chercher une nouvelle liste serait un contresens ; le travail est dans le fichier.
+
+### Les leçons applicables, tout de suite
+
+Hormozi : la **mini-offre** (une solution complète à un problème étroit, qui révèle le problème suivant) —
+c'est exactement l'aperçu gratuit, qu'on pratiquait sans le nommer. Trois corrections concrètes : **nommer
+le résultat, pas le véhicule** (« une page qui prend les rendez-vous » plutôt que « un site web ») ;
+**ne donner l'aperçu qu'à des prospects qualifiés** ; **ne jamais résoudre le problème payant gratuitement**
+(l'aperçu montre la structure et l'angle, la version finie se vend). Et la phrase à garder pour les jours
+sans réponse : *un mauvais aimant ne prouve pas que les aimants ne marchent pas.*
+
+Charlie Morgan : nos sept pièces sont en place, **sauf la mesure** — désormais comblée. Notre version de
+l'agenda est WhatsApp (meilleure ici qu'un Calendly), notre plateforme est **une seule** (WhatsApp + les
+appels), notre source est déjà là (102 leads jamais contactés), et le mécanisme d'envoi reste **manuel** —
+refus assume de l'automatisation à froid.
+
+### La journée elle-même
+
+**Le plan est écrit** (`sales/PLAN-2026-09-24-25.md`) : les **trois relances prêtes** de la file du jour
+(Disc §①, Tchaya §②, Afrique Labo §③ — messages déjà rédigés dans `sales/Send-Soir-2026-09-23.md`) ; l'action
+**qui bloque la démonstration de demain** (redéployer `hosting/previews/unilabo/` en entier, puis cocher une
+analyse sur son propre téléphone) ; les impressions et les numéros MoMo ; puis **vendredi 10 h Univers, 13 h
+UNI-LABO**.
+
+### ⚠️ Le piège COMOBIL a encore frappé — dans le fichier que King lit le matin
+
+`leads/Daily-Plan.csv` — **généré** — listait encore **« Relance 1/3 Le Cristallin »** en priorité 1, des
+heures après la décision « on ne relance pas un malade » : la prose disait une chose (journal, CRM, message
+de santé en file), le calcul une autre (`views.py` gardait l'échéance du 24/09). Correction à l'endroit qui
+compte : `RELANCE_A_JOUR` de `views.py`, avec la note qui explique pourquoi, `guard.py lock`, rebuild
+vérifié — **la file du jour ne contient plus que les trois vraies relances**. Règle confirmée (M7) : *une
+décision humaine qui doit arrêter une action s'écrit là où l'action se calcule.*

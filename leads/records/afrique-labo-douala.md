@@ -31,7 +31,7 @@ Message 1 envoyé 17/09 13:24. **FU1 (M+2) ENVOYÉE par King le 19/09** (confirm
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 28 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 29 ligne(s).*
 
 `L61` · | jeu 17/09 13:24 | AFRIQUE LABO (690 54 70 93) | msg 1 | Envoyé, 2 coches | **Non** |
 `L78` · - **Fils ouverts sans réponse au 18/09 :** OraCare · MITOC · Baptist Comprehensive · Baird Memorial · The Skye · YAKS · AFRIQUE LABO · L'Opticien · La Béthanie · JEMPO. **31 fils ouverts · 2 réponses humaines (St. Theresa, UNI-LABO) · PRR = 2/31 = 6,5 %.**
@@ -61,6 +61,7 @@ Message 1 envoyé 17/09 13:24. **FU1 (M+2) ENVOYÉE par King le 19/09** (confirm
 `L2369` · **AFRIQUE LABO** avait reçu sa **FU2 le 21/09 à 17:39** — le journal du 21/09 au soir disait
 `L2375` · `Relance 3/3 Afrique Labo` (dernière touche). Les trois messages sont écrits, une seule demande chacun, aucune
 `L2378` · des patients ; pour Afrique Labo : son site existe, l'angle part de ce qu'il a). **Toujours rien envoyé
+`L3317` · (Disc §①, Tchaya §②, Afrique Labo §③ — messages déjà rédigés dans `sales/Send-Soir-2026-09-23.md`) ; l'action
 
 ---
 

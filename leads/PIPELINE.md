@@ -26,15 +26,15 @@
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| Le Cristallin | Douala | 699 90 55 77 | `L3205` |
+| Le Cristallin | Douala | 699 90 55 77 | `L3324` |
 | UNI-LABO | Douala (Bonamoussadi, Carrefour Etoo) | 696 13 98 19 | `L134` |
-| Univers Optique | Douala | 699 25 28 74 | `L3192` |
+| Univers Optique | Douala | 699 25 28 74 | `L3319` |
 
 ## ② Qualifié — en conversation — 10
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| Afrique Labo SARL | Douala (Bessengue) | 690 54 70 93 | `L2378` |
+| Afrique Labo SARL | Douala (Bessengue) | 690 54 70 93 | `L3317` |
 | Baird Memorial College | Buea (Bonduma) | 677875395 | `L16` |
 | Baptist Comprehensive College | Buea (Great Soppo) | 679650707 | `L15` |
 | Cabinet Dentaire The Skye | Douala (Bonamoussadi) | 677 79 69 99 | `L53` |
@@ -59,7 +59,7 @@
 | Bioscan | Douala (New Bell) | 680 06 03 94 | `L2113` |
 | Bishop Jules Peters Memorial College | Buea (Bokwaongo) | 683348856 | — |
 | Blessed Group of Schools (BGS / Blessed Anglo-Saxon) | Yaoundé (Simbock + Nomayos, BP 1839) | 680139453 | `L1642` |
-| COMOBIL – Collège Moderne Bilingue Les Lauréats | Douala (Bonamoussadi) | — | `L2332` |
+| COMOBIL – Collège Moderne Bilingue Les Lauréats | Douala (Bonamoussadi) | — | `L3322` |
 | COSBINAL – Complexe Scolaire Bilingue NAL | Douala (Bonamoussadi, Kotto Bloc K) | 677786379 | — |
 | Caprice Optique | Douala | 675 06 16 23 | — |
 | Cavisa Optique | Douala | 699 95 90 52 | — |
@@ -134,7 +134,7 @@
 | St. Joseph's College Sasse (SJC Sasse) | Buea (Sasse/Small Soppo) | 677195500 | `L1775` |
 | St. Sylvester International College | Buea (Muea) | — | — |
 | Summerset Bilingual College (SMBICOL) | Buea (Wokoko) | — | — |
-| Tchaya Optique | Douala | 696 79 01 73 | `L2376` |
+| Tchaya Optique | Douala | 696 79 01 73 | `L3317` |
 | Wonders Medical Foundation | Douala (Bonamoussadi) | — | — |
 | École Privée Bilingue Les Génies | Douala (Akwa) | — | `L3122` |
 
@@ -179,7 +179,7 @@
 | Polyclinique de la Gare LE NID | Douala (Bessengue) | 699 987 775 | `L34` |
 | Presbyterian Comprehensive Secondary School (PCSS) Buea | Buea (Madam Namondo Alexander) | 652075229 | — |
 | Solidarity Health Foundation (Solidarity Clinic & Laboratory) | Buea (Untarred Malingo St / Molyko Checkpoint D61, P.O. Box 467; plus code 575J+7M) | 677615757 | `L761` |
-| YONDJA ANALYSE | Douala | 696 88 88 23 | `L2904` |
+| YONDJA ANALYSE | Douala | 696 88 88 23 | `L3319` |
 
 ## ⛔ Écarté — 10
 

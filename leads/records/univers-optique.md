@@ -40,7 +40,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 108 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 109 ligne(s).*
 
 `L51` · | **ven 18/09 20:02** | **Clinique de L'université** (Bassa, 694 36 02 03) | msg 1 — sans maquette | Envoyé | **Non** |
 `L113` · | 20:02 | Cabinet Dentaire Emmanuel · Clinique de L'université · MEDI LABO |
@@ -150,6 +150,7 @@
 `L2999` · 10 disqualified · 3 closing), UNI-LABO et Univers en `closing`.
 `L3174` · 2023 (Univers : rien ne part sans accord écrit) ; **la phrase qu'un client doit retenir, dans leurs
 `L3192` · Les deux documents de vendredi portent maintenant le bloc, à l'endroit où il se pose : Univers l'insère
+`L3319` · analyse sur son propre téléphone) ; les impressions et les numéros MoMo ; puis **vendredi 10 h Univers, 13 h
 
 ---
 

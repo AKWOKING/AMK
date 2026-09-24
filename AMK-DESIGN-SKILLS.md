@@ -2145,3 +2145,74 @@ mismeasured button names, the two failed witnesses and the template that "blocke
 instrument accuses committed code, compare `git log -1` against `git ls-remote` before touching anything.**
 The repository itself is an instrument, and a rolled-back workspace is an instrument that lies about what
 we shipped. `openpyxl` was reinstalled in passing — a rollback always takes pip with it.
+
+---
+
+## §35 THE MISSING PIECE WAS A MEASUREMENT — two outreach videos, and the counter that finally existed (24 Sep 2026, batch [34])
+
+King sent two links and one question: *"what do we have planned for today?? I suggest we continue outreach
+what do you say ?"*. The answer needed a number we did not have. Two videos, one of which named the exact
+piece that was missing.
+
+### 35.1 Charlie Morgan's seven parts, and the one we did not have
+
+An outbound system is a car made of parts: **agenda · platform · stimuli · CRM · lead source · metric
+tracker · delivery mechanism**. Checking ourselves against it took ten minutes and produced one real gap:
+
+| Part | Ours |
+|---|---|
+| Agenda | WhatsApp and King's phone — the UNI-LABO booking form is the client-side version |
+| Platform | **one**: WhatsApp (plus calls). Picking one and being good at it is the advice; we were already there |
+| Stimuli | three call openings and written messages — never improvised |
+| CRM | a CSV plus generated views. **Better than the spreadsheet the video recommends, and the trap is the same**: a generated plan that contradicts a human decision (below) |
+| Lead source | directories + Google Maps: **149 leads, 102 never contacted** |
+| **Metric tracker** | **missing until tonight — `leads/FUNNEL.md`, generated on every rebuild** |
+| Delivery | manual, by King — a choice, not a shortfall |
+
+**The counter, in one line:** 149 leads in the file · **47 contacted (31.5 %)** · **4 human replies (8.5 % of
+contacted)** · **3 of those 4 became a meeting or a quoted price** · 0 sales. So the bottleneck is **volume
+contacted**, not persuasion, and not closing. That single line is worth more than any new list: it says put
+the work where the 102 untouched leads are.
+
+Two rules are written into the generated file: **an automatic reply is not a reply**, and **a mockup
+produced is not a warm prospect** (`Demo made` never replaces `reply_type = human`).
+
+### 35.2 Hormozi's mini-offer, which we already run without having named it
+
+Do not ask cold traffic to buy. Offer **a complete solution to a narrow problem** — and make sure that
+solving it **reveals the next problem**, the one your core offer answers. Three shapes: **reveal a problem**,
+**free trial**, **one step of a multi-step process**. Sending a mockup of their own page is all three at once,
+and it is why our cold messages get 8.5 % human replies in a market where a phone call is the norm.
+
+Three corrections are worth more than the theory:
+
+1. **Name the result, not the vehicle.** *"A web page"* sells badly; *"a page that takes the appointments for
+   you"* is remembered. Our message 1 should carry the result more often.
+2. **Qualify before you give.** The mockup goes to prospects with a visible presence and a reachable number —
+   never to everyone. (Hormozi: *"you don't have to give the lead magnet to everybody"*.)
+3. **Never solve the paid problem for free.** The mockup shows structure and angle; the finished, authored,
+   published page is what is sold. The contract already draws that line (two rounds of revisions, a written
+   scope) — the video only confirms it.
+
+### 35.3 What we refuse from both videos
+
+**Cold-outreach automation** (Instantly, bulk e-mail, sequences): our channel is WhatsApp, where a human reply
+often lands within the hour. Automating it would destroy the only thing that makes our approach work.
+**Free work as a door-opener**: the mockup is a bounded deliverable, not a donated project, and "never a
+discount — adjust the scope" still stands. **Vanity metrics**: the video says "1000s of leads"; our honest
+numbers are 8.5 % of 47, and they live in `leads/FUNNEL.md`.
+
+### 35.4 The trap that fired the same evening — and it is the COMOBIL one
+
+While checking the day's plan, `leads/Daily-Plan.csv` — a **generated** file — still listed **"Relance 1/3
+Le Cristallin"** as priority 1, hours after we had written that the man is ill and that no project message
+goes out before Monday. The prose said one thing (journal, CRM, the queued health message), the calculation
+said another (`views.py` still held the old 24/09 follow-up date), and **the generated file is what King
+actually reads in the morning**.
+
+This is the identical failure the repository already learned once with COMOBIL: *"the prose does not
+suffice"* (M7). A human decision that must change a computation belongs **in the generator** — here in
+`RELANCE_A_JOUR` of `views.py`, next to the note that explains why. Fixed, `guard.py lock` re-run, rebuild
+verified: the day's queue now lists exactly the three real relances, and Le Cristallin is out of it until
+29/09. **Any decision that stops an action must be written where the action is computed, not only where it
+is explained.**

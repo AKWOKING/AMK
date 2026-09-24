@@ -92,16 +92,22 @@ RELANCE_A_JOUR = {
                                       "réponses aux six points que la page demande, l'acompte"),
     # 23/09 09:46 : le prix est PARTI (150 000 FCFA, 75 000 pour démarrer). On attend sa réponse ;
     # s'il ne dit rien, une relance courte le 24/09 — et rien d'autre entre-temps.
-    "le-cristallin": ("2026-09-24", "**GELÉ (King, 23/09 au soir)** : aucune modification de la page ni du "
-                                     "dossier jusqu'au paiement. **PRIX POSÉ le 23/09 09:46** : 150 000 FCFA (site bilingue, "
-                                     "hébergement 1 an, nom de domaine, assistant WhatsApp), 50 % = 75 000 "
-                                     "pour démarrer, solde à la livraison. On attend un oui. S'il ne répond "
-                                     "pas : UNE relance courte le 24/09, sans rebaisser le prix et sans "
-                                     "reprocher le silence. Cinq écarts à trancher AVANT publication "
-                                     "(compte d'assurances FR 18 / EN 17, mur à 19, bloc « 32 ans » en "
-                                     "double, horaires vs son flyer, « depuis 2010 ») et le périmètre "
-                                     "« hébergement + domaine » à cadrer : son domaine est à lui jusqu'au "
-                                     "13/06/2027"),
+    # 24/09 : le plan demandait « Relance 1/3 Le Cristallin » alors que la décision écrite dit l'inverse.
+    # Il est MALADE (10:11) et King a répondu santé d'abord (10:13). Un plan généré qui contredit une
+    # décision humaine est exactement le piège COMOBIL — la prose le dit, la donnée le calcule autrement.
+    # Le prochain message est un message de SANTÉ, lundi 29/09 : `sales/Queue-CRISTALLIN-2026-09-29.md`.
+    "le-cristallin": ("2026-09-29", "**IL EST MALADE (24/09 10:11) — AUCUNE relance du projet.** "
+                                      "King a répondu santé d'abord le 24/09 à 10:13 ; next message = "
+                                      "message de santé lundi 29/09 (`sales/Queue-CRISTALLIN-2026-09-29.md`), "
+                                      "santé avant le projet, sans reposer le prix. **PRIX POSÉ le 23/09 "
+                                      "09:46** : 150 000 FCFA, 50 % = 75 000 pour démarrer, solde à la "
+                                      "livraison. GELÉ (King, 23/09) : aucune modification de la page ni du "
+                                      "dossier jusqu'au paiement ; les trois compensations (WhatsApp "
+                                      "Business, domaine 2027, fiche Google) restent parquées. Cinq écarts "
+                                      "à trancher AVANT publication (compte d'assurances FR 18 / EN 17, "
+                                      "mur à 19, bloc « 32 ans » en double, horaires vs son flyer, "
+                                      "« depuis 2010 ») et le périmètre « hébergement + domaine » à "
+                                      "cadrer : son domaine est à lui jusqu'au 13/06/2027"),
     # UNI-LABO a DEMANDÉ un rendez-vous : ce n'est plus une relance à calculer.
     "uni-labo-bonamoussadi": ("2026-09-25", "**RENDEZ-VOUS CONFIRMÉ — vendredi 25/09 à 13 h**, à leur "
                                             "laboratoire (Carrefour Etoo). Il a choisi 13 h lui-même le "
@@ -465,6 +471,67 @@ def view_daily_plan(rows, date):
     return out
 
 
+
+def view_funnel(rows, date):
+    """L'ENTONNOIR — la mesure qui dit OÙ regarder (lot [34], leçon vidéo « cold outreach »).
+
+    Pourquoi cette vue existe : le dépôt savait dire combien de leads existent, jamais **où le système
+    fuit**. Sans ce tableau, on « continue l'outreach » sans savoir si le problème est le volume
+    contacté, le taux de réponse ou la conversion en rendez-vous. Trois chiffres suffisent à trancher.
+    """
+    L = ["# ENTONNOIR — où le système fuit\n", GEN.format(date=date)]
+    total = len(rows)
+
+    def has(r, col, *vals):
+        v = str(r.get(col) or "").strip().lower()
+        return any(v.startswith(x) for x in vals)
+
+    contacted = [r for r in rows if has(r, "Contacted", "yes", "sent")]
+    human = [r for r in rows if str(r.get("reply_type") or "") == "human"]
+    auto = [r for r in rows if str(r.get("reply_type") or "") == "auto"]
+    demos = [r for r in rows if has(r, "Demo made", "yes")]
+    live = [r for r in rows if (r.get("stage") or "") in ("closing", "offer")]
+    won = [r for r in rows if (r.get("stage") or "") in ("won", "delivered")]
+
+    def pct(a, b):
+        return ("%.1f %%" % (100.0 * a / b)) if b else "—"
+
+    L += ["## La chaîne\n", "| Étape | Nombre | Taux |", "|---|---|---|",
+          "| Base (leads au fichier) | **%d** | — |" % total,
+          "| Contactés | **%d** | %s de la base |" % (len(contacted), pct(len(contacted), total)),
+          "| Réponses humaines | **%d** | %s des contactés |" % (len(human), pct(len(human), len(contacted))),
+          "| Réponses automatiques | %d | — |" % len(auto),
+          "| Aperçus produits | **%d** | (hors chaîne : souvent produits AVANT contact) |" % len(demos),
+          "| Prix posé / en négociation | **%d** | %s des aperçus |" % (len(live), pct(len(live), len(demos))),
+          "| Clients payants | **%d** | — |" % len(won), ""]
+
+    src = {}
+    for r in rows:
+        k = r.get("source") or "(non renseigné)"
+        d = src.setdefault(k, [0, 0, 0])
+        d[0] += 1
+        if r in contacted:
+            d[1] += 1
+        if r in human:
+            d[2] += 1
+    L += ["## Par source — c'est ici qu'on voit quelle source vaut le travail\n",
+          "| Source | Leads | Contactés | Réponses humaines | Taux de réponse |", "|---|---|---|---|---|"]
+    for k, (n, c, h) in sorted(src.items(), key=lambda kv: (-kv[1][2], -kv[1][1])):
+        L.append("| %s | %d | %d | **%d** | %s |" % (k, n, c, h, pct(h, c)))
+    L += ["", "## Le diagnostic, en trois lignes\n",
+          "1. **Le volume contacté est le premier goulot** : %d lead(s) sur %d n'ont jamais reçu un "
+          "message (%.0f %% de la base). Aucune amélioration de texte ne compense un lead jamais "
+          "contacté." % (total - len(contacted), total, 100.0 * (total - len(contacted)) / max(total, 1)),
+          "2. **Le taux de réponse humain** est de %s des contactés — c'est le chiffre à surveiller "
+          "d'un envoi à l'autre (il se lit avec `SOURCES.md` : quelle liste répond)." % pct(len(human), len(contacted)),
+          "3. **La conversion en rendez-vous, elle, ne fuit pas** : %d des %d réponses humaines ont "
+          "donné un rendez-vous ou un prix posé. Le travail n'est donc pas de « mieux closer », il est "
+          "de **contacter plus**, et de choisir les bonnes listes." % (len(live), max(len(human), 1)),
+          "", "> Règle de lecture : une réponse automatique n'est PAS une réponse. Un aperçu produit "
+          "n'est pas un prospect chaud — il se compte à part, et `Demo made` ne remplace jamais "
+          "`reply_type = human`.", ""]
+    return "\n".join(L) + "\n"
+
 def main() -> int:
     rows = load()
     dist = distinctive(rows)
@@ -476,13 +543,14 @@ def main() -> int:
         ("KILL-LIST.md", view_kill_list(rows, date)),
         ("STALE.md", view_stale(rows, idx, date)),
         ("SOURCES.md", view_sources(rows, date)),
+        ("FUNNEL.md", view_funnel(rows, date)),
     ]:
         (ROOT / "leads" / name).write_text(content, encoding="utf-8")
     plan = view_daily_plan(rows, date)
 
     n_act = max(sum(1 for _ in csv.reader(plan.open(encoding="utf-8-sig"))) - 2, 0)
-    print(f"✓ 4 vues + 1 plan générés ({date})")
-    print("  PIPELINE.md · KILL-LIST.md · STALE.md · SOURCES.md · Daily-Plan.csv")
+    print(f"✓ 5 vues + 1 plan générés ({date})")
+    print("  PIPELINE.md · KILL-LIST.md · STALE.md · SOURCES.md · FUNNEL.md · Daily-Plan.csv")
     print(f"  file du jour : {n_act} action(s)")
     return 0
 
