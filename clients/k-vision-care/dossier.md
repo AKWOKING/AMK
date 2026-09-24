@@ -43,7 +43,9 @@ Source : capture Wayback du 22/12/2024 de `kvisioncare.com`.
   assurés ». Leur bandeau WhatsApp porte les logos **ASCOMA, ACTIVA, PASS 24, SANLAM** — ils sont dans un
   réseau d'assureurs.
 - **La personne** : **KAKEU Djounessi**, présenté deux fois — « Général Manager » puis « Opticien
-  réfractionniste ». **C'est le nom à mettre dans le message.**
+  réfractionniste ». ⚠️ **Mais c'est une page vieille de deux ans** : le SMS part donc **sans le nom**, et
+  on ne l'emploie qu'**après l'appel**, quand on sait qui décroche (scripts : § 9 du dossier d'envoi
+  `sales/Send-BATCH-2026-09-24-Opticiens-3.md`).
 - **Ancienneté** : « existe sur le marché camerounais depuis **plus de 5 ans** », équipe dirigée par un
   opticien-lunettier.
 - **Ils vendaient en ligne** : un « Panier » (boutique WordPress/WooCommerce) figure en pied de page.
@@ -78,7 +80,8 @@ ligne ce qui a disparu**, en mieux, et sur leur nom.
 
 **④ C'est la meilleure cible de la campagne** : trois magasins, plus de cinq ans d'activité, réseau
 d'assureurs, prix publiés, un responsable nommé — et une vitrine en panne. À traiter en priorité après
-Cavisa.
+Cavisa. **Écrire dans le dossier ne veut pas dire envoyer** : les trois scripts sont prêts (§ 9 du dossier
+d'envoi), l'envoi appartient à King comme toujours.
 
 ## 5 · La leçon d'instrument (pour les prochains dossiers)
 
