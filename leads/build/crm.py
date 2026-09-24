@@ -2622,6 +2622,43 @@ REVISION_2409 = {
     # ⚠️ Le marqueur « FIL CLOS » n'est pas décoratif : `views.py` s'en sert pour sortir le lead de la
     # file « ⚡ Répondre d'abord », où il serait resté TOUS LES JOURS (une réponse `human` reste
     # « en attente » tant que rien ne dit le contraire). Voir le commentaire dans `reply_pending`.
+    # ── 24/09 — DÉCISION DE KING : ON NE RELANCE PAS CE QUI N'A JAMAIS ÉTÉ OUVERT ────────────────
+    # Mot pour mot : « Pas de relance pour Disc, Tchaya et Afrique Labo, ils n'ont ouvert aucun de mes
+    # messages sur WhatsApp, c'est un signe clair qu'ils ne sont pas intéressés. »
+    # Les trois avaient une échéance DANS `RELANCE_A_JOUR` (views.py) — échéance RETIRÉE le même jour :
+    # sans ça, le plan du jour aurait continué à réclamer une relance que King vient d'interdire. C'est
+    # le piège COMOBIL à l'envers : la prose dit « stop », la donnée calcule « relance ».
+    # ⚠️ `parked` et non `lost` : personne n'a dit non. Un message jamais ouvert n'est pas une preuve
+    # de désintérêt — c'est un signal (notifications coupées, ligne d'appoint, téléphone au magasin),
+    # et King en a fait une règle de travail (`sales/MESSAGES-2026-09-23-PERSUASION.md` §4).
+    # `records.py` n'engage alors AUCUNE action : seule une décision explicite de King peut rouvrir.
+    "disc-optique-m-dicale": {
+        "stage": "parked", "stage_since": "2026-09-24",
+        "disqualification_reason": "message livré mais JAMAIS OUVERT (aucun accusé de lecture) — "
+                                   "décision de King, 24/09 : aucune relance",
+        "Notes_extra":
+            "24/09 — relance 1/3 ANNULÉE avant envoi. Message 1 parti le 21/09 à 17:48, jamais ouvert. "
+            "Si la boutique écrit d'elle-même un jour, le fil rouvre — sinon, plus rien.",
+    },
+    "tchaya-optique": {
+        "stage": "parked", "stage_since": "2026-09-24",
+        "disqualification_reason": "message livré mais JAMAIS OUVERT (aucun accusé de lecture) — "
+                                   "décision de King, 24/09 : aucune relance",
+        "Notes_extra":
+            "24/09 — relance 1/3 ANNULÉE avant envoi. Message 1 parti le 21/09 à 17:47, jamais ouvert. "
+            "Vitrine réelle (deux pages Facebook, opticien depuis 1974) : le dossier reste, la relance "
+            "non. Si la boutique écrit d'elle-même, le fil rouvre.",
+    },
+    "afrique-labo-douala": {
+        "stage": "parked", "stage_since": "2026-09-24",
+        "disqualification_reason": "messages livrés mais JAMAIS OUVERTS (aucun accusé de lecture) — "
+                                   "décision de King, 24/09 : aucune relance",
+        "Notes_extra":
+            "24/09 — la FU3 préparée (`sales/Send-Soir-2026-09-23.md` §③) NE PARTIRA PAS : annulée "
+            "avant envoi. Deux relances avaient déjà été envoyées (FU1 19/09, FU2 21/09) et aucune "
+            "n'a été ouverte. C'était la dernière touche prévue ; elle devient la décision écrite : "
+            "on s'arrête. Vitrine à lui (`afriqlabo.com`) — le dossier reste tel quel.",
+    },
     # ── 24/09 (soir) — LE SMS EST PARTI, ET IL EST PARTI AUTREMENT (récit de King : « message
     #    envoyé à K Vision et Bely »). WhatsApp n'offre pas de bouton « Message » sur cette fiche
     #    Business : c'est le SMS qui a ouvert la porte, au numéro confirmé 677 077 159. On ne marque

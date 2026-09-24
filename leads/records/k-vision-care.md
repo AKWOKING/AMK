@@ -32,13 +32,14 @@ LOT 3 (préparé le 24/09, PAS ENVOYÉ). ⚠️ L'ANNONCE SE CONTREDIT : le text
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 5 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 6 ligne(s).*
 
 `L3657` · numéros** : Royal Optic **691 219 986**, et pour K Vision Care **677 077 159** (celui que l'annonce met dans
 `L3676` · à mettre en réserve. **Ce que King a demandé** : « K vision optique WhatsApp number: 677 077 159 and they
 `L3682` · - **677 077 159 est bien à eux** — profil WhatsApp **Business** « K Vision Care », 09:00–18:00,
 `L3697` · (`wa_verified = yes`, `677 077 159`, `site_url` renseigné). Le contrôle `M4` repasse au vert —
 `L3707` · « Voice »). Trois portes écrites au §9 du dossier d'envoi : **SMS** au 677 077 159 (291 caractères,
+`L3780` · « Message » sur cette fiche Business : c'est donc le **SMS au 677 077 159** qui a ouvert la porte, avec le
 
 ---
 

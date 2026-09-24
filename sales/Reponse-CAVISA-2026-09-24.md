@@ -1,5 +1,28 @@
 # Réponse — CAVISA OPTIQUE a regardé l'aperçu · 24/09/2026, 13:16
 
+**✔ RÉPONSE ENVOYÉE le 24/09 à 13:26** par King (relevé sur la capture, 14:48). Texte exact parti :
+
+```
+Merci d'avoir pris le temps de regarder et pour votre retour !
+Vous avez tout à fait raison, il manque des éléments — et c'est normal : c'est un aperçu de
+démonstration, je n'ai pas voulu inventer vos vraies données.
+Pour que la page soit 100 % fidèle à votre cabinet, il me faut juste :
+• Votre position WhatsApp (un simple partage de localisation)
+• Vos horaires d'ouverture
+• 2 ou 3 photos de la boutique / montures
+• Vos spécialités (marques, solaires, enfants, réparations)
+Une petite question : préférez-vous afficher vos prix sur la page, ou orienter les patients vers
+WhatsApp pour les demander ?
+Dès réception, je mets votre page à jour !
+— Akwo King / AMK
+```
+
+⚠️ Deux écarts avec ce qui était préparé ici, et **le message envoyé est le bon** : ① il demande un
+**partage de position WhatsApp** plutôt qu'une adresse + un repère (plus simple à envoyer depuis un
+téléphone, et c'est lui qui connaît l'emplacement réel) ; ② il garde la **question des prix** — qu'on
+voulait poser, oui ou non. **La balle est chez M. Dongmo.** La prochaine action de notre côté est le
+**redéploiement unique**, et il attend sa liste.
+
 **Ce qu'il a écrit, mot pour mot :** *« Beaucoup de manquement mais c'est appréciable. »*
 **Avant, à 13:09, King a envoyé** le lien `https://cavisa.vercel.app/` (carte de lien affichée : titre + description ; **sans vignette** — `og:image` était encore commenté, corrigé depuis, redéploiement nécessaire).
 

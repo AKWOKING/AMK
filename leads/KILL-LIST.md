@@ -11,12 +11,11 @@ Le playbook §A4 disait « les 2 leads à 18 (COMOBIL, OraCare) ». **C'était f
 
 ## ⚡ Répondre d'abord
 
-- **Cavisa Optique** — 699 95 90 52
-
-> **Règle des 90 secondes.**
+*Rien en attente.*
 
 ## 📅 Décisions déjà prises — DATES À VENIR, ne rien faire maintenant
 
+- **Cavisa Optique** — 2026-09-28 · Réponse envoyée le 24/09 à 13:26 (remerciements + les 4 éléments demandés + la question des prix). La balle est chez M. Dongmo. PROPOSITION à confirmer par King : UN rappel court si rien n'est arrivé d'ici là — le redéploiement, lui, attend sa liste
 - **Centre Médical de Bonanjo** — 2026-09-28 · Page complète envoyée le 22/09 à 13:35 (deux coches) avec le prix posé, puis relance 16:24 (une coche) : « vos 9 services centralisés pour orienter les patients de Google vers votre WhatsApp ». DÉCISION KING 16:30 : prochaine vague — jeudi 24/09, sans reposer le prix, une question de calendrier seulement
 - **Labiomed** — 2026-10-01 · A RÉPONDU le 22/09 à 16:41 : « Non pas encore je ne suis pas en place » · « Quand je serai la je vais vous contacter ». Ce n'est ni un oui ni un refus — c'est un REPORT MOTIVÉ (pas encore installé). Réponse envoyée dans l'heure ; on ne le relance plus d'ici le 1ᵉʳ octobre, et ce jour-là sans prix ni question de validation : juste « vous êtes en place ? »
 - **Le Cristallin** — 2026-09-29 · **IL EST MALADE (24/09 10:11) — AUCUNE relance du projet.** King a répondu santé d'abord le 24/09 à 10:13 ; next message = message de santé lundi 29/09 (`sales/Queue-CRISTALLIN-2026-09-29.md`), santé avant le projet, sans reposer le prix. **PRIX POSÉ le 23/09 09:46** : 150 000 FCFA, 50 % = 75 000 pour démarrer, solde à la livraison. GELÉ (King, 23/09) : aucune modification de la page ni du dossier jusqu'au paiement ; les trois compensations (WhatsApp Business, domaine 2027, fiche Google) restent parquées. Cinq écarts à trancher AVANT publication (compte d'assurances FR 18 / EN 17, mur à 19, bloc « 32 ans » en double, horaires vs son flyer, « depuis 2010 ») et le périmètre « hébergement + domaine » à cadrer : son domaine est à lui jusqu'au 13/06/2027

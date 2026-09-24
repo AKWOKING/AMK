@@ -222,3 +222,39 @@ numéros « registre uniquement », la préparation entière partait à la poube
 
 **Ce que ça ne change pas :** aucun envoi par nous · aucune relance-reproche · le prospect non joignable
 reste dans la file, sans relance, et n'y revient que si un autre numéro apparaît.
+
+---
+
+## §4 · ON NE RELANCE PAS CE QUI N'A JAMAIS ÉTÉ OUVERT (décision de King — 24/09/2026)
+
+**Mot pour mot :** *« Pas de relance pour Disc, Tchaya et Afrique Labo, ils n'ont ouvert aucun de mes
+messages sur WhatsApp, c'est un signe clair qu'ils ne sont pas intéressés. »*
+
+**Ce qui s'est passé.** Trois fils de la vague du 21/09, trois messages **livrés** (les deux coches
+grises) et **jamais ouverts** — donc jamais lus. Le plan du jour réclamait pour eux une relance 1/3, et
+pour Afrique Labo sa **dernière touche**. King a tranché : rien ne part.
+
+**La règle, telle qu'on la tient désormais :**
+
+1. **Avant d'écrire une relance, regarder l'état de LECTURE du message précédent.** Une coche grise =
+   livré, pas lu. Deux coches bleues = lu. C'est la seule information nouvelle qu'on peut avoir avant
+   d'écrire — et elle vaut mieux qu'un calcul M+2.
+2. **Jamais ouvert après plusieurs jours = on s'arrête.** Le CRM passe en `parked` avec la raison datée,
+   et l'échéance sort de la table des relances (`RELANCE_A_JOUR`), sinon le plan du jour continuerait à
+   réclamer une action interdite.
+3. **`parked`, jamais `lost` — et c'est important.** Personne n'a dit non : un message non ouvert peut
+   vouloir dire **notifications coupées**, **ligne d'appoint**, ou **téléphone qui vit au magasin**.
+   Rien de tout ça n'est un refus. Ce qui est vrai, c'est qu'on n'a **aucun signal de vie** — et qu'on
+   n'écrit pas dans le vide. **Si la boutique écrit d'elle-même un jour, le fil rouvre.**
+4. **Ce qui reste au dossier reste au dossier.** Le travail de recherche (deux pages Facebook pour
+   Tchaya, la vitrine `afriqlabo.com` pour Afrique Labo, la fiche DISC de Bali) n'est pas jeté — il ne
+   resservira que si le prospect revient.
+
+**Pourquoi c'est cohérent avec le reste de la campagne.** La règle « jamais de relance-reproche »
+(écrite après OraCare) interdisait de reprocher à quelqu'un son silence. Celle-ci va plus loin : elle
+interdit de **parler à quelqu'un qui ne nous a pas lus**. Une relance n'est pas un dû ; c'est un acte qui
+se justifie par un signal — et sans signal, on ne l'écrit pas.
+
+**Et une nuance à ne pas perdre :** cette règle s'applique aux messages **jamais ouverts**. Quelqu'un qui
+a **lu** et n'a pas répondu est dans un autre cas — il a vu, il a eu sa chance de répondre, et la relance
+prévue (sans reproche, une seule) reste légitime.

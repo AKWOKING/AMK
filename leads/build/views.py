@@ -119,18 +119,26 @@ RELANCE_A_JOUR = {
     # Le calcul M+4 ne voyait pas cette échéance : le compteur de la source disait 1 relance au lieu de 2
     # (FU1 19/09 + FU2 21/09 17:39). Le journal, lui, disait « FU3 mer 23/09 max, palier des 3 messages
     # atteint » depuis le 21/09. Décision humaine inscrite ici le 23/09 — c'est la DERNIÈRE touche.
-    "afrique-labo-douala": ("2026-09-23", "**FU3 = DERNIÈRE TOUCHE** (le compteur était faux : FU1 19/09 + FU2 "
-                                         "21/09 17:39 = 2, la source disait 1 → l'échéance écrite au journal "
-                                         "depuis le 21/09 n'était calculée nulle part). Message prêt : "
-                                         "`sales/Send-Soir-2026-09-23.md` §③. Après cet envoi : plus aucune "
-                                         "relance, on attend. Vitrine À LUI (`afriqlabo.com`) : l'angle part de "
-                                         "ce qu'il a, jamais de ce qui lui manque"),
-    "tchaya-optique": ("2026-09-23", "Message 1 parti le 21/09 à 17:47 (une coche, jamais enregistré avant le "
-                                     "22/09). Vitrine : deux pages Facebook, dont « TCHAYA OPTIQUE INTERNATIONAL » "
-                                     "(2 390 mentions J'aime, opticien depuis 1974). Relance 1/3 : 23/09"),
-    "disc-optique-m-dicale": ("2026-09-23", "Message 1 parti le 21/09 à 17:48 (une coche, jamais enregistré avant "
-                                           "le 22/09). Vitrine : page Facebook « DISC Optique Médical - DOM » "
-                                           "(Bali, rue des manguiers). Relance 1/3 : 23/09"),
+    # ── 24/09 — TROIS ÉCHÉANCES RETIRÉES SUR DÉCISION DE KING ──────────────────────────────────
+    # « Pas de relance pour Disc, Tchaya et Afrique Labo, ils n'ont ouvert aucun de mes messages sur
+    # WhatsApp, c'est un signe clair qu'ils ne sont pas intéressés. »
+    # Les trois étaient planifiés ICI (Disc et Tchaya en relance 1/3, Afrique Labo en FU3, sa dernière
+    # touche). Leurs échéances sont supprimées et l'état vit désormais au CRM — `stage = parked` avec
+    # motif daté — sinon le plan du jour aurait continué à réclamer une relance interdite.
+    #   · DISC Optique Médicale — message 1 parti le 21/09 à 17:48, jamais ouvert.
+    #   · TCHAYA Optique — message 1 parti le 21/09 à 17:47, jamais ouvert (deux pages Facebook).
+    #   · AFRIQUE LABO — FU1 19/09 + FU2 21/09, aucune ouverte ; la FU3 préparée ne partira pas.
+    # ⛔ NE PAS RÉACTIVER sans décision explicite de King.
+    # ── Cavisa : NOUS AVONS RÉPONDU (24/09 13:26) — la balle est chez lui, mais pas d'oubli ────
+    # Dongmo a demandé des compléments à 13:16 (adresse, horaires, photos, spécialités, décision
+    # prix) ; la réponse est partie à 13:26. Sans cette ligne, il serait resté TOUS LES JOURS en tête
+    # de la file « ⚡ Répondre d'abord » : une réponse `human` reste « en attente » tant que rien ne
+    # dit le contraire. ⚠️ **PROPOSITION, À CONFIRMER PAR KING** : si rien n'est arrivé d'ici là, UN
+    # rappel court le 28/09 — jamais un reproche, juste « j'ai bien reçu / je n'ai rien reçu ».
+    "cavisa-optique": ("2026-09-28", "Réponse envoyée le 24/09 à 13:26 (remerciements + les 4 éléments "
+                                     "demandés + la question des prix). La balle est chez M. Dongmo. "
+                                     "PROPOSITION à confirmer par King : UN rappel court si rien n'est "
+                                     "arrivé d'ici là — le redéploiement, lui, attend sa liste"),
     "skye-douala": ("2026-09-29", "Relance 2/3 envoyée le 22/09 au soir (réécrite sans reproche). DERNIÈRE "
                                   "touche : 29/09, puis parked daté"),
     "yaks-douala": ("2026-09-29", "Relance 2/3 envoyée le 22/09 au soir. DERNIÈRE touche : 29/09, puis parked"),

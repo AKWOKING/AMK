@@ -3806,3 +3806,63 @@ est rendue, et l'engagement tient : plus rien sur ce lead, sauf si elle écrit e
 réponse** (`sales/Reponse-CAVISA-2026-09-24.md` — Dongmo a écrit à 13:16, la réponse est écrite depuis,
 elle n'est pas encore partie) ; **② les trois relances du soir** restent à envoyer (Disc · Tchaya ·
 Afrique Labo). Le CRM ne les oubliera pas ; King non plus, maintenant que c'est écrit.
+
+## 24/09/2026 (nuit) — DEUX DÉCISIONS DE KING : CAVISA RÉPONDUE, STOP AUX RELANCES JAMAIS OUVERTES
+
+**Récit de King, mot pour mot :** *« Répondu à Cavisa. Pas de relance pour Disc, Tchaya et Afrique Labo,
+ils n'ont ouvert aucun de mes messages sur WhatsApp, c'est un signe clair qu'ils ne sont pas
+intéressés. »* Deux décisions, deux instruments à corriger — et l'une des deux m'a fait **corriger une
+erreur que j'avais laissée passer**.
+
+### ① CAVISA — la réponse est partie à 13:26 (je la croyais en attente)
+
+La capture de King (prise à 14:48) montre la réponse **envoyée à 13:26**, dix minutes après le message de
+M. Dongmo. Texte exact, conservé dans `sales/Reponse-CAVISA-2026-09-24.md` avec le message de 13:09 et la
+réponse de 13:16. Il remercie, reconnaît le manquement (« c'est normal : c'est un aperçu de
+démonstration, je n'ai pas voulu inventer vos vraies données »), demande **ses 4 éléments** — position
+WhatsApp, horaires, 2-3 photos, spécialités — et pose **la question des prix** (afficher, ou orienter vers
+WhatsApp). Deux écarts assumés avec la version que j'avais préparée : il demande un **partage de position
+WhatsApp** au lieu d'une adresse + repère (plus simple depuis un téléphone), et il garde la question des
+prix. **Le message envoyé est le bon.**
+
+**Ce qu'on fait maintenant : on attend lui.** Le redéploiement reste **unique** et n'aura lieu qu'après sa
+liste. ⚠️ Erreur corrigée : la file « ⚡ Répondre d'abord » l'aurait affiché **tous les jours** — une
+réponse `human` reste « en attente » tant que rien ne dit le contraire. Il entre donc dans la table des
+relances avec une échéance au **28/09**, marquée **proposition à confirmer par King** : si rien n'est
+arrivé d'ici là, **un** rappel court, jamais un reproche.
+
+### ② DISC · TCHAYA · AFRIQUE LABO — la règle « on ne relance pas ce qui n'a jamais été ouvert »
+
+Trois messages de la vague du 21/09 : **livrés, jamais ouverts** (coche grise = livré, pas lu). Le plan du
+jour réclamait pour eux une relance 1/3, et pour Afrique Labo sa **troisième et dernière touche**. King
+tranche : **rien ne part.**
+
+**Ce que ça a changé, mécaniquement — parce que la prose seule ne suffit pas :**
+- `RELANCE_A_JOUR` (`views.py`) : **les trois échéances sont retirées**, avec un commentaire daté qui
+  garde l'histoire et dit « ⛔ ne pas réactiver sans décision de King ». Sans ça, le plan du jour aurait
+  continué à réclamer une relance interdite — **le piège COMOBIL à l'envers** : la prose dit « stop », la
+  donnée calcule « relance ».
+- CRM : les trois passent en **`stage = parked`** (et **pas** `lost`) avec un motif daté :
+  *« message livré mais jamais ouvert (aucun accusé de lecture) — décision de King, 24/09 : aucune
+  relance »*. `records.py` n'engage alors plus aucune action : seule une décision explicite peut rouvrir.
+- `sales/Send-Soir-2026-09-23.md` : les trois messages restent au dossier, marqués **« ne partiront
+  pas »**. Un message écrit et non envoyé n'est pas un message perdu — c'est une décision documentée.
+- **La règle est écrite** dans `sales/MESSAGES-2026-09-23-PERSUASION.md` **§4**, avec sa nuance :
+  *jamais ouvert ≠ refus* (notifications coupées, ligne d'appoint, téléphone resté au magasin) ; ce qui
+  est vrai, c'est qu'on n'a **aucun signal de vie**, et **on n'écrit pas dans le vide**. Corollaire
+  gardé : quelqu'un qui a **lu** et n'a pas répondu reste dans un autre cas — la relance unique, sans
+  reproche, y reste légitime.
+
+### L'état des instruments après ces deux décisions (reconstruits)
+
+| | Avant | Après |
+|---|---|---|
+| File du jour | 4 actions | **0 action** — et c'est exact : ce soir, rien ne nous appartient |
+| ② Qualifié — en conversation | 23 | **20** |
+| ⏸ Parqué | 39 | **42** |
+| Contactés / réponses humaines | 62 / 6 | **62 / 6** (inchangé : personne n'a été contacté ce soir) |
+
+**Une file du jour vide n'est pas un bug** : c'est ce que disent les décisions du jour — Cavisa a reçu sa
+réponse et la balle est chez lui, les trois relances sont annulées, et les fils suivants sont déjà datés
+(OraCare et Bonanjo au 28/09, MITOC · Skye · Yaks et Le Cristallin au 29/09, Labiomed au 1ᵉʳ octobre,
+les deux rendez-vous de vendredi 25/09).

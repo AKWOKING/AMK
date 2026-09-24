@@ -9,10 +9,10 @@
 |---|---|
 | ④ Prix posé, en négociation | **3** |
 | ③ Aperçu envoyé | **1** |
-| ② Qualifié — en conversation | **23** |
+| ② Qualifié — en conversation | **20** |
 | ① Prospection — à qualifier | **77** |
 | ❌ Perdu | **1** |
-| ⏸ Parqué | **39** |
+| ⏸ Parqué | **42** |
 | ⛔ Écarté | **12** |
 | **Total** | **156** |
 
@@ -22,11 +22,7 @@
 
 ## ⚡ Répondre d'abord
 
-| Lead | WhatsApp | Ce qu'il a dit |
-|---|---|---|
-| **Cavisa Optique** | 699 95 90 52 | Yes |
-
-> **Règle des 90 secondes.** Une réponse en attente passe avant tout le reste.
+*Rien en attente.*
 
 ## ④ Prix posé, en négociation — 3
 
@@ -40,26 +36,24 @@
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| Cavisa Optique | Douala | 699 95 90 52 | `L3716` |
+| Cavisa Optique | Douala | 699 95 90 52 | `L3806` |
 
-## ② Qualifié — en conversation — 23
+## ② Qualifié — en conversation — 20
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
 | 4M Optique Akwa | Douala | 679 27 06 64 | `L3590` |
-| Afrique Labo SARL | Douala (Bessengue) | 690 54 70 93 | `L3317` |
 | Baird Memorial College | Buea (Bonduma) | 677875395 | `L16` |
 | Baptist Comprehensive College | Buea (Great Soppo) | 679650707 | `L15` |
 | Cabinet Dentaire The Skye | Douala (Bonamoussadi) | 677 79 69 99 | `L53` |
 | Cabinet Dentaire YAKS | Douala (Logbessou) | 672 70 20 78 | `L54` |
 | Cabinet d'Optique la Rétine | Douala (Akwa) | 695 474 364 | `L3652` |
 | Centre Médical de Bonanjo | Douala (Bonapriso, ancien aéroport) | 694 57 22 77 | `L2557` |
-| Disc Optique Médicale | Douala | 677 53 35 68 | — |
 | Doyoan Optic | Douala | 653 85 27 49 | `L3589` |
 | El Roï Optique Médicale | Douala (Village) | 693 127 302 | `L3651` |
 | Espace Lunetterie | Douala | 677 34 24 62 | `L3452` |
 | Fashion Vision | Douala | 656 22 38 63 | `L3637` |
-| K Vision Care | Douala (Bessengue · Ancien 3e · Ndogpassi) | 677 077 159 | `L3707` |
+| K Vision Care | Douala (Bessengue · Ancien 3e · Ndogpassi) | 677 077 159 | `L3780` |
 | L'Opticien Bali SARL | Douala (Bali) | 670 27 60 65 | `L22` |
 | Labiomed | Douala (Deido, 104 Route Deido-Bassa) | 699 98 54 66 | `L2338` |
 | Maff Optique | Douala | 699 93 19 56 | `L3451` |
@@ -68,7 +62,6 @@
 | Médina Optic | Douala | 699 93 93 34 | `L3520` |
 | Net Optique Médical | Douala (Akwa) | 675 785 930 | `L3652` |
 | St. Theresa International Bilingual Comprehensive College (STIBCCOL) | Buea (Molyko) | 679151075 | `L1698` |
-| Tchaya Optique | Douala | 696 79 01 73 | `L3524` |
 
 ## ① Prospection — à qualifier — 77
 
@@ -158,11 +151,12 @@
 |---|---|---|---|
 | Bely Optique Médicale | Douala | 696 85 52 42 | `L3754` |
 
-## ⏸ Parqué — 39
+## ⏸ Parqué — 42
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
 | 2K Labo | Douala (Yassa, à côté de l'institut La Perle) | 670 94 43 03 | — |
+| Afrique Labo SARL | Douala (Bessengue) | 690 54 70 93 | `L3808` |
 | CIDM St Joseph | Douala | 674 30 07 98 | — |
 | Cabinet Biomédical Adonaï | Douala | 696 53 87 75 | `L1783` |
 | Cabinet Dentaire Emmanuel | Douala (Bonamoussadi) | 694 42 62 39 | `L113` |
@@ -178,6 +172,7 @@
 | Ctre d'Analyses Médicales Pasteur Medlas | Douala (Akwa, Bld de la République) | 677 45 99 97 | `L3691` |
 | DAS Group International | Douala (Akwa) | 680 100 626 | `L41` |
 | Diagmed | Douala (Bonabéri, Rue 4.352 — Route du Lycée) | 698 97 22 03 | — |
+| Disc Optique Médicale | Douala | 677 53 35 68 | — |
 | Discovery Labs | Douala (Bassong) | 694 86 13 61 | `L110` |
 | Département Biologique | Douala (Akwa I) | 699 85 33 52 | `L110` |
 | Flemming Dream Labo | Douala (Bessenguè, feu rouge, Bld de la République) | 699 81 34 04 | — |
@@ -200,6 +195,7 @@
 | Polyclinique de la Gare LE NID | Douala (Bessengue) | 699 987 775 | `L34` |
 | Presbyterian Comprehensive Secondary School (PCSS) Buea | Buea (Madam Namondo Alexander) | 652075229 | — |
 | Solidarity Health Foundation (Solidarity Clinic & Laboratory) | Buea (Untarred Malingo St / Molyko Checkpoint D61, P.O. Box 467; plus code 575J+7M) | 677615757 | `L761` |
+| Tchaya Optique | Douala | 696 79 01 73 | `L3807` |
 | YONDJA ANALYSE | Douala | 696 88 88 23 | `L3349` |
 
 ## ⛔ Écarté — 12
