@@ -7,6 +7,7 @@
 |---|---|---|
 | `directory` | 109 | Annuaires professionnels de Douala (pagespratiquescm, maligah, doualazoom, goafricaonline). |
 | `(non renseigné)` | 38 | **Les 38 lignes du classeur d'origine.** Leur provenance n'a jamais été écrite — trou de données assumé, pas une invention. |
+| `onoc_registry` | 7 |  |
 | `pass_vitrine` | 4 |  |
 | `google_maps` | 2 | Sweep cartographique — dentaires de Bonamoussadi/Logbessou. |
 | `content_video` | 1 | Premier lead de la campagne, venu du contenu. |

@@ -32,7 +32,7 @@ Envoyé le 19/09 à 19:32 — lu (2 coches). ***PREMIER OUI DE LA CAMPAGNE.*** 1
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 32 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 33 ligne(s).*
 
 `L366` · ## sam 19/09 19:21–20:02 — ⭐ PREMIER « OUI » DE LA CAMPAGNE : LABIOMED
 `L371` · - **23:59 → LABIOMED a répondu « Oui » à 19:43 — 11 minutes après notre message.**
@@ -66,6 +66,7 @@ Envoyé le 19/09 à 19:32 — lu (2 coches). ***PREMIER OUI DE LA CAMPAGNE.*** 1
 `L1780` · `univers-optique-concept`, `labiomed`, `bonanjo`, `amk-cm.vercel.app/opticien/`.
 `L2119` · (Labiomed) · « les bons de prise en charge », « au comptoir », « les montures », « l'atelier ». **Et le panneau
 `L2338` · Afrique Labo, L'Opticien, Labiomed, Bonanjo, MITOC) ; la bibliothèque publiable sans identité client
+`L3867` · (OraCare et Bonanjo au 28/09, MITOC · Skye · Yaks et Le Cristallin au 29/09, Labiomed au 1ᵉʳ octobre,
 
 ---
 

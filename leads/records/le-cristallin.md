@@ -39,7 +39,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 107 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 108 ligne(s).*
 
 `L837` · - `Le Cristallin` 17:51 · `Univers Optique` 17:50 · `Disc Optique Médicale` 17:48 · `Tchaya Optique` 17:47 :
 `L881` · ## Lundi 21/09/2026 — 18:20 → 19:15 · « Ok » de Le Cristallin : le premier aperçu demandé, construit et branché sur le CRM
@@ -148,6 +148,7 @@
 `L3324` · `leads/Daily-Plan.csv` — **généré** — listait encore **« Relance 1/3 Le Cristallin »** en priorité 1, des
 `L3426` · Le Cristallin), et la poser demain serait vendre le service suivant avant d'avoir livré le premier. Un refus de
 `L3718` · C'est aussi un client de **refonte** (comme Le Cristallin) — donc un palier supérieur à une page simple.
+`L3867` · (OraCare et Bonanjo au 28/09, MITOC · Skye · Yaks et Le Cristallin au 29/09, Labiomed au 1ᵉʳ octobre,
 
 ---
 

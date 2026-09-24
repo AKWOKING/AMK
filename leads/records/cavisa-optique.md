@@ -31,7 +31,7 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : DONGMO Jean René. Probleme : etre
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 15 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 20 ligne(s).*
 
 `L3453` · **Médina Optic** (Balla, 699 93 93 34) et **Cavisa Optique** (Dongmo, 699 95 90 52). Tous jamais contactés,
 `L3461` · le 24/09** ; pour Cavisa, la seule page au monde qui porte son nom est **vide** ; pour Médina, on dit
@@ -48,6 +48,11 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : DONGMO Jean René. Probleme : etre
 `L3716` · **Pourquoi c'est le meilleur prospect de la campagne après Cavisa** : une entreprise réelle, trois
 `L3805` · **Et ce que la file du jour dit encore, puisqu'elle ne se tait pas toute seule** : **① Cavisa attend sa
 `L3806` · réponse** (`sales/Reponse-CAVISA-2026-09-24.md` — Dongmo a écrit à 13:16, la réponse est écrite depuis,
+`L3810` · ## 24/09/2026 (nuit) — DEUX DÉCISIONS DE KING : CAVISA RÉPONDUE, STOP AUX RELANCES JAMAIS OUVERTES
+`L3812` · **Récit de King, mot pour mot :** *« Répondu à Cavisa. Pas de relance pour Disc, Tchaya et Afrique Labo,
+`L3817` · ### ① CAVISA — la réponse est partie à 13:26 (je la croyais en attente)
+`L3820` · M. Dongmo. Texte exact, conservé dans `sales/Reponse-CAVISA-2026-09-24.md` avec le message de 13:09 et la
+`L3865` · **Une file du jour vide n'est pas un bug** : c'est ce que disent les décisions du jour — Cavisa a reçu sa
 
 ---
 

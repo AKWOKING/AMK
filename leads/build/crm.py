@@ -697,8 +697,107 @@ BATCH_2409_3_ECARTES = [
 ]
 
 
+# ── LE QUATRIÈME LOT — le registre officiel de l'ONOC (Littoral, lignes 85 à 159), 24/09 au soir ──
+# Pourquoi cette source : elle a donné **100 % de joignables** au lot 1 (5/5) contre 60 % pour
+# l'annuaire communautaire du lot 3, et elle donne **un nom à qui parler** (l'opticien assumant la
+# responsabilité civile) en plus du numéro. Les sept sont NEUFS : croisés par nom ET par numéro avec
+# les 156 lignes et les 62 leads déjà contactés — **Kamaïs Optic est tombé à ce contrôle** (déjà au
+# CRM, contacté puis parqué) et sort du lot.
+# ⚠️ Porte A NON vérifiée : elle se vérifie dans l'application, par King, avant l'écriture du message
+# (leçon Horizon). D'où `wa_verified="unknown"` sur les sept, y compris là où un annuaire les décrit.
+BATCH_2409_4_NEW = [
+    dict(slug="cinq-sens-optique-medicale", org="Référence Optique Médicale Cinq Sens",
+         city="Douala (Akwa + Brazzaville)", org_type="other", language="FR",
+         wa_number="696 698 136", wa_verified="unknown",
+         stage="prospecting", contacted="No", reply="No", demo="No",
+         source="onoc_registry",
+         source_detail="Registre ONOC, annuaire 2024 — Littoral ligne 118 (inscription 115/2021, "
+                       "arrêté 1688), lu le 24/09 · fiche Mont-Pandi 671",
+         contact_name="KOUGANG GUIFFO Casimir",
+         notes="LOT 4 (préparé le 24/09 au soir, RIEN N'EST ENVOYÉ). Titulaire au registre : KOUGANG "
+               "GUIFFO Casimir. Deux cabinets, dans ses mots : « Brazzaville entre le Carrefour "
+               "Brazzaville et l'Ecole Saint Bruno · Akwa entre le Carrefour Douala Bar et le Carrefour "
+               "Singer face Collège King Akwa. Tout sur la vue. » Horaires 08:00→18:00. Autres numéros "
+               "publiés : 696 663 139 · 656 036 312. Porte A à vérifier à l'écran. Message : "
+               "`sales/Send-BATCH-2026-09-24-Opticiens-4.md` §1."),
+    dict(slug="skyoptic-akwa", org="SkyOptic Akwa (ETS Sky Optics)", city="Douala (Akwa)",
+         org_type="other", language="FR", wa_number="655 649 803", wa_verified="unknown",
+         stage="prospecting", contacted="No", reply="No", demo="No",
+         source="onoc_registry",
+         source_detail="Registre ONOC, Littoral ligne 119 (inscription 139, arrêté 0484), lu le 24/09 "
+                       "· Maligah (ETS SKY OPTICS, Bd de la République, BP 15211) · Ayila'a",
+         contact_name="LAMBO Dorice",
+         notes="LOT 4 (préparé, PAS ENVOYÉ). Titulaire au registre : LAMBO Dorice. Deux annuaires le "
+               "décrivent : Maligah — « ETS SKY OPTICS, Boulevard De La République, Akwa, BP 15211 », "
+               "avec un fixe (233 42 75 00) ; Ayila'a — « Sky Optics Akwa, face BENEFICIAL LIFE "
+               "INSURANCE », avec un prix affiché par l'annuaire (« à partir de 10 000 XAF »). Porte A "
+               "à vérifier. Message : lot 4 §2."),
+    dict(slug="lumumba-optique-medicale", org="Lumumba Optique Médicale", city="Douala (Makepe)",
+         org_type="other", language="FR", wa_number="670 59 79 96", wa_verified="unknown",
+         stage="prospecting", contacted="No", reply="No", demo="No",
+         source="onoc_registry",
+         source_detail="Registre ONOC, Littoral ligne 144 (inscription 054/2018, arrêté 6677), lu le "
+                       "24/09 · deux pages Facebook + une fiche Maps (Voie Makepe Est)",
+         contact_name="NZIKANG Armstrong TUAMBI",
+         notes="LOT 4 (préparé, PAS ENVOYÉ). Titulaire : NZIKANG Armstrong TUAMBI. Deux pages Facebook "
+               "portent son nom : « Lunettes Lumumba » (146 mentions J'aime, 24 personnes y sont "
+               "passées, « We are a new optical center ») et « Lumumba Optique Medicale » (« vente des "
+               "montures, verres médicaux et solaires »). Une fiche Maps existe (Makepe Est). Porte A à "
+               "vérifier. Message : lot 4 §3."),
+    dict(slug="win-optic-plus", org="Win Optic Plus", city="Douala", org_type="other", language="FR",
+         wa_number="699 12 59 06", wa_verified="unknown",
+         stage="prospecting", contacted="No", reply="No", demo="No",
+         source="onoc_registry",
+         source_detail="Registre ONOC, Littoral ligne 96 (inscription 109/2020, arrêté 0326), lu le "
+                       "24/09 · page Facebook « WIN OPTIC PLUS SARL »",
+         contact_name="BETCHEM à BETCHEM Jéhaziel",
+         notes="LOT 4 (préparé, PAS ENVOYÉ). Titulaire : BETCHEM à BETCHEM Jéhaziel. Une page Facebook "
+               "au nom exact existe — elle s'annonce en trois mots : Douala, Cameroon · Optician. "
+               "⚠️ Ne jamais écrire « vous n'avez pas de site » : on n'a pas vu de site, ce n'est pas la "
+               "même chose. Porte A à vérifier. Message : lot 4 §4."),
+    dict(slug="golden-eyes-optic-douala", org="Golden Eyes Optic (Douala)",
+         city="Douala (Bonanjo, Atrium Spar)", org_type="other", language="FR",
+         wa_number="699 312 588", wa_verified="unknown",
+         stage="prospecting", contacted="No", reply="No", demo="No",
+         source="onoc_registry",
+         source_detail="Registre ONOC, Littoral ligne 101 (inscription 090/2019, arrêté 2622), lu le "
+                       "24/09 · site vivant goldeneyesoptic.com (page Contact)",
+         contact_name="DJON II Achille Arnaud",
+         notes="LOT 4 (préparé, PAS ENVOYÉ). Titulaire au registre : DJON II Achille Arnaud. ⚠️ ILS "
+               "ONT UN SITE VIVANT (goldeneyesoptic.com) — donc jamais « vous n'avez pas de site ». Le "
+               "site est Yaoundé d'abord (« Notre siège situé à Yaoundé, Nkomkana ») et Douala tient en "
+               "une ligne de la page Contact : « Bonanjo au centre commercial l'Atrium Spar, 2e étage ». "
+               "Numéros de Douala publiés par le site : 653 23 77 21 / 699 31 25 88 (le second est celui "
+               "du registre). Angle : la page de la maison de Douala. Message : lot 4 §5."),
+    dict(slug="la-ligne-optic-akwa", org="La Ligne Optic Akwa", city="Douala (Akwa)",
+         org_type="other", language="FR", wa_number="683 651 108", wa_verified="unknown",
+         stage="prospecting", contacted="No", reply="No", demo="No",
+         source="onoc_registry",
+         source_detail="Registre ONOC, Littoral ligne 109 (inscription 025/2017, arrêté 0533), lu le "
+                       "24/09 — aucune autre trace publique trouvée",
+         contact_name="JOUNGO Line Chantale",
+         notes="LOT 4 (préparé, PAS ENVOYÉ). Titulaire : JOUNGO Line Chantale. Aucune page, aucun site, "
+               "aucune fiche détaillée trouvés : la seule trace publique est le registre. ⚠️ Porte B "
+               "FAIBLE (§8b : 2/3) — King décide explicitement. Remplaçant dans l'ordre d'envoi."),
+    dict(slug="dm-optique", org="DM Optique", city="Douala", org_type="other", language="FR",
+         wa_number="656 122 239", wa_verified="unknown",
+         stage="prospecting", contacted="No", reply="No", demo="No",
+         source="onoc_registry",
+         source_detail="Registre ONOC, Littoral ligne 102 (inscription 021/2016, arrêté 0382), lu le "
+                       "24/09 — aucune autre trace publique trouvée",
+         contact_name="DOMCHE NOUMBI",
+         notes="LOT 4 (préparé, PAS ENVOYÉ). Titulaire : DOMCHE NOUMBI. Aucune page, aucun site "
+               "trouvés (24/09). ⚠️ Porte B FAIBLE (§8b : 2/3) — King décide explicitement. "
+               "Remplaçant dans l'ordre d'envoi."),
+]
+
+
 def _batch_2409_3_rows():
     return BATCH_2409_3_NEW + BATCH_2409_3_ECARTES
+
+
+def _batch_2409_4_rows():
+    return BATCH_2409_4_NEW
 
 
 def _labs_ecartes_rows():
@@ -2502,7 +2601,11 @@ ENVOI_2409_3 = {
         # le numéro est bien à eux. Mais **le chat n'est pas ouvert** — voir `last_send_state`.
         "Contacted": "No", "wa_verified": "yes", "wa_number": "677 077 159",
         "last_send_state": "not_sent",
-        "wa_number_note": "NUMÉRO CONFIRMÉ : 677 077 159 (profil « K Vision Care », Business Account, "
+        "wa_number_note": "⚠️ 695 865 346 N'EST PAS À EUX : Mont-Pandi le publiait comme « repli », mais le "
+                          "registre ONOC donne ce numéro-là — à un chiffre près — à **Optimat Vision Sarl** "
+                          "(ligne 111 : 699 86 53 46). Quatrième anomalie du même annuaire en deux jours : "
+                          "on ne recopie jamais un numéro d'annuaire. "
+                          "NUMÉRO CONFIRMÉ : 677 077 159 (profil « K Vision Care », Business Account, "
                           "vu par King le 24/09 14:14 ; même numéro dans les liens de leur propre site). "
                           "⚠️ Le bouton « Message » n'apparaît pas sur la fiche — le chat n'est pas "
                           "ouvert ; les appels vocaux sont proposés. Portes restantes : SMS · appel · "
@@ -2796,6 +2899,9 @@ def main() -> int:
     # 2e · les 5 laboratoires ÉCARTÉS pour site vivant — la donnée qui évite de refaire le travail
     # 1e · le lot 3 du 24/09 (opticiens neufs de Mont-Pandi) + les deux fiches écartées.
     for p in _batch_2409_3_rows():
+        out.append({"School": p["org"], **p})
+    # 1f · le lot 4 du 24/09 au soir (registre ONOC, Littoral) — 7 neufs, porte A à vérifier.
+    for p in _batch_2409_4_rows():
         out.append({"School": p["org"], **p})
 
     for p in _labs_ecartes_rows():

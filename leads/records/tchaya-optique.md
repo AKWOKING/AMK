@@ -35,7 +35,7 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : TCHAYA PITCHA'A Yannick — depuis
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 10 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 12 ligne(s).*
 
 `L806` · **chacun ouvert par le fait du titulaire public** (1974 pour Tchaya · Bonamoussadi/ACACIAS pour Bely ·
 `L837` · - `Le Cristallin` 17:51 · `Univers Optique` 17:50 · `Disc Optique Médicale` 17:48 · `Tchaya Optique` 17:47 :
@@ -47,6 +47,8 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : TCHAYA PITCHA'A Yannick — depuis
 `L3455` · du 21/09, qui n'est jamais partie** (Disc et Tchaya, eux, l'ont reçue : ils sont en relance, pas ici).
 `L3524` · **Deux correctifs de données, le même soir.** Disc Optique Médicale et Tchaya Optique ont reçu le message 1 le
 `L3807` · elle n'est pas encore partie) ; **② les trois relances du soir** restent à envoyer (Disc · Tchaya ·
+`L3812` · **Récit de King, mot pour mot :** *« Répondu à Cavisa. Pas de relance pour Disc, Tchaya et Afrique Labo,
+`L3834` · ### ② DISC · TCHAYA · AFRIQUE LABO — la règle « on ne relance pas ce qui n'a jamais été ouvert »
 
 ---
 

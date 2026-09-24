@@ -3866,3 +3866,56 @@ tranche : **rien ne part.**
 réponse et la balle est chez lui, les trois relances sont annulées, et les fils suivants sont déjà datés
 (OraCare et Bonanjo au 28/09, MITOC · Skye · Yaks et Le Cristallin au 29/09, Labiomed au 1ᵉʳ octobre,
 les deux rendez-vous de vendredi 25/09).
+
+---
+
+## 24/09/2026 (nuit) — **LOT 4 PRÉPARÉ : SEPT OPTICIENS NEUFS DU REGISTRE DE L'ORDRE**
+
+**La demande.** King : *« Next batch »*. Pré-flight relu (type « marketing / outreach copy »), les trois
+portes du §8b en tête : **A** joignable · **B** intention numérique lisible · **C** acheteur identifiable.
+
+**Le choix de la source, et pourquoi.** On abandonne l'annuaire communautaire qui a produit le lot 3
+(60 % de numéros joignables, trois fiches fausses en deux jours : Valdoz, Jucia, K Vision) pour le
+**registre officiel de l'ONOC** — l'annuaire 2024, région du **Littoral**, lignes 85 → 159. C'est la
+famille de source du lot 1 : **5 numéros sur 5 joignables**, et **un nom à qui parler** (l'Ordre publie
+l'opticien assumant la responsabilité civile — donc on n'écrit plus « Bonjour » à une enseigne).
+
+**Les sept, et ce qu'on leur dit.**
+
+| # | Cabinet | Numéro | Titulaire (registre) | Le crochet |
+|---|---|---|---|---|
+| 1 | Référence Optique Médicale **Cinq Sens** (Akwa + Brazzaville) | 696 698 136 | KOUGANG GUIFFO Casimir | deux cabinets, « tout sur la vue » — et aucune page à eux |
+| 2 | **SkyOptic Akwa** (ETS Sky Optics) | 655 649 803 | LAMBO Dorice | Bd de la République : boîte postale et fixe, pas de montures |
+| 3 | **Lumumba Optique Médicale** (Makepe) | 670 59 79 96 | NZIKANG Armstrong TUAMBI | deux pages Facebook, aucune qui dise où/ quand / comment |
+| 4 | **Win Optic Plus** | 699 12 59 06 | BETCHEM à BETCHEM Jéhaziel | le nom existe sur Facebook, rien à lire entre les deux |
+| 5 | **Golden Eyes Optic** — Douala (Bonanjo, Atrium) | 699 312 588 | DJON II Achille Arnaud | **ils ont un site vivant** : Yaoundé d'abord, Douala en une ligne |
+| 6 | **La Ligne Optic Akwa** | 683 651 108 | JOUNGO Line Chantale | aucune vitrine — porte B faible, King décide |
+| 7 | **DM Optique** | 656 122 239 | DOMCHE NOUMBI | inscrit depuis 2016, introuvable depuis un téléphone |
+
+Réserve prête (§9) : Capelli 675 26 89 81 · Optique Pro 690 03 48 18 · Maranatha 658 163 190 ·
+La Fibre Optique 694 422 640 · Pagrot 699 90 46 91. **Rien n'est envoyé.**
+
+**Le contrôle de doublons, fait AVANT l'écriture.** Chaque nom **et** chaque numéro croisés avec les
+156 lignes du CRM et les 62 leads déjà contactés : **Kamaïs Optic est tombé** (Bessengue — déjà au CRM,
+contacté puis parqué) et sort du lot. **Zéro doublon** sur les sept retenus.
+
+**Deux découvertes en passant.**
+
+**① Le « troisième numéro » de K Vision Care appartient à un autre cabinet.** Mont-Pandi publiait
+**695 865 346** comme « repli » de K Vision. Le registre ONOC donne, à la ligne 111, **Optimat Vision
+Sarl** (KAMDEM KOUAM Serge Versel) avec **699 86 53 46** — mêmes chiffres à un chiffre près, et c'est le
+numéro d'**Optimat**. **Quatrième anomalie du même annuaire en deux jours.** La note CRM de K Vision est
+corrigée : **695 865 346 n'est pas à eux** et ne sera jamais appelé comme tel. Ce qui reste vrai :
+**677 077 159** (profil confirmé, SMS déjà parti) et, pour mémoire, **654 786 189** (le numéro que
+l'Ordre publie pour K. Vision Care, ligne 110).
+
+**② Le registre donne un nom — pas une vitrine.** Six titulaires sur sept, deux traces numériques
+seulement. C'est exactement le profil « à équiper » : une entreprise réelle, un nom d'opticien, et
+presque rien à voir pour un patient qui cherche depuis son téléphone.
+
+**Ce qui n'est pas fait, et qui ne peut être fait que par King :** **la porte A.** Aucun des sept
+numéros n'a été vu dans l'application. C'est la leçon Horizon, et elle coûte cher à oublier.
+
+**Compteurs** (rebuild **14:08:07**) : ① Prospection **84** (77 → 84) · ② Qualifié **20** · ③ Aperçu
+envoyé 1 · ④ Prix posé 3 · ⏸ Parqué 42 · ❌ Perdu 1 · **total 163** · contactés **62** (39,7 %) ·
+réponses humaines **6** (9,7 %).

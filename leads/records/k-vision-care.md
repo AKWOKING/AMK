@@ -20,7 +20,7 @@
 | Source | directory |
 | Détail source | Mont-Pandi, catégorie Opticiens (fiche 672), lue le 24/09 |
 | Site existant | kvisioncare.com — DOMAINE À EUX, SITE HORS LIGNE (ERR_SSL_PROTOCOL_ERROR) |
-| Numéro inutilisable | NUMÉRO CONFIRMÉ : 677 077 159 (profil « K Vision Care », Business Account, vu par King le 24/09 14:14 ; même numéro dans les liens de leur propre site). ⚠️ Le bouton « Message » n'apparaît pas sur la fiche — le chat n'est pas ouvert ; les appels vocaux sont proposés. Portes restantes : SMS · appel · e-mail kvisioncare05@gmail.com. |
+| Numéro inutilisable | ⚠️ 695 865 346 N'EST PAS À EUX : Mont-Pandi le publiait comme « repli », mais le registre ONOC donne ce numéro-là — à un chiffre près — à **Optimat Vision Sarl** (ligne 111 : 699 86 53 46). Quatrième anomalie du même annuaire en deux jours : on ne recopie jamais un numéro d'annuaire. NUMÉRO CONFIRMÉ : 677 077 159 (profil « K Vision Care », Business Account, vu par King le 24/09 14:14 ; même numéro dans les liens de leur propre site). ⚠️ Le bouton « Message » n'apparaît pas sur la fiche — le chat n'est pas ouvert ; les appels vocaux sont proposés. Portes restantes : SMS · appel · e-mail kvisioncare05@gmail.com. |
 
 ## Notes
 
