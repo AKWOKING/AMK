@@ -10,12 +10,13 @@
 | Type | other |
 | Ville | Douala (Akwa) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | demo |
 | WhatsApp | 683 651 108 |
-| Numéro vérifié | unknown |
+| Numéro vérifié | yes |
+| Profil vu | La Ligne Optic |
 | Contacté | Yes |
-| Réponse | No |
-| Maquette / site | No |
+| Réponse | Yes |
+| Maquette / site | Yes |
 | Source | onoc_registry |
 | Détail source | Registre ONOC, Littoral ligne 109 (inscription 025/2017, arrêté 0533), lu le 24/09 — aucune autre trace publique trouvée |
 
@@ -25,7 +26,7 @@ LOT 4 (préparé, PAS ENVOYÉ). Titulaire : JOUNGO Line Chantale. Aucune page, a
 
 ## Prochaine action
 
-**0 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**Répondre dans l'heure.** Une réponse humaine est en attente : c'est la priorité absolue (règle des 90 secondes).
 
 ## Historique — lignes du journal qui citent ce lead
 

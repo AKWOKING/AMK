@@ -1293,6 +1293,9 @@ DOSSIERS = {
     # le dossier de travail de CINQ SENS — ouvert le 24/09 au soir, quand le cabinet a répondu « OK »
     # (17:04) au message de 16:53. Contrôle approfondi complet dans `clients/cinq-sens/dossier.md`.
     "cinq-sens-optique-medicale": "clients/cinq-sens/",
+    # le dossier de travail de LA LIGNE OPTIC — ouvert le 24/09 au soir, quand le cabinet a répondu
+    # « Ok merci beaucoup vyni » (21:04). Cinq sources recoupées, détail dans `clients/la-ligne/dossier.md`.
+    "la-ligne-optic-akwa": "clients/la-ligne/",
     # le dossier de recherche le plus complet de la campagne (RDAP + Wayback + captures de King)
     "k-vision-care": "clients/k-vision-care/",
     "centre-medical-de-bonanjo": "clients/_mockups/bonanjo.jpg",
@@ -1933,6 +1936,7 @@ def _apply_jour(out: list) -> None:
     _apply_state(out, ENVOI_2409_4, "ENVOI_2409_4")
     _apply_state(out, REPONSE_2409_DM, "REPONSE_2409_DM")
     _apply_state(out, REPONSE_2409_CS, "REPONSE_2409_CS")
+    _apply_state(out, REPONSE_2409_LL, "REPONSE_2409_LL")
     _apply_state(out, ECARTES_2409, "ECARTES_2409")
 
 
@@ -2874,6 +2878,42 @@ REPONSE_2409_CS = {
             "du lien est partie sans vignette. Recollés sur l'adresse réelle et commités le même soir — "
             "**un seul redéploiement** suffit, et l'aperçu des partages suivants portera l'image. "
             "Aucune relance : la balle est chez lui.",
+    },
+}
+
+
+REPONSE_2409_LL = {
+    # ── 24/09, 21:04 — LA LIGNE OPTIC DIT « Ok merci beaucoup vyni » ─────────────────────────────────
+    # Séquence : 15:29 le message du lot 4 part (✓✓) ; 21:04 la réponse tombe, telle quelle ; 21:35
+    # King répond « C'est bien noté, Madame Joungo ! Je finalise l'aperçu… je vous envoie le lien
+    # direct d'ici quelques minutes. » Ce n'est ni un prix ni un rendez-vous : c'est un oui pour voir.
+    # ⚠️ Le message de 15:29 s'appuyait sur un fait vérifié : « le seul endroit où votre nom est écrit
+    # noir sur blanc, c'est le tableau de l'Ordre ». Ne pas le répéter au moment de livrer — la page,
+    # elle, ne parle que du patient. L'aperçu est construit le soir même.
+    "la-ligne-optic-akwa": {
+        "Contacted": "Yes", "Reply": "Yes", "reply_type": "human",
+        "Demo made": "Yes",
+        "last_send_state": "replied", "stage": "demo", "stage_since": "2026-09-24",
+        "wa_verified": "yes", "profile_name_seen": "La Ligne Optic",
+        "value_kept":
+            "Ce qu'elle annonce elle-même : l'adresse (Akwa, boulevard de la Liberté) et quatre gestes "
+            "— consultation, réfraction, visagiste, conseil. C'est le mot « visagiste » qui fait la page : "
+            "cinq formes de visage, la ligne qui va avec, et un message WhatsApp par forme.",
+        "value_discarded":
+            "Aucun horaire (aucune source), aucun prix, aucune marque, aucun avis, aucun repère de "
+            "quartier, et AUCUNE PHOTOGRAPHIE : la page est dessinée de bout en bout (SVG), parce que le "
+            "cabinet n'a jamais rien publié et qu'on ne fabrique pas la vitrine de quelqu'un d'autre.",
+        "dossier": "clients/la-ligne/",
+        "Conversation_extra":
+            "24/09 15:29 — lot 4 (✓✓). 21:04 — ELLE : « Ok merci beaucoup vyni ». 21:35 — King : aperçu "
+            "annoncé pour « d'ici quelques minutes ». "
+            "CONTRÔLE APPROFONDI : registre ONOC (La Ligne Optic Akwa · inscription 025/2017 · arrêté 0533 "
+            "· titulaire JOUNGO Line Chantale · 683 651 108) ; annuaire Mont-Pandi (adresse + les quatre "
+            "services, écrits par le cabinet) ; agrégateur : 0 avis, 0 note ; aucun site, aucune page "
+            "sociale, aucun horaire nulle part. Inspirations américaines : Article One, Caddis, Felix "
+            "Gray, + quatre guides de visagisme recoupés (EyeBuyDirect, Eyeconic, Visionworks, JINS US). "
+            "⚠️ La page n'attribue aucun acte médical au cabinet : l'examen des yeux reste celui de "
+            "l'ophtalmologue, et c'est écrit dans la FAQ.",
     },
 }
 

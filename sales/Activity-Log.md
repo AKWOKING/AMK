@@ -4270,3 +4270,61 @@ devient entièrement vraie.
 branchement (les fichiers non suivis avaient disparu, `HEAD` sur le commit de fusion). Tout a été
 restauré depuis `origin` — **`a729474`** — et rien n'est perdu : le travail poussé est la source de
 vérité. Leçon : pousser **à chaque tour**, pas en fin de session.
+
+---
+
+## 2026-09-24 (nuit) — **LA LIGNE OPTIC DIT « Ok merci beaucoup vyni » · LA PAGE EST CONSTRUITE — ET ELLE EST DESSINÉE**
+
+**21:04 — « Ok merci beaucoup vyni ».** Le message du lot 4 était parti à 15:29 ; la réponse tombe deux
+heures avant minuit, et King répond aussitôt : aperçu annoncé pour « d'ici quelques minutes » (21:35). Le
+lead passe de `qualifying` à **`demo`** (`REPONSE_2409_LL` dans `leads/build/crm.py`), `reply_type = human`,
+`Demo made = Yes`, `profile_name_seen = « La Ligne Optic »`. Le dossier de travail `clients/la-ligne/` est
+déclaré au CRM — il ne sera plus orphelin.
+
+### Le contrôle approfondi, avant d'écrire
+
+**Registre ONOC** : La Ligne Optic Akwa · inscription **025/2017** · arrêté **0533** · titulaire
+**JOUNGO Line Chantale** · Douala · **683 651 108**. **Annuaire Mont-Pandi** (texte du cabinet) :
+« Situé à Akwa Boulevard de la Liberté. Nos services : **Consultation - Réfraction - Visagiste -
+Conseil** ». Aucun site, aucune page sociale, aucun avis (l'agrégateur affiche 0/0), **aucun horaire**
+nulle part. Verdict : le prospect le plus « propre » de la vague — rien à corriger, tout à construire.
+
+### La décision de construction, et pourquoi elle n'a pas été prise à la légère
+
+Le cabinet n'a **publié aucune photographie**. Deux voies : des visuels d'illustration (comme DM OPTIC et
+Cinq Sens, légendés), ou **ne rien photographier du tout** et dessiner. La deuxième a été retenue, et elle
+est devenue le concept : **la page est dessinée de bout en bout** — cinq visages, quatre lignes de
+monture, la règle du regard — avec la seule photo du dossier qui soit vraie : **aucune**. C'est la
+première page du dépôt sans un seul `<img>`, et la vignette du lien est un dessin, elle aussi.
+
+**La direction : « Le visage d'abord. »** Le mot qui distingue ce cabinet — *visagiste* — devient une
+expérience : cinq formes de visage en onglets (**radios + CSS, fonctionne sans JavaScript**), chacune
+avec la ligne qui va, ce qu'on évite, et **son** message WhatsApp (la forme est nommée dans le message :
+la visagiste sait à quoi elle répond). Autour : les quatre gestes du cabinet dans son ordre, les quatre
+temps d'une visite, quatre choses qui se règlent en une réponse, six questions dans le schéma `FAQPage`
+mot pour mot.
+
+**Ce qui n'est jamais écrit** : aucun horaire (inconnus — la page explique qu'ils arrivent dans la
+conversation), aucun prix, aucune marque, aucun avis, aucun repère de quartier. Le numéro d'inscription à
+l'Ordre **n'existe que dans les données structurées**. Et la page écrit noir sur blanc que la réfraction
+est un acte d'opticien pendant que **l'examen des yeux reste le travail de l'ophtalmologue** — c'est de
+l'honnêteté et de la protection.
+
+### Les contrôles, et ce qu'ils ont attrapé
+
+`audit_html` **0 constat** sur **314 passages** · `a11y --strict` **0/0** après correction d'un **saut de
+niveau h2 → h4** en pied de page · `hero` 0/0 · `inline_js` rc 0 · `aeo` ✓ (`Optician`, `FAQPage` 6 Q) ·
+`images` 0/0 (0 image, et c'est le sujet) · **`test_laligne_page.mjs` 52/52**.
+
+**Deux choses que le test a attrapées et pas les audits** : la région vive annonçait « la page est
+maintenant en français » **au moment de passer en anglais** (arguments inversés dans `setLang` — invisible
+à l'œil, audible pour un lecteur d'écran) ; et une assertion trop stricte du test lui-même (le nom de la
+titulaire apparaît **une fois par langue**, pas une fois au total) — c'est le test qui avait tort, la
+page avait raison, et l'assertion a été corrigée, pas la page.
+
+**Poids : 79 Ko**, douze liens WhatsApp, **zéro image à charger** — la page la plus légère du dépôt.
+
+**Reste** : King déploie `hosting/previews/laligne/` (dossier entier), `build_laligne.py --url`, **un seul
+redéploiement**, l'œil de King sur un téléphone (les cinq onglets, la bascule EN, le tracé), puis le
+message de `sales/Send-LA-LIGNE-2026-09-24.md` §1. Les douze informations attendues sont dans
+`clients/la-ligne/a-completer.md`.

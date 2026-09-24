@@ -8,15 +8,15 @@
 | Étape | Leads |
 |---|---|
 | ④ Prix posé, en négociation | **3** |
-| ③ Aperçu envoyé | **3** |
-| ② Qualifié — en conversation | **23** |
+| ③ Aperçu envoyé | **4** |
+| ② Qualifié — en conversation | **22** |
 | ① Prospection — à qualifier | **78** |
 | ❌ Perdu | **1** |
 | ⏸ Parqué | **42** |
 | ⛔ Écarté | **13** |
 | **Total** | **163** |
 
-- **Contactés :** 67 · **Réponses humaines :** 8 · **Taux de réponse : 11.9 %**
+- **Contactés :** 67 · **Réponses humaines :** 9 · **Taux de réponse : 13.4 %**
 - **Réponses automatiques (hors PRR) :** 1
 - **Clients :** 0 · **Revenu :** 0 FCFA
 
@@ -25,6 +25,7 @@
 | Lead | WhatsApp | Ce qu'il a dit |
 |---|---|---|
 | **Référence Optique Médicale Cinq Sens** | 696 698 136 | Yes |
+| **La Ligne Optic Akwa** | 683 651 108 | Yes |
 | **DM Optique** | 656 122 239 | Yes |
 
 > **Règle des 90 secondes.** Une réponse en attente passe avant tout le reste.
@@ -37,15 +38,16 @@
 | UNI-LABO | Douala (Bonamoussadi, Carrefour Etoo) | 696 13 98 19 | `L134` |
 | Univers Optique | Douala | 699 25 28 74 | `L3442` |
 
-## ③ Aperçu envoyé — 3
+## ③ Aperçu envoyé — 4
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
 | Cavisa Optique | Douala | 699 95 90 52 | `L4053` |
 | DM Optique | Douala | 656 122 239 | `L4019` |
+| La Ligne Optic Akwa | Douala (Akwa) | 683 651 108 | `L3892` |
 | Référence Optique Médicale Cinq Sens | Douala (Akwa + Brazzaville) | 696 698 136 | `L4233` |
 
-## ② Qualifié — en conversation — 23
+## ② Qualifié — en conversation — 22
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
@@ -62,7 +64,6 @@
 | Fashion Vision | Douala | 656 22 38 63 | `L3637` |
 | K Vision Care | Douala (Bessengue · Ancien 3e · Ndogpassi) | 677 077 159 | `L3909` |
 | L'Opticien Bali SARL | Douala (Bali) | 670 27 60 65 | `L22` |
-| La Ligne Optic Akwa | Douala (Akwa) | 683 651 108 | `L3892` |
 | Labiomed | Douala (Deido, 104 Route Deido-Bassa) | 699 98 54 66 | `L3867` |
 | Lumumba Optique Médicale | Douala (Makepe) | 670 59 79 96 | `L3998` |
 | Maff Optique | Douala | 699 93 19 56 | `L3451` |
