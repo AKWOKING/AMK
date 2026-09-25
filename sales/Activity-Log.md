@@ -4481,3 +4481,23 @@ dépôt qui soit un produit** et pas une prestation.
 n'ont pas été pris**, et le site n'est pas refusé — il est **mis en attente** derrière un problème plus concret.
 *Un rendez-vous qui change de sujet n'est ni une vente ni une perte : c'est une réorientation, et elle s'écrit
 comme telle.*
+
+## 2026-09-25 · 12:40 (horloge du bac) · LE COMMIT DU PIVOT ÉTAIT POLLUÉ — refait sur la bonne base
+
+Le `git push` du commit `bae82bb` a été **rejeté** (`fetch first`) : l'arbre de travail était reparti d'une
+base ancienne, et `git add -A` avait embarqué **tout l'écart arbre/distant** — un commit qui, vu du distant,
+**supprimait les livraisons du 24/09**. Le rejet du push est la seule chose qui a empêché la perte.
+
+Contrôle : `git diff --name-status FETCH_HEAD bae82bb` → **397 lignes**, dont **tous** les `dossier.md`,
+`build-notes.md`, `inspiration.md` de Cinq Sens, DM, La Ligne, Uni-Labo, Cavisa, **en `D`**. Autrement dit :
+poussé tel quel, il effaçait la veille.
+
+Réparation : les trois livrables du pivot récupérés depuis le commit pollué (`git show bae82bb:chemin`),
+`git reset --hard FETCH_HEAD`, remise en place, **section de journal recollée** sur la version saine (4445 →
+4483 lignes, +38), nouveau commit **`7b0a367`** sur base `b3a5a0f` → **4 fichiers, 212 insertions,
+0 suppression** → poussé en **avance rapide** (`b3a5a0f..7b0a367`). Le travail du 24/09 est vérifié présent
+sur le distant (Cinq Sens, La Ligne, Uni-Labo, hosting).
+
+La règle est écrite dans `design/WORKFLOW.md` → « Commiter sans effacer le travail de la veille » :
+`git fetch` puis **`HEAD` = `FETCH_HEAD`** avant chaque commit, et **le commit ne contient que la tâche en
+cours**. *Deux rejets de suite en deux jours, c'est une leçon qui a maintenant un mode d'emploi.*

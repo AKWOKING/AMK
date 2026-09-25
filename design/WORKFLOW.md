@@ -173,3 +173,38 @@ on regarde ce qu'on livre) : ① les espaces avant la ponctuation quand elle est
 ② **nos `.md` sont coupés à la main tous les 90 caractères** — sans recoller les lignes de continuation,
 chaque paragraphe s'imprime comme un paragraphe séparé ; ③ une ponctuation seule part en début de ligne
 quand le mot finit au bord — il faut la **coller au mot** au moment de la coupure, pas à l'écriture.
+
+## Commiter sans effacer le travail de la veille (25/09/2026, après-midi)
+
+Deux fois en deux jours, le bac a **rembobiné l'arbre de travail** pendant la séance (§34.2 pour le
+diagnostic, le 24/09 ; ici pour le commit). La deuxième fois est la plus dangereuse, et elle ne se voit
+qu'au moment du `push`.
+
+**Le piège, dans l'ordre où il se referme** : le bac remet l'arbre sur une base ancienne → on travaille
+normalement → `git add -A` **enregistre tout l'écart entre l'arbre et le distant** → `git commit` fabrique
+un commit qui, vu du distant, **supprime les fichiers livrés la veille** → le `push` est rejeté
+(`! [rejected] … fetch first`) et c'est **la seule chose qui nous sauve**. Rejeté, certes — mais si on avait
+poussé de force, le travail du 24/09 (Cinq Sens, DM, La Ligne passe 4, les vidéos) disparaissait de la
+branche.
+
+**Le contrôle, avant chaque commit** — dix secondes, et il rend le piège impossible :
+
+```
+git fetch -q origin arena/01a0c495-amk
+git rev-parse --short HEAD FETCH_HEAD     # ← les deux doivent être ÉGAUX
+```
+
+S'ils diffèrent, l'arbre est en retard : `git reset --hard FETCH_HEAD` **d'abord**, et on refait le travail
+par-dessus. **La branche poussée est la source de vérité** — pas l'arbre, pas la mémoire de la séance.
+
+**Le contrôle, avant chaque `push`** : le commit ne doit contenir **que les fichiers de la tâche en cours**.
+Si `git status --short` montre autre chose que ce qu'on a touché — des `.zip`, des `.mp4`, des dossiers
+`clients/` qu'on n'a pas ouverts — **on ne pousse pas** : on refait sur la bonne base.
+
+**Réparer un commit pollué sans rien perdre** (fait le 25/09, commit `bae82bb` → `7b0a367`) :
+① sauver les vrais livrables, y compris depuis le commit pollué — `git show <pollué>:chemin > /tmp/…` ;
+② `git reset --hard FETCH_HEAD` ; ③ remettre les fichiers en place ; ④ si le journal a été édité, **coller
+la section écrite par-dessus la version saine** (ne jamais recopier le fichier entier : c'est lui qui
+portait les 4000 lignes de la veille) ; ⑤ re-commiter ; ⑥ vérifier `git diff --name-status FETCH_HEAD HEAD`
+→ **zéro ligne en `D`** ; ⑦ pousser : un `push` en **avance rapide** (`b3a5a0f..7b0a367`) est la preuve que
+rien n'a été écrasé. **Jamais de `--force`.**
