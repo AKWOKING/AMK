@@ -150,3 +150,26 @@ rayons, la vraie photo — avant d'écrire les nombres dans le gabarit. Deux err
 corrigées avant tout build : le portrait était **trop petit** dans le verre (192 unités → 224), et le
 réticule à croix tombait **sur le nez** (une croix sur un visage, c'est une cible : les repères sont
 passés sur la ligne). `clients/la-ligne/dessins-controle.png` garde les deux planches.
+
+## Poser un document client sur WhatsApp (25/09/2026, matin des deux rendez-vous)
+
+Un `.md` ne s'ouvre pas sur le téléphone d'un client. Quand un document doit partir **sur WhatsApp** —
+le business case d'Univers Optique, par exemple — il lui faut un **PDF**. Le bac n'a ni pandoc, ni
+LibreOffice, ni reportlab : **`tools/site/md_to_pdf.py`** le fait avec PIL, en trente secondes.
+
+```
+python3 tools/site/md_to_pdf.py sales/BUSINESS-CASE-UNIVERS-OPTIQUE-2026-09-25.md \
+    --titre "UNIVERS OPTIQUE · business case · 25 septembre 2026" \
+    --pied "AMK · Akwo King · Développement Web & Solutions Digitales · Douala" \
+    --png /tmp/bc        # → 3 PNG A4 : on regarde AVANT d'envoyer
+```
+
+Il lit ce qu'écrivent nos documents client : titres, paragraphes, gras, italique, `code`, citations,
+filets, listes et **tableaux à deux colonnes**. La palette se règle en haut du fichier — **on reprend
+celle de la page du client**, pour que le papier et l'écran aient l'air de la même maison.
+
+**Trois pièges, tous vus à l'œil sur la première sortie** (et corrigés dans l'outil — c'est la règle :
+on regarde ce qu'on livre) : ① les espaces avant la ponctuation quand elle est en gras ou en italique ;
+② **nos `.md` sont coupés à la main tous les 90 caractères** — sans recoller les lignes de continuation,
+chaque paragraphe s'imprime comme un paragraphe séparé ; ③ une ponctuation seule part en début de ligne
+quand le mot finit au bord — il faut la **coller au mot** au moment de la coupure, pas à l'écriture.

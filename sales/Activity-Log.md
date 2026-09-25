@@ -4395,3 +4395,51 @@ Poids **90,9 Ko**. Les deux autres pages du jour n'ont pas bougé (audits 0, tes
 une fois** : son filtre par état s'arrêtait au premier `</g>` — celui d'un groupe enfant — et montrait un
 visage **sans monture** alors que la page était juste. Réécrit en comptant les groupes. Leçon du soir :
 *un outil de contrôle qui peut mentir est plus dangereux que pas d'outil du tout.*
+
+## 2026-09-25 · 07:25 → 07:50 (horloge du bac) · LE MATIN DES DEUX RENDEZ-VOUS — King : « don't we have to prepare a message »
+
+**Sa question, mot pour mot** : *« Morning got meeting with univers optique, don't we have to prepare a
+message »*. Vérification faite avant d'écrire quoi que ce soit : **un seul message est réellement dû, celui
+d'Univers Optique.** UNI-LABO a choisi 13 h le 23/09 à 21:42 et King a confirmé dans la minute (« C'est bien
+noté pour ce vendredi à 13h ») : **renvoyer un message ce matin rouvrirait la seule question qui ne se pose
+plus.** La règle tient — un prospect qui a donné jour et heure n'est plus relancé, il est attendu.
+
+**Ce qui manquait n'était pas un message, c'était le document.** Le business case d'Univers n'existait qu'en
+`.md` (7 445 o) : illisible sur le téléphone de M. Bayang, alors que la feuille de rendez-vous dit qu'il part
+**dans l'heure qui suit la réunion**. Le bac n'a ni pandoc, ni LibreOffice, ni reportlab — **PIL est le seul
+moteur**, comme pour les planches de contrôle et la vignette des liens. D'où
+**`tools/site/md_to_pdf.py`** (écrit ce matin, ~30 s par document) : titres, paragraphes, gras, citations,
+filets, listes et **tableaux à deux colonnes** — la forme qu'ont tous nos chiffres. Sortie :
+**`sales/BUSINESS-CASE-UNIVERS-OPTIQUE-2026-09-25.pdf` — 3 pages, 801 Ko**, à la palette de sa page
+(craie `#FBF6EC`, encre `#1E1A15`, rouille `#A94C23`, pétrole `#12303F`) : le document et la page se
+ressemblent, donc il reconnaît la même maison.
+
+**Trois défauts de mise en page vus à l'œil, et corrigés dans l'outil** (règle de la maison : on regarde ce
+qu'on livre) : ① un espace parasite avant la ponctuation quand elle était en gras — ② **chaque paragraphe du
+`.md` était rendu comme un paragraphe séparé**, parce que nos fichiers sont coupés à la main tous les 90
+caractères : les lignes de continuation sont maintenant recollées (et une ponctuation qui commence une ligne
+ne prend jamais d'espace devant elle) — ③ une ponctuation seule partait en début de ligne quand le mot finit
+au bord : elle est **collée au mot** au moment de la coupure.
+
+**Un défaut trouvé dans l'aperçu d'Univers, consigné et NON corrigé ce matin.** Son sélecteur de créneaux
+(`demos/concept-univers-optique-v2.html`) propose « Vendredi 25 sept. · 8h00 **(aujourd'hui)** » — c'est-à-dire
+**un créneau déjà passé**, et le mot « aujourd'hui » calculé à l'heure où le patient lit la page, pas à celle
+du rendez-vous. Le reste du sélecteur est bien généré à l'ouverture (`getDate()`). **On ne touche pas la page
+ce matin** : King l'ouvre devant le client à 10 h, et la règle du 24/09 est explicite — *rien ne casse, on ne
+rouvre pas une page la veille d'une démonstration*. Correction à faire **après** les deux rendez-vous, dans le
+même passage que les corrections d'Univers.
+
+**L'état de l'arbre au réveil — à savoir, parce que ça peut se reproduire.** L'espace de travail avait été
+remis à un état du 23/09 : **237 fichiers absents** et 55 491 lignes de moins par rapport à la branche
+(le travail du 24/09 — Cinq Sens, DM v2.1, les quatre passes de La Ligne — n'était plus dans l'arbre). La
+branche poussée, elle, était intacte (`56fe002`). Récupération : sauvegarde de l'arbre dans `/tmp`, puis
+`git fetch origin arena/01a0c495-amk` + **`git reset --hard FETCH_HEAD`** — après vérification que la branche
+contenait bien les fichiers utiles (`demos/univers-optique-site-v2.html`, le dossier `clients/la-ligne/`, le
+test à 77 assertions). **La leçon, la même qu'au tour 53 : la branche poussée est la source de vérité ;
+l'arbre de travail, lui, peut être remis en arrière** — on vérifie les fichiers *dans la branche* avant de
+copier quoi que ce soit.
+
+**Ce qui part ce matin** : `sales/Confirmer-2026-09-25-Matin.md` (le message d'Univers prêt à coller, son
+repli SMS, l'action bloquante d'UNI-LABO — redéployer `hosting/previews/unilabo/` sinon la page montrée n'a
+pas le formulaire vendu —, le message d'après-réunion avec le PDF, et les trois phrases de la journée).
+**Aucun message n'est envoyé par le bac** : King envoie.
