@@ -4443,3 +4443,41 @@ copier quoi que ce soit.
 repli SMS, l'action bloquante d'UNI-LABO — redéployer `hosting/previews/unilabo/` sinon la page montrée n'a
 pas le formulaire vendu —, le message d'après-réunion avec le PDF, et les trois phrases de la journée).
 **Aucun message n'est envoyé par le bac** : King envoie.
+## 2026-09-25 · 12:15 → 12:35 (horloge du bac) · UNIVERS OPTIQUE CHANGE DE SUJET — « pas un site, un outil qui fait gagner du temps »
+
+**Ce que King rapporte du rendez-vous de 10 h** : ils ne veulent pas d'un site mais **d'autre chose**. Leur
+douleur, qu'il a énoncée lui-même : **quand un client vient, ils passent énormément de temps à essayer toutes
+les montures**. Sa proposition : **une application** (web / mobile / desktop) où il **téléverse son stock de
+montures** et **retire celles qui ne sont plus disponibles**, et où, quand un client vient, **il le prend en
+photo** et **le client fait défiler des photos de lui-même avec chaque monture**. Il choisit sur ce qu'il voit.
+
+**Ce qui est décidé tout de suite : c'est faisable, et on le prouve plutôt que de le dire.** La planche
+`clients/univers-optique/essai-maquette.png` a été fabriquée dans l'heure : une photo frontale prise au
+téléphone, et **trois montures posées dessus** — à la bonne échelle, sur les yeux, avec un léger voile de verre
+pour que la monture ne flotte pas. Ce n'est pas un montage à la main : c'est **le procédé que la page
+exécutera** (mesurer le visage, mesurer la monture, ajuster l'échelle, détourer le fond, poser). Le détail des
+essais — et ce qui a raté avant — est dans `clients/univers-optique/pivot-essayage-2026-09-25.md` §2.
+
+**Trois choses écrites dans l'analyse, et qui comptent plus que la faisabilité** :
+① **pas d'application à installer** : une page web privée, mise en favori au comptoir, qui **fonctionne hors
+ligne** et **ne fait sortir aucune photo du téléphone** — c'est une raison d'achat, pas un détail.
+② **la vraie question qu'il n'a pas posée** : « où est rangée la monture ? » Un outil qui montre les montures
+sur un visage mais ne dit pas **dans quel présentoir** elles sont ne lui rend que la moitié de son temps ; un
+numéro d'emplacement et une étiquette, dix minutes de travail, transforment le gadget en **outil de comptoir**.
+③ **le piège du gratuit** : le prototype se fait sur **cinq** montures ; **son stock entier, ses étiquettes et
+son suivi de vente, c'est le travail qu'on vend** (Hormozi, `PLAN-2026-09-24-25.md` §4). L'outil n'est pas le
+site : le site est posé à 100 000, l'outil est **un autre métier**.
+
+**Ce qui n'est pas décidé (et n'appartient qu'à King)** : le prix, et le moment de le poser — trois façons sont
+écrites dans le §7 de l'analyse (produit principal avec abonnement / pied dans la porte en échange du statut de
+client pilote / prototype d'abord et prix après). **Rien n'a été promis au client** : ni délai, ni somme, ni
+« ça se fait en trois jours ».
+
+**Ce que le pivot vaut pour nous, au-delà d'Univers** : **les dix-huit autres opticiens de la campagne ont le
+même problème**. Le jour où l'outil tient pour une boutique, il se revend tel quel — c'est **le premier objet du
+dépôt qui soit un produit** et pas une prestation.
+
+**Le CRM dit la vérité, sans embellir** : le rendez-vous a eu lieu, le sujet a changé, **les 50 000 d'acompte
+n'ont pas été pris**, et le site n'est pas refusé — il est **mis en attente** derrière un problème plus concret.
+*Un rendez-vous qui change de sujet n'est ni une vente ni une perte : c'est une réorientation, et elle s'écrit
+comme telle.*
