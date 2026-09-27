@@ -138,18 +138,21 @@ ok("les dégradés ne bougent que par `transform` (composé par le GPU), jamais 
 console.log("\n═══ 1 · la bascule, et ce qu'elle change vraiment ═══");
 
 /* Les cinq messages, dans l'ORDRE DU DOCUMENT (premier écran, étapes, contact, pied, barre du bas). */
+/* Le nom vient du cabinet : « DM OPTIQUE SARL » (son message du 25/09). Et depuis que les horaires
+   sont écrits sur la page, le bouton du bloc contact ne les demande plus au cabinet. */
 const MESSAGES = [
-  ["Bonjour DM OPTIC, je voudrais prendre un rendez-vous pour un examen de la vue.",
-   "Hello DM OPTIC, I would like to book an eye examination."],
-  ["Bonjour DM OPTIC, avez-vous cette monture en boutique : ",
-   "Hello DM OPTIC, do you have this frame in store: "],
-  ["Bonjour DM OPTIC, voici ce qui ne va pas : ", "Hello DM OPTIC, this is what is wrong: "],
-  ["Bonjour DM OPTIC, je voudrais passer vous voir. Quels sont vos horaires ?",
-   "Hello DM OPTIC, I would like to come and see you. What are your opening hours?"],
-  ["Bonjour DM OPTIC, je voudrais prendre un rendez-vous pour un examen de la vue.",
-   "Hello DM OPTIC, I would like to book an eye examination."],
-  ["Bonjour DM OPTIC, je voudrais prendre un rendez-vous pour un examen de la vue.",
-   "Hello DM OPTIC, I would like to book an eye examination."],
+  ["Bonjour DM OPTIQUE SARL, je voudrais prendre un rendez-vous pour un examen de la vue.",
+   "Hello DM OPTIQUE SARL, I would like to book an eye examination."],
+  ["Bonjour DM OPTIQUE SARL, avez-vous cette monture en boutique : ",
+   "Hello DM OPTIQUE SARL, do you have this frame in store: "],
+  ["Bonjour DM OPTIQUE SARL, voici ce qui ne va pas : ",
+   "Hello DM OPTIQUE SARL, this is what is wrong: "],
+  ["Bonjour DM OPTIQUE SARL, je voudrais passer vous voir.",
+   "Hello DM OPTIQUE SARL, I would like to come and see you."],
+  ["Bonjour DM OPTIQUE SARL, je voudrais prendre un rendez-vous pour un examen de la vue.",
+   "Hello DM OPTIQUE SARL, I would like to book an eye examination."],
+  ["Bonjour DM OPTIQUE SARL, je voudrais prendre un rendez-vous pour un examen de la vue.",
+   "Hello DM OPTIQUE SARL, I would like to book an eye examination."],
 ];
 const ALT = ["Une paire de lunettes de vue posée sur une surface claire, lumière douce.",
              "A pair of prescription glasses resting on a pale surface in soft light."];
@@ -189,7 +192,7 @@ ok("départ en français : FR est enfoncé, EN ne l'est pas",
    r.buttons["btn-fr"].getAttribute("aria-pressed") === "true" &&
    r.buttons["btn-en"].getAttribute("aria-pressed") === "false");
 ok("départ en français : les six messages WhatsApp restent français",
-   r.anchors.every((a) => waMessage(a.getAttribute("href")).indexOf("Bonjour DM OPTIC") === 0) &&
+   r.anchors.every((a) => waMessage(a.getAttribute("href")).indexOf("Bonjour DM OPTIQUE SARL") === 0) &&
    waMessage(r.anchors[2].getAttribute("href")) === MESSAGES[2][0]);
 ok("départ en français : le texte de remplacement des images est français",
    r.image.getAttribute("alt") === ALT[0]);

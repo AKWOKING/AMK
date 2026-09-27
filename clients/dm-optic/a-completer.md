@@ -4,10 +4,15 @@
 Depuis la v2.1 (24/09 au soir), la page parle **au patient** : six services listés, une vitrine de
 montures, et plus aucun détail administratif du titulaire. La liste de ce qui manque vit donc ici.
 
+*Mis à jour le **27/09/2026** (v2.2) : ses « Quelques Modifications » du 25/09 sont appliquées — le
+nom, l'adresse et les **heures** sont écrits sur la page. Les lignes 1 et 2 sont donc en partie
+satisfaites : il reste **les jours**, **un point de repère**, et les **photos** (les trois images de la
+vitrine sont encore des illustrations).*
+
 | # | Ce qu'on attend de M. Domche | Ce que ça change sur la page | État |
 |---|---|---|---|
-| 1 | **Adresse exacte** + le point de repère (« en face de… », « à côté de… ») | La question n° 1 d'un patient ; c'est aussi ce qui alimente un bouton d'itinéraire | à confirmer |
-| 2 | **Horaires** : jours et heures d'ouverture | La question n° 2 ; une des **six** questions fréquentes attend cette réponse | à confirmer |
+| 1 | **Un point de repère** en plus de l'adresse (« en face de… », « à côté de… ») — l'adresse est donnée depuis le 25/09 : **Ndobo Mayor, immeuble West Hotel, Bonabéri** | Elle est écrite sur la page, dans le schéma Google et dans la fiche contact depuis la v2.2. Un repère de plus vaut mieux qu'un plus code pour un patient qui arrive en taxi | **adresse ✓ · repère à demander** |
+| 2 | **Les JOURS d'ouverture** — il a donné les heures le 25/09 (« Ouverture 8h00 / Fermeture 17h30 · CONSULTATION 8H30-13H30 »), **pas les jours** | Ils sont écrits sur la page depuis la v2.2 ; il ne manque que « lundi au samedi ? fermé le dimanche ? » — la page n'affirme **aucun** jour tant qu'on ne l'a pas | **heures ✓ · jours à demander** |
 | 3 | **Trois ou quatre photos du cabinet** (téléphone, lumière du jour) | Elles remplacent les photos d'illustration de la page | à confirmer |
 | 4 | **Six à huit photos de vos montures et de vos lunettes** — par famille : vue, soleil, enfants (posées, ou la vitrine du magasin) | C'est la **vitrine** de la page : aujourd'hui elle montre trois illustrations. Les vraies montures du cabinet prennent leur place, et le patient voit ce que vous vendez **avant** de venir | à demander |
 | 5 | **Moyens de paiement** acceptés (espèces, MTN MoMo, Orange Money) | Évite au patient de venir sans pouvoir payer | à confirmer |

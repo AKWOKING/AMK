@@ -196,10 +196,24 @@ def quote(d, block):
 
 
 def bullets(d, items):
+    # 25/09 : `write()` demandait (lines, size, lead) et l'appel n'en passait que deux — le chemin
+    # des listes à puces n'avait JAMAIS été exercé (le business case d'Univers n'en avait aucune).
+    # Trouvé par le document des deux coffrets de DM OPTIQUE SARL, sur un TypeError. Corrigé, et
+    # désormais couvert par `tools/qa/test_md_to_pdf.py`.
     for it in items:
         d.ensure(36)
         d.d.text((M + 4, d.y + 4), "•", font=font(F_BOLD, 22), fill=RUST)
-        d.write(wrap(it, 24, W - 2 * M - 36), 34, indent=36)
+        d.write(wrap(it, 24, W - 2 * M - 36), 24, 34, indent=36)
+        d.y += 8
+
+
+def numbers(d, items):
+    """Liste ordonnée : le numéro du document est CONSERVÉ (un « 1. » qui devient « • » ferait perdre
+    un renvoi que le lecteur peut citer au téléphone)."""
+    for num, it in items:
+        d.ensure(36)
+        d.d.text((M + 2, d.y + 3), num + ".", font=font(F_BOLD, 22), fill=RUST)
+        d.write(wrap(it, 24, W - 2 * M - 36), 24, 34, indent=36)
         d.y += 8
 
 
@@ -239,7 +253,16 @@ def table(d, rows):
 
 # ─────────────────────────────── le document ───────────────────────────────
 
+# 25/09 : « 1. » manquait. Une liste ordonnée était donc lue comme un paragraphe et s'imprimait
+# en trois items collés sur une ligne (vu sur le document des deux coffrets de DM OPTIQUE SARL).
+# Les listes sont désormais reconnues par `_ordered()` — un nombre, un point, une espace.
 BLOCK_START = ("#", ">", "|", "- ", "---")
+
+
+def _ordered(s):
+    """« 1. texte » → ('1', 'texte') ; sinon None. (Pour les listes numérotées.)"""
+    m = re.match(r"^(\d{1,2})[.)]\s+(.+)$", s)
+    return (m.group(1), m.group(2)) if m else None
 
 
 def _is_text(s):
@@ -295,6 +318,18 @@ def build(md, title, foot):
                     i += 1
                 items.append(join_lines(item))
             bullets(d, items)
+            continue
+        elif _ordered(s):
+            items = []
+            while i < len(lines) and _ordered(lines[i].strip()):
+                num, first = _ordered(lines[i].strip())
+                item = [first]
+                i += 1
+                while i < len(lines) and _is_text(lines[i].strip()):
+                    item.append(lines[i].strip())
+                    i += 1
+                items.append((num, join_lines(item)))
+            numbers(d, items)
             continue
         else:
             para = [s]

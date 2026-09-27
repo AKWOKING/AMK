@@ -1,6 +1,6 @@
 # Univers Optique
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-24. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-27. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -40,7 +40,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 117 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 131 ligne(s).*
 
 `L51` · | **ven 18/09 20:02** | **Clinique de L'université** (Bassa, 694 36 02 03) | msg 1 — sans maquette | Envoyé | **Non** |
 `L113` · | 20:02 | Cabinet Dentaire Emmanuel · Clinique de L'université · MEDI LABO |
@@ -159,6 +159,20 @@
 `L3417` · ajouter ? » et une décision — **aider Univers Optique à revendiquer sa fiche Google, gratuitement s'il est
 `L3421` · l'Annexe A, la feuille que le client garde — devient **une question à deux branches**. Chez **Univers**, la
 `L3442` · a changé »), `sales/RDV-UNIVERS-OPTIQUE-2026-09-25.md` (point 6 réécrit, section « Le geste », deux interdits),
+`L4401` · **Sa question, mot pour mot** : *« Morning got meeting with univers optique, don't we have to prepare a
+`L4403` · d'Univers Optique.** UNI-LABO a choisi 13 h le 23/09 à 21:42 et King a confirmé dans la minute (« C'est bien
+`L4407` · **Ce qui manquait n'était pas un message, c'était le document.** Le business case d'Univers n'existait qu'en
+`L4413` · **`sales/BUSINESS-CASE-UNIVERS-OPTIQUE-2026-09-25.pdf` — 3 pages, 801 Ko**, à la palette de sa page
+`L4424` · **Un défaut trouvé dans l'aperçu d'Univers, consigné et NON corrigé ce matin.** Son sélecteur de créneaux
+`L4425` · (`demos/concept-univers-optique-v2.html`) propose « Vendredi 25 sept. · 8h00 **(aujourd'hui)** » — c'est-à-dire
+`L4430` · même passage que les corrections d'Univers.
+`L4437` · contenait bien les fichiers utiles (`demos/univers-optique-site-v2.html`, le dossier `clients/la-ligne/`, le
+`L4442` · **Ce qui part ce matin** : `sales/Confirmer-2026-09-25-Matin.md` (le message d'Univers prêt à coller, son
+`L4446` · ## 2026-09-25 · 12:15 → 12:35 (horloge du bac) · UNIVERS OPTIQUE CHANGE DE SUJET — « pas un site, un outil qui fait gagner du temps »
+`L4455` · `clients/univers-optique/essai-maquette.png` a été fabriquée dans l'heure : une photo frontale prise au
+`L4459` · essais — et ce qui a raté avant — est dans `clients/univers-optique/pivot-essayage-2026-09-25.md` §2.
+`L4476` · **Ce que le pivot vaut pour nous, au-delà d'Univers** : **les dix-huit autres opticiens de la campagne ont le
+`L4531` · coffrets a révélé **deux défauts que le business case d'Univers n'avait jamais touchés** — `bullets()`
 
 ---
 

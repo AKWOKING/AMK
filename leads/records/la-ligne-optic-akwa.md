@@ -1,6 +1,6 @@
 # La Ligne Optic Akwa
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-24. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-27. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -30,9 +30,10 @@ LOT 4 (préparé, PAS ENVOYÉ). Titulaire : JOUNGO Line Chantale. Aucune page, a
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 1 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 2 ligne(s).*
 
 `L3892` · | 6 | **La Ligne Optic Akwa** | 683 651 108 | JOUNGO Line Chantale | aucune vitrine — porte B faible, King décide |
+`L4287` · **JOUNGO Line Chantale** · Douala · **683 651 108**. **Annuaire Mont-Pandi** (texte du cabinet) :
 
 ---
 

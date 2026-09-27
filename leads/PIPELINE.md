@@ -1,6 +1,6 @@
 # PIPELINE — où en est chaque lead
 
-> ⚙️ **Généré le 2026-09-24 par `leads/build/views.py` — ne pas modifier à la main.**
+> ⚙️ **Généré le 2026-09-27 par `leads/build/views.py` — ne pas modifier à la main.**
 > Toute correction se fait dans `leads/build/crm.py` ou `sales/Activity-Log.md`, puis on relance `leads/build/rebuild.sh`.
 
 ## Compteur
@@ -8,7 +8,8 @@
 | Étape | Leads |
 |---|---|
 | ④ Prix posé, en négociation | **3** |
-| ③ Aperçu envoyé | **4** |
+| ④ Offre posée | **1** |
+| ③ Aperçu envoyé | **3** |
 | ② Qualifié — en conversation | **22** |
 | ① Prospection — à qualifier | **78** |
 | ❌ Perdu | **1** |
@@ -26,7 +27,6 @@
 |---|---|---|
 | **Référence Optique Médicale Cinq Sens** | 696 698 136 | Yes |
 | **La Ligne Optic Akwa** | 683 651 108 | Yes |
-| **DM Optique** | 656 122 239 | Yes |
 
 > **Règle des 90 secondes.** Une réponse en attente passe avant tout le reste.
 
@@ -36,15 +36,20 @@
 |---|---|---|---|
 | Le Cristallin | Douala | 699 90 55 77 | `L3867` |
 | UNI-LABO | Douala (Bonamoussadi, Carrefour Etoo) | 696 13 98 19 | `L134` |
-| Univers Optique | Douala | 699 25 28 74 | `L3442` |
+| Univers Optique | Douala | 699 25 28 74 | `L4531` |
 
-## ③ Aperçu envoyé — 4
+## ④ Offre posée — 1
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| Cavisa Optique | Douala | 699 95 90 52 | `L4053` |
 | DM Optique | Douala | 656 122 239 | `L4019` |
-| La Ligne Optic Akwa | Douala (Akwa) | 683 651 108 | `L3892` |
+
+## ③ Aperçu envoyé — 3
+
+| Lead | Ville | WhatsApp | Trace au journal |
+|---|---|---|---|
+| Cavisa Optique | Douala | 699 95 90 52 | `L4492` |
+| La Ligne Optic Akwa | Douala (Akwa) | 683 651 108 | `L4287` |
 | Référence Optique Médicale Cinq Sens | Douala (Akwa + Brazzaville) | 696 698 136 | `L4233` |
 
 ## ② Qualifié — en conversation — 22
@@ -128,7 +133,7 @@
 | London Vision | Douala | 696 76 81 16 | — |
 | Lux Optique | Douala | 655 04 05 49 | — |
 | LyfyOptic | Douala | 699 98 06 66 | `L3535` |
-| Maison Optique | Douala | 657 73 70 45 | `L2973` |
+| Maison Optique | Douala | 657 73 70 45 | `L4417` |
 | Marthlo Comprehensive Bilingual College | Buea | — | — |
 | Mel's Optic | Douala | 690 98 85 18 | — |
 | Mouscou Optique Médicale | Douala | 696 65 41 64 | — |
@@ -155,7 +160,7 @@
 | Summerset Bilingual College (SMBICOL) | Buea (Wokoko) | — | — |
 | Win Optic Plus | Douala | 699 12 59 06 | `L3928` |
 | Wonders Medical Foundation | Douala (Bonamoussadi) | — | — |
-| École Privée Bilingue Les Génies | Douala (Akwa) | — | `L3122` |
+| École Privée Bilingue Les Génies | Douala (Akwa) | — | `L4462` |
 
 ## ❌ Perdu — 1
 
@@ -208,7 +213,7 @@
 | Presbyterian Comprehensive Secondary School (PCSS) Buea | Buea (Madam Namondo Alexander) | 652075229 | — |
 | Solidarity Health Foundation (Solidarity Clinic & Laboratory) | Buea (Untarred Malingo St / Molyko Checkpoint D61, P.O. Box 467; plus code 575J+7M) | 677615757 | `L761` |
 | Tchaya Optique | Douala | 696 79 01 73 | `L3834` |
-| YONDJA ANALYSE | Douala | 696 88 88 23 | `L3349` |
+| YONDJA ANALYSE | Douala | 696 88 88 23 | `L4472` |
 
 ## ⛔ Écarté — 13
 

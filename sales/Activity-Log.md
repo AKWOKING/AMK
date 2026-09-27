@@ -4501,3 +4501,54 @@ sur le distant (Cinq Sens, La Ligne, Uni-Labo, hosting).
 La règle est écrite dans `design/WORKFLOW.md` → « Commiter sans effacer le travail de la veille » :
 `git fetch` puis **`HEAD` = `FETCH_HEAD`** avant chaque commit, et **le commit ne contient que la tâche en
 cours**. *Deux rejets de suite en deux jours, c'est une leçon qui a maintenant un mode d'emploi.*
+
+## 2026-09-27 · 07:00 → 07:30 (horloge du bac) · DM OPTIQUE SARL — SES CORRECTIONS SONT EN LIGNE, ET IL DÉCIDE LUNDI
+
+**Ce que King a apporté** : les captures du fil WhatsApp avec **DM OPTIC**, prises le 27/09 à 07:53, et
+deux mots : « disussion with DM optic ». Elles contiennent la **première correction client de la
+campagne** — et elles étaient restées sans réponse depuis vendredi soir.
+
+**Le fil, relu ligne à ligne.** 24/09 : message 1 à 15:31, « Ok Envoyé svp... » à 15:54, l'aperçu est
+construit, déployé, **le lien part à 17:05**. — 25/09 : **00:36** « Ok je le ferai en matinée » ·
+**16:08 « Ce que vous faites est bien »** (la page est **approuvée** par son destinataire) · **16:17**
+King écrit le tarif « Client Fondateur » · **16:19 ses « Quelques Modifications »** (nom, adresse,
+horaires) · 16:23-16:39 ses questions (le catalogue de montures, « c'est quoi clients fondateurs ») ·
+16:41-16:57 l'échange TikTok/Facebook et **la confusion 12 000 / 30 000** · **16:59** « Donnez moi le
+temps de réfléchir avec mes collaborateurs et je vous reviens demain » · 17:00 « On verra si on opte sur
+le premier coffret ou sur l'offre globale ». — 26/09 : 18:53 King envoie cinq exemples de vidéos ·
+**19:47 « Merci bien. Je suis en déplacement imprévu. Nous en discutons lundi je vous en prie »**.
+
+**Ce qui a été fait, dans l'ordre.** ① **La v2.2 de sa page** : « DM OPTIQUE SARL »,
+« Ndobo Mayor — immeuble West Hotel, Bonabéri, Douala » et « Ouverture 8h00 – 17h30 · Consultation
+8h30 – 13h30 » sont écrits **tels quels**, dans les **deux langues**, à **onze endroits** — **44
+écritures** au total, dont les **six messages WhatsApp**, la **fiche contact `.vcf`** (le nom s'y
+trouve aussi, sinon un patient enregistrerait l'ancien) et les **données structurées** de Google. Le
+bouton du bloc contact **ne demande plus « Quels sont vos horaires ? »** : la page sait. La vignette a
+été **remesurée** (le nouveau nom est plus long : 937 px à 90 pt, anneau reculé — un défaut vu à l'œil
+sur la première sortie puis corrigé). ② **Le test** `test_dmoptic_page.mjs` mis à jour → **45/45**,
+avec les six audits à 0 faute (html 258 passages, a11y --strict, hero, images, inline JS, AEO), et
+**118 `.fr-only` / 118 `.en-only`**. ③ **`tools/site/md_to_pdf.py` réparé** : le document des deux
+coffrets a révélé **deux défauts que le business case d'Univers n'avait jamais touchés** — `bullets()`
+appelait `write()` **sans son argument `size`** (`TypeError` : le chemin des listes à puces n'avait
+jamais été exercé) et les listes **ordonnées** n'étaient pas reconnues (trois étapes s'imprimaient
+collées). Corrigés, plus un **témoin `tools/qa/test_md_to_pdf.py`** — **50 assertions**, dont nos 27
+documents d'envoi. ④ **`sales/DM-OPTIC-DEUX-COFFRETS-2026-09-27.md` + PDF (3 pages)** : **la réponse à sa
+vraie question** — « Vous avez parlé de 12.000frs / mois Ici Comment on est sur 30.000frs ??? » → les
+deux formules côte à côte, ce que paie chaque mensuel, et ce qui n'est dans aucune des deux. ⑤
+**`sales/Send-DM-OPTIC-2026-09-27.md`** : le message du **lundi 28/09 au matin** (il a dit « lundi » :
+un message le dimanche à un client en déplacement, c'est un message de trop), avec ses **jour**s
+manquants et ses **photos** demandées. Rien n'est envoyé.
+
+**Le CRM dit la vérité** : DM Optique passe en **`offer`** (la grille est sur la table depuis le 25/09),
+`Offer made = Yes`, **`Follow-up date = 2026-09-28`** — la date que **le client** a donnée. L'entonnoir
+le montre : `demo` 4 → 3, `offer` 1. ⚠️ Sept champs restent vides **exprès** : les **jours**
+d'ouverture (il a donné des heures, pas des jours — la page n'affirme **aucun** jour, et le test refuse
+`openingHours`).
+
+**Deux choses à trancher par King avant lundi**, écrites dans la feuille d'envoi : le **nom de domaine**
+(« https://www.dmoptique.com par exemple » a été promis dans le fil — il est-il dans le prix ?) et **un
+seul chiffre par coffret** (le document doit être **refait**, pas corrigé à la main, si un montant
+change).
+
+*Un client qui corrige une page est un client qui se l'approprie : c'est la meilleure nouvelle du fil —
+et c'est pour ça que ses trois lignes sont écrites partout, jusqu'au nom de la fiche contact.*

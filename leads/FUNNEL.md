@@ -1,6 +1,6 @@
 # ENTONNOIR — où le système fuit
 
-> ⚙️ **Généré le 2026-09-24 par `leads/build/views.py` — ne pas modifier à la main.**
+> ⚙️ **Généré le 2026-09-27 par `leads/build/views.py` — ne pas modifier à la main.**
 > Toute correction se fait dans `leads/build/crm.py` ou `sales/Activity-Log.md`, puis on relance `leads/build/rebuild.sh`.
 
 ## La chaîne
@@ -12,7 +12,7 @@
 | Réponses humaines | **9** | 13.4 % des contactés |
 | Réponses automatiques | 1 | — |
 | Aperçus produits | **25** | (hors chaîne : souvent produits AVANT contact) |
-| Prix posé / en négociation | **3** | 12.0 % des aperçus |
+| Prix posé / en négociation | **4** | 16.0 % des aperçus |
 | Clients payants | **0** | — |
 
 ## Par source — c'est ici qu'on voit quelle source vaut le travail
@@ -32,7 +32,7 @@
 
 1. **Le volume contacté est le premier goulot** : 96 lead(s) sur 163 n'ont jamais reçu un message (59 % de la base). Aucune amélioration de texte ne compense un lead jamais contacté.
 2. **Le taux de réponse humain** est de 13.4 % des contactés — c'est le chiffre à surveiller d'un envoi à l'autre (il se lit avec `SOURCES.md` : quelle liste répond).
-3. **La conversion en rendez-vous, elle, ne fuit pas** : 3 des 9 réponses humaines ont donné un rendez-vous ou un prix posé. Le travail n'est donc pas de « mieux closer », il est de **contacter plus**, et de choisir les bonnes listes.
+3. **La conversion en rendez-vous, elle, ne fuit pas** : 4 des 9 réponses humaines ont donné un rendez-vous ou un prix posé. Le travail n'est donc pas de « mieux closer », il est de **contacter plus**, et de choisir les bonnes listes.
 
 > Règle de lecture : une réponse automatique n'est PAS une réponse. Un aperçu produit n'est pas un prospect chaud — il se compte à part, et `Demo made` ne remplace jamais `reply_type = human`.
 

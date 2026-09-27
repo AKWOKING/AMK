@@ -13,11 +13,23 @@ Ce que fait ce script, dans l'ordre :
  4. il en fait la copie déployable dans `hosting/previews/dmoptic/` et dessine la vignette 1200×630
     (`og.jpg`) que WhatsApp affichera avant d'ouvrir le lien (§20.7).
 
-Rien n'est inventé ici. Les seuls faits du cabinet viennent du registre de l'Ordre (inscription
-021/2016, arrêté 0382, titulaire M. Domche Noumbi, Douala). Depuis la v2.1, ces détails de registre ne
-sont PLUS écrits sur la page (ils restent dans les données structurées) : le patient n'en a pas besoin.
-Adresse, horaires, prix, marques : jamais inventés — la page renvoie au cabinet. Les cinq photos sont
-des mises en situation, légendées « Photo d'illustration ».
+Rien n'est inventé ici. Les faits du cabinet viennent de deux endroits, et de deux seulement :
+le registre de l'Ordre (inscription 021/2016, arrêté 0382, titulaire M. Domche Noumbi, Douala) et **le
+message du cabinet lui-même**. Depuis la v2.1, les détails de registre ne sont PLUS écrits sur la page
+(ils restent dans les données structurées) : le patient n'en a pas besoin.
+
+**v2.2 (25/09/2026, après-midi)** — M. Domche Noumbi a envoyé « Quelques Modifications » à 16:19 :
+
+    • DM OPTIQUE SARL
+    • DOUALA/ BONABERI/ NDOBO MAYOR- IMMEUBLE WEST HOTEL
+    • HORAIRES : Ouverture 8h00 / Fermeture 17h30 · CONSULTATION : 8H30-13H30
+
+Les trois sont écrits tels quels, dans les deux langues, à **onze endroits** de la page (titre, mot-
+symbole, premier écran, carte d'identité, les six messages WhatsApp, bloc contact, réponses des
+questions — visibles **et** dans le schéma FAQPage, mot pour mot —, fiche .vcf, pied de page, schéma
+`PostalAddress`). Le nom du fichier .vcf suit. **Ce qu'on n'écrit toujours pas** : les jours
+d'ouverture (il ne les a pas donnés), les prix, les marques. Les cinq photos restent des mises en
+situation, légendées « Photo d'illustration ».
 
 Usage :
   python3 demos/build_dmoptic.py                       # écrit l'aperçu, og.jpg sans adresse
@@ -94,17 +106,19 @@ def draw_og(out, url_label):
     size = "1200x630"
     args = ["convert", "-size", size, "xc:#0A1220"]
     # l'anneau (le motif de la page), en haut à droite
+    # v2.2 : l'anneau descend en bas à droite — « DM OPTIQUE SARL » est plus long que « DM OPTIC »
+    # et avait besoin de la largeur. Mesuré, pas deviné : à 90 pt, le nom fait 937 px (ImageMagick).
     args += ["-fill", "none", "-stroke", "#2A5CB8", "-strokewidth", "16",
-             "-draw", "circle 950,300 950,450",
+             "-draw", "circle 1058,452 1058,574",
              "-stroke", "#4E7BD4", "-strokewidth", "7",
-             "-draw", "circle 950,300 950,395",
+             "-draw", "circle 1058,452 1058,501",
              "-stroke", "#E0703A", "-strokewidth", "12", "-draw",
-             "path 'M 880,250 A 90 90 0 0 1 950,210'"]
+             "path 'M 988,402 A 90 90 0 0 1 1058,362'"]
     # les mots
-    args += ["-stroke", "none", "-font", "DejaVu-Sans-Bold", "-pointsize", "104",
-             "-fill", "#FFFFFF", "-annotate", "+82+300", "DM OPTIC",
+    args += ["-stroke", "none", "-font", "DejaVu-Sans-Bold", "-pointsize", "90",
+             "-fill", "#FFFFFF", "-annotate", "+82+300", "DM OPTIQUE SARL",
              "-font", "DejaVu-Sans", "-pointsize", "33", "-fill", "#A9B8CF",
-             "-annotate", "+86+372", "Cabinet d'optique médicale · Douala",
+             "-annotate", "+86+372", "Cabinet d'optique médicale · Bonabéri",
              "-font", "DejaVu-Sans-Bold", "-pointsize", "46", "-fill", "#FFFFFF",
              "-annotate", "+86+455", "656 122 239",
              "-font", "DejaVu-Sans", "-pointsize", "31", "-fill", "#E0703A",

@@ -261,3 +261,92 @@ message qui part avec le lien la porte. Le jour où elles arrivent, elles rempla
 
 **Toujours pas fait, et qu'on dit** : aucune capture d'écran, aucun mockup (le bac n'a pas de
 navigateur). Le premier écran, les dégradés en vrai, la vitrine : c'est King, sur un téléphone.
+
+---
+
+# 9 · v2.2 — le cabinet donne ses propres faits (25/09 ; appliqué le 27/09)
+
+## 9.1 La source, mot pour mot
+
+Le 25/09 à 16:19, M. Domche Noumbi a écrit — c'est la première fois de la campagne qu'un prospect
+**corrige** une page au lieu de la commenter, et la première fois que ce cabinet donne des faits :
+
+> Quelques Modifications :
+> - DM OPTIQUE SARL
+> - DOUALA/ BONABERI/ NDOBO MAYOR- IMMEUBLE WEST HOTEL
+> - HORAIRES : Ouverture 8h00 / Fermeture 17h30 · CONSULTATION : 8H30-13H30
+
+Trois minutes plus tôt (16:08) il avait écrit « **Ce que vous faites est bien** » : la page est
+**approuvée par son destinataire**. Ces deux messages sont la matière de la v2.2 — rien d'autre n'a
+été écrit dessus.
+
+## 9.2 Ce que « appliquer » veut dire ici — onze endroits, 44 écritures
+
+Le nom, l'adresse et les horaires ne sont pas un paragraphe : ce sont des **valeurs** répétées dans
+toute la page, et une seule oubliée se voit tout de suite (une vignette qui dit « DM OPTIC », un
+`.vcf` qui enregistre l'ancien nom, une réponse Google qui dit « à confirmer »).
+
+| # | Où | Avant | Après |
+|---|---|---|---|
+| 1 | `<title>` (onglet) | Opticien à Douala — DM OPTIC… | … — **DM OPTIQUE SARL**… |
+| 2 | `og:title` (vignette du lien) | DM OPTIC — opticien… | **DM OPTIQUE SARL**… |
+| 3 | `og:image:alt` | DM OPTIC — cabinet… | **DM OPTIQUE SARL** — cabinet… |
+| 4-5 | mot-symbole (en-tête **et** pied) | `DM OPTIC` | `DM OPTIQUE` + **SARL** en léger |
+| 6-7 | titre du premier écran (FR/EN) | DM OPTIC, votre opticien… | **DM OPTIQUE SARL**, votre opticien… |
+| 8 | carte d'identité | DM OPTIC | **DM OPTIQUE SARL** |
+| 9 | pied de page | © 2026 DM OPTIC | © 2026 **DM OPTIQUE SARL** |
+| 10-21 | **les six messages WhatsApp** ×2 langues | « Bonjour DM OPTIC, » | « Bonjour **DM OPTIQUE SARL**, » |
+| 22-23 | `<dd>` du « Où » : premier écran + carte | Douala, Littoral | **Bonabéri, Ndobo Mayor** / **Ndobo Mayor — immeuble West Hotel, Bonabéri, Douala** |
+| 24 | pied de la carte d'identité | « Adresse exacte et horaires : demandez-les… » | **« Ouverture 8h00 – 17h30 · Consultation 8h30 – 13h30 »** |
+| 25-26 | note sous le bouton (FR/EN) | Le cabinet est à Douala, Littoral | Le cabinet est à **Bonabéri, Ndobo Mayor** (Douala) |
+| 27-28 | bloc contact : Adresse, Horaires | `à confirmer` / `à confirmer` | l'adresse et les horaires **écrits** |
+| 29-30 | pied de page : adresse, horaires | Douala, Littoral — Cameroun / « à demander au cabinet » | l'adresse + les horaires **écrits** |
+| 31-32 | réponses FAQ « Où ? » et « horaires ? » (visibles) | « la localisation vous est envoyée… » / « dès que le cabinet nous les confirme » | l'adresse / **8h00–17h30, consultation 8h30–13h30** |
+| 33-37 | **fiche contact `.vcf`** | nom, organisme, adresse = Douala | **DM OPTIQUE SARL**, adresse Ndobo Mayor, + les deux annonces de la région vive |
+| 38-41 | **données structurées** : `name`, `PostalAddress`, les **deux réponses** du `FAQPage` | Douala seul / réponses d'attente | nom, `streetAddress` + `addressRegion`, réponses **identiques aux visibles** |
+| 42 | bandeau d'aperçu | « …adresse, horaires et photos à valider… » | « **vos corrections du 25/09 sont en place** ; les photos de vos montures remplaceront les illustrations » |
+| 43 | le bouton du bloc contact | « …je voudrais passer vous voir. **Quels sont vos horaires ?** » | « …je voudrais passer vous voir. » |
+| 44 | la vignette `og.jpg` | nom 104 pt, anneau en haut à droite | nom **90 pt**, anneau reculé (**mesuré** avant, pas deviné) |
+
+## 9.3 La question qu'on ne pose plus, et celle qu'on pose
+
+Le bouton du bloc contact **demandait** « Quels sont vos horaires ? » — c'était juste tant que la
+page ne les connaissait pas. Elle les connaît : la question a été **retirée** (garder un bouton qui
+demande une information déjà écrite trois écrans plus haut, c'est apprendre au patient que la page ne
+sait pas ce qu'elle affiche). La question fréquente « Quels sont les horaires d'ouverture ? » **garde
+sa place** dans le schéma `FAQPage` — elle y **répond**.
+
+**Ce qui manque encore, et qu'on ne devinera pas** : **les jours**. Il a donné des heures, pas des
+jours (« 8h00 / 17h30 »). La page n'affirme donc **aucun** jour d'ouverture — ni dans le texte, ni
+dans le schéma (le test refuse `openingHours`, et c'est bien). La demande est dans le message du
+28/09 : *« lundi au samedi ? fermé le dimanche ? »*.
+
+## 9.4 Les contrôles de la v2.2
+
+| Contrôle | Résultat |
+|---|---|
+| `audit_html.py` | **0 constat** — 258 passages de texte (desktop 258 / mobile 258) |
+| `audit_a11y.py --strict` | **0 faute A/AA, 0 avertissement** |
+| `audit_images.py` | 0 faute, 0 avertissement sur 5 images |
+| `check_inline_js.py` | **rc 0** — 4 blocs compilés |
+| `audit_hero.py` | **0 faute, 0 avertissement** |
+| `audit_aeo.py` | ✓ `Optician` + `FAQPage` · 6 questions · `noindex` voulu |
+| `test_dmoptic_page.mjs` | **45/45** (le test a été mis à jour : les six messages portent le nouveau nom, et le bouton du bloc contact ne demande plus les horaires) |
+| équilibre bilingue | **118 `.fr-only` / 118 `.en-only`** — chaque ajout existe dans les deux langues |
+| recherche du nom | « DM OPTIC » sans le UE : **0** dans tout le fichier (y compris les scripts) |
+| `og:url` / `og:image` | recollés sur `https://dmoptic-2.vercel.app/` **après** le rebuild (`--url`), puis relus dans le HTML écrit |
+
+**Assumé** : les photos de la vitrine restent des **illustrations**. C'est la seule chose qui empêche
+la page d'être entièrement la sienne, et elle est demandée en clair (5 à 10 modèles, depuis son
+téléphone ou son catalogue WhatsApp Business).
+
+**Toujours pas fait, et qu'on dit** : aucune capture d'écran (pas de navigateur dans le bac). Le
+premier écran, la vignette et la bascule FR/EN se regardent sur un téléphone, en plein jour — et
+**avant** que le lien reparte.
+
+## 9.5 Le dépôt du moteur
+
+`demos/build_dmoptic.py` a reçu la v2.2 : le docstring porte le message du client mot pour mot (la
+provenance), et la vignette a été **remesurée** — « DM OPTIQUE SARL » à 90 pt fait **937 px** (mesuré
+avec ImageMagick avant d'écrire), l'anneau a reculé à `circle 1058,452` pour ne plus frôler le « L ».
+Un défaut vu à l'œil sur la première sortie, corrigé, revérifié à l'œil.

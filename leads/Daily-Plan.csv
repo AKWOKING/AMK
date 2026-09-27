@@ -1,5 +1,18 @@
-﻿# Généré le 2026-09-24 par leads/build/views.py — ne pas modifier à la main
+﻿# Généré le 2026-09-27 par leads/build/views.py — ne pas modifier à la main
 priorite,action,lead,whatsapp,ville,etape,note
-1,RÉPONDRE (règle des 90 s),Référence Optique Médicale Cinq Sens,696 698 136,Douala (Akwa + Brazzaville),demo,Yes
-2,RÉPONDRE (règle des 90 s),La Ligne Optic Akwa,683 651 108,Douala (Akwa),demo,Yes
-3,RÉPONDRE (règle des 90 s),DM Optique,656 122 239,Douala,demo,Yes
+1,Relance 1/3,UNI-LABO,696 13 98 19,"Douala (Bonamoussadi, Carrefour Etoo)",closing,"fixé : **RENDEZ-VOUS CONFIRMÉ — vendredi 25/09 à 13 h**, à leur laboratoire (Carrefour Etoo). Il a choisi 13 h lui-même le 23/09 à 21:42 (« 13h c'est bon pour moi »), King a accepté à 21:47. Prix posé le 23/09 13:30 : 150 000 FCFA, **acompte 75 000 à prendre en séance**, grille tarifaire standard déjà envoyée. À emporter : contrat Standard ×2, grille corrigée, et le formulaire de réservation — promis dans le message de 13:30, PAS ENCORE CONSTRUIT"
+2,Relance 1/3,El Roï Optique Médicale,693 127 302,Douala (Village),qualifying,rythme M+2 (message il y a 3 j)
+3,Relance 1/3,Net Optique Médical,675 785 930,Douala (Akwa),qualifying,rythme M+2 (message il y a 3 j)
+4,Relance 1/3,K Vision Care,677 077 159,Douala (Bessengue · Ancien 3e · Ndogpassi),qualifying,rythme M+2 (message il y a 3 j)
+5,Relance 1/3,Cabinet d'Optique la Rétine,695 474 364,Douala (Akwa),qualifying,rythme M+2 (message il y a 3 j)
+6,RÉPONDRE (règle des 90 s),Référence Optique Médicale Cinq Sens,696 698 136,Douala (Akwa + Brazzaville),demo,Yes
+7,RÉPONDRE (règle des 90 s),La Ligne Optic Akwa,683 651 108,Douala (Akwa),demo,Yes
+8,Relance 1/3,Médina Optic,699 93 93 34,Douala,qualifying,rythme M+2 (message il y a 3 j)
+9,Relance 1/3,Univers Optique,699 25 28 74,Douala,closing,"fixé : **GELÉ (King, 23/09 au soir)** : plus aucun travail sur le site ni le dossier avant le paiement. RENDEZ-VOUS fixé par le prospect — **vendredi 25/09 à 10 h, son cabinet** (Bépanda). Feuille : `sales/RDV-UNIVERS-OPTIQUE-2026-09-25.md`. Prix déjà posé le 21/09 (100 000 FCFA, 50/50) : on ne le re-présente pas, on ne le baisse pas. À sortir de la salle : le « oui », les réponses aux six points que la page demande, l'acompte"
+10,Relance 1/3,Espace Lunetterie,677 34 24 62,Douala,qualifying,rythme M+2 (message il y a 3 j)
+11,Relance 1/3,4M Optique Akwa,679 27 06 64,Douala,qualifying,rythme M+2 (message il y a 3 j)
+12,Relance 1/3,Maff Optique,699 93 19 56,Douala,qualifying,rythme M+2 (message il y a 3 j)
+13,Relance 1/3,Doyoan Optic,653 85 27 49,Douala,qualifying,rythme M+2 (message il y a 3 j)
+14,Relance 1/3,MegaOptic,698 82 10 27,Douala,qualifying,rythme M+2 (message il y a 3 j)
+15,Relance 1/3,Fashion Vision,656 22 38 63,Douala,qualifying,rythme M+2 (message il y a 3 j)
+16,Relance 3/3,L'Opticien Bali SARL,670 27 60 65,Douala (Bali),qualifying,"fixé : 2ᵉ message envoyé le 22/09 au soir (créneau fixé par le prospect lui-même). DERNIÈRE touche : vendredi 25/09, puis parked daté"

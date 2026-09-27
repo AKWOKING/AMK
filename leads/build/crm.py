@@ -1935,6 +1935,7 @@ def _apply_jour(out: list) -> None:
     _apply_state(out, ENVOI_2409_3, "ENVOI_2409_3")
     _apply_state(out, ENVOI_2409_4, "ENVOI_2409_4")
     _apply_state(out, REPONSE_2409_DM, "REPONSE_2409_DM")
+    _apply_state(out, REPONSE_DM_2509, "REPONSE_DM_2509")
     _apply_state(out, REPONSE_2409_CS, "REPONSE_2409_CS")
     _apply_state(out, REPONSE_2409_LL, "REPONSE_2409_LL")
     _apply_state(out, ECARTES_2409, "ECARTES_2409")
@@ -2827,6 +2828,62 @@ REPONSE_2409_DM = {
             "sur un second projet Vercel ; l'ancienne adresse `dmoptic.vercel.app` sert encore la v1). "
             "La page en ligne est bien la v2.1 (vérifiée par lecture du HTML servi le 24/09 au soir) : "
             "services, vitrine des montures, six questions. En attente de son retour — aucune relance.",
+    },
+}
+
+
+# ── DM OPTIQUE SARL — 25/09 (les corrections du client) et 26/09 (« lundi ») ────────────────────
+# Le fil, relu sur les captures de King du 27/09 au matin. C'est le premier prospect de la campagne
+# qui CORRIGE la page au lieu de la commenter : il donne ses propres faits (raison sociale, adresse,
+# horaires) et il valide (« Ce que vous faites est bien », 25/09 16:08). Stage `offer` : la grille est
+# sur la table depuis le 25/09 (100 000 FCFA tarif « client fondateur » / 150 000 offre globale ;
+# mensuels 12 000 / 30 000) et **le client a daté lui-même sa décision : lundi 28/09**.
+# ⚠️ Ce qu'il n'a PAS donné : les JOURS d'ouverture (seulement les heures). La page n'affirme donc
+# aucun jour — règle du dépôt : on n'écrit que ce que le client a dit.
+# ⚠️ Il n'a pas compris le tarif (« Vous avez parlé de 12.000frs / mois Ici Comment on est sur
+# 30.000frs ??? »). C'est le vrai obstacle de lundi, et c'est un document, pas un message, qui le
+# lève : `sales/DM-OPTIC-DEUX-COFFRETS-2026-09-27.md` (+ PDF).
+REPONSE_DM_2509 = {
+    "dm-optique": {
+        "Contacted": "Yes", "Reply": "Yes", "reply_type": "human",
+        "Demo made": "Yes", "Offer made": "Yes",
+        "last_send_state": "replied", "stage": "offer", "stage_since": "2026-09-25",
+        "site_url": "https://dmoptic-2.vercel.app", "site_checked_on": "2026-09-25",
+        "Follow-up date": "2026-09-28",
+        "wa_verified": "yes", "profile_name_seen": "DM OPTIC",
+        "value_kept":
+            "Les faits du CLIENT, désormais écrits sur sa page : raison sociale « DM OPTIQUE SARL », "
+            "adresse (Ndobo Mayor — immeuble West Hotel, Bonabéri, Douala) et horaires (8h00–17h30, "
+            "consultation 8h30–13h30) — plus de « à confirmer ». La grille du 25/09 : création 100 000 "
+            "FCFA (tarif client fondateur, au lieu de 150 000) ou offre globale 150 000, mensuels "
+            "12 000 et 30 000.",
+        "value_discarded":
+            "Les JOURS d'ouverture ne sont toujours pas connus — aucune page, aucun schéma ne les "
+            "affirme. Et la confusion 12 000 / 30 000 est tracée pour ce qu'elle est : deux périmètres "
+            "différents, dits côte à côte dans un document.",
+        "Conversation_extra":
+            "25/09 00:36 — « Ok je le ferai en matinée » (il ouvre le lien le matin). "
+            "25/09 16:08 — « Ce que vous faites est bien » : LA PAGE EST APPROUVÉE par son destinataire. "
+            "25/09 16:17 — King écrit le tarif « Client Fondateur » (100 000 FCFA au lieu de 150 000, "
+            "50 000 d'acompte, plus les deux mensuels). "
+            "25/09 16:19 — « Quelques Modifications » : DM OPTIQUE SARL · DOUALA/BONABERI/NDOBO "
+            "MAYOR-IMMEUBLE WEST HOTEL · Ouverture 8h00 / Fermeture 17h30 · CONSULTATION 8H30-13H30. "
+            "Elles sont appliquées le 27/09 (v2.2) — 44 écritures, onze endroits de la page, les six "
+            "messages WhatsApp et la fiche .vcf compris. "
+            "25/09 16:23-16:39 — ses questions : le catalogue de montures (« Y a-t-il un espace où en "
+            "cliquant on verra mon catalogue complet de montures ? » — la vitrine existe, elle attend "
+            "SES photos), et « C'est quoi <<clients fondateurs>> ». "
+            "25/09 16:41-16:57 — il veut le site RELIÉ à TikTok et Facebook (« c'est là que j'ai accès "
+            "à une nouvelle clientèle énorme ») ; King expose les deux coffrets ; il bute sur le prix : "
+            "« Vous avez parlé de 12.000frs / mois Ici Comment on est sur 30.000frs ??? ». "
+            "25/09 16:59 — « Donnez moi le temps de réfléchir avec mes collaborateurs et je vous "
+            "reviens demain avec une réponse définitive » ; 17:00 « On verra si on opte sur le premier "
+            "coffret ou sur l'offre globale ». "
+            "26/09 18:53 — King envoie cinq exemples de vidéos TikTok/Facebook pour la stratégie ; "
+            "19:47 — « Merci bien. Je suis en déplacement imprévu. Nous en discutons lundi je vous en "
+            "prie » ; King note le point de lundi, sans relancer. "
+            "27/09 07:53 — les captures de King arrivent au dépôt : on en fait le message du 28/09, le "
+            "document des deux coffrets et la mise à jour de la page. RIEN N'EST ENVOYÉ d'ici là.",
     },
 }
 
