@@ -4,6 +4,12 @@
 `sales/RDV-UNIVERS-OPTIQUE-2026-09-25.md` : il note **la nouvelle demande**, dit **ce qui est faisable et
 comment**, et liste **ce qu'on doit encore demander** avant d'écrire une ligne de code.
 
+> **Mis à jour le 27/09/2026** — King a rapporté trois faits du rendez-vous qu'il n'avait pas encore dits
+> (**§9**) : **il a déjà fait faire un site trois fois**, sans résultat ; **en homme d'affaires il attend un
+> retour sur ce qu'il investit** ; et le temps qu'il perd n'est pas seulement l'essayage — c'est aussi **le
+> remontage des montures en vitrine** après chaque client. Le §9 contient la feuille de ROI à remplir **avec**
+> lui, et la façon de lui poser le prix qui en découle.
+
 ---
 
 ## 1 · Ce qu'il a dit, mot pour mot (tel que King le rapporte)
@@ -172,3 +178,105 @@ Si l'outil tient pour Univers, **il se revend tel quel** — c'est le premier ob
 
 *Écrit par AMK le 25/09/2026 — la planche (`essai-maquette.png`) est la preuve technique montrée à King ; elle
 n'est pas destinée au client.*
+
+---
+
+## 9 · Ce que King a rapporté le 27/09 — trois faits qui changent la façon de le lui vendre
+
+### 9.1 Les faits, tels qu'il les rapporte
+
+> « during the meeting with univers optique he made me understand he had already made a website thrice and
+> it didn't bring him any value, and that as a business man if he invest in something he expects a ROI, he
+> asked for something else though »
+
+> « it'll save them time and he won't have to mount them on the wall each time after the client leaves »
+
+**Trois conséquences, et elles sont plus importantes que la faisabilité.**
+
+**① Le quatrième site est mort-né.** Il en a déjà fait faire **trois**. Le nôtre serait le quatrième — et il
+sait, par expérience, ce que ça lui a rapporté : rien. Donc **on ne repropose plus « un site »**, même
+meilleur, même offert : ce serait lui demander de croire une quatrième fois la même phrase. La page reste
+**la maison de l'outil** (c'est de là qu'un client essaie chez lui, et c'est là qu'on met le lien) mais elle
+ne se vend plus comme proposition : elle se **pose**, un jour, quand l'outil aura fait ses preuves. *C'est
+écrit noir sur blanc dans §8 depuis le 25/09 ; le fait des trois sites en fait une certitude, pas une
+prudence.*
+
+**② Il achète un retour, pas un objet.** « as a business man if he invest in something he expects a ROI ».
+Une planche de démonstration prouve que **c'est possible** ; elle ne prouve pas que **ça rapporte**. Il lui
+faut donc **une feuille de calcul** — la même mécanique qui a marché pour le business case du 25/09 : toutes
+les lignes remplies, **sauf une**, qu'il remplit lui-même. Voir §9.2.
+
+**③ Il y a une deuxième douleur, qu'il n'avait jamais nommée en une phrase** : « *he won't have to mount them
+on the wall each time after the client leaves* ». Le comptoir n'essaie pas seulement : **après chaque
+client, quelqu'un remet les montures en vitrine**. Ce geste fait partie du temps perdu, il est dans la
+feuille de calcul (§9.2, la variable `t`), et il se dit à voix haute — parce que c'est un détail du métier
+que nous avons compris sans qu'il ait eu besoin de l'expliquer deux fois.
+
+### 9.2 La feuille de ROI — les chiffres à remplir **avec** lui, pas pour lui
+
+Nous ne connaissons **ni son nombre de clients, ni le nombre de montures qu'ils essayent**. Les inventer
+serait la faute que ce dépôt interdit. On pose donc la formule et les variables, et **c'est lui qui remplit
+les quatre premières cases** — en séance, devant nous, avec son carnet.
+
+| Ce qu'on met dans le calcul | Qui le sait | Valeur |
+|---|---|---|
+| Clients qui essayent une monture, **par jour** | lui | *à remplir* — appelons-le **N** |
+| Jours d'ouverture, **par mois** | lui | *à remplir* — appelons-le **J** (6 j/semaine ≈ 26) |
+| Montures essayées par client | lui | *à remplir* — appelons-le **F** (le métier dit 10 à 25) |
+| Secondes par essayage, **vitrine comprise** (prise, pose, miroir, retrait, remise en vitrine) | nous, chronomètre en main | **t ≈ 55 s** |
+| Montures qui resteront à essayer **en vrai** | nous | **3** — l'outil ne choisit pas à sa place |
+
+**Le temps récupéré, par mois :  N × J × (F − 3) × t.**
+
+Deux ordres de grandeur, pour montrer à quoi ressemble la ligne quand elle est remplie :
+
+| Hypothèse | Clients/mois | Temps d'essayage aujourd'hui | Après l'outil | **Récupéré** |
+|---|---|---|---|---|
+| prudent | 5 clients/jour × 26 = 130 | ~40 h | ~6 h | **~34 h** |
+| modeste | 3 clients/jour × 26 = 78 | ~24 h | ~3,5 h | **~20 h** |
+
+*Lecture honnête de ce tableau : **34 heures par mois**, c'est environ **un cinquième d'un mois de travail
+à temps plein**. Aucun outil ne vaut ça en soi — ce qui vaut ça, c'est de le **dire avec ses chiffres à lui**,
+et de le laisser conclure.*
+
+**La deuxième ligne — celle que nous ne pouvons pas chiffrer, et c'est tant mieux :** aujourd'hui le client
+ne voit que **ce qui tient sur la vitrine**. Avec l'outil, il voit **tout le stock**. Plus de montures vues,
+c'est plus de chances de trouver celle qui lui va — et, pour le cabinet, plus de chances de vendre **le
+modèle qui rapporte le plus**. Cette ligne-là se remplit avec son **panier moyen**, qu'il connaît et que nous
+ne connaissons pas.
+
+**Ce que l'outil n'enlève pas, et on le dit avant qu'il le découvre** : les **trois derniers essayages**
+(la monture choisie se pose sur un vrai nez), le **réglage**, et la vente. L'outil enlève **les quinze
+premières minutes, pas les trois dernières**. Cette phrase vaut mieux qu'une promesse : c'est la seule
+qu'on pourra répéter dans six mois sans rougir.
+
+### 9.3 Ce que ça ajoute aux questions du §6
+
+| Nouvelle question | Pourquoi elle compte plus que les autres |
+|---|---|
+| **Combien de clients essayent une monture par jour, et combien chacun ?** (N et F) | Sans ces deux nombres, il n'y a pas de ROI à lui montrer — et sans ROI, pas de vente. C'est la première question de la prochaine séance. |
+| **Qui remet les montures en vitrine après un client, et combien de temps ça prend ?** | C'est **sa** phrase du 27/09. La lui reposer prouve qu'on l'a écouté — et ça ajoute une ligne au calcul. |
+| **Combien de montures tient la vitrine, et combien en avez-vous en stock ?** | L'écart entre les deux est **l'argument de vente le plus fort de l'outil** : ce n'est pas un gadget, c'est de la place gagnée sur le mur. |
+
+*(Les cinq questions du §6 restent valables, y compris celle qui n'a pas encore de réponse : **où est rangée
+la monture** — emplacement et étiquette, dix minutes de travail, la moitié du temps gagné.)*
+
+### 9.4 Ce que ça change au prix (§7)
+
+Les trois façons de poser le prix restent les siennes à trancher, mais **le fait des trois sites et
+l'attente de ROI déplacent la recommandation** : un homme qui a payé trois sites pour rien n'achètera pas
+**un objet**, il achètera **un résultat daté**. Autrement dit :
+
+- **l'option ① (produit + abonnement) devient la plus naturelle** — parce que l'outil se compare à des heures
+  récupérées chaque mois, et qu'un abonnement se juge sur un mois, pas sur une facture ;
+- **l'option ③ (le prototype d'abord, le prix après) devient la plus sûre** — elle ne demande aucune
+  croyance : il touche, il compte, il décide ;
+- **l'option ② (pied dans la porte contre le statut de pilote) ne doit plus être présentée comme un
+  rabais** : il a été échaudé par le prix, pas par l'idée. Si on baisse quelque chose, ça s'appelle **un
+  pilote**, avec une contrepartie écrite (ses montures servent de vitrine, on montre l'outil aux autres
+  opticiens) — jamais « un prix d'ami ».
+
+---
+
+*§9 ajouté le 27/09/2026, après le message de King. La planche de preuve et la maquette restent celles du
+§2 : rien n'a été reconstruit, seulement compris.*

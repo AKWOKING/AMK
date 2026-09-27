@@ -1,5 +1,19 @@
 # DM OPTIQUE SARL — la réponse à ses « Quelques Modifications », et le point de lundi
 
+> ## ⚠️ DEUX CHIFFRES À TRANCHER PAR KING **AVANT** L'ENVOI
+>
+> Ils sont écrits dans le document joint, et **si tu les changes, il faut refaire le PDF** (la commande est
+> au §2 — trente secondes) :
+>
+> 1. **Le volume d'un mois de contenus** : le document promet aujourd'hui « **au moins 8 publications et
+>    4 vidéos courtes** par mois ». C'est ce qui empêche « des contenus chaque mois » de devenir un travail
+>    illimité à prix fixe. Si tu préfères 6 et 3, ou 12 et 4, **dis-le** : c'est une ligne à changer.
+> 2. **La décomposition des 150 000** : le document dit — **100 000** (le site, à son tarif fondateur)
+>    **+ 50 000** (ouverture et paramétrage Facebook + TikTok, et la liaison au site et au WhatsApp).
+>    C'est l'arithmétique de tes propres chiffres, et c'est ce qui répond à la question qu'il va poser :
+>    *« est-ce que je perds mon tarif fondateur en prenant plus ? »* — non, il est **dans** les 150 000.
+>    **Confirme cette phrase, ou corrige-la** avant qu'elle parte.
+
 **Pour qui :** M. Domche Noumbi, DM OPTIQUE SARL, Bonabéri (Douala) — **656 122 239** (WhatsApp).
 **Où :** la page est en ligne sur **https://dmoptic-2.vercel.app/** — c'est **la même adresse** qu'il a déjà.
 Les corrections sont **déjà dedans** ; il suffit de recharger la page (WhatsApp garde la version en
@@ -35,6 +49,12 @@ L'onglet du navigateur, la vignette du lien et le pied de page portent aussi le 
 les horaires, et le bouton qui demandait « Quels sont vos horaires ? » — la page **sait** maintenant, elle
 ne demande plus. La question fréquente « Quels sont les horaires d'ouverture ? » garde sa place dans le
 schéma Google mais elle y **répond** au lieu de renvoyer au cabinet.
+
+**Le document joint a été retravaillé le 27/09 pour répondre à SA question** — celle qu'il a écrite
+noir sur blanc le 25/09 à 16:54 : « *Vous avez parlé de 12.000frs / mois Ici Comment on est sur 30.000frs
+???* ». Il contient maintenant une section entière là-dessus (§4), et deux lignes neuves : **ce que paient
+les 150 000** (100 000 de page au tarif fondateur + 50 000 de réseaux) et **ce que comprend un mois de
+contenus**.
 
 **Les deux points qui restent en blanc, et qu'on ne devinera pas :**
 
@@ -77,10 +97,22 @@ Deux choses restent à faire, et les deux viennent de vous :
    avez un). Dès qu'elles arrivent, elles remplacent les images d'illustration :
    c'est à ce moment-là que la page devient la vitrine de VOTRE stock.
 
-Et pour lundi : j'ai remis les deux formules côte à côte pour que votre
-décision soit simple, elles sont dans le document joint. La différence de
-mensuel (12 000 / 30 000) n'est pas une hausse : l'une entretient le site,
-l'autre entretient le site ET fabrique vos contenus TikTok/Facebook chaque mois.
+Et c'est normal que le prix change : ce n'est plus le même travail. Tenir vos
+réseaux, ce n'est pas la page — c'est écrire, monter et publier pour vous
+chaque mois, et c'est ce que vous m'avez demandé quand on a parlé de TikTok et
+Facebook. Vous l'avez déjà vu : les cinq vidéos que je vous ai envoyées, c'est
+ce que ça produit.
+
+Pour que votre décision soit simple, j'ai mis les deux formules côte à côte dans
+le document joint, avec ce que paie chaque mensuel et ce qui n'est compris dans
+aucune des deux. Deux choses à y regarder de près :
+
+· votre tarif fondateur n'a pas disparu — dans les 150 000, la page est comptée
+  100 000, comme convenu. Les 50 000 qui s'ajoutent, ce sont vos deux comptes
+  Facebook et TikTok ouverts, paramétrés et reliés à la page et à votre WhatsApp ;
+· un mois de contenus, c'est au moins 8 publications et 4 vidéos courtes. Le
+  reste du site (hébergement, sécurité, mises à jour de vos montures) est
+  compris dans les deux formules.
 
 — Akwo King / AMK
 ```

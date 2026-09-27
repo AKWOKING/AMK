@@ -35,7 +35,7 @@ Elle contient, dans les deux formules :
 
 | | |
 |---|---|
-| Création et mise en ligne de la page | **100 000 FCFA** — tarif « client fondateur », au lieu de 150 000 FCFA |
+| Création et mise en ligne de la page | **100 000 FCFA** — tarif « client fondateur », au lieu de 150 000 FCFA. Ce tarif est celui des **cinq premiers cabinets** ; il reste le vôtre. |
 | Paiement | 50 000 FCFA pour lancer, 50 000 FCFA à la livraison |
 | Ce qui reste à faire | les **jours** d'ouverture (vous me les donnez) et l'intégration de **vos photos** de montures |
 | Entretien du site — **option** | **12 000 FCFA / mois** : hébergement, sécurité, et la mise à jour de vos montures (celles qui partent, celles qui arrivent) |
@@ -55,12 +55,36 @@ Cette option ne comprend **aucun** contenu pour les réseaux sociaux.
 |---|---|
 | Mise en place complète | **150 000 FCFA** — 75 000 FCFA au démarrage (50 %) |
 | Ce que comprend la mise en place | la page complète (comme au coffret 1) · ouverture et paramétrage professionnel de votre **page Facebook** et de votre **compte TikTok** · la **liaison directe** TikTok → Facebook → la page → votre WhatsApp |
+| **Ce que paient les 150 000** | **100 000** : la page, **à son tarif fondateur** (elle ne repasse pas au tarif standard parce que vous achetez plus) · **50 000** : l'ouverture et le paramétrage de vos deux comptes, et leur liaison au site et à votre WhatsApp. **Votre tarif fondateur ne disparaît pas : il est dans les 150 000.** |
 | Forfait mensuel | **30 000 FCFA / mois** |
+| Ce que vous avez déjà vu | **cinq vidéos** de démonstration, envoyées le 26/09 — c'est ce que produit un mois de contenus. |
 | Ce que paie le mensuel | l'entretien du site (hébergement, sécurité, mises à jour des montures) **plus** la **fabrication et la publication de vos contenus** chaque mois : visuels et vidéos de montures, formats courts pour TikTok et Facebook |
+| **Ce que comprend un mois de contenus** | **au moins 8 publications et 4 vidéos courtes**, fabriquées à partir de **vos** photos, publiées sur vos deux comptes. Au-delà de ce volume, on en parle : ce n'est pas inclus, et vous ne le découvrirez pas après coup. |
 
 ---
 
-## 4 · La différence, en une phrase
+---
+
+## 4 · Pourquoi 100 000 puis 150 000 — et pourquoi votre tarif fondateur n'a pas disparu
+
+**Ce ne sont pas les mêmes objets.** Le premier prix paie **une page**. Le second paie **une page plus deux
+comptes ouverts, paramétrés et reliés au site et à votre WhatsApp**. Cinquante mille francs de plus, et ils
+achètent un travail qui n'existait pas dans la première phrase : créer une page Facebook professionnelle,
+ouvrir un compte TikTok, les configurer, et faire en sorte que tout ramène au même endroit — votre WhatsApp.
+
+**Et votre tarif fondateur est toujours là** : dans les 150 000, la page est comptée **100 000**, son prix
+fondateur. Elle ne repasse pas à 150 000 parce que vous achetez davantage. C'était le point à dire, parce
+que c'est la première question qu'on se pose : *« est-ce que je perds mon tarif en prenant plus ? »* — non.
+
+**Quant aux deux mensuels**, la différence est de **18 000 francs par mois**, et elle achète **un mois de
+publications et de vidéos fabriquées et publiées pour vous**. Ce n'est pas la même chose que de garder un
+site en vie : c'est un travail qui recommence tous les mois. Demandez autour de vous ce que coûte un mois de
+contenus — vous verrez que la question n'est pas de savoir si 30 000 est cher, mais si on peut vraiment le
+faire à ce prix-là.
+
+---
+
+## 5 · La différence, en une phrase
 
 **Les deux mensuels ne paient pas la même chose.** Le 12 000 entretient un site — c'est de la
 maintenance technique. Le 30 000 entretient le site **et** produit un mois de contenus pour vos réseaux :
@@ -72,7 +96,7 @@ vous qui publiez, comme aujourd'hui. C'est le Coffret 2 qui fait publier à votr
 
 ---
 
-## 5 · Ce qui n'est dans aucune des deux formules
+## 6 · Ce qui n'est dans aucune des deux formules
 
 Il vaut mieux le dire maintenant que le découvrir après :
 
@@ -88,7 +112,7 @@ Il vaut mieux le dire maintenant que le découvrir après :
 
 ---
 
-## 6 · Ce qu'il me faut pour commencer
+## 7 · Ce qu'il me faut pour commencer
 
 1. **Votre choix** entre le Coffret 1 et le Coffret 2.
 

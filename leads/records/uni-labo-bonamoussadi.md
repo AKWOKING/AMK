@@ -10,16 +10,22 @@
 | Type | lab |
 | Ville | Douala (Bonamoussadi, Carrefour Etoo) |
 | Langue de contact | FR/EN |
-| Étape | closing |
+| Étape | qualifying |
 | WhatsApp | 696 13 98 19 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |
 | Contacté | Yes |
-| Réponse | YES 19/09 20:20 - demande de RENDEZ-VOUS |
+| Réponse | Yes |
 | Maquette / site | Yes |
 | Relances envoyées | 0 |
 | Source | directory |
 | Détail source | Remote-Sweep section C - Lun-Ven 07h-19h, Sam 07h-13h |
+
+## Contradiction résolue (M2)
+
+- **Ce qui se contredisait :** Le CRM portait ce rendez-vous comme une CLÔTURE (« prix posé le 23/09 : 150 000, acompte 75 000 »). King rapporte le contraire : elle a écarté le site et décrit son propre logiciel de résultats. Résolu le 27/09 — le site est un refus, le besoin est neuf et non qualifié.
+- **Retenu :** Le rendez-vous a eu lieu, le fil vit, et elle a dit pourquoi le site ne l'intéresse pas : « elle pensait qu'on avait plus à offrir ». C'est une PORTE, pas une porte fermée — et c'est la première fois qu'un prospect de la campagne dit à voix haute que le site n'est pas le sujet.
+- **Écarté :** Aucune proposition, aucun prix, aucune promesse n'a été écrite pour la nouvelle demande : on ne sait même pas de quoi elle parle. Le dépôt garde une analyse et SIX QUESTIONS (`clients/uni-labo/analyse-logiciel-resultats-2026-09-27.md`) — rien de plus.
 
 ## Notes
 

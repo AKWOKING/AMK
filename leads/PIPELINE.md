@@ -7,10 +7,10 @@
 
 | Étape | Leads |
 |---|---|
-| ④ Prix posé, en négociation | **3** |
+| ④ Prix posé, en négociation | **1** |
 | ④ Offre posée | **1** |
 | ③ Aperçu envoyé | **3** |
-| ② Qualifié — en conversation | **22** |
+| ② Qualifié — en conversation | **24** |
 | ① Prospection — à qualifier | **78** |
 | ❌ Perdu | **1** |
 | ⏸ Parqué | **42** |
@@ -30,13 +30,11 @@
 
 > **Règle des 90 secondes.** Une réponse en attente passe avant tout le reste.
 
-## ④ Prix posé, en négociation — 3
+## ④ Prix posé, en négociation — 1
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
 | Le Cristallin | Douala | 699 90 55 77 | `L3867` |
-| UNI-LABO | Douala (Bonamoussadi, Carrefour Etoo) | 696 13 98 19 | `L134` |
-| Univers Optique | Douala | 699 25 28 74 | `L4531` |
 
 ## ④ Offre posée — 1
 
@@ -52,7 +50,7 @@
 | La Ligne Optic Akwa | Douala (Akwa) | 683 651 108 | `L4287` |
 | Référence Optique Médicale Cinq Sens | Douala (Akwa + Brazzaville) | 696 698 136 | `L4233` |
 
-## ② Qualifié — en conversation — 22
+## ② Qualifié — en conversation — 24
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
@@ -78,6 +76,8 @@
 | Net Optique Médical | Douala (Akwa) | 675 785 930 | `L3652` |
 | SkyOptic Akwa (ETS Sky Optics) | Douala (Akwa) | 655 649 803 | `L3981` |
 | St. Theresa International Bilingual Comprehensive College (STIBCCOL) | Buea (Molyko) | 679151075 | `L1698` |
+| UNI-LABO | Douala (Bonamoussadi, Carrefour Etoo) | 696 13 98 19 | `L134` |
+| Univers Optique | Douala | 699 25 28 74 | `L4630` |
 
 ## ① Prospection — à qualifier — 78
 
@@ -133,7 +133,7 @@
 | London Vision | Douala | 696 76 81 16 | — |
 | Lux Optique | Douala | 655 04 05 49 | — |
 | LyfyOptic | Douala | 699 98 06 66 | `L3535` |
-| Maison Optique | Douala | 657 73 70 45 | `L4417` |
+| Maison Optique | Douala | 657 73 70 45 | `L4593` |
 | Marthlo Comprehensive Bilingual College | Buea | — | — |
 | Mel's Optic | Douala | 690 98 85 18 | — |
 | Mouscou Optique Médicale | Douala | 696 65 41 64 | — |
@@ -193,7 +193,7 @@
 | Discovery Labs | Douala (Bassong) | 694 86 13 61 | `L110` |
 | Département Biologique | Douala (Akwa I) | 699 85 33 52 | `L110` |
 | Flemming Dream Labo | Douala (Bessenguè, feu rouge, Bld de la République) | 699 81 34 04 | — |
-| INSES — Institut Supérieur de l'Espoir | Douala (Bonabéri) | 674 93 66 04 | `L3718` |
+| INSES — Institut Supérieur de l'Espoir | Douala (Bonabéri) | 674 93 66 04 | `L4608` |
 | Interlabo | Douala (Akwa, 780 Rue E. Betote — R. Pau) | 677 75 54 21 | `L1761` |
 | J&E Memorial Polyclinic (JEMPO) | Douala (Deido/Bessengue) | 696 71 06 99 | `L24` |
 | Jucia Optics | Douala (Akwa) | 653 449 349 | `L3638` |
@@ -213,7 +213,7 @@
 | Presbyterian Comprehensive Secondary School (PCSS) Buea | Buea (Madam Namondo Alexander) | 652075229 | — |
 | Solidarity Health Foundation (Solidarity Clinic & Laboratory) | Buea (Untarred Malingo St / Molyko Checkpoint D61, P.O. Box 467; plus code 575J+7M) | 677615757 | `L761` |
 | Tchaya Optique | Douala | 696 79 01 73 | `L3834` |
-| YONDJA ANALYSE | Douala | 696 88 88 23 | `L4472` |
+| YONDJA ANALYSE | Douala | 696 88 88 23 | `L4607` |
 
 ## ⛔ Écarté — 13
 

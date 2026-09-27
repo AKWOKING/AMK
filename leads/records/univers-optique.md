@@ -10,13 +10,13 @@
 | Type | other |
 | Ville | Douala |
 | Langue de contact | FR |
-| Étape | closing |
+| Étape | qualifying |
 | WhatsApp | 699 25 28 74 |
 | Numéro vérifié | yes |
 | Contact | BAYANG BIHEN Calvin |
 | Canal | WhatsApp |
 | Contacté | Yes |
-| Réponse | Yes — lun 21/09 17:56 : « Combien ça me coûte » (2ᵉ question de prix de la campagne). |
+| Réponse | Yes |
 | Maquette / site | Yes |
 | Relances envoyées | 0 |
 | Source | directory |
@@ -26,9 +26,9 @@
 
 ## Contradiction résolue (M2)
 
-- **Ce qui se contredisait :** Mon message 1 du 21/09 17:50 affirmait « absent du web » et « deux recherches ne suffisent pas à le trouver ». La fouille du même soir prouve le contraire : fiche Google notée (3,3/5 · 6 avis), domaine enregistré (mort), fiche annuaire à son nom légal, annonce datée de 2009 encore indexée.
-- **Retenu :** le constat exact, plus fort et vérifiable : « votre seule page vivante est celle d'un autre » — son site ne répond plus depuis janvier 2024, et le champ « site web » de sa fiche Google est vide.
-- **Écarté :** l'angle « introuvable », déjà retiré chez Le Cristallin pour la même raison. Une affirmation sur la présence en ligne d'un prospect doit venir d'une source LUE, datée — pas d'une impression de recherche.
+- **Ce qui se contredisait :** Le CRM portait `closing` et « les 50 000, on les met quand ? » comme dernière étape. Le 25/09, le client a écarté le site et demandé un outil : le sujet a changé, rien n'a été vendu, aucun acompte n'a été pris. Résolu le 27/09.
+- **Retenu :** Une preuve fabriquée et montrée avant toute promesse : la planche d'essayage (trois montures posées sur le même visage) et le défilement que le client verrait. Le prototype se fait sur CINQ montures ; le stock entier, les étiquettes et le suivi de vente sont le travail qu'on vend.
+- **Écarté :** Les trois faits du 27/09 sont écrits, pas transformés en promesse : il a déjà fait faire un site trois fois ; il attend un ROI ; et il n'y a AUCUN chiffre pour le lui montrer — ni son nombre de clients, ni son nombre de montures essayées. La feuille de ROI a donc des cases vides, et c'est lui qui les remplit.
 
 ## Notes
 
@@ -40,7 +40,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 131 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 134 ligne(s).*
 
 `L51` · | **ven 18/09 20:02** | **Clinique de L'université** (Bassa, 694 36 02 03) | msg 1 — sans maquette | Envoyé | **Non** |
 `L113` · | 20:02 | Cabinet Dentaire Emmanuel · Clinique de L'université · MEDI LABO |
@@ -173,6 +173,9 @@
 `L4459` · essais — et ce qui a raté avant — est dans `clients/univers-optique/pivot-essayage-2026-09-25.md` §2.
 `L4476` · **Ce que le pivot vaut pour nous, au-delà d'Univers** : **les dix-huit autres opticiens de la campagne ont le
 `L4531` · coffrets a révélé **deux défauts que le business case d'Univers n'avait jamais touchés** — `bullets()`
+`L4558` · **Ce que King a apporté ce matin**, en un message : le pivot d'Univers Optique expliqué par lui-même
+`L4590` · ### ② UNIVERS OPTIQUE — ce que le rendez-vous a vraiment dit, et la feuille de ROI
+`L4630` · | **Univers Optique** | `closing`, acompte attendu | **`qualifying`**, `Offer made = No` — **aucun acompte pris**, le sujet a changé | 28/09 |
 
 ---
 

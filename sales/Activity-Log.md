@@ -4552,3 +4552,95 @@ change).
 
 *Un client qui corrige une page est un client qui se l'approprie : c'est la meilleure nouvelle du fil —
 et c'est pour ça que ses trois lignes sont écrites partout, jusqu'au nom de la fiche contact.*
+
+## 2026-09-27 · 07:30 → 08:00 (horloge du bac) · TROIS CLIENTS, TROIS MACHINES — et « est-ce que 30 000, c'est trop ? »
+
+**Ce que King a apporté ce matin**, en un message : le pivot d'Univers Optique expliqué par lui-même
+(**trois sites déjà faits pour rien**, une attente de **ROI**, et le **remontage des montures en vitrine**
+après chaque client) · le refus d'UNI-LABO et **le logiciel de résultats qu'elle a décrit** · et sa
+question sur le prix de DM OPTIQUE (« quand il a demandé plus que le site, c'était normal d'augmenter »).
+
+### ① DM OPTIQUE SARL — le prix : la réponse est « non, ce n'est pas trop cher », et voilà pourquoi
+
+**King a raison sur le fond, et sa phrase est plus juste qu'il ne le croit** : 100 000, c'était **la page** ;
+tenir TikTok et Facebook, c'est **fabriquer des contenus tous les mois**. Ce ne sont pas deux niveaux du
+même objet, ce sont **deux objets**. Un mensuel de 30 000 pour un cahier de contenus, c'est dans les prix
+du marché — et il vaut mieux le dire calmement que de s'excuser.
+
+**Trois fragilités, par contre, et elles ont été corrigées tout de suite** (le document client passe de 3 à
+**4 pages**, `sales/DM-OPTIC-DEUX-COFFRETS-2026-09-27.pdf`) :
+
+1. **Le tarif fondateur semblait perdu en prenant le gros coffret** (100 000 → 150 000). Le document dit
+   maintenant, en toutes lettres : dans les 150 000, **la page est comptée 100 000**, son tarif fondateur —
+   elle ne repasse pas au tarif standard parce qu'il achète plus. **50 000 = les deux comptes ouverts,
+   paramétrés, reliés au site et à son WhatsApp.** C'est l'arithmétique de ses propres chiffres, et c'est
+   exactement la question qu'un client se pose avant de dire oui.
+2. **« Des contenus chaque mois » n'avait pas de volume** — un travail illimité à prix fixe. Le document
+   promet désormais **au moins 8 publications et 4 vidéos courtes par mois**, avec la règle au-delà. *(⚠️
+   Chiffre à confirmer par King : c'est écrit en tête de la feuille d'envoi, avec la commande pour refaire
+   le PDF.)*
+3. **La preuve existait déjà et n'était pas montrée** : les **cinq vidéos** envoyées le 26/09, c'est ce que
+   produit un mois de contenus. Le document le dit maintenant.
+
+**La règle de fond, écrite dans `sales/PIVOT-2026-09-27-trois-clients-trois-machines.md`** : le tarif
+fondateur est **un statut** (les cinq premiers cabinets), pas un rabais — un statut s'annonce d'avance et se
+refuse au sixième sans se fâcher ; un rabais consenti pendant une négociation apprend au client que le prix
+était faux. **Jamais de remise**, toujours un statut.
+
+### ② UNIVERS OPTIQUE — ce que le rendez-vous a vraiment dit, et la feuille de ROI
+
+Trois faits ajoutés au pivot (§9) : **il a déjà payé trois sites et n'en a tiré aucune valeur** → notre
+quatrième site est mort-né, on ne le lui propose plus (la page reste **la maison** de l'outil) ; **il achète
+un retour sur investissement, pas un objet** → il lui faut une **feuille de calcul**, pas une planche ; et
+**sa phrase du 27/09** : « he won't have to mount them on the wall each time after the client leaves » —
+**le temps perdu n'est pas que l'essayage, c'est aussi le remontage de la vitrine**. Nous l'avions compté
+dans nos mesures (55 s par monture, pose *et* retrait) : c'est maintenant dit à voix haute.
+
+**La feuille de ROI** : `N × J × (F − 3) × t` — deux ordres de grandeur donnent **20 à 34 heures récupérées
+par mois** (3 à 5 clients/jour, 10 à 25 montures essayées). **Les cases N et F sont vides, et c'est lui qui
+les remplit** : nous ne connaissons ni son nombre de clients ni ses essayages, et les inventer serait la
+faute que ce dépôt interdit. Le prix se pose après, et il se pose autrement : **un homme échaudé par trois
+sites n'achète pas un objet, il achète un résultat daté.**
+
+### ③ UNI-LABO — elle a écarté le site, et **on ne sait pas ce qu'elle veut**
+
+Écrit : `clients/uni-labo/analyse-logiciel-resultats-2026-09-27.md`. Sa description est précise — technicien
+qui saisit et enregistre · supérieurs qui accèdent **par un code** · validation après contrôle · secrétariat
+qui imprime et scelle. **Lecture : ce laboratoire est DÉJÀ équipé** (accès restreint, validation, trace).
+Ce qu'elle a décrit, elle l'a. **Ce qu'elle demande, on ne le sait pas** — et c'est la seule chose qui
+compte avant d'écrire une ligne : trois lectures possibles (nous faire construire un équivalent · nous dire
+que le numérique est déjà fait pour justifier le refus du site · vouloir quelque chose **à côté**), trois
+métiers différents. Le document pose donc trois zones — **le tour de contrôle du résultat** (sûre : elle ne
+remplace personne, elle **constate** qu'un humain a validé) · **la fin de la double saisie** (la vraie
+douleur, mais elle ne se fait **que si les automates sortent un fichier** — à vérifier avant d'en parler) ·
+**ce qu'il ne faut PAS faire** (un LIS complet, tout ce qui touche au contenu médical, remplacer leur
+outil) — et **six questions dont aucune ne parle d'argent**.
+
+**Deux conséquences immédiates** : le **redéploiement d'`uni-labo.vercel.app` n'est plus l'action
+bloquante** (on ne dépense plus une action sur une page dont elle ne veut pas) ; et le CRM **redescend** —
+voir ci-dessous.
+
+### ④ Le CRM, corrigé sur les TROIS lignes (il mentait sur deux)
+
+`closing` **3 → 1** ; `qualifying` **22 → 24** ; `demo` 4 → 3 ; `offer` reste 1. Les trois rendez-vous de
+lundi sont inscrits, et deux **contradictions résolues** sont écrites noir sur blanc :
+
+| Client | Avant (le CRM) | Après (la vérité) | Suivi |
+|---|---|---|---|
+| **Univers Optique** | `closing`, acompte attendu | **`qualifying`**, `Offer made = No` — **aucun acompte pris**, le sujet a changé | 28/09 |
+| **UNI-LABO** | `offer`, « séance de CLÔTURE », prix posé | **`qualifying`**, `Offer made = No` — le site est **écarté**, le besoin est **neuf et non qualifié** | 28/09 |
+| **DM OPTIQUE SARL** | `demo` | **`offer`**, `Offer made = Yes` — il décide **lundi** | 28/09 |
+
+*Un CRM qui garde `closing` après un rendez-vous qui change de sujet, c'est le même mensonge que la page
+qui demandait « quels sont vos horaires ? » alors qu'elle les connaissait.*
+
+### ⑤ Et une chose qui n'est plus une coïncidence
+
+`sales/PIVOT-2026-09-27-trois-clients-trois-machines.md` : **deux clients sur trois ne veulent pas du site,
+et le troisième en demande une autre machine trois minutes après l'avoir accepté.** *Une page décrit, une
+machine fait.* Trois machines dans notre file — **l'essayage** (preuve montrée, ~18 opticiens dans nos
+fichiers), **le contenu mensuel** (les cinq vidéos, vues par le client, tout le portefeuille), **la chaîne du
+résultat** (rien de montré, à qualifier). Le vrai risque n'est pas commercial, **il est de capacité** : une
+personne, trois machines ouvertes en même temps = trois choses à moitié faites. Donc : **une machine à la
+fois** (on finit l'essayage, on **qualifie** le laboratoire), **aucune machine gratuite** (un pilote se paie),
+et **une machine se revend** — sinon c'est une commande, pas un produit.

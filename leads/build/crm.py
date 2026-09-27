@@ -1936,6 +1936,8 @@ def _apply_jour(out: list) -> None:
     _apply_state(out, ENVOI_2409_4, "ENVOI_2409_4")
     _apply_state(out, REPONSE_2409_DM, "REPONSE_2409_DM")
     _apply_state(out, REPONSE_DM_2509, "REPONSE_DM_2509")
+    _apply_state(out, REPONSE_UNILABO_2509, "REPONSE_UNILABO_2509")
+    _apply_state(out, REPONSE_UNIVERS_2509, "REPONSE_UNIVERS_2509")
     _apply_state(out, REPONSE_2409_CS, "REPONSE_2409_CS")
     _apply_state(out, REPONSE_2409_LL, "REPONSE_2409_LL")
     _apply_state(out, ECARTES_2409, "ECARTES_2409")
@@ -2828,6 +2830,99 @@ REPONSE_2409_DM = {
             "sur un second projet Vercel ; l'ancienne adresse `dmoptic.vercel.app` sert encore la v1). "
             "La page en ligne est bien la v2.1 (vérifiée par lecture du HTML servi le 24/09 au soir) : "
             "services, vitrine des montures, six questions. En attente de son retour — aucune relance.",
+    },
+}
+
+
+# ── UNIVERS OPTIQUE — 25/09 : LE SUJET A CHANGÉ (le site est mis en attente, l'outil prend sa place) ─
+# Le CRM portait encore `closing` et un rendez-vous au 25/09, comme si la vente du site se fermait. Ce
+# n'est pas ce qui s'est passé : M. Bayang a écarté le site (« il en a déjà fait faire trois, sans
+# résultat ») et a demandé un OUTIL d'essayage. Le site n'est pas refusé — il est EN ATTENTE derrière un
+# problème plus concret. Donc on redescend à `qualifying` : le besoin est identifié, il n'est pas chiffré.
+# ⚠️ Les 50 000 d'acompte n'ont PAS été pris. `Offer made = No` — aucun prix n'a été posé pour l'outil.
+# ⚠️ Rien n'a été promis sur place : ni délai, ni prix, ni « ça se fait en trois jours ».
+# Analyse : `clients/univers-optique/pivot-essayage-2026-09-25.md` (le §9, ajouté le 27/09, porte les trois
+# faits nouveaux — les trois sites, l'attente de ROI, le remontage des montures en vitrine — et la feuille
+# de ROI à remplir AVEC lui).
+REPONSE_UNIVERS_2509 = {
+    "univers-optique": {
+        "Contacted": "Yes", "Reply": "Yes", "reply_type": "human",
+        "Demo made": "Yes", "Offer made": "No",
+        "last_send_state": "replied", "stage": "qualifying", "stage_since": "2026-09-25",
+        "Follow-up date": "2026-09-28",
+        "contradiction":
+            "Le CRM portait `closing` et « les 50 000, on les met quand ? » comme dernière étape. Le "
+            "25/09, le client a écarté le site et demandé un outil : le sujet a changé, rien n'a été "
+            "vendu, aucun acompte n'a été pris. Résolu le 27/09.",
+        "value_kept":
+            "Une preuve fabriquée et montrée avant toute promesse : la planche d'essayage (trois "
+            "montures posées sur le même visage) et le défilement que le client verrait. Le prototype se "
+            "fait sur CINQ montures ; le stock entier, les étiquettes et le suivi de vente sont le "
+            "travail qu'on vend.",
+        "value_discarded":
+            "Les trois faits du 27/09 sont écrits, pas transformés en promesse : il a déjà fait faire "
+            "un site trois fois ; il attend un ROI ; et il n'y a AUCUN chiffre pour le lui montrer — ni "
+            "son nombre de clients, ni son nombre de montures essayées. La feuille de ROI a donc des "
+            "cases vides, et c'est lui qui les remplit.",
+        "Conversation_extra":
+            "25/09 10:00 — rendez-vous. King rapporte (27/09) : « he had already made a website thrice "
+            "and it didn't bring him any value, and that as a business man if he invest in something he "
+            "expects a ROI ». Ce qu'il demande : une application où il téléverse son stock, retire les "
+            "montures vendues, et où le vendeur photographie le client pour lui faire défiler les "
+            "montures sur son visage. Sa phrase sur la vitrine : « he won't have to mount them on the "
+            "wall each time after the client leaves » — la douleur n'est pas seulement l'essayage, "
+            "c'est aussi le REMONTAGE. 27/09 — le §9 du pivot ajoute la feuille de ROI (le temps "
+            "récupéré = N × J × (F − 3) × t, avec N et F remplis par LUI) et la façon de poser le prix "
+            "à un homme échaudé par trois sites : il achète un résultat daté, pas un objet.",
+    },
+}
+
+
+# ── UNI-LABO — 25/09 : ELLE N'ÉTAIT PAS INTÉRESSÉE PAR LE SITE (rapporté par King le 27/09) ─────
+# Le rendez-vous du 25/09 à 13 h était écrit au CRM comme une « séance de CLÔTURE » : prix posé le
+# 23/09, acompte attendu. King rapporte autre chose — **elle a écarté le site** (« she wasn't really
+# interested in the website ») et a dit qu'elle « pensait qu'on avait plus à offrir ». Elle a ensuite
+# décrit le logiciel de résultats qu'ils utilisent DÉJÀ (saisie par le technicien, accès par code des
+# supérieurs, validation, secrétariat, impression et sceau).
+# → On REDESCEND d'`offer` à `qualifying` : ce n'est ni une perte ni un parc, c'est un besoin qui n'est
+#   pas encore qualifié. **Qu'est-ce qu'elle a demandé ?** — c'est écrit dans
+#   `clients/uni-labo/analyse-logiciel-resultats-2026-09-27.md` (§6 : les six questions à lui poser).
+# ⚠️ Ne jamais dire « elle a demandé un logiciel de résultats » : elle a DÉCRIT le sien. La demande
+#   reste inconnue, et c'est justement ce qu'il faut aller chercher.
+# ⚠️ Le redéploiement d'`hosting/previews/unilabo/` n'est PLUS l'action bloquante : il servirait une
+#   page dont elle ne veut pas. La page reste prête, elle attend la nouvelle chose.
+# ⚠️ L'acompte de 75 000 n'a PAS été pris : rien n'a été encaissé, et aucune promesse n'a été lâchée.
+REPONSE_UNILABO_2509 = {
+    "uni-labo-bonamoussadi": {
+        "Contacted": "Yes", "Reply": "Yes", "reply_type": "human",
+        "Demo made": "Yes", "Offer made": "No",
+        "last_send_state": "replied", "stage": "qualifying", "stage_since": "2026-09-25",
+        "Follow-up date": "2026-09-28",
+        "contradiction":
+            "Le CRM portait ce rendez-vous comme une CLÔTURE (« prix posé le 23/09 : 150 000, acompte "
+            "75 000 »). King rapporte le contraire : elle a écarté le site et décrit son propre "
+            "logiciel de résultats. Résolu le 27/09 — le site est un refus, le besoin est neuf et non "
+            "qualifié.",
+        "value_kept":
+            "Le rendez-vous a eu lieu, le fil vit, et elle a dit pourquoi le site ne l'intéresse pas : "
+            "« elle pensait qu'on avait plus à offrir ». C'est une PORTE, pas une porte fermée — et "
+            "c'est la première fois qu'un prospect de la campagne dit à voix haute que le site n'est "
+            "pas le sujet.",
+        "value_discarded":
+            "Aucune proposition, aucun prix, aucune promesse n'a été écrite pour la nouvelle demande : "
+            "on ne sait même pas de quoi elle parle. Le dépôt garde une analyse et SIX QUESTIONS "
+            "(`clients/uni-labo/analyse-logiciel-resultats-2026-09-27.md`) — rien de plus.",
+        "Conversation_extra":
+            "25/09 13:00 — rendez-vous à leur laboratoire. King y va pour une clôture ; ce qu'il en "
+            "rapporte le 27/09 : « unilabo also told us she wasn't really interested in the website "
+            "she said she thought we had more to offer ». Elle décrit ensuite LEUR logiciel : le "
+            "technicien saisit les résultats et enregistre ; quelques supérieurs y accèdent par un "
+            "CODE ; ils vérifient qu'il n'y a pas d'erreur ; ils valident ; le résultat part au "
+            "secrétariat, qui imprime et scelle. Lecture : ce laboratoire est DÉJÀ équipé — il a "
+            "l'accès restreint, la validation et la trace. Ce qui reste inconnu : ce qu'elle demande. "
+            "27/09 — l'analyse écrite pose trois zones (le tour de contrôle du résultat · la fin de "
+            "la double saisie, conditionnée aux automates · ce qu'il ne faut PAS faire), l'étape "
+            "dangereuse (qualifier avant de construire) et six questions dont aucune ne parle d'argent.",
     },
 }
 
