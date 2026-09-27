@@ -77,7 +77,7 @@
 | SkyOptic Akwa (ETS Sky Optics) | Douala (Akwa) | 655 649 803 | `L3981` |
 | St. Theresa International Bilingual Comprehensive College (STIBCCOL) | Buea (Molyko) | 679151075 | `L1698` |
 | UNI-LABO | Douala (Bonamoussadi, Carrefour Etoo) | 696 13 98 19 | `L134` |
-| Univers Optique | Douala | 699 25 28 74 | `L4630` |
+| Univers Optique | Douala | 699 25 28 74 | `L4681` |
 
 ## ① Prospection — à qualifier — 78
 
@@ -193,7 +193,7 @@
 | Discovery Labs | Douala (Bassong) | 694 86 13 61 | `L110` |
 | Département Biologique | Douala (Akwa I) | 699 85 33 52 | `L110` |
 | Flemming Dream Labo | Douala (Bessenguè, feu rouge, Bld de la République) | 699 81 34 04 | — |
-| INSES — Institut Supérieur de l'Espoir | Douala (Bonabéri) | 674 93 66 04 | `L4608` |
+| INSES — Institut Supérieur de l'Espoir | Douala (Bonabéri) | 674 93 66 04 | `L4658` |
 | Interlabo | Douala (Akwa, 780 Rue E. Betote — R. Pau) | 677 75 54 21 | `L1761` |
 | J&E Memorial Polyclinic (JEMPO) | Douala (Deido/Bessengue) | 696 71 06 99 | `L24` |
 | Jucia Optics | Douala (Akwa) | 653 449 349 | `L3638` |
@@ -213,7 +213,7 @@
 | Presbyterian Comprehensive Secondary School (PCSS) Buea | Buea (Madam Namondo Alexander) | 652075229 | — |
 | Solidarity Health Foundation (Solidarity Clinic & Laboratory) | Buea (Untarred Malingo St / Molyko Checkpoint D61, P.O. Box 467; plus code 575J+7M) | 677615757 | `L761` |
 | Tchaya Optique | Douala | 696 79 01 73 | `L3834` |
-| YONDJA ANALYSE | Douala | 696 88 88 23 | `L4607` |
+| YONDJA ANALYSE | Douala | 696 88 88 23 | `L4662` |
 
 ## ⛔ Écarté — 13
 

@@ -30,7 +30,7 @@ Envoyé 18/09 ~18:30, sans maquette. · ⚰️ MORT le 22/09 (lot du 18/09) — 
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 26 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 27 ligne(s).*
 
 `L30` · | **ven 18/09 ~18:30** | **YONDJA ANALYSE** (696 88 88 23) | msg 1 — **sans maquette** | Envoyé | **Non** |
 `L110` · | ~18:30 | Discovery Labs · UNI-LABO · YONDJA ANALYSE · Laboratoire du Château · Département Biologique · CAMERA · LE NID |
@@ -58,6 +58,7 @@ Envoyé 18/09 ~18:30, sans maquette. · ⚰️ MORT le 22/09 (lot du 18/09) — 
 `L4461` · **Trois choses écrites dans l'analyse, et qui comptent plus que la faisabilité** :
 `L4472` · écrites dans le §7 de l'analyse (produit principal avec abonnement / pied dans la porte en échange du statut de
 `L4607` · Écrit : `clients/uni-labo/analyse-logiciel-resultats-2026-09-27.md`. Sa description est précise — technicien
+`L4662` · lecture, et elle est corrigée dans l'analyse et dans le CRM.)*
 
 ---
 

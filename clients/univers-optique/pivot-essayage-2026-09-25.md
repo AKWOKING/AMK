@@ -261,7 +261,29 @@ qu'on pourra répéter dans six mois sans rougir.
 *(Les cinq questions du §6 restent valables, y compris celle qui n'a pas encore de réponse : **où est rangée
 la monture** — emplacement et étiquette, dix minutes de travail, la moitié du temps gagné.)*
 
-### 9.4 Ce que ça change au prix (§7)
+### 9.4 Les photos sont arrivées (25/09, 09:51-09:54) — et elles ont répondu à la question du §3
+
+King a photographié **neuf clichés, six montures** le matin du rendez-vous. Les fichiers ont été perdus par
+un rembobinage du bac, mais la lecture à l'œil est écrite dans
+`clients/univers-optique/stock-2026-09-25-photos.md`. Deux résultats, et le second est plus important que le
+premier :
+
+**① Le procédé tient ses promesses sur de vraies montures de comptoir** — quatre clichés sur neuf sont
+posables tels quels ; trois sont de profil et deviennent la matière d'une **fiche de stock** (une face pour
+le visage, un profil pour le catalogue) ; deux sont à refaire (trois-quarts, arrière-plan chargé). Les trois
+défauts sont ceux que le §4 avait annoncés : **étiquette dans le cadre, arrière-plan, cadrage de biais.**
+
+**② La question du §3 — « où est rangée la monture ? » — avait déjà sa réponse sur les photos :** il y a
+**une étiquette verte numérotée sur chaque monture, et elle porte aussi le prix** (`N° 30` + `50 000` sur la
+Prada, `15 000` sur la noire, `5 000` sur la dorée). Donc : **l'étiquetage n'est pas à vendre, il est déjà
+fait** ; le numéro devient **la clé du stock** dans l'outil (`N° 30`, pas « Prada violette ») ; et le jour
+où une monture se vend, elle se retire **par son numéro**. *La « demi-heure de travail » qu'on croyait
+devoir facturer n'existe pas — et c'est une bonne nouvelle : on ne vend pas ce qu'il a déjà.*
+
+**La fiche de prise de vue** (six règles, deux minutes par monture) est dans le même document, §5 : c'est
+elle qu'on lui donne, pas un discours.
+
+### 9.5 Ce que ça change au prix (§7)
 
 Les trois façons de poser le prix restent les siennes à trancher, mais **le fait des trois sites et
 l'attente de ROI déplacent la recommandation** : un homme qui a payé trois sites pour rien n'achètera pas

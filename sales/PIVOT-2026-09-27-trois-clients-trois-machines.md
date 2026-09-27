@@ -12,7 +12,7 @@ ouverts en même temps.
 |---|---|---|
 | **DM OPTIQUE SARL** | **accepté** (100 000 FCFA, tarif fondateur ; « Ce que vous faites est bien », 25/09 16:08) | **la machine qui produit des clients** : ouvrir et tenir sa page Facebook et son TikTok, et fabriquer les contenus chaque mois |
 | **UNIVERS OPTIQUE** | **refusé pour l'instant** — il en a déjà fait faire **trois**, sans résultat | **la machine qui enlève une douleur quotidienne** : photographier le stock, photographier le client, et faire défiler les montures sur son visage |
-| **UNI-LABO** | **refusé** — « elle n'était pas vraiment intéressée par le site » | **on ne sait pas encore.** Elle a décrit le logiciel de résultats qu'ils utilisent déjà et a dit qu'elle « pensait qu'on avait plus à offrir » |
+| **UNI-LABO** | **refusé** — « elle n'était pas vraiment intéressée par le site » | **rien demandé — un conseil.** Elle a décrit le logiciel de résultats qu'ils utilisent **pour montrer ce qui se vend dans ce métier** : moins de papier, moins de temps, moins d'erreurs, **une réputation protégée** |
 
 **Deux clients sur trois ne veulent pas du site.** Le troisième l'a accepté — et il a demandé **une autre
 machine** trois minutes après l'avoir accepté.
@@ -34,6 +34,30 @@ les jours, ou tous les mois, sans nous**.
 
 ---
 
+---
+
+## 2b · Le conseil qu'on n'a pas demandé — et il vaut plus que les trois projets
+
+Le 25/09, la responsable d'UNI-LABO n'a pas passé commande : elle a **expliqué** à King ce que les
+laboratoires achètent, en prenant son propre logiciel en exemple. Ses mots, rapportés par King : *« that
+software reduces paperwork, saves time and reduces errors, which makes them more efficient and protects their
+reputation »*.
+
+**Traduit en critères d'achat, ce qu'elle vend sans le savoir :**
+
+| Ce qu'elle a dit | Ce que ça veut dire pour nos propositions |
+|---|---|
+| « reduces paperwork » | on ne remplace pas un cahier par un fichier — on **supprime une saisie** |
+| « saves time » | le temps gagné doit être **chiffrable**, pas ressenti (les ~20 h/mois de l'essayage) |
+| « reduces errors » | ce qui se répète se trompe : moins de recopies, moins d'oublis |
+| « **protects their reputation** » | **la vraie marchandise.** Un labo vend une confiance, un opticien vend un temps qu'on ne fait pas perdre au client. C'est ce qu'on protège — pas ce qu'on ajoute |
+
+**C'est la meilleure grille de lecture qu'on ait eue depuis le début de la campagne, et elle ne vient pas de
+nos documents : elle vient d'une cliente qui nous a reçus sans rien acheter.** À partir d'aujourd'hui, chaque
+proposition se relit avec ces quatre lignes avant d'être envoyée.
+
+---
+
 ## 3 · Ce que ça change dans ce qu'on vend
 
 **① Le site ne disparaît pas — il change de place.** Il reste ce qu'on sait faire le mieux, à 100 000 /
@@ -47,7 +71,7 @@ nous ont répondu la même chose : *« et après ? »*
 |---|---|---|
 | **L'essayage** (opticiens) | la planche `essai-maquette.png` : trois montures sur le même visage, et `demos/essai-1.png` | **~18 opticiens** dans nos fichiers |
 | **Le contenu mensuel** (commerces) | **les cinq vidéos** envoyées à DM le 26/09 — vues par le client | tout le portefeuille |
-| **La chaîne du résultat** (labos) | **rien** — c'est une piste, à qualifier (`clients/uni-labo/analyse-logiciel-resultats-2026-09-27.md`) | les laboratoires de Douala, nombreux dans nos fichiers depuis le 18/09 |
+| ~~**La chaîne du résultat** (labos)~~ | **abandonnée** : ils sont **déjà équipés** (accès par code, validation, trace), et la description du 25/09 était un **conseil**, pas une demande | — |
 
 **③ Le prix de ces machines n'est pas le prix d'une page.** Une page se paie **une fois**. Une machine qui
 tourne se paie **à la mise en place + tous les mois** — parce qu'elle demande à être nourrie (les montures

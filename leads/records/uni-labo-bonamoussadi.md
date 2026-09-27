@@ -23,9 +23,9 @@
 
 ## Contradiction résolue (M2)
 
-- **Ce qui se contredisait :** Le CRM portait ce rendez-vous comme une CLÔTURE (« prix posé le 23/09 : 150 000, acompte 75 000 »). King rapporte le contraire : elle a écarté le site et décrit son propre logiciel de résultats. Résolu le 27/09 — le site est un refus, le besoin est neuf et non qualifié.
-- **Retenu :** Le rendez-vous a eu lieu, le fil vit, et elle a dit pourquoi le site ne l'intéresse pas : « elle pensait qu'on avait plus à offrir ». C'est une PORTE, pas une porte fermée — et c'est la première fois qu'un prospect de la campagne dit à voix haute que le site n'est pas le sujet.
-- **Écarté :** Aucune proposition, aucun prix, aucune promesse n'a été écrite pour la nouvelle demande : on ne sait même pas de quoi elle parle. Le dépôt garde une analyse et SIX QUESTIONS (`clients/uni-labo/analyse-logiciel-resultats-2026-09-27.md`) — rien de plus.
+- **Ce qui se contredisait :** Le CRM portait ce rendez-vous comme une CLÔTURE (« prix posé le 23/09 : 150 000, acompte 75 000 »). King rapporte le contraire : elle a écarté le site, et sa description du logiciel de résultats était un CONSEIL DE MÉTIER, pas une demande. Résolu le 27/09 : le site est un refus, et il n'y a aucune demande à qualifier — seulement une porte ouverte (« plus à offrir »).
+- **Retenu :** LE CONSEIL, et il vaut plus qu'une commande : ce qui se vend dans ce métier, dit par une patronne de laboratoire — **moins de papier, moins de temps, moins d'erreurs, et une réputation protégée**. C'est la grille de lecture de toutes nos propositions depuis le 27/09 (l'essayage : ~20 h/mois ; les contenus : un rythme tenu ; la page : répondre même fermé). Et une porte entrouverte : « elle pensait qu'on avait plus à offrir ».
+- **Écarté :** Aucune proposition, aucun prix, aucun délai — et AUCUN logiciel de laboratoire : ils sont déjà équipés (accès par code, validation, trace), et c'est un autre métier. Le dépôt garde une analyse et quatre questions `clients/uni-labo/analyse-logiciel-resultats-2026-09-27.md`. Le formulaire manquant sur la page en ligne cesse d'être un bloqueur : on ne redéploie plus une page dont elle ne veut pas.
 
 ## Notes
 

@@ -2878,19 +2878,23 @@ REPONSE_UNIVERS_2509 = {
 }
 
 
-# ── UNI-LABO — 25/09 : ELLE N'ÉTAIT PAS INTÉRESSÉE PAR LE SITE (rapporté par King le 27/09) ─────
+# ── UNI-LABO — 25/09 : ELLE N'ÉTAIT PAS INTÉRESSÉE PAR LE SITE, ET ELLE A DONNÉ UN CONSEIL ────────
 # Le rendez-vous du 25/09 à 13 h était écrit au CRM comme une « séance de CLÔTURE » : prix posé le
 # 23/09, acompte attendu. King rapporte autre chose — **elle a écarté le site** (« she wasn't really
-# interested in the website ») et a dit qu'elle « pensait qu'on avait plus à offrir ». Elle a ensuite
-# décrit le logiciel de résultats qu'ils utilisent DÉJÀ (saisie par le technicien, accès par code des
-# supérieurs, validation, secrétariat, impression et sceau).
-# → On REDESCEND d'`offer` à `qualifying` : ce n'est ni une perte ni un parc, c'est un besoin qui n'est
-#   pas encore qualifié. **Qu'est-ce qu'elle a demandé ?** — c'est écrit dans
-#   `clients/uni-labo/analyse-logiciel-resultats-2026-09-27.md` (§6 : les six questions à lui poser).
-# ⚠️ Ne jamais dire « elle a demandé un logiciel de résultats » : elle a DÉCRIT le sien. La demande
-#   reste inconnue, et c'est justement ce qu'il faut aller chercher.
+# interested in the website ») et a dit qu'elle « pensait qu'on avait plus à offrir ».
+# Puis la précision de King (27/09), qui change la lecture : elle a décrit leur logiciel de résultats
+# « to give me an idea of WHAT SELLS IN THE INDUSTRY » — il réduit le papier, fait gagner du temps,
+# réduit les erreurs, « which makes them more efficient and PROTECTS THEIR REPUTATION ». **C'était un
+# CONSEIL DE MÉTIER, pas une commande.**
+# → On REDESCEND d'`offer` à `qualifying` : ni une perte ni un parc. Le site est écarté, et il n'y a
+#   AUCUNE demande à construire. Ce qui reste à chercher : ce qu'elle met derrière « plus à offrir ».
+# ⚠️ Ne JAMAIS écrire « elle a demandé un logiciel » : elle a EXPLIQUÉ le sien. On ne construit pas de
+#   logiciel de laboratoire — ils sont déjà équipés (accès par code, validation, trace).
+# ⚠️ La leçon garde toute sa valeur, et elle est écrite : « moins de papier, moins de temps, moins
+#   d'erreurs, une réputation protégée » = la grille de lecture de TOUTES nos propositions désormais
+#   (`clients/uni-labo/analyse-logiciel-resultats-2026-09-27.md` §3).
 # ⚠️ Le redéploiement d'`hosting/previews/unilabo/` n'est PLUS l'action bloquante : il servirait une
-#   page dont elle ne veut pas. La page reste prête, elle attend la nouvelle chose.
+#   page dont elle ne veut pas. La page reste prête, elle attend la prochaine chose.
 # ⚠️ L'acompte de 75 000 n'a PAS été pris : rien n'a été encaissé, et aucune promesse n'a été lâchée.
 REPONSE_UNILABO_2509 = {
     "uni-labo-bonamoussadi": {
@@ -2900,29 +2904,33 @@ REPONSE_UNILABO_2509 = {
         "Follow-up date": "2026-09-28",
         "contradiction":
             "Le CRM portait ce rendez-vous comme une CLÔTURE (« prix posé le 23/09 : 150 000, acompte "
-            "75 000 »). King rapporte le contraire : elle a écarté le site et décrit son propre "
-            "logiciel de résultats. Résolu le 27/09 — le site est un refus, le besoin est neuf et non "
-            "qualifié.",
+            "75 000 »). King rapporte le contraire : elle a écarté le site, et sa description du "
+            "logiciel de résultats était un CONSEIL DE MÉTIER, pas une demande. Résolu le 27/09 : le "
+            "site est un refus, et il n'y a aucune demande à qualifier — seulement une porte ouverte "
+            "(« plus à offrir »).",
         "value_kept":
-            "Le rendez-vous a eu lieu, le fil vit, et elle a dit pourquoi le site ne l'intéresse pas : "
-            "« elle pensait qu'on avait plus à offrir ». C'est une PORTE, pas une porte fermée — et "
-            "c'est la première fois qu'un prospect de la campagne dit à voix haute que le site n'est "
-            "pas le sujet.",
+            "LE CONSEIL, et il vaut plus qu'une commande : ce qui se vend dans ce métier, dit par une "
+            "patronne de laboratoire — **moins de papier, moins de temps, moins d'erreurs, et une "
+            "réputation protégée**. C'est la grille de lecture de toutes nos propositions depuis le "
+            "27/09 (l'essayage : ~20 h/mois ; les contenus : un rythme tenu ; la page : répondre même "
+            "fermé). Et une porte entrouverte : « elle pensait qu'on avait plus à offrir ».",
         "value_discarded":
-            "Aucune proposition, aucun prix, aucune promesse n'a été écrite pour la nouvelle demande : "
-            "on ne sait même pas de quoi elle parle. Le dépôt garde une analyse et SIX QUESTIONS "
-            "(`clients/uni-labo/analyse-logiciel-resultats-2026-09-27.md`) — rien de plus.",
+            "Aucune proposition, aucun prix, aucun délai — et AUCUN logiciel de laboratoire : ils sont "
+            "déjà équipés (accès par code, validation, trace), et c'est un autre métier. Le dépôt garde "
+            "une analyse et quatre questions `clients/uni-labo/analyse-logiciel-resultats-2026-09-27.md`. "
+            "Le formulaire manquant sur la page en ligne cesse d'être un bloqueur : on ne redéploie "
+            "plus une page dont elle ne veut pas.",
         "Conversation_extra":
             "25/09 13:00 — rendez-vous à leur laboratoire. King y va pour une clôture ; ce qu'il en "
             "rapporte le 27/09 : « unilabo also told us she wasn't really interested in the website "
             "she said she thought we had more to offer ». Elle décrit ensuite LEUR logiciel : le "
             "technicien saisit les résultats et enregistre ; quelques supérieurs y accèdent par un "
             "CODE ; ils vérifient qu'il n'y a pas d'erreur ; ils valident ; le résultat part au "
-            "secrétariat, qui imprime et scelle. Lecture : ce laboratoire est DÉJÀ équipé — il a "
-            "l'accès restreint, la validation et la trace. Ce qui reste inconnu : ce qu'elle demande. "
-            "27/09 — l'analyse écrite pose trois zones (le tour de contrôle du résultat · la fin de "
-            "la double saisie, conditionnée aux automates · ce qu'il ne faut PAS faire), l'étape "
-            "dangereuse (qualifier avant de construire) et six questions dont aucune ne parle d'argent.",
+            "secrétariat, qui imprime et scelle. **Le 27/09, King précise le sens de ce passage : "
+            "c'était « un conseil de métier » pour montrer ce qui se vend dans l'industrie — le "
+            "logiciel réduit le papier, fait gagner du temps, réduit les erreurs, rend le laboratoire "
+            "plus efficace et protège sa réputation.** Donc : rien à construire pour eux ; une leçon à "
+            "appliquer partout ailleurs.",
     },
 }
 

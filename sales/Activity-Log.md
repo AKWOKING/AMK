@@ -4644,3 +4644,63 @@ résultat** (rien de montré, à qualifier). Le vrai risque n'est pas commercial
 personne, trois machines ouvertes en même temps = trois choses à moitié faites. Donc : **une machine à la
 fois** (on finit l'essayage, on **qualifie** le laboratoire), **aucune machine gratuite** (un pilote se paie),
 et **une machine se revend** — sinon c'est une commande, pas un produit.
+
+## 2026-09-27 · 08:00 → 08:30 (horloge du bac) · UNI-LABO : CE N'ÉTAIT PAS UNE DEMANDE, C'ÉTAIT UN CONSEIL — et les photos d'Univers disent où est rangée la monture
+
+**Deux corrections, toutes les deux importantes, et la première annule une piste entière.**
+
+### ① UNI-LABO : elle nous a expliqué **ce qui se vend dans le métier**, pas ce qu'elle veut acheter
+
+King précise : *« UNiLABO told me about the software to give me an idea of what sells in the industry, that
+software reduces paperwork, saves time and reduce errors, which makes them more efficient and protects their
+reputation. So it was more of a business advice »*.
+
+**Donc : rien à construire pour eux.** Leur chaîne (saisie par le technicien · accès par code des supérieurs
+· contrôle et validation · secrétariat, impression, sceau) **tient debout**, et ils ont déjà l'outil. L'idée
+d'un « logiciel de laboratoire » est **abandonnée** — pas parce qu'elle était mauvaise, parce qu'elle est
+**déjà prise**. *(Le 25/09, on avait lu sa description comme un besoin à qualifier ; c'était une erreur de
+lecture, et elle est corrigée dans l'analyse et dans le CRM.)*
+
+**Mais le conseil vaut plus qu'une commande.** Quatre mots, dans son ordre : **moins de papier · moins de
+temps · moins d'erreurs · une réputation protégée**. C'est devenu **la grille de lecture de toutes nos
+propositions** (`sales/PIVOT-2026-09-27-trois-clients-trois-machines.md` §2b) — et elle s'applique
+immédiatement :
+
+| Ce qu'on propose | Le papier en moins | Le temps en moins | Les erreurs en moins | La réputation |
+|---|---|---|---|---|
+| **L'essayage** (Univers) | la vitrine qu'on remonte | **~20 h/mois** | le client voit tout le stock, pas un mur | la bonne monture en 5 minutes |
+| **Le contenu mensuel** (DM) | — | la recherche et la mise en page | un rythme tenu, pas des trous | une page qui a l'air **tenue** |
+| **La page** (tous) | les questions au téléphone | le déplacement évité | horaires et adresse exacts | un cabinet qui répond, même fermé |
+
+*Un rendez-vous sans vente qui nous apprend à vendre : c'est le meilleur rendez-vous de la semaine.*
+
+### ② Les photos d'Univers : **la question du §3 avait déjà sa réponse dans sa boutique**
+
+⚠️ **Les fichiers n'ont pas survécu au rembobinage du bac** (le dossier de réception a été effacé avant que
+je puisse les ouvrir) — mais King les a envoyées, je les ai vues, et la lecture est écrite :
+`clients/univers-optique/stock-2026-09-25-photos.md`. **Neuf clichés, six montures**, pris le **25/09 entre
+09:51 et 09:54**, le matin du rendez-vous.
+
+**Le résultat qu'on n'attendait pas** : **chaque monture porte déjà une étiquette verte numérotée — et le
+prix est écrit dessus** (`N° 30` + `50 000` sur la Prada violette, `15 000` sur la noire, `5 000` sur la
+dorée torsadée). Donc :
+
+- **l'étiquetage n'est pas une prestation à vendre** : il est **déjà fait**, et le proposer serait vendre ce
+  qu'il a déjà ;
+- **le numéro est la clé du stock** dans l'outil — `N° 30`, pas « Prada violette ». Le jour où une monture
+  part, on la retire **par son numéro** ;
+- le **prix reste côté vendeur**, jamais sur une page publique (règle du dépôt) — à trancher avec lui.
+
+**Ce que les photos disent aussi du cabinet** : Prada (`CP23104 50□18-145`), Tom Ford
+(`FT0513 C056 57□17-145`), Miu Miu — de **5 000 à 50 000 FCFA** sur six montures. ⚠️ **Rien de tout cela ne
+monte sur une page publique sans son accord écrit** : sur **son** outil privé, la question ne se pose pas ;
+sur une page publique, elle se posera, et c'est lui qui tranche.
+
+**Le lot est utilisable** : quatre clichés sur neuf sont posables tels quels ; trois sont de profil et
+deviennent la matière d'une **fiche de stock** (une face pour le visage, un profil pour le catalogue) ; deux
+sont à refaire. **La fiche de prise de vue** (six règles, deux minutes par monture) est écrite — c'est elle
+qu'on lui donne, pas un discours.
+
+**Prochaine action, et il n'y en a qu'une** : que King **renvoie les neuf photos** (le bac les a perdues) —
+ou cinq nouvelles, propres, sur fond blanc. Dès qu'elles sont là, le prototype se fait **sur ses vraies
+montures**, pas sur des images générées.

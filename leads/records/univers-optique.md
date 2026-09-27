@@ -40,7 +40,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 134 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 138 ligne(s).*
 
 `L51` · | **ven 18/09 20:02** | **Clinique de L'université** (Bassa, 694 36 02 03) | msg 1 — sans maquette | Envoyé | **Non** |
 `L113` · | 20:02 | Cabinet Dentaire Emmanuel · Clinique de L'université · MEDI LABO |
@@ -176,6 +176,10 @@
 `L4558` · **Ce que King a apporté ce matin**, en un message : le pivot d'Univers Optique expliqué par lui-même
 `L4590` · ### ② UNIVERS OPTIQUE — ce que le rendez-vous a vraiment dit, et la feuille de ROI
 `L4630` · | **Univers Optique** | `closing`, acompte attendu | **`qualifying`**, `Offer made = No` — **aucun acompte pris**, le sujet a changé | 28/09 |
+`L4648` · ## 2026-09-27 · 08:00 → 08:30 (horloge du bac) · UNI-LABO : CE N'ÉTAIT PAS UNE DEMANDE, C'ÉTAIT UN CONSEIL — et les photos d'Univers disent où est rangée la monture
+`L4671` · | **L'essayage** (Univers) | la vitrine qu'on remonte | **~20 h/mois** | le client voit tout le stock, pas un mur | la bonne monture en 5 minutes |
+`L4677` · ### ② Les photos d'Univers : **la question du §3 avait déjà sa réponse dans sa boutique**
+`L4681` · `clients/univers-optique/stock-2026-09-25-photos.md`. **Neuf clichés, six montures**, pris le **25/09 entre
 
 ---
 
