@@ -1,6 +1,6 @@
 # Pathcare Diagnostics
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-21. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-27. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Deido) |
 | Langue de contact | FR/EN |
-| Étape | qualifying |
+| Étape | parked |
 | WhatsApp | 680 00 88 45 |
 | Numéro vérifié | unknown |
 | Canal | WhatsApp |
@@ -21,15 +21,20 @@
 
 ## Notes
 
-Envoyé le 19/09 à 19:26 — distribué, NON lu (1 coche). UNE coche — pas encore lu.
+Envoyé le 19/09 à 19:26 — distribué, NON lu (1 coche). UNE coche — pas encore lu. · ⚰️ MORT le 22/09 (lot du 19/09) — jamais ouvert, jamais répondu ; décision de King : on ne réécrit plus, on va vers des prospects frais. Aucune relance programmée.
 
 ## Prochaine action
 
-**0 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**Aucune.** Parqué. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Aucune ligne du journal ne cite encore ce lead. S'il a été contacté, c'est que l'envoi n'a pas été loggé — **à corriger dans `Activity-Log.md`**.*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 4 ligne(s).*
+
+`L1665` · Meka, Interlabo, La Passerelle, Pathcare (distribués non lus depuis le 19 — on n'écrit pas par-dessus) et
+`L1702` · Labiomed**, 5 à ne pas envoyer ce soir (Meka, Interlabo, La Passerelle, Pathcare — distribués non lus depuis le
+`L1735` · dernière** relance). Les 5 « ne pas envoyer » restent dehors : Meka, Interlabo, La Passerelle, Pathcare
+`L1761` · §1/§2 + les 5 « à ne pas envoyer ce soir » : Meka, Interlabo, La Passerelle, Pathcare, 2K Labo) passent en
 
 ---
 

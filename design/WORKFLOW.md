@@ -45,7 +45,19 @@ Set VARIANCE / MOTION / DENSITY from the root-law §2 presets (school/clinic con
 ## 6. Images (art-directed, continuity-locked)
 - Shot-list per section (aspect ratio, subject, crop, light, negative space); full rules: root §10 + §15.
 - Prompt pack: same world across every image (palette grade, light family, Cameroonian context, no text/watermarks/logos); "no logos, no watermarks, no text on clothing" always.
-- Generate → READ each image back (watermark/logo scan) → re-generate/crop if dirty.
+- **The image must depict the STANDARD we deliver, not the current state of the premises.** The page is a
+  comparison piece: the rule is "our demo has to look BETTER than his actual website", and that applies to
+  pixels. "Documentary realism" in the brief produces a tired shop and loses the client before he scrolls.
+  Ground the local reality OUTSIDE the window (street, light, passers-by), never inside the fit-out.
+- **No invented lettering, ever.** Read each render for text on walls, glass, uniforms, screens: a fabricated
+  shop name inside a client's mock-up is a false fact in image form — and can spell a competitor's name.
+  Re-prompt with "absolutely NO text, no lettering, no logo, no signage"; keep only objects that are tools
+  of the trade (a Snellen chart is equipment, a brand plate is not).
+- **A caption describes the image it sits under.** If the render changes subject, the caption and alt change in
+  the same commit, and say what the client will replace at go-live ("concept render - your photo replaces it").
+- Generate → READ each image back (watermark/logo/text scan + "would this hang in a modern Douala practice?")
+  → re-generate/crop if dirty → record the read-back in the builder (`IMG_REVIEW` style), because an
+  obligation with no machine behind it is an opinion.
 - Embed base64 once each (CSS background or `<img>`; never embed the same photo twice), object-fit cover, reserve space (CLS).
 
 ## 7. Build (single-file house format)
@@ -58,6 +70,11 @@ Set VARIANCE / MOTION / DENSITY from the root-law §2 presets (school/clinic con
 - Run the opportunity gate (`design/MOTION.md` §0): frequency, purpose, speed, function. Expect 5-7 survivors max, list rejects.
 - Apply tokens (--ease-out/--ease-in-out/--ease-drawer, durations), `.rv` IO reveal with 60ms stagger, `:active` press scale .97, hover behind `(hover:hover)`, accordions, sheet/bars, tabular counters.
 - transform/opacity only; no `transition:all`; no scroll listeners; reduced-motion block.
+- **First paint never depends on JavaScript** (root §13; 22/09 lesson): any `opacity:0`/`visibility:hidden`
+  entrance state must be scoped under `html.js`, set by an inline `<script>` in `<head>`; the reveal system
+  lives in its own `<script>` after the language one, with a `try/catch` that shows everything on failure.
+  Hero and section headings do not animate at all: they are what the reader came for.
+- Reveal budget: ≤ 40 % of content blocks, ONE authored moment per page (`design/CRAFT-FLOOR.md` §2.5/§3).
 - React/Motion/GSAP only in real app stacks (vendored skills cover them); concepts stay vanilla.
 
 ## 9. Pre-flight + QA (non-negotiable; the page is not done until all pass)
@@ -71,6 +88,15 @@ Root-law §13 matrix, mechanically enforced where possible via a QA script + bro
 7. Lighthouse-minded: LCP image, CLS space reservation, single file size sane (~1MB acceptable).
 8. Screenshot QA at 1280×800 + 390×844, EN and FR; capture hero shot to `demos/shots/<name>-concept.png`; mockup when going to a lead.
 9. Rebuild `hosting/samples/` (`python3 hosting/build_samples.py`) when `site/` changed; confirm sitemap + index wiring.
+10. **First paint without JS** (machine, no browser needed): every hiding rule is `html.js`-gated, the head
+   carries the inline `js` setter, and no hero/heading/figure is reveal-gated. Asserted in the builder
+   (Univers: checks 15a-e; Cristallin: same block) — an ungated `.rv`/`.reveal` fails the build.
+11. **Every inline `<script` compiles**: `python3 tools/qa/check_inline_js.py <file...>` (extracts each block,
+   `node --check`, validates JSON-LD separately). `rc=1` → nothing is delivered; `rc=3` (no `node` in the
+   sandbox) → the control was NOT rendered and must be written as such in the handoff. Both builders run it
+   on the in-memory page before writing, so a broken script never reaches disk.
+12. **Send integrity**: a concept goes as a FILE; record `bytes` + `sha256` in the send sheet, and tell the
+   reader that a page whose body is missing under the header = a truncated download, ask for the file again.
 
 ## Handoff record (delivery notes template)
 ```
@@ -88,3 +114,97 @@ Routing: WA <number>, ref prefix <XX-> · Deploy: <url / pending King redeploy>
 | 67-family structure/tokens | `design/vendor/bergside-skills/<family>/` + `registry-digest.json` |
 | Apple-style principles / vocabulary / RN / toasts / animation audits | `design/vendor/emil/skills/*` |
 | Full anti-slop long form, block patterns, redesign protocol, brand/logo boards, image-per-section comps | `design/vendor/taste/skills/*` |
+
+## Regarder un dessin sans navigateur (24/09/2026)
+
+Il n'y a **pas de navigateur** dans le bac, et depuis la page de **La Ligne Optic** une page AMK peut
+être **entièrement dessinée** (SVG). Ne pas pouvoir regarder ses propres dessins avant de les livrer
+serait une faute : `tools/qa/render_svg.py` les rastérise **avec PIL** (le seul moteur disponible),
+en surdimensionnant ×3 puis en réduisant pour remplacer l'antialiasing absent.
+
+```
+python3 tools/qa/render_svg.py demos/concept-<client>-v1.html --class draw -o /tmp/hero.png --width 420
+python3 tools/qa/render_svg.py demos/concept-<client>-v1.html --class mini --all -o /tmp/minis --width 200
+```
+
+Il lit les règles de classe de la page — **y compris les variables de `:root`** (sans quoi tout sort
+blanc sur blanc) et les **classes posées sur un `<g>`** (sans quoi les groupes sortent incolores). Il ne
+fait ni dégradés, ni transformations, ni polices : si un dessin en a besoin, l'étendre, pas le contourner.
+
+## Peser ce qui est embarqué (24/09/2026, soir — La Ligne Optic)
+
+`tools/qa/audit_images.py` ne regardait que les **fichiers** : il ignorait les `data:image/…;base64`. La
+page de La Ligne Optic portait **dix images embarquées (249 Ko de JPEG)** et l'outil annonçait
+« **0 image(s)** » — un rapport vert sur un contrôle qui n'avait rien regardé. Il décode maintenant
+chaque image embarquée, la **pèse** (budget 400 Ko), lit ses **métadonnées** (GPS = ERR) et vérifie le
+**ratio annoncé**, exactement comme un fichier. Son témoin : **17 assertions**.
+
+**La règle à retenir** : avant de croire un « 0 constat », vérifier que l'outil **compte** ce qu'il
+prétend contrôler. Un contrôle qui ne voit rien et un contrôle qui ne trouve rien se ressemblent.
+
+## Regarder sa propre mise en page sans navigateur (24/09/2026, soir)
+
+Pour la passe 4 du premier écran (un verre, un cadran, un portrait dedans), il n'y a **toujours pas de
+navigateur** : la composition a été **remontée à la main en PIL** — mêmes coordonnées que le SVG, mêmes
+rayons, la vraie photo — avant d'écrire les nombres dans le gabarit. Deux erreurs vues à l'écran et
+corrigées avant tout build : le portrait était **trop petit** dans le verre (192 unités → 224), et le
+réticule à croix tombait **sur le nez** (une croix sur un visage, c'est une cible : les repères sont
+passés sur la ligne). `clients/la-ligne/dessins-controle.png` garde les deux planches.
+
+## Poser un document client sur WhatsApp (25/09/2026, matin des deux rendez-vous)
+
+Un `.md` ne s'ouvre pas sur le téléphone d'un client. Quand un document doit partir **sur WhatsApp** —
+le business case d'Univers Optique, par exemple — il lui faut un **PDF**. Le bac n'a ni pandoc, ni
+LibreOffice, ni reportlab : **`tools/site/md_to_pdf.py`** le fait avec PIL, en trente secondes.
+
+```
+python3 tools/site/md_to_pdf.py sales/BUSINESS-CASE-UNIVERS-OPTIQUE-2026-09-25.md \
+    --titre "UNIVERS OPTIQUE · business case · 25 septembre 2026" \
+    --pied "AMK · Akwo King · Développement Web & Solutions Digitales · Douala" \
+    --png /tmp/bc        # → 3 PNG A4 : on regarde AVANT d'envoyer
+```
+
+Il lit ce qu'écrivent nos documents client : titres, paragraphes, gras, italique, `code`, citations,
+filets, listes et **tableaux à deux colonnes**. La palette se règle en haut du fichier — **on reprend
+celle de la page du client**, pour que le papier et l'écran aient l'air de la même maison.
+
+**Trois pièges, tous vus à l'œil sur la première sortie** (et corrigés dans l'outil — c'est la règle :
+on regarde ce qu'on livre) : ① les espaces avant la ponctuation quand elle est en gras ou en italique ;
+② **nos `.md` sont coupés à la main tous les 90 caractères** — sans recoller les lignes de continuation,
+chaque paragraphe s'imprime comme un paragraphe séparé ; ③ une ponctuation seule part en début de ligne
+quand le mot finit au bord — il faut la **coller au mot** au moment de la coupure, pas à l'écriture.
+
+## Commiter sans effacer le travail de la veille (25/09/2026, après-midi)
+
+Deux fois en deux jours, le bac a **rembobiné l'arbre de travail** pendant la séance (§34.2 pour le
+diagnostic, le 24/09 ; ici pour le commit). La deuxième fois est la plus dangereuse, et elle ne se voit
+qu'au moment du `push`.
+
+**Le piège, dans l'ordre où il se referme** : le bac remet l'arbre sur une base ancienne → on travaille
+normalement → `git add -A` **enregistre tout l'écart entre l'arbre et le distant** → `git commit` fabrique
+un commit qui, vu du distant, **supprime les fichiers livrés la veille** → le `push` est rejeté
+(`! [rejected] … fetch first`) et c'est **la seule chose qui nous sauve**. Rejeté, certes — mais si on avait
+poussé de force, le travail du 24/09 (Cinq Sens, DM, La Ligne passe 4, les vidéos) disparaissait de la
+branche.
+
+**Le contrôle, avant chaque commit** — dix secondes, et il rend le piège impossible :
+
+```
+git fetch -q origin arena/01a0c495-amk
+git rev-parse --short HEAD FETCH_HEAD     # ← les deux doivent être ÉGAUX
+```
+
+S'ils diffèrent, l'arbre est en retard : `git reset --hard FETCH_HEAD` **d'abord**, et on refait le travail
+par-dessus. **La branche poussée est la source de vérité** — pas l'arbre, pas la mémoire de la séance.
+
+**Le contrôle, avant chaque `push`** : le commit ne doit contenir **que les fichiers de la tâche en cours**.
+Si `git status --short` montre autre chose que ce qu'on a touché — des `.zip`, des `.mp4`, des dossiers
+`clients/` qu'on n'a pas ouverts — **on ne pousse pas** : on refait sur la bonne base.
+
+**Réparer un commit pollué sans rien perdre** (fait le 25/09, commit `bae82bb` → `7b0a367`) :
+① sauver les vrais livrables, y compris depuis le commit pollué — `git show <pollué>:chemin > /tmp/…` ;
+② `git reset --hard FETCH_HEAD` ; ③ remettre les fichiers en place ; ④ si le journal a été édité, **coller
+la section écrite par-dessus la version saine** (ne jamais recopier le fichier entier : c'est lui qui
+portait les 4000 lignes de la veille) ; ⑤ re-commiter ; ⑥ vérifier `git diff --name-status FETCH_HEAD HEAD`
+→ **zéro ligne en `D`** ; ⑦ pousser : un `push` en **avance rapide** (`b3a5a0f..7b0a367`) est la preuve que
+rien n'a été écrasé. **Jamais de `--force`.**

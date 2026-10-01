@@ -1,5 +1,7 @@
 # AMK Strategy Review — 15 Sep evening (market · ICP · offer · channels)
 
+> ⚠️ **Prix récurrent : ce document n'est plus la référence.** Le plan d'entretien décrit plus bas (10 000/mois incluant l'hébergement, 100 000/an « 2 mois offerts ») a été **remplacé** par la grille du 23/09 et les deux paliers Essentiel/Standard. L'état des prix et les questions encore ouvertes sont dans `sales/PRIX-ET-RECURRENCE-2026-09-24.md`. Le document n'est pas réécrit : ses chiffres restent la trace de ce qui a été pensé le 15/09.
+
 **Prompt:** King asked whether the whole strategy needs review after the first
 day's messages drew zero replies, in light of the five AI-agency videos
 (`AMK-Playbook-Addendum-Outcomes-2026-09-15.md`). This document is the honest

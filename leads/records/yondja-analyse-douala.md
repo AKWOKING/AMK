@@ -1,6 +1,6 @@
 # YONDJA ANALYSE
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-21. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-27. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | parked |
 | WhatsApp | 696 88 88 23 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |
@@ -22,19 +22,43 @@
 
 ## Notes
 
-Envoyé 18/09 ~18:30, sans maquette.
+Envoyé 18/09 ~18:30, sans maquette. · ⚰️ MORT le 22/09 (lot du 18/09) — jamais ouvert, jamais répondu ; décision de King : on ne réécrit plus, on va vers des prospects frais. Aucune relance programmée.
 
 ## Prochaine action
 
-**0 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**Aucune.** Parqué. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 3 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 27 ligne(s).*
 
 `L30` · | **ven 18/09 ~18:30** | **YONDJA ANALYSE** (696 88 88 23) | msg 1 — **sans maquette** | Envoyé | **Non** |
 `L110` · | ~18:30 | Discovery Labs · UNI-LABO · YONDJA ANALYSE · Laboratoire du Château · Département Biologique · CAMERA · LE NID |
 `L150` · | **22:05** | King | « Bonsoir. Akwo King, AMK — Douala. Vous m'avez écrit ce soir, alors je vous réponds avec l'aperçu plutôt qu'avec un discours. **https://uni-labo.vercel.app** Il est fait pour UNI-LABO : vrais horaires, préparation des examens, itinéraire Carrefour Etoo, en français et en anglais. Dites-moi si les horaires et la liste des analyses sont exacts — je corrige tout de suite. Un « oui » suffit. — Akwo King / AMK » | Envoyé ✓✓ |
+`L541` · ### ② SEO — les 3 vidéos analysées, et notre propre site réparé
+`L761` · | ③ | **org_type : « va ligne par ligne sur les faits écrits dans la ligne. »** | Fait — **mais je n'ai pas trié à la main une par une : j'ai supprimé la cause.** `crm.py` collait `"school"` aux 38 lignes du classeur **sans jamais lire la ligne** ; voilà d'où venaient MITOC « school » et Solidarity « school ». Nouveau `org_type_for()` : l'étiquette n'existe que si un mot **du nom, des Facilities, de l'activité ou des notes** la porte (`lab` → `clinic` → `other` → `school`, dans cet ordre parce qu'« laboratoire d'analyses médicales » n'est pas une clinique). La preuve est écrite dans `Notes` (`org_type=lab prouvé par « laboratoire »`). Les overrides explicites (MITOC, One Stop, JOSS, Kamaïs, Solidarity) gagnent avant. **Résultat : 0 ligne sans étiquette et 0 ligne sans preuve** — contre 145 dont 38 affirmées « school » par défaut. |
+`L1324` · strict perdrait 56 citations **légitimes** sur 295 (`Bonanjo`, `Yondja`, `Cerisaie`…). Limite consignée en
+`L2453` · suivi), 4 familles d'analyses, résultats, adresse, FAQ. **Mais zéro formulaire** : ses 12 liens WhatsApp sont
+`L2484` · plus « Autre analyse » et « J'ai une ordonnance — conseillez-moi » ;
+`L2487` · - **un bouton WhatsApp éteint tant que la demande est incomplète**, qui s'allume quand une analyse est
+`L2489` · `Bonjour UNI-LABO, je souhaite prendre rendez-vous. / Nom : … / Analyses : … / Moment souhaité : …` ;
+`L2496` · sur les deux états d'erreur : bouton éteint et groupes fautifs marqués quand il manque une analyse, un nom ou
+`L2542` · laboratoire fait que personne d'autre ne fait ?* Il ne vend pas des analyses : il vend **la certitude que
+`L2543` · le prélèvement sera utilisable du premier coup** — tout se joue *avant* l'arrivée, et une analyse mal
+`L2563` · **Deux fautes trouvées par les outils, pas par l'œil, pendant la passe :** l'analyseur HTML a mesuré
+`L2569` · **Ce qui vérifie tout ça, sans navigateur :** portique `0 constat`, analyseur HTML **415 textes mesurés,
+`L2629` · **Et une phrase qui manquait au formulaire.** Thomas Digital, sur les laboratoires d'analyses : *« People
+`L2678` · d'analyses, plus la préparation) jamais derrière du texte, légendées « mise en situation », la préparation en
+`L2688` · **Vérifié (aucun navigateur ici) :** portique **0 constat** (`--strict`, rc=0) · analyseur HTML **385 textes,
+`L2695` · était seule à utiliser** (`unilabo-hero`, `-analyses`, `-resultats` et leurs variantes) ont quitté le dépôt
+`L2870` · sur le site ; « *1 · Vos analyses, groupe de cases à cocher, 1 sur 19* » sur UNI-LABO), les gestes TalkBack, la
+`L2904` · trou bouché : quand l'outil ne trouve pas de premier écran à analyser, il le **dit** maintenant, au lieu de
+`L3319` · analyse sur son propre téléphone) ; les impressions et les numéros MoMo ; puis **vendredi 10 h Univers, 13 h
+`L3349` · public** ; promettre de colmater une fuite qui n'est pas de notre métier (une analyse erronée).
+`L4461` · **Trois choses écrites dans l'analyse, et qui comptent plus que la faisabilité** :
+`L4472` · écrites dans le §7 de l'analyse (produit principal avec abonnement / pied dans la porte en échange du statut de
+`L4607` · Écrit : `clients/uni-labo/analyse-logiciel-resultats-2026-09-27.md`. Sa description est précise — technicien
+`L4662` · lecture, et elle est corrigée dans l'analyse et dans le CRM.)*
 
 ---
 

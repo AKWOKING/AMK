@@ -46,6 +46,20 @@ def digits(s) -> str:
     return d[-9:] if len(d) >= 9 else d
 
 
+# LIMITE CONNUE, MESURÉE LE 22/09 (ne pas « corriger » à l'aveugle)
+#   Un mot du nom reste une clé même quand le journal l'emploie comme NOM COMMUN : ma ligne
+#   « Diagnostic en deux temps » a été citée sur la fiche de « Le Bon Diagnostic ELF », et
+#   « OPTICAL SERVICES DOUALA » sur celle de « Gift Optical ». J'ai testé le resserrement
+#   (le mot doit être le MOTEUR du nom ou être accompagné d'un second mot du nom) :
+#   **295 citations → 239**, et les 56 perdues sont presque toutes LÉGITIMES (« Bonanjo »,
+#   « Yondja », « Cerisaie » : le mot distinctif est justement le second). Donc un stop-list plus
+#   courte, ou le mot-tête, ou l'adjacence : trois mauvaises idées mesurées. La vraie correction
+#   passe par un test de CONTEXTE (le mot est-il écrit comme un nom propre, au voisinage du métier
+#   du lead ?) — hors de proportion ici. En attendant : **dans le journal, on cite le lead par son
+#   nom complet ou son numéro**, et on ne pose pas un mot de son nom en majuscules en dehors d'un
+#   nom complet. La pollution de ce soir a été retirée par réécriture des lignes, pas par le filtre.
+
+
 def name_tokens(name: str) -> set:
     """Mots d'un nom de lead qui POURRAIENT servir de clé (≥6 lettres)."""
     return {norm_txt(w) for w in re.split(r"[^A-Za-zÀ-ÿ0-9']+", str(name or ""))
@@ -118,13 +132,13 @@ def matches_for(rec: dict, lines: list, distinctive: set) -> list:
 def next_action(rec: dict) -> str:
     """Déduite des règles de relance. Rien n'est inventé : si la règle ne s'applique pas, on le dit."""
     stage = rec.get("stage", "")
-    if stage == "disqualified":
+    if stage in ("lost", "disqualified"):
         return "**Aucune.** Lead écarté — " + (rec.get("disqualification_reason") or "motif dans le CRM")
     if stage == "parked":
         return ("**Aucune.** Parqué"
                 + (" — " + rec["disqualification_reason"] if rec.get("disqualification_reason") else "")
                 + ". Une action n'est légitime que si King le décide explicitement.")
-    if stage == "prospecting":
+    if stage in ("prospect", "prospecting"):
         return "**Prospecter** : vérifier l'identité du numéro sur WhatsApp avant d'écrire (nom + catégorie)."
     if rec.get("Reply", "").strip().lower().startswith("yes"):
         return ("**Répondre dans l'heure.** Une réponse humaine est en attente : c'est la priorité absolue "
@@ -222,7 +236,7 @@ def main() -> int:
         # on ne crée une fiche que pour un lead avec un historique réel
         real = (rec.get("Contacted", "").strip().lower().startswith(("yes", "sent"))
                 or rec.get("wa_verified") == "yes"
-                or rec.get("stage") in ("qualifying", "parked", "disqualified"))
+                or rec.get("stage") in ("qualified", "qualifying", "presented", "closing", "parked", "lost", "disqualified"))
         if not real:
             continue
         hits = matches_for(rec, lines, distinctive)

@@ -380,7 +380,12 @@ Pale Red #FDEBEC/#9F2F2D · Pale Blue #E1F3FE/#1F6C9F · Pale Green #EDF3EC/#346
 **Mechanical (script where possible):**
 - [ ] Bilingual: `data-en` count == `data-fr` count, and 0 elements with only one of the pair (DOM check)
 - [ ] 0 broken images (naturalWidth > 0 on all `<img>`); 0 unresolved template tokens
-- [ ] 0 console errors in headless Chromium (EN, FR, mobile 390)
+- [ ] 0 console errors in headless Chromium (EN, FR, mobile 390) — **if the sandbox has no browser, write
+      that the item was NOT run; never let an unchecked line read as passed**
+- [ ] **First paint without JS:** no `opacity:0` / `visibility:hidden` entrance state outside an `html.js`
+      gate set inline in `<head>`; reveal system in its own `<script>` with `try/catch`; hero + headings static
+- [ ] **Every inline `<script>` compiles:** `python3 tools/qa/check_inline_js.py <file>` → rc 0 (rc 3 = control
+      not rendered, say so)
 - [ ] 0px horizontal overflow at 390px
 - [ ] All WA/tel/mailto links → correct owner number/address; no dead `#` links
 - [ ] Heading ≤ 2 lines desktop; nav 1 line ≤ 80px; hero CTAs visible at 800px height
@@ -471,6 +476,19 @@ _Full specs: `design/vendor/bergside-skills/<slug>/` (SKILL.md + DESIGN.md). Tok
 - Creativity escalation: push at least 3 of (composition / typography / scale contrast / hero concept / image treatment / section rhythm / framing / art-directed tension).
 - Image-first: images are core material, including full-bleed backgrounds; several sections must meaningfully include imagery.
 - **Anti-slop for image prompts:** no purple/blue AI glow, no blob spam, no glassmorphism-without-reason, no gradient headlines, no "luxury = beige serif", no fake-precision KPI columns, no "unleash/elevate/next-gen" copy in the comp, no Acme/NovaCore wordmarks, no identical card rows, no cloned left-text/right-image across sections, no infinity logo strips, no unreadable mosquito logos.
+
+**LE TEST DE L'ÉPOQUE (24 Sep 2026 — verdict de King sur Cavisa).** Verdict exact : *« Je n'aime pas les
+images que tu as généré elles font beaucoup année 90, Douala est bcp plus moderne voyons WE are in 2026 »*.
+Les deux premières photos montraient une boutique à comptoir de bois patiné, un ventilateur au plafond et
+une salle d'examen bleu ciel à affiches jaunies : **vrai quelque part à Douala, faux comme image de marque**
+— et faux pour le client qui veut se voir moderne. **Ce que la régénération a changé, mot pour mot dans le
+prompt :** éclairage LED encastré dans des étagères chêne + noir mat · comptoir en verre · sol béton ciré ·
+grandes vitrines, lumière du jour · plantes · **équipement d'examen numérique avec écran** · tenue
+contemporaine · et la liste négative écrite noir sur blanc (« no old furniture, no ceiling fan, no posters,
+no clutter, nothing vintage, no 1990s »). **Deux règles à garder :** ① une photo d'ambiance doit dater de
+**l'année du brief**, pas de la mémoire vague qu'on a d'une ville ; ② **un cadrage se recadre au centre**
+(`-resize WxH^ -gravity center -extent WxH`), jamais avec des décalages écrits en dur — la première version
+découpait en `+116+0`, ce qui suivait une photo et cassait la suivante.
 
 ### Mobile screens
 - Screen-first: generate app screens, not phone-shaped websites. Respect safe areas (status bar/home indicator regions), real navigation logic (tab bar / bottom sheet), touch-scale type (readable at 1x).
@@ -835,6 +853,419 @@ In this market nobody fills a calendar. The assistant's job is to end with **Wha
 
 ---
 
+## §22 INTERACTION CONTRACT, INVISIBLE TIMELINE, PSYCHOLOGY LAYER — 4 videos (23 Sep 2026)
+
+Folded from four videos King dropped in one go (UX/UI + design psychology). Verdicts, junk filter and
+the full log: `research/YouTube-Lessons.md` **Lot [23]**. §22 is the build-side law that came out of them.
+
+**The four, and what each one is for:**
+
+| # | Video | What we took | What we left |
+|---|---|---|---|
+| 22.a | Amir Moradi — *What I Wish I Knew Before 10 Years in UX (The 3 Levels)* | the three levels; the invisible timeline; "happy path only = dreamer" | career-path advice |
+| 22.b | Kole Jain — *Every UI/UX Concept Explained in Under 10 Minutes* | the interaction contract: 4 states per button, a response per interaction, numbers that are checkable | generic tutorial framing |
+| 22.c | uxpeak — *The UX Psychology Behind Apps People Can't Stop Using* | 6 principles — the honest half only | dark patterns, streak/guilt mechanics, fake progress |
+| 22.d | Self-Made Web Designer — *The Psychology of a PERFECT Website* | 3 friends, mental models, MAYA, chunking, price ladders | nothing structural; the tone is a hook |
+
+### 22.1 The three levels (22.a) — and the one we kept failing
+
+**Surface** — UI is not UX. *"Screens, AI can do. Designing decisions, that is the job."* Our concepts are not
+screens: every section has to answer a question the visitor actually has (hours? price? can I trust this?)
+before it is allowed to be pretty.
+
+**Timeline** — *the hardest part of delivery is the waiting*. State the state; show the progress; a happy-path-only
+build is a dream. **This is where we were failing, and where the worst bug of the quarter was born:** the
+Cristallin page carried a WhatsApp link with no country code (`wa.me/699905577`), on a page already in the
+client's hands, and **nobody had clicked it**. Two people had "reviewed" the page. A path nobody has walked
+is not a design, it is a hope.
+
+**Strategy** — business × technology × psychology; *everything holds except the human*. The other three
+principles in this file are the technology; 22.3 is the psychology; the business is the price and the
+perimeter (see `sales/`).
+
+### 22.2 The interaction contract (22.b) — non-negotiable per page
+
+1. **Four states per button, always** — default, hover, active, disabled — plus **loading** where the action
+   waits on something. Our house set, copied straight from the Cristallin build:
+   `.btn{transition:...}` · `.btn:hover{translateY(-1px)}` · `.btn:active{transform:scale(.97)}` ·
+   `.btn.is-off{opacity:.55;cursor:not-allowed;pointer-events:none}` · `:focus-visible{outline:3px}`.
+2. **Every interaction produces a response.** Not a spinner for show: *words*. Our pattern is the
+   **`.said` band** — after a click that leaves the page (WhatsApp, `tel:`), the page says, in the visitor's
+   language, **what just opened and what happens next** ("WhatsApp opens with your request already written.
+   The practice answers during opening hours."), then hides itself after 6 s. Implemented with
+   `role="status" aria-live="polite"` so it is heard, not only seen.
+3. **Never a visible control with no effect.** `href="#"`, a dead button, a form with no state — a false
+   signifier; the visitor reads the whole page as broken.
+4. **Every path out of the page is checkable and complete**: `wa.me/237…` (country code, digits only, no
+   spaces), `tel:+237…`. Both are now **blocking** checks in `tools/qa/audit_page.py`.
+5. **Numbers from the video that we hold ourselves to**: one type family; ≤6 sizes per page (see the caveat
+   in 22.6); icons at line height (24 px); padding ≈ 2× the button height; **shadows at low opacity with a
+   large blur — if the shadow is the first thing you notice, it is wrong**; dark mode = card lighter than the
+   background, *lower* saturation; overlays carry a gradient under the text so the words stay legible.
+6. **State where the user is**: focus rings on every field (`:focus`), an error state that says *why*, and a
+   confirmation micro-interaction after an action (the video's "Copied" chip). Our equivalent today is the
+   `.said` band; a copy-to-clipboard chip is the next one to build.
+
+### 22.3 The psychology layer (22.c, 22.d) — used honestly, or not at all
+
+The six principles are real, and **every one of them has an honest form and a dishonest form**. We ship the
+honest form only; the dishonest ones are named in `research/YouTube-Lessons.md` §5.
+
+| Principle | The dishonest form | Our legitimate form |
+|---|---|---|
+| **Smart defaults** (70–90 % never change the default) | a pre-ticked paid extra | **the WhatsApp message arrives pre-written** in the visitor's language; the default is the action they already wanted |
+| **Goal gradient** (a card with 2 of 10 stamps pre-filled ≈ ×2 completion) | fake progress bars | **the preview is already built** before anything is asked: they start at "almost there", because it is true |
+| **Reciprocity** (value before the ask — Cialdini) | "free" behind a signup wall | the concept page itself, sent with **no account, no form, no deposit** |
+| **IKEA / endowment** (people value what they helped build) | labour disguised as a game | they choose the 6 points, the photos, the perimeter — the page becomes *theirs* before the invoice |
+| **Loss aversion** (a loss weighs ≈2× a gain — Kahneman) | invented lost revenue | **true** losses only: what a client who cannot be found actually loses; never an unverifiable number |
+| **Contrast / anchoring** | a fake crossed-out price | our real price ladder and the real alternative (print, ads, the rent of a shop window) |
+
+**Mental models (22.d).** Never be creative with a convention: the navigation goes where navigation goes, the
+logo goes home, the phone number is a phone number. Our version: hours in a table, one address only, the
+WhatsApp button in the same place on every page. Creativity is spent on the one thing they cannot get
+elsewhere — the craft of *their* page.
+
+**MAYA** — *most advanced yet acceptable*: a familiar structure with small surprises. Our surprises are the
+micro-interactions (the `.said` line, the chart frame on the Cristallin, the computed slots on Univers),
+never the skeleton.
+
+**Chunking (22.d).** 3–4 items maximum per block; a phone number is written in three groups; a list of six
+becomes two blocks of three. Applies to footers, hours, prices, FAQ answers.
+
+**Price ladders (22.d).** When two or three options are shown, describe the difference as *"everything below,
+plus this"* — never repeat the same list twice. (Our two-tier AMK ladder and the Cristallin's three-option
+rule, `sales/DECLINAISON-9-DECLENCHEURS-2026-09-23.md`.)
+
+**The three friends (22.d)** — the visitor decides in three passes: *survival* (is this a real business? is it
+safe? can I see it?), then *emotion* (do I like it?), then *reason* (is it worth it?). The first vote is
+therefore **safety first, aesthetics last**: name, trade, town, hours, a reachable number and proof of
+existence come before the animation budget. It is also why one line of plainly written truth ("we have no
+team — you deal with the person who built the page") beats an invented corporate voice.
+
+### 22.4 What actually changed on our three pages (23 Sep 2026)
+
+| Page | Before | After |
+|---|---|---|
+| **Cristallin** (client-facing, already sent) | `wa.me/699905577` ×3 — **a link that errors**; `tel:` with no country code; no response after a click | `wa.me/237699905577` ×3; `tel:+237…`; `.said` band (`role=status`, `aria-live`, 6 s); the WhatsApp row now says what happens after the click |
+| **Univers Optique** (Friday 10:00) | the same fallback sentence printed **twice**, word for word; the live-status line was written for eyes only | two distinct fallback sentences, one per card; `role="status" aria-live="polite"` on the live-status line; **the v1 archive also carried the broken link** — fixed, it is opened in front of the client for the A/B comparison |
+| **UNI-LABO** (Friday, hour TBC) | 3 `:hover`, **0 `:active`, 0 transitions**; no response after a click; chips only had a colour state | the full four-state set + transitions; `.said` band inside the sticky bar; `aria-pressed` on the preparation chips |
+
+### 22.5 The gate — `tools/qa/audit_page.py`
+
+Built the same night, for the same reason as the deploy gate (§18.4): the bug was invisible to reading.
+Run it **before any page goes to a prospect**:
+
+```bash
+python3 tools/qa/audit_page.py demos/concept-*.html hosting/previews/*/index.html   # rc=1 if blocking
+```
+
+Blocking: WhatsApp number without country code · no `<h1>` · no `<title>` · a template placeholder left in
+the visible text. Output is three-level: **blocking** · **to fix** · **info** (an intentional demo is *info*, never a
+blocker). Warnings: no `aria-live`/`role="status"` · no focus state · no "what happens next"
+sentence · images without `alt` · >8 text sizes · a sentence printed twice · a field with no error state ·
+more than two `href="#"`.
+
+Four false alarms came from writing *the checker itself*, and all four are worth keeping in mind:
+it flagged healthy pages as broken because it searched the **raw HTML** (base64 images contain every
+character sequence, including "XXX"); it called every sentence duplicated because **our pages are bilingual**
+(FR and EN carry the same sentence); it blocked the **publishable demo pages** because their WhatsApp number
+is *deliberately* fake and spaced (`wa.me/6 00 00 00 00` — no real number may appear on a fictional clinic);
+and it read `OC-XXXX` as a leftover placeholder when it is a **demo reference code**. All four are fixed in
+the tool. The lesson is bigger than the tool: *a checker that cries wolf is not read the third time* — every
+false positive is paid for by the next real finding that nobody looks at.
+
+### 22.6 Honest limits of this section
+
+- The **"≤6 font sizes"** check reports **25–37** on our pages. It is counting raw CSS declarations, not steps
+  of a scale (our type ramp is deliberate). Do not "fix" it mechanically; the rule that binds is *do not add
+  new sizes without a reason*.
+- **There is no browser in this sandbox** (no chromium available; the download is blocked). So §22 can be
+  checked structurally and the pages compile clean, but **looking at the rendered page on a phone remains
+  King's step** — the portico is a pre-screen, never a substitute for the deploy gate.
+- The psychology principles are used **only** in their honest form. No fake urgency, no fake scarcity, no
+  invented reviews, no streaks, no guilt, no progress we did not actually make. A dark pattern that works in
+  California destroys the one asset we have in Douala: being the person who tells the truth.
+
+---
+
+## §23 STYLE CHOICE, THE STAR, THE ANCHOR FONT — 2 videos (23 Sep 2026)
+
+Folded from Web Design Lab (*7 Web Design Styles That Make Sites Look Expensive In 2026*) and Self-Made
+Web Designer (*6 EASY Tips to 10x Any Site's Design*). Log + rejection list: `research/YouTube-Lessons.md`
+**Lot [24]**. §22 said *how a page answers a finger*; §23 says *how a page chooses its look and carries
+one idea through*.
+
+### 23.1 Styles are chosen, not invented
+
+*"The designers didn't invent the web design styles either. They just chose the right one."* Seven
+transitions, and our arbitration for a Douala clinic/school page (mobile-first, 3G, one page, WhatsApp-first,
+and a client who must recognise themselves in it):
+
+| Transition | What it actually is | For us |
+|---|---|---|
+| Flat → **neoskeuomorphism** | tactile depth back: soft shadows, floating cards, glass nav, **and above all a hover/press state** | **Adopted, lightly** — depth without gloss. It is also the same rule as §22.2: the cheapest "expensive" signal is a response to the finger, not an effect |
+| Static → **kinetic typography** | type becomes a visual element (scroll-linked scale/weight) | **Limited.** Our headlines are long and French; body must stay static. Adopted only as the §9 reveal we already run. Never on body copy |
+| Template SaaS → **intentional minimalism** | remove the noise, keep the character: 2–3 signature cues, repeated | **Adopted as law** — see 23.3 |
+| Rigid grid → **editorial design** | bold type, contrasting scale, breathing room; build the grid, then let **one** element break it | **Adopted for our own site and premium briefs**; a clinic page keeps its grid. "Freedom doesn't mean chaos" |
+| Decorative → **story-driven animation** | motion must make you notice, grasp or understand something | **Adopted as a test**, not a style: *does this animation help the visitor? If not, remove it* |
+| AI-generated → **human-made** | sketches, process, raw photos, authentic textures — "when perfection becomes cheap, authenticity is the real luxury" | **Already our market position** (§3 anti-slop, and our own photos-in-concepts rule). New: make the *process itself* visible — the same client page shown before/after |
+| Safe → **expressive** | pick audience + feeling first, then one strong direction | **Client's call, never ours.** We do not impose expression on a clinic that needs trust |
+
+**The rule that governs all seven, in the video's own words:** *"A trend becomes a problem when it turns
+into a recipe."* So we never ask *what is trending*; we ask **what emotion does this business give, and
+which style delivers it** — and we write that sentence in the build file before the first block.
+
+### 23.2 The swap test (brand or template?)
+
+Take the page, **swap the logo and the name for a competitor's**, and read it again. If the page still
+feels natural, the visual language carries no brand.
+
+Applied to our three live concepts: **Cristallin** passes — the acuity chart is *theirs* (the smallest line
+is the specialty). **Univers Optique** passes on structure (computed slots + the six points to decide) but
+not on form. **UNI-LABO does not pass**: nothing on it belongs to UNI-LABO alone — this is the page whose
+visual language is generic. It is also the page with the least time invested (48 KB, built in one pass).
+**Recorded as a gap, not hidden:** the next UNI-LABO-style build starts by naming its signature cue.
+
+### 23.3 Signature cues and the star of the show
+
+Two rules, and they are the same rule at two scales:
+
+- **The star of the show** (SMWD): the one element that makes someone stop — and it must be *connected to
+  the story*, not chosen because it looks cool. The video's own method: start from the product's core idea
+  ("taking a mess of data and making it feel simple" → the star is an abstract chart). Our version of that
+  question, already written into the builds: **what does this practice do that nobody else does?**
+- **Visual rhyming**: repeat **a component of the star** (a shape, a colour, a texture, an icon) in 2–3
+  other places, so the page feels like one universe. Not the whole element — a component of it.
+
+**Audit of 23 Sep, on our own pages:**
+
+| Page | The star | The rhyme |
+|---|---|---|
+| Cristallin | the acuity chart in the hero | the `E F P T Z O` row repeats as a graphic device; strong |
+| Univers Optique | the computed slot ("the page proposes a real hour") | the counter-hours block repeats on two cards; **was broken** — the two cards printed the same fallback sentence (fixed, §22.4) |
+| UNI-LABO | none identified | none — the honest state of the page |
+| **Our own site** | the browser-frame preview of a real concept | the frame already repeats (4 concept cards) **but its signature detail — the three coloured dots — appeared once**. Fixed today: the dots now rhyme. |
+
+### 23.4 The anchor font — start from the HEADLINE
+
+The video's tip 1, and the fastest win of the six: **anchor the headline font first**, not the body font —
+the headline sets the personality of the page, the body only carries the reading. Then add a second face
+that is *different enough* to create contrast (the video's counter-example: Georgia with Times New Roman —
+"so close, but very different; it feels unintentional"). Resource named: Fonts In Use.
+
+**Our audited state (23 Sep):**
+
+| Page | Display | Body | Verdict |
+|---|---|---|---|
+| Univers Optique | Newsreader (serif) | Public Sans | **the reference pairing** — real contrast, a clear voice |
+| Cristallin | Archivo | Instrument Sans | **two grotesques**: legible, but the headline brings almost no personality of its own |
+| UNI-LABO | Sora (500-700) | Inter | two sans; Sora is distinctive but the pairing is mild |
+| **Our own site** | — *(none)* | system stack | **worse than a bad pairing: no choice at all.** Zero of our own house font (§5: Outfit) |
+
+**Fixed today:** `site/index.html` now loads Outfit (400-800, `display=swap`) and sets
+`font-family:'Outfit',-apple-system,…` — the exact house pattern our school/clinic pages already use,
+identical fallback chain, so a failed font request leaves the page exactly as it was. This was a **drift
+from our own written standard**, not a taste opinion: §5 has said "Outfit house font" since the library
+was created, and every other page respected it.
+
+**And a check worth keeping:** a page can *declare* a font it never loads — the text then silently falls
+back to the device font and nobody notices. That class of bug is now a warning in `tools/qa/audit_page.py`
+(with the system-family list corrected, because the first run flagged `"Helvetica Neue"` as missing —
+a false alarm of exactly the kind §22.5 warns about).
+
+### 23.5 Depth (tip 4) and hierarchy by opacity (tip 5)
+
+- **Depth** — texture, noise, glass: *"it needs to be subtle; we don't want to compete with the star of the
+  show."* Practical, weight-free recipe for our single-file pages: a `feTurbulence` SVG as a data-URI
+  (a few hundred bytes, no image file) at 2–4 % opacity, **never** over the star. Our pages have no texture
+  today; the recipe is written here so the next build can use it **with eyes on the result** — we will not
+  add a visual effect we cannot look at (no browser in this sandbox, §22.6).
+- **Hierarchy by opacity** (taken from Material Design as the video reads it): don't print everything at
+  100 %. High-emphasis ≈ 87 %, medium ≈ 60 %; headline at 100 %, subheading ≈ 70 %. Our builds express the
+  same three levels with named colours (`--ink`, mute, `--line`) instead of alpha — equivalent, *and*
+  easier to keep consistent. **Rule: three levels of emphasis, named once in the token block, never ad hoc.**
+
+### 23.6 Push past the first idea (tip 6)
+
+The video's music-production analogy: the best producers make the artist sing the song faster, slower, in
+another key — "you can't get to the best version by tweaking the first one". He built **12 versions** of a
+single hero element.
+
+Our equivalent already exists and is worth naming as deliberate practice: Univers Optique has **two
+complete directions** on disk (v1 sober, v2 big-photo) plus two size-light variants for sending; the
+Cristallin has a chart-led direction that was itself a second pass. **Rule: the first version is a draft,
+never the deliverable** — and a direction is judged on a real section, not in the abstract.
+
+### 23.7 Honest limits
+
+- Two of the seven styles (kinetic typography, expressive design) are shown on sites whose budget and
+  audience are not ours. Adopted as **tests**, not as looks.
+- The video's own warning applies to the *human-made* style it recommends: it is already becoming a
+  template. Being human-made is our substance, not a filter we apply to photos.
+- Nothing in §23 can be verified visually from this sandbox. Fonts, dots and structure are checked in
+  code; **the eye check remains King's**, as in §22.6.
+
+---
+
+## §24 MOBILE-FIRST — and the vertical that pays for it (23 Sep 2026, late night — Lot [25])
+
+**Why this section exists.** King dropped three videos about the phone and one page about *laboratory*
+websites in the same message. The pairing is the point: **the phone is where our clients' customers
+already are** and the lab is the vertical we are selling into this week. Flux Academy's number, kept
+because it is the honest one: **~60 % of global web traffic is mobile** (47 % in the USA) — not the
+"99 %" the comments claim. In Cameroon the share is higher again, and our buyers live on WhatsApp on
+mid-range Androids. Everything below is checked against that phone, not against a laptop preview.
+
+### 24.1 The five mobile mistakes — Malewicz, *The Secret to Mobile Web Conversion*
+
+1. **Cramming the desktop hero into the phone.** Less white space → unclear hierarchy → the brain reads
+   the page as "not what I was looking for" and leaves. On mobile the hero carries **one** idea.
+2. **Heavy animation in the hero.** "Pretty damaging to your brand, especially on mobile." Our motion
+   budget already says this (§22.2, `design/MOTION.md`); this is the same rule from the conversion side.
+3. **Targets too small to tap — or too big to trust.** His numbers: buttons **48–52 px on desktop,
+   and on mobile above 52 but under 64**. Above that range the button starts to look like an advert and
+   the brain skips it ("banner blindness"). *If a social-proof element is too small to read on a phone,
+   delete it on the phone — do not shrink it.*
+4. **A phone inside a phone.** Never screen-mock a mobile app inside the mobile page: nobody can tell
+   what it does, and it reads as inception. **Show the problem being solved, with one simple element.**
+5. **Desktop copy, reused.** A smaller screen means **bigger type, not smaller** — simplify the object,
+   cut what is not essential, and rewrite the copy for the phone. He also rewrites the CTA for lower
+   friction ("see how it works" instead of "try for free") and changes **"click" to "tap"**. Our pages
+   say "appuyez" / "press" for exactly this reason — never "cliquez".
+
+**Bonus, and it contradicts a habit of ours:** *avoid sticky elements on mobile.* Do not keep the logo
+or the menu pinned while scrolling — use a small scroll-to-top control instead. See §24.6 for the
+arbitration we wrote for our WhatsApp bar.
+
+**Form and onboarding (same video).** Fewer fields on the phone; checkboxes **at least 32×32**;
+"a form with more than two fields on mobile gets a big conversion drop" — convert first, ask the rest
+later. And the technique he is testing: **micro visuals on mobile, full visuals on desktop** — the
+mobile hero image usually pushes the headline and button off-screen, so it often earns nothing.
+
+### 24.2 Mobile is its own layout, not a stacked desktop — Flux Academy, 10 live examples
+
+- Stacking desktop columns one under the other **is not responsive, it is a disaster** — mobile gets a
+  deliberate one- or two-column rhythm, and the **aspect ratio of every image is chosen for the phone**
+  (portrait crops suit full-length human shots; bands become 4:3).
+- **Hierarchy is big → medium → small**, and there is exactly **one** largest item per screen.
+- **Generous white space still works on a phone** — it is what makes a small screen read as premium.
+- **Every panel must be good enough to be a poster.** This is the cheapest quality test we have and it
+  goes in the King-eye checklist: look at each section alone at 390 px and ask if you would print it.
+- **Nothing essential behind layers of clicks** — "put the work up front".
+- Interest is not a luxury: angles, layered cards, a horizontal band still work on a phone. **Mobile is
+  not a reason to go plain.**
+- A **menu button near the thumb** (bottom) is a common, working pattern — and it is why our sticky bar
+  lives at the bottom.
+
+### 24.3 Mobile-first 101 — Jesse Showalter (live)
+
+1. **Distill the offer.** One primary thing per page. His test: screenshot the desktop, circle the ONE
+   most important element big, circle the supports small — *if there is no big circle, the page has a
+   problem on every screen, and a worse one on the phone.* The hamburger menu exists because showing
+   the whole navigation is **not** distilling.
+2. **Buttons live under the thumb.** The **rule of thumbs**: the bottom of the screen is comfortable, the
+   middle is acceptable, the top is bad. (Safari puts the URL bar at the bottom, Chrome at the top —
+   two different statements about what matters.)
+3. **Legible type, always.** No display face for body copy, no mixed families, nothing cursive or
+   handwritten; **never a thin / light / ultra-light weight on mobile** — it kills legibility. Use a
+   family with 7–8 weights available, pick strong ones, adjust letter-spacing when needed. And:
+   **never pure black on pure white, or pure white on pure black** — our `--ink #14151A` and the
+   off-black policy already satisfy this.
+4. **Optimise images and video.** Resizing inside a builder does **not** reduce the file's weight — the
+   browser still downloads the big one. **Export a smaller version and let the tags choose it.** When a
+   hero image cannot be made light, **ditch it for a brand colour** — a hex value in the CSS loads
+   instantly. **Use SVG for logos** (ours are text wordmarks, which weigh nothing at all).
+5. **Test on real devices, in the real browsers** — dev-tools device sizes at minimum, and the phone
+   itself: *at night, in bright sunlight, on Android and on iOS.* Trust the browser over the builder's
+   own preview.
+
+**From his Q&A, three numbers we now use:** design the narrow frame around **360–380 px** (the
+"Goldilocks" mid-size phone, not the biggest or the smallest); **~420–450 px is where mobile begins** —
+below that: single column, less imagery, primary function highlighted, buttons relocated lower;
+and a mobile grid of **4 or 6 columns, never 12** — and "make it till you break it" (Brad Frost) rather
+than one breakpoint per device.
+
+### 24.4 The lab / clinic vertical — Thomas Digital, *40 of the Best Lab Websites*
+
+A commercial testing lab is not a generic corporate site, and the same seven principles hold for the
+clinics and cabinets we sell to in Douala:
+
+1. **Know the primary audience, and design for it first.** Every lab site serves at least two audiences;
+   the site that serves everyone equally serves nobody. *Ours:* the patient sent by a doctor.
+2. **Lead with the problem you solve, not the science you do.** The hero's job is a human entry point —
+   what problem, who has it, why you are different. Detail lives one click deeper.
+3. **Credibility signals belong above the fold** — accreditations, named advisors, published work,
+   certifications. For a testing lab that means the real authorisation, named staff, hours, address,
+   phone. **Never invented, never borrowed** (§13): what the client has not given us is a *question to
+   ask*, not a badge to draw (§24.5).
+4. **Navigation must follow how decisions get made** — for a lab: which tests, which samples, what
+   turnaround, how to submit. Organised around the customer's decision, never around the internal org
+   chart.
+5. **Precision over decoration.** The clichés — dark backgrounds with glowing molecules, **generic stock
+   photography of people in white coats** — differentiate nobody and mean nothing. What works: clean
+   typographic hierarchy, meaningful white space, and **imagery specific to the actual work** (real
+   equipment, real facilities, real people). Where original photography does not exist, good scientific
+   illustration or clear data visualisation beats stock. Colour is a functional choice, and its only
+   test is whether it supports the message.
+6. **Technical content needs depth levels** — a plain-language summary at the top, then progressive
+   disclosure for the specialist (our `<details>` FAQ and the preparation tabs are exactly this).
+7. **For testing labs, the conversion path must be explicit.** Visitors arrive knowing roughly what they
+   need and then meet a generic "Contact us", a phone number and a PDF with **no guidance on which to
+   use or what happens next**. Saying what information is needed, **what happens after submitting**, and
+   what the turnaround looks like reduces friction and raises the quality of enquiries. His sentence,
+   kept in English because it is the rule: **"People don't fill out forms when they're uncertain about
+   what comes next."**
+
+Any lab/clinic **SEO** work follows from here too: a commercial lab has real, addressable local search
+demand (specific tests, service areas) → structured service pages plus local presence
+(`AMK-SEO-PLAYBOOK.md`), not generic keyword pages.
+
+### 24.5 What changed on UNI-LABO the same night (23 Sep 2026, `demos/concept-unilabo-v1.html`)
+
+| Lesson | Change, verifiable in the file |
+|---|---|
+| §24.1.5 — bigger type on mobile | the body copy stopped being hard-coded at `16px` and now takes the scale: **17 px below 760 px**, 16 above |
+| §24.1.3 — the button window | `.btn` 44 → **48 px** desktop, **52 px** on mobile; the sticky bar **56 px** (inside 52–64) |
+| §24.1 (onboarding) — the checkbox must be seen | 17 → **21 px** under 760 px; the tappable row stays 44 px and remains the real target |
+| §24.3.1 + §24.1.1 — one primary | the bar carried three competing labels; it now carries **one primary (Prendre RDV / Book a visit)**, one secondary (WhatsApp) and **a phone icon** with a bilingual `aria-label` |
+| §24.2 / §24.1 — the mobile hero | on a phone the **sheet comes before the photograph** in the hero: the object first, the décor after |
+| §24.3.4 — weight, not dimensions | every photo ships a light variant chosen by `srcset`/`sizes`: **a phone downloads 193 KB instead of 482 KB**; the font request lost 3 unused weights (8 → 5) |
+| §24.4.7 — what happens next | the form now says the message goes **from your WhatsApp to the lab's, which replies to confirm the time** — no invented delay |
+| §24.4.5 — specificity over cliché | noted as the first thing to replace with the lab's own photographs; the generated set stays labelled "mise en situation" |
+
+**The lab question this section creates (for Friday, 13 h):** 《 avez-vous une autorisation ou un agrément
+du ministère de la Santé, et une inscription à un contrôle de qualité externe ? 》 — §24.4.3 says those
+signals belong above the fold; §13 says we may not draw them. So it is a question with a price attached:
+a credibility strip is a real deliverable, and it belongs to the client's own facts.
+
+### 24.6 Two conflicts, arbitrated in writing (never silently)
+
+- **"Avoid sticky elements on mobile" (Malewicz) vs our bottom bar.** Arbitration: the rule targets
+  **chrome** — logo, menu, navigation pinned while scrolling. Our bar carries the page's single job
+  (get in touch) for a market where the phone call and WhatsApp *are* the conversion, and it sits in the
+  thumb zone (§24.3.2). **The bar stays. The navigation never sticks** — and the sticky chrome is exactly
+  one row, never a header.
+- **"More than two fields on mobile loses the conversion" vs a booking that needs three answers.**
+  Arbitration: **two of our three required interactions are taps** (a test, a time), and the fourth
+  field is optional and says so. The rule that survives is the one we will hold: **never add a fourth
+  required field**; if a future form needs one, it converts first and asks later.
+
+### 24.7 Honest limits
+
+- Nothing here was **seen**. No browser exists in this sandbox: the changes above are structural and
+  checkable in code (`tools/qa/audit_page.py`, `audit_html.py`, `check_inline_js.py`, and the two suites
+  in `tools/qa/test_unilabo_page.mjs`). **The phone check remains King's** — and §24.3.5 now names what
+  that check is: night, sunlight, Android, iOS.
+- "Each panel must be a poster" is a criterion for a human eye, not an assertion we can make.
+- Flux Academy's 10 examples are foreign, image-heavy studios and brands. The **mechanics** transfer
+  (columns, ratios, hierarchy, white space); the **décor does not** — our clients are a lab and a
+  cabinet in Douala, and §3.7's ban on borrowed imagery stands.
+- Malewicz's numbers (48–52 / 52–64 px, 32 px checkboxes, ~420–450 px) come from product landing pages
+  and app onboarding. We adopt them as **defaults with a stated reason**, not as measurements of our own
+  traffic — we have no traffic yet.
+
+---
+
 ## SOURCES
 - `design/vendor/bergside-skills/` — github.com/bergside/awesome-design-skills (TypeUI), 67 SKILL.md + DESIGN.md pairs, MIT (see `design/vendor/LICENSE-bergside`)
 - `design/vendor/taste/skills/` — github.com/Leonxlnx/taste-skill: taste-skill, redesign, output, brandkit, imagegen web/mobile, image-to-code, stitch, soft/minimalist/brutalist, MIT (`design/vendor/LICENSE-taste`)
@@ -843,5 +1274,1064 @@ In this market nobody fills a calendar. The assistant's job is to end with **Wha
 - AMK playbooks: `design/WORKFLOW.md` (pipeline), `design/STYLE-TOKENS.md` (vertical starters + rotation ledger), `design/MOTION.md` (motion standard)
 - YouTube lesson batches [18][19] (footers, 17 Sep 2026) → this file §20; full log + rejections in `research/YouTube-Lessons.md`
 - YouTube lesson batch [20] (talking websites / voice, 18 Sep 2026) → this file **§21**; offer-model decision in `sales/Voice-Offer-Decision-2026-09-18.md`
+- YouTube lesson batch [21] (local SEO, 21 Sep 2026) → `AMK-SEO-PLAYBOOK.md`; log in `research/YouTube-Lessons.md` Lot [21]
+- YouTube lesson batch [22] (interaction contract / invisible timeline / design psychology, 23 Sep 2026) → this file **§22**; full log + junk filter in `research/YouTube-Lessons.md` Lot [23]; page portico `tools/qa/audit_page.py`
+- YouTube lesson batch [24] (design styles / the star / the anchor font, 23 Sep 2026) → this file **§23**; log in `research/YouTube-Lessons.md` Lot [24]; the AEO half of the same batch (Wes McDowell) → `AMK-SEO-PLAYBOOK.md` **§8**
+- YouTube lesson batch [25] (mobile conversion / mobile excellence / mobile-first 101, 23 Sep 2026) → this file **§24**; log in `research/YouTube-Lessons.md` Lot [25]; the lab vertical in the same batch is Thomas Digital's *40 of the Best Lab Websites* (thomasdigital.com), a **competitor page** — read for the seven principles, not for its portfolio
+- YouTube lesson batch [26] (hero systems, code-alongs, Google Maps prospecting, 24 Sep 2026) → this file **§26**; log in `research/YouTube-Lessons.md` Lot [26]; the machine check that came out of it is `tools/qa/audit_hero.py` + `tools/qa/test_audit_hero.py`; the prospecting half is `sales/APPELS-GOOGLE-MAPS-2026-09-24.md`
+- **§25 rebuild of 24 Sep 2026** (not a video batch — King's verdict on the §24 page, with anresco.com and animate.bio as references) → this file **§25**; the page itself is `demos/concept-unilabo-v2.html`, its audit trail is §9 of `clients/uni-labo/AUDIT-2026-09-23.md`, and the contract it must keep is now checked by suite 0 of `tools/qa/test_unilabo_page.mjs`
 - **§21 browser-support matrix (checked 18 Sep 2026):** addpipe.com "A Deep Dive into the Web Speech API" (Chrome 139+ on-device recognition, mobile matrix) · vocafuse.com "Web Speech API vs Cloud APIs" (free/no-key, audio sent to vendor servers, cloud at $0.006–0.024/min) · testmuai.com "Speech Synthesis API: Browser Support" (synthesis matrix, Firefox-Android gap). **No source was found for recognition accuracy on Cameroonian accents — that gap is stated in §21.2, not filled by assumption.**
 - In-house references: `sales/Monday-Outreach-Pack.md` (Concept Production Standard), `site/design-research.md` (AMK site research), OraCare v2/v3 (reference-override case studies)
+
+---
+
+## §25 PHOTOGRAPHS MUST CARRY ONE MEANING — the UNI-LABO rebuild (24 Sep 2026 — commit `e936a03`, 00:03 à Douala)
+
+**Origin, verbatim.** King looked at the mobile pass of §24 and said: *« the page isn't mobile friendly, the
+pictures seem to have spoiled everything, redesign the site from scratch »* — with six screenshots of
+**anresco.com** (an American laboratory) and **animate.bio** as the references. The rebuild is in
+`demos/concept-unilabo-v2.html`; the audit trail is §9 of `clients/uni-labo/AUDIT-2026-09-23.md`.
+
+**Why this section exists.** §24 was correct on every mobile measurement — 17 px body, 52 px buttons,
+193 KB of images, 23 green assertions — and the page was still rejected. The lesson is not "measure more".
+It is that **we were editing elements while the client was judging a composition.** Eight photographs in one
+page, four of them full-width bands, some with text laid over them, means three screens of photo and one of
+content on a phone. Pictures had stopped being evidence and become the page.
+
+### 25.1 The rule
+
+**One photograph, one meaning — and if it carries none, write a sentence instead.** Before an image goes in,
+finish this line out loud: *this photograph is here because it shows `______`.* If the blank holds "it looks
+professional", "it fills the space", or "the page looked empty without it", the answer is text, a table, or
+nothing. On UNI-LABO the count went 8 → **5**, and each survivor names something: biochemistry, haematology,
+serology, hormonology, and preparation at home.
+
+### 25.2 Corollaries that decided the rebuild
+
+1. **No text over a photograph, ever.** A photo is a variable surface — a phone in sunlight, a cracked
+   screen, a slow connection — and text on it is the first thing to disappear. It was also the one thing the
+   reference does that we must not copy for this audience.
+2. **The hero may have no image at all.** A dark, typographic hero is a design decision, not a missing
+   asset. If no honest photograph exists for the first screen, a generated one at that size is a lie of
+   omission.
+3. **Every staged image says so, in the caption.** « Mise en situation. La photo définitive sera prise dans
+   votre laboratoire. » It is honest, and it is an argument: photography is not in the 150 000.
+4. **Cut the files to the ratio the page declares.** UNI-LABO's tiles are declared 16/10 and the files are now
+   cropped to exactly 1024×640 — no surprise recrop in the browser, and the phone variant (`-sm`, 640 px)
+   plus the full one together weigh less than the old set (167 KB vs 193 KB on a phone; 394 KB vs 676 KB on a
+   laptop).
+5. **A `<details>` is a mobile control.** Five preparation panels became five native accordions: no chips to
+   hunt for, keyboard and screen-reader behaviour included, zero JavaScript. Reach for the element before
+   reaching for a script.
+
+### 25.3 "Redesign from scratch" does not mean rewriting the contract
+
+The order was to rebuild the site, and the tested machinery was kept **word for word**: the two JavaScript
+blocks were extracted from the previous file (`tools/qa/extract_unilabo_js.py`) rather than retyped, and the
+client's own content — four test families, five preparation panels, five questions, access, hours — was
+carried over unchanged. The rebuild replaced the shell.
+
+**Then we made the guarantee checkable.** The harness gained a **suite 0** that reads the page's HTML and
+refuses a file that no longer carries the contract the JavaScript needs: eighteen ids, the `.chips` class,
+`data-fr`/`data-en`/`data-prep` on every checkbox and moment, `data-alt-*` on every image, WhatsApp links
+pointing at the laboratory's number, exactly one `h1`, and no link whose text was encoded twice.
+42 assertions, green. That is what makes a from-scratch
+rebuild safe: the shell can change completely, and the page still cannot go mute.
+
+### 25.3.bis The language of a message is the sender's choice
+
+A bilingual laboratory does not make the visitor bilingual. The rebuilt page gives every static WhatsApp link
+its message in **both** languages (`data-fr-text` / `data-en-text`) and a third, written-for-the-rebuild
+script swaps it when the page is read in English; the HTML always carries a real, working link (French, the
+language of the staff) so the page works with JavaScript off. And the encoding rule from the rejected file is
+now enforced by the harness: one apostrophe, encoded once. Its old links carried `d%26%23x27;`, which landed
+in WhatsApp as `d&#x27;` in front of the patient.
+
+### 25.4 Mobile-first, stated as a rule for the CSS
+
+Write the **single column as the default** and let `min-width` media queries *add* columns — never the
+reverse. One typographic scale that **grows** on small screens (`clamp`), one violet, one accent green
+reserved for sending actions. On UNI-LABO the only breakpoints are 560 / 760 / 820 / 900 px, and every one of
+them adds layout rather than shrinking it.
+
+### 25.5 Honest limits
+
+No browser exists in this sandbox: the rebuild was verified by the portico (`0 findings`, `--strict` rc=0),
+the HTML analyser (385 text runs, 0 findings), the inline-JS compiler (6 blocks, 0 faults), the 42
+assertions, and a byte-for-byte comparison of the hosted copy. **King's eye is still the judge** — and this
+time it had already spoken once. The next honest step is five real photographs taken in their laboratory, on
+their own bench, replacing ours.
+
+---
+
+## §26 THE FIRST SCREEN — and what a code-along really teaches (24 Sep 2026, learning batch [26])
+
+**Origin.** King's morning learning batch: five videos. Three of them carry real speech and are absorbed
+below (**26.1–26.4**); two are UI UNIVERSITY code-alongs whose captions contain nothing but music
+(verified twice, on YouTube and on the transcript site) — for those, I read **the code in the repositories
+their descriptions link to**, which turned out to be the more useful lesson. The full log, with quotes and
+the discarded junk, is **Lot [26]** of `research/YouTube-Lessons.md`. The machine check that came out of it
+is **`tools/qa/audit_hero.py`** (+ `tools/qa/test_audit_hero.py`).
+
+### 26.1 The grammar of a hero (39 layouts, two videos by Payton Clark Smith)
+
+1. **Text left, image right.** Our reading order is left to right: an image on the left is looked at
+   first and the headline loses the race. Reverse only when the image *is* the product.
+2. **Never text on a photograph.** Both the video ("old school", "makes websites feel outdated", the
+   call to action disappears) and King ("the pictures seem to have spoiled everything") say the same
+   thing from two directions. It is a legibility defect, not a matter of taste.
+3. **An image cut by the fold is an invitation to scroll.** Make it deliberate: the photo continues past
+   the bottom edge, or a line runs from one image into the next.
+4. **Social proof belongs *below* the hero**, given room. Inside it, it competes with the headline.
+   (And when there is no proof, there is no section: we never fabricate reviews.)
+5. **Centre only short text.** Two sentences and it must go back to the left.
+6. **No hamburger on desktop.** It hides navigation that fits. One honest exception: a single-purpose
+   sales page where you *want* people to stay.
+7. **Depth tricks worth reusing**: a column that swallows the nav bar; an image that overhangs its
+   column; and above all, **the image space telling a process** rather than showing stock.
+8. **A row of figures** (price · turnaround · users · rating) gives a hero substance without a
+   photograph. For a laboratory, the honest version we already have: hours, preparation, turnaround
+   confirmed on site, languages.
+
+### 26.2 What a code-along teaches (and what it does not)
+
+The two UI UNIVERSITY tutorials produce a spectacular hero and ship code that fails our own checklist.
+Read line by line, their repositories contain four defects:
+
+| defect | why it matters | our rule |
+|---|---|---|
+| `h1::before{content:'The'}` — real words in CSS | invisible to screen readers, to search engines, and to Ctrl+F; **the headline is not in the document** | text lives in the HTML. CSS may draw rules and marks, never words |
+| `height:100vh` + a 180 px (or 222 px) headline + **zero `@media`** | perfect on the maker's screen, broken on a phone — the exact complaint King made about our own page | single column by default; columns added by `min-width`; type that grows on small screens (§24, §25.4) |
+| `@keyframes` moving `bottom`/`top`, no `prefers-reduced-motion` | animating layout properties burns battery and drops frames; motion-sensitive visitors are ignored | animate `transform`/`opacity`; always honour `prefers-reduced-motion` |
+| lorem ipsum and `{{PLACEHOLDER}}` in the shipped HTML | "Jane Doe" effect (§3.6) | no placeholder text in anything a human will open |
+
+**The transferable lesson: the gesture is kept, the code is thrown away.** A tutorial that shows a
+beautiful result is not a quality reference. Which is why these four defects are now **detected by a
+tool**, not by memory: `python3 tools/qa/audit_hero.py --strict <pages…>` fails on any of them, and
+`python3 tools/qa/test_audit_hero.py` reproduces the two faulty tutorials on purpose to prove the check
+still bites. (Verified red on both tutorials, green on `site/index.html` and every demo.)
+
+### 26.3 The prospecting lesson, kept where it belongs
+
+Video 26.5 of that lot is about **getting clients from Google Maps**: three targets (no site or
+broken site · outdated site · recent negative reviews), the mobile-first ranking, and the honest
+observation that the first fifty calls are awkward for everyone and consistency is what separates you.
+Two of the three targets we already work better than the video (we audit before we approach). The third
+is new to us and lives in `sales/APPELS-GOOGLE-MAPS-2026-09-24.md`, with one rule I refuse to break: we
+never promise to remove a review. And its "free website + monthly fee" advice is recorded as a decision
+for King, **not** applied: our rule is no discounts, adjust the scope instead.
+
+### 26.4 Honest limits
+
+The hero grammar comes from two videos about other people's websites in other markets. It is vocabulary,
+not proof: nothing here says a Cameroonian clinic converts like a US SaaS page. What we adopted is the
+part that is structural (reading order, legibility, mobile-first, the fold) and the part that is
+mechanical (the four defects above, now automated). **The eye that decides remains King's** — and the
+next build it will be applied to is the school in October, on a blank page, not by re-opening a page
+that was just approved.
+
+## §27 ACCESSIBILITY — the level we promise, and the four things a machine cannot check (24 Sep 2026, learning batch [27])
+
+**Origin.** King: *« start with accessibility, I guess you will do research online, I'll add what I can
+find »*. The batch began with the two sources he sent — a Silktide explainer on the three levels and
+**Accessible Web's course of 55 videos, one per success criterion** — and continued into the two
+authorities: the **W3C** specification and quick reference, and **MDN**'s guides on keyboard access and
+accessible names. Full log with sources: **Lot [27]** of `research/YouTube-Lessons.md`. What came out of
+it: this doctrine, a machine check — **`tools/qa/audit_a11y.py`** (+ `tools/qa/test_audit_a11y.py`) — and
+**eleven real defects repaired on pages we had already shipped**. A checker that finds nothing on your own
+work was not worth writing.
+
+### 27.1 The level we promise is AA, and we say the number out loud
+
+Silktide names the three levels the way a client hears them: **A is "must do", AA is "should do", AAA is
+"reaching for the stars"** (sign-language video, 7:1 contrast everywhere, 44 px targets everywhere). AAA
+cannot be honoured by a commercial page and no laboratory or school here would pay for it. **AA is the
+level a law, a tender or a ministry asks for.** So we state **WCAG 2.2 level AA** — and always
+**standard + level**, never the adjective alone. "Our sites are accessible" is a claim; "built to WCAG 2.2
+AA, checked criterion by criterion" is a sentence that survives a question.
+
+### 27.2 The shape of an audit: one criterion, one number, at a time
+
+The useful thing in a 55-video course is not any single video, it is its **form**: 55 criteria, each one
+tested on its own, in order, and written down. That is how an audit is read, and how it differs from an
+opinion. Every line our checker prints therefore carries its number — `[1.1.1]`, `[2.4.7]`, `[3.3.2]` —
+and it prints what **passed** as well as what failed. A report that only lists faults cannot be trusted by
+the person who has to sign it.
+
+### 27.3 The four principles, mapped to what we actually test
+
+| principle | what it protects | criteria we test in code |
+|---|---|---|
+| **Perceivable** | seeing and hearing the content | `1.1.1` every image has an alt, and the alt is not a filename ("hero.jpg") or a filler word ("image"); `1.4.4` the viewport never blocks zoom; `1.4.10` no fixed 4-digit width without a media query; `1.4.13` nothing appears on hover only |
+| **Operable** | using it without a mouse | `2.1.1` no `onclick` on a non-interactive element; `2.4.3` never a positive `tabindex`; `2.4.7` `outline:none` demands a visible replacement; `2.5.8` targets ≥ 24 px; `2.2.2` no infinite animation without `prefers-reduced-motion` |
+| **Understandable** | knowing what is happening | `3.1.1` a `lang` on `<html>` (and the page sets it when the visitor switches language); `3.3.2` every field has a **associated** label — a placeholder is not a label; `3.3.1` a live region announces what happens after a click |
+| **Robust** | working with the tools people own | `4.1.2` every button has a name — an icon-only button needs `aria-label`, and text injected by JavaScript counts as no text at all |
+
+Four of these were found **on our own pages**, and they are the kind of thing nobody sees until someone
+looks for it: a form whose two labels were sitting next to the fields instead of attached to them; a mobile
+menu that did not announce it was open (and that the Escape key could not close); a language switch that
+did not say which side was active; a footer jumping from `h2` to `h4`; and ten decorative icons read aloud
+as "image" before every link. **And two more were caused by the corrections themselves** — a heading pair
+broken by a find-and-replace, and a status region whose `id` did not match the one the JavaScript looked
+for, so that a well-meaning accessibility fix silently did nothing at all. The static checker caught the
+first, a small DOM-level behaviour test caught the second. *The control caught the corrector, twice.*
+
+### 27.4 The four things a machine cannot check — and who checks them
+
+1. **Contrast.** Already covered elsewhere: `tools/qa/audit_html.py` computes the WCAG ratio of every text
+   run from the file's own CSS, in desktop and mobile contexts. Same standard, different tool.
+2. **The real tab order.** No script here has a browser. We can prove there is no positive `tabindex` and
+   that a focus style exists; that the order *feels* right needs a keyboard and a minute of patience.
+3. **200 % zoom / a narrow screen.** The reflow criteria are checkable in CSS, but nothing replaces looking.
+4. **The quality of an alt text.** This one we did not leave to a rule. The four family photos on the
+   UNI-LABO page carried the alt *"Photo d'illustration de laboratoire — Biochimie"* — which repeats the
+   tile text printed right underneath and tells a blind visitor nothing about the picture. **We opened the
+   four images and wrote what is actually in them** ("Six blue-capped tubes of yellow liquid in a purple
+   rack, with a micropipette lying beside them"). The rule is: describe the photograph, do not repeat the
+   label that is already next to it. *(A person still has the last word — the images and their alts are in
+   `demos/_unilabo_v2_content.py`, four lines, easy to correct.)*
+
+### 27.5 An automated accessibility test lies in both directions — so it is tested too
+
+Six false positives turned up the first time the checker ran on real pages, and all six were fixed in the
+tool rather than tolerated: an icon-only link that *did* carry an `aria-label`; a 19 px icon **inside** a
+button (the target is the button, not its glyph); a free-text field with no `autocomplete` (criterion 1.3.5
+only concerns data with a known meaning — name, e-mail, phone); a colour change on hover (that is not hidden
+content); an icon inside a link that is already named; and **two buttons reported as nameless when the name was
+right there** — one in an `aria-label` attribute, one in a visible `<span>`. That last one is the most
+instructive of the six: it was written into a report before anyone checked it, and it produced a "fix" that
+removed a perfectly good bilingual label and replaced it with a frozen one. **A false positive costs more
+than a missed defect, because it makes you change something that was right.** And one false **negative**: `a:focus{outline:none}`
+was satisfying our own "there is a focus rule" test — the exact rule that removes the focus ring. Lesson,
+now written into `tools/qa/test_audit_a11y.py`: **a checker is only trusted once it has been shown to
+refuse a deliberately broken page, to accept a deliberately clean one, and to run without complaint on our
+own pages.**
+
+### 27.6 What this is worth commercially, in one honest paragraph
+
+No Cameroonian law obliges a laboratory or a school to be accessible today, so **the reason to do it is not
+the law, it is the visitor**. The same work that a blind patient needs — real text instead of text inside an
+image, labels attached to fields, a page that survives 200 % zoom, targets big enough for a thumb, text that
+reads in bright sun on a cheap screen — is what everyone needs on a 3G phone in Bonamoussadi. It is also the
+one visible quality difference between our 150 000 FCFA page and a template, and it costs nothing extra to
+keep. For the October school, it becomes an argument: a school that receives parents with disabilities is
+not served by a site those parents cannot use.
+
+**What we do NOT claim:** that a page passed "an accessibility audit". We claim what we ran, on which
+criteria, and we say which four things still need a human eye. §26 ends on the same note: the eye that
+decides remains King's.
+
+## §28 WHAT A SCREEN READER HEARS — the second accessibility batch (24 Sep 2026, learning batch [28])
+
+**Origin.** The day the accessibility report was published, King sent exactly the two things it named as
+missing: **a real screen-reader test** and **forms**. Four sources: a full NVDA tutorial, a French article on
+accessible forms and error messages (Kortic), an NVDA add-on that imitates TalkBack's per-object sounds, and
+a WhatsApp help-centre page. Lot [28] of `research/YouTube-Lessons.md` holds the detail. One of the four
+could not be read at all (the WhatsApp page answers **403** to our fetcher, and this sandbox has no
+command-line network) — **so it is written down as unread rather than summarised from memory.**
+
+### 28.1 A page can be perfect in code and mute in the ear
+
+The NVDA tutorial does one thing better than any specification: it plays **the same form twice** — once as
+the author built it, once as Apple did — and lets you hear the difference. On the faulty form the screen
+reader announces *"page blank"* on a page that visibly contains a whole form; the radio buttons are read as
+*"personal radio button, one of two"* with **no group name**; the terms checkbox is announced *"blank"*; and
+when the form is submitted with a missing field, **no error is announced at all**. Every one of those is a
+criterion we already check statically — but here is what they *sound* like, which is the only way to judge
+whether a page works for someone who cannot see it. Two batches, two independent roads to the same sentence:
+**the machine checks the code, a person checks the ear.** There is no tool that listens for us.
+
+### 28.2 Landmarks: the first thing to break, and the cheapest to fix
+
+The tutorial's very first finding is the worst one, and it is invisible: **no landmark means the screen
+reader finds nothing in the middle of the page.** It reads the header, the menu, the footer — and calls the
+page blank. Our site's three pages had **no `<main>`** at all. They have one now, and NVDA's `D` key has
+somewhere to land. This is also why the skip link matters (`2.4.1`, **level A**, not a nicety): the second
+press of a key should not be the only way past a menu.
+
+### 28.3 A group has to say what it is a group of
+
+Nineteen checkboxes for nineteen analyses, each individually perfectly labelled, can still be an
+inaccessible form: the reader announces *"Biochemistry, checkbox, not checked, one of nineteen"* and never
+says **what the nineteen belong to**. A `<fieldset>` with a real `<legend>` fixes it — UNI-LABO has had
+both since the rebuild (`1 · Vos analyses`, `3 · Moment souhaité`), and our checker now refuses a
+`fieldset` whose `legend` is empty. The rule: **a label names the field; a legend names the question.**
+
+### 28.4 Errors are part of the interface, not an afterthought (Kortic)
+
+Anthony Ladeuil's article is the best French-language treatment we have found of the part everyone skips.
+What we adopted, in his order:
+
+1. **A label, linked and adjacent** — and **the placeholder is not a label**: it disappears as you type,
+   and its contrast is usually too low to read. (`1.3.1`, `3.3.2`)
+2. **Announce the expected format** — and for dates, never as `jj/mm/aaaa`: a French voice reads that as
+   *"gigi barre oblique aime aime barre oblique ah ah ah ah"*. Give a real date. *(This line alone was worth
+   the article.)* 
+3. **`type` and `autocomplete`** — they bring the right keyboard on a phone and let the browser help instead
+   of making a thumb do the work. (`1.3.5`)
+4. **`fieldset` + `legend` for groups**, as above.
+5. **No CAPTCHA** if it can be avoided (a honeypot instead) — CAPTCHAs are where accessibility goes to die.
+6. **Mark the optional fields, not the required ones.** The asterisk is a 1999 habit: it does not vocalise,
+   and its meaning has to be explained *before* the form, which nobody does. Our own form had a naked
+   asterisk on "School or clinic name" with no explanation anywhere. Now the one optional field says
+   *(optional)* and the required one says nothing — which, in a two-field form, is all it needs.
+7. **The error summary**: a container that receives focus, one line per error, and — the good part — each
+   line is **a button that takes you to the offending field** and marks it `aria-invalid`.
+
+### 28.5 The defect that was in our own form, and it was the exact one described
+
+Our site's form had `if (!biz) return false;`. Click "Get my free preview" with an empty name and **nothing
+happens**: no message, no focus, no announcement. That is the tutorial's *"it does not introduce an error
+message… only says blank"*, written by me, in production, on the page we send to every prospect. And there
+was a nastier corner: a field filled with **spaces** passes the browser's native `required` check, so the
+JavaScript was the only safety net — and it stayed silent. Fixed the way both sources describe: the live
+region announces what is missing, the field is marked `aria-invalid`, and **focus moves to it**. The
+behaviour test now asserts all of it, including the spaces case, because this is exactly the kind of "fix"
+that can look right in a diff and do nothing at runtime.
+
+### 28.6 TalkBack is the reader our market actually has
+
+The third source is a small NVDA add-on that reproduces TalkBack's sound per object. The add-on itself is
+not what matters — what matters is what it imitates: **on Android, you explore element by element, with a
+sound for each object.** Anything not reachable by swiping does not exist. That sentence should sit next to
+every design decision we make, because the phone in Bonamoussadi runs Android, and the same work that serves
+a blind patient — real text, attached labels, one message per element — is the work that serves everyone on
+a 3G connection. Which is why the protocol below ends on the only question that pays our bills: **does the
+double tap open WhatsApp?**
+
+### 28.7 The protocol, and its limits
+
+**`tools/qa/PROTOCOLE-LECTEUR-ECRAN.md`** — a 5-minute manual test: what to install, the eight keys that
+matter, *what we should hear on our own pages* (with the real counts: 44 headings and 42 links on the site;
+"*1 · Vos analyses, group of checkboxes, 1 of 19*" on UNI-LABO), the TalkBack gestures, and where to write
+the result. Its §6 states the limits: **neither of us is an experienced screen-reader user** — we test the
+mechanics, not the lived experience — and we never test on the client's real page. What we write is what we
+heard, on which page, with which version. Same rule as every other measurement in this repo: **a number you
+did not take yourself does not enter a report.**
+
+## §29 THE HERO, SECOND PASS — the process, the gaze, and the 90/10 (24 Sep 2026, learning batch [29])
+
+**Origin.** Five videos from King, all about the first screen: three from **Flux Academy** (1.09 M
+subscribers — a process video, 21 real layouts, and episode 10 of their web-design course), one from
+**Ahmed Alsayad** (conversion blueprint, with a to-do list), one from **Malewicz** (25 years of design,
+500 hours of Hotjar recordings). Full log: **lot [29]**. Unusually, this batch **overlaps** the hero batch
+already absorbed in §26 — so this section is written as *what the first pass did not have*, not as a
+second telling.
+
+### 29.1 What is genuinely new
+
+§26 (Payton Clark Smith, 39 layouts) gave the **grammar**: text left by default, never text on a photo, an
+image cut by the fold invites scrolling, social proof belongs below, a hamburger on desktop is a fault.
+This batch adds four things that are not in it: **the process that produces a hero**, **the mechanics of
+directing an eye**, **the division of labour between the hero and the rest of the page**, and **the
+cognitive-load failure**. Two of those are now machine-checked.
+
+### 29.2 The process — and why a grey wireframe fails with real clients (Flux Academy)
+
+Six steps, in this order: **strategy → wireframe → 3 concepts → imagery → design → optimization**.
+
+The strategy step is a conversation with the client, and its questions are the ones we should be asking
+anyway: *what are you selling, why did you start this, who are you trying to help, what should people do
+on this site*. Flux distils the answers into **one clear value proposition and one action** — before
+opening a design tool.
+
+Then the wireframe, and here is the sentence worth keeping: **the wireframe is not pretty and is not
+supposed to be.** It is the content, placed, so the client can say *yes, that is what we do* before anyone
+argues about colours. And the second sentence, which contradicts the first: clients do not understand
+grey boxes. Malewicz calls his answer **type framing** — start with the copy at real size and real
+hierarchy, then choose the visual to match the copy, never the other way round. Applied to us: when we
+show a laboratory or a school its own hero, the words are already theirs (that is the live sheet), so
+what we are really asking is *does this say what you do* — the fastest approval we have ever got.
+
+The step we were skipping: **three rough concepts, sketched with shapes, before any design.** The point is
+not decoration, it is to check *whether there is room for the text next to the image* — a hero concept
+that only works with the text on top of the photo dies here, on a napkin, instead of after a rebuild. We
+already do three directions in the uniqueness protocol (§2 of `PRE-FLIGHT.md`); this makes it three
+*drawn* concepts, shown to the client, before the build.
+
+Finally, optimization: *free* ("join for free"), **social proof with a number and faces**, "featured on"
+logos, and a **ghost button** for the secondary action so it does not compete with the primary one.
+
+### 29.3 The anatomy, and the charge mentale (Ahmed Alsayad)
+
+The hero carries five elements: **headline, subheading, visual, trust signal, call to action** (primary,
+plus optionally a secondary). The purpose is a single sentence repeated in different words by every source
+in this batch: *what is this, who is it for, what do I get, why should I care* — answered in the time it
+takes someone to decide whether to stay (Flux's **15-second rule**: 80–90 % of visitors leave before that).
+
+The failure mode he names is the one our own pages could fall into: **cognitive overload**, which he
+defines precisely as *the visitor is given many options and therefore chooses none*. Its symptoms are all
+mechanical: several CTAs, several colours, no clear hierarchy, everything crowded in because "this is the
+hero, let's put it all here", and — worse — **hidden CTAs**. His second family of faults is more
+instructive because it looks successful: the award-chasing hero. Heavy parallax "looks great when you
+showcase it, but it either kills usability or kills performance"; clever headings that are not clear;
+background video and 3D. *It wins a prize; it does not get a client.*
+
+So five of his rules became checks in `tools/qa/audit_hero.py`: a hero with **no subheading**, a hero with
+**no action at all**, a hero with **more than two actions**, an **icon-only logo**, and a hero locked at
+`height:100vh` with nothing (an arrow, a word, the top of the next section) to say that there is
+something below.
+
+### 29.4 Directing an eye — three mechanical techniques (Malewicz)
+
+This is the part we cannot check in code and should apply the next time we shoot a photograph or pick
+one. All three are concrete:
+
+1. **The gaze principle.** A person looking at the camera puts the attention on their eyes. A person
+   looking *towards* the copy or the button makes us follow their gaze to it. On mobile, the same photo
+   recropped so the person looks **up** at the CTA puts the reader's eye exactly where we want it —
+   and this is why the pivot from phone screenshot to a real photo matters: we can control where a person
+   is looking, we cannot control where a screenshot points.
+2. **The optical guide.** The right edge of a block of text, if it forms a soft diagonal, is a funnel
+   that leads the eye down to whatever is next. A jagged edge is a wall.
+3. **CTA colour matching.** Take the colour of the main button, find it in the photograph — *recolour a
+   garment to a hue near it*, keep every other garment muted (colour the whole outfit and it reads as a
+   uniform). The visual then connects to the action subconsciously instead of by decoration.
+
+The trend he warns against is exactly the one that costs us nothing to avoid: **gradient shapes and
+lighting effects instead of people**. "It has nothing to do with amplifying the message… it is just a
+distraction." And the image that works is not the prettiest one: it is the one whose person **matches the
+target audience** ("it can't be a random image") — King said the same thing on 24/09 about the house in a
+generated photo, from the opposite direction.
+
+### 29.5 The 90/10 rule, or why our proof is not in the hero
+
+Malewicz, from 500 hours of session recordings: **the hero does 90 % of the persuasion; the remaining 10 %
+is done below it by "clearing doubts"** — social proof, examples, use cases. One confirms a sale only
+when the two are added together. This is precisely why §26 already put social proof *below* the hero, and
+why our pages are built the way they are: the hero states one thing, and the sections underneath answer
+the objections (the live sheet, the results, the five questions). **A hero that tries to carry the proof
+as well as the promise is a crowded hero** — the fault in 29.3, arriving from the other direction.
+
+### 29.6 "Do not put your app in the hero" — and why we are the exception
+
+Malewicz's most contrarian rule: a big screenshot of the product in the hero is often *bad*, because the
+visitor does not know your product and does not care how it looks. Show a person and the problem being
+solved; show one small panel if you must; show the whole interface **further down**.
+
+That is a real trap for us — our concept pages sell *websites*, so their hero could easily be one enormous
+screenshot — and we are the exception for the reason §26 already gives: **an image may take the first
+glance when the image IS the product.** A screen of the site we built is the product; a dashboard is not,
+for someone who has never heard of the dashboard. Worth saying out loud in a meeting, because the two
+cases look identical on a moodboard.
+
+### 29.7 What we will not copy: the invented number
+
+Flux builds trust with "Obi-Wan and 4,000 others have already joined" and logos of TV stations. It works.
+We have no reviews, no client count and no press — and inventing any of the three is forbidden (and has
+been since the first day: no invented price, no invented testimonial). What we have is honest and
+checkable: **five real pages anyone can open**, the laboratory's own words, and the fact that the visitor
+is looking at their own future site. So "not yet" is written here for the day someone asks why our hero
+does not carry a row of numbers.
+
+### 29.8 Honest note: on 24/09 the audit found nothing on our pages
+
+Twelve checks (the five new ones included) run over the six pages we own: **zero findings**. The three
+site pages and UNI-LABO already answer who/where, carry a subheading, hold at most two actions in the
+hero, show the name next to the icon, and never lock themselves at `100vh` with no way down. That has
+never happened before in this repo — five batches in a row each found real defects in our own work. It is
+also not a reason to relax: the checks are from sources read the same day, and the next page (the school,
+in October) starts from a blank file, where none of this is inherited.
+
+---
+
+## §30 THE DEAD SKIP LINK, AND THE PAGE WE DO NOT OWN (24 Sep 2026, learning batch [30])
+
+King sent four links with no text: **three about the Google Business Profile** (Santrel Media, 1.13M —
+the step-by-step install; Ignite Visibility, 64.9K — twenty checkpoints; Zanet Design, 36.2K — a
+compilation billed as a masterclass) and **one about accessibility** (Imran Siddiq, Web Squadron, 195K —
+a full walkthrough built inside Elementor).
+
+### 30.1 · The skip-link lesson: present is not the same as working
+
+The accessibility video exists because the **European Accessibility Act** now pressures agencies. Imran
+does not hand out a checklist; he builds a page and shows the failures. The sharpest one is a failure our
+own control could not see:
+
+> He tabs to **“skip to content”**, presses Enter — and **nothing happens**. The link is there, visible,
+> in the tab order; its target is not. He demonstrates it across template types: default works, canvas has
+> nothing to skip, **full width shows the link and swallows the click**. His words: *“if your header
+> template was 50 % of your screen, they'll keep clicking it and they will get very frustrated and they
+> will lose trust in your website.”*
+
+That is worse than having no skip link at all, because a keyboard user pays the cost of trusting it. Our
+control said *compliant* on any page containing a `href="#"` and the word “skip” somewhere in the file — a
+link to nowhere passed. Since lot [30] it checks two things: **the target exists** (`#contenu` must be an
+id in the page) and **the link is reachable** (a rule that hides it must have a matching `:focus` rule
+that brings it back). Our pages pass on both counts, and the healthy test witness now carries the exact
+production pattern (`.skip{position:absolute;left:-9999px}` + `.skip:focus{left:0}`), so the guard rail
+locks the real thing instead of an approximation.
+
+Two neighbouring lessons from the same video, both turned into rules:
+
+- **A hidden label is allowed. An empty label is not.** *“If you hide the label … as long as it is
+  completed somewhere.”* A form now fails the audit if a `<label>` is empty even when the `for=` is
+  correct — the field would be announced with no name.
+- **Contrast depends on size.** His colour-picker demo: a pinkish red fails at 16 px, passes at 24 px,
+  fails again at 23 px. `audit_html.py` has applied exactly this since we built it — 4.5:1, dropping to
+  **3:1 at 24 px or at 18.66 px bold** — and it composites opacity before comparing. The video confirms
+  our number; it does not change it. **We deliberately did not add a second contrast check**: two
+  instruments measuring the same thing eventually contradict each other, and the honest place for that
+  number is the tool that already computes it from the file's own CSS.
+
+### 30.2 · What the video says that does not apply to us
+
+- **The accordion warning.** He shows that tabbing an Elementor accordion jumps from item 1 to the bottom,
+  skipping 2 and 3, and that only arrow keys work — so he injects an `sr-only` hint telling screen-reader
+  users to use arrows. That is a defect of an ARIA `tablist` pattern implemented as a widget. **Our FAQ is
+  ten native `<details><summary>` pairs per page** (five on the école page): every `<summary>` is its own
+  tab stop, tabbing moves through them in order, and no hint is owed. Rule kept for the day we build a
+  tablist: if we ever do, the hint is mandatory.
+- **Videos.** Captions are required, player controls must stay, and a **background video must offer a
+  pause** (he links a nine-minute video on how to add one). We produce and embed **no video anywhere**
+  (zero `<video>` elements across the pages), so there is no control to write today — a control over
+  content we never make is dead code. The rule is written here to be applied the first time a client hands
+  us footage.
+- **Icon names.** Social icons are ambiguous: does the Facebook icon share *this post*, or open *our
+  page*? His answer is `aria-label` when the icon is the only name. Our pages have one, three and two icon
+  links, all named — by `aria-label` or by visible text. **Checked, nothing to fix.**
+
+### 30.3 · The instrument lied for the fourth time
+
+My quick script announced “**2 icon links with no name**” on the école page. False: both are named by
+their **text** (“Recevoir mon aperçu gratuit”, “Aperçu gratuit 24h”), and the audit tool counts a name as
+attribute **or** content — the very lesson of lot [28]. Fourth occurrence of the same family, now with a
+rule attached: *a quick script of mine is not an instrument; if it accuses a page, the accusation is
+checked against the tool that has witnesses before anything is “fixed”.* Nothing was changed on the page.
+Nothing needed to be.
+
+### 30.4 · The Google profile is a page we do not own — and it is the first screen of local search
+
+The three Google Business Profile videos matter to us for one reason: **that profile is where a local
+client finds a business, and it is one click away from the page we sell**. Santrel says it plainly — people
+on Maps *“almost always go and click on the website link”* — so the profile is the door and our page is
+the room. Zanet sharpens it: **70 % of what Google serves a customer no longer goes through the website at
+all** (reviews, hours, photos, questions), yet the click that decides everything still lands on the site.
+
+Read as a designer, the profile is just another **first screen**, and the rules of §26/§29 apply to it
+unchanged:
+
+| our rule for a page | the same rule on the profile |
+|---|---|
+| one clear title, real words | the **name** exactly as it is — keyword-stuffing it is both what Google punishes and what we refuse to do for a client |
+| no invented claim | true hours, true service area, true category. All three videos warn about people faking a four-hour service radius; Google checks |
+| the hero carries the promise, the proof lives below (90/10, §29) | photo + category + hours carry the profile; **the reviews do the “clearing doubts” below** |
+| a photo must carry one meaning (§25) | the façade photo is the first thing seen on Maps: real place, real people, real work — and Google Images (“*trade + neighbourhood*”) is an honest way to see what Google rewards, in order to photograph one's own version of it |
+| write the words the customer uses | the description (750 characters) is the profile's about-page: services, neighbourhoods, verifiable history |
+
+And two rules of ours that the videos do **not** contain, kept explicitly:
+
+1. **We never script a review.** All three push towards guiding the customer's vocabulary (“ask them to
+   mention *fast service*”). We ask for an honest review, we show how to post it, and we stop there.
+   Buying one, rewarding one, or writing it for a client is a suspension risk for them and a lie for us.
+2. **We never sell a ranking.** Zanet sells SEO consultancy; his own material says Google weighs *“over
+   200 factors”*. We can keep a profile clean and complete, and we can say exactly what we changed. We
+   cannot promise a position in the top three, so we never put one in an offer.
+
+The operational version — install order, the thirteen suspension traps, the `wa.me` rule for the profile's
+WhatsApp chat, and what belongs to the client rather than to us — is in
+**`sales/FICHE-GOOGLE-PROFILE.md`**, written the same day.
+
+### 30.5 · What today's reading changed in the repository
+
+- 3 controls hardened in `tools/qa/audit_a11y.py` (dead skip link, unreachable skip link, empty label),
+  3 negative witnesses and 3 new assertions (26 in all) — see §30.1.
+- 1 invented hour replaced by a commit hour in 6 places (`00 h 30` → *nuit du 23 au 24, commit `e936a03` à
+  00:03*), plus the CRM source, rebuilt and re-locked.
+- 1 new operational document (`sales/FICHE-GOOGLE-PROFILE.md`), 2 meeting sheets cross-referenced.
+- 1 false claim of mine corrected **in writing** rather than deleted: I had written that UNI-LABO had a
+  Google listing “found by our Maps sweep”. The CRM line says `source: directory`, and the thumbnail I was
+  looking at is our own mock-up. The correction is dated in `sales/FICHE-GOOGLE-PROFILE.md` §1.
+- **Nothing changed on the pages themselves.** Four pages audited: 0 fault, 0 warning — before and after.
+
+---
+
+## §31 THE ANSWER, NOT THE ADJECTIVE — and the template that was about to become the shop window (24 Sep 2026, batch [31])
+
+King answered my note ("a fourth batch on Google Business Profile would not add much") by sending a
+fourth batch. **I was wrong, and it is worth writing down why**: the batch contained **Google's own
+developer documentation** — a different class of source, which turned four YouTubers' claims into
+checkable facts — and **one video on a subject nobody had covered**: Ahrefs' *Learn 80 % of AEO in 19
+Minutes*. Two of the four links in this batch changed something real in the repository.
+
+### 31.1 · AEO, in one line, and why it is not SEO
+
+SEO wants the click. **AEO wants to be named inside the answer.** An assistant does not run a query, it
+**fans one prompt out into dozens of searches** (the video cites 420 searches behind a single question
+about a phone case), then writes an answer from many sources. Being ranked for one keyword is therefore
+not the same as being *present on a subject*.
+
+Three things decide who gets named, according to Ahrefs' own research (174,000 pages cited in AI
+Overviews; 75,000 brands):
+
+- **consensus** — the same thing said about a brand in more places;
+- **freshness** — cited content is on average **25.7 % fresher** than what ranks in classic search;
+- **authority** — **76 % of AI Overview citations come from pages already in Google's top 10**. AI search
+  is built on top of SEO, not beside it.
+
+And four writing rules that transfer to everything we write for a client (§31.3).
+
+### 31.2 · The template that was one crawl away from being our shop window
+
+The AEO video's most useful line is not about ranking: **5.9 % of 140 million sites block GPTBot without
+knowing it**, usually through an inherited `robots.txt` or a default Cloudflare setting. A blocked site
+cannot be cited — and nobody notices, because there is nothing to measure.
+
+So we built `tools/qa/audit_aeo.py` (four machine-checkable rules, four negative witnesses, 12
+assertions). **It found a real defect in our own repository on the day it was written**:
+`site/mockup-hero.html` — our homepage **template** — ships inside the deploy zip
+(`hosting/build_site_zip.py` takes every `site/*.html`) and carried **18 unfilled `{{...}}` tokens with no
+`noindex`**. Any crawl would have indexed a page whose visible title is *"{{NAME}} — Maquette d'accueil
+AMK"*. Fixed with a `noindex,nofollow` and a comment that says why; the control now catches the whole
+class: **a template with unfilled tokens must never be indexable.**
+
+Then the tool accused our own fix: with the `noindex` in place it declared *"public page with noindex —
+unblock before deployment"*. That was the instrument being too coarse, not the page being wrong, and the
+correction is the interesting part: **a template is the one shipped page that *must* stay `noindex`**, so
+it is now judged in both directions — indexable template = fault, visible template = fault. The
+deployment reminder lists the pages to unblock and deliberately **skips templates**, because a template is
+never unblocked.
+
+Two lessons worth more than the tool:
+
+1. **Scope must match the deployment, not my idea of the folders.** I had assumed `site/` was our public
+   site and `demos/` was work. `site/` really does ship — the mockup proved it. A control whose scope
+   contradicts reality is an instrument error waiting to fire.
+2. **A control that cries wolf dies.** Once the template was correctly `noindex`, the tool kept asking it
+   for structured data and for questions — things a template cannot have, since its content comes from the
+   client. Those two checks are now *informational* on templates. A warning that fires every run is a
+   warning nobody reads.
+
+### 31.3 · The four writing rules, which are the part we keep
+
+Ahrefs' micro-structure advice, applied to French and English pages alike:
+
+| rule | what it means | what it looks like in our pages |
+|---|---|---|
+| **BLUF** — bottom line up front | every section starts with the answer, not the backstory; both humans and models weigh the start and the end of a passage more than the middle | *"Le résultat juste, du premier coup."* comes before the explanation, not after |
+| **atomic sections** | the model chunks the page and we do not control where the scissors fall, so every section must survive alone | our five FAQ answers each make sense with no neighbours |
+| **entity-rich writing** | name the things: *"Cet outil aide au référencement"* tells an AI nothing; *"UNI-LABO, à Bonamoussadi (Douala), réalise un hémogramme complet en une journée"* gives it relations | already our house style: *Carrefour Etoo, Rue 5N441, Makepe Bloc L*, *Dr Tientcheu Philomène*, *lun-ven 07h-19h* |
+| **simple declarative sentences** | one idea per sentence, subject-verb-object; *if a sentence takes two reads, it is too complex* | the bilingual constraint enforces it: a short French sentence is almost always a short English one |
+
+**This is a reading criterion, not a redesign.** No page was rewritten for AEO, and none needed to be:
+they are indexable, structured (`LocalBusiness`, `MedicalLaboratory`, `FAQPage`), and full of questions.
+
+### 31.4 · What we do not sell, and the batch that contained no new idea
+
+Three of the six sources this time were **agency and software-vendor blogs** (Valve+Meter, FieldPulse,
+Ignite Visibility). They recycle the same advice as the videos, with the apparent purpose of selling
+their service. Read, logged, **and set aside** — which is itself the lesson: when three sources copy each
+other, the fourth (Google's documentation) is the only one with authority.
+
+Two things we will not do with AEO, written down before anyone asks:
+
+1. **We do not sell AEO in Douala.** Ahrefs' headline number (0.5 % of their traffic from AI, but 12.1 %
+   of their sign-ups) describes an English-language SaaS market. A laboratory in Bonamoussadi will not be
+   recommended by an assistant tomorrow. What transfers is the writing discipline and the crawler check.
+2. **We do not promise ranking, citation or "AI visibility".** We can say exactly what we fixed — robots,
+   `noindex`, structured data, questions — and that is all.
+
+**And the honest note on YouTube**: the same video shows YouTube is the single strongest lever for being
+cited (the most-cited domain in AI Overviews; a 0.737 correlation with ChatGPT visibility; GPT-4 trained
+on a million hours of transcripts). King stopped content production in September because it produced no
+leads. **An American correlation does not overturn a decision made from our own market** — the number is
+logged here so that the decision stays informed, not so that a channel gets resurrected behind his back.
+
+---
+
+## §32 PHOTOGRAPHING A LAB WITH A PHONE — and the four prices hiding in our own files (24 Sep 2026, batch [32])
+
+King: *"let's move to Photographing a lab with a phone (google pixel 8A) and the pricing and recurrence
+(what's there that's still unanswered)"*. Two different jobs in one sentence — a technique, and an audit of
+our own money.
+
+### 32.1 The device is not the problem
+
+§25.5 has been waiting since the rebuild: *"The next honest step is five real photographs taken in their
+laboratory, on their own bench, replacing ours."* The phone that will take them is a **Pixel 8a**, and its
+capabilities were read before anything was written about it (GSMArena full review 29/05/2024, DXOMARK
+camera test 17/05/2024, PhoneArena, CNET). Five facts change how we shoot:
+
+- **Main camera:** 64 MP, 1/1.73″, f/1.9, 26 mm, stabilised — and it **outputs 16 MP** by default, with
+  **2× lossless** zoom. Super Res Zoom reaches 8×, but that is computation, not optics: past 2×, walk
+  closer instead.
+- **The ultrawide is fixed focus: there is no macro on the 8a.** The Pixel 8 and 8 Pro have macro focus;
+  the 8a does not. This is the single most useful sentence in the datasheet, because the natural instinct
+  in a laboratory is to put the phone right against the tubes — and that produces a soft, useless frame.
+  Close-ups are made **at 1×**, as close as the autofocus accepts, then cropped.
+- **No Pro mode either** (manual focus, ISO and shutter are 8 Pro features). RAW exists;
+  brightness, shadows and white balance are corrected **after** the shot. Nobody needs to redo a session
+  over a setting.
+- **Flash off, always.** On glass, stainless steel and a laminate bench, the LED does not light the scene,
+  it punches holes in it. **Night Sight** is for an empty dim room — never for moving hands, and pointless
+  with the neons on.
+- **Magic Editor, Best Take, Magic Eraser and Photo Unblur are banned on a client photograph.** They
+  manufacture what was not there, and §25.2③ already forbids showing a client something other than what
+  is. The irony is that we do not need them: DXOMARK's verdict on this phone is precisely that its colour
+  rendering and skin tones are its strength, and GSMArena found its white balance "almost always
+  spot-on".
+
+### 32.2 Five house rules, applied to a place where people are ill
+
+One photograph, one meaning (§25). The real client — their sign, their bench, their tubes (§25, and King's
+*"no one lives in that type of house"*). **Never a patient** — not a face, not a back, not a hand on an
+arm; a laboratory is a place of care, and we photograph the room and the work. **No data anywhere in the
+frame**: a tube carries a name, a screen carries a result, a register carries a list — checked **at zoom,
+edges included**, because no tool does this check for us. And **a face needs written consent**, even from
+staff (a WhatsApp message is enough).
+
+### 32.3 The fifteen-minute shoot
+
+Five photographs, matching the five slots the page already declares (four analysis families + preparation),
+plus three for the Google profile (exterior sign, reception, team at work). Full table in
+`research/PHOTO-LABO-PIXEL-8A-2026-09-24.md` §3. The three that matter: **phone at bench height, not
+standing over it**; **screens switched off**; **two takes of everything**, because one is always the one
+that blinks.
+
+### 32.4 Laboratory light, in five sentences
+
+Two light sources, two colours (green neons + blue or golden window) — pick one and do not mix them in the
+same frame. Tap to expose on a **mid-grey** (a bench in shadow, a grey rack), never on white coats or a
+light box, or the meter shuts everything else off. Shoot a **white sheet** once, in the same light: it is
+not for the page, it is there to see the cast and correct it afterwards. Neons flicker — photographs survive
+it, **video must be checked on the spot** before leaving. And wipe the lens first: a phone lives in a
+pocket, and a diffuse haze on five photographs cannot be repaired.
+
+### 32.5 The check before leaving, and the trap of WhatsApp
+
+Sixty seconds: zoom into every frame for names, screens, badges, registers, filled prescriptions; look for
+a patient (even from behind, even blurred); confirm every face has its consent; and **send the files as
+documents, never as photos** — WhatsApp recompresses an image sent as an image, and a 16 MP photograph
+arrives with artefacts. Then keep the originals: until the page is published, the phone is the only copy.
+
+### 32.6 What we do with the files — and the control that was born with them
+
+Originals never enter the repository. Crops follow what the page declares (1024×640 for the four families,
+1100×825 for preparation), with phone variants (640×400), JPEG quality 74/62, **metadata stripped before
+publication** — that last one is privacy, not housekeeping: a phone photograph carries the time, the device
+and the GPS position.
+
+The new control is `tools/qa/audit_images.py` (+ `test_audit_images.py`, **13 assertions over nine traps**,
+fixtures built without Pillow so the tool has no dependency). It checks that the file exists and is what it
+claims to be, that **the ratio the page declares is the ratio of the file**, that `srcset` descriptors do
+not lie, that weight stays inside budget (400 KB full, 200 KB variant), and that **no GPS metadata ships**.
+
+**What it found on its first run, in our own repository** — which is why the tool exists:
+
+- `site/img/clinic.png` (**405 KB**) and `site/img/crestwood.png` (**626 KB**) were over budget on our own
+  homepage — converted the same hour to JPEG at 900 px (74 KB and 89 KB, with `littleoaks.png` 224 KB → 49
+  KB for consistency), the four `src` attributes switched, and the page re-audited: **0 findings**. One
+  conversion is not a policy: the originals stay in `site/img/` as the high-resolution copies;
+- both UNI-LABO copies declare `800×500` and a `800w` descriptor for files that are **1024 px wide** — same
+  ratio, so nothing breaks, but the declaration is false;
+- **no privacy fault**: nothing we have delivered so far carries GPS.
+
+The UNI-LABO page is **not reopened** for that: King has looked at it and the client sees it on Friday, and
+a false declaration with the right ratio is invisible. It is logged and will be fixed after the paying
+delivery. The two PNGs on our own homepage are a real weight defect, outside the client freeze.
+
+### 32.7 The pricing half: four prices for the same month
+
+The second half of King's request was not a technique, it was an audit — *"what's there that's still
+unanswered"*. The audit found the answer quickly: **the creation price is settled, the recurring price is
+not**, and our own files disagree with each other.
+
+| Price / month | Covers | Where it is written | Status |
+|---|---|---|---|
+| **10 000** | domain + hosting + monitoring + backup + 2 edits + report | the old care plan (15/09) | **contradicts the grid** — and it is the only one that includes hosting |
+| **10–15 000** | "hosting + touch-ups" on 150k pages | playbook v2 | never sent to anyone |
+| **12 000** (Essentiel) | domain + monitoring + 30 min | contracts review (23/09) | **never sent to anyone** |
+| **30 000** (Standard) | 2 h + backups + monitoring + 24 h support + report | the grid **UNI-LABO received on 23/09** | the only one a client has read |
+| **35 000** | lab pilot (results, invoices, MoMo) | offers order (23/09) | internal proposal, unvalidated |
+
+`sales/PRIX-ET-RECURRENCE-2026-09-24.md` lists **sixteen open questions** in four groups. Two of the three
+that blocked Friday 13:00 were settled the same day: **the hourly rate beyond the included two hours — we do
+not bill by the hour, the overflow waits for the next month and only genuinely new work goes to a separate
+quote** — and **the tier: Standard 30 000/month if the laboratory has neither domain nor hosting (we take
+both on), Essentiel 12 000/month if it keeps its own**; the question is therefore asked *before* the price is
+announced, and only one tier is ever announced. The domain check that came with it: `unilabo.cm` and
+`uni-labo.cm` are **free** (registry RDAP, 24/09 — verified against a real domain to prove the register can
+say no), while `unilabo.com` is parked for sale and `uni-labo.com` belongs to a Japanese registrant. Only
+the 5 000/week late-content fee remains open. The rest are structural: which of the four monthly prices survives; the
+never-read fourth PDF (two grids in circulation is two truths); prepayment (the old "2 months free" is a
+17 % discount and therefore dead); who pays hosting; whose name the domain is registered in; the day and
+channel of collection; what happens after an unpaid month; exit; VAT and receipts; and the boundary between
+"a modification" and new work.
+
+**What does not move**: never a discount (adjust the scope), **never a price invented in a meeting**,
+never two grids in circulation, and the two old sheets are now **annotated, not rewritten** — dated,
+pointed at the new document, with their numbers left visible as history.
+
+---
+
+## §33 THE QUESTIONNAIRE THAT CHANGES FILES — three questions blocks for Friday (24 Sep 2026, batch [32])
+
+King, the night before the two meetings: *"je crois que on dois preparer un questionnaire pour nos reunions
+de vendredi — 1. pour la personalization du site 2. d'autres services que il's aimerait que AMK provide (une
+automatisation, logiciel, contenu anime) 3. and any other thing relevant information that can help both us
+and the client for a succesful and long collaboration on this project and others"*.
+
+Two meetings sit less than three hours apart (Univers Optique 10:00, UNI-LABO 13:00), each with a tight
+agenda already written. A questionnaire that ignores that becomes a form the client fills instead of a
+decision he takes. So the document `sales/QUESTIONNAIRE-REUNIONS-2026-09-25.md` is built on four rules, and
+they are the part worth keeping:
+
+1. **A question is only asked if its answer changes a file.** The page, the contract, the CRM, the
+   subscription line, the Google profile — or nothing. Every question in the document carries its
+   destination (`→`). This is the same discipline as §31 (scope must match the deployment) applied to
+   conversation: an answer with nowhere to go is an answer we will forget, and a question that changes
+   nothing spends the client's goodwill for nothing.
+2. **Eight minutes in the room, the rest on a sheet.** The long block travels as **Annexe A**, a
+   client-facing one-pager that comes back by WhatsApp. The meetings keep their order: facts first, money
+   second, curiosity last.
+3. **Interrogate problems, never tools.** *"Do you want AI?"* produces a yes we cannot honour — our own
+   grid was already caught saying "AI-powered" when nothing we ship uses it. So the services block asks
+   where the **time** goes, what gets **lost** (results, samples, orders, invoices, appointments), and
+   what their **customers ask for that they cannot give**. The mapping to our own offer order is ours to
+   do afterwards (C → D/E → B → A1 → A2 → F).
+4. **If the question implies a price, the answer is written afterwards.** *"Je vous l'écris"* — never an
+   improvised figure in the room (see the pricing audit of the same day: four monthly prices for one
+   service is what happens when numbers are said out loud).
+
+Three blocks, and what each one is *for*:
+
+- **A — personalisation (5 min).** Not design taste: the things only the client knows. Do they have real
+  photographs (and if not, the fifteen minutes from §32)? The ministry authorisation and the external
+  quality control (UNI-LABO) — a credibility band at the top of the page, or nothing. The 2023 "-15 %"
+  (Univers) — published only with written consent. The one sentence a customer should remember, **in their
+  words**. The three questions their counter hears most — that is the FAQ, with their answers, not ours.
+  What must never be published. The tone and the FR|EN switch.
+- **B — other services (3 min).** The three problem questions above, nothing else. Two honest limits are
+  written into the document: **animated content is not in our offer** (if the need surfaces, it is logged
+  as research, not sold), and the automatic assistant is a separate line, on quotation, **never "included"**.
+- **C — the long collaboration.** Who decides (the zombie check), who holds the Google password, whose name
+  the domain is in and when it expires, the channel and the accepted delay for a correction, **what would
+  make them stop** (our failure signal, asked without defending ourselves), how their customers find them
+  today (the attribution question of §31 applied to their clients), and the referral and portfolio
+  questions — asked freely, **never bought**.
+
+**What the questionnaire refuses to ask** is written down too, because a question is also a promise: no "do
+you want AI", no "what is it worth to you", no price for a service that has no grid, no testimonial in
+exchange for something, no personal or patient documents, no "do you want a video", and never a promise of
+ranking. §33 is the companion of §25 (the page must show the real client) — this is how we find out what
+"real" means, without inventing it.
+
+---
+
+## §34 THE REPLY THAT IS NOT AN ANSWER — and the day the repository lied to me (24 Sep 2026, batch [33])
+
+King forwarded the WhatsApp thread: **Le Cristallin** wrote at 10:10 *"Bonjour je vais te revenir"* and at
+10:11 *"Je suis malade"*. At 10:13 he had already answered — health first, no question, no price, no date:
+*"Prenez tout le temps de vous reposer, la santé passe avant tout. Le projet attendra votre retour en
+forme."* Two lessons came out of a thread where nothing commercial happened.
+
+### 34.1 A human reply stops the clock
+
+A "reply" in a CRM is usually a buying signal. This one was the opposite: **a human event that suspends the
+commercial clock**, and treating it as an opening would have been the worst thing we could do. So the state
+is written so that it cannot be reinvented three days from now by whoever reads the pipeline:
+
+- **the stage does not move** — `closing` is still true (the price is on the table, neither accepted nor
+  refused); what changed is the *nature of the wait*, and the field that records it is the date, not the
+  stage. Downgrading the deal because the client is ill would be a lie in the other direction;
+- **the follow-up date moves to a health-first message** (Monday 29/09), whose full text is written and
+  waits in `sales/Queue-CRISTALLIN-2026-09-29.md`: it asks nothing, offers nothing, promises no call back,
+  and does not even mention the project beyond *"nothing is urgent"*;
+- **if he does not answer, we do not chase.** One exception at M+14 days, same tone. A client holding a
+  quote who has a human reason to be silent does not need to be reminded that we exist;
+- **nothing else moves either**: the page stays exactly as it is (his *"ne change encore rien sans mon ok"*
+  of 22/09 still stands, and a sick client is the worst possible moment to change anything), the price
+  stays 150 000 with no discount, and the three compensations stay parked until a paid delivery.
+
+### 34.2 And the day the repository lied to me
+
+Before writing that state, `leads/build/guard.py` had vanished and a test run of `crm.py` reported
+`stage=prospecting` for **all three of our live deals** instead of `closing`. The obvious reading — "the
+generator silently downgrades our deals, that is a serious defect" — was **wrong**: `git log` showed the
+local HEAD sitting at the branch's **base commit** while the remote was twelve commits ahead. The sandbox
+had rolled back, and I was testing a `crm.py` from before the state blocks existed. Recovery is the known
+procedure (`git fetch origin arena/01a0c495-amk` + `git reset --hard FETCH_HEAD`); then the same test on
+the real file showed the CSV is preserved byte for byte. **No defect existed.**
+
+The rule, and it is the sixth member of the same family (after the six false positives of `audit_a11y`, the
+mismeasured button names, the two failed witnesses and the template that "blocked" itself): **when an
+instrument accuses committed code, compare `git log -1` against `git ls-remote` before touching anything.**
+The repository itself is an instrument, and a rolled-back workspace is an instrument that lies about what
+we shipped. `openpyxl` was reinstalled in passing — a rollback always takes pip with it.
+
+---
+
+## §35 THE MISSING PIECE WAS A MEASUREMENT — two outreach videos, and the counter that finally existed (24 Sep 2026, batch [34])
+
+King sent two links and one question: *"what do we have planned for today?? I suggest we continue outreach
+what do you say ?"*. The answer needed a number we did not have. Two videos, one of which named the exact
+piece that was missing.
+
+### 35.1 Charlie Morgan's seven parts, and the one we did not have
+
+An outbound system is a car made of parts: **agenda · platform · stimuli · CRM · lead source · metric
+tracker · delivery mechanism**. Checking ourselves against it took ten minutes and produced one real gap:
+
+| Part | Ours |
+|---|---|
+| Agenda | WhatsApp and King's phone — the UNI-LABO booking form is the client-side version |
+| Platform | **one**: WhatsApp (plus calls). Picking one and being good at it is the advice; we were already there |
+| Stimuli | three call openings and written messages — never improvised |
+| CRM | a CSV plus generated views. **Better than the spreadsheet the video recommends, and the trap is the same**: a generated plan that contradicts a human decision (below) |
+| Lead source | directories + Google Maps: **149 leads, 102 never contacted** |
+| **Metric tracker** | **missing until tonight — `leads/FUNNEL.md`, generated on every rebuild** |
+| Delivery | manual, by King — a choice, not a shortfall |
+
+**The counter, in one line:** 149 leads in the file · **47 contacted (31.5 %)** · **4 human replies (8.5 % of
+contacted)** · **3 of those 4 became a meeting or a quoted price** · 0 sales. So the bottleneck is **volume
+contacted**, not persuasion, and not closing. That single line is worth more than any new list: it says put
+the work where the 102 untouched leads are.
+
+Two rules are written into the generated file: **an automatic reply is not a reply**, and **a mockup
+produced is not a warm prospect** (`Demo made` never replaces `reply_type = human`).
+
+### 35.2 Hormozi's mini-offer, which we already run without having named it
+
+Do not ask cold traffic to buy. Offer **a complete solution to a narrow problem** — and make sure that
+solving it **reveals the next problem**, the one your core offer answers. Three shapes: **reveal a problem**,
+**free trial**, **one step of a multi-step process**. Sending a mockup of their own page is all three at once,
+and it is why our cold messages get 8.5 % human replies in a market where a phone call is the norm.
+
+Three corrections are worth more than the theory:
+
+1. **Name the result, not the vehicle.** *"A web page"* sells badly; *"a page that takes the appointments for
+   you"* is remembered. Our message 1 should carry the result more often.
+2. **Qualify before you give.** The mockup goes to prospects with a visible presence and a reachable number —
+   never to everyone. (Hormozi: *"you don't have to give the lead magnet to everybody"*.)
+3. **Never solve the paid problem for free.** The mockup shows structure and angle; the finished, authored,
+   published page is what is sold. The contract already draws that line (two rounds of revisions, a written
+   scope) — the video only confirms it.
+
+### 35.3 What we refuse from both videos
+
+**Cold-outreach automation** (Instantly, bulk e-mail, sequences): our channel is WhatsApp, where a human reply
+often lands within the hour. Automating it would destroy the only thing that makes our approach work.
+**Free work as a door-opener**: the mockup is a bounded deliverable, not a donated project, and "never a
+discount — adjust the scope" still stands. **Vanity metrics**: the video says "1000s of leads"; our honest
+numbers are 8.5 % of 47, and they live in `leads/FUNNEL.md`.
+
+### 35.4 The trap that fired the same evening — and it is the COMOBIL one
+
+While checking the day's plan, `leads/Daily-Plan.csv` — a **generated** file — still listed **"Relance 1/3
+Le Cristallin"** as priority 1, hours after we had written that the man is ill and that no project message
+goes out before Monday. The prose said one thing (journal, CRM, the queued health message), the calculation
+said another (`views.py` still held the old 24/09 follow-up date), and **the generated file is what King
+actually reads in the morning**.
+
+This is the identical failure the repository already learned once with COMOBIL: *"the prose does not
+suffice"* (M7). A human decision that must change a computation belongs **in the generator** — here in
+`RELANCE_A_JOUR` of `views.py`, next to the note that explains why. Fixed, `guard.py lock` re-run, rebuild
+verified: the day's queue now lists exactly the three real relances, and Le Cristallin is out of it until
+29/09. **Any decision that stops an action must be written where the action is computed, not only where it
+is explained.**
+
+---
+
+## §36 THE ANGLE IS IN THE REVIEWS — and why a satisfaction score can hide a leak (24 Sep 2026, batch [35])
+
+A video from *Automate AI Consulting* ("Their Reviews Show How Much Money They're Losing") gave a prospecting
+method worth adopting, one pricing model worth refusing, and one cautionary tale about a generated audiobook.
+The full French working document is `sales/DETECTION-FUITES-2026-09-24.md`.
+
+### 36.1 The method, in four lines
+
+His case study is a property manager rated **4.5 stars on 458 reviews** — "doing great" — where four separate
+customers write the same thing: *you call, nobody calls back*. **The repetitive complaint is the signal**;
+one bitter review is a bad day, three independent mentions are a hole in the journey. He looks for
+businesses in a **"leak zone" of roughly 3.2–4.5 stars with real review volume** (too few reviews and one
+bad note skews everything; thousands of reviews and three complaints prove nothing), then quantifies the
+leak and offers the fix. And the line worth keeping for our own messages: *"nobody ever asked me for my
+website — they cared that I could tell them what their problem was actually costing them."* That is our own
+"which problem are we solving?" doctrine, said by a stranger.
+
+The framing he uses to disarm: **"It's not your people. It's not a moral failing. You have a leak in your
+process."** Nobody is judged; a journey is described.
+
+### 36.2 What we refuse, and it matters more than what we copy
+
+- **Pricing at 10–20 % of the first year's added revenue** (≈8,600 $ on his example). We never price on a
+  client's revenue, and we never promise a revenue figure. Our grid is fixed: 150,000 for the build, 12,000
+  or 30,000 per month for care.
+- **Quoting the leak in money.** We do not know a laboratory's margin or patient volume. A leak is
+  **described** ("four patients write that nobody picks up"), never **priced on their behalf**.
+- **Approaching someone from a public review.** We speak to the owner, once, privately, respectfully; never
+  in public, never commenting a review, never naming a patient.
+- **Promising to "plug" every leak.** A wrong analysis result is not ours to fix. We sell what we actually
+  do: the contact channel, the profile, the page, the monthly rhythm.
+
+### 36.3 The Cameroon thresholds — and the honesty that goes with them
+
+**Our market does not have 458 reviews.** Many Douala laboratories and practices have 0–20. So the volume
+threshold changes (the tool refuses to conclude under **5 reviews**) while the **3-mention rule** stands
+unchanged. What reads even without volume: does the owner answer reviews at all? Are the hours current? Does
+the profile carry a website? (Univers Optique: **3.3/5 on 6 reviews** and an empty website field — enough to
+work with, without ever discussing a dissatisfied customer.)
+
+### 36.4 The tool that counts, and the two traps it sprang the same day
+
+`tools/outreach/scan_reviews.py` (+ a 12-assertion witness with three negative cases) counts recurring
+complaint **phrases** in reviews pasted by hand. It invents nothing, writes no file (a review carries a
+customer's name), and refuses to call anything a pattern below three mentions or five reviews.
+
+Two real defects, both caught by the witness before any human saw the output:
+
+1. **I normalised the text but not the keywords** — accented "personne ne répond" could never match
+   normalised "personne ne repond". Invisible on re-reading, obvious on the first run.
+2. **A single word catches its opposite.** "Résultat" appears in *praise* — "résultats impeccables" — so a
+   keyword count would have announced a leak at a perfectly satisfied laboratory. The most expensive false
+   positive available: accusing a business wrongly. Patterns are therefore **complaint phrases**, never bare
+   words.
+
+### 36.5 The second video: an audiobook we will not quote
+
+*"Social Intelligence"* (an AI-narrated audiobook) repeats the genre's favourite numbers: **"93 % of
+communication is non-verbal"** (a misuse of Mehrabian's 7/38/55, which concerned the transmission of
+attitudes in one experiment), social intelligence being **"twice as important"** as technical skill, "**90 %
+of top performers**", "**four times** more likely to reach leadership". None is checkable, and our rule is
+flat: **a number we cannot show does not leave our mouth** — least of all in front of a client.
+
+What survives is a five-item checklist that is genuinely useful before a meeting — **social awareness,
+social facility, social cognition, behavioural flexibility, social presence** — and one inversion that
+matters more here than in the video: **on WhatsApp there is no face, no voice, no handshake. Our words are
+the non-verbal.** Punctuation, sentence length, not repeating a price, not reproaching a silence — that is
+the whole delivery. At a table, the balance flips back to listening, which is why Friday's two meetings run
+on the questionnaire rather than on the slide deck.
+
+## §37 FACES, NOT FIGURES — what an optician's page owes a face, and the hero as one object (24 Sep 2026, batch [36])
+
+King, on the delivered La Ligne Optic page: *« The hero section looks boring, told you I wanted
+animations, the heads can we make something more realistic can't you generate heads of those shapes with
+glasses »*. Two lessons, one correction.
+
+**① Un conseil de visage se donne sur un visage.** La veille, nous avions dessiné cinq têtes en SVG —
+justes, lisibles, 4 Ko, sans dépendance — et c'était la mauvaise réponse : **une forme de visage ne se
+démontre pas par un tracé**. Un visage porte une monture ; un dessin porte une opinion. Pour un opticien
+(et pour tout métier dont l'objet est **posé sur le corps du client** : lunettes, prothèse, casque,
+maquillage), la page doit montrer **l'objet porté**, pas l'objet. Cinq portraits générés, un par forme,
+avec **la monture que la forme appelle** — et la mention écrite, dans la page, que ce sont des **images
+d'illustration et non des clients**. *Cette leçon vient avec une porte de sortie obligatoire : quand on
+génère un visage, on écrit ce qu'il est.* Sinon on fabrique une preuve.
+
+**② Le premier écran doit contenir la page entière en UN objet.** Le hero précédent montrait une règle
+et un verre : vrai, et muet. Le nouveau montre la règle **et cinq visages qui passent DANS le verre** —
+« on regarde un visage à travers une ligne de vue », c'est-à-dire le titre de la page, en objet. Le test
+pour la prochaine : *si je décris le hero en une phrase, est-ce la thèse du client, ou une décoration du
+sujet ?*
+
+**③ L'ambiance ne remplace pas la structure — elle la met en marche.** « Trop simple » ne se répare pas
+en ajoutant des sections : la page avait déjà sa thèse. Quatre boucles **nommées** (l'onde qui balaie la
+règle, le cadran qui tourne, le pouls qui part du verre, les visages qui se relaient) plus une deuxième
+couche de dégradé, toutes derrière `html.js`, toutes coupées en `prefers-reduced-motion` — où **un
+visage reste affiché, fixe**. Le pouls a été déplacé du centre du visage **vers le bord du verre** :
+une croix ou un point sur un nez, c'est une cible.
+
+**④ Le coût, chiffré.** Cinq visages × deux tailles = **249 Ko de JPEG** (720×900 q 66 ≈ 36 Ko ;
+carré 320×320 q 64 ≈ 10 Ko), page à **424,7 Ko** — sous le budget de 400 Ko par image, et c'est
+acceptable pour une seule page qu'on ouvre une fois. **Vérifier ce que le contrôle ne compte pas** :
+`audit_images.py` annonçait « 0 image(s) » sur dix images embarquées ; il les pèse et vérifie leur ratio
+depuis ce soir (témoin à 17 assertions, `design/WORKFLOW.md`).

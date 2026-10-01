@@ -56,6 +56,22 @@ WhatsApp-first · mobile-first · EN|FR · Cameroon (Kumba/Douala/South-West) ·
 | 18 | 17 Sep 2026 | Everything About: Footers In Web Design — The Website Architect | Design / Build (footers) | Absorbed (anatomy + SEO rules; A/B stats rejected) | `AMK-DESIGN-SKILLS.md` **§20 · §13** |
 | 19 | 17 Sep 2026 | Website Footer Design Inspiration (Best practices) — Flux Academy | Design (footers) | Absorbed (footer as designed screen; mobile caveat) | `AMK-DESIGN-SKILLS.md` **§20** |
 | 20 | 18 Sep 2026 | How I sell "Talking Websites" to local businesses for 499/mo — Pavlo | Build (voice) / Sales (offer model) | **Absorbed with a hard limit** — voice layer yes, SaaS stack no; recurring model **pending King** | `AMK-DESIGN-SKILLS.md` **§21** · `sales/Voice-Offer-Decision-2026-09-18.md` |
+| 21 | 23 Sep 2026 | Sales system — Will Barron (`youtu.be/5swDtQFyIws`) | Sales / Close | Absorbed (6 pieces + 6-step discovery) | `sales/SYSTEME-DE-VENTE-AMK-2026-09-23.md` · `sales/RDV-*.md` |
+| 22 | 23 Sep 2026 | The 5 levels of persuasion — Joanna Wiebe (`youtu.be/cT82oNk49ks`) | Sales / Copy | Absorbed — audit of **our own** messages, 5 rewrites | `sales/PERSUASION-5-NIVEAUX-2026-09-23.md` · `sales/MESSAGES-2026-09-23-PERSUASION.md` |
+| 23 | 23 Sep 2026 | Words That SELL — Joanna Wiebe (`youtu.be/7gjtI1rnds4`) | Sales / Copy | Absorbed (9 triggers declined to our real messages) | `sales/DECLINAISON-9-DECLENCHEURS-2026-09-23.md` · MESSAGES §8 |
+| 24 | 23 Sep 2026 | What I Wish I Knew Before 10 Years in UX (The 3 Levels) — Amir Moradi (`youtu.be/gr0Val2QSbM`) | Design / UX | Absorbed (the invisible timeline) | `AMK-DESIGN-SKILLS.md` **§22.1** |
+| 25 | 23 Sep 2026 | Every UI/UX Concept Explained in Under 10 Minutes — Kole Jain (`youtu.be/EcbgbKtOELY`) | Design / Build | **Absorbed — the four states + the response** | `AMK-DESIGN-SKILLS.md` **§22.2** · `tools/qa/audit_page.py` |
+| 26 | 23 Sep 2026 | The UX Psychology Behind Apps People Can't Stop Using — uxpeak (`youtu.be/2TlIg3VokY8`) | Design / Psychology | Absorbed, **honest half only** | `AMK-DESIGN-SKILLS.md` **§22.3** |
+| 27 | 23 Sep 2026 | The Psychology of a PERFECT Website — Self-Made Web Designer (`youtu.be/d-IaU9qcDGg`) | Design / Psychology | Absorbed (3 friends, mental models, MAYA, chunking, ladders) | `AMK-DESIGN-SKILLS.md` **§22.3/§22.4** |
+| 28 | 23 Sep 2026 | Your Website Won't Matter in 2027. Prepare Now. — Wes McDowell (`youtu.be/VXGDHZIGf40`) | Strategy / Search (AEO) | Absorbed as analysis; **a decision for King** (content freeze stands) | `AMK-SEO-PLAYBOOK.md` **§8** |
+| 29 | 23 Sep 2026 | How to Attract HIGH PAYING Clients (Stop Selling Services) — Nicole & James (`youtu.be/Y_sPva_30XA`) | Sales / Offer | Absorbed (3 R + the service trap); coined product names rejected | `sales/AMK-Sales-Playbook-v2.md` **PART K** |
+| 30 | 23 Sep 2026 | 7 Web Design Styles That Make Sites Look Expensive In 2026 — Web Design Lab (`youtu.be/Fog8WpdTnYU`) | Design / Style | Absorbed as tests, not looks; kinetic + expressive restricted | `AMK-DESIGN-SKILLS.md` **§23.1–23.3** |
+| 31 | 23 Sep 2026 | 6 EASY Tips to 10x Any Site's Design — Self-Made Web Designer (`youtu.be/pbhLsV-Dyho`) | Design / Craft | **Absorbed — and it found a real drift on our own site** | `AMK-DESIGN-SKILLS.md` **§23.3–23.6** |
+| 32 | 23 Sep 2026 | The Secret to Mobile Web Conversion — Malewicz (`youtu.be/q8yUIbRiNRc`) | Design / Conversion (mobile) | **Absorbed** — 5 fautes + la fenêtre du bouton (52-64 px) + le poids des images | `AMK-DESIGN-SKILLS.md` **§24.1** · `demos/concept-unilabo-v1.html` |
+| 33 | 23 Sep 2026 | This is what mobile web design excellence looks like — Flux Academy (`youtu.be/1r4GHOd2THM`) | Design (mobile) | **Absorbed** — mobile n'est pas un bureau empilé ; « chaque panneau doit être une affiche » | `AMK-DESIGN-SKILLS.md` **§24.2** |
+| 34 | 23 Sep 2026 | Mobile Design 101: How to Design for Mobile First — Jesse Showalter (`youtu.be/q6qA_609UOE`, direct) | Design / Build (mobile) | **Absorbed** — distiller, la règle du pouce, la légibilité, le POIDS | `AMK-DESIGN-SKILLS.md` **§24.3** · `tools/qa/test_unilabo_page.mjs` |
+| 35 | 23 Sep 2026 | 40 of the Best Lab Websites — Thomas Digital (`thomasdigital.com/industry/lab-website-design`) | **Verticale** (labo / clinique) + concurrence | **Absorbed** — 7 principes ; **et une question à poser au client** (agrément) | `AMK-DESIGN-SKILLS.md` **§24.4** · `clients/uni-labo/AUDIT-2026-09-23.md` §9 |
+
 
 ## 4 · Entries (full reports)
 
@@ -584,6 +600,14 @@ WhatsApp-first · mobile-first · EN|FR · Cameroon (Kumba/Douala/South-West) ·
 | "Average website converts at 2–3 %" quoted to a prospect | [20] | Unverifiable for Cameroon; internal calibration only (same ruling as [16][18]). |
 | Full-viewport footer on mobile | [19] | Scroll cost beats drama on a 390px screen → desktop-only (§20.3). |
 | Hidden/faded anchor text and keyword-anchor agency credit | [18] | Named as black-hat (Google's own guidelines) → banned outright in §20.5. Credit lines are brand text only. |
+| AEO percentages quoted to a prospect (43 %, 1 in 4, 30 % of AI answers, 1.3 bn clicks) | [28] | Single-source US self-reported data; our accuracy law bans unverifiable stats. **Internal calibration only.** |
+| "You will be recommended by ChatGPT" (as a promise to a client or on our site) | [28] | We control neither the models nor their answers. The honest version: *the page answers the questions people ask before calling* (SEO playbook §8.5). |
+| "A website is useless now / will be dead in 2027" | [28] | The video's own thesis is that the website's job *changes* (it closes the deal); we do not sell fear with a date on it — same rule as "no invented deadline" (Cristallin 22/09). |
+| Coined offer names ("Brand Visibility Accelerator", "Launch Copy Lab") | [29] | US course-market naming; our market reads plain French and §11 bans invented vocabulary. The transformation is named in the client's words. |
+| The course/community funnel, $30k-a-month claims, "gamify to 30K" | [29] | Upsells and income claims; nothing transferable to a Douala outbound pipeline. |
+| Kinetic typography as a look, expressive/brutalist direction as a default | [30] | Long French headlines at 3G on a mid-range Android: type that moves costs readability. Kept as a test (does it help notice/grasp/understand?), never as a house style. |
+| Spline / Unicorn Studio 3D scenes, "12 versions" of a hero as a weekly habit | [30] | External embeds break the single-file rule; and our build budget is one pass + one revision, not twelve — the *principle* (first version is a draft) is what we keep. |
+| "Handmade/human-made" as a photo filter or a moodboard | [30] | Already at risk of becoming the next template (the video says so itself). Ours is substance: real photos of the real practice, or nothing. |
 
 ## 6 · Weekly ritual (Mondays, before the outreach pack goes out)
 
@@ -639,4 +663,861 @@ construction vivent dans le playbook, pas ici.
 - Le contexte métier : plomberie à Houston, décorations de Noël à Scottsdale, SaaS B2B. **Les facteurs de fond
   sont transférables, les tactiques non.** Aucun de ces intervenants n'a jamais fait de SEO à Douala.
 - Les « pourcentages » présentés comme des poids officiels : c'est une **enquête d'opinion** auprès de ~50 experts.
+
+---
+
+## Lot [22] · Vente — 3 vidéos (King, 23/09/2026)
+
+Analyse complète et application : **`sales/SYSTEME-DE-VENTE-AMK-2026-09-23.md`**,
+**`sales/PERSUASION-5-NIVEAUX-2026-09-23.md`**, **`sales/DECLINAISON-9-DECLENCHEURS-2026-09-23.md`**.
+Ce qui suit n'est qu'un repère : les règles vivent dans les fichiers `sales/`, pas ici.
+
+| # | Vidéo | Chaîne | Ce qu'elle apporte |
+|---|---|---|---|
+| 22.1 | *Sales system* (`youtu.be/5swDtQFyIws`) | Will Barron | les 6 pièces d'un système de vente, une découverte en 6 pas (douleur → déclencheur → futur → ROI rugueux → budget → étape datée), le rythme hebdomadaire |
+| 22.2 | *5 niveaux de persuasion* (`youtu.be/cT82oNk49ks`) | Joanna Wiebe | ne pas parler de soi (6 s) · biais · identité et « money words » · les péages · l'histoire = le client en héros |
+| 22.3 | *Words That SELL* (`youtu.be/7gjtI1rnds4`) | Joanna Wiebe | 9 déclencheurs par étage du tunnel : cadrage, identité, fluidité / mécanisme unique, typiquement atypique, ennuyeux par dessein / 3 options, compromis transparents, une grosse preuve |
+
+**Ce qui a changé chez nous le jour même :** message 1 réécrit (« je la construis d'abord, vous décidez
+après ») · règle **une seule question OU trois choix — jamais les deux** (jamais 2 options) · les
+compromis transparents posés dans `MESSAGES-2026-09-23-PERSUASION.md` §8, **à valider par King** ·
+notre mécanisme unique nommé : **« L'aperçu d'abord »**.
+
+**Déchets écartés :** les promotions de leurs formations ; le vocabulaire SaaS/US (le « wall of love », les
+séquences automatisées) ; tout chiffre de marché non vérifiable localement.
+
+---
+
+## Lot [23] · UX/UI et psychologie du design — 4 vidéos (King, 23/09/2026)
+
+Règles de construction : **`AMK-DESIGN-SKILLS.md` §22**. Portique de contrôle : **`tools/qa/audit_page.py`**.
+
+| # | Vidéo | Chaîne | Ce qu'elle apporte |
+|---|---|---|---|
+| 23.1 | *What I Wish I Knew Before 10 Years in UX (The 3 Levels)* | Amir Moradi | les trois niveaux (surface · **la ligne de temps invisible** · stratégie) ; « un chemin heureux sans échec, c'est un rêve » |
+| 23.2 | *Every UI/UX Concept Explained in Under 10 Minutes* | Kole Jain | affordances, hiérarchie, grilles, typo, couleur, ombres, **4 états du bouton**, **chaque interaction a une réponse**, micro-interactions, overlays lisibles |
+| 23.3 | *The UX Psychology Behind Apps People Can't Stop Using* | uxpeak | 6 principes : défauts intelligents · gradient d'objectif · réciprocité · effet IKEA · aversion à la perte · contraste |
+| 23.4 | *The Psychology of a PERFECT Website* | Self-Made Web Designer | les 3 amis (survie → émotion → raison) · modèles mentaux · MAYA · chunking · paliers de prix |
+
+### Ce que le lot a mis en évidence, et que nous avons payé
+
+**Un lien WhatsApp sans indicatif pays vivait dans une page déjà envoyée à un client** (`wa.me/699905577`
+au lieu de `wa.me/237699905577`) : le bouton central du Cristallin ouvrait une erreur. Deux relectures
+humaines ne l'avaient pas vu, **parce que personne n'avait cliqué**. Le même défaut dormait dans les
+archives v1 d'Univers Optique — la copie que King ouvre devant le client vendredi pour comparer les deux
+directions. C'est le principe 23.2 appliqué à nous-mêmes : *une page sans réponse après le clic est une page
+qui n'a pas de chemin.* Les trois pages corrigées, les trois pages passées au portique : voir §22.4.
+
+### Affirmations centrales retenues
+
+- **Quatre états par bouton** (repos, survol, appui, inactif) + un état d'attente quand l'action attend
+  quelque chose. Un bouton sans état d'appui ne répond pas au doigt.
+- **Chaque interaction produit une réponse** — pas un spinner décoratif : des mots qui disent ce qui vient
+  de se passer et ce qui suit.
+- **Les défauts intelligents et la réciprocité sont notre modèle économique**, pas un tour de passe-passe :
+  l'aperçu est construit **avant** qu'on demande quoi que ce soit, et le message WhatsApp part **déjà écrit**.
+- **Jamais créatif sur les conventions** (modèles mentaux) : navigation, logo, horaires, adresse, numéro.
+- **MAYA** : structure prévisible + une ou deux surprises (les micro-interactions), jamais la charpente.
+- **Chunking** : 3 à 4 éléments par bloc, un numéro de téléphone en trois groupes.
+- **Le premier vote est la survie** : nom, métier, ville, horaires, un numéro qui répond — avant l'esthétique.
+
+### Contradictions avec nos fichiers
+
+- **Aucune contradiction de fond** avec `AMK-DESIGN-SKILLS.md` ; le lot **arme** des règles qui étaient
+  implicites (les états, la réponse, la ligne de temps).
+- **Tension réglée par l'éthique :** les six principes psychologiques ont tous une forme honnête et une
+  forme malhonnête. La forme malhonnête (fausse urgence, fausse rareté, faux progrès, avis inventés, séries
+  et culpabilité) est **bannie** — elle contredit la loi d'exactitude et détruirait le seul actif qu'on a :
+  être celui qui dit la vérité. Les formes honnêtes sont dans §22.3.
+
+### Déchets écartés
+
+- Le conseil de carrière des quatre vidéos (portfolios, salaires, freelance).
+- Les exemples d'apps grand public (Duolingo, cartes de fidélité, applications à notifications) : le
+  mécanisme est transférable, la mécanique non — un laboratoire d'analyses à Douala ne relance personne
+  par notification.
+- Les chiffres cités comme preuves de marché (l'étude des confitures, 70–90 % de défauts inchangés) : gardés
+  comme **calibration interne**, jamais cités à un prospect — même règle que [16] et [18].
+- Les gabarits de sites « parfaits » montrés en exemple : on ne copie pas un gabarit, on applique des règles.
+
+---
+
+## Lot [24] · Stratégie, offre et style — 4 vidéos (King, 23/09/2026)
+
+Règles de construction : `AMK-DESIGN-SKILLS.md` **§23** (style, étoile, police d'ancrage) ·
+`AMK-SEO-PLAYBOOK.md` **§8** (AEO) · `sales/AMK-Sales-Playbook-v2.md` **PART K** (offre signature).
+
+| # | Vidéo | Chaîne | Ce qu'elle apporte |
+|---|---|---|---|
+| 24.1 | *Your Website Won't Matter in 2027. Prepare Now.* | Wes McDowell | la thèse AEO : l'IA comme premier vendeur, YouTube comme source la plus citée, le site réduit à la dernière étape |
+| 24.2 | *How to Attract HIGH PAYING Clients (Stop Selling Services)* | Nicole & James | le piège du service, les trois R (affiner · rechercher · repositionner), vendre une transformation |
+| 24.3 | *7 Web Design Styles That Make Sites Look Expensive In 2026* | Web Design Lab | sept choix de style, le test du logo, l'anti-recette |
+| 24.4 | *6 EASY Tips to 10x Any Site's Design* | Self-Made Web Designer | police d'ancrage, étoile du spectacle, rime visuelle, profondeur, hiérarchie par opacité, dépasser la première idée |
+
+### Ce que ce lot a trouvé dans notre propre travail
+
+**24.4 a mis le doigt sur une dérive contre notre propre règle.** Le §5 de nos design skills dit « Outfit,
+police maison », et nos pages écoles/cliniques la chargent bien. **Notre propre site ne déclarait AUCUNE
+police** : titres en police de téléphone. La page qui sert de portfolio était celle qui suivait le moins
+notre standard. **Corrigé le jour même** (Outfit 400-800, même chaîne de repli : si la police ne se charge
+pas, la page est identique à avant).
+
+**Et un demi-motif.** Le cadre de navigateur du hero se répétait déjà sur les quatre cartes de concepts,
+mais ses **trois pastilles rouge/ambre/vert** n'apparaissaient qu'une fois. Une rime qui s'arrête à la
+silhouette ne rime qu'à moitié : les pastilles sont maintenant dans les quatre cartes.
+
+**24.1 touche une décision de King — et il faut le dire sans arrondir.** Sa décision du 23/09 (geler la
+production de contenu) repose sur une mesure de **trafic humain** (5 vidéos → 602 vues → 0 message). La
+vidéo affirme que le mécanisme est ailleurs : les modèles lisent une vidéo **le jour de sa publication**,
+sans rapport avec les vues. Donc **notre expérience ne réfute pas la thèse — elle ne l'a jamais testée**.
+Mais **elle ne la prouve pas non plus**, et le gel reste la décision par défaut : la seule action gratuite
+recommandée est un **relevé AEO** (poser la question du prix à trois assistants, noter qui est cité,
+recommencer dans 30 jours). Détail et options : `AMK-SEO-PLAYBOOK.md` §8.3.
+
+**24.3 et 24.2 ont chacun une limite écrite.** Les deux styles les plus spectaculaires (typo cinétique,
+design expressif) sont retenus comme **tests**, pas comme looks : nos titres sont longs, en français, lus
+sur un Android d'entrée de gamme. Et l'offre signature ne devient **pas** un nom inventé à l'américaine :
+la transformation se nomme dans les mots du client, sinon elle ne dit rien.
+
+### Affirmations centrales retenues
+
+- **Le site change de métier** : il ferme la décision au lieu de la créer. Une page qui « ne gêne pas »
+  bat une page qui impressionne.
+- **Vendre un résultat, pas un livrable** : les cinq sections et le bilingue sont des preuves, pas
+  l'argument. Le prix s'accroche au résultat, jamais aux heures.
+- **Les styles se choisissent, ils ne s'inventent pas** ; et **une tendance devient un problème quand elle
+  devient une recette**.
+- **L'étoile du spectacle** : un élément, relié à l'histoire de la maison, pas choisi parce que c'est joli ;
+  puis on en répète un **composant** ailleurs (rime visuelle).
+- **La police d'ancrage se choisit sur le TITRE d'abord**, et le second choix doit contraster franchement.
+- **Hiérarchie par niveaux d'emphase** (100 / ~87 / ~60) plutôt que tout au même poids.
+- **Dépasser la première idée** : la première version est un brouillon, jamais le livrable.
+
+### Contradictions avec nos fichiers
+
+- **Avec la décision contenu du 23/09** : voir ci-dessus — nuance de méthode, décision inchangée, à King.
+- **Avec notre §11 (copie)** : l'offre signature américaine pousse à des noms inventés. Notre règle gagne.
+- **Avec §22.6 (honnêteté sur nos limites)** : la vidéo 24.4 suppose de *voir* les variations ; dans ce
+  bac, il n'y a pas de navigateur. Les corrections faites cette nuit sont **structurelles et vérifiables
+  en code** (police chargée, rythme, pastilles) — **le regard reste celui de King**.
+
+### Déchets écartés
+
+- Les formations, communautés et offres payantes des quatre chaînes ; les chiffres de revenus personnels.
+- Les exemples de sites étrangers (parfum, café, mode) : les mécanismes sont transférables, les décors non.
+- Les pourcentages AEO cités comme des faits établis (voir §5 du présent fichier).
+
+---
+
+## Lot [25] · MOBILE-FIRST + LA VERTICALE LABO — 3 vidéos + 1 page (King, 23/09/2026, tard)
+
+**Pourquoi ce lot compte plus que les précédents.** Trois des quatre sources parlent du **téléphone**, qui
+est l'écran de nos clients et de leurs clients (Flux Academy : ~60 % du trafic mondial est mobile, et
+c'est plus au Cameroun). La quatrième parle de **laboratoires** — la verticale dans laquelle on vend
+vendredi. Les leçons sont donc allées directement dans la page en cours, pas dans un tiroir.
+
+### 1 · Malewicz — *The Secret to Mobile Web Conversion* (`youtu.be/q8yUIbRiNRc`)
+
+**Cinq fautes communes, plus un bonus, plus l'atterrissage des formulaires.**
+
+① **Entasser le hero du bureau dans le téléphone** : moins d'espace blanc, hiérarchie illisible, le
+cerveau se dit « ce n'est pas ce que je cherche » et part. ② **De l'animation lourde dans le hero** :
+« pretty damaging to your brand, especially on mobile ». ③ **Des cibles trop petites — ou trop grosses** :
+sur bureau 48-52 px ; **sur mobile au-dessus de 52 et en dessous de 64**, sinon on rate sa cible ou on
+déclenche la **cécité aux bannières** ; un élément de preuve sociale illisible sur téléphone se
+**supprime**, il ne se rétrécit pas. ④ **Un téléphone dans un téléphone** (« inception ») : montrer le
+problème résolu par un élément simple. ⑤ **La copie du bureau recopiée** : sur petit écran, **le texte
+grossit**, il ne rétrécit pas ; on réécrit la copie pour le téléphone, on change « click » en « tap »,
+et on baisse la friction du bouton.
+
+**Bonus, qui contredit une habitude à nous :** *éviter les éléments collants sur mobile* — ni logo ni menu
+épinglés pendant le défilement ; un petit bouton « retour en haut » suffit. **Formulaires :** moins de
+champs, **cases à cocher d'au moins 32×32**, et « plus de deux champs sur mobile = grosse chute de
+conversion » : convertir d'abord, demander le reste ensuite. **Et sa technique en test : micro-visuels sur
+mobile, visuels pleins sur bureau** — l'image de hero chasse le titre et le bouton hors de l'écran, donc
+elle ne gagne souvent rien.
+
+### 2 · Flux Academy — *This is what mobile web design excellence looks like* (`youtu.be/1r4GHOd2THM`)
+
+Dix exemples vivants. **Empiler les colonnes du bureau n'est pas du responsive, c'est un désastre** :
+le mobile a son propre rythme (une ou deux colonnes) et **chaque image a un rapport choisi pour le
+téléphone** (le portrait convient aux personnes, un bandeau devient 4:3). La **hiérarchie est
+grand → moyen → petit** avec un seul élément dominant par écran ; **l'espace blanc reste possible sur
+mobile** et c'est ce qui fait « premium » ; **chaque panneau doit pouvoir être une affiche** ; rien
+d'essentiel derrière des clics ; **le mobile n'est pas une raison de faire plat** (angles, cartes
+superposées, bandeau horizontal fonctionnent) ; et un **bouton de menu près du pouce**, en bas.
+
+### 3 · Jesse Showalter — *Mobile Design 101* (`youtu.be/q6qA_609UOE`, direct)
+
+**Cinq points :** ① **distiller l'offre** — un seul élément principal par page (son test : faire un grand
+cercle sur l'élément le plus important du bureau ; s'il n'y a pas de grand cercle, la page a un problème
+partout) ; le menu hamburger existe parce que tout montrer, ce n'est pas distiller. ② **Les boutons vivent
+sous le pouce** (la « règle du pouce » : bas confortable, milieu acceptable, haut mauvais). ③ **Typographie
+lisible** : pas de police display pour le texte, pas de famille mixée, rien de cursif, **jamais de graisse
+thin/light sur mobile**, et **jamais de noir pur sur blanc pur** (nos jetons y répondent déjà). ④
+**Optimiser images et vidéo** : redimensionner dans un constructeur ne réduit pas le **poids du fichier** —
+exporter une variante légère et laisser les balises choisir ; si l'image de hero ne peut pas être allégée,
+**la remplacer par une couleur de marque** (une valeur hexadécimale en CSS) ; **logo en SVG**. ⑤ **Tester
+sur de vrais appareils**, dans les vrais navigateurs, « at night, in bright sunlight, Android and iOS ».
+
+**Et trois nombres utilisés désormais :** dessiner la trame mobile vers **360-380 px** ; **420-450 px est
+la frontière du mobile** (sous laquelle : une colonne, moins d'images, fonction principale en avant,
+boutons plus bas) ; une grille mobile de **4 ou 6 colonnes, jamais 12** — et « make it till you break it »
+plutôt qu'un point de rupture par appareil.
+
+### 4 · Thomas Digital — *40 of the Best Lab Websites* (`thomasdigital.com/industry/lab-website-design`)
+
+**Sept principes, dont quatre nous concernent directement :** ① connaître **l'audience primaire** (un site
+de laboratoire sert au moins deux publics ; servir tout le monde également, c'est ne servir personne —
+le nôtre : le patient envoyé par son médecin) ; ② **mener avec le problème résolu, pas avec la science** ;
+③ **les signaux de crédibilité vont au-dessus de la ligne de flottaison** (agréments, personnes nommées,
+travaux publiés) — pour nous : l'autorisation réelle, le personnel nommé, horaires, adresse, téléphone,
+**jamais inventés ni empruntés** ; ④ **la navigation suit la décision du client**, pas l'organigramme ;
+⑤ **précision plutôt que décoration** — les clichés (fond sombre et molécules lumineuses, **photos de
+personnes en blouse blanche**) ne différencient personne ; ce qui marche est **spécifique au travail réel**
+(appareils, locaux, personnes réelles) ; ⑥ **plusieurs niveaux de profondeur** technique ; ⑦ **pour un
+laboratoire d'analyses, le chemin de conversion doit être explicite** : ce qu'il faut fournir, **ce qui se
+passe après l'envoi**, les délais — sa phrase : *« People don't fill out forms when they're uncertain about
+what comes next. »*
+
+**Ce que ce n'est pas.** Cette page est celle d'un **concurrent** (agence de San Francisco) : elle se lit
+pour ses principes et pour son angle commercial (« request a free mockup », l'aveu de ce qu'un site de
+labo doit faire). Ses exemples — biotech, capital-risque, publications — ne sont pas notre marché :
+**les mécanismes transfèrent, les décors non.** Ses délais (six à dix semaines) ne sont pas les nôtres,
+et son « WordPress » n'est pas notre méthode de livraison.
+
+### Ce que le lot a changé, tout de suite
+
+Sur `demos/concept-unilabo-v1.html`, la nuit même — détail et preuves en **§24.5** de
+`AMK-DESIGN-SKILLS.md` : texte de 16 → **17 px sur téléphone** ; boutons **48 px** bureau / **52 px**
+mobile et **56 px** pour le bandeau ; cases à cocher 17 → **21 px** ; le bandeau collant ramené à **une
+action primaire** + WhatsApp + une icône d'appel ; dans le hero, **la fiche passe avant la photo** sur
+téléphone ; **variantes légères des photos (482 Ko → 193 Ko sur un téléphone)** et trois graisses de
+police économisées ; et le formulaire dit désormais **ce qui se passe après l'envoi**. Enfin, les deux
+harnais de test qui vivaient dans `/tmp` (et qu'un rembobinage du bac a effacés) sont entrés au dépôt :
+`tools/qa/fake_dom.mjs` + `tools/qa/test_unilabo_page.mjs`, **23 assertions**, exécutables par
+`node tools/qa/test_unilabo_page.mjs`.
+
+### Déchets écartés
+
+- Les chiffres de revenus, formations et communautés payantes des trois chaînes ; le « 99 % de mobile »
+  que les commentateurs répètent (Flux Academy donne le vrai chiffre, ~60 %) ; les statistiques de
+  pourcentage sans source.
+- Les exemples de sites étrangers (parfum, robinetterie, danse, architectes) : les mécanismes sont
+  gardés, les décors non (§3.7 : pas d'image empruntée).
+- La tirade « l'IA va remplacer les designers juniors » : vraie sur le fond (elle vise la production),
+  mais ce n'est pas une leçon de design, et elle ne change aucune de nos décisions.
+- La page de Thomas Digital comme **argument de vente** : on ne cite pas un concurrent devant un prospect.
+
+---
+
+## Lot [26] · LE PREMIER ÉCRAN, ET LA PROSPECTION PAR GOOGLE MAPS — 5 vidéos (King, 24/09/2026, au matin)
+
+Règles de construction : **`AMK-DESIGN-SKILLS.md` §26**. Contrôle : **`tools/qa/audit_hero.py`**
+(+ `tools/qa/test_audit_hero.py`, qui vérifie que ce contrôle refuse bien ce qu'il doit refuser).
+Prospection : **`sales/APPELS-GOOGLE-MAPS-2026-09-24.md`**.
+
+| # | Vidéo | Chaîne | Ce qu'elle apporte |
+|---|---|---|---|
+| 26.1 | *Mastering Landing Page UI Design: Tips, Tricks, and Best Practices* (`iDzt8VWqjEg`, 7:41, 2023) | UI UNIVERSITY | **AUCUNE PAROLE** — sous-titres de musique seulement (vérifié deux fois : YouTube et le site de transcription). Tutoriel de code-along : on lit le code, pas la vidéo. Voir 26.6. |
+| 26.2 | *How To Make Animated Website Design Using HTML And CSS Step By Step* (`nbBQCeOCMmQ`, 14:44, 2024) | UI UNIVERSITY | **AUCUNE PAROLE** non plus. L'idée retenue (deux moitiés de titre qui glissent l'une vers l'autre, image qui monte en place) ; l'implémentation est fautive. Voir 26.6. |
+| 26.3 | *18 Hero Section Designs You Can Steal* (`kJb6BZwqCGM`) | Payton Clark Smith | trois familles (fiables / centrées / fantasques), **l'image à gauche vole le premier regard**, et le verdict qui compte : **texte posé sur une photo = « old school », ça fait daté et le bouton devient invisible** |
+| 26.4 | *21 Brand New Hero Sections You Must Copy* (`z5yvZW8Ep-E`) | Payton Clark Smith | 16 mises en page : colonne qui **avale la barre de navigation**, image qui **déborde de sa colonne** (profondeur), **image coupée par le pli** (fait descendre), preuve sociale **descendue du hero** pour la laisser respirer, **hamburger sur ordinateur = presque toujours une faute**, ligne qui guide l'œil, rangée de **chiffres-clés** (prix · délai · nombre d'usagers · note) |
+| 26.5 | *How I Get Easy Web Design Clients From Google Maps* (`LxweAVqlFMM`) | Payton Clark Smith | **les trois cibles** (pas de site / site cassé · site daté · avis récents négatifs) · le mobile avant le fixe (**on joint le patron, pas la secrétaire**) · l'ouverture simple qui n'est pas un pitch · **les 50 à 100 premiers appels sont mauvais pour tout le monde** · « ton avantage, ce n'est plus de savoir construire, c'est ta distribution et tes gens » |
+
+### 26.3–26.4 · La grammaire du premier écran (39 mises en page, deux vidéos)
+
+Ce qu'on **garde**, et qui devient la règle de nos heros :
+
+1. **Texte d'abord, à gauche ; l'image à droite.** Si l'image passe à gauche, c'est la première chose
+   qu'on regarde et le titre perd la course. Une seule exception : quand l'image *est* le produit.
+2. **Jamais de texte posé sur une photographie** — la vidéo le classe « old school », et c'est aussi ce
+   que King a refusé la nuit dernière. Les deux verdicts se rejoignent : ce n'est pas un goût, c'est un
+   défaut de lisibilité, et le bouton est le premier à disparaître.
+3. **Image coupée par le pli = une invitation à descendre.** Nous l'avons déjà sur la photo de
+   préparation d'UNI-LABO (4/3, coupée par le bas de la section). À refaire exprès, pas par hasard.
+4. **La preuve sociale descend du hero.** Elle y étouffe le titre et se lit mal ; juste en dessous, elle
+   respire. (UNI-LABO n'a **aucun avis** : on n'en fabrique pas — cette règle attend le jour où il y en
+   aura.)
+5. **Centrer seulement quand le texte est court** ; dès deux phrases, on repasse à gauche. Le centrage
+   s'effondre avec la longueur.
+6. **Le hamburger sur ordinateur cache ce qu'on a la place de montrer.** Une exception honnête : une
+   page de vente unique où l'on veut retenir le visiteur.
+7. **La profondeur** (colonne qui avale la barre, image qui déborde de sa colonne, image qui raconte un
+   **processus** au lieu d'être un stock) : ce sont les techniques à ressortir pour la **prochaine**
+   construction (l'école d'octobre, la clinique suivante), pas à empiler sur une page qui marche.
+8. **La rangée de chiffres** (prix · délai · usagers · note) donne de la matière au premier écran sans
+   photographie. Sur un labo, l'équivalent honnête que nous avons déjà : horaires, préparation,
+   délai confirmé sur place, langues.
+
+### 26.5 · La prospection par Google Maps — ce qui manquait
+
+Nous faisions déjà deux des trois cibles (site absent ou cassé ; site daté) **mieux que la vidéo** :
+nous auditons avant d'approcher, nous arrivons avec un constat. La troisième — **les avis récents
+négatifs** — nous ne l'avions jamais essayée. Elle vaut une ligne d'offre, avec une limite tenue : on ne
+promet **jamais** de faire disparaître un avis (c'est faux, et contraire aux règles de Google). Ce qu'on
+peut honnêtement vendre : une demande d'avis après une visite réussie, la correction de la cause
+invoquée, et une réponse publique posée. Détail et phrases en `sales/APPELS-GOOGLE-MAPS-2026-09-24.md`.
+
+**Le mobile avant le fixe.** Sur 149 fiches du CRM, **22 portent un numéro** — 18 mobiles, 4 fixes. Le
+plan du jour n'appelle que des mobiles : la règle était déjà respectée dans les faits, elle est
+maintenant écrite. Et pour les quatre lignes fixes, le travail n'est pas d'appeler : c'est de **trouver
+le mobile** (Maps, Facebook), parce que notre canal est WhatsApp.
+
+### 26.6 · Ce qu'un tutoriel de code-along enseigne vraiment (les deux vidéos muettes)
+
+Les deux vidéos d'UI UNIVERSITY n'ont pas de parole : leurs sous-titres automatiques ne contiennent que
+la musique. Leur valeur est donc dans **leur code**, que j'ai lu ligne à ligne dans les deux dépôts
+cités par leurs descriptions (`JeeJu-Coding/agency`, `uiuniversity/animated-hero-section`). Verdict :
+
+- **`h1::before{content:'The'}` / `::after{content:'Agency'}`** — le titre visible est écrit **dans le
+  CSS**. Invisible pour un lecteur d'écran, ignoré par Google, introuvable au Ctrl+F. C'est la faute la
+  plus grave des deux dépôts, parce qu'elle ne se voit pas.
+- **`height:100vh` + un titre à 180 px (ou 222 px) en position absolue + zéro `@media`.** Magnifique sur
+  l'écran de celui qui l'a fait, cassé sur un téléphone — exactement le reproche que King m'a fait.
+- **Des `@keyframes` qui déplacent `bottom`** (une propriété de mise en page) sans
+  `prefers-reduced-motion`.
+- **Du lorem ipsum** et un `{{PLACEHOLDER}}` dans le HTML livré.
+
+La leçon utile n'est donc pas « voici comment on fait un hero » : c'est **le geste se garde, le code se
+jette**, et un tutoriel qui montre un beau résultat n'est pas une référence de qualité. Ces quatre
+défauts sont désormais **détectés automatiquement** par `tools/qa/audit_hero.py` — dont le test
+`test_audit_hero.py` les reproduit exprès pour prouver qu'il les attrape.
+
+### Déchets écartés
+
+- **L'offre « site gratuit + abonnement mensuel »** recommandée par 26.5 pour ouvrir une porte : elle
+  suppose de baisser le prix, et notre règle est de ne jamais remiser — on ajuste le périmètre. Notée
+  comme décision pour King (un étalement du paiement n'est pas une remise), pas appliquée.
+- **L'outil payant de la vidéo** (uglisitescraper) : il fait ce que nous faisons déjà à la main sur
+  Maps, et il est orienté États-Unis.
+- Les pourcentages de conversion et les montants (30 000 $ en dix jours) : non vérifiables ici, et pas
+  nécessaires — c'est la régularité qui compte, pas le chiffre.
+- Les 39 mises en page **comme modèles à copier** : ce sont des idées de composition. Aucune image, aucune
+  marque, aucun gabarit n'est repris (même règle que §3.7).
+
+### Ce qu'on pourrait apprendre ensuite — proposé le 24/09, à choisir par King
+
+Chaque ligne nomme **le manque réel** qu'elle comble, pas un sujet qui a l'air utile. Avant d'enregistrer
+une source, je la lis (et si c'est une vidéo, je vérifie qu'elle a une vraie parole — le lot [26] a montré
+que deux vidéos sur cinq n'en avaient aucune).
+
+| priorité | sujet | le manque que ça comble | sources (à lire avant d'enregistrer) |
+|---|---|---|---|
+| 1 **(choisie, faite — lot [27])** | **L'accessibilité (WCAG) sur nos pages** | le lot [26] a trouvé des mots écrits dans le CSS, invisibles aux lecteurs d'écran. Nos clients sont des **institutions** (écoles, labos) : l'accessibilité y est un argument de sérieux, pas une mode | W3C WAI (référence officielle) · web.dev (Learn Accessibility) · les rapports de l'auditeur `tools/qa/audit_page.py` |
+| 2 | **Google Business Profile à fond** (fiche établissement, avis, photos, horaires) | c'est la troisième cible du lot [26] (les avis) et la première chose qu'un patient ou un parent voit. Aujourd'hui on l'évoque, on ne le vend pas | documentation officielle Google Business Profile · `AMK-SEO-PLAYBOOK.md` §8 en regard |
+| 3 | **WhatsApp Business pour un commerce** (catalogue, messages d'accueil, réponses rapides, étiquettes) | nous vendons « formulaire WhatsApp » ; si le client n'a pas configuré son WhatsApp Business, l'expérience s'arrête à l'envoi | WhatsApp Business — aide officielle (faq.whatsapp.com) · tutoriels de commerçants |
+| 4 | **Photographier un labo/un cabinet avec un téléphone** | la photo n'est pas comprise dans les 150 000 et nous allons devoir la prendre nous-mêmes, dans leur lumière, sans mentir | à chercher et vérifier (éclairage naturel, plans serrés, arrière-plan) — je proposerai trois candidats lus d'avance |
+| 5 | **Prix et récurrence** (comment vendre un abonnement sans remiser) | une décision est ouverte : l'échelonnement du paiement au prix plein, ou le site compris dans 12 mois d'abonnement (§5 de `sales/APPELS-GOOGLE-MAPS-2026-09-24.md`) | études de cas d'agences, hors marchés US si possible — à filtrer sévèrement |
+| 6 | **Le français d'ici** (écrire pour un commerçant de Douala) | nos textes sont propres mais parfois « traduits » ; les clients parlent un français plus direct | à construire **nous-mêmes** : relire nos 20 meilleurs messages et extraire nos propres règles, avec les mots des clients (le journal en est plein) |
+
+---
+
+## Lot [27] · ACCESSIBILITÉ (WCAG) — 2 sources de King + les documents officiels (King, 24/09/2026)
+
+**Déclencheur.** King : *« start with accessibility, I guess you will do research online, I'll add what I
+can find »*. Il a envoyé deux sources ; le reste, je suis allé le chercher aux endroits qui font foi (W3C,
+MDN) plutôt que chez ceux qui vendent un service. C'était la priorité n° 1 de la liste « apprendre
+ensuite » écrite la veille dans ce même fichier.
+
+### Les sources lues, et ce que chacune a apporté
+
+| source | ce qu'elle apporte réellement | ce qu'on en garde |
+|---|---|---|
+| **Silktide**, *WCAG explained* (`youtu.be/5H1JGdqLrWo`, 1:50) | la façon dont un client entend les niveaux : **A = « must do », AA = « should do », AAA = « reaching for the stars »** | le vocabulaire. On annonce **WCAG 2.2 niveau AA** : un standard **et** un niveau, jamais l'adjectif seul |
+| **Accessible Web**, *Manual WCAG Auditing Tutorial* (playlist `PLqQI0lmiVs1jhQQNAprIPCjFUYVBB7tY8`, **55 vidéos**) | une vidéo par **critère de succès**, intitulée *« Testing X.Y.Z… »* ; la playlist couvre WCAG 2.2 (2.4.11, 2.5.7, 2.5.8, 3.2.6, 3.3.7, 3.3.8, 4.1.2, 4.1.3) | **la forme d'un audit** : on passe les critères un par un, dans l'ordre, et on écrit ce qu'on a vérifié. Leur outil RAMP et les rappels d'extension sont écartés (marketing) |
+| **W3C**, `TR/WCAG21` + `WAI/WCAG22/quickref` | les critères eux-mêmes, leur numéro, leurs techniques ; la 2.2 est la plus récente (2.1 et 2.0 restent valides) | la numérotation est la langue commune — c'est elle qui rend un rapport vérifiable |
+| **MDN**, *Understanding WCAG* + *Keyboard accessible* + *Text labels and names* | les 4 principes **POUR** ; « un élément focusable doit être interactif » ; **jamais `tabindex` positif** ; un clic doit avoir un équivalent clavier ; un `<title>` est obligatoire ; un dialogue a un nom | les règles de terrain, plus lisibles que la spécification pour décider vite |
+
+### Ce que l'audit a trouvé SUR NOS PAGES (et qui a été réparé)
+
+Un contrôle d'accessibilité qui ne trouve rien sur ce qu'on a déjà livré ne valait pas la peine d'être écrit.
+Onze défauts, sur quatre pages, dont trois invisibles à l'œil :
+
+1. **Deux champs du formulaire du site dont l'étiquette n'était pas attachée** au champ (un `<label>`
+   voisin, sans `for=`) : un lecteur d'écran annonçait « champ de texte » sans dire lequel (WCAG 3.3.2).
+2. Le formulaire écrit maintenant sa réponse après le clic, avec un rattrapage si le
+   navigateur bloque la fenêtre (WCAG 3.3.1 : la leçon d'UX du lot [22], côté accessibilité).
+4. **Des sauts de niveau dans les titres** : `h2` → `h4` et `h2`→`h5` sur le site, `h2`→`h4` au pied de page
+   d'UNI-LABO. La hiérarchie est la carte du document pour qui navigue de titre en titre (WCAG 1.3.1).
+5. **Dix icônes décoratives non marquées** `aria-hidden` : le lecteur d'écran annonçait « image » sans rien
+   dire avant chaque lien (WCAG 1.1.1).
+6. **Un menu mobile qui ne disait pas qu'il s'ouvrait** : pas d'`aria-expanded`, et la touche Échap ne le
+   fermait pas. Les boutons de langue ne disaient pas lequel était actif (`aria-pressed`).
+7. **Les quatre photos de familles d'UNI-LABO** portaient un alt qui répétait le texte déjà imprimé sous la
+   photo (« Photo d'illustration de laboratoire — Biochimie »). **On a ouvert les images** et écrit ce
+   qu'elles montrent : six tubes à bouchon bleu dans un portoir violet avec une micropipette ; un frottis
+   sanguin ; une pipette sur une plaque à puits violets ; un automate à bras mécanique au-dessus d'un
+   carrousel de tubes.
+
+### Ce que ça a produit, et ce que ça ne prouve pas
+
+- **Le contrôle `tools/qa/audit_a11y.py`** (WCAG 2.2 AA), testé par `tools/qa/test_audit_a11y.py` : douze
+  défauts attendus sur une page fautive, zéro alerte sur une page saine, et il **dit aussi ce qui est
+  conforme**. Les pages AMK et UNI-LABO sortent à **0 faute A/AA**. La doctrine est en **§27**.
+- **Ce que ça ne prouve pas** : le contraste (couvert par `audit_html.py`), l'ordre de tabulation réel, le
+  rendu à 200 %, et la qualité d'un alt — les quatre demandent un œil. On l'écrit dans le rapport, on ne le
+  cache pas.
+- **Une leçon d'outillage** : le premier jet de mon contrôle a produit **cinq faux positifs** (et un faux
+  négatif : `a:focus{outline:none}` satisfaisait son propre test « une règle de focus existe »). Corrigés
+  dans l'outil, jamais tolérés. C'est la même leçon qu'au lot [26] avec les deux vidéos muettes : **vérifier
+  l'instrument avant de croire la mesure.**
+
+---
+
+## Lot [28] · LE LECTEUR D'ÉCRAN ET LES FORMULAIRES — 4 sources de King (24/09/2026, dans la journée)
+
+Suite directe du lot [27] : King a envoyé exactement les deux angles que le rapport d'accessibilité
+signalait comme manquants — **le test réel au lecteur d'écran** et **les formulaires**. Quatre sources,
+dont une qui n'a pas pu être lue (dit plus bas, sans détour).
+
+| source | ce qu'elle apporte | ce qu'on en garde |
+|---|---|---|
+| **`youtu.be/aAh1PFsgcBY`** — *NVDA Screen Reader Tutorial: How to Use It for Accessibility Testing* (Software Testing 101, 18,5 k abonnés, lu en entier) | le mode d'emploi du test à l'oreille, et **la comparaison la plus utile qui soit** : le même formulaire chez eux (fautif) puis chez Apple (irréprochable) | les touches (**D** repères, **H** titres, **K** liens, **F** champs, **NVDA+Tab** où suis-je), l'astuce des **trois couleurs** (bleu = focus, rouge = lecture, jaune = revue) qui rend le test possible pour quelqu'un qui voit, et le vocabulaire des pannes |
+| **`kortic.com`** — *Formulaires et messages d'erreurs accessibles* (Anthony Ladeuil, FR, licence CC BY-NC-SA) | tout l'article porte sur ce que personne ne fait : **gérer les erreurs de saisie** | étiquette liée et à proximité · format annoncé · **le placeholder n'est pas une étiquette** · `type` + `autocomplete` · `fieldset`/`legend` pour les groupes · pas de CAPTCHA (un honeypot à la place) · **marquer les champs FACULTATIFS plutôt que d'astérisquer les obligatoires** · et le patron complet du **résumé d'erreurs** : un conteneur focalisé, une liste où chaque erreur est un **bouton qui amène au champ** et le marque `aria-invalid` |
+| **`github.com/videvelopers/TalkBack-Sound-effect-for-NVDA-`** | un module NVDA (Python, MIT, 2023) qui imite les sons de TalkBack : **un son par objet** quand on se déplace | l'idée qui compte n'est pas le module, c'est ce qu'il imite : **sur Android, on explore élément par élément**. Ce qui n'est pas atteignable au balayage n'existe pas — et c'est le téléphone que nos clients ont |
+| **`faq.whatsapp.com/3614672068767202`** | ❓ **PAGE NON LUE** | voir ci-dessous |
+
+### La source qui n'a pas pu être lue — et pourquoi je l'écris
+
+Le lien du centre d'aide WhatsApp (plateforme Android, locale fr_FR) **répond 403** à notre outil de fetch,
+et le bac à sable n'a **aucun réseau en ligne de commande** (vérifié : `curl` répond `000` même pour
+`example.com`). Quatre tentatives : URL d'origine, sans paramètres, en `fr_FR`, en `en_US`. **Je n'ai pas
+lu cette page, je ne vais donc pas résumer ce qu'elle dit.** Ce qu'on peut affirmer sans l'avoir lue : WhatsApp
+fonctionne avec TalkBack et VoiceOver (c'est documenté par des sources tierces, et Android Accessibility Suite
+le décrit). **Si King veut que son contenu entre dans le dossier, il suffit de coller le texte ici** — et il
+sera intégré comme les autres.
+
+### Ce que ces sources ont fait changer dans le code, le jour même
+
+Quatre vrais défauts trouvés sur nos pages, tous invisibles à l'œil :
+
+1. **Les trois pages du site n'avaient AUCUN repère `<main>`.** C'est le tout premier constat du tutoriel :
+   sans repère principal, le lecteur annonce l'en-tête, le menu, le pied de page… et **« page blank »** au
+   milieu. Corrigé : `<main id="contenu">` + `main{display:block}`.
+2. **Deux de ces pages n'avaient pas de lien d'évitement** (« Aller au contenu ») — le critère **2.4.1, qui
+   est de niveau A**. Corrigé : le lien est en première position dans le `<body>`, donc au premier `Tab`.
+3. **Le formulaire du site échouait en SILENCE** : `if (!biz) return false;` — un clic sur « Recevoir mon
+   aperçu » sans nom ne produisait **rien** : pas de message, pas de focus, aucune annonce. C'est
+   exactement le défaut que le tutoriel NVDA décrit (« *it does not introduce an error message… only says
+   blank* ») et que tout l'article de Kortic traite. Et il y avait un cas vicieux : un champ rempli
+   d'**espaces** passait la validation native du navigateur (`required`), donc le JavaScript était le seul
+   filet — et il ne disait rien. Corrigé : la zone vivante **annonce** ce qui manque, le champ est marqué
+   `aria-invalid`, et **le focus y est amené**.
+4. **L'astérisque des champs obligatoires** (« Nom de l'école ou de la clinique \* ») n'était expliqué **nulle
+   part** — or un astérisque ne se vocalise pas et sa signification doit être donnée *avant* le formulaire.
+   Appliqué la règle de Kortic : on ne marque plus l'obligatoire, on marque le **facultatif** (« Votre numéro
+   WhatsApp (facultatif) »).
+
+Deux contrôles neufs dans l'outil, nés de la même phrase :
+
+- **2.4.1 — les repères** : sans `<main>`, la page est signalée (« la navigation au lecteur d'écran annonce
+  l'en-tête, le menu, le pied de page, et rien au milieu ») ;
+- **1.3.1 — les groupes nommés** : un `<fieldset>` **sans `<legend>`** ne nomme rien ; le lecteur annonce
+  alors des cases isolées (« *personal radio button, one of two* ») sans dire de quoi il s'agit.
+
+Et un contrôle qui passe d'avertissement à vérification : **3.1.2** regarde maintenant **comment** la page
+bilingue cache l'autre langue. `display:none` la retire de l'arbre d'accessibilité ; `opacity:0` ou
+`visibility:hidden` la laissent dedans — le lecteur annonce alors **les deux langues à la suite**. Sur
+UNI-LABO c'est `display:none` ✅, sur le site une seule langue est dans le document à la fois ✅.
+
+### Le livrable qui manquait
+
+**`tools/qa/PROTOCOLE-LECTEUR-ECRAN.md`** — le test à l'oreille, en 5 minutes, fait par un humain : quoi
+installer (NVDA gratuit, TalkBack préinstallé), les **huit touches** qui comptent, **ce qu'on doit entendre
+sur nos pages** (avec les vrais chiffres : 44 titres et 42 liens sur le site, « *1 · Vos analyses, groupe de
+cases à cocher, 1 sur 19* » sur UNI-LABO), les gestes TalkBack sur Android — et la question qui compte pour
+nous : **le double tap ouvre-t-il WhatsApp ?** — plus trois limites écrites noir sur blanc (nous ne sommes pas
+des utilisateurs expérimentés de lecteur d'écran ; on ne teste jamais sur la vraie page du client ; le
+protocole complète l'audit automatique, il ne le remplace pas).
+
+### Ce que le lot [28] confirme du lot [27]
+
+Les deux lots se rejoignent sur un point, par deux chemins indépendants : **une page peut être parfaite dans
+le code et muette à l'oreille.** Le lot [27] l'avait trouvé en lisant les critères ; le lot [28] le montre en
+comparant un formulaire fautif et un formulaire Apple. C'est la raison d'être du protocole manuel : il n'y a
+pas d'outil qui entende à notre place.
+
+---
+
+## Lot [29] · LE PREMIER ÉCRAN, DEUXIÈME PASSE — le processus, le regard, et la règle des 90/10 (24/09/2026)
+
+Cinq vidéos de King, toutes sur le premier écran. **Trois viennent de Flux Academy** (1,09 M d'abonnés) :
+un processus complet, 21 mises en page réelles décortiquées, et l'épisode 10 de leur cours gratuit. Les deux
+autres : **Ahmed Alsayad** (plan de conversion + liste de contrôle) et **Malewicz** (25 ans de métier,
+500 heures d'enregistrements de sessions).
+
+**Ce lot recoupe le lot [26]** (Payton Clark Smith, 39 heros) — je le dis parce que c'est vrai, et parce que
+répéter une leçon en la faisant passer pour neuve est une façon de grossir un journal. Le lot [26] avait
+donné la **grammaire** (texte à gauche, jamais de texte sur une photo, image coupée par le pli, preuve
+sociale en dessous, pas de hamburger sur ordinateur). Celui-ci ajoute quatre choses qui n'y étaient pas :
+**le processus qui fabrique un premier écran**, **la mécanique pour diriger un œil**, **le partage du
+travail entre le haut de page et le reste**, et **l'échec par surcharge mentale**. Deux de ces apports sont
+maintenant vérifiés par la machine.
+
+### Ce que chaque source apporte
+
+| source | l'apport | ce qu'on en garde |
+|---|---|---|
+| **Flux Academy — le processus** (`LJbkLdtEW00`) | six étapes, dans l'ordre : **stratégie → maquette → 3 concepts → imagerie → design → optimisation** | les questions de la séance de stratégie (ce que vous vendez, pourquoi vous avez commencé, qui vous aidez, que doivent faire les gens) réduites à **une promesse et une action** ; **la maquette n'est pas jolie et ne doit pas l'être** ; **trois concepts dessinés à la main avant tout design**, pour vérifier qu'il y a la place du texte à côté de l'image ; à l'optimisation : le mot « gratuit », la preuve sociale, le **bouton fantôme** pour l'action secondaire |
+| **Flux Academy — 21 mises en page** (`Kg2ioQMjtIA`) | 21 heros de vrais sites, expliqués | on ne veut pas **une rangée d'éléments moyens** : quelque chose de très grand, quelque chose de très petit, le contraste fait l'échelle ; l'image peut passer **sous** le titre (intégration, pas « posée à droite ») ; le haut de page **compact**, dont on voit l'amorce de la section suivante ; le concept qui porte (la carte d'embarquement de Runway) ; et le « **hero sans hero** » quand la marque est connue et le contenu change (MoMA, un journal) |
+| **Flux Academy — épisode 10** (`flAcHu-squc`) | **la règle des 15 secondes** (80 à 90 % partent avant) et les trois questions : *qu'est-ce que c'est / que faites-vous / qu'est-ce que j'y gagne* | un logo **en icône seule ne répond pas à « où suis-je »** : le nom doit être écrit ; une police d'affichage va bien à 60 px et devient illisible à 16 px (deux polices, ou deux graisses) ; le sous-titre fait la même largeur que le titre, sans mot orphelin ; l'image se choisit pour **la place qu'elle laisse au texte** (un fond chargé est un mauvais choix), quitte à recadrer et à étendre le ciel |
+| **Ahmed Alsayad — le plan** (`gNWOBI67XnQ`) | l'anatomie et les deux familles de fautes | l'anatomie : **titre, sous-titre, visuel, signal de confiance, action** ; la faute n° 1 est la **surcharge mentale** — « beaucoup d'options, donc aucune choisie » : plusieurs boutons, plusieurs couleurs, pas de hiérarchie, tout entassé, et pire, des **actions cachées** ; la faute n° 2 est le site primé qui ne convertit pas (parallaxe lourde : « ça tue l'usage ou la performance » ; titres « malins » mais obscurs) ; et sa liste de contrôle finit sur **mobile** et **chargement rapide** (webp, lottie plutôt que mp4) |
+| **Malewicz — le regard** (`nWbBZPjev_0`) | trois techniques mécaniques et une règle de partage | **principe du regard** : une personne qui regarde l'objectif met l'attention sur ses yeux, une personne qui regarde le bouton nous y conduit — et sur téléphone on recadre la même photo pour qu'elle **lève les yeux vers l'action** ; **guide optique** : le bord droit d'un texte qui descend en biais est un entonnoir vers la suite ; **accord de couleur** : recolorer **un** vêtement d'une teinte proche du bouton principal (tout recolorer donne un uniforme) ; et la règle **90/10** : le haut de page fait 90 % de la persuasion, **les 10 % restants se font en dessous** (« clearing doubts ») |
+
+### Les quatre règles nouvelles dans `tools/qa/audit_hero.py`
+
+Cinq contrôles, tous nés de phrases précises, tous vérifiés par des témoins fautifs construits exprès
+(`tools/qa/test_audit_hero.py`, cinq assertions de plus) :
+
+1. **un premier écran sans phrase d'appui** → avertissement (le titre doit porter seul le quoi, le pour qui
+   et le pourquoi : c'est beaucoup pour une ligne) ;
+2. **un premier écran sans aucune action** → avertissement (« le visiteur comprend où il est et ne peut rien
+   faire ») ;
+3. **plus de deux actions** dans le premier écran → avertissement de **charge mentale** ;
+4. **une marque en icône sans son nom écrit** → **faute franche** (la règle des 15 secondes) ;
+5. **`height:100vh` exact sans rien** (flèche, mot, amorce de section) → avertissement : le visiteur ne
+   descend pas.
+
+Un trou a été bouché au passage : quand l'outil **ne trouve pas** de premier écran à analyser, il le dit
+maintenant (`INFO`), au lieu de laisser cinq règles se taire en silence — un contrôle muet ressemble à un
+contrôle satisfait.
+
+### Le résultat honnête, et il est inhabituel
+
+**Les six pages passent les douze contrôles sans un seul constat.** C'est la première fois depuis le début
+de ces lots : cinq lots d'affilée avaient trouvé de vrais défauts dans notre propre travail. Les pages
+répondent déjà aux trois questions, portent une phrase d'appui, tiennent en deux actions, montrent leur nom
+à côté de l'icône et ne s'enferment pas dans un écran plein. **Ce n'est pas une raison de se relâcher** :
+ces règles viennent de sources lues aujourd'hui, et la prochaine page — l'école, en octobre — part d'un
+fichier blanc, où rien de tout cela n'est hérité.
+
+### La lecture à l'œil — ce qu'aucun contrôle ne pouvait voir
+
+Les cinq règles ci-dessus sont mécaniques. La **règle des 15 secondes**, elle, se juge en lisant le premier
+écran comme quelqu'un qui ne connaît ni l'entreprise ni le quartier. Je l'ai faite, et voilà ce qu'elle
+donne :
+
+- **UNI-LABO** répond aux trois questions avant la première ligne du titre, parce que sa marque porte le
+  métier : « **UNI-LABO — Laboratoire d'analyses de biologie médicale** », puis le lieu (« Bonamoussadi,
+  Douala »), puis la promesse (« Le résultat juste, du premier coup »), puis ce qui se passe concrètement
+  (« vous arrivez avec l'ordonnance… vous repartez en sachant quand revenir »). *« Où suis-je », « que
+  faites-vous », « qu'est-ce que j'y gagne » : les trois sont là.* Le nom du biologiste et le numéro
+  suivent — la confiance est nommée, pas suggérée.
+- **Le site AMK** répond aussi aux trois, avec une nuance : **l'accroche et le titre disent la même chose**
+  (« Développement web — écoles & cliniques · Cameroun » puis « Création de sites web pour écoles et
+  cliniques au Cameroun »). Or l'accroche est une place précieuse : chez Malewicz elle sert à **planter la
+  preuve** avant le titre ; chez Flux, à donner le contexte. Aujourd'hui elle répète.
+
+  **Je ne l'ai pas changée.** C'est une décision de positionnement, pas un défaut mécanique : notre propre
+  page n'est pas dans la réunion de vendredi, je n'ai aucune donnée qui dise qu'une version fait mieux, et
+  la règle de la maison est de ne pas rouvrir une page qu'on vient de livrer sur un avis personnel. **La
+  question est posée à King**, avec deux pistes honnêtes et vérifiables : y mettre le **lieu**
+  (« Douala · Yaoundé · Buea · Limbé », qui est déjà dans le titre de la page) ou y mettre un **fait
+  vérifiable** (« 5 sites en ligne qu'on peut ouvrir »). Rien d'inventé dans les deux cas — et rien
+  d'appliqué sans son accord.
+
+### Et une troisième fois, l'instrument avait tort
+
+Mes cinq assertions ont d'abord produit **trois échecs** sur des témoins que l'outil refusait
+correctement : `levels()` renvoie un **couple** (niveaux, constats) et non un ensemble, et je cherchais
+« aucune action » en minuscules quand le message dit « AUCUNE action ». Trois fois la même leçon que les
+lots [27] et [28] — **quand un contrôle accuse, c'est l'instrument qu'il faut soupçonner d'abord** — et
+elle est écrite dans le test, à l'endroit exact où je me suis trompé.
+
+### Ce qu'on n'a pas copié
+
+Flux construit la confiance avec « Obi-Wan et 4 000 autres nous ont déjà rejoints », Malewicz avec une
+rangée de chiffres. Nous n'avons ni avis, ni nombre de clients, ni presse — **et en inventer un est
+interdit depuis le premier jour**. Ce qu'on a est vérifiable : cinq pages réelles que n'importe qui peut
+ouvrir, les mots du laboratoire, et le fait que le visiteur regarde son propre futur site. Écrit ici pour
+le jour où la question viendra.
+
+---
+
+## Lot [30] · LA FICHE GOOGLE, ET LE LIEN D'ÉVITEMENT MORT — 4 vidéos (24/09/2026, quatrième lot du jour)
+
+Quatre liens sans texte. Trois sur la **fiche Google** — Santrel Media (1,13 M d'abonnés, l'installation
+pas à pas), Ignite Visibility (64,9 K, vingt points de contrôle), Zanet Design (36,2 K, une compilation
+présentée comme une masterclass) — et une sur l'**accessibilité** : Imran Siddiq, Web Squadron (195 K),
+une démonstration complète dans Elementor. Toutes parlantes, lues en entier (la première a demandé deux
+tentatives : YouTube bloque les sites de transcription par intermittence).
+
+**Ce que le lot [26] avait déjà dit, et que je ne revends pas** : la prospection par Google Maps, le
+mobile avant la ligne fixe, les trois cibles, les ouvertures d'appel. Le lot [26] avait établi *où
+trouver* les prospects ; celui-ci établit **quoi faire de leur fiche Google** — un sujet neuf.
+
+### Ce que chaque source apporte
+
+| source | l'apport | ce qu'on en garde |
+|---|---|---|
+| **Santrel Media** — l'installation | le pas-à-pas filmé, écran partagé | on **cherche d'abord sur Maps** : si la fiche existe, on la REVENDIQUE, on ne crée pas de doublon ; un compte Google professionnel, pas le personnel ; les services et produits remplis « sans lésiner » ; la description (750 caractères, quelques centaines au minimum) ; au moins cinq ou six photos, et les clients en ajouteront ensuite ; **la vérification** par téléphone, courrier ou vidéo — c'est le client seul qui peut la faire ; et cette phrase qui nous concerne : « les gens cliquent presque toujours sur le lien du site » |
+| **Ignite Visibility** — 20 points | une liste récitée vite, utile comme inventaire | le **NAP** (nom, adresse, téléphone) identique partout sur le web ; des **avis réguliers** ; les **horaires** qui commandent la visibilité ; la **FAQ** sur la fiche **et** sur la page ; une URL qui contient la ville et le service ; la carte du site qui renvoie à la fiche et l'inverse ; les **images locales** ; le texte alternatif **dans la fiche et dans le HTML** ; 3 à 5 **vidéos courtes** ; un appel à l'action dans le texte ; le **schéma `LocalBusiness`** sur la page d'arrivée ; les publications régulières pour que la fiche reste vivante ; et la conclusion : « traitez votre fiche comme son propre site web » |
+| **Zanet Design** — la masterclass | le plus long, et le seul qui parle de **suspension** et de **couleurs de performance** | la **catégorie principale est le plus gros facteur** (et sa méthode : regarder celles des concurrents du quartier) ; le nom réel, jamais de mots-clés collés ; **les 13 pièges de suspension** ; le **chat** rouvert (SMS et WhatsApp — avec un **lien `wa.me`**, pas un numéro, sinon ça ne marche pas) ; le champ « **date d'ouverture** » que presque personne ne remplit ; la **vérification** ; « personnes et accès » pour déléguer la gestion ; le **cercle de couleur** des statistiques (mobile, ordinateur, Maps) pour savoir comment SES clients le trouvent ; et sur les avis : **Google n'utilise que ce que les clients écrivent**, pas ce que le commerçant répond — un avis frais pèse plus que des mois de travail, et un avis avec photo vaut dix avis de texte |
+| **Imran Siddiq** — l'accessibilité | une démonstration, pas une liste | le **lien d'évitement mort** (voir ci-dessous) ; une **étiquette masquée est permise, une étiquette vide non** ; le **contraste dépend de la taille** (16 px échoue, 24 px passe, 23 px échoue encore) ; l'accordéon n'est pas tabulable — **mais notre FAQ est en `<details>` natif**, donc concernée par rien ; les vidéos ont besoin de sous-titres et d'un bouton pause ; et la règle d'or de l'`aria-label` : **seulement quand l'icône est le seul nom** |
+
+### Ce que j'ai fait de vérifiable — et ce que j'ai refusé de faire
+
+**Ajouté** : deux contrôles durcis dans `tools/qa/audit_a11y.py` — un lien d'évitement dont **la cible
+n'existe pas** est une faute, un lien d'évitement **caché pour toujours** aussi, et une **étiquette vide**
+aussi. Trois témoins fautifs neufs, deux assertions de plus, et le témoin sain qui verrouille le motif
+réel de nos pages (`.skip{left:-9999px}` + `.skip:focus{left:0}`). Nos quatre pages passent : elles ne
+mentaient donc pas, mais **notre contrôle, lui, ne le savait pas** — il acceptait n'importe quel lien vers
+nulle part.
+
+**Refusé, exprès** : un second contrôle de contraste. `audit_html.py` calcule déjà les ratios depuis le CSS
+du fichier, avec la nuance de taille (4,5:1, puis **3:1 au-delà de 24 px ou 18,66 px gras**) et la
+composition des transparences. La vidéo **confirme** notre règle, elle ne la change pas ; deux outils qui
+mesurent la même chose finissent par se contredire.
+
+**Écarté, parce que ça ne nous concerne pas** : l'accordéon d'Elementor (notre FAQ est du `<details>`
+natif, tabulable normalement — aucun texte caché n'est dû), et les sous-titres vidéo (nous n'embarquons
+aucune vidéo : zéro élément `<video>` sur les six pages ; la règle est écrite en §30.2 pour le jour où un
+client nous donnera des images).
+
+### Les deux corrections que ce lot m'a values
+
+1. **Ma quatrième erreur d'instrument.** Un script rapide a annoncé « 2 liens-icônes sans nom » sur la
+   page école : faux, tous deux sont nommés par leur **texte**, et l'outil d'audit compte le nom comme
+   attribut **ou** contenu depuis le lot [28]. Rien corrigé sur la page, et la règle est écrite.
+2. **Une affirmation que j'avais écrite sans preuve.** J'avais rédigé, dans le nouveau document, que
+   UNI-LABO avait une fiche Google « trouvée par notre relevé Maps ». La ligne du CRM dit
+   `source : directory`, et la vignette que je regardais (`clients/douala-cliniques/07-unilabo.jpg`) est
+   **notre propre maquette**. Corrigé dans le document, avec la correction datée : le cas prouvé du
+   pipeline, c'est **Univers Optique** — fiche Google notée 3,3/5, **champ « site web » vide**, domaine
+   mort depuis janvier 2024, et rendez-vous vendredi 10 h où la question est déjà posée.
+
+### Le verdict d'absorption
+
+**Absorbé** : les 20 points d'Ignite Visibility (inventaire), l'ordre d'installation de Santrel, la
+catégorie et les pièges de Zanet, la règle du `wa.me`, et les trois règles d'Imran devenues des contrôles.
+**Retenu avec réserve** : les conseils d'avis des trois vidéos — nous ne dictons pas le vocabulaire d'un
+avis, nous ne l'achetons pas, nous ne l'échangeons pas contre un prix (voir §30.4, point 1).
+**Écarté** : le vocabulaire de vente des trois chaînes américaines (le « donut », les outils payants cités
+— Local Falcon, GMB Everywhere, Answer Socrates, Lo — que nous ne pouvons ni acheter ni vérifier depuis
+Douala), et leurs promesses de classement.
+
+**Ce qui reste non vérifié, et donc jamais écrit dans une offre** : les méthodes de vérification
+réellement disponibles au Cameroun, la présence du chat SMS/WhatsApp dans les profils du pays, les
+catégories disponibles en français. Trois sources américaines et britanniques ne prouvent rien sur une
+fiche camerounaise.
+
+---
+
+## Lot [31] · AEO, ET LE GABARIT QUI ALLAIT DEVENIR LA VITRINE — 1 vidéo + 5 sources écrites (24/09/2026)
+
+Six liens. **Je venais d'écrire à King qu'un quatrième lot sur la fiche Google n'apporterait rien** : il en
+a envoyé un, et il avait raison. Le paquet contenait **la documentation officielle de Google** (une classe
+de source différente : elle transforme quatre affirmations de vidéastes en faits vérifiables) et **une
+vidéo sur un sujet que personne n'avait couvert** — l'AEO, l'optimisation pour les moteurs de réponse.
+Deux des six liens ont changé quelque chose de réel dans le dépôt.
+
+### Les sources, et ce que chacune vaut
+
+| source | ce que c'est | verdict |
+|---|---|---|
+| **`58MR03s0ev8` — Ahrefs, « Learn 80 % of AEO in 19 Minutes »** (679 K abonnés) | AEO : comment les assistants choisissent qui citer. Recherche maison : 174 000 pages citées, 75 000 marques, 140 M de sites scannés pour le blocage de robots | **absorbé** — nouveau sujet ; doc de référence : `research/AEO-2026-09-24.md`, règles d'écriture en §31 de `AMK-DESIGN-SKILLS.md` |
+| **`developers.google.com/my-business/content/overview`** | la documentation **officielle** de l'API Business Profile | **absorbé** — et il **ferme une porte** : l'accès exige un compte Google, un motif professionnel, un projet Google Cloud et une URL de site. **Pas d'automatisation de fiche client pour nous** (FICHE §9.4) |
+| **`localimpact.com`** — « Google Business Profile in 2026 » | le guide le plus complet du paquet | **absorbé** — les trois facteurs de classement (pertinence, distance, notoriété, cités de l'aide Google), les **cinq** méthodes de vérification, ce que la **vérification vidéo** exige (une seule prise, enseigne → intérieur → preuve d'activité, pas de visages ni de documents bancaires), la **demande d'accès** quand un tiers gère la fiche (3 jours), les cinq métriques du tableau de bord (FICHE §9) |
+| **`valveandmeter.com`, `fieldpulse.com`, `ignitevisibility.com`** | trois blogs d'agences et d'éditeurs de logiciels | **écartés** — ils recyclent les mêmes conseils avec l'objectif apparent de vendre leur service. Rien de neuf, et une leçon de méthode : quand trois sources se recopient, la quatrième (la doc de Google) est la seule qui fasse autorité |
+
+### Ce que la vidéo Ahrefs dit, en cinq points
+
+1. **Un prompt n'est pas une requête.** L'assistant le découpe en dizaines de recherches (« query
+   fan-out ») : 420 recherches derrière une seule question sur une coque de téléphone dans ChatGPT. Se
+   classer sur un mot-clé ne suffit pas ; il faut exister sur un sujet.
+2. **Trois facteurs de citation** : la **consensus** (la même chose dite sur soi à plusieurs endroits),
+   la **fraîcheur** (le contenu cité est 25,7 % plus récent), l'**autorité** (76 % des citations d'AI
+   Overviews viennent de pages déjà dans le top 10 de Google).
+3. **Le contenu :** la longueur ne corrèle pas (174 000 pages analysées — plus de la moitié des pages
+   citées font moins de 1 000 mots), la fraîcheur compte beaucoup, et 43,8 % des pages citées sont des
+   **listes, comparatifs et avis**.
+4. **Quatre règles d'écriture** : la réponse d'abord (BLUF), des sections **atomiques** (chaque section
+   doit tenir hors contexte), des **entités nommées** (des noms, des lieux, des durées — pas des
+   adjectifs), des **phrases déclaratives simples** (une idée par phrase ; si une phrase demande deux
+   lectures, elle est trop compliquée).
+5. **Le piège technique** : 5,9 % des sites bloquent GPTBot **sans le savoir**, par héritage d'un
+   `robots.txt` ou d'un réglage par défaut. Un site bloqué ne peut pas être cité — et rien ne le montre,
+   puisqu'il n'y a rien à mesurer. YouTube, lui, est le domaine le plus cité dans les AI Overviews
+   (corrélation 0,737 avec la visibilité ChatGPT) — **et nous n'avons pas de chaîne** (voir §31.4).
+
+### Ce que j'ai construit — et le défaut qu'il a trouvé chez nous le jour même
+
+`tools/qa/audit_aeo.py` + `test_audit_aeo.py` (12 assertions, **quatre témoins fautifs**). Quatre
+contrôles seulement, parce que ce sont les seuls vérifiables en machine : aucun robot IA bloqué, aucune
+page publique en `noindex`, des données structurées présentes (et un `FAQPage` qui contient vraiment des
+questions et des réponses), et des questions dans la page. L'outil imprime aussi ce qu'il **ne peut pas**
+vérifier (consensus, fraîcheur, YouTube, qualité d'écriture, citations réelles) et **la liste des pages de
+travail à débloquer le jour du déploiement** — dix-huit aujourd'hui.
+
+**Il a trouvé un vrai défaut en quelques minutes** : `site/mockup-hero.html`, la page-modèle d'accueil,
+part dans le zip de déploiement avec **18 jetons `{{...}}` et aucun `noindex`**. Un robot qui l'aurait
+explorée aurait indexé une page dont le titre visible est « {{NAME}} — Maquette d'accueil AMK ».
+Corrigé, et le contrôle a été étendu à cette classe (un gabarit indexable est une faute).
+
+**Puis l'outil a accusé ma propre correction** (« page publique en noindex : débloquer avant
+déploiement ») : ma règle de périmètre était trop grossière. Un gabarit est la seule page livrée qui
+**doit** rester en `noindex` — il est donc jugé dans les deux sens. Deux leçons : **le périmètre d'un
+contrôle doit correspondre au déploiement réel** (j'avais supposé que `demos/` était du travail et `site/`
+du public ; le zip prouve que `site/` part en ligne), et **un contrôle qui crie au loup cesse d'être lu**
+(les questions et le JSON-LD sont devenus de simples informations sur un gabarit).
+
+### Deux erreurs d'instrument de plus — la cinquième et la sixième
+
+- Mon premier `blocked_bots()` **excluait `Disallow: /`** — c'est-à-dire la règle qui bloque tout. Le
+  témoin l'a attrapée ; aucune relecture ne l'aurait fait.
+- Mon assertion cherchait « **GPTBot** » en majuscules quand le message dit « gptbot ». **Cinquième fois**
+  qu'une assertion mord sur une casse (lot [29] : « AUCUNE action » contre « aucune action »). La règle
+  est maintenant écrite dans le test, à l'endroit de l'erreur.
+
+### Le verdict d'absorption
+
+**Absorbé** : les quatre règles d'écriture (BLUF, atomique, entités, phrases déclaratives), le contrôle des
+robots IA, les trois facteurs de classement, les cinq méthodes de vérification, la procédure d'accès, les
+cinq métriques du tableau de bord.
+**Écarté** : les trois blogs d'agences, et le levier YouTube que nous ne pouvons pas actionner (décision de
+King : plus de production de contenu par défaut).
+**Jamais promis** : un classement, une citation, une « visibilité IA ».
+
+---
+
+## Lot [34] · LES DEUX VIDÉOS QUI PARLENT D'OUTREACH — 2 vidéos, une pièce manquante trouvée (24/09/2026)
+
+King a envoyé deux liens le même jour et posé une question : *« what do we have planned for today ?? I
+suggest we continue outreach what do you say ? »*. Les deux vidéos parlent de la même chose — obtenir des
+rendez-vous — et l'une d'elles a nommé une pièce qui **manquait réellement** dans notre système.
+
+| source | ce que c'est | verdict |
+|---|---|---|
+| **`Mst4hreQYl0` — Alex Hormozi, « Watch This To Generate 1000s of Leads (In Any Niche) »** | la **mini-offre** (lead magnet) : ne pas demander l'achat à un trafic froid, mais offrir une solution complète à un problème étroit, qui **révèle** le problème suivant — celui que résout l'offre principale | **absorbé** — c'est déjà notre pratique (l'aperçu gratuit, les messages qui révèlent un problème) ; trois corrections nommées (nommer le résultat, qualifier, ne pas résoudre le problème payant) |
+| **`HUh1XqppRtU` — Charlie Morgan, « Beginner Guide To Cold Outreach »** | les **sept pièces** d'un système d'outreach : agenda · plateforme · stimuli · CRM · source de leads · **tableau de mesure** · mécanisme d'envoi | **absorbé — et il manquait une pièce** : le tableau de mesure. `leads/FUNNEL.md` est né ce soir |
+
+### Les trois types de mini-offre (Hormozi), et où nous sommes
+
+1. **Révéler un problème** — *« voici un problème que vous ne saviez pas avoir, et voilà ce qu'il coûte »*.
+   Nos messages le font déjà : l'appel qui tombe pendant une consultation et qu'on ne rappelle pas, la page
+   Facebook qui ne prend pas de rendez-vous. **Le bonus de la vidéo :** dire aussi **ce que ça donnerait
+   résolu** — « le patient réserve à 22 h, la secrétaire le confirme au matin ».
+2. **L'essai gratuit** — on donne, puis on retire. Notre aperçu suit ce modèle (une page réelle, en ligne,
+   qu'ils peuvent regarder), mais il est **cadré** : il montre la structure et l'angle, jamais le site fini.
+3. **Une étape d'un processus en plusieurs étapes** — l'aperçu est exactement ça : la page est l'étape 1, la
+   suite (fiche Google, abonnement, résultats en ligne) étant les étapes suivantes.
+
+### Ce que la vidéo dit et qui est vrai chez nous, mot pour mot
+
+- **« On ne vend pas au moment où la personne n'a plus soif. »** Nos messages n'arrivent jamais avec un prix
+  dans le premier contact (règle tenue depuis le 18/09) — le prix se pose quand la personne a déjà vu la page.
+- **« Quand quelqu'un paie avec son temps, il paiera ensuite avec son argent. »** C'est pourquoi l'aperçu
+  (qu'ils lisent, commentent, font corriger) précède la facture.
+- **« Un mauvais aimant ne prouve pas que les aimants ne marchent pas. »** Utile à garder en tête quand un
+  message ne reçoit pas de réponse : c'est **l'emballage** qu'on change, pas la stratégie.
+- **« L'emballage se teste plus que le contenu. »** Concrètement : nos trois ouvertures d'appel et nos
+  variantes de message sont trois emballages ; c'est ce qu'on mesure désormais par source dans `FUNNEL.md`.
+
+### Les sept pièces (Charlie Morgan) — notre état, sans embellir
+
+| # | La pièce | Chez nous | Verdict |
+|---|---|---|---|
+| 1 | Agenda de réservation | WhatsApp + le téléphone de King ; le formulaire de réservation construit pour UNI-LABO en est la version client | **adapté, pas copié** |
+| 2 | **UNE** plateforme | WhatsApp (+ les appels) | **conforme** — et c'est un choix, pas un manque |
+| 3 | Les stimuli (scripts) | trois ouvertures d'appel, messages écrits d'avance, jamais improvisés | **conforme** |
+| 4 | Un CRM en feuille | un CSV + des vues générées ; la leçon du jour : **un plan généré qui contredit une décision humaine est un danger** | **au-dessus** |
+| 5 | Une source de leads inépuisable | annuaires + fiches Google Maps ; **149 leads dont 102 jamais contactés** | **le gisement est déjà là** |
+| 6 | **Un tableau de mesure** | **il n'existait pas** — `leads/FUNNEL.md` créé le 24/09 | **trouvé et comblé** |
+| 7 | Le mécanisme d'envoi | manuel, par King | **assumé** : l'automatisation à froid n'a pas de sens sur WhatsApp |
+
+### Ce qu'on refuse des deux vidéos
+
+- **L'automatisation à froid** (Instantly, cold e-mail en masse, séquenceurs) : notre canal est WhatsApp, où
+  une réponse humaine arrive souvent en moins d'une heure. Automatiser ferait perdre exactement ce qui nous
+  distingue.
+- **Le travail gratuit « pour ouvrir une porte »** : l'aperçu est un livrable cadré, pas un chantier offert.
+  La règle « jamais de remise » tient — on ajuste le périmètre.
+- **Les métriques de vanité** : la vidéo parle de « 1000s of leads » ; notre chiffre utile est **8,5 % de
+  réponse sur 47 contactés** et **3 dossiers chauds sur 4 réponses humaines**. C'est petit, c'est vrai, et
+  ça se lit dans `leads/FUNNEL.md`.
+
+### Le désaccord méthodologique à noter
+
+Les deux vidéos viennent d'un marché où l'on atteint 50 000 rendez-vous avec des séquences automatisées et
+des listes de plusieurs milliers de contacts. **Notre marché n'a ni ces volumes ni ces canaux**, et notre
+avantage est l'inverse : un message écrit à un patron qu'on a regardé, envoyé à la main, avec une réponse en
+90 secondes. La leçon utile n'est donc pas le volume — c'est **la discipline de mesure** : savoir où le
+système fuit avant d'ajouter du carburant.
+
+---
+
+## Lot [35] · TROUVER L'ANGLE DANS LES AVIS PUBLICS — et l'audiobook qu'on ne répétera pas (24/09/2026)
+
+Deux liens, pas un mot. Le premier est une méthode de prospection concrète ; le second est un audiobook
+généré, bourré de chiffres invérifiables. Les deux ont été lus, et **le second servira surtout d'exemple de
+ce qu'on ne répète pas**.
+
+| source | ce que c'est | verdict |
+|---|---|---|
+| **`JLGHhsfzf7g` — Automate AI Consulting, « Their Reviews Show How Much Money They're Losing »** | chercher dans les **avis Google publics** la plainte **qui se répète**, en déduire la fuite de processus, puis approcher le patron avec *« voici ce que ça vous coûte »* | **absorbé** : `sales/DETECTION-FUITES-2026-09-24.md` + **`tools/outreach/scan_reviews.py`** (+ test, 12 assertions) |
+| **`CsXKAC4iYG4` — « Social Intelligence » (audiobook)** | un livre narré sur l'intelligence sociale : cinq composantes, lecture des gens, communication non-verbale | **absorbé avec méfiance** : les cinq composantes servent de liste de contrôle pour une réunion ; **aucun de ses chiffres ne sera répété** (§8 du document) |
+
+### Ce que la première vidéo apporte vraiment
+
+1. **La répétition est le signal.** Sa règle : **trois mentions indépendantes** de la même plainte = un trou
+   dans le parcours, pas une mauvaise journée. Une seule plainte ne prouve rien.
+2. **La « zone de fuite »** : viser les commerces entre **3,2 et 4,5 étoiles** avec un **vrai volume** d'avis.
+   Trop peu d'avis = une note qui ne veut rien dire ; 5 000 avis = trois plaintes noyées.
+3. **L'absence de réponse du patron est un fait**, pas une opinion : elle laisse chaque compliment et chaque
+   reproche « partir dans le silence ».
+4. **La formulation qui désarme :** *« ce n'est pas vos personnes, c'est un trou dans votre processus »* —
+   on ne juge personne, on décrit un parcours.
+5. **La phrase à retenir :** *« personne ne m'a jamais demandé mon site web ; ils voulaient savoir ce que le
+   problème leur coûtait »* — c'est notre doctrine du 23/09 (« which problem are we solving ? ») dite par
+   quelqu'un d'autre.
+
+### Ce qu'on adapte, et ce qu'on refuse
+
+**Adapté :** notre marché n'a pas 458 avis — beaucoup de laboratoires de Douala en ont 0 à 20. Le seuil est
+donc **5 avis minimum pour conclure**, et la règle des **3 mentions** tient telle quelle. Ce qui se lit
+**même sans volume** : le patron répond-il aux avis ? les horaires sont-ils à jour ? la fiche a-t-elle un
+site ?
+
+**Refusé, et écrit dans le document :** le **prix au pourcentage du chiffre d'affaires ajouté** (10-20 %,
+soit 8 600 $ sur son cas d'école) — nos prix sont fixes et nous ne promettons **aucun gain chiffré** ;
+l'**estimation en argent** de la fuite, faite avec les hypothèses du vendeur (nous ne connaissons ni la
+marge d'un laboratoire ni son nombre de patients) ; le démarchage **à partir d'un avis public** ; et toute
+promesse de « colmater » une fuite qu'on ne sait pas réparer (une analyse erronée n'est pas notre métier).
+
+### L'outil, et les deux pièges qu'il a révélés le jour même
+
+`tools/outreach/scan_reviews.py` compte ce qui est écrit dans les avis qu'on lui colle — **il n'invente rien,
+n'écrit aucun fichier** (un avis contient un nom) et **refuse de parler de motif** en dessous de 3 mentions
+ou de 5 avis. Son témoin (12 assertions, trois cas négatifs) a attrapé deux vrais défauts :
+
+1. **Je normalisais le texte mais pas les mots-clés** — « personne ne répond » (accentué) ne trouvait donc
+   jamais « personne ne repond ». Bug classique, invisible à la relecture, vu à la première exécution.
+2. **« résultat » attrapait les éloges.** Les avis positifs disent « résultats impeccables » : compter le
+   mot seul aurait annoncé une fuite chez un laboratoire **satisfait**. C'est le faux positif le plus
+   coûteux possible — accuser un commerce à tort. Les motifs sont donc devenus des **phrases de plainte**
+   (« résultat en retard », « pas de préts »), jamais des mots isolés.
+
+### La deuxième vidéo : ce qu'on garde, ce qu'on ne répétera jamais
+
+Les **cinq composantes** (conscience sociale, aisance sociale, cognition sociale, souplesse de comportement,
+présence sociale) font une **liste de contrôle utile pour une réunion** — et c'est tout ce qu'on en
+gardera comme méthode.
+
+Le reste est à ne jamais citer devant un client : « **93 % de la communication est non-verbale** » (un
+détournement de l'étude de Mehrabian, qui ne portait que sur la transmission d'attitudes dans une
+expérience précise), « l'intelligence sociale compte **deux fois plus** que les compétences techniques »,
+« **90 %** des meilleurs contre 20 % des moins bons », « **quatre fois** plus de chances de diriger ».
+**Un chiffre qu'on ne peut pas montrer ne sort pas de notre bouche.**
+
+**Et le retournement :** ce genre de vidéo répète que le non-verbal domine. Dans notre canal principal —
+WhatsApp — **il n'y a ni visage, ni voix, ni poignée de main** : nos mots *sont* notre non-verbal. C'est une
+raison de plus de soigner chaque message. À table, en revanche (les deux rendez-vous de vendredi), l'écoute
+reprend le dessus : on pose les questions du questionnaire au lieu de réciter la page.
+
+**Le désaccord méthodologique à noter :** pour 5 et 6, les sources utiles ne sont pas des vidéos YouTube.
+Le lot [26] a montré le plafond de ce format (deux vidéos sur cinq muettes, et les autres vendent une
+communauté payante). Les meilleures sources sont les documents officiels (Google, WhatsApp, W3C) et
+**nos propres archives** — le journal contient 79 citations de leads, c'est notre meilleur manuel de
+langue.
 

@@ -1,6 +1,6 @@
 # AMK — SEO PLAYBOOK
 
-**Version v1 · 21 septembre 2026.** Sources : les 3 vidéos analysées par King (`research/YouTube-Lessons.md`
+**Version v1.1 · 21 septembre 2026, complété le 23/09 (§8 AEO).** Sources : les 3 vidéos analysées par King (`research/YouTube-Lessons.md`
 lot [21]) **+ la recherche concurrentielle camerounaise du même jour**.
 **Statut : règles de construction.** Ce fichier s'applique à **tout site AMK**, à commencer par le nôtre.
 
@@ -105,6 +105,121 @@ réelles**, et les corrections assumées.
 **Cible à 30 jours : ≥ 20 impressions, ≥ 2 clics, et au moins une requête qu'on n'a pas tapée nous-mêmes.**
 **Un relevé tous les 30 jours dans `research/Google-Presence-AMK-*.md`.** Sans ce point de contrôle, ce playbook
 devient une impression au lieu d'une mesure.
+
+---
+
+## 8 · AEO — ÊTRE LA RÉPONSE, PAS SEULEMENT LE RÉSULTAT (ajouté le 23/09, vidéo de Wes McDowell)
+
+**Source :** *Your Website Won't Matter in 2027. Prepare Now.* — Wes McDowell, 22/09/2026, 20 min
+(`research/YouTube-Lessons.md` lot [24]). **Statut : analyse, pas encore une règle payée.** Ce qui suit
+distingue **ce que la vidéo affirme**, **ce que nous pouvons vérifier**, et **la décision qui appartient
+à King** (la production de contenu est gelée depuis le 23/09 ; ce paragraphe ne la dégèle pas).
+
+### 8.1 Ce que la vidéo affirme
+
+- **Les deux métiers du site s'en vont ailleurs.** *Être trouvé* passe de Google à l'assistant ; *inspirer
+  confiance* passe du texte écrit à la vidéo.
+- **Chiffres cités** : 43 % des gens ont utilisé un assistant IA pour se renseigner avant un achat · 1 sur 4
+  dit que l'IA est sa **source principale** de recommandation (devant le site de l'entreprise) · **YouTube
+  est la première source citée dans les réponses IA de Google** et près de **30 % de ces réponses
+  contiennent une vidéo** · SimilarWeb : **1,3 milliard de clics sortis des chatbots en un mois**, la
+  **première destination juste après la conversation est YouTube** (plus que Facebook + Wikipédia + Reddit
+  réunis), dont environ **trois quarts depuis ChatGPT** · 53 % des utilisateurs d'IA s'en servent surtout
+  pour **comparer et réduire** une liste · **85 % revérifient** ailleurs ce que l'IA leur a dit.
+- **Pourquoi YouTube plutôt que les sites** (hypothèse de l'auteur, présentée comme telle) : n'importe qui
+  peut écrire n'importe quoi sur son propre site ; une vidéo vit sur une plateforme qu'on ne contrôle pas et
+  qui pèse lourd.
+- **Ce qui compte pour être cité n'est pas la popularité.** L'auteur cite une étude sur les citations IA :
+  être cité n'a **presque aucun rapport** avec les vues, les likes ou la taille de la chaîne — les modèles
+  lisent la vidéo **le jour où elle paraît**. Conséquence annoncée : les mois « silencieux » du début ne le
+  sont plus pour les machines.
+- **Le site garde un métier, plus petit** : c'est là que la décision se ferme (calendrier, formulaire,
+  liste) ; il doit « ne pas gêner ». Une entreprise correctement installée peut passer d'un site de
+  30 pages à **une seule page** (ou deux s'il y a deux offres).
+- **Les deux familles de vidéos utiles** : ① les questions logistiques qu'on nous pose avant d'acheter —
+  **une question par vidéo** : le **prix** d'abord (« le seul à qui vous cachez vos prix, c'est celui qui
+  essaie de décider de vous embaucher »), les **comparaisons** (« embaucher une agence ou construire son
+  équipe » — une agence qui dit quand ne pas l'embaucher), le **processus**, les **délais**, **comment
+  choisir** et les signaux d'alerte ; ② les vidéos qui **revendiquent la spécialité** (études de cas,
+  choix des sujets, mention des clients à l'intérieur des vidéos).
+- **Les chiffres du créateur sont invérifiables chez nous** (un gymnase en Californie, un installateur de
+  gouttières du Tennessee, un cabinet d'avocats du Michigan). Ce sont des illustrations, pas des précédents
+  camerounais.
+
+### 8.2 Ce que nous pouvons vérifier, et ce que nous ne pouvons pas
+
+| Affirmation | Statut chez nous |
+|---|---|
+| « L'IA renvoie vers YouTube » | invérifiable localement ; **cohérent avec ce que nous voyons déjà** : nos recherches passent maintenant par des réponses synthétiques, pas par dix liens bleus |
+| « Être cité ne dépend pas des vues » | **c'est précisément ce que notre propre expérience ne peut pas tester** — voir 8.3 |
+| « Une seule page suffit » | **nous le faisons déjà** : tous nos concepts sont une page. La vidéo valide un choix que nous avions pris par contrainte (3G, WhatsApp), pas par théorie |
+| « Le prix est la question n° 1 » | **vérifiable chez nous, et déjà vérifié** : c'est la première question posée par Le Cristallin, et la raison pour laquelle notre propre site porte une réponse chiffrée (« Combien coûte un site web au Cameroun ? 100 000 FCFA… ») |
+| Les pourcentages (43 %, 1/4, 30 %, 1,3 Md) | **source unique, marché américain, auto-déclaratif** → **calibration interne seulement**, jamais cités à un prospect (même règle que [16], [18], [21]) |
+
+### 8.3 La contradiction à écrire noir sur blanc — et elle concerne la décision de King du 23/09
+
+**La décision du 23/09** (« le contenu ne nous a amené aucune demande entrante : geler la production »)
+repose sur une mesure : **5 vidéos → 602 vues → 0 message**. C'est une mesure de **trafic humain**.
+
+**La vidéo dit que ce n'est pas le mécanisme** : les modèles liraient la vidéo dès sa publication, sans
+rapport avec les vues. Deux conséquences, et aucune des deux ne tranche à la place de King :
+
+1. **Notre expérience ne réfute pas la thèse AEO** — elle ne l'a jamais testée. Nous avons mesuré les
+   humains, pas les citations. C'est une nuance de méthode, pas une raison de reprendre la production.
+2. **La thèse AEO n'est pas prouvée chez nous non plus.** Nous n'avons jamais posé la question n° 1
+   (le prix) dans une vidéo, et nous n'avons jamais demandé à un assistant ce qu'il répond sur
+   « création de site web Douala ». **C'est un test qui coûte zéro franc** : poser la question à trois
+   assistants, noter les réponses, recommencer dans 30 jours. Si nous n'apparaissons pas et que nos vidéos
+   actuelles ne sont pas citées, la thèse reste non concluante ici — et le gel reste la bonne décision.
+
+**Décision par défaut : le gel tient.** Trois options, à King :
+
+- **(a) Statu quo** — rien de nouveau n'est produit. Coût : zéro. Risque : laisser passer la fenêtre que la
+  vidéo décrit (12 mois).
+- **(b) Étagère seulement** — on publie ce qui existe (vidéo 06 ce soir, #4b), on ne produit rien.
+  **C'est le défaut recommandé** : c'est déjà la décision du 23/09, et la vidéo ne la contredit pas.
+- **(c) Une seule vidéo, la question n° 1** — « Combien coûte un site web à Douala ? », construite
+  **uniquement** avec des chiffres que nous publions déjà (100 000 / 50-50, aperçu gratuit 24 h, 3-5 jours,
+  15 000/mois). Zéro chiffre nouveau, zéro promesse. À ne faire que si King lève le gel.
+
+**Et un test gratuit à faire dans tous les cas** (voir 8.5) : demander aux assistants ce qu'ils répondent
+sur notre marché, et l'écrire. Sans ce relevé, « l'IA nous ignore » resterait une impression — le défaut
+exact que ce playbook a été écrit pour éviter.
+
+### 8.4 Ce que ça change dans une page client (dès maintenant, sans contenu)
+
+Une page est citée pour ce qu'elle **répond**, pas pour ce qu'elle affiche. La grille, appliquée à chaque
+concept avant livraison :
+
+- [ ] **Une question par section**, posée dans les mots du client (« Combien ça coûte ? », « Vous êtes où ? »,
+      « Est-ce qu'on peut payer en deux fois ? », « Qu'est-ce que je dois apporter ? »).
+- [ ] **La réponse dans la première phrase**, pas après un paragraphe d'introduction.
+- [ ] **Un chiffre réel ou rien** : un prix, un délai, une amplitude horaire, un numéro. Une réponse sans
+      chiffre est une réponse à moitié. **Si le chiffre appartient au client (ses tarifs), on ne l'invente
+      pas — on le lui demande et on laisse la ligne en attente** (c'est notre règle de provenance, §18.1).
+- [ ] **Les questions gênantes traitées** : ce qu'on ne fait pas, ce qui prend du temps, les conditions.
+      La vidéo donne l'exemple d'une agence qui explique **quand ne pas l'embaucher** — c'est exactement le
+      genre de phrase qui fait gagner la confiance, et nous en avons déjà (`MESSAGES-2026-09-23-PERSUASION.md` §8).
+- [ ] **FR et EN tous les deux** : le marché cherche en français, la diaspora et les ONG en anglais.
+- [ ] **Le balisage** (FAQ, horaires, adresse) déjà produit par nos pages — ne pas le casser ; il sert les
+      deux lecteurs, l'humain et la machine.
+
+### 8.5 Le relevé AEO (à faire une fois, puis tous les 30 jours)
+
+**Protocole, 10 minutes, zéro coût :** poser la même question à trois assistants — « Je cherche quelqu'un
+pour créer le site d'une clinique à Douala, qui me recommandes-tu ? » — puis deux variantes (école privée ;
+« combien coûte un site web à Douala ? »). **Noter les noms cités, dans l'ordre, dans
+`research/Google-Presence-AMK-*.md` (le même fichier que le relevé Search Console).** Deux colonnes :
+*cités*, *nous*. Puis recommencer dans 30 jours.
+
+**Ce que ce relevé ne doit jamais devenir :** une promesse. **Il est interdit d'écrire ou de dire à un
+prospect « vous serez recommandé par ChatGPT »** — nous ne contrôlons ni les modèles ni leurs réponses, et
+c'est exactement le genre de promesse que nos propres règles interdisent. Ce qu'on peut dire, et qui est
+vrai : *« la page répond aux questions qu'on vous pose avant d'appeler — c'est ce qui la rend citable,
+par un humain comme par un assistant. »*
+
+**Décision actée pour nos propres pages :** notre site porte déjà la question du prix avec un chiffre réel.
+**C'est notre meilleure réponse citable aujourd'hui, et elle ne coûte rien de plus.**
 
 ---
 

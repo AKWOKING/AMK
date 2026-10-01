@@ -66,12 +66,24 @@ Gate hover behind pointer capability (touch screens otherwise fire hover on tap 
 
 ### 3.2 Scroll reveal (the AMK `.rv` standard, values aligned)
 ```css
-.rv{opacity:0;transform:translateY(22px);transition:opacity var(--dur-reveal) var(--ease-out),transform var(--dur-reveal) var(--ease-out)}
-.rv.in{opacity:1;transform:none}
+/* L'état caché n'existe QUE sous `html.js`. Sans cette porte, la page tout entière est à la merci
+   d'un JavaScript qui ne tourne pas — coupé, bloqué, rogné par une pièce jointe tronquée, ou mort sur
+   une faute de syntaxe plus haut dans le même fichier (c'est exactement ce qui est arrivé à nos deux
+   maquettes d'optique, voir design/LESSONS.md du 22/09 : le roi a ouvert le fichier, en-tête peint,
+   corps vide). La classe est posée par un <script> INLINE dans le <head>, avant la feuille de style. */
+html.js .rv{opacity:0;transform:translateY(22px);transition:opacity var(--dur-reveal) var(--ease-out),transform var(--dur-reveal) var(--ease-out)}
+html.js .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
-  .rv{opacity:1;transform:none;transition:none}
+  html.js .rv{opacity:1;transform:none;transition:none}
 }
 ```
+```html
+<head> … <script>document.documentElement.classList.add('js')</script> <style>…</style> </head>
+```
+**Règle de structure, non négociable :** le système de révélation vit dans **son propre `<script>`,
+après celui de la langue, avec son propre `try/catch`** qui appelle `show()` en cas de pépin. Il ne
+partage JAMAIS le bloc d'un script qui manipule des données : une faute plus haut dans le bloc tue
+tout ce qui suit, donc l'animation, donc — sans la porte `html.js` — la lisibilité de la page.
 ```js
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}})},{threshold:.12});
 document.querySelectorAll(".rv").forEach(function(el){io.observe(el);});
@@ -129,7 +141,7 @@ Number tickers use `font-variant-numeric:tabular-nums` so digits do not jitter; 
 ```css
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
-  .rv{opacity:1;transform:none}
+  html.js .rv{opacity:1;transform:none}   /* garder `html.js` : sinon l'override ne rime à rien sur une page sans JS */
 }
 ```
 

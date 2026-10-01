@@ -34,3 +34,14 @@
 2. **AFRIQUE LABO / JOSS** dead-domain cases — confirmation that anonymised use is acceptable (no logo, no address, domain shown only if they refuse to fix it… your call).
 3. **MboaCare** — confirm it stays the "abstract principle" asset and keeps its FICTIONAL labels in every frame.
 4. **Real Facebook page** in V-08 — blur the name and keep only structure?
+
+---
+
+## ⚖️ Addendum droits — 21 Sep 2026 (décision King, see `lessons/CONTENT-LESSONS.md` §14)
+
+La colonne **Rights** ci-dessus est **remplacée par une seule règle plus stricte** : *aucun nom public
+avant un client signé*. Les lignes « ✅ anonymise » restent vraies ; « ✅ own offer » vaut pour notre
+propre offre, pas pour un prospect. **V-05 est rendue (FR + EN) mais montre des pages réelles : elle
+ne sort pas tant que les éléments identifiants ne sont pas floutés.** V-06/V-07 (cas réels AFRIQUE
+LABO, YAKS, Skye, OraCare) passent en capture anonymisée ou sont reconstruits sur MboaCare.
+Aucune ligne de ce fichier n'a été effacée — c'est un addendum, pas une réécriture.

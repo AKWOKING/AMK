@@ -1,9 +1,13 @@
 # AMK — Sales Playbook v2.2 (09/12 · updated 17/09)
+
+> ⚠️ **Prix récurrent : voir `sales/PRIX-ET-RECURRENCE-2026-09-24.md`.** Les « 10–15k/month » cités ici pour l'hébergement et les retouches ne sont plus la référence ; la grille du 23/09 et les deux paliers Essentiel/Standard la remplacent. Rien n'est effacé : c'est daté.
 **Synthesized from 4 videos → optimized for AMK's exact context (WhatsApp-first, schools + clinics, free concept previews, ₦100k 50/50, King's standing rules).**
 
 > **v2.1 changelog (17 Sep 2026 — copywriting batch of 6 videos, see `research/YouTube-Lessons.md`):** added **Part H — the customer-language system** (customer interviews as ingredient harvest; the WhatsApp-default reframe; claim→proof discipline). No existing rule was deleted or overwritten. The copy law itself (Harry Dry's 3 questions, 2-Mississippi, read-aloud) lives in `sales/Monday-Outreach-Pack.md` (cold messages) and `AMK-DESIGN-SKILLS.md` §11b (site copy) — Part H is the sales-specific slice only.
 >
 > **v2.2 changelog (17 Sep 2026 — sales batch, videos [7] Hormozi 3A and [8] CLOSER):** added **Part I — the 3A reframe** (objection handling with Acknowledge · Associate · Ask, now the house method for written/WhatsApp objections) and **Part J — CLOSER for the WhatsApp era** (clarify→label→pain→vacation→concerns→reinforce, yes/no decision chain, always-ask, reinforce-the-decision sequence, one-taxonomy objection log). Nothing deleted. Two guardrails added: straw men only with **true** references (accuracy law), and the pain cycle is capped inside discovery — it never extends the no-chase FU rule (M+2/+4/+7 then stop).
+
+> **M7 changelog (21 Sep 2026 — CRM migration, King's ruling).** The pipeline now speaks ONE stage vocabulary — `prospect → qualified → presented → closing → won → delivered`, plus `parked` and `lost` — the same five beats as `sales/AMK-5-Stage-Funnel.svg`, with `won`/`lost` added and `delivered` kept separate (paid ≠ delivered, and that seam is where a client dies). Two rules were settled today: **(1) the kill list is DERIVED, never hardcoded** — King confirmed the 19 Sep correction to §A4, and a reply always outranks it (the 90-second rule); **(2) the no-cold-calls rule is now written here as a standing rule** — it had been operating since 14 Sep only as a routing preference (`Contact channel`, `Invitation-First-Replan`). Fields were added to `leads/CRM.csv` (`first_touched`, `stage_since`, `last_reply_received`, `preview_sent`, `proposal_sent`, `price_quoted_fcfa`, `invoice_sent`, `closed_on`, `closed_value_fcfa`, `bamfam_next_action/step`, `health_override`, `gtd_filter`) — see `leads/build/crm.py` header. Nothing in this file was deleted.
 
 > **Addendum (15 Sep evening):** [`AMK-Playbook-Addendum-Outcomes-2026-09-15.md`](AMK-Playbook-Addendum-Outcomes-2026-09-15.md) synthesizes 5 newer AI-agency videos — outcome (not website) framing, the gift-preview validation, Google-Maps no-website prospecting, the optional Care Plan retainer (FCFA/MoMo), monthly reports, and the handoff-video delivery step. Standing rules in this file still override; pricing changes in the addendum are proposals until King approves.
 
@@ -63,6 +67,20 @@ A salesman has 3 jobs: **maximize opportunities → convert the highest % → st
 
 ### A9. Be concise — 5 words when 100 do
 - Every WA message ≤ 5 lines (except the concept handover). Long messages get read as homework.
+
+> **M7 soirée (21 Sep 2026, 18:20 — King's screens corrected my read).** Three standing rules added, nothing deleted:
+> **(1) A deferral is not a consent.** "je vous reviens" / "Ok" / a 🙏 means *not yet* — never "he agreed,
+> send the price and the full page". Bonanjo is the case: page + 100 000 FCFA went out on a "je vous reviens"
+> and the thread has been silent 29 h. A follow-up that assumes agreement ("j'attends votre feu vert",
+> "comme convenu") is now a **defect in the copy**, not a style choice: ask for an *opinion*, offer an exit.
+> **(2) Never count a send the CRM cannot prove — and never un-count one it can.** King's screenshots found
+> three messages that had never been registered (OraCare's 14/09 13:04, AFRIQUE LABO's 21/09, Baird's 17/09
+> 13:48) and one that looked sent but wasn't (Bely: number not on WhatsApp → **channel incident**, not a
+> failed follow-up). **(3) Look up a lead by NUMBER in the generated CSV, never by name in the code.**
+> I "discovered" AFRIQUE LABO was missing from the CRM and added a second row for the same laboratory; the
+> row already existed as `afrique-labo-douala`. `crm.py` now **fails the build** if one number appears on two
+> rows — and that guard immediately caught the 18/09 CEMECES/INSES number swap, which is now fixed by
+> *removing* the number from the wrong row rather than by exempting it.
 
 ### A10. Consistency system (the 3rd bucket — "do it for a very long time")
 - **Lives in the workbook:** `leads/leads_50.xlsx` → **"DAILY OPS" tab** (first tab, opens by default) — Kill List + Reply Queue + this week's drill + tonight's 5 min.
@@ -303,3 +321,128 @@ This is not a scare line: it's the reason a real site + WhatsApp flow *wins* wit
 **Always make the ask.** A sale we never asked for is a sale we never made. The 3A reframe (Part I) is what lets us ask repeatedly without burning rapport: ask, reframe, ask again.
 
 **Solo version of the team cadence** (the video's huddle/1-on-1/leaderboard mechanics are for teams — parked in the register, not in the playbook): Friday, re-read the week's best and worst exchange, write one line on each into `sales/swipe/README.md`, and update the objection log. That is our call-recording discipline.
+
+---
+
+## PART K · THE SIGNATURE OFFER — FROM "A WEBSITE" TO A NAMED RESULT (v2.3, 23 Sep, from Nicole & James [24])
+
+**The video's diagnosis, in one line:** *premium prices do not come from how long something takes — they
+come from how deeply it changes somebody's business.* Selling **deliverables** ("a 5-section homepage",
+"a bilingual site") puts you in the **service trap**: every project is custom, you quote by hand, the
+client hears a cost, and you end up positioned as **an extra pair of hands** instead of the person they
+call for results.
+
+**The framework — three R, applied to AMK with our own numbers:**
+
+| | What the video says | Ours, verified |
+|---|---|---|
+| **R — Refine** | pick a niche you like, where you can offer the biggest transformation, **and who can pay** | already done: **schools & clinics**, narrowed to the **vitrine profile** — that profile answers **11,1 %** (3/27) against **2,5 %** (3/118). "Who can pay" is not an assumption for us: it is the **budget step** of the 6-step discovery, asked out loud, never guessed |
+| **R — Research** | pains, desires, what keeps them up at night, the one thing | we have the verbatims, in the client's own words: « je suis vraiment intéressé » (Univers Optique), « Ok » (Le Cristallin, on a site he had not paid for). Their night-time worry is not "I want a website" — it is **"est-ce que quelqu'un me trouve et me fait confiance ?"** |
+| **R — Reposition** | reframe the same skills around that transformation | the offer is **built already, before a franc is discussed** — "L'aperçu d'abord", the unique mechanism from `DECLINAISON-9-DECLENCHEURS-2026-09-23.md` |
+
+### K.1 The offer, in the client's words (never in ours)
+
+**The transformation we sell, one sentence, plain French, no jargon:**
+
+> **« On vous trouve, on vous fait confiance, on vous écrit sur WhatsApp — et la page est déjà faite avant
+> que vous ayez payé un franc. »**
+
+**The three things that actually change for the client** (this is the answer to "what am I buying?", and it
+is what the business case measures):
+1. **Trouvable** — le nom, le métier, le quartier, les horaires, une réponse chiffrée à la question du prix.
+2. **Rassuré avant de venir** — photos réelles, conditions écrites, ce qui se passe après le message.
+3. **Un chemin de rendez-vous** — WhatsApp pré-rempli, appel en un tap, aucune inscription.
+
+**The deliverables are the proof, not the pitch.** The 5 sections, the bilingual build, the 3–5 days, the
+hosting year: they belong in the *what's included* block, after the outcome.
+
+### K.2 What this changes in what we say (and what stays frozen)
+
+- **The first line of every message is the outcome, not the artefact.** Before: « je crée des sites web
+  bilingues ». After: « on vous trouve et on vous écrit — voici la page, elle est déjà faite ».
+  (The rewritten message 1 in `MESSAGES-2026-09-23-PERSUASION.md` already does this; this makes it a rule.)
+- **Price stays a number attached to the outcome, never to hours.** Our prices are fixed and public in the
+  room: **100 000** (Univers Optique, frozen 21/09) and **150 000** (Le Cristallin, sent 23/09). We never
+  discount — **if the scope is too big for the budget, the scope shrinks** (that is already the rule; the
+  video is the reason to keep it).
+- **The business case is the reposition, written down.** `BUSINESS-CASE-*.md` = "here is what changes for
+  you, in your numbers" — that is the document a high-paying client signs, not a feature list.
+- **We do NOT rename our offer into an "accelerator".** The US version of this framework lives on coined
+  product names (« Brand Visibility Accelerator »). Our market reads French, distrusts jargon, and our own
+  §11 copy rules ban invented vocabulary. The transformation is named **in their words**, which is what
+  actually makes it land.
+
+### K.3 The two traps of this video, closed by name
+
+- **"Who can pay premium prices"** can quietly become *"skip the small ones"*. Ours: every lead gets the
+  same message; **budget is a question in discovery, not a filter in sourcing**. Cost of being wrong the
+  other way (pitching a school that cannot pay) is one message; the cost of excluding by assumption is a
+  dead pipeline.
+- **The invented-prestige trap.** A big name with nothing behind it is the exact thing our accuracy law
+  bans. The offer is credible for one reason only, and it is checkable: **the page exists before the
+  invoice** — UNI-LABO is live, Univers Optique wrote back, Le Cristallin validated a price on a site he
+  had not paid for.
+
+### K.4 What was rejected
+
+The course/community funnel, the $30k/month income claims, the "gamify your way to 30K" framing, USD
+pricing, the referral-dependency angle (our pipeline is outbound — referrals are a *result* to earn, not
+the channel we start from). Rejections logged in `research/YouTube-Lessons.md` §5.
+
+---
+
+## PART L · THE SECOND PRODUCT — WHY THE BACK-OFFICE IS A DIFFERENT BUSINESS (v2.4, 23 Sep, from the ERPNext audit)
+
+**Context:** King sent `github.com/frappe/erpnext`. I read the repo itself (not the marketing pages). Full
+audit: **`research/ERPNext-AUDIT-2026-09-23.md`**. The playbook only keeps the selling rules that came out of it.
+
+**L.1 The one thing that must never happen.** ERPNext is free, mature (39.5k ★, stable v16 released 15/09),
+and runs on a **server**, not Vercel. It contains the **Cameroonian SYSCOHADA chart of accounts (1,329 coded
+accounts)** and **VAT 19.25 %**, straight out of the installer. The temptation is therefore to sell an "ERP" on
+Monday. **Do not.** Our 47 leads buy **being found**, at 100–150k FCFA, one time. An ERP buyer is a different
+animal: 10–30 staff, several sites, invoicing every day, and a **monthly** budget. **Selling the wrong one to
+the wrong man loses the account we already have.**
+
+**L.2 What the audit actually gives us to sell — in order.**
+
+| | Offer | Price (proposal, King validates — never a discount, we adjust scope) | Why it is credible here |
+|---|---|---|---|
+| **A** | **Caisse + factures + stock** (shop / optician, 3–8 staff) | **250 000 FCFA** + **25 000/month** | Every franc that comes in is recorded, MoMo included, without a spreadsheet |
+| **B** | **Dossier + résultats + factures** (lab / clinic, 10–30 staff, via the Marley health app) | **450 000–600 000 FCFA** + **40 000/month** | The only segment that invoices daily and where "quality" is already a purchase motive |
+| **C** | **The monthly maintenance contract** | **25 000–40 000/month** | Ten contracts = 250–400k FCFA/month without prospecting. **This is the first credible recurring revenue AMK has ever had.** |
+
+**L.3 The four sentences we are not allowed to say** (each one is a call-back we would deserve):
+"Ndou payez en ligne / par Mobile Money" — **no MoMo gateway exists**: we record the MoMo transaction reference
+in the accounting instead. · "Ça marche sans internet" — the standard POS needs the network **to load**: we test
+the client's connection *before* selling a till. · "Envoyez vos factures par WhatsApp automatiquement" — that
+needs a **dedicated number, Meta verification, approved templates and a cost per conversation**: an option for a
+big client, a project in itself. · "C'est entièrement en français" — measured: **47 % (ERPNext) / 73 %
+(framework)**; translating the fifteen screens that matter **is part of the job**, and can be billed.
+
+**L.4 What we keep even if we never sell one licence.**
+① **The business model** — Frappe sells **hosting, backups and updates, every month**, not licences: copy it,
+including for the 150k pages (hébergement + retouches, 10–15k/month). ② **The branded PDF** — today our quotes
+are plain WhatsApp text; a real PDF with our logo changes how the agency is perceived from the next client on.
+③ **"The invoice link that opens in WhatsApp"** — the invoice is hosted, the `wa.me` message carries the link,
+the client taps and reads it: no Meta API, no per-message cost, **and it works on the number he already has**.
+That one is ours, and it sells to every trade that issues bills. ④ **Licence hygiene**: ERPNext/HRMS/Marley are
+GPL-3.0, the framework/Builder are MIT, **CRM/Helpdesk/Books/Insights/Print Designer are AGPL** — a modified
+AGPL app served to users over the network owes them its source. **We never promise a closed product built on
+AGPL.** And never put "ERPNext" in our company, product or domain name (Frappe's trademark policy), nor in ads.
+
+**L.5 Before any of this is offered to a human being — three decisions belong to King** (listed at the end of
+the audit): whether we open the track at all (no / a public demo with invented data / a paid pilot — **never a
+free pilot**), **who pays the server and how** (Frappe Cloud or a VPS wants a foreign card; Mobile Money cannot
+pay for a VPS), and **which profile the demo shows** (lab or shop — I can only build one).
+
+**L.6 Which problem are we solving — the order, explained (King's question, 23 Sep).** Our problem #1 is not
+the client's: **we sell 150,000 once and then work for free.** Every offer was sorted by four questions —
+does it fix *our* recurring revenue, can it be sold this week, what does it cost us, does it produce a
+reference? The order that falls out is **C (monthly maintenance, sold on deals already on the table: three
+clients × 10,000 = 360,000 FCFA/year without prospecting) → D/E (the quote-PDF and invoice-link tooling that
+makes a subscription billable) → B (the lab pilot, the only offer whose price holds, and the one that produces
+a health reference) → A1 (resell a local SaaS for a commission) → A2 (out-of-standard, only if a distributor
+walks in) → F (client-editable site: **destroys the subscription**, premium only, later) → G (e-invoicing:
+watch, never promise "DGI-compliant")**. Full reasoning: `sales/ORDRE-DES-OFFRES-2026-09-23.md`. The tunnel,
+in one line: **the page opens the door, the subscription pays the bills, the tool is the next trade — in that
+order, never the reverse.**

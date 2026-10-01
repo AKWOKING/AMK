@@ -1,5 +1,11 @@
 # VAGUE 1 — OPTICIENS · lundi 21 septembre 2026
 
+> ⚠️ **24/09 — NE PAS RÉUTILISER LES MESSAGES DE CE FICHIER TELS QUELS.** Les trois variantes ouvrent sur
+> notre nom et notre titre : c'est la faute corrigée le 23/09 (`sales/MESSAGES-2026-09-23-PERSUASION.md` §1
+> — **le nom et le titre passent à la fin**, les six premiers mots parlent de son patient, de son quartier,
+> de sa page). Le gabarit à jour est celui de `MESSAGES-2026-09-23-PERSUASION.md` §1. Le reste du fichier
+> — le problème, les trois sous-groupes, les numéros — reste valable.
+
 **Source des numéros : l'annuaire officiel de l'ONOC** (Ordre National des Opticiens du Cameroun) **+ Maligah.**
 **38 opticiens de Douala neufs, 0 doublon** avec les 82 lignes déjà contactées.
 **Nom du titulaire public pour 33 d'entre eux** — c'est ce qui rend la personnalisation honnête.

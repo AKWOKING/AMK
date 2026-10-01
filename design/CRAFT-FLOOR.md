@@ -34,6 +34,13 @@ Run together in one batched inspection (they share one render), answer with evid
 8. **Coverage:** every brief requirement findable within seconds; run the real booking/admissions path mouse + keyboard + thumb.
 9. **Touch:** ≥ 44px every target (our sticky bar is 52–64px per Addendum #3); no hover-only affordance; body padding clears the fixed bar.
 10. **Performance:** hero image eager + compressed (<200 KB target), all other images `loading="lazy" decoding="async"`; one font family, preconnect, metric-compatible fallback; no layout shift (aspect-ratio on media).
+11. **First paint is not rented from JavaScript:** content must be visible with JS blocked, dead, or truncated.
+    Any entrance state is gated on a class the `<head>` sets itself; the reveal system has its own script and
+    its own `try/catch`. (22/09: two optics concepts shipped with 25 and 24 blocks at `opacity:0` lifted only
+    by an observer at the end of the body — King saw a header over an empty page.)
+12. **The inline JavaScript compiles:** `tools/qa/check_inline_js.py` on every page before delivery. Interpolating
+    a copy string into JS without quotes is a `SyntaxError`, and on our pages a `SyntaxError` looks exactly like
+    "the site is broken". A contrast auditor cannot see it; a compiler can.
 
 ## 3. Refuse list (defaults you may use only when the brief earns them)
 

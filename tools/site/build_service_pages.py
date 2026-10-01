@@ -30,6 +30,7 @@ OUT = pathlib.Path("site")
 
 # ── Le pied de page, partagé (NAP identique à la fiche Google — facteur #15 : exactement pareil)
 FOOTER = """
+</main>
 <footer>
   <div class="wrap">
     <div class="f-grid">
@@ -100,7 +101,10 @@ CSS = """
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.skip{position:absolute;left:-9999px;top:0;z-index:200;background:#0B1120;color:#fff;padding:12px 20px;font-weight:700;border-radius:0 0 12px 0}
+.skip:focus{left:0}
+main{display:block}
+body{font-family:'Outfit',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 section{padding:78px 0;scroll-margin-top:84px}
@@ -208,6 +212,11 @@ def head(title, desc, canonical, og_title, og_desc, schema_blocks):
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<!-- Police maison (§5 : Outfit). Ces deux pages sont nos pages d'atterrissage SEO :
+     elles doivent porter la même voix que le reste du site, pas la police de l'appareil. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>{title}</title>
 <meta name="description" content="{desc}">
@@ -231,6 +240,7 @@ def head(title, desc, canonical, og_title, og_desc, schema_blocks):
 <style>{CSS}</style>
 </head>
 <body>
+<a class="skip" href="#contenu" data-en="Skip to content" data-fr="Aller au contenu">Aller au contenu</a>
 <header id="hdr">
   <div class="wrap h-in">
     <a class="brand" href="index.html" aria-label="AMK">
@@ -244,7 +254,8 @@ def head(title, desc, canonical, og_title, og_desc, schema_blocks):
 
 def hero(kicker_fr, kicker_en, h1_fr, h1_en, sub_fr, sub_en, wa,
          cta1_fr, cta1_en, cta2_fr, cta2_en, t1f, t1e, t2f, t2e, t3f, t3e):
-    return f"""<section class="hero" id="top">
+    return f"""<main id="contenu">
+<section class="hero" id="top">
   <div class="wrap">
     <div class="center"><span class="kicker" data-en="{kicker_en}" data-fr="{kicker_fr}">{kicker_fr}</span></div>
     <h1 data-en="{h1_en}" data-fr="{h1_fr}">{h1_fr}</h1>

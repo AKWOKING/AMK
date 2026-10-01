@@ -93,6 +93,38 @@ A claim the recipient could factually dispute, or that addresses a dead/moved/wr
 
 **Worked example (JOSS MEDI, 17 Sep):** A **FAIL** (their own FB number 674 84 39 02 not on WhatsApp; no verified line) · B **FAIL** (last FB post 24 Jun 2022) · C **FAIL** (11–50 staff clinic since 2009 = board buyer) → **0/3, parked dormant.** Same day, same check on L'Opticien Bali: A **PASS** (WhatsApp Business account seen, catalogue in use) · B **PASS** (business account + catalogue + seen active 11:54) · C **PASS** (single-store optician = owner) → **3/3, send.**
 
+## 8c. DEEP CHECK — mandatory on EVERY prospect (King, 24 Sep 2026)
+
+> *"Mais à partir de maintenant fais toujours des contrôles approfondis sur chaque prospect."*
+
+The three doors (§8b) decide whether you may send. **The deep check decides whether what you are
+about to write is true.** Skipping it costs more: one false claim in message 1 destroys the
+credibility of the best prospect on the list.
+
+Six lookups, ~10 minutes, **before** the draft — never after:
+
+1. Search **the exact name AND the city** (`"<name>" Douala`) — not the brand alone.
+2. Open **the real domain**, not the group homepage; look for a **dedicated** page (city / branch /
+   agency). Try several extensions: `.com`, `.cm`, `.shop`, `blogspot.com`, Facebook.
+3. Look for the **quiet channels**: Blogspot, WordPress.com, YouTube, a business FB/Instagram/X page,
+   marketplace listings (Maligah, Ayila'a, APIE, afribobo…).
+4. **Cross-check address, hours and phones** — newest official source wins (own site > own poster >
+   directory). Directory data is stale by default.
+5. **Write the verdict for every factual claim** you intend to make — including "you have no site",
+   "nobody finds you", "your address is nowhere". One unchecked claim is enough to lose the prospect.
+6. A **dedicated site already exists** → out of this offer's target (`disqualified`, dated reason).
+   Revisit later with another angle — never with "il vous manque une page".
+
+**The two proofs, both 24/09 — the rule was written the same day it was needed:**
+- **Golden Eyes (Douala)** — the hub site made Douala look like one line; the deep check found
+  `opticiendouala.com`, a dedicated site with WhatsApp booking. Caught **before** the message went out:
+  nothing false was sent.
+- **SkyOptic Akwa** and **Cinq Sens** — messages went out **before** the deep check. Both had real, if
+  old, channels (SkyOptic: `skyoptics.shop`, two branches; Cinq Sens: a Blogspot last updated 2021,
+  plus Facebook, X and a YouTube video). **Those two messages' claims are fragile**: if either answers,
+  do not repeat the claim — pivot to what is genuinely missing (current hours, catalogue, WhatsApp
+  button).
+
 ## 9. Feedback loop
 - Every King correction is logged here as an error-log entry with: what was wrong, which poisoned source caused it, what check would have caught it, and which OTHER dossiers used that source (they get re-checked the same day).
 - When a source type proves unreliable in one dossier (here: medicoor doctor rosters + truncated PDF provider lists), every other dossier's facts from that source type are demoted one tier until re-verified.

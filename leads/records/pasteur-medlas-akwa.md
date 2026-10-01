@@ -1,6 +1,6 @@
 # Ctre d'Analyses Médicales Pasteur Medlas
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-21. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-27. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Akwa, Bld de la République) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | parked |
 | WhatsApp | 677 45 99 97 |
 | Numéro vérifié | unknown |
 | Canal | WhatsApp |
@@ -21,15 +21,21 @@
 
 ## Notes
 
-Envoyé le 19/09 à 19:25 — lu (2 coches).
+Envoyé le 19/09 à 19:25 — lu (2 coches). · ⚰️ MORT le 22/09 (lot du 19/09) — jamais ouvert, jamais répondu ; décision de King : on ne réécrit plus, on va vers des prospects frais. Aucune relance programmée.
 
 ## Prochaine action
 
-**0 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**Aucune.** Parqué. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Aucune ligne du journal ne cite encore ce lead. S'il a été contacté, c'est que l'envoi n'a pas été loggé — **à corriger dans `Activity-Log.md`**.*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 5 ligne(s).*
+
+`L761` · | ③ | **org_type : « va ligne par ligne sur les faits écrits dans la ligne. »** | Fait — **mais je n'ai pas trié à la main une par une : j'ai supprimé la cause.** `crm.py` collait `"school"` aux 38 lignes du classeur **sans jamais lire la ligne** ; voilà d'où venaient MITOC « school » et Solidarity « school ». Nouveau `org_type_for()` : l'étiquette n'existe que si un mot **du nom, des Facilities, de l'activité ou des notes** la porte (`lab` → `clinic` → `other` → `school`, dans cet ordre parce qu'« laboratoire d'analyses médicales » n'est pas une clinique). La preuve est écrite dans `Notes` (`org_type=lab prouvé par « laboratoire »`). Les overrides explicites (MITOC, One Stop, JOSS, Kamaïs, Solidarity) gagnent avant. **Résultat : 0 ligne sans étiquette et 0 ligne sans preuve** — contre 145 dont 38 affirmées « school » par défaut. |
+`L2453` · suivi), 4 familles d'analyses, résultats, adresse, FAQ. **Mais zéro formulaire** : ses 12 liens WhatsApp sont
+`L2629` · **Et une phrase qui manquait au formulaire.** Thomas Digital, sur les laboratoires d'analyses : *« People
+`L2678` · d'analyses, plus la préparation) jamais derrière du texte, légendées « mise en situation », la préparation en
+`L3691` · médicales dès 25 000 F**, « nous acceptons toutes les assurances », et le nom du responsable —
 
 ---
 

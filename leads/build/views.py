@@ -37,25 +37,111 @@ GEN = ("> ⚙️ **Généré le {date} par `leads/build/views.py` — ne pas mod
        "puis on relance `leads/build/rebuild.sh`.\n")
 
 STAGE_LABEL = {
+    "won": "✅ Client — contrat signé",
     "prospecting": "① Prospection — à qualifier",
     "qualifying": "② Qualifié — en conversation",
-    "demo": "③ Démo envoyée",
+    "demo": "③ Aperçu envoyé",
+    "closing": "④ Prix posé, en négociation",
     "offer": "④ Offre posée",
     "delivered": "⑤ Livré",
+    "lost": "❌ Perdu",
     "parked": "⏸ Parqué",
     "disqualified": "⛔ Écarté",
 }
-STAGE_ORDER = ["offer", "demo", "qualifying", "prospecting", "parked", "disqualified"]
+STAGE_ORDER = ["won", "delivered", "closing", "offer", "demo", "qualifying",
+               "prospecting", "lost", "parked", "disqualified"]
+# ⚠️ CE QUE ÇA A CORRIGÉ (21/09, 23:10) : `closing` n'était NI dans STAGE_ORDER NI dans STAGE_LABEL.
+# Le CRM était juste — le tableau de bord, non. Nos DEUX prospects les plus avancés (Le Cristallin,
+# Univers Optique : prix posé, aperçu construit) ne figuraient AUCUNE PART dans PIPELINE.md, parce que
+# la boucle d'affichage saute silencieusement toute valeur inconnue. Un compteur qui omet le lead le
+# plus chaud est pire qu'un compteur absent. D'où l'assertion plus bas : AUCUN stage du CSV ne peut
+# rester hors de la vue.
 
 # Décisions humaines qui priment sur les règles automatiques : slug -> (échéance ISO, note)
 RELANCE_A_JOUR = {
-    "opticien-bali-douala": ("2026-09-20", "relances fixées dim 20 / mar 22 / ven 25"),
-    "oracare-buea": ("2026-09-20", "FU2 (M+4) fixée dim 20"),
-    "midas-touch-optic-center-mitoc": ("2026-09-21", "FU2 fixée lun 21"),
+    "opticien-bali-douala": ("2026-09-25", "2ᵉ message envoyé le 22/09 au soir (créneau fixé par le prospect "
+                                        "lui-même). DERNIÈRE touche : vendredi 25/09, puis parked daté"),
+    "oracare-buea": ("2026-09-28", "PARKED depuis le message de CLÔTURE du 21/09 17:43 (« last note from me, "
+                                    "then I stop ») — ne rien écrire avant lundi 28/09, et ce jour-là un seul "
+                                    "message : léger, SANS reproche, justifié par du neuf (les prix et la prise "
+                                    "de RDV 24/7 sont sur la page). Nom vérifié : Dr Arnold Nkafu — jamais "
+                                    "« Dr Njie », ce prénom n'existe dans aucun fichier"),
+    "midas-touch-optic-center-mitoc": ("2026-09-29", "FU2 envoyée le 22/09 au soir (un jour de retard rattrapé). "
+                                          "DERNIÈRE touche : 29/09, puis on classe — trois messages maximum"),
     "baird-memorial-college": ("2026-09-21", "FU2 fixée lun 21 (même lot que MITOC)"),
-    "labiomed-deido": ("2026-09-21", "M+2 — il a dit « je vous reviens quand je serai disponible » (report poli, pas un non)"),
+    "labiomed-deido": ("2026-10-01", "A RÉPONDU le 22/09 à 16:41 : « Non pas encore je ne suis pas en place » "
+                                      "· « Quand je serai la je vais vous contacter ». Ce n'est ni un oui ni un "
+                                      "refus — c'est un REPORT MOTIVÉ (pas encore installé). Réponse envoyée "
+                                      "dans l'heure ; on ne le relance plus d'ici le 1ᵉʳ octobre, et ce jour-là "
+                                      "sans prix ni question de validation : juste « vous êtes en place ? »"),
+    "centre-medical-de-bonanjo": ("2026-09-28", "Page complète envoyée le 22/09 à 13:35 (deux coches) "
+                                      "avec le prix posé, puis relance 16:24 (une coche) : « vos 9 services "
+                                      "centralisés pour orienter les patients de Google vers votre "
+                                      "WhatsApp ». DÉCISION KING 16:30 : prochaine vague — jeudi 24/09, "
+                                      "sans reposer le prix, une question de calendrier seulement"),
+    # Les deux fils « prix posé » du 21/09 : l'échéance vient de ce qui a été ÉCRIT au client,
+    # pas d'un calcul M+2. Univers Optique = l'aperçu promis « d'ici demain ». Le Cristallin =
+    # la réponse de King sur le périmètre FB attendue avant d'envoyer, relance 48 h après.
+    # 22/09 20:51 : il a répondu — « Je suis vraiment intéressé … Vendredi matin 10h dans mon cabinet. »
+    # Comme UNI-LABO, ce n'est plus une relance à calculer, c'est une réunion à préparer.
+    "univers-optique": ("2026-09-25", "**GELÉ (King, 23/09 au soir)** : plus aucun travail sur le site ni "
+                                      "le dossier avant le paiement. " + "RENDEZ-VOUS fixé par le prospect — **vendredi 25/09 à 10 h, son "
+                                      "cabinet** (Bépanda). Feuille : `sales/RDV-UNIVERS-OPTIQUE-2026-09-25.md`. "
+                                      "Prix déjà posé le 21/09 (100 000 FCFA, 50/50) : on ne le re-présente "
+                                      "pas, on ne le baisse pas. À sortir de la salle : le « oui », les "
+                                      "réponses aux six points que la page demande, l'acompte"),
+    # 23/09 09:46 : le prix est PARTI (150 000 FCFA, 75 000 pour démarrer). On attend sa réponse ;
+    # s'il ne dit rien, une relance courte le 24/09 — et rien d'autre entre-temps.
+    # 24/09 : le plan demandait « Relance 1/3 Le Cristallin » alors que la décision écrite dit l'inverse.
+    # Il est MALADE (10:11) et King a répondu santé d'abord (10:13). Un plan généré qui contredit une
+    # décision humaine est exactement le piège COMOBIL — la prose le dit, la donnée le calcule autrement.
+    # Le prochain message est un message de SANTÉ, lundi 29/09 : `sales/Queue-CRISTALLIN-2026-09-29.md`.
+    "le-cristallin": ("2026-09-29", "**IL EST MALADE (24/09 10:11) — AUCUNE relance du projet.** "
+                                      "King a répondu santé d'abord le 24/09 à 10:13 ; next message = "
+                                      "message de santé lundi 29/09 (`sales/Queue-CRISTALLIN-2026-09-29.md`), "
+                                      "santé avant le projet, sans reposer le prix. **PRIX POSÉ le 23/09 "
+                                      "09:46** : 150 000 FCFA, 50 % = 75 000 pour démarrer, solde à la "
+                                      "livraison. GELÉ (King, 23/09) : aucune modification de la page ni du "
+                                      "dossier jusqu'au paiement ; les trois compensations (WhatsApp "
+                                      "Business, domaine 2027, fiche Google) restent parquées. Cinq écarts "
+                                      "à trancher AVANT publication (compte d'assurances FR 18 / EN 17, "
+                                      "mur à 19, bloc « 32 ans » en double, horaires vs son flyer, "
+                                      "« depuis 2010 ») et le périmètre « hébergement + domaine » à "
+                                      "cadrer : son domaine est à lui jusqu'au 13/06/2027"),
     # UNI-LABO a DEMANDÉ un rendez-vous : ce n'est plus une relance à calculer.
-    "uni-labo-bonamoussadi": ("2026-09-25", "RENDEZ-VOUS demandé par le prospect — vendredi 25/09"),
+    "uni-labo-bonamoussadi": ("2026-09-25", "**RENDEZ-VOUS CONFIRMÉ — vendredi 25/09 à 13 h**, à leur "
+                                            "laboratoire (Carrefour Etoo). Il a choisi 13 h lui-même le "
+                                            "23/09 à 21:42 (« 13h c'est bon pour moi »), King a accepté à "
+                                            "21:47. Prix posé le 23/09 13:30 : 150 000 FCFA, **acompte 75 000 à "
+                                            "prendre en séance**, grille tarifaire standard déjà envoyée. À "
+                                            "emporter : contrat Standard ×2, grille corrigée, et le formulaire de "
+                                            "réservation — promis dans le message de 13:30, PAS ENCORE CONSTRUIT"),
+    # Le calcul M+4 ne voyait pas cette échéance : le compteur de la source disait 1 relance au lieu de 2
+    # (FU1 19/09 + FU2 21/09 17:39). Le journal, lui, disait « FU3 mer 23/09 max, palier des 3 messages
+    # atteint » depuis le 21/09. Décision humaine inscrite ici le 23/09 — c'est la DERNIÈRE touche.
+    # ── 24/09 — TROIS ÉCHÉANCES RETIRÉES SUR DÉCISION DE KING ──────────────────────────────────
+    # « Pas de relance pour Disc, Tchaya et Afrique Labo, ils n'ont ouvert aucun de mes messages sur
+    # WhatsApp, c'est un signe clair qu'ils ne sont pas intéressés. »
+    # Les trois étaient planifiés ICI (Disc et Tchaya en relance 1/3, Afrique Labo en FU3, sa dernière
+    # touche). Leurs échéances sont supprimées et l'état vit désormais au CRM — `stage = parked` avec
+    # motif daté — sinon le plan du jour aurait continué à réclamer une relance interdite.
+    #   · DISC Optique Médicale — message 1 parti le 21/09 à 17:48, jamais ouvert.
+    #   · TCHAYA Optique — message 1 parti le 21/09 à 17:47, jamais ouvert (deux pages Facebook).
+    #   · AFRIQUE LABO — FU1 19/09 + FU2 21/09, aucune ouverte ; la FU3 préparée ne partira pas.
+    # ⛔ NE PAS RÉACTIVER sans décision explicite de King.
+    # ── Cavisa : NOUS AVONS RÉPONDU (24/09 13:26) — la balle est chez lui, mais pas d'oubli ────
+    # Dongmo a demandé des compléments à 13:16 (adresse, horaires, photos, spécialités, décision
+    # prix) ; la réponse est partie à 13:26. Sans cette ligne, il serait resté TOUS LES JOURS en tête
+    # de la file « ⚡ Répondre d'abord » : une réponse `human` reste « en attente » tant que rien ne
+    # dit le contraire. ⚠️ **PROPOSITION, À CONFIRMER PAR KING** : si rien n'est arrivé d'ici là, UN
+    # rappel court le 28/09 — jamais un reproche, juste « j'ai bien reçu / je n'ai rien reçu ».
+    "cavisa-optique": ("2026-09-28", "Réponse envoyée le 24/09 à 13:26 (remerciements + les 4 éléments "
+                                     "demandés + la question des prix). La balle est chez M. Dongmo. "
+                                     "PROPOSITION à confirmer par King : UN rappel court si rien n'est "
+                                     "arrivé d'ici là — le redéploiement, lui, attend sa liste"),
+    "skye-douala": ("2026-09-29", "Relance 2/3 envoyée le 22/09 au soir (réécrite sans reproche). DERNIÈRE "
+                                  "touche : 29/09, puis parked daté"),
+    "yaks-douala": ("2026-09-29", "Relance 2/3 envoyée le 22/09 au soir. DERNIÈRE touche : 29/09, puis parked"),
 }
 
 
@@ -145,6 +231,14 @@ def reply_pending(r) -> bool:
     conv = str(r.get("Conversation") or "").lower()
     if "parked" in conv or "await" in conv:
         return False
+    # 24/09 — UN REFUS ÉCRIT N'EST PAS UNE RÉPONSE À TRAITER. Bely Optique a répondu « Non Merci » ;
+    # sans ce marqueur, la file « ⚡ Répondre d'abord » l'aurait portée TOUS LES JOURS, pour toujours,
+    # et aurait fini par faire écrire à quelqu'un qui a dit non — précisément ce qu'on s'interdit.
+    # Marqueur posé à la main dans `Conversation` (« fil clos »), comme « parked » : une décision
+    # humaine, pas une déduction. ⚠️ On ne filtre PAS sur `stage` : un lead en `lost` peut revenir de
+    # lui-même, et ce jour-là il doit réapparaître en tête de file.
+    if "fil clos" in conv:
+        return False
     if r.get("slug") in RELANCE_A_JOUR:
         return False          # une date a été fixée : le fil est organisé
     return True
@@ -177,6 +271,10 @@ def due_for_relance(r):
 def view_pipeline(rows, idx, date):
     L = ["# PIPELINE — où en est chaque lead\n", GEN.format(date=date)]
     c = Counter(r["stage"] or "(sans étape)" for r in rows)
+    orphan = sorted(k for k in c if k and k not in STAGE_ORDER)
+    if orphan:
+        sys.exit(f"✗ stage(s) orphelins {orphan} : présents dans le CSV, absents de STAGE_ORDER — "
+                 f"ces leads seraient invisibles dans PIPELINE.md. Ajouter l'étape, pas le lead.")
     L += ["## Compteur\n", "| Étape | Leads |", "|---|---|"]
     for s in STAGE_ORDER + [""]:
         if c.get(s):
@@ -293,6 +391,8 @@ def view_stale(rows, idx, date):
             continue
         if r.get("slug") in RELANCE_A_JOUR:
             continue          # une date a été fixée : ce n'est pas un lead endormi
+        if (r.get("org_type") or "") == "school" and r.get("slug") not in SCHOOLS_KEPT:
+            continue          # décision de King 22/09 16:45 : le segment école est écarté
         n += 1
         last, _ = idx.get(r["slug"], (None, 0))
         L.append(f"| {r['School']} | {r.get('stage','')} | {age} j | "
@@ -327,6 +427,21 @@ def view_sources(rows, date):
     return "\n".join(L)
 
 
+# ── DÉCISION DE KING — 22/09/2026, 16:45 : « laisser tomber les écoles » ────────────
+# Les 39 écoles sortent des vagues d'envoi et du plan du jour (raison chiffrée dans
+# sales/PROFIL-DES-OUI-2026-09-22.md : 2,6 % de réponse contre 11,1 % pour les prospects
+# qui paient déjà pour être visibles). Elles restent dans le CRM et dans leurs fiches.
+# Deux exceptions NOMMÉES, et elles ne sortent pas d'ici sans une décision :
+SCHOOLS_KEPT = {
+    "inses-douala":
+        "École de nom, mais la même affiche porte « LA CLINIQUE DE L'ESPOIR » : le message va au "
+        "cabinet (santé), pas à l'institut — et c'est un numéro vérifié.",
+    "st-theresa-international-bilingual-comprehensive-college-sti":
+        "Une parole a déjà été donnée : retour promis en OCTOBRE (15/09, « permission de revenir »). "
+        "On ne reprend pas un engagement pour appliquer une règle.",
+}
+
+
 def view_daily_plan(rows, date):
     out = ROOT / "leads" / "Daily-Plan.csv"
     with out.open("w", newline="", encoding="utf-8-sig") as f:
@@ -334,7 +449,19 @@ def view_daily_plan(rows, date):
         w.writerow(["# Généré le " + date + " par leads/build/views.py — ne pas modifier à la main"])
         w.writerow(["priorite", "action", "lead", "whatsapp", "ville", "etape", "note"])
         prio = 0
+        n_school = 0
+        n_kept = 0
         for r in rows:
+            # ── DÉCISION DE KING 22/09 16:45 : « laisser tomber les écoles ». Elles ne sont ni
+            #    relancées, ni contactées, ni listées ici — mais elles restent dans le CRM et
+            #    dans les fiches. Le seul engagement déjà pris à une école (STIBCCOL, retour
+            #    promis en octobre) reste dans kills/`RELANCE_A_JOUR` : on ne reprend pas une
+            #    parole donnée. Zero école ne disparaît en silence : le compte est imprimé.
+            if (r.get("org_type") or "") == "school" and r.get("slug") not in SCHOOLS_KEPT:
+                n_school += 1
+                continue
+            if (r.get("org_type") or "") == "school":
+                n_kept += 1
             action, note = "", ""
             if reply_pending(r):
                 prio += 1
@@ -354,8 +481,72 @@ def view_daily_plan(rows, date):
             if action:
                 w.writerow([prio, action, r["School"], r.get("wa_number", ""),
                             r.get("City", ""), r.get("stage", ""), note])
+    if n_school or n_kept:
+        print(f"  école(s) : {n_school} écartée(s) du plan (décision de King 22/09 16:45) · "
+              f"{n_kept} gardée(s) par exception écrite (SCHOOLS_KEPT)")
     return out
 
+
+
+def view_funnel(rows, date):
+    """L'ENTONNOIR — la mesure qui dit OÙ regarder (lot [34], leçon vidéo « cold outreach »).
+
+    Pourquoi cette vue existe : le dépôt savait dire combien de leads existent, jamais **où le système
+    fuit**. Sans ce tableau, on « continue l'outreach » sans savoir si le problème est le volume
+    contacté, le taux de réponse ou la conversion en rendez-vous. Trois chiffres suffisent à trancher.
+    """
+    L = ["# ENTONNOIR — où le système fuit\n", GEN.format(date=date)]
+    total = len(rows)
+
+    def has(r, col, *vals):
+        v = str(r.get(col) or "").strip().lower()
+        return any(v.startswith(x) for x in vals)
+
+    contacted = [r for r in rows if has(r, "Contacted", "yes", "sent")]
+    human = [r for r in rows if str(r.get("reply_type") or "") == "human"]
+    auto = [r for r in rows if str(r.get("reply_type") or "") == "auto"]
+    demos = [r for r in rows if has(r, "Demo made", "yes")]
+    live = [r for r in rows if (r.get("stage") or "") in ("closing", "offer")]
+    won = [r for r in rows if (r.get("stage") or "") in ("won", "delivered")]
+
+    def pct(a, b):
+        return ("%.1f %%" % (100.0 * a / b)) if b else "—"
+
+    L += ["## La chaîne\n", "| Étape | Nombre | Taux |", "|---|---|---|",
+          "| Base (leads au fichier) | **%d** | — |" % total,
+          "| Contactés | **%d** | %s de la base |" % (len(contacted), pct(len(contacted), total)),
+          "| Réponses humaines | **%d** | %s des contactés |" % (len(human), pct(len(human), len(contacted))),
+          "| Réponses automatiques | %d | — |" % len(auto),
+          "| Aperçus produits | **%d** | (hors chaîne : souvent produits AVANT contact) |" % len(demos),
+          "| Prix posé / en négociation | **%d** | %s des aperçus |" % (len(live), pct(len(live), len(demos))),
+          "| Clients payants | **%d** | — |" % len(won), ""]
+
+    src = {}
+    for r in rows:
+        k = r.get("source") or "(non renseigné)"
+        d = src.setdefault(k, [0, 0, 0])
+        d[0] += 1
+        if r in contacted:
+            d[1] += 1
+        if r in human:
+            d[2] += 1
+    L += ["## Par source — c'est ici qu'on voit quelle source vaut le travail\n",
+          "| Source | Leads | Contactés | Réponses humaines | Taux de réponse |", "|---|---|---|---|---|"]
+    for k, (n, c, h) in sorted(src.items(), key=lambda kv: (-kv[1][2], -kv[1][1])):
+        L.append("| %s | %d | %d | **%d** | %s |" % (k, n, c, h, pct(h, c)))
+    L += ["", "## Le diagnostic, en trois lignes\n",
+          "1. **Le volume contacté est le premier goulot** : %d lead(s) sur %d n'ont jamais reçu un "
+          "message (%.0f %% de la base). Aucune amélioration de texte ne compense un lead jamais "
+          "contacté." % (total - len(contacted), total, 100.0 * (total - len(contacted)) / max(total, 1)),
+          "2. **Le taux de réponse humain** est de %s des contactés — c'est le chiffre à surveiller "
+          "d'un envoi à l'autre (il se lit avec `SOURCES.md` : quelle liste répond)." % pct(len(human), len(contacted)),
+          "3. **La conversion en rendez-vous, elle, ne fuit pas** : %d des %d réponses humaines ont "
+          "donné un rendez-vous ou un prix posé. Le travail n'est donc pas de « mieux closer », il est "
+          "de **contacter plus**, et de choisir les bonnes listes." % (len(live), max(len(human), 1)),
+          "", "> Règle de lecture : une réponse automatique n'est PAS une réponse. Un aperçu produit "
+          "n'est pas un prospect chaud — il se compte à part, et `Demo made` ne remplace jamais "
+          "`reply_type = human`.", ""]
+    return "\n".join(L) + "\n"
 
 def main() -> int:
     rows = load()
@@ -368,13 +559,14 @@ def main() -> int:
         ("KILL-LIST.md", view_kill_list(rows, date)),
         ("STALE.md", view_stale(rows, idx, date)),
         ("SOURCES.md", view_sources(rows, date)),
+        ("FUNNEL.md", view_funnel(rows, date)),
     ]:
         (ROOT / "leads" / name).write_text(content, encoding="utf-8")
     plan = view_daily_plan(rows, date)
 
     n_act = max(sum(1 for _ in csv.reader(plan.open(encoding="utf-8-sig"))) - 2, 0)
-    print(f"✓ 4 vues + 1 plan générés ({date})")
-    print("  PIPELINE.md · KILL-LIST.md · STALE.md · SOURCES.md · Daily-Plan.csv")
+    print(f"✓ 5 vues + 1 plan générés ({date})")
+    print("  PIPELINE.md · KILL-LIST.md · STALE.md · SOURCES.md · FUNNEL.md · Daily-Plan.csv")
     print(f"  file du jour : {n_act} action(s)")
     return 0
 

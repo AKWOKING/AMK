@@ -1,6 +1,6 @@
 # Afrique Labo SARL
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-21. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-27. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -10,28 +10,32 @@
 | Type | lab |
 | Ville | Douala (Bessengue) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | parked |
 | WhatsApp | 690 54 70 93 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |
 | Contacté | Yes |
 | Réponse | No |
 | Maquette / site | Yes |
-| Relances envoyées | 1 |
+| Relances envoyées | 2 |
 | Source | directory |
 | Détail source | maligah/pagespratiques — numéro joignable vérifié |
 
+## Pourquoi il est écarté
+
+messages livrés mais JAMAIS OUVERTS (aucun accusé de lecture) — décision de King, 24/09 : aucune relance
+
 ## Notes
 
-Message 1 envoyé 17/09 13:24. **FU1 (M+2) ENVOYÉE par King le 19/09** (confirmé par lui : « I have already sent message de relance »). FU2 (M+4) = lundi 21/09, angle résultats WhatsApp. Concept live : concept-afriquelabo-v1.vercel.app. Numéros interdits : 699 73 36 25 et 674 46 62 15 (secours seulement si l'invitation vient d'eux).
+Message 1 envoyé 17/09 13:24. **FU1 (M+2) ENVOYÉE par King le 19/09** (confirmé par lui : « I have already sent message de relance »). **FU2 partie le 21/09 à 17:39** (éditée, une coche), angle résultats WhatsApp. ⚠️ LE COMPTEUR EST RESTÉ À 1 JUSQU'AU 23/09 : le journal disait 2 (21/09 au soir), la source disait 1 — conséquence réelle, le calcul M+4 croyait la FU3 pas encore due alors que sa date écrite était le 23/09. Corrigé ici et inscrit au `RELANCE_A_JOUR` (views.py) le 23/09 : **FU3 = DERNIÈRE TOUCHE, due le 23/09**, le palier des 3 relances est atteint après elle. Concept live : concept-afriquelabo-v1.vercel.app. Numéros interdits : 699 73 36 25 et 674 46 62 15 (secours seulement si l'invitation vient d'eux). · ⚠️ CORRECTION : la fiche le donnait sans site, et un concept lui a même été construit et déployé. Afrique Labo a une vitrine À LUI → profil « a déjà une vitrine », donc plus jamais « vous n'existez pas ». Site simple (valeurs, contact) sans prise de rendez-vous. Le concept déployé peut encore servir, mais l'angle change : partir de ce qu'il a déjà, pas de ce qui lui manque. · 24/09 — la FU3 préparée (`sales/Send-Soir-2026-09-23.md` §③) NE PARTIRA PAS : annulée avant envoi. Deux relances avaient déjà été envoyées (FU1 19/09, FU2 21/09) et aucune n'a été ouverte. C'était la dernière touche prévue ; elle devient la décision écrite : on s'arrête. Vitrine à lui (`afriqlabo.com`) — le dossier reste tel quel.
 
 ## Prochaine action
 
-**1 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**Aucune.** Parqué — messages livrés mais JAMAIS OUVERTS (aucun accusé de lecture) — décision de King, 24/09 : aucune relance. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 8 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 33 ligne(s).*
 
 `L61` · | jeu 17/09 13:24 | AFRIQUE LABO (690 54 70 93) | msg 1 | Envoyé, 2 coches | **Non** |
 `L78` · - **Fils ouverts sans réponse au 18/09 :** OraCare · MITOC · Baptist Comprehensive · Baird Memorial · The Skye · YAKS · AFRIQUE LABO · L'Opticien · La Béthanie · JEMPO. **31 fils ouverts · 2 réponses humaines (St. Theresa, UNI-LABO) · PRR = 2/31 = 6,5 %.**
@@ -41,6 +45,31 @@ Message 1 envoyé 17/09 13:24. **FU1 (M+2) ENVOYÉE par King le 19/09** (confirm
 `L502` · **Ma première correction a patché AFRIQUE LABO avec les données d'UNI-LABO.** Le motif d'ancrage
 `L504` · qui a fait planter le script — **sinon la donnée d'UNI-LABO aurait écrasé celle d'Afrique Labo en silence.**
 `L506` · au lieu de rapiécer des morceaux, avec `ast.parse()` en contrôle avant d'exécuter. **Afrique Labo vérifié intact.**
+`L760` · | ② | **St. Theresa : oui, elle compte dans le PRR.** | Sa `Reply` porte le verbatim, pas un « yes » : la déduction ne la voyait pas. Forcée à la main (`reply_type=human`, verbatim des 15/09 20:44 + 22:51 dans la cellule). Le PRR passe de 4,4 % à **6,7 % (3/45)** — et retombe à **6,5 % (3/46)** quand AFRIQUE LABO entre au tableau (§2). Sa `stage_since` = **21/09**, la date de la décision de parking, pas celle de la réponse. |
+`L762` · | ④ | **Le site `amk-cm.vercel.app` :** contrôle demandé sur les pages concernées. | `audit_html.py` sur les 3 pages récupérées du dépôt = **0 finding**. Les liens de concepts cités dans les textes d'envoi ont été **vérifiés en ligne, un par un** : `bonanjo` · `concept-skye` · `concept-yaks-v1` · `mitoc-concept` · `uni-labo` · `concept-afriquelabo-v1` = vivants ; **`amk-cm.vercel.app/yaks/` renvoie 404** → aucune phrase d'envoi ne doit pointer sur ce chemin (les maquettes nommées ne sont pas listées, règle du 17/09). |
+`L765` · ### 2 · AFRIQUE LABO n'était pas dans le CRM — 4 messages, une relance due, aucune ligne
+`L768` · `sales/Outreach-AFRIQUE-LABO-v1.md` et le journal. Conséquence mécanique, pas une opinion : un lead hors
+`L772` · Corrections : `afrique-labo-sarl` **ajouté comme 146ᵉ ligne**, uniquement avec des faits déjà écrits dans le
+`L774` · jeu 24 · `presented` · `lab` · WhatsApp Business nommé « Afrique labo sarl » vérifié 17/09 · `afriqlabo.com`
+`L779` · disait « AFRIQUE LABO FU2 = mercredi 23/09 → ne rien envoyer aujourd'hui ». **C'était faux** — ce calcul
+`L804` · AFRIQUE LABO FU2 (angle : les résultats) · **OraCare conditionnel** — si la FU2 du 20/09 est partie, on
+`L830` · - `AFRIQUE LABO` : FU2 partie **17:39 (éditée, une coche)** · message d'amorce du **14/09 13:04 jamais compté**
+`L844` · 1. **« AFRIQUE LABO n'est pas dans le CRM » — c'était faux.** La ligne existait sous `afrique-labo-douala` ;
+`L855` · **Trou de MA donnée, trouvé en relisant le CRM contre l'écran :** `price_quoted_fcfa` d'AFRIQUE LABO/
+`L877` · AFRIQUE LABO (la phrase de trop sur les résultats : rétablie à la réponse, ou avec la FU3 de mercredi ?).
+`L991` · Bonanjo (réécriture ce soir ≤ 21:00 ou demain 09:00 ?) · AFRIQUE LABO (la phrase « noir sur blanc » sur les
+`L1141` · Médina Optic · Bonanjo (ce soir ≤ 21:00 ou demain 09:00) · AFRIQUE LABO (« noir sur blanc ») · les 12 assureurs
+`L1244` · AFRIQUE LABO. `amk-cm.vercel.app/univers/` répond **404** tant que King n'a pas déployé.
+`L1776` · - à trancher, pas dans le lot : `concept-afriquelabo-v1.vercel.app` (Afrique Labo, `qualifying`, aucune action
+`L2338` · Afrique Labo, L'Opticien, Labiomed, Bonanjo, MITOC) ; la bibliothèque publiable sans identité client
+`L2369` · **AFRIQUE LABO** avait reçu sa **FU2 le 21/09 à 17:39** — le journal du 21/09 au soir disait
+`L2375` · `Relance 3/3 Afrique Labo` (dernière touche). Les trois messages sont écrits, une seule demande chacun, aucune
+`L2378` · des patients ; pour Afrique Labo : son site existe, l'angle part de ce qu'il a). **Toujours rien envoyé
+`L3317` · (Disc §①, Tchaya §②, Afrique Labo §③ — messages déjà rédigés dans `sales/Send-Soir-2026-09-23.md`) ; l'action
+`L3808` · Afrique Labo). Le CRM ne les oubliera pas ; King non plus, maintenant que c'est écrit.
+`L3812` · **Récit de King, mot pour mot :** *« Répondu à Cavisa. Pas de relance pour Disc, Tchaya et Afrique Labo,
+`L3834` · ### ② DISC · TCHAYA · AFRIQUE LABO — la règle « on ne relance pas ce qui n'a jamais été ouvert »
+`L3837` · jour réclamait pour eux une relance 1/3, et pour Afrique Labo sa **troisième et dernière touche**. King
 
 ---
 

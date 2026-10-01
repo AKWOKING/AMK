@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Opticien à Douala — DM OPTIQUE SARL : vue, verres, montures</title>
+<meta name="description" content="Cabinet d'optique médicale à Douala, inscrit au registre de l'Ordre depuis 2016. Examen de la vue, verres sur ordonnance, montures, réparation. Écrivez sur WhatsApp : le message part déjà écrit.">
+<meta name="theme-color" content="#0A1220">
+<meta property="og:type" content="website"><meta property="og:locale" content="fr_FR"><meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="DM OPTIQUE SARL — opticien à Douala : vue, verres, montures">
+<meta property="og:description" content="Examen de la vue, verres sur ordonnance, montures, réparation. Un opticien inscrit à l'Ordre depuis 2016. WhatsApp : le message part déjà écrit.">
+<!-- LA VIGNETTE DU LIEN (PRE-FLIGHT §20.7) — remplie par `python3 demos/build_dmoptic.py --url <adresse>`
+     après le déploiement. Tant que l'adresse n'est pas connue, on n'envoie pas le lien : une URL devinée
+     est un lien mort, et un lien mort coûte plus qu'une heure d'attente. -->
+<meta property="og:url" content="__OG_URL__">
+<meta property="og:image" content="__OG_IMAGE__">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DM OPTIQUE SARL — cabinet d'optique médicale à Douala, inscrit à l'Ordre depuis 2016.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<script>/* Avant le premier rendu : on retire `no-js`, on pose `js` (c'est ce qui autorise les états d'entrée
+   du CSS, §13) et on remet la langue choisie la dernière fois. Sans JavaScript, la page s'affiche en
+   français, entière, lisible : rien n'est caché. */
+(function(){try{var h=document.documentElement;h.classList.remove("no-js");h.classList.add("js");
+var l=localStorage.getItem("dmoptic-lang");if(l==="en"||l==="fr")h.setAttribute("data-lang",l);}catch(e){}})();</script>
+<style>
+:root{
+  /* ── LA COULEUR : « papier froid, encre marine, un braise » ────────────────────────────────────────
+     Aucun ambre (Cavisa), aucun vert (Cristallin), aucune crème (L'Opticien), aucun pétrole (Univers).
+     Le bleu est la couleur du cabinet — celle du cachet de l'Ordre ; la braise n'apparaît qu'une fois,
+     sur ce qui manque encore. Le dégradé du premier écran vit dans le bleu, jamais dans le violet. */
+  --paper:#EEF1F5; --card:#FFFFFF; --card-2:#F7F9FC;
+  --ink:#0C1524; --ink-2:#43506A; --ink-3:#586476;
+  --line:#D6DDE7; --line-2:#E6EBF2; --line-strong:#B9C4D4;
+  --brand:#1A3F86; --brand-2:#14336C; --brand-tint:#E4EAF6;
+  --night:#0A1220; --night-2:#101B2E; --night-line:rgba(255,255,255,.14);
+  --on-night:#E9EEF7; --on-night-2:#A9B8CF;
+  --ember:#E0703A; --ember-2:#F09160;
+  --wa:#0B7A3E; --wa-2:#096232;
+  --r:14px; --r-lg:20px; --max:1120px; --gut:20px;
+  --f-d:"Schibsted Grotesk","Archivo",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-b:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-m:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --fs-h1:clamp(2rem,8vw,3.25rem);
+  --fs-h2:clamp(1.55rem,5.4vw,2.3rem);
+  --fs-h3:clamp(1.05rem,3.4vw,1.2rem);
+  --fs-lead:clamp(1.05rem,2.9vw,1.18rem);
+  --fs-base:1.0625rem; --fs-sm:.95rem; --fs-xs:.875rem; --fs-label:.72rem;
+  --ease:cubic-bezier(.23,1,.32,1);
+  --shadow:0 14px 34px rgba(12,21,36,.10);
+  --shadow-2:0 22px 54px rgba(12,21,36,.16);
+}
+@media (min-width:780px){ :root{--fs-base:1.0625rem;--gut:28px;} }
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font:var(--fs-base)/1.62 var(--f-b);font-variant-numeric:tabular-nums;
+  padding-bottom:84px}                       /* la place de la barre du bas, sur téléphone (§24) */
+@media (min-width:900px){ body{padding-bottom:0} }
+img{max-width:100%;height:auto;display:block}
+a{color:var(--brand)}
+h1,h2,h3{font-family:var(--f-d);font-weight:700;margin:0;letter-spacing:-.02em;text-wrap:balance;line-height:1.06}
+h1{font-size:var(--fs-h1);line-height:1.04}
+h2{font-size:var(--fs-h2)}
+h3{font-size:var(--fs-h3);line-height:1.25}
+p{margin:.72rem 0 0;text-wrap:pretty}
+ul,ol,dl{margin:0;padding:0;list-style:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+section{padding:56px 0;scroll-margin-top:24px}
+@media (min-width:780px){ section{padding:96px 0} }
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:6px}
+.skiplink{position:absolute;left:14px;top:-64px;z-index:90;background:var(--brand);color:#fff;
+  padding:13px 18px;border-radius:var(--r);text-decoration:none;font-weight:600;transition:top .18s var(--ease)}
+.skiplink:focus{top:14px}
+
+/* ── LES DEUX LANGUES ───────────────────────────────────────────────────────────────────────────────
+   Les deux textes vivent dans le HTML (c'est ce que lisent les moteurs, les lecteurs d'écran et le
+   presse-papier). `data-lang` sur <html> décide lequel s'affiche. La classe de langue ne va JAMAIS sur
+   un élément structurel (§20.11) — toujours sur un <span> intérieur. */
+.en-only{display:none}
+html[data-lang="en"] .fr-only{display:none}
+html[data-lang="en"] .en-only{display:inline}
+html[data-lang="en"] .en-only.as-block{display:block}
+
+/* ── L'EN-TÊTE ────────────────────────────────────────────────────────────────────────────────────── */
+header.site{background:var(--paper);border-bottom:1px solid var(--line);position:relative;z-index:5}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:66px}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);
+  font-family:var(--f-d);font-weight:700;font-size:1.06rem;letter-spacing:.06em;white-space:nowrap}
+.brand svg{width:26px;height:26px;flex:none}
+.brand .thin{font-weight:500;color:var(--ink-2)}
+.mark{display:inline-block}
+.mark .o{fill:none;stroke:var(--ink);stroke-width:2.4}
+.mark .i{fill:none;stroke:var(--ink);stroke-width:1.2;opacity:.55}
+.mark .glint{fill:none;stroke:var(--brand);stroke-width:2.4;stroke-linecap:round}
+.nav{display:none}
+@media (min-width:980px){
+  .nav{display:flex;gap:24px;font-size:var(--fs-sm)}
+  .nav a{text-decoration:none;color:var(--ink-2);padding-bottom:2px;border-bottom:1px solid transparent;
+    transition:color .16s var(--ease),border-color .16s var(--ease)}
+}
+.langbox{display:flex;align-items:center;gap:2px;border:1px solid var(--line-strong);border-radius:999px;padding:3px}
+.lang{font:600 var(--fs-label)/1 var(--f-m);letter-spacing:.08em;color:var(--ink-2);background:none;border:0;
+  padding:10px 12px;border-radius:999px;cursor:pointer;
+  transition:background-color .16s var(--ease),color .16s var(--ease),transform .12s var(--ease)}
+.lang.is-on{background:var(--ink);color:#fff}
+.lang:active{transform:scale(.97)}
+
+/* ── LES BOUTONS — un seul bouton principal par écran (§19.1) ─────────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 20px;
+  border-radius:var(--r);border:1px solid var(--line-strong);background:var(--card);color:var(--ink);
+  font-family:var(--f-b);font-weight:600;font-size:1rem;text-decoration:none;cursor:pointer;
+  transition:background-color .18s var(--ease),color .18s var(--ease),border-color .18s var(--ease),transform .13s var(--ease)}
+.btn:active{transform:scale(.98)}
+.btn svg{width:19px;height:19px;flex:none;fill:currentColor}
+.btn-wa{background:var(--wa);border-color:var(--wa);color:#fff}
+.btn-night{border-color:rgba(255,255,255,.3);background:transparent;color:var(--on-night)}
+@media (hover:hover) and (pointer:fine){
+  .btn-wa:hover{background:var(--wa-2);border-color:var(--wa-2)}
+  .btn-night:hover{border-color:#fff}
+}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.kicker{margin:0;font:500 var(--fs-label)/1.5 var(--f-m);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.lede{font-size:var(--fs-lead);color:var(--ink-2);max-width:56ch;margin-top:16px}
+.chip{display:inline-block;font:500 var(--fs-label)/1 var(--f-m);letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink-2);background:var(--card-2);border:1px solid var(--line);border-radius:999px;padding:8px 12px}
+.note{font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3);margin-top:18px}
+
+/* ── LE PREMIER ÉCRAN (§26, §29) : texte à gauche, preuve à droite — et deux dégradés animés ───────
+   Le premier dégradé est un lavis large qui dérive lentement derrière le texte (bleu de cachet et une
+   pointe de braise, jamais de violet) ; le second est l'anneau de verre qui tourne, posé derrière la
+   carte. Les deux ne bougent QUE par `transform` (composé par le GPU, pas de `filter:blur` sur grand
+   écran) et s'arrêtent net si le visiteur demande moins de mouvement. */
+.hero{position:relative;overflow:hidden;padding-top:40px}
+@media (min-width:780px){ .hero{padding-top:72px} }
+.wash{position:absolute;z-index:0;inset:-28% -18% auto -18%;height:150%;pointer-events:none;
+  background:
+    radial-gradient(34% 40% at 24% 30%, rgba(26,63,134,.20), rgba(26,63,134,0) 70%),
+    radial-gradient(26% 32% at 82% 14%, rgba(224,112,58,.12), rgba(224,112,58,0) 72%),
+    radial-gradient(40% 44% at 64% 82%, rgba(78,123,212,.15), rgba(78,123,212,0) 74%)}
+html.js .wash{animation:drift 26s ease-in-out infinite alternate}
+@keyframes drift{
+  0%{transform:translate3d(-2%,-1.5%,0) scale(1.02)}
+  50%{transform:translate3d(3%,2.5%,0) scale(1.09)}
+  100%{transform:translate3d(-1%,3%,0) scale(1.04)}
+}
+.lensring{position:absolute;z-index:0;right:-88px;top:34px;width:290px;height:290px;pointer-events:none}
+html.js .lensring{animation:spin 24s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (min-width:780px){ .lensring{right:-60px;top:20px;width:380px;height:380px} }
+.hero-grid{position:relative;z-index:1;display:grid;gap:34px}
+@media (min-width:980px){ .hero-grid{grid-template-columns:1.02fr .98fr;gap:54px;align-items:start} }
+.hero h1{margin-top:18px}
+.hero .hl{color:var(--brand)}
+.facts{display:grid;gap:0;margin-top:30px;border-top:1px solid var(--line)}
+.facts div{display:flex;justify-content:space-between;gap:14px;padding:13px 0;border-bottom:1px solid var(--line)}
+.facts dt{font:500 var(--fs-label)/1.7 var(--f-m);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.facts dd{margin:0;font-weight:600;font-size:var(--fs-sm);text-align:right}
+
+/* ── LA CARTE : la preuve du cabinet (registre de l'Ordre), à côté de l'affirmation qu'elle prouve ── */
+.idcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow);
+  padding:22px;position:relative;overflow:hidden;
+  transition:transform .28s var(--ease),box-shadow .28s var(--ease)}
+@media (hover:hover) and (pointer:fine){ .idcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-2)} }
+.idcard::after{content:"";position:absolute;inset:auto -40px -60px auto;width:190px;height:190px;border-radius:50%;
+  background:radial-gradient(circle at 32% 28%,rgba(26,63,134,.10),transparent 62%);pointer-events:none}
+.idtop{display:flex;align-items:center;gap:12px}
+.idtop .mark svg{width:34px;height:34px}
+.idname{font-family:var(--f-d);font-weight:700;font-size:1.2rem;letter-spacing:.08em}
+.idcity{margin-left:auto;font:500 var(--fs-label)/1 var(--f-m);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.idkind{margin-top:10px;color:var(--ink-2);font-size:var(--fs-sm)}
+.idrows{margin-top:20px;border-top:1px solid var(--line-2)}
+.idrows div{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:11px 0;border-bottom:1px solid var(--line-2)}
+.idrows dt{font:500 var(--fs-label)/1.7 var(--f-m);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.idrows dd{margin:0;font:500 var(--fs-sm)/1.5 var(--f-m);text-align:right;color:var(--ink)}
+.idfoot{margin-top:16px;font-size:var(--fs-xs);color:var(--ink-3)}
+.idwrap{margin:0}
+.idwrap figcaption{margin-top:12px;font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
+
+/* ── LES ACTES : six cartes en bande glissante sur téléphone, trois colonnes sur ordinateur ──────── */
+.strip{display:grid;grid-auto-flow:column;grid-auto-columns:80%;gap:14px;overflow-x:auto;margin-top:30px;
+  padding-bottom:10px;scroll-snap-type:x mandatory;scrollbar-width:thin;
+  -webkit-mask-image:linear-gradient(90deg,#000 86%,transparent);mask-image:linear-gradient(90deg,#000 86%,transparent)}
+.strip>*{scroll-snap-align:start}
+@media (min-width:780px){
+  .strip{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);overflow:visible;padding-bottom:0;
+    -webkit-mask-image:none;mask-image:none}
+}
+.act{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:20px;display:flex;flex-direction:column;gap:8px}
+.act .n{font:500 var(--fs-label)/1 var(--f-m);letter-spacing:.12em;color:var(--brand)}
+.act h3{margin-top:6px}
+.act p{margin:0;color:var(--ink-2);font-size:var(--fs-sm)}
+.act .bring{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--line-2);
+  font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
+figure.band-fig{margin:34px 0 0}
+figure.band-fig img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:var(--r-lg);border:1px solid var(--line)}
+figure.band-fig figcaption{margin-top:12px;font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
+
+/* ── LA BANDE SOMBRE : comment ça se passe (trois étapes, une seule action) ──────────────────────── */
+.band{background:var(--night);color:var(--on-night);position:relative;overflow:hidden}
+.band h2,.band h3{color:#fff}
+.band .lede{color:var(--on-night-2)}
+.band::before{content:"";position:absolute;z-index:0;inset:auto -20% -60% 40%;height:120%;pointer-events:none;
+  background:radial-gradient(40% 50% at 50% 50%, rgba(42,92,184,.28), rgba(42,92,184,0) 72%)}
+html.js .band::before{animation:drift 32s ease-in-out infinite alternate}
+.band .wrap{position:relative;z-index:1}
+.steps{display:grid;gap:16px;margin-top:34px}
+@media (min-width:780px){ .steps{grid-template-columns:repeat(3,1fr);gap:22px} }
+.step{background:var(--night-2);border:1px solid var(--night-line);border-radius:var(--r-lg);padding:22px}
+.step .n{font:500 var(--fs-label)/1 var(--f-m);letter-spacing:.14em;color:var(--ember-2)}
+.step h3{margin-top:12px;font-size:1.1rem}
+.step p{margin:.5rem 0 0;color:var(--on-night-2);font-size:var(--fs-sm)}
+.band .actions{margin-top:30px}
+.band .note{color:var(--on-night-2)}
+
+/* ── LES MONTURES : la vitrine — trois familles, puis les trois conseils du choix ────────────────────
+   Trois photos d'illustration légendées comme telles (aucune photo du cabinet n'existe encore), et
+   aucune marque, aucun prix : la vitrine dit ce qu'on vient essayer, pas ce qui est en stock. */
+.grid3{display:grid;gap:16px;margin-top:30px}
+@media (min-width:780px){ .grid3{grid-template-columns:repeat(3,1fr);gap:22px} }
+.frame{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column}
+.frame img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border-bottom:1px solid var(--line)}
+.frame .body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.frame h3{margin:0}
+.frame p{margin:0;color:var(--ink-2);font-size:var(--fs-sm)}
+.frame .ask{margin-top:auto;padding-top:10px;border-top:1px solid var(--line-2);font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
+.advice{display:grid;gap:16px;margin-top:30px}
+@media (min-width:780px){ .advice{grid-template-columns:repeat(3,1fr);gap:22px} }
+.advice>div{padding-left:14px;border-left:2px solid var(--ember)}
+.advice h3{margin:0;font-size:1rem}
+.advice p{margin:.45rem 0 0;color:var(--ink-2);font-size:var(--fs-sm)}
+figure.bandfig{margin:30px 0 0}
+figure.bandfig img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--r-lg);border:1px solid var(--night-line)}
+figure.bandfig figcaption{margin-top:12px;font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--on-night-2)}
+
+/* ── LE TITULAIRE (retiré le 24/09 — la vitrine a pris sa place) ──────────────────────────────────── */
+.split{display:grid;gap:30px}
+@media (min-width:900px){ .split{grid-template-columns:1.05fr .95fr;gap:48px;align-items:center} }
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+figure.fig-43{margin:0}
+figure.fig-43 img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r-lg);border:1px solid var(--line)}
+figure.fig-43 figcaption{margin-top:12px;font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
+
+/* ── LES QUESTIONS (§31.3 : une question par bloc, la réponse d'abord, le bloc survit seul) ───────── */
+.faq{margin-top:28px;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;
+  padding:18px 0;cursor:pointer;list-style:none;font-family:var(--f-d);font-weight:700;font-size:1.02rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .chev{margin-top:3px;flex:none;width:18px;height:18px;transition:transform .22s var(--ease)}
+.faq details[open] summary .chev{transform:rotate(180deg)}
+.faq p{padding:0 0 20px;max-width:72ch;color:var(--ink-2)}
+.faq summary:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+
+/* ── LE CONTACT ───────────────────────────────────────────────────────────────────────────────────── */
+.micro{display:flex;flex-wrap:wrap;gap:18px;margin-top:20px}
+.microbtn{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:0 2px;background:none;border:0;
+  border-bottom:1px solid var(--line-strong);color:var(--ink-2);font:600 var(--fs-sm)/1 var(--f-b);cursor:pointer;
+  transition:color .16s var(--ease),border-color .16s var(--ease)}
+.microbtn svg{width:17px;height:17px;flex:none}
+.microbtn:active{border-color:var(--ink)}
+@media (hover:hover) and (pointer:fine){ .microbtn:hover{color:var(--ink);border-color:var(--ink)} }
+.cgrid{display:grid;gap:0;margin-top:30px;border-top:1px solid var(--line)}
+.cgrid div{display:flex;justify-content:space-between;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.cgrid dt{font:500 var(--fs-label)/1.7 var(--f-m);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.cgrid dd{margin:0;font-weight:600;font-size:var(--fs-sm);text-align:right}
+.cgrid dd span.wait{font-weight:500;color:var(--ink-3)}
+
+/* ── LE PIED DE PAGE : 4 blocs + bandeau (§20.2) ──────────────────────────────────────────────────── */
+footer.site{background:var(--night);color:var(--on-night);padding:52px 0 0;margin-top:8px}
+footer.site a{color:var(--on-night)}
+.fgrid{display:grid;gap:30px}
+@media (min-width:860px){ .fgrid{grid-template-columns:1.35fr 1fr 1fr 1.1fr;gap:34px} }
+footer.site .brand{color:#fff}
+footer.site .brand .thin{color:rgba(255,255,255,.82)}
+footer.site .brand .mark .o{stroke:#fff}
+footer.site .brand .mark .i{stroke:#fff}
+footer.site .brand .mark .glint{stroke:var(--ember-2)}
+footer.site h3{font:500 var(--fs-label)/1.6 var(--f-m);letter-spacing:.14em;text-transform:uppercase;color:var(--on-night-2);margin-bottom:12px}
+footer.site p{color:var(--on-night-2);font-size:var(--fs-sm)}
+.fnav li{padding:6px 0}
+.fnav a{text-decoration:none;font-size:var(--fs-sm);color:var(--on-night-2);border-bottom:1px solid transparent;padding-bottom:1px}
+.fnav a:hover{border-color:rgba(255,255,255,.5);color:#fff}
+.fcta{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.fcontact li{padding:6px 0;font-size:var(--fs-sm);color:var(--on-night-2)}
+.fcontact a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.34)}
+.stripbar{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;align-items:center;
+  margin-top:44px;padding:18px 0;border-top:1px solid var(--night-line);font:500 var(--fs-xs)/1.7 var(--f-m);color:var(--on-night-2)}
+.stripbar a{color:var(--on-night-2);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.28)}
+
+/* ── LA BARRE DU BAS, TÉLÉPHONE UNIQUEMENT ────────────────────────────────────────────────────────── */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:60;display:grid;grid-template-columns:1fr 1fr;gap:10px;
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(10,18,32,.96);
+  border-top:1px solid var(--night-line);backdrop-filter:blur(8px)}
+.dock .btn{min-height:52px}
+@media (min-width:900px){ .dock{display:none} }
+
+/* ── LE MOUVEMENT : une entrée par écran, deux dégradés lents, et le droit de ne rien voir ────────── */
+html.js .rv{opacity:0;transform:translateY(14px);transition:opacity .62s var(--ease),transform .62s var(--ease)}
+html.js .rv.in{opacity:1;transform:none}
+html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s .3s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  html.js .rv{opacity:1;transform:none;transition:none}
+  html.js .glint{animation:none;stroke-dasharray:none;stroke-dashoffset:0}
+  html.js .wash,html.js .lensring,html.js .band::before{animation:none}
+  *{transition-duration:.01ms !important}
+}
+</style>
+</head>
+<body>
+<a class="skiplink" href="#main"><span class="fr-only" lang="fr">Aller au contenu</span><span class="en-only" lang="en">Skip to content</span></a>
+<p id="say" class="sr" role="status" aria-live="polite"></p>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <span class="brandtxt">DM OPTIQUE <span class="thin">SARL</span></span>
+      <span class="mark" aria-hidden="true"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><circle class="o" cx="20" cy="20" r="16"></circle><circle class="i" cx="20" cy="20" r="10.5"></circle><path class="glint" d="M11.6 14.2a10.5 10.5 0 0 1 8.4-4.1"></path></svg></span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#actes"><span class="fr-only" lang="fr">Ce que nous faisons</span><span class="en-only" lang="en">What we do</span></a>
+      <a href="#etapes"><span class="fr-only" lang="fr">Comment ça se passe</span><span class="en-only" lang="en">How it works</span></a>
+      <a href="#montures"><span class="fr-only" lang="fr">Nos montures</span><span class="en-only" lang="en">Our frames</span></a>
+      <a href="#questions"><span class="fr-only" lang="fr">Questions</span><span class="en-only" lang="en">Questions</span></a>
+      <a href="#contact"><span class="fr-only" lang="fr">Contact</span><span class="en-only" lang="en">Contact</span></a>
+    </nav>
+    <div class="langbox" role="group" aria-label="Langue / Language">
+      <button id="btn-fr" class="lang is-on" type="button" lang="fr" aria-pressed="true">FR</button>
+      <button id="btn-en" class="lang" type="button" lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <span id="top"></span>
+
+  <!-- ══ 1 · LE PREMIER ÉCRAN : ce que c'est, pour qui, et les deux gestes ═════════════════════════ -->
+  <section class="hero" aria-labelledby="h-hero">
+    <span class="wash" aria-hidden="true"></span>
+    <svg class="lensring" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+      <defs><linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#7FA6E8" stop-opacity="0"></stop>
+        <stop offset=".45" stop-color="#2A5CB8" stop-opacity=".55"></stop>
+        <stop offset=".78" stop-color="#E0703A" stop-opacity=".38"></stop>
+        <stop offset="1" stop-color="#E0703A" stop-opacity="0"></stop>
+      </linearGradient></defs>
+      <circle cx="100" cy="100" r="92" fill="none" stroke="url(#sheen)" stroke-width="9"></circle>
+      <circle cx="100" cy="100" r="70" fill="none" stroke="url(#sheen)" stroke-width="2.5" opacity=".8"></circle>
+    </svg>
+    <div class="wrap hero-grid">
+      <div>
+        <p class="kicker rv"><span class="fr-only" lang="fr">Opticien à Douala · inscrit à l'Ordre depuis 2016</span><span class="en-only" lang="en">Optician in Douala · registered since 2016</span></p>
+        <h1 id="h-hero" class="rv">
+          <span class="fr-only" lang="fr">DM OPTIQUE SARL, votre opticien à Douala.</span>
+          <span class="en-only" lang="en">DM OPTIQUE SARL, your optician in Douala.</span>
+        </h1>
+        <p class="lede rv">
+          <span class="fr-only" lang="fr">Examen de la vue, verres sur ordonnance, montures, réparation. Vous écrivez sur WhatsApp&nbsp;: le message part déjà écrit, il ne reste qu'à l'envoyer.</span>
+          <span class="en-only" lang="en">Eye examinations, prescription lenses, frames, repairs. You write on WhatsApp: the message is already typed, you only have to send it.</span>
+        </p>
+        <div class="actions rv">
+          <a class="btn btn-wa wa" data-fr="Bonjour DM OPTIQUE SARL, je voudrais prendre un rendez-vous pour un examen de la vue." data-en="Hello DM OPTIQUE SARL, I would like to book an eye examination." href="__WA__">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
+            <span class="fr-only" lang="fr">Écrire sur WhatsApp</span><span class="en-only" lang="en">Write on WhatsApp</span>
+          </a>
+          <a class="btn" href="tel:+237656122239">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.6 3h2.7l1.6 4-2 1.4a12 12 0 0 0 6.7 6.7l1.4-2 4 1.6v2.7c0 1-.8 1.8-1.9 1.7C11.5 19.2 4.8 12.5 4.9 4.9 4.9 3.9 5.6 3 6.6 3z"/></svg>
+            <span class="fr-only" lang="fr">Appeler le 656 122 239</span><span class="en-only" lang="en">Call 656 122 239</span>
+          </a>
+        </div>
+        <dl class="facts rv">
+                    <div>
+            <dt><span class="fr-only" lang="fr">Où</span><span class="en-only" lang="en">Where</span></dt>
+            <dd><span class="fr-only" lang="fr">Bonabéri, Ndobo Mayor</span><span class="en-only" lang="en">Bonaberi, Ndobo Mayor</span></dd>
+          </div>
+          <div>
+            <dt><span class="fr-only" lang="fr">Sur WhatsApp</span><span class="en-only" lang="en">On WhatsApp</span></dt>
+            <dd>656 122 239</dd>
+          </div>
+          <div>
+            <dt><span class="fr-only" lang="fr">Opticien inscrit</span><span class="en-only" lang="en">Registered optician</span></dt>
+            <dd><span class="fr-only" lang="fr">depuis 2016</span><span class="en-only" lang="en">since 2016</span></dd>
+          </div>
+        </dl>
+      </div>
+
+      <figure class="idwrap rv">
+        <div class="idcard">
+          <div class="idtop">
+            <span class="mark" aria-hidden="true"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><circle class="o" cx="20" cy="20" r="16"></circle><circle class="i" cx="20" cy="20" r="10.5"></circle><path class="glint" d="M11.6 14.2a10.5 10.5 0 0 1 8.4-4.1"></path></svg></span>
+            <span class="idname">DM OPTIQUE SARL</span>
+            <span class="idcity">Douala</span>
+          </div>
+          <p class="idkind"><span class="fr-only" lang="fr">Cabinet d'optique médicale</span><span class="en-only" lang="en">Optical practice</span></p>
+          <dl class="idrows">
+            <div>
+                <dt><span class="fr-only" lang="fr">L'opticien</span><span class="en-only" lang="en">The optician</span></dt>
+                <dd><span class="fr-only" lang="fr">M. Domche Noumbi</span><span class="en-only" lang="en">Mr Domche Noumbi</span></dd>
+              </div>
+              <div>
+                <dt><span class="fr-only" lang="fr">Où</span><span class="en-only" lang="en">Where</span></dt>
+                <dd><span class="fr-only" lang="fr">Douala, Littoral</span><span class="en-only" lang="en">Douala, Littoral</span></dd>
+              </div>
+            <div>
+              <dt><span class="fr-only" lang="fr">Téléphone &amp; WhatsApp</span><span class="en-only" lang="en">Phone &amp; WhatsApp</span></dt>
+              <dd>656 122 239</dd>
+            </div>
+          </dl>
+          <p class="idfoot"><span class="fr-only" lang="fr">Ouverture 8h00 – 17h30 · Consultation 8h30 – 13h30.</span><span class="en-only" lang="en">Open 8:00–17:30 · Consultation 8:30–13:30.</span></p>
+        </div>
+        <figcaption><span class="fr-only as-block" lang="fr">Opticien inscrit à l'Ordre national des opticiens du Cameroun.</span><span class="en-only as-block" lang="en">Optician registered with the National Order of Opticians of Cameroon.</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ══ 2 · CE QUE NOUS FAISONS : six actes, et pour chacun ce qu'il faut apporter ═════════════════ -->
+  <section id="actes" aria-labelledby="h-actes">
+    <div class="wrap">
+      <h2 id="h-actes" class="rv">
+        <span class="fr-only" lang="fr">Nos services, et ce qu'il faut apporter.</span>
+          <span class="en-only" lang="en">Our services, and what to bring.</span>
+      </h2>
+      <p class="lede rv">
+        <span class="fr-only" lang="fr">Six raisons de pousser la porte. À chaque fois, la liste de ce qu'on vous demandera.</span>
+        <span class="en-only" lang="en">Six reasons to walk in. Each one comes with the list of what you will be asked for.</span>
+      </p>
+      <figure class="band-fig rv">
+        <img src="data:image/jpeg;base64,__IMG_LUNETTES__" width="900" height="563" loading="lazy" decoding="async"
+          data-alt-fr="Une paire de lunettes de vue posée sur une surface claire, lumière douce." data-alt-en="A pair of prescription glasses resting on a pale surface in soft light."
+          alt="Une paire de lunettes de vue posée sur une surface claire, lumière douce.">
+        <figcaption><span class="fr-only as-block" lang="fr">Photo d'illustration.</span><span class="en-only as-block" lang="en">Illustration photo.</span></figcaption>
+      </figure>
+      <ul class="strip">
+        <li class="act rv">
+          <span class="n">01</span>
+          <h3><span class="fr-only" lang="fr">Examen de la vue</span><span class="en-only" lang="en">Eye examination</span></h3>
+          <p><span class="fr-only" lang="fr">On mesure ce que votre œil demande, avant de parler de monture.</span><span class="en-only" lang="en">We measure what your eye needs, before anyone talks about frames.</span></p>
+          <p class="bring"><span class="fr-only" lang="fr">À apporter&nbsp;: vos anciennes lunettes, si vous en avez.</span><span class="en-only" lang="en">Bring: your current glasses, if you have any.</span></p>
+        </li>
+        <li class="act rv">
+          <span class="n">02</span>
+          <h3><span class="fr-only" lang="fr">Verres sur ordonnance</span><span class="en-only" lang="en">Prescription lenses</span></h3>
+          <p><span class="fr-only" lang="fr">Taillés sur votre ordonnance, montés dans la monture que vous choisissez.</span><span class="en-only" lang="en">Cut to your prescription, fitted into the frame you choose.</span></p>
+          <p class="bring"><span class="fr-only" lang="fr">À apporter&nbsp;: l'ordonnance de votre ophtalmologue.</span><span class="en-only" lang="en">Bring: your ophthalmologist's prescription.</span></p>
+        </li>
+        <li class="act rv">
+          <span class="n">03</span>
+          <h3><span class="fr-only" lang="fr">Montures</span><span class="en-only" lang="en">Frames</span></h3>
+          <p><span class="fr-only" lang="fr">Homme, femme, enfant. Vous essayez, on ajuste au visage, on reprend si ça ne tombe pas bien.</span><span class="en-only" lang="en">Men, women, children. You try them on, we adjust them to your face, we redo it if the fit is wrong.</span></p>
+          <p class="bring"><span class="fr-only" lang="fr">À apporter&nbsp;: rien. Venez comme vous êtes.</span><span class="en-only" lang="en">Bring: nothing. Come as you are.</span></p>
+        </li>
+        <li class="act rv">
+          <span class="n">04</span>
+          <h3><span class="fr-only" lang="fr">Lunettes de soleil</span><span class="en-only" lang="en">Sunglasses</span></h3>
+          <p><span class="fr-only" lang="fr">Y compris sur verres teintés à votre vue, pour conduire ou travailler dehors.</span><span class="en-only" lang="en">Including tinted lenses made to your prescription, for driving or working outdoors.</span></p>
+          <p class="bring"><span class="fr-only" lang="fr">À apporter&nbsp;: votre ordonnance, si vous les voulez à votre vue.</span><span class="en-only" lang="en">Bring: your prescription, if you want them made to your sight.</span></p>
+        </li>
+        <li class="act rv">
+          <span class="n">05</span>
+          <h3><span class="fr-only" lang="fr">Réparation et entretien</span><span class="en-only" lang="en">Repairs and care</span></h3>
+          <p><span class="fr-only" lang="fr">Réglage, changement de verres, nettoyage. Une monture abîmée n'est pas toujours une monture perdue.</span><span class="en-only" lang="en">Adjustments, lens changes, cleaning. Damaged frames are not always lost frames.</span></p>
+          <p class="bring"><span class="fr-only" lang="fr">À apporter&nbsp;: la monture — ou une photo, sur WhatsApp.</span><span class="en-only" lang="en">Bring: the frames, or a photo on WhatsApp.</span></p>
+        </li>
+        <li class="act rv">
+          <span class="n">06</span>
+          <h3><span class="fr-only" lang="fr">Lentilles de contact</span><span class="en-only" lang="en">Contact lenses</span></h3>
+          <p><span class="fr-only" lang="fr">Adaptation et suivi, pour ceux qui ne veulent pas de monture tous les jours.</span><span class="en-only" lang="en">Fitting and follow-up, for those who do not want frames every day.</span></p>
+          <p class="bring"><span class="fr-only" lang="fr">À apporter&nbsp;: votre ordonnance de lentilles, si vous en avez une.</span><span class="en-only" lang="en">Bring: your contact lens prescription, if you have one.</span></p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══ 3 · COMMENT ÇA SE PASSE : trois étapes, une seule action ═══════════════════════════════════ -->
+  <section id="etapes" class="band" aria-labelledby="h-etapes">
+    <div class="wrap">
+      <h2 id="h-etapes" class="rv">
+        <span class="fr-only" lang="fr">Comment ça se passe, en trois étapes.</span>
+        <span class="en-only" lang="en">How it works, in three steps.</span>
+      </h2>
+      <p class="lede rv">
+        <span class="fr-only" lang="fr">Tout commence par un message. Vous n'avez pas besoin de connaître le vocabulaire de l'optique&nbsp;: dites ce qui ne va pas.</span>
+        <span class="en-only" lang="en">It starts with a message. You do not need any optical vocabulary: just say what is wrong.</span>
+      </p>
+      <ol class="steps">
+        <li class="step rv">
+          <span class="n">01</span>
+          <h3><span class="fr-only" lang="fr">Vous écrivez sur WhatsApp</span><span class="en-only" lang="en">You write on WhatsApp</span></h3>
+          <p><span class="fr-only" lang="fr">Vue qui baisse, ordonnance à monter, monture abîmée, lunettes de soleil&nbsp;: une phrase suffit, et une photo si vous en avez une.</span><span class="en-only" lang="en">Blurred sight, a prescription to be made up, damaged frames, sunglasses: one sentence is enough, plus a photo if you have one.</span></p>
+        </li>
+        <li class="step rv">
+          <span class="n">02</span>
+          <h3><span class="fr-only" lang="fr">Vous recevez la réponse</span><span class="en-only" lang="en">You get the answer</span></h3>
+          <p><span class="fr-only" lang="fr">Ce qu'il faut apporter, si la monture est réparable, et quand passer. Vous savez avant de sortir de chez vous.</span><span class="en-only" lang="en">What to bring, whether the frames can be repaired, and when to come. You know before you leave home.</span></p>
+        </li>
+        <li class="step rv">
+          <span class="n">03</span>
+          <h3><span class="fr-only" lang="fr">Vous passez au cabinet</span><span class="en-only" lang="en">You come to the practice</span></h3>
+          <p><span class="fr-only" lang="fr">Vous ne venez pas à l'aveugle&nbsp;: vous savez déjà ce qui vous attend, et ce que ça va demander.</span><span class="en-only" lang="en">You do not come in blind: you already know what awaits you, and what it will take.</span></p>
+        </li>
+            </ol>
+      <figure class="bandfig rv">
+        <img src="data:image/jpeg;base64,__IMG_MESURE__" width="900" height="675" loading="lazy" decoding="async"
+          data-alt-fr="Détail d'un instrument de mesure de la vue posé sur un comptoir sombre." data-alt-en="Close-up of an eye-measuring instrument resting on a dark counter."
+          alt="Détail d'un instrument de mesure de la vue posé sur un comptoir sombre.">
+        <figcaption><span class="fr-only as-block" lang="fr">Photo d'illustration.</span><span class="en-only as-block" lang="en">Illustration photo.</span></figcaption>
+      </figure>
+      <div class="actions rv">
+        <a class="btn btn-wa wa" data-fr="Bonjour DM OPTIQUE SARL, voici ce qui ne va pas : " data-en="Hello DM OPTIQUE SARL, this is what is wrong: " href="__WA__">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
+          <span class="fr-only" lang="fr">Écrire sur WhatsApp</span><span class="en-only" lang="en">Write on WhatsApp</span>
+        </a>
+      </div>
+      <p class="note"><span class="fr-only" lang="fr">Le message part déjà écrit&nbsp;: vous pouvez le modifier, ou tout effacer, avant de l'envoyer. Le cabinet est à Bonabéri, Ndobo Mayor (Douala) — 656 122 239.</span><span class="en-only" lang="en">The message is already typed: you can edit it, or delete it, before sending. The practice is in Bonaberi, Ndobo Mayor (Douala) — 656 122 239.</span></p>
+    </div>
+  </section>
+
+  <!-- ══ 4 · LES MONTURES : ce qu'on vient essayer — trois familles, trois conseils ═════════════════ -->
+  <section id="montures" aria-labelledby="h-montures">
+    <div class="wrap">
+      <h2 id="h-montures" class="rv">
+        <span class="fr-only" lang="fr">Les montures et les lunettes.</span>
+        <span class="en-only" lang="en">Frames and sunglasses.</span>
+      </h2>
+      <p class="lede rv">
+        <span class="fr-only" lang="fr">Lunettes de vue, lunettes de soleil, montures pour enfants&nbsp;: elles s'essayent au cabinet, sur votre visage, avec quelqu'un qui vous regarde — pas sur un écran.</span>
+        <span class="en-only" lang="en">Spectacles, sunglasses, children's frames: you try them on at the practice, on your face, with someone looking at you — not on a screen.</span>
+      </p>
+      <div class="grid3">
+        <article class="frame rv">
+          <img src="data:image/jpeg;base64,__IMG_MONTURES__" width="900" height="563" loading="lazy" decoding="async"
+            data-alt-fr="Six montures de formes et de couleurs différentes alignées sur un tissu clair." data-alt-en="Six frames of different shapes and colours lined up on pale fabric."
+            alt="Six montures de formes et de couleurs différentes alignées sur un tissu clair.">
+          <div class="body">
+            <h3><span class="fr-only" lang="fr">Lunettes de vue</span><span class="en-only" lang="en">Spectacles</span></h3>
+            <p><span class="fr-only" lang="fr">Rondes, fines, écaille, métal, colorées&nbsp;: la monture se choisit avec la forme de votre visage et votre ordonnance.</span><span class="en-only" lang="en">Round, thin, tortoiseshell, metal, colourful: the frame is chosen together with your face shape and your prescription.</span></p>
+            <p class="ask"><span class="fr-only" lang="fr">À demander&nbsp;: le réglage sur le nez et derrière les oreilles, avant de sortir.</span><span class="en-only" lang="en">Ask for the frame to be adjusted on your nose and behind your ears before you leave.</span></p>
+          </div>
+        </article>
+        <article class="frame rv">
+          <img src="data:image/jpeg;base64,__IMG_SOLAIRES__" width="900" height="563" loading="lazy" decoding="async"
+            data-alt-fr="Trois paires de lunettes de soleil posées sur un mur clair, au soleil." data-alt-en="Three pairs of sunglasses resting on a pale wall in the sun."
+            alt="Trois paires de lunettes de soleil posées sur un mur clair, au soleil.">
+          <div class="body">
+            <h3><span class="fr-only" lang="fr">Lunettes de soleil</span><span class="en-only" lang="en">Sunglasses</span></h3>
+            <p><span class="fr-only" lang="fr">Sous le soleil de Douala comme au bord de l'eau, la lumière est forte&nbsp;: le verre teinté se choisit selon ce que vous faites dehors.</span><span class="en-only" lang="en">Under the Douala sun, or out on the water, the light is strong: the tint is chosen according to what you do outdoors.</span></p>
+            <p class="ask"><span class="fr-only" lang="fr">À demander&nbsp;: la teinte et la catégorie du verre, et si votre correction peut y être montée.</span><span class="en-only" lang="en">Ask about the tint and the lens category, and whether your prescription can be fitted.</span></p>
+          </div>
+        </article>
+        <article class="frame rv">
+          <img src="data:image/jpeg;base64,__IMG_ENFANTS__" width="900" height="563" loading="lazy" decoding="async"
+            data-alt-fr="Deux petites montures d'enfant colorées posées sur un tissu clair, à côté d'un étui." data-alt-en="Two small colourful children's frames on pale fabric beside a pouch."
+            alt="Deux petites montures d'enfant colorées posées sur un tissu clair, à côté d'un étui.">
+          <div class="body">
+            <h3><span class="fr-only" lang="fr">Enfants</span><span class="en-only" lang="en">Children</span></h3>
+            <p><span class="fr-only" lang="fr">Des montures à la bonne taille, qui tiennent sur un petit nez et survivent à la récréation.</span><span class="en-only" lang="en">Frames in the right size, ones that stay on a small nose and survive playtime.</span></p>
+            <p class="ask"><span class="fr-only" lang="fr">À apporter&nbsp;: l'ordonnance de l'enfant, et ses lunettes actuelles si elles bougent.</span><span class="en-only" lang="en">Bring the child's prescription, and their current glasses if they slip.</span></p>
+          </div>
+        </article>
+      </div>
+      <p class="note rv"><span class="fr-only" lang="fr">Photos d'illustration.</span><span class="en-only" lang="en">Illustration photos.</span></p>
+      <div class="advice rv">
+        <div>
+          <h3><span class="fr-only" lang="fr">La forme du visage</span><span class="en-only" lang="en">Your face shape</span></h3>
+          <p><span class="fr-only" lang="fr">Rond, ovale, carré, cœur&nbsp;: c'est la forme du visage qui guide la forme de la monture. C'est pour ça qu'on essaie — une photo ne dit pas tout.</span><span class="en-only" lang="en">Round, oval, square, heart: your face shape guides the shape of the frame. That is why you try them on — a photo does not tell the whole story.</span></p>
+        </div>
+        <div>
+          <h3><span class="fr-only" lang="fr">La largeur, et l'appui</span><span class="en-only" lang="en">Width and support</span></h3>
+          <p><span class="fr-only" lang="fr">Une monture bien réglée ne glisse pas sur le nez et ne serre pas derrière les oreilles. Demandez le réglage, même sur des lunettes qui ne viennent pas d'ici.</span><span class="en-only" lang="en">A well-adjusted frame does not slip down your nose or press behind your ears. Ask for the adjustment, even on glasses that did not come from here.</span></p>
+        </div>
+        <div>
+          <h3><span class="fr-only" lang="fr">Ce que vous en faites</span><span class="en-only" lang="en">What you do with them</span></h3>
+          <p><span class="fr-only" lang="fr">Écran toute la journée, conduite, lecture, sport, soleil&nbsp;: l'usage change le verre, pas seulement la monture. Dites-le en arrivant.</span><span class="en-only" lang="en">Screens all day, driving, reading, sport, sun: the use changes the lens, not just the frame. Say so when you arrive.</span></p>
+        </div>
+      </div>
+      <div class="actions rv">
+        <a class="btn btn-wa wa" data-fr="Bonjour DM OPTIQUE SARL, avez-vous cette monture en boutique : " data-en="Hello DM OPTIQUE SARL, do you have this frame in store: " href="__WA__">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
+          <span class="fr-only" lang="fr">Demander si c'est en boutique</span><span class="en-only" lang="en">Ask if it is in store</span>
+        </a>
+      </div>
+      <p class="note rv"><span class="fr-only" lang="fr">Vous cherchez une marque précise&nbsp;? Demandez-la&nbsp;: la réponse arrive dans la conversation WhatsApp.</span><span class="en-only" lang="en">Looking for a particular brand? Just ask: the answer comes back in the WhatsApp conversation.</span></p>
+    </div>
+  </section>
+
+  <!-- ══ 5 · LES QUESTIONS : une question par bloc, la réponse d'abord (§31.3) ══════════════════════ -->
+  <section id="questions" aria-labelledby="h-questions">
+    <div class="wrap">
+      <h2 id="h-questions" class="rv">
+        <span class="fr-only" lang="fr">Les questions qu'on nous pose.</span>
+        <span class="en-only" lang="en">The questions we are asked.</span>
+      </h2>
+      <div class="faq rv">
+        <details>
+          <summary><span><span class="fr-only" lang="fr">Où se trouve le cabinet, à Douala&nbsp;?</span><span class="en-only" lang="en">Where is the practice in Douala?</span></span>
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <p><span class="fr-only" lang="fr">Le cabinet est à Bonabéri, dans le quartier Ndobo Mayor&nbsp;: immeuble West Hotel, Douala.</span><span class="en-only" lang="en">The practice is in Bonaberi, Ndobo Mayor: the West Hotel building, Douala.</span></p>
+        </details>
+        <details>
+          <summary><span><span class="fr-only" lang="fr">Faut-il une ordonnance pour avoir des lunettes&nbsp;?</span><span class="en-only" lang="en">Do I need a prescription to get glasses?</span></span>
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <p><span class="fr-only" lang="fr">Pour des verres correcteurs, oui&nbsp;: apportez l'ordonnance de votre ophtalmologue. Pour des lunettes de soleil, un réglage ou une réparation, non.</span><span class="en-only" lang="en">For prescription lenses, yes: bring your ophthalmologist's prescription. For sunglasses, an adjustment or a repair, no.</span></p>
+        </details>
+        <details>
+          <summary><span><span class="fr-only" lang="fr">Ma monture est cassée&nbsp;: est-ce réparable&nbsp;?</span><span class="en-only" lang="en">My frames are broken: can they be repaired?</span></span>
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <p><span class="fr-only" lang="fr">Envoyez une photo de la monture sur WhatsApp. La réponse vous dit si c'est réparable, et si le déplacement en vaut la peine.</span><span class="en-only" lang="en">Send a photo of the frames on WhatsApp. The answer tells you whether they can be repaired, and whether the trip is worth it.</span></p>
+        </details>
+        <details>
+          <summary><span><span class="fr-only" lang="fr">Quels sont les horaires d'ouverture&nbsp;?</span><span class="en-only" lang="en">What are the opening hours?</span></span>
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <p><span class="fr-only" lang="fr">Le cabinet ouvre de 8h00 à 17h30, et les consultations se font de 8h30 à 13h30. Écrivez sur WhatsApp pour confirmer le jour qui vous arrange.</span><span class="en-only" lang="en">The practice opens from 8:00 to 17:30, and consultations run from 8:30 to 13:30. Write on WhatsApp to confirm the day that suits you.</span></p>
+        </details>
+        <details>
+          <summary><span><span class="fr-only" lang="fr">Combien coûte une paire de lunettes&nbsp;?</span><span class="en-only" lang="en">How much do a pair of glasses cost?</span></span>
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <p><span class="fr-only" lang="fr">Le prix dépend de vos verres et de la monture que vous choisissez. Posez la question sur WhatsApp en décrivant votre besoin&nbsp;: c'est la réponse la plus utile.</span><span class="en-only" lang="en">The price depends on your lenses and the frame you choose. Ask on WhatsApp and describe what you need: that is the most useful answer.</span></p>
+        </details>
+              <details>
+          <summary><span><span class="fr-only" lang="fr">Peut-on essayer plusieurs montures avant de choisir&nbsp;?</span><span class="en-only" lang="en">Can I try several frames before choosing?</span></span>
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+          <p><span class="fr-only" lang="fr">Oui, et c'est même la seule bonne façon de choisir&nbsp;: vous les essayez au cabinet, devant un miroir, et vous demandez à voir les formes qui vont à votre visage.</span><span class="en-only" lang="en">Yes, and it is the only good way to choose: you try them on at the practice, in front of a mirror, and ask to see the shapes that suit your face.</span></p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 6 · LE CONTACT : deux gestes ════════════════════════════════════════════════════════════════ -->
+  <section id="contact" aria-labelledby="h-contact">
+    <div class="wrap">
+      <h2 id="h-contact" class="rv">
+        <span class="fr-only" lang="fr">Deux gestes suffisent&nbsp;: appeler, ou écrire.</span>
+        <span class="en-only" lang="en">Two gestures are enough: call, or write.</span>
+      </h2>
+      <div class="actions rv">
+        <a class="btn btn-wa wa" data-fr="Bonjour DM OPTIQUE SARL, je voudrais passer vous voir." data-en="Hello DM OPTIQUE SARL, I would like to come and see you." href="__WA__">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
+          <span class="fr-only" lang="fr">Écrire sur WhatsApp</span><span class="en-only" lang="en">Write on WhatsApp</span>
+        </a>
+        <a class="btn" href="tel:+237656122239">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.6 3h2.7l1.6 4-2 1.4a12 12 0 0 0 6.7 6.7l1.4-2 4 1.6v2.7c0 1-.8 1.8-1.9 1.7C11.5 19.2 4.8 12.5 4.9 4.9 4.9 3.9 5.6 3 6.6 3z"/></svg>
+          <span class="fr-only" lang="fr">Appeler</span><span class="en-only" lang="en">Call</span>
+        </a>
+      </div>
+      <div class="micro">
+        <button id="copy2" class="microbtn" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M15 5.5A1.5 1.5 0 0 0 13.5 4h-8A1.5 1.5 0 0 0 4 5.5v8A1.5 1.5 0 0 0 5.5 15"/></svg>
+          <span class="fr-only" lang="fr">Copier le numéro</span><span class="en-only" lang="en">Copy the number</span>
+        </button>
+        <button id="vcard" class="microbtn" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v11m0 0 4-4m-4 4-4-4"/><path d="M5 19h14"/></svg>
+          <span class="fr-only" lang="fr">Enregistrer le contact</span><span class="en-only" lang="en">Save the contact</span>
+        </button>
+      </div>
+      <dl class="cgrid rv">
+        <div>
+          <dt><span class="fr-only" lang="fr">Téléphone &amp; WhatsApp</span><span class="en-only" lang="en">Phone &amp; WhatsApp</span></dt>
+          <dd>+237 656 122 239</dd>
+        </div>
+        <div>
+          <dt><span class="fr-only" lang="fr">Ville</span><span class="en-only" lang="en">City</span></dt>
+          <dd><span class="fr-only" lang="fr">Ndobo Mayor — Immeuble West Hotel, Bonabéri, Douala</span><span class="en-only" lang="en">Ndobo Mayor — West Hotel building, Bonaberi, Douala</span></dd>
+        </div>
+        <div>
+          <dt><span class="fr-only" lang="fr">Adresse</span><span class="en-only" lang="en">Address</span></dt>
+          <dd><span class="fr-only" lang="fr">Ndobo Mayor — Immeuble West Hotel, Bonabéri, Douala</span><span class="en-only" lang="en">Ndobo Mayor — West Hotel building, Bonaberi, Douala</span></dd>
+        </div>
+        <div>
+          <dt><span class="fr-only" lang="fr">Horaires</span><span class="en-only" lang="en">Opening hours</span></dt>
+          <dd><span class="fr-only" lang="fr">Ouverture 8h00 – 17h30 · Consultation 8h30 – 13h30</span><span class="en-only" lang="en">Open 8:00–17:30 · Consultation 8:30–13:30</span></dd>
+        </div>
+      </dl>
+      <p class="note"><span class="fr-only" lang="fr">Le bouton WhatsApp ouvre la conversation avec le message déjà écrit&nbsp;: vous pouvez le modifier avant de l'envoyer.</span><span class="en-only" lang="en">The WhatsApp button opens the conversation with the message already written. You can edit it before sending.</span></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="brand" href="#top">
+          <span class="brandtxt">DM OPTIQUE <span class="thin">SARL</span></span>
+          <span class="mark" aria-hidden="true"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><circle class="o" cx="20" cy="20" r="16"></circle><circle class="i" cx="20" cy="20" r="10.5"></circle><path class="glint" d="M11.6 14.2a10.5 10.5 0 0 1 8.4-4.1"></path></svg></span>
+        </a>
+        <p><span class="fr-only" lang="fr">Cabinet d'optique médicale à Douala. Opticien inscrit à l'Ordre national des opticiens du Cameroun depuis 2016.</span><span class="en-only" lang="en">Optical practice in Douala. Optician registered with the National Order of Opticians of Cameroon since 2016.</span></p>
+      </div>
+      <div>
+        <h3><span class="fr-only" lang="fr">La page</span><span class="en-only" lang="en">This page</span></h3>
+        <ul class="fnav">
+          <li><a href="#actes"><span class="fr-only" lang="fr">Ce que nous faisons</span><span class="en-only" lang="en">What we do</span></a></li>
+          <li><a href="#etapes"><span class="fr-only" lang="fr">Comment ça se passe</span><span class="en-only" lang="en">How it works</span></a></li>
+          <li><a href="#montures"><span class="fr-only" lang="fr">Nos montures</span><span class="en-only" lang="en">Our frames</span></a></li>
+          <li><a href="#questions"><span class="fr-only" lang="fr">Les questions qu'on nous pose</span><span class="en-only" lang="en">Questions we are asked</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h3><span class="fr-only" lang="fr">Prendre contact</span><span class="en-only" lang="en">Get in touch</span></h3>
+        <div class="fcta">
+          <a class="btn btn-wa wa" data-fr="Bonjour DM OPTIQUE SARL, je voudrais prendre un rendez-vous pour un examen de la vue." data-en="Hello DM OPTIQUE SARL, I would like to book an eye examination." href="__WA__">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
+            <span class="fr-only" lang="fr">Écrire sur WhatsApp</span><span class="en-only" lang="en">Write on WhatsApp</span>
+          </a>
+          <a class="btn btn-night" href="tel:+237656122239"><span class="fr-only" lang="fr">Appeler</span><span class="en-only" lang="en">Call</span></a>
+        </div>
+      </div>
+      <div>
+        <h3><span class="fr-only" lang="fr">Le cabinet</span><span class="en-only" lang="en">The practice</span></h3>
+        <ul class="fcontact">
+          <li><a href="tel:+237656122239">+237 656 122 239</a></li>
+          <li><span class="fr-only" lang="fr">Ndobo Mayor — Immeuble West Hotel, Bonabéri, Douala</span><span class="en-only" lang="en">Ndobo Mayor — West Hotel building, Bonaberi, Douala</span></li>
+          <li><span class="fr-only" lang="fr">Ouverture 8h00 – 17h30 · Consultation 8h30 – 13h30</span><span class="en-only" lang="en">Open 8:00–17:30 · Consultation 8:30–13:30</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="stripbar">
+      <span>© 2026 DM OPTIQUE SARL</span>
+      <span><span class="fr-only" lang="fr">Aperçu préparé par AMK pour DM OPTIQUE SARL — vos corrections du 25/09 sont en place&nbsp;; les photos de vos montures remplaceront les images d'illustration.</span><span class="en-only" lang="en">Preview prepared by AMK for DM OPTIQUE SARL: your 25/09 corrections are in; your frame photos will replace the illustration images.</span></span>
+      <a href="#top"><span class="fr-only" lang="fr">Haut de page ↑</span><span class="en-only" lang="en">Back to top ↑</span></a>
+    </div>
+  </div>
+</footer>
+
+<div class="dock">
+  <a class="btn btn-wa wa" data-fr="Bonjour DM OPTIQUE SARL, je voudrais prendre un rendez-vous pour un examen de la vue." data-en="Hello DM OPTIQUE SARL, I would like to book an eye examination." href="__WA__">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
+    <span class="fr-only" lang="fr">Écrire</span><span class="en-only" lang="en">Write</span>
+  </a>
+  <a class="btn btn-night" href="tel:+237656122239"><span class="fr-only" lang="fr">Appeler</span><span class="en-only" lang="en">Call</span></a>
+</div>
+
+<script>/* ── LES DEUX LANGUES, LES ADRESSES WHATSAPP, ET CE QUE LA PAGE DIT APRÈS UN GESTE ──────────────────
+   Une seule source pour chaque message : `data-fr` / `data-en` portent le texte pré-rempli et le lien est
+   reconstruit avec `encodeURIComponent` — l'adresse écrite dans le HTML et celle fabriquée ici sont donc
+   identiques au caractère près (vérifié par `tools/qa/test_dmoptic_page.mjs`).
+   La région vive `#say` annonce, dans la langue du visiteur, ce qui vient de s'ouvrir (§22.2). */
+(function(){try{
+  var html=document.documentElement, K='dmoptic-lang', WA='https://wa.me/237656122239?text=';
+  var sayEl=document.getElementById('say'), timer=null;
+  function lg(){return html.getAttribute('data-lang')==='en'?'en':'fr';}
+  function say(txt,persist){
+    if(!sayEl) return;
+    sayEl.textContent=txt;
+    if(timer){clearTimeout(timer);timer=null;}
+    if(!persist){timer=setTimeout(function(){sayEl.textContent='';},6000);}
+  }
+  function paint(){
+    var l=lg(); html.lang=l;
+    [['btn-fr','fr'],['btn-en','en']].forEach(function(p){
+      var b=document.getElementById(p[0]);
+      if(b){var on=(l===p[1]); b.classList.toggle('is-on',on); b.setAttribute('aria-pressed',on?'true':'false');}
+    });
+    [].forEach.call(document.querySelectorAll('a.wa'),function(a){
+      var t=a.getAttribute(l==='en'?'data-en':'data-fr'); if(t) a.setAttribute('href',WA+encodeURIComponent(t));
+    });
+    [].forEach.call(document.querySelectorAll('img[data-alt-fr]'),function(im){
+      var t=im.getAttribute(l==='en'?'data-alt-en':'data-alt-fr'); if(t) im.setAttribute('alt',t);
+    });
+  }
+  function setLang(l){html.setAttribute('data-lang',l); try{localStorage.setItem(K,l)}catch(e){}
+    paint(); say(l==='en'?'Language: English':'Langue : français',true);}
+  ['btn-fr','btn-en'].forEach(function(id){
+    var b=document.getElementById(id);
+    if(b) b.addEventListener('click',function(){setLang(id==='btn-fr'?'fr':'en');});
+  });
+  try{var saved=localStorage.getItem(K); if(saved==='en'||saved==='fr') html.setAttribute('data-lang',saved);}catch(e){}
+  paint();
+
+  /* Les deux gestes qui sortent de la page : on dit ce qui s'ouvre, dans la langue du visiteur. */
+  [].forEach.call(document.querySelectorAll('a.wa,a[href^="tel:"]'),function(a){
+    a.addEventListener('click',function(){
+      var isWa=a.classList.contains('wa');
+      say(isWa
+        ? (lg()==='en'?'WhatsApp opens with your message already written. You can edit it before sending.'
+                      :'WhatsApp s\'ouvre avec votre message déjà écrit. Vous pouvez le modifier avant de l\'envoyer.')
+        : (lg()==='en'?'Your phone app opens with the number +237 656 122 239.'
+                      :'Votre téléphone s\'ouvre sur le numéro +237 656 122 239.'),false);
+    });
+  });
+
+  /* Copier le numéro : le seul indicateur d'état de la page (§22.1). */
+  function copyNumber(){
+    var num='+237656122239';
+    function done(){ say(lg()==='en'?'Number copied: +237 656 122 239.':'Numéro copié : +237 656 122 239.',false); }
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(num).then(done,function(){fallback();});
+    } else { fallback(); }
+    function fallback(){
+      var t=document.createElement('textarea'); t.value=num; t.setAttribute('readonly','');
+      t.setAttribute('style','position:fixed;top:-1000px'); document.body.appendChild(t); t.select();
+      try{document.execCommand('copy'); done();}
+      catch(e){ say(lg()==='en'?'Number: +237 656 122 239.':'Numéro : +237 656 122 239.',false); }
+      document.body.removeChild(t);
+    }
+  }
+  ['copy','copy2'].forEach(function(id){ var b=document.getElementById(id); if(b) b.addEventListener('click',copyNumber); });
+
+  /* Enregistrer le contact : une vraie fiche .vcf, fabriquée ici, sans fichier à côté. */
+  var vc=document.getElementById('vcard');
+  if(vc) vc.addEventListener('click',function(){
+    var fr=(lg()!=='en');
+    var lines=['BEGIN:VCARD','VERSION:3.0','N:;DM OPTIQUE SARL;;;','FN:DM OPTIQUE SARL',
+      'ORG:DM OPTIQUE SARL','TITLE:'+(fr?'Opticien':'Optician'),'TEL;TYPE=CELL:+237656122239',
+      'ADR;TYPE=WORK:;;Ndobo Mayor, Immeuble West Hotel;Douala;;;Cameroun','NOTE:'+(fr?'Cabinet d\'optique médicale. Inscription à l\'Ordre n° 021/2016.':'Optical practice. Register no. 021/2016.'),
+      'END:VCARD'];
+    var blob=null, url=null;
+    try{ blob=new Blob([lines.join('\r\n')],{type:'text/vcard'}); url=URL.createObjectURL(blob); }catch(e){ url=null; }
+    if(!url){ copyNumber(); return; }
+    try{
+      var a=document.createElement('a'); a.href=url; a.setAttribute('download','DM-OPTIC.vcf');
+      a.setAttribute('style','display:none');
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    }catch(e){ copyNumber(); return; }
+    setTimeout(function(){ try{URL.revokeObjectURL(url);}catch(e){} },4000);
+    say(fr?'Fiche contact prête : ouvrez-la pour enregistrer DM OPTIQUE SARL.':'Contact card ready: open it to save DM OPTIQUE SARL.',false);
+  });
+
+  /* Le bouton principal suit le pointeur de quelques pixels — souris seulement, jamais sur téléphone. */
+  var fine=window.matchMedia&&window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+  var calm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(fine&&!calm){
+    [].forEach.call(document.querySelectorAll('.hero .btn'),function(b){
+      b.addEventListener('pointermove',function(ev){
+        var r=b.getBoundingClientRect();
+        var dx=Math.max(-6,Math.min(6,(ev.clientX-(r.left+r.width/2))/8));
+        var dy=Math.max(-6,Math.min(6,(ev.clientY-(r.top+r.height/2))/8));
+        b.style.transform='translate('+dx+'px,'+dy+'px)';
+      });
+      b.addEventListener('pointerleave',function(){ b.style.transform=''; });
+    });
+  }
+}catch(e){}})();
+</script>
+
+<script>/* ── LE MOUVEMENT : révélation au défilement, et rien d'autre ─────────────────────────────────────
+   IntersectionObserver, jamais d'écouteur de défilement. Sans l'API, si le visiteur a demandé moins de
+   mouvement, ou si ce script plante : tout est affiché. On ne laisse jamais une page blanche derrière un
+   `opacity:0` (la leçon d'UNIVERS OPTIQUE, 22/09). */
+(function(){try{
+  var els=[].slice.call(document.querySelectorAll('.rv'));
+  var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function showAll(){els.forEach(function(e){e.classList.add('in')});}
+  if(rm||!('IntersectionObserver' in window)){showAll();return;}
+  var io=new IntersectionObserver(function(en){
+    en.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{rootMargin:'0px 0px -6% 0px',threshold:.08});
+  els.forEach(function(e){io.observe(e)});
+}catch(e){ var all=document.querySelectorAll('.rv'); for(var i=0;i<all.length;i++){all[i].classList.add('in');} }})();
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Optician","@id":"#dmoptic","name":"DM OPTIQUE SARL","alternateName":"DM OPTIQUE",
+  "description":"Cabinet d'optique médicale à Douala : examen de la vue, verres sur ordonnance, montures, réparation et entretien. Inscrit au registre de l'Ordre national des opticiens du Cameroun depuis 2016.",
+  "telephone":"+237656122239","currenciesAccepted":"XAF",
+  "identifier":{"@type":"PropertyValue","name":"N° d'inscription à l'Ordre national des opticiens du Cameroun","value":"021/2016"},
+  "founder":{"@type":"Person","name":"Domche Noumbi"},
+  "address":{"@type":"PostalAddress","streetAddress":"Ndobo Mayor, Immeuble West Hotel","addressLocality":"Douala","addressRegion":"Littoral","addressCountry":"CM"},
+  "areaServed":{"@type":"City","name":"Douala"},
+  "contactPoint":{"@type":"ContactPoint","contactType":"customer service","telephone":"+237656122239","availableLanguage":["fr","en"]}},
+ {"@type":"FAQPage","@id":"#questions","mainEntity":[
+  {"@type":"Question","name":"Où se trouve le cabinet, à Douala ?","acceptedAnswer":{"@type":"Answer","text":"Le cabinet est à Bonabéri, dans le quartier Ndobo Mayor : immeuble West Hotel, Douala."}},
+  {"@type":"Question","name":"Faut-il une ordonnance pour avoir des lunettes ?","acceptedAnswer":{"@type":"Answer","text":"Pour des verres correcteurs, oui : apportez l'ordonnance de votre ophtalmologue. Pour des lunettes de soleil, un réglage ou une réparation, non."}},
+  {"@type":"Question","name":"Ma monture est cassée : est-ce réparable ?","acceptedAnswer":{"@type":"Answer","text":"Envoyez une photo de la monture sur WhatsApp. La réponse vous dit si c'est réparable, et si le déplacement en vaut la peine."}},
+  {"@type":"Question","name":"Quels sont les horaires d'ouverture ?","acceptedAnswer":{"@type":"Answer","text":"Le cabinet ouvre de 8h00 à 17h30, et les consultations se font de 8h30 à 13h30. Écrivez sur WhatsApp pour confirmer le jour qui vous arrange."}},
+    {"@type":"Question","name":"Combien coûte une paire de lunettes ?","acceptedAnswer":{"@type":"Answer","text":"Le prix dépend de vos verres et de la monture que vous choisissez. Posez la question sur WhatsApp en décrivant votre besoin : c'est la réponse la plus utile."}},
+  {"@type":"Question","name":"Peut-on essayer plusieurs montures avant de choisir ?","acceptedAnswer":{"@type":"Answer","text":"Oui, et c'est même la seule bonne façon de choisir : vous les essayez au cabinet, devant un miroir, et vous demandez à voir les formes qui vont à votre visage."}}]}
+]}
+</script>
+</body>
+</html>

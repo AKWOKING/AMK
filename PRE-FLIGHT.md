@@ -15,15 +15,30 @@ The rule names abstract folders; these are where the lessons actually live. Load
 | Task type | Load these (repo paths) |
 |---|---|
 | **Marketing / outreach copy** | `research/YouTube-Lessons.md` (entries [1]–[6] copy, [10][13] design-of-copy) · `sales/Monday-Outreach-Pack.md` (**COPY CRAFT GATE** + templates) · `sales/AMK-Sales-Playbook-v2.md` (Parts H, I) · niche: `sales/research/*deep-dive*.md`, `sales/Deep-Dive-Research.md`, `sales/RESEARCH-STANDARD.md` |
-| **Prospecting / qualifying** | `sales/AMK-Sales-Playbook-v2.md` (Parts A, B, D, E, H, J) · `research/YouTube-Lessons.md` [7][8] · **`sales/RESEARCH-STANDARD.md` (incl. §8b three-door pre-send gates — every send, every time)** · niche: `sales/Deep-Dive-Research.md`, `sales/Remote-Sweep-*.md`, `sales/Walk-In-*.md` · state: `sales/Pipeline-Status.md` |
+| **Trouver l'angle d'un prospect (avis publics)** | `sales/DETECTION-FUITES-2026-09-24.md` (**la méthode, les seuils adaptés à Douala, le message type, les quatre lignes qu'on ne franchit pas**) · `tools/outreach/scan_reviews.py` (+ son test, 12 assertions) · `sales/FICHE-GOOGLE-PROFILE.md` §5 (ce qu'on peut promettre sur les avis, et ce qu'on ne promet jamais) |
+| **Écrire ou relire un message avant envoi** | `sales/MESSAGES-2026-09-23-PERSUASION.md` §1 (**la règle de la première ligne : le nom et le titre passent à la fin ; les six premiers mots sont pour lui**) + `sales/PERSUASION-5-NIVEAUX-2026-09-23.md` §5 (la checklist de 5 lignes, 30 secondes) |
+| **Prospecting / qualifying** | `sales/APPELS-GOOGLE-MAPS-2026-09-24.md` (les trois ouvertures d'appel, la règle du **mobile avant le fixe**, les quatre fiches joignables seulement par un fixe, les heures d'appel, et la limite sur les avis — lot [26] du 24/09) · `sales/AMK-Sales-Playbook-v2.md` (Parts A, B, D, E, H, J) · `research/YouTube-Lessons.md` [7][8] · **`sales/RESEARCH-STANDARD.md` (incl. §8b three-door pre-send gates — every send, every time)** · niche: `sales/Deep-Dive-Research.md`, `sales/Remote-Sweep-*.md`, `sales/Walk-In-*.md` · state: `sales/Pipeline-Status.md` |
 | **Presenting / proposals** | `sales/AMK-Sales-Playbook-v2.md` (Parts C, E, F, I, J) · `sales/Monday-Outreach-Pack.md` · `AMK-DESIGN-SKILLS.md` §11b + §19 · `sales/swipe/README.md` |
+| **Découverte / réunion client** | `sales/QUESTIONNAIRE-REUNIONS-2026-09-25.md` (**le questionnaire : personnalisation, autres services, relation — une question ne se pose que si sa réponse change un fichier**) · `sales/RDV-UNIVERS-OPTIQUE-2026-09-25.md` / `sales/RDV-UNILABO-2026-09-25.md` (les six points factuels, l'ordre de la séance) · `sales/FICHE-GOOGLE-PROFILE.md` (la question de la fiche) |
 | **Closing / objection handling** | `sales/AMK-Sales-Playbook-v2.md` (Part I = 3A reframe, Part J = CLOSER, Part E = flips, Part C = closes) · `research/YouTube-Lessons.md` [7][8] |
 | **Any copywriting** | `research/YouTube-Lessons.md` [1]–[6] (+ [5] Harry Dry = the law) · `sales/Monday-Outreach-Pack.md` COPY CRAFT GATE · `AMK-DESIGN-SKILLS.md` §11 + §11b · `sales/swipe/README.md` · client's own words (FB/comments) per Part H |
 | **Visual design (mockups, brand, graphics)** | `AMK-DESIGN-SKILLS.md` (§1–§19: dials, anti-slop §3, locks §4, type §5, colour §6, layout §7, components §8, motion §9, images §10, copy-law §11b, redesign §12, pre-flight §13, style menu §14, image art-direction §15, patterns §17, §19 foundations) · `design/WORKFLOW.md` · `design/STYLE-TOKENS.md` · `design/MOTION.md` · `design/vendor/*` (registries) · `clients/_uniqueness-registry.md` |
-| **Website build** | All of the design row **plus** `AMK-DESIGN-SKILLS.md` §18 (spec-before-build, value provenance, verification ladder) + §19.3 (3-direction exploration) · copywriting row · `design/WORKFLOW.md` stages 1–9 · deploy gate `hosting/previews/README.md` · client context: `sales/research/<client>-deep-dive-*.md` + `clients/<client>/*` · **live inspiration research (step 3 of the uniqueness protocol)** |
+| **Website build** | `tools/qa/PROTOCOLE-LECTEUR-ECRAN.md` (**le test à l'oreille, à la main, 5 minutes : NVDA + TalkBack, les annonces attendues sur NOS pages**) · `tools/qa/test_site_a11y_behaviour.mjs` (les états de la page, exécutés dans un DOM) · `research/ACCESSIBILITE-2026-09-24.md` (le rapport du lot [27] : le niveau promis, les quatre choses qu'aucune machine ne vérifie) · **`tools/qa/audit_a11y.py`** (+ `test_audit_a11y.py`) — le contrôle d'ACCESSIBILITÉ, critère par critère, **WCAG 2.2 AA** (le niveau qu'un appel d'offres exige : ni A seul, ni AAA) : images et alts, hiérarchie des titres, étiquettes de champs, zoom non bloqué, clavier, focus visible, lang, noms des boutons · `AMK-DESIGN-SKILLS.md` **§27** (le niveau promis, et les quatre choses qu'aucune machine ne vérifie) · **`tools/qa/audit_hero.py`** (§26 + §29 : la grammaire du premier écran **et** son anatomie — trois questions, deux actions au maximum, la marque nommée) (+ `test_audit_hero.py`) — le contrôle du PREMIER ÉCRAN appris au lot [26] : mots écrits dans le CSS, hero 100vh sans `@media`, animations de mise en page sans `prefers-reduced-motion`, gabarits non remplis · `AMK-DESIGN-SKILLS.md` **§26** (la grammaire du hero) · All of the design row **plus** `AMK-DESIGN-SKILLS.md` §18 (spec-before-build, value provenance, verification ladder) + §19.3 (3-direction exploration) · copywriting row · `design/WORKFLOW.md` stages 1–9 · deploy gate `hosting/previews/README.md` · client context: `sales/research/<client>-deep-dive-*.md` + `clients/<client>/*` · **live inspiration research (step 3 of the uniqueness protocol)** |
+| **Photographie / images livrées** | `research/PHOTO-LABO-PIXEL-8A-2026-09-24.md` (ce que le Pixel 8A sait faire, la séance de 15 min, la lumière d'un laboratoire, la fiche à emporter FR, la vérification de 60 s) · `AMK-DESIGN-SKILLS.md` §25 (une photo = un sens) + §32 · `tools/qa/audit_images.py` (**contrôle**) |
+| **Prix / abonnement / récurrence** | `sales/PRIX-ET-RECURRENCE-2026-09-24.md` (**ce qui est tranché, et les 16 questions ouvertes — à lire AVANT toute conversation d'argent**) · `sales/REVUE-CONTRATS-GRILLE-2026-09-23.md` · `sales/ORDRE-DES-OFFRES-2026-09-23.md` |
 | **Delivery / handoff** | `AMK-DESIGN-SKILLS.md` §13 (pre-flight) + §18.4 (verification ladder) · `hosting/previews/README.md` (deploy gate) · `site/DEPLOY.md` · `sales/AMK-Playbook-Addendum-Outcomes-2026-09-15.md` (handoff video, care plan) |
 | **Retention / upsell / referrals** | `sales/AMK-Sales-Playbook-v2.md` (A5 referral, F6, Part J reinforce-the-decision) · `sales/AMK-Playbook-Addendum-Outcomes-2026-09-15.md` · `sales/AMK-Playbook-Addendum-4-Marketing-Systems-2026-09-15.md` (monthly report, GBP layer) |
 | **Weekly research** | The field being studied → log the output back into that field's lessons: sales/marketing → `sales/research/<YYYY>-W<WW>-techniques.md`; video lessons → `research/YouTube-Lessons.md`; design/build → the relevant `AMK-DESIGN-SKILLS.md` section |
+
+| **CRM / pipeline** | `leads/build/crm.py` (schéma + énumération des étapes — C'EST LUI LA SOURCE, pas le CSV) · `leads/build/guard.py` + `generators.lock.json` (EMPREINTE des générateurs : `rebuild.sh` refuse d'écrire si un générateur a été remplacé par une version plus ancienne — 22/09 : une restauration d'instantané avait effacé l'état des deux fils chauds du CSV sans un seul message d'erreur) · `leads/CRM.csv` (état) · `sales/Activity-Log.md` (chronologie, append-only) · `sales/AMK-Sales-Playbook-v2.md` (règles debout, §A4 corrigé) · vue live : `leads/PIPELINE.md`, `leads/KILL-LIST.md`, `leads/STALE.md`, `leads/SOURCES.md`, `leads/Daily-Plan.csv` (toutes GÉNÉRÉES) · fiche d'un lead : `leads/records/<slug>.md` |
+
+**Règle d'écriture du CRM (M7, 21 Sep 2026) — « la prose ne suffit pas ».** Une décision qui
+doit changer un calcul (`parked`, un score, un `reply_type`) se met **dans le générateur**
+(`leads/build/crm.py`), jamais seulement dans un `.md` : COMOBIL était annoncé « parké » dans trois
+fichiers et restait `prospect` dans les données, donc la kill list déduite le remettait en tête.
+Une correction manuelle dans `CRM.csv` est **perdue** au prochain `leads/build/rebuild.sh` —
+c'est voulu. La chronologie, elle, va dans `sales/Activity-Log.md` (une ligne par envoi, une ligne
+par réponse) et remonte toute seule dans les fiches et les vues.
 
 **State files to load with almost everything:** `sales/Pipeline-Status.md` (current week), the prospect dossier, `sales/Outreach-Pack-<date>.md` (active pack), session memory.
 
@@ -33,8 +48,25 @@ The rule names abstract folders; these are where the lessons actually live. Load
 
 ```
 python3 tools/qa/audit_html.py <fichier-construit>      # doit finir sur « TOTAL confirmed findings: 0 »
+python3 tools/qa/audit_a11y.py --strict <fichier-construit>   # rc=0 : aucune faute de niveau A ou AA
+python3 tools/qa/audit_images.py <fichier-construit>          # 0 faute : ratio annoncé = ratio réel, poids, pas de GPS
 ```
+Le troisième contrôle est né le 24/09 (lot [32]) avec l'arrivée des **vraies photos** : une photo de
+téléphone pèse 3 à 6 Mo et porte la position GPS. Il vérifie la structure et la vie privée — **jamais la
+beauté de la photo** (celle-là se juge à l'œil).
 Contrôle **structure** (sections imbriquées, équilibre) + **contraste WCAG** de chaque texte (desktop et mobile). Motif : un `</div>` perdu en insérant le miroir opticien a rendu du texte blanc sur fond blanc (déclaré par King). Détail : `tools/qa/AUDIT-2026-09-17.md`.
+
+## 1c · Contrôle approfondi — obligatoire sur CHAQUE prospect (King, 24 Sep 2026)
+
+> *« Mais à partir de maintenant fais toujours des contrôles approfondis sur chaque prospect. »*
+
+Six recherches **avant** d'écrire le message : nom exact + ville · le vrai domaine (pas la page
+d'accueil du groupe : `.com`, `.cm`, `.shop`, blogspot, Facebook) · les canaux discrets (Blogspot,
+WordPress.com, YouTube, X/Instagram, annuaires) · recoupement adresse/horaires/numéros (la source la
+plus récente gagne) · **le verdict écrit de chaque affirmation** qu'on s'apprête à faire · si une page
+dédiée existe → **écarté**, pas de message. Détail et les deux preuves du 24/09 (Golden Eyes écarté
+avant l'envoi ; SkyOptic et Cinq Sens fragilisés après l'envoi) :
+`sales/MESSAGES-2026-09-23-PERSUASION.md` §5 et `sales/RESEARCH-STANDARD.md` §8c.
 
 ## 2 · Uniqueness protocol (every website/design build, before a line of HTML)
 
