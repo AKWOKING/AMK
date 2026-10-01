@@ -94,10 +94,15 @@ Les six actes actuellement affichés, à **confirmer ou retirer** un par un :
 | 4.3 | Acceptez-vous **MTN MoMo** ? **Orange Money** ? Les **espèces** ? | |
 | 4.4 | Prenez-vous des **assurances ou mutuelles** ? Lesquelles ? | |
 | 4.5 | **Un patient sans ordonnance** peut-il être examiné sur place ? | |
+| **4.6** 🔴 | **Souhaitez-vous que vos prix soient affichés** sur le site et dans le contenu ? Ou préférez-vous qu'on y réponde dans la conversation ? | *La recherche classe l'affichage des prix comme un **fort mouvement de confiance** — Focal les énonce au lieu de les cacher. **C'est votre décision.** ⚠️ Un prix affiché devient une attente : s'il bouge, il faut mettre le site à jour* |
+| **4.7** | Si oui : **lesquels**, exactement ? (examen · paire complète · réglage · réparation) | Seuls des prix **confirmés par vous** peuvent être écrits |
 
-> ⚠️ **Ces prix ne seront affichés nulle part.** Ils servent à répondre **juste** dans la conversation
-> WhatsApp, et à calibrer le contenu. La règle du dépôt tient : un prix non confirmé n'entre sur aucun
-> support, et un prix confirmé n'entre pas non plus sur la page — il entre dans la **réponse**.
+> ⚠️ **Règle exacte sur les prix** *(corrigée le 01/10 au soir — j'avais sur-contraint ce point)* :
+> un tarif **confirmé par le client peut être affiché** ; un prix **non confirmé, estimé ou emprunté à un
+> autre ne l'est jamais** ; et il n'y a **aucune remise**, jamais.
+>
+> Si le client préfère ne pas afficher, le prix reste ce qu'il était : une **question de patient** dont
+> la réponse explique ce qui fait le prix. Détail : `website/brief.md` §6.
 >
 > ⚠️ **Ne pas utiliser l'ancrage « 2 500 FCFA » de 2019.** Il provient d'une petite annonce écartée
 > comme non fiable et sans lien établi avec le cabinet — voir
@@ -115,9 +120,12 @@ n'existe pas.*
 | 5.1 | **Quelles familles** de montures vendez-vous ? (vue · soleil · enfants · autre) | |
 | 5.2 | **Quelles marques** ? — la vitrine ne nomme **aucune** marque aujourd'hui ; on n'invente pas de portefeuille | |
 | 5.3 | Y a-t-il des **montures dont vous êtes particulièrement fier**, à mettre en avant ? | |
-| 5.4 | **Comment appelez-vous** vos montures ou vos familles ? Un vocabulaire à vous ? | *C'est la base du **nommage propriétaire** — le motif le plus rentable de la recherche d'inspiration, et il ne coûte rien. Voir `website/inspiration.md` §1.3* |
+| 5.4 | **Comment appelez-vous** vos montures ou vos familles ? Un vocabulaire à vous ? | *C'est la base du **nommage propriétaire** — classé par la recherche comme **l'idée la plus transposable de tout le jeu**, et elle ne coûte rien. Voir `website/inspiration.md` §2.3* |
 | 5.5 | Du **stock dormant** à écouler ? Une famille à pousser ce mois-ci ? | Détermine l'ordre des publications |
 | 5.6 | **Livrez-vous** ? Dans quel périmètre ? | |
+| **5.7** 🔴 | **Combien de montures différentes** avez-vous en boutique, environ ? Et par famille ? | ⚠️ **Condition du quiz WhatsApp.** La recherche prévient : *« le quiz ne fonctionne que si l'inventaire suffit à matcher »*. Promettre « 5 montures qui vous correspondent » avec trois familles en stock, c'est une promesse qu'on ne peut pas tenir. **Ne pas écrire le quiz avant cette réponse** |
+| **5.8** | **Accepteriez-vous de donner un nom à vos montures** — d'après des villes camerounaises, des figures locales, des noms de famille ? (« la Bonabéri », « la Sanaga ») | **C'est vous qui choisissez les noms, pas nous.** Un nom de figure locale ou de famille peut porter une histoire sensible. ⚠️ Pas de nom à consonance curative (« la Vision », « la Clarté ») — ça glisserait vers l'allégation médicale |
+| **5.9** | **Recevez-vous du stock régulièrement**, ou l'assortiment est-il stable ? | Détermine si l'axe « **Nouveautés** » du catalogue est utilisable — il suppose un stock qui tourne |
 
 ---
 

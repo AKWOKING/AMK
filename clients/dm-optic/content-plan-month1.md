@@ -77,6 +77,55 @@ une dérogation** — voir `dossier.md` §6.
 
 ---
 
+## 2b · Deux apports de la compilation de recherche (01/10 au soir)
+
+### Le nommage des montures — un moteur de contenu qui coûte 0 FCFA
+
+La recherche classe le **nommage propriétaire** (Moscot) comme **l'idée la plus transposable de tout le
+jeu** (`website/inspiration.md` §2.3). Aujourd'hui les montures se décrivent en termes de marchandise —
+« ronde écaille », « acétate noir » — que n'importe qui peut reprendre.
+
+**La direction proposée par King :** nommer d'après **des villes camerounaises, des figures locales,
+des noms de famille**. Le client ne demande plus « la marron » : il demande **« la Bonabéri »** ou
+**« la Sanaga »**.
+
+**Ce que ça change pour le contenu — et c'est considérable :**
+
+| Avant | Après |
+|---|---|
+| Un carrousel générique « nos montures » | **Chaque nom est une publication.** Chaque nom porte un lieu, donc une histoire, donc une pièce |
+| Un catalogue copiable | Un vocabulaire **que personne ne peut reprendre** |
+| Rien à raconter sans marque | **On remplace un portefeuille de marques absent par un vocabulaire possédé** |
+
+**Trois conditions, à ne pas sauter :** les noms viennent **du client ou de ses montures réelles** (on
+n'invente pas un catalogue) · **le client choisit**, pas nous (un nom de figure locale ou de famille
+peut porter une histoire sensible) · **aucun nom à consonance curative** — des lieux et des noms, pas
+des promesses (« la Vision », « la Clarté » glisseraient vers l'allégation médicale).
+
+⚠️ **Ne rien nommer avant la visite.** Questions §5.4 et §5.8 du questionnaire.
+
+### « Les plus demandées » — interdit aujourd'hui, mesurable dès le mois 2
+
+L'angle proposé par la recherche — *« Les 5 montures les plus demandées ce mois-ci »* — est excellent,
+mais **c'est un classement**, et la règle 4 interdit tout classement inventé. Nous n'avons **aucune
+donnée de vente**.
+
+**Le chemin légitime : produire la donnée nous-mêmes.** Chaque fiche monture porte déjà **son propre
+WhatsApp pré-rempli** (`website/inspiration.md` §2.5). On peut donc **compter les demandes par
+monture**.
+
+| Formulation | Statut |
+|---|---|
+| « Best-sellers » | ⛔ **Jamais** — suppose des ventes qu'on ne connaît pas |
+| « Les plus demandées **ce mois-ci** », **comptage WhatsApp à l'appui** | ✅ **Autorisé dès que deux semaines de données existent** |
+| « Trois montures que nos clients demandent souvent », sans chiffre | ⚠️ Seulement si **le client** l'affirme |
+
+→ **Action ajoutée au rapport mensuel : un comptage des demandes par monture.** Ça ne coûte rien, et ça
+transforme une invention en **mesure** — ce qui est exactement ce qu'un client sous contrôle fiscal
+attend de nous.
+
+---
+
 ## 3 · ⛔ Le bloquant principal : les photos
 
 **État réel.** Les trois images de la vitrine actuelle sont des **illustrations générées**, légendées

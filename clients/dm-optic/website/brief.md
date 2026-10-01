@@ -55,11 +55,25 @@ de vue / À propos / Contact**.
 | **B — Six pages** | Architecture multi-pages réelle | Chaque service a sa page, son titre, son schéma — meilleur pour la recherche | **Reconstruction quasi complète.** La QA 38/38 est à refaire. Six pages à tenir à jour en **deux langues** = douze écrans. Coût de maintenance réel, dans un abonnement à 30 000 FCFA/mois |
 | **C — Hybride** | Une page + une page « Nos montures » dédiée (la vitrine est le différenciateur d'un opticien indépendant) | Concentre l'effort là où il rapporte | Deux gabarits à maintenir |
 
-**Recommandation : A, avec C en réserve.** Raison : la recherche du 24/09 a conclu que **la section
-montures est le différenciateur d'un opticien indépendant** (`inspiration.md` § « Second passage »).
-Mais nous n'avons **aucune photo réelle de monture** aujourd'hui — trois illustrations. Construire six
-pages avant d'avoir les photos, c'est construire du vide. **Ordre proposé : A maintenant, basculer la
-vitrine en page dédiée (C) dès que les photos réelles existent.**
+**Recommandation révisée le 01/10 au soir — après réception de la compilation de recherche.**
+
+La recherche établit que l'optique est **à l'intersection du clinique et du commerce**, et qu'il faut
+donc des **pages de service** *et* des **pages de catalogue** (`website/inspiration.md` §1.1, §2.6).
+La **destination** est donc bien une architecture à deux jambes. Ce qui ne change pas, c'est le
+**séquencement** : une page catalogue **sans aucune photo réelle de monture** est une pièce vide.
+
+**La bonne décomposition — l'architecture est bon marché, les pages sont chères :**
+
+| Ce qu'on fait | Quand | Pourquoi |
+|---|---|---|
+| **Adopter la navigation à trois parties** — Soins · Montures · Verres, en **ancres** dans le fichier unique | **Maintenant** | C'est une décision de **structure**, peu coûteuse, et c'est elle qui empêche l'encombrement que la recherche identifie comme le défaut qui tue les sites d'optique |
+| **Découper en pages séparées** | **À la réception des photos** | Six pages × **deux langues** = douze écrans à écrire, relire et maintenir, dans un abonnement à 30 000 FCFA/mois |
+| **Promouvoir « Nos montures » en page dédiée** en premier | Dès les photos réelles | La recherche du 24/09 a conclu que **la vitrine est le différenciateur d'un opticien indépendant** |
+
+**Les six sections demandées se rangent déjà sous ces trois entrées** (`website/inspiration.md` §2.6) :
+Examen de vue → **Soins** · Nos montures → **Montures** · Nos verres → **Verres** · Accueil, À propos,
+Contact → service, pas offre.
+
 
 ⚠️ **Écart d'URL à corriger avant tout redéploiement.** `build-notes.md` et `a-completer.md` citent
 `https://dmoptic.vercel.app` ; le CRM cite `https://dmoptic-2.vercel.app`. La vignette du lien
@@ -129,8 +143,22 @@ on peut compter les conversations, pas les intentions.
 | 3 | **Jamais nommer un concurrent** | Ni en bien ni en mal. L'angle ONOC se dit **sur soi** |
 | 4 | **Aucune remise** | On échange du périmètre ou du calendrier, jamais du prix |
 | 5 | **Rien d'inventé n'entre sur la page** | Adresse, horaire, prix, marque, assurance, photo : **confirmé ou absent**. Les champs manquants sont assumés, pas comblés |
-| 6 | **Le prix ne s'affiche pas** | « Combien coûte une paire ? » est une **question de patient** dont la réponse explique ce qui fait le prix — pas un tarif |
+| 6 | **Le prix : confirmé ou absent** *(règle corrigée le 01/10 au soir)* | ✅ Un tarif **confirmé par le client** peut être affiché. ⛔ Un prix **non confirmé, estimé ou emprunté** ne l'est jamais. ⛔ Aucune remise, aucun « à partir de » racoleur. **Décision de King** — voir encadré |
 | 7 | **Aucun visage fabriqué** | Pas de portrait généré de M. Domche Noumbi. Pas de patient inventé |
+
+> ⚠️ **Correction de ma propre sur-contrainte (01/10 au soir).** J'avais écrit « aucun prix affiché »
+> comme règle absolue. **C'était trop strict.** Les contraintes réelles sont **rien d'inventé** et
+> **jamais de remise** — afficher un tarif **confirmé par le client** n'est ni l'un ni l'autre.
+>
+> La décision du 24/09 (prix renvoyé à la boutique) avait été prise **parce qu'aucun tarif n'était
+> connu** : c'était une conséquence de l'ignorance, pas un principe.
+>
+> **Ce que dit la recherche** (`website/inspiration.md` §2.1, §3.3) : Focal **énonce ses prix**, et c'est
+> un **fort mouvement de confiance**. Les tarifs sont demandés au questionnaire (§4.1–4.2).
+>
+> **Décision à trancher par King :** tarifs exacts · fourchettes « à partir de » · ou rien.
+> ⚠️ Une fourchette « à partir de » **engage** — elle devient une attente. Dans un quartier sensible au
+> prix, un « à partir de » mal calibré fait fuir aussi sûrement qu'un prix absent.
 
 **La phrase qui résume la règle 5** (déjà sur la page) :
 
@@ -162,17 +190,43 @@ cliché médical d'une page précise, ce n'est pas la teinte : c'est **l'archét
 officielle ≠ une clinique), **l'absence de visages souriants**, **la typographie** (du mono sur des
 champs de registre ≠ une sans-serif générique), et **l'accent unique** utilisé une seule fois.
 
-**Trois issues possibles :**
+### ✅ Résolu le 01/10 au soir par la compilation de recherche : **marine → teal profond**
 
-| Issue | Effet |
+Les trois issues envisagées plus tôt (assumer le marine · réchauffer le papier · changer d'accent) sont
+dépassées. **La recherche tranche le conflit elle-même** :
+
+- **Focal** — la référence n° 1, et la correspondance la plus proche — travaille en **fond blanc,
+  typographie à l'encre, un seul teal profond** (`website/inspiration.md` §2.1).
+- **Minimal.gallery** donne le mécanisme : **une seule variable CSS** gouverne la palette — *« on change
+  une variable, et tout le cabinet change d'identité »* (§2.7).
+
+| Critère | Verdict |
 |---|---|
-| **1 — Assumer le marine** | La direction « LA CARTE » est déjà construite, testée, et son archétype n'est pas médical. On documente pourquoi ce n'est pas le cliché |
-| **2 — Réchauffer** | Papier ivoire/sable au lieu du papier froid, marine conservé. S'éloigne du bleu-blanc clinique, garde la sobriété |
-| **3 — Changer d'accent** | Remplacer la braise par un accent non médical (vert profond, ocre). Attention : le **Cristallin** occupe déjà le registre « papier froid, étiquettes mono » — ne pas faire un reskin |
+| Est-ce le cliché bleu-blanc médical ? | **Non** — le teal n'est pas le bleu clinique, et Focal le prouve **en optique** |
+| Fond blanc + un seul accent ? | **Oui** — conforme à la retenue de Minimal.gallery |
+| Éprouvé pour la catégorie ? | **Oui** — c'est la palette de la référence la plus proche |
+| Échappe au reskin du **Cristallin** (papier froid, étiquettes mono) ? | **Oui** — le teal et l'échelle de vue en distinguent nettement le registre |
+| Échappe à la page opticien sombre (**Cavisa**) ? | **Oui** — fond blanc |
+| Coût | **Une variable CSS.** Le travail testé **38/38** n'est pas jeté |
 
-**Recommandation : issue 2.** Un papier réchauffé coûte une variable CSS, sort visuellement du
-bleu-blanc clinique, et ne jette pas un travail testé 38/38. À confirmer par King — **c'est son œil,
-sur un téléphone, qui tranche**, pas ce document.
+**Recommandation : teal profond, fond blanc, encre, un seul accent.** À confirmer par King — **c'est son
+œil, sur un téléphone, en plein jour, qui tranche**, pas ce document.
+
+### Signature du premier écran — une seconde décision, liée
+
+Le premier écran construit porte un **anneau de verre** qui se trace (`.lensring`). Focal propose une
+**échelle de vue géante qui se réduit** — *« personne ne la dépasse sans la voir »*.
+
+| | Anneau de verre *(actuel)* | Échelle de vue *(Focal)* |
+|---|---|---|
+| Immédiatement optique ? | Moyennement — un anneau est abstrait | **Oui, indiscutable** |
+| Coût | déjà construit et testé | à construire — **mais typographie + SVG, aucune photo** |
+| Sert-il le message ? | décor | **il dit le métier** |
+| ⚠️ Bilingue | indifférent | **Deux jeux** : l'échelle FR n'est pas l'échelle EN |
+
+**Recommandation : l'échelle de vue.** Elle est **plus lisible comme signe optique**, et surtout elle
+est **produisible maintenant** — sans attendre les photos, ce qui la rend disponible pour la semaine 1
+du plan de contenu. Détail : `website/inspiration.md` §3.5.
 
 ---
 
