@@ -32,3 +32,14 @@ This is **one asset among several** (CONTENT-LESSONS §4): right when a video te
 
 ## Before any re-render
 `capture.py` (Playwright) is the way to regenerate captures; install with `pip install playwright && python -m playwright install chromium && python -m playwright install-deps chromium`. Captures must be sampled at **15 fps** and composed at 30 fps.
+
+**Dans ce bac à sable (1/10/2026) :** `python -m playwright install chromium` **échoue** — `cdn.playwright.dev` est bloqué (c'est le constat de `tools/video/install.sh`). La voie qui marche : `pip3 install --user --break-system-packages playwright`, puis `bash tools/video/install.sh` (il embarque le Chromium d'@sparticuz, sans CDN), puis :
+
+```bash
+export LD_LIBRARY_PATH=/tmp/amk-video/al2023/lib
+export FONTCONFIG_PATH=/tmp/amk-video/fonts
+export AMK_CHROMIUM_EXEC=/tmp/chromium   # chromium.executablePath() d'@sparticuz
+python3 content/studio/test.py
+```
+
+`AMK_CHROMIUM_EXEC` est une variable **additive** dans `test.py` et `capture.py` : sans elle, ils prennent le Chromium de Playwright comme avant. Vérifié le 1/10 : `test.py` « Interaction checks passed. JS errors: [] », `capture.py` 175 captures.
