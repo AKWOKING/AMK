@@ -1,0 +1,139 @@
+{
+  "project": "Univers Optique",
+  "purpose": "Phase 2 interim asset-preparation proof for a possible 2D face-photo overlay",
+  "status": "proof-review-required",
+  "prepared_on": "2026-10-01",
+  "originals_preserved": true,
+  "original_source_glob": "clients/univers-optique/PXL_*.jpg",
+  "source_dimensions_px": "4624x3472",
+  "derivative_method": {
+    "tool": "ImageMagick",
+    "steps": [
+      "Resize each selected source to 1600 px wide",
+      "Apply a hand-authored front-frame silhouette mask",
+      "Clear the two lens interiors so a customer photo can show through",
+      "Exclude visible stock labels, printed lens text and rear temples where the mask allows",
+      "Trim to the transparent object bounds and add 20 px transparent padding"
+    ],
+    "mask_files": "masks/OU-*.svg",
+    "production_ready": false
+  },
+  "assets": [
+    {
+      "technical_id": "OU-001",
+      "source": "PXL_20260925_095151347.jpg",
+      "asset": "frames/OU-001.png",
+      "mask": "masks/OU-001.svg",
+      "description": "Black oversized rectangular frame",
+      "derivative_dimensions_px": "1538x594",
+      "alpha_transparency": true,
+      "approximate_visual_lens_centres_px": {
+        "left": [410, 250],
+        "right": [1160, 250]
+      },
+      "stock_number": "not assigned; OU-001 is only a technical proof ID",
+      "brand_model": "not assigned",
+      "availability": "to confirm in real inventory",
+      "cleanup_status": "front silhouette and lens openings prepared",
+      "known_limitations": [
+        "Pale background/shadow remnants remain along parts of the lower outer edge",
+        "The source photograph has reflections and slight perspective distortion",
+        "The visible label was removed by excluding the lens interior, not by reconstructing the frame texture"
+      ]
+    },
+    {
+      "technical_id": "OU-002",
+      "source": "PXL_20260925_095249623.jpg",
+      "asset": "frames/OU-002.png",
+      "mask": "masks/OU-002.svg",
+      "description": "Dark tortoiseshell rectangular frame with gold hinge details",
+      "derivative_dimensions_px": "1324x459",
+      "alpha_transparency": true,
+      "approximate_visual_lens_centres_px": {
+        "left": [360, 205],
+        "right": [1030, 205]
+      },
+      "stock_number": "not assigned; OU-002 is only a technical proof ID",
+      "brand_model": "not assigned",
+      "availability": "to confirm in real inventory",
+      "cleanup_status": "front silhouette and lens openings prepared",
+      "known_limitations": [
+        "Blue-grey table/shadow remnants remain near the lower outer edge",
+        "The source photograph is not perfectly front-on",
+        "Rear temples were excluded from the overlay proof"
+      ]
+    },
+    {
+      "technical_id": "OU-003",
+      "source": "PXL_20260925_095352814.jpg",
+      "asset": "frames/OU-003.png",
+      "mask": "masks/OU-003.svg",
+      "description": "Black softly rectangular frame with gold hinge details",
+      "derivative_dimensions_px": "1191x458",
+      "alpha_transparency": true,
+      "approximate_visual_lens_centres_px": {
+        "left": [300, 205],
+        "right": [875, 205]
+      },
+      "stock_number": "not assigned; OU-003 is only a technical proof ID",
+      "brand_model": "not assigned",
+      "availability": "to confirm in real inventory",
+      "cleanup_status": "front silhouette and lens openings prepared",
+      "known_limitations": [
+        "Some light table/shadow pixels remain around the lower edge",
+        "Bright reflections in the source may appear as small pale fragments",
+        "Printed text seen in the original lens area was excluded with the lens mask"
+      ]
+    },
+    {
+      "technical_id": "OU-004",
+      "source": "PXL_20260925_095407691.jpg",
+      "asset": "frames/OU-004.png",
+      "mask": "masks/OU-004.svg",
+      "description": "Large translucent purple rectangular frame",
+      "derivative_dimensions_px": "1576x619",
+      "alpha_transparency": true,
+      "approximate_visual_lens_centres_px": {
+        "left": [470, 300],
+        "right": [1240, 300]
+      },
+      "stock_number": "not assigned; OU-004 is only a technical proof ID",
+      "brand_model": "not assigned",
+      "availability": "to confirm in real inventory",
+      "cleanup_status": "front silhouette and lens openings prepared",
+      "known_limitations": [
+        "Pale background/shadow remnants remain at portions of the lower edge",
+        "The translucent material and reflections make automatic background separation less reliable",
+        "The labels and printed lens markings were excluded with the lens mask"
+      ]
+    },
+    {
+      "technical_id": "OU-005",
+      "source": "PXL_20260925_095445683.jpg",
+      "asset": "frames/OU-005.png",
+      "mask": "masks/OU-005.svg",
+      "description": "Pink and gold cat-eye frame",
+      "derivative_dimensions_px": "1121x465",
+      "alpha_transparency": true,
+      "approximate_visual_lens_centres_px": {
+        "left": [270, 245],
+        "right": [840, 245]
+      },
+      "stock_number": "not assigned; OU-005 is only a technical proof ID",
+      "brand_model": "not assigned",
+      "availability": "to confirm in real inventory",
+      "cleanup_status": "front silhouette and lens openings prepared",
+      "known_limitations": [
+        "Pale backdrop/shadow remnants remain around portions of the thin metal frame",
+        "The green stock label and rear temples were excluded through the lens/interior mask",
+        "Thin gold details may need manual pixel-level cleanup before production use"
+      ]
+    }
+  ],
+  "review_required_before_phase_2b": [
+    "Confirm that these five technical IDs correspond to five frames that are actually available for the pilot",
+    "Confirm whether price, brand and model fields should be visible in the Version A catalogue",
+    "Decide whether the remaining pale shadow/reflection pixels are acceptable for a proof or need manual retouching",
+    "Use the approved requirements and this asset review before comparing implementation tools"
+  ]
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1201" viewBox="0 0 1600 1201">
+  <rect width="1600" height="1201" fill="black"/>
+  <!-- Approximate front-frame silhouette; coordinates are on the 1600px-wide source derivative. -->
+  <path fill="white" d="M40 355 L75 292 Q105 268 165 268 L670 268 Q755 270 815 330 Q842 355 860 388 Q880 340 930 306 Q975 279 1040 287 L1450 308 Q1512 314 1537 366 L1513 778 Q1500 812 1440 821 L1040 815 Q980 806 948 755 L860 505 Q842 470 820 505 L720 748 Q690 808 620 821 L160 816 Q100 806 73 764 Z"/>
+  <path fill="black" d="M136 365 Q165 330 220 329 L665 331 Q735 334 758 380 L704 650 Q690 718 625 748 Q570 765 498 762 L185 756 Q142 740 128 699 Z"/>
+  <path fill="black" d="M968 365 Q1005 330 1070 330 L1380 342 Q1445 347 1465 390 L1448 700 Q1435 751 1370 767 L1050 756 Q982 745 960 690 L900 425 Q923 388 968 365 Z"/>
+  <!-- transparent area below the central nose/bridge -->
+  <path fill="black" d="M744 780 Q785 640 820 530 Q840 490 860 525 Q900 635 960 780 L920 830 L785 830 Z"/>
+</svg>
