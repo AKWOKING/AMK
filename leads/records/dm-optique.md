@@ -1,6 +1,6 @@
 # DM Optique
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-27. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-01. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -10,7 +10,7 @@
 | Type | other |
 | Ville | Douala |
 | Langue de contact | FR |
-| Étape | offer |
+| Étape | closing |
 | WhatsApp | 656 122 239 |
 | Numéro vérifié | yes |
 | Profil vu | DM OPTIC |
@@ -24,11 +24,11 @@
 
 ## Notes
 
-LOT 4 (préparé, PAS ENVOYÉ). Titulaire : DOMCHE NOUMBI. Aucune page, aucun site trouvés (24/09). ⚠️ Porte B FAIBLE (§8b : 2/3) — King décide explicitement. Remplaçant dans l'ordre d'envoi.
+PACK GLOBAL ACCORDÉ le 01/10 (stage `closing`). Installation 150 000 FCFA — acompte 75 000, solde à la livraison ; récurrent 30 000 FCFA/mois DONT 5 000 de budget pub test (2 posts/semaine + maintenance). SARL sous contrôle fiscal : virement bancaire, proforma PDF + RIB + NIU, reçus tamponnés. Proforma à envoyer le 02/10 ; visite à Bonabéri cette semaine (mer/jeu, jour à confirmer) ; NIU + adresse fiscale attendus du client. AUCUN acompte reçu à cette heure — rien ne se livre ni ne se publie avant encaissement. (Origine : registre ONOC Littoral l.102, titulaire DOMCHE NOUMBI, contacté le 24/09.)
 
 ## Prochaine action
 
-**Répondre dans l'heure.** Une réponse humaine est en attente : c'est la priorité absolue (règle des 90 secondes).
+**Action fixée au 2026-10-02** — décision humaine, elle prime sur le rythme automatique. **PACK GLOBAL ACCORDÉ le 01/10 — stage `closing`.** Demain 02/10 : envoyer la FACTURE PROFORMA PDF (installation 150 000 FCFA, acompte 75 000, solde à la livraison ; récurrent 30 000 FCFA/mois dont 5 000 de budget pub) + RIB + NIU AMK, et recevoir du client son NIU + son adresse fiscale. Paiement par VIREMENT uniquement (SARL sous contrôle fiscal) : reçus tamponnés. Visite en personne à Bonabéri cette semaine (mer/jeu, jour à confirmer). ⛔ Aucun acompte reçu à cette heure : ne rien livrer ni publier avant l'encaissement
 
 ## Historique — lignes du journal qui citent ce lead
 

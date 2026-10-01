@@ -1,6 +1,6 @@
 # Le Cristallin
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-27. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-01. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -35,7 +35,7 @@
 
 ## Prochaine action
 
-**0 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**Action fixée au 2026-09-29** — décision humaine, elle prime sur le rythme automatique. **IL EST MALADE (24/09 10:11) — AUCUNE relance du projet.** King a répondu santé d'abord le 24/09 à 10:13 ; next message = message de santé lundi 29/09 (`sales/Queue-CRISTALLIN-2026-09-29.md`), santé avant le projet, sans reposer le prix. **PRIX POSÉ le 23/09 09:46** : 150 000 FCFA, 50 % = 75 000 pour démarrer, solde à la livraison. GELÉ (King, 23/09) : aucune modification de la page ni du dossier jusqu'au paiement ; les trois compensations (WhatsApp Business, domaine 2027, fiche Google) restent parquées. Cinq écarts à trancher AVANT publication (compte d'assurances FR 18 / EN 17, mur à 19, bloc « 32 ans » en double, horaires vs son flyer, « depuis 2010 ») et le périmètre « hébergement + domaine » à cadrer : son domaine est à lui jusqu'au 13/06/2027
 
 ## Historique — lignes du journal qui citent ce lead
 

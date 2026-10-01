@@ -1,6 +1,6 @@
 # Cavisa Optique
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-27. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-01. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -27,7 +27,7 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : DONGMO Jean René. Probleme : etre
 
 ## Prochaine action
 
-**Répondre dans l'heure.** Une réponse humaine est en attente : c'est la priorité absolue (règle des 90 secondes).
+**Action fixée au 2026-09-28** — décision humaine, elle prime sur le rythme automatique. Réponse envoyée le 24/09 à 13:26 (remerciements + les 4 éléments demandés + la question des prix). La balle est chez M. Dongmo. PROPOSITION à confirmer par King : UN rappel court si rien n'est arrivé d'ici là — le redéploiement, lui, attend sa liste
 
 ## Historique — lignes du journal qui citent ce lead
 

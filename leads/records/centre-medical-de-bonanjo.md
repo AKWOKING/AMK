@@ -1,6 +1,6 @@
 # Centre Médical de Bonanjo
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-27. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-01. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -30,7 +30,7 @@
 
 ## Prochaine action
 
-**Répondre dans l'heure.** Une réponse humaine est en attente : c'est la priorité absolue (règle des 90 secondes).
+**Action fixée au 2026-09-28** — décision humaine, elle prime sur le rythme automatique. Page complète envoyée le 22/09 à 13:35 (deux coches) avec le prix posé, puis relance 16:24 (une coche) : « vos 9 services centralisés pour orienter les patients de Google vers votre WhatsApp ». DÉCISION KING 16:30 : prochaine vague — jeudi 24/09, sans reposer le prix, une question de calendrier seulement
 
 ## Historique — lignes du journal qui citent ce lead
 

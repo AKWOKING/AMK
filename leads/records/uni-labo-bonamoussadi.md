@@ -1,6 +1,6 @@
 # UNI-LABO
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-27. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-01. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -33,7 +33,7 @@ DEMANDE DE RENDEZ-VOUS - LE PLUS FORT SIGNAL DE LA CAMPAGNE. Le 19/09 a 20:20, U
 
 ## Prochaine action
 
-**Répondre dans l'heure.** Une réponse humaine est en attente : c'est la priorité absolue (règle des 90 secondes).
+**Action fixée au 2026-09-25** — décision humaine, elle prime sur le rythme automatique. **RENDEZ-VOUS CONFIRMÉ — vendredi 25/09 à 13 h**, à leur laboratoire (Carrefour Etoo). Il a choisi 13 h lui-même le 23/09 à 21:42 (« 13h c'est bon pour moi »), King a accepté à 21:47. Prix posé le 23/09 13:30 : 150 000 FCFA, **acompte 75 000 à prendre en séance**, grille tarifaire standard déjà envoyée. À emporter : contrat Standard ×2, grille corrigée, et le formulaire de réservation — promis dans le message de 13:30, PAS ENCORE CONSTRUIT
 
 ## Historique — lignes du journal qui citent ce lead
 

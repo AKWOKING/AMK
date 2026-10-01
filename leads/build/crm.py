@@ -1936,6 +1936,7 @@ def _apply_jour(out: list) -> None:
     _apply_state(out, ENVOI_2409_4, "ENVOI_2409_4")
     _apply_state(out, REPONSE_2409_DM, "REPONSE_2409_DM")
     _apply_state(out, REPONSE_DM_2509, "REPONSE_DM_2509")
+    _apply_state(out, ACCORD_DM_0110, "ACCORD_DM_0110")
     _apply_state(out, REPONSE_UNILABO_2509, "REPONSE_UNILABO_2509")
     _apply_state(out, REPONSE_UNIVERS_2509, "REPONSE_UNIVERS_2509")
     _apply_state(out, REPONSE_2409_CS, "REPONSE_2409_CS")
@@ -2987,6 +2988,64 @@ REPONSE_DM_2509 = {
             "prie » ; King note le point de lundi, sans relancer. "
             "27/09 07:53 — les captures de King arrivent au dépôt : on en fait le message du 28/09, le "
             "document des deux coffrets et la mise à jour de la page. RIEN N'EST ENVOYÉ d'ici là.",
+    },
+}
+
+
+# ── 01/10/2026 — DM OPTIQUE SARL CHOISIT LE PACK GLOBAL : LE DEAL PASSE EN CLOSING ───────────────
+# Sur captures de King (mardi 30/09 au soir → jeudi 01/10, « Today »). Le client tranche :
+# 15:50 « Le pack global semble nous correspondre ». Les conditions sont ACCORDÉES de part et
+# d'autre — ce n'est plus une offre sur la table, c'est un accord en cours de formalisation :
+# stage `offer` → `closing` (prix posé, en négociation avancée ; `won` attendra l'acompte versé).
+# ⚠️ Ce qui n'est PAS encore fait : aucun acompte reçu, aucune facture proforma envoyée, ni le NIU
+# ni l'adresse fiscale du client en main. On n'écrit donc ni « client », ni « contrat signé », ni
+# « acompte payé » — la page reste à `closing` tant que l'argent n'est pas là.
+# ⚠️ Le client est une SARL sous contrôle fiscal : il EXIGE la traçabilité (virement bancaire,
+# proforma PDF + RIB + NIU, reçus tamponnés). C'est une contrainte de conformité, pas une hésitation
+# — elle se traite par des documents, jamais par un message.
+ACCORD_DM_0110 = {
+    "dm-optique": {
+        "Contacted": "Yes", "Reply": "Yes", "reply_type": "human",
+        "Demo made": "Yes", "Offer made": "Yes",
+        "stage": "closing", "stage_since": "2026-10-01",
+        # Le dernier message de King (17:17, le budget pub de 5 000 dans les 30 000) est parti ;
+        # la balle est chez le client pour DEMAIN (NIU + adresse fiscale). Rien à répondre ce soir.
+        "last_send_state": "delivered",
+        "Follow-up date": "2026-10-02",
+        # La fiche (records.py) affiche CE champ `Notes`, pas `value_kept` : sans cette réécriture
+        # elle continuerait de dire « LOT 4, PAS ENVOYÉ, Porte B FAIBLE » pour un deal en closing.
+        "Notes":
+            "PACK GLOBAL ACCORDÉ le 01/10 (stage `closing`). Installation 150 000 FCFA — acompte "
+            "75 000, solde à la livraison ; récurrent 30 000 FCFA/mois DONT 5 000 de budget pub test "
+            "(2 posts/semaine + maintenance). SARL sous contrôle fiscal : virement bancaire, proforma "
+            "PDF + RIB + NIU, reçus tamponnés. Proforma à envoyer le 02/10 ; visite à Bonabéri cette "
+            "semaine (mer/jeu, jour à confirmer) ; NIU + adresse fiscale attendus du client. AUCUN "
+            "acompte reçu à cette heure — rien ne se livre ni ne se publie avant encaissement. "
+            "(Origine : registre ONOC Littoral l.102, titulaire DOMCHE NOUMBI, contacté le 24/09.)",
+        "value_kept":
+            "LE DEAL ACCORDÉ le 01/10 — Pack Global. Installation 150 000 FCFA, acompte 50 % = "
+            "75 000 FCFA pour démarrer, solde à la livraison. Récurrent 30 000 FCFA/mois : 2 posts "
+            "par semaine + maintenance, DONT 5 000 FCFA de budget publicitaire test (Facebook/Instagram, "
+            "ciblage Bonabéri/Douala → WhatsApp). Paiement par VIREMENT BANCAIRE uniquement (SARL sous "
+            "contrôle fiscal) : facture proforma PDF + RIB + NIU, reçus tamponnés. Proforma à envoyer "
+            "le 02/10 ; visite en personne à Bonabéri cette semaine (mer/jeu, jour à confirmer).",
+        "value_discarded":
+            "Deux messages du client supprimés à 17:08 et 17:09 — contenu INCONNU : on ne les devine "
+            "pas, on ne les remplit pas. Le NIU et l'adresse fiscale ne sont PAS encore fournis (le "
+            "client les promet pour demain) : aucune raison sociale fiscale ni numéro NIU n'est écrit "
+            "d'ici là. Aucun acompte reçu, aucun contrat signé : la page ne dit ni « client » ni "
+            "« payé ».",
+        "Conversation_extra":
+            "30/09→01/10 — le client tranche : 15:50 « Le pack global semble nous correspondre ». "
+            "King confirme les conditions : installation 150 000 FCFA, acompte 50 % = 75 000 FCFA, "
+            "solde à la livraison ; 30 000 FCFA/mois (2 posts/semaine + maintenance) DONT 5 000 FCFA "
+            "de budget pub test. Le client explique qu'il est une SARL sous contrôle fiscal et exige "
+            "la traçabilité : virement bancaire, proforma PDF + RIB + NIU, reçus tamponnés. King "
+            "accepte et promet la proforma pour DEMAIN (02/10) + une visite en personne à Bonabéri "
+            "cette semaine (mer/jeu). Le client doit fournir NIU + adresse fiscale demain. "
+            "01/10 17:08 — « C'est de confiance et rassurant » ; puis deux messages supprimés à "
+            "17:08 et 17:09 (contenu inconnu). 17:17 — King précise que les 5 000 FCFA de pub sont "
+            "INCLUS dans les 30 000 FCFA/mois. RIEN N'EST ENCAISSÉ à cette heure.",
     },
 }
 

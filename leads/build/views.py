@@ -142,6 +142,18 @@ RELANCE_A_JOUR = {
     "skye-douala": ("2026-09-29", "Relance 2/3 envoyée le 22/09 au soir (réécrite sans reproche). DERNIÈRE "
                                   "touche : 29/09, puis parked daté"),
     "yaks-douala": ("2026-09-29", "Relance 2/3 envoyée le 22/09 au soir. DERNIÈRE touche : 29/09, puis parked"),
+    # ── 01/10 — DM OPTIQUE SARL A CHOISI LE PACK GLOBAL : ce n'est plus une relance à calculer ──
+    # Le client a tranché le 01/10 à 15:50 (« Le pack global semble nous correspondre ») et les
+    # conditions sont accordées : 150 000 FCFA d'installation (acompte 75 000), 30 000 FCFA/mois dont
+    # 5 000 de budget pub. La prochaine échéance vient de ce qui a été PROMIS au client, pas d'un M+2.
+    "dm-optique": ("2026-10-02", "**PACK GLOBAL ACCORDÉ le 01/10 — stage `closing`.** Demain 02/10 : "
+                                  "envoyer la FACTURE PROFORMA PDF (installation 150 000 FCFA, acompte "
+                                  "75 000, solde à la livraison ; récurrent 30 000 FCFA/mois dont 5 000 "
+                                  "de budget pub) + RIB + NIU AMK, et recevoir du client son NIU + son "
+                                  "adresse fiscale. Paiement par VIREMENT uniquement (SARL sous contrôle "
+                                  "fiscal) : reçus tamponnés. Visite en personne à Bonabéri cette semaine "
+                                  "(mer/jeu, jour à confirmer). ⛔ Aucun acompte reçu à cette heure : ne "
+                                  "rien livrer ni publier avant l'encaissement"),
 }
 
 

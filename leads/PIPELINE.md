@@ -1,14 +1,13 @@
 # PIPELINE — où en est chaque lead
 
-> ⚙️ **Généré le 2026-09-27 par `leads/build/views.py` — ne pas modifier à la main.**
+> ⚙️ **Généré le 2026-10-01 par `leads/build/views.py` — ne pas modifier à la main.**
 > Toute correction se fait dans `leads/build/crm.py` ou `sales/Activity-Log.md`, puis on relance `leads/build/rebuild.sh`.
 
 ## Compteur
 
 | Étape | Leads |
 |---|---|
-| ④ Prix posé, en négociation | **1** |
-| ④ Offre posée | **1** |
+| ④ Prix posé, en négociation | **2** |
 | ③ Aperçu envoyé | **3** |
 | ② Qualifié — en conversation | **24** |
 | ① Prospection — à qualifier | **78** |
@@ -30,17 +29,12 @@
 
 > **Règle des 90 secondes.** Une réponse en attente passe avant tout le reste.
 
-## ④ Prix posé, en négociation — 1
-
-| Lead | Ville | WhatsApp | Trace au journal |
-|---|---|---|---|
-| Le Cristallin | Douala | 699 90 55 77 | `L3867` |
-
-## ④ Offre posée — 1
+## ④ Prix posé, en négociation — 2
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
 | DM Optique | Douala | 656 122 239 | `L4019` |
+| Le Cristallin | Douala | 699 90 55 77 | `L3867` |
 
 ## ③ Aperçu envoyé — 3
 

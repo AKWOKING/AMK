@@ -1,6 +1,6 @@
 # Labiomed
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-27. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-01. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -28,7 +28,7 @@ Envoyé le 19/09 à 19:32 — lu (2 coches). ***PREMIER OUI DE LA CAMPAGNE.*** 1
 
 ## Prochaine action
 
-**Répondre dans l'heure.** Une réponse humaine est en attente : c'est la priorité absolue (règle des 90 secondes).
+**Action fixée au 2026-10-01** — décision humaine, elle prime sur le rythme automatique. A RÉPONDU le 22/09 à 16:41 : « Non pas encore je ne suis pas en place » · « Quand je serai la je vais vous contacter ». Ce n'est ni un oui ni un refus — c'est un REPORT MOTIVÉ (pas encore installé). Réponse envoyée dans l'heure ; on ne le relance plus d'ici le 1ᵉʳ octobre, et ce jour-là sans prix ni question de validation : juste « vous êtes en place ? »
 
 ## Historique — lignes du journal qui citent ce lead
 

@@ -1,6 +1,6 @@
 # Univers Optique
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-27. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-01. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -36,7 +36,7 @@
 
 ## Prochaine action
 
-**Répondre dans l'heure.** Une réponse humaine est en attente : c'est la priorité absolue (règle des 90 secondes).
+**Action fixée au 2026-09-25** — décision humaine, elle prime sur le rythme automatique. **GELÉ (King, 23/09 au soir)** : plus aucun travail sur le site ni le dossier avant le paiement. RENDEZ-VOUS fixé par le prospect — **vendredi 25/09 à 10 h, son cabinet** (Bépanda). Feuille : `sales/RDV-UNIVERS-OPTIQUE-2026-09-25.md`. Prix déjà posé le 21/09 (100 000 FCFA, 50/50) : on ne le re-présente pas, on ne le baisse pas. À sortir de la salle : le « oui », les réponses aux six points que la page demande, l'acompte
 
 ## Historique — lignes du journal qui citent ce lead
 

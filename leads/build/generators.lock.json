@@ -1,10 +1,10 @@
 {
  "digests": {
-  "leads/build/crm.py": "f0ff55f939970e80",
-  "leads/build/views.py": "193c2a4bea7d79ba",
-  "leads/build/records.py": "7c77bd2042d527ac",
+  "leads/build/crm.py": "83409fb70040e05d",
+  "leads/build/views.py": "6cb1529945b96b60",
+  "leads/build/records.py": "d5e4b4a889561a1d",
   "leads/build/rebuild.sh": "e1bbf5d8a26f5aba",
   "leads/build/guard.py": "608235c31dbd799f"
  },
- "why": "1/10/2026 — verrou rejoué sur décision de King (« re-lock the guard »), puis REJOUÉ et COMMITTÉ+POUSSÉ le même jour : les redémarrages du bac rejetaient l'écriture précédente (le commit local lui-même a disparu). Le crm.py versionné (f0ff55f939970e80) EST la version voulue : il reproduit leads/CRM.csv au octet près (md5 4a1e77f30dd5598eb3e8e78d304eef96). Preuves : tools/qa/VERIFICATION-2026-10-01.md §3."
+ "why": "verrou rejoué à la main"
 }

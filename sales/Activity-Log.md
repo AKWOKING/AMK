@@ -4704,3 +4704,71 @@ qu'on lui donne, pas un discours.
 **Prochaine action, et il n'y en a qu'une** : que King **renvoie les neuf photos** (le bac les a perdues) —
 ou cinq nouvelles, propres, sur fond blanc. Dès qu'elles sont là, le prototype se fait **sur ses vraies
 montures**, pas sur des images générées.
+
+## 2026-10-01 · 15:50 → 17:17 (horloge du bac) · DM OPTIQUE SARL CHOISIT LE PACK GLOBAL — et pose la règle qui décide de tout : la traçabilité
+
+**Le client a tranché.** Sur captures de King (mardi 30/09 au soir → jeudi 01/10, « Today »), DM OPTIQUE
+SARL met fin au suspense du 25/09 (« on verra si on opte sur le premier coffret ou sur l'offre globale ») :
+à **15:50**, « **Le pack global semble nous correspondre** ». Ce n'est plus une offre sur la table, c'est un
+accord en cours de formalisation — le CRM passe `offer` → **`closing`** (`leads/build/crm.py`, table
+`ACCORD_DM_0110`). `won` attendra l'acompte encaissé.
+
+**Les conditions, accordées de part et d'autre :**
+
+| Poste | Montant | Détail |
+|---|---|---|
+| Installation (one-shot) | **150 000 FCFA** | acompte 50 % = **75 000 FCFA** pour démarrer, solde à la livraison |
+| Récurrent | **30 000 FCFA / mois** | 2 posts par semaine + maintenance, **DONT 5 000 FCFA de budget pub test** |
+| Publicité | 5 000 FCFA inclus | Facebook/Instagram, ciblage Bonabéri/Douala → WhatsApp |
+
+**Ce qui a décidé le client, ce n'est pas le prix — c'est la conformité.** DM OPTIQUE SARL est sous
+**contrôle fiscal** : il exige la **traçabilité** complète — paiement par **virement bancaire** (pas de
+cash), **facture proforma PDF + RIB + NIU**, **reçus tamponnés**. C'est une contrainte administrative, pas
+une hésitation : elle se lève avec des **documents**, jamais avec un message. King accepte sans discuter.
+
+**Le fil, minute par minute :**
+
+- **15:50** — « Le pack global semble nous correspondre ».
+- King confirme : 150 000 FCFA d'installation, acompte 75 000, solde à la livraison ; 30 000 FCFA/mois
+  (2 posts/semaine + maintenance) dont 5 000 FCFA de budget pub.
+- Le client expose sa contrainte : SARL sous contrôle fiscal → virement, proforma + RIB + NIU, reçus
+  tamponnés.
+- King promet la **proforma pour DEMAIN (02/10)** et une **visite en personne à Bonabéri cette semaine
+  (mer/jeu, jour à confirmer)**.
+- Le client doit fournir **NIU + adresse fiscale** demain (la raison sociale « DM OPTIQUE SARL » est déjà
+  sur la page depuis le 27/09).
+- **17:08** — « **C'est de confiance et rassurant** ». Puis **deux messages supprimés à 17:08 et 17:09** —
+  contenu **inconnu** : on ne les devine pas, on ne les remplit pas.
+- **17:17** — King précise que les 5 000 FCFA de pub sont **inclus** dans les 30 000 FCFA/mois.
+
+**Ce qui n'est PAS fait, et qu'on n'écrit donc nulle part :** aucun acompte reçu, aucune proforma envoyée,
+ni le NIU ni l'adresse fiscale du client en main. La page reste à `closing` ; on ne dit ni « client », ni
+« contrat signé », ni « acompte payé ». **Rien ne se livre ni ne se publie avant l'encaissement.**
+
+**Prochaine action, et il n'y en a qu'une (02/10)** : envoyer la **facture proforma PDF** (150 000 / acompte
+75 000 / solde livraison ; récurrent 30 000 dont 5 000 pub) **+ RIB + NIU AMK**, et recevoir du client son
+**NIU + adresse fiscale**. Échéance inscrite au plan du jour (`leads/build/views.py`, `RELANCE_A_JOUR`).
+
+**Ce que ça change dans les chiffres gelés du 25/09 :** « 8 posts / 4 vidéos » devient **2 posts par
+semaine** ; le **budget pub de 5 000 FCFA** apparaît, **inclus** dans les 30 000 FCFA/mois (ce n'est pas un
+poste en plus). Le tarif « client fondateur » à 100 000 FCFA n'est plus sur la table : le client a pris le
+**Pack Global à 150 000**.
+
+**Leçons opérationnelles (deal DM Optique, 01/10) — ce que ce fil apprend, et qui vaut pour les prochains :**
+
+1. **C'est la conformité qui a clos, pas le prix.** Le client est une SARL sous contrôle fiscal : ce qui
+   l'a rassuré (« C'est de confiance et rassurant »), ce n'est pas le chiffre, c'est la **traçabilité** —
+   proforma + RIB + NIU, reçus tamponnés, virement bancaire. Face à une entreprise enregistrée, on ouvre
+   avec les **documents**, pas avec la grille.
+2. **Le prix se découpe, sinon il se bloque.** La confusion du 25/09 (« 12 000 vs 30 000 ??? ») vient d'un
+   périmètre dit d'un bloc. Le 01/10, les trois lignes séparées — **one-shot 150 000 / récurrent 30 000 /
+   dont budget pub 5 000** — ont levé l'obstacle. Toujours itemiser : installation ≠ abonnement ≠ publicité.
+3. **Le budget pub de démarrage se met DEDANS, pas à part.** Les 5 000 FCFA inclus dans les 30 000 rendent
+   le récurrent concret : le client n'achète pas « de la maintenance », il achète **de la portée** vers son
+   WhatsApp. Un récurrent sans budget média est une facture ; avec, c'est un moteur.
+4. **Le distant gagne par la vitesse + un ancrage daté.** King est loin, mais il compense par la réactivité
+   (proforma promise pour le lendemain) **et** une **visite en personne à date fixe** à Bonabéri. « On se
+   verra » ne clôt rien ; « je passe mercredi ou jeudi » + les papiers demain, si.
+5. **Ne jamais bloquer le deal sur le lieu.** L'administratif numérique (proforma, échange NIU/adresse
+   fiscale) avance **maintenant** ; la rencontre physique est un **plus daté**, pas un préalable. Le dossier
+   progresse à distance pendant que la visite se cale.

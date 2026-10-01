@@ -25,6 +25,15 @@ import re
 import sys
 import unicodedata
 
+# La table des échéances fixées par DÉCISION HUMAINE vit dans views.py (une seule source, pas de
+# copie). On l'importe pour que la « prochaine action » de la fiche respecte une décision humaine
+# au lieu du rythme automatique. Sans ça, un lead qu'on a DÉJÀ répondu — ex. DM Optique, accord
+# conclu le 01/10, proforma à envoyer le 02/10 — se verrait réclamer « répondre dans l'heure »
+# alors que personne n'attend de réponse : c'est le piège COMOBIL (la prose dit une chose, la vue
+# générée en calcule une autre). views.py a un garde `__main__` : l'import ne génère rien.
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from views import RELANCE_A_JOUR
+
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 CRM = ROOT / "leads" / "CRM.csv"
 LOG = ROOT / "sales" / "Activity-Log.md"
@@ -140,6 +149,12 @@ def next_action(rec: dict) -> str:
                 + ". Une action n'est légitime que si King le décide explicitement.")
     if stage in ("prospect", "prospecting"):
         return "**Prospecter** : vérifier l'identité du numéro sur WhatsApp avant d'écrire (nom + catégorie)."
+    # Une échéance fixée par DÉCISION HUMAINE (table RELANCE_A_JOUR de views.py) prime sur le rythme
+    # automatique ET sur le réflexe « répondre dans l'heure ». C'est la prochaine action réelle, datée.
+    slug = rec.get("slug", "")
+    if slug in RELANCE_A_JOUR:
+        d, note = RELANCE_A_JOUR[slug]
+        return f"**Action fixée au {d}** — décision humaine, elle prime sur le rythme automatique. {note}"
     if rec.get("Reply", "").strip().lower().startswith("yes"):
         return ("**Répondre dans l'heure.** Une réponse humaine est en attente : c'est la priorité absolue "
                 "(règle des 90 secondes).")
