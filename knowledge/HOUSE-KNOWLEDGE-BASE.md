@@ -28,7 +28,7 @@ financières, marketing, organisation opérationnelle — c'est cela qui transfo
 une structure.
 
 **Sources :**
-- ILO SIYB programme overview — https://www.ilo.org/projects-and-partnerships/projects/start-and-improve-your-business-siyb
+- ILO SIYB programme overview — https://www.ilo.org/projects-and-partnerships/projects/start-and-improve-your-business-siyb *(la page ILO renvoie 403 aux fetchers automatiques ; vérifier manuellement — programme réel et bien documenté)*
 - ILO SIYB Africa case studies (Kisii County, Kenya ; Mali, Niger, Nigeria ToT) — chercher « ILO SIYB ACCEL Africa » sur https://ilo.org/
 - AfricInvest MSME investment thesis — https://www.africinvest.com
 
@@ -82,9 +82,20 @@ La plupart des conseils de marketing digital sont **activement nuisibles** en co
 Quatre hypothèses qui cassent ici :
 
 **Sources :**
-- BSA, littérature review « The Role of Social Media in Promoting Local Businesses in Cameroon » — https://www.bsa.edu.lv ⚠️ **voir change log : attribution douteuse**
-- Zenodo, « Effect of Social Media Marketing on the Financial Performance of SMEs in Mezam Division, Cameroon » — https://zenodo.org
-- LinkedIn, Rayan Ndip, « Cameroonian SMEs: Invisible on Google » — chercher sur LinkedIn
+- Wantchami, Ngange & Efosi (2020), « Nexus of Social Media Marketing and Small Scale Businesses'
+  Performance in Buea, Cameroon » — ResearchGate (couche de repli autorisée par King : AJOL ne porte rien
+  de spécifique au Cameroun) : effet positif sur la performance ; défis = mauvaise connexion internet,
+  ressources limitées. *(pages RG souvent bloquées aux fetchers — vérifier manuellement)*
+- Eteki (2024), « Impact of Social Media Engagement on Brand Image Perception in Cameroon » (Univ. de
+  Maroua) — ResearchGate, en appui. *(même caveat)*
+- Zenodo, « Effect of Social Media Marketing on the Financial Performance of SMEs in Mezam Division,
+  Cameroon » — https://zenodo.org
+- AJOL — https://www.ajol.info : cherché le 02/10. Héberge du travail PME / réseaux sociaux (ex. johasam
+  2025, contexte nigérian) mais **rien de spécifique au Cameroun trouvé sur AJOL même** → repli
+  ResearchGate appliqué. LinkedIn, Rayan Ndip, « Cameroonian SMEs: Invisible on Google » — chercher sur
+  LinkedIn.
+- ⛔ **Retirée le 02/10 :** « BSA, Baltic Screen Academy » (bsa.edu.lv) — **institution inexistante** ; le
+  domaine est la Baltic International Academy (Riga). Le contenu §3 tient sans elle. Voir change log.
 
 1. **« Construis un funnel et pousse du trafic. »** Réalité : la confiance est relationnelle ; on convertit
    après des expositions répétées, pas à un seul toucher.
@@ -243,7 +254,8 @@ Une offre claire a **cinq composants** :
 - Kolonell, « WhatsApp Cold Outreach: 6 Referral Scripts That Convert » — https://kolonell.com
 - Kolonell, « WhatsApp Business : 6 scripts d'apporteur qui convertissent » (FR) — https://kolonell.com
 - Ray Edwards, PASTOR Copywriting Framework — https://rayedwards.com
-- Mapsleads, « Cold Outreach Copywriting Frameworks: The Complete Guide » — https://www.mapsleads.co ⚠️ **domaine parqué, voir change log**
+- **PAS** — formule du **domaine public, pas d'attribution canonique unique**. *(source mapsleads retirée
+  le 02/10 : domaine parqué, page morte)*
 - Buzzbip, « 50 French WhatsApp Templates for African Businesses » — https://buzzbip.com
 
 1. **Ce qui sera fait, en mots simples.**
@@ -260,6 +272,40 @@ challenger le statu quo → autorité empruntée → hook fort.
 test » · la copie camerounaise est **chaude, directe, spécifique** — pas polie, pas formelle, pas
 IA-sonnante · les règles WhatsApp (2–3 phrases, pas de puces, pas de signature) **sont** des règles de
 copywriting, pour tout message client, pas seulement la vente.
+
+**Loi du hook et lisibilité (renvois maison) :** hook dans les 3 premières secondes · étiquette **0,8 s** ·
+phrase **0,3 s par mot** (`CONTENT-LESSONS` §10.4) · **falaise à 0:02** (`CONTENT-LESSONS` §12) · on copie
+la **structure**, jamais les assets (`CONTENT-LESSONS` §15). Ces nombres gouvernent toute copie produite.
+
+### §8.5 · Couches de langue — FR/EN
+
+**La copie client pour les clients de Douala est FR-first, EN-secondary. La copie client pour les clients
+de Buea est EN-first, FR-secondary. Voix et ton identiques dans les deux — voir
+`sales/CLIENT-MESSAGING-RULES.md`.**
+
+### §8.6 · Garde-fou de conformité — PAS/PASTOR sur produit de santé (rédigé le 02/10)
+
+**R1 s'applique. L'étape Agitate remplace le geste, la fonction ou la conséquence — jamais le symptôme,
+la cause ou le diagnostic.**
+
+Support praticien (recherche du 02/10) : HMS Consultants, « Copywriting Frameworks That Work in
+Healthcare » (hmsconsultants.in — blog de consultant : **support, pas source canonique**) — même règle
+énoncée : au stade Agitate, « expand the problem… **beyond just the medical symptoms** », montrer ce que
+ça coûte dans la vie quotidienne (les moments manqués, le temps perdu), pas le diagnostic ; SPIN décrit
+comme « clarté, pas pression ».
+
+| Étape PAS | ✅ Conforme santé | ⛔ Non conforme |
+|---|---|---|
+| Problem | la situation, le geste (« vous plissez les yeux en fin de journée ») | le symptôme nommé (« maux de tête ») |
+| Agitate | la conséquence de vie (l'écran du soir, la route de nuit) | la cause ou le diagnostic (« c'est votre vue ») |
+| Solve | l'examen, l'essai, le conseil | la promesse de guérison |
+
+### §8.7 · Lacune ouverte — corpus de scripts WhatsApp FR réels
+
+Recherche du 02/10 : **rien de crédible** — uniquement des gabarits vendor (getalead, cognism, zendesk,
+technique-de-vente) et des scripts **téléphoniques**, aucune vraie conversation WhatsApp africaine
+anonymisée ayant closé. **Lacune ouverte**, notée au rapport du vendredi. En attendant, nos propres fils
+(DM OPTIQUE, avec accord écrit du client) sont le corpus de départ.
 
 **Principes B2B marchés africains :** les sociétés formelles exigent la **traçabilité fiscale** — proforma,
 RIB, reçu tamponné d'avance = confiance corporate immédiate · cadrer « remote » comme vitesse, « local »
@@ -299,3 +345,18 @@ service sur DM OPTIQUE, `ads/variant-messages.md`) · §8 (règles de messagerie
 `sales/CLIENT-MESSAGING-RULES.md`) · §6 (pré-vol = routage déterministe, état dans le dépôt). **À tester la
 semaine prochaine :** objectif CTWA « Engagement/Leads » vs « Traffic » sur le test S2 · la preuve de
 terrain §5 (captures de DMs comme preuve d'attribution).
+
+**2026-10-02 (soir) · correctifs sources + amendements §8 + brief test unique + premier rapport hebdo.**
+- §1 : ILO SIYB conservé, note ajoutée *(403 aux fetchers ; vérifier manuellement)*.
+- §3 : **bsa.edu.lv retiré** (institution inexistante) ; remplacé par Wantchami et al. 2020 (Buea) + Eteki
+  2024 (Maroua) via le repli ResearchGate autorisé ; AJOL cherché le 02/10 — rien de spécifique au
+  Cameroun sur AJOL même (johasam 2025, contexte nigérian, y est hébergé).
+- §8 : **mapsleads retiré** ; PAS noté domaine public sans attribution canonique ; Ray Edwards (PASTOR)
+  confirmé vivant. Amendements clos : lisibilité 0,8 s / 0,3 s par mot (§10.4) + falaise 0:02 (§12) +
+  §15 renvoyés dans §8 ; **§8.5** couches de langue FR/EN ; **§8.6** garde-fou PAS/PASTOR santé rédigé ;
+  **§8.7** corpus WhatsApp FR = lacune ouverte.
+- Recherche commissionnée : garde-fou conformité → support praticien trouvé, garde-fou rédigé · corpus
+  WhatsApp FR réel → rien de crédible, lacune ouverte (au rapport vendredi).
+- `clients/dm-optic/ads/campaign-brief.md` créé : test unique mois 1 (W1-A, 5 000 FCFA) ; modèle
+  multi-variantes §4 reporté au mois 2 (décision King : ne pas construire l'échelle qu'on n'a pas gagnée).
+- `content/pipeline/reports/2026-W40-2026-10-02.md` créé : premier rapport hebdomadaire.
