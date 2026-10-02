@@ -252,3 +252,61 @@ côté droits : **la piste audio d'un livrable est la nôtre ou elle est libre.*
 **Origine.** Lot du 02/10 — les trois vidéos envoyées par King (Grow with Alex · Ben Heath · Ryan
 Collins). Dans sa démo, Grow with Alex utilise **le son de la pub Gucci originale** : pour un tutoriel,
 sans conséquence ; pour une publicité commerciale au nom d'un client, non.
+
+## 16 · Leçons de campagnes — Bluleadz « 30 best marketing campaigns of all time » (02/10/2026)
+
+**Source :** bluleadz.com/blog/20-of-the-best-marketing-campaigns-of-all-time (30 campagnes, chargé le
+02/10). Tâche : « learn and integrate ». Filtre : ce qui tient pour une clinique/école/opticien au
+Cameroun, petit budget, funnel WhatsApp, et nos règles debout. Le reste est **rejeté avec raison**.
+
+### Adopté — ce qui renforce des règles déjà écrites
+
+1. **Une campagne de vérité contre le marché informel** (American Legacy « Truth »). « Truth » a fait
+   reculer le tabac en **poussant contre les mensonges** du secteur. Notre mois 1 DM OPTIQUE est
+   exactement ça : **inscrit ONOC, contrôlé, trouvable** — ce que le vendeur informel ne peut pas dire.
+   → Confirme §3 et le verrou « mois 1 = confiance » : la vérité vérifiable **est** la créa.
+2. **L'honnêteté du numéro deux** (Avis « We Try Harder »). Avis a transformé « on n'est pas les plus
+   gros » en preuve d'effort. Transposable : *« pas la plus grande enseigne de Douala — mais inscrit,
+   nommé, et là »*. → Renforce R1/§8 : on ne prétend pas, on constate. Jamais « meilleur », toujours
+   « vérifiable ».
+3. **Personnaliser = nommer** (Coca-Cola « Share a Coke »). Le nom sur la bouteille a rendu le produit
+   personnel. Notre équivalent, déjà verrouillé : **nommer les montures** (« la Bonabéri ») et **un
+   message pré-rempli par variante** (§15, `variant-messages.md`). Le nom propre est la personnalisation
+   à 0 FCFA.
+4. **Un seul objet, répété des années** (Absolut « Bottle » : 1 500 pubs, 25 ans, 2,5 % → la moitié du
+   marché). La répétition d'**un objet reconnaissable** construit la marque. Notre équivalent : la
+   **monture en objet-héros** (jamais portée, §R2) et le **tableau de vision** comme signature
+   pré-photos. → Confirme §13 et « frame 0 = vignette » (§10.4).
+5. **Vidéo de lancement courte, directe, sans budget** (Dollar Shave Club). Une vidéo simple, honnête,
+   qui dit ce qu'on vend et pourquoi, a lancé la marque. C'est notre UGC IA / vidéo fondateur : **court,
+   franc, une idée**, pas de production coûteuse. → Confirme §12.5 (15–22 s) et la loi des 2 s (§12.1).
+6. **Viser l'acheteur, pas l'utilisateur** (Old Spice vendu aux femmes ; 186 réponses vidéo → viral).
+   Deux leçons : parler à **celui qui décide**, et **répondre vite et personnellement** (notre WhatsApp
+   répond dans l'heure). → Confirme §3 (compter les conversations) et le CTA WhatsApp.
+7. **Une réplique de clôture qu'on retient** (Dos Equis « I don't always drink beer… »). La chute
+   citable. Notre équivalent : le **payoff frame** (« Ça s'essaie. Sur votre visage, pas sur un écran. »).
+   → Confirme la structure hook → payoff → CTA (`scripts/README.md`).
+8. **Le réel, non retouché** (Aerie #AerieREAL, Dove). Le refus du retouché a fait la confiance. Notre
+   équivalent verrouillé : **photos réelles, jamais les illustrations IA** (décision 02/10), et
+   « jamais générer la réalité du client » (§10.4). → Confirme R2/R3 et §14.
+
+### Rejeté — avec raison (conflit avec nos règles debout)
+
+| Campagne | Mécanique | Pourquoi rejeté ici |
+|---|---|---|
+| Apple « Get a Mac » · Wendy's « Where's the Beef? » | comparaison à un concurrent | **⛔ jamais nommer un concurrent** (§2). On garde la structure problème/solution, jamais le nom |
+| Pepsi · Snickers · Dos Equis (casting) | célébrités | budget nul + **aucun témoignage/célébrité inventé** (§2) |
+| Red Bull Stratos · BMW « The Hire » | stunt / films à gros budget | hors budget ; mais « l'événement est la pub » reste vrai → notre **visite sur place = contenu** |
+| Budweiser « Wassup » · Bud Light « Dilly Dilly » · IHOb | meme / gimmick | ton « warm, clean, direct » (pas meme) ; IHOb = buzz qui ment, **confiance** à l'opposé de notre mois 1 |
+| Marlboro Man | personnage de style de vie sur un produit de santé | produit de santé = **jamais de promesse de style de vie** ; risque réglementaire |
+
+### À proposer à King (pas tranché)
+
+- **« Vous n'êtes pas vous quand… »** (Snickers) : la structure *état → transformation* est forte, mais
+  sur un produit optique elle frôle le symptôme (R1). **Proposer seulement** en version non médicale
+  (« Vous n'avez pas porté vos lunettes depuis… »), attendre son oui.
+- **Contenu saisonnier rituel** (Coca-Cola « Holidays Are Coming ») : une récurrence annuelle (rentrée,
+  fêtes) pourrait ancrer le calendrier. À planifier au mois 2+, pas maintenant.
+
+**Règle de lecture :** aucune de ces leçons ne remplace une décision verrouillée. En cas de conflit, la
+décision verrouillée gagne (§2, §11, §14, §15) — et on le dit, on ne le fait pas en silence.
