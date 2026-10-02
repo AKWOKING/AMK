@@ -4782,3 +4782,18 @@ que le bug prose-vs-data du 21/09. Conséquences corrigées le 02/10 (lot LOT_02
 `discovery_via_their_ad` (nouvelle catégorie, veille des pubs Meta) · **contenu → inbound = 0 pour 0** ·
 OraCare déclaré MORT par King → stage `lost` · règle ajoutée au KB : ne jamais déduire le source_detail d'un
 lead content de « la seule vidéo publiée » — vérifier d'abord que le lead a vu la vidéo.
+
+## ven 02/10 (nuit) — RESET PIPELINE (deuxième ruling du jour) + CLEANUP ORACARE
+- **OraCare sort du CRM** : fiche supprimée, ligne CSV supprimée, entrées de vues supprimées. Restent
+  uniquement `demos/concept-oracare-v2.html` + `v3.html` (relabelés « reusable concept — dental/medical
+  clinics, do not delete ») et `sales/Deep-Dive-Research.md` (catégorie dentistes). NB : `v1` n'existait
+  pas dans `demos/` (seuls v2, v3 et le script de build). Journaux historiques (ce fichier, CONTRADICTIONS)
+  conservés : ils racontent l'erreur d'attribution, pas un lead actif.
+- **Bulk close** : COMOBIL → lost (jamais contacté, aucun déclencheur de résurrection) ; 20 leads contactés
+  → parked avec motif daté « bulk close 02/10, ruling King » (fils clos ; dépark si retour spontané).
+  Le pipeline actif = 4 leads (Cristallin, Labiomed, Cavisa, Univers Optique) + DM OPTIQUE en closing +
+  St Theresa (relance 12/10 tenue, permission d'octobre) + 47 lignes jamais contactées (stock, pas de
+  follow-up actif).
+- Univers Optique : intelligence marché loguée en KB §3 (bundle « something + website ») + opportunité
+  virtual try-on → recherche `clients/univers-optique/research/try-on-options-2026-10.md`. Aucun contact
+  avant lecture de King.

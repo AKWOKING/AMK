@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Bonamoussadi, Carrefour Etoo) |
 | Langue de contact | FR/EN |
-| Étape | qualifying |
+| Étape | parked |
 | WhatsApp | 696 13 98 19 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |
@@ -20,6 +20,10 @@
 | Relances envoyées | 0 |
 | Source | directory |
 | Détail source | Remote-Sweep section C - Lun-Ven 07h-19h, Sam 07h-13h |
+
+## Pourquoi il est écarté
+
+Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, avait répondu, aucun mouvement depuis ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.
 
 ## Contradiction résolue (M2)
 
@@ -33,7 +37,7 @@ DEMANDE DE RENDEZ-VOUS - LE PLUS FORT SIGNAL DE LA CAMPAGNE. Le 19/09 a 20:20, U
 
 ## Prochaine action
 
-**Action fixée au 2026-09-25** — décision humaine, elle prime sur le rythme automatique. **RENDEZ-VOUS CONFIRMÉ — vendredi 25/09 à 13 h**, à leur laboratoire (Carrefour Etoo). Il a choisi 13 h lui-même le 23/09 à 21:42 (« 13h c'est bon pour moi »), King a accepté à 21:47. Prix posé le 23/09 13:30 : 150 000 FCFA, **acompte 75 000 à prendre en séance**, grille tarifaire standard déjà envoyée. À emporter : contrat Standard ×2, grille corrigée, et le formulaire de réservation — promis dans le message de 13:30, PAS ENCORE CONSTRUIT
+**Aucune.** Parqué — Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, avait répondu, aucun mouvement depuis ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 

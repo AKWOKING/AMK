@@ -5,7 +5,7 @@
 
 ## La règle (corrigée le 19/09)
 
-Le playbook §A4 disait « les 2 leads à 18 (COMOBIL, OraCare) ». **C'était faux** : COMOBIL est parké depuis le 14/09 (`leads/CONTRADICTIONS.md` §1).
+Le playbook §A4 codait en dur une kill list figée (« les deux 18 »). **C'était faux** : l'un d'eux était déjà parké depuis le 14/09 (`leads/CONTRADICTIONS.md` §1).
 
 > **score >= 18 · ET étape non parkée · ET non écartée · ET pas de réponse en attente**
 
@@ -27,7 +27,7 @@ Le playbook §A4 disait « les 2 leads à 18 (COMOBIL, OraCare) ». **C'était f
 
 | Lead | Score | Étape |
 |---|---|---|
-| COMOBIL – Collège Moderne Bilingue Les Lauréats | 18 | ⏸ Parqué |
+| COMOBIL – Collège Moderne Bilingue Les Lauréats | 18 | ❌ Perdu |
 
 ## Ce qui alimente la liste quand elle est vide
 

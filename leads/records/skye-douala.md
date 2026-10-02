@@ -10,7 +10,7 @@
 | Type | clinic |
 | Ville | Douala (Bonamoussadi) |
 | Langue de contact | FR/EN |
-| Étape | qualifying |
+| Étape | parked |
 | WhatsApp | 677 79 69 99 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |
@@ -21,13 +21,17 @@
 | Source | google_maps |
 | Détail source | Douala sweep 15/09 — dentaire Bonamoussadi |
 
+## Pourquoi il est écarté
+
+Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.
+
 ## Notes
 
 Message 16/09. Relance M+2 (FU1) partie 18/09 20:22. Concept live : concept-skye.vercel.app · 22/09 (soir) — relance 2/3 réécrite SANS reproche et envoyée par King : une question sur LEUR contenu (les horaires et les soins affichés sont-ils justes ?), jamais sur leur silence. Prochaine et DERNIÈRE touche : 29/09, puis parked daté.
 
 ## Prochaine action
 
-**Action fixée au 2026-09-29** — décision humaine, elle prime sur le rythme automatique. Relance 2/3 envoyée le 22/09 au soir (réécrite sans reproche). DERNIÈRE touche : 29/09, puis parked daté
+**Aucune.** Parqué — Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 

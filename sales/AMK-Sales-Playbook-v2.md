@@ -39,10 +39,10 @@ A salesman has 3 jobs: **maximize opportunities → convert the highest % → st
 - **No conversation ends without a scheduled next step.** Not "let me think about it" → silence. Always: "I'll send the preview Tuesday 09:00 — I'll ping you the moment it's out." Both calendars know what happens next.
 
 ### A4. The Kill List
-- The 2 leads at 18 (COMOBIL, OraCare) + any lead who just said yes → written on a visible "TODAY" list (CRM top rows). They get the extra attention daily until they close or park.
+- ~~The 2 leads at 18 (COMOBIL, OraCare)~~ — frozen lists are always wrong (corrected 19/09). The "TODAY" list is **derived daily** (score ≥ 18 · not parked/disqualified · not just contacted) plus anyone who just said yes. `leads/KILL-LIST.md` is generated; it is the only kill list.
 
 > **⚠️ CORRECTION — 19 Sep 2026 (CRM M2, `leads/CONTRADICTIONS.md` §1).** This line is **wrong as written** and must not be followed literally: **COMOBIL has been `parked` since 14 Sep** (King's decision — the DAILY OPS tab says so itself), so it does not belong on a "TODAY" list. An earlier audit claim that DAILY OPS contradicted `Pipeline-Status` on this was **checked and infirmed** — both files agree.
-> **The rule, corrected:** the kill list is **derived** from the CRM, never written in hard: *score ≥ 18 **and** stage ≠ `parked` **and** stage ≠ `disqualified` **and** the lead has not just been contacted.* With the current data that leaves **OraCare** alone, plus anyone who replies. `KILL-LIST.md` will be generated from `leads/CRM.csv` in M6 — this paragraph then becomes the spec for that generator.
+> **The rule, corrected:** the kill list is **derived** from the CRM, never written in hard: *score ≥ 18 **and** stage ≠ `parked` **and** stage ≠ `disqualified` **and** the lead has not just been contacted.* `KILL-LIST.md` IS generated from `leads/CRM.csv` (since 22/09) — this paragraph is its spec. Cleanup 02/10 : le lead nommé ici a été retiré du CRM ; l'historique vit dans `sales/Activity-Log.md`.
 
 ### A5. Referrals: "Who do you know?"
 > A new rep who asked "who would you like to bring?" outperformed #2 by ~50% — only 1 in 4 refers, but referrals close at 80–90%. CAC effectively halves.

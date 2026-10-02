@@ -10,7 +10,7 @@
 | Type | other |
 | Ville | Douala (Bali) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | parked |
 | WhatsApp | 670 27 60 65 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |
@@ -21,13 +21,17 @@
 | Source | directory |
 | Détail source | Douala sweep — 2 039 likes FB, pas de site |
 
+## Pourquoi il est écarté
+
+Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.
+
 ## Notes
 
 3/3 portes le 17/09 (compte WhatsApp Business + catalogue + activité du jour ; mono-boutique = propriétaire). Message envoyé 17/09. Live : amk-cm.vercel.app/opticien/. Relances : dim 20 / mar 22 / ven 25. · 22/09 (soir) — deuxième message envoyé par King, sur le créneau que le prospect avait lui-même fixé (« dim 20 / mar 22 / ven 25 »). Prochaine touche : vendredi 25/09, et ce sera la dernière (trois messages maximum, puis parked daté).
 
 ## Prochaine action
 
-**Action fixée au 2026-09-25** — décision humaine, elle prime sur le rythme automatique. 2ᵉ message envoyé le 22/09 au soir (créneau fixé par le prospect lui-même). DERNIÈRE touche : vendredi 25/09, puis parked daté
+**Aucune.** Parqué — Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 

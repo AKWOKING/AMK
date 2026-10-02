@@ -10,7 +10,7 @@
 | Type | other |
 | Ville | Douala (Akwa + Brazzaville) |
 | Langue de contact | FR |
-| Étape | demo |
+| Étape | parked |
 | WhatsApp | 696 698 136 |
 | Numéro vérifié | yes |
 | Profil vu | Référence Optique M... (tronqué à l'écran) |
@@ -22,13 +22,17 @@
 | Site vérifié le | 2026-09-24 |
 | Site existant | https://cinqsens.vercel.app |
 
+## Pourquoi il est écarté
+
+Parké le 02/10 — bulk close (ruling King) : la balle est chez eux (marqueur AWAIT du lot 02/10), aucun mouvement ; **dépark immédiat si retour**. Historique conservé.
+
 ## Notes
 
 LOT 4 (préparé le 24/09 au soir, RIEN N'EST ENVOYÉ). Titulaire au registre : KOUGANG GUIFFO Casimir. Deux cabinets, dans ses mots : « Brazzaville entre le Carrefour Brazzaville et l'Ecole Saint Bruno · Akwa entre le Carrefour Douala Bar et le Carrefour Singer face Collège King Akwa. Tout sur la vue. » Horaires 08:00→18:00. Autres numéros publiés : 696 663 139 · 656 036 312. Porte A à vérifier à l'écran. Message : `sales/Send-BATCH-2026-09-24-Opticiens-4.md` §1.
 
 ## Prochaine action
 
-**Répondre dans l'heure.** Une réponse humaine est en attente : c'est la priorité absolue (règle des 90 secondes).
+**Aucune.** Parqué — Parké le 02/10 — bulk close (ruling King) : la balle est chez eux (marqueur AWAIT du lot 02/10), aucun mouvement ; **dépark immédiat si retour**. Historique conservé.. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 

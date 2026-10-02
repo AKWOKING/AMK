@@ -1090,22 +1090,6 @@ def _opt_rows():
     return out
 
 # ── Le lead hors classeur qui vit dans un autre onglet du même fichier ──────────
-ORACARE = dict(slug="oracare-buea", org="OraCare Dental Clinic (Oracare237)",
-               city="Buea (Molyo)", org_type="clinic", language="EN",
-               wa_number="672 52 66 86", wa_verified="yes", contact_channel="WhatsApp",
-               source="content_video", source_detail="Premier lead de la campagne — vérifié par King",
-               stage="parked", contacted="Yes", reply="No", demo="Yes",
-               last_send_state="sent", follow_ups_sent="1",
-               notes="Message 1 lundi 14/09. Concept live : oracare-concept.vercel.app (v3, prix + assistant). "
-                     "⚠️ N'a JAMAIS répondu : message non lu attribué à tort le 18/09, corrigé. 21/09 17:43 — "
-                     "message de CLÔTURE envoyé (« last note from me, then I stop ») : le lead est PARKED, et "
-                     "cette phrase est classée « à ne plus jamais écrire » (Enregistrements-2026-09-21-SOIR.md). "
-                     "22/09 — un brouillon de relance a été refusé par King : il appelait le dentiste « Dr Njie » "
-                     "alors que son nom est ARNOLD NKAFU (fichiers du 14/09), et il reprochait son silence un jour "
-                     "après avoir promis de se taire. UN SEUL message reste permis, lundi 28/09 : léger, sans "
-                     "reproche, justifié par du NEUF (les prix et la prise de RDV 24/7 sont sur la page).")
-
-
 def norm_slug(name: str) -> str:
     import re
     import unicodedata
@@ -1866,21 +1850,7 @@ LOT_0210_KING = {
             "L'affichage « Répondre d'abord » était périmé : la balle est chez elle depuis le "
             "24/09 21:35 (aperçu annoncé, livré).",
     },
-    "oracare-buea": {
-        "stage": "lost", "stage_since": "2026-10-02",
-        "source": "discovery_via_their_ad",
-        "source_detail": "discovered via OraCare's own Meta ad, Instagram/Facebook, [date not logged]",
-        "disqualification_reason":
-            "02/10 — King : « OraCare is dead » → lost. Contacté (msg 1 le 14/09, relance le 16/09, "
-            "clôture le 21/09), jamais de réponse. Était en jeu, ne s'est pas clos.",
-        "Conversation_extra":
-            "02/10 — ruling de King : OraCare est MORT → stage lost. Correction de source : ce n'était "
-            "PAS content_video — la découverte s'est faite via la PUB META d'OraCare elle-même "
-            "(Instagram/Facebook), date de vue non journalisée → nouvelle source "
-            "`discovery_via_their_ad` (veille des pubs des prospects/concurrents sur Meta). "
-            "Règle née du bug : ne jamais déduire source_detail d'un lead content de « la seule vidéo "
-            "publiée » — vérifier que le lead a vu la vidéo.",
-    },
+
     "st-theresa-international-bilingual-comprehensive-college-sti": {
         "Follow-up date": "2026-10-12",
         "Conversation_extra":
@@ -2062,6 +2032,162 @@ LOT_0210_KING = {
 }
 
 
+# ── RESET PIPELINE DU 02/10/2026 (deuxième ruling du jour) — bulk close ────────────────────────────
+# King : « Everything on the "we have contacted" list dead, except the four » (Cristallin, Labiomed,
+# Cavisa, Univers Optique) + DM OPTIQUE en closing à part. COMOBIL → lost. Les 20 contactés restants →
+# parked avec motif daté. PAS de suppression de lignes : l'historique reste pour l'analyse de motifs.
+# OraCare, lui, SORT du CRM (cleanup séparé) : fiche, ligne CSV, entrées de vues — seuls restent les
+# concepts réutilisables `demos/concept-oracare-v*.html` et `sales/Deep-Dive-Research.md`.
+LOT2_0210_KING = {
+    "comobil-college-moderne-bilingue-les-laureats": {
+        "stage": "lost", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "02/10 — King : « COMOBIL dead » → lost (ruling reset pipeline). Jamais contacté, aucune "
+            "reprise prévue ; pas de déclencheur de résurrection identifié. Historique conservé.",
+    },
+    "uni-labo-bonamoussadi": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, avait répondu, aucun mouvement depuis ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "centre-medical-de-bonanjo": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, avait répondu, aucun mouvement depuis ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "el-roi-optique-medicale": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "net-optique-medical": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "k-vision-care": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "cabinet-optique-la-retine": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "cinq-sens-optique-medicale": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King) : la balle est chez eux (marqueur AWAIT du lot 02/10), aucun mouvement ; **dépark immédiat si retour**. Historique conservé.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "skyoptic-akwa": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "lumumba-optique-medicale": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "la-ligne-optic-akwa": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King) : la balle est chez eux (marqueur AWAIT du lot 02/10), aucun mouvement ; **dépark immédiat si retour**. Historique conservé.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "m-dina-optic": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "espace-lunetterie": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "4m-optique-akwa": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "maff-optique": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "doyoan-optic": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "megaoptic": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "fashion-vision": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "skye-douala": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "yaks-douala": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "opticien-bali-douala": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+}
+
+
 def _apply_state(out: list, table: dict, name: str) -> None:
     """Applique une table d'état au relevé : elle ÉCRASE les champs scalaires qu'elle cite (elle est
     plus récente que tout le monde) et APPEND les deux champs de récit (`Conversation_extra`,
@@ -2165,7 +2291,6 @@ def _apply_jour(out: list) -> None:
     _apply_state(out, REPONSE_2409_CS, "REPONSE_2409_CS")
     _apply_state(out, REPONSE_2409_LL, "REPONSE_2409_LL")
     _apply_state(out, ECARTES_2409, "ECARTES_2409")
-    _apply_state(out, LOT_0210_KING, "LOT_0210_KING")
 
 
 
@@ -3543,8 +3668,9 @@ def main() -> int:
             rec["Notes"] = (str(rec.get("Notes") or "") +
                             f" · ⚠️ NE PAS ENVOYER sur {n} : {why}.").strip(" ·")
 
-    # 2 · OraCare — même fichier, autre onglet
-    out.append({"School": ORACARE["org"], **ORACARE})
+    # 2 · OraCare — RETIRÉ DU CRM le 02/10 (cleanup, ruling King) : plus de ligne, plus de fiche.
+    #     Restent uniquement les concepts réutilisables `demos/concept-oracare-v*.html` et les
+    #     références de `sales/Deep-Dive-Research.md` (catégorie dentistes).
 
     # 2b · les envois du 18/09 au soir (absents de l'audit du matin)
     for p in SENT_1809:
@@ -3654,6 +3780,8 @@ def main() -> int:
     _apply_dead(out)
     _apply_fiche(out)
     _apply_state(out, REVISION_2409, "REVISION_2409")
+    _apply_state(out, LOT_0210_KING, "LOT_0210_KING")
+    _apply_state(out, LOT2_0210_KING, "LOT2_0210_KING")
     check_reply_types(out)
     check_tables_sans_doublon()
 

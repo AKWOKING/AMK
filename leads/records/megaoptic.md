@@ -10,7 +10,7 @@
 | Type | other |
 | Ville | Douala |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | parked |
 | WhatsApp | 698 82 10 27 |
 | Numéro vérifié | yes |
 | Contact | MVENG ATEBA Zénon |
@@ -21,13 +21,17 @@
 | Source | directory |
 | Détail source | Annuaire officiel ONOC + Maligah |
 
+## Pourquoi il est écarté
+
+Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.
+
 ## Notes
 
 VAGUE 1 OPTICIENS (21/09). Titulaire public : MVENG ATEBA Zénon. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir. · 24/09 — PREMIER LOT D'OUTREACH (préparé, PAS ENCORE ENVOYÉ) : numéro du tableau de l'Ordre (698 82 10 27), titulaire public MVENG ATEBA Zénon. Recherche et message écrits dans `sales/Send-BATCH-2026-09-24-Opticiens.md` ; vérifier le numéro sur WhatsApp avant d'envoyer (wa_verified = unknown). · 24/09 12:03 — PREMIER LOT, ENVOYÉ par King. Message livré (✓✓). Profil WhatsApp : « MEGA Optique » (numéro non enregistré dans le téléphone : le nom vient du profil, donc c'est bien la boutique). Aucune réponse au relevé du soir. Rappel du piège : un MEGA OPTIC de Limbe existe (Mveng Ateba Lionel, 698 915 192) — si la réponse vient de Limbe, on s'arrête. · Vitrine : page Facebook MegaOptic, avec une vidéo qui liste les ASSURANCES avec lesquelles ils travaillent (angle identique au Cristallin : ils parlent déjà assurances à leur audience).
 
 ## Prochaine action
 
-**0 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**Aucune.** Parqué — Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 

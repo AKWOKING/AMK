@@ -10,7 +10,7 @@
 | Type | other |
 | Ville | Douala (Akwa) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | parked |
 | WhatsApp | 655 649 803 |
 | Numéro vérifié | unknown |
 | Contacté | Yes |
@@ -19,13 +19,17 @@
 | Source | onoc_registry |
 | Détail source | Registre ONOC, Littoral ligne 119 (inscription 139, arrêté 0484), lu le 24/09 · Maligah (ETS SKY OPTICS, Bd de la République, BP 15211) · Ayila'a |
 
+## Pourquoi il est écarté
+
+Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.
+
 ## Notes
 
 LOT 4 (préparé, PAS ENVOYÉ). Titulaire au registre : LAMBO Dorice. Deux annuaires le décrivent : Maligah — « ETS SKY OPTICS, Boulevard De La République, Akwa, BP 15211 », avec un fixe (233 42 75 00) ; Ayila'a — « Sky Optics Akwa, face BENEFICIAL LIFE INSURANCE », avec un prix affiché par l'annuaire (« à partir de 10 000 XAF »). Porte A à vérifier. Message : lot 4 §2.
 
 ## Prochaine action
 
-**0 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**Aucune.** Parqué — Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 

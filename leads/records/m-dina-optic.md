@@ -10,7 +10,7 @@
 | Type | other |
 | Ville | Douala |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | parked |
 | WhatsApp | 699 93 93 34 |
 | Numéro vérifié | yes |
 | Contact | BALLA Saïdou |
@@ -23,7 +23,7 @@
 
 ## Pourquoi il est écarté
 
-aucune vitrine à lui (passe du 22/09) — hors profil d'envoi
+Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.
 
 ## Notes
 
@@ -31,7 +31,7 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : BALLA Saïdou. Probleme : etre dan
 
 ## Prochaine action
 
-**0 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**Aucune.** Parqué — Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 

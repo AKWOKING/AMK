@@ -10,12 +10,11 @@
 | `onoc_registry` | 7 |  |
 | `pass_vitrine` | 4 |  |
 | `google_maps` | 2 | Sweep cartographique — dentaires de Bonamoussadi/Logbessou. |
-| `discovery_via_their_ad` | 1 | Trouvé via la propre publicité Meta du cabinet (Instagram/Facebook) — veille de ce que les prospects publient. Catégorie créée le 02/10 (King) : on suit séparément si cette veille produit des leads. |
 | `walk_in` | 1 | Affiche relevée sur place par King. |
 | `facebook` | 1 | Page Facebook identifiée comme seul canal vivant. |
 
 ## Ce que ce tableau dit
 
-- **Contenu → inbound = 0 pour 0 (corrigé le 02/10).** Le seul lead jamais attribué au contenu (OraCare) venait en réalité de **sa propre pub Meta** — l'attribution était une inférence (« la seule vidéo publiée »), pas un fait. Le canal contenu n'a produit **aucun lead qualifié à ce jour** : c'est une donnée, pas une opinion.
+- **Contenu → inbound = 0 pour 0 (corrigé le 02/10).** Le seul lead jamais attribué au contenu (retiré du CRM le 02/10) venait en réalité de **sa propre pub Meta** — l'attribution était une inférence (« la seule vidéo publiée »), pas un fait. Le canal contenu n'a produit **aucun lead qualifié à ce jour** : c'est une donnée, pas une opinion.
 - **Les 38 lignes d'origine n'ont aucune source écrite.** On ne saura jamais si ces écoles ont été trouvées par Google, Facebook ou bouche-à-oreille. **À partir du 15/09, chaque ligne porte sa source.**
 - **`directory` est la première source.** Les annuaires de Douala sont le meilleur gisement — mais leçon du 19/09 : **sur 19 labos tirés des annuaires, 13 seulement avaient WhatsApp (68 %). Un annuaire donne un numéro, il ne dit pas si le numéro reçoit WhatsApp.**

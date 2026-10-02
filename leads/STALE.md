@@ -7,14 +7,6 @@
 
 | Lead | Étape | Âge | Relances | Trace |
 |---|---|---|---|---|
-| El Roï Optique Médicale | qualifying | 8 j | 0/3 | `L3651` |
-| Net Optique Médical | qualifying | 8 j | 0/3 | `L3652` |
-| K Vision Care | qualifying | 8 j | 0/3 | `L3909` |
-| Cabinet d'Optique la Rétine | qualifying | 8 j | 0/3 | `L4223` |
-| Médina Optic | qualifying | 8 j | 0/3 | `L3520` |
-| Espace Lunetterie | qualifying | 8 j | 0/3 | `L3452` |
-| 4M Optique Akwa | qualifying | 8 j | 0/3 | `L3590` |
-| Maff Optique | qualifying | 8 j | 0/3 | `L3451` |
-| Doyoan Optic | qualifying | 8 j | 0/3 | `L3589` |
-| MegaOptic | qualifying | 8 j | 0/3 | `L3520` |
-| Fashion Vision | qualifying | 8 j | 0/3 | `L3637` |
+| *(aucun)* | | | | |
+
+**Aucun lead ne dort.** Tous les envois du 18 et 19/09 ont moins de deux jours — **et c'est exactement pour ça que ce fichier est généré : demain, il changera tout seul.**

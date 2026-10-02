@@ -10,7 +10,7 @@
 | Type | other |
 | Ville | Douala (Akwa) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | parked |
 | WhatsApp | 695 474 364 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |
@@ -20,13 +20,17 @@
 | Source | directory |
 | Détail source | Mont-Pandi, catégorie Opticiens (fiche 666), lue le 24/09 |
 
+## Pourquoi il est écarté
+
+Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.
+
 ## Notes
 
 LOT 3 (préparé le 24/09, PAS ENVOYÉ). Repère publié : Akwa, « non loin de l'ancien Cinéma Étoile ». Horaires publiés 08:00→18:00. · 24/09 — TROISIÈME LOT, ENVOYÉ par King (heure et accusé de réception non relevés). Numéro utilisé : 695 474 364. Aucun second numéro publié.
 
 ## Prochaine action
 
-**0 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**Aucune.** Parqué — Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 

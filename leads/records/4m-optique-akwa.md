@@ -10,7 +10,7 @@
 | Type | other |
 | Ville | Douala |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | parked |
 | WhatsApp | 679 27 06 64 |
 | Numéro vérifié | yes |
 | Contact | KAPTUE TAFFO Virginie |
@@ -21,13 +21,17 @@
 | Source | directory |
 | Détail source | Annuaire officiel ONOC + Maligah |
 
+## Pourquoi il est écarté
+
+Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.
+
 ## Notes
 
 VAGUE 1 OPTICIENS (21/09). Titulaire public : KAPTUE TAFFO Virginie. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir. · 24/09 — DEUXIÈME LOT (préparé, PAS ENCORE ENVOYÉ) : numéro du registre (679 27 06 64), repli 699 09 25 23 (réseau de soins). Titulaire public KAPTUE TAFFO Virginie. Trois numéros circulent — ne jamais dire que sa fiche Google n'existe pas : elle existe et elle est vide. Recherche et message dans `sales/Send-BATCH-2026-09-24-Opticiens-2.md` ; vérifier le numéro sur WhatsApp avant d'envoyer (wa_verified = unknown). · 24/09 — DEUXIÈME LOT, ENVOYÉ par King (heure non relevée). Numéro utilisé : 679 27 06 64 ; replis disponibles (699 09 25 23 du PDF WTW, 675 01 07 82 de l'annuaire d'entreprises).
 
 ## Prochaine action
 
-**0 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**Aucune.** Parqué — Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 

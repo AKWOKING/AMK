@@ -115,6 +115,17 @@ d'internet élevé (24 %) · connectivité lente (20 %). Donc : mobile-first, l�
 
 ---
 
+### §3.9 · Observation de terrain — ce que les opticiens achètent vraiment (02/10)
+
+Univers Optique (prospect vivant, rdv du 25/09), cité par King : **« offer something + the website to
+opticians »**. Lecture : le site seul ne suffit pas — un opticien veut un **bundle** qui inclut quelque
+chose de **fonctionnel et propre à son métier** (stock, essayage, vitrine vivante). Lui a déjà payé trois
+sites sans valeur ; il n'achètera pas un quatrième objet, il achètera un résultat. Conséquence pour
+l'offre opticiens : présenter le site comme socle + un module fonctionnel (l'essayage virtuel est le
+candidat naturel — recherche dans `clients/univers-optique/research/try-on-options-2026-10.md`). Sa
+deuxième douleur, notée telle quelle : le **remontage** des montures après chaque essayage (« he won't
+have to mount them on the wall each time after the client leaves ») — l'essayage photo résout aussi ça.
+
 ## §4 · Advertising
 
 Les publicités **click-to-WhatsApp (CTWA)** sont le format le plus convertissant en marchés africains : la

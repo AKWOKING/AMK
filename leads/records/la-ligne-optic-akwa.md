@@ -10,7 +10,7 @@
 | Type | other |
 | Ville | Douala (Akwa) |
 | Langue de contact | FR |
-| Étape | demo |
+| Étape | parked |
 | WhatsApp | 683 651 108 |
 | Numéro vérifié | yes |
 | Profil vu | La Ligne Optic |
@@ -20,13 +20,17 @@
 | Source | onoc_registry |
 | Détail source | Registre ONOC, Littoral ligne 109 (inscription 025/2017, arrêté 0533), lu le 24/09 — aucune autre trace publique trouvée |
 
+## Pourquoi il est écarté
+
+Parké le 02/10 — bulk close (ruling King) : la balle est chez eux (marqueur AWAIT du lot 02/10), aucun mouvement ; **dépark immédiat si retour**. Historique conservé.
+
 ## Notes
 
 LOT 4 (préparé, PAS ENVOYÉ). Titulaire : JOUNGO Line Chantale. Aucune page, aucun site, aucune fiche détaillée trouvés : la seule trace publique est le registre. ⚠️ Porte B FAIBLE (§8b : 2/3) — King décide explicitement. Remplaçant dans l'ordre d'envoi.
 
 ## Prochaine action
 
-**Répondre dans l'heure.** Une réponse humaine est en attente : c'est la priorité absolue (règle des 90 secondes).
+**Aucune.** Parqué — Parké le 02/10 — bulk close (ruling King) : la balle est chez eux (marqueur AWAIT du lot 02/10), aucun mouvement ; **dépark immédiat si retour**. Historique conservé.. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 

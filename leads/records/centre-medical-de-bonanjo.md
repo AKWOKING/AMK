@@ -10,7 +10,7 @@
 | Type | clinic |
 | Ville | Douala (Bonapriso, ancien aéroport) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | parked |
 | WhatsApp | 694 57 22 77 |
 | Numéro vérifié | yes |
 | Profil vu | Centre Médical de Bonanjo — Bonapriso |
@@ -24,13 +24,17 @@
 | Détail source | maligah + mondocteur237 (consultation 20 000 FCFA, publique) |
 | Site existant | https://bonanjo.vercel.app |
 
+## Pourquoi il est écarté
+
+Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, avait répondu, aucun mouvement depuis ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.
+
 ## Notes
 
 ⭐ A RÉPONDU. Envoyé 18/09 19:42 (2 coches) → « Bjr merci je vous reviens » le 19/09 à 08:44. Maquette personnalisée envoyée le 19/09 : clients/_mockups/bonanjo.jpg. FAIT DÉCISIF : le Dr Tchaleu figure déjà sur mondocteur237.com (annuaire de prise de rendez-vous) → il cherche déjà des patients en ligne, mais sur la plateforme d'un autre. C'est le profil « paie déjà pour du trafic » (§21.7), notre meilleur angle. Services publics vérifiés (maligah) : neurologie, médecine générale, radiologie, chirurgie, gynécologie, pédiatrie, échographie, accouchement. · Le prix est DÉJÀ posé (13:35, et rappelé dans le fil du 19/09) : à la prochaine vague on ne le répète pas, on ne repose qu'une question de calendrier. Le fait décisif du dossier reste l'annuaire `mondocteur237.com` (honoraires publics) — il paie déjà, ailleurs, pour être trouvé.
 
 ## Prochaine action
 
-**Action fixée au 2026-09-28** — décision humaine, elle prime sur le rythme automatique. Page complète envoyée le 22/09 à 13:35 (deux coches) avec le prix posé, puis relance 16:24 (une coche) : « vos 9 services centralisés pour orienter les patients de Google vers votre WhatsApp ». DÉCISION KING 16:30 : prochaine vague — jeudi 24/09, sans reposer le prix, une question de calendrier seulement
+**Aucune.** Parqué — Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, avait répondu, aucun mouvement depuis ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 

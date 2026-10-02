@@ -59,8 +59,7 @@ STAGE_ORDER = ["won", "delivered", "closing", "offer", "demo", "qualifying",
 
 # Décisions humaines qui priment sur les règles automatiques : slug -> (échéance ISO, note)
 RELANCE_A_JOUR = {
-    "opticien-bali-douala": ("2026-09-25", "2ᵉ message envoyé le 22/09 au soir (créneau fixé par le prospect "
-                                        "lui-même). DERNIÈRE touche : vendredi 25/09, puis parked daté"),
+    # opticien-bali-douala : RETIRÉ le 02/10 — lead parké (bulk close, reset pipeline).
     # oracare-buea : RETIRÉ le 02/10 — King déclare le lead mort (stage = lost, lot LOT_0210_KING).
     # L'échéance du 28/09 ne vaut plus ; la laisser ici ferait relancer un lead clos.
     # midas-touch-optic-center-mitoc : RETIRÉ le 02/10 — sa propre note disait « DERNIÈRE touche :
@@ -77,11 +76,7 @@ RELANCE_A_JOUR = {
                                       "refus — c'est un REPORT MOTIVÉ (pas encore installé). Réponse envoyée "
                                       "dans l'heure ; on ne le relance plus d'ici le 1ᵉʳ octobre, et ce jour-là "
                                       "sans prix ni question de validation : juste « vous êtes en place ? »"),
-    "centre-medical-de-bonanjo": ("2026-09-28", "Page complète envoyée le 22/09 à 13:35 (deux coches) "
-                                      "avec le prix posé, puis relance 16:24 (une coche) : « vos 9 services "
-                                      "centralisés pour orienter les patients de Google vers votre "
-                                      "WhatsApp ». DÉCISION KING 16:30 : prochaine vague — jeudi 24/09, "
-                                      "sans reposer le prix, une question de calendrier seulement"),
+    # centre-medical-de-bonanjo : RETIRÉ le 02/10 — lead parké (bulk close, reset pipeline).
     # Les deux fils « prix posé » du 21/09 : l'échéance vient de ce qui a été ÉCRIT au client,
     # pas d'un calcul M+2. Univers Optique = l'aperçu promis « d'ici demain ». Le Cristallin =
     # la réponse de King sur le périmètre FB attendue avant d'envoyer, relance 48 h après.
@@ -112,13 +107,7 @@ RELANCE_A_JOUR = {
                                       "« depuis 2010 ») et le périmètre « hébergement + domaine » à "
                                       "cadrer : son domaine est à lui jusqu'au 13/06/2027"),
     # UNI-LABO a DEMANDÉ un rendez-vous : ce n'est plus une relance à calculer.
-    "uni-labo-bonamoussadi": ("2026-09-25", "**RENDEZ-VOUS CONFIRMÉ — vendredi 25/09 à 13 h**, à leur "
-                                            "laboratoire (Carrefour Etoo). Il a choisi 13 h lui-même le "
-                                            "23/09 à 21:42 (« 13h c'est bon pour moi »), King a accepté à "
-                                            "21:47. Prix posé le 23/09 13:30 : 150 000 FCFA, **acompte 75 000 à "
-                                            "prendre en séance**, grille tarifaire standard déjà envoyée. À "
-                                            "emporter : contrat Standard ×2, grille corrigée, et le formulaire de "
-                                            "réservation — promis dans le message de 13:30, PAS ENCORE CONSTRUIT"),
+    # uni-labo-bonamoussadi : RETIRÉ le 02/10 — lead parké (bulk close, reset pipeline).
     # Le calcul M+4 ne voyait pas cette échéance : le compteur de la source disait 1 relance au lieu de 2
     # (FU1 19/09 + FU2 21/09 17:39). Le journal, lui, disait « FU3 mer 23/09 max, palier des 3 messages
     # atteint » depuis le 21/09. Décision humaine inscrite ici le 23/09 — c'est la DERNIÈRE touche.
@@ -142,9 +131,8 @@ RELANCE_A_JOUR = {
                                      "demandés + la question des prix). La balle est chez M. Dongmo. "
                                      "PROPOSITION à confirmer par King : UN rappel court si rien n'est "
                                      "arrivé d'ici là — le redéploiement, lui, attend sa liste"),
-    "skye-douala": ("2026-09-29", "Relance 2/3 envoyée le 22/09 au soir (réécrite sans reproche). DERNIÈRE "
-                                  "touche : 29/09, puis parked daté"),
-    "yaks-douala": ("2026-09-29", "Relance 2/3 envoyée le 22/09 au soir. DERNIÈRE touche : 29/09, puis parked"),
+    # skye-douala : RETIRÉ le 02/10 — lead parké (bulk close, reset pipeline).
+    # yaks-douala : RETIRÉ le 02/10 — lead parké (bulk close, reset pipeline).
     # ── 01/10 — DM OPTIQUE SARL A CHOISI LE PACK GLOBAL : ce n'est plus une relance à calculer ──
     # Le client a tranché le 01/10 à 15:50 (« Le pack global semble nous correspondre ») et les
     # conditions sont accordées : 150 000 FCFA d'installation (acompte 75 000), 30 000 FCFA/mois dont
@@ -332,8 +320,8 @@ def view_pipeline(rows, idx, date):
 def view_kill_list(rows, date):
     L = ["# KILL LIST — déduite, jamais écrite en dur\n", GEN.format(date=date)]
     L += ["## La règle (corrigée le 19/09)\n",
-          "Le playbook §A4 disait « les 2 leads à 18 (COMOBIL, OraCare) ». **C'était faux** : "
-          "COMOBIL est parké depuis le 14/09 (`leads/CONTRADICTIONS.md` §1).\n",
+          "Le playbook §A4 codait en dur une kill list figée (« les deux 18 »). **C'était faux** : "
+          "l'un d'eux était déjà parké depuis le 14/09 (`leads/CONTRADICTIONS.md` §1).\n",
           "> **score >= 18 · ET étape non parkée · ET non écartée · ET pas de réponse en attente**\n"]
 
     def score(r):
@@ -343,7 +331,7 @@ def view_kill_list(rows, date):
             return 0
 
     hot = [r for r in rows if score(r) >= 18
-           and (r.get("stage") or "") not in ("parked", "disqualified")
+           and (r.get("stage") or "") not in ("parked", "disqualified", "lost")
            and not reply_pending(r)]
 
     waiting = [r for r in rows if reply_pending(r)]
@@ -438,8 +426,9 @@ def view_sources(rows, date):
         "directory": "Annuaires professionnels de Douala (pagespratiquescm, maligah, doualazoom, goafricaonline).",
         "google_maps": "Sweep cartographique — dentaires de Bonamoussadi/Logbessou.",
         "facebook": "Page Facebook identifiée comme seul canal vivant.",
-        "content_video": "**Zéro lead à ce jour.** Le seul lead attribué au contenu (OraCare) a été "
-                         "reclassé le 02/10 : source fausse, il venait de la pub Meta du cabinet, pas d'une vidéo.",
+        "content_video": "**Zéro lead à ce jour.** Le seul lead jamais attribué au contenu a été "
+                         "reclassé le 02/10 puis retiré du CRM (cleanup du 02/10) : source fausse, "
+                         "il venait de la pub Meta du cabinet, pas d'une vidéo.",
         "discovery_via_their_ad": "Trouvé via la propre publicité Meta du cabinet (Instagram/Facebook) — "
                                   "veille de ce que les prospects publient. Catégorie créée le 02/10 (King) : "
                                   "on suit séparément si cette veille produit des leads.",
@@ -450,7 +439,7 @@ def view_sources(rows, date):
         L.append(f"| `{s}` | {n} | {NOTE.get(s,'')} |")
     L += ["", "## Ce que ce tableau dit\n",
           "- **Contenu → inbound = 0 pour 0 (corrigé le 02/10).** Le seul lead jamais attribué au contenu "
-          "(OraCare) venait en réalité de **sa propre pub Meta** — l'attribution était une inférence "
+          "(retiré du CRM le 02/10) venait en réalité de **sa propre pub Meta** — l'attribution était une inférence "
           "(« la seule vidéo publiée »), pas un fait. Le canal contenu n'a produit **aucun lead qualifié "
           "à ce jour** : c'est une donnée, pas une opinion.",
           "- **Les 38 lignes d'origine n'ont aucune source écrite.** On ne saura jamais si ces écoles ont été "

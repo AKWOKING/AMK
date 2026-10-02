@@ -10,7 +10,7 @@
 | Type | school |
 | Ville | Douala (Bonamoussadi) |
 | Langue de contact | FR/EN |
-| Étape | parked |
+| Étape | lost |
 | Contact | Pierre WAFO (promoteur) |
 | Canal | Phone then WhatsApp |
 | Contacté | No |
@@ -19,7 +19,7 @@
 
 ## Pourquoi il est écarté
 
-Parké — décision de King du 14/09 (DAILY OPS : « PARKED 14 Sep ») : l'état n'avait jamais été encodé dans le CRM (la kill list déduite l'affichait encore jouable) ; encodé le 02/10 avec le lot stale-check de King. Aucun mouvement depuis l'import du 15/09.
+02/10 — King : « COMOBIL dead » → lost (ruling reset pipeline). Jamais contacté, aucune reprise prévue ; pas de déclencheur de résurrection identifié. Historique conservé.
 
 ## Contradiction résolue (M2)
 
@@ -33,7 +33,7 @@ Founded 1999 by decree; complex general/technical/anglo-saxon; COMOBIL.com is PA
 
 ## Prochaine action
 
-**Aucune.** Parqué — Parké — décision de King du 14/09 (DAILY OPS : « PARKED 14 Sep ») : l'état n'avait jamais été encodé dans le CRM (la kill list déduite l'affichait encore jouable) ; encodé le 02/10 avec le lot stale-check de King. Aucun mouvement depuis l'import du 15/09.. Une action n'est légitime que si King le décide explicitement.
+**Aucune.** Lead écarté — 02/10 — King : « COMOBIL dead » → lost (ruling reset pipeline). Jamais contacté, aucune reprise prévue ; pas de déclencheur de résurrection identifié. Historique conservé.
 
 ## Historique — lignes du journal qui citent ce lead
 
