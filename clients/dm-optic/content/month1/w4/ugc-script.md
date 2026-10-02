@@ -131,6 +131,18 @@ vraiment. Et elle est **attribuable** — on sait quelle accroche l'a produite.
 
 ## 6 · Notes de direction
 
+**Garde-fou W4-C — ruling de King, 02/10 (dégel conditionnel).** « Le soleil de Douala. Vos yeux le
+paient. » est une **revendication protectrice, pas thérapeutique** : elle ne nomme ni symptôme, ni
+cause, ni diagnostic, et ne promet aucun soulagement. Dégelée **avec ce garde-fou dur** :
+
+> **Ne nommer aucune conséquence. Pas de cataracte. Pas de DMLA. Pas de « perte de vision ». Pas de
+> « vous le regretterez ».** La ligne reste « le soleil vous coûte quelque chose » — rien de plus, ni
+> dans la vidéo, ni en légende, ni dans aucun texte à l'écran, ni en commentaire épinglé, ni dans
+> aucune réponse aux commentaires de la vidéo. Si un utilisateur commente pour demander ce que ça
+> veut dire, la réponse **route vers WhatsApp** et l'opticien répond professionnellement.
+
+Le reste des notes de direction ci-dessous s'applique sans changement.
+
 | Point | Instruction |
 |---|---|
 | **Visages** | ⛔ **Aucun** |

@@ -131,6 +131,10 @@ réponse, pas le remède. **Si King demande un symptôme, c'est une dérogation*
 le fichier le dit. **Une accroche écartée se documente** — c'est ce qui empêche le prochain de la
 réécrire.
 
+**Exception tracée (ruling 02/10) :** W4-C « Le soleil de Douala. Vos yeux le paient. » est **dégelée**
+comme **revendication protectrice, pas thérapeutique** — elle ne nomme ni symptôme, ni cause, ni
+diagnostic. Garde-fou dur écrit dans `w4/ugc-script.md` §6 : aucune conséquence nommée, nulle part.
+
 ### R2 · Aucun visage en UGC IA
 
 **Décision, pas un défaut de moyens.** Les raisons de King :

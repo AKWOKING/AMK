@@ -111,7 +111,9 @@ avant l'envoi ; SkyOptic et Cinq Sens fragilisés après l'envoi) :
 - **Conflicts:** say so; ask which side wins, unless the newer lesson is clearly stronger for Cameroon clinics/schools — then propose the change and wait for King's yes.
 - **Friday report — « Knowledge applied » line (02/10) :** quels domaines de
   `knowledge/HOUSE-KNOWLEDGE-BASE.md` ont servi cette semaine, ce qui a marché, ce qui est à réviser ou à
-  tester. Se remplit depuis le change log de la base.
+  tester. Se remplit depuis le change log de la base. **Format standing du rapport** (`content/pipeline/reports/`) :
+  mouvement pipeline · cadence contenu · nombres de funnel · appris · ensuite · Knowledge applied ·
+  **« Blockers requiring King ruling »** — ce qui est bloqué sur King, pour que rien n'attende en silence.
 
 ## 5 · Standing lens (everything filters through this)
 

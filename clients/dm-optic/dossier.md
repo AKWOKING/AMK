@@ -144,7 +144,7 @@ elle est **signalée**, son **risque est écrit**, et King tranche.
 | **Voix** | **Même voix que le moteur de contenu AMK** (`voice-00`, §11.2). Les caveats « audition à faire » sont retirés des scripts | ✅ tranché 02/10 |
 | **Variante EN** | **Différée, non bloquante.** Le FR part en production d'abord ; l'EN suit en seconde ligne | ✅ tranché 02/10 |
 | **Repli C3 + C4** | Si la prise de vue échoue totalement : **C3 ET C4 deviennent variantes service** en mois 1 ; tout le contenu montures → mois 2. (Corrige King : C4 n'est pas sans-photo) | ✅ tranché 02/10 |
-| **W2-C / W4-C** | W2-C **gelée indéfiniment** (cause médicale). W4-C **gelée — awaiting King ruling** (lire `ads/variant-messages.md`) | ✅ tranché 02/10 |
+| **W2-C / W4-C** | W2-C **gelée indéfiniment** (cause médicale). W4-C **dégelée le 02/10** — revendication protectrice, pas thérapeutique — **avec garde-fou dur** (aucune conséquence nommée, réponses aux commentaires routées WhatsApp ; `w4/ugc-script.md` §6) | ✅ tranché 02/10 |
 
 ### Question ouverte du 02/10 — **tranchée par King le 02/10**
 

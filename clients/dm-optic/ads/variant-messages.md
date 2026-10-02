@@ -31,7 +31,7 @@ cabinet (656 122 239). Ne jamais changer le numéro dans un lien sans vérifier 
 
 ---
 
-## 1 · La table des 12 — 10 actives, 2 gelées
+## 1 · La table des 12 — 11 actives, 1 gelée
 
 | # | Statut | Accroche (vidéo) | Message pré-rempli (ce que le spectateur envoie) | Lien WhatsApp |
 |---|---|---|---|---|
@@ -45,13 +45,13 @@ cabinet (656 122 239). Ne jamais changer le numéro dans un lien sans vérifier 
 | **W3-C** | variante | « Une monture, ça ne s'achète pas. Ça s'essaie. » | Bonjour, votre vidéo dit qu'une monture, ça s'essaie. Je peux passer essayer au cabinet ? | [ouvrir](https://wa.me/237656122239?text=Bonjour%2C%20votre%20vid%C3%A9o%20dit%20qu%27une%20monture%2C%20%C3%A7a%20s%27essaie.%20Je%20peux%20passer%20essayer%20au%20cabinet%20%3F) |
 | **W4-A** | variante | « Huit heures d'écran. Vos yeux le sentent. » | Bonjour, j'ai vu votre vidéo. Je passe huit heures par jour sur un écran — quels verres me conseillez-vous ? | [ouvrir](https://wa.me/237656122239?text=Bonjour%2C%20j%27ai%20vu%20votre%20vid%C3%A9o.%20Je%20passe%20huit%20heures%20par%20jour%20sur%20un%20%C3%A9cran%20%E2%80%94%20quels%20verres%20me%20conseillez-vous%20%3F) |
 | **W4-B** | ✅ recommandée | « Quatre situations où vos yeux travaillent. » | Bonjour, j'ai vu la vidéo « Quatre situations où vos yeux travaillent ». Écran, route, lecture, soleil : vous avez des verres pour ça ? | [ouvrir](https://wa.me/237656122239?text=Bonjour%2C%20j%27ai%20vu%20la%20vid%C3%A9o%20%C2%AB%20Quatre%20situations%20o%C3%B9%20vos%20yeux%20travaillent%20%C2%BB.%20%C3%89cran%2C%20route%2C%20lecture%2C%20soleil%20%3A%20vous%20avez%20des%20verres%20pour%20%C3%A7a%20%3F) |
+| **W4-C** | ✅ **dégelée — King 02/10** (revendication protectrice, pas thérapeutique · garde-fou dans `w4/ugc-script.md` §6) | « Le soleil de Douala. Vos yeux le paient. » | Bonjour, j'ai vu la vidéo « Le soleil de Douala. Vos yeux le paient. » Quels verres me conseillez-vous pour le soleil ? | [ouvrir](https://wa.me/237656122239?text=Bonjour%2C%20j%27ai%20vu%20la%20vid%C3%A9o%20%C2%AB%20Le%20soleil%20de%20Douala.%20Vos%20yeux%20le%20paient.%20%C2%BB%20Quels%20verres%20me%20conseillez-vous%20pour%20le%20soleil%20%3F) |
 
-### Les deux gelées — pas de lien tant que la décision n'est pas prise
+### La gelée restante — pas de lien tant que la décision n'est pas prise
 
 | # | Statut | Accroche | Raison · décision requise |
 |---|---|---|---|
 | **W2-C** | ⛔ **frozen — gelée indéfiniment** (King, 02/10) | « Vos yeux fatiguent. Ce n'est peut-être pas seulement l'écran. » | « ce n'est peut-être pas seulement l'écran » sous-entend une **cause médicale**. Règle R1 du 02/10. Conservée au fichier avec sa raison, sans lien. |
-| **W4-C** | ⛔ **frozen — awaiting King ruling** | « Le soleil de Douala. Vos yeux le paient. » | « le paient » sous-entend un **dommage**. Test de King : si peur du coût de la négligence → reste gelée ; si simple énoncé tarifaire → dégel. Pas un énoncé tarifaire à ce stade. Pas de lien tant que gelée. |
 
 ---
 
@@ -69,6 +69,7 @@ cabinet (656 122 239). Ne jamais changer le numéro dans un lien sans vérifier 
 | W3-C |  |  |  |  |
 | W4-A |  |  |  |  |
 | W4-B |  |  |  |  |
+| W4-C |  |  |  |  |
 
 **Rappel du seuil :** budget d'essai 5 000 FCFA, concentré en **un seul test S2**. À 3 000 FCFA le
 message, 5 000 FCFA = **1,67 message** — c'est le seuil de lisibilité, pas un objectif (`content-plan-month1.md`).
