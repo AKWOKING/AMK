@@ -11,22 +11,24 @@ Le playbook §A4 disait « les 2 leads à 18 (COMOBIL, OraCare) ». **C'était f
 
 ## ⚡ Répondre d'abord
 
-- **Référence Optique Médicale Cinq Sens** — 696 698 136
-- **La Ligne Optic Akwa** — 683 651 108
-
-> **Règle des 90 secondes.**
+*Rien en attente.*
 
 ## 📅 Décisions déjà prises — DATES À VENIR, ne rien faire maintenant
 
-*Aucune échéance future.*
+- **St. Theresa International Bilingual Comprehensive College (STIBCCOL)** — 2026-10-12 · Permission EXPLICITE de repasser en octobre (verbatim 15/09 : « Ok thanks you can get back to me for a follow up » — leur page sera prête en octobre). Relance le 12/10 : « votre page est prête ? » — pas de prix, pas de question de validation. Date choisie le 02/10 pour laisser la semaine de la visite DM OPTIQUE (07/10) libre. La balle est chez nous — PAS une réponse en attente.
 
 > Les échéances **déjà passées** sont dans `Daily-Plan.csv` — c'est la file de travail.
 
 ## 🎯 Score >= 18 et jouable
 
-| Lead | Score | Ville | WhatsApp |
-|---|---|---|---|
-| **COMOBIL – Collège Moderne Bilingue Les Lauréats** | 18 | Douala (Bonamoussadi) | — |
+**Aucun.** Le seul lead à 18 est COMOBIL, parké depuis le 14/09. **C'est la vérité, pas un manque de prospection.**
+
+## 🧊 Score >= 18 mais HORS JEU (parké / écarté / perdu) — mémoire, pas action
+
+| Lead | Score | Étape |
+|---|---|---|
+| COMOBIL – Collège Moderne Bilingue Les Lauréats | 18 | ⏸ Parqué |
+
 ## Ce qui alimente la liste quand elle est vide
 
 1. **Une réponse** — priorité absolue.

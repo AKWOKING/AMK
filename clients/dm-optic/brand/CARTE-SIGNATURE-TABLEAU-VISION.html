@@ -4,9 +4,12 @@
 <meta charset="utf-8">
 <title>DM OPTIQUE — carte signature (tableau de vision)</title>
 <style>
-  @font-face { font-family: 'Montserrat'; src: url('../../../content/assets/fonts/Montserrat-ExtraBold.ttf'); font-weight: 800; }
-  @font-face { font-family: 'Montserrat'; src: url('../../../content/assets/fonts/Montserrat-Bold.ttf'); font-weight: 700; }
-  @font-face { font-family: 'Montserrat'; src: url('../../../content/assets/fonts/Montserrat-Medium.ttf'); font-weight: 500; }
+  /* ⚠️ 02/10 : ces .ttf sont EN RÉALITÉ la variable font complète, épinglée à l'instance Thin.
+     Sans `font-weight: 100 900`, le navigateur instancie le défaut (Thin) — vu en rendu PIL le 02/10.
+     Avec la plage, il pilote l'axe wght et sort le bon poids. */
+  @font-face { font-family: 'Montserrat'; src: url('../../../content/assets/fonts/Montserrat-ExtraBold.ttf'); font-weight: 100 900; }
+  @font-face { font-family: 'Montserrat'; src: url('../../../content/assets/fonts/Montserrat-Bold.ttf'); font-weight: 100 900; }
+  @font-face { font-family: 'Montserrat'; src: url('../../../content/assets/fonts/Montserrat-Medium.ttf'); font-weight: 100 900; }
   @font-face { font-family: 'Poppins'; src: url('../../../content/assets/fonts/Poppins-SemiBold.ttf'); font-weight: 600; }
   :root { --teal: #0e4b4b; --cream: #f6f1e7; }
   @page { size: 105mm 148mm; margin: 0; }

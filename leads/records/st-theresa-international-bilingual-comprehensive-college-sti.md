@@ -29,7 +29,7 @@ Walk-In-Batch-2026-09-15. Pain: parents find only FB/yahoo, no website. Bilingua
 
 ## Prochaine action
 
-**Répondre dans l'heure.** Une réponse humaine est en attente : c'est la priorité absolue (règle des 90 secondes).
+**Action fixée au 2026-10-12** — décision humaine, elle prime sur le rythme automatique. Permission EXPLICITE de repasser en octobre (verbatim 15/09 : « Ok thanks you can get back to me for a follow up » — leur page sera prête en octobre). Relance le 12/10 : « votre page est prête ? » — pas de prix, pas de question de validation. Date choisie le 02/10 pour laisser la semaine de la visite DM OPTIQUE (07/10) libre. La balle est chez nous — PAS une réponse en attente.
 
 ## Historique — lignes du journal qui citent ce lead
 

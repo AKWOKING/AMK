@@ -30,10 +30,11 @@ Envoyé 18/09 ~18:30, sans maquette (vitesse). · ⚰️ MORT le 22/09 (lot du 1
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 2 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 3 ligne(s).*
 
 `L28` · | **ven 18/09 ~18:30** | **Discovery Labs** (Bassong, 694 86 13 61) | msg 1 — **sans maquette** | Envoyé | **Non** |
 `L110` · | ~18:30 | Discovery Labs · UNI-LABO · YONDJA ANALYSE · Laboratoire du Château · Département Biologique · CAMERA · LE NID |
+`L4782` · `discovery_via_their_ad` (nouvelle catégorie, veille des pubs Meta) · **contenu → inbound = 0 pour 0** ·
 
 ---
 

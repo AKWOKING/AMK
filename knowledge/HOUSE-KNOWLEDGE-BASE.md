@@ -314,6 +314,71 @@ comme soutien · **itemiser les prix** contre le scope creep — setup séparé 
 
 ---
 
+## §9 · Agency Operations (ajouté le 02/10)
+
+Comment une agence fonctionne **de l'intérieur**. Cette couche parle d'AMK comme organisation — pas du
+marché du client (§1–§8). Cinq piliers structurels + pricing + onboarding à deux pistes.
+
+**Pilier 1 — Le cycle de vie projet en 5 phases.** Tout projet passe par les mêmes cinq phases quel que
+soit le service : **Intake** (brief, scope, définition des KPI) → **Strategy** (recherche, plan, approche)
+→ **Production** (design, copy, build) → **Review** (QA interne, approbation client, révisions) →
+**Delivery** (handoff, lancement, reporting). Nommer les phases dans **les mots de l'agence**, pas ceux
+d'un consultant — l'adoption dépend d'un workflow qui épouse la façon dont les gens pensent déjà leur
+travail. AMK tourne déjà sur cette forme sans la nommer ; formalisé dans `ops/LIFECYCLE.md`.
+**DM OPTIQUE est en plein Intake ; la visite du mercredi 07/10 clôture l'Intake.**
+
+**Pilier 2 — Isolation des espaces clients.** Un espace isolé par client, jamais de travail mélangé. La
+contamination croisée (envoyer le brouillon du client A au client B) est une faute qui tue l'agence.
+AMK le fait déjà via `clients/<slug>/` — **garder rigide**.
+
+**Pilier 3 — Gabarits de tâches pour les livrables récurrents.** Chaque type de livrable récurrent reçoit
+un gabarit : checklist de sous-tâches, heures estimées, rôles assignés par défaut, entrées requises,
+spec de sortie. Le gabarit élimine le « qu'est-ce que je dois faire ? » qui coûte 15 minutes par tâche.
+AMK : `ops/templates/` — carrousel, script UGC IA, build de site.
+
+**Pilier 4 — Le cycle de revue et d'approbation.** Le créateur marque « prêt pour revue interne » →
+relecteur interne sous 24 h → « prêt pour revue client » → fenêtre client de 2–3 jours → feedback capté
+**en un seul endroit**. AMK : la revue client passe par WhatsApp (standard maison) — mais l'étape de QA
+interne existe avant que quoi que ce soit touche le client : l'orchestrateur relit tout, c'est documenté
+dans `ops/LIFECYCLE.md` §Review.
+
+**Pilier 5 — Le manuel d'opérations, calibré à l'équipe.** 1–3 personnes : pas de manuel (le fondateur
+fait tout). 3–5 : 5–10 SOP critiques. 5–10 : 20–40 SOP. Au-delà : propriétaires nommés par section.
+**AMK = agence d'1 personne + orchestrateur LLM — une catégorie nouvelle : le dépôt EST le manuel
+d'opérations.** Huit sections cœur : intake client, cycle de vie projet, facturation, recrutement, QA,
+capacité, escalades, offboarding. **Cinq s'appliquent aujourd'hui** (intake, cycle, facturation, QA,
+offboarding) ; trois pas encore (recrutement, capacité, escalades) — ne pas documenter ce qui n'existe pas.
+
+**Pricing — les quatre modèles du champ** (Promethean Research 2026 via Agiled, vérifié 02/10) :
+horaire 42 % des agences (marge nette 13 %) · projet fixe 34 % (14 %) · retainer 18 % (16 %) ·
+value-based 6 % (18 %). Tendance : l'horaire est comprimé par l'IA et par des clients qui attendent plus
+vite et moins cher ; les meilleures agences **empilent** plusieurs modèles. **Le modèle actuel d'AMK est
+le bon hybride** : frais de setup (projet) + gestion mensuelle (retainer) + budget pub d'amorçage
+(pass-through). Évolution à prévoir quand les résultats deviennent mesurables : une part du mensuel liée
+à la performance — **conversation de mois 6, pas de mois 1**.
+
+**Onboarding — deux pistes, pas un gabarit.** Client retainer : partenariat long — vision, rythme, valeur
+continue. Client projet : résultat défini — clarté absolue sur scope, livrables, calendrier, « fini ».
+Jouer le playbook projet sur un client retainer le fait se sentir **transactionnel** ; jouer le playbook
+retainer sur un client projet **invite le scope creep**. **DM OPTIQUE est hybride** : build du site
+(projet) + gestion mensuelle (retainer). La visite du 07/10 clôt le projet ; le mois 1 onboard le
+retainer. **Nommer la frontière** pour que le client sente le basculement (`ops/ONBOARDING.md`).
+
+**Conséquences AMK (exécuté le 02/10) :** `ops/LIFECYCLE.md` · `ops/ONBOARDING.md` · `ops/templates/`
+(trois gabarits) · QA interne documenté · le dépôt comme manuel à 8 sections dont 5 écrites. Routage :
+`ops` / `workflow` / `project management` → ce §9 + `ops/`.
+
+**Sources (vérifiées le 02/10 depuis le sandbox) :** ClickUp, *How to Build an Agency Workflow That
+Scales* ✅ (les 5 phases exactes, gabarits, isolation, cycle 24 h / 2–3 j) · AgencyPro, *How to Create an
+Agency Operations Manual* ✅ (8 sections, table d'effectifs exactes) · Wayfront, *Retainer vs.
+Project-Based Clients* ✅ (deux playbooks d'onboarding) · Agiled/Promethean, *Agency Pricing Statistics
+2026* ✅ (42/34/18/6 + marges 13/14/16/18 exacts) · Teamwork, *Agency Project Management: The Ultimate
+Guide* ✅ (cycle onboarding→optimisation) · Kellen Rodney, *Agency Operations Program* (Thinkific) ⚠️
+**non fetché** — page de cours Thinkific ; structure du curriculum telle que rapportée par King, non
+vérifiable d'ici.
+
+---
+
 ## Change log
 
 **2026-10-02 · création de la base + routage PRE-FLIGHT §1 + standing Friday « Knowledge applied ».**
@@ -360,3 +425,8 @@ terrain §5 (captures de DMs comme preuve d'attribution).
 - `clients/dm-optic/ads/campaign-brief.md` créé : test unique mois 1 (W1-A, 5 000 FCFA) ; modèle
   multi-variantes §4 reporté au mois 2 (décision King : ne pas construire l'échelle qu'on n'a pas gagnée).
 - `content/pipeline/reports/2026-W40-2026-10-02.md` créé : premier rapport hebdomadaire.
+- **2026-10-02 · §9 Agency Operations** (ruling King) : cinq piliers + pricing + onboarding deux pistes ;
+  `ops/` créé (LIFECYCLE, ONBOARDING, templates ×3) ; routage PRE-FLIGHT `ops/workflow` → §9. Sources :
+  5 vérifiées vivantes et conformes (ClickUp, AgencyPro, Wayfront, Agiled/Promethean, Teamwork), 1 non
+  vérifiable d'ici (krconsult Thinkific). Règle CRM née du bug OraCare : ne jamais déduire le
+  source_detail d'un lead content de « la seule vidéo publiée » — vérifier que le lead a vu la vidéo.

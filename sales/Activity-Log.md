@@ -4772,3 +4772,13 @@ poste en plus). Le tarif « client fondateur » à 100 000 FCFA n'est plus sur l
 5. **Ne jamais bloquer le deal sur le lieu.** L'administratif numérique (proforma, échange NIU/adresse
    fiscale) avance **maintenant** ; la rencontre physique est un **plus daté**, pas un préalable. Le dossier
    progresse à distance pendant que la visite se cale.
+
+## ven 02/10 (soir) — CORRECTION : « premier lead de la campagne » (OraCare) était une attribution FAUSSE
+King a tranché (réponse du 02/10) : OraCare n'a JAMAIS été un lead du contenu. La découverte s'est faite
+via **la propre pub Meta du cabinet** (Instagram/Facebook), pas via une vidéo AMK. L'entrée du 14/09 ci-dessus
+(« C'est le premier lead de la campagne… ») et `source_detail = « Premier lead de la campagne — vérifié par
+King »` étaient une INFÉRENCE écrite comme un fait (« la seule vidéo publiée, donc c'est elle ») — même classe
+que le bug prose-vs-data du 21/09. Conséquences corrigées le 02/10 (lot LOT_0210_KING) : source →
+`discovery_via_their_ad` (nouvelle catégorie, veille des pubs Meta) · **contenu → inbound = 0 pour 0** ·
+OraCare déclaré MORT par King → stage `lost` · règle ajoutée au KB : ne jamais déduire le source_detail d'un
+lead content de « la seule vidéo publiée » — vérifier d'abord que le lead a vu la vidéo.

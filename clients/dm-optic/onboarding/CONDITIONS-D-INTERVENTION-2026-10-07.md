@@ -34,11 +34,15 @@ Deux copies imprimées pour la visite. Pas de bloc de signature sur la version n
 - Les photos professionnelles — la session au téléphone (Pixel 8a) fait l'objet d'un échange séparé
   (client fondateur) ou d'une ligne de 15 000 FCFA.
 - Toute promesse de résultat médical : nous publions du vrai, jamais du thérapeutique.
+- Les frais d'hébergement et de nom de domaine au-delà de la première année — ensuite : facturés à
+  l'année ou intégrés au mensuel, à trancher ensemble avant l'échéance.
 
 ## 5 · Si l'un des deux veut s'arrêter
 
-- **Le cabinet** peut stopper le mensuel à tout moment : il garde ses comptes, son site déployé et ses
-  contenus publiés — tout est à son nom. Le mois entamé est dû.
+- **Le cabinet** peut stopper le mensuel à tout moment : il garde ses comptes, son site déployé, ses
+  contenus publiés **et le nom de domaine** — tout est à son nom. Si AMK enregistre le domaine, il est
+  enregistré au nom du cabinet dès le premier jour ; à défaut, il est transféré à la sortie, sans frais.
+  Le mois entamé est dû.
 - **AMK** peut stopper avec un préavis d'un mois, en livrant tout ce qui est entamé et en rendant les
   accès propres.
 - L'installation payée reste acquise des deux côtés : on sépare proprement, on ne facture pas la sortie.

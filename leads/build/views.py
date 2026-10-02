@@ -61,14 +61,17 @@ STAGE_ORDER = ["won", "delivered", "closing", "offer", "demo", "qualifying",
 RELANCE_A_JOUR = {
     "opticien-bali-douala": ("2026-09-25", "2ᵉ message envoyé le 22/09 au soir (créneau fixé par le prospect "
                                         "lui-même). DERNIÈRE touche : vendredi 25/09, puis parked daté"),
-    "oracare-buea": ("2026-09-28", "PARKED depuis le message de CLÔTURE du 21/09 17:43 (« last note from me, "
-                                    "then I stop ») — ne rien écrire avant lundi 28/09, et ce jour-là un seul "
-                                    "message : léger, SANS reproche, justifié par du neuf (les prix et la prise "
-                                    "de RDV 24/7 sont sur la page). Nom vérifié : Dr Arnold Nkafu — jamais "
-                                    "« Dr Njie », ce prénom n'existe dans aucun fichier"),
-    "midas-touch-optic-center-mitoc": ("2026-09-29", "FU2 envoyée le 22/09 au soir (un jour de retard rattrapé). "
-                                          "DERNIÈRE touche : 29/09, puis on classe — trois messages maximum"),
-    "baird-memorial-college": ("2026-09-21", "FU2 fixée lun 21 (même lot que MITOC)"),
+    # oracare-buea : RETIRÉ le 02/10 — King déclare le lead mort (stage = lost, lot LOT_0210_KING).
+    # L'échéance du 28/09 ne vaut plus ; la laisser ici ferait relancer un lead clos.
+    # midas-touch-optic-center-mitoc : RETIRÉ le 02/10 — sa propre note disait « DERNIÈRE touche :
+    # 29/09, puis on classe » : parked le 02/10 (stale check de King).
+    # baird-memorial-college : RETIRÉ le 02/10 — parked le 02/10 (stale check de King).
+    "st-theresa-international-bilingual-comprehensive-college-sti":
+        ("2026-10-12", "Permission EXPLICITE de repasser en octobre (verbatim 15/09 : « Ok thanks you "
+                       "can get back to me for a follow up » — leur page sera prête en octobre). "
+                       "Relance le 12/10 : « votre page est prête ? » — pas de prix, pas de question "
+                       "de validation. Date choisie le 02/10 pour laisser la semaine de la visite "
+                       "DM OPTIQUE (07/10) libre. La balle est chez nous — PAS une réponse en attente."),
     "labiomed-deido": ("2026-10-01", "A RÉPONDU le 22/09 à 16:41 : « Non pas encore je ne suis pas en place » "
                                       "· « Quand je serai la je vais vous contacter ». Ce n'est ni un oui ni un "
                                       "refus — c'est un REPORT MOTIVÉ (pas encore installé). Réponse envoyée "
@@ -377,6 +380,17 @@ def view_kill_list(rows, date):
     else:
         L.append("**Aucun.** Le seul lead à 18 est COMOBIL, parké depuis le 14/09. "
                  "**C'est la vérité, pas un manque de prospection.**\n")
+
+    # 02/10 — ruling de King : « la section est désormais COMOBIL (toujours parké) plus tout oui frais ».
+    # Les 18+ hors jeu restent VISIBLES ici (mémoire, jamais action) — déduits des données, pas écrits en dur.
+    dead = [r for r in rows if score(r) >= 18
+            and (r.get("stage") or "") in ("parked", "disqualified", "lost")]
+    if dead:
+        L.append("## 🧊 Score >= 18 mais HORS JEU (parké / écarté / perdu) — mémoire, pas action\n")
+        L += ["| Lead | Score | Étape |", "|---|---|---|"]
+        for r in sorted(dead, key=lambda x: -score(x)):
+            L.append(f"| {r['School']} | {score(r)} | {STAGE_LABEL.get(r.get('stage') or '', '?')} |")
+        L.append("")
     L += ["## Ce qui alimente la liste quand elle est vide\n",
           "1. **Une réponse** — priorité absolue.\n"
           "2. **Un « oui » ou une demande de rendez-vous** → on construit, on pose le prix.\n"
@@ -396,7 +410,7 @@ def view_stale(rows, idx, date):
             continue
         if str(r.get("Reply", "")).strip().lower().startswith("yes"):
             continue
-        if (r.get("stage") or "") in ("parked", "disqualified"):
+        if (r.get("stage") or "") in ("parked", "disqualified", "lost"):
             continue
         age = last_send_age_days(r)
         if age < 2:
@@ -424,13 +438,21 @@ def view_sources(rows, date):
         "directory": "Annuaires professionnels de Douala (pagespratiquescm, maligah, doualazoom, goafricaonline).",
         "google_maps": "Sweep cartographique — dentaires de Bonamoussadi/Logbessou.",
         "facebook": "Page Facebook identifiée comme seul canal vivant.",
-        "content_video": "Premier lead de la campagne, venu du contenu.",
+        "content_video": "**Zéro lead à ce jour.** Le seul lead attribué au contenu (OraCare) a été "
+                         "reclassé le 02/10 : source fausse, il venait de la pub Meta du cabinet, pas d'une vidéo.",
+        "discovery_via_their_ad": "Trouvé via la propre publicité Meta du cabinet (Instagram/Facebook) — "
+                                  "veille de ce que les prospects publient. Catégorie créée le 02/10 (King) : "
+                                  "on suit séparément si cette veille produit des leads.",
         "walk_in": "Affiche relevée sur place par King.",
         "other": "Divers.",
     }
     for s, n in Counter(r.get("source") or "(non renseigné)" for r in rows).most_common():
         L.append(f"| `{s}` | {n} | {NOTE.get(s,'')} |")
     L += ["", "## Ce que ce tableau dit\n",
+          "- **Contenu → inbound = 0 pour 0 (corrigé le 02/10).** Le seul lead jamais attribué au contenu "
+          "(OraCare) venait en réalité de **sa propre pub Meta** — l'attribution était une inférence "
+          "(« la seule vidéo publiée »), pas un fait. Le canal contenu n'a produit **aucun lead qualifié "
+          "à ce jour** : c'est une donnée, pas une opinion.",
           "- **Les 38 lignes d'origine n'ont aucune source écrite.** On ne saura jamais si ces écoles ont été "
           "trouvées par Google, Facebook ou bouche-à-oreille. **À partir du 15/09, chaque ligne porte sa source.**",
           "- **`directory` est la première source.** Les annuaires de Douala sont le meilleur gisement — "

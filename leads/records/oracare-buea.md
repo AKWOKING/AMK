@@ -10,7 +10,7 @@
 | Type | clinic |
 | Ville | Buea (Molyo) |
 | Langue de contact | EN |
-| Étape | parked |
+| Étape | lost |
 | WhatsApp | 672 52 66 86 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |
@@ -18,8 +18,12 @@
 | Réponse | No |
 | Maquette / site | Yes |
 | Relances envoyées | 1 |
-| Source | content_video |
-| Détail source | Premier lead de la campagne — vérifié par King |
+| Source | discovery_via_their_ad |
+| Détail source | discovered via OraCare's own Meta ad, Instagram/Facebook, [date not logged] |
+
+## Pourquoi il est écarté
+
+02/10 — King : « OraCare is dead » → lost. Contacté (msg 1 le 14/09, relance le 16/09, clôture le 21/09), jamais de réponse. Était en jeu, ne s'est pas clos.
 
 ## Notes
 
@@ -27,11 +31,11 @@ Message 1 lundi 14/09. Concept live : oracare-concept.vercel.app (v3, prix + ass
 
 ## Prochaine action
 
-**Aucune.** Parqué. Une action n'est légitime que si King le décide explicitement.
+**Aucune.** Lead écarté — 02/10 — King : « OraCare is dead » → lost. Contacté (msg 1 le 14/09, relance le 16/09, clôture le 21/09), jamais de réponse. Était en jeu, ne s'est pas clos.
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 29 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 32 ligne(s).*
 
 `L3` · **Pourquoi ce fichier existe.** Le 18/09, j'ai écrit dans un résumé que « OraCare et MITOC ont répondu ». **C'est faux.** Oracle a écrit le contraire et j'ai parlé de mémoire au lieu de lire ce fichier. King a corrigé. Cette erreur a coûté du temps et de la confiance : ce journal remplace la mémoire par des faits vérifiables.
 `L13` · | lun 14/09 | **OraCare237** (672 52 66 86) | msg 1 | **Pas lu** | **Non** |
@@ -62,6 +66,9 @@ Message 1 lundi 14/09. Concept live : oracare-concept.vercel.app (v3, prix + ass
 `L2007` · fin**), **0 DM** entrant enregistré, **1 seul lead jamais venu du contenu** (`oracare-buea`, qui n'a jamais
 `L2334` · OraCare v1 (remplacée deux fois — v2 reste, c'est la dépendance du builder v3, et v3 est la page en ligne),
 `L3867` · (OraCare et Bonanjo au 28/09, MITOC · Skye · Yaks et Le Cristallin au 29/09, Labiomed au 1ᵉʳ octobre,
+`L4776` · ## ven 02/10 (soir) — CORRECTION : « premier lead de la campagne » (OraCare) était une attribution FAUSSE
+`L4777` · King a tranché (réponse du 02/10) : OraCare n'a JAMAIS été un lead du contenu. La découverte s'est faite
+`L4783` · OraCare déclaré MORT par King → stage `lost` · règle ajoutée au KB : ne jamais déduire le source_detail d'un
 
 ---
 

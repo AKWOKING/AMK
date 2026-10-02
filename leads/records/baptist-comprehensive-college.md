@@ -10,11 +10,15 @@
 | Type | school |
 | Ville | Buea (Great Soppo) |
 | Langue de contact | EN |
-| Étape | qualifying |
+| Étape | parked |
 | WhatsApp | 679650707 |
 | Contact | Principal; Baptist education office above |
 | Canal | Tue 15 Sep 09:00 WhatsApp msg 1 (replan §4) then nameless sample link + invite-choice walkthrough Thu/Fri; Baptist protocol: principal then education office |
 | Contacté | YES 15 Sep ~12:00 WA msg 1 (preview-ready variant); one tick as of send, awaiting |
+
+## Pourquoi il est écarté
+
+Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, contacté le 15/09 (msg 1, une coche), aucune réponse, 17 jours sans mouvement.
 
 ## Notes
 
@@ -22,7 +26,7 @@ Walk-In-Batch-2026-09-15. Confessional: principal first, ask 'who else decides?'
 
 ## Prochaine action
 
-**0 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**Aucune.** Parqué — Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, contacté le 15/09 (msg 1, une coche), aucune réponse, 17 jours sans mouvement.. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 

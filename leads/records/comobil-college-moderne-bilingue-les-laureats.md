@@ -1,6 +1,6 @@
 # COMOBIL – Collège Moderne Bilingue Les Lauréats
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-21. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-02. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -17,6 +17,10 @@
 | Réponse | No |
 | Maquette / site | Yes |
 
+## Pourquoi il est écarté
+
+Parké — décision de King du 14/09 (DAILY OPS : « PARKED 14 Sep ») : l'état n'avait jamais été encodé dans le CRM (la kill list déduite l'affichait encore jouable) ; encodé le 02/10 avec le lot stale-check de King. Aucun mouvement depuis l'import du 15/09.
+
 ## Contradiction résolue (M2)
 
 - **Ce qui se contredisait :** Le playbook §A4 code en dur une kill list « les deux 18 » (COMOBIL + OraCare) ; COMOBIL est parké depuis le 14/09. L'onglet DAILY OPS dit « PARKED 14 Sep (King decision) » — mon audit du 18/09 prétendait le contraire (infirmé).
@@ -25,15 +29,15 @@
 
 ## Notes
 
-Founded 1999 by decree; complex general/technical/anglo-saxon; COMOBIL.com is PARKED (verified 09/09/26) = golden D/E target; one contact = whole WAFO group. | Concept concept-comobil-v1.html BUILT 14 Sep (FR, forest palette, 115 pairs, 3 sections + pension + WAFO group). · ⏸ Réveil : un canal atteignable (WhatsApp Business au nom du groupe, ou réponse sur Messenger) OU le domaine COMOBIL.com expire vraiment et disparaît. Source de la décision : `sales/Pipeline-Status.md` (14/09) + `leads/CONTRADICTIONS.md` §1. · org_type=school prouvé par « collège » (M7, 21/09) · Même acheteur que la ligne liée — Pierre WAFO (promoteur). Le classeur liste les deux établissements du même groupe ; une seule conversation, un seul acheteur (audit §9 étape 2). | CONTRADICTION RÉSOLUE (M2) — retenu : parked — une kill list doit se DÉDUIRE de l'état réel (score 18 ET non parké ET non disqualifié).
+Founded 1999 by decree; complex general/technical/anglo-saxon; COMOBIL.com is PARKED (verified 09/09/26) = golden D/E target; one contact = whole WAFO group. | Concept concept-comobil-v1.html BUILT 14 Sep (FR, forest palette, 115 pairs, 3 sections + pension + WAFO group). · Même acheteur que la ligne liée — Pierre WAFO (promoteur). Le classeur liste les deux établissements du même groupe ; une seule conversation, un seul acheteur (audit §9 étape 2). | CONTRADICTION RÉSOLUE (M2) — retenu : parked — une kill list doit se DÉDUIRE de l'état réel (score 18 ET non parké ET non disqualifié).
 
 ## Prochaine action
 
-**Aucune.** Parqué. Une action n'est légitime que si King le décide explicitement.
+**Aucune.** Parqué — Parké — décision de King du 14/09 (DAILY OPS : « PARKED 14 Sep ») : l'état n'avait jamais été encodé dans le CRM (la kill list déduite l'affichait encore jouable) ; encodé le 02/10 avec le lot stale-check de King. Aucun mouvement depuis l'import du 15/09.. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 6 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 11 ligne(s).*
 
 `L234` · **Trois de mon propre audit étaient fausses** : COMOBIL n'était pas « tête de kill list » (DAILY OPS dit PARKED),
 `L690` · **① COMOBIL : « parké » dans trois fichiers, `prospect` dans la donnée.** `Pipeline-Status.md` dit
@@ -41,6 +45,11 @@ Founded 1999 by decree; complex general/technical/anglo-saxon; COMOBIL.com is PA
 `L694` · (COMOBIL, SAHISCOL — avec gâchette de réveil — et ICHS Great Soppo, qui garde son motif de procès).
 `L701` · désormais OraCare (COMOBIL sort, parké) — exactement ce que dit le §A4 amendé.
 `L745` · 4. **Les 5 questions de l'audit du 18/09 §10 sont toujours sans réponse** (COMOBIL · health manuel de St. Theresa · les 12 labos de la réserve · la Page Facebook · le parrainage St. Theresa). Les deux premières ont été tranchées par la migration d'aujourd'hui ; il en reste trois.
+`L1629` · répondu** (tous audités, listés avec leur domaine réel : COMOBIL.com, leparadisdesanges.org, asddouala.com,
+`L1781` · - Les dossiers locaux (`hosting/previews/jempo`, `labethanie`, `sah`, `sasse`, `comobil`, `demos/concept-*`)
+`L2332` · lecteur : JEMPO (jamais contacté), La Béthanie (parquée), SJC Sasse (parquée), COMOBIL (parquée depuis le
+`L3322` · ### ⚠️ Le piège COMOBIL a encore frappé — dans le fichier que King lit le matin
+`L3843` · continué à réclamer une relance interdite — **le piège COMOBIL à l'envers** : la prose dit « stop », la
 
 ---
 

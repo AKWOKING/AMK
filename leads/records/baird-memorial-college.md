@@ -10,11 +10,15 @@
 | Type | school |
 | Ville | Buea (Bonduma) |
 | Langue de contact | EN |
-| Étape | qualifying |
+| Étape | parked |
 | WhatsApp | 677875395 |
 | Contact | Principal/proprietor (capture); P.O. Box 403 Buea |
 | Canal | GO (King 'proceed' 15 Sep PM): attach demos/shots/mockup-secondary-wa.jpg FIRST, then recipient-neutral msg (replan §4) to WA 677 87 53 95; pre-tap open bairdmemorial.com once, swap para 3 if it loads; Wed sealed card in Limbe sweep if silent; invited visit only |
 | Contacté | YES 15 Sep 14:41 WA (mockup image + msg 1; one tick) |
+
+## Pourquoi il est écarté
+
+Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, contacté le 15/09 (msg 1, une coche), aucune réponse, 17 jours sans mouvement. L'échéance RELANCE_A_JOUR du 21/09 est retirée avec ce lot.
 
 ## Notes
 
@@ -22,7 +26,7 @@ Walk-In-Batch-2026-09-15 stop 6 light. Boarding 'inclusive' high school behind p
 
 ## Prochaine action
 
-**Action fixée au 2026-09-21** — décision humaine, elle prime sur le rythme automatique. FU2 fixée lun 21 (même lot que MITOC)
+**Aucune.** Parqué — Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, contacté le 15/09 (msg 1, une coche), aucune réponse, 17 jours sans mouvement. L'échéance RELANCE_A_JOUR du 21/09 est retirée avec ce lot.. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 

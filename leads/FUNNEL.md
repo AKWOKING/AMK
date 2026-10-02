@@ -23,7 +23,7 @@
 | onoc_registry | 7 | 5 | **3** | 60.0 % |
 | (non renseigné) | 38 | 4 | **0** | 0.0 % |
 | google_maps | 2 | 2 | **0** | 0.0 % |
-| content_video | 1 | 1 | **0** | 0.0 % |
+| discovery_via_their_ad | 1 | 1 | **0** | 0.0 % |
 | walk_in | 1 | 0 | **0** | — |
 | pass_vitrine | 4 | 0 | **0** | — |
 | facebook | 1 | 0 | **0** | — |

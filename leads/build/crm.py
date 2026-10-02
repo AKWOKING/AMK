@@ -1839,6 +1839,229 @@ def _apply_evening(out: list) -> None:
 
 
 
+# ── LE LOT AUTORISÉ PAR KING LE 02/10/2026 — un ruling, une table, un re-lock ─────────────────────
+# Décision de King (réponse du 02/10) : le stale check des 38 lignes du classeur d'origine suit le
+# MÊME test que n'importe quel lead — 7+ jours sans mouvement ET pas de réponse en attente → parked
+# avec motif daté. Résultat : 3 déjà parkées, 1 PAS stale (St Theresa : permission explicite de
+# repasser en octobre — « you can get back to me for a follow up », 15/09 → RELANCE_A_JOUR dans
+# `views.py`), **34 parkées ici**.
+# ⚠️ Trois des 34 ONT été contactées le 15/09 (Baird, Baptist Comprehensive, MITOC — aucune réponse) :
+# leur motif est écrit tel quel, jamais « jamais contacté » — un motif faux est pire qu'une ligne vieille.
+# Même lot, même autorisation : les deux marqueurs AWAIT (la vue « Répondre d'abord » était périmée
+# depuis le 24/09), la mort d'OraCare (King : « OraCare is dead ») et sa correction de source —
+# PAS content_video : découvert via SA PROPRE pub Meta, date de vue non journalisée.
+# Règle née de ce bug (02/10) : ne jamais DÉDUIRE le source_detail d'un lead content de « la seule
+# vidéo publiée » — vérifier d'abord que le lead a vu la vidéo. Même classe que le bug prose-vs-data
+# du 21/09 : une inférence écrite comme un fait.
+LOT_0210_KING = {
+    "cinq-sens-optique-medicale": {
+        "Conversation_extra":
+            "02/10 — ruling de King : balle chez eux — AWAIT (photos/horaires demandés, on attend leur "
+            "retour). L'affichage « Répondre d'abord » était périmé : la balle est chez eux depuis le "
+            "24/09 17:54 (lien livré, aucune relance promise).",
+    },
+    "la-ligne-optic-akwa": {
+        "Conversation_extra":
+            "02/10 — ruling de King : balle chez elle — AWAIT (retour attendu sur l'aperçu). "
+            "L'affichage « Répondre d'abord » était périmé : la balle est chez elle depuis le "
+            "24/09 21:35 (aperçu annoncé, livré).",
+    },
+    "oracare-buea": {
+        "stage": "lost", "stage_since": "2026-10-02",
+        "source": "discovery_via_their_ad",
+        "source_detail": "discovered via OraCare's own Meta ad, Instagram/Facebook, [date not logged]",
+        "disqualification_reason":
+            "02/10 — King : « OraCare is dead » → lost. Contacté (msg 1 le 14/09, relance le 16/09, "
+            "clôture le 21/09), jamais de réponse. Était en jeu, ne s'est pas clos.",
+        "Conversation_extra":
+            "02/10 — ruling de King : OraCare est MORT → stage lost. Correction de source : ce n'était "
+            "PAS content_video — la découverte s'est faite via la PUB META d'OraCare elle-même "
+            "(Instagram/Facebook), date de vue non journalisée → nouvelle source "
+            "`discovery_via_their_ad` (veille des pubs des prospects/concurrents sur Meta). "
+            "Règle née du bug : ne jamais déduire source_detail d'un lead content de « la seule vidéo "
+            "publiée » — vérifier que le lead a vu la vidéo.",
+    },
+    "st-theresa-international-bilingual-comprehensive-college-sti": {
+        "Follow-up date": "2026-10-12",
+        "Conversation_extra":
+            "02/10 — PAS stale : permission explicite de repasser en octobre (15/09 : « Ok thanks you "
+            "can get back to me for a follow up » — leur page sera prête en octobre). Relance fixée "
+            "au 12/10 (RELANCE_A_JOUR) : « votre page est prête ? » — pas de prix, pas de question de "
+            "validation. La balle est chez nous, pas en attente de réponse.",
+    },
+    "comobil-college-moderne-bilingue-les-laureats": {
+        "stage": "parked", "stage_since": "2026-09-14",
+        "disqualification_reason":
+            "Parké — décision de King du 14/09 (DAILY OPS : « PARKED 14 Sep ») : l'état n'avait jamais été encodé dans le CRM (la kill list déduite l'affichait encore jouable) ; encodé le 02/10 avec le lot stale-check de King. Aucun mouvement depuis l'import du 15/09.",
+    },
+    "groupe-scolaire-moderne-bilingue-wafo": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "cosbinal-complexe-scolaire-bilingue-nal": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "le-paradis-des-anges-pda": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "american-school-of-douala-asd": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "divine-success-comprehensive-college-dscc": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "presbyterian-comprehensive-secondary-school-bonamoussadi-pcs": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté. Injoignable — aucun numéro au classeur d'origine.",
+    },
+    "ecole-privee-bilingue-les-genies": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté. Injoignable — aucun numéro au classeur d'origine.",
+    },
+    "groupe-scolaire-la-semence": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté. Injoignable — aucun numéro au classeur d'origine.",
+    },
+    "institut-polyvalent-fosso": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté. Injoignable — aucun numéro au classeur d'origine.",
+    },
+    "college-catholique-bilingue-la-retraite": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "complexe-scolaire-et-universitaire-siantou": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "blessed-group-of-schools-bgs-blessed-anglo-saxon": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "baptist-high-school-bhs-awae": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "rainforest-international-school-rfis": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "institut-notre-dame-des-apotres": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté. Injoignable — aucun numéro au classeur d'origine.",
+    },
+    "st-joseph-s-college-sasse-sjc-sasse": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "frankfils-comprehensive-college": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté. Injoignable — aucun numéro au classeur d'origine.",
+    },
+    "salvation-bilingual-high-school-molyko-buea": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté. Injoignable — aucun numéro au classeur d'origine.",
+    },
+    "marthlo-comprehensive-bilingual-college": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté. Injoignable — aucun numéro au classeur d'origine.",
+    },
+    "saint-anne-s-high-school-limbe-sahiscol": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "new-horizon-international-comprehensive-high-school-nhichs": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "college-de-l-excellence-de-limbe": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté. Injoignable — aucun numéro au classeur d'origine.",
+    },
+    "national-comprehensive-high-school-nchs-limbe": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté. Injoignable — aucun numéro au classeur d'origine.",
+    },
+    "presbyterian-girls-secondary-school-pgss-limbe": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté. Injoignable — aucun numéro au classeur d'origine.",
+    },
+    "summerset-bilingual-college-smbicol": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "saint-bernard-high-school-sbhs": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "nabesk-comprehensive-college": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "baird-memorial-college": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, contacté le 15/09 (msg 1, une coche), aucune réponse, 17 jours sans mouvement. L'échéance RELANCE_A_JOUR du 21/09 est retirée avec ce lot.",
+    },
+    "baptist-comprehensive-college": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, contacté le 15/09 (msg 1, une coche), aucune réponse, 17 jours sans mouvement.",
+    },
+    "st-sylvester-international-college": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "bishop-jules-peters-memorial-college": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "inter-comprehensive-high-school-ichs-great-soppo": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "midas-touch-optic-center-mitoc": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, contacté le 15/09, FU2 le 22/09, aucune réponse — règle des trois messages atteinte (sa propre note RELANCE_A_JOUR : « DERNIÈRE touche 29/09, puis on classe »). 10+ jours sans mouvement.",
+    },
+}
+
+
 def _apply_state(out: list, table: dict, name: str) -> None:
     """Applique une table d'état au relevé : elle ÉCRASE les champs scalaires qu'elle cite (elle est
     plus récente que tout le monde) et APPEND les deux champs de récit (`Conversation_extra`,
@@ -1942,6 +2165,7 @@ def _apply_jour(out: list) -> None:
     _apply_state(out, REPONSE_2409_CS, "REPONSE_2409_CS")
     _apply_state(out, REPONSE_2409_LL, "REPONSE_2409_LL")
     _apply_state(out, ECARTES_2409, "ECARTES_2409")
+    _apply_state(out, LOT_0210_KING, "LOT_0210_KING")
 
 
 
