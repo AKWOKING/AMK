@@ -128,6 +128,26 @@ elle est **signalée**, son **risque est écrit**, et King tranche.
 
 ---
 
+## 6b · Décisions verrouillées du 02/10/2026 (King)
+
+| Décision | Contenu | Statut |
+|---|---|---|
+| **Contenu du mois 1** | Les 8 livrables approuvés (outlines, scripts, accroches, beats, payoff, direction) | ✅ approuvé |
+| **Mois 1 = confiance** | « the correct call and not a fallback ». Différenciation = inscrit ONOC, contrôlé, trouvable | ✅ verrouillé |
+| **Fallback photo** | C1+C2 maintenant (typographique/service) ; C3+C4 attendent les photos. ⛔ **Jamais les illustrations IA existantes** — ce n'est pas l'inventaire de DM OPTIQUE. Si la prise de vue échoue : C3+C4 remplacés par variantes service, montures → mois 2. ⛔ **Jamais de placeholder « Photo bientôt disponible »** | ✅ verrouillé |
+| **Visages en UGC IA** | **Non pour le mois 1** (décision, pas défaut). Si testé un jour : pub payante uniquement, étiqueté IA, jamais organique — expérimentation T4. **Ne pas reposer la question. Dérogation si King la pose** | ✅ verrouillé |
+| **Surréel montures ≠ verres** | Jeu d'échelle sur la monture (objet de mode) OK ; sur le verre (dispositif optique) = dérogation | ✅ verrouillé |
+| **Copier la structure, pas les assets** | ⛔ Règle **générale, tous clients** → `content/lessons/CONTENT-LESSONS.md` §15 | ✅ verrouillé |
+| **W2 accroche écartée** | « Vos yeux fatiguent… » gardée au fichier avec sa raison (R1 : pas de symptôme) | ✅ verrouillé |
+
+### ⚠️ Une question ouverte — à trancher par King
+
+**« C1 et C2 partent maintenant »** contredit **`CONTENT-LESSONS.md` §14 (21/09) : « Rien de nommé avant
+un client signé. »** DM OPTIQUE n'est **pas signé** (accord verbal, acompte non encaissé). Lecture retenue :
+**produire maintenant, publier à l'encaissement.** Voir le rapport — c'est la seule question ouverte.
+
+---
+
 ## 7 · Ce qui manque pour avancer
 
 Liste complète et actionnable : `onboarding/intake-questionnaire.md`. Les trois bloquants immédiats :

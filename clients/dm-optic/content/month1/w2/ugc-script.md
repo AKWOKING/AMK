@@ -1,7 +1,31 @@
 # UGC IA — Semaine 2 · « Ce qui se passe pendant un examen de vue »
 
+```
+Status: APPROVED (King, 02/10/2026) — prêt pour le producteur   ·  Updated: 2026-10-02
+Audience: quelqu'un qui n'a jamais passé d'examen de vue, ou qui pense que ce n'est pas pour lui
+Source asset: le cabinet et ses instruments (photos W2) · le protocole d'examen, décrit sans diagnostic
+Funnel stage: confiance → compréhension → demande de rendez-vous WhatsApp
+Expected outcome: un message WhatsApp demandant un examen
+Duration target: 22 s   ·   Language: FR master + variante EN (à produire avant publication)
+```
+
+**Portes de la maison** (`content/scripts/README.md` + `CONTENT-LESSONS` §10, §12, §10.4) :
+
+- [x] **Accroche 3 s** — question ou fait précis, une seule personne, aucune auto-présentation
+- [x] **Résultat plutôt que caractéristiques** — aucune spécification listée
+- [x] **« Pourquoi s'y intéresser ? » par beat**
+- [x] **Zéro remplissage** — relecture à voix haute faite
+- [x] **Clarté en 4 questions** — ci-dessous
+- [x] **Un seul CTA clair** — un WhatsApp pré-rempli
+- [x] **Aucun tiers nommé** — aucun concurrent, aucune marque
+- [ ] **Pré-vol en 3 volets : script → visuels → voix** — *le volet voix reste à faire par le producteur*
+
+**Clarté (les 4 questions) :** quoi → *un examen de vue, concret* · pour qui → *celui qui n'a jamais osé* ·
+quel résultat → *savoir ce qui l'attend, sans surprise* · parcours → *appréhension → familiarité → rendez-vous*.
+
+
 > **Notre livrable : ce script. La production vidéo est externe (King).**
-> Durée cible : **25–30 s** · Vertical **9:16** · **Aucun visage** · Texte à l'écran minimal.
+> Durée cible : **22 s** (règle maison 15–22 s, §12.5) · Vertical **9:16** · **Aucun visage** · Texte à l'écran minimal.
 >
 > ⚠️ **C'est le script le plus exposé du mois.** Il traite de symptômes ressentis. Lire §7 avant
 > toute production.
@@ -32,11 +56,33 @@ allégation.**
 
 | # | Temps | Ce qu'on voit | Ce qu'on entend |
 |---|---|---|---|
-| **1** | 0:00–0:03 | **Accroche.** Un écran lumineux dans la pénombre, une main qui se rapproche | L'accroche |
-| **2** | 0:03–0:09 | Trois situations, trois plans courts : **un écran** · **un volant** · **un livre rapproché** | « L'écran. La route. Le livre qu'on rapproche. » |
-| **3** | 0:09–0:16 | **L'examen, démystifié.** L'instrument, la salle, le geste — **ce qui se passe vraiment** | « Un examen de vue, ce n'est pas une formalité. On prend le temps de regarder comment vous voyez. » |
-| **4** | 0:16–0:23 | **Ce qu'il faut apporter.** Trois objets se posent : une ordonnance · une ancienne monture · un carnet | « Apportez votre ordonnance si vous en avez une, votre ancienne monture, et vos questions. » |
-| **5** | 0:23–0:28 | **Payoff.** Les horaires de consultation + le bouton WhatsApp | « La consultation se tient de 8h30 à 13h30. Écrivez-nous avant de venir. » |
+| **1** | 0:00–0:02 | **Accroche.** Un écran lumineux dans la pénombre, une main qui se rapproche | L'accroche |
+| **2** | 0:02–0:07 | Trois situations, trois plans courts : **un écran** · **un volant** · **un livre rapproché** | « L'écran. La route. Le livre qu'on rapproche. » |
+| **3** | 0:07–0:13 | **L'examen, démystifié.** L'instrument, la salle, le geste — **ce qui se passe vraiment** | « Un examen de vue, ce n'est pas une formalité. On prend le temps de regarder comment vous voyez. » |
+| **4** | 0:13–0:18 | **Ce qu'il faut apporter.** Trois objets se posent : une ordonnance · une ancienne monture · un carnet | « Apportez votre ordonnance si vous en avez une, votre ancienne monture, et vos questions. » |
+| **5** | 0:18–0:22 | **Payoff.** Les horaires de consultation + le bouton WhatsApp | « La consultation se tient de 8h30 à 13h30. Écrivez-nous avant de venir. » |
+
+---
+
+## 2b · Contraintes de production — règles dures de la maison
+
+| # | Règle | Source |
+|---|---|---|
+| 1 | **Première coupe ≤ 1,5 s.** Aucune image immobile à l'ouverture | §12.2 |
+| 2 | **Mouvement + voix dès la frame 1** — jamais une ouverture figée | §12.1–12.2 |
+| 3 | **La frame 0 est la vignette** : poser la meilleure image en frame 0. Le canal de partage est **WhatsApp**, où la vignette décide du clic | §10.4 |
+| 4 | **Lisibilité :** une étiquette reste **≥ 0,8 s** · une phrase **≥ 0,3 s × nombre de mots**. *Fast-in, then hold — jamais fast-in, then gone* | §10.4 |
+| 5 | **La narration est dans le fichier livré** — `ffmpeg -i` doit afficher une piste audio. Un son ajouté à la publication n'est pas un substitut | §12.3 |
+| 6 | **Musique libre de droits, ou silence + voix.** Jamais un son pris sur une autre publication | §15 (02/10) |
+| 7 | **⛔ Ne jamais animer l'élément démontré** | §3.8 / §10.3 |
+
+⚠️ **Volet voix non fait.** La porte de pré-vol maison a trois volets : **script → visuels → voix**.
+Le script est approuvé ; **le choix de la voix reste à faire par le producteur**, ré-auditionné avant
+le premier rendu (décision de King, §11.2).
+
+⚠️ **L'accroche tient en 2 secondes, pas 3.** §12.1 mesure notre falaise de rétention à **0:02** : tout
+ce qui suit la seconde 2 est vu par ~1 spectateur sur 5. Les durées de ce script ont été **ramenées
+dans la cible maison 15–22 s** (§12.5) — elles dépassaient.
 
 ---
 

@@ -1,7 +1,31 @@
 # UGC IA — Semaine 1 · « À qui confier vos yeux ? »
 
+```
+Status: APPROVED (King, 02/10/2026) — prêt pour le producteur   ·  Updated: 2026-10-02
+Audience: un habitant de Bonabéri/Douala qui cherche un opticien et ne sait pas à qui se fier
+Source asset: le registre ONOC (Littoral l.102, inscription 021/2016) — le seul actif vérifié du cabinet
+Funnel stage: notoriété → confiance → premier message WhatsApp
+Expected outcome: un message WhatsApp entrant, attribuable à cette accroche
+Duration target: 18 s   ·   Language: FR master + variante EN (à produire avant publication)
+```
+
+**Portes de la maison** (`content/scripts/README.md` + `CONTENT-LESSONS` §10, §12, §10.4) :
+
+- [x] **Accroche 3 s** — question ou fait précis, une seule personne, aucune auto-présentation
+- [x] **Résultat plutôt que caractéristiques** — aucune spécification listée
+- [x] **« Pourquoi s'y intéresser ? » par beat** — voir §2, colonne *pourquoi*
+- [x] **Zéro remplissage** — relecture à voix haute faite
+- [x] **Clarté en 4 questions** — ci-dessous
+- [x] **Un seul CTA clair** — un WhatsApp pré-rempli
+- [x] **Aucun tiers nommé** — aucun concurrent, aucune marque
+- [ ] **Pré-vol en 3 volets : script → visuels → voix** — *le volet voix reste à faire par le producteur*
+
+**Clarté (les 4 questions) :** quoi → *un opticien inscrit, trouvable* · pour qui → *celui qui cherche un
+opticien à Bonabéri* · quel résultat → *savoir à qui écrire* · parcours → *méfiance → preuve → contact*.
+
 > **Notre livrable : ce script. La production vidéo est externe (King).**
-> Durée cible : **20–25 s** · Vertical **9:16** · **Aucun visage** · Texte à l'écran minimal.
+> Durée cible : **18 s** (règle maison 15–22 s, §12.5) · Vertical **9:16** · **Aucun visage** ·
+> Texte à l'écran minimal.
 > ⛔ Aucune allégation médicale · aucun témoignage · aucun concurrent nommé · aucun prix.
 
 **Le problème traité.** Pas un problème de vue : un problème de **confiance**. On ne sait pas à qui
@@ -26,15 +50,37 @@ constat, pas la plainte.
 
 ---
 
-## 2 · Beats
+## 2 · Beats — durée totale **18 s**
 
-| # | Temps | Ce qu'on voit | Ce qu'on entend |
-|---|---|---|---|
-| **1** | 0:00–0:03 | **Accroche.** Fond uni, le texte se pose. Un téléphone à plat, une recherche sans résultat | L'accroche |
-| **2** | 0:03–0:08 | Une main fait défiler une liste de résultats **vide**. Puis l'écran se fige | « Quand on cherche un opticien, on tombe sur des pages sans adresse, sans horaire, sans nom. » |
-| **3** | 0:08–0:14 | **La preuve.** Une ligne de registre se met en page comme une pièce officielle : *Ordre des opticiens du Cameroun · inscrit depuis 2016* | « Celui-ci est inscrit à l'Ordre des opticiens du Cameroun. Depuis 2016. » |
-| **4** | 0:14–0:19 | Le nom apparaît : **M. Domche Noumbi**. Puis l'adresse : **Ndobo Mayor, Bonabéri** | « Un titulaire nommé. Une adresse réelle. À Bonabéri. » |
-| **5** | 0:19–0:24 | **Payoff.** La carte complète se pose. Le bouton WhatsApp apparaît | « Maintenant, vous pouvez lui écrire. » |
+| # | Temps | Ce qu'on voit | Ce qu'on entend | Pourquoi s'y intéresser |
+|---|---|---|---|---|
+| **1** | 0:00–0:02 | **Accroche.** Fond uni, le texte se pose **en mouvement**. Un téléphone à plat, une recherche sans résultat — **le plan bouge dès la frame 1** | L'accroche | *Il se reconnaît : il a déjà cherché, sans succès* |
+| **2** | 0:02–0:06 | Une main fait défiler une liste de résultats **vide**. L'écran se fige | « Quand on cherche un opticien, on tombe sur des pages sans adresse, sans horaire, sans nom. » | *On nomme exactement ce qu'il a vécu* |
+| **3** | 0:06–0:11 | **La preuve.** Une ligne de registre se met en page comme une pièce officielle : *Ordre des opticiens du Cameroun · inscrit depuis 2016* | « Celui-ci est inscrit à l'Ordre des opticiens du Cameroun. Depuis 2016. » | *C'est vérifiable, donc ce n'est pas une promesse* |
+| **4** | 0:11–0:14 | Le nom apparaît : **M. Domche Noumbi**. Puis l'adresse : **Ndobo Mayor, Bonabéri** | « Un titulaire nommé. Une adresse réelle. À Bonabéri. » | *Un visage derrière, et c'est à côté de chez lui* |
+| **5** | 0:14–0:18 | **Payoff.** La carte complète se pose. Le bouton WhatsApp apparaît | « Maintenant, vous pouvez lui écrire. » | *L'action est immédiate et sans risque* |
+
+⚠️ **Le beat 1 contient 2 secondes, pas 3.** C'est délibéré : §12.1 mesure notre falaise de rétention à
+**0:02** — tout ce qui suit la seconde 2 est vu par ~1 spectateur sur 5. **L'accroche doit donc être
+entièrement lue avant 0:02**, et le plan 0:00–0:02 doit contenir un **mouvement réel** + la **voix**.
+
+---
+
+## 2b · Contraintes de production — règles dures de la maison
+
+| # | Règle | Source |
+|---|---|---|
+| 1 | **Première coupe ≤ 1,5 s.** Aucune image immobile à l'ouverture | §12.2 |
+| 2 | **Mouvement + voix dès la frame 1** — jamais une ouverture figée | §12.1–12.2 |
+| 3 | **La frame 0 est la vignette** : poser la meilleure image en frame 0. Le canal de partage est **WhatsApp**, où la vignette décide du clic | §10.4 |
+| 4 | **Lisibilité :** une étiquette reste **≥ 0,8 s** · une phrase **≥ 0,3 s × nombre de mots**. *Fast-in, then hold — jamais fast-in, then gone* | §10.4 |
+| 5 | **La narration est dans le fichier livré** — `ffmpeg -i` doit afficher une piste audio. Un son ajouté à la publication n'est pas un substitut | §12.3 |
+| 6 | **Musique libre de droits, ou silence + voix.** Jamais un son pris sur une autre publication | §15 (02/10) |
+| 7 | **⛔ Ne jamais animer l'élément démontré** — le bouton WhatsApp peut apparaître, il ne doit pas « cliquer » | §3.8 / §10.3 |
+
+⚠️ **Volet voix non fait.** La porte de pré-vol maison a trois volets : **script → visuels → voix**. Le
+script est approuvé ; **le choix de la voix reste à faire par le producteur**, et il doit être ré-auditionné
+avant le premier rendu (décision de King, §11.2).
 
 ---
 

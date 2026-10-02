@@ -1,6 +1,6 @@
 # KILL LIST — déduite, jamais écrite en dur
 
-> ⚙️ **Généré le 2026-10-01 par `leads/build/views.py` — ne pas modifier à la main.**
+> ⚙️ **Généré le 2026-10-02 par `leads/build/views.py` — ne pas modifier à la main.**
 > Toute correction se fait dans `leads/build/crm.py` ou `sales/Activity-Log.md`, puis on relance `leads/build/rebuild.sh`.
 
 ## La règle (corrigée le 19/09)
@@ -18,7 +18,7 @@ Le playbook §A4 disait « les 2 leads à 18 (COMOBIL, OraCare) ». **C'était f
 
 ## 📅 Décisions déjà prises — DATES À VENIR, ne rien faire maintenant
 
-- **DM Optique** — 2026-10-02 · **PACK GLOBAL ACCORDÉ le 01/10 — stage `closing`.** Demain 02/10 : envoyer la FACTURE PROFORMA PDF (installation 150 000 FCFA, acompte 75 000, solde à la livraison ; récurrent 30 000 FCFA/mois dont 5 000 de budget pub) + RIB + NIU AMK, et recevoir du client son NIU + son adresse fiscale. Paiement par VIREMENT uniquement (SARL sous contrôle fiscal) : reçus tamponnés. Visite en personne à Bonabéri cette semaine (mer/jeu, jour à confirmer). ⛔ Aucun acompte reçu à cette heure : ne rien livrer ni publier avant l'encaissement
+*Aucune échéance future.*
 
 > Les échéances **déjà passées** sont dans `Daily-Plan.csv` — c'est la file de travail.
 

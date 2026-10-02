@@ -220,3 +220,35 @@ qu'on brûle pour un vues.
 **Pourquoi maintenant :** la règle précédente datait du 17/09 et laissait la porte ouverte
 (« named *or* anonymised, on King's call »). Une règle à deux lectures est une règle qu'on applique
 pas. C'est écrit, plus besoin de demander à chaque vidéo.
+
+## 15 · On copie la structure, jamais les assets — décision KING du 02/10/2026 (tous clients)
+
+**Règle générale, pas une règle DM OPTIQUE.** King, 02/10 : *« Write the rule into the method doc as a
+standing constraint for all clients, not just DM OPTIQUE. »*
+
+Reproduire la **structure** d'une publicité qui a fait ses preuves est une méthode légitime — c'est le
+sens de « copied from viral formats », et c'est ce que fait Grow with Alex en recréant la pub Gucci.
+Reprendre ses **assets** ne l'est pas.
+
+| ✅ Autorisé | ⛔ Interdit |
+|---|---|
+| La structure : ordre des beats, rythme de coupe, placement du CTA, type d'accroche | La **musique** ou la bande son d'une autre marque |
+| Le format : 9:16, durée, rapport texte/image | Le **footage** d'une autre publicité |
+| Le principe : plan produit → moment surréel → mouvement | Un **logo** ou une identité de marque tiers lisible |
+| Une **idée** de mise en scène, refaite avec nos images | Une **photo** ou un visuel d'une autre marque |
+
+**En pratique :** musique **libre de droits**, ou **silence + voix**. Jamais un son « tendance » pris
+sur une autre publication commerciale.
+
+**Pourquoi c'est une règle debout et pas un conseil.** Nos clients sont des **SARL sous contrôle
+fiscal**. Deux clients qui réutiliseraient chacun l'audio de l'autre, ou la musique d'une marque, c'est
+une exposition réelle — et c'est le genre de chose qu'un contrôle relève. Le risque n'est pas créatif,
+il est **comptable et juridique**, et il retombe sur le client, pas sur nous.
+
+**Lien avec les règles existantes.** §12.3 exige qu'une vidéo porte sa **propre** narration dans le
+fichier livré — un son ajouté à la publication n'est pas un substitut. Cette règle-ci dit la même chose
+côté droits : **la piste audio d'un livrable est la nôtre ou elle est libre.**
+
+**Origine.** Lot du 02/10 — les trois vidéos envoyées par King (Grow with Alex · Ben Heath · Ryan
+Collins). Dans sa démo, Grow with Alex utilise **le son de la pub Gucci originale** : pour un tutoriel,
+sans conséquence ; pour une publicité commerciale au nom d'un client, non.

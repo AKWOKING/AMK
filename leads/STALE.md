@@ -1,20 +1,20 @@
 # STALE — ce qui dort
 
-> ⚙️ **Généré le 2026-10-01 par `leads/build/views.py` — ne pas modifier à la main.**
+> ⚙️ **Généré le 2026-10-02 par `leads/build/views.py` — ne pas modifier à la main.**
 > Toute correction se fait dans `leads/build/crm.py` ou `sales/Activity-Log.md`, puis on relance `leads/build/rebuild.sh`.
 
 **« Dormir » =** contacté, sans réponse, dernière trace au journal vieille de plus de **2 jours**. On relance au rythme **M+2 / M+4 / M+7**, jamais deux fois le même jour, **jamais plus de 3**.
 
 | Lead | Étape | Âge | Relances | Trace |
 |---|---|---|---|---|
-| El Roï Optique Médicale | qualifying | 7 j | 0/3 | `L3651` |
-| Net Optique Médical | qualifying | 7 j | 0/3 | `L3652` |
-| K Vision Care | qualifying | 7 j | 0/3 | `L3909` |
-| Cabinet d'Optique la Rétine | qualifying | 7 j | 0/3 | `L4223` |
-| Médina Optic | qualifying | 7 j | 0/3 | `L3520` |
-| Espace Lunetterie | qualifying | 7 j | 0/3 | `L3452` |
-| 4M Optique Akwa | qualifying | 7 j | 0/3 | `L3590` |
-| Maff Optique | qualifying | 7 j | 0/3 | `L3451` |
-| Doyoan Optic | qualifying | 7 j | 0/3 | `L3589` |
-| MegaOptic | qualifying | 7 j | 0/3 | `L3520` |
-| Fashion Vision | qualifying | 7 j | 0/3 | `L3637` |
+| El Roï Optique Médicale | qualifying | 8 j | 0/3 | `L3651` |
+| Net Optique Médical | qualifying | 8 j | 0/3 | `L3652` |
+| K Vision Care | qualifying | 8 j | 0/3 | `L3909` |
+| Cabinet d'Optique la Rétine | qualifying | 8 j | 0/3 | `L4223` |
+| Médina Optic | qualifying | 8 j | 0/3 | `L3520` |
+| Espace Lunetterie | qualifying | 8 j | 0/3 | `L3452` |
+| 4M Optique Akwa | qualifying | 8 j | 0/3 | `L3590` |
+| Maff Optique | qualifying | 8 j | 0/3 | `L3451` |
+| Doyoan Optic | qualifying | 8 j | 0/3 | `L3589` |
+| MegaOptic | qualifying | 8 j | 0/3 | `L3520` |
+| Fashion Vision | qualifying | 8 j | 0/3 | `L3637` |

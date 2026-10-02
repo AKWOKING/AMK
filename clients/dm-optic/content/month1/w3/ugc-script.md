@@ -1,7 +1,31 @@
 # UGC IA — Semaine 3 · « Pourquoi vos lunettes restent dans leur étui »
 
+```
+Status: APPROVED (King, 02/10/2026) — prêt pour le producteur   ·  Updated: 2026-10-02
+Audience: quelqu'un qui possède déjà des lunettes… et ne les porte pas
+Source asset: l'inventaire de montures du cabinet — **bloqué sur les photos**, §7
+Funnel stage: pertinence → désir → essai au cabinet
+Expected outcome: un message WhatsApp pour venir essayer
+Duration target: 20 s   ·   Language: FR master + variante EN (à produire avant publication)
+```
+
+**Portes de la maison** (`content/scripts/README.md` + `CONTENT-LESSONS` §10, §12, §10.4) :
+
+- [x] **Accroche 3 s** — question ou fait précis, une seule personne, aucune auto-présentation
+- [x] **Résultat plutôt que caractéristiques** — aucune spécification listée
+- [x] **« Pourquoi s'y intéresser ? » par beat**
+- [x] **Zéro remplissage** — relecture à voix haute faite
+- [x] **Clarté en 4 questions** — ci-dessous
+- [x] **Un seul CTA clair** — un WhatsApp pré-rempli
+- [x] **Aucun tiers nommé** — aucun concurrent, aucune marque
+- [ ] **Pré-vol en 3 volets : script → visuels → voix** — *le volet voix reste à faire par le producteur*
+
+**Clarté (les 4 questions) :** quoi → *des montures qui vont à son visage* · pour qui → *celui qui a des lunettes non portées* ·
+quel résultat → *une monture qu'on porte vraiment* · parcours → *petite culpabilité → reconnaissance → essai*.
+
+
 > **Notre livrable : ce script. La production vidéo est externe (King).**
-> Durée cible : **20–25 s** · Vertical **9:16** · **Aucun visage** · **Aucune monture sur un visage.**
+> Durée cible : **20 s** (règle maison 15–22 s, §12.5) · Vertical **9:16** · **Aucun visage** · **Aucune monture sur un visage.**
 >
 > ⚠️ **Contrainte créative de King : pas de gros plan de monture sur un visage.** Ce script est donc
 > construit **autour de la monture comme objet**, jamais portée.
@@ -32,11 +56,33 @@ qu'on ne porte pas. **C** est la meilleure **chute** du script — gardée pour 
 
 | # | Temps | Ce qu'on voit | Ce qu'on entend |
 |---|---|---|---|
-| **1** | 0:00–0:03 | **Accroche.** Un étui fermé, posé. Il ne s'ouvre pas | L'accroche |
-| **2** | 0:03–0:09 | L'étui s'ouvre. Une monture **posée**, jamais portée. Une main la soulève, la repose | « Une monture trop large glisse. Trop étroite, elle appuie. Et elle retourne dans l'étui. » |
-| **3** | 0:09–0:16 | **Les trois critères**, en trois plans : la **forme** · **la largeur et l'appui** · **l'usage** | « Trois choses à regarder : la forme de votre visage, la largeur et l'appui, et ce que vous en faites tous les jours. » |
-| **4** | 0:16–0:21 | Une main **ajuste** une branche. Le geste du réglage, en gros plan sur **l'objet** | « Et ça se règle. Une monture bien ajustée, ça ne glisse plus. » |
-| **5** | 0:21–0:26 | **Payoff.** L'étui reste **ouvert**. Le bouton WhatsApp | « Mais ça s'essaie. Sur votre visage — pas sur un écran. » |
+| **1** | 0:00–0:02 | **Accroche.** Un étui fermé, posé. Il ne s'ouvre pas | L'accroche |
+| **2** | 0:02–0:07 | L'étui s'ouvre. Une monture **posée**, jamais portée. Une main la soulève, la repose | « Une monture trop large glisse. Trop étroite, elle appuie. Et elle retourne dans l'étui. » |
+| **3** | 0:07–0:12 | **Les trois critères**, en trois plans : la **forme** · **la largeur et l'appui** · **l'usage** | « Trois choses à regarder : la forme de votre visage, la largeur et l'appui, et ce que vous en faites tous les jours. » |
+| **4** | 0:12–0:16 | Une main **ajuste** une branche. Le geste du réglage, en gros plan sur **l'objet** | « Et ça se règle. Une monture bien ajustée, ça ne glisse plus. » |
+| **5** | 0:16–0:20 | **Payoff.** L'étui reste **ouvert**. Le bouton WhatsApp | « Mais ça s'essaie. Sur votre visage — pas sur un écran. » |
+
+---
+
+## 2b · Contraintes de production — règles dures de la maison
+
+| # | Règle | Source |
+|---|---|---|
+| 1 | **Première coupe ≤ 1,5 s.** Aucune image immobile à l'ouverture | §12.2 |
+| 2 | **Mouvement + voix dès la frame 1** — jamais une ouverture figée | §12.1–12.2 |
+| 3 | **La frame 0 est la vignette** : poser la meilleure image en frame 0. Le canal de partage est **WhatsApp**, où la vignette décide du clic | §10.4 |
+| 4 | **Lisibilité :** une étiquette reste **≥ 0,8 s** · une phrase **≥ 0,3 s × nombre de mots**. *Fast-in, then hold — jamais fast-in, then gone* | §10.4 |
+| 5 | **La narration est dans le fichier livré** — `ffmpeg -i` doit afficher une piste audio. Un son ajouté à la publication n'est pas un substitut | §12.3 |
+| 6 | **Musique libre de droits, ou silence + voix.** Jamais un son pris sur une autre publication | §15 (02/10) |
+| 7 | **⛔ Ne jamais animer l'élément démontré** | §3.8 / §10.3 |
+
+⚠️ **Volet voix non fait.** La porte de pré-vol maison a trois volets : **script → visuels → voix**.
+Le script est approuvé ; **le choix de la voix reste à faire par le producteur**, ré-auditionné avant
+le premier rendu (décision de King, §11.2).
+
+⚠️ **L'accroche tient en 2 secondes, pas 3.** §12.1 mesure notre falaise de rétention à **0:02** : tout
+ce qui suit la seconde 2 est vu par ~1 spectateur sur 5. Les durées de ce script ont été **ramenées
+dans la cible maison 15–22 s** (§12.5) — elles dépassaient.
 
 ---
 

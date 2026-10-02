@@ -108,6 +108,123 @@ pas sur un écran »*. Les scripts W3 l'utilisent comme payoff.
 
 ---
 
+## 4b · Les quatre règles debout — décisions de King, 02/10/2026
+
+Ces quatre règles sont **confirmées par King** et s'appliquent à tout le mois 1. Elles ne sont plus
+des propositions : ce sont des contraintes.
+
+### R1 · Aucun symptôme nommé
+
+**On décrit ce que la personne vit, jamais ce qu'elle a.** Le mot « maux de tête » n'apparaît dans
+aucun script, et n'apparaîtra dans aucun.
+
+| ✅ La situation, le geste | ⛔ Le diagnostic, la thérapie |
+|---|---|
+| « Vous plissez les yeux en fin de journée ? » | « Vos maux de tête viennent de vos yeux » |
+| « Vos yeux fatiguent » | « Des lunettes font disparaître les maux de tête » |
+| « Un examen permet de savoir où vous en êtes » | « Un examen corrige votre vision » |
+
+**Règle de rédaction :** on oriente vers **l'examen**, jamais vers une guérison. L'examen est la
+réponse, pas le remède. **Si King demande un symptôme, c'est une dérogation** — `dossier.md` §6.
+
+**La leçon à retenir :** la meilleure accroche écrite pour W2 a été **écartée** pour cette raison, et
+le fichier le dit. **Une accroche écartée se documente** — c'est ce qui empêche le prochain de la
+réécrire.
+
+### R2 · Aucun visage en UGC IA
+
+**Décision, pas un défaut de moyens.** Les raisons de King :
+
+- Des Camerounais synthétiques dans un contenu d'optique appellent des problèmes de rendu troublant, et
+  **le marché est assez petit pour qu'une mauvaise vidéo empoisonne la confiance pendant des mois**.
+- Le contenu **mains seules et point de vue subjectif convertit** — les scripts W1 à W4 le prouvent.
+- Si des visages générés sont testés un jour : **publicité payante uniquement**, **étiquetés IA** là où
+  TikTok et Meta l'exigent, **jamais en organique**. C'est une expérimentation T4, pas une décision du
+  mois 1.
+
+⛔ **Ne pas reposer la question à King avant qu'il la pose.** Toute demande en ce sens est une
+**dérogation**.
+
+### R3 · Surréel sur les montures, interdit sur les verres
+
+**La ligne :** une monture est un **objet de mode** — un jeu d'échelle est de la mise en scène. Un verre
+est un **dispositif optique** — un jeu d'échelle affirme une **propriété** qu'aucune prise de vue réelle
+ne garantit.
+
+| Image générée | Ce qu'elle affirme sans qu'on l'ait dit |
+|---|---|
+| Un verre sans aucun reflet | un **antireflet** non garanti |
+| Un verre qui fonce au soleil | un **photochromique** peut-être absent du catalogue |
+| Une teinte précise | une **catégorie de protection** non vérifiée |
+
+**Sur un produit de santé, une image exagère plus fort qu'une phrase.**
+
+### R4 · On copie la structure, jamais les assets — ⚠️ règle générale, tous clients
+
+> **Règle promue par King au rang de contrainte permanente pour TOUS les clients, pas seulement
+> DM OPTIQUE.** Consignée dans `content/lessons/CONTENT-LESSONS.md` §15.
+
+Reproduire la **structure** d'une publicité qui a fait ses preuves est une méthode légitime — c'est le
+sens de « copied from viral formats ». Reprendre sa **musique**, son **footage**, son **logo** ou son
+**identité** ne l'est pas.
+
+**Pourquoi c'est sérieux ici, et pas théorique :** deux clients **SARL sous contrôle fiscal** qui
+réutiliseraient chacun l'audio de l'autre, c'est une exposition réelle — et c'est exactement le genre de
+chose qu'un contrôle relève.
+
+**En pratique :** aucune musique d'une autre marque · aucune image d'une autre marque · aucun logo
+tiers lisible · **musique libre de droits, ou silence + voix**. Dans la démo Grow with Alex, l'auteur
+utilise le son de la pub Gucci : **pour un tutoriel, sans conséquence ; pour une publicité commerciale,
+non.**
+
+---
+
+## 4c · Les portes de la maison — ce que tout script doit passer
+
+**⚠️ Découverte du 02/10.** Le dépôt a un standard de script que je n'avais pas chargé en écrivant les
+quatre scripts : `content/scripts/README.md` (les portes) + `content/lessons/CONTENT-LESSONS.md`
+§10, §12, §10.4. **`PRE-FLIGHT.md` l'exigeait** — c'est une faute de pré-vol, corrigée ici.
+
+| Porte | Source | Nos scripts |
+|---|---|---|
+| **Accroche 3 s** — question ou fait précis, **une seule personne**, jamais d'auto-présentation | §10.2 | ✅ Les 12 accroches sont des questions ou des faits précis |
+| **« Pourquoi s'y intéresser ? » par beat** | §10.2 | ✅ Ajouté aux quatre scripts |
+| **Le résultat plutôt que les caractéristiques** — les caractéristiques en minorité de beats | §10.1 | ✅ Aucun script ne liste de spécification |
+| **Zéro remplissage** — lecture à voix haute, supprimer le superflu | §10.2, loi de copie [5] | ✅ Fait |
+| **Clarté en 4 questions** — quoi · pour qui · quel résultat · parcours émotionnel | §10.1 | ✅ Ajouté aux en-têtes |
+| **Un seul CTA clair** | §10.2 | ✅ Un WhatsApp par pièce |
+| **La loi des 2 secondes** — tout le message tient dans les 2 premières secondes ; **mouvement + voix dès la frame 1** ; **première coupe ≤ 1,5 s** | §12.1–12.2 | ⚠️ **Ajouté aux notes de direction — le producteur doit le respecter** |
+| **Frame 0 = la vignette** — la meilleure image en premier, parce que le canal de partage est WhatsApp | §10.4 | ✅ Image de payoff définie par script |
+| **Lisibilité** — étiquette ~0,8 s · phrase ~0,3 s par mot · *fast-in, then hold* | §10.4 | ⚠️ **Contrainte de production, notée** |
+| **Longueur 15–22 s** | §12.5 | ⚠️ **W2 et W3 étaient au-dessus — ramenés dans la cible** |
+| **Chaque vidéo porte une narration, et le fichier livré contient sa piste audio** | §12.3 | ⚠️ **À vérifier à la livraison** |
+
+**Deux adaptations assumées, parce que les portes ont été écrites pour le contenu AMK, pas client :**
+
+| Porte maison | Adaptation pour DM OPTIQUE |
+|---|---|
+| CTA = **DM « PREVIEW »** | **WhatsApp pré-rempli.** « PREVIEW » est le CTA de prospection d'AMK ; ici le CTA est le comptoir |
+| Beat **DEMO (vraies captures du site)** | **Aucune capture de site** — le site n'est pas public. Remplacé par la **preuve** (le registre) et l'**objet** (la monture) |
+
+---
+
+## 4d · ⛔ Rien de public avant la signature — la règle §14 s'applique
+
+`content/lessons/CONTENT-LESSONS.md` **§14, décision de King du 21/09** :
+
+> **« Rien de nommé avant un client signé. »** Aucun prospect n'apparaît avec son nom, son logo, son
+> adresse, son numéro ou un détail identifiable dans un contenu public — **y compris ceux qui ont
+> répondu**.
+
+**DM OPTIQUE n'est pas encore signé** : l'accord est **verbal**, l'acompte n'est **pas encaissé**, le
+contrat n'est **pas signé**. Les scripts nomment le cabinet, le titulaire, l'adresse et le numéro.
+
+**Conséquence, à trancher par King :** « C1 et C2 partent maintenant » ne peut vouloir dire **publier**
+sans contredire §14. Lecture retenue : **produire maintenant, publier à l'encaissement.** Voir le
+rapport — c'est la seule question ouverte de ce livrable.
+
+---
+
 ## 5 · Le programme de variantes et la mesure
 
 **Objectif annoncé : 5 à 10 variantes vidéo. Mesure : coût par message, pas les vues.**
@@ -180,3 +297,5 @@ dépôt dès réception.
 | `w3/ugc-script.md` | **La monture** — pourquoi elle reste dans l'étui |
 | `w4/ugc-script.md` | **La protection** — écran, conduite, soleil |
 | `carousels.md` | Les 4 outlines : accroche → produit → bénéfice → CTA |
+| `../../ads/variant-messages.md` | **Attribution** — chaque variante a son message WhatsApp pré-rempli (coût / message lisible) |
+| `../../photoshoot/PHOTOSHOOT-BRIEF-2026-10.md` | **Brief photo** pour la visite du 07–08/10 — quoi, combien, par catégorie, cadre par plan |
