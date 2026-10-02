@@ -26,7 +26,10 @@ Les deux se défendent — si tu préfères site d'abord, prends site d'abord ; 
 - **Ce que ça prouve :** on peut parler de lui **sans une seule photo** — le mois 1 démarre même si les
   photos tardent.
 
-## 2 · Démo B — la maquette du site · 5 min
+## 2 · Démo B — la maquette du site · 15 min plancher
+
+**15 min est le plancher, pas le plafond** (King, 02/10) : c'est le plus gros artifact qu'il paie, il
+veut le sentir. S'il est engagé, laisse filer à 20 — ne coupe pas un client qui explore.
 
 - **Montrer :** `demos/concept-dmoptic-v1.html` hors ligne — premier écran, la carte « où / quand /
   comment », le bouton WhatsApp.

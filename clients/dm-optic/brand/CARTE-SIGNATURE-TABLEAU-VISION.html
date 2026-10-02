@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>DM OPTIQUE — carte signature (tableau de vision)</title>
+<style>
+  @font-face { font-family: 'Montserrat'; src: url('../../../content/assets/fonts/Montserrat-ExtraBold.ttf'); font-weight: 800; }
+  @font-face { font-family: 'Montserrat'; src: url('../../../content/assets/fonts/Montserrat-Bold.ttf'); font-weight: 700; }
+  @font-face { font-family: 'Montserrat'; src: url('../../../content/assets/fonts/Montserrat-Medium.ttf'); font-weight: 500; }
+  @font-face { font-family: 'Poppins'; src: url('../../../content/assets/fonts/Poppins-SemiBold.ttf'); font-weight: 600; }
+  :root { --teal: #0e4b4b; --cream: #f6f1e7; }
+  @page { size: 105mm 148mm; margin: 0; }
+  * { margin: 0; box-sizing: border-box; }
+  body { background: #d8d2c6; font-family: 'Montserrat', sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+  .card { width: 105mm; height: 148mm; background: var(--cream); color: var(--teal); display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 9mm 7mm 8mm; text-align: center; box-shadow: 0 8px 30px rgba(0,0,0,.25); }
+  .top { font-family: 'Poppins'; font-size: 6.2pt; letter-spacing: .18em; font-weight: 600; border-top: 2px solid var(--teal); border-bottom: 2px solid var(--teal); padding: 2.2mm 0; width: 100%; }
+  .chart { display: flex; flex-direction: column; gap: 4.2mm; align-items: center; }
+  .chart div { font-weight: 800; letter-spacing: .32em; white-space: nowrap; }
+  .l1 { font-size: 27pt; } .l2 { font-size: 17pt; } .l3 { font-size: 12pt; } .l4 { font-size: 8.5pt; } .l5 { font-size: 6.5pt; letter-spacing: .26em; }
+  .l6 { font-size: 5.4pt; letter-spacing: .2em; font-weight: 700; opacity: .85; }
+  .bottom { font-family: 'Poppins'; font-weight: 600; font-size: 6.4pt; line-height: 1.55; }
+  @media print { body { background: none; } .card { box-shadow: none; } }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="top">OPTICIEN INSCRIT À L'ORDRE DEPUIS 2016 · BONABÉRI</div>
+    <div class="chart">
+      <div class="l1">BONABÉRI</div>
+      <div class="l2">DM OPTIQUE</div>
+      <div class="l3">ÇA S'ESSAIE</div>
+      <div class="l4">SUR VOTRE VISAGE</div>
+      <div class="l5">PAS SUR UN ÉCRAN</div>
+      <div class="l6">NDOBO MAYOR · DOUALA IV · 656 122 239</div>
+    </div>
+    <div class="bottom">Commencez par la ligne du haut.<br>Si vous lisez tout, vos yeux vont bien.<br>Sinon, on regarde ça ensemble.</div>
+  </div>
+</body>
+</html>

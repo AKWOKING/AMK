@@ -2,16 +2,16 @@
 
 ```
 Status: PRÊT À EMPORTER   ·  Updated: 2026-10-02
-Jour J : mercredi 07/10 ou jeudi 08/10 — **confirmé par la note vocale de mardi** (les deux dates
-circulent ; la note vocale tranche). Cabinet : immeuble West Hotel, Ndobo Mayor, Bonabéri, Douala IV.
-Budget total sur place : ~95 min, dont 45 min de prise de vue.
+Jour J : **mercredi 07/10** (tranché par King, 02/10 — les noms de fichiers disaient 08, corrigé).
+Cabinet : immeuble West Hotel, Ndobo Mayor, Bonabéri, Douala IV.
+Budget total sur place : ~95–110 min, dont 45 min de prise de vue (le site a 15 min de plancher).
 ```
 
 ## 0 · Avant de partir (la veille au soir)
 
 - [ ] 2 × Facture Proforma imprimées (la sienne, la mienne) — **à produire ce week-end**
 - [ ] RIB + NIU AMK imprimés — **à fournir ce week-end** (bloquant critique, `pre-launch-checklist.md` item 2)
-- [ ] Le pack imprimé (`VISIT-PRINTED-PACK-2026-10-08.md`)
+- [ ] Le pack imprimé (`VISIT-PRINTED-PACK-2026-10-07.md`)
 - [ ] Téléphone chargé + **démos chargées hors ligne** (le cabinet peut être sombre en data)
 - [ ] Feuille A4 (réflecteur) + chiffon microfibre
 - [ ] La fiche photo 1 page (`photoshoot/PHOTOSHOOT-FICHE-1PAGE-2026-10.md`)
@@ -22,7 +22,7 @@ Budget total sur place : ~95 min, dont 45 min de prise de vue.
 | # | Étape | Time-box | Déclencheur | Repli si ça cale |
 |---|---|---|---|---|
 | **1** | **Accueil.** Chaleureux, entre deux personnes qui se sont déjà rencontrées. Si la localisation vient : *« basé entre Buea et Douala, conception à distance, je me déplace pour nos points d'étape clés. »* | 5 min | L'arrivée | S'il est tendu : **écouter d'abord**, démos après — la relation passe avant l'écran |
-| **2** | **Démos** (3 max, `DEMO-SCRIPT-2026-10-08.md`). C1 → site → script W1. Lui faire **tenir** l'écran, pas regarder le mien. | 15 min | Installés, thé/café servi | Data morte ou écran illisible : le pack imprimé **prend le relais** — rien ne dépend du réseau |
+| **2** | **Démos** (3 max, `DEMO-SCRIPT-2026-10-07.md`). C1 → site → script W1. Lui faire **tenir** l'écran, pas regarder le mien. | 15–25 min — **site : 15 min plancher, 20 s'il est engagé** | Installés, thé/café servi | Data morte ou écran illisible : le pack imprimé **prend le relais** — rien ne dépend du réseau |
 | **3** | **Revue des conditions + signature.** Les deux coffrets, le périmètre mois 1, « jamais de remise — on échange du périmètre ». Il signe les conditions. | 10 min | Les démos ont parlé, ses questions sont posées | S'il veut relire avec ses associés : **une copie reste sur place**, prochaine étape **datée** (48 h) — pas de « on se rappelle » |
 | **4** | **Acompte.** 75 000 FCFA, MoMo/virement **sur place**, ou proforma tamponnée retournée. **Rien n'est public et aucun accès compte n'est ouvert avant.** | 10 min | Conditions signées | Si le paiement est impossible ce jour-là : **rien ne se publie**, prochaine étape datée — mais **la séance photo peut avoir lieu** (son inventaire, son accord) et le reste attend le déclencheur |
 | **5** | **La conversation 8a** (`PHOTOSHOOT-BRIEF` §6). Branche 1 : l'échange fondateur, cadrage FR tel quel. Branche 2 s'il décline : ligne 15 000 FCFA, séparée, jamais une remise. | 5 min | L'acompte est posé (ou avant la photo si l'échange est accepté) | S'il hésite : **ne pas forcer** — la branche 2 est dite, il tranche, on note |
