@@ -42,6 +42,23 @@ par réponse) et remonte toute seule dans les fiches et les vues.
 
 **State files to load with almost everything:** `sales/Pipeline-Status.md` (current week), the prospect dossier, `sales/Outreach-Pack-<date>.md` (active pack), session memory.
 
+**Knowledge base (couche de référence, 02/10 — `knowledge/HOUSE-KNOWLEDGE-BASE.md`) :** chaque
+pré-vol charge, **en plus du dossier métier**, les sections pertinentes de la base :
+
+| Task type | + knowledge base |
+|---|---|
+| **Sales / outreach / proposal** | §2, §8 |
+| **Content / script / video / caption** | §7, §8 |
+| **Marketing / strategy** | §3, §5 |
+| **Ads / campaign** | `clients/<slug>/ads/campaign-brief.md` (quand il existe) + §4, §5 |
+| **Design / build** | §1 |
+| **Delivery / onboarding** | §1, §2 |
+| **Orchestration / meta / workflow** | §6 |
+
+**Étape de vérification des sources :** avant d'appliquer une section, vérifier que ses sources sont
+encore atteignables. 404 ou bloquée → note au change log de la base, et on travaille depuis le contenu
+de la section quand même — **les sources servent à vérifier, pas à dépendre**.
+
 ---
 
 ## 1b · Porte technique obligatoire avant toute livraison (17 Sep 2026)
@@ -92,6 +109,9 @@ avant l'envoi ; SkyOptic et Cinq Sens fragilisés après l'envoi) :
 - A task that teaches something (a tactic that worked, a reference that landed, a copy angle, a design move) → **append a dated entry** to the relevant lessons file the same day, naming the client/task. Don't wait for Monday.
 - **Never overwrite a lesson silently** — add, annotate or version (same rule as the playbook).
 - **Conflicts:** say so; ask which side wins, unless the newer lesson is clearly stronger for Cameroon clinics/schools — then propose the change and wait for King's yes.
+- **Friday report — « Knowledge applied » line (02/10) :** quels domaines de
+  `knowledge/HOUSE-KNOWLEDGE-BASE.md` ont servi cette semaine, ce qui a marché, ce qui est à réviser ou à
+  tester. Se remplit depuis le change log de la base.
 
 ## 5 · Standing lens (everything filters through this)
 
