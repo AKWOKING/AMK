@@ -50,8 +50,8 @@ cabinet (656 122 239). Ne jamais changer le numéro dans un lien sans vérifier 
 
 | # | Statut | Accroche | Raison · décision requise |
 |---|---|---|---|
-| **W2-C** | ⛔ écartée | « Vos yeux fatiguent. Ce n'est peut-être pas seulement l'écran. » | « ce n'est peut-être pas seulement l'écran » sous-entend une **cause médicale**. Règle R1 du 02/10. Conservée au fichier avec sa raison, sans lien. |
-| **W4-C** | ⚠️ gelée | « Le soleil de Douala. Vos yeux le paient. » | « le paient » sous-entend un **dommage**. À reformuler ou écarter — décision de King. Pas de lien tant que gelée. |
+| **W2-C** | ⛔ **frozen — gelée indéfiniment** (King, 02/10) | « Vos yeux fatiguent. Ce n'est peut-être pas seulement l'écran. » | « ce n'est peut-être pas seulement l'écran » sous-entend une **cause médicale**. Règle R1 du 02/10. Conservée au fichier avec sa raison, sans lien. |
+| **W4-C** | ⛔ **frozen — awaiting King ruling** | « Le soleil de Douala. Vos yeux le paient. » | « le paient » sous-entend un **dommage**. Test de King : si peur du coût de la négligence → reste gelée ; si simple énoncé tarifaire → dégel. Pas un énoncé tarifaire à ce stade. Pas de lien tant que gelée. |
 
 ---
 

@@ -17,7 +17,7 @@ Sources:
 3. Natalie Dawson — *$100M Worth of Sales Knowledge in 19 Minutes* (20 min) — the MINDSET (belief, authenticity, the close)
 4. Patrick Dang — *8 Dark Psychology Sales Techniques* (19 min) — the CLOSE (pain ladder, price+pause, their words)
 
-**Standing rules that override everything:** no sell in message 1 (goal = "send me the preview") · max 3 FUs · pain statements ONLY from verified facts · never name a specific competitor school/clinic · no fake scarcity (small-city networks poison themselves) · sign AKWO KING · never discount — trade scope/timing, not price.
+**Standing rules that override everything:** no sell in message 1 (goal = "send me the preview") · max 3 FUs · pain statements ONLY from verified facts · never name a specific competitor school/clinic · no fake scarcity (small-city networks poison themselves) · sign AKWO KING — **PDFs only** (proforma, contract, proposal; never in WhatsApp/text, ruling 02/10) · never discount — trade scope/timing, not price · **client-facing messages: 2–3 short sentences, no bullets, no emoji chains, warm and human; voice-note and call flags; location honesty → [`CLIENT-MESSAGING-RULES.md`](CLIENT-MESSAGING-RULES.md) (02/10, house standard for every client and prospect)**.
 
 ---
 

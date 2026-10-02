@@ -171,20 +171,29 @@ AVANT DE PARTIR
 > La photographie **n'est pas comprise** dans les 150 000 FCFA, et la grille **exclut** explicitement
 > les « photos professionnelles ».
 
-**Une séance au téléphone est donc soit :**
-1. **un geste commercial encadré** — « je prends les photos, c'est inclus, voilà ce que vous en faites », ou
-2. **une ligne facturée** — prix **à fixer**.
+**Tranché par King, 02/10/2026 : un échange de client fondateur** — ni un cadeau, ni une remise.
 
-**Pourquoi ça doit être dit avant, pas pendant.** King arrive sur place avec un accord **verbal** et un
-acompte **non encaissé**. Demander 24 photos puis parler prix après, c'est la mauvaise séquence — et
-dans un cabinet où l'on n'a pas encore payé, ça se lit mal.
+### Branche 1 — l'échange (recommandé)
 
-**Recommandation :** l'annoncer comme **un geste commercial encadré**, avec la limite écrite :
-*« Je prends les photos au téléphone pour lancer le mois 1. Ce ne sont pas des photos professionnelles ;
-quand le catalogue tournera, on verra si un photographe vaut le coup. »* Cela protège les deux côtés :
-le client sait ce qu'il reçoit, et nous ne promettons pas une qualité qu'un 8a ne donne pas.
+La session 8a est **incluse** (alors qu'elle est normalement hors pack) contre des **droits de
+nommage tier-1** pour le portfolio et le contenu AMK — **une fois le travail livré et avec son accord
+écrit**. AMK n'a **aucun client tier-1** aujourd'hui : échanger quelques heures de prise de vue contre
+cette valeur de portfolio est la bonne forme pour un client fondateur.
 
-**À décider par King avant de partir.**
+**Cadrage (FR), à dire tel quel :**
+
+> *« Pour un client fondateur, on inclut la session photo Pixel-8A — normalement hors pack. En
+> échange, une fois tout livré, on aimerait pouvoir vous mentionner comme client dans notre
+> portfolio, avec votre accord écrit. »*
+
+### Branche 2 — s'il décline les droits de nommage
+
+La session devient une **ligne facturée à 15 000 FCFA**, **clairement séparée** des 150 000 FCFA de
+setup. **Jamais de remise** — on échange du périmètre contre du périmètre, pas du prix.
+
+**Pourquoi ça doit être dit avant, pas pendant.** King arrive sur place avec un accord **verbal** et
+un acompte **non encaissé**. Demander 24 photos puis parler prix après, c'est la mauvaise séquence —
+et dans un cabinet où l'on n'a pas encore payé, ça se lit mal.
 
 ---
 

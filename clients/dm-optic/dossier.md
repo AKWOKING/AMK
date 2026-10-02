@@ -139,12 +139,19 @@ elle est **signalée**, son **risque est écrit**, et King tranche.
 | **Surréel montures ≠ verres** | Jeu d'échelle sur la monture (objet de mode) OK ; sur le verre (dispositif optique) = dérogation | ✅ verrouillé |
 | **Copier la structure, pas les assets** | ⛔ Règle **générale, tous clients** → `content/lessons/CONTENT-LESSONS.md` §15 | ✅ verrouillé |
 | **W2 accroche écartée** | « Vos yeux fatiguent… » gardée au fichier avec sa raison (R1 : pas de symptôme) | ✅ verrouillé |
+| **Déclencheur de publication** | §14 gouverne la publication, pas la production. **Fonds crédités + proforma tamponnée retournée** — pas « promis », pas « en transit ». Jamais publié si l'acompte n'arrive pas | ✅ tranché 02/10 |
+| **Séance photo 8a** | **Échange de client fondateur**, ni cadeau ni remise : incluse contre **droits de nommage tier-1** (accord écrit, après livraison). S'il décline → **ligne facturée 15 000 FCFA**, séparée des 150 000. Jamais de remise | ✅ tranché 02/10 |
+| **Voix** | **Même voix que le moteur de contenu AMK** (`voice-00`, §11.2). Les caveats « audition à faire » sont retirés des scripts | ✅ tranché 02/10 |
+| **Variante EN** | **Différée, non bloquante.** Le FR part en production d'abord ; l'EN suit en seconde ligne | ✅ tranché 02/10 |
+| **Repli C3 + C4** | Si la prise de vue échoue totalement : **C3 ET C4 deviennent variantes service** en mois 1 ; tout le contenu montures → mois 2. (Corrige King : C4 n'est pas sans-photo) | ✅ tranché 02/10 |
+| **W2-C / W4-C** | W2-C **gelée indéfiniment** (cause médicale). W4-C **gelée — awaiting King ruling** (lire `ads/variant-messages.md`) | ✅ tranché 02/10 |
 
-### ⚠️ Une question ouverte — à trancher par King
+### Question ouverte du 02/10 — **tranchée par King le 02/10**
 
-**« C1 et C2 partent maintenant »** contredit **`CONTENT-LESSONS.md` §14 (21/09) : « Rien de nommé avant
-un client signé. »** DM OPTIQUE n'est **pas signé** (accord verbal, acompte non encaissé). Lecture retenue :
-**produire maintenant, publier à l'encaissement.** Voir le rapport — c'est la seule question ouverte.
+« C1 et C2 partent maintenant » vs §14 : **§14 gouverne la publication, pas la production.** Produire
+maintenant, publier au déclencheur exact : **fonds crédités sur le compte ET proforma tamponnée et
+retournée.** Pas « promis », pas « en transit ». Si l'acompte n'arrive jamais, le contenu n'est jamais
+publié — coût acceptable pour une publication le jour même où l'argent arrive.
 
 ---
 

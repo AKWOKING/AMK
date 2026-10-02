@@ -208,7 +208,7 @@ archivage dans le dépôt dès réception** — `pre-launch-checklist.md` item 7
 ## Avant de produire quoi que ce soit
 
 - [ ] **C1 seul** peut partir aujourd'hui — mais **rien ne part avant l'acompte** (règle : rien de public)
-- [ ] **C2, C3, C4** attendent les photos
+- [ ] **C2, C3, C4** attendent les photos · **repli (King 02/10) : si la prise de vue échoue totalement, C3 ET C4 deviennent variantes « service », montures → mois 2**
 - [ ] **C3 attend aussi** : la liste des familles confirmée, et les noms si le client en choisit
 - [ ] **C4 attend aussi** : la réponse sur les types de verres vendus
 - [ ] **Chaque CTA a son message pré-rempli distinct** — sinon le coût par message n'est pas

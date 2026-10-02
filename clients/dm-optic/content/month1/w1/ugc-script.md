@@ -6,7 +6,7 @@ Audience: un habitant de Bonabéri/Douala qui cherche un opticien et ne sait pas
 Source asset: le registre ONOC (Littoral l.102, inscription 021/2016) — le seul actif vérifié du cabinet
 Funnel stage: notoriété → confiance → premier message WhatsApp
 Expected outcome: un message WhatsApp entrant, attribuable à cette accroche
-Duration target: 18 s   ·   Language: FR master + variante EN (à produire avant publication)
+Duration target: 18 s   ·   Language: FR master · variante EN différée (King 02/10), non bloquante
 ```
 
 **Portes de la maison** (`content/scripts/README.md` + `CONTENT-LESSONS` §10, §12, §10.4) :
@@ -18,7 +18,7 @@ Duration target: 18 s   ·   Language: FR master + variante EN (à produire avan
 - [x] **Clarté en 4 questions** — ci-dessous
 - [x] **Un seul CTA clair** — un WhatsApp pré-rempli
 - [x] **Aucun tiers nommé** — aucun concurrent, aucune marque
-- [ ] **Pré-vol en 3 volets : script → visuels → voix** — *le volet voix reste à faire par le producteur*
+- [x] **Pré-vol en 3 volets : script → visuels → voix** — *voix de la maison (voice-00), même voix que le moteur de contenu AMK (King 02/10)*
 
 **Clarté (les 4 questions) :** quoi → *un opticien inscrit, trouvable* · pour qui → *celui qui cherche un
 opticien à Bonabéri* · quel résultat → *savoir à qui écrire* · parcours → *méfiance → preuve → contact*.
@@ -78,9 +78,9 @@ entièrement lue avant 0:02**, et le plan 0:00–0:02 doit contenir un **mouveme
 | 6 | **Musique libre de droits, ou silence + voix.** Jamais un son pris sur une autre publication | §15 (02/10) |
 | 7 | **⛔ Ne jamais animer l'élément démontré** — le bouton WhatsApp peut apparaître, il ne doit pas « cliquer » | §3.8 / §10.3 |
 
-⚠️ **Volet voix non fait.** La porte de pré-vol maison a trois volets : **script → visuels → voix**. Le
-script est approuvé ; **le choix de la voix reste à faire par le producteur**, et il doit être ré-auditionné
-avant le premier rendu (décision de King, §11.2).
+✅ **Voix tranchée (King 02/10).** La narration porte la **voix de la maison (voice-00)** — la même
+que le moteur de contenu AMK (`CONTENT-LESSONS` §11.2). **Plus d'audition à prévoir.**
+**Variante EN différée, non bloquante** : le FR part en production d'abord ; l'EN suivra en seconde ligne.
 
 ---
 

@@ -152,7 +152,8 @@ mais **la publicité de S2 est Facebook/Instagram** — à confirmer par King
 ## 4 · Semaine 3 — Les montures
 
 *⛔ Bloquée **absolument** par : 6–8 photos de montures réelles (item 7). Sans elles, cette semaine
-n'existe pas.*
+n'existe pas. **Repli (02/10) : si la prise de vue échoue totalement, la semaine 3 devient une
+variante « service » (confiance / catégorie) et les montures passent au mois 2.***
 
 ### 🎬 Mardi 27/10 — UGC IA
 
@@ -202,7 +203,8 @@ n'existe pas.*
 ## 5 · Semaine 4 — Les verres
 
 *⚠️ Bloquée par : 1–2 photos (montage, ajustement). ⚠️ **La semaine la plus exposée au risque
-d'allégation médicale.***
+d'allégation médicale.** **Repli (02/10) : C4 n'est pas sans-photo — si la prise de vue échoue
+totalement, C4 devient aussi une variante « service ».***
 
 ### 🎬 Mardi 03/11 — UGC IA
 
@@ -276,7 +278,7 @@ d'allégation médicale.***
 
 | Risque | Effet | Parade |
 |---|---|---|
-| **Photos non reçues** | Les semaines 2, 3 et 4 tombent | Trancher l'issue A/B/C de `content-plan-month1.md` §3 **avant** le lancement |
+| **Photos non reçues** | Les semaines 2, 3 et 4 tombent | Issue A/B/C de `content-plan-month1.md` §3 **avant** le lancement · **contingence 02/10 : si la prise de vue échoue totalement, C3 + C4 deviennent variantes service en mois 1, montures → mois 2** |
 | **Jours d'ouverture non donnés** | La semaine 2 est incomplète | Question 🔴 2.1 du questionnaire |
 | **Personne ne répond au WhatsApp** | La publicité de S2 brûle pour rien | Question 8.5 du questionnaire — **qui répond, et en combien de temps** |
 | **Comptes créés sur nos identifiants** | Rétrocession difficile | Item 4 de la checklist — **avant** toute création |

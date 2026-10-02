@@ -219,9 +219,14 @@ quatre scripts : `content/scripts/README.md` (les portes) + `content/lessons/CON
 **DM OPTIQUE n'est pas encore signé** : l'accord est **verbal**, l'acompte n'est **pas encaissé**, le
 contrat n'est **pas signé**. Les scripts nomment le cabinet, le titulaire, l'adresse et le numéro.
 
-**Conséquence, à trancher par King :** « C1 et C2 partent maintenant » ne peut vouloir dire **publier**
-sans contredire §14. Lecture retenue : **produire maintenant, publier à l'encaissement.** Voir le
-rapport — c'est la seule question ouverte de ce livrable.
+**Tranché par King, 02/10/2026 :** §14 gouverne la **publication**, pas la production. **Produire
+maintenant, publier à l'encaissement.** Le déclencheur exact de publication :
+
+> **Les fonds sont crédités sur le compte ET la Facture Proforma est tamponnée et retournée.**
+> Pas « promis ». Pas « en transit ». **Le déclencheur, c'est l'argent sur le compte.**
+
+**Si l'acompte n'arrive jamais, le contenu n'est jamais publié** — coût acceptable pour une
+publication **le jour même** où l'argent arrive.
 
 ---
 
@@ -285,6 +290,10 @@ photos arrivent**, sans aller-retour.
 **La fiche de prise de vue existe déjà** (six règles, deux minutes par monture, journal du 27/09).
 ⚠️ **Antécédent :** neuf photos avaient été envoyées puis **perdues**. Cette fois, archivage dans le
 dépôt dès réception.
+
+**Repli tranché (King, 02/10) :** si la prise de vue échoue **totalement**, **C3 et C4 sont remplacés
+par des variantes « service »** en mois 1 (confiance / catégorie) et **tout le contenu montures passe
+au mois 2**. ⚠️ C4 exige 2–4 photos : elle n'est **pas** un repli sans-photo.
 
 ---
 

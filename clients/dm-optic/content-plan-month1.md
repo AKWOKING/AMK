@@ -147,6 +147,12 @@ les photos. **Trois issues, à trancher :**
 | **B — Démarrer par la semaine 1 seule** et tenir les semaines 2–4 en attente | Le mois 1 ne livre que 2 pièces au lieu de 8. **À négocier en périmètre ou en calendrier, jamais en prix** (règle 6) |
 | **C — Produire 1 et 2, tourner 3 et 4 plus tard** | Mois 1 = 4 pièces. Même remarque |
 
+**Contingence prise de vue — tranchée par King, 02/10.** Si la visite ne produit **aucune** photo
+exploitable : **C3 et C4 deviennent tous deux des variantes « service »** (confiance, catégorie — là
+où l'on voulait mener de toute façon) en mois 1, et **tout le contenu montures passe au mois 2**.
+⚠️ L'ancienne contingence « échanger le créneau W3 contre C4 » est **remplacée** : C4 exige 2–4
+photos, elle n'a donc **jamais été un repli sans-photo**.
+
 **La fiche de prise de vue existe déjà** (`sales/Activity-Log.md`, 27/09) : six règles, deux minutes
 par monture, fond blanc. **C'est ce qu'on remet au client à la visite — pas un discours sur la qualité
 d'image.** Neuf photos avaient été envoyées puis perdues ; la demande est donc **réelle et déjà
