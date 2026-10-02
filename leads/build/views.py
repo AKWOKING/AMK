@@ -65,47 +65,40 @@ RELANCE_A_JOUR = {
     # midas-touch-optic-center-mitoc : RETIRÉ le 02/10 — sa propre note disait « DERNIÈRE touche :
     # 29/09, puis on classe » : parked le 02/10 (stale check de King).
     # baird-memorial-college : RETIRÉ le 02/10 — parked le 02/10 (stale check de King).
+    # ── RULINGS DU 02/10 (soir) — relances planifiées, textes approuvés par King ──────────────────
+    "le-cristallin":
+        ("2026-10-09", "Ruling King 02/10 — santé d'abord, zéro business : « Bonjour Monsieur, comment "
+                       "allez-vous ? Le projet vous attend, prenez soin de vous d'abord. À bientôt. » "
+                       "Pas de prix, pas de date, rien d'autre."),
+    "labiomed-deido":
+        ("2026-10-13", "Ruling King 02/10 — on tient SA parole, touche légère : « Bonjour, juste un "
+                       "petit bonjour — vous êtes en place maintenant ? » Pas de prix, pas de question "
+                       "de validation."),
+    "cavisa-optique":
+        ("2026-10-05", "Redéploiement du dossier hosting/previews/cavisa (King, week-end). ⚠️ Le message "
+                       "du 24/09 EST DÉJÀ PARTI à 13:26 — ne PAS le renvoyer. Lundi : message de suivi À "
+                       "APPROUVER (sales/Suivi-CAVISA-2026-10-05.md)."),
     "st-theresa-international-bilingual-comprehensive-college-sti":
         ("2026-10-12", "Permission EXPLICITE de repasser en octobre (verbatim 15/09 : « Ok thanks you "
                        "can get back to me for a follow up » — leur page sera prête en octobre). "
                        "Relance le 12/10 : « votre page est prête ? » — pas de prix, pas de question "
                        "de validation. Date choisie le 02/10 pour laisser la semaine de la visite "
                        "DM OPTIQUE (07/10) libre. La balle est chez nous — PAS une réponse en attente."),
-    "labiomed-deido": ("2026-10-01", "A RÉPONDU le 22/09 à 16:41 : « Non pas encore je ne suis pas en place » "
-                                      "· « Quand je serai la je vais vous contacter ». Ce n'est ni un oui ni un "
-                                      "refus — c'est un REPORT MOTIVÉ (pas encore installé). Réponse envoyée "
-                                      "dans l'heure ; on ne le relance plus d'ici le 1ᵉʳ octobre, et ce jour-là "
-                                      "sans prix ni question de validation : juste « vous êtes en place ? »"),
+    # labiomed-deido : entrée 09/01 remplacée le 02/10 par la ligne « RULINGS DU 02/10 » ci-dessus.
     # centre-medical-de-bonanjo : RETIRÉ le 02/10 — lead parké (bulk close, reset pipeline).
     # Les deux fils « prix posé » du 21/09 : l'échéance vient de ce qui a été ÉCRIT au client,
     # pas d'un calcul M+2. Univers Optique = l'aperçu promis « d'ici demain ». Le Cristallin =
     # la réponse de King sur le périmètre FB attendue avant d'envoyer, relance 48 h après.
     # 22/09 20:51 : il a répondu — « Je suis vraiment intéressé … Vendredi matin 10h dans mon cabinet. »
     # Comme UNI-LABO, ce n'est plus une relance à calculer, c'est une réunion à préparer.
-    "univers-optique": ("2026-09-25", "**GELÉ (King, 23/09 au soir)** : plus aucun travail sur le site ni "
-                                      "le dossier avant le paiement. " + "RENDEZ-VOUS fixé par le prospect — **vendredi 25/09 à 10 h, son "
-                                      "cabinet** (Bépanda). Feuille : `sales/RDV-UNIVERS-OPTIQUE-2026-09-25.md`. "
-                                      "Prix déjà posé le 21/09 (100 000 FCFA, 50/50) : on ne le re-présente "
-                                      "pas, on ne le baisse pas. À sortir de la salle : le « oui », les "
-                                      "réponses aux six points que la page demande, l'acompte"),
+    "univers-optique": ("2026-10-08", "NE RIEN ENVOYER avant mercredi 07/10 ET avant revue du pitch par King (ruling 02/10). Pitch draft : clients/univers-optique/research/PITCH-DRAFT-2026-10.md. Le 08/10 : si feu vert, message prix pilote 750k — jamais de remise, split 400/350 max. (Ancienne entrée 25/09 : GEL levé par le ruling reset — le lead reste vivant, rien ne part sans ordre.)"),
     # 23/09 09:46 : le prix est PARTI (150 000 FCFA, 75 000 pour démarrer). On attend sa réponse ;
     # s'il ne dit rien, une relance courte le 24/09 — et rien d'autre entre-temps.
     # 24/09 : le plan demandait « Relance 1/3 Le Cristallin » alors que la décision écrite dit l'inverse.
     # Il est MALADE (10:11) et King a répondu santé d'abord (10:13). Un plan généré qui contredit une
     # décision humaine est exactement le piège COMOBIL — la prose le dit, la donnée le calcule autrement.
     # Le prochain message est un message de SANTÉ, lundi 29/09 : `sales/Queue-CRISTALLIN-2026-09-29.md`.
-    "le-cristallin": ("2026-09-29", "**IL EST MALADE (24/09 10:11) — AUCUNE relance du projet.** "
-                                      "King a répondu santé d'abord le 24/09 à 10:13 ; next message = "
-                                      "message de santé lundi 29/09 (`sales/Queue-CRISTALLIN-2026-09-29.md`), "
-                                      "santé avant le projet, sans reposer le prix. **PRIX POSÉ le 23/09 "
-                                      "09:46** : 150 000 FCFA, 50 % = 75 000 pour démarrer, solde à la "
-                                      "livraison. GELÉ (King, 23/09) : aucune modification de la page ni du "
-                                      "dossier jusqu'au paiement ; les trois compensations (WhatsApp "
-                                      "Business, domaine 2027, fiche Google) restent parquées. Cinq écarts "
-                                      "à trancher AVANT publication (compte d'assurances FR 18 / EN 17, "
-                                      "mur à 19, bloc « 32 ans » en double, horaires vs son flyer, "
-                                      "« depuis 2010 ») et le périmètre « hébergement + domaine » à "
-                                      "cadrer : son domaine est à lui jusqu'au 13/06/2027"),
+    # le-cristallin : entrée 09/29 remplacée le 02/10 par la ligne « RULINGS DU 02/10 » ci-dessus.
     # UNI-LABO a DEMANDÉ un rendez-vous : ce n'est plus une relance à calculer.
     # uni-labo-bonamoussadi : RETIRÉ le 02/10 — lead parké (bulk close, reset pipeline).
     # Le calcul M+4 ne voyait pas cette échéance : le compteur de la source disait 1 relance au lieu de 2
@@ -127,10 +120,7 @@ RELANCE_A_JOUR = {
     # de la file « ⚡ Répondre d'abord » : une réponse `human` reste « en attente » tant que rien ne
     # dit le contraire. ⚠️ **PROPOSITION, À CONFIRMER PAR KING** : si rien n'est arrivé d'ici là, UN
     # rappel court le 28/09 — jamais un reproche, juste « j'ai bien reçu / je n'ai rien reçu ».
-    "cavisa-optique": ("2026-09-28", "Réponse envoyée le 24/09 à 13:26 (remerciements + les 4 éléments "
-                                     "demandés + la question des prix). La balle est chez M. Dongmo. "
-                                     "PROPOSITION à confirmer par King : UN rappel court si rien n'est "
-                                     "arrivé d'ici là — le redéploiement, lui, attend sa liste"),
+    # cavisa-optique : entrée 09/28 remplacée le 02/10 par la ligne « RULINGS DU 02/10 » ci-dessus.
     # skye-douala : RETIRÉ le 02/10 — lead parké (bulk close, reset pipeline).
     # yaks-douala : RETIRÉ le 02/10 — lead parké (bulk close, reset pipeline).
     # ── 01/10 — DM OPTIQUE SARL A CHOISI LE PACK GLOBAL : ce n'est plus une relance à calculer ──

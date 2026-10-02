@@ -28,11 +28,11 @@ Envoyé le 19/09 à 19:32 — lu (2 coches). ***PREMIER OUI DE LA CAMPAGNE.*** 1
 
 ## Prochaine action
 
-**Action fixée au 2026-10-01** — décision humaine, elle prime sur le rythme automatique. A RÉPONDU le 22/09 à 16:41 : « Non pas encore je ne suis pas en place » · « Quand je serai la je vais vous contacter ». Ce n'est ni un oui ni un refus — c'est un REPORT MOTIVÉ (pas encore installé). Réponse envoyée dans l'heure ; on ne le relance plus d'ici le 1ᵉʳ octobre, et ce jour-là sans prix ni question de validation : juste « vous êtes en place ? »
+**Action fixée au 2026-10-13** — décision humaine, elle prime sur le rythme automatique. Ruling King 02/10 — on tient SA parole, touche légère : « Bonjour, juste un petit bonjour — vous êtes en place maintenant ? » Pas de prix, pas de question de validation.
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 33 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 34 ligne(s).*
 
 `L366` · ## sam 19/09 19:21–20:02 — ⭐ PREMIER « OUI » DE LA CAMPAGNE : LABIOMED
 `L371` · - **23:59 → LABIOMED a répondu « Oui » à 19:43 — 11 minutes après notre message.**
@@ -67,6 +67,7 @@ Envoyé le 19/09 à 19:32 — lu (2 coches). ***PREMIER OUI DE LA CAMPAGNE.*** 1
 `L2119` · (Labiomed) · « les bons de prise en charge », « au comptoir », « les montures », « l'atelier ». **Et le panneau
 `L2338` · Afrique Labo, L'Opticien, Labiomed, Bonanjo, MITOC) ; la bibliothèque publiable sans identité client
 `L3867` · (OraCare et Bonanjo au 28/09, MITOC · Skye · Yaks et Le Cristallin au 29/09, Labiomed au 1ᵉʳ octobre,
+`L4794` · Le pipeline actif = 4 leads (Cristallin, Labiomed, Cavisa, Univers Optique) + DM OPTIQUE en closing +
 
 ---
 

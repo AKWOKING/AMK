@@ -37,7 +37,7 @@ Founded 1999 by decree; complex general/technical/anglo-saxon; COMOBIL.com is PA
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 11 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 12 ligne(s).*
 
 `L234` · **Trois de mon propre audit étaient fausses** : COMOBIL n'était pas « tête de kill list » (DAILY OPS dit PARKED),
 `L690` · **① COMOBIL : « parké » dans trois fichiers, `prospect` dans la donnée.** `Pipeline-Status.md` dit
@@ -50,6 +50,7 @@ Founded 1999 by decree; complex general/technical/anglo-saxon; COMOBIL.com is PA
 `L2332` · lecteur : JEMPO (jamais contacté), La Béthanie (parquée), SJC Sasse (parquée), COMOBIL (parquée depuis le
 `L3322` · ### ⚠️ Le piège COMOBIL a encore frappé — dans le fichier que King lit le matin
 `L3843` · continué à réclamer une relance interdite — **le piège COMOBIL à l'envers** : la prose dit « stop », la
+`L4792` · - **Bulk close** : COMOBIL → lost (jamais contacté, aucun déclencheur de résurrection) ; 20 leads contactés
 
 ---
 

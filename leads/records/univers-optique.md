@@ -36,11 +36,11 @@
 
 ## Prochaine action
 
-**Action fixée au 2026-09-25** — décision humaine, elle prime sur le rythme automatique. **GELÉ (King, 23/09 au soir)** : plus aucun travail sur le site ni le dossier avant le paiement. RENDEZ-VOUS fixé par le prospect — **vendredi 25/09 à 10 h, son cabinet** (Bépanda). Feuille : `sales/RDV-UNIVERS-OPTIQUE-2026-09-25.md`. Prix déjà posé le 21/09 (100 000 FCFA, 50/50) : on ne le re-présente pas, on ne le baisse pas. À sortir de la salle : le « oui », les réponses aux six points que la page demande, l'acompte
+**Action fixée au 2026-10-08** — décision humaine, elle prime sur le rythme automatique. NE RIEN ENVOYER avant mercredi 07/10 ET avant revue du pitch par King (ruling 02/10). Pitch draft : clients/univers-optique/research/PITCH-DRAFT-2026-10.md. Le 08/10 : si feu vert, message prix pilote 750k — jamais de remise, split 400/350 max. (Ancienne entrée 25/09 : GEL levé par le ruling reset — le lead reste vivant, rien ne part sans ordre.)
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 138 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 141 ligne(s).*
 
 `L51` · | **ven 18/09 20:02** | **Clinique de L'université** (Bassa, 694 36 02 03) | msg 1 — sans maquette | Envoyé | **Non** |
 `L113` · | 20:02 | Cabinet Dentaire Emmanuel · Clinique de L'université · MEDI LABO |
@@ -180,6 +180,9 @@
 `L4671` · | **L'essayage** (Univers) | la vitrine qu'on remonte | **~20 h/mois** | le client voit tout le stock, pas un mur | la bonne monture en 5 minutes |
 `L4677` · ### ② Les photos d'Univers : **la question du §3 avait déjà sa réponse dans sa boutique**
 `L4681` · `clients/univers-optique/stock-2026-09-25-photos.md`. **Neuf clichés, six montures**, pris le **25/09 entre
+`L4794` · Le pipeline actif = 4 leads (Cristallin, Labiomed, Cavisa, Univers Optique) + DM OPTIQUE en closing +
+`L4797` · - Univers Optique : intelligence marché loguée en KB §3 (bundle « something + website ») + opportunité
+`L4798` · virtual try-on → recherche `clients/univers-optique/research/try-on-options-2026-10.md`. Aucun contact
 
 ---
 

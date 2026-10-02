@@ -35,11 +35,11 @@
 
 ## Prochaine action
 
-**Action fixée au 2026-09-29** — décision humaine, elle prime sur le rythme automatique. **IL EST MALADE (24/09 10:11) — AUCUNE relance du projet.** King a répondu santé d'abord le 24/09 à 10:13 ; next message = message de santé lundi 29/09 (`sales/Queue-CRISTALLIN-2026-09-29.md`), santé avant le projet, sans reposer le prix. **PRIX POSÉ le 23/09 09:46** : 150 000 FCFA, 50 % = 75 000 pour démarrer, solde à la livraison. GELÉ (King, 23/09) : aucune modification de la page ni du dossier jusqu'au paiement ; les trois compensations (WhatsApp Business, domaine 2027, fiche Google) restent parquées. Cinq écarts à trancher AVANT publication (compte d'assurances FR 18 / EN 17, mur à 19, bloc « 32 ans » en double, horaires vs son flyer, « depuis 2010 ») et le périmètre « hébergement + domaine » à cadrer : son domaine est à lui jusqu'au 13/06/2027
+**Action fixée au 2026-10-09** — décision humaine, elle prime sur le rythme automatique. Ruling King 02/10 — santé d'abord, zéro business : « Bonjour Monsieur, comment allez-vous ? Le projet vous attend, prenez soin de vous d'abord. À bientôt. » Pas de prix, pas de date, rien d'autre.
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 108 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 109 ligne(s).*
 
 `L837` · - `Le Cristallin` 17:51 · `Univers Optique` 17:50 · `Disc Optique Médicale` 17:48 · `Tchaya Optique` 17:47 :
 `L881` · ## Lundi 21/09/2026 — 18:20 → 19:15 · « Ok » de Le Cristallin : le premier aperçu demandé, construit et branché sur le CRM
@@ -149,6 +149,7 @@
 `L3426` · Le Cristallin), et la poser demain serait vendre le service suivant avant d'avoir livré le premier. Un refus de
 `L3718` · C'est aussi un client de **refonte** (comme Le Cristallin) — donc un palier supérieur à une page simple.
 `L3867` · (OraCare et Bonanjo au 28/09, MITOC · Skye · Yaks et Le Cristallin au 29/09, Labiomed au 1ᵉʳ octobre,
+`L4794` · Le pipeline actif = 4 leads (Cristallin, Labiomed, Cavisa, Univers Optique) + DM OPTIQUE en closing +
 
 ---
 

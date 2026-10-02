@@ -94,3 +94,13 @@ montures après chaque client » est couverte : la vitrine devient la photo, pas
 ---
 Sources vérifiées le 02/10 depuis le sandbox : Banuba pricing [1][6] · Photta/Auglio comparatifs 2026
 [2][3] · repo MIT MediaPipe+Three.js [4] · GitHub Jeeliz [5] · pricing APIs image 2026 [7][8].
+
+## 7 · Ruling pricing (King, 02/10) — remplace la fourchette du §5
+- **Pilote Univers Optique : 750 000 FCFA**, conditionné aux droits d'étude de cas tier-1 (nom,
+  captures, métriques avant/après anonymisées, contenu public une fois livré). Le prix pilote est
+  discounté parce qu'on **achète l'étude de cas**, pas seulement parce qu'on vend l'outil.
+- **Standard opticien 2+ : 1 200 000 FCFA**, sans discount, scope complet.
+- **Mensuel : 30 000 FCFA** — hébergement, maintenance, ≤ 4 h de modifications/mois.
+- **S'il pousse sur 750k : ne jamais descendre.** Proposer le split 400k au départ / 350k à la
+  livraison — même total. Jamais de remise ; on trade le scope ou le timing, jamais le prix.
+- Brouillon du message : `PITCH-DRAFT-2026-10.md` — rien ne part avant mercredi ET avant revue de King.
