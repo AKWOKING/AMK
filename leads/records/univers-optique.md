@@ -36,7 +36,7 @@
 
 ## Prochaine action
 
-**Action fixée au 2026-10-08** — décision humaine, elle prime sur le rythme automatique. NE RIEN ENVOYER avant mercredi 07/10 ET avant revue King ET avant la réponse au nombre de collaborateurs. Pitch v3 (03/10) : LOCAL-ONLY, 900k en trois tranches 300/300/300 (signature/livraison/J+30 ; fallback 200/350/350, jamais sous 900k), standard 1.4M — PITCH-DRAFT-2026-10.md. Exigence client > notre reco web (règle 03/10).
+**Action fixée au 2026-10-08** — décision humaine, elle prime sur le rythme automatique. Formalization pitch v5 (ruling FINAL 03/10) : 900k one-time 300/300/300, PAS de mensuel, admin catalogue self-service, garantie 30 j, ≤30 montures, ≤3 appareils — awaiting King review and DM Optique close. PITCH-DRAFT-2026-10.md + SCOPE + USAGE-PLAN. Site : FERMÉ définitivement, jamais re-pitcher.
 
 ## Historique — lignes du journal qui citent ce lead
 

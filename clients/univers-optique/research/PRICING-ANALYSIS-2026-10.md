@@ -61,3 +61,11 @@
 5. **Le tranchage 300/300/300 fait le travail psychologique** (pas de gros montant initial → pas de process d'achat) — la recherche de la v3 reste valable ; le montant n'a jamais été le problème.
 - **Garde-fou de scope à écrire dans le devis** : catalogue MVP plafonné (ex. ≤ 30 montures numérisées à la prise de vue simple) ; au-delà, ou après le pilote, les nouvelles références passent par le mensuel 30 k (≤ 4 h/mois). Sans ce plafond, le « reinstall on catalog change » peut glisser.
 - **Ne PAS baisser à 750 k** : ce prix datait de la version web ; la recherche montre qu'on serait sous la médiane mondiale du travail pour un build AR. **Ne pas monter non plus** : 900 k est déjà la porte d'entrée honnête du marché local — le standard 1,4 M existe pour l'opticien 2+.
+
+## 9 · Why no retainer (ruling King FINAL 03/10 — ne pas ré-ajouter)
+The app is local-only: nothing sits on a server that can break, nothing is licensed monthly, nothing
+scales with usage — so a monthly fee would be a padded line, and the client would eventually ask what
+it buys. Better no retainer than a hollow one: maintenance is **ad-hoc** (he calls, we quote, he
+decides), bug fixes are free for 30 days after delivery, and catalog updates are **self-service** in
+the app — he is not dependent on us for routine changes. The 30 000 FCFA/month of the earlier drafts
+(§8, §8b) is **removed entirely**; a one-time, self-contained build gets a one-time price.

@@ -477,3 +477,10 @@ order, never the reverse.**
    with the requirement, we say so explicitly and ask for a ruling — we don't quietly pitch against it.**
    (03/10, né d'OraCare — inférence d'attribution — et d'Univers Optique — « web beats app » pitché contre
    une exigence local-only. La recommandation reste dans nos docs ; le pitch parle au client.)
+5. **Market advice is not a client brief. But when a prospect states a requirement and agrees to
+   collaborate, that agreement IS the brief.** Match the tool to the actual usage context — do not
+   import a CTA model from one context (remote website visitor) into another (in-shop client present).
+   (03/10, Univers Optique : outil de comptoir, pas tunnel.)
+6. **Do not attach a retainer to a tool that has no recurring cost. A one-time, self-contained build
+   gets a one-time price. Ad-hoc work is quoted ad-hoc.** (03/10, Univers Optique v5 : rien sur un
+   serveur ne casse, rien n'est licencié au mois — un mensuel serait une ligne creuse.)
