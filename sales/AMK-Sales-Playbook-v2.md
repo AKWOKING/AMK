@@ -484,3 +484,7 @@ order, never the reverse.**
 6. **Do not attach a retainer to a tool that has no recurring cost. A one-time, self-contained build
    gets a one-time price. Ad-hoc work is quoted ad-hoc.** (03/10, Univers Optique v5 : rien sur un
    serveur ne casse, rien n'est licencié au mois — un mensuel serait une ligne creuse.)
+7. **Do not build alternatives for a prospect before deposit. Alternatives invite paralysis and waste
+   build time on placeholders. One strong recommendation closes better than three options.** (03/10,
+   DM Optique : les options sont de l'or pour un *client* en projet, du friction pour un *prospect* qui
+   va signer — la distinction est le timing. Mood boards de secours seulement, jamais en ouverture.)

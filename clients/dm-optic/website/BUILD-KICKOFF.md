@@ -39,3 +39,11 @@ Projet Vercel de King (drag-and-drop, `hosting/previews/README.md`) — **déplo
    FR **et** EN.
 4. Partager le lien dans WhatsApp à King : la carte porte titre + description + **vignette** (leçon og).
 5. `noindex` levé **après** ces quatre portes, pas avant.
+
+## 7 · Ruling King 03/10 — pas de versions alternatives avant acompte
+*No alternative versions built before the deposit and the photoshoot. v2.2 is the recommendation.
+Two mood boards on standby for a look pushback only. Real design work begins after deposit + shoot.*
+Les deux mood boards (fallback, jamais en ouverture) : `design/moodboards/MOOD-BOARD-A.png` et
+`MOOD-BOARD-B.png` — une direction esthétique chacun (palette, système typo, archétype de layout
+différents). Règle standing 03/10 (playbook) : une seule recommandation forte ferme mieux que trois
+options.
