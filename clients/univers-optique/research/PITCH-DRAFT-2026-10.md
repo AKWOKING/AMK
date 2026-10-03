@@ -32,7 +32,7 @@ FR sur demande. Pas de bullet, pas de signature (standard maison).
 - **Hésitation à l'entrée → re-phaser 200/350/350.** Même total. Jamais réduire. Jamais trader le scope.
   Les trois tranches incluent les droits d'étude de cas — la tranche J+30 couvre justement la
   publication du cas une fois le résultat visible.
-- **« your collaborators' phones » ne commit à aucun nombre** (réponse King 03/10 : inconnu). Le pitch
-  part **tel quel** après mercredi ET après revue ; le scope du build se fixe à la réponse du client,
-  jamais avant.
+- **« your collaborators' phones » : question close le 03/10** — scope corrigé par King : **≤ 3
+  appareils** (lui + collaborateurs), sideload, update = reinstall. Détail et pricing vérifié :
+  `PRICING-ANALYSIS-2026-10.md` (recommandation : garder 900 k en 300/300/300).
 - Le PDF de scope (`try-on-options-2026-10.md` §8) part **seulement s'il le demande**.
