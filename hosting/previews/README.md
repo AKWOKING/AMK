@@ -128,3 +128,9 @@ JEMPO, La Béthanie, SJC Sasse, COMOBIL, SAHISCOL, la démo Collège La Retraite
 bundle `/oracare/` (le projet Vercel d'OraCare v3 reste en ligne, indépendant), L'Opticien v1.
 Les **démos publiables sans identité client** (`/demo/`, `/mboacare-demo/`) sont **gardées** : ce sont les
 seules pièces qu'on peut montrer sans le nom d'un client. Tout est récupérable depuis l'historique git.
+
+## 03/10 — CAVISA : redéploiement og:image = INTERNE (ruling King 02/10)
+Le bundle `cavisa/` (index.html + og.jpg, og:url/og:image remplis) est prêt ; le redéploiement se fait
+par drag-and-drop King sur le projet Vercel, **sans jamais en parler au client** — la vignette cassée
+était notre bug interne, pas un événement client. Test de page : `node tools/qa/test_cavisa_page.mjs`
+vert le 02/10.

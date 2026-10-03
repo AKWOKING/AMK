@@ -446,3 +446,17 @@ walks in) → F (client-editable site: **destroys the subscription**, premium on
 watch, never promise "DGI-compliant")**. Full reasoning: `sales/ORDRE-DES-OFFRES-2026-09-23.md`. The tunnel,
 in one line: **the page opens the door, the subscription pays the bills, the tool is the next trade — in that
 order, never the reverse.**
+
+---
+
+## STANDING RULES — 02/10 (rulings King, nés du fil Cavisa et du piège de file)
+
+1. **Never re-ask the same question in a follow-up. If the ask is more than 7 days old and unanswered,
+   change the channel (text → voice → call), not the wording.** (Cavisa : les quatre compléments demandés
+   le 24/09 ne sont pas re-posés ; le 10/10 → note vocale, puis appel.)
+2. **Do not use internal fixes as pretexts for client outreach.** Un bug réparé de notre côté (og:image,
+   redéploiement) n'est pas un événement client : on ne motive jamais un message par nos réparations.
+3. **When editing RELANCE_A_JOUR or any dict-keyed scheduling structure, always verify the queue output
+   after rebuild — the rebuild reports rc=0 even when the queue is wrong.** (02/10 : doublons de clés,
+   last-wins — la file affichée restait fausse avec un rebuild vert. Même classe que prose-vs-data et
+   inference-as-fact.)

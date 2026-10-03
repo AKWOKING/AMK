@@ -75,9 +75,7 @@ RELANCE_A_JOUR = {
                        "petit bonjour — vous êtes en place maintenant ? » Pas de prix, pas de question "
                        "de validation."),
     "cavisa-optique":
-        ("2026-10-05", "Redéploiement du dossier hosting/previews/cavisa (King, week-end). ⚠️ Le message "
-                       "du 24/09 EST DÉJÀ PARTI à 13:26 — ne PAS le renvoyer. Lundi : message de suivi À "
-                       "APPROUVER (sales/Suivi-CAVISA-2026-10-05.md)."),
+        ("2026-10-10", "HOLD (ruling King 02/10) : rien ne part cette semaine — le message du 24/09 est déjà parti, ne PAS re-poser les quatre questions (règle : changer de canal, pas de wording). Le 10/10 sans réponse : préparer un SCRIPT DE NOTE VOCALE (20 s, chaleureux, zéro pitch, zéro re-ask) — sales/Suivi-CAVISA-2026-10-05.md. Redéploiement og = interne, jamais mentionné au client."),
     "st-theresa-international-bilingual-comprehensive-college-sti":
         ("2026-10-12", "Permission EXPLICITE de repasser en octobre (verbatim 15/09 : « Ok thanks you "
                        "can get back to me for a follow up » — leur page sera prête en octobre). "

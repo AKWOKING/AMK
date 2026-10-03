@@ -1,6 +1,6 @@
 # Cavisa Optique
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-02. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-03. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -27,7 +27,7 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : DONGMO Jean René. Probleme : etre
 
 ## Prochaine action
 
-**Action fixée au 2026-10-05** — décision humaine, elle prime sur le rythme automatique. Redéploiement du dossier hosting/previews/cavisa (King, week-end). ⚠️ Le message du 24/09 EST DÉJÀ PARTI à 13:26 — ne PAS le renvoyer. Lundi : message de suivi À APPROUVER (sales/Suivi-CAVISA-2026-10-05.md).
+**Action fixée au 2026-10-10** — décision humaine, elle prime sur le rythme automatique. HOLD (ruling King 02/10) : rien ne part cette semaine — le message du 24/09 est déjà parti, ne PAS re-poser les quatre questions (règle : changer de canal, pas de wording). Le 10/10 sans réponse : préparer un SCRIPT DE NOTE VOCALE (20 s, chaleureux, zéro pitch, zéro re-ask) — sales/Suivi-CAVISA-2026-10-05.md. Redéploiement og = interne, jamais mentionné au client.
 
 ## Historique — lignes du journal qui citent ce lead
 

@@ -1,6 +1,6 @@
 # KILL LIST — déduite, jamais écrite en dur
 
-> ⚙️ **Généré le 2026-10-02 par `leads/build/views.py` — ne pas modifier à la main.**
+> ⚙️ **Généré le 2026-10-03 par `leads/build/views.py` — ne pas modifier à la main.**
 > Toute correction se fait dans `leads/build/crm.py` ou `sales/Activity-Log.md`, puis on relance `leads/build/rebuild.sh`.
 
 ## La règle (corrigée le 19/09)
@@ -15,7 +15,7 @@ Le playbook §A4 codait en dur une kill list figée (« les deux 18 »). **C'ét
 
 ## 📅 Décisions déjà prises — DATES À VENIR, ne rien faire maintenant
 
-- **Cavisa Optique** — 2026-10-05 · Redéploiement du dossier hosting/previews/cavisa (King, week-end). ⚠️ Le message du 24/09 EST DÉJÀ PARTI à 13:26 — ne PAS le renvoyer. Lundi : message de suivi À APPROUVER (sales/Suivi-CAVISA-2026-10-05.md).
+- **Cavisa Optique** — 2026-10-10 · HOLD (ruling King 02/10) : rien ne part cette semaine — le message du 24/09 est déjà parti, ne PAS re-poser les quatre questions (règle : changer de canal, pas de wording). Le 10/10 sans réponse : préparer un SCRIPT DE NOTE VOCALE (20 s, chaleureux, zéro pitch, zéro re-ask) — sales/Suivi-CAVISA-2026-10-05.md. Redéploiement og = interne, jamais mentionné au client.
 - **Labiomed** — 2026-10-13 · Ruling King 02/10 — on tient SA parole, touche légère : « Bonjour, juste un petit bonjour — vous êtes en place maintenant ? » Pas de prix, pas de question de validation.
 - **Le Cristallin** — 2026-10-09 · Ruling King 02/10 — santé d'abord, zéro business : « Bonjour Monsieur, comment allez-vous ? Le projet vous attend, prenez soin de vous d'abord. À bientôt. » Pas de prix, pas de date, rien d'autre.
 - **St. Theresa International Bilingual Comprehensive College (STIBCCOL)** — 2026-10-12 · Permission EXPLICITE de repasser en octobre (verbatim 15/09 : « Ok thanks you can get back to me for a follow up » — leur page sera prête en octobre). Relance le 12/10 : « votre page est prête ? » — pas de prix, pas de question de validation. Date choisie le 02/10 pour laisser la semaine de la visite DM OPTIQUE (07/10) libre. La balle est chez nous — PAS une réponse en attente.

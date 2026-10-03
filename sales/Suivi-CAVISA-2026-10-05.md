@@ -1,20 +1,27 @@
-# Suivi CAVISA — lundi 05/10 · À APPROUVER PAR KING AVANT ENVOI
+# CAVISA — HOLD (ruling King 02/10) · réévaluation le 10/10
 
-> Pourquoi ce brouillon existe : le message préparé le 24/09 **est déjà parti** (King, 24/09 13:26 —
-> voir `sales/Reponse-CAVISA-2026-09-24.md`). Le ruling du 02/10 (« envoyer lundi le message du 24/09 »)
-> doublerait un envoi déjà fait. Donc : redéploiement le week-end (dossier `hosting/previews/cavisa/`
-> entier, og:image déjà remplie dans le dépôt — le bundle est prêt), et lundi un message de **suivi**,
-> différent, ci-dessous. Rien ne part sans le mot de King.
+> Le brouillon de suivi texte du 05/10 est **retiré** : ① le fix og:image est un bug interne, pas un
+> événement client — on ne motive jamais un outreach par nos réparations internes ; ② les quatre
+> compléments ont été demandés le 24/09 à 13:26 — re-poser la même question est un harcèlement, pas un
+> suivi. Règle née le 02/10 (playbook + CRM) : **jamais re-poser la même question ; au-delà de 7 jours
+> sans réponse, on change de canal (texte → voix → appel), pas de wording.**
 
-## Brouillon du 05/10 (style maison : court, sans bullets, sans signature)
+## État du fil
+- 24/09 13:09 lien envoyé · 13:16 lui : « Beaucoup de manquement mais c'est appréciable. » · 13:26 notre
+  réponse (remerciements + les quatre compléments + question prix). Depuis : silence. La balle est chez
+  lui, il sait quoi envoyer.
 
-```
-Bonjour Monsieur Dongmo ! La page de votre cabinet vient d'être mise à jour — le lien affiche
-maintenant sa vignette. Dès que vous pouvez : votre position WhatsApp, vos horaires, deux ou trois
-photos de la boutique et vos marques, et je complète tout.
-```
+## Échéance 10/10 — si toujours silencieux
+Préparer un **script de note vocale, 20 secondes**, chaleureux, zéro pitch, zéro re-ask. Exemple de
+trame (à relire à l'oreille, ton posé) :
 
-- Trois phrases, zéro bullet, zéro prix (la question des prix est déjà posée le 24/09 — on ne la repose pas).
-- Il a dit « beaucoup de manquement mais c'est appréciable » : ce message montre que le manquement
-  visible (la vignette grise) est corrigé, et remet la balle doucement dans son camp pour les quatre éléments.
-- Si sa liste arrive avant lundi : ce brouillon devient inutile — on complète la page d'abord.
+> « Bonjour Monsieur Dongmo, c'est Akwo King. Je pense à vous — j'espère que la boutique marche bien.
+> Rien d'urgent : je voulais juste vous dire que votre page vous attend, et que dès que vous avez deux
+> minutes pour vos infos, je m'occupe de tout. Bonne semaine ! »
+
+- Elle ne demande rien : elle **rappelle que la porte est ouverte**. La réponse viendra ou pas ; le
+  texte du 24/09 reste la seule demande écrite.
+- Si la voix ne donne rien non plus : appel (3ᵉ canal) après le 17/10, jamais un 4ᵉ texte.
+
+## Interne (jamais mentionné au client)
+Redéploiement og:image par King (drag-and-drop Vercel) — loggé dans `hosting/previews/README.md` (03/10).
