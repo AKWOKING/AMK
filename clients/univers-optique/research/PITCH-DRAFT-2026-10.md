@@ -30,4 +30,5 @@ FR sur demande. Pas de bullet, pas de signature (standard maison).
   lui + 1–2 = APK sideloadé + reinstall au update (MVP) ; équipe de comptoir multi-shifts = catalogue
   partagé + mécanisme de mise à jour, voire endpoint sync privé device-ID-gated. La question est posée
   à King (puis au client après mercredi) — voir le suivi.
+  **Réponse King 03/10 : inconnu.** Le pitch part **tel quel** (« your collaborators' phones ») après mercredi ET après revue ; le scope du build se fixe à la réponse du client, jamais avant.
 - Le PDF de scope (`try-on-options-2026-10.md` §8) part **seulement s'il le demande**.
