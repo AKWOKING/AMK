@@ -131,3 +131,11 @@ habiller une préférence interne en décision client.)
 - Pour les sessions futures : le §2 (option A photo+landmarks) reste le MOTEUR technique — seul le
   SHELL change (web → APK Capacitor). La recherche web/SDK garde sa valeur pour tout client qui, lui,
   accepte le web.
+
+## 8b · Révision pricing 03/10 v3 — même montant, nouvelle forme (ruling King)
+Recherche : 900k est **sous le marché** du dev custom au Cameroun (apps simples ≈ 2M FCFA+ ; dev senior
+Douala 200–350k/jour) — le problème n'était pas le montant mais le **one-time** : en PME, une grosse
+demande initiale déclenche un process d'achat au lieu d'un oui. Nouvelle structure : **300k signature ·
+300k livraison MVP · 300k J+30 post-lancement**, droits d'étude de cas inclus dans les trois tranches.
+Fallback si l'entrée 300k bloque : **200k/350k/350k**, même total, jamais sous 900k. Standard 1.4M
+inchangé. (Le v2 450/450 et le v1 400/350 sont caducs.)

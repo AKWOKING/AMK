@@ -19,7 +19,7 @@ Le playbook §A4 codait en dur une kill list figée (« les deux 18 »). **C'ét
 - **Labiomed** — 2026-10-13 · Ruling King 02/10 — on tient SA parole, touche légère : « Bonjour, juste un petit bonjour — vous êtes en place maintenant ? » Pas de prix, pas de question de validation.
 - **Le Cristallin** — 2026-10-09 · Ruling King 02/10 — santé d'abord, zéro business : « Bonjour Monsieur, comment allez-vous ? Le projet vous attend, prenez soin de vous d'abord. À bientôt. » Pas de prix, pas de date, rien d'autre.
 - **St. Theresa International Bilingual Comprehensive College (STIBCCOL)** — 2026-10-12 · Permission EXPLICITE de repasser en octobre (verbatim 15/09 : « Ok thanks you can get back to me for a follow up » — leur page sera prête en octobre). Relance le 12/10 : « votre page est prête ? » — pas de prix, pas de question de validation. Date choisie le 02/10 pour laisser la semaine de la visite DM OPTIQUE (07/10) libre. La balle est chez nous — PAS une réponse en attente.
-- **Univers Optique** — 2026-10-08 · NE RIEN ENVOYER avant mercredi 07/10 ET avant revue King ET avant la réponse au nombre de collaborateurs. Pitch v2 (03/10) : LOCAL-ONLY, pilote 900k 450/450 (pushback : 300/300/300), standard 1.4M — PITCH-DRAFT-2026-10.md. Exigence client > notre reco web (règle 03/10).
+- **Univers Optique** — 2026-10-08 · NE RIEN ENVOYER avant mercredi 07/10 ET avant revue King ET avant la réponse au nombre de collaborateurs. Pitch v3 (03/10) : LOCAL-ONLY, 900k en trois tranches 300/300/300 (signature/livraison/J+30 ; fallback 200/350/350, jamais sous 900k), standard 1.4M — PITCH-DRAFT-2026-10.md. Exigence client > notre reco web (règle 03/10).
 
 > Les échéances **déjà passées** sont dans `Daily-Plan.csv` — c'est la file de travail.
 
