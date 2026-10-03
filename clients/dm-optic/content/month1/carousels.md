@@ -23,8 +23,8 @@
 
 > **Note sur la structure.** « Accroche → Produit → Bénéfice → CTA » est une structure **produit**.
 > C1 et C2 portent sur un **service** : le « Produit » y est donc la **prestation** (l'inscription,
-> l'examen), pas un objet. **À confirmer par King** — si les quatre carrousels doivent être
-> strictement produit, alors C1 et C2 changent de sujet, et le mois 1 ne parle plus que de montures.
+> l'examen), pas un objet. **Tranché par King le 03/10 : structure SERVICE**, conforme à la thèse du
+> mois 1. On avance.
 
 ---
 

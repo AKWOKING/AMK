@@ -89,7 +89,7 @@ RELANCE_A_JOUR = {
     # la réponse de King sur le périmètre FB attendue avant d'envoyer, relance 48 h après.
     # 22/09 20:51 : il a répondu — « Je suis vraiment intéressé … Vendredi matin 10h dans mon cabinet. »
     # Comme UNI-LABO, ce n'est plus une relance à calculer, c'est une réunion à préparer.
-    "univers-optique": ("2026-10-08", "NE RIEN ENVOYER avant mercredi 07/10 ET avant revue du pitch par King (ruling 02/10). Pitch draft : clients/univers-optique/research/PITCH-DRAFT-2026-10.md. Le 08/10 : si feu vert, message prix pilote 750k — jamais de remise, split 400/350 max. (Ancienne entrée 25/09 : GEL levé par le ruling reset — le lead reste vivant, rien ne part sans ordre.)"),
+    "univers-optique": ("2026-10-08", "NE RIEN ENVOYER avant mercredi 07/10 ET avant revue King ET avant la réponse au nombre de collaborateurs. Pitch v2 (03/10) : LOCAL-ONLY, pilote 900k 450/450 (pushback : 300/300/300), standard 1.4M — PITCH-DRAFT-2026-10.md. Exigence client > notre reco web (règle 03/10)."),
     # 23/09 09:46 : le prix est PARTI (150 000 FCFA, 75 000 pour démarrer). On attend sa réponse ;
     # s'il ne dit rien, une relance courte le 24/09 — et rien d'autre entre-temps.
     # 24/09 : le plan demandait « Relance 1/3 Le Cristallin » alors que la décision écrite dit l'inverse.

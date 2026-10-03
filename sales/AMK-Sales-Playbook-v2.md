@@ -473,3 +473,7 @@ order, never the reverse.**
    close.
 3. *(re-daté 03/10)* **When editing RELANCE_A_JOUR or any dict-keyed scheduling structure, always verify
    the queue output after rebuild — the rebuild reports rc=0 even when the queue is wrong.**
+4. **When a client states a requirement, the requirement wins over our recommendation. If we disagree
+   with the requirement, we say so explicitly and ask for a ruling — we don't quietly pitch against it.**
+   (03/10, né d'OraCare — inférence d'attribution — et d'Univers Optique — « web beats app » pitché contre
+   une exigence local-only. La recommandation reste dans nos docs ; le pitch parle au client.)

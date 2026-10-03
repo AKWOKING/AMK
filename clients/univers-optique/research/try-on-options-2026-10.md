@@ -104,3 +104,30 @@ Sources vérifiées le 02/10 depuis le sandbox : Banuba pricing [1][6] · Photta
 - **S'il pousse sur 750k : ne jamais descendre.** Proposer le split 400k au départ / 350k à la
   livraison — même total. Jamais de remise ; on trade le scope ou le timing, jamais le prix.
 - Brouillon du message : `PITCH-DRAFT-2026-10.md` — rien ne part avant mercredi ET avant revue de King.
+
+## 7b · Note ruling 03/10 sur le §3 (« app vs web »)
+Le §3 argumente que le web gagne — **c'est notre recommandation générale, et elle reste vraie en
+général** (pas de téléchargement, pas de store, lien WhatsApp). **Pour CE client, elle est battue :**
+il a posé une exigence qui prime — son catalogue ne doit être consultable par personne d'autre, donc
+rien d'hébergé publiquement. Règle née le 03/10 (King) : **quand un client pose une exigence,
+l'exigence gagne sur notre recommandation ; si on n'est pas d'accord, on le dit explicitement et on
+demande un ruling — on ne pitche jamais en douce contre l'exigence.** (Même classe de bug qu'OraCare :
+habiller une préférence interne en décision client.)
+
+## 8 · RULING 03/10 — architecture LOCAL-ONLY on-device
+- **Android, sideloadé (APK), PAS de Play Store** (public) · wrapper **Capacitor** pour garder une
+  base HTML maintenable.
+- Photos des montures **stockées localement** sur l'appareil ; aucun endpoint parcourable.
+- Landmarks visage **on-device** (MediaPipe FaceLandmarker, gratuit, tourne local) ; photo du client
+  prise dans l'app, compositing local, **rien n'est uploadé**.
+- Mise à jour du catalogue : **MVP = reinstall** à chaque update ; plus tard, sync privé
+  device-ID-gated (le mensuel 30k couvre « l'endpoint sync SI utilisé »).
+- Distribution : son téléphone + ceux de ses collaborateurs — **nombre exact INCONNU** (question
+  ouverte : lui + 1–2 = simple ; comptoir multi-shifts = catalogue partagé + mécanisme de maj).
+  Le pitch ne commit à aucun nombre tant que la réponse n'est pas là.
+- **Pricing ruling :** pilote 900 000 (450/450 ; pushback → 300/300/300) · standard 1 400 000 ·
+  mensuel 30 000. Le 900k = coût honnête du local-only (packaging, tests devices, permissions,
+  offline, flow update) — pas un premium, pas d'excuse.
+- Pour les sessions futures : le §2 (option A photo+landmarks) reste le MOTEUR technique — seul le
+  SHELL change (web → APK Capacitor). La recherche web/SDK garde sa valeur pour tout client qui, lui,
+  accepte le web.

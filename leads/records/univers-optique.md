@@ -36,7 +36,7 @@
 
 ## Prochaine action
 
-**Action fixée au 2026-10-08** — décision humaine, elle prime sur le rythme automatique. NE RIEN ENVOYER avant mercredi 07/10 ET avant revue du pitch par King (ruling 02/10). Pitch draft : clients/univers-optique/research/PITCH-DRAFT-2026-10.md. Le 08/10 : si feu vert, message prix pilote 750k — jamais de remise, split 400/350 max. (Ancienne entrée 25/09 : GEL levé par le ruling reset — le lead reste vivant, rien ne part sans ordre.)
+**Action fixée au 2026-10-08** — décision humaine, elle prime sur le rythme automatique. NE RIEN ENVOYER avant mercredi 07/10 ET avant revue King ET avant la réponse au nombre de collaborateurs. Pitch v2 (03/10) : LOCAL-ONLY, pilote 900k 450/450 (pushback : 300/300/300), standard 1.4M — PITCH-DRAFT-2026-10.md. Exigence client > notre reco web (règle 03/10).
 
 ## Historique — lignes du journal qui citent ce lead
 
