@@ -27,7 +27,7 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : DONGMO Jean René. Probleme : etre
 
 ## Prochaine action
 
-**Action fixée au 2026-10-10** — décision humaine, elle prime sur le rythme automatique. HOLD (ruling King 02/10) : rien ne part cette semaine — le message du 24/09 est déjà parti, ne PAS re-poser les quatre questions (règle : changer de canal, pas de wording). Le 10/10 sans réponse : préparer un SCRIPT DE NOTE VOCALE (20 s, chaleureux, zéro pitch, zéro re-ask) — sales/Suivi-CAVISA-2026-10-05.md. Redéploiement og = interne, jamais mentionné au client.
+**Action fixée au 2026-10-15** — décision humaine, elle prime sur le rythme automatique. Séquence fixée par King : après mercredi ET après Labiomed. Follow-up PLAIN, chaud, court — zéro re-ask, zéro prétexte, zéro pitch, zéro travail sur la démo (règle 03/10 : on ne touche la démo d'un prospect que s'il demande quelque chose). Brouillon du check-in dans sales/Suivi-CAVISA-2026-10-05.md — revue King avant envoi.
 
 ## Historique — lignes du journal qui citent ce lead
 

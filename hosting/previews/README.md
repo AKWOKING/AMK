@@ -134,3 +134,8 @@ Le bundle `cavisa/` (index.html + og.jpg, og:url/og:image remplis) est prêt ; l
 par drag-and-drop King sur le projet Vercel, **sans jamais en parler au client** — la vignette cassée
 était notre bug interne, pas un événement client. Test de page : `node tools/qa/test_cavisa_page.mjs`
 vert le 02/10.
+
+## 03/10 — CAVISA og-redeploy : **RETIRÉ** (ruling King 03/10)
+L'entrée du 03/10 ci-dessus est annulée : **on ne redéploie PAS, on ne touche PAS la démo.** Un prospect
+qui n'a rien demandé garde sa démo telle quelle ; le follow-up est plain, sans prétexte. Règle générale :
+playbook « STANDING RULES — 03/10 » + PRE-FLIGHT (CRM).

@@ -1,27 +1,26 @@
-# CAVISA — HOLD (ruling King 02/10) · réévaluation le 10/10
+# CAVISA — séquence King 03/10 · follow-up PLAIN le 15/10 · démo intouchable
 
-> Le brouillon de suivi texte du 05/10 est **retiré** : ① le fix og:image est un bug interne, pas un
-> événement client — on ne motive jamais un outreach par nos réparations internes ; ② les quatre
-> compléments ont été demandés le 24/09 à 13:26 — re-poser la même question est un harcèlement, pas un
-> suivi. Règle née le 02/10 (playbook + CRM) : **jamais re-poser la même question ; au-delà de 7 jours
-> sans réponse, on change de canal (texte → voix → appel), pas de wording.**
+> Rulings 02–03/10, en une ligne : **pas de redéploiement og** (retiré le 03/10 — on ne touche pas la
+> démo d'un prospect qui n'a rien demandé) · **pas de message-prétexte** (« on a mis à jour la page »
+> inventait un changement qu'il n'a pas demandé) · **pas de re-ask** (les quatre compléments ont été
+> demandés le 24/09 à 13:26 ; re-poser = harcèlement). Règle générale née de ce fil : *le follow-up est
+> le follow-up — il n'a pas besoin d'une raison.*
 
 ## État du fil
 - 24/09 13:09 lien envoyé · 13:16 lui : « Beaucoup de manquement mais c'est appréciable. » · 13:26 notre
-  réponse (remerciements + les quatre compléments + question prix). Depuis : silence. La balle est chez
-  lui, il sait quoi envoyer.
+  réponse (remerciements + les quatre compléments + question prix). Silence depuis. La balle est chez lui.
+- Démo `hosting/previews/cavisa/` : **GEL TOTAL** — aucune modification tant qu'il ne demande rien de
+  spécifique (règle 03/10, playbook + CRM).
 
-## Échéance 10/10 — si toujours silencieux
-Préparer un **script de note vocale, 20 secondes**, chaleureux, zéro pitch, zéro re-ask. Exemple de
-trame (à relire à l'oreille, ton posé) :
+## Échéance 15/10 (après DM Optique, après Cristallin 09/10 et Labiomed 13/10)
+Check-in plain, chaud, court — revue King avant envoi :
 
-> « Bonjour Monsieur Dongmo, c'est Akwo King. Je pense à vous — j'espère que la boutique marche bien.
-> Rien d'urgent : je voulais juste vous dire que votre page vous attend, et que dès que vous avez deux
-> minutes pour vos infos, je m'occupe de tout. Bonne semaine ! »
+```
+Bonjour Monsieur Dongmo, j'espère que la boutique se porte bien. Aucune urgence — je voulais
+juste prendre des nouvelles. À très bientôt !
+```
 
-- Elle ne demande rien : elle **rappelle que la porte est ouverte**. La réponse viendra ou pas ; le
-  texte du 24/09 reste la seule demande écrite.
-- Si la voix ne donne rien non plus : appel (3ᵉ canal) après le 17/10, jamais un 4ᵉ texte.
-
-## Interne (jamais mentionné au client)
-Redéploiement og:image par King (drag-and-drop Vercel) — loggé dans `hosting/previews/README.md` (03/10).
+- Ne demande rien, ne rappelle rien, ne vend rien. Rouvre la porte, c'est tout.
+- S'il répond avec ses compléments : on complète la page **à sa demande** — et seulement alors la démo
+  rebouge. S'il ne répond pas : canal suivant (note vocale) après le 22/10, appel ensuite — jamais un
+  quatrième texte (règle 02/10 : changer de canal, pas de wording).

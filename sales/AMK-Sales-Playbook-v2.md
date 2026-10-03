@@ -460,3 +460,16 @@ order, never the reverse.**
    after rebuild — the rebuild reports rc=0 even when the queue is wrong.** (02/10 : doublons de clés,
    last-wins — la file affichée restait fausse avec un rebuild vert. Même classe que prose-vs-data et
    inference-as-fact.)
+
+## STANDING RULES — 03/10 (rulings King, nés du fil Cavisa — généraux, tous prospects)
+
+1. **No unsolicited work on a prospect's demo. If a prospect has not explicitly requested a change, the
+   demo stays untouched. Follow-up is plain, warm, and short — no pretexts, no invented updates, no
+   re-asks. Work resumes on the demo only when the prospect asks for something specific.** Cette règle
+   coupe le pattern où l'orchestrateur invente du travail pour justifier un follow-up : *le follow-up est
+   le follow-up, il n'a pas besoin d'une raison.*
+2. **Séquence fixe tant que le close DM OPTIQUE n'est pas fait :** DM Optique mercredi 07/10 → Cristallin
+   09/10 → Labiomed 13/10 → Cavisa 15/10 et Univers Optique après revue du pitch. Rien ne concurrence le
+   close.
+3. *(re-daté 03/10)* **When editing RELANCE_A_JOUR or any dict-keyed scheduling structure, always verify
+   the queue output after rebuild — the rebuild reports rc=0 even when the queue is wrong.**
