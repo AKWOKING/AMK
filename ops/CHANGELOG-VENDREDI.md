@@ -15,3 +15,6 @@ appliquées. Log adopté/rejeté/tenu ci-dessous.
 | 8 | Positionnement app-led (« outils qui manquent aux opticiens ») | **adopté** |
 | 9 | hours-log DM dès mercredi ; modèle corrigé à 1 mois | **adopté** |
 | 10 | Essentiel 12k retiré des nouveaux contrats (clarificatif) | **tenu** — en attente de confirmation King |
+| 11 | Checkpoint D-1 20h00 (5 items, freeze line après) | **adopté** — 06/10 20h00 WAT |
+| 12 | Protocole shoot montures (1 page, discipline du brief DM) | **adopté — semaine du 12/10, PAS cette semaine** (ne concurrence pas la visite) |
+| 13 | Tampon GELÉ dans les docs gelés après la freeze line | **tenu** — ruling attendu |
