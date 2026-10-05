@@ -13,3 +13,6 @@
 - **Implication mercredi 07/10 :** si un commit pré-visite a rollback pendant la nuit, **re-vérifier
   contre la remote avant de partir pour Bonabéri** — le bundle de démo, les PDF d'impression et la file
   RELANCE doivent être relus depuis `origin/arena/01a0f7ad-amk`, pas depuis le working tree local.
+- **05/10 — variante du piège :** le rendu « DATES À VENIR » sautait silencieusement toute entrée
+  RELANCE sans ligne CRM (rc=0, file incomplète). Corrigé : fallback sur le slug + commentaire daté
+  dans views.py. Vérifier la SORTIE après chaque rebuild reste la règle.

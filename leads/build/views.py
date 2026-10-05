@@ -344,6 +344,10 @@ def view_kill_list(rows, date):
             row = next((r for r in rows if r["slug"] == slug), None)
             if row:
                 L.append(f"- **{row['School']}** — {d} · {why}")
+            else:
+                # 05/10 : une entrée sans ligne CRM (ex. liste-opticiens) ne doit plus disparaître
+                # silencieusement de la file — piège classe « rc=0 mais sortie fausse » (règle 02/10).
+                L.append(f"- **{slug}** — {d} · {why}")
     else:
         L.append("*Aucune échéance future.*")
     L.append("")
