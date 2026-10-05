@@ -499,3 +499,15 @@ solutions for opticians, clinics and schools in Cameroon. »** Preuves : Univers
 chose + site web » (le try-on n'est pas un site) ; le pack DM Optique inclut déjà social + contenu.
 L'offre a grandi plus vite que le mot « site web ». Les pitches DM (déjà conforme) et Univers (une app,
 pas un site) n'ont pas à changer.
+
+## STANDING RULES — 05/10 (ruling King · protocole d'erreur d'inférence)
+8. **Premise check.** Avant toute sortie client-facing (message, pitch, proposition, post) : énoncer
+   la prémisse en une ligne et la confirmer contre le fil/registre réel. Exemple : *« Prémisse :
+   Dr. Bayang a demandé l'app. Vérifié : message du 27/09 — confirmé. »* Prémisse non confirmable =
+   on ne produit pas.
+9. **Second-reader checklist.** Avant de finaliser toute sortie client-facing : « Qu'est-ce que ça
+   suppose qui pourrait être faux ? Que lira le client que nous n'avons pas voulu dire ? Que
+   manque-t-il qu'il demandera ? »
+10. **Log every catch.** Toute erreur d'inférence attrapée (par King ou par l'orchestrateur) va dans
+    `ops/INFERENCE-ERRORS.md` : date, tâche, inférence, vérité, règle née. Sur un mois, le pattern
+    cible la faiblesse — les règles visent la cause, pas le symptôme.
