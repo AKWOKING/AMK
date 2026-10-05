@@ -8,7 +8,7 @@ son chemin exact.
 
 | # | Document | Copies | Statut | Chemin / action |
 |---|---|---|---|---|
-| 1 | **Facture Proforma** (75 000 acompte / 75 000 livraison, NIU + RIB de l'émetteur) | 2 (la sienne, la mienne) | ⛔ **À PRODUIRE ce week-end** — pas de PDF proforma dans le dépôt ; seule la grille des deux coffrets y est | Émetteur = nom qui porte le NIU/RIB ; envoyer aussi en WhatsApp lundi (message de couverture approuvé) |
+| 1 | **Facture Proforma** (75 000 acompte / 75 000 livraison, NIU de l'émetteur) | 2 (la sienne, la mienne) | ✅ **PDF produit 05/10 : `print/AMK-PROFORMA-2026-10-05-DM-OPTIQUE.pdf`** — émetteur AKWO MAKEMBE KING GUERSCHON, NIU P030218642934H (pro.txt Pipeline42) ; virement marqué optionnel (compte au nom différent) | Envoi WhatsApp avec message de couverture approuvé (King, 05/10) |
 | 2 | **RIB + NIU AMK** | 1 | ⛔ **À FOURNIR** — absent du dépôt (`pre-launch-checklist.md` item 2) ; une SARL ne règle pas sans émetteur identifiable | Ne peut pas être fabriqué : c'est la pièce bancaire |
 | 3 | **Conditions d'engagement / contrat** (périmètre mois 1, setup 150 000, mensuel 30 000 dont 5 000 pub, trigger de publication) | 2 | ✅ approuvé 02/10 (deux edits inclus) — **PDF prêt : `print/CONDITIONS-D-INTERVENTION-2026-10-07.pdf`** (2 p. A4) · notes d'impression `print/PRINT-NOTES-2026-10-07.md` | Imprimer 2 copies |
 | 4 | **Grille des deux coffrets** (référence tarifaire, déjà envoyée) | 1 | ✅ existe | `sales/DM-OPTIC-DEUX-COFFRETS-2026-09-27.pdf` |

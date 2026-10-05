@@ -1,5 +1,8 @@
 # VISIT FALLBACKS — mercredi 07/10 · une page, cinq scénarios
 
+> **GELÉ — 06/10 — tout changement sur dire explicite de King.**
+
+
 > Chaque scénario : la réponse, le raisonnement. Règle commune : **on ne quitte jamais la pièce sans un
 > prochain engagement daté.** Rulings King 02/10 entre parenthèses.
 

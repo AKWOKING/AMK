@@ -1,5 +1,8 @@
 # DM OPTIQUE · Demo script — trois démos, sur ton téléphone
 
+> **GELÉ — 06/10 — tout changement sur dire explicite de King.**
+
+
 ```
 Status: PRÊT   ·  Updated: 2026-10-02
 Règle : trois démos max, chargées hors ligne, et c'est LUI qui tient l'écran.
