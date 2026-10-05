@@ -52,3 +52,8 @@ mercredi » — jamais un oui immédiat qui tue le rythme.
 **Repli imprimeuse (ajout 05/10) :** si l'imprimeuse de Bonabéri tombe mardi, réimprimer mercredi
 matin dans un autre shop sur la route — le pack PDF est dans le téléphone, l'impression n'est jamais
 un point unique de défaillance.
+
+**Réponse livraison (ruling King 05/10 — pour la tête, pas pour le papier) :** si mercredi il demande
+« et le site, je l'ai quand ? » : *« Le site en version alpha sous 3 à 5 jours. La version complète
+avec vos photos, sous 2 à 3 semaines. »* Le « 3 à 5 jours » de la proforma = l'alpha, pas le site
+complet — ne jamais promettre le complet sous 5 jours.
