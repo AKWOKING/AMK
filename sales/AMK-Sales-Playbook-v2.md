@@ -488,3 +488,14 @@ order, never the reverse.**
    build time on placeholders. One strong recommendation closes better than three options.** (03/10,
    DM Optique : les options sont de l'or pour un *client* en projet, du friction pour un *prospect* qui
    va signer — la distinction est le timing. Mood boards de secours seulement, jamais en ouverture.)
+
+## POSITIONNEMENT — 05/10 (ruling King) · la verticale reste, l'offre s'élargit
+Nous ne sommes pas « des sites web pour cliniques ». Nous sommes **le partenaire digital des
+opticiens, cliniques et écoles du Cameroun** — et ce que nous leur vendons, c'est ce dont leur
+business a besoin pour être **trouvable, crédible, joignable** : sites, réseaux sociaux, contenu,
+applications, outils IA. Phrase de positionnement (bilingue, partout) :
+**« Web et solutions digitales pour opticiens, cliniques et écoles au Cameroun. » / « Web and digital
+solutions for opticians, clinics and schools in Cameroon. »** Preuves : Univers Optique veut « quelque
+chose + site web » (le try-on n'est pas un site) ; le pack DM Optique inclut déjà social + contenu.
+L'offre a grandi plus vite que le mot « site web ». Les pitches DM (déjà conforme) et Univers (une app,
+pas un site) n'ont pas à changer.
