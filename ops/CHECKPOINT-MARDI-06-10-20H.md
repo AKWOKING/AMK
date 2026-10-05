@@ -6,11 +6,11 @@
 
 | # | Item | Détenteur | Statut |
 |---|---|---|---|
-| 1 | Proforma envoyée à DM Optique (message de couverture approuvé) | King | à confirmer 06/10 |
-| 2 | RIB prêt (PDF séparé) | King | à confirmer 06/10 |
-| 3 | Impressions en main (Conditions ×2 + Carte ×2) | King | à confirmer 06/10 |
-| 4 | Note vocale enregistrée / enregistrement planifié | King | **approuvée 05/10** — recording demain |
-| 5 | `dmoptic-offline.zip` sur le téléphone (démo offline) | King | à confirmer 06/10 |
+| 1 | Proforma envoyée | King | ✅ **FAIT 05/10 14:49 — v-finale « split 100k/50k »** · réponse client 15:07 = engagement, aucune action due |
+| 2 | RIB **préparé, PAS envoyé** | King | prêt ce soir ; copie papier en main mercredi ; envoi SEULEMENT si le client le demande après la rencontre (le virement se fait après introduction, pas avant) |
+| 3 | Impressions en main (proforma, PACK-OPTICIEN, tout ce que porte la rencontre) | King | **inconnu — à confirmer ce soir** |
+| 4 | **Note vocale DM OPTIQUE enregistrée** = le message de veille de visite à M. Domche (`onboarding/VOICE-NOTE-MARDI-06-10.md`, approuvé 05/10) — PAS une relance Cristallin/Labiomed, PAS du contenu | King | demain mardi 06/10 — ne bloque pas ce soir |
+| 5 | Zip sur le téléphone (portfolio, démos, casework pour présentation offline) | King | **inconnu — à confirmer ce soir** |
 
 ⚠️ L'orchestrateur ne peut pas déclencher une alarme vivante hors du sandbox : ce fichier EST le
 traqueur ; King pose son propre rappel téléphone pour 20h00 WAT. Le checkpoint se tient en une ligne

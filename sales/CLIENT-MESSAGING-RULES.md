@@ -98,3 +98,9 @@ Honnête, chaleureux, et **pas de déplacement inutile** pour un prospect non qu
 - En cas de conflit avec une règle plus ancienne du playbook, **celle-ci gagne pour tout message
   sortant non-PDF** (décision King du 02/10) — y compris le cadrage de « sign AKWO KING », désormais
   limité aux PDF.
+
+## Send-log proforma (ruling King 05/10, amendé)
+Chaque entrée du journal d'envoi proforma porte **la version exacte du fichier** (ex. « v-finale
+split 100k/50k »). Raison : confusion draft/envoi — un draft périmé peut être réimprimé depuis un
+cache comme s'il était la version envoyée ; la chaîne de versions dans le journal est la seule
+protection. Un draft jamais envoyé n'entre JAMAIS au journal comme envoi.

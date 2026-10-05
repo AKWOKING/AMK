@@ -117,7 +117,14 @@ Cordialement,
 ---
 
 ## JOURNAL D'ENVOI PROFORMA (ruling King 05/10 — même discipline que l'ANALYTICS-LOG)
-- **Date :** ____ · **Heure :** ____ · **Canal :** WhatsApp
-- **Fichier joint :** AMK-PROFORMA-2026-10-05-DM-OPTIQUE.pdf
-- **Message de couverture (verbatim) :** « …à coller ici au moment de l'envoi… »
-- **Par :** King · **Lu par le client :** ____ (à remplir au checkpoint mardi 20h00)
+**UNE seule entrée — envoi unique.** (Correction King : la v1 à bug slash n'a JAMAIS été envoyée —
+draft corrigé avant tout départ ; le risque n'est pas le double envoi, c'est un draft périmé réimprimé
+depuis un cache comme s'il était la version envoyée. Chaque ligne porte donc la version exacte.)
+
+- **Date :** 05/10/2026 · **Heure :** 14:49 · **Canal :** WhatsApp
+- **Fichier + version :** AMK-PROFORMA-2026-10-05-DM-OPTIQUE.pdf — **v-finale « split 100k/50k »**
+- **Message de couverture :** texte approuvé par King, envoyé 14:49 — **verbatim à coller ici par King**
+  (non archivé au repo à ce jour ; discipline = verbatim, jamais reconstruit)
+- **Par :** King · **Réponse client 15:07 :** « Merci pour le retour » — signal d'engagement, aucune
+  action due, aucun re-pitch, aucun re-ask (ruling King 05/10)
+
