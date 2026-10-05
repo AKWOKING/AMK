@@ -543,3 +543,8 @@ de la grille.
 14. **ONOC = outil de vérification (borné, 05/10).** Avant tout claim « inscrit à l'Ordre » / « inscrit
     depuis X » dans un pitch ou un post : vérification contre l'annuaire public onocameroun.com. La
     liste opticiens l'utilise pour sourcer ; tout le reste, pour vérifier seulement.
+15. **Checkpoint D-1 standing (05/10).** *Toute visite client a son checkpoint D-1 20h00 WAT et sa
+    freeze line. Cinq items nommés, un responsable chacun, ligne « frozen » seulement quand tous les
+    cinq sont verts. Rien ne bouge après sans ruling.* Raison : le pattern généralise — DM Optique est
+    le premier, pas le seul ; Cristallin, Labiomed, Univers Optique et toute visite d'onboarding
+    héritent du même format.

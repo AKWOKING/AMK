@@ -113,3 +113,11 @@ Cordialement,
 > ⚠️ **Bloquant de notre côté.** Le dépôt ne contient **ni RIB ni NIU pour AMK**. Sans eux, ni la
 > proforma ni cet e-mail ne sont conformes pour une SARL. **C'est le premier bloquant du dossier** —
 > voir `pre-launch-checklist.md` item 1.
+
+---
+
+## JOURNAL D'ENVOI PROFORMA (ruling King 05/10 — même discipline que l'ANALYTICS-LOG)
+- **Date :** ____ · **Heure :** ____ · **Canal :** WhatsApp
+- **Fichier joint :** AMK-PROFORMA-2026-10-05-DM-OPTIQUE.pdf
+- **Message de couverture (verbatim) :** « …à coller ici au moment de l'envoi… »
+- **Par :** King · **Lu par le client :** ____ (à remplir au checkpoint mardi 20h00)
