@@ -536,3 +536,10 @@ seul Standard 30k a été lu (UNI-LABO). Décision King 24/09 : on n'annonce qu'
 client garde ou non domaine+hébergement. Depuis le 05/10 : nouveaux retainers = 50k — Essentiel 12k
 est **retiré pour tout nouveau contrat** (sauf ruling contraire) ; il n'existe plus que comme histoire
 de la grille.
+13. **Essentiel 12k : RETIRÉ — 05/10/2026.** Idée juste dans l'ancien modèle ; dans le modèle corrigé
+    (200k setup, 50k retainer) un palier à 12k sabote le palier du dessous et rend Standard cher par
+    comparaison. Mort, ne pas ressusciter. Idem : **30k/mois nouveau contrat = retiré** — 30k n'existe
+    que comme contrat signé de DM Optique (fondateur). Tout nouveau retainer = 50k.
+14. **ONOC = outil de vérification (borné, 05/10).** Avant tout claim « inscrit à l'Ordre » / « inscrit
+    depuis X » dans un pitch ou un post : vérification contre l'annuaire public onocameroun.com. La
+    liste opticiens l'utilise pour sourcer ; tout le reste, pour vérifier seulement.

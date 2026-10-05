@@ -1,4 +1,6 @@
-# CHANGELOG DU VENDREDI — décisions & propositions (ruling King 05/10 : log adopté/rejeté/tenu)
+# CHANGELOG DU VENDREDI — FICHIER STANDING (ruling King 05/10)
+Chaque vendredi : propositions de la semaine + statut (adopté/rejeté/tenu) + principales leçons
+appliquées. Log adopté/rejeté/tenu ci-dessous.
 
 ## 05/10
 | # | Proposition / ruling | Statut |

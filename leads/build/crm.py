@@ -984,13 +984,13 @@ OPTICIENS_2109 = [
          contact_channel="WhatsApp", decision="MVENG ATEBA Zénon", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : MVENG ATEBA Zénon. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : MVENG ATEBA Zénon. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir. CANAL 05/10 (ruling) : parké 02/10, à réveiller le 12/10 avec l'opener produit ; page FB https://www.facebook.com/p/L-Opticien-bali-douala-Cameroun-100047803096819/ en appui."),
     dict(slug="disc-optique-m-dicale", org="Disc Optique Médicale", city="Douala", org_type="other", language="FR",
          wa_number="677 53 35 68", wa_verified="unknown",
          contact_channel="WhatsApp", decision="NANKAP TCHIPTCHOUA Jean Calvin", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : NANKAP TCHIPTCHOUA Jean Calvin. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : NANKAP TCHIPTCHOUA Jean Calvin. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir. CANAL 05/10 (ruling) : msg WhatsApp 21/09 jamais ouvert ; page FB INTROUVABLE (3 recherches 05/10) -> repli : appel voix au 677 53 35 68 le 13/10, jamais un 2e WhatsApp texte."),
     dict(slug="bely-optique-m-dicale", org="Bely Optique Médicale", city="Douala", org_type="other", language="FR",
          wa_number="696 85 52 42", wa_verified="unknown",
          contact_channel="WhatsApp", decision="NGATCHA ZOE Rosalie", source="directory",
@@ -1068,7 +1068,7 @@ OPTICIENS_2109 = [
          contact_channel="WhatsApp", decision="TCHAYA PITCHA'A Yannick — depuis 1974", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : TCHAYA PITCHA'A Yannick — depuis 1974. (2e : 699 98 87 24) Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : TCHAYA PITCHA'A Yannick — depuis 1974. (2e : 699 98 87 24) Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir. CANAL 05/10 (ruling) : msg WhatsApp 21/09 jamais ouvert -> page FB https://www.facebook.com/T.OPTIQUE/ (vérifiée : même 2e numéro) — commentaire/DM FB le 14/10."),
 ]
 
 OPT_ECARTES = [
