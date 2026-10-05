@@ -548,3 +548,7 @@ de la grille.
     cinq sont verts. Rien ne bouge après sans ruling.* Raison : le pattern généralise — DM Optique est
     le premier, pas le seul ; Cristallin, Labiomed, Univers Optique et toute visite d'onboarding
     héritent du même format.
+16. **Credentials copiées, jamais fetchées (05/10).** Toute valeur de type credential (NIU, nom
+    fiscal, coordonnées bancaires) utilisée dans un document client est **copiée dans le document
+    source avec date + provenance**, jamais fetchée en direct au moment du rendu. (Né du proforma :
+    le NIU venait de pro.txt d'un autre dépôt — maintenant figé dans PROFORMA-2026-10-05.md.)
