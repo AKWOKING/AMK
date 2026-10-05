@@ -5,8 +5,10 @@
 > réponse, pas un rafistolage.
 
 ## 1 · Positionnement (la verticale reste, l'offre s'élargit)
-**« Web et solutions digitales pour opticiens, cliniques et écoles au Cameroun. »** —
-*Web and digital solutions for opticians, clinics and schools in Cameroon.*
+**« Nous construisons les outils digitaux qui manquent aux opticiens du Cameroun. »** —
+*We build the digital tools Cameroon's opticians don't have yet.* (v3 05/10 : app-led — le try-on
+mène, site + social suivent.) L'ancienne ligne « Web et solutions digitales… » reste vraie comme
+description d'offre, plus comme tête de pitch.
 Nous ne vendons pas « des sites web » : nous vendons ce dont le business a besoin pour être
 **trouvable, crédible, joignable** — sites, réseaux sociaux, contenu, applications, outils IA.
 Preuves : Univers Optique veut « quelque chose + site web » (le try-on n'est pas un site) ; le pack

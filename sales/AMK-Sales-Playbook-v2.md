@@ -519,3 +519,20 @@ pas un site) n'ont pas à changer.
 12. **Le contenu suit le momentum du business (05/10) :** on ne publie pas un jour où le business n'a
     pas avancé — publication conditionnelle (v06 : mercredi SI dépôt encaissé, sinon vendredi). Un
     calendrier tenu ne vaut pas une semaine sans victoire.
+
+## GRILLE & POSITIONNEMENT — v3 du 05/10 (ruling King)
+**Ligne de tête (partout) :** **« Nous construisons les outils digitaux qui manquent aux opticiens du
+Cameroun. » / « We build the digital tools Cameroon's opticians don't have yet. »** Le try-on est
+l'offre de tête ; site + social = attaches de l'offre app, pas la tête du pitch.
+**Pourquoi opticiens mènent (la raison, pas le signal) :** c'est la seule verticale où nous avons le
+seul produit à ticket élevé (try-on 900k/1,4M). Si une future session relit « opticiens lead » sans la
+raison, qu'elle sache : la raison est le produit, pas le taux de réponse. Une école qui dit oui reste
+bienvenue — elle ne mène pas.
+**Prix v3 :** setup nouveau 200k (150k = fondateur opticien, clos) · non-opticien ≥ 200k ou rien ·
+retainer nouveau 50k/mois (30k = fondateur DM, signé, intouchable) · pushback = scope, jamais total.
+**Clarificatif Essentiel 12k (réponse à King, 05/10) :** le palier Essentiel 12 000/mois = domaine +
+veille + 30 min, proposé le 23/09 dans REVUE-CONTRATS-GRILLE §3, **jamais envoyé à aucun client** ;
+seul Standard 30k a été lu (UNI-LABO). Décision King 24/09 : on n'annonce qu'un palier selon que le
+client garde ou non domaine+hébergement. Depuis le 05/10 : nouveaux retainers = 50k — Essentiel 12k
+est **retiré pour tout nouveau contrat** (sauf ruling contraire) ; il n'existe plus que comme histoire
+de la grille.

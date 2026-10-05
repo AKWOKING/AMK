@@ -37,3 +37,17 @@
    contrat signé ; on ne le réplique plus.
 - ⚠️ Si DM prend 80 h et facture 150k (le scénario que King redoute) : 1 875 FCFA/h — **c'est le
   signal d'arrêter les setups à 150k pour les non-opticiens** et de vendre du one-time produit.
+
+## v2 — 05/10 (ruling King · le try-on est le moteur)
+**Chemin réaliste 500k/mois : 4 apps try-on + 4 retainers par an.** 4 × 900k ≈ 3,6M/an (≈ 300k/mois
+lissé) + 4 × 50k = 200k/mois → 500k/mois. Les retainers font la stabilité ; les apps font le chiffre.
+17 retainers = 34 h/mois de King = toute la capacité de l'agence, sans livraison ni acquisition :
+morte. Le positionnement devient app-led : « Nous construisons les outils digitaux qui manquent aux
+opticiens du Cameroun » — site + social = attaches, pas tête de pitch.
+**Grille v3 intégrée :** retainer nouveau 50k · setup nouveau 200k (non-opticien ≥ 200k ou rien) ·
+150k/30k = fondateurs, clos, intouchables.
+**Provisoire :** la conversion 590 FCFA/USD des benchmarks est **non vérifiée** — sans effet sur la
+conclusion : l'écart de taux effectif est ×10 entre retainer-à-heures-King et one-time-à-heures-agent,
+pas 5 %.
+**Mesure :** `clients/dm-optic/ops/hours-log.csv` démarre mercredi 07/10 ; une ligne/jour ; le modèle
+se corrige à un mois de données, pas avant.

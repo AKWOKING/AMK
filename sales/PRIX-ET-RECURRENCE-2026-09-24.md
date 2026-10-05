@@ -179,3 +179,13 @@ Jamais de remise (on ajuste le périmètre) · **jamais un prix inventé en séa
 + abonnement » (les deux variantes conformes écrites le 24/09 — paiement échelonné au prix plein, ou site
 compris dans douze mois au prix standard — **n'ont pas été appliquées**) · jamais une promesse de
 classement, de citation ou de « visibilité » · jamais deux grilles en circulation.
+
+## 3 · GRILLE v3 — 05/10 (ruling King · remplace tout prix antérieur pour les NOUVEAUX contrats)
+| Ligne | Nouveau prix | Note |
+|---|---|---|
+| Setup (nouveau client) | **200 000 FCFA** | 150 000 = prix fondateur opticien (DM Optique signé — ne se ré-offre plus). Pushback = scope (pages, langues, pack), jamais le total sous 200k. |
+| Setup non-opticien | **≥ 200 000 FCFA** | le 150k devient opticiens-seulement, et encore : fondateurs uniquement. Écoles/cliniques : 200k ou rien. |
+| Retainer (nouveau contrat) | **50 000 FCFA/mois** | 30k = tarif client fondateur (DM garde 30k, jamais renégocié un contrat signé). |
+| Standard 30k / Essentiel 12k | **legacy** | plus aucun nouveau contrat ; voir le clarificatif Essentiel dans le playbook (§ 05/10). |
+| Try-on opticien | 900k pilote (300/300/300) · 1,4M opticien 2+ | inchangé — c'est le moteur (UNIT-ECONOMICS §v2). |
+Règle : un contrat signé ne se renégocie jamais ; une grille ne se réplique jamais vers le bas.

@@ -1,13 +1,14 @@
 # PACK OPTICIEN — feuille d'une page · 05/10 (ruling King : verticale de tête = opticiens)
 
-> « Digital partner for opticians, clinics and schools in Cameroon — opticians lead. » Cliniques et
-> écoles : ouvertes, jamais en tête. Chiffres = seuls prix vérifiés au repo.
+> **« Nous construisons les outils digitaux qui manquent aux opticiens du Cameroun. » / « We build
+> the digital tools Cameroon's opticians don't have yet. »** Le try-on est l'offre de TÊTE ; site +
+> social = attaches. Cliniques/écoles : ouvertes, jamais en tête, **≥ 200k ou rien**. Chiffres v3.
 
 ## Le pack (site + social + contenu, try-on en extension)
 | Bloc | Contenu | Prix (vérifié) |
 |---|---|---|
-| **Installation** | Site vitrine bilingue FR\|EN, CTA WhatsApp, SEO local, photos | **150 000 FCFA** (grille standard envoyée 23/09) |
-| **Gestion mensuelle** | 2 publications/semaine (1 UGC IA + 1 carrousel), maintenance, rapport | **30 000 FCFA/mois**, pub d'amorçage 5k incluse |
+| **Installation** | Site vitrine bilingue FR\|EN, CTA WhatsApp, SEO local, photos | **200 000 FCFA** nouveau (150k = fondateur DM, clos) |
+| **Gestion mensuelle** | 2 publications/semaine (1 UGC IA + 1 carrousel), maintenance, rapport | **50 000 FCFA/mois** nouveau (30k = fondateur DM, signé) |
 | **Extension try-on** | App Android local-only, sideloadée, ≤ 3 appareils, ≤ 30 montures, admin self-service, garantie 30 j | **900 000 one-time** (pilote, 300/300/300) · **1 400 000** opticien 2+ |
 
 ## Pourquoi opticiens (signal marché, pas préférence)
