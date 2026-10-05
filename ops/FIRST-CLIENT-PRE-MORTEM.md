@@ -48,3 +48,7 @@ ciblage, pas le message.
 rythme Mon/Mer/Ven est annoncé dès S1 (retainer-rhythm.md) — cadrer tôt, pas après l'usure. Panne :
 il veut « juste un petit ajout » hors scope → repli : la phrase : « c'est noté pour le point de
 mercredi » — jamais un oui immédiat qui tue le rythme.
+
+**Repli imprimeuse (ajout 05/10) :** si l'imprimeuse de Bonabéri tombe mardi, réimprimer mercredi
+matin dans un autre shop sur la route — le pack PDF est dans le téléphone, l'impression n'est jamais
+un point unique de défaillance.

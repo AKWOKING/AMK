@@ -16,3 +16,9 @@
 - **05/10 — variante du piège :** le rendu « DATES À VENIR » sautait silencieusement toute entrée
   RELANCE sans ligne CRM (rc=0, file incomplète). Corrigé : fallback sur le slug + commentaire daté
   dans views.py. Vérifier la SORTIE après chaque rebuild reste la règle.
+
+## Silent drops — classe de piège (ruling King 05/10)
+*Silent drops: rc=0 outputs can be incomplete. Known instances: dict last-wins overwriting schedule
+entries (02/10), prose-not-in-data keep flags (21/09), relance renderer dropping CRM-less slugs
+(05/10). Pattern: any generator that joins on CRM rows will silently discard orphans. Before trusting
+any generated view, grep for `next((r for r in rows` join sites.*

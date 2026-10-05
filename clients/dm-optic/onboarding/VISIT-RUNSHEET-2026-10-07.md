@@ -1,5 +1,6 @@
 # DM OPTIQUE · Runsheet de la visite — Jour J
 > **Si le cabinet déborde, priorité d'ordre : acompte → code GBP → 8 photos → le reste suit.** (ruling King 05/10 — ordre de squeeze pré-convenu, ajouté avant mardi)
+> **Phrase à dire, voix posée :** « On garde l'essentiel : la signature et les photos. Le reste, on cale ça par WhatsApp demain. » (ruling King 05/10 — le triage devient une promesse datée, pas une omission)
 
 
 ```
