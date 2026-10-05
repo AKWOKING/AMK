@@ -86,6 +86,12 @@ dédiée existe → **écarté**, pas de message. Détail et les deux preuves du
 avant l'envoi ; SkyOptic et Cinq Sens fragilisés après l'envoi) :
 `sales/MESSAGES-2026-09-23-PERSUASION.md` §5 et `sales/RESEARCH-STANDARD.md` §8c.
 
+## 1d · Règle QA/grep — chaîne cherchée = ligne source littérale (ruling King 05/10)
+
+Quand on grep un contenu qu'on vient d'insérer, le pattern est la **ligne source littérale,
+marqueurs markdown inclus** (`**gras**` compris). Un pattern « propre » sans marqueurs produit un
+faux-zéro sur du contenu boldé. Classe tooling, pas inférence ; journal : `ops/QA-NOTES.md`.
+
 ## 2 · Uniqueness protocol (every website/design build, before a line of HTML)
 
 1. Load design + copywriting lessons (routing table rows above) and re-read `AMK-DESIGN-SKILLS.md` (dials §2, Design Read §1, anti-default §3/§3.8, pre-flight §13, §19).

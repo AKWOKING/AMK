@@ -12,7 +12,8 @@
 > contractuel — juste notre base commune, pour qu'on parte sur les mêmes bases et qu'on gagne du
 > temps mercredi. À demain. »
 
-**⚠️ Premise check ouvert (05/10) :** « avec vos associés » suppose des associés — non vérifié au
-CRM/fil (le dossier ne connaît que M. Domche ; un advisor n'apparaît que comme scénario fallback).
-Formule polie sans doute, mais King tranche avant envoi : garder tel quel, ou « tranquillement avant
-mercredi ». Rien d'autre ne bouge sans lui.
+**✅ Premise « avec vos associés » — FLAGGÉ puis RÉSOLU (ruling King 05/10) :** gardé tel quel.
+La formule miroite la propre langue v1 de King (message proforma 14:49 : « à parcourir avec vos
+associés ») ; le client n'a pas objecté ; pluriel de courtoisie envers un gérant de SARL. **Pas une
+erreur d'inférence** — loggé « flagged, resolved — source is King's own v1 language ». Le script
+verbatim ci-dessus ne bouge pas.
