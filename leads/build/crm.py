@@ -788,7 +788,7 @@ BATCH_2409_4_NEW = [
          contact_name="DOMCHE NOUMBI",
          notes="LOT 4 (préparé, PAS ENVOYÉ). Titulaire : DOMCHE NOUMBI. Aucune page, aucun site "
                "trouvés (24/09). ⚠️ Porte B FAIBLE (§8b : 2/3) — King décide explicitement. "
-               "Remplaçant dans l'ordre d'envoi. · 05/10 15:07 : réponse « Merci pour le retour » à la proforma v-finale (envoyée 14:49) — signal d'engagement, aucune action due, aucun re-pitch/re-ask (ruling King 05/10). Mercredi tient."),
+               "Remplaçant dans l'ordre d'envoi. · 05/10 15:07 : réponse « Merci pour le retour » à la proforma v-finale (envoyée 14:49) — signal d'engagement, aucune action due, aucun re-pitch/re-ask (ruling King 05/10). Mercredi tient. · 05/10 15:09 : le client relève l'absence d'adresse, de contact et de RC sur la proforma — v2 régénérée le 05/10 avec le bloc émetteur complet (7 lignes, ruling King) ; envoi le 06/10 groupé avec le doc conditions + la note vocale."),
 ]
 
 

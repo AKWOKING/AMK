@@ -6,8 +6,8 @@
 
 | # | Item | Statut |
 |---|---|---|
-| 1 | Proforma envoyée | ✅ 05/10 14:49 v-finale « split 100k/50k » |
-| 2 | Conditions doc + note vocale envoyés (un message, jamais le doc seul) | **mardi 06/10 — l'item à fermer** (premise check avant envoi, King envoie) |
+| 1 | Proforma | ✅ v-finale envoyée 05/10 14:49 « split 100k/50k » · 15:09 le client demande adresse/contact/RC → **v2 prête 05/10** (bloc émetteur 7 lignes), envoi mardi groupé |
+| 2 | Conditions doc + note vocale + proforma v2 envoyés (un message, jamais le doc seul) | **mardi 06/10 — l'item à fermer** (premise check avant envoi, King envoie) |
 | 3 | Zip sur téléphone (portfolio, démos, casework) | à confirmer ce soir ou demain matin |
 | 4 | Cadrage mercredi = rencontre de confiance, pas un close | **gelé** |
 | 5 | RIB préparé, non envoyé | **hold** — seulement si le client le demande après l'introduction |

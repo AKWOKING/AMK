@@ -129,8 +129,10 @@ depuis un cache comme s'il était la version envoyée. Chaque ligne porte donc l
   action due, aucun re-pitch, aucun re-ask (ruling King 05/10)
 
 
-## À LOGGUER À L'ENVOI DU 06/10 (ruling King — trois entrées, jamais avant l'envoi réel)
+## À LOGGUER À L'ENVOI DU 06/10 (ruling King — quatre entrées, jamais avant l'envoi réel)
 - **CRM ligne DM Optique :** 06/10 conditions doc v1 + note vocale, même message WhatsApp, nom de
   fichier + version « v1-06/10 ».
 - **Journal :** 06/10, conditions doc v1, note vocale jointe, WhatsApp, heure réelle.
+- **Journal proforma :** 06/10, AMK-PROFORMA-2026-10-05-DM-OPTIQUE-v2.pdf — version « v2 bloc émetteur
+  7 lignes », même message WhatsApp groupé (note vocale + conditions + proforma v2), heure réelle.
 - **Rappel :** ni RIB, ni prints, ni bloc de signature — retirés par ruling.
