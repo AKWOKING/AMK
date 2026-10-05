@@ -17,3 +17,4 @@ client-facing, l'énoncer en une ligne et la vérifier contre le fil/registre ; 
 produit pas. ② **Second-reader** — passe finale : « qu'est-ce que ça suppose qui pourrait être faux ?
 que lira le client qu'on n'a pas voulu dire ? que manque-t-il qu'il demandera ? » ③ **Log** — chaque
 catch atterrit ici.
+| 05/10 | Content unblock (v7) | « try-on captures » — l'orchestrateur a écrit comme si l'app existait et avait des captures | l'app n'existe pas ; seuls des maquettes/montages datés existent (essai-maquette.png, essai-1.png) | la source d'un contenu se vérifie AVANT d'être nommée ; si elle n'existe pas, produire la source ou reporter (ruling 05/10, vidéo 7 = maquettes labellisées) |

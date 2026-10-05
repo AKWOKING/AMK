@@ -31,14 +31,21 @@ posée systématique, jamais de son tendance seul (indice 17/09).
 
 ## 4 · Première vidéo problem-led — proposition
 **Video 7 — opticiens de Douala — pain : « votre stock est votre avantage, mais vos clients ne le
-voient pas » — source asset : le chantier try-on d'Univers Optique (captures d'écran du concept,
-montages réels ; AUCUN nom de client, aucun claim de résultat — droits d'étude de cas non encore
-signés) — funnel stage : reconnaissance du problème (haut) — expected outcome : 1–3 DM
-« ESSAI »/« APERÇU » d'opticiens en 7 jours.**
+voient pas » — source asset VÉRIFIÉE 05/10 (correction King : l'app n'existe pas, aucune capture
+possible) : les MAQUETTES datées `clients/univers-optique/essai-maquette.png` + `demos/essai-1.png`
+ (montages visage + 3 montures, antérieurs à la session) + 2 écrans de maquette UI produits le
+05/10 (`content/videos/v07-stock-invisible/assets/`) — AUCUNE image d'app réelle, et le mot
+« MAQUETTE » apparaît à l'écran sur chaque plan concerné (jamais laisser croire que l'app tourne)
+· AUCUN nom de client · aucun claim de résultat — funnel stage : reconnaissance du problème (haut)
+— expected outcome : 1–3 DM « ESSAI » d'opticiens en 7 jours.**
+⚠️ Portique avant publication : vérifier la provenance du visage de `essai-maquette.png` (stock ou
+généré — daté des sessions antérieures) ; si origine non traçable, le remplacer par une silhouette
+vectorielle avant tout envoi public.
 Script en une ligne par plan : ① un client essaie 3 montures et part · ② le même client en voit 15
-sur son visage en une minute (capture concept) · ③ « ce n'est pas de la science-fiction, c'est en
-construction à Douala » · ④ le problème : votre stock dort dans le tiroir · ⑤ CTA soft : « écrivez
-ESSAI si vous voulez voir ». Voix posée, 30–35 s, ouverture MOUVEMENT dès 0:00 (leçon du cliff).
+sur son visage en une minute (maquette, mot « MAQUETTE » à l'écran) · ③ « ce n'est pas de la
+science-fiction, c'est en construction à Douala » · ④ le problème : votre stock dort dans le tiroir
+· ⑤ CTA soft : « écrivez ESSAI si vous voulez voir ». Voix posée, 30–35 s, ouverture MOUVEMENT dès
+0:00 (leçon du cliff).
 
 ## 5 · Baseline honnête (règle : chiffres de King uniquement, jamais estimés)
 **3 vidéos publiées · 0 lead · 277 vues lues** — 2 lectures archivées (#4 : 156 · founding-EN : 121).

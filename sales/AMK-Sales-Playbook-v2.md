@@ -495,7 +495,9 @@ opticiens, cliniques et écoles du Cameroun** — et ce que nous leur vendons, c
 business a besoin pour être **trouvable, crédible, joignable** : sites, réseaux sociaux, contenu,
 applications, outils IA. Phrase de positionnement (bilingue, partout) :
 **« Web et solutions digitales pour opticiens, cliniques et écoles au Cameroun. » / « Web and digital
-solutions for opticians, clinics and schools in Cameroon. »** Preuves : Univers Optique veut « quelque
+solutions for opticians, clinics and schools in Cameroon. »** (05/10, ruling King : **« Digital
+partner for opticians, clinics and schools in Cameroon — opticians lead. »** La verticale de tête est
+opticien ; cliniques et écoles restent ouvertes mais ne mènent jamais un pitch.) Preuves : Univers Optique veut « quelque
 chose + site web » (le try-on n'est pas un site) ; le pack DM Optique inclut déjà social + contenu.
 L'offre a grandi plus vite que le mot « site web ». Les pitches DM (déjà conforme) et Univers (une app,
 pas un site) n'ont pas à changer.
@@ -511,3 +513,9 @@ pas un site) n'ont pas à changer.
 10. **Log every catch.** Toute erreur d'inférence attrapée (par King ou par l'orchestrateur) va dans
     `ops/INFERENCE-ERRORS.md` : date, tâche, inférence, vérité, règle née. Sur un mois, le pattern
     cible la faiblesse — les règles visent la cause, pas le symptôme.
+11. **Tripwire prospection (adopté 05/10) :** si au 20/10 les relances Cristallin et Labiomed sont
+    silencieuses, activer la liste opticiens du 22/09 (10 noms) — opener = étude de cas DM Optique SI
+    l'acompte a été encaissé mercredi ; sinon opener = aperçu concept. Jamais l'un pour l'autre.
+12. **Le contenu suit le momentum du business (05/10) :** on ne publie pas un jour où le business n'a
+    pas avancé — publication conditionnelle (v06 : mercredi SI dépôt encaissé, sinon vendredi). Un
+    calendrier tenu ne vaut pas une semaine sans victoire.

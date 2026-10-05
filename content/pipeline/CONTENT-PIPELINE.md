@@ -138,3 +138,5 @@ ne répond pas*.
 - **v0.3 — 17 Sep 2026:** King's decisions — #4 **approved** (posting = King), #1 TikTok **not posted** + no re-upload, founding series status recorded (1 of 4 posted), shortlist + strategy approved, voice re-audition confirmed. Batch-4 lessons folded into the script gates.
 - **v0.2 — 17 Sep 2026:** pack received; files migrated into `content/`; real specs + frame QA recorded; performance figures recorded with caveats; Video 4 = pending/not approved/not posted.
 - **v0.1 — 17 Sep 2026:** structure created while uploads were missing.
+
+- **05/10 — Publication v06 (ruling King) :** `Publication v06 = mercredi 07/10 19h25 SI dépôt encaissé ; sinon vendredi 09/10.` On ne publie pas dans un jour sans momentum — le contenu suit le mouvement du business, jamais l'inverse.
