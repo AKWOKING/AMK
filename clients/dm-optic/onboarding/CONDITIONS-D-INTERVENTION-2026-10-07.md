@@ -2,7 +2,7 @@
 
 ```
 DM OPTIQUE SARL ↔ AMK · préparé pour la visite du mercredi 07/10/2026
-Deux copies imprimées pour la visite. Pas de bloc de signature sur la version numérique.
+Document de travail, non-juridique. Version partagée via WhatsApp le 06/10/2026.
 ```
 
 ## 1 · Ce qui est livré
@@ -10,8 +10,10 @@ Deux copies imprimées pour la visite. Pas de bloc de signature sur la version n
 - **Un site web** une page, bilingue FR|EN, orienté patient, bouton WhatsApp, optimisé mobile.
 - **Mise en place des comptes sociaux** (Facebook + TikTok) : créés au nom du cabinet, le cabinet en
   est propriétaire, AMK y a un accès admin pour travailler.
-- **Gestion mensuelle :** 2 publications par semaine (1 vidéo UGC IA + 1 carrousel), maintenance du
+- **Nom de domaine :** enregistré au nom du cabinet dès le premier jour.
+- **Gestion mensuelle :** 2 publications par semaine (1 vidéo courte produite par AMK (voix IA + montage) + 1 carrousel), maintenance du
   site, et un budget pub d'amorçage de **5 000 FCFA inclus** dans le mensuel.
+- **Maintenance du site :** mises à jour de contenu, sécurité, disponibilité. Hors refonte.
 
 ## 2 · Le calendrier
 
@@ -31,8 +33,7 @@ Deux copies imprimées pour la visite. Pas de bloc de signature sur la version n
 - La dépense publicitaire au-delà des 5 000 FCFA d'amorçage (toute extension se décide à deux, chiffres
   en main).
 - Les pages supplémentaires au-delà de la page livrée, et les langues au-delà de FR|EN.
-- Les photos professionnelles — la session au téléphone (Pixel 8a) fait l'objet d'un échange séparé
-  (client fondateur) ou d'une ligne de 15 000 FCFA.
+- Photos professionnelles : session au téléphone offerte — geste client fondateur. Aucun montant.
 - Toute promesse de résultat médical : nous publions du vrai, jamais du thérapeutique.
 - Les frais d'hébergement et de nom de domaine au-delà de la première année — ensuite : facturés à
   l'année ou intégrés au mensuel, à trancher ensemble avant l'échéance.
@@ -51,6 +52,8 @@ Deux copies imprimées pour la visite. Pas de bloc de signature sur la version n
 
 *Ce document pose les conditions de travail ; il sera repris dans un contrat si le cabinet le souhaite.
 En cas de doute sur un point : on en parle avant de signer, jamais après.*
+
+*Se lit avec la facture proforma AMK-PROFORMA-2026-10-05-DM-OPTIQUE.*
 
 > **05/10 — prix fondateur protégé (ruling King) :** les 75k+75k et 30k/mois de DM Optique sont un
 > prix de client fondateur, **jamais renégocié, jamais ré-offert**. Grille courante : 200k setup,

@@ -128,3 +128,9 @@ depuis un cache comme s'il était la version envoyée. Chaque ligne porte donc l
 - **Par :** King · **Réponse client 15:07 :** « Merci pour le retour » — signal d'engagement, aucune
   action due, aucun re-pitch, aucun re-ask (ruling King 05/10)
 
+
+## À LOGGUER À L'ENVOI DU 06/10 (ruling King — trois entrées, jamais avant l'envoi réel)
+- **CRM ligne DM Optique :** 06/10 conditions doc v1 + note vocale, même message WhatsApp, nom de
+  fichier + version « v1-06/10 ».
+- **Journal :** 06/10, conditions doc v1, note vocale jointe, WhatsApp, heure réelle.
+- **Rappel :** ni RIB, ni prints, ni bloc de signature — retirés par ruling.

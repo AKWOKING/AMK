@@ -1,16 +1,18 @@
-# NOTE VOCALE — MARDI 06/10, veille de la visite · **APPROUVÉ par King 05/10** (2 changements : « comme convenu » + « un moment » — ne pas pré-plafonner la visite)
+# NOTE VOCALE — MARDI 06/10 · jointe AU PDF conditions, même message WhatsApp · brouillon King 05/10
 
-> À enregistrer par King le mardi 06/10 (après-midi). Chaleureux, pratique, zéro pitch — tout le pitch
-> est pour demain. Pas de texte d'accompagnement : la voix seule (standard maison, CLIENT-MESSAGING-RULES).
+> **Protocole d'envoi (ruling King 05/10) :** mardi 06/10, WhatsApp, UN message : note vocale + PDF
+> conditions attachés ensemble. **Jamais le doc seul.** La note précédente (« veille de visite »,
+> approuvée 05/10) est **remplacée** par celle-ci — le même message porte le doc et la veille.
+> Envoi par King après premise check de l'orchestrateur.
 
-**Script :**
+**Script (15–30 s, FR, brouillon verbatim King 05/10) :**
 
-> « Bonjour Monsieur Domche, c'est Akwo King. Petit message pour confirmer notre rendez-vous de demain
-> à votre cabinet à Ndobo Mayor. Venez comme convenu, il n'y a rien à préparer — juste vous, votre
-> téléphone pour les photos du cabinet, et un moment devant vous si possible. Si l'horaire
-> ne vous arrange plus, dites-le-moi simplement. À demain ! »
+> « Bonjour Monsieur, c'est King. Je vous envoie les conditions de travail qu'on a préparées pour
+> mercredi, pour que vous puissiez les parcourir tranquillement avec vos associés. Rien de
+> contractuel — juste notre base commune, pour qu'on parte sur les mêmes bases et qu'on gagne du
+> temps mercredi. À demain. »
 
-**Variantes :**
-- S'il a proposé une heure précise : remplacer « notre rendez-vous de demain » par « demain à [heure] ».
-- S'il demande quoi apporter d'autre : les documents de son inscription ONOC **s'il les a sous la
-  main** — jamais une condition, jamais un obstacle.
+**⚠️ Premise check ouvert (05/10) :** « avec vos associés » suppose des associés — non vérifié au
+CRM/fil (le dossier ne connaît que M. Domche ; un advisor n'apparaît que comme scénario fallback).
+Formule polie sans doute, mais King tranche avant envoi : garder tel quel, ou « tranquillement avant
+mercredi ». Rien d'autre ne bouge sans lui.
