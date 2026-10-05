@@ -57,3 +57,7 @@ un point unique de défaillance.
 « et le site, je l'ai quand ? » : *« Le site en version alpha sous 3 à 5 jours. La version complète
 avec vos photos, sous 2 à 3 semaines. »* Le « 3 à 5 jours » de la proforma = l'alpha, pas le site
 complet — ne jamais promettre le complet sous 5 jours.
+
+**Réponse « pourquoi 150k ? » (ruling King 05/10 — verbale, jamais sur le document) :** « le site vaut
+100 000 seul ; la configuration sociale vaut 50 000 ; le pack les tient ensemble. » Montrer le split
+inviterait à négocier une des deux lignes — le document garde un prix, la voix garde la décomposition.
