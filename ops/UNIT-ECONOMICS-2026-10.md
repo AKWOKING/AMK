@@ -51,3 +51,11 @@ conclusion : l'écart de taux effectif est ×10 entre retainer-à-heures-King et
 pas 5 %.
 **Mesure :** `clients/dm-optic/ops/hours-log.csv` démarre mercredi 07/10 ; une ligne/jour ; le modèle
 se corrige à un mois de données, pas avant.
+
+## Pricing effective 05/10 (ruling King)
+- **Retainer nouveaux contrats : 50 000 FCFA/mois.** DM Optique garde 30k (fondateur, signé, jamais
+  renégocié).
+- **Setup nouveaux contrats : 200 000 FCFA.** DM garde 150k (fondateur, clos). Pushback = scope,
+  jamais le total.
+- **150k opticiens-seulement, fondateurs-seulement.** Écoles/cliniques : 200k minimum ou rien — ce
+  n'est pas un retrait du vertical, c'est la correction d'une erreur de prix avant qu'elle ne compose.

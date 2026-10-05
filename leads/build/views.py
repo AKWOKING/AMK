@@ -90,6 +90,7 @@ RELANCE_A_JOUR = {
     # 22/09 20:51 : il a répondu — « Je suis vraiment intéressé … Vendredi matin 10h dans mon cabinet. »
     # Comme UNI-LABO, ce n'est plus une relance à calculer, c'est une réunion à préparer.
     "univers-optique": ("2026-10-08", "Formalization pitch v5 (ruling FINAL 03/10) : 900k one-time 300/300/300, PAS de mensuel, admin catalogue self-service, garantie 30 j, ≤30 montures, ≤3 appareils — awaiting King review and DM Optique close. PITCH-DRAFT-2026-10.md + SCOPE + USAGE-PLAN. Site : FERMÉ définitivement, jamais re-pitcher."),
+    "liste-opticiens": ("2026-10-12", "Premiers envois LISTE-OPTICIENS-2026-10.md (2/jour) : opener PRODUCT-LED « Nous construisons des outils sur mesure pour opticiens — à commencer par une application d'essayage qui montre vos montures sur le visage de vos clients avant qu'ils ne passent. » JAMAIS « we do websites for opticians ». Étude de cas DM seulement si acompte encaissé, sinon version concept (règle 11). Chaque envoi loggé CRM ; 0 réponse J+7 = canal, pas wording."),
     # 23/09 09:46 : le prix est PARTI (150 000 FCFA, 75 000 pour démarrer). On attend sa réponse ;
     # s'il ne dit rien, une relance courte le 24/09 — et rien d'autre entre-temps.
     # 24/09 : le plan demandait « Relance 1/3 Le Cristallin » alors que la décision écrite dit l'inverse.

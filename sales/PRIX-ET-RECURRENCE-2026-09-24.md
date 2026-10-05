@@ -186,6 +186,6 @@ classement, de citation ou de « visibilité » · jamais deux grilles en circul
 | Setup (nouveau client) | **200 000 FCFA** | 150 000 = prix fondateur opticien (DM Optique signé — ne se ré-offre plus). Pushback = scope (pages, langues, pack), jamais le total sous 200k. |
 | Setup non-opticien | **≥ 200 000 FCFA** | le 150k devient opticiens-seulement, et encore : fondateurs uniquement. Écoles/cliniques : 200k ou rien. |
 | Retainer (nouveau contrat) | **50 000 FCFA/mois** | 30k = tarif client fondateur (DM garde 30k, jamais renégocié un contrat signé). |
-| Standard 30k / Essentiel 12k | **legacy** | plus aucun nouveau contrat ; voir le clarificatif Essentiel dans le playbook (§ 05/10). |
+| Standard 30k / Essentiel 12k | **SUPERSEDÉ le 05/10** | anciens paliers retirés de tout nouveau contrat (50k les remplace) ; Essentiel 12k = domaine + veille + 30 min, proposé 23/09, JAMAIS envoyé ; voir clarificatif playbook. |
 | Try-on opticien | 900k pilote (300/300/300) · 1,4M opticien 2+ | inchangé — c'est le moteur (UNIT-ECONOMICS §v2). |
 Règle : un contrat signé ne se renégocie jamais ; une grille ne se réplique jamais vers le bas.

@@ -51,3 +51,7 @@ Deux copies imprimées pour la visite. Pas de bloc de signature sur la version n
 
 *Ce document pose les conditions de travail ; il sera repris dans un contrat si le cabinet le souhaite.
 En cas de doute sur un point : on en parle avant de signer, jamais après.*
+
+> **05/10 — prix fondateur protégé (ruling King) :** les 75k+75k et 30k/mois de DM Optique sont un
+> prix de client fondateur, **jamais renégocié, jamais ré-offert**. Grille courante : 200k setup,
+> 50k/mois (`sales/PRIX-ET-RECURRENCE-2026-09-24.md` §3).

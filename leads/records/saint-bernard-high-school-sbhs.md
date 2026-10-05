@@ -1,6 +1,6 @@
 # Saint Bernard High School (SBHS)
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-03. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-05. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 

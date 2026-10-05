@@ -1,4 +1,6 @@
 # DM OPTIQUE · Runsheet de la visite — Jour J
+> **Si le cabinet déborde, priorité d'ordre : acompte → code GBP → 8 photos → le reste suit.** (ruling King 05/10 — ordre de squeeze pré-convenu, ajouté avant mardi)
+
 
 ```
 Status: PRÊT À EMPORTER   ·  Updated: 2026-10-02

@@ -1,6 +1,6 @@
 # ENTONNOIR — où le système fuit
 
-> ⚙️ **Généré le 2026-10-03 par `leads/build/views.py` — ne pas modifier à la main.**
+> ⚙️ **Généré le 2026-10-05 par `leads/build/views.py` — ne pas modifier à la main.**
 > Toute correction se fait dans `leads/build/crm.py` ou `sales/Activity-Log.md`, puis on relance `leads/build/rebuild.sh`.
 
 ## La chaîne

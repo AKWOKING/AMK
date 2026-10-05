@@ -1,4 +1,4 @@
-# NOTE VOCALE — MARDI 06/10, veille de la visite · **APPROUVÉ par King 05/10** (1 changement : « comme convenu »)
+# NOTE VOCALE — MARDI 06/10, veille de la visite · **APPROUVÉ par King 05/10** (2 changements : « comme convenu » + « un moment » — ne pas pré-plafonner la visite)
 
 > À enregistrer par King le mardi 06/10 (après-midi). Chaleureux, pratique, zéro pitch — tout le pitch
 > est pour demain. Pas de texte d'accompagnement : la voix seule (standard maison, CLIENT-MESSAGING-RULES).
@@ -7,7 +7,7 @@
 
 > « Bonjour Monsieur Domche, c'est Akwo King. Petit message pour confirmer notre rendez-vous de demain
 > à votre cabinet à Ndobo Mayor. Venez comme convenu, il n'y a rien à préparer — juste vous, votre
-> téléphone pour les photos du cabinet, et une petite demi-heure devant vous si possible. Si l'horaire
+> téléphone pour les photos du cabinet, et un moment devant vous si possible. Si l'horaire
 > ne vous arrange plus, dites-le-moi simplement. À demain ! »
 
 **Variantes :**
