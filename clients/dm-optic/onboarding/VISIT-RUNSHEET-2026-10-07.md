@@ -15,9 +15,12 @@ Budget total sur place : ~95–110 min, dont 45 min de prise de vue (le site a 1
 
 ## 0 · Avant de partir (la veille au soir)
 
-- [ ] 2 × Facture Proforma imprimées (la sienne, la mienne) — **à produire ce week-end**
-- [ ] RIB + NIU AMK imprimés — **à fournir ce week-end** (bloquant critique, `pre-launch-checklist.md` item 2)
-- [ ] Le pack imprimé (`VISIT-PRINTED-PACK-2026-10-07.md`)
+- [x] ~~2 × Facture Proforma imprimées~~ — **RETIRÉ, ruling King 06/10 : aucun print** (v2 envoyée
+  WhatsApp 05/10 16:24)
+- [x] ~~RIB + NIU AMK imprimés~~ — **hold** (ruling 05/10) : ni imprimé ni envoyé ; seulement si le
+  client le demande après l'introduction
+- [x] ~~Le pack imprimé~~ — **RETIRÉ, ruling King 06/10 : aucun print** (`VISIT-PRINTED-PACK` gardé
+  comme archive)
 - [ ] Téléphone chargé + **démos chargées hors ligne** (le cabinet peut être sombre en data)
 - [ ] Feuille A4 (réflecteur) + chiffon microfibre
 - [ ] La fiche photo 1 page (`photoshoot/PHOTOSHOOT-FICHE-1PAGE-2026-10.md`)
@@ -28,8 +31,8 @@ Budget total sur place : ~95–110 min, dont 45 min de prise de vue (le site a 1
 | # | Étape | Time-box | Déclencheur | Repli si ça cale |
 |---|---|---|---|---|
 | **1** | **Accueil.** Chaleureux, entre deux personnes qui se sont déjà rencontrées. Si la localisation vient : *« basé entre Buea et Douala, conception à distance, je me déplace pour nos points d'étape clés. »* | 5 min | L'arrivée | S'il est tendu : **écouter d'abord**, démos après — la relation passe avant l'écran |
-| **2** | **Démos** (3 max, `DEMO-SCRIPT-2026-10-07.md`). C1 → site → script W1. Lui faire **tenir** l'écran, pas regarder le mien. | 15–25 min — **site : 15 min plancher, 20 s'il est engagé** | Installés, thé/café servi | Data morte ou écran illisible : le pack imprimé **prend le relais** — rien ne dépend du réseau |
-| **3** | **Revue des conditions + signature.** Les deux coffrets, le périmètre mois 1, « jamais de remise — on échange du périmètre ». Il signe les conditions. | 10 min | Les démos ont parlé, ses questions sont posées | S'il veut relire avec ses associés : **une copie reste sur place**, prochaine étape **datée** (48 h) — pas de « on se rappelle » |
+| **2** | **Démos** (3 max, `DEMO-SCRIPT-2026-10-07.md`). C1 → site → script W1. Lui faire **tenir** l'écran, pas regarder le mien. | 15–25 min — **site : 15 min plancher, 20 s'il est engagé** | Installés, thé/café servi | Data morte ou écran illisible : **le zip hors ligne sur téléphone prend le relais** (démos chargées) — rien ne dépend du réseau |
+| **3** | **Revue des conditions + signature.** Les deux coffrets, le périmètre mois 1, « jamais de remise — on échange du périmètre ». Il signe les conditions. | 10 min | Les démos ont parlé, ses questions sont posées | S'il veut relire avec ses associés : **le PDF conditions est sur son WhatsApp (envoyé 09:43)**, prochaine étape **datée** (48 h) — pas de « on se rappelle » |
 | **4** | **Acompte.** 75 000 FCFA, MoMo/virement **sur place**, ou proforma tamponnée retournée. **Rien n'est public et aucun accès compte n'est ouvert avant.** | 10 min | Conditions signées | Si le paiement est impossible ce jour-là : **rien ne se publie**, prochaine étape datée — mais **la séance photo peut avoir lieu** (son inventaire, son accord) et le reste attend le déclencheur |
 | **5** | **La conversation 8a** (`PHOTOSHOOT-BRIEF` §6). Branche 1 : l'échange fondateur, cadrage FR tel quel. Branche 2 s'il décline : ligne 15 000 FCFA, séparée, jamais une remise. | 5 min | L'acompte est posé (ou avant la photo si l'échange est accepté) | S'il hésite : **ne pas forcer** — la branche 2 est dite, il tranche, on note |
 | **6** | **Séance photo** (45 min, fiche 1 page en main). A ≥ 12 · B ≥ 6 · C ≥ 4. Accord écrit (WhatsApp) **avant tout visage**. | 45 min | La conversation 8a est close | Si le temps manque : **A d'abord** (le catalogue), B ensuite, C en dernier — jamais l'inverse |
@@ -41,8 +44,8 @@ Budget total sur place : ~95–110 min, dont 45 min de prise de vue (le site a 1
 - **Jamais de remise** — périmètre contre périmètre.
 - **Aucun visage photographié sans accord écrit** (un WhatsApp conservé suffit).
 - **Aucune donnée visible** sur les photos (ordonnance, registre, écran) — zoomer les bords.
-- Si une question prix/conditions/confiance devient longue : **appeler, ou poser le papier** — ça ne se
-  négocie pas en l'air. « Deux minutes valent cinquante messages. »
+- Si une question prix/conditions/confiance devient longue : **appeler** — ça ne se négocie pas en
+  l'air. « Deux minutes valent cinquante messages. » (ruling 06/10 : plus de papier sur la table)
 
 ## 3 · En partant — la vérification de 60 secondes
 

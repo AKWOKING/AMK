@@ -1,16 +1,15 @@
 # Notes d'impression — visite du mercredi 07/10/2026
 
+> **⛔ RULING KING 06/10 : AUCUN PRINT — ces notes sont retirées.** Aucune impression pour mercredi ;
+> le sac = téléphone + zip. Tout ce qui suit reste comme archive.
+>
 > Rulings King du 02/10 : conditions approuvées (deux edits incluss) ×2 · carte approuvée ×2.
 > Fichiers prêts dans ce dossier : `CONDITIONS-D-INTERVENTION-2026-10-07.pdf` (2 pages A4) et
 > `CARTE-SIGNATURE-TABLEAU-VISION-A6.pdf` (A6 105×148 mm, rendu 300 dpi).
 
-## Conditions d'intervention — 2 copies
-- A4, recto verso si le papier est fin, sinon recto simple.
-- Papier standard suffisant (document de travail).
-- *Conditions ×2 — backup papier non signé, apporté mercredi (si non lu en amont).* (ruling King
-  05/10 : ces copies = backup de table, aucune signature ; l'envoi reste WhatsApp-only.)
+## Conditions d'intervention — ~~2 copies~~ RETIRÉ (aucun print, ruling 06/10)
 
-## Carte signature — 2 copies
+## Carte signature — ~~2 copies~~ print retiré (ruling 06/10 ; gardée sur téléphone)
 - **A6, papier 250 g/m² si l'imprimeur de Bonabéri le fait** (ruling King) ; sinon le plus épais dispo.
 - Copie 1 : pack imprimé de la visite.
 - Copie 2 : **cadeau pour M. Domche, à encadrer** — remettre comme « un petit quelque chose »,

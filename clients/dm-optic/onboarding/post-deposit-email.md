@@ -138,9 +138,18 @@ la version exacte.)
   complètes... je vous renvoie le PDF corrigé d'ici quelques minutes. »)
 
 
-## À LOGGUER À L'ENVOI DU 06/10 (ruling King — trois entrées, jamais avant l'envoi réel)
-- **CRM ligne DM Optique :** 06/10 conditions doc v1 + note vocale, UN message WhatsApp (voix d'abord,
-  PDF joint, **sans texte de légende**), avant 20h00 WAT, nom de fichier + version « v1-06/10 ».
-- **Journal :** 06/10, conditions doc v1, note vocale jointe, WhatsApp, heure réelle.
-- **Rappel :** ni RIB, ni prints, ni bloc de signature — retirés par ruling. Proforma v2 HORS lot
-  mardi : envoyée le 05/10 à 16:24 (ruling King).
+## JOURNAL D'ENVOI CONDITIONS + NOTE VOCALE (même discipline que le journal proforma)
+
+- **Date :** 06/10/2026 · **Heure :** 09:43 · **Canal :** WhatsApp
+- **Fichier + version :** CONDITIONS-D-INTERVENTION-2026-10-07.pdf — **« v1-06/10 »** · note vocale
+  jointe (draft verbatim King révisé 05/10)
+- **Format :** UN message, voix d'abord, PDF attaché, sans légende (ruling King)
+- **Par :** King · **Premise check orchestrateur 06/10 :** note verbatim ✓ · PDF v1-06/10 inchangé
+  depuis `9c1707b` ✓ · cohérence du fil ✓ · flag #7 sur le doc conditions **rejeté par ruling** (doc
+  de travail, pas fiscal — proposition close)
+
+## À LOGGUER À L'ENVOI DU 06/10 — FAIT (envoi 09:43, confirmé par King)
+- **CRM ligne DM Optique :** fait 06/10 09:43 — voir la ligne ci-dessus dans `crm.py`.
+- **Journal :** fait — entrée 09:43 ci-dessus, version « v1-06/10 ».
+- **Rappel :** ni RIB, ni prints, ni bloc de signature — retirés par ruling. **Ruling 06/10 : AUCUN
+  print, pack imprimé retiré** (voir VISIT-PRINTED-PACK / PRINT-NOTES / runsheet).

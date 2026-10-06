@@ -92,6 +92,12 @@ Quand on grep un contenu qu'on vient d'insérer, le pattern est la **ligne sourc
 marqueurs markdown inclus** (`**gras**` compris). Un pattern « propre » sans marqueurs produit un
 faux-zéro sur du contenu boldé. Classe tooling, pas inférence ; journal : `ops/QA-NOTES.md`.
 
+## 1e · Resync git = précondition du tour (ruling King 06/10)
+
+Au début de chaque tour, avant toute lecture ou édition : `git fetch origin` →
+`git reset --hard origin/arena/01a0f7ad-amk` si local ≠ remote. La resync est une **précondition du
+tour**, pas une réparation après un push refusé. Trois occurrences → protocole, pas vigilance.
+
 ## 2 · Uniqueness protocol (every website/design build, before a line of HTML)
 
 1. Load design + copywriting lessons (routing table rows above) and re-read `AMK-DESIGN-SKILLS.md` (dials §2, Design Read §1, anti-default §3/§3.8, pre-flight §13, §19).

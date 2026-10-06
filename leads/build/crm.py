@@ -788,7 +788,7 @@ BATCH_2409_4_NEW = [
          contact_name="DOMCHE NOUMBI",
          notes="LOT 4 (préparé, PAS ENVOYÉ). Titulaire : DOMCHE NOUMBI. Aucune page, aucun site "
                "trouvés (24/09). ⚠️ Porte B FAIBLE (§8b : 2/3) — King décide explicitement. "
-               "Remplaçant dans l'ordre d'envoi. · 05/10 15:07 : réponse « Merci pour le retour » à la proforma v-finale (envoyée 14:49) — signal d'engagement, aucune action due, aucun re-pitch/re-ask (ruling King 05/10). Mercredi tient. · 05/10 15:09 : le client relève l'absence d'adresse, de contact et de RC sur la proforma v-finale. · 05/10 15:42 : King répond par écrit, reconnaît le manque et s'engage à renvoyer le PDF corrigé. · 05/10 16:24 : proforma v2 « bloc émetteur 7 lignes » envoyée via WhatsApp (PDF seul + une ligne « Voici la proforma mise à jour avec l'adresse, les contacts et autres. »). · 06/10 (pending) : doc conditions + note vocale, un seul message, voix d'abord, sans légende, mardi avant 20h00 WAT."),
+               "Remplaçant dans l'ordre d'envoi. · 05/10 15:07 : réponse « Merci pour le retour » à la proforma v-finale (envoyée 14:49) — signal d'engagement, aucune action due, aucun re-pitch/re-ask (ruling King 05/10). Mercredi tient. · 05/10 15:09 : le client relève l'absence d'adresse, de contact et de RC sur la proforma v-finale. · 05/10 15:42 : King répond par écrit, reconnaît le manque et s'engage à renvoyer le PDF corrigé. · 05/10 16:24 : proforma v2 « bloc émetteur 7 lignes » envoyée via WhatsApp (PDF seul + une ligne « Voici la proforma mise à jour avec l'adresse, les contacts et autres. »). · 06/10 09:43 : conditions doc « v1-06/10 » + note vocale envoyés — UN message WhatsApp, voix d'abord, PDF joint, sans légende (ruling King). Item mardi clos."),
 ]
 
 
