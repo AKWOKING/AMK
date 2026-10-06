@@ -9,8 +9,7 @@
 
 ## Conditions d'intervention — ~~2 copies~~ RETIRÉ (aucun print, ruling 06/10)
 
-## Carte signature — 2 copies : **print EN ATTENTE ruling King** (ruling 06/10 = doc conditions
-seulement ; en attendant, gardée sur téléphone)
+## Carte signature — ~~2 copies~~ **RETIRÉ** (ruling King 06/10 étendu : aucun print ; PDF A6 archivé)
 - **A6, papier 250 g/m² si l'imprimeur de Bonabéri le fait** (ruling King) ; sinon le plus épais dispo.
 - Copie 1 : pack imprimé de la visite.
 - Copie 2 : **cadeau pour M. Domche, à encadrer** — remettre comme « un petit quelque chose »,

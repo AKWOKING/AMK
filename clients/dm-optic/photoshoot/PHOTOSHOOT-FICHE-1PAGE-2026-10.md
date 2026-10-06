@@ -6,7 +6,7 @@ photoshoot/PHOTOSHOOT-BRIEF-2026-10.md (cette fiche en est le résumé imprimabl
 ```
 
 ## AVANT CHAQUE PHOTO
-· essuyer les verres (microfibre) · regarder les **DEUX** verres : aucun reflet ? · flash **ÉTEINT**
+· essuyer les verres (microfibre — ⚠️ chiffon retiré du sac par ruling 06/10, à réajouter sur un mot) · regarder les **DEUX** verres : aucun reflet ? · flash **ÉTEINT**
 
 ## CADRAGE
 · monture **OUVERTE**, de face, centrée → le catalogue · une seule source de lumière · se mettre **DE

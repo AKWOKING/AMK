@@ -22,7 +22,8 @@ Budget total sur place : ~95–110 min, dont 45 min de prise de vue (le site a 1
 - [x] ~~Le pack imprimé~~ — **RETIRÉ, ruling King 06/10 : aucun print** (`VISIT-PRINTED-PACK` gardé
   comme archive)
 - [ ] Téléphone chargé + **démos chargées hors ligne** (le cabinet peut être sombre en data)
-- [ ] Feuille A4 (réflecteur) + chiffon microfibre
+- [x] ~~Feuille A4 (réflecteur) + chiffon microfibre~~ — **RETIRÉ du sac** (ruling King 06/10 étendu :
+  téléphone + zip seulement)
 - [ ] La fiche photo 1 page (`photoshoot/PHOTOSHOOT-FICHE-1PAGE-2026-10.md`)
 - [ ] Relire les règles de ton (`CLIENT-MESSAGING-RULES.md`) : 2–3 phrases, chaud, humain, zéro bot
 

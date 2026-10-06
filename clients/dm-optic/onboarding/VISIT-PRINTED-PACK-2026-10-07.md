@@ -6,11 +6,9 @@ Règle : tout ce qui est « ⛔ à produire » doit être décidé ce week-end. 
 son chemin exact.
 ```
 
-** RULING KING 06/10 : AUCUN PRINT — PACK RETIRÉ.** Le sac mercredi = téléphone + zip (+ feuille A4
-réflecteur et microfibre pour la séance photo — props physiques, pas des documents). Tout papier
-retiré : proforma ×2, RIB imprimé, conditions ×2 backup. **Carte signature ×2 : NON tranchée —
-print en attente d'un mot de King** (le ruling 06/10 ne couvre que le doc conditions). Ce fichier
-reste comme archive.
+** RULING KING 06/10, ÉTENDU 06/10 : AUCUN PRINT, RIEN SUR PAPIER — PACK RETIRÉ.** Le sac
+mercredi = **téléphone + zip, rien d'autre**. Tout papier retiré : proforma ×2, RIB imprimé,
+conditions ×2 backup, **carte ×2** (ruling étendu). Ce fichier reste comme archive.
 
 | # | Document | Copies | Statut | Chemin / action |
 |---|---|---|---|---|
@@ -20,8 +18,8 @@ reste comme archive.
 | 4 | **Grille des deux coffrets** (référence tarifaire, déjà envoyée) | 1 | ✅ existe | `sales/DM-OPTIC-DEUX-COFFRETS-2026-09-27.pdf` |
 | 5 | **Fiche photo 1 page** | 1 | ✅ **créée aujourd'hui** | `photoshoot/PHOTOSHOOT-FICHE-1PAGE-2026-10.md` |
 | 6 | **Runsheet + demo script** | sur téléphone | ✅ créés aujourd'hui | `onboarding/VISIT-RUNSHEET-2026-10-07.md` · `onboarding/DEMO-SCRIPT-2026-10-07.md` |
-| 7 | **Carte signature visuelle** (tableau de vision « la Bonabéri » — la seule signature produisible avant photos) | 0 (aucun print) | ✅ **approuvée par King 02/10** — PDF A6 `print/CARTE-SIGNATURE-TABLEAU-VISION-A6.pdf` (300 dpi) | **Print EN ATTENTE ruling King** (le ruling 06/10 ne couvre que le doc conditions ; carte non tranchée) — en attendant : sur téléphone, montrée à l'écran, sans pitch |
-| 8 | **Feuille A4 blanche + microfibre** (réflecteur + essuyage des verres) | — | à mettre dans le sac | zéro franc |
+| 7 | **Carte signature visuelle** (tableau de vision « la Bonabéri » — la seule signature produisible avant photos) | 0 (aucun print) | ✅ **approuvée par King 02/10** — PDF A6 `print/CARTE-SIGNATURE-TABLEAU-VISION-A6.pdf` (300 dpi) | **RETIRÉ** (ruling King 06/10 étendu : aucun print) — PDF A6 archivé au repo ; montré à l'écran seulement si demandé, sans pitch |
+| 8 | **Feuille A4 blanche + microfibre** (réflecteur + essuyage des verres) | — | **RETIRÉ du sac** (ruling 06/10 : téléphone + zip seulement) · ⚠️ conséquence : règle poussière sans chiffon sur place — un mot de King pour réajouter | zéro franc |
 
 **Ce que « à produire » veut dire ici :** la proforma et le RIB/NIU sont **tes** pièces (émetteur,
 banque) — personne d'autre ne peut les sortir ce week-end. Le contrat imprimable et la carte signature,

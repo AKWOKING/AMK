@@ -119,7 +119,10 @@ parce que chaque source supplémentaire ajoute un reflet **sur le verre**.
 | **Néons du cabinet** | ⚠️ **Les néons scintillent** — vérifier en **vidéo** sur place, pas seulement en photo. Exposer sur du **gris**, jamais sur du blanc |
 | **Le soir / sombre** | **Night Sight** pour les plans fixes (B1, B2). ⛔ **Jamais Night Sight sur des mains en mouvement** — les plans C |
 
-**Emporter : une feuille A4 blanche** comme réflecteur d'appoint. Zéro franc, très utile sous un néon.
+**Emporter : ~~une feuille A4 blanche~~ RETIRÉ du sac (ruling King 06/10 : téléphone + zip
+seulement).** Microfibre également retirée par le ruling « rien d'autre » : la règle poussière (§3)
+ne pourra pas être appliquée sur place sans chiffon — un mot de King pour réajouter. Cadrer sous
+néon sans réflecteur d'appoint.
 
 ---
 
