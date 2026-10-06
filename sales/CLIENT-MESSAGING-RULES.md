@@ -104,3 +104,10 @@ Chaque entrée du journal d'envoi proforma porte **la version exacte du fichier*
 split 100k/50k »). Raison : confusion draft/envoi — un draft périmé peut être réimprimé depuis un
 cache comme s'il était la version envoyée ; la chaîne de versions dans le journal est la seule
 protection. Un draft jamais envoyé n'entre JAMAIS au journal comme envoi.
+
+## 6 · Voice-first — règle amendée, context-scoped (ruling King 06/10)
+**Voix d'abord quand :** le fil s'enlise · une question douteuse/complexe est sur la table · le
+prochain contact en personne est à **>48 h**. **Texte + doc suffisent quand :** l'envoi est factuel,
+le doc parle de lui-même, la présence est imminente (**<48 h**). La voix porte la relation **à la
+rencontre elle-même**. (L'envoi conditions + note du 06/10 09:43 était texte + PDF par décision King
+— cas d'école du texte factuel avec présence <24 h.)

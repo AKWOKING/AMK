@@ -5,6 +5,10 @@
 > d'abord, froids après ; les réponses chaudes informent l'opener froid avant de l'engager.
 > Exclusion : Bely Optique Médicale (refus écrit « Non Merci » le 24/09 — on ne re-contacte jamais).
 
+**Ruling 06/10 : re-pull ONOC dimanche 11/10** — la veille du premier envoi (Bali, 12/10), pas avant.
+Les numéros/titulaires ci-dessous sont transcrits de snippets ; aucun envoi sur un numéro non
+re-vérifié ; aucun « inscrit depuis X » sans vérification.
+
 ## Opener reframé (verbatim ruling 05/10 — problème + produit, pas pitch)
 > « Nous construisons des outils sur mesure pour opticiens — à commencer par une application
 > d'essayage qui montre vos montures sur le visage de vos clients avant qu'ils ne passent. Vous

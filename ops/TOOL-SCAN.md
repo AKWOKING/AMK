@@ -20,7 +20,7 @@
 
 ---
 
-## 05/10 — entrée template : Mira (github.com/miracodeai/mira, ruling King : skip)
+## 05/10 — entrée FONDATRICE : Mira (github.com/miracodeai/mira, ruling King : skip)
 
 - **(a) Problème :** relecture automatique de PR code, self-hosted, BYO LLM key.
 - **(b) Use case AMK :** second lecteur automatique sur les PR arena→main.
