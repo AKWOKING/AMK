@@ -117,9 +117,10 @@ Cordialement,
 ---
 
 ## JOURNAL D'ENVOI PROFORMA (ruling King 05/10 — même discipline que l'ANALYTICS-LOG)
-**UNE seule entrée — envoi unique.** (Correction King : la v1 à bug slash n'a JAMAIS été envoyée —
-draft corrigé avant tout départ ; le risque n'est pas le double envoi, c'est un draft périmé réimprimé
-depuis un cache comme s'il était la version envoyée. Chaque ligne porte donc la version exacte.)
+**DEUX entrées — deux envois réels : 14:49 v-finale, 16:24 v2.** (Correction King : la v1 à bug slash
+n'a JAMAIS été envoyée — draft corrigé avant tout départ ; le risque n'est pas le double envoi, c'est
+un draft périmé réimprimé depuis un cache comme s'il était la version envoyée. Chaque ligne porte donc
+la version exacte.)
 
 - **Date :** 05/10/2026 · **Heure :** 14:49 · **Canal :** WhatsApp
 - **Fichier + version :** AMK-PROFORMA-2026-10-05-DM-OPTIQUE.pdf — **v-finale « split 100k/50k »**
@@ -128,11 +129,18 @@ depuis un cache comme s'il était la version envoyée. Chaque ligne porte donc l
 - **Par :** King · **Réponse client 15:07 :** « Merci pour le retour » — signal d'engagement, aucune
   action due, aucun re-pitch, aucun re-ask (ruling King 05/10)
 
+- **Date :** 05/10/2026 · **Heure :** 16:24 · **Canal :** WhatsApp
+- **Fichier + version :** AMK-PROFORMA-2026-10-05-DM-OPTIQUE-v2.pdf — **« v2 bloc émetteur 7 lignes »**
+- **Message de couverture :** « Voici la proforma mise à jour avec l'adresse, les contacts et
+  autres. » (verbatim King, 16:24)
+- **Par :** King · **Contexte :** suite au 15:09 client (adresse/contact/RC manquants) et à la réponse
+  King 15:42 (« C'est bien reçu Monsieur, merci pour la précision ! J'ajoute mes coordonnées
+  complètes... je vous renvoie le PDF corrigé d'ici quelques minutes. »)
 
-## À LOGGUER À L'ENVOI DU 06/10 (ruling King — quatre entrées, jamais avant l'envoi réel)
-- **CRM ligne DM Optique :** 06/10 conditions doc v1 + note vocale, même message WhatsApp, nom de
-  fichier + version « v1-06/10 ».
+
+## À LOGGUER À L'ENVOI DU 06/10 (ruling King — trois entrées, jamais avant l'envoi réel)
+- **CRM ligne DM Optique :** 06/10 conditions doc v1 + note vocale, UN message WhatsApp (voix d'abord,
+  PDF joint, **sans texte de légende**), avant 20h00 WAT, nom de fichier + version « v1-06/10 ».
 - **Journal :** 06/10, conditions doc v1, note vocale jointe, WhatsApp, heure réelle.
-- **Journal proforma :** 06/10, AMK-PROFORMA-2026-10-05-DM-OPTIQUE-v2.pdf — version « v2 bloc émetteur
-  7 lignes », même message WhatsApp groupé (note vocale + conditions + proforma v2), heure réelle.
-- **Rappel :** ni RIB, ni prints, ni bloc de signature — retirés par ruling.
+- **Rappel :** ni RIB, ni prints, ni bloc de signature — retirés par ruling. Proforma v2 HORS lot
+  mardi : envoyée le 05/10 à 16:24 (ruling King).

@@ -18,4 +18,8 @@ produit pas. ② **Second-reader** — passe finale : « qu'est-ce que ça suppo
 que lira le client qu'on n'a pas voulu dire ? que manque-t-il qu'il demandera ? » ③ **Log** — chaque
 catch atterrit ici.
 | 05/10 | Content unblock (v7) | « try-on captures » — l'orchestrateur a écrit comme si l'app existait et avait des captures | l'app n'existe pas ; seuls des maquettes/montages datés existent (essai-maquette.png, essai-1.png) | la source d'un contenu se vérifie AVANT d'être nommée ; si elle n'existe pas, produire la source ou reporter (ruling 05/10, vidéo 7 = maquettes labellisées) |
-| 05/10 | Proforma DM v-finale | « bloc émetteur minimal (nom + NIU + ville) suffisant — l'absence d'adresse/contact/RC ne sera pas relevée » | le client demande la rectification à 15:09, 20 min après l'envoi : adresse, contact et RC doivent figurer sur la proforma | tout document client-facing porte le bloc émetteur complet — ruling 05/10 : bloc 7 lignes v2 ; second-reader : « que manque-t-il qu'il demandera ? » |
+> **07. 05/10/2026 — Proforma issuer block incomplete.** Client flagged missing address, contact,
+> RC at 15:09. Premise check on the original verified content-against-thread but not
+> fiscal-document completeness. New rule: every financial document premise check includes
+> issuer-block completeness against the client's fiscal jurisdiction standard, not just internal
+> consistency. Second-reader question applies: *"what will the client ask for that isn't here?"*
