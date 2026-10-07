@@ -27,14 +27,18 @@
 - Problème → résolution → offer : 150+ noms, zéro monture visible avant d'entrer (fait CRM) → une
   page qui montre les montures + WhatsApp (maquette publique fictive, labellisée) → « Écrivez
   PREVIEW en message privé. »
-- Footage : captures ONOC (page publique) + recherche Google réelle + scroll démo. Aucune UI d'app ;
-  aucun travail DM Optique ; zéro stock. Signal dominant : opticien-facing.
+- Footage : captures du **format** de l'annuaire ONOC (structure des champs + agrégat « 150+ noms » ;
+  **aucune entrée individuelle réelle visible** — cadrage/flou sinon) + recherche Google réelle +
+  scroll démo. Aucune UI d'app ; aucun travail DM Optique ; zéro stock. Signal dominant :
+  opticien-facing.
 
 ### Modification 1 (ruling) — aucun nom réel d'opticien dans le hook
 Montrer le **format** de l'annuaire et l'agrégat « 150+ noms », jamais une entrée individuelle réelle
 (risque social : pair exposé en négatif sur un marché étroit). Si une entrée est nécessaire au
-visuel : **échantillon fictif clairement labellisé**. Le re-pull ONOC du 11/10 fournit l'agrégat,
-pas la cible.
+visuel : **échantillon fictif clairement labellisé**. **Ruling 06/10 (option 1) :** le hook C1 =
+format + agrégat seulement ; le re-pull ONOC du 11/10 sert **uniquement la vague opticiens du 12/10**
+(messages d'outreach), pas la vidéo — C1 ne dépend donc pas du 11/10, et le créneau conditionnel du
+08/10 tient.
 
 ### Modification 2 (ruling) — workflow PREVIEW défini AVANT publication
 « Écrivez PREVIEW » est une promesse ; le workflow est ci-dessous et doit exister avant que C1 parte.
