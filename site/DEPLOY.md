@@ -1,3 +1,5 @@
+> **`amk-site.zip` est versionné** (ajouté de force : `.gitignore` l'exclut, King l'a demandé le 08/10). **Il vieillit** : après tout changement dans `site/`, `python3 hosting/build_site_zip.py` puis `git add -f amk-site.zip`. Un zip plus ancien que `site/` ne doit jamais être déployé.
+>
 > **08/10/2026 (soir) :** passe SEO appliquée dans `site/` (non déployée). Le paquet compte maintenant **28 fichiers, dont 6 `img/*.webp`** : un déploiement sans eux casse les vignettes. Le fichier `google08d73756faeade69.html` doit rester déployé. Détail : `site/SEO-REVIEW-2026-10-08.md` §8.
 
 > **⚠️ 08/10/2026 — ce fichier est antérieur à l'export live.** Le dossier `site/` EST maintenant le site en ligne (export Vercel du 08/10). Le paquet de `hosting/build_site_zip.py` compte désormais 10 pages + `google08d73756faeade69.html` (vérification Search Console : ne jamais l'omettre) + images référencées (26 fichiers) ; les chiffres « 6 pages / 13 fichiers » ci-dessous sont périmés. Aucun prix sur amk-cm (ruling King 08/10). Ne pas redéployer avant la réponse sur les affirmations non sourcées (`site/SEO-REVIEW-2026-10-08.md` §7).

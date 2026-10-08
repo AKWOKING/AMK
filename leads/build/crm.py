@@ -2300,7 +2300,27 @@ JOURNAL_DM_0810 = {
             "révisée (`SPEC-PAGES-v1.md`). Prochain geste : redéploiement de la page par King ven. 09/10 matin, "
             "puis acompte (non encaissé à cette date). · 08/10 (King) : `Follow-up date` 2026-10-09 = point de "
             "contact après redéploiement (« le site est en ligne, voici le lien ») ; le lien ne part qu'APRÈS le "
-            "balayage crédentiels + pré-flight §13 sur la page EN LIGNE (`ops/QA-NOTES.md`).",
+            "balayage crédentiels + pré-flight §13 sur la page EN LIGNE (`ops/QA-NOTES.md`). · "
+            "08/10 VERBATIM (règle les mentions « à coller pour verbatim » ci-dessus ; transcrit des captures de King "
+            "par l'orchestrateur ; captures non versées au dépôt ; orthographe du client conservée, la page garde "
+            "l'orthographe corrigée). "
+            "13:26 King : « Bonjour Monsieur, pour bien avancer sur le site, j'aurai besoin de vos horaires "
+            "d'ouverture et de la fourchette de prix de vos montures (min/max). Est-ce qu'elles ont des "
+            "noms/références spécifiques, et vous en avez combien environ en stock actuellement ? » "
+            "14:58 le client : « Horaires d'ouverture et fermeture : Examen de vu : 8h30 - 13h00 / Autre besoins : "
+            "8h30 - 17h30. Pour le prix des montures c'est interdit de le diffuser car nous sommes régit par le "
+            "ministère de la Santé Publique. Les montures ont des noms et références mais trop diverses. "
+            "Stock de 400 montures environ ». "
+            "15:00 le client : « Pour Autres besoins vous me faites signes » · King : « D'accord monsieur ». "
+            "Lecture NON confirmée du 15:00 : « pour d'autres besoins, faites-moi signe » (le client attend que "
+            "King lui propose les besoins ; rien à envoyer sans décision de King). "
+            "L'interdiction de diffuser les prix est une AFFIRMATION DU CLIENT (source non retrouvée, voir "
+            "`sales/PACK-OPTICIEN-2026-10.md`) : elle vaut pour son site, pas comme règle du métier. · "
+            "08/10 (King) : page redéployée sur `https://dm-optique-sarl.vercel.app/` (nouvelle URL canonique ; "
+            "`dmoptic-2.vercel.app` = ancienne, encore en ligne avec « depuis 2016 » le 08/10). Contenu en ligne "
+            "relu par l'orchestrateur le 08/10 : « inscrit à l'ONOC », horaires du client, adresse, aucun prix, "
+            "aucun « depuis ». Reste : og:url / og:image pointaient encore vers `dmoptic-2` dans le dépôt "
+            "(reconstruits avec `--url` le 08/10, à redéployer).",
         "Follow-up date": "2026-10-09",
     },
 }

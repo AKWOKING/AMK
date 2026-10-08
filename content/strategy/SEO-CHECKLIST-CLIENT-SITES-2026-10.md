@@ -48,7 +48,7 @@ on ne vend pas « optimisation des balises keywords » à un client, et on ne r�
 3. **Un nom d'entreprise, partout identique** : site, JSON-LD, fiche Google, pied de page. Le copier de la fiche.
 4. **JSON-LD** : `ProfessionalService`/`LocalBusiness` + `@id`, `sameAs` (fiche Google, Facebook…), `hasMap`,
    `areaServed` (seulement ce qu'on dessert **vraiment**), `WebSite`. Pas de `price`/`priceRange` si le site ne
-   montre pas de prix. Pas d'`openingHours` ni d'`aggregateRating` sans données réelles.
+   montre pas de prix. Pas d'`openingHours`, d'`aggregateRating` ni d'`Event` sans données réelles — **y compris sur les pages modèles indexables** (trouvé sur `sample-school.html`, 4,9/87 avis inventés : une balise fausse sur un modèle met en cause tout le domaine).
 5. **Images** : WebP (`Pillow`, qualité ~80), `alt` descriptif dans la langue de la page, héros avec
    `fetchpriority="high"`, le reste `loading="lazy"`.
 6. **Pages de travail et pages de prospects** : `noindex,nofollow` ; hors sitemap.
@@ -57,7 +57,8 @@ on ne vend pas « optimisation des balises keywords » à un client, et on ne r�
 8. **Affirmations** : chaque chiffre, ville de projets, ancienneté ou disponibilité (« 99,9 % ») doit avoir une
    source au dépôt (`RULE-CREDENTIAL-CLAIMS.md`). Une zone *desservie* (à distance) n'est pas une zone *où l'on a des clients* : ne pas écrire l'une pour l'autre.
 9. **Contrôles** : `audit_html`, `audit_a11y --strict`, `check_inline_js`, test de bascule, puis `view-source` sur la page EN LIGNE.
-10. **Après mise en ligne** : Inspection d'URL → « Demander une indexation » pour chaque page changée ; sitemap
+10. **Si l'adresse du site change** (nouveau projet Vercel, nouveau domaine) : reconstruire `og:url` / `og:image` / `canonical` avec la nouvelle adresse, redéployer, **puis seulement** rediriger l'ancienne (les aperçus WhatsApp lisent `og:image`) ; relire l'en-tête de la page EN LIGNE.
+11. **Après mise en ligne** : Inspection d'URL → « Demander une indexation » pour chaque page changée ; sitemap
     soumis ; une note datée dans le journal ; **jugement à 30 jours**, pas avant.
 
 ## 4 · Fiche Google (Business Profile) — ce qu'on fait pour AMK, et pour chaque client

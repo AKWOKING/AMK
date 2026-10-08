@@ -83,4 +83,6 @@ Page publique d'AMK : « projects under way with institutions in Douala, Buea an
 schools in Yaoundé, Bafoussam and Bamenda » · « 99.9% uptime » — **aucune trace au dépôt** (CRM : aucun client
 payant). Prix fondateur 100 000 FCFA périmé (grille v3). Décisions de King : `site/SEO-REVIEW-2026-10-08.md` §5.
 
+> **Règle permanente (King, 08/10 soir) : toute affirmation adressée au public ou à un client a une source, ou elle ne part pas.** Elle vaut aussi pour les données structurées : un `aggregateRating`, un `Event` ou un prix inventés sont des affirmations (retirés de `sample-school.html` le 08/10). Ligne de zone de l'accueil réécrite : « Notre équipe travaille à distance avec des entreprises partout au Cameroun. »
+
 > **Mise à jour 08/10 (soir).** Les trois affirmations sont retirées de `site/index.html` (EN, FR, JSON-LD de la FAQ). La zone de **service** à distance (Yaoundé, Bafoussam, Bamenda) est conservée, sans prétendre à des clients. Vérifier le **site en ligne** après le déploiement de King : tant qu'il n'est pas redéployé, les trois affirmations y restent visibles.
