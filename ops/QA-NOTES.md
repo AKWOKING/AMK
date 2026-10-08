@@ -35,12 +35,14 @@ Un contrôle fait sur la copie locale ne compte pas : c'est la page servie que l
 ### Balayage des pages publiques (08/10, via lecture de la page servie)
 | URL | Résultat |
 |---|---|
-| `dmoptic-2.vercel.app` | ⚠️ « depuis 2016 » ×3 (FR+EN) — page v2.1, en retard sur le dépôt → redéploiement King |
+| `dmoptic-2.vercel.app` | ⚠️ **RISQUE EN LIGNE OUVERT jusqu'au redéploiement King (ven. 09/10 matin)** : « depuis 2016 » ×3 (FR+EN), page v2.1 (adresse/horaires « à confirmer ») — le dossier `hosting/previews/dmoptic/` est maintenant v2.3 (ONOC + nouvelles heures) ; à relire en ligne après le dépôt |
 | `dmoptic.vercel.app` | 404 (aucun déploiement) |
 | `lecristallin-concept.vercel.app` | non relu (gel ; mots du client) |
-| `uni-labo.vercel.app` | 1ʳᵉ moitié lue (chunk 1/2) : aucun « depuis / since / certifié » ; nomme « Dr Tientcheu Philomène, Biologiste » (nom + titre, à relier à la source du dossier) — 2ᵉ moitié non lue |
+| `uni-labo.vercel.app` | 1ʳᵉ moitié lue (chunk 1/2) : aucun « depuis / since / certifié » ; ⚠️ **FLAG (08/10, ruling King) :** « Dr Tientcheu Philomène, Biologiste » non tracé à une source de dossier → liste du scan du **dimanche 11/10** ; remplacer par « Notre biologiste » au go-live si non tracé — **aucune modification maintenant** ; 2ᵉ moitié non lue |
 | `cavisa.vercel.app` | 1ʳᵉ moitié lue (chunk 1/2) : aucun claim d'année ni de diplôme ; adresse/horaires « à confirmer » — 2ᵉ moitié non lue |
 | `mitoc-concept.vercel.app` | page entière lue : aucun claim d'année ni de diplôme (« Independent optician » seulement) ; page marquée démo |
 | `amk-cm.vercel.app` (+ `/mitoc.html`, `/clinic-bonaberi.html`, `/creation-site-web-*.html`) | **non balayé** — à faire au scan du dimanche 11/10 |
 
 *Limite assumée : `fetch_page` rend la page par morceaux ; un « aucun hit » ne vaut que pour la partie lue (colonne Résultat).*
+
+*Univers Optique (08/10) : la page démo du site n'est plus « depuis 2009 » (fichiers construits patchés, builder gelé — piège de reconstruction noté dans `content/strategy/RULE-CREDENTIAL-CLAIMS.md`). URL publique Univers non répertoriée au dépôt : à confirmer par King.*

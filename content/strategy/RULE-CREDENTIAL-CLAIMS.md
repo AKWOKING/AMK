@@ -55,8 +55,21 @@ phrase — le dépôt est corrigé, le déploiement = un redéploiement à déci
 - **Univers Optique :** « depuis 2009 » / `foundingDate 2009-08-01` — **TENU, requalifié 08/10 (ruling King)** :
   les documents disent **« annoncé depuis 2009 (source : annonce kerawa.com — support retiré, URL non conservée
   au dépôt) »**, **jamais** une affirmation client-facing sans vérification directe auprès d'Univers.
-  ⚠️ La page démo Univers et son `foundingDate` portent encore « depuis 2009 » : **GEL du 23/09**
-  (`hosting/previews/README.md`) → non touchée ; décision de King requise pour la retirer.
+  **MISE À JOUR 08/10 (ruling King, ultérieur) :** « depuis 2009 » et `foundingDate` **RETIRÉS de la page démo
+  du site** (`demos/univers-optique-site-v2.html`, `-sobre.html`, `hosting/previews/univers/index.html` : 11 → 0
+  occurrence, JSON-LD valide, audit 0). Motif de King : le gel du 23/09 couvrait le contenu de pitch, pas les
+  claims de fait non sourcés sur une page publique. **Non touchés (contenu de pitch, gel maintenu) :**
+  `concept-univers-optique-v1/v2*.html`, `hosting/previews/univers-note/`, `univers-v1/`, les builders et
+  `univers_optique_content.*` — ils portent encore 2009 (dont la phrase adressée à lui, « Depuis le
+  1er août 2009, vous examinez… »). ⚠️ **Piège de reconstruction :** relancer `build_univers_optique_v2.py`
+  réintroduirait 2009 dans la page du site (patch direct des fichiers construits, builder gelé). Remplacement
+  de King « Opticien à Akwa, Douala » **non appliqué tel quel** : Akwa n'est pas au dépôt pour Univers (CRM :
+  « Douala » ; page et dossier : **Bépanda**) ; le texte retiré n'a pas été remplacé, la page dit déjà
+  « Opticien à Bépanda, Douala ». Restauration si Univers confirme la date par document.
+- **uni-labo (flag 08/10, ruling King : signaler, ne pas agir) :** « Dr Tientcheu Philomène, Biologiste »
+  sur la page publique `uni-labo.vercel.app` — nom et titre **non reliés à une source de dossier** (seule
+  mention au dépôt : `clients/uni-labo/AUDIT-2026-09-23.md`). Ajouté à la liste du scan du dimanche 11/10 ; si
+  non tracé : « Notre biologiste » ou les mots du client au go-live.
 - **Le Cristallin :** « depuis 2010 », « 24/32 ans d'expérience » — **leurs propres mots**, déjà « à valider par lui ».
 - **Cinq Sens :** « diplômés en optique lunetterie » — **leurs mots**, marqués comme tels au dossier.
 - Non-claims écartés : Salvation (résultats 2016), `douala.cm` enregistré 2016, base64, « 16h00 » encodé.

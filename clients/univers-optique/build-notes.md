@@ -394,3 +394,11 @@ nouvelle capture, pas de nouvelle proposition). Tant que le prospect n'a pas pay
 encore rien puisque j'ai certains modifications que tu as apporté sans mon ok. »
 
 **Ce qui débloque le gel :** l'acompte. À ce moment-là, on repart de ce fichier et de `build-notes.md`.
+
+## 08/10/2026 — « depuis 2009 » retiré de la page démo du site (ruling King)
+
+Fichiers construits patchés à la main (`demos/univers-optique-site-v2.html`, `-sobre.html`,
+`hosting/previews/univers/index.html` : 11 → 0 occurrence ; foundingDate retiré ; stat « Ouvert depuis »
+supprimée). **Builders, `univers_optique_content.*` et pages de pitch non touchés (gel maintenu).**
+⚠️ Relancer `build_univers_optique_v2.py` réintroduirait 2009 dans le site : patcher le builder d'abord, sur
+mot de King. Détail : `content/strategy/RULE-CREDENTIAL-CLAIMS.md`.

@@ -31,6 +31,12 @@ questions — visibles **et** dans le schéma FAQPage, mot pour mot —, fiche .
 d'ouverture (il ne les a pas donnés), les prix, les marques. Les cinq photos restent des mises en
 situation, légendées « Photo d'illustration ».
 
+**v2.3 (08/10/2026, après la réponse du cabinet de 14:58)** — heures mises à jour, formulation rapportée
+par King (texte exact du client non transmis) : « Examen de vue : 8h30–13h00 · Autres besoins :
+8h30–17h30 » (remplace 8h00–17h30 / consultation 8h30–13h30 du 25/09). Écrites dans les deux langues aux
+mêmes endroits (carte d'identité, FAQ visible **et** FAQPage, bloc contact, pied de page). Aucun jour.
+Également v2.3 : « Inscrit à l'ONOC » (ruling credentials 08/10) à la place de « depuis 2016 ».
+
 Usage :
   python3 demos/build_dmoptic.py                       # écrit l'aperçu, og.jpg sans adresse
   python3 demos/build_dmoptic.py --url https://…       # remplit og:url / og:image APRÈS déploiement

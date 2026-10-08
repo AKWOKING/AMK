@@ -45,3 +45,8 @@
 - **Gel :** pour les pages gelées (Le Cristallin, Univers Optique — `hosting/previews/README.md`), le re-scan
   **lit et signale seulement** ; aucune modification sans mot de King.
 - **Premier scan en ligne (08/10) :** voir `ops/QA-NOTES.md`, table « Balayage des pages publiques ».
+
+- **Liste d'attente du scan du dimanche 11/10 (ruling King 08/10) :** `uni-labo.vercel.app` — tracer « Dr Tientcheu
+  Philomène, Biologiste » à une source de dossier (sinon « Notre biologiste ») · 2ᵉ moitié de `uni-labo` et de
+  `cavisa` · `amk-cm.vercel.app` + ses pages · relecture en ligne de `dmoptic-2.vercel.app` après le
+  redéploiement du 09/10.

@@ -1,5 +1,13 @@
 # AMK — PRE-FLIGHT PROTOCOL (standing rule, King 17 Sep 2026)
 
+## 0 · MANDATORY FIRST READ (standing rule, King 08/10)
+
+> **§0 — MANDATORY FIRST READ.** Before beginning any task, read this document in full. Every task begins with §1e resync, then a §0 pre-flight confirmation in the response header: *"Pre-flight: [task type] → PRE-FLIGHT.md read, [other files loaded]."* A response without this header is incomplete and will be returned.
+
+Structural, not a memory test: the header is the **first line** of every response, so King can see the precondition was met without asking. (Supersedes the looser one-line format below; same discipline, now with the explicit « PRE-FLIGHT.md read » confirmation.)
+
+---
+
 **The rule: no task begins without a pre-flight.** Identify the task type → load the lessons for that field from this repo → read them → only then start work. Work that skips the pre-flight is invalid.
 
 **Every task response opens with one line:**

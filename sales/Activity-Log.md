@@ -4803,3 +4803,11 @@ lead content de « la seule vidéo publiée » — vérifier d'abord que le lead
 ## 08/10/2026 — correction credentials (lignes historiques non réécrites : 3893, 4068, 4120)
 
 ⚠️ **08/10/2026 — règle credentials (`content/strategy/RULE-CREDENTIAL-CLAIMS.md`) :** les formulations « depuis 2016 » / « existe depuis 2016 » / « exerce depuis 2016 » de ce document **ne sont pas sourcées** (« /2016 » = suffixe d'un numéro de décret, pas une durée). Texte historique conservé tel quel — **NE PAS RÉUTILISER** ; formulation autorisée : « Inscrit à l'ONOC ».
+
+---
+
+## 08/10/2026 — DM Optique : 13:26 envoi · 14:58 réponse
+
+- **13:26 — envoi (King) :** WhatsApp, jeu de quatre questions numérotées (planning site). Texte exact non transmis à l'orchestrateur.
+- **14:58 — réponse du client :** quatre réponses ; prix non affichés (contrainte réglementaire invoquée) · taxonomie confirmée pour 400 montures · noms « trop diverses » · heures « Examen de vue 8h30–13h00 · Autres besoins 8h30–17h30 ». Fragments rapportés par King ; verbatim à coller. Détail : `clients/dm-optic/onboarding/post-deposit-email.md`.
+- **Suite :** spec révisée ; page v2.3 prête (redéploiement King ven. 09/10 matin).

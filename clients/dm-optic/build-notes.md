@@ -349,3 +349,18 @@ premier écran, la vignette et la bascule FR/EN se regardent sur un téléphone,
 provenance), et la vignette a été **remesurée** — « DM OPTIQUE SARL » à 90 pt fait **937 px** (mesuré
 avec ImageMagick avant d'écrire), l'anneau a reculé à `circle 1058,452` pour ne plus frôler le « L ».
 Un défaut vu à l'œil sur la première sortie, corrigé, revérifié à l'œil.
+
+## v2.3 — 08/10/2026 (réponse du cabinet 14:58 + ruling credentials)
+
+- **Heures** (formulation rapportée par King ; verbatim client non transmis) : « Examen de vue : 8h30–13h00 ·
+  Autres besoins : 8h30–17h30 » remplacent « Ouverture 8h00–17h30 · Consultation 8h30–13h30 » (25/09) aux
+  six endroits de la page, FAQ visible et FAQPage comprises. **Jours : toujours inconnus.** Reconstruit par
+  `python3 demos/build_dmoptic.py --url https://dmoptic-2.vercel.app/` ; gate §1b : audit_html 0, a11y OK,
+  images 0 faute ; test page : toutes les assertions passent.
+- **Ancien état en ligne :** v2.1 (« DM OPTIC », adresse/horaires « à confirmer », « depuis 2016 ») — le
+  redéploiement du 09/10 publie d'un coup v2.2 (SARL, adresse, étage/porte) + v2.3.
+- **Pas de prix sur la page** (déjà le cas) ; spec : `site/SPEC-PAGES-v1.md` révisé.
+- ⚠️ **Heures périmées ailleurs (NON modifiées, hors périmètre) :** `content/month1/carousels.md` l.41, 50, 72, 82 ·
+  `content/month1/w2/ugc-script.md` l.63, 97, 99, 114 · **slides C1 baked (PNG) si elles portent les heures** ·
+  `a-completer.md` · carte signature PDF/PNG (périmée, acceptable tant que non réutilisée). À aligner avant
+  tout usage.

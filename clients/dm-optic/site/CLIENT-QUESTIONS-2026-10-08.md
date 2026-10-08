@@ -1,5 +1,6 @@
 # DM OPTIQUE — questions client (planning site) — ENVOYÉ 08/10 13:26 (par King) · brouillon de référence
 
+> **✅ RÉPONDU par le client le 08/10/2026 à 14:58** (1 h 32 après l'envoi — palier 1 de la fenêtre jamais atteint) ; effets : `SPEC-PAGES-v1.md` (révisé 08/10). Texte exact de la réponse : à coller par King.
 > **Statut : ENVOYÉ par King le 08/10/2026 à 13:26** — le texte exact envoyé n'a pas été transmis (King
 > place le nommage « en Q4 », ce brouillon le met en ligne finale) : **ce fichier = brouillon de
 > référence, pas verbatim envoyé.** Journal : `onboarding/post-deposit-email.md`. *(Statut précédent : DRAFT.* **King relit, King envoie.***)*

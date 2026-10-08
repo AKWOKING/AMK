@@ -104,3 +104,9 @@ reprenne :
 > numéro — et le fait qu'un patient qui vous cherchait depuis son téléphone ne trouvait rien. Je n'ai
 > inventé ni adresse, ni horaires, ni photos : ces six informations sont marquées « à confirmer » sur la
 > page […]
+
+---
+
+> **08/10 (ruling King) — À RÉÉCRIRE vendredi 09/10 au matin, avant le redéploiement :** le message du §5
+> accompagnait le déploiement et porte « depuis 2016 » ; il ne doit pas partir. Brouillon de remplacement :
+> demain matin ; King relit, King envoie.

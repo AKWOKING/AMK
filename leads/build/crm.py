@@ -2289,8 +2289,17 @@ JOURNAL_DM_0810 = {
             "après 7 jours : un appel de 2 minutes, pas un autre message. Dates du ruling incohérentes avec le "
             "calendrier (« mar. 14/10 » = mercredi ; « jeu. 16/10 » = vendredi) : consignées provisoirement "
             "mar. 13/10 matin (note vocale ; 48 h ouvrées = lun. 12/10 13:26) et jeu. 15/10 (appel ; 7 jours) — "
-            "À CONFIRMER par King.",
-        "Follow-up date": "2026-10-13",
+            "À CONFIRMER par King. · "
+            "08/10 14:58 : LE CLIENT RÉPOND — 1 h 32 après l'envoi de 13:26, bien avant le palier 1 de la fenêtre. "
+            "Quatre réponses ; trois changent la spec (fragments rapportés par King, texte exact NON transmis, à "
+            "coller pour verbatim) : prix non affichés (contrainte réglementaire invoquée, ministère de la Santé "
+            "publique) · taxonomie confirmée pour 400 montures · noms « trop diverses » (aucune convention) · "
+            "heures : examen de vue 8h30–13h00, autres besoins 8h30–17h30. · 08/10 (King, calendrier corrigé) : "
+            "dates de la fenêtre confirmées — note vocale mar. 13/10 matin, appel jeu. 15/10 — SANS OBJET pour ce "
+            "fil (réponse reçue) ; la règle reste en vigueur (`sales/CLIENT-MESSAGING-RULES.md` §7). Spec "
+            "révisée (`SPEC-PAGES-v1.md`). Prochain geste : redéploiement de la page par King ven. 09/10 matin, "
+            "puis acompte (non encaissé à cette date).",
+        "Follow-up date": "2026-10-09",
     },
 }
 

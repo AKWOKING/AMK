@@ -182,3 +182,17 @@ la version exacte.)
   Consigné provisoirement **mar. 13/10 matin** (voix) et **jeu. 15/10** (appel) — **à confirmer par King**.
   CRM : `Follow-up date` = 2026-10-13 (provisoire). Règle permanente : `sales/CLIENT-MESSAGING-RULES.md` §7.
 - Le verbatim exact du 13:26 reste **à coller par King**.
+
+### JOURNAL DE RÉPONSE — DM OPTIQUE, 08/10 14:58
+
+- **Date :** 08/10/2026 · **Heure :** 14:58 · **Canal :** WhatsApp · **De :** le client (1 h 32 après l'envoi de 13:26).
+- **Contenu — fragments rapportés par King (texte exact NON transmis à l'orchestrateur) :** quatre réponses ;
+  prix non affichés (contrainte réglementaire, ministère de la Santé publique) ; taxonomie des filtres
+  confirmée pour 400 montures ; noms des montures « trop diverses » (aucune convention) ; heures « Examen de
+  vue : 8h30–13h00 · Autres besoins : 8h30–17h30 ».
+- **⚠️ Verbatim :** **pas de paraphrase présentée comme citation** — seul le fragment « trop diverses » est entre
+  guillemets parce que King l'a cité ainsi. King colle le texte exact pour que ce journal porte le verbatim
+  (règle : versions exactes dans les journaux). Idem pour le 13:26.
+- **Effets :** `site/SPEC-PAGES-v1.md` révisé (6 points) · page `hosting/previews/dmoptic/` v2.3 (heures) ·
+  fenêtre de réponse : dates confirmées (13/10, 15/10) mais sans objet, la réponse est arrivée.
+- **Journalisé :** CRM (`crm.py`, 08/10 14:58) ✓ · ce journal ✓ · `sales/Activity-Log.md` ✓.
