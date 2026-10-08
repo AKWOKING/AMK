@@ -2298,7 +2298,9 @@ JOURNAL_DM_0810 = {
             "dates de la fenêtre confirmées — note vocale mar. 13/10 matin, appel jeu. 15/10 — SANS OBJET pour ce "
             "fil (réponse reçue) ; la règle reste en vigueur (`sales/CLIENT-MESSAGING-RULES.md` §7). Spec "
             "révisée (`SPEC-PAGES-v1.md`). Prochain geste : redéploiement de la page par King ven. 09/10 matin, "
-            "puis acompte (non encaissé à cette date).",
+            "puis acompte (non encaissé à cette date). · 08/10 (King) : `Follow-up date` 2026-10-09 = point de "
+            "contact après redéploiement (« le site est en ligne, voici le lien ») ; le lien ne part qu'APRÈS le "
+            "balayage crédentiels + pré-flight §13 sur la page EN LIGNE (`ops/QA-NOTES.md`).",
         "Follow-up date": "2026-10-09",
     },
 }

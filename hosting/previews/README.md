@@ -139,3 +139,14 @@ vert le 02/10.
 L'entrée du 03/10 ci-dessus est annulée : **on ne redéploie PAS, on ne touche PAS la démo.** Un prospect
 qui n'a rien demandé garde sa démo telle quelle ; le follow-up est plain, sans prétexte. Règle générale :
 playbook « STANDING RULES — 03/10 » + PRE-FLIGHT (CRM).
+
+
+## Règle de redéploiement — un fait client qui change (ruling King 08/10)
+
+**Quand un fait client change et qu'un redéploiement est imminent, la page est mise à jour avec la spec, pas
+après.** Un redéploiement est un événement atomique : publier d'anciennes heures à côté de faits nouveaux crée
+un conflit que le client verrait. *Cas fondateur : DM Optique, nouvelles heures du 08/10 14:58 → page v2.3
+(`demos/dmoptic-v1.tpl.html` + reconstruction) avant le dépôt du 09/10.*
+**Corollaire (08/10) :** avant tout redéploiement d'un projet dont la page en ligne a pu être modifiée hors
+dépôt (cas `amk-cm` : pages `sample-polyclinic` / `sample-maternity` en ligne, absentes du dépôt), comparer
+en ligne ↔ dépôt **d'abord**.

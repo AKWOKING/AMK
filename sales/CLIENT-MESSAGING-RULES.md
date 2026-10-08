@@ -147,3 +147,11 @@ King relit et envoie ; l'orchestrateur rédige et rappelle l'échéance. Trois p
   palier 2 = **lundi 12/10 13:26** au calcul strict, consigné **mardi 13/10 matin** ; palier 3 =
   **jeudi 15/10**. ⚠️ Les dates écrites par King (« mar. 14/10 », « jeu. 16/10 ») ne tombent pas sur
   ces jours (14/10 = mercredi, 16/10 = vendredi) : dates ci-dessus **provisoires, à confirmer**.
+
+### Règle — la réponse du client annule la fenêtre (ruling King 08/10)
+
+**Quand le client répond avant la fin de la fenêtre de relance, la fenêtre est caduque.** La réponse est
+l'événement ; l'action suivante est ce que la réponse exige, **pas la relance programmée**. On ne déclenche
+jamais une note vocale (palier 2) ni un appel (palier 3) sur un fil que le client a déjà répondu. À la
+réponse : effacer ou remplacer la date de relance au CRM. *Cas fondateur : DM Optique, envoi jeu. 08/10 13:26,
+réponse 14:58 — voix du mar. 13/10 et appel du jeu. 15/10 sans objet.*

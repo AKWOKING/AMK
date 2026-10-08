@@ -77,3 +77,8 @@ phrase — le dépôt est corrigé, le déploiement = un redéploiement à déci
 ### Commande de rebalayage (repo entier) — NON FILTRÉE (08/10 : un `grep -v "021/2016"` avait masqué des lignes mêlant numéro de décret ET claim)
 `grep -rIn "2016" . --exclude-dir=.git` et `grep -rIn "2017" . --exclude-dir=.git` — lire chaque ligne (les numéros de décret 021/2016, 025/2017 sont des numéros, pas des années d'exercice) puis `grep -rIniE "depuis (20[0-2][0-9])|since 20[0-2][0-9]|exerce depuis|diplômé|certifié|agréé" . --exclude-dir=.git`.
 **Page déployée :** la même grille s'applique à l'URL **publique** (lecture de la page servie), pas seulement au dépôt — voir `ops/TOOL-SCAN.md` (tâche hebdomadaire) et `ops/QA-NOTES.md` (avant tout partage d'URL).
+
+### amk-cm.vercel.app (accueil) — trouvé à la revue du 08/10, NON modifié
+Page publique d'AMK : « projects under way with institutions in Douala, Buea and Limbe » · « we also work with
+schools in Yaoundé, Bafoussam and Bamenda » · « 99.9% uptime » — **aucune trace au dépôt** (CRM : aucun client
+payant). Prix fondateur 100 000 FCFA périmé (grille v3). Décisions de King : `site/SEO-REVIEW-2026-10-08.md` §5.
