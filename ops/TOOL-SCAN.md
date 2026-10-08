@@ -29,3 +29,19 @@
 - **(d) Effort + verdict :** GitHub App + deploy Docker + clé OpenRouter pour un workflow à un humain
    + un agent déjà couvert par le protocole de vérification → **skip**. Triggers de re-review : 2e dev
    humain · repo code client · PR volume. La ruling Mira = template de la scan.
+
+---
+
+## TÂCHE HEBDOMADAIRE NOMMÉE — « Re-scan crédentiels » (ruling King 08/10)
+
+- **Quand :** chaque **dimanche 20h00 WAT**, avec la tool-scan (même créneau, deux tâches distinctes).
+- **Quoi :** relancer la grille de `content/strategy/RULE-CREDENTIAL-CLAIMS.md` (commande non filtrée)
+  sur **tout le dépôt** ET sur **chaque URL publique d'une page construite par AMK** (liste tenue dans
+  `ops/QA-NOTES.md`). Résultat journalisé ici, une ligne par scan : date · périmètre · hits · action.
+- **Règle permanente — pages en ligne :** toute URL publique d'une page AMK reçoit le balayage crédentiels
+  **contre l'URL servie** (`fetch_page` / lecture de la page en ligne), pas seulement contre le dépôt : la
+  page déployée peut être en retard sur le dépôt (cas du 08/10 : `dmoptic-2.vercel.app` servait encore
+  « depuis 2016 » alors que le dépôt était corrigé).
+- **Gel :** pour les pages gelées (Le Cristallin, Univers Optique — `hosting/previews/README.md`), le re-scan
+  **lit et signale seulement** ; aucune modification sans mot de King.
+- **Premier scan en ligne (08/10) :** voir `ops/QA-NOTES.md`, table « Balayage des pages publiques ».

@@ -39,21 +39,28 @@ depuis le HTML (corrigé), **aucun moteur de rendu navigateur dans le bac** → 
 phrase — le dépôt est corrigé, le déploiement = un redéploiement à décider (King).
 
 ### Même classe, DM Optique — trouvé au rebalayage, NON modifié (hors ruling nommé)
-- **W1-B « Dix ans d'expérience. Zéro résultat sur Internet. »** (`ads/variant-messages.md` l.39,
-  `content/month1/w1/ugc-script.md` l.41 et 129) : « dix ans » est **dérivé de 2016** — années de pratique tirées
-  d'un numéro de document, exactement ce que le ruling interdit. Variante non recommandée, non diffusée ;
-  candidat à retrait ou réécriture sur un mot de King.
+- **W1-B « Dix ans d'expérience. Zéro résultat sur Internet. » — RETIRÉE 08/10 (ruling King), SANS remplacement.**
+  « Dix ans » était dérivé de 2016 (années de pratique tirées d'un numéro de document). Lignes supprimées de
+  `ads/variant-messages.md` (table + suivi), `content/month1/w1/ugc-script.md` (accroche B + variante B du
+  pré-rempli) et `content/month1/README.md` (pré-rempli W1-B) ; compte de variantes 12 → 11 ; lettres W1-A et
+  W1-C conservées. Historique git : `c6aaf87` et avant.
 - `research/domche-noumbi.md` l.81, `market-analysis.md` l.139 : « Décembre 2019 : près de sept ans » — source
   distincte (mention presse), **à vérifier avant tout usage public**, pas de claim publié aujourd'hui.
 
 ### Autres clients — trouvailles du balayage (NON modifiées : hors ruling nommé, à trancher)
-- **La Ligne :** « inscrite depuis 2017 » (`dossier.md`, `build-notes.md`, `concept-laligne-v1.html`) — dérivé
-  de **025/2017** : même défaut que 2016. Candidat au remplacement identique.
-- **Univers Optique :** « depuis 2009 » / `foundingDate 2009-08-01` — source présente (annonce kerawa.com,
-  « début d'activité le 01/08/2009 ») : sourcé, **tenu**.
+- **La Ligne :** « inscrite depuis 2017 » — **TRAITÉ 08/10 (ruling King)** : remplacé par **« Inscrite à
+  l'ONOC »** dans `dossier.md`, `build-notes.md`, `a-completer.md`, `laligne-v1.tpl.html`,
+  `concept-laligne-v1.html`, `hosting/previews/laligne/index.html` (FR + EN). `025/2017` reste comme simple
+  numéro (JSON-LD). Aucune image cuite ne portait l'année (`og.jpg` vérifié).
+- **Univers Optique :** « depuis 2009 » / `foundingDate 2009-08-01` — **TENU, requalifié 08/10 (ruling King)** :
+  les documents disent **« annoncé depuis 2009 (source : annonce kerawa.com — support retiré, URL non conservée
+  au dépôt) »**, **jamais** une affirmation client-facing sans vérification directe auprès d'Univers.
+  ⚠️ La page démo Univers et son `foundingDate` portent encore « depuis 2009 » : **GEL du 23/09**
+  (`hosting/previews/README.md`) → non touchée ; décision de King requise pour la retirer.
 - **Le Cristallin :** « depuis 2010 », « 24/32 ans d'expérience » — **leurs propres mots**, déjà « à valider par lui ».
 - **Cinq Sens :** « diplômés en optique lunetterie » — **leurs mots**, marqués comme tels au dossier.
 - Non-claims écartés : Salvation (résultats 2016), `douala.cm` enregistré 2016, base64, « 16h00 » encodé.
 
-### Commande de rebalayage (repo entier)
-`grep -rIn "2016" . --exclude-dir=.git | grep -v "021/2016"` puis `grep -rIniE "depuis (20[0-2][0-9])|since 20[0-2][0-9]|exerce depuis|diplômé|certifié|agréé" . --exclude-dir=.git`
+### Commande de rebalayage (repo entier) — NON FILTRÉE (08/10 : un `grep -v "021/2016"` avait masqué des lignes mêlant numéro de décret ET claim)
+`grep -rIn "2016" . --exclude-dir=.git` et `grep -rIn "2017" . --exclude-dir=.git` — lire chaque ligne (les numéros de décret 021/2016, 025/2017 sont des numéros, pas des années d'exercice) puis `grep -rIniE "depuis (20[0-2][0-9])|since 20[0-2][0-9]|exerce depuis|diplômé|certifié|agréé" . --exclude-dir=.git`.
+**Page déployée :** la même grille s'applique à l'URL **publique** (lecture de la page servie), pas seulement au dépôt — voir `ops/TOOL-SCAN.md` (tâche hebdomadaire) et `ops/QA-NOTES.md` (avant tout partage d'URL).

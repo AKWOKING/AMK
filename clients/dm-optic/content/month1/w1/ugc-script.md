@@ -33,12 +33,11 @@ confier ses yeux. C'est le problème réel, et c'est celui que la preuve résout
 
 ---
 
-## 1 · Accroche — trois variantes
+## 1 · Accroche — deux variantes (B retirée 08/10, ruling King : « Dix ans d'expérience » non sourcé, pas de remplacement ; lettres A et C conservées)
 
 | # | Accroche (voix + texte, dès l'image 1) | Format viral copié |
 |---|---|---|
 | **A** | **« Cet opticien est inscrit à l'ONOC. Personne ne le trouvait. »** | Contradiction — l'écart entre le réel et le visible |
-| **B** | **« Dix ans d'expérience. Zéro résultat sur Internet. »** | Tension chiffrée — le contraste en deux nombres |
 | **C** | **« Vous ne savez pas à qui confier vos yeux ? »** | Interpellation directe + boucle ouverte |
 
 **Recommandation : A.** C'est la plus forte parce qu'elle est **vraie**, **vérifiable** et
@@ -126,7 +125,6 @@ que le moteur de contenu AMK (`CONTENT-LESSONS` §11.2). **Plus d'audition à pr
 |---|---|
 | **À l'écran** | « Écrivez-nous, on vous répond » |
 | **WhatsApp pré-rempli (variante A)** | `Bonjour, je cherche un opticien inscrit à Bonabéri` |
-| **Variante B** | `Bonjour, je viens de la vidéo « dix ans d'expérience »` |
 | **Variante C** | `Bonjour, je cherche un opticien à Bonabéri` |
 
 ⚠️ **Un message différent par variante** — sinon le coût par message n'est pas attribuable

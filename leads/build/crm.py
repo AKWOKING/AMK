@@ -2283,7 +2283,14 @@ JOURNAL_DM_0810 = {
             "WhatsApp, jeu de questions structuré (quatre questions numérotées + suggestion de nommage, "
             "sans signature), envoyé par King ; texte exact non transmis à l'orchestrateur (à coller pour "
             "verbatim) ; fenêtre de réponse non précisée. · 08/10 (King sur place) : adresse précisée — "
-            "Immeuble West Hotel, 1er étage, dernière porte à droite. Aucun acompte encaissé à cette date.",
+            "Immeuble West Hotel, 1er étage, dernière porte à droite. Aucun acompte encaissé à cette date. · "
+            "08/10 (ruling King, après coup) : FENÊTRE DE RÉPONSE du message 13:26 = WhatsApp 24 h ouvrées : "
+            "on attend, rien d'autre ; après 48 h ouvrées : UNE note vocale chaleureuse (pas un re-demande) ; "
+            "après 7 jours : un appel de 2 minutes, pas un autre message. Dates du ruling incohérentes avec le "
+            "calendrier (« mar. 14/10 » = mercredi ; « jeu. 16/10 » = vendredi) : consignées provisoirement "
+            "mar. 13/10 matin (note vocale ; 48 h ouvrées = lun. 12/10 13:26) et jeu. 15/10 (appel ; 7 jours) — "
+            "À CONFIRMER par King.",
+        "Follow-up date": "2026-10-13",
     },
 }
 

@@ -128,3 +128,22 @@ prochain contact en personne est à **>48 h**. **Texte + doc suffisent quand :**
 le doc parle de lui-même, la présence est imminente (**<48 h**). La voix porte la relation **à la
 rencontre elle-même**. (L'envoi conditions + note du 06/10 09:43 était texte + PDF par décision King
 — cas d'école du texte factuel avec présence <24 h.)
+
+## 7 · Fenêtre de réponse après un envoi client (ruling King 08/10)
+
+King relit et envoie ; l'orchestrateur rédige et rappelle l'échéance. Trois paliers, dans cet ordre,
+**un seul geste par palier** :
+
+| Palier | Quand | Geste |
+|---|---|---|
+| 1 | **24 h ouvrées** après l'envoi | **On attend.** Rien. |
+| 2 | **48 h ouvrées**, sans réponse | **UNE note vocale chaleureuse — pas une re-demande.** Texte de référence : « Bonjour Monsieur, je voulais juste m'assurer que vous avez bien reçu mes questions — rien d'urgent, dites-moi quand vous êtes dispo. » |
+| 3 | **7 jours**, sans réponse | **Un appel de 2 minutes. Pas un autre message** (le canal change, pas la formulation). |
+
+- S'applique aux jeux de questions structurés (§1, exemption du plafond) comme aux envois de documents.
+- Le palier 2 est une voix (cohérent avec §6 : fil qui s'enlise) ; il ne répète aucune question.
+- Hypothèse de lecture : « ouvrées » = lundi–vendredi (à confirmer par King si besoin autre).
+- **Premier cas :** WhatsApp DM Optique du jeudi 08/10 à 13:26 → palier 1 = vendredi 09/10 (matin) ;
+  palier 2 = **lundi 12/10 13:26** au calcul strict, consigné **mardi 13/10 matin** ; palier 3 =
+  **jeudi 15/10**. ⚠️ Les dates écrites par King (« mar. 14/10 », « jeu. 16/10 ») ne tombent pas sur
+  ces jours (14/10 = mercredi, 16/10 = vendredi) : dates ci-dessus **provisoires, à confirmer**.

@@ -4,7 +4,7 @@ King 03/10). Publication : **vendredi 16/10 (S1), seulement après acompte encai
 tamponnée** (règle du déclencheur). Slide 2 = couverture (la carte). Heures sans jours (jours
 inconnus). Palette : crème/encre/teal de la carte signature.
 
-> ⚠️ **RE-RENDU 08/10 — EN ATTENTE D'APPROBATION KING avant tout usage** (ruling credentials). Slides
+> ✅ **RE-RENDU 08/10 — APPROUVÉ par King (08/10) ; revue sur son téléphone AVANT tout usage ; HORS publications programmées tant que cette revue n'est pas faite** (ruling credentials). Slides
 > **1 et 2** portaient « Inscrit depuis 2016 » (non sourcé) ; elles lisent maintenant **« Inscrit à
 > l'ONOC »** (Montserrat Thin, taille/poids/couleur ajustés au pixel sur l'original). Slides 3–6
 > inchangées. Les anciennes versions restent dans l'historique git (`0c4056a`).

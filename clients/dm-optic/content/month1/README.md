@@ -243,8 +243,8 @@ publication **le jour même** où l'argent arrive.
 | Niveau | Combien | Comment |
 |---|---|---|
 | **Scripts** | 4 | Un par semaine |
-| **Accroches par script** | 3 | Écrits dans chaque script |
-| **Variantes produites** | **12 disponibles → 5 à 10 retenues** | King choisit après production |
+| **Accroches par script** | 3 (2 en W1 : W1-B retirée 08/10) | Écrits dans chaque script |
+| **Variantes produites** | **11 disponibles → 5 à 10 retenues** | King choisit après production |
 
 ### ⚠️ Le point technique que personne ne mentionne, et qui décide de la mesure
 
@@ -260,7 +260,6 @@ le test ne servira à rien.
 | Variante | Message pré-rempli |
 |---|---|
 | W1-A | « Bonjour, je cherche un opticien inscrit à Bonabéri » |
-| W1-B | « Bonjour, je viens de la vidéo sur l'inscription à l'Ordre » |
 | W2-A | « Bonjour, je souhaite un examen de vue » |
 
 **Trois règles de mesure :**

@@ -68,7 +68,7 @@ son téléphone — pas même une photo de vitrine. Le seul actif visible de cet
 
 ## 6 · Verdict
 
-**Prospect chaud, et le plus « propre » de la vague** : une opticienne inscrite depuis 2017, un service
+**Prospect chaud, et le plus « propre » de la vague** : une opticienne inscrite à l'ONOC, un service
 rare annoncé (visagiste), une adresse connue — et **zéro vitrine numérique**. Il n'y a rien à corriger :
 il y a tout à construire. C'est le cas où notre travail se voit le plus vite, parce qu'avant nous, un
 patient qui tape « La Ligne Optic Douala » ne trouve **rien**.

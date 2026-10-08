@@ -170,3 +170,15 @@ la version exacte.)
   tel au sommet) — à fixer par King ; aucune fenêtre n'est inventée ici.
 - **Journalisé :** CRM ligne DM Optique (`crm.py`, 08/10 13:26) ✓ · ce journal ✓.
 
+
+### Fenêtre de réponse du 13:26 — FIXÉE par King (08/10, message ultérieur)
+
+- **Palier 1 :** 24 h ouvrées → on attend (vendredi 09/10, matin).
+- **Palier 2 :** 48 h ouvrées sans réponse → **une** note vocale chaleureuse : « Bonjour Monsieur, je voulais
+  juste m'assurer que vous avez bien reçu mes questions — rien d'urgent, dites-moi quand vous êtes
+  dispo. » (pas une re-demande).
+- **Palier 3 :** 7 jours sans réponse → appel de 2 minutes, pas un autre message.
+- **Dates :** King a écrit « mar. 14/10 » et « jeu. 16/10 » ; 14/10 est un mercredi et 16/10 un vendredi.
+  Consigné provisoirement **mar. 13/10 matin** (voix) et **jeu. 15/10** (appel) — **à confirmer par King**.
+  CRM : `Follow-up date` = 2026-10-13 (provisoire). Règle permanente : `sales/CLIENT-MESSAGING-RULES.md` §7.
+- Le verbatim exact du 13:26 reste **à coller par King**.
