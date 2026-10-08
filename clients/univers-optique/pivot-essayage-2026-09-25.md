@@ -302,3 +302,20 @@ l'attente de ROI déplacent la recommandation** : un homme qui a payé trois sit
 
 *§9 ajouté le 27/09/2026, après le message de King. La planche de preuve et la maquette restent celles du
 §2 : rien n'a été reconstruit, seulement compris.*
+
+---
+
+## 10 · Le fil WhatsApp, relevé le 08/10 (captures de King ; texte copié tel quel, graphie du client conservée)
+
+| Date et heure | De | Message |
+|---|---|---|
+| 25/09 07:35 | King | confirme le rendez-vous « de ce matin à 10h00 dans votre cabinet » |
+| 27/09 19:08 | King | premier prototype en préparation, avec les photos déjà prises ; demande quel appareil le client utilisera |
+| 27/09 21:48 | **Client** | « Tablette ou smart Phone » |
+| 08/10 15:21 | King (ENVOYÉ) | « Bonjour Docteur ! L'outil d'essayage avance très bien. Sur 10 personnes qui entrent dans votre cabinet, environ combien repartent sans rien acheter ? » |
+
+Un brouillon plus long (il demande aussi la vente moyenne, fin « toute informations sera utile ») figure sur la capture comme **non envoyé** ; il n'est pas journalisé comme envoyé.
+
+**Ce que le fil dit.** (1) Le chiffre demandé à 15:21 est celui qui remplit la feuille de ROI du §9 : question de **découverte**, pas un pitch (le pitch reste retenu jusqu'à l'encaissement de l'acompte DM Optique). (2) Le client a répondu le 27/09 au soir ; le message suivant date du 08/10, onze jours plus tard, et n'accuse pas réception de « Tablette ou smart Phone ». (3) « Tablette ou smart Phone » ne tranche pas : l'appareil reste ouvert, à préciser quand on lui montre quelque chose (le prototype se juge sur les deux écrans). (4) La phrase « avance très bien » est celle de King ; ce que le prototype montre réellement est décrit dans `phase-2-interim-asset-*.md`, pas ici.
+
+**Fenêtre (règle `sales/CLIENT-MESSAGING-RULES.md` §7, du 08/10) :** 24 h ouvrées = ven. 09/10 15:21, on attend, rien d'autre · 48 h = note vocale chaleureuse mar. 13/10 · 7 jours = appel de 2 minutes jeu. 15/10. Une réponse du client annule la fenêtre. CRM : `Follow-up date` 2026-10-13, `last_send_state` sent.

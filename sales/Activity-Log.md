@@ -4811,3 +4811,13 @@ lead content de « la seule vidéo publiée » — vérifier d'abord que le lead
 - **13:26 — envoi (King) :** WhatsApp, jeu de quatre questions numérotées (planning site). Texte exact non transmis à l'orchestrateur.
 - **14:58 — réponse du client :** quatre réponses ; prix non affichés (contrainte réglementaire invoquée) · taxonomie confirmée pour 400 montures · noms « trop diverses » · heures « Examen de vue 8h30–13h00 · Autres besoins 8h30–17h30 ». Fragments rapportés par King ; verbatim à coller. Détail : `clients/dm-optic/onboarding/post-deposit-email.md`.
 - **Suite :** spec révisée ; page v2.3 prête (redéploiement King ven. 09/10 matin).
+
+---
+
+## 08/10/2026 — Univers Optique : fil WhatsApp relevé · message de découverte 15:21 · prix amk-cm retirés
+
+- **Fil (captures de King) :** 25/09 07:35 King confirme le rendez-vous de 10h00 · 27/09 19:08 King : prototype en préparation, photos déjà prises, question de l'appareil · **27/09 21:48 client : « Tablette ou smart Phone »** · **08/10 15:21 King (envoyé) : « Bonjour Docteur ! L'outil d'essayage avance très bien. Sur 10 personnes qui entrent dans votre cabinet, environ combien repartent sans rien acheter ? »** Brouillon plus long (vente moyenne ; « toute informations sera utile ») = NON ENVOYÉ.
+- **Lecture :** question de découverte (remplit la feuille de ROI), pas un pitch ; onze jours après la dernière réponse du client, sans accuser réception de « Tablette ou smart Phone ». Pitch toujours retenu jusqu'à l'acompte DM Optique.
+- **Fenêtre :** ven. 09/10 15:21 (24 h ouvrées, on attend) · mar. 13/10 note vocale (`Follow-up date`) · jeu. 15/10 appel 2 min · une réponse annule la fenêtre. Détail : `clients/univers-optique/pivot-essayage-2026-09-25.md` §10.
+- **amk-cm (ruling King, 7e message) :** AUCUN prix sur le site AMK (les clients demandent des choses différentes ; le prix suit le périmètre). Retirés de `site/index.html`, `creation-site-web-ecole-cameroun.html` et `creation-site-web-clinique-cameroun.html` : section tarifs (désormais « Devis »), JSON-LD `price`/`priceRange`, FAQ, assistant du site, formule « fondatrice », « même prix pour tous / pas de remise », répartition 50/50 et pourcentage d'acompte. La règle interne 8a (pas de remise) reste interne. Non déployé : redéploiement = action de King.
+

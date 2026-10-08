@@ -2,11 +2,16 @@
 """Build amk-site.zip at repo root — the drag/CLI deploy bundle for the
 EXISTING amk-cm.vercel.app project.
 
-Contents = every HTML page in site/ (nameless samples + agency index + the
-named mitoc preview), the brand files (favicon/robots/sitemap), and ONLY the
-four thumbnails referenced by index.html. The concept pages embed their photos
-as base64, so the big concept JPGs are intentionally excluded to keep the
-bundle small. Builders and research notes under site/ are not web assets.
+Contents = the LIVE inventory as exported from Vercel on 08/10/2026 (repo
+site/ == live): every deployed HTML page, the Google Search Console
+verification file (google08d73756faeade69.html, it MUST stay deployed or the
+GSC property loses verification), the brand files (favicon/robots/sitemap) and
+ONLY the images the pages actually reference (checked 08/10: every local
+src/href/og:image resolves). The concept pages embed their photos as base64,
+so the big concept JPGs are intentionally excluded. NOT shipped: builders,
+research notes, DEPLOY.md, SEO-REVIEW, mockup-hero.html (unlinked) and
+index.html.backup-pre-king24. Before 08/10 this list held 6 pages and would have
+dropped four live pages plus the GSC file: never reuse the old list.
 
 Deploy steps + verification: see site/DEPLOY.md.
 """
@@ -21,11 +26,20 @@ PAGES = [
     "sample-school.html",
     "sample-nursery.html",
     "sample-secondary.html",
+    "sample-polyclinic.html",
+    "sample-maternity.html",
     "clinic-bonaberi.html",
     "mitoc.html",
+    "creation-site-web-ecole-cameroun.html",
+    "creation-site-web-clinique-cameroun.html",
 ]
-ROOT_FILES = ["favicon.svg", "robots.txt", "sitemap.xml"]
-THUMBS = ["nova.png", "littleoaks.png", "crestwood.png", "clinic.png", "og-cover.jpg"]
+ROOT_FILES = ["favicon.svg", "robots.txt", "sitemap.xml", "google08d73756faeade69.html"]
+THUMBS = [
+    "nova.png", "littleoaks.png", "crestwood.png", "clinic.png",
+    "sample-polyclinic.png", "sample-maternity.png",
+    "og-cover.jpg", "og-nova.jpg", "og-littleoaks.jpg", "og-crestwood.jpg",
+    "og-clinic-bonaberi.jpg", "og-mitoc.jpg",
+]
 
 members = PAGES + ROOT_FILES + [f"img/{t}" for t in THUMBS]
 

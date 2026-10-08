@@ -3238,8 +3238,8 @@ REPONSE_UNIVERS_2509 = {
     "univers-optique": {
         "Contacted": "Yes", "Reply": "Yes", "reply_type": "human",
         "Demo made": "Yes", "Offer made": "No",
-        "last_send_state": "replied", "stage": "qualifying", "stage_since": "2026-09-25",
-        "Follow-up date": "2026-09-28",
+        "last_send_state": "sent", "stage": "qualifying", "stage_since": "2026-09-25",
+        "Follow-up date": "2026-10-13",
         "contradiction":
             "Le CRM portait `closing` et « les 50 000, on les met quand ? » comme dernière étape. Le "
             "25/09, le client a écarté le site et demandé un outil : le sujet a changé, rien n'a été "
@@ -3264,6 +3264,21 @@ REPONSE_UNIVERS_2509 = {
             "c'est aussi le REMONTAGE. 27/09 — le §9 du pivot ajoute la feuille de ROI (le temps "
             "récupéré = N × J × (F − 3) × t, avec N et F remplis par LUI) et la façon de poser le prix "
             "à un homme échaudé par trois sites : il achète un résultat daté, pas un objet.",
+        "Notes_extra":
+            "FIL WHATSAPP relevé le 08/10 sur capture d'écran de King (texte copié tel quel ; la \
+graphie du client est conservée) : 25/09 07:35 — King confirme le rendez-vous de 10h00 au cabinet. · \
+27/09 19:08 — King : premier prototype en préparation, utilisera les photos déjà prises, et demande \
+quel appareil le client utilisera. · 27/09 21:48 — LE CLIENT RÉPOND : « Tablette ou smart Phone » \
+(dernier message du client). · 08/10 15:21 — ENVOYÉ par King : « Bonjour Docteur ! L'outil d'essayage \
+avance très bien. Sur 10 personnes qui entrent dans votre cabinet, environ combien repartent sans rien \
+acheter ? » = question de découverte (le chiffre qui remplit la feuille de ROI du §9), PAS un pitch ; \
+11 jours après la réponse du 27/09, sans accuser réception de « Tablette ou smart Phone ». Un brouillon \
+plus long (demande aussi la vente moyenne ; fin « toute informations sera utile ») figure sur la capture \
+comme NON ENVOYÉ : il n'est pas journalisé comme envoyé. · FENÊTRE (règle `sales/CLIENT-MESSAGING-RULES.md` \
+§7) : 24 h ouvrées = ven. 09/10 15:21 (on attend, rien d'autre) ; palier 48 h = note vocale chaleureuse \
+mar. 13/10 (= `Follow-up date`) ; palier 7 jours = appel de 2 minutes jeu. 15/10 ; une réponse du client \
+ANNULE la fenêtre (règle du 08/10). Pitch de l'outil toujours retenu tant que l'acompte DM Optique n'est \
+pas encaissé. Appareil : réponse « Tablette ou smart Phone » = le client n'a pas tranché.",
     },
 }
 

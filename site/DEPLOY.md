@@ -1,3 +1,5 @@
+> **⚠️ 08/10/2026 — ce fichier est antérieur à l'export live.** Le dossier `site/` EST maintenant le site en ligne (export Vercel du 08/10). Le paquet de `hosting/build_site_zip.py` compte désormais 10 pages + `google08d73756faeade69.html` (vérification Search Console : ne jamais l'omettre) + images référencées (26 fichiers) ; les chiffres « 6 pages / 13 fichiers » ci-dessous sont périmés. Aucun prix sur amk-cm (ruling King 08/10). Ne pas redéployer avant la réponse sur les affirmations non sourcées (`site/SEO-REVIEW-2026-10-08.md` §7).
+
 # Deploying the AMK site + nameless samples (`amk-cm.vercel.app`)
 
 The public agency site and the **nameless** samples live in **one existing

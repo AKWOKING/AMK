@@ -79,3 +79,26 @@ Relu contre : `site/` (dépôt), la page **en ligne** (robots, sitemap, accueil,
 - Créer des pages quartier/ville « pour le SEO » sans un fait vrai à y mettre (playbook §7).
 - Viser « création site web Douala » en tête-à-tête avec quatre agences : le playbook l'a déjà écarté ; l'angle gagnable est le **problème vécu** (« ma page Facebook ne prend pas de rendez-vous »).
 - Redéployer `amk-cm` depuis le dépôt tel quel (points 2.2, 2.3, 3-a, 3-b).
+
+---
+
+## 7 · Suivi du 08/10 (soir) — après l'export de King et ses réponses
+
+**Le dépôt = le site en ligne.** King a exporté `site/` depuis Vercel (PR #5, `8ecb97d`). La copie du dépôt qui portait le repositionnement du 05/10 (titre « opticiens », description) a été remplacée ; elle survit dans l'historique git (`0a03e5d`, `afc7d52`). Elle n'a **pas** été réappliquée : la vocation de l'accueil n'est pas tranchée (question 4).
+
+**Ce qui devient sans objet dans les §2–§3 ci-dessus**
+- 2.1 « la page en ligne est en avance sur le dépôt » : résolu, les deux sont identiques.
+- 2.2 « description corrompue dans le dépôt » : la corruption n'existait que dans l'ancienne copie du dépôt ; la description en ligne, relue dans l'export, est propre.
+- 2.3 (pages `polyclinic` et `maternity` absentes du dépôt) : elles y sont désormais.
+
+**Ce qui reste valable :** le §1 (n = 1, aucune conclusion), l'écart d'indexation (~1 impression par semaine), les candidats de balises T-A2 / D-A (aucun appliqué), les affirmations non sourcées du 3-b, `lang="en"` sur une page à titre français, et l'absence de la balise `google-site-verification` dans `index.html` (le fichier `google08d73756faeade69.html` assure la vérification ; il doit rester déployé).
+
+**Rulings de King (7e message)**
+- **Question 2, prix : AUCUN prix sur amk-cm.** Raison : les clients demandent des choses différentes, le prix suit le périmètre. **Fait dans le dépôt, non déployé** : voir `sales/Activity-Log.md` (08/10) pour la liste. Conséquence SEO à savoir : l'angle « prix site internet Cameroun » de `content/pipeline/KEYWORDS-2026-09-22.md` supposait qu'AMK était seul à afficher un chiffre ; il tombe. La FAQ « Combien coûte la création d'un site web au Cameroun ? » reste, avec une réponse sans chiffre (périmètre, devis écrit avant de commencer, aperçu gratuit).
+- **Question 5, profil Google : ouvert.** « Complet » et l'adresse du profil restent à fournir (pour `sameAs` du JSON-LD, aujourd'hui vide).
+- **Questions 3 et 4 : sans réponse.** Affirmations non sourcées (« projets en cours à Douala, Buea, Limbé », « écoles à Yaoundé, Bafoussam, Bamenda », « 99,9 % de disponibilité ») : NON modifiées. Vocation de l'accueil : NON tranchée.
+
+**Constaté en retirant les prix** : à l'étape 5 de la page d'accueil, la version française portait une copie obsolète de la réponse de FAQ (avec le tarif mensuel) au lieu de traduire l'anglais ; remplacée par la traduction fidèle. Les pages `sample-polyclinic.html` et `sample-maternity.html` sont en `noindex,nofollow` : **volontairement non ajoutées au sitemap** (Search Console signalerait « URL soumise marquée noindex »). Si King veut les faire indexer : retirer le `noindex` ET les ajouter au sitemap, ensemble.
+
+**Ne pas redéployer** tant que la question 3 (affirmations) n'a pas de réponse ; les prix retirés partiront avec ce même redéploiement.
+
