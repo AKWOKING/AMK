@@ -37,7 +37,7 @@ confier ses yeux. C'est le problème réel, et c'est celui que la preuve résout
 
 | # | Accroche (voix + texte, dès l'image 1) | Format viral copié |
 |---|---|---|
-| **A** | **« Cet opticien exerce depuis 2016. Personne ne le trouvait. »** | Contradiction — l'écart entre le réel et le visible |
+| **A** | **« Cet opticien est inscrit à l'ONOC. Personne ne le trouvait. »** | Contradiction — l'écart entre le réel et le visible |
 | **B** | **« Dix ans d'expérience. Zéro résultat sur Internet. »** | Tension chiffrée — le contraste en deux nombres |
 | **C** | **« Vous ne savez pas à qui confier vos yeux ? »** | Interpellation directe + boucle ouverte |
 

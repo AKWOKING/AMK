@@ -28,7 +28,7 @@
 
 ---
 
-# C1 · « Cet opticien exerce depuis 2016 »
+# C1 · « Cet opticien est inscrit à l'ONOC »
 
 **Semaine 1 · vendredi 16/10** · ✅ **Produisible sans photo**
 

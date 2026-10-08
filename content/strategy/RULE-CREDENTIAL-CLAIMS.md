@@ -15,12 +15,22 @@ d'exercice).
 | « Inscrit à l'ONOC » | registre ONOC, annuaire Littoral, ligne 102 : inscription 021/2016, arrêté 0382, titulaire M. Domche Noumbi (`clients/dm-optic/build-notes.md` l.54) | ✅ **autorisé** (trust bar du site) |
 | « Opticien diplômé » | **aucune** | ⛔ **retiré** de `SPEC-PAGES-v1` (seule occurrence au repo) |
 
-## Balayage du repo (08/10) — à ranger par King, non modifié ici (hors périmètre du site)
+## Ruling 08/10 — W1-A réécrit, et règle de source
 
-- `clients/dm-optic/build-notes.md` (l.71, 75, 144, 239), `content-plan-month1.md` (l.40) :
-  « Inscrit depuis 2016 », « le registre vous connaît depuis 2016 » — **« 2016 » est déduit du
-  suffixe du numéro 021/2016** ; le repo ne contient pas la page d'annuaire datée. Source par
-  inférence. Le re-pull ONOC du 11/10 peut vérifier la date.
-- `clients/dm-optic/ads/campaign-brief.md` l.16, `ads/variant-messages.md` l.38 (W1-A) :
-  « Cet opticien **exerce** depuis 2016 » — affirme l'**exercice**, le registre ne prouve que
-  l'**inscription**. Claim plus fort que la source : candidat à correction avant toute diffusion.
+**Le suffixe « /2016 » du registre est un numéro de décret (arrêté 0382, 021/2016), pas une durée
+d'exercice. Ne jamais sourcer des « années de pratique » depuis un numéro de document.**
+
+- **FAIT :** « Cet opticien exerce depuis 2016 » → « **Cet opticien est inscrit à l'ONOC** » (source :
+  registre, ligne 102, 021/2016), sur les 7 fichiers où la phrase exacte apparaissait (campagne,
+  variantes + lien WhatsApp ré-encodé, README C1, script UGC, carrousels.md, SETUP-TIKTOK, script
+  démo).
+
+## Balayage du repo (08/10) — reste à ranger par King (ruling non étendu)
+
+« **inscrit depuis 2016** » / « le registre vous connaît depuis 2016 » (≈25 occurrences) dérive du
+même suffixe de décret. Le ruling couvre W1-A ; **je ne l'étends pas sans mot.** Exposition :
+`build-notes.md` + prototype montré au client · `launch/SETUP-FACEBOOK|TIKTOK|GOOGLE-BUSINESS.md`
+(bios, avant go-live) · `posting-calendar.md` · `content-plan-month1.md` · `carousels.md` slides +
+**PNG rendus `c1-render/slide-*.png` (texte figé dans l'image)** · `ugc-script.md` · `research/*` ·
+`website/brief.md`, `inspiration.md`. Question à King : « inscrit depuis 2016 » = acceptable (année
+d'inscription) ou à remplacer par « Inscrit à l'ONOC » partout ?

@@ -2,33 +2,38 @@
 
 > **Statut : DRAFT. King relit, King envoie.** L'orchestrateur n'envoie rien. Un seul message
 > WhatsApp, jeudi 08/10/2026 après-midi, avant la clôture du planning (ruling King 08/10).
-> Texte seul : l'envoi est factuel (règle §6 voix-first context-scoped). Si tu préfères la voix,
-> les mêmes phrases se disent en 25 s — à ton appréciation.
+> Forme ruled 08/10 : texte, quatre questions numérotées, « Bonjour Monsieur, » puis la liste,
+> pas de signature. Jeu de questions structuré = exempté du plafond 2–3 phrases (§1 règles
+> messagerie, amendé). **Photos = option A** (annoncer, ne rien demander) ; l'option B est écartée.
 
-## Message à copier (variante A — recommandée)
+## Message à copier
 
-> Bonjour Monsieur ! On finalise la structure de votre site avant de passer aux photos : pouvez-vous nous confirmer vos jours et heures d'ouverture exacts, et la fourchette de prix de vos montures (de la moins chère à la plus chère) ? Et à peu près combien de montures avez-vous en stock — ça nous dit si les filtres du catalogue s'activent tout de suite ou un peu plus tard. Pour les noms des montures, on suggère des noms de lieux d'ici (Bonabéri, Akwa, Kribi…), mais ce sont vos montures : c'est vous qui choisissez. Pour les photos (logo, devanture, vous), rien à envoyer pour l'instant : on s'organise ensemble.
-
-## Variante B — dernière phrase seulement (photos demandées, lecture littérale du ruling)
-
-> Si vous avez déjà un logo, une photo de la devanture et une photo de vous ou de l'équipe, vous pouvez nous les envoyer ici.
+> Bonjour Monsieur,
+>
+> 1. Quels sont vos jours et heures d'ouverture exacts ?
+> 2. Quelle est la fourchette de prix de vos montures, de la moins chère à la plus chère ? (ça nous sert à régler les filtres du catalogue)
+> 3. Environ combien de montures avez-vous en stock ? (pour savoir si les filtres s'activent tout de suite)
+> 4. Photos (logo, devanture, vous ou l'équipe) : rien à envoyer pour l'instant, on s'organise ensemble plus tard.
+>
+> Pour les noms des montures, on suggère des noms de lieux d'ici (Bonabéri, Akwa, Kribi…), mais ce sont vos montures : c'est vous qui choisissez.
 
 ## Correspondance avec le ruling
 
-| # | Question | Pourquoi (spec) |
+| # | Contenu | Pourquoi (spec) |
 |---|---|---|
-| Q1 | Jours et heures d'ouverture exacts | footer, Contact — heures connues (8h00–17h30, consultation 8h30–13h30), **jours inconnus** |
-| Q2 | Fourchette de prix min–max | calibrer les 4 bandes de prix |
-| Q3 | Environ combien de montures en stock | filtres actifs d'emblée ou mode plat |
-| Q4 | Photos : logo, devanture, vous/équipe | variante A = annonce sans demande (amorce la séance post-acompte) ; variante B = demande |
-| Q5 | Nommage : suggestion de noms de lieux, le client choisit | `SPEC-PAGES-v1` §7 |
+| 1 | Jours et heures exacts | footer, Contact — heures connues (8h00–17h30, consultation 8h30–13h30), **jours inconnus** |
+| 2 | Fourchette de prix min–max | calibrer les 4 bandes de prix |
+| 3 | Nombre de montures en stock | filtres actifs d'emblée ou mode plat |
+| 4 | Photos — **annonce, pas demande** | amorce la séance post-acompte sans rien demander avant paiement |
+| (Q5) | Suggestion de nommage — **pas une cinquième question** | `SPEC-PAGES-v1` §7 ; le client choisit |
+
+*Lecture de ma part : « quatre questions numérotées » = les quatre d'origine (1–3 questions réelles,
+4 = annonce photos) ; la suggestion de nommage est la ligne finale, non numérotée. Si tu la veux en
+point 4 ou 5, dis-le.*
 
 ## Contrôle contre les règles maison (`sales/CLIENT-MESSAGING-RULES.md`)
 
-- Prose, zéro puce, zéro emoji, zéro signature ✅ · chaleureux, direct, « vous » ✅.
-- ⚠️ **Écart assumé :** la règle §1 dit « 2–3 phrases courtes maximum » ; ce message en compte
-  4 longues (cinq sujets, ruling : un seul message). Le plus court possible sans retirer un sujet ;
-  si tu veux 3 phrases : fusionne Q3 dans la première et coupe l'explication des filtres.
-- Aucun prix, aucune alternative, aucun mot sur l'acompte ✅ (aucune alternative avant dépôt).
-- Aucun travail demandé au client avant paiement dans la variante A ✅ ; la variante B en demande
-  un (logo/photos) — d'où le choix à ton jugement.
+- Liste numérotée, zéro puce, zéro emoji, zéro signature ✅ · « Bonjour Monsieur, » sans autre préambule ✅.
+- Exemption §1 (ruling 08/10) : jeu de questions structuré, pas de plafond 2–3 phrases ✅.
+- Aucun prix, aucune alternative, aucun mot sur l'acompte ✅ · aucun travail demandé au client avant
+  paiement ✅ (la ligne 4 n'en demande aucun).

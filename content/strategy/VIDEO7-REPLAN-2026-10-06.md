@@ -57,17 +57,26 @@ Template : `ops/templates/PREVIEW-ONE-PAGE-OPTICIEN.md`.
   pas testé — remplacé) ; **King relit et envoie**. Jamais d'envoi direct orchestrateur.
 - **Promesse tenue :** un PREVIEW livré tard = pire que pas de PREVIEW.
 
-## Timing de publication — conditionnel, pas fixe
+## Timing de publication — REPLAN 08/10 (ruling King)
 
-C1 publie **jeudi 08/10, 18:00–20:00** seulement si : (a) workflow PREVIEW documenté ✓ (ce
-fichier) · (b) master passe le gate FFmpeg · (c) DM Optique n'a pas déclenché la priorité v06
-(acompte encaissé mercredi). Sinon C1 glisse à la semaine suivante et la vague 12/10 part sans
-warm-up — **soft miss, pas crise**.
+Le créneau jeudi 08/10 n'a pas tenu (pas de master, script en hold). **Nouveau : C1 publie vendredi
+09/10, 18:00–20:00, TikTok FR, seulement si le master passe le gate FFmpeg.** Si le master échoue :
+**C1 est tué pour ce cycle** — on ne publie pas un test cassé. La vague 12/10 part alors sans
+warm-up : **soft miss, pas crise.** (a) workflow PREVIEW documenté ✓ (ce fichier) · (b) gate FFmpeg ·
+(c) priorité v06 : voir collision ci-dessous.
 
-## Script C1 — HOLD
+⚠️ **COLLISION OUVERTE — vendredi 09/10 :** le ruling 05/10 (`CONTENT-PIPELINE.md` l.142) fixe
+**v06 = mercredi 19h25 si dépôt encaissé, sinon vendredi 09/10.** Le dépôt n'est pas encaissé (King,
+08/10) → v06 est dû vendredi 09/10, le même jour que C1. Deux publications, un seul créneau TikTok
+fixe : **à arbitrer par King** (v06 inchangé vendredi + C1 glisse ; ou C1 vendredi 18:00–20:00 et v06
+re-daté ; ou les deux, à des heures différentes — au prix de la comparabilité du créneau fixe).
 
-Pas livré ce jour. Livraison **mercredi 07/10 matin, après la visite DM** : l'issue de mercredi
-décide si C1 ou v06 est la prochaine production ; écrire avant = risque de travail mort.
+## Script C1 — DÉLIVRÉ vendredi 09/10 matin (ruling King 08/10)
+
+Toujours voulu. **Livraison : vendredi 09/10 au matin** (script verbatim + liste de captures,
+téléphone, ~20 s). Contrainte réelle : script le matin → captures de King → master → gate FFmpeg
+avant 18:00, une seule journée ; si ça ne tient pas, la règle de kill s'applique (pas de dérive de
+créneau).
 
 ## Bookmark — « building in public » : CLOS pour maintenant
 

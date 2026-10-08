@@ -15,7 +15,7 @@ numéro écrit dans la bio et le CTA parlé**, pas sur un lien. Chaque vidéo se
 
 ## Premier contenu (mardi 13/10)
 Le rendu UGC IA de W1 (`content/month1/w1/ugc-script.md`) — 1080×1920, 30 fps, SAR 1:1, H.264 (verrou
-technique DM). Légende : `Cet opticien exerce depuis 2016. Personne ne le trouvait. Maintenant il est
+technique DM). Légende : `Cet opticien est inscrit à l'ONOC. Personne ne le trouvait. Maintenant il est
 là. WhatsApp : 656 122 239.` Pas de visage humain en mois 1 (ruling), pas d'illustration IA de produit.
 
 ## Rythme

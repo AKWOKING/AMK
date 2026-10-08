@@ -1,6 +1,8 @@
 # DM OPTIQUE · Runsheet de la visite — Jour J
 
 > **GELÉ — 06/10 — tout changement sur dire explicite de King.**
+> **Date : ~~mercredi 07/10~~ → post-acompte, à fixer** (ruling King 08/10 : le 07/10 est passé, la séance
+> photo n'a pas eu lieu, acompte non encaissé). Le chiffon microfibre reste au sac pour cette séance.
 
 > **Si le cabinet déborde, priorité d'ordre : acompte → code GBP → 8 photos → le reste suit.** (ruling King 05/10 — ordre de squeeze pré-convenu, ajouté avant mardi)
 > **Phrase à dire, voix posée :** « On garde l'essentiel : la signature et les photos. Le reste, on cale ça par WhatsApp demain. » (ruling King 05/10 — le triage devient une promesse datée, pas une omission)

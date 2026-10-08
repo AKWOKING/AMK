@@ -42,6 +42,16 @@ c'est exactement ce que le client a pris pour un bot.
 
 Trois phrases. Zéro puce. Zéro signature. Chaleureux. C'est le standard.
 
+**Exemption — les jeux de questions structurés (ruling King 08/10).** Le plafond de 2–3 phrases
+régit les relances et les messages de **relation**. Un jeu de questions structuré (logistique,
+brief, collecte de faits) est un **item de travail**, pas un message de chaleur : autre classe.
+**Exempté du plafond** — liste **numérotée**, **pas de puces**, **pas de signature** ; « Bonjour
+Monsieur, » puis la liste, rien d'autre avant ; **pas de note vocale requise** quand le client a
+besoin de relire les questions pour répondre. *(Verbatim King : « Structured question sets
+(logistics, briefs, fact-gathering) are exempt from the 2–3 sentence cap. Numbered list, no
+bullets, no signature. Voice note is not required when the client needs to reference the
+questions when answering. »)* Les puces et la signature restent interdites partout ailleurs.
+
 ---
 
 ## 2 · Quand recommander une note vocale (15–30 s)

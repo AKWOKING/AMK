@@ -179,8 +179,9 @@ votre site » : la source y est implicite (nom de monture) — on ne l'altère p
   image ≤80 Ko ou simple bloc adresse si plus léger ; tap targets ≥44 px.
 - **États erreur :** carte statique indisponible → bloc adresse seul + bouton Maps (dégradation
   propre, jamais page cassée).
-- **[À CONFIRMER — client] :** **jours d'ouverture** (heures connues, jours NON) · point de repère
-  « en face de… » (déjà demandé : `a-completer.md` n°1 — un repère de plus aide le patient qui arrive en taxi) · numéros réseaux.
+- **[À CONFIRMER — client] :** **jours d'ouverture** (heures connues, jours NON) · numéros réseaux
+  (placeholders jusqu'au go-live, §9). **Repère : CLOSED 08/10** — King sur place mercredi : le cabinet est à
+  « Immeuble West Hotel » exactement ; aucune question client.
 
 ## 5 · À PROPOS `/a-propos` (optionnel, léger)
 
@@ -252,4 +253,10 @@ votre site » : la source y est implicite (nom de monture) — on ne l'altère p
 |---|---|
 | Jours/heures · fourchette de prix · taille du stock · photos (logo/devanture/équipe) · nommage | **Questions client Q1–Q5** — `CLIENT-QUESTIONS-2026-10-08.md` (brouillon, King relit et envoie) |
 | Photo hero · photo À propos · bornes exactes par bande · méthode de tag | **Décisions internes, phase build** (ruling) |
-| Repère près de l'adresse · texte des mentions légales · comptes réseaux sociaux (footer/contact) · validation du paragraphe À propos par M. Domche · champs matière/taille/couleur | **Non couverts** par les 5 questions ni par les décisions internes — à ranger par King (voir réponse) |
+| Repère près de l'adresse | **CLOSED (ruling 08/10)** — King sur place mercredi : « Immeuble West Hotel » exactement. Aucune question client. |
+| Texte des mentions légales | **Phase build** — rédigé en interne, le client relit à la livraison |
+| Comptes réseaux sociaux (footer/contact) | **Phase build** — les conditions confient à AMK la création Facebook + TikTok (`CONDITIONS-D-INTERVENTION` l.11, vérifié) ; ils n'existent pas encore : footer en **placeholders**, activés au go-live |
+| Validation du paragraphe À propos | **Phase build** — rédigé en interne, le client approuve à la livraison |
+| Champs matière/taille/couleur | **Phase build, liés au tag d'inventaire** — si le tag se fait, les champs existent ; sinon non |
+
+**Questions client : quatre, pas de sixième** (ruling 08/10).

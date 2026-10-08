@@ -13,7 +13,7 @@ Le modèle multi-variantes de knowledge/HOUSE-KNOWLEDGE-BASE.md §4 attend le mo
 
 | | |
 |---|---|
-| **Variante** | **W1-A** — « Cet opticien exerce depuis 2016. Personne ne le trouvait. » |
+| **Variante** | **W1-A** — « Cet opticien est inscrit à l'ONOC. Personne ne le trouvait. » |
 | **Pourquoi W1** | Le hook le plus fort (vrai, vérifiable, spécifique) · mène avec le différenciant qu'aucun
 concurrent ne peut copier (inscrit ONOC, trouvable) · **ne demande aucune photo** |
 | **Format** | Click-to-WhatsApp (CTWA) · 9:16 · le script W1 (`content/month1/w1/ugc-script.md`) ou la carte

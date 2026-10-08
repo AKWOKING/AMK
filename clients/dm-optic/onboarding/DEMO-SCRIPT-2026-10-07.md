@@ -47,7 +47,7 @@ veut le sentir. S'il est engagé, laisse filer à 20 — ne coupe pas un client 
 
 - **Montrer :** `w1/ugc-script.md` — l'accroche A et le payoff, **lus à voix haute**, 20 secondes.
 - **Dire :** *« Pas de vidéo tant que vous n'avez pas vu les photos. Mais voilà ce que dira la première :
-  “Cet opticien exerce depuis 2016. Personne ne le trouvait.” »*
+  “Cet opticien est inscrit à l'ONOC. Personne ne le trouvait.” »*
 - **Lui demander :** *« Vous laisseriez dire ça de vous ? »* — son oui sur l'accroche = son oui sur tout
   le mois 1.
 - **Ce que ça prouve :** le moteur (hook → preuve → WhatsApp), et que **chaque variante a son message

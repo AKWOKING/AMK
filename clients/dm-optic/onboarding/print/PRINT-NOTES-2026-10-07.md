@@ -1,6 +1,6 @@
 # Notes d'impression — visite du mercredi 07/10/2026
 
-> **⛔ RULING KING 06/10 : AUCUN PRINT — ces notes sont retirées.** Aucune impression pour mercredi ;
+> **⛔ RULING KING 06/10 : AUCUN PRINT — ces notes sont retirées.** Aucune impression (**date : post-acompte, à fixer** — le 07/10 est passé) ;
 > le sac = téléphone + zip + chiffon microfibre (ruling 08/10). Tout ce qui suit reste comme archive.
 >
 > Rulings King du 02/10 : conditions approuvées (deux edits incluss) ×2 · carte approuvée ×2.

@@ -7,7 +7,8 @@ son chemin exact.
 ```
 
 ** RULING KING 06/10, ÉTENDU 06/10 : AUCUN PRINT, RIEN SUR PAPIER — PACK RETIRÉ.** Le sac
-mercredi = **téléphone + zip + chiffon microfibre** (outil photo, pas un document — remis par
+(**séance photo : post-acompte, date à fixer** — le « 07/10 » est passé, la séance n'a pas eu lieu,
+acompte non encaissé) = **téléphone + zip + chiffon microfibre** (outil photo, pas un document — remis par
 ruling King 08/10). Tout papier retiré : proforma ×2, RIB imprimé,
 conditions ×2 backup, **carte ×2** (ruling étendu). Ce fichier reste comme archive.
 
