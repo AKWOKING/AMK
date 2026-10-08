@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Création de site web pour écoles & cliniques au Cameroun | AMK · Douala · Yaoundé · Buea · Limbé</title>
-<meta name="description" content="Création de sites web bilingues FR|EN pour écoles privées, cliniques et laboratoires au Cameroun, Douala, Yaoundé, Buea, Limbé. Prise de rendez-vous sur WhatsApp, référencement local, aperçu gratuit sous 24 h, en ligne en 3 à 5 jours. Bilingual websites for schools & clinics in Cameroon.">
+<title>Création de site web pour écoles & cliniques au Cameroun | AMK – Douala · Yaoundé · Buea · Limbé</title>
+<meta name="description" content="Création de sites web bilingues FR|EN pour écoles privées, cliniques et laboratoires au Cameroun — Douala, Yaoundé, Buea, Limbé. Prise de rendez-vous sur WhatsApp, référencement local, aperçu gratuit sous 24 h, en ligne en 3 à 5 jours. Bilingual websites for schools & clinics in Cameroon.">
 <link rel="canonical" href="https://amk-cm.vercel.app/">
-<meta property="og:title" content="AMK · Web Design for Schools & Clinics in Cameroon">
+<meta property="og:title" content="AMK – Web Design for Schools & Clinics in Cameroon">
 <meta property="og:description" content="Your website, built to be found. Free 24h preview · bilingual EN|FR · live in 3–5 days.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://amk-cm.vercel.app/">
@@ -14,7 +14,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AMK · Bilingual websites for Cameroon's schools & clinics">
+<meta name="twitter:title" content="AMK – Bilingual websites for Cameroon's schools & clinics">
 <meta name="twitter:description" content="Free 24h preview · bilingual EN|FR · WhatsApp-first · live in 3–5 days.">
 <meta name="twitter:image" content="https://amk-cm.vercel.app/img/og-cover.jpg">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -24,7 +24,7 @@
  "@graph": [
   {
    "@type": "LocalBusiness",
-   "name": "AMK · Web Development & Digital Solutions",
+   "name": "AMK – Web Development & Digital Solutions",
    "url": "https://amk-cm.vercel.app",
    "telephone": "+237677789631",
    "email": "akwo.king.dev@gmail.com",
@@ -56,7 +56,7 @@
    ],
    "description": "Création de sites web bilingues FR|EN pour écoles privées, cliniques et laboratoires au Cameroun. Aperçu gratuit sous 24 h, en ligne en 3 à 5 jours.",
    "sameAs": [],
-   "priceRange": "100000 FCFA",
+   "priceRange": "35000-250000 FCFA",
    "currenciesAccepted": "XAF",
    "paymentAccepted": "MTN Mobile Money, Orange Money, espèces",
    "knowsLanguage": [
@@ -84,7 +84,7 @@
      {
       "@type": "Offer",
       "name": "Site web bilingue FR|EN",
-      "description": "Chaque page existe en français et en anglais, pas un widget de traduction.",
+      "description": "Chaque page existe en français et en anglais — pas un widget de traduction.",
       "price": "100000",
       "priceCurrency": "XAF",
       "availability": "https://schema.org/InStock",
@@ -156,7 +156,7 @@
      "name": "Mon personnel n'est pas technique. Peut-il mettre à jour le site ?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Oui, c'est le but. Nous concevons pour du personnel non technique, faisons une formation de 30 minutes, et restons joignables sur WhatsApp. Actualités, photos, événements : votre équipe s'en charge."
+      "text": "Oui — c'est le but. Nous concevons pour du personnel non technique, faisons une formation de 30 minutes, et restons joignables sur WhatsApp. Actualités, photos, événements : votre équipe s'en charge."
      }
     },
     {
@@ -164,7 +164,7 @@
      "name": "Le bilingue (EN|FR) est-il vraiment inclus dans le prix ?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Oui, c'est le standard sur chaque site que nous construisons, pas une option. Une école ou une clinique au Cameroun sert les deux langues ; votre site aussi."
+      "text": "Oui — c'est le standard sur chaque site que nous construisons, pas une option. Une école ou une clinique au Cameroun sert les deux langues ; votre site aussi."
      }
     },
     {
@@ -172,7 +172,7 @@
      "name": "Travaillez-vous vraiment avec les cliniques, ou c'est un simple ajout ?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Les cliniques sont l'une de nos deux niches principales, écoles et cliniques. Le concept de clinique de cette page est en ligne : tarifs FCFA transparents, prise de rendez-vous WhatsApp, EN|FR, pensé patient d'abord."
+      "text": "Les cliniques sont l'une de nos deux niches principales — écoles et cliniques. Le concept de clinique de cette page est en ligne : tarifs FCFA transparents, prise de rendez-vous WhatsApp, EN|FR, pensé patient d'abord."
      }
     },
     {
@@ -188,7 +188,7 @@
      "name": "Que se passe-t-il après le lancement ?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Un mois de support gratuit, l'hébergement suivi, et ensuite, si vous voulez que nous gérons les mises à jour : 15 000 FCFA par mois : deux modifications par mois, le site reste en ligne et sauvegardé, sans engagement, et votre domaine et vos fichiers restent à 100 % à vous."
+      "text": "Un mois de support gratuit, l'hébergement suivi, et ensuite — si vous voulez que nous gérons les mises à jour — 15 000 FCFA par mois : deux modifications par mois, le site reste en ligne et sauvegardé, sans engagement, et votre domaine et vos fichiers restent à 100 % à vous."
      }
     },
     {
@@ -212,7 +212,7 @@
      "name": "Puis-je voir un vrai site avant de décider ?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Oui, six concepts complets sont en ligne sur cette page, ouvrables depuis votre téléphone : trois pour des écoles, et trois pour des cliniques, laboratoires et cabinets de santé. Ils sont construits sur des noms fictifs : nous ne montrons jamais le site d'un client sans son accord écrit."
+      "text": "Oui — six concepts complets sont en ligne sur cette page, ouvrables depuis votre téléphone : trois pour des écoles, et trois pour des cliniques, laboratoires et cabinets de santé. Ils sont construits sur des noms fictifs : nous ne montrons jamais le site d'un client sans son accord écrit."
      }
     },
     {
@@ -220,7 +220,7 @@
      "name": "Mon école ou ma clinique sera-t-elle trouvée sur Google ?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Nous construisons avec la recherche locale en tête, pages rapides, structure propre, deux langues, et la manière dont les parents et les patients cherchent vraiment : « école à Buea », « dentiste à Buea », « école privée à Douala ». Nous vous mettons en position d'être trouvé ; votre réputation fait le reste."
+      "text": "Nous construisons avec la recherche locale en tête — pages rapides, structure propre, deux langues, et la manière dont les parents et les patients cherchent vraiment : « école à Buea », « dentiste à Buea », « école privée à Douala ». Nous vous mettons en position d'être trouvé ; votre réputation fait le reste."
      }
     }
    ]
@@ -228,13 +228,7 @@
  ]
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap">
 <style>
-.skip{position:absolute;left:-9999px;top:0;z-index:200;background:#0B1120;color:#fff;padding:12px 20px;font-weight:700;border-radius:0 0 12px 0}
-.skip:focus{left:0}
-main{display:block}
 :root{
   --navy:#0F172A; --navy2:#1E293B; --navy3:#334155; --navy4:#0B1120;
   --amber:#F59E0B; --amber-l:#FCD34D; --amber-t:#FFFBEB;
@@ -244,10 +238,7 @@ main{display:block}
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-/* Police maison §5 « AMK-DESIGN-SKILLS » : Outfit en titre ET en texte, exactement comme nos pages
-   écoles/cliniques. La chaîne de repli reste identique : si la police ne se charge pas (3G, réseau
-   coupé), la page est EXACTEMENT celle d'aujourd'hui. */
-body{font-family:'Outfit',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 section{padding:84px 0;scroll-margin-top:84px}
@@ -277,7 +268,7 @@ h2{font-size:clamp(28px,4.2vw,42px);font-weight:800;letter-spacing:-.025em;line-
 .f-type{flex:1;border:1.5px solid var(--border);background:#fff;border-radius:99px;padding:12px 10px;font-family:inherit;font-size:14px;font-weight:700;color:var(--slate);cursor:pointer;transition:.15s}
 .f-type.on{border-color:var(--amber);background:var(--amber-t);color:#92400E;box-shadow:0 0 0 3px rgba(245,158,11,.15)}
 
-/* ===== VX voice layer (Tier 0, scripted answers, browser speech, no backend) ===== */
+/* ===== VX voice layer (Tier 0 — scripted answers, browser speech, no backend) ===== */
 .vx-fab{position:fixed;right:18px;bottom:18px;z-index:130;display:flex;align-items:center;gap:9px;
   background:var(--amber);color:#0F172A;border:0;border-radius:99px;padding:13px 18px;
   font-family:inherit;font-size:15px;font-weight:800;cursor:pointer;
@@ -328,13 +319,13 @@ h2{font-size:clamp(28px,4.2vw,42px);font-weight:800;letter-spacing:-.025em;line-
 .vx-fab.pulse{animation:vx-pulse 1.9s ease-out 3}
 @media (prefers-reduced-motion:reduce){.vx-fab.pulse{animation:none}}
 
-/* AMK:SEO-2026-09-21, H1 porteuse du mot-clé (règle §22, facteur « mots-clés en H1 ») */
+/* AMK:SEO-2026-09-21 — H1 porteuse du mot-clé (règle §22, facteur « mots-clés en H1 ») */
 .seo-h1{font-size:clamp(1.05rem,2.6vw,1.45rem);font-weight:600;color:#fff;
   letter-spacing:-.01em;margin:0 0 14px;max-width:34em;line-height:1.35}
 h2.punch{margin:0 0 10px}
 h2.punch em{font-style:normal;color:#FFC24B}
 
-/* AMK:SEO2-2026-09-21, grille de services (vocabulaire du marché) */
+/* AMK:SEO2-2026-09-21 — grille de services (vocabulaire du marché) */
 .svc-grid{display:grid;gap:14px;margin-top:22px}
 @media (min-width:640px){.svc-grid{grid-template-columns:1fr 1fr}}
 @media (min-width:1000px){.svc-grid{grid-template-columns:repeat(3,1fr)}}
@@ -465,11 +456,6 @@ nav.main a:hover{color:var(--amber-l)}
 .wcard:hover .shot img{transform:scale(1.05)}
 .wcard .shot .mini-bar{position:absolute;top:0;left:0;right:0;height:26px;background:rgba(11,17,32,.9);display:flex;align-items:center;gap:5px;padding:0 10px}
 .wcard .shot .mini-bar i{width:7px;height:7px;border-radius:50%;background:var(--navy3)}
-/* les mêmes trois pastilles que le cadre du hero : le motif se répète, sa SIGNATURE aussi
-   (règle de la rime visuelle, vidéo Self-Made Web Designer, 23/09) */
-.mini-bar i:nth-child(1){background:#F87171}
-.mini-bar i:nth-child(2){background:#FBBF24}
-.mini-bar i:nth-child(3){background:#34D399}
 .wcard .body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:8px;flex:1}
 .tag{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#B45309}
 .wcard.clinic .tag{color:#047857}
@@ -534,7 +520,7 @@ details[open] summary::after{transform:rotate(45deg);color:var(--amber)}
 .ap p{font-size:15px;color:#B6C2D6}
 .ap p b{color:#fff}
 .direct{margin-top:36px;padding:24px;border:1px solid var(--navy3);border-radius:16px;background:rgba(30,41,59,.4)}
-.direct h3{font-size:15px;margin-bottom:8px}
+.direct h4{font-size:15px;margin-bottom:8px}
 .direct p{font-size:15px;margin:4px 0;color:#CBD5E1}
 .direct a{color:var(--amber-l);font-weight:700}
 .form-card{background:#fff;color:var(--ink);border-radius:20px;padding:32px;box-shadow:0 40px 80px rgba(0,0,0,.4)}
@@ -555,9 +541,7 @@ footer{background:var(--navy);color:#94A3B8;padding:70px 0 30px;border-top:1px s
 .f-brand{display:flex;align-items:center;gap:11px;margin-bottom:16px}
 .f-brand svg{width:38px;height:38px}
 .f-brand .t{color:#fff;font-weight:800;font-size:17px}
-.f-status{margin:10px 0 0;font-size:13.5px;color:var(--green,#0B7A3E);font-weight:600;min-height:0}
-.f-status.err{color:#B3261E}
-.f-grid h3{color:#fff;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px}
+.f-grid h5{color:#fff;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px}
 .f-grid a{display:block;padding:5px 0;font-size:14.5px;transition:.15s}
 .f-grid a:hover{color:var(--amber-l)}
 .f-bottom{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:13px;padding-top:24px;border-top:1px solid var(--navy3)}
@@ -611,50 +595,47 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
 </style>
 </head>
 <body>
-<a class="skip" href="#contenu" data-en="Skip to content" data-fr="Aller au contenu">Aller au contenu</a>
 <div id="progress"></div>
 
 <header id="hdr">
   <div class="wrap h-in">
     <a class="brand" href="#top" aria-label="AMK">
-      <svg aria-hidden="true" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1E293B"/><circle cx="32" cy="30" r="17" fill="none" stroke="#F59E0B" stroke-width="2.4"/><path d="M32 16v28M32 30L18 44M32 30l14 14" stroke="#FCD34D" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="16" r="3" fill="#F59E0B"/><circle cx="18" cy="44" r="3" fill="#F59E0B"/><circle cx="46" cy="44" r="3" fill="#F59E0B"/></svg>
+      <svg viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1E293B"/><circle cx="32" cy="30" r="17" fill="none" stroke="#F59E0B" stroke-width="2.4"/><path d="M32 16v28M32 30L18 44M32 30l14 14" stroke="#FCD34D" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="16" r="3" fill="#F59E0B"/><circle cx="18" cy="44" r="3" fill="#F59E0B"/><circle cx="46" cy="44" r="3" fill="#F59E0B"/></svg>
       <span class="t">AMK<small data-en="Web Development & Digital Solutions" data-fr="Développement Web & Solutions Digitales">Web Development & Digital Solutions</small></span>
     </a>
     <nav class="main">
       <a href="#work" data-en="Work" data-fr="Réalisations">Work</a>
-        <a href="creation-site-web-ecole-cameroun.html" data-en="Website for schools" data-fr="Site web pour école">Site web pour école</a>
-        <a href="creation-site-web-clinique-cameroun.html" data-en="Website for clinics" data-fr="Site web pour clinique">Site web pour clinique</a>
       <a href="#process" data-en="Process" data-fr="Processus">Process</a>
-      <a href="#pricing" data-en="Pricing" data-fr="Tarif">Pricing</a>
+      <a href="#services-plus" data-en="Services" data-fr="Services">Services</a>
+        <a href="#pricing" data-en="Pricing" data-fr="Tarif">Pricing</a>
       <a href="#faq" data-en="FAQ" data-fr="FAQ">FAQ</a>
     </nav>
     <div class="lang-sw">
-      <button id="btn-en" class="on" aria-pressed="true" onclick="setLang('en')">EN</button>
-      <button id="btn-fr" aria-pressed="false" onclick="setLang('fr')">FR</button>
+      <button id="btn-en" class="on" onclick="setLang('en')">EN</button>
+      <button id="btn-fr" onclick="setLang('fr')">FR</button>
     </div>
     <a href="#audit" class="btn btn-amber h-cta" data-en="Free 24h preview" data-fr="Aperçu gratuit 24h">Free 24h preview</a>
-    <button id="m-btn" aria-label="Menu" aria-controls="m-nav" aria-expanded="false" onclick="openM()"><span></span><span></span><span></span></button>
+    <button id="m-btn" aria-label="Menu" onclick="document.getElementById('m-nav').classList.add('open')"><span></span><span></span><span></span></button>
   </div>
 </header>
 <div class="m-nav" id="m-nav">
-  <button class="m-close" aria-label="Close menu" onclick="closeM()">×</button>
+  <button class="m-close" aria-label="Close menu" onclick="document.getElementById('m-nav').classList.remove('open')">×</button>
   <a href="#work" onclick="closeM()" data-en="Work" data-fr="Réalisations">Work</a>
   <a href="#process" onclick="closeM()" data-en="Process" data-fr="Processus">Process</a>
   <a href="#pricing" onclick="closeM()" data-en="Pricing" data-fr="Tarif">Pricing</a>
   <a href="#faq" onclick="closeM()" data-en="FAQ" data-fr="FAQ">FAQ</a>
   <a href="#audit" class="btn btn-amber" onclick="closeM()" data-en="Get my free 24h preview" data-fr="Recevoir mon aperçu gratuit 24h">Get my free 24h preview</a>
   <div class="lang-sw" style="align-self:center;margin-top:20px">
-    <button id="btn-en-m" class="on" aria-pressed="true" onclick="setLang('en')">EN</button>
-    <button id="btn-fr-m" aria-pressed="false" onclick="setLang('fr')">FR</button>
+    <button id="btn-en-m" class="on" onclick="setLang('en')">EN</button>
+    <button id="btn-fr-m" onclick="setLang('fr')">FR</button>
   </div>
 </div>
 
-<main id="contenu">
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="wrap">
     <div>
-      <span class="kicker" data-en="Web design · schools & clinics · Cameroon" data-fr="Développement web · écoles & cliniques · Cameroun">Web design · schools & clinics · Cameroon</span>
+      <span class="kicker" data-en="Web design — schools & clinics · Cameroon" data-fr="Développement web — écoles & cliniques · Cameroun">Web design — schools & clinics · Cameroon</span>
       <!-- AMK:SEO-2026-09-21 -->
       <h1 class="seo-h1"><span data-en="Website design for schools and clinics in Cameroon" data-fr="Création de sites web pour écoles et cliniques au Cameroun">Création de sites web pour écoles et cliniques au Cameroun</span></h1>
       <div class="niche-sw" role="tablist" aria-label="School or clinic">
@@ -663,12 +644,12 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
       </div>
       <div class="h-panels">
         <div class="h-panel active" data-niche="school">
-          <h2 class="punch"><span data-en="Your school is being" data-fr="Votre école est">Your school is being</span> <em data-en="judged on Google" data-fr="jugée sur Google">judged on Google</em> <span data-en=", before parents call." data-fr=", avant que les parents n'appellent.">, before parents call.</span></h2>
-          <p class="sub" data-en="Parents search before they visit. We design modern, bilingual, mobile-first websites for private schools in Cameroon, so when they search, they find a school that looks as excellent as it really is." data-fr="Les parents cherchent avant de visiter. Nous concevons des sites modernes, bilingues et pensés mobile d'abord pour les écoles privées du Cameroun, afin qu'en cherchant, ils trouvent une école qui paraît aussi excellente qu'elle l'est vraiment.">Parents search before they visit. We design modern, bilingual, mobile-first websites for private schools in Cameroon, so when they search, they find a school that looks as excellent as it really is.</p>
+          <h2 class="punch"><span data-en="Your school is being" data-fr="Votre école est">Your school is being</span> <em data-en="judged on Google" data-fr="jugée sur Google">judged on Google</em> <span data-en="— before parents call." data-fr="— avant que les parents n'appellent.">— before parents call.</span></h2>
+          <p class="sub" data-en="Parents search before they visit. We design modern, bilingual, mobile-first websites for private schools in Cameroon — so when they search, they find a school that looks as excellent as it really is." data-fr="Les parents cherchent avant de visiter. Nous concevons des sites modernes, bilingues et pensés mobile d'abord pour les écoles privées du Cameroun — afin qu'en cherchant, ils trouvent une école qui paraît aussi excellente qu'elle l'est vraiment.">Parents search before they visit. We design modern, bilingual, mobile-first websites for private schools in Cameroon — so when they search, they find a school that looks as excellent as it really is.</p>
         </div>
         <div class="h-panel" data-niche="clinic">
-          <h2 class="punch"><span data-en="Your next patient is" data-fr="Votre prochain patient">Your next patient is</span> <em data-en="choosing" data-fr="choisit">choosing</em> <span data-en=", and they're searching right now." data-fr=", et il cherche en ce moment.">, and they're searching right now.</span></h2>
-          <p class="sub" data-en="Patients search “dentist in Buea” or “clinic in Douala”. If they can't find you, or land on a Facebook page, they stop at your competitor's door. We build clinic sites that put you first: two languages, clear FCFA pricing, booking on WhatsApp." data-fr="Les patients cherchent « dentiste à Buea » ou « clinique à Douala ». S'ils ne vous trouvent pas, ou tombent sur une page Facebook, ils s'arrêtent chez votre concurrent. Nous construisons des sites de clinique qui vous placent en premier : deux langues, tarifs FCFA clairs, rendez-vous sur WhatsApp.">Patients search “dentist in Buea” or “clinic in Douala”. If they can't find you, or land on a Facebook page, they stop at your competitor's door. We build clinic sites that put you first: two languages, clear FCFA pricing, booking on WhatsApp.</p>
+          <h2 class="punch"><span data-en="Your next patient is" data-fr="Votre prochain patient">Your next patient is</span> <em data-en="choosing" data-fr="choisit">choosing</em> <span data-en="— and they're searching right now." data-fr="— et il cherche en ce moment.">— and they're searching right now.</span></h2>
+          <p class="sub" data-en="Patients search “dentist in Buea” or “clinic in Douala”. If they can't find you — or land on a Facebook page — they stop at your competitor's door. We build clinic sites that put you first: two languages, clear FCFA pricing, booking on WhatsApp." data-fr="Les patients cherchent « dentiste à Buea » ou « clinique à Douala ». S'ils ne vous trouvent pas — ou tombent sur une page Facebook — ils s'arrêtent chez votre concurrent. Nous construisons des sites de clinique qui vous placent en premier : deux langues, tarifs FCFA clairs, rendez-vous sur WhatsApp.">Patients search “dentist in Buea” or “clinic in Douala”. If they can't find you — or land on a Facebook page — they stop at your competitor's door. We build clinic sites that put you first: two languages, clear FCFA pricing, booking on WhatsApp.</p>
         </div>
       </div>
       <div class="h-ctas">
@@ -720,13 +701,13 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
   <div class="wrap">
     <div class="center rv">
       <span class="kicker" data-en="The silent leak" data-fr="La fuite silencieuse">The silent leak</span>
-      <h2 data-en="Three ways schools & clinics lose customers, without knowing" data-fr="Trois façons dont écoles et cliniques perdent des clients, sans le savoir">Three ways schools & clinics lose customers, without knowing</h2>
-      <p class="sub" data-en="Broken, invisible on mobile, or missing from Google, any one of them sends parents and patients to the institution next door." data-fr="Cassé, invisible sur mobile, ou absent de Google, chacune de ces failles envoie les parents et les patients à l'établissement d'à côté.">Broken, invisible on mobile, or missing from Google, any one of them sends parents and patients to the institution next door.</p>
+      <h2 data-en="Three ways schools & clinics lose customers — without knowing" data-fr="Trois façons dont écoles et cliniques perdent des clients — sans le savoir">Three ways schools & clinics lose customers — without knowing</h2>
+      <p class="sub" data-en="Broken, invisible on mobile, or missing from Google — any one of them sends parents and patients to the institution next door." data-fr="Cassé, invisible sur mobile, ou absent de Google — chacune de ces failles envoie les parents et les patients à l'établissement d'à côté.">Broken, invisible on mobile, or missing from Google — any one of them sends parents and patients to the institution next door.</p>
     </div>
     <div class="cards3">
-      <div class="pcard rv"><div class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2"><path d="M12 9v4m0 4h.01M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg></div><h3 data-en="The broken link" data-fr="Le lien cassé">The broken link</h3><p data-en="Expired domain, error page, dead phone number. Every parent or patient who stumbles on it keeps the address of the school or clinic next door." data-fr="Domaine expiré, page d'erreur, numéro injoignable. Chaque parent ou patient qui tombe dessus retient l'adresse de l'école ou de la clinique d'à côté.">Expired domain, error page, dead phone number. Every parent or patient who stumbles on it keeps the address of the school or clinic next door.</p></div>
-      <div class="pcard rv" data-d="100"><div class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div><h3 data-en="The phone-size problem" data-fr="Le problème du téléphone">The phone-size problem</h3><p data-en="Your visitors scroll on phones, at night, on 3G. If your site doesn't load there in seconds, you're not in the conversation." data-fr="Vos visiteurs consultent sur téléphone, le soir, en 3G. Si votre site ne s'y charge pas en quelques secondes, vous n'êtes pas dans la conversation.">Your visitors scroll on phones, at night, on 3G. If your site doesn't load there in seconds, you're not in the conversation.</p></div>
-      <div class="pcard rv" data-d="200"><div class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M8 11h6"/></svg></div><h3 data-en="The Google invisibility" data-fr="L'invisibilité sur Google">The Google invisibility</h3><p data-en="Slow, hard to read, one language? Google ranks the school or clinic with the better site first, even when yours is better." data-fr="Lent, difficile à lire, une seule langue ? Google classe d'abord l'école ou la clinique au meilleur site, même quand la vôtre est meilleure.">Slow, hard to read, one language? Google ranks the school or clinic with the better site first, even when yours is better.</p></div>
+      <div class="pcard rv"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2"><path d="M12 9v4m0 4h.01M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg></div><h3 data-en="The broken link" data-fr="Le lien cassé">The broken link</h3><p data-en="Expired domain, error page, dead phone number. Every parent or patient who stumbles on it keeps the address of the school or clinic next door." data-fr="Domaine expiré, page d'erreur, numéro injoignable. Chaque parent ou patient qui tombe dessus retient l'adresse de l'école ou de la clinique d'à côté.">Expired domain, error page, dead phone number. Every parent or patient who stumbles on it keeps the address of the school or clinic next door.</p></div>
+      <div class="pcard rv" data-d="100"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div><h3 data-en="The phone-size problem" data-fr="Le problème du téléphone">The phone-size problem</h3><p data-en="Your visitors scroll on phones, at night, on 3G. If your site doesn't load there in seconds, you're not in the conversation." data-fr="Vos visiteurs consultent sur téléphone, le soir, en 3G. Si votre site ne s'y charge pas en quelques secondes, vous n'êtes pas dans la conversation.">Your visitors scroll on phones, at night, on 3G. If your site doesn't load there in seconds, you're not in the conversation.</p></div>
+      <div class="pcard rv" data-d="200"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M8 11h6"/></svg></div><h3 data-en="The Google invisibility" data-fr="L'invisibilité sur Google">The Google invisibility</h3><p data-en="Slow, hard to read, one language? Google ranks the school or clinic with the better site first — even when yours is better." data-fr="Lent, difficile à lire, une seule langue ? Google classe d'abord l'école ou la clinique au meilleur site — même quand la vôtre est meilleure.">Slow, hard to read, one language? Google ranks the school or clinic with the better site first — even when yours is better.</p></div>
     </div>
     <div class="cmp rv">
       <div class="cmp-head" data-en="An old-school website vs. what we build" data-fr="Un site à l'ancienne vs. ce que nous construisons">An old-school website vs. what we build</div>
@@ -741,7 +722,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
 <!-- MID CTA -->
 <div class="midcta">
   <div class="wrap">
-    <h3 class="rv" data-en="Stop losing them. See your homepage concept in 24 hours, free." data-fr="Arrêtez de les perdre. Voyez le concept de votre page d'accueil en 24 heures, gratuit.">Stop losing them. See your homepage concept in 24 hours, free.</h3>
+    <h3 class="rv" data-en="Stop losing them. See your homepage concept in 24 hours — free." data-fr="Arrêtez de les perdre. Voyez le concept de votre page d'accueil en 24 heures — gratuit.">Stop losing them. See your homepage concept in 24 hours — free.</h3>
     <a href="#audit" class="btn rv" data-d="120" data-en="Get my free preview →" data-fr="Recevoir mon aperçu gratuit →">Get my free preview →</a>
   </div>
 </div>
@@ -752,7 +733,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
     <div class="center rv">
       <span class="kicker" data-en="Proof, honestly" data-fr="Les preuves, honnêtement">Proof, honestly</span>
       <h2 data-en="Our proof is a website you can open." data-fr="Notre preuve, c'est un site que vous pouvez ouvrir.">Our proof is a website you can open.</h2>
-      <p class="sub" data-en="Four complete concepts, live right now, three for schools, one for clinics. Open any of them: every name, logo and stat is a placeholder we replace with yours in 24 hours, free." data-fr="Quatre concepts complets, en ligne dès maintenant, trois pour les écoles, un pour les cliniques. Ouvrez celui de votre choix : chaque nom, logo et chiffre est un emplacement que nous remplaçons par les vôtres en 24 heures, gratuitement.">Four complete concepts, live right now, three for schools, one for clinics. Open any of them: every name, logo and stat is a placeholder we replace with yours in 24 hours, free.</p>
+      <p class="sub" data-en="Four complete concepts, live right now — three for schools, one for clinics. Open any of them: every name, logo and stat is a placeholder we replace with yours in 24 hours, free." data-fr="Quatre concepts complets, en ligne dès maintenant — trois pour les écoles, un pour les cliniques. Ouvrez celui de votre choix : chaque nom, logo et chiffre est un emplacement que nous remplaçons par les vôtres en 24 heures, gratuitement.">Four complete concepts, live right now — three for schools, one for clinics. Open any of them: every name, logo and stat is a placeholder we replace with yours in 24 hours, free.</p>
     </div>
     <div class="row-label rv"><span class="dot"></span><span data-en="For schools" data-fr="Pour les écoles">For schools</span></div>
     <div class="w-grid">
@@ -762,7 +743,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
           <span class="tag" data-en="Concept 01 · Complete" data-fr="Concept 01 · Terminé">Concept 01 · Complete</span>
           <h3 data-en="Bilingual Academy Concept" data-fr="Concept Académie Bilingue">Bilingual Academy Concept</h3>
           <span class="loc" data-en="Template · any school, any city" data-fr="Modèle · toute école, toute ville">Template · any school, any city</span>
-          <p data-en="A complete dual-language academy homepage, open-house funnel, parent quick-hub, curriculum tabs, admissions steps, SEO-ready schema. We replace the placeholders with your school in 24 hours, free." data-fr="Une page d'accueil d'académie bilingue complète, entonnoir portes ouvertes, centre rapide parents, onglets programme, étapes d'admission, schéma SEO prêt. Nous remplaçons les emplacements par votre école en 24 heures, gratuitement.">A complete dual-language academy homepage, open-house funnel, parent quick-hub, curriculum tabs, admissions steps, SEO-ready schema. We replace the placeholders with your school in 24 hours, free.</p>
+          <p data-en="A complete dual-language academy homepage — open-house funnel, parent quick-hub, curriculum tabs, admissions steps, SEO-ready schema. We replace the placeholders with your school in 24 hours, free." data-fr="Une page d'accueil d'académie bilingue complète — entonnoir portes ouvertes, centre rapide parents, onglets programme, étapes d'admission, schéma SEO prêt. Nous remplaçons les emplacements par votre école en 24 heures, gratuitement.">A complete dual-language academy homepage — open-house funnel, parent quick-hub, curriculum tabs, admissions steps, SEO-ready schema. We replace the placeholders with your school in 24 hours, free.</p>
           <a class="btn btn-amber" href="sample-school.html" data-en="Open the concept site ↗" data-fr="Ouvrir le site concept ↗">Open the concept site ↗</a>
         </div>
       </div>
@@ -772,7 +753,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
           <span class="tag" data-en="Concept 02 · Complete" data-fr="Concept 02 · Terminé">Concept 02 · Complete</span>
           <h3 data-en="Nursery & Primary Concept" data-fr="Concept Maternelle & Primaire">Nursery & Primary Concept</h3>
           <span class="loc" data-en="Template · ages 2–11" data-fr="Modèle · 2–11 ans">Template · ages 2–11</span>
-          <p data-en="A warm, playful homepage for nursery & primary schools, age-group classrooms, parent quick-hub, and an admissions form that speaks JSON to your backend. Same promise: 24 hours, free." data-fr="Une page d'accueil chaleureuse et joyeuse pour maternelles et primaires, classes par âge, centre rapide parents, et un formulaire d'admission qui parle JSON à votre backend. Même promesse : 24 heures, gratuitement.">A warm, playful homepage for nursery & primary schools, age-group classrooms, parent quick-hub, and an admissions form that speaks JSON to your backend. Same promise: 24 hours, free.</p>
+          <p data-en="A warm, playful homepage for nursery & primary schools — age-group classrooms, parent quick-hub, and an admissions form that speaks JSON to your backend. Same promise: 24 hours, free." data-fr="Une page d'accueil chaleureuse et joyeuse pour maternelles et primaires — classes par âge, centre rapide parents, et un formulaire d'admission qui parle JSON à votre backend. Même promesse : 24 heures, gratuitement.">A warm, playful homepage for nursery & primary schools — age-group classrooms, parent quick-hub, and an admissions form that speaks JSON to your backend. Same promise: 24 hours, free.</p>
           <a class="btn btn-amber" href="sample-nursery.html" data-en="Open the concept site ↗" data-fr="Ouvrir le site concept ↗">Open the concept site ↗</a>
         </div>
       </div>
@@ -782,7 +763,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
           <span class="tag" data-en="Concept 03 · Complete" data-fr="Concept 03 · Terminé">Concept 03 · Complete</span>
           <h3 data-en="Secondary School Concept" data-fr="Concept Lycée (Secondaire)">Secondary School Concept</h3>
           <span class="loc" data-en="Template · grades 6–12" data-fr="Modèle · 6e–12e années">Template · grades 6–12</span>
-          <p data-en="A Cameroon-built homepage for private secondary colleges, GCE Ordinary and Advanced Level programmes, day and boarding, transparent FCFA fees, student-life gallery and admissions by WhatsApp in English and French. Same promise: 24 hours, free." data-fr="Une page d'accueil conçue pour le Cameroun et les collèges secondaires privés, programmes GCE Ordinary et Advanced Level, externat et internat, frais en FCFA transparents, galerie de vie scolaire et inscriptions par WhatsApp en anglais et en français. Même promesse : 24 heures, gratuitement.">A Cameroon-built homepage for private secondary colleges, GCE Ordinary and Advanced Level programmes, day and boarding, transparent FCFA fees, student-life gallery and admissions by WhatsApp in English and French. Same promise: 24 hours, free.</p>
+          <p data-en="A Cameroon-built homepage for private secondary colleges — GCE Ordinary and Advanced Level programmes, day and boarding, transparent FCFA fees, student-life gallery and admissions by WhatsApp in English and French. Same promise: 24 hours, free." data-fr="Une page d'accueil conçue pour le Cameroun et les collèges secondaires privés — programmes GCE Ordinary et Advanced Level, externat et internat, frais en FCFA transparents, galerie de vie scolaire et inscriptions par WhatsApp en anglais et en français. Même promesse : 24 heures, gratuitement.">A Cameroon-built homepage for private secondary colleges — GCE Ordinary and Advanced Level programmes, day and boarding, transparent FCFA fees, student-life gallery and admissions by WhatsApp in English and French. Same promise: 24 hours, free.</p>
           <a class="btn btn-amber" href="sample-secondary.html" data-en="Open the concept site ↗" data-fr="Ouvrir le site concept ↗">Open the concept site ↗</a>
         </div>
       </div>
@@ -790,12 +771,12 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
     <div class="row-label clinic rv"><span class="dot"></span><span data-en="For clinics" data-fr="Pour les cliniques">For clinics</span></div>
     <div class="w-grid two">
       <div class="wcard clinic rv">
-        <div class="shot"><div class="mini-bar"><i></i><i></i><i></i></div><img src="img/clinic.png" alt="Clinic &amp; Laboratory concept, Bonabéri Medical Centre" loading="lazy"></div>
+        <div class="shot"><div class="mini-bar"><i></i><i></i><i></i></div><img src="img/clinic.png" alt="Clinic &amp; Laboratory concept — Bonabéri Medical Centre" loading="lazy"></div>
         <div class="body">
           <span class="tag" data-en="Concept 04 · Complete" data-fr="Concept 04 · Terminé">Concept 04 · Complete</span>
           <h3 data-en="Clinic & Laboratory Concept" data-fr="Concept Clinique & Laboratoire">Clinic & Laboratory Concept</h3>
           <span class="loc" data-en="Template · any clinic or lab, any town" data-fr="Modèle · toute clinique ou laboratoire, toute ville">Template · any clinic or lab, any town</span>
-          <p data-en="A patient-first clinic and laboratory homepage, transparent FCFA pricing, six-service bento, same-day lab, maternity scans, emergency line and WhatsApp booking in English and French. Same promise: we replace the placeholders with your clinic in 24 hours, free." data-fr="Une page d'accueil de clinique et laboratoire pensée patient d'abord, tarifs FCFA transparents, six services en bento, laboratoire le jour même, échographies, ligne d'urgence et rendez-vous WhatsApp en anglais et en français. Même promesse : nous remplaçons les emplacements par votre clinique en 24 heures, gratuitement.">A patient-first clinic and laboratory homepage, transparent FCFA pricing, six-service bento, same-day lab, maternity scans, emergency line and WhatsApp booking in English and French. Same promise: we replace the placeholders with your clinic in 24 hours, free.</p>
+          <p data-en="A patient-first clinic and laboratory homepage — transparent FCFA pricing, six-service bento, same-day lab, maternity scans, emergency line and WhatsApp booking in English and French. Same promise: we replace the placeholders with your clinic in 24 hours, free." data-fr="Une page d'accueil de clinique et laboratoire pensée patient d'abord — tarifs FCFA transparents, six services en bento, laboratoire le jour même, échographies, ligne d'urgence et rendez-vous WhatsApp en anglais et en français. Même promesse : nous remplaçons les emplacements par votre clinique en 24 heures, gratuitement.">A patient-first clinic and laboratory homepage — transparent FCFA pricing, six-service bento, same-day lab, maternity scans, emergency line and WhatsApp booking in English and French. Same promise: we replace the placeholders with your clinic in 24 hours, free.</p>
           <a class="btn btn-amber" href="clinic-bonaberi.html" data-en="Open the concept site ↗" data-fr="Ouvrir le site concept ↗">Open the concept site ↗</a>
         </div>
       </div>
@@ -805,7 +786,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
           <span class="tag" data-en="Concept 05 · Complete" data-fr="Concept 05 · Complet">Concept 05 · Complete</span>
           <h3 data-en="Polyclinic Concept" data-fr="Concept polyclinique">Polyclinic Concept</h3>
           <span class="loc" data-en="Template · multi-specialty · any city" data-fr="Modèle · multi-spécialité · toute ville">Template · multi-specialty · any city</span>
-          <p data-en="A multi-specialty polyclinic homepage: every specialist’s days and hours, a specialty finder, and an appointment that lands on your WhatsApp. Fictional name, we put yours in within 24 hours, free." data-fr="Une page d’accueil de polyclinique multi-spécialités : les jours et heures de chaque spécialiste, un sélecteur de spécialité, et un rendez-vous qui arrive sur votre WhatsApp. Nom fictif, le vôtre prend sa place en 24 heures, gratuitement.">A multi-specialty polyclinic homepage: every specialist’s days and hours, a specialty finder, and an appointment that lands on your WhatsApp. Fictional name, we put yours in within 24 hours, free.</p>
+          <p data-en="A multi-specialty polyclinic homepage: every specialist’s days and hours, a specialty finder, and an appointment that lands on your WhatsApp. Fictional name — we put yours in within 24 hours, free." data-fr="Une page d’accueil de polyclinique multi-spécialités : les jours et heures de chaque spécialiste, un sélecteur de spécialité, et un rendez-vous qui arrive sur votre WhatsApp. Nom fictif — le vôtre prend sa place en 24 heures, gratuitement.">A multi-specialty polyclinic homepage: every specialist’s days and hours, a specialty finder, and an appointment that lands on your WhatsApp. Fictional name — we put yours in within 24 hours, free.</p>
           <a class="btn btn-amber" href="sample-polyclinic.html" data-en="Open the concept site ↗" data-fr="Ouvrir le site concept ↗">Open the concept site ↗</a>
         </div>
       </div>
@@ -815,14 +796,14 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
           <span class="tag" data-en="Concept 06 · Complete" data-fr="Concept 06 · Complet">Concept 06 · Complete</span>
           <h3 data-en="Maternity Clinic Concept" data-fr="Concept clinique & maternité">Maternity Clinic Concept</h3>
           <span class="loc" data-en="Template · mother & child · any city" data-fr="Modèle · mère & enfant · toute ville">Template · mother & child · any city</span>
-          <p data-en="A mother-and-child clinic homepage: pregnancy follow-up, maternity ward, surgery, a calm, discreet tone, free care and repairs, and booking on WhatsApp. Fictional name; your clinic’s goes in its place." data-fr="Une page d’accueil de clinique mère-enfant : suivi de grossesse, maternité, chirurgie, un ton calme et discret, l’entretien gratuit, et la prise de rendez-vous sur WhatsApp. Nom fictif ; celui de votre clinique prend sa place.">A mother-and-child clinic homepage: pregnancy follow-up, maternity ward, surgery, a calm, discreet tone, free care and repairs, and booking on WhatsApp. Fictional name; your clinic’s goes in its place.</p>
+          <p data-en="A mother-and-child clinic homepage: pregnancy follow-up, maternity ward, surgery — a calm, discreet tone, free care and repairs, and booking on WhatsApp. Fictional name; your clinic’s goes in its place." data-fr="Une page d’accueil de clinique mère-enfant : suivi de grossesse, maternité, chirurgie — un ton calme et discret, l’entretien gratuit, et la prise de rendez-vous sur WhatsApp. Nom fictif ; celui de votre clinique prend sa place.">A mother-and-child clinic homepage: pregnancy follow-up, maternity ward, surgery — a calm, discreet tone, free care and repairs, and booking on WhatsApp. Fictional name; your clinic’s goes in its place.</p>
           <a class="btn btn-amber" href="sample-maternity.html" data-en="Open the concept site ↗" data-fr="Ouvrir le site concept ↗">Open the concept site ↗</a>
         </div>
       </div>
       <div class="wcard ghost rv" data-d="120">
         <div class="plus">＋</div>
         <h3 data-en="Your clinic here" data-fr="Votre clinique ici">Your clinic here</h3>
-        <p data-en="The next concept slot is yours, free 24h preview, nothing owed until you approve." data-fr="La prochaine place concept est à vous, aperçu gratuit en 24h, rien n'est dû avant votre validation.">The next concept slot is yours, free 24h preview, nothing owed until you approve.</p>
+        <p data-en="The next concept slot is yours — free 24h preview, nothing owed until you approve." data-fr="La prochaine place concept est à vous — aperçu gratuit en 24h, rien n'est dû avant votre validation.">The next concept slot is yours — free 24h preview, nothing owed until you approve.</p>
         <a class="btn btn-amber" href="#audit" data-en="Claim it on WhatsApp →" data-fr="Réservez-la sur WhatsApp →">Claim it on WhatsApp →</a>
       </div>
     </div>
@@ -837,10 +818,10 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
       <h2 data-en="Everything a school or clinic needs. Nothing it doesn't." data-fr="Tout ce qu'une école ou une clinique a besoin. Rien de superflu.">Everything a school or clinic needs. Nothing it doesn't.</h2>
     </div>
     <div class="svc-grid">
-      <div class="svc rv"><div class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FCD34D" stroke-width="2"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3zM12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></div><div><h3 data-en="Custom website & branding" data-fr="Site web sur mesure & identité">Custom website & branding</h3><p data-en="Designed around your logo, your colors, your story, and built to be found for “school in Buea”, “dentist in Buea” or “école privée à Douala”. Fast on 3G, clean structure Google rewards." data-fr="Conçu autour de votre logo, vos couleurs, votre histoire, et pensé pour être trouvé sur « école à Buea », « dentiste à Buea » ou « école privée à Douala ». Rapide en 3G, structure propre que Google récompense.">Designed around your logo, your colors, your story, and built to be found for “school in Buea”, “dentist in Buea” or “école privée à Douala”. Fast on 3G, clean structure Google rewards.</p></div></div>
-      <div class="svc rv" data-d="80"><div class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FCD34D" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.9 5.7 3.9 9S14.5 18.4 12 21c-2.5-2.6-3.9-5.7-3.9-9S9.5 5.6 12 3z"/></svg></div><div><h3 data-en="Bilingual EN|FR, standard, included" data-fr="Bilingue EN|FR, standard, inclus">Bilingual EN|FR, standard, included</h3><p data-en="Cameroon is a bilingual country, so is your website. Every page in both languages, one click. No upsell, ever." data-fr="Le Cameroun est bilingue, votre site aussi. Chaque page dans les deux langues, un clic. Jamais d'option payante.">Cameroon is a bilingual country, so is your website. Every page in both languages, one click. No upsell, ever.</p></div></div>
-      <div class="svc rv" data-d="160"><div class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FCD34D" stroke-width="2"><path d="M21 11.5a8.5 8.5 0 01-8.5 8.5c-1.6 0-3.1-.4-4.4-1.2L3 20l1.2-5.1A8.5 8.5 0 1121 11.5z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/></svg></div><div><h3 data-en="WhatsApp-first: booking that works" data-fr="WhatsApp d'abord : une prise de rendez-vous qui fonctionne">WhatsApp-first: booking that works</h3><p data-en="Every button on every screen routes to your WhatsApp, admissions, appointments, questions. The channel your visitors already live in." data-fr="Chaque bouton de chaque écran mène à votre WhatsApp, admissions, rendez-vous, questions. Le canal où vos visiteurs vivent déjà.">Every button on every screen routes to your WhatsApp, admissions, appointments, questions. The channel your visitors already live in.</p></div></div>
-      <div class="svc rv" data-d="240"><div class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FCD34D" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div><div><h3 data-en="Domain, hosting & training" data-fr="Domaine, hébergement & formation">Domain, hosting & training</h3><p data-en="Secure SSL hosting, 99.9% uptime, 30-minute staff training, and WhatsApp support when you need us." data-fr="Hébergement sécurisé SSL, disponibilité 99,9 %, formation du personnel en 30 min, et support WhatsApp quand il faut.">Secure SSL hosting, 99.9% uptime, 30-minute staff training, and WhatsApp support when you need us.</p></div></div>
+      <div class="svc rv"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FCD34D" stroke-width="2"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3zM12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></div><div><h3 data-en="Custom website & branding" data-fr="Site web sur mesure & identité">Custom website & branding</h3><p data-en="Designed around your logo, your colors, your story — and built to be found for “school in Buea”, “dentist in Buea” or “école privée à Douala”. Fast on 3G, clean structure Google rewards." data-fr="Conçu autour de votre logo, vos couleurs, votre histoire — et pensé pour être trouvé sur « école à Buea », « dentiste à Buea » ou « école privée à Douala ». Rapide en 3G, structure propre que Google récompense.">Designed around your logo, your colors, your story — and built to be found for “school in Buea”, “dentist in Buea” or “école privée à Douala”. Fast on 3G, clean structure Google rewards.</p></div></div>
+      <div class="svc rv" data-d="80"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FCD34D" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.9 5.7 3.9 9S14.5 18.4 12 21c-2.5-2.6-3.9-5.7-3.9-9S9.5 5.6 12 3z"/></svg></div><div><h3 data-en="Bilingual EN|FR — standard, included" data-fr="Bilingue EN|FR — standard, inclus">Bilingual EN|FR — standard, included</h3><p data-en="Cameroon is a bilingual country, so is your website. Every page in both languages, one click. No upsell, ever." data-fr="Le Cameroun est bilingue, votre site aussi. Chaque page dans les deux langues, un clic. Jamais d'option payante.">Cameroon is a bilingual country, so is your website. Every page in both languages, one click. No upsell, ever.</p></div></div>
+      <div class="svc rv" data-d="160"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FCD34D" stroke-width="2"><path d="M21 11.5a8.5 8.5 0 01-8.5 8.5c-1.6 0-3.1-.4-4.4-1.2L3 20l1.2-5.1A8.5 8.5 0 1121 11.5z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/></svg></div><div><h3 data-en="WhatsApp-first: booking that works" data-fr="WhatsApp d'abord : une prise de rendez-vous qui fonctionne">WhatsApp-first: booking that works</h3><p data-en="Every button on every screen routes to your WhatsApp — admissions, appointments, questions. The channel your visitors already live in." data-fr="Chaque bouton de chaque écran mène à votre WhatsApp — admissions, rendez-vous, questions. Le canal où vos visiteurs vivent déjà.">Every button on every screen routes to your WhatsApp — admissions, appointments, questions. The channel your visitors already live in.</p></div></div>
+      <div class="svc rv" data-d="240"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FCD34D" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div><div><h3 data-en="Domain, hosting & training" data-fr="Domaine, hébergement & formation">Domain, hosting & training</h3><p data-en="Secure SSL hosting, 99.9% uptime, 30-minute staff training, and WhatsApp support when you need us." data-fr="Hébergement sécurisé SSL, disponibilité 99,9 %, formation du personnel en 30 min, et support WhatsApp quand il faut.">Secure SSL hosting, 99.9% uptime, 30-minute staff training, and WhatsApp support when you need us.</p></div></div>
     </div>
   </div>
 </section>
@@ -852,20 +833,20 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
     <span class="mono" data-en="What we do" data-fr="Ce que nous faisons">Ce que nous faisons</span>
     <h2 data-en="Website design, bilingual, built to be found locally" 
         data-fr="Création de site web bilingue, pensé pour être trouvé localement">Création de site web bilingue, pensé pour être trouvé localement</h2>
-    <p class="sub" data-en="Every service below is included in the same price, nothing is an add-on. One page or more, in French and English, with booking on WhatsApp and local search done properly."
-       data-fr="Chaque service ci-dessous est compris dans le même prix, rien n'est une option payante en plus. Une page ou plus, en français et en anglais, avec la prise de rendez-vous sur WhatsApp et un référencement local fait correctement.">Chaque service ci-dessous est compris dans le même prix, rien n'est une option payante en plus. Une page ou plus, en français et en anglais, avec la prise de rendez-vous sur WhatsApp et un référencement local fait correctement.</p>
+    <p class="sub" data-en="Every service below is included in the same price — nothing is an add-on. One page or more, in French and English, with booking on WhatsApp and local search done properly."
+       data-fr="Chaque service ci-dessous est compris dans le même prix — rien n'est une option payante en plus. Une page ou plus, en français et en anglais, avec la prise de rendez-vous sur WhatsApp et un référencement local fait correctement.">Chaque service ci-dessous est compris dans le même prix — rien n'est une option payante en plus. Une page ou plus, en français et en anglais, avec la prise de rendez-vous sur WhatsApp et un référencement local fait correctement.</p>
     <div class="svc-grid">
       <div class="svc-card">
         <span class="mono" data-en="Showcase site" data-fr="Site vitrine">Site vitrine</span>
         <h3 data-en="A one-page site that says who you are" data-fr="Une page qui dit qui vous êtes">Une page qui dit qui vous êtes</h3>
-        <p data-en="Your services, your location, your hours, your prices where they belong, built so a parent or a patient understands it in ten seconds, on a phone."
-           data-fr="Vos services, votre adresse, vos horaires et vos tarifs là où il faut, pensés pour qu'un parent ou un patient comprenne en dix secondes, sur un téléphone.">Vos services, votre adresse, vos horaires et vos tarifs là où il faut, pensés pour qu'un parent ou un patient comprenne en dix secondes, sur un téléphone.</p>
+        <p data-en="Your services, your location, your hours, your prices where they belong — built so a parent or a patient understands it in ten seconds, on a phone."
+           data-fr="Vos services, votre adresse, vos horaires et vos tarifs là où il faut — pensés pour qu'un parent ou un patient comprenne en dix secondes, sur un téléphone.">Vos services, votre adresse, vos horaires et vos tarifs là où il faut — pensés pour qu'un parent ou un patient comprenne en dix secondes, sur un téléphone.</p>
       </div>
       <div class="svc-card">
         <span class="mono" data-en="Bilingual EN|FR" data-fr="Bilingue FR|EN">Bilingue FR|EN</span>
         <h3 data-en="French and English, one click apart" data-fr="Français et anglais, à un clic">Français et anglais, à un clic</h3>
-        <p data-en="Cameroon is a bilingual country. Every page exists in both languages, not a translation widget, a real second version of the page."
-           data-fr="Le Cameroun est un pays bilingue. Chaque page existe dans les deux langues, pas un widget de traduction, une vraie seconde version de la page.">Le Cameroun est un pays bilingue. Chaque page existe dans les deux langues, pas un widget de traduction, une vraie seconde version de la page.</p>
+        <p data-en="Cameroon is a bilingual country. Every page exists in both languages — not a translation widget, a real second version of the page."
+           data-fr="Le Cameroun est un pays bilingue. Chaque page existe dans les deux langues — pas un widget de traduction, une vraie seconde version de la page.">Le Cameroun est un pays bilingue. Chaque page existe dans les deux langues — pas un widget de traduction, une vraie seconde version de la page.</p>
       </div>
       <div class="svc-card">
         <span class="mono" data-en="Booking on WhatsApp" data-fr="Rendez-vous sur WhatsApp">Rendez-vous sur WhatsApp</span>
@@ -882,8 +863,8 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
       <div class="svc-card">
         <span class="mono" data-en="Fast on 3G" data-fr="Rapide en 3G">Rapide en 3G</span>
         <h3 data-en="Built for a phone on mobile data" data-fr="Pensé pour un téléphone en données mobiles">Pensé pour un téléphone en données mobiles</h3>
-        <p data-en="One file, compressed images, no heavy effects. A page that opens in seconds where your visitors actually are, not on office wifi."
-           data-fr="Un seul fichier, images compressées, aucun effet lourd. Une page qui s'ouvre en quelques secondes là où vos visiteurs sont vraiment, pas sur le wifi du bureau.">Un seul fichier, images compressées, aucun effet lourd. Une page qui s'ouvre en quelques secondes là où vos visiteurs sont vraiment, pas sur le wifi du bureau.</p>
+        <p data-en="One file, compressed images, no heavy effects. A page that opens in seconds where your visitors actually are — not on office wifi."
+           data-fr="Un seul fichier, images compressées, aucun effet lourd. Une page qui s'ouvre en quelques secondes là où vos visiteurs sont vraiment — pas sur le wifi du bureau.">Un seul fichier, images compressées, aucun effet lourd. Une page qui s'ouvre en quelques secondes là où vos visiteurs sont vraiment — pas sur le wifi du bureau.</p>
       </div>
       <div class="svc-card">
         <span class="mono" data-en="Domain &amp; hosting" data-fr="Domaine &amp; hébergement">Domaine &amp; hébergement</span>
@@ -892,72 +873,49 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
            data-fr="Le domaine est à votre nom, les fichiers restent les vôtres, et le site continue de fonctionner si vous partez. Nous préférons que vous restiez parce que ça marche.">Le domaine est à votre nom, les fichiers restent les vôtres, et le site continue de fonctionner si vous partez. Nous préférons que vous restiez parce que ça marche.</p>
       </div>
     </div>
-    <p class="note" data-en="We work across Douala, Yaoundé, Buea, Limbe, Bafoussam and Bamenda, the whole country, remotely." 
-       data-fr="Nous travaillons à Douala, Yaoundé, Buea, Limbé, Bafoussam et Bamenda, tout le pays, à distance.">Nous travaillons à Douala, Yaoundé, Buea, Limbé, Bafoussam et Bamenda, tout le pays, à distance.</p>
+    <p class="note" data-en="We work across Douala, Yaoundé, Buea, Limbe, Bafoussam and Bamenda — the whole country, remotely." 
+       data-fr="Nous travaillons à Douala, Yaoundé, Buea, Limbé, Bafoussam et Bamenda — tout le pays, à distance.">Nous travaillons à Douala, Yaoundé, Buea, Limbé, Bafoussam et Bamenda — tout le pays, à distance.</p>
   </div>
 </section>
 <section class="process dark" id="process">
   <div class="wrap">
     <div class="center rv">
       <span class="kicker" data-en="How it works" data-fr="Comment ça marche">How it works</span>
-      <h2 data-en="From first message to launch, in one week." data-fr="Du premier message au lancement, en une semaine.">From first message to launch, in one week.</h2>
+      <h2 data-en="From first message to launch — in one week." data-fr="Du premier message au lancement — en une semaine.">From first message to launch — in one week.</h2>
     </div>
     <div class="steps">
       <div class="step rv"><div class="n">1</div><small data-en="Today" data-fr="Aujourd'hui">Today</small><h3 data-en="Message us" data-fr="Envoyez-nous un message">Message us</h3><p data-en="One WhatsApp message: your school's or clinic's name, your town, your number." data-fr="Un message WhatsApp : le nom de votre école ou de votre clinique, votre ville, votre numéro.">One WhatsApp message: your school's or clinic's name, your town, your number.</p></div>
-      <div class="step rv" data-d="80"><div class="n">2</div><small data-en="Within 24h" data-fr="Sous 24h">Within 24h</small><h3 data-en="Free preview" data-fr="Aperçu gratuit">Free preview</h3><p data-en="We design your real homepage, your logo, your colors, your story, and send it to you. Free." data-fr="Nous concevons votre vraie page d'accueil, votre logo, vos couleurs, votre histoire, et nous vous l'envoyons. Gratuit.">We design your real homepage, your logo, your colors, your story, and send it to you. Free.</p></div>
+      <div class="step rv" data-d="80"><div class="n">2</div><small data-en="Within 24h" data-fr="Sous 24h">Within 24h</small><h3 data-en="Free preview" data-fr="Aperçu gratuit">Free preview</h3><p data-en="We design your real homepage — your logo, your colors, your story — and send it to you. Free." data-fr="Nous concevons votre vraie page d'accueil — votre logo, vos couleurs, votre histoire — et nous vous l'envoyons. Gratuit.">We design your real homepage — your logo, your colors, your story — and send it to you. Free.</p></div>
       <div class="step rv" data-d="160"><div class="n">3</div><small>48h</small><h3 data-en="Your words" data-fr="Vos remarques">Your words</h3><p data-en="You review it with your team, we refine it. You don't pay until you approve." data-fr="Vous l'examinez avec votre équipe, nous l'ajustons. Vous ne payez rien avant votre validation.">You review it with your team, we refine it. You don't pay until you approve.</p></div>
       <div class="step rv" data-d="240"><div class="n">4</div><small data-en="3–5 days" data-fr="3–5 jours">3–5 days</small><h3 data-en="Build & launch" data-fr="Construction & lancement">Build & launch</h3><p data-en="Domain, secure hosting, both languages, final checks. Live before the end of the week." data-fr="Domaine, hébergement sécurisé, deux langues, vérifications finales. En ligne avant la fin de la semaine.">Domain, secure hosting, both languages, final checks. Live before the end of the week.</p></div>
-      <div class="step rv" data-d="320"><div class="n">5</div><small data-en="30 days" data-fr="30 jours">30 days</small><h3 data-en="Support" data-fr="Support">Support</h3><p data-en="A month of free support, staff training, and your launch becomes our next case study." data-fr="Un mois de support gratuit, l'hébergement suivi, et ensuite, si vous voulez que nous gérons les mises à jour : 15 000 FCFA par mois : deux modifications par mois, le site reste en ligne et sauvegardé, sans engagement, et votre domaine et vos fichiers restent à 100 % à vous.">A month of free support, staff training, and your launch becomes our next case study.</p></div>
+      <div class="step rv" data-d="320"><div class="n">5</div><small data-en="30 days" data-fr="30 jours">30 days</small><h3 data-en="Support" data-fr="Support">Support</h3><p data-en="A month of free support, staff training, and your launch becomes our next case study." data-fr="Un mois de support gratuit, l'hébergement suivi, et ensuite — si vous voulez que nous gérons les mises à jour — 15 000 FCFA par mois : deux modifications par mois, le site reste en ligne et sauvegardé, sans engagement, et votre domaine et vos fichiers restent à 100 % à vous.">A month of free support, staff training, and your launch becomes our next case study.</p></div>
     </div>
   </div>
 </section>
 
 <!-- PRICING -->
-<section id="services-detail" style="background:var(--bg);padding:70px 0">
-  <div class="wrap">
-    <span class="kicker" data-en="Two pages, two trades" data-fr="Deux pages, deux métiers">Deux pages, deux métiers</span>
-    <h2 data-en="What we build, in detail" data-fr="Ce que nous construisons, en détail">Ce que nous construisons, en détail</h2>
-    <p class="sub" data-en="Schools and clinics don't need the same website. Open the page for yours and you'll see exactly what goes on it, and what it costs." data-fr="Une école et une clinique n'ont pas besoin du même site. Ouvrez la page qui vous concerne : vous y verrez exactement ce qui va dessus, et ce que ça coûte.">Une école et une clinique n'ont pas besoin du même site. Ouvrez la page qui vous concerne.</p>
-    <div class="sd-grid" style="display:grid;gap:16px;margin-top:28px">
-      <a href="creation-site-web-ecole-cameroun.html" style="display:block;background:#fff;border:1px solid var(--border);border-radius:18px;padding:26px">
-        <span class="kicker" data-en="For schools" data-fr="Pour les écoles">Pour les écoles</span>
-        <h3 style="margin-top:12px;font-size:20px" data-en="A website for your school" data-fr="Un site web pour votre école">Un site web pour votre école</h3>
-        <p style="color:var(--slate);font-size:15px;margin-top:8px" data-en="Classes and ages, school fees in FCFA, admissions on WhatsApp, your GCE results on your own page." data-fr="Classes et âges, frais de scolarité en FCFA, inscriptions sur WhatsApp, vos résultats GCE sur votre propre page.">Classes et âges, frais de scolarité en FCFA, inscriptions sur WhatsApp, vos résultats GCE sur votre propre page.</p>
-        <p style="margin-top:14px;font-weight:700;color:#B45309" data-en="See the school page →" data-fr="Voir la page école →">Voir la page école →</p>
-      </a>
-      <a href="creation-site-web-clinique-cameroun.html" style="display:block;background:#fff;border:1px solid var(--border);border-radius:18px;padding:26px">
-        <span class="kicker" data-en="For clinics &amp; labs" data-fr="Pour les cliniques &amp; labos">Pour les cliniques &amp; labos</span>
-        <h3 style="margin-top:12px;font-size:20px" data-en="A website for your clinic or laboratory" data-fr="Un site web pour votre clinique ou laboratoire">Un site web pour votre clinique ou laboratoire</h3>
-        <p style="color:var(--slate);font-size:15px;margin-top:8px" data-en="Appointments on WhatsApp, tests and their preparation explained, your fees in FCFA, your address with a landmark." data-fr="Rendez-vous sur WhatsApp, examens et préparation expliqués, vos tarifs en FCFA, votre adresse avec un repère.">Rendez-vous sur WhatsApp, examens et préparation expliqués, vos tarifs en FCFA, votre adresse avec un repère.</p>
-        <p style="margin-top:14px;font-weight:700;color:#B45309" data-en="See the clinic page →" data-fr="Voir la page clinique →">Voir la page clinique →</p>
-      </a>
-    </div>
-    <style>@media(min-width:760px){.sd-grid{grid-template-columns:1fr 1fr}}</style>
-  </div>
-</section>
-
 <section id="pricing">
   <div class="wrap">
     <div class="center rv">
       <span class="kicker" data-en="Pricing" data-fr="Tarif">Pricing</span>
       <h2 data-en="One transparent price. No surprises." data-fr="Un prix transparent. Aucune surprise.">One transparent price. No surprises.</h2>
-      <p class="sub" data-en="The founding price is locked for the first two launches, school or clinic. After that, it goes up." data-fr="Le prix fondateur est bloqué pour les deux premiers lancements, école ou clinique. Après, il augmente.">The founding price is locked for the first two launches, school or clinic. After that, it goes up.</p>
+      <p class="sub" data-en="The founding price is locked for the first two launches — school or clinic. After that, it goes up." data-fr="Le prix fondateur est bloqué pour les deux premiers lancements — école ou clinique. Après, il augmente.">The founding price is locked for the first two launches — school or clinic. After that, it goes up.</p>
     </div>
     <div class="pr-grid">
       <div class="pr feat rv">
         <span class="rib" data-en="2 FOUNDING SLOTS" data-fr="2 PLACES FONDATRICES">2 FOUNDING SLOTS</span>
-        <h3 data-en="Starter, Founding" data-fr="Starter, Fondateur">Starter, Founding</h3>
+        <h3 data-en="Starter — Founding" data-fr="Starter — Fondateur">Starter — Founding</h3>
         <p class="for" data-en="Schools & clinics, small to mid-size, ready to be found." data-fr="Écoles et cliniques, petites à moyennes, prêtes à être trouvées.">Schools & clinics, small to mid-size, ready to be found.</p>
         <div class="price" style="font-size:38px"><span data-en="100,000 FCFA" data-fr="100 000 FCFA">100,000 FCFA</span></div>
-        <div class="price-note" data-en="or 50/50, 50,000 FCFA to start, 50,000 FCFA at launch" data-fr="ou 50/50, 50 000 FCFA pour démarrer, 50 000 FCFA au lancement">or 50/50, 50,000 FCFA to start, 50,000 FCFA at launch</div>
+        <div class="price-note" data-en="or 50/50 — 50,000 FCFA to start, 50,000 FCFA at launch" data-fr="ou 50/50 — 50 000 FCFA pour démarrer, 50 000 FCFA au lancement">or 50/50 — 50,000 FCFA to start, 50,000 FCFA at launch</div>
         <ul>
           <li data-en="1-page bilingual homepage (up to 6 sections)" data-fr="Page d'accueil bilingue (jusqu'à 6 sections)">1-page bilingual homepage (up to 6 sections)</li>
-          <li data-en="EN|FR, included, standard" data-fr="EN|FR, inclus, standard">EN|FR, included, standard</li>
+          <li data-en="EN|FR — included, standard" data-fr="EN|FR — inclus, standard">EN|FR — included, standard</li>
           <li data-en="WhatsApp button on every screen" data-fr="Bouton WhatsApp sur chaque écran">WhatsApp button on every screen</li>
           <li data-en="Domain + secure hosting setup" data-fr="Domaine + installation de l'hébergement sécurisé">Domain + secure hosting setup</li>
           <li data-en="Staff training (30 min) + 1 month free support" data-fr="Formation du personnel (30 min) + 1 mois de support gratuit">Staff training (30 min) + 1 month free support</li>
           <li data-en="Live in 3–5 days" data-fr="En ligne en 3–5 jours">Live in 3–5 days</li>
-          <li data-en="Optional monthly after launch : 15,000 FCFA (hosting managed + 2 updates/month)" data-fr="Mensuel optionnel après lancement : 15 000 FCFA (hébergement suivi + 2 modifications/mois)">Optional monthly after launch : 15,000 FCFA (hosting managed + 2 updates/month)</li>
+          <li data-en="Optional monthly after launch — 15,000 FCFA (hosting managed + 2 updates/month)" data-fr="Mensuel optionnel après lancement — 15 000 FCFA (hébergement suivi + 2 modifications/mois)">Optional monthly after launch — 15,000 FCFA (hosting managed + 2 updates/month)</li>
         </ul>
         <a href="#audit" class="btn btn-amber" data-en="Claim a founding slot →" data-fr="Réserver une place fondatrice →">Claim a founding slot →</a>
       </div>
@@ -979,6 +937,63 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
     </div>
   </div>
 </section>
+<!-- AMK:SERVICES-PLUS-2026-09-21 (3 services + grille tarifaire) -->
+<section id="services-plus" class="hair">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="kicker" data-en="More than websites" data-fr="Plus que des sites web">More than websites</span>
+      <h2 data-en="Three more ways to be found, trusted and financed." data-fr="Trois autres façons d'être trouvé, inspirer confiance et être financé.">Three more ways to be found, trusted and financed.</h2>
+      <p class="sub" data-en="The same team, the same 24-hour turnaround thinking — beyond the website." data-fr="La même équipe, la même exigence de rapidité — au-delà du site web.">The same team, the same 24-hour turnaround thinking — beyond the website.</p>
+    </div>
+    <div class="pr-grid" style="grid-template-columns:repeat(3,1fr);max-width:1080px">
+      <div class="pr feat rv">
+        <span class="rib" data-en="MOST POPULAR" data-fr="LE PLUS DEMANDÉ">MOST POPULAR</span>
+        <h3 data-en="Google Visibility Pack" data-fr="Pack Visibilité Google">Google Visibility Pack</h3>
+        <p class="for" data-en="Be on Google Maps when patients and parents search your neighbourhood." data-fr="Être sur Google Maps quand patients et parents cherchent votre quartier.">Be on Google Maps when patients and parents search your neighbourhood.</p>
+        <div class="price"><span data-en="35,000 FCFA" data-fr="35 000 FCFA">35,000 FCFA</span></div>
+        <div class="price-note" data-en="one-time · live in 48h" data-fr="une fois · en ligne en 48h">one-time · live in 48h</div>
+        <ul>
+          <li data-en="Complete Google Business Profile (Maps + Search)" data-fr="Fiche Google Business complète (Maps + Recherche)">Complete Google Business Profile (Maps + Search)</li>
+          <li data-en="Optimized categories & FR|EN description" data-fr="Catégories optimisées &amp; description FR|EN">Optimized categories &amp; FR|EN description</li>
+          <li data-en="Hours, services, photos organized" data-fr="Horaires, services, photos organisés">Hours, services, photos organized</li>
+          <li data-en="Search Console connected to your site" data-fr="Search Console branché sur votre site">Search Console connected to your site</li>
+          <li data-en="Optional: 10,000 FCFA/month — 3 posts + review follow-up" data-fr="Option : 10 000 FCFA/mois — 3 publications + relance avis">Optional: 10,000 FCFA/month — 3 posts + review follow-up</li>
+        </ul>
+        <a href="#audit" class="btn btn-amber" data-en="Get found on Google →" data-fr="Être trouvé sur Google →">Get found on Google →</a>
+      </div>
+      <div class="pr rv" data-d="120">
+        <h3 data-en="Pro Presentations" data-fr="Présentations pro">Pro Presentations</h3>
+        <p class="for" data-en="Open days, health talks, bank pitches — slides that look like the big schools." data-fr="Portes ouvertes, causeries santé, pitch bancaire — des slides au niveau des grandes écoles.">Open days, health talks, bank pitches — slides that look like the big schools.</p>
+        <div class="price"><span data-en="40,000–80,000 FCFA" data-fr="40 000–80 000 FCFA">40,000–80,000 FCFA</span></div>
+        <div class="price-note" data-en="per deck (10–15 slides) · 48–72h" data-fr="par présentation (10–15 slides) · 48–72h">per deck (10–15 slides) · 48–72h</div>
+        <ul>
+          <li data-en="Full structure &amp; speech writing" data-fr="Structure complète &amp; rédaction du discours">Full structure &amp; speech writing</li>
+          <li data-en="Agency-level design, your colors" data-fr="Design niveau agence, vos couleurs">Agency-level design, your colors</li>
+          <li data-en="Delivered as PowerPoint + PDF" data-fr="Livré en PowerPoint + PDF">Delivered as PowerPoint + PDF</li>
+          <li data-en="One revision round included" data-fr="Une ronde de retouches incluse">One revision round included</li>
+          <li data-en="FR and/or EN" data-fr="FR et/ou EN">FR and/or EN</li>
+        </ul>
+        <a href="#audit" class="btn btn-amber" data-en="Show me a sample →" data-fr="Voir un exemple →">Show me a sample →</a>
+      </div>
+      <div class="pr rv" data-d="240">
+        <h3 data-en="Financing Dossier" data-fr="Dossier de financement">Financing Dossier</h3>
+        <p class="for" data-en="The bank asks for a file, not a conversation. We deliver it complete." data-fr="La banque demande un dossier, pas une conversation. Nous le livrons complet.">The bank asks for a file, not a conversation. We deliver it complete.</p>
+        <div class="price"><span data-en="100,000–250,000 FCFA" data-fr="100 000–250 000 FCFA">100,000–250,000 FCFA</span></div>
+        <div class="price-note" data-en="bank or programme ready · 2 weeks" data-fr="prêt pour banque ou programme · 2 semaines">bank or programme ready · 2 weeks</div>
+        <ul>
+          <li data-en="Executive summary &amp; company presentation" data-fr="Résumé exécutif &amp; présentation de l'entreprise">Executive summary &amp; company presentation</li>
+          <li data-en="Local market study (real data)" data-fr="Étude de marché locale (données réelles)">Local market study (real data)</li>
+          <li data-en="Financial structure (your numbers, validated)" data-fr="Structure financière (vos chiffres, validés)">Financial structure (your numbers, validated)</li>
+          <li data-en="Bank pitch deck included" data-fr="Pitch deck bancaire inclus">Bank pitch deck included</li>
+          <li data-en="Ready for banks, PEA-JEUNES, PIAASI" data-fr="Prêt pour banques, PEA-JEUNES, PIAASI">Ready for banks, PEA-JEUNES, PIAASI</li>
+        </ul>
+        <a href="#audit" class="btn btn-amber" data-en="Discuss my project →" data-fr="Parler de mon projet →">Discuss my project →</a>
+      </div>
+    </div>
+    <p class="sub rv" style="text-align:center;margin-top:26px" data-en="All services can be combined with your website — one team, one WhatsApp number." data-fr="Tous les services se combinent avec votre site — une équipe, un numéro WhatsApp.">All services can be combined with your website — one team, one WhatsApp number.</p>
+  </div>
+</section>
+
 
 <!-- FAQ -->
 <section class="faq" id="faq">
@@ -989,18 +1004,18 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
     </div>
     <div class="qa rv">
       <details><summary data-en="How long does it really take?" data-fr="Combien de temps ça prend vraiment ?">How long does it really take?</summary><div class="ans" data-en="3–5 days from your approval to live for the founding package. And the preview is on your phone within 24 hours of your first message." data-fr="3 à 5 jours entre votre validation et la mise en ligne pour la formule fondatrice. Et l'aperçu est dans votre téléphone sous 24 heures après votre premier message.">3–5 days from your approval to live for the founding package. And the preview is on your phone within 24 hours of your first message.</div></details>
-      <details><summary data-en="My staff aren't technical. Can they update the site?" data-fr="Mon personnel n'est pas technique. Peut-il mettre à jour le site ?">My staff aren't technical. Can they update the site?</summary><div class="ans" data-en="Yes, that's the point. We design for non-technical staff, run a 30-minute training, and stay reachable on WhatsApp. News, photos, events: your team handles it." data-fr="Oui, c'est le but. Nous concevons pour du personnel non technique, faisons une formation de 30 minutes, et restons joignables sur WhatsApp. Actualités, photos, événements : votre équipe s'en charge.">Yes, that's the point. We design for non-technical staff, run a 30-minute training, and stay reachable on WhatsApp. News, photos, events: your team handles it.</div></details>
-      <details><summary data-en="Is bilingual (EN|FR) really included in the price?" data-fr="Le bilingue (EN|FR) est-il vraiment inclus dans le prix ?">Is bilingual (EN|FR) really included in the price?</summary><div class="ans" data-en="Yes, it's the standard on every site we build, not an add-on. A school or clinic in Cameroon serves both languages; your website should too." data-fr="Oui, c'est le standard sur chaque site que nous construisons, pas une option. Une école ou une clinique au Cameroun sert les deux langues ; votre site aussi.">Yes, it's the standard on every site we build, not an add-on. A school or clinic in Cameroon serves both languages; your website should too.</div></details>
-      <details><summary data-en="Do you really work with clinics, or is that an add-on?" data-fr="Travaillez-vous vraiment avec les cliniques, ou c'est un simple ajout ?">Do you really work with clinics, or is that an add-on?</summary><div class="ans" data-en="Clinics are one of our two core niches, schools and clinics. The clinic concept on this page is live: transparent FCFA pricing, WhatsApp booking, EN|FR, built patient-first." data-fr="Les cliniques sont l'une de nos deux niches principales, écoles et cliniques. Le concept de clinique de cette page est en ligne : tarifs FCFA transparents, prise de rendez-vous WhatsApp, EN|FR, pensé patient d'abord.">Clinics are one of our two core niches, schools and clinics. The clinic concept on this page is live: transparent FCFA pricing, WhatsApp booking, EN|FR, built patient-first.</div></details>
+      <details><summary data-en="My staff aren't technical. Can they update the site?" data-fr="Mon personnel n'est pas technique. Peut-il mettre à jour le site ?">My staff aren't technical. Can they update the site?</summary><div class="ans" data-en="Yes — that's the point. We design for non-technical staff, run a 30-minute training, and stay reachable on WhatsApp. News, photos, events: your team handles it." data-fr="Oui — c'est le but. Nous concevons pour du personnel non technique, faisons une formation de 30 minutes, et restons joignables sur WhatsApp. Actualités, photos, événements : votre équipe s'en charge.">Yes — that's the point. We design for non-technical staff, run a 30-minute training, and stay reachable on WhatsApp. News, photos, events: your team handles it.</div></details>
+      <details><summary data-en="Is bilingual (EN|FR) really included in the price?" data-fr="Le bilingue (EN|FR) est-il vraiment inclus dans le prix ?">Is bilingual (EN|FR) really included in the price?</summary><div class="ans" data-en="Yes — it's the standard on every site we build, not an add-on. A school or clinic in Cameroon serves both languages; your website should too." data-fr="Oui — c'est le standard sur chaque site que nous construisons, pas une option. Une école ou une clinique au Cameroun sert les deux langues ; votre site aussi.">Yes — it's the standard on every site we build, not an add-on. A school or clinic in Cameroon serves both languages; your website should too.</div></details>
+      <details><summary data-en="Do you really work with clinics, or is that an add-on?" data-fr="Travaillez-vous vraiment avec les cliniques, ou c'est un simple ajout ?">Do you really work with clinics, or is that an add-on?</summary><div class="ans" data-en="Clinics are one of our two core niches — schools and clinics. The clinic concept on this page is live: transparent FCFA pricing, WhatsApp booking, EN|FR, built patient-first." data-fr="Les cliniques sont l'une de nos deux niches principales — écoles et cliniques. Le concept de clinique de cette page est en ligne : tarifs FCFA transparents, prise de rendez-vous WhatsApp, EN|FR, pensé patient d'abord.">Clinics are one of our two core niches — schools and clinics. The clinic concept on this page is live: transparent FCFA pricing, WhatsApp booking, EN|FR, built patient-first.</div></details>
       <details><summary data-en="Do I pay for the preview?" data-fr="L'aperçu est-il payant ?">Do I pay for the preview?</summary><div class="ans" data-en="No. The preview is free, and nothing is charged until you approve it and the 50% deposit begins the build." data-fr="Non. L'aperçu est gratuit, et aucun paiement avant votre validation et l'acompte de 50 % qui démarre la construction.">No. The preview is free, and nothing is charged until you approve it and the 50% deposit begins the build.</div></details>
-      <details><summary data-en="What happens after launch?" data-fr="Que se passe-t-il après le lancement ?">What happens after launch?</summary><div class="ans" data-en="One month of free support, hosting managed, and then, if you want us to handle updates : 15,000 FCFA per month: two updates a month, the site stays online and backed up, no contract, and your domain and files stay 100% yours." data-fr="Un mois de support gratuit, l'hébergement suivi, et ensuite, si vous voulez que nous gérons les mises à jour : 15 000 FCFA par mois : deux modifications par mois, le site reste en ligne et sauvegardé, sans engagement, et votre domaine et vos fichiers restent à 100 % à vous.">One month of free support, hosting managed, and then, if you want us to handle updates : 15,000 FCFA per month: two updates a month, the site stays online and backed up, no contract, and your domain and files stay 100% yours.</div></details>
+      <details><summary data-en="What happens after launch?" data-fr="Que se passe-t-il après le lancement ?">What happens after launch?</summary><div class="ans" data-en="One month of free support, hosting managed, and then — if you want us to handle updates — 15,000 FCFA per month: two updates a month, the site stays online and backed up, no contract, and your domain and files stay 100% yours." data-fr="Un mois de support gratuit, l'hébergement suivi, et ensuite — si vous voulez que nous gérons les mises à jour — 15 000 FCFA par mois : deux modifications par mois, le site reste en ligne et sauvegardé, sans engagement, et votre domaine et vos fichiers restent à 100 % à vous.">One month of free support, hosting managed, and then — if you want us to handle updates — 15,000 FCFA per month: two updates a month, the site stays online and backed up, no contract, and your domain and files stay 100% yours.</div></details>
       <details><summary data-en="How much does a website cost in Cameroon?" data-fr="Combien coûte la création d'un site web au Cameroun&nbsp;?">How much does a website cost in Cameroon?</summary><div class="ans" data-en="100,000 FCFA for a complete page, in French and English, with WhatsApp booking and local search done properly. Payable 50,000 to start and 50,000 at launch. We don't discount: the price is the same for everyone, and it is given before we start." data-fr="100 000 FCFA pour une page complète, en français et en anglais, avec la prise de rendez-vous sur WhatsApp et le référencement local. Payable 50 000 pour commencer et 50 000 à la mise en ligne. Nous ne proposons pas de remise : le prix est le même pour tout le monde, et il est annoncé avant de commencer.">100,000 FCFA for a complete page, in French and English, with WhatsApp booking and local search done properly. Payable 50,000 to start and 50,000 at launch. We don't discount: the price is the same for everyone, and it is given before we start.</div></details>
 
 <details><summary data-en="Do you work with schools and clinics outside Douala?" data-fr="Travaillez-vous avec des écoles et des cliniques hors de Douala&nbsp;?">Do you work with schools and clinics outside Douala?</summary><div class="ans" data-en="Yes, and we work remotely. We have projects under way with institutions in Douala, Buea and Limbe, and we also work with schools in Yaoundé, Bafoussam and Bamenda. Everything happens on WhatsApp: the preview, the revisions, the launch." data-fr="Oui, et nous travaillons à distance. Des projets sont en cours avec des établissements de Douala, Buea et Limbé ; nous accompagnons aussi des écoles de Yaoundé, Bafoussam et Bamenda. Tout se fait par WhatsApp : l'aperçu, les corrections, la mise en ligne.">Yes, and we work remotely. We have projects under way with institutions in Douala, Buea and Limbe, and we also work with schools in Yaoundé, Bafoussam and Bamenda. Everything happens on WhatsApp: the preview, the revisions, the launch.</div></details>
 
-<details><summary data-en="Can I see a real website before deciding?" data-fr="Puis-je voir un vrai site avant de décider&nbsp;?">Can I see a real website before deciding?</summary><div class="ans" data-en="Yes, six complete concepts are live on this page and openable from your phone: three for schools, and three for clinics, laboratories and health practices. They use fictional names: we never show a client's site without their written permission." data-fr="Oui, six concepts complets sont en ligne sur cette page, ouvrables depuis votre téléphone : trois pour des écoles, et trois pour des cliniques, laboratoires et cabinets de santé. Ils sont construits sur des noms fictifs : nous ne montrons jamais le site d'un client sans son accord écrit.">Yes, six complete concepts are live on this page and openable from your phone: three for schools, and three for clinics, laboratories and health practices. They use fictional names: we never show a client's site without their written permission.</div></details>
+<details><summary data-en="Can I see a real website before deciding?" data-fr="Puis-je voir un vrai site avant de décider&nbsp;?">Can I see a real website before deciding?</summary><div class="ans" data-en="Yes — six complete concepts are live on this page and openable from your phone: three for schools, and three for clinics, laboratories and health practices. They use fictional names: we never show a client's site without their written permission." data-fr="Oui — six concepts complets sont en ligne sur cette page, ouvrables depuis votre téléphone : trois pour des écoles, et trois pour des cliniques, laboratoires et cabinets de santé. Ils sont construits sur des noms fictifs : nous ne montrons jamais le site d'un client sans son accord écrit.">Yes — six complete concepts are live on this page and openable from your phone: three for schools, and three for clinics, laboratories and health practices. They use fictional names: we never show a client's site without their written permission.</div></details>
 
-<details><summary data-en="Will my school or clinic be found on Google?" data-fr="Mon école ou ma clinique sera-t-elle trouvée sur Google ?">Will my school or clinic be found on Google?</summary><div class="ans" data-en="We build with local search in mind, fast pages, clean structure, both languages, and the way parents and patients actually search: “school in Buea”, “dentist in Buea”, “école privée à Douala”. We set you up to be found; your reputation does the rest." data-fr="Nous construisons avec la recherche locale en tête, pages rapides, structure propre, deux langues, et la manière dont les parents et les patients cherchent vraiment : « école à Buea », « dentiste à Buea », « école privée à Douala ». Nous vous mettons en position d'être trouvé ; votre réputation fait le reste.">We build with local search in mind, fast pages, clean structure, both languages, and the way parents and patients actually search: “school in Buea”, “dentist in Buea”, “école privée à Douala”. We set you up to be found; your reputation does the rest.</div></details>
+<details><summary data-en="Will my school or clinic be found on Google?" data-fr="Mon école ou ma clinique sera-t-elle trouvée sur Google ?">Will my school or clinic be found on Google?</summary><div class="ans" data-en="We build with local search in mind — fast pages, clean structure, both languages, and the way parents and patients actually search: “school in Buea”, “dentist in Buea”, “école privée à Douala”. We set you up to be found; your reputation does the rest." data-fr="Nous construisons avec la recherche locale en tête — pages rapides, structure propre, deux langues, et la manière dont les parents et les patients cherchent vraiment : « école à Buea », « dentiste à Buea », « école privée à Douala ». Nous vous mettons en position d'être trouvé ; votre réputation fait le reste.">We build with local search in mind — fast pages, clean structure, both languages, and the way parents and patients actually search: “school in Buea”, “dentist in Buea”, “école privée à Douala”. We set you up to be found; your reputation does the rest.</div></details>
     </div>
   </div>
 </section>
@@ -1010,13 +1025,13 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
   <div class="wrap">
     <div class="rv">
       <span class="kicker" data-en="Start here" data-fr="Commencez ici">Start here</span>
-      <h2 data-en="See what your school or clinic website could look like, in 24 hours." data-fr="Voyez ce que pourraient être le site de votre école ou de votre clinique, en 24 heures.">See what your school or clinic website could look like, in 24 hours.</h2>
-      <p class="sub" data-en="Send one message. Within 24 hours, your homepage concept is on your phone, in both languages. Free, and nothing is owed until you approve it." data-fr="Envoyez un message. Sous 24 heures, le concept de votre page d'accueil est dans votre téléphone, dans les deux langues. Gratuit, et rien n'est dû avant votre validation.">Send one message. Within 24 hours, your homepage concept is on your phone, in both languages. Free, and nothing is owed until you approve it.</p>
+      <h2 data-en="See what your school or clinic website could look like — in 24 hours." data-fr="Voyez ce que pourraient être le site de votre école ou de votre clinique — en 24 heures.">See what your school or clinic website could look like — in 24 hours.</h2>
+      <p class="sub" data-en="Send one message. Within 24 hours, your homepage concept is on your phone, in both languages. Free — and nothing is owed until you approve it." data-fr="Envoyez un message. Sous 24 heures, le concept de votre page d'accueil est dans votre téléphone, dans les deux langues. Gratuit — et rien n'est dû avant votre validation.">Send one message. Within 24 hours, your homepage concept is on your phone, in both languages. Free — and nothing is owed until you approve it.</p>
       <div class="ap"><span class="b">1</span><p data-en="<b>Free.</b> No payment for the preview, and none until you approve it." data-fr="<b>Gratuit.</b> Aucun paiement pour l'aperçu, et aucun avant votre validation."><b>Free.</b> No payment for the preview, and none until you approve it.</p></div>
-      <div class="ap"><span class="b">2</span><p data-en="<b>Yours.</b> Your logo, your colors, your story, not a generic template." data-fr="<b>Vôtre.</b> Votre logo, vos couleurs, votre histoire, pas un template générique."><b>Yours.</b> Your logo, your colors, your story, not a generic template.</p></div>
+      <div class="ap"><span class="b">2</span><p data-en="<b>Yours.</b> Your logo, your colors, your story — not a generic template." data-fr="<b>Vôtre.</b> Votre logo, vos couleurs, votre histoire — pas un template générique."><b>Yours.</b> Your logo, your colors, your story — not a generic template.</p></div>
       <div class="ap"><span class="b">3</span><p data-en="<b>Fast.</b> Preview in 24h. Full site live in 3–5 days." data-fr="<b>Rapide.</b> Aperçu en 24h. Site complet en ligne en 3–5 jours."><b>Fast.</b> Preview in 24h. Full site live in 3–5 days.</p></div>
       <div class="direct">
-        <h3 data-en="Prefer to talk now?" data-fr="Vous préférez parler maintenant ?">Prefer to talk now?</h3>
+        <h4 data-en="Prefer to talk now?" data-fr="Vous préférez parler maintenant ?">Prefer to talk now?</h4>
         <p data-en="WhatsApp / call:" data-fr="WhatsApp / appel :">WhatsApp / call:</p>
         <p><a href="tel:+237677789631">+237 677 789 631</a></p>
         <p><a href="mailto:akwo.king.dev@gmail.com">akwo.king.dev@gmail.com</a></p>
@@ -1025,8 +1040,8 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
     </div>
     <form class="form-card rv" data-d="150" onsubmit="return sendAudit(event)">
       <h3 data-en="Get my free preview" data-fr="Recevoir mon aperçu gratuit">Get my free preview</h3>
-      <p class="fc-sub" data-en="Sent to us on WhatsApp, 60 seconds, no email needed." data-fr="Envoyé directement sur notre WhatsApp, 60 secondes, pas d'e-mail nécessaire.">Sent to us on WhatsApp, 60 seconds, no email needed.</p>
-      <div class="fld"><label for="f-school" data-en="School or clinic name" data-fr="Nom de l'école ou de la clinique">School or clinic name</label><input type="text" id="f-school" autocomplete="organization" required placeholder="e.g. St. Anne College · or a clinic name"></div>
+      <p class="fc-sub" data-en="Sent to us on WhatsApp — 60 seconds, no email needed." data-fr="Envoyé directement sur notre WhatsApp — 60 secondes, pas d'e-mail nécessaire.">Sent to us on WhatsApp — 60 seconds, no email needed.</p>
+      <div class="fld"><label data-en="School or clinic name *" data-fr="Nom de l'école ou de la clinique *">School or clinic name *</label><input type="text" id="f-school" required placeholder="e.g. St. Anne College · or a clinic name"></div>
       <div class="fld">
         <label data-en="This is a…" data-fr="Il s'agit d'une…">This is a…</label>
         <div class="f-types" role="group" aria-label="School or clinic">
@@ -1034,15 +1049,13 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
           <button type="button" class="f-type" data-type="clinic" onclick="setNiche('clinic')">🩺 <span data-en="Clinic" data-fr="Clinique">Clinic</span></button>
         </div>
       </div>
-      <div class="fld"><label for="f-phone" data-en="Your WhatsApp number (optional)" data-fr="Votre numéro WhatsApp (facultatif)">Your WhatsApp number (optional)</label><input type="tel" id="f-phone" autocomplete="tel" inputmode="tel" placeholder="+237 6XX XXX XXX"></div>
+      <div class="fld"><label data-en="Your WhatsApp number" data-fr="Votre numéro WhatsApp">Your WhatsApp number</label><input type="tel" id="f-phone" inputmode="tel" placeholder="+237 6XX XXX XXX"></div>
       <button type="submit" class="btn btn-amber" data-en="Get my free preview on WhatsApp →" data-fr="Recevoir mon aperçu gratuit sur WhatsApp →">Get my free preview on WhatsApp →</button>
-      <p class="f-status" id="f-status" role="status" aria-live="polite"></p>
-      <p class="form-small" data-en="This opens WhatsApp with your message already written. You stay in control, nothing is sent without you. Town and other details are asked in the chat." data-fr="Ceci ouvre WhatsApp avec votre message déjà rédigé. Vous restez maître, rien n'est envoyé sans vous. La ville et les autres détails sont demandés dans la discussion.">This opens WhatsApp with your message already written. You stay in control, nothing is sent without you. Town and other details are asked in the chat.</p>
+      <p class="form-small" data-en="This opens WhatsApp with your message already written. You stay in control — nothing is sent without you. Town and other details are asked in the chat." data-fr="Ceci ouvre WhatsApp avec votre message déjà rédigé. Vous restez maître — rien n'est envoyé sans vous. La ville et les autres détails sont demandés dans la discussion.">This opens WhatsApp with your message already written. You stay in control — nothing is sent without you. Town and other details are asked in the chat.</p>
     </form>
   </div>
 </section>
 
-</main>
 <!-- FOOTER -->
 <footer>
   <div class="wrap">
@@ -1051,29 +1064,29 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
     <div class="f-grid">
       <div>
         <div class="f-brand">
-          <svg aria-hidden="true" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1E293B"/><circle cx="32" cy="30" r="17" fill="none" stroke="#F59E0B" stroke-width="2.4"/><path d="M32 16v28M32 30L18 44M32 30l14 14" stroke="#FCD34D" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="16" r="3" fill="#F59E0B"/><circle cx="18" cy="44" r="3" fill="#F59E0B"/><circle cx="46" cy="44" r="3" fill="#F59E0B"/></svg>
+          <svg viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1E293B"/><circle cx="32" cy="30" r="17" fill="none" stroke="#F59E0B" stroke-width="2.4"/><path d="M32 16v28M32 30L18 44M32 30l14 14" stroke="#FCD34D" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="16" r="3" fill="#F59E0B"/><circle cx="18" cy="44" r="3" fill="#F59E0B"/><circle cx="46" cy="44" r="3" fill="#F59E0B"/></svg>
           <span class="t">AMK</span>
         </div>
-        <p style="font-size:14.5px" data-en="AMK · Web Development & Digital Solutions" data-fr="AMK · Développement Web & Solutions Digitales">AMK · Web Development & Digital Solutions</p>
+        <p style="font-size:14.5px" data-en="AMK – Web Development & Digital Solutions" data-fr="AMK – Développement Web & Solutions Digitales">AMK – Web Development & Digital Solutions</p>
         <p style="margin-top:8px;font-size:14px" data-en="Modern, bilingual websites for schools and clinics that are ready to be found." data-fr="Des sites modernes et bilingues pour les écoles et les cliniques prêtes à être trouvées.">Modern, bilingual websites for schools and clinics that are ready to be found.</p>
       </div>
       <div>
-        <h3 data-en="Explore" data-fr="Explorer">Explore</h3>
+        <h5 data-en="Explore" data-fr="Explorer">Explore</h5>
         <a href="#work" data-en="Work" data-fr="Réalisations">Work</a>
         <a href="#services" data-en="Services" data-fr="Services">Services</a>
         <a href="#pricing" data-en="Pricing" data-fr="Tarif">Pricing</a>
         <a href="#faq" data-en="FAQ" data-fr="FAQ">FAQ</a>
       </div>
       <div>
-        <h3 data-en="Contact & concepts" data-fr="Contact & concepts">Contact & concepts</h3>
+        <h5 data-en="Contact & concepts" data-fr="Contact & concepts">Contact & concepts</h5>
         <a href="tel:+237677789631">+237 677 789 631</a>
         <a href="mailto:akwo.king.dev@gmail.com">akwo.king.dev@gmail.com</a>
         <a href="sample-school.html" data-en="Academy concept ↗" data-fr="Concept académie ↗">Academy concept ↗</a>
         <a href="sample-nursery.html" data-en="Nursery concept ↗" data-fr="Concept maternelle ↗">Nursery concept ↗</a>
         <a href="sample-secondary.html" data-en="Secondary concept ↗" data-fr="Concept lycée ↗">Secondary concept ↗</a>
         <a href="clinic-bonaberi.html" data-en="Clinic concept ↗" data-fr="Concept clinique ↗">Clinic concept ↗</a>
-        <a href="sample-polyclinic.html" data-en="Polyclinic concept ⇗" data-fr="Concept polyclinique ⇗">Polyclinic concept ⇗</a>
-        <a href="sample-maternity.html" data-en="Maternity concept ⇗" data-fr="Concept maternité ⇗">Maternity concept ⇗</a>
+        <a href="sample-polyclinic.html" data-en="Polyclinic concept ↗" data-fr="Concept polyclinique ↗">Polyclinic concept ↗</a>
+        <a href="sample-maternity.html" data-en="Maternity concept ↗" data-fr="Concept maternité ↗">Maternity concept ↗</a>
       </div>
     </div>
     <div class="f-bottom">
@@ -1105,30 +1118,22 @@ function setLang(l){
     if (!b) return;
     var isEn = id.indexOf("en") !== -1;
     b.classList.toggle("on", (l === "en") === isEn);
-    b.setAttribute("aria-pressed", ((l === "en") === isEn) ? "true" : "false");
   });
   try{ localStorage.setItem("amk-lang", l); }catch(e){}
   wireWaLinks();
 }
-document.addEventListener("keydown", function(e){ if (e.key === "Escape") closeM(); });
 function setNiche(n){
   document.querySelectorAll(".niche-btn").forEach(function(b){ b.classList.toggle("on", b.dataset.niche === n); b.setAttribute("aria-selected", b.dataset.niche === n ? "true":"false"); });
   document.querySelectorAll(".f-type").forEach(function(b){ b.classList.toggle("on", b.dataset.type === n); b.setAttribute("aria-pressed", b.dataset.type === n ? "true":"false"); });
   document.querySelectorAll(".h-panel").forEach(function(p){ p.classList.toggle("active", p.dataset.niche === n); });
   document.querySelectorAll(".h-shot").forEach(function(im){ im.classList.toggle("active", im.dataset.niche === n); });
 }
-function setMenu(open){
-  var nav = document.getElementById("m-nav"), b = document.getElementById("m-btn");
-  nav.classList.toggle("open", open);
-  if (b) b.setAttribute("aria-expanded", open ? "true" : "false");
-}
-function openM(){ setMenu(true); }
-function closeM(){ setMenu(false); }
+function closeM(){ document.getElementById("m-nav").classList.remove("open"); }
 function waMessage(fr, kind){
   var srcLine = SRC_LABEL ? (fr ? " (vu sur " + SRC_LABEL + ")" : " (from " + SRC_LABEL + ")") : (fr ? " (depuis le site)" : " (from the website)");
   if (kind === "bar"){
-    return fr ? "Bonjour AMK ! Je veux mon aperçu GRATUIT de site web sous 24h, école ou clinique." + srcLine
-              : "Hello AMK! I'd like my FREE website preview within 24h, school or clinic." + srcLine;
+    return fr ? "Bonjour AMK ! Je veux mon aperçu GRATUIT de site web sous 24h — école ou clinique." + srcLine
+              : "Hello AMK! I'd like my FREE website preview within 24h — school or clinic." + srcLine;
   }
   return "";
 }
@@ -1175,9 +1180,9 @@ function runCount(el){
   }
   requestAnimationFrame(step);
 }
-// graceful image fallback, if the host 404s any asset, show a branded panel instead of a broken icon
+// graceful image fallback — if the host 404s any asset, show a branded panel instead of a broken icon
 var AMK_FB = "data:image/svg+xml," + encodeURIComponent(
-  '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1280" height="800"><rect width="1280" height="800" fill="#0F172A"/><circle cx="640" cy="350" r="86" fill="none" stroke="#F59E0B" stroke-width="4"/><path d="M640 268v164M640 350l-66 82M640 350l66 82" stroke="#FCD34D" stroke-width="6" stroke-linecap="round" fill="none"/><text x="640" y="545" text-anchor="middle" fill="#94A3B8" font-family="Arial,sans-serif" font-size="30" font-weight="bold">AMK · concept preview</text></svg>'
+  '<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800"><rect width="1280" height="800" fill="#0F172A"/><circle cx="640" cy="350" r="86" fill="none" stroke="#F59E0B" stroke-width="4"/><path d="M640 268v164M640 350l-66 82M640 350l66 82" stroke="#FCD34D" stroke-width="6" stroke-linecap="round" fill="none"/><text x="640" y="545" text-anchor="middle" fill="#94A3B8" font-family="Arial,sans-serif" font-size="30" font-weight="bold">AMK — concept preview</text></svg>'
 );
 document.querySelectorAll("img").forEach(function(im){
   if (im.dataset.fbDone) return;
@@ -1187,44 +1192,17 @@ document.querySelectorAll("img").forEach(function(im){
 // WA form
 function sendAudit(e){
   e.preventDefault();
-  var fr = document.documentElement.lang === "fr";
-  var champNom = document.getElementById("f-school");
-  var st = document.getElementById("f-status");
-  var biz = champNom.value.trim();
-  /* Un champ qui n'est QUE des espaces passe la validation native du navigateur (« required »), et
-     c'est ici qu'on le rattrape. Avant : `return false`, le clic ne produisait STRICTEMENT RIEN :
-     pas de message, pas de focus, aucune annonce. C'est le défaut que le test NVDA décrit (« it does
-     not introduce an error message… only says blank ») et que tout l'article de Kortic traite.
-     Maintenant : on annonce (zone vivante), on marque le champ, et on y amène le focus. */
-  if (!biz) {
-    if (st) {
-      st.textContent = fr
-        ? "Il manque le nom de votre établissement : écrivez-le dans le premier champ, puis renvoyez."
-        : "The name of your school or clinic is missing: type it in the first field, then send again.";
-      st.classList.add("err");
-    }
-    champNom.setAttribute("aria-invalid", "true");
-    champNom.focus();
-    return false;
-  }
-  champNom.removeAttribute("aria-invalid");
-  if (st) st.classList.remove("err");
+  var biz = document.getElementById("f-school").value.trim();
+  if (!biz) return false;
   var phone = document.getElementById("f-phone").value.trim();
   var kindBtn = document.querySelector(".f-type.on");
   var kind = kindBtn ? kindBtn.dataset.type : "school";
+  var fr = document.documentElement.lang === "fr";
   var srcLine = SRC_LABEL ? (fr ? "\nSource : " + SRC_LABEL : "\nSource: " + SRC_LABEL) : "";
   var msg = fr
     ? "Bonjour AMK ! Je veux mon APERÇU GRATUIT de site web sous 24h.\n\nÉtablissement : " + biz + "\nType : " + (kind === "clinic" ? "Clinique / laboratoire" : "École") + (phone ? "\nMon WhatsApp : " + phone : "") + srcLine + "\n\nMerci !"
     : "Hello AMK! I'd like my FREE 24h website preview.\n\nInstitution: " + biz + "\nType: " + (kind === "clinic" ? "Clinic / laboratory" : "School") + (phone ? "\nMy WhatsApp: " + phone : "") + srcLine + "\n\nThank you!";
-  var url = "https://wa.me/" + WA_NUM + "?text=" + encodeURIComponent(msg);
-  var w = window.open(url, "_blank");
-  if (st) {
-    st.textContent = fr
-      ? "WhatsApp s'ouvre avec votre message déjà écrit. Rien ne s'ouvre ? Autorisez les fenêtres surgissantes."
-      : "WhatsApp opens with your message already written. Nothing opening? Allow pop-ups.";
-  }
-  // fenêtre bloquée : on emmène le visiteur nous-même, plutôt que de le laisser devant rien
-  if (!w) location.href = url;
+  window.open("https://wa.me/" + WA_NUM + "?text=" + encodeURIComponent(msg), "_blank");
   return false;
 }
 // initial language: ?lang= wins, then saved preference
@@ -1251,7 +1229,7 @@ function sendAudit(e){
     <strong id="vx-title" data-en="Ask the site a question" data-fr="Posez une question au site">Ask the site a question</strong>
     <button class="vx-x" id="vx-x" type="button" aria-label="Close"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
-  <p class="vx-note" data-en="Demo, it only answers with what is written on this page." data-fr="Démo, il ne répond qu'avec ce qui est écrit sur cette page.">Demo, it only answers with what is written on this page.</p>
+  <p class="vx-note" data-en="Demo — it only answers with what is written on this page." data-fr="Démo — il ne répond qu'avec ce qui est écrit sur cette page.">Demo — it only answers with what is written on this page.</p>
 
   <button class="vx-mic" id="vx-mic" type="button">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v4"/></svg>
@@ -1272,7 +1250,7 @@ function sendAudit(e){
   <p class="vx-consent" data-en="Voice recognition uses your browser's own speech service (Chrome or Edge). Only when you tap the microphone, and only your question is sent to the browser maker. This page itself never records you." data-fr="La reconnaissance vocale utilise le service vocal de votre navigateur (Chrome ou Edge). Seulement quand vous appuyez sur le microphone, et seule votre question est envoyée à l'éditeur du navigateur. Cette page n'enregistre rien.">Voice recognition uses your browser's own speech service (Chrome or Edge). Only when you tap the microphone, and only your question is sent to the browser maker. This page itself never records you.</p>
 </div>
 <script>
-/* ===== VX voice layer, Tier 0 (scripted answers traced to this page, browser speech) =====
+/* ===== VX voice layer — Tier 0 (scripted answers traced to this page, browser speech) =====
    Regles : le bouton WhatsApp reste la voie principale · micro = clic explicite ·
    aucune reponse inventee · repli honnete · langue = celle du site. */
 (function(){
