@@ -151,16 +151,17 @@ un conflit que le client verrait. *Cas fondateur : DM Optique, nouvelles heures 
 dépôt (cas `amk-cm` : pages `sample-polyclinic` / `sample-maternity` en ligne, absentes du dépôt), comparer
 en ligne ↔ dépôt **d'abord**.
 
-## Séquence du vendredi 09/10 — VERROUILLÉE (ruling King 08/10, 11ᵉ message)
+## Séquence du vendredi 09/10 — VERROUILLÉE (ruling King 08/10, 11ᵉ message ; **ordre corrigé 08/10, 12ᵉ message**)
+
+**Règle qui gouverne : vérifier AVANT que le client reçoive le lien (règle du 08/10).** King a permuté les anciennes étapes 2 et 3 : le conflit ouvert est **résolu**.
 
 | # | Qui | Quoi |
 |---|---|---|
-| 1 | **King** | Redéploie le site DM Optique (`hosting/previews/dmoptic/`, **avec le correctif `og`**) + masquage de l'interface de catégories (voir `ops/QA-NOTES.md`, question ouverte) |
-| 2 | **King** | Envoie UN message au client avec la nouvelle adresse (`sales/Send-DM-OPTIC-2026-10-09-NOUVELLE-ADRESSE.md`) |
-| 3 | Orchestrateur | Vérifie la page en ligne : balayage crédentiels + pré-flight §13 + **lecture de l'en-tête (`og:url`, `og:image`)** |
+| 1 | **King** | Redéploie le site DM Optique (`hosting/previews/dmoptic/`, **dossier entier : `index.html` + `og.jpg`**) avec les correctifs : **cartes de catégorie → CTA WhatsApp (Option B)** et reconstruction `og` |
+| 2 | Orchestrateur | **Vérifie la page en ligne** (~5 min) : balayage crédentiels + pré-flight §13 + **lecture de l'en-tête HTML (`og:url`, `og:image`, `robots` = `noindex,nofollow`)** + les trois liens WhatsApp des cartes |
+| 3 | **King** | **Seulement après vérification réussie** : envoie UN message au client avec la nouvelle adresse (`sales/Send-DM-OPTIC-2026-10-09-NOUVELLE-ADRESSE.md`) |
 | 4 | **King** | Déploie `amk-cm` (`amk-site.zip`) **après** revue sur téléphone — les prix et les affirmations retirés partent ensemble |
 | 5 | Orchestrateur | Vérifie `amk-cm` en ligne |
-| 6 | **King** | Une fois la nouvelle adresse confirmée et le client prévenu : **abandonne `dmoptic-2`** (elle sert encore « depuis 2016 » jusque-là) |
+| 6 | **King** | Une fois la nouvelle adresse confirmée et **le client l'ayant reçue** : **abandonne `dmoptic-2`** (elle sert encore « depuis 2016 » jusque-là) |
 
-⚠️ Conflit ouvert : l'étape 2 précède l'étape 3, alors que la règle du 08/10 demande un balayage de la page en ligne **avant** tout partage d'URL. À trancher par King (permuter 2↔3, ou exception écrite).
-
+Si l'étape 2 échoue : **le client ne reçoit pas le lien** ; correction au dépôt, nouveau redéploiement, nouvelle vérification.

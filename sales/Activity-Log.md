@@ -4848,3 +4848,12 @@ lead content de « la seule vidéo publiée » — vérifier d'abord que le lead
 - **Ruling site :** pas de section montures (juste, livré tel quel : les photos viennent après l'acompte, aucun prix ne peut être montré) ; interface de catégories cachée tant qu'aucune carte n'existe. **Constat :** la page du dépôt n'a pas de pills ni de recherche ; question ouverte posée à King sur l'élément visé.
 - **Contradiction de King corrigée par lui-même :** « vérifier dans le tableau de bord » vs « pas de déploiement automatique » → pas de déploiement automatique, King déploie à la main.
 
+## 08/10/2026 (12ᵉ message) — DM Optique : Option B, brief client, séquence, règle git
+
+- **Ruling King (Option B), 08/10/2026 :** « Nos montures » = **trois cartes de catégorie interactives (vue · soleil · enfants), chacune un CTA WhatsApp** ; **ni page catalogue, ni filtres, ni recherche** sur le socle. Message de la carte vue : « Bonjour DM Optique, je suis intéressé par vos lunettes de vue. Quelles montures avez-vous disponibles ? » ; soleil et enfants : même structure, catégorie changée. La page `/montures` est approuvée pour un **build futur, après dépôt** — pas pour ce socle.
+- **Appliqué le 08/10 :** `site/SPEC-PAGES-v1.md` (bannière, §1 Accueil, note §2) · `demos/dmoptic-v1.tpl.html` + reconstruction (`--url https://dm-optique-sarl.vercel.app/`) · test de page 45 → 50 assertions. **À redéployer par King le 09/10.**
+- **Nouveau document :** `clients/dm-optic/site/CLIENT-REQUIREMENTS-BRIEF.md` — source de vérité des rulings sur le site DM Optique (six sections + écarts + journal d'extension).
+- **PRE-FLIGHT :** §0b « le dossier client d'abord » ajouté ; précondition mécanique avant tout commit (`git log -1 --format=%H` = `git ls-remote origin <branche>`) ajoutée à §1e.
+- **Séquence du vendredi corrigée (King) :** 1 redéploiement → 2 vérification en ligne → 3 envoi de l'URL au client **après** vérification → 4 `amk-cm` → 5 vérification → 6 abandon de `dmoptic-2`. Le conflit « envoyer avant de vérifier » est résolu.
+- **Correction d'une affirmation de l'orchestrateur :** « pas de navigateur dans le bac » était faux — `bash tools/video/install.sh` installe un Chromium headless (~70 Mo, hors dépôt) ; utilisé le 08/10 pour rendre la page DM Optique en mobile.
+- **Non tranché, signalé à King :** périmètre (une page vs cinq) · séance photo (offerte vs 15 000) · « DM Optique » (cartes) vs « DM OPTIQUE SARL » (autres messages) · verbatims 13:26 / 14:58 toujours à coller.

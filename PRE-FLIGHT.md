@@ -8,6 +8,12 @@
 
 Structural, not a memory test: the header is the **first line** of every response, so King can see the precondition was met without asking. (Supersedes the looser one-line format below; same discipline, now with the explicit « PRE-FLIGHT.md read » confirmation.)
 
+
+### 0b · Client dossier first (standing rule, King 08/10, 12th message)
+
+> **§0b — CLIENT DOSSIER FIRST.** Before any ruling on a client's site, document, or message, read the client's full dossier end-to-end. State in the pre-flight header which files were loaded. If a ruling is being made on a client artifact without the dossier loaded, the ruling is incomplete.
+
+Applied: the header lists the files **actually loaded** (and says "partial" / "not read" where that is true) — never the whole folder by assumption. For DM Optique, "end to end" means `clients/dm-optic/` including `onboarding/CONDITIONS-D-INTERVENTION-*`, `site/SPEC-PAGES-v1.md`, the build notes (`build-notes.md`), the proforma, and the client's messages as logged in the CRM. **For the DM Optique site, the source of truth is `clients/dm-optic/site/CLIENT-REQUIREMENTS-BRIEF.md`: rulings cite it; a question it cannot answer extends it (its « Journal d'extension »), never a ruling from memory.**
 ---
 
 **The rule: no task begins without a pre-flight.** Identify the task type → load the lessons for that field from this repo → read them → only then start work. Work that skips the pre-flight is invalid.
@@ -108,6 +114,11 @@ faux-zéro sur du contenu boldé. Classe tooling, pas inférence ; journal : `op
 Au début de chaque tour, avant toute lecture ou édition : `git fetch origin` →
 `git reset --hard origin/arena/01a0f7ad-amk` si local ≠ remote. La resync est une **précondition du
 tour**, pas une réparation après un push refusé. Trois occurrences → protocole, pas vigilance.
+
+**Précondition mécanique avant TOUT commit (ruling King 08/10, 12e message — troisième occurrence de « committed before resync »)** : 
+`git log -1 --format=%H` **doit être égal** à `git ls-remote origin refs/heads/arena/01a0f7ad-amk`. Vérifié **par commande, dans le même appel que le commit**, jamais de mémoire. Si les deux hash diffèrent : **on ne commit pas** — on resynchronise d'abord. Une précondition mécanique, pas de la vigilance.
+
+Recette éprouvée (avec travail non commité, **jamais** `--hard`) : `git fetch -q origin` → `R=$(git ls-remote origin refs/heads/arena/01a0f7ad-amk | cut -f1)` → `git reset -q --mixed $R` → vérifier `HEAD == R` → `git checkout HEAD -- leads/build/{crm.py,generators.lock.json,records.py,views.py}` si ces quatre fichiers reviennent périmés → `git status --short`. (`origin/<branche>` peut ne pas exister comme ref locale : le tip se lit par `ls-remote`.) Le `reset --hard` de la ligne ci-dessus ne vaut que pour un arbre propre.
 
 ## 2 · Uniqueness protocol (every website/design build, before a line of HTML)
 

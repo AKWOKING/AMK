@@ -1,5 +1,13 @@
 # DM OPTIQUE — SPEC PAGES v1 (planning pré-dépôt, ruling King 06/10) — révisé 08/10 (réponse client 14:58)
 
+> **RULING KING 08/10 (12e message) — OPTION B : « Nos montures » = trois cartes de catégorie interactives, chacune un CTA WhatsApp.**
+> Vue · soleil · enfants. **Pas de page catalogue, pas de filtres, pas de recherche** sur ce socle. Chaque carte ouvre WhatsApp
+> avec **son** message pré-rempli (vue : « Bonjour DM Optique, je suis intéressé par vos lunettes de vue. Quelles montures avez-vous
+> disponibles ? » ; soleil et enfants : même structure, catégorie changée). La page `/montures` (§2), la fiche (§3) et leurs filtres
+> sont approuvées pour un **build futur, après dépôt** — pas pour ce socle. Source de vérité : `CLIENT-REQUIREMENTS-BRIEF.md`.
+> **Statut du texte « DM Optique » vs « DM OPTIQUE SARL » :** les trois messages de cartes portent « DM Optique » (texte ruled) ; les six
+> autres messages de la page portent « DM OPTIQUE SARL » (nom donné par le client le 25/09). Écart signalé à King, non tranché.
+
 > **RÉVISION 08/10 — réponse du client reçue à 14:58** (suite au jeu de questions de 13:26). Texte
 > exact **non transmis** à l'orchestrateur : les points ci-dessous sont ceux que King a rapportés ;
 > le verbatim reste à coller (journal : `onboarding/post-deposit-email.md`). Six changements :
@@ -69,8 +77,9 @@ votre site » : la source y est implicite (nom de monture) — on ne l'altère p
 │ · conseil personnalisé ·     │
 │ sur rendez-vous              │
 ├──────────────────────────────┤
-│ MONTURES À LA UNE : 6–8      │  scroll horizontal sur mobile
-│ cartes (§0) ←→ swipe         │  flèches discrètes desktop
+│ NOS MONTURES : 3 cartes de   │  OPTION B (ruling 08/10) : vue · soleil · enfants,
+│ catégorie, chacune = CTA     │  chaque carte → WhatsApp, son message. Ni catalogue,
+│ WhatsApp                     │  ni filtres, ni recherche. (« À la une 6–8 » = futur)
 ├──────────────────────────────┤
 │ COMMENT ÇA MARCHE : 1        │  3 pas, numérotés, verticaux mobile
 │ parcourir · 2 envoyer        │
@@ -92,6 +101,10 @@ votre site » : la source y est implicite (nom de monture) — on ne l'altère p
   nécessaire : texte d'abord) ; carrousel = scroll horizontal natif, pas de dropdown ; tap targets
   ≥44 px (CTA, toggle, cartes) ; FR par défaut, toggle EN visible header (strings EN =
   [À PRODUIRE — phase contenu]).
+- **« Nos montures » — état ruled 08/10 (Option B) :** trois cartes de catégorie (photo d'illustration · nom · une phrase · « À demander / À apporter »
+  · **un bouton WhatsApp**), messages FR/EN pré-remplis par carte, qui suivent la bascule de langue. Une quatrième action générique
+  (« Demander si c'est en boutique », message « avez-vous cette monture en boutique : ») est conservée sous les cartes. **Aucun prix, aucune marque,
+  aucun lien vers `/montures`.** C'est ce qui est déployé ; le bloc « à la une » (6–8 cartes produit, §0) n'existe pas encore.
 - **États vides/erreur :** si « à la une » vide (inventaire non chargé) → bloc repli :
   « Le catalogue arrive — écrivez-nous, on vous montre les montures en message. » + CTA WhatsApp.
 - **[À CONFIRMER — client] :** photo hero (après dépôt) · libellé réseaux sociaux (comptes à créer
@@ -100,6 +113,8 @@ votre site » : la source y est implicite (nom de monture) — on ne l'altère p
 ## 2 · CATALOGUE `/montures` (filtres ruled 08/10 — voir §6)
 
 > **RULING KING 08/10 (soir) — *Category pills and search bar hidden until ≥1 frame card exists. Re-enable in the frames-catalog commit.*** Une affordance qui ne fonctionne pas est pire que pas d'affordance : pas de carte monture → ni pills de catégorie, ni barre de recherche, ni filtre. En attendant, le site est un socle : Accueil + Contact + À propos + bouton WhatsApp flottant. **Ceci remplace** la ligne « toujours présente, même catalogue plat » du schéma ci-dessous et le « grille plate + barre de recherche » du mode plat (annotés, non effacés).
+>
+> **Mise à jour 08/10 (12e message, Option B) :** la condition « jusqu'à ce qu'une carte monture existe » est remplacée par un état explicite : **il n'y a ni page `/montures`, ni pills, ni recherche, ni filtre sur le socle déployé** (confirmé par King : le catalogue n'a jamais été construit). Le reste de ce §2 est la **spec du build futur** (après dépôt et photos), pas l'état actuel du site. Les cartes de catégorie de l'Accueil sont la seule « vitrine » actuelle (voir §1).
 
 ```
 ┌──────────────────────────────┐

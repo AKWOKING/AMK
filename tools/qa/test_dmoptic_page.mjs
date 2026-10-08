@@ -70,8 +70,12 @@ ok("la vitrine dit que les photos sont des illustrations (jamais des montures du
    /Photos d'illustration\./.test(showcase) && /Illustration photos\./.test(showcase));
 ok("la vitrine ne nomme AUCUNE marque et n'affiche AUCUN prix",
    !/Ray-Ban|Oakley|Gucci|Tom Ford|Oliver Peoples|Essilor|Zeiss/i.test(showcase) && !/\d{3,}\s?(FCFA|XAF)/i.test(showcase));
-ok("la vitrine porte une seule action (le reste du choix se fait au cabinet)",
-   (showcase.match(/class="btn /g) || []).length === 1);
+/* v2.1 : « une seule action ». Option B (King, 08/10) : quatre — les trois cartes de familles + la question
+   générique sur une monture précise ; toutes WhatsApp, aucun autre lien sortant dans la vitrine. */
+ok("la vitrine porte quatre actions, toutes WhatsApp (trois familles + la question sur une monture précise)",
+   (showcase.match(/class="btn /g) || []).length === 4 &&
+   (showcase.match(/<a [^>]*href="/g) || []).length === 4 &&
+   (showcase.match(/<a class="btn btn-wa wa/g) || []).length === 4);
 ok("les trois conseils du choix sont là (forme du visage, appui, usage)",
    (showcase.match(/<div>\s*<h3>/g) || []).length >= 3);
 
@@ -98,6 +102,23 @@ ok("les numéros du registre (021/2016, arrêté 0382) ne sont plus écrits dans
 ok("mais l'entité garde son identifiant dans les données structurées (021/2016)",
    /021\/2016/.test(html) && opticien.identifier.value === "021/2016");
 ok("aucun lien mort : pas un seul href=\"#\"", !/href="#"/.test(html));
+/* OPTION B (ruling King 08/10) : chaque carte de famille est un WhatsApp, avec SON message — pas de catalogue. */
+const CAT_FR = [
+  "Bonjour DM Optique, je suis intéressé par vos lunettes de vue. Quelles montures avez-vous disponibles ?",
+  "Bonjour DM Optique, je suis intéressé par vos lunettes de soleil. Quelles montures avez-vous disponibles ?",
+  "Bonjour DM Optique, je suis intéressé par vos lunettes pour enfants. Quelles montures avez-vous disponibles ?",
+];
+const cardLinks = cards.map((c) => (c.match(/<a class="[^"]*\bwa\b[^"]*"[^>]*>/g) || []));
+ok("Option B : chacune des trois cartes porte exactement UN lien WhatsApp",
+   cards.length === 3 && cardLinks.every((l) => l.length === 1));
+ok("Option B : le message de chaque carte = le message ruled (vue / soleil / enfants), en français",
+   cardLinks.every((l, i) => (l[0].match(/data-fr="([^"]*)"/) || [])[1] === CAT_FR[i]));
+ok("Option B : chaque carte a aussi son message en anglais, différent des deux autres",
+   new Set(cardLinks.map((l) => (l[0].match(/data-en="([^"]*)"/) || [])[1])).size === 3);
+ok("Option B : l'adresse statique de chaque carte = le message français encodé par le JavaScript",
+   cardLinks.every((l, i) => (l[0].match(/href="([^"]+)"/) || [])[1] === WA + encodeURIComponent(CAT_FR[i])));
+ok("Option B : aucune page catalogue, aucun filtre, aucune barre de recherche dans la page",
+   !/href="\/montures|type="search"|role="search"|class="[^"]*\bpill\b/.test(html));
 ok("aucun prix dans le texte visible",
    !/\b\d{2,3}\s?\d{3}\s?(FCFA|XAF|fcfa)\b/i.test(html) && !/priceRange/.test(html));
 
@@ -153,6 +174,12 @@ const MESSAGES = [
    "Hello DM OPTIQUE SARL, I would like to book an eye examination."],
   ["Bonjour DM OPTIQUE SARL, je voudrais prendre un rendez-vous pour un examen de la vue.",
    "Hello DM OPTIQUE SARL, I would like to book an eye examination."],
+  ["Bonjour DM Optique, je suis intéressé par vos lunettes de vue. Quelles montures avez-vous disponibles ?",
+   "Hello DM Optique, I am interested in your prescription glasses. Which frames do you have available?"],
+  ["Bonjour DM Optique, je suis intéressé par vos lunettes de soleil. Quelles montures avez-vous disponibles ?",
+   "Hello DM Optique, I am interested in your sunglasses. Which frames do you have available?"],
+  ["Bonjour DM Optique, je suis intéressé par vos lunettes pour enfants. Quelles montures avez-vous disponibles ?",
+   "Hello DM Optique, I am interested in your children's glasses. Which frames do you have available?"],
 ];
 const ALT = ["Une paire de lunettes de vue posée sur une surface claire, lumière douce.",
              "A pair of prescription glasses resting on a pale surface in soft light."];
@@ -191,8 +218,10 @@ ok("départ en français : la page se déclare en français",
 ok("départ en français : FR est enfoncé, EN ne l'est pas",
    r.buttons["btn-fr"].getAttribute("aria-pressed") === "true" &&
    r.buttons["btn-en"].getAttribute("aria-pressed") === "false");
-ok("départ en français : les six messages WhatsApp restent français",
-   r.anchors.every((a) => waMessage(a.getAttribute("href")).indexOf("Bonjour DM OPTIQUE SARL") === 0) &&
+/* Deux salutations, et seulement deux : « DM OPTIQUE SARL » (le nom du cabinet, son message du 25/09) pour
+   les six messages d'origine, « DM Optique » pour les trois cartes de familles (texte ruled par King, 08/10). */
+ok("départ en français : les neuf messages WhatsApp restent français",
+   r.anchors.every((a) => /^Bonjour DM (OPTIQUE SARL|Optique),/.test(waMessage(a.getAttribute("href")))) &&
    waMessage(r.anchors[2].getAttribute("href")) === MESSAGES[2][0]);
 ok("départ en français : le texte de remplacement des images est français",
    r.image.getAttribute("alt") === ALT[0]);

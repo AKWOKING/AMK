@@ -1,5 +1,7 @@
 # DM OPTIQUE SARL — dossier client
 
+> **Site : source de vérité = [`site/CLIENT-REQUIREMENTS-BRIEF.md`](site/CLIENT-REQUIREMENTS-BRIEF.md)** (ruling King 08/10, 12e message). Tout ruling sur le site de ce client le cite ; une question sans réponse dans le brief l'étend.
+
 > **État : accord verbal. Rien n'est public — ni site, ni page, ni fiche Google, ni contenu — tant que
 > l'acompte n'est pas encaissé.**
 >
