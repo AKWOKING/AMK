@@ -150,3 +150,17 @@ un conflit que le client verrait. *Cas fondateur : DM Optique, nouvelles heures 
 **Corollaire (08/10) :** avant tout redéploiement d'un projet dont la page en ligne a pu être modifiée hors
 dépôt (cas `amk-cm` : pages `sample-polyclinic` / `sample-maternity` en ligne, absentes du dépôt), comparer
 en ligne ↔ dépôt **d'abord**.
+
+## Séquence du vendredi 09/10 — VERROUILLÉE (ruling King 08/10, 11ᵉ message)
+
+| # | Qui | Quoi |
+|---|---|---|
+| 1 | **King** | Redéploie le site DM Optique (`hosting/previews/dmoptic/`, **avec le correctif `og`**) + masquage de l'interface de catégories (voir `ops/QA-NOTES.md`, question ouverte) |
+| 2 | **King** | Envoie UN message au client avec la nouvelle adresse (`sales/Send-DM-OPTIC-2026-10-09-NOUVELLE-ADRESSE.md`) |
+| 3 | Orchestrateur | Vérifie la page en ligne : balayage crédentiels + pré-flight §13 + **lecture de l'en-tête (`og:url`, `og:image`)** |
+| 4 | **King** | Déploie `amk-cm` (`amk-site.zip`) **après** revue sur téléphone — les prix et les affirmations retirés partent ensemble |
+| 5 | Orchestrateur | Vérifie `amk-cm` en ligne |
+| 6 | **King** | Une fois la nouvelle adresse confirmée et le client prévenu : **abandonne `dmoptic-2`** (elle sert encore « depuis 2016 » jusque-là) |
+
+⚠️ Conflit ouvert : l'étape 2 précède l'étape 3, alors que la règle du 08/10 demande un balayage de la page en ligne **avant** tout partage d'URL. À trancher par King (permuter 2↔3, ou exception écrite).
+

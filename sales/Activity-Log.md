@@ -4840,3 +4840,11 @@ lead content de « la seule vidéo publiée » — vérifier d'abord que le lead
 - **Condition restante :** le dépôt a `og:url` / `og:image` sur la nouvelle adresse depuis `797a024`, mais la page en ligne n'a pas été redéployée avec : redéployer **avant** d'abandonner `dmoptic-2`, sinon l'aperçu WhatsApp perd son image.
 - **À vérifier avec King (non tranché) :** le client a reçu `dmoptic-2` le 24/09 ; s'il n'a pas reçu la nouvelle adresse, son ancien lien mourra à l'abandon.
 
+## 08/10/2026 (soir, 11ᵉ message) — séquence du vendredi, message « nouvelle adresse », règle pré-flight
+
+- **Règle permanente (King) :** chaque réponse de l'orchestrateur à King ouvre sur l'en-tête §0 ; chaque tâche passée par le chef de cabinet le rappelle en tête. Écrit en première ligne de `PRE-FLIGHT.md`.
+- **Séquence du vendredi 09/10 (verrouillée) :** redéploiement DM (og + masquage de catégories) → message au client → vérification en ligne → déploiement `amk-cm` après revue téléphone → vérification → abandon de `dmoptic-2`. Détail : `hosting/previews/README.md`.
+- **Message client (brouillon, King envoie) :** `sales/Send-DM-OPTIC-2026-10-09-NOUVELLE-ADRESSE.md`.
+- **Ruling site :** pas de section montures (juste, livré tel quel : les photos viennent après l'acompte, aucun prix ne peut être montré) ; interface de catégories cachée tant qu'aucune carte n'existe. **Constat :** la page du dépôt n'a pas de pills ni de recherche ; question ouverte posée à King sur l'élément visé.
+- **Contradiction de King corrigée par lui-même :** « vérifier dans le tableau de bord » vs « pas de déploiement automatique » → pas de déploiement automatique, King déploie à la main.
+

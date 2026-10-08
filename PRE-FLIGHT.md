@@ -1,3 +1,5 @@
+> **Every orchestrator response to King must begin with the §0 pre-flight header. Every King-issued task that passes through the chief of staff will re-state this requirement at the top of the task. Non-compliance = returned message.** *(standing rule, King 08/10, 11th message)*
+
 # AMK — PRE-FLIGHT PROTOCOL (standing rule, King 17 Sep 2026)
 
 ## 0 · MANDATORY FIRST READ (standing rule, King 08/10)

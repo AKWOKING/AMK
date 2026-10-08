@@ -99,11 +99,13 @@ votre site » : la source y est implicite (nom de monture) — on ne l'altère p
 
 ## 2 · CATALOGUE `/montures` (filtres ruled 08/10 — voir §6)
 
+> **RULING KING 08/10 (soir) — *Category pills and search bar hidden until ≥1 frame card exists. Re-enable in the frames-catalog commit.*** Une affordance qui ne fonctionne pas est pire que pas d'affordance : pas de carte monture → ni pills de catégorie, ni barre de recherche, ni filtre. En attendant, le site est un socle : Accueil + Contact + À propos + bouton WhatsApp flottant. **Ceci remplace** la ligne « toujours présente, même catalogue plat » du schéma ci-dessous et le « grille plate + barre de recherche » du mode plat (annotés, non effacés).
+
 ```
 ┌──────────────────────────────┐
 │ header + flottant (§1)       │
 ├──────────────────────────────┤
-│ [🔍 Rechercher…]  sticky     │  toujours présente, même catalogue plat
+│ [🔍 Rechercher…]  sticky     │  ~~toujours présente, même catalogue plat~~ → CACHÉE tant qu'aucune carte (ruling 08/10 soir)
 ├──────────────────────────────┤
 │ RANGÉE 1 (si catalogue tagué)│  pills, scroll horizontal, jamais dropdown
 │ (Toutes)(Femme)(Homme)       │
@@ -128,7 +130,7 @@ votre site » : la source y est implicite (nom de monture) — on ne l'altère p
   rangée 2 = une pill active par groupe (Forme / Matériau / Couleur), combinables en intersection avec la
   rangée 1 ; recherche = filtre par nom (insensible casse/accents) ; grille 2 col, cartes tap
   ≥44 px ; first paint ≤3 s : lots de 12, images lazy.
-- **Mode plat (RÈGLE, ruling 08/10) :** catalogue non tagué = grille plate + barre de recherche,
+- **Mode plat (RÈGLE, ruling 08/10) :** catalogue non tagué = grille plate + barre de recherche *(barre cachée tant qu'aucune carte n'existe — ruling 08/10 soir)*,
   **aucun filtre, aucune pill grisée, aucun « bientôt »**. Les filtres s'allument quand les données
   portent les tags (§6) : un commit de données, pas de reconstruction.
 - **États vides/erreur :** combinaison sans résultat → état vide ci-dessus (jamais page blanche) ;
