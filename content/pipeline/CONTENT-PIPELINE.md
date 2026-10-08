@@ -140,3 +140,10 @@ ne répond pas*.
 - **v0.1 — 17 Sep 2026:** structure created while uploads were missing.
 
 - **05/10 — Publication v06 (ruling King) :** `Publication v06 = mercredi 07/10 19h25 SI dépôt encaissé ; sinon vendredi 09/10.` On ne publie pas dans un jour sans momentum — le contenu suit le mouvement du business, jamais l'inverse.
+
+## L · Carrousels @amkweb.cm (08/10/2026) — stage : rendered → delivered (à relire par King sur téléphone)
+| Id | Slides | Cible | Date proposée | Stage | Fichiers |
+|---|---|---|---|---|---|
+| `c01-vous-etes-ouverts` | 7 | cliniques, labos | mar 13/10 19:25 | rendered, **pas publié** | `content/carousels/c01-vous-etes-ouverts/` |
+| `c02-test-des-10-secondes` | 7 | écoles | jeu 15/10 19:25 | rendered, **pas publié** | `content/carousels/c02-test-des-10-secondes/` |
+| `c03-avant-de-payer` | 7 | écoles, cliniques | mar 20/10 19:25 | rendered, **pas publié** | `content/carousels/c03-avant-de-payer/` |

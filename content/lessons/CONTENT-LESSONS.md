@@ -310,3 +310,14 @@ Cameroun, petit budget, funnel WhatsApp, et nos règles debout. Le reste est **r
 
 **Règle de lecture :** aucune de ces leçons ne remplace une décision verrouillée. En cas de conflit, la
 décision verrouillée gagne (§2, §11, §14, §15) — et on le dit, on ne le fait pas en silence.
+
+---
+
+## 17 · Carrousels Instagram — règles de fabrication (08/10/2026, @amkweb.cm)
+**Contexte :** premier lot de 3 carrousels FR (`content/carousels/`), calendrier `strategy/CALENDRIER-4-SEMAINES-2026-10-12.md`. Rendu automatique : `tools/content/render_carousels.py`.
+1. **Une idée par slide, 7 slides maximum, une seule dernière slide d'appel à l'action.** Le rendu refuse un carrousel qui dépasse ou qui a deux CTA.
+2. **Accroche aimée de la loi des 2 secondes (§12) :** une question que dit le patient/le parent, ou un test que le lecteur peut faire seul. Jamais un chiffre non sourcé ; un scénario porte l'étiquette « SCÉNARIO ».
+3. **Exemples visuels = pages fictives étiquetées, vraiment capturées** (MboaCare, Crestwood College) — jamais un rectangle qui joue un site, jamais une page de prospect.
+4. **Typographie française :** espace insécable avant ? : ! » et après « ; la ponctuation reste collée au mot surligné ; lignes équilibrées (pas de mot orphelin).
+5. **Montserrat « static » = variable à l'axe Thin par défaut** (rappel de §6) : fixer le poids (`set_variation_by_axes`) sinon tout sort en filet de 100.
+6. **Texte alternatif par slide** livré avec la légende ; hashtags : huit, volumes non vérifiés (hypothèse).

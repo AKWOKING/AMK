@@ -4857,3 +4857,7 @@ lead content de « la seule vidéo publiée » — vérifier d'abord que le lead
 - **Séquence du vendredi corrigée (King) :** 1 redéploiement → 2 vérification en ligne → 3 envoi de l'URL au client **après** vérification → 4 `amk-cm` → 5 vérification → 6 abandon de `dmoptic-2`. Le conflit « envoyer avant de vérifier » est résolu.
 - **Correction d'une affirmation de l'orchestrateur :** « pas de navigateur dans le bac » était faux — `bash tools/video/install.sh` installe un Chromium headless (~70 Mo, hors dépôt) ; utilisé le 08/10 pour rendre la page DM Optique en mobile.
 - **Non tranché, signalé à King :** périmètre (une page vs cinq) · séance photo (offerte vs 15 000) · « DM Optique » (cartes) vs « DM OPTIQUE SARL » (autres messages) · verbatims 13:26 / 14:58 toujours à coller.
+
+## 08/10/2026 (15ᵉ message — calendrier de contenu)
+- **Livré :** `content/strategy/CALENDRIER-4-SEMAINES-2026-10-12.md` (12 publications, 13/10 → 07/11, point kill rule 04/11) et 3 carrousels FR prêts à poster (`content/carousels/`, 21 slides 1080×1350, légendes, hashtags, textes alternatifs). Outil : `tools/content/render_carousels.py`.
+- **Non publié, non validé :** tout reste à relire par King. **À trancher :** offre « aperçu gratuit » telle quelle · post fondateur (100 000 F) · bio « 24h » · lien Threads · échantillon du test (3 vidéos avant le 04/11, pas 4).

@@ -1,0 +1,10 @@
+import puppeteer from 'puppeteer-core';
+import chromium from '@sparticuz/chromium';
+const [,, url, out, w, h] = process.argv;
+const b = await puppeteer.launch({executablePath: await chromium.executablePath(), args: [...chromium.args,'--no-sandbox','--hide-scrollbars'], headless: 'shell'});
+const p = await b.newPage();
+await p.setViewport({width:+w, height:+h, deviceScaleFactor:2, isMobile:true, hasTouch:true});
+await p.goto(url, {waitUntil:'load'}); await new Promise(r=>setTimeout(r,700));
+await p.evaluate(()=>setLang('fr')); await new Promise(r=>setTimeout(r,1500));
+await p.screenshot({path: out});
+await b.close();

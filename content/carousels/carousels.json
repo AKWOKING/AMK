@@ -1,0 +1,189 @@
+{
+  "_doc": "Source unique du texte des carrousels @amkweb.cm (08/10/2026). Balisage : *mot* = surligné ambre. Rendu : python3 tools/content/render_carousels.py. Aucune affirmation de résultat, aucun prix, aucun nom réel. Les exemples visuels sont des pages fictives étiquetées.",
+  "handle": "@amkweb.cm",
+  "carousels": [
+    {
+      "id": "c01-vous-etes-ouverts",
+      "calendar": "Mar 13/10/2026 · 19:25",
+      "audience": "Cliniques, laboratoires, cabinets",
+      "objective": "visibilité",
+      "reading": "Partages et abonnements (7 jours). Pas de DM attendu : le CTA est un test, puis l'aperçu.",
+      "slides": [
+        {
+          "kind": "cover",
+          "tag": "CLINIQUES · LABOS · CABINETS",
+          "title": "*« Vous êtes ouverts ? »*",
+          "sub": "Glissez pour le test de ce soir",
+          "alt": "Couverture : « Vous êtes ouverts ? » Votre page Facebook ne répond pas. Un personnage en veste bleue tient un téléphone.",
+          "title2": "Votre page Facebook ne répond pas."
+        },
+        {
+          "kind": "chat",
+          "label": "SCÉNARIO",
+          "title": "Un patient *vous écrit*.",
+          "bubbles": [
+            "Vous êtes ouverts maintenant ?",
+            "Ça coûte combien ?"
+          ],
+          "note": "Il a posé deux questions. Aucune réponse.",
+          "alt": "Deux messages envoyés par un patient : « Vous êtes ouverts maintenant ? » et « Ça coûte combien ? ». Aucune réponse en dessous."
+        },
+        {
+          "kind": "text",
+          "label": "SCÉNARIO",
+          "title": "Il n'attend pas.",
+          "body": "Il appelle la clinique *d'à côté*.",
+          "alt": "Texte : Il n'attend pas. Il appelle la clinique d'à côté."
+        },
+        {
+          "kind": "text",
+          "title": "Votre page *montre*.\nElle ne *répond* pas.",
+          "body": "Photos, horaires, services : tout est là. Mais celui qui pose une question attend.",
+          "alt": "Texte : Votre page montre. Elle ne répond pas. Photos, horaires, services : tout est là. Mais celui qui pose une question attend."
+        },
+        {
+          "kind": "shot",
+          "image": "assets/mboacare-mobile-en.png",
+          "title": "Une page qui répond *d'avance*.",
+          "caption": "Horaires en haut, bouton WhatsApp dès l'ouverture. Exemple fictif (clinique), version anglaise.",
+          "alt": "Capture d'une page de démonstration sur téléphone : clinique fictive, horaires en haut, bouton « Chat on WhatsApp »."
+        },
+        {
+          "kind": "text",
+          "label": "À FAIRE CE SOIR",
+          "title": "Le test.",
+          "body": "Écrivez à votre page depuis le compte d'un proche. *Chronométrez* la réponse.",
+          "alt": "Texte : Le test. Écrivez à votre page depuis le compte d'un proche. Chronométrez la réponse."
+        },
+        {
+          "kind": "cta",
+          "title": "Voir à quoi *ressemblerait* la vôtre ?",
+          "button": "Écrivez APERÇU en message privé",
+          "sub": "Le nom de votre établissement suffit. Aperçu gratuit : vous regardez avant de décider.",
+          "alt": "Appel à l'action : écrivez APERÇU en message privé. Le nom de votre établissement suffit. Aperçu gratuit."
+        }
+      ],
+      "caption_fr": "« Vous êtes ouverts ? »\nUn patient vous l'écrit. Personne ne répond.\n\nIl n'attend pas : il appelle la clinique d'à côté.\n\nVotre page Facebook montre vos photos, vos horaires, vos services. Elle ne répond pas à celui qui pose la question.\n\nLe test de ce soir : écrivez à votre page depuis le compte d'un proche, et chronométrez la réponse.\n\n👉 Envie de voir à quoi ressemblerait la vôtre ? Écrivez APERÇU en message privé. Le nom de votre établissement suffit. Aperçu gratuit : vous le regardez avant de décider.\n\nEN: \"Are you open?\" A patient messages your page and nobody answers. Test it tonight, then DM PREVIEW for a free homepage concept.",
+      "hashtags": "#Cameroun #Douala #CréationSiteWeb #SiteWebCameroun #Clinique #Laboratoire #WhatsAppBusiness #AMKweb"
+    },
+    {
+      "id": "c02-test-des-10-secondes",
+      "calendar": "Jeu 15/10/2026 · 19:25",
+      "audience": "Écoles, collèges",
+      "objective": "confiance",
+      "reading": "Enregistrements et partages (7 jours). Le CTA envoie le test à un tiers : mesure indirecte de l'utilité.",
+      "slides": [
+        {
+          "kind": "cover",
+          "tag": "ÉCOLES · COLLÈGES",
+          "title": "Ouvrez la page de *votre école*.\nComptez jusqu'à *10*.",
+          "sub": "3 questions, 1 minute",
+          "alt": "Couverture : Ouvrez la page de votre école. Comptez jusqu'à 10. Un personnage en veste bleue tient un téléphone."
+        },
+        {
+          "kind": "text",
+          "label": "MODE D'EMPLOI",
+          "title": "Prenez *votre téléphone*.",
+          "body": "Pas l'ordinateur du bureau. Ouvrez la page de l'école et lancez le chrono.",
+          "alt": "Texte : Prenez votre téléphone. Pas l'ordinateur du bureau. Ouvrez la page de l'école et lancez le chrono."
+        },
+        {
+          "kind": "text",
+          "num": "1",
+          "title": "Où est l'école ?",
+          "body": "L'adresse et un *repère*, sans faire défiler la page.",
+          "alt": "Question 1 : Où est l'école ? L'adresse et un repère, sans faire défiler la page."
+        },
+        {
+          "kind": "text",
+          "num": "2",
+          "title": "Quand puis-je passer ?",
+          "body": "Les *horaires* du secrétariat et les dates d'inscription.",
+          "alt": "Question 2 : Quand puis-je passer ? Les horaires du secrétariat et les dates d'inscription."
+        },
+        {
+          "kind": "text",
+          "num": "3",
+          "title": "Comment vous écrire ?",
+          "body": "Un bouton *WhatsApp* qui s'ouvre, dès le premier écran.",
+          "alt": "Question 3 : Comment vous écrire ? Un bouton WhatsApp qui s'ouvre, dès le premier écran."
+        },
+        {
+          "kind": "text",
+          "title": "Votre *score*.",
+          "body": "3 sur 3 : gardez-le.\n1 ou 2 : le parent doit chercher.\n0 : il n'a rien pour vous écrire.",
+          "alt": "Votre score. 3 sur 3 : gardez-le. 1 ou 2 : le parent doit chercher. 0 : il n'a rien pour vous écrire."
+        },
+        {
+          "kind": "cta",
+          "title": "Envoyez ce test à un *promoteur ou directeur d'école*.",
+          "button": "Envoyez-le sur WhatsApp",
+          "sub": "Votre école a 0 ou 1 sur 3 ? Écrivez APERÇU en message privé.",
+          "alt": "Appel à l'action : envoyez ce test à un promoteur ou directeur d'école. Votre école a 0 ou 1 sur 3 ? Écrivez APERÇU en message privé."
+        }
+      ],
+      "caption_fr": "Ouvrez la page de votre école. Comptez jusqu'à 10.\n\nTrois questions, sur votre téléphone :\n1. Où est l'école ? (adresse et repère)\n2. Quand puis-je passer ? (horaires, inscriptions)\n3. Comment vous écrire ? (un bouton WhatsApp qui s'ouvre)\n\n3 sur 3 : gardez-le. 1 ou 2 : le parent doit chercher. 0 : il n'a rien pour vous écrire.\n\n👉 Enregistrez ce post et envoyez-le à un promoteur ou directeur d'école. Votre école a 0 ou 1 sur 3 ? Écrivez APERÇU en message privé.\n\nEN: Open your school's page on your phone and count to 10. Can a parent find where you are, when to come, and how to message you?",
+      "hashtags": "#ÉcoleCameroun #Cameroun #Douala #Buea #Éducation #SiteWebCameroun #WhatsAppBusiness #AMKweb"
+    },
+    {
+      "id": "c03-avant-de-payer",
+      "calendar": "Mar 20/10/2026 · 19:25",
+      "audience": "Écoles, cliniques, laboratoires",
+      "objective": "conversion",
+      "reading": "DM « APERÇU » reçus dans les 7 jours : la seule mesure qui compte pour ce carrousel (test du 05/10 au 04/11).",
+      "slides": [
+        {
+          "kind": "cover",
+          "tag": "ÉCOLES · CLINIQUES · LABOS",
+          "title": "*Avant de payer*,\nvous voyez *votre page*.",
+          "sub": "Comment ça marche, en 4 étapes",
+          "alt": "Couverture : Avant de payer, vous voyez votre page. Comment ça marche, en 4 étapes. Un personnage en veste bleue tient un téléphone."
+        },
+        {
+          "kind": "text",
+          "num": "1",
+          "title": "Vous écrivez *APERÇU*.",
+          "body": "En message privé, avec le nom de votre établissement.",
+          "alt": "Étape 1 : Vous écrivez APERÇU en message privé, avec le nom de votre établissement."
+        },
+        {
+          "kind": "text",
+          "num": "2",
+          "title": "Nous construisons *votre* page d'accueil.",
+          "body": "Votre nom, votre ville, vos services.",
+          "alt": "Étape 2 : Nous construisons votre page d'accueil. Votre nom, votre ville, vos services."
+        },
+        {
+          "kind": "shot",
+          "image": "assets/crestwood-mobile-fr.png",
+          "num": "3",
+          "title": "Vous l'ouvrez *sur votre téléphone*.",
+          "caption": "Exemple fictif (collège), pas un client. Bilingue FR / EN.",
+          "alt": "Étape 3 : capture d'une page de démonstration sur téléphone, collège fictif, avec le bandeau « Démo : collège secondaire fictif »."
+        },
+        {
+          "kind": "text",
+          "num": "4",
+          "title": "Vous *décidez*.",
+          "body": "Pas d'obligation de continuer.",
+          "alt": "Étape 4 : Vous décidez. Pas d'obligation de continuer."
+        },
+        {
+          "kind": "text",
+          "title": "Une page se juge *en la regardant*.",
+          "body": "Pas en lisant une promesse.",
+          "alt": "Texte : Une page se juge en la regardant. Pas en lisant une promesse."
+        },
+        {
+          "kind": "cta",
+          "title": "On commence par *votre* aperçu ?",
+          "button": "Écrivez APERÇU en message privé",
+          "sub": "Le nom de votre établissement et votre ville suffisent.",
+          "alt": "Appel à l'action : écrivez APERÇU en message privé. Le nom de votre établissement et votre ville suffisent."
+        }
+      ],
+      "caption_fr": "Avant de payer quoi que ce soit, vous voyez votre page.\n\n1. Vous écrivez APERÇU en message privé, avec le nom de votre établissement.\n2. Nous construisons votre page d'accueil : votre nom, votre ville, vos services.\n3. Vous l'ouvrez sur votre téléphone.\n4. Vous décidez. Pas d'obligation de continuer.\n\nUne page se juge en la regardant, pas en lisant une promesse. (La capture est un exemple fictif, pas un client.)\n\n👉 Écrivez APERÇU en message privé. Le nom de votre établissement et votre ville suffisent.\n\nEN: See your homepage before you pay anything. DM PREVIEW with your school or clinic name and town.",
+      "hashtags": "#CréationSiteWeb #SiteWebCameroun #Cameroun #Douala #Clinique #ÉcoleCameroun #Laboratoire #AMKweb"
+    }
+  ]
+}

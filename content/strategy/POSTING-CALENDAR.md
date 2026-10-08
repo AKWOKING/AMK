@@ -145,3 +145,6 @@
 **Source :** `site/sample-secondary.html` (Crestwood College, maquette **fictive et publique**, deja en ligne sur `amk-cm.vercel.app`).
 **Ce qu'elle corrige par rapport a tout ce qui a ete publie jusqu'ici :** la page **defile vraiment** (aucune fenetre de 2 s figee), la voix est **dans le fichier**, aucun texte de carte n'est tronque.
 **A valider par King** avant toute publication. Sous-titres EN a produire pour le creneau IG.
+
+## J · Calendrier 4 semaines (08/10/2026) — proposition, à valider par King
+`strategy/CALENDRIER-4-SEMAINES-2026-10-12.md` : 12 publications du 13/10 au 07/11 (carrousels mar/jeu 19:25, Reel du samedi = réemploi de la vidéo TikTok du vendredi), point de décision de la kill rule le 04/11. **Les trois premiers carrousels sont prêts** (`content/carousels/POST-READY.md`). Rien n'est publié. Ce document complète V2 (05/10) ; il ne remplace pas ce journal.
