@@ -78,7 +78,9 @@ phrase — le dépôt est corrigé, le déploiement = un redéploiement à déci
 `grep -rIn "2016" . --exclude-dir=.git` et `grep -rIn "2017" . --exclude-dir=.git` — lire chaque ligne (les numéros de décret 021/2016, 025/2017 sont des numéros, pas des années d'exercice) puis `grep -rIniE "depuis (20[0-2][0-9])|since 20[0-2][0-9]|exerce depuis|diplômé|certifié|agréé" . --exclude-dir=.git`.
 **Page déployée :** la même grille s'applique à l'URL **publique** (lecture de la page servie), pas seulement au dépôt — voir `ops/TOOL-SCAN.md` (tâche hebdomadaire) et `ops/QA-NOTES.md` (avant tout partage d'URL).
 
-### amk-cm.vercel.app (accueil) — trouvé à la revue du 08/10, NON modifié
+### amk-cm.vercel.app (accueil) — trouvé à la revue du 08/10 ; **RETIRÉ dans `site/` le 08/10 (soir, ruling King : oui), en attente de déploiement**
 Page publique d'AMK : « projects under way with institutions in Douala, Buea and Limbe » · « we also work with
 schools in Yaoundé, Bafoussam and Bamenda » · « 99.9% uptime » — **aucune trace au dépôt** (CRM : aucun client
 payant). Prix fondateur 100 000 FCFA périmé (grille v3). Décisions de King : `site/SEO-REVIEW-2026-10-08.md` §5.
+
+> **Mise à jour 08/10 (soir).** Les trois affirmations sont retirées de `site/index.html` (EN, FR, JSON-LD de la FAQ). La zone de **service** à distance (Yaoundé, Bafoussam, Bamenda) est conservée, sans prétendre à des clients. Vérifier le **site en ligne** après le déploiement de King : tant qu'il n'est pas redéployé, les trois affirmations y restent visibles.

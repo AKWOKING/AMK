@@ -35,7 +35,9 @@ PAGES = [
 ]
 ROOT_FILES = ["favicon.svg", "robots.txt", "sitemap.xml", "google08d73756faeade69.html"]
 THUMBS = [
-    "nova.png", "littleoaks.png", "crestwood.png", "clinic.png",
+    # WebP (08/10 : 2,28 Mo de PNG -> 0,47 Mo) ; les deux PNG restants servent d'og:image aux pages en noindex
+    "nova.webp", "littleoaks.webp", "crestwood.webp", "clinic.webp",
+    "sample-polyclinic.webp", "sample-maternity.webp",
     "sample-polyclinic.png", "sample-maternity.png",
     "og-cover.jpg", "og-nova.jpg", "og-littleoaks.jpg", "og-crestwood.jpg",
     "og-clinic-bonaberi.jpg", "og-mitoc.jpg",

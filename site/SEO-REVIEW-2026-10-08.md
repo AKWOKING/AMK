@@ -102,3 +102,42 @@ Relu contre : `site/` (dépôt), la page **en ligne** (robots, sitemap, accueil,
 
 **Ne pas redéployer** tant que la question 3 (affirmations) n'a pas de réponse ; les prix retirés partiront avec ce même redéploiement.
 
+## 8 · Passe SEO du 08/10 (soir, 8e message) — appliquée dans `site/`, **non déployée**
+
+**Ordre de King :** « fais tout ce qu'il faut pour améliorer notre site ; c'est un apprentissage pour nos clients » (+ *SEO Starter Guide*). Réponse Q1 : **oui**, retirer les trois affirmations sans source. La liste réutilisable est dans `content/strategy/SEO-CHECKLIST-CLIENT-SITES-2026-10.md`.
+
+| # | Changement | Pourquoi (guide Google) | Preuve |
+|---|---|---|---|
+| 1 | **Trois affirmations retirées** (« projects under way… Douala, Buea, Limbé », « 99.9 % uptime », « schools in Yaoundé… » comme *clients*) — EN, FR et FAQ JSON-LD | Contenu fiable ; règle `RULE-CREDENTIAL-CLAIMS` | grep : 0 occurrence. **Gardé** : la ligne de zone *desservie* Bafoussam/Bamenda (voir ci-dessous) |
+| 2 | **Français par défaut dans le HTML** (`lang="fr"`, titre, description, `og:locale fr_FR`, 202 textes) | Google lit le HTML servi ; une page mélangée EN/FR ne se classe bien dans aucune langue | `bake_default_lang.py … --dry` : 0 à convertir, 248 déjà FR ; scan : 0 texte anglais |
+| 3 | **Titre 96 → 64 car., description 288 → 139 car., une seule langue** | Titres et snippets uniques, clairs, concis | mesuré avant/après |
+| 4 | **Un seul nom d'entreprise**, celui de la fiche Google, `@id` partagé, `sameAs` + `hasMap` (cid), `WebSite` | Données structurées ; lien site ↔ fiche | lien Maps ouvert : même nom, catégorie, site, téléphone |
+| 5 | **6 PNG → WebP : 2,28 Mo → 0,47 Mo**, héros en `fetchpriority="high"`, alt FR descriptifs traduits par le JS | Images : qualité, alt, vitesse | `audit_images` + poids |
+| 6 | `mitoc.html` → `noindex,nofollow` | Page portant le nom d'un prospect réel, indexable | balise lue |
+| 7 | `sitemap.xml` : `lastmod` seulement sur les 3 pages réellement modifiées | Un `lastmod` faux fait ignorer le champ | commentaire dans le fichier |
+| 8 | `build_site_zip.py` : 28 fichiers (WebP ajoutés) | Un paquet sans les WebP casserait les images | zip reconstruit, 0 référence manquante |
+
+**Deux défauts attrapés en route, à garder en mémoire** (tous deux causés par mes propres changements) :
+1. *Promesses de prix périmées* : retirer les prix avait laissé « inclus dans le même prix », « ce que ça coûte » et « Prix en FCFA » en pied de page. Corrigés (EN/FR/inner text). **Règle ajoutée à la liste client : regrep coût/prix/tarif/frais après tout changement de tarification, y compris dans les attributs `data-*` et le JSON-LD.**
+2. *Contraste des boutons FR|EN* : la CSS stylait `#btn-fr` comme le bouton « inactif » (elle supposait l'anglais actif). Le français par défaut donnait du gris sur ambre. Corrigé : style par **état** (`.on`), jamais par identifiant. `audit_html` : 0 constat.
+
+**Vérifié :** `audit_html` 0 constat (index, école, clinique) · `audit_a11y --strict` rc 0 ×3 · `check_inline_js` 11 blocs, 0 faute · CRLF préservé · `node tools/qa/test_amkcm_lang.mjs` vert (248 éléments bilingues : EN→FR→EN→FR, placeholders, alts, bouton assistant sans `data-en`) · liens Maps vérifiés.
+**Non vérifié :** rendu visuel (pas de navigateur dans le bac à sable) ; `test_site_a11y_behaviour.mjs` et `test_voice_widget.mjs` ne tournent pas ici (puppeteer absent) → **à passer sur ta machine ou en revue manuelle du téléphone avant de déployer**.
+
+**Décisions prises sans ton feu vert explicite** (réversibles) :
+- **Français par défaut.** La seule impression observée vient du Cameroun, sur mobile (n = 1 : un indice, pas une preuve) ; le titre précédent était déjà français ; le public visé (écoles et cliniques de Douala) cherche surtout en français — hypothèse à vérifier dans Search Console. Retour en anglais : `python3 tools/seo/bake_default_lang.py site/index.html en`.
+- **Ligne de zone « Yaoundé, Bafoussam, Bamenda » gardée** comme zone *desservie à distance*, sans prétendre à des clients. Dis-moi si tu veux la retirer.
+
+**Pages non tranchées :** `clinic-bonaberi.html` et `sample-{school,nursery,secondary}.html` sont dans le sitemap (modèles anonymes, voulus) ; **à vérifier :** si `clinic-bonaberi` porte le nom d'une vraie clinique, la passer en `noindex` comme `mitoc.html` (je n'ai pas tranché : je n'ai pas relu sa source dans cette passe).
+
+### Ce que King fait (je ne peux pas)
+1. **Déployer** `site/` comme d'habitude (pas de déploiement automatique à la fusion), **avec `img/*.webp`**. Puis `view-source:` sur l'URL en ligne : `<html lang="fr">` et le nouveau titre.
+2. **Search Console** : Inspection d'URL → « Demander une indexation » pour `/`, `creation-site-web-ecole-cameroun.html`, `creation-site-web-clinique-cameroun.html` ; vérifier que `sitemap.xml` est soumis.
+3. **Fiche Google** (je ne peux pas la modifier) — description à coller, sans superlative :
+   « AMK crée des sites web bilingues FR|EN pour les écoles privées, cliniques et laboratoires du Cameroun : aperçu gratuit sous 24 h, rendez-vous et inscriptions par WhatsApp. Basé à Douala, travail à distance partout au Cameroun. / AMK builds bilingual FR|EN websites for private schools, clinics and labs in Cameroon, with a free preview within 24 hours and WhatsApp booking. »
+   Puis : horaires **réels** pour les sept jours (seul jeudi 10 h–21 h est visible), lien de réservation WhatsApp, services listés, 3 à 5 photos de travaux réels. **Avis : seulement après la première livraison, d'un vrai client consentant.**
+4. **Questions ouvertes :** Q2 (métier de l'accueil : écoles & cliniques, ou opticiens ?) — défaut gardé : écoles & cliniques, positionnement en ligne.
+
+### Mesure (inchangée)
+Export Search Console chaque **dimanche** (`ops/TOOL-SCAN.md`) ; contrôle à 30 jours vers le 21/10 : ≥ 20 impressions et ≥ 2 clics. Au rythme actuel (1 impression sur 7 jours) le seuil sera manqué ; la cause probable est le nombre de pages indexables, pas un mauvais titre. **Ce que cette passe ne peut pas prouver :** qu'elle fera monter le classement — aucune donnée ne le dira avant plusieurs semaines.
+
