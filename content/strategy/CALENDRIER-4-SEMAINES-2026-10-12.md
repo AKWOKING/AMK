@@ -93,3 +93,19 @@
 - **Carrousels** : source unique `content/carousels/carousels.json` → `python3 tools/content/render_carousels.py` (contrôles : glyphes, cadre, contraste ≥ 4,5, ≤ 7 slides). Les carrousels #5, #7, #8, #10 et #11 se rédigent une fois la semaine précédente lue (le 5 dépend des chiffres de #1–#2).
 - **Vidéos** : 3 masters à produire ou recouper (C1, V-06 ≤ 25 s, V-05). Aucun n'existe au format V7/V8 aujourd'hui ; le master V-06 existe (38,6 s), le master V-05 est absent du dépôt.
 - **Créneau du vendredi 09/10** : v06 (compte client, acompte requis) : hors de ce calendrier.
+
+## 7 · Prochain exercice — DM Optique (instruction de King, 08/10 : « même exercice quand DM Optic aura versé l'acompte et que nous aurons signé »)
+
+**Déclencheur (rien ne démarre avant) :** acompte **encaissé** + proforma **tamponnée** retournée (`clients/dm-optic/site/CLIENT-REQUIREMENTS-BRIEF.md` ; item 1 du `pre-launch-checklist.md`). Au 08/10 : acompte non encaissé. Tout contenu DM Optique avant ce déclencheur reste interdit.
+
+**Ce qui existe déjà et sert de point de départ (lu le 08/10, `clients/dm-optic/` partiel) :**
+- `content-plan-month1.md` et `posting-calendar.md` (01/10) : 4 semaines, mardi + vendredi, Facebook + TikTok ; `retainer-rhythm.md`.
+- Carrousel C1 « Inscrit à l'ONOC » rendu (6 slides, `content/month1/c1-render/`) ; C2 à C4 bloqués par les photos de la séance.
+- Cet outil : `tools/content/render_carousels.py` (rendu automatique, contrôles) et les règles de `CONTENT-LESSONS` §17.
+
+**Ce que l'exercice devra reprendre de l'audit du jour :** français d'abord · une idée par slide · aucun prix, aucune allégation médicale, aucun concurrent nommé · « Inscrit à l'ONOC » seulement (jamais « depuis 2016 ») · exemples réels avec accord du client · mesure par conversations WhatsApp entrantes (le compte du client ne mesure pas des DM « APERÇU »).
+
+**À confirmer par King avant de recommencer (je ne tranche pas) :**
+1. **Cadence et plateformes.** Les conditions signées (07/10) et la proforma disent **2 publications/semaine, Facebook + TikTok**, 30 000 FCFA/mois (+ 50 000 FCFA de mise en place). Le calendrier d'AMK d'aujourd'hui est à **3/semaine sur Instagram**. Passer DM Optique à 3/semaine ou à Instagram sort du périmètre signé : c'est une question de prix et de portée (`sales/PRIX-ET-RECURRENCE-2026-09-24.md`), pas de calendrier.
+2. **Qui produit la vidéo.** Les conditions disent « vidéo courte produite par AMK (voix IA + montage) » ; le plan de contenu du 01/10 dit « UGC IA : script seulement, King produit en externe ». Les deux textes se contredisent.
+3. **Le « contrat de gestion des réseaux » dont parle King** est-il le document de conditions du 07/10 déjà rédigé, ou un contrat distinct ?

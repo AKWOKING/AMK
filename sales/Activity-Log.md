@@ -4861,3 +4861,7 @@ lead content de « la seule vidéo publiée » — vérifier d'abord que le lead
 ## 08/10/2026 (15ᵉ message — calendrier de contenu)
 - **Livré :** `content/strategy/CALENDRIER-4-SEMAINES-2026-10-12.md` (12 publications, 13/10 → 07/11, point kill rule 04/11) et 3 carrousels FR prêts à poster (`content/carousels/`, 21 slides 1080×1350, légendes, hashtags, textes alternatifs). Outil : `tools/content/render_carousels.py`.
 - **Non publié, non validé :** tout reste à relire par King. **À trancher :** offre « aperçu gratuit » telle quelle · post fondateur (100 000 F) · bio « 24h » · lien Threads · échantillon du test (3 vidéos avant le 04/11, pas 4).
+
+## 08/10/2026 (16ᵉ message — prochain exercice de calendrier)
+- **Instruction de King :** refaire le même exercice (calendrier 4 semaines + carrousels prêts) pour **DM Optique** quand l'acompte sera encaissé et le contrat signé pour la gestion des réseaux et la création de contenu. Consigné dans `content/strategy/CALENDRIER-4-SEMAINES-2026-10-12.md` §7.
+- **Ouvert, signalé à King :** cadence/plateformes signées (2/semaine, Facebook + TikTok) ≠ exercice d'aujourd'hui (3/semaine, Instagram) · conditions « vidéo produite par AMK » vs plan du 01/10 « script seulement » · le « contrat » est-il le document du 07/10 ?
