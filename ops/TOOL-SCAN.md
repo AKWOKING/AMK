@@ -48,8 +48,8 @@
 
 - **Liste d'attente du scan du dimanche 11/10 (ruling King 08/10) :** `uni-labo.vercel.app` — tracer « Dr Tientcheu
   Philomène, Biologiste » à une source de dossier (sinon « Notre biologiste ») · 2ᵉ moitié de `uni-labo` et de
-  `cavisa` · `amk-cm.vercel.app` + ses pages · relecture en ligne de `dmoptic-2.vercel.app` après le
-  redéploiement du 09/10.
+  `cavisa` · `amk-cm.vercel.app` + ses pages · relecture en ligne de **`dm-optique-sarl.vercel.app`** (en-tête compris : `og:url`, `og:image`) ;
+  `dmoptic-2` est hors périmètre (abandonnée, King 08/10).
 - **Ajout 08/10 (revue Search Console) :** export Search Console d'`amk-cm` chaque dimanche 20h00 sous
   `research/gsc/AAAA-MM-JJ/` + une ligne ici (clics · impressions · position · requêtes). Repère du
   08/10 : 1 clic · 1 impression · position 3,0 sur 7 jours. Liste d'attente : rapatrier les pages

@@ -355,7 +355,7 @@ Un défaut vu à l'œil sur la première sortie, corrigé, revérifié à l'œil
 - **Heures** (formulation rapportée par King ; verbatim client non transmis) : « Examen de vue : 8h30–13h00 ·
   Autres besoins : 8h30–17h30 » remplacent « Ouverture 8h00–17h30 · Consultation 8h30–13h30 » (25/09) aux
   six endroits de la page, FAQ visible et FAQPage comprises. **Jours : toujours inconnus.** Reconstruit par
-  `python3 demos/build_dmoptic.py --url https://dmoptic-2.vercel.app/` ; gate §1b : audit_html 0, a11y OK,
+  `python3 demos/build_dmoptic.py --url https://dmoptic-2.vercel.app/` (historique ; **depuis le 08/10 : `--url https://dm-optique-sarl.vercel.app/`**, seule adresse valable — King) ; gate §1b : audit_html 0, a11y OK,
   images 0 faute ; test page : toutes les assertions passent.
 - **Ancien état en ligne :** v2.1 (« DM OPTIC », adresse/horaires « à confirmer », « depuis 2016 ») — le
   redéploiement du 09/10 publie d'un coup v2.2 (SARL, adresse, étage/porte) + v2.3.

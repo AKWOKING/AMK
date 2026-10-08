@@ -182,7 +182,7 @@ Liste complète et actionnable : `onboarding/intake-questionnaire.md`. Les trois
 | Notes de construction | `clients/dm-optic/build-notes.md` | 353 lignes, v1 → v2.2 |
 | Inspiration & design read (24/09) | `clients/dm-optic/inspiration.md` | jeu de références **antérieur** — voir `website/inspiration.md` |
 
-⚠️ **Écart d'adresse d'aperçu à trancher.** `build-notes.md` et `a-completer.md` citent
+✅ **TRANCHÉ le 08/10 (King) : seule `https://dm-optique-sarl.vercel.app` compte ; `dmoptic-2` sera abandonnée.** *(texte d'origine :)* ⚠️ **Écart d'adresse d'aperçu à trancher.** `build-notes.md` et `a-completer.md` citent
 `https://dmoptic.vercel.app` ; le CRM (`site_url`) cite `https://dmoptic-2.vercel.app`. Une seule des
 deux est réelle. À confirmer avant tout redéploiement — la vignette du lien (`og:url`, `og:image`) ne
 peut pas être devinée.

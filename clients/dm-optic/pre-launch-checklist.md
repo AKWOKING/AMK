@@ -124,7 +124,7 @@
 | Sous-point | Critère |
 |---|---|
 | **10.1** | Le **`noindex` est levé** — ⚠️ il est **voulu** sur la page de travail ; le lever est l'acte de publication, pas une formalité |
-| **10.2** | L'**URL définitive est tranchée** (08/10, King : **`dm-optique-sarl.vercel.app`**, lue en ligne ; `dmoptic-2` à rediriger) : ⚠️ `dmoptic.vercel.app` et `dmoptic-2.vercel.app` sont toutes deux citées dans le dépôt. Une seule est réelle. Recoller avec `build_dmoptic.py --url`, puis redéployer **le dossier entier** (`index.html` + `og.jpg`) |
+| **10.2** | L'**URL définitive est tranchée** (08/10, King : **`dm-optique-sarl.vercel.app`**, lue en ligne ; `dmoptic-2` sera abandonnée, King 08/10) : ⚠️ `dmoptic.vercel.app` et `dmoptic-2.vercel.app` sont toutes deux citées dans le dépôt. Une seule est réelle. Recoller avec `build_dmoptic.py --url`, puis redéployer **le dossier entier** (`index.html` + `og.jpg`) |
 | **10.3** | Le **domaine est au nom du client** — jamais un domaine à nous. `dmoptique.cm` / `dmoptic.cm` sont **libres** |
 | **10.4** | **Les contrôles passent** : `audit_a11y.py --strict` 0 faute · `audit_html.py` 0 constat · `audit_aeo.py` schéma complet · `node tools/qa/test_dmoptic_page.mjs` **38/38** |
 | **10.5** | **Vérifié sur un téléphone, en plein jour** — FR par défaut, bascule EN qui change tout, un vrai WhatsApp pré-rempli qui s'ouvre, aucun débordement horizontal. **Portique : « Not verified on a phone = not sent. »** |

@@ -2320,8 +2320,12 @@ JOURNAL_DM_0810 = {
             "`dmoptic-2.vercel.app` = ancienne, encore en ligne avec « depuis 2016 » le 08/10). Contenu en ligne "
             "relu par l'orchestrateur le 08/10 : « inscrit à l'ONOC », horaires du client, adresse, aucun prix, "
             "aucun « depuis ». Reste : og:url / og:image pointaient encore vers `dmoptic-2` dans le dépôt "
-            "(reconstruits avec `--url` le 08/10, à redéployer).",
+            "(reconstruits avec `--url` le 08/10, à redéployer). · "
+            "08/10 (King, 2e message du soir) : `dmoptic-2.vercel.app` SERA ABANDONNÉE — la seule adresse à "
+            "considérer désormais est `dm-optique-sarl.vercel.app` (`site_url` du CRM mis à jour ; l'ancienne "
+            "reste citée dans les entrées du 24/09 et du 25/09 comme HISTORIQUE).",
         "Follow-up date": "2026-10-09",
+        "site_url": "https://dm-optique-sarl.vercel.app", "site_checked_on": "2026-10-08",
     },
 }
 

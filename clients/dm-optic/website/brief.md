@@ -75,7 +75,7 @@ Examen de vue → **Soins** · Nos montures → **Montures** · Nos verres → *
 Contact → service, pas offre.
 
 
-⚠️ **Écart d'URL à corriger avant tout redéploiement.** `build-notes.md` et `a-completer.md` citent
+✅ **TRANCHÉ le 08/10 (King) : seule `https://dm-optique-sarl.vercel.app` compte ; `dmoptic-2` sera abandonnée.** *(texte d'origine :)* ⚠️ **Écart d'URL à corriger avant tout redéploiement.** `build-notes.md` et `a-completer.md` citent
 `https://dmoptic.vercel.app` ; le CRM cite `https://dmoptic-2.vercel.app`. La vignette du lien
 (`og:url`, `og:image`) ne peut pas être devinée : il faut recoller la bonne adresse avec
 `build_dmoptic.py --url`, puis redéployer **le dossier entier**.
