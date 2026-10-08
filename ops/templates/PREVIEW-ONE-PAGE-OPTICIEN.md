@@ -1,7 +1,7 @@
-# TEMPLATE — PREVIEW une page opticien (workflow ruling 06/10, <10 min par demandeur)
+# TEMPLATE — PREVIEW une page opticien (workflow ruling 06/10, délais ruling 08/10)
 
-> Généré par l'orchestrateur, **relu et envoyé par King**, canal WhatsApp, turnaround ≤4 h ouvrées
-> (après 18:00 → lendemain 10:00). Rendu : `python3 tools/site/md_to_pdf.py <fichier> -o <pdf>
+> Généré par l'orchestrateur, **relu et envoyé par King**, canal WhatsApp, build ≤15 min, relecture King ≤1 h,
+> envoi le jour même si DM avant 15h WAT, sinon lendemain matin. Rendu : `python3 tools/site/md_to_pdf.py <fichier> -o <pdf>
 > --titre "APERÇU — <NOM>" --pied "AMK · Akwo Makembe King Guerschon · NIU P030218642934H · Douala"`.
 > Une page. Zéro chiffre inventé : l'agrégat vient du re-pull ONOC du 11/10 ; le reste est qualitatif.
 
@@ -21,7 +21,7 @@ plus de 150 opticiens — le vôtre y est, [ET/MAIS aucune page ne montre vos mo
 
 ## Prochain pas
 
-Répondez **PREVIEW** sur WhatsApp : je vous montre en 24 h à quoi ressemblerait votre page, avec
+Répondez **PREVIEW** sur WhatsApp : je vous montre dans la journée (avant 15h) ou le lendemain matin à quoi ressemblerait votre page, avec
 vos montures. Gratuit, sans engagement — vous regardez avant de décider.
 
 ---

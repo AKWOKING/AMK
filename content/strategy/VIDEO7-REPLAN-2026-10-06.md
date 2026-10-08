@@ -48,11 +48,13 @@ Template : `ops/templates/PREVIEW-ONE-PAGE-OPTICIEN.md`.
 
 - **Quoi :** maquette une page (PDF) générée depuis une capture d'annuaire + le nom du demandeur —
   hook du problème + aperçu de page (montures + WhatsApp), pas un site complet.
-- **Turnaround :** ≤4 h ouvrées (09:00–18:00) ; demande après 18:00 → lendemain 10:00. (Mon
-  paramètre, ajustable sur un mot.)
+- **Délais (ruling King 08/10) :** build **≤15 min** (orchestrateur : PDF une page depuis la capture
+  d'annuaire + nom du demandeur) · relecture King **≤1 h** après réception du PDF · **envoi le même
+  jour ouvré si le DM arrive avant 15h WAT ; le lendemain matin si après.** Arithmétique : 15 min +
+  1 h = 1 h 15 au pire — « sous l'heure » est une cible, la règle ferme est le jour même.
 - **Canal :** **WhatsApp** (canal acheteur ; l'IG DM n'est pas celui des opticiens).
-- **Qui :** l'orchestrateur génère en <10 min par demandeur ; **King relit et envoie**. Jamais
-  d'envoi direct orchestrateur.
+- **Qui :** l'orchestrateur génère (plafond ruled ≤15 min ; mon chiffre antérieur « <10 min » n'était
+  pas testé — remplacé) ; **King relit et envoie**. Jamais d'envoi direct orchestrateur.
 - **Promesse tenue :** un PREVIEW livré tard = pire que pas de PREVIEW.
 
 ## Timing de publication — conditionnel, pas fixe

@@ -4,8 +4,10 @@
 > phase séparée), pas d'assets. Les noms/descriptions/prix des montures viendront du client.
 > Toute donnée client manquante = **[À CONFIRMER — client]**, jamais inventée.
 > Faits tracés au repo : adresse (proforma v2) · WhatsApp 656 122 239 (proforma v2) · heures
-> 8h00–17h30, consultation 8h30–13h30 (post-deposit-email — **jours NON connus**) · opticien diplômé
-> = inscription ONOC 021/2016, arrêté 0382, titulaire M. Domche Noumbi (CRM).
+> 8h00–17h30, consultation 8h30–13h30 (post-deposit-email — **jours NON connus**) ·
+> inscription ONOC 021/2016, arrêté 0382, titulaire M. Domche Noumbi (registre ONOC, annuaire
+> Littoral, ligne 102 — `build-notes.md`). **Aucun diplôme n'est prouvé au repo : aucune mention
+> « diplômé » nulle part** (ruling King 08/10 ; règle : `content/strategy/RULE-CREDENTIAL-CLAIMS.md`).
 > Photos / domaine / hébergement = **après dépôt** (ruling).
 
 ---
@@ -26,8 +28,14 @@ nom et prix injectés depuis la carte, une seule tape, ni formulaire ni e-mail :
 > « Bonjour DM Optique, je suis intéressé par la monture [Nom] ([Prix]). Est-elle disponible ? »
 
 Implémentation : `https://wa.me/237656122239?text=` + message URL-encodé (numéro = WhatsApp du
-cabinet, fait proforma v2). Le bouton flottant global (§contraintes) ouvre le même canal avec un
-message court : « Bonjour DM Optique ! » (copy proposée, dans le périmètre headlines/CTA).
+cabinet, fait proforma v2). Le bouton flottant global (§8) ouvre le même canal avec le **message générique ruled
+(08/10)** :
+
+> « Bonjour DM Optique, je vous contacte depuis votre site. »
+
+Ce message générique sert aussi le CTA hero (Home) et le gros bouton WhatsApp (Contact) : aucun
+produit en jeu. Le message produit ci-dessus, verbatim ruled, ne porte pas la mention « depuis
+votre site » : la source y est implicite (nom de monture) — on ne l'altère pas.
 
 ---
 
@@ -43,9 +51,9 @@ message court : « Bonjour DM Optique ! » (copy proposée, dans le périmètre 
 │   Bonabéri, Douala. »         │
 │  Sous : « Voyez les montures  │
 │   avant d'entrer. »          │
-│  [Commander sur WhatsApp]    │  CTA secondaire WhatsApp (flottant = principal)
+│  [Écrire sur WhatsApp]       │  CTA secondaire WhatsApp (flottant = principal)
 ├──────────────────────────────┤
-│ TRUST BAR : opticien diplômé │  3 items, une ligne chacun
+│ TRUST BAR : Inscrit à l'ONOC │  3 items, une ligne chacun
 │ · conseil personnalisé ·     │
 │ sur rendez-vous              │
 ├──────────────────────────────┤
@@ -64,9 +72,10 @@ message court : « Bonjour DM Optique ! » (copy proposée, dans le périmètre 
  (●) bouton WhatsApp flottant, bas-droite, toutes pages
 ```
 
-- **Copy exacte :** H1 « Votre opticien à Bonabéri, Douala. » · sous-titre « Voyez les montures avant d'entrer. » · trust bar : « Opticien diplômé » (fait ONOC) · « Conseil personnalisé » ·
-  « Sur rendez-vous » · étapes : « 1. Parcourez les montures » · « 2. Envoyez un message WhatsApp » ·
-  « 3. Passez en boutique, essayez, repartez servi. »
+- **Copy exacte :** H1 « Votre opticien à Bonabéri, Douala. » · sous-titre « Voyez les montures avant d'entrer. » · trust bar (ruling 08/10) : « Inscrit à l'ONOC » (fait : registre, 021/2016) · « Conseil
+  personnalisé » · « Sur rendez-vous » · étapes : « 1. Parcourez les montures » · « 2. Envoyez un message WhatsApp » ·
+  « 3. Passez en boutique, essayez, repartez servi. » · CTA hero « Écrire sur WhatsApp » (message
+  générique §0 ; « Commander » reste réservé à la carte produit — libellé hero = ma proposition).
 - **Mobile :** hero = 1 image ≤100 Ko lazy, first paint ≤3 s en 3G (image hors first paint si
   nécessaire : texte d'abord) ; carrousel = scroll horizontal natif, pas de dropdown ; tap targets
   ≥44 px (CTA, toggle, cartes) ; FR par défaut, toggle EN visible header (strings EN =
@@ -76,35 +85,43 @@ message court : « Bonjour DM Optique ! » (copy proposée, dans le périmètre 
 - **[À CONFIRMER — client] :** photo hero (après dépôt) · libellé réseaux sociaux (comptes à créer
   à l'encaissement) · texte mentions légales.
 
-## 2 · CATALOGUE `/montures`
+## 2 · CATALOGUE `/montures` (filtres ruled 08/10 — voir §6)
 
 ```
 ┌──────────────────────────────┐
 │ header + flottant (§1)       │
 ├──────────────────────────────┤
-│ [🔍 Rechercher…]  sticky     │  barre sticky sous header
+│ [🔍 Rechercher…]  sticky     │  toujours présente, même catalogue plat
 ├──────────────────────────────┤
-│ (Toutes)(Femme)(Homme)       │  pills horizontales scrollables,
-│ (Enfant)(Soleil)(Vue)        │  une seule rangée, jamais dropdown
-│ (Forme)(Prix)                │
+│ RANGÉE 1 (si catalogue tagué)│  pills, scroll horizontal, jamais dropdown
+│ (Toutes)(Femme)(Homme)       │
+│ (Enfant)(Soleil)(Vue)        │
+├──────────────────────────────┤
+│ RANGÉE 2 (seulement si une   │  apparaît : primaire choisie OU ≥20 montures
+│ primaire choisie OU ≥20)     │
+│ (Ronde)(Carrée)(Œil-de-chat) │
+│ (Aviateur)(Ovale) | (prix×4) │
 ├──────────────────────────────┤
 │ grille 2 col mobile /        │  cartes §0
 │ 3–4 col desktop              │
 ├──────────────────────────────┤
-│ ÉTAT VIDE par filtre         │
+│ ÉTAT VIDE                    │
 └──────────────────────────────┘
 ```
 
 - **Copy exacte :** titre « Toutes nos montures » · état vide : « Aucune monture dans ce filtre
   pour l'instant. Écrivez-nous : on cherche pour vous. » + CTA WhatsApp.
-- **Mobile :** pills = scroll horizontal, sélection = une pill active combinable (audience +
-  catégorie + forme + prix) ; recherche = filtre par nom, tolérant aux fautes (min. : insensible
-  casse/accents) ; grille 2 col, cartes tap ≥44 px ; first paint ≤3 s : pagination par lot de 12,
-  images lazy.
+- **Mobile :** pills = scroll horizontal ; rangée 1 = une pill active (« Toutes » réinitialise) ;
+  rangée 2 = une forme active + une bande de prix active, combinables en intersection avec la
+  rangée 1 ; recherche = filtre par nom (insensible casse/accents) ; grille 2 col, cartes tap
+  ≥44 px ; first paint ≤3 s : lots de 12, images lazy.
+- **Mode plat (RÈGLE, ruling 08/10) :** catalogue non tagué = grille plate + barre de recherche,
+  **aucun filtre, aucune pill grisée, aucun « bientôt »**. Les filtres s'allument quand les données
+  portent les tags (§6) : un commit de données, pas de reconstruction.
 - **États vides/erreur :** combinaison sans résultat → état vide ci-dessus (jamais page blanche) ;
   recherche sans résultat → même bloc avec le terme cité.
-- **[À CONFIRMER — client] :** valeurs Forme/Prix (§6) selon inventaire tagué ; existence d'un
-  stock enfant/soleil au lancement.
+- **[À CONFIRMER — client] :** bornes de prix (Q2) · taille du stock (Q3) · existence d'un stock
+  enfant/soleil au lancement.
 
 ## 3 · FICHE MONTURE `/montures/[nom]`
 
@@ -132,7 +149,8 @@ message court : « Bonjour DM Optique ! » (copy proposée, dans le périmètre 
 - **Mobile :** CTA pleine largeur sous le prix (pouce) ; accordéon natif sans JS lourd ; similaires
   en scroll horizontal ; first paint ≤3 s (image lazy, texte d'abord).
 - **États vides/erreur :** URL inconnue / monture retirée → « Cette monture n'est plus disponible.
-  Voici des modèles proches. » + similaires + CTA ; similaires vides → section masquée, pas vide.
+  Voici des modèles proches. » + similaires + CTA ; similaires vides → section masquée, pas vide ; catalogue non tagué (§6) → section masquée
+  (pas de similarité sans tags).
 - **[À CONFIRMER — client] :** champs matière/taille/couleur selon fiche inventaire.
 
 ## 4 · CONTACT `/contact`
@@ -153,7 +171,7 @@ message court : « Bonjour DM Optique ! » (copy proposée, dans le périmètre 
 ```
 
 - **Copy exacte :** titre « Venez nous voir à Bonabéri » · bouton « Ouvrir dans Maps » ·
-  « Écrire sur WhatsApp » · « Appeler le cabinet ». **Aucun formulaire de contact — un seul
+  « Écrire sur WhatsApp » · « Appeler le cabinet » (le bouton WhatsApp ouvre le message générique §0). **Aucun formulaire de contact — un seul
   canal : WhatsApp** (ruling).
 - **Adresse (fait proforma v2) :** DM OPTIQUE SARL, immeuble West Hotel, Ndobo Mayor, Bonabéri,
   Douala IV. **Heures (fait repo) :** 8h00–17h30 · consultation 8h30–13h30.
@@ -184,43 +202,40 @@ message court : « Bonjour DM Optique ! » (copy proposée, dans le périmètre 
 
 ---
 
-## 6 · Taxonomie des filtres — PROPOSITION (King tranche)
+## 6 · Taxonomie des filtres — RULED (King 08/10)
 
-Pills ruling : Toutes · Femme · Homme · Enfant · Soleil · Vue · Forme · Prix. Valeurs proposées :
+- **Rangée 1, primaires, toujours visibles (catalogue tagué) :** Toutes · Femme · Homme · Enfant ·
+  Soleil · Vue.
+- **Rangée 2, secondaires :** Ronde · Carrée · Œil-de-chat · Aviateur · Ovale — **n'apparaît que
+  quand une primaire est sélectionnée OU que le catalogue compte 20+ montures.**
+- **Bandes de prix (proposition par défaut, structure livrée) :** ≤ 20 000 · 20 001–35 000 ·
+  35 001–60 000 · > 60 000 FCFA — bornes **[À CONFIRMER — client]** (Q2). *Placement : lecture
+  de ma part (non précisée au ruling) — 4 pills en fin de rangée 2, même règle d'apparition, une
+  seule bande active.*
+- **Retirés :** Rectangulaire (recouvre Carrée au niveau de tag habituel : l'un ou l'autre) ·
+  Géométrique (trop rare en stock d'opticien : pill à zéro résultat). **Matériau : hors v1.**
+- **Pas de pill à zéro résultat :** une pill de rangée 2 / prix n'est rendue que si ≥1 monture
+  porte le tag (calculé sur les données, pas à la main).
+- **Mode plat = règle, pas repli :** catalogue non tagué → grille plate + recherche, **sans
+  filtres** (ni pills grisées ni « bientôt »). Activation par les données, un commit.
+  *Lecture littérale : « sans filtres » inclut la rangée 1 (Femme/Homme/…) — elle dépend aussi
+  des tags. Si tu veux la rangée 1 sur un stock partiellement tagué, dis-le.*
+- **Références (comparaison réelle) :** formes Warby Parker — cat-eye, square, round, oval,
+  rectangle, geometric, aviator ([source](https://www.warbyparker.com/sitemap),
+  [source](https://clark.com/save-money/warby-parker-review/)) · filtres Zenni — formes + plein/demi
+  cadre + tri prix ([source](https://www.zennioptical.com/b/glasses-for-square-face)).
 
-- **Forme** (intersection Warby Parker — 7 formes : cat-eye, square, round, oval, rectangle,
-  geometric, aviator [2](https://clark.com/save-money/warby-parker-review/), [3](https://www.warbyparker.com/sitemap) — et Zenni : square, cat-eye, round, rectangle, aviator, browline,
-  geometric, oval [1](https://www.zennioptical.com/b/glasses-for-round-face), [2](https://www.zennioptical.com/b/glasses-for-square-face)) :
-  **Ronde · Carrée · Rectangulaire · Ovale · Œil-de-chat · Aviateur · Géométrique** (browline
-  réservé v2, trop spécifique).
-- **Prix** : Zenni filtre par prix (tri + bornes) ; Warby par gamme de largeur/matériau. Proposition
-  FCFA : **< 25 000 · 25 000–50 000 · 50 000–100 000 · > 100 000** — bornes **[À CONFIRMER —
-  client]** (doivent coller à sa grille réelle).
-- **Matériau** (acétate/métal chez les deux) : **hors v1** — une dimension de plus = inventaire à
-  taguer ; pills ruling n'incluent pas matériau.
+## 7 · Convention de nommage — RULED (King 08/10) : suggérée, le client nomme
 
-⚠️ **Drapeau inventaire :** Forme et Prix supposent un inventaire **tagué** (une ligne par monture :
-audience, catégorie, forme, prix). Si le tag n'existe pas à la mise en ligne, les pills Forme/Prix
-produiraient des états vides → plan B ruling-compatible : pills visibles mais grises avec état vide
-« bientôt », lancement sur Femme/Homme/Enfant/Soleil/Vue seulement. **[À CONFIRMER — client]** :
-l'inventaire sera-t-il tagué avant mise en ligne ?
-
-## 7 · Convention de nommage — PROPOSITION (King tranche)
-
-- **Recommandé : lieux courts du Cameroun** — Bonabéri, Akwa, Deido, Wouri, Kribi, Limbe, Ndobo,
-  Mabanda… Courts (≤3 syllabes), propres, fierté locale, mémorables au comptoir (« la Kribi vous
-  va bien »). Aucun conflit de marque possible.
-- **Précédents réels :** Warby Parker nomme ses best-sellers par des noms propres courts —
-  Haskell, Durand, Carlton, Percey [1](https://virat.blog/warby-parker-glasses-review/),
-  [2](https://www.warbyparker.com/eyeglasses/haskell/crystal) ; Ray-Ban garde des noms de modèle
-  (Clubmaster, cité [1](https://virat.blog/warby-parker-glasses-review/)). Le nom propre court se
-  dit à voix haute au comptoir, ce qu'un code ne fait pas. (Je n'avance rien sur Zenni : non vérifié.)
-- **Repli :** mots français simples (Net, Clair, Doux) si le client préfère ; codes numériques
-  (DM-014) seulement en identifiant interne, jamais comme nom affiché.
-- **[À CONFIRMER — client] :** liste finale des noms alignée sur l'inventaire réel ; veto du client
-  sur tout nom à connotation locale sensible.
-
----
+- **Le client nomme ses propres montures** — sa marque, son stock. La convention est une
+  **suggestion** livrée dans les questions client (Q5) : noms de lieux courts du Cameroun
+  (Bonabéri, Akwa, Deido, Wouri, Kribi…), ≤3 syllabes. Il choisit. **Codes numériques = identifiant
+  interne seulement**, jamais affiché.
+- **Précédent réel :** Warby Parker nomme ses best-sellers par des noms propres courts — Haskell,
+  Durand, Carlton, Percey ([source](https://virat.blog/warby-parker-glasses-review/),
+  [source](https://www.warbyparker.com/eyeglasses/haskell/crystal)). Un nom court se dit à voix
+  haute au comptoir ; un code non.
+- **[À CONFIRMER — client] :** liste finale de noms = celle qu'il choisit (Q5).
 
 ## 8 · Contraintes transverses (ruling) — rappel par page fait foi ci-dessus
 
@@ -230,3 +245,11 @@ l'inventaire sera-t-il tagué avant mise en ligne ?
   First paint ≤3 s en 3G. FR par défaut, toggle EN visible au header.
 - WhatsApp = seul canal de conversion ; le pré-rempli verbatim (§0) est la seule mécanique CTA
   produit.
+
+## 9 · Drapeaux — statut après ruling 08/10
+
+| Drapeau | Statut |
+|---|---|
+| Jours/heures · fourchette de prix · taille du stock · photos (logo/devanture/équipe) · nommage | **Questions client Q1–Q5** — `CLIENT-QUESTIONS-2026-10-08.md` (brouillon, King relit et envoie) |
+| Photo hero · photo À propos · bornes exactes par bande · méthode de tag | **Décisions internes, phase build** (ruling) |
+| Repère près de l'adresse · texte des mentions légales · comptes réseaux sociaux (footer/contact) · validation du paragraphe À propos par M. Domche · champs matière/taille/couleur | **Non couverts** par les 5 questions ni par les décisions internes — à ranger par King (voir réponse) |

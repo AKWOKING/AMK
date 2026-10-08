@@ -7,7 +7,8 @@ son chemin exact.
 ```
 
 ** RULING KING 06/10, ÉTENDU 06/10 : AUCUN PRINT, RIEN SUR PAPIER — PACK RETIRÉ.** Le sac
-mercredi = **téléphone + zip, rien d'autre**. Tout papier retiré : proforma ×2, RIB imprimé,
+mercredi = **téléphone + zip + chiffon microfibre** (outil photo, pas un document — remis par
+ruling King 08/10). Tout papier retiré : proforma ×2, RIB imprimé,
 conditions ×2 backup, **carte ×2** (ruling étendu). Ce fichier reste comme archive.
 
 | # | Document | Copies | Statut | Chemin / action |
@@ -19,7 +20,7 @@ conditions ×2 backup, **carte ×2** (ruling étendu). Ce fichier reste comme ar
 | 5 | **Fiche photo 1 page** | 1 | ✅ **créée aujourd'hui** | `photoshoot/PHOTOSHOOT-FICHE-1PAGE-2026-10.md` |
 | 6 | **Runsheet + demo script** | sur téléphone | ✅ créés aujourd'hui | `onboarding/VISIT-RUNSHEET-2026-10-07.md` · `onboarding/DEMO-SCRIPT-2026-10-07.md` |
 | 7 | **Carte signature visuelle** (tableau de vision « la Bonabéri » — la seule signature produisible avant photos) | 0 (aucun print) | ✅ **approuvée par King 02/10** — PDF A6 `print/CARTE-SIGNATURE-TABLEAU-VISION-A6.pdf` (300 dpi) | **RETIRÉ** (ruling King 06/10 étendu : aucun print) — PDF A6 archivé au repo ; montré à l'écran seulement si demandé, sans pitch |
-| 8 | **Feuille A4 blanche + microfibre** (réflecteur + essuyage des verres) | — | **RETIRÉ du sac** (ruling 06/10 : téléphone + zip seulement) · ⚠️ conséquence : règle poussière sans chiffon sur place — un mot de King pour réajouter | zéro franc |
+| 8 | **Chiffon microfibre** (essuyage des verres — règle poussière du brief photo) | — | ✅ **REMIS au sac** (ruling King 08/10 : outil, pas un document) · ⚠️ la feuille A4 réflecteur reste retirée (papier, non tranchée) | ~500 FCFA |
 
 **Ce que « à produire » veut dire ici :** la proforma et le RIB/NIU sont **tes** pièces (émetteur,
 banque) — personne d'autre ne peut les sortir ce week-end. Le contrat imprimable et la carte signature,
