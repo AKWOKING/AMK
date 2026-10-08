@@ -52,6 +52,13 @@ besoin de relire les questions pour répondre. *(Verbatim King : « Structured q
 bullets, no signature. Voice note is not required when the client needs to reference the
 questions when answering. »)* Les puces et la signature restent interdites partout ailleurs.
 
+**Schéma permanent — jeu de questions structuré (ruling King 08/10).** (1) Brouillon dans le repo,
+**King relit et envoie** ; (2) forme : « Bonjour Monsieur, » + liste numérotée, aucune signature ;
+(3) **journal d'envoi** avec date/heure, canal, **texte exact collé par King** et version du
+brouillon de référence ; (4) ligne CRM le même jour ; (5) **fenêtre de réponse : à fixer par King
+— non reçue le 08/10, aucune valeur par défaut inscrite** ; (6) première application :
+08/10/2026 13:26 (`post-deposit-email.md`, journal « planning site »).
+
 ---
 
 ## 2 · Quand recommander une note vocale (15–30 s)

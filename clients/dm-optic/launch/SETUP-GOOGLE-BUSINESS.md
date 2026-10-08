@@ -16,7 +16,7 @@
   la visite (leçon Cavisa : c'est lui qui connaît l'emplacement réel).
 - **Horaires :** 8h00–17h30, lun–sam (tel que publié par le cabinet ; ajuster s'il corrige).
 - **Téléphone/WhatsApp :** 656 122 239 · **site :** l'adresse Vercel post-déploiement (pas avant).
-- **Description (750 car. max) :** « Opticien inscrit à l'Ordre des opticiens du Cameroun depuis 2016.
+- **Description (750 car. max) :** « Opticien inscrit à l'ONOC.
   Examen de vue, montures homme et femme, solaires et enfants. Écrivez-nous sur WhatsApp, on vous
   répond. » — pas de claim médical, pas de « meilleur », pas de prix.
 
@@ -29,3 +29,7 @@ accepte — sinon remplacer par un détail d'atelier). Légendes factuelles, jam
 ## Jour 1 vs plus tard
 Jour 1 : claim + données + description + heures. Après les photos : les 10. Jamais acheter d'avis, jamais
 répondre à un avis avec un claim — remercier, fait.
+
+## Adresse — précision (ruling King 08/10)
+
+**Ligne 2 de l'adresse / complément :** « Immeuble West Hotel, 1er étage, dernière porte à droite » — l'épingle seule ne dit pas l'étage ; un client qui monte au rez-de-chaussée se trompe de porte.

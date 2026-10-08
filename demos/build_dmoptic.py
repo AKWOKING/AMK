@@ -122,7 +122,7 @@ def draw_og(out, url_label):
              "-font", "DejaVu-Sans-Bold", "-pointsize", "46", "-fill", "#FFFFFF",
              "-annotate", "+86+455", "656 122 239",
              "-font", "DejaVu-Sans", "-pointsize", "31", "-fill", "#E0703A",
-             "-annotate", "+86+522", "Inscrit à l'Ordre des opticiens depuis 2016"]
+             "-annotate", "+86+522", "Inscrit à l'ONOC"]
     if url_label:
         args += ["-font", "DejaVu-Sans", "-pointsize", "26", "-fill", "#6C7890",
                  "-annotate", "+86+580", url_label]

@@ -5,7 +5,7 @@
 
 ## Identité (pré-remplie)
 - **Nom :** `@dmoptique.bonaberi` · affichage `DM OPTIQUE – Bonabéri`
-- **Bio :** `Opticien à Bonabéri, Douala · inscrit à l'Ordre depuis 2016. WhatsApp : 656 122 239.`
+- **Bio :** `Opticien à Bonabéri, Douala · inscrit à l'ONOC. WhatsApp : 656 122 239.`
 - **Profil :** même marque typographique que Facebook (une maison, une signature).
 
 ## Contrainte plateforme, traitée honnêtement

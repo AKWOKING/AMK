@@ -34,8 +34,8 @@
 
 | Étape | Plan | Contenu |
 |---|---|---|
-| **ACCROCHE** | 1 | **« Inscrit depuis 2016. Trouvable depuis aujourd'hui. »** Fond blanc, encre, un seul accent. La phrase se pose |
-| **PRODUIT** | 2 | **La carte d'identité**, mise en page comme une pièce officielle — *Ordre des opticiens du Cameroun · 2016* |
+| **ACCROCHE** | 1 | **« Inscrit à l'ONOC. Trouvable depuis aujourd'hui. »** Fond blanc, encre, un seul accent. La phrase se pose |
+| **PRODUIT** | 2 | **La carte d'identité**, mise en page comme une pièce officielle — *Ordre des opticiens du Cameroun · Inscrit à l'ONOC* |
 | | 3 | **Le titulaire** — M. Domche Noumbi |
 | **BÉNÉFICE** | 4 | **« Un opticien inscrit, un titulaire nommé. »** Ce que ça change pour vous : vous savez à qui vous écrivez |
 | | 5 | **Où et quand** — Ndobo Mayor, Bonabéri · **8h00–17h30** |
@@ -43,7 +43,7 @@
 
 **Texte de chaque plan** (pour la voix off et les sous-titres) :
 
-1. « Inscrit depuis 2016. Trouvable depuis aujourd'hui. »
+1. « Inscrit à l'ONOC. Trouvable depuis aujourd'hui. »
 2. « DM OPTIQUE SARL est inscrit à l'Ordre des opticiens du Cameroun. »
 3. « Le titulaire est nommé : M. Domche Noumbi. »
 4. « Vous savez à qui vous écrivez. C'est déjà beaucoup. »

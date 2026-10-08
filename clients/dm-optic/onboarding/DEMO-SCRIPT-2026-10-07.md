@@ -13,7 +13,7 @@ les démos sont modulaires, l'ordre inverse marche aussi.)
 ## 0 · Pourquoi C1 d'abord, pas le site
 
 Le site est notre savoir-faire ; **C1 est SA vérité**. Ouvrir sur la carte de confiance (inscrit à
-l'Ordre depuis 2016 · titulaire nommé · adresse réelle), c'est ouvrir sur **lui**, sur le différenciant
+l'ONOC · titulaire nommé · adresse réelle), c'est ouvrir sur **lui**, sur le différenciant
 qu'aucun vendeur informel ne peut copier, et sur le thème du mois 1. Ouvrir sur le site, c'est risquer
 que la négociation porte sur « un site » ; ouvrir sur C1, la négociation porte sur **sa crédibilité**.
 Les deux se défendent — si tu préfères site d'abord, prends site d'abord ; garde juste le principe :
@@ -22,7 +22,7 @@ Les deux se défendent — si tu préfères site d'abord, prends site d'abord ; 
 ## 1 · Démo A — le carrousel C1 (la carte de confiance) · 5 min
 
 - **Montrer :** `carousels.md` C1 rendu (ou ses cartes tapées sur note si le rendu manque) —
-  *Ordre des opticiens · inscrit depuis 2016 · M. Domche Noumbi · Ndobo Mayor, Bonabéri*.
+  *Ordre des opticiens · inscrit à l'ONOC · M. Domche Noumbi · Ndobo Mayor, Bonabéri*.
 - **Dire :** *« Voilà la première chose qu'un habitant de Bonabéri verrait de vous. Tout est vrai, tout
   est vérifiable, rien n'est inventé. »*
 - **Lui demander :** *« C'est vous, ça ? Il manque quoi ? »* — le faire corriger lui-même = il valide.

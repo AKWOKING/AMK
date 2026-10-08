@@ -97,6 +97,8 @@ La v1 s'adressait au cabinet (« votre inscription à l'Ordre », « ces six inf
 confirmer sur la page ») : c'est exactement ce que King a écarté. Gardé ici pour que personne ne le
 reprenne :
 
+> ⚠️ **08/10/2026 — règle credentials (`content/strategy/RULE-CREDENTIAL-CLAIMS.md`) :** « depuis 2016 » dans le message ci-dessous **n'est pas sourcé** (« /2016 » = suffixe d'un numéro de décret, pas une durée). Texte historique conservé tel quel (message de la période d'envoi 24/09) — **NE PAS RÉUTILISER** ; formulation autorisée : « Inscrit à l'ONOC ».
+
 > Votre cabinet a maintenant sa page : <ADRESSE> — Elle ne dit que ce qui est vrai aujourd'hui : votre
 > inscription à l'Ordre depuis 2016 (n° 021/2016, arrêté 0382), le titulaire M. Domche Noumbi, votre
 > numéro — et le fait qu'un patient qui vous cherchait depuis son téléphone ne trouvait rien. Je n'ai

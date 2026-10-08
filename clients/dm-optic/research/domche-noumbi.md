@@ -116,7 +116,7 @@ doit être re-vérifié avant le lancement.
 | Annuaire / répertoire | aucune entrée |
 
 **Ce que ça veut dire commercialement.** « Vous n'êtes nulle part » est **vrai** — et c'est l'actif
-narratif de la page : *le registre de l'Ordre le connaît depuis 2016, le web non.* Mais la réciproque
+narratif de la page : *le registre de l'Ordre le connaît, le web non.* Mais la réciproque
 est vraie aussi : **il n'y a aucun avis, aucune photo, aucun contenu à reprendre.** Tout est à produire,
 et **aucun témoignage ne peut être repris** puisqu'il n'en existe aucun.
 

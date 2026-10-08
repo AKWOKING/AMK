@@ -37,8 +37,8 @@ allégation médicale · aucun prix · aucun témoignage · aucun concurrent nom
 
 | | |
 |---|---|
-| **UGC IA** | *« Le registre le connaît depuis 2016. Vous, vous ne le trouviez pas. »* — l'histoire vraie du cabinet : inscrit à l'Ordre depuis 2016, et introuvable en ligne jusqu'ici. **Pas de visage.** Le geste : l'inscription, la carte, l'adresse |
-| **Carrousel** | **La carte d'identité** — ce que veut dire « opticien inscrit à l'Ordre des opticiens du Cameroun ». Plan par plan : le nom · le titulaire · l'inscription 2016 · où le trouver · comment écrire |
+| **UGC IA** | *« Le registre le connaît. Vous, vous ne le trouviez pas. »* — l'histoire vraie du cabinet : inscrit à l'ONOC, et introuvable en ligne jusqu'ici. **Pas de visage.** Le geste : l'inscription, la carte, l'adresse |
+| **Carrousel** | **La carte d'identité** — ce que veut dire « opticien inscrit à l'Ordre des opticiens du Cameroun ». Plan par plan : le nom · le titulaire · l'inscription à l'ONOC · où le trouver · comment écrire |
 | **CTA** | « Écrivez-nous sur WhatsApp » — message pré-rempli : *Bonjour, je cherche un opticien à Bonabéri* |
 | **Photos nécessaires** | ❌ **Aucune** — pièce typographique. **C'est la seule des quatre semaines produisible sans les photos du client** |
 

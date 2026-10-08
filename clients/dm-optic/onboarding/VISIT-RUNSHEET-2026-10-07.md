@@ -11,7 +11,7 @@
 ```
 Status: PRÊT À EMPORTER   ·  Updated: 2026-10-02
 Jour J : **mercredi 07/10** (tranché par King, 02/10 — les noms de fichiers disaient 08, corrigé).
-Cabinet : immeuble West Hotel, Ndobo Mayor, Bonabéri, Douala IV.
+Cabinet : immeuble West Hotel, 1er étage, dernière porte à droite, Ndobo Mayor, Bonabéri, Douala IV (précision : King sur place, ruling 08/10).
 Budget total sur place : ~95–110 min, dont 45 min de prise de vue (le site a 15 min de plancher).
 ```
 

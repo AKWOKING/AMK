@@ -11,7 +11,7 @@ Le site v2.2 existe : une page, orienté patient, **38/38 assertions**, `noindex
 **À trancher par King avant mercredi** (cocher) : ☐ A ☐ B. Sans coche, A par défaut au déclencheur.
 
 ## 2 · Pages & sections (Chemin A = la page unique v2.2)
-Premier écran : nom + ville + métier (« puis-je venir, et comment ? ») · preuve d'inscription ONOC 2016 +
+Premier écran : nom + ville + métier (« puis-je venir, et comment ? ») · preuve d'inscription ONOC +
 titulaire nommé · services (vue · soleil · enfants) · où et quand (Ndobo Mayor, Douala IV · 8h00–17h30) ·
 CTA WhatsApp omniprésent (wa.me/237656122239, message pré-rempli). Hors périmètre : boutique, paiement,
 RDV en ligne, blog (brief §1).

@@ -86,11 +86,11 @@ Contact → service, pas offre.
 
 | # | Section | Ce qu'elle doit faire | Ce qu'elle ne fait pas |
 |---|---|---|---|
-| 1 | **Accueil** | « DM OPTIC, votre opticien à Douala » · surtitre porteur du mot-clé (« Opticien à Douala · inscrit à l'Ordre depuis 2016 ») · **deux gestes** : WhatsApp, appeler · trois faits (Où · Sur WhatsApp · Inscrit depuis 2016) | Un discours de marque. Une promesse. Un prix |
+| 1 | **Accueil** | « DM OPTIC, votre opticien à Douala » · surtitre porteur du mot-clé (« Opticien à Douala · inscrit à l'ONOC ») · **deux gestes** : WhatsApp, appeler · trois faits (Où · Sur WhatsApp · Inscrit à l'ONOC) | Un discours de marque. Une promesse. Un prix |
 | 2 | **Nos montures** | La **vitrine**, par familles (vue · soleil · enfants). Une photo, un conseil par famille. **Un WhatsApp pré-rempli par famille** — « Demander si c'est en boutique » | Nommer une marque qu'on n'a pas. Afficher un prix. Une grille e-commerce |
 | 3 | **Nos verres** | Expliquer **ce qu'on apporte** et **ce qui se passe** : ordonnance, choix du verre, montage, ajustement. Dire « protège vos yeux », jamais « corrige » | Promettre un traitement, un délai, une performance optique |
 | 4 | **Examen de vue** | Le déroulé réel, la durée, **ce qu'il faut apporter**, les **horaires de consultation (8h30–13h30)**. Un WhatsApp pré-rempli « Je souhaite un examen de vue » | Un tarif. Une allégation médicale. Un rendez-vous en ligne |
-| 5 | **À propos** | Un opticien inscrit, un **titulaire nommé** (M. Domche Noumbi), l'inscription depuis 2016, la mention presse de mars 2023 **avec sa source** | Un portrait inventé. Une histoire de marque fabriquée. Un classement |
+| 5 | **À propos** | Un opticien inscrit, un **titulaire nommé** (M. Domche Noumbi), l'inscription à l'ONOC, la mention presse de mars 2023 **avec sa source** | Un portrait inventé. Une histoire de marque fabriquée. Un classement |
 | 6 | **Contact** | Les deux gestes (WhatsApp, appeler) + deux utilitaires discrets : **copier le numéro**, **enregistrer la fiche `.vcf`**. L'adresse et **un repère** | Un formulaire. Une carte si l'adresse n'est pas confirmée |
 
 **Le principe qui tient l'ensemble.** Chaque section se termine par **un geste**, pas par un paragraphe.

@@ -4797,3 +4797,9 @@ lead content de « la seule vidéo publiée » — vérifier d'abord que le lead
 - Univers Optique : intelligence marché loguée en KB §3 (bundle « something + website ») + opportunité
   virtual try-on → recherche `clients/univers-optique/research/try-on-options-2026-10.md`. Aucun contact
   avant lecture de King.
+
+---
+
+## 08/10/2026 — correction credentials (lignes historiques non réécrites : 3893, 4068, 4120)
+
+⚠️ **08/10/2026 — règle credentials (`content/strategy/RULE-CREDENTIAL-CLAIMS.md`) :** les formulations « depuis 2016 » / « existe depuis 2016 » / « exerce depuis 2016 » de ce document **ne sont pas sourcées** (« /2016 » = suffixe d'un numéro de décret, pas une durée). Texte historique conservé tel quel — **NE PAS RÉUTILISER** ; formulation autorisée : « Inscrit à l'ONOC ».

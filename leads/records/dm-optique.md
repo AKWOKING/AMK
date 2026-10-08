@@ -1,6 +1,6 @@
 # DM Optique
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-05. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-08. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -24,7 +24,7 @@
 
 ## Notes
 
-PACK GLOBAL ACCORDÉ le 01/10 (stage `closing`). Installation 150 000 FCFA — acompte 75 000, solde à la livraison ; récurrent 30 000 FCFA/mois DONT 5 000 de budget pub test (2 posts/semaine + maintenance). SARL sous contrôle fiscal : virement bancaire, proforma PDF + RIB + NIU, reçus tamponnés. Proforma à envoyer le 02/10 ; visite à Bonabéri cette semaine (mer/jeu, jour à confirmer) ; NIU + adresse fiscale attendus du client. AUCUN acompte reçu à cette heure — rien ne se livre ni ne se publie avant encaissement. (Origine : registre ONOC Littoral l.102, titulaire DOMCHE NOUMBI, contacté le 24/09.)
+PACK GLOBAL ACCORDÉ le 01/10 (stage `closing`). Installation 150 000 FCFA — acompte 75 000, solde à la livraison ; récurrent 30 000 FCFA/mois DONT 5 000 de budget pub test (2 posts/semaine + maintenance). SARL sous contrôle fiscal : virement bancaire, proforma PDF + RIB + NIU, reçus tamponnés. Proforma à envoyer le 02/10 ; visite à Bonabéri cette semaine (mer/jeu, jour à confirmer) ; NIU + adresse fiscale attendus du client. AUCUN acompte reçu à cette heure — rien ne se livre ni ne se publie avant encaissement. (Origine : registre ONOC Littoral l.102, titulaire DOMCHE NOUMBI, contacté le 24/09.) · 05/10 15:07 : réponse « Merci pour le retour » à la proforma v-finale (envoyée 14:49) — signal d'engagement, aucune action due. · 05/10 15:09 : le client relève l'absence d'adresse, de contact et de RC sur la proforma. · 05/10 15:42 : King reconnaît le manque, s'engage à renvoyer le PDF corrigé. · 05/10 16:24 : proforma v2 « bloc émetteur 7 lignes » envoyée via WhatsApp (PDF + une ligne). · 06/10 09:43 : conditions doc « v1-06/10 » + note vocale envoyés — UN message WhatsApp, voix d'abord, PDF joint, sans légende. · 08/10 13:26 : WhatsApp, jeu de questions structuré (quatre questions numérotées + suggestion de nommage, sans signature), envoyé par King ; texte exact non transmis à l'orchestrateur (à coller pour verbatim) ; fenêtre de réponse non précisée. · 08/10 (King sur place) : adresse précisée — Immeuble West Hotel, 1er étage, dernière porte à droite. Aucun acompte encaissé à cette date.
 
 ## Prochaine action
 

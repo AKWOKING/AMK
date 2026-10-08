@@ -57,7 +57,7 @@ une seule action**.
 **Conséquence.** Trois exigences pour le premier écran, toutes déjà partiellement tenues par la v2.2 :
 
 1. **Nom + ville + métier** immédiatement — « DM OPTIC, votre opticien à Douala ».
-2. **Une preuve, pas une promesse** — l'inscription à l'Ordre depuis 2016.
+2. **Une preuve, pas une promesse** — l'inscription à l'ONOC.
 3. **Une action, pas trois** — le WhatsApp. La v2.2 a déjà réduit de quatre actions à deux.
 
 ⚠️ **Point de vigilance sur « images fortes du travail réel ».** Nous n'avons **aucune photo réelle**.
@@ -439,7 +439,7 @@ qu'il faut.**
 
 ⚠️ **Une réserve sur le mot « enregistré ».** Il est juste (inscription ONOC 021/2016) mais il **désigne
 implicitement ceux qui ne le sont pas**. La règle 5 interdit de nommer un concurrent — y compris par
-implication. **Formulations sûres équivalentes** : « Opticien **inscrit à l'Ordre** depuis 2016, à
+implication. **Formulations sûres équivalentes** : « Opticien **inscrit à l'ONOC**, à
 Bonabéri » — on affirme **son** statut, on ne qualifie personne d'autre.
 
 ---

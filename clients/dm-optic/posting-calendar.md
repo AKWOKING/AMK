@@ -36,8 +36,8 @@ mais **la publicité de S2 est Facebook/Instagram** — à confirmer par King
 
 | | |
 |---|---|
-| **Sujet** | « Le registre le connaît depuis 2016. Vous, vous ne le trouviez pas. » |
-| **Angle** | L'histoire vraie : inscrit à l'Ordre depuis 2016, absent du web jusqu'ici |
+| **Sujet** | « Le registre le connaît. Vous, vous ne le trouviez pas. » |
+| **Angle** | L'histoire vraie : inscrit à l'ONOC, absent du web jusqu'ici |
 | **CTA** | *« Écrivez-nous sur WhatsApp »* — pré-rempli : **« Bonjour, je cherche un opticien à Bonabéri »** |
 | **Fichier** | `content/month1/w1/ugc-script.md` |
 | **⚠️ Contrainte** | **Aucun visage.** Pas de portrait de M. Domche Noumbi, pas de patient inventé |
@@ -46,10 +46,10 @@ mais **la publicité de S2 est Facebook/Instagram** — à confirmer par King
 
 > DM OPTIC, votre opticien à Bonabéri.
 >
-> Inscrit à l'Ordre des opticiens du Cameroun depuis 2016 — et introuvable en ligne jusqu'à
+> Inscrit à l'ONOC — et introuvable en ligne jusqu'à
 > aujourd'hui. C'est maintenant réglé.
 >
-> 📍 Immeuble West Hotel, Ndobo Mayor, Bonabéri
+> 📍 Immeuble West Hotel, 1er étage, dernière porte à droite, Ndobo Mayor, Bonabéri
 > 💬 Écrivez-nous sur WhatsApp, on vous répond
 >
 > `#OpticienDouala #Bonabéri #DMOPTIC`
@@ -65,10 +65,10 @@ mais **la publicité de S2 est Facebook/Instagram** — à confirmer par King
 
 | Plan | Contenu |
 |---|---|
-| **1 — COUVERTURE** | La carte d'identité, mise en page comme une pièce officielle. **« Inscrit depuis 2016. Trouvable depuis aujourd'hui. »** |
+| **1 — COUVERTURE** | La carte d'identité, mise en page comme une pièce officielle. **« Inscrit à l'ONOC. Trouvable depuis aujourd'hui. »** |
 | 2 | Le nom — **DM OPTIQUE SARL** |
 | 3 | Le titulaire — **M. Domche Noumbi** |
-| 4 | L'inscription — Ordre des opticiens du Cameroun, **2016** |
+| 4 | L'inscription — Ordre des opticiens du Cameroun |
 | 5 | Où — Ndobo Mayor, Bonabéri · **8h00–17h30** |
 | 6 | Comment écrire — le WhatsApp |
 
@@ -76,7 +76,7 @@ mais **la publicité de S2 est Facebook/Instagram** — à confirmer par King
 
 > Un opticien inscrit, un titulaire nommé.
 >
-> DM OPTIQUE SARL · M. Domche Noumbi · inscrit à l'Ordre des opticiens du Cameroun depuis 2016.
+> DM OPTIQUE SARL · M. Domche Noumbi · inscrit à l'ONOC.
 > Ndobo Mayor, Bonabéri — ouvert de 8h00 à 17h30.
 >
 > Une question ? Écrivez-nous, on vous répond.

@@ -51,7 +51,7 @@ formats ».
 | **Curiosité** | Ouvrir une boucle : une question, un contraste, un chiffre inattendu |
 | **Copiée d'un format viral** | Contraste / contradiction · tension temporelle · liste annoncée · erreur à éviter |
 | **Trois couches, pas une** | La plupart regardent **sans le son** : l'accroche doit exister **à l'écran dès la première image**, pas seulement en voix |
-| **Spécifique** | « À Bonabéri », « depuis 2016 », « 8h30–13h30 » — le précis arrête, le général glisse |
+| **Spécifique** | « À Bonabéri », « inscrit à l'ONOC », « 8h30–13h30 » — le précis arrête, le général glisse |
 
 **Trois variantes d'accroche par script** — c'est ce qui alimente le programme de **5 à 10 variantes
 vidéo** (voir §5).

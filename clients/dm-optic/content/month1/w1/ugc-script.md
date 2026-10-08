@@ -56,7 +56,7 @@ constat, pas la plainte.
 |---|---|---|---|---|
 | **1** | 0:00–0:02 | **Accroche.** Fond uni, le texte se pose **en mouvement**. Un téléphone à plat, une recherche sans résultat — **le plan bouge dès la frame 1** | L'accroche | *Il se reconnaît : il a déjà cherché, sans succès* |
 | **2** | 0:02–0:06 | Une main fait défiler une liste de résultats **vide**. L'écran se fige | « Quand on cherche un opticien, on tombe sur des pages sans adresse, sans horaire, sans nom. » | *On nomme exactement ce qu'il a vécu* |
-| **3** | 0:06–0:11 | **La preuve.** Une ligne de registre se met en page comme une pièce officielle : *Ordre des opticiens du Cameroun · inscrit depuis 2016* | « Celui-ci est inscrit à l'Ordre des opticiens du Cameroun. Depuis 2016. » | *C'est vérifiable, donc ce n'est pas une promesse* |
+| **3** | 0:06–0:11 | **La preuve.** Une ligne de registre se met en page comme une pièce officielle : *Ordre des opticiens du Cameroun · inscrit à l'ONOC* | « Celui-ci est inscrit à l'Ordre des opticiens du Cameroun. » | *C'est vérifiable, donc ce n'est pas une promesse* |
 | **4** | 0:11–0:14 | Le nom apparaît : **M. Domche Noumbi**. Puis l'adresse : **Ndobo Mayor, Bonabéri** | « Un titulaire nommé. Une adresse réelle. À Bonabéri. » | *Un visage derrière, et c'est à côté de chez lui* |
 | **5** | 0:14–0:18 | **Payoff.** La carte complète se pose. Le bouton WhatsApp apparaît | « Maintenant, vous pouvez lui écrire. » | *L'action est immédiate et sans risque* |
 
@@ -90,7 +90,7 @@ que le moteur de contenu AMK (`CONTENT-LESSONS` §11.2). **Plus d'audition à pr
 |---|---|
 | 1 | L'accroche, mot pour mot |
 | 2 | *aucun* — l'image suffit |
-| 3 | **Inscrit depuis 2016** |
+| 3 | **Inscrit à l'ONOC** |
 | 4 | **M. Domche Noumbi · Bonabéri** |
 | 5 | **DM OPTIQUE SARL** · bouton WhatsApp |
 
@@ -107,7 +107,7 @@ que le moteur de contenu AMK (`CONTENT-LESSONS` §11.2). **Plus d'audition à pr
 │  DM OPTIQUE SARL                │
 │  Opticien · Douala              │
 │                                 │
-│  Inscrit à l'Ordre depuis 2016  │
+│  Inscrit à l'ONOC  │
 │  Titulaire · M. Domche Noumbi   │
 │                                 │
 │  Ndobo Mayor · Bonabéri         │

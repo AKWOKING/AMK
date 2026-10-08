@@ -68,11 +68,11 @@ valeur sans source n'entre pas dans une page de santé).
 
 ## 3 · Ce que la page fait, écran par écran
 
-1. **Premier écran** — la phrase (`Inscrit depuis 2016. Trouvable depuis aujourd'hui.`), **deux actions
+1. **Premier écran** — la phrase (`Inscrit à l'ONOC. Trouvable depuis aujourd'hui.`), **deux actions
    et pas trois** (WhatsApp, appeler), trois faits alignés (Ordre, ville, titulaire), et **la carte
    d'identité** : n° d'inscription, arrêté, titulaire, numéro. C'est la seule chose que nous possédons
    vraiment du cabinet, et elle est mise en page comme une pièce officielle.
-2. **Le constat** (bande marine) — « Le registre de l'Ordre vous connaît depuis 2016. Le web, non. »
+2. **Le constat** (bande marine) — « Le registre de l'Ordre vous connaît. Le web, non. »
    Deux panneaux : **hier** (un encadré en pointillé braise, « aucun résultat », les trois questions
    sans réponse) et **maintenant** (la fiche vivante). Vérification datée en bas de bande.
 3. **Les actes** — une bande **glissante** (six cartes, défilement horizontal à magnétisme sur
@@ -141,7 +141,7 @@ règle du portique de déploiement : *« Not verified on a phone = not sent. »*
 > *« the demo seems to speak more to the prospect, but it's supposed to speak to the patient »*
 
 King a raison, et la faute était de conception, pas de style : la v1 racontait **au cabinet** sa propre
-histoire (« le registre vous connaît depuis 2016, le web non », « voici les six champs qu'il vous
+histoire (« le registre vous connaît, le web non », « voici les six champs qu'il vous
 manque »). Un patient qui tombe sur cette page apprend que l'opticien n'avait pas de page — il
 n'apprend pas **quoi apporter, ni comment prendre rendez-vous**. La v2 part de la seule question qui
 compte : *« puis-je venir, et comment ? »*
@@ -156,7 +156,7 @@ conversation WhatsApp.
 
 | Section | v1 (écartée) | v2 (en ligne après redéploiement) |
 |---|---|---|
-| Premier écran | la phrase au cabinet + la carte d'identité | **« DM OPTIC, votre opticien à Douala. »** · surtitre porteur du mot-clé (« Opticien à Douala · inscrit à l'Ordre depuis 2016 ») · une phrase de service, puis **deux gestes** : écrire sur WhatsApp (message pré-rempli), appeler |
+| Premier écran | la phrase au cabinet + la carte d'identité | **« DM OPTIC, votre opticien à Douala. »** · surtitre porteur du mot-clé (« Opticien à Douala · inscrit à l'ONOC ») · une phrase de service, puis **deux gestes** : écrire sur WhatsApp (message pré-rempli), appeler |
 | Les actes | six cartes, une image | six actes **avec « À apporter »** sur chacun (ordonnance, ancienne monture…) — c'est ce qui manquait au patient |
 | Le déroulé | absent | **trois étapes** : WhatsApp → la réponse → la visite |
 | La preuve | « le registre vous connaît, le web non » | **« Un opticien inscrit, un titulaire nommé »** : n° 021/2016, arrêté 0382, M. Domche Noumbi, *Echos Santé* mars 2023 |
@@ -221,8 +221,7 @@ Trois conséquences, dans cet ordre :
 1. une **section vitrine** — « Les montures et les lunettes » : trois familles, une photo, un conseil
    chacune, et une seule action (« Demander si c'est en boutique ») ;
 2. le **registre sort du texte visible** : n° 021/2016, arrêté 0382, « Littoral, ligne 102 », *Echos
-   Santé* — supprimés. Ce qui reste : « Opticien inscrit à l'Ordre des opticiens du Cameroun depuis
-   2016 » (une phrase, dans la carte et le pied de page), et le nom du titulaire dans la carte. **La
+   Santé* — supprimés. Ce qui reste : « Opticien inscrit à l'ONOC » (une phrase, dans la carte et le pied de page), et le nom du titulaire dans la carte. **La
    donnée structurée garde l'identifiant 021/2016** : la machine peut vérifier l'entité, le patient n'a
    pas à lire un arrêté ministériel ;
 3. **recherche avant écriture** (règle du dépôt) : trois recherches, deux sites d'opticiens lus en
@@ -236,7 +235,7 @@ Trois conséquences, dans cet ordre :
 
 | | |
 |---|---|
-| Premier écran | les trois faits deviennent **Où (Douala) · Sur WhatsApp (656 122 239) · Opticien inscrit depuis 2016** ; la carte ne garde que **deux lignes** (L'opticien, Où) et son pied dit « Adresse exacte et horaires : demandez-les sur WhatsApp ou au téléphone » |
+| Premier écran | les trois faits deviennent **Où (Douala) · Sur WhatsApp (656 122 239) · Opticien inscrit à l'ONOC** ; la carte ne garde que **deux lignes** (L'opticien, Où) et son pied dit « Adresse exacte et horaires : demandez-les sur WhatsApp ou au téléphone » |
 | Services | « **Nos services**, et ce qu'il faut apporter » (six services, chacun avec « À apporter ») |
 | Vitrine (neuve) | « **Les montures et les lunettes** » : lunettes de vue · lunettes de soleil · enfants — une photo, un conseil d'essayage et un « À demander » par famille ; trois conseils du choix ; **une seule action** (« avez-vous cette monture en boutique : ») ; **aucune marque, aucun prix** |
 | Comment ça se passe | la photo de l'instrument de mesure y entre — la bande sombre s'ouvre sur une image |

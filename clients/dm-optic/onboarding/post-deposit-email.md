@@ -153,3 +153,20 @@ la version exacte.)
 - **Journal :** fait — entrée 09:43 ci-dessus, version « v1-06/10 ».
 - **Rappel :** ni RIB, ni prints, ni bloc de signature — retirés par ruling. **Ruling 06/10 : AUCUN
   print, pack imprimé retiré** (voir VISIT-PRINTED-PACK / PRINT-NOTES / runsheet).
+
+## JOURNAL D'ENVOI — JEU DE QUESTIONS PLANNING SITE (08/10)
+
+- **Date :** 08/10/2026 · **Heure :** 13:26 · **Canal :** WhatsApp · **Par :** King (relu et envoyé par
+  lui — l'orchestrateur n'envoie rien)
+- **Contenu (selon King) :** quatre questions numérotées + suggestion de nommage, « Bonjour
+  Monsieur, » sans préambule, sans signature.
+- **Fichier + version :** ⚠️ **le texte réellement envoyé n'a pas été transmis à l'orchestrateur.**
+  Brouillon de référence : `clients/dm-optic/site/CLIENT-QUESTIONS-2026-10-08.md` @ `0c4056a`
+  (photos = option A). Écart signalé : King place le nommage « en Q4 » ; le brouillon le met en ligne
+  finale non numérotée et garde les photos en Q4. **Aucune égalité brouillon = envoyé n'est
+  affirmée** — King colle le texte exact pour que le verbatim soit journalisé (règle : versions
+  exactes dans les journaux).
+- **Fenêtre de réponse :** **non précisée** dans le message reçu (« set at top of message » : rien de
+  tel au sommet) — à fixer par King ; aucune fenêtre n'est inventée ici.
+- **Journalisé :** CRM ligne DM Optique (`crm.py`, 08/10 13:26) ✓ · ce journal ✓.
+

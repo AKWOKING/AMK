@@ -18,7 +18,7 @@
 | Nom d'usage / profil WhatsApp | **DM OPTIC** | vu à l'écran par King (`wa_verified = yes`) |
 | Activité | Cabinet d'optique médicale | registre ONOC |
 | Titulaire / propriétaire | **M. Domche Noumbi** | registre ONOC, Littoral ligne 102 |
-| Adresse | **Immeuble West Hotel, Ndobo Mayor, Bonabéri, Douala IV** | client, 25/09 16:19 (appliqué en v2.2 le 27/09) |
+| Adresse | **Immeuble West Hotel, 1er étage, dernière porte à droite, Ndobo Mayor, Bonabéri, Douala IV** | client, 25/09 16:19 (appliqué en v2.2 le 27/09) ; **étage + porte : King sur place (visite de mercredi 07/10, ruling 08/10)** |
 | WhatsApp | **656 122 239** (+237) | registre ONOC + vérifié à l'écran |
 | Horaires | Ouverture **8h00** · Fermeture **17h30** · Consultation **8h30–13h30** | client, 25/09 16:19 |
 | **Jours d'ouverture** | **INCONNUS** — il a donné les heures, jamais les jours | ⚠️ ouvert, voir `onboarding/intake-questionnaire.md` §2 |

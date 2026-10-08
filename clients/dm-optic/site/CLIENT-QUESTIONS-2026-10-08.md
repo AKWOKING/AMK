@@ -1,6 +1,9 @@
-# DM OPTIQUE — questions client (planning site) — BROUILLON, NON ENVOYÉ
+# DM OPTIQUE — questions client (planning site) — ENVOYÉ 08/10 13:26 (par King) · brouillon de référence
 
-> **Statut : DRAFT. King relit, King envoie.** L'orchestrateur n'envoie rien. Un seul message
+> **Statut : ENVOYÉ par King le 08/10/2026 à 13:26** — le texte exact envoyé n'a pas été transmis (King
+> place le nommage « en Q4 », ce brouillon le met en ligne finale) : **ce fichier = brouillon de
+> référence, pas verbatim envoyé.** Journal : `onboarding/post-deposit-email.md`. *(Statut précédent : DRAFT.* **King relit, King envoie.***)*
+> L'orchestrateur n'envoie rien. Un seul message
 > WhatsApp, jeudi 08/10/2026 après-midi, avant la clôture du planning (ruling King 08/10).
 > Forme ruled 08/10 : texte, quatre questions numérotées, « Bonjour Monsieur, » puis la liste,
 > pas de signature. Jeu de questions structuré = exempté du plafond 2–3 phrases (§1 règles

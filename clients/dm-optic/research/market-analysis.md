@@ -47,7 +47,7 @@ probablement faible. → **Conséquence sur le plan de contenu :** ne pas promet
 1. **Le CTA WhatsApp est le bon geste**, pas le formulaire. Un habitant de Bonabéri écrit sur WhatsApp ;
    il ne remplit pas un formulaire de contact. C'est déjà la règle du dossier — elle est **justifiée**
    par le terrain, pas seulement imposée.
-2. **La preuve doit être locale et concrète.** « Opticien inscrit à l'Ordre depuis 2016, à Bonabéri »
+2. **La preuve doit être locale et concrète.** « Opticien inscrit à l'ONOC, à Bonabéri »
    parle plus qu'un discours de marque. La carte d'identité du premier écran fait exactement ça.
 3. **Le prix se traite, il ne s'affiche pas.** Aucune remise (règle 6), aucun tarif inventé (règle 3
    du dépôt). La réponse honnête à « combien ? » est une réponse qui **explique** ce qui fait le prix
@@ -58,8 +58,7 @@ probablement faible. → **Conséquence sur le plan de contenu :** ne pas promet
 ## 3 · L'angle ONOC — la différenciation réelle
 
 **Le fait de base (confiance A).** DM OPTIQUE SARL est **inscrit au registre ONOC** — Littoral ligne
-102, inscription **021/2016**, arrêté ministériel **0382**. Il est inscrit **depuis 2016**, soit
-près de dix ans.
+102, inscription **021/2016**, arrêté ministériel **0382**. Il est inscrit à l'ONOC (inscription **021/2016**).
 
 **Le contexte (confiance B, fourni par King).** Un **durcissement des contrôles ONOC est en cours dans
 le Littoral**. La distinction **inscrit / informel** devient un différenciateur réel, et pas seulement
@@ -69,14 +68,14 @@ administratif.
 
 | | Un concurrent informel | DM OPTIQUE SARL |
 |---|---|---|
-| Preuve d'inscription | aucune | **Registre ONOC, ligne 102, depuis 2016** |
+| Preuve d'inscription | aucune | **Registre ONOC, ligne 102** |
 | Titulaire nommé | souvent absent | **M. Domche Noumbi** |
 | Forme juridique | — | **SARL**, avec NIU |
 | Mention presse professionnelle | aucune | ***Echos Santé*, mars 2023** (voir `research/domche-noumbi.md` §2) |
 
 **Formulation autorisée** — et c'est la seule formulation sûre :
 
-> ✅ « **Opticien inscrit à l'Ordre des opticiens du Cameroun depuis 2016.** »
+> ✅ « **Opticien inscrit à l'ONOC.** »
 > ✅ « **Un opticien inscrit, un titulaire nommé.** »
 > ✅ « **protège vos yeux** »
 
@@ -116,8 +115,7 @@ avis.
 
 **La phrase de positionnement retenue par la page** (déjà construite, v2.2) :
 
-> « **DM OPTIC, votre opticien à Douala.** » — surtitre : « Opticien à Douala · inscrit à l'Ordre
-> depuis 2016 »
+> « **DM OPTIC, votre opticien à Douala.** » — surtitre : « Opticien à Douala · inscrit à l'ONOC »
 
 C'est sobre, c'est vérifiable, et ça ne promet rien qu'on ne puisse tenir. **C'est la bonne direction
 pour un marché de masse qui veut être rassuré, pas ébloui.**

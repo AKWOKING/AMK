@@ -34,3 +34,7 @@
 
 - **Les quatre lignes opticien ne se ressemblent plus.** Univers (dossier administratif, papier chaud clair) · Cristallin (acuity chart, papier froid) · L'Opticien (miroir dessiné, ink-teal/crème) · **Cavisa (promenade au comptoir, nuit chaude)** — première ligne opticien **sombre**, première **sans aucun chiffre** (ni prix, ni note, ni délai), seule dont la photo du hero est traitée comme un **verre**. Différenciée sur 5 axes : archétype, palette, typographie, traitement d'image, ton.
 - New clients get `clients/<client-name>/inspiration.md` + `build-notes.md` from their first build (see `PRE-FLIGHT.md` §3).
+
+---
+
+*08/10/2026 — correction credentials :* ⚠️ **08/10/2026 — règle credentials (`content/strategy/RULE-CREDENTIAL-CLAIMS.md`) :** les formulations « depuis 2016 » / « existe depuis 2016 » / « exerce depuis 2016 » de ce document **ne sont pas sourcées** (« /2016 » = suffixe d'un numéro de décret, pas une durée). Texte historique conservé tel quel — **NE PAS RÉUTILISER** ; formulation autorisée : « Inscrit à l'ONOC ».

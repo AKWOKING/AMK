@@ -2267,6 +2267,27 @@ def check_reply_types(out: list) -> None:
                  % (bad, ":", " · ".join(x or "(vide)" for x in REPLY_TYPES)))
 
 
+# ── JOURNAL DM OPTIQUE 05/10 → 08/10 ─────────────────────────────────────────────
+# Constat du 08/10 : les entrées 05/10 (proforma v2) et 06/10 09:43 (conditions + note vocale) avaient été
+# écrites dans la chaîne `notes` de BATCH_2409_4_NEW, que ACCORD_DM_0110 ÉCRASE — elles n'atteignaient
+# ni `leads/CRM.csv` ni la fiche. Cette table APPEND (`Notes_extra`) : le fil continue, rien n'est écrasé.
+JOURNAL_DM_0810 = {
+    "dm-optique": {
+        "Notes_extra":
+            "05/10 15:07 : réponse « Merci pour le retour » à la proforma v-finale (envoyée 14:49) — "
+            "signal d'engagement, aucune action due. · 05/10 15:09 : le client relève l'absence "
+            "d'adresse, de contact et de RC sur la proforma. · 05/10 15:42 : King reconnaît le manque, "
+            "s'engage à renvoyer le PDF corrigé. · 05/10 16:24 : proforma v2 « bloc émetteur 7 lignes » "
+            "envoyée via WhatsApp (PDF + une ligne). · 06/10 09:43 : conditions doc « v1-06/10 » + note "
+            "vocale envoyés — UN message WhatsApp, voix d'abord, PDF joint, sans légende. · 08/10 13:26 : "
+            "WhatsApp, jeu de questions structuré (quatre questions numérotées + suggestion de nommage, "
+            "sans signature), envoyé par King ; texte exact non transmis à l'orchestrateur (à coller pour "
+            "verbatim) ; fenêtre de réponse non précisée. · 08/10 (King sur place) : adresse précisée — "
+            "Immeuble West Hotel, 1er étage, dernière porte à droite. Aucun acompte encaissé à cette date.",
+    },
+}
+
+
 def _apply_jour(out: list) -> None:
     """Les relevés, dans l'ordre : 22/09 (soir), 23/09 (matin), 24/09 (le fil Le Cristallin), puis
     24/09 (la fiche Google d'Univers Optique, relue avant la réunion)."""
@@ -2286,6 +2307,7 @@ def _apply_jour(out: list) -> None:
     _apply_state(out, REPONSE_2409_DM, "REPONSE_2409_DM")
     _apply_state(out, REPONSE_DM_2509, "REPONSE_DM_2509")
     _apply_state(out, ACCORD_DM_0110, "ACCORD_DM_0110")
+    _apply_state(out, JOURNAL_DM_0810, "JOURNAL_DM_0810")
     _apply_state(out, REPONSE_UNILABO_2509, "REPONSE_UNILABO_2509")
     _apply_state(out, REPONSE_UNIVERS_2509, "REPONSE_UNIVERS_2509")
     _apply_state(out, REPONSE_2409_CS, "REPONSE_2409_CS")

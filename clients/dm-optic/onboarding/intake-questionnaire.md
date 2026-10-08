@@ -1,6 +1,6 @@
 # Questionnaire d'entrée — visite du mercredi 07 / jeudi 08 octobre
 
-**DM OPTIQUE SARL · M. Domche Noumbi · Immeuble West Hotel, Ndobo Mayor, Bonabéri**
+**DM OPTIQUE SARL · M. Domche Noumbi · Immeuble West Hotel, 1er étage, dernière porte à droite, Ndobo Mayor, Bonabéri**
 
 > **À quoi sert ce document.** Une seule visite, et dix réponses qui débloquent tout le reste. Chaque
 > section dit **ce que la réponse débloque** — on ne demande rien dont on n'a pas l'usage.
@@ -58,7 +58,7 @@ pour une SARL sous contrôle fiscal.*
 | 2.3 | La **consultation** (8h30–13h30) est-elle **tous les jours** d'ouverture, ou certains seulement ? | |
 | 2.4 | Y a-t-il des **jours de forte affluence** à éviter pour un rendez-vous ? | |
 | 2.5 | **Un point de repère** en plus de l'adresse : « en face de… », « à côté de… », un nom connu du quartier | |
-| 2.6 | À quel **étage** se trouve le cabinet dans l'immeuble West Hotel ? Y a-t-il une enseigne visible de la rue ? | |
+| 2.6 | À quel **étage** se trouve le cabinet dans l'immeuble West Hotel ? Y a-t-il une enseigne visible de la rue ? | **Étage + porte : RÉPONDU par King sur place — 1er étage, dernière porte à droite (ruling 08/10).** Enseigne visible de la rue : non confirmée. |
 | 2.7 | **Comment vient-on** chez vous ? (taxi, moto, à pied depuis le marché de Ndobo) — la réponse utile pour un patient | |
 
 ---

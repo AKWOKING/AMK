@@ -1,6 +1,6 @@
 # KILL LIST — déduite, jamais écrite en dur
 
-> ⚙️ **Généré le 2026-10-05 par `leads/build/views.py` — ne pas modifier à la main.**
+> ⚙️ **Généré le 2026-10-08 par `leads/build/views.py` — ne pas modifier à la main.**
 > Toute correction se fait dans `leads/build/crm.py` ou `sales/Activity-Log.md`, puis on relance `leads/build/rebuild.sh`.
 
 ## La règle (corrigée le 19/09)
@@ -20,7 +20,6 @@ Le playbook §A4 codait en dur une kill list figée (« les deux 18 »). **C'ét
 - **Le Cristallin** — 2026-10-09 · Ruling King 02/10 — santé d'abord, zéro business : « Bonjour Monsieur, comment allez-vous ? Le projet vous attend, prenez soin de vous d'abord. À bientôt. » Pas de prix, pas de date, rien d'autre.
 - **liste-opticiens** — 2026-10-12 · Début envois LISTE-OPTICIENS-2026-10.md — 1/jour (ruling 05/10) : 12 Bali · 13 DISC (appel, FB introuvable) · 14 Tchaya (FB) · 15-22 les 7 froids. Opener PRODUCT-LED (outils sur mesure + app essayage), JAMAIS 'we do websites'. Étude de cas DM seulement si acompte encaissé, sinon concept (règle 11). Log CRM chaque envoi.
 - **St. Theresa International Bilingual Comprehensive College (STIBCCOL)** — 2026-10-12 · Permission EXPLICITE de repasser en octobre (verbatim 15/09 : « Ok thanks you can get back to me for a follow up » — leur page sera prête en octobre). Relance le 12/10 : « votre page est prête ? » — pas de prix, pas de question de validation. Date choisie le 02/10 pour laisser la semaine de la visite DM OPTIQUE (07/10) libre. La balle est chez nous — PAS une réponse en attente.
-- **Univers Optique** — 2026-10-08 · Formalization pitch v5 (ruling FINAL 03/10) : 900k one-time 300/300/300, PAS de mensuel, admin catalogue self-service, garantie 30 j, ≤30 montures, ≤3 appareils — awaiting King review and DM Optique close. PITCH-DRAFT-2026-10.md + SCOPE + USAGE-PLAN. Site : FERMÉ définitivement, jamais re-pitcher.
 
 > Les échéances **déjà passées** sont dans `Daily-Plan.csv` — c'est la file de travail.
 

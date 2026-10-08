@@ -57,26 +57,27 @@ Template : `ops/templates/PREVIEW-ONE-PAGE-OPTICIEN.md`.
   pas testé — remplacé) ; **King relit et envoie**. Jamais d'envoi direct orchestrateur.
 - **Promesse tenue :** un PREVIEW livré tard = pire que pas de PREVIEW.
 
-## Timing de publication — REPLAN 08/10 (ruling King)
+## Timing de publication — RULED 08/10 (King) : C1 = vendredi 16/10, 18:00–20:00
 
-Le créneau jeudi 08/10 n'a pas tenu (pas de master, script en hold). **Nouveau : C1 publie vendredi
-09/10, 18:00–20:00, TikTok FR, seulement si le master passe le gate FFmpeg.** Si le master échoue :
-**C1 est tué pour ce cycle** — on ne publie pas un test cassé. La vague 12/10 part alors sans
-warm-up : **soft miss, pas crise.** (a) workflow PREVIEW documenté ✓ (ce fichier) · (b) gate FFmpeg ·
-(c) priorité v06 : voir collision ci-dessous.
+**v06 prend vendredi 09/10** (contenu client, compte client, dépendant de l'acompte ; le test de 30 jours,
+kill rule 04/11, exige le post à l'heure). **C1 se déplace d'une semaine : vendredi 16/10, même
+créneau 18:00–20:00, TikTok FR** — comparabilité du créneau préservée (on change le jour, pas l'heure).
+**Sous réserve de la priorité v06** si l'acompte est encaissé et avance v06. Le gate FFmpeg reste
+obligatoire ; master qui échoue = C1 tué pour ce cycle.
 
-⚠️ **COLLISION OUVERTE — vendredi 09/10 :** le ruling 05/10 (`CONTENT-PIPELINE.md` l.142) fixe
-**v06 = mercredi 19h25 si dépôt encaissé, sinon vendredi 09/10.** Le dépôt n'est pas encaissé (King,
-08/10) → v06 est dû vendredi 09/10, le même jour que C1. Deux publications, un seul créneau TikTok
-fixe : **à arbitrer par King** (v06 inchangé vendredi + C1 glisse ; ou C1 vendredi 18:00–20:00 et v06
-re-daté ; ou les deux, à des heures différentes — au prix de la comparabilité du créneau fixe).
+**Statut de C1 requalifié (ruling) : test du correctif de hook — PAS le warm-up du 12/10.** On le
+note et on le score comme tel. La vague 12/10 part **sans warm-up par plan**, plus comme un
+« soft miss ». *(Les mentions « warm-up » plus haut dans ce fichier sont caduques.)*
 
-## Script C1 — DÉLIVRÉ vendredi 09/10 matin (ruling King 08/10)
+⚠️ **Collision de nom :** « C1 » = ce concept vidéo (compte AMK, TikTok) **et** le carrousel DM Optique
+« C1 » (`carousels.md`, publication client prévue vendredi 16/10 S1). Comptes différents → pas de
+collision de créneau, mais deux « C1 » le même jour : toujours préciser « C1-vidéo » / « C1-carrousel ».
+
+## Script C1 — vendredi 09/10 matin (ruling 08/10 ; inchangé, la pression de créneau est levée)
 
 Toujours voulu. **Livraison : vendredi 09/10 au matin** (script verbatim + liste de captures,
-téléphone, ~20 s). Contrainte réelle : script le matin → captures de King → master → gate FFmpeg
-avant 18:00, une seule journée ; si ça ne tient pas, la règle de kill s'applique (pas de dérive de
-créneau).
+téléphone, ~20 s). Le master a maintenant une semaine (gate FFmpeg avant le 16/10 18:00) ; la règle de kill
+reste : master qui échoue = C1 tué pour ce cycle, pas de dérive de créneau.
 
 ## Bookmark — « building in public » : CLOS pour maintenant
 

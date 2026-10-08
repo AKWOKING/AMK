@@ -173,15 +173,19 @@ votre site » : la source y est implicite (nom de monture) — on ne l'altère p
 - **Copy exacte :** titre « Venez nous voir à Bonabéri » · bouton « Ouvrir dans Maps » ·
   « Écrire sur WhatsApp » · « Appeler le cabinet » (le bouton WhatsApp ouvre le message générique §0). **Aucun formulaire de contact — un seul
   canal : WhatsApp** (ruling).
-- **Adresse (fait proforma v2) :** DM OPTIQUE SARL, immeuble West Hotel, Ndobo Mayor, Bonabéri,
+- **Adresse (fait proforma v2) :** DM OPTIQUE SARL, immeuble West Hotel, 1er étage, dernière porte à droite, Ndobo Mayor, Bonabéri,
   Douala IV. **Heures (fait repo) :** 8h00–17h30 · consultation 8h30–13h30.
+- **Épingle Maps (post-acompte, ruling 08/10) :** précision = « Immeuble West Hotel, 1er étage, dernière porte à droite ». Une épingle
+  seule, au rez-de-chaussée, serait fausse : l'étage et la porte s'écrivent **en texte** juste sous la
+  carte et dans le champ adresse (ligne 2) de la fiche Google. *(Un pin n'a pas d'étage ; mise en
+  œuvre = ma lecture du ruling.)*
 - **Mobile :** click-to-call `tel:` ; Maps = lien externe (pas d'embed lourd) ; carte statique =
   image ≤80 Ko ou simple bloc adresse si plus léger ; tap targets ≥44 px.
 - **États erreur :** carte statique indisponible → bloc adresse seul + bouton Maps (dégradation
   propre, jamais page cassée).
 - **[À CONFIRMER — client] :** **jours d'ouverture** (heures connues, jours NON) · numéros réseaux
   (placeholders jusqu'au go-live, §9). **Repère : CLOSED 08/10** — King sur place mercredi : le cabinet est à
-  « Immeuble West Hotel » exactement ; aucune question client.
+  « Immeuble West Hotel, 1er étage, dernière porte à droite » ; aucune question client.
 
 ## 5 · À PROPOS `/a-propos` (optionnel, léger)
 
@@ -253,7 +257,7 @@ votre site » : la source y est implicite (nom de monture) — on ne l'altère p
 |---|---|
 | Jours/heures · fourchette de prix · taille du stock · photos (logo/devanture/équipe) · nommage | **Questions client Q1–Q5** — `CLIENT-QUESTIONS-2026-10-08.md` (brouillon, King relit et envoie) |
 | Photo hero · photo À propos · bornes exactes par bande · méthode de tag | **Décisions internes, phase build** (ruling) |
-| Repère près de l'adresse | **CLOSED (ruling 08/10)** — King sur place mercredi : « Immeuble West Hotel » exactement. Aucune question client. |
+| Repère près de l'adresse | **CLOSED (ruling 08/10)** — King sur place mercredi : « Immeuble West Hotel, 1er étage, dernière porte à droite ». Aucune question client. |
 | Texte des mentions légales | **Phase build** — rédigé en interne, le client relit à la livraison |
 | Comptes réseaux sociaux (footer/contact) | **Phase build** — les conditions confient à AMK la création Facebook + TikTok (`CONDITIONS-D-INTERVENTION` l.11, vérifié) ; ils n'existent pas encore : footer en **placeholders**, activés au go-live |
 | Validation du paragraphe À propos | **Phase build** — rédigé en interne, le client approuve à la livraison |
