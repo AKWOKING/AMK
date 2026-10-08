@@ -23,7 +23,7 @@ Correspondance avec le dépôt : les 4 posts « problème » = vidéos v01 à v0
 | # | Constat sur le compte | Règle ou décision du dépôt | Statut |
 |---|---|---|---|
 | 1 | Post fondateur **visible** sur Instagram | Séries fondatrices **retirées du calendrier le 17/09** ; le dépôt ne note qu'une publication **TikTok** (16/09) | Registre incomplet : à corriger (publié sur IG ?) |
-| 2 | « **100 000 F** » affiché publiquement | 07/10 : **amk-cm n'affiche aucun prix** (copie publique « même prix / sans remise » retirée) | À aligner (11 vues : coût de retrait faible) |
+| 2 | « **100 000 F** » affiché publiquement | 08/10 (7ᵉ message) : **amk-cm n'affiche aucun prix** (copie publique « même prix / sans remise » retirée) | À aligner (11 vues : coût de retrait faible) |
 | 3 | « **Only 2 founding clients this month** » | Daté du 16/09 : « ce mois-ci » est périmé en octobre ; rareté non sourcée | Périmé |
 | 4 | « **live in 3–5 days** » | `RULE-CREDENTIAL-CLAIMS` : pas d'affirmation sans source au dépôt ; aucun délai tenu n'est prouvé | Sans source |
 | 5 | Bio « **24h** homepage preview » | Fenêtre PREVIEW du 08/10 : build ≤ 15 min · relecture King ≤ 1 h · envoi le jour ouvré si DM avant 15 h WAT | Promesse plus large que le processus |
@@ -38,7 +38,7 @@ Correspondance avec le dépôt : les 4 posts « problème » = vidéos v01 à v0
 |---|---|---|---|---|
 | Didacweb | Douala · FR | A : 2,4 K abonnés Facebook ; 4,9 sur Sortlist (10 avis) | PME, **santé (cliniques, labos)** et **écoles** via pages dédiées | Pages sectorielles ; blog SEO ; classements « meilleures agences » où elle figure ; avis tiers |
 | Maduixaberry | Yaoundé/Douala · FR | B : 1ers résultats sur « création site école Cameroun » | **Écoles, collèges, universités** (page dédiée de 2022), prix publics jusqu'à 5–10 M FCFA | Page verticale ; Instagram `maduixa_berry` (audience non lue) |
-| Protai-in | Douala · FR | A : 1,9 K abonnés Facebook ; cité dans 2 classements | Entreprises en général | Publications de fin de semaine, ton inspirationnel |
+| Protai-in | Douala · FR | A : 1,9 K abonnés Facebook ; cité dans 3 classements (Logicom, AETIC, LocalHost Digital) | Entreprises en général | Publications de fin de semaine, ton inspirationnel |
 | TonTon Business | Buea · **EN/FR** | C : agence de la région anglophone, « 350+ projets » (auto-déclaré) | Marques locales : web, SEO, Google Ads | Chiffres de preuve auto-déclarés ; chaîne YouTube |
 | Weblim | **Bonabéri**, Douala · EN | C : site indexé | PME ; « nous réparons les sites qui ne marchent pas » | Angle « problème » proche du nôtre ; article local « .com vs .cm » |
 
@@ -46,7 +46,7 @@ Correspondance avec le dépôt : les 4 posts « problème » = vidéos v01 à v0
 
 ## 4 · Enseignements
 
-1. **Écrire dans la langue de la cible.** Les concurrents camerounais majeurs publient en français ; le compte est en anglais seul. Prochains Reels : texte français, légende anglaise (aligné sur « FR par défaut », ruling 09/10).
+1. **Écrire dans la langue de la cible.** Les concurrents camerounais majeurs publient en français ; le compte est en anglais seul. Prochains Reels : texte français, légende anglaise (aligné sur « FR par défaut », ruling 08/10, 9ᵉ message).
 2. **Une page verticale par cible, et le lien de bio qui y mène.** Didacweb (santé, écoles) et Maduixaberry (écoles) ont des pages dédiées. `site/` contient déjà `creation-site-web-ecole-cameroun.html` et `creation-site-web-clinique-cameroun.html` (à déployer et vérifier vendredi avec `amk-cm`) : un Reel clinique renvoie vers la page clinique.
 3. **La preuve vient des tiers, pas de nous.** Didacweb a des avis ; TonTon affiche des chiffres auto-déclarés que nous ne pouvons pas reprendre (règle des claims). Première preuve publiable : un cas DM Optique consentant après l'acompte ; avant : du travail réel anonymisé (V2, règle 2).
 4. **Accroches locales et précises.** Weblim publie des sujets à intention locale (« .com vs .cm »). Nos 4 posts « problème » sont génériques et ont touché 18–34 ans, pas les décideurs. Hypothèse à tester (test 30 jours, fin 04/11) : un problème propre au propriétaire de clinique ou d'école, avec mouvement dès la 2ᵉ seconde (falaise à 0:02, `v04b`).
