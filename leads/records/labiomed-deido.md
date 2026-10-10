@@ -1,6 +1,6 @@
 # Labiomed
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-05. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-10. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -28,11 +28,11 @@ Envoyé le 19/09 à 19:32 — lu (2 coches). ***PREMIER OUI DE LA CAMPAGNE.*** 1
 
 ## Prochaine action
 
-**Action fixée au 2026-10-13** — décision humaine, elle prime sur le rythme automatique. Ruling King 02/10 — on tient SA parole, touche légère : « Bonjour, juste un petit bonjour — vous êtes en place maintenant ? » Pas de prix, pas de question de validation.
+**Action fixée au 2026-10-13** — décision humaine, elle prime sur le rythme automatique. Ruling King 02/10 — on tient SA parole, touche légère : « Bonjour, juste un petit bonjour — vous êtes en place maintenant ? » Pas de prix, pas de question de validation. RULING KING 10/10 : le prix de 100 000 FCFA, déjà annoncé le 19/09, est MAINTENU (on ne le relève pas, on ne le rediscute pas).
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 34 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 36 ligne(s).*
 
 `L366` · ## sam 19/09 19:21–20:02 — ⭐ PREMIER « OUI » DE LA CAMPAGNE : LABIOMED
 `L371` · - **23:59 → LABIOMED a répondu « Oui » à 19:43 — 11 minutes après notre message.**
@@ -68,6 +68,8 @@ Envoyé le 19/09 à 19:32 — lu (2 coches). ***PREMIER OUI DE LA CAMPAGNE.*** 1
 `L2338` · Afrique Labo, L'Opticien, Labiomed, Bonanjo, MITOC) ; la bibliothèque publiable sans identité client
 `L3867` · (OraCare et Bonanjo au 28/09, MITOC · Skye · Yaks et Le Cristallin au 29/09, Labiomed au 1ᵉʳ octobre,
 `L4794` · Le pipeline actif = 4 leads (Cristallin, Labiomed, Cavisa, Univers Optique) + DM OPTIQUE en closing +
+`L4922` · ## 10/10/2026 (samedi, 25ᵉ message de King, ≈17:00) — c01 validé · Labiomed maintenu à 100 000 · fiche Google (captures) · Univers (capture) · vague cliniques/labos
+`L4924` · - **Rulings King :** (1) **les 7 slides de c01 sont bonnes** : publication prévue mar. 13/10 19:25 inchangée ; (2) **Labiomed : 100 000 FCFA maintenu** (déjà annoncé le 19/09) ; (3) fiche Google : fait, lien de partage fourni par King : `https://share.google/dTV0eLlVbf4TVzJyG` (le lien n'est pas ouvrable depuis le bac : HTTP 500).
 
 ---
 

@@ -59,3 +59,7 @@ se corrige à un mois de données, pas avant.
   jamais le total.
 - **150k opticiens-seulement, fondateurs-seulement.** Écoles/cliniques : 200k minimum ou rien — ce
   n'est pas un retrait du vertical, c'est la correction d'une erreur de prix avant qu'elle ne compose.
+
+## v3 — 10/10 (ruling King : Labiomed reste à 100 000)
+**Exception nommée :** Labiomed (laboratoire, Douala) garde **100 000 FCFA** (annoncé le 19/09, 50/50) : « on a déjà annoncé 100k, on le maintient ». Ce n'est pas une nouvelle grille : la grille v3 de 05/10 (setup nouveau 200 000, retainer 50 000) reste la règle écrite pour les nouveaux contrats **jusqu'à décision contraire de King** (question posée le 10/10 dans `sales/VAGUE-CLINIQUES-LABOS-2026-10-10.md`).
+**Arithmétique (estimation d'heures du repo, pas une mesure) :** 100 000 ÷ 12 h King ≈ **8 300 FCFA/h**, contre 12 500 FCFA/h à 150 000 et 16 700 FCFA/h à 200 000 sur la même base de 12 h. Le journal d'heures (`clients/dm-optic/ops/hours-log.csv`) corrigera ces chiffres.

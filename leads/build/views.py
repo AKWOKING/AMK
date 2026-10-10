@@ -76,7 +76,8 @@ RELANCE_A_JOUR = {
     "labiomed-deido":
         ("2026-10-13", "Ruling King 02/10 — on tient SA parole, touche légère : « Bonjour, juste un "
                        "petit bonjour — vous êtes en place maintenant ? » Pas de prix, pas de question "
-                       "de validation."),
+                       "de validation. RULING KING 10/10 : le prix de 100 000 FCFA, déjà annoncé le 19/09, est MAINTENU "
+                       "(on ne le relève pas, on ne le rediscute pas)."),
     "cavisa-optique":
         ("2026-10-15", "Séquence fixée par King : après mercredi ET après Labiomed. Follow-up PLAIN, chaud, court — zéro re-ask, zéro prétexte, zéro pitch, zéro travail sur la démo (règle 03/10 : on ne touche la démo d'un prospect que s'il demande quelque chose). Brouillon du check-in dans sales/Suivi-CAVISA-2026-10-05.md — revue King avant envoi."),
     "st-theresa-international-bilingual-comprehensive-college-sti":
