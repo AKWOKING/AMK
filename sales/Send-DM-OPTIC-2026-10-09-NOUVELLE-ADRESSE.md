@@ -124,3 +124,10 @@ Voilà, le logo est en place : https://dm-optique-sarl.vercel.app/. Pour que vos
 3. **Même urgence, sans l'accusation** : le message 2 dit le coût du retard (« le plus vite possible… dès que ») et pose la question qui débloque. Le temps est bien crucial, mais **pour nous aussi** (fenêtre de 30 jours du 05/10 au 04/11) — raison interne, jamais écrite au client.
 
 **Limite des « dernières modifications » avant l'encaissement :** le **logo** peut être mis (petit travail, fichier du client). La **photo du cabinet** n'existe pas : elle vient de la séance photo ; **d'ici là le premier écran reste bleu** (c'est écrit dans le message 1). Aucune illustration n'est présentée comme la photo du cabinet.
+
+### Mise à jour 10/10 ≈21:00 — le logo est reçu (17:30) et la page est reconstruite avec
+
+- **Avant le message 2 :** King redéploie `hosting/previews/dmoptic/index.html` **et `og.jpg`** ; je relis la page en ligne ; ensuite seulement le message 2.
+- **Le message 2 peut commencer par un remerciement :** « Merci pour le logo, … ». Ensuite le texte du message 2 ci-dessus, inchangé (lien, acompte 75 000 FCFA par virement + proforma tamponnée, question sur le virement).
+- **Pas de demande du fichier d'origine maintenant** (un message de plus à un client qui répond) ; à demander à l'étape impression ou enseigne.
+- **Moment d'envoi :** le client était « last seen 19:19 ». Samedi soir ou dimanche matin 9h–10h : choix de King.

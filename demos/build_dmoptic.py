@@ -42,7 +42,8 @@ Usage :
   python3 demos/build_dmoptic.py --url https://…       # remplit og:url / og:image APRÈS déploiement
   python3 demos/build_dmoptic.py --url https://… --logo chemin/logo.png [--logo-mode symbol|full]
       # 10/10 : le logo du cabinet remplace le petit symbole rond (symbol, défaut), ou le symbole ET le
-      # texte du nom quand le logo contient déjà le nom (full). Sans --logo, la sortie est inchangée.
+      # texte du nom quand le logo contient déjà le nom (full). Depuis le 10/10, le logo du cabinet
+      # (clients/dm-optic/website/logo/) est utilisé PAR DÉFAUT ; --no-logo rend l'ancienne page.
 """
 import argparse
 import base64
@@ -110,28 +111,36 @@ def fix_whatsapp(html):
 
 
 MARK_RE = re.compile(r'<span class="mark" aria-hidden="true"><svg\b.*?</svg></span>', re.S)
-LOGO_CSS = (".brand .logo{height:34px;width:auto;max-width:190px;object-fit:contain;flex:none;mix-blend-mode:multiply}\n"
-            ".idtop .logo{height:46px;width:auto;max-width:200px;object-fit:contain;flex:none;mix-blend-mode:multiply}\n"
-            "footer.site .logo{background:#fff;border-radius:8px;padding:4px 6px}\n")
+DEFAULT_LOGO = ROOT / "clients" / "dm-optic" / "website" / "logo" / "dm-optique-logo-web.png"
 
 
 def prepare_logo(path, out):
-    """Logo du client → PNG 'retaillé' (hauteur max 120 px, marges transparentes ou blanches rognées)."""
+    """Logo du client → PNG 'retaillé' (hauteur max 160 px, marges blanches rognées)."""
     src = pathlib.Path(path)
     if not src.exists():
         sys.exit("logo introuvable : %s" % src)
     subprocess.run(["convert", str(src) + "[0]", "-auto-orient", "-fuzz", "6%", "-trim", "+repage",
-                    "-resize", "x120>", "-strip", str(out)], check=True)
+                    "-resize", "x160>", "-strip", str(out)], check=True)
     return out
+
+
+def logo_size(png):
+    w, h = subprocess.run(["identify", "-format", "%w %h", str(png)], check=True,
+                          capture_output=True, text=True).stdout.split()
+    return int(w), int(h)
 
 
 def apply_logo(html, logo_png, mode):
     """Remplace les trois symboles ronds (en-tête, carte d'identité, pied de page) par le logo du client.
-    mode « full » : le logo contient déjà le nom → on retire aussi le texte du nom, le logo porte le libellé."""
+    Le logo est écrit UNE seule fois (variable CSS) : trois <span> le réutilisent, la page ne grossit pas de 3×.
+    mode « full » : le logo contient déjà le nom → on retire aussi le texte du nom (le logo porte le libellé)."""
+    w, h = logo_size(logo_png)
     uri = "data:image/png;base64," + b64(logo_png)
-    alt = "DM OPTIQUE SARL" if mode == "full" else ""
-    img = '<img class="logo" src="%s" alt="%s" decoding="async">' % (uri, alt)
-    html, n = MARK_RE.subn(lambda m: img, html)
+    if mode == "full":
+        span = '<span class="logo" role="img" aria-label="DM OPTIQUE SARL"></span>'
+    else:
+        span = '<span class="logo" aria-hidden="true"></span>'
+    html, n = MARK_RE.subn(lambda m: span, html)
     if n != 3:
         sys.exit("symboles remplacés : %d (attendu 3) — le gabarit a changé" % n)
     if mode == "full":
@@ -139,16 +148,21 @@ def apply_logo(html, logo_png, mode):
         html, j = re.subn(r'<span class="idname">DM OPTIQUE SARL</span>', "", html)
         if k != 2 or j != 1:
             sys.exit("textes du nom retirés : %d + %d (attendu 2 + 1)" % (k, j))
-        # les liens « marque » n'ont plus de texte : le nom accessible vient de l'aria-label (l'audit
-        # a11y du dépôt ne lit pas l'alt d'une image dans un lien — constaté le 10/10)
         html, q = re.subn(r'<a class="brand" href="#top">', '<a class="brand" href="#top" aria-label="DM OPTIQUE SARL">', html)
         if q != 2:
             sys.exit("liens marque : %d (attendu 2)" % q)
+    css = (":root{--logo:url(%s)}\n"
+           ".logo{display:inline-block;flex:none;aspect-ratio:%d/%d;background:var(--logo) center/contain no-repeat;"
+           "mix-blend-mode:multiply}\n"
+           ".brand .logo{height:40px;max-width:190px}\n"
+           ".idtop .logo{height:64px;max-width:200px}\n"
+           "footer.site .logo{height:48px;box-sizing:content-box;border:5px solid #fff;border-radius:10px;"
+           "background-color:#fff;background-origin:content-box;mix-blend-mode:normal}\n") % (uri, w, h)
     marker = ".nav{display:none}"
     if html.count(marker) < 1:
         sys.exit("point d'insertion CSS introuvable")
-    html = html.replace(marker, LOGO_CSS + marker, 1)
-    print("✓ logo du cabinet : %d emplacements (%s)" % (n, mode))
+    html = html.replace(marker, css + marker, 1)
+    print("✓ logo du cabinet : 3 emplacements (%s), %d×%d px, écrit une fois" % (mode, w, h))
     return html
 
 
@@ -198,9 +212,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--url", default="", help="adresse de la page déployée, pour og:url / og:image")
     ap.add_argument("--logo", default="", help="fichier du logo du cabinet (remplace le symbole rond)")
+    ap.add_argument("--no-logo", action="store_true", help="reconstruire sans logo (symbole rond d'origine)")
     ap.add_argument("--logo-mode", choices=("symbol", "full"), default="symbol",
                     help="symbol : le texte du nom reste ; full : le logo contient déjà le nom")
     opts = ap.parse_args()
+    if not opts.logo and not opts.no_logo and DEFAULT_LOGO.exists():
+        opts.logo = str(DEFAULT_LOGO)   # le logo du cabinet (reçu le 10/10) est le logo par défaut
 
     html = TPL.read_text(encoding="utf-8")
     tmp = pathlib.Path("/tmp/dmoptic-img")
