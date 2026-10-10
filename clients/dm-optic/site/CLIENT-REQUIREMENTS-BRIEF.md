@@ -133,7 +133,11 @@ sans prix affichés, avec les noms de montures du client, en français d'abord e
 Vendredi 09/10 : redéployer `dmoptic` (cartes + vignette) → **vérification en ligne par l'orchestrateur** → **seulement ensuite** envoyer l'URL au client
 → déployer `amk-cm` → vérification → abandonner `dmoptic-2`.
 
-### 3.6 ❓ Périmètre — NON TRANCHÉ (pour King)
+### 3.6 ✅ Périmètre — cinq pages (ruling King 10/10), reste un point de formulation
+
+> **10/10 (King, 20ᵉ message) :** « on avait conclu sur 5 pages tant qu'ils peuvent être mis sur Cloudflare ». Le dépôt ne garde aucune trace de cette conclusion ; elle est ici enregistrée comme ruling. Cloudflare Pages (offre gratuite) : bande passante illimitée, 20 000 fichiers par déploiement, 25 Mo par fichier (sources : eastondev.com 05/2026, computingforgeeks.com 03/2026 ; à revérifier dans la documentation Cloudflare avant le transfert) — cinq pages statiques y tiennent largement. **Reste :** les conditions remises au client disent « une page » et excluent les pages supplémentaires ; ne rien dire au client sur le nombre de pages avant que King ait choisi la formulation. L'ancien texte de ce paragraphe, ci-dessous, est gardé pour l'historique.
+
+**Ancien texte (08/10, NON TRANCHÉ) :**
 
 Le document de conditions **livré au client** promet **une page** et **exclut** « les pages supplémentaires au-delà de la page livrée ».
 La spec en décrit **cinq**. La ligne de la proforma est « Création du site vitrine bilingue » (100 000 dans la proforma ; 150 000 pour le pack).
@@ -195,14 +199,14 @@ landing  →  carte de catégorie  →  futur catalogue  →  WhatsApp
 
 | # | Écart | Sources en tension | Statut |
 |---|---|---|---|
-| 1 | **Périmètre** : une page (conditions) vs cinq pages (spec) | `CONDITIONS` §1, §4 · `SPEC-PAGES-v1.md` | ❓ **NON TRANCHÉ** — voir §3.6 |
+| 1 | **Périmètre** : une page (conditions) vs cinq pages (spec) | `CONDITIONS` §1, §4 · `SPEC-PAGES-v1.md` | ✅ **Cinq pages**, tant que le site peut être hébergé sur Cloudflare (ruling King 10/10, 20ᵉ message ; **aucune trace antérieure dans le dépôt** — la « conclusion » est citée par King). ⚠️ Reste : le texte des conditions que le client a lu dit « une page » — comment le lui dire = décision de King. |
 | 2 | **Description du site** : « Accueil + Contact + À propos » vs une page à ancres | repo vs message King 08/10 | ✅ le brief suit le repo (§2) |
 | 3 | **« Pas d'hébergement, pas de domaine »** : le socle est hébergé chez King (`dm-optique-sarl.vercel.app`) | repo · conditions (« domaine au nom du cabinet dès le premier jour ») | ⏳ domaine et hébergement au nom du client : **après dépôt** |
 | 4 | **« Rien de public avant l'acompte »** vs un site en ligne | `dossier.md` §3.4 · `BUILD-KICKOFF` | ✅ cohérent **tant que** `noindex,nofollow` tient et que l'URL n'est partagée qu'avec le client ; ⚠️ tête **en ligne** à vérifier vendredi |
 | 5 | **Horaires** : trois jeux dans le dépôt (25/09 · 08/10 · « lun–sam » du fichier GBP) | `build-notes` v2.3 · `launch/SETUP-GOOGLE-BUSINESS.md` (« 8h00–17h30, lun–sam ») | ✅ page et spec utilisent le jeu du 08/10 ; ⚠️ **périmés ailleurs** : `content/month1/carousels.md`, `w2/ugc-script.md`, `a-completer.md`, carte signature, fiche GBP (aussi : **le client n'a jamais donné de jours**) |
 | 6 | **Séance photo** : « offerte, aucun montant » (conditions) vs échange « droits de nommage » ou ligne 15 000 FCFA (dossier §6b) | `CONDITIONS` §4 · `dossier.md` §6b | ❓ **NON TRANCHÉ** |
 | 7 | **« Le site ne montre que du vrai »** (conditions) vs illustrations sur le socle | `CONDITIONS` · `#montures` | ✅ cohérent : le socle est un **aperçu** légendé « Photo d'illustration » ; la **livraison** attend les vraies photos |
-| 8 | **Nom dans les messages** : « DM Optique » (trois cartes, texte ruled) vs « DM OPTIQUE SARL » (six autres messages, nom donné par le client) | ruling 08/10 · message client 25/09 | ❓ à valider par King (un changement de chaîne si « SARL » partout) |
+| 8 | **Nom dans les messages** : « DM Optique » (trois cartes, texte ruled) vs « DM OPTIQUE SARL » (six autres messages, nom donné par le client) | ruling 08/10 · message client 25/09 | ✅ **« DM OPTIQUE SARL » partout** (ruling King 10/10) ; trois cartes corrigées dans le gabarit, le test et la page (FR et EN) ; **à redéployer**. |
 | 9 | **Verbatims 13:26 et 14:58** non archivés | `post-deposit-email.md` | ⏳ King colle |
 | 10 | **Prix** : ouverture du 01/10 vs réponse du client du 08/10 | `website/brief.md` §6 · questionnaire Q4.6 | ✅ la réponse du client l'emporte (§4) |
 
@@ -220,6 +224,10 @@ landing  →  carte de catégorie  →  futur catalogue  →  WhatsApp
 ---
 | 10/10/2026 | Faut-il des emplacements (placeholders) TikTok / Facebook sur la page avant que les pages existent ? | **Proposition de l'orchestrateur, EN ATTENTE de King :** non — un lien vers une page inexistante est un CTA mort (brief §5), et rien n'est créé avant l'acompte. On les ajoute avec les vrais liens quand les pages sont créées au nom du client (§3.4). Le message au client l'annonce. | King, 19e message (question) |
 | 10/10/2026 | Pourquoi le client ne voit-il pas un catalogue de ses montures ? | Nous n'avons pas encore les photos de ses montures (après l'acompte) et le site ne montre que du vrai (conditions §1). À dire au client sans promettre de page catalogue (§3.6). | King, 19e message |
+| 10/10/2026 | Combien de pages ? | **Cinq**, tant qu'elles peuvent être mises sur Cloudflare | King, 20e message |
+| 10/10/2026 | Nom dans les messages des trois cartes | **DM OPTIQUE SARL** partout (« M OPTIQUE SARL toujours » lu comme « DM OPTIQUE SARL ») | King, 20e message |
+| 10/10/2026 | Placeholders sociaux (TikTok, Facebook) | **Aucun** : ajoutés avec les vrais liens à la création des pages | King, 20e message (« oui pas de placeholder social ») |
+| 10/10/2026 | Message d'envoi : fin « dites-moi ce que vous en pensez » | Remplacée par trois questions dirigées (couleur, logo, premier écran) | King, 20e message |
 
 ## Dossier chargé pour écrire ce brief
 

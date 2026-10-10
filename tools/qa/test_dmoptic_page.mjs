@@ -104,9 +104,9 @@ ok("mais l'entité garde son identifiant dans les données structurées (021/201
 ok("aucun lien mort : pas un seul href=\"#\"", !/href="#"/.test(html));
 /* OPTION B (ruling King 08/10) : chaque carte de famille est un WhatsApp, avec SON message — pas de catalogue. */
 const CAT_FR = [
-  "Bonjour DM Optique, je suis intéressé par vos lunettes de vue. Quelles montures avez-vous disponibles ?",
-  "Bonjour DM Optique, je suis intéressé par vos lunettes de soleil. Quelles montures avez-vous disponibles ?",
-  "Bonjour DM Optique, je suis intéressé par vos lunettes pour enfants. Quelles montures avez-vous disponibles ?",
+  "Bonjour DM OPTIQUE SARL, je suis intéressé par vos lunettes de vue. Quelles montures avez-vous disponibles ?",
+  "Bonjour DM OPTIQUE SARL, je suis intéressé par vos lunettes de soleil. Quelles montures avez-vous disponibles ?",
+  "Bonjour DM OPTIQUE SARL, je suis intéressé par vos lunettes pour enfants. Quelles montures avez-vous disponibles ?",
 ];
 const cardLinks = cards.map((c) => (c.match(/<a class="[^"]*\bwa\b[^"]*"[^>]*>/g) || []));
 ok("Option B : chacune des trois cartes porte exactement UN lien WhatsApp",
@@ -174,12 +174,12 @@ const MESSAGES = [
    "Hello DM OPTIQUE SARL, I would like to book an eye examination."],
   ["Bonjour DM OPTIQUE SARL, je voudrais prendre un rendez-vous pour un examen de la vue.",
    "Hello DM OPTIQUE SARL, I would like to book an eye examination."],
-  ["Bonjour DM Optique, je suis intéressé par vos lunettes de vue. Quelles montures avez-vous disponibles ?",
-   "Hello DM Optique, I am interested in your prescription glasses. Which frames do you have available?"],
-  ["Bonjour DM Optique, je suis intéressé par vos lunettes de soleil. Quelles montures avez-vous disponibles ?",
-   "Hello DM Optique, I am interested in your sunglasses. Which frames do you have available?"],
-  ["Bonjour DM Optique, je suis intéressé par vos lunettes pour enfants. Quelles montures avez-vous disponibles ?",
-   "Hello DM Optique, I am interested in your children's glasses. Which frames do you have available?"],
+  ["Bonjour DM OPTIQUE SARL, je suis intéressé par vos lunettes de vue. Quelles montures avez-vous disponibles ?",
+   "Hello DM OPTIQUE SARL, I am interested in your prescription glasses. Which frames do you have available?"],
+  ["Bonjour DM OPTIQUE SARL, je suis intéressé par vos lunettes de soleil. Quelles montures avez-vous disponibles ?",
+   "Hello DM OPTIQUE SARL, I am interested in your sunglasses. Which frames do you have available?"],
+  ["Bonjour DM OPTIQUE SARL, je suis intéressé par vos lunettes pour enfants. Quelles montures avez-vous disponibles ?",
+   "Hello DM OPTIQUE SARL, I am interested in your children's glasses. Which frames do you have available?"],
 ];
 const ALT = ["Une paire de lunettes de vue posée sur une surface claire, lumière douce.",
              "A pair of prescription glasses resting on a pale surface in soft light."];
@@ -219,7 +219,7 @@ ok("départ en français : FR est enfoncé, EN ne l'est pas",
    r.buttons["btn-fr"].getAttribute("aria-pressed") === "true" &&
    r.buttons["btn-en"].getAttribute("aria-pressed") === "false");
 /* Deux salutations, et seulement deux : « DM OPTIQUE SARL » (le nom du cabinet, son message du 25/09) pour
-   les six messages d'origine, « DM Optique » pour les trois cartes de familles (texte ruled par King, 08/10). */
+   les six messages d'origine, « DM OPTIQUE SARL » partout, trois cartes de familles comprises (ruling King 10/10, qui remplace « DM Optique » du 08/10). */
 ok("départ en français : les neuf messages WhatsApp restent français",
    r.anchors.every((a) => /^Bonjour DM (OPTIQUE SARL|Optique),/.test(waMessage(a.getAttribute("href")))) &&
    waMessage(r.anchors[2].getAttribute("href")) === MESSAGES[2][0]);

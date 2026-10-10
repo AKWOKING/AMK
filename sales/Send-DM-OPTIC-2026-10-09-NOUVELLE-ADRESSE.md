@@ -19,7 +19,7 @@ Bonjour Monsieur, le site est maintenant à cette adresse : dm-optique-sarl.verc
 
 ---
 
-## Version du 10/10 (19ᵉ message de King) — avec la raison de l'absence de catalogue et des liens sociaux
+## ~~Version du 10/10 (19ᵉ message de King)~~ — REMPLACÉE par la version « trois questions » ci-dessous (20ᵉ message) — avec la raison de l'absence de catalogue et des liens sociaux
 
 > Brouillon uniquement : **King relit et envoie**. Le texte ruled du 08/10 ci-dessus est conservé ; cette version ajoute ce que King demande le 10/10 : **dire pourquoi le client ne voit pas le catalogue de ses montures.** King a redéployé le 10/10 ; l'orchestrateur a relu la page en ligne (voir le journal du 10/10).
 
@@ -43,3 +43,30 @@ Bonjour Monsieur, le site est maintenant à cette adresse : https://dm-optique-s
 - rien qui demande les photos avant paiement (règle : photos annoncées, pas demandées).
 
 **Plus court si tu préfères (même fond) :** « Bonjour Monsieur, le site est maintenant à cette adresse : https://dm-optique-sarl.vercel.app/ — l'ancien lien ne sera plus actif. Les photos sont des illustrations pour l'instant, vos vraies montures viendront avec la séance photo. Dites-moi ce que vous en pensez. » (les liens TikTok et Facebook ne sont alors pas mentionnés).
+
+---
+
+## Version du 10/10 (20ᵉ message de King) — trois questions dirigées à la place de « dites-moi ce que vous en pensez »
+
+> Brouillon uniquement : **King relit et envoie**. Ruling King 10/10 : « dites-moi ce que vous en pensez » est trop vague → **deux à trois questions dirigées** sur des points précis (couleur, logo, image du premier écran). Les jeux de questions structurés sont hors plafond 2–3 phrases (`CLIENT-MESSAGING-RULES.md` §1) ; ici, les questions sont courtes et numérotées.
+
+```
+Bonjour Monsieur, le site est maintenant à cette adresse : https://dm-optique-sarl.vercel.app/ — l'ancien lien ne sera plus actif. Les photos de montures sont des illustrations pour l'instant : vos vraies montures et vos liens TikTok et Facebook viendront avec la séance photo et la création de vos pages, car nous ne montrons que du vrai.
+
+Trois questions :
+1. Le bleu du site vous convient, ou vous préférez une autre couleur ?
+2. Le nom en haut est écrit en texte, avec un petit symbole rond que nous avons dessiné : avez-vous un logo à mettre à la place ?
+3. Sur le premier écran, vous préférez le fond bleu actuel, ou une photo de votre cabinet ou de vos montures quand nous les aurons ?
+```
+
+**Premise check (lu dans `hosting/previews/dmoptic/index.html`, 10/10) :**
+- Couleur : la couleur du site est un bleu (`--brand #1A3F86`), fond marine pour le premier écran ; l'orange n'est qu'un accent : la question dit « le bleu », rien d'autre. ✔
+- Logo : l'en-tête = le texte « DM OPTIQUE SARL » + un symbole SVG rond **dessiné par AMK**, pas un logo du client (aucun logo reçu dans le dossier). ✔ La question ne le présente pas comme le sien.
+- Premier écran : **aucune photo** dedans, seulement le fond bleu et un anneau dessiné ; les photos (illustrations) sont plus bas. ✔ La question 3 annonce une photo « quand nous les aurons » : photos **annoncées, pas demandées** avant paiement.
+- Q2 demande un logo (un fichier), pas une photo : choix de King (il l'a proposé) ; ce n'est pas du travail avant paiement, c'est une réponse que le client donne en un mot (« oui » / « non »).
+
+**Ce que le message ne dit toujours pas :** « catalogue » · pages (une ou cinq) · prix · délai · « offerte ». Le ruling du 10/10 sur les cinq pages (voir brief) reste interne tant que King n'a pas décidé comment le dire (les conditions que le client a lues disent « une page »).
+
+**Hors du message (à retenir) :** réponse « logo » = on le place à la place du symbole ; réponse « photo » = on l'attend après le démarrage ; réponse « couleur » = on note laquelle, sans rien refaire avant l'acompte.
+
+**Nom :** les trois cartes disent maintenant « DM OPTIQUE SARL » (ruling King 10/10, remplace « DM Optique » du 08/10) : **à redéployer** (`hosting/previews/dmoptic/`, `index.html` seul a changé ; `og.jpg` identique). Le client ne voit pas ce texte avant de toucher une carte.
