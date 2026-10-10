@@ -35,11 +35,11 @@
 
 ## Prochaine action
 
-**Action fixée au 2026-10-23** — décision humaine, elle prime sur le rythme automatique. 10/10 — LE CLIENT A RÉPONDU le 09/10 (message de King 12:32, réponse 15:21) : la relance du 09/10 est faite et la fenêtre est caduque. Il est chez le kinésithérapeute (problème de santé, détail non consigné) ; King lui a répondu 16:14 « le projet attendra votre rétablissement ». Le message envoyé le 09/10 demandait quand relancer la suite du site (≠ le texte ruled 02/10, « zéro business ») : pas de date donnée. PROPOSITION À CONFIRMER PAR KING : prochaine touche = 23/10, santé seulement, zéro business ; jamais avant s'il n'écrit pas.
+**Action fixée au 2026-10-23** — décision humaine, elle prime sur le rythme automatique. 10/10 — LE CLIENT A RÉPONDU le 09/10 (message de King 12:32, réponse 15:21) : la relance du 09/10 est faite et la fenêtre est caduque. Il est chez le kinésithérapeute (problème de santé, détail non consigné) ; King lui a répondu 16:14 « le projet attendra votre rétablissement ». Le message envoyé le 09/10 demandait quand relancer la suite du site (≠ le texte ruled 02/10, « zéro business ») : pas de date donnée. CONFIRMÉ PAR KING (10/10) : prochaine touche = 23/10, santé seulement, zéro business ; jamais avant s'il n'écrit pas.
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 110 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 112 ligne(s).*
 
 `L837` · - `Le Cristallin` 17:51 · `Univers Optique` 17:50 · `Disc Optique Médicale` 17:48 · `Tchaya Optique` 17:47 :
 `L881` · ## Lundi 21/09/2026 — 18:20 → 19:15 · « Ok » de Le Cristallin : le premier aperçu demandé, construit et branché sur le CRM
@@ -151,6 +151,8 @@
 `L3867` · (OraCare et Bonanjo au 28/09, MITOC · Skye · Yaks et Le Cristallin au 29/09, Labiomed au 1ᵉʳ octobre,
 `L4794` · Le pipeline actif = 4 leads (Cristallin, Labiomed, Cavisa, Univers Optique) + DM OPTIQUE en closing +
 `L4876` · - **Dû hier (ven. 09/10) et à confirmer par King :** Le Cristallin « santé d'abord » (date 2026-10-09, maintenant dans le plan du jour).
+`L4902` · ## 10/10/2026 (samedi, 22ᵉ message de King, 11:40) — captures DM OPTIC et Le Cristallin · programme
+`L4905` · - **Le Cristallin (capture) :** 24/09 10:10-10:11 client « Bonjour je vais te revenir » / « Je suis malade » ; 24/09 10:13 King (santé d'abord) ; 24/09 10:25 « Merci ». **Ven. 09/10 12:32 King (ENVOYÉ) :** « Bonjour M. Messoua, j'espère que vous vous portez beaucoup mieux et que vous avez bien récupéré ! Je venais aux nouvelles pour savoir quand vous souhaitez qu'on relance la suite du site. » — **ce n'est pas le texte ruled du 02/10** (« zéro business ») : il pose la question « quand » ; constat, pas reproche. **Réponse du client 15:21 « Bonsoir mon frère »** ; King 15:43 (en tutoyant) ; le client parle de sa santé (15:54-15:55, **détail médical non consigné au dépôt**, il est chez le kiné) ; King 16:14 « …le projet attendra votre rétablissement ». **Le client n'a pas donné de date.** La réponse annule la relance : `RELANCE_A_JOUR` (`views.py`) passe de 2026-10-09 à **2026-10-23, PROPOSITION À CONFIRMER PAR KING** (santé seulement, zéro business). Le plan du jour ne contient plus Le Cristallin.
 
 ---
 

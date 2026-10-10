@@ -2330,8 +2330,15 @@ JOURNAL_DM_0810 = {
             "La carte d'aperçu montre le titre et la description MAIS AUCUNE VIGNETTE sur la capture : og.jpg à vérifier (cache WhatsApp ou fichier). "
             "Correction de verbatim sur la même capture : le 13:26 dit « j'aurais besoin » (et non « j'aurai »). "
             "Fenêtre §7 depuis la livraison : lecture lun–ven, voix mer. 14/10 SEULEMENT si le client reste muet ; `Follow-up date` 2026-10-14 ; "
-            "lecture calendaire alternative = voix lun. 12/10 : à confirmer par King. Reste : abandon de `dmoptic-2` ; acompte non encaissé à la dernière info.",
-        "Follow-up date": "2026-10-14",
+            "lecture calendaire alternative = voix lun. 12/10 : à confirmer par King. Reste : abandon de `dmoptic-2` ; acompte non encaissé à la dernière info. · "
+            "10/10 ≈11:58 (capture de notification, 14 min avant 12:12) : LE CLIENT RÉPOND aux trois questions — « Oui le bleu me convient » · "
+            "« Oui j'ai un logo de la structure » · « C'est mieux la photo du cabinet ». La réponse annule la fenêtre §7. "
+            "Rulings King (12:1x) : AUCUN encaissement à ce jour ; on fait ces dernières modifications (logo ; photo du cabinet au premier écran) "
+            "PUIS on rappelle au client que le démarrage dépend de l'acompte (installation « à l'encaissement » : conditions du 07/10). "
+            "Le logo n'est pas encore reçu ; la photo du cabinet n'existe pas encore (séance photo) : le premier écran reste bleu d'ici là. "
+            "`Follow-up date` 2026-10-12 = PROPOSITION (logo reçu ? virement en cours ?), à confirmer par King. "
+            "`dmoptic-2` toujours en ligne à 12:12 (« depuis 2016 »).",
+        "Follow-up date": "2026-10-12",
         "site_url": "https://dm-optique-sarl.vercel.app", "site_checked_on": "2026-10-08",
     },
 }

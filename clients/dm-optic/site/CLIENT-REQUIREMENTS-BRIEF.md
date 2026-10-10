@@ -232,6 +232,8 @@ landing  →  carte de catégorie  →  futur catalogue  →  WhatsApp
 | 10/10/2026 | Voix des messages | « Je » au lieu de « nous », ton semi-formel, phrase « nous ne montrons que du vrai » retirée | King, 21e message (`CLIENT-MESSAGING-RULES.md` §8) |
 | 10/10/2026 | Que dit le client à 15:00, « Pour Autres besoins vous me faites signes » ? | **Non tranché** : peut vouloir dire « faites-moi signe pour les autres besoins » (rendez-vous préalable). À lever avec lui ; la page n'est pas modifiée. | capture de King, 10/10 |
 | 10/10/2026 | L'envoi du 11:38 | Lien + raison des illustrations + trois questions (bleu, logo, premier écran), sans numéros ; aucune vignette visible dans la carte d'aperçu → og.jpg à vérifier | capture de King, 10/10 |
+| 10/10/2026 | Réponses du client aux trois questions (≈11:58) | « Oui le bleu me convient » · « Oui j'ai un logo de la structure » · « C'est mieux la photo du cabinet » → couleur gardée ; logo à recevoir puis à placer ; photo du cabinet au premier écran **après la séance photo** (d'ici là, premier écran bleu) | capture de notification, 10/10 |
+| 10/10/2026 | Acompte | **Non encaissé** ; King : modifications d'abord (logo), puis rappel que le démarrage dépend de l'acompte | King, 23e message |
 
 ## Dossier chargé pour écrire ce brief
 

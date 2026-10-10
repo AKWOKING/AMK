@@ -71,7 +71,7 @@ RELANCE_A_JOUR = {
                        "faite et la fenêtre est caduque. Il est chez le kinésithérapeute (problème de santé, détail non consigné) ; "
                        "King lui a répondu 16:14 « le projet attendra votre rétablissement ». Le message envoyé le 09/10 demandait "
                        "quand relancer la suite du site (≠ le texte ruled 02/10, « zéro business ») : pas de date donnée. "
-                       "PROPOSITION À CONFIRMER PAR KING : prochaine touche = 23/10, santé seulement, zéro business ; "
+                       "CONFIRMÉ PAR KING (10/10) : prochaine touche = 23/10, santé seulement, zéro business ; "
                        "jamais avant s'il n'écrit pas."),
     "labiomed-deido":
         ("2026-10-13", "Ruling King 02/10 — on tient SA parole, touche légère : « Bonjour, juste un "

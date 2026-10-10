@@ -95,3 +95,32 @@ J'ai trois questions :
 **Premise check :** inchangé (voir la version du 20ᵉ message : couleur = bleu, symbole rond dessiné par AMK et non un logo du client, aucune photo au premier écran, photos annoncées et non demandées). **Ordre :** ce message part **avant** l'abandon de `dmoptic-2`, qui se fait après.
 
 **Ce que le message ne dit toujours pas :** « catalogue » · nombre de pages · prix · délai · « offerte ». Une page ou cinq : « c'est pareil pour nous » (King, 10/10) — rien à annoncer comme supplément.
+
+---
+
+## Suite du 10/10 (23ᵉ message de King) — le client a répondu aux trois questions : deux messages, dans cet ordre
+
+> Brouillons uniquement : **King relit et envoie.** Réponse du client (≈11:58, notification) : « Oui le bleu me convient · Oui j'ai un logo de la structure · C'est mieux la photo du cabinet ». Ruling King : on fait ces dernières modifications, **puis** on rappelle que le démarrage dépend de l'acompte. Règle de voix : `CLIENT-MESSAGING-RULES.md` §8.
+
+**Message 1 — maintenant (accuse réception, demande le logo seulement) :**
+
+```
+Merci Monsieur, c'est noté : on garde le bleu, et la photo du cabinet ira sur le premier écran dès que je l'aurai. Envoyez-moi votre logo ici (le fichier si vous l'avez, sinon une photo bien nette) et je le mets sur le site.
+```
+
+**Message 2 — seulement quand le logo est EN LIGNE (King redéploie, l'orchestrateur relit, puis tu envoies) :**
+
+```
+Voilà, le logo est en place : https://dm-optique-sarl.vercel.app/. Pour que vos pages Facebook et TikTok soient en ligne le plus vite possible, je démarre dès que l'acompte de 75 000 FCFA est reçu par virement, avec la proforma tamponnée : je crée les pages, je prends les photos du cabinet et je lance les premières publications. Où en est le virement de votre côté ?
+```
+
+**Premise check :**
+- Message 1 : le client a dit « Oui j'ai un logo de la structure » et « C'est mieux la photo du cabinet » ✔ ; le bleu garde ; on demande un **logo** (fichier ou photo nette), pas des photos du cabinet (règle : photos annoncées, pas demandées avant paiement) ✔. « Dès que je l'aurai » : aucune date promise.
+- Message 2 : conditions du 07/10 : « Installation : à l'encaissement de l'acompte — comptes, site, premier contenu » ; acompte 75 000 FCFA ; virement + proforma tamponnée retournée (dossier §14) ✔. La question finale (« où en est le virement ») est une vraie question, qui peut révéler un blocage (SARL sous contrôle fiscal, virement obligatoire).
+
+**Ce que l'orchestrateur déconseille d'écrire (« le projet aurait pu être fini si on nous avait payé », « les pages devaient déjà être créées ») :**
+1. **Faux au regard de nos propres conditions** : les comptes sociaux, le site publié et le premier contenu se font *à l'encaissement*. Le client peut répondre : « vous avez écrit que rien ne démarre avant que je paie ».
+2. **Reproche, alors que le client répond vite** (trois réponses en ≈20 minutes) ; le seul levier avant l'encaissement est la bonne volonté.
+3. **Même urgence, sans l'accusation** : le message 2 dit le coût du retard (« le plus vite possible… dès que ») et pose la question qui débloque. Le temps est bien crucial, mais **pour nous aussi** (fenêtre de 30 jours du 05/10 au 04/11) — raison interne, jamais écrite au client.
+
+**Limite des « dernières modifications » avant l'encaissement :** le **logo** peut être mis (petit travail, fichier du client). La **photo du cabinet** n'existe pas : elle vient de la séance photo ; **d'ici là le premier écran reste bleu** (c'est écrit dans le message 1). Aucune illustration n'est présentée comme la photo du cabinet.

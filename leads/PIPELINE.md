@@ -29,7 +29,7 @@
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
 | DM Optique | Douala | 656 122 239 | `L4019` |
-| Le Cristallin | Douala | 699 90 55 77 | `L4876` |
+| Le Cristallin | Douala | 699 90 55 77 | `L4905` |
 
 ## ③ Aperçu envoyé — 1
 
@@ -43,7 +43,7 @@
 |---|---|---|---|
 | Labiomed | Douala (Deido, 104 Route Deido-Bassa) | 699 98 54 66 | `L4794` |
 | St. Theresa International Bilingual Comprehensive College (STIBCCOL) | Buea (Molyko) | 679151075 | `L4795` |
-| Univers Optique | Douala | 699 25 28 74 | `L4880` |
+| Univers Optique | Douala | 699 25 28 74 | `L4906` |
 
 ## ① Prospection — à qualifier — 47
 
