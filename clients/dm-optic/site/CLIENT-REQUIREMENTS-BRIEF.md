@@ -218,6 +218,8 @@ landing  →  carte de catégorie  →  futur catalogue  →  WhatsApp
 | 08/10/2026 | Où est la source de vérité sur ce que veut le client ? | Ce document | King, 12e message |
 
 ---
+| 10/10/2026 | Faut-il des emplacements (placeholders) TikTok / Facebook sur la page avant que les pages existent ? | **Proposition de l'orchestrateur, EN ATTENTE de King :** non — un lien vers une page inexistante est un CTA mort (brief §5), et rien n'est créé avant l'acompte. On les ajoute avec les vrais liens quand les pages sont créées au nom du client (§3.4). Le message au client l'annonce. | King, 19e message (question) |
+| 10/10/2026 | Pourquoi le client ne voit-il pas un catalogue de ses montures ? | Nous n'avons pas encore les photos de ses montures (après l'acompte) et le site ne montre que du vrai (conditions §1). À dire au client sans promettre de page catalogue (§3.6). | King, 19e message |
 
 ## Dossier chargé pour écrire ce brief
 
