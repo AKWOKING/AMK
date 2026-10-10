@@ -1,0 +1,55 @@
+UO · ESSAYAGE EN DIRECT (CAMERA) · V2
+=====================================
+
+Contenu du dossier
+- "V2 Try-On Camera.html" : la page d'essayage en direct (tout inclus, aucune installation).
+- "LANCER-DEMO-CAMERA.bat" : lance un petit serveur local puis ouvre la page (solution de repli).
+- "apercus" : images d'exemple (interface, panneau des montures, rendu sur un visage test).
+- "archive" : version précédente (V1).
+- "LISEZMOI.txt" : ce fichier.
+
+Nouveautés V2
+- Ajout de vos propres montures : bouton + à droite de la liste des montures.
+- Ajustements par monture ajoutée (taille, position verticale et horizontale).
+
+Démarrage rapide (Chrome ou Edge de préférence)
+- En ligne (téléphone) : https://uo-essayage-camera.vercel.app
+- Sur l'ordinateur : double-cliquer "V2 Try-On Camera.html", ou utiliser "LANCER-DEMO-CAMERA.bat".
+Internet est nécessaire au premier lancement : le moteur de détection du visage (environ 10 Mo) se charge en ligne, puis reste en cache.
+
+Utilisation
+1. Cliquer sur "Activer la caméra" et autoriser l'accès.
+2. Se placer face à la caméra : la monture se pose sur le visage en temps réel, même en bougeant la tête.
+3. Balayer l'inventaire en bas de l'écran (clic, glissement, flèches du clavier ou boutons latéraux).
+4. Toucher le cercle blanc pour capturer une photo (téléchargée en PNG, telle qu'affichée).
+
+Ajouter les montures de la boutique
+- Toucher le bouton + à droite de la liste des montures.
+- "Ajouter des montures" : choisir une ou plusieurs images.
+  · Idéal : PNG détouré (fond transparent, verres transparents).
+  · Sinon : photo sur fond clair uni ; l'option "Détourer le fond clair" s'active automatiquement.
+- La position des verres est détectée automatiquement ; le nom est modifiable avant l'ajout.
+- Réglages (icône curseurs) puis "Cette monture (ajoutée)" : ajuster taille, position verticale et horizontale, en direct.
+- Les montures ajoutées restent enregistrées sur cet appareil et réapparaissent à chaque ouverture.
+- Boutons "Ajuster" et "Supprimer" dans le panneau +.
+
+Autres fonctions
+- Miroir : affichage inversé comme dans un miroir (activé par défaut).
+- Mode photo : essayer sans caméra, avec une photo du client ou un visage d'exemple.
+- Clavier : flèches gauche et droite pour changer de monture, M pour le miroir, C pour capturer.
+- Diagnostic : ajouter ?debug=1 à l'adresse pour afficher l'état interne (utile en cas de souci).
+
+Téléphone / tablette
+- La caméra du navigateur n'est autorisée que sur les pages HTTPS : utiliser l'adresse en ligne ci-dessus.
+- Ouvrir dans Chrome (Android) ou Safari (iPhone récent), puis autoriser la caméra.
+
+Vie privée
+Tout le traitement se fait dans le navigateur : aucune image n'est envoyée ni conservée.
+
+Personnalisation
+- Textes visibles : modifier directement le texte dans la page.
+- Suivi du visage : fonction computeOverlayTransform et constantes de lissage (0.42, 0.9).
+- Détourage automatique et détection des verres : fonctions floodCutout et detectAnchors dans le script de la page.
+
+Vérification
+Rapports du projet : frames-live-check.md (V1), uo-v2-inventory-check.md (V2) : syntaxe, tests unitaires du calage, détection réelle du visage, ajout de montures testé de bout en bout (PNG et photo), persistance locale.
