@@ -39,7 +39,7 @@
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 112 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 114 ligne(s).*
 
 `L837` · - `Le Cristallin` 17:51 · `Univers Optique` 17:50 · `Disc Optique Médicale` 17:48 · `Tchaya Optique` 17:47 :
 `L881` · ## Lundi 21/09/2026 — 18:20 → 19:15 · « Ok » de Le Cristallin : le premier aperçu demandé, construit et branché sur le CRM
@@ -153,6 +153,8 @@
 `L4876` · - **Dû hier (ven. 09/10) et à confirmer par King :** Le Cristallin « santé d'abord » (date 2026-10-09, maintenant dans le plan du jour).
 `L4902` · ## 10/10/2026 (samedi, 22ᵉ message de King, 11:40) — captures DM OPTIC et Le Cristallin · programme
 `L4905` · - **Le Cristallin (capture) :** 24/09 10:10-10:11 client « Bonjour je vais te revenir » / « Je suis malade » ; 24/09 10:13 King (santé d'abord) ; 24/09 10:25 « Merci ». **Ven. 09/10 12:32 King (ENVOYÉ) :** « Bonjour M. Messoua, j'espère que vous vous portez beaucoup mieux et que vous avez bien récupéré ! Je venais aux nouvelles pour savoir quand vous souhaitez qu'on relance la suite du site. » — **ce n'est pas le texte ruled du 02/10** (« zéro business ») : il pose la question « quand » ; constat, pas reproche. **Réponse du client 15:21 « Bonsoir mon frère »** ; King 15:43 (en tutoyant) ; le client parle de sa santé (15:54-15:55, **détail médical non consigné au dépôt**, il est chez le kiné) ; King 16:14 « …le projet attendra votre rétablissement ». **Le client n'a pas donné de date.** La réponse annule la relance : `RELANCE_A_JOUR` (`views.py`) passe de 2026-10-09 à **2026-10-23, PROPOSITION À CONFIRMER PAR KING** (santé seulement, zéro business). Le plan du jour ne contient plus Le Cristallin.
+`L4908` · ## 10/10/2026 (samedi, 23ᵉ message de King, 12:12) — le client DM OPTIC répond aux trois questions · acompte non encaissé · Le Cristallin 23/10 confirmé
+`L4911` · - **Rulings King :** rien n'est encaissé ; **on fait ces dernières modifications (logo, photo du cabinet) puis on rappelle** que le démarrage dépend de l'acompte ; `dmoptic-2` à abandonner maintenant (toujours en ligne à 12:12 avec « depuis 2016 » : action de King sur Vercel) ; **Le Cristallin : oui, 23/10** (plus une proposition).
 
 ---
 

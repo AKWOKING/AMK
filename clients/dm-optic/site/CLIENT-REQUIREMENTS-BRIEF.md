@@ -232,8 +232,10 @@ landing  →  carte de catégorie  →  futur catalogue  →  WhatsApp
 | 10/10/2026 | Voix des messages | « Je » au lieu de « nous », ton semi-formel, phrase « nous ne montrons que du vrai » retirée | King, 21e message (`CLIENT-MESSAGING-RULES.md` §8) |
 | 10/10/2026 | Que dit le client à 15:00, « Pour Autres besoins vous me faites signes » ? | **Non tranché** : peut vouloir dire « faites-moi signe pour les autres besoins » (rendez-vous préalable). À lever avec lui ; la page n'est pas modifiée. | capture de King, 10/10 |
 | 10/10/2026 | L'envoi du 11:38 | Lien + raison des illustrations + trois questions (bleu, logo, premier écran), sans numéros ; aucune vignette visible dans la carte d'aperçu → og.jpg à vérifier | capture de King, 10/10 |
-| 10/10/2026 | Réponses du client aux trois questions (≈11:58) | « Oui le bleu me convient » · « Oui j'ai un logo de la structure » · « C'est mieux la photo du cabinet » → couleur gardée ; logo à recevoir puis à placer ; photo du cabinet au premier écran **après la séance photo** (d'ici là, premier écran bleu) | capture de notification, 10/10 |
+| 10/10/2026 | Réponses du client aux trois questions (11:51) | « Oui le bleu me convient » · « Oui j'ai un logo de la structure » · « C'est mieux la photo du cabinet » → couleur gardée ; logo à recevoir puis à placer ; photo du cabinet au premier écran **après la séance photo** (d'ici là, premier écran bleu) | capture WhatsApp Web, 10/10 |
 | 10/10/2026 | Acompte | **Non encaissé** ; King : modifications d'abord (logo), puis rappel que le démarrage dépend de l'acompte | King, 23e message |
+| 10/10/2026 | Message 1 envoyé 12:15 (accusé de réception + demande du logo) ; réponse du client 12:22 : « Ok » | logo attendu ; `dmoptic-2` : King ne le retrouve pas dans son Vercel → « on oublie » (page publique restante, risque résiduel noté) | capture WhatsApp Web, 10/10 |
+| 10/10/2026 | Préparation du logo (outil) | `demos/build_dmoptic.py --logo <fichier> [--logo-mode symbol\|full]` : le logo remplace le symbole rond (en-tête, carte d'identité, pied de page) et la vignette `og.jpg` ; `full` si le logo contient déjà le nom. Testé avec des logos factices (large à fond blanc, carré transparent) : mises en page vues à 390 px, audits html/a11y à 0 faute. Sans `--logo`, sortie identique à l'actuelle | repo |
 
 ## Dossier chargé pour écrire ce brief
 

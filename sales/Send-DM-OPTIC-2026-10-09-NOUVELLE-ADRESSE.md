@@ -100,7 +100,7 @@ J'ai trois questions :
 
 ## Suite du 10/10 (23ᵉ message de King) — le client a répondu aux trois questions : deux messages, dans cet ordre
 
-> Brouillons uniquement : **King relit et envoie.** Réponse du client (≈11:58, notification) : « Oui le bleu me convient · Oui j'ai un logo de la structure · C'est mieux la photo du cabinet ». Ruling King : on fait ces dernières modifications, **puis** on rappelle que le démarrage dépend de l'acompte. Règle de voix : `CLIENT-MESSAGING-RULES.md` §8.
+> Brouillons uniquement : **King relit et envoie.** Réponse du client (11:51, capture WhatsApp Web ; message 1 envoyé par King à 12:15, le client répond « Ok » à 12:22) : « Oui le bleu me convient · Oui j'ai un logo de la structure · C'est mieux la photo du cabinet ». Ruling King : on fait ces dernières modifications, **puis** on rappelle que le démarrage dépend de l'acompte. Règle de voix : `CLIENT-MESSAGING-RULES.md` §8.
 
 **Message 1 — maintenant (accuse réception, demande le logo seulement) :**
 
