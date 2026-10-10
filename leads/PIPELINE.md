@@ -1,6 +1,6 @@
 # PIPELINE — où en est chaque lead
 
-> ⚙️ **Généré le 2026-10-08 par `leads/build/views.py` — ne pas modifier à la main.**
+> ⚙️ **Généré le 2026-10-10 par `leads/build/views.py` — ne pas modifier à la main.**
 > Toute correction se fait dans `leads/build/crm.py` ou `sales/Activity-Log.md`, puis on relance `leads/build/rebuild.sh`.
 
 ## Compteur
