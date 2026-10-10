@@ -135,7 +135,7 @@ Vendredi 09/10 : redéployer `dmoptic` (cartes + vignette) → **vérification e
 
 ### 3.6 ✅ Périmètre — cinq pages (ruling King 10/10), reste un point de formulation
 
-> **10/10 (King, 20ᵉ message) :** « on avait conclu sur 5 pages tant qu'ils peuvent être mis sur Cloudflare ». Le dépôt ne garde aucune trace de cette conclusion ; elle est ici enregistrée comme ruling. Cloudflare Pages (offre gratuite) : bande passante illimitée, 20 000 fichiers par déploiement, 25 Mo par fichier (sources : eastondev.com 05/2026, computingforgeeks.com 03/2026 ; à revérifier dans la documentation Cloudflare avant le transfert) — cinq pages statiques y tiennent largement. **Reste :** les conditions remises au client disent « une page » et excluent les pages supplémentaires ; ne rien dire au client sur le nombre de pages avant que King ait choisi la formulation. L'ancien texte de ce paragraphe, ci-dessous, est gardé pour l'historique.
+> **10/10 (King, 20ᵉ message) :** « on avait conclu sur 5 pages tant qu'ils peuvent être mis sur Cloudflare ». Le dépôt ne garde aucune trace de cette conclusion ; elle est ici enregistrée comme ruling. Cloudflare Pages (offre gratuite) : bande passante illimitée, 20 000 fichiers par déploiement, 25 Mo par fichier (sources : eastondev.com 05/2026, computingforgeeks.com 03/2026 ; à revérifier dans la documentation Cloudflare avant le transfert) — cinq pages statiques y tiennent largement. **Reste (clos le 10/10, 21ᵉ message) :** les conditions remises au client disent « une page » ; King : « une page ou 5 c'est pareil pour nous » → AMK ne facture pas de supplément pour passer de une à cinq pages (lecture de l'orchestrateur : le prix reste 150 000 FCFA) ; rien à annoncer comme extra, et le message d'envoi ne parle pas du nombre de pages. L'ancien texte de ce paragraphe, ci-dessous, est gardé pour l'historique.
 
 **Ancien texte (08/10, NON TRANCHÉ) :**
 
@@ -199,7 +199,7 @@ landing  →  carte de catégorie  →  futur catalogue  →  WhatsApp
 
 | # | Écart | Sources en tension | Statut |
 |---|---|---|---|
-| 1 | **Périmètre** : une page (conditions) vs cinq pages (spec) | `CONDITIONS` §1, §4 · `SPEC-PAGES-v1.md` | ✅ **Cinq pages**, tant que le site peut être hébergé sur Cloudflare (ruling King 10/10, 20ᵉ message ; **aucune trace antérieure dans le dépôt** — la « conclusion » est citée par King). ⚠️ Reste : le texte des conditions que le client a lu dit « une page » — comment le lui dire = décision de King. |
+| 1 | **Périmètre** : une page (conditions) vs cinq pages (spec) | `CONDITIONS` §1, §4 · `SPEC-PAGES-v1.md` | ✅ **Cinq pages**, tant que le site peut être hébergé sur Cloudflare (ruling King 10/10, 20ᵉ message ; **aucune trace antérieure dans le dépôt** — la « conclusion » est citée par King). Le texte des conditions (« une page ») ne gêne pas : « une page ou 5 c'est pareil pour nous » (King, 21ᵉ message), pas de supplément. |
 | 2 | **Description du site** : « Accueil + Contact + À propos » vs une page à ancres | repo vs message King 08/10 | ✅ le brief suit le repo (§2) |
 | 3 | **« Pas d'hébergement, pas de domaine »** : le socle est hébergé chez King (`dm-optique-sarl.vercel.app`) | repo · conditions (« domaine au nom du cabinet dès le premier jour ») | ⏳ domaine et hébergement au nom du client : **après dépôt** |
 | 4 | **« Rien de public avant l'acompte »** vs un site en ligne | `dossier.md` §3.4 · `BUILD-KICKOFF` | ✅ cohérent **tant que** `noindex,nofollow` tient et que l'URL n'est partagée qu'avec le client ; ⚠️ tête **en ligne** à vérifier vendredi |
@@ -228,6 +228,8 @@ landing  →  carte de catégorie  →  futur catalogue  →  WhatsApp
 | 10/10/2026 | Nom dans les messages des trois cartes | **DM OPTIQUE SARL** partout (« M OPTIQUE SARL toujours » lu comme « DM OPTIQUE SARL ») | King, 20e message |
 | 10/10/2026 | Placeholders sociaux (TikTok, Facebook) | **Aucun** : ajoutés avec les vrais liens à la création des pages | King, 20e message (« oui pas de placeholder social ») |
 | 10/10/2026 | Message d'envoi : fin « dites-moi ce que vous en pensez » | Remplacée par trois questions dirigées (couleur, logo, premier écran) | King, 20e message |
+| 10/10/2026 | Une page ou cinq pour la facturation ? | « Une page ou 5 c'est pareil pour nous » : pas de supplément | King, 21e message |
+| 10/10/2026 | Voix des messages | « Je » au lieu de « nous », ton semi-formel, phrase « nous ne montrons que du vrai » retirée | King, 21e message (`CLIENT-MESSAGING-RULES.md` §8) |
 
 ## Dossier chargé pour écrire ce brief
 

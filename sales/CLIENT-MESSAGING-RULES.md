@@ -155,3 +155,10 @@ l'événement ; l'action suivante est ce que la réponse exige, **pas la relance
 jamais une note vocale (palier 2) ni un appel (palier 3) sur un fil que le client a déjà répondu. À la
 réponse : effacer ou remplacer la date de relance au CRM. *Cas fondateur : DM Optique, envoi jeu. 08/10 13:26,
 réponse 14:58 — voix du mar. 13/10 et appel du jeu. 15/10 sans objet.*
+
+## 8 · Voix des messages clients — « je », ton semi-formel (ruling King 10/10)
+
+- **« Je » à la place de « nous »** dans les messages WhatsApp que l'orchestrateur rédige pour King (King parle en son nom). « Nous » reste pour ce qui est réellement collectif (le document de conditions, la proforma).
+- **Ton semi-formel :** pas de raideur, plus de formules d'office ; le **vous** reste (respect du client), « Bonjour Monsieur » reste. Phrases courtes, comme à l'oral.
+- **Pas de phrase de justification qui n'est pas nécessaire** : cas fondateur, DM Optique 10/10, « car nous ne montrons que du vrai » retirée — la raison est déjà dite par « illustrations pour l'instant, vos vraies montures viendront avec la séance photo ».
+- **Portée :** s'applique aux brouillons écrits à partir du 10/10 ; les envois et brouillons antérieurs ne sont pas réécrits. Les ruled texts verbatim de King restent verbatim. *(Portée à tous les clients ou à DM Optique seulement : à confirmer par King ; en attendant, appliqué à tous les brouillons.)*

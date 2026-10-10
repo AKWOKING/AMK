@@ -46,7 +46,9 @@ Bonjour Monsieur, le site est maintenant à cette adresse : https://dm-optique-s
 
 ---
 
-## Version du 10/10 (20ᵉ message de King) — trois questions dirigées à la place de « dites-moi ce que vous en pensez »
+## ~~Version du 10/10 (20ᵉ message de King) — trois questions~~ — REMPLACÉE par la version « je » ci-dessous (21ᵉ message)
+
+(ancien intitulé : trois questions dirigées à la place de « dites-moi ce que vous en pensez »)
 
 > Brouillon uniquement : **King relit et envoie**. Ruling King 10/10 : « dites-moi ce que vous en pensez » est trop vague → **deux à trois questions dirigées** sur des points précis (couleur, logo, image du premier écran). Les jeux de questions structurés sont hors plafond 2–3 phrases (`CLIENT-MESSAGING-RULES.md` §1) ; ici, les questions sont courtes et numérotées.
 
@@ -70,3 +72,26 @@ Trois questions :
 **Hors du message (à retenir) :** réponse « logo » = on le place à la place du symbole ; réponse « photo » = on l'attend après le démarrage ; réponse « couleur » = on note laquelle, sans rien refaire avant l'acompte.
 
 **Nom :** les trois cartes disent maintenant « DM OPTIQUE SARL » (ruling King 10/10, remplace « DM Optique » du 08/10) : **à redéployer** (`hosting/previews/dmoptic/`, `index.html` seul a changé ; `og.jpg` identique). Le client ne voit pas ce texte avant de toucher une carte.
+
+---
+
+## Version du 10/10 (21ᵉ message de King) — « je », ton semi-formel, sans la phrase « nous ne montrons que du vrai »  ← **À ENVOYER**
+
+> Brouillon uniquement : **King relit et envoie**. Rulings King 10/10 : « je » au lieu de « nous » ; ton semi-formel (on n'est plus obligés d'être formels) ; la phrase « nous ne montrons que du vrai » n'est pas nécessaire. Règle écrite : `CLIENT-MESSAGING-RULES.md` §8. **La page en ligne dit maintenant « DM OPTIQUE SARL » dans les trois cartes** (relue le 10/10 : les trois liens portent le nouveau texte).
+
+```
+Bonjour Monsieur, le site est maintenant à cette adresse : https://dm-optique-sarl.vercel.app/ — l'ancien lien ne sera plus actif. Les photos de montures sont des illustrations pour l'instant : vos vraies montures et vos liens TikTok et Facebook viendront avec la séance photo et la création de vos pages.
+
+J'ai trois questions :
+1. Le bleu du site vous convient, ou vous préférez une autre couleur ?
+2. Le nom en haut est écrit en texte, avec un petit symbole rond que j'ai dessiné : avez-vous un logo à mettre à la place ?
+3. Sur le premier écran, vous préférez le fond bleu actuel, ou plutôt une photo de votre cabinet ou de vos montures, quand je les aurai ?
+```
+
+**Pourquoi la raison reste, sans la phrase :** « illustrations pour l'instant, vos vraies montures viendront avec la séance photo » dit déjà au client pourquoi il ne voit pas ses montures. « Car nous ne montrons que du vrai » était un surplus (et un « nous » collectif).
+
+**Changements par rapport à la version du 20ᵉ message :** « nous » → « je » (3 endroits : « j'ai trois questions », « que j'ai dessiné », « quand je les aurai ») ; phrase « car nous ne montrons que du vrai » supprimée ; « ou une photo… ou » devient « ou plutôt une photo… » (une seule alternative lisible). Le **vous** est gardé.
+
+**Premise check :** inchangé (voir la version du 20ᵉ message : couleur = bleu, symbole rond dessiné par AMK et non un logo du client, aucune photo au premier écran, photos annoncées et non demandées). **Ordre :** ce message part **avant** l'abandon de `dmoptic-2`, qui se fait après.
+
+**Ce que le message ne dit toujours pas :** « catalogue » · nombre de pages · prix · délai · « offerte ». Une page ou cinq : « c'est pareil pour nous » (King, 10/10) — rien à annoncer comme supplément.
