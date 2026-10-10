@@ -2304,7 +2304,7 @@ JOURNAL_DM_0810 = {
             "08/10 VERBATIM (règle les mentions « à coller pour verbatim » ci-dessus ; transcrit des captures de King "
             "par l'orchestrateur ; captures non versées au dépôt ; orthographe du client conservée, la page garde "
             "l'orthographe corrigée). "
-            "13:26 King : « Bonjour Monsieur, pour bien avancer sur le site, j'aurai besoin de vos horaires "
+            "13:26 King : « Bonjour Monsieur, pour bien avancer sur le site, j'aurais besoin de vos horaires "
             "d'ouverture et de la fourchette de prix de vos montures (min/max). Est-ce qu'elles ont des "
             "noms/références spécifiques, et vous en avez combien environ en stock actuellement ? » "
             "14:58 le client : « Horaires d'ouverture et fermeture : Examen de vu : 8h30 - 13h00 / Autre besoins : "
@@ -2323,8 +2323,15 @@ JOURNAL_DM_0810 = {
             "(reconstruits avec `--url` le 08/10, à redéployer). · "
             "08/10 (King, 2e message du soir) : `dmoptic-2.vercel.app` SERA ABANDONNÉE — la seule adresse à "
             "considérer désormais est `dm-optique-sarl.vercel.app` (`site_url` du CRM mis à jour ; l'ancienne "
-            "reste citée dans les entrées du 24/09 et du 25/09 comme HISTORIQUE).",
-        "Follow-up date": "2026-10-09",
+            "reste citée dans les entrées du 24/09 et du 25/09 comme HISTORIQUE). · "
+            "10/10 11:38 (sam., capture de King) : King envoie le lien https://dm-optique-sarl.vercel.app/ + la raison des illustrations "
+            "+ trois questions dirigées (le bleu du site, le logo, le premier écran) — texte = `sales/Send-DM-OPTIC-2026-10-09-NOUVELLE-ADRESSE.md`, "
+            "version du 21e message ; les trois questions partent SANS numéros ; double ✓ (couleur non lisible) ; client « vu à 11:37 ». "
+            "La carte d'aperçu montre le titre et la description MAIS AUCUNE VIGNETTE sur la capture : og.jpg à vérifier (cache WhatsApp ou fichier). "
+            "Correction de verbatim sur la même capture : le 13:26 dit « j'aurais besoin » (et non « j'aurai »). "
+            "Fenêtre §7 depuis la livraison : lecture lun–ven, voix mer. 14/10 SEULEMENT si le client reste muet ; `Follow-up date` 2026-10-14 ; "
+            "lecture calendaire alternative = voix lun. 12/10 : à confirmer par King. Reste : abandon de `dmoptic-2` ; acompte non encaissé à la dernière info.",
+        "Follow-up date": "2026-10-14",
         "site_url": "https://dm-optique-sarl.vercel.app", "site_checked_on": "2026-10-08",
     },
 }

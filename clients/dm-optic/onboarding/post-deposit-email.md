@@ -181,7 +181,7 @@ la version exacte.)
 - **Dates :** King a écrit « mar. 14/10 » et « jeu. 16/10 » ; 14/10 est un mercredi et 16/10 un vendredi.
   Consigné provisoirement **mar. 13/10 matin** (voix) et **jeu. 15/10** (appel) — **à confirmer par King**.
   CRM : `Follow-up date` = 2026-10-13 (provisoire). Règle permanente : `sales/CLIENT-MESSAGING-RULES.md` §7.
-- Le verbatim exact du 13:26 reste **à coller par King**.
+- ✅ Verbatim du 13:26 archivé (CRM + `sales/Activity-Log.md`, 08/10) et confirmé sur la capture du 10/10 ; correction : « j'aurais besoin » (pas « j'aurai »).
 
 ### JOURNAL DE RÉPONSE — DM OPTIQUE, 08/10 14:58
 
@@ -190,9 +190,15 @@ la version exacte.)
   prix non affichés (contrainte réglementaire, ministère de la Santé publique) ; taxonomie des filtres
   confirmée pour 400 montures ; noms des montures « trop diverses » (aucune convention) ; heures « Examen de
   vue : 8h30–13h00 · Autres besoins : 8h30–17h30 ».
-- **⚠️ Verbatim :** **pas de paraphrase présentée comme citation** — seul le fragment « trop diverses » est entre
-  guillemets parce que King l'a cité ainsi. King colle le texte exact pour que ce journal porte le verbatim
-  (règle : versions exactes dans les journaux). Idem pour le 13:26.
+- ✅ **Verbatim (confirmé sur la capture de King du 10/10, orthographe du client conservée) :** « Horaires d'ouverture et fermeture : Examen de vu : 8h30 - 13h00 / Autre besoins : 8h30 - 17h30 » · « Pour le prix des montures c'est interdit de le diffuser car nous sommes régit par le ministère de la Santé Publique. » · « Les montures ont des noms et références mais trop diverses. » · « Stock de 400 montures environ ». Puis 15:00 : « Pour Autres besoins vous me faites signes » (King : « D'accord monsieur »).
 - **Effets :** `site/SPEC-PAGES-v1.md` révisé (6 points) · page `hosting/previews/dmoptic/` v2.3 (heures) ·
   fenêtre de réponse : dates confirmées (13/10, 15/10) mais sans objet, la réponse est arrivée.
 - **Journalisé :** CRM (`crm.py`, 08/10 14:58) ✓ · ce journal ✓ · `sales/Activity-Log.md` ✓.
+
+### JOURNAL D'ENVOI — DM OPTIQUE, 10/10 11:38 (samedi)
+
+- **Canal :** WhatsApp · **De :** King · **Quand :** 10/10/2026 11:38 (client « vu à 11:37 » avant l'envoi) · **État :** double ✓ (couleur non lisible sur la capture).
+- **Contenu (capture de King) :** « Bonjour Monsieur, le site est maintenant à cette adresse : https://dm-optique-sarl.vercel.app/ — l'ancien lien ne sera plus actif. Les photos de montures sont des illustrations pour l'instant : vos vraies montures et vos liens TikTok et Facebook viendront avec la séance photo et la création de vos pages. J'ai trois questions : [le bleu du site vous convient / un logo à mettre à la place / le premier écran : fond bleu ou photo] » — texte = version « je » du 21ᵉ message (`sales/Send-DM-OPTIC-2026-10-09-NOUVELLE-ADRESSE.md`) ; **les trois questions partent sans les numéros 1–2–3**.
+- **Carte d'aperçu :** titre « DM OPTIQUE SARL — opticien à Douala : vue, verres, montures » et description (balises `og` en ligne, conformes au dépôt) ; **aucune vignette visible** → vérifier `og.jpg`.
+- **Fenêtre §7 :** depuis la livraison ; lecture lun–ven : voix mer. 14/10 seulement si muet ; CRM `Follow-up date` 2026-10-14.
+- **Reste :** abandon de `dmoptic-2` (King) ; acompte non encaissé à la dernière information.

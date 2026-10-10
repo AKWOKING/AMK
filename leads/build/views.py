@@ -67,9 +67,12 @@ RELANCE_A_JOUR = {
     # baird-memorial-college : RETIRÉ le 02/10 — parked le 02/10 (stale check de King).
     # ── RULINGS DU 02/10 (soir) — relances planifiées, textes approuvés par King ──────────────────
     "le-cristallin":
-        ("2026-10-09", "Ruling King 02/10 — santé d'abord, zéro business : « Bonjour Monsieur, comment "
-                       "allez-vous ? Le projet vous attend, prenez soin de vous d'abord. À bientôt. » "
-                       "Pas de prix, pas de date, rien d'autre."),
+        ("2026-10-23", "10/10 — LE CLIENT A RÉPONDU le 09/10 (message de King 12:32, réponse 15:21) : la relance du 09/10 est "
+                       "faite et la fenêtre est caduque. Il est chez le kinésithérapeute (problème de santé, détail non consigné) ; "
+                       "King lui a répondu 16:14 « le projet attendra votre rétablissement ». Le message envoyé le 09/10 demandait "
+                       "quand relancer la suite du site (≠ le texte ruled 02/10, « zéro business ») : pas de date donnée. "
+                       "PROPOSITION À CONFIRMER PAR KING : prochaine touche = 23/10, santé seulement, zéro business ; "
+                       "jamais avant s'il n'écrit pas."),
     "labiomed-deido":
         ("2026-10-13", "Ruling King 02/10 — on tient SA parole, touche légère : « Bonjour, juste un "
                        "petit bonjour — vous êtes en place maintenant ? » Pas de prix, pas de question "

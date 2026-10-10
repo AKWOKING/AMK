@@ -29,7 +29,7 @@
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
 | DM Optique | Douala | 656 122 239 | `L4019` |
-| Le Cristallin | Douala | 699 90 55 77 | `L4794` |
+| Le Cristallin | Douala | 699 90 55 77 | `L4876` |
 
 ## ③ Aperçu envoyé — 1
 
@@ -43,7 +43,7 @@
 |---|---|---|---|
 | Labiomed | Douala (Deido, 104 Route Deido-Bassa) | 699 98 54 66 | `L4794` |
 | St. Theresa International Bilingual Comprehensive College (STIBCCOL) | Buea (Molyko) | 679151075 | `L4795` |
-| Univers Optique | Douala | 699 25 28 74 | `L4833` |
+| Univers Optique | Douala | 699 25 28 74 | `L4880` |
 
 ## ① Prospection — à qualifier — 47
 
@@ -123,7 +123,7 @@
 | Cabinet Dentaire Emmanuel | Douala (Bonamoussadi) | 694 42 62 39 | `L113` |
 | Cabinet Dentaire The Skye | Douala (Bonamoussadi) | 677 79 69 99 | `L53` |
 | Cabinet Dentaire YAKS | Douala (Logbessou) | 672 70 20 78 | `L54` |
-| Cabinet Médical CAMERA | Douala (Akwa) | 699 90 53 27 | `L1783` |
+| Cabinet Médical CAMERA | Douala (Akwa) | 699 90 53 27 | `L4873` |
 | Cabinet Médical ISIS | Douala (Bonapriso) | 699 34 93 89 | `L35` |
 | Cabinet Médical La Cerisaie | Douala (Bonapriso) | 699 95 51 64 | `L1324` |
 | Cabinet Médical i'DoC | Douala (Bonapriso) | 699 68 05 88 | `L37` |

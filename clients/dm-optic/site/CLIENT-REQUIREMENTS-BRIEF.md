@@ -40,9 +40,10 @@
 
 ### 1.3 La réponse du 08/10 à 14:58 (à la suite de notre jeu de questions de 13:26)
 
-⚠️ **Le texte exact n'a pas été transmis à l'orchestrateur.** Ce qui suit est **ce que King a rapporté**, pas une citation.
-**Seul fragment entre guillemets : « trop diverses »** (les noms des montures). Le verbatim est **à coller par King** dans
-`onboarding/post-deposit-email.md` (journal de réponse) — jusque-là, ne rien citer comme mot du client.
+✅ **Verbatim archivé** (CRM + `sales/Activity-Log.md` du 08/10, **confirmé sur la capture de King du 10/10**). Orthographe du client conservée :
+> « Horaires d'ouverture et fermeture : Examen de vu : 8h30 - 13h00 / Autre besoins : 8h30 - 17h30 — Pour le prix des montures c'est interdit de le diffuser car nous sommes régit par le ministère de la Santé Publique. — Les montures ont des noms et références mais trop diverses. — Stock de 400 montures environ » (14:58)
+> puis 15:00 : « Pour Autres besoins vous me faites signes » (King : « D'accord monsieur »). **Lecture non confirmée** : « pour d'autres besoins, faites-moi signe » — peut vouloir dire que les besoins hors examen se prennent sur signe préalable ; **à lever avec lui, sans modifier la page d'ici là** (la page dit 8h30–17h30 pour les autres besoins).
+> Notre question de 13:26 (corrigée : « j'aurais besoin », pas « j'aurai ») : « Bonjour Monsieur, pour bien avancer sur le site, j'aurais besoin de vos horaires d'ouverture et de la fourchette de prix de vos montures (min/max). Est-ce qu'elles ont des noms/références spécifiques, et vous en avez combien environ en stock actuellement ? »
 
 | Point rapporté | Valeur | Statut |
 |---|---|---|
@@ -52,8 +53,7 @@
 | Heures | **Examen de vue : 8h30–13h00 · Autres besoins : 8h30–17h30** — remplace 8h00–17h30 / consultation 8h30–13h30 du 25/09 | 🗣 formulation rapportée |
 | **Jours d'ouverture** | **Non donnés** | ⏳ |
 
-Notre message du 13:26 : le texte réellement envoyé n'a pas non plus été transmis (le brouillon `CLIENT-QUESTIONS-2026-10-08.md`
-n'est pas une preuve de ce qui est parti).
+Notre message du 13:26 : texte réellement envoyé confirmé par la capture du 10/10 (voir ci-dessus) ; le brouillon `CLIENT-QUESTIONS-2026-10-08.md` n'en fait pas foi.
 
 ### 1.4 Ce que nous lui avons promis par écrit (document de conditions, WhatsApp, 06/10 — `onboarding/CONDITIONS-D-INTERVENTION-2026-10-07.md`)
 
@@ -207,7 +207,7 @@ landing  →  carte de catégorie  →  futur catalogue  →  WhatsApp
 | 6 | **Séance photo** : « offerte, aucun montant » (conditions) vs échange « droits de nommage » ou ligne 15 000 FCFA (dossier §6b) | `CONDITIONS` §4 · `dossier.md` §6b | ❓ **NON TRANCHÉ** |
 | 7 | **« Le site ne montre que du vrai »** (conditions) vs illustrations sur le socle | `CONDITIONS` · `#montures` | ✅ cohérent : le socle est un **aperçu** légendé « Photo d'illustration » ; la **livraison** attend les vraies photos |
 | 8 | **Nom dans les messages** : « DM Optique » (trois cartes, texte ruled) vs « DM OPTIQUE SARL » (six autres messages, nom donné par le client) | ruling 08/10 · message client 25/09 | ✅ **« DM OPTIQUE SARL » partout** (ruling King 10/10) ; trois cartes corrigées dans le gabarit, le test et la page (FR et EN) ; **à redéployer**. |
-| 9 | **Verbatims 13:26 et 14:58** non archivés | `post-deposit-email.md` | ⏳ King colle |
+| 9 | **Verbatims 13:26 et 14:58** | `post-deposit-email.md` (périmé) · CRM + Activity-Log 08/10 (archivés) | ✅ archivés le 08/10, confirmés sur capture le 10/10 ; le brief était périmé ; une correction (« j'aurais ») |
 | 10 | **Prix** : ouverture du 01/10 vs réponse du client du 08/10 | `website/brief.md` §6 · questionnaire Q4.6 | ✅ la réponse du client l'emporte (§4) |
 
 ---
@@ -230,6 +230,8 @@ landing  →  carte de catégorie  →  futur catalogue  →  WhatsApp
 | 10/10/2026 | Message d'envoi : fin « dites-moi ce que vous en pensez » | Remplacée par trois questions dirigées (couleur, logo, premier écran) | King, 20e message |
 | 10/10/2026 | Une page ou cinq pour la facturation ? | « Une page ou 5 c'est pareil pour nous » : pas de supplément | King, 21e message |
 | 10/10/2026 | Voix des messages | « Je » au lieu de « nous », ton semi-formel, phrase « nous ne montrons que du vrai » retirée | King, 21e message (`CLIENT-MESSAGING-RULES.md` §8) |
+| 10/10/2026 | Que dit le client à 15:00, « Pour Autres besoins vous me faites signes » ? | **Non tranché** : peut vouloir dire « faites-moi signe pour les autres besoins » (rendez-vous préalable). À lever avec lui ; la page n'est pas modifiée. | capture de King, 10/10 |
+| 10/10/2026 | L'envoi du 11:38 | Lien + raison des illustrations + trois questions (bleu, logo, premier écran), sans numéros ; aucune vignette visible dans la carte d'aperçu → og.jpg à vérifier | capture de King, 10/10 |
 
 ## Dossier chargé pour écrire ce brief
 

@@ -1,6 +1,6 @@
 # Le Cristallin
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-05. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-10. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -35,11 +35,11 @@
 
 ## Prochaine action
 
-**Action fixée au 2026-10-09** — décision humaine, elle prime sur le rythme automatique. Ruling King 02/10 — santé d'abord, zéro business : « Bonjour Monsieur, comment allez-vous ? Le projet vous attend, prenez soin de vous d'abord. À bientôt. » Pas de prix, pas de date, rien d'autre.
+**Action fixée au 2026-10-23** — décision humaine, elle prime sur le rythme automatique. 10/10 — LE CLIENT A RÉPONDU le 09/10 (message de King 12:32, réponse 15:21) : la relance du 09/10 est faite et la fenêtre est caduque. Il est chez le kinésithérapeute (problème de santé, détail non consigné) ; King lui a répondu 16:14 « le projet attendra votre rétablissement ». Le message envoyé le 09/10 demandait quand relancer la suite du site (≠ le texte ruled 02/10, « zéro business ») : pas de date donnée. PROPOSITION À CONFIRMER PAR KING : prochaine touche = 23/10, santé seulement, zéro business ; jamais avant s'il n'écrit pas.
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 109 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 110 ligne(s).*
 
 `L837` · - `Le Cristallin` 17:51 · `Univers Optique` 17:50 · `Disc Optique Médicale` 17:48 · `Tchaya Optique` 17:47 :
 `L881` · ## Lundi 21/09/2026 — 18:20 → 19:15 · « Ok » de Le Cristallin : le premier aperçu demandé, construit et branché sur le CRM
@@ -150,6 +150,7 @@
 `L3718` · C'est aussi un client de **refonte** (comme Le Cristallin) — donc un palier supérieur à une page simple.
 `L3867` · (OraCare et Bonanjo au 28/09, MITOC · Skye · Yaks et Le Cristallin au 29/09, Labiomed au 1ᵉʳ octobre,
 `L4794` · Le pipeline actif = 4 leads (Cristallin, Labiomed, Cavisa, Univers Optique) + DM OPTIQUE en closing +
+`L4876` · - **Dû hier (ven. 09/10) et à confirmer par King :** Le Cristallin « santé d'abord » (date 2026-10-09, maintenant dans le plan du jour).
 
 ---
 
