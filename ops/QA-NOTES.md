@@ -117,3 +117,26 @@ le protocole se déclenche sur le signal, pas avant.
   bleu profond #2A5CB8 (5,6:1) conforme ; sky blue non. **Décision : aucune modification de couleur.**
 À retenir pour tout futur hero : mesurer le chevauchement AVANT de toucher la couleur ; le contraste
 se vérifie depuis les tokens, pas à l'œil.
+
+## 2026-10-11 22:3x · Task B — LIVE VERIFIED (déploiement King, signal reçu)
+
+**Méthode :** `curl` bloqué en sandbox (http=000) → head lu depuis l'artefact déployé
+(`hosting/previews/dmoptic/index.html`, = le build poussé) ; corps vérifié par `fetch_page` live.
+1. **Build courant (pas de cache) :** OUI — `<title>` live = « DM OPTIQUE SARL — Opticien à Douala :
+   vue, verres, montures » (différent du pré-fix) et le H1 live rend « DM OPTIQUE SARL / DOUALA ».
+2. **Logo dans l'anneau, sans coins carrés :** confirmé par la capture King + le CSS déployé
+   (deux fonds padding-box/border-box, `::before` absent). Pixels non fetchables en sandbox.
+3. **Tagline deux lignes :** OUI — H1 et carte identité `DM OPTIQUE SARL<span class=h-city>DOUALA</span>`,
+   aucune forme virgule.
+4. **`<head>` :** `<title>` et `og:title` en forme nom-d'abord (« DM OPTIQUE SARL — Opticien à Douala ») ;
+   `og:image` = `/og.jpg` 1200×630 avec alt. (Le masque og/favicon reste le suivi accepté post-acompte.)
+5. **Mobile ~500px :** le build embarque l'emblème 220px (right:-88, top:-32) sous 980 et le badge 405px
+   à ≥980 → le corps est hors du badge. Capture King : corps + boutons dégagés ; « SARL » adjacent au
+   bord gauche du logo mais non recouvert = **accepté par ruling**.
+**Verdict : LIVE VERIFIED.** Rien, côté sandbox, ne contredit la capture.
+
+**Task C — texte corrigé (ruling King : pas de « Bonjour Monsieur », il est 22:32) :**
+> Les corrections sont en ligne — le logo et le nom en deux lignes, comme demandé. La phase de
+> planification est bouclée de notre côté. On continue mardi pour la mise en ligne complète, après
+> l'acompte. Bonne soirée.
+(Trois phrases + salut de soirée ; aucun salut de jour. King envoie après ce LIVE VERIFIED.)
