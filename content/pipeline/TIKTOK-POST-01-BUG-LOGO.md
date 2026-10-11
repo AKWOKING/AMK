@@ -36,3 +36,19 @@ snippet du fix (deux fonds padding-box/border-box) · retour hero propre.
 Ouvrir sur le bug (« le logo était cassé ») sans montrer d'abord le résultat : moins fort — le viewer
 doit voir la preuve (le cercle propre) **avant** d'accepter l'histoire. On garde le résultat en premier
 plan.
+
+---
+
+## PORTE DE CONSENTEMENT (ruling King, 11/10) — avant publication mardi
+
+Le texte dit « un opticien de Douala » (anonyme) mais les beats avant/après montrent le site live de
+DM Optique : **le visuel est identifiable même si le texte ne l'est pas**. Avant publication mardi,
+King envoie **lundi** une ligne WhatsApp à M. Domche :
+
+> « Bonjour Monsieur, j'aimerais publier un court post sur la correction du logo — votre site reste
+> anonyme dans la vidéo. D'accord ? »
+
+**Gate opérationnelle :** accord explicite OU silence sans objection d'ici mardi matin → publier.
+**Objection → aucun plan du site dans la vidéo** : remplacer les beats site par un mock anonymisé
+(reconstruire les états cassé/propre sur un domaine fictif). Le site reste live quoi qu'il arrive —
+le message est une courtoisie, pas une condition de mise en ligne.

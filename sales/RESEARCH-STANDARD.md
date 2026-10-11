@@ -136,6 +136,12 @@ rétro-ingénierie DM Optique après acompte. **7ᵉ recherche du §8c :** le **
 observable du prospect (nouvel avis, activité sociale, travaux, changement d'annuaire) — pas de
 message sans « pourquoi maintenant ».
 
+**Autopsie des deals perdus (interne seulement, ruling King 11/10).** Après une perte : logger la
+chronologie, le moment où le deal a calé ou cassé, et la décision précise qui l'a perdu. **Jamais
+de ré-engagement issu de l'autopsie. Jamais de référence à la perte dans un outreach futur.** La
+leçon est interne — le client reste clos sauf s'il initie le contact lui-même (auquel cas c'est un
+fil neuf, avec un contexte neuf).
+
 ## 9. Feedback loop
 - Every King correction is logged here as an error-log entry with: what was wrong, which poisoned source caused it, what check would have caught it, and which OTHER dossiers used that source (they get re-checked the same day).
 - When a source type proves unreliable in one dossier (here: medicoor doctor rosters + truncated PDF provider lists), every other dossier's facts from that source type are demoted one tier until re-verified.

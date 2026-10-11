@@ -4944,3 +4944,28 @@ lead content de « la seule vidéo publiée » — vérifier d'abord que le lead
 **Hors vague du 12/10.** Contacté le **24/09 à 15:18** (capture King) → pas un froid.
 **Statut : re-engage, unscheduled.** Ne pas re-contacter dans la vague ; replanifier séparément.
 Conflit de quartier (Makepe ↔ Bonamoussadi) non résolu — à trancher avant tout re-engage.
+
+## dim 11/10 (nuit) — AUTOPSIE INTERNE COMOBIL (§8d, ruling King) — faite une fois, jamais re-engagé
+
+**Contrainte ruling :** leçon interne seulement ; jamais de ré-engagement issu de l'autopsie ; jamais
+de référence à la perte dans un outreach futur ; si COMOBIL initie un contact plus tard = fil neuf,
+contexte neuf.
+
+**Chronologie :** début sept. — repéré au sweep écoles (COMOBIL.com PARKED, vérifié 09/09/26 =
+angle D/E fort) · 14/09 — concept `concept-comobil-v1.html` construit ET lead **parké (décision
+King) avant tout contact** · 14/09→02/10 — « parké » dans la prose mais `prospect` dans la donnée
+(bug M7, corrigé depuis : la décision va dans le générateur) · 02/10 — King « COMOBIL dead » →
+`lost`, bulk close, aucun déclencheur de résurrection.
+
+**Moment de casse :** le deal n'a pas calé en conversation — il n'est **jamais parti** : parké avant
+le premier message. La décision qui l'a perdu = le park du 14/09, jamais re-testé.
+
+**Leçons internes :** (1) un park **avant contact** est une hypothèse, pas un verdict — pour tout
+lead semblable futur, le test est **un message**, pas une maquette ni un rebuild ; (2) toute
+décision park/lost doit recevoir **sa raison datée d'une ligne au moment où elle est prise**
+(l'autopsie rétroactive du 11/10 a dû reconstruire un motif que le park du 14/09 n'avait pas loggé —
+c'est ce gap que §8d ferme) ; (3) le bug prose-vs-data de ce fil est déjà codé dans la règle M7
+(la décision dans le générateur).
+
+**Statut :** lead `lost`, fiche inchangée, fil clos. Aucune action commerciale issue de cette
+autopsie.
