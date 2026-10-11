@@ -97,3 +97,23 @@ le protocole se déclenche sur le signal, pas avant.
 3. Logo présent dans le hero (ancien : cercle bleu-rose).
 4. `<head>` propre : title + og:title en forme deux lignes, pas de version ancienne en cache.
 5. Reporter ici **LIVE VERIFIED** ou **LIVE MISMATCH** + détails.
+
+## 2026-10-11 · Hero DM Optique — diagnostic lisibilité (Task 2, ruling King : Option 3)
+
+**Deux problèmes distincts, tranchés par la mesure :**
+- **A — chevauchement (le vrai problème).** `.herologo` right-anchored derrière `.hero-grid` ; sous
+  980px (une colonne) la colonne de texte passe SOUS le badge. Mesure (bord droit texte vs bord gauche
+  logo) : 640 → −241 · 768 → −241 · 900 → −353 (chevauchement) · 1024 → +149 · 1200 → +264 (sûr).
+  **Breakpoint mesuré = 980px** (= le passage de la grille en deux colonnes ; premier viewport où
+  écart ≥ 40px). Correctif : emblème de coin 220px (right:-88, top:-32) sous 980 ; badge 405px
+  (right:-24, top:16) à ≥980. Scope = bug fix (restaure la composition d'origine, l'anneau était
+  hors-cadre en mobile) — pas de sign-off client.
+- **B — contraste (n'était PAS le problème).** Audit WCAG depuis les tokens réels : H1 `--ink #0C1524`
+  = 16,1:1 sur papier / 11,4:1 sur le wash le plus sombre ; corps `.lede --ink-2 #43506A` = 7,2:1 /
+  5,1:1 → **AA conforme**. Donc aucune couleur de texte à changer ; la question « dégradé vs couleur
+  unique » se dissout une fois le chevauchement corrigé.
+- **Couleur :** pas de texte dégradé (§3.1 interdit le gradient text sur grands titres + §6.1 un seul
+  accent ; l'extrémité claire #7FA6E8 échouerait AA). Si jamais une couleur unique était voulue :
+  bleu profond #2A5CB8 (5,6:1) conforme ; sky blue non. **Décision : aucune modification de couleur.**
+À retenir pour tout futur hero : mesurer le chevauchement AVANT de toucher la couleur ; le contraste
+se vérifie depuis les tokens, pas à l'œil.

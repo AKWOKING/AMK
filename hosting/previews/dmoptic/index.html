@@ -157,14 +157,15 @@ html.js .lensring{animation:spin 24s linear infinite}
 /* 11/10 : le client veut SON LOGO à la place de l'anneau bleu-braise du premier écran.
    .herologo = décoration pure (aria-hidden, pointer-events:none, pas d'animation) :
    aucun rôle fonctionnel, aucun impact sur la bascule FR/EN ni sur un contrôle. */
-.herologo{position:absolute;z-index:0;right:-24px;top:24px;width:285px;height:285px;pointer-events:none;
+.herologo{position:absolute;z-index:0;right:-88px;top:-32px;width:220px;height:220px;pointer-events:none;
   border:7px solid transparent;border-radius:50%;
   background:var(--logo) center/cover no-repeat padding-box,
              conic-gradient(from 210deg,#7FA6E8,#2A5CB8,#E0703A,#7FA6E8) border-box;
   filter:drop-shadow(0 6px 18px rgba(12,21,36,.18))}
 .h-city{display:block;margin-top:.35em;font-size:.5em;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-2)}
 @keyframes spin{to{transform:rotate(360deg)}}
-@media (min-width:780px){ .lensring{right:-60px;top:20px;width:380px;height:380px} .herologo{right:-10px;top:16px;width:405px;height:405px} }
+@media (min-width:780px){ .lensring{right:-60px;top:20px;width:380px;height:380px} }
+@media (min-width:980px){ .herologo{right:-24px;top:16px;width:405px;height:405px} }
 .hero-grid{position:relative;z-index:1;display:grid;gap:34px}
 @media (min-width:980px){ .hero-grid{grid-template-columns:1.02fr .98fr;gap:54px;align-items:start} }
 .hero h1{margin-top:18px}
