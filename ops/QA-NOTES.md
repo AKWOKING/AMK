@@ -54,3 +54,23 @@ Un contrôle fait sur la copie locale ne compte pas : c'est la page servie que l
 *Limite assumée : `fetch_page` rend la page par morceaux ; un « aucun hit » ne vaut que pour la partie lue (colonne Résultat).*
 
 *Univers Optique (08/10) : la page démo du site n'est plus « depuis 2009 » (fichiers construits patchés, builder gelé — piège de reconstruction noté dans `content/strategy/RULE-CREDENTIAL-CLAIMS.md`). URL publique Univers non répertoriée au dépôt : à confirmer par King.*
+
+---
+
+## 11/10/2026 — balayage des pages publiques (fait avec `fetch_page`, pas `curl`)
+
+> **Méthode :** `curl` est bloqué sur `*.vercel.app` depuis le bac à sable (HTTP 000, `SSL_ERROR_SYSCALL`),
+> mais **`fetch_page` atteint les pages servies**. Le re-pull ONOC du même jour l'avait prouvé sur
+> `onocameroun.com`. La règle permanente du 08/10 (« la même grille s'applique à l'URL publique ») est donc
+> **exécutable ici** — voir `ops/INFERENCE-ERRORS.md` entrée 09.
+> **Limite honnête :** `fetch_page` rend la page en markdown — **le `<head>` n'est pas lisible** (ni `og:url`,
+> ni `og:image`, ni `robots`) et les images sont retirées. Tout ce qui concerne l'en-tête reste à vérifier
+> autrement (Sharing Debugger, ou `view-source` sur la machine de King).
+
+| Page | Résultat du 11/10 |
+|---|---|
+| **`dm-optique-sarl.vercel.app`** (page entière, 2 morceaux) | ✅ **Le redéploiement de King est en ligne.** « DM OPTIQUE SARL » dans les **six** messages WhatsApp pré-remplis (ruling 10/10 tenu) · les **trois cartes « Nos montures » sont bien des CTA WhatsApp** distincts (Option B, ruling 08/10) · ✅ aucun « depuis / since / 2016 », aucun diplôme, aucun avis, aucune note · « inscrit à l'ONOC » / « registered with the ONOC » seulement · ✅ **aucun prix** : la FAQ « Combien coûte une paire de lunettes ? » répond « le prix dépend de vos verres et de la monture… posez la question sur WhatsApp » — conforme à l'exigence du client (brief §4) · ✅ horaires du 08/10 (8h30–13h00 / 8h30–17h30), **aucun jour affirmé**, et la FAQ ajoute « écrivez sur WhatsApp pour confirmer le jour qui vous arrange » · ✅ adresse West Hotel, 1ᵉʳ étage, dernière porte à droite · ✅ titulaire M. Domche Noumbi (sourcé : annuaire ONOC #102) · ✅ illustrations légendées « Photo d'illustration » · ✅ **aucun placeholder social** (ruling 10/10). **Non vérifié :** l'en-tête (`og:image`, `noindex`) et le rendu du logo — `fetch_page` ne lit pas le `<head>`. C'est précisément ce que le Sharing Debugger tranchera (vignette absente deux fois le 10/10). |
+| **`amk-cm.vercel.app`** (accueil, 2 morceaux sur 3) | ⚠️ **CORRECTION : la passe SEO du 08/10 EST déployée.** Les lignes ci-dessus (« non déployée », « en attente de déploiement ») sont **périmées**. Preuves lues en ligne : la phrase réécrite du 08/10 y est mot pour mot — « **Notre équipe travaille à distance avec des entreprises partout au Cameroun.** » — et la FAQ « hors de Douala ? » répond « nous travaillons à distance, partout au Cameroun ». **Les 3 affirmations sans trace ont disparu** : plus de « projects under way… Douala, Buea, Limbe », plus de « schools in Yaoundé, Bafoussam, Bamenda », **plus de « 99.9% uptime »**. ✅ **Aucun prix affiché** : « Starter — sur devis », « Croissance — sur demande », FAQ « le prix suit le périmètre… devis écrit ». ✅ « nous ne montrons jamais le site d'un client sans son accord écrit ». **Ce qui reste à regarder :** (1) promesses de délai en ligne — « En ligne en 3–5 jours », « 5–7 jours », « aperçu en 24h », « 1 mois de support gratuit » : ce sont des engagements, pas des claims de credential, mais un prospect peut nous les opposer ; (2) l'accueil vise toujours **écoles + cliniques** et ne parle **ni des opticiens ni de l'app d'essayage** — c'est la décision consignée (`CALENDRIER-4-SEMAINES` l.88 : l'accueil bouge quand DM Optique est en ligne et approuvé), pas un oubli ; (3) 3ᵉ morceau et **sous-pages non lues** (`sample-*.html`, `clinic-bonaberi.html`, les 2 pages service). |
+| **`uni-labo.vercel.app`** | ❌ **NON balayé ce tour.** Le flag du 08/10 reste ouvert : « Dr Tientcheu Philomène, Biologiste » toujours non tracé à une source de dossier. À faire. |
+| **`cavisa.vercel.app`** | ❌ **NON balayé ce tour** (2ᵉ moitié toujours non lue). |
+| **`dmoptic-2.vercel.app`** | Hors périmètre (abandonnée, King 08/10 ; « on oublie », 10/10). Risque résiduel inchangé : page publique avec « depuis 2016 », et l'outil de suppression n'est pas à notre portée. |
