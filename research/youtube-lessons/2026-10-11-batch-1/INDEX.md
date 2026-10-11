@@ -11,9 +11,21 @@ transcripts were retrieved **in full** (video 1: 4/4 chunks · video 2: 5/5 · v
 reports are written from them.
 
 What the transcript service does **not** expose: video **duration, publication date and view
-count**. Those are marked UNVERIFIED in each report rather than guessed. Subscriber counts are
-visible on the transcript page and are cited. Every factual claim is marked VERIFIED /
-UNVERIFIED / FALSE / VENDOR SELF-REPORT; nothing is invented.
+count**. Those were first logged UNVERIFIED, then **pulled from the YouTube watch pages** on
+2026-10-11 at King's request (correction 2):
+
+| # | Length | Uploaded | Views | Likes |
+|---|---|---|---|---|
+| 1 | 24:15 | 2026-10-10 | 1,053 | 39 |
+| 2 | 30:59 | 2025-09-18 | 355,083 | 11,366 |
+| 3 | 12:24 | 2025-02-21 | 24,895 | 1,059 |
+
+Subscriber counts are visible on the transcript page and are cited (380K / 791K / 643K). Every
+factual claim is marked VERIFIED / UNVERIFIED / FALSE / VENDOR SELF-REPORT; nothing is invented.
+Claim audits now carry **source URLs**, not just attributions (correction 1).
+
+**Status: batch 1 ACCEPTED by King 2026-10-11, with five corrections — all five applied.**
+Batch 2 is queued and **not started**, per King's hold.
 
 | # | Title — Producer | URL | One-line description |
 |---|---|---|---|

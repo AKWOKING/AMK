@@ -59,3 +59,27 @@ produit. Nouveau cadre :
 publication n'a pas de lecture archivée — les chiffres de King uniquement, jamais estimés).**
 Rétention moyenne 18 % (narrée) vs 13 % (son tendance) ; cliff à 0:02 sur les deux ; +1 abonné au
 total ; Cameroun 99 %. C'est peu, et c'est le vrai point de départ.
+
+---
+
+## Règle debout — sous-titres TikTok : toujours manuels (ruling King 11/10)
+
+> **TikTok captions — always manual.** French auto-captions do not hold on Cameroonian French
+> accents. Every published video gets captions written by the orchestrator and reviewed by King
+> before publish. Auto-generated captions are never used on any client or AMK-owned account.
+
+**Portée :** tout compte — client ou AMK. **Coût outil : zéro.** **Contrôle qualité : complet.**
+
+Conséquence opérationnelle : la chaîne de publication d'une vidéo devient
+*script → tournage → sous-titres écrits par l'orchestrateur → relecture King → publication*.
+Aucune vidéo ne part sans la relecture.
+
+**Ce que cela remplace :** l'étape « activer les sous-titres automatiques puis les corriger »
+recommandée par la vidéo HubSpot du lot [36]
+(`research/youtube-lessons/2026-10-11-batch-1/video-3-tiktok-seo.md`). L'étape est rejetée :
+chez nous les sous-titres ne sont pas « corrigés », ils sont **écrits**.
+
+**Pourquoi c'est aussi un choix SEO, pas seulement un choix de qualité :** TikTok indexe le texte
+des sous-titres. Des sous-titres écrits à la main, avec le mot-clé placé délibérément, indexent
+mieux qu'une transcription approximative — l'accent camerounais produisant des fautes qui
+classent la vidéo sous le mauvais sujet.

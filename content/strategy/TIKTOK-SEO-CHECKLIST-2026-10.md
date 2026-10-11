@@ -5,9 +5,18 @@
 Millie). Internal artefact: **nothing here is client-facing, and no client account is touched
 without King's approval.**
 
-Scope note: TikTok SEO is a **supplement** to being findable on Google, not a replacement. In 2026
-49% of US consumers have *used* TikTok as a search engine (Adobe, Feb 2026) but only 4% of Gen Z
-say they prefer it over Google. Client sites stay the primary surface.
+**Status: APPROVED by King 2026-10-11** (batch 1 accepted). Under PRE-FLIGHT §4b, a new standing
+file only becomes repo law with King's confirmation — this one has it.
+
+Scope note: TikTok SEO is a **supplement** to being findable on Google, not a replacement. Per
+Adobe Express (17 Feb 2026, US sample — https://www.adobe.com/express/learn/blog/using-tiktok-as-a-search-engine),
+49% of US consumers have *used* TikTok as a search engine but only 4% of Gen Z prefer it over
+Google. Client sites stay the primary surface.
+
+**TikTok is an acquisition channel, never an income line.** Creator Rewards is limited to the US,
+UK, Germany, Japan, South Korea, France, Mexico and Brazil, and **excludes Business Accounts**
+(https://www.tiktok.com/creator-academy/en/article/creator-rewards-program). Cameroon is
+ineligible — so follower growth is measured as discovery that produces WhatsApp conversations.
 
 ---
 
@@ -40,8 +49,11 @@ say they prefer it over Google. Client sites stay the primary surface.
 - [ ] **One primary keyword** per video (+2–4 supporting terms).
 - [ ] Keyword as **on-screen text within the first 3 seconds**.
 - [ ] Keyword **spoken** out loud (TikTok transcribes audio).
-- [ ] **Auto-captions on, then manually corrected** to include the keyword — and checked against
-      real French speech; transcription errors file the video under the wrong topic.
+- [ ] **Captions are ALWAYS MANUAL — never auto-generated.** French auto-captions do not hold on
+      Cameroonian French accents. Captions are **written by the orchestrator** (keyword placed
+      deliberately, not transcribed), then **reviewed by King before publish**. Standing rule:
+      `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` (ruling King 11/10). This **replaces**
+      the HubSpot video's "turn on auto-captions and edit them" step.
 - [ ] **Caption/description**: specific, keyword early, a real sentence — not a list of terms,
       not keyword-stuffed.
 - [ ] **Hashtags 2–3 broad/local + 2–3 niche + 1 branded** (3–8 total; fewer and better beats
@@ -82,10 +94,34 @@ say they prefer it over Google. Client sites stay the primary surface.
 - **Unverified statistics** (the "70% of TikTok users use search" claim, "Pinterest ranks faster
   than TikTok", "triples your chances") — we cite only what we can show.
 
-## Open before first client use
+## Ruled on 2026-10-11 (King) — no longer open
 
-1. Do we have any evidence that TikTok is used for local service discovery in Douala? (No Cameroon
-   data on file.)
-2. Does TikTok's French auto-captioning handle Cameroonian French well enough to index? (Needs a
-   live phone test.)
-3. Business vs personal account, and who holds the credentials? (Credential-handling rule applies.)
+1. **French auto-captions: REJECTED.** Manual captions only, written by the orchestrator, reviewed
+   by King before publish — see §C above and the standing rule in
+   `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md`.
+2. **Account ownership: already ruled.** `clients/dm-optic/onboarding/CONDITIONS-D-INTERVENTION-2026-10-07.md:11-12`
+   — social accounts (Facebook + TikTok) are created **in the cabinet's name, owned by the cabinet,
+   with AMK holding admin access to work**; on termination the cabinet keeps its accounts
+   (line 43). Applies to every future optician client. No new ruling needed.
+3. **TikTok is an acquisition channel, never an income line.** TikTok Creator Rewards is open only
+   to the US, UK, Germany, Japan, South Korea, France, Mexico and Brazil, requires the account to
+   be registered in one of those countries, and **excludes Business Accounts entirely**
+   (https://www.tiktok.com/creator-academy/en/article/creator-rewards-program). Cameroon is
+   ineligible. So follower growth is sold and measured as **discovery that produces WhatsApp
+   conversations** — never as monetisable reach.
+
+## Test in progress — local discovery on TikTok (King's ruling Q1, 11/10)
+
+**Hypothesis:** people in Douala searching for eyewear services on TikTok will find and act on
+optimised local content — i.e. the local layer of this checklist (location tag + city keyword +
+French keyworded bio/captions) produces measurable profile visits and clicks.
+
+**Method:** test on **AMK's own TikTok first** — it is ours, zero client risk. **Two-week window.**
+DM Optique's account is tested only **after the deposit clears**.
+
+**Measured:** profile visits from search, follows, WhatsApp taps, and any inbound message that
+names the search. **Result is logged here with the date, whether the hypothesis held, and what
+changes.**
+
+**Status:** NOT STARTED — window opens when King starts it. **This is not a recommendation to any
+client until the result is logged.**

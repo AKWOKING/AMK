@@ -15,8 +15,14 @@ URL: https://youtu.be/FDoirvVEHMQ · Batch: `research/youtube-lessons/2026-10-11
 - **What she is selling:** **The FYP Accelerator** (paid course), a **free TikTok content calendar**
   (lead magnet used on screen), YouTube subscriptions, and a **paid sponsorship: Storyblocks**
   ("they're also the sponsor of this video… storyblocks.com/modernmillie").
-- **Length / date / views:** not exposed by the transcript service. A third-party summary describes
-  it as 31+ minutes — treat as approximate, UNVERIFIED.
+- **Length:** **30:59** · **Uploaded:** **2025-09-18** · **Views:** **355,083** · **Likes:** 11,366 ·
+  **Category:** Education — pulled from the YouTube watch page
+  (`https://www.youtube.com/watch?v=FDoirvVEHMQ`) on 2026-10-11. *(Correction 2.)* The third-party
+  "31+ minutes" estimate was close; the page figure is authoritative.
+- **Description confirms the commercial stack** (useful for the tool audit): "Thanks to Storyblocks
+  for sponsoring this video"; a **$27 mini course** ("how to finally grow to 100K on any platform");
+  free Notion TikTok calendar, 75-hooks lead magnet, email list; and an explicit affiliate
+  disclaimer covering TubeBuddy, Stan Store, Rella, Thinkific, ClickUp, UScreen and Amazon links.
 
 **Structure:** Ground zero (no clarity → post anything for 30 days) · Week 1 setup + content
 research + signature series · Week 2 analytics + CTAs + daily engagement · Week 3 brand
@@ -57,9 +63,20 @@ taper (2/day → 1/day → 3–5/week, 70% nurture content).
   lifestyle). Nothing about a shop, a service business, or converting followers into enquiries.
 - **Followers are treated as the goal.** For a client, followers are a proxy; the goal is WhatsApp
   messages. The video never mentions a link-in-bio, a CTA to a messaging channel, or lead capture.
-- **No monetisation reality outside the US Creator Rewards** (which requires 10k followers and
-  100k views/30 days and is not available everywhere). Whether it operates in Cameroon is
-  **UNVERIFIED** — not researched.
+- **No monetisation reality outside the US Creator Rewards.** **RESEARCHED 2026-10-11 at King's
+  request (correction 3) — and the answer changes client strategy.** TikTok's own Creator Academy
+  states the Creator Rewards Program "is currently open to creators in the United States, United
+  Kingdom, Germany, Japan, South Korea, France, Mexico, and Brazil, so you must be based in one of
+  these countries and have an account registered there."
+  Source: https://www.tiktok.com/creator-academy/en/article/creator-rewards-program
+  **Cameroon is not on the list — creators in Cameroon cannot earn Creator Rewards.** Two further
+  findings from the same official page: **only Personal Accounts are eligible — "Business Accounts
+  … do not qualify"**, and sponsored/paid-promotion content does not earn rewards. Corroborating:
+  only three African countries (Morocco, Egypt, South Africa) appear in TikTok's Effect Creator
+  Rewards scheme and none in the Creator Fund (https://www.okayafrica.com/is-tiktok-excluding-africans-from-its-creator-economy/246881).
+  **Consequence for AMK: for every client, "grow on TikTok" means customer acquisition only — never
+  creator income.** Follower count is a discovery metric, not a revenue line, and a client's
+  *business* account could not earn rewards even if Cameroon were added tomorrow.
 - **No burnout maths for a small business.** 3–5 posts/day is a full-time job; an optician cannot
   do it.
 
@@ -112,9 +129,12 @@ business.
 our real-photo rule) · the 0→10k-in-30-days promise as client-facing language.
 
 **OPEN QUESTIONS.**
-- Does TikTok Creator Rewards operate in Cameroon? (UNVERIFIED — decides whether follower count is
-  even a monetisable goal for a client.)
+- ~~Does TikTok Creator Rewards operate in Cameroon?~~ **CLOSED 2026-10-11: NO.** Not on TikTok's
+  official list, and Business Accounts are ineligible regardless
+  (https://www.tiktok.com/creator-academy/en/article/creator-rewards-program). TikTok is an
+  acquisition channel for our clients, never an income line.
 - What is the in-market evidence for eyewear content in francophone Africa? Nobody in this batch
-  looked; we have no Cameroon TikTok usage data at all.
+  looked; we have no Cameroon TikTok usage data at all. → **Now a logged two-week test on AMK's own
+  account (King's ruling Q1, 11/10).**
 - Should DM Optique's series be product-led (frames) or service-led (eye exams)? Needs King's
   ruling before any client content is drafted.

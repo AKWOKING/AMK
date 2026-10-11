@@ -173,6 +173,20 @@ Recette éprouvée (avec travail non commité, **jamais** `--hard`) : `git fetch
   mouvement pipeline · cadence contenu · nombres de funnel · appris · ensuite · Knowledge applied ·
   **« Blockers requiring King ruling »** — ce qui est bloqué sur King, pour que rien n'attende en silence.
 
+### 4b · Un fichier debout NOUVEAU exige la confirmation de King (ruling King 11/10)
+
+> **New standing files require King's confirmation before becoming repo law.** Quand un lot de
+> recherche produit une checklist ou une règle qui doit atterrir dans un **nouveau** fichier,
+> l'orchestrateur **propose l'emplacement** ; King approuve ; ensuite seulement c'est committé
+> comme loi. Empêche les standards d'entrer en silence.
+
+Application pratique : une règle qui peut rejoindre un fichier existant **va dans ce fichier**
+(exemple du 11/10 : la règle des sous-titres manuels est entrée dans
+`content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md`, pas dans un fichier neuf). Un fichier neuf
+n'est créé qu'avec le oui de King. Le premier cas d'application : la
+`content/strategy/TIKTOK-SEO-CHECKLIST-2026-10.md` du lot [36], créée avant l'existence de cette
+règle et **approuvée par King à l'acceptation du lot 1** le 11/10.
+
 ## 5 · Standing lens (everything filters through this)
 
 WhatsApp-first · mobile-first · EN|FR · Cameroon (Kumba/Douala/South-West) · clinics & schools · one client closed by 30 Sep · 500 000 FCFA/month by month 6. A lesson that doesn't serve this doesn't get applied.

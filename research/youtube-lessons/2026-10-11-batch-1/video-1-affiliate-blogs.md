@@ -18,9 +18,14 @@ in this sandbox. That was wrong; the INDEX.md method note has been fixed.)
 - **What he is selling:** a **free affiliate-marketing course** (lead magnet, "I'm going to leave a
   free course down below"), plus **affiliate links** for the tools he demos — he says explicitly
   "you don't have to click my affiliate links," which confirms they are affiliate links.
-- **Length / publication date / view count:** **NOT RETRIEVABLE** — the transcript service exposes
-  title, channel and subscriber count but not duration, date or views. Marked UNVERIFIED rather
-  than guessed.
+- **Length:** **24:15** · **Uploaded:** **2026-10-10** · **Views:** **1,053** · **Likes:** 39 ·
+  **Category:** Education — pulled from the YouTube watch page
+  (`https://www.youtube.com/watch?v=TPC4Sn1U0Dc`) on 2026-10-11. *(Correction 2 of King's batch-1
+  review: these were first logged as UNVERIFIED because the transcript service does not expose
+  them; the video page does.)* Note the upload date: **one day before this batch** — the video was
+  24 hours old when reviewed, which is consistent with the low view count.
+- **Description claim (for the audit):** "producing high-quality, SEO-optimized content that search
+  engines love" and "scale your output effectively" — the scaling framing is what §2 claim 7 tests.
 
 **Structure of the walkthrough (in his order):** ryrob keyword tool → Cloudways + WordPress →
 domain (GoDaddy/Namecheap) → Astra theme + Starter Templates / ZipWP → SEO Writing one-click
@@ -80,9 +85,16 @@ conversations**, not commissions. The transferable residue is a discipline, not 
 client-specific fact.*
 
 **Counter-evidence to the video's premise:** Google's scaled content abuse policy is method-neutral
-and enforced both algorithmically and by manual action; Google reported **45% less low-quality,
-unoriginal content** after the March 2024 rollout (target was 40%). The "humanize the AI text"
-step is aimed at a detection mechanism Google says it does not use as the test.
+and enforced both algorithmically and by manual action. On the **45% figure** *(correction 4 of
+King's batch-1 review — sourced, not left bare)*: the **45% is Google's own reported result of the
+March 2024 core update** — Google's Elizabeth Tucker projected a **40%** reduction in low-quality,
+unoriginal content in results; after the rollout closed on 19 April 2024, **Google reported 45% on
+26 April 2024**. Source: https://ppc.land/scaled-content-abuse/ (timeline section, citing Google's
+own announcement), corroborated by
+https://convertaudiototext.com/blog/ai-content-and-google-policy. It is **Google's number about
+Google's index**, not a statistic about this video's method, and we would never present it to a
+client as a promise. The "humanize the AI text" step is aimed at a detection mechanism Google says
+it does not use as the test.
 
 ## 5 · INTEGRATION RECOMMENDATION
 

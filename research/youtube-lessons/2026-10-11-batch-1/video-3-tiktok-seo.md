@@ -6,14 +6,21 @@ URL: https://youtu.be/xuAMtJKGHbc · Batch: `research/youtube-lessons/2026-10-11
 
 **Transcript: RETRIEVED IN FULL** (2/2 chunks) via `youtubetotranscript.com/transcript?v=xuAMtJKGHbc`.
 
-- **Producer:** HubSpot Marketing channel — **643K subscribers**. On-screen presenter introduces
-  herself as **Bridget**; the transcript garbles the surname ("my name is Bridget oor") and her
-  business name ("Bridget oror edutainment"), so the surname is **NOT CAPTURED** — not guessed.
+- **Producer:** HubSpot Marketing channel — **643K subscribers**. On-screen presenter: **Bridget**.
+  (The transcript garbles her surname; per King's correction 5 this is **not chased and not a gap** —
+  "Bridget" is sufficient for our purposes.)
 - **Claimed credentials:** none personal; authority is borrowed from the HubSpot brand. She states
   her source: "I actually used this free TikTok for marketing guide from HubSpot."
 - **What is being sold:** a **free "TikTok for marketing" guide** (lead capture) that funnels to a
   HubSpot blog post and, ultimately, the HubSpot platform. No pricing, no income claims.
-- **Length / date / views:** not exposed by the transcript service → UNVERIFIED.
+- **Length:** **12:24** · **Uploaded:** **2025-02-21** · **Views:** **24,895** · **Likes:** 1,059 ·
+  **Category:** Education — pulled from the YouTube watch page
+  (`https://www.youtube.com/watch?v=xuAMtJKGHbc`) on 2026-10-11. *(Correction 2.)*
+- **Presenter surname: deliberately not chased** *(correction 5 of King's review — "Bridget" is
+  sufficient; not a gap)*.
+- **Description confirms the funnel:** "Download the TikTok Marketing Strategy Guide here:
+  https://clickhubspot.com/2ddi" — a gated lead magnet, and the chapter list (Profile 0:56 · Market
+  Research 4:03 · Hashtags 9:01 · Website SEO 10:40).
 
 **Structure (her real-time build-out of a new business profile):** username → bio (80 chars) →
 profile/display name → keyword research (TikTok autocomplete, Creative Center, Google People Also
@@ -25,7 +32,7 @@ cover frame → off-platform (blog embed + Pinterest).
 
 | # | Claim | Verdict | Basis |
 |---|---|---|---|
-| 1 | "**70% of TikTok users use search** to find products, businesses and solutions" | **UNVERIFIED** | Could not source a 70% figure. The best current primary data is Adobe (Feb 2026): **49% of US consumers have used TikTok as a search engine** (up from 41% in 2024); 65% of Gen Z. The 70% may be an older or different-scope number. |
+| 1 | "**70% of TikTok users use search** to find products, businesses and solutions" | **UNVERIFIED** | No 70% source located. The best current primary data is **Adobe Express, "Using TikTok as a search engine" (17 Feb 2026)** — https://www.adobe.com/express/learn/blog/using-tiktok-as-a-search-engine : **49% of US consumers have used TikTok as a search engine** (up from 41% in 2024); **65% of Gen Z**; methodology = 807 US consumers + 200 US small-business owners. Corroborating roundups: https://riseatseven.com/blog/tiktok-seo-statistics/ · https://almcorp.com/blog/tiktok-as-search-engine-2026-data/ . The 70% may be an older or different-scope figure; we do not repeat it. |
 | 2 | TikTok bios are limited to **80 characters** | VERIFIED | Matches independent TikTok SEO guides — and **contradicts Video 2's "about 160 characters."** |
 | 3 | Username, display name and bio are scanned for search ranking | VERIFIED | Independently corroborated by three separate TikTok SEO guides (Metricool, Backlinko, Printify). |
 | 4 | TikTok scans **text inside videos** (on-screen text) for ranking | VERIFIED | Corroborated by Metricool and Printify; place the keyword in the first ~3 seconds. |
@@ -75,11 +82,17 @@ directly.
   1 branded (#DMOptique).
 - **CTA must be WhatsApp**, and the bio link must be the client's site (never a bare number).
 
-**Counter-evidence to the video's premise:** while 49% of US consumers have *used* TikTok as a
-search engine, only **4% of Gen Z say they are more likely to rely on TikTok over Google** in 2026
-(down from 8% in 2024, Adobe), and Google remains the primary starting point for 46% of 18–24s.
+**Counter-evidence to the video's premise** *(sources added per correction 1 — attributions alone
+are not enough for a claim audit)*: while **49% of US consumers have *used* TikTok as a search
+engine**, only **4% of Gen Z say they are more likely to rely on TikTok over Google** in 2026, down
+from 8% in 2024, and only 25% of Gen Z found TikTok *effective* for finding information vs 89% who
+prefer Google. All from **Adobe Express, "Using TikTok as a search engine," 17 Feb 2026 —
+https://www.adobe.com/express/learn/blog/using-tiktok-as-a-search-engine** (survey: 807 US
+consumers, 200 US small-business owners). Google remains the primary starting point for **46% of
+18–24s** (Axios/eMarketer 2024, as reported at https://almcorp.com/blog/tiktok-as-search-engine-2026-data/).
 So TikTok SEO is worth doing as a **supplement**, not as a replacement for being findable on
-Google — which is exactly where our client sites already play.
+Google — which is exactly where our client sites already play. Note also that Adobe's sample is
+**US-only**; it is not evidence about Cameroon (see the open question).
 
 ## 5 · INTEGRATION RECOMMENDATION
 
@@ -118,8 +131,16 @@ HubSpot platform (unnecessary) · any framing of TikTok as a replacement for Goo
 
 **OPEN QUESTIONS.**
 - Is TikTok actually used for local service discovery in Douala? We have **no Cameroon data** —
-  this decides whether the checklist gets applied to DM Optique at all.
-- Does TikTok's French auto-captioning handle Cameroonian French reliably? Needs a live test on
-  the phone before we rely on captions for indexing.
-- Business vs personal account for a client: which do we open, and who holds the credentials?
-  (Credential-handling rule applies.)
+  this decides whether the checklist gets applied to DM Optique at all. → **King's ruling Q1
+  (11/10): test it. AMK's own TikTok first (zero client risk), two-week window, hypothesis and
+  result logged. Not a client recommendation until proven.**
+- ~~Does TikTok's French auto-captioning handle Cameroonian French?~~ **CLOSED by King's ruling Q2
+  (11/10): REJECTED — auto-captions do not hold on Cameroonian French. Every video gets manual
+  captions written by the orchestrator and reviewed by King before publish. Standing rule now in
+  `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md`.** Note this overrides the video's "turn on
+  auto-captions and edit them" step.
+- ~~Business vs personal account for a client?~~ **CLOSED — already ruled by
+  `clients/dm-optic/onboarding/CONDITIONS-D-INTERVENTION-2026-10-07.md:11-12`: accounts created in
+  the cabinet's name, the cabinet owns them, AMK has admin access to work. Applies to every future
+  optician client.** (Worth noting: a business account also cannot earn Creator Rewards — see
+  video 2.)

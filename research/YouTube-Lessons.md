@@ -1627,3 +1627,53 @@ rédaction d'articles) est **faite par l'orchestrateur** — c'est le premier co
 - TikTok Creator Rewards existe-t-il au Cameroun ? (Non vérifié — décide si le nombre d'abonnés est
   un objectif monétisable.)
 - Lot [36] = batch 1 de 4. Batches 2, 3, 4 en file, **non commencés**.
+
+### Lot [36] — ADDENDUM · batch 1 accepté par King, cinq corrections appliquées (11/10)
+
+**Verdict de King : batch 1 ACCEPTÉ avec cinq corrections. Batch 2 EN ATTENTE** — ne pas démarrer
+avant sa confirmation (« empiler des rapports sans les absorber, c'est comme ça qu'on obtient un
+dossier que personne n'ouvre »).
+
+| # | Correction demandée | Appliquée |
+|---|---|---|
+| 1 | Les 49 % / 4 % Adobe sans URL | **FAIT** — URL ajoutée dans le rapport vidéo 3 (réclamation 1 et contre-preuve) : https://www.adobe.com/express/learn/blog/using-tiktok-as-a-search-engine + méthodologie (807 consommateurs US, 200 propriétaires de PME). Les audits de réclamations portent désormais des **liens**, pas seulement des attributions. |
+| 2 | Durée / date / vues à tirer des pages YouTube | **FAIT** — v1 : 24:15, 10/10/2026, 1 053 vues · v2 : 30:59, 18/09/2025, 355 083 vues · v3 : 12:24, 21/02/2025, 24 895 vues. Dans les trois rapports + l'INDEX. |
+| 3 | Disponibilité de TikTok Creator Rewards au Cameroun | **FAIT, et la réponse change la stratégie** — voir ci-dessous. |
+| 4 | Le « 45 % » non référencé | **FAIT** — clarifié dans le rapport vidéo 1 : c'est **le résultat annoncé par Google lui-même** pour la core update de mars 2024 (projection 40 %, annoncé 45 % le 26/04/2024 après la fin du déploiement le 19/04). Source : https://ppc.land/scaled-content-abuse/ . C'est un chiffre de Google sur l'index de Google — jamais une promesse à un client. |
+| 5 | Le nom de famille de « Bridget » | **FAIT** — retiré des manques ; « Bridget » suffit, ce n'est pas un trou. |
+
+**Correction 3 — la réponse (source officielle TikTok).** Le Creator Rewards Program « is currently
+open to creators in the United States, United Kingdom, Germany, Japan, South Korea, France, Mexico,
+and Brazil, so you must be based in one of these countries and have an account registered there »
+— https://www.tiktok.com/creator-academy/en/article/creator-rewards-program .
+**Le Cameroun n'y est pas.** Deux conséquences de la même page : **seuls les comptes personnels
+sont éligibles — « Business Accounts … do not qualify »** — et le contenu sponsorisé ne rapporte
+rien. En Afrique, seuls le Maroc, l'Égypte et l'Afrique du Sud apparaissent dans le programme
+Effect Creator Rewards, et aucun dans le Creator Fund
+(https://www.okayafrica.com/is-tiktok-excluding-africans-from-its-creator-economy/246881).
+
+> **Règle qui en découle, pour tous les clients : TikTok = acquisition de clients, jamais revenu de
+> créateur.** La croissance en abonnés se vend et se mesure comme de la **découverte qui produit
+> des conversations WhatsApp**. Et un compte *business* client ne pourrait de toute façon pas
+> gagner de rewards, même si le Cameroun était ajouté demain.
+
+**Les trois règles de King sur les questions ouvertes :**
+- **Q1 (découverte locale) :** pas de donnée Cameroun → **test sur le TikTok d'AMK d'abord** (le
+  nôtre, risque client nul), **fenêtre de deux semaines**, hypothèse et résultat journalisés. Le
+  compte DM Optique n'est testé **qu'après l'encaissement de l'acompte**. **Pas une recommandation
+  client tant que ce n'est pas prouvé.** → consigné dans
+  `content/strategy/TIKTOK-SEO-CHECKLIST-2026-10.md` (« Test in progress »).
+- **Q2 (sous-titres automatiques français) : REJETÉS.** Ils ne tiennent pas sur le français
+  camerounais. Sous-titres **écrits par l'orchestrateur, relus par King avant publication**, sur
+  tout compte client ou AMK. → règle debout dans
+  `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` (fichier existant — pas de fichier neuf).
+- **Q3 (compte business ou personnel) : déjà tranché.**
+  `clients/dm-optic/onboarding/CONDITIONS-D-INTERVENTION-2026-10-07.md:11-12` — comptes créés au nom
+  du cabinet, le cabinet en est propriétaire, AMK a un accès admin ; à la rupture il garde ses
+  comptes (ligne 43). Vaut pour tout futur opticien.
+
+**Deux nouvelles règles debout, approuvées par King le 11/10 :**
+1. **Un fichier debout nouveau exige la confirmation de King** avant de devenir loi du dépôt —
+   l'orchestrateur propose l'emplacement, King approuve, ensuite c'est committé. → écrite dans
+   `PRE-FLIGHT.md` §4b.
+2. **Sous-titres TikTok toujours manuels** → `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md`.
