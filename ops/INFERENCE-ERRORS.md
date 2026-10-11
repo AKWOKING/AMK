@@ -23,3 +23,25 @@ catch atterrit ici.
 > fiscal-document completeness. New rule: every financial document premise check includes
 > issuer-block completeness against the client's fiscal jurisdiction standard, not just internal
 > consistency. Second-reader question applies: *"what will the client ask for that isn't here?"*
+
+> **08. 11/10/2026 — « la source de l'app n'est pas dans le dépôt » (faux).** `clients/univers-optique/research/TRY-ON-IMPROVEMENTS-2026-10-10.md`
+> déclare que la source de l'app d'essayage n'est pas au dépôt et demande à King de la fournir.
+> **Vérité vérifiée le 11/10 :** elle y est, sur `origin/main` (`6b987c0`) — `tryon-camera/`, 8 fichiers,
+> dont `V2 Try-On Camera.html` (titre « UO · Essayage en direct (caméra) · prototype J2 »,
+> `og:url = uo-essayage-camera.vercel.app`) et `LISEZMOI.txt`. **Cause de l'erreur :** la recherche a été
+> faite sur la **branche de travail** (`arena/…`), dont l'historique est **disjoint** de `main`
+> (`git merge-base HEAD origin/main` = vide, 1 commit de chaque côté). Le dossier n'existe donc
+> réellement pas sur la branche — mais « pas sur ma branche » n'est pas « pas au dépôt ».
+> **Règle née :** avant d'écrire qu'un fichier n'existe pas au dépôt, vérifier **tous les refs distants**
+> (`git ls-remote origin` + `git ls-tree --name-only origin/main <chemin>`), pas seulement l'arbre courant.
+> Conséquence pratique : les deux rapports cités par `LISEZMOI.txt` (`frames-live-check.md`,
+> `uo-v2-inventory-check.md`) **ne sont pas** parmi les 8 fichiers — la vérification annoncée n'est pas
+> joignable depuis `main`.
+
+> **09. 11/10/2026 — « le bac à sable n'a pas d'accès web » (trop large).** Plusieurs notes du dépôt
+> (`TRY-ON-IMPROVEMENTS`, `TOOL-SCAN`) traitent les lectures en ligne comme impossibles ici.
+> **Vérité vérifiée le 11/10 :** `curl` est bien bloqué sur `onocameroun.com` et `*.vercel.app`
+> (HTTP 000, `SSL_ERROR_SYSCALL`), **mais `fetch_page` atteint `onocameroun.com`** — les deux pages
+> de l'annuaire ONOC ont été lues intégralement. **Règle née :** « injoignable » se dit **par outil**,
+> pas globalement. Avant de déclarer une source inaccessible, tester `fetch_page` après `curl`.
+> Le re-pull ONOC du dimanche (tâche debout) est donc **faisable ici**.

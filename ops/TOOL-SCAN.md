@@ -54,3 +54,14 @@
   `research/gsc/AAAA-MM-JJ/` + une ligne ici (clics · impressions · position · requêtes). Repère du
   08/10 : 1 clic · 1 impression · position 3,0 sur 7 jours. Liste d'attente : rapatrier les pages
   live-only d'`amk-cm` (polyclinic, maternity) avant tout redéploiement.
+
+---
+
+## Journal des scans
+
+| Date | Périmètre | Hits | Action |
+|---|---|---|---|
+| **11/10** | **Grille crédentiels non filtrée sur le dépôt** (`grep -rIn "2016"` · `"2017"` · regex claims) | 92 lignes « 2016 » · 25 lignes « 2017 » · 160 lignes regex, dont **26 dans du HTML construit** (15 fichiers) | **Aucun hit nouveau.** Les 26 se répartissent en trois classes déjà tranchées : Cristallin « depuis 2010 » (leurs mots, à valider par lui) · Univers « depuis 2009 » sous gel du 23/09 (`univers-note/`, `univers-v1/`, les 4 `concept-univers-*`) · Cinq Sens « diplômés en optique lunetterie » (leurs mots). **Rien modifié.** `hosting/previews/univers/index.html` = 0 occurrence (ruling 08/10 tenu). |
+| **11/10** | **Même grille, pages AMK publiques** (`site/`, déployé sur `amk-cm.vercel.app`) | 4 lignes : « Certified & vetted staff », « vetted and certified staff », « Certified science practicals » dans `sample-nursery.html` (3) et `sample-school.html` (1) | **Observation, pas une infraction** : ce sont les maquettes **fictives** (Little Oaks, Nova), pas un claim sur un client réel — donc hors du périmètre de `RULE-CREDENTIAL-CLAIMS.md`. Mais elles sont **publiques et indexables** : à garder à l'œil si un prospect les lit comme une promesse. Aucune modification sans mot de King. |
+| **11/10** | **Re-pull ONOC** — `annuaire-des-opticiens-par-region/` (LITTORAL 85–159) + `liste-de-tous-les-opticiens-inscrits-au-tableau/` (complet), via `fetch_page` (`curl` bloqué sur ce domaine : HTTP 000) | **8/8 numéros de la liste d'envoi conformes à l'annuaire** · **4 divergences entre les deux pages ONOC** (FABY, JiredOptic, KamaïsOptic, Centrale) · 1 cas d'entité : le numéro de Bali est publié sous « Optic-Swiss Sarl » | **Aucun numéro corrigé.** Règle écrite dans `sales/LISTE-OPTICIENS-2026-10.md` : l'annuaire gagne, et en cas d'échec de livraison on teste le second numéro avant de classer. **Opener Bali sans aucune mention de l'Ordre.** Détail complet dans ce fichier. |
+| **11/10** | **Pages live non balayées** | — | `dm-optique-sarl.vercel.app`, `uni-labo.vercel.app`, `cavisa`, `amk-cm` : **non lus** — `curl` depuis le bac à sable renvoie HTTP 000 (SSL bloqué). Le re-pull ONOC a prouvé que `fetch_page` atteint des domaines que `curl` n'atteint pas : **le balayage des pages live passe par `fetch_page`, pas par `curl`.** À faire avant tout partage d'URL. |
