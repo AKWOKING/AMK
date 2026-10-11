@@ -1,4 +1,20 @@
+> **Every orchestrator response to King must begin with the §0 pre-flight header. Every King-issued task that passes through the chief of staff will re-state this requirement at the top of the task. Non-compliance = returned message.** *(standing rule, King 08/10, 11th message)*
+
 # AMK — PRE-FLIGHT PROTOCOL (standing rule, King 17 Sep 2026)
+
+## 0 · MANDATORY FIRST READ (standing rule, King 08/10)
+
+> **§0 — MANDATORY FIRST READ.** Before beginning any task, read this document in full. Every task begins with §1e resync, then a §0 pre-flight confirmation in the response header: *"Pre-flight: [task type] → PRE-FLIGHT.md read, [other files loaded]."* A response without this header is incomplete and will be returned.
+
+Structural, not a memory test: the header is the **first line** of every response, so King can see the precondition was met without asking. (Supersedes the looser one-line format below; same discipline, now with the explicit « PRE-FLIGHT.md read » confirmation.)
+
+
+### 0b · Client dossier first (standing rule, King 08/10, 12th message)
+
+> **§0b — CLIENT DOSSIER FIRST.** Before any ruling on a client's site, document, or message, read the client's full dossier end-to-end. State in the pre-flight header which files were loaded. If a ruling is being made on a client artifact without the dossier loaded, the ruling is incomplete.
+
+Applied: the header lists the files **actually loaded** (and says "partial" / "not read" where that is true) — never the whole folder by assumption. For DM Optique, "end to end" means `clients/dm-optic/` including `onboarding/CONDITIONS-D-INTERVENTION-*`, `site/SPEC-PAGES-v1.md`, the build notes (`build-notes.md`), the proforma, and the client's messages as logged in the CRM. **For the DM Optique site, the source of truth is `clients/dm-optic/site/CLIENT-REQUIREMENTS-BRIEF.md`: rulings cite it; a question it cannot answer extends it (its « Journal d'extension »), never a ruling from memory.**
+---
 
 **The rule: no task begins without a pre-flight.** Identify the task type → load the lessons for that field from this repo → read them → only then start work. Work that skips the pre-flight is invalid.
 
@@ -24,13 +40,14 @@ The rule names abstract folders; these are where the lessons actually live. Load
 | **Any copywriting** | `research/YouTube-Lessons.md` [1]–[6] (+ [5] Harry Dry = the law) · `sales/Monday-Outreach-Pack.md` COPY CRAFT GATE · `AMK-DESIGN-SKILLS.md` §11 + §11b · `sales/swipe/README.md` · client's own words (FB/comments) per Part H |
 | **Visual design (mockups, brand, graphics)** | `AMK-DESIGN-SKILLS.md` (§1–§19: dials, anti-slop §3, locks §4, type §5, colour §6, layout §7, components §8, motion §9, images §10, copy-law §11b, redesign §12, pre-flight §13, style menu §14, image art-direction §15, patterns §17, §19 foundations) · `design/WORKFLOW.md` · `design/STYLE-TOKENS.md` · `design/MOTION.md` · `design/vendor/*` (registries) · `clients/_uniqueness-registry.md` |
 | **Website build** | `tools/qa/PROTOCOLE-LECTEUR-ECRAN.md` (**le test à l'oreille, à la main, 5 minutes : NVDA + TalkBack, les annonces attendues sur NOS pages**) · `tools/qa/test_site_a11y_behaviour.mjs` (les états de la page, exécutés dans un DOM) · `research/ACCESSIBILITE-2026-09-24.md` (le rapport du lot [27] : le niveau promis, les quatre choses qu'aucune machine ne vérifie) · **`tools/qa/audit_a11y.py`** (+ `test_audit_a11y.py`) — le contrôle d'ACCESSIBILITÉ, critère par critère, **WCAG 2.2 AA** (le niveau qu'un appel d'offres exige : ni A seul, ni AAA) : images et alts, hiérarchie des titres, étiquettes de champs, zoom non bloqué, clavier, focus visible, lang, noms des boutons · `AMK-DESIGN-SKILLS.md` **§27** (le niveau promis, et les quatre choses qu'aucune machine ne vérifie) · **`tools/qa/audit_hero.py`** (§26 + §29 : la grammaire du premier écran **et** son anatomie — trois questions, deux actions au maximum, la marque nommée) (+ `test_audit_hero.py`) — le contrôle du PREMIER ÉCRAN appris au lot [26] : mots écrits dans le CSS, hero 100vh sans `@media`, animations de mise en page sans `prefers-reduced-motion`, gabarits non remplis · `AMK-DESIGN-SKILLS.md` **§26** (la grammaire du hero) · All of the design row **plus** `AMK-DESIGN-SKILLS.md` §18 (spec-before-build, value provenance, verification ladder) + §19.3 (3-direction exploration) · copywriting row · `design/WORKFLOW.md` stages 1–9 · deploy gate `hosting/previews/README.md` · client context: `sales/research/<client>-deep-dive-*.md` + `clients/<client>/*` · **live inspiration research (step 3 of the uniqueness protocol)** |
+| **SEO / site public (AMK ou client)** | `content/strategy/SEO-CHECKLIST-CLIENT-SITES-2026-10.md` (**la liste dans l'ordre + ce que Google dit de ne PAS faire**) · `site/SEO-REVIEW-2026-10-08.md` §8 · `tools/seo/bake_default_lang.py` (français/anglais par défaut dans le HTML) · `node tools/qa/test_amkcm_lang.mjs` · `content/strategy/RULE-CREDENTIAL-CLAIMS.md` (affirmations) |
 | **Photographie / images livrées** | `research/PHOTO-LABO-PIXEL-8A-2026-09-24.md` (ce que le Pixel 8A sait faire, la séance de 15 min, la lumière d'un laboratoire, la fiche à emporter FR, la vérification de 60 s) · `AMK-DESIGN-SKILLS.md` §25 (une photo = un sens) + §32 · `tools/qa/audit_images.py` (**contrôle**) |
 | **Prix / abonnement / récurrence** | `sales/PRIX-ET-RECURRENCE-2026-09-24.md` (**ce qui est tranché, et les 16 questions ouvertes — à lire AVANT toute conversation d'argent**) · `sales/REVUE-CONTRATS-GRILLE-2026-09-23.md` · `sales/ORDRE-DES-OFFRES-2026-09-23.md` |
 | **Delivery / handoff** | `AMK-DESIGN-SKILLS.md` §13 (pre-flight) + §18.4 (verification ladder) · `hosting/previews/README.md` (deploy gate) · `site/DEPLOY.md` · `sales/AMK-Playbook-Addendum-Outcomes-2026-09-15.md` (handoff video, care plan) |
 | **Retention / upsell / referrals** | `sales/AMK-Sales-Playbook-v2.md` (A5 referral, F6, Part J reinforce-the-decision) · `sales/AMK-Playbook-Addendum-Outcomes-2026-09-15.md` · `sales/AMK-Playbook-Addendum-4-Marketing-Systems-2026-09-15.md` (monthly report, GBP layer) |
 | **Weekly research** | The field being studied → log the output back into that field's lessons: sales/marketing → `sales/research/<YYYY>-W<WW>-techniques.md`; video lessons → `research/YouTube-Lessons.md`; design/build → the relevant `AMK-DESIGN-SKILLS.md` section |
 
-| **CRM / pipeline** | `leads/build/crm.py` (schéma + énumération des étapes — C'EST LUI LA SOURCE, pas le CSV) · `leads/build/guard.py` + `generators.lock.json` (EMPREINTE des générateurs : `rebuild.sh` refuse d'écrire si un générateur a été remplacé par une version plus ancienne — 22/09 : une restauration d'instantané avait effacé l'état des deux fils chauds du CSV sans un seul message d'erreur) · `leads/CRM.csv` (état) · `sales/Activity-Log.md` (chronologie, append-only) · `sales/AMK-Sales-Playbook-v2.md` (règles debout, §A4 corrigé) · vue live : `leads/PIPELINE.md`, `leads/KILL-LIST.md`, `leads/STALE.md`, `leads/SOURCES.md`, `leads/Daily-Plan.csv` (toutes GÉNÉRÉES) · fiche d'un lead : `leads/records/<slug>.md` |
+| **CRM / pipeline** | `leads/build/crm.py` (schéma + énumération des étapes — C'EST LUI LA SOURCE, pas le CSV) · `leads/build/guard.py` + `generators.lock.json` (EMPREINTE des générateurs : `rebuild.sh` refuse d'écrire si un générateur a été remplacé par une version plus ancienne — 22/09 : une restauration d'instantané avait effacé l'état des deux fils chauds du CSV sans un seul message d'erreur) · `leads/CRM.csv` (état) · `sales/Activity-Log.md` (chronologie, append-only) · `sales/AMK-Sales-Playbook-v2.md` (règles debout, §A4 corrigé) · vue live : `leads/PIPELINE.md`, `leads/KILL-LIST.md`, `leads/STALE.md`, `leads/SOURCES.md`, `leads/Daily-Plan.csv` (toutes GÉNÉRÉES) · fiche d'un lead : `leads/records/<slug>.md` · **règle 02/10 (bug OraCare) : avant de remplir `source_detail` d'un lead content, vérifier que le lead a VU la vidéo — jamais déduire l'attribution de « la seule vidéo publiée »** · **règle 02/10 (fil Cavisa) : jamais re-poser la même question — au-delà de 7 jours sans réponse, changer de canal (texte → voix → appel), pas de wording ; un fix interne n'est jamais un prétexte d'outreach** · **règle 02/10 (piège de file, re-datée 03/10) : après édition de RELANCE_A_JOUR ou de toute structure planifiée à clés, vérifier la SORTIE de la file après rebuild — rc=0 n'est pas une preuve** · **règle 03/10 (tous prospects) : aucun travail non demandé sur la démo d'un prospect — sans demande explicite, la démo reste intouchée ; follow-up plain, chaud, court, sans prétexte ni re-ask ; le travail ne reprend que si le prospect demande quelque chose de spécifique** · **protocole 05/10 : premise check (une ligne, vérifiée contre le fil) avant toute sortie client-facing + passe second-reader + log dans ops/INFERENCE-ERRORS.md · **règle 05/10 (#7) : premise check d'un document financier = complétude du bloc émetteur au standard fiscal du client, pas seulement cohérence interne (« que demandera-t-il qui n'est pas là ? »)** |
 
 **Règle d'écriture du CRM (M7, 21 Sep 2026) — « la prose ne suffit pas ».** Une décision qui
 doit changer un calcul (`parked`, un score, un `reply_type`) se met **dans le générateur**
@@ -41,6 +58,24 @@ c'est voulu. La chronologie, elle, va dans `sales/Activity-Log.md` (une ligne pa
 par réponse) et remonte toute seule dans les fiches et les vues.
 
 **State files to load with almost everything:** `sales/Pipeline-Status.md` (current week), the prospect dossier, `sales/Outreach-Pack-<date>.md` (active pack), session memory.
+
+**Knowledge base (couche de référence, 02/10 — `knowledge/HOUSE-KNOWLEDGE-BASE.md`) :** chaque
+pré-vol charge, **en plus du dossier métier**, les sections pertinentes de la base :
+
+| Task type | + knowledge base |
+|---|---|
+| **Sales / outreach / proposal** | §2, §8 |
+| **Content / script / video / caption** | §7, §8 |
+| **Marketing / strategy** | §3, §5 |
+| **Ads / campaign** | `clients/<slug>/ads/campaign-brief.md` (quand il existe) + §4, §5 |
+| **Design / build** | §1 |
+| **Delivery / onboarding** | §1, §2 |
+| **Orchestration / meta / workflow** | §6 |
+| **Ops / workflow / project management** | §9 · `ops/LIFECYCLE.md` · `ops/ONBOARDING.md` · `ops/templates/` |
+
+**Étape de vérification des sources :** avant d'appliquer une section, vérifier que ses sources sont
+encore atteignables. 404 ou bloquée → note au change log de la base, et on travaille depuis le contenu
+de la section quand même — **les sources servent à vérifier, pas à dépendre**.
 
 ---
 
@@ -68,6 +103,23 @@ dédiée existe → **écarté**, pas de message. Détail et les deux preuves du
 avant l'envoi ; SkyOptic et Cinq Sens fragilisés après l'envoi) :
 `sales/MESSAGES-2026-09-23-PERSUASION.md` §5 et `sales/RESEARCH-STANDARD.md` §8c.
 
+## 1d · Règle QA/grep — chaîne cherchée = ligne source littérale (ruling King 05/10)
+
+Quand on grep un contenu qu'on vient d'insérer, le pattern est la **ligne source littérale,
+marqueurs markdown inclus** (`**gras**` compris). Un pattern « propre » sans marqueurs produit un
+faux-zéro sur du contenu boldé. Classe tooling, pas inférence ; journal : `ops/QA-NOTES.md`.
+
+## 1e · Resync git = précondition du tour (ruling King 06/10)
+
+Au début de chaque tour, avant toute lecture ou édition : `git fetch origin` →
+`git reset --hard origin/arena/01a0f7ad-amk` si local ≠ remote. La resync est une **précondition du
+tour**, pas une réparation après un push refusé. Trois occurrences → protocole, pas vigilance.
+
+**Précondition mécanique avant TOUT commit (ruling King 08/10, 12e message — troisième occurrence de « committed before resync »)** : 
+`git log -1 --format=%H` **doit être égal** à `git ls-remote origin refs/heads/arena/01a0f7ad-amk`. Vérifié **par commande, dans le même appel que le commit**, jamais de mémoire. Si les deux hash diffèrent : **on ne commit pas** — on resynchronise d'abord. Une précondition mécanique, pas de la vigilance.
+
+Recette éprouvée (avec travail non commité, **jamais** `--hard`) : `git fetch -q origin` → `R=$(git ls-remote origin refs/heads/arena/01a0f7ad-amk | cut -f1)` → `git reset -q --mixed $R` → vérifier `HEAD == R` → `git checkout HEAD -- leads/build/{crm.py,generators.lock.json,records.py,views.py}` si ces quatre fichiers reviennent périmés → `git status --short`. (`origin/<branche>` peut ne pas exister comme ref locale : le tip se lit par `ls-remote`.) Le `reset --hard` de la ligne ci-dessus ne vaut que pour un arbre propre.
+
 ## 2 · Uniqueness protocol (every website/design build, before a line of HTML)
 
 1. Load design + copywriting lessons (routing table rows above) and re-read `AMK-DESIGN-SKILLS.md` (dials §2, Design Read §1, anti-default §3/§3.8, pre-flight §13, §19).
@@ -92,6 +144,11 @@ avant l'envoi ; SkyOptic et Cinq Sens fragilisés après l'envoi) :
 - A task that teaches something (a tactic that worked, a reference that landed, a copy angle, a design move) → **append a dated entry** to the relevant lessons file the same day, naming the client/task. Don't wait for Monday.
 - **Never overwrite a lesson silently** — add, annotate or version (same rule as the playbook).
 - **Conflicts:** say so; ask which side wins, unless the newer lesson is clearly stronger for Cameroon clinics/schools — then propose the change and wait for King's yes.
+- **Friday report — « Knowledge applied » line (02/10) :** quels domaines de
+  `knowledge/HOUSE-KNOWLEDGE-BASE.md` ont servi cette semaine, ce qui a marché, ce qui est à réviser ou à
+  tester. Se remplit depuis le change log de la base. **Format standing du rapport** (`content/pipeline/reports/`) :
+  mouvement pipeline · cadence contenu · nombres de funnel · appris · ensuite · Knowledge applied ·
+  **« Blockers requiring King ruling »** — ce qui est bloqué sur King, pour que rien n'attende en silence.
 
 ## 5 · Standing lens (everything filters through this)
 

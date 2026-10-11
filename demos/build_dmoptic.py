@@ -31,9 +31,19 @@ questions — visibles **et** dans le schéma FAQPage, mot pour mot —, fiche .
 d'ouverture (il ne les a pas donnés), les prix, les marques. Les cinq photos restent des mises en
 situation, légendées « Photo d'illustration ».
 
+**v2.3 (08/10/2026, après la réponse du cabinet de 14:58)** — heures mises à jour, formulation rapportée
+par King (texte exact du client non transmis) : « Examen de vue : 8h30–13h00 · Autres besoins :
+8h30–17h30 » (remplace 8h00–17h30 / consultation 8h30–13h30 du 25/09). Écrites dans les deux langues aux
+mêmes endroits (carte d'identité, FAQ visible **et** FAQPage, bloc contact, pied de page). Aucun jour.
+Également v2.3 : « Inscrit à l'ONOC » (ruling credentials 08/10) à la place de « depuis 2016 ».
+
 Usage :
   python3 demos/build_dmoptic.py                       # écrit l'aperçu, og.jpg sans adresse
   python3 demos/build_dmoptic.py --url https://…       # remplit og:url / og:image APRÈS déploiement
+  python3 demos/build_dmoptic.py --url https://… --logo chemin/logo.png [--logo-mode symbol|full]
+      # 10/10 : le logo du cabinet remplace le petit symbole rond (symbol, défaut), ou le symbole ET le
+      # texte du nom quand le logo contient déjà le nom (full). Depuis le 10/10, le logo du cabinet
+      # (clients/dm-optic/website/logo/) est utilisé PAR DÉFAUT ; --no-logo rend l'ancienne page.
 """
 import argparse
 import base64
@@ -100,7 +110,63 @@ def fix_whatsapp(html):
     return out
 
 
-def draw_og(out, url_label):
+MARK_RE = re.compile(r'<span class="mark" aria-hidden="true"><svg\b.*?</svg></span>', re.S)
+DEFAULT_LOGO = ROOT / "clients" / "dm-optic" / "website" / "logo" / "dm-optique-logo-web.png"
+
+
+def prepare_logo(path, out):
+    """Logo du client → PNG 'retaillé' (hauteur max 160 px, marges blanches rognées)."""
+    src = pathlib.Path(path)
+    if not src.exists():
+        sys.exit("logo introuvable : %s" % src)
+    subprocess.run(["convert", str(src) + "[0]", "-auto-orient", "-fuzz", "6%", "-trim", "+repage",
+                    "-resize", "x160>", "-strip", str(out)], check=True)
+    return out
+
+
+def logo_size(png):
+    w, h = subprocess.run(["identify", "-format", "%w %h", str(png)], check=True,
+                          capture_output=True, text=True).stdout.split()
+    return int(w), int(h)
+
+
+def apply_logo(html, logo_png, mode):
+    """Remplace les trois symboles ronds (en-tête, carte d'identité, pied de page) par le logo du client.
+    Le logo est écrit UNE seule fois (variable CSS) : trois <span> le réutilisent, la page ne grossit pas de 3×.
+    mode « full » : le logo contient déjà le nom → on retire aussi le texte du nom (le logo porte le libellé)."""
+    w, h = logo_size(logo_png)
+    uri = "data:image/png;base64," + b64(logo_png)
+    if mode == "full":
+        span = '<span class="logo" role="img" aria-label="DM OPTIQUE SARL"></span>'
+    else:
+        span = '<span class="logo" aria-hidden="true"></span>'
+    html, n = MARK_RE.subn(lambda m: span, html)
+    if n != 3:
+        sys.exit("symboles remplacés : %d (attendu 3) — le gabarit a changé" % n)
+    if mode == "full":
+        html, k = re.subn(r'<span class="brandtxt">DM OPTIQUE <span class="thin">SARL</span></span>', "", html)
+        html, j = re.subn(r'<span class="idname">DM OPTIQUE SARL</span>', "", html)
+        if k != 2 or j != 1:
+            sys.exit("textes du nom retirés : %d + %d (attendu 2 + 1)" % (k, j))
+        html, q = re.subn(r'<a class="brand" href="#top">', '<a class="brand" href="#top" aria-label="DM OPTIQUE SARL">', html)
+        if q != 2:
+            sys.exit("liens marque : %d (attendu 2)" % q)
+    css = (":root{--logo:url(%s)}\n"
+           ".logo{display:inline-block;flex:none;aspect-ratio:%d/%d;background:var(--logo) center/contain no-repeat;"
+           "mix-blend-mode:multiply}\n"
+           ".brand .logo{height:40px;max-width:190px}\n"
+           ".idtop .logo{height:64px;max-width:200px}\n"
+           "footer.site .logo{height:48px;box-sizing:content-box;border:5px solid #fff;border-radius:10px;"
+           "background-color:#fff;background-origin:content-box;mix-blend-mode:normal}\n") % (uri, w, h)
+    marker = ".nav{display:none}"
+    if html.count(marker) < 1:
+        sys.exit("point d'insertion CSS introuvable")
+    html = html.replace(marker, css + marker, 1)
+    print("✓ logo du cabinet : 3 emplacements (%s), %d×%d px, écrit une fois" % (mode, w, h))
+    return html
+
+
+def draw_og(out, url_label, logo=None):
     """La carte du lien : fond marine, l'anneau, le nom, le numéro. Pas de capture d'écran possible
     dans le bac (aucun navigateur) — donc on la dessine, et elle est vraie."""
     size = "1200x630"
@@ -108,12 +174,16 @@ def draw_og(out, url_label):
     # l'anneau (le motif de la page), en haut à droite
     # v2.2 : l'anneau descend en bas à droite — « DM OPTIQUE SARL » est plus long que « DM OPTIC »
     # et avait besoin de la largeur. Mesuré, pas deviné : à 90 pt, le nom fait 937 px (ImageMagick).
-    args += ["-fill", "none", "-stroke", "#2A5CB8", "-strokewidth", "16",
-             "-draw", "circle 1058,452 1058,574",
-             "-stroke", "#4E7BD4", "-strokewidth", "7",
-             "-draw", "circle 1058,452 1058,501",
-             "-stroke", "#E0703A", "-strokewidth", "12", "-draw",
-             "path 'M 988,402 A 90 90 0 0 1 1058,362'"]
+    if logo:
+        # le logo du cabinet remplace l'anneau : plaque blanche en bas à droite, logo centré
+        args += ["-fill", "#FFFFFF", "-stroke", "none", "-draw", "roundrectangle 820,330 1130,560 20,20"]
+    else:
+        args += ["-fill", "none", "-stroke", "#2A5CB8", "-strokewidth", "16",
+                 "-draw", "circle 1058,452 1058,574",
+                 "-stroke", "#4E7BD4", "-strokewidth", "7",
+                 "-draw", "circle 1058,452 1058,501",
+                 "-stroke", "#E0703A", "-strokewidth", "12", "-draw",
+                 "path 'M 988,402 A 90 90 0 0 1 1058,362'"]
     # les mots
     args += ["-stroke", "none", "-font", "DejaVu-Sans-Bold", "-pointsize", "90",
              "-fill", "#FFFFFF", "-annotate", "+82+300", "DM OPTIQUE SARL",
@@ -122,18 +192,32 @@ def draw_og(out, url_label):
              "-font", "DejaVu-Sans-Bold", "-pointsize", "46", "-fill", "#FFFFFF",
              "-annotate", "+86+455", "656 122 239",
              "-font", "DejaVu-Sans", "-pointsize", "31", "-fill", "#E0703A",
-             "-annotate", "+86+522", "Inscrit à l'Ordre des opticiens depuis 2016"]
+             "-annotate", "+86+522", "Inscrit à l'ONOC"]
     if url_label:
         args += ["-font", "DejaVu-Sans", "-pointsize", "26", "-fill", "#6C7890",
                  "-annotate", "+86+580", url_label]
     args += ["-strip", "-quality", "90", str(out)]
     subprocess.run(args, check=True)
+    if logo:
+        sized = pathlib.Path("/tmp/dmoptic-og-logo.png")
+        subprocess.run(["convert", str(logo), "-resize", "270x190>", str(sized)], check=True)
+        w, h = [int(x) for x in subprocess.run(["identify", "-format", "%w %h", str(sized)], check=True,
+                                               capture_output=True, text=True).stdout.split()]
+        x, y = 820 + (310 - w) // 2, 330 + (230 - h) // 2
+        subprocess.run(["convert", str(out), str(sized), "-geometry", "+%d+%d" % (x, y), "-composite",
+                        "-strip", "-quality", "90", str(out)], check=True)
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--url", default="", help="adresse de la page déployée, pour og:url / og:image")
+    ap.add_argument("--logo", default="", help="fichier du logo du cabinet (remplace le symbole rond)")
+    ap.add_argument("--no-logo", action="store_true", help="reconstruire sans logo (symbole rond d'origine)")
+    ap.add_argument("--logo-mode", choices=("symbol", "full"), default="symbol",
+                    help="symbol : le texte du nom reste ; full : le logo contient déjà le nom")
     opts = ap.parse_args()
+    if not opts.logo and not opts.no_logo and DEFAULT_LOGO.exists():
+        opts.logo = str(DEFAULT_LOGO)   # le logo du cabinet (reçu le 10/10) est le logo par défaut
 
     html = TPL.read_text(encoding="utf-8")
     tmp = pathlib.Path("/tmp/dmoptic-img")
@@ -146,6 +230,11 @@ def main():
         size = prepare(name, target, quality, out)
         html = html.replace(token, b64(out))
         print("  %-22s %s → %5.1f Ko" % (name, target, size / 1024))
+
+    logo_png = None
+    if opts.logo:
+        logo_png = prepare_logo(opts.logo, pathlib.Path("/tmp/dmoptic-logo.png"))
+        html = apply_logo(html, logo_png, opts.logo_mode)
 
     html = fix_whatsapp(html)
 
@@ -169,7 +258,7 @@ def main():
     OUT_CONCEPT.write_text(html, encoding="utf-8")
     PREVIEW.mkdir(parents=True, exist_ok=True)
     OUT_PREVIEW.write_text(html, encoding="utf-8")
-    draw_og(OUT_OG, opts.url.rstrip("/") if opts.url else "")
+    draw_og(OUT_OG, opts.url.rstrip("/") if opts.url else "", logo_png)
     print("✓ aperçu   : %s (%.1f Ko)" % (OUT_CONCEPT.relative_to(ROOT), OUT_CONCEPT.stat().st_size / 1024))
     print("✓ déployable: %s" % PREVIEW.relative_to(ROOT))
     print("✓ vignette  : %s (%.1f Ko)" % (OUT_OG.relative_to(ROOT), OUT_OG.stat().st_size / 1024))

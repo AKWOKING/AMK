@@ -202,6 +202,8 @@ règle §8b, cas 2/3) · C = titulaire nommé (propriétaire-exploitante).
 **La recherche.** Registre ONOC n° 102 (inscription **021/2016**, arrêté 0382) : titulaire **DOMCHE
 NOUMBI**. Aucune page, aucun site trouvés (24/09). Même profil que le n° 6.
 
+> ⚠️ **08/10/2026 — règle credentials (`content/strategy/RULE-CREDENTIAL-CLAIMS.md`) :** les formulations « depuis 2016 » / « existe depuis 2016 » / « exerce depuis 2016 » de ce document **ne sont pas sourcées** (« /2016 » = suffixe d'un numéro de décret, pas une durée). Texte historique conservé tel quel — **NE PAS RÉUTILISER** ; formulation autorisée : « Inscrit à l'ONOC ».
+
 **Le crochet.** Inscrit depuis 2016, introuvable depuis un téléphone.
 
 **Le message :**

@@ -17,7 +17,7 @@ Sources:
 3. Natalie Dawson — *$100M Worth of Sales Knowledge in 19 Minutes* (20 min) — the MINDSET (belief, authenticity, the close)
 4. Patrick Dang — *8 Dark Psychology Sales Techniques* (19 min) — the CLOSE (pain ladder, price+pause, their words)
 
-**Standing rules that override everything:** no sell in message 1 (goal = "send me the preview") · max 3 FUs · pain statements ONLY from verified facts · never name a specific competitor school/clinic · no fake scarcity (small-city networks poison themselves) · sign AKWO KING · never discount — trade scope/timing, not price.
+**Standing rules that override everything:** no sell in message 1 (goal = "send me the preview") · max 3 FUs · pain statements ONLY from verified facts · never name a specific competitor school/clinic · no fake scarcity (small-city networks poison themselves) · sign AKWO KING — **PDFs only** (proforma, contract, proposal; never in WhatsApp/text, ruling 02/10) · never discount — trade scope/timing, not price · **client-facing messages: 2–3 short sentences, no bullets, no emoji chains, warm and human; voice-note and call flags; location honesty → [`CLIENT-MESSAGING-RULES.md`](CLIENT-MESSAGING-RULES.md) (02/10, house standard for every client and prospect)**.
 
 ---
 
@@ -39,10 +39,10 @@ A salesman has 3 jobs: **maximize opportunities → convert the highest % → st
 - **No conversation ends without a scheduled next step.** Not "let me think about it" → silence. Always: "I'll send the preview Tuesday 09:00 — I'll ping you the moment it's out." Both calendars know what happens next.
 
 ### A4. The Kill List
-- The 2 leads at 18 (COMOBIL, OraCare) + any lead who just said yes → written on a visible "TODAY" list (CRM top rows). They get the extra attention daily until they close or park.
+- ~~The 2 leads at 18 (COMOBIL, OraCare)~~ — frozen lists are always wrong (corrected 19/09). The "TODAY" list is **derived daily** (score ≥ 18 · not parked/disqualified · not just contacted) plus anyone who just said yes. `leads/KILL-LIST.md` is generated; it is the only kill list.
 
 > **⚠️ CORRECTION — 19 Sep 2026 (CRM M2, `leads/CONTRADICTIONS.md` §1).** This line is **wrong as written** and must not be followed literally: **COMOBIL has been `parked` since 14 Sep** (King's decision — the DAILY OPS tab says so itself), so it does not belong on a "TODAY" list. An earlier audit claim that DAILY OPS contradicted `Pipeline-Status` on this was **checked and infirmed** — both files agree.
-> **The rule, corrected:** the kill list is **derived** from the CRM, never written in hard: *score ≥ 18 **and** stage ≠ `parked` **and** stage ≠ `disqualified` **and** the lead has not just been contacted.* With the current data that leaves **OraCare** alone, plus anyone who replies. `KILL-LIST.md` will be generated from `leads/CRM.csv` in M6 — this paragraph then becomes the spec for that generator.
+> **The rule, corrected:** the kill list is **derived** from the CRM, never written in hard: *score ≥ 18 **and** stage ≠ `parked` **and** stage ≠ `disqualified` **and** the lead has not just been contacted.* `KILL-LIST.md` IS generated from `leads/CRM.csv` (since 22/09) — this paragraph is its spec. Cleanup 02/10 : le lead nommé ici a été retiré du CRM ; l'historique vit dans `sales/Activity-Log.md`.
 
 ### A5. Referrals: "Who do you know?"
 > A new rep who asked "who would you like to bring?" outperformed #2 by ~50% — only 1 in 4 refers, but referrals close at 80–90%. CAC effectively halves.
@@ -446,3 +446,109 @@ walks in) → F (client-editable site: **destroys the subscription**, premium on
 watch, never promise "DGI-compliant")**. Full reasoning: `sales/ORDRE-DES-OFFRES-2026-09-23.md`. The tunnel,
 in one line: **the page opens the door, the subscription pays the bills, the tool is the next trade — in that
 order, never the reverse.**
+
+---
+
+## STANDING RULES — 02/10 (rulings King, nés du fil Cavisa et du piège de file)
+
+1. **Never re-ask the same question in a follow-up. If the ask is more than 7 days old and unanswered,
+   change the channel (text → voice → call), not the wording.** (Cavisa : les quatre compléments demandés
+   le 24/09 ne sont pas re-posés ; le 10/10 → note vocale, puis appel.)
+2. **Do not use internal fixes as pretexts for client outreach.** Un bug réparé de notre côté (og:image,
+   redéploiement) n'est pas un événement client : on ne motive jamais un message par nos réparations.
+3. **When editing RELANCE_A_JOUR or any dict-keyed scheduling structure, always verify the queue output
+   after rebuild — the rebuild reports rc=0 even when the queue is wrong.** (02/10 : doublons de clés,
+   last-wins — la file affichée restait fausse avec un rebuild vert. Même classe que prose-vs-data et
+   inference-as-fact.)
+
+## STANDING RULES — 03/10 (rulings King, nés du fil Cavisa — généraux, tous prospects)
+
+1. **No unsolicited work on a prospect's demo. If a prospect has not explicitly requested a change, the
+   demo stays untouched. Follow-up is plain, warm, and short — no pretexts, no invented updates, no
+   re-asks. Work resumes on the demo only when the prospect asks for something specific.** Cette règle
+   coupe le pattern où l'orchestrateur invente du travail pour justifier un follow-up : *le follow-up est
+   le follow-up, il n'a pas besoin d'une raison.*
+2. **Séquence fixe tant que le close DM OPTIQUE n'est pas fait :** DM Optique mercredi 07/10 → Cristallin
+   09/10 → Labiomed 13/10 → Cavisa 15/10 et Univers Optique après revue du pitch. Rien ne concurrence le
+   close.
+3. *(re-daté 03/10)* **When editing RELANCE_A_JOUR or any dict-keyed scheduling structure, always verify
+   the queue output after rebuild — the rebuild reports rc=0 even when the queue is wrong.**
+4. **When a client states a requirement, the requirement wins over our recommendation. If we disagree
+   with the requirement, we say so explicitly and ask for a ruling — we don't quietly pitch against it.**
+   (03/10, né d'OraCare — inférence d'attribution — et d'Univers Optique — « web beats app » pitché contre
+   une exigence local-only. La recommandation reste dans nos docs ; le pitch parle au client.)
+5. **Market advice is not a client brief. But when a prospect states a requirement and agrees to
+   collaborate, that agreement IS the brief.** Match the tool to the actual usage context — do not
+   import a CTA model from one context (remote website visitor) into another (in-shop client present).
+   (03/10, Univers Optique : outil de comptoir, pas tunnel.)
+6. **Do not attach a retainer to a tool that has no recurring cost. A one-time, self-contained build
+   gets a one-time price. Ad-hoc work is quoted ad-hoc.** (03/10, Univers Optique v5 : rien sur un
+   serveur ne casse, rien n'est licencié au mois — un mensuel serait une ligne creuse.)
+7. **Do not build alternatives for a prospect before deposit. Alternatives invite paralysis and waste
+   build time on placeholders. One strong recommendation closes better than three options.** (03/10,
+   DM Optique : les options sont de l'or pour un *client* en projet, du friction pour un *prospect* qui
+   va signer — la distinction est le timing. Mood boards de secours seulement, jamais en ouverture.)
+
+## POSITIONNEMENT — 05/10 (ruling King) · la verticale reste, l'offre s'élargit
+Nous ne sommes pas « des sites web pour cliniques ». Nous sommes **le partenaire digital des
+opticiens, cliniques et écoles du Cameroun** — et ce que nous leur vendons, c'est ce dont leur
+business a besoin pour être **trouvable, crédible, joignable** : sites, réseaux sociaux, contenu,
+applications, outils IA. Phrase de positionnement (bilingue, partout) :
+**« Web et solutions digitales pour opticiens, cliniques et écoles au Cameroun. » / « Web and digital
+solutions for opticians, clinics and schools in Cameroon. »** (05/10, ruling King : **« Digital
+partner for opticians, clinics and schools in Cameroon — opticians lead. »** La verticale de tête est
+opticien ; cliniques et écoles restent ouvertes mais ne mènent jamais un pitch.) Preuves : Univers Optique veut « quelque
+chose + site web » (le try-on n'est pas un site) ; le pack DM Optique inclut déjà social + contenu.
+L'offre a grandi plus vite que le mot « site web ». Les pitches DM (déjà conforme) et Univers (une app,
+pas un site) n'ont pas à changer.
+
+## STANDING RULES — 05/10 (ruling King · protocole d'erreur d'inférence)
+8. **Premise check.** Avant toute sortie client-facing (message, pitch, proposition, post) : énoncer
+   la prémisse en une ligne et la confirmer contre le fil/registre réel. Exemple : *« Prémisse :
+   Dr. Bayang a demandé l'app. Vérifié : message du 27/09 — confirmé. »* Prémisse non confirmable =
+   on ne produit pas.
+9. **Second-reader checklist.** Avant de finaliser toute sortie client-facing : « Qu'est-ce que ça
+   suppose qui pourrait être faux ? Que lira le client que nous n'avons pas voulu dire ? Que
+   manque-t-il qu'il demandera ? »
+10. **Log every catch.** Toute erreur d'inférence attrapée (par King ou par l'orchestrateur) va dans
+    `ops/INFERENCE-ERRORS.md` : date, tâche, inférence, vérité, règle née. Sur un mois, le pattern
+    cible la faiblesse — les règles visent la cause, pas le symptôme.
+11. **Tripwire prospection (adopté 05/10) :** si au 20/10 les relances Cristallin et Labiomed sont
+    silencieuses, activer la liste opticiens du 22/09 (10 noms) — opener = étude de cas DM Optique SI
+    l'acompte a été encaissé mercredi ; sinon opener = aperçu concept. Jamais l'un pour l'autre.
+12. **Le contenu suit le momentum du business (05/10) :** on ne publie pas un jour où le business n'a
+    pas avancé — publication conditionnelle (v06 : mercredi SI dépôt encaissé, sinon vendredi). Un
+    calendrier tenu ne vaut pas une semaine sans victoire.
+
+## GRILLE & POSITIONNEMENT — v3 du 05/10 (ruling King)
+**Ligne de tête (partout) :** **« Nous construisons les outils digitaux qui manquent aux opticiens du
+Cameroun. » / « We build the digital tools Cameroon's opticians don't have yet. »** Le try-on est
+l'offre de tête ; site + social = attaches de l'offre app, pas la tête du pitch.
+**Pourquoi opticiens mènent (la raison, pas le signal) :** c'est la seule verticale où nous avons le
+seul produit à ticket élevé (try-on 900k/1,4M). Si une future session relit « opticiens lead » sans la
+raison, qu'elle sache : la raison est le produit, pas le taux de réponse. Une école qui dit oui reste
+bienvenue — elle ne mène pas.
+**Prix v3 :** setup nouveau 200k (150k = fondateur opticien, clos) · non-opticien ≥ 200k ou rien ·
+retainer nouveau 50k/mois (30k = fondateur DM, signé, intouchable) · pushback = scope, jamais total.
+**Clarificatif Essentiel 12k (réponse à King, 05/10) :** le palier Essentiel 12 000/mois = domaine +
+veille + 30 min, proposé le 23/09 dans REVUE-CONTRATS-GRILLE §3, **jamais envoyé à aucun client** ;
+seul Standard 30k a été lu (UNI-LABO). Décision King 24/09 : on n'annonce qu'un palier selon que le
+client garde ou non domaine+hébergement. Depuis le 05/10 : nouveaux retainers = 50k — Essentiel 12k
+est **retiré pour tout nouveau contrat** (sauf ruling contraire) ; il n'existe plus que comme histoire
+de la grille.
+13. **Essentiel 12k : RETIRÉ — 05/10/2026.** Idée juste dans l'ancien modèle ; dans le modèle corrigé
+    (200k setup, 50k retainer) un palier à 12k sabote le palier du dessous et rend Standard cher par
+    comparaison. Mort, ne pas ressusciter. Idem : **30k/mois nouveau contrat = retiré** — 30k n'existe
+    que comme contrat signé de DM Optique (fondateur). Tout nouveau retainer = 50k.
+14. **ONOC = outil de vérification (borné, 05/10).** Avant tout claim « inscrit à l'Ordre » / « inscrit
+    depuis X » dans un pitch ou un post : vérification contre l'annuaire public onocameroun.com. La
+    liste opticiens l'utilise pour sourcer ; tout le reste, pour vérifier seulement.
+15. **Checkpoint D-1 standing (05/10).** *Toute visite client a son checkpoint D-1 20h00 WAT et sa
+    freeze line. Cinq items nommés, un responsable chacun, ligne « frozen » seulement quand tous les
+    cinq sont verts. Rien ne bouge après sans ruling.* Raison : le pattern généralise — DM Optique est
+    le premier, pas le seul ; Cristallin, Labiomed, Univers Optique et toute visite d'onboarding
+    héritent du même format.
+16. **Credentials copiées, jamais fetchées (05/10).** Toute valeur de type credential (NIU, nom
+    fiscal, coordonnées bancaires) utilisée dans un document client est **copiée dans le document
+    source avec date + provenance**, jamais fetchée en direct au moment du rendu. (Né du proforma :
+    le NIU venait de pro.txt d'un autre dépôt — maintenant figé dans PROFORMA-2026-10-05.md.)

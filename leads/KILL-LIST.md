@@ -1,39 +1,38 @@
 # KILL LIST — déduite, jamais écrite en dur
 
-> ⚙️ **Généré le 2026-09-27 par `leads/build/views.py` — ne pas modifier à la main.**
+> ⚙️ **Généré le 2026-10-10 par `leads/build/views.py` — ne pas modifier à la main.**
 > Toute correction se fait dans `leads/build/crm.py` ou `sales/Activity-Log.md`, puis on relance `leads/build/rebuild.sh`.
 
 ## La règle (corrigée le 19/09)
 
-Le playbook §A4 disait « les 2 leads à 18 (COMOBIL, OraCare) ». **C'était faux** : COMOBIL est parké depuis le 14/09 (`leads/CONTRADICTIONS.md` §1).
+Le playbook §A4 codait en dur une kill list figée (« les deux 18 »). **C'était faux** : l'un d'eux était déjà parké depuis le 14/09 (`leads/CONTRADICTIONS.md` §1).
 
 > **score >= 18 · ET étape non parkée · ET non écartée · ET pas de réponse en attente**
 
 ## ⚡ Répondre d'abord
 
-- **Référence Optique Médicale Cinq Sens** — 696 698 136
-- **La Ligne Optic Akwa** — 683 651 108
-
-> **Règle des 90 secondes.**
+*Rien en attente.*
 
 ## 📅 Décisions déjà prises — DATES À VENIR, ne rien faire maintenant
 
-- **Cavisa Optique** — 2026-09-28 · Réponse envoyée le 24/09 à 13:26 (remerciements + les 4 éléments demandés + la question des prix). La balle est chez M. Dongmo. PROPOSITION à confirmer par King : UN rappel court si rien n'est arrivé d'ici là — le redéploiement, lui, attend sa liste
-- **Centre Médical de Bonanjo** — 2026-09-28 · Page complète envoyée le 22/09 à 13:35 (deux coches) avec le prix posé, puis relance 16:24 (une coche) : « vos 9 services centralisés pour orienter les patients de Google vers votre WhatsApp ». DÉCISION KING 16:30 : prochaine vague — jeudi 24/09, sans reposer le prix, une question de calendrier seulement
-- **Labiomed** — 2026-10-01 · A RÉPONDU le 22/09 à 16:41 : « Non pas encore je ne suis pas en place » · « Quand je serai la je vais vous contacter ». Ce n'est ni un oui ni un refus — c'est un REPORT MOTIVÉ (pas encore installé). Réponse envoyée dans l'heure ; on ne le relance plus d'ici le 1ᵉʳ octobre, et ce jour-là sans prix ni question de validation : juste « vous êtes en place ? »
-- **Le Cristallin** — 2026-09-29 · **IL EST MALADE (24/09 10:11) — AUCUNE relance du projet.** King a répondu santé d'abord le 24/09 à 10:13 ; next message = message de santé lundi 29/09 (`sales/Queue-CRISTALLIN-2026-09-29.md`), santé avant le projet, sans reposer le prix. **PRIX POSÉ le 23/09 09:46** : 150 000 FCFA, 50 % = 75 000 pour démarrer, solde à la livraison. GELÉ (King, 23/09) : aucune modification de la page ni du dossier jusqu'au paiement ; les trois compensations (WhatsApp Business, domaine 2027, fiche Google) restent parquées. Cinq écarts à trancher AVANT publication (compte d'assurances FR 18 / EN 17, mur à 19, bloc « 32 ans » en double, horaires vs son flyer, « depuis 2010 ») et le périmètre « hébergement + domaine » à cadrer : son domaine est à lui jusqu'au 13/06/2027
-- **Midas Touch Optic Center (MITOC)** — 2026-09-29 · FU2 envoyée le 22/09 au soir (un jour de retard rattrapé). DERNIÈRE touche : 29/09, puis on classe — trois messages maximum
-- **OraCare Dental Clinic (Oracare237)** — 2026-09-28 · PARKED depuis le message de CLÔTURE du 21/09 17:43 (« last note from me, then I stop ») — ne rien écrire avant lundi 28/09, et ce jour-là un seul message : léger, SANS reproche, justifié par du neuf (les prix et la prise de RDV 24/7 sont sur la page). Nom vérifié : Dr Arnold Nkafu — jamais « Dr Njie », ce prénom n'existe dans aucun fichier
-- **Cabinet Dentaire The Skye** — 2026-09-29 · Relance 2/3 envoyée le 22/09 au soir (réécrite sans reproche). DERNIÈRE touche : 29/09, puis parked daté
-- **Cabinet Dentaire YAKS** — 2026-09-29 · Relance 2/3 envoyée le 22/09 au soir. DERNIÈRE touche : 29/09, puis parked
+- **Cavisa Optique** — 2026-10-15 · Séquence fixée par King : après mercredi ET après Labiomed. Follow-up PLAIN, chaud, court — zéro re-ask, zéro prétexte, zéro pitch, zéro travail sur la démo (règle 03/10 : on ne touche la démo d'un prospect que s'il demande quelque chose). Brouillon du check-in dans sales/Suivi-CAVISA-2026-10-05.md — revue King avant envoi.
+- **Labiomed** — 2026-10-13 · Ruling King 02/10 — on tient SA parole, touche légère : « Bonjour, juste un petit bonjour — vous êtes en place maintenant ? » Pas de prix, pas de question de validation. RULING KING 10/10 : le prix de 100 000 FCFA, déjà annoncé le 19/09, est MAINTENU (on ne le relève pas, on ne le rediscute pas).
+- **Le Cristallin** — 2026-10-23 · 10/10 — LE CLIENT A RÉPONDU le 09/10 (message de King 12:32, réponse 15:21) : la relance du 09/10 est faite et la fenêtre est caduque. Il est chez le kinésithérapeute (problème de santé, détail non consigné) ; King lui a répondu 16:14 « le projet attendra votre rétablissement ». Le message envoyé le 09/10 demandait quand relancer la suite du site (≠ le texte ruled 02/10, « zéro business ») : pas de date donnée. CONFIRMÉ PAR KING (10/10) : prochaine touche = 23/10, santé seulement, zéro business ; jamais avant s'il n'écrit pas.
+- **liste-opticiens** — 2026-10-12 · Début envois LISTE-OPTICIENS-2026-10.md — 1/jour (ruling 05/10) : 12 Bali · 13 DISC (appel, FB introuvable) · 14 Tchaya (FB) · 15-22 les 7 froids. Opener PRODUCT-LED (outils sur mesure + app essayage), JAMAIS 'we do websites'. Étude de cas DM seulement si acompte encaissé, sinon concept (règle 11). Log CRM chaque envoi.
+- **St. Theresa International Bilingual Comprehensive College (STIBCCOL)** — 2026-10-12 · Permission EXPLICITE de repasser en octobre (verbatim 15/09 : « Ok thanks you can get back to me for a follow up » — leur page sera prête en octobre). Relance le 12/10 : « votre page est prête ? » — pas de prix, pas de question de validation. Date choisie le 02/10 pour laisser la semaine de la visite DM OPTIQUE (07/10) libre. La balle est chez nous — PAS une réponse en attente.
 
 > Les échéances **déjà passées** sont dans `Daily-Plan.csv` — c'est la file de travail.
 
 ## 🎯 Score >= 18 et jouable
 
-| Lead | Score | Ville | WhatsApp |
-|---|---|---|---|
-| **COMOBIL – Collège Moderne Bilingue Les Lauréats** | 18 | Douala (Bonamoussadi) | — |
+**Aucun.** Le seul lead à 18 est COMOBIL, parké depuis le 14/09. **C'est la vérité, pas un manque de prospection.**
+
+## 🧊 Score >= 18 mais HORS JEU (parké / écarté / perdu) — mémoire, pas action
+
+| Lead | Score | Étape |
+|---|---|---|
+| COMOBIL – Collège Moderne Bilingue Les Lauréats | 18 | ❌ Perdu |
+
 ## Ce qui alimente la liste quand elle est vide
 
 1. **Une réponse** — priorité absolue.

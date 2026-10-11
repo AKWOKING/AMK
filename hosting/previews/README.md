@@ -30,7 +30,7 @@ This folder is a **drag-and-drop deploy bundle**. Every concept is a single self
 
 | Slug | LIVE link | Lead | Canonical source file |
 |---|---|---|---|
-| **separate Vercel project** (projets `dmoptic` **et** `dmoptic-2`) | ✅ **LIVE https://dmoptic-2.vercel.app/** — déployé **et envoyé par King le 24/09 à 17:05** ; la **v2.1** est bien celle qui est servie (vérifiée en lisant le HTML servi le même soir). ⚠️ l'ancienne `dmoptic.vercel.app` sert encore la v1 : ne plus la considérer comme l'adresse du client. **v2.1** : la page parle au patient, liste ses services et **montre les montures** (vue · soleil · enfants) ; le registre est sorti du texte visible. ⚠️ **Déployer LE DOSSIER ENTIER** (`index.html` **+** `og.jpg`) : sans la vignette, le lien arrive en carte grise. **Puis** `python3 demos/build_dmoptic.py --url https://<adresse>` et **redéployer** : `og:url`/`og:image` ne se devinent pas (§20.7). 0 capture ni mockup (pas de navigateur dans le bac) : l'œil de King sur un téléphone, en plein jour, avant d'envoyer. | **DM OPTIC** (M. Domche Noumbi), Douala — `demo`, aperçu **en ligne et envoyé**, en attente de son retour | `demos/concept-dmoptic-v1.html` ← gabarit `demos/dmoptic-v1.tpl.html` + `demos/build_dmoptic.py` |
+| **separate Vercel project** (projets `dmoptic` **et** `dmoptic-2`) | 🔁 **08/10 : le site est en ligne sur https://dm-optique-sarl.vercel.app/ (nouvelle URL canonique, King) ; `dmoptic-2` sera abandonnée (King) : ne plus la citer ni la balayer. Seule `dm-optique-sarl` compte ; redéployer le dossier (og corrigé) AVANT d'abandonner l'ancienne.** · ✅ **LIVE https://dmoptic-2.vercel.app/** (historique 24/09) — déployé **et envoyé par King le 24/09 à 17:05** ; la **v2.1** est bien celle qui est servie (vérifiée en lisant le HTML servi le même soir). ⚠️ l'ancienne `dmoptic.vercel.app` sert encore la v1 : ne plus la considérer comme l'adresse du client. **v2.1** : la page parle au patient, liste ses services et **montre les montures** (vue · soleil · enfants) ; le registre est sorti du texte visible. ⚠️ **Déployer LE DOSSIER ENTIER** (`index.html` **+** `og.jpg`) : sans la vignette, le lien arrive en carte grise. **Puis** `python3 demos/build_dmoptic.py --url https://<adresse>` et **redéployer** : `og:url`/`og:image` ne se devinent pas (§20.7). 0 capture ni mockup (pas de navigateur dans le bac) : l'œil de King sur un téléphone, en plein jour, avant d'envoyer. | **DM OPTIC** (M. Domche Noumbi), Douala — `demo`, aperçu **en ligne et envoyé**, en attente de son retour | `demos/concept-dmoptic-v1.html` ← gabarit `demos/dmoptic-v1.tpl.html` + `demos/build_dmoptic.py` |
 | **separate Vercel project** (projet `laligne`) | 🟡 **à déployer — King** — aperçu LA LIGNE OPTIC du 24/09 (nuit) : première page **dessinée** du dépôt (aucune photographie), le visage d'abord, choix des cinq formes de visage. ⚠️ **Déployer LE DOSSIER ENTIER** (`index.html` **+** `og.jpg`) ; **puis** `python3 demos/build_laligne.py --url https://<adresse>` et **redéployer** — `og:url`/`og:image` se remplissent là, pas avant (§20.7). Vérifier sur téléphone : le **miroir** (le buste) doit changer de forme **quand on glisse**, les cinq pastilles doivent marcher **même sans JavaScript**, la **lueur** du premier écran doit vivre sans gêner la lecture, et la ligne du premier écran doit se tracer. 0 capture ni mockup (pas de navigateur dans le bac). | **LA LIGNE OPTIC** (Mme Joungo Line Chantale), Akwa — `demo`, cabinet d'accord (« Ok merci beaucoup vyni » 21:04), aperçu construit, lien **pas encore envoyé** | `demos/concept-laligne-v1.html` ← gabarit `demos/laligne-v1.tpl.html` + `demos/build_laligne.py` |
 | **separate Vercel project** (projet `cinqsens`) | ✅ **LIVE https://cinqsens.vercel.app/** — déployé **et envoyé par King le 24/09 à 17:54** ; la page servie a été relue : c'est bien la **passe 2**. ⚠️ `og:url`/`og:image` étaient **vides** à l'envoi (carte sans vignette) : recollés sur l'adresse réelle dans le dépôt — **un seul redéploiement** et les partages suivants porteront l'image. **passe 2** : la page parle au patient et prend le cabinet **à son image** (affiche, rail de cinq teintes qui entre en cascade, **lueur dérivante** au premier écran, bande d'arrivage, deux raccourcis de carte). ⚠️ **Déployer LE DOSSIER ENTIER** (`index.html` **+** `og.jpg`) ; **puis** `python3 demos/build_cinqsens.py --url https://<adresse>` et **redéployer** — `og:url`/`og:image` ne se devinent pas (§20.7). ⚠️ **Ne jamais écrire « vous n'avez pas de page »** : leur blog existe, il s'arrête au **15/10/2021**. 0 capture ni mockup (pas de navigateur dans le bac) : l'œil de King sur un téléphone, FR **et** EN, avant d'envoyer. | **CINQ SENS** (R.O.M. Cinq Sens SARL), Douala — Akwa + Brazzaville — `demo`, aperçu construit, cabinet d'accord (« Ok » 17:04), **lien envoyé à 17:54**, en attente de son retour | `demos/concept-cinqsens-v1.html` ← gabarit `demos/cinqsens-v1.tpl.html` + `demos/build_cinqsens.py`, images `demos/img/cinqsens-*.jpg` |
 | **separate Vercel project** ou `/cavisa/` | ✅ **LIVE https://cavisa.vercel.app/** (déployé par King le 24/09, envoyé à M. Dongmo à 13:09 — il a répondu à 13:16). ⚠️ **À REDÉPLOYER : dossier ENTIER** (`index.html` + `og.jpg`) — la vignette du lien (`og:image`, remplie le 24/09 avec l'adresse réelle) et les photos 2026 ne sont en ligne qu'après ce redéploiement. **Après déploiement : coller l'adresse dans `og:url`/`og:image` (bloc commenté du gabarit), relancer `python3 demos/build_cavisa.py`, redéployer** — sinon le lien arrive chez Cavisa en carte grise. ⚠️ 0 capture ni mockup (pas de navigateur dans le bac) : `node tools/video/capture.mjs --mode hero` à faire sur la machine de King. | **CAVISA OPTIQUE** (M. Dongmo Jean René), Douala — a accepté la démo le **24/09 à 12:23** ; lien promis par King à 12:16 | `hosting/previews/cavisa/index.html` ← `demos/concept-cavisa-v1.html` (gabarit `demos/cavisa-v1.tpl.html` + `demos/build_cavisa.py`) |
@@ -128,3 +128,40 @@ JEMPO, La Béthanie, SJC Sasse, COMOBIL, SAHISCOL, la démo Collège La Retraite
 bundle `/oracare/` (le projet Vercel d'OraCare v3 reste en ligne, indépendant), L'Opticien v1.
 Les **démos publiables sans identité client** (`/demo/`, `/mboacare-demo/`) sont **gardées** : ce sont les
 seules pièces qu'on peut montrer sans le nom d'un client. Tout est récupérable depuis l'historique git.
+
+## 03/10 — CAVISA : redéploiement og:image = INTERNE (ruling King 02/10)
+Le bundle `cavisa/` (index.html + og.jpg, og:url/og:image remplis) est prêt ; le redéploiement se fait
+par drag-and-drop King sur le projet Vercel, **sans jamais en parler au client** — la vignette cassée
+était notre bug interne, pas un événement client. Test de page : `node tools/qa/test_cavisa_page.mjs`
+vert le 02/10.
+
+## 03/10 — CAVISA og-redeploy : **RETIRÉ** (ruling King 03/10)
+L'entrée du 03/10 ci-dessus est annulée : **on ne redéploie PAS, on ne touche PAS la démo.** Un prospect
+qui n'a rien demandé garde sa démo telle quelle ; le follow-up est plain, sans prétexte. Règle générale :
+playbook « STANDING RULES — 03/10 » + PRE-FLIGHT (CRM).
+
+
+## Règle de redéploiement — un fait client qui change (ruling King 08/10)
+
+**Quand un fait client change et qu'un redéploiement est imminent, la page est mise à jour avec la spec, pas
+après.** Un redéploiement est un événement atomique : publier d'anciennes heures à côté de faits nouveaux crée
+un conflit que le client verrait. *Cas fondateur : DM Optique, nouvelles heures du 08/10 14:58 → page v2.3
+(`demos/dmoptic-v1.tpl.html` + reconstruction) avant le dépôt du 09/10.*
+**Corollaire (08/10) :** avant tout redéploiement d'un projet dont la page en ligne a pu être modifiée hors
+dépôt (cas `amk-cm` : pages `sample-polyclinic` / `sample-maternity` en ligne, absentes du dépôt), comparer
+en ligne ↔ dépôt **d'abord**.
+
+## Séquence du vendredi 09/10 — VERROUILLÉE (ruling King 08/10, 11ᵉ message ; **ordre corrigé 08/10, 12ᵉ message**)
+
+**Règle qui gouverne : vérifier AVANT que le client reçoive le lien (règle du 08/10).** King a permuté les anciennes étapes 2 et 3 : le conflit ouvert est **résolu**.
+
+| # | Qui | Quoi |
+|---|---|---|
+| 1 | **King** | Redéploie le site DM Optique (`hosting/previews/dmoptic/`, **dossier entier : `index.html` + `og.jpg`**) avec les correctifs : **cartes de catégorie → CTA WhatsApp (Option B)** et reconstruction `og` |
+| 2 | Orchestrateur | **Vérifie la page en ligne** (~5 min) : balayage crédentiels + pré-flight §13 + **lecture de l'en-tête HTML (`og:url`, `og:image`, `robots` = `noindex,nofollow`)** + les trois liens WhatsApp des cartes |
+| 3 | **King** | **Seulement après vérification réussie** : envoie UN message au client avec la nouvelle adresse (`sales/Send-DM-OPTIC-2026-10-09-NOUVELLE-ADRESSE.md`) |
+| 4 | **King** | Déploie `amk-cm` (`amk-site.zip`) **après** revue sur téléphone — les prix et les affirmations retirés partent ensemble |
+| 5 | Orchestrateur | Vérifie `amk-cm` en ligne |
+| 6 | **King** | Une fois la nouvelle adresse confirmée et **le client l'ayant reçue** : **abandonne `dmoptic-2`** (elle sert encore « depuis 2016 » jusque-là) |
+
+Si l'étape 2 échoue : **le client ne reçoit pas le lien** ; correction au dépôt, nouveau redéploiement, nouvelle vérification.

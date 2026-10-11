@@ -1,6 +1,6 @@
 # UNI-LABO
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-27. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-05. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -10,7 +10,7 @@
 | Type | lab |
 | Ville | Douala (Bonamoussadi, Carrefour Etoo) |
 | Langue de contact | FR/EN |
-| Étape | qualifying |
+| Étape | parked |
 | WhatsApp | 696 13 98 19 |
 | Numéro vérifié | yes |
 | Canal | WhatsApp |
@@ -20,6 +20,10 @@
 | Relances envoyées | 0 |
 | Source | directory |
 | Détail source | Remote-Sweep section C - Lun-Ven 07h-19h, Sam 07h-13h |
+
+## Pourquoi il est écarté
+
+Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, avait répondu, aucun mouvement depuis ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.
 
 ## Contradiction résolue (M2)
 
@@ -33,7 +37,7 @@ DEMANDE DE RENDEZ-VOUS - LE PLUS FORT SIGNAL DE LA CAMPAGNE. Le 19/09 a 20:20, U
 
 ## Prochaine action
 
-**Répondre dans l'heure.** Une réponse humaine est en attente : c'est la priorité absolue (règle des 90 secondes).
+**Aucune.** Parqué — Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, avait répondu, aucun mouvement depuis ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 

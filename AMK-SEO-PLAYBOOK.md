@@ -238,6 +238,8 @@ par un humain comme par un assistant. »*
 
 ---
 
+> **08/10/2026 — liste client :** la procédure SEO pas à pas (HTML, langue, JSON-LD, images, fiche Google, ce qu'il ne faut PAS faire) est dans `content/strategy/SEO-CHECKLIST-CLIENT-SITES-2026-10.md`. **Le §7 ci-dessous supposait qu'AMK était seul à afficher un prix** : le prix est retiré du site (ruling 08/10), donc l'angle « prix » est à ne pas utiliser.
+
 ## 7 · Le tableau de mots-clés (ajouté le 21/09, demande de King)
 
 **Méthode :** relevé dans les pages des concurrents camerounais qui rankent aujourd'hui

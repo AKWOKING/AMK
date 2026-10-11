@@ -1,6 +1,6 @@
 # Centre Médical de Bonanjo
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-27. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-05. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -10,7 +10,7 @@
 | Type | clinic |
 | Ville | Douala (Bonapriso, ancien aéroport) |
 | Langue de contact | FR |
-| Étape | qualifying |
+| Étape | parked |
 | WhatsApp | 694 57 22 77 |
 | Numéro vérifié | yes |
 | Profil vu | Centre Médical de Bonanjo — Bonapriso |
@@ -24,13 +24,17 @@
 | Détail source | maligah + mondocteur237 (consultation 20 000 FCFA, publique) |
 | Site existant | https://bonanjo.vercel.app |
 
+## Pourquoi il est écarté
+
+Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, avait répondu, aucun mouvement depuis ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.
+
 ## Notes
 
 ⭐ A RÉPONDU. Envoyé 18/09 19:42 (2 coches) → « Bjr merci je vous reviens » le 19/09 à 08:44. Maquette personnalisée envoyée le 19/09 : clients/_mockups/bonanjo.jpg. FAIT DÉCISIF : le Dr Tchaleu figure déjà sur mondocteur237.com (annuaire de prise de rendez-vous) → il cherche déjà des patients en ligne, mais sur la plateforme d'un autre. C'est le profil « paie déjà pour du trafic » (§21.7), notre meilleur angle. Services publics vérifiés (maligah) : neurologie, médecine générale, radiologie, chirurgie, gynécologie, pédiatrie, échographie, accouchement. · Le prix est DÉJÀ posé (13:35, et rappelé dans le fil du 19/09) : à la prochaine vague on ne le répète pas, on ne repose qu'une question de calendrier. Le fait décisif du dossier reste l'annuaire `mondocteur237.com` (honoraires publics) — il paie déjà, ailleurs, pour être trouvé.
 
 ## Prochaine action
 
-**Répondre dans l'heure.** Une réponse humaine est en attente : c'est la priorité absolue (règle des 90 secondes).
+**Aucune.** Parqué — Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, avait répondu, aucun mouvement depuis ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 

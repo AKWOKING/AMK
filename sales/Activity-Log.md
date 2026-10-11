@@ -4704,3 +4704,238 @@ qu'on lui donne, pas un discours.
 **Prochaine action, et il n'y en a qu'une** : que King **renvoie les neuf photos** (le bac les a perdues) —
 ou cinq nouvelles, propres, sur fond blanc. Dès qu'elles sont là, le prototype se fait **sur ses vraies
 montures**, pas sur des images générées.
+
+## 2026-10-01 · 15:50 → 17:17 (horloge du bac) · DM OPTIQUE SARL CHOISIT LE PACK GLOBAL — et pose la règle qui décide de tout : la traçabilité
+
+**Le client a tranché.** Sur captures de King (mardi 30/09 au soir → jeudi 01/10, « Today »), DM OPTIQUE
+SARL met fin au suspense du 25/09 (« on verra si on opte sur le premier coffret ou sur l'offre globale ») :
+à **15:50**, « **Le pack global semble nous correspondre** ». Ce n'est plus une offre sur la table, c'est un
+accord en cours de formalisation — le CRM passe `offer` → **`closing`** (`leads/build/crm.py`, table
+`ACCORD_DM_0110`). `won` attendra l'acompte encaissé.
+
+**Les conditions, accordées de part et d'autre :**
+
+| Poste | Montant | Détail |
+|---|---|---|
+| Installation (one-shot) | **150 000 FCFA** | acompte 50 % = **75 000 FCFA** pour démarrer, solde à la livraison |
+| Récurrent | **30 000 FCFA / mois** | 2 posts par semaine + maintenance, **DONT 5 000 FCFA de budget pub test** |
+| Publicité | 5 000 FCFA inclus | Facebook/Instagram, ciblage Bonabéri/Douala → WhatsApp |
+
+**Ce qui a décidé le client, ce n'est pas le prix — c'est la conformité.** DM OPTIQUE SARL est sous
+**contrôle fiscal** : il exige la **traçabilité** complète — paiement par **virement bancaire** (pas de
+cash), **facture proforma PDF + RIB + NIU**, **reçus tamponnés**. C'est une contrainte administrative, pas
+une hésitation : elle se lève avec des **documents**, jamais avec un message. King accepte sans discuter.
+
+**Le fil, minute par minute :**
+
+- **15:50** — « Le pack global semble nous correspondre ».
+- King confirme : 150 000 FCFA d'installation, acompte 75 000, solde à la livraison ; 30 000 FCFA/mois
+  (2 posts/semaine + maintenance) dont 5 000 FCFA de budget pub.
+- Le client expose sa contrainte : SARL sous contrôle fiscal → virement, proforma + RIB + NIU, reçus
+  tamponnés.
+- King promet la **proforma pour DEMAIN (02/10)** et une **visite en personne à Bonabéri cette semaine
+  (mer/jeu, jour à confirmer)**.
+- Le client doit fournir **NIU + adresse fiscale** demain (la raison sociale « DM OPTIQUE SARL » est déjà
+  sur la page depuis le 27/09).
+- **17:08** — « **C'est de confiance et rassurant** ». Puis **deux messages supprimés à 17:08 et 17:09** —
+  contenu **inconnu** : on ne les devine pas, on ne les remplit pas.
+- **17:17** — King précise que les 5 000 FCFA de pub sont **inclus** dans les 30 000 FCFA/mois.
+
+**Ce qui n'est PAS fait, et qu'on n'écrit donc nulle part :** aucun acompte reçu, aucune proforma envoyée,
+ni le NIU ni l'adresse fiscale du client en main. La page reste à `closing` ; on ne dit ni « client », ni
+« contrat signé », ni « acompte payé ». **Rien ne se livre ni ne se publie avant l'encaissement.**
+
+**Prochaine action, et il n'y en a qu'une (02/10)** : envoyer la **facture proforma PDF** (150 000 / acompte
+75 000 / solde livraison ; récurrent 30 000 dont 5 000 pub) **+ RIB + NIU AMK**, et recevoir du client son
+**NIU + adresse fiscale**. Échéance inscrite au plan du jour (`leads/build/views.py`, `RELANCE_A_JOUR`).
+
+**Ce que ça change dans les chiffres gelés du 25/09 :** « 8 posts / 4 vidéos » devient **2 posts par
+semaine** ; le **budget pub de 5 000 FCFA** apparaît, **inclus** dans les 30 000 FCFA/mois (ce n'est pas un
+poste en plus). Le tarif « client fondateur » à 100 000 FCFA n'est plus sur la table : le client a pris le
+**Pack Global à 150 000**.
+
+**Leçons opérationnelles (deal DM Optique, 01/10) — ce que ce fil apprend, et qui vaut pour les prochains :**
+
+1. **C'est la conformité qui a clos, pas le prix.** Le client est une SARL sous contrôle fiscal : ce qui
+   l'a rassuré (« C'est de confiance et rassurant »), ce n'est pas le chiffre, c'est la **traçabilité** —
+   proforma + RIB + NIU, reçus tamponnés, virement bancaire. Face à une entreprise enregistrée, on ouvre
+   avec les **documents**, pas avec la grille.
+2. **Le prix se découpe, sinon il se bloque.** La confusion du 25/09 (« 12 000 vs 30 000 ??? ») vient d'un
+   périmètre dit d'un bloc. Le 01/10, les trois lignes séparées — **one-shot 150 000 / récurrent 30 000 /
+   dont budget pub 5 000** — ont levé l'obstacle. Toujours itemiser : installation ≠ abonnement ≠ publicité.
+3. **Le budget pub de démarrage se met DEDANS, pas à part.** Les 5 000 FCFA inclus dans les 30 000 rendent
+   le récurrent concret : le client n'achète pas « de la maintenance », il achète **de la portée** vers son
+   WhatsApp. Un récurrent sans budget média est une facture ; avec, c'est un moteur.
+4. **Le distant gagne par la vitesse + un ancrage daté.** King est loin, mais il compense par la réactivité
+   (proforma promise pour le lendemain) **et** une **visite en personne à date fixe** à Bonabéri. « On se
+   verra » ne clôt rien ; « je passe mercredi ou jeudi » + les papiers demain, si.
+5. **Ne jamais bloquer le deal sur le lieu.** L'administratif numérique (proforma, échange NIU/adresse
+   fiscale) avance **maintenant** ; la rencontre physique est un **plus daté**, pas un préalable. Le dossier
+   progresse à distance pendant que la visite se cale.
+
+## ven 02/10 (soir) — CORRECTION : « premier lead de la campagne » (OraCare) était une attribution FAUSSE
+King a tranché (réponse du 02/10) : OraCare n'a JAMAIS été un lead du contenu. La découverte s'est faite
+via **la propre pub Meta du cabinet** (Instagram/Facebook), pas via une vidéo AMK. L'entrée du 14/09 ci-dessus
+(« C'est le premier lead de la campagne… ») et `source_detail = « Premier lead de la campagne — vérifié par
+King »` étaient une INFÉRENCE écrite comme un fait (« la seule vidéo publiée, donc c'est elle ») — même classe
+que le bug prose-vs-data du 21/09. Conséquences corrigées le 02/10 (lot LOT_0210_KING) : source →
+`discovery_via_their_ad` (nouvelle catégorie, veille des pubs Meta) · **contenu → inbound = 0 pour 0** ·
+OraCare déclaré MORT par King → stage `lost` · règle ajoutée au KB : ne jamais déduire le source_detail d'un
+lead content de « la seule vidéo publiée » — vérifier d'abord que le lead a vu la vidéo.
+
+## ven 02/10 (nuit) — RESET PIPELINE (deuxième ruling du jour) + CLEANUP ORACARE
+- **OraCare sort du CRM** : fiche supprimée, ligne CSV supprimée, entrées de vues supprimées. Restent
+  uniquement `demos/concept-oracare-v2.html` + `v3.html` (relabelés « reusable concept — dental/medical
+  clinics, do not delete ») et `sales/Deep-Dive-Research.md` (catégorie dentistes). NB : `v1` n'existait
+  pas dans `demos/` (seuls v2, v3 et le script de build). Journaux historiques (ce fichier, CONTRADICTIONS)
+  conservés : ils racontent l'erreur d'attribution, pas un lead actif.
+- **Bulk close** : COMOBIL → lost (jamais contacté, aucun déclencheur de résurrection) ; 20 leads contactés
+  → parked avec motif daté « bulk close 02/10, ruling King » (fils clos ; dépark si retour spontané).
+  Le pipeline actif = 4 leads (Cristallin, Labiomed, Cavisa, Univers Optique) + DM OPTIQUE en closing +
+  St Theresa (relance 12/10 tenue, permission d'octobre) + 47 lignes jamais contactées (stock, pas de
+  follow-up actif).
+- Univers Optique : intelligence marché loguée en KB §3 (bundle « something + website ») + opportunité
+  virtual try-on → recherche `clients/univers-optique/research/try-on-options-2026-10.md`. Aucun contact
+  avant lecture de King.
+
+---
+
+## 08/10/2026 — correction credentials (lignes historiques non réécrites : 3893, 4068, 4120)
+
+⚠️ **08/10/2026 — règle credentials (`content/strategy/RULE-CREDENTIAL-CLAIMS.md`) :** les formulations « depuis 2016 » / « existe depuis 2016 » / « exerce depuis 2016 » de ce document **ne sont pas sourcées** (« /2016 » = suffixe d'un numéro de décret, pas une durée). Texte historique conservé tel quel — **NE PAS RÉUTILISER** ; formulation autorisée : « Inscrit à l'ONOC ».
+
+---
+
+## 08/10/2026 — DM Optique : 13:26 envoi · 14:58 réponse
+
+- **13:26 — envoi (King) :** WhatsApp, jeu de quatre questions numérotées (planning site). Texte exact non transmis à l'orchestrateur.
+- **14:58 — réponse du client :** quatre réponses ; prix non affichés (contrainte réglementaire invoquée) · taxonomie confirmée pour 400 montures · noms « trop diverses » · heures « Examen de vue 8h30–13h00 · Autres besoins 8h30–17h30 ». Fragments rapportés par King ; verbatim à coller. Détail : `clients/dm-optic/onboarding/post-deposit-email.md`.
+- **Suite :** spec révisée ; page v2.3 prête (redéploiement King ven. 09/10 matin).
+- **VERBATIM (08/10 soir, transcrit des captures de King ; orthographe du client conservée) :**
+  - 13:26 King : « Bonjour Monsieur, pour bien avancer sur le site, j'aurai besoin de vos horaires d'ouverture et de la fourchette de prix de vos montures (min/max). Est-ce qu'elles ont des noms/références spécifiques, et vous en avez combien environ en stock actuellement ? »
+  - 14:58 le client : « Horaires d'ouverture et fermeture : Examen de vu : 8h30 - 13h00 / Autre besoins : 8h30 - 17h30 » · « Pour le prix des montures c'est interdit de le diffuser car nous sommes régit par le ministère de la Santé Publique. » · « Les montures ont des noms et références mais trop diverses. » · « Stock de 400 montures environ »
+  - 15:00 le client : « Pour Autres besoins vous me faites signes » · King : « D'accord monsieur ». Lecture non confirmée : « pour d'autres besoins, faites-moi signe ».
+  - La page garde l'orthographe corrigée ; le journal garde celle du client. L'interdiction des prix est une **affirmation du client**, non recoupée.
+
+---
+
+## 08/10/2026 — Univers Optique : fil WhatsApp relevé · message de découverte 15:21 · prix amk-cm retirés
+
+- **Fil (captures de King) :** 25/09 07:35 King confirme le rendez-vous de 10h00 · 27/09 19:08 King : prototype en préparation, photos déjà prises, question de l'appareil · **27/09 21:48 client : « Tablette ou smart Phone »** · **08/10 15:21 King (envoyé) : « Bonjour Docteur ! L'outil d'essayage avance très bien. Sur 10 personnes qui entrent dans votre cabinet, environ combien repartent sans rien acheter ? »** Brouillon plus long (vente moyenne ; « toute informations sera utile ») = NON ENVOYÉ.
+- **Lecture :** question de découverte (remplit la feuille de ROI), pas un pitch ; onze jours après la dernière réponse du client, sans accuser réception de « Tablette ou smart Phone ». Pitch toujours retenu jusqu'à l'acompte DM Optique.
+- **Fenêtre :** ven. 09/10 15:21 (24 h ouvrées, on attend) · mar. 13/10 note vocale (`Follow-up date`) · jeu. 15/10 appel 2 min · une réponse annule la fenêtre. Détail : `clients/univers-optique/pivot-essayage-2026-09-25.md` §10.
+- **amk-cm (ruling King, 7e message) :** AUCUN prix sur le site AMK (les clients demandent des choses différentes ; le prix suit le périmètre). Retirés de `site/index.html`, `creation-site-web-ecole-cameroun.html` et `creation-site-web-clinique-cameroun.html` : section tarifs (désormais « Devis »), JSON-LD `price`/`priceRange`, FAQ, assistant du site, formule « fondatrice », « même prix pour tous / pas de remise », répartition 50/50 et pourcentage d'acompte. La règle interne 8a (pas de remise) reste interne. Non déployé : redéploiement = action de King.
+- **08/10 (soir) — passe SEO `amk-cm` (8e message de King) :** « fais tout ce qu'il faut pour améliorer notre site, c'est un apprentissage pour nos clients ». Q1 oui : trois affirmations retirées. Appliqué dans `site/` (non déployé, pas de déploiement automatique) : français par défaut dans le HTML, titre/description, nom unifié = fiche Google, WebP (2,28 → 0,47 Mo), `mitoc.html` noindex, sitemap honnête, promesses de prix périmées retirées, contraste des boutons de langue. Outils : `tools/seo/bake_default_lang.py`, `tools/qa/test_amkcm_lang.mjs`. Liste client : `content/strategy/SEO-CHECKLIST-CLIENT-SITES-2026-10.md`. À faire par King : déployer, Inspection d'URL, fiche Google. Détail : `site/SEO-REVIEW-2026-10-08.md` §8.
+
+## 08/10/2026 (soir, 9e message de King) — rulings, DM Optique en ligne, Univers 15:21
+
+- **DM Optique en ligne :** `https://dm-optique-sarl.vercel.app/` (King). Lue par l'orchestrateur : « inscrit à l'ONOC », horaires et adresse du client, aucun prix, aucun « depuis ». **L'ancienne `dmoptic-2.vercel.app` sert toujours « depuis 2016 »** (nom « DM OPTIC ») : à rediriger ou retirer, **après** le redéploiement du og (voir `ops/QA-NOTES.md`). Le client a reçu l'ancienne adresse le 24/09.
+- **Univers 15:21 :** envoyé (capture de King). `qualifying` · `sent` · relance 2026-10-13 (déjà dans `leads/CRM.csv`, relu).
+- **Rulings :** (1) affirmations non sourcées retirées, règle permanente ; (2) **accueil = écoles et cliniques uniquement**, la page opticiens vient après la mise en ligne et l'approbation du site DM ; (3) français par défaut accepté ; (4) ligne de zone → « Notre équipe travaille à distance avec des entreprises partout au Cameroun. » ; (5) `mitoc.html` noindex accepté ; (6) `clinic-bonaberi` : vérifié le 08/10 (nom fictif, « Template », « demo values ») → reste indexable ; (7) fiche Google : action de King (description, sept jours d'horaires, WhatsApp, vraies photos, aucun avis avant le premier client livré) ; (8) `content/strategy/SEO-CHECKLIST-CLIENT-SITES-2026-10.md` = actif permanent, passé à chaque livraison de site client.
+- **Trouvé et corrigé :** `site/sample-school.html` publiait une **note inventée** (4,9 sur 87 avis) et un **événement fictif** (« Open House », 18/10) en données structurées, sur une page indexable du sitemap. Retirés (JSON-LD valide, CRLF intact).
+
+## 08/10/2026 (soir, 10e message) — une seule adresse pour DM Optique
+
+- **Ruling King :** `dmoptic-2.vercel.app` **sera abandonnée** ; **la seule adresse à considérer est `https://dm-optique-sarl.vercel.app/`.** Appliqué : `site_url` du CRM, `build-notes.md` (commande `--url`), `dossier.md`, `brief.md`, `pre-launch-checklist.md` 10.2, `hosting/previews/README.md`, `ops/TOOL-SCAN.md` (liste du dimanche), `ops/QA-NOTES.md`. Les entrées du 24/09 et 25/09 gardent l'ancienne adresse comme historique (elles décrivent ce qui a été envoyé).
+- **Condition restante :** le dépôt a `og:url` / `og:image` sur la nouvelle adresse depuis `797a024`, mais la page en ligne n'a pas été redéployée avec : redéployer **avant** d'abandonner `dmoptic-2`, sinon l'aperçu WhatsApp perd son image.
+- **À vérifier avec King (non tranché) :** le client a reçu `dmoptic-2` le 24/09 ; s'il n'a pas reçu la nouvelle adresse, son ancien lien mourra à l'abandon.
+
+## 08/10/2026 (soir, 11ᵉ message) — séquence du vendredi, message « nouvelle adresse », règle pré-flight
+
+- **Règle permanente (King) :** chaque réponse de l'orchestrateur à King ouvre sur l'en-tête §0 ; chaque tâche passée par le chef de cabinet le rappelle en tête. Écrit en première ligne de `PRE-FLIGHT.md`.
+- **Séquence du vendredi 09/10 (verrouillée) :** redéploiement DM (og + masquage de catégories) → message au client → vérification en ligne → déploiement `amk-cm` après revue téléphone → vérification → abandon de `dmoptic-2`. Détail : `hosting/previews/README.md`.
+- **Message client (brouillon, King envoie) :** `sales/Send-DM-OPTIC-2026-10-09-NOUVELLE-ADRESSE.md`.
+- **Ruling site :** pas de section montures (juste, livré tel quel : les photos viennent après l'acompte, aucun prix ne peut être montré) ; interface de catégories cachée tant qu'aucune carte n'existe. **Constat :** la page du dépôt n'a pas de pills ni de recherche ; question ouverte posée à King sur l'élément visé.
+- **Contradiction de King corrigée par lui-même :** « vérifier dans le tableau de bord » vs « pas de déploiement automatique » → pas de déploiement automatique, King déploie à la main.
+
+## 08/10/2026 (12ᵉ message) — DM Optique : Option B, brief client, séquence, règle git
+
+- **Ruling King (Option B), 08/10/2026 :** « Nos montures » = **trois cartes de catégorie interactives (vue · soleil · enfants), chacune un CTA WhatsApp** ; **ni page catalogue, ni filtres, ni recherche** sur le socle. Message de la carte vue : « Bonjour DM Optique, je suis intéressé par vos lunettes de vue. Quelles montures avez-vous disponibles ? » ; soleil et enfants : même structure, catégorie changée. La page `/montures` est approuvée pour un **build futur, après dépôt** — pas pour ce socle.
+- **Appliqué le 08/10 :** `site/SPEC-PAGES-v1.md` (bannière, §1 Accueil, note §2) · `demos/dmoptic-v1.tpl.html` + reconstruction (`--url https://dm-optique-sarl.vercel.app/`) · test de page 45 → 50 assertions. **À redéployer par King le 09/10.**
+- **Nouveau document :** `clients/dm-optic/site/CLIENT-REQUIREMENTS-BRIEF.md` — source de vérité des rulings sur le site DM Optique (six sections + écarts + journal d'extension).
+- **PRE-FLIGHT :** §0b « le dossier client d'abord » ajouté ; précondition mécanique avant tout commit (`git log -1 --format=%H` = `git ls-remote origin <branche>`) ajoutée à §1e.
+- **Séquence du vendredi corrigée (King) :** 1 redéploiement → 2 vérification en ligne → 3 envoi de l'URL au client **après** vérification → 4 `amk-cm` → 5 vérification → 6 abandon de `dmoptic-2`. Le conflit « envoyer avant de vérifier » est résolu.
+- **Correction d'une affirmation de l'orchestrateur :** « pas de navigateur dans le bac » était faux — `bash tools/video/install.sh` installe un Chromium headless (~70 Mo, hors dépôt) ; utilisé le 08/10 pour rendre la page DM Optique en mobile.
+- **Non tranché, signalé à King :** périmètre (une page vs cinq) · séance photo (offerte vs 15 000) · « DM Optique » (cartes) vs « DM OPTIQUE SARL » (autres messages) · verbatims 13:26 / 14:58 toujours à coller.
+
+## 08/10/2026 (15ᵉ message — calendrier de contenu)
+- **Livré :** `content/strategy/CALENDRIER-4-SEMAINES-2026-10-12.md` (12 publications, 13/10 → 07/11, point kill rule 04/11) et 3 carrousels FR prêts à poster (`content/carousels/`, 21 slides 1080×1350, légendes, hashtags, textes alternatifs). Outil : `tools/content/render_carousels.py`.
+- **Non publié, non validé :** tout reste à relire par King. **À trancher :** offre « aperçu gratuit » telle quelle · post fondateur (100 000 F) · bio « 24h » · lien Threads · échantillon du test (3 vidéos avant le 04/11, pas 4).
+
+## 08/10/2026 (16ᵉ message — prochain exercice de calendrier)
+- **Instruction de King :** refaire le même exercice (calendrier 4 semaines + carrousels prêts) pour **DM Optique** quand l'acompte sera encaissé et le contrat signé pour la gestion des réseaux et la création de contenu. Consigné dans `content/strategy/CALENDRIER-4-SEMAINES-2026-10-12.md` §7.
+- **Ouvert, signalé à King :** cadence/plateformes signées (2/semaine, Facebook + TikTok) ≠ exercice d'aujourd'hui (3/semaine, Instagram) · conditions « vidéo produite par AMK » vs plan du 01/10 « script seulement » · le « contrat » est-il le document du 07/10 ?
+
+## 10/10/2026 (samedi, 17e message de King) — Univers Optique : réponse du client 09/10, lien d'essai envoyé 10:35 · programme du jour
+
+- **Capture de King (le fichier n'est pas versé au dépôt) :** 09/10 12:31 client : « Merci j'attends le modèle » · 12:32 client : **note vocale 0:14, contenu NON transcrit** · 09/10 13:20 King (fragment lisible) : « …rien ne se finalise sans votre validation. Je vous envoie le lien ce soir… » · **10/10 10:35 King : lien `https://uo-essayage-camera.vercel.app` + un message d'explication** (texte non capturé), un seul ✓ = non délivré à l'heure de la capture. Les 08/10 15:21 (lu ✓✓) et 27/09 21:48 « Tablette ou smart Phone » sont déjà journalisés.
+- **Règle appliquée (§7, la réponse annule la fenêtre) :** la voix du mar. 13/10 et l'appel du jeu. 15/10 sont **sans objet**. `Follow-up date` 2026-10-13 → **2026-10-14** (`leads/build/crm.py`, `REPONSE_UNIVERS_2509`, puis `rebuild.sh`). Nouvelle fenêtre = depuis la **livraison** du lien ; lecture stricte lun–ven (hypothèse de la règle, à confirmer) : palier 2 voix mer. 14/10 seulement si le client reste muet ; lecture calendaire : voix lun. 12/10, appel sam. 17/10. **La ligne « Relance 1/3 Univers Optique » du `Daily-Plan.csv` est générée par l'étape, pas par la date : elle ne se déclenche PAS.**
+- **Lu en ligne le 10/10 (`fetch_page`, texte seulement) :** `uo-essayage-camera.vercel.app` = « UO · Essayage en direct (caméra) · prototype J2 », six montures, caméra + mode photo, « Aucune image ne quitte l'appareil », ajout de montures par le bouton +, **aucun CTA ni WhatsApp** (conforme au scope local-only). Texte d'aide : Chrome ou Edge, connexion nécessaire au premier lancement. **Le code de cet outil n'est pas dans le dépôt** (seulement `clients/univers-optique/assets/try-on-v1/`) ; l'URL publique est un prototype de démonstration, pas la livraison (`SCOPE-2026-10.md` : app Android locale, rien d'hébergé).
+- **Ce qui reste à King :** transcrire la note vocale 0:14 (verbatim) ; coller le texte du message de 10:35 ; dire si le client demande un prix (pitch v5 retenu jusqu'à l'acompte DM Optique, décision de King) ; confirmer la lecture lun–ven ou calendaire.
+- **Lu en ligne le 10/10 (texte) :** `amk-cm.vercel.app` = version du dépôt (FR par défaut, section « Devis » sans prix, phrase de zone) → déployé. `dm-optique-sarl.vercel.app` = contenu AVANT l'option B (les trois cartes « Nos montures » n'ont pas de lien WhatsApp dans le texte rendu) → **redéploiement de `hosting/previews/dmoptic/` non fait ou non pris en compte**. `dmoptic-2.vercel.app` = toujours en ligne avec « depuis 2016 ».
+- **Dû hier (ven. 09/10) et à confirmer par King :** Le Cristallin « santé d'abord » (date 2026-10-09, maintenant dans le plan du jour).
+
+## 10/10/2026 (samedi, 18e message de King) — note vocale d'Univers (relayée) · vérification en ligne DM Optique : ÉCHEC, le client ne reçoit pas le lien
+
+- **Note vocale d'Univers du 09/10 12:32 (0:14), relayée par King en français, PAS verbatim (paraphrase, langue d'origine non précisée) :** (1) il demande de **ne rien finaliser sans qu'il le voie** ; (2) **ceux qui entrent et repartent sans acheter sont « trop nombreux »**. Aucun chiffre donné : la case N de la feuille de ROI (`pivot-essayage-2026-09-25.md` §9.2) reste VIDE — « trop nombreux » ne se convertit pas en nombre, et ne sert dans aucun contenu public (zéro preuve avant signature). Le point 1 recoupe la phrase de King du 09/10 13:20 (« rien ne se finalise sans votre validation ») ; il n'y a pas de demande de prix. Prochain geste : attendre sa réaction au lien d'essai ; ne PAS reposer la question du chiffre (règle : pas de re-ask) — il se recueille avec l'outil en main, au cabinet.
+- **Séquence DM Optique, étape 2 (King a donné `https://dm-optique-sarl.vercel.app/#top`) — lecture en ligne 10/10 :** ÉCHEC sur deux points. **(a)** le texte rendu est celui d'AVANT l'option B : les trois cartes « Nos montures » (lunettes de vue / de soleil / enfants) n'ont aucun lien WhatsApp ; seul le bouton « Demander si c'est en boutique » existe. **(b)** `https://dm-optique-sarl.vercel.app/og.jpg` répond **404 NOT_FOUND** alors que `og:image` du dépôt pointe dessus : `og.jpg` n'a pas été envoyé avec `index.html` (l'aperçu WhatsApp n'aurait pas d'image). Le dossier entier `hosting/previews/dmoptic/` (index.html 339 962 o + og.jpg 74 913 o) n'a donc pas été déployé tel quel. **Le client ne reçoit PAS le lien** tant que l'étape 2 n'est pas verte. Le reste du texte lu est conforme : « inscrit à l'ONOC », horaires du client, adresse, aucun prix, aucun « depuis ». Non vérifiable par `fetch_page` : `<head>` (robots, og:url).
+
+## 10/10/2026 (samedi, 19e message de King) — DM Optique redéployé : vérification en ligne · liens sociaux · raison de l'absence de catalogue
+
+- **Vérification de l'étape 2 (lecture de `dm-optique-sarl.vercel.app`, texte entier, deux morceaux) :** les **trois cartes ont maintenant leur lien WhatsApp** (vue / soleil / enfants, messages du brief §5) ; aucun prix, aucun « depuis », « inscrit à l'ONOC », horaires et adresse du client ; photos légendées « Photo d'illustration ». `/og.jpg` : **404 avant, plus de 404 maintenant** (l'outil de lecture renvoie 500 sur toute image, y compris une image connue d'`amk-cm` : « n'est plus un 404 » est une inférence, pas une vue de l'image). **Non vérifiable ici :** `<head>` (`robots`, `og:url`) et le rendu de l'aperçu WhatsApp : King ouvre `view-source:` et cherche « noindex », ou colle le lien dans une conversation à lui pour voir l'aperçu.
+- **Liens TikTok et Facebook :** le client les a demandés (25/09). **Proposition (en attente de King) : pas de placeholder maintenant** — un lien vers une page qui n'existe pas est un CTA mort (brief §5), un lien vers un homonyme serait pire, et aucune page n'est créée avant l'acompte. Ils sont ajoutés avec les vrais liens à la création des comptes au nom du client (brief §3.4), et le message d'envoi l'annonce.
+- **Message d'envoi :** version avec la raison de l'absence de catalogue ajoutée à `sales/Send-DM-OPTIC-2026-10-09-NOUVELLE-ADRESSE.md` (raison = pas encore de photos de ses montures, le site ne montre que du vrai ; le mot « catalogue » n'y figure pas parce que le périmètre une-page/cinq-pages n'est pas tranché). Extension du brief : journal d'extension.
+- **Reste avant l'envoi :** King valide le texte ; il vérifie la tête / l'aperçu ; il envoie ; **puis** il abandonne `dmoptic-2` (toujours « depuis 2016 » à la dernière lecture).
+
+## 10/10/2026 (samedi, 20ᵉ message de King) — cinq pages / Cloudflare · « DM OPTIQUE SARL » partout · trois questions dirigées · pas de placeholder social
+
+- **Rulings (King, verbatim relayé) :** (1) « on avait conclu sur 5 pages tant qu'ils peuvent être mis sur Cloudflare » — **aucune trace antérieure au dépôt**, enregistré comme ruling du 10/10 (brief §3.6, écart 1). Cloudflare Pages gratuit : bande passante illimitée, 20 000 fichiers/déploiement, 25 Mo/fichier (sources de blog, à revérifier dans la doc Cloudflare). **Point de formulation restant :** les conditions lues par le client disent « une page ». (2) « oui pas de placeholder social ». (3) « M OPTIQUE SARL toujours » **lu comme « DM OPTIQUE SARL »** (à corriger par King si ce n'est pas ça). (4) la fin « dites-moi ce que vous en pensez » est trop vague : **deux à trois questions dirigées** (couleur, logo, image du premier écran).
+- **Appliqué :** `demos/dmoptic-v1.tpl.html` (3 messages de cartes, FR et EN : « DM OPTIQUE SARL »), `tools/qa/test_dmoptic_page.mjs` (attentes alignées, plus aucune occurrence de « DM Optique » dans la page), reconstruction `demos/build_dmoptic.py --url https://dm-optique-sarl.vercel.app` : `index.html` change de 3 lignes, `og.jpg` identique. **Tests :** 0 faute `audit_html`, `audit_images` 0, `check_inline_js` 0, `test_dmoptic_page.mjs` toutes les assertions passent. **À redéployer par King** (la page en ligne dit encore « DM Optique » dans les trois messages de cartes).
+- **Brouillon d'envoi :** nouvelle version avec trois questions (couleur / logo / premier écran), premise check par fait ; l'ancienne version du 19ᵉ message est barrée. La page n'a **aucune photo** sur le premier écran et **aucun logo du client** : le symbole rond est dessiné par AMK ; les questions le disent exactement.
+
+## 10/10/2026 (samedi, 21ᵉ message de King) — DM Optique redéployé (« DM OPTIQUE SARL ») · « je » et ton semi-formel · une page ou cinq : pareil
+
+- **Déploiement :** King a redéployé (« Redéploie done », lu comme « redéployé ») ; lecture de la page en ligne : **les trois liens de cartes portent « Bonjour DM OPTIQUE SARL, je suis intéressé… »**. Non vérifié ici : `<head>`, rendu, aperçu WhatsApp. L'orchestrateur ne déploie pas (aucun accès Vercel dans le bac ; ruling du 08/10).
+- **Rulings :** « une page ou 5 c'est pareil pour nous » (brief §3.6, écart 1 : clos, pas de supplément) · messages : **« je » au lieu de « nous », ton semi-formel**, la phrase « nous ne montrons que du vrai » est inutile (retirée) → `sales/CLIENT-MESSAGING-RULES.md` §8 (portée à tous les clients : à confirmer).
+- **Message d'envoi :** nouvelle version « je » marquée **À ENVOYER** dans `sales/Send-DM-OPTIC-2026-10-09-NOUVELLE-ADRESSE.md` ; la version du 20ᵉ message est barrée. Reste à King : relire, envoyer, **puis** abandonner `dmoptic-2`.
+
+## 10/10/2026 (samedi, 22ᵉ message de King, 11:40) — captures DM OPTIC et Le Cristallin · programme
+
+- **DM OPTIC (capture) :** (1) **le verbatim du 13:26 et du 14:58 était déjà archivé** (CRM + journal du 08/10) ; la capture le confirme mot pour mot, avec **une correction** : le 13:26 dit « j'aurais besoin » (et non « j'aurai »), corrigé dans `crm.py`, le brief et `post-deposit-email.md` (le journal du 08/10 reste tel quel, append-only). Le brief et `post-deposit-email.md` étaient périmés (« à coller par King ») : mis à jour. (2) **10/10 11:38 : King a envoyé** le lien + la raison des illustrations + trois questions (le texte du 21ᵉ message, **sans les numéros**), double ✓, client « vu à 11:37 ». (3) **La carte d'aperçu n'a pas de vignette** : titre et description corrects (balises `og` en ligne), image absente → `og.jpg` à vérifier (cache WhatsApp d'un lien déjà partagé avant le correctif, ou fichier). (4) **15:00 « Pour Autres besoins vous me faites signes »** : lecture non confirmée, voir brief (la page n'est pas modifiée). CRM : `Follow-up date` 2026-10-09 → **2026-10-14** (voix seulement si muet, lecture lun–ven).
+- **Le Cristallin (capture) :** 24/09 10:10-10:11 client « Bonjour je vais te revenir » / « Je suis malade » ; 24/09 10:13 King (santé d'abord) ; 24/09 10:25 « Merci ». **Ven. 09/10 12:32 King (ENVOYÉ) :** « Bonjour M. Messoua, j'espère que vous vous portez beaucoup mieux et que vous avez bien récupéré ! Je venais aux nouvelles pour savoir quand vous souhaitez qu'on relance la suite du site. » — **ce n'est pas le texte ruled du 02/10** (« zéro business ») : il pose la question « quand » ; constat, pas reproche. **Réponse du client 15:21 « Bonsoir mon frère »** ; King 15:43 (en tutoyant) ; le client parle de sa santé (15:54-15:55, **détail médical non consigné au dépôt**, il est chez le kiné) ; King 16:14 « …le projet attendra votre rétablissement ». **Le client n'a pas donné de date.** La réponse annule la relance : `RELANCE_A_JOUR` (`views.py`) passe de 2026-10-09 à **2026-10-23, PROPOSITION À CONFIRMER PAR KING** (santé seulement, zéro business). Le plan du jour ne contient plus Le Cristallin.
+- **Plan du jour (`Daily-Plan.csv`) :** deux lignes « Relance 1/3 » (DM Optique, Univers Optique) — générées par l'étape, **à ne pas exécuter** (les deux fils ont un message envoyé et une fenêtre en cours).
+
+## 10/10/2026 (samedi, 23ᵉ message de King, 12:12) — le client DM OPTIC répond aux trois questions · acompte non encaissé · Le Cristallin 23/10 confirmé
+
+- **Client (notification, ≈11:58, verbatim) :** « Oui le bleu me convient » · « Oui j'ai un logo de la structure » · « C'est mieux la photo du cabinet ». Il a répondu en ≈20 minutes. La réponse annule la fenêtre §7 ; CRM `Follow-up date` 2026-10-14 → **2026-10-12 (proposition : logo reçu ? virement en cours ?)**.
+- **Rulings King :** rien n'est encaissé ; **on fait ces dernières modifications (logo, photo du cabinet) puis on rappelle** que le démarrage dépend de l'acompte ; `dmoptic-2` à abandonner maintenant (toujours en ligne à 12:12 avec « depuis 2016 » : action de King sur Vercel) ; **Le Cristallin : oui, 23/10** (plus une proposition).
+- **Avis de l'orchestrateur, écrit dans le brouillon :** ne pas écrire « le projet aurait pu être fini si on nous avait payé » ni « les pages devaient déjà être créées » : nos conditions du 07/10 disent « installation à l'encaissement de l'acompte — comptes, site, premier contenu », donc le client peut répondre que rien ne devait exister avant. Rappel posé à la place sous forme de coût du retard + question sur le virement. **Décision finale : King.**
+- **Brouillons :** deux messages dans `sales/Send-DM-OPTIC-2026-10-09-NOUVELLE-ADRESSE.md` (suite du 23ᵉ message) : (1) maintenant, accusé de réception + demande du logo seulement ; (2) quand le logo est en ligne, rappel de l'acompte + « où en est le virement ? ». La **photo du cabinet** n'existe pas : le premier écran reste bleu jusqu'à la séance photo.
+
+## 10/10/2026 (samedi, 24ᵉ message de King, ≈12:30) — message 1 envoyé · `dmoptic-2` abandonné · outil du logo prêt
+
+- **Correction de l'entrée précédente :** la réponse du client aux trois questions est de **11:51** (capture WhatsApp Web), pas « ≈11:58 » (déduite de « il y a 14 min »). Corrigé dans le CRM, le brief et le brouillon.
+- **Faits (capture) :** King a envoyé le **message 1 à 12:15** ; le client répond **« Ok » à 12:22**. Le logo n'est pas encore reçu. La carte d'aperçu du lien envoyé à 11:38 n'a toujours pas de vignette sur WhatsApp Web (le fichier `og.jpg` du dépôt est un 1200×630 de 75 Ko, `og:image` en adresse absolue ; la page en ligne répond différemment pour `og.jpg` et pour un fichier inexistant : le fichier existe très probablement).
+- **Ruling King :** `dmoptic-2` est introuvable dans son Vercel → « on oublie, le client a le bon lien ». Risque résiduel noté : la page reste publique avec « depuis 2016 » (affirmation sans source dans le dépôt) ; l'outil de suppression n'est pas à notre portée.
+- **Livré pendant l'attente du logo :** `demos/build_dmoptic.py` accepte `--logo <fichier>` et `--logo-mode symbol|full` (logo à la place du symbole rond sur la page et sur la vignette `og.jpg`). Sans l'option, la sortie est identique octet pour octet. Testé avec deux logos factices (jamais commités).
+
+## 10/10/2026 (samedi, 25ᵉ message de King, ≈17:00) — c01 validé · Labiomed maintenu à 100 000 · fiche Google (captures) · Univers (capture) · vague cliniques/labos
+
+- **Rulings King :** (1) **les 7 slides de c01 sont bonnes** : publication prévue mar. 13/10 19:25 inchangée ; (2) **Labiomed : 100 000 FCFA maintenu** (déjà annoncé le 19/09) ; (3) fiche Google : fait, lien de partage fourni par King : `https://share.google/dTV0eLlVbf4TVzJyG` (le lien n'est pas ouvrable depuis le bac : HTTP 500).
+- **Fiche Google « AMK – Web Development & Digital Solutions » (capture de King, 10/10) :** gérée et vérifiée par King ; catégorie « Website designer » ; téléphone 6 77 78 96 31 ; site `amk-cm.vercel.app` ; logo et couverture présents ; **chiffres donnés par Google : « 30 people saw your profile in their search results last month » et « 1 customer interaction »** (périodes non précisées plus loin, une interaction peut être celle de King lui-même) ; « Profile strength » incomplète ; horaires affichés « Open · Closes 9 pm » (**source des horaires non retrouvée dans le dépôt : à confirmer par King**) ; **« Areas served : Buea and nearby areas »** (le site, lui, déclare Douala, Yaoundé, Buea, Limbe… dans `areaServed` et « partout au Cameroun » en texte : **Douala manque sur la fiche alors que toute la vague cible Douala**). Résultat de recherche vu : `amk-cm.vercel.app` (extrait du 2 oct) et `instagram.com/amkweb`.
+- **Univers Optique (capture) :** King a envoyé le lien à **10:35** (« uo-essayage-camera.vercel.app », mode d'emploi, « rien ne se finalise sans votre validation ») ; le client était « last seen today at 16:13 », **aucune réponse à 17:00**. Le texte envoyé annonce la caméra en temps réel, le mode photo et le bouton « + » pour ajouter ses montures : la page en ligne contient bien ces trois éléments ; **la caméra n'a jamais été testée par nous sur un vrai téléphone** et le moteur de détection a besoin d'internet au premier lancement (la page le dit). Fenêtre §7 : envoi un samedi → pas de départ d'horloge ferme ; `Follow-up date` 2026-10-14 inchangée ; rien à envoyer.
+- **Livré :** `sales/VAGUE-CLINIQUES-LABOS-2026-10-10.md` (proposition, rien d'envoyé). **Correction de mon message de 16:55 :** sur les 18 pistes clinique/labo « jamais contactées », **15 sont marquées « NE PAS ENVOYER »** (pas sur WhatsApp, numéro erroné, ligne fixe, introuvable) ; le réservoir WhatsApp réel est de 3, et ces 3 ont déjà un site.
+
+## 10/10/2026 (samedi, 26ᵉ message de King, ≈17:20) — brouillon de la touche St. Theresa du lundi 12/10
+
+- Brouillon écrit : `sales/Suivi-ST-THERESA-2026-10-12.md` (anglais, une phrase, pas de prix, pas de question de validation ; ruling King 02/10). **Rien n'est envoyé** : King relit et envoie lundi matin.
+- Dossier relu pour ce brouillon : la fiche CRM et ses lignes de journal ; les verbatims du 15/09 sont repris tels quels. Autre lundi 12/10 : Bali (en attente du re-pull ONOC de dimanche).
+
+## 10/10/2026 (samedi, 27ᵉ message de King, ≈20:15–21:00) — logo DM Optique reçu et intégré · fiche Google corrigée · Messenger · pistes sur l'essayage
+
+- **Logo DM Optique reçu à 17:30** (« Voilà le logo », fichier `LOGO DM.pdf`, transféré, 70 Ko). **Le PDF ne contient qu'une image JPEG de 1240×992, sans tracé vectoriel ni texte** : ce n'est pas un fichier vectoriel. King a mis le PDF dans le dépôt (`clients/dm-optic/website/`).
+- **SVG demandé par King :** produit par tracé automatique (vtracer, 370 tracés, 307 Ko) : `clients/dm-optic/website/logo/dm-optique-logo.svg`. Fidèle à l'œil sur capture mais **approché par aplats** (ce n'est pas le fichier d'origine du créateur) ; version web PNG 640 px (77 Ko) et JPEG source extrait du PDF dans le même dossier. Pour une enseigne ou une impression, demander au client le fichier d'origine.
+- **Page intégrée :** `demos/build_dmoptic.py` utilise le logo du cabinet **par défaut** (`--no-logo` pour l'ancien symbole), mode `symbol` (le texte « DM OPTIQUE SARL » reste à côté du logo ; le logo lui-même dit « DM OPTIQUE » sans SARL), logo écrit une seule fois dans la page (variable CSS), page 381 Ko. En-tête et carte d'identité vus à 390 px : propres ; pied de page (plaque blanche) **non vu** (la capture pleine page n'affiche pas les blocs qui s'animent au défilement). Audits html/a11y/images/JS à 0 faute, test de page : toutes les assertions passent. `hosting/previews/dmoptic/{index.html,og.jpg}` prêts : **King redéploie les deux fichiers**.
+- **Fiche Google (capture « Business information ») : correction de mon avis du 17:00.** Les zones desservies sont **Buea, Kumba, Limbe, Douala, Yaoundé** ; la carte publique affiche seulement « Buea and nearby areas » (résumé de Google). Mon alerte « Douala manque » était **fausse** (j'avais lu la carte, pas les réglages). Horaires réglés par King : **lun–sam 10:00–21:00, dimanche fermé** ; pas d'adresse (« deliveries and home services only ») ; réseau social listé : TikTok `@amkweb` (en `http`). **Le document de page Facebook du 14/09 est périmé** sur trois points : horaires (08:00–19:00), lieu (Buea), et ses textes de publication (prix « dès 100 000 FCFA » et « livrés en 3 à 5 jours » : à ne pas réutiliser).
+- **Ruling King : Messenger** pour les cliniques et labos non joignables sur WhatsApp, **et « nous aurons aussi à avoir et à maintenir une page professionnelle pour nous-mêmes »** (page Facebook AMK). Recherche du 10/10 : l'aide officielle de Messenger dit qu'une Page peut envoyer jusqu'à **10 demandes de message par jour** à des personnes ou des Pages, **fonction « en cours de déploiement, pas disponible pour toutes les Pages »**, et le destinataire doit autoriser les messages de vous ; des sources tierces de 2024 disent qu'une Page ne peut pas écrire à une Page. **Contradictoire et daté : à vérifier dans la Page elle-même avant de bâtir un plan dessus.**
+- **App d'essayage Univers :** King l'a testée sur son téléphone, « ça marche » ; il demande des améliorations après recherche → `clients/univers-optique/research/TRY-ON-IMPROVEMENTS-2026-10-10.md` (proposition, rien de modifié ; **la source de l'app n'est pas dans le dépôt**).

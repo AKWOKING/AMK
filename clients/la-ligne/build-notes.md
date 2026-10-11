@@ -33,7 +33,7 @@ registre d'unicité.
 
 1. **Le premier écran** — « Votre visage d'abord. La monture ensuite. » À droite, un **dessin qui se
    trace** : la règle du regard, un visage, la monture par-dessus (SVG, `stroke-dashoffset`, 5 traits).
-   Trois faits sous le texte : opticienne inscrite depuis 2017 · le conseil de visagiste · Akwa.
+   Trois faits sous le texte : opticienne inscrite à l'ONOC · le conseil de visagiste · Akwa.
 2. **Les quatre gestes** — une liste à filets (pas des cartes) : chacun dit ce qu'il veut dire **et ce que
    vous pouvez dire en arrivant**.
 3. **Le visage d'abord** — cinq onglets radio (ovale, rond, carré, cœur, oblong), **sans JavaScript** :

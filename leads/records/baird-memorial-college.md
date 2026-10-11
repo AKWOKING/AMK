@@ -1,6 +1,6 @@
 # Baird Memorial College
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-27. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-05. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -10,11 +10,15 @@
 | Type | school |
 | Ville | Buea (Bonduma) |
 | Langue de contact | EN |
-| Étape | qualifying |
+| Étape | parked |
 | WhatsApp | 677875395 |
 | Contact | Principal/proprietor (capture); P.O. Box 403 Buea |
 | Canal | GO (King 'proceed' 15 Sep PM): attach demos/shots/mockup-secondary-wa.jpg FIRST, then recipient-neutral msg (replan §4) to WA 677 87 53 95; pre-tap open bairdmemorial.com once, swap para 3 if it loads; Wed sealed card in Limbe sweep if silent; invited visit only |
 | Contacté | YES 15 Sep 14:41 WA (mockup image + msg 1; one tick) |
+
+## Pourquoi il est écarté
+
+Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, contacté le 15/09 (msg 1, une coche), aucune réponse, 17 jours sans mouvement. L'échéance RELANCE_A_JOUR du 21/09 est retirée avec ce lot.
 
 ## Notes
 
@@ -22,7 +26,7 @@ Walk-In-Batch-2026-09-15 stop 6 light. Boarding 'inclusive' high school behind p
 
 ## Prochaine action
 
-**0 relance(s) sur 3 envoyée(s).** Prochaine relance au rythme M+2 / M+4 / M+7 depuis le dernier message. Jamais deux relances le même jour.
+**Aucune.** Parqué — Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, contacté le 15/09 (msg 1, une coche), aucune réponse, 17 jours sans mouvement. L'échéance RELANCE_A_JOUR du 21/09 est retirée avec ce lot.. Une action n'est légitime que si King le décide explicitement.
 
 ## Historique — lignes du journal qui citent ce lead
 

@@ -1,6 +1,6 @@
 # Cavisa Optique
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-09-27. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-05. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -27,11 +27,11 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : DONGMO Jean René. Probleme : etre
 
 ## Prochaine action
 
-**Répondre dans l'heure.** Une réponse humaine est en attente : c'est la priorité absolue (règle des 90 secondes).
+**Action fixée au 2026-10-15** — décision humaine, elle prime sur le rythme automatique. Séquence fixée par King : après mercredi ET après Labiomed. Follow-up PLAIN, chaud, court — zéro re-ask, zéro prétexte, zéro pitch, zéro travail sur la démo (règle 03/10 : on ne touche la démo d'un prospect que s'il demande quelque chose). Brouillon du check-in dans sales/Suivi-CAVISA-2026-10-05.md — revue King avant envoi.
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 23 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 24 ligne(s).*
 
 `L3453` · **Médina Optic** (Balla, 699 93 93 34) et **Cavisa Optique** (Dongmo, 699 95 90 52). Tous jamais contactés,
 `L3461` · le 24/09** ; pour Cavisa, la seule page au monde qui porte son nom est **vide** ; pour Médina, on dit
@@ -56,6 +56,7 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : DONGMO Jean René. Probleme : etre
 `L4048` · `clients/dm-optic/`. ⚠️ Correction au passage : **Cavisa était resté à `Demo made = No`** alors que sa
 `L4053` · **23** · étape `demo` **2** (Cavisa, DM OPTIC) · file du jour : **une action — répondre à DM Optic**.
 `L4492` · `build-notes.md`, `inspiration.md` de Cinq Sens, DM, La Ligne, Uni-Labo, Cavisa, **en `D`**. Autrement dit :
+`L4794` · Le pipeline actif = 4 leads (Cristallin, Labiomed, Cavisa, Univers Optique) + DM OPTIQUE en closing +
 
 ---
 

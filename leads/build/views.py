@@ -59,63 +59,51 @@ STAGE_ORDER = ["won", "delivered", "closing", "offer", "demo", "qualifying",
 
 # Décisions humaines qui priment sur les règles automatiques : slug -> (échéance ISO, note)
 RELANCE_A_JOUR = {
-    "opticien-bali-douala": ("2026-09-25", "2ᵉ message envoyé le 22/09 au soir (créneau fixé par le prospect "
-                                        "lui-même). DERNIÈRE touche : vendredi 25/09, puis parked daté"),
-    "oracare-buea": ("2026-09-28", "PARKED depuis le message de CLÔTURE du 21/09 17:43 (« last note from me, "
-                                    "then I stop ») — ne rien écrire avant lundi 28/09, et ce jour-là un seul "
-                                    "message : léger, SANS reproche, justifié par du neuf (les prix et la prise "
-                                    "de RDV 24/7 sont sur la page). Nom vérifié : Dr Arnold Nkafu — jamais "
-                                    "« Dr Njie », ce prénom n'existe dans aucun fichier"),
-    "midas-touch-optic-center-mitoc": ("2026-09-29", "FU2 envoyée le 22/09 au soir (un jour de retard rattrapé). "
-                                          "DERNIÈRE touche : 29/09, puis on classe — trois messages maximum"),
-    "baird-memorial-college": ("2026-09-21", "FU2 fixée lun 21 (même lot que MITOC)"),
-    "labiomed-deido": ("2026-10-01", "A RÉPONDU le 22/09 à 16:41 : « Non pas encore je ne suis pas en place » "
-                                      "· « Quand je serai la je vais vous contacter ». Ce n'est ni un oui ni un "
-                                      "refus — c'est un REPORT MOTIVÉ (pas encore installé). Réponse envoyée "
-                                      "dans l'heure ; on ne le relance plus d'ici le 1ᵉʳ octobre, et ce jour-là "
-                                      "sans prix ni question de validation : juste « vous êtes en place ? »"),
-    "centre-medical-de-bonanjo": ("2026-09-28", "Page complète envoyée le 22/09 à 13:35 (deux coches) "
-                                      "avec le prix posé, puis relance 16:24 (une coche) : « vos 9 services "
-                                      "centralisés pour orienter les patients de Google vers votre "
-                                      "WhatsApp ». DÉCISION KING 16:30 : prochaine vague — jeudi 24/09, "
-                                      "sans reposer le prix, une question de calendrier seulement"),
+    # opticien-bali-douala : RETIRÉ le 02/10 — lead parké (bulk close, reset pipeline).
+    # oracare-buea : RETIRÉ le 02/10 — King déclare le lead mort (stage = lost, lot LOT_0210_KING).
+    # L'échéance du 28/09 ne vaut plus ; la laisser ici ferait relancer un lead clos.
+    # midas-touch-optic-center-mitoc : RETIRÉ le 02/10 — sa propre note disait « DERNIÈRE touche :
+    # 29/09, puis on classe » : parked le 02/10 (stale check de King).
+    # baird-memorial-college : RETIRÉ le 02/10 — parked le 02/10 (stale check de King).
+    # ── RULINGS DU 02/10 (soir) — relances planifiées, textes approuvés par King ──────────────────
+    "le-cristallin":
+        ("2026-10-23", "10/10 — LE CLIENT A RÉPONDU le 09/10 (message de King 12:32, réponse 15:21) : la relance du 09/10 est "
+                       "faite et la fenêtre est caduque. Il est chez le kinésithérapeute (problème de santé, détail non consigné) ; "
+                       "King lui a répondu 16:14 « le projet attendra votre rétablissement ». Le message envoyé le 09/10 demandait "
+                       "quand relancer la suite du site (≠ le texte ruled 02/10, « zéro business ») : pas de date donnée. "
+                       "CONFIRMÉ PAR KING (10/10) : prochaine touche = 23/10, santé seulement, zéro business ; "
+                       "jamais avant s'il n'écrit pas."),
+    "labiomed-deido":
+        ("2026-10-13", "Ruling King 02/10 — on tient SA parole, touche légère : « Bonjour, juste un "
+                       "petit bonjour — vous êtes en place maintenant ? » Pas de prix, pas de question "
+                       "de validation. RULING KING 10/10 : le prix de 100 000 FCFA, déjà annoncé le 19/09, est MAINTENU "
+                       "(on ne le relève pas, on ne le rediscute pas)."),
+    "cavisa-optique":
+        ("2026-10-15", "Séquence fixée par King : après mercredi ET après Labiomed. Follow-up PLAIN, chaud, court — zéro re-ask, zéro prétexte, zéro pitch, zéro travail sur la démo (règle 03/10 : on ne touche la démo d'un prospect que s'il demande quelque chose). Brouillon du check-in dans sales/Suivi-CAVISA-2026-10-05.md — revue King avant envoi."),
+    "st-theresa-international-bilingual-comprehensive-college-sti":
+        ("2026-10-12", "Permission EXPLICITE de repasser en octobre (verbatim 15/09 : « Ok thanks you "
+                       "can get back to me for a follow up » — leur page sera prête en octobre). "
+                       "Relance le 12/10 : « votre page est prête ? » — pas de prix, pas de question "
+                       "de validation. Date choisie le 02/10 pour laisser la semaine de la visite "
+                       "DM OPTIQUE (07/10) libre. La balle est chez nous — PAS une réponse en attente."),
+    # labiomed-deido : entrée 09/01 remplacée le 02/10 par la ligne « RULINGS DU 02/10 » ci-dessus.
+    # centre-medical-de-bonanjo : RETIRÉ le 02/10 — lead parké (bulk close, reset pipeline).
     # Les deux fils « prix posé » du 21/09 : l'échéance vient de ce qui a été ÉCRIT au client,
     # pas d'un calcul M+2. Univers Optique = l'aperçu promis « d'ici demain ». Le Cristallin =
     # la réponse de King sur le périmètre FB attendue avant d'envoyer, relance 48 h après.
     # 22/09 20:51 : il a répondu — « Je suis vraiment intéressé … Vendredi matin 10h dans mon cabinet. »
     # Comme UNI-LABO, ce n'est plus une relance à calculer, c'est une réunion à préparer.
-    "univers-optique": ("2026-09-25", "**GELÉ (King, 23/09 au soir)** : plus aucun travail sur le site ni "
-                                      "le dossier avant le paiement. " + "RENDEZ-VOUS fixé par le prospect — **vendredi 25/09 à 10 h, son "
-                                      "cabinet** (Bépanda). Feuille : `sales/RDV-UNIVERS-OPTIQUE-2026-09-25.md`. "
-                                      "Prix déjà posé le 21/09 (100 000 FCFA, 50/50) : on ne le re-présente "
-                                      "pas, on ne le baisse pas. À sortir de la salle : le « oui », les "
-                                      "réponses aux six points que la page demande, l'acompte"),
+    "univers-optique": ("2026-10-08", "Formalization pitch v5 (ruling FINAL 03/10) : 900k one-time 300/300/300, PAS de mensuel, admin catalogue self-service, garantie 30 j, ≤30 montures, ≤3 appareils — awaiting King review and DM Optique close. PITCH-DRAFT-2026-10.md + SCOPE + USAGE-PLAN. Site : FERMÉ définitivement, jamais re-pitcher."),
+    "liste-opticiens": ("2026-10-12", "Début envois LISTE-OPTICIENS-2026-10.md — 1/jour (ruling 05/10) : 12 Bali · 13 DISC (appel, FB introuvable) · 14 Tchaya (FB) · 15-22 les 7 froids. Opener PRODUCT-LED (outils sur mesure + app essayage), JAMAIS 'we do websites'. Étude de cas DM seulement si acompte encaissé, sinon concept (règle 11). Log CRM chaque envoi."),
     # 23/09 09:46 : le prix est PARTI (150 000 FCFA, 75 000 pour démarrer). On attend sa réponse ;
     # s'il ne dit rien, une relance courte le 24/09 — et rien d'autre entre-temps.
     # 24/09 : le plan demandait « Relance 1/3 Le Cristallin » alors que la décision écrite dit l'inverse.
     # Il est MALADE (10:11) et King a répondu santé d'abord (10:13). Un plan généré qui contredit une
     # décision humaine est exactement le piège COMOBIL — la prose le dit, la donnée le calcule autrement.
     # Le prochain message est un message de SANTÉ, lundi 29/09 : `sales/Queue-CRISTALLIN-2026-09-29.md`.
-    "le-cristallin": ("2026-09-29", "**IL EST MALADE (24/09 10:11) — AUCUNE relance du projet.** "
-                                      "King a répondu santé d'abord le 24/09 à 10:13 ; next message = "
-                                      "message de santé lundi 29/09 (`sales/Queue-CRISTALLIN-2026-09-29.md`), "
-                                      "santé avant le projet, sans reposer le prix. **PRIX POSÉ le 23/09 "
-                                      "09:46** : 150 000 FCFA, 50 % = 75 000 pour démarrer, solde à la "
-                                      "livraison. GELÉ (King, 23/09) : aucune modification de la page ni du "
-                                      "dossier jusqu'au paiement ; les trois compensations (WhatsApp "
-                                      "Business, domaine 2027, fiche Google) restent parquées. Cinq écarts "
-                                      "à trancher AVANT publication (compte d'assurances FR 18 / EN 17, "
-                                      "mur à 19, bloc « 32 ans » en double, horaires vs son flyer, "
-                                      "« depuis 2010 ») et le périmètre « hébergement + domaine » à "
-                                      "cadrer : son domaine est à lui jusqu'au 13/06/2027"),
+    # le-cristallin : entrée 09/29 remplacée le 02/10 par la ligne « RULINGS DU 02/10 » ci-dessus.
     # UNI-LABO a DEMANDÉ un rendez-vous : ce n'est plus une relance à calculer.
-    "uni-labo-bonamoussadi": ("2026-09-25", "**RENDEZ-VOUS CONFIRMÉ — vendredi 25/09 à 13 h**, à leur "
-                                            "laboratoire (Carrefour Etoo). Il a choisi 13 h lui-même le "
-                                            "23/09 à 21:42 (« 13h c'est bon pour moi »), King a accepté à "
-                                            "21:47. Prix posé le 23/09 13:30 : 150 000 FCFA, **acompte 75 000 à "
-                                            "prendre en séance**, grille tarifaire standard déjà envoyée. À "
-                                            "emporter : contrat Standard ×2, grille corrigée, et le formulaire de "
-                                            "réservation — promis dans le message de 13:30, PAS ENCORE CONSTRUIT"),
+    # uni-labo-bonamoussadi : RETIRÉ le 02/10 — lead parké (bulk close, reset pipeline).
     # Le calcul M+4 ne voyait pas cette échéance : le compteur de la source disait 1 relance au lieu de 2
     # (FU1 19/09 + FU2 21/09 17:39). Le journal, lui, disait « FU3 mer 23/09 max, palier des 3 messages
     # atteint » depuis le 21/09. Décision humaine inscrite ici le 23/09 — c'est la DERNIÈRE touche.
@@ -135,13 +123,21 @@ RELANCE_A_JOUR = {
     # de la file « ⚡ Répondre d'abord » : une réponse `human` reste « en attente » tant que rien ne
     # dit le contraire. ⚠️ **PROPOSITION, À CONFIRMER PAR KING** : si rien n'est arrivé d'ici là, UN
     # rappel court le 28/09 — jamais un reproche, juste « j'ai bien reçu / je n'ai rien reçu ».
-    "cavisa-optique": ("2026-09-28", "Réponse envoyée le 24/09 à 13:26 (remerciements + les 4 éléments "
-                                     "demandés + la question des prix). La balle est chez M. Dongmo. "
-                                     "PROPOSITION à confirmer par King : UN rappel court si rien n'est "
-                                     "arrivé d'ici là — le redéploiement, lui, attend sa liste"),
-    "skye-douala": ("2026-09-29", "Relance 2/3 envoyée le 22/09 au soir (réécrite sans reproche). DERNIÈRE "
-                                  "touche : 29/09, puis parked daté"),
-    "yaks-douala": ("2026-09-29", "Relance 2/3 envoyée le 22/09 au soir. DERNIÈRE touche : 29/09, puis parked"),
+    # cavisa-optique : entrée 09/28 remplacée le 02/10 par la ligne « RULINGS DU 02/10 » ci-dessus.
+    # skye-douala : RETIRÉ le 02/10 — lead parké (bulk close, reset pipeline).
+    # yaks-douala : RETIRÉ le 02/10 — lead parké (bulk close, reset pipeline).
+    # ── 01/10 — DM OPTIQUE SARL A CHOISI LE PACK GLOBAL : ce n'est plus une relance à calculer ──
+    # Le client a tranché le 01/10 à 15:50 (« Le pack global semble nous correspondre ») et les
+    # conditions sont accordées : 150 000 FCFA d'installation (acompte 75 000), 30 000 FCFA/mois dont
+    # 5 000 de budget pub. La prochaine échéance vient de ce qui a été PROMIS au client, pas d'un M+2.
+    "dm-optique": ("2026-10-02", "**PACK GLOBAL ACCORDÉ le 01/10 — stage `closing`.** Demain 02/10 : "
+                                  "envoyer la FACTURE PROFORMA PDF (installation 150 000 FCFA, acompte "
+                                  "75 000, solde à la livraison ; récurrent 30 000 FCFA/mois dont 5 000 "
+                                  "de budget pub) + RIB + NIU AMK, et recevoir du client son NIU + son "
+                                  "adresse fiscale. Paiement par VIREMENT uniquement (SARL sous contrôle "
+                                  "fiscal) : reçus tamponnés. Visite en personne à Bonabéri cette semaine "
+                                  "(mer/jeu, jour à confirmer). ⛔ Aucun acompte reçu à cette heure : ne "
+                                  "rien livrer ni publier avant l'encaissement"),
 }
 
 
@@ -317,8 +313,8 @@ def view_pipeline(rows, idx, date):
 def view_kill_list(rows, date):
     L = ["# KILL LIST — déduite, jamais écrite en dur\n", GEN.format(date=date)]
     L += ["## La règle (corrigée le 19/09)\n",
-          "Le playbook §A4 disait « les 2 leads à 18 (COMOBIL, OraCare) ». **C'était faux** : "
-          "COMOBIL est parké depuis le 14/09 (`leads/CONTRADICTIONS.md` §1).\n",
+          "Le playbook §A4 codait en dur une kill list figée (« les deux 18 »). **C'était faux** : "
+          "l'un d'eux était déjà parké depuis le 14/09 (`leads/CONTRADICTIONS.md` §1).\n",
           "> **score >= 18 · ET étape non parkée · ET non écartée · ET pas de réponse en attente**\n"]
 
     def score(r):
@@ -328,7 +324,7 @@ def view_kill_list(rows, date):
             return 0
 
     hot = [r for r in rows if score(r) >= 18
-           and (r.get("stage") or "") not in ("parked", "disqualified")
+           and (r.get("stage") or "") not in ("parked", "disqualified", "lost")
            and not reply_pending(r)]
 
     waiting = [r for r in rows if reply_pending(r)]
@@ -352,6 +348,10 @@ def view_kill_list(rows, date):
             row = next((r for r in rows if r["slug"] == slug), None)
             if row:
                 L.append(f"- **{row['School']}** — {d} · {why}")
+            else:
+                # 05/10 : une entrée sans ligne CRM (ex. liste-opticiens) ne doit plus disparaître
+                # silencieusement de la file — piège classe « rc=0 mais sortie fausse » (règle 02/10).
+                L.append(f"- **{slug}** — {d} · {why}")
     else:
         L.append("*Aucune échéance future.*")
     L.append("")
@@ -365,6 +365,17 @@ def view_kill_list(rows, date):
     else:
         L.append("**Aucun.** Le seul lead à 18 est COMOBIL, parké depuis le 14/09. "
                  "**C'est la vérité, pas un manque de prospection.**\n")
+
+    # 02/10 — ruling de King : « la section est désormais COMOBIL (toujours parké) plus tout oui frais ».
+    # Les 18+ hors jeu restent VISIBLES ici (mémoire, jamais action) — déduits des données, pas écrits en dur.
+    dead = [r for r in rows if score(r) >= 18
+            and (r.get("stage") or "") in ("parked", "disqualified", "lost")]
+    if dead:
+        L.append("## 🧊 Score >= 18 mais HORS JEU (parké / écarté / perdu) — mémoire, pas action\n")
+        L += ["| Lead | Score | Étape |", "|---|---|---|"]
+        for r in sorted(dead, key=lambda x: -score(x)):
+            L.append(f"| {r['School']} | {score(r)} | {STAGE_LABEL.get(r.get('stage') or '', '?')} |")
+        L.append("")
     L += ["## Ce qui alimente la liste quand elle est vide\n",
           "1. **Une réponse** — priorité absolue.\n"
           "2. **Un « oui » ou une demande de rendez-vous** → on construit, on pose le prix.\n"
@@ -384,7 +395,7 @@ def view_stale(rows, idx, date):
             continue
         if str(r.get("Reply", "")).strip().lower().startswith("yes"):
             continue
-        if (r.get("stage") or "") in ("parked", "disqualified"):
+        if (r.get("stage") or "") in ("parked", "disqualified", "lost"):
             continue
         age = last_send_age_days(r)
         if age < 2:
@@ -412,13 +423,22 @@ def view_sources(rows, date):
         "directory": "Annuaires professionnels de Douala (pagespratiquescm, maligah, doualazoom, goafricaonline).",
         "google_maps": "Sweep cartographique — dentaires de Bonamoussadi/Logbessou.",
         "facebook": "Page Facebook identifiée comme seul canal vivant.",
-        "content_video": "Premier lead de la campagne, venu du contenu.",
+        "content_video": "**Zéro lead à ce jour.** Le seul lead jamais attribué au contenu a été "
+                         "reclassé le 02/10 puis retiré du CRM (cleanup du 02/10) : source fausse, "
+                         "il venait de la pub Meta du cabinet, pas d'une vidéo.",
+        "discovery_via_their_ad": "Trouvé via la propre publicité Meta du cabinet (Instagram/Facebook) — "
+                                  "veille de ce que les prospects publient. Catégorie créée le 02/10 (King) : "
+                                  "on suit séparément si cette veille produit des leads.",
         "walk_in": "Affiche relevée sur place par King.",
         "other": "Divers.",
     }
     for s, n in Counter(r.get("source") or "(non renseigné)" for r in rows).most_common():
         L.append(f"| `{s}` | {n} | {NOTE.get(s,'')} |")
     L += ["", "## Ce que ce tableau dit\n",
+          "- **Contenu → inbound = 0 pour 0 (corrigé le 02/10).** Le seul lead jamais attribué au contenu "
+          "(retiré du CRM le 02/10) venait en réalité de **sa propre pub Meta** — l'attribution était une inférence "
+          "(« la seule vidéo publiée »), pas un fait. Le canal contenu n'a produit **aucun lead qualifié "
+          "à ce jour** : c'est une donnée, pas une opinion.",
           "- **Les 38 lignes d'origine n'ont aucune source écrite.** On ne saura jamais si ces écoles ont été "
           "trouvées par Google, Facebook ou bouche-à-oreille. **À partir du 15/09, chaque ligne porte sa source.**",
           "- **`directory` est la première source.** Les annuaires de Douala sont le meilleur gisement — "

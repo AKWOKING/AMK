@@ -788,7 +788,7 @@ BATCH_2409_4_NEW = [
          contact_name="DOMCHE NOUMBI",
          notes="LOT 4 (préparé, PAS ENVOYÉ). Titulaire : DOMCHE NOUMBI. Aucune page, aucun site "
                "trouvés (24/09). ⚠️ Porte B FAIBLE (§8b : 2/3) — King décide explicitement. "
-               "Remplaçant dans l'ordre d'envoi."),
+               "Remplaçant dans l'ordre d'envoi. · 05/10 15:07 : réponse « Merci pour le retour » à la proforma v-finale (envoyée 14:49) — signal d'engagement, aucune action due, aucun re-pitch/re-ask (ruling King 05/10). Mercredi tient. · 05/10 15:09 : le client relève l'absence d'adresse, de contact et de RC sur la proforma v-finale. · 05/10 15:42 : King répond par écrit, reconnaît le manque et s'engage à renvoyer le PDF corrigé. · 05/10 16:24 : proforma v2 « bloc émetteur 7 lignes » envoyée via WhatsApp (PDF seul + une ligne « Voici la proforma mise à jour avec l'adresse, les contacts et autres. »). · 06/10 09:43 : conditions doc « v1-06/10 » + note vocale envoyés — UN message WhatsApp, voix d'abord, PDF joint, sans légende (ruling King). Item mardi clos."),
 ]
 
 
@@ -984,13 +984,13 @@ OPTICIENS_2109 = [
          contact_channel="WhatsApp", decision="MVENG ATEBA Zénon", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : MVENG ATEBA Zénon. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : MVENG ATEBA Zénon. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir. CANAL 05/10 (ruling) : parké 02/10, à réveiller le 12/10 avec l'opener produit ; page FB https://www.facebook.com/p/L-Opticien-bali-douala-Cameroun-100047803096819/ en appui."),
     dict(slug="disc-optique-m-dicale", org="Disc Optique Médicale", city="Douala", org_type="other", language="FR",
          wa_number="677 53 35 68", wa_verified="unknown",
          contact_channel="WhatsApp", decision="NANKAP TCHIPTCHOUA Jean Calvin", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : NANKAP TCHIPTCHOUA Jean Calvin. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : NANKAP TCHIPTCHOUA Jean Calvin. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir. CANAL 05/10 (ruling) : msg WhatsApp 21/09 jamais ouvert ; page FB INTROUVABLE (3 recherches 05/10) -> repli : appel voix au 677 53 35 68 le 13/10, jamais un 2e WhatsApp texte."),
     dict(slug="bely-optique-m-dicale", org="Bely Optique Médicale", city="Douala", org_type="other", language="FR",
          wa_number="696 85 52 42", wa_verified="unknown",
          contact_channel="WhatsApp", decision="NGATCHA ZOE Rosalie", source="directory",
@@ -1068,7 +1068,7 @@ OPTICIENS_2109 = [
          contact_channel="WhatsApp", decision="TCHAYA PITCHA'A Yannick — depuis 1974", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
-         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : TCHAYA PITCHA'A Yannick — depuis 1974. (2e : 699 98 87 24) Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+         notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : TCHAYA PITCHA'A Yannick — depuis 1974. (2e : 699 98 87 24) Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir. CANAL 05/10 (ruling) : msg WhatsApp 21/09 jamais ouvert -> page FB https://www.facebook.com/T.OPTIQUE/ (vérifiée : même 2e numéro) — commentaire/DM FB le 14/10."),
 ]
 
 OPT_ECARTES = [
@@ -1090,22 +1090,6 @@ def _opt_rows():
     return out
 
 # ── Le lead hors classeur qui vit dans un autre onglet du même fichier ──────────
-ORACARE = dict(slug="oracare-buea", org="OraCare Dental Clinic (Oracare237)",
-               city="Buea (Molyo)", org_type="clinic", language="EN",
-               wa_number="672 52 66 86", wa_verified="yes", contact_channel="WhatsApp",
-               source="content_video", source_detail="Premier lead de la campagne — vérifié par King",
-               stage="parked", contacted="Yes", reply="No", demo="Yes",
-               last_send_state="sent", follow_ups_sent="1",
-               notes="Message 1 lundi 14/09. Concept live : oracare-concept.vercel.app (v3, prix + assistant). "
-                     "⚠️ N'a JAMAIS répondu : message non lu attribué à tort le 18/09, corrigé. 21/09 17:43 — "
-                     "message de CLÔTURE envoyé (« last note from me, then I stop ») : le lead est PARKED, et "
-                     "cette phrase est classée « à ne plus jamais écrire » (Enregistrements-2026-09-21-SOIR.md). "
-                     "22/09 — un brouillon de relance a été refusé par King : il appelait le dentiste « Dr Njie » "
-                     "alors que son nom est ARNOLD NKAFU (fichiers du 14/09), et il reprochait son silence un jour "
-                     "après avoir promis de se taire. UN SEUL message reste permis, lundi 28/09 : léger, sans "
-                     "reproche, justifié par du NEUF (les prix et la prise de RDV 24/7 sont sur la page).")
-
-
 def norm_slug(name: str) -> str:
     import re
     import unicodedata
@@ -1839,6 +1823,371 @@ def _apply_evening(out: list) -> None:
 
 
 
+# ── LE LOT AUTORISÉ PAR KING LE 02/10/2026 — un ruling, une table, un re-lock ─────────────────────
+# Décision de King (réponse du 02/10) : le stale check des 38 lignes du classeur d'origine suit le
+# MÊME test que n'importe quel lead — 7+ jours sans mouvement ET pas de réponse en attente → parked
+# avec motif daté. Résultat : 3 déjà parkées, 1 PAS stale (St Theresa : permission explicite de
+# repasser en octobre — « you can get back to me for a follow up », 15/09 → RELANCE_A_JOUR dans
+# `views.py`), **34 parkées ici**.
+# ⚠️ Trois des 34 ONT été contactées le 15/09 (Baird, Baptist Comprehensive, MITOC — aucune réponse) :
+# leur motif est écrit tel quel, jamais « jamais contacté » — un motif faux est pire qu'une ligne vieille.
+# Même lot, même autorisation : les deux marqueurs AWAIT (la vue « Répondre d'abord » était périmée
+# depuis le 24/09), la mort d'OraCare (King : « OraCare is dead ») et sa correction de source —
+# PAS content_video : découvert via SA PROPRE pub Meta, date de vue non journalisée.
+# Règle née de ce bug (02/10) : ne jamais DÉDUIRE le source_detail d'un lead content de « la seule
+# vidéo publiée » — vérifier d'abord que le lead a vu la vidéo. Même classe que le bug prose-vs-data
+# du 21/09 : une inférence écrite comme un fait.
+LOT_0210_KING = {
+    "cinq-sens-optique-medicale": {
+        "Conversation_extra":
+            "02/10 — ruling de King : balle chez eux — AWAIT (photos/horaires demandés, on attend leur "
+            "retour). L'affichage « Répondre d'abord » était périmé : la balle est chez eux depuis le "
+            "24/09 17:54 (lien livré, aucune relance promise).",
+    },
+    "la-ligne-optic-akwa": {
+        "Conversation_extra":
+            "02/10 — ruling de King : balle chez elle — AWAIT (retour attendu sur l'aperçu). "
+            "L'affichage « Répondre d'abord » était périmé : la balle est chez elle depuis le "
+            "24/09 21:35 (aperçu annoncé, livré).",
+    },
+
+    "st-theresa-international-bilingual-comprehensive-college-sti": {
+        "Follow-up date": "2026-10-12",
+        "Conversation_extra":
+            "02/10 — PAS stale : permission explicite de repasser en octobre (15/09 : « Ok thanks you "
+            "can get back to me for a follow up » — leur page sera prête en octobre). Relance fixée "
+            "au 12/10 (RELANCE_A_JOUR) : « votre page est prête ? » — pas de prix, pas de question de "
+            "validation. La balle est chez nous, pas en attente de réponse.",
+    },
+    "comobil-college-moderne-bilingue-les-laureats": {
+        "stage": "parked", "stage_since": "2026-09-14",
+        "disqualification_reason":
+            "Parké — décision de King du 14/09 (DAILY OPS : « PARKED 14 Sep ») : l'état n'avait jamais été encodé dans le CRM (la kill list déduite l'affichait encore jouable) ; encodé le 02/10 avec le lot stale-check de King. Aucun mouvement depuis l'import du 15/09.",
+    },
+    "groupe-scolaire-moderne-bilingue-wafo": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "cosbinal-complexe-scolaire-bilingue-nal": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "le-paradis-des-anges-pda": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "american-school-of-douala-asd": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "divine-success-comprehensive-college-dscc": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "presbyterian-comprehensive-secondary-school-bonamoussadi-pcs": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté. Injoignable — aucun numéro au classeur d'origine.",
+    },
+    "ecole-privee-bilingue-les-genies": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté. Injoignable — aucun numéro au classeur d'origine.",
+    },
+    "groupe-scolaire-la-semence": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté. Injoignable — aucun numéro au classeur d'origine.",
+    },
+    "institut-polyvalent-fosso": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté. Injoignable — aucun numéro au classeur d'origine.",
+    },
+    "college-catholique-bilingue-la-retraite": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "complexe-scolaire-et-universitaire-siantou": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "blessed-group-of-schools-bgs-blessed-anglo-saxon": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "baptist-high-school-bhs-awae": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "rainforest-international-school-rfis": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "institut-notre-dame-des-apotres": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté. Injoignable — aucun numéro au classeur d'origine.",
+    },
+    "st-joseph-s-college-sasse-sjc-sasse": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "frankfils-comprehensive-college": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté. Injoignable — aucun numéro au classeur d'origine.",
+    },
+    "salvation-bilingual-high-school-molyko-buea": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté. Injoignable — aucun numéro au classeur d'origine.",
+    },
+    "marthlo-comprehensive-bilingual-college": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté. Injoignable — aucun numéro au classeur d'origine.",
+    },
+    "saint-anne-s-high-school-limbe-sahiscol": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "new-horizon-international-comprehensive-high-school-nhichs": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "college-de-l-excellence-de-limbe": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté. Injoignable — aucun numéro au classeur d'origine.",
+    },
+    "national-comprehensive-high-school-nchs-limbe": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté. Injoignable — aucun numéro au classeur d'origine.",
+    },
+    "presbyterian-girls-secondary-school-pgss-limbe": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté. Injoignable — aucun numéro au classeur d'origine.",
+    },
+    "summerset-bilingual-college-smbicol": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "saint-bernard-high-school-sbhs": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "nabesk-comprehensive-college": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "baird-memorial-college": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, contacté le 15/09 (msg 1, une coche), aucune réponse, 17 jours sans mouvement. L'échéance RELANCE_A_JOUR du 21/09 est retirée avec ce lot.",
+    },
+    "baptist-comprehensive-college": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, contacté le 15/09 (msg 1, une coche), aucune réponse, 17 jours sans mouvement.",
+    },
+    "st-sylvester-international-college": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "bishop-jules-peters-memorial-college": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "inter-comprehensive-high-school-ichs-great-soppo": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, 17 jours sans mouvement, jamais contacté.",
+    },
+    "midas-touch-optic-center-mitoc": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 (King : stale check du classeur d'origine) — import legacy du 15/09, contacté le 15/09, FU2 le 22/09, aucune réponse — règle des trois messages atteinte (sa propre note RELANCE_A_JOUR : « DERNIÈRE touche 29/09, puis on classe »). 10+ jours sans mouvement.",
+    },
+}
+
+
+# ── RESET PIPELINE DU 02/10/2026 (deuxième ruling du jour) — bulk close ────────────────────────────
+# King : « Everything on the "we have contacted" list dead, except the four » (Cristallin, Labiomed,
+# Cavisa, Univers Optique) + DM OPTIQUE en closing à part. COMOBIL → lost. Les 20 contactés restants →
+# parked avec motif daté. PAS de suppression de lignes : l'historique reste pour l'analyse de motifs.
+# OraCare, lui, SORT du CRM (cleanup séparé) : fiche, ligne CSV, entrées de vues — seuls restent les
+# concepts réutilisables `demos/concept-oracare-v*.html` et `sales/Deep-Dive-Research.md`.
+LOT2_0210_KING = {
+    "comobil-college-moderne-bilingue-les-laureats": {
+        "stage": "lost", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "02/10 — King : « COMOBIL dead » → lost (ruling reset pipeline). Jamais contacté, aucune "
+            "reprise prévue ; pas de déclencheur de résurrection identifié. Historique conservé.",
+    },
+    "uni-labo-bonamoussadi": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, avait répondu, aucun mouvement depuis ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "centre-medical-de-bonanjo": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, avait répondu, aucun mouvement depuis ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "el-roi-optique-medicale": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "net-optique-medical": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "k-vision-care": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "cabinet-optique-la-retine": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "cinq-sens-optique-medicale": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King) : la balle est chez eux (marqueur AWAIT du lot 02/10), aucun mouvement ; **dépark immédiat si retour**. Historique conservé.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "skyoptic-akwa": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "lumumba-optique-medicale": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "la-ligne-optic-akwa": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King) : la balle est chez eux (marqueur AWAIT du lot 02/10), aucun mouvement ; **dépark immédiat si retour**. Historique conservé.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "m-dina-optic": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "espace-lunetterie": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "4m-optique-akwa": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "maff-optique": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "doyoan-optic": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "megaoptic": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "fashion-vision": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "skye-douala": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "yaks-douala": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+    "opticien-bali-douala": {
+        "stage": "parked", "stage_since": "2026-10-02",
+        "disqualification_reason":
+            "Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais de réponse, aucun mouvement ; le pipeline actif est réduit à 4 leads + DM OPTIQUE. Historique conservé pour l'analyse de motifs ; dépark si le lead revient.",
+ "Conversation_extra":
+            "02/10 — bulk close King : fil clos, lead parké. Historique conservé ; dépark + réouverture de la file si le lead revient de lui-même.",
+    },
+}
+
+
 def _apply_state(out: list, table: dict, name: str) -> None:
     """Applique une table d'état au relevé : elle ÉCRASE les champs scalaires qu'elle cite (elle est
     plus récente que tout le monde) et APPEND les deux champs de récit (`Conversation_extra`,
@@ -1918,6 +2267,85 @@ def check_reply_types(out: list) -> None:
                  % (bad, ":", " · ".join(x or "(vide)" for x in REPLY_TYPES)))
 
 
+# ── JOURNAL DM OPTIQUE 05/10 → 08/10 ─────────────────────────────────────────────
+# Constat du 08/10 : les entrées 05/10 (proforma v2) et 06/10 09:43 (conditions + note vocale) avaient été
+# écrites dans la chaîne `notes` de BATCH_2409_4_NEW, que ACCORD_DM_0110 ÉCRASE — elles n'atteignaient
+# ni `leads/CRM.csv` ni la fiche. Cette table APPEND (`Notes_extra`) : le fil continue, rien n'est écrasé.
+JOURNAL_DM_0810 = {
+    "dm-optique": {
+        "Notes_extra":
+            "05/10 15:07 : réponse « Merci pour le retour » à la proforma v-finale (envoyée 14:49) — "
+            "signal d'engagement, aucune action due. · 05/10 15:09 : le client relève l'absence "
+            "d'adresse, de contact et de RC sur la proforma. · 05/10 15:42 : King reconnaît le manque, "
+            "s'engage à renvoyer le PDF corrigé. · 05/10 16:24 : proforma v2 « bloc émetteur 7 lignes » "
+            "envoyée via WhatsApp (PDF + une ligne). · 06/10 09:43 : conditions doc « v1-06/10 » + note "
+            "vocale envoyés — UN message WhatsApp, voix d'abord, PDF joint, sans légende. · 08/10 13:26 : "
+            "WhatsApp, jeu de questions structuré (quatre questions numérotées + suggestion de nommage, "
+            "sans signature), envoyé par King ; texte exact non transmis à l'orchestrateur (à coller pour "
+            "verbatim) ; fenêtre de réponse non précisée. · 08/10 (King sur place) : adresse précisée — "
+            "Immeuble West Hotel, 1er étage, dernière porte à droite. Aucun acompte encaissé à cette date. · "
+            "08/10 (ruling King, après coup) : FENÊTRE DE RÉPONSE du message 13:26 = WhatsApp 24 h ouvrées : "
+            "on attend, rien d'autre ; après 48 h ouvrées : UNE note vocale chaleureuse (pas un re-demande) ; "
+            "après 7 jours : un appel de 2 minutes, pas un autre message. Dates du ruling incohérentes avec le "
+            "calendrier (« mar. 14/10 » = mercredi ; « jeu. 16/10 » = vendredi) : consignées provisoirement "
+            "mar. 13/10 matin (note vocale ; 48 h ouvrées = lun. 12/10 13:26) et jeu. 15/10 (appel ; 7 jours) — "
+            "À CONFIRMER par King. · "
+            "08/10 14:58 : LE CLIENT RÉPOND — 1 h 32 après l'envoi de 13:26, bien avant le palier 1 de la fenêtre. "
+            "Quatre réponses ; trois changent la spec (fragments rapportés par King, texte exact NON transmis, à "
+            "coller pour verbatim) : prix non affichés (contrainte réglementaire invoquée, ministère de la Santé "
+            "publique) · taxonomie confirmée pour 400 montures · noms « trop diverses » (aucune convention) · "
+            "heures : examen de vue 8h30–13h00, autres besoins 8h30–17h30. · 08/10 (King, calendrier corrigé) : "
+            "dates de la fenêtre confirmées — note vocale mar. 13/10 matin, appel jeu. 15/10 — SANS OBJET pour ce "
+            "fil (réponse reçue) ; la règle reste en vigueur (`sales/CLIENT-MESSAGING-RULES.md` §7). Spec "
+            "révisée (`SPEC-PAGES-v1.md`). Prochain geste : redéploiement de la page par King ven. 09/10 matin, "
+            "puis acompte (non encaissé à cette date). · 08/10 (King) : `Follow-up date` 2026-10-09 = point de "
+            "contact après redéploiement (« le site est en ligne, voici le lien ») ; le lien ne part qu'APRÈS le "
+            "balayage crédentiels + pré-flight §13 sur la page EN LIGNE (`ops/QA-NOTES.md`). · "
+            "08/10 VERBATIM (règle les mentions « à coller pour verbatim » ci-dessus ; transcrit des captures de King "
+            "par l'orchestrateur ; captures non versées au dépôt ; orthographe du client conservée, la page garde "
+            "l'orthographe corrigée). "
+            "13:26 King : « Bonjour Monsieur, pour bien avancer sur le site, j'aurais besoin de vos horaires "
+            "d'ouverture et de la fourchette de prix de vos montures (min/max). Est-ce qu'elles ont des "
+            "noms/références spécifiques, et vous en avez combien environ en stock actuellement ? » "
+            "14:58 le client : « Horaires d'ouverture et fermeture : Examen de vu : 8h30 - 13h00 / Autre besoins : "
+            "8h30 - 17h30. Pour le prix des montures c'est interdit de le diffuser car nous sommes régit par le "
+            "ministère de la Santé Publique. Les montures ont des noms et références mais trop diverses. "
+            "Stock de 400 montures environ ». "
+            "15:00 le client : « Pour Autres besoins vous me faites signes » · King : « D'accord monsieur ». "
+            "Lecture NON confirmée du 15:00 : « pour d'autres besoins, faites-moi signe » (le client attend que "
+            "King lui propose les besoins ; rien à envoyer sans décision de King). "
+            "L'interdiction de diffuser les prix est une AFFIRMATION DU CLIENT (source non retrouvée, voir "
+            "`sales/PACK-OPTICIEN-2026-10.md`) : elle vaut pour son site, pas comme règle du métier. · "
+            "08/10 (King) : page redéployée sur `https://dm-optique-sarl.vercel.app/` (nouvelle URL canonique ; "
+            "`dmoptic-2.vercel.app` = ancienne, encore en ligne avec « depuis 2016 » le 08/10). Contenu en ligne "
+            "relu par l'orchestrateur le 08/10 : « inscrit à l'ONOC », horaires du client, adresse, aucun prix, "
+            "aucun « depuis ». Reste : og:url / og:image pointaient encore vers `dmoptic-2` dans le dépôt "
+            "(reconstruits avec `--url` le 08/10, à redéployer). · "
+            "08/10 (King, 2e message du soir) : `dmoptic-2.vercel.app` SERA ABANDONNÉE — la seule adresse à "
+            "considérer désormais est `dm-optique-sarl.vercel.app` (`site_url` du CRM mis à jour ; l'ancienne "
+            "reste citée dans les entrées du 24/09 et du 25/09 comme HISTORIQUE). · "
+            "10/10 11:38 (sam., capture de King) : King envoie le lien https://dm-optique-sarl.vercel.app/ + la raison des illustrations "
+            "+ trois questions dirigées (le bleu du site, le logo, le premier écran) — texte = `sales/Send-DM-OPTIC-2026-10-09-NOUVELLE-ADRESSE.md`, "
+            "version du 21e message ; les trois questions partent SANS numéros ; double ✓ (couleur non lisible) ; client « vu à 11:37 ». "
+            "La carte d'aperçu montre le titre et la description MAIS AUCUNE VIGNETTE sur la capture : og.jpg à vérifier (cache WhatsApp ou fichier). "
+            "Correction de verbatim sur la même capture : le 13:26 dit « j'aurais besoin » (et non « j'aurai »). "
+            "Fenêtre §7 depuis la livraison : lecture lun–ven, voix mer. 14/10 SEULEMENT si le client reste muet ; `Follow-up date` 2026-10-14 ; "
+            "lecture calendaire alternative = voix lun. 12/10 : à confirmer par King. Reste : abandon de `dmoptic-2` ; acompte non encaissé à la dernière info. · "
+            "10/10 11:51 (capture WhatsApp Web ; la notification disait « il y a 14 min ») : LE CLIENT RÉPOND aux trois questions — « Oui le bleu me convient » · "
+            "« Oui j'ai un logo de la structure » · « C'est mieux la photo du cabinet ». La réponse annule la fenêtre §7. "
+            "Rulings King (12:1x) : AUCUN encaissement à ce jour ; on fait ces dernières modifications (logo ; photo du cabinet au premier écran) "
+            "PUIS on rappelle au client que le démarrage dépend de l'acompte (installation « à l'encaissement » : conditions du 07/10). "
+            "Le logo n'est pas encore reçu ; la photo du cabinet n'existe pas encore (séance photo) : le premier écran reste bleu d'ici là. "
+            "`Follow-up date` 2026-10-12 = PROPOSITION (logo reçu ? virement en cours ?), à confirmer par King. "
+            "`dmoptic-2` toujours en ligne à 12:12 (« depuis 2016 »). "
+            "King a envoyé le message 1 à 12:15 (accusé de réception, demande du logo) ; le client : « Ok » à 12:22 ; logo pas encore reçu. "
+            "`dmoptic-2` introuvable dans le Vercel de King : RULING « on oublie », le client a le bon lien ; la page reste publique (risque résiduel : « depuis 2016 » sans source dans le dépôt).",
+        "Follow-up date": "2026-10-12",
+        "site_url": "https://dm-optique-sarl.vercel.app", "site_checked_on": "2026-10-08",
+    },
+}
+
+
 def _apply_jour(out: list) -> None:
     """Les relevés, dans l'ordre : 22/09 (soir), 23/09 (matin), 24/09 (le fil Le Cristallin), puis
     24/09 (la fiche Google d'Univers Optique, relue avant la réunion)."""
@@ -1936,6 +2364,8 @@ def _apply_jour(out: list) -> None:
     _apply_state(out, ENVOI_2409_4, "ENVOI_2409_4")
     _apply_state(out, REPONSE_2409_DM, "REPONSE_2409_DM")
     _apply_state(out, REPONSE_DM_2509, "REPONSE_DM_2509")
+    _apply_state(out, ACCORD_DM_0110, "ACCORD_DM_0110")
+    _apply_state(out, JOURNAL_DM_0810, "JOURNAL_DM_0810")
     _apply_state(out, REPONSE_UNILABO_2509, "REPONSE_UNILABO_2509")
     _apply_state(out, REPONSE_UNIVERS_2509, "REPONSE_UNIVERS_2509")
     _apply_state(out, REPONSE_2409_CS, "REPONSE_2409_CS")
@@ -2848,8 +3278,8 @@ REPONSE_UNIVERS_2509 = {
     "univers-optique": {
         "Contacted": "Yes", "Reply": "Yes", "reply_type": "human",
         "Demo made": "Yes", "Offer made": "No",
-        "last_send_state": "replied", "stage": "qualifying", "stage_since": "2026-09-25",
-        "Follow-up date": "2026-09-28",
+        "last_send_state": "sent", "stage": "qualifying", "stage_since": "2026-09-25",
+        "Follow-up date": "2026-10-14",
         "contradiction":
             "Le CRM portait `closing` et « les 50 000, on les met quand ? » comme dernière étape. Le "
             "25/09, le client a écarté le site et demandé un outil : le sujet a changé, rien n'a été "
@@ -2874,6 +3304,21 @@ REPONSE_UNIVERS_2509 = {
             "c'est aussi le REMONTAGE. 27/09 — le §9 du pivot ajoute la feuille de ROI (le temps "
             "récupéré = N × J × (F − 3) × t, avec N et F remplis par LUI) et la façon de poser le prix "
             "à un homme échaudé par trois sites : il achète un résultat daté, pas un objet.",
+        "Notes_extra":
+            "FIL WHATSAPP relevé le 08/10 sur capture d'écran de King (texte copié tel quel ; la \
+graphie du client est conservée) : 25/09 07:35 — King confirme le rendez-vous de 10h00 au cabinet. · \
+27/09 19:08 — King : premier prototype en préparation, utilisera les photos déjà prises, et demande \
+quel appareil le client utilisera. · 27/09 21:48 — LE CLIENT RÉPOND : « Tablette ou smart Phone » \
+(dernier message du client). · 08/10 15:21 — ENVOYÉ par King : « Bonjour Docteur ! L'outil d'essayage \
+avance très bien. Sur 10 personnes qui entrent dans votre cabinet, environ combien repartent sans rien \
+acheter ? » = question de découverte (le chiffre qui remplit la feuille de ROI du §9), PAS un pitch ; \
+11 jours après la réponse du 27/09, sans accuser réception de « Tablette ou smart Phone ». Un brouillon \
+plus long (demande aussi la vente moyenne ; fin « toute informations sera utile ») figure sur la capture \
+comme NON ENVOYÉ : il n'est pas journalisé comme envoyé. · FENÊTRE (règle `sales/CLIENT-MESSAGING-RULES.md` \
+§7) : 24 h ouvrées = ven. 09/10 15:21 (on attend, rien d'autre) ; palier 48 h = note vocale chaleureuse \
+mar. 13/10 (= `Follow-up date`) ; palier 7 jours = appel de 2 minutes jeu. 15/10 ; une réponse du client \
+ANNULE la fenêtre (règle du 08/10). Pitch de l'outil toujours retenu tant que l'acompte DM Optique n'est \
+pas encaissé. Appareil : réponse « Tablette ou smart Phone » = le client n'a pas tranché. · 10/10 (sam., 17e message de King, capture) — LE CLIENT A RÉPONDU le ven. 09/10 : 12:31 « Merci j'attends le modèle » (verbatim) puis 12:32 une NOTE VOCALE de 0:14 DONT LE CONTENU N'EST PAS ENCORE TRANSCRIT (King doit la transcrire : elle répond peut-être à la question du 08/10 15:21 = case de la feuille de ROI). 09/10 13:20 King (fragment lisible seulement) : « …rien ne se finalise sans votre validation. Je vous envoie le lien ce soir… ». 10/10 10:35 King a envoyé le lien d'essai https://uo-essayage-camera.vercel.app + un message d'explication (texte non capturé) ; un seul ✓ au moment de la capture = pas encore délivré. La réponse du 09/10 ANNULE la fenêtre précédente : la voix du mar. 13/10 et l'appel du jeu. 15/10 sont SANS OBJET. Nouvelle fenêtre = depuis la LIVRAISON du lien (double ✓), lecture stricte lun–ven de la règle §7 : palier 1 attente · palier 2 (voix) mer. 14/10 seulement si le client reste muet · palier 3 (appel 2 min) à 7 jours ; lecture calendaire alternative = voix lun. 12/10, appel sam. 17/10 : à confirmer par King. `Follow-up date` passée à 2026-10-14. Le pitch reste retenu jusqu'à l'acompte DM Optique ; si le client demande le prix, décision de King (rien de préparé à envoyer sans lui). Le code de l'outil en ligne n'est pas dans le dépôt (seulement `assets/try-on-v1/`).",
     },
 }
 
@@ -2987,6 +3432,64 @@ REPONSE_DM_2509 = {
             "prie » ; King note le point de lundi, sans relancer. "
             "27/09 07:53 — les captures de King arrivent au dépôt : on en fait le message du 28/09, le "
             "document des deux coffrets et la mise à jour de la page. RIEN N'EST ENVOYÉ d'ici là.",
+    },
+}
+
+
+# ── 01/10/2026 — DM OPTIQUE SARL CHOISIT LE PACK GLOBAL : LE DEAL PASSE EN CLOSING ───────────────
+# Sur captures de King (mardi 30/09 au soir → jeudi 01/10, « Today »). Le client tranche :
+# 15:50 « Le pack global semble nous correspondre ». Les conditions sont ACCORDÉES de part et
+# d'autre — ce n'est plus une offre sur la table, c'est un accord en cours de formalisation :
+# stage `offer` → `closing` (prix posé, en négociation avancée ; `won` attendra l'acompte versé).
+# ⚠️ Ce qui n'est PAS encore fait : aucun acompte reçu, aucune facture proforma envoyée, ni le NIU
+# ni l'adresse fiscale du client en main. On n'écrit donc ni « client », ni « contrat signé », ni
+# « acompte payé » — la page reste à `closing` tant que l'argent n'est pas là.
+# ⚠️ Le client est une SARL sous contrôle fiscal : il EXIGE la traçabilité (virement bancaire,
+# proforma PDF + RIB + NIU, reçus tamponnés). C'est une contrainte de conformité, pas une hésitation
+# — elle se traite par des documents, jamais par un message.
+ACCORD_DM_0110 = {
+    "dm-optique": {
+        "Contacted": "Yes", "Reply": "Yes", "reply_type": "human",
+        "Demo made": "Yes", "Offer made": "Yes",
+        "stage": "closing", "stage_since": "2026-10-01",
+        # Le dernier message de King (17:17, le budget pub de 5 000 dans les 30 000) est parti ;
+        # la balle est chez le client pour DEMAIN (NIU + adresse fiscale). Rien à répondre ce soir.
+        "last_send_state": "delivered",
+        "Follow-up date": "2026-10-02",
+        # La fiche (records.py) affiche CE champ `Notes`, pas `value_kept` : sans cette réécriture
+        # elle continuerait de dire « LOT 4, PAS ENVOYÉ, Porte B FAIBLE » pour un deal en closing.
+        "Notes":
+            "PACK GLOBAL ACCORDÉ le 01/10 (stage `closing`). Installation 150 000 FCFA — acompte "
+            "75 000, solde à la livraison ; récurrent 30 000 FCFA/mois DONT 5 000 de budget pub test "
+            "(2 posts/semaine + maintenance). SARL sous contrôle fiscal : virement bancaire, proforma "
+            "PDF + RIB + NIU, reçus tamponnés. Proforma à envoyer le 02/10 ; visite à Bonabéri cette "
+            "semaine (mer/jeu, jour à confirmer) ; NIU + adresse fiscale attendus du client. AUCUN "
+            "acompte reçu à cette heure — rien ne se livre ni ne se publie avant encaissement. "
+            "(Origine : registre ONOC Littoral l.102, titulaire DOMCHE NOUMBI, contacté le 24/09.)",
+        "value_kept":
+            "LE DEAL ACCORDÉ le 01/10 — Pack Global. Installation 150 000 FCFA, acompte 50 % = "
+            "75 000 FCFA pour démarrer, solde à la livraison. Récurrent 30 000 FCFA/mois : 2 posts "
+            "par semaine + maintenance, DONT 5 000 FCFA de budget publicitaire test (Facebook/Instagram, "
+            "ciblage Bonabéri/Douala → WhatsApp). Paiement par VIREMENT BANCAIRE uniquement (SARL sous "
+            "contrôle fiscal) : facture proforma PDF + RIB + NIU, reçus tamponnés. Proforma à envoyer "
+            "le 02/10 ; visite en personne à Bonabéri cette semaine (mer/jeu, jour à confirmer).",
+        "value_discarded":
+            "Deux messages du client supprimés à 17:08 et 17:09 — contenu INCONNU : on ne les devine "
+            "pas, on ne les remplit pas. Le NIU et l'adresse fiscale ne sont PAS encore fournis (le "
+            "client les promet pour demain) : aucune raison sociale fiscale ni numéro NIU n'est écrit "
+            "d'ici là. Aucun acompte reçu, aucun contrat signé : la page ne dit ni « client » ni "
+            "« payé ».",
+        "Conversation_extra":
+            "30/09→01/10 — le client tranche : 15:50 « Le pack global semble nous correspondre ». "
+            "King confirme les conditions : installation 150 000 FCFA, acompte 50 % = 75 000 FCFA, "
+            "solde à la livraison ; 30 000 FCFA/mois (2 posts/semaine + maintenance) DONT 5 000 FCFA "
+            "de budget pub test. Le client explique qu'il est une SARL sous contrôle fiscal et exige "
+            "la traçabilité : virement bancaire, proforma PDF + RIB + NIU, reçus tamponnés. King "
+            "accepte et promet la proforma pour DEMAIN (02/10) + une visite en personne à Bonabéri "
+            "cette semaine (mer/jeu). Le client doit fournir NIU + adresse fiscale demain. "
+            "01/10 17:08 — « C'est de confiance et rassurant » ; puis deux messages supprimés à "
+            "17:08 et 17:09 (contenu inconnu). 17:17 — King précise que les 5 000 FCFA de pub sont "
+            "INCLUS dans les 30 000 FCFA/mois. RIEN N'EST ENCAISSÉ à cette heure.",
     },
 }
 
@@ -3260,8 +3763,9 @@ def main() -> int:
             rec["Notes"] = (str(rec.get("Notes") or "") +
                             f" · ⚠️ NE PAS ENVOYER sur {n} : {why}.").strip(" ·")
 
-    # 2 · OraCare — même fichier, autre onglet
-    out.append({"School": ORACARE["org"], **ORACARE})
+    # 2 · OraCare — RETIRÉ DU CRM le 02/10 (cleanup, ruling King) : plus de ligne, plus de fiche.
+    #     Restent uniquement les concepts réutilisables `demos/concept-oracare-v*.html` et les
+    #     références de `sales/Deep-Dive-Research.md` (catégorie dentistes).
 
     # 2b · les envois du 18/09 au soir (absents de l'audit du matin)
     for p in SENT_1809:
@@ -3371,6 +3875,8 @@ def main() -> int:
     _apply_dead(out)
     _apply_fiche(out)
     _apply_state(out, REVISION_2409, "REVISION_2409")
+    _apply_state(out, LOT_0210_KING, "LOT_0210_KING")
+    _apply_state(out, LOT2_0210_KING, "LOT2_0210_KING")
     check_reply_types(out)
     check_tables_sans_doublon()
 

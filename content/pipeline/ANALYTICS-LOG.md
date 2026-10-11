@@ -87,3 +87,22 @@
 3. **Vidéos fondatrices : King a tranché — on les retire** (voir `POSTING-CALENDAR.md` §A2). Les 4 fichiers restent dans le dépôt comme archives, marqués **ne pas publier**.
 
 **Ce qui reste vrai après correction :** la **falaise à 0:02** sur les deux publications, l'**ouverture figée 4,8 s** de #4 (vérifiée image par image), la **récence** de l'audience (86–91 % en 18–34 ans) et la distribution quasi exclusivement « Pour Toi » auprès de non-abonnés.
+
+---
+
+## 2026-10-08 · Instagram `amkweb.cm` — lecture du profil (capture d'écran de King, 19:45)
+
+**Source :** capture d'écran de l'app Instagram envoyée par King le 08/10/2026 (heure du téléphone 19:45). Texte seul consigné ici ; l'image n'est pas versée au dépôt. Aucun chiffre estimé.
+
+| Mesure | Valeur (verbatim) |
+|---|---|
+| Nom affiché | « AMK - WEB DEVELOPMENT & DIGITAL SOLUTIONS » |
+| Posts · abonnés · abonnements | **5 · 6 · 11** |
+| Tableau de bord | « **122 views in the last 30 days.** » |
+| Bio | « Websites for schools & clinics in Cameroon. / Bilingual EN/FR. Easy WhatsApp contact. / Get your free 24h homepage preview below. / amk-cm.vercel.app » |
+| Lien | `amk-cm.vercel.app` |
+| Lien Threads affiché | `alex_aiproductlab` |
+| Grille (5 vignettes, toutes marquées « vidéo/Reel ») | 1 « Only 2 founding clients this month. » — **11** vues · 2 « Losing customers BEFORE WHATSAPP? » — **6** · 3 « 3 REASONS People leave your website without contacting you. » — **45** (dernier chiffre partiellement coupé sur la capture) · 4 « Don't make customers hunt. HARD TO FIND ↓ EASY TO LEAVE » — **non visible** · 5 « IF INSTAGRAM DISAPPEARED TOMORROW, CAN CUSTOMERS STILL FIND YOU? » — **non visible** |
+| Texte de la vignette 1 | « Only 2 founding clients this month. ✓ Your bilingual website preview is built first — free ✓ You pay 100 000 F only if you keep it ✓ Clinics & labs — live in 3–5 days. » |
+
+Non disponible : likes, commentaires, partages, enregistrements, démographie de l'audience Instagram.

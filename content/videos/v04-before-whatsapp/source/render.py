@@ -1,8 +1,32 @@
 from PIL import Image,ImageDraw,ImageFont
-import numpy as np, subprocess, math, wave, json
+import numpy as np, subprocess, math, wave, json, os
 from pathlib import Path
-P=Path('/home/user/video4_asset'); FF=(P/'ffpath.txt').read_text().strip(); W,H=720,1280; fps=30; rate=1; duration=34.2
-fontdir=Path('/home/user/video/assets/fonts')
+try:
+    from imageio_ffmpeg import get_ffmpeg_exe
+except ImportError:
+    raise SystemExit('✗ imageio-ffmpeg manquant : pip install --break-system-packages imageio-ffmpeg')
+# Chemins corrigés le 1/10/2026 — cinq chemins d'avant le déménagement du dépôt :
+#   P       : dossier de travail (les captures produites par capture.py) — AMK_V04_WORK, /tmp par défaut.
+#   FF      : plus de 'ffpath.txt' écrit à la main — le binaire vient d'imageio-ffmpeg
+#             (c'est ce que dit tools/video/README.md, et ce qu'install.sh installe).
+#   fontdir : content/assets/fonts/ (Montserrat-ExtraBold.ttf + Montserrat-Medium.ttf).
+#   base    : content/assets/host/s1_hook.png (et non .../assets/img/).
+#   audio   : content/videos/v04-before-whatsapp/source/ (narration.mp3 + cta.mp3).
+ROOT=Path(__file__).resolve().parents[4]
+P=Path(os.environ.get('AMK_V04_WORK','/tmp/amk-v04')); FF=get_ffmpeg_exe(); W,H=720,1280; fps=30; rate=1; duration=34.2
+fontdir=ROOT/'content'/'assets'/'fonts'
+ASSETS=ROOT/'content'/'assets'
+SRC=ROOT/'content'/'videos'/'v04-before-whatsapp'/'source'
+OUTDIR=ROOT/'content'/'videos'/'v04-before-whatsapp'
+# Les pistes audio ne sont PAS dans le dépôt : `.gitignore` exclut *.mp3 (seul v06 est exempté) et King
+# les garde hors du dépôt (règle du 23/09). Plutôt qu'un traceback au milieu du rendu, on s'arrête ici.
+_missing=[str(p) for p in (SRC/'narration.mp3', SRC/'cta.mp3') if not p.exists()]
+if _missing:
+    raise SystemExit('✗ pistes audio absentes — le dépôt ne les versionne pas (.gitignore *.mp3) :\n    '
+                     + '\n    '.join(_missing)
+                     + '\n  Les replacer dans %s, puis relancer.' % SRC)
+if not (P/'captures').is_dir():
+    raise SystemExit('✗ %s introuvable — lance d\'abord capture.py avec le même AMK_V04_WORK.' % (P/'captures'))
 from functools import lru_cache
 @lru_cache(None)
 def font(s,b=True):
@@ -11,7 +35,7 @@ def font(s,b=True):
  except Exception: pass
  return f
 navy='#1B2055'; ink='#172044'; teal='#23C4B1'; gold='#FFB020'; white='#FFFFFF'
-base=Image.open('/home/user/video/assets/img/s1_hook.png').convert('RGB').resize((720,1280))
+base=Image.open(ASSETS/'host'/'s1_hook.png').convert('RGB').resize((720,1280))
 # Website overlays obscure the social profile in the reused opening art.
 def text(d,xy,t,s=34,c=white,b=True): d.text(xy,t,font=font(s,b),fill=c)
 def center(d,y,t,s=34,c=white):
@@ -172,8 +196,8 @@ sr=48000;t=np.arange(int(duration*sr))/sr
 mus=sum(np.sin(2*np.pi*f*t)*.012 for f in [130.81,164.81,196,261.63]);mus*=np.minimum(t/1.5,1)*np.minimum((duration-t)/1,1)
 with wave.open(str(P/'step02_music.wav'),'w') as w:w.setnchannels(1);w.setsampwidth(2);w.setframerate(sr);w.writeframes((mus*32767).astype('int16').tobytes())
 g=f'[0:a]apad,atrim=0:{duration}[orig];[1:a]adelay=30500,apad,atrim=0:{duration}[cta];[orig][cta]amix=inputs=2:normalize=0,asplit=2[n][key];[2:a][key]sidechaincompress=threshold=0.015:ratio=5:attack=15:release=300[m];[n][m]amix=inputs=2:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11[a]'
-subprocess.run([FF,'-y','-i','/home/user/video4/narration.mp3','-i',str(P/'cta.mp3'),'-i',str(P/'step02_music.wav'),'-filter_complex',g,'-map','[a]','-ar','48000',str(P/'step03_narration_cta_mix.wav')],stderr=open(P/'audio.log','w'),check=True)
-subprocess.run([FF,'-y','-i',str(P/'step01_browser_edit_30fps.mp4'),'-i',str(P/'step03_narration_cta_mix.wav'),'-map','0:v','-map','1:a','-c:v','copy','-c:a','aac','-b:a','192k','-t',str(duration),'-movflags','+faststart','/home/user/Video_04_Real_Website_PREVIEW.mp4'],stderr=open(P/'mux.log','w'),check=True)
+subprocess.run([FF,'-y','-i',str(SRC/'narration.mp3'),'-i',str(SRC/'cta.mp3'),'-i',str(P/'step02_music.wav'),'-filter_complex',g,'-map','[a]','-ar','48000',str(P/'step03_narration_cta_mix.wav')],stderr=open(P/'audio.log','w'),check=True)
+subprocess.run([FF,'-y','-i',str(P/'step01_browser_edit_30fps.mp4'),'-i',str(P/'step03_narration_cta_mix.wav'),'-map','0:v','-map','1:a','-c:v','copy','-c:a','aac','-b:a','192k','-t',str(duration),'-movflags','+faststart',str(OUTDIR/'Video_04_Real_Website_PREVIEW.mp4')],stderr=open(P/'mux.log','w'),check=True)
 sheet=Image.new('RGB',(960,1280),navy)
 for k,(i,t) in enumerate([(0,2),(1,3),(2,3),(3,4.5),(5,2),(6,2)]):sheet.paste(scene(i,t).resize((320,568)),((k%3)*320,(k//3)*640))
 sheet.save(P/'review.jpg')

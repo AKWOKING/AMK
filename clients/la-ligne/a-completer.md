@@ -18,7 +18,7 @@ se passe, et ce qui ne peut se décider que dans la conversation. Tout ce qui su
 | 9 | **Ce qui est réparé sur place** (vis, plaquettes, ajustement, soudure ?) | La page pose la question au patient et promet une réponse — pas une réparation | à préciser |
 | 10 | **Une seconde ligne téléphonique**, s'il y en a une | Un seul numéro est publié aujourd'hui : le 683 651 108 | à confirmer |
 | 11 | **Une adresse e-mail**, si vous en avez une | Aucune n'apparaît aujourd'hui | à confirmer |
-| 12 | **Le nom exact que vous voulez voir** (enseigne, raison sociale complète, « Mme Joungo ») | La page écrit aujourd'hui « La Ligne Optic » et nomme Mme Joungo Line Chantale, opticienne, avec son inscription à l'Ordre (2017) | à confirmer |
+| 12 | **Le nom exact que vous voulez voir** (enseigne, raison sociale complète, « Mme Joungo ») | La page écrit aujourd'hui « La Ligne Optic » et nomme Mme Joungo Line Chantale, opticienne, avec son inscription à l'ONOC | à confirmer |
 
 ## Ce qu'on fait dès qu'on reçoit
 
