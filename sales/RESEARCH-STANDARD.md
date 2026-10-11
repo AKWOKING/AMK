@@ -125,6 +125,17 @@ Six lookups, ~10 minutes, **before** the draft — never after:
   do not repeat the claim — pivot to what is genuinely missing (current hours, catalogue, WhatsApp
   button).
 
+## 8d. REVERSE-ENGINEERING — les deals gagnés avant les plays (Lot [40], vidéo 15, ruling à confirmer King)
+
+Avant d'inventer un play ou une vague suivante : (1) interviewer King, verbatim, sur chaque deal
+gagné **et** perdu (qu'est-ce qui a fait dire oui / non ?) ; (2) croiser avec les données publiques
+observables **à l'époque** de la décision (avis, activité sociale, annuaire) ; (3) n'automatiser et
+ne scaler que ce qu'au moins une transaction réelle confirme. « Invert, always invert » : le signal
+vient du cash transigé, pas des signaux sur étagère (jamais acheter de signaux). Premier sujet :
+rétro-ingénierie DM Optique après acompte. **7ᵉ recherche du §8c :** le **trigger / why-now**
+observable du prospect (nouvel avis, activité sociale, travaux, changement d'annuaire) — pas de
+message sans « pourquoi maintenant ».
+
 ## 9. Feedback loop
 - Every King correction is logged here as an error-log entry with: what was wrong, which poisoned source caused it, what check would have caught it, and which OTHER dossiers used that source (they get re-checked the same day).
 - When a source type proves unreliable in one dossier (here: medicoor doctor rosters + truncated PDF provider lists), every other dossier's facts from that source type are demoted one tier until re-verified.

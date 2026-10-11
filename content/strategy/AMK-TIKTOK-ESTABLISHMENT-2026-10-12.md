@@ -94,3 +94,11 @@ recherche ? le bio/lien a-t-il converti les visites en taps ?
 - Visites ↑ mais abonnés/taps plats → corriger accroche + bio, garder la cadence, re-revue à J+7.
 - Plat partout → **redescendre à 2/semaine**, réallouer vers le pilier gagnant, re-revue à J+7.
 - **Jamais** monter la cadence sur les vues seules.
+
+---
+
+## Addendum Lot [40] (vidéo 12) — « montrer le système » comme format
+
+Le projet-portfolio de la vidéo 12 (documenter un workflow réel et le publier) confirme le pilier
+A : ajouter un format récurrent **« on montre le système à l'écran »** (sweep ONOC → vérif →
+première ligne) — sans nommer de prospect sans consentement, sans chiffres clients.

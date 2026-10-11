@@ -2006,3 +2006,64 @@ sa raison d'être est la méthode rejetée). Les quatre plateformes de la vidéo
   dans `sales/PRIX-ET-RECURRENCE-2026-09-24.md` (où la portée est définie, ligne 34). Si King veut un
   modèle autonome, c'est un fichier neuf → §4b.
 - **Les quatre lots sont clos.** En attente de la demande de synthèse d'une page de King.
+
+## Lot [40] · RECHERCHE VIDÉO — BATCH 5 of 7 (4 vidéos) · 2026-10-11 · GTM ENGINEERING
+
+Dossiers : `research/youtube-lessons/2026-10-11-batch-5/` (video-12 → video-15 + INDEX).
+Transcripts voie §0, complets (vidéo 12 en hindi/devanagari). Vidéos 13 et 14 = **Salesforge, vendor
+sponsorisé** ; vidéo 15 = consultant (biais conseil) ; vidéo 12 = créatrice carrière (Inde).
+
+### 3 idées à agir cette semaine
+1. **Rétro-ingénierie des deals gagnés** (vidéo 15) : interviewer King verbatim sur DM Optique
+   (pourquoi oui ?) et les perdus (pourquoi non), croiser avec les données publiques de l'époque,
+   n'automatiser que le confirmé par une transaction. → `sales/RESEARCH-STANDARD.md` §8d.
+   S'applique à la vague **suivante**, pas à celle du 12/10 (vérifiée, figée).
+2. **7ᵉ recherche « trigger / why-now »** (vidéos 12–13 traduites Cameroun : nouvel avis Google,
+   activité FB/IG, travaux de boutique, changement d'annuaire) → §8d ; héritée par le gabarit de
+   vague via les portes §8b.
+3. **Règle « jamais de signaux sur étagère / jamais de stack GTM payant sans profit »** →
+   `ops/TOOL-SCAN.md` (journal 11/10 nuit).
+
+### 3 idées à garder (en réserve)
+1. **n8n Community Edition** (self-host, gratuit) comme couche connecteur si le volume l'exige.
+2. **Vocabulaire 3 couches d'outbound** (IA-volume / intent / inbound-led) pour les revues —
+   la couche « inbound-led » recoupe la règle 02/10 (prospect ayant VU le contenu, jamais déduit).
+3. **« Builder pas codeur » + projet portfolio documenté** → format TikTok « on montre le système
+   à l'écran » (addendum du brief d'établissement).
+
+### 3 idées à rejeter carrément
+1. **Stack payant Clay/Instantly/Apollo/Salesforge/HubSpot** à l'échelle AMK — aucun profit ne le
+   justifie ; l'orchestrateur + crm.py font déjà find/enrich/route (orchestrator-first).
+2. **Scaling horizontal multi-comptes LinkedIn** (vidéo 13) — violation ToS + réputation ; contraire
+   à la confiance d'abord.
+3. **L'économie « 1 GTM engineer = 5 SDR / une équipe »** comme chiffre de planification — trois
+   formulations vendor, zéro mesure ; et il n'y a pas de SDR à remplacer chez nous.
+
+### Outils survivants de l'audit
+Orchestrateur (fetch_page + sweeps ONOC/avis) · crm.py/generators · n8n CE (HOLD, gratuit) ·
+ChatGPT/Gemini free uniquement en équivalent de l'orchestrateur. **Rien de payant n'a survécu.**
+Alt open source notée pour le jour où Clay se justifierait : buildingopen/opengtm.
+
+### Contradictions entre vidéos
+- **Le job :** 12–14 = automatiser + personnaliser à l'échelle ; **15 = le job N'EST PAS de
+  personnaliser des emails** mais de forcer la recherche sur les deals gagnés. Résolution AMK :
+  15 gagne au niveau stratégie (les signaux viennent du cash transigé), 12–13 ne restent que comme
+  techniques d'exécution une fois le signal validé.
+- Chiffres vendor incohérents : « centaines de sources » (12) vs « 150 » (13) ; « 1 = 5 SDR » (12, 14)
+  vs « 1 = équipe SDR » (13) vs « 500 meetings/mois » (13) — tous self-report, tous classés non
+  planifiables.
+- 13 vend le volume (unlimited mailboxes) quand 15 dit que le volume sans recherche = roulette.
+
+### Le workflow AMK après ce batch
+Pas de nouvel outil. La vague hérite d'une ligne « trigger / why-now » par prospect (§8d). La
+prochaine vague hérite d'une rétro-ingénierie des deals avant d'être écrite. Le CRM reste maison.
+TikTok gagne un format « montrer le système ». La revue (J14 TikTok, vendredi) reste le levier —
+cohérent avec la règle debout « la cadence est un test ».
+
+### Verdict GTM engineering pour AMK
+**Pertinent comme MÉTHODE, pas comme STACK.** Le cœur (systématiser, cibler par signaux, chercher
+avant d'inventer, boucler sur les données) est exactement ce que fait déjà l'orchestrateur + King ;
+le lot le renomme et le sharpen (surtout la vidéo 15 : bottom-up depuis les deals gagnés). Le stack
+B2B SaaS (Clay, Instantly, Salesforge, CRM payants) et l'économie de remplacement de SDR sont un
+monde différent (email+LinkedIn, US, équipes) : **non transférable** à une agence 1 personne,
+WhatsApp-first, Cameroun. Donc : adopter le protocole §8d, rejeter les achats.

@@ -129,3 +129,15 @@
   évalué (Wix / Framer / Durable / autre) ? Sans le nom, l'entrée n'est pas réutilisable et le sujet
   reviendra. Triggers de re-review : un client demande un site auto-géré · un volume de sites que la
   chaîne actuelle ne suit plus.
+
+## 11/10 (nuit) — audit stack GTM (Lot [40], batch 5)
+
+Règle debout issue de l'audit : **jamais de signaux « sur étagère » ni de stack GTM payant sans
+profit qui le justifie** (biais gratuit/open-source). Verdicts : Clay (~800 $/mois ; alt open source
+buildingopen/opengtm) **REJETÉ à l'échelle AMK** · Apollo payant **REJETÉ** (free 900 crédits sans
+donnée opticiens Cameroun) · Instantly/Smartly **REJETÉS** (volume email ≠ WhatsApp-first) ·
+Salesforge + Forges **REJETÉS** (vendor sponsorisé, scaling multi-comptes LinkedIn = risque ToS +
+réputation) · HubSpot/Salesforce CRM **REJETÉS** (crm.py maison = source de vérité) ·
+**n8n Community Edition (self-host, gratuit) = HOLD** : couche connecteur future si le volume
+l'exige, jamais avant · ChatGPT/Gemini free = déjà remplacés par l'orchestrateur
+(orchestrator-first confirmé : find → enrich → first-line research → route = crm.py + sweeps).
