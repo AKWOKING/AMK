@@ -146,3 +146,30 @@ Source : `research/youtube-lessons/2026-10-11-batch-2/`.
   1 000 contacts, limité à Instagram, et inutile tant qu'une réponse humaine ne coûte rien.
   **Déclencheur écrit pour y revenir :** le volume de commentaires d'un client dépasse ce que des
   réponses manuelles peuvent couvrir dans la journée.
+
+---
+
+## Addendum du lot [38] — batch 3 (11/10)
+
+Source : `research/youtube-lessons/2026-10-11-batch-3/` (vidéos 7 et 8). Aucun fichier neuf (§4b).
+
+- **§B — être spectateur avant d'être publieur (vidéo 7).** Avant le test de découverte locale de
+  deux semaines, King passe du temps délibéré sur l'application : ce qui se fait en ce moment, les
+  formats, ce qui a l'air « hors sujet ». Gratuit, mais c'est un coût en temps réel — à peser contre
+  l'objectif de 500 000 FCFA/mois.
+- **§C — typologie des accroches (vidéo 7).** Une accroche est **verbale ou visuelle**. Et une
+  accroche utilisée depuis longtemps se **retire** : les spectateurs sont immunisés contre les
+  formules épuisées (« stop scrolling »).
+- **§C — alterner les appels à l'action (vidéo 7).** Ne pas toujours demander d'acheter. Le CTA
+  WhatsApp reste la cible, mais toutes les publications ne vendent pas.
+- **§D — la revue à un mois (vidéo 8).** À date fixe, lire les analytics et répondre à trois
+  questions : quelles publications ont apporté des **abonnés**, lesquelles ont apporté des
+  **clics WhatsApp**, lesquelles n'ont rien apporté. Puis en faire plus des premières et arrêter les
+  troisièmes. **Indépendant de la cadence** — fonctionne à 2/semaine. La cadence de 3–5/semaine de la
+  vidéo n'est **pas** reprise.
+
+**Rejeté du lot [38] :** l'astuce de la « liste de mots-clés cachée hors écran » (vidéo 8) —
+non vérifiable, sans source, et l'auteure elle-même la hedge d'un « apparently ». Les chiffres
+66 % / 74 % / 67 % de la vidéo 7 comme arguments client : recherche de **TikTok lui-même** sur le
+comportement d'**achat**, dans une vidéo **sponsorisée par TikTok for Business**, et non
+transposable à un achat de santé en personne.

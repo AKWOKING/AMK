@@ -1785,3 +1785,117 @@ apparaît déjà dans les réponses d'IA (coût zéro, quelques minutes). **Many
 - Instagram est-il un canal prioritaire pour les opticiens de Douala, ou le vrai couple est-il
   Facebook + WhatsApp ? Aucune donnée au dossier.
 - Lot [37] = batch 2 de 4. **Batches 3 et 4 en file, non commencés.**
+
+---
+
+## Lot [38] · RECHERCHE VIDÉO — BATCH 3 of 4 (3 vidéos) · 2026-10-11
+
+**Rapports détaillés :** `research/youtube-lessons/2026-10-11-batch-3/` (INDEX + un fichier par
+vidéo, six parties). **Matière première brute** — la synthèse d'une page est écrite par King après
+le lot 4. Discipline des lots 1 et 2 appliquée : liens sources, métadonnées depuis les **pages
+YouTube**, contrôle du re-datage, outil-gratuit d'abord.
+
+| # | Vidéo | Producteur | Longueur · mise en ligne · vues | Ce qu'il vend |
+|---|---|---|---|---|
+| 7 | Grow your small business on TikTok, 5 tactics | Jade Beason | 12:17 · 23/09/2024 · 66 526 | **sponsorisée par TikTok for Business** + lien d'affiliation TikTok (crédit offert) + son agence, 4 challenges payants, Riverside/TubeBuddy/Hootsuite |
+| 8 | TikTok For Business: Beginner's Guide | Primal Video (présentatrice : Jordana Grace) | 03:36 · 23/11/2023 · 203 138 | guide smartphone gratuit + Primal Video PLUS + gear |
+| 9 | AI Motion Graphics in Minutes (FREE Master Prompt) | ReachMora | 09:17 · **30/09/2026** · 130 921 | **rien** — le prompt est donné gratuitement |
+
+**Contrôle du re-datage :** aucune des trois n'est re-datée. La 9 a **onze jours** — la plus récente
+de tous les lots. La 8 est la plus ancienne (nov. 2023) et la plus mince (3 min 36).
+
+**Posture commerciale, comparée :** la vidéo 9 ne vend rien et le dit (« No course, no $97 prompt
+pack, no DM me on Instagram »). La vidéo 7 est **payée par la plateforme qu'elle recommande** et
+présente les statistiques de cette plateforme comme des trouvailles neutres. C'est le contraste le
+plus utile du lot : la qualité du conseil n'a aucun rapport avec la propreté commerciale, et
+l'audit des réclamations est ce qui les sépare.
+
+### Trois idées à appliquer cette semaine
+
+1. **La revue à un mois (vidéo 8).** À date fixe : quelles publications ont apporté des **abonnés**,
+   lesquelles des **clics WhatsApp**, lesquelles **rien**. En faire plus des premières, arrêter les
+   troisièmes. **Indépendant de la cadence** — marche à 2/semaine. C'est l'instrument qui manquait au
+   problème enregistré : le moteur de contenu a produit **zéro lead entrant**, et nous n'avions aucun
+   rituel pour savoir pourquoi. → `content/strategy/TIKTOK-SEO-CHECKLIST-2026-10.md` §D.
+2. **Être spectateur avant d'être publieur (vidéo 7).** Avant le test de découverte locale de deux
+   semaines, King passe du temps sur l'application. Gratuit, mais coût en temps réel — à peser.
+   → même fichier §B.
+3. **Le Design Read affiné (vidéo 9).** Devant une référence, nommer explicitement : mouvement ·
+   transitions · palette · typographie · composition · mouvement de caméra · rythme · hiérarchie —
+   puis l'écrire comme spéc. Aucun outil nécessaire. → `AMK-DESIGN-SKILLS.md` §2.
+
+### Trois idées à garder en attente
+
+1. **Google Flow / Omni Flash + ElevenLabs (vidéo 9).** Le seul vrai trou de capacité des trois lots
+   : **je ne peux pas générer de vidéo ni de voix.** HOLD, avec déclencheur écrit : un besoin de
+   contenu **propriétaire AMK** sans réponse en footage réel (expliquer l'essayage virtuel),
+   approuvé par King. Coût réel à connaître : gratuit = **50 crédits/jour ≈ 3–7 courts clips**,
+   filigrane SynthID ; ensuite 4,99–199,99 $/mois ou **0,10 $/seconde**.
+2. **La typologie des accroches + le retrait des accroches épuisées (vidéo 7).** Juste, mais à
+   éprouver pendant le test de deux semaines plutôt que décrété.
+3. **L'alignement de l'influenceur plutôt que sa taille (vidéo 7).** Pertinent seulement si nous
+   proposons un jour du travail d'influence — troisième source indépendante convergente sur cette
+   heuristique (avec le ratio vues/abonnés du lot 36 et le vol de hashtags du lot 36/37).
+
+### Trois idées à rejeter outright
+
+1. **Les 66 % / 74 % / 67 % comme arguments client (vidéo 7).** Les chiffres sont **réels et
+   reproduits** — mais ce sont **les recherches de TikTok lui-même**, sur le comportement
+   d'**achat**, dans une vidéo **sponsorisée par TikTok for Business**. Et un opticien vend un examen
+   en personne et une monture essayée, pas un achat impulsif. Erreur de catégorie : on ne les cite
+   pas. Sources : https://embedsocial.com/blog/tiktok-statistics/ · https://www.searchenginejournal.com/tiktok-stats/445449/
+2. **L'astuce de la liste de mots-clés cachée hors écran (vidéo 8).** Non vérifiable, sans source,
+   sans mécanisme — et l'auteure elle-même la hedge d'un « **apparently** ». Exactement le genre
+   d'affirmation que notre règle nous interdit de répéter.
+3. **L'imagerie et la vidéo générées par IA dans un livrable client (vidéo 9).** Contredit §25/§32,
+   le standard photo-au-téléphone et la pratique « Photo d'illustration ». Pour un commerce qui
+   manipule des yeux, une image synthétique de son cabinet est un risque de fausse représentation.
+
+### Outils qui survivent à l'audit — gratuits
+
+Recherche TikTok native (autocomplete, « Others searched for ») · analytics du compte · CapCut
+(gratuit, si un jour nous montons) · Pinterest (source de références — à noter : **pas** dans la
+liste du §2 étape 3, qui nomme Awwwards, Godly, Land-book, SiteInspire, Mobbin, Lapa Ninja,
+Dribbble). **Aucun outil payant ne survit — troisième lot consécutif.** Riverside, TubeBuddy,
+Hootsuite, Primal Video PLUS, gear : rejetés.
+
+### Contradictions (dans ce lot, et avec les lots précédents)
+
+1. **Fréquence, troisième point de vue.** Lot 36 (Millie) : 3–5 **par jour**. Lot 37 (Wiebe) :
+   qualité plutôt que fréquence. Vidéo 8 : 3–5 **par semaine** pendant un mois, puis on regarde.
+   **Synthèse :** la cadence n'est pas le levier ; **la revue** l'est. On garde la revue, on garde
+   2/semaine.
+2. **Image réelle contre image générée.** Vidéos 7 et 8 supposent qu'on se filme ; vidéo 9 génère
+   tout. Notre règle tranche : **réel pour le client**, généré possible seulement pour du contenu
+   AMK sans équivalent réel — et étiqueté.
+3. **Astuce d'algorithme contre métier.** Vidéo 8 propose un truc non vérifiable ; vidéo 7 avertit
+   que les spectateurs sont immunisés contre les ficelles épuisées. Le métier gagne.
+4. **Corroboration, pas contradiction.** « TikTok est un moteur de recherche, utilisez
+   l'autocomplétion » — **trois vidéos indépendantes** (7, 8, et la 3 du lot 36) plus un guide écrit.
+   C'est désormais acquis.
+
+### Ce que le flux de travail AMK devient après ce lot
+
+- Trois fichiers existants enrichis, **aucun fichier neuf** (§4b) :
+  `content/strategy/TIKTOK-SEO-CHECKLIST-2026-10.md` (§B spectateur, §C accroches + CTA alternés,
+  §D revue à un mois) · `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` (visuels IA : HOLD avec
+  conditions + checklist éthique) · `AMK-DESIGN-SKILLS.md` §2 (Design Read affiné, huit axes).
+- Une **frontière nette posée** : rien de synthétique sur un livrable client ; possible sur du
+  contenu AMK, étiqueté, avec checklist.
+- La règle appliquée trois fois dans ce lot : **un chiffre qu'on ne peut pas montrer ne sort pas de
+  notre bouche** — 66/74/67 %, « over 800 videos », « without spending a single dollar »,
+  « ranked high on Google » : tous marqués, non citables.
+- **Aucune sortie client, aucun déploiement.**
+
+### Ouvert (bloqué sur King ou sur une donnée manquante)
+
+- **TikTok Shop est-il disponible au Cameroun ?** Le lot 36 a tranché pour **Creator Rewards : non**.
+  TikTok Shop **n'a pas été vérifié** — ne rien supposer dans un sens ou dans l'autre.
+- La revue à 30 jours sur ~8 publications : l'échantillon est faible. Quel minimum avant de s'engager
+  dans le rituel ?
+- Le client veut-il un rapport de contenu mensuel écrit dans le retainer, ou la revue reste-t-elle
+  interne ?
+- « Nous ne publions aucune image synthétique de votre cabinet, de votre équipe ou de vos produits »
+  — en faire un **argument de vente** plutôt qu'une limite ? Pour un client de santé, cela pourrait
+  différencier.
+- Lot [38] = batch 3 de 4. **Batch 4 en file, non commencé.**

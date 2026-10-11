@@ -121,3 +121,28 @@ commente, la réponse est un message privé contenant le lien WhatsApp **message
 vient du **programme partenaire de ManyChat lui-même** ; une analyse indépendante de 1 200+
 campagnes donne **2–3 % → 12–18 %**. La **direction** est vérifiée (la conversation bat la bio),
 le **chiffre 46 %** ne l'est pas et ne sort pas de notre bouche.
+
+---
+
+## Apport du lot [38] — visuels générés par IA : HOLD avec conditions (11/10)
+
+Source : `research/youtube-lessons/2026-10-11-batch-3/video-9-ai-motion-graphics.md`.
+
+**Décision : aucune imagerie ni vidéo générée par IA dans un livrable client.** Cela contredit
+`AMK-DESIGN-SKILLS.md` §25/§32, le standard photo-au-téléphone
+(`research/PHOTO-LABO-PIXEL-8A-2026-09-24.md`) et la pratique « Photo d'illustration ». Pour un
+opticien — un commerce qui manipule des yeux — une image synthétique de son cabinet est un risque de
+fausse représentation que nous ne prenons pas.
+
+**Si un jour AMK publie un visuel généré pour SON propre contenu** (expliquer l'essayage virtuel,
+par exemple — cas où aucune photo réelle n'existe), la checklist suivante s'applique, reprise de la
+vidéo 9 qui la formulait mieux que la plupart des formations payantes :
+1. Droits et autorisations vérifiés sur toute référence utilisée.
+2. Chaque sortie revue avant publication : erreurs visuelles, éléments inattendus, marques
+   déposées, matériel protégé.
+3. **Le visuel est étiqueté comme généré.** (À noter : la sortie gratuite de Google Flow dans
+   YouTube Shorts/Create porte de toute façon un filigrane SynthID.)
+
+**Outils en HOLD, pas adoptés :** Google Flow / Omni Flash (palier gratuit 50 crédits/jour ≈ 3–7
+courts clips, puis 4,99–199,99 $/mois ou 0,10 $/seconde) et ElevenLabs. **Déclencheur écrit pour y
+revenir :** un besoin de contenu **propriétaire AMK** sans réponse en footage réel, approuvé par King.
