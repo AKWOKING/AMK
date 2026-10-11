@@ -74,3 +74,26 @@ Un contrôle fait sur la copie locale ne compte pas : c'est la page servie que l
 | **`uni-labo.vercel.app`** | ❌ **NON balayé ce tour.** Le flag du 08/10 reste ouvert : « Dr Tientcheu Philomène, Biologiste » toujours non tracé à une source de dossier. À faire. |
 | **`cavisa.vercel.app`** | ❌ **NON balayé ce tour** (2ᵉ moitié toujours non lue). |
 | **`dmoptic-2.vercel.app`** | Hors périmètre (abandonnée, King 08/10 ; « on oublie », 10/10). Risque résiduel inchangé : page publique avec « depuis 2016 », et l'outil de suppression n'est pas à notre portée. |
+
+---
+
+## 2026-10-11 · DM Optique — vérification live (protocole Task B)
+
+**État : EN ATTENTE du signal « deployed » de King.** Aucune vérification finale faite ce soir —
+le protocole se déclenche sur le signal, pas avant.
+
+**Baseline (fetch `dm-optique-sarl.vercel.app`, 11/10 au soir, AVANT signal) :**
+- `<title>` live : « Opticien à Douala — DM OPTIQUE SARL : vue, verres, montures ».
+- Le bloc ONOC du corps affiche bien **deux lignes** : « DM OPTIQUE SARL / Douala ».
+- **Non confirmable par fetch :** le logo du hero (image base64 retirée par l'outil) et le
+  `<head>`/`og:title` (le markdown ne rend pas les balises meta). → la vérif finale doit inspecter le
+  HTML brut (hero `.herologo`/`--logo` et og:title deux lignes) sur le signal « deployed ».
+- Donc : si King a déjà déployé, ceci est peut-être la nouvelle version ; la vérif formelle reste à
+  faire sur signal.
+
+**Protocole (à exécuter dans les 5 min du signal « deployed ») :**
+1. Ouvrir `dm-optique-sarl.vercel.app`.
+2. Tagline = deux lignes « DM OPTIQUE SARL / DOUALA », PAS la forme virgule.
+3. Logo présent dans le hero (ancien : cercle bleu-rose).
+4. `<head>` propre : title + og:title en forme deux lignes, pas de version ancienne en cache.
+5. Reporter ici **LIVE VERIFIED** ou **LIVE MISMATCH** + détails.
