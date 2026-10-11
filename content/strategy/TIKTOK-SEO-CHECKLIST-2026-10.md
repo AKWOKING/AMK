@@ -125,3 +125,24 @@ changes.**
 
 **Status:** NOT STARTED — window opens when King starts it. **This is not a recommendation to any
 client until the result is logged.**
+
+---
+
+## Addendum du lot [37] — batch 2 (11/10)
+
+Source : `research/youtube-lessons/2026-10-11-batch-2/`.
+
+- **§C étendu — le CTA dans la conversation, sur Instagram aussi.** Commentaire → réponse en
+  message privé avec le lien WhatsApp pré-écrit. Jamais « lien en bio ». Gratuit (vidéo 5).
+- **§D — le calendrier vient des analytics du compte, jamais d'un tableau générique.** Les
+  « meilleurs créneaux » cités par la vidéo 5 venaient d'un rapport non nommé, et l'auteur se
+  corrige lui-même : lire les analytics du compte. Pour Douala, public et commerce sont au même
+  fuseau (WAT, UTC+1), donc la question du fuseau ne se pose pas.
+- **§D — règle positive de fréquence (vidéo 6).** On ne publie que quand il y a quelque chose qui
+  vaut la peine d'être publié, et **on reste présent la première heure** pour répondre à chaque
+  commentaire. C'est la version positive du rejet du sprint 3–5/jour du lot [36].
+- **ManyChat : HOLD, pas adopté.** Seul outil de deux lots qui fait quelque chose que
+  l'orchestrateur ne peut pas faire (automatisation des DM via l'API Meta). Payant au-delà de
+  1 000 contacts, limité à Instagram, et inutile tant qu'une réponse humaine ne coûte rien.
+  **Déclencheur écrit pour y revenir :** le volume de commentaires d'un client dépasse ce que des
+  réponses manuelles peuvent couvrir dans la journée.

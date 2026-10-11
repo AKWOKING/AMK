@@ -1677,3 +1677,111 @@ Effect Creator Rewards, et aucun dans le Creator Fund
    l'orchestrateur propose l'emplacement, King approuve, ensuite c'est committé. → écrite dans
    `PRE-FLIGHT.md` §4b.
 2. **Sous-titres TikTok toujours manuels** → `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md`.
+
+---
+
+## Lot [37] · RECHERCHE VIDÉO — BATCH 2 of 4 (3 vidéos) · 2026-10-11
+
+**Rapports détaillés :** `research/youtube-lessons/2026-10-11-batch-2/` (INDEX + un fichier par
+vidéo, six parties). **Matière première brute** — la synthèse d'une page est écrite par King après
+le lot 4. Les corrections du lot 1 sont appliquées comme discipline : liens sources sur chaque
+réclamation VERIFIED, durée/date/vues tirées des **pages YouTube**, audit d'outils gratuit d'abord.
+
+| # | Vidéo | Producteur | Longueur · mise en ligne · vues | Ce qu'il vend |
+|---|---|---|---|---|
+| 4 | How To Market Your Business On Social Media | Marley Jaxx (184K ab.) | 12:05 · 20/04/2021 · 3 142 404 | Chief Content Officer + pile d'affiliation (Canva, ActiveCampaign, TubeBuddy, ClickFunnels, Funnel Scripts, Rev) |
+| 5 | Best Instagram Marketing Strategy For Small Business **2026** | Adam Erhart | 10:23 · 04/12/2023 · 638 592 | cours IA gratuit + HighLevel (affiliation) + **sponsor ManyChat** |
+| 6 | The Top 7 Content Strategies | Joanna Wiebe | 14:33 · 18/12/2025 · 458 178 | atelier gratuit (thebigsmall.co) — **aucune pile d'affiliation** |
+
+**Note de crédibilité relevée sur deux vidéos :** la 4 annonce « in 2023 » pour une mise en ligne
+d'**avril 2021** ; la 5 s'intitule « 2026 » pour une mise en ligne de **décembre 2023** (le service
+de transcript en garde une version « 2025 »). Titres re-datés. Le contenu n'est donc pas de l'année
+qu'il affiche — traité en conséquence.
+
+### Trois idées à appliquer cette semaine
+
+1. **Le test des trois métiers (vidéo 4).** Chaque publication doit nommer son métier : générer,
+   nourrir, convertir. Sinon elle ne se fait pas. C'est le **diagnostic direct** de notre problème
+   enregistré : `CONTENT-STRATEGY-V2` dit que le moteur de contenu a produit **zéro lead entrant**.
+   → inscrit dans `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md`.
+2. **Qualité plutôt que fréquence + être présent la première heure (vidéo 6).** Soutient
+   l'engagement de **2 publications/semaine** et contredit le sprint 3–5/jour du lot [36].
+   → `content/strategy/TIKTOK-SEO-CHECKLIST-2026-10.md` §D.
+3. **Le CTA dans la conversation, pas dans la bio (vidéo 5).** Commentaire → message privé avec le
+   lien WhatsApp pré-écrit. Gratuit, sans outil, et conforme au motif `wa.me` déjà en place.
+   → `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` + checklist TikTok §C.
+
+### Trois idées à garder en attente
+
+1. **ManyChat — le seul outil de deux lots qui fait ce que l'orchestrateur ne peut pas faire**
+   (automatisation des DM via l'API Meta). HOLD, avec **déclencheur écrit** : le volume de
+   commentaires d'un client dépasse ce que des réponses manuelles couvrent dans la journée.
+2. **L'AEO (vidéo 6) comme chantier SEO client.** La prémisse est **VÉRIFIÉE** par des données
+   indépendantes — mais l'actionnable pour un opticien de Douala est étroit (YouTube + fiche Google
+   + faits extractibles sur le site). **Proposé** comme section dans
+   `content/strategy/SEO-CHECKLIST-CLIENT-SITES-2026-10.md` — **en attente du oui de King (§4b)**.
+3. **L'inventaire d'histoires (vidéo 4).** Utile, mais exige le consentement du client histoire par
+   histoire avant usage. En attente d'une règle de collecte.
+
+### Trois idées à rejeter outright
+
+1. **Le chiffre « 1 % → 46 % » de la vidéo 5.** Il vient du **programme partenaire de ManyChat
+   lui-même**. Une analyse indépendante de 1 200+ campagnes (T4 2025) donne **2–3 % → 12–18 %**.
+   La direction est vraie ; le chiffre ne sort pas de notre bouche.
+2. **Les deux piles d'outils payants** — Canva/ActiveCampaign/TubeBuddy/ClickFunnels/Funnel
+   Scripts/Rev (vidéo 4) et HighLevel « Agency OS » (vidéo 5) : payés, hors canal ou déjà couverts
+   par notre CRM et notre standard single-file. **Aucun outil payant ne survit à ce lot.**
+3. **Spark Toro (vidéo 6).** Payé, et la question qu'il pose (« où mon public s'informe-t-il ? ») a
+   pour un opticien local une réponse courte qu'on obtient depuis les commentaires du client, les
+   statistiques de sa page Facebook et notre journal de 79 citations de leads.
+
+### Outils qui survivent à l'audit — tous gratuits
+
+Analytics natifs du compte (TikTok/Instagram) · recherche TikTok/Instagram et Creative Center ·
+Google Search Console · **interroger directement ChatGPT/Perplexity** pour savoir si le cabinet
+apparaît déjà dans les réponses d'IA (coût zéro, quelques minutes). **ManyChat : HOLD, pas adopté.**
+
+### Contradictions entre les vidéos de ce lot (et avec le lot [36])
+
+1. **Fréquence.** Vidéo 6 : qualité plutôt que fréquence, « les algorithmes mesurent combien de gens
+   s'y intéressent ». Lot [36] (Modern Millie) : 3 à 5 publications/jour. **La vidéo 6 gagne chez
+   nous** — elle soutient l'engagement réel de 2/semaine.
+2. **Entonnoir contre messages.** Vidéo 4 : chaque contenu = générer / nourrir / convertir
+   (logique d'étapes). Vidéo 6 : « les gens ne suivent pas votre entonnoir », organiser par
+   **message**. **Synthèse retenue :** on garde le **test du métier** (chaque publication a un
+   métier) et on abandonne le **classement par étape**.
+3. **Où va le CTA.** Vidéo 4 : CTA fort en fin de vidéo, « cliquez le lien ». Vidéo 5 : le CTA va
+   dans la **conversation**, pas dans la bio. Mécaniques différentes, même principe — et c'est la
+   version 5 qui est gratuite et conforme à WhatsApp-first.
+4. **L'IA, encore.** Vidéo 6 : écrire **pour** être cité par l'IA. Lot [36] (vidéo 1) : « humanize »
+   pour **échapper** à la détection. Deux orientations opposées ; la seconde reposait sur une
+   prémisse fausse.
+
+### Ce que le flux de travail AMK devient après ce lot
+
+- Deux fichiers existants enrichis, **aucun fichier neuf** (PRE-FLIGHT §4b respecté) :
+  `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` (test des trois métiers, inventaire
+  d'histoires, « X pour Y », qualité/fréquence, CTA dans la conversation) et
+  `content/strategy/TIKTOK-SEO-CHECKLIST-2026-10.md` (§C Instagram, §D analytics + fréquence,
+  ManyChat en HOLD avec déclencheur).
+- Une **proposition en attente** : section AEO dans
+  `content/strategy/SEO-CHECKLIST-CLIENT-SITES-2026-10.md`.
+- Une **corroboration indépendante** d'une décision déjà prise : le positionnement « X pour Y »
+  confirme « pour opticiens à Douala » contre « agence de marketing digital ».
+- La règle appliquée trois fois dans ce lot : **un chiffre qu'on ne peut pas montrer ne sort pas de
+  notre bouche** — 46 %, « 6–8 figures », « trois agences à 7 chiffres », « 90 % perdent leur
+  temps », l'anecdote des 16 publications/jour : tous marqués et non citables.
+- **Aucune sortie client, aucun déploiement.**
+
+### Ouvert (bloqué sur King ou sur une donnée manquante)
+
+- **AEO au Cameroun :** aucune donnée sur l'usage des assistants IA en francophone pour des services
+  locaux, ni sur les sources citées pour le Cameroun. Les données de citation sont **anglophones,
+  US/UK**. Cela décide si l'AEO est une offre ou une distraction.
+- DM Optique apparaît-il déjà dans les réponses d'IA pour « opticien Douala » ? Vérification gratuite
+  de cinq minutes — **non faite**, travail client et acompte non encaissé.
+- Règle debout à trancher : **chaque commentaire client reçoit-il une réponse humaine dans la
+  journée** ? C'est l'alternative gratuite à l'automatisation, et c'est un engagement de travail.
+- Instagram est-il un canal prioritaire pour les opticiens de Douala, ou le vrai couple est-il
+  Facebook + WhatsApp ? Aucune donnée au dossier.
+- Lot [37] = batch 2 de 4. **Batches 3 et 4 en file, non commencés.**

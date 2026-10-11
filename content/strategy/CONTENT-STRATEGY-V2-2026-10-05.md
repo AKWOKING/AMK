@@ -83,3 +83,41 @@ chez nous les sous-titres ne sont pas « corrigés », ils sont **écrits**.
 des sous-titres. Des sous-titres écrits à la main, avec le mot-clé placé délibérément, indexent
 mieux qu'une transcription approximative — l'accent camerounais produisant des fautes qui
 classent la vidéo sous le mauvais sujet.
+
+---
+
+## Apports du lot [37] — recherche vidéo batch 2 (11/10)
+
+Source : `research/youtube-lessons/2026-10-11-batch-2/` (vidéos 4, 5, 6). Aucun fichier neuf créé
+(PRE-FLIGHT §4b) — les règles rejoignent ce fichier existant.
+
+**1 · Le test des trois métiers (vidéo 4, Marley Jaxx).** Avant d'écrire une publication, elle doit
+pouvoir nommer son métier : **générer** un contact, **nourrir** la relation, ou **convertir**. Une
+publication qui ne peut pas nommer le sien ne se fait pas. C'est un **diagnostic** du problème
+enregistré plus haut dans ce fichier : le moteur de contenu a produit **zéro lead entrant**. Si
+aucune publication ne peut nommer son métier, le calendrier est du contenu pour du contenu.
+Pour un opticien, le métier est presque toujours **générer** — donc le CTA est un CTA WhatsApp,
+jamais « abonnez-vous ».
+
+**2 · L'inventaire d'histoires (vidéo 4).** Un document vivant d'histoires **vraies** du cabinet
+(les premières lunettes d'un enfant, une monture réparée, un examen qui a dépisté quelque chose)
+dans lequel on puise au lieu d'inventer. **Contrainte :** les histoires doivent être vraies et
+acceptées par le client — `content/strategy/RULE-CREDENTIAL-CLAIMS.md` s'applique.
+
+**3 · Positionnement « X pour Y » (vidéo 6, Joanna Wiebe) — CORROBORATION.** Formule : *ce que tu
+fais* pour *qui tu sers*. Cela **confirme de façon indépendante** la décision déjà prise :
+« sites + présence digitale **pour opticiens à Douala** », et non « agence de marketing digital ».
+« Nous aidons les entreprises avec le digital » ne dit à personne s'il est concerné.
+
+**4 · Qualité plutôt que fréquence (vidéo 6).** « Les algorithmes ne comptent pas combien de fois
+tu publies ; ils mesurent combien de gens s'y intéressent. » Cela **soutient l'engagement de 2
+publications par semaine** et **contredit** le sprint de 3 à 5 publications/jour du lot [36]
+(vidéo Modern Millie), déjà rejeté. Règle positive : **on ne publie que quand il y a quelque chose
+qui vaut la peine, et on reste présent la première heure pour répondre aux commentaires.**
+
+**5 · Le CTA dans la conversation, pas dans la bio (vidéo 5, Adam Erhart).** Quand quelqu'un
+commente, la réponse est un message privé contenant le lien WhatsApp **message pré-écrit** — pas
+« lien en bio ». Gratuit, sans outil. **Attention à la statistique de cette vidéo :** le « 1 % → 46 % »
+vient du **programme partenaire de ManyChat lui-même** ; une analyse indépendante de 1 200+
+campagnes donne **2–3 % → 12–18 %**. La **direction** est vérifiée (la conversation bat la bio),
+le **chiffre 46 %** ne l'est pas et ne sort pas de notre bouche.
