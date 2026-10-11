@@ -100,6 +100,11 @@ not hidden.
    surfaces in ChatGPT/Perplexity answers for its obvious local queries. Costs nothing, takes
    minutes. → `content/strategy/SEO-CHECKLIST-CLIENT-SITES-2026-10.md` (proposed — see §4b note).
 
+> **INTERNAL ONLY — not client-facing.** The AEO evidence base is English-language US/UK data; no
+> Cameroon francophone data exists, so AEO must never become a client-facing promise.
+> *Flag placement ruled by King 11/10: in any AEO section this flag is the **first line**, not the
+> last. Applied here and binding when the section is written.*
+
 **Proposed, not yet written (per PRE-FLIGHT §4b):** an **AEO section** in
 `content/strategy/SEO-CHECKLIST-CLIENT-SITES-2026-10.md` covering the realistic action set above
 (YouTube transcripts, Google Business Profile, machine-extractable facts on the site) **and**

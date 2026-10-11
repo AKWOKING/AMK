@@ -141,11 +141,17 @@ Source : `research/youtube-lessons/2026-10-11-batch-2/`.
 - **§D — règle positive de fréquence (vidéo 6).** On ne publie que quand il y a quelque chose qui
   vaut la peine d'être publié, et **on reste présent la première heure** pour répondre à chaque
   commentaire. C'est la version positive du rejet du sprint 3–5/jour du lot [36].
-- **ManyChat : HOLD, pas adopté.** Seul outil de deux lots qui fait quelque chose que
+- **ManyChat : HOLD, pas adopté.** Seul outil de quatre lots qui fait quelque chose que
   l'orchestrateur ne peut pas faire (automatisation des DM via l'API Meta). Payant au-delà de
   1 000 contacts, limité à Instagram, et inutile tant qu'une réponse humaine ne coûte rien.
   **Déclencheur écrit pour y revenir :** le volume de commentaires d'un client dépasse ce que des
   réponses manuelles peuvent couvrir dans la journée.
+  **Deux conditions ajoutées par King (11/10) — les trois doivent être réunies, pas seulement le
+  déclencheur :**
+  1. **Immatriculation de l'entreprise** en place (l'API Meta et le compte business ManyChat
+     l'exigent ; un compte personnel ne suffit pas).
+  2. **Capacité de paiement en USD** — ManyChat Pro se facture en dollars. Sans moyen de payer en
+     USD, l'outil est indisponible quel que soit le volume.
 
 ---
 
@@ -173,3 +179,59 @@ non vérifiable, sans source, et l'auteure elle-même la hedge d'un « apparentl
 66 % / 74 % / 67 % de la vidéo 7 comme arguments client : recherche de **TikTok lui-même** sur le
 comportement d'**achat**, dans une vidéo **sponsorisée par TikTok for Business**, et non
 transposable à un achat de santé en personne.
+
+---
+
+## TikTok Shop au Cameroun : RÉSOLU (11/10) — source primaire TikTok
+
+**Source primaire :** `https://seller.tiktok.com/` — liste officielle des marchés vendeurs, consultée
+le 11/10.
+
+| Région | Marchés |
+|---|---|
+| Amériques | États-Unis · Mexique · Brésil |
+| Asie | Global Selling · Philippines · Singapour · Thaïlande · Viêt Nam · Indonésie · Malaisie · Japon |
+| Europe | Allemagne · France · Espagne · Irlande · Italie · Pologne · Pays-Bas · Belgique · Royaume-Uni |
+
+**Le Cameroun n'y figure pas.** TikTok Shop n'est donc **pas** disponible pour un vendeur camerounais.
+(« Global Selling » est un programme listé sous l'Asie ; je **n'ai pas vérifié** s'il accepte des
+vendeurs immatriculés au Cameroun — la liste primaire est claire : le Cameroun n'est pas un marché
+vendeur. À ne pas supposer dans un sens ou dans l'autre.)
+
+Autre contrainte relevée sur la même page : chaque numéro de téléphone et chaque adresse e-mail ne
+peuvent être utilisés **qu'une seule fois dans le monde** pour créer un compte vendeur.
+
+### Le motif est désormais clos
+
+| Programme | Cameroun | Source |
+|---|---|---|
+| **Creator Rewards** (lot [36]) | **Non** — US/UK/DE/JP/KR/FR/MX/BR, comptes personnels uniquement | `tiktok.com/creator-academy/en/article/creator-rewards-program` |
+| **TikTok Shop** (lot [39]) | **Non** — absent de la liste des marchés vendeurs | `seller.tiktok.com/` |
+
+**Les deux programmes monétaires de TikTok sont fermés au Cameroun. Le motif est réglé :**
+
+> **TikTok pour un client camerounais = découvrabilité + relais WhatsApp. Jamais de commerce direct.**
+
+**Conséquences opérationnelles :** pas d'étiquetage produit, pas de fiche produit TikTok, pas de
+publicité shopping, **et aucune promesse de revenu TikTok dans une offre ou un pitch.** La vidéo 10
+du lot [39] — 2 500 $ en un mois — dépend entièrement du Creator Rewards et n'est **pas**
+transposable. C'est la confirmation la plus nette à ce jour de la décision du lot [36].
+
+---
+
+## Addendum du lot [39] — batch 4 (11/10)
+
+Source : `research/youtube-lessons/2026-10-11-batch-4/`.
+
+- **Structure de l'expérience publique (vidéo 10).** Annoncer **un chiffre et une échéance**, dire
+  l'hypothèse, montrer les résultats **jour par jour en incluant les mauvais jours**, conclure face
+  au chiffre annoncé. C'est la structure à appliquer au **test de découverte locale de deux
+  semaines** déjà tranché le 11/10 — TikTok d'AMK d'abord, risque client zéro.
+- **Format sans visage, piloté par l'écran (vidéo 10).** Filmer le téléphone et le tableau de bord
+  des analytics. Coût zéro, et c'est la façon honnête de montrer de vrais chiffres.
+- **Protocole de test d'outil (vidéo 11) — corroboration de notre méthode.** Inscription réelle,
+  limites réelles, réglages réels, erreurs réelles, sorties réelles, **et noter ce qui a échoué**.
+- **Rejeté :** comptes monétisés achetés · réédition de vidéos d'autrui · CORTIA · voix et
+  sous-titres automatiques (règle du 11/10 : sous-titres manuels) · **suppression de filigrane, sans
+  exception** (marqueur de provenance) · les quatre plateformes de la vidéo 11 (non nommées, licence
+  commerciale jamais abordée, budgets de 4 à 20 générations).

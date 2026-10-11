@@ -10,6 +10,11 @@ This is the catch-all register for every YouTube link King drops in chat. Links 
 
 - The sandbox has **no raw network** (direct `curl`/`getent` fail). Transcripts come through the `fetch_page` tool only.
 - **Working path:** `https://youtubetotranscript.com/transcript?v=VIDEO_ID` → full transcript, title, channel (tested 17 Sep 2026).
+- **STANDING RULE — re-dated evergreen check (King, 11/10; applies to every batch):** compare the
+  upload date from the YouTube watch page against any year appearing in the title or description.
+  A mismatch = **VENDOR SELF-REPORT of currency**, logged as such. Seen in the wild: video 4
+  (uploaded 2021-04-20, description sells "in 2023"), video 5 (uploaded 2023-12-04, titled "2026",
+  transcript service cached "2025"). Videos 6–11 all passed the check.
 - If that returns nothing: try `?v=ID&current_language_code=fr` for French captions. If still nothing (members-only, no captions, livestream), **stop and ask King to paste notes — never guess at content.**
 - Extract, don't summarize: core claim(s) · AMK-applicable tactics (2–5) · contradictions vs playbook · junk filter · attribution.
 
@@ -1899,3 +1904,105 @@ Hootsuite, Primal Video PLUS, gear : rejetés.
   — en faire un **argument de vente** plutôt qu'une limite ? Pour un client de santé, cela pourrait
   différencier.
 - Lot [38] = batch 3 de 4. **Batch 4 en file, non commencé.**
+
+---
+
+## Lot [39] · RECHERCHE VIDÉO — BATCH 4 of 4 (2 vidéos) · 2026-10-11 — LOT FINAL
+
+**Rapports détaillés :** `research/youtube-lessons/2026-10-11-batch-4/` (INDEX + un fichier par
+vidéo, six parties). **Matière première brute** — la synthèse d'une page est écrite par King sur les
+lots [36]–[39]. **Aucun batch 5.**
+
+| # | Vidéo | Producteur | Longueur · mise en ligne · vues | Ce qu'il vend |
+|---|---|---|---|---|
+| 10 | J'ai relancé un compte TikTok pour prouver que ce n'était pas de la chance | Flojo \| TikTok Money (`@tikproelite`) | 22:27 · 05/10/2026 · 13 014 | **comptes TikTok déjà monétisés** (code -35€) + CORTIA (affiliation) + coaching TIKPROELITE + prompt gratuit |
+| 11 | Don't Ever Pay for AI Video Again — FREE Seedance 2.5 + 3 More Tools | Xøla Ai Studiø (`@Xola_xo`) | 10:06 · **10/10/2026** · 2 719 | PDF + prompts gratuits **derrière une invitation Discord** |
+
+**Contrôle du re-datage (règle debout depuis le 11/10) :** les deux passent. La 11 a **un jour** —
+l'artefact le plus récent de tous les lots.
+
+**Fait notable de ce lot : la vidéo 10 est la plus contaminée commercialement des quatre lots, et la
+plus utile structurellement.** Les deux ne sont pas liés.
+
+### Trois idées à appliquer cette semaine
+
+1. **La structure de l'expérience publique (vidéo 10).** Un chiffre, une échéance, une hypothèse
+   annoncée, des résultats **jour par jour en montrant les mauvais jours**, une conclusion face au
+   chiffre. AMK a exactement cela en main : le **test de découverte locale de deux semaines** tranché
+   le 11/10. → `content/strategy/TIKTOK-SEO-CHECKLIST-2026-10.md`.
+2. **Le format sans visage, piloté par l'écran (vidéo 10).** Filmer le téléphone et le tableau de
+   bord. Coût zéro, conforme au standard photo-au-téléphone, et c'est la seule façon honnête de
+   montrer de vrais chiffres. → même fichier.
+3. **Le protocole de test d'outil (vidéo 11).** Inscription réelle, limites réelles, réglages réels,
+   erreurs réelles, sorties réelles, **et noter les échecs**. C'est la méthode des lots [36]–[39],
+   corroborée indépendamment.
+
+### Trois idées à garder en attente
+
+1. **Publication ou non du test de deux semaines.** Le publier en fait une expérience publique à la
+   vidéo 10 — plus de valeur, plus d'exposition. Décision de King.
+2. **La question bloquante des visuels générés n'est pas l'outil gratuit — c'est la licence
+   commerciale.** Deux lots de suite (38 et 39) se terminent sur la même impasse : personne ne dit si
+   la sortie est utilisable commercialement. Tant que ce n'est pas résolu, le HOLD du lot [38] tient.
+3. **Compte TikTok d'AMK en français ou en anglais ?** Buea est anglophone, Douala francophone. Rien
+   dans le dépôt ne le tranche.
+
+### Trois idées à rejeter outright
+
+1. **Les comptes TikTok déjà monétisés (vidéo 10).** Achetés, revendus, contraires aux conditions de
+   TikTok. Et c'est **l'étape que le titre passe sous silence** : « prouver que ce n'était pas de la
+   chance » alors qu'il dit lui-même *« I decided not to start from scratch… but rather with an
+   already monetized account »*. La prémisse du titre n'est pas soutenue par la méthode montrée.
+2. **La réédition de vidéos d'autrui (vidéo 10).** Il colle les liens de TikToks d'autres comptes
+   dans CORTIA, estompe leurs sous-titres, et reprend le script d'une vidéo à 218 000 vues. Contrefaçon
+   + contenu non original — exactement le motif documenté au lot [36] (Google : **45 %** de contenu
+   non original en moins, 26/04/2024, `ppc.land/scaled-content-abuse/`).
+3. **La suppression de filigrane (vidéo 11).** Présentée comme une astuce gratuite. C'est un
+   **marqueur de provenance** (SynthID chez Google, lot [38]) ; le retirer contredit la règle « le
+   visuel est étiqueté comme généré » adoptée au lot [38], et contrevient très probablement aux
+   conditions du générateur.
+
+### Outils qui survivent à l'audit — gratuits
+
+Recherche TikTok native · tableau de bord des analytics · ChatGPT pour le travail de texte
+(**une conversation par compte** — discipline reprise immédiatement par l'orchestrateur).
+**Aucun outil payant ne survit — quatrième lot consécutif.** CORTIA rejeté (payant, affiliation, et
+sa raison d'être est la méthode rejetée). Les quatre plateformes de la vidéo 11 rejetées.
+
+### Contradictions (dans ce lot, et avec les lots précédents)
+
+1. **Fréquence, quatrième point de vue.** Lot [36] : 3–5/jour. Lot [37] : qualité plutôt que
+   fréquence. Lot [38] : 3–5/semaine puis on regarde. Vidéo 10 : 1–2/jour. **Il optimise le volume
+   pour un programme de récompenses ; nous optimisons l'acquisition client.** Objectifs différents,
+   donc cadences différentes — la nôtre reste 2/semaine.
+2. **« Ne payez jamais » contre deux jeux de données audités.** Vidéo 11 : tout est gratuit. Lot
+   [38] : Flow gratuit = 50 crédits/jour puis 4,99–199,99 $/mois ou 0,10 $/seconde. Vidéo 11
+   elle-même : **4 crédits** et **5 générations**. Le gratuit est un budget de **prototypage**.
+3. **Transparence affichée contre méthode réelle.** La vidéo 10 promet « 100 % transparent » et
+   omet les deux choses qui comptent : le compte acheté et les vidéos d'autrui.
+4. **Corroboration.** Le protocole de test de la vidéo 11 est le nôtre, formulé indépendamment.
+
+### Ce que le flux de travail AMK devient après ce lot — et après les quatre
+
+- **La surface de capacité TikTok au Cameroun est close.** Creator Rewards : non (lot [36]). TikTok
+  Shop : non (lot [39], source primaire `seller.tiktok.com/`). **TikTok = découvrabilité + relais
+  WhatsApp. Jamais de commerce direct.** Aucune promesse de revenu TikTok dans une offre.
+- **La frontière des visuels générés est posée et précisée :** rien de synthétique **de l'entreprise
+  du client** ; possible pour du contenu AMK sans équivalent réel, **étiqueté**, jamais de filigrane
+  retiré. La phrase client : *« nous ne publions aucune image synthétique de votre entreprise »* —
+  dans les documents de portée, **pas** en accroche de prospection.
+- **Quatre lots, aucun outil payant retenu.** La règle de King a tenu quatre fois.
+- **Aucune sortie client, aucun déploiement.**
+
+### Ouvert (bloqué sur King ou sur une donnée manquante)
+
+- **La référence « Kamo » que détient King n'est pas dans le dépôt.** Seule occurrence :
+  `sales/LISTE-OPTICIENS-2026-10.md` (liste de prospection). Aucun contenu de relance TikTok sous ce
+  nom — **le recoupement demandé n'a pas pu être fait.** King doit fournir la référence.
+- **Licence commerciale des générateurs vidéo IA** — non résolue depuis deux lots.
+- **La page opticiens n'existe pas** (`site/` vérifié le 11/10) : la phrase sur l'imagerie synthétique
+  y sera ajoutée **quand elle sera construite**. Consigné, pas fait.
+- **Aucun fichier « modèle de contrat d'abonnement » autonome n'existe.** La portée a été écrite
+  dans `sales/PRIX-ET-RECURRENCE-2026-09-24.md` (où la portée est définie, ligne 34). Si King veut un
+  modèle autonome, c'est un fichier neuf → §4b.
+- **Les quatre lots sont clos.** En attente de la demande de synthèse d'une page de King.

@@ -128,7 +128,13 @@ le **chiffre 46 %** ne l'est pas et ne sort pas de notre bouche.
 
 Source : `research/youtube-lessons/2026-10-11-batch-3/video-9-ai-motion-graphics.md`.
 
-**Décision : aucune imagerie ni vidéo générée par IA dans un livrable client.** Cela contredit
+**Décision (portée précisée par King, 11/10) : aucune imagerie ni vidéo générée par IA de
+l'entreprise du client — son cabinet, son équipe, ses produits, ses patients.** La portée est
+**« de votre entreprise »**, et non « toute imagerie » : un visuel généré qui ne représente pas
+l'entreprise du client n'est pas visé par cette règle. La formulation retenue pour les documents
+clients est : **« nous ne publions aucune image synthétique de votre entreprise. »**
+
+La règle d'origine, inchangée sur le fond : cela contredit
 `AMK-DESIGN-SKILLS.md` §25/§32, le standard photo-au-téléphone
 (`research/PHOTO-LABO-PIXEL-8A-2026-09-24.md`) et la pratique « Photo d'illustration ». Pour un
 opticien — un commerce qui manipule des yeux — une image synthétique de son cabinet est un risque de
