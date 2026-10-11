@@ -152,3 +152,16 @@ vidéo 9 qui la formulait mieux que la plupart des formations payantes :
 **Outils en HOLD, pas adoptés :** Google Flow / Omni Flash (palier gratuit 50 crédits/jour ≈ 3–7
 courts clips, puis 4,99–199,99 $/mois ou 0,10 $/seconde) et ElevenLabs. **Déclencheur écrit pour y
 revenir :** un besoin de contenu **propriétaire AMK** sans réponse en footage réel, approuvé par King.
+
+---
+
+## Règle debout (ruling King, 11/10) — ne jamais dire que l'IA fait le travail
+
+> **Never state AI is doing the work.** Quand le processus d'un projet devient du contenu, on le cadre
+> comme « **on a résolu X** » — l'approche, le raisonnement, le changement de code. Jamais « l'IA a
+> construit ceci » ni « l'IA a trouvé ». **L'attribution du contenu revient à AMK.**
+> **Formule : problème → raisonnement → décision → résultat.**
+> **Jamais : problème → outil → résultat.**
+
+Née du candidat vidéo 12 (`content/pipeline/VIDEO-12-CANDIDAT-BUG-AFFICHAGE.md`) : le bug d'affichage du
+logo se raconte comme un raisonnement d'équipe, pas comme la performance d'un outil.
