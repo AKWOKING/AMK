@@ -111,12 +111,35 @@ faux-zéro sur du contenu boldé. Classe tooling, pas inférence ; journal : `op
 
 ## 1e · Resync git = précondition du tour (ruling King 06/10)
 
-Au début de chaque tour, avant toute lecture ou édition : `git fetch origin` →
-`git reset --hard origin/arena/01a0f7ad-amk` si local ≠ remote. La resync est une **précondition du
-tour**, pas une réparation après un push refusé. Trois occurrences → protocole, pas vigilance.
+Au début de chaque tour, avant toute lecture ou édition : `git fetch origin`, puis vérifier la
+précondition ci-dessous. La resync est une **précondition du tour**, pas une réparation après un push
+refusé. Trois occurrences → protocole, pas vigilance.
 
-**Précondition mécanique avant TOUT commit (ruling King 08/10, 12e message — troisième occurrence de « committed before resync »)** : 
-`git log -1 --format=%H` **doit être égal** à `git ls-remote origin refs/heads/arena/01a0f7ad-amk`. Vérifié **par commande, dans le même appel que le commit**, jamais de mémoire. Si les deux hash diffèrent : **on ne commit pas** — on resynchronise d'abord. Une précondition mécanique, pas de la vigilance.
+**⛔ Plus de `git reset --hard origin/<branche>` automatique (ruling King 11/10).** L'ancienne ligne
+disait « `reset --hard` si local ≠ remote ». Elle est **retirée** : `origin HEAD` pointe sur `main`,
+dont l'historique est **disjoint** de la branche de travail (`git merge-base HEAD origin/main` = vide),
+donc un `reset --hard origin/HEAD` remplace tout le travail du mois par le seul commit de `main`.
+**Nouvelle règle : on ne reset PAS, sauf si (1) l'arbre est propre ET (2) le travail non poussé est
+explicitement reconnu comme perdable.** Sinon : `git reset --mixed`, jamais `--hard`.
+
+**Précondition mécanique avant TOUT commit — AMENDÉE (ruling King 11/10 ; remplace la règle d'égalité du 08/10) :**
+
+```
+git fetch -q origin
+git merge-base --is-ancestor "$(git ls-remote origin refs/heads/<branche> | cut -f1)" HEAD   # rc = 0
+```
+
+Le **tip distant doit être un ANCÊTRE de HEAD** (aucune divergence). Vérifié **par commande, dans le
+même appel que le commit**, jamais de mémoire. `rc ≠ 0` → **on ne commit pas**, on resynchronise d'abord.
+
+**Pourquoi l'amendement :** l'ancienne précondition (`git log -1 --format=%H` **égal** au tip distant)
+est **insatisfaisable après le premier commit local** tant qu'on n'a pas poussé — elle garantissait
+elle-même sa propre violation. L'ancêtre est le vrai invariant : il dit « je suis strictement en
+avance, personne d'autre n'a écrit ». Constat du 11/10, journalisé dans `ops/INFERENCE-ERRORS.md`.
+
+**Après CHAQUE commit (ruling King 11/10) :** **pousser immédiatement**, puis vérifier
+`git ls-remote origin refs/heads/<branche>` **égal au nouveau HEAD**. Un commit non poussé n'existe
+que dans le bac à sable — cf. la note du 21/09 (« perdues au 13ᵉ recul du bac, leur push avait échoué »).
 
 Recette éprouvée (avec travail non commité, **jamais** `--hard`) : `git fetch -q origin` → `R=$(git ls-remote origin refs/heads/arena/01a0f7ad-amk | cut -f1)` → `git reset -q --mixed $R` → vérifier `HEAD == R` → `git checkout HEAD -- leads/build/{crm.py,generators.lock.json,records.py,views.py}` si ces quatre fichiers reviennent périmés → `git status --short`. (`origin/<branche>` peut ne pas exister comme ref locale : le tip se lit par `ls-remote`.) Le `reset --hard` de la ligne ci-dessus ne vaut que pour un arbre propre.
 
