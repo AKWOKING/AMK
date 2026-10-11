@@ -51,3 +51,27 @@ l'annuaire — son n° 670 27 60 65 y figure sous « Optic-Swiss Sarl » #107.)
   sans). Quartier en conflit (Lumumba) → ne pas personnaliser tant que non résolu.
 - Ne jamais mentionner l'inscription à l'Ordre dans l'opener sans source pour CE cabinet
   (`content/strategy/RULE-CREDENTIAL-CLAIMS.md`).
+
+---
+
+## RULINGS KING — 11/10 au soir (écrasent ce qui précède)
+
+**1 · Lumumba — HORS VAGUE.** Contacté le **24/09 à 15:18** (preuve capture King). Pas froid.
+Statut CRM : **re-engage, unscheduled**. **La vague = 7 envois lundi** (Lumumba retiré du tableau
+ci-dessus).
+
+**2 · Vague révisée — 7 envois lundi, dans cet ordre :**
+1. **Pleinement personnalisés (quartier sourcé) :** Horizon/Akwa · Kamaïs/Bonanjo · Maff/Bonadibong
+2. **Sans quartier :** Faby · JiredOptic · Planète · Centrale
+
+**3 · Contrôle d'entité Centrale & Faby — FAIT, verdict : même cabinet, envoi OK.**
+La clé d'autorité de l'ONOC est le **numéro d'inscription**, unique par cabinet. Les deux pages ONOC
+partagent ce numéro pour chaque ligne divergente → une seule entité, erreur de transcription :
+- **Faby** : annuaire #99 et « inscrits » portent **tous deux l'inscription 118** et la **même
+  personne** (Hermine Boudzap/Bouzap). Deux années différentes (2017/2021) pour un même n° 118 =
+  erreur de saisie, pas deux cabinets. → **même cabinet physique. ENVOI sur 692 08 00 55.**
+- **Centrale** : annuaire #145 et « inscrits » portent **tous deux l'inscription 044** et le même
+  nom de cabinet ; Zobo/Zogo = transcription b/g, « Jean » ⊂ « Jean Prosper ». → **même cabinet
+  physique. ENVOI sur 693 96 89 56.**
+Risque résiduel faible ; si le WhatsApp de l'un ne s'identifie pas comme opticien au portique
+d'avant-envoi, ne pas envoyer et le dire (règle standing).
