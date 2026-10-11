@@ -165,3 +165,12 @@ revenir :** un besoin de contenu **propriétaire AMK** sans réponse en footage 
 
 Née du candidat vidéo 12 (`content/pipeline/VIDEO-12-CANDIDAT-BUG-AFFICHAGE.md`) : le bug d'affichage du
 logo se raconte comme un raisonnement d'équipe, pas comme la performance d'un outil.
+
+---
+
+## Règle debout (ruling King, 11/10) — la cadence est un test, pas un engagement
+
+> Tout nouveau canal (TikTok, Instagram, YouTube, LinkedIn) démarre à une **cadence de test** avec un
+> **checkpoint de revue planifié**. **Jamais** de cadence fixe sans revue programmée. Première
+> application : TikTok AMK, 5/semaine pendant 14 jours, revue dure au jour 14
+> (`content/strategy/AMK-TIKTOK-ESTABLISHMENT-2026-10-12.md` §4 + gabarit §8).

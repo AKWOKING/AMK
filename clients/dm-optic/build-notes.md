@@ -383,3 +383,14 @@ Un défaut vu à l'œil sur la première sortie, corrigé, revérifié à l'œil
 - **SUIVI (accepté, non urgent) :** appliquer le **même masque circulaire** aux assets dérivés
   (`og.jpg`, favicon) dans `build_dmoptic.py` au prochain passage de build — à poser avec le travail
   de catalogue **post-acompte**.
+
+---
+
+## EN ATTENTE (ruling King, 11/10 — post-acompte, avec le travail de catalogue) : masque circulaire sur `og.jpg`
+Le `og.jpg` déployé a été généré **avant** le correctif du masque : la carte de prévisualisation
+WhatsApp/lien montre encore le logo carré « collé », pas le cercle propre. À refaire dans
+`build_dmoptic.py` (même masque circulaire que `.herologo`). **Pas urgent ce soir** — le fil DM Optique
+est clos ; importe pour (1) tout envoi futur de l'URL DM Optique (référence/portfolio) et (2) la page
+opticiens (quand construite), dont l'og:image portera chaque message de vague avec lien.
+(Note : le fichier nommé par le ruling, `site/BUILD-NOTES.md`, n'existe pas ; consigné ici, le vrai
+build-notes du dépôt.)
