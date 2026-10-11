@@ -364,3 +364,22 @@ Un défaut vu à l'œil sur la première sortie, corrigé, revérifié à l'œil
   `content/month1/w2/ugc-script.md` l.63, 97, 99, 114 · **slides C1 baked (PNG) si elles portent les heures** ·
   `a-completer.md` · carte signature PDF/PNG (périmée, acceptable tant que non réutilisée). À aligner avant
   tout usage.
+
+---
+
+## 11/10 · Logo hero — décisions (rulings King, après le fix masque+anneau)
+
+- **Taille hero +35 % :** mobile 210→**285px**, desktop 300→**405px** (template `demos/dmoptic-v1.tpl.html`
+  + preview `hosting/previews/dmoptic/index.html`). Garde right-anchored, `pointer-events:none`,
+  `aria-hidden`. **Non déployé** — King revoit sur téléphone puis déploie.
+- **SVG auto-tracé REJETÉ pour le hero.** `logo/dm-optique-logo.svg` est un tracé automatique (vtracer)
+  du raster — « PAS le fichier vectoriel d'origine : dégradés et ombres approchés par aplats ». Il
+  rendrait le dégradé en bandes plates. On garde le **PNG masqué en cercle + anneau dégradé**.
+  Le **PDF d'origine** (`website/LOGO DM.pdf`, pièce jointe King 11/10) reste la **source autorisée**
+  si un vrai vectoriel propre est un jour nécessaire (V2) — pas extrait maintenant.
+- **Logo en filigrane derrière le contenu du hero — PARKED (pas maintenant).** Client médical : le
+  hero doit rassurer et clarifier, pas exprimer la marque ; un filigrane concurrencerait la lisibilité
+  du H1. À ré-étudier **après encaissement de l'acompte**, en V2.
+- **SUIVI (accepté, non urgent) :** appliquer le **même masque circulaire** aux assets dérivés
+  (`og.jpg`, favicon) dans `build_dmoptic.py` au prochain passage de build — à poser avec le travail
+  de catalogue **post-acompte**.
