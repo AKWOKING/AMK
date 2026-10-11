@@ -81,6 +81,10 @@ l'entreprise d'un client.
 
 ## 8 · Gabarit de revue du jour 14 (pour que la revue arrive à l'heure, pas à la mémoire)
 
+**Séquence du seuil (ruling King, 11/10) :** **rapport à J7** (chiffres bruts) · **seuil fixé avec King
+entre J7 et J14** · la revue du **J14 se fait contre ce seuil**, pas contre une impression. Le seuil
+n'est pas inventé à l'avance : il sort du baseline réel des premiers posts.
+
 **Mesures (jamais les vues — vanité) :** abonnés gagnés · visites de profil · taps WhatsApp · messages
 entrants nommant la source · taux de visionnage par post · **quels posts ont gagné des abonnés**.
 **Questions :** quel pilier a gagné des abonnés ? quel post a déclenché un message nommant la
