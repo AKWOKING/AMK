@@ -1521,3 +1521,109 @@ communauté payante). Les meilleures sources sont les documents officiels (Googl
 **nos propres archives** — le journal contient 79 citations de leads, c'est notre meilleur manuel de
 langue.
 
+
+---
+
+## Lot [36] · RECHERCHE VIDÉO — BATCH 1 of 4 (3 vidéos) · 2026-10-11
+
+**Rapports détaillés :** `research/youtube-lessons/2026-10-11-batch-1/` (INDEX + un fichier par
+vidéo, six parties chacune). **Cette entrée est la matière première brute** — la synthèse d'une
+page est écrite par King, pas par l'orchestrateur.
+
+**Méthode, corrigée :** les transcripts **sont** accessibles par le chemin du §0
+(`youtubetotranscript.com/transcript?v=ID`). Les trois ont été récupérés **en entier**
+(4/4, 5/5, 2/2 chunks). Une note antérieure du batch affirmait le contraire : elle était fausse et
+a été corrigée dans l'INDEX. Ce que le service **n'expose pas** : durée, date de publication,
+nombre de vues → marqués UNVERIFIED, jamais devinés.
+
+| # | Vidéo | Producteur | Abonnés | Ce qu'il vend |
+|---|---|---|---|---|
+| 1 | AI affiliate blogs for Google traffic | Freedom Influencer (Nathan Lucas) | 380K | cours gratuit + liens d'affiliation (Cloudways, SEO Writing, ryrob) |
+| 2 | 30 Day TikTok Plan 0→10K | Modern Millie (Millie Adrian) | 791K | The FYP Accelerator + calendrier gratuit + **sponsor Storyblocks** |
+| 3 | TikTok SEO, 10 tricks | HubSpot Marketing (présentatrice : Bridget, nom de famille non capturé) | 643K | guide TikTok gratuit (capture d'email) → plateforme HubSpot |
+
+### Les contradictions entre les trois vidéos (à trancher)
+
+1. **Limite de la bio TikTok.** Millie : « about **160** characters ». HubSpot : « **80** character
+   limit ». **HubSpot a raison** (80 confirmé par plusieurs guides indépendants). → la règle des 80
+   caractères est écrite dans la checklist.
+2. **Le rôle de l'IA.** Vidéo 1 : « humanize the text » pour que Google ne détecte pas l'IA.
+   Vidéo 3 : « don't be afraid to use AI… it is the best mentor ». Ce sont deux doctrines
+   opposées : **contourner** contre **s'assister**. La vidéo 1 repose sur une prémisse fausse —
+   Google ne pénalise pas l'IA comme catégorie ; la politique *scaled content abuse* (5 mars 2024)
+   est **neutre quant à la méthode** (« whether automation, humans or a combination are involved »).
+3. **Le volume.** Millie prescrit 3 à 5 publications/jour pendant 30 jours ; HubSpot ne parle pas
+   de cadence ; notre engagement client est de **2 publications/semaine**. Le volume de Millie est
+   incompatible avec la livraison.
+
+### Trois idées à appliquer cette semaine (proposition, sous réserve de la règle de King)
+
+1. **La checklist TikTok SEO** — déjà écrite : `content/strategy/TIKTOK-SEO-CHECKLIST-2026-10.md`
+   (profil, mots-clés, texte à l'écran dans les 3 premières secondes, sous-titres corrigés,
+   formule de hashtags 2-3 / 2-3 / 1, **couche locale** = tag de lieu + ville en mot-clé).
+   Coût : zéro. C'est le transfert le plus direct du lot, et il sert le contenu de DM Optique.
+2. **La recherche par ratio vues/abonnés** — ne retenir que les vidéos dont les vues **dépassent**
+   le nombre d'abonnés du créateur, filtrées sur **30 jours**. Les deux vidéos indépendantes
+   convergent sur cette heuristique (Millie explicitement, HubSpot pour voler les hashtags).
+3. **Deux gardes SEO côté sites clients** — *pas de page sans demande de recherche vérifiée*, et
+   *pas de page sans un fait de première main que seul le client possède*. C'est notre défense
+   structurelle contre l'exposition au *scaled content abuse*. Destination :
+   `content/strategy/SEO-CHECKLIST-CLIENT-SITES-2026-10.md`.
+
+### Trois idées à garder en attente (ni adoptées, ni rejetées)
+
+1. **La série signature + playlist** — mécaniquement utile pour gagner des abonnés, mais le sujet
+   de la série de DM Optique (montures ? examens de vue ?) demande une règle de King.
+2. **Le repurposing hors plateforme** (vidéo intégrée dans un article de blog ; export **sans**
+   sous-titres incrustés pour les autres plateformes) — juste, mais dépend de l'existence d'un blog
+   client, que nous ne construisons pas aujourd'hui.
+3. **La mesure par « vidéos qui apportent des abonnés » plutôt que par vues** — juste, mais
+   nécessite d'abord un compte client ouvert et des identifiants gérés selon notre règle.
+
+### Trois idées à rejeter outright
+
+1. **Le modèle de blog d'affiliation** (vidéo 1) — hors stratégie : notre objectif est 500 000
+   FCFA/mois par des sites clients et des retainers, pas des commissions ; l'exemple suppose du
+   trafic américain et l'éligibilité Amazon Associates.
+2. **« Humanize the text » pour échapper à la détection de l'IA** — prémisse fausse, et exactement
+   le mauvais côté de la politique que nous devons respecter.
+3. **3 à 5 publications/jour + contenu polémique + Storyblocks** — casse la livraison ; risque
+   réputationnel inacceptable pour un professionnel de santé inscrit à l'ONOC ; outil payant,
+   sponsorisé, et contraire à notre règle de la vraie photo.
+
+### Outils qui survivent à l'audit (tous gratuits)
+
+- **TikTok Creative Center** — tendances hashtags/mots-clés/vidéos par secteur. Seul outil du lot
+  que nous ne pouvons pas reproduire nous-mêmes.
+- **Autocomplete de recherche TikTok** + **filtres de recherche (30 jours)** — natif, sur le
+  téléphone de King.
+- **Google « People Also Ask »** — natif.
+- **Analytics TikTok** (la vue « vidéos qui apportent des abonnés ») — natif.
+
+**Aucun outil payant ne survit.** Cloudways, SEO Writing, ZipWP, Storyblocks, HubSpot : rejetés.
+Chaque étape « outil IA » des vidéos 1 et 3 (idées de noms, bio compressée, tableau de sujets,
+rédaction d'articles) est **faite par l'orchestrateur** — c'est le premier contrôle de l'audit.
+
+### Ce que le flux de travail AMK devient après ce lot
+
+- Un nouveau fichier interne : `content/strategy/TIKTOK-SEO-CHECKLIST-2026-10.md` (recherche,
+  cadence, couche locale, mesures) — **aucune sortie client, aucun compte client touché sans
+  l'accord de King**.
+- Deux gardes SEO proposées pour les sites clients (demande vérifiée + fait de première main), à
+  inscrire dans `content/strategy/SEO-CHECKLIST-CLIENT-SITES-2026-10.md`.
+- Une règle réaffirmée et appliquée trois fois dans ce lot : **un chiffre qu'on ne peut pas montrer
+  ne sort pas de notre bouche** — le « 70 % » de HubSpot, le « Pinterest classe plus vite »,
+  « triple vos chances », les « 1 000 000 $ » et « 500 $ aujourd'hui » de la vidéo 1, et le
+  « 0→10K en 30 jours » sont tous marqués UNVERIFIED ou VENDOR SELF-REPORT et ne seront pas cités.
+- **Aucun déploiement, aucune sortie client** dans ce lot.
+
+### Ce qui reste ouvert (bloqué sur King ou sur une donnée manquante)
+
+- Existe-t-il une preuve que TikTok sert à la découverte de services locaux **à Douala** ? Aucune
+  donnée Cameroun au dossier — cela décide si la checklist s'applique à DM Optique.
+- Les sous-titres automatiques français de TikTok tiennent-ils sur le français camerounais ? Test
+  téléphone à faire.
+- Compte business ou personnel pour un client, et qui détient les identifiants ?
+- TikTok Creator Rewards existe-t-il au Cameroun ? (Non vérifié — décide si le nombre d'abonnés est
+  un objectif monétisable.)
+- Lot [36] = batch 1 de 4. Batches 2, 3, 4 en file, **non commencés**.
