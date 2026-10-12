@@ -179,8 +179,8 @@ const TOTAL=31;
 
 /* Textes — beat table v3 (fixée, mot pour mot). */
 function texts(t){
-  if(t<1)   return {ov:"Le logo a disparu.", hook:null, cap:null, small:false};
-  if(t<2)   return {ov:"Le logo a disparu.", hook:"Tu vois pourquoi ?", cap:null, small:false};
+  if(t<1)   return {ov:"Le logo du site a disparu.", hook:null, cap:null, small:false};
+  if(t<2)   return {ov:"Le logo du site a disparu.", hook:"Tu vois pourquoi ?", cap:null, small:false};
   if(t<3)   return {ov:"Un nouveau logo.", hook:null, cap:null, small:true};
   if(t<7)   return {ov:"On l'intègre. Et là… rien.", hook:null, cap:"2 jours bloqué sur ça.", small:true};
   if(t<9)   return {ov:"On enlève le masque.", hook:null, cap:"C'est pas le rognage.", small:false};
@@ -206,10 +206,10 @@ window.seek=function(t){
   const ov=$("overlay"), hk=$("hookline"), cp=$("caption");
   const anchor = t<2?0 : t<3?2 : t<7?3 : t<9?7 : t<12?9 : t<21?12 : t<27?21 : 27.8;
   const kIn=easeOut(clamp01((t-anchor)/0.2));
-  ov.textContent=T.ov; ov.classList.toggle('small',T.small);
+  ov.textContent=T.ov; ov.classList.toggle('small',T.small||t<2);
   ov.style.opacity=kIn; ov.style.transform=`translateY(${mix(18,0,kIn)}px)`;
   if(T.hook){ const kH=easeOut(clamp01((t-1)/0.2));
-    hk.textContent=T.hook; hk.style.opacity=kH; hk.style.transform=`translateY(${mix(14,0,kH)}px)`;
+    hk.textContent=T.hook; hk.style.top=(t<2?226:196)+'px'; hk.style.opacity=kH; hk.style.transform=`translateY(${mix(14,0,kH)}px)`;
   } else { hk.style.opacity=0; hk.textContent=""; }
   if(T.cap){ const kC=easeOut(clamp01((t-(anchor+0.2))/0.2));
     cp.textContent=T.cap; cp.style.opacity=kC; cp.style.transform=`translateY(${mix(14,0,kC)}px)`;
