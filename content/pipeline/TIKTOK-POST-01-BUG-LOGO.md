@@ -96,3 +96,23 @@ consolidation `research/YouTube-Lessons.md` Lot [42]) :
   logger : questions reçues (jamais « on a posté »).
 
 Réécriture = prochaine tâche, sur ordre de King. Le MP4 v4 reste en place comme référence.
+
+---
+
+## Lot [43] — FORMAT CONFIRMÉ + SÉQUENCE DE PRODUCTION FORMALISÉE (12/10 nuit)
+
+Source : `research/youtube-lessons/2026-10-12-batch-animation/` (vidéos 26–29), consolidation
+`research/YouTube-Lessons.md` Lot [43]. Le format du post est tranché : **2D motion graphics
+généré par code** (architecture actuelle — rien à changer). Séquence de production désormais
+explicite et nommée pour chaque version :
+
+1. Beat table / script validé par King en chat (ruling 12/10).
+2. VO (voice-00) + SFX **verrouillés avant render** (audio d'abord — vidéo 27).
+3. **Storyboard cut** : stills de chaque beat revus en validation avant le render final.
+4. Render final → **gates** : `audit_video_motion.py` + test du son coupé (Lot [42]) +
+   **checklist défauts de design** (vidéo 26) : texte sur fond de même luminance, texte coupé en
+   bord de cadre, chevauchement texte/image.
+5. Approbation King → téléversement (musique par King).
+
+**Format des retours :** daté par beat/seconde (« à 10 s, le bandeau n'est pas lisible »), pas de
+verdict global (principe Editing OS, vidéo 26 — sans l'outil).

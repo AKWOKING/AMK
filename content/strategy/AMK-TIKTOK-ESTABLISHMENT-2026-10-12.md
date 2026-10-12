@@ -142,3 +142,25 @@ amplificateur, tension signalée) ; perception visée = preuve + reconnaissance 
 objectif = crédibilité d'abord ; formats = orchestrateur-générés (les 4 vidéos assument un
 talking-head — principes retenus format-agnostiques) ; première émotion = reconnaissance +
 curiosité, soulagement/confiance seulement à la résolution.
+
+---
+
+## Addendum Lot [43] — batch animation/formats (12/10 nuit)
+
+Source : `research/youtube-lessons/2026-10-12-batch-animation/` (vidéos 26–29) ; consolidation et
+réponses Q1–Q6 : `research/YouTube-Lessons.md` Lot [43]. Trois rulings permanents :
+
+1. **Format AMK = 2D motion graphics généré par code** (UI-sim, kinetic typo, data storytelling,
+   before/after recréé). Générateurs image→vidéo rejetés en bloc (crédits, artéfacts, cohérence
+   fragile — documentés par les producteurs eux-mêmes). Format stickman rejeté (anti-
+   positionnement, économie RPM précaire).
+2. **Motion language cohérente** : mêmes easings, mêmes transitions entre beats, signature
+   dark + vert + terminal sur toute la grille — la grille de profil uniforme est un signal de
+   confiance (Lot [42] + vidéo 28 en contre-exemple).
+3. **Vocabulaire « généré », jamais « l'IA fait le travail »** : notre procédé est factuellement
+   du code déterministe dirigé à la main (beat table, gates, retouches) — on décrit l'artisanat
+   (« produit avec notre propre système », « notre pipeline »), ce qui est à la fois exact et
+   conforme à la règle debout.
+
+Mémo en réserve : pricing motion marché FR (Malt 350–450 €/jour ; Fiverr 748–2 000 €/vidéo ;
+agence 4 500–6 000 €/60 s) = différenciant potentiel pour les sites clients, pas un tarif à copier.

@@ -2237,3 +2237,113 @@ standing.
 (hook = pensée non dite + zéro marque en 0–3 s ; cadre = beat 0 contexte + story formula ;
 tuto-read = coût du problème avant la solution + transformation). Aucun outil, aucun changement de
 pipeline ; la réécriture POST-01 est le seul chantier immédiat.
+## Lot [43] · RECHERCHE VIDÉO — BATCH 2 of 3 ANIMATION/FORMATS (4 vidéos) · 2026-10-12
+
+Dossiers : `research/youtube-lessons/2026-10-12-batch-animation/` (video-26 → video-29 + INDEX).
+⚠️ La liste d'URLs de King était **décalée d'un cran** : chaque URL fournie a été vérifiée sur sa
+watch page et ré-associée au bon titre (tableau dans l'INDEX) ; l'URL `M9Bj4uBMP3A` (community
+management FR, Chedjou Kamdem) appartient au **batch 3** et n'a pas été traitée ; `dgCSN-rnN0E` =
+doublon de la vidéo 25 (Lot [42]), non re-transcrite (précédent lot [41] vidéo 18). Les vraies URLs
+retenues : 26 = `DBQqB8eqpFI` (Maxence Tison), 27 = `aVfawxDj6uw` (Curious Refuge), 28 =
+`XZjag0_TiWc` (Jacksons AI, résolue par recherche titre exact), 29 = `9yvQTR2siPM` (Emmanuel Crown,
+résolue par recherche titre exact). Transcripts voie §0 : 27 complet ; 26, 28, 29 par chapitres
+porteurs (détail par rapport). Batch 3 : EN FILE, non démarré.
+
+### 3 idées à agir cette semaine
+1. **Graver la séquence de production dans la spec POST-01** (vidéos 27 + 29, convergentes) :
+   histoire/beat table → VO+SFX verrouillés → storyboard cut (stills des beats en validation) →
+   render final → gates. POST-01 v4 la suivait déjà ; elle devient explicite et nommée.
+2. **Ajouter la checklist « défauts de design » au gate créatif** (vidéo 26, son duel Fable) :
+   texte sur fond de même luminance, texte coupé en bord de cadre, chevauchement texte/image —
+   vérifiés sur les stills de chaque beat avant validation.
+3. **Format des retours de King daté par beat/seconde** (vidéo 26, principe Editing OS sans
+   l'outil) : « à 10 s, le bandeau n'est pas lisible » plutôt qu'un verdict global — applicable
+   dès la réécriture POST-01.
+
+### 3 idées à garder (en réserve)
+1. **Trois modes d'entrée d'une vidéo** (26) : prompt seul / images de marque / vidéo de référence
+   — AMK est structurellement en mode 2 (DA à respecter) ; le mode 3 servira le jour où King donne
+   une référence de style à imiter.
+2. **Mémo pricing motion** (26 : Malt 350–450 €/jour, Fiverr 748–2 000 €/vidéo, agence FR
+   4 500–6 000 €/60 s) : intelligence commerciale pour le jour où AMK vend une section vidéo à un
+   client optique — pas un tarif à copier au Cameroun, un différenciant (marché local quasi vide).
+3. **Économie de crédits comme révélateur** (29 : Kling 1.6 vs 2.0 selon le shot ; 27 : ~12
+   générations par plan retenu) : si un futur besoin exige un générateur payant, ces ratios sont
+   la base du calcul « pas d'achat sans profit ».
+
+### 3 idées à rejeter carrément
+1. **Le format stickman** (28) : économie d'usine à RPM, vague de démonétisation en cours (son
+   propre aveu), registre incompatible avec le positionnement premium artisanal et la signature
+   dark+vert+terminal. Curiosité rentable pour d'autres, pas un format pour AMK.
+2. **Tous les générateurs image→vidéo** (Veo/Flow, Kling, Runway, Higgsfield, Quen, Gemini,
+   Midjourney, Freepik/Nano Banana, Topaz) : payants ou à crédits, instabilité documentée par les
+   producteurs eux-mêmes (artéfacts, cohérence perdue scène 8–10, « when it works »), et
+   l'orchestrateur fait équivalent ou mieux en déterministe. Rejet en bloc, principe extrait.
+3. **Les outils de feedback/montage vendus** (Editing OS, CapCut, Remotion/HyperFrames en
+   adoption) : nos équivalents existent déjà (stills par beat, ffmpeg, render.mjs). HyperFrames
+   reçoit sa 3ᵉ confirmation indépendante comme standard du code→vidéo — confirmation, pas
+   adoption.
+
+### Outils survivants de l'audit
+**Aucun outil nouveau — c'est le résultat central du batch.** Les 4 vidéos convergent : le motion
+« pro » par LLM = du code rendu en MP4 (26), tout le reste est de la génération probabiliste à
+crédits que leurs propres démos montrent fragile. Notre pipeline (beat table + HTML/SVG +
+render.mjs + ffmpeg + voice-00) est l'architecture que la vidéo 26 vend comme révolution ; nous
+l'avions déjà.
+
+### Contradictions entre vidéos (et internes)
+- **« AI just killed motion designers » (26, son hook)** vs son propre duel : le modèle « supérieur »
+  (Fable) produit textes illisibles et coupés — l'œil humain reste le QC. Le hook sur-vend, la
+  démo nuance.
+- **« Consistent across board » (29, titre)** vs son propre workaround : la cohérence lâche vers la
+  scène 8–10. Écart titre/réalité, pattern déjà loggé (lots [38]/[41]).
+- **« 100% FREE Forever » (28, titre)** vs Higgsfield payant testé + Skool payant vendu — même
+  famille que « free & unlimited = signal d'alarme » (Lot [41]).
+- **Stickman = machine à croissance (28)** vs la vague de démonétisation décrite dans la même
+  vidéo : le format usine est rentable ET précaire en même temps.
+- **Interne :** 27 recommande des acteurs vocaux + ADR ; notre ruling = voice-00 sans personnage —
+  compatible (VO narrative, pas de lip-sync), la contradiction ne nous atteint pas.
+
+### Le workflow AMK après ce batch
+Aucun outil ajouté, aucun changement de pipeline. La séquence de production (histoire → audio →
+shot list → storyboard cut → render → gates) est formalisée dans la spec POST-01 ; la checklist
+défauts de design rejoint le gate ; les retours King passent au format daté par beat. Le format
+AMK est tranché (voir Q1–Q2). La réécriture POST-01 (mapping Lot [42]) reste le seul chantier.
+Batch 3 en file.
+
+### Réponses aux 6 questions spécifiques (sourcées)
+- **Q1 — Le format AMK ?** CONFIRMÉ : **2D motion graphics généré par code** (UI-sim, kinetic
+  typo, data storytelling, before/after recréé — la liste du batch 1 tient). Preuves : 26 démontre
+  que le motion « pro » par LLM EST du code→MP4 (notre architecture exacte) ; 27/28/29 démontrent
+  par leurs propres artéfacts que la génération image-par-image est une loterie à crédits. L'animé
+  narratif à personnages (27, 29) est hors brief (divertissement, pas preuve métier).
+- **Q2 — Type d'animation + temps ?** 2D motion graphics code-driven. Temps : notre POST-01 v4
+  (38,5 s) = écriture + render + VO/SFX en une journée-sandbox ; en face : 27 = ~12 générations par
+  plan × 19 plans + montage correctif (jours, crédits), 28 = « 15 minutes » mais qualité usine.
+  Seul le code-driven tient la cadence d'un post/semaine à coût marginal ~0. Le character animation
+  est rejeté (crédits + cohérence fragile + pas de personnages dans notre contenu).
+- **Q3 — Signature visuelle ?** Elle DOIT matcher le design system AMK (dark + vert + terminal),
+  pas diverger : 26 méthode 2 (la DA de marque est l'entrée), batch 1/Lot [42] (signature
+  reconnaissable son coupé, répétition = confiance). Ajout du lot : une **motion language**
+  cohérente (mêmes easings, mêmes transitions entre beats) — la grille de profil uniforme est un
+  signal de confiance confirmé (28 montre l'effet inverse : chaînes-usines interchangeables).
+- **Q4 — Pipeline ?** Script/beat table validé par King → VO+SFX verrouillés (audio d'abord, 27) →
+  storyboard cut (stills par beat) → render → gate motion + checklist défauts + test son coupé →
+  approbation King → téléversement (musique par King). Goulot d'étranglement : **les décisions
+  créatives (validation des ouvertures), pas le rendu** — le render est ~0.
+- **Q5 — Stickman pour AMK ?** NON (rejet documenté, vidéo 28 §4) : registre usine, RPM-précaire,
+  audience incompatible, signature incompatible. C'est un vrai format… pour une économie de
+  chaînes-usines, pas pour une agence premium. Principes de production retenus, format rejeté.
+- **Q6 — « AI animation » vs « généré » ?** Les 4 vidéos disent « AI animation » et vendent des
+  générateurs probabilistes retouchés au montage (27 : artéfacts à couper ; 29 : cohérence qui
+  lâche ; 28 : bake-off instable). Notre chaîne est différente en nature : **code déterministe
+  dirigé à la main** — le même rendu rejoue à l'identique, se réédite après retour (26 le confirme
+  comme avantage décisif). Traduction éditoriale : AMK dit « produit avec notre propre système » /
+  « notre pipeline », décrit l'artisanat (beat table, gates, retouches), et ne dit jamais « l'IA
+  fait le travail » — ce n'est pas de la pudeur, c'est factuellement un autre procédé.
+
+### Verdict du batch 2 pour AMK
+**Le batch tranche le format sans ajouter un seul outil : 2D motion graphics généré par code,
+signature AMK, pipeline existant formalisé.** Les trois autres vidéos servent de preuve par
+contraste (génération probabiliste = crédits, artéfacts, incohérence) et le stickman est écarté
+comme anti-positionnement. Prochain chantier inchangé : réécriture POST-01 (Lot [42]).
