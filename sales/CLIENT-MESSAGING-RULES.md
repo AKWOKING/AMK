@@ -185,3 +185,20 @@ Intègre le gate §8c (recoupement CRM) approuvé le 12/10 — aucun futur wave 
 WhatsApp on any of the numbers we hold, they are excluded from outreach entirely — no SMS, no calls,
 no email. WhatsApp is the channel; the absence of WhatsApp means the prospect is unreachable for
 AMK's model. Log the exclusion reason.
+
+## 11 · WhatsApp closing rules (Lot [44], 12/10)
+
+Source : `research/youtube-lessons/2026-10-12-batch-final/video-32-dark-psychology-sales.md`
+(Patrick Dang, filtré pour le marché méfiant CM — les 3 techniques de manipulation rejetées,
+raison au Lot [44]). Trois règles de closing :
+
+1. **Problème réel d'abord** : nommer le problème du prospect en SES mots (recoupe règle 09/10)
+   avant toute offre. Jamais amplifié, jamais inventé — le problème réel suffit.
+2. **Prix en un message, puis silence** : le prix s'énonce clair, en un seul message, puis on
+   attend. Pas de relance, pas de remise préventive, pas de « prix d'ami ». Le silence texte vaut
+   le silence vocal.
+3. **Cadrage revenu-pas-dépense** : formuler ce que le livrable rapporte ou évite (un site qui ne
+   fuit plus, un client qui trouve l'info), jamais ce qu'il « coûte ».
+
+Notre propre story (bug → fix → site) sert de témoignage jusqu'aux premiers clients (ruling
+debug-in-public 12/10 ; recoupe Lot [42] preuve > explication).

@@ -2347,3 +2347,113 @@ Batch 3 en file.
 signature AMK, pipeline existant formalisé.** Les trois autres vidéos servent de preuve par
 contraste (génération probabiliste = crédits, artéfacts, incohérence) et le stickman est écarté
 comme anti-positionnement. Prochain chantier inchangé : réécriture POST-01 (Lot [42]).
+## Lot [44] · RECHERCHE VIDÉO — BATCH 3 of 3 FINAL : vente, CM, vibe coding, stickman (4 vidéos) · 2026-10-12
+
+Dossiers : `research/youtube-lessons/2026-10-12-batch-final/` (video-30 → video-33 + INDEX).
+⚠️ Liste d'URLs de King **encore décalée d'un cran** (comme batch 2) : chaque URL vérifiée sur sa
+watch page avant traitement (tableau dans l'INDEX). Doublons batch 2 non re-transcrits
+(`XZjag0_TiWc` = vidéo 28 ; `9yvQTR2siPM` = vidéo 29). URLs retenues : 30 = `Fo3lreTdy0g` (Mark
+Ai Guy), 31 = `UNqRlRz80Ss` (The Next Wave × Meng To), 32 = `dJR7OpkEeBk` (Patrick Dang, 940 646
+vues ✓), 33 = `M9Bj4uBMP3A` (Chedjou Kamdem). **Question 5 résolue : `dJR7OpkEeBk` = la vidéo
+dark psychology elle-même** — pas de 5ᵉ vidéo à ajouter, le batch = 4 vidéos uniques.
+Transcripts voie §0 : 30 quasi-intégral ; 31, 32, 33 par chapitres porteurs (détail par rapport).
+
+### 3 idées à agir cette semaine
+1. **3 règles de closing WhatsApp** (vidéo 32, après filtre éthique) : nommer le problème réel en
+   leurs mots avant toute offre ; **prix en un message clair puis silence** (ni relance ni remise
+   préventive) ; cadrage « ce que ça rapporte/évite », jamais « ce que ça coûte ». → gravées dans
+   `sales/CLIENT-MESSAGING-RULES.md` §11.
+2. **Checklist de spec design en 6 tokens** (vidéo 31, Meng To) : layout / styling / accent+fond
+   désaturé / ombres / typo+graisse+tracking / pairing — plus jamais d'adjectif (« beautiful »)
+   dans une spec de page générée. → addendum `sales/AMK-DESIGN-SKILLS.md`.
+3. **Cross-post Facebook dans le backlog distribution** (vidéo 33 : FB = 5 M+ Camerounais,
+   organic au coude-à-coude avec TikTok) : quand la cadence TikTok sera stable, republier le même
+   MP4 sur Facebook — coût marginal nul. → addendum brief.
+
+### 3 idées à garder (en réserve)
+1. **Ligne de service « production de contenu premium au livrable »** (vidéo 33) : jamais de
+   retainer CM tout-venant (marché sous-payé, 50 K FCFA/mois plancher observé, disponibilité
+   permanente attendue) ; mais le haut de pile (vidéos code→vidéo, visuels, pages) manque à ce
+   marché — vendable aux PME et aux CM/agences sous-équipés (canal B2B2C à tester après les
+   premiers clients directs).
+2. **L'argumentaire anti-site-générique** (vidéo 31) : « pourquoi tous les sites IA se
+   ressemblent » = objection prête à l'emploi face au site à 50 000 FCFA ; notre réponse =
+   vocabulaire de design + ingrédient signature.
+3. **Spline (3D communautaire gratuit)** (vidéo 31) : si un jour une section 3D sur site client —
+   gratuit, remixable. Backlog, pas d'adoption.
+
+### 3 idées à rejeter carrément
+1. **Les 3 manipulations « dark »** (vidéo 32) : escalade de douleur latente→extrême, urgence
+   fabriquée, coinçage d'ego. Sur un marché méfiant, employer les procédés des arnaqueurs nous
+   classe avec eux — la confiance est l'actif n°1 (Lot [42]). Rejet avec raison documentée.
+2. **Le stickman, définitivement** (vidéo 30) : second échantillon, même moule d'usine (master
+   prompt partagé, engagement-bait, disclaimer earnings). Le rejet batch 2 tient ; question 4 =
+   **skip propre**, aucun principe nouveau.
+3. **Le retainer CM classique** (vidéo 33) : commodité sous-payée, course vers le bas,
+   disponibilité permanente — incompatible avec le positionnement craft et le périmètre NO-CALL.
+
+### Outils survivants de l'audit
+**Aucun outil nouveau — troisième batch consécutif.** Rejetés : Nano Banana 2, Google Flow agent
+mode/Omni Flash, ElevenLabs (voice-00 déjà adopté), CapCut, Aura/Lovable/V0, Unicorn Studio,
+Vsub. Spline en backlog seul. Le pattern des 3 lots tient : les vidéos vendent des outils, les
+principes confirment notre stack (orchestrateur + render.mjs + ffmpeg + voice-00 + DESIGN-SKILLS).
+
+### Contradictions entre vidéos (et internes)
+- **« Dark psychology » (32)** vs notre actif confiance : la vidéo assume « play tricks on the
+  human mind » ; notre filtre marché tranche — la moitié saine (Cialdini) survit, la moitié
+  manipulation est rejetée. La contradiction est résolue par le filtre, pas par le compromis.
+- **Stickman « viral » (30)** vs la démonétisation (28, batch 2) : deux producteurs vendent le
+  même format comme machine à croissance alors que la vague de démonétisation frappe ce format —
+  le template d'usine est présenté comme une opportunité par ceux qui vendent le template.
+- **CM « visage de l'entreprise » (33)** vs notre sans-visage (ruling King) : à contre-courant
+  assumé — la preuve par artefact remplace le visage (Lot [42]/[43]).
+- **« IA = différenciateur » (implicite chez 30/33)** vs l'étude de 33 : ~100 % des CM camerounais
+  utilisent déjà l'IA — elle ne différencie plus ; l'exécution si. Recoupe notre règle « on ne
+  mentionne jamais l'IA ».
+- **Interne (cohérente) :** 32 « rien de plus puissant qu'une success story » = 22 (Tapie : faire
+  puis raconter) = 24 (preuve > explication) = notre debug-in-public. Quatre sources convergentes.
+
+### Le workflow AMK après ce batch (état final de l'arc)
+Aucun outil ajouté sur les 3 lots. Les règles closes : closing WhatsApp (§11 messaging), checklist
+design 6 tokens (DESIGN-SKILLS), cross-post FB (backlog brief), ligne « contenu premium au
+livrable » (brief). **Le framework vidéo est complet** : hooks/story (Lot [42]) + format/pipeline
+(Lot [43]) + vente/marché/design (Lot [44]). Prochaine étape = décision King : POST-01 est-il une
+story qui vaut d'être postée ? Si oui → réécriture avec le mapping beats Lot [42] + la séquence
+de production Lot [43]. La réécriture N'EST PAS démarrée (ordre explicite du brief).
+
+### Réponses aux 5 questions spécifiques (sourcées)
+- **Q1 — Psychologie de vente pour la vague ?** Après filtre : problème RÉEL nommé en leurs mots
+  (jamais amplifié), miroir des objections (déjà règle 09/10), preuve/story (déjà Lot [42]),
+  **prix+silence en un message WhatsApp**, cadrage revenu-pas-dépense. Rejetées : escalade de
+  douleur, urgence fabriquée, coinçage d'ego (vidéo 32 §4). La manipulation casse la confiance du
+  marché méfiant — le filtre n'est pas moral, il est stratégique.
+- **Q2 — Le CM comme service AMK ?** NON au retainer CM (commodité à 50 K FCFA/mois, tout-faire,
+  disponibilité permanente — étude 33) ; OUI à « production de contenu premium au livrable »,
+  vendable aux PME et aux CM/agences sous-équipés. Facebook = place de marché n°1 → cross-post
+  au backlog.
+- **Q3 — Vibe coding pour notre site ?** Le principe qui transfère : **vocabulaire de design
+  précis > adjectifs** (tokens : layout/styling/accent/ombres/typo/pairing) — notre DESIGN-SKILLS
+  validé en externe, enrichi d'une checklist 6 tokens. Rejeté comme hype : les builders vendus
+  (Aura/Lovable/V0 = le problème générique qu'ils dénoncent), les tendances suivies au lieu du
+  design system, l'idée qu'un outil remplace le goût.
+- **Q4 — Stickman, confirmation ?** **SKIP PROPRE, confirmé.** Second échantillon = même moule
+  d'usine (master prompt, engagement-bait, disclaimer earnings). Aucun principe neuf ; nos règles
+  debout (structure écrite avant génération, captions relues) déjà couvertes. Rejet définitif.
+- **Q5 — L'URL `dJR7OpkEeBk` ?** IDENTIFIÉE = « 8 DARK PSYCHOLOGY Sales Techniques » (Patrick
+  Dang, 940 646 vues — les 940K de King). Elle n'était pas perdue : elle EST la vidéo 11 du
+  batch, traitée comme vidéo 32. Pas de 5ᵉ vidéo.
+
+### Verdict final : le framework vidéo est-il complet ?
+**OUI — complet et cohérent.** Les 3 lots (42–44) couvrent les trois couches : (1) QUOI dire —
+hook = pensée non dite, story formula, zéro marque en 0–3 s, coût avant solution ; (2) COMMENT le
+montrer — 2D motion graphics généré par code, signature AMK, séquence de production avec gates ;
+(3) POURQUI ça vend — preuve > explication, closing honnête, positionnement craft sur un marché
+où l'IA est déjà banale. Douze vidéos traitées (22–33), zéro outil ajouté, aucune contradiction
+ouverte restante. Ce qui manque n'est pas du savoir : c'est la décision de King sur POST-01, puis
+l'exécution de la réécriture.
+
+### Verdict du batch 3 pour AMK
+**Un lot qui ferme l'arc en purgeant plus qu'en ajoutant :** 3 manipulations rejetées, le stickman
+enterré, le retainer CM écarté — et trois règles propres (closing WhatsApp, checklist design,
+cross-post FB) qui rejoignent des fichiers existants. Le framework est prêt ; la balle est à la
+réécriture POST-01, sur ordre de King.

@@ -164,3 +164,23 @@ réponses Q1–Q6 : `research/YouTube-Lessons.md` Lot [43]. Trois rulings perman
 
 Mémo en réserve : pricing motion marché FR (Malt 350–450 €/jour ; Fiverr 748–2 000 €/vidéo ;
 agence 4 500–6 000 €/60 s) = différenciant potentiel pour les sites clients, pas un tarif à copier.
+
+---
+
+## Addendum Lot [44] — batch final vente/CM/design (12/10 nuit)
+
+Source : `research/youtube-lessons/2026-10-12-batch-final/` (vidéos 30–33) ; consolidation et
+réponses Q1–Q5 : `research/YouTube-Lessons.md` Lot [44]. Trois rulings :
+
+1. **Pas de retainer community management** : marché commodité sous-payé (plancher observé
+   50 K FCFA/mois, étude CM 2025), disponibilité permanente attendue — incompatible avec le
+   positionnement craft. Ligne adjacente possible : **« production de contenu premium au
+   livrable »** (vidéos, visuels, pages), vendable aux PME et aux CM/agences sous-équipés
+   (canal B2B2C à tester après les premiers clients directs).
+2. **Cross-post Facebook au backlog distribution** : FB = 5 M+ Camerounais actifs, organic au
+   coude-à-coude avec TikTok (étude CM) — quand la cadence TikTok sera stable, republier le même
+   MP4 sur FB, coût marginal nul.
+3. **Closing WhatsApp en 3 règles** → gravées dans `sales/CLIENT-MESSAGING-RULES.md` §11
+   (problème réel en leurs mots ; prix en un message puis silence ; cadrage revenu-pas-dépense).
+   Les 3 manipulations « dark » (escalade de douleur, urgence fabriquée, coinçage d'ego) sont
+   rejetées : sur marché méfiant, la confiance est l'actif n°1.
