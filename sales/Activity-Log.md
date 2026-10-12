@@ -4969,3 +4969,20 @@ c'est ce gap que §8d ferme) ; (3) le bug prose-vs-data de ce fil est déjà cod
 
 **Statut :** lead `lost`, fiche inchangée, fil clos. Aucune action commerciale issue de cette
 autopsie.
+
+## lun 12/10 (matin) — VAGUE 7 ENVOIS + fils chauds (captures King)
+
+- **05:58 RÉPONSE Univers Optique :** « Peut-être faudrait il que nous convenions pour les essais en
+  cabinets stp car je ne m'en sors pas. » → signal CHAUD : il demande un essai accompagné au cabinet.
+  Une réponse **annule la fenêtre** (pas de note vocale 13/10, pas d'appel 15/10).
+- **10:43 ENVOI King → Univers Optique :** « Bonjour Docteur, merci pour votre retour. Vendredi me
+  convient bien, je viendrai avec tout ce qu'il faut pour qu'on teste ensemble dans votre cabinet.
+  Quelle heure vous arrange ? Samedi reste possible si c'est plus simple. » → la visite du 16/10 est
+  une **session de travail** (tester ensemble, observer, zéro pitch) ; les 3 questions d'économie se
+  posent sur place. CRM mis à jour dans le générateur : stage `qualifying`, Follow-up date
+  **2026-10-16** (ruling King 12/10).
+- **09:58 RÉPONSE DM Optique :** « Ok » — accusé de réception du message de 22:40 (11/10). Aucune
+  réponse due. Fenêtre d'acompte : **mar 13/10**.
+- **Vague 12/10 :** 7 envois par King 08h–11h, liste = celle du ruling 11/10 (Horizon/Akwa ·
+  Kamaïs/Bonanjo · Maff/Bonadibong · Faby · JiredOptic · Planète · Centrale) ; Lumumba + Bali hors
+  vague. Toute réponse collée ici sera journalisée avec nom, texte exact, délai depuis envoi, signal.

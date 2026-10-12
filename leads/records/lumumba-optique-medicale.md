@@ -1,6 +1,6 @@
 # Lumumba Optique Médicale
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-05. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-12. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -33,13 +33,15 @@ LOT 4 (préparé, PAS ENVOYÉ). Titulaire : NZIKANG Armstrong TUAMBI. Deux pages
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 5 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 7 ligne(s).*
 
 `L3889` · | 3 | **Lumumba Optique Médicale** (Makepe) | 670 59 79 96 | NZIKANG Armstrong TUAMBI | deux pages Facebook, aucune qui dise où/ quand / comment |
 `L3949` · **Lumumba** · 4 · **La Ligne Optic** · 5 · **DM Optique**. Les deux remplaçants prévus sont entrés tous
 `L3967` · 15:16 SkyOptics ✓✓ · 15:18 Lumumba ✓ (pas encore délivré) · 15:29 La Ligne Optic ✓✓ · 15:31 DM Optic
 `L3987` · · **Lumumba** — deux pages Facebook + fiche APIE : **Bonamoussadi, face Parcours VITA**. Le message
 `L3998` · les quatre ✓✓, `sent` pour Lumumba (jamais `delivered` sans l'avoir vu). Rebuild **14:51:23**.
+`L4943` · ## 2026-10-11 · LUMUMBA OPTICMEDICAL — statut CRM (ruling King)
+`L4987` · Kamaïs/Bonanjo · Maff/Bonadibong · Faby · JiredOptic · Planète · Centrale) ; Lumumba + Bali hors
 
 ---
 

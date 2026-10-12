@@ -842,8 +842,8 @@ OPTICIENS_2109 = [
          wa_number="699 25 28 74", wa_verified="yes",
          contact_channel="WhatsApp", decision="BAYANG BIHEN Calvin", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah + Google Maps + Wayback + kerawa (2022)",
-         stage="closing", contacted="Yes", reply="Yes", demo="Yes",
-         reply_type="human", last_send_state="delivered",
+         stage="qualifying", contacted="Yes", reply="Yes", demo="Yes",
+         reply_type="human", last_send_state="delivered", stage_since="2026-10-12",
          site_url="", site_checked_on="2026-09-21",
          Website="univers-optique.com — HORS LIGNE (aucun enregistrement DNS, vérifié 21/09 ; dernière copie Wayback vivante 02/11/2023, répertoire Apache vide au 09/01/2024)",
          **{"Website status": "AUCUN site à moderniser : le domaine est MORT. Le cabinet existe en ligne "
@@ -851,7 +851,7 @@ OPTICIENS_2109 = [
             "Maligah à champs vides, annonce kerawa retirée. C'EST UNE REPRISE, PAS UNE REFONTE. "
             "Dernière page vivante = WordPress avec le nom d'un autre opticien (« Gweleo ») dans le texte, "
             "3 cartes pointant vers la même URL, et une bannière « 15 % » sans offre derrière."},
-         **{"Follow-up date": "2026-09-22", "Conversation": "Message 1 lun 21/09 17:50 (variante C) · "
+         **{"Follow-up date": "2026-10-16", "Conversation": "Message 1 lun 21/09 17:50 (variante C) · "
             "17:56 il répond « Combien ça me coûte » (2e question de prix de la campagne) · 18:08 King : "
             "100 000 FCFA la page complète FR|EN, mise en ligne 3 à 5 jours, 50 000 pour commencer + 50 000 "
             "à la mise en ligne, rien dû avant accord, aperçu gratuit promis « d'ici demain » · AUCUN prix "
@@ -3278,8 +3278,8 @@ REPONSE_UNIVERS_2509 = {
     "univers-optique": {
         "Contacted": "Yes", "Reply": "Yes", "reply_type": "human",
         "Demo made": "Yes", "Offer made": "No",
-        "last_send_state": "sent", "stage": "qualifying", "stage_since": "2026-09-25",
-        "Follow-up date": "2026-10-14",
+        "last_send_state": "delivered", "stage": "qualifying", "stage_since": "2026-10-12",
+        "Follow-up date": "2026-10-16",
         "contradiction":
             "Le CRM portait `closing` et « les 50 000, on les met quand ? » comme dernière étape. Le "
             "25/09, le client a écarté le site et demandé un outil : le sujet a changé, rien n'a été "
@@ -3318,7 +3318,7 @@ comme NON ENVOYÉ : il n'est pas journalisé comme envoyé. · FENÊTRE (règle 
 §7) : 24 h ouvrées = ven. 09/10 15:21 (on attend, rien d'autre) ; palier 48 h = note vocale chaleureuse \
 mar. 13/10 (= `Follow-up date`) ; palier 7 jours = appel de 2 minutes jeu. 15/10 ; une réponse du client \
 ANNULE la fenêtre (règle du 08/10). Pitch de l'outil toujours retenu tant que l'acompte DM Optique n'est \
-pas encaissé. Appareil : réponse « Tablette ou smart Phone » = le client n'a pas tranché. · 10/10 (sam., 17e message de King, capture) — LE CLIENT A RÉPONDU le ven. 09/10 : 12:31 « Merci j'attends le modèle » (verbatim) puis 12:32 une NOTE VOCALE de 0:14 DONT LE CONTENU N'EST PAS ENCORE TRANSCRIT (King doit la transcrire : elle répond peut-être à la question du 08/10 15:21 = case de la feuille de ROI). 09/10 13:20 King (fragment lisible seulement) : « …rien ne se finalise sans votre validation. Je vous envoie le lien ce soir… ». 10/10 10:35 King a envoyé le lien d'essai https://uo-essayage-camera.vercel.app + un message d'explication (texte non capturé) ; un seul ✓ au moment de la capture = pas encore délivré. La réponse du 09/10 ANNULE la fenêtre précédente : la voix du mar. 13/10 et l'appel du jeu. 15/10 sont SANS OBJET. Nouvelle fenêtre = depuis la LIVRAISON du lien (double ✓), lecture stricte lun–ven de la règle §7 : palier 1 attente · palier 2 (voix) mer. 14/10 seulement si le client reste muet · palier 3 (appel 2 min) à 7 jours ; lecture calendaire alternative = voix lun. 12/10, appel sam. 17/10 : à confirmer par King. `Follow-up date` passée à 2026-10-14. Le pitch reste retenu jusqu'à l'acompte DM Optique ; si le client demande le prix, décision de King (rien de préparé à envoyer sans lui). Le code de l'outil en ligne n'est pas dans le dépôt (seulement `assets/try-on-v1/`).",
+pas encaissé. Appareil : réponse « Tablette ou smart Phone » = le client n'a pas tranché. · 10/10 (sam., 17e message de King, capture) — LE CLIENT A RÉPONDU le ven. 09/10 : 12:31 « Merci j'attends le modèle » (verbatim) puis 12:32 une NOTE VOCALE de 0:14 DONT LE CONTENU N'EST PAS ENCORE TRANSCRIT (King doit la transcrire : elle répond peut-être à la question du 08/10 15:21 = case de la feuille de ROI). 09/10 13:20 King (fragment lisible seulement) : « …rien ne se finalise sans votre validation. Je vous envoie le lien ce soir… ». 10/10 10:35 King a envoyé le lien d'essai https://uo-essayage-camera.vercel.app + un message d'explication (texte non capturé) ; un seul ✓ au moment de la capture = pas encore délivré. La réponse du 09/10 ANNULE la fenêtre précédente : la voix du mar. 13/10 et l'appel du jeu. 15/10 sont SANS OBJET. Nouvelle fenêtre = depuis la LIVRAISON du lien (double ✓), lecture stricte lun–ven de la règle §7 : palier 1 attente · palier 2 (voix) mer. 14/10 seulement si le client reste muet · palier 3 (appel 2 min) à 7 jours ; lecture calendaire alternative = voix lun. 12/10, appel sam. 17/10 : à confirmer par King. `Follow-up date` passée à 2026-10-14. Le pitch reste retenu jusqu'à l'acompte DM Optique ; si le client demande le prix, décision de King (rien de préparé à envoyer sans lui). Le code de l'outil en ligne n'est pas dans le dépôt (seulement `assets/try-on-v1/`). · \\\n12/10 05:58 — LE CLIENT : « Peut-être faudrait il que nous convenions pour les essais en cabinets stp \\\ncar je ne m'en sors pas. » (capture King) · 12/10 10:43 — King : « vendredi me convient bien, je \\\nviendrai avec tout ce qu'il faut pour qu'on teste ensemble dans votre cabinet. Quelle heure vous \\\narrange ? Samedi reste possible si c'est plus simple. » → la visite = SESSION DE TRAVAIL (tester \\\nensemble, observer, zéro pitch) ; les 3 questions d'économie se posent sur place. `Follow-up date` = \\\n2026-10-16, stage `qualifying` confirmé (ruling King 12/10). La fenêtre voix du 14/10 est SANS OBJET \\\n(réponse reçue). Bug Pixel : NON défini dans le dépôt au 12/10 — décision fix/disclose avant le 16/10 \\\nsuspendue à la description du bug par King.",
     },
 }
 
