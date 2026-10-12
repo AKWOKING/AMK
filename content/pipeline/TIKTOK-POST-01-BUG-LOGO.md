@@ -70,3 +70,29 @@ plan.
 - **Fichiers :** dummy `content/pipeline/POST-01-DUMMY-2026-10-12.mp4` (test pipeline 3 s, à valider
   par King) puis complet `content/pipeline/POST-01-BUG-LOGO-2026-10-12.mp4`.
 - **NE PAS PUBLIER** — approbation King requise sur le MP4 final. Publication visée : mardi 13/10.
+
+---
+
+## PARKÉ 12/10 nuit — RÉÉCRITURE À VENIR (framework Lot [42])
+
+Le v4 final est un **asset de test** du nouveau framework, pas le post (ruling King 12/10 nuit :
+3 défauts — pas de hook 0–3 s, pas de cadre narratif, ouverture « tuto design »). Mapping de
+réécriture adopté (sources : `research/youtube-lessons/2026-10-12-batch-hooks/` rapports 22–25 §5,
+consolidation `research/YouTube-Lessons.md` Lot [42]) :
+
+- **NOUVEAU beat 0 (3–4 s) « contexte »** : la requête en une phrase — « Un site pour une clinique
+  d'optique. Le logo fourni : un PDF. » (vidéo 24, set up the past).
+- **B1 réécrit « désir + obstacle »** : en mots d'opticien, hook = pensée non dite (« il est beau…
+  jusqu'au jour où on clique »), **zéro logo/marque en 0–3 s** (vidéos 23 + 25). 3 ouvertures
+  candidates en at-bats → King tranche avant render.
+- **B2/B4 : coût du problème avant la solution** : « 2 jours de recherche. Sur un site réel : un
+  client clique et rien ne se passe. » (vidéo 25).
+- **B5/B6 : transformation want ≠ need** : on voulait un logo propre, on repart avec une règle
+  (`vector-effect`) (vidéo 24). Marque et signature **seulement en B6**, répétées identiques à
+  chaque post (vidéos 22 + 23).
+- **Gate ajouté : test du son coupé** — le clip doit se comprendre sans audio (vidéo 23).
+- **Pari nommé du post (vidéo 25)** : « Nous croyons que montrer un vrai bug résolu installe la
+  compétence perçue ; nous parions ce post sur des questions WhatsApp d'opticiens. » Outcome à
+  logger : questions reçues (jamais « on a posté »).
+
+Réécriture = prochaine tâche, sur ordre de King. Le MP4 v4 reste en place comme référence.

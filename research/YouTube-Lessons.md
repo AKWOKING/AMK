@@ -2137,3 +2137,103 @@ unlimited = signal d'alarme » rejoint le journal des rejets.
 enseignement est négatif : les titres « 0 $ / unlimited / easy » sont des labels marketing — les
 pièces solides sont méthodologiques (rythme, boucles, critique itérative, ban des défauts) et une
 idée de section client. L'orchestrateur + HyperFrames déjà évalué couvrent tout le besoin réel.
+## Lot [42] · RECHERCHE VIDÉO — BATCH HOOKS/RÉTENTION/STORYTELLING (4 vidéos) · 2026-10-12
+
+Dossiers : `research/youtube-lessons/2026-10-12-batch-hooks/` (video-22 → video-25 + INDEX).
+Batch demandé par King après visionnage du POST-01 v4 (3 défauts : pas de hook 0–3 s, pas de cadre
+narratif, ouverture « tuto design »). Transcripts voie §0 : 23 complet ; 22, 24, 25 par chapitres
+porteurs (détail par rapport). Métadonnées watch pages tirées le 12/10 pour les 4. Batches 2 et 3
+(motion/IA-anim ; stickman/vibe-coding/vente/communauté) : EN FILE, non démarrés.
+
+### 3 idées à agir cette semaine (avant la réécriture POST-01)
+1. **Beat 0 « contexte » + B1 « désir + obstacle »** (vidéo 24, story formula McKee) : 3–4 s de
+   requête (« un site pour une clinique d'optique ; le logo fourni était un PDF »), puis désir +
+   obstacle en mots d'opticien. Corrige les défauts n°2 et n°3 de King. → réécriture POST-01.
+2. **Zéro marque en 0–3 s + hook = pensée non dite de la cible** (vidéos 25 + 23) : v4 ouvrait sur
+   hero propre + logo = l'erreur exacte de l'anecdote 3-secondes de Wiebe. L'overlay d'ouverture
+   doit dire ce que l'opticien pense déjà (« il est beau… jusqu'au jour où on clique »). →
+   réécriture POST-01 (3 ouvertures candidates en at-bats, King tranche avant render).
+3. **Faire sentir le coût du problème avant la solution** (vidéo 25, Listerine/mécanisme) :
+   overlay chiffré en B2/B4 (« 2 jours de recherche ; sur un site réel, un client clique et rien ne
+   se passe »). → réécriture POST-01 + spec (pari nommé par post).
+
+### 3 idées à garder (en réserve)
+1. **Through-line répété + signature reconnaissable son coupé** (22 + 23) : la ligne de signature
+   B6 identique à chaque post ; test du son coupé comme critère de gate créatif. → addendum Lot
+   [42] du brief TikTok.
+2. **Les 4 forces du buyer (push/pull vs anxiété/habitude)** (25, Moesta) : grille de lecture des
+   conversations WhatsApp de la vague ; l'anxiété « je ne vois pas ce que ça m'apporte » est
+   l'adversaire principal. → CRM de vague (colonne existante, pas de nouveau fichier).
+3. **Clivant professionnel, jamais politique** (22) : prises de position métier dans les posts
+   debug-in-public (« un template acheté, on refuse »). → backlog contenu, après POST-01.
+
+### 3 idées à rejeter carrément
+1. **Le talking-head comme condition** (22, 23, 24 assument tous un visage) : aucun des principes
+   retenus n'exige visage ou voix d'auteur — la story formula et le hook pensée-non-dite sont
+   100 % transférables à l'écran généré. Le format parlant est rejeté pour nous (ruling King), les
+   principes restent.
+2. **ManyChat / DM-automation + paid** (23, 25) : NO-CALL/WhatsApp-only debout ; paid seulement
+   après preuve organique (23 elle-même) — donc jamais pour l'instant.
+3. **Cadences prescrites (2 posts/jour, 3–5/semaine) et absolus de compte personnel** (22, 23) :
+   notre cadence reste en test jusqu'à la revue J14 ; leurs chiffres (10 M vues/mois, +1 K
+   abonnés/jour) = vendor self-report, non transférables.
+
+### Outils survivants de l'audit
+**Aucun outil.** Batch 100 % principes (demande explicite du brief : « un framework, pas des
+exemples »). ManyChat rejeté ; Claude-ICP (24) inutile (ICP déjà terrain) ; swipe file 4-lignes
+(25) absorbé par la colonne « pourquoi ça a marché » de ce fichier — pas de nouveau fichier
+standing.
+
+### Contradictions entre vidéos (et internes)
+- **Montrer vs ne pas montrer** : 22/23 font de la présence personnelle le cœur du personal brand ;
+  24 prouve que la structure narrative seule suffit (story formula sans visage). Tranché pour AMK :
+  artefacts + structure, pas de visage (ruling King) — les deux mondes se réconcilient par la
+  « transparence violente » appliquée aux artefacts.
+- **Viralité vs régularité** : 23 s'intitule « viral en 30 jours » mais son propre contenu dit
+  « testing IS the plan, 30 jours pour se lever, 30 ans pour bâtir » ; 22 dit explicitement « ne
+  cherche pas la viralité ». Le titre sur-vend, le contenu confirme la régularité (recoupe nos
+  rejets des lots précédents sur les titres).
+- **Pilier « Tech Cameroun » vs niche 20–30 %** : 22 dit viser une minorité tranchée ; notre brief
+  de contenu a un pilier tertiaire tech. Tension réelle → question ouverte pour King (§A).
+- **25 vs notre usage de l'IA** : « un tas de tactiques sans pari = ce que l'IA produit » — garde-
+  fou adopté : chaque post porte un pari nommé, sinon il ne part pas.
+
+### Le workflow AMK après ce batch
+1. Réécriture POST-01 selon le mapping beat-par-beat (rapports 22–25 §5) : nouveau beat 0, B1
+   hook pensée-non-dite, coût du problème en B2/B4, transformation want≠need en B5/B6, marque
+   seulement en B6. 3 ouvertures candidates → King tranche → render → gate motion + son coupé.
+2. Addendum Lot [42] au brief TikTok : through-line répété, test son coupé au gate, pari nommé par
+   post, outcomes dans l'Activity-Log (« questions reçues », jamais « on a posté »).
+3. Batches 2 et 3 restent en file — ne pas démarrer sans ordre de King.
+
+### Réponses aux questions stratégiques (sourcées)
+- **A — Audience.** CONFIRMÉ avec raffinement : primaire = décideurs optiques CM 35–55 FR-first
+  WhatsApp-native sceptiques (24 : niche par élimination, « servir trop de monde = servir
+  personne » ; 22 : viser 20–30 %, jamais tout le monde). Secondaire = SMB CM. **Tertiaire tech :
+  amplificateur, pas cible de message** (22) — la tension avec le pilier « Tech Cameroun » est
+  signalée à King.
+- **B — Ce que le viewer doit penser.** CONFIRMÉ, reformulé en preuve : compétence/craft/maîtrise
+  de la niche/professionnalisme se démontrent par la **preuve qui ferme l'imagination gap** (24 :
+  « explaining your value harder never closes a sale, proof does »), la **reconnaissance** (« il
+  dit ce que je pensais », 23) et la **répétition de la même signature** (23 : noticed ≠ trusted ;
+  22 : 7–8ᵉ exposition).
+- **C — Objectif.** CONFIRMÉ : crédibilité d'abord, leads ensuite. 22 : « ne vends pas au début,
+  la confiance réduit les coûts » ; 23 : « paid seulement après preuve organique » ; 24 : la preuve
+  ferme le gap avant toute demande. La vague refroidit → TikTok = preuve consultable (ruling 12/10
+  renforcé).
+- **D — Type de vidéo.** CONFIRMÉ avec réserve : aucune des 4 vidéos ne traite le faceless — elles
+  assument toutes un talking-head (à noter honnêtement). Mais les principes retenus (story
+  formula, before/after, hook pensée-non-dite, coût avant solution, signature son coupé) sont
+  format-agnostiques : UI-sim + kinetic typo + data storytelling + before/after recréé restent les
+  seuls formats orchestrateur-générés, et suffisent.
+- **E — Première émotion.** Ni soulagement ni fierté : **reconnaissance + curiosité**. 23 : le
+  hook gagne quand la cible se dit « c'est exactement ce que je pensais » (reconnaissance) ; 24 :
+  le conflit/obstacle posé d'entrée crée la tension (« no conflict, no story ») ; le soulagement/
+  la confiance n'arrivent qu'à la résolution (B5/B6). Surprise = bonus, pas fondation (22 : le
+  lisse est invisible, mais le gimmick sans répétition ne construit rien).
+
+### Verdict du batch pour AMK
+**Le batch livre le framework demandé : les 3 défauts du v4 ont chacun leur correctif sourcé**
+(hook = pensée non dite + zéro marque en 0–3 s ; cadre = beat 0 contexte + story formula ;
+tuto-read = coût du problème avant la solution + transformation). Aucun outil, aucun changement de
+pipeline ; la réécriture POST-01 est le seul chantier immédiat.

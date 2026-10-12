@@ -121,3 +121,24 @@ valable seulement si King le valide un jour.
   (`research/HyperFrames-Evaluation-2026-09-19.md`) — avant tout essai, mesurer le temps de render
   d'un slide dans le sandbox.
 - **Jamais :** payer un outil pour ça (règle King) ; musique/SFX = code local ou rien sous la VO.
+
+---
+
+## Addendum Lot [42] — batch hooks/rétention/storytelling (12/10 nuit)
+
+Source : `research/youtube-lessons/2026-10-12-batch-hooks/` (vidéos 22–25) ; consolidation et
+réponses A–E : `research/YouTube-Lessons.md` Lot [42]. Quatre disciplines permanentes ajoutées :
+
+1. **Through-line répété** : la ligne de signature (« AMK — on construit, on casse, on comprend »)
+   identique à chaque post, sans variation — la répétition est la stratégie (vidéos 22 + 23).
+2. **Test du son coupé au gate créatif** : chaque vidéo doit se comprendre sans audio — signature
+   visuelle reconnaissable (dark + vert + terminal) (vidéo 23).
+3. **Pari nommé par post** : chaque spec porte « Nous croyons X, donc nous parions ce post que Y
+   produit Z » — un post sans pari ne part pas (vidéo 25).
+4. **Outcomes dans l'Activity-Log** : « questions reçues », jamais « on a posté » (vidéo 25).
+
+Résumé A–E (détail au Lot [42]) : audience primaire = décideurs optiques CM (tertiaire tech =
+amplificateur, tension signalée) ; perception visée = preuve + reconnaissance + répétition ;
+objectif = crédibilité d'abord ; formats = orchestrateur-générés (les 4 vidéos assument un
+talking-head — principes retenus format-agnostiques) ; première émotion = reconnaissance +
+curiosité, soulagement/confiance seulement à la résolution.
