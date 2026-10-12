@@ -43,7 +43,7 @@
 |---|---|---|---|
 | Labiomed | Douala (Deido, 104 Route Deido-Bassa) | 699 98 54 66 | `L4924` |
 | St. Theresa International Bilingual Comprehensive College (STIBCCOL) | Buea (Molyko) | 679151075 | `L4931` |
-| Univers Optique | Douala | 699 25 28 74 | `L4978` |
+| Univers Optique | Douala | 699 25 28 74 | `L4990` |
 
 ## ① Prospection — à qualifier — 47
 

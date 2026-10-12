@@ -40,7 +40,12 @@ arrange ? Samedi reste possible si c'est plus simple. » → la visite = SESSION
 ensemble, observer, zéro pitch) ; les 3 questions d'économie se posent sur place. `Follow-up date` = \
 2026-10-16, stage `qualifying` confirmé (ruling King 12/10). La fenêtre voix du 14/10 est SANS OBJET \
 (réponse reçue). Bug Pixel : NON défini dans le dépôt au 12/10 — décision fix/disclose avant le 16/10 \
-suspendue à la description du bug par King.
+suspendue à la description du bug par King. · \
+12/10 10:46 — LE CLIENT : « Vendredi 10h stp » (capture King) → **RDV CONFIRMÉ : ven. 16/10 10:00** \
+au cabinet. Session de travail : tester ensemble, observer, zéro pitch ; les 3 questions d'économie \
+sur place. Aucune relance avant le 16/10 — le repli samedi et l'hypothèse d'un toucher jeudi sont \
+SANS OBJET (la réponse est arrivée). Note vocale du 09/10 : King vérifie s'il contient autre chose de \
+matériel ; si oui, ajout ici.
 
 ## Prochaine action
 
@@ -48,7 +53,7 @@ suspendue à la description du bug par King.
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 156 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 157 ligne(s).*
 
 `L51` · | **ven 18/09 20:02** | **Clinique de L'université** (Bassa, 694 36 02 03) | msg 1 — sans maquette | Envoyé | **Non** |
 `L113` · | 20:02 | Cabinet Dentaire Emmanuel · Clinique de L'université · MEDI LABO |
@@ -206,6 +211,7 @@ suspendue à la description du bug par King.
 `L4941` · - **App d'essayage Univers :** King l'a testée sur son téléphone, « ça marche » ; il demande des améliorations après recherche → `clients/univers-optique/research/TRY-ON-IMPROVEMENTS-2026-10-10.md` (proposition, rien de modifié ; **la source de l'app n'est pas dans le dépôt**).
 `L4975` · - **05:58 RÉPONSE Univers Optique :** « Peut-être faudrait il que nous convenions pour les essais en
 `L4978` · - **10:43 ENVOI King → Univers Optique :** « Bonjour Docteur, merci pour votre retour. Vendredi me
+`L4990` · ## lun 12/10 10:46 — RÉPONSE Univers Optique : RDV CONFIRMÉ
 
 ---
 

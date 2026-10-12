@@ -4986,3 +4986,10 @@ autopsie.
 - **Vague 12/10 :** 7 envois par King 08h–11h, liste = celle du ruling 11/10 (Horizon/Akwa ·
   Kamaïs/Bonanjo · Maff/Bonadibong · Faby · JiredOptic · Planète · Centrale) ; Lumumba + Bali hors
   vague. Toute réponse collée ici sera journalisée avec nom, texte exact, délai depuis envoi, signal.
+
+## lun 12/10 10:46 — RÉPONSE Univers Optique : RDV CONFIRMÉ
+
+« Vendredi 10h stp » (capture King) → **ven. 16/10, 10:00, au cabinet.** Session de travail : tester
+l'outil ensemble, observer, **zéro pitch** ; les 3 questions d'économie se posent sur place. Le repli
+samedi et l'hypothèse d'un toucher jeudi sont SANS OBJET — la réponse est arrivée. Aucune relance
+avant le 16/10. Note vocale du 09/10 : King écoute et colle ici tout élément matériel éventuel.
