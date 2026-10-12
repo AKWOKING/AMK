@@ -5102,3 +5102,7 @@ prénom sourcé, rendus en chat le 12/10.
   mean −22,3 dB / max −0,4 dB. Beats recalés sur la VO mesurée (table v4 dans le script).
 - **Explication fournie à King :** HTML = source de rendu (cuisine) ; MP4 = fichier à checker et à
   poster (TikTok : upload app/PC, musique platform-native ajoutée par lui au téléversement).
+- **Livraison MP4 (12/10 nuit 2) :** King ne trouvait pas le MP4 sur GitHub — normal : `*.mp4` est
+  gitignoré (convention artefacts). Exception de livraison documentée : `git add -f` du MP4 final
+  (commit `c760a29`). La convention reste pour les futurs artefacts ; les livraisons à King passent
+  par GitHub en exception nommée.
