@@ -888,6 +888,8 @@ OPTICIENS_2109 = [
          contact_channel="WhatsApp", decision="BOUDZAP ZOYEM Hermine", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
          stage="prospecting", contacted="No", reply="No", demo="No",
+         wa_number_note="12/10 : 692 08 00 55 PAS sur WhatsApp (retour King) → tester 672 55 21 37 "
+         "(n° « inscrits ») avant de classer ; premier envoi autorisé sur ce numéro si vivant (ruling 11/10).",
          notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : BOUDZAP ZOYEM Hermine. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
     dict(slug="horizon-optique", org="Horizon Optique", city="Douala", org_type="other", language="FR",
          wa_number="677 44 74 17", wa_verified="unknown",
@@ -935,13 +937,23 @@ OPTICIENS_2109 = [
          wa_number="696 26 50 31", wa_verified="unknown",
          contact_channel="WhatsApp", decision="LIPOTH Pierrette", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
-         stage="prospecting", contacted="No", reply="No", demo="No",
+         stage="qualifying", contacted="Yes", reply="No", demo="No",
+         last_send_state="sent", stage_since="2026-10-12",
+         **{"Follow-up date": "2026-10-13",
+            "Conversation": "12/10 matin — VAGUE : message gabarit envoyé au 696 26 50 31. Compte WA "
+            "business « jirehopticmed » (optique médicale, 08:00–18:00, jirehopticmed@gmail.com, "
+            "visuel 1er mai — capture King). Fenêtre : silence → note vocale 13/10, appel 15/10 ; "
+            "une réponse annule la fenêtre."},
          notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : LIPOTH Pierrette. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
     dict(slug="plan-te-optique", org="Planète Optique", city="Douala", org_type="other", language="FR",
          wa_number="699 85 58 35", wa_verified="unknown",
          contact_channel="WhatsApp", decision="MAKONGO Jean Dury", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
-         stage="prospecting", contacted="No", reply="No", demo="No",
+         stage="qualifying", contacted="Yes", reply="No", demo="No",
+         last_send_state="sent", stage_since="2026-10-12",
+         **{"Follow-up date": "2026-10-13",
+            "Conversation": "12/10 matin — VAGUE : message gabarit envoyé au 699 85 58 35. "
+            "Fenêtre : silence → note vocale 13/10, appel 15/10 ; une réponse annule la fenêtre."},
          notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : MAKONGO Jean Dury. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
     dict(slug="maff-optique", org="Maff Optique", city="Douala", org_type="other", language="FR",
          wa_number="699 93 19 56", wa_verified="unknown",

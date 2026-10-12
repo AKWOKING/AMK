@@ -75,3 +75,17 @@ partagent ce numéro pour chaque ligne divergente → une seule entité, erreur 
   physique. ENVOI sur 693 96 89 56.**
 Risque résiduel faible ; si le WhatsApp de l'un ne s'identifie pas comme opticien au portique
 d'avant-envoi, ne pas envoyer et le dire (règle standing).
+
+---
+
+## ADDENDUM 12/10 (midi) — RETOURS TERRAIN KING + RECOUPEMENT CRM (écrase le cas échéant)
+
+- **Envoyés (2) :** JiredOptic Med · Planète Optique. Fenêtre : silence → note vocale 13/10, appel
+  15/10 ; une réponse annule la fenêtre.
+- **Pas sur WhatsApp (3) :** Horizon (aucun 2ᵉ numéro ; disqualifié 24/09 — appel ou classement) ·
+  Faby (tester 672 55 21 37) · Centrale (tester 699 59 82 86).
+- **HORS VAGUE (2) :** Maff (contacté 24/09, bulk close 02/10, dead lead) · Kamaïs (envoyé 18/09,
+  décision 22/09 « on ne réécrit plus » — envoi personnalisé éventuel = override CONSCIENT de King,
+  conflit signalé).
+- **Erreur de méthode :** la présente liste n'avait pas recoupé l'historique CRM (entrée #10
+  d'`ops/INFERENCE-ERRORS.md`).

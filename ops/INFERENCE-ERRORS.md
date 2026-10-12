@@ -45,3 +45,13 @@ catch atterrit ici.
 > de l'annuaire ONOC ont été lues intégralement. **Règle née :** « injoignable » se dit **par outil**,
 > pas globalement. Avant de déclarer une source inaccessible, tester `fetch_page` après `curl`.
 > Le re-pull ONOC du dimanche (tâche debout) est donc **faisable ici**.
+
+> **10. 12/10/2026 — la VERIFIED-LIST du 11/10 n'a pas recoupé l'historique CRM : 3 des 7 « froids » ne l'étaient pas.**
+> Fait vérifié ce jour dans `leads/CRM.csv` / `crm.py` : **Maff** contacté 24/09 11:56 + bulk close
+> 02/10 (fil clos) · **Kamaïs** envoyé 18/09, jamais ouvert, décision King 22/09 « on ne réécrit
+> plus » · **Horizon** disqualifié 24/09 (« WhatsApp refuse le numéro »). La vérification du 11/10
+> portait sur l'entité ONOC (noms, numéros, quartiers) — pas sur **nos propres envois et stages**.
+> King a attrapé Maff sur le terrain ; le CRM a attrapé Kamaïs et Horizon. Classe : même famille que
+> le bug prose-vs-data du 21/09 (l'état réel existe dans la donnée, la prose l'ignore). **Fix proposé
+> (ruling attendu) :** toute liste de vague passe un recoupement CRM (stage + dernière envoi +
+> décision datée) AVANT d'être dite « vérifiée » — à ajouter au §8c de `sales/RESEARCH-STANDARD.md`.

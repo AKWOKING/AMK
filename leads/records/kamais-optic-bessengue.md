@@ -30,7 +30,7 @@ Envoyé 18/09 19:42, sans maquette. · ⚰️ MORT le 22/09 (lot du 18/09) — j
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 6 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 10 ligne(s).*
 
 `L44` · | **ven 18/09 19:42** | **Kamaïs Optic** (Bessengue, 678 435 460) | msg 1 — sans maquette | Envoyé | **Non** |
 `L112` · | 19:42 | Centre Médical de Bonanjo · Kamaïs Optic |
@@ -38,6 +38,10 @@ Envoyé 18/09 19:42, sans maquette. · ⚰️ MORT le 22/09 (lot du 18/09) — j
 `L761` · | ③ | **org_type : « va ligne par ligne sur les faits écrits dans la ligne. »** | Fait — **mais je n'ai pas trié à la main une par une : j'ai supprimé la cause.** `crm.py` collait `"school"` aux 38 lignes du classeur **sans jamais lire la ligne** ; voilà d'où venaient MITOC « school » et Solidarity « school ». Nouveau `org_type_for()` : l'étiquette n'existe que si un mot **du nom, des Facilities, de l'activité ou des notes** la porte (`lab` → `clinic` → `other` → `school`, dans cet ordre parce qu'« laboratoire d'analyses médicales » n'est pas une clinique). La preuve est écrite dans `Notes` (`org_type=lab prouvé par « laboratoire »`). Les overrides explicites (MITOC, One Stop, JOSS, Kamaïs, Solidarity) gagnent avant. **Résultat : 0 ligne sans étiquette et 0 ligne sans preuve** — contre 145 dont 38 affirmées « school » par défaut. |
 `L3899` · 156 lignes du CRM et les 62 leads déjà contactés : **Kamaïs Optic est tombé** (Bessengue — déjà au CRM,
 `L4987` · Kamaïs/Bonanjo · Maff/Bonadibong · Faby · JiredOptic · Planète · Centrale) ; Lumumba + Bali hors
+`L5000` · (≤30 j) pour les 7** ; seuls existent l'annuaire ONOC (noms propres sourcés) et, pour Kamaïs, une
+`L5010` · - **KamaïsOptic :** sur WhatsApp ; **aucun envoi aujourd'hui**. ⚠️ Le CRM porte : envoyé 18/09 19:42,
+`L5014` · (« 50m du feu rouge Bessengue ») + numéros 693 927 766 / 678 435 460 : Bessengue retenu comme
+`L5026` · contrôlé l'entité ONOC mais PAS l'historique CRM → 3 des 7 n'étaient pas froids (Maff, Kamaïs,
 
 ---
 

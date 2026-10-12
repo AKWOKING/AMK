@@ -5001,3 +5001,27 @@ avant le 16/10. Note vocale du 09/10 : King écoute et colle ici tout élément 
 page Facebook vivante (3 369 j'aime, ancienneté des posts non vérifiable depuis le bac). Noms +
 M./Mme repris de l'ONOC uniquement ; aucun honoraire deviné. Messages finaux = gabarit figé +
 prénom sourcé, rendus en chat le 12/10.
+
+## lun 12/10 (midi) — ÉTAT DE VAGUE (retours King + captures) · recoupement CRM
+
+- **Horizon optique :** 677 44 74 17 PAS sur WhatsApp (King) — cohérent avec le CRM : disqualifié le
+  24/09 (« WhatsApp refuse le numéro, indisponible ; ne pas réessayer sans nouveau numéro »). Aucun
+  second numéro. Aucun envoi n'a eu lieu. Canal restant : appel (à planifier) ou classement.
+- **KamaïsOptic :** sur WhatsApp ; **aucun envoi aujourd'hui**. ⚠️ Le CRM porte : envoyé 18/09 19:42,
+  jamais ouvert/répondu, **décision King 22/09 « on ne réécrit plus »** (parked, MORT). La vague du
+  11/10 l'avait listé froid par erreur. King personnalise avec les posts FB (dernier post 7 mai,
+  captures) — **conflit de rulings signalé en chat avant tout envoi**. Leur page FB indique Bessengue
+  (« 50m du feu rouge Bessengue ») + numéros 693 927 766 / 678 435 460 : Bessengue retenu comme
+  quartier (source Tier A = leur propre page), numéros FB non utilisés (l'annuaire gagne).
+- **Maff Optique Sarl :** HORS VAGUE — déjà contacté le 24/09 11:56 (capture du fil), bulk close
+  02/10, fil clos. Dead lead confirmé par King. Aucun second envoi.
+- **JiredOptic Med :** ENVOYÉ ce matin. Compte WA business vérifié (capture) : « jirehopticmed »,
+  optique médicale, 08:00–18:00, jirehopticmed@gmail.com. CRM → qualifying, FU 13/10.
+- **Faby Optique :** 692 08 00 55 PAS sur WhatsApp → tester 672 55 21 37 avant de classer (ruling
+  11/10) ; premier envoi possible sur ce numéro si vivant.
+- **Planète Optique :** ENVOYÉ ce matin. CRM → qualifying, FU 13/10.
+- **Centrale Optique :** 693 96 89 56 PAS sur WhatsApp → tester 699 59 82 86 avant de classer
+  (ruling 11/10). Pas de ligne CRM (stock annuaire) — journal seulement.
+- **ERREUR DE VÉRIFICATION (journalisée ops/INFERENCE-ERRORS.md #10) :** la VERIFIED-LIST du 11/10 a
+  contrôlé l'entité ONOC mais PAS l'historique CRM → 3 des 7 n'étaient pas froids (Maff, Kamaïs,
+  Horizon). Fix proposé : recoupement CRM obligatoire avant « vérifié ».

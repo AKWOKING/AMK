@@ -7,6 +7,5 @@
 
 | Lead | Étape | Âge | Relances | Trace |
 |---|---|---|---|---|
-| *(aucun)* | | | | |
-
-**Aucun lead ne dort.** Tous les envois du 18 et 19/09 ont moins de deux jours — **et c'est exactement pour ça que ce fichier est généré : demain, il changera tout seul.**
+| JiredOptic Med | qualifying | 21 j | 0/3 | `L5018` |
+| Planète Optique | qualifying | 21 j | 0/3 | `L5022` |
