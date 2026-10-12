@@ -127,7 +127,9 @@
   différenciation d'AMK (`AMK-DESIGN-SKILLS.md` §15). Conforme à la règle 1 (pas de problème nommé que
   l'outil résolve mieux que le processus actuel). ⚠️ **[À CONFIRMER — King]** : **quel** builder a été
   évalué (Wix / Framer / Durable / autre) ? Sans le nom, l'entrée n'est pas réutilisable et le sujet
-  reviendra. Triggers de re-review : un client demande un site auto-géré · un volume de sites que la
+  reviendra. **Mise à jour 12/10 :** journalisation de mémoire faite sur ruling King →
+  `research/BUILDER-TEST-KING-2026-10.md` (sortie texte seule confirmée ; nom du builder toujours à
+  confirmer). Triggers de re-review : un client demande un site auto-géré · un volume de sites que la
   chaîne actuelle ne suit plus.
 
 ## 11/10 (nuit) — audit stack GTM (Lot [40], batch 5)

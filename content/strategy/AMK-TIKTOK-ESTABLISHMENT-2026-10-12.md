@@ -30,7 +30,8 @@ TikTok pour AMK = **découvrabilité + crédibilité**, jamais commerce direct (
 
 ## 3 · Trois piliers de contenu
 
-**A · Build-in-public** (on montre le travail réel) — 1–2/semaine :
+**A · Debug-in-public** (série nommée — ruling King 12/10, ex « build-in-public » ; on montre le
+travail réel) — 1–2/semaine :
 1. « On construit la page d'un opticien de Douala — ép. 1 : le brief » (écran, pas visage)
 2. « Le bouton WhatsApp qui part déjà écrit : pourquoi il est sur chaque écran »
 3. « Avant/après : une page qui n'existait pas devient trouvable »
@@ -47,7 +48,7 @@ TikTok pour AMK = **découvrabilité + crédibilité**, jamais commerce direct (
 
 ## 4 · Cadence 90 jours — la cadence est un test
 
-- **Jours 1–14 : 5 publications/semaine** (ruling King), réparties : build-in-public 1–2 ·
+- **Jours 1–14 : 5 publications/semaine** (ruling King), réparties : debug-in-public 1–2 ·
   behind-the-agency 1–2 · tech Cameroun 2–3.
 - **Jour 14 : revue dure** (gabarit §8). Pas de prolongation automatique.
 - **Après le jour 14 : rampe sur les données.** Signal positif → cadence tenable (≈3/semaine) et

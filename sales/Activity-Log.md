@@ -5066,3 +5066,15 @@ prénom sourcé, rendus en chat le 12/10.
   orchestrateur ; liste approuvée par King avant tout envoi. Addendum dans VERIFIED-LIST.
 - **Planète Optique :** silence depuis 11:34 → note vocale **mar. 13/10 matin** si toujours muet
   (fenêtre §7).
+
+### 12/10 (soirée) — ruling King : reframe POST-01 + batch 6 accepté + builder-test journalisé
+- **POST-01 v2 (5 changements appliqués) :** logo **AMK** sur **page de test AMK** dans les 6 beats ;
+  « un opticien de Douala » retiré (header + aucune VO ne le portait) ; section
+  « PORTE DE CONSENTEMENT » supprimée (sans objet) ; pilier renommé **debug-in-public** (série
+  nommée) — fichier POST-01 + liste des piliers du brief d'établissement ; zéro référence client
+  (URL/domaine/monogramme) + contrôle avant export. Publiable **mardi 13/10 après confirmation
+  finale de King sur la v2** — rien publié ce soir.
+- **Batch 6 accepté sans edits** (ruling). Lot [41] confirmé.
+- **Builder-test (option 1) :** journal de mémoire déposé dans
+  `research/BUILDER-TEST-KING-2026-10.md` (sortie texte seule, verdict SKIP ; **nom du builder et
+  date [À CONFIRMER — King]**) ; entrée TOOL-SCAN du 11/10 mise à jour avec pointeur.
