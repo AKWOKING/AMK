@@ -887,10 +887,23 @@ OPTICIENS_2109 = [
          wa_number="692 08 00 55", wa_verified="unknown",
          contact_channel="WhatsApp", decision="BOUDZAP ZOYEM Hermine", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
-         stage="prospecting", contacted="No", reply="No", demo="No",
-         wa_number_note="12/10 : 692 08 00 55 PAS sur WhatsApp (retour King) → tester 672 55 21 37 "
-         "(n° « inscrits ») avant de classer ; premier envoi autorisé sur ce numéro si vivant (ruling 11/10).",
+         stage="disqualified", contacted="No", reply="No", demo="No",
+         disqualification_reason="excluded_no_wa (12/10) : ni 692 08 00 55 ni 672 55 21 37 sur "
+         "WhatsApp (tests King) ; pas d'appel (ruling 12/10 — un opticien sans WhatsApp n'entre "
+         "pas au pipeline).",
+         wa_number_note="12/10 : 692 08 00 55 PAS sur WhatsApp ; 2ᵉ numéro 672 55 21 37 testé par "
+         "King, PAS sur WhatsApp non plus.",
          notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : BOUDZAP ZOYEM Hermine. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+    dict(slug="centrale-optique", org="Centrale Optique", city="Douala", org_type="other", language="FR",
+         wa_number="693 96 89 56", wa_verified="no",
+         contact_channel="WhatsApp", decision="ZOBO Jean", source="directory",
+         source_detail="Annuaire officiel ONOC #145 (044/2020) + « inscrits » (ZOGO Jean Prosper, 699 59 82 86)",
+         stage="disqualified", contacted="No", reply="No", demo="No",
+         disqualification_reason="excluded_no_wa (12/10) : 693 96 89 56 et 699 59 82 86 pas sur "
+         "WhatsApp (tests King) ; pas d'appel (ruling 12/10).",
+         notes="VAGUE 12/10. Titulaire public : ZOBO Jean (annuaire) / ZOGO Jean Prosper (inscrits) — "
+               "même cabinet physique (ruling 11/10 : n° d'inscription 044 unique). Jamais contacté ; "
+               "exclu de toute vague : aucun WhatsApp sur aucun numéro."),
     dict(slug="horizon-optique", org="Horizon Optique", city="Douala", org_type="other", language="FR",
          wa_number="677 44 74 17", wa_verified="unknown",
          contact_channel="WhatsApp", decision="DJEUMO FEUNOU Siméon", source="directory",
@@ -2543,7 +2556,8 @@ ENVOI_2409 = {
         "Notes_extra":
             "24/09 11:56 — PREMIER LOT, ENVOYÉ par King. Message livré (✓✓). Profil WhatsApp : "
             "« MAFF optique », Business Account. Aucune réponse au relevé du soir ; toute réponse se "
-            "traite dans l'heure et s'écrit dans `sales/Activity-Log.md`.",
+            "traite dans l'heure et s'écrit dans `sales/Activity-Log.md`. Tag 12/10 : "
+            "excluded_dead_lead + excluded_already_contacted (règle §9) — aucun second envoi.",
     },
     "espace-lunetterie": {
         "Contacted": "Yes", "Contact channel": "WhatsApp", "wa_verified": "yes",
@@ -3192,7 +3206,8 @@ ENVOI_2409_2 = {
             "recherche doualatour sans résultat ; les « Horizon Optique » de Dakar, Grenoble, Tanger et "
             "Verny sont des homonymes, écartés). ⚠️ Un numéro sans WhatsApp reste souvent une ligne "
             "valide : la route de repli est un SMS court ou un appel, scripts prêts dans "
-            "`sales/Send-BATCH-2026-09-24-Opticiens-2.md` §6. Ne pas réessayer sur WhatsApp sans nouveau numéro.",
+            "`sales/Send-BATCH-2026-09-24-Opticiens-2.md` §6. Ne pas réessayer sur WhatsApp sans nouveau numéro. "
+            "Tag 12/10 : excluded_no_wa (règle §9) — pas d'appel (ruling 12/10).",
     },
 }
 
@@ -3330,7 +3345,7 @@ comme NON ENVOYÉ : il n'est pas journalisé comme envoyé. · FENÊTRE (règle 
 §7) : 24 h ouvrées = ven. 09/10 15:21 (on attend, rien d'autre) ; palier 48 h = note vocale chaleureuse \
 mar. 13/10 (= `Follow-up date`) ; palier 7 jours = appel de 2 minutes jeu. 15/10 ; une réponse du client \
 ANNULE la fenêtre (règle du 08/10). Pitch de l'outil toujours retenu tant que l'acompte DM Optique n'est \
-pas encaissé. Appareil : réponse « Tablette ou smart Phone » = le client n'a pas tranché. · 10/10 (sam., 17e message de King, capture) — LE CLIENT A RÉPONDU le ven. 09/10 : 12:31 « Merci j'attends le modèle » (verbatim) puis 12:32 une NOTE VOCALE de 0:14 DONT LE CONTENU N'EST PAS ENCORE TRANSCRIT (King doit la transcrire : elle répond peut-être à la question du 08/10 15:21 = case de la feuille de ROI). 09/10 13:20 King (fragment lisible seulement) : « …rien ne se finalise sans votre validation. Je vous envoie le lien ce soir… ». 10/10 10:35 King a envoyé le lien d'essai https://uo-essayage-camera.vercel.app + un message d'explication (texte non capturé) ; un seul ✓ au moment de la capture = pas encore délivré. La réponse du 09/10 ANNULE la fenêtre précédente : la voix du mar. 13/10 et l'appel du jeu. 15/10 sont SANS OBJET. Nouvelle fenêtre = depuis la LIVRAISON du lien (double ✓), lecture stricte lun–ven de la règle §7 : palier 1 attente · palier 2 (voix) mer. 14/10 seulement si le client reste muet · palier 3 (appel 2 min) à 7 jours ; lecture calendaire alternative = voix lun. 12/10, appel sam. 17/10 : à confirmer par King. `Follow-up date` passée à 2026-10-14. Le pitch reste retenu jusqu'à l'acompte DM Optique ; si le client demande le prix, décision de King (rien de préparé à envoyer sans lui). Le code de l'outil en ligne n'est pas dans le dépôt (seulement `assets/try-on-v1/`). · \\\n12/10 05:58 — LE CLIENT : « Peut-être faudrait il que nous convenions pour les essais en cabinets stp \\\ncar je ne m'en sors pas. » (capture King) · 12/10 10:43 — King : « vendredi me convient bien, je \\\nviendrai avec tout ce qu'il faut pour qu'on teste ensemble dans votre cabinet. Quelle heure vous \\\narrange ? Samedi reste possible si c'est plus simple. » → la visite = SESSION DE TRAVAIL (tester \\\nensemble, observer, zéro pitch) ; les 3 questions d'économie se posent sur place. `Follow-up date` = \\\n2026-10-16, stage `qualifying` confirmé (ruling King 12/10). La fenêtre voix du 14/10 est SANS OBJET \\\n(réponse reçue). Bug Pixel : NON défini dans le dépôt au 12/10 — décision fix/disclose avant le 16/10 \\\nsuspendue à la description du bug par King. · \\\n12/10 10:46 — LE CLIENT : « Vendredi 10h stp » (capture King) → **RDV CONFIRMÉ : ven. 16/10 10:00** \\\nau cabinet. Session de travail : tester ensemble, observer, zéro pitch ; les 3 questions d'économie \\\nsur place. Aucune relance avant le 16/10 — le repli samedi et l'hypothèse d'un toucher jeudi sont \\\nSANS OBJET (la réponse est arrivée). Note vocale du 09/10 : King vérifie s'il contient autre chose de \\\nmatériel ; si oui, ajout ici. · \\\n12/10 — King : « Kamais est mort on ne le relance pas » → CONFIRMÉ : aucun envoi, aucun appel, \\\njamais. Le message personnalisé préparé le 12/10 n'est PAS envoyé ; il reste au journal comme \\\ntrace de l'override proposé puis refusé.",
+pas encaissé. Appareil : réponse « Tablette ou smart Phone » = le client n'a pas tranché. · 10/10 (sam., 17e message de King, capture) — LE CLIENT A RÉPONDU le ven. 09/10 : 12:31 « Merci j'attends le modèle » (verbatim) puis 12:32 une NOTE VOCALE de 0:14 DONT LE CONTENU N'EST PAS ENCORE TRANSCRIT (King doit la transcrire : elle répond peut-être à la question du 08/10 15:21 = case de la feuille de ROI). 09/10 13:20 King (fragment lisible seulement) : « …rien ne se finalise sans votre validation. Je vous envoie le lien ce soir… ». 10/10 10:35 King a envoyé le lien d'essai https://uo-essayage-camera.vercel.app + un message d'explication (texte non capturé) ; un seul ✓ au moment de la capture = pas encore délivré. La réponse du 09/10 ANNULE la fenêtre précédente : la voix du mar. 13/10 et l'appel du jeu. 15/10 sont SANS OBJET. Nouvelle fenêtre = depuis la LIVRAISON du lien (double ✓), lecture stricte lun–ven de la règle §7 : palier 1 attente · palier 2 (voix) mer. 14/10 seulement si le client reste muet · palier 3 (appel 2 min) à 7 jours ; lecture calendaire alternative = voix lun. 12/10, appel sam. 17/10 : à confirmer par King. `Follow-up date` passée à 2026-10-14. Le pitch reste retenu jusqu'à l'acompte DM Optique ; si le client demande le prix, décision de King (rien de préparé à envoyer sans lui). Le code de l'outil en ligne n'est pas dans le dépôt (seulement `assets/try-on-v1/`). · \\\n12/10 05:58 — LE CLIENT : « Peut-être faudrait il que nous convenions pour les essais en cabinets stp \\\ncar je ne m'en sors pas. » (capture King) · 12/10 10:43 — King : « vendredi me convient bien, je \\\nviendrai avec tout ce qu'il faut pour qu'on teste ensemble dans votre cabinet. Quelle heure vous \\\narrange ? Samedi reste possible si c'est plus simple. » → la visite = SESSION DE TRAVAIL (tester \\\nensemble, observer, zéro pitch) ; les 3 questions d'économie se posent sur place. `Follow-up date` = \\\n2026-10-16, stage `qualifying` confirmé (ruling King 12/10). La fenêtre voix du 14/10 est SANS OBJET \\\n(réponse reçue). Bug Pixel : NON défini dans le dépôt au 12/10 — décision fix/disclose avant le 16/10 \\\nsuspendue à la description du bug par King. · \\\n12/10 10:46 — LE CLIENT : « Vendredi 10h stp » (capture King) → **RDV CONFIRMÉ : ven. 16/10 10:00** \\\nau cabinet. Session de travail : tester ensemble, observer, zéro pitch ; les 3 questions d'économie \\\nsur place. Aucune relance avant le 16/10 — le repli samedi et l'hypothèse d'un toucher jeudi sont \\\nSANS OBJET (la réponse est arrivée). Note vocale du 09/10 : King vérifie s'il contient autre chose de \\\nmatériel ; si oui, ajout ici. · \\\n12/10 — King : « Kamais est mort on ne le relance pas » → CONFIRMÉ : aucun envoi, aucun appel, \\\njamais. Le message personnalisé préparé le 12/10 n'est PAS envoyé ; il reste au journal comme \\\ntrace de l'override proposé puis refusé. · Tag 12/10 : excluded_already_contacted (règle §9).",
     },
 }
 
@@ -3691,13 +3706,21 @@ REVISION_2409 = {
         # remappé (la normalisation est déjà passée) et ferait REFUSER la construction.
         "Decision maker": "abandonné — King, 24/09",
         "disqualification_reason": "abandonné sur décision de King (24/09) — WhatsApp indisponible au "
-                                  "677 44 74 17 et aucune autre trace de la boutique",
+                                  "677 44 74 17 et aucune autre trace de la boutique · Tag 12/10 : "
+                                  "excluded_no_wa (règle §9), pas d'appel (ruling 12/10)",
         "Notes_extra":
             "24/09 — ABANDONNÉ sur décision de King (« on laisse tomber Horizon, passons à la prochaine "
             "vague »). Le message préparé n'est jamais parti (WhatsApp indisponible) ; la route de repli "
             "(SMS + script d'appel) reste écrite dans `sales/Send-BATCH-2026-09-24-Opticiens-2.md` §6 sans "
             "être exécutée. Aucune relance, aucun réessai : si un numéro ou une fiche apparaît un jour, le "
             "lead repart de `prospecting`.",
+    },
+    # ── 12/10 — WAVE LIST GATE §9 : Faby testée sur ses deux numéros, aucun WhatsApp ───────────
+    "faby-optique": {
+        "stage": "disqualified", "stage_since": "2026-10-12",
+        "disqualification_reason":
+            "excluded_no_wa (12/10) : ni 692 08 00 55 ni 672 55 21 37 sur WhatsApp (tests King) ; "
+            "pas d'appel (ruling 12/10 — un opticien sans WhatsApp n'entre pas au pipeline).",
     },
     # ── 24/09 (nuit) — LA PORTE A, PREMIERS RÉSULTATS DE KING SUR LE LOT 4 ──────────────────────
     # King a ouvert les numéros dans l'application : c'est la seule vérification qui compte (Horizon).

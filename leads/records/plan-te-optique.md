@@ -35,11 +35,13 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : MAKONGO Jean Dury. Probleme : etre
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 3 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 5 ligne(s).*
 
 `L815` · j'écris les 5 suivants (Optic Laser · Planète · Médina · Fashion · MegaOptic) dans la foulée.
 `L4987` · Kamaïs/Bonanjo · Maff/Bonadibong · Faby · JiredOptic · Planète · Centrale) ; Lumumba + Bali hors
 `L5022` · - **Planète Optique :** ENVOYÉ ce matin. CRM → qualifying, FU 13/10.
+`L5046` · - **Planète Optique :** envoi confirmé 11:34, délivré (✓✓, liste de chats King). Aucune réponse à
+`L5067` · - **Planète Optique :** silence depuis 11:34 → note vocale **mar. 13/10 matin** si toujours muet
 
 ---
 

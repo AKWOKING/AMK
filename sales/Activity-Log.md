@@ -5050,3 +5050,19 @@ prénom sourcé, rendus en chat le 12/10.
   Centrale : seul le test WhatsApp du 2ᵉ numéro reste (672 55 21 37 / 699 59 82 86) ; si le 2ᵉ numéro
   n'a pas WhatsApp non plus → **écartés, sans appel**. Un opticien joignable ni sur WhatsApp ni sur un
   second WhatsApp n'entre pas au pipeline.
+
+## lun 12/10 (après-midi) — RULINGS : deux règles debout + exclusions Faby/Centrale + méthode vague v2
+
+- **Règles debout (CLIENT-MESSAGING-RULES.md §9 + §10) :** wave list gate (ONOC + historique CRM +
+  WhatsApp vivant ; motifs d'exclusion loggés au CRM) et WhatsApp-only pipeline (pas de SMS/appel/
+  email pour un opticien sans WhatsApp).
+- **Faby Optique :** 2ᵉ numéro 672 55 21 37 PAS sur WhatsApp (King) → excluded_no_wa, disqualifié au
+  générateur. **Centrale Optique :** 699 59 82 86 PAS sur WhatsApp non plus → ligne CRM créée,
+  excluded_no_wa. Horizon : tag excluded_no_wa (pas d'appel). Maff : tags excluded_dead_lead +
+  excluded_already_contacted. Kamaïs : tag excluded_already_contacted.
+- **Méthode vague v2 (ruling) :** 20–25 noms/vague (ONOC + Google Maps + Facebook), 3 checks §9,
+  segmentés cold vs re-engage (>30 j, template + cadence propres) ; King envoie le segment cold
+  5–7/j sur 3–4 j (max 7/j) ; re-engage = vague séparée ultérieure. Plan de sourcing =
+  orchestrateur ; liste approuvée par King avant tout envoi. Addendum dans VERIFIED-LIST.
+- **Planète Optique :** silence depuis 11:34 → note vocale **mar. 13/10 matin** si toujours muet
+  (fenêtre §7).

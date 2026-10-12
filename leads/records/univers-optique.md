@@ -48,7 +48,7 @@ SANS OBJET (la réponse est arrivée). Note vocale du 09/10 : King vérifie s'il
 matériel ; si oui, ajout ici. · \
 12/10 — King : « Kamais est mort on ne le relance pas » → CONFIRMÉ : aucun envoi, aucun appel, \
 jamais. Le message personnalisé préparé le 12/10 n'est PAS envoyé ; il reste au journal comme \
-trace de l'override proposé puis refusé.
+trace de l'override proposé puis refusé. · Tag 12/10 : excluded_already_contacted (règle §9).
 
 ## Prochaine action
 

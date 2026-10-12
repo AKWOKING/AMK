@@ -5,7 +5,7 @@
 
 | Source | Leads | Ce que ça dit |
 |---|---|---|
-| `directory` | 109 | Annuaires professionnels de Douala (pagespratiquescm, maligah, doualazoom, goafricaonline). |
+| `directory` | 110 | Annuaires professionnels de Douala (pagespratiquescm, maligah, doualazoom, goafricaonline). |
 | `(non renseigné)` | 38 | **Les 38 lignes du classeur d'origine.** Leur provenance n'a jamais été écrite — trou de données assumé, pas une invention. |
 | `onoc_registry` | 7 |  |
 | `pass_vitrine` | 4 |  |

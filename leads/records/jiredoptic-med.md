@@ -31,12 +31,13 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : LIPOTH Pierrette. Probleme : etre 
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 4 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 5 ligne(s).*
 
 `L4987` · Kamaïs/Bonanjo · Maff/Bonadibong · Faby · JiredOptic · Planète · Centrale) ; Lumumba + Bali hors
 `L5018` · - **JiredOptic Med :** ENVOYÉ ce matin. Compte WA business vérifié (capture) : « jirehopticmed »,
 `L5029` · ## lun 12/10 11:47 — PREMIER REFUS DE LA VAGUE (JiredOptic) + KAMAÏS CONFIRMÉ MORT
 `L5031` · - **JiredOptic Med :** envoi 11:37 (✓✓) · 11:47 ELLE : « non » puis « bonjour monsieur » (capture
+`L5042` · - **JiredOptic 11:53 :** King envoie la sortie de courtoisie (✓✓, capture) : « Bonjour Madame, merci
 
 ---
 

@@ -89,3 +89,17 @@ d'avant-envoi, ne pas envoyer et le dire (règle standing).
   conflit signalé).
 - **Erreur de méthode :** la présente liste n'avait pas recoupé l'historique CRM (entrée #10
   d'`ops/INFERENCE-ERRORS.md`).
+
+---
+
+## MÉTHODE VAGUE v2 (ruling King 12/10) — plan de sourcing pour la prochaine vague (date TBD)
+
+1. **Source élargie : 20–25 noms**, croisés ONOC annuaire + Google Maps + Facebook (trois angles,
+   la source la plus récente gagne pour numéros/quartiers).
+2. **Gate §9 sur chaque nom** (ONOC · historique CRM jamais contacté · WhatsApp vivant) ; motifs
+   d'exclusion loggés au CRM.
+3. **Segmentation :** cold (jamais contacté) vs re-engage (contacté >30 j, froid) — templates et
+   cadences séparés ; le segment re-engage part dans une vague ultérieure dédiée.
+4. **Envoi :** King, segment cold d'abord, 5–7/jour sur 3–4 jours, jamais plus de 7/jour.
+5. **Approbation :** la liste passe par King AVANT tout envoi. Statut : plan approuvé, liste à
+   construire.

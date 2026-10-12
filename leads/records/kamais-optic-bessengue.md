@@ -30,7 +30,7 @@ Envoyé 18/09 19:42, sans maquette. · ⚰️ MORT le 22/09 (lot du 18/09) — j
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 12 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 13 ligne(s).*
 
 `L44` · | **ven 18/09 19:42** | **Kamaïs Optic** (Bessengue, 678 435 460) | msg 1 — sans maquette | Envoyé | **Non** |
 `L112` · | 19:42 | Centre Médical de Bonanjo · Kamaïs Optic |
@@ -44,6 +44,7 @@ Envoyé 18/09 19:42, sans maquette. · ⚰️ MORT le 22/09 (lot du 18/09) — j
 `L5026` · contrôlé l'entité ONOC mais PAS l'historique CRM → 3 des 7 n'étaient pas froids (Maff, Kamaïs,
 `L5029` · ## lun 12/10 11:47 — PREMIER REFUS DE LA VAGUE (JiredOptic) + KAMAÏS CONFIRMÉ MORT
 `L5036` · - **KamaïsOptic :** ruling King 12/10 : « Kamais est mort on ne le relance pas » → la décision du
+`L5062` · excluded_already_contacted. Kamaïs : tag excluded_already_contacted.
 
 ---
 

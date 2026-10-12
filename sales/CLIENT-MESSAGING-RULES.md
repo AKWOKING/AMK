@@ -162,3 +162,26 @@ réponse 14:58 — voix du mar. 13/10 et appel du jeu. 15/10 sans objet.*
 - **Ton semi-formel :** pas de raideur, plus de formules d'office ; le **vous** reste (respect du client), « Bonjour Monsieur » reste. Phrases courtes, comme à l'oral.
 - **Pas de phrase de justification qui n'est pas nécessaire** : cas fondateur, DM Optique 10/10, « car nous ne montrons que du vrai » retirée — la raison est déjà dite par « illustrations pour l'instant, vos vraies montures viendront avec la séance photo ».
 - **Portée :** s'applique aux brouillons écrits à partir du 10/10 ; les envois et brouillons antérieurs ne sont pas réécrits. Les ruled texts verbatim de King restent verbatim. *(Portée à tous les clients ou à DM Optique seulement : à confirmer par King ; en attendant, appliqué à tous les brouillons.)*
+
+## 9 · Wave list gate — three checks before any prospect enters a wave (ruling King 12/10)
+
+Every prospect must clear all three before send:
+
+1. **ONOC verification** — name + registration number confirmed against the annuaire (already in place).
+2. **CRM history check** — never contacted before; no prior thread, no prior wave, no prior outreach
+   in any channel. If contacted >30 days ago and the thread is cold, that's a **re-engage**, not a
+   wave send. Re-engage uses a different template and a different cadence.
+3. **Channel availability** — the prospect has a working WhatsApp on the number we hold. If no
+   WhatsApp, no wave entry.
+
+A prospect that fails any of the three does not receive a wave message. Log the reason in the CRM
+(`excluded_no_wa`, `excluded_dead_lead`, `excluded_already_contacted`) so the list isn't rebuilt with
+the same failures. Règle née le 12/10 : 5 des 7 de la première vague n'auraient pas dû y être.
+Intègre le gate §8c (recoupement CRM) approuvé le 12/10 — aucun futur wave sans lui.
+
+## 10 · WhatsApp-only pipeline (ruling King 12/10)
+
+**In 2026 Cameroon, an optician without WhatsApp is not in the market.** If a prospect has no working
+WhatsApp on any of the numbers we hold, they are excluded from outreach entirely — no SMS, no calls,
+no email. WhatsApp is the channel; the absence of WhatsApp means the prospect is unreachable for
+AMK's model. Log the exclusion reason.
