@@ -121,17 +121,18 @@ const easeOut=bez(.23,1,.32,1), easeInOut=bez(.77,0,.175,1);
 const clamp01=v=>Math.max(0,Math.min(1,v));
 const mix=(a,b,t)=>a+(b-a)*t;
 
+/* Durées calées sur la VO voice-00 (mesurée) + respiration : VO démarre à s+0.15. */
 const BEATS=[
- {s:0, e:4,  ov:"Ce logo paraît normal.",            cap:"Ce logo, il paraît normal. Il nous a pris deux jours."},
- {s:4, e:11, ov:"Jour 1 : le logo invisible.",       cap:"Au départ, le cercle était vide. Le logo ne s'affichait pas."},
- {s:11,e:19, ov:"Hypothèse 1 : le rognage. Faux.",   cap:"On enlève le masque : le logo revient. Donc ce n'était pas le rognage."},
- {s:19,e:30, ov:"Hypothèse 2 : un disque peint par-dessus.", cap:"L'« anneau » était en fait un disque plein, peint au-dessus du logo."},
- {s:30,e:40, ov:"Le fix : creuser l'anneau.",        cap:"On creuse l'anneau, le logo passe au-dessus. Résultat : propre."},
- {s:40,e:45, ov:"AMK — on construit, on casse, on comprend.", cap:"C'est ça, faire un site sérieux."}
+ {s:0,    e:5.5,  ov:"Ce logo paraît normal.",            cap:"Ce logo, il paraît normal. Il nous a pris deux jours."},
+ {s:5.5,  e:10.5, ov:"Jour 1 : le logo invisible.",       cap:"Au départ, le cercle était vide. Le logo ne s'affichait pas."},
+ {s:10.5, e:16.5, ov:"Hypothèse 1 : le rognage. Faux.",   cap:"On enlève le masque : le logo revient. Donc ce n'était pas le rognage."},
+ {s:16.5, e:25,   ov:"Hypothèse 2 : un disque peint par-dessus.", cap:"L'« anneau » était en fait un disque plein, peint au-dessus du logo."},
+ {s:25,   e:33.5, ov:"Le fix : creuser l'anneau.",        cap:"On creuse l'anneau, le logo passe au-dessus. Résultat : propre."},
+ {s:33.5, e:38.5, ov:"AMK — on construit, on casse, on comprend.", cap:"C'est ça, faire un site sérieux."}
 ];
 const CODE_BAD=".logo-ring::before {\n  content: \"\"; inset: 0;\n  border-radius: 50%;\n  background: #1D2B25; /* disque PLEIN */\n}";
 const CODE_FIX=".logo-ring {\n  border: 14px solid #0E7A5C;\n  background: transparent; }\n.logo { position: relative; z-index: 2; }";
-const TOTAL=45;
+const TOTAL=38.5;
 
 const $=id=>document.getElementById(id);
 let lastText=null;
@@ -171,33 +172,33 @@ window.seek=function(t){
   // beat3 (11-19) repro : disque retiré · beat4 (19-30) disque ré-affiché + pointillé
   // beat5 (30-40) fix : disque retiré, logo au-dessus · beat6 propre
   let diskO=0, outO=0, labO=0;
-  if(b.s===0)  diskO=0;
-  if(b.s===4)  diskO=easeInOut(clamp01(local/0.52));
-  if(b.s===11) diskO=1-easeInOut(clamp01(local/0.52));
-  if(b.s===19){diskO=1; outO=easeOut(clamp01((local-0.5)/0.4)); labO=outO;}
-  if(b.s===30){diskO=1-easeInOut(clamp01(local/0.52)); outO=1-easeInOut(clamp01(local/0.52)); labO=outO;}
-  if(b.s===40) diskO=0;
+  if(b.s===0)    diskO=0;
+  if(b.s===5.5)  diskO=easeInOut(clamp01(local/0.52));
+  if(b.s===10.5) diskO=1-easeInOut(clamp01(local/0.52));
+  if(b.s===16.5){diskO=1; outO=easeOut(clamp01((local-0.5)/0.4)); labO=outO;}
+  if(b.s===25){diskO=1-easeInOut(clamp01(local/0.52)); outO=1-easeInOut(clamp01(local/0.52)); labO=outO;}
+  if(b.s===33.5) diskO=0;
   disk.style.opacity=diskO; dOut.style.opacity=outO; dLab.style.opacity=labO;
   // léger pop du logo quand il redevient visible (scale .94→1, ease-out)
   const logoVisible=(diskO<0.5)?1:0;
-  if(b.s===11||b.s===30){
+  if(b.s===10.5||b.s===25){
     const k=easeOut(clamp01((local-0.25)/0.45));
     logo.style.transform=`scale(${mix(.94,1,k)})`; logo.style.opacity=mix(.2,1,k);
-  } else if(b.s===4||b.s===19){
+  } else if(b.s===5.5||b.s===16.5){
     logo.style.opacity=mix(1,.2,easeInOut(clamp01(local/0.52))); logo.style.transform="scale(1)";
   } else { logo.style.opacity=logoVisible?1:0.2; }
   // respiration Ken Burns du beat 1 et 6 (linear, scale 1→1.03 sur 4s) — §9 loops linear
-  if(b.s===0||b.s===40){
+  if(b.s===0||b.s===33.5){
     const kb=1+0.03*((t%4)/4);
     $("emblem").style.transform=`scale(${kb})`;
   } else $("emblem").style.transform="scale(1)";
 
   /* — panneau code : frappe animée beats 4 et 5 — */
   const code=$("code");
-  if(b.s===19)      typeInto(code,CODE_BAD,20.0,28.5,t);
-  else if(b.s===30) typeInto(code,CODE_FIX,31.0,39.0,t);
-  else if(b.s===40){code.innerHTML=esc(CODE_FIX);lastText=null;}
-  else if(t<19){code.innerHTML='<span class="cm">/* inspection du composant… */</span>'+(Math.floor(t*2)%2?'<span class="caret"></span>':'');lastText=null;}
+  if(b.s===16.5)      typeInto(code,CODE_BAD,17.5,24.0,t);
+  else if(b.s===25)   typeInto(code,CODE_FIX,26.0,32.5,t);
+  else if(b.s===33.5){code.innerHTML=esc(CODE_FIX);lastText=null;}
+  else if(t<16.5){code.innerHTML='<span class="cm">/* inspection du composant… */</span>'+(Math.floor(t*2)%2?'<span class="caret"></span>':'');lastText=null;}
 };
 window.seek(0);
 </script>

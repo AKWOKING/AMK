@@ -5092,3 +5092,13 @@ prénom sourcé, rendus en chat le 12/10.
   silencieux) ; `audit_video_motion.py` → OK ; 0 erreur console (§13) ; 6 beats relus image par
   image, collisions de layout corrigées (caption/codewin, label disque, signature dupliquée
   supprimée). Rendu complet 45 s **en attente validation King du dummy**.
+
+### 12/10 (nuit 2) — POST-01 v4 : VO voice-00 + SFX, réponses King
+- **Rulings King :** ajouter SFX d'animation (ball drop / slide) + **voix** (voice-00, re-sélectionné
+  par King en audition ce tour — registre non persistant entre sessions).
+- **v4 livrée (workspace, hors Git — *.mp4 gitignoré) :** `content/pipeline/POST-01-BUG-LOGO-2026-10-12.mp4`
+  38,5 s · 1080×1920 · vidéo + AAC 24 kHz · VO = captions lus mot pour mot · SFX synthétisés sandbox
+  (whoosh transitions, thud disque, pop, blip fix, carillon, ticks frappe) · motion gate OK ·
+  mean −22,3 dB / max −0,4 dB. Beats recalés sur la VO mesurée (table v4 dans le script).
+- **Explication fournie à King :** HTML = source de rendu (cuisine) ; MP4 = fichier à checker et à
+  poster (TikTok : upload app/PC, musique platform-native ajoutée par lui au téléversement).
