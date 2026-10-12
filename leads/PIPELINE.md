@@ -9,20 +9,24 @@
 |---|---|
 | ④ Prix posé, en négociation | **2** |
 | ③ Aperçu envoyé | **1** |
-| ② Qualifié — en conversation | **5** |
+| ② Qualifié — en conversation | **4** |
 | ① Prospection — à qualifier | **45** |
 | ❌ Perdu | **2** |
-| ⏸ Parqué | **94** |
+| ⏸ Parqué | **95** |
 | ⛔ Écarté | **13** |
 | **Total** | **162** |
 
-- **Contactés :** 68 · **Réponses humaines :** 9 · **Taux de réponse : 13.2 %**
+- **Contactés :** 68 · **Réponses humaines :** 10 · **Taux de réponse : 14.7 %**
 - **Réponses automatiques (hors PRR) :** 1
 - **Clients :** 0 · **Revenu :** 0 FCFA
 
 ## ⚡ Répondre d'abord
 
-*Rien en attente.*
+| Lead | WhatsApp | Ce qu'il a dit |
+|---|---|---|
+| **JiredOptic Med** | 696 26 50 31 | Yes |
+
+> **Règle des 90 secondes.** Une réponse en attente passe avant tout le reste.
 
 ## ④ Prix posé, en négociation — 2
 
@@ -37,11 +41,10 @@
 |---|---|---|---|
 | Cavisa Optique | Douala | 699 95 90 52 | `L4794` |
 
-## ② Qualifié — en conversation — 5
+## ② Qualifié — en conversation — 4
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
-| JiredOptic Med | Douala | 696 26 50 31 | `L5018` |
 | Labiomed | Douala (Deido, 104 Route Deido-Bassa) | 699 98 54 66 | `L4924` |
 | Planète Optique | Douala | 699 85 58 35 | `L5022` |
 | St. Theresa International Bilingual Comprehensive College (STIBCCOL) | Buea (Molyko) | 679151075 | `L4931` |
@@ -104,7 +107,7 @@
 | Bely Optique Médicale | Douala | 696 85 52 42 | `L3754` |
 | COMOBIL – Collège Moderne Bilingue Les Lauréats | Douala (Bonamoussadi) | — | `L4957` |
 
-## ⏸ Parqué — 94
+## ⏸ Parqué — 95
 
 | Lead | Ville | WhatsApp | Trace au journal |
 |---|---|---|---|
@@ -158,9 +161,10 @@
 | Inter Comprehensive High School (ICHS) Great Soppo | Buea (Great Soppo) | — | — |
 | Interlabo | Douala (Akwa, 780 Rue E. Betote — R. Pau) | 677 75 54 21 | `L1761` |
 | J&E Memorial Polyclinic (JEMPO) | Douala (Deido/Bessengue) | 696 71 06 99 | `L24` |
+| JiredOptic Med | Douala | 696 26 50 31 | `L5031` |
 | Jucia Optics | Douala (Akwa) | 653 449 349 | `L3638` |
 | K Vision Care | Douala (Bessengue · Ancien 3e · Ndogpassi) | 677 077 159 | `L3909` |
-| Kamaïs Optic | Douala (Bessengue) | 678 435 460 | `L5026` |
+| Kamaïs Optic | Douala (Bessengue) | 678 435 460 | `L5036` |
 | L'Opticien Bali SARL | Douala (Bali) | 670 27 60 65 | `L22` |
 | La Ligne Optic Akwa | Douala (Akwa) | 683 651 108 | `L4287` |
 | Labo La Passerelle | Douala (Deido, 820 Bld de la Réunification) | 694 71 91 22 | `L1761` |

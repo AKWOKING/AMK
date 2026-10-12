@@ -7,5 +7,4 @@
 
 | Lead | Étape | Âge | Relances | Trace |
 |---|---|---|---|---|
-| JiredOptic Med | qualifying | 21 j | 0/3 | `L5018` |
 | Planète Optique | qualifying | 21 j | 0/3 | `L5022` |

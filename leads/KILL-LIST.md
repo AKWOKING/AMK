@@ -11,7 +11,9 @@ Le playbook §A4 codait en dur une kill list figée (« les deux 18 »). **C'ét
 
 ## ⚡ Répondre d'abord
 
-*Rien en attente.*
+- **JiredOptic Med** — 696 26 50 31
+
+> **Règle des 90 secondes.**
 
 ## 📅 Décisions déjà prises — DATES À VENIR, ne rien faire maintenant
 

@@ -5025,3 +5025,14 @@ prénom sourcé, rendus en chat le 12/10.
 - **ERREUR DE VÉRIFICATION (journalisée ops/INFERENCE-ERRORS.md #10) :** la VERIFIED-LIST du 11/10 a
   contrôlé l'entité ONOC mais PAS l'historique CRM → 3 des 7 n'étaient pas froids (Maff, Kamaïs,
   Horizon). Fix proposé : recoupement CRM obligatoire avant « vérifié ».
+
+## lun 12/10 11:47 — PREMIER REFUS DE LA VAGUE (JiredOptic) + KAMAÏS CONFIRMÉ MORT
+
+- **JiredOptic Med :** envoi 11:37 (✓✓) · 11:47 ELLE : « non » puis « bonjour monsieur » (capture
+  King) — refus clair à « vous voulez le voir ? », adouci d'un salut. Délai : 10 min. Signal :
+  refus poli, pas d'objection, pas de question. La réponse **annule la fenêtre** (ni voix 13/10 ni
+  appel 15/10). Règle : **pas de re-ask** — une seule sortie de courtoisie proposée (voir chat),
+  puis silence sauf retour spontané. CRM : parked, motif daté 12/10.
+- **KamaïsOptic :** ruling King 12/10 : « Kamais est mort on ne le relance pas » → la décision du
+  22/09 (« on ne réécrit plus ») tient ; aucun envoi, aucun appel. Le brouillon personnalisé du
+  12/10 reste non envoyé.

@@ -45,7 +45,10 @@ suspendue à la description du bug par King. · \
 au cabinet. Session de travail : tester ensemble, observer, zéro pitch ; les 3 questions d'économie \
 sur place. Aucune relance avant le 16/10 — le repli samedi et l'hypothèse d'un toucher jeudi sont \
 SANS OBJET (la réponse est arrivée). Note vocale du 09/10 : King vérifie s'il contient autre chose de \
-matériel ; si oui, ajout ici.
+matériel ; si oui, ajout ici. · \
+12/10 — King : « Kamais est mort on ne le relance pas » → CONFIRMÉ : aucun envoi, aucun appel, \
+jamais. Le message personnalisé préparé le 12/10 n'est PAS envoyé ; il reste au journal comme \
+trace de l'override proposé puis refusé.
 
 ## Prochaine action
 
