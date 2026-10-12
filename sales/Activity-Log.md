@@ -5118,3 +5118,9 @@ prénom sourcé, rendus en chat le 12/10.
 - v2 45 s : PARKED, non touchée (n'existe pas en rendu sur cette branche — le script v2 a été
   livré en chat à l'étape 2).
 - En attente : validation King du dummy → étape suivante = rendu complet 31 s + pre-flight gate 11 points.
+
+## 2026-10-12 (soir, tard) — POST-01 v3 : rendu complet 31 s (fichier pour revue King, non publié)
+- Fichier : `content/pipeline/POST-01-v3-TIKTOK-2026-10-13.mp4` (31 s, 1080×1920, silencieux). Publication prévue mardi 13/10 par King ; rien publié par l'agent.
+- Correctifs avant rendu : B1 « Le logo du site a disparu. » (contexte, ruling King option a) ; chevauchement overlay/hookline corrigé ; scan renforcé (l'audit mouvement passait en « diaporama » sur 7 fenêtres figées → maintenant OK).
+- Vérifs : audit mouvement OK (15 fenêtres sur 15) ; rendu exit 0 (0 erreur console) ; mots interdits 0 ; accents présents ; stills relus à 0.5/1.5/2.5 s et milieu/fin.
+- Limite connue : boucle partielle — la dernière image garde le cadrage de B1 mais montre le logo et l'overlay de fin (différence moyenne 10/255 vs première image).
