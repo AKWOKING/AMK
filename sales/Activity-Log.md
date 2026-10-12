@@ -5124,3 +5124,11 @@ prénom sourcé, rendus en chat le 12/10.
 - Correctifs avant rendu : B1 « Le logo du site a disparu. » (contexte, ruling King option a) ; chevauchement overlay/hookline corrigé ; scan renforcé (l'audit mouvement passait en « diaporama » sur 7 fenêtres figées → maintenant OK).
 - Vérifs : audit mouvement OK (15 fenêtres sur 15) ; rendu exit 0 (0 erreur console) ; mots interdits 0 ; accents présents ; stills relus à 0.5/1.5/2.5 s et milieu/fin.
 - Limite connue : boucle partielle — la dernière image garde le cadrage de B1 mais montre le logo et l'overlay de fin (différence moyenne 10/255 vs première image).
+
+## 2026-10-12 (nuit) — POST-01 v4 : porte de mouvement passée, final prêt pour revue King (non publié)
+- Fichier final : `content/pipeline/POST-01-v4-TIKTOK.mp4` (31 s, 1080×1920, AAC, VO voice-04). Non publié.
+- Porte `tools/qa/audit_video_motion.py` : **OK, 15/15 fenêtres** (min max 1,65 à 10–12 s). Premier passage 7 figées → 4 figées → 0 figée.
+- Ce qui a fait passer la porte : grain de pellicule à chaque image (opacité 5 %, blocs 4×4 px), légendes découpées au calage VO (B4, B5, B6 en deux morceaux), légende 36 px, ambiance (vapeur, lueur, poussière). Respiration 3 px non changée (repli 4–5 px non appliqué).
+- Sources : `index-v4.html` + `layers/` (calques environnement, buste 912 px) ; VO `vo/` (mots identiques aux légendes ; B4–B6 en deux morceaux) ; `BEAT-TABLE-v4.md` mis à jour.
+- Exception Git : MP4 final forcé (`*.mp4` ignoré, même convention que la v3 et le dummy). Les VO `*.mp3` sont forcées de la même manière.
+- Non committés : `POST-01-v4-TIKTOK-SILENT.mp4` (artefact de build).

@@ -6,49 +6,77 @@
 <title>POST-01 v4 — Avatar motion-comic 31 s (render source)</title>
 <style>
 /* AMK POST-01 v4 — motion-comic, 6 beats, rendu frame-par-frame via window.seek(t).
-   Personnage = composites figés (1080×1920, approuvés King) ; seul le changement d'état
-   et les textes bougent. Fondus 250 ms (§9 : 200–320 ms). Transform + opacity uniquement.
+   Personnage : buste (PNG 912 px, approuvés) sur calques d'environnement (mêmes géométries que les composites).
+   Changements d'état = fondus 250 ms (§9). Vie ambiante = opacité + transform uniquement :
+   vapeur, lueur, poussière, respiration (3 px crête-à-crête, bas uniquement : le buste reste sous le bureau).
    Pas de zoom, pas de panoramique. Pas de nom de marque à l'écran. */
-:root{
-  --bg:#101814; --ink:#FFFFFF; --soft:#C9D6CF; --brand-bright:#12A87C;
-  --ease-out:cubic-bezier(.23,1,.32,1); --ease-in-out:cubic-bezier(.77,0,.175,1);
-}
+:root{ --bg:#101814; --ink:#FFFFFF; --soft:#C9D6CF; --brand-bright:#12A87C;
+  --ease-out:cubic-bezier(.23,1,.32,1); --ease-in-out:cubic-bezier(.77,0,.175,1); }
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:540px;height:960px;overflow:hidden;background:var(--bg);
   font-family:Helvetica,Arial,"Liberation Sans",sans-serif;color:var(--ink)}
 .frame{position:absolute;left:0;top:0;width:540px;height:960px;overflow:hidden}
 
-/* — couche personnage : composites 1080×1920 mis à l'échelle 0,5 — */
+/* — scène 1080×1920 mise à l'échelle 0,5 — */
 .stage{position:absolute;left:0;top:0;width:1080px;height:1920px;transform:scale(.5);transform-origin:0 0}
-.stage img{position:absolute;left:0;top:0;width:1080px;height:1920px;opacity:0}
+.layer{position:absolute;display:block}
+.bustwrap{position:absolute;left:144px;top:0;width:912px;height:1920px;z-index:2;will-change:transform}
+.bust{position:absolute;left:0;width:912px;height:912px;opacity:0}
+.svgl{position:absolute;overflow:visible;pointer-events:none}
 
-/* — couche texte : coordonnées 540×960 css — */
-.text{position:absolute;left:0;top:0;width:540px;height:960px;pointer-events:none}
+/* — texte : coordonnées 540×960 css — */
+.text{position:absolute;left:0;top:0;width:540px;height:960px;pointer-events:none;z-index:10}
 .overlay{position:absolute;top:100px;left:36px;right:36px;font-size:46px;font-weight:800;
   line-height:1.12;letter-spacing:-.4px;opacity:0}
-.hook{position:absolute;top:212px;left:36px;right:36px;font-size:36px;font-weight:700;
-  color:var(--soft);opacity:0}
-.caption{position:absolute;top:268px;left:36px;right:36px;font-size:25px;line-height:1.3;
+.caption{position:absolute;top:222px;left:36px;right:36px;font-size:36px;line-height:1.25;
   font-weight:600;color:var(--soft);opacity:0}
 
-/* — progression (linéaire, §9) — */
-.progress{position:absolute;left:0;right:0;bottom:0;height:8px;background:#23382E}
+/* — progression (linéaire) — */
+.progress{position:absolute;left:0;right:0;bottom:0;height:8px;background:#23382E;z-index:9}
 .progress i{display:block;height:100%;background:var(--brand-bright);transform-origin:0 50%;transform:scaleX(0)}
 </style>
 </head>
 <body>
 <div class="frame" id="frame">
   <div class="stage" id="stage">
-    <img id="s-idle"      src="../../Avatar/_composites/composite-idle.png"      alt="">
-    <img id="s-talking"   src="../../Avatar/_composites/composite-talking.png"   alt="">
-    <img id="s-thinking"  src="../../Avatar/_composites/composite-thinking.png"  alt="">
-    <img id="s-surprised" src="../../Avatar/_composites/composite-surprised.png" alt="">
-    <img id="s-pointing"  src="../../Avatar/_composites/composite-pointing.png"  alt="">
-    <img id="s-approving" src="../../Avatar/_composites/composite-approving.png" alt="">
+    <!-- arrière : mur + tableau (affiche) -->
+    <img class="layer" src="layers/back-base.png"  style="left:0;top:1280px;width:1080px;height:640px" alt="">
+    <img class="layer" src="layers/poster.png"     style="left:0;top:0;width:1080px;height:1920px" alt="">
+    <!-- lueur de lampe : 0,94 → 1,00 (pulsation 6 %, cycle 5 s) -->
+    <svg class="svgl" id="glowsvg" viewBox="0 0 1080 640" width="1080" height="640" style="left:0;top:1280px;z-index:1" aria-hidden="true">
+      <defs>
+        <radialGradient id="lampG" cx="940" cy="40" r="460" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#E8A13A" stop-opacity="0.42"/>
+          <stop offset="0.5" stop-color="#E8A13A" stop-opacity="0.12"/>
+          <stop offset="1" stop-color="#E8A13A" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect id="glow" width="1080" height="640" fill="url(#lampG)" opacity="1"/>
+    </svg>
+    <!-- personnage : six busts (un seul visible à la fois) dans un wrapper respirant -->
+    <div class="bustwrap" id="bustwrap">
+      <img class="bust" id="b-idle"      src="layers/bust-idle.png"      style="top:996px"  alt="">
+      <img class="bust" id="b-talking"   src="layers/bust-talking.png"   style="top:1011px" alt="">
+      <img class="bust" id="b-thinking"  src="layers/bust-thinking.png"  style="top:1007px" alt="">
+      <img class="bust" id="b-surprised" src="layers/bust-surprised.png" style="top:1027px" alt="">
+      <img class="bust" id="b-pointing"  src="layers/bust-pointing.png"  style="top:1033px" alt="">
+      <img class="bust" id="b-approving" src="layers/bust-approving.png" style="top:1024px" alt="">
+    </div>
+    <!-- avant : bureau (cache le bas du buste), tasse, plante, livres -->
+    <img class="layer" src="layers/front-base.png" style="left:0;top:1280px;width:1080px;height:640px;z-index:3" alt="">
+    <!-- vapeur : 3 traits, opacité seule, cycle 3 s -->
+    <svg class="svgl" viewBox="0 0 1080 640" width="1080" height="640" style="left:0;top:1280px;z-index:4" aria-hidden="true">
+      <path class="steam" d="M318 362 q-7 -12 0 -24 q7 -12 0 -24" fill="none" stroke="#6E6E6E" stroke-width="3" stroke-linecap="round" opacity="0.3"/>
+      <path class="steam" d="M333 356 q-7 -12 0 -24 q7 -12 0 -24" fill="none" stroke="#6E6E6E" stroke-width="3" stroke-linecap="round" opacity="0.3"/>
+      <path class="steam" d="M348 362 q-7 -12 0 -24 q7 -12 0 -24" fill="none" stroke="#6E6E6E" stroke-width="3" stroke-linecap="round" opacity="0.3"/>
+    </svg>
+    <!-- poussière : 18 particules, dérive périodique 8–12 s, opacité 7–10 % -->
+    <svg class="svgl" id="dust" viewBox="0 0 1080 1920" width="1080" height="1920" style="left:0;top:0;z-index:6" aria-hidden="true"></svg>
   </div>
+  <!-- grain de pellicule : bruit recalculé à chaque image (blocs 4×4 px), opacité 5 % -->
+  <canvas id="grain" width="270" height="480" style="position:absolute;left:0;top:0;width:540px;height:960px;opacity:0.05;z-index:8;image-rendering:pixelated;pointer-events:none"></canvas>
   <div class="text">
     <div class="overlay" id="overlay"></div>
-    <div class="hook" id="hook"></div>
     <div class="caption" id="caption"></div>
   </div>
   <div class="progress"><i id="prog"></i></div>
@@ -56,6 +84,7 @@ html,body{width:540px;height:960px;overflow:hidden;background:var(--bg);
 
 <script>
 /* Déterministe : tout est fonction de t. window.seek(t) pose l'état exact (contrat render.mjs). */
+const STEAM_COLOR = '#6E6E6E';          /* test à la pose : gris #6E6E6E (retenu) ou blanc */
 function bez(p1x,p1y,p2x,p2y){return function(t){
   let x=t;
   for(let i=0;i<6;i++){
@@ -71,20 +100,44 @@ const mix=(a,b,t)=>a+(b-a)*t;
 const $=id=>document.getElementById(id);
 const TOTAL=31, XF=0.25;
 
-/* Changements d'état (composites). [instant, état]. Fondu 250 ms à partir de l'instant. */
+/* Changements d'état (buste). [instant, état]. Fondu 250 ms à partir de l'instant. */
 const SWITCH=[[0,'idle'],[2.2,'surprised'],[3.2,'talking'],[7.0,'thinking'],
               [12.0,'surprised'],[15.0,'approving'],[21.0,'pointing'],[27.0,'approving']];
-const IMG={idle:'s-idle',talking:'s-talking',thinking:'s-thinking',
-           surprised:'s-surprised',pointing:'s-pointing',approving:'s-approving'};
+const STATES=['idle','talking','thinking','surprised','pointing','approving'];
 
-/* Textes par intervalle [début, fin, texte]. Dernier intervalle inclusif jusqu'à TOTAL. */
-const OV=[[0,2.2,'Le logo du site a disparu.'],[2.2,3.2,'Un nouveau logo.'],[3.2,7,"On l'intègre. Et là… rien."],
-          [7,9,'On enlève le masque.'],[9,12,'Faux.'],[12,21,'Un disque invisible.'],
-          [21,27,"Le fix : creuser l'anneau."],[27,31,"Le détail qu'on voit pas, c'est celui qui casse tout."]];
-const HOOK=[[1,3.2,'Tu vois pourquoi ?']];
-const CAP=[[3.2,7,'2 jours bloqué sur ça.'],[7,12,"C'est pas le rognage."],
-           [12,21,"L'anneau était un disque plein. Peint par-dessus."],[21,27,'Un vrai anneau. Logo au-dessus.']];
+/* Textes : légende = ligne VO mot pour mot ; overlay = à l'écran seulement. */
+const OV=[[0,2.2,'Tu vois pourquoi ?'],[2.2,3.2,'Un nouveau logo.'],[3.2,5.2,"On l'intègre."],[5.2,7,'Et là… rien.'],
+          [7,9,'On enlève le masque.'],[9,10.5,'Faux.'],[12,14.5,'Un disque invisible.'],[18.5,21,'Un disque invisible.'],
+          [21,23,"Le fix : creuser l'anneau."]];
+const CAP=[[0,3.2,'Le logo du site a disparu.'],[3.2,7,'2 jours bloqué sur ça.'],[7,12,"C'est pas le rognage."],
+           [12,16,"L'anneau était un disque plein."],[16,21,'Peint par-dessus.'],[21,24,'Un vrai anneau.'],
+           [24,27.2,'Logo au-dessus.'],[27.2,28.4,"Le détail qu'on voit pas,"],[28.4,31,"c'est celui qui casse tout."]];
 
+/* Poussière : 18 particules, position = base + amplitude·sin/cos périodique (T 8–12 s). */
+const DUST=(()=>{ let seed=7; const r=()=>{ seed=(seed*16807)%2147483647; return seed/2147483647; };
+  const out=[]; for(let i=0;i<9;i++){
+    out.push({x:60+r()*960, y:760+r()*940, rad:2.5+r()*1.0, op:0.15+r()*0.03,
+      ax:14+r()*12, ay:16+r()*12, T:10+r()*2, T2:10+r()*2, ph:r()*6.283, ph2:r()*6.283});
+  } return out; })();
+(function buildDust(){
+  const svg=$('dust'); const NS='http://www.w3.org/2000/svg';
+  DUST.forEach((d,i)=>{ const c=document.createElementNS(NS,'circle');
+    c.setAttribute('cx',d.x.toFixed(1)); c.setAttribute('cy',d.y.toFixed(1)); c.setAttribute('r',d.rad.toFixed(2));
+    c.setAttribute('fill','#F3EBD8'); c.setAttribute('opacity',d.op.toFixed(3)); c.setAttribute('class','mote');
+    svg.appendChild(c); });
+})();
+
+const GR=$('grain'), gctx=GR.getContext('2d');
+const gimg=gctx.createImageData(270,480); const g32=new Uint32Array(gimg.data.buffer);
+function grainAt(f){
+  let s=(Math.imul(f+1,2654435761)^0x9E3779B9)>>>0; if(!s) s=1;
+  for(let i=0;i<270*480;i++){
+    s^=s<<13; s>>>=0; s^=s>>>17; s^=s<<5; s>>>=0;
+    const c=Math.max(0,Math.min(255,128+Math.round((s/4294967296*2-1)*70)));
+    g32[i]=(255<<24)|(c<<16)|(c<<8)|c;
+  }
+  gctx.putImageData(gimg,0,0);
+}
 function pick(list,t){
   for(const [a,b,txt] of list){ if(t>=a && (t<b || b>=TOTAL)) return {txt,start:a}; }
   return null;
@@ -105,18 +158,33 @@ function stateAt(t){
 
 window.seek=function(t){
   t=Math.max(0,Math.min(TOTAL,t));
-  /* — personnage : fondu enchaîné entre composites — */
+  /* — buste : fondu enchaîné — */
   const {from,to,k}=stateAt(t);
-  for(const key of Object.keys(IMG)){
-    const el=$(IMG[key]); let op=0, z=0;
-    if(key===to){ op=k; z=2; }
-    else if(key===from && k<1){ op=1; z=1; }
+  for(const s of STATES){
+    const el=$('b-'+s); let op=0, z=0;
+    if(s===to){ op=k; z=2; } else if(s===from && k<1){ op=1; z=1; }
     el.style.opacity=op; el.style.zIndex=z;
   }
+  /* — respiration : 0 → 3 px vers le bas, cycle 5 s (le bas reste sous le bureau) — */
+  $('bustwrap').style.transform=`translateY(${(1.5+1.5*Math.sin(2*Math.PI*t/5)).toFixed(3)}px)`;
+  /* — vapeur : 3 traits, opacité seule, cycle 3 s, décalés d'un tiers — */
+  document.querySelectorAll('.steam').forEach(function(p,i){
+    p.setAttribute('stroke',STEAM_COLOR);
+    p.setAttribute('opacity',(0.2+0.25*(0.5+0.5*Math.sin(2*Math.PI*(t/3)+i*2*Math.PI/3))).toFixed(4));
+  });
+  /* — lueur : opacité 0,94 → 1,00, cycle 5 s — */
+  $('glow').setAttribute('opacity',(0.94+0.06*(0.5+0.5*Math.sin(2*Math.PI*t/5))).toFixed(4));
+  /* — poussière : dérive périodique, jamais figée — */
+  document.querySelectorAll('#dust .mote').forEach(function(c,i){
+    const d=DUST[i];
+    const dx=d.ax*Math.sin(2*Math.PI*t/d.T+d.ph), dy=d.ay*Math.cos(2*Math.PI*t/d.T2+d.ph2);
+    c.setAttribute('transform',`translate(${dx.toFixed(2)} ${dy.toFixed(2)})`);
+  });
   /* — textes — */
   setText($('overlay'), pick(OV,t), t);
-  setText($('hook'), pick(HOOK,t), t);
   setText($('caption'), pick(CAP,t), t);
+  /* — grain : une trame par image vidéo (30 fps), déterministe — */
+  grainAt(Math.round(t*30));
   /* — progression — */
   $('prog').style.transform=`scaleX(${t/TOTAL})`;
 };
