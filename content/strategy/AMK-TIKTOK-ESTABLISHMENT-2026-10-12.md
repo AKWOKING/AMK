@@ -102,3 +102,21 @@ recherche ? le bio/lien a-t-il converti les visites en taps ?
 Le projet-portfolio de la vidéo 12 (documenter un workflow réel et le publier) confirme le pilier
 A : ajouter un format récurrent **« on montre le système à l'écran »** (sweep ONOC → vérif →
 première ligne) — sans nommer de prospect sans consentement, sans chiffres clients.
+
+---
+
+## Addendum Lot [41] (vidéos 16–17) — backlog motion, AUCUN changement de pipeline
+
+Source : `research/youtube-lessons/2026-10-12-batch-6/` (Jad M.H, dédupliquées — même producteur,
+même stack). Le pipeline POST-01→09 reste **figé** ; ceci est un backlog pour un futur post motion,
+valable seulement si King le valide un jour.
+
+- **Format candidat :** « carousel animé » (chaque slide = mini-vidéo en boucle, 1080×1350) —
+  différenciant pendant que peu de gens le font.
+- **Discipline si on le fait :** 120 BPM · slides en mesures entières (boucle sans saut) · ban
+  explicite des défauts dans le prompt (couleurs/fonts/effets par défaut, texte centré fade-in) ·
+  boucle d'auto-critique : noter chaque plan 1–10, corriger les 3 pires, itérer jusqu'à ≥8/10.
+- **Moteur :** HyperFrames, déjà installé et évalué le 19/09
+  (`research/HyperFrames-Evaluation-2026-09-19.md`) — avant tout essai, mesurer le temps de render
+  d'un slide dans le sandbox.
+- **Jamais :** payer un outil pour ça (règle King) ; musique/SFX = code local ou rien sous la VO.

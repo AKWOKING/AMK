@@ -2067,3 +2067,73 @@ le lot le renomme et le sharpen (surtout la vidéo 15 : bottom-up depuis les dea
 B2B SaaS (Clay, Instantly, Salesforge, CRM payants) et l'économie de remplacement de SDR sont un
 monde différent (email+LinkedIn, US, équipes) : **non transférable** à une agence 1 personne,
 WhatsApp-first, Cameroun. Donc : adopter le protocole §8d, rejeter les achats.
+
+---
+
+## Lot [41] · RECHERCHE VIDÉO — BATCH 6 of 7 (6 vidéos) · 2026-10-12 · OUTILS DE CONTENU IA
+
+Dossiers : `research/youtube-lessons/2026-10-12-batch-6/` (video-16 → video-21 + INDEX).
+Traitement avancé de mercredi à lundi (ruling King 12/10). Transcripts voie §0, complets : 16, 17
+(Jad M.H, EN), 19 (Ai Dadaji, hindi), 21 (Create a Pro Website, EN). **Vidéo 18 = doublon du lot
+[39]** (même URL `1vSIb047QKE`, cross-ref, pas de re-transcription). **Vidéo 20 = URL non trouvée**
+après 5 recherches + sonde de chaîne → audit produit depuis la doc publique, flaggé « pas un
+transcript ». Métadonnées watch pages tirées le 12/10 pour 16, 17, 19, 21.
+
+### 3 idées à agir cette semaine
+1. **Demander à King la trace de son test builder GPT-6** (sortie ou URL) : le repo n'en contient
+   aucune (grep 12/10) — sans elle, le diff « texte-seul vs multi-sections » de la vidéo 21 reste
+   une comparaison à la vidéo, pas à son test.
+2. **Demander l'URL exacte de la vidéo Easy MCP** si King veut son audit vidéo (titre de la file
+   introuvable sur YouTube ; audit produit fait à la place, rejeté par règle batch 1).
+3. **Si un post motion est un jour validé** : mesurer d'abord le temps de render d'un slide
+   1080×1350 dans le sandbox (HyperFrames, déjà installé — évaluation 19/09). Préparation, pas
+   adoption ; le pipeline POST-01→09 reste figé.
+
+### 3 idées à garder (en réserve)
+1. **Pack discipline motion** (vidéos 16–17, même producteur, dédupliquées) : 120 BPM, slides en
+   mesures entières (boucle propre), ban explicite des défauts (couleurs/fonts/effets par défaut,
+   texte centré fade-in), boucle d'auto-critique notée ≥8/10 par plan. → addendum Lot [41] du
+   brief TikTok (`content/strategy/AMK-TIKTOK-ESTABLISHMENT-2026-10-12.md`).
+2. **Format « carousel animé » Instagram** (vidéo 16) : chaque slide = mini-vidéo en boucle ;
+   différenciant réel tant que peu de gens le font. Backlog contenu, pas de changement de pipeline.
+3. **Pour un futur besoin vidéo/section client :** seuls free tiers OFFICIELS vus sur deux lots =
+   Google Vids et Adobe Firefly (jamais d'agrégateur) ; **slider avant/après** comme section
+   candidate pour sites opticiens (avec consentement client) → checklist sites clients.
+
+### 3 idées à rejeter carrément
+1. **Agrégateurs « free & unlimited » + contournements ToS** (vidéo 19 : temp-mails, multi-comptes,
+   exploit « 0 crédit ») — même famille que le rejet lot [40] (multi-comptes) ; titre trompeur
+   confirmé par la propre démo (crédits/quotas à l'écran).
+2. **Le stack GPT-6 Astra payant** (ChatGPT Plus + Higgsfield + Hostinger, vidéo 21, affilié
+   déclaré) — règle King « pas d'achat sans profit » + standard maison single-file. Piège homonyme
+   noté : Astra thème WordPress (lot [36], rejeté) ≠ Astra mode GPT-6 ; verdicts séparés.
+3. **Blogging-automation WordPress via MCP** (vidéo 20) — heurte de front les règles batch 1
+   (demande vérifiée avant page, fait de première main obligatoire, scaled-content-abuse).
+
+### Outils survivants de l'audit
+**Aucun outil nouveau.** HyperFrames re-confirmé en usage de production par deux vidéos
+indépendantes de notre propre évaluation du 19/09 (rien à ré-adopter). ACE-Step 1.5 rejeté (≈11 Go,
+besoin absent). Skills Skool rejetées (prompts qu'on peut écrire nous-mêmes). L'orchestrateur reste
+le seul moteur de production.
+
+### Contradictions entre vidéos (et internes)
+- **« 0 $ » (16–17)** vs l'aveu du producteur : abonnement Claude requis — le 0 $ porte sur
+  musique/SFX/animation seulement.
+- **Titre « ACTUALLY FREE & UNLIMITED » (19)** vs sa propre démo : crédits daily, quotas, exploits
+  éphémères.
+- **« Le plus facile » (21)** vs les frictions montrées dans la même vidéo : hero raté au 1ᵉʳ essai,
+  hero qui ne joue pas au scroll, fix dédié — honnêteté à son crédit, mais le titre sur-vend.
+- **18 vs 19 (deux producteurs, deux lots)** : même promesse « ne payez plus » = mêmes quotas +
+  portes de capture (Discord / Telegram). Le pattern tient à travers les lots.
+
+### Le workflow AMK après ce batch
+Pas de nouvel outil, pas de changement de pipeline. Le contenu reste POST-01→09 (frozen). Le
+backlog motion rejoint le brief TikTok ; le slider avant/après rejoint la checklist sites clients ;
+deux questions ouvertes vont à King (trace du test builder ; URL Easy MCP). La règle « free &
+unlimited = signal d'alarme » rejoint le journal des rejets.
+
+### Verdict batch 6 pour AMK
+**Un lot qui renforce les disciplines existantes et n'apporte aucun outil.** Le meilleur
+enseignement est négatif : les titres « 0 $ / unlimited / easy » sont des labels marketing — les
+pièces solides sont méthodologiques (rythme, boucles, critique itérative, ban des défauts) et une
+idée de section client. L'orchestrateur + HyperFrames déjà évalué couvrent tout le besoin réel.
