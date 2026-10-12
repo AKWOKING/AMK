@@ -4993,3 +4993,11 @@ autopsie.
 l'outil ensemble, observer, **zéro pitch** ; les 3 questions d'économie se posent sur place. Le repli
 samedi et l'hypothèse d'un toucher jeudi sont SANS OBJET — la réponse est arrivée. Aucune relance
 avant le 16/10. Note vocale du 09/10 : King écoute et colle ici tout élément matériel éventuel.
+
+## lun 12/10 — RECHERCHE BORNÉE vague (ruling King, 10 min/prospect, rendu en chat, aucun fichier)
+
+10 requêtes web + 1 fetch (bloqué 403 : Facebook). Résultat : **aucune trace publique fraîche
+(≤30 j) pour les 7** ; seuls existent l'annuaire ONOC (noms propres sourcés) et, pour Kamaïs, une
+page Facebook vivante (3 369 j'aime, ancienneté des posts non vérifiable depuis le bac). Noms +
+M./Mme repris de l'ONOC uniquement ; aucun honoraire deviné. Messages finaux = gabarit figé +
+prénom sourcé, rendus en chat le 12/10.
