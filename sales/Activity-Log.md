@@ -5036,3 +5036,17 @@ prénom sourcé, rendus en chat le 12/10.
 - **KamaïsOptic :** ruling King 12/10 : « Kamais est mort on ne le relance pas » → la décision du
   22/09 (« on ne réécrit plus ») tient ; aucun envoi, aucun appel. Le brouillon personnalisé du
   12/10 reste non envoyé.
+
+## lun 12/10 (midi passé) — SORTIE DE COURTOISIE ENVOYÉE + RULING « PAS D'APPEL »
+
+- **JiredOptic 11:53 :** King envoie la sortie de courtoisie (✓✓, capture) : « Bonjour Madame, merci
+  pour votre réponse. C'est noté, je ne vous dérange pas davantage — si un jour vous voulez voir vos
+  montures en ligne, vous savez où me trouver. Bonne journée. » Fil clos proprement ; dépark seulement
+  si elle réécrit.
+- **Planète Optique :** envoi confirmé 11:34, délivré (✓✓, liste de chats King). Aucune réponse à
+  cette heure → fenêtre : note vocale 13/10 si silence.
+- **RULING King : PAS D'APPEL.** « it'll just make things difficult working with someone that doesn't
+  have whatsapp in 2026 » → Horizon (pas de WA, pas de 2ᵉ numéro) = **écarté, sans appel**. Faby et
+  Centrale : seul le test WhatsApp du 2ᵉ numéro reste (672 55 21 37 / 699 59 82 86) ; si le 2ᵉ numéro
+  n'a pas WhatsApp non plus → **écartés, sans appel**. Un opticien joignable ni sur WhatsApp ni sur un
+  second WhatsApp n'entre pas au pipeline.
