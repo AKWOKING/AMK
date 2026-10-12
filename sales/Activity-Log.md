@@ -5078,3 +5078,17 @@ prénom sourcé, rendus en chat le 12/10.
 - **Builder-test (option 1) :** journal de mémoire déposé dans
   `research/BUILDER-TEST-KING-2026-10.md` (sortie texte seule, verdict SKIP ; **nom du builder et
   date [À CONFIRMER — King]**) ; entrée TOOL-SCAN du 11/10 mise à jour avec pointeur.
+
+### 12/10 (nuit) — rulings vidéo POST-01 + dummy rendu
+- **Builder-test CLOS :** « Décision finale 12/10 — aucun builder externe. L'orchestrateur
+  construit tous les sites AMK. » Blancs [À CONFIRMER] retirés (sans objet).
+- **Script v3 (build spec King) :** colonne VO dissoute → captions manuels = anciennes lignes VO ;
+  « aucun son dans le fichier » ; ligne musique supprimée (musique = King sur TikTok) ; méthode de
+  production orchestrator end-to-end documentée (pas de screen recording).
+- **Pipeline vidéo vérifié en sandbox :** moteur `tools/video/install.sh` (Chromium embarqué +
+  imageio-ffmpeg) réinstallé ; assets `content/pipeline/post01/` (POST-01.html déterministe
+  window.seek(t) + render.mjs frames→ffmpeg `-an`) ; **dummy 3 s**
+  `content/pipeline/POST-01-DUMMY-2026-10-12.mp4` (1080×1920, 30 fps, H.264, UNE SEULE piste =
+  silencieux) ; `audit_video_motion.py` → OK ; 0 erreur console (§13) ; 6 beats relus image par
+  image, collisions de layout corrigées (caption/codewin, label disque, signature dupliquée
+  supprimée). Rendu complet 45 s **en attente validation King du dummy**.
