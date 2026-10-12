@@ -58,8 +58,12 @@ html,body{width:540px;height:960px;overflow:hidden;background:var(--bg);
 .caption{position:absolute;left:36px;right:36px;bottom:42px;font-size:27px;line-height:1.35;
   color:var(--soft);font-weight:600}
 
+/* — balayage scan (live debug) — */
+.scan{position:absolute;left:0;right:0;top:0;height:150px;z-index:7;pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(126,216,166,.13) 45%,rgba(255,255,255,.09) 55%,transparent)}
+
 /* — barre de progression — */
-.progress{position:absolute;left:0;right:0;bottom:0;height:8px;background:var(--line)}
+.progress{position:absolute;left:0;right:0;bottom:0;height:12px;background:var(--line)}
 .progress i{display:block;height:100%;background:var(--brand-bright);transform-origin:0 50%;
   transform:scaleX(0)}
 
@@ -95,6 +99,7 @@ html,body{width:540px;height:960px;overflow:hidden;background:var(--bg);
   </div>
 
   <div class="caption" id="caption"></div>
+  <div class="scan" id="scan"></div>
   <div class="progress"><i id="prog"></i></div>
 </div>
 
@@ -155,8 +160,10 @@ window.seek=function(t){
   ov.style.opacity=kIn; ov.style.transform=`translateY(${mix(18,0,kIn)}px)`;
   cap.style.opacity=kIn; cap.style.transform=`translateY(${mix(14,0,kIn)}px)`;
 
-  /* — barre de progression : linear (§9 : boucles/progression) — */
+  /* — barre de progression + scan : linear (§9 : boucles/progression) — */
   $("prog").style.transform=`scaleX(${t/TOTAL})`;
+  const SY=960+144;
+  $("scan").style.transform=`translateY(${((t%2.5)/2.5)*SY-144}px)`;
 
   /* — états du cercle — */
   const disk=$("disk"), logo=$("logo"), dOut=$("diskOutline"), dLab=$("diskLabel");
@@ -190,7 +197,7 @@ window.seek=function(t){
   if(b.s===19)      typeInto(code,CODE_BAD,20.0,28.5,t);
   else if(b.s===30) typeInto(code,CODE_FIX,31.0,39.0,t);
   else if(b.s===40){code.innerHTML=esc(CODE_FIX);lastText=null;}
-  else if(t<19){code.innerHTML='<span class="cm">/* inspection du composant… */</span>';lastText=null;}
+  else if(t<19){code.innerHTML='<span class="cm">/* inspection du composant… */</span>'+(Math.floor(t*2)%2?'<span class="caret"></span>':'');lastText=null;}
 };
 window.seek(0);
 </script>
