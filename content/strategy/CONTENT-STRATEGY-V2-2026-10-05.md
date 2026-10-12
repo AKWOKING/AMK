@@ -174,3 +174,16 @@ logo se raconte comme un raisonnement d'équipe, pas comme la performance d'un o
 > **checkpoint de revue planifié**. **Jamais** de cadence fixe sans revue programmée. Première
 > application : TikTok AMK, 5/semaine pendant 14 jours, revue dure au jour 14
 > (`content/strategy/AMK-TIKTOK-ESTABLISHMENT-2026-10-12.md` §4 + gabarit §8).
+
+## Règle debout — VO vidéo courte : une seule prise continue (ruling King, POST-01 v4, 12/10)
+
+Défaut constaté à la revue King de la version finale de POST-01 v4 : des secondes de silence entre les clips VO. Les légendes tombaient à l'heure, le personnage animait, mais la voix se taisait entre les morceaux. Résultat : une voix intermittente, pas un narrateur avec des pauses naturelles.
+
+**Règle (POST 2 et suivants) :**
+
+- **La VO d'une vidéo courte est une seule prise continue, jamais des clips découpés.** Si les légendes doivent être découpées, on découpe les légendes ; la voix, elle, reste continue.
+- **Silences entre phrases : 0,15 à 0,25 s** (pause naturelle en français). **Jamais 1 à 2 s.** Au-delà de 0,3 s, c'est un défaut, pas une pause.
+- **Le calage se fait sur la VO, pas l'inverse.** Le plan et les légendes sont écrits pour la durée réelle de la voix. Un plan dont la voix ne remplit que la moitié de la durée est un plan mal calé.
+- **Vérification avant livraison :** mesurer les silences entre phrases sur le fichier final ; aucun > 0,3 s hors transitions volontaires.
+
+*Cause de fond (POST-01 v4) :* les clips VO ont été écrits pour des fenêtres de légende fixées à l'avance (5 s pour 1,5 s de voix). Le temps a été calé sur l'image, pas sur la voix.

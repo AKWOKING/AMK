@@ -5132,3 +5132,46 @@ prénom sourcé, rendus en chat le 12/10.
 - Sources : `index-v4.html` + `layers/` (calques environnement, buste 912 px) ; VO `vo/` (mots identiques aux légendes ; B4–B6 en deux morceaux) ; `BEAT-TABLE-v4.md` mis à jour.
 - Exception Git : MP4 final forcé (`*.mp4` ignoré, même convention que la v3 et le dummy). Les VO `*.mp3` sont forcées de la même manière.
 - Non committés : `POST-01-v4-TIKTOK-SILENT.mp4` (artefact de build).
+
+## 12/10/2026 — ICP + protocole de qualification (proposition, en attente King §4b) · rétrospective vague 12/10
+- **Livrables (propositions, non loi) :** `sales/ICP-OPTICIENS-2026-10.md` (7 axes + veto, checklist, calibration DM/Univers) · `sales/QUALIFICATION-PROTOCOL-2026-10.md` (recherche citée §0, mapping BANT→AMK, question de besoin, question de délai) · `sales/RETRO-VAGUE-2026-10-12.md` (8 prospects scorés).
+- **§9 `CLIENT-MESSAGING-RULES.md` :** gate 4 « score ICP » ajouté ; les trois gates restent. Calendrier M0/M1 **à trancher par King** (option A recommandée). Code `excluded_icp` non créé (à faire dans `crm.py` après oui).
+- **Résultat rétro :** 0/8 passent 5/7 en M0 (max 4/7). Les deux envois réels (JiredOptic 3/7, Planète 2/7) auraient été retenus. DM Optique (3/7 en M0, clos ensuite à 7/7) serait refusé par l'option B.
+- **Décompte à confirmer :** 5 sur 7 échouent aux gates (§9) ; 6 sur 8 si Lumumba compte. Le brief disait « 5 sur 8 ».
+- **Question de délai proposée :** « Si on avançait, vous le verriez en ligne quand ? » — validée contre les règles de messagerie, posée seulement après une réponse.
+- **Git :** non commis. Précondition §1e non remplie (tip distant `842241e` n'est pas ancêtre de HEAD `3db9333`). Pas de reset.
+
+## 12/10/2026 (soir) — RULINGS KING : timing Option A · décompte 5/7 · propositions · remote gardé
+- **Ruling 1 — timing (Option A) :** pré-envoi = mécanique seule (ONOC + historique CRM + WhatsApp) + vetos, **sans score ICP** ; post-réponse = score complet 5/7 + question de délai, dans les 7 jours. Appliqué dans `CLIENT-MESSAGING-RULES.md` §9, `ICP-OPTICIENS-2026-10.md` §2/§4, `QUALIFICATION-PROTOCOL-2026-10.md` §5. Motif : DM Optique 3/7 à M0, clos à 7/7.
+- **Ruling 2 — décompte (CORRECTION) :** la vague comptait **7 envois à froid** ; **5 sur 7** ont échoué aux gates (Horizon, Faby, Centrale : WhatsApp · Kamaïs, Maff : déjà contactés) ; **2 sur 7** ont passé (JiredOptic a refusé, Planète silence). Lumumba n'est pas à froid (contacté 24/09), traité à part. Le « 5 sur 8 » était une erreur de notre part. `RETRO-VAGUE-2026-10-12.md` §1/§3 corrigés.
+- **Ruling 3 — propositions :** ICP et protocole restent des **propositions**, en attente du oui de King (PRE-FLIGHT §4b). Si approuvés : ajouter `excluded_icp` à `leads/build/crm.py`, puis verrouiller l'ICP comme loi debout.
+- **Ruling 4 — git (remote gardé, local abandonné) :**
+  - Le commit local `3db9333` a été **retiré de la branche** (`git reset --mixed` sur `842241e`, sans force-push). Il reste dans le reflog et en sauvegarde hors dépôt : `/home/user/amk-backup-3db9333/` (26 fichiers, 61 Mo).
+  - Les fichiers POST-01 ont été **synchronisés sur le remote** (`post01/`, `POST-01-v4-TIKTOK.mp4`). Le MP4 final est celui du remote : **33,6 Mo, légendes 36 px**. Le MP4 local de 57 Mo est **retiré** (copie dans la sauvegarde).
+  - **Un fichier a été repris à la main :** `sales/Activity-Log.md` avait perdu le bloc « POST-01 v4 (nuit) » du remote. Il a été rétabli depuis `842241e` ; le diff vs remote n'est plus que des ajouts (8 lignes).
+  - Précondition §1e vérifiée : tip distant `842241e` ancêtre de HEAD ✓.
+- **Non fait / en attente :** aucun commit des documents ICP/protocole/rétro/§9 (attente King + synchro). `excluded_icp` non créé. Aucun push.
+
+## 12/10/2026 (tard) — POST-01 v4 : VO gaps — mesure faite, re-mux NON livré (blocage à trancher par King)
+- **Étape 1 — mesure (silence = début du clip suivant − fin du clip courant) :**
+
+| Clip | Début (mux, mesuré) | Parole | Silence jusqu'au suivant | > 0,4 s ? |
+|---|---|---|---|---|
+| b1 | 0,20 | 2,93 | 0,07 | non |
+| b2 | 3,20 | 1,78 | 2,22 | oui |
+| b3 | 7,20 | 1,57 | 3,27 | oui |
+| b4a | 12,04 | 2,30 | 1,50 | oui |
+| b4b | 15,84 | 1,44 | 3,78 | oui |
+| b5a | 21,06 | 1,59 | 1,19 | oui |
+| b5b | 23,84 | 1,57 | 1,61 | oui |
+| b6a | 27,02 | 1,75 | — | non mesurable (voir ci-dessous) |
+| b6b | — | 2,93 | — | non mesurable |
+
+- **Constat 1 — le calage est dicté par les fenêtres de légende**, pas par la voix. Les clips font 1,4 à 2,9 s dans des fenêtres de 3 à 5 s.
+- **Constat 2 — l'objectif « VO sur 28–30 s avec silences de 0,15–0,25 s » est impossible avec les clips existants.** Somme des paroles : 17,86 s. Avec 8 silences de 0,25 s au maximum, la voix ne couvre que ~19,9 s. Il manque environ 9 s de parole. Les combler exigerait un ralentissement de 1,5× (inacceptable) ou un nouveau texte (interdit ici).
+- **Constat 3 — resserrer les silences oblige à décaler la voix hors de sa fenêtre de légende.** Exemple : b6 serait calé vers 17 s alors que sa légende apparaît à 27 s. Le ruling « légende = VO mot pour mot, au même moment » serait violé. Un resserrement propre impose de modifier la vidéo (durée ou calage des beats), ce qui est exclu par la consigne.
+- **Constat 4 — la master livrée ne correspond pas aux clips de B6.** `vo-master-v4.mp3` (sha256 `9416250f…`, identique au remote) : b1, b2, b3, b4a, b4b, b5a, b5b se retrouvent à leur place (r ≥ 0,98). b6a ne ressort qu'à r = 0,74 et b6b n'est pas retrouvé (r = 0,35). La section B6 de la master n'a donc pas été produite à partir des clips split présents dans le dépôt. Source à identifier avant tout re-mux.
+- **Étape 3 — gate :** `audit_video_motion.py` sur la MP4 livrée : **OK**, 15/15 (vidéo inchangée).
+- **Étape 5 — leçon :** ajoutée comme « Règle debout — VO vidéo courte : une seule prise continue » dans `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` (fichier existant, pas de nouveau fichier, §4b).
+- **Étape 2 et 4 — NON faites.** Aucun nouveau mux, aucune nouvelle MP4, aucun changement du fichier audio. La MP4 livrée est inchangée (`POST-01-v4-TIKTOK.mp4`, 33,6 Mo, remote `842241e`).
+- **Options proposées à King :** (A) raccourcir la vidéo à ~20 s, voix continue, plan recalé (touche la vidéo et la durée) ; (B) réécrire et régénérer une VO continue de ~28 s sur 31 s, plan maintenu (touche le texte et l'audio, demande une autorisation de régénération) ; (C) livrer tel quel (défaut accepté) — non recommandé. Recommandation : (B) si King veut garder 31 s, ou (A) si la vitesse prime.
