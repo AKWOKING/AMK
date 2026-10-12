@@ -181,7 +181,9 @@ Défaut constaté à la revue King de la version finale de POST-01 v4 : des seco
 
 **Règle (POST 2 et suivants) :**
 
-- **La VO d'une vidéo courte est une seule prise continue, jamais des clips découpés.** Si les légendes doivent être découpées, on découpe les légendes ; la voix, elle, reste continue.
+- **AMENDEMENT (ruling King, 13/10) — la règle ci-dessus est remplacée :** la VO d'une vidéo courte peut être **une seule prise continue** ou **des clips par phrase** (voix identique, même voix sélectionnée). **Les clips par phrase sont la méthode préférée à partir de maintenant.** La seule règle dure : **aucun silence entre deux phrases ou à l'intérieur d'une phrase > 0,3 s.** Les silences sont réglés à 0,22 s (0,29 s après une phrase de transition). Une phrase trop longue (> 3 s) est découpée en légendes ; les légendes suivent les clips, pas l'inverse.
+
+- **AMENDEMENT 2 (ruling King, 13/10) — découpe des légendes :** les découpes se font aux **frontières de phrase naturelles** : virgule, deux-points, ou rupture de sens où chaque morceau reste une unité complète. **Ne jamais couper au milieu d'une expression. Ne jamais laisser un morceau qui se lit comme un fragment.** Le critère est la lisibilité, pas la règle de la virgule seule.
 - **Silences entre phrases : 0,15 à 0,25 s** (pause naturelle en français). **Jamais 1 à 2 s.** Au-delà de 0,3 s, c'est un défaut, pas une pause.
 - **Le calage se fait sur la VO, pas l'inverse.** Le plan et les légendes sont écrits pour la durée réelle de la voix. Un plan dont la voix ne remplit que la moitié de la durée est un plan mal calé.
 - **Vérification avant livraison :** mesurer les silences entre phrases sur le fichier final ; aucun > 0,3 s hors transitions volontaires.

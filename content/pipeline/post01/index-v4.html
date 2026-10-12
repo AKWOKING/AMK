@@ -73,8 +73,8 @@ html,body{width:540px;height:960px;overflow:hidden;background:var(--bg);
     <!-- poussière : 18 particules, dérive périodique 8–12 s, opacité 7–10 % -->
     <svg class="svgl" id="dust" viewBox="0 0 1080 1920" width="1080" height="1920" style="left:0;top:0;z-index:6" aria-hidden="true"></svg>
   </div>
-  <!-- grain de pellicule : bruit recalculé à chaque image (blocs 4×4 px), opacité 5 % -->
-  <canvas id="grain" width="270" height="480" style="position:absolute;left:0;top:0;width:540px;height:960px;opacity:0.05;z-index:8;image-rendering:pixelated;pointer-events:none"></canvas>
+  <!-- grain de pellicule : bruit recalculé à chaque image (blocs 4×4 px), opacité 7,5 % -->
+  <canvas id="grain" width="270" height="480" style="position:absolute;left:0;top:0;width:540px;height:960px;opacity:0.075;z-index:8;image-rendering:pixelated;pointer-events:none"></canvas>
   <div class="text">
     <div class="overlay" id="overlay"></div>
     <div class="caption" id="caption"></div>
@@ -98,20 +98,45 @@ const easeOut=bez(.23,1,.32,1), easeInOut=bez(.77,0,.175,1);
 const clamp01=v=>Math.max(0,Math.min(1,v));
 const mix=(a,b,t)=>a+(b-a)*t;
 const $=id=>document.getElementById(id);
-const TOTAL=31, XF=0.25;
+const TOTAL=42.3, XF=0.25;
 
-/* Changements d'état (buste). [instant, état]. Fondu 250 ms à partir de l'instant. */
-const SWITCH=[[0,'idle'],[2.2,'surprised'],[3.2,'talking'],[7.0,'thinking'],
-              [12.0,'surprised'],[15.0,'approving'],[21.0,'pointing'],[27.0,'approving']];
+/* v5d (42,3 s) — sentence clips voice-05 (vo-master-v5d.mp3), 0,22 s pauses (0,29 s after 2/9/12/15/18), stretch 1,117. */
+const SWITCH=[[0,'idle'],[4.31,'thinking'],[13.70,'surprised'],[18.79,'pointing'],
+              [32.39,'approving'],[38.10,'talking']];
 const STATES=['idle','talking','thinking','surprised','pointing','approving'];
 
 /* Textes : légende = ligne VO mot pour mot ; overlay = à l'écran seulement. */
-const OV=[[0,2.2,'Tu vois pourquoi ?'],[2.2,3.2,'Un nouveau logo.'],[3.2,5.2,"On l'intègre."],[5.2,7,'Et là… rien.'],
-          [7,9,'On enlève le masque.'],[9,10.5,'Faux.'],[12,14.5,'Un disque invisible.'],[18.5,21,'Un disque invisible.'],
-          [21,23,"Le fix : creuser l'anneau."]];
-const CAP=[[0,3.2,'Le logo du site a disparu.'],[3.2,7,'2 jours bloqué sur ça.'],[7,12,"C'est pas le rognage."],
-           [12,16,"L'anneau était un disque plein."],[16,21,'Peint par-dessus.'],[21,24,'Un vrai anneau.'],
-           [24,27.2,'Logo au-dessus.'],[27.2,28.4,"Le détail qu'on voit pas,"],[28.4,31,"c'est celui qui casse tout."]];
+/* v5 : pas d'overlay (le script n'en prévoit pas) — OV vide. */
+const OV=[];
+/* v5 : une légende = une phrase de la VO, mot pour mot. Bornes = silences de la VO. */
+const CAP=[
+  [0.00,2.18,"Ce petit cercle m'a pris 2 jours."],
+  [2.42,4.16,"Le logo avait disparu."],
+  [4.45,6.24,"Je bosse sur le hero d'un site."],
+  [6.48,8.19,"Il y a un cercle en dégradé,"],
+  [8.19,9.90,"je dois mettre le logo dedans."],
+  [10.15,10.89,"Je l'intègre."],
+  [11.14,11.83,"Il est moche."],
+  [12.08,13.58,"Je le fonds dans le cercle."],
+  [13.82,15.13,"Et là il disparaît."],
+  [15.38,16.93,"Il est toujours là"],
+  [16.93,17.99,"dans le code,"],
+  [17.99,18.64,"mais à l'écran : vide."],
+  [18.93,20.17,"Premier réflexe :"],
+  [20.17,22.23,"c'est le masque qui le rogne."],
+  [22.47,23.29,"Je l'enlève."],
+  [23.53,24.72,"Faux, il revient."],
+  [25.02,27.63,"En fait, l'anneau n'était pas un anneau."],
+  [27.88,29.57,"C'était un disque plein,"],
+  [29.57,30.71,"peint par-dessus."],
+  [30.95,32.24,"Le logo était dessous."],
+  [32.54,33.69,"J'ai creusé l'anneau."],
+  [33.94,35.44,"Un vrai anneau vide."],
+  [35.69,37.20,"Et j'ai mis le logo"],
+  [37.20,37.95,"au-dessus."],
+  [38.25,39.57,"Le détail qu'on voit pas,"],
+  [39.57,40.85,"c'est celui qui casse tout."],
+  [41.10,42.29,"Toi tu l'avais vu ?"]];
 
 /* Poussière : 18 particules, position = base + amplitude·sin/cos périodique (T 8–12 s). */
 const DUST=(()=>{ let seed=7; const r=()=>{ seed=(seed*16807)%2147483647; return seed/2147483647; };

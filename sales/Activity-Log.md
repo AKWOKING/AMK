@@ -5175,3 +5175,13 @@ prénom sourcé, rendus en chat le 12/10.
 - **Étape 5 — leçon :** ajoutée comme « Règle debout — VO vidéo courte : une seule prise continue » dans `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` (fichier existant, pas de nouveau fichier, §4b).
 - **Étape 2 et 4 — NON faites.** Aucun nouveau mux, aucune nouvelle MP4, aucun changement du fichier audio. La MP4 livrée est inchangée (`POST-01-v4-TIKTOK.mp4`, 33,6 Mo, remote `842241e`).
 - **Options proposées à King :** (A) raccourcir la vidéo à ~20 s, voix continue, plan recalé (touche la vidéo et la durée) ; (B) réécrire et régénérer une VO continue de ~28 s sur 31 s, plan maintenu (touche le texte et l'audio, demande une autorisation de régénération) ; (C) livrer tel quel (défaut accepté) — non recommandé. Recommandation : (B) si King veut garder 31 s, ou (A) si la vitesse prime.
+
+## 13/10/2026 — POST-01 v4 : VO en clips de phrases, rendu, gate OK (en attente de l'oreille de King)
+- **Script** : 20 phrases, voix voice-05 (voix de la chaîne, verrouillée). Clips par phrase générés, normalisés à -16 LUFS intégré.
+- **Silences** : 0,22 s entre phrases ; 0,29 s après les phrases 2, 9, 12, 15, 18. Silences internes des clips plafonnés à 0,22 s (règle « aucun silence > 0,3 s »).
+- **Étirement** : 1,117× (tempo, hauteur conservée) pour atteindre 42,3 s. Signalé à King : à vérifier à l'oreille, risque de rendu « pressé » ou haché.
+- **Découpes de légendes** : phrase 4 à 50 % (virgule) ; phrases 9 (3 légendes), 10 (deux-points), 14, 18 (2 légendes), 19 (virgule). Validé par King.
+- **Rendu** : 42,3 s, grain 7,5 %, même scène et même animation ambiante. **Gate : OK sur 22/22 fenêtres.** (La version « virgule seule » échouait sur 16–18 s et 36–38 s.)
+- **Règle amendée** (content/strategy/CONTENT-STRATEGY-V2) : (1) VO = une prise OU clips par phrase, aucun silence > 0,3 s, clips préférés ; (2) découpes de légendes aux frontières naturelles, jamais au milieu d'une expression, jamais de fragment.
+- **Points d'écoute King** : ~15,4 s (jointure phrase 9) · ~25,0 s (jointure phrase 13) · ~38,3 s (jointure phrase 19).
+- **Statut** : MP4 **non commité, non publié**, en attente du verdict d'oreille. Si « clippé » : retour sans étirement, vidéo plus courte, nouvelle évaluation.
