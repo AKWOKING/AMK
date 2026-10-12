@@ -29,7 +29,7 @@ for (let i = 2; i < process.argv.length; i += 2) args[process.argv[i].replace(/^
 const DURATION = parseFloat(args.duration || '45');
 const FPS = parseInt(args.fps || '30', 10);
 const OUT = args.out || '/tmp/post01.mp4';
-const HTML = path.resolve(path.dirname(new URL(import.meta.url).pathname), 'POST-01.html');
+const HTML = path.resolve(path.dirname(new URL(import.meta.url).pathname), args.html || 'POST-01.html');
 const FRAMES = args.frames || '/tmp/post01-frames';
 
 // ffmpeg depuis imageio-ffmpeg (pip) — même source que tools/video/install.sh

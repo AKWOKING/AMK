@@ -5106,3 +5106,15 @@ prénom sourcé, rendus en chat le 12/10.
   gitignoré (convention artefacts). Exception de livraison documentée : `git add -f` du MP4 final
   (commit `c760a29`). La convention reste pour les futurs artefacts ; les livraisons à King passent
   par GitHub en exception nommée.
+
+## 12/10 (soir) — POST-01 v3 TikTok : index-v3 construite + dummy 3s rendu
+- v3 = cut TikTok 31 s / 6 beats (hook hybride verbatim · monogramme AMK · silencieux · « tu » ·
+  zéro client/IA/prix/CTA). `content/pipeline/post01/index-v3.html` construite ; flag `--html`
+  ajouté à `render.mjs` (rétro-compatible, défaut POST-01.html).
+- Dummy 3 s (hook + entrée B2) rendu : gate motion OK (moy 2,86 léger), 0 erreur console, stills
+  relus (cercle vide B1, question à 1 s, B2 sans marque avant 3 s). 3 défauts attrapés et corrigés
+  avant tout rendu complet : cercle absent en B1, « AMK » dans la pill à 0 s (→ « SITE DE
+  DÉMONSTRATION »), eyebrow AMK avancé à 3 s.
+- v2 45 s : PARKED, non touchée (n'existe pas en rendu sur cette branche — le script v2 a été
+  livré en chat à l'étape 2).
+- En attente : validation King du dummy → étape suivante = rendu complet 31 s + pre-flight gate 11 points.
