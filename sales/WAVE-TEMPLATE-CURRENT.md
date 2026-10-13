@@ -25,7 +25,7 @@ Texte tel qu'il apparaît sur la capture (même schéma que le contrôle, nom et
 
 ## 3 · Points non vérifiés
 
-- **JiredOptic Med (Douala) :** **vérifié par capture (13/10).** Envoi le 12/10 à 11:37 ; réponse du client « non » à 11:47, puis « bonjour monsieur » à 11:47 ; accusé de réception de King à 11:53 (« C'est noté, je ne vous dérange pas davantage… »). **Écart avec le texte de contrôle :** la salutation utilise le prénom (« Mme Pierrette ») et non « M./Mme [Nom] ». Le fichier CRM (`crm.py`, ligne JiredOptic) porte encore `contacted="No"` : à corriger (voir Activity-Log du 13/10).
+- **JiredOptic Med (Douala) :** **vérifié par capture (13/10).** Envoi le 12/10 à 11:37 ; réponse du client « non » à 11:47, puis « bonjour monsieur » à 11:47 ; accusé de réception de King à 11:53 (« C'est noté, je ne vous dérange pas davantage… »). **Écart avec le texte de contrôle :** la salutation utilise le prénom (« Mme Pierrette ») et non « M./Mme [Nom] ». CRM (`crm.py`, ligne JiredOptic) : **corrigé le 13/10** — `contacted=Yes`, `reply=Yes`, `stage=parked`, `last_send_state=delivered`, journal 12/10 11:37 ajouté (commit 71851af).
 - **Réponse négative enregistrée :** le client a dit « non ». Aucune relance. Le message de clôture de King est un **message de traitement de réponse**, pas un élément du test A/B.
 - **Autres envois du 12/10 :** non recensés. La liste complète des destinataires du lundi n'est pas dans le dépôt. Les deux envois vérifiés sont Planète Optique et JiredOptic Med.
 

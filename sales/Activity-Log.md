@@ -5243,3 +5243,12 @@ prénom sourcé, rendus en chat le 12/10.
 - **Conséquence :** ma §7 ajoutée localement faisait doublon. Elle a été retirée au profit de la version distante. Le PRE-FLIGHT §0d pointe maintenant vers l'amendement 2 de ce fichier.
 - **Fusion :** la branche distante contenait 5 commits de travail POST-01 v4 (non présents localement). Un push direct était rejeté (non fast-forward). **Aucun force-push.** Fusion sans réécriture ; les conflits ont été résolus : `CLIENT-MESSAGING-RULES.md` garde les §9–§11 distants puis mon §12 ; `Activity-Log.md` garde les deux journaux.
 - **Point à confirmer par King :** la branche distante contient une entrée du 13/10 « POST-01 v4 validé à l'oreille par King (non publié) » et un MP4 de 42,3 s commité pour revue. Cela ne correspond pas à « la version Flow sur ton téléphone ». **Quelle version est publiée à 19:00 ?**
+
+## 13/10/2026 (mardi, 14:50) — réconciliation JiredOptic / Planète · CRM via crm.py · commit
+
+- **JiredOptic (vérifié par capture, 13/10 14:33) :** envoi 12/10 11:37 (« Bonjour Mme Pierrette — JiredOptic Med… »). Réponse 11:47 : « non », puis « bonjour monsieur ». Clôture de King 11:53. **Aucune relance.** Le CRM source (`crm.py`, après fusion) enregistre déjà `contacted=Yes`, `reply=Yes`, `stage=parked`. **Mon affirmation précédente (« contacted=No ») venait d'une lecture d'une version périmée : fausse.** Le fichier contrôle est corrigé.
+- **Planète Optique :** la relance du 13/10 11:01 n'était pas au journal CRM. Ajoutée dans `crm.py` (source), rebuild propre. Dans le CSV, seule la ligne Planète change. Fenêtre 48 h : on attend.
+- **Verrou des générateurs :** le garde-fou a refusé le rebuild parce que `crm.py` avait changé. Seul changement non commité dans `leads/build` : ma ligne Planète. Verrou mis à jour (`guard.py lock`), puis rebuild OK. Cela suit la procédure du garde-fou pour un changement voulu.
+- **Rebuild :** un premier essai a échoué sur `openpyxl` absent (installé via pip). Il avait régénéré les fiches et les vues depuis l'ancien CSV ; ces fichiers ont été restaurés à HEAD avant le rebuild suivant.
+- **Commits (sans force-push) :** `2c7a53f` (fusion avec la branche distante) et `71851af` (CRM). Poussés sur `arena/990fc4c3-amk`.
+- **Non décidé (King) :** l'étape CRM de JiredOptic (reste `parked`, ou `disqualified` avec raison ?) ; la date de suivi de Planète (`2026-10-13` dans la source, périmée).
