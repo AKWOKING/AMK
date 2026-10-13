@@ -5185,3 +5185,8 @@ prénom sourcé, rendus en chat le 12/10.
 - **Règle amendée** (content/strategy/CONTENT-STRATEGY-V2) : (1) VO = une prise OU clips par phrase, aucun silence > 0,3 s, clips préférés ; (2) découpes de légendes aux frontières naturelles, jamais au milieu d'une expression, jamais de fragment.
 - **Points d'écoute King** : ~15,4 s (jointure phrase 9) · ~25,0 s (jointure phrase 13) · ~38,3 s (jointure phrase 19).
 - **Statut** : MP4 **non commité, non publié**, en attente du verdict d'oreille. Si « clippé » : retour sans étirement, vidéo plus courte, nouvelle évaluation.
+
+## 13/10/2026 (verdict) — POST-01 v4 : King valide à l'oreille
+- Verdict King : « vidéo OK, voix et transitions fluides, plus de silence ». Étirement 1,117× accepté tel quel.
+- MP4 commité et poussé (32acfa4), 42,3 s, gate OK 22/22. Non publié : pas de connecteur de publication dans cette session, publication à faire manuellement.
+- À surveiller à la publication : fichier de 56 Mo (avertissement GitHub > 50 Mo, sans effet sur le push).
