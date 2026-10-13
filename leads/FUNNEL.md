@@ -1,15 +1,15 @@
 # ENTONNOIR — où le système fuit
 
-> ⚙️ **Généré le 2026-10-10 par `leads/build/views.py` — ne pas modifier à la main.**
+> ⚙️ **Généré le 2026-10-12 par `leads/build/views.py` — ne pas modifier à la main.**
 > Toute correction se fait dans `leads/build/crm.py` ou `sales/Activity-Log.md`, puis on relance `leads/build/rebuild.sh`.
 
 ## La chaîne
 
 | Étape | Nombre | Taux |
 |---|---|---|
-| Base (leads au fichier) | **162** | — |
-| Contactés | **66** | 40.7 % de la base |
-| Réponses humaines | **9** | 13.6 % des contactés |
+| Base (leads au fichier) | **163** | — |
+| Contactés | **68** | 41.7 % de la base |
+| Réponses humaines | **10** | 14.7 % des contactés |
 | Réponses automatiques | 1 | — |
 | Aperçus produits | **24** | (hors chaîne : souvent produits AVANT contact) |
 | Prix posé / en négociation | **2** | 8.3 % des aperçus |
@@ -19,7 +19,7 @@
 
 | Source | Leads | Contactés | Réponses humaines | Taux de réponse |
 |---|---|---|---|---|
-| directory | 109 | 55 | **6** | 10.9 % |
+| directory | 110 | 57 | **7** | 12.3 % |
 | onoc_registry | 7 | 5 | **3** | 60.0 % |
 | (non renseigné) | 38 | 4 | **0** | 0.0 % |
 | google_maps | 2 | 2 | **0** | 0.0 % |
@@ -29,9 +29,9 @@
 
 ## Le diagnostic, en trois lignes
 
-1. **Le volume contacté est le premier goulot** : 96 lead(s) sur 162 n'ont jamais reçu un message (59 % de la base). Aucune amélioration de texte ne compense un lead jamais contacté.
-2. **Le taux de réponse humain** est de 13.6 % des contactés — c'est le chiffre à surveiller d'un envoi à l'autre (il se lit avec `SOURCES.md` : quelle liste répond).
-3. **La conversion en rendez-vous, elle, ne fuit pas** : 2 des 9 réponses humaines ont donné un rendez-vous ou un prix posé. Le travail n'est donc pas de « mieux closer », il est de **contacter plus**, et de choisir les bonnes listes.
+1. **Le volume contacté est le premier goulot** : 95 lead(s) sur 163 n'ont jamais reçu un message (58 % de la base). Aucune amélioration de texte ne compense un lead jamais contacté.
+2. **Le taux de réponse humain** est de 14.7 % des contactés — c'est le chiffre à surveiller d'un envoi à l'autre (il se lit avec `SOURCES.md` : quelle liste répond).
+3. **La conversion en rendez-vous, elle, ne fuit pas** : 2 des 10 réponses humaines ont donné un rendez-vous ou un prix posé. Le travail n'est donc pas de « mieux closer », il est de **contacter plus**, et de choisir les bonnes listes.
 
 > Règle de lecture : une réponse automatique n'est PAS une réponse. Un aperçu produit n'est pas un prospect chaud — il se compte à part, et `Demo made` ne remplace jamais `reply_type = human`.
 

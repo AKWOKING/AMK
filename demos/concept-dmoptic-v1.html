@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
-<title>Opticien à Douala — DM OPTIQUE SARL : vue, verres, montures</title>
+<title>DM OPTIQUE SARL — Opticien à Douala : vue, verres, montures</title>
 <meta name="description" content="Cabinet d'optique médicale à Douala, inscrit à l'ONOC. Examen de la vue, verres sur ordonnance, montures, réparation. Écrivez sur WhatsApp : le message part déjà écrit.">
 <meta name="theme-color" content="#0A1220">
 <meta property="og:type" content="website"><meta property="og:locale" content="fr_FR"><meta property="og:locale:alternate" content="en_US">
-<meta property="og:title" content="DM OPTIQUE SARL — opticien à Douala : vue, verres, montures">
+<meta property="og:title" content="DM OPTIQUE SARL — Opticien à Douala">
 <meta property="og:description" content="Examen de la vue, verres sur ordonnance, montures, réparation. Un opticien inscrit à l'ONOC. WhatsApp : le message part déjà écrit.">
 <!-- LA VIGNETTE DU LIEN (PRE-FLIGHT §20.7) — remplie par `python3 demos/build_dmoptic.py --url <adresse>`
      après le déploiement. Tant que l'adresse n'est pas connue, on n'envoie pas le lien : une URL devinée
@@ -154,8 +154,14 @@ html.js .wash{animation:drift 26s ease-in-out infinite alternate}
 }
 .lensring{position:absolute;z-index:0;right:-88px;top:34px;width:290px;height:290px;pointer-events:none}
 html.js .lensring{animation:spin 24s linear infinite}
+/* 11/10 : le client veut SON LOGO à la place de l'anneau bleu-braise du premier écran.
+   .herologo = décoration pure (aria-hidden, pointer-events:none, pas d'animation) :
+   aucun rôle fonctionnel, aucun impact sur la bascule FR/EN ni sur un contrôle. */
+.herologo{position:absolute;z-index:0;right:-24px;top:24px;width:210px;height:210px;pointer-events:none;
+  background:var(--logo) center/contain no-repeat;filter:drop-shadow(0 6px 18px rgba(12,21,36,.10))}
+.h-city{display:block;margin-top:.35em;font-size:.5em;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-2)}
 @keyframes spin{to{transform:rotate(360deg)}}
-@media (min-width:780px){ .lensring{right:-60px;top:20px;width:380px;height:380px} }
+@media (min-width:780px){ .lensring{right:-60px;top:20px;width:380px;height:380px} .herologo{right:-10px;top:16px;width:300px;height:300px} }
 .hero-grid{position:relative;z-index:1;display:grid;gap:34px}
 @media (min-width:980px){ .hero-grid{grid-template-columns:1.02fr .98fr;gap:54px;align-items:start} }
 .hero h1{margin-top:18px}
@@ -348,22 +354,15 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
   <!-- ══ 1 · LE PREMIER ÉCRAN : ce que c'est, pour qui, et les deux gestes ═════════════════════════ -->
   <section class="hero" aria-labelledby="h-hero">
     <span class="wash" aria-hidden="true"></span>
-    <svg class="lensring" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
-      <defs><linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#7FA6E8" stop-opacity="0"></stop>
-        <stop offset=".45" stop-color="#2A5CB8" stop-opacity=".55"></stop>
-        <stop offset=".78" stop-color="#E0703A" stop-opacity=".38"></stop>
-        <stop offset="1" stop-color="#E0703A" stop-opacity="0"></stop>
-      </linearGradient></defs>
-      <circle cx="100" cy="100" r="92" fill="none" stroke="url(#sheen)" stroke-width="9"></circle>
-      <circle cx="100" cy="100" r="70" fill="none" stroke="url(#sheen)" stroke-width="2.5" opacity=".8"></circle>
-    </svg>
+    <!-- 11/10 (ruling client) : l'anneau bleu-braise « lensring » est remplacé par LE LOGO du cabinet
+         (.herologo, décoratif — pas un contrôle). Le SVG d'origine est conservé dans l'historique git. -->
+    <span class="herologo" aria-hidden="true"></span>
     <div class="wrap hero-grid">
       <div>
         <p class="kicker rv"><span class="fr-only" lang="fr">Opticien à Douala · inscrit à l'ONOC</span><span class="en-only" lang="en">Optician in Douala · registered with the ONOC</span></p>
         <h1 id="h-hero" class="rv">
-          <span class="fr-only" lang="fr">DM OPTIQUE SARL, votre opticien à Douala.</span>
-          <span class="en-only" lang="en">DM OPTIQUE SARL, your optician in Douala.</span>
+          <span class="fr-only" lang="fr">DM OPTIQUE SARL<span class="h-city">DOUALA</span></span>
+          <span class="en-only" lang="en">DM OPTIQUE SARL<span class="h-city">DOUALA</span></span>
         </h1>
         <p class="lede rv">
           <span class="fr-only" lang="fr">Examen de la vue, verres sur ordonnance, montures, réparation. Vous écrivez sur WhatsApp&nbsp;: le message part déjà écrit, il ne reste qu'à l'envoyer.</span>

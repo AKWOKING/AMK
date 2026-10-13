@@ -45,7 +45,7 @@ Quand une règle change ou qu'un ruling est donné, cette table dit quels fichie
 | Règle | Fichiers qu'elle gouverne |
 |---|---|
 | **Credential rule** (ne jamais revendiquer ce qu'on ne peut pas prouver) | `content/strategy/RULE-CREDENTIAL-CLAIMS.md` · pages client (`clients/*/`, `site/`) · textes de publication (`content/carousels/`, `content/scripts/`) |
-| **Caption-split / découpage de légende (ruling King 12/10 : frontières de phrase, jamais de fragment)** | `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` §7 (fichier d'origine) · appliquée dans `content/scripts/` et `content/strategy/VIDEO-PIPELINE-FLOW-2026-10.md` |
+| **Caption-split / découpage de légende (ruling King 12/10 : frontières de phrase, jamais de fragment)** | `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` · section « Règle debout — VO vidéo courte », **AMENDEMENT 2 (découpe des légendes)** (fichier d'origine ; le commit `9294cf2` le contient) · appliquée dans `content/scripts/` et `content/strategy/VIDEO-PIPELINE-FLOW-2026-10.md` |
 | **Wave gate / relances (24 h, 48 h, 7 j, changement de canal)** | `sales/CLIENT-MESSAGING-RULES.md` · `leads/CRM.csv` · `leads/build/crm.py` · `leads/PIPELINE.md` · `sales/Activity-Log.md` |
 | **Ruling « relance interdite après report du client » (Labiomed)** | `leads/CRM.csv` · `leads/records/labiomed-deido.md` · `leads/KILL-LIST.md` · `sales/Activity-Log.md` |
 | **ICP (clinique / optique, seuil MQL)** | `sales/Deep-Dive-Research.md` · `sales/LeadSourcing-Reset-2026-09-18.md` · `sales/AMK-Sales-Playbook-v2.md` · `sales/LISTE-OPTICIENS-2026-10.md` · listes de vague (`sales/Send-BATCH-*.md`) |
@@ -147,12 +147,35 @@ faux-zéro sur du contenu boldé. Classe tooling, pas inférence ; journal : `op
 
 ## 1e · Resync git = précondition du tour (ruling King 06/10)
 
-Au début de chaque tour, avant toute lecture ou édition : `git fetch origin` →
-`git reset --hard origin/arena/01a0f7ad-amk` si local ≠ remote. La resync est une **précondition du
-tour**, pas une réparation après un push refusé. Trois occurrences → protocole, pas vigilance.
+Au début de chaque tour, avant toute lecture ou édition : `git fetch origin`, puis vérifier la
+précondition ci-dessous. La resync est une **précondition du tour**, pas une réparation après un push
+refusé. Trois occurrences → protocole, pas vigilance.
 
-**Précondition mécanique avant TOUT commit (ruling King 08/10, 12e message — troisième occurrence de « committed before resync »)** : 
-`git log -1 --format=%H` **doit être égal** à `git ls-remote origin refs/heads/arena/01a0f7ad-amk`. Vérifié **par commande, dans le même appel que le commit**, jamais de mémoire. Si les deux hash diffèrent : **on ne commit pas** — on resynchronise d'abord. Une précondition mécanique, pas de la vigilance.
+**⛔ Plus de `git reset --hard origin/<branche>` automatique (ruling King 11/10).** L'ancienne ligne
+disait « `reset --hard` si local ≠ remote ». Elle est **retirée** : `origin HEAD` pointe sur `main`,
+dont l'historique est **disjoint** de la branche de travail (`git merge-base HEAD origin/main` = vide),
+donc un `reset --hard origin/HEAD` remplace tout le travail du mois par le seul commit de `main`.
+**Nouvelle règle : on ne reset PAS, sauf si (1) l'arbre est propre ET (2) le travail non poussé est
+explicitement reconnu comme perdable.** Sinon : `git reset --mixed`, jamais `--hard`.
+
+**Précondition mécanique avant TOUT commit — AMENDÉE (ruling King 11/10 ; remplace la règle d'égalité du 08/10) :**
+
+```
+git fetch -q origin
+git merge-base --is-ancestor "$(git ls-remote origin refs/heads/<branche> | cut -f1)" HEAD   # rc = 0
+```
+
+Le **tip distant doit être un ANCÊTRE de HEAD** (aucune divergence). Vérifié **par commande, dans le
+même appel que le commit**, jamais de mémoire. `rc ≠ 0` → **on ne commit pas**, on resynchronise d'abord.
+
+**Pourquoi l'amendement :** l'ancienne précondition (`git log -1 --format=%H` **égal** au tip distant)
+est **insatisfaisable après le premier commit local** tant qu'on n'a pas poussé — elle garantissait
+elle-même sa propre violation. L'ancêtre est le vrai invariant : il dit « je suis strictement en
+avance, personne d'autre n'a écrit ». Constat du 11/10, journalisé dans `ops/INFERENCE-ERRORS.md`.
+
+**Après CHAQUE commit (ruling King 11/10) :** **pousser immédiatement**, puis vérifier
+`git ls-remote origin refs/heads/<branche>` **égal au nouveau HEAD**. Un commit non poussé n'existe
+que dans le bac à sable — cf. la note du 21/09 (« perdues au 13ᵉ recul du bac, leur push avait échoué »).
 
 Recette éprouvée (avec travail non commité, **jamais** `--hard`) : `git fetch -q origin` → `R=$(git ls-remote origin refs/heads/arena/01a0f7ad-amk | cut -f1)` → `git reset -q --mixed $R` → vérifier `HEAD == R` → `git checkout HEAD -- leads/build/{crm.py,generators.lock.json,records.py,views.py}` si ces quatre fichiers reviennent périmés → `git status --short`. (`origin/<branche>` peut ne pas exister comme ref locale : le tip se lit par `ls-remote`.) Le `reset --hard` de la ligne ci-dessus ne vaut que pour un arbre propre.
 
@@ -185,6 +208,20 @@ Recette éprouvée (avec travail non commité, **jamais** `--hard`) : `git fetch
   tester. Se remplit depuis le change log de la base. **Format standing du rapport** (`content/pipeline/reports/`) :
   mouvement pipeline · cadence contenu · nombres de funnel · appris · ensuite · Knowledge applied ·
   **« Blockers requiring King ruling »** — ce qui est bloqué sur King, pour que rien n'attende en silence.
+
+### 4b · Un fichier debout NOUVEAU exige la confirmation de King (ruling King 11/10)
+
+> **New standing files require King's confirmation before becoming repo law.** Quand un lot de
+> recherche produit une checklist ou une règle qui doit atterrir dans un **nouveau** fichier,
+> l'orchestrateur **propose l'emplacement** ; King approuve ; ensuite seulement c'est committé
+> comme loi. Empêche les standards d'entrer en silence.
+
+Application pratique : une règle qui peut rejoindre un fichier existant **va dans ce fichier**
+(exemple du 11/10 : la règle des sous-titres manuels est entrée dans
+`content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md`, pas dans un fichier neuf). Un fichier neuf
+n'est créé qu'avec le oui de King. Le premier cas d'application : la
+`content/strategy/TIKTOK-SEO-CHECKLIST-2026-10.md` du lot [36], créée avant l'existence de cette
+règle et **approuvée par King à l'acceptation du lot 1** le 11/10.
 
 ## 5 · Standing lens (everything filters through this)
 

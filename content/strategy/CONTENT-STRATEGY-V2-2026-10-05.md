@@ -60,12 +60,132 @@ publication n'a pas de lecture archivée — les chiffres de King uniquement, ja
 Rétention moyenne 18 % (narrée) vs 13 % (son tendance) ; cliff à 0:02 sur les deux ; +1 abonné au
 total ; Cameroun 99 %. C'est peu, et c'est le vrai point de départ.
 
-## 7 · Règle de découpage des légendes (ruling King, 12/10/2026)
+---
 
-Ajoutée ici le 13/10 : la règle n'était pas présente dans ce fichier (le commit « 9294cf2 » cité dans le fil n'existe pas dans le dépôt, vérifié le 13/10).
+## Règle debout — sous-titres TikTok : toujours manuels (ruling King 11/10)
 
-- Les découpes de légende se font aux **frontières de phrase naturelles** : virgules, deux-points, ou ruptures de sens où la légende reste une unité complète.
-- **Ne jamais couper au milieu d'une phrase.**
-- **Ne jamais couper de façon qu'une partie se lise comme un fragment.**
+> **TikTok captions — always manual.** French auto-captions do not hold on Cameroonian French
+> accents. Every published video gets captions written by the orchestrator and reviewed by King
+> before publish. Auto-generated captions are never used on any client or AMK-owned account.
 
-Cette règle s'applique à toutes les vidéos (scripts `content/scripts/`, pipeline `content/strategy/VIDEO-PIPELINE-FLOW-2026-10.md`, légendes TikTok).
+**Portée :** tout compte — client ou AMK. **Coût outil : zéro.** **Contrôle qualité : complet.**
+
+Conséquence opérationnelle : la chaîne de publication d'une vidéo devient
+*script → tournage → sous-titres écrits par l'orchestrateur → relecture King → publication*.
+Aucune vidéo ne part sans la relecture.
+
+**Ce que cela remplace :** l'étape « activer les sous-titres automatiques puis les corriger »
+recommandée par la vidéo HubSpot du lot [36]
+(`research/youtube-lessons/2026-10-11-batch-1/video-3-tiktok-seo.md`). L'étape est rejetée :
+chez nous les sous-titres ne sont pas « corrigés », ils sont **écrits**.
+
+**Pourquoi c'est aussi un choix SEO, pas seulement un choix de qualité :** TikTok indexe le texte
+des sous-titres. Des sous-titres écrits à la main, avec le mot-clé placé délibérément, indexent
+mieux qu'une transcription approximative — l'accent camerounais produisant des fautes qui
+classent la vidéo sous le mauvais sujet.
+
+---
+
+## Apports du lot [37] — recherche vidéo batch 2 (11/10)
+
+Source : `research/youtube-lessons/2026-10-11-batch-2/` (vidéos 4, 5, 6). Aucun fichier neuf créé
+(PRE-FLIGHT §4b) — les règles rejoignent ce fichier existant.
+
+**1 · Le test des trois métiers (vidéo 4, Marley Jaxx).** Avant d'écrire une publication, elle doit
+pouvoir nommer son métier : **générer** un contact, **nourrir** la relation, ou **convertir**. Une
+publication qui ne peut pas nommer le sien ne se fait pas. C'est un **diagnostic** du problème
+enregistré plus haut dans ce fichier : le moteur de contenu a produit **zéro lead entrant**. Si
+aucune publication ne peut nommer son métier, le calendrier est du contenu pour du contenu.
+Pour un opticien, le métier est presque toujours **générer** — donc le CTA est un CTA WhatsApp,
+jamais « abonnez-vous ».
+
+**2 · L'inventaire d'histoires (vidéo 4).** Un document vivant d'histoires **vraies** du cabinet
+(les premières lunettes d'un enfant, une monture réparée, un examen qui a dépisté quelque chose)
+dans lequel on puise au lieu d'inventer. **Contrainte :** les histoires doivent être vraies et
+acceptées par le client — `content/strategy/RULE-CREDENTIAL-CLAIMS.md` s'applique.
+
+**3 · Positionnement « X pour Y » (vidéo 6, Joanna Wiebe) — CORROBORATION.** Formule : *ce que tu
+fais* pour *qui tu sers*. Cela **confirme de façon indépendante** la décision déjà prise :
+« sites + présence digitale **pour opticiens à Douala** », et non « agence de marketing digital ».
+« Nous aidons les entreprises avec le digital » ne dit à personne s'il est concerné.
+
+**4 · Qualité plutôt que fréquence (vidéo 6).** « Les algorithmes ne comptent pas combien de fois
+tu publies ; ils mesurent combien de gens s'y intéressent. » Cela **soutient l'engagement de 2
+publications par semaine** et **contredit** le sprint de 3 à 5 publications/jour du lot [36]
+(vidéo Modern Millie), déjà rejeté. Règle positive : **on ne publie que quand il y a quelque chose
+qui vaut la peine, et on reste présent la première heure pour répondre aux commentaires.**
+
+**5 · Le CTA dans la conversation, pas dans la bio (vidéo 5, Adam Erhart).** Quand quelqu'un
+commente, la réponse est un message privé contenant le lien WhatsApp **message pré-écrit** — pas
+« lien en bio ». Gratuit, sans outil. **Attention à la statistique de cette vidéo :** le « 1 % → 46 % »
+vient du **programme partenaire de ManyChat lui-même** ; une analyse indépendante de 1 200+
+campagnes donne **2–3 % → 12–18 %**. La **direction** est vérifiée (la conversation bat la bio),
+le **chiffre 46 %** ne l'est pas et ne sort pas de notre bouche.
+
+---
+
+## Apport du lot [38] — visuels générés par IA : HOLD avec conditions (11/10)
+
+Source : `research/youtube-lessons/2026-10-11-batch-3/video-9-ai-motion-graphics.md`.
+
+**Décision (portée précisée par King, 11/10) : aucune imagerie ni vidéo générée par IA de
+l'entreprise du client — son cabinet, son équipe, ses produits, ses patients.** La portée est
+**« de votre entreprise »**, et non « toute imagerie » : un visuel généré qui ne représente pas
+l'entreprise du client n'est pas visé par cette règle. La formulation retenue pour les documents
+clients est : **« nous ne publions aucune image synthétique de votre entreprise. »**
+
+La règle d'origine, inchangée sur le fond : cela contredit
+`AMK-DESIGN-SKILLS.md` §25/§32, le standard photo-au-téléphone
+(`research/PHOTO-LABO-PIXEL-8A-2026-09-24.md`) et la pratique « Photo d'illustration ». Pour un
+opticien — un commerce qui manipule des yeux — une image synthétique de son cabinet est un risque de
+fausse représentation que nous ne prenons pas.
+
+**Si un jour AMK publie un visuel généré pour SON propre contenu** (expliquer l'essayage virtuel,
+par exemple — cas où aucune photo réelle n'existe), la checklist suivante s'applique, reprise de la
+vidéo 9 qui la formulait mieux que la plupart des formations payantes :
+1. Droits et autorisations vérifiés sur toute référence utilisée.
+2. Chaque sortie revue avant publication : erreurs visuelles, éléments inattendus, marques
+   déposées, matériel protégé.
+3. **Le visuel est étiqueté comme généré.** (À noter : la sortie gratuite de Google Flow dans
+   YouTube Shorts/Create porte de toute façon un filigrane SynthID.)
+
+**Outils en HOLD, pas adoptés :** Google Flow / Omni Flash (palier gratuit 50 crédits/jour ≈ 3–7
+courts clips, puis 4,99–199,99 $/mois ou 0,10 $/seconde) et ElevenLabs. **Déclencheur écrit pour y
+revenir :** un besoin de contenu **propriétaire AMK** sans réponse en footage réel, approuvé par King.
+
+---
+
+## Règle debout (ruling King, 11/10) — ne jamais dire que l'IA fait le travail
+
+> **Never state AI is doing the work.** Quand le processus d'un projet devient du contenu, on le cadre
+> comme « **on a résolu X** » — l'approche, le raisonnement, le changement de code. Jamais « l'IA a
+> construit ceci » ni « l'IA a trouvé ». **L'attribution du contenu revient à AMK.**
+> **Formule : problème → raisonnement → décision → résultat.**
+> **Jamais : problème → outil → résultat.**
+
+Née du candidat vidéo 12 (`content/pipeline/VIDEO-12-CANDIDAT-BUG-AFFICHAGE.md`) : le bug d'affichage du
+logo se raconte comme un raisonnement d'équipe, pas comme la performance d'un outil.
+
+---
+
+## Règle debout (ruling King, 11/10) — la cadence est un test, pas un engagement
+
+> Tout nouveau canal (TikTok, Instagram, YouTube, LinkedIn) démarre à une **cadence de test** avec un
+> **checkpoint de revue planifié**. **Jamais** de cadence fixe sans revue programmée. Première
+> application : TikTok AMK, 5/semaine pendant 14 jours, revue dure au jour 14
+> (`content/strategy/AMK-TIKTOK-ESTABLISHMENT-2026-10-12.md` §4 + gabarit §8).
+
+## Règle debout — VO vidéo courte : une seule prise continue (ruling King, POST-01 v4, 12/10)
+
+Défaut constaté à la revue King de la version finale de POST-01 v4 : des secondes de silence entre les clips VO. Les légendes tombaient à l'heure, le personnage animait, mais la voix se taisait entre les morceaux. Résultat : une voix intermittente, pas un narrateur avec des pauses naturelles.
+
+**Règle (POST 2 et suivants) :**
+
+- **AMENDEMENT (ruling King, 13/10) — la règle ci-dessus est remplacée :** la VO d'une vidéo courte peut être **une seule prise continue** ou **des clips par phrase** (voix identique, même voix sélectionnée). **Les clips par phrase sont la méthode préférée à partir de maintenant.** La seule règle dure : **aucun silence entre deux phrases ou à l'intérieur d'une phrase > 0,3 s.** Les silences sont réglés à 0,22 s (0,29 s après une phrase de transition). Une phrase trop longue (> 3 s) est découpée en légendes ; les légendes suivent les clips, pas l'inverse.
+
+- **AMENDEMENT 2 (ruling King, 13/10) — découpe des légendes :** les découpes se font aux **frontières de phrase naturelles** : virgule, deux-points, ou rupture de sens où chaque morceau reste une unité complète. **Ne jamais couper au milieu d'une expression. Ne jamais laisser un morceau qui se lit comme un fragment.** Le critère est la lisibilité, pas la règle de la virgule seule.
+- **Silences entre phrases : 0,15 à 0,25 s** (pause naturelle en français). **Jamais 1 à 2 s.** Au-delà de 0,3 s, c'est un défaut, pas une pause.
+- **Le calage se fait sur la VO, pas l'inverse.** Le plan et les légendes sont écrits pour la durée réelle de la voix. Un plan dont la voix ne remplit que la moitié de la durée est un plan mal calé.
+- **Vérification avant livraison :** mesurer les silences entre phrases sur le fichier final ; aucun > 0,3 s hors transitions volontaires.
+
+*Cause de fond (POST-01 v4) :* les clips VO ont été écrits pour des fenêtres de légende fixées à l'avance (5 s pour 1,5 s de voix). Le temps a été calé sur l'image, pas sur la voix.

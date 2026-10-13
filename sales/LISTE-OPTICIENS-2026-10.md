@@ -44,3 +44,53 @@ canal, pas de wording.
 ## Protocole numéros ONOC (ruling 05/10)
 Re-pull des deux pages ONOC au moment de logguer le premier envoi froid (risque de transposition des
 7 numéros) ; si un numéro saute : corriger, logger la correction dans ce fichier + INFERENCE-ERRORS.
+
+## RE-PULL ONOC — dimanche 11/10/2026 (fait, ruling 06/10 respecté : la veille du premier envoi)
+
+**Périmètre lu :** `onocameroun.com/annuaire-des-opticiens-par-region/` (région **LITTORAL**, lignes 85–159 ;
+chunks Sud / Sud-Ouest / Nord-Ouest **non lus**) et `onocameroun.com/liste-de-tous-les-opticiens-inscrits-au-tableau/`
+(les 3 chunks, complet). **Méthode :** `fetch_page` — le `curl` du bac à sable est bloqué sur ce domaine
+(HTTP 000, SSL_ERROR_SYSCALL), donc la lecture est passée par l'outil de lecture de page.
+
+**Verdict : les 8 numéros du fichier sont CONFORMES à l'annuaire** (la source citée le 05/10, « numéros publiés
+par l'Ordre »). **Aucun numéro à corriger.** Mais les deux pages de l'ONOC **se contredisent** sur quatre lignes :
+
+| Lead | Numéro du fichier = ANNUAIRE (ligne) | « Liste des inscrits » (même personne) | Écart |
+|---|---|---|---|
+| Horizon optique | 677447417 (#100, DJEUMO FEUNOU Siméon, 032) | 677447417 (032) | ✅ identique |
+| Planète Optique | 699855835 (#121, MAKONGO Jean Dury, 35) | 699855835 (035) | ✅ identique |
+| Maff Optique Sarl | 699931956 (#123, MANFO Epse JOUNDA Hélène, 70) | 699931956 (070) | ✅ identique |
+| Lumumba OpticMedical | 670597996 (#144, NZIKANG Armstrong TUAMBI, 054/2018) | 670597996 (054/2018) | ✅ identique |
+| **FABY Optique** | **692080055** (#99, BOUDZAP ZOYEM Hermine, 118/**2017**) | 672552137 (BOUZAP ZOYEM Hermine, 118/**2021**) | numéro **+** année d'inscription **+** orthographe du nom |
+| **JiredOptic Med** | **696265031** (#120, LIPOTH Pierrette Lotie Elise, 116) | 695626632 (116/2021) | numéro |
+| **KamaïsOptic** | **690578227** (#122, MAKOUO KAMOKWE Honorine Judith, 112) | 699578227 (112) | numéro — mêmes 6 derniers chiffres, préfixe **690 vs 699** |
+| **Centrale Optique** | **693968956** (#145, ZOBO Jean, 044/2020) | 699598286 (ZOGO Jean Prosper, 044) | numéro **+** nom |
+
+**Règle née du re-pull :** **l'annuaire gagne** (c'est la page citée, et c'est elle qui publie les numéros par
+cabinet). Mais pour FABY, JiredOptic, KamaïsOptic et Centrale : si WhatsApp ne livre pas / ne répond pas,
+**tester le second numéro avant de classer le lead** — jamais un deuxième envoi sur le même numéro
+(règle 02/10 : au-delà de 7 jours sans réponse on change de canal, pas de wording).
+
+**Chauds, vérifiés aussi :** DISC 677533568 (#133, NANKAP TCHIPTCHOUA Jean Calvin) ✅ conforme.
+**Tchaya Optique = #153, TCHAYA PITCHA'A Yannick Patou, Douala, 696790173** — un numéro **existe**, alors que
+le plan ne prévoyait que Facebook. ⚠️ Ne pas confondre : **#67 « TchayaOptic » et #68 « Best View Sarl »
+(TCHAYA NGOKO) sont à YAOUNDÉ**, pas à Douala.
+
+⚠️ **BALI (envoi du 12/10) — rien à corriger, mais une affirmation à NE PAS faire.** Le CRM porte
+`670 27 60 65` avec `wa_verified="yes"` (source : « Douala sweep — 2 039 likes FB, pas de site »). L'annuaire
+publie **ce même numéro** sous **#107 « Optic-Swiss Sarl »** (inscription 169, titulaire FOTSING Alexis Daris),
+et la ligne la plus proche du nom du CRM est **#104 « L'Opticien Sarl »** (39, DOUALLA Karen Sophie,
+694 33 65 82). **Aucune ligne « L'Opticien Bali SARL » dans l'annuaire.** → (1) le numéro reste celui que King a
+vérifié sur WhatsApp ; (2) **aucune mention de l'inscription à l'Ordre dans l'opener de Bali** — pas de source
+pour CE cabinet, donc pas de claim (`content/strategy/RULE-CREDENTIAL-CLAIMS.md`).
+
+**Clients et fils existants, recoupés au passage — tous conformes :** **DM Optique #102 · 021/2016 · arrêté
+0382 · DOMCHE NOUMBI · 656122239** (la « ligne 102 » citée au dossier est toujours exacte, et `021/2016` est
+bien un **numéro d'inscription** — la source confirme elle-même `RULE-CREDENTIAL-CLAIMS`) · Le Cristallin #126
+(MESSOUE LONTE Serge Nazaire) 699905577 · Univers Optique #94 (BAYANG BIHEN Calvin) 699252874 · Cavisa #103
+(DONGMO Jean René, 059/2018) 699959052 · La Ligne OpticAkwa #109 (025/2017) 683651108 · Bely Optique Médicale
+#136 toujours inscrit (exclu depuis le 24/09, ne pas re-contacter).
+
+**Ce que la source NE donne PAS :** aucune donnée d'ancienneté, nulle part — uniquement des numéros
+d'inscription et d'arrêté. **Rien, dans le registre, ne permet d'écrire « depuis YYYY ».** La règle du 08/10
+est confirmée par la source elle-même.

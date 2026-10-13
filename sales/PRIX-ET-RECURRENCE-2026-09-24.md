@@ -189,3 +189,24 @@ classement, de citation ou de « visibilité » · jamais deux grilles en circul
 | Standard 30k / Essentiel 12k | **RETIRÉ — 05/10/2026 (sous-coupait la grille v3)** | anciens paliers retirés de tout nouveau contrat (50k les remplace) ; Essentiel 12k = domaine + veille + 30 min, proposé 23/09, JAMAIS envoyé ; voir clarificatif playbook. |
 | Try-on opticien | 900k pilote (300/300/300) · 1,4M opticien 2+ | inchangé — c'est le moteur (UNIT-ECONOMICS §v2). |
 Règle : un contrat signé ne se renégocie jamais ; une grille ne se réplique jamais vers le bas.
+
+---
+
+## Portée de l'abonnement — précision du 11/10 (lot [39], ruling King)
+
+**Règle de contenu ajoutée à la portée de l'abonnement :**
+> **Nous ne publions aucune image synthétique de votre entreprise.**
+
+**Portée exacte (ruling King, 11/10) :** la règle vise **l'entreprise du client** — son cabinet, son
+équipe, ses produits, ses patients — et **non toute imagerie**. Un visuel généré qui ne représente
+pas l'entreprise du client n'est pas visé.
+
+**Où cela doit apparaître :**
+1. **Modèle d'abonnement / portée du retainer** — c'est ici (il n'existe pas de fichier
+   « modèle de contrat » autonome dans le dépôt ; la portée de l'abonnement est définie dans ce
+   fichier, ligne 34). Fait.
+2. **Page opticiens** — `site/` ne contient **pas encore** de page opticiens (vérifié le 11/10).
+   **À ajouter quand la page sera construite.** Consigné comme en attente, pas comme fait.
+
+**Ce que ce n'est PAS :** ce n'est **pas** une phrase d'accroche de prospection (ruling King). Elle
+va dans les documents de portée, pas dans le premier message.
