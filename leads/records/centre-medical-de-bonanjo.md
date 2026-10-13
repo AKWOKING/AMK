@@ -1,6 +1,6 @@
 # Centre Médical de Bonanjo
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-12. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-13. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -83,7 +83,7 @@ Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, avait 
 `L3867` · (OraCare et Bonanjo au 28/09, MITOC · Skye · Yaks et Le Cristallin au 29/09, Labiomed au 1ᵉʳ octobre,
 `L3891` · | 5 | **Golden Eyes Optic** — Douala (Bonanjo, Atrium) | 699 312 588 | DJON II Achille Arnaud | **ils ont un site vivant** : Yaoundé d'abord, Douala en une ligne |
 `L3943` · **annuaires** (Maligah) qui sont restés à « Bonanjo, hypermarché Atrium, 2ᵉ étage ».
-`L4987` · Kamaïs/Bonanjo · Maff/Bonadibong · Faby · JiredOptic · Planète · Centrale) ; Lumumba + Bali hors
+`L5033` · Kamaïs/Bonanjo · Maff/Bonadibong · Faby · JiredOptic · Planète · Centrale) ; Lumumba + Bali hors
 
 ---
 

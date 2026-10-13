@@ -1,6 +1,6 @@
 # Horizon Optique
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-12. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-13. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -41,7 +41,7 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : DJEUMO FEUNOU Siméon. Probleme : 
 `L3531` · ③ 4M Optique Akwa (679 27 06 64) ④ Horizon Optique (677 44 74 17) ⑤ Fashion Vision (656 22 38 63). Ordre
 `L3595` · **Pas parti — HORIZON OPTIQUE (677 44 74 17) : WhatsApp répond « indisponible ».** Rien n'a été envoyé, et
 `L3623` · 677 44 74 17, aucune autre trace). Le message préparé n'est jamais parti ; la route de repli (SMS + script
-`L5007` · - **Horizon optique :** 677 44 74 17 PAS sur WhatsApp (King) — cohérent avec le CRM : disqualifié le
+`L5053` · - **Horizon optique :** 677 44 74 17 PAS sur WhatsApp (King) — cohérent avec le CRM : disqualifié le
 
 ---
 

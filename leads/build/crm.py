@@ -966,7 +966,8 @@ OPTICIENS_2109 = [
          last_send_state="sent", stage_since="2026-10-12",
          **{"Follow-up date": "2026-10-13",
             "Conversation": "12/10 matin — VAGUE : message gabarit envoyé au 699 85 58 35. "
-            "Fenêtre : silence → note vocale 13/10, appel 15/10 ; une réponse annule la fenêtre."},
+            "Fenêtre : silence → note vocale 13/10, appel 15/10 ; une réponse annule la fenêtre. "
+            "13/10 11:01 : relance « je voulais juste m'assurer que vous l'avez bien reçu, rien d'urgent » (capture King 13/10). Sans réponse à 14:33. Fenêtre 48 h (§7) : on attend."},
          notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : MAKONGO Jean Dury. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
     dict(slug="maff-optique", org="Maff Optique", city="Douala", org_type="other", language="FR",
          wa_number="699 93 19 56", wa_verified="unknown",

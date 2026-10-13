@@ -1,6 +1,6 @@
 # YONDJA ANALYSE
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-12. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-13. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -30,7 +30,7 @@ Envoyé 18/09 ~18:30, sans maquette. · ⚰️ MORT le 22/09 (lot du 18/09) — 
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 27 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 29 ligne(s).*
 
 `L30` · | **ven 18/09 ~18:30** | **YONDJA ANALYSE** (696 88 88 23) | msg 1 — **sans maquette** | Envoyé | **Non** |
 `L110` · | ~18:30 | Discovery Labs · UNI-LABO · YONDJA ANALYSE · Laboratoire du Château · Département Biologique · CAMERA · LE NID |
@@ -59,6 +59,8 @@ Envoyé 18/09 ~18:30, sans maquette. · ⚰️ MORT le 22/09 (lot du 18/09) — 
 `L4472` · écrites dans le §7 de l'analyse (produit principal avec abonnement / pied dans la porte en échange du statut de
 `L4607` · Écrit : `clients/uni-labo/analyse-logiciel-resultats-2026-09-27.md`. Sa description est précise — technicien
 `L4662` · lecture, et elle est corrigée dans l'analyse et dans le CRM.)*
+`L4966` · - **Recherche vérifiée contre les sources (pas reprise de la brief) :** deux chiffres rejetés : « 12x (9,4 % vs 0,8 %) » (un échantillon de 187 prospects et une donnée de listes achetées, pas une comparaison credential/déclencheur) et « cadrage de perte 2x » (méta-analyse O'Keefe & Jensen : pas de différence de persuasion ; le 2x vient de la aversion aux pertes en choix). Les chiffres 97 %, 76 % et 200 M sont **américains** ou attribués à Google : ne pas les présenter comme des faits locaux. Détail et étiquettes de source : `sales/RESEARCH-STANDARD.md` §10.
+`L4979` · - **Corrections logées :** « 12x (9,4 % vs 0,8 %) » rejeté (non comparable) ; « loss framing 2x » rejeté pour les messages (méta-analyse : pas d'écart de persuasion) ; « 97 % / 76 % / 200 M » sont des données américaines, jamais citées comme faits locaux. **Règle rappelée : tout chiffre dans un message de prospection porte une source, sinon il n'apparaît pas.**
 
 ---
 

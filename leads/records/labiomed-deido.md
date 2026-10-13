@@ -1,6 +1,6 @@
 # Labiomed
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-12. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-13. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -32,7 +32,7 @@ Envoyé le 19/09 à 19:32 — lu (2 coches). ***PREMIER OUI DE LA CAMPAGNE.*** 1
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 36 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 37 ligne(s).*
 
 `L366` · ## sam 19/09 19:21–20:02 — ⭐ PREMIER « OUI » DE LA CAMPAGNE : LABIOMED
 `L371` · - **23:59 → LABIOMED a répondu « Oui » à 19:43 — 11 minutes après notre message.**
@@ -70,6 +70,7 @@ Envoyé le 19/09 à 19:32 — lu (2 coches). ***PREMIER OUI DE LA CAMPAGNE.*** 1
 `L4794` · Le pipeline actif = 4 leads (Cristallin, Labiomed, Cavisa, Univers Optique) + DM OPTIQUE en closing +
 `L4922` · ## 10/10/2026 (samedi, 25ᵉ message de King, ≈17:00) — c01 validé · Labiomed maintenu à 100 000 · fiche Google (captures) · Univers (capture) · vague cliniques/labos
 `L4924` · - **Rulings King :** (1) **les 7 slides de c01 sont bonnes** : publication prévue mar. 13/10 19:25 inchangée ; (2) **Labiomed : 100 000 FCFA maintenu** (déjà annoncé le 19/09) ; (3) fiche Google : fait, lien de partage fourni par King : `https://share.google/dTV0eLlVbf4TVzJyG` (le lien n'est pas ouvrable depuis le bac : HTTP 500).
+`L4947` · - **Labiomed (Deido, Douala) :** historique exact (capture de King) : relance envoyée le 22/09 à 16:22 (maquette de labiomed.vercel.app) ; réponse du client le même jour à 16:41 : « Non pas encore je ne suis pas en place … quand je serai là je vais vous contacter » ; accusé de réception de King à 17:14, sans relance. Statut : **chaud-reporté, initiative du client, aucune relance.** Ruling King : aucune relance après le report.
 
 ---
 

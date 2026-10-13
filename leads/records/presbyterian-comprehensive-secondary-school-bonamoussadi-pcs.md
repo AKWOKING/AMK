@@ -1,6 +1,6 @@
 # Presbyterian Comprehensive Secondary School Bonamoussadi (PCSS)
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-12. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-13. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -43,7 +43,7 @@ Active FB page (1,785 likes, school fundraiser). Need phone before outreach — 
 `L3942` · Bonamoussadi** : l'affiche, le nouveau site et l'ancien site disent tous **Bonapriso** ; ce sont les
 `L3982` · Beneficial Life · Bonamoussadi, rond-point Maetur face Ola Energy) et trois numéros. Le message disait
 `L3987` · · **Lumumba** — deux pages Facebook + fiche APIE : **Bonamoussadi, face Parcours VITA**. Le message
-`L4946` · Conflit de quartier (Makepe ↔ Bonamoussadi) non résolu — à trancher avant tout re-engage.
+`L4992` · Conflit de quartier (Makepe ↔ Bonamoussadi) non résolu — à trancher avant tout re-engage.
 
 ---
 

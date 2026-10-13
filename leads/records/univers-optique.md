@@ -1,6 +1,6 @@
 # Univers Optique
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-12. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-13. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -56,7 +56,7 @@ trace de l'override proposé puis refusé. · Tag 12/10 : excluded_already_conta
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 157 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 158 ligne(s).*
 
 `L51` · | **ven 18/09 20:02** | **Clinique de L'université** (Bassa, 694 36 02 03) | msg 1 — sans maquette | Envoyé | **Non** |
 `L113` · | 20:02 | Cabinet Dentaire Emmanuel · Clinique de L'université · MEDI LABO |
@@ -212,9 +212,10 @@ trace de l'override proposé puis refusé. · Tag 12/10 : excluded_already_conta
 `L4922` · ## 10/10/2026 (samedi, 25ᵉ message de King, ≈17:00) — c01 validé · Labiomed maintenu à 100 000 · fiche Google (captures) · Univers (capture) · vague cliniques/labos
 `L4926` · - **Univers Optique (capture) :** King a envoyé le lien à **10:35** (« uo-essayage-camera.vercel.app », mode d'emploi, « rien ne se finalise sans votre validation ») ; le client était « last seen today at 16:13 », **aucune réponse à 17:00**. Le texte envoyé annonce la caméra en temps réel, le mode photo et le bouton « + » pour ajouter ses montures : la page en ligne contient bien ces trois éléments ; **la caméra n'a jamais été testée par nous sur un vrai téléphone** et le moteur de détection a besoin d'internet au premier lancement (la page le dit). Fenêtre §7 : envoi un samedi → pas de départ d'horloge ferme ; `Follow-up date` 2026-10-14 inchangée ; rien à envoyer.
 `L4941` · - **App d'essayage Univers :** King l'a testée sur son téléphone, « ça marche » ; il demande des améliorations après recherche → `clients/univers-optique/research/TRY-ON-IMPROVEMENTS-2026-10-10.md` (proposition, rien de modifié ; **la source de l'app n'est pas dans le dépôt**).
-`L4975` · - **05:58 RÉPONSE Univers Optique :** « Peut-être faudrait il que nous convenions pour les essais en
-`L4978` · - **10:43 ENVOI King → Univers Optique :** « Bonjour Docteur, merci pour votre retour. Vendredi me
-`L4990` · ## lun 12/10 10:46 — RÉPONSE Univers Optique : RDV CONFIRMÉ
+`L5021` · - **05:58 RÉPONSE Univers Optique :** « Peut-être faudrait il que nous convenions pour les essais en
+`L5024` · - **10:43 ENVOI King → Univers Optique :** « Bonjour Docteur, merci pour votre retour. Vendredi me
+`L5036` · ## lun 12/10 10:46 — RÉPONSE Univers Optique : RDV CONFIRMÉ
+`L5183` · - **Livrables (propositions, non loi) :** `sales/ICP-OPTICIENS-2026-10.md` (7 axes + veto, checklist, calibration DM/Univers) · `sales/QUALIFICATION-PROTOCOL-2026-10.md` (recherche citée §0, mapping BANT→AMK, question de besoin, question de délai) · `sales/RETRO-VAGUE-2026-10-12.md` (8 prospects scorés).
 
 ---
 

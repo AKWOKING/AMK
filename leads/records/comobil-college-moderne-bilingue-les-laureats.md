@@ -1,6 +1,6 @@
 # COMOBIL – Collège Moderne Bilingue Les Lauréats
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-12. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-13. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -51,11 +51,11 @@ Founded 1999 by decree; complex general/technical/anglo-saxon; COMOBIL.com is PA
 `L3322` · ### ⚠️ Le piège COMOBIL a encore frappé — dans le fichier que King lit le matin
 `L3843` · continué à réclamer une relance interdite — **le piège COMOBIL à l'envers** : la prose dit « stop », la
 `L4792` · - **Bulk close** : COMOBIL → lost (jamais contacté, aucun déclencheur de résurrection) ; 20 leads contactés
-`L4948` · ## dim 11/10 (nuit) — AUTOPSIE INTERNE COMOBIL (§8d, ruling King) — faite une fois, jamais re-engagé
-`L4951` · de référence à la perte dans un outreach futur ; si COMOBIL initie un contact plus tard = fil neuf,
-`L4954` · **Chronologie :** début sept. — repéré au sweep écoles (COMOBIL.com PARKED, vérifié 09/09/26 =
-`L4955` · angle D/E fort) · 14/09 — concept `concept-comobil-v1.html` construit ET lead **parké (décision
-`L4957` · (bug M7, corrigé depuis : la décision va dans le générateur) · 02/10 — King « COMOBIL dead » →
+`L4994` · ## dim 11/10 (nuit) — AUTOPSIE INTERNE COMOBIL (§8d, ruling King) — faite une fois, jamais re-engagé
+`L4997` · de référence à la perte dans un outreach futur ; si COMOBIL initie un contact plus tard = fil neuf,
+`L5000` · **Chronologie :** début sept. — repéré au sweep écoles (COMOBIL.com PARKED, vérifié 09/09/26 =
+`L5001` · angle D/E fort) · 14/09 — concept `concept-comobil-v1.html` construit ET lead **parké (décision
+`L5003` · (bug M7, corrigé depuis : la décision va dans le générateur) · 02/10 — King « COMOBIL dead » →
 
 ---
 

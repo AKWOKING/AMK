@@ -1,6 +1,6 @@
 # Faby Optique
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-12. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-13. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -38,7 +38,7 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : BOUDZAP ZOYEM Hermine. Probleme : 
 
 *Source : `sales/Activity-Log.md` — citation, jamais recopie. 1 ligne(s).*
 
-`L5020` · - **Faby Optique :** 692 08 00 55 PAS sur WhatsApp → tester 672 55 21 37 avant de classer (ruling
+`L5066` · - **Faby Optique :** 692 08 00 55 PAS sur WhatsApp → tester 672 55 21 37 avant de classer (ruling
 
 ---
 
