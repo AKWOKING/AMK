@@ -162,3 +162,42 @@ réponse 14:58 — voix du mar. 13/10 et appel du jeu. 15/10 sans objet.*
 - **Ton semi-formel :** pas de raideur, plus de formules d'office ; le **vous** reste (respect du client), « Bonjour Monsieur » reste. Phrases courtes, comme à l'oral.
 - **Pas de phrase de justification qui n'est pas nécessaire** : cas fondateur, DM Optique 10/10, « car nous ne montrons que du vrai » retirée — la raison est déjà dite par « illustrations pour l'instant, vos vraies montures viendront avec la séance photo ».
 - **Portée :** s'applique aux brouillons écrits à partir du 10/10 ; les envois et brouillons antérieurs ne sont pas réécrits. Les ruled texts verbatim de King restent verbatim. *(Portée à tous les clients ou à DM Optique seulement : à confirmer par King ; en attendant, appliqué à tous les brouillons.)*
+
+## 12 · Template de vague v2 — ouverture par un comportement (APPROUVÉ par King 13/10 · NON EN VIGUEUR)
+
+> **Statut : approuvé par King le 13/10/2026 (avec correctif du titre), mais PAS EN VIGUEUR.** Il ne devient le template de référence qu'après confirmation par King du premier envoi. Le template vivant de la vague ne change pas d'ici là. Sources : `sales/RESEARCH-STANDARD.md` §10.
+
+### 12.1 · Texte approuvé (FR, 4 phrases, vous, « je », ton semi-formel — §8)
+
+```
+Bonjour {Titre} {Nom}, je fais des sites pour les cabinets d'optique à Douala. Quand quelqu'un a besoin de lunettes ou d'une consultation et ne connaît pas encore de cabinet, son premier réflexe est de chercher sur Google ou Facebook. Même si vos patients vous connaissent déjà, un nouveau patient, lui, vous trouvera-t-il ? Puis-je vous montrer en deux minutes ce qu'il voit quand il vous cherche ?
+```
+
+Règles appliquées :
+- **Ouverture par un comportement, sans chiffre.** Décision de King 13/10. Aucune statistique n'apparaît dans le message. Règle générale : **un chiffre dans un message de prospection porte une source, sinon il n'apparaît pas.**
+- **Douleur implicite (cadrage de perte)** : phrase 3. Hypothèse à tester, pas un acquis (§10).
+- **Question de permission** : phrase 4. Pas d'offre, pas de prix (ruling King 02/10).
+- **Pas de personnalisation fausse** : seul le nom et le titre, tels qu'ils figurent dans la fiche vérifiée. Aucun compliment inventé.
+- **Titre (correctif King 13/10, remplace « Docteur » du texte approuvé) :** `{Titre}` se remplit ainsi, sans deviner :
+  - « Dr. » ou médecin confirmé → « Docteur »
+  - « M. » → « Monsieur »
+  - « Mme » → « Madame »
+  - titre inconnu → la phrase devient « Bonjour {Nom}, je fais des sites… » (titre supprimé)
+  - **Source du titre : ONOC uniquement. Jamais déduit du nom ni du cabinet.**
+- **Amélioration :** un champ `titre` sera ajouté à la fiche CRM via `leads/build/crm.py` **après approbation de King** (action : orchestrateur rédige le changement, King approuve, rebuild et vérification de la sortie).
+
+### 12.2 · Plan de test A/B (approuvé dans son principe, non lancé)
+
+- **Bras A (contrôle) :** le template vivant de la vague, **copié tel quel au moment du test** (étape à faire par l'orchestrateur ou par King). **Point ouvert :** aucun fichier unique de « template vivant » n'a été identifié dans le dépôt le 13/10. Les envois récents (ex. `sales/Send-BATCH-2026-09-24-Opticiens.md`) suivent le même schéma, mais leur statut « vivant » n'est pas confirmé. King doit désigner le fichier ou coller le texte.
+- **Bras B (variante) :** le texte §12.1.
+- **Répartition :** en alternance sur la liste triée par identifiant CRM (1er = A, 2e = B, …). Pas de choix manuel par prospect.
+- **Mesures :** (1) taux de réponse (toute réponse) ; (2) taux de réponse positive ; (3) réponses sous 48 h. Mesure figée 7 jours après le premier envoi du lot.
+- **Fenêtre :** §7 s'applique à chaque envoi. Une réponse annule la fenêtre. Pas de relance pendant le test, sauf règle §7.
+- **Limite acceptée (King 13/10) :** environ 140 prospects par bras pour une conclusion solide (5 % contre 15 %, 80 % de puissance). Un lot de n≈30 donne seulement une tendance. **On lance quand même, et on compte sur 4 à 5 vagues** avant de décider.
+- **Décision :** King décide à partir des chiffres cumulés par bras. Aucun passage automatique du B au template vivant.
+
+### 12.3 · Journal des résultats
+
+- **Aujourd'hui :** la colonne de variante n'existe pas dans `leads/CRM.csv`. Le schéma est généré par `leads/build/crm.py`, qui est la source. **Ne pas modifier le CSV à la main.** Ajouter `wave_variant` (A ou B) passe par `crm.py`, **après approbation de King**.
+- **En attendant :** chaque envoi du test est noté dans `sales/Activity-Log.md` avec son bras (A ou B), la date et l'identifiant CRM.
+- **Après approbation :** colonne ajoutée via `crm.py`, puis rebuild et vérification de la sortie (règle du 02/10 : rc=0 n'est pas une preuve).

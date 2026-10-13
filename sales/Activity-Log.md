@@ -4939,3 +4939,49 @@ lead content de « la seule vidéo publiée » — vérifier d'abord que le lead
 - **Fiche Google (capture « Business information ») : correction de mon avis du 17:00.** Les zones desservies sont **Buea, Kumba, Limbe, Douala, Yaoundé** ; la carte publique affiche seulement « Buea and nearby areas » (résumé de Google). Mon alerte « Douala manque » était **fausse** (j'avais lu la carte, pas les réglages). Horaires réglés par King : **lun–sam 10:00–21:00, dimanche fermé** ; pas d'adresse (« deliveries and home services only ») ; réseau social listé : TikTok `@amkweb` (en `http`). **Le document de page Facebook du 14/09 est périmé** sur trois points : horaires (08:00–19:00), lieu (Buea), et ses textes de publication (prix « dès 100 000 FCFA » et « livrés en 3 à 5 jours » : à ne pas réutiliser).
 - **Ruling King : Messenger** pour les cliniques et labos non joignables sur WhatsApp, **et « nous aurons aussi à avoir et à maintenir une page professionnelle pour nous-mêmes »** (page Facebook AMK). Recherche du 10/10 : l'aide officielle de Messenger dit qu'une Page peut envoyer jusqu'à **10 demandes de message par jour** à des personnes ou des Pages, **fonction « en cours de déploiement, pas disponible pour toutes les Pages »**, et le destinataire doit autoriser les messages de vous ; des sources tierces de 2024 disent qu'une Page ne peut pas écrire à une Page. **Contradictoire et daté : à vérifier dans la Page elle-même avant de bâtir un plan dessus.**
 - **App d'essayage Univers :** King l'a testée sur son téléphone, « ça marche » ; il demande des améliorations après recherche → `clients/univers-optique/research/TRY-ON-IMPROVEMENTS-2026-10-10.md` (proposition, rien de modifié ; **la source de l'app n'est pas dans le dépôt**).
+
+## 13/10/2026 (mardi, matin) — pipeline vidéo Flow · journal des prospects (captures)
+
+- **Pipeline vidéo :** nouveau pipeline Flow + ChatGPT pour toutes les vidéos futures (ruling King). L'avatar Google Flow reste le protagoniste. `render.mjs` reste en secours. Document : `content/strategy/VIDEO-PIPELINE-FLOW-2026-10.md` (crédits et fonctions non vérifiés marqués [NV]). Le PRE-FLIGHT renvoie désormais à ce document pour la vidéo.
+- **Planète Optique (Douala) :** premier message le 12/10 à 11:34 (aperçu de présence en ligne avec bouton WhatsApp, « vous voulez le voir ? »), sans réponse. Relance d'aujourd'hui, 13/10 à 11:01 : « je voulais juste m'assurer que vous l'avez bien reçu, rien d'urgent ». Fenêtre de réponse de 48 h ; on attend, rien d'autre.
+- **Labiomed (Deido, Douala) :** historique exact (capture de King) : relance envoyée le 22/09 à 16:22 (maquette de labiomed.vercel.app) ; réponse du client le même jour à 16:41 : « Non pas encore je ne suis pas en place … quand je serai là je vais vous contacter » ; accusé de réception de King à 17:14, sans relance. Statut : **chaud-reporté, initiative du client, aucune relance.** Ruling King : aucune relance après le report.
+- **Agenda du 13/10 (brief King) :** 15:30 rendez-vous avec DM Optique SARL ; 19:00 publication de la vidéo POST-01. L'agenda Google `primary` ne renvoie aucun événement pour le 13/10 : lookup non fiable, à confirmer par King.
+- **POST-02 :** AUCUN script. En attente : décision de King après les métriques 48 h de POST-01 (jeudi 15/10 à 19:00). L'angle « 3 opticiens sur 4 à Douala n'ont pas de site » est un candidat, pas une décision.
+- **Calendrier :** non maintenu. Les événements viennent de King directement ; un calendrier vide n'est pas un signal.
+- **Vidéo publiée :** la version Flow (sur le téléphone de King, hors dépôt). Le `render.mjs` est la version antérieure. Si King téléverse `content/pipeline/POST-01-v4-FLOW.mp4`, l'archiver (pas urgent). Archivage uniquement si POST-01 performe (rétention 3 s > 60 %, commentaires positifs).
+- **Accès Flow :** confirmé fonctionnel sur les comptes de King ce 13/10. Chiffres réels à fournir par King après la séance de cohérence de demain. Restent [NV] : bonus de 100 crédits, clips de 10 s, chaîne Extend, limite de 3 références.
+- **Demain 14/10 (prévu, pas commencé) :** bible du personnage (2–3 images de référence), plaque d'environnement (1 image), logo PNG (1 image), modèle de prompt Flow, workflow de chaîne Extend, mise à jour du document avec les chiffres réels, puis commit du document et du PRE-FLIGHT (uniquement après confirmation de King).
+
+## 13/10/2026 (mardi, soir) — rôle de l'orchestrateur · décision Graphify · table décision → fichiers
+
+- **Rôle de l'orchestrateur (confirmé par King) :** écrit les scripts et les prompts. **N'a pas besoin d'accès Google Flow.** Flow est l'outil d'exécution de King. Livrables par vidéo : script, prompt Flow, prompt ChatGPT, légende TikTok. Les points [NV] du document Flow sont à vérifier par King, pas par l'orchestrateur.
+- **Graphify : non retenu pour l'instant.** Outil de graphe de connaissances pour code (AST + extraction sémantique). Le dépôt est à ~80 % markdown ; l'outil exigerait un backend LLM configuré, coût non justifié à cette échelle. Ce qui existe couvre l'essentiel : table de routage du PRE-FLIGHT (graphe manuel), lecture §0c, journal d'activité. **Déclencheurs de réévaluation (un suffit) :** dépôt au-delà de 150 fichiers · 2+ incidents « fichier introuvable » en une semaine · une règle qui impose de modifier 5+ fichiers dans plusieurs dossiers et qui est oubliée. D'ici là : aucune installation.
+- **Table décision → fichiers :** ajoutée à `PRE-FLIGHT.md` (§0d). Chaque ligne est vérifiée contre le dépôt.
+- **Commit de `content/strategy/VIDEO-PIPELINE-FLOW-2026-10.md` :** après la séance de cohérence de demain (14/10), sur confirmation de King. Non fait ce soir.
+- **Règle de découpage des légendes (ruling King 12/10) :** le commit « 9294cf2 » cité dans le fil n'existe pas dans le dépôt, et la règle n'était pas dans `CONTENT-STRATEGY-V2-2026-10-05.md`. Écrite maintenant comme §7 de ce fichier (13/10). Ligne du PRE-FLIGHT §0d pointée vers ce fichier, plus de « dossiers de contenu ».
+- **Ligne 3-Ingredient :** acceptée telle quelle, pointe vers `VIDEO-PIPELINE-FLOW-2026-10.md`. Sera mise à jour après la séance du 14/10.
+
+## 13/10/2026 (mardi, midi) — recherche d'ouverture par un fait · template v2 (brouillon) · plan A/B
+
+- **Recherche vérifiée contre les sources (pas reprise de la brief) :** deux chiffres rejetés : « 12x (9,4 % vs 0,8 %) » (un échantillon de 187 prospects et une donnée de listes achetées, pas une comparaison credential/déclencheur) et « cadrage de perte 2x » (méta-analyse O'Keefe & Jensen : pas de différence de persuasion ; le 2x vient de la aversion aux pertes en choix). Les chiffres 97 %, 76 % et 200 M sont **américains** ou attribués à Google : ne pas les présenter comme des faits locaux. Détail et étiquettes de source : `sales/RESEARCH-STANDARD.md` §10.
+- **Chiffres camerounais (datés, étiquetés estimation) :** Facebook 6,84 M (sept. 2026, 21,9 % de la population), Messenger 6,6 M, WhatsApp ~9–10 M (estimation).
+- **Template v2 :** brouillon `sales/CLIENT-MESSAGING-RULES.md` §12, **non en vigueur**. Le template vivant n'a pas été modifié. Rien n'a été envoyé.
+- **Plan A/B :** alternance par identifiant CRM, mesure à 7 jours, environ 140 prospects par bras pour détecter 5 % contre 15 %. Un lot de 30 ne tranchera rien.
+- **Journal CRM :** la colonne de variante n'existe pas. Elle passe par `leads/build/crm.py` après approbation de King. D'ici là, les envois sont notés ici avec leur bras.
+- **En attente de King :** approbation du template v2, et choix d'un chiffre sourcé ou de la formule sans chiffre.
+
+## 13/10/2026 (mardi, après-midi) — template v2 approuvé (non en vigueur) · corrections logées
+
+- **Décision King :** texte v2 approuvé (formulation de l'orchestrateur, sans chiffre), **mis à jour dans `sales/CLIENT-MESSAGING-RULES.md` §12, marqué NON EN VIGUEUR** jusqu'à confirmation du premier envoi par King. Rien n'a été envoyé.
+- **Contrôle :** le template vivant n'a pas pu être identifié dans le dépôt comme un fichier unique. Candidat (non confirmé) : `sales/Send-BATCH-2026-09-24-Opticiens.md`. King doit désigner le fichier ou coller le texte avant le test.
+- **Point signalé, non modifié :** « Docteur » dans le texte approuvé suppose un médecin ; à adapter selon le titre vérifié du destinataire.
+- **Test A/B :** accepté dans sa limite (n≈30 par vague = tendance seulement). Lancement prévu sur 4 à 5 vagues, décision ensuite.
+- **Corrections logées :** « 12x (9,4 % vs 0,8 %) » rejeté (non comparable) ; « loss framing 2x » rejeté pour les messages (méta-analyse : pas d'écart de persuasion) ; « 97 % / 76 % / 200 M » sont des données américaines, jamais citées comme faits locaux. **Règle rappelée : tout chiffre dans un message de prospection porte une source, sinon il n'apparaît pas.**
+- **Journal CRM :** colonne `wave_variant` à ajouter via `leads/build/crm.py` après approbation de King. D'ici là, les envois du test sont notés ici, avec leur bras.
+
+## 13/10/2026 (mardi, après-midi) — §0e ajoutée · titre corrigé dans §12 · contrôle documenté
+
+- **§0e (règle King 13/10) :** « Tout audit qui relève un problème doit contenir : correctif, amélioration, action. » **Absente du PRE-FLIGHT à la vérification : ajoutée maintenant** (`PRE-FLIGHT.md` §0e).
+- **Titre corrigé (§12, approuvé mais corrigé) :** « Docteur » remplacé par `{Titre}` : Dr./Docteur → « Docteur », M. → « Monsieur », Mme → « Madame », inconnu → phrase sans titre. Source du titre : ONOC uniquement. Champ `titre` à ajouter à la fiche CRM via `crm.py` après approbation de King.
+- **Contrôle documenté :** `sales/WAVE-TEMPLATE-CURRENT.md` créé (texte du 12/10). Preuve vérifiée : Planète Optique (capture, 12/10 11:34). **JiredOptic : non vérifié** (CRM : `Contacted = No`, aucune trace d'envoi dans le dépôt). À confirmer par King.
+- **Action :** King confirme la date et la liste des envois du 12/10. Orchestrateur complète le fichier contrôle à partir de cette réponse.

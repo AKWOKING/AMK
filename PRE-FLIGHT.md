@@ -24,6 +24,42 @@ If a folder/file is missing, empty or unreadable → say so in that line and eit
 
 ---
 
+## 0e · Audit de soi : correctif, amélioration, action (ruling King 13/10)
+
+Tout audit qui relève un problème doit contenir trois éléments. Un audit sans correctif proposé est incomplet.
+
+1. **Le correctif** : précis, dit ce qui change dans quel fichier.
+2. **L'amélioration** : durable, sous forme de règle, de contrôle ou de changement de modèle, pour que le problème ne revienne pas.
+3. **L'action** : qui fait quoi (orchestrateur, King, ou les deux).
+
+**Règle complémentaire (King 13/10) :** les chiffres et états que l'orchestrateur affirme (une date, un compte, l'état d'un fichier ou d'une fiche) sont **vérifiés contre la source avant d'être affirmés**. Ce qui ne peut pas être vérifié est dit comme tel. La confiance n'est pas une vérification.
+
+**Instruction ≠ état :** une règle annoncée n'est pas une règle présente. Avant de la citer, l'orchestrateur vérifie qu'elle figure dans le fichier.
+
+---
+
+## 0d · Décision → fichiers touchés (table manuelle, 13/10/2026)
+
+Quand une règle change ou qu'un ruling est donné, cette table dit quels fichiers il faut relire et mettre à jour. Chaque ligne est vérifiée contre le dépôt. Ajouter une ligne à chaque nouvelle règle permanente.
+
+| Règle | Fichiers qu'elle gouverne |
+|---|---|
+| **Credential rule** (ne jamais revendiquer ce qu'on ne peut pas prouver) | `content/strategy/RULE-CREDENTIAL-CLAIMS.md` · pages client (`clients/*/`, `site/`) · textes de publication (`content/carousels/`, `content/scripts/`) |
+| **Caption-split / découpage de légende (ruling King 12/10 : frontières de phrase, jamais de fragment)** | `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` §7 (fichier d'origine) · appliquée dans `content/scripts/` et `content/strategy/VIDEO-PIPELINE-FLOW-2026-10.md` |
+| **Wave gate / relances (24 h, 48 h, 7 j, changement de canal)** | `sales/CLIENT-MESSAGING-RULES.md` · `leads/CRM.csv` · `leads/build/crm.py` · `leads/PIPELINE.md` · `sales/Activity-Log.md` |
+| **Ruling « relance interdite après report du client » (Labiomed)** | `leads/CRM.csv` · `leads/records/labiomed-deido.md` · `leads/KILL-LIST.md` · `sales/Activity-Log.md` |
+| **ICP (clinique / optique, seuil MQL)** | `sales/Deep-Dive-Research.md` · `sales/LeadSourcing-Reset-2026-09-18.md` · `sales/AMK-Sales-Playbook-v2.md` · `sales/LISTE-OPTICIENS-2026-10.md` · listes de vague (`sales/Send-BATCH-*.md`) |
+| **3-Ingredient rule (avatar, décor, logo)** | `content/strategy/VIDEO-PIPELINE-FLOW-2026-10.md` §3 · prompts Flow (§5) · `PRE-FLIGHT.md` §routage vidéo |
+| **Règle vidéo : Flow remplace render.mjs, render.mjs = secours** | `PRE-FLIGHT.md` (routage vidéo) · `content/strategy/VIDEO-PIPELINE-FLOW-2026-10.md` · `content/pipeline/CONTENT-PIPELINE.md` |
+| **Orchestrateur : livrables par vidéo (script, prompt Flow, prompt ChatGPT, légende TikTok)** | `content/strategy/VIDEO-PIPELINE-FLOW-2026-10.md` §2 · `content/pipeline/CONTENT-PIPELINE.md` |
+| **Accès Flow / chiffres [NV] : vérifiés par King, pas par l'orchestrateur** | `content/strategy/VIDEO-PIPELINE-FLOW-2026-10.md` §9 et points ouverts |
+| **Publication : rien n'est publié sans validation de King** | `content/strategy/POSTING-CALENDAR.md` · `content/strategy/CALENDRIER-4-SEMAINES-2026-10-12.md` |
+| **POST-02 en attente (pas de script avant décision de King)** | `content/pipeline/CONTENT-PIPELINE.md` · `content/strategy/POSTING-CALENDAR.md` · `sales/Activity-Log.md` |
+
+Si cette table ne suffit plus à suivre la propagation entre fichiers, c'est le déclencheur pour réévaluer un outil de graphe de connaissances (voir la décision Graphify dans `sales/Activity-Log.md`).
+
+---
+
 ## 1 · Routing table (King's fields → the actual files in this repo)
 
 The rule names abstract folders; these are where the lessons actually live. Load **all** relevant rows when a task spans several types.
@@ -65,7 +101,7 @@ pré-vol charge, **en plus du dossier métier**, les sections pertinentes de la 
 | Task type | + knowledge base |
 |---|---|
 | **Sales / outreach / proposal** | §2, §8 |
-| **Content / script / video / caption** | §7, §8 |
+| **Content / script / video / caption** | §7, §8 · **vidéo : `content/strategy/VIDEO-PIPELINE-FLOW-2026-10.md` (pipeline Flow + ChatGPT, remplace `render.mjs` ; `render.mjs` = secours uniquement)** |
 | **Marketing / strategy** | §3, §5 |
 | **Ads / campaign** | `clients/<slug>/ads/campaign-brief.md` (quand il existe) + §4, §5 |
 | **Design / build** | §1 |

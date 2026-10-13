@@ -59,3 +59,13 @@ produit. Nouveau cadre :
 publication n'a pas de lecture archivée — les chiffres de King uniquement, jamais estimés).**
 Rétention moyenne 18 % (narrée) vs 13 % (son tendance) ; cliff à 0:02 sur les deux ; +1 abonné au
 total ; Cameroun 99 %. C'est peu, et c'est le vrai point de départ.
+
+## 7 · Règle de découpage des légendes (ruling King, 12/10/2026)
+
+Ajoutée ici le 13/10 : la règle n'était pas présente dans ce fichier (le commit « 9294cf2 » cité dans le fil n'existe pas dans le dépôt, vérifié le 13/10).
+
+- Les découpes de légende se font aux **frontières de phrase naturelles** : virgules, deux-points, ou ruptures de sens où la légende reste une unité complète.
+- **Ne jamais couper au milieu d'une phrase.**
+- **Ne jamais couper de façon qu'une partie se lise comme un fragment.**
+
+Cette règle s'applique à toutes les vidéos (scripts `content/scripts/`, pipeline `content/strategy/VIDEO-PIPELINE-FLOW-2026-10.md`, légendes TikTok).

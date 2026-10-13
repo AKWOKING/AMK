@@ -129,6 +129,32 @@ Six lookups, ~10 minutes, **before** the draft — never after:
 - Every King correction is logged here as an error-log entry with: what was wrong, which poisoned source caused it, what check would have caught it, and which OTHER dossiers used that source (they get re-checked the same day).
 - When a source type proves unreliable in one dossier (here: medicoor doctor rosters + truncated PDF provider lists), every other dossier's facts from that source type are demoted one tier until re-verified.
 
+## 10. Opener research — trigger-based openers, loss framing, local search, Cameroon (13/10/2026)
+
+Filed 13/10 for King's test of a fact-based opener on the next wave (ruling King 13/10). Every figure below was checked against its source on 13/10. **Two of the claims in the original brief did not survive the check and are recorded as corrected, not used.**
+
+| Claim in the brief | Verdict | What the sources actually say |
+|---|---|---|
+| "Trigger-based openers outperform credentials 12x (9.4% vs 0.8%)" | **REJECTED — not a valid comparison** | The 9.4% is one practitioner's sample of 187 prospects with a tight ICP and short copy, not a trigger-vs-credential test (prospeo.io, 2026). The 0.8% is the reply rate of **purchased lists** (cleanlist.ai, Jul 2026), not credential openers. No source here compares the two. The 12x ratio is unsupported. Do not cite it. |
+| Signal-triggered outreach beats cold-list outreach | **Tier C, directional** | Cold lists 1–2% reply vs signal-triggered 4–8%, in a benchmark blog's aggregation (getcleed.com, May 2026). Aggregator; not independently checked. Use as a hypothesis only. |
+| "Loss framing outperforms gain framing 2x" | **REJECTED for persuasion messages** | O'Keefe & Jensen meta-analysis, 165 studies, N = 50,780: no reliable overall difference between loss and gain frames (mean r = .016, CI −.004 to .035). For disease-prevention behaviours gain frames were slightly better (r ≈ .046). The "2x" figure is Kahneman & Tversky's loss aversion in **choices** (losses weigh about twice gains), not a measured reply-rate effect in messages. The loss-framed opener is therefore a **hypothesis to test**, not an established lever. |
+| Problem-aware framing "activates a cognitive open loop" | **Not sourced — removed** | No source checked supports the open-loop mechanism for cold outreach. Keep only as a design hypothesis. |
+| 97% of people check a business online before buying | **Tier B, but US, and reworded** | BrightLocal Local Consumer Review Survey 2026 (US panel, n = 1,002): **97% read reviews before choosing a local business** (makeitloud.net, usecarly.com, both citing BrightLocal). The "scope out a digital presence" wording is a secondary paraphrase (soci.ai). Use the review wording only. US panel; no Cameroon figure exists here. |
+| 76% of "near me" searchers visit a business within a day | **Tier C, US/Google-reported, secondhand** | Google-attributed, cited by soci.ai, resourcera, backlinko (2025–2026). Not a Cameroon figure. Do not present as local fact. |
+| 200 million "near me" searches | **Tier C, US only** | resourcera.com (Jul 2026): more than 200 million "near me" searches per month in the **US**, early 2026. Not a Cameroon figure. Do not present as local fact. |
+
+**Cameroon data (usable with dates and sources):**
+- Facebook: **6,844,400 users, Sep 2026, 21.9% of population** (NapoleonCat, updated monthly; 57.8% men; the 25–34 group is the largest). Tier C (third-party estimate).
+- Messenger: **6,600,000 users** (NapoleonCat, Sep 2026). Tier C.
+- Facebook share of social-media page views: **82.88%** (StatCounter, Sep 2026). Tier C.
+- WhatsApp: **estimated 9–10 million users, about 80% of internet users** (askyazi.com, Jul 2026; an estimate, not a measured count). Tier C. Use as "environ 9 à 10 millions (estimation)" only.
+- Internet users: 12.4 million, 42% penetration, start of 2025 (askyazi.com). Tier C.
+- TikTok: no Cameroon-specific figure was found in these checks. Do not claim a TikTok number.
+
+**Implication for the opener:** the brief's sentence about consumer behaviour (« quand quelqu'un cherche des lunettes ou une consultation, le réflexe c'est une recherche Google ou TikTok ») is an **observation, not a sourced fact**. The only sourced behavioural figures are US, or Google-reported. The v2 opener (approved by King 13/10) describes a behaviour and uses **no number**. The Cameroon Facebook count is recorded above as a third-party estimate and is not used in the message. See `sales/CLIENT-MESSAGING-RULES.md` §12 (draft, not live).
+
+**Open items:** no Cameroon-specific search-behaviour statistic was found. The A/B test (CLIENT-MESSAGING-RULES §12) is the only way to learn whether the opener works here.
+
 ## Error log
 - **#2, 15 Sep, PCSS (King correction):** msg 1 draft claimed "other schools in the Presbyterian network already run theirs", citing PCSS Bonamoussadi (Douala). King: NO PCC Cameroon secondary school has a website; it appears deliberate, and missionary principals do not decide (education secretary/Synod/board above them). Verification agreed: Bonamoussadi is a 2020 local-congregation (PC Bonamoussadi) IDP-response school, not PCC-network precedent. The claim would have been factually disputable by the recipient AND pitched to a non-buyer. Caught by King before send. Fixes: §4 steps 6-7 added (authority/governance classification + precedent check); all missionary/confessional secondaries reclassified BOARD-BUYER and parked (PCSS, Baptist Comp., SJC Sasse/diocesan, St Sylvester, Bishop Jules); lay private leads unaffected (St Theresa STIBCCOL = lay, Baird Memorial = private, Summerset/NABESK = lay).
 - **#1, 15 Sep, Solidarity:** named deceased founder as current doctor; conflated name variants; assumed second doctor's employment; nearly messaged his personal line. Causes: Tier C roster used as fact, no obituary check, no role dating, personal/org number conflation. Caught by King before send. Fixes: this whole standard. Same-source sweep: MITOC came from the org's own Facebook intro (Tier A, unaffected); parked clinics (Liwo/Soliman/St Veronica) were based on their own websites (Tier A, unaffected).
