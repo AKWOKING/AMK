@@ -15,7 +15,7 @@
 | **Critère** | **75 000 FCFA** réellement **encaissés** sur le compte — pas annoncés, pas « en cours », pas promis |
 | **Vérification** | Relevé bancaire. Une capture de conversation WhatsApp ne vaut pas encaissement |
 | **Si non** | ⛔ **Tout s'arrête ici.** Les items 2 à 10 ne sont pas entamés |
-| **État** | ☐ |
+| **État** | ☑ **Encaissé en espèces le 13/10/2026 — déclaré par l'opérateur, sans reçu écrit ni relevé bancaire.** Preuve retenue selon la pratique locale (confiance d'abord). Faible traçabilité : à garder en tête pour le solde de 75 000 FCFA à la livraison. |
 
 > **Pourquoi c'est le portique et pas une formalité.** L'accord est **verbal**. Rien d'écrit n'engage
 > le paiement. Produire avant l'encaissement, c'est travailler à perte sur une promesse.

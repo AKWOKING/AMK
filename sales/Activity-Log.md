@@ -5264,3 +5264,10 @@ prénom sourcé, rendus en chat le 12/10.
 - **Périmètre (décision de King) :** tout ce qui n'est pas indispensable au site est mis de côté jusqu'à ce que l'usage le justifie. Conséquences : pas de pixels ni de GA4, pas d'embed de carte, pas d'icônes sociales avant les comptes, pas de fiche monture ni de filtres en premier lieu, pas de témoignages (brief §6), pas de À propos avant le reste.
 - **Comptes sociaux :** création dédiée à planifier par King, après la visite de vendredi (photos archivées) et la confirmation des jours d'ouverture. Comptes au nom du cabinet, créés avec le téléphone de M. Domche (`launch/SETUP-FACEBOOK.md`, `launch/SETUP-TIKTOK.md`), AMK en administrateur. **Les fichiers de setup sont périmés** : heures « 8h00–17h30 » (non confirmées, et l'examen finit à 13h00), premier post prévu le 13/10 et « est maintenant en ligne » avant tout site en ligne. À réécrire avant la session.
 - **Rien n'est publié** sans validation de King (`CONTENT`, règle « publication »).
+
+## 15/10/2026 (jeudi, 17:10) — paiement consigné, deuxième visite datée, réponses client documentées
+
+- **Paiement :** item 1 de la checklist coché sur déclaration de l'opérateur : 75 000 FCFA reçus en espèces le 13/10/2026, sans reçu écrit ni relevé. Pratique locale assumée par l'opérateur ; à garder en tête pour le solde de 75 000 à la livraison. L'item 2 (RIB et NIU d'AMK) reste ouvert.
+- **Visites :** 1re visite 07/10 (brief §4) · **2e visite 13/10** (jour de l'acompte, client fondateur) · 3e visite vendredi 16/10.
+- **Réponses client (17:08) :** parcours et motivation → `clients/dm-optic/onboarding/REPONSES-CLIENT.md`. Titres et diplômes déclarés, non prouvés : rien de publiable sans pièce. Question « qu'est-ce qui vous différencie » non traitée.
+- **Questions restantes :** marques et montures les plus vendues · clientèle habituelle · publicité (ce qu'on peut dire sans prix, mots à éviter). Pas de nouvelle question avant leurs réponses.
