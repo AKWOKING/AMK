@@ -106,3 +106,8 @@ Notes de contrôle :
 - **Réponse envoyée par King** (18:10, 18:14, 18:18), différente du brouillon : « Je ne peux pas vous garantir ce nombre là par mois surtout au début, je ne veux pas faire des promesses que je ne pourrai pas tenir » · « On va commencer par mesurer pendant 60 à 90 jours le nombre de messages WhatsApp et de rendez-vous par mois, ensuite nous fixons un objectif à partir de vos chiffres réels » · « Pour commencer, pouvez-vous me dire combien de patients vous recevez en moyenne par mois ? Et notre objectif sera d'augmenter ce chiffre petit à petit avec le temps, qu'est-ce que vous en dites ? »
 - **Pas de réponse du client** à la question du volume de patients au 18:25 (client en ligne).
 - **Deux numéros WhatsApp** : le sien (656 12 22 39) et celui de son assistant (697 427 024). Décision de l'opérateur : ils répondent **pendant les heures de service**. Le cabinet n'est pas ouvert 24h/24. Le site ne doit donc promettre aucune réponse permanente. Les heures exactes restent à confirmer (checklist item 5).
+
+## Mise à jour 15/10 · 23:34–23:36
+- **Question de King (23:34)** : « Vous êtes ouvert de lundi à samedi ? Ou de lundi à vendredi ? »
+- **Réponse du client (23:36)** : « Lundi à Samedi ». **Jours confirmés.**
+- **Paiement** : le client a dit qu'il ne faisait pas pleinement confiance à l'opérateur au départ, et qu'il a finalement choisi les espèces. Principe retenu : nous nous adaptons au mode de paiement préféré du client ; une facture ou proforma reste la pièce de base.

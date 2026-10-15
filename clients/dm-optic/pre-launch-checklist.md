@@ -61,10 +61,10 @@
 
 | | |
 |---|---|
-| **Critère** | Les **jours**, écrits. Les heures sont déjà connues (8h00–17h30, consultation 8h30–13h30) |
+| **Critère** | Les **jours**, écrits. Heures (08/10, verbatim client) : examen de vue 8h30–13h00 · autres besoins 8h30–17h30 |
 | **Vérification** | Aucun jour n'est affiché sur le site ou dans le contenu sans avoir été donné |
 | **Pourquoi** | Bloque la section Examen de vue, le pied de page, **et la semaine 2 du plan de contenu** |
-| **État** | ☐ |
+| **État** | ☑ jours confirmés par le client sur WhatsApp, 15/10 23:36 : « Lundi à Samedi » (réponse à « lundi à samedi ou lundi à vendredi ? », envoyée à 23:34) |
 
 ---
 

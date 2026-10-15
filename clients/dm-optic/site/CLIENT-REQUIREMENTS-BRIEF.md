@@ -51,7 +51,7 @@
 | Taxonomie des filtres | Confirmée pour **400 montures** | 🗣 (stock déclaré) |
 | Noms des montures | « **trop diverses** » : aucune convention de nommage ; on prend **les noms du client, tels quels** | 🗣 |
 | Heures | **Examen de vue : 8h30–13h00 · Autres besoins : 8h30–17h30** — remplace 8h00–17h30 / consultation 8h30–13h30 du 25/09 | 🗣 formulation rapportée |
-| **Jours d'ouverture** | **Non donnés** | ⏳ |
+| **Jours d'ouverture** | **Lundi à samedi** (WhatsApp, 15/10 23:36) | ✅ |
 
 Notre message du 13:26 : texte réellement envoyé confirmé par la capture du 10/10 (voir ci-dessus) ; le brouillon `CLIENT-QUESTIONS-2026-10-08.md` n'en fait pas foi.
 
