@@ -253,6 +253,14 @@ def main():
 
     html = fix_whatsapp(html)
 
+    # Marqueur de build : « production » ou « preview », lisible dans le HTML publié.
+    build = "production" if opts.production else "preview"
+    html, nb = re.subn(r'(<meta charset="utf-8">\n)',
+                       lambda m: m.group(1) + '<meta name="build" content="%s">\n' % build,
+                       html, count=1)
+    if nb != 1:
+        sys.exit("balise <meta charset> introuvable : marqueur de build non ajouté")
+
     # 15/10 — production : domaine du cabinet (dmoptiquesarl.com), sans noindex, sans la ligne « aperçu ».
     if opts.production and not opts.url:
         opts.url = CANON_BASE
