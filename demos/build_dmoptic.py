@@ -110,6 +110,9 @@ def fix_whatsapp(html):
     return out
 
 
+CANON_BASE = "https://dmoptiquesarl.com/"   # domaine du cabinet (décision King, migration Cloudflare 16/10)
+ROBOTS_NOINDEX = '<meta name="robots" content="noindex,nofollow">'
+PREVIEW_NOTE_RE = re.compile(r'<span><span class="fr-only" lang="fr">Aperçu préparé.*?</span></span>', re.S)
 MARK_RE = re.compile(r'<span class="mark" aria-hidden="true"><svg\b.*?</svg></span>', re.S)
 DEFAULT_LOGO = ROOT / "clients" / "dm-optic" / "website" / "logo" / "dm-optique-logo-web.png"
 
@@ -215,6 +218,9 @@ def main():
     ap.add_argument("--no-logo", action="store_true", help="reconstruire sans logo (symbole rond d'origine)")
     ap.add_argument("--logo-mode", choices=("symbol", "full"), default="symbol",
                     help="symbol : le texte du nom reste ; full : le logo contient déjà le nom")
+    ap.add_argument("--production", action="store_true",
+                    help="version de production : sans noindex, sans la ligne « aperçu » du pied de page ; "
+                         "domaine %s par défaut" % CANON_BASE)
     opts = ap.parse_args()
     if not opts.logo and not opts.no_logo and DEFAULT_LOGO.exists():
         opts.logo = str(DEFAULT_LOGO)   # le logo du cabinet (reçu le 10/10) est le logo par défaut
@@ -238,17 +244,34 @@ def main():
 
     html = fix_whatsapp(html)
 
+    # 15/10 — production : domaine du cabinet (dmoptiquesarl.com), sans noindex, sans la ligne « aperçu ».
+    if opts.production and not opts.url:
+        opts.url = CANON_BASE
+    # Identifiants JSON-LD : toujours le domaine du cabinet (ce ne sont pas des adresses devinées).
+    html = html.replace("__BASE__", CANON_BASE)
+    if opts.production:
+        if ROBOTS_NOINDEX not in html:
+            sys.exit("gabarit : la balise noindex à retirer est absente")
+        html = html.replace(ROBOTS_NOINDEX + "\n", "")
+        html, n = PREVIEW_NOTE_RE.subn("", html)
+        if n != 1:
+            sys.exit("ligne « aperçu » : %d occurrence(s), 1 attendue" % n)
+        print("✓ production : noindex retiré, ligne « aperçu » retirée")
+    else:
+        print("✓ aperçu non-production : noindex conservé, ligne « aperçu » conservée")
+
     if opts.url:
         url = opts.url.rstrip("/") + "/"
         html = html.replace("__OG_URL__", url).replace("__OG_IMAGE__", url + "og.jpg")
-        print("✓ og:url → %s" % url)
+        html = html.replace("__CANONICAL__", '<link rel="canonical" href="%s">' % url)
+        print("✓ og:url / canonical → %s" % url)
     else:
         # Sans adresse connue : on laisse des marqueurs NEUTRES et un commentaire d'avertissement —
         # jamais une adresse devinée (une URL morte coûte plus qu'une heure d'attente).
-        html = html.replace("__OG_URL__", "").replace("__OG_IMAGE__", "")
-        print("! og:url / og:image laissés vides — relancer avec --url après le déploiement")
+        html = html.replace("__OG_URL__", "").replace("__OG_IMAGE__", "").replace("__CANONICAL__", "")
+        print("! og:url / og:image / canonical laissés vides — relancer avec --url après le déploiement")
 
-    for leftover in ("__IMG_", "__WA__"):
+    for leftover in ("__IMG_", "__WA__", "__BASE__", "__CANONICAL__", "__OG_"):
         if leftover in html:
             sys.exit("jeton non remplacé : %s" % leftover)
     unresolved = re.findall(r'href="[^"]*%(?:20)?[^"]*"', html)

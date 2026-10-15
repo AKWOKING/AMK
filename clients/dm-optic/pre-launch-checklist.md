@@ -155,3 +155,5 @@
 **Les deux items qui dépendent de nous, pas du client : 2 et 10.** Les huit autres attendent le client
 ou l'encaissement. **Le chemin critique passe donc par l'item 2** — sans nos identifiants de
 facturation, la proforma ne part pas, l'acompte ne vient pas, et l'item 1 ne s'ouvre jamais.
+
+**Item 11 (15/10) — build production :** `python3 demos/build_dmoptic.py --production` ; vérifier qu'il n'y a plus de `noindex` ni de ligne « aperçu » ; ne lancer qu'après la bascule du domaine `dmoptiquesarl.com` (16/10).

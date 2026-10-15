@@ -140,3 +140,53 @@ se vérifie depuis les tokens, pas à l'œil.
 > planification est bouclée de notre côté. On continue mardi pour la mise en ligne complète, après
 > l'acompte. Bonne soirée.
 (Trois phrases + salut de soirée ; aucun salut de jour. King envoie après ce LIVE VERIFIED.)
+
+## DM Optique — durcissement avant domaine (15/10/2026)
+
+**Méthode.** Lighthouse 12, émulation mobile 360×640, throttling simulé. Chromium pris dans `/tmp` (rien dans le dépôt).
+Le bac à sable ne joint pas `vercel.app` (ERR_CONNECTION_CLOSED) : les mesures se font sur les fichiers du dépôt servis en local.
+**Score « performance » non fiable ici** (null ou 0 selon les passages) : je ne le rapporte pas. Métriques brutes seulement.
+Vérification live : `https://dm-optique-sarl.vercel.app/` servi, titre et heures v2.3 identiques au dépôt.
+
+### Référence (avant changements, `hosting/previews/dmoptic/index.html`)
+| Mesure | Valeur |
+|---|---|
+| Poids HTML | 381 707 octets (Lighthouse : 381 896 au total) |
+| Images | 6 `data:image` en ligne (5 JPEG, 1 PNG), 5 balises `<img>` |
+| FCP / LCP (simulé, polices Google injoignables) | 3 331 ms / 3 331 ms |
+| TBT / CLS | 0 ms / 0 |
+| Accessibilité / Bonnes pratiques / SEO | 100 / 96 / **63** (SEO : non indexable, noindex) |
+| Canonical / hreflang | absents / absents |
+| og:url / og:image | `dm-optique-sarl.vercel.app` |
+| Débordement horizontal | 360 px : **+2 px** (sélecteur FR/EN à 362 px) ; 390 et 414 px : aucun |
+| Logo de coin `.herologo` | rogné de 88 px à droite aux trois largeurs (voulu, ruling King 11/10) |
+| Clics WhatsApp / appel | **inconnu, pas zéro** : aucun comptage n'existait |
+
+### Après (version production, copie de travail `/tmp`, servie en local)
+| Mesure | Valeur |
+|---|---|
+| Poids | 383 032 octets (+1 136 : JSON-LD, script de comptage, CSS) |
+| SEO | **100** ; crawlable et canonical : réussis |
+| Accessibilité / Bonnes pratiques | 100 / 96 (inchangé ; le point de 96 n'est pas diagnostiqué) |
+| FCP / LCP | 3 334 ms (inchangé, dans le bruit) |
+| Débordement 360 / 390 / 414 px | aucun |
+| Images, polices | inchangées : 6 `data:image`, Google Fonts (voir « reste ouvert ») |
+
+### Ce qui a changé (gabarit `demos/dmoptic-v1.tpl.html` + `demos/build_dmoptic.py`)
+- Noindex : conservé en aperçu, retiré par `--production`.
+- Canonical et og:url : `--url` (ou `https://dmoptiquesarl.com/` avec `--production`).
+- JSON-LD : `@id` absolus, `url` ajouté, `streetAddress` sans « dernière porte à droite » (la mention reste dans le pied de page visible, inchangée).
+- Pied de page « aperçu » : retiré en production uniquement.
+- Comptage : `track()` ajouté (sendBeacon, sans cookie ni stockage). `TRACK_URL` est vide : aucun envoi tant qu'un point d'arrivée n'est pas choisi.
+- FR/EN à 360 px : padding réduit sous 390 px.
+
+### Reste ouvert (non fait, raison)
+- **Hreflang** non ajouté : la bascule FR/EN garde la même URL ; hreflang exige deux URLs. Décision : pages séparées (`/en/`) ou rien.
+- **Images WebP externes** et **polices auto-hébergées** : exigent de nouveaux fichiers, donc accord King.
+- **Itinéraire / lien carte** : il faut les coordonnées ou l'identifiant de la fiche Google, pas encore vérifiée.
+- **Comptage des clics** : le code est prêt, le point d'arrivée reste à choisir.
+
+### Vérifications
+- `tools/qa/test_dmoptic_page.mjs` : toutes les assertions passent (version aperçu).
+- JSON-LD des deux versions : parse correct.
+- Ne jamais déployer `--production` sur `hosting/previews/dmoptic` avant la bascule du domaine (16/10) : le lien Vercel deviendrait indexable.
