@@ -101,3 +101,8 @@ Notes de contrôle :
 - Source : `clients/dm-optic/site/frames.json`, vide au 15/10 : aucune monture n'a encore de nom ni de photo.
 - État actuel : état vide « Le catalogue arrive » + WhatsApp. Pas de prix, pas de filtre, pas de recherche tant qu'aucune monture n'existe.
 - Non lié depuis l'accueil (ruling 08/10, option B).
+
+## Mise à jour 15/10 · 18:10–18:25 (captures de l'opérateur)
+- **Réponse envoyée par King** (18:10, 18:14, 18:18), différente du brouillon : « Je ne peux pas vous garantir ce nombre là par mois surtout au début, je ne veux pas faire des promesses que je ne pourrai pas tenir » · « On va commencer par mesurer pendant 60 à 90 jours le nombre de messages WhatsApp et de rendez-vous par mois, ensuite nous fixons un objectif à partir de vos chiffres réels » · « Pour commencer, pouvez-vous me dire combien de patients vous recevez en moyenne par mois ? Et notre objectif sera d'augmenter ce chiffre petit à petit avec le temps, qu'est-ce que vous en dites ? »
+- **Pas de réponse du client** à la question du volume de patients au 18:25 (client en ligne).
+- **Deux numéros WhatsApp** : le sien (656 12 22 39) et celui de son assistant (697 427 024). Décision de l'opérateur : ils répondent **pendant les heures de service**. Le cabinet n'est pas ouvert 24h/24. Le site ne doit donc promettre aucune réponse permanente. Les heures exactes restent à confirmer (checklist item 5).
