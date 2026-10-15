@@ -92,8 +92,9 @@ const opticien = ld["@graph"].find((g) => g["@type"] === "Optician");
 ok("le schéma décrit le cabinet (Optician, téléphone, ville, inscription) — l'écriture « riche en entités » de l'AEO",
    !!opticien && opticien.telephone === NUM && opticien.address.addressLocality === "Douala" &&
    opticien.identifier.value === "021/2016");
-ok("aucune note, aucun avis, aucun horaire inventé dans le schéma",
-   !/aggregateRating|ratingValue|openingHours/.test(html));
+ok("aucune note, aucun avis ; seul horaire dans le schéma : lundi–samedi 08:30–17:30 (décision King 15/10)",
+   !/aggregateRating|ratingValue/.test(html) &&    JSON.stringify(opticien.openingHoursSpecification) === JSON.stringify({"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"08:30","closes":"17:30"}) &&
+   !/"openingHours"\s*:/.test(html));
 /* §31 AEO : l'entité garde son identifiant (machine), le PATIENT n'a pas à lire l'arrêté ministériel
    (décision de King, 24/09 : « tout les détails de lui dans l'ordre » n'ont pas à être sur la page). */
 const visible = html.replace(/<script[\s\S]*?<\/script>/g, "").replace(/<!--[\s\S]*?-->/g, "");

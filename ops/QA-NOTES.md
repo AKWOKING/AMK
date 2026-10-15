@@ -190,3 +190,23 @@ Vérification live : `https://dm-optique-sarl.vercel.app/` servi, titre et heure
 - `tools/qa/test_dmoptic_page.mjs` : toutes les assertions passent (version aperçu).
 - JSON-LD des deux versions : parse correct.
 - Ne jamais déployer `--production` sur `hosting/previews/dmoptic` avant la bascule du domaine (16/10) : le lien Vercel deviendrait indexable.
+
+## DM Optique — tranche 15/10 (après c9d8063)
+
+**Vérification de c9d8063 (spot-check, une commande chacun) :** --production présent ; canonical et og:url sur la version production ; @id absolus et `url` ; streetAddress sans « dernière porte » ; overflow 360 px corrigé ; hook de comptage inactif (`TRACK_URL=''`) ; item 11 de la checklist ; section QA présente. Tout est passé.
+
+**Heures (décision King 15/10) :** « Lundi – Samedi » ajouté à 6 endroits (carte d'identité, FAQ visible, FAQ JSON-LD, bloc contact, pied de page, description JSON-LD). `openingHoursSpecification` Lun–Sam 08:30–17:30 dans l'Optician. Visible = JSON-LD pour la réponse FAQ (vérifié caractère pour caractère).
+
+**Images → WebP (poids, octets) :** avant = 6 `data:` = 230 171 octets décodés, `index.html` 383 303 octets. Après = 6 fichiers : lunettes 17 482 · montures 88 478 · solaires 44 996 · enfants 35 652 · mesure 27 202 · logo 8 144 (total 221 954). `index.html` après = 79 698 octets. Mêmes dimensions ; alt inchangé ; `loading="lazy"` conservé ; les 5 photos se chargent au défilement (vérifié).
+
+**Polices (auto-hébergées) :** Schibsted Grotesk 500/600/700, IBM Plex Sans 400/600, IBM Plex Mono 500/600 — graisses relevées au rendu (computed style, FR et EN). Sous-ensemble `latin` seul : aucun caractère visible hors plage (vérifié contre la plage unicode-range). 7 fichiers woff2 = 152 896 octets. Google Fonts et preconnects supprimés ; aucune requête vers googleapis/gstatic (vérifié). Licences : Schibsted Grotesk = SIL OFL 1.1 (dépôt schibsted/schibsted-grotesk, OFL.txt) ; IBM Plex = SIL OFL 1.1 (dépôt IBM/plex, LICENSE.txt, Reserved Font Name « Plex », fichiers non modifiés). Fichiers : paquets npm @fontsource (OFL-1.1) — même source OFL.
+
+**Bouton « Itinéraire » :** caché (`hidden`), affiché seulement si `MAP_URL` est renseigné dans le gabarit. Vide = caché (vérifié : display none). Pas de href tant que MAP_URL est vide.
+
+**Garde du constructeur :** une reconstruction sans `--url` ni `--production` est refusée si l'aperçu contient déjà une og:url (testé : rc=1, rien écrit).
+
+**Provenance des photos (aucun fichier remplacé) :** `clients/dm-optic/build-notes.md` ligne 61 : lunettes (services) et mesure = « générées » (pas de visage). Montures, solaires, enfants : **inconnu** — aucune source ni prompt dans le dépôt ; le commit 50d584e les ajoute sans métadonnées. Aucune donnée EXIF dans les JPEG.
+
+**Test QA :** `tools/qa/test_dmoptic_page.mjs` — 50/50. Deux assertions mises à jour : (1) le schéma peut contenir l'horaire Lun–Sam 08:30–17:30 décidé par King, et rien d'autre ; (2) le lien « Itinéraire » ne doit pas être `href="#"` (il n'a pas d'href tant que MAP_URL est vide).
+
+**Comptage des clics — recherche (aucune implémentation) :** voir la réponse ; TRACK_URL reste vide.
