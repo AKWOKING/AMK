@@ -46,7 +46,7 @@ allégation médicale · aucun prix · aucun témoignage · aucun concurrent nom
 
 | | |
 |---|---|
-| **UGC IA** | *« Ce qui se passe pendant un examen de vue »* — le déroulé réel, et surtout **ce qu'il faut apporter** (ordonnance, ancienne monture). Horaires de consultation : **8h30–13h30** |
+| **UGC IA** | *« Ce qui se passe pendant un examen de vue »* — le déroulé réel, et surtout **ce qu'il faut apporter** (ordonnance, ancienne monture). Horaires de consultation : **8h30–13h00** |
 | **Carrousel** | **La checklist « quoi apporter »** — ordonnance · ancienne monture · vos questions. Une raison par plan |
 | **CTA** | « Je souhaite un examen de vue » — pré-rempli |
 | **Photos nécessaires** | ⚠️ **1–2 photos du cabinet** (la salle d'examen, l'instrument). Bloquant |
