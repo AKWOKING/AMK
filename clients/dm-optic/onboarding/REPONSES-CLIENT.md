@@ -82,3 +82,22 @@ Notes de contrôle :
 - Marques de montures (non répondu).
 - Noms des montures et photos : à recevoir (séance de vendredi 16/10).
 - Handles Facebook et TikTok : existent-ils déjà ? (la fiche dit « à créer au nom du cabinet »).
+
+### 15/10/2026 · 17:51–17:58 · réponses aux questions de l'opérateur (verbatim)
+
+- **Paiement et livraison (17:51 → 17:54):** « Oui tout cela est possible » (espèces, Mobile Money, paiement en plusieurs fois, livraison).
+- **Contact WhatsApp (17:52 → 17:57):** « Mon numéro 656 12 22 39 · Et celui de mon assistant 697427024 ». Deux numéros.
+- **Témoignages et avis Google (17:52 → 17:57):** « Oui je pense Que presque tous accepteront de le faire ». **Non publiable** : pas de témoignage ni d'avis dans le site (règle en vigueur). Réponse à garder pour plus tard, sans publication.
+- **Objectif (17:53 → 17:58):** « 200 » nouveaux clients par mois. **Non documenté dans le dossier.** Pas de base de départ connue (volume actuel inconnu). À clarifier avec lui avant toute promesse.
+
+## Montures et marques (rappel)
+- Réponse du client (17:25) : « Tout type de montures sont vendues… nous optons des choix de montures de divers ordres ». **Aucune marque nommée.** Marques non confirmées : ne rien afficher.
+
+## Brouillon de réponse à l'objectif de 200 (pour King, à envoyer par King)
+> Bonjour Monsieur Domche, merci pour toutes vos réponses. Pour le chiffre de 200 nouveaux clients par mois : nous ne pouvons pas vous le garantir, et nous ne voulons pas vous le promettre. Le site vient d'être créé, Google ne le référence pas encore, et il n'a pas encore de fiche Google ni de publicité en place. Le plus réaliste est de mesurer pendant 60 à 90 jours : combien de messages WhatsApp et de rendez-vous arrivent chaque mois. Nous fixerons ensuite un objectif à partir de vos chiffres réels. Pouvez-vous me dire combien de patients vous recevez aujourd'hui par mois ?
+
+## Catalogue (15/10)
+- `demos/build_dmoptic_montures.py` écrit `hosting/previews/dmoptic/montures/index.html`.
+- Source : `clients/dm-optic/site/frames.json`, vide au 15/10 : aucune monture n'a encore de nom ni de photo.
+- État actuel : état vide « Le catalogue arrive » + WhatsApp. Pas de prix, pas de filtre, pas de recherche tant qu'aucune monture n'existe.
+- Non lié depuis l'accueil (ruling 08/10, option B).
