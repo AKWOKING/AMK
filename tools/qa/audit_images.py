@@ -113,6 +113,60 @@ def png_info(data):
     return (w, h, exif, gps) if w else None
 
 
+def _gps_in_tiff(t):
+    """Vrai si l'IFD0 d'un bloc TIFF (octets d'en-tête II/MM) contient un pointeur GPS (0x8825)."""
+    if len(t) < 8 or t[:2] not in (b"II", b"MM"):
+        return False
+    endian = "little" if t[:2] == b"II" else "big"
+    off = int.from_bytes(t[4:8], endian)
+    if not (0 < off and off + 2 <= len(t)):
+        return False
+    cnt = int.from_bytes(t[off:off + 2], endian)
+    for k in range(cnt):
+        e = off + 2 + 12 * k
+        if e + 12 > len(t):
+            break
+        if int.from_bytes(t[e:e + 2], endian) == 0x8825:
+            return True
+    return False
+
+
+def webp_info(data):
+    """(largeur, hauteur, exif, gps) d'un WebP (conteneur RIFF). None si ce n'est pas un WebP.
+
+    Ajouté le 15/10 : le constructeur produit du WebP (décision 15/10) ; sans ce lecteur, le
+    contrôle ne voyait pas les images et sortait « ERR ». Mêmes garanties : dimensions réelles,
+    présence EXIF, pointeur GPS dans le bloc EXIF.
+    """
+    if len(data) < 30 or data[:4] != b"RIFF" or data[8:12] != b"WEBP":
+        return None
+    w = h = None
+    exif = gps = False
+    i = 12
+    n = len(data)
+    while i + 8 <= n:
+        tag = data[i:i + 4]
+        size = int.from_bytes(data[i + 4:i + 8], "little")
+        body = data[i + 8:i + 8 + size]
+        if tag == b"VP8X" and len(body) >= 10:
+            w = int.from_bytes(body[4:7], "little") + 1
+            h = int.from_bytes(body[7:10], "little") + 1
+            exif = exif or bool(body[0] & 0x08)
+        elif tag == b"VP8 " and len(body) >= 10 and body[3:6] == b"\x9d\x01\x2a":
+            w = int.from_bytes(body[6:8], "little") & 0x3FFF
+            h = int.from_bytes(body[8:10], "little") & 0x3FFF
+        elif tag == b"VP8L" and len(body) >= 5 and body[0] == 0x2F:
+            bits = int.from_bytes(body[1:5], "little")
+            w = (bits & 0x3FFF) + 1
+            h = ((bits >> 14) & 0x3FFF) + 1
+        elif tag == b"EXIF":
+            exif = True
+            t = body[6:] if body[:6] == b"Exif\x00\x00" else body
+            gps = gps or _gps_in_tiff(t)
+        i += 8 + size + (size & 1)
+    return (w, h, exif, gps) if w else None
+
+
 def image_info(path):
     """Lis un fichier : (largeur, hauteur, exif, gps, poids) ou None."""
     try:
@@ -122,7 +176,7 @@ def image_info(path):
         return None
     if not data:
         return None
-    return jpeg_info(data) or png_info(data)
+    return jpeg_info(data) or png_info(data) or webp_info(data)
 
 
 # ─────────────────────────────── vérifications ───────────────────────────────
@@ -135,7 +189,7 @@ def check_file(path, label, findings, full=True):
     size = os.path.getsize(path)
     info = image_info(path)
     if info is None:
-        findings.append(("ERR", label, "ce n'est pas un JPEG ni un PNG lisible (%d o)" % size))
+        findings.append(("ERR", label, "ce n'est pas un JPEG, un PNG ni un WebP lisible (%d o)" % size))
         return None
     facts = {"path": path, "w": info[0], "h": info[1], "exif": info[2], "gps": info[3],
              "size": size}
