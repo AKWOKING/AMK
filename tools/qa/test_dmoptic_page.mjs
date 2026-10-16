@@ -146,8 +146,8 @@ ok("les réponses du schéma sont mot pour mot celles de la page",
    faq.map((q, i) => plain(q.acceptedAnswer.text) === aVisible[i] ? "" : "n°" + (i + 1)).join(" "));
 ok("chaque réponse commence par l'information, pas par le contexte (BLUF)",
    faq.every((q) => plain(q.acceptedAnswer.text).split(" ").length >= 12));
-ok("la page reste une page de travail : noindex présent, et c'est voulu",
-   /<meta name="robots" content="noindex,nofollow">/.test(html));
+ok("la page est en production (16/10, domaine dmoptiquesarl.com) : pas de noindex",
+   !/<meta name="robots" content="noindex,nofollow">/.test(html));
 
 /* ── les deux dégradés animés du premier écran doivent pouvoir s'arrêter ───────────────────────── */
 const calmBlock = (html.match(/@media \(prefers-reduced-motion:reduce\)\{[\s\S]*?\n\}/) || [""])[0];
