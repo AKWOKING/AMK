@@ -172,3 +172,41 @@ facturation, la proforma ne part pas, l'acompte ne vient pas, et l'item 1 ne s'o
 - [ ] Comptes Facebook et TikTok : création au nom du cabinet, AMK en administrateur, téléphone du titulaire (King)
 - [ ] Marques : demander seulement si le client veut en nommer (aucune marque affichée sans confirmation écrite)
 
+
+---
+
+## Quand les photos arrivent — ce qu'il reste à faire (écrit 16/10, pour la mise en ligne du catalogue)
+
+**Ce qui est déjà en ligne (version du 16/10, domaine dmoptiquesarl.com) :** accueil bilingue, titre et description à Bonabéri, paiement et note horaires, trois cartes « vitrine » qui ouvrent WhatsApp avec le message écrit, `robots.txt`, `sitemap.xml`. **Pas de lien vers `/montures/` tant que le catalogue est vide.**
+
+### 1 · Reçu du client (à obtenir)
+- [ ] **Noms des montures, par famille**, tels qu'il les donne (pas de réécriture) : lunettes de vue, lunettes de soleil, enfants.
+- [ ] **Photos des montures** : 6 à 8 par famille, 12 au minimum. Une photo par monture, fond neutre si possible.
+- [ ] **Photos du cabinet** : 3 à 4 (façade, entrée, salle d'examen, comptoir).
+- [ ] **Séance photo** : réponse du client à « échange de client fondateur » ou ligne de 15 000 FCFA (dossier §6b). Décision à consigner.
+- [ ] Confirmation écrite des **six services** (garder ou retirer un par un).
+- [ ] Confirmation écrite des **moyens de paiement** (déjà écrits sur le site : espèces, Mobile Money, paiement en plusieurs fois).
+- [ ] Repère physique pour l'adresse (« en face de… »).
+
+### 2 · Mettre dans le dépôt (AMK)
+- [ ] Remplir `clients/dm-optic/site/frames.json` : un objet par monture (nom, famille, photo, et filtres si le client les fournit — forme, matériau, couleur). Pas de prix.
+- [ ] Déposer les photos dans `hosting/previews/dmoptic/` (une par monture, en WebP, `alt` descriptif en FR et EN).
+- [ ] Remplacer les trois illustrations de catégorie et **retirer la légende « Photo d'illustration »** partout (contrat : le site ne montre que du vrai).
+- [ ] Ne nommer une marque que si le client la confirme par écrit (`RULE-CREDENTIAL-CLAIMS`).
+
+### 3 · Reconstruire et contrôler
+- [ ] `python3 demos/build_dmoptic.py --production` puis `python3 demos/build_dmoptic_montures.py`
+- [ ] Gates : `audit_html`, `audit_a11y --strict`, `audit_images`, `check_inline_js`, `audit_hero`, `node tools/qa/test_dmoptic_page.mjs` (toutes à 0 / ✓).
+- [ ] Recréer le zip : `/home/user/dm-optique-site.zip`.
+- [ ] Vérifier **sur téléphone** : lien `/montures/` depuis l'accueil, retour, EN/FR, bouton WhatsApp de chaque monture.
+- [ ] Ajouter le lien `/montures/` sur l'accueil (une fois le catalogue plein).
+
+### 4 · Après la mise en ligne
+- [ ] Google Search Console : fichier de vérification fourni par Google, à déposer dans le dossier (à ne jamais retirer). Soumettre `https://dmoptiquesarl.com/sitemap.xml`.
+- [ ] Inspection d'URL pour `/` et `/montures/` → « Demander une indexation ».
+- [ ] Fiche Google Business : même nom que le site (DM OPTIQUE SARL), URL `https://dmoptiquesarl.com/`, horaires identiques au site.
+- [ ] Note datée dans `sales/Activity-Log.md`. Jugement SEO à 30 jours, pas avant.
+
+### 5 · Accords à mettre par écrit (ce que l'utilisateur confirme oralement)
+- [ ] Domaine et comptes au nom du client ; AMK les gère contre un abonnement mensuel (montant et durée à écrire).
+- [ ] Solde de 75 000 FCFA dû à la livraison ; confirmer le montant et la date.
