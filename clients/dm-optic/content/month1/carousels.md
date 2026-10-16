@@ -38,7 +38,7 @@
 | **PRODUIT** | 2 | **La carte d'identité**, mise en page comme une pièce officielle — *Ordre des opticiens du Cameroun · Inscrit à l'ONOC* |
 | | 3 | **Le titulaire** — M. Domche Noumbi |
 | **BÉNÉFICE** | 4 | **« Un opticien inscrit, un titulaire nommé. »** Ce que ça change pour vous : vous savez à qui vous écrivez |
-| | 5 | **Où et quand** — Ndobo Mayor, Bonabéri · **8h00–17h30** |
+| | 5 | **Où et quand** — Ndobo Mayor, Bonabéri · **lundi à samedi, 8h30–17h30** |
 | **CTA** | 6 | **« Écrivez-nous, on vous répond »** — bouton WhatsApp |
 
 **Texte de chaque plan** (pour la voix off et les sous-titres) :
@@ -47,13 +47,13 @@
 2. « DM OPTIQUE SARL est inscrit à l'Ordre des opticiens du Cameroun. »
 3. « Le titulaire est nommé : M. Domche Noumbi. »
 4. « Vous savez à qui vous écrivez. C'est déjà beaucoup. »
-5. « Ndobo Mayor, Bonabéri. Ouvert de 8h00 à 17h30. »
+5. « Ndobo Mayor, Bonabéri. Ouvert du lundi au samedi, de 8h30 à 17h30. »
 6. « Écrivez-nous sur WhatsApp — on vous répond. »
 
 **Image de couverture :** la carte d'identité, seule, sur fond blanc. **C'est la couverture la plus
 forte du mois** : elle ressemble à un document, pas à une publicité.
 
-⚠️ **Les jours d'ouverture sont inconnus** — écrire les heures, **jamais** les jours.
+✅ **Jours confirmés le 15/10 : lundi à samedi.**
 
 ---
 
@@ -69,7 +69,7 @@ forte du mois** : elle ressemble à un document, pas à une publicité.
 | **BÉNÉFICE** | 4 | **1 · L'ordonnance** si vous en avez une | — |
 | | 5 | **2 · L'ancienne monture** — pour la mesure et l'appui | — |
 | | 6 | **3 · Vos questions** — pour ne rien oublier | — |
-| **CTA** | 7 | **« Écrivez-nous avant de venir »** + **Consultation 8h30–13h30** | — |
+| **CTA** | 7 | **« Écrivez-nous avant de venir »** + **Examen de vue 8h30–13h00** | — |
 
 **Texte de chaque plan :**
 
@@ -79,7 +79,7 @@ forte du mois** : elle ressemble à un document, pas à une publicité.
 4. « Un : votre ordonnance, si vous en avez une. »
 5. « Deux : votre ancienne monture — pour la mesure et l'appui. »
 6. « Trois : vos questions. Notez-les, pour ne rien oublier. »
-7. « La consultation se tient de 8h30 à 13h30. Écrivez-nous avant de venir. »
+7. « L'examen de vue se fait de 8h30 à 13h00. Écrivez-nous avant de venir. »
 
 **Image de couverture :** les trois objets posés — une ordonnance, une monture, un carnet — sur fond
 neutre, avec le titre.

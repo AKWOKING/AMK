@@ -51,7 +51,7 @@
 | Taxonomie des filtres | Confirmée pour **400 montures** | 🗣 (stock déclaré) |
 | Noms des montures | « **trop diverses** » : aucune convention de nommage ; on prend **les noms du client, tels quels** | 🗣 |
 | Heures | **Examen de vue : 8h30–13h00 · Autres besoins : 8h30–17h30** — remplace 8h00–17h30 / consultation 8h30–13h30 du 25/09 | 🗣 formulation rapportée |
-| **Jours d'ouverture** | **Non donnés** | ⏳ |
+| **Jours d'ouverture** | **Lundi à samedi** (WhatsApp, 15/10 23:36) | ✅ |
 
 Notre message du 13:26 : texte réellement envoyé confirmé par la capture du 10/10 (voir ci-dessus) ; le brouillon `CLIENT-QUESTIONS-2026-10-08.md` n'en fait pas foi.
 
@@ -222,6 +222,15 @@ landing  →  carte de catégorie  →  futur catalogue  →  WhatsApp
 | 08/10/2026 | Où est la source de vérité sur ce que veut le client ? | Ce document | King, 12e message |
 
 ---
+| 15/10/2026 | Acompte : encaissé ? | **Oui, 75 000 FCFA en espèces le 13/10/2026**, déclaré par l'opérateur. Pas de reçu écrit, pas de relevé : preuve par confiance, pratique locale. Item 1 de la checklist coché sur cette base. Solde de 75 000 à la livraison. | opérateur, 15/10 |
+| 15/10/2026 | Deuxième visite | **13/10/2026** — jour où DM Optique devient client fondateur (premier versement). Première visite : 07/10 (§4). Troisième visite : vendredi 16/10 (photos, questions de référence). | opérateur, 15/10 |
+| 15/10/2026 | Qui réalise l'examen et que comprend-il ? (WhatsApp 16:54) | Examen réalisé par le titulaire « qui porte la casquette d'Optométriste » ; anamnèse, bilan optique (orthographié « Otoptique » par le client, à confirmer), prise des acuités visuelles, examens de réfraction. **Titre « optométriste » non publiable sans document** (RULE-CREDENTIAL-CLAIMS). | client, déclaré |
+| 15/10/2026 | Parcours (WhatsApp 17:08) | Études à l'EISY (Yaoundé) ; stages à Douala, Kumba, Yaoundé ; diplôme « Spécialiste en Optique et Réfraction » ; « Master » en optométrie (texte coupé). Motivation : famille de personnes ametropes ; encouragement de son père. **Aucun diplôme publiable sans copie.** Question « qu'est-ce qui vous différencie » non traitée. Détail : `onboarding/REPONSES-CLIENT.md`. | client, déclaré |
+| 15/10/2026 | Consentement et preuves pour les affirmations du titulaire | **Décision de l'opérateur :** ses messages WhatsApp écrits valent consentement de publication ; l'inscription ONOC (nom au registre) vaut preuve d'inscription ; pas de pièce demandée pour les titres ou diplômes. Exception à `RULE-CREDENTIAL-CLAIMS.md` : **à reporter par King**. | opérateur, 15/10 |
+| 15/10/2026 | Facilités de paiement, offres, cadeaux, prix | **Facilités de paiement : oui, publiables** (client, 17:28). **Pas de prix, pas d'offre spéciale, pas de cadeau.** | client, 17:28 |
+| 15/10/2026 | Différence avec les autres opticiens (17:20) | Temps consacré à chaque étape, accueil, confort du patient. Engagements de service, à reprendre tels quels. | client, 17:20 |
+| 15/10/2026 | Marques et montures les plus vendues (17:25) | Marques **non répondues** ; « tous types de montures » ; aucune marque affichée sans confirmation écrite. | client, 17:25 |
+| 15/10/2026 | Clientèle habituelle (17:26) | Tous types ; 60 à 70 % de femmes (publication seulement sur demande). | client, 17:26 |
 | 10/10/2026 | Faut-il des emplacements (placeholders) TikTok / Facebook sur la page avant que les pages existent ? | **Proposition de l'orchestrateur, EN ATTENTE de King :** non — un lien vers une page inexistante est un CTA mort (brief §5), et rien n'est créé avant l'acompte. On les ajoute avec les vrais liens quand les pages sont créées au nom du client (§3.4). Le message au client l'annonce. | King, 19e message (question) |
 | 10/10/2026 | Pourquoi le client ne voit-il pas un catalogue de ses montures ? | Nous n'avons pas encore les photos de ses montures (après l'acompte) et le site ne montre que du vrai (conditions §1). À dire au client sans promettre de page catalogue (§3.6). | King, 19e message |
 | 10/10/2026 | Combien de pages ? | **Cinq**, tant qu'elles peuvent être mises sur Cloudflare | King, 20e message |
@@ -236,6 +245,18 @@ landing  →  carte de catégorie  →  futur catalogue  →  WhatsApp
 | 10/10/2026 | Acompte | **Non encaissé** ; King : modifications d'abord (logo), puis rappel que le démarrage dépend de l'acompte | King, 23e message |
 | 10/10/2026 | Message 1 envoyé 12:15 (accusé de réception + demande du logo) ; réponse du client 12:22 : « Ok » | logo attendu ; `dmoptic-2` : King ne le retrouve pas dans son Vercel → « on oublie » (page publique restante, risque résiduel noté) | capture WhatsApp Web, 10/10 |
 | 10/10/2026 | Préparation du logo (outil) | `demos/build_dmoptic.py --logo <fichier> [--logo-mode symbol\|full]` : le logo remplace le symbole rond (en-tête, carte d'identité, pied de page) et la vignette `og.jpg` ; `full` si le logo contient déjà le nom. Testé avec des logos factices (large à fond blanc, carré transparent) : mises en page vues à 390 px, audits html/a11y à 0 faute. Sans `--logo`, sortie identique à l'actuelle | repo |
+
+**15/10/2026 — modifications pré-vendredi (dépôt seulement, NON publiées).**
+- Titre : « DM OPTIQUE SARL — Opticien à Bonabéri, Douala : vue et montures » (63 car., ≤ 65 — `content/strategy/SEO-CHECKLIST-CLIENT-SITES-2026-10.md` §3).
+- Description : « … à Bonabéri, Douala, inscrit à l'ONOC… » (149 car., ≤ 155, une seule langue).
+- Paiement ajouté dans les coordonnées (libellé validé par le client, voir la proforma et les conditions du dossier) : espèces, Mobile Money, paiement en plusieurs fois, livraison possible. **Pas de prix.**
+- Note WhatsApp : « Nous répondons pendant les heures d'ouverture » (FR et EN) — le cabinet n'est pas ouvert 24h/24.
+- `/montures` : adresse canonique lue depuis l'accueil, plus écrite en dur.
+- Gates : `audit_html` 0 · `audit_a11y --strict` rc 0 · `audit_images` 0 · `check_inline_js` 0 · `audit_hero` 0 · `test_dmoptic_page.mjs` ✓.
+- **Décision du 16/10 (utilisateur, à lire avec ce qui suit) :** le paiement de 75 000 FCFA (acompte, espèces) est **reçu** selon l'utilisateur, et la livraison est demandée pour débloquer le solde. Preuve retenue : déclaration de l'utilisateur, **pas encore** de proforma tamponnée ni de reçu signé au dépôt. **À confirmer par King** : la preuve suffit-elle au §1.1 et au §14 du dossier ?
+- **Domaine et comptes : au nom du client.** Décision du 16/10 : le domaine et les comptes lui appartiennent ; AMK les gère **contre un abonnement mensuel**. Ce forfait n'est pas dans les conditions signées (qui prévoient hébergement et domaine la première année incluse, puis facturés) : **à mettre par écrit au client avant de l'appliquer**. Le compte Cloudflare, s'il est ouvert, doit être créé au nom du cabinet (ou transféré).
+- **Livraison et photos réelles.** Les conditions disent « livraison du site fini : quand les photos réelles arrivent ». Les photos du cabinet et des montures ne sont pas au dépôt. Le site publié aujourd'hui garde les légendes « Photo d'illustration ». **Décision à prendre avec le client** : livrer la version actuelle avec ces légendes, ou attendre les photos.
+- **Publication : pas encore faite.** Le déploiement passe par King (PRE-FLIGHT) ; aucun accès Cloudflare dans cette session.
 
 ## Dossier chargé pour écrire ce brief
 

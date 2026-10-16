@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=540, initial-scale=1">
+<title>POST-01 v3 — TikTok cut 31s — debug-in-public (render source)</title>
+<style>
+/* AMK POST-01 v3 — cut TikTok 31s, 6 beats, rendu frame-par-frame via window.seek(t).
+   Motion §9 : transform + opacity uniquement, easings maison, aucune entrée scale(0).
+   Zéro référence client · zéro code à l'écran · muet. Boucle : dernier frame = cadrage B1
+   avec logo visible. */
+:root{
+  --bg:#101814; --panel:#0B120E; --line:#23382E;
+  --brand:#0E7A5C; --brand-bright:#12A87C;
+  --ink:#FFFFFF; --soft:#C9D6CF; --warn:#E8A13A;
+  --disk:#1D2B25; --strike:#8A978F;
+  --ease-out:cubic-bezier(.23,1,.32,1); --ease-in-out:cubic-bezier(.77,0,.175,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:540px;height:960px;overflow:hidden;background:var(--bg);
+  font-family:Helvetica,Arial,"Liberation Sans",sans-serif;color:var(--ink)}
+.stage{position:relative;width:540px;height:960px}
+
+/* — hero du site fictif (B1/B6) — */
+.site{position:absolute;inset:0;opacity:0}
+.sitebar{position:absolute;top:0;left:0;right:0;padding:34px 36px;display:flex;
+  align-items:center;justify-content:space-between}
+.sitename{font-size:20px;font-weight:800;letter-spacing:2.5px;color:var(--ink)}
+.sitenav{display:flex;gap:18px;font-size:16px;font-weight:600;color:var(--soft)}
+.demopill{position:absolute;top:92px;left:36px;font-size:15px;font-weight:700;color:var(--soft);
+  border:1.5px solid var(--line);border-radius:999px;padding:5px 14px;letter-spacing:1.5px}
+.sitefoot{position:absolute;bottom:96px;left:0;right:0;display:flex;justify-content:center;gap:26px;
+  font-size:15px;color:var(--soft);opacity:.75}
+.sitefoot i{width:52px;height:6px;border-radius:3px;background:var(--line);display:block}
+
+/* — chrome haut AMK (beats 2–5) — */
+.topbar{position:absolute;top:0;left:0;right:0;padding:34px 36px 0;display:flex;align-items:center;
+  gap:12px;opacity:0}
+.dots{display:flex;gap:8px}
+.dots i{width:12px;height:12px;border-radius:50%;background:var(--line);display:block}
+.dots i:first-child{background:var(--brand)}
+.eyebrow{font-size:20px;font-weight:700;letter-spacing:2.5px;color:var(--soft);text-transform:uppercase}
+
+/* — overlay gras + sous-ligne hook — */
+.overlay{position:absolute;top:118px;left:36px;right:36px;font-size:52px;font-weight:800;
+  line-height:1.12;letter-spacing:-.5px;opacity:0}
+.overlay.small{font-size:42px}
+.hookline{position:absolute;top:196px;left:36px;right:36px;font-size:38px;font-weight:700;
+  color:var(--soft);opacity:0}
+
+/* — emblème : anneau + monogramme + disque — */
+.emblem{position:absolute;top:296px;left:50%;width:300px;height:300px;margin-left:-150px;opacity:0}
+.ring{position:absolute;inset:0;border-radius:50%;border:14px solid var(--brand);z-index:3;
+  transform-origin:50% 50%}
+.logo{position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;
+  transform-origin:50% 50%;opacity:0}
+.logo svg{width:170px;height:170px}
+.disk{position:absolute;inset:14px;border-radius:50%;background:var(--disk);z-index:2;opacity:0}
+
+/* — masque (fausse piste B3) — */
+.mask{position:absolute;inset:-6px;border-radius:50%;background:
+  radial-gradient(circle at 50% 50%, transparent 0 138px, var(--bg) 139px);z-index:5;opacity:0}
+.strike{position:absolute;top:50%;left:-24px;right:-24px;height:5px;background:var(--strike);
+  z-index:6;transform-origin:0 50%;transform:scaleX(0) rotate(-6deg);opacity:0}
+
+/* — vue éclatée (B4) — */
+.exploded{position:absolute;inset:0;opacity:0}
+.card{position:absolute;left:50%;width:270px;height:270px;margin-left:-135px;border-radius:22px;
+  background:var(--panel);border:2px solid var(--line);display:flex;align-items:center;
+  justify-content:center}
+.card .tag{position:absolute;bottom:12px;left:0;right:0;text-align:center;font-size:17px;
+  font-weight:700;letter-spacing:2px;color:var(--soft);text-transform:uppercase}
+.card-logo{top:470px}
+.card-disk{top:470px;z-index:2}
+.card-disk .disc{position:absolute;inset:34px;border-radius:50%;background:var(--disk)}
+.card-disk .liser{position:absolute;inset:26px;border-radius:26px;border:4px solid var(--brand-bright);
+  opacity:0}
+.arrow{position:absolute;top:436px;left:50%;width:4px;height:0;background:var(--brand-bright);
+  margin-left:-2px;opacity:0;z-index:3}
+
+/* — caption — */
+.caption{position:absolute;left:36px;right:36px;bottom:44px;font-size:27px;line-height:1.35;
+  color:var(--soft);font-weight:600;opacity:0}
+
+/* — scan léger (esthétique screen-record) — */
+.scan{position:absolute;left:0;right:0;top:0;height:150px;z-index:7;pointer-events:none;opacity:.6;
+  background:linear-gradient(180deg,transparent,rgba(126,216,166,.24) 45%,rgba(255,255,255,.16) 55%,transparent)}
+
+/* — progression — */
+.progress{position:absolute;left:0;right:0;bottom:0;height:10px;background:var(--line);z-index:8}
+.progress i{display:block;height:100%;background:var(--brand-bright);transform-origin:0 50%;
+  transform:scaleX(0)}
+
+@media (prefers-reduced-motion: reduce){
+  .scan{display:none}
+}
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
+
+  <!-- B1/B6 : hero du site fictif -->
+  <div class="site" id="site">
+    <div class="sitebar">
+      <div class="sitename">MAISON&nbsp;OPTIQUE</div>
+      <div class="sitenav"><span>Accueil</span><span>Boutique</span><span>Contact</span></div>
+    </div>
+    <div class="demopill">SITE DE DÉMONSTRATION</div>
+    <div class="sitefoot"><i></i><i></i><i></i></div>
+  </div>
+
+  <!-- chrome debug (B2–B5) -->
+  <div class="topbar" id="topbar"><div class="dots"><i></i><i></i><i></i></div>
+    <div class="eyebrow">AMK · debug-in-public</div></div>
+
+  <div class="overlay" id="overlay"></div>
+  <div class="hookline" id="hookline"></div>
+
+  <!-- emblème -->
+  <div class="emblem" id="emblem">
+    <div class="ring" id="ring"></div>
+    <div class="disk" id="disk"></div>
+    <div class="logo" id="logo">
+      <svg viewBox="60 100 80 100" aria-hidden="true">
+        <line x1="100" y1="122" x2="74" y2="178" stroke="#fff" stroke-width="7"/>
+        <line x1="100" y1="122" x2="126" y2="178" stroke="#fff" stroke-width="7"/>
+        <line x1="74" y1="178" x2="126" y2="178" stroke="#fff" stroke-width="7"/>
+        <circle cx="100" cy="122" r="6.5" fill="#fff"/>
+        <circle cx="74" cy="178" r="6.5" fill="#fff"/>
+        <circle cx="126" cy="178" r="6.5" fill="#fff"/>
+      </svg>
+    </div>
+    <div class="mask" id="mask"></div>
+    <div class="strike" id="strike"></div>
+  </div>
+
+  <!-- vue éclatée B4 -->
+  <div class="exploded" id="exploded">
+    <div class="card card-logo" id="cardLogo">
+      <svg viewBox="60 100 80 100" width="150" height="150" aria-hidden="true">
+        <line x1="100" y1="122" x2="74" y2="178" stroke="#fff" stroke-width="7"/>
+        <line x1="100" y1="122" x2="126" y2="178" stroke="#fff" stroke-width="7"/>
+        <line x1="74" y1="178" x2="126" y2="178" stroke="#fff" stroke-width="7"/>
+        <circle cx="100" cy="122" r="6.5" fill="#fff"/>
+        <circle cx="74" cy="178" r="6.5" fill="#fff"/>
+        <circle cx="126" cy="178" r="6.5" fill="#fff"/>
+      </svg>
+      <div class="tag">le logo</div>
+    </div>
+    <div class="card card-disk" id="cardDisk">
+      <div class="disc"></div>
+      <div class="liser" id="liser"></div>
+      <div class="tag">le disque</div>
+    </div>
+    <div class="arrow" id="arrow"></div>
+  </div>
+
+  <div class="caption" id="caption"></div>
+  <div class="scan" id="scan"></div>
+  <div class="progress"><i id="prog"></i></div>
+</div>
+
+<script>
+/* Déterministe : tout est fonction de t. window.seek(t) pose l'état exact (contrat render.mjs). */
+function bez(p1x,p1y,p2x,p2y){return function(t){
+  let x=t;
+  for(let i=0;i<6;i++){
+    const cx=3*p1x*(1-x)*(1-x)*x+3*p2x*(1-x)*x*x+x*x*x - t;
+    const dx=3*p1x*(1-2*x)*(1-x)+6*p2x*x*(1-x)-3*p2x*x*x+3*x*x + 1e-6;
+    x-=cx/dx;
+  }
+  return 3*p1y*(1-x)*(1-x)*x+3*p2y*(1-x)*x*x+x*x*x;
+};}
+const easeOut=bez(.23,1,.32,1), easeInOut=bez(.77,0,.175,1);
+const clamp01=v=>Math.max(0,Math.min(1,v));
+const mix=(a,b,t)=>a+(b-a)*t;
+const $=id=>document.getElementById(id);
+const TOTAL=31;
+
+/* Textes — beat table v3 (fixée, mot pour mot). */
+function texts(t){
+  if(t<1)   return {ov:"Le logo du site a disparu.", hook:null, cap:null, small:false};
+  if(t<2)   return {ov:"Le logo du site a disparu.", hook:"Tu vois pourquoi ?", cap:null, small:false};
+  if(t<3)   return {ov:"Un nouveau logo.", hook:null, cap:null, small:true};
+  if(t<7)   return {ov:"On l'intègre. Et là… rien.", hook:null, cap:"2 jours bloqué sur ça.", small:true};
+  if(t<9)   return {ov:"On enlève le masque.", hook:null, cap:"C'est pas le rognage.", small:false};
+  if(t<12)  return {ov:"Faux.", hook:null, cap:"C'est pas le rognage.", small:false};
+  if(t<21)  return {ov:"Un disque invisible.", hook:null,
+                    cap:"L'anneau était un disque plein. Peint par-dessus.", small:false};
+  if(t<27)  return {ov:"Le fix : creuser l'anneau.", hook:null,
+                    cap:"Un vrai anneau. Logo au-dessus.", small:false};
+  return {ov:"Le détail qu'on voit pas, c'est celui qui casse tout.", hook:null, cap:null, small:true};
+}
+
+/* Tremblement screen-record (B1) : déterministe, ±1,6px, nul après 2s. */
+function shake(t){
+  if(t>=2) return 0;
+  return 1.6*(0.6*Math.sin(t*53)+0.4*Math.sin(t*91+1.7));
+}
+
+window.seek=function(t){
+  t=Math.max(0,Math.min(TOTAL,t));
+  const T=texts(t);
+
+  /* — textes : entrée 200ms (cascade v3), ease-out, translateY(18px)→0 — */
+  const ov=$("overlay"), hk=$("hookline"), cp=$("caption");
+  const anchor = t<2?0 : t<3?2 : t<7?3 : t<9?7 : t<12?9 : t<21?12 : t<27?21 : 27.8;
+  const kIn=easeOut(clamp01((t-anchor)/0.2));
+  ov.textContent=T.ov; ov.classList.toggle('small',T.small||t<2);
+  ov.style.opacity=kIn; ov.style.transform=`translateY(${mix(18,0,kIn)}px)`;
+  if(T.hook){ const kH=easeOut(clamp01((t-1)/0.2));
+    hk.textContent=T.hook; hk.style.top=(t<2?226:196)+'px'; hk.style.opacity=kH; hk.style.transform=`translateY(${mix(14,0,kH)}px)`;
+  } else { hk.style.opacity=0; hk.textContent=""; }
+  if(T.cap){ const kC=easeOut(clamp01((t-(anchor+0.2))/0.2));
+    cp.textContent=T.cap; cp.style.opacity=kC; cp.style.transform=`translateY(${mix(14,0,kC)}px)`;
+  } else { cp.style.opacity=0; cp.textContent=""; }
+
+  /* — scènes — */
+  const site=$("site"), topbar=$("topbar"), emblem=$("emblem"), expl=$("exploded");
+  const ring=$("ring"), disk=$("disk"), logo=$("logo"), mask=$("mask"), strike=$("strike");
+  const inSite   = (t<2)   || (t>=27);            /* B1 + B6 : hero fictif */
+  const inDebug  = (t>=2 && t<7) || (t>=7 && t<12) || (t>=21 && t<27); /* B2, B3, B5 */
+  const inExpl   = (t>=12 && t<21);               /* B4 */
+
+  site.style.opacity   = inSite?1:0;
+  topbar.style.opacity = (t>=3&&t<12)||(t>=21&&t<27)?1:0;  /* zéro marque 0–3s (Lot [42]) */
+  emblem.style.opacity = inExpl?0:1;   /* B1 cercle vide · B2–B3·B5 états · B6 clean */
+  expl.style.opacity   = inExpl?1:0;
+
+  /* — B1/B6 : emblème dans le hero — B1 vide, B6 logo visible — */
+  if(t<2){ disk.style.opacity=0; logo.style.opacity=0; mask.style.opacity=0;
+    ring.style.transform="scale(1)"; strike.style.opacity=0; }
+  if(t>=27){ disk.style.opacity=0; mask.style.opacity=0; strike.style.opacity=0;
+    ring.style.transform="scale(1)"; logo.style.opacity=1; logo.style.transform="scale(1)"; }
+
+  /* — B2 (2–7) : broken + monogramme clignote 0,3s puis s'éteint — */
+  if(t>=2&&t<7){
+    disk.style.opacity=0; mask.style.opacity=0; strike.style.opacity=0;
+    if(t<3.3){ logo.style.opacity=1; logo.style.transform="scale(1)"; }
+    else { const k=easeOut(clamp01((t-3.3)/0.25));
+      logo.style.opacity=1-k; logo.style.transform=`scale(${mix(1,.96,k)})`; }
+    ring.style.transform="scale(1)";
+  }
+
+  /* — B3 (7–12) : masque s'écarte (180ms), logo revient, filet gris à 9s — */
+  if(t>=7&&t<12){
+    disk.style.opacity=0;
+    const kM=easeInOut(clamp01((t-7)/0.18));
+    mask.style.opacity=1-kM; mask.style.transform=`translateY(${mix(0,-70,kM)}px)`;
+    const kL=easeOut(clamp01((t-7.2)/0.3));
+    logo.style.opacity=kL; logo.style.transform=`scale(${mix(.94,1,kL)})`;
+    if(t>=9){ const kS=easeOut(clamp01((t-9)/0.2));
+      strike.style.opacity=1; strike.style.transform=`scaleX(${kS}) rotate(-6deg)`;
+      logo.style.opacity=mix(1,.45,kS);
+    } else { strike.style.opacity=0; strike.style.transform="scaleX(0) rotate(-6deg)"; }
+    ring.style.transform="scale(1)";
+  }
+
+  /* — B4 (12–21) : éclaté 300ms, liseré pulse 2× — */
+  if(inExpl){
+    const kE=easeOut(clamp01((t-12)/0.3));
+    $("cardDisk").style.transform=`translateY(${mix(0,-26,kE)}px)`;
+    $("cardLogo").style.transform=`translateY(${mix(0,26,kE)}px)`;
+    $("arrow").style.opacity=kE; $("arrow").style.height=`${mix(0,30,kE)}px`;
+    const pulse=w=>{const k=(t-w)/0.7; return (k>=0&&k<=1)?Math.sin(k*Math.PI):0;};
+    $("liser").style.opacity=Math.max(pulse(13.5),pulse(15.2));
+  }
+
+  /* — B5 (21–27) : disque se creuse, pop .97→1.05→1, clean verrouillé — */
+  if(t>=21&&t<27){
+    mask.style.opacity=0; strike.style.opacity=0;
+    const kD=easeInOut(clamp01((t-21)/0.4));
+    disk.style.opacity=1-kD;
+    let s=1;
+    if(t>=21.8&&t<22.25){ const k=(t-21.8)/0.45;
+      s = k<0.4 ? mix(.97,1.05,k/0.4) : mix(1.05,1,(k-0.4)/0.6); }
+    ring.style.transform=`scale(${s})`;
+    const kL=easeOut(clamp01((t-21.4)/0.4));
+    logo.style.opacity=kL; logo.style.transform=`translateY(${mix(8,0,kL)}px) scale(${mix(.97,1,kL)})`;
+  }
+
+  /* — tremblement B1 (stage) — */
+  const sx=shake(t);
+  $("stage").style.transform=`translate(${sx}px,${shake(t+11)*0.7}px)`;
+
+  /* — progression + scan (linear, §9) — */
+  $("prog").style.transform=`scaleX(${t/TOTAL})`;
+  const SY=960+144;
+  $("scan").style.transform=`translateY(${((t%2.5)/2.5)*SY-144}px)`;
+};
+window.seek(0);
+</script>
+</body>
+</html>

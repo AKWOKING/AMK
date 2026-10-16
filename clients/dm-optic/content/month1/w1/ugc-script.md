@@ -110,12 +110,12 @@ que le moteur de contenu AMK (`CONTENT-LESSONS` §11.2). **Plus d'audition à pr
 │  Titulaire · M. Domche Noumbi   │
 │                                 │
 │  Ndobo Mayor · Bonabéri         │
-│  8h00 – 17h30                   │
+│  8h30 – 17h30                   │
 └─────────────────────────────────┘
 ```
 
 ⚠️ **N'écrire que ce qui est confirmé.** L'adresse et les heures le sont (données du client, 25/09).
-**Les jours d'ouverture ne le sont pas — ne pas les écrire.**
+**Jours confirmés le 15/10 : lundi à samedi.**
 
 ---
 

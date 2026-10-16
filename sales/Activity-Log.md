@@ -4939,3 +4939,347 @@ lead content de « la seule vidéo publiée » — vérifier d'abord que le lead
 - **Fiche Google (capture « Business information ») : correction de mon avis du 17:00.** Les zones desservies sont **Buea, Kumba, Limbe, Douala, Yaoundé** ; la carte publique affiche seulement « Buea and nearby areas » (résumé de Google). Mon alerte « Douala manque » était **fausse** (j'avais lu la carte, pas les réglages). Horaires réglés par King : **lun–sam 10:00–21:00, dimanche fermé** ; pas d'adresse (« deliveries and home services only ») ; réseau social listé : TikTok `@amkweb` (en `http`). **Le document de page Facebook du 14/09 est périmé** sur trois points : horaires (08:00–19:00), lieu (Buea), et ses textes de publication (prix « dès 100 000 FCFA » et « livrés en 3 à 5 jours » : à ne pas réutiliser).
 - **Ruling King : Messenger** pour les cliniques et labos non joignables sur WhatsApp, **et « nous aurons aussi à avoir et à maintenir une page professionnelle pour nous-mêmes »** (page Facebook AMK). Recherche du 10/10 : l'aide officielle de Messenger dit qu'une Page peut envoyer jusqu'à **10 demandes de message par jour** à des personnes ou des Pages, **fonction « en cours de déploiement, pas disponible pour toutes les Pages »**, et le destinataire doit autoriser les messages de vous ; des sources tierces de 2024 disent qu'une Page ne peut pas écrire à une Page. **Contradictoire et daté : à vérifier dans la Page elle-même avant de bâtir un plan dessus.**
 - **App d'essayage Univers :** King l'a testée sur son téléphone, « ça marche » ; il demande des améliorations après recherche → `clients/univers-optique/research/TRY-ON-IMPROVEMENTS-2026-10-10.md` (proposition, rien de modifié ; **la source de l'app n'est pas dans le dépôt**).
+
+## 13/10/2026 (mardi, matin) — pipeline vidéo Flow · journal des prospects (captures)
+
+- **Pipeline vidéo :** nouveau pipeline Flow + ChatGPT pour toutes les vidéos futures (ruling King). L'avatar Google Flow reste le protagoniste. `render.mjs` reste en secours. Document : `content/strategy/VIDEO-PIPELINE-FLOW-2026-10.md` (crédits et fonctions non vérifiés marqués [NV]). Le PRE-FLIGHT renvoie désormais à ce document pour la vidéo.
+- **Planète Optique (Douala) :** premier message le 12/10 à 11:34 (aperçu de présence en ligne avec bouton WhatsApp, « vous voulez le voir ? »), sans réponse. Relance d'aujourd'hui, 13/10 à 11:01 : « je voulais juste m'assurer que vous l'avez bien reçu, rien d'urgent ». Fenêtre de réponse de 48 h ; on attend, rien d'autre.
+- **Labiomed (Deido, Douala) :** historique exact (capture de King) : relance envoyée le 22/09 à 16:22 (maquette de labiomed.vercel.app) ; réponse du client le même jour à 16:41 : « Non pas encore je ne suis pas en place … quand je serai là je vais vous contacter » ; accusé de réception de King à 17:14, sans relance. Statut : **chaud-reporté, initiative du client, aucune relance.** Ruling King : aucune relance après le report.
+- **Agenda du 13/10 (brief King) :** 15:30 rendez-vous avec DM Optique SARL ; 19:00 publication de la vidéo POST-01. L'agenda Google `primary` ne renvoie aucun événement pour le 13/10 : lookup non fiable, à confirmer par King.
+- **POST-02 :** AUCUN script. En attente : décision de King après les métriques 48 h de POST-01 (jeudi 15/10 à 19:00). L'angle « 3 opticiens sur 4 à Douala n'ont pas de site » est un candidat, pas une décision.
+- **Calendrier :** non maintenu. Les événements viennent de King directement ; un calendrier vide n'est pas un signal.
+- **Vidéo publiée :** la version Flow (sur le téléphone de King, hors dépôt). Le `render.mjs` est la version antérieure. Si King téléverse `content/pipeline/POST-01-v4-FLOW.mp4`, l'archiver (pas urgent). Archivage uniquement si POST-01 performe (rétention 3 s > 60 %, commentaires positifs).
+- **Accès Flow :** confirmé fonctionnel sur les comptes de King ce 13/10. Chiffres réels à fournir par King après la séance de cohérence de demain. Restent [NV] : bonus de 100 crédits, clips de 10 s, chaîne Extend, limite de 3 références.
+- **Demain 14/10 (prévu, pas commencé) :** bible du personnage (2–3 images de référence), plaque d'environnement (1 image), logo PNG (1 image), modèle de prompt Flow, workflow de chaîne Extend, mise à jour du document avec les chiffres réels, puis commit du document et du PRE-FLIGHT (uniquement après confirmation de King).
+
+## 13/10/2026 (mardi, soir) — rôle de l'orchestrateur · décision Graphify · table décision → fichiers
+
+- **Rôle de l'orchestrateur (confirmé par King) :** écrit les scripts et les prompts. **N'a pas besoin d'accès Google Flow.** Flow est l'outil d'exécution de King. Livrables par vidéo : script, prompt Flow, prompt ChatGPT, légende TikTok. Les points [NV] du document Flow sont à vérifier par King, pas par l'orchestrateur.
+- **Graphify : non retenu pour l'instant.** Outil de graphe de connaissances pour code (AST + extraction sémantique). Le dépôt est à ~80 % markdown ; l'outil exigerait un backend LLM configuré, coût non justifié à cette échelle. Ce qui existe couvre l'essentiel : table de routage du PRE-FLIGHT (graphe manuel), lecture §0c, journal d'activité. **Déclencheurs de réévaluation (un suffit) :** dépôt au-delà de 150 fichiers · 2+ incidents « fichier introuvable » en une semaine · une règle qui impose de modifier 5+ fichiers dans plusieurs dossiers et qui est oubliée. D'ici là : aucune installation.
+- **Table décision → fichiers :** ajoutée à `PRE-FLIGHT.md` (§0d). Chaque ligne est vérifiée contre le dépôt.
+- **Commit de `content/strategy/VIDEO-PIPELINE-FLOW-2026-10.md` :** après la séance de cohérence de demain (14/10), sur confirmation de King. Non fait ce soir.
+- **Règle de découpage des légendes (ruling King 12/10) :** le commit « 9294cf2 » cité dans le fil n'existe pas dans le dépôt, et la règle n'était pas dans `CONTENT-STRATEGY-V2-2026-10-05.md`. Écrite maintenant comme §7 de ce fichier (13/10). Ligne du PRE-FLIGHT §0d pointée vers ce fichier, plus de « dossiers de contenu ».
+- **Ligne 3-Ingredient :** acceptée telle quelle, pointe vers `VIDEO-PIPELINE-FLOW-2026-10.md`. Sera mise à jour après la séance du 14/10.
+
+## 13/10/2026 (mardi, midi) — recherche d'ouverture par un fait · template v2 (brouillon) · plan A/B
+
+- **Recherche vérifiée contre les sources (pas reprise de la brief) :** deux chiffres rejetés : « 12x (9,4 % vs 0,8 %) » (un échantillon de 187 prospects et une donnée de listes achetées, pas une comparaison credential/déclencheur) et « cadrage de perte 2x » (méta-analyse O'Keefe & Jensen : pas de différence de persuasion ; le 2x vient de la aversion aux pertes en choix). Les chiffres 97 %, 76 % et 200 M sont **américains** ou attribués à Google : ne pas les présenter comme des faits locaux. Détail et étiquettes de source : `sales/RESEARCH-STANDARD.md` §10.
+- **Chiffres camerounais (datés, étiquetés estimation) :** Facebook 6,84 M (sept. 2026, 21,9 % de la population), Messenger 6,6 M, WhatsApp ~9–10 M (estimation).
+- **Template v2 :** brouillon `sales/CLIENT-MESSAGING-RULES.md` §12, **non en vigueur**. Le template vivant n'a pas été modifié. Rien n'a été envoyé.
+- **Plan A/B :** alternance par identifiant CRM, mesure à 7 jours, environ 140 prospects par bras pour détecter 5 % contre 15 %. Un lot de 30 ne tranchera rien.
+- **Journal CRM :** la colonne de variante n'existe pas. Elle passe par `leads/build/crm.py` après approbation de King. D'ici là, les envois sont notés ici avec leur bras.
+- **En attente de King :** approbation du template v2, et choix d'un chiffre sourcé ou de la formule sans chiffre.
+
+## 13/10/2026 (mardi, après-midi) — template v2 approuvé (non en vigueur) · corrections logées
+
+- **Décision King :** texte v2 approuvé (formulation de l'orchestrateur, sans chiffre), **mis à jour dans `sales/CLIENT-MESSAGING-RULES.md` §12, marqué NON EN VIGUEUR** jusqu'à confirmation du premier envoi par King. Rien n'a été envoyé.
+- **Contrôle :** le template vivant n'a pas pu être identifié dans le dépôt comme un fichier unique. Candidat (non confirmé) : `sales/Send-BATCH-2026-09-24-Opticiens.md`. King doit désigner le fichier ou coller le texte avant le test.
+- **Point signalé, non modifié :** « Docteur » dans le texte approuvé suppose un médecin ; à adapter selon le titre vérifié du destinataire.
+- **Test A/B :** accepté dans sa limite (n≈30 par vague = tendance seulement). Lancement prévu sur 4 à 5 vagues, décision ensuite.
+- **Corrections logées :** « 12x (9,4 % vs 0,8 %) » rejeté (non comparable) ; « loss framing 2x » rejeté pour les messages (méta-analyse : pas d'écart de persuasion) ; « 97 % / 76 % / 200 M » sont des données américaines, jamais citées comme faits locaux. **Règle rappelée : tout chiffre dans un message de prospection porte une source, sinon il n'apparaît pas.**
+- **Journal CRM :** colonne `wave_variant` à ajouter via `leads/build/crm.py` après approbation de King. D'ici là, les envois du test sont notés ici, avec leur bras.
+
+## 13/10/2026 (mardi, après-midi) — §0e ajoutée · titre corrigé dans §12 · contrôle documenté
+
+- **§0e (règle King 13/10) :** « Tout audit qui relève un problème doit contenir : correctif, amélioration, action. » **Absente du PRE-FLIGHT à la vérification : ajoutée maintenant** (`PRE-FLIGHT.md` §0e).
+- **Titre corrigé (§12, approuvé mais corrigé) :** « Docteur » remplacé par `{Titre}` : Dr./Docteur → « Docteur », M. → « Monsieur », Mme → « Madame », inconnu → phrase sans titre. Source du titre : ONOC uniquement. Champ `titre` à ajouter à la fiche CRM via `crm.py` après approbation de King.
+- **Contrôle documenté :** `sales/WAVE-TEMPLATE-CURRENT.md` créé (texte du 12/10). Preuve vérifiée : Planète Optique (capture, 12/10 11:34). **JiredOptic : non vérifié** (CRM : `Contacted = No`, aucune trace d'envoi dans le dépôt). À confirmer par King.
+- **Action :** King confirme la date et la liste des envois du 12/10. Orchestrateur complète le fichier contrôle à partir de cette réponse.
+
+## 2026-10-11 · LUMUMBA OPTICMEDICAL — statut CRM (ruling King)
+**Hors vague du 12/10.** Contacté le **24/09 à 15:18** (capture King) → pas un froid.
+**Statut : re-engage, unscheduled.** Ne pas re-contacter dans la vague ; replanifier séparément.
+Conflit de quartier (Makepe ↔ Bonamoussadi) non résolu — à trancher avant tout re-engage.
+
+## dim 11/10 (nuit) — AUTOPSIE INTERNE COMOBIL (§8d, ruling King) — faite une fois, jamais re-engagé
+
+**Contrainte ruling :** leçon interne seulement ; jamais de ré-engagement issu de l'autopsie ; jamais
+de référence à la perte dans un outreach futur ; si COMOBIL initie un contact plus tard = fil neuf,
+contexte neuf.
+
+**Chronologie :** début sept. — repéré au sweep écoles (COMOBIL.com PARKED, vérifié 09/09/26 =
+angle D/E fort) · 14/09 — concept `concept-comobil-v1.html` construit ET lead **parké (décision
+King) avant tout contact** · 14/09→02/10 — « parké » dans la prose mais `prospect` dans la donnée
+(bug M7, corrigé depuis : la décision va dans le générateur) · 02/10 — King « COMOBIL dead » →
+`lost`, bulk close, aucun déclencheur de résurrection.
+
+**Moment de casse :** le deal n'a pas calé en conversation — il n'est **jamais parti** : parké avant
+le premier message. La décision qui l'a perdu = le park du 14/09, jamais re-testé.
+
+**Leçons internes :** (1) un park **avant contact** est une hypothèse, pas un verdict — pour tout
+lead semblable futur, le test est **un message**, pas une maquette ni un rebuild ; (2) toute
+décision park/lost doit recevoir **sa raison datée d'une ligne au moment où elle est prise**
+(l'autopsie rétroactive du 11/10 a dû reconstruire un motif que le park du 14/09 n'avait pas loggé —
+c'est ce gap que §8d ferme) ; (3) le bug prose-vs-data de ce fil est déjà codé dans la règle M7
+(la décision dans le générateur).
+
+**Statut :** lead `lost`, fiche inchangée, fil clos. Aucune action commerciale issue de cette
+autopsie.
+
+## lun 12/10 (matin) — VAGUE 7 ENVOIS + fils chauds (captures King)
+
+- **05:58 RÉPONSE Univers Optique :** « Peut-être faudrait il que nous convenions pour les essais en
+  cabinets stp car je ne m'en sors pas. » → signal CHAUD : il demande un essai accompagné au cabinet.
+  Une réponse **annule la fenêtre** (pas de note vocale 13/10, pas d'appel 15/10).
+- **10:43 ENVOI King → Univers Optique :** « Bonjour Docteur, merci pour votre retour. Vendredi me
+  convient bien, je viendrai avec tout ce qu'il faut pour qu'on teste ensemble dans votre cabinet.
+  Quelle heure vous arrange ? Samedi reste possible si c'est plus simple. » → la visite du 16/10 est
+  une **session de travail** (tester ensemble, observer, zéro pitch) ; les 3 questions d'économie se
+  posent sur place. CRM mis à jour dans le générateur : stage `qualifying`, Follow-up date
+  **2026-10-16** (ruling King 12/10).
+- **09:58 RÉPONSE DM Optique :** « Ok » — accusé de réception du message de 22:40 (11/10). Aucune
+  réponse due. Fenêtre d'acompte : **mar 13/10**.
+- **Vague 12/10 :** 7 envois par King 08h–11h, liste = celle du ruling 11/10 (Horizon/Akwa ·
+  Kamaïs/Bonanjo · Maff/Bonadibong · Faby · JiredOptic · Planète · Centrale) ; Lumumba + Bali hors
+  vague. Toute réponse collée ici sera journalisée avec nom, texte exact, délai depuis envoi, signal.
+
+## lun 12/10 10:46 — RÉPONSE Univers Optique : RDV CONFIRMÉ
+
+« Vendredi 10h stp » (capture King) → **ven. 16/10, 10:00, au cabinet.** Session de travail : tester
+l'outil ensemble, observer, **zéro pitch** ; les 3 questions d'économie se posent sur place. Le repli
+samedi et l'hypothèse d'un toucher jeudi sont SANS OBJET — la réponse est arrivée. Aucune relance
+avant le 16/10. Note vocale du 09/10 : King écoute et colle ici tout élément matériel éventuel.
+
+## lun 12/10 — RECHERCHE BORNÉE vague (ruling King, 10 min/prospect, rendu en chat, aucun fichier)
+
+10 requêtes web + 1 fetch (bloqué 403 : Facebook). Résultat : **aucune trace publique fraîche
+(≤30 j) pour les 7** ; seuls existent l'annuaire ONOC (noms propres sourcés) et, pour Kamaïs, une
+page Facebook vivante (3 369 j'aime, ancienneté des posts non vérifiable depuis le bac). Noms +
+M./Mme repris de l'ONOC uniquement ; aucun honoraire deviné. Messages finaux = gabarit figé +
+prénom sourcé, rendus en chat le 12/10.
+
+## lun 12/10 (midi) — ÉTAT DE VAGUE (retours King + captures) · recoupement CRM
+
+- **Horizon optique :** 677 44 74 17 PAS sur WhatsApp (King) — cohérent avec le CRM : disqualifié le
+  24/09 (« WhatsApp refuse le numéro, indisponible ; ne pas réessayer sans nouveau numéro »). Aucun
+  second numéro. Aucun envoi n'a eu lieu. Canal restant : appel (à planifier) ou classement.
+- **KamaïsOptic :** sur WhatsApp ; **aucun envoi aujourd'hui**. ⚠️ Le CRM porte : envoyé 18/09 19:42,
+  jamais ouvert/répondu, **décision King 22/09 « on ne réécrit plus »** (parked, MORT). La vague du
+  11/10 l'avait listé froid par erreur. King personnalise avec les posts FB (dernier post 7 mai,
+  captures) — **conflit de rulings signalé en chat avant tout envoi**. Leur page FB indique Bessengue
+  (« 50m du feu rouge Bessengue ») + numéros 693 927 766 / 678 435 460 : Bessengue retenu comme
+  quartier (source Tier A = leur propre page), numéros FB non utilisés (l'annuaire gagne).
+- **Maff Optique Sarl :** HORS VAGUE — déjà contacté le 24/09 11:56 (capture du fil), bulk close
+  02/10, fil clos. Dead lead confirmé par King. Aucun second envoi.
+- **JiredOptic Med :** ENVOYÉ ce matin. Compte WA business vérifié (capture) : « jirehopticmed »,
+  optique médicale, 08:00–18:00, jirehopticmed@gmail.com. CRM → qualifying, FU 13/10.
+- **Faby Optique :** 692 08 00 55 PAS sur WhatsApp → tester 672 55 21 37 avant de classer (ruling
+  11/10) ; premier envoi possible sur ce numéro si vivant.
+- **Planète Optique :** ENVOYÉ ce matin. CRM → qualifying, FU 13/10.
+- **Centrale Optique :** 693 96 89 56 PAS sur WhatsApp → tester 699 59 82 86 avant de classer
+  (ruling 11/10). Pas de ligne CRM (stock annuaire) — journal seulement.
+- **ERREUR DE VÉRIFICATION (journalisée ops/INFERENCE-ERRORS.md #10) :** la VERIFIED-LIST du 11/10 a
+  contrôlé l'entité ONOC mais PAS l'historique CRM → 3 des 7 n'étaient pas froids (Maff, Kamaïs,
+  Horizon). Fix proposé : recoupement CRM obligatoire avant « vérifié ».
+
+## lun 12/10 11:47 — PREMIER REFUS DE LA VAGUE (JiredOptic) + KAMAÏS CONFIRMÉ MORT
+
+- **JiredOptic Med :** envoi 11:37 (✓✓) · 11:47 ELLE : « non » puis « bonjour monsieur » (capture
+  King) — refus clair à « vous voulez le voir ? », adouci d'un salut. Délai : 10 min. Signal :
+  refus poli, pas d'objection, pas de question. La réponse **annule la fenêtre** (ni voix 13/10 ni
+  appel 15/10). Règle : **pas de re-ask** — une seule sortie de courtoisie proposée (voir chat),
+  puis silence sauf retour spontané. CRM : parked, motif daté 12/10.
+- **KamaïsOptic :** ruling King 12/10 : « Kamais est mort on ne le relance pas » → la décision du
+  22/09 (« on ne réécrit plus ») tient ; aucun envoi, aucun appel. Le brouillon personnalisé du
+  12/10 reste non envoyé.
+
+## lun 12/10 (midi passé) — SORTIE DE COURTOISIE ENVOYÉE + RULING « PAS D'APPEL »
+
+- **JiredOptic 11:53 :** King envoie la sortie de courtoisie (✓✓, capture) : « Bonjour Madame, merci
+  pour votre réponse. C'est noté, je ne vous dérange pas davantage — si un jour vous voulez voir vos
+  montures en ligne, vous savez où me trouver. Bonne journée. » Fil clos proprement ; dépark seulement
+  si elle réécrit.
+- **Planète Optique :** envoi confirmé 11:34, délivré (✓✓, liste de chats King). Aucune réponse à
+  cette heure → fenêtre : note vocale 13/10 si silence.
+- **RULING King : PAS D'APPEL.** « it'll just make things difficult working with someone that doesn't
+  have whatsapp in 2026 » → Horizon (pas de WA, pas de 2ᵉ numéro) = **écarté, sans appel**. Faby et
+  Centrale : seul le test WhatsApp du 2ᵉ numéro reste (672 55 21 37 / 699 59 82 86) ; si le 2ᵉ numéro
+  n'a pas WhatsApp non plus → **écartés, sans appel**. Un opticien joignable ni sur WhatsApp ni sur un
+  second WhatsApp n'entre pas au pipeline.
+
+## lun 12/10 (après-midi) — RULINGS : deux règles debout + exclusions Faby/Centrale + méthode vague v2
+
+- **Règles debout (CLIENT-MESSAGING-RULES.md §9 + §10) :** wave list gate (ONOC + historique CRM +
+  WhatsApp vivant ; motifs d'exclusion loggés au CRM) et WhatsApp-only pipeline (pas de SMS/appel/
+  email pour un opticien sans WhatsApp).
+- **Faby Optique :** 2ᵉ numéro 672 55 21 37 PAS sur WhatsApp (King) → excluded_no_wa, disqualifié au
+  générateur. **Centrale Optique :** 699 59 82 86 PAS sur WhatsApp non plus → ligne CRM créée,
+  excluded_no_wa. Horizon : tag excluded_no_wa (pas d'appel). Maff : tags excluded_dead_lead +
+  excluded_already_contacted. Kamaïs : tag excluded_already_contacted.
+- **Méthode vague v2 (ruling) :** 20–25 noms/vague (ONOC + Google Maps + Facebook), 3 checks §9,
+  segmentés cold vs re-engage (>30 j, template + cadence propres) ; King envoie le segment cold
+  5–7/j sur 3–4 j (max 7/j) ; re-engage = vague séparée ultérieure. Plan de sourcing =
+  orchestrateur ; liste approuvée par King avant tout envoi. Addendum dans VERIFIED-LIST.
+- **Planète Optique :** silence depuis 11:34 → note vocale **mar. 13/10 matin** si toujours muet
+  (fenêtre §7).
+
+### 12/10 (soirée) — ruling King : reframe POST-01 + batch 6 accepté + builder-test journalisé
+- **POST-01 v2 (5 changements appliqués) :** logo **AMK** sur **page de test AMK** dans les 6 beats ;
+  « un opticien de Douala » retiré (header + aucune VO ne le portait) ; section
+  « PORTE DE CONSENTEMENT » supprimée (sans objet) ; pilier renommé **debug-in-public** (série
+  nommée) — fichier POST-01 + liste des piliers du brief d'établissement ; zéro référence client
+  (URL/domaine/monogramme) + contrôle avant export. Publiable **mardi 13/10 après confirmation
+  finale de King sur la v2** — rien publié ce soir.
+- **Batch 6 accepté sans edits** (ruling). Lot [41] confirmé.
+- **Builder-test (option 1) :** journal de mémoire déposé dans
+  `research/BUILDER-TEST-KING-2026-10.md` (sortie texte seule, verdict SKIP ; **nom du builder et
+  date [À CONFIRMER — King]**) ; entrée TOOL-SCAN du 11/10 mise à jour avec pointeur.
+
+### 12/10 (nuit) — rulings vidéo POST-01 + dummy rendu
+- **Builder-test CLOS :** « Décision finale 12/10 — aucun builder externe. L'orchestrateur
+  construit tous les sites AMK. » Blancs [À CONFIRMER] retirés (sans objet).
+- **Script v3 (build spec King) :** colonne VO dissoute → captions manuels = anciennes lignes VO ;
+  « aucun son dans le fichier » ; ligne musique supprimée (musique = King sur TikTok) ; méthode de
+  production orchestrator end-to-end documentée (pas de screen recording).
+- **Pipeline vidéo vérifié en sandbox :** moteur `tools/video/install.sh` (Chromium embarqué +
+  imageio-ffmpeg) réinstallé ; assets `content/pipeline/post01/` (POST-01.html déterministe
+  window.seek(t) + render.mjs frames→ffmpeg `-an`) ; **dummy 3 s**
+  `content/pipeline/POST-01-DUMMY-2026-10-12.mp4` (1080×1920, 30 fps, H.264, UNE SEULE piste =
+  silencieux) ; `audit_video_motion.py` → OK ; 0 erreur console (§13) ; 6 beats relus image par
+  image, collisions de layout corrigées (caption/codewin, label disque, signature dupliquée
+  supprimée). Rendu complet 45 s **en attente validation King du dummy**.
+
+### 12/10 (nuit 2) — POST-01 v4 : VO voice-00 + SFX, réponses King
+- **Rulings King :** ajouter SFX d'animation (ball drop / slide) + **voix** (voice-00, re-sélectionné
+  par King en audition ce tour — registre non persistant entre sessions).
+- **v4 livrée (workspace, hors Git — *.mp4 gitignoré) :** `content/pipeline/POST-01-BUG-LOGO-2026-10-12.mp4`
+  38,5 s · 1080×1920 · vidéo + AAC 24 kHz · VO = captions lus mot pour mot · SFX synthétisés sandbox
+  (whoosh transitions, thud disque, pop, blip fix, carillon, ticks frappe) · motion gate OK ·
+  mean −22,3 dB / max −0,4 dB. Beats recalés sur la VO mesurée (table v4 dans le script).
+- **Explication fournie à King :** HTML = source de rendu (cuisine) ; MP4 = fichier à checker et à
+  poster (TikTok : upload app/PC, musique platform-native ajoutée par lui au téléversement).
+- **Livraison MP4 (12/10 nuit 2) :** King ne trouvait pas le MP4 sur GitHub — normal : `*.mp4` est
+  gitignoré (convention artefacts). Exception de livraison documentée : `git add -f` du MP4 final
+  (commit `c760a29`). La convention reste pour les futurs artefacts ; les livraisons à King passent
+  par GitHub en exception nommée.
+
+## 12/10 (soir) — POST-01 v3 TikTok : index-v3 construite + dummy 3s rendu
+- v3 = cut TikTok 31 s / 6 beats (hook hybride verbatim · monogramme AMK · silencieux · « tu » ·
+  zéro client/IA/prix/CTA). `content/pipeline/post01/index-v3.html` construite ; flag `--html`
+  ajouté à `render.mjs` (rétro-compatible, défaut POST-01.html).
+- Dummy 3 s (hook + entrée B2) rendu : gate motion OK (moy 2,86 léger), 0 erreur console, stills
+  relus (cercle vide B1, question à 1 s, B2 sans marque avant 3 s). 3 défauts attrapés et corrigés
+  avant tout rendu complet : cercle absent en B1, « AMK » dans la pill à 0 s (→ « SITE DE
+  DÉMONSTRATION »), eyebrow AMK avancé à 3 s.
+- v2 45 s : PARKED, non touchée (n'existe pas en rendu sur cette branche — le script v2 a été
+  livré en chat à l'étape 2).
+- En attente : validation King du dummy → étape suivante = rendu complet 31 s + pre-flight gate 11 points.
+
+## 2026-10-12 (soir, tard) — POST-01 v3 : rendu complet 31 s (fichier pour revue King, non publié)
+- Fichier : `content/pipeline/POST-01-v3-TIKTOK-2026-10-13.mp4` (31 s, 1080×1920, silencieux). Publication prévue mardi 13/10 par King ; rien publié par l'agent.
+- Correctifs avant rendu : B1 « Le logo du site a disparu. » (contexte, ruling King option a) ; chevauchement overlay/hookline corrigé ; scan renforcé (l'audit mouvement passait en « diaporama » sur 7 fenêtres figées → maintenant OK).
+- Vérifs : audit mouvement OK (15 fenêtres sur 15) ; rendu exit 0 (0 erreur console) ; mots interdits 0 ; accents présents ; stills relus à 0.5/1.5/2.5 s et milieu/fin.
+- Limite connue : boucle partielle — la dernière image garde le cadrage de B1 mais montre le logo et l'overlay de fin (différence moyenne 10/255 vs première image).
+
+## 2026-10-12 (nuit) — POST-01 v4 : porte de mouvement passée, final prêt pour revue King (non publié)
+- Fichier final : `content/pipeline/POST-01-v4-TIKTOK.mp4` (31 s, 1080×1920, AAC, VO voice-04). Non publié.
+- Porte `tools/qa/audit_video_motion.py` : **OK, 15/15 fenêtres** (min max 1,65 à 10–12 s). Premier passage 7 figées → 4 figées → 0 figée.
+- Ce qui a fait passer la porte : grain de pellicule à chaque image (opacité 5 %, blocs 4×4 px), légendes découpées au calage VO (B4, B5, B6 en deux morceaux), légende 36 px, ambiance (vapeur, lueur, poussière). Respiration 3 px non changée (repli 4–5 px non appliqué).
+- Sources : `index-v4.html` + `layers/` (calques environnement, buste 912 px) ; VO `vo/` (mots identiques aux légendes ; B4–B6 en deux morceaux) ; `BEAT-TABLE-v4.md` mis à jour.
+- Exception Git : MP4 final forcé (`*.mp4` ignoré, même convention que la v3 et le dummy). Les VO `*.mp3` sont forcées de la même manière.
+- Non committés : `POST-01-v4-TIKTOK-SILENT.mp4` (artefact de build).
+
+## 12/10/2026 — ICP + protocole de qualification (proposition, en attente King §4b) · rétrospective vague 12/10
+- **Livrables (propositions, non loi) :** `sales/ICP-OPTICIENS-2026-10.md` (7 axes + veto, checklist, calibration DM/Univers) · `sales/QUALIFICATION-PROTOCOL-2026-10.md` (recherche citée §0, mapping BANT→AMK, question de besoin, question de délai) · `sales/RETRO-VAGUE-2026-10-12.md` (8 prospects scorés).
+- **§9 `CLIENT-MESSAGING-RULES.md` :** gate 4 « score ICP » ajouté ; les trois gates restent. Calendrier M0/M1 **à trancher par King** (option A recommandée). Code `excluded_icp` non créé (à faire dans `crm.py` après oui).
+- **Résultat rétro :** 0/8 passent 5/7 en M0 (max 4/7). Les deux envois réels (JiredOptic 3/7, Planète 2/7) auraient été retenus. DM Optique (3/7 en M0, clos ensuite à 7/7) serait refusé par l'option B.
+- **Décompte à confirmer :** 5 sur 7 échouent aux gates (§9) ; 6 sur 8 si Lumumba compte. Le brief disait « 5 sur 8 ».
+- **Question de délai proposée :** « Si on avançait, vous le verriez en ligne quand ? » — validée contre les règles de messagerie, posée seulement après une réponse.
+- **Git :** non commis. Précondition §1e non remplie (tip distant `842241e` n'est pas ancêtre de HEAD `3db9333`). Pas de reset.
+
+## 12/10/2026 (soir) — RULINGS KING : timing Option A · décompte 5/7 · propositions · remote gardé
+- **Ruling 1 — timing (Option A) :** pré-envoi = mécanique seule (ONOC + historique CRM + WhatsApp) + vetos, **sans score ICP** ; post-réponse = score complet 5/7 + question de délai, dans les 7 jours. Appliqué dans `CLIENT-MESSAGING-RULES.md` §9, `ICP-OPTICIENS-2026-10.md` §2/§4, `QUALIFICATION-PROTOCOL-2026-10.md` §5. Motif : DM Optique 3/7 à M0, clos à 7/7.
+- **Ruling 2 — décompte (CORRECTION) :** la vague comptait **7 envois à froid** ; **5 sur 7** ont échoué aux gates (Horizon, Faby, Centrale : WhatsApp · Kamaïs, Maff : déjà contactés) ; **2 sur 7** ont passé (JiredOptic a refusé, Planète silence). Lumumba n'est pas à froid (contacté 24/09), traité à part. Le « 5 sur 8 » était une erreur de notre part. `RETRO-VAGUE-2026-10-12.md` §1/§3 corrigés.
+- **Ruling 3 — propositions :** ICP et protocole restent des **propositions**, en attente du oui de King (PRE-FLIGHT §4b). Si approuvés : ajouter `excluded_icp` à `leads/build/crm.py`, puis verrouiller l'ICP comme loi debout.
+- **Ruling 4 — git (remote gardé, local abandonné) :**
+  - Le commit local `3db9333` a été **retiré de la branche** (`git reset --mixed` sur `842241e`, sans force-push). Il reste dans le reflog et en sauvegarde hors dépôt : `/home/user/amk-backup-3db9333/` (26 fichiers, 61 Mo).
+  - Les fichiers POST-01 ont été **synchronisés sur le remote** (`post01/`, `POST-01-v4-TIKTOK.mp4`). Le MP4 final est celui du remote : **33,6 Mo, légendes 36 px**. Le MP4 local de 57 Mo est **retiré** (copie dans la sauvegarde).
+  - **Un fichier a été repris à la main :** `sales/Activity-Log.md` avait perdu le bloc « POST-01 v4 (nuit) » du remote. Il a été rétabli depuis `842241e` ; le diff vs remote n'est plus que des ajouts (8 lignes).
+  - Précondition §1e vérifiée : tip distant `842241e` ancêtre de HEAD ✓.
+- **Non fait / en attente :** aucun commit des documents ICP/protocole/rétro/§9 (attente King + synchro). `excluded_icp` non créé. Aucun push.
+
+## 12/10/2026 (tard) — POST-01 v4 : VO gaps — mesure faite, re-mux NON livré (blocage à trancher par King)
+- **Étape 1 — mesure (silence = début du clip suivant − fin du clip courant) :**
+
+| Clip | Début (mux, mesuré) | Parole | Silence jusqu'au suivant | > 0,4 s ? |
+|---|---|---|---|---|
+| b1 | 0,20 | 2,93 | 0,07 | non |
+| b2 | 3,20 | 1,78 | 2,22 | oui |
+| b3 | 7,20 | 1,57 | 3,27 | oui |
+| b4a | 12,04 | 2,30 | 1,50 | oui |
+| b4b | 15,84 | 1,44 | 3,78 | oui |
+| b5a | 21,06 | 1,59 | 1,19 | oui |
+| b5b | 23,84 | 1,57 | 1,61 | oui |
+| b6a | 27,02 | 1,75 | — | non mesurable (voir ci-dessous) |
+| b6b | — | 2,93 | — | non mesurable |
+
+- **Constat 1 — le calage est dicté par les fenêtres de légende**, pas par la voix. Les clips font 1,4 à 2,9 s dans des fenêtres de 3 à 5 s.
+- **Constat 2 — l'objectif « VO sur 28–30 s avec silences de 0,15–0,25 s » est impossible avec les clips existants.** Somme des paroles : 17,86 s. Avec 8 silences de 0,25 s au maximum, la voix ne couvre que ~19,9 s. Il manque environ 9 s de parole. Les combler exigerait un ralentissement de 1,5× (inacceptable) ou un nouveau texte (interdit ici).
+- **Constat 3 — resserrer les silences oblige à décaler la voix hors de sa fenêtre de légende.** Exemple : b6 serait calé vers 17 s alors que sa légende apparaît à 27 s. Le ruling « légende = VO mot pour mot, au même moment » serait violé. Un resserrement propre impose de modifier la vidéo (durée ou calage des beats), ce qui est exclu par la consigne.
+- **Constat 4 — la master livrée ne correspond pas aux clips de B6.** `vo-master-v4.mp3` (sha256 `9416250f…`, identique au remote) : b1, b2, b3, b4a, b4b, b5a, b5b se retrouvent à leur place (r ≥ 0,98). b6a ne ressort qu'à r = 0,74 et b6b n'est pas retrouvé (r = 0,35). La section B6 de la master n'a donc pas été produite à partir des clips split présents dans le dépôt. Source à identifier avant tout re-mux.
+- **Étape 3 — gate :** `audit_video_motion.py` sur la MP4 livrée : **OK**, 15/15 (vidéo inchangée).
+- **Étape 5 — leçon :** ajoutée comme « Règle debout — VO vidéo courte : une seule prise continue » dans `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` (fichier existant, pas de nouveau fichier, §4b).
+- **Étape 2 et 4 — NON faites.** Aucun nouveau mux, aucune nouvelle MP4, aucun changement du fichier audio. La MP4 livrée est inchangée (`POST-01-v4-TIKTOK.mp4`, 33,6 Mo, remote `842241e`).
+- **Options proposées à King :** (A) raccourcir la vidéo à ~20 s, voix continue, plan recalé (touche la vidéo et la durée) ; (B) réécrire et régénérer une VO continue de ~28 s sur 31 s, plan maintenu (touche le texte et l'audio, demande une autorisation de régénération) ; (C) livrer tel quel (défaut accepté) — non recommandé. Recommandation : (B) si King veut garder 31 s, ou (A) si la vitesse prime.
+
+## 13/10/2026 — POST-01 v4 : VO en clips de phrases, rendu, gate OK (en attente de l'oreille de King)
+- **Script** : 20 phrases, voix voice-05 (voix de la chaîne, verrouillée). Clips par phrase générés, normalisés à -16 LUFS intégré.
+- **Silences** : 0,22 s entre phrases ; 0,29 s après les phrases 2, 9, 12, 15, 18. Silences internes des clips plafonnés à 0,22 s (règle « aucun silence > 0,3 s »).
+- **Étirement** : 1,117× (tempo, hauteur conservée) pour atteindre 42,3 s. Signalé à King : à vérifier à l'oreille, risque de rendu « pressé » ou haché.
+- **Découpes de légendes** : phrase 4 à 50 % (virgule) ; phrases 9 (3 légendes), 10 (deux-points), 14, 18 (2 légendes), 19 (virgule). Validé par King.
+- **Rendu** : 42,3 s, grain 7,5 %, même scène et même animation ambiante. **Gate : OK sur 22/22 fenêtres.** (La version « virgule seule » échouait sur 16–18 s et 36–38 s.)
+- **Règle amendée** (content/strategy/CONTENT-STRATEGY-V2) : (1) VO = une prise OU clips par phrase, aucun silence > 0,3 s, clips préférés ; (2) découpes de légendes aux frontières naturelles, jamais au milieu d'une expression, jamais de fragment.
+- **Points d'écoute King** : ~15,4 s (jointure phrase 9) · ~25,0 s (jointure phrase 13) · ~38,3 s (jointure phrase 19).
+- **Statut** : MP4 **non commité, non publié**, en attente du verdict d'oreille. Si « clippé » : retour sans étirement, vidéo plus courte, nouvelle évaluation.
+
+## 13/10/2026 (verdict) — POST-01 v4 : King valide à l'oreille
+- Verdict King : « vidéo OK, voix et transitions fluides, plus de silence ». Étirement 1,117× accepté tel quel.
+- MP4 commité et poussé (32acfa4), 42,3 s, gate OK 22/22. Non publié : pas de connecteur de publication dans cette session, publication à faire manuellement.
+- À surveiller à la publication : fichier de 56 Mo (avertissement GitHub > 50 Mo, sans effet sur le push).
+
+## 13/10/2026 (mardi, 14:40) — CORRECTION : le commit 9294cf2 existe ; fusion avec la branche distante
+
+- **Correction de mon affirmation précédente :** j'avais écrit que le commit « 9294cf2 » n'existait pas. **Faux** : je n'avais vérifié que le dépôt local. Le commit existe sur `origin/arena/990fc4c3-amk` (12/10, « POST-01 v4 : VO gaps »). Il contient l'amendement 2 (découpe des légendes aux frontières de phrase) dans `CONTENT-STRATEGY-V2-2026-10-05.md`.
+- **Conséquence :** ma §7 ajoutée localement faisait doublon. Elle a été retirée au profit de la version distante. Le PRE-FLIGHT §0d pointe maintenant vers l'amendement 2 de ce fichier.
+- **Fusion :** la branche distante contenait 5 commits de travail POST-01 v4 (non présents localement). Un push direct était rejeté (non fast-forward). **Aucun force-push.** Fusion sans réécriture ; les conflits ont été résolus : `CLIENT-MESSAGING-RULES.md` garde les §9–§11 distants puis mon §12 ; `Activity-Log.md` garde les deux journaux.
+- **Point à confirmer par King :** la branche distante contient une entrée du 13/10 « POST-01 v4 validé à l'oreille par King (non publié) » et un MP4 de 42,3 s commité pour revue. Cela ne correspond pas à « la version Flow sur ton téléphone ». **Quelle version est publiée à 19:00 ?**
+
+## 13/10/2026 (mardi, 14:50) — réconciliation JiredOptic / Planète · CRM via crm.py · commit
+
+- **JiredOptic (vérifié par capture, 13/10 14:33) :** envoi 12/10 11:37 (« Bonjour Mme Pierrette — JiredOptic Med… »). Réponse 11:47 : « non », puis « bonjour monsieur ». Clôture de King 11:53. **Aucune relance.** Le CRM source (`crm.py`, après fusion) enregistre déjà `contacted=Yes`, `reply=Yes`, `stage=parked`. **Mon affirmation précédente (« contacted=No ») venait d'une lecture d'une version périmée : fausse.** Le fichier contrôle est corrigé.
+- **Planète Optique :** la relance du 13/10 11:01 n'était pas au journal CRM. Ajoutée dans `crm.py` (source), rebuild propre. Dans le CSV, seule la ligne Planète change. Fenêtre 48 h : on attend.
+- **Verrou des générateurs :** le garde-fou a refusé le rebuild parce que `crm.py` avait changé. Seul changement non commité dans `leads/build` : ma ligne Planète. Verrou mis à jour (`guard.py lock`), puis rebuild OK. Cela suit la procédure du garde-fou pour un changement voulu.
+- **Rebuild :** un premier essai a échoué sur `openpyxl` absent (installé via pip). Il avait régénéré les fiches et les vues depuis l'ancien CSV ; ces fichiers ont été restaurés à HEAD avant le rebuild suivant.
+- **Commits (sans force-push) :** `2c7a53f` (fusion avec la branche distante) et `71851af` (CRM). Poussés sur `arena/990fc4c3-amk`.
+- **Non décidé (King) :** l'étape CRM de JiredOptic (reste `parked`, ou `disqualified` avec raison ?) ; la date de suivi de Planète (`2026-10-13` dans la source, périmée).
+
+## 15/10/2026 (jeudi) — DM Optique : paiement déclaré, réponse client, visites, décisions de périmètre
+
+- **Paiement (déclaré par King, non vérifié par nous) :** acompte 75 000 FCFA **reçu en espèces le 13/10/2026**. Le portique de la checklist (item 1) demande un relevé bancaire ; un paiement en espèces n'en produit pas. **À décider par King :** la preuve retenue (reçu signé, proforma tamponnée, écriture comptable) et l'amendement de l'item 1. Le RIB et le NIU d'AMK (item 2) restent absents du dépôt : sans eux, le reçu et la proforma ne sont pas émissibles.
+- **Réponse du client, 16:54 (WhatsApp) :** à la question « Qui réalise l'examen de la vue, et que comprend-il exactement ? » (envoyée 13:01, relancée 16:42–16:43 après sa demande « Dans notre cabinet ou alors de façon générale ? » → « Dans votre cabinet ») :
+  > « L'examen de vue est réalisé par moi même qui porte la casquette d'Optometriste. L'examen de vue comprend : L'anamnèse = questionnaires liés aux Plaintes, Antécédents et Besoin Visuelle du patient ; Bilan Otoptique ; Prise des Acuités Visuelles ; Examens de Réfraction. »
+  - Statut : déclaré par le client, non vérifié. Le titre « optométriste » n'est **pas** publiable tel quel : aucun diplôme ni inscription de ce titre dans le dépôt (RULE-CREDENTIAL-CLAIMS). « Otoptique » est probablement une coquille (à confirmer, ne pas corriger de mémoire).
+- **Questions restées sans réponse (envoyées 13/10 13:01–13:03) :** parcours et choix du métier · marques et montures les plus vendues · clientèle habituelle · publicité (ce qu'on peut dire sans prix, promesses à éviter). **Pas de nouvelle question tant que celles-ci ne sont pas traitées** (relances selon `sales/CLIENT-MESSAGING-RULES.md`).
+- **Visites :** deux visites déjà faites (la première, mercredi 07/10 selon le brief §4 ; la seconde : date **à compléter par King**). **Troisième visite prévue vendredi 16/10** : séance photo (cabinet, montures, geste) et questions de référence (item 9 de la checklist : patients par jour, appels et messages entrants, provenance).
+- **Périmètre (décision de King) :** tout ce qui n'est pas indispensable au site est mis de côté jusqu'à ce que l'usage le justifie. Conséquences : pas de pixels ni de GA4, pas d'embed de carte, pas d'icônes sociales avant les comptes, pas de fiche monture ni de filtres en premier lieu, pas de témoignages (brief §6), pas de À propos avant le reste.
+- **Comptes sociaux :** création dédiée à planifier par King, après la visite de vendredi (photos archivées) et la confirmation des jours d'ouverture. Comptes au nom du cabinet, créés avec le téléphone de M. Domche (`launch/SETUP-FACEBOOK.md`, `launch/SETUP-TIKTOK.md`), AMK en administrateur. **Les fichiers de setup sont périmés** : heures « 8h00–17h30 » (non confirmées, et l'examen finit à 13h00), premier post prévu le 13/10 et « est maintenant en ligne » avant tout site en ligne. À réécrire avant la session.
+- **Rien n'est publié** sans validation de King (`CONTENT`, règle « publication »).
+
+## 15/10/2026 (jeudi, 17:10) — paiement consigné, deuxième visite datée, réponses client documentées
+
+- **Paiement :** item 1 de la checklist coché sur déclaration de l'opérateur : 75 000 FCFA reçus en espèces le 13/10/2026, sans reçu écrit ni relevé. Pratique locale assumée par l'opérateur ; à garder en tête pour le solde de 75 000 à la livraison. L'item 2 (RIB et NIU d'AMK) reste ouvert.
+- **Visites :** 1re visite 07/10 (brief §4) · **2e visite 13/10** (jour de l'acompte, client fondateur) · 3e visite vendredi 16/10.
+- **Réponses client (17:08) :** parcours et motivation → `clients/dm-optic/onboarding/REPONSES-CLIENT.md`. Titres et diplômes déclarés, non prouvés : rien de publiable sans pièce. Question « qu'est-ce qui vous différencie » non traitée.
+- **Questions restantes :** marques et montures les plus vendues · clientèle habituelle · publicité (ce qu'on peut dire sans prix, mots à éviter). Pas de nouvelle question avant leurs réponses.
+
+## 16/10/2026 (vendredi) — DM Optique : pratique réelle, à reprendre pour les prochains clients
+
+Source : déclaration de l'utilisateur (ce qui se passe en pratique). Le dépôt décrit la théorie ; ce qui suit est ce que l'utilisateur confirme avoir fait ou obtenu, et il fait foi.
+
+- **Paiement :** acompte de 75 000 FCFA reçu en espèces (confirmé plusieurs fois par l'utilisateur). Pas de proforma tamponnée ni de reçu signé au dépôt à ce jour. Le solde de 75 000 FCFA est débloqué à la livraison.
+- **Livraison :** l'utilisateur télécharge les fichiers, teste en local sur ordinateur et téléphone, puis dépose le dossier par glisser-déposer sur Cloudflare Pages quand il est satisfait. Il n'y a pas de déploiement par King pour ce site.
+- **Domaine et comptes :** au nom du client. AMK les gère contre un abonnement mensuel (accord oral de l'utilisateur ; à confirmer par écrit au client).
+- **Visite 3 :** vendredi 16/10.
+- **Photos :** toujours absentes du dépôt ; les légendes « Photo d'illustration » restent sur le site livré tant que les photos réelles n'arrivent pas (décision à confirmer avec le client).
+- **Paquet de livraison :** `/home/user/dm-optique-site.zip` (hors dépôt), dossier `hosting/previews/dmoptic` (accueil, `/montures`, images, polices). Le site contient encore `noindex,nofollow` et l'adresse canonique Vercel : à régler avant ou après la mise en ligne, selon le nom de domaine choisi.
+- **16/10 (suite) — mise en production sur dmoptiquesarl.com :** `noindex` retiré (décision de l'utilisateur), canonique et og:url sur dmoptiquesarl.com, `robots.txt` et `sitemap.xml` ajoutés pour Google Search Console. Paquet mis à jour : `/home/user/dm-optique-site.zip`. Le déploiement est fait par l'utilisateur (glisser-déposer Cloudflare). Prochaine étape : soumettre le sitemap dans GSC une fois le site en ligne.

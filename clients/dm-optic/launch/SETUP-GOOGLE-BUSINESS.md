@@ -14,7 +14,7 @@
 - **Nom :** DM OPTIQUE SARL · **Catégorie principale :** Opticien · secondaire : Lunetterie.
 - **Adresse :** Ndobo Mayor, Douala IV (Bonabéri) — **partage de position WhatsApp demandé au client** à
   la visite (leçon Cavisa : c'est lui qui connaît l'emplacement réel).
-- **Horaires :** 8h00–17h30, lun–sam (tel que publié par le cabinet ; ajuster s'il corrige).
+- **Horaires :** lundi à samedi ; examen de vue 8h30–13h00 ; autres besoins 8h30–17h30 (verbatim client du 08/10, confirmé le 10/10 ; jours confirmés le 15/10 à 23:36).
 - **Téléphone/WhatsApp :** 656 122 239 · **site :** l'adresse Vercel post-déploiement (pas avant).
 - **Description (750 car. max) :** « Opticien inscrit à l'ONOC.
   Examen de vue, montures homme et femme, solaires et enfants. Écrivez-nous sur WhatsApp, on vous

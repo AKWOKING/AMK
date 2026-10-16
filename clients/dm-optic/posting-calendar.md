@@ -69,7 +69,7 @@ mais **la publicité de S2 est Facebook/Instagram** — à confirmer par King
 | 2 | Le nom — **DM OPTIQUE SARL** |
 | 3 | Le titulaire — **M. Domche Noumbi** |
 | 4 | L'inscription — Ordre des opticiens du Cameroun |
-| 5 | Où — Ndobo Mayor, Bonabéri · **8h00–17h30** |
+| 5 | Où — Ndobo Mayor, Bonabéri · lundi à samedi · **8h30–17h30** |
 | 6 | Comment écrire — le WhatsApp |
 
 **Légende (brouillon) :**
@@ -77,7 +77,7 @@ mais **la publicité de S2 est Facebook/Instagram** — à confirmer par King
 > Un opticien inscrit, un titulaire nommé.
 >
 > DM OPTIQUE SARL · M. Domche Noumbi · inscrit à l'ONOC.
-> Ndobo Mayor, Bonabéri — ouvert de 8h00 à 17h30.
+> Ndobo Mayor, Bonabéri — ouvert du lundi au samedi, de 8h30 à 17h30.
 >
 > Une question ? Écrivez-nous, on vous répond.
 >
@@ -94,7 +94,7 @@ mais **la publicité de S2 est Facebook/Instagram** — à confirmer par King
 | | |
 |---|---|
 | **Sujet** | « Ce qui se passe pendant un examen de vue » — le déroulé, et **ce qu'il faut apporter** |
-| **Fait vérifié à citer** | Consultation **8h30–13h30** |
+| **Fait vérifié à citer** | Examen de vue **8h30–13h00** |
 | **CTA** | Pré-rempli : **« Bonjour, je souhaite un examen de vue »** |
 | **Fichier** | `content/month1/w2/ugc-script.md` |
 | **⛔ Interdit** | Toute allégation médicale : pas de « soigne », « corrige », « guérit » |
@@ -104,7 +104,7 @@ mais **la publicité de S2 est Facebook/Instagram** — à confirmer par King
 > Un examen de vue, ça se prépare.
 >
 > Apportez votre ordonnance si vous en avez une, et votre ancienne monture. La consultation se
-> tient de 8h30 à 13h30.
+> se fait de 8h30 à 13h00.
 >
 > Écrivez-nous avant de venir — on vous dit quoi apporter.
 
@@ -131,7 +131,7 @@ mais **la publicité de S2 est Facebook/Instagram** — à confirmer par King
 > 2. Votre ancienne monture
 > 3. Vos questions
 >
-> Consultation de 8h30 à 13h30 · Ndobo Mayor, Bonabéri. Écrivez-nous sur WhatsApp.
+> Examen de vue de 8h30 à 13h00 · Ndobo Mayor, Bonabéri. Écrivez-nous sur WhatsApp.
 
 ### 💰 Cette semaine — le test payant de 5 000 FCFA
 

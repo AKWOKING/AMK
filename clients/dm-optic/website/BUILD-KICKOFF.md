@@ -12,7 +12,7 @@ Le site v2.2 existe : une page, orienté patient, **38/38 assertions**, `noindex
 
 ## 2 · Pages & sections (Chemin A = la page unique v2.2)
 Premier écran : nom + ville + métier (« puis-je venir, et comment ? ») · preuve d'inscription ONOC +
-titulaire nommé · services (vue · soleil · enfants) · où et quand (Ndobo Mayor, Douala IV · 8h00–17h30) ·
+titulaire nommé · services (vue · soleil · enfants) · où et quand (Ndobo Mayor, Douala IV · lundi à samedi · 8h30–17h30) ·
 CTA WhatsApp omniprésent (wa.me/237656122239, message pré-rempli). Hors périmètre : boutique, paiement,
 RDV en ligne, blog (brief §1).
 
@@ -23,7 +23,7 @@ vérifier au QA que le toggle ne casse aucun CTA pré-rempli (les chaînes Whats
 ## 4 · Stratégie de placeholders (le site ne montre que du vrai)
 - **Photos :** illustrations légendées comme telles jusqu'à la séance (Pixel 8a, `photoshoot/`) ; chaque
   emplacement a sa spec de shoot — le swap se fait photo par photo, sans rebuild.
-- **Horaires :** 8h00–17h30 tels que publiés par le cabinet (source datée) — pas « à confirmer ».
+- **Horaires :** lundi à samedi ; examen de vue 8h30–13h00 ; autres besoins 8h30–17h30 (verbatim client 08/10 ; jours 15/10).
 - **Prix :** aucun sur la page ; orientation WhatsApp (décision 24/09 Cavisa : la question se pose, ne
   s'invente pas).
 

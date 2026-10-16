@@ -15,7 +15,7 @@
 | **Critère** | **75 000 FCFA** réellement **encaissés** sur le compte — pas annoncés, pas « en cours », pas promis |
 | **Vérification** | Relevé bancaire. Une capture de conversation WhatsApp ne vaut pas encaissement |
 | **Si non** | ⛔ **Tout s'arrête ici.** Les items 2 à 10 ne sont pas entamés |
-| **État** | ☐ |
+| **État** | ☑ **Encaissé en espèces le 13/10/2026 — déclaré par l'opérateur, sans reçu écrit ni relevé bancaire.** Preuve retenue selon la pratique locale (confiance d'abord). Faible traçabilité : à garder en tête pour le solde de 75 000 FCFA à la livraison. |
 
 > **Pourquoi c'est le portique et pas une formalité.** L'accord est **verbal**. Rien d'écrit n'engage
 > le paiement. Produire avant l'encaissement, c'est travailler à perte sur une promesse.
@@ -61,10 +61,10 @@
 
 | | |
 |---|---|
-| **Critère** | Les **jours**, écrits. Les heures sont déjà connues (8h00–17h30, consultation 8h30–13h30) |
+| **Critère** | Les **jours**, écrits. Heures (08/10, verbatim client) : examen de vue 8h30–13h00 · autres besoins 8h30–17h30 |
 | **Vérification** | Aucun jour n'est affiché sur le site ou dans le contenu sans avoir été donné |
 | **Pourquoi** | Bloque la section Examen de vue, le pied de page, **et la semaine 2 du plan de contenu** |
-| **État** | ☐ |
+| **État** | ☑ jours confirmés par le client sur WhatsApp, 15/10 23:36 : « Lundi à Samedi » (réponse à « lundi à samedi ou lundi à vendredi ? », envoyée à 23:34) |
 
 ---
 
@@ -155,3 +155,58 @@
 **Les deux items qui dépendent de nous, pas du client : 2 et 10.** Les huit autres attendent le client
 ou l'encaissement. **Le chemin critique passe donc par l'item 2** — sans nos identifiants de
 facturation, la proforma ne part pas, l'acompte ne vient pas, et l'item 1 ne s'ouvre jamais.
+
+**Item 11 (15/10) — build production :** `python3 demos/build_dmoptic.py --production` ; vérifier qu'il n'y a plus de `noindex` ni de ligne « aperçu » ; ne lancer qu'après la bascule du domaine `dmoptiquesarl.com` (16/10).
+
+---
+
+## Visite du vendredi 16/10/2026 — à préparer (15/10)
+
+- [ ] Noms des montures, par famille (vue, soleil, enfants) — à reporter dans le brief (§3.2 et §3.3)
+- [ ] Photos du cabinet (façade, entrée, salle d'examen, comptoir) et des montures (6 à 8 par famille, 12 au minimum)
+- [ ] Point de repère (« en face de… », « à côté de… ») et position GPS (partage WhatsApp)
+- [ ] Confirmer que le numéro WhatsApp affiché (656 122 239) est le bon, et qui répond
+- [ ] Heures de service (les jours et heures sont déjà écrits sur le site : lundi à samedi, 8h30–13h00 et 8h30–17h30)
+- [ ] Moyens de paiement confirmés par écrit pour le site (espèces, Mobile Money, paiement en plusieurs fois)
+- [ ] Compte Google : qui est titulaire ; création de la fiche avec lui, téléphone en main
+- [ ] Comptes Facebook et TikTok : création au nom du cabinet, AMK en administrateur, téléphone du titulaire (King)
+- [ ] Marques : demander seulement si le client veut en nommer (aucune marque affichée sans confirmation écrite)
+
+
+---
+
+## Quand les photos arrivent — ce qu'il reste à faire (écrit 16/10, pour la mise en ligne du catalogue)
+
+**Ce qui est déjà en ligne (version du 16/10, domaine dmoptiquesarl.com) :** accueil bilingue, titre et description à Bonabéri, paiement et note horaires, trois cartes « vitrine » qui ouvrent WhatsApp avec le message écrit, `robots.txt`, `sitemap.xml`. **Pas de lien vers `/montures/` tant que le catalogue est vide.**
+
+### 1 · Reçu du client (à obtenir)
+- [ ] **Noms des montures, par famille**, tels qu'il les donne (pas de réécriture) : lunettes de vue, lunettes de soleil, enfants.
+- [ ] **Photos des montures** : 6 à 8 par famille, 12 au minimum. Une photo par monture, fond neutre si possible.
+- [ ] **Photos du cabinet** : 3 à 4 (façade, entrée, salle d'examen, comptoir).
+- [ ] **Séance photo** : réponse du client à « échange de client fondateur » ou ligne de 15 000 FCFA (dossier §6b). Décision à consigner.
+- [ ] Confirmation écrite des **six services** (garder ou retirer un par un).
+- [ ] Confirmation écrite des **moyens de paiement** (déjà écrits sur le site : espèces, Mobile Money, paiement en plusieurs fois).
+- [ ] Repère physique pour l'adresse (« en face de… »).
+
+### 2 · Mettre dans le dépôt (AMK)
+- [ ] Remplir `clients/dm-optic/site/frames.json` : un objet par monture (nom, famille, photo, et filtres si le client les fournit — forme, matériau, couleur). Pas de prix.
+- [ ] Déposer les photos dans `hosting/previews/dmoptic/` (une par monture, en WebP, `alt` descriptif en FR et EN).
+- [ ] Remplacer les trois illustrations de catégorie et **retirer la légende « Photo d'illustration »** partout (contrat : le site ne montre que du vrai).
+- [ ] Ne nommer une marque que si le client la confirme par écrit (`RULE-CREDENTIAL-CLAIMS`).
+
+### 3 · Reconstruire et contrôler
+- [ ] `python3 demos/build_dmoptic.py --production` puis `python3 demos/build_dmoptic_montures.py`
+- [ ] Gates : `audit_html`, `audit_a11y --strict`, `audit_images`, `check_inline_js`, `audit_hero`, `node tools/qa/test_dmoptic_page.mjs` (toutes à 0 / ✓).
+- [ ] Recréer le zip : `/home/user/dm-optique-site.zip`.
+- [ ] Vérifier **sur téléphone** : lien `/montures/` depuis l'accueil, retour, EN/FR, bouton WhatsApp de chaque monture.
+- [ ] Ajouter le lien `/montures/` sur l'accueil (une fois le catalogue plein).
+
+### 4 · Après la mise en ligne
+- [ ] Google Search Console : fichier de vérification fourni par Google, à déposer dans le dossier (à ne jamais retirer). Soumettre `https://dmoptiquesarl.com/sitemap.xml`.
+- [ ] Inspection d'URL pour `/` et `/montures/` → « Demander une indexation ».
+- [ ] Fiche Google Business : même nom que le site (DM OPTIQUE SARL), URL `https://dmoptiquesarl.com/`, horaires identiques au site.
+- [ ] Note datée dans `sales/Activity-Log.md`. Jugement SEO à 30 jours, pas avant.
+
+### 5 · Accords à mettre par écrit (ce que l'utilisateur confirme oralement)
+- [ ] Domaine et comptes au nom du client ; AMK les gère contre un abonnement mensuel (montant et durée à écrire).
+- [ ] Solde de 75 000 FCFA dû à la livraison ; confirmer le montant et la date.

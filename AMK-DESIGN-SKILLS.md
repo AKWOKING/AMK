@@ -2335,3 +2335,18 @@ carré 320×320 q 64 ≈ 10 Ko), page à **424,7 Ko** — sous le budget de 400 
 acceptable pour une seule page qu'on ouvre une fois. **Vérifier ce que le contrôle ne compte pas** :
 `audit_images.py` annonçait « 0 image(s) » sur dix images embarquées ; il les pèse et vérifie leur ratio
 depuis ce soir (témoin à 17 assertions, `design/WORKFLOW.md`).
+
+---
+
+## §2 (protocole d'unicité) — affinement du Design Read · lot [38], 2026-10-11
+
+Source : `research/youtube-lessons/2026-10-11-batch-3/video-9-ai-motion-graphics.md`.
+
+Quand on étudie une référence (étape 3 du protocole), ne pas s'arrêter à « j'aime l'ambiance ».
+Nommer explicitement, puis l'écrire comme spéc réutilisable :
+**mouvement · transitions · palette · typographie · composition · mouvement de caméra · rythme ·
+hiérarchie visuelle.**
+
+C'est le Design Read, dit plus précisément que nous ne le disions. Aucun outil n'est nécessaire —
+c'est le travail de l'orchestrateur. (La vidéo dont vient cet affinement faisait faire ce travail
+par une IA ; nous le faisons nous-mêmes, et c'est aussi bien.)
