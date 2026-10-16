@@ -5271,3 +5271,14 @@ prénom sourcé, rendus en chat le 12/10.
 - **Visites :** 1re visite 07/10 (brief §4) · **2e visite 13/10** (jour de l'acompte, client fondateur) · 3e visite vendredi 16/10.
 - **Réponses client (17:08) :** parcours et motivation → `clients/dm-optic/onboarding/REPONSES-CLIENT.md`. Titres et diplômes déclarés, non prouvés : rien de publiable sans pièce. Question « qu'est-ce qui vous différencie » non traitée.
 - **Questions restantes :** marques et montures les plus vendues · clientèle habituelle · publicité (ce qu'on peut dire sans prix, mots à éviter). Pas de nouvelle question avant leurs réponses.
+
+## 16/10/2026 (vendredi) — DM Optique : pratique réelle, à reprendre pour les prochains clients
+
+Source : déclaration de l'utilisateur (ce qui se passe en pratique). Le dépôt décrit la théorie ; ce qui suit est ce que l'utilisateur confirme avoir fait ou obtenu, et il fait foi.
+
+- **Paiement :** acompte de 75 000 FCFA reçu en espèces (confirmé plusieurs fois par l'utilisateur). Pas de proforma tamponnée ni de reçu signé au dépôt à ce jour. Le solde de 75 000 FCFA est débloqué à la livraison.
+- **Livraison :** l'utilisateur télécharge les fichiers, teste en local sur ordinateur et téléphone, puis dépose le dossier par glisser-déposer sur Cloudflare Pages quand il est satisfait. Il n'y a pas de déploiement par King pour ce site.
+- **Domaine et comptes :** au nom du client. AMK les gère contre un abonnement mensuel (accord oral de l'utilisateur ; à confirmer par écrit au client).
+- **Visite 3 :** vendredi 16/10.
+- **Photos :** toujours absentes du dépôt ; les légendes « Photo d'illustration » restent sur le site livré tant que les photos réelles n'arrivent pas (décision à confirmer avec le client).
+- **Paquet de livraison :** `/home/user/dm-optique-site.zip` (hors dépôt), dossier `hosting/previews/dmoptic` (accueil, `/montures`, images, polices). Le site contient encore `noindex,nofollow` et l'adresse canonique Vercel : à régler avant ou après la mise en ligne, selon le nom de domaine choisi.
