@@ -253,8 +253,10 @@ landing  →  carte de catégorie  →  futur catalogue  →  WhatsApp
 - Note WhatsApp : « Nous répondons pendant les heures d'ouverture » (FR et EN) — le cabinet n'est pas ouvert 24h/24.
 - `/montures` : adresse canonique lue depuis l'accueil, plus écrite en dur.
 - Gates : `audit_html` 0 · `audit_a11y --strict` rc 0 · `audit_images` 0 · `check_inline_js` 0 · `audit_hero` 0 · `test_dmoptic_page.mjs` ✓.
-- **Publication : bloquée.** Le déclencheur de publication (fonds crédités **et** proforma tamponnée retournée, §1.1 et dossier §14) n'est pas atteint au 15/10 : paiement déclaré en espèces, aucune proforma tamponnée au dépôt, RIB et NIU d'AMK absents. **Décision King requise** avant tout déploiement sur Cloudflare.
-- Domaine et hébergement : à décider avec King — les conditions remises au client disent « au nom du cabinet » (domaine, comptes, contenus). Un compte Cloudflare d'AMK irait à l'encontre de cette promesse.
+- **Décision du 16/10 (utilisateur, à lire avec ce qui suit) :** le paiement de 75 000 FCFA (acompte, espèces) est **reçu** selon l'utilisateur, et la livraison est demandée pour débloquer le solde. Preuve retenue : déclaration de l'utilisateur, **pas encore** de proforma tamponnée ni de reçu signé au dépôt. **À confirmer par King** : la preuve suffit-elle au §1.1 et au §14 du dossier ?
+- **Domaine et comptes : au nom du client.** Décision du 16/10 : le domaine et les comptes lui appartiennent ; AMK les gère **contre un abonnement mensuel**. Ce forfait n'est pas dans les conditions signées (qui prévoient hébergement et domaine la première année incluse, puis facturés) : **à mettre par écrit au client avant de l'appliquer**. Le compte Cloudflare, s'il est ouvert, doit être créé au nom du cabinet (ou transféré).
+- **Livraison et photos réelles.** Les conditions disent « livraison du site fini : quand les photos réelles arrivent ». Les photos du cabinet et des montures ne sont pas au dépôt. Le site publié aujourd'hui garde les légendes « Photo d'illustration ». **Décision à prendre avec le client** : livrer la version actuelle avec ces légendes, ou attendre les photos.
+- **Publication : pas encore faite.** Le déploiement passe par King (PRE-FLIGHT) ; aucun accès Cloudflare dans cette session.
 
 ## Dossier chargé pour écrire ce brief
 
