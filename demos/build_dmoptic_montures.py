@@ -36,8 +36,15 @@ def main():
     head = src[:head_end]
     head = head.replace("<title>", "<title>", 1)
     head = re.sub(r"<title>.*?</title>", "<title>Toutes nos montures — DM OPTIQUE SARL</title>", head, count=1, flags=re.S)
-    head = re.sub(r'<link rel="canonical" href="[^"]*">', '<link rel="canonical" href="https://dm-optique-sarl.vercel.app/montures/">', head)
-    head = re.sub(r'<meta property="og:url" content="[^"]*">', '<meta property="og:url" content="https://dm-optique-sarl.vercel.app/montures/">', head)
+    # 15/10 — l'adresse vient de l'accueil construit (même source que `--url`), jamais écrite en dur.
+    m = re.search(r'<link rel="canonical" href="([^"]+)">', src)
+    if m:
+        base = m.group(1).rstrip("/") + "/montures/"
+        head = re.sub(r'<link rel="canonical" href="[^"]*">', '<link rel="canonical" href="%s">' % base, head)
+        head = re.sub(r'<meta property="og:url" content="[^"]*">', '<meta property="og:url" content="%s">' % base, head)
+    else:
+        # accueil sans adresse (pas encore construit avec --url) : pas de canonique inventée
+        head = re.sub(r'<link rel="canonical" href="[^"]*">\n?', '', head)
 
     header = re.search(r'<header class="site">.*?</header>', src, re.S).group(0)
     footer = re.search(r'<footer class="site">.*?</footer>', src, re.S).group(0)

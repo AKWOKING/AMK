@@ -157,3 +157,18 @@ ou l'encaissement. **Le chemin critique passe donc par l'item 2** — sans nos i
 facturation, la proforma ne part pas, l'acompte ne vient pas, et l'item 1 ne s'ouvre jamais.
 
 **Item 11 (15/10) — build production :** `python3 demos/build_dmoptic.py --production` ; vérifier qu'il n'y a plus de `noindex` ni de ligne « aperçu » ; ne lancer qu'après la bascule du domaine `dmoptiquesarl.com` (16/10).
+
+---
+
+## Visite du vendredi 16/10/2026 — à préparer (15/10)
+
+- [ ] Noms des montures, par famille (vue, soleil, enfants) — à reporter dans le brief (§3.2 et §3.3)
+- [ ] Photos du cabinet (façade, entrée, salle d'examen, comptoir) et des montures (6 à 8 par famille, 12 au minimum)
+- [ ] Point de repère (« en face de… », « à côté de… ») et position GPS (partage WhatsApp)
+- [ ] Confirmer que le numéro WhatsApp affiché (656 122 239) est le bon, et qui répond
+- [ ] Heures de service (les jours et heures sont déjà écrits sur le site : lundi à samedi, 8h30–13h00 et 8h30–17h30)
+- [ ] Moyens de paiement confirmés par écrit pour le site (espèces, Mobile Money, paiement en plusieurs fois)
+- [ ] Compte Google : qui est titulaire ; création de la fiche avec lui, téléphone en main
+- [ ] Comptes Facebook et TikTok : création au nom du cabinet, AMK en administrateur, téléphone du titulaire (King)
+- [ ] Marques : demander seulement si le client veut en nommer (aucune marque affichée sans confirmation écrite)
+

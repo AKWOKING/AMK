@@ -246,6 +246,16 @@ landing  →  carte de catégorie  →  futur catalogue  →  WhatsApp
 | 10/10/2026 | Message 1 envoyé 12:15 (accusé de réception + demande du logo) ; réponse du client 12:22 : « Ok » | logo attendu ; `dmoptic-2` : King ne le retrouve pas dans son Vercel → « on oublie » (page publique restante, risque résiduel noté) | capture WhatsApp Web, 10/10 |
 | 10/10/2026 | Préparation du logo (outil) | `demos/build_dmoptic.py --logo <fichier> [--logo-mode symbol\|full]` : le logo remplace le symbole rond (en-tête, carte d'identité, pied de page) et la vignette `og.jpg` ; `full` si le logo contient déjà le nom. Testé avec des logos factices (large à fond blanc, carré transparent) : mises en page vues à 390 px, audits html/a11y à 0 faute. Sans `--logo`, sortie identique à l'actuelle | repo |
 
+**15/10/2026 — modifications pré-vendredi (dépôt seulement, NON publiées).**
+- Titre : « DM OPTIQUE SARL — Opticien à Bonabéri, Douala : vue et montures » (63 car., ≤ 65 — `content/strategy/SEO-CHECKLIST-CLIENT-SITES-2026-10.md` §3).
+- Description : « … à Bonabéri, Douala, inscrit à l'ONOC… » (149 car., ≤ 155, une seule langue).
+- Paiement ajouté dans les coordonnées (libellé validé par le client, voir la proforma et les conditions du dossier) : espèces, Mobile Money, paiement en plusieurs fois, livraison possible. **Pas de prix.**
+- Note WhatsApp : « Nous répondons pendant les heures d'ouverture » (FR et EN) — le cabinet n'est pas ouvert 24h/24.
+- `/montures` : adresse canonique lue depuis l'accueil, plus écrite en dur.
+- Gates : `audit_html` 0 · `audit_a11y --strict` rc 0 · `audit_images` 0 · `check_inline_js` 0 · `audit_hero` 0 · `test_dmoptic_page.mjs` ✓.
+- **Publication : bloquée.** Le déclencheur de publication (fonds crédités **et** proforma tamponnée retournée, §1.1 et dossier §14) n'est pas atteint au 15/10 : paiement déclaré en espèces, aucune proforma tamponnée au dépôt, RIB et NIU d'AMK absents. **Décision King requise** avant tout déploiement sur Cloudflare.
+- Domaine et hébergement : à décider avec King — les conditions remises au client disent « au nom du cabinet » (domaine, comptes, contenus). Un compte Cloudflare d'AMK irait à l'encontre de cette promesse.
+
 ## Dossier chargé pour écrire ce brief
 
 `clients/dm-optic/` : `dossier.md` · `a-completer.md` · `build-notes.md` · `pre-launch-checklist.md` · `retainer-rhythm.md` · `website/brief.md` · `website/BUILD-KICKOFF.md` · `site/SPEC-PAGES-v1.md` · `site/CLIENT-QUESTIONS-2026-10-08.md` ·
