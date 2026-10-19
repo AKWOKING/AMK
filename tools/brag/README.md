@@ -65,6 +65,11 @@ HF=/tmp/amk-brag/node_modules/.bin/hyperframes
 
 ## Produire un brag (procédure AMK, par-dessus le skill)
 
+> **Déclenchement — `PRE-FLIGHT.md` §1f② (ruling King 19/10) :** King n'a pas à le demander.
+> Dès qu'un site est **fini et prêt à être livré** (portes §1b vertes), l'orchestrateur produit
+> d'office un **brouillon** de brag de livraison et le présente avec le livrable.
+> Rien n'est publié ni envoyé au client sans validation de King.
+
 1. Lire `~/.agents/skills/brag/SKILL.md` (ou `brag-slim` pour une URL), puis
    `hyperframes-core` (contrat) et `hyperframes-cli` (commandes).
 2. Inspection : copie **réelle** du site, couleurs exactes ; captures téléphone après

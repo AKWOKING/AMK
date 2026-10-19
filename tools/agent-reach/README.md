@@ -68,6 +68,12 @@ agent-reach doctor
 
 ## Usage (l'agent appelle les outils upstream directement)
 
+> **Déclenchement — `PRE-FLIGHT.md` §1f① (ruling King 19/10) :** King n'a pas à nommer l'outil.
+> Toute recherche ou question qui demande le web vivant passe **d'abord** par Agent Reach
+> (doctor `--json`, `active_backend`, appel réel upstream). Canal bloqué/non configuré → le
+> dire, puis repli `web_search`/`fetch_page` — jamais de résultat présenté « comme si ».
+> Environnement vierge → réinstaller tout seul (`bash tools/agent-reach/install.sh --system --channels=all`).
+
 ```bash
 agent-reach doctor                      # TOUJOURS d'abord ; --json → active_backend par canal
 gh repo view owner/repo                 # GitHub
