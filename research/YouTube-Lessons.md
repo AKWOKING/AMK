@@ -10,6 +10,11 @@ This is the catch-all register for every YouTube link King drops in chat. Links 
 
 - The sandbox has **no raw network** (direct `curl`/`getent` fail). Transcripts come through the `fetch_page` tool only.
 - **Working path:** `https://youtubetotranscript.com/transcript?v=VIDEO_ID` → full transcript, title, channel (tested 17 Sep 2026).
+- **STANDING RULE — re-dated evergreen check (King, 11/10; applies to every batch):** compare the
+  upload date from the YouTube watch page against any year appearing in the title or description.
+  A mismatch = **VENDOR SELF-REPORT of currency**, logged as such. Seen in the wild: video 4
+  (uploaded 2021-04-20, description sells "in 2023"), video 5 (uploaded 2023-12-04, titled "2026",
+  transcript service cached "2025"). Videos 6–11 all passed the check.
 - If that returns nothing: try `?v=ID&current_language_code=fr` for French captions. If still nothing (members-only, no captions, livestream), **stop and ask King to paste notes — never guess at content.**
 - Extract, don't summarize: core claim(s) · AMK-applicable tactics (2–5) · contradictions vs playbook · junk filter · attribution.
 
@@ -1521,3 +1526,934 @@ communauté payante). Les meilleures sources sont les documents officiels (Googl
 **nos propres archives** — le journal contient 79 citations de leads, c'est notre meilleur manuel de
 langue.
 
+
+---
+
+## Lot [36] · RECHERCHE VIDÉO — BATCH 1 of 4 (3 vidéos) · 2026-10-11
+
+**Rapports détaillés :** `research/youtube-lessons/2026-10-11-batch-1/` (INDEX + un fichier par
+vidéo, six parties chacune). **Cette entrée est la matière première brute** — la synthèse d'une
+page est écrite par King, pas par l'orchestrateur.
+
+**Méthode, corrigée :** les transcripts **sont** accessibles par le chemin du §0
+(`youtubetotranscript.com/transcript?v=ID`). Les trois ont été récupérés **en entier**
+(4/4, 5/5, 2/2 chunks). Une note antérieure du batch affirmait le contraire : elle était fausse et
+a été corrigée dans l'INDEX. Ce que le service **n'expose pas** : durée, date de publication,
+nombre de vues → marqués UNVERIFIED, jamais devinés.
+
+| # | Vidéo | Producteur | Abonnés | Ce qu'il vend |
+|---|---|---|---|---|
+| 1 | AI affiliate blogs for Google traffic | Freedom Influencer (Nathan Lucas) | 380K | cours gratuit + liens d'affiliation (Cloudways, SEO Writing, ryrob) |
+| 2 | 30 Day TikTok Plan 0→10K | Modern Millie (Millie Adrian) | 791K | The FYP Accelerator + calendrier gratuit + **sponsor Storyblocks** |
+| 3 | TikTok SEO, 10 tricks | HubSpot Marketing (présentatrice : Bridget, nom de famille non capturé) | 643K | guide TikTok gratuit (capture d'email) → plateforme HubSpot |
+
+### Les contradictions entre les trois vidéos (à trancher)
+
+1. **Limite de la bio TikTok.** Millie : « about **160** characters ». HubSpot : « **80** character
+   limit ». **HubSpot a raison** (80 confirmé par plusieurs guides indépendants). → la règle des 80
+   caractères est écrite dans la checklist.
+2. **Le rôle de l'IA.** Vidéo 1 : « humanize the text » pour que Google ne détecte pas l'IA.
+   Vidéo 3 : « don't be afraid to use AI… it is the best mentor ». Ce sont deux doctrines
+   opposées : **contourner** contre **s'assister**. La vidéo 1 repose sur une prémisse fausse —
+   Google ne pénalise pas l'IA comme catégorie ; la politique *scaled content abuse* (5 mars 2024)
+   est **neutre quant à la méthode** (« whether automation, humans or a combination are involved »).
+3. **Le volume.** Millie prescrit 3 à 5 publications/jour pendant 30 jours ; HubSpot ne parle pas
+   de cadence ; notre engagement client est de **2 publications/semaine**. Le volume de Millie est
+   incompatible avec la livraison.
+
+### Trois idées à appliquer cette semaine (proposition, sous réserve de la règle de King)
+
+1. **La checklist TikTok SEO** — déjà écrite : `content/strategy/TIKTOK-SEO-CHECKLIST-2026-10.md`
+   (profil, mots-clés, texte à l'écran dans les 3 premières secondes, sous-titres corrigés,
+   formule de hashtags 2-3 / 2-3 / 1, **couche locale** = tag de lieu + ville en mot-clé).
+   Coût : zéro. C'est le transfert le plus direct du lot, et il sert le contenu de DM Optique.
+2. **La recherche par ratio vues/abonnés** — ne retenir que les vidéos dont les vues **dépassent**
+   le nombre d'abonnés du créateur, filtrées sur **30 jours**. Les deux vidéos indépendantes
+   convergent sur cette heuristique (Millie explicitement, HubSpot pour voler les hashtags).
+3. **Deux gardes SEO côté sites clients** — *pas de page sans demande de recherche vérifiée*, et
+   *pas de page sans un fait de première main que seul le client possède*. C'est notre défense
+   structurelle contre l'exposition au *scaled content abuse*. Destination :
+   `content/strategy/SEO-CHECKLIST-CLIENT-SITES-2026-10.md`.
+
+### Trois idées à garder en attente (ni adoptées, ni rejetées)
+
+1. **La série signature + playlist** — mécaniquement utile pour gagner des abonnés, mais le sujet
+   de la série de DM Optique (montures ? examens de vue ?) demande une règle de King.
+2. **Le repurposing hors plateforme** (vidéo intégrée dans un article de blog ; export **sans**
+   sous-titres incrustés pour les autres plateformes) — juste, mais dépend de l'existence d'un blog
+   client, que nous ne construisons pas aujourd'hui.
+3. **La mesure par « vidéos qui apportent des abonnés » plutôt que par vues** — juste, mais
+   nécessite d'abord un compte client ouvert et des identifiants gérés selon notre règle.
+
+### Trois idées à rejeter outright
+
+1. **Le modèle de blog d'affiliation** (vidéo 1) — hors stratégie : notre objectif est 500 000
+   FCFA/mois par des sites clients et des retainers, pas des commissions ; l'exemple suppose du
+   trafic américain et l'éligibilité Amazon Associates.
+2. **« Humanize the text » pour échapper à la détection de l'IA** — prémisse fausse, et exactement
+   le mauvais côté de la politique que nous devons respecter.
+3. **3 à 5 publications/jour + contenu polémique + Storyblocks** — casse la livraison ; risque
+   réputationnel inacceptable pour un professionnel de santé inscrit à l'ONOC ; outil payant,
+   sponsorisé, et contraire à notre règle de la vraie photo.
+
+### Outils qui survivent à l'audit (tous gratuits)
+
+- **TikTok Creative Center** — tendances hashtags/mots-clés/vidéos par secteur. Seul outil du lot
+  que nous ne pouvons pas reproduire nous-mêmes.
+- **Autocomplete de recherche TikTok** + **filtres de recherche (30 jours)** — natif, sur le
+  téléphone de King.
+- **Google « People Also Ask »** — natif.
+- **Analytics TikTok** (la vue « vidéos qui apportent des abonnés ») — natif.
+
+**Aucun outil payant ne survit.** Cloudways, SEO Writing, ZipWP, Storyblocks, HubSpot : rejetés.
+Chaque étape « outil IA » des vidéos 1 et 3 (idées de noms, bio compressée, tableau de sujets,
+rédaction d'articles) est **faite par l'orchestrateur** — c'est le premier contrôle de l'audit.
+
+### Ce que le flux de travail AMK devient après ce lot
+
+- Un nouveau fichier interne : `content/strategy/TIKTOK-SEO-CHECKLIST-2026-10.md` (recherche,
+  cadence, couche locale, mesures) — **aucune sortie client, aucun compte client touché sans
+  l'accord de King**.
+- Deux gardes SEO proposées pour les sites clients (demande vérifiée + fait de première main), à
+  inscrire dans `content/strategy/SEO-CHECKLIST-CLIENT-SITES-2026-10.md`.
+- Une règle réaffirmée et appliquée trois fois dans ce lot : **un chiffre qu'on ne peut pas montrer
+  ne sort pas de notre bouche** — le « 70 % » de HubSpot, le « Pinterest classe plus vite »,
+  « triple vos chances », les « 1 000 000 $ » et « 500 $ aujourd'hui » de la vidéo 1, et le
+  « 0→10K en 30 jours » sont tous marqués UNVERIFIED ou VENDOR SELF-REPORT et ne seront pas cités.
+- **Aucun déploiement, aucune sortie client** dans ce lot.
+
+### Ce qui reste ouvert (bloqué sur King ou sur une donnée manquante)
+
+- Existe-t-il une preuve que TikTok sert à la découverte de services locaux **à Douala** ? Aucune
+  donnée Cameroun au dossier — cela décide si la checklist s'applique à DM Optique.
+- Les sous-titres automatiques français de TikTok tiennent-ils sur le français camerounais ? Test
+  téléphone à faire.
+- Compte business ou personnel pour un client, et qui détient les identifiants ?
+- TikTok Creator Rewards existe-t-il au Cameroun ? (Non vérifié — décide si le nombre d'abonnés est
+  un objectif monétisable.)
+- Lot [36] = batch 1 de 4. Batches 2, 3, 4 en file, **non commencés**.
+
+### Lot [36] — ADDENDUM · batch 1 accepté par King, cinq corrections appliquées (11/10)
+
+**Verdict de King : batch 1 ACCEPTÉ avec cinq corrections. Batch 2 EN ATTENTE** — ne pas démarrer
+avant sa confirmation (« empiler des rapports sans les absorber, c'est comme ça qu'on obtient un
+dossier que personne n'ouvre »).
+
+| # | Correction demandée | Appliquée |
+|---|---|---|
+| 1 | Les 49 % / 4 % Adobe sans URL | **FAIT** — URL ajoutée dans le rapport vidéo 3 (réclamation 1 et contre-preuve) : https://www.adobe.com/express/learn/blog/using-tiktok-as-a-search-engine + méthodologie (807 consommateurs US, 200 propriétaires de PME). Les audits de réclamations portent désormais des **liens**, pas seulement des attributions. |
+| 2 | Durée / date / vues à tirer des pages YouTube | **FAIT** — v1 : 24:15, 10/10/2026, 1 053 vues · v2 : 30:59, 18/09/2025, 355 083 vues · v3 : 12:24, 21/02/2025, 24 895 vues. Dans les trois rapports + l'INDEX. |
+| 3 | Disponibilité de TikTok Creator Rewards au Cameroun | **FAIT, et la réponse change la stratégie** — voir ci-dessous. |
+| 4 | Le « 45 % » non référencé | **FAIT** — clarifié dans le rapport vidéo 1 : c'est **le résultat annoncé par Google lui-même** pour la core update de mars 2024 (projection 40 %, annoncé 45 % le 26/04/2024 après la fin du déploiement le 19/04). Source : https://ppc.land/scaled-content-abuse/ . C'est un chiffre de Google sur l'index de Google — jamais une promesse à un client. |
+| 5 | Le nom de famille de « Bridget » | **FAIT** — retiré des manques ; « Bridget » suffit, ce n'est pas un trou. |
+
+**Correction 3 — la réponse (source officielle TikTok).** Le Creator Rewards Program « is currently
+open to creators in the United States, United Kingdom, Germany, Japan, South Korea, France, Mexico,
+and Brazil, so you must be based in one of these countries and have an account registered there »
+— https://www.tiktok.com/creator-academy/en/article/creator-rewards-program .
+**Le Cameroun n'y est pas.** Deux conséquences de la même page : **seuls les comptes personnels
+sont éligibles — « Business Accounts … do not qualify »** — et le contenu sponsorisé ne rapporte
+rien. En Afrique, seuls le Maroc, l'Égypte et l'Afrique du Sud apparaissent dans le programme
+Effect Creator Rewards, et aucun dans le Creator Fund
+(https://www.okayafrica.com/is-tiktok-excluding-africans-from-its-creator-economy/246881).
+
+> **Règle qui en découle, pour tous les clients : TikTok = acquisition de clients, jamais revenu de
+> créateur.** La croissance en abonnés se vend et se mesure comme de la **découverte qui produit
+> des conversations WhatsApp**. Et un compte *business* client ne pourrait de toute façon pas
+> gagner de rewards, même si le Cameroun était ajouté demain.
+
+**Les trois règles de King sur les questions ouvertes :**
+- **Q1 (découverte locale) :** pas de donnée Cameroun → **test sur le TikTok d'AMK d'abord** (le
+  nôtre, risque client nul), **fenêtre de deux semaines**, hypothèse et résultat journalisés. Le
+  compte DM Optique n'est testé **qu'après l'encaissement de l'acompte**. **Pas une recommandation
+  client tant que ce n'est pas prouvé.** → consigné dans
+  `content/strategy/TIKTOK-SEO-CHECKLIST-2026-10.md` (« Test in progress »).
+- **Q2 (sous-titres automatiques français) : REJETÉS.** Ils ne tiennent pas sur le français
+  camerounais. Sous-titres **écrits par l'orchestrateur, relus par King avant publication**, sur
+  tout compte client ou AMK. → règle debout dans
+  `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` (fichier existant — pas de fichier neuf).
+- **Q3 (compte business ou personnel) : déjà tranché.**
+  `clients/dm-optic/onboarding/CONDITIONS-D-INTERVENTION-2026-10-07.md:11-12` — comptes créés au nom
+  du cabinet, le cabinet en est propriétaire, AMK a un accès admin ; à la rupture il garde ses
+  comptes (ligne 43). Vaut pour tout futur opticien.
+
+**Deux nouvelles règles debout, approuvées par King le 11/10 :**
+1. **Un fichier debout nouveau exige la confirmation de King** avant de devenir loi du dépôt —
+   l'orchestrateur propose l'emplacement, King approuve, ensuite c'est committé. → écrite dans
+   `PRE-FLIGHT.md` §4b.
+2. **Sous-titres TikTok toujours manuels** → `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md`.
+
+---
+
+## Lot [37] · RECHERCHE VIDÉO — BATCH 2 of 4 (3 vidéos) · 2026-10-11
+
+**Rapports détaillés :** `research/youtube-lessons/2026-10-11-batch-2/` (INDEX + un fichier par
+vidéo, six parties). **Matière première brute** — la synthèse d'une page est écrite par King après
+le lot 4. Les corrections du lot 1 sont appliquées comme discipline : liens sources sur chaque
+réclamation VERIFIED, durée/date/vues tirées des **pages YouTube**, audit d'outils gratuit d'abord.
+
+| # | Vidéo | Producteur | Longueur · mise en ligne · vues | Ce qu'il vend |
+|---|---|---|---|---|
+| 4 | How To Market Your Business On Social Media | Marley Jaxx (184K ab.) | 12:05 · 20/04/2021 · 3 142 404 | Chief Content Officer + pile d'affiliation (Canva, ActiveCampaign, TubeBuddy, ClickFunnels, Funnel Scripts, Rev) |
+| 5 | Best Instagram Marketing Strategy For Small Business **2026** | Adam Erhart | 10:23 · 04/12/2023 · 638 592 | cours IA gratuit + HighLevel (affiliation) + **sponsor ManyChat** |
+| 6 | The Top 7 Content Strategies | Joanna Wiebe | 14:33 · 18/12/2025 · 458 178 | atelier gratuit (thebigsmall.co) — **aucune pile d'affiliation** |
+
+**Note de crédibilité relevée sur deux vidéos :** la 4 annonce « in 2023 » pour une mise en ligne
+d'**avril 2021** ; la 5 s'intitule « 2026 » pour une mise en ligne de **décembre 2023** (le service
+de transcript en garde une version « 2025 »). Titres re-datés. Le contenu n'est donc pas de l'année
+qu'il affiche — traité en conséquence.
+
+### Trois idées à appliquer cette semaine
+
+1. **Le test des trois métiers (vidéo 4).** Chaque publication doit nommer son métier : générer,
+   nourrir, convertir. Sinon elle ne se fait pas. C'est le **diagnostic direct** de notre problème
+   enregistré : `CONTENT-STRATEGY-V2` dit que le moteur de contenu a produit **zéro lead entrant**.
+   → inscrit dans `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md`.
+2. **Qualité plutôt que fréquence + être présent la première heure (vidéo 6).** Soutient
+   l'engagement de **2 publications/semaine** et contredit le sprint 3–5/jour du lot [36].
+   → `content/strategy/TIKTOK-SEO-CHECKLIST-2026-10.md` §D.
+3. **Le CTA dans la conversation, pas dans la bio (vidéo 5).** Commentaire → message privé avec le
+   lien WhatsApp pré-écrit. Gratuit, sans outil, et conforme au motif `wa.me` déjà en place.
+   → `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` + checklist TikTok §C.
+
+### Trois idées à garder en attente
+
+1. **ManyChat — le seul outil de deux lots qui fait ce que l'orchestrateur ne peut pas faire**
+   (automatisation des DM via l'API Meta). HOLD, avec **déclencheur écrit** : le volume de
+   commentaires d'un client dépasse ce que des réponses manuelles couvrent dans la journée.
+2. **L'AEO (vidéo 6) comme chantier SEO client.** La prémisse est **VÉRIFIÉE** par des données
+   indépendantes — mais l'actionnable pour un opticien de Douala est étroit (YouTube + fiche Google
+   + faits extractibles sur le site). **Proposé** comme section dans
+   `content/strategy/SEO-CHECKLIST-CLIENT-SITES-2026-10.md` — **en attente du oui de King (§4b)**.
+3. **L'inventaire d'histoires (vidéo 4).** Utile, mais exige le consentement du client histoire par
+   histoire avant usage. En attente d'une règle de collecte.
+
+### Trois idées à rejeter outright
+
+1. **Le chiffre « 1 % → 46 % » de la vidéo 5.** Il vient du **programme partenaire de ManyChat
+   lui-même**. Une analyse indépendante de 1 200+ campagnes (T4 2025) donne **2–3 % → 12–18 %**.
+   La direction est vraie ; le chiffre ne sort pas de notre bouche.
+2. **Les deux piles d'outils payants** — Canva/ActiveCampaign/TubeBuddy/ClickFunnels/Funnel
+   Scripts/Rev (vidéo 4) et HighLevel « Agency OS » (vidéo 5) : payés, hors canal ou déjà couverts
+   par notre CRM et notre standard single-file. **Aucun outil payant ne survit à ce lot.**
+3. **Spark Toro (vidéo 6).** Payé, et la question qu'il pose (« où mon public s'informe-t-il ? ») a
+   pour un opticien local une réponse courte qu'on obtient depuis les commentaires du client, les
+   statistiques de sa page Facebook et notre journal de 79 citations de leads.
+
+### Outils qui survivent à l'audit — tous gratuits
+
+Analytics natifs du compte (TikTok/Instagram) · recherche TikTok/Instagram et Creative Center ·
+Google Search Console · **interroger directement ChatGPT/Perplexity** pour savoir si le cabinet
+apparaît déjà dans les réponses d'IA (coût zéro, quelques minutes). **ManyChat : HOLD, pas adopté.**
+
+### Contradictions entre les vidéos de ce lot (et avec le lot [36])
+
+1. **Fréquence.** Vidéo 6 : qualité plutôt que fréquence, « les algorithmes mesurent combien de gens
+   s'y intéressent ». Lot [36] (Modern Millie) : 3 à 5 publications/jour. **La vidéo 6 gagne chez
+   nous** — elle soutient l'engagement réel de 2/semaine.
+2. **Entonnoir contre messages.** Vidéo 4 : chaque contenu = générer / nourrir / convertir
+   (logique d'étapes). Vidéo 6 : « les gens ne suivent pas votre entonnoir », organiser par
+   **message**. **Synthèse retenue :** on garde le **test du métier** (chaque publication a un
+   métier) et on abandonne le **classement par étape**.
+3. **Où va le CTA.** Vidéo 4 : CTA fort en fin de vidéo, « cliquez le lien ». Vidéo 5 : le CTA va
+   dans la **conversation**, pas dans la bio. Mécaniques différentes, même principe — et c'est la
+   version 5 qui est gratuite et conforme à WhatsApp-first.
+4. **L'IA, encore.** Vidéo 6 : écrire **pour** être cité par l'IA. Lot [36] (vidéo 1) : « humanize »
+   pour **échapper** à la détection. Deux orientations opposées ; la seconde reposait sur une
+   prémisse fausse.
+
+### Ce que le flux de travail AMK devient après ce lot
+
+- Deux fichiers existants enrichis, **aucun fichier neuf** (PRE-FLIGHT §4b respecté) :
+  `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` (test des trois métiers, inventaire
+  d'histoires, « X pour Y », qualité/fréquence, CTA dans la conversation) et
+  `content/strategy/TIKTOK-SEO-CHECKLIST-2026-10.md` (§C Instagram, §D analytics + fréquence,
+  ManyChat en HOLD avec déclencheur).
+- Une **proposition en attente** : section AEO dans
+  `content/strategy/SEO-CHECKLIST-CLIENT-SITES-2026-10.md`.
+- Une **corroboration indépendante** d'une décision déjà prise : le positionnement « X pour Y »
+  confirme « pour opticiens à Douala » contre « agence de marketing digital ».
+- La règle appliquée trois fois dans ce lot : **un chiffre qu'on ne peut pas montrer ne sort pas de
+  notre bouche** — 46 %, « 6–8 figures », « trois agences à 7 chiffres », « 90 % perdent leur
+  temps », l'anecdote des 16 publications/jour : tous marqués et non citables.
+- **Aucune sortie client, aucun déploiement.**
+
+### Ouvert (bloqué sur King ou sur une donnée manquante)
+
+- **AEO au Cameroun :** aucune donnée sur l'usage des assistants IA en francophone pour des services
+  locaux, ni sur les sources citées pour le Cameroun. Les données de citation sont **anglophones,
+  US/UK**. Cela décide si l'AEO est une offre ou une distraction.
+- DM Optique apparaît-il déjà dans les réponses d'IA pour « opticien Douala » ? Vérification gratuite
+  de cinq minutes — **non faite**, travail client et acompte non encaissé.
+- Règle debout à trancher : **chaque commentaire client reçoit-il une réponse humaine dans la
+  journée** ? C'est l'alternative gratuite à l'automatisation, et c'est un engagement de travail.
+- Instagram est-il un canal prioritaire pour les opticiens de Douala, ou le vrai couple est-il
+  Facebook + WhatsApp ? Aucune donnée au dossier.
+- Lot [37] = batch 2 de 4. **Batches 3 et 4 en file, non commencés.**
+
+---
+
+## Lot [38] · RECHERCHE VIDÉO — BATCH 3 of 4 (3 vidéos) · 2026-10-11
+
+**Rapports détaillés :** `research/youtube-lessons/2026-10-11-batch-3/` (INDEX + un fichier par
+vidéo, six parties). **Matière première brute** — la synthèse d'une page est écrite par King après
+le lot 4. Discipline des lots 1 et 2 appliquée : liens sources, métadonnées depuis les **pages
+YouTube**, contrôle du re-datage, outil-gratuit d'abord.
+
+| # | Vidéo | Producteur | Longueur · mise en ligne · vues | Ce qu'il vend |
+|---|---|---|---|---|
+| 7 | Grow your small business on TikTok, 5 tactics | Jade Beason | 12:17 · 23/09/2024 · 66 526 | **sponsorisée par TikTok for Business** + lien d'affiliation TikTok (crédit offert) + son agence, 4 challenges payants, Riverside/TubeBuddy/Hootsuite |
+| 8 | TikTok For Business: Beginner's Guide | Primal Video (présentatrice : Jordana Grace) | 03:36 · 23/11/2023 · 203 138 | guide smartphone gratuit + Primal Video PLUS + gear |
+| 9 | AI Motion Graphics in Minutes (FREE Master Prompt) | ReachMora | 09:17 · **30/09/2026** · 130 921 | **rien** — le prompt est donné gratuitement |
+
+**Contrôle du re-datage :** aucune des trois n'est re-datée. La 9 a **onze jours** — la plus récente
+de tous les lots. La 8 est la plus ancienne (nov. 2023) et la plus mince (3 min 36).
+
+**Posture commerciale, comparée :** la vidéo 9 ne vend rien et le dit (« No course, no $97 prompt
+pack, no DM me on Instagram »). La vidéo 7 est **payée par la plateforme qu'elle recommande** et
+présente les statistiques de cette plateforme comme des trouvailles neutres. C'est le contraste le
+plus utile du lot : la qualité du conseil n'a aucun rapport avec la propreté commerciale, et
+l'audit des réclamations est ce qui les sépare.
+
+### Trois idées à appliquer cette semaine
+
+1. **La revue à un mois (vidéo 8).** À date fixe : quelles publications ont apporté des **abonnés**,
+   lesquelles des **clics WhatsApp**, lesquelles **rien**. En faire plus des premières, arrêter les
+   troisièmes. **Indépendant de la cadence** — marche à 2/semaine. C'est l'instrument qui manquait au
+   problème enregistré : le moteur de contenu a produit **zéro lead entrant**, et nous n'avions aucun
+   rituel pour savoir pourquoi. → `content/strategy/TIKTOK-SEO-CHECKLIST-2026-10.md` §D.
+2. **Être spectateur avant d'être publieur (vidéo 7).** Avant le test de découverte locale de deux
+   semaines, King passe du temps sur l'application. Gratuit, mais coût en temps réel — à peser.
+   → même fichier §B.
+3. **Le Design Read affiné (vidéo 9).** Devant une référence, nommer explicitement : mouvement ·
+   transitions · palette · typographie · composition · mouvement de caméra · rythme · hiérarchie —
+   puis l'écrire comme spéc. Aucun outil nécessaire. → `AMK-DESIGN-SKILLS.md` §2.
+
+### Trois idées à garder en attente
+
+1. **Google Flow / Omni Flash + ElevenLabs (vidéo 9).** Le seul vrai trou de capacité des trois lots
+   : **je ne peux pas générer de vidéo ni de voix.** HOLD, avec déclencheur écrit : un besoin de
+   contenu **propriétaire AMK** sans réponse en footage réel (expliquer l'essayage virtuel),
+   approuvé par King. Coût réel à connaître : gratuit = **50 crédits/jour ≈ 3–7 courts clips**,
+   filigrane SynthID ; ensuite 4,99–199,99 $/mois ou **0,10 $/seconde**.
+2. **La typologie des accroches + le retrait des accroches épuisées (vidéo 7).** Juste, mais à
+   éprouver pendant le test de deux semaines plutôt que décrété.
+3. **L'alignement de l'influenceur plutôt que sa taille (vidéo 7).** Pertinent seulement si nous
+   proposons un jour du travail d'influence — troisième source indépendante convergente sur cette
+   heuristique (avec le ratio vues/abonnés du lot 36 et le vol de hashtags du lot 36/37).
+
+### Trois idées à rejeter outright
+
+1. **Les 66 % / 74 % / 67 % comme arguments client (vidéo 7).** Les chiffres sont **réels et
+   reproduits** — mais ce sont **les recherches de TikTok lui-même**, sur le comportement
+   d'**achat**, dans une vidéo **sponsorisée par TikTok for Business**. Et un opticien vend un examen
+   en personne et une monture essayée, pas un achat impulsif. Erreur de catégorie : on ne les cite
+   pas. Sources : https://embedsocial.com/blog/tiktok-statistics/ · https://www.searchenginejournal.com/tiktok-stats/445449/
+2. **L'astuce de la liste de mots-clés cachée hors écran (vidéo 8).** Non vérifiable, sans source,
+   sans mécanisme — et l'auteure elle-même la hedge d'un « **apparently** ». Exactement le genre
+   d'affirmation que notre règle nous interdit de répéter.
+3. **L'imagerie et la vidéo générées par IA dans un livrable client (vidéo 9).** Contredit §25/§32,
+   le standard photo-au-téléphone et la pratique « Photo d'illustration ». Pour un commerce qui
+   manipule des yeux, une image synthétique de son cabinet est un risque de fausse représentation.
+
+### Outils qui survivent à l'audit — gratuits
+
+Recherche TikTok native (autocomplete, « Others searched for ») · analytics du compte · CapCut
+(gratuit, si un jour nous montons) · Pinterest (source de références — à noter : **pas** dans la
+liste du §2 étape 3, qui nomme Awwwards, Godly, Land-book, SiteInspire, Mobbin, Lapa Ninja,
+Dribbble). **Aucun outil payant ne survit — troisième lot consécutif.** Riverside, TubeBuddy,
+Hootsuite, Primal Video PLUS, gear : rejetés.
+
+### Contradictions (dans ce lot, et avec les lots précédents)
+
+1. **Fréquence, troisième point de vue.** Lot 36 (Millie) : 3–5 **par jour**. Lot 37 (Wiebe) :
+   qualité plutôt que fréquence. Vidéo 8 : 3–5 **par semaine** pendant un mois, puis on regarde.
+   **Synthèse :** la cadence n'est pas le levier ; **la revue** l'est. On garde la revue, on garde
+   2/semaine.
+2. **Image réelle contre image générée.** Vidéos 7 et 8 supposent qu'on se filme ; vidéo 9 génère
+   tout. Notre règle tranche : **réel pour le client**, généré possible seulement pour du contenu
+   AMK sans équivalent réel — et étiqueté.
+3. **Astuce d'algorithme contre métier.** Vidéo 8 propose un truc non vérifiable ; vidéo 7 avertit
+   que les spectateurs sont immunisés contre les ficelles épuisées. Le métier gagne.
+4. **Corroboration, pas contradiction.** « TikTok est un moteur de recherche, utilisez
+   l'autocomplétion » — **trois vidéos indépendantes** (7, 8, et la 3 du lot 36) plus un guide écrit.
+   C'est désormais acquis.
+
+### Ce que le flux de travail AMK devient après ce lot
+
+- Trois fichiers existants enrichis, **aucun fichier neuf** (§4b) :
+  `content/strategy/TIKTOK-SEO-CHECKLIST-2026-10.md` (§B spectateur, §C accroches + CTA alternés,
+  §D revue à un mois) · `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` (visuels IA : HOLD avec
+  conditions + checklist éthique) · `AMK-DESIGN-SKILLS.md` §2 (Design Read affiné, huit axes).
+- Une **frontière nette posée** : rien de synthétique sur un livrable client ; possible sur du
+  contenu AMK, étiqueté, avec checklist.
+- La règle appliquée trois fois dans ce lot : **un chiffre qu'on ne peut pas montrer ne sort pas de
+  notre bouche** — 66/74/67 %, « over 800 videos », « without spending a single dollar »,
+  « ranked high on Google » : tous marqués, non citables.
+- **Aucune sortie client, aucun déploiement.**
+
+### Ouvert (bloqué sur King ou sur une donnée manquante)
+
+- **TikTok Shop est-il disponible au Cameroun ?** Le lot 36 a tranché pour **Creator Rewards : non**.
+  TikTok Shop **n'a pas été vérifié** — ne rien supposer dans un sens ou dans l'autre.
+- La revue à 30 jours sur ~8 publications : l'échantillon est faible. Quel minimum avant de s'engager
+  dans le rituel ?
+- Le client veut-il un rapport de contenu mensuel écrit dans le retainer, ou la revue reste-t-elle
+  interne ?
+- « Nous ne publions aucune image synthétique de votre cabinet, de votre équipe ou de vos produits »
+  — en faire un **argument de vente** plutôt qu'une limite ? Pour un client de santé, cela pourrait
+  différencier.
+- Lot [38] = batch 3 de 4. **Batch 4 en file, non commencé.**
+
+---
+
+## Lot [39] · RECHERCHE VIDÉO — BATCH 4 of 4 (2 vidéos) · 2026-10-11 — LOT FINAL
+
+**Rapports détaillés :** `research/youtube-lessons/2026-10-11-batch-4/` (INDEX + un fichier par
+vidéo, six parties). **Matière première brute** — la synthèse d'une page est écrite par King sur les
+lots [36]–[39]. **Aucun batch 5.**
+
+| # | Vidéo | Producteur | Longueur · mise en ligne · vues | Ce qu'il vend |
+|---|---|---|---|---|
+| 10 | J'ai relancé un compte TikTok pour prouver que ce n'était pas de la chance | Flojo \| TikTok Money (`@tikproelite`) | 22:27 · 05/10/2026 · 13 014 | **comptes TikTok déjà monétisés** (code -35€) + CORTIA (affiliation) + coaching TIKPROELITE + prompt gratuit |
+| 11 | Don't Ever Pay for AI Video Again — FREE Seedance 2.5 + 3 More Tools | Xøla Ai Studiø (`@Xola_xo`) | 10:06 · **10/10/2026** · 2 719 | PDF + prompts gratuits **derrière une invitation Discord** |
+
+**Contrôle du re-datage (règle debout depuis le 11/10) :** les deux passent. La 11 a **un jour** —
+l'artefact le plus récent de tous les lots.
+
+**Fait notable de ce lot : la vidéo 10 est la plus contaminée commercialement des quatre lots, et la
+plus utile structurellement.** Les deux ne sont pas liés.
+
+### Trois idées à appliquer cette semaine
+
+1. **La structure de l'expérience publique (vidéo 10).** Un chiffre, une échéance, une hypothèse
+   annoncée, des résultats **jour par jour en montrant les mauvais jours**, une conclusion face au
+   chiffre. AMK a exactement cela en main : le **test de découverte locale de deux semaines** tranché
+   le 11/10. → `content/strategy/TIKTOK-SEO-CHECKLIST-2026-10.md`.
+2. **Le format sans visage, piloté par l'écran (vidéo 10).** Filmer le téléphone et le tableau de
+   bord. Coût zéro, conforme au standard photo-au-téléphone, et c'est la seule façon honnête de
+   montrer de vrais chiffres. → même fichier.
+3. **Le protocole de test d'outil (vidéo 11).** Inscription réelle, limites réelles, réglages réels,
+   erreurs réelles, sorties réelles, **et noter les échecs**. C'est la méthode des lots [36]–[39],
+   corroborée indépendamment.
+
+### Trois idées à garder en attente
+
+1. **Publication ou non du test de deux semaines.** Le publier en fait une expérience publique à la
+   vidéo 10 — plus de valeur, plus d'exposition. Décision de King.
+2. **La question bloquante des visuels générés n'est pas l'outil gratuit — c'est la licence
+   commerciale.** Deux lots de suite (38 et 39) se terminent sur la même impasse : personne ne dit si
+   la sortie est utilisable commercialement. Tant que ce n'est pas résolu, le HOLD du lot [38] tient.
+3. **Compte TikTok d'AMK en français ou en anglais ?** Buea est anglophone, Douala francophone. Rien
+   dans le dépôt ne le tranche.
+
+### Trois idées à rejeter outright
+
+1. **Les comptes TikTok déjà monétisés (vidéo 10).** Achetés, revendus, contraires aux conditions de
+   TikTok. Et c'est **l'étape que le titre passe sous silence** : « prouver que ce n'était pas de la
+   chance » alors qu'il dit lui-même *« I decided not to start from scratch… but rather with an
+   already monetized account »*. La prémisse du titre n'est pas soutenue par la méthode montrée.
+2. **La réédition de vidéos d'autrui (vidéo 10).** Il colle les liens de TikToks d'autres comptes
+   dans CORTIA, estompe leurs sous-titres, et reprend le script d'une vidéo à 218 000 vues. Contrefaçon
+   + contenu non original — exactement le motif documenté au lot [36] (Google : **45 %** de contenu
+   non original en moins, 26/04/2024, `ppc.land/scaled-content-abuse/`).
+3. **La suppression de filigrane (vidéo 11).** Présentée comme une astuce gratuite. C'est un
+   **marqueur de provenance** (SynthID chez Google, lot [38]) ; le retirer contredit la règle « le
+   visuel est étiqueté comme généré » adoptée au lot [38], et contrevient très probablement aux
+   conditions du générateur.
+
+### Outils qui survivent à l'audit — gratuits
+
+Recherche TikTok native · tableau de bord des analytics · ChatGPT pour le travail de texte
+(**une conversation par compte** — discipline reprise immédiatement par l'orchestrateur).
+**Aucun outil payant ne survit — quatrième lot consécutif.** CORTIA rejeté (payant, affiliation, et
+sa raison d'être est la méthode rejetée). Les quatre plateformes de la vidéo 11 rejetées.
+
+### Contradictions (dans ce lot, et avec les lots précédents)
+
+1. **Fréquence, quatrième point de vue.** Lot [36] : 3–5/jour. Lot [37] : qualité plutôt que
+   fréquence. Lot [38] : 3–5/semaine puis on regarde. Vidéo 10 : 1–2/jour. **Il optimise le volume
+   pour un programme de récompenses ; nous optimisons l'acquisition client.** Objectifs différents,
+   donc cadences différentes — la nôtre reste 2/semaine.
+2. **« Ne payez jamais » contre deux jeux de données audités.** Vidéo 11 : tout est gratuit. Lot
+   [38] : Flow gratuit = 50 crédits/jour puis 4,99–199,99 $/mois ou 0,10 $/seconde. Vidéo 11
+   elle-même : **4 crédits** et **5 générations**. Le gratuit est un budget de **prototypage**.
+3. **Transparence affichée contre méthode réelle.** La vidéo 10 promet « 100 % transparent » et
+   omet les deux choses qui comptent : le compte acheté et les vidéos d'autrui.
+4. **Corroboration.** Le protocole de test de la vidéo 11 est le nôtre, formulé indépendamment.
+
+### Ce que le flux de travail AMK devient après ce lot — et après les quatre
+
+- **La surface de capacité TikTok au Cameroun est close.** Creator Rewards : non (lot [36]). TikTok
+  Shop : non (lot [39], source primaire `seller.tiktok.com/`). **TikTok = découvrabilité + relais
+  WhatsApp. Jamais de commerce direct.** Aucune promesse de revenu TikTok dans une offre.
+- **La frontière des visuels générés est posée et précisée :** rien de synthétique **de l'entreprise
+  du client** ; possible pour du contenu AMK sans équivalent réel, **étiqueté**, jamais de filigrane
+  retiré. La phrase client : *« nous ne publions aucune image synthétique de votre entreprise »* —
+  dans les documents de portée, **pas** en accroche de prospection.
+- **Quatre lots, aucun outil payant retenu.** La règle de King a tenu quatre fois.
+- **Aucune sortie client, aucun déploiement.**
+
+### Ouvert (bloqué sur King ou sur une donnée manquante)
+
+- **La référence « Kamo » que détient King n'est pas dans le dépôt.** Seule occurrence :
+  `sales/LISTE-OPTICIENS-2026-10.md` (liste de prospection). Aucun contenu de relance TikTok sous ce
+  nom — **le recoupement demandé n'a pas pu être fait.** King doit fournir la référence.
+- **Licence commerciale des générateurs vidéo IA** — non résolue depuis deux lots.
+- **La page opticiens n'existe pas** (`site/` vérifié le 11/10) : la phrase sur l'imagerie synthétique
+  y sera ajoutée **quand elle sera construite**. Consigné, pas fait.
+- **Aucun fichier « modèle de contrat d'abonnement » autonome n'existe.** La portée a été écrite
+  dans `sales/PRIX-ET-RECURRENCE-2026-09-24.md` (où la portée est définie, ligne 34). Si King veut un
+  modèle autonome, c'est un fichier neuf → §4b.
+- **Les quatre lots sont clos.** En attente de la demande de synthèse d'une page de King.
+
+## Lot [40] · RECHERCHE VIDÉO — BATCH 5 of 7 (4 vidéos) · 2026-10-11 · GTM ENGINEERING
+
+Dossiers : `research/youtube-lessons/2026-10-11-batch-5/` (video-12 → video-15 + INDEX).
+Transcripts voie §0, complets (vidéo 12 en hindi/devanagari). Vidéos 13 et 14 = **Salesforge, vendor
+sponsorisé** ; vidéo 15 = consultant (biais conseil) ; vidéo 12 = créatrice carrière (Inde).
+
+### 3 idées à agir cette semaine
+1. **Rétro-ingénierie des deals gagnés** (vidéo 15) : interviewer King verbatim sur DM Optique
+   (pourquoi oui ?) et les perdus (pourquoi non), croiser avec les données publiques de l'époque,
+   n'automatiser que le confirmé par une transaction. → `sales/RESEARCH-STANDARD.md` §8d.
+   S'applique à la vague **suivante**, pas à celle du 12/10 (vérifiée, figée).
+2. **7ᵉ recherche « trigger / why-now »** (vidéos 12–13 traduites Cameroun : nouvel avis Google,
+   activité FB/IG, travaux de boutique, changement d'annuaire) → §8d ; héritée par le gabarit de
+   vague via les portes §8b.
+3. **Règle « jamais de signaux sur étagère / jamais de stack GTM payant sans profit »** →
+   `ops/TOOL-SCAN.md` (journal 11/10 nuit).
+
+### 3 idées à garder (en réserve)
+1. **n8n Community Edition** (self-host, gratuit) comme couche connecteur si le volume l'exige.
+2. **Vocabulaire 3 couches d'outbound** (IA-volume / intent / inbound-led) pour les revues —
+   la couche « inbound-led » recoupe la règle 02/10 (prospect ayant VU le contenu, jamais déduit).
+3. **« Builder pas codeur » + projet portfolio documenté** → format TikTok « on montre le système
+   à l'écran » (addendum du brief d'établissement).
+
+### 3 idées à rejeter carrément
+1. **Stack payant Clay/Instantly/Apollo/Salesforge/HubSpot** à l'échelle AMK — aucun profit ne le
+   justifie ; l'orchestrateur + crm.py font déjà find/enrich/route (orchestrator-first).
+2. **Scaling horizontal multi-comptes LinkedIn** (vidéo 13) — violation ToS + réputation ; contraire
+   à la confiance d'abord.
+3. **L'économie « 1 GTM engineer = 5 SDR / une équipe »** comme chiffre de planification — trois
+   formulations vendor, zéro mesure ; et il n'y a pas de SDR à remplacer chez nous.
+
+### Outils survivants de l'audit
+Orchestrateur (fetch_page + sweeps ONOC/avis) · crm.py/generators · n8n CE (HOLD, gratuit) ·
+ChatGPT/Gemini free uniquement en équivalent de l'orchestrateur. **Rien de payant n'a survécu.**
+Alt open source notée pour le jour où Clay se justifierait : buildingopen/opengtm.
+
+### Contradictions entre vidéos
+- **Le job :** 12–14 = automatiser + personnaliser à l'échelle ; **15 = le job N'EST PAS de
+  personnaliser des emails** mais de forcer la recherche sur les deals gagnés. Résolution AMK :
+  15 gagne au niveau stratégie (les signaux viennent du cash transigé), 12–13 ne restent que comme
+  techniques d'exécution une fois le signal validé.
+- Chiffres vendor incohérents : « centaines de sources » (12) vs « 150 » (13) ; « 1 = 5 SDR » (12, 14)
+  vs « 1 = équipe SDR » (13) vs « 500 meetings/mois » (13) — tous self-report, tous classés non
+  planifiables.
+- 13 vend le volume (unlimited mailboxes) quand 15 dit que le volume sans recherche = roulette.
+
+### Le workflow AMK après ce batch
+Pas de nouvel outil. La vague hérite d'une ligne « trigger / why-now » par prospect (§8d). La
+prochaine vague hérite d'une rétro-ingénierie des deals avant d'être écrite. Le CRM reste maison.
+TikTok gagne un format « montrer le système ». La revue (J14 TikTok, vendredi) reste le levier —
+cohérent avec la règle debout « la cadence est un test ».
+
+### Verdict GTM engineering pour AMK
+**Pertinent comme MÉTHODE, pas comme STACK.** Le cœur (systématiser, cibler par signaux, chercher
+avant d'inventer, boucler sur les données) est exactement ce que fait déjà l'orchestrateur + King ;
+le lot le renomme et le sharpen (surtout la vidéo 15 : bottom-up depuis les deals gagnés). Le stack
+B2B SaaS (Clay, Instantly, Salesforge, CRM payants) et l'économie de remplacement de SDR sont un
+monde différent (email+LinkedIn, US, équipes) : **non transférable** à une agence 1 personne,
+WhatsApp-first, Cameroun. Donc : adopter le protocole §8d, rejeter les achats.
+
+---
+
+## Lot [41] · RECHERCHE VIDÉO — BATCH 6 of 7 (6 vidéos) · 2026-10-12 · OUTILS DE CONTENU IA
+
+Dossiers : `research/youtube-lessons/2026-10-12-batch-6/` (video-16 → video-21 + INDEX).
+Traitement avancé de mercredi à lundi (ruling King 12/10). Transcripts voie §0, complets : 16, 17
+(Jad M.H, EN), 19 (Ai Dadaji, hindi), 21 (Create a Pro Website, EN). **Vidéo 18 = doublon du lot
+[39]** (même URL `1vSIb047QKE`, cross-ref, pas de re-transcription). **Vidéo 20 = URL non trouvée**
+après 5 recherches + sonde de chaîne → audit produit depuis la doc publique, flaggé « pas un
+transcript ». Métadonnées watch pages tirées le 12/10 pour 16, 17, 19, 21.
+
+### 3 idées à agir cette semaine
+1. **Demander à King la trace de son test builder GPT-6** (sortie ou URL) : le repo n'en contient
+   aucune (grep 12/10) — sans elle, le diff « texte-seul vs multi-sections » de la vidéo 21 reste
+   une comparaison à la vidéo, pas à son test.
+2. **Demander l'URL exacte de la vidéo Easy MCP** si King veut son audit vidéo (titre de la file
+   introuvable sur YouTube ; audit produit fait à la place, rejeté par règle batch 1).
+3. **Si un post motion est un jour validé** : mesurer d'abord le temps de render d'un slide
+   1080×1350 dans le sandbox (HyperFrames, déjà installé — évaluation 19/09). Préparation, pas
+   adoption ; le pipeline POST-01→09 reste figé.
+
+### 3 idées à garder (en réserve)
+1. **Pack discipline motion** (vidéos 16–17, même producteur, dédupliquées) : 120 BPM, slides en
+   mesures entières (boucle propre), ban explicite des défauts (couleurs/fonts/effets par défaut,
+   texte centré fade-in), boucle d'auto-critique notée ≥8/10 par plan. → addendum Lot [41] du
+   brief TikTok (`content/strategy/AMK-TIKTOK-ESTABLISHMENT-2026-10-12.md`).
+2. **Format « carousel animé » Instagram** (vidéo 16) : chaque slide = mini-vidéo en boucle ;
+   différenciant réel tant que peu de gens le font. Backlog contenu, pas de changement de pipeline.
+3. **Pour un futur besoin vidéo/section client :** seuls free tiers OFFICIELS vus sur deux lots =
+   Google Vids et Adobe Firefly (jamais d'agrégateur) ; **slider avant/après** comme section
+   candidate pour sites opticiens (avec consentement client) → checklist sites clients.
+
+### 3 idées à rejeter carrément
+1. **Agrégateurs « free & unlimited » + contournements ToS** (vidéo 19 : temp-mails, multi-comptes,
+   exploit « 0 crédit ») — même famille que le rejet lot [40] (multi-comptes) ; titre trompeur
+   confirmé par la propre démo (crédits/quotas à l'écran).
+2. **Le stack GPT-6 Astra payant** (ChatGPT Plus + Higgsfield + Hostinger, vidéo 21, affilié
+   déclaré) — règle King « pas d'achat sans profit » + standard maison single-file. Piège homonyme
+   noté : Astra thème WordPress (lot [36], rejeté) ≠ Astra mode GPT-6 ; verdicts séparés.
+3. **Blogging-automation WordPress via MCP** (vidéo 20) — heurte de front les règles batch 1
+   (demande vérifiée avant page, fait de première main obligatoire, scaled-content-abuse).
+
+### Outils survivants de l'audit
+**Aucun outil nouveau.** HyperFrames re-confirmé en usage de production par deux vidéos
+indépendantes de notre propre évaluation du 19/09 (rien à ré-adopter). ACE-Step 1.5 rejeté (≈11 Go,
+besoin absent). Skills Skool rejetées (prompts qu'on peut écrire nous-mêmes). L'orchestrateur reste
+le seul moteur de production.
+
+### Contradictions entre vidéos (et internes)
+- **« 0 $ » (16–17)** vs l'aveu du producteur : abonnement Claude requis — le 0 $ porte sur
+  musique/SFX/animation seulement.
+- **Titre « ACTUALLY FREE & UNLIMITED » (19)** vs sa propre démo : crédits daily, quotas, exploits
+  éphémères.
+- **« Le plus facile » (21)** vs les frictions montrées dans la même vidéo : hero raté au 1ᵉʳ essai,
+  hero qui ne joue pas au scroll, fix dédié — honnêteté à son crédit, mais le titre sur-vend.
+- **18 vs 19 (deux producteurs, deux lots)** : même promesse « ne payez plus » = mêmes quotas +
+  portes de capture (Discord / Telegram). Le pattern tient à travers les lots.
+
+### Le workflow AMK après ce batch
+Pas de nouvel outil, pas de changement de pipeline. Le contenu reste POST-01→09 (frozen). Le
+backlog motion rejoint le brief TikTok ; le slider avant/après rejoint la checklist sites clients ;
+deux questions ouvertes vont à King (trace du test builder ; URL Easy MCP). La règle « free &
+unlimited = signal d'alarme » rejoint le journal des rejets.
+
+### Verdict batch 6 pour AMK
+**Un lot qui renforce les disciplines existantes et n'apporte aucun outil.** Le meilleur
+enseignement est négatif : les titres « 0 $ / unlimited / easy » sont des labels marketing — les
+pièces solides sont méthodologiques (rythme, boucles, critique itérative, ban des défauts) et une
+idée de section client. L'orchestrateur + HyperFrames déjà évalué couvrent tout le besoin réel.
+## Lot [42] · RECHERCHE VIDÉO — BATCH HOOKS/RÉTENTION/STORYTELLING (4 vidéos) · 2026-10-12
+
+Dossiers : `research/youtube-lessons/2026-10-12-batch-hooks/` (video-22 → video-25 + INDEX).
+Batch demandé par King après visionnage du POST-01 v4 (3 défauts : pas de hook 0–3 s, pas de cadre
+narratif, ouverture « tuto design »). Transcripts voie §0 : 23 complet ; 22, 24, 25 par chapitres
+porteurs (détail par rapport). Métadonnées watch pages tirées le 12/10 pour les 4. Batches 2 et 3
+(motion/IA-anim ; stickman/vibe-coding/vente/communauté) : EN FILE, non démarrés.
+
+### 3 idées à agir cette semaine (avant la réécriture POST-01)
+1. **Beat 0 « contexte » + B1 « désir + obstacle »** (vidéo 24, story formula McKee) : 3–4 s de
+   requête (« un site pour une clinique d'optique ; le logo fourni était un PDF »), puis désir +
+   obstacle en mots d'opticien. Corrige les défauts n°2 et n°3 de King. → réécriture POST-01.
+2. **Zéro marque en 0–3 s + hook = pensée non dite de la cible** (vidéos 25 + 23) : v4 ouvrait sur
+   hero propre + logo = l'erreur exacte de l'anecdote 3-secondes de Wiebe. L'overlay d'ouverture
+   doit dire ce que l'opticien pense déjà (« il est beau… jusqu'au jour où on clique »). →
+   réécriture POST-01 (3 ouvertures candidates en at-bats, King tranche avant render).
+3. **Faire sentir le coût du problème avant la solution** (vidéo 25, Listerine/mécanisme) :
+   overlay chiffré en B2/B4 (« 2 jours de recherche ; sur un site réel, un client clique et rien ne
+   se passe »). → réécriture POST-01 + spec (pari nommé par post).
+
+### 3 idées à garder (en réserve)
+1. **Through-line répété + signature reconnaissable son coupé** (22 + 23) : la ligne de signature
+   B6 identique à chaque post ; test du son coupé comme critère de gate créatif. → addendum Lot
+   [42] du brief TikTok.
+2. **Les 4 forces du buyer (push/pull vs anxiété/habitude)** (25, Moesta) : grille de lecture des
+   conversations WhatsApp de la vague ; l'anxiété « je ne vois pas ce que ça m'apporte » est
+   l'adversaire principal. → CRM de vague (colonne existante, pas de nouveau fichier).
+3. **Clivant professionnel, jamais politique** (22) : prises de position métier dans les posts
+   debug-in-public (« un template acheté, on refuse »). → backlog contenu, après POST-01.
+
+### 3 idées à rejeter carrément
+1. **Le talking-head comme condition** (22, 23, 24 assument tous un visage) : aucun des principes
+   retenus n'exige visage ou voix d'auteur — la story formula et le hook pensée-non-dite sont
+   100 % transférables à l'écran généré. Le format parlant est rejeté pour nous (ruling King), les
+   principes restent.
+2. **ManyChat / DM-automation + paid** (23, 25) : NO-CALL/WhatsApp-only debout ; paid seulement
+   après preuve organique (23 elle-même) — donc jamais pour l'instant.
+3. **Cadences prescrites (2 posts/jour, 3–5/semaine) et absolus de compte personnel** (22, 23) :
+   notre cadence reste en test jusqu'à la revue J14 ; leurs chiffres (10 M vues/mois, +1 K
+   abonnés/jour) = vendor self-report, non transférables.
+
+### Outils survivants de l'audit
+**Aucun outil.** Batch 100 % principes (demande explicite du brief : « un framework, pas des
+exemples »). ManyChat rejeté ; Claude-ICP (24) inutile (ICP déjà terrain) ; swipe file 4-lignes
+(25) absorbé par la colonne « pourquoi ça a marché » de ce fichier — pas de nouveau fichier
+standing.
+
+### Contradictions entre vidéos (et internes)
+- **Montrer vs ne pas montrer** : 22/23 font de la présence personnelle le cœur du personal brand ;
+  24 prouve que la structure narrative seule suffit (story formula sans visage). Tranché pour AMK :
+  artefacts + structure, pas de visage (ruling King) — les deux mondes se réconcilient par la
+  « transparence violente » appliquée aux artefacts.
+- **Viralité vs régularité** : 23 s'intitule « viral en 30 jours » mais son propre contenu dit
+  « testing IS the plan, 30 jours pour se lever, 30 ans pour bâtir » ; 22 dit explicitement « ne
+  cherche pas la viralité ». Le titre sur-vend, le contenu confirme la régularité (recoupe nos
+  rejets des lots précédents sur les titres).
+- **Pilier « Tech Cameroun » vs niche 20–30 %** : 22 dit viser une minorité tranchée ; notre brief
+  de contenu a un pilier tertiaire tech. Tension réelle → question ouverte pour King (§A).
+- **25 vs notre usage de l'IA** : « un tas de tactiques sans pari = ce que l'IA produit » — garde-
+  fou adopté : chaque post porte un pari nommé, sinon il ne part pas.
+
+### Le workflow AMK après ce batch
+1. Réécriture POST-01 selon le mapping beat-par-beat (rapports 22–25 §5) : nouveau beat 0, B1
+   hook pensée-non-dite, coût du problème en B2/B4, transformation want≠need en B5/B6, marque
+   seulement en B6. 3 ouvertures candidates → King tranche → render → gate motion + son coupé.
+2. Addendum Lot [42] au brief TikTok : through-line répété, test son coupé au gate, pari nommé par
+   post, outcomes dans l'Activity-Log (« questions reçues », jamais « on a posté »).
+3. Batches 2 et 3 restent en file — ne pas démarrer sans ordre de King.
+
+### Réponses aux questions stratégiques (sourcées)
+- **A — Audience.** CONFIRMÉ avec raffinement : primaire = décideurs optiques CM 35–55 FR-first
+  WhatsApp-native sceptiques (24 : niche par élimination, « servir trop de monde = servir
+  personne » ; 22 : viser 20–30 %, jamais tout le monde). Secondaire = SMB CM. **Tertiaire tech :
+  amplificateur, pas cible de message** (22) — la tension avec le pilier « Tech Cameroun » est
+  signalée à King.
+- **B — Ce que le viewer doit penser.** CONFIRMÉ, reformulé en preuve : compétence/craft/maîtrise
+  de la niche/professionnalisme se démontrent par la **preuve qui ferme l'imagination gap** (24 :
+  « explaining your value harder never closes a sale, proof does »), la **reconnaissance** (« il
+  dit ce que je pensais », 23) et la **répétition de la même signature** (23 : noticed ≠ trusted ;
+  22 : 7–8ᵉ exposition).
+- **C — Objectif.** CONFIRMÉ : crédibilité d'abord, leads ensuite. 22 : « ne vends pas au début,
+  la confiance réduit les coûts » ; 23 : « paid seulement après preuve organique » ; 24 : la preuve
+  ferme le gap avant toute demande. La vague refroidit → TikTok = preuve consultable (ruling 12/10
+  renforcé).
+- **D — Type de vidéo.** CONFIRMÉ avec réserve : aucune des 4 vidéos ne traite le faceless — elles
+  assument toutes un talking-head (à noter honnêtement). Mais les principes retenus (story
+  formula, before/after, hook pensée-non-dite, coût avant solution, signature son coupé) sont
+  format-agnostiques : UI-sim + kinetic typo + data storytelling + before/after recréé restent les
+  seuls formats orchestrateur-générés, et suffisent.
+- **E — Première émotion.** Ni soulagement ni fierté : **reconnaissance + curiosité**. 23 : le
+  hook gagne quand la cible se dit « c'est exactement ce que je pensais » (reconnaissance) ; 24 :
+  le conflit/obstacle posé d'entrée crée la tension (« no conflict, no story ») ; le soulagement/
+  la confiance n'arrivent qu'à la résolution (B5/B6). Surprise = bonus, pas fondation (22 : le
+  lisse est invisible, mais le gimmick sans répétition ne construit rien).
+
+### Verdict du batch pour AMK
+**Le batch livre le framework demandé : les 3 défauts du v4 ont chacun leur correctif sourcé**
+(hook = pensée non dite + zéro marque en 0–3 s ; cadre = beat 0 contexte + story formula ;
+tuto-read = coût du problème avant la solution + transformation). Aucun outil, aucun changement de
+pipeline ; la réécriture POST-01 est le seul chantier immédiat.
+## Lot [43] · RECHERCHE VIDÉO — BATCH 2 of 3 ANIMATION/FORMATS (4 vidéos) · 2026-10-12
+
+Dossiers : `research/youtube-lessons/2026-10-12-batch-animation/` (video-26 → video-29 + INDEX).
+⚠️ La liste d'URLs de King était **décalée d'un cran** : chaque URL fournie a été vérifiée sur sa
+watch page et ré-associée au bon titre (tableau dans l'INDEX) ; l'URL `M9Bj4uBMP3A` (community
+management FR, Chedjou Kamdem) appartient au **batch 3** et n'a pas été traitée ; `dgCSN-rnN0E` =
+doublon de la vidéo 25 (Lot [42]), non re-transcrite (précédent lot [41] vidéo 18). Les vraies URLs
+retenues : 26 = `DBQqB8eqpFI` (Maxence Tison), 27 = `aVfawxDj6uw` (Curious Refuge), 28 =
+`XZjag0_TiWc` (Jacksons AI, résolue par recherche titre exact), 29 = `9yvQTR2siPM` (Emmanuel Crown,
+résolue par recherche titre exact). Transcripts voie §0 : 27 complet ; 26, 28, 29 par chapitres
+porteurs (détail par rapport). Batch 3 : EN FILE, non démarré.
+
+### 3 idées à agir cette semaine
+1. **Graver la séquence de production dans la spec POST-01** (vidéos 27 + 29, convergentes) :
+   histoire/beat table → VO+SFX verrouillés → storyboard cut (stills des beats en validation) →
+   render final → gates. POST-01 v4 la suivait déjà ; elle devient explicite et nommée.
+2. **Ajouter la checklist « défauts de design » au gate créatif** (vidéo 26, son duel Fable) :
+   texte sur fond de même luminance, texte coupé en bord de cadre, chevauchement texte/image —
+   vérifiés sur les stills de chaque beat avant validation.
+3. **Format des retours de King daté par beat/seconde** (vidéo 26, principe Editing OS sans
+   l'outil) : « à 10 s, le bandeau n'est pas lisible » plutôt qu'un verdict global — applicable
+   dès la réécriture POST-01.
+
+### 3 idées à garder (en réserve)
+1. **Trois modes d'entrée d'une vidéo** (26) : prompt seul / images de marque / vidéo de référence
+   — AMK est structurellement en mode 2 (DA à respecter) ; le mode 3 servira le jour où King donne
+   une référence de style à imiter.
+2. **Mémo pricing motion** (26 : Malt 350–450 €/jour, Fiverr 748–2 000 €/vidéo, agence FR
+   4 500–6 000 €/60 s) : intelligence commerciale pour le jour où AMK vend une section vidéo à un
+   client optique — pas un tarif à copier au Cameroun, un différenciant (marché local quasi vide).
+3. **Économie de crédits comme révélateur** (29 : Kling 1.6 vs 2.0 selon le shot ; 27 : ~12
+   générations par plan retenu) : si un futur besoin exige un générateur payant, ces ratios sont
+   la base du calcul « pas d'achat sans profit ».
+
+### 3 idées à rejeter carrément
+1. **Le format stickman** (28) : économie d'usine à RPM, vague de démonétisation en cours (son
+   propre aveu), registre incompatible avec le positionnement premium artisanal et la signature
+   dark+vert+terminal. Curiosité rentable pour d'autres, pas un format pour AMK.
+2. **Tous les générateurs image→vidéo** (Veo/Flow, Kling, Runway, Higgsfield, Quen, Gemini,
+   Midjourney, Freepik/Nano Banana, Topaz) : payants ou à crédits, instabilité documentée par les
+   producteurs eux-mêmes (artéfacts, cohérence perdue scène 8–10, « when it works »), et
+   l'orchestrateur fait équivalent ou mieux en déterministe. Rejet en bloc, principe extrait.
+3. **Les outils de feedback/montage vendus** (Editing OS, CapCut, Remotion/HyperFrames en
+   adoption) : nos équivalents existent déjà (stills par beat, ffmpeg, render.mjs). HyperFrames
+   reçoit sa 3ᵉ confirmation indépendante comme standard du code→vidéo — confirmation, pas
+   adoption.
+
+### Outils survivants de l'audit
+**Aucun outil nouveau — c'est le résultat central du batch.** Les 4 vidéos convergent : le motion
+« pro » par LLM = du code rendu en MP4 (26), tout le reste est de la génération probabiliste à
+crédits que leurs propres démos montrent fragile. Notre pipeline (beat table + HTML/SVG +
+render.mjs + ffmpeg + voice-00) est l'architecture que la vidéo 26 vend comme révolution ; nous
+l'avions déjà.
+
+### Contradictions entre vidéos (et internes)
+- **« AI just killed motion designers » (26, son hook)** vs son propre duel : le modèle « supérieur »
+  (Fable) produit textes illisibles et coupés — l'œil humain reste le QC. Le hook sur-vend, la
+  démo nuance.
+- **« Consistent across board » (29, titre)** vs son propre workaround : la cohérence lâche vers la
+  scène 8–10. Écart titre/réalité, pattern déjà loggé (lots [38]/[41]).
+- **« 100% FREE Forever » (28, titre)** vs Higgsfield payant testé + Skool payant vendu — même
+  famille que « free & unlimited = signal d'alarme » (Lot [41]).
+- **Stickman = machine à croissance (28)** vs la vague de démonétisation décrite dans la même
+  vidéo : le format usine est rentable ET précaire en même temps.
+- **Interne :** 27 recommande des acteurs vocaux + ADR ; notre ruling = voice-00 sans personnage —
+  compatible (VO narrative, pas de lip-sync), la contradiction ne nous atteint pas.
+
+### Le workflow AMK après ce batch
+Aucun outil ajouté, aucun changement de pipeline. La séquence de production (histoire → audio →
+shot list → storyboard cut → render → gates) est formalisée dans la spec POST-01 ; la checklist
+défauts de design rejoint le gate ; les retours King passent au format daté par beat. Le format
+AMK est tranché (voir Q1–Q2). La réécriture POST-01 (mapping Lot [42]) reste le seul chantier.
+Batch 3 en file.
+
+### Réponses aux 6 questions spécifiques (sourcées)
+- **Q1 — Le format AMK ?** CONFIRMÉ : **2D motion graphics généré par code** (UI-sim, kinetic
+  typo, data storytelling, before/after recréé — la liste du batch 1 tient). Preuves : 26 démontre
+  que le motion « pro » par LLM EST du code→MP4 (notre architecture exacte) ; 27/28/29 démontrent
+  par leurs propres artéfacts que la génération image-par-image est une loterie à crédits. L'animé
+  narratif à personnages (27, 29) est hors brief (divertissement, pas preuve métier).
+- **Q2 — Type d'animation + temps ?** 2D motion graphics code-driven. Temps : notre POST-01 v4
+  (38,5 s) = écriture + render + VO/SFX en une journée-sandbox ; en face : 27 = ~12 générations par
+  plan × 19 plans + montage correctif (jours, crédits), 28 = « 15 minutes » mais qualité usine.
+  Seul le code-driven tient la cadence d'un post/semaine à coût marginal ~0. Le character animation
+  est rejeté (crédits + cohérence fragile + pas de personnages dans notre contenu).
+- **Q3 — Signature visuelle ?** Elle DOIT matcher le design system AMK (dark + vert + terminal),
+  pas diverger : 26 méthode 2 (la DA de marque est l'entrée), batch 1/Lot [42] (signature
+  reconnaissable son coupé, répétition = confiance). Ajout du lot : une **motion language**
+  cohérente (mêmes easings, mêmes transitions entre beats) — la grille de profil uniforme est un
+  signal de confiance confirmé (28 montre l'effet inverse : chaînes-usines interchangeables).
+- **Q4 — Pipeline ?** Script/beat table validé par King → VO+SFX verrouillés (audio d'abord, 27) →
+  storyboard cut (stills par beat) → render → gate motion + checklist défauts + test son coupé →
+  approbation King → téléversement (musique par King). Goulot d'étranglement : **les décisions
+  créatives (validation des ouvertures), pas le rendu** — le render est ~0.
+- **Q5 — Stickman pour AMK ?** NON (rejet documenté, vidéo 28 §4) : registre usine, RPM-précaire,
+  audience incompatible, signature incompatible. C'est un vrai format… pour une économie de
+  chaînes-usines, pas pour une agence premium. Principes de production retenus, format rejeté.
+- **Q6 — « AI animation » vs « généré » ?** Les 4 vidéos disent « AI animation » et vendent des
+  générateurs probabilistes retouchés au montage (27 : artéfacts à couper ; 29 : cohérence qui
+  lâche ; 28 : bake-off instable). Notre chaîne est différente en nature : **code déterministe
+  dirigé à la main** — le même rendu rejoue à l'identique, se réédite après retour (26 le confirme
+  comme avantage décisif). Traduction éditoriale : AMK dit « produit avec notre propre système » /
+  « notre pipeline », décrit l'artisanat (beat table, gates, retouches), et ne dit jamais « l'IA
+  fait le travail » — ce n'est pas de la pudeur, c'est factuellement un autre procédé.
+
+### Verdict du batch 2 pour AMK
+**Le batch tranche le format sans ajouter un seul outil : 2D motion graphics généré par code,
+signature AMK, pipeline existant formalisé.** Les trois autres vidéos servent de preuve par
+contraste (génération probabiliste = crédits, artéfacts, incohérence) et le stickman est écarté
+comme anti-positionnement. Prochain chantier inchangé : réécriture POST-01 (Lot [42]).
+## Lot [44] · RECHERCHE VIDÉO — BATCH 3 of 3 FINAL : vente, CM, vibe coding, stickman (4 vidéos) · 2026-10-12
+
+Dossiers : `research/youtube-lessons/2026-10-12-batch-final/` (video-30 → video-33 + INDEX).
+⚠️ Liste d'URLs de King **encore décalée d'un cran** (comme batch 2) : chaque URL vérifiée sur sa
+watch page avant traitement (tableau dans l'INDEX). Doublons batch 2 non re-transcrits
+(`XZjag0_TiWc` = vidéo 28 ; `9yvQTR2siPM` = vidéo 29). URLs retenues : 30 = `Fo3lreTdy0g` (Mark
+Ai Guy), 31 = `UNqRlRz80Ss` (The Next Wave × Meng To), 32 = `dJR7OpkEeBk` (Patrick Dang, 940 646
+vues ✓), 33 = `M9Bj4uBMP3A` (Chedjou Kamdem). **Question 5 résolue : `dJR7OpkEeBk` = la vidéo
+dark psychology elle-même** — pas de 5ᵉ vidéo à ajouter, le batch = 4 vidéos uniques.
+Transcripts voie §0 : 30 quasi-intégral ; 31, 32, 33 par chapitres porteurs (détail par rapport).
+
+### 3 idées à agir cette semaine
+1. **3 règles de closing WhatsApp** (vidéo 32, après filtre éthique) : nommer le problème réel en
+   leurs mots avant toute offre ; **prix en un message clair puis silence** (ni relance ni remise
+   préventive) ; cadrage « ce que ça rapporte/évite », jamais « ce que ça coûte ». → gravées dans
+   `sales/CLIENT-MESSAGING-RULES.md` §11.
+2. **Checklist de spec design en 6 tokens** (vidéo 31, Meng To) : layout / styling / accent+fond
+   désaturé / ombres / typo+graisse+tracking / pairing — plus jamais d'adjectif (« beautiful »)
+   dans une spec de page générée. → addendum `sales/AMK-DESIGN-SKILLS.md`.
+3. **Cross-post Facebook dans le backlog distribution** (vidéo 33 : FB = 5 M+ Camerounais,
+   organic au coude-à-coude avec TikTok) : quand la cadence TikTok sera stable, republier le même
+   MP4 sur Facebook — coût marginal nul. → addendum brief.
+
+### 3 idées à garder (en réserve)
+1. **Ligne de service « production de contenu premium au livrable »** (vidéo 33) : jamais de
+   retainer CM tout-venant (marché sous-payé, 50 K FCFA/mois plancher observé, disponibilité
+   permanente attendue) ; mais le haut de pile (vidéos code→vidéo, visuels, pages) manque à ce
+   marché — vendable aux PME et aux CM/agences sous-équipés (canal B2B2C à tester après les
+   premiers clients directs).
+2. **L'argumentaire anti-site-générique** (vidéo 31) : « pourquoi tous les sites IA se
+   ressemblent » = objection prête à l'emploi face au site à 50 000 FCFA ; notre réponse =
+   vocabulaire de design + ingrédient signature.
+3. **Spline (3D communautaire gratuit)** (vidéo 31) : si un jour une section 3D sur site client —
+   gratuit, remixable. Backlog, pas d'adoption.
+
+### 3 idées à rejeter carrément
+1. **Les 3 manipulations « dark »** (vidéo 32) : escalade de douleur latente→extrême, urgence
+   fabriquée, coinçage d'ego. Sur un marché méfiant, employer les procédés des arnaqueurs nous
+   classe avec eux — la confiance est l'actif n°1 (Lot [42]). Rejet avec raison documentée.
+2. **Le stickman, définitivement** (vidéo 30) : second échantillon, même moule d'usine (master
+   prompt partagé, engagement-bait, disclaimer earnings). Le rejet batch 2 tient ; question 4 =
+   **skip propre**, aucun principe nouveau.
+3. **Le retainer CM classique** (vidéo 33) : commodité sous-payée, course vers le bas,
+   disponibilité permanente — incompatible avec le positionnement craft et le périmètre NO-CALL.
+
+### Outils survivants de l'audit
+**Aucun outil nouveau — troisième batch consécutif.** Rejetés : Nano Banana 2, Google Flow agent
+mode/Omni Flash, ElevenLabs (voice-00 déjà adopté), CapCut, Aura/Lovable/V0, Unicorn Studio,
+Vsub. Spline en backlog seul. Le pattern des 3 lots tient : les vidéos vendent des outils, les
+principes confirment notre stack (orchestrateur + render.mjs + ffmpeg + voice-00 + DESIGN-SKILLS).
+
+### Contradictions entre vidéos (et internes)
+- **« Dark psychology » (32)** vs notre actif confiance : la vidéo assume « play tricks on the
+  human mind » ; notre filtre marché tranche — la moitié saine (Cialdini) survit, la moitié
+  manipulation est rejetée. La contradiction est résolue par le filtre, pas par le compromis.
+- **Stickman « viral » (30)** vs la démonétisation (28, batch 2) : deux producteurs vendent le
+  même format comme machine à croissance alors que la vague de démonétisation frappe ce format —
+  le template d'usine est présenté comme une opportunité par ceux qui vendent le template.
+- **CM « visage de l'entreprise » (33)** vs notre sans-visage (ruling King) : à contre-courant
+  assumé — la preuve par artefact remplace le visage (Lot [42]/[43]).
+- **« IA = différenciateur » (implicite chez 30/33)** vs l'étude de 33 : ~100 % des CM camerounais
+  utilisent déjà l'IA — elle ne différencie plus ; l'exécution si. Recoupe notre règle « on ne
+  mentionne jamais l'IA ».
+- **Interne (cohérente) :** 32 « rien de plus puissant qu'une success story » = 22 (Tapie : faire
+  puis raconter) = 24 (preuve > explication) = notre debug-in-public. Quatre sources convergentes.
+
+### Le workflow AMK après ce batch (état final de l'arc)
+Aucun outil ajouté sur les 3 lots. Les règles closes : closing WhatsApp (§11 messaging), checklist
+design 6 tokens (DESIGN-SKILLS), cross-post FB (backlog brief), ligne « contenu premium au
+livrable » (brief). **Le framework vidéo est complet** : hooks/story (Lot [42]) + format/pipeline
+(Lot [43]) + vente/marché/design (Lot [44]). Prochaine étape = décision King : POST-01 est-il une
+story qui vaut d'être postée ? Si oui → réécriture avec le mapping beats Lot [42] + la séquence
+de production Lot [43]. La réécriture N'EST PAS démarrée (ordre explicite du brief).
+
+### Réponses aux 5 questions spécifiques (sourcées)
+- **Q1 — Psychologie de vente pour la vague ?** Après filtre : problème RÉEL nommé en leurs mots
+  (jamais amplifié), miroir des objections (déjà règle 09/10), preuve/story (déjà Lot [42]),
+  **prix+silence en un message WhatsApp**, cadrage revenu-pas-dépense. Rejetées : escalade de
+  douleur, urgence fabriquée, coinçage d'ego (vidéo 32 §4). La manipulation casse la confiance du
+  marché méfiant — le filtre n'est pas moral, il est stratégique.
+- **Q2 — Le CM comme service AMK ?** NON au retainer CM (commodité à 50 K FCFA/mois, tout-faire,
+  disponibilité permanente — étude 33) ; OUI à « production de contenu premium au livrable »,
+  vendable aux PME et aux CM/agences sous-équipés. Facebook = place de marché n°1 → cross-post
+  au backlog.
+- **Q3 — Vibe coding pour notre site ?** Le principe qui transfère : **vocabulaire de design
+  précis > adjectifs** (tokens : layout/styling/accent/ombres/typo/pairing) — notre DESIGN-SKILLS
+  validé en externe, enrichi d'une checklist 6 tokens. Rejeté comme hype : les builders vendus
+  (Aura/Lovable/V0 = le problème générique qu'ils dénoncent), les tendances suivies au lieu du
+  design system, l'idée qu'un outil remplace le goût.
+- **Q4 — Stickman, confirmation ?** **SKIP PROPRE, confirmé.** Second échantillon = même moule
+  d'usine (master prompt, engagement-bait, disclaimer earnings). Aucun principe neuf ; nos règles
+  debout (structure écrite avant génération, captions relues) déjà couvertes. Rejet définitif.
+- **Q5 — L'URL `dJR7OpkEeBk` ?** IDENTIFIÉE = « 8 DARK PSYCHOLOGY Sales Techniques » (Patrick
+  Dang, 940 646 vues — les 940K de King). Elle n'était pas perdue : elle EST la vidéo 11 du
+  batch, traitée comme vidéo 32. Pas de 5ᵉ vidéo.
+
+### Verdict final : le framework vidéo est-il complet ?
+**OUI — complet et cohérent.** Les 3 lots (42–44) couvrent les trois couches : (1) QUOI dire —
+hook = pensée non dite, story formula, zéro marque en 0–3 s, coût avant solution ; (2) COMMENT le
+montrer — 2D motion graphics généré par code, signature AMK, séquence de production avec gates ;
+(3) POURQUI ça vend — preuve > explication, closing honnête, positionnement craft sur un marché
+où l'IA est déjà banale. Douze vidéos traitées (22–33), zéro outil ajouté, aucune contradiction
+ouverte restante. Ce qui manque n'est pas du savoir : c'est la décision de King sur POST-01, puis
+l'exécution de la réécriture.
+
+### Verdict du batch 3 pour AMK
+**Un lot qui ferme l'arc en purgeant plus qu'en ajoutant :** 3 manipulations rejetées, le stickman
+enterré, le retainer CM écarté — et trois règles propres (closing WhatsApp, checklist design,
+cross-post FB) qui rejoignent des fichiers existants. Le framework est prêt ; la balle est à la
+réécriture POST-01, sur ordre de King.

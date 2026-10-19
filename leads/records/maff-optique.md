@@ -1,6 +1,6 @@
 # Maff Optique
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-05. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-13. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -27,7 +27,7 @@ Parké le 02/10 — bulk close (ruling King, reset pipeline) : contacté, jamais
 
 ## Notes
 
-VAGUE 1 OPTICIENS (21/09). Titulaire public : MANFO Hélène. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir. · 24/09 — PREMIER LOT D'OUTREACH (préparé, PAS ENCORE ENVOYÉ) : numéro du tableau de l'Ordre (699 93 19 56), titulaire public MANFO Hélène. Recherche et message écrits dans `sales/Send-BATCH-2026-09-24-Opticiens.md` ; vérifier le numéro sur WhatsApp avant d'envoyer (wa_verified = unknown). · 24/09 11:56 — PREMIER LOT, ENVOYÉ par King. Message livré (✓✓). Profil WhatsApp : « MAFF optique », Business Account. Aucune réponse au relevé du soir ; toute réponse se traite dans l'heure et s'écrit dans `sales/Activity-Log.md`.
+VAGUE 1 OPTICIENS (21/09). Titulaire public : MANFO Hélène. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir. · 24/09 — PREMIER LOT D'OUTREACH (préparé, PAS ENCORE ENVOYÉ) : numéro du tableau de l'Ordre (699 93 19 56), titulaire public MANFO Hélène. Recherche et message écrits dans `sales/Send-BATCH-2026-09-24-Opticiens.md` ; vérifier le numéro sur WhatsApp avant d'envoyer (wa_verified = unknown). · 24/09 11:56 — PREMIER LOT, ENVOYÉ par King. Message livré (✓✓). Profil WhatsApp : « MAFF optique », Business Account. Aucune réponse au relevé du soir ; toute réponse se traite dans l'heure et s'écrit dans `sales/Activity-Log.md`. Tag 12/10 : excluded_dead_lead + excluded_already_contacted (règle §9) — aucun second envoi.
 
 ## Prochaine action
 

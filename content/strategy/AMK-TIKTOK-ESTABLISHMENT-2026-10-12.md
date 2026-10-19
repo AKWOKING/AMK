@@ -1,0 +1,186 @@
+# AMK TIKTOK — ÉTABLISSEMENT (pas un restart) · 12/10/2026
+
+**Framing (ruling King) :** le compte TikTok d'AMK n'a **aucune identité antérieure** — on ne relance
+rien, on **établit**. Les quatre lots de recherche ([36]–[39], `research/YouTube-Lessons.md`) sont le
+socle. **Règle debout (ci-dessous) : la cadence est un test, pas un engagement — toute cadence part
+avec un checkpoint de revue planifié.**
+
+---
+
+## 1 · Thèse du canal — communauté + crédibilité, pas vente
+
+TikTok pour AMK = **découvrabilité + crédibilité**, jamais commerce direct (lot [39] : Creator Rewards
+**et** TikTok Shop fermés au Cameroun → « TikTok = découvrabilité + relais WhatsApp, jamais de vente »).
+- **FR d'abord**, regard CEMAC (la langue du commerce régional ; Douala francophone).
+- **Niche = opticiens** (notre verticale réelle), mais **aucune attache géographique** dans le ton :
+  on parle du métier et du terrain camerounais, pas « agence à Douala » en boucle.
+- Le compte **prouve la compétence** (on sait faire, on le montre) ; il ne vend pas un forfait.
+
+## 2 · Liste de rejets — archivé, pas supprimé
+
+- **L'ancien plan de contenu** (celui qui a produit **zéro lead entrant**, `CONTENT-STRATEGY-V2`) →
+  archivé comme référence, plus utilisé.
+- **C1-vidéo** (le créneau vidéo du plan client) → archivé ; la vidéo AMK suit la cadence de test
+  ci-dessous, pas l'ancien calendrier.
+- **Anciennes entrées de pipeline** liées à l'ancien plan → archivées.
+- **La cadence 3–5/jour de Millie (lot [36])** → rejetée pour nous (audience chaude, watch-time ; pas
+  un compte communautaire froid).
+- **Le 1–2/jour de Flojo (vidéo 10)** → rejeté comme cadence : il tournait sur un compte **chauffé**
+  pour le Creator Rewards, **indisponible au Cameroun**, objectif différent.
+
+## 3 · Trois piliers de contenu
+
+**A · Debug-in-public** (série nommée — ruling King 12/10, ex « build-in-public » ; on montre le
+travail réel) — 1–2/semaine :
+1. « On construit la page d'un opticien de Douala — ép. 1 : le brief » (écran, pas visage)
+2. « Le bouton WhatsApp qui part déjà écrit : pourquoi il est sur chaque écran »
+3. « Avant/après : une page qui n'existait pas devient trouvable »
+
+**B · Behind-the-agency** (la méthode, la rigueur) — 1–2/semaine :
+1. « Pourquoi on refuse de publier une image synthétique de votre cabinet »
+2. « Comment on vérifie un numéro ONOC avant d'écrire à un opticien »
+3. « Une journée à l'agence : ce qu'on fait quand on ne poste pas »
+
+**C · Tech Cameroun / réalité locale** (le terrain, la voix) — 2–3/semaine :
+1. « TikTok au Cameroun : ce qui marche vraiment (et ce qui ne paie pas ici) »
+2. « Réel vs faux réseau à Douala : ce que ça change pour ton site »
+3. « Essayer des lunettes en ligne à Douala : l'essayage virtuel, ça donne quoi ? »
+
+## 4 · Cadence 90 jours — la cadence est un test
+
+- **Jours 1–14 : 5 publications/semaine** (ruling King), réparties : debug-in-public 1–2 ·
+  behind-the-agency 1–2 · tech Cameroun 2–3.
+- **Jour 14 : revue dure** (gabarit §8). Pas de prolongation automatique.
+- **Après le jour 14 : rampe sur les données.** Signal positif → cadence tenable (≈3/semaine) et
+  lecture du test de découverte locale. Signal nul → **redescend à 2/semaine** (engagement réel,
+  qualité plutôt que fréquence — Wiebe lot [37]) en réallouant vers le pilier qui a gagné des abonnés.
+- La cadence 5/semaine des 14 jours **n'est pas un engagement client ni une promesse interne** : c'est
+  un protocole de mesure.
+
+## 5 · Décodage du format Kamo (`@j.dev237`, captures King)
+
+**Emprunté :** piloté par l'écran (terminal mockup « joel@yaounde ~ $ whoami ») · **pas d'ancrage
+visage** (avatar dessin) · texte court en gras (« NON », le nom en énorme) · **chiffres transparents**
+(« de 12 $/h à 500 $ le projet ») · FR · fond sombre. C'est le format « preuve en construisant ».
+**Laissé :** sa niche (dev freelance) n'est pas la nôtre · sa « transparence totale » = **publier ses
+tarifs** — or **nos listes de prix ne paraissent jamais** (§7). On emprunte la forme (chiffres de
+résultat : vues, abonnés, temps) **pas** la divulgation des prix clients.
+
+## 6 · Protocole du test de découverte locale (2 semaines)
+
+Compte **AMK d'abord** (risque client zéro) ; DM Optique seulement après acompte. Hypothèse écrite au
+départ : « des gens de Douala qui cherchent un opticien nous trouvent via la recherche TikTok ».
+**Mesures :** visites de profil · abonnés · taps WhatsApp du lien de bio · messages entrants **nommant
+la recherche** (signal le plus fort). Hypothèse + résultat **loggés**. **Aucune promesse client avant un
+résultat positif.**
+
+## 7 · Ce qui n'apparaît jamais
+
+Pitch de vente direct aux opticiens · cadres/clients sans consentement · **listes de prix** · contenu
+de prospection à froid · tout chiffre qu'on ne peut pas montrer en contexte · imagerie synthétique de
+l'entreprise d'un client.
+
+## 8 · Gabarit de revue du jour 14 (pour que la revue arrive à l'heure, pas à la mémoire)
+
+**Séquence du seuil (ruling King, 11/10) :** **rapport à J7** (chiffres bruts) · **seuil fixé avec King
+entre J7 et J14** · la revue du **J14 se fait contre ce seuil**, pas contre une impression. Le seuil
+n'est pas inventé à l'avance : il sort du baseline réel des premiers posts.
+
+**Mesures (jamais les vues — vanité) :** abonnés gagnés · visites de profil · taps WhatsApp · messages
+entrants nommant la source · taux de visionnage par post · **quels posts ont gagné des abonnés**.
+**Questions :** quel pilier a gagné des abonnés ? quel post a déclenché un message nommant la
+recherche ? le bio/lien a-t-il converti les visites en taps ?
+**Arbre de décision :**
+- Abonnés ≥ seuil ET ≥1 message nommant la source → rampe à ~3/semaine + lecture du test local.
+- Visites ↑ mais abonnés/taps plats → corriger accroche + bio, garder la cadence, re-revue à J+7.
+- Plat partout → **redescendre à 2/semaine**, réallouer vers le pilier gagnant, re-revue à J+7.
+- **Jamais** monter la cadence sur les vues seules.
+
+---
+
+## Addendum Lot [40] (vidéo 12) — « montrer le système » comme format
+
+Le projet-portfolio de la vidéo 12 (documenter un workflow réel et le publier) confirme le pilier
+A : ajouter un format récurrent **« on montre le système à l'écran »** (sweep ONOC → vérif →
+première ligne) — sans nommer de prospect sans consentement, sans chiffres clients.
+
+---
+
+## Addendum Lot [41] (vidéos 16–17) — backlog motion, AUCUN changement de pipeline
+
+Source : `research/youtube-lessons/2026-10-12-batch-6/` (Jad M.H, dédupliquées — même producteur,
+même stack). Le pipeline POST-01→09 reste **figé** ; ceci est un backlog pour un futur post motion,
+valable seulement si King le valide un jour.
+
+- **Format candidat :** « carousel animé » (chaque slide = mini-vidéo en boucle, 1080×1350) —
+  différenciant pendant que peu de gens le font.
+- **Discipline si on le fait :** 120 BPM · slides en mesures entières (boucle sans saut) · ban
+  explicite des défauts dans le prompt (couleurs/fonts/effets par défaut, texte centré fade-in) ·
+  boucle d'auto-critique : noter chaque plan 1–10, corriger les 3 pires, itérer jusqu'à ≥8/10.
+- **Moteur :** HyperFrames, déjà installé et évalué le 19/09
+  (`research/HyperFrames-Evaluation-2026-09-19.md`) — avant tout essai, mesurer le temps de render
+  d'un slide dans le sandbox.
+- **Jamais :** payer un outil pour ça (règle King) ; musique/SFX = code local ou rien sous la VO.
+
+---
+
+## Addendum Lot [42] — batch hooks/rétention/storytelling (12/10 nuit)
+
+Source : `research/youtube-lessons/2026-10-12-batch-hooks/` (vidéos 22–25) ; consolidation et
+réponses A–E : `research/YouTube-Lessons.md` Lot [42]. Quatre disciplines permanentes ajoutées :
+
+1. **Through-line répété** : la ligne de signature (« AMK — on construit, on casse, on comprend »)
+   identique à chaque post, sans variation — la répétition est la stratégie (vidéos 22 + 23).
+2. **Test du son coupé au gate créatif** : chaque vidéo doit se comprendre sans audio — signature
+   visuelle reconnaissable (dark + vert + terminal) (vidéo 23).
+3. **Pari nommé par post** : chaque spec porte « Nous croyons X, donc nous parions ce post que Y
+   produit Z » — un post sans pari ne part pas (vidéo 25).
+4. **Outcomes dans l'Activity-Log** : « questions reçues », jamais « on a posté » (vidéo 25).
+
+Résumé A–E (détail au Lot [42]) : audience primaire = décideurs optiques CM (tertiaire tech =
+amplificateur, tension signalée) ; perception visée = preuve + reconnaissance + répétition ;
+objectif = crédibilité d'abord ; formats = orchestrateur-générés (les 4 vidéos assument un
+talking-head — principes retenus format-agnostiques) ; première émotion = reconnaissance +
+curiosité, soulagement/confiance seulement à la résolution.
+
+---
+
+## Addendum Lot [43] — batch animation/formats (12/10 nuit)
+
+Source : `research/youtube-lessons/2026-10-12-batch-animation/` (vidéos 26–29) ; consolidation et
+réponses Q1–Q6 : `research/YouTube-Lessons.md` Lot [43]. Trois rulings permanents :
+
+1. **Format AMK = 2D motion graphics généré par code** (UI-sim, kinetic typo, data storytelling,
+   before/after recréé). Générateurs image→vidéo rejetés en bloc (crédits, artéfacts, cohérence
+   fragile — documentés par les producteurs eux-mêmes). Format stickman rejeté (anti-
+   positionnement, économie RPM précaire).
+2. **Motion language cohérente** : mêmes easings, mêmes transitions entre beats, signature
+   dark + vert + terminal sur toute la grille — la grille de profil uniforme est un signal de
+   confiance (Lot [42] + vidéo 28 en contre-exemple).
+3. **Vocabulaire « généré », jamais « l'IA fait le travail »** : notre procédé est factuellement
+   du code déterministe dirigé à la main (beat table, gates, retouches) — on décrit l'artisanat
+   (« produit avec notre propre système », « notre pipeline »), ce qui est à la fois exact et
+   conforme à la règle debout.
+
+Mémo en réserve : pricing motion marché FR (Malt 350–450 €/jour ; Fiverr 748–2 000 €/vidéo ;
+agence 4 500–6 000 €/60 s) = différenciant potentiel pour les sites clients, pas un tarif à copier.
+
+---
+
+## Addendum Lot [44] — batch final vente/CM/design (12/10 nuit)
+
+Source : `research/youtube-lessons/2026-10-12-batch-final/` (vidéos 30–33) ; consolidation et
+réponses Q1–Q5 : `research/YouTube-Lessons.md` Lot [44]. Trois rulings :
+
+1. **Pas de retainer community management** : marché commodité sous-payé (plancher observé
+   50 K FCFA/mois, étude CM 2025), disponibilité permanente attendue — incompatible avec le
+   positionnement craft. Ligne adjacente possible : **« production de contenu premium au
+   livrable »** (vidéos, visuels, pages), vendable aux PME et aux CM/agences sous-équipés
+   (canal B2B2C à tester après les premiers clients directs).
+2. **Cross-post Facebook au backlog distribution** : FB = 5 M+ Camerounais actifs, organic au
+   coude-à-coude avec TikTok (étude CM) — quand la cadence TikTok sera stable, republier le même
+   MP4 sur FB, coût marginal nul.
+3. **Closing WhatsApp en 3 règles** → gravées dans `sales/CLIENT-MESSAGING-RULES.md` §11
+   (problème réel en leurs mots ; prix en un message puis silence ; cadrage revenu-pas-dépense).
+   Les 3 manipulations « dark » (escalade de douleur, urgence fabriquée, coinçage d'ego) sont
+   rejetées : sur marché méfiant, la confiance est l'actif n°1.

@@ -71,23 +71,27 @@ SAFE = "!'()*-._~"
 # Une image = une signification (§25) : l'objet qu'on vient chercher, la vitrine des montures (trois
 # familles), et l'instrument qui mesure. Cinq images, toutes des MISES EN SITUATION — aucune photo du
 # cabinet n'existe encore, et la page le dit (« Photos d'illustration »).
+# 15/10 : images externalisées en WebP (fichiers dans hosting/previews/dmoptic/, mêmes dimensions).
+# Clé = nom du fichier WebP écrit ; le gabarit l'appelle par __ASSET__<nom>.
 PHOTOS = {
-    "__IMG_LUNETTES__": ("dmoptic-lunettes.jpg", "900x563", "50"),   # 16/10 — les services
-    "__IMG_MONTURES__": ("dmoptic-montures.jpg", "900x563", "50"),   # 16/10 — la vitrine : lunettes de vue
-    "__IMG_SOLAIRES__": ("dmoptic-solaires.jpg", "900x563", "50"),   # 16/10 — la vitrine : solaires
-    "__IMG_ENFANTS__":  ("dmoptic-enfants.jpg", "900x563", "50"),   # 16/10 — la vitrine : enfants
-    "__IMG_MESURE__":   ("dmoptic-mesure.jpg",  "900x675", "50"),   # 4/3  — l'examen de la vue (bande)
+    "dmoptic-lunettes.webp": ("dmoptic-lunettes.jpg", "900x563", "75"),   # 16/10 — les services
+    "dmoptic-montures.webp": ("dmoptic-montures.jpg", "900x563", "75"),   # 16/10 — la vitrine : lunettes de vue
+    "dmoptic-solaires.webp": ("dmoptic-solaires.jpg", "900x563", "75"),   # 16/10 — la vitrine : solaires
+    "dmoptic-enfants.webp":  ("dmoptic-enfants.jpg",  "900x563", "75"),   # 16/10 — la vitrine : enfants
+    "dmoptic-mesure.webp":   ("dmoptic-mesure.jpg",   "900x675", "75"),   # 4/3  — l'examen de la vue (bande)
 }
+ASSET = "__ASSET__"                       # préfixe des fichiers : "" pour l'aperçu, chemin relatif pour demos/
+CONCEPT_ASSET = "../hosting/previews/dmoptic/"
 
 
 def prepare(name, target, quality, out):
-    """Couvre la cible puis recadre AU CENTRE (`resize ^` + `extent`) : aucun décalage écrit en dur."""
+    """Couvre la cible puis recadre AU CENTRE (`resize ^` + `extent`) : aucun décalage écrit en dur. Sortie WebP."""
     src = IMG / name
     if not src.exists():
         sys.exit("photo manquante : %s" % src)
     subprocess.run(["convert", str(src), "-auto-orient", "-resize", target + "^",
                     "-gravity", "center", "-extent", target,
-                    "-strip", "-interlace", "Plane", "-quality", quality, str(out)], check=True)
+                    "-strip", "-quality", quality, "-define", "webp:method=6", str(out)], check=True)
     return out.stat().st_size
 
 
@@ -110,6 +114,9 @@ def fix_whatsapp(html):
     return out
 
 
+CANON_BASE = "https://dmoptiquesarl.com/"   # domaine du cabinet (décision King, migration Cloudflare 16/10)
+ROBOTS_NOINDEX = '<meta name="robots" content="noindex,nofollow">'
+PREVIEW_NOTE_RE = re.compile(r'<span><span class="fr-only" lang="fr">Aperçu préparé.*?</span></span>', re.S)
 MARK_RE = re.compile(r'<span class="mark" aria-hidden="true"><svg\b.*?</svg></span>', re.S)
 DEFAULT_LOGO = ROOT / "clients" / "dm-optic" / "website" / "logo" / "dm-optique-logo-web.png"
 
@@ -135,7 +142,11 @@ def apply_logo(html, logo_png, mode):
     Le logo est écrit UNE seule fois (variable CSS) : trois <span> le réutilisent, la page ne grossit pas de 3×.
     mode « full » : le logo contient déjà le nom → on retire aussi le texte du nom (le logo porte le libellé)."""
     w, h = logo_size(logo_png)
-    uri = "data:image/png;base64," + b64(logo_png)
+    PREVIEW.mkdir(parents=True, exist_ok=True)
+    logo_webp = PREVIEW / "dm-logo.webp"
+    subprocess.run(["convert", str(logo_png), "-strip", "-quality", "90",
+                    "-define", "webp:method=6", str(logo_webp)], check=True)
+    uri = ASSET + "dm-logo.webp"
     if mode == "full":
         span = '<span class="logo" role="img" aria-label="DM OPTIQUE SARL"></span>'
     else:
@@ -215,21 +226,25 @@ def main():
     ap.add_argument("--no-logo", action="store_true", help="reconstruire sans logo (symbole rond d'origine)")
     ap.add_argument("--logo-mode", choices=("symbol", "full"), default="symbol",
                     help="symbol : le texte du nom reste ; full : le logo contient déjà le nom")
+    ap.add_argument("--production", action="store_true",
+                    help="version de production : sans noindex, sans la ligne « aperçu » du pied de page ; "
+                         "domaine %s par défaut" % CANON_BASE)
     opts = ap.parse_args()
+    if not opts.url and not opts.production and OUT_PREVIEW.exists():
+        # 15/10 — garde : une og:url déjà remplie n'est JAMAIS effacée par une reconstruction sans --url.
+        if re.search(r'<meta property="og:url" content="[^"]+">', OUT_PREVIEW.read_text(encoding="utf-8")):
+            sys.exit("refus : l'aperçu contient déjà une og:url. Relancer avec --url <adresse> "
+                     "ou --production ; rien n'a été écrit.")
     if not opts.logo and not opts.no_logo and DEFAULT_LOGO.exists():
         opts.logo = str(DEFAULT_LOGO)   # le logo du cabinet (reçu le 10/10) est le logo par défaut
 
     html = TPL.read_text(encoding="utf-8")
-    tmp = pathlib.Path("/tmp/dmoptic-img")
-    tmp.mkdir(exist_ok=True)
-    for token, (name, target, quality) in PHOTOS.items():
-        token = token.strip()
-        if token not in html:
-            sys.exit("jeton absent du gabarit : %s" % token)
-        out = tmp / ("%s-%s.jpg" % (name.rsplit(".", 1)[0], target))
-        size = prepare(name, target, quality, out)
-        html = html.replace(token, b64(out))
-        print("  %-22s %s → %5.1f Ko" % (name, target, size / 1024))
+    PREVIEW.mkdir(parents=True, exist_ok=True)
+    for fn, (name, target, quality) in PHOTOS.items():
+        if ASSET + fn not in html:
+            sys.exit("fichier absent du gabarit : %s" % fn)
+        size = prepare(name, target, quality, PREVIEW / fn)
+        print("  %-22s %s → %s (WebP, %5.1f Ko)" % (name, target, fn, size / 1024))
 
     logo_png = None
     if opts.logo:
@@ -238,24 +253,51 @@ def main():
 
     html = fix_whatsapp(html)
 
+    # Marqueur de build : « production » ou « preview », lisible dans le HTML publié.
+    build = "production" if opts.production else "preview"
+    html, nb = re.subn(r'(<meta charset="utf-8">\n)',
+                       lambda m: m.group(1) + '<meta name="build" content="%s">\n' % build,
+                       html, count=1)
+    if nb != 1:
+        sys.exit("balise <meta charset> introuvable : marqueur de build non ajouté")
+
+    # 15/10 — production : domaine du cabinet (dmoptiquesarl.com), sans noindex, sans la ligne « aperçu ».
+    if opts.production and not opts.url:
+        opts.url = CANON_BASE
+    # Identifiants JSON-LD : toujours le domaine du cabinet (ce ne sont pas des adresses devinées).
+    html = html.replace("__BASE__", CANON_BASE)
+    if opts.production:
+        if ROBOTS_NOINDEX not in html:
+            sys.exit("gabarit : la balise noindex à retirer est absente")
+        html = html.replace(ROBOTS_NOINDEX + "\n", "")
+        html, n = PREVIEW_NOTE_RE.subn("", html)
+        if n != 1:
+            sys.exit("ligne « aperçu » : %d occurrence(s), 1 attendue" % n)
+        print("✓ production : noindex retiré, ligne « aperçu » retirée")
+    else:
+        print("✓ aperçu non-production : noindex conservé, ligne « aperçu » conservée")
+
     if opts.url:
         url = opts.url.rstrip("/") + "/"
         html = html.replace("__OG_URL__", url).replace("__OG_IMAGE__", url + "og.jpg")
-        print("✓ og:url → %s" % url)
+        html = html.replace("__CANONICAL__", '<link rel="canonical" href="%s">' % url)
+        print("✓ og:url / canonical → %s" % url)
     else:
         # Sans adresse connue : on laisse des marqueurs NEUTRES et un commentaire d'avertissement —
         # jamais une adresse devinée (une URL morte coûte plus qu'une heure d'attente).
-        html = html.replace("__OG_URL__", "").replace("__OG_IMAGE__", "")
-        print("! og:url / og:image laissés vides — relancer avec --url après le déploiement")
+        html = html.replace("__OG_URL__", "").replace("__OG_IMAGE__", "").replace("__CANONICAL__", "")
+        print("! og:url / og:image / canonical laissés vides — relancer avec --url après le déploiement")
 
-    for leftover in ("__IMG_", "__WA__"):
+    html_concept = html.replace(ASSET, CONCEPT_ASSET)
+    html = html.replace(ASSET, "")
+    for leftover in ("__IMG_", "__WA__", "__BASE__", "__CANONICAL__", "__OG_", "__ASSET__"):
         if leftover in html:
             sys.exit("jeton non remplacé : %s" % leftover)
     unresolved = re.findall(r'href="[^"]*%(?:20)?[^"]*"', html)
     if any("__" in h for h in unresolved):
         sys.exit("adresse non résolue : %s" % unresolved[0])
 
-    OUT_CONCEPT.write_text(html, encoding="utf-8")
+    OUT_CONCEPT.write_text(html_concept, encoding="utf-8")
     PREVIEW.mkdir(parents=True, exist_ok=True)
     OUT_PREVIEW.write_text(html, encoding="utf-8")
     draw_og(OUT_OG, opts.url.rstrip("/") if opts.url else "", logo_png)

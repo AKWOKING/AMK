@@ -162,3 +162,82 @@ réponse 14:58 — voix du mar. 13/10 et appel du jeu. 15/10 sans objet.*
 - **Ton semi-formel :** pas de raideur, plus de formules d'office ; le **vous** reste (respect du client), « Bonjour Monsieur » reste. Phrases courtes, comme à l'oral.
 - **Pas de phrase de justification qui n'est pas nécessaire** : cas fondateur, DM Optique 10/10, « car nous ne montrons que du vrai » retirée — la raison est déjà dite par « illustrations pour l'instant, vos vraies montures viendront avec la séance photo ».
 - **Portée :** s'applique aux brouillons écrits à partir du 10/10 ; les envois et brouillons antérieurs ne sont pas réécrits. Les ruled texts verbatim de King restent verbatim. *(Portée à tous les clients ou à DM Optique seulement : à confirmer par King ; en attendant, appliqué à tous les brouillons.)*
+
+## 9 · Wave list gate — three checks before any prospect enters a wave (ruling King 12/10)
+
+Every prospect must clear all three before send:
+
+1. **ONOC verification** — name + registration number confirmed against the annuaire (already in place).
+2. **CRM history check** — never contacted before; no prior thread, no prior wave, no prior outreach
+   in any channel. If contacted >30 days ago and the thread is cold, that's a **re-engage**, not a
+   wave send. Re-engage uses a different template and a different cadence.
+3. **Channel availability** — the prospect has a working WhatsApp on the number we hold. If no
+   WhatsApp, no wave entry.
+
+A prospect that fails any of the three does not receive a wave message. Log the reason in the CRM
+(`excluded_no_wa`, `excluded_dead_lead`, `excluded_already_contacted`) so the list isn't rebuilt with
+the same failures. Règle née le 12/10 : 5 des 7 de la première vague n'auraient pas dû y être.
+Intègre le gate §8c (recoupement CRM) approuvé le 12/10 — aucun futur wave sans lui.
+
+## 10 · WhatsApp-only pipeline (ruling King 12/10)
+
+**In 2026 Cameroon, an optician without WhatsApp is not in the market.** If a prospect has no working
+WhatsApp on any of the numbers we hold, they are excluded from outreach entirely — no SMS, no calls,
+no email. WhatsApp is the channel; the absence of WhatsApp means the prospect is unreachable for
+AMK's model. Log the exclusion reason.
+
+## 11 · WhatsApp closing rules (Lot [44], 12/10)
+
+Source : `research/youtube-lessons/2026-10-12-batch-final/video-32-dark-psychology-sales.md`
+(Patrick Dang, filtré pour le marché méfiant CM — les 3 techniques de manipulation rejetées,
+raison au Lot [44]). Trois règles de closing :
+
+1. **Problème réel d'abord** : nommer le problème du prospect en SES mots (recoupe règle 09/10)
+   avant toute offre. Jamais amplifié, jamais inventé — le problème réel suffit.
+2. **Prix en un message, puis silence** : le prix s'énonce clair, en un seul message, puis on
+   attend. Pas de relance, pas de remise préventive, pas de « prix d'ami ». Le silence texte vaut
+   le silence vocal.
+3. **Cadrage revenu-pas-dépense** : formuler ce que le livrable rapporte ou évite (un site qui ne
+   fuit plus, un client qui trouve l'info), jamais ce qu'il « coûte ».
+
+Notre propre story (bug → fix → site) sert de témoignage jusqu'aux premiers clients (ruling
+debug-in-public 12/10 ; recoupe Lot [42] preuve > explication).
+
+## 12 · Template de vague v2 — ouverture par un comportement (APPROUVÉ par King 13/10 · NON EN VIGUEUR)
+
+> **Statut : approuvé par King le 13/10/2026 (avec correctif du titre), mais PAS EN VIGUEUR.** Il ne devient le template de référence qu'après confirmation par King du premier envoi. Le template vivant de la vague ne change pas d'ici là. Sources : `sales/RESEARCH-STANDARD.md` §10.
+
+### 12.1 · Texte approuvé (FR, 4 phrases, vous, « je », ton semi-formel — §8)
+
+```
+Bonjour {Titre} {Nom}, je fais des sites pour les cabinets d'optique à Douala. Quand quelqu'un a besoin de lunettes ou d'une consultation et ne connaît pas encore de cabinet, son premier réflexe est de chercher sur Google ou Facebook. Même si vos patients vous connaissent déjà, un nouveau patient, lui, vous trouvera-t-il ? Puis-je vous montrer en deux minutes ce qu'il voit quand il vous cherche ?
+```
+
+Règles appliquées :
+- **Ouverture par un comportement, sans chiffre.** Décision de King 13/10. Aucune statistique n'apparaît dans le message. Règle générale : **un chiffre dans un message de prospection porte une source, sinon il n'apparaît pas.**
+- **Douleur implicite (cadrage de perte)** : phrase 3. Hypothèse à tester, pas un acquis (§10).
+- **Question de permission** : phrase 4. Pas d'offre, pas de prix (ruling King 02/10).
+- **Pas de personnalisation fausse** : seul le nom et le titre, tels qu'ils figurent dans la fiche vérifiée. Aucun compliment inventé.
+- **Titre (correctif King 13/10, remplace « Docteur » du texte approuvé) :** `{Titre}` se remplit ainsi, sans deviner :
+  - « Dr. » ou médecin confirmé → « Docteur »
+  - « M. » → « Monsieur »
+  - « Mme » → « Madame »
+  - titre inconnu → la phrase devient « Bonjour {Nom}, je fais des sites… » (titre supprimé)
+  - **Source du titre : ONOC uniquement. Jamais déduit du nom ni du cabinet.**
+- **Amélioration :** un champ `titre` sera ajouté à la fiche CRM via `leads/build/crm.py` **après approbation de King** (action : orchestrateur rédige le changement, King approuve, rebuild et vérification de la sortie).
+
+### 12.2 · Plan de test A/B (approuvé dans son principe, non lancé)
+
+- **Bras A (contrôle) :** le template vivant de la vague, **copié tel quel au moment du test** (étape à faire par l'orchestrateur ou par King). **Point ouvert :** aucun fichier unique de « template vivant » n'a été identifié dans le dépôt le 13/10. Les envois récents (ex. `sales/Send-BATCH-2026-09-24-Opticiens.md`) suivent le même schéma, mais leur statut « vivant » n'est pas confirmé. King doit désigner le fichier ou coller le texte.
+- **Bras B (variante) :** le texte §12.1.
+- **Répartition :** en alternance sur la liste triée par identifiant CRM (1er = A, 2e = B, …). Pas de choix manuel par prospect.
+- **Mesures :** (1) taux de réponse (toute réponse) ; (2) taux de réponse positive ; (3) réponses sous 48 h. Mesure figée 7 jours après le premier envoi du lot.
+- **Fenêtre :** §7 s'applique à chaque envoi. Une réponse annule la fenêtre. Pas de relance pendant le test, sauf règle §7.
+- **Limite acceptée (King 13/10) :** environ 140 prospects par bras pour une conclusion solide (5 % contre 15 %, 80 % de puissance). Un lot de n≈30 donne seulement une tendance. **On lance quand même, et on compte sur 4 à 5 vagues** avant de décider.
+- **Décision :** King décide à partir des chiffres cumulés par bras. Aucun passage automatique du B au template vivant.
+
+### 12.3 · Journal des résultats
+
+- **Aujourd'hui :** la colonne de variante n'existe pas dans `leads/CRM.csv`. Le schéma est généré par `leads/build/crm.py`, qui est la source. **Ne pas modifier le CSV à la main.** Ajouter `wave_variant` (A ou B) passe par `crm.py`, **après approbation de King**.
+- **En attendant :** chaque envoi du test est noté dans `sales/Activity-Log.md` avec son bras (A ou B), la date et l'identifiant CRM.
+- **Après approbation :** colonne ajoutée via `crm.py`, puis rebuild et vérification de la sortie (règle du 02/10 : rc=0 n'est pas une preuve).

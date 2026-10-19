@@ -80,3 +80,12 @@ on ne vend pas « optimisation des balises keywords » à un client, et on ne r�
 - **Liens entrants** : « Site par AMK » dans le pied de page des sites clients (accord du client), annuaires, fiche Google.
 - **Prix** : retirer le prix retire aussi l'angle « prix site internet Cameroun » (`KEYWORDS-2026-09-22.md` supposait qu'AMK était seul à afficher un chiffre). La FAQ « Combien coûte… » reste, avec une réponse sans chiffre.
 - **Mesure** : 1 impression sur les 7 derniers jours (export chaque dimanche, `ops/TOOL-SCAN.md`). Aucune conclusion avant ~21/10 (seuil du contrôle à 30 jours : ≥ 20 impressions et ≥ 2 clics).
+
+## 6 · Backlog Lot [41] — idées de sections vues en recherche (aucune obligation)
+
+- **Slider avant/après** (vu dans la vidéo GPT-6 Astra, `research/youtube-lessons/2026-10-12-batch-6/video-21-gpt6-astra-website.md`) :
+  section candidate pour un site opticien (monture avant/après ajustage, vitrine avant/après) —
+  **uniquement avec photos réelles et consentement client**, jamais de visage sans accord
+  (`RULE-CREDENTIAL-CLAIMS`). Rien n'est adopté ; c'est une option de maquette pour le prochain site.
+- Rappel du verdict : le stack de cette vidéo (ChatGPT payant + Higgsfield + Hostinger) est rejeté ;
+  le standard maison reste single-file HTML statique.

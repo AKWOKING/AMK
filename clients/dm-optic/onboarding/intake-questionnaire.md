@@ -53,9 +53,9 @@ pour une SARL sous contrôle fiscal.*
 
 | # | Question | Réponse |
 |---|---|---|
-| 2.1 | **Quels jours** ouvrez-vous ? (les heures sont connues : 8h00–17h30, consultation 8h30–13h30 — **les jours manquent**) | |
+| 2.1 | **Quels jours** ouvrez-vous ? (réponse reçue le 15/10 : **lundi à samedi** ; heures : examen de vue 8h30–13h00, autres besoins 8h30–17h30) | |
 | 2.2 | Fermez-vous le **dimanche** ? Un jour dans la semaine ? | |
-| 2.3 | La **consultation** (8h30–13h30) est-elle **tous les jours** d'ouverture, ou certains seulement ? | |
+| 2.3 | L'**examen de vue** (8h30–13h00) est-elle **tous les jours** d'ouverture, ou certains seulement ? | |
 | 2.4 | Y a-t-il des **jours de forte affluence** à éviter pour un rendez-vous ? | |
 | 2.5 | **Un point de repère** en plus de l'adresse : « en face de… », « à côté de… », un nom connu du quartier | |
 | 2.6 | À quel **étage** se trouve le cabinet dans l'immeuble West Hotel ? Y a-t-il une enseigne visible de la rue ? | **Étage + porte : RÉPONDU par King sur place — 1er étage, dernière porte à droite (ruling 08/10).** Enseigne visible de la rue : non confirmée. |

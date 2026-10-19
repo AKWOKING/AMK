@@ -1,6 +1,6 @@
 # St. Theresa International Bilingual Comprehensive College (STIBCCOL)
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-05. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-13. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -33,7 +33,7 @@ Walk-In-Batch-2026-09-15. Pain: parents find only FB/yahoo, no website. Bilingua
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 18 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 20 ligne(s).*
 
 `L17` · | mar 15/09 15:45 | **St. Theresa** (679 15 10 75) | msg 1 | Envoyé | ✅ **OUI — 20:44** |
 `L18` · | mar 15/09 22:25 | St. Theresa | accusé de réception | Envoyé | ✅ **22:51 — permission de revenir en octobre** |
@@ -53,6 +53,8 @@ Walk-In-Batch-2026-09-15. Pain: parents find only FB/yahoo, no website. Bilingua
 `L1649` · - **STIBCCOL** (`st-theresa-…-sti`) — une parole a déjà été donnée (retour promis en **octobre**, 15/09). On
 `L1698` · aussi une clinique — plus STIBCCOL, dont la permission d'octobre sera honorée : on arrête d'ouvrir des écoles,
 `L4795` · St Theresa (relance 12/10 tenue, permission d'octobre) + 47 lignes jamais contactées (stock, pas de
+`L4929` · ## 10/10/2026 (samedi, 26ᵉ message de King, ≈17:20) — brouillon de la touche St. Theresa du lundi 12/10
+`L4931` · - Brouillon écrit : `sales/Suivi-ST-THERESA-2026-10-12.md` (anglais, une phrase, pas de prix, pas de question de validation ; ruling King 02/10). **Rien n'est envoyé** : King relit et envoie lundi matin.
 
 ---
 

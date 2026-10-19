@@ -22,13 +22,15 @@
 | Titulaire / propriétaire | **M. Domche Noumbi** | registre ONOC, Littoral ligne 102 |
 | Adresse | **Immeuble West Hotel, 1er étage, dernière porte à droite, Ndobo Mayor, Bonabéri, Douala IV** | client, 25/09 16:19 (appliqué en v2.2 le 27/09) ; **étage + porte : King sur place (visite de mercredi 07/10, ruling 08/10)** |
 | WhatsApp | **656 122 239** (+237) | registre ONOC + vérifié à l'écran |
-| Horaires | Ouverture **8h00** · Fermeture **17h30** · Consultation **8h30–13h30** | client, 25/09 16:19 |
-| **Jours d'ouverture** | **INCONNUS** — il a donné les heures, jamais les jours | ⚠️ ouvert, voir `onboarding/intake-questionnaire.md` §2 |
+| Horaires | Examen de vue **8h30–13h00** · Autres besoins **8h30–17h30** | client, 08/10 14:58 (verbatim) ; remplace le 25/09 |
+| **Jours d'ouverture** | **Lundi à samedi** — confirmé par le client sur WhatsApp, 15/10 23:36 | ✅ 15/10 |
 | Langues | **FR prioritaire · EN secondaire** | décision de King |
 | Forme juridique | **SARL** — possède un **NIU**, exige une **facture proforma** | client, 01/10 |
 | Réglementaire | **ONOC** — Littoral **ligne 102**, inscription **021/2016**, arrêté ministériel **0382** | registre ONOC, lu le 24/09 |
 
-**Contrainte de conformité qui gouverne tout le reste.** Le client est une **SARL sous contrôle
+**Mise à jour 15/10 — paiement.** Le client a dit à l'opérateur qu'il ne faisait pas pleinement confiance au départ et qu'il a finalement décidé de payer en espèces. Principe : nous nous adaptons au mode de paiement que le client préfère. Une facture ou une proforma reste la pièce de base, quel que soit le mode. La ligne ci-dessous reste le rappel d'origine, à relire à cette lumière.
+
+**Contrainte de conformité (origine, 01/10).** Le client est une **SARL sous contrôle
 fiscal**. Il exige la traçabilité complète : **virement bancaire** (pas d'espèces), **facture proforma
 PDF + RIB + NIU**, **reçus tamponnés**. Ce n'est pas une hésitation commerciale, c'est une exigence
 comptable — elle se traite par des **documents**, jamais par un message. C'est ce qui a clos le deal

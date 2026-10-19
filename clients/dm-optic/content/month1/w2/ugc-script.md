@@ -60,7 +60,7 @@ allégation.**
 | **2** | 0:02–0:07 | Trois situations, trois plans courts : **un écran** · **un volant** · **un livre rapproché** | « L'écran. La route. Le livre qu'on rapproche. » |
 | **3** | 0:07–0:13 | **L'examen, démystifié.** L'instrument, la salle, le geste — **ce qui se passe vraiment** | « Un examen de vue, ce n'est pas une formalité. On prend le temps de regarder comment vous voyez. » |
 | **4** | 0:13–0:18 | **Ce qu'il faut apporter.** Trois objets se posent : une ordonnance · une ancienne monture · un carnet | « Apportez votre ordonnance si vous en avez une, votre ancienne monture, et vos questions. » |
-| **5** | 0:18–0:22 | **Payoff.** Les horaires de consultation + le bouton WhatsApp | « La consultation se tient de 8h30 à 13h30. Écrivez-nous avant de venir. » |
+| **5** | 0:18–0:22 | **Payoff.** Les horaires d'examen de vue + le bouton WhatsApp | « L'examen de vue se fait de 8h30 à 13h00. Écrivez-nous avant de venir. » |
 
 ---
 
@@ -94,10 +94,10 @@ dans la cible maison 15–22 s** (§12.5) — elles dépassaient.
 | 2 | *aucun* |
 | 3 | **Ce qui se passe, vraiment** |
 | 4 | **1 · L'ordonnance** · **2 · L'ancienne monture** · **3 · Vos questions** |
-| 5 | **Consultation 8h30 – 13h30** · bouton WhatsApp |
+| 5 | **Examen de vue 8h30 – 13h00** · bouton WhatsApp |
 
-⚠️ **Les horaires de consultation (8h30–13h30) sont confirmés** par le client (25/09).
-⛔ **Les JOURS ne le sont pas** — ne pas écrire « du lundi au samedi » ni aucun jour.
+⚠️ **Les horaires d'examen de vue (8h30–13h00) sont confirmés** par le client (08/10).
+✅ **Les JOURS sont confirmés : lundi à samedi (15/10).**
 
 ---
 
@@ -111,7 +111,7 @@ AVANT DE VENIR
 2 · Votre ancienne monture
 3 · Vos questions
 
-Consultation · 8h30 – 13h30
+Examen de vue · 8h30 – 13h00
 DM OPTIQUE SARL · Ndobo Mayor, Bonabéri
 ```
 

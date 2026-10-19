@@ -129,7 +129,7 @@ et **aucun témoignage ne peut être repris** puisqu'il n'en existe aucun.
 
 | Inconnu | Pourquoi ça bloque |
 |---|---|
-| **Jours d'ouverture** | Les heures sont connues (8h00–17h30, consultation 8h30–13h30), **les jours non**. La page n'affirme aucun jour |
+| **Jours d'ouverture** | Heures : examen de vue 8h30–13h00, autres besoins 8h30–17h30 ; jours : **lundi à samedi** (15/10). La page n'affirme aucun jour |
 | **NIU + adresse fiscale** | Sans eux, pas de proforma conforme pour une SARL |
 | **Marques de montures vendues** | La vitrine ne nomme **aucune** marque ; on n'invente pas de portefeuille |
 | **Moyens de paiement** | Espèces, MTN MoMo, Orange Money ? Un patient qui vient sans pouvoir payer est un patient perdu |

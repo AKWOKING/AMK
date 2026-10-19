@@ -1,6 +1,6 @@
 # Référence Optique Médicale Cinq Sens
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-05. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-13. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -36,7 +36,7 @@ LOT 4 (préparé le 24/09 au soir, RIEN N'EST ENVOYÉ). Titulaire au registre : 
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 15 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 21 ligne(s).*
 
 `L559` · 4. **Section « Ce que nous faisons »** : site vitrine · bilingue · rendez-vous WhatsApp · référencement local ·
 `L967` · `DOSSIERS` du CRM (M4 : « 9 dossiers de travail, tous référencés ✓ »).
@@ -53,6 +53,12 @@ LOT 4 (préparé le 24/09 au soir, RIEN N'EST ENVOYÉ). Titulaire au registre : 
 `L4195` · et une constante définie **après** son premier usage en JavaScript (`ReferenceError` attrapé par le test,
 `L4220` · le 24/09 (le profil X publie lui-même le « numéro d'urgence » 696 698 136 — la page ne l'a pas inventé).
 `L4233` · les audits ne l'ont pas vue, le `ReferenceError` si. Règle notée dans `clients/cinq-sens/build-notes.md` §8.
+`L4815` · - 13:26 King : « Bonjour Monsieur, pour bien avancer sur le site, j'aurai besoin de vos horaires d'ouverture et de la fourchette de prix de vos montures (min/max). Est-ce qu'elles ont des noms/références spécifiques, et vous en avez combien environ en stock actuellement ? »
+`L4816` · - 14:58 le client : « Horaires d'ouverture et fermeture : Examen de vu : 8h30 - 13h00 / Autre besoins : 8h30 - 17h30 » · « Pour le prix des montures c'est interdit de le diffuser car nous sommes régit par le ministère de la Santé Publique. » · « Les montures ont des noms et références mais trop diverses. » · « Stock de 400 montures environ »
+`L4952` · - **Accès Flow :** confirmé fonctionnel sur les comptes de King ce 13/10. Chiffres réels à fournir par King après la séance de cohérence de demain. Restent [NV] : bonus de 100 crédits, clips de 10 s, chaîne Extend, limite de 3 références.
+`L4953` · - **Demain 14/10 (prévu, pas commencé) :** bible du personnage (2–3 images de référence), plaque d'environnement (1 image), logo PNG (1 image), modèle de prompt Flow, workflow de chaîne Extend, mise à jour du document avec les chiffres réels, puis commit du document et du PRE-FLIGHT (uniquement après confirmation de King).
+`L4997` · de référence à la perte dans un outreach futur ; si COMOBIL initie un contact plus tard = fil neuf,
+`L5120` · nommée) — fichier POST-01 + liste des piliers du brief d'établissement ; zéro référence client
 
 ---
 
