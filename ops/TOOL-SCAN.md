@@ -208,3 +208,32 @@ l'exige, jamais avant · ChatGPT/Gemini free = déjà remplacés par l'orchestra
   DM Optique seulement **après** les vraies photos. Triggers de re-review : première annonce
   client livrée et partagée (→ rituel standard) · licence musique clarifiée en amont ·
   ruling King sur la narration pour ce format (la VO TikTok reste Flow).
+
+---
+
+## 19/10/2026 — Édition photo client locale (détourage IA) : rembg + modèle ISNet (tools/photo/)
+
+- **(a) Problème nommé (19/10) :** King a reçu les photos du client DM (montures + cabinet,
+  téléphone) ; elles doivent être nettoyées avant d'entrer sur le site (catalogue `/montures/`
+  vide, « Photo d'illustration » ×2 en prod). Service cloud écarté d'office (règle 4 : données
+  client chez un tiers = King lit les CGU d'abord) → chaîne **100 % locale**.
+- **(b) Choix :** détourage IA ONNX (CPU) + corrections Pillow classiques, encapsulés dans
+  `tools/photo/prep.py` (2 modes : `catalogue` = détourage + fond uniforme 4:3 1600×1200, le
+  contrat de `build_dmoptic_montures.py` ; `clinique` = niveaux/netteté, **aucun détourage**).
+  rembg (MIT) est la voie normale mais ses poids (release assets GitHub) sont bloqués par
+  l'egress sandbox → modèle ISNet « medium » reconstruit depuis les chunks du paquet npm
+  @imgly/background-removal-node (hôte autorisé), exécuté par onnxruntime. Preuve le 19/10 sur
+  image de référence démo (aucune donnée client) : détourage propre d'une monture, 3,8 s/image.
+- **(c) Coût : 0 FCFA.** État à maintenir (compté) : `~/.venv-amk` (Pillow + rembg — c'est aussi
+  le venv du build site, recréé) + modèle ~88 Mo hors dépôt (`~/.rembg/models/manual/`,
+  `*.onnx` ignoré). Licences : rembg MIT, u2net Apache-2.0, paquet IMG.LY à licence propre →
+  inférence locale interne seulement, jamais de redistribution des poids.
+- **(d) Écartés :** IOPaint/lama-cleaner (dépôt archivé 13/08/2025, PyTorch, effacement d'objets
+  = hors contrat « que du vrai ») ; Upscayl/Real-ESRGAN ncnn (GPU Vulkan absent de la sandbox ;
+  option machine King seulement si photos trop petites).
+- **(e) Verdict : INSTALLÉ + PROUVÉ sur démo ; production = règle 3.** Premier lot réel = test
+  personnel de King (il valide chaque sortie avant build/déploiement). Conditions permanentes :
+  aucune recoloration/redessin de monture, aucun fond « lieu » inventé, aucun patient
+  identifiable sans accord écrit, contrôle visuel de 100 % des sorties. Triggers de re-review :
+  premier lot client traité · halo/branche mangée constatés (→ autre modèle ou masque manuel) ·
+  besoin d'upscale prouvé (→ test Upscayl sur machine King).
