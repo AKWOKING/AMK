@@ -143,3 +143,36 @@ réputation) · HubSpot/Salesforce CRM **REJETÉS** (crm.py maison = source de v
 **n8n Community Edition (self-host, gratuit) = HOLD** : couche connecteur future si le volume
 l'exige, jamais avant · ChatGPT/Gemini free = déjà remplacés par l'orchestrateur
 (orchestrator-first confirmé : find → enrich → first-line research → route = crm.py + sweeps).
+
+---
+
+## 19/10 — Agent Reach (installation demandée par King, hors scan hebdomadaire)
+
+> Demande King du 19/10 : « Install https://github.com/Panniantong/Agent-Reach » ; choix tranchés
+> par King le même jour : `--system`, **tous les canaux**, dossier `tools/agent-reach/`.
+> Détail vérifié canal par canal : `tools/agent-reach/README.md`.
+
+- **(a) Problème :** l'agent ne sait pas lire le web vivant sans réinventer chaque accès —
+  sous-titres YouTube pour `research/YouTube-Lessons.md`, canaux discrets des prospects exigés par
+  le contrôle approfondi `PRE-FLIGHT.md` §1c (YouTube, X/Instagram, Facebook), pages web rendues
+  en HTML brut, RSS/GitHub au cas par cas. Chaque plateforme a sa propre porte (API payante,
+  login, anti-bot) et la bonne porte change (l'amont documente une rotation rien qu'en 2026).
+- **(b) Use case AMK nommé :** §1c sur les prochaines vagues (cliniques/écoles de Douala vivent
+  sur Facebook/Instagram — canaux desktop OpenCLI sur la machine de King) · extraction des leçons
+  YouTube par sous-titres `yt-dlp` · lecture de pages (Jina) et recherche (Exa) pour la recherche
+  hebdomadaire · GitHub/RSS déjà prouvés le jour même (appels réels).
+- **(c) Coût :** **0 FCFA** (MIT, tout l'écosystème est open source ; seul coût possible un jour :
+  proxy serveur ~1 $/mois, inutile en local — rien acheté). État à maintenir (règle 5, compté) :
+  `~/.agent-reach-venv` (~92 Mo) + `~/.agent-reach/` + `~/.mcporter/`, **hors dépôt** (règle
+  upstream : jamais de token dans l'espace de travail) + un ré-épinglage version/commit à chaque
+  mise à jour dans `tools/agent-reach/install.sh`.
+- **(d) Effort + verdict :** installé le 19/10 (v1.5.0, commit `94f06c1` épinglé) — `doctor` :
+  4/16 canaux ✅, mais prouvés **par appels réels** depuis la sandbox : **GitHub + RSS seulement**,
+  le reste étant bloqué par l'egress du bac à sable (GitHub/PyPI/npm uniquement) ou en attente
+  d'input King (cookies Twitter/Reddit, clé Groq, Chrome desktop pour Facebook/Instagram).
+  **PURSUE sous conditions** : règle 3 — King l'essaie sur **sa** machine (la seule où
+  YouTube/FB/IG peuvent répondre) sur une vraie tâche avant tout usage production ; règle 4 —
+  aucun cookie de compte principal, **aucune donnée ni compte client**, comptes secondaires
+  dédiés uniquement (risque de ban documenté par l'amont). Triggers de re-review : premier usage
+  King concluant (→ usage libre sur §1c) · un canal qui casse deux fois (→ repli sur la méthode
+  manuelle actuelle) · sortie d'une version amont (→ procédure `update.md` + ré-épinglage).
