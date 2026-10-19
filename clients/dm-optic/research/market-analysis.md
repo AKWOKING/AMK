@@ -167,3 +167,60 @@ Rien de ce qui suit n'est connu aujourd'hui. Ce sont les **mesures à prendre**,
 fiscal** : il achète de la **traçabilité**. Un rapport de fin de mois sans point de départ n'est pas
 traçable — il est invérifiable. Relever le flux avant le lancement coûte une question pendant la
 visite, et c'est ce qui rendra le mois 1 démontrable au lieu d'être affirmé.
+
+---
+
+## 7 · Recherche demande & marque — 19/10/2026 (DM d'abord, leçons réutilisables opticien)
+
+> Ajout daté, sans réécrire les sections 1–6. Sources lues le 19/10 ; niveaux de confiance de ce
+> fichier. Les données américaines décrivent des mécanismes, **pas** le volume de Douala.
+
+### 7.1 Pourquoi les gens achètent des lunettes — quatre moteurs, dans cet ordre
+
+| Moteur | Ce que dit la source | Confiance / limite | Traduction DM (sans prix public, sans allégation médicale) |
+|---|---|---|---|
+| **1. Voir net — besoin fonctionnel** | The Vision Council (Focused inSights 2024, 2 202 adultes US) : l'achat de lunettes de prescription vient d'abord d'une **nouvelle ordonnance** ou du **remplacement d'une paire usée** ; « maintenir la santé de ma vision » progresse comme motivation d'examen. | **B** — marché US assurantiel ; le mécanisme (déclencheur = gêne/remplacement) est transférable, pas les chiffres. | Le contenu doit **démystifier l'examen** (les étapes que le client a lui-même décrites : anamnèse, bilan, acuités, réfraction) et les situations d'usage — jamais nommer un symptôme ni promettre un résultat (règles R1/R3, `content/month1/README.md`). |
+| **2. Être rassuré sur la personne** | Même étude : l'influence du **professionnel de la vue** sur l'achat de prescription augmente (+6 points 2022→2024), plus que celle des vendeurs. | **B** — cohérent avec notre angle ONOC (§3). | La confiance se prouve : inscription ONOC, titulaire nommé, **processus visible**, accueil et confort (les mots du client, 15/10 17:20). Pas de diplôme affiché sans pièce. |
+| **3. Se voir bien — identité** | Une enquête d'industrie (PR Newswire, 2022) rapporte des émotions positives à l'achat — confiant 28 %, heureux 28 %, stylé 25 %, « smart » 20 % — et 30 % choisissent une monture qui reflète leur individualité. | **C** — source commerciale, à manier comme hypothèse de ton, jamais comme chiffre public. | La monture se montre **essayée et nommée**, par formes et occasions (§4 « nommage »), pas en catalogue plat. C'est le levier TikTok/Facebook le plus naturel : « Quelle forme pour votre visage ? ». |
+| **4. Pouvoir payer sans se déplacer pour rien** | En Afrique, l'OMS (23/05/2025) estime qu'environ **70 % des personnes avec erreur de réfraction n'ont pas accès aux lunettes** ; au Mozambique (étude PMC), le **coût perçu** est la barrière n°1 (53 %), devant « pas assez grave » et la distance ; d'autres études africaines citent gêne/stigmate, peur des moqueries et l'idée que les lunettes affaibliraient les yeux. | **B** pour les barrières régionales ; **C** pour Bonabéri tant que la ligne de base (§6) n'est pas mesurée. | Ne jamais afficher de prix (brief §4) mais **retirer l'incertitude** : devis dans la conversation WhatsApp, **facilités de paiement** (autorisées par le client), repère physique, horaires certains. Le prix se traite en conversation, pas en vitrine. |
+
+**Séquence de persuasion retenue (chaque publication en suit une étape, jamais les quatre) :**
+reconnaissance d'une situation → examen démystifié → preuve vérifiable (ONOC, process, accueil)
+→ essai/choix de la monture → conversation WhatsApp pré-remplie (attribution par variante).
+
+### 7.2 Une marque reconnaissable à Bonabéri = vérifiable + répétée
+
+La littérature marque/santé converge sur un point utile à notre échelle : la reconnaissance vient
+de la **constance** (même nom, mêmes couleurs, même promesse de service, partout) plus que du
+budget. Pour DM, le système tient en quatre éléments déjà vrais : le nom **DM OPTIQUE SARL**
+partout à l'identique (site, Google, Facebook, TikTok, WhatsApp), la signature visuelle existante
+(carte/tableau de vision), la preuve ONOC, et le comportement de service dit par le client
+(« nous prenons le temps pour chaque étape », accueil, confort). **La marque, ici, est une
+expérience répétée, pas un slogan** : si la réponse WhatsApp est lente ou si les horaires divergent
+d'une plateforme à l'autre, aucun contenu ne compensera.
+
+### 7.3 Visage de marque — preuves des deux côtés, décision par test
+
+King a demandé les deux options avant de trancher. État des sources (secondaires, à confirmer par
+nos propres chiffres) :
+
+| Option | Ce qui plaide pour | Ce qui plaide contre / condition |
+|---|---|---|
+| **Le praticien parle** (M. Domche, réel) | Format dominant rapporté en clinique : un praticien qui répond en 20–60 s aux questions des patients, filmé simplement, paraît plus crédible qu'une pub polie (*Optometric Management*, 2024 ; retours d'agences cliniques TikTok, 2026). Des sources marketing rapportent plus d'engagement pour les vraies personnes que pour les visuels stock (chiffre vendeur, à ne pas citer en public). | Exige son **accord explicite**, du temps de tournage, et une discipline stricte : service/processus seulement, aucun conseil médical individuel, aucun patient filmé sans accord écrit. |
+| **Sans visage** (mains, montures, cabinet, voix/texte) | Produisible dès maintenant, aucune dépendance au calendrier du titulaire ; les formats essayage/formes et coulisses fonctionnent aussi en optique (guides Ocuco 2026). | Moins de confiance incarnée ; risque « catalogue » si on ne fait que défiler des montures. |
+
+**Recommandation de recherche (à valider par King, puis par le client) :** mois 1 = base
+**sans visage IA** (règle R2 inchangée) mais **mains et cabinet réels** dès les photos ; en
+parallèle, **deux clips test de M. Domche** (20–34 s, une question de service chacun) **si et
+seulement s'il accepte vendredi**. Décision en fin de mois sur les chiffres qui comptent ici :
+achèvement, visites de profil, **conversations WhatsApp** — pas les vues. Aucun visage de patient,
+aucun témoignage sans accord écrit.
+
+### 7.4 Leçons réutilisables (autres opticiens)
+
+1. Le déclencheur d'achat est le **remplacement/besoin**, pas la mode seule : vendre la clarté du
+   parcours (examen → essai → devis WhatsApp) avant la monture.
+2. Dans un marché où le coût perçu bloque, la réponse n'est pas un prix d'appel : c'est
+   **l'incertitude retirée** (devis en conversation, facilités, horaires, repère).
+3. La preuve d'inscription et le titulaire nommé valent plus qu'un superlatif — et ils sont
+   gratuits. 4. Le visage du praticien est un **test mesurable**, pas une religion.

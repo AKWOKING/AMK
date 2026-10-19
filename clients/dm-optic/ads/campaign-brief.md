@@ -62,3 +62,28 @@ Un test qui n'apprend rien n'est pas un test raté, c'est un test non noté.
       qui génère des messages sans réponse brûle le budget et la confiance
 - [ ] Pixel + événements de conversation, si disponibles (§4, setup 5) — sinon le pré-rempli suffit pour
       l'attribution
+
+---
+
+## 5 · Échelle après le test — recherche du 19/10/2026 (ne change pas le test du mois 1)
+
+> King a demandé la recherche du **scale-up en plus** du test. Le test ci-dessus reste inchangé :
+> **5 000 FCFA, une variante, kill 3 000 FCFA/message**. L'essentiel Meta (source officielle lue
+> le 19/10) : dire clairement que le clic **ouvre une conversation**, créatif carré ou vertical,
+> CTA explicite (« Envoyer un message ») ; la destination se choisit à l'ensemble de publicités
+> (WhatsApp/Messenger). Pour DM, **WhatsApp seul** tant que Messenger n'a pas de répondant dédié :
+> multiplier les destinations sans personne pour répondre brûle la confiance (checklist §4).
+
+| Si le test donne… | Étape suivante proposée (à faire valider par King puis par le client) |
+|---|---|
+| **≥ 1 conversation qualifiée** et réponses dans l'heure tenues | **Mois 2, financé par le client** : répéter la variante gagnante + 2 créatifs (un seul changement à la fois : accroche *ou* format), même ciblage Bonabéri/Douala IV ; budget proposé par paliers écrits au client (jamais de glissement silencieux hors pack). |
+| Conversations mais **aucun rendez-vous** | Travailler la conversation avant le budget : réponses rapides WhatsApp Business, questions de qualification (besoin, quartier, disponibilité), relance unique dans la fenêtre de service. Le problème est alors l'après-clic, pas l'annonce. |
+| **0 conversation** | Couper, écrire le chiffre, changer **un** levier (accroche d'abord) au test suivant. Aucune demande de budget supplémentaire (règle déjà posée §3). |
+
+**Mesurer au-delà du coût/message** (dès le mois 1, à la main) : conversations ouvertes →
+qualifiées (besoin réel + zone) → rendez-vous → ventes à 30 jours. Sans cette chaîne, un
+coût/message « bon » peut cacher zéro patient. **TikTok payant : non retenu** — le Cameroun ne
+figure pas dans la liste officielle des pays de création de compte publicitaire self-serve lue le
+19/10 ; TikTok reste organique, Meta porte le payant. Reciblage (visiteurs du site/engagés)
+seulement si la mesure devient licite et utile (données personnelles : règle King, avocat d'abord —
+plan SEO point 3).

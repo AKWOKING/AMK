@@ -278,3 +278,28 @@ Les deux, dans cet ordre.
 
 **Ce que le mois 1 promet, en revanche** : huit pièces produites, un cabinet **trouvable**, un canal
 WhatsApp **mesuré**, et **un chiffre** sur le coût d'acquisition d'une conversation.
+
+---
+
+## 9 · Amendement du 19/10/2026 — piliers psychologiques, trafic utile, visage
+
+> Recherche du 19/10 (`research/market-analysis.md` §7). Ne réécrit pas les semaines 1–4 : il les
+> **relit** par les quatre moteurs d'achat. R1–R4 (`content/month1/README.md`) inchangées.
+
+| Pilier | Question du patient | Semaines existantes | Preuve/format |
+|---|---|---|---|
+| **Voir net** | « Est-ce que j'ai besoin d'un examen, et comment ça se passe ? » | S2 | Étapes de l'examen dans les mots du client (anamnèse, bilan, acuités, réfraction), situations d'usage. Aucun symptôme nommé (R1). |
+| **Se voir bien** | « Est-ce que cette monture me va ? » | S3 | Essayage, formes/visage, montures **nommées** (§2b), vraies photos seulement. |
+| **Confiance vérifiable** | « À qui je confie mes yeux ? » | S1 + fil rouge | ONOC, titulaire nommé, accueil/confort/temps par étape (verbatim client). |
+| **Accès sans déplacement inutile** | « Combien, où, quand ? » | S4 + chaque CTA | Devis en conversation WhatsApp (jamais de prix public), facilités de paiement, repère, horaires certains. |
+
+**Trafic site : le rôle juste.** Les réseaux n'envoient pas « du trafic » pour lui-même : en organique,
+le site est la **preuve** qu'on consulte avant d'écrire (profil → site → WhatsApp) ; en pub du
+mois 1, le CTA reste **directement WhatsApp** (attribution par variante, `ads/variant-messages.md`).
+On mesure donc : conversations (principal), puis actions Google (appels/itinéraires) et visites
+Search Console (secondaires, sans analytics tant que le point légal n'est pas tranché).
+
+**Visage (King : décider sur preuves).** Base mois 1 : réel sans visage IA (mains, cabinet,
+montures — R2). Test conditionné à l'accord du client : 2 clips de M. Domche (service/processus,
+20–34 s verticale). Arbitrage fin de mois sur achèvement + conversations, consigné ici.
+Aucun patient filmé, aucun témoignage sans accord écrit.

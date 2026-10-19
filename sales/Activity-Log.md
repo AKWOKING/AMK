@@ -5283,3 +5283,26 @@ Source : déclaration de l'utilisateur (ce qui se passe en pratique). Le dépôt
 - **Photos :** toujours absentes du dépôt ; les légendes « Photo d'illustration » restent sur le site livré tant que les photos réelles n'arrivent pas (décision à confirmer avec le client).
 - **Paquet de livraison :** `/home/user/dm-optique-site.zip` (hors dépôt), dossier `hosting/previews/dmoptic` (accueil, `/montures`, images, polices). Le site contient encore `noindex,nofollow` et l'adresse canonique Vercel : à régler avant ou après la mise en ligne, selon le nom de domaine choisi.
 - **16/10 (suite) — mise en production sur dmoptiquesarl.com :** `noindex` retiré (décision de l'utilisateur), canonique et og:url sur dmoptiquesarl.com, `robots.txt` et `sitemap.xml` ajoutés pour Google Search Console. Paquet mis à jour : `/home/user/dm-optique-site.zip`. Le déploiement est fait par l'utilisateur (glisser-déposer Cloudflare). Prochaine étape : soumettre le sitemap dans GSC une fois le site en ligne.
+
+## 19/10/2026 (lundi) — DM Optique : recherche marque, demande, pub, SEO, réseaux (rien publié)
+
+- **Commande King :** concentrer la journée sur la marque et la campagne du client — psychologie de
+  l'achat de lunettes, attraction/conversion, pub petit budget, lectures Google SEO officielles,
+  en vue de comptes Facebook/TikTok optimisés. Cadrage King : DM d'abord (leçons opticiens
+  extraites), test 5 000 FCFA **plus** recherche du scale-up, visage de marque décidé sur preuves,
+  résultats dans les **fichiers existants uniquement**.
+- **Méthode (§1f①) :** Agent Reach réinstallé et doctor passé (4/16) ; YouTube/Jina bloqués par
+  l'egress sandbox (TLS), déclaré, bascule sur recherche native. Sources primaires lues : Google
+  Business Profile Help (pertinence/distance/prominence) et Search Central (LocalBusiness) ;
+  pages Meta officielles Click-to-Message/WhatsApp ; Vision Council 2024 ; OMS Afrique 2025.
+- **Écrit dans :** `clients/dm-optic/research/market-analysis.md` §7 (quatre moteurs d'achat,
+  séquence de persuasion, matrice visage praticien vs sans-visage) · `content-plan-month1.md` §9
+  (piliers + rôle du site) · `ads/campaign-brief.md` §5 (échelle post-test, TikTok payant écarté) ·
+  `seo/PLAN-SEO-2026-10.md` §4 (décisions Google) · setups Facebook/TikTok mis à jour (horaires,
+  NAP, optimisation jour J).
+- **Recommandation visage (à trancher par King, puis accord du client) :** mois 1 sans visage IA,
+  réel mains/cabinet/montures ; 2 clips test de M. Domche (service/processus) s'il accepte ;
+  arbitrage fin de mois sur conversations, pas sur vues.
+- **Bloquants inchangés :** photos et noms de montures du client · ligne de base (patients/mois
+  actuels, question posée le 15/10 sans réponse) · création des comptes avec le téléphone du
+  client · confirmation en ligne du domaine · aucun contenu publié.
