@@ -26,3 +26,6 @@ tools/record/node_modules/
 # archives d'export : produites par un script, jamais versionnées
 /amk-site*.zip
 /site/*.zip
+
+# brag : dossiers de travail et rendus (produits par la chaîne, hors dépôt — voir tools/brag/)
+brag-output*/

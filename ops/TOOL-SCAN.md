@@ -176,3 +176,35 @@ l'exige, jamais avant · ChatGPT/Gemini free = déjà remplacés par l'orchestra
   dédiés uniquement (risque de ban documenté par l'amont). Triggers de re-review : premier usage
   King concluant (→ usage libre sur §1c) · un canal qui casse deux fois (→ repli sur la méthode
   manuelle actuelle) · sortie d'une version amont (→ procédure `update.md` + ré-épinglage).
+
+---
+
+## 19/10 (soir) — brag (latent-spaces/brag) : analysé, puis installé et prouvé à la demande de King
+
+> Analyse d'abord (verdict HOLD → test borné), puis King : « I want you to be able to use both
+> brag and agent reach here ». Chaîne installée le même soir, preuve de bout en bout sur la démo
+> fictive opticien. Détail : `tools/brag/README.md`.
+
+- **(a) Problème :** à la livraison d'un site, le client n'a **rien de partageable** pour
+  l'annoncer (statut WhatsApp) ; nos 5 démos anonymisées sont des liens, pas des preuves qui
+  circulent. DM Optique est en ligne depuis le 16/10 et le forfait mensuel doit produire du
+  contenu dès le départ.
+- **(b) Use case AMK nommé :** vidéo d'annonce de ~20 s à **chaque livraison de site** (rituel
+  inclus au pack, le client la partage = exposition AMK) + teasers des démos pour l'outreach.
+  **Pas un service séparé** à ce stade : aucun client ne le demande seul, et le goulot actuel
+  est la clôture du client n°2, pas un format de plus.
+- **(c) Coût :** **0 FCFA** (skill MIT + Hyperframes Apache-2.0 en rendu local ; l'hébergé
+  letsbrag.app à 19 $/vidéo n'est pas retenu). État à maintenir (compté) : runtime
+  `/tmp/amk-brag` + Chromium partagé avec la chaîne vidéo + épinglages (brag `069432c`,
+  hyperframes `68b873f`/CLI 0.8.177) dans `tools/brag/install.sh`.
+- **(d) Effort + verdict :** **INSTALLÉ + PROUVÉ, production sous conditions.** Le 19/10 :
+  doctor Hyperframes au vert dans la sandbox (parades : wrapper Chromium @sparticuz, GSAP
+  vendored, ffprobe npm embarqué) et brag complet sur `opticien-demo.html` (fictif) — 17 s,
+  1080×1920, check 9/9 contraste, **portique `audit_video_motion` OK** après correctif (hook
+  figé 0–2 s → zoom lent continu : chaque scène bouge pendant toute sa durée). Conditions
+  debout : **règle 3** — King visionne la preuve et l'essaie avant tout usage client ;
+  **musique embarquée interdite** (licence ende.app non documentée, issue amont #59 ; fond
+  généré ou licencié à la place) ; tons `polished`/`app-store` seulement pour la santé ;
+  DM Optique seulement **après** les vraies photos. Triggers de re-review : première annonce
+  client livrée et partagée (→ rituel standard) · licence musique clarifiée en amont ·
+  ruling King sur la narration pour ce format (la VO TikTok reste Flow).
