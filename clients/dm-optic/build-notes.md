@@ -1046,3 +1046,59 @@ frames.json — livrable de confirmation au client) + `LISTE-40-MONTURES-WHATSAP
 `@ffprobe-installer/linux-x64/ffprobe` → `~/.local/bin/ffprobe` à la fin de l'installation
 (imageio-ffmpeg n'embarque que ffmpeg ; sans ffprobe, `hyperframes render` échoue au probe,
 exit 8) — testé : `ffprobe -version` OK depuis le symlink.
+
+## 20/10 (soir) — Bande « Assurances acceptées » sur le site ; apex VIVANT en production ; GSC/GBP/Analytics par les captures ; humanizer installé
+
+**Section assurances (ordre King : « affiliated assurances — Belife Insurance, Willis Towers Watson,
+Groupe Activa », avec consigne copywriting explicite).** Accueil : nouvelle section claire
+`#assurances` entre la bande marine « étapes » et la FAQ — h2 bilingue « Votre assurance, acceptée
+au cabinet. », lede qui dit les trois noms + ce qu'il faut apporter (carte d'assuré, ordonnance) +
+l'aveu « Ce qui est couvert dépend de votre police », 3 chips **statiques** (consultation UI/UX Pro
+Max : valeur en texte, pas cliquable, pas de statut par couleur seule), note de sortie honnête
+(« la liste évolue, demandez sur WhatsApp »), CTA WhatsApp « Vérifier ma prise en charge » (lien
+dérivé du data-fr, même mécanique que les six actes). `/contact/` et `/le-cabinet/` : entrée
+`Assurance` ajoutée au bloc de faits, après `Paiement`. Tokens existants uniquement (identité
+figée intouchée) ; `.rv` inchangé (reduced-motion préservé). Copy passée au crible humanizer
+(26 motifs « Signs of AI writing » — installé le même jour, premier usage réel).
+
+**Portiques :** audit_html 0 faute ×3 pages · audit_a11y --strict rc=0 ×3 · audit_images 0 ×3 ·
+audit_hero (vérifications machine) · check_inline_js 0 · `test_dmoptic_page.mjs` toutes assertions ·
+lint taste FAILs **44 = 44** (identité figée documentée ; WARN 12→13 = la bordure 1px des chips,
+même famille délibérée) · llms.txt 48 · sitemap 48 · zip `dmopticsarl.zip` 132 fichiers testzip OK
+(format exact de l'ancien : `-D`, zéro entrée de répertoire).
+
+**Déploiement §1f③ :** commit `e881fdd` (site) + `29e449b` (humanizer) → Vercel
+`dpl_4Za3oJ1UmR8hiS7P2ESuBTUmmUbG` READY/**PROMOTED** (28 s) — lecture live de l'alias production :
+section complète en ligne (titre, 3 chips, note, CTA pré-rempli) ✓.
+
+**Production (Cloudflare, geste de King) :** **l'apex `dmoptiquesarl.com` est VIVANT** — lu en
+direct : accueil complet + `sitemap.xml` 48 URLs toutes en apex. Le blocage canonical/sitemap de la
+semaine est levé. La prod sert encore le zip du matin (`b3ed20c2` @ `8cb43bc`) : **la bande
+Assurances n'y est pas encore** — retélécharger `dmopticsarl.zip` (commit `e881fdd`+) et refaire
+l'upload Worker (même procédure).
+
+**GSC (capture) :** propriété = **préfixe URL `https://www.dmoptiquesarl.com/`** (pas une propriété
+Domaine) ; sitemap `/sitemap.xml` soumis → « Couldn't fetch », 0 page. Diagnostic : (1) état
+transitoire fréquent dans les heures qui suivent la soumission ; (2) la sitemap liste des URLs
+**apex** alors que la propriété est **www** — Google peut les ignorer (hôte non vérifié) et le
+canonical du site est l'apex. **Recommandation : propriété Domaine `dmoptiquesarl.com`** (TXT dans
+la zone Cloudflare, le runbook initial) qui couvre apex+www d'un coup ; la propriété www peut rester
+comme second jeton. robots.txt = Cloudflare managed (Allow / + ligne Sitemap, Googlebot autorisé).
+
+**GBP (capture) :** Business Profile créé, écran « Customize profile » avec upsell Google Ads —
+**conseil : Skip** (aucune dépense pub sans décision King) ; continuer le remplissage (catégories,
+horaires, photos, services) puis vérification SMS vers le 656 122 239.
+
+**Web Analytics (captures) :** actives, setup automatique, site `dmoptiquesarl.com` — premières données :
+15 pages vues / 10 visites (24 h), chargement 866 ms, INP et CLS verts, **LCP partiellement rouge**
+(échantillon minuscule, probablement le hero WebP sur mobile lent) → à relire à J30 avec le SEO, pas
+une action immédiate.
+
+**humanizer (ordre King) :** audit-before-install passé — **MIT**, un SKILL.md autonome (26 motifs),
+zéro réseau/hook → **INSTALLÉ** (`tools/humanizer/install.sh`, pin `8c307f3`, copie du SKILL.md vers
+`~/.agents/skills/` + miroir `~/.claude/skills/`, ni plugin marketplace ni npx skills). Rôle :
+**second passe** copywriting APRÈS la loi maison (§11b, COPY CRAFT GATE, MESSAGES §1) ; TOOL-SCAN à
+jour ; premier usage réel = la bande Assurances.
+
+**Dépôt :** 8ᵉ wipe du bac détecté (restauration sur la base `b134dd2`, arbre sale) → remède debout
+appliqué (`reset --mixed` sur le tip ls-remote + checkout), **zéro perte** (tout était poussé).
