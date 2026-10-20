@@ -985,6 +985,21 @@ entrent dans le dépôt** ce jour : `clients/dm-optic/brag/` — `brag-plan.md`,
 `poster.jpg` (12,5 Ko). Si King statue « versionner le mp4 », c'est un commit — décision
 explicite contre la règle.
 
+> **Ruling King du 20/10 (même jour) : le `brag.mp4` EST versionné.** King ne pouvant pas le
+> télécharger depuis le bac, il a ordonné « push the video into the repo in the dm optic folder » :
+> `clients/dm-optic/brag/brag.mp4` (15,3 Mo, ajouté avec `git add -f` — la règle globale `*.mp4`
+> du `.gitignore` reste en place pour tout le reste). Exception fichier par fichier ; le défaut
+> pour les futurs brags reste « hors Git ». Détail : `tools/hyperframes/README.md` (section
+> « Règle de livraison vidéo »).
+
+**Hyperframes — audit sur preuves (demande King du 20/10).** Déjà installée (chaîne brag, CLI
+0.8.177, Apache-2.0 vérifiée sur le paquet npm) et déjà utilisée : c'est le moteur qui a rendu le
+brag DM plus tôt dans la journée. Verdict : **flux OUI (en production), vente OUI** — offre
+« vidéo d'annonce de livraison » défendable (rendu local 0 FCFA contre ~19 $/vidéo hébergé),
+tarif = décision de King. **Aucun second installeur créé** (runtime unique via
+`tools/brag/install.sh` — leçon ECC) ; documentation et verdict dans `tools/hyperframes/README.md`
++ entrée TOOL-SCAN dédiée.
+
 **Voie rapide Google (décision King — le client répond lentement, fuseaux différents).** Les
 comptes sont créés par l'agence **au nom du cabinet, maintenant, sans lui** : e-mail
 `dmoptiquesarl@gmail.com` (secours = King, 2FA, mot de passe JAMAIS dans le dépôt public),

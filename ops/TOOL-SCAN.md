@@ -437,3 +437,25 @@ l'exige, jamais avant · ChatGPT/Gemini free = déjà remplacés par l'orchestra
   (ex. b-roll abstrait pour pubs — jamais de faux visuels produits ou de faux cabinets).
   Alternative immédiate sans installation : la version hébergée openhiggsfield.ai avec la clé
   de King. Entrée tenue pour le registre (règle 5) — réévaluer si l'un des trois points bouge.
+
+## 20/10 — Hyperframes (heygen-com/hyperframes) : auditée sur preuves — DÉJÀ INSTALLÉE et UTILISÉE en production
+
+> Demande King du 20/10 : « audit and see if this helps in our workflow or if we can sell it as
+> an additional service .. then install, test and use ». Détail : `tools/hyperframes/README.md`.
+
+- **(a) Problème :** rendre des vidéos d'annonce depuis du HTML réel, en local, sans frais par
+  rendu — c'était le chaînon manquant des livraisons avant le 19/10.
+- **(b) Use case AMK nommé :** c'est **déjà le moteur de la chaîne brag (§1f②)**. Preuves :
+  19/10 preuve de bout en bout ; **20/10 le brag DM Optique rendu avec** — `check` 0 erreur,
+  contraste 10/10 WCAG AA, snapshots relus, `render --quality looks` 20 s en ~58 s, portique
+  `audit_video_motion` OK après un blocage corrigé (outro figée).
+- **(c) Coût :** **0 FCFA** — Apache-2.0 (vérifiée sur le paquet npm installé), rendu local,
+  aucun frais par rendu (l'hébergé du même éditeur facture ~19 $/vidéo). État maintenu (règle 5) :
+  installé par `tools/brag/install.sh` (runtime unique, CLI 0.8.177, wrapper Chrome) — **aucun
+  second installeur** (leçon ECC).
+- **(d) Effort + verdict :** **FLUX : OUI (déjà en production). VENTE : OUI** — l'offre « vidéo
+  d'annonce de livraison » (captures réelles, identité client, musique générée/licenciée) est
+  défendable ; **tarif = décision de King**. Conditions : que du vrai à l'écran ; piste
+  ende.app toujours interdite ; rien d'envoyé sans validation de King. Ruling du même jour :
+  le `brag.mp4` DM est **versionné dans le dépôt** sur ordre explicite (exception fichier par
+  fichier à la règle « aucun mp4 versionné » ; le `.gitignore` global reste).
