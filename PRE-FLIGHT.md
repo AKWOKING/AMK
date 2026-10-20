@@ -59,6 +59,8 @@ Quand une règle change ou qu'un ruling est donné, cette table dit quels fichie
 | **Brag de livraison à chaque site prêt (ruling King 19/10, §1f②)** | `PRE-FLIGHT.md` §1f + §1b · `tools/brag/README.md` · `tools/qa/audit_video_motion.py` (portique) · `clients/<client>/build-notes.md` (chemin du brouillon) · `hosting/previews/README.md` (deploy gate) |
 | **Déploiement Vercel DM Optique après chaque changement du site (ruling King 20/10, §1f③)** | `PRE-FLIGHT.md` §1f · `clients/dm-optic/build-notes.md` (id + état du déploiement) · `hosting/previews/dmoptic/` (racine du projet Vercel) · `sales/Activity-Log.md` |
 | **Design/build/revue = taste-skill appliqué (ruling King 20/10, §1f④)** | `PRE-FLIGHT.md` §1f + §1b · `tools/taste-skill/README.md` · skill installé `~/.agents/skills/design-taste-frontend/SKILL.md` (hors dépôt) · `AMK-DESIGN-SKILLS.md` (lois maison, gagnent en cas de conflit) · `clients/<client>/build-notes.md` + `inspiration.md` (direction tirée, redraws, scores) |
+| **Mouvement d'interface = design-motion-principles appliqué (ruling King 20/10, §1f⑤)** | `PRE-FLIGHT.md` §1f + §1b · `tools/design-motion-principles/README.md` · skill installé `~/.agents/skills/design-motion-principles/SKILL.md` (hors dépôt) · `AMK-DESIGN-SKILLS.md` (lois maison, gagnent en cas de conflit) · `clients/<client>/build-notes.md` (pondération des lentilles, findings motion) |
+| **Audit/vérification = skills ECC sélectifs en appui (ruling King 20/10, §1f⑥)** | `PRE-FLIGHT.md` §1f + §1b · `tools/ecc/README.md` · skills installés `~/.agents/skills/{accessibility,production-audit,verification-loop,security-review,seo,click-path-audit}/SKILL.md` (hors dépôt) · `tools/qa/` (les portiques maison font foi) · `clients/<client>/build-notes.md` (score, preuves, blockers) |
 
 Si cette table ne suffit plus à suivre la propagation entre fichiers, c'est le déclencheur pour réévaluer un outil de graphe de connaissances (voir la décision Graphify dans `sales/Activity-Log.md`).
 
@@ -218,6 +220,22 @@ Recette éprouvée (avec travail non commité, **jamais** `--hard`) : `git fetch
 - **Procédure :** nouveau build = le « run » du skill (inventaire du sujet → argument → tirage de direction par `draw.mjs` → phrase-idée → copy deck → construction → portique `lint.mjs`/`inspect.mjs` → critique sur captures → mouvement → rapport honnête : direction tirée, redraws motivés, scores, contrôles **non** exécutés dits comme tels). Revue/restyle = le cas « existing page » du skill (avant/après mesurés). Sorties `.taste-skill/` ignorées par git.
 - **Hiérarchie en cas de conflit :** les lois maison (`AMK-DESIGN-SKILLS.md`, protocole d'unicité §2) et les verrous client (identité figée, textes approuvés, « le site ne montre que du vrai ») **gagnent** sur les règles maison du skill. Un conflit se signale à King, jamais un restylage silencieux ; `--allow`/`taste-skill-ignore` seulement avec raison écrite. Aucune donnée client dans les requêtes `assets.mjs`.
 - **Inspecteur dans la sandbox (jonction prouvée le 20/10) :** `inspect.mjs` tourne via le Chromium de la chaîne vidéo : `bash tools/video/install.sh` puis `CHROME_PATH=/tmp/amk-video/chrome-wrapper.sh` (recette : `tools/taste-skill/README.md`). Fichiers locaux OK ; URL live impossible (egress Chromium fermé) ; faux `font-fallback` possibles sur chemins absolus (son serveur sert la racine du dépôt). Si la jonction casse, le rapport le dit et seuls `lint.mjs` + les portiques §1b font foi.
+
+### ⑤ Mouvement d'interface (créer ou auditer) → **design-motion-principles lu et appliqué** (ruling King 20/10)
+
+> *King 20/10 : « install and use [kylezantos/design-motion-principles] ».*
+
+- **Portée :** ajouter, modifier ou auditer transitions, animations, états de survol/pression, révélations au scroll, micro-interactions. L'orchestrateur réinstalle si absent (`bash tools/design-motion-principles/install.sh`, épinglé — voir son README), lit `~/.agents/skills/design-motion-principles/SKILL.md` + le workflow du mode (create/audit) + `references/accessibility.md` (obligatoire), et **le dit dans son en-tête pré-vol**.
+- **Procédure :** reconnaissance du contexte → **pondération des trois lentilles écrite** (défaut santé/catalogue/conversion : Jakub primaire, Emil secondaire, Jhey sélectif — autre pondération seulement si King la demande) → checklist + anti-checklist → findings dans les build-notes du client (pas de dossier `motion-audits/` sans OK King, §4b). `prefers-reduced-motion` est non négociable ; un changement de motion sur le site DM = changement de site : portiques §1b + déploiement §1f③.
+- **Hiérarchie :** lois maison et verrous client gagnent ; un conflit (ex. boucle d'ambiance d'identité) se signale à King, jamais de restylage silencieux.
+
+### ⑥ Audit de production / vérification → **skills ECC sélectifs en appui** (ruling King 20/10)
+
+> *King 20/10 : « install and use [affaan-m/ECC] ».*
+
+- **Portée :** audit de pré-livraison, readiness, sécurité, SEO, accessibilité, parcours de clic, boucle de vérification — **en complément** des portiques maison, jamais à leur place. L'orchestrateur réinstalle si absent (`bash tools/ecc/install.sh`, épinglé — voir son README), lit le ou les `SKILL.md` pertinents parmi les six installés (`accessibility`, `production-audit`, `verification-loop`, `security-review`, `seo`, `click-path-audit`), et **le dit dans son en-tête pré-vol**.
+- **Procédure :** preuves locales d'abord (build, portiques, diff, lectures de pages) ; score et blockers au format `production-audit` quand il sert ; findings consignés dans les build-notes du client avec correctif/amélioration/action (§0e).
+- **Garde-fous :** installation **sélective seulement** — pas de profil full/core, pas de hooks runtime, pas de MCP, pas de mémoire ECC, pas d'auto-update, pas de scanner externe ni d'envoi de code/données client à un tiers sans l'accord explicite de King (règles TOOL-SCAN 3+4). Le harnais complet sur la machine de King est une décision séparée ; ne jamais empiler deux méthodes d'installation ECC sur la même cible.
 
 ## 2 · Uniqueness protocol (every website/design build, before a line of HTML)
 

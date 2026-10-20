@@ -622,3 +622,51 @@ alignement large) avant tout correctif.
 - **État / ouverts** : inchangés — production Cloudflare = geste de King après validation ;
   validation client des 40 + stock, accord visages (scènes d'examen), vraies solaires, Search
   Console / fiche Google après mise en ligne client. Pas de brag (site ni validé ni livré).
+
+---
+
+## 20/10/2026 · Audit combiné post-installation (taste + design-motion-principles + ECC sélectif) — aucun changement de site
+
+- **Commande King** : (1) le fond hero « n'est pas vraiment visible mais c'est OK pour l'instant »
+  → constat consigné (F1), **aucune retouche du voile ce tour** ; (2) installer et utiliser
+  `kylezantos/design-motion-principles` ; (3) installer et utiliser `affaan-m/ECC` ; (4) refaire
+  un audit du site avec les outils installés.
+- **Installations faites et prouvées** (détail : `tools/design-motion-principles/README.md`,
+  `tools/ecc/README.md`, entrées `ops/TOOL-SCAN.md` du 20/10) : DMP épinglé `4a9ca87`
+  (100 % markdown, liens `~/.claude/skills` + `~/.agents/skills`) ; ECC 2.2.3 épinglé `6f1881a`,
+  **installation sélective officielle** limitée à six skills d'audit (accessibility,
+  production-audit, verification-loop, security-review, seo, click-path-audit — dépendances
+  comprises : 149 opérations, doctor OK, status healthy). Harnais complet, hooks runtime, MCP et
+  mémoire ECC **non activés** (choix séparé de King sur sa machine, règles TOOL-SCAN 3+5).
+- **Méthode / preuves** : taste-skill (mesures navigateur du jour : accueil fond hero 9 FAIL,
+  femmes 4, fiche 4, examen 5 — restant = identité Classe B par ruling) ; DMP mode Audit
+  (reconnaissance + inventaire motion du gabarit/générateur, checklist + anti-checklist,
+  accessibilité) ; ECC (production-audit sur preuves locales, verification-loop, security-review,
+  seo, click-path-audit, accessibility). Pondération DMP appliquée et dite : **Jakub primaire**
+  (marketing/catalogue livré), **Emil secondaire** (retenue sur CTA/filtres/formulaires, contexte
+  santé), **Jhey sélectif** (aucun moment ludique recommandé ici) — à re-pondérer si King le demande.
+  Vérification-loop : Build PASS · Types N/A (py_compile OK) · Lint maison PASS (lint taste = FAIL
+  d'identité, par ruling) · Tests PASS (Node complet, boucle 48/48 du matin) · Sécurité PASS
+  (grep : aucun secret ; surface 100 % statique, ni auth, ni base, ni paiement, ni upload) ·
+  Diff : outils + docs seulement ce tour.
+- **Verdict production (grille ECC)** : **79/100 — « launchable with caveats »** pour la mise en
+  production client (plafond 84 : pas de CI GitHub, chemin critique non testé de bout en bout avec
+  le client). Le banc Vercel, lui, est sain : portiques verts, rollback = commits/déploiements
+  précédents. **Aucun fichier du site modifié ce tour → pas de redéploiement (§1f③ non déclenché).**
+
+| # | Constat (preuve) | Correctif précis (fichier) | Amélioration durable | Action |
+|---|---|---|---|---|
+| F1 | **Intention client faiblement perçue** : média hero mesuré 75 %, mais le voile couvre fort à gauche ; le motif le plus visible à droite est le panneau d'affiches (œil en gros plan), pas la profondeur du cabinet. King : « pas vraiment visible, OK pour l'instant ». | Au prochain lot design seulement : rééquilibrer `.hero-scrim` (plus léger à droite/bas) et/ou `object-position` vers le couloir de montures, ou fond plein derrière la copie (`demos/dmoptic-v1.tpl.html`). | Validation visuelle client sur capture téléphone avant Cloudflare, pas sur description. | **King/client décident** ; agent ensuite. |
+| F2 | **Boucles d'ambiance infinies non pausables** : `.wash` 26 s et `.band::before` 32 s en `infinite alternate` ; seul `prefers-reduced-motion` les arrête (DMP accessibilité : toute boucle doit pouvoir pauser). | Gabarit : dérive en **une fois** puis repos (ou lavis statique) ; garder le bloc reduced-motion actuel. | Règle motion santé : aucun loop infini d'ambiance sur page patient. | King (le lavis est Classe B) → agent. |
+| F3 | **Révélation uniforme** `.rv` 620 ms/14 px sur titres, paragraphes, cartes (anti-checklist : uniform-fade-in + motion-on-mount sur texte statique ; 620 ms > repères Emil 300 / Jakub 500) ; le skiplink anime `top` (layout, déclenché au clavier). | Gabarit : `.rv` ≈ 380 ms/8 px, retirée du texte statique du hero ; skiplink en `transform` ou sans transition. | Budget motion écrit avant build (durées par fréquence). | Agent au prochain lot motion validé par King. |
+| F4 | **Bascules instantanées** : panneau filtres mobile, résultats filtrés, contenu FAQ (le chevron tourne en 220 ms) ; à l'inverse la carte d'identité **non interactive** se soulève au survol. | Générateur/gabarit, si King veut le polish : 160–200 ms opacité/translate sur panneau seulement, filtrage gardé instantané ; retirer le lift de `.idcard`. | Porte de fréquence DMP appliquée interaction par interaction. | King choisit ; défaut recommandé = ne presque rien animer de plus. |
+| F5 | **Dock fixe vs focus/texte** : taste `covered-text` (tablette puis mobile) + info a11y « barre fixe » — un titre/focus peut passer sous le dock pendant le scroll. | Gabarit : `html{scroll-padding-bottom:96px}` (+ test clavier 390/768 au protocole lecteur d'écran). | Contrôle « focus non masqué » ajouté à la recette d'audit des pages à dock. | Agent au prochain changement de site. |
+| F6 | **Dock générique sur les fiches** : le bouton bas « Écrire » ouvre le message rendez-vous d'examen, pas la demande de la monture affichée (le CTA de fiche, lui, est correct). | Générateur : message du dock par type de page (monture sur fiche, catégorie sur catégorie) + assertion Node dédiée. | Click-path tracé jusqu'au message final pour chaque gabarit de CTA. | Agent au prochain lot (conversion, aucun design touché). |
+| F7 | **Surface de lancement incomplète** : ni `404.html` ni `_headers` dans la sortie ; en-têtes live non vérifiables depuis la sandbox ; build « production » (canonique + sitemap domaine client, robots Allow) servi tel quel sur le banc Vercel. | Avant Cloudflare : 404 bilingue de marque + `_headers` testé (nosniff, referrer, anti-frame ; CSP seulement après test des inline) ; vérifier les en-têtes en ligne au lancement. | Check « 404 + en-têtes » dans la recette de livraison statique. | Agent prépare, King déploie/valide. |
+| F8 | **Preuves de lancement manquantes** : validation client des 40 + stock, domaine client non servi, Search Console/fiche Google à faire, aucun test appareil réel / NVDA-TalkBack / zoom 400 %. | Séquence déjà consignée : validation client → upload Cloudflare par King → Search Console + sitemap + fiche → ligne de base patients/mois. | Pack de preuves pré-lancement (appareil réel + lecteur d'écran) avant tout envoi client. | King/client, puis agent. |
+
+- **Ce qui tient déjà** (à ne pas casser) : `prefers-reduced-motion` complet (états finaux
+  préservés, aucun contenu prisonnier d'`opacity:0`) ; transitions de contrôles 120–280 ms avec
+  feedback `scale` au `:active` ; transform/opacity partout sauf le `top` du skiplink ; aucun
+  pulse/rebond/stagger ; poids maîtrisés (accueil 82 Ko/19,8 Ko gzip, fond hero 226,5 Ko) ;
+  aucune donnée client envoyée à un service externe pendant l'audit (preuves locales + live lu).

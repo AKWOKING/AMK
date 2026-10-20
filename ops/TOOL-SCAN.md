@@ -264,3 +264,55 @@ l'exige, jamais avant · ChatGPT/Gemini free = déjà remplacés par l'orchestra
   conflits avec les verrous maison signalés, jamais tranchés en silence. Règle debout :
   `PRE-FLIGHT.md` §1f④. Triggers de re-review : inspecteur prouvé (Chrome) · première page livrée
   avec le run complet · conflit répété avec `AMK-DESIGN-SKILLS.md`.
+
+---
+
+## 20/10 — design-motion-principles (kylezantos) : installé et utilisé à la demande de King
+
+> Demande King du 20/10 : « install and use [github.com/kylezantos/design-motion-principles] »,
+> puis nouvel audit du site. Détail : `tools/design-motion-principles/README.md`.
+
+- **(a) Problème :** nos pages ont du mouvement (révélations, lavis, dock, filtres) sans grille
+  de lecture dédiée : durées et boucles décidées au cas par cas, aucun contrôle « ce geste mérite-t-il
+  d'être animé, à quelle vitesse, pour quel public ».
+- **(b) Use case AMK nommé :** tout audit ou ajout de motion sur page client (premier terrain :
+  l'audit combiné DM v2 du 20/10) — pondération par contexte (santé = retenue), porte de
+  fréquence, anti-checklist « AI-slop motion », accessibilité du mouvement.
+- **(c) Coût :** **0 FCFA** (MIT). État à maintenir (règle 5, compté) : clone épinglé
+  `~/.design-motion-principles` (~0,6 Mo, 100 % markdown) + 2 liens, **hors dépôt** ;
+  ré-épinglage dans `tools/design-motion-principles/install.sh`.
+- **(d) Effort + verdict :** **INSTALLÉ + premier usage fait, production sous conditions.**
+  Pin `4a9ca87` ; audit DM : boucles d'ambiance infinies non pausables, révélation uniforme
+  620 ms jusque sur le texte statique, skiplink animé en `top` — correctifs consignés, **non
+  appliqués** (ce sont des changements de design). Conditions : **règle 3** — King relit ce premier
+  audit avant tout correctif motion livré ; les lois maison et verrous client gagnent en cas de
+  conflit ; pas de rapport HTML `motion-audits/` sans OK (§4b). Règle debout : `PRE-FLIGHT.md`
+  §1f⑤. Triggers de re-review : premier lot motion livré · conflit répété avec taste-skill.
+
+---
+
+## 20/10 — ECC sélectif (affaan-m/ECC) : installé et utilisé à la demande de King
+
+> Demande King du 20/10 : « install and use [github.com/affaan-m/ECC] », puis nouvel audit.
+> Détail et périmètre exact : `tools/ecc/README.md`.
+
+- **(a) Problème :** nos audits de livraison reposent sur les seuls portiques maison ; il manque
+  une grille externe de readiness/sécurité/SEO/accessibilité et un format de verdict chiffré
+  (score à plafonds, preuves nommées) opposable avant un lancement client.
+- **(b) Use case AMK nommé :** audit de pré-livraison des sites clients (premier terrain :
+  l'audit combiné DM v2 du 20/10) via six skills : `production-audit`, `verification-loop`,
+  `security-review`, `accessibility`, `seo`, `click-path-audit`.
+- **(c) Coût :** **0 FCFA** (MIT). État à maintenir (règle 5, compté — c'est le plus lourd de nos
+  outils) : clone épinglé `~/.ecc` (~113 Mo) + 149 fichiers gérés dans `~/.claude/` (état
+  `~/.claude/ecc/install-state.json`) + 6 liens `~/.agents/skills/`, **hors dépôt** ; le harnais
+  complet (311 skills, hooks, mémoire, MCP) n'est **pas** installé.
+- **(d) Effort + verdict :** **INSTALLÉ (sélectif) + premier usage fait, production sous
+  conditions.** Pin `6f1881a` (2.2.3) ; plan `--dry-run` lu avant écriture (149 copies, aucun
+  settings modifié, aucun hook enregistré) ; `ecc doctor` OK, `ecc status` healthy ; audit DM :
+  **79/100, « launchable with caveats »**. Conditions : **règle 3** — King relit ce premier audit ;
+  **règle 4** — aucun scanner externe, aucun envoi de code/données client, `ito`/mémoire/hooks/
+  auto-update éteints ; ne jamais empiler le plugin complet sur cette installation sélective
+  (avertissement de l'amont). Le harnais complet sur la machine de King = décision séparée,
+  après son test personnel. Règle debout : `PRE-FLIGHT.md` §1f⑥. Triggers de re-review :
+  premier lancement client audité avec la grille · demande d'un skill ECC hors sélection ·
+  conflit avec un portique maison.
