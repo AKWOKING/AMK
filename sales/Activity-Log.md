@@ -5347,3 +5347,17 @@ Source : déclaration de l'utilisateur (ce qui se passe en pratique). Le dépôt
 - **Prochain geste : King choisit la direction** → taggage des ~40 → générateurs → portiques →
   test Vercel → King déploie sur Cloudflare. Bloquants de fin inchangés : accord visages
   (photos cabinet), validation client de la sélection, ligne de base patients/mois.
+
+## 20/10/2026 (mardi) — DM Optique : D3 choisi par King, build v2 au dépôt (non déployé)
+
+- **Pratique (dit par King) : direction D3 « Le Parcours » retenue** parmi les trois directions du plan §10.
+- **Build v2 construit au dépôt** : accueil par intentions (examen · monture · visite), hub catalogue,
+  3 pages catégories, 40 fiches montures, pages examen/cabinet/contact, sitemap 48 URL. Données : 40 montures
+  réelles taguées sur le visible (forme/couleur), 65 WebP ; aucun prix, aucune marque nommée.
+- **Contrôles verts** : portiques §1b sur l'accueil et sur les 48 pages (html/a11y/images/js), `audit_hero`,
+  test Node étendu au catalogue v2 ; aperçu HTTP local vérifié route par route.
+- **Livraison** : `dmopticsarl.zip` reconstruit à la racine du dépôt pour téléchargement King. **Non déployé** :
+  King valide sur aperçu, puis envoie lui-même sur Cloudflare ; pas de redéploiement Vercel ce tour.
+- **Toujours en attente** : validation client des 40 retenues + correspondance codes F/E/H ↔ stock physique ·
+  accord explicite pour publier les scènes d'examen avec visages (le site v2 n'utilise que l'intérieur et
+  l'enseigne, sans personne) · ligne de base patients/mois · Search Console + fiche Google après mise en ligne.

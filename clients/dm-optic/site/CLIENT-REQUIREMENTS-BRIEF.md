@@ -258,6 +258,16 @@ landing  →  carte de catégorie  →  futur catalogue  →  WhatsApp
 - **Livraison et photos réelles.** Les conditions disent « livraison du site fini : quand les photos réelles arrivent ». Les photos du cabinet et des montures ne sont pas au dépôt. Le site publié aujourd'hui garde les légendes « Photo d'illustration ». **Décision à prendre avec le client** : livrer la version actuelle avec ces légendes, ou attendre les photos.
 - **Publication : pas encore faite.** Le déploiement passe par King (PRE-FLIGHT) ; aucun accès Cloudflare dans cette session.
 
+**20/10/2026 — architecture v2 D3 construite au dépôt (NON déployée).**
+- **Choix King : D3 « Le Parcours »** (plan et recherche : `site/SPEC-PAGES-v1.md` §10 ; références : `inspiration.md`).
+- **Construit au dépôt** : accueil par intentions ; `/montures/` + `/montures/femmes|hommes|enfants/` + 40 fiches ;
+  `/examen-de-vue/`, `/le-cabinet/`, `/contact/` ; sitemap 48 URL ; portiques §1b verts sur les 48 pages.
+- **Verrous tenus** : mêmes couleurs/texte/logo ; aucun prix (exigence client §4, jamais présentée comme une loi) ;
+  aucune marque nommée ; données montures limitées au visible (forme/couleur) ; photos cabinet sans personne tant
+  que l'accord pour les visages n'est pas explicite.
+- **Publication : toujours pas faite pour cette v2.** King valide l'aperçu puis déploie lui-même sur Cloudflare ;
+  l'ancien aperçu Vercel reste sur le lot 1 tant que King ne demande pas un nouvel envoi.
+
 ## Dossier chargé pour écrire ce brief
 
 `clients/dm-optic/` : `dossier.md` · `a-completer.md` · `build-notes.md` · `pre-launch-checklist.md` · `retainer-rhythm.md` · `website/brief.md` · `website/BUILD-KICKOFF.md` · `site/SPEC-PAGES-v1.md` · `site/CLIENT-QUESTIONS-2026-10-08.md` ·

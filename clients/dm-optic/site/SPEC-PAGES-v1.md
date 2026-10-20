@@ -402,3 +402,24 @@ sur la composition et le traitement d'image, pas sur la structure.
 **Entrées manquantes (ne bloquent pas le choix, bloquent la fin)** : accord du titulaire pour les
 photos avec visages · validation client des ~40 retenues (retrait d'un code = un commit de
 données) · mesures des montures si le cabinet veut des fiches enrichies plus tard.
+
+### 10.5 Choix King (20/10/2026) : D3 « Le Parcours » — construit au dépôt, non déployé
+
+King a choisi **D3** après le plan §10. Le build v2 est construit au dépôt dans `hosting/previews/dmoptic/` :
+accueil réordonné (`hero → #parcours → #montures → #actes → #etapes → #questions → #contact`),
+navigation en-tête/pied vers de vraies pages, hub `/montures/`, pages `/montures/femmes|hommes|enfants/`,
+40 fiches `/montures/<categorie>/<code>-<slug>/`, plus `/examen-de-vue/`, `/le-cabinet/` et `/contact/`.
+Sitemap régénéré : **48 URL**.
+
+Données : `frames.json` v2 = **40 montures** (F24 · E10 · H6), 65 images WebP, 16 montures avec angles
+supplémentaires ; tags limités au **visible** (catégorie, forme, couleur dominante). Correction consignée :
+F11 re-taguée « Hexagonale argentée » à l'œil (le lot 1 disait « ronde »). Filtres catégorie : recherche nom,
+pills Forme/Couleur avec compteurs, chips appliqués, état vide WhatsApp, état en fragments `#` ; aucune URL
+de filtre indexable. Aucun prix, aucune marque nommée, aucun schéma `Product`/`Offer`/`price`.
+
+Photos cabinet : seules les vues **sans personne** (intérieur, enseigne) sont utilisées sur `/le-cabinet/` et
+`/contact/`. Les scènes d'examen avec visages restent hors site tant que l'accord explicite du titulaire n'est
+pas reçu. Portiques §1b : accueil concept vert (html/a11y/images/js/hero) et boucle 48 pages verte
+(html/a11y/images/js ; a11y = 3 pages avec l'avertissement info « barre fixe ») ; test Node complet vert,
+suite 2b incluse. **Non déployé** : l'aperçu local sert à la validation King ; l'envoi Cloudflare production
+reste le geste de King, et l'ancien test Vercel garde la version lot 1 tant que King ne demande pas un nouvel envoi.

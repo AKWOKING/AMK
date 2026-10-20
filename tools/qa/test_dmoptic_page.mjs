@@ -34,7 +34,7 @@ const revealSrc = scriptAfter(html, "IntersectionObserver, jamais d'écouteur de
 console.log("═══ 0 · le contrat page ⇄ JavaScript ═══");
 
 const IDS = ["btn-fr", "btn-en", "say", "copy2", "vcard", "main", "top", "h-hero",
-             "actes", "etapes", "montures", "questions", "contact"];
+             "parcours", "montures", "actes", "etapes", "questions", "contact"];
 const missing = IDS.filter((id) => !html.includes('id="' + id + '"'));
 ok(`les ${IDS.length} identifiants attendus sont dans la page`, missing.length === 0, "manquants : " + missing.join(", "));
 
@@ -120,9 +120,12 @@ ok("Option B : chaque carte a aussi son message en anglais, différent des deux 
    new Set(cardLinks.map((l) => (l[0].match(/data-en="([^"]*)"/) || [])[1])).size === 3);
 ok("Option B : l'adresse statique de chaque carte = le message français encodé par le JavaScript",
    cardLinks.every((l, i) => (l[0].match(/href="([^"]+)"/) || [])[1] === WA + encodeURIComponent(CAT_FR[i])));
-ok("catalogue lié une seule fois depuis la vitrine ; toujours ni filtre ni recherche sur l'accueil (19/10)",
-   (html.match(/href="\/montures\/"/g) || []).length === 1 &&
+ok("catalogue lié depuis nav, parcours, vitrine et pied ; toujours ni filtre ni recherche sur l'accueil (D3, 20/10)",
+   (html.match(/href="\/montures\/"/g) || []).length === 4 &&
    !/type="search"|role="search"|class="[^"]*\bpill\b/.test(html));
+ok("D3 : le parcours ouvre les trois portes (examen, montures, contact) et la vitrine précède les services",
+   html.includes('id="parcours"') && html.includes('href="/examen-de-vue/"') && html.includes('href="/contact/"') &&
+   html.indexOf('id="parcours"') < html.indexOf('id="montures"') && html.indexOf('id="montures"') < html.indexOf('id="actes"'));
 ok("aucun prix dans le texte visible",
    !/\b\d{2,3}\s?\d{3}\s?(FCFA|XAF|fcfa)\b/i.test(html) && !/priceRange/.test(html));
 
@@ -283,6 +286,29 @@ seen = [];
 const live = runReveal({ window: { matchMedia: () => ({ matches: false }), IntersectionObserver: IO }, IO });
 ok("sinon : les blocs sont confiés à l'observateur, pas allumés d'avance",
    live.every((n) => !n.classList.contains("in")) && seen.length === 3);
+
+/* ═════════════ 2b · le catalogue v2 (D3, 20/10) : données taguées et pages générées ═════════════ */
+console.log("\n═══ 2b · le catalogue v2 : 40 montures, 3 catégories, des fiches ═══");
+
+const framesData = JSON.parse(fs.readFileSync(path.join(ROOT, "clients", "dm-optic", "site", "frames.json"), "utf8"));
+ok("frames.json v2 : 40 montures taguées sur le visible (catégorie, forme, couleur, photos)",
+   framesData.length === 40 && framesData.every((f) => f.code && f.categorie && f.forme && f.couleur && Array.isArray(f.photos) && f.photos.length >= 1));
+ok("frames.json v2 : aucun prix, aucune marque nommée",
+   !/FCFA|Ray-Ban|Chanel|Gucci|Tom Ford/i.test(JSON.stringify(framesData)));
+["femmes", "hommes", "enfants"].forEach((c) => {
+  const p = path.join(ROOT, "hosting", "previews", "dmoptic", "montures", c, "index.html");
+  const page = fs.existsSync(p) ? fs.readFileSync(p, "utf8") : "";
+  const n = framesData.filter((f) => f.categorie === c).length;
+  ok(`page catégorie ${c} : ${n} cartes, filtres forme/couleur à compteurs, aucun prix`,
+     (page.match(/class="v2-card"/g) || []).length === n && page.includes('data-group="forme"') &&
+     page.includes('data-group="couleur"') && !/\d{3,}\s?(FCFA|XAF)/i.test(page),
+     "générée par build_dmoptic_montures.py");
+});
+const f01 = framesData.find((f) => f.code === "F01");
+const ficheF01 = path.join(ROOT, "hosting", "previews", "dmoptic", "montures", "femmes", f01.slug, "index.html");
+const ficheF01Html = fs.existsSync(ficheF01) ? fs.readFileSync(ficheF01, "utf8") : "";
+ok("fiche F01 : galerie réelle + référence à donner au cabinet",
+   ficheF01Html.includes("monture-f01.webp") && ficheF01Html.includes("Référence à donner au cabinet"));
 
 /* ═════════════ 3 · les deux utilitaires : copier, enregistrer ═════════════ */
 console.log("\n═══ 3 · copier le numéro, enregistrer le contact ═══");

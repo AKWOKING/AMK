@@ -407,3 +407,24 @@ build-notes du dépôt.)
   l'identité actuelle. Recommandation : **D2 « La Vitrine réelle » + page examen de D3**.
 - État : **aucun build v2 commencé**. Prochain geste = choix King (D1/D2/D3), puis données →
   générateurs → portiques → Vercel → déploiement Cloudflare par King.
+
+---
+
+## 20/10/2026 · Build v2 D3 construit au dépôt — portiques verts, non déployé
+
+- **Direction retenue par King : D3 « Le Parcours ».** Accueil : nouvelle section `#parcours`
+  (« par où commencer ? ») après le hero, vitrine `#montures` remontée avant les services ; nav en-tête/pied
+  vers `/examen-de-vue/`, `/montures/`, `/le-cabinet/`, `/contact/`. Textes/couleurs/logo inchangés.
+- **Générateur** `demos/build_dmoptic_montures.py` réécrit en multi-pages : hub catalogue, 3 catégories,
+  40 fiches avec galeries d'angles + similaires, `/examen-de-vue/`, `/le-cabinet/`, `/contact/`, sitemap 48 URL.
+  Correctifs QA intégrés : bloc similaires en section sœur (pas imbriquée), `src` d'images relatifs à la
+  profondeur (résolution navigateur + `audit_images.py`), polices/logo de tête réécrits en absolu pour pages nichées.
+- **Données** : 40 montures (F24 · E10 · H6), 65 WebP (~1,9 Mo), 16 fiches multi-angles ; taggage visible
+  seulement ; F11 corrigée « Hexagonale argentée ». Photos cabinet publiées au dépôt : intérieur + enseigne
+  uniquement (aucun visage ; scènes d'examen en attente d'accord).
+- **Contrôles** : `python3 demos/build_dmoptic.py --production` + `python3 demos/build_dmoptic_montures.py` ;
+  portiques accueil verts ; boucle 48 pages html/a11y/images/js verte ; `node tools/qa/test_dmoptic_page.mjs` vert
+  (suite 2b : 40 montures, 3 catégories, fiche F01). Aperçu HTTP local : routes clés en 200.
+- **État** : construit et zippé au dépôt (`dmopticsarl.zip`, racine) pour validation King. **Non déployé** sur
+  Cloudflare ; pas de nouvel envoi Vercel ce tour. Bloquants de fin : validation client des 40 + correspondance
+  codes ↔ stock, accord visages pour les scènes d'examen, Search Console/fiche Google après déploiement.
