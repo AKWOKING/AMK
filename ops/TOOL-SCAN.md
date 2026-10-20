@@ -316,3 +316,55 @@ l'exige, jamais avant · ChatGPT/Gemini free = déjà remplacés par l'orchestra
   après son test personnel. Règle debout : `PRE-FLIGHT.md` §1f⑥. Triggers de re-review :
   premier lancement client audité avec la grille · demande d'un skill ECC hors sélection ·
   conflit avec un portique maison.
+
+---
+
+## 20/10 — UI/UX Pro Max (nextlevelbuilder) : installé et utilisé à la demande de King
+
+> Demande King du 20/10 : « install and use [github.com/nextlevelbuilder/ui-ux-pro-max-skill] ».
+> Détail : `tools/ui-ux-pro-max/README.md`.
+
+- **(a) Problème :** nos relectures UX reposent sur nos checklists ; il manque une base
+  consultable de règles UX/stiles/typo pour interroger un point précis (« fixed bottom bar »,
+  « filter drawer ») avant de corriger.
+- **(b) Use case AMK nommé :** audit et build de pages clients — recherche ciblée par domaine
+  (`ux`, `typography`, `landing`…) et grille pré-livraison ; premier terrain : l'audit combiné
+  DM v2 du 20/10.
+- **(c) Coût :** **0 FCFA** (MIT). État à maintenir (règle 5, compté) : clone épinglé
+  `~/.ui-ux-pro-max-skill` (~30 Mo) + 2 liens, **hors dépôt** ; recherche = Python stdlib local,
+  aucun réseau, aucune donnée client dans les requêtes.
+- **(d) Effort + verdict :** **INSTALLÉ + premier usage fait, production sous conditions.** Pin
+  `56ea9cf` (2.15.0) ; appels réels (`--domain ux`, `--design-system`) ; sur DM, ses règles
+  individuelles ont confirmé nos acquis (reduced-motion, focus, cibles, reflow de chips) et sa
+  « design system » générée (Claymorphism/teal) a été **écartée** : nouvelle identité interdite
+  par les verrous — l'outil sert de grille, jamais de direction. Conditions : **règle 3** (King
+  relit la première application) ; aucune sortie d'outil ne remplace les lois maison.
+  Règle debout : `PRE-FLIGHT.md` §1f⑦. Triggers de re-review : premier usage « design system »
+  accepté par King sur un nouveau build · divergence répétée avec taste-skill.
+
+---
+
+## 20/10 — Impeccable (pbakaus) : installé et utilisé à la demande de King
+
+> Demande King du 20/10 : « install and use [github.com/pbakaus/impeccable] ». Détail :
+  `tools/impeccable/README.md`.
+
+- **(a) Problème :** pas de détecteur déterministe d'anti-patterns UI (texte trop petit,
+  padding écrasé, niveaux de titres sautés…) ; ces contrôles se font à l'œil ou en grep ad hoc.
+- **(b) Use case AMK nommé :** `impeccable detect` en portique d'audit sur les pages clients ;
+  commandes de polish (polish/harden/critique) documentées pour les lots de finition. Premier
+  terrain : audit combiné DM v2 du 20/10 (32→31 findings, `skipped-heading` corrigé, le reste
+  vérifié comme faux positifs ou identité).
+- **(c) Coût :** **0 FCFA** (Apache-2.0). État à maintenir (règle 5, compté — le plus lourd avec
+  ECC) : clone épinglé `~/.impeccable-src` (~107 Mo) + lien skill + **moteur binaire 0.1.16**
+  (~21 Mo) dans `~/.impeccable/bin/` (obtenu du paquet npm officiel `@impeccable/cli-linux-x64`,
+  egress releases GitHub bloqué ici ; l'installeur amont saura le télécharger tout seul sur la
+  machine de King), **hors dépôt**.
+- **(d) Effort + verdict :** **INSTALLÉ + premier usage fait, production sous conditions.** Pin
+  `46b822f`, `engine-probe` OK, `detect --json` exécuté sur 4 pages réelles. Conditions :
+  **règle 3** (King relit le premier rapport) ; **pas de hooks Impeccable** (ni `.claude/settings`
+  ni hooks projet — activation séparée, décision de King) ; PRODUCT.md/DESIGN.md non créés dans
+  le dépôt (§4b) ; chaque finding est **vérifié dans le code** avant correction (leçon du jour :
+  28 « cramped-padding » étaient des faux positifs). Règle debout : `PRE-FLIGHT.md` §1f⑧.
+  Triggers de re-review : premier lot de polish livré avec ses commandes · mise à jour du moteur ·
+  divergence répétée avec les portiques maison.

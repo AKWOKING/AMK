@@ -670,3 +670,73 @@ alignement large) avant tout correctif.
   feedback `scale` au `:active` ; transform/opacity partout sauf le `top` du skiplink ; aucun
   pulse/rebond/stagger ; poids maîtrisés (accueil 82 Ko/19,8 Ko gzip, fond hero 226,5 Ko) ;
   aucune donnée client envoyée à un service externe pendant l'audit (preuves locales + live lu).
+
+---
+
+## 20/10/2026 · Correctifs F1–F7 appliqués (ruling King) + UI/UX Pro Max + Impeccable installés — redéployé Vercel
+
+- **Ruling King** : « Deal/correct F1 to F6 implementing all recommended actions » ; installer
+  `nextlevelbuilder/ui-ux-pro-max-skill` et `pbakaus/impeccable` ; refaire un audit avec tous les
+  outils ; chercher des solutions « even on social media » avec Agent Reach ; implémenter ce qui
+  est recommandé, « redesign if necessary ». Rédaction retenue : **correction d'art, pas de
+  nouvelle identité** — couleurs, textes, logo, structure de pages et noms inchangés.
+- **Recherche (§1f① Agent Reach d'abord, appels réels)** : doctor re-run ; **GitHub OK**
+  (repos opticiens relevés), **RSS OK** (releases Impeccable lues), **Exa offline (TLS)**,
+  **YouTube TLS-EOF**, **Bilibili network_error**, **Twitter/Reddit non authentifiés**, **Jina
+  HTTP 000** → repli natif déclaré. Sources natives citées dans les build-notes : NN/g *Ensure
+  High Contrast for Text Over Images* (4,5:1 / 3:1) · Smashing *Designing Accessible Text Over
+  Images* (scrim) · W3C WCAG 2.2 SC 2.4.11 *Focus Not Obscured* + MDN `scroll-padding-bottom`
+  (scroll-padding = la solution canonique) · Cloudflare Pages docs (`404.html` + `_headers`)
+  · fils r/Frontend & r/webdesign (img+object-fit+alt pour un hero accessible ; lisibilité des
+  overlays).
+- **Installations prouvées** : UI/UX Pro Max pin `56ea9cf` (MIT, recherche Python stdlib locale —
+  aucune donnée client dans les requêtes), liens `~/.claude/skills` + `~/.agents/skills`, appels
+  réels (`--domain ux`, `--design-system`) ; Impeccable pin `46b822f` (Apache-2.0, skill v0.1.16,
+  moteur binaire 0.1.16 obtenu via le paquet npm officiel `@impeccable/cli-linux-x64` — egress
+  releases GitHub bloqué — cache `~/.impeccable/bin/0.1.16`, `engine-probe` OK), lien skill.
+  Installeurs + README : `tools/ui-ux-pro-max/`, `tools/impeccable/` ; TOOL-SCAN ; PRE-FLIGHT
+  §1f⑦/⑧ + §0d.
+- **Correctifs appliqués** (gabarit + générateur, portiques verts) :
+  **F1** voile hero rééquilibré (gauche protégée .92→.92, droite dégagée .46→.16 ; voile mobile
+  allégé ; `object-position:38% 50%` → le couloir de montures visible à droite/bas ; captures
+  relues : texte lisible, cabinet reconnaissable) · **F2** lavis `.wash` et `.band::before` en
+  une dérive de 2,8 s puis repos (plus de boucle infinie ; reduced-motion inchangé) · **F3**
+  `.rv` 620 ms/14 px → **380 ms/8 px** ; kicker/H1/lede du hero **statiques** (apparaissent
+  d'emblée) ; skiplink en `transform` (plus d'animation d'une propriété de layout, geste clavier
+  instantané) · **F4** panneau filtres mobile animé **180 ms** à l'ouverture seulement (filtrage
+  instantané, `prefers-reduced-motion` respecté) ; carte d'identité sans soulèvement au survol
+  (ombre gardée) · **F5** `scroll-padding-bottom:96px` sur `html` (SC 2.4.11 : focus jamais sous
+  le dock) · **F6** dock WhatsApp **par type de page** : fiche = « je suis intéressé par la
+  monture [nom] » (comme le CTA), catégorie = demande catégorie, hub = demande générique
+  monture, examen/cabinet/contact inchangés ; assertion Node dédiée · **F7 (bonus 404+headers)**
+  `404.html` bilingue noindex (dock, mêmes verrous) + `_headers` prudents (nosniff, referrer,
+  DENY, Permissions-Policy) — préparation Cloudflare, CSP reportée (JS inline) · bonus
+  cohérence : étapes de l'examen en `h2` (Impeccable : niveau sauté h1→h3).
+- **Portiques §1b** : builds OK ; accueil html 0 · a11y `--strict` rc 0 (1 info « barre fixe ») ·
+  images 0 · JS 0 · hero 0 ; boucle 48 pages html/a11y/images/js = **48/48 rc 0** ; 404 verte sur
+  les 4 contrôles ; test Node complet vert (assertions dock + 404/headers incluses) ; zip
+  reconstruit (130 entrées, 3 447 323 o, `testzip=None`).
+- **Audit combiné post-correctifs** (tous outils) : taste **accueil 9 FAIL → 9** en nombre mais
+  `covered-text` mobile disparu (le dock ne couvre plus le titre du contact dans l'échantillonnage)
+  · **Impeccable `detect` 32 → 31** (`skipped-heading` éteint ; restants = 28 « cramped-padding »
+  faux positifs du détecteur : nos cartes ont un padding 16–18 px, la photo seule touche le bord —
+  vérifié dans le code · 2 « undersized-ui-text » (le « DOUALA » du h1, 8 px calculés, style
+  d'affichage du titre approuvé · 1 em-dash advisory, textes figés) · **UI/UX Pro Max** : grille
+  UX confirmée (reduced-motion, focus, cibles ≥44 px déjà tenues ; chips à reflow = déjà en
+  flex-wrap) ; la « design system » de l'outil (Claymorphism/teal) **écartée** — nouvelle
+  identité interdite par les verrous, avis traité comme grille et non comme direction · **ECC**
+  : security-review PASS (statique, aucun secret), seo PASS (titres/méta/canonical/JSON-LD
+  inchangés), click-path PASS après F6 (chaque CTA mène au bon message) · **DMP** : plus aucune
+  boucle infinie, fréquence Emil respectée (CTA/filtres = instantané), Jakub : panneau 180 ms
+  subtil. Restes connus et **hors lot par ruling** : Classe B (mono, filets, numérotation…),
+  `few-pictures` examen (besoin d'un vrai lot photo), taille h1 (3,6 vw).
+- **Git + déploiement** : commit site **`bf9c0ec`** poussé/vérifié → Vercel test
+  **`dpl_953Nuy9t59nXNdsXQwiJFn39dG7U` READY/PROMOTED** ; vérifié en ligne : accueil (fond hero
+  allégé), fiche F01 (dock « monture F01 » — le CTA bas demande la bonne monture), **404 réelle
+  servie** sur une URL inexistante. Zip prêt pour l'upload Cloudflare de King.
+- **Redesign complet : non nécessaire** — tous les défauts objectifs de l'audit sont corrigés ;
+  ce qui reste est soit l'identité figée (Classe B, ruling séparé), soit du contenu à venir (photos
+  solaires, scènes d'examen avec accord). Un redesign remplacerait une identité approuvée par le
+  client sans défaut objectif pour la justifier.
+- **Reste ouvert** : F8 (validation client 40+stock, Cloudflare, Search Console/fiche Google,
+  tests appareil/lecteur) ; production = geste de King après validation.

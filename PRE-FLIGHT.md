@@ -61,6 +61,8 @@ Quand une règle change ou qu'un ruling est donné, cette table dit quels fichie
 | **Design/build/revue = taste-skill appliqué (ruling King 20/10, §1f④)** | `PRE-FLIGHT.md` §1f + §1b · `tools/taste-skill/README.md` · skill installé `~/.agents/skills/design-taste-frontend/SKILL.md` (hors dépôt) · `AMK-DESIGN-SKILLS.md` (lois maison, gagnent en cas de conflit) · `clients/<client>/build-notes.md` + `inspiration.md` (direction tirée, redraws, scores) |
 | **Mouvement d'interface = design-motion-principles appliqué (ruling King 20/10, §1f⑤)** | `PRE-FLIGHT.md` §1f + §1b · `tools/design-motion-principles/README.md` · skill installé `~/.agents/skills/design-motion-principles/SKILL.md` (hors dépôt) · `AMK-DESIGN-SKILLS.md` (lois maison, gagnent en cas de conflit) · `clients/<client>/build-notes.md` (pondération des lentilles, findings motion) |
 | **Audit/vérification = skills ECC sélectifs en appui (ruling King 20/10, §1f⑥)** | `PRE-FLIGHT.md` §1f + §1b · `tools/ecc/README.md` · skills installés `~/.agents/skills/{accessibility,production-audit,verification-loop,security-review,seo,click-path-audit}/SKILL.md` (hors dépôt) · `tools/qa/` (les portiques maison font foi) · `clients/<client>/build-notes.md` (score, preuves, blockers) |
+| **Recherche UX/UI consultable = UI/UX Pro Max en appui (ruling King 20/10, §1f⑦)** | `PRE-FLIGHT.md` §1f + §1b · `tools/ui-ux-pro-max/README.md` · skill installé `~/.agents/skills/ui-ux-pro-max/SKILL.md` (hors dépôt) · `AMK-DESIGN-SKILLS.md` (lois maison, gagnent en cas de conflit) · `clients/<client>/build-notes.md` (grilles consultées, avis écartés) |
+| **Détection d'anti-patterns UI = Impeccable en portique d'appui (ruling King 20/10, §1f⑧)** | `PRE-FLIGHT.md` §1f + §1b · `tools/impeccable/README.md` · skill installé `~/.agents/skills/impeccable/SKILL.md` + moteur `~/.impeccable/bin/` (hors dépôt) · `tools/qa/` (les portiques maison font foi) · `clients/<client>/build-notes.md` (findings vérifiés, faux positifs nommés) |
 
 Si cette table ne suffit plus à suivre la propagation entre fichiers, c'est le déclencheur pour réévaluer un outil de graphe de connaissances (voir la décision Graphify dans `sales/Activity-Log.md`).
 
@@ -236,6 +238,22 @@ Recette éprouvée (avec travail non commité, **jamais** `--hard`) : `git fetch
 - **Portée :** audit de pré-livraison, readiness, sécurité, SEO, accessibilité, parcours de clic, boucle de vérification — **en complément** des portiques maison, jamais à leur place. L'orchestrateur réinstalle si absent (`bash tools/ecc/install.sh`, épinglé — voir son README), lit le ou les `SKILL.md` pertinents parmi les six installés (`accessibility`, `production-audit`, `verification-loop`, `security-review`, `seo`, `click-path-audit`), et **le dit dans son en-tête pré-vol**.
 - **Procédure :** preuves locales d'abord (build, portiques, diff, lectures de pages) ; score et blockers au format `production-audit` quand il sert ; findings consignés dans les build-notes du client avec correctif/amélioration/action (§0e).
 - **Garde-fous :** installation **sélective seulement** — pas de profil full/core, pas de hooks runtime, pas de MCP, pas de mémoire ECC, pas d'auto-update, pas de scanner externe ni d'envoi de code/données client à un tiers sans l'accord explicite de King (règles TOOL-SCAN 3+4). Le harnais complet sur la machine de King est une décision séparée ; ne jamais empiler deux méthodes d'installation ECC sur la même cible.
+
+### ⑦ Recherche UX/UI ponctuelle → **UI/UX Pro Max interrogé d'abord** (ruling King 20/10)
+
+> *King 20/10 : « install and use [nextlevelbuilder/ui-ux-pro-max-skill] ».*
+
+- **Portée :** avant de corriger ou concevoir un composant, interroger la base locale (`search.py --domain ux|typography|landing|icons|gsap…`, Python stdlib, aucun réseau, aucune donnée client dans les requêtes) — en complément de taste-skill et des lois maison.
+- **Limite posée le 20/10 :** sa « design system » générée propose style/couleurs/typo **neuves** — sur un site à identité figée, elle est **écartée** (grille de lecture, pas direction) ; une identité neuve ne se choisit qu'avec King (protocole d'unicité §2).
+- Réinstallation : `bash tools/ui-ux-pro-max/install.sh` (épinglé, voir son README). Dit dans l'en-tête pré-vol.
+
+### ⑧ Détection d'anti-patterns UI → **Impeccable `detect` en portique d'appui** (ruling King 20/10)
+
+> *King 20/10 : « install and use [pbakaus/impeccable] ».*
+
+- **Portée :** `impeccable detect --json <pages>` en audit de finition, sur fichiers locaux ou URL ; chaque finding est **vérifié dans le code** avant toute correction (faux positifs nommés, ex. « cramped-padding » sur cartes à photo pleine bordure). Les commandes de polish (`polish`, `harden`, `critique`…) restent des propositions — un changement de site passe par le ruling de King, les portiques §1b et §1f③.
+- **Garde-fous :** moteur épinglé (engine v0.1.16 au pin du 20/10) ; **aucun hook Impeccable installé** (activation séparée, décision de King) ; pas de PRODUCT.md/DESIGN.md dans le dépôt sans son OK (§4b) ; re-téléchargement du moteur seulement depuis le canal officiel de l'amont.
+- Réinstallation : `bash tools/impeccable/install.sh` (épinglé, voir son README ; sur la machine de King l'installeur amont peut télécharger le moteur lui-même). Dit dans l'en-tête pré-vol.
 
 ## 2 · Uniqueness protocol (every website/design build, before a line of HTML)
 
