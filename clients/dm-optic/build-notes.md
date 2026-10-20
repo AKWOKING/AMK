@@ -440,3 +440,87 @@ build-notes du dépôt.)
   `#parcours`), `/montures/femmes/` (24 cartes + filtres), `/examen-de-vue/` (4 étapes).
 - **Portée** : Vercel reste le banc d'essai de King. La production client sur Cloudflare (upload du zip par King,
   après validation) n'a pas changé ; `dmoptiquesarl.com` toujours non vérifié en direct.
+
+---
+
+## 20/10/2026 · Revue taste-skill de la v2 (demande King) — mesurée, aucun code du site touché
+
+**Chaîne** : skill `design-taste-frontend` (§1f④), cas « existing page » : `lint.mjs` sur les 8 types de
+pages construites + **`inspect.mjs` en vrai navigateur (1440/768/390)** — débloqué ce jour :
+Chromium de la chaîne vidéo (`bash tools/video/install.sh`, @sparticuz) via
+`CHROME_PATH=/tmp/amk-video/chrome-wrapper.sh`. Captures relues à l'œil (accueil, femmes, fiche F01,
+examen). Sorties dans `.taste-skill/before-*` (ignorées par git). Limites dites : l'inspecteur local
+sert la racine du dépôt → polices/logo des sous-pages (chemins absolus `/fonts/…`, `/dm-logo.webp`)
+en 404 dans SES captures (rendu de repli) ; sur Vercel (racine = `dmoptic/`) ils se chargent.
+L'inspection de l'URL live est impossible d'ici (egress Chromium fermé). Les mesures de mise en
+page restent valables.
+
+**Comptes** — lint : accueil 43 FAIL/12 WARN · examen 42/21 · hub, 3 catégories, fiche, cabinet,
+contact 38/21-22 (l'essentiel vient du CSS de coquille partagé, répété sur les 48 pages).
+inspect : accueil 10 FAIL/6 WARN · femmes 6/8 · fiche 5/8 · examen 8/5.
+
+**Critique (format du skill) — accueil**
+```
+ROUND 1 (before)
+Seen in one second: le nom en grand, le bouton WhatsApp vert, le logo en anneau.
+Idea (one sentence): la carte d'inscription à l'ONOC devient la preuve du hero ; le parcours
+  « par où commencer » route par intention.
+Live thing: le message WhatsApp pré-écrit par intention (+ filtres du catalogue).
+Layout words: hero=split · parcours=index 3 col · montures=trio cartes+bande · services=grille 6 ·
+  bande=étapes+photo · faq=accordéon · contact=faits.
+Scores bruts (juré): design 7 · usability 8 · creativity 7 · content 7 → 7,3.
+Caps applied: FAIL inspect présents → overall ≤ 6,0 (règle du skill). Plafond identitaire, pas un
+  jugement client : les dispositifs plafonnants (mono, filets, numérotation, dégradé, ombre) sont
+  l'identité approuvée (voir classe B).
+```
+Femme/fiche/examen (bruts) : femmes 6,5/6/5,5/7 · fiche 6/6/5,5/6,5 · examen 6/7,5/5,5/7 — tous
+plafonnés 6,0 par la même règle. **Top 3 problèmes** : ① marges mobiles des sous-pages (A1) ;
+② l'accueil montre encore des photos d'illustration alors que le catalogue réel existe (A8) ;
+③ les deux pages qui convertissent enterrent l'action (filtres mobiles A3, CTA de fiche A4).
+
+### Classe A — défauts objectifs (correctifs recherchés ; aucun ne touche l'identité)
+
+| # | Défaut mesuré | Correctif (fichier) | Source |
+|---|---|---|---|
+| A1 | **Texte à 0 px du bord sur les 47 sous-pages** (<1120 px) : `.v2-main section{padding:44px 0}` (`demos/build_dmoptic_montures.py:72`, spécificité 0-1-1) écrase le `padding:0 var(--gut)` de `.wrap` (0-1-0). Desktop masqué par `margin:auto`. | `padding:44px var(--gut)` (ou longhands verticaux) dans le bloc CSS v2 du générateur ; preuve = `edge-text` 0 à la ré-inspection. | inspect `edge-text`/`off-centre` |
+| A2 | **Hero mobile : le logo-anneau couvre le kicker** (« INSCRIT À L'ONOC » partiellement masqué, capture 390). | Sous 780 px : réduire/descendre `.herologo` ou réserver la place (padding droit du bloc titre). `demos/dmoptic-v1.tpl.html`. | critique passe 13 (collisions) |
+| A3 | **Catalogue mobile : aucun produit au premier écran** — 17 pills dépliées + barre collante ; compteur rogné à droite. Sur desktop, le compte « 24 montures » est dit 3 fois. | Mobile : filtres repliés derrière un déclencheur + bouton « Afficher X montures » (déjà présent) ; desktop : retirer le bouton « Afficher » redondant, garder compteurs+pills. Générateur (bloc filtres). | Baymard mobile filtering (déjà consigné 20/10) |
+| A4 | **Fiche desktop : CTA WhatsApp sous le pli**, image pleine largeur ~840 px de haut, rangée de faits avec **822 px de vide au milieu** (`empty-middle`). | ≥980 px : deux colonnes (galerie ~55 % · faits + CTA à droite, CTA visible sans défiler) ; mobile : CTA après la première image. Générateur (fiche). | Baymard PDP 2026 (CTA au-dessus du pli) |
+| A5 | Texte courant mesuré **15,2 px** (`--fs-sm:.95rem` porte les paragraphes de cartes), `--fs-label:.72rem` ≈ 11,5 px → 6 blocs < 13 px (accueil). Le corps (`--fs-base` 17 px) est sain. | `--fs-sm:1rem`, `--fs-label:.8125rem` ; re-portiques §1b + ré-inspection. Gabarit + générateur (jetons partagés). | Consensus 16 px (Google Knowledge ; revues accessibilité) — d'autant plus pour un public qui vient pour ses yeux |
+| A6 | **Sous-pages immobiles** : 0 élément en mouvement (`still-page`) — le générateur n'embarque pas la couche d'apparition de l'accueil. | Porter le système `.rv` de l'accueil (transform/opacity, `prefers-reduced-motion`) dans la coquille du générateur. | skill étape 9 |
+| A7 | **Page examen : 0 image** (`few-pictures`). | Y poser `cabinet-interieur.webp` (réelle, sans personne, déjà au dépôt). Les scènes d'examen avec visages restent exclues sans accord explicite. | Ace & Tate eye-test (processus en photos) ; verrou « réel » |
+| A8 | **Accueil : 3 légendes « Photo(s) d'illustration »** + images stock (`dmoptic-*.webp` : cartes montures, bande, monture d'essai) alors que 65 WebP réelles existent — contredit « le site ne montre que du vrai » (brief §"réel") et la loi imagerie du skill. | Cartes « Lunettes de vue » et « Enfants » → vraies montures du catalogue ; bande sombre → photo réelle du cabinet. **« Lunettes de soleil » : aucune monture solaire réelle au catalogue** (`frames.json` vérifié) → garder l'illustration légendée pour cette seule carte, ou carte sans photo, ou lot photo solaires à demander au client. Choix King. | NN/g « Photos as Web Content » (le décoratif est ignoré, le produit réel est scruté) |
+
+### Classe B — règles du skill contre identité figée (ruling King requis ; options recherchées)
+
+| Dispositif | Mesure | Options (de « on garde » à « on aligne ») |
+|---|---|---|
+| **Mono (IBM Plex Mono)** | FAIL lint 3 · 21 % du texte accueil, **34 % fiche** | ① `--allow mono` motivé (identité « registre de l'Ordre » approuvée) · ② **mono réservée aux données** (téléphone, horaires, codes F01…), libellés en Plex Sans — fait aussi tomber font-count (3→2 visages perçus) et la plupart des micro-labels · ③ suppression (texte + `tabular-nums`, déjà actif sur `body`). |
+| **Micro-labels capitales espacées + kicker hero** | 16 (accueil) · eyebrow FAIL | Le seul dispositif que les données du skill condamnent aussi (16 % des tops vs 57 % des faibles). ① garder · ② retirer le seul kicker du hero (l'info « inscrit à l'ONOC » est déjà dite 3 fois au premier écran) · ③ libellés en casse phrase 13 px (rejoint A5). |
+| **Numérotation 01–06 / 01–04** | 9 accueil · 4 examen | À scinder : examen + « trois étapes » = **séquences vraies** → balisage `<ol>` (le skill l'admet) ; services 01–06 = ordre arbitraire → décoratifs, retirables sans perte d'info. |
+| **Filets 1 px / boîtes contour** | 35 filets mesurés accueil · 24 boîtes femmes | ① garder · ② **garder les rangées réglées là où elles sont le métaphore-registre** (carte, faits) et passer le reste en écarts de ton/espace (FAQ, contours de cartes catalogue : le fond crème de la photo suffit à définir la surface). |
+| **Dégradés** | lavis animé du hero + anneau conique du logo | Anneau = traitement du logo client décidé le 11/10 → `--allow gradient` motivé pour lui. Lavis `.wash` : aplati possible (champ plat) sans toucher ni couleur ni texte — au choix. |
+| **Ombre de la carte + survol qui soulève** | 1 ombre au repos | La carte est « l'objet » du hero : `--allow shadow` motivé pour elle seule ; le soulèvement au survol est retirable à coût nul. |
+| **Fond crème #F6EBE0 du catalogue** | WARN `palette-cream` (fiche, femmes mobile) | Choix King (ton chaud de marque) ; le skill vise crème jaune + terracotta — notre braise #E0703A s'en approche. Changer = retraiter 65 WebP. À garder sauf ruling contraire. |
+| **Tirets cadratins** | 23 accueil · 33 femmes | Textes approuvés intouchés ; les chaînes **générées** (`Femme — forme ovale…` ×40 fiches) peuvent passer en virgules/points lors d'une future passe copie validée. |
+| **Point focal du hero** | plus grand corps 52 px = 3,6 vw (médiane des tops du skill : 8,4 vw) ; média hero 12 % | Sans changer le texte : monter `--fs-h1` (plafond 3,25 rem → ~4 rem). Et/ou **photo du cabinet au premier écran — c'était le souhait du client le 10/10** (« C'est mieux la photo du cabinet »), différé faute de photos ; `cabinet-interieur.webp` existe maintenant. Retirerait du même coup le logo géant (le nom/logo apparaît 3 fois au premier écran) et le vide du bas de hero (~40 % du pli desktop). **Changement de composition → ruling King.** |
+
+### Classe C — au-delà du lint (critique sur captures)
+
+- **Répétition de composition** : grille de cartes ×3 sur l'accueil (parcours, montures, services) —
+  passe 9 « sameness ». Si B évolue, varier une des trois (liste réglée pour les services, par ex.).
+- **Bande défilante des services** (mobile) signalée `side-scroll` : intentionnelle (snap + fondu),
+  mais lue « coupée » par beaucoup de visiteurs ; alternative = 2 colonnes dès 768 px.
+- **10 tailles de police** sur l'accueil (12→52) : resserrer vers ~6 quand on touchera aux jetons (A5).
+- **Aucune vidéo** (WARN partout) : aucun clip honnête n'existe ; le verrou « réel » interdit le
+  stock. À mettre au brief du prochain lot photo : un plan cabinet de 5 s. Absence défendue d'ici là.
+- Fiches multi-angles (16) : images empilées pleine largeur ; un sélecteur d'angles (vignettes)
+  raccourcirait la page — à grouper avec A4 si King retient ce lot.
+
+**Recherche du jour** (Agent Reach tentée d'abord, Exa hors-ligne → repli natif déclaré) :
+Baymard *Product Page UX 2026* · NN/g *Photos as Web Content* · page Eye Test d'Ace & Tate lue en
+direct · consensus corps ≥ 16 px — détail et pris/rejeté : `inspiration.md`, 4ᵉ passage.
+
+**État** : revue + recherche consignées, **aucun fichier du site modifié** (donc pas de redéploiement
+Vercel — §1f③ ne se déclenche pas). En attente du ruling King sur le périmètre (A seul / A + B-lite /
+alignement large) avant tout correctif.

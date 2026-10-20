@@ -30,9 +30,13 @@ appel réel (`draw.mjs --list sectors`). Aucun sudo, rien de l'amont dans le dé
 
 - ✅ Liens installés ; `draw.mjs --list sectors|roles` répond (Node v22 présent).
 - ✅ `lint.mjs` tourne (aucun navigateur requis).
-- ❌ `inspect.mjs` / `scenes.mjs` : **aucun Chrome/Chromium** dans la sandbox (`CHROME_PATH` accepté par
-  l'amont ; la chaîne `tools/brag/` sait fournir un Chromium — jonction non encore prouvée). Sur la machine
-  de King (Chrome desktop), l'inspecteur doit tourner tel quel.
+- ✅ `inspect.mjs` **tourne dans la sandbox** (prouvé le 20/10, revue DM v2) : jonction avec la chaîne
+  vidéo — `bash tools/video/install.sh` (Chromium @sparticuz) puis wrapper
+  `CHROME_PATH=/tmp/amk-video/chrome-wrapper.sh` (exporte `LD_LIBRARY_PATH`/`FONTCONFIG_PATH`, exécute
+  `/tmp/chromium`). Mesures + captures 1440/768/390 OK sur **fichiers locaux** ; l'inspection d'une
+  **URL live échoue** (egress du Chromium fermé, `ERR_CONNECTION_CLOSED`). Piège : son serveur local
+  sert la racine du dépôt — les chemins absolus du site (`/fonts/…`) y font 404 (faux `font-fallback`
+  sur les sous-pages DM ; sur Vercel/Cloudflare, racine = le site, tout se charge).
 - ⚠️ `assets.mjs` exige le réseau sortant (collections ouvertes) : egress sandbox limité → à considérer
   indisponible ici tant qu'un appel réel ne prouve pas le contraire.
 

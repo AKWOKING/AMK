@@ -171,3 +171,52 @@ et la **matière** (vraies photos détourées sur crème chaud, vrais murs du ca
 de composition écrites dans `SPEC-PAGES-v1.md` §10.3 — D1 continuité, D2 vitrine réelle
 (recommandée), D3 parcours. Unicité vérifiée contre le registre : aucune ne rejoue La Ligne
 (visages/portraits), Cinq Sens (affiche), Cristallin (mesure) ni l'Instrument écarté en v1.
+
+---
+
+## Quatrième passage (20/10/2026) — **corriger les FAIL de la revue taste**, sans toucher l'identité
+
+Commande King : revue taste de la v2, puis recherche de correctifs. Agent Reach tentée d'abord
+(doctor OK, Exa hors-ligne TLS → repli natif déclaré, comme au 3ᵉ passage). Sources lues en direct :
+
+### 9 · Baymard Institute, *Product Page UX 2026* — l'angle **fiche produit**
+Benchmark 2026 : 52 % des fiches desktop et 62 % des fiches mobiles des grands sites restent
+« médiocres ou pires ». Constante des correctifs qui marchent : **galerie + panneau d'information
+avec l'action principale visible sans défiler** (collante sur mobile), spécifications près de
+l'action, jamais l'action sous une image d'un écran de haut.
+- **Pris** : fiche DM en deux colonnes ≥980 px (galerie · faits + WhatsApp visibles), CTA mobile
+  après la première image. C'est le correctif A4 de `build-notes.md`.
+- **Rejeté** : prix, avis/étoiles, urgence, variantes achetables — hors verrous (pas de prix,
+  pas d'avis inventés, WhatsApp est notre « panier »).
+
+### 10 · NN/g, *Photos as Web Content* (eyetracking) — l'angle **photos réelles vs stock**
+Les images purement décoratives sont **ignorées** ; les photos du produit réel et des personnes
+réelles sont **scrutées**. « Decorated means ignored. »
+- **Pris** : remplacer les images stock de l'accueil (`dmoptic-*.webp`, légendées « Photo
+  d'illustration ») par les vraies montures du catalogue et la vraie photo du cabinet (A8) — ça
+  rejoint notre verrou « le site ne montre que du vrai ». Exception honnête : la carte « Lunettes
+  de soleil » (aucune solaire réelle photographiée à ce jour).
+- **Rejeté** : toute photo « d'ambiance » de banque d'images pour combler — c'est exactement ce
+  que l'étude dit invisible, et ce que le brief interdit.
+
+### 11 · `aceandtate.com/gb/eye-test` lue en direct — l'angle **page examen**
+Vidéo d'ouverture, liste de signes (« It's time for an eye test if: … »), processus raconté en
+**4 photos**, FAQ, CTA de réservation répété à chaque section.
+- **Pris** : notre page examen (0 image, FAIL `few-pictures`) gagne la photo réelle de la salle/
+  du cabinet (A7) ; la liste de signes est un bon dispositif d'auto-reconnaissance — mais c'est
+  du **texte nouveau à faire valider** (client/King), pas à copier tel quel.
+- **Rejeté** : réservation en ligne, « examen gratuit », prix, promesses — inexistants ou
+  interdits chez DM.
+
+### 12 · Consensus corps de texte ≥ 16 px (Google Fonts Knowledge ; revues d'accessibilité 2025-26) — l'angle **lisibilité**
+WCAG n'impose pas de minimum, mais la pratique converge : 16 px plancher pour le texte courant,
+12–13 px admis pour libellés courts. Chez nous le corps est à 17 px mais les paragraphes de
+cartes vivent à 15,2 px et les libellés à ~11,5 px.
+- **Pris** : `--fs-sm` → 1rem, `--fs-label` → .8125rem (A5). Argument décisif ici : le public
+  d'un opticien est précisément celui qui lit mal le petit texte.
+- **Rejeté** : gonfler toute l'échelle — seuls les deux jetons fautifs bougent.
+
+**Design Read (revue)** : l'identité « cachet & braise » n'est pas le problème ; les FAIL se
+scindent en défauts objectifs (marges mobiles, CTA enterrés, photos stock, petit texte) —
+correctifs ci-dessus, consignés classe A dans `build-notes.md` — et en dispositifs d'identité que
+le skill bannit par principe (classe B) : **ruling King avant tout geste**.
