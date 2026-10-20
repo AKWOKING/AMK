@@ -1121,3 +1121,26 @@ zéro gain à les faire une par une) ; (3) lecture de la sitemap attendue sous 2
 
 **Dépôt :** 9ᵉ wipe du bac (même restauration base `b134dd2`, mêmes 4 webp orphelins non suivis
 réapparus, nettoyés) → remède debout, zéro perte.
+
+## 20/10 (nuit 2) — GSC : 5 indexations demandées puis quota (4 restent pour le 21/10, rappel debout à la checklist) ; Scrapling audité puis installé
+
+**GSC :** King a demandé l'indexation de `/`, `/montures/` et les 3 hubs de catégorie (5 URLs) —
+la 6ᵉ tentative (`/examen-de-vue/`) a touché le **quota quotidien** (« Quota exceeded, try again
+tomorrow » — normal sur une propriété neuve). **Rappel debout inscrit à la checklist** (section
+Search Console) : le 21/10, demander les 4 restantes — examen, cabinet, contact, fiche témoin F01.
+La relecture du statut de sitemap (« Success / 48 ») reste au 21/10 aussi.
+
+**Scrapling (ordre King : « audit then install if it meets the criteria ») — verdict : INSTALLÉ.**
+BSD-3-Clause (© Karim Shoair) lue dans le clone épinglé `fd53131` (v0.5, 18/10) ; framework de
+scraping adaptatif (parser qui retrouve ses éléments après refonte, fetchers statique/navigateur,
+spiders, robots.txt obey, skill agent OFFICIEL fourni — garde anti-injection `--ai-targeted`) ;
+`AI_POLICY.md` amont = règle de contribution (divulgation IA dans les PR), pas de restriction
+d'usage. **Installation :** `tools/scrapling/install.sh` (pip `--user` + skill officiel copié vers
+`~/.agents/skills/scrapling/` + miroir `~/.claude/skills/`) — **preuve par appel réel** : GET
+`github.com/D4Vinci/Scrapling` → 200, `title` extrait (API v0.5 = `.css('sel::text').get()`).
+**Limites testées et documentées :** fetchers navigateur exigent `scrapling install` (CDNs bloqués
+depuis le bac) → plein potentiel sur la machine de King ; drapeau robots au niveau spider/session
+en 0.5 (pas au one-off get). **Règles d'usage :** pages publiques, jamais Google/Facebook (ToS),
+débit limité, aucune donnée client sortante, **chaque cible = décision nommée**. Usage AMK visé :
+contrôles approfondis §1c, **veille concurrentielle mensuelle** (service défendable — tarif =
+décision King), vérifications NAP. TOOL-SCAN à jour.

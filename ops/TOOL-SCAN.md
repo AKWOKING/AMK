@@ -512,3 +512,22 @@ l'exige, jamais avant · ChatGPT/Gemini free = déjà remplacés par l'orchestra
   `SKILL.md` (voie documentée par l'amont pour les agents sans Skills CLI) vers
   `~/.agents/skills/humanizer/` + miroir `~/.claude/skills/`. NI `/plugin marketplace`, NI
   `npx skills add` (pas de runtime CLI supplémentaire, règle 5). Preuve par grep du front-matter.
+
+## 20/10 — D4Vinci/Scrapling : AUDITÉ puis INSTALLÉ (BSD-3 ; veille/monitoring, cibles validées une par une)
+
+> Ordre King du 20/10 (« audit then install … if it meets the criteria »). Pin de lecture
+> `fd53131` (18/10/2026, v0.5). Détail complet : `tools/scrapling/README.md`.
+
+- **(a) Quoi :** framework Python de scraping adaptatif (parser qui retrouve ses éléments après
+  changement du DOM, fetchers statique/navigateur, spiders, robots.txt obey intégré, skill agent
+  officiel avec garde anti-injection `--ai-targeted`).
+- **(b) Licence : BSD-3-Clause** (© Karim Shoair) — bibliothèque et skill ; `AI_POLICY.md` amont =
+  règle de contribution, pas de restriction d'usage.
+- **(c) Flux : OUI** — contrôles approfondis §1c sur pages publiques ; **veille concurrentielle
+  mensuelle** (nouveau service défendable, tarif = décision King) ; vérifications NAP/annuaires.
+- **(d) Règles d'usage :** pages publiques ; **jamais Google/Facebook** (ToS) ; robots.txt + débit
+  limité ; aucune donnée client sortante ; **chaque cible = décision nommée**.
+- **(e) Installation :** `tools/scrapling/install.sh` — pip `--user` + skill officiel copié vers
+  `~/.agents/skills/scrapling/` + miroir. **Preuve par appel réel** : GET github.com → 200, title
+  extrait (API v0.5 = `.css('sel::text').get()`). **Limite testée :** fetchers navigateur bloqués
+  en sandbox (CDN) → `scrapling install` sur la machine de King pour le plein potentiel.

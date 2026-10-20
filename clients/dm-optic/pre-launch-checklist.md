@@ -253,7 +253,14 @@ plateforme, pas des fichiers décoratifs. Doc Cloudflare (Direct Upload, lu le 2
 
 - [ ] **Propriété Domaine** recommandée (`dmoptiquesarl.com`, couvre http/https/www) : vérification
   par enregistrement **TXT** dans la zone DNS — la même séance que le CNAME de l'étape 5.
-- [ ] **Sitemap** : soumettre `https://dmoptiquesarl.com/sitemap.xml` (48 URL).
+- [x] **Sitemap** : soumise (20/10) — www d'abord puis propriété Domaine vérifiée le même jour ;
+  **à relire 21/10** : statut attendu « Success — 48 discovered » sous 24–48 h.
+- [ ] **RAPPEL 21/10 (quota GSC atteint le 20/10 après 5 demandes) : « Demander une indexation »
+  sur les 4 URLs restantes, dans cet ordre** — `https://dmoptiquesarl.com/examen-de-vue/` ·
+  `https://dmoptiquesarl.com/le-cabinet/` · `https://dmoptiquesarl.com/contact/` ·
+  `https://dmoptiquesarl.com/montures/femmes/f01-ovale-doree/` (fiche témoin). Déjà demandé le
+  20/10 : `/`, `/montures/`, les 3 hubs de catégorie. Les 40 autres fiches ne se demandent PAS
+  une par une : elles arrivent par la sitemap + les liens internes des hubs.
 - [ ] **Inspection d'URL** → « Demander une indexation » sur `/`, `/montures/`, `/examen-de-vue/`
   et une fiche (ex. F01).
 - [ ] Contrôler que Google lit bien `llms.txt` (inspection d'URL sur `/llms.txt`).
