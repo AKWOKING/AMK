@@ -787,3 +787,42 @@ les étapes). Zip **131 entrées, 3 720 499 o, testzip OK** — prêt pour l'upl
 
 **Reste ouvert** : F8 (validation client 40+stock, Cloudflare, Search Console/fiche Google,
 tests appareil/lecteur) ; Classe B = ruling séparé ; production = geste de King après validation.
+
+---
+
+## 20/10/2026 · Deux outils installés (open-seo, agency-agents) + audit de la photo d'examen + test SEO/AEO — aucun changement de site
+
+**Audit de la photo posée hier (`cabinet-examen.webp`, commit `4bed256`).** 1920×1200, 266,4 Ko,
+**EXIF vide** (vérifié `identify -format "%[EXIF:*]"` — aucune sortie), recadrage centré 16/10 qui
+tient les quatre acteurs (patiente → autoréfractomètre → praticien → valise de verres d'essai),
+légendes honnêtes bilingues. **Flag ouvert :** logos accessoires dans le cadre — NIDEK (gravé sur
+l'appareil) et HP (autocollant du portable) — considérés comme équipement contextuel, pas une
+revendication commerciale (le verrou « marques » vise les montures *revendiquées*) ; un recadrage
+qui les éviterait tuerait la scène. King peut statuer autrement.
+
+**open-seo @ `8713d75` (MIT) — installation sélective.** Les **12 skills markdown** du plugin
+officiel vers `~/.agents/skills/open-seo-skills/` (méthodologies `seo-audit`, `local-seo`,
+`keyword-research`, `ai-visibility-audit`…). L'**application n'est pas construite** : pnpm absent
+du bac, clé **DataForSEO payante** et self-host (Docker/Cloudflare) = décisions de King (coût
+récurrent + compte fournisseur). Installeur épinglé `tools/open-seo/install.sh`, **testé de bout
+en bout** (12/12 skills, pin vérifié). Entrée TOOL-SCAN.
+
+**agency-agents @ `4e3ac3c` (MIT) — 298 personas.** 19 divisions + strategy copiées vers
+`~/.agents/agency-agents/`, **fusion non destructive** vers `~/.claude/agents/` ; frontmatter
+vérifié 298/298. Un persona informe, ne décide pas (identité figée, portiques §1b, déploiements
+intouchés). Installeur épinglé `tools/agency-agents/install.sh`, **testé de bout en bout**.
+Entrée TOOL-SCAN.
+
+**Test SEO/AEO sur le site DM (portion gratuite — faits vérifiés dans `hosting/previews/dmoptic/`).**
+✓ robots.txt (Allow + sitemap) · sitemap 48 URL · canonical par page · meta descriptions · OG +
+twitter card · 404 noindex + `_headers` prudents · JSON-LD accueil riche (**Optician**,
+ContactPoint, PostalAddress, OpeningHoursSpecification, Person, **FAQPage** 6 Q/A) ·
+**BreadcrumbList** sur les sous-pages · site statique (vitesse par construction).
+**Écart AEO n°1 : `llms.txt` absent** (fichier de découverte pour crawlers IA — checklist premiere
+ligne du persona `marketing-aeo-foundations`). Écarts mineurs possibles plus tard : FAQPage
+limitée à l'accueil ; fiches sans schema Product (sans prix, offers impossible — choix du client,
+sans impact connu sur le trafic local). **Portion payante** (crawl live, positions, backlinks,
+Search Console) : bloquée sur la **production** (F8 — Cloudflare = King). Le skill `local-seo`
+servira à la fiche Google après mise en ligne.
+
+**Aucun fichier du site modifié → pas de redéploiement (§1f③).**

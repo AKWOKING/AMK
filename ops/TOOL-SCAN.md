@@ -368,3 +368,49 @@ l'exige, jamais avant · ChatGPT/Gemini free = déjà remplacés par l'orchestra
   28 « cramped-padding » étaient des faux positifs). Règle debout : `PRE-FLIGHT.md` §1f⑧.
   Triggers de re-review : premier lot de polish livré avec ses commandes · mise à jour du moteur ·
   divergence répétée avec les portiques maison.
+
+## 20/10 — OpenSEO (every-app/open-seo) : installé (sélectif) et testé à la demande de King
+
+> Demande King du 20/10 : « install https://github.com/every-app/open-seo.git then test/use on
+> the DM optic website ». Détail : `tools/open-seo/README.md`.
+
+- **(a) Problème :** pas d'outil SEO structuré côté agence — audits faits à la main
+  (checklist SEO + greps) ; les suites du marché (Semrush/Ahrefs) sont hors budget cible.
+- **(b) Use case AMK nommé :** les **12 skills méthodologie** du plugin officiel (`seo-audit`,
+  `local-seo`, `keyword-research`, `ai-visibility-audit`…) comme grilles de travail des audits
+  SEO/AEO clients, en complément des portiques maison. Premier terrain (20/10) : portion gratuite
+  exécutée sur le site DM — verdict dans `clients/dm-optic/build-notes.md` (tout vert sauf
+  `llms.txt` absent ; portion live bloquée sur la production F8).
+- **(c) Coût :** **0 FCFA en l'état** (MIT ; skills markdown). L'**application** (TanStack +
+  worker Cloudflare + **clé DataForSEO payante** par appel + self-host Docker/Cloudflare) n'est
+  **pas installée** : trois décisions de King (coût récurrent, compte fournisseur au nom de qui
+  l'ouvre, hébergement). État maintenu (règle 5) : le pin de l'installeur, rien d'autre.
+- **(d) Effort + verdict :** **INSTALLÉ SÉLECTIF + premier usage fait.** Pin `8713d75`
+  (`tools/open-seo/install.sh`, testé de bout en bout : 12/12 skills vers
+  `~/.agents/skills/open-seo-skills/`). Conditions : aucune clé API dans le dépôt ; aucune donnée
+  client vers DataForSEO sans accord explicite de King (règle 4) ; les portiques maison font foi.
+  Re-review : quand King décide du compte DataForSEO/self-host, ou à la mise en production d'un
+  site client (Search Console connectable).
+
+## 20/10 — The Agency / agency-agents (msitarzewski) : installé et testé à la demande de King
+
+> Demande King du 20/10 : « install test and use https://github.com/msitarzewski/agency-agents.git ».
+> Détail : `tools/agency-agents/README.md`.
+
+- **(a) Problème :** expertises ponctuelles (AEO, finish-gate UI, auditeur a11y, chef de staff…)
+  re-dérivées à chaque tâche au lieu d'être des personas écrites, testées et réutilisables.
+- **(b) Use case AMK nommé :** 298 personas markdown (19 divisions + strategy) chargées comme
+  grilles d'expertise quand une tâche tombe dans leur domaine — en **renfort** de la pile existante
+  (taste, DMP, ECC, UIUX, Impeccable), jamais en remplacement des portiques. Premier usage (20/10) :
+  persona `marketing-aeo-foundations` + `marketing-seo-specialist` appliquées au site DM (verdict
+  build-notes). Doublons assumés et nommés : `testing-accessibility-auditor` ≈ ECC accessibility,
+  `design-ui-finish-gate-reviewer` ≈ taste (consultés en plus, décisions inchangées).
+- **(c) Coût :** **0 FCFA** (MIT, markdown pur — aucun binaire, aucun runtime). État maintenu
+  (règle 5, compté) : un pin + deux dossiers hors dépôt (`~/.agents/agency-agents`,
+  fusion non destructive `~/.claude/agents`).
+- **(d) Effort + verdict :** **INSTALLÉ + testé + premier usage fait.** Pin `4e3ac3c`
+  (`tools/agency-agents/install.sh`, testé de bout en bout : 298/298 avec frontmatter). Conditions :
+  un persona n'est pas loi maison — il ne restyle pas une identité figée, ne contourne pas §1b,
+  ne décide pas un déploiement ; aucune donnée client dans un prompt de persona (règle 4) ;
+  toute sortie client-facing passe la validation de King (règle 3). Re-review : à chaque nouveau
+  lot de personas amont jugé utile (changement de pin daté, même procédure).

@@ -63,6 +63,7 @@ Quand une règle change ou qu'un ruling est donné, cette table dit quels fichie
 | **Audit/vérification = skills ECC sélectifs en appui (ruling King 20/10, §1f⑥)** | `PRE-FLIGHT.md` §1f + §1b · `tools/ecc/README.md` · skills installés `~/.agents/skills/{accessibility,production-audit,verification-loop,security-review,seo,click-path-audit}/SKILL.md` (hors dépôt) · `tools/qa/` (les portiques maison font foi) · `clients/<client>/build-notes.md` (score, preuves, blockers) |
 | **Recherche UX/UI consultable = UI/UX Pro Max en appui (ruling King 20/10, §1f⑦)** | `PRE-FLIGHT.md` §1f + §1b · `tools/ui-ux-pro-max/README.md` · skill installé `~/.agents/skills/ui-ux-pro-max/SKILL.md` (hors dépôt) · `AMK-DESIGN-SKILLS.md` (lois maison, gagnent en cas de conflit) · `clients/<client>/build-notes.md` (grilles consultées, avis écartés) |
 | **Détection d'anti-patterns UI = Impeccable en portique d'appui (ruling King 20/10, §1f⑧)** | `PRE-FLIGHT.md` §1f + §1b · `tools/impeccable/README.md` · skill installé `~/.agents/skills/impeccable/SKILL.md` + moteur `~/.impeccable/bin/` (hors dépôt) · `tools/qa/` (les portiques maison font foi) · `clients/<client>/build-notes.md` (findings vérifiés, faux positifs nommés) |
+| **Clôture debout : inventaire outils en ouverture + propositions/audit en fin de chaque réponse (ruling King 20/10, §1f⑨)** | `PRE-FLIGHT.md` §0 + §1f⑨ (la règle) · toute réponse de l'orchestrateur (en-tête enrichi + bloc final) · `ops/TOOL-SCAN.md` (l'inventaire consulté) · `clients/<client>/build-notes.md` (audits qui alimentent le bloc) |
 
 Si cette table ne suffit plus à suivre la propagation entre fichiers, c'est le déclencheur pour réévaluer un outil de graphe de connaissances (voir la décision Graphify dans `sales/Activity-Log.md`).
 
@@ -254,6 +255,16 @@ Recette éprouvée (avec travail non commité, **jamais** `--hard`) : `git fetch
 - **Portée :** `impeccable detect --json <pages>` en audit de finition, sur fichiers locaux ou URL ; chaque finding est **vérifié dans le code** avant toute correction (faux positifs nommés, ex. « cramped-padding » sur cartes à photo pleine bordure). Les commandes de polish (`polish`, `harden`, `critique`…) restent des propositions — un changement de site passe par le ruling de King, les portiques §1b et §1f③.
 - **Garde-fous :** moteur épinglé (engine v0.1.16 au pin du 20/10) ; **aucun hook Impeccable installé** (activation séparée, décision de King) ; pas de PRODUCT.md/DESIGN.md dans le dépôt sans son OK (§4b) ; re-téléchargement du moteur seulement depuis le canal officiel de l'amont.
 - Réinstallation : `bash tools/impeccable/install.sh` (épinglé, voir son README ; sur la machine de King l'installeur amont peut télécharger le moteur lui-même). Dit dans l'en-tête pré-vol.
+
+### ⑨ Chaque tâche de King → PRE-FLIGHT lu en entier, inventaire des outils, propositions + audit en clôture (ruling King 20/10)
+
+> *King 20/10 : « for each message/task I give read all the pre-flight document, go through all the skills and tools available/installed so that you know what to use and when, and at the end of each response write a proposition/recommendations and audit — you can leave it blank if there's nothing. »*
+
+- **Ouverture (renforce §0) :** le document PRE-FLIGHT est **lu en entier** à chaque tâche (aucune section sautée) et l'en-tête pré-vol nomme **l'inventaire des outils/skills examinés pour la tâche** — lesquels sont utilisés, lesquels ne le sont pas, et pourquoi en une ligne (§1f①–⑧ inclus, plus `ops/TOOL-SCAN.md` comme registre). L'objectif est la **connaissance permanente de l'arsenal** : le bon outil au bon moment, sans que King ait à le nommer.
+- **Clôture :** chaque réponse se termine par un **bloc debout à deux volets**, présent même vide (« Rien à signaler ») :
+  - **Propositions / Recommandations** — étapes suivantes, optimisations du flux de travail, opportunités repérées en cours de route. Ce bloc n'ouvre **aucun droit d'exécution** : une proposition attend le ruling de King (§4b, verrous).
+  - **Audit** — auto-audit honnête de la réponse : ce qui a été vérifié contre la source (§0e), ce qui reste incertain ou non testé, les défauts connus laissés ouverts, la conformité aux portiques (§1b/§1f③…). Un audit qui relève un problème porte correctif/amélioration/action (§0e).
+- Le bloc s'applique **à toutes les réponses**, y compris les réponses courtes de consultation — c'est justement là que les propositions coûtent le moins et servent le plus.
 
 ## 2 · Uniqueness protocol (every website/design build, before a line of HTML)
 
