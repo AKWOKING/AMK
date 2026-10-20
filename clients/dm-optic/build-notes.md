@@ -1144,3 +1144,23 @@ en 0.5 (pas au one-off get). **Règles d'usage :** pages publiques, jamais Googl
 débit limité, aucune donnée client sortante, **chaque cible = décision nommée**. Usage AMK visé :
 contrôles approfondis §1c, **veille concurrentielle mensuelle** (service défendable — tarif =
 décision King), vérifications NAP. TOOL-SCAN à jour.
+
+## 20/10 (nuit 3) — GBP CRÉÉ (valeurs NAP à aligner) ; prototype de veille Bonabéri livré (3 cibles sélectionnées sous délégation)
+
+**GBP créé** (capture : « You manage this Business Profile », bouton Website). `SETUP-GOOGLE-BUSINESS.md`
++ section « Profil CRÉÉ » : 3 alignements NAP demandés (adresse complète « Ndobo Mayor, Immeuble
+West Hotel… » vs « Ndobo Bonaberi » capturé ; +237 656 122 239 vs « 6 56 12 22 39 » ; horaires
+lun–sam 8:30–17:30) + complétion (photos/description/services = §Données) + social profiles APRÈS
+FB/TikTok + Ads = Skip + code SMS si vérification en attente.
+
+**Prototype de veille accepté et livré : `sales/veille-prototype-bonaberi-2026-10-20.md`.**
+Cibles sélectionnées par l'orchestrateur (délégation King, critères : présence Bonabéri + web
+public + positionnements distincts) : **Valdoz Optic** (Entrée forêt Bar, 677 61 04 41, 3 villes,
+« Meilleur cabinet d'optique au Cameroun 2024 » — Innovation Awards 05/03/2025, pas de site propre
+trouvé), **iris — l'Optométriste** (Immeuble MTN Bonabéri, réservation en ligne Setmore sur un
+réseau de ~16 points, ABONNEMENT « consultations/examens/rdv gratuits », lun–ven 8–15h sam 8–13h),
+**Bronze Eye Care & Optics** (200 m après Royal City, fiche annuaire seule, 0 avis — le concurrent
+invisible). Méthode consignée : pages publiques seulement, zéro FB/IG scrapé, sources datées ;
+industrialisation = Scrapling chez King. Lecture stratégique honnête : DM déjà devant sur le web ;
+à surveiller = réputation Valdoz (→ 5 premiers avis Google DM) + modèle abonnement iris (noté,
+jamais copié sans ruling). Offre mensuelle décrite, tarif = décision King.

@@ -110,3 +110,26 @@ nom du cabinet, AMK le gère dans l'abonnement mensuel, et la ligne de propriét
    10 secondes, aucune séance à planifier. Repli : carte postale.
 5. **Ce que le client garde** : la propriété des comptes, le téléphone (vérification, puis
    récupération secondaire une fois son accord écrit reçu), la parole dans les réponses aux avis.
+
+## Profil CRÉÉ (20/10 soir, capture) — les valeurs à aligner avant le mot « terminé »
+
+La fiche apparaît sur Google (« DM OPTIQUE SARL — Optician in Bonabéri — You manage this Business
+Profile », bouton Website présent). Trois choses à vérifier/corriger dans « Edit profile » :
+
+1. **Adresse** : la capture montre « Ndobo Bonaberi, Douala ». Valeur exacte à aligner sur le site
+   (cohérence NAP = règle locale-seo) : **Ndobo Mayor, Immeuble West Hotel, 1er étage, dernière
+   porte à droite, Bonabéri, Douala**.
+2. **Téléphone** : la capture montre « 6 56 12 22 39 » (espacé, sans indicatif). Valeur exacte :
+   **+237 656 122 239** (identique au site et au wa.me).
+3. **Horaires** : poster **lun–sam 8:30–17:30** (la fiche Google ne gère pas deux créneaux par
+   besoin) — la nuance « examen 8:30–13:00 » vit déjà dans la description et sur le site.
+   La capture montre « Opens 8:30 am Wed » : vérifier que tous les jours sont bien saisis.
+
+Puis compléter le profil (les cartes de l'écran d'accueil) :
+- **Photos** : la liste des 10 premières est au-dessus (§Les 10 premières photos).
+- **Description + services + catégories** : tout est prêt dans §Données.
+- **« Add social profiles »** : à remplir APRÈS la création des comptes Facebook et TikTok (ordre
+  debout : Google d'abord — la fiche existe, les réseaux viennent maintenant).
+- **« Create ad »** : Skip — aucune dépense publicitaire sans décision King.
+- **Vérification** : si un bandeau « pending verification » reste visible, faire passer le code SMS
+  (656 122 239) à M. Domche.
