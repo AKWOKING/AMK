@@ -282,6 +282,17 @@ landing  →  carte de catégorie  →  futur catalogue  →  WhatsApp
   (`dpl_Ctyt42NMev9Y8NGAZxrScuPgHqwu`, READY/PROMOTED, vérifié en ligne — règle PRE-FLIGHT §1f③).
   La production client (Cloudflare) reste à King après validation ; aucun envoi au client ce tour.
 
+**20/10/2026 (suite 2) — la photo du cabinet devient le fond du premier écran (demande client rapportée par King).**
+- **Pratique** : King rapporte que le client demande la photo du cabinet **en fond du hero**, fichier
+  nommé `photoshoot/others/PXL_20261016_131635710.MP.jpg`. Consigné comme déclaré (règle de
+  confiance) ; aucun message client direct au dépôt pour ce point ce tour.
+- **Photo vérifiée à l'œil** : intérieur réel, **aucune personne dans la pièce** (les visages visibles
+  sont des affiches murales) ; dérivée publiée `cabinet-hero.webp` 1920×1270, métadonnées retirées.
+  La photo encadrée du tour précédent est retirée (même image) ; textes/couleurs/logo inchangés.
+- **Publication** : commit `12297ed` déployé sur le banc Vercel de King
+  (`dpl_HDrZgFEEXcNJ3sH5mBnDpKugErBn`, READY/PROMOTED, accueil vérifié en ligne). Production
+  Cloudflare toujours à King après validation ; aucun envoi au client ce tour.
+
 ## Dossier chargé pour écrire ce brief
 
 `clients/dm-optic/` : `dossier.md` · `a-completer.md` · `build-notes.md` · `pre-launch-checklist.md` · `retainer-rhythm.md` · `website/brief.md` · `website/BUILD-KICKOFF.md` · `site/SPEC-PAGES-v1.md` · `site/CLIENT-QUESTIONS-2026-10-08.md` ·

@@ -445,3 +445,18 @@ projet Vercel de test de King (`dpl_Ctyt42NMev9Y8NGAZxrScuPgHqwu`, READY/PROMOTE
 ligne — règle §1f③). La production client (Cloudflare, domaine du cabinet) reste le geste de
 King après sa validation. Détail des correctifs, des portiques (48/48) et des mesures
 avant/après : `clients/dm-optic/build-notes.md`, entrée du 20/10 « Correctifs Classe A appliqués ».
+
+---
+
+## 10.7 Fond photo du premier écran (20/10/2026, demande client) — déployé sur le banc Vercel
+
+Le client demande (rapporté par King) que la photo du cabinet
+`photoshoot/others/PXL_20261016_131635710.MP.jpg` soit le **fond de la section hero**. Elle remplace
+la photo encadrée du §10.6 (même intérieur, plus de double emploi) : dérivée `cabinet-hero.webp`
+(1920×1270, métadonnées retirées, générée par `build_dmoptic.py` à chaque build), plein cadre
+derrière la copie et la carte, voile clair de lisibilité (renforcé sur mobile). Architecture §10 et
+verrous inchangés (48 URL, aucun prix/marque, aucune personne photographiée — les visages visibles
+sont des affiches murales). État : commit `12297ed` déployé sur le banc Vercel de King
+(`dpl_HDrZgFEEXcNJ3sH5mBnDpKugErBn`, READY/PROMOTED, vérifié en ligne) ; portiques 48/48 ;
+production Cloudflare toujours à King après validation. Détail : `build-notes.md`, entrée du
+20/10 « Photo du cabinet en fond du premier écran ».

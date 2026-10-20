@@ -582,3 +582,43 @@ alignement large) avant tout correctif.
   accord explicite pour les scènes d'examen avec visages ; un lot photo de vraies solaires pour
   retirer la dernière illustration ; Search Console / fiche Google après le déploiement client.
   Pas de brag : le site n'est ni validé par King ni livré au client (§1f② se déclenchera à la livraison).
+
+---
+
+## 20/10/2026 · Photo du cabinet en fond du premier écran (demande client) — redéployé Vercel
+
+- **Demande (pratique, rapportée par King)** : le client demande que la photo du cabinet soit placée
+  **en fond de la section hero**, fichier nommé :
+  `clients/dm-optic/photoshoot/others/PXL_20261016_131635710.MP.jpg`. Aucun message client direct
+  n'est au dépôt pour ce point — consigné comme déclaré par King (règle de confiance). C'est la suite
+  directe du souhait client du 10/10 (« C'est mieux la photo du cabinet » au premier écran).
+- **Source vérifiée à l'œil** : intérieur réel du cabinet (murs de montures, assise), **aucune
+  personne dans la pièce** — les visages visibles sont des affiches murales imprimées. Original
+  4365×2887, ~3,0 Mo, avec métadonnées (pointeur GPS présent) : la dérivée publiée est générée par
+  `build_dmoptic.py` depuis ce fichier exact (`HERO_BG_SRC` → `cabinet-hero.webp`, 1920×1270,
+  226,5 Ko, `-strip` : EXIF vérifié vide après génération).
+- **Fait** : la photo devient le fond plein cadre du hero (`.hero-bg`, `object-fit:cover`,
+  `fetchpriority=high`, alt FR/EN via `data-alt-*`) sous un voile clair de lisibilité
+  (`.hero-scrim`, renforcé sur mobile ; le lavis d'identité `.wash` reste au-dessus). La photo
+  encadrée `.herophoto` posée au tour précédent est **retirée** (même image, plus de double emploi) ;
+  copie, carte d'identité, couleurs, textes et logo inchangés. Le générateur de sous-pages reprend la
+  nouvelle tête : les 48 pages sont reconstruites, sans changement de contenu hors accueil.
+- **Portiques §1b** : builds OK ; accueil html 0 · a11y `--strict` rc 0 (1 info « barre fixe ») ·
+  images 0 (6 images, fond compris) · JS 0 · hero 0 ; boucle 48 pages html/a11y/images/js = **48/48
+  rc 0** ; test Node complet vert (le compte d'images `data-alt-*` reste 6 : le fond remplace la
+  photo encadrée) ; HTTP local : accueil, `cabinet-hero.webp`, femmes, examen en 200.
+- **Mesure taste après (fichiers locaux)** : accueil **10 FAIL → 9** ; média du premier écran
+  **12 % → 75 %** et `focal-point` éteint. Le restant = Classe B inchangée (eyebrow, mono,
+  numérotation, micro-labels, lavis, ombre de la carte, filets, boîtes contour) + le `covered-text`
+  du dock WhatsApp fixe à l'échantillonnage mobile (préexistant, hors périmètre). Lint source :
+  44 FAIL (le voile compte 3 dégradés de plus à la source ; l'inspecteur mesuré ne retient que le
+  lavis — le voile neutre sur photo est l'exception prévue par le skill). Captures desktop/mobile
+  relues : texte lisible sur le voile, cabinet reconnaissable à droite et en bas du hero.
+- **Zip + git + déploiement** : `dmopticsarl.zip` reconstruit (128 entrées, 3 430 100 octets,
+  `testzip=None`, 48 `index.html`, `cabinet-hero.webp` inclus). Commit site **`12297ed`** poussé et
+  vérifié (`ls-remote` = HEAD). Déployé d'office (§1f③) : **`dpl_HDrZgFEEXcNJ3sH5mBnDpKugErBn`**,
+  **READY / PROMOTED**, alias `dm-optique-sarl.vercel.app` ; vérifié en ligne : l'accueil sert
+  `cabinet-hero.webp` en première image.
+- **État / ouverts** : inchangés — production Cloudflare = geste de King après validation ;
+  validation client des 40 + stock, accord visages (scènes d'examen), vraies solaires, Search
+  Console / fiche Google après mise en ligne client. Pas de brag (site ni validé ni livré).
