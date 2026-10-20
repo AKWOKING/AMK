@@ -78,6 +78,14 @@ ok("la vitrine porte quatre actions WhatsApp + un lien catalogue (premier lot r�
    (showcase.match(/<a [^>]*href="/g) || []).length === 5 &&
    (showcase.match(/<a class="btn btn-wa wa/g) || []).length === 4 &&
    (showcase.match(/href="\/montures\/"/g) || []).length === 1);
+
+/* 20/10 : la bande « Nos services » montre l'examen RÉEL du cabinet (OK client visages) —
+   la monture H01 retourne à ses écrans à elle : parcours, fiche, catégorie hommes. */
+const actes = (html.match(/<section id="actes"[\s\S]*?<\/section>/) || [""])[0];
+ok("la bande « Nos services » montre l'examen réel, légendé honnêtement (20/10)",
+   actes.includes("cabinet-examen.webp") && !actes.includes("monture-h01") &&
+   /L'examen de la vue, réalisé au cabinet\./.test(actes) &&
+   /The eye examination, carried out at the practice\./.test(actes));
 ok("les trois conseils du choix sont là (forme du visage, appui, usage)",
    (showcase.match(/<div>\s*<h3>/g) || []).length >= 3);
 

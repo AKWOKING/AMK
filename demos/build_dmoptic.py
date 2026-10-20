@@ -82,6 +82,13 @@ PHOTOS = {
 HERO_BG_SRC = ROOT / "clients/dm-optic/photoshoot/others/PXL_20261016_131635710.MP.jpg"
 HERO_BG_NAME = "cabinet-hero.webp"
 HERO_BG_TARGET = "1920x1270"
+# 20/10 (demande King, OK client pour les visages acquis le même jour) : la bande « Nos services »
+# de l'accueil ET la page Examen de vue montent LA photo d'examen réelle — autoréfractomètre,
+# titulaire en blouse blanche, patiente, valise de verres d'essai. Même dérivée que le hero :
+# recadrage centré, métadonnées retirées par -strip (GPS compris).
+EXAM_PHOTO_SRC = ROOT / "clients/dm-optic/photoshoot/others/PXL_20261016_132758528.MP.jpg"
+EXAM_PHOTO_NAME = "cabinet-examen.webp"
+EXAM_PHOTO_TARGET = "1920x1200"
 ASSET = "__ASSET__"                       # préfixe des fichiers : "" pour l'aperçu, chemin relatif pour demos/
 CONCEPT_ASSET = "../hosting/previews/dmoptic/"
 
@@ -254,6 +261,10 @@ def main():
         sys.exit("fichier absent du gabarit : %s" % HERO_BG_NAME)
     size = prepare_from(HERO_BG_SRC, HERO_BG_TARGET, "76", PREVIEW / HERO_BG_NAME)
     print("  %-22s %s → %s (WebP, %5.1f Ko)" % (HERO_BG_SRC.name, HERO_BG_TARGET, HERO_BG_NAME, size / 1024))
+    if ASSET + EXAM_PHOTO_NAME not in html:
+        sys.exit("fichier absent du gabarit : %s" % EXAM_PHOTO_NAME)
+    size = prepare_from(EXAM_PHOTO_SRC, EXAM_PHOTO_TARGET, "76", PREVIEW / EXAM_PHOTO_NAME)
+    print("  %-22s %s → %s (WebP, %5.1f Ko)" % (EXAM_PHOTO_SRC.name, EXAM_PHOTO_TARGET, EXAM_PHOTO_NAME, size / 1024))
 
     logo_png = None
     if opts.logo:

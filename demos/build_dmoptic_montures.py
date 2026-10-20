@@ -610,6 +610,10 @@ def main():
     <ol class="v2-steps">
       {steps_html}
     </ol>
+    <figure class="v2-photo rv">
+      <img src="/cabinet-examen.webp" alt="Examen de la vue réalisé au cabinet DM OPTIQUE SARL" width="1920" height="1200" loading="lazy">
+      <figcaption>{B("Un examen de la vue en cours au cabinet : la mesure à l'autoréfractomètre.", "An eye examination in progress at the practice: the autorefractor measurement.")}</figcaption>
+    </figure>
     <dl class="v2-facts rv">
       <div><dt>{B("Horaires de l'examen", "Examination hours")}</dt><dd>{B("Lundi – Samedi · 8h30 – 13h00", "Monday – Saturday · 8:30–13:00")}</dd></div>
       <div><dt>{B("À apporter", "Bring")}</dt><dd>{B("vos anciennes lunettes, si vous en avez", "your current glasses, if you have any")}</dd></div>
