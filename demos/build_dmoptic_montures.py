@@ -724,6 +724,49 @@ def main():
     (OUTDIR / "404.html").write_text(page404, encoding="utf-8")
     (OUTDIR / "_headers").write_text(HEADERS, encoding="utf-8")
 
+    # ── llms.txt (20/10, proposition validée par King — écart AEO n°1 du test open-seo) ──────────
+    # Fichier de découverte pour crawlers IA : que du vrai (services, pages, coordonnées), aucun
+    # prix, aucune marque, aucune prétention. Bilingue sur les pages-hubs, fiches en français
+    # (chaque page existe FR/EN — dit en clair dans la section Langues).
+    LLMS_NAMED = {
+        "/": ("Accueil — le cabinet, les services, les montures", "Home — the practice, services, frames"),
+        "/montures/": ("Montures — le catalogue complet", "Frames — the full catalogue"),
+        "/montures/femmes/": ("Montures femme (24)", "Women's frames (24)"),
+        "/montures/enfants/": ("Montures enfants (10)", "Children's frames (10)"),
+        "/montures/hommes/": ("Montures homme (6)", "Men's frames (6)"),
+        "/examen-de-vue/": ("Examen de la vue — le déroulé, les horaires, ce qu'il faut apporter", "Eye examination — the steps, hours, what to bring"),
+        "/le-cabinet/": ("Le cabinet — l'équipement et l'adresse", "The practice — equipment and address"),
+        "/contact/": ("Contact — adresse, horaires, WhatsApp", "Contact — address, hours, WhatsApp"),
+    }
+    llms = ["# DM OPTIQUE SARL", "",
+            "> Cabinet d'optique médicale à Bonabéri, Douala (Cameroun), inscrit à l'ONOC. Examen de la vue, verres sur ordonnance, montures femme/homme/enfant, réglage et réparation. Le premier contact passe par WhatsApp : le message arrive déjà écrit.",
+            "> Medical optical practice in Bonaberi, Douala (Cameroon), registered with the ONOC (national opticians order). Eye examinations, prescription lenses, frames for women, men and children, adjustment and repair. First contact is WhatsApp: the message arrives pre-written.",
+            "", "## Pages", ""]
+    fiches = []
+    nom_par_slug = {f["slug"]: f["nom"] for f in frames}
+    for p in site.paths:
+        if p in LLMS_NAMED:
+            fr, en = LLMS_NAMED[p]
+            llms.append(f"- [{fr}]({site.abs(p)}) — {en}")
+        else:
+            slug = p.rstrip("/").rsplit("/", 1)[-1]
+            fiches.append(f"- [{nom_par_slug.get(slug, slug)}]({site.abs(p)})")
+    llms += ["", "## Fiches des montures",
+             "Chaque monture photographiée au cabinet a sa page ; chaque page existe en français et en anglais.",
+             ""] + fiches
+    llms += ["", "## Coordonnées",
+             f"- Adresse : {ADDRESS_FR}",
+             "- Téléphone et WhatsApp : +237 656 122 239",
+             "- Horaires : Lundi–Samedi, 8h30–17h30 · examen de la vue 8h30–13h00",
+             "- Langues : français et anglais sur toutes les pages", ""]
+    llms_txt = chr(10).join(llms)
+    n_links = llms_txt.count("](https://dmoptiquesarl.com")
+    if n_links != 48 or "+237 656 122 239" not in llms_txt or "FCFA" in llms_txt \
+            or any(b in llms_txt for b in ("Ray-Ban", "Oakley", "Gucci", "Essilor", "Zeiss", "NIDEK", "HP")):
+        sys.exit(f"llms.txt incohérent : {n_links} liens (attendu 48), verrous à vérifier")
+    (OUTDIR / "llms.txt").write_text(llms_txt, encoding="utf-8")
+    print(f"  llms.txt : {n_links} liens, {len(llms_txt)} caractères")
+
     # ── Sitemap ─────────────────────────────────────────────────────────────────
     if site.base:
         urls = "".join(f"  <url><loc>{esc(site.abs(p))}</loc></url>\n" for p in site.paths)
