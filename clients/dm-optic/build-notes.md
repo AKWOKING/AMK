@@ -909,3 +909,21 @@ canonical/`og:url`/`og:image` = `https://dmoptiquesarl.com` (+ `og.jpg` 75 Ko pr
 **0 `noindex`** sur pages et fiches (le 404 garde le sien, voulu) ; aucune ligne « aperçu » ;
 `llms.txt` 48 liens. **Aucun fichier du site n'a changé ce tour (docs/registre/checklist) → pas de
 redéploiement (§1f③). La publication Cloudflare est le geste de King — le pas-à-pas est prêt.**
+
+---
+
+## 20/10/2026 · King a déployé sur Cloudflare (Workers, upload du zip) — vérifié en ligne par l'orchestrateur
+
+King a déposé le zip sur **Workers & Pages** (projet `dmoptiquesarl`, déploiement `b3ed20c2`
+« Manually deployed » Ready) — URL temporaire **`dmoptiquesarl.akwo-king-dev.workers.dev`**
+(capture d'écran). Vérifications **en ligne** faites par l'orchestrateur le même jour :
+`/llms.txt` ✓ servi intégralement · **404 bilingue servie** sur une URL inexistante (dock au bon
+message « passer vous voir », liens relatifs qui suivent l'hôte) · fiche F01 ✓ (multi-angles,
+suggestions, WhatsApp à la bonne monture). L'upload Worker sert donc `404.html` et `llms.txt`
+correctement — **aucun passage par Pages nécessaire**. Reste côté King : domaine personnalisé
+(onglet Domains → + Add Domain → `dmoptiquesarl.com` + `www`), puis vérifications téléphone
+(10.5), puis signal à l'orchestrateur → brag §1f②, Search Console (TXT dans la zone), sitemap,
+fiche GBP, note finale. À noter : tant que le domaine n'est pas attaché, les partages WhatsApp
+depuis l'URL workers.dev arrivent en carte grise (`og:url`/`og:image` pointent déjà vers
+`dmoptiquesarl.com` — c'est voulu pour la destination finale) → **envoyer le lien au client
+seulement après l'attachement du domaine**.

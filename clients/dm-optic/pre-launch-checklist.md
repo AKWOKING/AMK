@@ -231,7 +231,10 @@ plateforme, pas des fichiers décoratifs. Doc Cloudflare (Direct Upload, lu le 2
 3. Nom du projet : **`dmoptiquesarl`** → l'URL sera `dmoptiquesarl.pages.dev` (si le nom est pris,
    Cloudflare ajoute des caractères : sans importance, le domaine final est le sien).
 4. Déposer le zip → **Deploy site**. Contrôler tout de suite : une URL inexistante sert bien la
-   404 bilingue, et `/llms.txt` répond.
+   404 bilingue, et `/llms.txt` répond. *(Fait le 20/10 : King a déployé via l'upload **Worker**
+   — `dmoptiquesarl.akwo-king-dev.workers.dev`, déploiement `b3ed20c2` — et la 404 bilingue,
+   `/llms.txt` et les fiches ont été vérifiés en ligne par l'orchestrateur : l'upload Worker sert
+   tout aussi bien que Pages, aucun changement de voie nécessaire.)*
 5. **Domaine personnalisé** : projet → **Custom domains** → `dmoptiquesarl.com` (+ `www` → le
    domaine racine). Si la zone DNS du domaine est déjà dans ce compte Cloudflare, le CNAME se pose
    tout seul ; sinon créer chez le registrar un CNAME `dmoptiquesarl.com` →
