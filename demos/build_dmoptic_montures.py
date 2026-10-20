@@ -650,6 +650,7 @@ def main():
       <div><dt>{B("Adresse", "Address")}</dt><dd>{B(ADDRESS_FR, ADDRESS_EN)}</dd></div>
       <div><dt>{B("Horaires", "Opening hours")}</dt><dd>{B(HOURS_FR, HOURS_EN)}</dd></div>
       <div><dt>{B("Paiement", "Payment")}</dt><dd>{B("Espèces, Mobile Money, paiement en plusieurs fois · livraison possible", "Cash, Mobile Money, payment in instalments · delivery possible")}</dd></div>
+      <div><dt>{B("Assurance", "Insurance")}</dt><dd>{B("Belife Insurance, Willis Towers Watson, Groupe Activa : dossier de prise en charge monté avec vous, selon votre police", "Belife Insurance, Willis Towers Watson, Groupe Activa: claim file built with you, per your policy")}</dd></div>
     </dl>
     <div class="actions">
       <a class="btn" href="/montures/">{B("Voir les montures", "See the frames")}</a>
@@ -676,6 +677,7 @@ def main():
       <div><dt>{B("Adresse", "Address")}</dt><dd>{B(ADDRESS_FR, ADDRESS_EN)}</dd></div>
       <div><dt>{B("Horaires", "Opening hours")}</dt><dd>{B(HOURS_FR, HOURS_EN)}</dd></div>
       <div><dt>{B("Paiement", "Payment")}</dt><dd>{B("Espèces, Mobile Money, paiement en plusieurs fois · livraison possible", "Cash, Mobile Money, payment in instalments · delivery possible")}</dd></div>
+      <div><dt>{B("Assurance", "Insurance")}</dt><dd>{B("Belife Insurance, Willis Towers Watson, Groupe Activa : dossier de prise en charge monté avec vous, selon votre police", "Belife Insurance, Willis Towers Watson, Groupe Activa: claim file built with you, per your policy")}</dd></div>
     </dl>
     <figure style="margin:26px 0 0">
       <img src="/cabinet-enseigne.webp" alt="{esc("Enseigne Consultation au-dessus de l'entrée du cabinet")}" width="1200" height="901" loading="lazy" style="display:block;width:100%;height:auto;border-radius:var(--r-lg);border:1px solid var(--line)">

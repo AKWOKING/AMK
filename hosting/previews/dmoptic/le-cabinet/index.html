@@ -224,6 +224,10 @@ figure.band-fig{margin:34px 0 0}
 figure.band-fig img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:var(--r-lg);border:1px solid var(--line)}
 figure.band-fig figcaption{margin-top:12px;font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
 
+/* ── LES ASSURANCES : chips statiques (cons. UI/UX Pro Max : valeur en texte, pas de statut par couleur seule) ── */
+.assur{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 0;padding:0;list-style:none}
+.assur li{background:var(--brand-tint);color:var(--brand-2);border:1px solid var(--line);border-radius:var(--r);padding:12px 18px;font:600 var(--fs-sm)/1.35 var(--f-d)}
+
 /* ── LA BANDE SOMBRE : comment ça se passe (trois étapes, une seule action) ──────────────────────── */
 .band{background:var(--night);color:var(--on-night);position:relative;overflow:hidden}
 .band h2,.band h3{color:#fff}
@@ -469,6 +473,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
       <div><dt><span class="fr-only" lang="fr">Adresse</span><span class="en-only" lang="en">Address</span></dt><dd><span class="fr-only" lang="fr">Ndobo Mayor — Immeuble West Hotel, 1er étage, dernière porte à droite, Bonabéri, Douala</span><span class="en-only" lang="en">Ndobo Mayor — West Hotel building, first floor, last door on the right, Bonaberi, Douala</span></dd></div>
       <div><dt><span class="fr-only" lang="fr">Horaires</span><span class="en-only" lang="en">Opening hours</span></dt><dd><span class="fr-only" lang="fr">Lundi – Samedi · Examen de vue : 8h30 – 13h00 · Autres besoins : 8h30 – 17h30</span><span class="en-only" lang="en">Monday – Saturday · Eye exam: 8:30–13:00 · Other needs: 8:30–17:30</span></dd></div>
       <div><dt><span class="fr-only" lang="fr">Paiement</span><span class="en-only" lang="en">Payment</span></dt><dd><span class="fr-only" lang="fr">Espèces, Mobile Money, paiement en plusieurs fois · livraison possible</span><span class="en-only" lang="en">Cash, Mobile Money, payment in instalments · delivery possible</span></dd></div>
+      <div><dt><span class="fr-only" lang="fr">Assurance</span><span class="en-only" lang="en">Insurance</span></dt><dd><span class="fr-only" lang="fr">Belife Insurance, Willis Towers Watson, Groupe Activa : dossier de prise en charge monté avec vous, selon votre police</span><span class="en-only" lang="en">Belife Insurance, Willis Towers Watson, Groupe Activa: claim file built with you, per your policy</span></dd></div>
     </dl>
     <div class="actions">
       <a class="btn" href="/montures/"><span class="fr-only" lang="fr">Voir les montures</span><span class="en-only" lang="en">See the frames</span></a>

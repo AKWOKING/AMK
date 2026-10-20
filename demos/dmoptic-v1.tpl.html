@@ -219,6 +219,10 @@ figure.band-fig{margin:34px 0 0}
 figure.band-fig img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:var(--r-lg);border:1px solid var(--line)}
 figure.band-fig figcaption{margin-top:12px;font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
 
+/* ── LES ASSURANCES : chips statiques (cons. UI/UX Pro Max : valeur en texte, pas de statut par couleur seule) ── */
+.assur{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 0;padding:0;list-style:none}
+.assur li{background:var(--brand-tint);color:var(--brand-2);border:1px solid var(--line);border-radius:var(--r);padding:12px 18px;font:600 var(--fs-sm)/1.35 var(--f-d)}
+
 /* ── LA BANDE SOMBRE : comment ça se passe (trois étapes, une seule action) ──────────────────────── */
 .band{background:var(--night);color:var(--on-night);position:relative;overflow:hidden}
 .band h2,.band h3{color:#fff}
@@ -642,6 +646,32 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
         </a>
       </div>
       <p class="note"><span class="fr-only" lang="fr">Le message part déjà écrit&nbsp;: vous pouvez le modifier, ou tout effacer, avant de l'envoyer. Le cabinet est à Bonabéri, Ndobo Mayor (Douala) — 656 122 239.</span><span class="en-only" lang="en">The message is already typed: you can edit it, or delete it, before sending. The practice is in Bonaberi, Ndobo Mayor (Douala) — 656 122 239.</span></p>
+    </div>
+  </section>
+
+  <!-- ══ 3·bis · LES ASSURANCES : qui prend en charge, ce qu'il faut apporter ═══════════════════════ -->
+  <section id="assurances" aria-labelledby="h-assur">
+    <div class="wrap">
+      <h2 id="h-assur" class="rv">
+        <span class="fr-only" lang="fr">Votre assurance, acceptée au cabinet.</span>
+        <span class="en-only" lang="en">Your insurance, accepted at the practice.</span>
+      </h2>
+      <p class="lede rv">
+        <span class="fr-only" lang="fr">Nous travaillons avec les assurances ci-dessous. Apportez votre carte d'assuré et votre ordonnance : nous montons le dossier de prise en charge avec vous. Ce qui est couvert dépend de votre police.</span>
+        <span class="en-only" lang="en">We work with the insurers below. Bring your insurance card and your prescription: we build the claim file with you. What is covered depends on your policy.</span>
+      </p>
+      <ul class="assur rv">
+        <li>Belife Insurance</li>
+        <li>Willis Towers Watson</li>
+        <li>Groupe Activa</li>
+      </ul>
+      <p class="note rv"><span class="fr-only" lang="fr">La liste évolue : si la vôtre n'y figure pas, demandez sur WhatsApp, la réponse arrive dans la conversation.</span><span class="en-only" lang="en">The list changes: if yours is not on it, ask on WhatsApp, the answer comes back in the conversation.</span></p>
+      <div class="actions rv">
+        <a class="btn btn-wa wa" data-fr="Bonjour DM OPTIQUE SARL, je voudrais vérifier ma prise en charge assurance." data-en="Hello DM OPTIQUE SARL, I would like to check my insurance coverage." href="__WA__">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
+          <span class="fr-only" lang="fr">Vérifier ma prise en charge</span><span class="en-only" lang="en">Check my coverage</span>
+        </a>
+      </div>
     </div>
   </section>
 
