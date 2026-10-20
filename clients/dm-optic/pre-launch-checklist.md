@@ -210,3 +210,50 @@ facturation, la proforma ne part pas, l'acompte ne vient pas, et l'item 1 ne s'o
 ### 5 · Accords à mettre par écrit (ce que l'utilisateur confirme oralement)
 - [ ] Domaine et comptes au nom du client ; AMK les gère contre un abonnement mensuel (montant et durée à écrire).
 - [ ] Solde de 75 000 FCFA dû à la livraison ; confirmer le montant et la date.
+
+---
+
+## La mise en ligne — Cloudflare Pages (pas-à-pas King, écrit le 20/10)
+
+**Le livrable est prêt** : `dmopticsarl.zip` @ commit `8cb43bc` — 132 fichiers, `testzip` OK,
+**0 référence Vercel dans les HTML**, canonical/`og:url`/`og:image` déjà sur
+`https://dmoptiquesarl.com` (aucune passe `--url` nécessaire), **0 `noindex`** sur les pages
+(le 404 garde le sien, voulu), `llms.txt` inclus. Le dossier est construit pour Cloudflare Pages :
+`404.html` (page 404 native Pages) et `_headers` (en-têtes de sécurité) y sont des fonctions de la
+plateforme, pas des fichiers décoratifs. Doc Cloudflare (Direct Upload, lu le 20/10) : le
+**drag & drop accepte le zip ou le dossier extrait** (Wrangler, lui, refuse les zip) ; limites
+1 000 fichiers / 25 Mo par fichier — nous sommes à 132 fichiers, le plus lourd ~270 Ko.
+
+1. Télécharger `dmopticsarl.zip` **depuis GitHub** (branche `arena/2fffee3b-amk`, racine du dépôt).
+   Ne jamais assembler un dossier à la main : le zip EST le livrable (généré par le build, gardé).
+2. dash.cloudflare.com → **Workers & Pages** → Create application → Pages → **Drag and drop
+   your files**.
+3. Nom du projet : **`dmoptiquesarl`** → l'URL sera `dmoptiquesarl.pages.dev` (si le nom est pris,
+   Cloudflare ajoute des caractères : sans importance, le domaine final est le sien).
+4. Déposer le zip → **Deploy site**. Contrôler tout de suite : une URL inexistante sert bien la
+   404 bilingue, et `/llms.txt` répond.
+5. **Domaine personnalisé** : projet → **Custom domains** → `dmoptiquesarl.com` (+ `www` → le
+   domaine racine). Si la zone DNS du domaine est déjà dans ce compte Cloudflare, le CNAME se pose
+   tout seul ; sinon créer chez le registrar un CNAME `dmoptiquesarl.com` →
+   `dmoptiquesarl.pages.dev`, **proxifié** (à confirmer à l'écran au moment de l'ajout — le flow
+   du dashboard prime). Le domaine reste **au nom du client** (item 4 de cette checklist).
+6. **Vérifications en ligne, sur un téléphone, en plein jour** (portique 10.5 inchangé) : accueil
+   FR · bascule EN qui change tout · un WhatsApp pré-rempli qui s'ouvre · `/montures/` · une fiche
+   · le dock au bon message · 404 · `llms.txt` · partage du lien dans WhatsApp (la vignette
+   `og.jpg` doit apparaître).
+7. **Prévenir l'orchestrateur dès que c'est en ligne** : c'est le déclencheur du **brag de
+   livraison** (PRE-FLIGHT §1f② — brouillon présenté avec le livrable), de la note datée
+   Activity-Log, des vérifications relais (Search Console ci-dessous) et du point sur le solde
+   (item 5 des accords).
+
+## Search Console + relais — après la mise en ligne (complète le « Après la mise en ligne » ci-dessus)
+
+- [ ] **Propriété Domaine** recommandée (`dmoptiquesarl.com`, couvre http/https/www) : vérification
+  par enregistrement **TXT** dans la zone DNS — la même séance que le CNAME de l'étape 5.
+- [ ] **Sitemap** : soumettre `https://dmoptiquesarl.com/sitemap.xml` (48 URL).
+- [ ] **Inspection d'URL** → « Demander une indexation » sur `/`, `/montures/`, `/examen-de-vue/`
+  et une fiche (ex. F01).
+- [ ] Contrôler que Google lit bien `llms.txt` (inspection d'URL sur `/llms.txt`).
+- [ ] **Fiche Google Business** : URL du site = `https://dmoptiquesarl.com/`, nom et horaires
+  identiques au site — la préparation `local-seo` est dans `launch/SETUP-GOOGLE-BUSINESS.md`.
+- [ ] Note datée dans `sales/Activity-Log.md`. Jugement SEO à 30 jours, pas avant.

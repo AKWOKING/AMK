@@ -877,3 +877,35 @@ lien de rendez-vous = wa.me examen, attributs honnêtes, géo-grille reportée a
 **Déploiement : commit site `8cb43bc` → `dpl_8pWGChkhjeGJQb9zpQE77mGsisRH` READY/PROMOTED,
 `/llms.txt` vérifié en ligne (§1f③).** Reste : F8 (validation client 40+stock, Cloudflare = King,
 Search Console/fiche après mise en ligne) ; Classe B = ruling séparé.
+
+---
+
+## 20/10/2026 · Solutions d'audit implémentées + le site est PRÊT pour Cloudflare (geste de King)
+
+**Solutions long terme (ordre King « implement the solutions proposed in the audit ») :**
+- **Classe B → ruling à l'écrit** : la ligne v2 de **`clients/_uniqueness-registry.md`** (en tête)
+  porte désormais **« IDENTITÉ FIGÉE APPROUVÉE PAR KING LE 20/10 »** avec l'empreinte complète
+  (parcours d'abord, photo réelle partout, crème `#F6EBE0`, marine `#0A1220`, Schibsted + IBM Plex,
+  « l'aveu avant la promesse », verrous). Les outils (taste, ECC, personas) consignent les
+  dispositifs, ils ne les rejugent plus. La ligne v1 du 24/09 (jamais livrée) reste en historique,
+  marquée remplacée.
+- **`llms.txt` généralisé au routage** : la ligne « Website build » de PRE-FLIGHT §1 impose
+  désormais le fichier de découverte IA généré au build (pattern DM + garde) pour tout site client
+  destiné à une production.
+- **Runbooks de publication** : deux sections ajoutées à `pre-launch-checklist.md` —
+  « La mise en ligne — Cloudflare Pages (pas-à-pas King) » (zip GitHub → Workers & Pages → drag &
+  drop → `dmoptiquesarl.pages.dev` → domaine personnalisé → vérifications téléphone → le brag
+  §1f② part dès la mise en ligne) et « Search Console + relais » (propriété Domaine TXT, sitemap
+  48, inspection + indexation, `llms.txt` contrôlé, fiche GBP pointée). La doc Cloudflare
+  Direct Upload a été lue ce jour : drag & drop accepte le zip, limites 1 000 fichiers/25 Mo par
+  fichier (nous : 132 fichiers, max ~270 Ko).
+- **F8-pack** : la checklist existante EST le rituel (item 10 + sections nouvelles) — rien à
+  créer de plus. **Sandbox reverts** : couverts structurellement par §1e (rien à ajouter).
+  **Photo solaires réelle** : reste ouvert (attend une photo du cabinet).
+
+**Vérifications « prêt à publier » (exécutées ce jour, sur les fichiers du commit `8cb43bc`) :**
+zip `dmopticsarl.zip` 132 fichiers, `testzip` OK ; **0 référence Vercel** dans les HTML ;
+canonical/`og:url`/`og:image` = `https://dmoptiquesarl.com` (+ `og.jpg` 75 Ko présent) ;
+**0 `noindex`** sur pages et fiches (le 404 garde le sien, voulu) ; aucune ligne « aperçu » ;
+`llms.txt` 48 liens. **Aucun fichier du site n'a changé ce tour (docs/registre/checklist) → pas de
+redéploiement (§1f③). La publication Cloudflare est le geste de King — le pas-à-pas est prêt.**
