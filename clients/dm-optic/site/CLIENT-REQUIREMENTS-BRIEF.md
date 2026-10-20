@@ -268,6 +268,20 @@ landing  →  carte de catégorie  →  futur catalogue  →  WhatsApp
 - **Publication : toujours pas faite pour cette v2.** King valide l'aperçu puis déploie lui-même sur Cloudflare ;
   l'ancien aperçu Vercel reste sur le lot 1 tant que King ne demande pas un nouvel envoi.
 
+**20/10/2026 (suite) — correctifs Classe A + photo du cabinet au premier écran, sur le banc Vercel de King.**
+- **Ruling King** : seuls les défauts objectifs de la revue taste sont corrigés (marges mobiles,
+  filtres repliés, CTA de fiche, tailles de texte, mouvement, examen sans image, illustrations de
+  l'accueil) ; l'identité approuvée par le client n'est pas touchée (couleurs/texte/logo inchangés).
+- **Souhait client du 10/10 réalisé** : « C'est mieux la photo du cabinet » — l'intérieur réel du
+  cabinet est au premier écran (le logo géant décoratif est retiré, la carte d'identité reste) et
+  sur `/examen-de-vue/` ; l'enseigne réelle illustre la bande « Comment ça se passe ».
+- **« Le site ne montre que du vrai »** : l'accueil montre les montures réelles F01/E16/H01 ;
+  seule la carte « Lunettes de soleil » garde une photo d'illustration **légendée comme telle**,
+  faute de monture solaire réelle dans le catalogue photographié.
+- **Publication** : commit `5ac4749` déployé sur le projet Vercel de test de King
+  (`dpl_Ctyt42NMev9Y8NGAZxrScuPgHqwu`, READY/PROMOTED, vérifié en ligne — règle PRE-FLIGHT §1f③).
+  La production client (Cloudflare) reste à King après validation ; aucun envoi au client ce tour.
+
 ## Dossier chargé pour écrire ce brief
 
 `clients/dm-optic/` : `dossier.md` · `a-completer.md` · `build-notes.md` · `pre-launch-checklist.md` · `retainer-rhythm.md` · `website/brief.md` · `website/BUILD-KICKOFF.md` · `site/SPEC-PAGES-v1.md` · `site/CLIENT-QUESTIONS-2026-10-08.md` ·

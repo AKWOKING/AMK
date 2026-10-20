@@ -423,3 +423,25 @@ pas reçu. Portiques §1b : accueil concept vert (html/a11y/images/js/hero) et b
 (html/a11y/images/js ; a11y = 3 pages avec l'avertissement info « barre fixe ») ; test Node complet vert,
 suite 2b incluse. **Non déployé** : l'aperçu local sert à la validation King ; l'envoi Cloudflare production
 reste le geste de King, et l'ancien test Vercel garde la version lot 1 tant que King ne demande pas un nouvel envoi.
+
+---
+
+## 10.6 Correctifs Classe A (20/10/2026, ruling King) — construits et déployés sur le banc Vercel
+
+Après la revue taste-skill de la v2 (`build-notes.md`, même date), King a retenu la **Classe A
+uniquement** (défauts objectifs A1–A8, identité inchangée) + **photo réelle du cabinet au premier
+écran** (logo géant décoratif retiré, carte d'identité conservée — souhait client du 10/10).
+L'architecture §10 ne change pas : mêmes 9 types d'URL, sitemap **48 URL**, mêmes verrous
+(aucun prix, aucune marque, tags visible seulement, photos sans personne). Ce qui change :
+marges mobiles des sous-pages restaurées, filtres de catégorie repliés derrière « Filtrer » sur
+mobile (état toujours en fragments `#`, aucune URL de filtre indexable), fiche en deux colonnes
+avec CTA WhatsApp visible (+ CTA mobile après la première image), tailles de texte relevées,
+mouvement d'apparition sur les sous-pages, photo réelle sur `/examen-de-vue/`, accueil en vraies
+montures du catalogue — la carte « Lunettes de soleil » reste la seule illustration, légendée
+comme telle (aucune solaire réelle photographiée à ce jour).
+
+État de déploiement (remplace le « non déployé » du §10.5) : commit `5ac4749` déployé sur le
+projet Vercel de test de King (`dpl_Ctyt42NMev9Y8NGAZxrScuPgHqwu`, READY/PROMOTED, vérifié en
+ligne — règle §1f③). La production client (Cloudflare, domaine du cabinet) reste le geste de
+King après sa validation. Détail des correctifs, des portiques (48/48) et des mesures
+avant/après : `clients/dm-optic/build-notes.md`, entrée du 20/10 « Correctifs Classe A appliqués ».

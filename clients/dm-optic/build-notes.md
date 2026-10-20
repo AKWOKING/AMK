@@ -524,3 +524,61 @@ direct · consensus corps ≥ 16 px — détail et pris/rejeté : `inspiration.m
 **État** : revue + recherche consignées, **aucun fichier du site modifié** (donc pas de redéploiement
 Vercel — §1f③ ne se déclenche pas). En attente du ruling King sur le périmètre (A seul / A + B-lite /
 alignement large) avant tout correctif.
+
+---
+
+## 20/10/2026 · Correctifs Classe A appliqués (ruling King) + photo du cabinet au premier écran — redéployé Vercel
+
+- **Ruling King (20/10)** : périmètre = **Classe A uniquement** (les 8 défauts objectifs de la revue
+  taste ci-dessus) ; l'identité figée (mono, filets, numérotation, kicker, lavis, ombre de la carte,
+  crème) n'est **pas** touchée (Classe B toujours en attente d'un ruling séparé). Choix hero :
+  **photo réelle du cabinet au premier écran**, logo géant en anneau retiré, carte d'identité gardée.
+  C'est aussi le souhait du client du 10/10 (« C'est mieux la photo du cabinet »), différé à l'époque
+  faute de photos.
+- **Fait (A1–A8)** : A1 `.v2-main section` en longhands verticaux (le `padding:44px 0` n'écrase plus
+  la gouttière `.wrap`) ; A2 `.herologo` supprimé (balise + CSS), plus aucun chevauchement du kicker
+  en mobile ; A3 filtres mobiles repliés (bouton « Filtrer » `aria-expanded`/`aria-controls`, panneau
+  `.v2-filters-panel`, chips hors panneau, visible sans JS ; « Afficher X montures » masqué ≥780 px) ;
+  A4 fiche en deux colonnes ≥980 px (galerie 55 % · faits + CTA à droite) + CTA WhatsApp mobile après
+  la première image (`.v2-cta-mobile`, masqué ≥980 px) ; A5 `--fs-sm:1rem`, `--fs-label:.8125rem` ;
+  A6 `.rv` porté dans le générateur (cartes, portes, fiche, examen — safeguard mobile : les cartes du
+  catalogue restent visibles sans attente de révélation sur téléphone) ; A7 `cabinet-interieur.webp`
+  posé sur `/examen-de-vue/` (réelle, sans personne — les scènes avec visages restent exclues) ;
+  A8 accueil en vraies photos : F01 (vue), E16 (enfants), H01 (bande services) en `object-fit:contain`
+  sur le fond crème du catalogue, enseigne réelle en bande sombre ; **solaire = seule illustration
+  restante, légendée** (« Montures photographiées au cabinet. Lunettes de soleil : photo
+  d'illustration. »), car aucune monture solaire réelle n'est au catalogue (`frames.json` vérifié).
+  Pipeline : `PHOTOS` de `build_dmoptic.py` réduit à `dmoptic-solaires.webp` ; les 4 WebP stock
+  devenus sans référence (`dmoptic-lunettes|montures|enfants|mesure.webp`) sont supprimés du dossier
+  déployé. Tests ajustés au strict nécessaire : 6 images `data-alt-*`, légende mixte honnête,
+  compteurs `v2-card rv`, présence toggle/panneau et `v2-fiche`/`v2-cta-mobile`.
+- **Portiques §1b** : builds `--production` + montures OK ; accueil html 0 · a11y `--strict` rc 0
+  (1 info « barre fixe ») · images 0 (6 images) · JS 0 · hero 0 ; test Node complet vert (suite 2b
+  incluse) ; boucle 48 pages html/a11y/images/js = **48/48 rc 0** partout ; HTTP local 7 routes 200.
+- **Revue taste après (même chaîne, avant → après)** : femmes inspect **6 FAIL → 4** (marges mobiles
+  0/24 px → 20/21, `edge-text`/`off-centre`/`still-page`/`blank-gap` éteints, premier produit visible
+  au premier écran mobile, corps 15,2 → 16 px) ; fiche **5 → 4** (`edge-text` et `empty-middle`
+  822 px éteints, CTA visible sans défiler sur desktop comme sur mobile, page 3,1 → 2,1 écrans,
+  mouvement 0 → 8 = WARN) ; examen **8 → 5** (0 → 1 photo réelle, média hero 46 %, `focal-point`
+  éteint, mouvement 0 → 9 = WARN ; `few-pictures` reste : le plancher du skill est 4 images, une seule
+  photo honnête sans visage est utilisable aujourd'hui) ; accueil **10 → 10** en nombre mais pas en
+  nature (`small-text`/`body-size` éteints, dégradés mesurés 2 → 1, lint 43 → 41 FAIL ; un
+  `covered-text` tablette apparaît à l'échantillonnage : le dock WhatsApp fixe couvre transitoirement
+  un titre pendant le défilement — comportement préexistant du dock, hors périmètre Classe A, le
+  `padding-bottom` du corps protège la fin de page). Le reste des FAIL = la Classe B, inchangée par
+  ruling. Lint après : accueil 41/13 · femmes/fiche 36/23 · examen 40/23 (avant : 43/12 · 38/21 · 42/21).
+  Limites dites : inspection sur fichiers locaux (egress Chromium fermé ; `font-fallback` des
+  sous-pages = artefacts du serveur local de l'inspecteur, chemins absolus `/fonts/…`) ; le live est
+  vérifié par lecture de pages, pas par l'inspecteur.
+- **Zip + git + déploiement** : `dmopticsarl.zip` reconstruit (127 entrées, 3 189 187 octets,
+  `testzip=None`, 48 `index.html`, 65 WebP de montures). Commit site **`5ac4749`** poussé et vérifié
+  (`ls-remote` = HEAD). Déployé d'office (§1f③) sur le projet Vercel de test de King :
+  **`dpl_Ctyt42NMev9Y8NGAZxrScuPgHqwu`**, **READY / PROMOTED**, alias `dm-optique-sarl.vercel.app` ;
+  vérifié en ligne : accueil (photo du cabinet au hero, F01/E16/H01 réels, légende mixte),
+  `/montures/femmes/` (« Filtrer », 24 cartes), fiche F01 (CTA WhatsApp juste après la première
+  image), `/examen-de-vue/` (photo réelle de l'intérieur).
+- **État / ouverts** : production client inchangée — l'upload Cloudflare reste le geste de King après
+  sa validation. Toujours en attente : validation client des 40 + correspondance codes ↔ stock ;
+  accord explicite pour les scènes d'examen avec visages ; un lot photo de vraies solaires pour
+  retirer la dernière illustration ; Search Console / fiche Google après le déploiement client.
+  Pas de brag : le site n'est ni validé par King ni livré au client (§1f② se déclenchera à la livraison).
