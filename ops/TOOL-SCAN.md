@@ -414,3 +414,26 @@ l'exige, jamais avant · ChatGPT/Gemini free = déjà remplacés par l'orchestra
   ne décide pas un déploiement ; aucune donnée client dans un prompt de persona (règle 4) ;
   toute sortie client-facing passe la validation de King (règle 3). Re-review : à chaque nouveau
   lot de personas amont jugé utile (changement de pin daté, même procédure).
+
+## 20/10 — OpenHiggsfield (wide-trace/open-higgsfield) : AUDITÉ, NON INSTALLÉ (ordre conditionnel de King : auditer d'abord, installer seulement si utile/vendable)
+
+- **(a) Problème visé :** générer des visuels/vidéos IA (38 modèles : Seedance 2.5, Kling 3,
+  Flux, Grok Imagine…) pour le marketing des clients.
+- **(b) Ce que c'est réellement :** un studio Next.js 16 (1,6 Mo, pin de lecture `b16a0ef`) qui
+  appelle l'API **payante** Higgsfield avec la clé du compte (`id:secret`) + un token **Vercel
+  Blob** pour les uploads. L'interface est gratuite ; la génération est facturée à l'appel, chez
+  un tiers, depuis un compte à ouvrir.
+- **(c) Verdict flux de travail : NON aujourd'hui.** (1) Verrous AMK : « le site ne montre que du
+  vrai » — aucun visuel IA sur les sites et supports clients ; visages IA déjà écartés ; le plan
+  month-1 DM repose sur les vraies photos. (2) L'origine API est injoignable depuis le bac
+  (egress). (3) pnpm + clé payante + Vercel Blob requis pour un test réel.
+- **(d) Verdict vente : NON en l'état.** **Aucune LICENCE dans le dépôt** (vérifié sur tout
+  l'arbre) : le « free & open-source » du README ne vaut rien juridiquement — all rights
+  reserved, impossible de dériver ou de revendre légalement ; dépendance à une API payante au
+  nom de qui l'ouvre ; toute utilisation client enverrait des données à un tiers sans accord
+  explicite (règle 4) ; en tension avec le positionnement honnêteté de l'agence.
+- **(e) Ce qui changerait le verdict :** l'amont ajoute une LICENCE · King ouvre un compte
+  Higgsfield et le teste personnellement (règle 3) · un cas d'usage concret validé par lui
+  (ex. b-roll abstrait pour pubs — jamais de faux visuels produits ou de faux cabinets).
+  Alternative immédiate sans installation : la version hébergée openhiggsfield.ai avec la clé
+  de King. Entrée tenue pour le registre (règle 5) — réévaluer si l'un des trois points bouge.

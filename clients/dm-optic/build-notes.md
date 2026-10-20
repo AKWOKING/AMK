@@ -961,3 +961,37 @@ re-rendu, verdict final OK « mouvement présent dans chaque fenêtre ».** Livr
 `/home/user/brag-dm/` — `brag.mp4` (20,0 s, 15,3 Mo, 1080×1920, H.264+AAC), `poster.jpg`,
 `share-copy.txt`, `brag-plan.md`. **Brouillon : rien n'est envoyé au client sans validation de
 King** (lecture téléphone = portique final).
+
+---
+
+## 20/10/2026 (suite) · open-higgsfield audité (non installé) · artefacts du brag dans le dépôt · voie rapide Google décidée
+
+**open-higgsfield — audité, NON installé** (ordre conditionnel de King : auditer d'abord,
+installer seulement si utile au flux ou vendable). Ce que c'est : un studio Next.js 16 (1,6 Mo,
+`b16a0ef`) qui appelle l'API **payante** Higgsfield (38 modèles — Seedance 2.5, Kling 3, Flux,
+Grok Imagine…) avec la clé du compte (`id:secret`) + Vercel Blob pour les uploads. **Verdict
+flux : non** — verrous « que du vrai » (aucun visuel IA sur les supports clients, visages IA
+écartés, month-1 DM sur les vraies photos), origine API injoignable depuis le bac, pnpm + clé
+payante requis. **Verdict vente : non en l'état** — **aucune LICENCE dans tout le dépôt**
+(vérifié ; le « free & open-source » du README ne vaut rien juridiquement), dépendance à une API
+payante, egress de données client vers un tiers (règle 4). Verdict modifiable si : licence
+ajoutée en amont + compte ouvert et testé par King + cas d'usage concret validé. Entrée complète
+au TOOL-SCAN.
+
+**Brag : où est la vidéo ?** Le `brag.mp4` (15,3 Mo) reste **hors Git** — règle debout du
+19/10 : aucun mp4 versionné (plafond de patch, livrables régénérables) ; il vit dans le bac
+(`/home/user/brag-dm/`) et a été présenté dans le visualiseur à King. Les **artefacts légers
+entrent dans le dépôt** ce jour : `clients/dm-optic/brag/` — `brag-plan.md`, `share-copy.txt`,
+`poster.jpg` (12,5 Ko). Si King statue « versionner le mp4 », c'est un commit — décision
+explicite contre la règle.
+
+**Voie rapide Google (décision King — le client répond lentement, fuseaux différents).** Les
+comptes sont créés par l'agence **au nom du cabinet, maintenant, sans lui** : e-mail
+`dmoptiquesarl@gmail.com` (secours = King, 2FA, mot de passe JAMAIS dans le dépôt public),
+**Search Console** propriété Domaine + TXT dans la zone Cloudflare de King (zéro dépendance
+client) puis sitemap + indexation, première mesure = **Cloudflare Web Analytics** (toggle, zéro
+build — GA4 = décision séparée), **fiche GBP** créée avec les données déjà préparées — la
+vérification SMS vers le 656 122 239 fait de **« transférer le code »** la seule action du
+client (asynchrone, 10 s, pas de séance à planifier). Ligne de propriété écrite au client +
+« pratique » au log. Section « Voie rapide » ajoutée au `SETUP-GOOGLE-BUSINESS.md`. Rappel
+ouvert : l'**apex** `dmoptiquesarl.com` (sans www) reste à attacher (Domains → Add Domain).

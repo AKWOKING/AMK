@@ -52,3 +52,31 @@ photos, avis déjà réglés ci-dessus) :
   mise en production.
 - **Le relais AEO est prêt** : `llms.txt` à la racine du site (48 liens, coordonnées) — la fiche
   et le site racontent la même chose, en même temps.
+
+## Voie rapide (20/10, décision King) — les comptes Google, créés par l'agence, au nom du cabinet
+
+Le client est difficile à joindre (fuseau différent, réponses lentes) : on crée les comptes
+**maintenant, sans lui**, en respectant la règle « comptes au nom du client » — le compte est au
+nom du cabinet, AMK le gère dans l'abonnement mensuel, et la ligne de propriété part par écrit.
+
+1. **E-mail du cabinet (5 min, sans le client)** : créer `dmoptiquesarl@gmail.com` — nom affiché
+   « DM OPTIQUE SARL » ; e-mail de secours = celui de King ; téléphone de secours = celui de
+   King ; 2FA activée. **Le mot de passe ne va JAMAIS dans le dépôt (public)** : il vit dans le
+   gestionnaire de King. Ligne écrite au client : « on vous crée et on gère vos comptes Google
+   (e-mail, fiche, Search Console) — l'e-mail est à votre nom, AMK le gère dans l'abonnement » ;
+   consigné « pratique » à l'Activity-Log.
+2. **Search Console (5 min, sans le client)** : propriété **Domaine** `dmoptiquesarl.com` avec
+   ce compte → enregistrement TXT dans la zone Cloudflare (déjà dans le compte de King) →
+   soumettre `sitemap.xml` (48 URL) → demander l'indexation de `/`, `/montures/`,
+   `/examen-de-vue/` + une fiche. **Zéro dépendance client.**
+3. **Analytics** : première mesure = **Cloudflare Web Analytics** (toggle dans le dashboard,
+   zéro changement de site). GA4 plus tard = décision séparée (un build avec le snippet, portiques
+   + déploiement §1f③).
+4. **Fiche GBP (20 min, sans le client)** : créer la fiche avec le compte du cabinet — tout est
+   déjà préparé ci-dessus (nom, catégories, adresse, horaires, téléphone, site
+   `www.dmoptiquesarl.com`, description, photos, services, lien wa.me). À la vérification,
+   choisir **SMS vers +237 656 122 239** : **la seule action du client = transférer le code**
+   (« quand un code Google arrive par SMS sur le 656 122 239, envoyez-le nous ») — asynchrone,
+   10 secondes, aucune séance à planifier. Repli : carte postale.
+5. **Ce que le client garde** : la propriété des comptes, le téléphone (vérification, puis
+   récupération secondaire une fois son accord écrit reçu), la parole dans les réponses aux avis.
