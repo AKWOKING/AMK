@@ -927,3 +927,37 @@ fiche GBP, note finale. À noter : tant que le domaine n'est pas attaché, les p
 depuis l'URL workers.dev arrivent en carte grise (`og:url`/`og:image` pointent déjà vers
 `dmoptiquesarl.com` — c'est voulu pour la destination finale) → **envoyer le lien au client
 seulement après l'attachement du domaine**.
+
+---
+
+## 20/10/2026 · Le domaine est en ligne (www) — audit production 12/12 vert + brag de livraison produit (§1f②)
+
+**Mise en ligne constatée.** King a attaché **`www.dmoptiquesarl.com`** au déploiement Cloudflare
+(projet `dmoptiquesarl`, toujours `b3ed20c2`). **Audit production lu en direct depuis le domaine :
+12 ressources, zéro erreur** — accueil ✓ (hero photo, carte, vrais CTA) · catalogue ✓ · catégories
+femmes (24 + filtres avec comptes)/hommes (6)/enfants (10) ✓ · fiche F01 ✓ (multi-angles,
+WhatsApp à la bonne monture, suggestions) · examen ✓ · le-cabinet ✓ · contact ✓ (Maps, horaires,
+paiement) · **404 bilingue sur URL inventée** ✓ · `llms.txt` ✓ · `sitemap.xml` 48 URL ✓.
+
+**Un point ouvert (à King, 2 minutes) : le domaine racine `dmoptiquesarl.com` sans www ne répond
+pas depuis le bac** (fetch en échec ; www répond). Or canonical/`og:url`/`sitemap`/`llms.txt`
+pointent vers la racine. **Action : Domains → + Add Domain → `dmoptiquesarl.com`** (l'apex se
+pose comme le www — la zone est déjà dans le compte), puis vérifier depuis un téléphone. Si la
+racine reste morte après ça, on rebascule les canonical sur www (rebuild d'une ligne) — mais
+l'apex est la voie propre.
+
+**Brag de livraison produit (§1f②) — `brag.mp4`.** Chaîne réinstallée (home effacée :
+`tools/{brag,video}/install.sh`, ffmpeg 7.0.2 via imageio-ffmpeg, ffprobe npm relié — leçon :
+`ffprobe` n'est pas `ffmpeg`, l'installeur `@ffprobe-installer` fournit le vrai). Captures
+**réelles** du site construit (Chromium local, 1080×1920) : accueil, grille femmes, fiche F01,
+examen. Composition Hyperframes 20 s verticale — 5 scènes, identité du site (marine `#0A1220`,
+crème `#F6EBE0`, Schibsted + IBM Plex en `@font-face` locaux), chaque scène en mouvement continu
+(panoramiques + zooms lents). Musique : **nappe générée ffmpeg** (accord, libre AMK — la piste
+ende.app reste interdite). **Portiques dans l'ordre : `check` 0 erreur / 0 warning, contraste
+10/10 WCAG AA ; 3 débordements volontaires déclarés `data-layout-allow-overflow` ; snapshots
+relus à l'œil (planche 6 frames) ; après 1ᵉʳ rendu, `audit_video_motion` a BLOQUÉ la queue
+d'outro (18–20 s figée — la leçon du 19/10 confirmée) → zoom renforcé 1,0→1,15 + dérive,
+re-rendu, verdict final OK « mouvement présent dans chaque fenêtre ».** Livrables hors dépôt :
+`/home/user/brag-dm/` — `brag.mp4` (20,0 s, 15,3 Mo, 1080×1920, H.264+AAC), `poster.jpg`,
+`share-copy.txt`, `brag-plan.md`. **Brouillon : rien n'est envoyé au client sans validation de
+King** (lecture téléphone = portique final).
