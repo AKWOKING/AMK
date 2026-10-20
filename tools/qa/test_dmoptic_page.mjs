@@ -58,7 +58,7 @@ ok("un seul numéro dans toute la page : celui du cabinet, avec l'indicatif",
 
 const imgs = [...html.matchAll(/<img[^>]*data-alt-fr[^>]*>/g)].map((m) => m[0]);
 ok(`les ${imgs.length} images portent data-alt-fr ET data-alt-en`,
-   imgs.length === 5 && imgs.every((t) => t.includes("data-alt-en=") && !/alt=""/.test(t)));
+   imgs.length === 6 && imgs.every((t) => t.includes("data-alt-en=") && !/alt=""/.test(t)));
 
 /* ── la vitrine des montures (v2.1) : trois familles, trois conseils, et aucune marque inventée ───── */
 const showcase = (html.match(/<section id="montures"[\s\S]*?<\/section>/) || [""])[0];
@@ -66,8 +66,8 @@ const cards = showcase.match(/<article class="frame[\s\S]*?<\/article>/g) || [];
 ok("la vitrine montre trois familles de montures, une photo et un titre chacune",
    cards.length === 3 && cards.every((c) => c.includes("<img") && c.includes("<h3>")),
    "cartes : " + cards.length);
-ok("la vitrine dit que les photos sont des illustrations (jamais des montures du cabinet)",
-   /Photos d'illustration\./.test(showcase) && /Illustration photos\./.test(showcase));
+ok("la vitrine montre de vraies montures du cabinet ; seule la carte soleil reste une illustration légendée (20/10)",
+   /Montures photographiées au cabinet\. Lunettes de soleil : photo d'illustration\./.test(showcase) && /Frames photographed at the practice\. Sunglasses: illustration photo\./.test(showcase));
 ok("la vitrine ne nomme AUCUNE marque et n'affiche AUCUN prix",
    !/Ray-Ban|Oakley|Gucci|Tom Ford|Oliver Peoples|Essilor|Zeiss/i.test(showcase) && !/\d{3,}\s?(FCFA|XAF)/i.test(showcase));
 /* v2.1 : « une seule action ». Option B (King, 08/10) : quatre — les trois cartes de familles + la question
@@ -300,15 +300,15 @@ ok("frames.json v2 : aucun prix, aucune marque nommée",
   const page = fs.existsSync(p) ? fs.readFileSync(p, "utf8") : "";
   const n = framesData.filter((f) => f.categorie === c).length;
   ok(`page catégorie ${c} : ${n} cartes, filtres forme/couleur à compteurs, aucun prix`,
-     (page.match(/class="v2-card"/g) || []).length === n && page.includes('data-group="forme"') &&
-     page.includes('data-group="couleur"') && !/\d{3,}\s?(FCFA|XAF)/i.test(page),
+     (page.match(/class="v2-card(?: rv)?"/g) || []).length === n && page.includes('data-group="forme"') &&
+     page.includes('data-group="couleur"') && page.includes('v2-filter-toggle') && page.includes('v2-filters-panel') && !/\d{3,}\s?(FCFA|XAF)/i.test(page),
      "générée par build_dmoptic_montures.py");
 });
 const f01 = framesData.find((f) => f.code === "F01");
 const ficheF01 = path.join(ROOT, "hosting", "previews", "dmoptic", "montures", "femmes", f01.slug, "index.html");
 const ficheF01Html = fs.existsSync(ficheF01) ? fs.readFileSync(ficheF01, "utf8") : "";
 ok("fiche F01 : galerie réelle + référence à donner au cabinet",
-   ficheF01Html.includes("monture-f01.webp") && ficheF01Html.includes("Référence à donner au cabinet"));
+   ficheF01Html.includes("monture-f01.webp") && ficheF01Html.includes("Référence à donner au cabinet") && ficheF01Html.includes("v2-fiche") && ficheF01Html.includes("v2-cta-mobile"));
 
 /* ═════════════ 3 · les deux utilitaires : copier, enregistrer ═════════════ */
 console.log("\n═══ 3 · copier le numéro, enregistrer le contact ═══");

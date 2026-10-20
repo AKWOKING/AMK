@@ -56,7 +56,7 @@ var l=localStorage.getItem("dmoptic-lang");if(l==="en"||l==="fr")h.setAttribute(
   --fs-h2:clamp(1.55rem,5.4vw,2.3rem);
   --fs-h3:clamp(1.05rem,3.4vw,1.2rem);
   --fs-lead:clamp(1.05rem,2.9vw,1.18rem);
-  --fs-base:1.0625rem; --fs-sm:.95rem; --fs-xs:.875rem; --fs-label:.72rem;
+  --fs-base:1.0625rem; --fs-sm:1rem; --fs-xs:.875rem; --fs-label:.8125rem;
   --ease:cubic-bezier(.23,1,.32,1);
   --shadow:0 14px 34px rgba(12,21,36,.10);
   --shadow-2:0 22px 54px rgba(12,21,36,.16);
@@ -165,26 +165,10 @@ html.js .wash{animation:drift 26s ease-in-out infinite alternate}
 }
 .lensring{position:absolute;z-index:0;right:-88px;top:34px;width:290px;height:290px;pointer-events:none}
 html.js .lensring{animation:spin 24s linear infinite}
-/* 11/10 : le client veut SON LOGO à la place de l'anneau bleu-braise du premier écran.
-   .herologo = décoration pure (aria-hidden, pointer-events:none, pas d'animation) :
-   aucun rôle fonctionnel, aucun impact sur la bascule FR/EN ni sur un contrôle. */
-.herologo{position:absolute;z-index:0;right:-88px;top:-32px;width:220px;height:220px;pointer-events:none;
-  border:7px solid transparent;border-radius:50%;
-  background:var(--logo) center/cover no-repeat padding-box,
-             conic-gradient(from 210deg,#7FA6E8,#2A5CB8,#E0703A,#7FA6E8) border-box;
-  filter:drop-shadow(0 6px 18px rgba(12,21,36,.18))}
-/* 11/10 (option 1, ruling King) : l'ancien ::before était un DISQUE conique plein peint AU-DESSUS du
-   fond de l'élément (ordre de peinture d'un stacking context : le fond d'abord, les enfants à z-index
-   négatif ensuite) → il masquait le logo. Correctif : anneau = bordure transparente + 2ᵉ fond en
-   border-box ; le logo, en padding-box, est peint au-dessus. Plus de pseudo-élément. */
+/* 20/10 (ruling King) : le logo géant décoratif est retiré ; la photo réelle du cabinet entre au premier écran (.herophoto). */
 .h-city{display:block;margin-top:.35em;font-size:.5em;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-2)}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (min-width:780px){ .lensring{right:-60px;top:20px;width:380px;height:380px} }
-/* 11/10 (ruling King, mesuré) : le badge 405px n'existe qu'à partir du point où la grille passe en deux
-   colonnes (980px) — c'est le premier viewport où l'écart texte/logo ≥ 40px (mesure : 127px à 980,
-   149px à 1024). En dessous, .herologo reste l'emblème de coin (220px, right:-88, top:-32), hors du
-   corps de texte, comme l'était l'anneau d'origine. */
-@media (min-width:980px){ .herologo{right:-24px;top:16px;width:405px;height:405px} }
 .hero-grid{position:relative;z-index:1;display:grid;gap:34px}
 @media (min-width:980px){ .hero-grid{grid-template-columns:1.02fr .98fr;gap:54px;align-items:start} }
 .hero h1{margin-top:18px}
@@ -213,6 +197,10 @@ html.js .lensring{animation:spin 24s linear infinite}
 .idfoot{margin-top:16px;font-size:var(--fs-xs);color:var(--ink-3)}
 .idwrap{margin:0}
 .idwrap figcaption{margin-top:12px;font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
+.hero-side{display:grid;gap:22px;align-content:start}
+.herophoto{margin:0}
+.herophoto img{width:100%;aspect-ratio:1400/926;object-fit:cover;border-radius:var(--r-lg);border:1px solid var(--line)}
+.herophoto figcaption{margin-top:12px;font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
 
 /* ── LES ACTES : six cartes en bande glissante sur téléphone, trois colonnes sur ordinateur ──────── */
 .strip{display:grid;grid-auto-flow:column;grid-auto-columns:80%;gap:14px;overflow-x:auto;margin-top:30px;
@@ -251,12 +239,13 @@ html.js .band::before{animation:drift 32s ease-in-out infinite alternate}
 .band .note{color:var(--on-night-2)}
 
 /* ── LES MONTURES : la vitrine — trois familles, puis les trois conseils du choix ────────────────────
-   Trois photos d'illustration légendées comme telles (aucune photo du cabinet n'existe encore), et
+   Deux montures réelles du catalogue (vue, enfants) ; une seule photo d'illustration restante (soleil), et
    aucune marque, aucun prix : la vitrine dit ce qu'on vient essayer, pas ce qui est en stock. */
 .grid3{display:grid;gap:16px;margin-top:30px}
 @media (min-width:780px){ .grid3{grid-template-columns:repeat(3,1fr);gap:22px} }
 .frame{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column}
 .frame img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border-bottom:1px solid var(--line)}
+.frame img.img-real,figure.band-fig img.img-real{object-fit:contain;background:#F6EBE0}
 .frame .body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
 .frame h3{margin:0}
 .frame p{margin:0;color:var(--ink-2);font-size:var(--fs-sm)}
@@ -348,7 +337,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
 </style>
 <style>
 /* ── Pages v2 (D3, 20/10) : même identité, profondeur en plus ── */
-.v2-main section{padding:44px 0}
+.v2-main section{padding-top:44px;padding-bottom:44px}
 .v2-crumbs{font:500 var(--fs-xs)/1.7 var(--f-m);color:var(--ink-3);margin:0 0 14px}
 .v2-crumbs a{color:var(--brand);text-decoration:none;border-bottom:1px solid transparent}
 .v2-crumbs a:hover{border-color:currentColor}
@@ -381,6 +370,9 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
 .v2-search{display:flex;flex-direction:column;gap:6px;flex:1 1 220px;font:500 var(--fs-label)/1 var(--f-m);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
 .v2-search input{min-height:48px;border:1px solid var(--line-strong);border-radius:var(--r);padding:0 14px;font:400 1rem/1 var(--f-b);background:var(--card);color:var(--ink)}
 .v2-count{font:600 var(--fs-sm)/48px var(--f-b);color:var(--ink);margin:0}
+.v2-filter-toggle{display:none}
+@media(max-width:779px){html.js .v2-filter-toggle{display:inline-flex}html.js .v2-filters-panel{display:none}html.js .v2-filters-panel.is-open{display:block}}
+@media(min-width:780px){.v2-show{display:none}}
 .v2-toolbar .btn{min-height:48px}
 .v2-group{border:0;margin:16px 0 0;padding:0}
 .v2-group legend{font:500 var(--fs-label)/1.7 var(--f-m);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);padding:0}
@@ -402,11 +394,22 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
 @media(min-width:760px){.v2-gallery{grid-template-columns:1fr 1fr 1fr}.v2-gallery figure:first-child{grid-column:1/-1}}
 .v2-gallery figure{margin:0}
 .v2-gallery img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#F6EBE0;border:1px solid var(--line);border-radius:var(--r-lg)}
+.v2-fiche{display:grid;gap:22px;margin-top:22px;align-items:start}
+.v2-fiche .v2-gallery{margin-top:0}
+.v2-fiche-aside .v2-facts{margin-top:0}
+.v2-cta-mobile{display:none}
+@media(max-width:979px){.v2-cta-mobile{display:block}.v2-cta-mobile .btn{width:100%}}
+@media(min-width:760px){.v2-cta-mobile{grid-column:1/-1}}
+@media(min-width:980px){.v2-fiche{grid-template-columns:55fr 45fr}}
+@media(max-width:779px){html.js .v2-card.rv{opacity:1;transform:none;transition:none}}
 .v2-photos{display:grid;gap:16px;margin-top:26px}
 @media(min-width:760px){.v2-photos{grid-template-columns:1fr 1fr}}
 .v2-photos figure{margin:0}
 .v2-photos img{display:block;width:100%;height:auto;border-radius:var(--r-lg);border:1px solid var(--line)}
 .v2-photos figcaption{margin-top:10px;font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
+.v2-photo{margin:26px 0 0}
+.v2-photo img{display:block;width:100%;height:auto;border-radius:var(--r-lg);border:1px solid var(--line)}
+.v2-photo figcaption{margin-top:10px;font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
 .v2-steps{counter-reset:v2step;list-style:none;margin:26px 0 0;padding:0;display:grid;gap:14px}
 @media(min-width:760px){.v2-steps{grid-template-columns:1fr 1fr}}
 .v2-steps li{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px}
@@ -443,11 +446,14 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
 <main id="main" class="v2-main">
 <section class="wrap">
     <nav class="v2-crumbs" aria-label="Fil d'Ariane"><a href="/"><span class="fr-only" lang="fr">Accueil</span><span class="en-only" lang="en">Home</span></a> · <a href="/montures/"><span class="fr-only" lang="fr">Montures</span><span class="en-only" lang="en">Frames</span></a> · <a href="/montures/femmes/"><span class="fr-only" lang="fr">Femmes</span><span class="en-only" lang="en">Women</span></a> · <span aria-current="page">F38 · Rectangulaire noire</span></nav>
-    <h1>F38 · Rectangulaire noire</h1>
-    <p class="lede">Femme — forme rectangulaire, noire. À essayer au cabinet.</p>
-    <div class="v2-gallery">
+    <h1 class="rv">F38 · Rectangulaire noire</h1>
+    <p class="lede rv">Femme — forme rectangulaire, noire. À essayer au cabinet.</p>
+    <div class="v2-fiche">
+      <div class="v2-gallery rv">
       <figure><img src="../../../montures/monture-f38.webp" alt="F38 · Rectangulaire noire" width="1600" height="1200"></figure>
-    </div>
+<div class="v2-cta-mobile"><a class="btn btn-wa wa" data-fr="Bonjour DM OPTIQUE SARL, je suis intéressé par la monture « F38 · Rectangulaire noire ». Est-elle disponible ?" data-en="Hello DM OPTIQUE SARL, I am interested in frame &quot;F38 · Rectangulaire noire&quot;. Is it available?" href="https://wa.me/237656122239?text=Bonjour%20DM%20OPTIQUE%20SARL%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20monture%20%C2%AB%20F38%20%C2%B7%20Rectangulaire%20noire%20%C2%BB.%20Est-elle%20disponible%20%3F"><span class="fr-only" lang="fr">Commander sur WhatsApp</span><span class="en-only" lang="en">Ask on WhatsApp</span></a></div>
+      </div>
+      <aside class="v2-fiche-aside rv">
     <dl class="v2-facts">
       <div><dt><span class="fr-only" lang="fr">Catégorie</span><span class="en-only" lang="en">Category</span></dt><dd><span class="fr-only" lang="fr">Femmes</span><span class="en-only" lang="en">Women</span></dd></div>
       <div><dt><span class="fr-only" lang="fr">Forme</span><span class="en-only" lang="en">Shape</span></dt><dd>Rectangulaire</dd></div>
@@ -460,11 +466,13 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
       <a class="btn" href="/montures/femmes/"><span class="fr-only" lang="fr">Toutes les montures femmes</span><span class="en-only" lang="en">All women frames</span></a>
     </div>
     <p class="note"><span class="fr-only" lang="fr">Le message part déjà écrit : vous pouvez le modifier, ou tout effacer, avant de l&#x27;envoyer. Nous répondons pendant les heures d&#x27;ouverture.</span><span class="en-only" lang="en">The message is already typed: you can edit it, or delete it, before sending. We reply during opening hours.</span></p>
+      </aside>
+    </div>
   </section>
   <section class="wrap" aria-labelledby="h-sims">
-    <h2 id="h-sims"><span class="fr-only" lang="fr">Vous aimerez aussi</span><span class="en-only" lang="en">You may also like</span></h2>
+    <h2 id="h-sims" class="rv"><span class="fr-only" lang="fr">Vous aimerez aussi</span><span class="en-only" lang="en">You may also like</span></h2>
     <ul class="v2-grid">
-      <li class="v2-card">
+      <li class="v2-card rv">
     <article>
       <img src="../../../montures/monture-f21.webp" alt="F21 · Carrée noire" loading="lazy" width="1600" height="1200">
       <div class="v2-body">
@@ -474,7 +482,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
       </div>
     </article>
   </li>
-<li class="v2-card">
+<li class="v2-card rv">
     <article>
       <img src="../../../montures/monture-f57.webp" alt="F57 · Papillon noire et dorée" loading="lazy" width="1600" height="1200">
       <div class="v2-body">
@@ -484,7 +492,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
       </div>
     </article>
   </li>
-<li class="v2-card">
+<li class="v2-card rv">
     <article>
       <img src="../../../montures/monture-f61.webp" alt="F61 · Carrée noire et écaille" loading="lazy" width="1600" height="1200">
       <div class="v2-body">

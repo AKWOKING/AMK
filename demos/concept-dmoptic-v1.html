@@ -56,7 +56,7 @@ var l=localStorage.getItem("dmoptic-lang");if(l==="en"||l==="fr")h.setAttribute(
   --fs-h2:clamp(1.55rem,5.4vw,2.3rem);
   --fs-h3:clamp(1.05rem,3.4vw,1.2rem);
   --fs-lead:clamp(1.05rem,2.9vw,1.18rem);
-  --fs-base:1.0625rem; --fs-sm:.95rem; --fs-xs:.875rem; --fs-label:.72rem;
+  --fs-base:1.0625rem; --fs-sm:1rem; --fs-xs:.875rem; --fs-label:.8125rem;
   --ease:cubic-bezier(.23,1,.32,1);
   --shadow:0 14px 34px rgba(12,21,36,.10);
   --shadow-2:0 22px 54px rgba(12,21,36,.16);
@@ -165,26 +165,10 @@ html.js .wash{animation:drift 26s ease-in-out infinite alternate}
 }
 .lensring{position:absolute;z-index:0;right:-88px;top:34px;width:290px;height:290px;pointer-events:none}
 html.js .lensring{animation:spin 24s linear infinite}
-/* 11/10 : le client veut SON LOGO à la place de l'anneau bleu-braise du premier écran.
-   .herologo = décoration pure (aria-hidden, pointer-events:none, pas d'animation) :
-   aucun rôle fonctionnel, aucun impact sur la bascule FR/EN ni sur un contrôle. */
-.herologo{position:absolute;z-index:0;right:-88px;top:-32px;width:220px;height:220px;pointer-events:none;
-  border:7px solid transparent;border-radius:50%;
-  background:var(--logo) center/cover no-repeat padding-box,
-             conic-gradient(from 210deg,#7FA6E8,#2A5CB8,#E0703A,#7FA6E8) border-box;
-  filter:drop-shadow(0 6px 18px rgba(12,21,36,.18))}
-/* 11/10 (option 1, ruling King) : l'ancien ::before était un DISQUE conique plein peint AU-DESSUS du
-   fond de l'élément (ordre de peinture d'un stacking context : le fond d'abord, les enfants à z-index
-   négatif ensuite) → il masquait le logo. Correctif : anneau = bordure transparente + 2ᵉ fond en
-   border-box ; le logo, en padding-box, est peint au-dessus. Plus de pseudo-élément. */
+/* 20/10 (ruling King) : le logo géant décoratif est retiré ; la photo réelle du cabinet entre au premier écran (.herophoto). */
 .h-city{display:block;margin-top:.35em;font-size:.5em;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-2)}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (min-width:780px){ .lensring{right:-60px;top:20px;width:380px;height:380px} }
-/* 11/10 (ruling King, mesuré) : le badge 405px n'existe qu'à partir du point où la grille passe en deux
-   colonnes (980px) — c'est le premier viewport où l'écart texte/logo ≥ 40px (mesure : 127px à 980,
-   149px à 1024). En dessous, .herologo reste l'emblème de coin (220px, right:-88, top:-32), hors du
-   corps de texte, comme l'était l'anneau d'origine. */
-@media (min-width:980px){ .herologo{right:-24px;top:16px;width:405px;height:405px} }
 .hero-grid{position:relative;z-index:1;display:grid;gap:34px}
 @media (min-width:980px){ .hero-grid{grid-template-columns:1.02fr .98fr;gap:54px;align-items:start} }
 .hero h1{margin-top:18px}
@@ -213,6 +197,10 @@ html.js .lensring{animation:spin 24s linear infinite}
 .idfoot{margin-top:16px;font-size:var(--fs-xs);color:var(--ink-3)}
 .idwrap{margin:0}
 .idwrap figcaption{margin-top:12px;font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
+.hero-side{display:grid;gap:22px;align-content:start}
+.herophoto{margin:0}
+.herophoto img{width:100%;aspect-ratio:1400/926;object-fit:cover;border-radius:var(--r-lg);border:1px solid var(--line)}
+.herophoto figcaption{margin-top:12px;font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
 
 /* ── LES ACTES : six cartes en bande glissante sur téléphone, trois colonnes sur ordinateur ──────── */
 .strip{display:grid;grid-auto-flow:column;grid-auto-columns:80%;gap:14px;overflow-x:auto;margin-top:30px;
@@ -251,12 +239,13 @@ html.js .band::before{animation:drift 32s ease-in-out infinite alternate}
 .band .note{color:var(--on-night-2)}
 
 /* ── LES MONTURES : la vitrine — trois familles, puis les trois conseils du choix ────────────────────
-   Trois photos d'illustration légendées comme telles (aucune photo du cabinet n'existe encore), et
+   Deux montures réelles du catalogue (vue, enfants) ; une seule photo d'illustration restante (soleil), et
    aucune marque, aucun prix : la vitrine dit ce qu'on vient essayer, pas ce qui est en stock. */
 .grid3{display:grid;gap:16px;margin-top:30px}
 @media (min-width:780px){ .grid3{grid-template-columns:repeat(3,1fr);gap:22px} }
 .frame{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column}
 .frame img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border-bottom:1px solid var(--line)}
+.frame img.img-real,figure.band-fig img.img-real{object-fit:contain;background:#F6EBE0}
 .frame .body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
 .frame h3{margin:0}
 .frame p{margin:0;color:var(--ink-2);font-size:var(--fs-sm)}
@@ -377,9 +366,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
   <!-- ══ 1 · LE PREMIER ÉCRAN : ce que c'est, pour qui, et les deux gestes ═════════════════════════ -->
   <section class="hero" aria-labelledby="h-hero">
     <span class="wash" aria-hidden="true"></span>
-    <!-- 11/10 (ruling client) : l'anneau bleu-braise « lensring » est remplacé par LE LOGO du cabinet
-         (.herologo, décoratif — pas un contrôle). Le SVG d'origine est conservé dans l'historique git. -->
-    <span class="herologo" aria-hidden="true"></span>
+    <!-- 20/10 (ruling King) : plus de logo géant décoratif ; la photo réelle du cabinet est dans la colonne de droite. -->
     <div class="wrap hero-grid">
       <div>
         <p class="kicker rv"><span class="fr-only" lang="fr">Opticien à Douala · inscrit à l'ONOC</span><span class="en-only" lang="en">Optician in Douala · registered with the ONOC</span></p>
@@ -417,6 +404,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
         </dl>
       </div>
 
+      <div class="hero-side">
       <figure class="idwrap rv">
         <div class="idcard">
           <div class="idtop">
@@ -443,6 +431,13 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
         </div>
         <figcaption><span class="fr-only as-block" lang="fr">Opticien inscrit à l'Ordre national des opticiens du Cameroun.</span><span class="en-only as-block" lang="en">Optician registered with the National Order of Opticians of Cameroon.</span></figcaption>
       </figure>
+      <figure class="herophoto rv">
+        <img src="../hosting/previews/dmoptic/cabinet-interieur.webp" width="1400" height="926" decoding="async" fetchpriority="high"
+          data-alt-fr="Intérieur du cabinet DM OPTIQUE SARL à Bonabéri, murs de montures et assise." data-alt-en="Inside the DM OPTIQUE SARL practice in Bonaberi, frame display walls and seating."
+          alt="Intérieur du cabinet DM OPTIQUE SARL à Bonabéri, murs de montures et assise.">
+        <figcaption><span class="fr-only as-block" lang="fr">Le cabinet, à Bonabéri.</span><span class="en-only as-block" lang="en">The practice, in Bonaberi.</span></figcaption>
+      </figure>
+      </div>
     </div>
   </section>
 
@@ -486,9 +481,9 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
       </p>
       <div class="grid3">
         <article class="frame rv">
-          <img src="../hosting/previews/dmoptic/dmoptic-montures.webp" width="900" height="563" loading="lazy" decoding="async"
-            data-alt-fr="Six montures de formes et de couleurs différentes alignées sur un tissu clair." data-alt-en="Six frames of different shapes and colours lined up on pale fabric."
-            alt="Six montures de formes et de couleurs différentes alignées sur un tissu clair.">
+          <img class="img-real" src="../hosting/previews/dmoptic/montures/monture-f01.webp" width="1600" height="1200" loading="lazy" decoding="async"
+            data-alt-fr="Monture ovale dorée F01, photographiée au cabinet." data-alt-en="Gold oval frame F01, photographed at the practice."
+            alt="Monture ovale dorée F01, photographiée au cabinet.">
           <div class="body">
             <h3><span class="fr-only" lang="fr">Lunettes de vue</span><span class="en-only" lang="en">Spectacles</span></h3>
             <p><span class="fr-only" lang="fr">Rondes, fines, écaille, métal, colorées&nbsp;: la monture se choisit avec la forme de votre visage et votre ordonnance.</span><span class="en-only" lang="en">Round, thin, tortoiseshell, metal, colourful: the frame is chosen together with your face shape and your prescription.</span></p>
@@ -514,9 +509,9 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
           </div>
         </article>
         <article class="frame rv">
-          <img src="../hosting/previews/dmoptic/dmoptic-enfants.webp" width="900" height="563" loading="lazy" decoding="async"
-            data-alt-fr="Deux petites montures d'enfant colorées posées sur un tissu clair, à côté d'un étui." data-alt-en="Two small colourful children's frames on pale fabric beside a pouch."
-            alt="Deux petites montures d'enfant colorées posées sur un tissu clair, à côté d'un étui.">
+          <img class="img-real" src="../hosting/previews/dmoptic/montures/monture-e16.webp" width="1600" height="1200" loading="lazy" decoding="async"
+            data-alt-fr="Monture enfant carrée bleue E16, photographiée au cabinet." data-alt-en="Blue square children's frame E16, photographed at the practice."
+            alt="Monture enfant carrée bleue E16, photographiée au cabinet.">
           <div class="body">
             <h3><span class="fr-only" lang="fr">Enfants</span><span class="en-only" lang="en">Children</span></h3>
             <p><span class="fr-only" lang="fr">Des montures à la bonne taille, qui tiennent sur un petit nez et survivent à la récréation.</span><span class="en-only" lang="en">Frames in the right size, ones that stay on a small nose and survive playtime.</span></p>
@@ -528,7 +523,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
           </div>
         </article>
       </div>
-      <p class="note rv"><span class="fr-only" lang="fr">Photos d'illustration.</span><span class="en-only" lang="en">Illustration photos.</span></p>
+      <p class="note rv"><span class="fr-only" lang="fr">Montures photographiées au cabinet. Lunettes de soleil : photo d'illustration.</span><span class="en-only" lang="en">Frames photographed at the practice. Sunglasses: illustration photo.</span></p>
       <div class="advice rv">
         <div>
           <h3><span class="fr-only" lang="fr">La forme du visage</span><span class="en-only" lang="en">Your face shape</span></h3>
@@ -566,10 +561,10 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
         <span class="en-only" lang="en">Six reasons to walk in. Each one comes with the list of what you will be asked for.</span>
       </p>
       <figure class="band-fig rv">
-        <img src="../hosting/previews/dmoptic/dmoptic-lunettes.webp" width="900" height="563" loading="lazy" decoding="async"
-          data-alt-fr="Une paire de lunettes de vue posée sur une surface claire, lumière douce." data-alt-en="A pair of prescription glasses resting on a pale surface in soft light."
-          alt="Une paire de lunettes de vue posée sur une surface claire, lumière douce.">
-        <figcaption><span class="fr-only as-block" lang="fr">Photo d'illustration.</span><span class="en-only as-block" lang="en">Illustration photo.</span></figcaption>
+        <img class="img-real" src="../hosting/previews/dmoptic/montures/monture-h01.webp" width="1600" height="1200" loading="lazy" decoding="async"
+          data-alt-fr="Monture double pont noir et doré H01, photographiée au cabinet." data-alt-en="Black and gold double-bridge frame H01, photographed at the practice."
+          alt="Monture double pont noir et doré H01, photographiée au cabinet.">
+        <figcaption><span class="fr-only as-block" lang="fr">Monture photographiée au cabinet.</span><span class="en-only as-block" lang="en">Frame photographed at the practice.</span></figcaption>
       </figure>
       <ul class="strip">
         <li class="act rv">
@@ -641,10 +636,10 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
         </li>
             </ol>
       <figure class="bandfig rv">
-        <img src="../hosting/previews/dmoptic/dmoptic-mesure.webp" width="900" height="675" loading="lazy" decoding="async"
-          data-alt-fr="Détail d'un instrument de mesure de la vue posé sur un comptoir sombre." data-alt-en="Close-up of an eye-measuring instrument resting on a dark counter."
-          alt="Détail d'un instrument de mesure de la vue posé sur un comptoir sombre.">
-        <figcaption><span class="fr-only as-block" lang="fr">Photo d'illustration.</span><span class="en-only as-block" lang="en">Illustration photo.</span></figcaption>
+        <img src="../hosting/previews/dmoptic/cabinet-enseigne.webp" width="1200" height="901" loading="lazy" decoding="async"
+          data-alt-fr="Enseigne « Consultation » au-dessus de l'entrée du cabinet, à Bonabéri." data-alt-en="The “Consultation” sign above the practice entrance, in Bonaberi."
+          alt="Enseigne « Consultation » au-dessus de l'entrée du cabinet, à Bonabéri.">
+        <figcaption><span class="fr-only as-block" lang="fr">L'enseigne du cabinet, à Bonabéri.</span><span class="en-only as-block" lang="en">The practice sign, in Bonaberi.</span></figcaption>
       </figure>
       <div class="actions rv">
         <a class="btn btn-wa wa" data-fr="Bonjour DM OPTIQUE SARL, voici ce qui ne va pas : " data-en="Hello DM OPTIQUE SARL, this is what is wrong: " href="https://wa.me/237656122239?text=Bonjour%20DM%20OPTIQUE%20SARL%2C%20voici%20ce%20qui%20ne%20va%20pas%20%3A%20">

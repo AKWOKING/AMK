@@ -68,17 +68,14 @@ WA_BASE = "https://wa.me/237656122239?text="
 # coûté un contrôle le 24/09).
 SAFE = "!'()*-._~"
 
-# Une image = une signification (§25) : l'objet qu'on vient chercher, la vitrine des montures (trois
-# familles), et l'instrument qui mesure. Cinq images, toutes des MISES EN SITUATION — aucune photo du
-# cabinet n'existe encore, et la page le dit (« Photos d'illustration »).
+# Une image = une signification (§25). Depuis le 20/10, l'accueil montre les vraies montures du
+# catalogue et les vraies photos du cabinet (WebP déjà dans hosting/previews/dmoptic/). Il ne reste
+# qu'UNE mise en situation générée ici : les lunettes de soleil (aucune monture solaire réelle
+# photographiée à ce jour), légendée « photo d'illustration » dans le gabarit.
 # 15/10 : images externalisées en WebP (fichiers dans hosting/previews/dmoptic/, mêmes dimensions).
 # Clé = nom du fichier WebP écrit ; le gabarit l'appelle par __ASSET__<nom>.
 PHOTOS = {
-    "dmoptic-lunettes.webp": ("dmoptic-lunettes.jpg", "900x563", "75"),   # 16/10 — les services
-    "dmoptic-montures.webp": ("dmoptic-montures.jpg", "900x563", "75"),   # 16/10 — la vitrine : lunettes de vue
-    "dmoptic-solaires.webp": ("dmoptic-solaires.jpg", "900x563", "75"),   # 16/10 — la vitrine : solaires
-    "dmoptic-enfants.webp":  ("dmoptic-enfants.jpg",  "900x563", "75"),   # 16/10 — la vitrine : enfants
-    "dmoptic-mesure.webp":   ("dmoptic-mesure.jpg",   "900x675", "75"),   # 4/3  — l'examen de la vue (bande)
+    "dmoptic-solaires.webp": ("dmoptic-solaires.jpg", "900x563", "75"),   # 16/10 — la vitrine : solaires (illustration restante)
 }
 ASSET = "__ASSET__"                       # préfixe des fichiers : "" pour l'aperçu, chemin relatif pour demos/
 CONCEPT_ASSET = "../hosting/previews/dmoptic/"

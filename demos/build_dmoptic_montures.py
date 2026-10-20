@@ -69,7 +69,7 @@ VISIT_WA = ("Bonjour DM OPTIQUE SARL, je voudrais passer vous voir.",
 
 V2_CSS = """
 /* ── Pages v2 (D3, 20/10) : même identité, profondeur en plus ── */
-.v2-main section{padding:44px 0}
+.v2-main section{padding-top:44px;padding-bottom:44px}
 .v2-crumbs{font:500 var(--fs-xs)/1.7 var(--f-m);color:var(--ink-3);margin:0 0 14px}
 .v2-crumbs a{color:var(--brand);text-decoration:none;border-bottom:1px solid transparent}
 .v2-crumbs a:hover{border-color:currentColor}
@@ -102,6 +102,9 @@ V2_CSS = """
 .v2-search{display:flex;flex-direction:column;gap:6px;flex:1 1 220px;font:500 var(--fs-label)/1 var(--f-m);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
 .v2-search input{min-height:48px;border:1px solid var(--line-strong);border-radius:var(--r);padding:0 14px;font:400 1rem/1 var(--f-b);background:var(--card);color:var(--ink)}
 .v2-count{font:600 var(--fs-sm)/48px var(--f-b);color:var(--ink);margin:0}
+.v2-filter-toggle{display:none}
+@media(max-width:779px){html.js .v2-filter-toggle{display:inline-flex}html.js .v2-filters-panel{display:none}html.js .v2-filters-panel.is-open{display:block}}
+@media(min-width:780px){.v2-show{display:none}}
 .v2-toolbar .btn{min-height:48px}
 .v2-group{border:0;margin:16px 0 0;padding:0}
 .v2-group legend{font:500 var(--fs-label)/1.7 var(--f-m);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);padding:0}
@@ -123,11 +126,22 @@ V2_CSS = """
 @media(min-width:760px){.v2-gallery{grid-template-columns:1fr 1fr 1fr}.v2-gallery figure:first-child{grid-column:1/-1}}
 .v2-gallery figure{margin:0}
 .v2-gallery img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#F6EBE0;border:1px solid var(--line);border-radius:var(--r-lg)}
+.v2-fiche{display:grid;gap:22px;margin-top:22px;align-items:start}
+.v2-fiche .v2-gallery{margin-top:0}
+.v2-fiche-aside .v2-facts{margin-top:0}
+.v2-cta-mobile{display:none}
+@media(max-width:979px){.v2-cta-mobile{display:block}.v2-cta-mobile .btn{width:100%}}
+@media(min-width:760px){.v2-cta-mobile{grid-column:1/-1}}
+@media(min-width:980px){.v2-fiche{grid-template-columns:55fr 45fr}}
+@media(max-width:779px){html.js .v2-card.rv{opacity:1;transform:none;transition:none}}
 .v2-photos{display:grid;gap:16px;margin-top:26px}
 @media(min-width:760px){.v2-photos{grid-template-columns:1fr 1fr}}
 .v2-photos figure{margin:0}
 .v2-photos img{display:block;width:100%;height:auto;border-radius:var(--r-lg);border:1px solid var(--line)}
 .v2-photos figcaption{margin-top:10px;font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
+.v2-photo{margin:26px 0 0}
+.v2-photo img{display:block;width:100%;height:auto;border-radius:var(--r-lg);border:1px solid var(--line)}
+.v2-photo figcaption{margin-top:10px;font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
 .v2-steps{counter-reset:v2step;list-style:none;margin:26px 0 0;padding:0;display:grid;gap:14px}
 @media(min-width:760px){.v2-steps{grid-template-columns:1fr 1fr}}
 .v2-steps li{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px}
@@ -145,6 +159,8 @@ FILTER_JS = """<script>/* Filtres du catalogue v2 : OU dans un groupe, ET entre 
   var boxes=[].slice.call(form.querySelectorAll('input[type="checkbox"][data-group]'));
   var count=document.querySelector('.v2-count'), chips=document.querySelector('.v2-chips');
   var empty=document.querySelector('.v2-empty'), reset=form.querySelector('.v2-reset'), show=form.querySelector('.v2-show');
+  var toggle=form.querySelector('.v2-filter-toggle'), panel=form.querySelector('.v2-filters-panel');
+  function setPanel(open){if(!panel||!toggle)return;panel.classList.toggle('is-open',open);toggle.setAttribute('aria-expanded',open?'true':'false');}
   function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g,'');}
   function state(){var st={forme:[],couleur:[],q:norm(q.value).trim()};boxes.forEach(function(b){if(b.checked)st[b.getAttribute('data-group')].push(b.value);});return st;}
   function renderChips(st){
@@ -187,7 +203,8 @@ FILTER_JS = """<script>/* Filtres du catalogue v2 : OU dans un groupe, ET entre 
   form.addEventListener('input',function(){apply();});
   form.addEventListener('submit',function(e){e.preventDefault();apply();});
   if(reset)reset.addEventListener('click',function(){q.value='';boxes.forEach(function(b){b.checked=false;});apply();});
-  if(show)show.addEventListener('click',function(){grid.scrollIntoView();});
+  if(toggle)toggle.addEventListener('click',function(){setPanel(!(panel&&panel.classList.contains('is-open')));});
+  if(show)show.addEventListener('click',function(){setPanel(false);grid.scrollIntoView();});
   fromHash(); apply(false);
 }catch(e){}})();
 </script>"""
@@ -230,7 +247,7 @@ def card(f, level=2):
     fr_msg, en_msg = frame_msg(f)
     img = (f'<img src="{esc(f["photos"][0])}" alt="{esc(f["nom"])}" loading="lazy" '
            f'width="1600" height="1200">') if f.get("photos") else ""
-    return f'''<li class="v2-card" data-forme="{esc(slugify(f["forme"]))}" data-couleur="{esc(slugify(f["couleur"]))}" data-name="{esc(f["nom"] + " " + f["forme"] + " " + f["couleur"])}">
+    return f'''<li class="v2-card rv" data-forme="{esc(slugify(f["forme"]))}" data-couleur="{esc(slugify(f["couleur"]))}" data-name="{esc(f["nom"] + " " + f["forme"] + " " + f["couleur"])}">
     <article>
       {img}
       <div class="v2-body">
@@ -249,7 +266,7 @@ def card(f, level=2):
 def mini_card(f):
     img = (f'<img src="{esc(f["photos"][0])}" alt="{esc(f["nom"])}" loading="lazy" '
            f'width="1600" height="1200">') if f.get("photos") else ""
-    return f'''<li class="v2-card">
+    return f'''<li class="v2-card rv">
     <article>
       {img}
       <div class="v2-body">
@@ -397,7 +414,7 @@ def main():
     for c, (fr_l, en_l, _) in CATS.items():
         rep = by_cat[c][0]
         n = len(by_cat[c])
-        doors.append(f'''<a class="v2-door" href="/montures/{c}/">
+        doors.append(f'''<a class="v2-door rv" href="/montures/{c}/">
         <img src="{esc(rep["photos"][0])}" alt="{esc(rep["nom"])}" loading="lazy" width="1600" height="1200">
         <span class="v2-body">
           <h2>{B(fr_l, en_l)}</h2>
@@ -458,10 +475,13 @@ def main():
       <div class="v2-toolbar">
         <label class="v2-search">{B("Rechercher", "Search")}<input class="v2-q" type="search" name="q" placeholder="Rechercher une monture…" autocomplete="off"></label>
         <p class="v2-count" role="status" aria-live="polite">{n} montures</p>
+        <button class="btn v2-filter-toggle" type="button" aria-expanded="false" aria-controls="filtres-{c}">{B("Filtrer", "Filter")}</button>
         <button class="btn v2-show" type="button">Afficher {n} montures</button>
         <button class="btn v2-reset" type="button">{B("Effacer", "Clear")}</button>
       </div>
+      <div class="v2-filters-panel" id="filtres-{c}">
       {chr(10).join(groups)}
+      </div>
       <div class="v2-chips" hidden></div>
     </form>
     <noscript><p class="note">{B("Les filtres demandent JavaScript ; toutes les montures sont ci-dessous.", "The filters need JavaScript; every frame is listed below.")}</p></noscript>
@@ -487,6 +507,8 @@ def main():
             for i, p in enumerate(f["photos"]):
                 loading = "" if i == 0 else ' loading="lazy"'
                 figs.append(f'<figure><img src="{esc(p)}" alt="{esc(f["nom"])}" width="1600" height="1200"{loading}></figure>')
+            if figs:
+                figs.insert(1, f'<div class="v2-cta-mobile">{wa_btn(fr_m, en_m, "Commander sur WhatsApp", "Ask on WhatsApp")}</div>')
             sims = [g for g in items if g["code"] != f["code"] and g["forme"] == f["forme"]]
             sims += [g for g in items if g["code"] != f["code"] and g not in sims and g["couleur"] == f["couleur"]]
             sims += [g for g in items if g["code"] != f["code"] and g not in sims]
@@ -494,18 +516,20 @@ def main():
             sim_block = ""
             if sims:
                 sim_block = f'''<section class="wrap" aria-labelledby="h-sims">
-    <h2 id="h-sims">{B("Vous aimerez aussi", "You may also like")}</h2>
+    <h2 id="h-sims" class="rv">{B("Vous aimerez aussi", "You may also like")}</h2>
     <ul class="v2-grid">
       {chr(10).join(mini_card(g) for g in sims)}
     </ul>
   </section>'''
             fiche_main = f'''<section class="wrap">
     {site.crumbs([(B("Accueil", "Home"), "/"), (B("Montures", "Frames"), "/montures/"), (B(fr_l, en_l), f"/montures/{c}/"), (esc(f["nom"]), None)])}
-    <h1>{esc(f["nom"])}</h1>
-    <p class="lede">{esc(f["phrase"])}</p>
-    <div class="v2-gallery">
+    <h1 class="rv">{esc(f["nom"])}</h1>
+    <p class="lede rv">{esc(f["phrase"])}</p>
+    <div class="v2-fiche">
+      <div class="v2-gallery rv">
       {chr(10).join(figs)}
-    </div>
+      </div>
+      <aside class="v2-fiche-aside rv">
     <dl class="v2-facts">
       <div><dt>{B("Catégorie", "Category")}</dt><dd>{B(fr_l, en_l)}</dd></div>
       <div><dt>{B("Forme", "Shape")}</dt><dd>{esc(f["forme"])}</dd></div>
@@ -518,6 +542,8 @@ def main():
       <a class="btn" href="/montures/{c}/">{B(f"Toutes les montures {fr_low}", f"All {en_l.lower()} frames")}</a>
     </div>
     <p class="note">{B("Le message part déjà écrit : vous pouvez le modifier, ou tout effacer, avant de l'envoyer. Nous répondons pendant les heures d'ouverture.", "The message is already typed: you can edit it, or delete it, before sending. We reply during opening hours.")}</p>
+      </aside>
+    </div>
   </section>
   {sim_block}'''
             written.append(site.page(
@@ -544,21 +570,25 @@ def main():
          "We work out the correction your lenses will need."),
     ]
     steps_html = chr(10).join(
-        f'<li><span class="n">{n}</span><h3>{B(fr_t, en_t)}</h3><p>{B(fr_p, en_p)}</p></li>'
+        f'<li class="rv"><span class="n">{n}</span><h3>{B(fr_t, en_t)}</h3><p>{B(fr_p, en_p)}</p></li>'
         for n, fr_t, en_t, fr_p, en_p in exam_steps)
     exam_main = f'''<section class="wrap">
     {site.crumbs([(B("Accueil", "Home"), "/"), (B("Examen de vue", "Eye examination"), None)])}
-    <h1>{B("Examen de vue à Bonabéri", "Eye examination in Bonaberi")}</h1>
-    <p class="lede">{B("On mesure ce que votre œil demande, avant de parler de monture. L'examen est réalisé au cabinet par le titulaire, M. Domche Noumbi, opticien inscrit à l'ONOC.", "We measure what your eye needs, before anyone talks about frames. The examination is done at the practice by the owner, Mr Domche Noumbi, an optician registered with the ONOC.")}</p>
+    <h1 class="rv">{B("Examen de vue à Bonabéri", "Eye examination in Bonaberi")}</h1>
+    <p class="lede rv">{B("On mesure ce que votre œil demande, avant de parler de monture. L'examen est réalisé au cabinet par le titulaire, M. Domche Noumbi, opticien inscrit à l'ONOC.", "We measure what your eye needs, before anyone talks about frames. The examination is done at the practice by the owner, Mr Domche Noumbi, an optician registered with the ONOC.")}</p>
+    <figure class="v2-photo rv">
+      <img src="/cabinet-interieur.webp" alt="Intérieur du cabinet DM OPTIQUE SARL à Bonabéri" width="1400" height="926" loading="lazy">
+      <figcaption>{B("L'intérieur du cabinet, immeuble West Hotel.", "Inside the practice, West Hotel building.")}</figcaption>
+    </figure>
     <ol class="v2-steps">
       {steps_html}
     </ol>
-    <dl class="v2-facts">
+    <dl class="v2-facts rv">
       <div><dt>{B("Horaires de l'examen", "Examination hours")}</dt><dd>{B("Lundi – Samedi · 8h30 – 13h00", "Monday – Saturday · 8:30–13:00")}</dd></div>
       <div><dt>{B("À apporter", "Bring")}</dt><dd>{B("vos anciennes lunettes, si vous en avez", "your current glasses, if you have any")}</dd></div>
       <div><dt>{B("Où", "Where")}</dt><dd>{B(ADDRESS_FR, ADDRESS_EN)}</dd></div>
     </dl>
-    <div class="actions">
+    <div class="actions rv">
       {wa_btn(EXAM_WA[0], EXAM_WA[1], "Prendre rendez-vous sur WhatsApp", "Book on WhatsApp")}
       <a class="btn" href="{TEL}">{B("Appeler le 656 122 239", "Call 656 122 239")}</a>
     </div>
