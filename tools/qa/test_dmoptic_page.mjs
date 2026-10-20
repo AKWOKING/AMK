@@ -309,6 +309,16 @@ const ficheF01 = path.join(ROOT, "hosting", "previews", "dmoptic", "montures", "
 const ficheF01Html = fs.existsSync(ficheF01) ? fs.readFileSync(ficheF01, "utf8") : "";
 ok("fiche F01 : galerie réelle + référence à donner au cabinet",
    ficheF01Html.includes("monture-f01.webp") && ficheF01Html.includes("Référence à donner au cabinet") && ficheF01Html.includes("v2-fiche") && ficheF01Html.includes("v2-cta-mobile"));
+const ficheDock = (ficheF01Html.match(/<div class="dock">[\s\S]*?<\/div>/) || [""])[0];
+ok("fiche F01 : le dock mobile demande la monture affichée (pas le rendez-vous générique)",
+   ficheDock.includes("F01 · Ovale dorée") && !ficheDock.includes("rendez-vous pour un examen"));
+const notFoundPath = path.join(ROOT, "hosting", "previews", "dmoptic", "404.html");
+const notFoundHtml = fs.existsSync(notFoundPath) ? fs.readFileSync(notFoundPath, "utf8") : "";
+const headersPath = path.join(ROOT, "hosting", "previews", "dmoptic", "_headers");
+const headersTxt = fs.existsSync(headersPath) ? fs.readFileSync(headersPath, "utf8") : "";
+ok("404 bilingue noindex + en-têtes hôte prudents (préparation Cloudflare)",
+   notFoundHtml.includes("Page introuvable") && notFoundHtml.includes('content="noindex,follow"') &&
+   headersTxt.includes("X-Content-Type-Options: nosniff") && headersTxt.includes("X-Frame-Options: DENY"));
 
 /* ═════════════ 3 · les deux utilitaires : copier, enregistrer ═════════════ */
 console.log("\n═══ 3 · copier le numéro, enregistrer le contact ═══");

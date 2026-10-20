@@ -66,6 +66,16 @@ EXAM_WA = ("Bonjour DM OPTIQUE SARL, je voudrais prendre un rendez-vous pour un 
            "Hello DM OPTIQUE SARL, I would like to book an eye examination.")
 VISIT_WA = ("Bonjour DM OPTIQUE SARL, je voudrais passer vous voir.",
             "Hello DM OPTIQUE SARL, I would like to come and see you.")
+HUB_WA = ("Bonjour DM OPTIQUE SARL, je cherche une monture. Quelles montures avez-vous disponibles ?",
+          "Hello DM OPTIQUE SARL, I am looking for a frame. Which frames do you have available?")
+# En-têtes hôte prudents pour Cloudflare Pages (le fichier _headers n'est pas servi comme asset).
+# Pas de CSP à ce stade : le site est en CSS/JS inline, une politique stricte se teste séparément.
+HEADERS = """/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+"""
 
 V2_CSS = """
 /* ── Pages v2 (D3, 20/10) : même identité, profondeur en plus ── */
@@ -105,6 +115,9 @@ V2_CSS = """
 .v2-filter-toggle{display:none}
 @media(max-width:779px){html.js .v2-filter-toggle{display:inline-flex}html.js .v2-filters-panel{display:none}html.js .v2-filters-panel.is-open{display:block}}
 @media(min-width:780px){.v2-show{display:none}}
+@media(max-width:779px){html.js .v2-filters-panel.is-open{animation:v2-panel-in .18s var(--ease)}}
+@keyframes v2-panel-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){html.js .v2-filters-panel.is-open{animation:none}}
 .v2-toolbar .btn{min-height:48px}
 .v2-group{border:0;margin:16px 0 0;padding:0}
 .v2-group legend{font:500 var(--fs-label)/1.7 var(--f-m);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);padding:0}
@@ -146,7 +159,7 @@ V2_CSS = """
 @media(min-width:760px){.v2-steps{grid-template-columns:1fr 1fr}}
 .v2-steps li{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px}
 .v2-steps .n{font:500 var(--fs-label)/1 var(--f-m);letter-spacing:.12em;color:var(--brand)}
-.v2-steps h3{margin:.5rem 0 0}
+.v2-steps h2{margin:.5rem 0 0;font-size:var(--fs-h3);line-height:1.25}
 .v2-steps p{margin:.45rem 0 0;color:var(--ink-2);font-size:var(--fs-sm)}
 """
 
@@ -349,12 +362,26 @@ class Site:
             extra += '<script type="application/ld+json">' + json.dumps(payload, ensure_ascii=False) + "</script>\n"
         return head.replace("</head>", extra + "</head>", 1)
 
-    def page(self, path, title, desc, main_html, ld_graph=None, og_image=None, og_wh=None, extra_script=""):
+    def _dock_for(self, dock_wa=None):
+        dock = self.dock
+        if dock_wa:
+            fr_dock, en_dock = dock_wa
+            def _dock_link(m):
+                tag = m.group(0)
+                tag = re.sub(r'data-fr="[^"]*"', f'data-fr="{esc(fr_dock)}"', tag, count=1)
+                tag = re.sub(r'data-en="[^"]*"', f'data-en="{esc(en_dock)}"', tag, count=1)
+                tag = re.sub(r'href="[^"]*"', f'href="{esc(wa(fr_dock))}"', tag, count=1)
+                return tag
+            dock = re.sub(r'<a\b[^>]*\bclass="[^"]*\bwa\b[^"]*"[^>]*>', _dock_link, dock, count=1)
+        return dock
+
+    def page(self, path, title, desc, main_html, ld_graph=None, og_image=None, og_wh=None, extra_script="", dock_wa=None):
         head = self._head(path, title, desc, ld_graph, og_image, og_wh)
         # Images du corps en relatif (profondeur de la page) : navigateur et `audit_images.py`
         # résolvent depuis le dossier de la page ; canoniques/OG/JSON-LD restent absolus.
         depth = len([p for p in path.split("/") if p])
         main_html = re.sub(r'src="/', 'src="' + "../" * depth, main_html)
+        dock = self._dock_for(dock_wa)
         page = f'''{head}
 <body>
 <a class="skiplink" href="#main">{B("Aller au contenu", "Skip to content")}</a>
@@ -367,7 +394,7 @@ class Site:
 </main>
 
 {self.footer}
-{self.dock}
+{dock}
 {chr(10).join(self.scripts)}
 {extra_script}
 </body>
@@ -447,7 +474,7 @@ def main():
         "/montures/", "Toutes nos montures à Bonabéri — DM OPTIQUE SARL",
         "Montures femmes, hommes et enfants photographiées au cabinet DM OPTIQUE SARL à Bonabéri, Douala. Choisissez, puis demandez-la sur WhatsApp.",
         hub_main,
-        ld_graph=[site.crumb_ld([("Accueil", "/"), ("Montures", "/montures/")]), site.itemlist_ld(frames)]))
+        ld_graph=[site.crumb_ld([("Accueil", "/"), ("Montures", "/montures/")]), site.itemlist_ld(frames)], dock_wa=HUB_WA))
 
     # ── Catégories + fiches ─────────────────────────────────────────────────────
     for c, (fr_l, en_l, fr_low) in CATS.items():
@@ -499,7 +526,7 @@ def main():
             cat_main,
             ld_graph=[site.crumb_ld([("Accueil", "/"), ("Montures", "/montures/"), (fr_l, f"/montures/{c}/")]),
                       site.itemlist_ld(items)],
-            extra_script=FILTER_JS))
+            extra_script=FILTER_JS, dock_wa=CAT_WA[c]))
 
         for f in items:
             fr_m, en_m = frame_msg(f)
@@ -552,7 +579,7 @@ def main():
                 fiche_main,
                 ld_graph=[site.crumb_ld([("Accueil", "/"), ("Montures", "/montures/"),
                                           (fr_l, f"/montures/{c}/"), (f["nom"], frame_url(f))])],
-                og_image=(f["photos"][0], f["nom"]), og_wh=(1600, 1200)))
+                og_image=(f["photos"][0], f["nom"]), og_wh=(1600, 1200), dock_wa=(fr_m, en_m)))
 
     # ── Examen de vue ───────────────────────────────────────────────────────────
     exam_steps = [
@@ -570,7 +597,7 @@ def main():
          "We work out the correction your lenses will need."),
     ]
     steps_html = chr(10).join(
-        f'<li class="rv"><span class="n">{n}</span><h3>{B(fr_t, en_t)}</h3><p>{B(fr_p, en_p)}</p></li>'
+        f'<li class="rv"><span class="n">{n}</span><h2>{B(fr_t, en_t)}</h2><p>{B(fr_p, en_p)}</p></li>'
         for n, fr_t, en_t, fr_p, en_p in exam_steps)
     exam_main = f'''<section class="wrap">
     {site.crumbs([(B("Accueil", "Home"), "/"), (B("Examen de vue", "Eye examination"), None)])}
@@ -597,7 +624,7 @@ def main():
     written.append(site.page(
         "/examen-de-vue/", "Examen de vue à Bonabéri, Douala — DM OPTIQUE SARL",
         "Examen de vue au cabinet DM OPTIQUE SARL à Bonabéri : anamnèse, bilan optique, acuités visuelles et réfraction. Rendez-vous sur WhatsApp.",
-        exam_main, ld_graph=[site.crumb_ld([("Accueil", "/"), ("Examen de vue", "/examen-de-vue/")])]))
+        exam_main, ld_graph=[site.crumb_ld([("Accueil", "/"), ("Examen de vue", "/examen-de-vue/")])], dock_wa=EXAM_WA))
 
     # ── Le cabinet ──────────────────────────────────────────────────────────────
     cabinet_main = f'''<section class="wrap">
@@ -628,7 +655,7 @@ def main():
     written.append(site.page(
         "/le-cabinet/", "Le cabinet DM OPTIQUE SARL à Bonabéri, Douala",
         "Le cabinet d'optique médicale DM OPTIQUE SARL à Bonabéri, Douala : M. Domche Noumbi, opticien inscrit à l'ONOC. Photos réelles du cabinet.",
-        cabinet_main, ld_graph=[site.crumb_ld([("Accueil", "/"), ("Le cabinet", "/le-cabinet/")])]))
+        cabinet_main, ld_graph=[site.crumb_ld([("Accueil", "/"), ("Le cabinet", "/le-cabinet/")])], dock_wa=VISIT_WA))
 
     # ── Contact ─────────────────────────────────────────────────────────────────
     contact_main = f'''<section class="wrap">
@@ -655,7 +682,43 @@ def main():
     written.append(site.page(
         "/contact/", "Contact et adresse — DM OPTIQUE SARL, Bonabéri",
         "DM OPTIQUE SARL, immeuble West Hotel, 1er étage, Ndobo Mayor, Bonabéri, Douala. WhatsApp et téléphone : +237 656 122 239. Horaires lun–sam.",
-        contact_main, ld_graph=[site.crumb_ld([("Accueil", "/"), ("Contact", "/contact/")])]))
+        contact_main, ld_graph=[site.crumb_ld([("Accueil", "/"), ("Contact", "/contact/")])], dock_wa=VISIT_WA))
+
+    # ── Page 404 + en-têtes hôte (préparation Cloudflare, F7) ───────────────────
+    notfound_main = f'''<section class="wrap">
+    <h1>{B("Page introuvable", "Page not found")}</h1>
+    <p class="lede">{B("Cette page n'existe pas ou a été déplacée. Le cabinet, lui, est bien à Bonabéri.", "This page does not exist or has moved. The practice is still in Bonaberi.")}</p>
+    <div class="actions">
+      <a class="btn" href="/">{B("Retour à l'accueil", "Back to home")}</a>
+      <a class="btn" href="/montures/">{B("Voir les montures", "See the frames")}</a>
+      {wa_btn(VISIT_WA[0], VISIT_WA[1], "Écrire sur WhatsApp", "Write on WhatsApp")}
+    </div>
+    <p class="note">{B(ADDRESS_FR, ADDRESS_EN)}</p>
+  </section>'''
+    head404 = site._head("/404.html", "Page introuvable — DM OPTIQUE SARL",
+                         "Page introuvable. Retrouvez l'accueil, les montures et le contact du cabinet DM OPTIQUE SARL à Bonabéri.",
+                         None, None, None)
+    head404 = re.sub(r'<link rel="canonical" href="[^"]*">\n?', "", head404, count=1)
+    head404 = head404.replace("</head>", '<meta name="robots" content="noindex,follow">\n</head>', 1)
+    page404 = f'''{head404}
+<body>
+<a class="skiplink" href="#main">{B("Aller au contenu", "Skip to content")}</a>
+<p id="say" class="sr" role="status" aria-live="polite"></p>
+
+{site.header}
+
+<main id="main" class="v2-main">
+{notfound_main}
+</main>
+
+{site.footer}
+{site._dock_for(VISIT_WA)}
+{chr(10).join(site.scripts)}
+</body>
+</html>
+'''
+    (OUTDIR / "404.html").write_text(page404, encoding="utf-8")
+    (OUTDIR / "_headers").write_text(HEADERS, encoding="utf-8")
 
     # ── Sitemap ─────────────────────────────────────────────────────────────────
     if site.base:
