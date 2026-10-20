@@ -490,3 +490,25 @@ l'exige, jamais avant · ChatGPT/Gemini free = déjà remplacés par l'orchestra
   (python-pptx, MIT), pdf (reportlab — **vérifier les termes AGPL avant usage client**).
   Conditions : aucune donnée client hors machine (génération locale), sorties relues par King
   (règle 3). Re-review : si Anthropic relicencie les skills documentaires en open source.
+
+## 20/10 — blader/humanizer : AUDITÉ puis INSTALLÉ (MIT ; second passe copywriting, loi maison d'abord)
+
+> Ordre King du 20/10 (« install https://github.com/blader/humanizer ») — l'audit-before-install
+> est passé AVANT l'installation (règle debout). Pin de lecture `8c307f3` (16/10/2026, v3.1.0).
+
+- **(a) Ce que c'est :** un skill autonome = un `SKILL.md` de 32 Ko qui réécrit un texte « qui sonne
+  IA » en gardant ce qu'il dit, d'après les 26 motifs de « Signs of AI writing » (Wikipédia).
+  Zéro dépendance, zéro réseau, zéro hook ; `scripts/validate-package.py` = lint du propre
+  packaging amont, stdlib.
+- **(b) Licence : MIT** (© 2025 Siqi Chen), lue dans le clone épinglé — installable. Le contraste du
+  jour : anthropics/skills doc-skills, propriétaires, NON installés (entrée ci-dessus).
+- **(c) Flux : OUI — second passe copywriting** APRÈS la loi maison (§11b AMK-DESIGN-SKILLS,
+  YouTube-Lessons [1]–[6], COPY CRAFT GATE, MESSAGES §1). Ne remplace aucune règle : les lois
+  maison et la voix du client gagnent (règle 1). Premier usage réel le jour même : bande
+  « Assurances » du site DM (texte écrit contre les 5 motifs les plus forts).
+- **(d) Vente : indirecte** — outil de qualité interne qui améliore chaque texte vendu ; pas un
+  livrable. Ne fait pas passer les détecteurs IA (ni visé, ni promis par l'amont).
+- **(e) Installation :** `tools/humanizer/install.sh` — clone épinglé `~/.humanizer`, copie du
+  `SKILL.md` (voie documentée par l'amont pour les agents sans Skills CLI) vers
+  `~/.agents/skills/humanizer/` + miroir `~/.claude/skills/`. NI `/plugin marketplace`, NI
+  `npx skills add` (pas de runtime CLI supplémentaire, règle 5). Preuve par grep du front-matter.
