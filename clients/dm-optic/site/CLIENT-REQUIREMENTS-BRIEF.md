@@ -293,6 +293,25 @@ landing  →  carte de catégorie  →  futur catalogue  →  WhatsApp
   (`dpl_HDrZgFEEXcNJ3sH5mBnDpKugErBn`, READY/PROMOTED, accueil vérifié en ligne). Production
   Cloudflare toujours à King après validation ; aucun envoi au client ce tour.
 
+**20/10/2026 (suite 3) — la photo d'examen réelle entre dans « Nos services » et sur la page Examen.**
+
+- **Demande (King)** : utiliser `photoshoot/others/PXL_20261016_132758528.MP.jpg` (examen réel :
+  autoréfractomètre, titulaire en blouse, patiente, valise de verres d'essai) dans la section
+  « Nos services » de l'accueil — avis de l'agence demandé (« what do you think ?? »). Avis rendu :
+  **favorable** (alignement image↔contenu — la bande liste « Examen de la vue » et montrait une
+  4ᵉ monture déjà visible au-dessus ; crédibilité sans superlatif ; dernière bande générique de
+  l'accueil), avec une condition bloquante : la scène montre deux visages → OK publication requis.
+- **Ruling King (ask_user, même jour)** : go — **« OK client déjà acquis »** pour les visages
+  (verbal, consigné « pratique ») ; périmètre élargi à la page `/examen-de-vue/` (la même photo
+  sous les 4 étapes — comble le constat d'audit « examen sans image » sans nouveau shooting).
+  La monture H01 reste au parcours, sur sa fiche et en catégorie hommes.
+- **Exécution** : commit `4bed256` (constantes + gabarit + page examen + test Node renforcé),
+  `cabinet-examen.webp` 1920×1200 dérivée à chaque build comme le hero (recadrage centré,
+  métadonnées retirées), légendes honnêtes bilingues ; portiques 48/48 + 404 + Node verts ; lint
+  taste 44F/12W avant = après ; zip **131 entrées** ; déploiement Vercel
+  `dpl_48wabpiJWTGu6rgCfNUC2aGcpSmm` READY/PROMOTED, accueil + examen **vérifiés en ligne**.
+  Production Cloudflare inchangée : geste de King après validation.
+
 ## Dossier chargé pour écrire ce brief
 
 `clients/dm-optic/` : `dossier.md` · `a-completer.md` · `build-notes.md` · `pre-launch-checklist.md` · `retainer-rhythm.md` · `website/brief.md` · `website/BUILD-KICKOFF.md` · `site/SPEC-PAGES-v1.md` · `site/CLIENT-QUESTIONS-2026-10-08.md` ·

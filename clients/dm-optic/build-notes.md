@@ -740,3 +740,50 @@ alignement large) avant tout correctif.
   client sans défaut objectif pour la justifier.
 - **Reste ouvert** : F8 (validation client 40+stock, Cloudflare, Search Console/fiche Google,
   tests appareil/lecteur) ; production = geste de King après validation.
+
+---
+
+## 20/10/2026 · La photo d'examen réelle entre dans « Nos services » et sur la page Examen (OK client) — redéployé Vercel
+
+**Origine.** King propose la photo `photoshoot/others/PXL_20261016_132758528.MP.jpg` pour la
+bande « Nos services » de l'accueil (« what do you think ?? »). Avis rendu avant exécution :
+favorable — la bande liste « Examen de la vue » en 01 mais montrait la monture H01, déjà visible
+deux fois au-dessus (F01/E16 dans le parcours, H01 juste en dessous) ; la vraie scène d'examen
+(autoréfractomètre NIDEK, titulaire en blouse, valise de verres d'essai) apporte une information
+nouvelle et crédibilise sans superlatif. Une condition posée : la scène montre **deux visages**
+(patiente de profil + assistant) → OK publication requis.
+
+**Ruling King (ask_user).** (1) « OK client déjà acquis » → build + gates + commit + deploy dans
+le même cycle ; l'OK visages est verbal, consigné « pratique » (20/10). (2) Périmètre élargi :
+la même photo rejoint aussi `/examen-de-vue/` — le constat taste « examen sans image » est clos
+sans nouveau shooting.
+
+**Build.** `build_dmoptic.py` : `EXAM_PHOTO_SRC/_NAME/_TARGET` (source client nommée,
+`cabinet-examen.webp`, 1920×1200 q76, même `prepare_from` que le hero — recadrage centré,
+`-strip` des métadonnées/GPS) + garde « absent du gabarit ». Gabarit : la figure `band-fig`
+passe de `monture-h01.webp` (`img-real`, contain) à `cabinet-examen.webp` (cover 16/10 pleine
+largeur — la source est 4:3, le recadrage coupe haut/bas et garde les quatre acteurs) ; alt +
+`data-alt` FR/EN descriptifs, légende « L'examen de la vue, réalisé au cabinet. » (aucune mention
+« Photo d'illustration »). Page examen : figure `v2-photo` insérée entre les 4 étapes et la
+liste « À apporter », légende « Un examen de la vue en cours au cabinet : la mesure à
+l'autoréfractomètre. » H01 reste au parcours (E14/F01), sur sa fiche et en catégorie hommes.
+
+**Portiques.** py_compile OK ; build production OK (`cabinet-examen.webp` 266,4 Ko) ; boucle
+48/48 (html/a11y strict/images/js) ; 404 vert ×4 ; Node vert avec **nouvelle assertion**
+(bande `actes` = photo examen + légendes honnêtes, plus de H01 ; compte d'images 6 conservé).
+Taste lint statique : **44F/12W avant = 44F/12W après** (`bf9c0ec` comparé) — aucun défaut
+ajouté, le restant = Classe B gelée + plancher du skill. Impeccable non relancé ce tour : aucun
+CSS/layout changé (échange d'image 1:1), détection précédente déjà consignée.
+
+**Incident sandbox (6ᵉ).** L'environnement est revenu à `b134dd2` avec objets Git perdus et home
+effacée. Récupération en mixte jamais dur : `fetch origin` → `git reset --mixed fae12f1` →
+`git checkout -- .` → suppression de 4 WebP v1 orphelins non trackés ; réinstallation
+taste-skill (§1f, statique). Vérifié : status propre, `ls-remote == HEAD`, zip/photo intacts.
+
+**Git + déploiement.** Commit site **`4bed256`** poussé/vérifié → Vercel test
+**`dpl_48wabpiJWTGu6rgCfNUC2aGcpSmm` READY/PROMOTED** ; vérifié en ligne : accueil (bande
+« Nos services » sert `cabinet-examen.webp` avec sa légende) et `/examen-de-vue/` (figure sous
+les étapes). Zip **131 entrées, 3 720 499 o, testzip OK** — prêt pour l'upload Cloudflare de King.
+
+**Reste ouvert** : F8 (validation client 40+stock, Cloudflare, Search Console/fiche Google,
+tests appareil/lecteur) ; Classe B = ruling séparé ; production = geste de King après validation.

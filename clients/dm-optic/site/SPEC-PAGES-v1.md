@@ -460,3 +460,22 @@ sont des affiches murales). État : commit `12297ed` déployé sur le banc Verce
 (`dpl_HDrZgFEEXcNJ3sH5mBnDpKugErBn`, READY/PROMOTED, vérifié en ligne) ; portiques 48/48 ;
 production Cloudflare toujours à King après validation. Détail : `build-notes.md`, entrée du
 20/10 « Photo du cabinet en fond du premier écran ».
+
+---
+
+## 10.8 Photo d'examen réelle — « Nos services » + page Examen (20/10/2026, OK client) — déployée sur le banc Vercel
+
+King propose puis confirme (ruling du 20/10) : la bande « Nos services » de l'accueil troque la
+monture H01 (déjà au parcours, sur sa fiche et en catégorie hommes) contre la vraie photo d'examen
+`photoshoot/others/PXL_20261016_132758528.MP.jpg` — autoréfractomètre, titulaire en blouse blanche,
+patiente, valise de verres d'essai. **Le client a donné l'OK pour les visages** (rapporté par King,
+le même jour, verbal — consigné « pratique »). Sur décision du même ruling, la même photo rejoint
+`/examen-de-vue/` sous les quatre étapes : le constat d'audit « examen sans image » est clos.
+Dérivée `cabinet-examen.webp` (1920×1200, recadrage centré 16/10, métadonnées retirées, générée par
+`build_dmoptic.py` à chaque build) ; légendes honnêtes bilingues, aucune mention
+« Photo d'illustration ». Verrous inchangés (aucun prix, aucune marque, rien d'inventé). État :
+commit `4bed256` déployé sur le banc Vercel de King (`dpl_48wabpiJWTGu6rgCfNUC2aGcpSmm`,
+READY/PROMOTED, accueil + examen vérifiés en ligne) ; portiques 48/48 + 404 + Node verts ; lint
+taste 44F/12W avant = après (identité figée intouchée). Production Cloudflare toujours à King
+après validation. Détail : `build-notes.md`, entrée du 20/10 « La photo d'examen entre dans
+« Nos services » ».
