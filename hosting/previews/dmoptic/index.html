@@ -150,8 +150,13 @@ footer.site .logo{height:48px;box-sizing:content-box;border:5px solid #fff;borde
    pointe de braise, jamais de violet) ; le second est l'anneau de verre qui tourne, posé derrière la
    carte. Les deux ne bougent QUE par `transform` (composé par le GPU, pas de `filter:blur` sur grand
    écran) et s'arrêtent net si le visiteur demande moins de mouvement. */
-.hero{position:relative;overflow:hidden;padding-top:40px}
+.hero{position:relative;overflow:hidden;padding-top:40px;isolation:isolate}
 @media (min-width:780px){ .hero{padding-top:72px} }
+.hero-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:center;pointer-events:none}
+.hero-scrim{position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:linear-gradient(90deg,rgba(238,241,245,.94) 0%,rgba(238,241,245,.86) 48%,rgba(238,241,245,.46) 100%),
+             linear-gradient(180deg,rgba(238,241,245,.24),rgba(238,241,245,.68))}
+@media (max-width:779px){ .hero-scrim{background:linear-gradient(180deg,rgba(238,241,245,.93) 0%,rgba(238,241,245,.84) 58%,rgba(238,241,245,.94) 100%)} }
 .wash{position:absolute;z-index:0;inset:-28% -18% auto -18%;height:150%;pointer-events:none;
   background:
     radial-gradient(34% 40% at 24% 30%, rgba(26,63,134,.20), rgba(26,63,134,0) 70%),
@@ -165,7 +170,9 @@ html.js .wash{animation:drift 26s ease-in-out infinite alternate}
 }
 .lensring{position:absolute;z-index:0;right:-88px;top:34px;width:290px;height:290px;pointer-events:none}
 html.js .lensring{animation:spin 24s linear infinite}
-/* 20/10 (ruling King) : le logo géant décoratif est retiré ; la photo réelle du cabinet entre au premier écran (.herophoto). */
+/* 20/10 (demande client relayée par King) : la photo réelle du cabinet
+   (clients/dm-optic/photoshoot/others/PXL_20261016_131635710.MP.jpg) devient le fond du
+   premier écran (.hero-bg) ; le voile clair (.hero-scrim) ne sert qu'à la lisibilité. */
 .h-city{display:block;margin-top:.35em;font-size:.5em;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-2)}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (min-width:780px){ .lensring{right:-60px;top:20px;width:380px;height:380px} }
@@ -197,10 +204,6 @@ html.js .lensring{animation:spin 24s linear infinite}
 .idfoot{margin-top:16px;font-size:var(--fs-xs);color:var(--ink-3)}
 .idwrap{margin:0}
 .idwrap figcaption{margin-top:12px;font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
-.hero-side{display:grid;gap:22px;align-content:start}
-.herophoto{margin:0}
-.herophoto img{width:100%;aspect-ratio:1400/926;object-fit:cover;border-radius:var(--r-lg);border:1px solid var(--line)}
-.herophoto figcaption{margin-top:12px;font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
 
 /* ── LES ACTES : six cartes en bande glissante sur téléphone, trois colonnes sur ordinateur ──────── */
 .strip{display:grid;grid-auto-flow:column;grid-auto-columns:80%;gap:14px;overflow-x:auto;margin-top:30px;
@@ -365,8 +368,12 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
 
   <!-- ══ 1 · LE PREMIER ÉCRAN : ce que c'est, pour qui, et les deux gestes ═════════════════════════ -->
   <section class="hero" aria-labelledby="h-hero">
+    <img class="hero-bg" src="cabinet-hero.webp" width="1920" height="1270" decoding="async" fetchpriority="high"
+      data-alt-fr="Intérieur du cabinet DM OPTIQUE SARL à Bonabéri, murs de montures et assise." data-alt-en="Inside the DM OPTIQUE SARL practice in Bonaberi, frame display walls and seating."
+      alt="Intérieur du cabinet DM OPTIQUE SARL à Bonabéri, murs de montures et assise.">
+    <span class="hero-scrim" aria-hidden="true"></span>
     <span class="wash" aria-hidden="true"></span>
-    <!-- 20/10 (ruling King) : plus de logo géant décoratif ; la photo réelle du cabinet est dans la colonne de droite. -->
+    <!-- 20/10 (demande client) : la photo du cabinet est le fond du premier écran ; la carte reste la preuve à droite. -->
     <div class="wrap hero-grid">
       <div>
         <p class="kicker rv"><span class="fr-only" lang="fr">Opticien à Douala · inscrit à l'ONOC</span><span class="en-only" lang="en">Optician in Douala · registered with the ONOC</span></p>
@@ -404,7 +411,6 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
         </dl>
       </div>
 
-      <div class="hero-side">
       <figure class="idwrap rv">
         <div class="idcard">
           <div class="idtop">
@@ -431,13 +437,6 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
         </div>
         <figcaption><span class="fr-only as-block" lang="fr">Opticien inscrit à l'Ordre national des opticiens du Cameroun.</span><span class="en-only as-block" lang="en">Optician registered with the National Order of Opticians of Cameroon.</span></figcaption>
       </figure>
-      <figure class="herophoto rv">
-        <img src="cabinet-interieur.webp" width="1400" height="926" decoding="async" fetchpriority="high"
-          data-alt-fr="Intérieur du cabinet DM OPTIQUE SARL à Bonabéri, murs de montures et assise." data-alt-en="Inside the DM OPTIQUE SARL practice in Bonaberi, frame display walls and seating."
-          alt="Intérieur du cabinet DM OPTIQUE SARL à Bonabéri, murs de montures et assise.">
-        <figcaption><span class="fr-only as-block" lang="fr">Le cabinet, à Bonabéri.</span><span class="en-only as-block" lang="en">The practice, in Bonaberi.</span></figcaption>
-      </figure>
-      </div>
     </div>
   </section>
 

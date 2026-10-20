@@ -77,19 +77,27 @@ SAFE = "!'()*-._~"
 PHOTOS = {
     "dmoptic-solaires.webp": ("dmoptic-solaires.jpg", "900x563", "75"),   # 16/10 — la vitrine : solaires (illustration restante)
 }
+# 20/10 (demande client) : le fond du premier écran est LA photo du cabinet nommée par le client —
+# dérivée ici en WebP (même ratio, métadonnées retirées par -strip, GPS compris).
+HERO_BG_SRC = ROOT / "clients/dm-optic/photoshoot/others/PXL_20261016_131635710.MP.jpg"
+HERO_BG_NAME = "cabinet-hero.webp"
+HERO_BG_TARGET = "1920x1270"
 ASSET = "__ASSET__"                       # préfixe des fichiers : "" pour l'aperçu, chemin relatif pour demos/
 CONCEPT_ASSET = "../hosting/previews/dmoptic/"
 
 
-def prepare(name, target, quality, out):
+def prepare_from(src, target, quality, out):
     """Couvre la cible puis recadre AU CENTRE (`resize ^` + `extent`) : aucun décalage écrit en dur. Sortie WebP."""
-    src = IMG / name
     if not src.exists():
         sys.exit("photo manquante : %s" % src)
     subprocess.run(["convert", str(src), "-auto-orient", "-resize", target + "^",
                     "-gravity", "center", "-extent", target,
                     "-strip", "-quality", quality, "-define", "webp:method=6", str(out)], check=True)
     return out.stat().st_size
+
+
+def prepare(name, target, quality, out):
+    return prepare_from(IMG / name, target, quality, out)
 
 
 def b64(path):
@@ -242,6 +250,10 @@ def main():
             sys.exit("fichier absent du gabarit : %s" % fn)
         size = prepare(name, target, quality, PREVIEW / fn)
         print("  %-22s %s → %s (WebP, %5.1f Ko)" % (name, target, fn, size / 1024))
+    if ASSET + HERO_BG_NAME not in html:
+        sys.exit("fichier absent du gabarit : %s" % HERO_BG_NAME)
+    size = prepare_from(HERO_BG_SRC, HERO_BG_TARGET, "76", PREVIEW / HERO_BG_NAME)
+    print("  %-22s %s → %s (WebP, %5.1f Ko)" % (HERO_BG_SRC.name, HERO_BG_TARGET, HERO_BG_NAME, size / 1024))
 
     logo_png = None
     if opts.logo:
