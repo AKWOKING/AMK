@@ -33,3 +33,22 @@ répondre à un avis avec un claim — remercier, fait.
 ## Adresse — précision (ruling King 08/10)
 
 **Ligne 2 de l'adresse / complément :** « Immeuble West Hotel, 1er étage, dernière porte à droite » — l'épingle seule ne dit pas l'étage ; un client qui monte au rez-de-chaussée se trompe de porte.
+
+## Préparation local-seo (portion gratuite — méthodologie open-seo `local-seo`, 20/10)
+
+Ce que la portion gratuite de la méthodologie ajoute à ce qui précède (claim, données, description,
+photos, avis déjà réglés ci-dessus) :
+
+- **Services (champ GBP)** : Examen de la vue · Verres sur ordonnance · Montures femme · Montures
+  homme · Montures enfants · Réglage et réparation — libellés du site, zéro invention.
+- **« Produits » (fiches collections GBP)** : trois collections avec photo — Lunettes de vue,
+  Lunettes de soleil (photo d'illustration tant que pas de photo réelle), Montures enfants.
+  Aucun prix (verrou client).
+- **Lien de rendez-vous (bouton GBP)** : le wa.me du cabinet avec le message examen déjà écrit
+  (`https://wa.me/237656122239?text=…examen de la vue…`) — même messagerie que le site.
+- **Attributs** : seulement ceux vrais (accès à l'étage par escalier — pas de fausse accessibilité).
+- **Suivi de positions géo-grille** : portion payante (DataForSEO) → reportée avec la décision
+  open-seo ; en attendant, la mesure honnête = Search Console (gratuit, première partie) après
+  mise en production.
+- **Le relais AEO est prêt** : `llms.txt` à la racine du site (48 liens, coordonnées) — la fiche
+  et le site racontent la même chose, en même temps.

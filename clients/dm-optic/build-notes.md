@@ -826,3 +826,54 @@ Search Console) : bloquée sur la **production** (F8 — Cloudflare = King). Le 
 servira à la fiche Google après mise en ligne.
 
 **Aucun fichier du site modifié → pas de redéploiement (§1f③).**
+
+---
+
+## 20/10/2026 · Propositions implementées : llms.txt en ligne, personas en charge fixe, décisions classées — redéployé Vercel
+
+**P1 — `llms.txt` (écart AEO n°1) : construit, déployé, vérifié en ligne.** Généré à chaque build
+par `build_dmoptic_montures.py` (comme `404.html`/`_headers`) : 8 pages-hubs bilingues + 40 fiches
+aux **vrais noms accentués de `frames.json`** (pas des slugs — corrigé en cours de build) + 48 liens
+exactement, adresse/téléphone/horaires exacts, section Langues. Que du vrai : aucun prix, aucune
+marque (NIDEK/HP compris), aucune prétention. **Garde intégré au générateur** : le build échoue si
+≠ 48 liens, ou si FCFA/marque apparaît. Portiques : boucle 48/48, 404 ×4, Node verts ; taste
+44F/12W inchangé ; zip **132 entrées, 3 722 196 o, testzip OK**. Commit `8cb43bc` → Vercel
+`dpl_8pWGChkhjeGJQb9zpQE77mGsisRH` READY/PROMOTED, `/llms.txt` **lu en ligne** (contenu complet).
+Fallback assumé : une fiche sans `nom` retomberait sur son slug (URL valide quand même) — le
+compte de liens verrouille la structure.
+
+**P2 — DataForSEO / application OpenSEO : décision ENREGISTRÉE = report.** Première mesure
+honnête après production = **Search Console** (gratuite, première partie) ; DataForSEO seulement
+si un besoin reste non couvert, compte pay-per-call au nom de l'agence, clé jamais dans le dépôt.
+Trigger déjà inscrit au TOOL-SCAN.
+
+**P3 — Personas en charge fixe jusqu'à la livraison (validé par l'ordre « implement all ») et
+appliquées ce tour :**
+- **`marketing-aeo-foundations`** — checklist passée sur le site construit : robots `User-agent: *
+  Allow: /` (crawlers IA inclus) ✓ · `llms.txt` ✓ (nouveauté) · sitemap 48 ✓ · contenu FR/EN
+  **server-renderé** (les deux langues dans le HTML, lisibles sans JS) ✓ · JSON-LD Optician+FAQ ✓ ·
+  pages token-lean ✓. **Verdict : socle AEO vert** — ce qui reste est du contenu à venir (avis
+  clients, photos solaires), pas de l'infrastructure.
+- **`design-ui-finish-gate-reviewer`** — passe « finish gate » sur accueil + fiche : rien
+  d'interchangeable — vraies photos presque partout (une seule illustration honnêtement légendée),
+  dock WhatsApp au bon message par type de page, ONOC nommé, adresse/horaires réels, services
+  numérotés avec « à apporter ». **Verdict : PASS pour la porte pré-Cloudflare**, deux réserves
+  connues : F8 (validation client) et Classe B (identité figée = approuvée, pas un défaut).
+- Application honnête : les personas servent de **grilles exécutées par l'orchestrateur** (pas
+  d'exécution d'agents séparés dans ce bac).
+
+**P4 — Logos accessoires NIDEK/HP : classé « on garde »** (équipement contextuel, pas une
+revendication de marque ; l'alternative tuerait la scène). Validé par l'ordre d'implémentation.
+
+**P5 — Fiche Google : préparation `local-seo` écrite** (portion gratuite) dans
+`launch/SETUP-GOOGLE-BUSINESS.md` : champ Services (libellés du site), 3 collections « Produits »,
+lien de rendez-vous = wa.me examen, attributs honnêtes, géo-grille reportée avec P2, relais
+`llms.txt` noté. L'exécution GBP reste postérieure à la mise en production (jour 1 = claim, déjà
+écrit).
+
+**Protocole — §1f⑨ amendé (ordre King)** : tout problème résoluble relevé à l'audit porte sa
+**solution long terme** (règle, outil, contrôle structurel), pas seulement le correctif.
+
+**Déploiement : commit site `8cb43bc` → `dpl_8pWGChkhjeGJQb9zpQE77mGsisRH` READY/PROMOTED,
+`/llms.txt` vérifié en ligne (§1f③).** Reste : F8 (validation client 40+stock, Cloudflare = King,
+Search Console/fiche après mise en ligne) ; Classe B = ruling séparé.
