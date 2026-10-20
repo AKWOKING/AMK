@@ -58,6 +58,7 @@ Quand une règle change ou qu'un ruling est donné, cette table dit quels fichie
 | **Recherche externe = Agent Reach d'abord (ruling King 19/10, §1f①)** | `PRE-FLIGHT.md` §1f + lignes de routage recherche (§1, §1c, §2 étape 3) · `tools/agent-reach/README.md` · skill installé `~/.agents/skills/agent-reach/SKILL.md` (hors dépôt) · sorties de recherche (`research/`, `sales/research/`) |
 | **Brag de livraison à chaque site prêt (ruling King 19/10, §1f②)** | `PRE-FLIGHT.md` §1f + §1b · `tools/brag/README.md` · `tools/qa/audit_video_motion.py` (portique) · `clients/<client>/build-notes.md` (chemin du brouillon) · `hosting/previews/README.md` (deploy gate) |
 | **Déploiement Vercel DM Optique après chaque changement du site (ruling King 20/10, §1f③)** | `PRE-FLIGHT.md` §1f · `clients/dm-optic/build-notes.md` (id + état du déploiement) · `hosting/previews/dmoptic/` (racine du projet Vercel) · `sales/Activity-Log.md` |
+| **Design/build/revue = taste-skill appliqué (ruling King 20/10, §1f④)** | `PRE-FLIGHT.md` §1f + §1b · `tools/taste-skill/README.md` · skill installé `~/.agents/skills/design-taste-frontend/SKILL.md` (hors dépôt) · `AMK-DESIGN-SKILLS.md` (lois maison, gagnent en cas de conflit) · `clients/<client>/build-notes.md` + `inspiration.md` (direction tirée, redraws, scores) |
 
 Si cette table ne suffit plus à suivre la propagation entre fichiers, c'est le déclencheur pour réévaluer un outil de graphe de connaissances (voir la décision Graphify dans `sales/Activity-Log.md`).
 
@@ -208,6 +209,15 @@ Recette éprouvée (avec travail non commité, **jamais** `--hard`) : `git fetch
 - **Déclencheur :** tout changement du site DM Optique commité **et** poussé (portiques §1b verts) → l'orchestrateur déploie immédiatement ce commit sur le projet Vercel de test de King, sans qu'on le lui demande, et **vérifie en ligne** (état `READY` + lecture d'au moins une page modifiée).
 - **Cible :** projet `dm-optique-sarl` (`prj_vnTP9SW2lGh2rMqH15oU6S5NZvob`, équipe `team_EWqUU5nnB2OitkqqnARZ7Qrl`), racine `hosting/previews/dmoptic`, alias `https://dm-optique-sarl.vercel.app`. Le projet n'est pas lié Git (pas d'auto-déploiement) : déclenchement explicite via le connecteur Vercel, source GitHub `arena/2fffee3b-amk`, cible `production` du projet de test. Pièges connus : outils connecteur à recharger chaque tour ; `git_source` = chaîne JSON, pas objet ; `list_deployment_files` renvoie 404 sur ce projet → vérifier par lecture de page.
 - **Garde-fous inchangés :** Vercel = banc d'essai de King, pas une livraison client ; la production client (Cloudflare, domaine du cabinet) reste le geste de King après sa validation. L'id, l'état et le commit déployés se consignent dans `clients/dm-optic/build-notes.md` (+ Activity-Log).
+
+### ④ Tâche design / build / revue de page → **taste-skill lu et appliqué** (ruling King 20/10)
+
+> *King 20/10 : « before we go further I want you to install and use this [taste-skill] ».*
+
+- **Portée :** construire, designer, redesigner, restyler ou relire une page publique (le périmètre du skill lui-même). L'orchestrateur réinstalle si absent (`bash tools/taste-skill/install.sh`, épinglé — voir `tools/taste-skill/README.md`), lit `~/.agents/skills/design-taste-frontend/SKILL.md` (+ les `references/` utiles), et **le dit dans son en-tête pré-vol**.
+- **Procédure :** nouveau build = le « run » du skill (inventaire du sujet → argument → tirage de direction par `draw.mjs` → phrase-idée → copy deck → construction → portique `lint.mjs`/`inspect.mjs` → critique sur captures → mouvement → rapport honnête : direction tirée, redraws motivés, scores, contrôles **non** exécutés dits comme tels). Revue/restyle = le cas « existing page » du skill (avant/après mesurés). Sorties `.taste-skill/` ignorées par git.
+- **Hiérarchie en cas de conflit :** les lois maison (`AMK-DESIGN-SKILLS.md`, protocole d'unicité §2) et les verrous client (identité figée, textes approuvés, « le site ne montre que du vrai ») **gagnent** sur les règles maison du skill. Un conflit se signale à King, jamais un restylage silencieux ; `--allow`/`taste-skill-ignore` seulement avec raison écrite. Aucune donnée client dans les requêtes `assets.mjs`.
+- **Limite sandbox connue :** `inspect.mjs` exige Chrome/Chromium (`CHROME_PATH`) — absent ici ; tant qu'il n'a pas tourné, le rapport le dit et seuls `lint.mjs` + les portiques §1b font foi.
 
 ## 2 · Uniqueness protocol (every website/design build, before a line of HTML)
 

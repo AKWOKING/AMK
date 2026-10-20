@@ -237,3 +237,30 @@ l'exige, jamais avant · ChatGPT/Gemini free = déjà remplacés par l'orchestra
   identifiable sans accord écrit, contrôle visuel de 100 % des sorties. Triggers de re-review :
   premier lot client traité · halo/branche mangée constatés (→ autre modèle ou masque manuel) ·
   besoin d'upscale prouvé (→ test Upscayl sur machine King).
+
+---
+
+## 20/10 — taste-skill (design-taste-frontend) : installé et utilisé une première fois à la demande de King
+
+> Demande King du 20/10 : « install and use this [github.com/Leonxlnx/taste-skill] » avant d'aller plus
+> loin. Détail, état vérifié et premier usage : `tools/taste-skill/README.md`.
+
+- **(a) Problème :** les pages générées retombent sur les défauts de catégorie (centré, kicker, cartes
+  icônes, dégradés) — le risque « AI-made » que `AMK-DESIGN-SKILLS.md` combat déjà à la main, sans
+  portique mesuré ni source de directions extérieure au modèle.
+- **(b) Use case AMK nommé :** tout build/revue de page client (protocole d'unicité §2) : tirage de
+  direction recherchée (`draw.mjs`), lint anti-slop, inspection navigateur réel et critique sur
+  captures — en complément mesuré des lois maison, premier terrain : la revue DM Optique.
+- **(c) Coût :** **0 FCFA** (MIT). État à maintenir (règle 5, compté) : clone épinglé `~/.taste-skill`
+  (~43 Mo avec exemples) + 2 liens symboliques, **hors dépôt** ; ré-épinglage à chaque mise à jour
+  dans `tools/taste-skill/install.sh` ; sorties `.taste-skill/` gitignorées.
+- **(d) Effort + verdict :** **INSTALLÉ + premier usage fait, production sous conditions.** Le 20/10 :
+  pin `63aba5f`, liens `~/.claude/skills` + `~/.agents/skills`, `draw.mjs` prouvé par appels réels ;
+  `lint.mjs` sur l'accueil DM = **43 FAIL / 12 WARN**, quasi tous sur l'identité délibérée (mono,
+  filets, 01–06) → le skill sert de défaut aux nouveaux builds, pas de bulldozer sur identité figée.
+  `inspect.mjs` **non prouvé** ici (aucun Chrome dans la sandbox ; `CHROME_PATH` possible via la
+  chaîne brag). Conditions : **règle 3** — King relit la première application complète avant usage
+  production libre ; **règle 4** — requêtes `assets.mjs` génériques seulement, aucune donnée client ;
+  conflits avec les verrous maison signalés, jamais tranchés en silence. Règle debout :
+  `PRE-FLIGHT.md` §1f④. Triggers de re-review : inspecteur prouvé (Chrome) · première page livrée
+  avec le run complet · conflit répété avec `AMK-DESIGN-SKILLS.md`.

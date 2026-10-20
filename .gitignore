@@ -33,3 +33,4 @@ brag-output*/
 # photo : sorties de prep et poids de modèles (hors dépôt — voir tools/photo/)
 photo-output*/
 *.onnx
+.taste-skill/
