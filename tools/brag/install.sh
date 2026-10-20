@@ -114,6 +114,17 @@ PY
   ls -la /tmp/brag-smoke/renders/*.mp4
 fi
 
+# ── ffprobe (le binaire vient du paquet npm @ffprobe-installer — imageio-ffmpeg n'embarque
+#    QUE ffmpeg ; lier les deux dans ~/.local/bin, sinon `render` échoue au probe du rendu,
+#    vu le 20/10 : « ffprobe exit with code 8: Unrecognized option 'print_format' »)
+FFPROBE_NPM="$RT/node_modules/@ffprobe-installer/linux-x64/ffprobe"
+if [ -x "$FFPROBE_NPM" ]; then
+  ln -sf "$FFPROBE_NPM" "$HOME/.local/bin/ffprobe"
+  echo "  ✓ ffprobe lié depuis le paquet npm : $(ffprobe -version 2>/dev/null | head -1 | cut -d' ' -f1-3)"
+else
+  echo "  ⚠ ffprobe npm absent de $RT — le rendu hyperframes échouera au probe (leçon 20/10)"
+fi
+
 cat <<EOF
 
 ▸ PRÊT. Avant chaque session (les variables ne survivent pas au redémarrage) :

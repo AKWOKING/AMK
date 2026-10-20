@@ -53,6 +53,36 @@ photos, avis déjà réglés ci-dessus) :
 - **Le relais AEO est prêt** : `llms.txt` à la racine du site (48 liens, coordonnées) — la fiche
   et le site racontent la même chose, en même temps.
 
+## Création du compte Google — valeurs exactes (20/10, King sur l'écran « Create a Google Account »)
+
+| Écran | Valeur |
+|---|---|
+| First name | **DM OPTIQUE** |
+| Surname (optional) | **SARL** (le nom affiché sera « DM Optique SARL ») |
+| Birthday | la date de naissance de **King** (le compte est géré par lui) |
+| Username | `dmoptiquesarl@gmail.com` (si pris : `dmoptiquesarl237`) |
+| Password | **gestionnaire de mots de passe de King** — jamais dans le dépôt (public) |
+| Recovery email | l'e-mail personnel de King |
+| Recovery phone | le **656 122 239** (SMS cabinet) — sinon le téléphone de King pour la vérification du COMPTE ; la vérification de la FICHE GBP reste sur le 656 122 239 |
+
+Après création : activer la 2FA (recovery sur King), puis l'ordre ci-dessous.
+
+## Ordre des opérations (20/10, décision King : Google AVANT Facebook/TikTok)
+
+1. **Apex d'abord** (2 min) : Workers & Pages → `dmoptiquesarl` → Domains → + Add Domain →
+   `dmoptiquesarl.com` — sinon la racine reste morte et le sitemap canonique sera injoignable.
+2. **Search Console** (5 min) : avec le compte du cabinet → propriété **Domaine**
+   `dmoptiquesarl.com` → copier l'enregistrement **TXT** `google-site-verification=…` → le coller
+   dans Cloudflare (le domaine → DNS → Add record, Type TXT, Name `@`) → Verify →
+   soumettre `https://dmoptiquesarl.com/sitemap.xml` → Inspection d'URL + « Demander une
+   indexation » sur `/`, `/montures/`, `/examen-de-vue/` et une fiche.
+3. **Mesure** (2 min) : Cloudflare Web Analytics (toggle) — GA4 plus tard = décision séparée.
+4. **Fiche GBP** (20 min) : `business.google.com` avec le compte du cabinet → tout est préparé
+   ci-dessus (nom, catégories, adresse, horaires, téléphone, site, description, photos,
+   services, lien wa.me) → vérification **SMS vers +237 656 122 239** → **la seule action de
+   M. Domche : transférer le code** (déjà demandé dans le fil WhatsApp, asynchrone).
+5. **Ensuite seulement** : comptes Facebook et TikTok au nom du cabinet (item du message client).
+
 ## Voie rapide (20/10, décision King) — les comptes Google, créés par l'agence, au nom du cabinet
 
 Le client est difficile à joindre (fuseau différent, réponses lentes) : on crée les comptes

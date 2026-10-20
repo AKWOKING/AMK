@@ -459,3 +459,34 @@ l'exige, jamais avant · ChatGPT/Gemini free = déjà remplacés par l'orchestra
   ende.app toujours interdite ; rien d'envoyé sans validation de King. Ruling du même jour :
   le `brag.mp4` DM est **versionné dans le dépôt** sur ordre explicite (exception fichier par
   fichier à la règle « aucun mp4 versionné » ; le `.gitignore` global reste).
+
+## 20/10 — anthropics/skills : AUDITÉ — les skills documentaires sont PROPRIÉTAIRES, non installés ; la capacité est construite en propre (`tools/docs/`)
+
+> Demande King du 20/10 : « audit and see if this helps in our workflow or if we can sell it as
+> an additional service .. then install, test and use ». Pin de lecture `dbd4588`.
+
+- **(a) Ce que c'est :** le dépôt officiel des skills Anthropic — 19 skills dont les 4
+  documentaires (`docx`, `pdf`, `pptx`, `xlsx`, ceux qui font les capacités « create files » de
+  Claude) + des skills génériques (frontend-design, brand-guidelines, webapp-testing,
+  skill-creator, mcp-builder…).
+- **(b) Verdict licence — le point bloquant :** les 4 documentaires sont **« source-available,
+  not open source »** (README §20) avec des restrictions écrites noires sur blanc
+  (`skills/xlsx/LICENSE.txt`) : interdiction d'**extraire** les matériaux des Services, d'en
+  garder des **copies hors des Services**, d'en faire des **works dérivés**, de les
+  **redistribuer**. Notre pattern d'installation (clone + copie + pin hors services) = exactement
+  ce qui est interdit. **Non installés — pas de contournement.**
+- **(c) Verdict flux/vente sur les Apache-2.0 :** réels open source MAIS recouverts par notre
+  pile (frontend-design/brand-guidelines ≈ taste + AMK-DESIGN-SKILLS ; webapp-testing ≈ portiques
+  Node) ou hors métier (mcp-builder, claude-api). Non installés (règle 5 — pas d'état maintenu
+  sans usage).
+- **(d) Ce qui est retenu : LA MÉTHODE, réimplémentée en propre** — méthodologie xlsx
+  professionnelle (fonte lisible, zéro erreur de formule, sources citées dans le fichier,
+  recalc) appliquée avec `openpyxl` (MIT) dans **`tools/docs/xlsx_build.py`** (notre code, aucun
+  matériau amont copié). **Test et usage réels le jour même :** inventaire des 40 montures DM
+  Optique — `clients/dm-optic/launch/LISTE-40-MONTURES-2026-10.xlsx` (livrable de confirmation
+  client) + version WhatsApp `LISTE-40-MONTURES-WHATSAPP.txt`.
+- **(e) Vente : OUI, la capacité** — production documentaire (inventaires, proformas, rapports)
+  en service additionnel ; ajouts prévus sur demande : docx (python-docx, MIT), pptx
+  (python-pptx, MIT), pdf (reportlab — **vérifier les termes AGPL avant usage client**).
+  Conditions : aucune donnée client hors machine (génération locale), sorties relues par King
+  (règle 3). Re-review : si Anthropic relicencie les skills documentaires en open source.

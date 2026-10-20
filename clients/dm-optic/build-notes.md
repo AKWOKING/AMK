@@ -1010,3 +1010,39 @@ vérification SMS vers le 656 122 239 fait de **« transférer le code »** la s
 client (asynchrone, 10 s, pas de séance à planifier). Ligne de propriété écrite au client +
 « pratique » au log. Section « Voie rapide » ajoutée au `SETUP-GOOGLE-BUSINESS.md`. Rappel
 ouvert : l'**apex** `dmoptiquesarl.com` (sans www) reste à attacher (Domains → Add Domain).
+
+## 20/10 — Brag ENVOYÉ ; Google lancé chez King ; anthropics/skills audité (propriétaire, non installé) ; capacité documentaire maison + livrables client
+
+**Message + brag.mp4 ENVOYÉS à M. Domche (15:09, double check ; le client avait répondu « Ok » à
+12:35).** §1f② CLOS : le portique final (lecture téléphone) est passé. Le message annonce le
+site en ligne + l'ordre des prochaines étapes ; **restes ouverts** : la racine
+`dmoptiquesarl.com` (sans www) à attacher (aucune confirmation dans la capture) et le solde
+75 000 à la livraison (rappel à la main de King, le message n'en parlait pas — son choix).
+
+**Google — King exécute chez lui (ordre explicite : Google AVANT les comptes sociaux).**
+`SETUP-GOOGLE-BUSINESS.md` complété : valeurs exactes de l'écran de création de compte
+(`dmoptiquesarl@gmail.com`, prénom « DM OPTIQUE »/« SARL », secours et 2FA sur King, mot de
+passe jamais dans le dépôt public) + ordre en 5 étapes : apex d'abord (Add Domain) → Search
+Console propriété Domaine + TXT dans la zone Cloudflare → sitemap + indexation → Web Analytics
+(toggle) → fiche GBP (SMS 656 122 239, « transférer le code » = seule action client) → ensuite
+seulement FB/TikTok.
+
+**anthropics/skills — audité sur ordre conditionnel (« audit and see…then install »), verdict
+NON install :** le dépôt mélange skills Apache-2.0 et 4 skills documentaires (docx/pdf/pptx/xlsx)
+**« source-available, not open source »** — LICENSE.txt © Anthropic PBC avec interdictions
+explicites d'extraction hors Services, copie, works dérivés, redistribution : notre pattern
+(clone + copie + pin) est exactement ce qui est interdit. Les skills Apache sont redondants avec
+la pile AMK. **Retenu : la méthodologie, réimplémentée en propre** — `tools/docs/xlsx_build.py`
+(openpyxl MIT, aucun matériau amont copié) ; **nouvelle règle TOOL-SCAN** : « repo qui se dit
+open-source sans LICENSE = propriétaire, non installable » (même leçon qu'open-higgsfield).
+
+**Livrables du jour produits avec la nouvelle capacité (usage réel, pas un toy) :**
+`clients/dm-optic/launch/LISTE-40-MONTURES-2026-10.xlsx` (inventaire des 40 montures depuis
+frames.json — livrable de confirmation au client) + `LISTE-40-MONTURES-WHATSAPP.txt` (version
+à coller dans le fil) + `sales/OFFRE-VIDEO-LIVRAISON-2026-10.md` (fiche du service additionnel
+« vidéo d'annonce de livraison » — tarif = décision King).
+
+**Durcissement brag (leçon ffprobe du 20/10) :** `tools/brag/install.sh` lie maintenant
+`@ffprobe-installer/linux-x64/ffprobe` → `~/.local/bin/ffprobe` à la fin de l'installation
+(imageio-ffmpeg n'embarque que ffmpeg ; sans ffprobe, `hyperframes render` échoue au probe,
+exit 8) — testé : `ffprobe -version` OK depuis le symlink.
