@@ -428,3 +428,15 @@ build-notes du dépôt.)
 - **État** : construit et zippé au dépôt (`dmopticsarl.zip`, racine) pour validation King. **Non déployé** sur
   Cloudflare ; pas de nouvel envoi Vercel ce tour. Bloquants de fin : validation client des 40 + correspondance
   codes ↔ stock, accord visages pour les scènes d'examen, Search Console/fiche Google après déploiement.
+
+---
+
+## 20/10/2026 · v2 déployée sur Vercel test + règle « déployer à chaque changement »
+
+- **Ruling King (20/10)** : déployer la nouvelle version sur Vercel, et le faire **à chaque changement du site**.
+  Règle permanente inscrite : `PRE-FLIGHT.md` §1f③ (+ ligne §0d).
+- **Déploiement v2 fait** : commit `3d3ab9a` → déploiement `dpl_HUqFyrLTsqZGTxEwUS8tQpQTb5Hd`, **READY / PROMOTED**
+  (~70 s), alias `dm-optique-sarl.vercel.app` (+ alias branche). Vérifié en ligne : accueil (section
+  `#parcours`), `/montures/femmes/` (24 cartes + filtres), `/examen-de-vue/` (4 étapes).
+- **Portée** : Vercel reste le banc d'essai de King. La production client sur Cloudflare (upload du zip par King,
+  après validation) n'a pas changé ; `dmoptiquesarl.com` toujours non vérifié en direct.

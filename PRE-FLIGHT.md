@@ -57,6 +57,7 @@ Quand une règle change ou qu'un ruling est donné, cette table dit quels fichie
 | **POST-02 en attente (pas de script avant décision de King)** | `content/pipeline/CONTENT-PIPELINE.md` · `content/strategy/POSTING-CALENDAR.md` · `sales/Activity-Log.md` |
 | **Recherche externe = Agent Reach d'abord (ruling King 19/10, §1f①)** | `PRE-FLIGHT.md` §1f + lignes de routage recherche (§1, §1c, §2 étape 3) · `tools/agent-reach/README.md` · skill installé `~/.agents/skills/agent-reach/SKILL.md` (hors dépôt) · sorties de recherche (`research/`, `sales/research/`) |
 | **Brag de livraison à chaque site prêt (ruling King 19/10, §1f②)** | `PRE-FLIGHT.md` §1f + §1b · `tools/brag/README.md` · `tools/qa/audit_video_motion.py` (portique) · `clients/<client>/build-notes.md` (chemin du brouillon) · `hosting/previews/README.md` (deploy gate) |
+| **Déploiement Vercel DM Optique après chaque changement du site (ruling King 20/10, §1f③)** | `PRE-FLIGHT.md` §1f · `clients/dm-optic/build-notes.md` (id + état du déploiement) · `hosting/previews/dmoptic/` (racine du projet Vercel) · `sales/Activity-Log.md` |
 
 Si cette table ne suffit plus à suivre la propagation entre fichiers, c'est le déclencheur pour réévaluer un outil de graphe de connaissances (voir la décision Graphify dans `sales/Activity-Log.md`).
 
@@ -199,6 +200,14 @@ Recette éprouvée (avec travail non commité, **jamais** `--hard`) : `git fetch
 - **Déclencheur :** build terminé **et** portes §1b vertes, page prête à être livrée/déployée. L'orchestrateur produit alors un **brouillon** de vidéo d'annonce verticale ~20 s selon `tools/brag/README.md` (plan · `hyperframes check` 0 erreur · snapshots relus à l'œil · rendu · poster en frame 0 · `audit_video_motion.py` **OK**) et le présente à King **avec** le livrable, chemin consigné dans les build-notes.
 - **Garde-fous inchangés :** rien n'est **publié ni envoyé au client** sans validation de King ; site client réel = que du vrai (pas de brag sur des photos d'illustration — briefs § « le site ne montre que du vrai ») ; étiquette de fiction sur concepts/démos ; tons `polished`/`app-store` pour santé/éducation ; musique générée ou licenciée seulement (jamais les pistes embarquées, licence non documentée).
 - **Sortie hors dépôt** (`brag-output*/` ou `/home/user/…`, ignorée par git) : aucun mp4 versionné.
+
+### ③ Site DM Optique modifié → **déploiement sur le projet Vercel de test, d'office** (ruling King 20/10)
+
+> *King 20/10 : « deploy the new version on vercel, do this every time you carry out changes to the site ».*
+
+- **Déclencheur :** tout changement du site DM Optique commité **et** poussé (portiques §1b verts) → l'orchestrateur déploie immédiatement ce commit sur le projet Vercel de test de King, sans qu'on le lui demande, et **vérifie en ligne** (état `READY` + lecture d'au moins une page modifiée).
+- **Cible :** projet `dm-optique-sarl` (`prj_vnTP9SW2lGh2rMqH15oU6S5NZvob`, équipe `team_EWqUU5nnB2OitkqqnARZ7Qrl`), racine `hosting/previews/dmoptic`, alias `https://dm-optique-sarl.vercel.app`. Le projet n'est pas lié Git (pas d'auto-déploiement) : déclenchement explicite via le connecteur Vercel, source GitHub `arena/2fffee3b-amk`, cible `production` du projet de test. Pièges connus : outils connecteur à recharger chaque tour ; `git_source` = chaîne JSON, pas objet ; `list_deployment_files` renvoie 404 sur ce projet → vérifier par lecture de page.
+- **Garde-fous inchangés :** Vercel = banc d'essai de King, pas une livraison client ; la production client (Cloudflare, domaine du cabinet) reste le geste de King après sa validation. L'id, l'état et le commit déployés se consignent dans `clients/dm-optic/build-notes.md` (+ Activity-Log).
 
 ## 2 · Uniqueness protocol (every website/design build, before a line of HTML)
 

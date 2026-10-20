@@ -5361,3 +5361,13 @@ Source : déclaration de l'utilisateur (ce qui se passe en pratique). Le dépôt
 - **Toujours en attente** : validation client des 40 retenues + correspondance codes F/E/H ↔ stock physique ·
   accord explicite pour publier les scènes d'examen avec visages (le site v2 n'utilise que l'intérieur et
   l'enseigne, sans personne) · ligne de base patients/mois · Search Console + fiche Google après mise en ligne.
+
+## 20/10/2026 (mardi) — DM Optique : v2 déployée sur Vercel test (règle King : à chaque changement)
+
+- **Pratique (ruling King)** : « deploy the new version on vercel, do this every time you carry out changes to
+  the site » → règle permanente `PRE-FLIGHT.md` §1f③ : chaque changement du site commité/poussé et portiques verts
+  est déployé d'office sur le projet Vercel de test de King, puis vérifié en ligne.
+- **Fait ce tour** : commit `3d3ab9a` (build v2 D3) déployé → `dpl_HUqFyrLTsqZGTxEwUS8tQpQTb5Hd`, READY/PROMOTED ;
+  contenu vérifié sur `dm-optique-sarl.vercel.app` (accueil parcours, catégorie femmes 24 + filtres, examen).
+- **Inchangé** : production client = upload Cloudflare par King après validation ; bloquants de fin inchangés
+  (validation des 40 + stock, accord visages, ligne de base, Search Console/fiche Google après mise en ligne).
