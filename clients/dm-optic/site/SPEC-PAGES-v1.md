@@ -301,3 +301,104 @@ votre site » : la source y est implicite (nom de monture) — on ne l'altère p
 | « Aucun prix » : base réglementaire | **Déclarée par le client, corroborée en partie, non vérifiée pour l'affichage en ligne** — `sales/PACK-OPTICIEN-2026-10.md` § Fait de marché |
 
 **Questions client : quatre, pas de sixième** (ruling 08/10) — **répondues le 08/10 à 14:58**.
+
+---
+
+## 10 · v2 — Plan d'architecture et de design (20/10/2026, recherche faite, choix de direction en attente)
+
+> Commande King 20/10 : revoir design, mise en page et structure « avec tout ce qu'on a maintenant »
+> (104 montures réelles traitées, 4 photos cabinet, `tools/photo/`), **mêmes couleurs, même texte,
+> même logo**, SEO + UX. Cadrage King (20/10) : **architecture complète · pages catégories ·
+> ~40 montures curées · 3 directions, King choisit**. Cette section **réactive** la spec 5 pages
+> du 08/10 (§1–§6, toujours valable là où elle n'est pas amendée ci-dessous) et la met à jour :
+> l'Option B est close (catalogue lot 1 en ligne au dépôt le 19/10), le nommage par trait visible
+> remplace §7 (ruling 19/10), les catégories deviennent des **pages** (pas seulement des pills).
+
+### 10.1 Ce que la recherche impose (sources lues le 20/10 — détail dans `inspiration.md`)
+
+| Règle adoptée | Source |
+|---|---|
+| Filtres : **compteur de résultats sur chaque option**, aucune option à zéro résultat (= déjà §6), logique **OU dans un groupe / ET entre groupes**, filtres appliqués visibles en chips retirables au-dessus de la grille | Baymard, *Product List UX / Filter UI* 2025-26 |
+| Mobile : bouton Filtres **collant** + panneau plein écran + bouton « **Afficher X montures** » (pas de re-tri en direct qui désoriente) ; cibles ≥ 44 px (déjà §8) | Baymard (mobile filtering) |
+| Chaque attribut **affiché sur la carte** doit être filtrable (sinon frustration mesurée) → nos attributs visibles = catégorie, forme, couleur dominante. Pas de filtre Matériau tant qu'il n'est pas vérifié (on ne tague que le **visible**) | Baymard (category-specific filters) + verrou maison « rien d'inventé » |
+| **≥ 2 angles par monture quand ils existent** (face → profil au tap/survol) ; nos grappes dhash gardent les variantes | Baymard (3+ vignettes) ; cartes 2 photos Ace & Tate |
+| SEO : indexer **catégories + fiches + liste non filtrée** ; filtres en **fragments `#`** ou JS sans URL (Google les ignore → zéro URL combinatoire) ; canonique = page catégorie propre | Google, *Managing faceted navigation URLs* + blog Search Central 12/2024 |
+| Services et examen = **entrées de navigation de premier niveau** (pas enfouis) ; page examen dédiée = cible SEO locale (« examen de vue Bonabéri / Douala ») | Ace & Tate (nav lue en direct) ; plan SEO §1 |
+| Page monture : galerie, champs factuels, **« montures similaires »** (même forme/catégorie), un seul CTA WhatsApp (§0/§3 inchangés) | Warby Parker (lu en direct) ; spec §3 |
+
+### 10.2 Architecture cible (toutes directions — rulings appliqués)
+
+```
+/                                  Accueil (texte actuel, ordre selon direction)
+/montures/                         Hub catalogue : 3 portes catégories + sélection « à essayer »
+/montures/femmes/                  Page catégorie (grille + filtres Forme/Couleur + recherche nom)
+/montures/hommes/                  idem
+/montures/enfants/                 idem
+/montures/<categorie>/<code>-<slug>/   Fiche monture (galerie angles, faits visibles, similaires, CTA §0)
+/examen-de-vue/                    Le déroulé de l'examen (mots du client : anamnèse, bilan, acuités, réfraction — aucun titre non prouvé)
+/le-cabinet/                       À propos : titulaire nommé, ONOC (une phrase), photos réelles du cabinet
+/contact/                         Adresse complète (étage/porte en texte), horaires, carte statique + Maps, click-to-call (§4)
+```
+
+- **Données** : `frames.json` v2 par monture : `code` (F/E/H), `nom` (trait visible), `categorie`,
+  `forme`, `couleur` (dominante visible), `photos[]` (angles détourés `tools/photo/`), `phrase`.
+  Aucune mesure (largeur, pont, DP) : non fournies → non affichées (contrairement à Zenni).
+- **Inventaire v2 : ~40 montures** (ruling) — curation depuis les 104 grappes (face/¾ d'abord,
+  variantes d'angles rattachées à la fiche). Le reste reste traité, en réserve.
+- **Filtres** : pills Forme + Couleur par page catégorie, compteurs calculés sur les données,
+  recherche par nom (insensible casse/accents) ; implémentation JS progressive (sans JS : grille
+  complète visible) ; état vide = copy §2 + CTA WhatsApp. Aucune URL de filtre (fragments).
+- **SEO par type** : titre ≤ 65 car. et description ≤ 155 écrits par patron (« Montures femmes à
+  Bonabéri — DM OPTIQUE SARL »…) ; `ItemList` sur catégories, `BreadcrumbList` partout, `Optician`
+  + `FAQPage` existants conservés ; **aucun `Product`/`Offer`/`price`** (brief §4) ; sitemap
+  régénéré (catégories + fiches + services) ; alt = nom de la monture (FR ; limite EN connue).
+- **Performance** : WebP existants (22–46 Ko), lazy hors premier écran, first paint ≤ 3 s en 3G (§8),
+  aucun framework — pipeline statique et portiques §1b inchangés.
+
+### 10.3 Les trois directions (même identité : palette cachet & braise, Schibsted/Plex, logo, textes)
+
+**D1 · « La Carte, étendue » — continuité.** L'accueil garde son déroulé actuel et sa carte
+d'identité ; le catalogue prolonge le langage « fiche » : cartes-montures comme des fiches de
+registre (filets, champs en mono), catégories = trois registres, fiche monture = pièce officielle.
+Photos cabinet seulement sur `/le-cabinet/` et `/contact/`. *Pour :* risque minimal, réutilise
+CSS/build actuels, cohérence totale avec le Design Read « la carte ». *Contre :* catalogue plus
+administratif que vendeur ; les vraies photos restent sous-employées.
+
+**D2 · « La Vitrine réelle » — l'image d'abord.** Le hero accueille enfin la **photo réelle du
+cabinet** (le client l'a demandé : « C'est mieux la photo du cabinet », 10/10) ; trois grandes
+portes catégories photographiées (vraies montures) ; cartes généreuses avec **bascule d'angle**
+(face ↔ profil) ; les trois conseils existants (forme du visage · appui · usage) deviennent des
+blocs éditoriaux **dans** la grille ; fiche = galerie + similaires. *Pour :* c'est l'argument
+d'un opticien indépendant (recherche du 24/09 : la vitrine différencie) ; exploite l'actif photo.
+*Contre :* build le plus lourd (nouvelle couche catalogue), plus d'angles à préparer, budget
+mouvement à tenir.
+
+**D3 · « Le Parcours » — l'intention d'abord.** L'accueil se réordonne en trois intentions
+(« Un examen de vue » · « Choisir une monture » · « Venir au cabinet ») — textes inchangés, ordre
+nouveau ; barre d'action mobile permanente ; `/examen-de-vue/` devient la page d'atterrissage
+des pubs et du SEO local ; catalogue optimisé vitesse (barre de filtres collante, compteurs,
+chips) ; fiches courtes (photo, faits, CTA, similaires). *Pour :* conversion WhatsApp et SEO
+local les plus forts ; chaque page a un travail. *Contre :* s'éloigne le plus de la page approuvée
+par le client (« Ce que vous faites est bien », 25/09) — à faire valider avec soin.
+
+**Recommandation de l'orchestrateur : D2, avec la page examen de D3.** Raison : l'actif nouveau
+et différenciant, ce sont les vraies photos (montures + cabinet) ; D1 les sous-emploie, D3
+réordonne une page que le client a déjà approuvée. D2 garde l'accueil et son déroulé, change ce
+qui se voit. Les trois directions partagent §10.2 (architecture, données, SEO) : le choix porte
+sur la composition et le traitement d'image, pas sur la structure.
+
+### 10.4 Plan de build (après choix King)
+
+1. **Données** : taggage des ~40 (forme/couleur à l'œil depuis les planches, consigné) +
+   rattachement des angles ; `frames.json` v2 ; préparation WebP des angles manquants.
+2. **Générateurs** : étendre `build_dmoptic_montures.py` (hub + 3 catégories + fiches + sitemap)
+   ; nouvelles pages examen/cabinet/contact depuis le gabarit (header/footer partagés).
+3. **Accueil** : retouches selon direction (hero photo réelle si D2/D3 — **accord du titulaire
+   pour les visages toujours requis**, sinon intérieur sans personne).
+4. **Contrôles** : portiques §1b sur chaque page + test page étendu (filtres, fiches, compteurs) ;
+   aperçu Vercel pour validation King sur téléphone ; **déploiement Cloudflare par King**.
+5. **Restes** : Search Console (sitemap v2), fiche Google (photos), brag de livraison (§1f②).
+
+**Entrées manquantes (ne bloquent pas le choix, bloquent la fin)** : accord du titulaire pour les
+photos avec visages · validation client des ~40 retenues (retrait d'un code = un commit de
+données) · mesures des montures si le cabinet veut des fiches enrichies plus tard.

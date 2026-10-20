@@ -5330,3 +5330,20 @@ Source : déclaration de l'utilisateur (ce qui se passe en pratique). Le dépôt
   l'accord du titulaire pour les visages visibles (personnel posé) · correspondance codes F/E/H ↔
   stock physique à transmettre au cabinet (planche lot 1) · ligne de base patients/mois toujours
   sans réponse.
+
+## 20/10/2026 (mardi) — DM Optique : plan d'architecture/design v2 (recherche faite, choix en attente)
+
+- **Commande King :** revoir design, mise en page et structure du site avec les actifs actuels,
+  mêmes couleurs/texte/logo, SEO + UX. Cadrage : architecture complète, pages catégories,
+  ~40 montures, **3 directions au choix de King**.
+- **Pré-vol §0b complet** (PRE-FLIGHT, brief, SPEC-PAGES-v1, inspiration, build-notes, registre
+  d'unicité, checklist SEO) ; Agent Reach réinstallée mais canaux bloqués (egress) → recherche
+  native déclarée : Baymard (UX filtres), Google officiel (facettes), Warby Parker + Ace & Tate
+  lus en direct.
+- **Écrit dans :** `site/SPEC-PAGES-v1.md` §10 (architecture 9 types d'URL, données taguées
+  « visible seulement », filtres à compteurs sans URL paramétrées, 3 directions D1/D2/D3 dans
+  l'identité actuelle, reco D2 + page examen) · `inspiration.md` (références pris/rejeté) ·
+  `build-notes.md` (stub daté). La spec 5 pages du 08/10 est réactivée et amendée, pas remplacée.
+- **Prochain geste : King choisit la direction** → taggage des ~40 → générateurs → portiques →
+  test Vercel → King déploie sur Cloudflare. Bloquants de fin inchangés : accord visages
+  (photos cabinet), validation client de la sélection, ligne de base patients/mois.

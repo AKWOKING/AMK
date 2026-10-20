@@ -126,3 +126,48 @@ indépendantes.
 `optifyonline.com`, `webdesignstudio.london`. Tous disent la même chose : **la section montures est le
 différenciateur d'un opticien indépendant**, et l'accueil doit porter le nom, la ville, une liste de
 services explicite — et un bouton toujours visible.
+
+---
+
+## Troisième passage (20/10/2026) — **les catalogues**, pour l'architecture v2
+
+Commande King : revue design/structure avec les vraies photos. Agent Reach tentée d'abord (§1f① :
+doctor OK, `gh` muet, Jina HTTP 000 → repli natif déclaré). Références lues en direct :
+
+### 5 · `warbyparker.com/eyeglasses/women` — l'angle **structure de catalogue**
+238 montures ; filtres repliés (« Shop by · Shape · Frame width »), compteur de résultats visible ;
+la carte porte **plusieurs coloris en vignettes**, le nom, « Similar frames », « Try on » ; fiche par
+monture `/eyeglasses/<modèle>/<coloris>`. Taxonomie formes : cat-eye · square · round · oval ·
+rectangle · geometric · aviator (notre §6 en est proche).
+- **Pris** : compteurs, similaires sur la fiche, angles/coloris dans la carte, URL par monture.
+- **Rejeté** : prix partout, essayage virtuel, panier, quiz — hors périmètre (brief §6).
+
+### 6 · `aceandtate.com/gb/glasses` — l'angle **navigation + imagerie**
+Nav de premier niveau : Glasses · Sunglasses · Services · **Eye test** · Stores — l'examen est une
+**entrée**, pas une section. 430 montures, filtres Frame shapes / Frame width / Colours ; carte =
+**photo à plat + photo portée** ; blocs de campagne **insérés dans la grille**.
+- **Pris** : page examen dédiée et liée dès la nav ; deux images par carte (chez nous : deux
+  **angles**, pas de visage porté sans accord) ; blocs éditoriaux dans la grille (nos trois conseils).
+- **Rejeté** : prix « starting from », bundles/promos, wishlist, comptes.
+
+### 7 · Baymard Institute (Product List & Filtering UX, 2025-26) — l'angle **preuve d'usage**
+Listes médiocres = **67–90 % d'abandon**, outillage correct = 17–33 %. Règles reprises dans
+`SPEC-PAGES-v1.md` §10.1 : compteurs par option, OU/ET, chips de filtres appliqués, mobile =
+bouton collant + panneau + « Afficher X résultats », un filtre pour chaque attribut montré sur la
+carte, étiquettes littérales courtes. **Rejeté** : leurs patterns e-commerce (tri prix, dispo,
+livraison) — sans objet ici.
+
+### 8 · Google Search Central (documentation officielle) — l'angle **SEO des filtres**
+*Managing crawling of faceted navigation URLs* + blog 12/2024 : les facettes créent des espaces
+d'URL quasi infinis ; soit les bloquer (robots.txt), soit utiliser des **fragments `#`** que les
+moteurs ignorent ; indexer les **listes propres + les fiches**. À notre échelle (~50 pages) le
+budget de crawl n'est pas le sujet ; les doublons minces, si.
+- **Pris** : filtres JS + fragments (aucune URL paramétrée), canoniques propres, sitemap limité
+  aux pages qui comptent. **Rejeté** : toute facette indexable « au cas où ».
+
+**Design Read v2 (à confirmer par le choix de direction)** : la même identité (« cachet & braise »,
+Schibsted/Plex, la carte) ; ce qui change = la **profondeur** (catégories, fiches, examen, cabinet)
+et la **matière** (vraies photos détourées sur crème chaud, vrais murs du cabinet). Trois directions
+de composition écrites dans `SPEC-PAGES-v1.md` §10.3 — D1 continuité, D2 vitrine réelle
+(recommandée), D3 parcours. Unicité vérifiée contre le registre : aucune ne rejoue La Ligne
+(visages/portraits), Cinq Sens (affiche), Cristallin (mesure) ni l'Instrument écarté en v1.

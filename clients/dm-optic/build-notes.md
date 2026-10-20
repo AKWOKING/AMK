@@ -394,3 +394,16 @@ est clos ; importe pour (1) tout envoi futur de l'URL DM Optique (référence/po
 opticiens (quand construite), dont l'og:image portera chaque message de vague avec lien.
 (Note : le fichier nommé par le ruling, `site/BUILD-NOTES.md`, n'existe pas ; consigné ici, le vrai
 build-notes du dépôt.)
+
+---
+
+## 20/10/2026 · Plan d'architecture v2 écrit — choix de direction en attente (King)
+
+- Recherche catalogue faite (Agent Reach tentée, bloquée egress → natif déclaré) : Baymard,
+  Google (facettes), Warby Parker et Ace & Tate lus en direct → `inspiration.md` (3e passage).
+- Plan complet : `site/SPEC-PAGES-v1.md` **§10** — architecture 9 URLs types (hub, 3 catégories,
+  fiches, examen, cabinet, contact), `frames.json` v2 tagué **visible seulement** (forme/couleur),
+  filtres à compteurs en fragments (SEO), ~40 montures curées, 3 directions de composition dans
+  l'identité actuelle. Recommandation : **D2 « La Vitrine réelle » + page examen de D3**.
+- État : **aucun build v2 commencé**. Prochain geste = choix King (D1/D2/D3), puis données →
+  générateurs → portiques → Vercel → déploiement Cloudflare par King.
