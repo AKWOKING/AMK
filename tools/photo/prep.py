@@ -67,7 +67,9 @@ def do_catalogue(src, outdir, session, kind, bg):
     fg = float((np.asarray(mask) > 40).mean())
     cut = img.convert("RGBA")
     cut.putalpha(mask)
-    cut.save(outdir / f"{src.stem}-cutout.png")
+    master = cut.copy()
+    master.thumbnail((2048, 2048), Image.LANCZOS)  # master social, pas le 16 Mpx du téléphone
+    master.save(outdir / f"{src.stem}-cutout.png")
 
     bbox = mask.point(lambda v: 255 if v > 40 else 0).getbbox()
     if not bbox:

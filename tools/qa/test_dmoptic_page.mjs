@@ -71,11 +71,13 @@ ok("la vitrine dit que les photos sont des illustrations (jamais des montures du
 ok("la vitrine ne nomme AUCUNE marque et n'affiche AUCUN prix",
    !/Ray-Ban|Oakley|Gucci|Tom Ford|Oliver Peoples|Essilor|Zeiss/i.test(showcase) && !/\d{3,}\s?(FCFA|XAF)/i.test(showcase));
 /* v2.1 : « une seule action ». Option B (King, 08/10) : quatre — les trois cartes de familles + la question
-   générique sur une monture précise ; toutes WhatsApp, aucun autre lien sortant dans la vitrine. */
-ok("la vitrine porte quatre actions, toutes WhatsApp (trois familles + la question sur une monture précise)",
-   (showcase.match(/class="btn /g) || []).length === 4 &&
-   (showcase.match(/<a [^>]*href="/g) || []).length === 4 &&
-   (showcase.match(/<a class="btn btn-wa wa/g) || []).length === 4);
+   générique sur une monture précise ; toutes WhatsApp, aucun autre lien sortant dans la vitrine.
+   19/10 : premier lot réel reçu — la vitrine gagne UN cinquième lien, vers /montures/
+   (le branchement prévu par build_dmoptic_montures.py : « à partir du premier vrai lot »). */
+ok("la vitrine porte quatre actions WhatsApp + un lien catalogue (premier lot réel, 19/10)",
+   (showcase.match(/<a [^>]*href="/g) || []).length === 5 &&
+   (showcase.match(/<a class="btn btn-wa wa/g) || []).length === 4 &&
+   (showcase.match(/href="\/montures\/"/g) || []).length === 1);
 ok("les trois conseils du choix sont là (forme du visage, appui, usage)",
    (showcase.match(/<div>\s*<h3>/g) || []).length >= 3);
 
@@ -118,8 +120,9 @@ ok("Option B : chaque carte a aussi son message en anglais, différent des deux 
    new Set(cardLinks.map((l) => (l[0].match(/data-en="([^"]*)"/) || [])[1])).size === 3);
 ok("Option B : l'adresse statique de chaque carte = le message français encodé par le JavaScript",
    cardLinks.every((l, i) => (l[0].match(/href="([^"]+)"/) || [])[1] === WA + encodeURIComponent(CAT_FR[i])));
-ok("Option B : aucune page catalogue, aucun filtre, aucune barre de recherche dans la page",
-   !/href="\/montures|type="search"|role="search"|class="[^"]*\bpill\b/.test(html));
+ok("catalogue lié une seule fois depuis la vitrine ; toujours ni filtre ni recherche sur l'accueil (19/10)",
+   (html.match(/href="\/montures\/"/g) || []).length === 1 &&
+   !/type="search"|role="search"|class="[^"]*\bpill\b/.test(html));
 ok("aucun prix dans le texte visible",
    !/\b\d{2,3}\s?\d{3}\s?(FCFA|XAF|fcfa)\b/i.test(html) && !/priceRange/.test(html));
 

@@ -72,7 +72,8 @@ def main():
         for f in frames:
             name = f["nom"]
             msg = f"Bonjour DM OPTIQUE SARL, je suis intéressé par la monture « {name} ». Est-elle disponible ?"
-            img = f'<img src="{esc(f["photo"])}" alt="{esc(name)}" loading="lazy" width="800" height="600">' if f.get("photo") else ""
+            # 19/10 : annonce honnête = taille réelle des fichiers préparés par tools/photo (1600x1200, affichés en 800x600 par le CSS)
+            img = f'<img src="{esc(f["photo"])}" alt="{esc(name)}" loading="lazy" width="1600" height="1200">' if f.get("photo") else ""
             cards.append(f'''<li class="frame">
       {img}
       <h2>{esc(name)}</h2>

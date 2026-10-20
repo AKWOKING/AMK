@@ -5306,3 +5306,27 @@ Source : déclaration de l'utilisateur (ce qui se passe en pratique). Le dépôt
 - **Bloquants inchangés :** photos et noms de montures du client · ligne de base (patients/mois
   actuels, question posée le 15/10 sans réponse) · création des comptes avec le téléphone du
   client · confirmation en ligne du domaine · aucun contenu publié.
+
+## 19/10/2026 (lundi, suite) — DM Optique : photos reçues, catalogue lot 1 construit (non déployé)
+
+- **Pratique (King) :** photos du client déposées dans `clients/dm-optic/photoshoot/` — 156 photos
+  de montures (femmes 110, enfants 37, hommes 9) + 4 cabinet (intérieur, examen avec le personnel
+  posant comme patient, enseigne). **Rulings King :** fond catalogue **ton chaud de la palette**
+  (crème `F6EBE0`, dérivé de `--ember`) ; pas de noms client → **nommage par trait distinctif
+  visible + code** (F/E/H), ce qui amende la règle « aucune carte sans nom fourni par le client »
+  (aucune marque nommée, aucune matière non vérifiable à l'œil).
+- **Traitement (`tools/photo/`, 100 % local) :** 156 montures détourées (ISNet) sur fond crème 4:3,
+  0 alerte fg ; déduplication dhash → **104 montures distinctes** ; cabinet en corrections
+  classiques. **Lot 1 publié au dépôt : 20 cartes** (12 F, 5 E, 3 H — vues face/¾ propres) dans
+  `frames.json` + WebP 22–46 Ko ; page `/montures/` reconstruite ; **lien « Voir toutes les
+  montures » ajouté à la vitrine de l'accueil** (fin de la phase Option B « page non liée » —
+  2 assertions du test mises à jour et datées, à ratifier par King). Portiques : html/a11y-strict/
+  images/js/hero + test node 50/50 ✅. **Non déployé** : King valide (test personnel TOOL-SCAN)
+  puis pousse lui-même sur Cloudflare.
+- **Exclusions signalées :** F36 (présentoir, pas une monture) · F54 (masque raté) · **F32 (verre
+  de démonstration imprimé d'une marque de luxe → exclue, verrou marques)** · vues de profil pur
+  différées au lot 2. Restent **84 montures traitées** en réserve (planches `photo-review/`).
+- **En attente King/client :** emplacement des 4 photos cabinet sur l'accueil + confirmation de
+  l'accord du titulaire pour les visages visibles (personnel posé) · correspondance codes F/E/H ↔
+  stock physique à transmettre au cabinet (planche lot 1) · ligne de base patients/mois toujours
+  sans réponse.
