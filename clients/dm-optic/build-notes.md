@@ -1102,3 +1102,22 @@ jour ; premier usage réel = la bande Assurances.
 
 **Dépôt :** 8ᵉ wipe du bac détecté (restauration sur la base `b134dd2`, arbre sale) → remède debout
 appliqué (`reset --mixed` sur le tip ls-remote + checkout), **zéro perte** (tout était poussé).
+
+## 20/10 (nuit) — Production Cloudflare = bande Assurances EN LIGNE (vérifiée sur l'apex) ; propriété GSC Domaine VÉRIFIÉE ; plan d'indexation
+
+**Upload Cloudflare de King vérifié en direct :** `https://dmoptiquesarl.com/` sert la bande
+« Votre assurance, acceptée au cabinet. » (3 chips + note + CTA pré-rempli) et `/contact/` la
+ligne `Assurance` — la production tourne sur le contenu `e881fdd`. Site livré et complet.
+
+**GSC :** propriété **Domaine `dmoptiquesarl.com` VÉRIFIÉE** (capture : sélecteur de propriété sur
+le domaine, Overview « Processing data » = normal à J0). La sitemap listée est encore celle soumise
+sous l'URL www — colonne « Last read » vide = Google ne l'a pas relue. **Plan validé :** (1)
+soumettre aussi `https://dmoptiquesarl.com/sitemap.xml` (hôte canonique) dans la propriété
+Domaine ; (2) « Demander une indexation » sur 9 URLs seulement — `/`, `/montures/`, les 3 hubs de
+catégorie, `/examen-de-vue/`, `/le-cabinet/`, `/contact/`, une fiche témoin (F01) — les 40 autres
+fiches arrivent par la sitemap et les liens internes des hubs (quota de demande d'indexation +
+zéro gain à les faire une par une) ; (3) lecture de la sitemap attendue sous 24–48 h → statut
+« Success / 48 discovered ».
+
+**Dépôt :** 9ᵉ wipe du bac (même restauration base `b134dd2`, mêmes 4 webp orphelins non suivis
+réapparus, nettoyés) → remède debout, zéro perte.
