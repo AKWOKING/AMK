@@ -284,7 +284,7 @@ Chaque ligne est un **triple** : le texte à l'écran, la phrase de voix (qui **
 
 ---
 
-## 11 · La prochaine vidéo — proposition, non produite
+## 11 · La prochaine vidéo — **produite le 21/10** (`content/month1/w2/etapes-01.mp4`)
 
 **Titre de travail : « Ce que voit quelqu'un qui n'est jamais venu. »**
 30 s · 1080×1920 · sans visage · photos réelles uniquement · voix off existante du dossier.
@@ -358,4 +358,4 @@ Trois raisons, dans l'ordre d'importance :
 
 ---
 
-*Document de recherche. Aucun support client n'est produit à ce stade. Les pièces visuelles du §6 sont des essais techniques internes, pas des livrables.*
+*Document de recherche, complété après montage. Le film du §11 existe : `content/month1/w2/etapes-01.mp4` (31 s), portiques mouvement et affirmations OK. Les pièces visuelles du §6 restent des essais techniques internes.*

@@ -34,6 +34,7 @@ tools/record/node_modules/
 !clients/dm-optic/content/month1/w1/ugc-03.mp4
 !clients/dm-optic/content/month1/w1/spot-02.mp4
 !clients/dm-optic/content/month1/w1/spot-03.mp4
+!clients/dm-optic/content/month1/w2/etapes-01.mp4
 # archives d'export : produites par un script, jamais versionnées
 /amk-site*.zip
 /site/*.zip
