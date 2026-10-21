@@ -1941,9 +1941,12 @@ et la décision de garder le sans-visage avec un tournage mensuel.
 2. **Remontage des deux vidéos**, voix comprises (`voice-00`, texte pris dans le `.srt` pour le post 1 et
    dans `ugc-03.md` pour le post 2) : `tiktok-01-v2.mp4` **23,00 s / 4,8 Mo**, `ugc-03.mp4`
    **22,30 s / 6,8 Mo**, **portique OK pour les deux**.
-3. **Le correctif de fond** : les fichiers partent désormais en **release GitHub**
-   (`dm-optique-videos-2026-10-22`) — téléchargeables, permanents, zéro poids dans l'arborescence — et un
-   index `content/month1/w1/VIDEOS.md` dit où, quoi, et comment les reproduire.
+3. **Le correctif de fond** — en deux temps. D'abord la **release GitHub** : elle échoue,
+   `uploads.github.com` étant **injoignable depuis l'espace de travail** (testé, code 000 ; `api.github.com`
+   et `github.com` répondent, l'envoi de pièces jointes non). Ensuite, et c'est ce qui reste : **dépôt
+   direct dans l'arborescence**, par **deux exceptions nommées** dans `.gitignore`, avec le commentaire qui
+   explique et qui dit comment revenir en arrière. Coût assumé : **~11,6 Mo**. `VIDEOS.md` donne les chemins
+   exacts, les durées, les portiques et les commandes de remontage.
 
 **La leçon à garder** : un fichier ignoré n'est pas « rangé ailleurs », il est **hors de toute
 sauvegarde**. Règle debout proposée : *tout livrable binaire déposé en release le jour même, son nom écrit

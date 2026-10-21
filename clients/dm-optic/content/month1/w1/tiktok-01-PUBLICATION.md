@@ -1,8 +1,8 @@
 # TikTok n°1 — la fiche de publication (22/10, 5h30)
 
-> 📍 **Le fichier vidéo est dans la release GitHub**, pas dans l'arborescence (les `.mp4` sont exclus
-> par `.gitignore` depuis le 23/09) : **`VIDEOS.md`**, dans ce dossier, donne le lien, la durée et la
-> commande de remontage. Release : `dm-optique-videos-2026-10-22`.
+> 📍 **Le fichier vidéo est dans ce dossier** : `tiktok-01-v2.mp4` (23,00 s, 4,8 Mo, versionné depuis le
+> 22/10 par exception nommée dans `.gitignore`). Voir **`VIDEOS.md`** pour les chemins, les durées et les
+> commandes de remontage.
 
 > ⚠️ **22/10 — ce n'est plus la vidéo prévue pour le premier post.**
 > King a choisi l'option B : le premier post devient **`tiktok-01-v2-20-20-20.md`**

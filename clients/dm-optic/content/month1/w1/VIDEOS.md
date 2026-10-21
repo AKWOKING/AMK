@@ -1,79 +1,73 @@
-# Où sont les vidéos — et pourquoi elles ne sont pas dans l'arborescence
+# Où sont les vidéos — état au 22/10/2026
 
 ```
-Updated 2026-10-21 (soir)
-Question de King : « je ne trouve pas ugc-03.mp4 sur github » · « where is post 1?? »
-Réponse courte : les .mp4 ne sont pas versionnés (règle du dépôt), ils sont dans la RELEASE.
+Question de King : « je ne trouve pas ugc-03.mp4 sur github » · « where is post 1 ?? »
+Réponse : ils y sont maintenant, dans ce dossier. Chemins exacts au §1.
 ```
 
 ---
 
-## 1 · La raison, en une ligne
+## 1 · Les fichiers, droit devant
 
-Le dépôt **ignore les fichiers vidéo et audio par construction** :
+| Post | Fichier vidéo | Couverture | Sous-titres | Durée · poids |
+|---|---|---|---|---|
+| **1 — 20/20/20** | **`tiktok-01-v2.mp4`** | `tiktok-01-v2-cover.jpg` | `tiktok-01-v2.fr.srt` | 23,00 s · 4,8 Mo |
+| **2 — UGC « on montre avant de vendre »** | **`ugc-03.mp4`** | `ugc-03-cover.jpg` | — (sous-titres incrustés) | 22,30 s · 6,8 Mo |
 
-```gitconfig
-# .gitignore, ligne 13-20
-# ── MÉDIAS LOURDS (règle du 23/09/2026, demande de King : « retire les vidéos précédentes,
-#    elles rendent le repo lourd inutilement »). Le dépôt n'est pas un disque dur…
-*.mp4
-*.webm
-*.mov
-*.mkv
-*.mp3
-*.wav
+Chemin complet depuis la racine du dépôt :
+
+```
+clients/dm-optic/content/month1/w1/tiktok-01-v2.mp4
+clients/dm-optic/content/month1/w1/ugc-03.mp4
 ```
 
-**C'est ta règle, et elle est bonne** : 71 Mo avaient été retirés le 23/09 pour cette raison. Le corollaire
-que je n'avais pas assez dit : **un fichier ignoré n'apparaît jamais sur GitHub**, et il **ne survit pas**
-non plus à une remise à zéro de l'espace de travail. C'est exactement ce qui s'est passé cette nuit — les
-deux vidéos et leurs voix ont disparu du disque, elles ont été **remontées et revérifiées** (voir §3).
+Les deux passent le portique (`tools/qa/audit_video_motion.py`) : **0 fenêtre figée**.
+Les voix séparées (`assets/voix-v2.mp3`, `assets/ugc-03-voix.mp3`) restent hors dépôt — elles se
+régénèrent en une commande (§3).
 
-## 2 · Où les prendre, maintenant
+## 2 · Pourquoi ça n'y était pas, et ce qui a changé
 
-**Release GitHub** (téléchargement direct, aucun poids dans l'arborescence) :
+Le dépôt excluait **tous** les `.mp4` et `.mp3` par `.gitignore` (règle du 23/09 : « le repo n'est pas un
+disque dur »). Conséquence que je n'avais pas rendue assez visible : un fichier ignoré est **invisible sur
+GitHub** et **hors de toute sauvegarde** — quand l'espace de travail a été remis à zéro, les deux vidéos
+ont disparu du disque, et aucun `git checkout` ne pouvait les ramener.
 
-> **`https://github.com/AKWOKING/AMK/releases/tag/dm-optique-videos-2026-10-22`**
+**Ce qui a changé le 22/10** — sur ta demande explicite, deux exceptions **nommées** dans `.gitignore` :
 
-| Fichier joint | Quoi |
-|---|---|
-| `tiktok-01-v2.mp4` | **le post 1** — 23,00 s, 1080×1920, voix incluse |
-| `tiktok-01-v2-cover.jpg` | sa couverture 1080×1920 |
-| `tiktok-01-v2.fr.srt` | ses sous-titres (7 blocs) |
-| `ugc-03.mp4` | **le post 2** — 22,30 s, sans visage, « on montre avant de vendre » |
-| `ugc-03-cover.jpg` | sa couverture |
-| `ugc-03-voix.mp3` · `voix-v2.mp3` | les deux voix, séparées (si tu veux remonter à ta façon) |
+```gitconfig
+!clients/dm-optic/content/month1/w1/tiktok-01-v2.mp4
+!clients/dm-optic/content/month1/w1/ugc-03.mp4
+```
 
-La release est **permanente** : c'est elle, désormais, la copie de référence. Télécharge les fichiers sur
-ton téléphone ou ton disque — l'espace de travail, lui, peut être remis à zéro.
+Le reste de la règle tient toujours : **brouillons, `.silent.mp4`, rushs et voix restent hors dépôt**.
+Ce qui entre, c'est uniquement **la vidéo finie telle qu'elle part en publication**.
 
-## 3 · État au 2026-10-21, après remontage
+> ⚠️ **Coût assumé** : ~11,6 Mo de plus dans l'historique git. Si tu préfères revenir à la règle du 23/09,
+> il suffit de retirer ces deux lignes et les deux fichiers — dis-le et je le fais.
 
-| Fichier | Durée | Poids | Portique |
-|---|---|---|---|
-| `tiktok-01-v2.mp4` | 23,00 s | 4,8 Mo | **OK** (min 2,72/255 sur 20-22 s) |
-| `ugc-03.mp4` | 22,30 s | 6,8 Mo | **OK** (min 1,78/255 sur 20-22 s) |
+> ⚠️ **La release GitHub n'a pas pu être utilisée** : l'envoi de pièces jointes passe par
+> `uploads.github.com`, **injoignable depuis cet espace de travail** (testé : code 000). La mise en dépôt
+> directe est donc le seul chemin qui existe ici — et c'est aussi le plus simple pour toi.
 
-## 4 · Les reproduire (si un fichier disparaît encore)
+## 3 · Les reproduire (si un fichier disparaît encore)
 
 ```bash
 W=clients/dm-optic/content/month1/w1
 
 # post 1 — 20/20/20 (moteur dédié, calé sur le script approuvé)
 python3 tools/record/make_dmoptic_tiktok.py --out $W/tiktok-01-v2.mp4 --voice $W/assets/voix-v2.mp3
-python3 tools/record/make_dmoptic_tiktok.py --cover $W/tiktok-01-v2-cover.jpg   # la couverture, à part
+python3 tools/record/make_dmoptic_tiktok.py --cover $W/tiktok-01-v2-cover.jpg   # couverture, séparément
 
 # post 2 — UGC sans visage (moteur storyboard)
 python3 tools/ugc/ugc.py render $W/ugc-03.json --out $W/ugc-03.mp4 \
         --cover $W/ugc-03-cover.jpg --qc
 ```
 
-Les **voix** se régénèrent avec `tools/record/` et la voix de la maison (`voice-00`) : le texte exact est
-dans `tiktok-01-v2.fr.srt` (post 1) et dans `ugc-03.md` §1 (post 2). Aucune dépendance à un service payant.
+**Les voix** se régénèrent avec `voice-00` et le texte exact : `tiktok-01-v2.fr.srt` (post 1),
+`ugc-03.md` §1 (post 2). Aucune dépendance payante.
 
-## 5 · La règle qui en sort (proposition, ruling à toi)
+## 4 · La règle debout qui en sort
 
-**Tout fichier vidéo livré est déposé en release le jour même, et son nom est écrit dans ce fichier.**
-L'arborescence garde le storyboard, le script et le mode d'emploi — ce qui se relit et se corrige — et la
-release garde le binaire, ce qui se regarde. Si tu préfères l'inverse (les `.mp4` dans l'arborescence), il
-suffit d'une ligne dans `.gitignore` ; dis-le et je l'ajoute.
+**Toute vidéo finie livrée à un client entre dans le dépôt, et son nom est écrit dans ce fichier.**
+L'arborescence porte le storyboard, le script et le mode d'emploi — ce qui se relit et se corrige — et
+maintenant aussi le binaire — ce qui se regarde. Les brouillons, eux, restent dehors.
