@@ -1,0 +1,37 @@
+{
+  "title": "Gabarit — comment insérer un clip IA (Veo / HeyGen / Hedra) ou un rush filmé",
+  "_note": "Ce storyboard n'est pas un livrable : c'est la démonstration que le moteur accepte n'importe quel fichier vidéo comme une scène parmi les autres. Le `src` de la scène `clip` est le fichier rendu par tools/ugc/providers.py (ou tourné au cabinet). Ici, il pointe sur la vidéo V2 pour la testabilité.",
+  "topband": "DM OPTIQUE · BONABÉRI",
+  "scenes": [
+    {
+      "type": "clip",
+      "src": "clients/dm-optic/content/month1/w1/tiktok-01-v2.mp4",
+      "dur": 4.0,
+      "zoom": 0.14,
+      "drift": 0.4,
+      "sub": "Un clip IA ou un rush\nse pose ici, comme les autres."
+    },
+    {
+      "type": "photo",
+      "src": "hosting/previews/dmoptic/montures/monture-f24.webp",
+      "dur": 3.0,
+      "layout": "product",
+      "zoom": 0.14,
+      "sub": "…et le produit réel\nreste dans le montage."
+    },
+    {
+      "type": "endcard",
+      "src": "hosting/previews/dmoptic/cabinet-enseigne.webp",
+      "dur": 3.2,
+      "zoom": 0.55,
+      "scrim_top": 0.30,
+      "scrim_band": 0.88,
+      "grain": 2,
+      "headline": "EXAMEN DE VUE",
+      "big": "8h30–13h00",
+      "foot": "du lundi au samedi",
+      "cta": "WhatsApp 656 122 239",
+      "sub": "On montre avant de vendre."
+    }
+  ]
+}

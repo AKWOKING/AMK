@@ -287,6 +287,8 @@ deux bases de connaissance, **avant** d'écrire une ligne de script ou de lancer
 | positionner une marque, écrire un statement | `knowledge/MARKETING-OPTICAL…` §6 | `clients/<client>/brand/BRAND-STRATEGY-*.md` |
 | écrire un script court | `knowledge/CONTENT-CREATION…` §3 | le gabarit du mois (`content/month1/…`) |
 | monter une vidéo | `knowledge/CONTENT-CREATION…` §1–2 | `tools/record/` + **portique** `tools/qa/audit_video_motion.py` (§1b) |
+| monter une vidéo **UGC** (storyboard, produit, cartons, clip IA, voix) | `tools/ugc/README.md` | `python3 tools/ugc/ugc.py render <spec>.json --qc` |
+| obtenir un **plan d'humain** / choisir un générateur, avec un prix | `research/ugc-video/2026-10-22-TOOLCHAIN-UGC.md` | `tools/ugc/providers.py` (Veo 3.1, HeyGen, Hedra, fal) |
 | décider d'un contenu avec visage / IA | `knowledge/CONTENT-CREATION…` §6 | ruling de King — jamais de production avant |
 | sourcer un chiffre pour un client | `knowledge/MARKETING-OPTICAL…` §9 + `CONTENT-CREATION…` §7 | la source primaire nommée, sinon « non revérifié » |
 

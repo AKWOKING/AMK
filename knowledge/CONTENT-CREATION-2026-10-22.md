@@ -132,6 +132,23 @@ autorisés sur les photos.
    cabinet ou d'une monture — sinon le compte devient une chaîne d'avatars et perd ce qui le distingue.
 6. **Décision de King avant production**, et mention au dossier client.
 
+### L'outillage vidéo (posé le 22/10)
+
+| Besoin | Outil | Fichier |
+|---|---|---|
+| monter une vidéo à partir d'un storyboard (photos, produit, cartons, clip, voix) | **`tools/ugc/ugc.py`** | `tools/ugc/README.md` |
+| obtenir un **plan d'humain** (qualité Flow), avec un prix vérifié | **Veo 3.1 via l'API Gemini** : 0,05–0,12 $/s en 1080p, 9:16 natif, audio inclus → **0,64 à 0,96 $ le clip de 8 s** | `tools/ugc/providers.py` |
+| présentateur nommé, longue durée | HeyGen Avatar V, 29 $/mois | `tools/ugc/providers.py` |
+| animer **une seule photo** du cabinet avec une voix | Hedra Character-3, ~20 $/mois | `tools/ugc/providers.py` |
+| contrôler qu'une vidéo n'est pas un diaporama | **portique** `tools/qa/audit_video_motion.py` | §1b |
+
+**Trois faits à ne pas réapprendre :**
+
+1. **Google Flow n'a pas d'API.** Le modèle derrière (Veo 3.1) s'achète à la seconde sur l'API Gemini.
+2. **Aucun modèle ouvert ne tourne dans le sandbox** : pas de GPU, 3 Go de RAM, HuggingFace bloqué.
+3. **`morluto/rea` n'est pas un outil vidéo** : c'est un serveur MCP de rétro-ingénierie de binaires. Le
+   détour n'existe pas — comparatif complet et chiffré dans `research/ugc-video/2026-10-22-TOOLCHAIN-UGC.md`.
+
 ### La voie préférée, dans l'ordre
 
 1. **Photos réelles + cartons + voix** (ce qu'on fait ce soir) — zéro risque.
