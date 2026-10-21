@@ -10,6 +10,28 @@
 3. Vérification par code SMS/téléphone sur le 656 122 239 (ou carte postale si SMS indisponible — dans ce
    cas la fiche reste en préparation jusqu'au code, sans rien publier de faux).
 
+## Identité canonique de la fiche (21/10 — le `place_id`)
+
+Le cabinet a exporté sa fiche depuis **Google Maps Platform → Quick Builder** (capture du 21/10). Ce
+n'est pas l'outil qu'on installe (verdict : `clients/dm-optic/site/maps/PLAN-CARTE-2026-10.md`), mais il
+donne **l'identifiant unique de la fiche**, qui vaut mieux qu'une recherche par nom :
+
+| | |
+|---|---|
+| **`place_id`** | `ChIJjdfYfQwXYRARAdi9mPLHGjY` |
+| Coordonnées | `4.1010324, 9.6323773` |
+| Nom | `DM OPTIQUE SARL` |
+
+**Trois liens officiels, sans clé API, à utiliser partout :**
+
+- **Itinéraire** — `https://www.google.com/maps/dir/?api=1&destination=DM%20OPTIQUE%20SARL&destination_place_id=ChIJjdfYfQwXYRARAdi9mPLHGjY`
+- **Ouvrir la fiche** — `https://www.google.com/maps/search/?api=1&query=DM%20OPTIQUE%20SARL&query_place_id=ChIJjdfYfQwXYRARAdi9mPLHGjY`
+- **Laisser un avis** — `https://search.google.com/local/writereview?placeid=ChIJjdfYfQwXYRARAdi9mPLHGjY`
+
+Les deux premiers sont déjà sur le site (accueil + contact). Le troisième est une **option pour le
+message d'avis** : il évite au client de chercher le cabinet par son nom — mais le message du 21/10 est
+approuvé tel quel, donc ce lien reste une **annexe à valider par King** (`launch/MESSAGE-AVIS-GOOGLE-2026-10.md`).
+
 ## Données (vérifiées, datées, zéro invention)
 - **Nom :** DM OPTIQUE SARL · **Catégorie principale :** Opticien · secondaire : Lunetterie.
 - **Adresse :** Ndobo Mayor, Douala IV (Bonabéri) — **partage de position WhatsApp demandé au client** à

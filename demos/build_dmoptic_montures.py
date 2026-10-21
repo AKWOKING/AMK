@@ -46,8 +46,11 @@ ADDRESS_FR = "Ndobo Mayor — Immeuble West Hotel, 1er étage, dernière porte �
 ADDRESS_EN = "Ndobo Mayor — West Hotel building, first floor, last door on the right, Bonaberi, Douala"
 HOURS_FR = "Lundi – Samedi · Examen de vue : 8h30 – 13h00 · Autres besoins : 8h30 – 17h30"
 HOURS_EN = "Monday – Saturday · Eye exam: 8:30–13:00 · Other needs: 8:30–17:30"
-MAPS = "https://www.google.com/maps/search/?api=1&query=" + quote(
-    "DM OPTIQUE SARL Immeuble West Hotel Ndobo Mayor Bonabéri Douala")
+# place_id obtenu du cabinet lui-même (Google Maps Platform > Quick Builder, capture King 21/10) :
+# c'est l'identité canonique de la fiche — le lien ouvre LA fiche, pas une liste de résultats.
+PLACE_ID = "ChIJjdfYfQwXYRARAdi9mPLHGjY"
+MAPS = ("https://www.google.com/maps/search/?api=1&query=" + quote("DM OPTIQUE SARL")
+        + "&query_place_id=" + PLACE_ID)
 
 CATS = {
     "femmes": ("Femmes", "Women", "femmes"),

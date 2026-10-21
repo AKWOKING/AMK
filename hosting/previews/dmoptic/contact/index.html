@@ -461,7 +461,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
     <div class="actions">
       <a class="btn btn-wa wa" data-fr="Bonjour DM OPTIQUE SARL, je voudrais passer vous voir." data-en="Hello DM OPTIQUE SARL, I would like to come and see you." href="https://wa.me/237656122239?text=Bonjour%20DM%20OPTIQUE%20SARL%2C%20je%20voudrais%20passer%20vous%20voir."><span class="fr-only" lang="fr">Écrire sur WhatsApp</span><span class="en-only" lang="en">Write on WhatsApp</span></a>
       <a class="btn" href="tel:+237656122239"><span class="fr-only" lang="fr">Appeler le cabinet</span><span class="en-only" lang="en">Call the practice</span></a>
-      <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=DM%20OPTIQUE%20SARL%20Immeuble%20West%20Hotel%20Ndobo%20Mayor%20Bonab%C3%A9ri%20Douala" rel="noopener"><span class="fr-only" lang="fr">Ouvrir dans Maps</span><span class="en-only" lang="en">Open in Maps</span></a>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=DM%20OPTIQUE%20SARL&amp;query_place_id=ChIJjdfYfQwXYRARAdi9mPLHGjY" rel="noopener"><span class="fr-only" lang="fr">Ouvrir dans Maps</span><span class="en-only" lang="en">Open in Maps</span></a>
     </div>
     <dl class="v2-facts">
       <div><dt><span class="fr-only" lang="fr">Téléphone &amp; WhatsApp</span><span class="en-only" lang="en">Phone &amp; WhatsApp</span></dt><dd>+237 656 122 239</dd></div>
@@ -578,7 +578,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
 
   /* Itinéraire : le bouton n'apparaît que si MAP_URL est renseigné (même principe que TRACK_URL).
      Vide = bouton caché. Aucune coordonnée n'est devinée dans cette page. */
-  var MAP_URL='';
+  var MAP_URL='https://www.google.com/maps/dir/?api=1&destination=DM%20OPTIQUE%20SARL&destination_place_id=ChIJjdfYfQwXYRARAdi9mPLHGjY';
   (function(){
     var row=document.getElementById('map-row'), btn=document.getElementById('map');
     if(!MAP_URL||!row||!btn) return;

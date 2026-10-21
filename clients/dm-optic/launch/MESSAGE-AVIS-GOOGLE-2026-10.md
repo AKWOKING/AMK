@@ -53,3 +53,23 @@ Objectif : 5 avis d'ici samedi. Je compte sur vous.
 
 **On ne paie pas, on n'incite pas, on ne fabrique pas d'avis.** Des clients réels seulement — Google
 détecte et pénalise, et la fiche est l'actif du cabinet, pas le nôtre.
+
+---
+
+## Annexe (21/10) — le lien direct, si King le veut
+
+Le message approuvé demande au client de **chercher** « DM OPTIQUE SARL » sur Google. C'est le geste le
+plus simple à expliquer, mais il ajoute deux étapes (chercher, choisir la bonne fiche).
+
+Depuis l'export Quick Builder du 21/10, on connaît l'identifiant de la fiche. Un lien direct existe :
+
+```
+https://search.google.com/local/writereview?placeid=ChIJjdfYfQwXYRARAdi9mPLHGjY
+```
+
+Il ouvre **la** fiche, prêt à noter — aucune recherche, aucun homonyme possible.
+
+> **⚠️ Non appliqué.** Le message ci-dessus est **approuvé par King** : on n'y touche pas sans son accord.
+> Deux façons de s'en servir si King dit oui : ① M. Domche l'envoie lui-même au client sur WhatsApp après
+> le passage ; ② il est imprimé en QR sur un petit carton au comptoir (« Votre avis en 30 secondes »).
+> Dans les deux cas : clients réels seulement, jamais d'avis acheté ou récompensé.

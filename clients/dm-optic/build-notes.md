@@ -1391,3 +1391,37 @@ le contrôle du premier débit en devise (banque qui bloque, plafond, frais de c
 la première lecture de `SETUP-FACEBOOK.md` a donc rendu l'**ancienne** version (5 sections, sans §0 bis
 ni §6). Récupération en mixte (`reset --mixed 5d3b9c7`, `checkout -- .`, 4 webp orphelins supprimés),
 jamais `--hard` ; arbre propre. **Leçon :** lire HEAD avant de lire un fichier.
+
+## 21/10 (7) — La carte : on prend l'identifiant, on laisse l'usine
+
+King a envoyé l'export **Quick Builder** de Google (Locator Plus) et sa capture : la fiche est bien
+punaisée au West Hotel, et le panneau annonce « All locations (1) ».
+
+**Ce que le code dit de lui-même :** `YOUR_API_KEY_HERE` deux fois, `mapId` vide dans la config et
+`DEMO_MAP_ID` dans la balise, bandeau « Finish account setup ». Tel quel, il n'affiche rien. Ce n'est pas
+un raté : c'est l'écran où Google s'arrête tant que la clé et la facturation n'existent pas.
+
+**Verdict : on n'installe pas.** Un locator sert à chercher **parmi** des lieux — il y en a un. Il
+ajouterait une clé à restreindre, un compte de facturation, et un script Google sur un site qui n'en a
+aucun. Conditions de réexamen écrites dans `site/maps/PLAN-CARTE-2026-10.md` (clé restreinte par
+référent, API Maps JS seule, alerte de budget, `mapId` cohérent, consentement si cookie).
+
+**Ce qu'on garde, et qui vaut plus que le widget :** le **`place_id`**. Il transforme deux liens
+approximatifs en deux liens exacts — et il ne demande ni clé, ni facture, ni JavaScript :
+
+| Page | Avant | Après |
+|---|---|---|
+| Accueil | bouton « Itinéraire » **caché** (`MAP_URL` vide) | **visible**, ouvre l'itinéraire vers la fiche |
+| Contact | recherche par **nom** (liste, homonymes possibles) | `query_place_id` — **la** fiche |
+
+**Portiques :** `audit_html` 49/49 · `audit_a11y --strict` rc 0 sur 49 · `check_inline_js` 49/49 ·
+`audit_images` 0 · `test_dmoptic_page.mjs` vert · zip `dmopticsarl.zip` reconstruit (132 fichiers,
+`testzip` OK).
+
+**Déploiement : non fait ce tour.** Le bac n'a ni jeton Vercel ni projet lié, et `api.vercel.com` sort du
+périmètre réseau — je ne prétends pas avoir déployé. Le zip est prêt ; la mise en ligne reste le geste de
+King sur Cloudflare, et le banc d'essai Vercel sera redéployé au prochain tour avec les accès.
+
+**Bonus non appliqué :** le `place_id` donne aussi un **lien d'avis direct**
+(`search.google.com/local/writereview?placeid=…`). Il est en annexe du message d'avis — **pas dans le
+message approuvé**, qui ne bouge pas sans l'accord de King.
