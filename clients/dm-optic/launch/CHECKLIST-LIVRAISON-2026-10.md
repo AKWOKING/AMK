@@ -179,8 +179,9 @@ montures et les pages examen / cabinet. Contrôle : **49 pages sur 49** portent 
 | 3 | Fiche Google → *Description* | commencer par « Opticien optométriste à Bonabéri, Douala… » ; catégorie secondaire *Optométriste* si elle est proposée |
 
 > **Correction du 21/10 (précision de King)** : le « *D'accord je vais faire les modifications* » est
-> **King**, pas le client. C'est donc **AMK** qui pose les trois bios sur les comptes, avec les chaînes
-> ci-dessus. Aucune consigne n'est envoyée au cabinet pour ça — on lui livre le résultat, pas une tâche.
+> **King**, pas le client. C'est donc **King** qui pose les trois bios (il a les accès), avec les chaînes
+> ci-dessus ; **AMK fournit les chaînes, pas la tâche**. Aucune consigne n'est envoyée au cabinet pour ça —
+> on lui livre le résultat.
 > (Erreur d'attribution corrigée ici et dans l'`Activity-Log`.)
 
 ---

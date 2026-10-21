@@ -1552,8 +1552,8 @@ A (la sienne, 545 car.) et **B (745 car., recommandée)**, même rythme, promess
 
 **② La correction d'attribution.** Le « D'accord je vais faire les modifications » du 21/10 est **King**,
 pas le client. Corrigé dans `RULE-CREDENTIAL-CLAIMS.md`, `CHECKLIST-LIVRAISON` §8 et l'`Activity-Log`.
-Conséquence pratique : **c'est AMK qui pose les bios** Facebook / TikTok / Google, on ne renvoie pas la
-tâche au cabinet.
+Conséquence pratique : **c'est King qui pose les bios** Facebook / TikTok / Google (il a les accès) ;
+AMK fournit les chaînes exactes, et on ne renvoie pas la tâche au cabinet.
 
 **③ Les posts en photos réelles.** Les 65 photos du cabinet sont sur un fond (246, 236, 225) qui est
 **le chaud de la marque** : la photo peut se fondre dans une carte sans cadre. Nouveau script
