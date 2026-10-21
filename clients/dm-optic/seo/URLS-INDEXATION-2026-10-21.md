@@ -69,3 +69,36 @@ Google, TikTok) et le temps.
 
 > Rappel : la balise canonique est correcte sur les 49 pages (audit du jour), donc même si Google découvre
 > une variante, il saura laquelle garder. C'est déjà fait — c'est ce qui rend cette étape simple.
+
+---
+
+## 8 · Le sitemap renvoie 403 à Google — diagnostic (22/10)
+
+Capture du 21/10 : *Sitemap could not be read · General HTTP error · HTTP Error: 403*, 1 instance.
+Le fichier **existe** (il s'ouvre normalement dans un navigateur, 48 URL, et il en comptera 96 après le
+prochain envoi). Un 403 n'est donc pas un fichier manquant : **quelqu'un refuse l'accès au robot.**
+
+**Par ordre de probabilité :**
+
+1. **La protection anti-robots de Cloudflare.** C'est le cas le plus fréquent depuis que Cloudflare
+   bloque les robots par défaut. À vérifier : *Security → Bots* (Bot Fight Mode / « Block AI bots ») et
+   *Security → WAF → Custom rules*. Googlebot doit être autorisé ; « verified bots » = allow.
+2. **L'adresse soumise n'est pas la bonne.** Search Console accepte `https://www.dmoptiquesarl.com/...`
+   et `https://dmoptiquesarl.com/...` comme deux adresses différentes. La bonne est **sans `www`** :
+   `https://dmoptiquesarl.com/sitemap.xml`. Si une entrée `www` traîne, la supprimer avant de resentir.
+3. **Une redirection sur le chemin.** Si Cloudflare redirige (`www` → apex, ou http → https) sur
+   `/sitemap.xml`, Google lit la redirection comme une erreur. Le fichier doit répondre **200 en direct**.
+
+**Les 4 gestes, dans l'ordre :**
+1. Cloudflare → *Security → Bots* : autoriser les robots vérifiés (Googlebot en fait partie).
+2. Search Console → *Sitemaps* : supprimer l'entrée existante, puis soumettre **`sitemap.xml`** (sans
+   `https://`, sans `www`, le domaine étant déjà celui de la propriété).
+3. Cliquer **OPEN SITEMAP** : si la page s'ouvre, le fichier est bon côté serveur — le refus est donc
+   côté protection, et l'étape 1 le corrige.
+4. Revenir 24 h plus tard : le statut doit passer de *Couldn't fetch* à *Success*.
+
+**Ce qu'on ne fait pas :** redemander l'indexation des 10 URL pour « forcer ». Le sitemap est le seul
+point bloquant ; tant qu'il renvoie 403, aucune demande manuelle ne compense. Et une fois le sitemap lu,
+les 96 URL (48 françaises + 48 anglaises) se découvrent **toutes seules** — les demandes manuelles ne
+servent plus qu'à accélérer les pages qui comptent.
+
