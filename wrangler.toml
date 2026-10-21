@@ -1,0 +1,24 @@
+# Cloudflare — DM OPTIQUE SARL
+# -----------------------------------------------------------------------------
+# Ce fichier sert UNIQUEMENT à publier le site (dossier hosting/previews/dmoptic)
+# comme assets statiques d'un Worker, avec une seule commande :
+#
+#     npx wrangler deploy
+#
+# ou, sans terminal, par GitHub Actions (.github/workflows/deploy-dmoptic.yml).
+#
+# ⚠️ UNE SEULE LIGNE À VÉRIFIER AVANT LE PREMIER DÉPLOIEMENT :
+#    `name` doit être EXACTEMENT le nom du projet existant dans
+#    Cloudflare → Workers & Pages. Sinon wrangler crée un SECOND Worker,
+#    et le domaine dmoptiquesarl.com continue de pointer l'ancien.
+
+name = "dm-optique-sarl"
+compatibility_date = "2026-10-01"
+
+# Le site est du HTML/CSS/JS déjà construit : aucun build, aucun framework.
+# `wrangler` envoie le dossier tel quel.
+[assets]
+directory = "./hosting/previews/dmoptic"
+# Une adresse inconnue sert 404.html (fichier présent dans le dossier) : c'est
+# déjà la page personnalisée testée en ligne le 21/10.
+not_found_handling = "404-page"

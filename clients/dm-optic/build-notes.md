@@ -1687,3 +1687,19 @@ translucide multicolore, pas l'écaille à détail doré. La fiche affiche donc 
 c'est la règle « le texte colle à la photo » qui tombe. La vidéo n'est pas concernée (le plan 3a
 n'utilise que la bonne photo) ; c'est le site qu'il faut corriger.
 
+## 22/10 (17) — le déploiement manuel est abandonné
+
+**Le vrai problème n'était pas la taille du site.** 183 fichiers, 9 Mo : la limite d'un Worker est de
+20 000 fichiers et 25 Mo par fichier. C'est **l'outil d'envoi du tableau de bord** qui plante — il
+n'affiche ni progression ni erreur, il annonce 184 fichiers quand il y en a 183, et son propre bandeau
+dit qu'il ne gère que HTML/CSS/JS.
+
+Trois fichiers ajoutés au dépôt pour ne plus jamais passer par lui : `wrangler.toml` (quel dossier
+publier, quelle page servir en 404), `.github/workflows/deploy-dmoptic.yml` (envoi depuis GitHub) et le
+mode d'emploi `launch/DEPLOIEMENT-CLOUDFLARE-2026-10-22.md` (route Workers Builds recommandée, route
+GitHub Actions, route terminal). **Fusion dans `main` = site à jour.**
+
+Vérifié dans la documentation Cloudflare : les Workers avec assets **prennent en charge `_redirects` et
+`_headers`** (2 000 redirections statiques, 100 règles d'en-têtes) — la redirection www → apex survivra
+donc à la nouvelle méthode de publication.
+
