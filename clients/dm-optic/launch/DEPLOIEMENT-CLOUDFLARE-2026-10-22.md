@@ -94,6 +94,31 @@ journal y est lisible, contrairement à l'écran d'upload manuel.
 
 ---
 
+## 3 bis · Le premier build n'a pas pris — que regarder (22/10, après 6 min)
+
+**Constat mesuré :** `https://dmoptiquesarl.com/en/` répond encore la page **404**. Le site en ligne est
+donc toujours l'ancienne version : **aucun déploiement n'a abouti**, ni réussi. Ce n'est pas une
+hypothèse, c'est le test.
+
+**Où lire la réponse, en 30 secondes :** Cloudflare → Workers & Pages → **dmoptiquesarl** → onglet
+**Deployments** (à côté de *Metrics*). Chaque ligne porte un statut ; un échec ouvre un journal où la
+cause est écrite en clair. **C'est ce journal qu'il faut copier** — l'écran d'envoi manuel, lui, ne
+disait rien ; celui-ci parle.
+
+Les quatre causes possibles, dans l'ordre de probabilité, et leur correction :
+
+| # | Ce que dit le journal | Cause | Correction |
+|---|---|---|---|
+| 1 | **aucune ligne de build** (onglet vide) | Le `push` n'a déclenché personne : *Build watch paths* ne correspond pas au chemin modifié, ou la branche de production n'est pas `arena/2fffee3b-amk`. | *Settings → Build* : vérifier la branche, **vider Build watch paths** (ou y mettre `hosting/previews/dmoptic/**`), puis **Retry deployment**. |
+| 2 | `Could not resolve ... wrangler` / `npx` introuvable | Aucun `package.json` à la racine : `npx` tente de résoudre le paquet et échoue selon la version de Node de l'image. | Mettre **Deploy command** = `npx --yes wrangler@latest deploy`. |
+| 3 | `Authentication error` / `not authorized` | L'intégration GitHub n'a pas les droits sur le compte Workers. | *Settings → Build → Manage* (ou *Disconnect* puis *Connect*), réautoriser en cochant **tous les dépôts** et les droits Workers. |
+| 4 | `name` / `worker not found` / un second Worker apparaît | `name` dans `wrangler.toml` ≠ nom du Worker. | Il vaut `dmoptiquesarl` depuis le commit `9f5c26c` ; si un Worker en double est apparu, supprimer le doublon, pas l'original. |
+
+**Dans tous les cas :** après correction, *Deployments → **Retry deployment*** relance sans nouveau
+commit. Et si le tableau de bord refuse encore, la route C (§ route C, `npx wrangler deploy` depuis un
+ordinateur) publie le même dossier avec le même fichier de configuration — c'est le même travail, fait
+hors du navigateur.
+
 ## 4 · Une fois pour toutes : le workflow `arena/**`
 
 Le fichier ci-dessous est aussi dans le dépôt (`tools/deploy/workflow-deploy-dmoptic.yml`). Il doit
