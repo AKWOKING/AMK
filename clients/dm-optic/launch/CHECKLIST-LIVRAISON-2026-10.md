@@ -46,7 +46,8 @@
 | 5 | **TikTok : publication programmée le 22/10 à 5h30** (tournage fait) | — | la campagne démarre |
 | 6 | **Facebook : publier le 1er post** (`SETUP-FACEBOOK.md` §6) | ton feu vert | — |
 | 7 | **Search Console : 4 indexations + re-check sitemap** | ton compte | visibilité Google |
-| 8 | **Fiche Google : photos, description, services, profils sociaux** | ton accès | conversion locale |
+| 8 | **Fiche Google : photos, services, profils sociaux** — description ✅ (version A), **posts ✅ 4 programmés le 21/10** | ton accès | conversion locale |
+| 9 | **Ligne de base Google** — 9 chiffres + capture, **avant le 27/10** (10 min) : `LIGNE-DE-BASE-GOOGLE-2026-10.md` | ton accès à la fiche | sans elle, le rapport du mois 1 est invérifiable |
 
 ### ④ · Le cabinet (M. Domche) — 3 choses
 

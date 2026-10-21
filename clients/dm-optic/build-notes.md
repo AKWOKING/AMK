@@ -1594,3 +1594,24 @@ un par semaine, avec photo réelle, un seul bouton et UTM.
 **⑤ Le zip devient une commande.** `demos/pack_dmoptic.py` : zip déterministe (entrées triées, dates figées,
 `testzip`), refuse de produire un paquet si `index.html`/`sitemap.xml`/`robots.txt`/`llms.txt` manquent.
 Deux exécutions donnent le même SHA-256 — on peut donc dire « c'est bien ce build-là qui est en ligne ».
+
+## 21/10 (13) — la ligne de base, écrite avant les résultats
+
+Les 4 posts Google sont **programmés** (27/10 → 17/11), la fiche Yandex est **hors de portée** (le cabinet
+ne la contrôle pas → on n'y touche pas, point de veille seulement), et le site **sans chiffres de stock**
+est en ligne sur `dmoptiquesarl.com` (vérifié : « Des montures à essayer au cabinet », plus aucun nombre).
+
+Reste le point qui décide de tout : **la ligne de base**. Un guide de 10 minutes est au dossier
+(`launch/LIGNE-DE-BASE-GOOGLE-2026-10.md`) : où sont les 9 chiffres, **quelle fenêtre de dates** choisir
+(28 jours glissants, arrêtés au dimanche — sinon deux lectures ne sont jamais comparables), le tableau à
+remplir, la capture d'écran à garder, et le **carnet du cabinet** (appels / WhatsApp / visites / « comment
+nous avez-vous trouvé ? ») qui est la seule façon de relier un post à un patient.
+
+Trois décisions y sont écrites **d'avance** pour ne pas interpréter après coup : premier bilan le **16/11**,
+on regarde **appels + itinéraires** avant tout le reste, et **aucune promesse de classement** (Sterling Sky).
+Le dossier `launch/baseline/` est créé pour les captures.
+
+**Limite assumée** : le site n'a aucune mesure d'audience. Les liens des posts portent leurs UTM, mais
+personne ne peut les lire. Deux options sont posées dans le guide — Cloudflare Web Analytics (gratuit, sans
+cookie, une ligne de script à poser) ou rien. Non tranché : c'est un ruling de King, pas une décision
+technique.

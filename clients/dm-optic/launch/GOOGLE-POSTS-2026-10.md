@@ -87,11 +87,17 @@ Lien type : `https://dmoptiquesarl.com/examen-de-vue/?utm_source=google&utm_medi
 
 ---
 
-## 5 · Le calendrier — quatre posts prêts à coller
+## 5 · Le calendrier — quatre posts **programmés le 21/10 par King** ✅
 
-> À publier depuis la fiche : **Posts → Add post → Update**. Programmer si possible (« Schedule this post »).
-> Photo : celle indiquée, déjà au dépôt. Le numéro de téléphone **ne se met pas** dans le texte : il va dans
-> le bouton `Call now`.
+> **État : les quatre sont programmés dans la fiche depuis le 21/10** (Posts → Add post → Update →
+> « Schedule this post »). Rien à faire d'autre : ils partiront seuls.
+>
+> Prochaine étape : **la ligne de base** (`LIGNE-DE-BASE-GOOGLE-2026-10.md`) — à relever **avant** le
+> premier post du 27/10, sinon on n'aura pas de point de comparaison. Puis relevé chaque lundi, premier
+> bilan le **16/11**.
+>
+> Rappel posé le jour de la programmation : photo réelle, un seul bouton, et **pas de numéro de téléphone
+> dans le texte** (motif de rejet côté Google) — le numéro passe par le bouton `Call now`.
 
 ### S1 · mardi 27/10 — « L'examen de la vue, étape par étape » (341 car.)
 
@@ -165,7 +171,9 @@ DM OPTIQUE SARL · opticien optométriste
 
 1. **« No posts yet »** — la fiche est active et le module est disponible : rien ne bloque techniquement.
 2. **Une fiche tierce sur Yandex Maps** : « Cabinet De Soins Oculaires DM Optometrie », adresse
-   « Wouri, Douala 4e, Rue 4.070 ». Ce n'est pas la fiche Google, mais c'est un **homonyme visible** dans
-   les résultats. À vérifier : est-ce une ancienne fiche du cabinet, ou une création tierce ? Si King
-   contrôle le compte Yandex, on aligne le nom et l'adresse ; sinon on le laisse (aucune action risquée à
-   faire dessus) mais on le sait.
+   « Wouri, Douala 4e, Rue 4.070 ». **Réponse de King (21/10) : le cabinet ne contrôle pas cette fiche.**
+   Décision : **on n'y touche pas.** Aucune action n'est possible sans le compte, et une réclamation à
+   l'aveugle sur un annuaire russe serait plus risquée qu'utile. Elle reste notée ici comme **point de
+   veille** : si un client dit un jour y avoir été envoyé à la mauvaise adresse, on saura d'où ça vient.
+   Le seul vrai correctif est indirect — la fiche Google, le site et Facebook portent l'adresse exacte,
+   et ce sont eux que les gens de Douala consultent.
