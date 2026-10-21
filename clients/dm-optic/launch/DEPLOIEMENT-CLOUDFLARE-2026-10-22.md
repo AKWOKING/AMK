@@ -31,7 +31,10 @@ Tout est déjà préparé dans le dépôt :
 | Fichier | Rôle |
 |---|---|
 | `wrangler.toml` | dit à Cloudflare **quel dossier** publier (`hosting/previews/dmoptic`) et **quelle page** servir sur une adresse inconnue (`404.html`) |
-| `.github/workflows/deploy-dmoptic.yml` | envoi automatique depuis GitHub (variante B, si tu préfères piloter côté GitHub) |
+
+*(Le fichier de workflow GitHub Actions n'est pas dans le dépôt : l'outil qui pousse ce dépôt n'a pas le
+droit d'y déposer des workflows. Si tu choisis la route B, le fichier est fourni en clair au § B, à
+coller depuis l'interface GitHub.)*
 
 ### Route A — Workers Builds : recommandée, aucun mot de passe à créer
 
@@ -59,7 +62,47 @@ Tout est déjà préparé dans le dépôt :
    - `CLOUDFLARE_API_TOKEN` = le jeton ;
    - `CLOUDFLARE_ACCOUNT_ID` = l'identifiant.
 4. Vérifie que `wrangler.toml` porte **exactement** le nom du Worker existant (première ligne).
-5. Onglet **Actions → « Déployer DM Optique sur Cloudflare » → Run workflow**.
+5. GitHub → **Add file → Create new file** → nom du fichier : `.github/workflows/deploy-dmoptic.yml`
+   → colle exactement ceci, puis **Commit** :
+
+```yaml
+name: Déployer DM Optique sur Cloudflare
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "hosting/previews/dmoptic/**"
+      - "wrangler.toml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-dmoptic
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Vérifier le site avant publication
+        run: |
+          set -e
+          test -f hosting/previews/dmoptic/index.html
+          test -f hosting/previews/dmoptic/sitemap.xml
+          test -f hosting/previews/dmoptic/_redirects
+      - name: Publier sur Cloudflare
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy
+```
+
+6. Onglet **Actions → « Déployer DM Optique sur Cloudflare » → Run workflow**.
 
 ### Route C — depuis un ordinateur avec un terminal (3 commandes)
 
