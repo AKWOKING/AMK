@@ -173,6 +173,12 @@ def analyse(site, rel, base):
     types = ld_types(html)
     ld_ok = [t for t in LD_RE.findall(html) if t.strip()]
 
+    # hreflang : {langue: url absolue}. Deux contrôles plus loin : la cible existe, et elle répond.
+    alts = {}
+    for tag in re.findall(r"<link\b[^>]*rel=[\"']alternate[\"'][^>]*>", html, re.I):
+        hl, hr = attr(tag, "hreflang"), attr(tag, "href")
+        if hl and hr:
+            alts[hl.lower()] = hr
     viewport = bool(VIEWPORT_RE.search(html))
     lang = attr(re.search(r"<html\b[^>]*>", html).group(0), "lang") if re.search(r"<html\b[^>]*>", html) else None
     robots = meta_content(html, "robots") or ""
@@ -187,7 +193,7 @@ def analyse(site, rel, base):
         internal=len(internal), broken=broken, external=len(external), wa=wa, tel=tel,
         internal_list=sorted({h.split("#")[0].split("?")[0] for h in internal}),
         cta_first=cta_first, crumbs_nav=crumbs_nav, ld_types=sorted(set(types)), ld_blocks=len(ld_ok),
-        viewport=viewport, lang=lang, robots=robots.strip(),
+        viewport=viewport, lang=lang, robots=robots.strip(), alts=alts,
     )
 
 
@@ -238,10 +244,39 @@ def main():
     dims_missing = [p for p in pages if p["img"] and p["dims"] < p["img"]]
     not_self_ld = [p for p in pages if p["url"] not in ("/", "/404.html") and "BreadcrumbList" not in p["ld_types"]]
 
-    # ── liens entrants : une page que personne ne lie est une page morte
     def norm(u):
         return u if u.endswith("/") or u.endswith(".html") else u + "/"
 
+    # ── hreflang : chaque page doit déclarer ses deux langues, les cibles doivent exister, et
+    #    chaque cible doit répondre en pointant vers la page de départ (réciprocité). Une paire à
+    #    sens unique est ignorée par Google.
+    by_url = {norm(p["url"]): p for p in pages}
+    hl_problems, hl_pairs = [], 0
+    for p in pages:
+        if p["is404"]:
+            continue
+        p_lang = "en" if p["url"].startswith("/en/") else "fr"
+        if (p["lang"] or "").lower() != p_lang:
+            hl_problems.append((p["url"], f"lang=\"{p['lang']}\" sur une page {p_lang}"))
+        alts = p["alts"]
+        if not alts:
+            hl_problems.append((p["url"], "aucun hreflang alors que le site est bilingue"))
+            continue
+        if p_lang == "fr" and "fr" in alts and "en" in alts:
+            hl_pairs += 1
+        for lg in ("fr", "en"):
+            if lg not in alts:
+                hl_problems.append((p["url"], f"hreflang {lg} absent"))
+                continue
+            target = by_url.get(norm(alts[lg].replace(a.base.rstrip("/"), "")))
+            if target is None:
+                hl_problems.append((p["url"], f"hreflang {lg} pointe vers une page absente : {alts[lg]}"))
+                continue
+            back = target["alts"].get(p_lang)
+            if not back or norm(back.replace(a.base.rstrip("/"), "")) != norm(p["url"]):
+                hl_problems.append((p["url"], f"hreflang {lg} non réciproque ({target['url']})"))
+
+    # ── liens entrants : une page que personne ne lie est une page morte
     inlinks = defaultdict(set)
     for p in pages:
         for h in p["internal_list"]:
@@ -363,6 +398,7 @@ def main():
     print(f"H1≠1: {len(multi_h1)} · sauts: {len(skip_pages)} · images sans alt: {sum(len(p['no_alt']) for p in pages)}")
     print(f"canonical KO: {len(bad_canon)} · liens cassés: {sum(len(p['broken']) for p in pages)} · sans CTA 1er écran: {len(no_cta)}")
     print(f"pages sans JSON-LD: {len(no_ld)} · sans BreadcrumbList: {len(not_self_ld)} · sitemap: {len(sm_urls)}")
+    print(f"hreflang: {hl_pairs} paires FR/EN · problèmes: {len(hl_problems)}")
     if a.out:
         print("rapport →", a.out)
 

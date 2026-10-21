@@ -32,6 +32,7 @@ import json
 import re
 import shutil
 import unicodedata
+import datetime
 from collections import Counter
 from pathlib import Path
 from urllib.parse import quote
@@ -39,6 +40,10 @@ from urllib.parse import quote
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "hosting/previews/dmoptic/index.html"
 FRAMES = ROOT / "clients/dm-optic/site/frames.json"
+# 21/10 — miroir anglais : les fiches ont maintenant leur texte EN dans un fichier à part, indexé par
+# code. Le build REFUSE de tourner si une monture n'a pas sa traduction (mieux qu'une page à moitié
+# française sous /en/). Ajouter une monture = ajouter une entrée ici.
+FRAMES_EN = ROOT / "clients/dm-optic/site/frames-en.json"
 OUTDIR = ROOT / "hosting/previews/dmoptic"
 WA = "https://wa.me/237656122239?text="
 TEL = "tel:+237656122239"
@@ -176,6 +181,9 @@ FILTER_JS = """<script>/* Filtres du catalogue v2 : OU dans un groupe, ET entre 
   var count=document.querySelector('.v2-count'), chips=document.querySelector('.v2-chips');
   var empty=document.querySelector('.v2-empty'), reset=form.querySelector('.v2-reset'), show=form.querySelector('.v2-show');
   var toggle=form.querySelector('.v2-filter-toggle'), panel=form.querySelector('.v2-filters-panel');
+  // 21/10 — le miroir /en/ sert la même page avec data-lang="en" : les libellés du filtre suivent.
+  var EN=(document.documentElement.getAttribute('data-lang')==='en');
+  function L(fr,en){return EN?en:fr;}
   function setPanel(open){if(!panel||!toggle)return;panel.classList.toggle('is-open',open);toggle.setAttribute('aria-expanded',open?'true':'false');}
   function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g,'');}
   function state(){var st={forme:[],couleur:[],q:norm(q.value).trim()};boxes.forEach(function(b){if(b.checked)st[b.getAttribute('data-group')].push(b.value);});return st;}
@@ -194,8 +202,8 @@ FILTER_JS = """<script>/* Filtres du catalogue v2 : OU dans un groupe, ET entre 
            &&(!st.q||norm(c.getAttribute('data-name')).indexOf(st.q)>-1);
       c.hidden=!ok; if(ok)n++;
     });
-    count.textContent=n+(n>1?' affichées':' affichée');
-    if(show)show.textContent='Tout afficher';
+    count.textContent=n+(n>1?L(' affichées',' shown'):L(' affichée',' shown'));
+    if(show)show.textContent=L('Tout afficher','Show all');
     empty.hidden=(n!==0);
     boxes.forEach(function(b){var l=b.closest?b.closest('label'):null; if(l)l.classList.toggle('is-on',b.checked);});
     renderChips(st);
@@ -254,22 +262,141 @@ def frame_url(f):
     return f"/montures/{f['categorie']}/{f['slug']}/"
 
 
+# ── Miroir anglais ────────────────────────────────────────────────────────────────────────────────
+# Le site est bilingue dans le DOM (`fr-only` / `en-only` + data-lang), mais pour Google une page
+# n'a qu'une langue : celle de son <html lang>. Depuis le 21/10 chaque page a donc une adresse
+# anglaise réelle (/en/…), reliée par hreflang. Le miroir est fabriqué à partir de la page française :
+# même DOM, langue inversée, liens internes réécrits, titres et descriptions traduits.
+
+def en_path(path):
+    return "/en/" if path == "/" else "/en" + path
+
+
+def wa(msg):
+    return WA + quote(msg, safe="!'()*-._~")
+
+
+def set_attr(head, attr, key, val):
+    pat = rf'(<meta {attr}="{re.escape(key)}" content=")[^"]*(">)'
+    if re.search(pat, head):
+        return re.sub(pat, lambda m: m.group(1) + esc(val) + m.group(2), head, count=1)
+    return head.replace("</head>", f'<meta {attr}="{key}" content="{esc(val)}">\n</head>', 1)
+
+
+def to_en(page_html, path, title, desc, base):
+    """Page française → page anglaise. Une seule source de vérité : le contenu n'est pas dupliqué."""
+    fr_url, en_url = base + path, base + en_path(path)
+    head, sep, body = page_html.partition("</head>")
+    if not sep:
+        raise SystemExit("miroir : </head> introuvable sur " + path)
+
+    head = head.replace('<html lang="fr" data-lang="fr"', '<html lang="en" data-lang="en"', 1)
+    head = re.sub(r"<title>.*?</title>", "<title>" + esc(title) + "</title>", head, count=1, flags=re.S)
+    head = set_attr(head, "name", "description", desc)
+    head = set_attr(head, "property", "og:title", title)
+    head = set_attr(head, "property", "og:description", desc)
+    head = set_attr(head, "property", "og:url", en_url)
+    head = re.sub(r'<link rel="canonical" href="[^"]*">',
+                  '<link rel="canonical" href="%s">' % esc(en_url), head, count=1)
+    head = re.sub(r'<link rel="alternate" hreflang="[^"]+" href="[^"]*">\n?', "", head)
+    head += (f'<link rel="alternate" hreflang="fr" href="{esc(fr_url)}">\n'
+             f'<link rel="alternate" hreflang="en" href="{esc(en_url)}">\n'
+             f'<link rel="alternate" hreflang="x-default" href="{esc(fr_url)}">\n')
+    head = head.replace('<meta property="og:locale" content="fr_FR">', '<meta property="og:locale" content="en_US">')
+    head = head.replace('<meta property="og:locale:alternate" content="en_US">',
+                        '<meta property="og:locale:alternate" content="fr_FR">')
+
+    # Langue mémorisée : sur /en/, l'anglais gagne — sinon un visiteur déjà venu en français
+    # verrait du français sous une adresse anglaise.
+    boot_fr = 'var l=localStorage.getItem("dmoptic-lang");if(l==="en"||l==="fr")h.setAttribute("data-lang",l);'
+    boot_en = 'h.setAttribute("data-lang","en");try{localStorage.setItem("dmoptic-lang","en")}catch(e){}'
+    if boot_fr not in head and boot_fr not in body:
+        raise SystemExit("miroir : script de langue introuvable sur " + path)
+    head, body = head.replace(boot_fr, boot_en, 1), body.replace(boot_fr, boot_en, 1)
+
+    # 3. Chemins relatifs : la page anglaise est un dossier plus bas. L'accueil est le seul à pointer
+    #    ses fichiers sans « ../ » ; on normalise les deux cas (src, srcset, préchargement, polices CSS).
+    def assets(part):
+        def urls(val):
+            return ", ".join("../" + u if not u.startswith(("/", "http", "../")) else u
+                             for u in val.split(", "))
+        part = re.sub(r'src="((?:\.\./)+)', lambda m: 'src="../' + m.group(1), part)
+        part = re.sub(r'src="(?!\.\./|/|https?:|data:)([^"]+)"', lambda m: 'src="../' + m.group(1) + '"', part)
+        part = re.sub(r'(?:image)?srcset="((?:\.\./)+)', lambda m: m.group(0)[:m.group(0).index('="') + 2] + "../" + m.group(1), part)
+        part = re.sub(r'((?:image)?srcset)="(?!\.\./|/|https?:)([^"]+)"',
+                      lambda m: m.group(1) + '="' + urls(m.group(2)) + '"', part)
+        return part
+    head, body = assets(head), assets(body)
+    head = head.replace("url(fonts/", "url(/fonts/").replace("url(dm-logo.webp)", "url(/dm-logo.webp)")
+
+    # Liens internes : /montures/ → /en/montures/. Les fichiers (une extension dans le chemin) ne
+    # bougent pas : les images, polices et la vignette vivent à la racine du domaine.
+    def link(m):
+        u = m.group(1)
+        if not u.startswith("/") or u.startswith("/en/") or u == "/en":
+            return m.group(0)
+        if "." in u.split("#")[0].split("?")[0]:
+            return m.group(0)
+        return 'href="/en' + (u if u != "/" else "/") + '"'
+    body = re.sub(r'href="([^"]*)"', link, body)
+
+    # Boutons WhatsApp : le lien statique (sans JavaScript) part avec le message anglais.
+    def wa_link(m):
+        tag = m.group(0)
+        d = re.search(r'data-en="([^"]*)"', tag)
+        if not d:
+            return tag
+        msg = html.unescape(d.group(1))
+        return re.sub(r'href="[^"]*"', 'href="' + esc(wa(msg)) + '"', tag, count=1)
+    body = re.sub(r'<a\b[^>]*\bclass="[^"]*\bwa\b[^"]*"[^>]*>', wa_link, body)
+
+    # Textes alternatifs : le HTML servi est déjà en anglais (pas besoin d'attendre le JavaScript).
+    def alt(m):
+        tag = m.group(0)
+        v = re.search(r'data-alt-en="([^"]*)"', tag)
+        if not v:
+            return tag
+        return re.sub(r'alt="[^"]*"', 'alt="' + v.group(1) + '"', tag, count=1)
+    body = re.sub(r"<img\b[^>]*>", alt, body)
+
+    body = body.replace("Rechercher une monture…", "Search for a frame…")
+    body = body.replace("Tout afficher", "Show all")
+
+    # Données structurées : les adresses de page deviennent anglaises, les fichiers restent à la racine.
+    def ld(m):
+        block = m.group(0)
+        block = re.sub(r'(")' + re.escape(base) + r'([^"]*/)"',
+                       lambda mm: '"' + base + "/en" + mm.group(2) + '"', block)
+        return block
+    body = re.sub(r'<script type="application/ld\+json">.*?</script>', ld, body, flags=re.S)
+    return head + "</head>" + body
+
+
+# Textes anglais des montures, chargés au démarrage (frames-en.json). Vide = build impossible.
+EN = {}
+
+
+def tr_en(f, field):
+    return EN[f["code"]][field]
+
+
 def frame_msg(f):
     return (f"Bonjour DM OPTIQUE SARL, je suis intéressé par la monture « {f['nom']} ». Est-elle disponible ?",
-            f"Hello DM OPTIQUE SARL, I am interested in frame \"{f['nom']}\". Is it available?")
+            f"Hello DM OPTIQUE SARL, I am interested in frame \"{tr_en(f, 'nom')}\". Is it available?")
 
 
 def card(f, level=2):
     fr_msg, en_msg = frame_msg(f)
-    img = (f'<img src="{esc(f["photos"][0])}" alt="{esc(f["nom"])}" loading="lazy" '
+    img = (f'<img src="{esc(f["photos"][0])}" alt="{esc(f["nom"])}" '
+           f'data-alt-en="{esc(tr_en(f, "nom"))}" loading="lazy" '
            f'width="1600" height="1200">') if f.get("photos") else ""
     return f'''<li class="v2-card rv" data-forme="{esc(slugify(f["forme"]))}" data-couleur="{esc(slugify(f["couleur"]))}" data-name="{esc(f["nom"] + " " + f["forme"] + " " + f["couleur"])}">
     <article>
       {img}
       <div class="v2-body">
-        <h{level}><a href="{esc(frame_url(f))}">{esc(f["nom"])}</a></h{level}>
-        <ul class="v2-tags"><li>{esc(f["forme"])}</li><li>{esc(f["couleur"])}</li></ul>
-        <p>{esc(f["phrase"])}</p>
+        <h{level}><a href="{esc(frame_url(f))}">{B(f["nom"], tr_en(f, "nom"))}</a></h{level}>
+        <ul class="v2-tags"><li>{B(f["forme"], tr_en(f, "forme"))}</li><li>{B(f["couleur"], tr_en(f, "couleur"))}</li></ul>
+        <p>{B(f["phrase"], tr_en(f, "phrase"))}</p>
         <div class="v2-actions">
           <a class="btn" href="{esc(frame_url(f))}">{B("Voir la fiche", "See the frame")}</a>
           {wa_btn(fr_msg, en_msg, "Demander cette monture", "Ask about this frame")}
@@ -280,14 +407,15 @@ def card(f, level=2):
 
 
 def mini_card(f):
-    img = (f'<img src="{esc(f["photos"][0])}" alt="{esc(f["nom"])}" loading="lazy" '
+    img = (f'<img src="{esc(f["photos"][0])}" alt="{esc(f["nom"])}" '
+           f'data-alt-en="{esc(tr_en(f, "nom"))}" loading="lazy" '
            f'width="1600" height="1200">') if f.get("photos") else ""
     return f'''<li class="v2-card rv">
     <article>
       {img}
       <div class="v2-body">
-        <h3><a href="{esc(frame_url(f))}">{esc(f["nom"])}</a></h3>
-        <ul class="v2-tags"><li>{esc(f["forme"])}</li><li>{esc(f["couleur"])}</li></ul>
+        <h3><a href="{esc(frame_url(f))}">{B(f["nom"], tr_en(f, "nom"))}</a></h3>
+        <ul class="v2-tags"><li>{B(f["forme"], tr_en(f, "forme"))}</li><li>{B(f["couleur"], tr_en(f, "couleur"))}</li></ul>
         <div class="v2-actions"><a class="btn" href="{esc(frame_url(f))}">{B("Voir la fiche", "See the frame")}</a></div>
       </div>
     </article>
@@ -306,6 +434,7 @@ class Site:
         self.dock = dock.group(0) if dock else ""
         self.scripts = re.findall(r"<script>/\* ── (?:LES DEUX|LE MOUVEMENT).*?</script>", src, re.S)
         self.paths = ["/"]
+        self.pairs = []          # (chemin, titre EN, description EN) — miroir /en/
 
     @staticmethod
     def _chrome(block):
@@ -321,6 +450,9 @@ class Site:
         head = self.head
         # Chemins relatifs de l'accueil → absolus (pages nichées).
         head = head.replace("url(fonts/", "url(/fonts/").replace("url(dm-logo.webp)", "url(/dm-logo.webp)")
+        # Le préchargement de la photo du premier écran ne concerne QUE l'accueil : recopié sur les
+        # 47 autres pages, il téléchargeait 86 Ko d'une image que la page n'affiche pas (audit 21/10).
+        head = re.sub(r'<link rel="preload" as="image"[^>]*>\n?', "", head)
         head = re.sub(r"<title>.*?</title>", f"<title>{esc(title)}</title>", head, count=1, flags=re.S)
 
         def set_meta(attr, key, val):
@@ -332,6 +464,14 @@ class Site:
                 head = head.replace("</head>", f'<meta {attr}="{key}" content="{esc(val)}">\n</head>', 1)
 
         url = self.abs(path)
+        # 21/10 — hreflang calculé PAR PAGE (le gabarit de l'accueil ne connaît que l'accueil).
+        head = re.sub(r'<link rel="alternate" hreflang="[^"]+" href="[^"]*">\n?', "", head)
+        if self.base and not path.endswith(".html"):
+            fr_u, en_u = self.abs(path), self.abs(en_path(path))
+            alt = (f'<link rel="alternate" hreflang="fr" href="{esc(fr_u)}">\n'
+                   f'<link rel="alternate" hreflang="en" href="{esc(en_u)}">\n'
+                   f'<link rel="alternate" hreflang="x-default" href="{esc(fr_u)}">\n')
+            head = head.replace("</head>", alt + "</head>", 1)
         if self.base:
             head = re.sub(r'<link rel="canonical" href="[^"]*">',
                           f'<link rel="canonical" href="{esc(url)}">', head, count=1)
@@ -378,7 +518,8 @@ class Site:
             dock = re.sub(r'<a\b[^>]*\bclass="[^"]*\bwa\b[^"]*"[^>]*>', _dock_link, dock, count=1)
         return dock
 
-    def page(self, path, title, desc, main_html, ld_graph=None, og_image=None, og_wh=None, extra_script="", dock_wa=None):
+    def page(self, path, title, desc, main_html, ld_graph=None, og_image=None, og_wh=None, extra_script="", dock_wa=None,
+             en_meta=None):
         head = self._head(path, title, desc, ld_graph, og_image, og_wh)
         # Images du corps en relatif (profondeur de la page) : navigateur et `audit_images.py`
         # résolvent depuis le dossier de la page ; canoniques/OG/JSON-LD restent absolus.
@@ -407,6 +548,8 @@ class Site:
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(page, encoding="utf-8")
         self.paths.append(path)
+        if en_meta:
+            self.pairs.append((path, en_meta[0], en_meta[1]))
         return out
 
     def crumbs(self, items):
@@ -430,8 +573,17 @@ def main():
     src = SRC.read_text(encoding="utf-8")
     site = Site(src)
     frames = json.loads(FRAMES.read_text(encoding="utf-8"))
+    # Traductions : une entrée par code, ni plus ni moins. Un oubli arrête le build.
+    EN.update(json.loads(FRAMES_EN.read_text(encoding="utf-8")))
+    manquants = [f["code"] for f in frames if f["code"] not in EN]
+    orphelins = [c for c in EN if c not in {f["code"] for f in frames}]
+    if manquants or orphelins:
+        sys.exit("frames-en.json désaccordé — manquants : %s · orphelins : %s" % (manquants, orphelins))
     by_cat = {c: [f for f in frames if f["categorie"] == c] for c in CATS}
     written = []
+    # L'accueil est écrit par build_dmoptic.py ; il entre dans le miroir comme les autres pages.
+    site.pairs.append(("/", "DM OPTIQUE SARL — Optometrist optician in Douala",
+                       "Eye examinations, prescription lenses, frames, repairs. An optometrist optician registered with the ONOC. WhatsApp: the message is already written."))
 
     # Nettoyage des anciennes pages générées (les images vivent à la racine de /montures/).
     for c in CATS:
@@ -477,7 +629,9 @@ def main():
         "/montures/", "Toutes nos montures à Bonabéri — DM OPTIQUE SARL",
         "Montures femmes, hommes et enfants photographiées au cabinet DM OPTIQUE SARL à Bonabéri, Douala. Choisissez, puis demandez-la sur WhatsApp.",
         hub_main,
-        ld_graph=[site.crumb_ld([("Accueil", "/"), ("Montures", "/montures/")]), site.itemlist_ld(frames)], dock_wa=HUB_WA))
+        ld_graph=[site.crumb_ld([("Accueil", "/"), ("Montures", "/montures/")]), site.itemlist_ld(frames)], dock_wa=HUB_WA,
+        en_meta=("All our frames in Bonaberi — DM OPTIQUE SARL",
+                 "Women's, men's and children's frames photographed at DM OPTIQUE SARL in Bonaberi, Douala. Choose one, then ask for it on WhatsApp.")))
 
     # ── Catégories + fiches ─────────────────────────────────────────────────────
     for c, (fr_l, en_l, fr_low) in CATS.items():
@@ -506,7 +660,7 @@ def main():
         <label class="v2-search">{B("Rechercher", "Search")}<input class="v2-q" type="search" name="q" placeholder="Rechercher une monture…" autocomplete="off"></label>
         <p class="v2-count" role="status" aria-live="polite">Nos montures</p>
         <button class="btn v2-filter-toggle" type="button" aria-expanded="false" aria-controls="filtres-{c}">{B("Filtrer", "Filter")}</button>
-        <button class="btn v2-show" type="button">Tout afficher</button>
+        <button class="btn v2-show" type="button">{B("Tout afficher", "Show all")}</button>
         <button class="btn v2-reset" type="button">{B("Effacer", "Clear")}</button>
       </div>
       <div class="v2-filters-panel" id="filtres-{c}">
@@ -529,14 +683,16 @@ def main():
             cat_main,
             ld_graph=[site.crumb_ld([("Accueil", "/"), ("Montures", "/montures/"), (fr_l, f"/montures/{c}/")]),
                       site.itemlist_ld(items)],
-            extra_script=FILTER_JS, dock_wa=CAT_WA[c]))
+            extra_script=FILTER_JS, dock_wa=CAT_WA[c],
+            en_meta=(f"{en_l} frames in Bonaberi — DM OPTIQUE SARL",
+                     f"{en_l} frames at DM OPTIQUE SARL in Bonaberi: shapes and colours you can see, to try on at the practice. Ask on WhatsApp.")))
 
         for f in items:
             fr_m, en_m = frame_msg(f)
             figs = []
             for i, p in enumerate(f["photos"]):
                 loading = "" if i == 0 else ' loading="lazy"'
-                figs.append(f'<figure><img src="{esc(p)}" alt="{esc(f["nom"])}" width="1600" height="1200"{loading}></figure>')
+                figs.append(f'<figure><img src="{esc(p)}" alt="{esc(f["nom"])}" data-alt-en="{esc(tr_en(f, "nom"))}" width="1600" height="1200"{loading}></figure>')
             if figs:
                 figs.insert(1, f'<div class="v2-cta-mobile">{wa_btn(fr_m, en_m, "Commander sur WhatsApp", "Ask on WhatsApp")}</div>')
             sims = [g for g in items if g["code"] != f["code"] and g["forme"] == f["forme"]]
@@ -553,8 +709,8 @@ def main():
   </section>'''
             fiche_main = f'''<section class="wrap">
     {site.crumbs([(B("Accueil", "Home"), "/"), (B("Montures", "Frames"), "/montures/"), (B(fr_l, en_l), f"/montures/{c}/"), (esc(f["nom"]), None)])}
-    <h1 class="rv">{esc(f["nom"])}</h1>
-    <p class="lede rv">{esc(f["phrase"])}</p>
+    <h1 class="rv">{B(f["nom"], tr_en(f, "nom"))}</h1>
+    <p class="lede rv">{B(f["phrase"], tr_en(f, "phrase"))}</p>
     <div class="v2-fiche">
       <div class="v2-gallery rv">
       {chr(10).join(figs)}
@@ -562,8 +718,8 @@ def main():
       <aside class="v2-fiche-aside rv">
     <dl class="v2-facts">
       <div><dt>{B("Catégorie", "Category")}</dt><dd>{B(fr_l, en_l)}</dd></div>
-      <div><dt>{B("Forme", "Shape")}</dt><dd>{esc(f["forme"])}</dd></div>
-      <div><dt>{B("Couleur dominante", "Main colour")}</dt><dd>{esc(f["couleur"])}</dd></div>
+      <div><dt>{B("Forme", "Shape")}</dt><dd>{B(f["forme"], tr_en(f, "forme"))}</dd></div>
+      <div><dt>{B("Couleur dominante", "Main colour")}</dt><dd>{B(f["couleur"], tr_en(f, "couleur"))}</dd></div>
       <div><dt>{B("Référence à donner au cabinet", "Reference to give the practice")}</dt><dd>{esc(f["code"])}</dd></div>
     </dl>
     <div class="actions">
@@ -578,11 +734,15 @@ def main():
   {sim_block}'''
             written.append(site.page(
                 frame_url(f), f"{f['nom']} — DM OPTIQUE SARL",
-                f"{f['phrase']} Demandez-la sur WhatsApp au 656 122 239.",
+                # La référence en fin de description : sans elle, deux montures de même forme et même
+                # couleur (F10/F11, H01/H02/H05/H08) portaient la MÊME description (audit 21/10).
+                f"{f['phrase']} Demandez-la sur WhatsApp au 656 122 239 — référence {f['code']}.",
                 fiche_main,
                 ld_graph=[site.crumb_ld([("Accueil", "/"), ("Montures", "/montures/"),
                                           (fr_l, f"/montures/{c}/"), (f["nom"], frame_url(f))])],
-                og_image=(f["photos"][0], f["nom"]), og_wh=(1600, 1200), dock_wa=(fr_m, en_m)))
+                og_image=(f["photos"][0], f["nom"]), og_wh=(1600, 1200), dock_wa=(fr_m, en_m),
+                en_meta=(f"{tr_en(f, 'nom')} — DM OPTIQUE SARL",
+                         f"{tr_en(f, 'phrase')} Ask for it on WhatsApp at 656 122 239 — reference {f['code']}.")))
 
     # ── Examen de vue ───────────────────────────────────────────────────────────
     exam_steps = [
@@ -631,7 +791,9 @@ def main():
     written.append(site.page(
         "/examen-de-vue/", "Examen de vue à Bonabéri, Douala — DM OPTIQUE SARL",
         "Examen de vue au cabinet DM OPTIQUE SARL à Bonabéri : anamnèse, bilan optique, acuités visuelles et réfraction. Rendez-vous sur WhatsApp.",
-        exam_main, ld_graph=[site.crumb_ld([("Accueil", "/"), ("Examen de vue", "/examen-de-vue/")])], dock_wa=EXAM_WA))
+        exam_main, ld_graph=[site.crumb_ld([("Accueil", "/"), ("Examen de vue", "/examen-de-vue/")])], dock_wa=EXAM_WA,
+        en_meta=("Eye examination in Bonaberi, Douala — DM OPTIQUE SARL",
+                 "Eye examination at DM OPTIQUE SARL in Bonaberi: history, optical assessment, visual acuity and refraction. Book on WhatsApp.")))
 
     # ── Le cabinet ──────────────────────────────────────────────────────────────
     cabinet_main = f'''<section class="wrap">
@@ -663,7 +825,9 @@ def main():
     written.append(site.page(
         "/le-cabinet/", "Le cabinet DM OPTIQUE SARL à Bonabéri, Douala",
         "Le cabinet d'optique médicale DM OPTIQUE SARL à Bonabéri, Douala : M. Domche Noumbi, opticien optométriste inscrit à l'ONOC. Photos réelles du cabinet.",
-        cabinet_main, ld_graph=[site.crumb_ld([("Accueil", "/"), ("Le cabinet", "/le-cabinet/")])], dock_wa=VISIT_WA))
+        cabinet_main, ld_graph=[site.crumb_ld([("Accueil", "/"), ("Le cabinet", "/le-cabinet/")])], dock_wa=VISIT_WA,
+        en_meta=("The DM OPTIQUE SARL practice in Bonaberi, Douala",
+                 "The DM OPTIQUE SARL optical practice in Bonaberi, Douala: Mr Domche Noumbi, optometrist optician registered with the ONOC. Real photos of the practice.")))
 
     # ── Contact ─────────────────────────────────────────────────────────────────
     contact_main = f'''<section class="wrap">
@@ -691,7 +855,9 @@ def main():
     written.append(site.page(
         "/contact/", "Contact et adresse — DM OPTIQUE SARL, Bonabéri",
         "DM OPTIQUE SARL, immeuble West Hotel, 1er étage, Ndobo Mayor, Bonabéri, Douala. WhatsApp et téléphone : +237 656 122 239. Horaires lun–sam.",
-        contact_main, ld_graph=[site.crumb_ld([("Accueil", "/"), ("Contact", "/contact/")])], dock_wa=VISIT_WA))
+        contact_main, ld_graph=[site.crumb_ld([("Accueil", "/"), ("Contact", "/contact/")])], dock_wa=VISIT_WA,
+        en_meta=("Contact and address — DM OPTIQUE SARL, Bonaberi",
+                 "DM OPTIQUE SARL, West Hotel building, first floor, Ndobo Mayor, Bonaberi, Douala. WhatsApp and phone: +237 656 122 239. Hours Mon-Sat.")))
 
     # ── Page 404 + en-têtes hôte (préparation Cloudflare, F7) ───────────────────
     notfound_main = f'''<section class="wrap">
@@ -729,6 +895,20 @@ def main():
     (OUTDIR / "404.html").write_text(page404, encoding="utf-8")
     (OUTDIR / "_headers").write_text(HEADERS, encoding="utf-8")
 
+    # ── Miroir anglais ──────────────────────────────────────────────────────────────────────────
+    for path, en_title, en_desc in site.pairs:
+        fr_file = OUTDIR / path.strip("/") / "index.html"
+        if not fr_file.exists():
+            sys.exit("miroir : page française absente — " + str(fr_file))
+        page_html = fr_file.read_text(encoding="utf-8")
+        target = OUTDIR / en_path(path).strip("/") / "index.html"
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(to_en(page_html, path, en_title, en_desc, site.base), encoding="utf-8")
+    if site.base:
+        print(f"  miroir /en/ : {len(site.pairs)} pages")
+    else:
+        print("! pas de domaine connu : miroir /en/ non écrit")
+
     # ── llms.txt (20/10, proposition validée par King — écart AEO n°1 du test open-seo) ──────────
     # Fichier de découverte pour crawlers IA : que du vrai (services, pages, coordonnées), aucun
     # prix, aucune marque, aucune prétention. Bilingue sur les pages-hubs, fiches en français
@@ -763,7 +943,7 @@ def main():
              f"- Adresse : {ADDRESS_FR}",
              "- Téléphone et WhatsApp : +237 656 122 239",
              "- Horaires : Lundi–Samedi, 8h30–17h30 · examen de la vue 8h30–13h00",
-             "- Langues : français et anglais sur toutes les pages", ""]
+             "- Langues : français et anglais sur toutes les pages · version anglaise : https://dmoptiquesarl.com/en/", ""]
     llms_txt = chr(10).join(llms)
     n_links = llms_txt.count("](https://dmoptiquesarl.com")
     if n_links != 48 or "+237 656 122 239" not in llms_txt or "FCFA" in llms_txt \
@@ -774,7 +954,12 @@ def main():
 
     # ── Sitemap ─────────────────────────────────────────────────────────────────
     if site.base:
-        urls = "".join(f"  <url><loc>{esc(site.abs(p))}</loc></url>\n" for p in site.paths)
+        # lastmod : date de dernière modification réelle des sources de contenu (pas la date du jour,
+        # qui serait fausse — Google ignore un lastmod qui ne bouge jamais, ou qui bouge toujours).
+        stamps = [FRAMES, FRAMES_EN, ROOT / "demos/dmoptic-v1.tpl.html"]
+        lastmod = max(datetime.date.fromtimestamp(t.stat().st_mtime) for t in stamps if t.exists()).isoformat()
+        all_paths = list(site.paths) + [en_path(p) for p, _, _ in site.pairs]
+        urls = "".join(f"  <url><loc>{esc(site.abs(p))}</loc><lastmod>{lastmod}</lastmod></url>\n" for p in all_paths)
         (OUTDIR / "sitemap.xml").write_text(
             '<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + "</urlset>\n",

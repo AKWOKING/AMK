@@ -82,6 +82,11 @@ PHOTOS = {
 HERO_BG_SRC = ROOT / "clients/dm-optic/photoshoot/others/PXL_20261016_131635710.MP.jpg"
 HERO_BG_NAME = "cabinet-hero.webp"
 HERO_BG_TARGET = "1920x1270"
+# 21/10 (audit SEO) : le premier écran est l'élément LCP (Cloudflare : P90 3,2 s, 9 % de visites
+# « mauvaises ») et 232 Ko de WebP partaient sur un écran de 390 px. Trois largeurs, même recadrage
+# couvert : le téléphone prend 640, la tablette 1080, le poste fixe 1920. Même image, trois poids.
+# (largeur, hauteur, qualité) — ratios identiques à 1920×1270.
+HERO_SIZES = ((640, 423, "70"), (1080, 714, "72"))
 # 20/10 (demande King, OK client pour les visages acquis le même jour) : la bande « Nos services »
 # de l'accueil ET la page Examen de vue montent LA photo d'examen réelle — autoréfractomètre,
 # titulaire en blouse blanche, patiente, valise de verres d'essai. Même dérivée que le hero :
@@ -261,6 +266,10 @@ def main():
         sys.exit("fichier absent du gabarit : %s" % HERO_BG_NAME)
     size = prepare_from(HERO_BG_SRC, HERO_BG_TARGET, "76", PREVIEW / HERO_BG_NAME)
     print("  %-22s %s → %s (WebP, %5.1f Ko)" % (HERO_BG_SRC.name, HERO_BG_TARGET, HERO_BG_NAME, size / 1024))
+    for w, h, q in HERO_SIZES:
+        name = "cabinet-hero-%d.webp" % w
+        size = prepare_from(HERO_BG_SRC, "%dx%d" % (w, h), q, PREVIEW / name)
+        print("  %-22s %dx%d → %s (WebP, %5.1f Ko)" % ("", w, h, name, size / 1024))
     if ASSET + EXAM_PHOTO_NAME not in html:
         sys.exit("fichier absent du gabarit : %s" % EXAM_PHOTO_NAME)
     size = prepare_from(EXAM_PHOTO_SRC, EXAM_PHOTO_TARGET, "76", PREVIEW / EXAM_PHOTO_NAME)

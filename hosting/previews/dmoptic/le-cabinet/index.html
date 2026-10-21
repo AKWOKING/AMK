@@ -310,7 +310,7 @@ footer.site .brand .thin{color:rgba(255,255,255,.82)}
 footer.site .brand .mark .o{stroke:#fff}
 footer.site .brand .mark .i{stroke:#fff}
 footer.site .brand .mark .glint{stroke:var(--ember-2)}
-footer.site h3{font:500 var(--fs-label)/1.6 var(--f-m);letter-spacing:.14em;text-transform:uppercase;color:var(--on-night-2);margin-bottom:12px}
+footer.site h2{font:500 var(--fs-label)/1.6 var(--f-m);letter-spacing:.14em;text-transform:uppercase;color:var(--on-night-2);margin-bottom:12px}
 footer.site p{color:var(--on-night-2);font-size:var(--fs-sm)}
 .fnav li{padding:6px 0}
 .fnav a{text-decoration:none;font-size:var(--fs-sm);color:var(--on-night-2);border-bottom:1px solid transparent;padding-bottom:1px}
@@ -342,6 +342,9 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
   *{transition-duration:.01ms !important}
 }
 </style>
+<link rel="alternate" hreflang="fr" href="https://dmoptiquesarl.com/le-cabinet/">
+<link rel="alternate" hreflang="en" href="https://dmoptiquesarl.com/en/le-cabinet/">
+<link rel="alternate" hreflang="x-default" href="https://dmoptiquesarl.com/le-cabinet/">
 <style>
 /* ── Pages v2 (D3, 20/10) : même identité, profondeur en plus ── */
 .v2-main section{padding-top:44px;padding-bottom:44px}
@@ -493,7 +496,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
         <p><span class="fr-only" lang="fr">Cabinet d'optique médicale à Douala. Opticien optométriste inscrit à l'ONOC.</span><span class="en-only" lang="en">Optical practice in Douala. Optometrist optician registered with the ONOC.</span></p>
       </div>
       <div>
-        <h3><span class="fr-only" lang="fr">La page</span><span class="en-only" lang="en">This page</span></h3>
+        <h2><span class="fr-only" lang="fr">La page</span><span class="en-only" lang="en">This page</span></h2>
         <ul class="fnav">
           <li><a href="/examen-de-vue/"><span class="fr-only" lang="fr">Examen de vue</span><span class="en-only" lang="en">Eye examination</span></a></li>
           <li><a href="/montures/"><span class="fr-only" lang="fr">Nos montures</span><span class="en-only" lang="en">Our frames</span></a></li>
@@ -502,7 +505,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
         </ul>
       </div>
       <div>
-        <h3><span class="fr-only" lang="fr">Prendre contact</span><span class="en-only" lang="en">Get in touch</span></h3>
+        <h2><span class="fr-only" lang="fr">Prendre contact</span><span class="en-only" lang="en">Get in touch</span></h2>
         <div class="fcta">
           <a class="btn btn-wa wa" data-fr="Bonjour DM OPTIQUE SARL, je voudrais prendre un rendez-vous pour un examen de la vue." data-en="Hello DM OPTIQUE SARL, I would like to book an eye examination." href="https://wa.me/237656122239?text=Bonjour%20DM%20OPTIQUE%20SARL%2C%20je%20voudrais%20prendre%20un%20rendez-vous%20pour%20un%20examen%20de%20la%20vue.">
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3C7 3 3 6.6 3 11c0 2.5 1.4 4.7 3.6 6.1-.2 1-.7 2.2-1.6 3.2 1.7-.2 3.2-.9 4.3-1.6.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8S17 3 12 3z"/></svg>
@@ -512,7 +515,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
         </div>
       </div>
       <div>
-        <h3><span class="fr-only" lang="fr">Le cabinet</span><span class="en-only" lang="en">The practice</span></h3>
+        <h2><span class="fr-only" lang="fr">Le cabinet</span><span class="en-only" lang="en">The practice</span></h2>
         <ul class="fcontact">
           <li><a href="tel:+237656122239">+237 656 122 239</a></li>
           <li><span class="fr-only" lang="fr">Ndobo Mayor — Immeuble West Hotel, 1er étage, dernière porte à droite, Bonabéri, Douala</span><span class="en-only" lang="en">Ndobo Mayor — West Hotel building, first floor, last door on the right, Bonaberi, Douala</span></li>
@@ -564,9 +567,21 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
   }
   function setLang(l){html.setAttribute('data-lang',l); try{localStorage.setItem(K,l)}catch(e){}
     paint(); say(l==='en'?'Language: English':'Langue : français',true);}
+  /* 21/10 — depuis le miroir /en/, chaque page a une adresse par langue (hreflang) : le bouton FR/EN
+     change donc d'adresse au lieu de seulement masquer l'autre langue. Sur une page sans miroir
+     (404), il bascule sur place, comme avant. */
+  function urlFor(l){
+    var p=location.pathname, inEn=(p==='/en/'||p.indexOf('/en/')===0);
+    if(/\.html?$/.test(p)) return '';
+    return l==='en' ? (inEn?p:'/en'+p) : (inEn?(p.slice(3)||'/'):p);
+  }
   ['btn-fr','btn-en'].forEach(function(id){
     var b=document.getElementById(id);
-    if(b) b.addEventListener('click',function(){setLang(id==='btn-fr'?'fr':'en');});
+    if(b) b.addEventListener('click',function(){
+      var l=(id==='btn-fr'?'fr':'en'), u=urlFor(l);
+      if(u && u!==location.pathname){html.setAttribute('data-lang',l); location.href=u; return;}
+      setLang(l);
+    });
   });
   try{var saved=localStorage.getItem(K); if(saved==='en'||saved==='fr') html.setAttribute('data-lang',saved);}catch(e){}
   paint();

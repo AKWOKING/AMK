@@ -1646,3 +1646,30 @@ P99 8,4 s.
 **Rien n'a été construit** — l'audit est un constat, avec un ordre d'attaque en 7 lignes en attente de
 ruling. Le seul document d'action produit est la liste des **10 URL à indexer aujourd'hui**
 (`seo/URLS-INDEXATION-2026-10-21.md`).
+
+## 21/10 (15) — les six correctifs d'audit, et le site existe enfin en anglais
+
+**Le miroir `/en/` est en place : 48 pages.** Jusqu'ici le site était bilingue *à l'écran* seulement :
+`<html lang="fr">` partout, aucun `hreflang`, aucune adresse anglaise. Google ne pouvait donc pas servir
+une page à « optician Douala » ou « eye test Bonaberi ». Le miroir est fabriqué par le générateur :
+même DOM (le contenu bilingue y était déjà), langue inversée, liens réécrits, titres et descriptions
+traduits, `hreflang` réciproque. Une fiche = deux adresses, un seul contenu à maintenir.
+
+Les textes anglais des 40 montures vivent dans `clients/dm-optic/site/frames-en.json`, indexés par code.
+**Le build refuse de tourner si une monture n'a pas sa traduction** — une page à moitié française sous
+`/en/` coûterait plus cher que l'absence de page.
+
+**Le reste des correctifs :** `srcset` sur la photo d'accueil (35 / 86 / 226 Ko selon l'écran, + `preload`
+en `imagesrcset`), descriptions de montures rendues uniques par la référence, `lastmod` dans le sitemap
+(daté sur la dernière modification réelle), pied de page passé en `h2` (plus aucun saut h1→h3), schéma
+`Optician` enrichi (`image`, `logo`, `sameAs` TikTok, `geo`, `hasMap`). `Product` : non fait, comme
+recommandé.
+
+**Deux bugs corrigés au passage :** le `preload` de la photo d'accueil était recopié sur les 47 autres
+pages (86 Ko inutiles par page visitée), et le bouton FR/EN ne changeait que l'affichage — il change
+maintenant d'adresse, ce qui est la seule façon d'avoir deux URL indexables.
+
+**Mesure :** `audit_seo.py` couvre désormais le `hreflang` (cible existante, réciprocité, `lang` du
+document). Résultat sur 97 pages : tout à zéro sauf le fil d'Ariane de la 404 (voulu, elle est en
+`noindex`). Livraison : zip 182 entrées.
+
