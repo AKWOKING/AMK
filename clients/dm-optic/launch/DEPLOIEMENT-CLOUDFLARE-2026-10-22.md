@@ -154,8 +154,21 @@ redirection peut donc être posée — elle envoie désormais Google d'une adres
 
 1. Cloudflare → zone **`dmoptiquesarl.com`** → *Rules* → **Redirect Rules**.
 2. **Create new Single Redirect** → carte **« Redirect from WWW to root »** → **Create from template**.
-3. Vérifie que l'URL cible est `https://dmoptiquesarl.com` (apex) et que le statut est **301**.
-4. **Deploy**.
+3. Le modèle se remplit tout seul — **ne change rien**, c'est bon :
+
+   | Champ | Valeur posée par le modèle |
+   |---|---|
+   | Rule name | `Redirect from WWW to root [Template]` |
+   | Type | **Wildcard pattern** |
+   | Request URL | `https://www.*` |
+   | Target URL | `https://${1}` |
+   | Status code | **301 - Permanent Redirect** |
+
+   `*` capture tout ce qui suit `www.` — donc `dmoptiquesarl.com` **et** le chemin. `${1}` le remet dans
+   la cible : `https://www.dmoptiquesarl.com/en/montures/` → `https://dmoptiquesarl.com/en/montures/`.
+   Aucune boucle possible : la cible ne contient plus `www`.
+
+4. **Deploy** (bouton en bas de la page).
 
 > **Ne touche pas** à la carte existante « Redirect from HTTP to HTTPS » : elle fait un autre travail
 > (le http → https) et la supprimer casserait le site.
