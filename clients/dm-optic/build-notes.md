@@ -1782,3 +1782,19 @@ sans glisser-déposer, sans écran qui tourne dans le vide.
 **Reste, hors du site :** la redirection `www` → apex (zone → Redirect Rules), et la resoumission du
 sitemap dans Search Console.
 
+## 22/10 (22) — un « Retry » ne rattrape pas un commit périmé
+
+Le second échec de la journée n'était pas une régression : le bouton **Retry build** rejoue **le commit du
+build**, pas le dernier. Celui relancé portait `1dfee35`, c'est-à-dire l'état **d'avant** le retrait de
+`_redirects` — donc le même message, `Only relative URLs are allowed`, pour la même raison. Le site en
+ligne, lui, était déjà à jour depuis le déploiement de `617eea1` (vérifié : `/en/` en anglais, sitemap à
+96 URL). Un build rouge sur un commit ancien n'annule pas un déploiement réussi ; il occupe le badge.
+
+Trois boutons à ne pas confondre, désormais écrits dans le mode d'emploi (§3 quinquies) : **Retry** (le
+commit du build), **New deployment** (la tête de branche), et rien (un `push` construit le dernier).
+
+**Jeton API :** décision King — pas de révocation, il reste **local**. Vérifié qu'aucun jeton complet
+n'est dans le dépôt (`git log -S` sur le préfixe : rien) ; le fragment de huit caractères qui traînait
+dans une note interne a été retiré. `.gitignore` refuse maintenant `.dev.vars`, `.env*`, `*.token`,
+`CLOUDFLARE_*` et `.wrangler/`.
+

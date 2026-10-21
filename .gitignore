@@ -34,3 +34,15 @@ brag-output*/
 photo-output*/
 *.onnx
 .taste-skill/
+
+# ── SECRETS LOCAUX (22/10) : un jeton Cloudflare, une clé d'API ou un `.env` ne doit JAMAIS
+#    entrer dans le dépôt. Décision King : le jeton reste sur sa machine (gestionnaire ou fichier
+#    ignoré) ; ces motifs empêchent un `git add -A` distrait de le publier.
+.dev.vars
+.env
+.env.*
+*.token
+CLOUDFLARE_*
+.claude/
+.wrangler/
+

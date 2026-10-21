@@ -155,22 +155,48 @@ propreté.
 
 ---
 
-## 3 quater · 🔐 Le jeton API que tu as collé dans le chat est à remettre à zéro
+## 3 quater · Le jeton API reste **hors du dépôt**
 
-Le jeton `cfut_HicH…` a été **copié en clair dans la conversation**. Un jeton vaut un mot de passe : il
-donne le droit de publier sur le compte Workers.
+**Décision (King, 22/10) :** le jeton n'est pas révoqué, il est simplement **gardé local**. Il ne doit
+jamais entrer dans le dépôt — ni dans un fichier, ni dans un commit, ni dans un message.
 
-**À faire maintenant, dans cet ordre :**
+**Où il va, et où il ne va pas :**
 
-1. Cloudflare → **My Profile → API Tokens** → ligne `deploy-dmoptique-github` → **Roll** (ou *Delete*).
-   Le jeton affiché devient inutilisable immédiatement.
-2. **Create Token → Edit Cloudflare Workers** → *Use template* → même nom, mêmes ressources →
-   **Create** → **ne le colle nulle part dans un chat**.
-3. Il ne va qu'à **un seul endroit** : GitHub → dépôt AMK → *Settings → Secrets and variables → Actions*
-   → `CLOUDFLARE_API_TOKEN`. GitHub le chiffre, et il n'est plus jamais réaffiché.
+| Endroit | Autorisé ? |
+|---|---|
+| Un gestionnaire de mots de passe (le tien) | ✅ |
+| GitHub → *Settings → Secrets and variables → Actions* | ✅ (chiffré, jamais réaffiché) |
+| Un fichier local ignoré par git (`.dev.vars`, `.env`) | ✅ — **et il reste sur ta machine** |
+| Un fichier suivi par git, un commit, un message de chat | ❌ |
 
-**Et rappelle-toi : ce jeton n'est pas nécessaire pour l'étape 3.** Workers Builds publie déjà sans lui.
-Il ne servira qu'à la publication depuis GitHub Actions (§4).
+**État vérifié le 22/10 :** le dépôt ne contient **aucun jeton complet** (une recherche `git log -S`
+sur le préfixe des jetons Cloudflare ne remonte rien) ; le fragment qui figurait dans une note interne de
+ce document a été retiré. Le `.gitignore` refuse désormais `.dev.vars`, `.env*`, `*.token` et `CLOUDFLARE_*`, pour
+qu'un fichier oublié sur le bureau ne parte jamais avec un `git add -A`.
+
+> **À savoir :** le jeton n'est **pas nécessaire** à Workers Builds, qui publie avec l'autorisation GitHub
+> déjà donnée. Il ne sert qu'à la route GitHub Actions (§4) — donc, tant que ce n'est pas fait, tu peux
+> le garder localement sans rien perdre.
+
+## 3 quinquies · ⚠️ Ne jamais « Retry » un ancien build
+
+**Ce qui s'est passé le 22/10 à 17 h 00** (capture du tableau de bord) : le build relancé portait le
+commit **`1dfee35`** — celui d'**avant** le retrait de `_redirects`. Il a donc échoué exactement comme la
+première fois, avec le même message. Ce n'est pas une régression : c'est le même commit, relancé.
+
+| Bouton | Ce qu'il fait | À utiliser ? |
+|---|---|---|
+| **Retry build** (sur un build rouge) | rejoue **le commit de ce build-là**, à l'identique | ❌ jamais sur un ancien commit |
+| **New deployment** (en haut à droite) | construit **la tête de la branche** (dernier commit) | ✅ |
+| Rien | un `push` sur la branche déclenche un build neuf | ✅ (c'est le fonctionnement normal) |
+
+**Comment savoir quel commit un build construit :** la ligne sous le titre, à côté du nom de la branche
+(`arena/2fffee3b-amk  ·  1dfee35  ·  Manually deployed`). Si ce n'est pas le dernier commit poussé,
+c'est un build périmé — on ne le relance pas, on en crée un nouveau.
+
+**Le site en ligne, lui, était déjà bon.** Le déploiement du commit `617eea1` avait abouti (vérifié :
+`/en/` en anglais, sitemap à 96 URL). Un build rouge sur un commit périmé ne défait pas un déploiement
+réussi — il occupe seulement le badge « Latest build failed ».
 
 ## 4 · Une fois pour toutes : le workflow `arena/**`
 
