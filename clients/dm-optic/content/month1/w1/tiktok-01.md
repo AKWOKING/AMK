@@ -118,8 +118,8 @@ du clic dans un partage WhatsApp.
 ```
 Opticien optométriste à Bonabéri : en fin de journée, vous éloignez votre téléphone pour lire ?
 
-Cette monture est dans notre stock — et sur notre site, avec toutes les autres.
-Vous les voyez avant de vous déplacer, et vous les essayez au cabinet.
+Vous pouvez voir les 40 montures en ligne avant de quitter la maison — et les essayer au cabinet.
+Celle-ci y est, avec toutes les autres.
 
 📍 Immeuble West Hotel, 1er étage, dernière porte à droite — Ndobo Mayor, Bonabéri
 🕗 Examen de vue : lundi à samedi, 8h30–13h00
@@ -181,6 +181,67 @@ Détail et ce qu'on ne fait pas : `launch/SETUP-TIKTOK.md` § « Business Accoun
 > si le bandeau et le beat 4 disent encore « Opticien à Bonabéri », on ne refait pas le montage — le
 > titre complet passe dans la **bio** et la **légende** ci-dessous, qui sont modifiables au moment de
 > publier. Une seule chose compte : qu'aucun support ne dise « opticien » **seul**.
+
+## 9 · Relu à la lumière de la recherche du 22/10
+
+Recherche complète : `research/youtube-lessons/2026-10-22-eyecare-marketing/SYNTHESE.md`
+(6 vidéos + le guide Ocuco + contexte Cameroun). **Verdict : ce script tient.** Trois choses bougent,
+une seule demande ta décision.
+
+### Ce que la recherche confirme (on ne touche pas)
+
+| Élément du script | Ce que disent les sources |
+|---|---|
+| 22 s | 21–34 s = la durée optimale pour une entreprise (TikTok / Sprout) |
+| Sous-titres manuels | « ça doit marcher sans son » — masterclass vidéo courte |
+| Lumière naturelle, pas de filtre | « ne surcompliquez pas » |
+| WhatsApp comme seule sortie | au Cameroun le parcours réel est « message → prix → disponibilité → rendez-vous » |
+| « Si vous voyez bien, ne venez pas » | c'est un **flip the status** de Joanna Wiebe : on inverse la pression commerciale |
+| Pas de pub | « les annonces amplifient les inefficacités » tant que la fiche et les avis ne sont pas propres |
+
+### Ce qui bouge
+
+1. **Les avis Google passent devant le TikTok.** Le levier n°1 de l'acquisition locale en optique est
+   la fiche Google et ses avis (`CAC8tfNDXMg`, blog Ocuco §3). Le TikTok installe la familiarité ; il ne
+   remplace pas une fiche à 0 avis. **Conséquence :** on garde 2 posts/semaine, et le temps gagné va aux
+   avis, pas au montage.
+2. **La légende gagne une phrase** — celle qui dit au spectateur ce qu'il peut faire *maintenant* et
+   qu'il croyait ne pas pouvoir : **voir les 40 montures avant de quitter la maison**. C'est déjà dans le
+   script au beat 3 ; on le remonte dans la légende, en deuxième ligne, parce que c'est là que se décide
+   le clic dans un partage WhatsApp. Légende mise à jour dans `tiktok-01-PUBLICATION.md`.
+3. **La vidéo n°2 est choisie** (voir ci-dessous) : on ne cherchera pas au dernier moment.
+
+### La décision qui t'appartient : garder ce n°1, ou ouvrir sur le 20/20/20 ?
+
+| Option | Le contenu | Ce qu'on gagne | Ce qu'on risque |
+|---|---|---|---|
+| **A — garder** (recommandé) | le script actuel, tel quel | la monture + le site, donc une **preuve d'inventaire** ; le tournage est **déjà fait** | accroche un peu longue à l'écrit |
+| **B — permuter** | ouvrir sur le 20/20/20, garder la F24 en beat 3 | l'accroche la plus **utile** de la recherche : un geste que le spectateur fait tout de suite | **il faut re-tourner** le plan 1 et re-mixer l'audio |
+
+**Ma recommandation : A.** Le tournage est fait, le script est conforme, et le 20/20/20 devient la
+**vidéo n°2** — où il sera plus fort, parce qu'on aura déjà une audience qui nous reconnaît.
+
+### Vidéo n°2 — décidée maintenant, pour ne pas la chercher le 27/10
+
+**« 20 minutes d'écran, 20 secondes au loin, à 6 mètres. »**
+
+- **Méthode** : *open the hidden door* (ce que le métier sait, que le public ignore) + *give them a
+  superpower* (un geste faisable immédiatement).
+- **Pourquoi elle** : la règle 20/20/20 est citée nommément dans `zKL1LW7hw6k` comme exemple de
+  contenu social qui fonctionne ; elle est utile, partageable, et **ne contient aucune promesse
+  médicale** — on décrit un geste de confort, pas un traitement.
+- **Format** : 15–20 s, une seule prise, la main qui compte les 20 secondes sur une montre ou un
+  téléphone, lumière naturelle, sous-titres manuels.
+- **Interdits maintenus** : aucun visage, aucun symptôme nommé, aucune marque, aucune image IA.
+- **Script détaillé** : à écrire une fois le n°1 publié — pas avant, pour ne pas mélanger les deux
+  tournages.
+
+### Ce que la recherche ne règle pas
+
+La masterclass et le guide placent **les visages** au premier rang (équipe, témoignages de patients).
+Notre règle est **aucun visage**. C'est un **coût assumé**, pas un oubli : on garde la règle quatre
+semaines, puis on relit les chiffres. Si les vues plafonnent alors que les autres formats décollent,
+c'est le visage qui manque — et on en reparlera avec des données.
 
 ---
 

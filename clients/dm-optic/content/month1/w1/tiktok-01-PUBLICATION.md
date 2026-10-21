@@ -19,6 +19,7 @@ Script      content/month1/w1/tiktok-01.md
 | Légende + commentaire épinglé | ✅ ci-dessous, à copier tel quel |
 | Montage (voix + cartons + musique) | ⬜ **à toi** — c'est le seul verrou |
 | Publication | ⬜ 22/10, **5h30** |
+| Relecture recherche (22/10) | ✅ `content/month1/w1/tiktok-01.md` §9 — script **maintenu**, légende ajustée |
 
 **Comment poser les sous-titres :** dans CapCut ou l'éditeur TikTok, importer `tiktok-01.fr.srt` (jamais
 les sous-titres automatiques — règle du 11/10). Vérifier ensuite qu'aucun bloc ne dépasse deux lignes à
@@ -33,8 +34,8 @@ même recadrée.
 ```
 Opticien optométriste à Bonabéri : en fin de journée, vous éloignez votre téléphone pour lire ?
 
-Cette monture est dans notre stock — et sur notre site, avec toutes les autres.
-Vous les voyez avant de vous déplacer, et vous les essayez au cabinet.
+Vous pouvez voir les 40 montures en ligne avant de quitter la maison — et les essayer au cabinet.
+Celle-ci y est, avec toutes les autres.
 
 📍 Immeuble West Hotel, 1er étage, dernière porte à droite — Ndobo Mayor, Bonabéri
 🕗 Examen de vue : lundi à samedi, 8h30–13h00
