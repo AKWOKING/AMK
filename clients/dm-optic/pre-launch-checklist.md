@@ -282,4 +282,6 @@ plateforme, pas des fichiers décoratifs. Doc Cloudflare (Direct Upload, lu le 2
 | Premier contenu | ✅ script validé (21/10) · ⬜ tournage · ⬜ montage relu par King · ⬜ publication | `content/month1/w1/tiktok-01.md` |
 | Message « avis Google » à M. Domche | 🕘 **envoi 21/10 à 09:00** (pas avant) · ⬜ 5 avis d'ici samedi 24/10 | `launch/MESSAGE-AVIS-GOOGLE-2026-10.md` |
 | Page Facebook | ⬜ **à créer** (aucune page existante vérifiée le 21/10) — visuels + textes prêts dans `launch/facebook-assets/` et `launch/SETUP-FACEBOOK.md` |
+| Meta au Cameroun | ✅ **cartographié le 21/10** — publier/sponsoriser : oui ; boutique, Meta Pay, monétisation, badge : non ; facturation en **USD/EUR + TVA 19,25 %** | `launch/META-CAMEROUN-2026-10.md` |
+| Carte internationale pour la pub | 🔴 **prérequis à vérifier avec King avant la semaine 2** — sans carte Visa/Mastercard ou PayPal, le test de 5 000 FCFA ne peut pas être lancé | `launch/META-CAMEROUN-2026-10.md` §4③ |
 | GSC : 4 indexations + re-check sitemap | 🔴 rappel debout — quota du 20/10 à reprendre | `clients/dm-optic/pre-launch-checklist.md` (rappels) |

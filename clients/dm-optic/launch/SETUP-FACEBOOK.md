@@ -17,6 +17,23 @@
 **Conséquence :** aucun risque de doublon, aucun risque de « page non revendiquée ». On part d'une
 page neuve et on pose le même nom qu'ailleurs : `DM OPTIQUE SARL`.
 
+### 0 bis · Ce qui est disponible au Cameroun (recherche du 21/10, sources citées)
+
+Avant de créer quoi que ce soit, la carte du terrain — détaillée dans **`launch/META-CAMEROUN-2026-10.md`** :
+
+| | Au Cameroun |
+|---|---|
+| Créer la page, publier, Reels, messages, bouton WhatsApp | **oui** |
+| Publicités Meta (Facebook + Instagram), ciblage Bonabéri/Douala IV, Click-to-WhatsApp | **oui** — TVA camerounaise depuis le 01/10/2020 |
+| Facturation en francs CFA | **non** — compte en **USD ou EUR**, carte Visa/Mastercard ou PayPal |
+| Boutique / catalogue / encaissement dans Facebook (Shops, Meta Pay) | **non** |
+| Monétisation Facebook (Content Monetization, Stars, abonnements) | **non** |
+| Badge Meta Verified | **non documenté** — ne rien promettre, ne rien payer |
+
+**Trois conséquences pour la création de la page — aucune n'est bloquante :**
+la page se crée normalement ; on ne promet jamais de badge ; et **la publicité du mois 1 suppose une
+carte internationale** — c'est un prérequis à vérifier avec King avant la semaine 2, pas au moment de lancer.
+
 ---
 
 ## 1 · ⚠️ La contrainte Meta, dite d'avance (elle décide de la façon de créer)

@@ -23,6 +23,7 @@
 | Compte TikTok | **créé** par King le 21/10 — `@dmoptique.bonaberi237`, nom affiché `DM OPTIQUE SARL`, logo + story, 0/0/0 |
 | Bio | **B retenue** : `Opticien à Bonabéri · examen de vue & montures · WhatsApp 656 122 239` (à poser — `launch/SETUP-TIKTOK.md`) |
 | Page Facebook | ⬜ **à créer** — guide écran par écran et visuels prêts (`launch/SETUP-FACEBOOK.md`, `launch/facebook-assets/`) ; **même première pièce que TikTok** (une production, deux vitrines) |
+| Meta au Cameroun | **Publié et sponsorisé : oui. Boutique, Meta Pay, monétisation, badge : non** → `launch/META-CAMEROUN-2026-10.md`. La pub de S2 suppose une **carte internationale** (facturation en USD/EUR + TVA 19,25 %) : prérequis à vérifier avant la semaine 2 |
 | Business Account + catégorie | ⛔ **non disponible au Cameroun** (vérifié 21/10/2026 — le sélecteur de pays ne contient pas le Cameroun, et TikTok n'ouvre la vérification qu'à six marchés africains) → on reste en **compte personnel** ; analytics via **TikTok Studio** |
 | Premier contenu | **`content/month1/w1/tiktok-01.md`** — 22 s, 5 plans au cabinet, aucune image IA, validé par King le 21/10 |
 | Tournage | jeudi 22 ou vendredi 23/10, **avant 13h** (lumière de la vitrine) |
@@ -157,7 +158,7 @@ mais **la publicité de S2 est Facebook/Instagram** — à confirmer par King
 
 | | |
 |---|---|
-| **Budget** | **5 000 FCFA — la totalité du budget mensuel, concentrée ici** |
+| **Budget** | **5 000 FCFA — la totalité du budget mensuel, concentrée ici**. En devise : compte en **USD ou EUR** (pas de XAF chez Meta), **+ 19,25 % de TVA**, + frais de change éventuels → prévoir ≈ 5 963 FCFA débités |
 | **Objectif** | **Messages WhatsApp** |
 | **Ciblage** | Bonabéri / Douala, rayon court, français |
 | **Créatif** | **La pièce organique de S2** — pour mesurer le même chemin, pas un autre |
@@ -166,6 +167,10 @@ mais **la publicité de S2 est Facebook/Instagram** — à confirmer par King
 
 > **Ce que ce test achète : un chiffre, pas du volume.** À 3 000 FCFA le message, 5 000 FCFA donnent
 > **moins de deux conversations**. Voir `content-plan-month1.md` §5.
+
+> **Prérequis non négociable (recherche 21/10)** : une **carte Visa/Mastercard internationale** ou un
+> compte **PayPal** rattaché au compte publicitaire. Meta ne prélève pas en francs CFA et n'offre pas de
+> paiement mobile local documenté pour le Cameroun. Détail : `launch/META-CAMEROUN-2026-10.md` §4.
 
 ---
 

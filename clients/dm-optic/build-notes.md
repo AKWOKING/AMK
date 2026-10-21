@@ -1328,3 +1328,36 @@ que le TikTok n°1 : une production, deux vitrines, et le même message pré-rem
 **Rien n'est publié** avant le feu vert de King ; la capture de la page servira de vérification, comme
 pour TikTok.
 
+## 21/10 — Meta au Cameroun : la carte avant la page
+
+Demande de King : savoir **ce qui est disponible au Cameroun et ce qui ne l'est pas** avant de créer la
+page — « cette information sera aussi nécessaire quand nous publierons et lancerons des publicités ».
+
+**Livré : `launch/META-CAMEROUN-2026-10.md`.** Tableau maître (16 lignes, ✅/⚠️/❌), la partie publicité
+en six points, une section « ce que ça change pour la page », une section « ce que ça change pour les
+pubs du mois 1 », une règle de revue trimestrielle, et onze sources datées.
+
+**Les cinq constats qui comptent :**
+
+1. **Publier et sponsoriser : oui.** Meta prélève la TVA camerounaise sur les publicités depuis le
+   1ᵉʳ octobre 2020 — un compte publicitaire dont le pays de vente est le Cameroun est donc prévu par
+   Meta, ce n'est pas un bricolage.
+2. **Mais pas en francs CFA.** XAF n'est pas dans la liste des devises acceptées : le compte sera en
+   **USD ou EUR**. Le budget se lit en FCFA et se règle en devise.
+3. **Et avec une carte, pas du mobile money.** Visa/Mastercard ou PayPal. L'exemple officiel de paiement
+   manuel local pour l'Afrique est Orange Money **en Côte d'Ivoire, en XOF** — aucune section Cameroun.
+   D'où une ligne de suivi nouvelle : **carte internationale à vérifier avec King avant la semaine 2**.
+4. **Le commerce ne s'ouvre pas.** Shops (liste Meta 2026), Meta Pay (liste Afrique sans Cameroun),
+   monétisation (Content Monetization : Nigeria et RDC oui, Cameroun non). Pour un cabinet qui ne publie
+   pas de prix, **ce n'est pas une perte** — c'est même une protection.
+5. **Le badge n'est pas documenté.** Meta Verified : « select regions », sources contradictoires →
+   on ne le promet pas, on ne paie pas d'intermédiaire, on vérifie dans l'app si l'occasion se présente.
+
+**Ce que la recherche a changé dans les documents :** `SETUP-FACEBOOK.md` gagne un **§0 bis** (tableau
+de disponibilité + les trois conséquences, aucune bloquante) ; `posting-calendar.md` gagne la ligne
+« Meta au Cameroun » et **le budget de S2 corrigé** (5 000 FCFA de diffusion ⇒ ≈ 5 963 FCFA débités,
+TVA comprise) plus le prérequis carte ; `pre-launch-checklist.md` gagne la même ligne et une alerte 🔴.
+
+**Méthode :** les listes tierces se contredisent (Marketplace, Verified) → **seules les pages Meta font
+foi**, et quand Meta ne publie rien, le document dit « non documenté » au lieu de trancher. Un mur n'est
+pas une porte qui s'ouvre en insistant : la revue est **trimestrielle**, pas quotidienne.
