@@ -1,3 +1,5 @@
+# DM OPTIQUE SARL — https://dmoptiquesarl.com
+# Sitemap : 48 pages françaises + 48 pages anglaises (/en/), reliées par hreflang.
 User-agent: *
 Allow: /
 
