@@ -81,9 +81,11 @@ n'apparaît dans la page Meta « moyens de paiement par pays »** consultée le 
 africain cité est Orange Money en **Côte d'Ivoire, en XOF** (pas le Cameroun, en XAF). À reconfirmer
 dans le gestionnaire au moment de la création du compte : c'est l'écran qui fait foi.
 
-➡️ **Le prérequis réel du test publicitaire de 5 000 FCFA : une carte bancaire internationale au nom du
-cabinet (ou de King, avec accord écrit), capable d'un débit récurrent en devise.** Sans elle, on ne
-lance pas — et on ne « bricole » pas avec la carte d'un tiers.
+➡️ **Le prérequis du test publicitaire de 5 000 FCFA : une carte bancaire internationale au nom du
+cabinet (ou de King, avec accord écrit), capable d'un débit récurrent en devise.**
+**État au 21/10 : King déclare avoir une carte utilisable — prérequis levé.** Reste à contrôler au
+premier paiement que la banque autorise le débit récurrent en devise et ne bloque pas le marchand.
+En cas de refus, on ne « bricole » pas avec la carte d'un tiers : on attend.
 
 ### ④ La TVA s'ajoute
 **19,25 % de TVA** s'ajoutent aux frais publicitaires. Un budget de 5 000 FCFA de diffusion coûte donc
@@ -112,7 +114,7 @@ mesure. À Douala IV, le ciblage par rayon reste le bon outil.
 |---|---|
 | Peut-on créer la page ? | **Oui**, avec un profil personnel réel, comme partout |
 | Perd-on des fonctions utiles ? | Non : publication, Reels, messages, bouton WhatsApp, statistiques de base, publication sponsorisée |
-| Peut-on vérifier le compte (badge) ? | **Pas documenté au Cameroun** — ne pas promettre, ne pas payer |
+| Peut-on vérifier le compte (badge) ? | **Pas documenté au Cameroun** — ne pas promettre, ne pas payer. L'entrée « Meta Verified » apparaît dans « More tools » de la page (capture du 21/10), mais l'écran d'offre n'a pas été ouvert : **présence d'un menu ≠ disponibilité** |
 | Peut-on vendre dans la page ? | Non — et on ne veut pas : les prix ne se publient pas |
 
 ---
@@ -121,7 +123,7 @@ mesure. À Douala IV, le ciblage par rayon reste le bon outil.
 
 | Point | Décision / état |
 |---|---|
-| Le test de 5 000 FCFA (semaine 2) reste valable | Oui, **conditionné à la carte internationale** |
+| Le test de 5 000 FCFA (semaine 2) reste valable | Oui — **carte confirmée par King le 21/10** ; reste le contrôle du premier débit en devise |
 | Devise du compte | **USD ou EUR** — à choisir à la création, avec King |
 | Budget réel | 5 000 FCFA de diffusion + ~19,25 % de TVA + frais de change éventuels |
 | Format | **Click-to-WhatsApp**, message pré-rempli par variante (attribution) |

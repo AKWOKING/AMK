@@ -10,12 +10,14 @@
 
 | Question | Réponse | Preuve |
 |---|---|---|
-| Une page Facebook existe-t-elle déjà ? | **Non** | recherche du 21/10 : « DM Optique Bonabéri » ne renvoie que des homonymes à l'étranger (DM Optics Ltd, DM Optiek Hamme, DM Optique France — fibre optique), et l'annuaire ONOC ne donne qu'une ligne de registre. Le contrôle approfondi du 24/09 disait la même chose |
+| Une page Facebook existe-t-elle ? | **OUI — créée le 21/10 par King** : `DM OPTIQUE SARL`, catégorie Opticien, bio posée, logo en photo de profil, 0 follower, « Not yet rated (0 reviews) » | captures du 21/10 (page + Business Suite, `asset_id` **1417215104801727**) |
+| Existait-elle avant ? | **Non** | recherche du 21/10 : « DM Optique Bonabéri » ne renvoie que des homonymes à l'étranger (DM Optics Ltd, DM Optiek Hamme, DM Optique France — fibre optique), et l'annuaire ONOC ne donne qu'une ligne de registre. Le contrôle approfondi du 24/09 disait la même chose |
 | Un compte TikTok existe-t-il ? | **Oui** — `@dmoptique.bonaberi237` | créé par King le 21/10 |
 | Une fiche Google existe-t-elle ? | **Oui** — « DM OPTIQUE SARL — Optician in Bonabéri » | créée le 20/10 |
 
-**Conséquence :** aucun risque de doublon, aucun risque de « page non revendiquée ». On part d'une
-page neuve et on pose le même nom qu'ailleurs : `DM OPTIQUE SARL`.
+**Conséquence :** la page existe, et c'est la bonne — nom, catégorie et bio conformes à ce qui était
+prévu, aucun doublon. **Ce qui reste n'est pas de la création, c'est de la finition** (§7) : nom
+d'utilisateur, couverture, bouton WhatsApp, horaires, story, et le premier post — **après feu vert**.
 
 ### 0 bis · Ce qui est disponible au Cameroun (recherche du 21/10, sources citées)
 
@@ -32,7 +34,8 @@ Avant de créer quoi que ce soit, la carte du terrain — détaillée dans **`la
 
 **Trois conséquences pour la création de la page — aucune n'est bloquante :**
 la page se crée normalement ; on ne promet jamais de badge ; et **la publicité du mois 1 suppose une
-carte internationale** — c'est un prérequis à vérifier avec King avant la semaine 2, pas au moment de lancer.
+carte internationale** — **King confirme en avoir une (21/10)**, le prérequis est levé. Reste le contrôle
+du premier débit en devise.
 
 ---
 
@@ -140,6 +143,7 @@ comment écrire), et place la preuve ONOC **une fois**, sans en faire un titre. 
 | Promettre un résultat médical | R1 — on décrit la situation, on oriente vers l'examen |
 | Marquer « Ouvert 24h/24 » | faux, et ça tue la confiance au premier appel manqué |
 | Publier la vidéo brag d'AMK telle quelle | c'est un outil commercial d'AMK, pas la vitrine du cabinet (décision debout) |
+| **Coller un texte écrit pour une autre photo** | « cette monture » devant un mur de montures : le lecteur ne sait pas de laquelle on parle — **le texte suit le visuel** (§6) |
 
 ---
 
@@ -173,7 +177,7 @@ En fin de journée, vous éloignez votre téléphone pour lire ?
 
 Au cabinet, on regarde où vous en êtes et on vous explique ce qu'on voit — sans jargon et sans vous presser. C'est ce que vous venez chercher : savoir, pas acheter.
 
-Cette monture est dans notre stock, et les autres sont sur le site : vous les voyez avant de vous déplacer, et vous les essayez sur votre visage.
+Ce mur, c'est notre stock — pas une image de catalogue. Les montures que vous voyez sur le site sont ici, dans ce cabinet : vous savez ce qui vous attend avant de vous déplacer. Sur place, vous les essayez sur votre visage : une photo ne dit pas tout.
 
 Si vous voyez bien, ne venez pas. Sinon, passez nous voir.
 
@@ -183,7 +187,19 @@ Si vous voyez bien, ne venez pas. Sinon, passez nous voir.
 🌐 dmoptiquesarl.com
 ```
 
-**Visuel :** `post-01-cabinet-1200.jpg`.
+**Visuel :** `post-01-cabinet-1200.jpg` (ou la photo brute du cabinet — le texte ci-dessus marche pour les deux).
+
+**⚠️ Le texte suit le visuel — correction du 21/10 (signalée par King).** La phrase « *Cette monture est
+dans notre stock, et les autres sont sur le site…* » vient du script du premier TikTok, où le plan montre
+**une** monture (F24). Devant la photo du cabinet — **plusieurs** montures — elle devient fausse : on ne
+sait pas de laquelle on parle, et « les autres sont sur le site » suggère que celle-ci n'y est pas.
+Deux versions, **jamais mélangées** :
+
+| Visuel | Phrase juste |
+|---|---|
+| **le cabinet / le mur de montures** (post 1) | la version au pluriel ci-dessus : *« Ce mur, c'est notre stock… »* |
+| **une monture précise** (F24 ou autre, plus tard) | *« Cette monture est dans notre stock, et les autres sont sur le site… »* — et **la nommer** dans le texte |
+
 **Commentaire épinglé (à publier juste après) :**
 
 > WhatsApp : 656 122 239 · examen de vue 8h30–13h00, du lundi au samedi · Ndobo Mayor, Bonabéri.
@@ -200,11 +216,24 @@ message pré-rempli pour mesurer.
 
 | # | Quoi | Pourquoi |
 |---|---|---|
-| 1 | **Capture de la page** envoyée à AMK | on vérifie nom, catégorie, bio, visuels, bouton — comme pour TikTok |
+| 1 | **Capture de la page** envoyée à AMK | ✅ **fait le 21/10** — nom, catégorie, bio et logo conformes ; restent à contrôler `@username`, couverture, bouton WhatsApp, horaires |
 | 2 | **Rien d'autre publié** avant validation de King | verrou debout |
 | 3 | **Lien de la page** consigné dans `build-notes.md` + `pre-launch-checklist.md` | il servira au site (pied de page) et à la fiche Google (profil social) |
 | 4 | **Réponse aux messages** : qui répond, en combien de temps | question 8.5 du questionnaire — sans ça, le bouton WhatsApp est une porte qui ne s'ouvre pas |
 | 5 | **Pas de publicité** | Meta/Click-to-WhatsApp reste une décision de King, budget 5 000 FCFA du mois 1 non entamé |
+
+**État de la page au 21/10 — ce qui reste à finir (10 minutes, dans cet ordre) :**
+
+- [ ] **`@username`** : `@dmoptiquesarl`, repli `@dmoptique.bonaberi` — **c'est lui qui donne une URL
+      propre** (le lien numérique ne va ni sur le site, ni sur la fiche Google)
+- [ ] **Couverture** : `cover-1640x624.jpg` (la capture ne montre qu'un bandeau marine — vérifier que
+      l'image est bien chargée, puis regarder le rendu mobile)
+- [ ] **Bouton** « Envoyer un message WhatsApp » → `wa.me/237656122239` + message pré-rempli (§2)
+- [ ] **Horaires** : lundi–samedi, examen 8h30–13h00, autres besoins 8h30–17h30, dimanche fermé
+      (la page affiche « Closed now » : vérifier que ce n'est pas « horaires absents »)
+- [ ] **Portefeuille** : confirmer le nom (`DM OPTIQUE SARL`), que **King en est propriétaire**, que le
+      **2FA** est actif et qu'AMK est en **accès personne** (jamais un mot de passe partagé)
+- [ ] **Premier post** : après ton feu vert, avec le texte du §6 et un commentaire épinglé
 
 **Mesure (même règle que TikTok) :** on ne promet ni vues ni abonnés ; on compte les **conversations
 WhatsApp** et les **itinéraires/clics** sur la fiche Google. Une page qui parle à trois personnes du

@@ -128,8 +128,9 @@ Profile », bouton Website présent). Trois choses à vérifier/corriger dans «
 Puis compléter le profil (les cartes de l'écran d'accueil) :
 - **Photos** : la liste des 10 premières est au-dessus (§Les 10 premières photos).
 - **Description + services + catégories** : tout est prêt dans §Données.
-- **« Add social profiles »** : à remplir APRÈS la création des comptes Facebook et TikTok (ordre
-  debout : Google d'abord — la fiche existe, les réseaux viennent maintenant).
+- **« Add social profiles »** : **faisable depuis le 21/10** — le TikTok `@dmoptique.bonaberi237` existe
+  et la page Facebook `DM OPTIQUE SARL` aussi ; **attendre le `@username` de la page** pour poser une
+  URL propre (jamais un lien vers un identifiant numérique).
 - **« Create ad »** : Skip — aucune dépense publicitaire sans décision King.
 - **Vérification** : si un bandeau « pending verification » reste visible, faire passer le code SMS
   (656 122 239) à M. Domche.

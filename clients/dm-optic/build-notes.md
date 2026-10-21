@@ -1361,3 +1361,33 @@ TVA comprise) plus le prérequis carte ; `pre-launch-checklist.md` gagne la mêm
 **Méthode :** les listes tierces se contredisent (Marketplace, Verified) → **seules les pages Meta font
 foi**, et quand Meta ne publie rien, le document dit « non documenté » au lieu de trancher. Un mur n'est
 pas une porte qui s'ouvre en insistant : la revue est **trimestrielle**, pas quotidienne.
+
+## 21/10 (6) — La page est en ligne, le texte ne suivait pas la photo
+
+**Ce qui est fait :** la page `DM OPTIQUE SARL` existe (créée par King), catégorie Opticien, bio posée,
+logo en photo de profil, 0 follower. Business Suite : `asset_id 1417215104801727`, plan hebdomadaire
+2/7 — il reste « Create an ad account », « Publish one story », « Connect Instagram ».
+
+**Le défaut, et il est réel :** le premier post partait avec « *Cette monture est dans notre stock, et
+les autres sont sur le site…* » devant **la photo du cabinet**. La phrase vient du script du premier
+TikTok, où le plan montre **une** monture (F24) : là, elle est juste. Devant un mur de montures, elle
+devient fausse deux fois — on ne sait pas de laquelle on parle, et « les autres sont sur le site »
+laisse croire que celle qu'on voit n'y est pas.
+
+**La correction :** le texte passe au pluriel et s'appuie sur ce que la photo prouve —
+« *Ce mur, c'est notre stock — pas une image de catalogue. Les montures que vous voyez sur le site sont
+ici, dans ce cabinet…* ». La sortie honnête et le CTA ne bougent pas.
+
+**La règle qui reste :** *le texte suit le visuel.* Une photo de cabinet → on parle au pluriel, du
+stock, du lieu. Une photo d'une monture → singulier, et **on la nomme**. Les deux versions vivent
+côte à côte dans `SETUP-FACEBOOK.md` §6, avec un interdit correspondant au §4 : plus jamais un texte
+écrit pour une autre image.
+
+**La carte :** King déclare une carte utilisable → le prérequis publicitaire du mois 1 est levé. Reste
+le contrôle du premier débit en devise (banque qui bloque, plafond, frais de change). Le test de
+5 000 FCFA est lançable en semaine 2.
+
+**Incident sandbox (12ᵉ wipe) :** le bac est revenu à `b134dd2` alors que le remote était à `5d3b9c7` —
+la première lecture de `SETUP-FACEBOOK.md` a donc rendu l'**ancienne** version (5 sections, sans §0 bis
+ni §6). Récupération en mixte (`reset --mixed 5d3b9c7`, `checkout -- .`, 4 webp orphelins supprimés),
+jamais `--hard` ; arbre propre. **Leçon :** lire HEAD avant de lire un fichier.
