@@ -55,6 +55,7 @@
 | **Décision** | Verrouillée par King — `dossier.md` §3.1 |
 | **État** | 🟠 **partiel (21/10)** — TikTok créé sur l'**email du cabinet** (`dmoptiquesarl@gmail.com`), donc l'identité de départ est bien celle du cabinet ; mais le **mot de passe est dans le gestionnaire de King** : M. Domche n'est pas encore propriétaire récupérable. **À faire :** partage de l'accès au client (email de récupération / code) et consignation écrite du transfert. Le compte Facebook garde le même critère. |
 | **Conséquence** | Tant que la ligne est 🟠, la rétrocession n'est pas prouvée. Ce n'est pas bloquant pour publier (le compte est au nom du cabinet), c'est bloquant pour la **livraison** (solde de 75 000 FCFA). |
+| **Facebook (21/10)** | Meta **exige un profil personnel** derrière chaque page — pas d'email seul, pas de profil au nom du cabinet (suspension, et la page tombe avec). Voie retenue : page créée depuis le profil réel de King, **placée dans un portefeuille Meta `DM OPTIQUE SARL`** (c'est le portefeuille qui détient la page), 2FA, AMK en accès personne ; **M. Domche administrateur** dès qu'il a un profil, ou transfert écrit à la livraison. Détail : `launch/SETUP-FACEBOOK.md` §1. |
 
 ---
 
@@ -280,4 +281,5 @@ plateforme, pas des fichiers décoratifs. Doc Cloudflare (Direct Upload, lu le 2
 | Business Account + catégorie | ⛔ **impossible au Cameroun** (pays absent du sélecteur ; TikTok n'ouvre la vérification qu'à 6 marchés africains) — compte personnel assumé, analytics via TikTok Studio | `launch/SETUP-TIKTOK.md` § Business Account |
 | Premier contenu | ✅ script validé (21/10) · ⬜ tournage · ⬜ montage relu par King · ⬜ publication | `content/month1/w1/tiktok-01.md` |
 | Message « avis Google » à M. Domche | 🕘 **envoi 21/10 à 09:00** (pas avant) · ⬜ 5 avis d'ici samedi 24/10 | `launch/MESSAGE-AVIS-GOOGLE-2026-10.md` |
+| Page Facebook | ⬜ **à créer** (aucune page existante vérifiée le 21/10) — visuels + textes prêts dans `launch/facebook-assets/` et `launch/SETUP-FACEBOOK.md` |
 | GSC : 4 indexations + re-check sitemap | 🔴 rappel debout — quota du 20/10 à reprendre | `clients/dm-optic/pre-launch-checklist.md` (rappels) |

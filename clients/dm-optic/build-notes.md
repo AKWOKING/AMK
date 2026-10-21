@@ -1297,3 +1297,34 @@ obligatoire. Un compte neuf ne peut pas passer par ce parcours aujourd'hui. Ça 
 `content/strategy/TIKTOK-SEO-CHECKLIST-2026-10.md` §A, `posting-calendar.md` (amendement),
 `pre-launch-checklist.md` (suivi), `content/month1/w1/tiktok-01.md` (§6 mesure, §8).
 
+## 21/10 (5) — Facebook : la page se prépare, avec une contrainte Meta dit d'avance
+
+**Aucune page n'existe** (recherche du 21/10 : que des homonymes à l'étranger). On part d'une page neuve,
+même nom que partout : `DM OPTIQUE SARL`.
+
+**La contrainte Meta, écrite avant le clic.** Une page Facebook ne se crée pas avec un email seul : il
+faut un **profil personnel réel** derrière. Un profil au nom du cabinet (« DM Optique SARL » comme
+personne) est inauthentique — suspension possible, et **la page tombe avec le profil**. Donc : page créée
+depuis le profil de King, immédiatement placée dans un **portefeuille d'entreprise Meta `DM OPTIQUE
+SARL`** (c'est le portefeuille qui détient la page), 2FA, AMK en accès personne, **M. Domche
+administrateur** dès qu'il a un profil ou à la livraison. C'est la même logique que le compte Google et
+TikTok — l'agence opère, le cabinet possède — mais Meta impose un détour par une personne physique.
+
+**Visuels produits et relus aux vrais recadrages** (pas au hasard) :
+
+| Fichier | Contrôle |
+|---|---|
+| `profile-1024.png` | logo détouré, testé **en cercle** à 200 px et à 64 px — « DM OPTIQUE » reste lisible |
+| `cover-1640x624.jpg` | relu en **desktop 820×312** (fichier entier) et en **mobile 2,4:1** (côtés coupés) ; le texte le plus bas s'arrête à 496 px sur 624 |
+| `post-01-cabinet-1200.jpg` | photo réelle du cabinet, bandeau marine, adresse/horaires/bouton |
+
+Aucune image IA, aucun visuel générique : la règle « le site ne montre que du vrai » vaut pour la page.
+Aucun prix, aucune marque de monture, aucun visage inventé.
+
+**Premier post** écrit sous la porte §12b — il commence par la situation du client (« En fin de journée,
+vous éloignez votre téléphone pour lire ? »), pas par l'annonce de notre existence. C'est le même texte
+que le TikTok n°1 : une production, deux vitrines, et le même message pré-rempli pour mesurer.
+
+**Rien n'est publié** avant le feu vert de King ; la capture de la page servira de vérification, comme
+pour TikTok.
+
