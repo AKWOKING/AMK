@@ -221,3 +221,43 @@ lois maison et les verrous client gagnent — le gabarit ne les remplace jamais,
 
 **Première application :** `clients/dm-optic/content/month1/w1/tiktok-01.md` (premier post TikTok,
 validé par King le 21/10).
+
+---
+
+## Règle debout — le ton client : chaleureux, et vérifiable (ruling King, 21/10/2026)
+
+> King, 21/10 : « *a client reading this feels immediately reassured … I'll like to see the same type of
+> energy and tone when you write text meant for clients* », à propos de la description Google Business
+> du cabinet DM OPTIQUE.
+
+**Le ton à atteindre** — c'est celui de cette description :
+
+1. **On ouvre par une invitation**, pas par un produit : « Découvrez la différence chez… ».
+2. **On parle au « vous »**, et on nomme la personne réelle : la famille, l'enfant, la personne qui
+   travaille dehors.
+3. **On situe** : le lieu (« au cœur de Bonabéri ») fait partie de la réassurance — le client se
+   projette dans une adresse, pas dans un catalogue.
+4. **On raconte un geste**, pas une gamme : ce qui se passe quand on pousse la porte, ce qu'on vous
+   demande, ce qu'on ajuste.
+5. **La preuve vient en dernier** (ONOC, ordonnance, réglage) : elle **ferme** la réassurance, elle ne
+   l'ouvre pas. Un titre de crédibilité en première ligne fait commercial ; en dernière ligne, il rassure.
+6. **Phrases courtes, une idée par phrase.** Le rythme fait la confiance autant que les mots.
+
+**La seule limite, et elle n'est pas négociable : la chaleur se prouve, elle ne se déclare pas.**
+Un superlatif non vérifiable (« d'exception », « les plus hauts standards », « les meilleures mains »)
+transforme la réassurance en promesse — et une promesse se retourne contre le cabinet. On garde
+l'émotion, on remplace l'absolu par du concret :
+
+| Au lieu de | On écrit |
+|---|---|
+| des soins visuels **d'exception** | « un examen de la vue complet, des explications claires » |
+| notre **vaste** collection | « quarante montures pour hommes, femmes et enfants » |
+| les **plus hauts** standards | « les exigences de l'Ordre : examens au cabinet, verres taillés sur ordonnance » |
+| confier votre vision aux **meilleures** mains | « réglage de la monture avant de repartir » |
+
+**Où la règle s'applique :** tout texte lu par un client ou un patient — site, page Facebook, TikTok,
+fiche Google, message WhatsApp, avis, et les documents qu'on lui remet. Les notes internes et ce dépôt
+gardent leur ton technique.
+
+**Contrôle avant publication (10 secondes) :** *est-ce que je peux montrer la phrase ?* Si oui, elle
+reste. Si non, elle devient un fait précis ou elle disparaît.

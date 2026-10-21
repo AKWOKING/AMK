@@ -22,13 +22,16 @@
 |---|---|
 | Compte TikTok | **créé** par King le 21/10 — `@dmoptique.bonaberi237`, nom affiché `DM OPTIQUE SARL`, logo + story, 0/0/0 |
 | Bio | **B, révisée le 21/10** : `Opticien optométriste à Bonabéri · examen de vue · WhatsApp 656 122 239` (71 car.) — **à remplacer** dans l'app (`launch/SETUP-TIKTOK.md`) |
-| Page Facebook | ✅ **créée le 21/10** — `DM OPTIQUE SARL`, catégorie Opticien, bio posée, logo en avatar, 0 follower. Reste : `@username`, couverture, bouton WhatsApp, horaires, story, **1er post après feu vert** (`launch/SETUP-FACEBOOK.md` §6–§7) |
+| Page Facebook | ✅ **créée le 21/10** — `DM OPTIQUE SARL`, catégorie Opticien, bio posée, logo en avatar, 0 follower. Reste : couverture, bouton WhatsApp, horaires, story, **1er post après feu vert** — ~~`@username`~~ : la page n'en propose pas (`launch/SETUP-FACEBOOK.md` §6–§7) |
 | Meta au Cameroun | **Publié et sponsorisé : oui. Boutique, Meta Pay, monétisation, badge : non** → `launch/META-CAMEROUN-2026-10.md`. La pub de S2 suppose une **carte internationale** (facturation en USD/EUR + TVA 19,25 %) : prérequis à vérifier avant la semaine 2 |
 | Business Account + catégorie | ⛔ **non disponible au Cameroun** (vérifié 21/10/2026 — le sélecteur de pays ne contient pas le Cameroun, et TikTok n'ouvre la vérification qu'à six marchés africains) → on reste en **compte personnel** ; analytics via **TikTok Studio** |
 | Premier contenu | **`content/month1/w1/tiktok-01.md`** — 22 s, 5 plans au cabinet, aucune image IA, validé par King le 21/10 |
 | Tournage | jeudi 22 ou vendredi 23/10, **avant 13h** (lumière de la vitrine) |
 | Publication | **mardi 27/10** — ou dès que le montage est relu, si King préfère ne pas attendre |
-| Deuxième contenu | vendredi 30/10 — carrousel « la vitrine par familles » **si les photos réelles sont au dépôt** ; sinon variante service (repli du 02/10) |
+| Deuxième contenu | ✅ **prêt** — carrousel « les trois montures » construit sur les **photos réelles du cabinet** (`content/month1/w1/facebook-post-famille.md`, cartes dans `launch/social/cards/`). Ce n'est plus une condition : les photos sont au dépôt. |
+| Site en ligne | ✅ **`https://dmoptiquesarl.com`** (Cloudflare) — terminologie « opticien optométriste » en production, sitemap 48 URL (vérifié 21/10) |
+
+| Post FB prêt | **`content/month1/w1/facebook-post-famille.md`** — carrousel 3 cartes (F01 · H08 · E16), légende + commentaire épinglé, publication = geste de King |
 
 **Le calendrier ne promet rien qu'on ne puisse produire.** Une pièce qui n'a pas ses photos réelles
 n'est pas publiée avec des illustrations : elle est remplacée par une variante service, et le report

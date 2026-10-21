@@ -36,8 +36,12 @@ d'usurpation, que l'ONOC poursuit).
 > Donc il est important de dire non pas seulement Opticien mais OPTOMETRISTE/OPTICIEN. Genre : votre
 > OPTOMETRISTE/OPTICIEN est dans la ville de Douala… Bref relier à chaque fois les 2. L'opticien est celui
 > qui monte juste les lunettes l'optometriste est celui qui fait les examens de vue et autres… Comme nous
-> sommes spécialiste des 2, nous sommes donc OPTOMETRISTE/OPTICIEN. » / « D'accord je vais faire les
-> modifications. »
+> sommes spécialiste des 2, nous sommes donc OPTOMETRISTE/OPTICIEN. »
+
+**Réponse du cabinet à cette demande** : « *D'accord je vais faire les modifications* ». **Attention à
+l'attribution** (précision de King, 21/10) : ce « D'accord… » est **King**, pas le client — c'est AMK qui
+applique, et c'est AMK qui pose les bios Facebook / TikTok / Google. Ne pas l'écrire comme une réponse du
+cabinet, et ne pas lui renvoyer la tâche.
 
 ## Ruling 08/10 — balayage repo entier, remplacement partout (King)
 

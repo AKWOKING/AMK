@@ -39,7 +39,7 @@
 
 | # | Quoi | Pourquoi c'est à toi | Bloque ? |
 |---|---|---|---|
-| 1 | **Téléverser `dmopticsarl.zip` sur Cloudflare** | le domaine et l'hébergement sont à toi | la vérif finale du site |
+| 1 | ~~Téléverser `dmopticsarl.zip` sur Cloudflare~~ → ✅ **fait le 21/10** | `dmoptiquesarl.com` sert la version « opticien optométriste » (vérifié) | — |
 | 2 | ~~Facebook : `@username`~~ → **impossible** : la page n'en propose pas | ✅ constaté — l'URL reste numérique, donc **on ne l'affiche nulle part** | rien |
 | 3 | **Facebook : bouton WhatsApp** (horaires ✅ posés le 21/10) | réglage de la page | conversions |
 | 4 | ~~TikTok : bio B~~ → ✅ **posée le 21/10** | — | fait |
@@ -64,7 +64,7 @@
 |---|---|---|
 | 1 | **Les comptes sont au nom du client** — e-mail propriétaire à lui, nous en accès révocable | 🟠 TikTok créé sur l'e-mail du cabinet, mais **mot de passe dans ton gestionnaire** ; Facebook rattaché à **ton profil** |
 | 2 | **Le transfert est consigné par écrit** | ⬜ à faire le jour de la remise (PV ci-dessous) |
-| 3 | **Le site est en ligne sur le domaine du cabinet** | ⬜ le zip est prêt ; l'upload est ton geste |
+| 3 | **Le site est en ligne sur le domaine du cabinet** | ✅ **fait le 21/10** — `https://dmoptiquesarl.com` répond, `title` = « Opticien optométriste », sitemap **48 URL** |
 
 **⚠️ La contrainte Meta, dite franchement :** une page Facebook appartient à un **profil personnel**. La
 page peut être transférée à M. Domche le jour où il a un profil — sinon elle reste rattachée au tien, avec
@@ -178,6 +178,25 @@ montures et les pages examen / cabinet. Contrôle : **49 pages sur 49** portent 
 | 2 | TikTok → *Modifier le profil* | coller `Opticien optométriste à Bonabéri · examen de vue · WhatsApp 656 122 239` (**71 car.**) |
 | 3 | Fiche Google → *Description* | commencer par « Opticien optométriste à Bonabéri, Douala… » ; catégorie secondaire *Optométriste* si elle est proposée |
 
-> Le client a répondu « **D'accord je vais faire les modifications** » — il modifie lui-même la page
-> Facebook. Pour éviter deux formulations, **lui envoyer la chaîne exacte à coller** (les 237 caractères),
-> pas une consigne générale.
+> **Correction du 21/10 (précision de King)** : le « *D'accord je vais faire les modifications* » est
+> **King**, pas le client. C'est donc **AMK** qui pose les trois bios sur les comptes, avec les chaînes
+> ci-dessus. Aucune consigne n'est envoyée au cabinet pour ça — on lui livre le résultat, pas une tâche.
+> (Erreur d'attribution corrigée ici et dans l'`Activity-Log`.)
+
+---
+
+## 9 · L'hébergement, tel qu'il est aujourd'hui (21/10)
+
+| | Où | Rôle | Qui publie |
+|---|---|---|---|
+| **Production** | **`https://dmoptiquesarl.com`** (Cloudflare) | l'adresse que le client donne, celle de la fiche Google et de la signature | **King** — upload du dossier `hosting/previews/dmoptic/` (ou du zip) |
+| Miroir de contrôle | `dm-optique-sarl.vercel.app` | relire une version en ligne sans toucher au domaine | AMK, à chaque changement de site |
+
+**Conséquence à ne pas oublier :** un changement du site n'est « livré » que quand il est **sur
+`dmoptiquesarl.com`**. Le déploiement Vercel prouve que la page est saine ; il ne remplace pas l'upload
+Cloudflare. Le zip (`dmopticsarl.zip`, 132 entrées, `testzip` OK) est régénéré à chaque build : c'est lui
+qu'on téléverse.
+
+> Vérifié le 21/10 : `dmoptiquesarl.com` sert bien la nouvelle terminologie — `title` « DM OPTIQUE SARL —
+> **Opticien optométriste** à Bonabéri, Douala », kicker, carte d'identité, pied de page, et
+> `sitemap.xml` à **48 URL**. La production et le dépôt sont donc alignés.

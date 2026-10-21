@@ -1539,3 +1539,29 @@ un libellé tronqué.
 bio TikTok (71 car.), catégorie secondaire « Optométriste » sur Facebook et Google, description Google.
 **TikTok n° 1** : le montage est déjà tourné — on ne refait pas la vidéo pour un bandeau, le titre complet
 passe dans la bio et la légende, qui se modifient au moment de publier.
+
+## 21/10 (11) — le ton client, et trois montures qui parlent d'elles-mêmes
+
+**① Le ton.** King a envoyé la description Google Business qu'il veut voir partout : « *Découvrez la
+différence chez DM OPTIQUE SARL…* ». Le ton est juste — invitation, « vous », la famille, le lieu, et
+l'ONOC **en dernier**. C'est devenu une règle debout (`content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md`,
+section « le ton client »), avec une limite : la chaleur se **prouve**, elle ne se déclare pas. Trois
+expressions de sa version sont des superlatifs non vérifiables (« soins d'exception », « les plus hauts
+standards », « les meilleures mains ») → deux versions de la description sont au dossier :
+A (la sienne, 545 car.) et **B (745 car., recommandée)**, même rythme, promesses vérifiables.
+
+**② La correction d'attribution.** Le « D'accord je vais faire les modifications » du 21/10 est **King**,
+pas le client. Corrigé dans `RULE-CREDENTIAL-CLAIMS.md`, `CHECKLIST-LIVRAISON` §8 et l'`Activity-Log`.
+Conséquence pratique : **c'est AMK qui pose les bios** Facebook / TikTok / Google, on ne renvoie pas la
+tâche au cabinet.
+
+**③ Les posts en photos réelles.** Les 65 photos du cabinet sont sur un fond (246, 236, 225) qui est
+**le chaud de la marque** : la photo peut se fondre dans une carte sans cadre. Nouveau script
+`launch/social/build_frame_cards.py` → trois cartes 1080×1350 (F01 ovale dorée · H08 aviateur · E16
+enfant), titre en Schibsted Grotesk, preuve en bas à droite (« Opticien optométriste · inscrit à
+l'ONOC »), pastille WhatsApp verte. Fichiers : `launch/social/cards/card-0{1,2,3}-*.jpg`, 78–86 Ko.
+Légende et commentaire épinglé dans `content/month1/w1/facebook-post-famille.md`.
+
+**④ Le site est sur le domaine.** `dmoptiquesarl.com` (Cloudflare) sert la version « opticien
+optométriste » : `title`, kicker, carte, pied de page et **sitemap 48 URL** vérifiés. La preuve n° 3 du
+solde est donc remplie. Vercel reste le miroir de contrôle, pas la production.

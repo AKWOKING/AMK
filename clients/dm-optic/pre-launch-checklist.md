@@ -281,7 +281,7 @@ plateforme, pas des fichiers décoratifs. Doc Cloudflare (Direct Upload, lu le 2
 | Business Account + catégorie | ⛔ **impossible au Cameroun** (pays absent du sélecteur ; TikTok n'ouvre la vérification qu'à 6 marchés africains) — compte personnel assumé, analytics via TikTok Studio | `launch/SETUP-TIKTOK.md` § Business Account |
 | Premier contenu | ✅ script validé (21/10) · ⬜ tournage · ⬜ montage relu par King · ⬜ publication | `content/month1/w1/tiktok-01.md` |
 | Message « avis Google » à M. Domche | 🕘 **envoi 21/10 à 09:00** (pas avant) · ⬜ 5 avis d'ici samedi 24/10 | `launch/MESSAGE-AVIS-GOOGLE-2026-10.md` |
-| Page Facebook | ✅ **créée le 21/10** — catégorie Opticien, bio, logo, 0 follower ; ⬜ reste : `@username`, couverture, bouton WhatsApp, horaires, story, 1er post après feu vert (`launch/SETUP-FACEBOOK.md` §7) |
+| Page Facebook | ✅ **créée le 21/10** — catégorie Opticien, bio, logo, 0 follower ; ⬜ reste : ~~`@username`~~ (inexistant côté Facebook), couverture, bouton WhatsApp, horaires, story, 1er post après feu vert (`launch/SETUP-FACEBOOK.md` §7) |
 | Livraison | 📋 **état consolidé** : ce qui est livré, ce qui reste (par propriétaire), et les **3 preuves** qui conditionnent le solde de 75 000 → `launch/CHECKLIST-LIVRAISON-2026-10.md` |
 | Meta au Cameroun | ✅ **cartographié le 21/10** — publier/sponsoriser : oui ; boutique, Meta Pay, monétisation, badge : non ; facturation en **USD/EUR + TVA 19,25 %** | `launch/META-CAMEROUN-2026-10.md` |
 | Carte internationale pour la pub | ✅ **King en a une (déclaré le 21/10)** — reste le contrôle du premier débit en devise ; le test de 5 000 FCFA est lançable en S2 | `launch/META-CAMEROUN-2026-10.md` §4③ |

@@ -46,6 +46,44 @@ l'optométrie n'est pas une profession séparée, c'est un diplôme d'opticien a
 | Catégorie secondaire | **Optométriste** si Google la propose dans la liste camerounaise — sinon laisser vide |
 | Description | commencer par « **Opticien optométriste** à Bonabéri, Douala. Examen de vue… » (455 caractères max) |
 
+## La description de la fiche — deux versions, 750 caractères maximum
+
+### Version A — telle que King l'a écrite (545 caractères) · **forte, mais trois phrases attaquables**
+
+```
+Découvrez la différence chez DM OPTIQUE SARL, votre opticien-optométriste de confiance au cœur de Bonabéri, Douala. Nous sommes dévoués à vous offrir des soins visuels d'exception, avec des examens de la vue complets pour toute la famille. Explorez notre vaste collection de montures élégantes pour hommes, femmes et enfants, ainsi qu'une sélection rigoureuse de lunettes de soleil. En tant que membre inscrit à l'ONOC, nous garantissons les plus hauts standards de prise en charge professionnelle pour confier votre vision aux meilleures mains.
+```
+
+**Ce qui marche :** l'ouverture (« Découvrez la différence »), le « vous », la famille, le lieu nommé,
+et l'ONOC en preuve finale. C'est chaleureux et ça rassure — exactement le ton à garder.
+
+**Ce qui coince, et pourquoi ce n'est pas de la pudeur :** « soins visuels **d'exception** », « les **plus
+hauts** standards », « les **meilleures** mains » sont des **superlatifs non prouvables**. Nos verrous DM
+les interdisent (aucun superlatif non prouvé), et sur une fiche publique ils sont la première prise d'un
+concurrent ou d'un confrère qui voudrait contester. Le reste tient parfaitement.
+
+### Version B — même énergie, mêmes promesses, tout vérifiable (745 caractères) · **recommandée**
+
+```
+Découvrez la différence chez DM OPTIQUE SARL, votre opticien optométriste à Bonabéri, Douala. Nous prenons le temps qu'il faut pour chaque personne qui pousse la porte : un examen de la vue complet, des explications claires, et une monture choisie pour votre visage — pas pour la vitrine.
+
+Au cabinet, quarante montures pour hommes, femmes et enfants, et une sélection de lunettes de soleil. Toutes sont photographiées sur notre site : regardez-les avant de venir, essayez-les sur place.
+
+Inscrits à l'ONOC, nous travaillons selon les exigences de l'Ordre : examens au cabinet, verres taillés sur ordonnance, réglage avant de repartir.
+
+Immeuble West Hotel, 1er étage — Ndobo Mayor, Bonabéri. Lundi au samedi, 8h30–13h00. WhatsApp : 656 122 239.
+```
+
+**Ce qui change, et ce qui ne change pas.** Ne change pas : l'ouverture, le « nous », la famille, le lieu,
+l'ONOC en dernier. Change : chaque promesse devient une **chose qu'on peut vérifier** — 40 montures
+(c'est `frames.json`), des photos sur le site (elles y sont), des verres taillés sur ordonnance (c'est le
+service 02), un réglage avant de repartir (c'est le geste du cabinet). On ne promet plus d'être les
+meilleurs ; on décrit ce qu'on fait, et le lecteur conclut tout seul.
+
+> **Décision : King.** A = plus chaleureuse à la première lecture, B = inattaquable et tout aussi
+> chaleureuse. Si A est retenue, je propose de ne changer que **trois groupes de mots** (voir ci-dessus),
+> pas la structure.
+
 ## Données (vérifiées, datées, zéro invention)
 - **Nom :** DM OPTIQUE SARL · **Catégorie principale :** Opticien · secondaire : Lunetterie.
 - **Adresse :** Ndobo Mayor, Douala IV (Bonabéri) — **partage de position WhatsApp demandé au client** à
@@ -165,7 +203,7 @@ Puis compléter le profil (les cartes de l'écran d'accueil) :
 - **Photos** : la liste des 10 premières est au-dessus (§Les 10 premières photos).
 - **Description + services + catégories** : tout est prêt dans §Données.
 - **« Add social profiles »** : **faisable depuis le 21/10** — le TikTok `@dmoptique.bonaberi237` existe
-  et la page Facebook `DM OPTIQUE SARL` aussi ; **attendre le `@username` de la page** pour poser une
+  et la page Facebook `DM OPTIQUE SARL` aussi ; **le champ `@username` n'existe pas** sur cette page (constaté par King le 21/10) — on relie donc le site par l'URL de la page, pas par un pseudonyme ; pour poser une
   URL propre (jamais un lien vers un identifiant numérique).
 - **« Create ad »** : Skip — aucune dépense publicitaire sans décision King.
 - **Vérification** : si un bandeau « pending verification » reste visible, faire passer le code SMS
