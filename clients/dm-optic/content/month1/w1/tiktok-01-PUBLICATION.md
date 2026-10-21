@@ -18,7 +18,8 @@
 Compte      @dmoptique.bonaberi237 (compte personnel — Business indisponible au Cameroun)
 Vidéo       22 s · 1080x1920 · montage relu par King (verrou §7 du script)
 Couverture  launch/social/cards/tiktok-cover-f24.jpg (1080x1920, 117 Ko)
-Sous-titres content/month1/w1/tiktok-01.fr.srt (8 blocs, manuels)
+Sous-titres tiktok-01-v2.fr.srt (7 blocs, manuels) — la v1 n'est plus le premier post
+Couverture  tiktok-01-v2-cover.jpg (1080x1920)
 Script      content/month1/w1/tiktok-01.md
 ```
 
@@ -60,7 +61,8 @@ Celle-ci y est, avec toutes les autres.
 
 ## 3 · Les 6 gestes du matin (5 minutes, dans cet ordre)
 
-1. **5h00** — ouvrir TikTok, vérifier que la vidéo et la couverture sont bien celles relues.
+1. **5h00** — ouvrir TikTok, importer `tiktok-01-v2.mp4`, vérifier que la couverture
+   `tiktok-01-v2-cover.jpg` est bien posée.
 2. Coller la **légende** ci-dessus (sans rien ajouter).
 3. Vérifier les **sous-titres** : le premier bloc doit être lisible dès la première seconde.
 4. Publier à **5h30** (heure de Douala).

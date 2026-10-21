@@ -324,12 +324,39 @@ def probe_duration(ffmpeg, path):
     return int(m.group(1)) * 3600 + int(m.group(2)) * 60 + float(m.group(3))
 
 
+def make_cover():
+    """Couverture 1080x1920 : accroche dans le carré central (grille de profil)."""
+    img = crop_window(MASTERS["montures/monture-f24.webp"], 0.0, 0.0, 0.0, 0.0).convert("RGBA")
+    d = ImageDraw.Draw(img)
+
+    f_top = font(F_MONO, 30)
+    t1 = "DM OPTIQUE · BONABÉRI"
+    d.text(((W - d.textlength(t1, font=f_top)) / 2, 150), t1, font=f_top, fill=(214, 224, 240, 235))
+
+    y = int(H * 0.675)
+    for line, size, gap in (("Vingt minutes", 104, 118), ("d'écran.", 104, 118),
+                            ("Puis vingt secondes,", 62, 84), ("à six mètres.", 62, 96)):
+        f = font(F_TITLE, size)
+        d.text(((W - d.textlength(line, font=f)) / 2, y), line, font=f, fill=(255, 255, 255, 255))
+        y += gap
+
+    half = int(W * 0.115)
+    d.rectangle((W // 2 - half, y + 4, W // 2 + half, y + 11), fill=EMBER)
+
+    f_bot = font(F_BODY, 34)
+    t2 = "Opticien optométriste · WhatsApp 656 122 239"
+    d.text(((W - d.textlength(t2, font=f_bot)) / 2, int(H * 0.935)), t2, font=f_bot,
+           fill=(186, 198, 218, 230))
+    return img.convert("RGB")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=os.path.join(ROOT, "clients", "dm-optic", "content",
                                                  "month1", "w1", "tiktok-01-v2.mp4"))
     ap.add_argument("--voice", default=None, help="fichier audio à coller sur la vidéo")
     ap.add_argument("--preview", default=None, help="dossier où écrire 6 PNG de contrôle")
+    ap.add_argument("--cover", default=None, help="chemin d'une couverture 1080x1920 (JPG)")
     ap.add_argument("--start", type=float, default=0.0)
     ap.add_argument("--end", type=float, default=DUR)
     args = ap.parse_args()
@@ -338,6 +365,11 @@ def main():
         path = os.path.join(SITE, src)
         fx = FOCUS.get(src, 0.5)
         MASTERS[src] = master_interior(path, fx=fx) if kind == "interior" else master_product(path)
+
+    if args.cover:
+        make_cover().save(args.cover, quality=92, optimize=True)
+        print("cover ->", args.cover)
+        return 0
 
     if args.preview:
         os.makedirs(args.preview, exist_ok=True)

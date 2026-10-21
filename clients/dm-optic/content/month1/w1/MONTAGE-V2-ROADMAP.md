@@ -132,3 +132,11 @@ voit est exactement ce qu'on a écrit.
 **Ce qui n'a pas bougé** : aucune photo de produit retouchée · aucun visage · aucune image IA · aucune
 musique · un seul CTA · la durée (23 s) · le texte des sous-titres.
 
+---
+
+## 8 · La couverture
+
+Produite par le même moteur (`--cover`). 1080×1920, la F24 sur carte crème, l'accroche dans le **carré
+central** — c'est ce carré que la grille de profil recadre, donc l'accroche reste lisible même réduite.
+Pied de couverture : « Opticien optométriste · WhatsApp 656 122 239 ».
+
