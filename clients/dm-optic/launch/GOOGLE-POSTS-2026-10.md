@@ -92,9 +92,9 @@ Lien type : `https://dmoptiquesarl.com/examen-de-vue/?utm_source=google&utm_medi
 > **État : les quatre sont programmés dans la fiche depuis le 21/10** (Posts → Add post → Update →
 > « Schedule this post »). Rien à faire d'autre : ils partiront seuls.
 >
-> Prochaine étape : **la ligne de base** (`LIGNE-DE-BASE-GOOGLE-2026-10.md`) — à relever **avant** le
-> premier post du 27/10, sinon on n'aura pas de point de comparaison. Puis relevé chaque lundi, premier
-> bilan le **16/11**.
+> **Ligne de base : faite le 21/10** (`LIGNE-DE-BASE-GOOGLE-2026-10.md`) — **0 interaction, 0 vue,
+> < 50 recherches d'affichage**. C'est le point zéro : on comparera en chiffres absolus, pas en %, parce
+> qu'un pourcentage sur zéro n'a pas de sens. Relevé chaque lundi, premier bilan le **16/11**.
 >
 > Rappel posé le jour de la programmation : photo réelle, un seul bouton, et **pas de numéro de téléphone
 > dans le texte** (motif de rejet côté Google) — le numéro passe par le bouton `Call now`.

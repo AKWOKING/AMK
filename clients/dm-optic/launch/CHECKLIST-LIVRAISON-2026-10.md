@@ -47,7 +47,9 @@
 | 6 | **Facebook : publier le 1er post** (`SETUP-FACEBOOK.md` §6) | ton feu vert | — |
 | 7 | **Search Console : 4 indexations + re-check sitemap** | ton compte | visibilité Google |
 | 8 | **Fiche Google : photos, services, profils sociaux** — description ✅ (version A), **posts ✅ 4 programmés le 21/10** | ton accès | conversion locale |
-| 9 | **Ligne de base Google** — 9 chiffres + capture, **avant le 27/10** (10 min) : `LIGNE-DE-BASE-GOOGLE-2026-10.md` | ton accès à la fiche | sans elle, le rapport du mois 1 est invérifiable |
+| 9 | ~~Ligne de base Google~~ → ✅ **relevée le 21/10** : **0 interaction · 0 vue · < 50 recherches d'affichage** — c'est le point zéro | — | le rapport du mois 1 sera en chiffres absolus, pas en % |
+
+**Deux dossiers de référence nés le 21/10 :** `seo/AUDIT-SEO-2026-10-21.md` (audit des 49 pages, rien de construit) et `seo/URLS-INDEXATION-2026-10-21.md` (les 10 URL à demander aujourd'hui).
 
 ### ④ · Le cabinet (M. Domche) — 3 choses
 

@@ -76,28 +76,41 @@ Sur la page Performance, les blocs s'appellent, selon la version de l'interface 
 
 Ici, dans ce fichier. Remplace les cases vides, ne réécris pas la structure :
 
-### Ligne de base — 24/09/2026 → 21/10/2026
+### ✅ Ligne de base — relevée le 21/10/2026 (fenêtre « Sept 2026 – Oct 2026 »)
 
-| Métrique | Valeur | Note |
+King a relevé les chiffres sur la fiche. **Elle est faite** : c'est le point zéro officiel du dossier.
+
+| Métrique | Valeur | Lecture |
 |---|---|---|
-| Appels | `____` | |
-| Messages | `____` | |
-| Itinéraires | `____` | |
-| Clics vers le site | `____` | |
-| Vues de la fiche | `____` | |
-| Recherches directes | `____` | |
-| Recherches découverte | `____` | |
-| Recherches de marque | `____` | |
-| Vues des photos | `____` | |
+| Appels | **0** | aucune interaction depuis la création de la fiche |
+| Messages | **0** | — |
+| Itinéraires | **0** | |
+| Clics vers le site | **0** | |
+| Vues de la fiche (Profile views) | **0** | |
+| Recherches directes | **0** | |
+| Recherches découverte | **0** | |
+| Recherches de marque | **0** | |
+| Vues des photos | **0** | |
+| **Recherches où la fiche est apparue** | **< 50** | **la seule valeur non nulle** : la fiche commence à être montrée, mais personne ne clique encore |
 
-### Les trois chiffres « de contexte » à relever en même temps (même écran ou à côté)
+**Ce que « zéro partout » veut dire — et ce que ça ne veut pas dire.** La fiche a quelques jours
+(créée le 21/10). Un zéro n'est pas un échec : c'est **le point de départ normal d'une fiche neuve**.
+La seule ligne qui compte pour la suite est la dernière : **`< 50` recherches ont déjà affiché la fiche**.
+Autrement dit, Google la montre un peu ; le travail à venir consiste à transformer ces apparitions en
+clics, en appels et en itinéraires.
 
-| Quoi | Où | Valeur au 21/10 |
-|---|---|---|
-| Nombre d'avis | fiche → Avis | `____` (objectif : 5 le 24/10) |
-| Note moyenne | fiche → Avis | `____` |
-| Nombre de photos | fiche → Photos | `____` |
-| Nombre de posts publiés | fiche → Posts | **0** (les 4 sont programmés à partir du 27/10) |
+**Conséquence pour le bilan du 16/11 :** on ne dira pas « +300 % » sur une base de zéro (un pourcentage
+sur zéro n'a pas de sens). On dira des **chiffres absolus** : « 6 appels, 11 itinéraires, 23 clics vers
+le site sur 4 semaines », et on comparera à cette ligne-ci.
+
+### Les chiffres « de contexte » — à relever aussi le 16/11
+
+| Quoi | Où | 21/10 | 16/11 |
+|---|---|---|---|
+| Nombre d'avis | fiche → Avis | `à noter` (objectif : 5 le 24/10) | |
+| Note moyenne | fiche → Avis | `à noter` | |
+| Nombre de photos | fiche → Photos | `à noter` | |
+| Posts publiés | fiche → Posts | **0** (4 programmés, 1ᵉʳ le 27/10) | attendu : **4** |
 
 > Les avis comptent autant que les posts : si la note ou le nombre d'avis bouge pendant les quatre
 > semaines, une hausse des appels ne sera pas attribuable aux posts. C'est pour ça qu'on les note
@@ -120,25 +133,87 @@ il sort un CSV jour par jour. C'est encore mieux que la capture — garde les de
 
 ---
 
-## 6 · Ce que Google ne compte pas — le carnet du cabinet
+## 6 · Ce que Google ne compte pas — la version allégée (ruling King, 21/10)
 
-Google ne voit **que** ce qui se passe sur la fiche. Il ne voit ni les appels passés directement au
-656 122 239, ni les messages WhatsApp, ni les gens qui poussent la porte. Or c'est là que se joue le
-chiffre d'affaires.
+**Décision : on ne demande pas de cahier quotidien au cabinet.** King a raison : un cahier à tenir tous
+les jours est du travail ajouté à quelqu'un qui soigne des yeux, et il sera abandonné en dix jours. Un
+dispositif qu'on n'arrive pas à tenir ne mesure rien.
 
-**Une minute par jour, au cabinet, sur un cahier ou une note du téléphone :**
+Google ne voit **que** la fiche. Il ne voit ni les appels directs au 656 122 239, ni les WhatsApp, ni les
+gens qui poussent la porte. On récupère donc **trois chiffres et une phrase**, sans nouveau support.
 
-| Jour | Appels reçus | Messages WhatsApp | Visites | « Comment nous avez-vous trouvé ? » (Google / Facebook / on m'a parlé) |
-|---|---|---|---|---|
-| lundi | | | | |
-| mardi | | | | |
-| … | | | | |
+### Ce que King relève (2 minutes, le lundi, en même temps que la fiche)
 
-La question « comment nous avez-vous trouvé ? » est **la seule** façon de relier un post à un
-patient. Elle se pose en une seconde, au moment de l'examen, sans avoir l'air d'un sondage.
+Trois chiffres, déjà sur l'écran Performance :
 
-> Ce carnet, c'est la partie « cabinet » de la ligne de base — celle qui manque aujourd'hui dans le
-> dossier de livraison. Elle ne demande aucune compétence technique, juste de la tenir.
+1. **appels** · 2. **itinéraires** · 3. **clics vers le site**.
+
+C'est tout. Les six autres métriques du §3 restent utiles pour comprendre, mais elles ne se relèvent
+pas chaque semaine.
+
+### Ce que le cabinet fait (zéro support, une phrase)
+
+Au moment où le client règle ou prend son rendez-vous, **une seule question** :
+
+> « Comment nous avez-vous trouvé ? »
+
+et la réponse (Google · Facebook · TikTok · on m'a parlé · je passais) est notée **là où le cabinet écrit
+déjà** — sur le reçu, le cahier de caisse, ou le carnet de rendez-vous. Pas de nouveau fichier, pas de
+tableau à remplir : on ajoute trois mots à une ligne qui existe déjà.
+
+Si le cabinet n'écrit rien du tout, la version plancher reste possible : **King pose la question en fin de
+semaine** à M. Domche (« combien de personnes vous ont dit venir de Google cette semaine ? »). Une réponse
+approximative vaut mieux qu'un cahier vide.
+
+> **Pourquoi cette question suffit :** elle est la seule à relier un patient à un canal. Aucun outil ne
+> peut la remplacer — un clic ne dit pas qui est entré, et une visite ne dit pas d'où elle vient.
+
+---
+
+## 6 bis · Mesurer « ce qui se passe après » — faut-il des cookies ?
+
+**Non. Et c'est déjà en place.** La capture Cloudflare du 21/10 montre que **Cloudflare Web Analytics
+tourne déjà** sur `dmoptiquesarl.com` : 33 visites et 46 pages vues sur les dernières 24 h (robots exclus),
+plus les Core Web Vitals. Ce service :
+
+- **ne pose aucun cookie** et n'identifie personne → **aucun bandeau de consentement** à ajouter ;
+- donne **visites, pages vues, pages les plus vues, référents, pays, appareil, navigateur** ;
+- donne les **Core Web Vitals réels** (LCP, INP) — c'est lui qui a fourni les chiffres de l'audit SEO.
+
+### Ce que Cloudflare ne sait pas faire
+
+| Question | Réponse honnête |
+|---|---|
+| « Quel post a amené cette visite ? » | Cloudflare **ne lit pas les paramètres UTM**. Il lit le **chemin**. |
+| « Qui a cliqué sur WhatsApp ? » | **Non.** Le clic sort du site : aucun outil côté site ne le voit. |
+| « Combien de personnes ont appelé ? » | **Non** — sauf les appels passés **depuis la fiche Google**, comptés par Google. |
+
+### La solution qui ne coûte rien : une page d'arrivée par post
+
+Chaque post Google pointe déjà vers **une page différente** (`/examen-de-vue/`, `/montures/`,
+`/montures/enfants/`, `/contact/`). Dans Cloudflare → **Path**, on lit donc :
+
+| Page vue en hausse | Post correspondant |
+|---|---|
+| `/examen-de-vue/` | post du 27/10 |
+| `/montures/` | post du 03/11 |
+| `/montures/enfants/` | post du 10/11 |
+| `/contact/` | post du 17/11 |
+
+C'est une **attribution par page**, pas par lien : elle est imparfaite (une recherche organique peut
+tomber sur la même page) mais elle est gratuite, sans cookie et sans code. À ces volumes, elle suffit.
+
+### Les trois options, et ce que je recommande
+
+| Option | Ce qu'on gagne | Ce que ça coûte | Verdict |
+|---|---|---|---|
+| **A · Cloudflare Web Analytics seul** (état actuel) | visites, pages, référents, Core Web Vitals | 0 | ✅ **suffisant** |
+| **B · + un compteur de clics WhatsApp** (mini-page de redirection) | savoir combien de personnes partent vers WhatsApp | 1 page + un test de fiabilité ; le clic reste malgré tout invisible une fois dans WhatsApp | ⏳ plus tard, seulement si le besoin se confirme |
+| **C · GA4 ou Matomo (cookies)** | entonnoirs, UTM, événements | bandeau de consentement, 40 Ko de script, une base légale à expliquer au cabinet | ❌ **non** — disproportionné pour un cabinet de quartier |
+
+**La mesure qui compte vraiment est humaine** : le nombre de conversations WhatsApp et le nombre de
+personnes qui poussent la porte. C'est pour ça que la question du §6 est le vrai instrument — le reste
+n'est que du contexte.
 
 ---
 
@@ -168,22 +243,18 @@ d'avance pour ne pas interpréter après coup :
 - [ ] Le sélecteur de dates affiche bien **24/09 → 21/10**.
 - [ ] Les 9 chiffres sont recopiés ci-dessus, même à 0.
 - [ ] La capture `2026-10-21_performance-28j.png` est prise.
-- [ ] Le cahier du cabinet est commencé (une ligne par jour).
+- [x] **La ligne de base est relevée** (21/10 : zéro interaction, `< 50` recherches d'affichage).
+- [ ] La question « comment nous avez-vous trouvé ? » est passée au cabinet (pas de cahier à tenir).
 
 ---
 
-## 9 · Ce qui manque encore côté site — et qui limite la mesure
+## 9 · L'état réel de la mesure sur le site
 
-Le site **ne contient aucune mesure d'audience** aujourd'hui. Conséquence : les liens des posts
-portent bien un marqueur `utm_source=google…`, mais personne ne peut lire le résultat — on saura
-combien de personnes **cliquent depuis Google**, pas ce qu'elles font ensuite.
+**Cloudflare Web Analytics est actif** sur `dmoptiquesarl.com` depuis la mise en ligne (la capture du
+21/10 le montre : 33 visites, 46 pages vues sur 24 h). Il est **sans cookie**, donc aucun bandeau de
+consentement à ajouter, et il fournit déjà les Core Web Vitals réels — c'est lui qui a nourri l'audit SEO
+du même jour.
 
-Deux options, à trancher :
-
-| Option | Ce que ça donne | Coût |
-|---|---|---|
-| **Cloudflare Web Analytics** (recommandé) | pages vues, visiteurs, sources, pays — **sans cookie**, donc pas de bandeau de consentement à ajouter | gratuit ; une ligne de script à poser dans le site + un redéploiement |
-| Ne rien ajouter | on reste sur les chiffres Google + le carnet | 0 |
-
-Tant que ce n'est pas tranché, la ligne de base Google ci-dessus **suffit** : c'est elle qui prouve
-le travail. L'analytics du site ne ferait qu'ajouter la couche « ce qui se passe après le clic ».
+Le seul manque est connu et assumé : **Cloudflare ne lit pas les UTM**. On contourne avec **une page
+d'arrivée différente par post Google** (§6 bis). Aucune modification du site n'est donc nécessaire pour
+mesurer le mois 1.

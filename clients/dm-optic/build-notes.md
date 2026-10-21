@@ -1615,3 +1615,34 @@ Le dossier `launch/baseline/` est créé pour les captures.
 personne ne peut les lire. Deux options sont posées dans le guide — Cloudflare Web Analytics (gratuit, sans
 cookie, une ligne de script à poser) ou rien. Non tranché : c'est un ruling de King, pas une décision
 technique.
+
+## 21/10 (14) — audit SEO complet, et la ligne de base est faite
+
+**Ligne de base relevée.** 0 appel, 0 message, 0 itinéraire, 0 clic site, 0 vue de fiche — et **moins de
+50 recherches ont affiché la fiche**. C'est le point zéro, et il est sain pour une fiche de quelques jours.
+Décision de lecture : au 16/11, on annonce des **chiffres absolus**, jamais des pourcentages calculés sur
+zéro.
+
+**Le cahier quotidien est abandonné** (ruling King : « ça sera donner plus de travail à mon client »). Il
+est remplacé par **une phrase** au moment du paiement — « comment nous avez-vous trouvé ? » — notée sur le
+support que le cabinet utilise déjà, plus **3 chiffres** que King relève le lundi. Un dispositif qu'on
+n'arrive pas à tenir ne mesure rien.
+
+**Les cookies : non.** Cloudflare Web Analytics tourne déjà sur le domaine, **sans cookie**, et donne
+visites / pages / référents / Core Web Vitals (c'est lui qui a fourni les chiffres de l'audit). Il ne lit
+pas les UTM → on attribue par **page d'arrivée** (une par post). GA4 est écarté : bandeau de consentement,
+40 Ko de script, base légale à expliquer — disproportionné.
+
+**Audit SEO des 49 pages** (`seo/AUDIT-SEO-2026-10-21.md`, outil `tools/qa/audit_seo.py`) : 20 contrôles,
+10 verts complets. **1 096 liens internes, 0 cassé, 0 page orpheline** · **245 images, 245 alt, 245
+width/height** · un seul H1 partout · canonical 49/49 · 404 personnalisée servie (testée en ligne).
+Trois écarts : **6 fiches montures partagent 2 descriptions** (F10/F11 et H01/H02/H05/H08 — même
+catégorie + forme + couleur), **h1 vers h3** sur `/contact/`, `/le-cabinet/` et la 404, et **sitemap sans
+`lastmod`**. Deux vrais sujets : **aucune version anglaise indexable** (`<html lang="fr">`, 0 hreflang,
+0 URL `/en/`, alors que le texte EN est dans le DOM mais masqué) et **le LCP** — l'élément lent est nommé
+par Cloudflare (`cabinet-hero.webp`, 232 Ko, 1920 px, **aucun `srcset` sur les 245 images**), P90 3,2 s,
+P99 8,4 s.
+
+**Rien n'a été construit** — l'audit est un constat, avec un ordre d'attaque en 7 lignes en attente de
+ruling. Le seul document d'action produit est la liste des **10 URL à indexer aujourd'hui**
+(`seo/URLS-INDEXATION-2026-10-21.md`).
