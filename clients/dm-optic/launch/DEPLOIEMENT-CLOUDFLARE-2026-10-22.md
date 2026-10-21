@@ -13,6 +13,10 @@
 | Fichier le plus lourd | **266 Ko** | 25 Mo |
 | Poids total | **9 Mo** | — |
 
+**Nom du Worker (relevé au tableau de bord le 22/10) : `dmoptiquesarl`.** C'est cette chaîne, exacte,
+qui doit figurer en `name` dans `wrangler.toml` — un tiret de différence et `wrangler` crée un second
+Worker, pendant que le domaine continue de pointer l'ancien.
+
 Le site n'a jamais été le problème. L'outil d'envoi du tableau de bord, si : il annonce 184 fichiers,
 ne montre aucune progression, et son propre bandeau précise qu'il ne gère que HTML/CSS/JS.
 
@@ -64,6 +68,11 @@ Builds si tu veux un seul mécanisme.
 
 ## 3 · Aujourd'hui : publier en 5 clics (Workers Builds)
 
+> **État au 22/10 : ✅ FAIT.** Le dépôt est connecté (`AKWOKING/AMK`), la branche de production est
+> `arena/2fffee3b-amk`, Build command vide, Deploy command `npx wrangler deploy`, racine `/`.
+> Le premier build a été déclenché par le commit `9f5c26c`, qui corrige `name` en `dmoptiquesarl`.
+
+
 1. **Cloudflare → Workers & Pages →** ouvre le projet du site.
 2. Onglet **Settings** → section **Build** → **Connect** (ou *Connect Git repository*).
 3. **GitHub** → autorise → dépôt **`AKWOKING/AMK`**.
@@ -93,9 +102,31 @@ il doit exister dans **`main`** — puisque chaque nouvelle conversation coupe s
 
 ### 4.1 · Créer un jeton Cloudflare (2 min)
 
-**My Profile → API Tokens → Create Token** → modèle **« Edit Cloudflare Workers »** → *Continue* →
-*Create Token*. **Copie-le tout de suite** : il ne s'affiche qu'une fois.
-Note aussi l'**Account ID** : Workers & Pages → colonne de droite.
+**Réponse à la question posée le 22/10 — modèle ou jeton personnalisé ?**
+👉 **Le modèle « Edit Cloudflare Workers ».** Ne prends pas *Create Custom Token*.
+
+Pourquoi : le modèle contient exactement les trois droits nécessaires, déjà réglés —
+`Account → Workers Scripts → Edit`, `Account → Account Settings → Read`, `Zone → Workers Routes → Edit`.
+Un jeton personnalisé obligerait à retrouver ces trois permissions à la main ; en oublier une donne un
+échec « Authentication error » au moment du déploiement, sans dire laquelle manque.
+
+**Le chemin exact :** *My Profile → API Tokens → Create Token* → dans la liste **API token templates**,
+ligne **Edit Cloudflare Workers** → **Use template** → puis :
+
+| Champ | Valeur |
+|---|---|
+| Token name | `deploy-dmoptique-github` |
+| Account resources | ton compte (`Akwo.king.dev@gmail.com's Account`) |
+| Zone resources | **Include → Specific zone → `dmoptiquesarl.com`** |
+| TTL / IP filtering | laisser vide |
+
+→ **Continue to summary** → **Create token** → **copie-le immédiatement** (il ne s'affiche qu'une fois).
+
+Note aussi l'**Account ID** : Workers & Pages → colonne de droite de la page d'accueil.
+
+> **Ce jeton n'est PAS nécessaire si tu t'arrêtes à l'étape 3.** Workers Builds publie sans jeton, avec
+> l'autorisation GitHub déjà donnée. Le jeton ne sert qu'à la publication depuis GitHub Actions (§4),
+> c'est-à-dire à la seule méthode qui survit à un changement de branche.
 
 ### 4.2 · Poser les deux secrets dans GitHub (1 min)
 

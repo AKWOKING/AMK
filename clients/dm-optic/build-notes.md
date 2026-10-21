@@ -1722,3 +1722,20 @@ présentes et futures). Le modèle est versionné dans `tools/deploy/workflow-de
 Mode d'emploi réécrit en entier : `launch/DEPLOIEMENT-CLOUDFLARE-2026-10-22.md` (§0 les chiffres, §1 la
 règle de la branche, §3 publier aujourd'hui, §4 le workflow une fois, §5 le rituel par chat).
 
+## 22/10 (19) — le nom du Worker, et le premier build
+
+Le tableau de bord a donné la réponse que je ne pouvais pas deviner : **le Worker s'appelle
+`dmoptiquesarl`** (sans tirets), et non `dm-optique-sarl` comme je l'avais supposé. Cloudflare l'a
+signalé lui-même — *« Update wrangler.toml in your repo to keep settings consistent »*, avec la ligne
+exacte à corriger. Un `name` faux aurait créé un **second** Worker, le domaine restant sur l'ancien :
+la panne silencieuse que je redoutais. Corrigé au commit `9f5c26c`, qui déclenche le premier build.
+
+**Workers Builds est branché** : dépôt `AKWOKING/AMK`, production `arena/2fffee3b-amk`, build command
+vide, deploy command `npx wrangler deploy`, racine `/`.
+
+**Sur le jeton API :** le modèle **« Edit Cloudflare Workers »** suffit et il est le bon choix — il
+contient les trois droits nécessaires (`Workers Scripts: Edit`, `Account Settings: Read`, `Workers
+Routes: Edit`). Un jeton personnalisé oblige à les retrouver à la main, et un oubli donne un
+« Authentication error » qui ne dit pas lequel manque. Et surtout : **ce jeton n'est pas nécessaire**
+tant qu'on reste sur Workers Builds — il ne sert qu'à la publication depuis GitHub Actions.
+
