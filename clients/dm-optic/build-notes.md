@@ -1919,3 +1919,38 @@ Verdict final : **0 fenêtre figée**.
 **Visages** : King a tranché (22/10) — les visages **du personnel** sont autorisés. Les deux photos du
 cabinet n'en contiennent aucun d'exploitable de toute façon (posters et mur de montures).
 
+## 22/10 (28) — « where is post 1 ? » : les vidéos n'étaient ni sur GitHub ni sur le disque
+
+Trois questions de King en une : *« je ne trouve pas ugc-03.mp4 sur github »*, *« où est le post 1 ?? »*,
+et la décision de garder le sans-visage avec un tournage mensuel.
+
+**Le diagnostic, et il est gênant.** Les deux vidéos étaient **absentes des deux endroits à la fois** :
+
+1. **Pas sur GitHub** — le `.gitignore` du dépôt exclut `*.mp4` et `*.mp3` depuis le **23/09**, sur ta
+   demande (« retire les vidéos précédentes, elles rendent le repo lourd inutilement »). Règle juste, mais
+   je n'avais pas dit assez clairement qu'elle implique **invisibilité totale sur GitHub** : aucun `.mp4`
+   livré n'apparaîtra jamais dans l'arborescence.
+2. **Pas sur le disque non plus** — l'espace de travail a été remis à zéro (18ᵉ épisode du genre) ; comme
+   les fichiers étaient **ignorés par git**, aucun `checkout` ne pouvait les ramener. `git ls-files` le
+   confirme : seuls 7 vieux mp4 de `content/pipeline` sont suivis.
+
+**Ce qui a été fait, dans l'ordre :**
+
+1. **Récupération du dépôt** — `fetch` puis `reset --mixed origin/arena/2fffee3b-amk` + `checkout -- .`
+   (jamais `--hard`), arbre propre, HEAD `e861057`.
+2. **Remontage des deux vidéos**, voix comprises (`voice-00`, texte pris dans le `.srt` pour le post 1 et
+   dans `ugc-03.md` pour le post 2) : `tiktok-01-v2.mp4` **23,00 s / 4,8 Mo**, `ugc-03.mp4`
+   **22,30 s / 6,8 Mo**, **portique OK pour les deux**.
+3. **Le correctif de fond** : les fichiers partent désormais en **release GitHub**
+   (`dm-optique-videos-2026-10-22`) — téléchargeables, permanents, zéro poids dans l'arborescence — et un
+   index `content/month1/w1/VIDEOS.md` dit où, quoi, et comment les reproduire.
+
+**La leçon à garder** : un fichier ignoré n'est pas « rangé ailleurs », il est **hors de toute
+sauvegarde**. Règle debout proposée : *tout livrable binaire déposé en release le jour même, son nom écrit
+dans `VIDEOS.md`*. Si King préfère les `.mp4` dans l'arbre, une ligne de `.gitignore` suffit — mais c'est
+sa décision, pas la mienne.
+
+**Et la décision de production** : sans-visage conservé, budget mis sur **une demi-journée de tournage par
+mois** (14h–18h, 4 blocs, 30–40 clips, 8 posts dont 4 à visage). Plan complet, liste de plans imprimable,
+autorisation d'image et circuit rush → post : `content/tournage/PLAN-TOURNAGE-MENSUEL.md`. Aucun
+abonnement d'avatar IA, aucune clé Veo achetée.

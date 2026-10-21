@@ -149,12 +149,24 @@ autorisés sur les photos.
 3. **`morluto/rea` n'est pas un outil vidéo** : c'est un serveur MCP de rétro-ingénierie de binaires. Le
    détour n'existe pas — comparatif complet et chiffré dans `research/ugc-video/2026-10-22-TOOLCHAIN-UGC.md`.
 
-### La voie préférée, dans l'ordre
+### La voie préférée — **tranchée le 22/10 par King**
 
-1. **Photos réelles + cartons + voix** (ce qu'on fait ce soir) — zéro risque.
-2. **King ou un membre du personnel à l'écran**, une session par mois — la recherche place les visages au
-   premier rang ; c'est le meilleur rapport effort/effet.
-3. **Avatar IA présentateur** — seulement si 1 et 2 ne suffisent pas, avec les six conditions ci-dessus.
+> King, 22/10 : « on garde le sans-visage et on réserve l'argent pour la séance de tournage d'une
+> demi-journée par mois ».
+
+| Rang | Voie | État |
+|---|---|---|
+| **1** | **Photos réelles + cartons + voix** (`tools/ugc/`) | **en production** — UGC-03 livré, portique vert |
+| **2** | **Une séance de tournage d'une demi-journée par mois** (14h–18h, 4 blocs, 30–40 clips) | **retenue** — budget réservé, plan écrit : `clients/dm-optic/content/tournage/PLAN-TOURNAGE-MENSUEL.md` |
+| 3 | Avatar IA présentateur (HeyGen 29 $/mois) | **écarté pour l'instant** — les données 2026 ne le justifient pas (Kantar : 54ᵉ vs 65ᵉ centile ; retargeting humain +20–25 %) |
+| — | Clips Veo (API Gemini, 0,64–0,96 $ le plan de 8 s) | **non acheté** — reste disponible si un jour un plan généré manque ; rien ne bloque sans lui |
+
+**Conséquence opérationnelle** : le sans-visage **teste**, l'humain **convertit**. Ce sont deux rôles, pas
+deux niveaux de qualité. Le tournage mensuel ne remplace pas le montage sans visage : il l'alimente en
+matière première.
+
+**Outil** : `tools/ugc/ugc.py` — le rush filmé entre comme scène `clip`, entouré du produit réel, des
+cartons et de la sortie honnête. Une vidéo brute reste une vidéo de téléphone ; le montage en fait une pub.
 
 ---
 

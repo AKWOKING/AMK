@@ -182,7 +182,22 @@ joignables.
 
 ---
 
-## 7 · Décision proposée
+## 7 · Décision — **tranchée par King le 22/10**
+
+> « on garde le sans-visage et on réserve l'argent pour la séance de tournage d'une demi-journée par mois »
+
+| Option | Prix | Statut |
+|---|---|---|
+| UGC sans visage (`tools/ugc/`) | 0 | ✅ **en production** |
+| Séance de tournage mensuelle, 4 h | matériel ~25–40 000 F une fois | ✅ **retenue** — plan : `clients/dm-optic/content/tournage/PLAN-TOURNAGE-MENSUEL.md` |
+| HeyGen Avatar V | 29 $/mois | ⛔ écarté |
+| Arcads / Creatify | 110 $ / 39 $ par mois | ⛔ écarté |
+| API Veo 3.1 (clips générés) | 0,64–0,96 $ le plan de 8 s | ⏸ non acheté, disponible |
+
+**La raison, en une phrase** : à 54ᵉ centile contre 65ᵉ, l'avatar IA n'achète pas le supplément de
+crédibilité qu'on cherche ; un visage vrai, même filmé au téléphone, en achète plus pour moins cher.
+
+## 7 bis · Décision proposée (historique, conservée)
 
 1. **Outil de référence : `tools/ugc/`** (ce dépôt) — il assemble, sous-titre, mesure, et accepte
    n'importe quel fournisseur de clips.
