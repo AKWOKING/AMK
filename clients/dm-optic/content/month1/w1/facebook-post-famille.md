@@ -3,7 +3,7 @@
 **Statut :** prêt à publier · **publication = geste de King** · 21/10/2026
 **Gabarit :** W43 §12b (« cas client d'abord · objet réel · preuve citée une fois · sortie honnête · un seul CTA »)
 **Verrous respectés :** aucun prix · aucune marque nommée · aucune « photo d'illustration » · aucun superlatif
-non prouvable · aucun symptôme nommé (R1)
+non prouvable · aucun symptôme nommé (R1) · **aucun chiffre de stock** (ruling 21/10)
 
 ---
 
@@ -15,8 +15,7 @@ non prouvable · aucun symptôme nommé (R1)
 | 2 | `launch/social/cards/card-02-h08.jpg` | **H08** · double pont noir et doré | l'aviateur, la branche noire, le pont doré |
 | 3 | `launch/social/cards/card-03-e16.jpg` | **E16** · carrée bleue | taille enfant, bleu franc, verres neutres |
 
-**Pourquoi c'est solide :** les photos sont celles du cabinet (`frames.json` → 40 montures,
-65 photos). Le fond des prises de vue (246, 236, 225) est **le chaud de la marque** (#F6EBE0) : la
+**Pourquoi c'est solide :** les photos sont celles du cabinet (le fonds de `frames.json`, 65 images). Le fond des prises de vue (246, 236, 225) est **le chaud de la marque** (#F6EBE0) : la
 photo se fond dans la carte sans cadre, sans ombre, sans faux décor. Le texte ne promet rien que la
 photo ne montre.
 
@@ -111,3 +110,51 @@ ramène au stock réel, et le numéro est dans le fil.
 | 3 | **TikTok n° 1** (déjà tourné) | quand le montage est relu |
 
 → Ruling de King sur l'ordre ; les deux textes sont prêts, aucun n'attend l'autre.
+
+---
+
+## 6 · La version TikTok (mode photo, 1080×1920)
+
+Les mêmes trois montures, reformatées en vertical : `launch/social/cards/vertical/card-0{1,2,3}-*.jpg`
+(86 / 84 / 92 Ko). Elles se publient en **mode photo** (swipe), pas en vidéo — TikTok accepte les photos,
+et c'est le seul format qui laisse lire le nom de la monture.
+
+> `python3 clients/dm-optic/launch/social/build_frame_cards.py --vertical`
+
+**Légende TikTok — à copier telle quelle :**
+
+```
+On ne choisit pas des lunettes comme on choisit un téléphone.
+
+Une monture, ça se pose sur un visage. Ça se règle sur un nez, derrière les oreilles — et c'est là qu'on sait.
+
+Chez DM OPTIQUE SARL, votre opticien optométriste à Bonabéri, on prend le temps de vous laisser essayer.
+
+F01 · ovale dorée — H08 · aviateur — E16 · enfant : les trois sont au cabinet.
+
+Immeuble West Hotel, 1er étage — Ndobo Mayor, Bonabéri.
+
+#opticienbonaberi #opticiendouala #lunettesdouala #bonaberi #dmoptique
+```
+
+**Réglages :** mode **Photo** · 3 images dans l'ordre · pas de musique tendance (le compte est neuf et
+commercial : soit silence, soit un titre de la bibliothèque commerciale) · pas de lien dans la légende
+(TikTok ne les rend pas cliquables) — le lien du site est dans la bio.
+
+---
+
+## 7 · Où publier ce carrousel — la réponse
+
+**Facebook d'abord, TikTok ensuite. Pas « les deux en même temps ».**
+
+| | Facebook | TikTok |
+|---|---|---|
+| Format | carrousel 3 images **1080×1350** — c'est ce qui est prêt | photos **1080×1920** en mode photo |
+| Pourquoi | c'est la plateforme du carrousel : on peut lire les trois, revenir, enregistrer | le mode photo est fait pour le swipe, mais **une vidéo performe mieux** sur un compte neuf |
+| Quand | **maintenant** — c'est le premier vrai post de la page | **après** le TikTok n° 1 (déjà tourné), pour ne pas enterrer la vidéo sous des photos |
+| Ce qu'on attend | des enregistrements et des messages WhatsApp | de la portée, et un profil qui ne reste pas vide |
+
+Raison de fond : sur un compte à **0 follower**, on ne disperse pas la première semaine. Une plateforme
+tient la promesse (Facebook, où le client a déjà l'habitude de chercher une adresse), l'autre construit
+l'audience avec de la vidéo. Le carrousel TikTok reste prêt au cas où King veuille le poster le même jour —
+le texte et les images sont là.

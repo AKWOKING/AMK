@@ -277,7 +277,7 @@ plateforme, pas des fichiers décoratifs. Doc Cloudflare (Direct Upload, lu le 2
 | Fait | État | Où c'est écrit |
 |---|---|---|
 | Compte TikTok créé | ✅ `@dmoptique.bonaberi237` · `DM OPTIQUE SARL` · logo + story · 0/0/0 | `launch/SETUP-TIKTOK.md` |
-| Bio (candidat B) | 🟠 **posée le 21/10, à réviser** : le client demande « opticien optométriste » partout → `Opticien optométriste à Bonabéri · examen de vue · WhatsApp 656 122 239` (71 car.) | `launch/SETUP-TIKTOK.md` § Bio · `content/strategy/RULE-CREDENTIAL-CLAIMS.md` |
+| Bio (candidat B) | ✅ **posée le 21/10** avec le titre complet : `Opticien optométriste à Bonabéri · examen de vue · WhatsApp 656 122 239` (71 car.) | `launch/SETUP-TIKTOK.md` § Bio · `content/strategy/RULE-CREDENTIAL-CLAIMS.md` |
 | Business Account + catégorie | ⛔ **impossible au Cameroun** (pays absent du sélecteur ; TikTok n'ouvre la vérification qu'à 6 marchés africains) — compte personnel assumé, analytics via TikTok Studio | `launch/SETUP-TIKTOK.md` § Business Account |
 | Premier contenu | ✅ script validé (21/10) · ⬜ tournage · ⬜ montage relu par King · ⬜ publication | `content/month1/w1/tiktok-01.md` |
 | Message « avis Google » à M. Domche | 🕘 **envoi 21/10 à 09:00** (pas avant) · ⬜ 5 avis d'ici samedi 24/10 | `launch/MESSAGE-AVIS-GOOGLE-2026-10.md` |

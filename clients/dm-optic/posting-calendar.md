@@ -21,7 +21,7 @@
 | Fait | État |
 |---|---|
 | Compte TikTok | **créé** par King le 21/10 — `@dmoptique.bonaberi237`, nom affiché `DM OPTIQUE SARL`, logo + story, 0/0/0 |
-| Bio | **B, révisée le 21/10** : `Opticien optométriste à Bonabéri · examen de vue · WhatsApp 656 122 239` (71 car.) — **à remplacer** dans l'app (`launch/SETUP-TIKTOK.md`) |
+| Bio | ✅ **posée le 21/10** : `Opticien optométriste à Bonabéri · examen de vue · WhatsApp 656 122 239` (71 car.) — référence : `launch/SETUP-TIKTOK.md` |
 | Page Facebook | ✅ **créée le 21/10** — `DM OPTIQUE SARL`, catégorie Opticien, bio posée, logo en avatar, 0 follower. Reste : couverture, bouton WhatsApp, horaires, story, **1er post après feu vert** — ~~`@username`~~ : la page n'en propose pas (`launch/SETUP-FACEBOOK.md` §6–§7) |
 | Meta au Cameroun | **Publié et sponsorisé : oui. Boutique, Meta Pay, monétisation, badge : non** → `launch/META-CAMEROUN-2026-10.md`. La pub de S2 suppose une **carte internationale** (facturation en USD/EUR + TVA 19,25 %) : prérequis à vérifier avant la semaine 2 |
 | Business Account + catégorie | ⛔ **non disponible au Cameroun** (vérifié 21/10/2026 — le sélecteur de pays ne contient pas le Cameroun, et TikTok n'ouvre la vérification qu'à six marchés africains) → on reste en **compte personnel** ; analytics via **TikTok Studio** |

@@ -48,7 +48,7 @@ l'optométrie n'est pas une profession séparée, c'est un diplôme d'opticien a
 
 ## La description de la fiche — deux versions, 750 caractères maximum
 
-### Version A — telle que King l'a écrite (545 caractères) · **forte, mais trois phrases attaquables**
+### ✅ Version RETENUE par King (21/10) — la sienne, mot pour mot (545 caractères)
 
 ```
 Découvrez la différence chez DM OPTIQUE SARL, votre opticien-optométriste de confiance au cœur de Bonabéri, Douala. Nous sommes dévoués à vous offrir des soins visuels d'exception, avec des examens de la vue complets pour toute la famille. Explorez notre vaste collection de montures élégantes pour hommes, femmes et enfants, ainsi qu'une sélection rigoureuse de lunettes de soleil. En tant que membre inscrit à l'ONOC, nous garantissons les plus hauts standards de prise en charge professionnelle pour confier votre vision aux meilleures mains.
@@ -62,7 +62,7 @@ hauts** standards », « les **meilleures** mains » sont des **superlatifs non 
 les interdisent (aucun superlatif non prouvé), et sur une fiche publique ils sont la première prise d'un
 concurrent ou d'un confrère qui voudrait contester. Le reste tient parfaitement.
 
-### Version B — même énergie, mêmes promesses, tout vérifiable (745 caractères) · **recommandée**
+### Version B — écartée par King le 21/10 (745 caractères, conservée au dossier comme référence)
 
 ```
 Découvrez la différence chez DM OPTIQUE SARL, votre opticien optométriste à Bonabéri, Douala. Nous prenons le temps qu'il faut pour chaque personne qui pousse la porte : un examen de la vue complet, des explications claires, et une monture choisie pour votre visage — pas pour la vitrine.
@@ -75,14 +75,22 @@ Immeuble West Hotel, 1er étage — Ndobo Mayor, Bonabéri. Lundi au samedi, 8h3
 ```
 
 **Ce qui change, et ce qui ne change pas.** Ne change pas : l'ouverture, le « nous », la famille, le lieu,
-l'ONOC en dernier. Change : chaque promesse devient une **chose qu'on peut vérifier** — 40 montures
-(c'est `frames.json`), des photos sur le site (elles y sont), des verres taillés sur ordonnance (c'est le
-service 02), un réglage avant de repartir (c'est le geste du cabinet). On ne promet plus d'être les
+l'ONOC en dernier. Change : chaque promesse devient une **chose qu'on peut vérifier** — des montures
+photographiées une par une, des verres taillés sur ordonnance (service 02), un réglage avant de repartir
+(c'est le geste du cabinet). *(Version écrite avant le ruling « aucun chiffre de stock » du 21/10 : le
+« quarante montures » qu'elle contenait est retiré.)* On ne promet plus d'être les
 meilleurs ; on décrit ce qu'on fait, et le lecteur conclut tout seul.
 
-> **Décision : King.** A = plus chaleureuse à la première lecture, B = inattaquable et tout aussi
-> chaleureuse. Si A est retenue, je propose de ne changer que **trois groupes de mots** (voir ci-dessus),
-> pas la structure.
+> **Ruling King, 21/10 : « I choose A ».** La description est donc **publiée telle quelle**, superlatifs
+> compris. C'est une décision assumée du titulaire sur son propre texte : elle est consignée ici pour que
+> personne — ni moi ni un futur tour — ne la « corrige » en silence. Deux conséquences pratiques :
+>
+> 1. **Le trait d'union.** A écrit « opticien-optométriste » ; le site, la vCard et le JSON-LD écrivent
+>    « opticien optométriste ». Les deux formes sont correctes, Google les rapproche ; on **ne touche pas**
+>    au texte retenu. Si King veut une seule graphie partout, c'est un caractère à changer dans la fiche.
+> 2. **Les trois superlatifs** (« d'exception », « les plus hauts standards », « les meilleures mains »)
+>    restent la seule zone où le cabinet pourrait être contesté. Rien à faire aujourd'hui ; le jour où un
+>    confrère ou l'ONOC les discute, la version B est prête **ici**, déjà écrite, à substituer en 30 secondes.
 
 ## Données (vérifiées, datées, zéro invention)
 - **Nom :** DM OPTIQUE SARL · **Catégorie principale :** Opticien · secondaire : Lunetterie.

@@ -259,5 +259,20 @@ l'émotion, on remplace l'absolu par du concret :
 fiche Google, message WhatsApp, avis, et les documents qu'on lui remet. Les notes internes et ce dépôt
 gardent leur ton technique.
 
+### Le corollaire du 21/10 — on ne chiffre pas le stock
+
+> King : « *avoid mentionning the number of frames available everywhere since this can change at any
+> moment* ».
+
+Un nombre de montures est **vrai un jour et faux le lendemain** : une vente, un réassort, et la phrase
+devient un mensonge involontaire. Donc **aucun chiffre de stock** dans un texte client — site, page
+Facebook, TikTok, fiche Google, légendes, affiches, dossier de remise. On écrit « nos montures »,
+« une sélection », « toutes nos montures ». Le catalogue, lui, reste visible : c'est la **liste** qui
+prouve, pas le compte.
+
+Exception technique, et une seule : le compteur de résultats du filtre (`/montures/`), qui compte les
+fiches **affichées** par le filtre en cours (« 12 affichées »), pas un stock annoncé. Il est calculé à
+l'affichage, jamais écrit en dur.
+
 **Contrôle avant publication (10 secondes) :** *est-ce que je peux montrer la phrase ?* Si oui, elle
 reste. Si non, elle devient un fait précis ou elle disparaît.

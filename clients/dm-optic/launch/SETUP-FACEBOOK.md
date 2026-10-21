@@ -89,9 +89,8 @@ deux façons de perdre la page :
 Opticien optométriste à Bonabéri, Douala IV. Examen de vue, montures et solaires. Inscrit à l'ONOC. Immeuble West Hotel, 1er étage, dernière porte à droite. Lun–sam · examen 8h30–13h00 · autres besoins 8h30–17h30. WhatsApp : 656 122 239.
 ```
 
-> **Mise à jour 21/10** : le client demande **« opticien optométriste »** partout (pas « opticien »
-> seul). Le titre exact est celui de la loi camerounaise — voir `content/strategy/RULE-CREDENTIAL-CLAIMS.md`.
-> La bio en ligne aujourd'hui dit encore « Opticien à Bonabéri… » : **à remplacer par celle-ci.**
+> **Mise à jour 21/10 — ✅ POSÉE.** King a mis la page à jour le 21/10 avec cette bio (titre complet).
+> Le texte ci-dessus reste la référence : si la page est reprise un jour, c'est **cette** chaîne qui revient.
 
 **Pourquoi celle-là et pas « DM OPTIQUE est un cabinet fondé en… » :** elle commence par ce que les
 gens tapent (*opticien à Bonabéri*), donne les trois informations qui décident une visite (où, quand,

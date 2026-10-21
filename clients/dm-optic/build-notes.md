@@ -1565,3 +1565,32 @@ Légende et commentaire épinglé dans `content/month1/w1/facebook-post-famille.
 **④ Le site est sur le domaine.** `dmoptiquesarl.com` (Cloudflare) sert la version « opticien
 optométriste » : `title`, kicker, carte, pied de page et **sitemap 48 URL** vérifiés. La preuve n° 3 du
 solde est donc remplie. Vercel reste le miroir de contrôle, pas la production.
+
+## 21/10 (12) — le stock n'est plus un chiffre, et Google devient un canal
+
+**① Ruling « aucun chiffre de stock ».** King : « *avoid mentionning the number of frames available
+everywhere since this can change at any moment* ». Un compte est vrai un jour et faux le lendemain.
+Retiré partout : **le site** (les 3 portes « N montures », la phrase d'intro des catégories, la meta
+description, le compteur initial « N montures », le bouton « Afficher N montures »), le partage de
+livraison et le dossier. Le **compteur de filtre** reste, mais il compte les fiches **affichées**
+(« 12 affichées ») et se calcule à l'affichage — ce n'est pas un stock annoncé. Rebuild 47 pages + 40 fiches,
+portiques verts, **zip 132 entrées** régénéré et **déployé**.
+
+**② La description Google : version A.** King a choisi sa version (545 car.), superlatifs compris. Consigné
+comme **ruling du titulaire** dans `SETUP-GOOGLE-BUSINESS.md`, avec la version B gardée au dossier comme
+substitut immédiat. On ne la « corrige » pas en silence.
+
+**③ Bios posées.** Facebook et TikTok sont à jour avec le titre complet — les deux lignes passent en ✅ dans
+le calendrier, la checklist et les deux guides.
+
+**④ Le module Google Posts — vérifié, cadré, planifié.** Recherche complète dans
+`launch/GOOGLE-POSTS-2026-10.md`. Ce qui est **prouvé** : Google archive les posts après 6 mois, accepte
+une programmation récurrente, et **rejette** un post dont le numéro de téléphone n'est pas rattaché à la
+fiche → le numéro passe par le bouton « Call now ». Ce qui est **mesuré** : le test contrôlé de Sterling Sky
+(9 semaines, 441 mots-clés) ne trouve **aucun effet de classement** ; Whitespark 2026 (GBP 32 %, avis 20 %)
+ne liste pas les posts comme facteur. Donc : **conversion, pas classement**. Quatre posts prêts (S1→S4),
+un par semaine, avec photo réelle, un seul bouton et UTM.
+
+**⑤ Le zip devient une commande.** `demos/pack_dmoptic.py` : zip déterministe (entrées triées, dates figées,
+`testzip`), refuse de produire un paquet si `index.html`/`sitemap.xml`/`robots.txt`/`llms.txt` manquent.
+Deux exécutions donnent le même SHA-256 — on peut donc dire « c'est bien ce build-là qui est en ligne ».

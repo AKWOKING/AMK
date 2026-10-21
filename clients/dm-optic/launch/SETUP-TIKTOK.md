@@ -42,7 +42,7 @@ Opticien optométriste à Bonabéri · examen de vue · WhatsApp 656 122 239
 Pourquoi B : le nom affiché `DM OPTIQUE SARL` ne dit pas le métier ; la bio doit le dire, et
 « opticien » est le mot que les gens tapent — **« optométriste » suit le mot, il ne le remplace pas**
 (le client : « relier à chaque fois les 2 » ; la loi camerounaise dit « opticien optométriste »).
-La bio posée le 21/10 disait encore « Opticien à Bonabéri… » : **à remplacer par celle-ci.** Le lieu, l'offre et le canal sont dans les trois
+**✅ POSÉE le 21/10 par King** avec le titre complet — la chaîne ci-dessus est la référence. Le lieu, l'offre et le canal sont dans les trois
 premiers mots utiles. L'ONOC reste une preuve — sur le site, la fiche Google et dans les vidéos —
 pas un titre de bio (c'était l'objection de King, et la recherche W43 la confirme : la bio parle du
 visiteur).

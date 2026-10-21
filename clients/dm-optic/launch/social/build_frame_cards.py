@@ -15,9 +15,11 @@ ne porte jamais “cette monture” »). Ici la monture EST celle du texte, elle
 et la légende le dit.
 
 Usage :
-    python3 build_frame_cards.py                # 3 cartes + contrôle
+    python3 build_frame_cards.py              # 3 cartes 1080x1350 (fil Facebook)
+    python3 build_frame_cards.py --vertical   # 3 cartes 1080x1920 (TikTok, mode photo)
 Sortie :
     clients/dm-optic/launch/social/cards/card-01-f01.jpg …
+    clients/dm-optic/launch/social/cards/vertical/card-01-f01.jpg …
 """
 import json
 import os
@@ -157,14 +159,65 @@ def build(card, frames):
     return out
 
 
+def build_vertical(card, frames):
+    """1080x1920 — mode photo TikTok. Zones sûres : rien au-dessus de y=180 (barre),
+    rien sous y=1650 (légende + boutons TikTok)."""
+    f = frames[card["frame"]]
+    src = os.path.join(SITE, f["photos"][0].lstrip("/"))
+    im = Image.open(src).convert("RGB")
+
+    Wv, Hv = 1080, 1920
+    canvas = Image.new("RGB", (Wv, Hv), CREAM)
+    canvas.paste(im.resize((Wv, BAND), Image.LANCZOS), (0, 300))
+    d = ImageDraw.Draw(canvas)
+
+    kicker = ImageFont.truetype(ttf("ibm-plex-mono-latin-500-normal.ttf"), 22)
+    title_f = ImageFont.truetype(ttf("schibsted-grotesk-latin-700-normal.ttf"), 78)
+    sub_f = ImageFont.truetype(ttf("ibm-plex-sans-latin-400-normal.ttf"), 34)
+    cta_f = ImageFont.truetype(ttf("ibm-plex-sans-latin-600-normal.ttf"), 31)
+    micro_f = ImageFont.truetype(ttf("ibm-plex-mono-latin-500-normal.ttf"), 20)
+
+    left, right_edge = 84, Wv - 84
+    spaced(d, (left, 196), "DM OPTIQUE SARL  ·  BONABÉRI", kicker, BRAND, tracking=4.2)
+    d.rectangle([left, 240, left + 56, 243], fill=BRAND)
+
+    y = 1180
+    for line in card["title"]:
+        wpx = d.textlength(line, font=title_f)
+        assert wpx <= right_edge - left, f"titre trop large ({wpx:.0f}px) : {line}"
+        d.text((left, y), line, font=title_f, fill=INK)
+        y += 88
+
+    y += 14
+    for line in wrap(d, card["sub"], sub_f, right_edge - left):
+        d.text((left, y), line, font=sub_f, fill=MUTED)
+        y += 44
+
+    label = "WhatsApp 656 122 239"
+    tw = d.textlength(label, font=cta_f)
+    pad_x, hgt = 30, 70
+    x0, y0 = left, y + 34
+    d.rounded_rectangle([x0, y0, x0 + tw + pad_x * 2, y0 + hgt], radius=hgt // 2, fill=WA)
+    d.text((x0 + pad_x, y0 + (hgt - 36) / 2), label, font=cta_f, fill=(255, 255, 255))
+    d.text((left, y0 + hgt + 26), "Opticien optométriste · inscrit à l’ONOC", font=micro_f, fill=MUTED)
+
+    out = os.path.join(OUT, "vertical", card["file"])
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    canvas.save(out, "JPEG", quality=88, optimize=True, progressive=True)
+    print(f"{os.path.relpath(out, ROOT):60s} {os.path.getsize(out)//1024:4d} Ko  {f['nom']}")
+    return out
+
+
 def main():
-    os.makedirs(OUT, exist_ok=True)
+    vertical = "--vertical" in sys.argv
+    os.makedirs(os.path.join(OUT, "vertical") if vertical else OUT, exist_ok=True)
     frames = {f["code"]: f for f in json.load(open(os.path.join(ROOT, "clients/dm-optic/site/frames.json"), encoding="utf-8"))}
     if not all(c["frame"] in frames for c in CARDS):
         raise SystemExit("monture absente de frames.json")
     for c in CARDS:
-        build(c, frames)
-    print(f"\n{len(CARDS)} cartes — 1080x1350, JPEG progressif, < 400 Ko chacune.")
+        (build_vertical if vertical else build)(c, frames)
+    fmt = "1080x1920 (TikTok)" if vertical else "1080x1350 (Facebook)"
+    print(f"\n{len(CARDS)} cartes — {fmt}, JPEG progressif.")
 
 
 if __name__ == "__main__":

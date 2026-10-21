@@ -10,7 +10,7 @@
 
 | Livrable | État | Preuve |
 |---|---|---|
-| **Site** — 48 pages : accueil bilingue, 40 montures réelles, examen de vue, le cabinet, contact, 404, `robots.txt`, `sitemap.xml`, `llms.txt`, `_headers` | ✅ construit, portiques verts | `hosting/previews/dmoptic/` · `dmopticsarl.zip` (132 fichiers, `testzip` OK) |
+| **Site** — 48 pages : accueil bilingue, les montures réelles du cabinet, examen de vue, le cabinet, contact, 404, `robots.txt`, `sitemap.xml`, `llms.txt`, `_headers` | ✅ construit, portiques verts | `hosting/previews/dmoptic/` · `dmopticsarl.zip` (132 fichiers, `testzip` OK) |
 | **Identité de marque** — logo, palette, Schibsted + IBM Plex, « l'aveu avant la promesse » | ✅ | `clients/dm-optic/brand/`, `website/logo/` |
 | **Fiche Google** — `DM OPTIQUE SARL`, catégorie Opticien, NAP, horaires | ✅ créée le 20/10 | `launch/SETUP-GOOGLE-BUSINESS.md` |
 | **Page Facebook** — `DM OPTIQUE SARL`, catégorie Opticien, bio, logo, couverture | ✅ créée le 21/10 | capture du 21/10, `asset_id 1417215104801727` |
@@ -174,9 +174,9 @@ montures et les pages examen / cabinet. Contrôle : **49 pages sur 49** portent 
 
 | # | Où | Quoi |
 |---|---|---|
-| 1 | Page Facebook → *Présentation* | remplacer la bio par les **237 caractères** de `launch/SETUP-FACEBOOK.md` § bio |
-| 2 | TikTok → *Modifier le profil* | coller `Opticien optométriste à Bonabéri · examen de vue · WhatsApp 656 122 239` (**71 car.**) |
-| 3 | Fiche Google → *Description* | commencer par « Opticien optométriste à Bonabéri, Douala… » ; catégorie secondaire *Optométriste* si elle est proposée |
+| 1 | ~~Page Facebook → *Présentation*~~ | ✅ **posée le 21/10** — la chaîne de 237 caractères de `launch/SETUP-FACEBOOK.md` § bio |
+| 2 | ~~TikTok → *Modifier le profil*~~ | ✅ **posée le 21/10** — `Opticien optométriste à Bonabéri · examen de vue · WhatsApp 656 122 239` |
+| 3 | Fiche Google → *Description* | ✅ **la version A de King est retenue (545 car.)** — à coller telle quelle (`SETUP-GOOGLE-BUSINESS.md` § description) ; catégorie secondaire *Optométriste* si elle est proposée |
 
 > **Correction du 21/10 (précision de King)** : le « *D'accord je vais faire les modifications* » est
 > **King**, pas le client. C'est donc **King** qui pose les trois bios (il a les accès), avec les chaînes

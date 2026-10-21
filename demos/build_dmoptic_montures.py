@@ -194,8 +194,8 @@ FILTER_JS = """<script>/* Filtres du catalogue v2 : OU dans un groupe, ET entre 
            &&(!st.q||norm(c.getAttribute('data-name')).indexOf(st.q)>-1);
       c.hidden=!ok; if(ok)n++;
     });
-    count.textContent=n+(n>1?' montures':' monture');
-    if(show)show.textContent='Afficher '+n+(n>1?' montures':' monture');
+    count.textContent=n+(n>1?' affichées':' affichée');
+    if(show)show.textContent='Tout afficher';
     empty.hidden=(n!==0);
     boxes.forEach(function(b){var l=b.closest?b.closest('label'):null; if(l)l.classList.toggle('is-on',b.checked);});
     renderChips(st);
@@ -448,7 +448,7 @@ def main():
         <img src="{esc(rep["photos"][0])}" alt="{esc(rep["nom"])}" loading="lazy" width="1600" height="1200">
         <span class="v2-body">
           <h2>{B(fr_l, en_l)}</h2>
-          <p>{B(f"{n} montures à essayer au cabinet.", f"{n} frames to try at the practice.")}</p>
+          <p>{B("Des montures à essayer au cabinet.", "Frames to try at the practice.")}</p>
           <span class="v2-go">{B("Voir les montures", "See the frames")} →</span>
         </span>
       </a>''')
@@ -500,13 +500,13 @@ def main():
         cat_main = f'''<section class="wrap">
     {site.crumbs([(B("Accueil", "Home"), "/"), (B("Montures", "Frames"), "/montures/"), (B(fr_l, en_l), None)])}
     <h1>{B(f"Montures {fr_low}", f"{en_l} frames")}</h1>
-    <p class="lede">{B(f"{n} montures photographiées au cabinet, à essayer sur votre visage. Touchez une fiche pour la voir sous d'autres angles, ou demandez-la directement sur WhatsApp.", f"{n} frames photographed at the practice, to try on your face. Open a frame to see other angles, or ask for it directly on WhatsApp.")}</p>
+    <p class="lede">{B("Nos montures, photographiées une par une au cabinet, à essayer sur votre visage. Touchez une fiche pour la voir sous d'autres angles, ou demandez-la directement sur WhatsApp.", "Our frames, photographed one by one at the practice, to try on your face. Open a frame to see other angles, or ask for it directly on WhatsApp.")}</p>
     <form class="v2-filters" role="search">
       <div class="v2-toolbar">
         <label class="v2-search">{B("Rechercher", "Search")}<input class="v2-q" type="search" name="q" placeholder="Rechercher une monture…" autocomplete="off"></label>
-        <p class="v2-count" role="status" aria-live="polite">{n} montures</p>
+        <p class="v2-count" role="status" aria-live="polite">Nos montures</p>
         <button class="btn v2-filter-toggle" type="button" aria-expanded="false" aria-controls="filtres-{c}">{B("Filtrer", "Filter")}</button>
-        <button class="btn v2-show" type="button">Afficher {n} montures</button>
+        <button class="btn v2-show" type="button">Tout afficher</button>
         <button class="btn v2-reset" type="button">{B("Effacer", "Clear")}</button>
       </div>
       <div class="v2-filters-panel" id="filtres-{c}">
@@ -525,7 +525,7 @@ def main():
   </section>'''
         written.append(site.page(
             f"/montures/{c}/", f"Montures {fr_low} à Bonabéri — DM OPTIQUE SARL",
-            f"{n} montures {fr_low} réelles du cabinet DM OPTIQUE SARL à Bonabéri : formes et couleurs visibles, à essayer au cabinet. Demande sur WhatsApp.",
+            f"Montures {fr_low} du cabinet DM OPTIQUE SARL à Bonabéri : formes et couleurs visibles, à essayer au cabinet. Demande sur WhatsApp.",
             cat_main,
             ld_graph=[site.crumb_ld([("Accueil", "/"), ("Montures", "/montures/"), (fr_l, f"/montures/{c}/")]),
                       site.itemlist_ld(items)],
