@@ -42,7 +42,9 @@ jobs:
           set -e
           test -f hosting/previews/dmoptic/index.html   || { echo "index.html manquant"; exit 1; }
           test -f hosting/previews/dmoptic/sitemap.xml  || { echo "sitemap.xml manquant"; exit 1; }
-          test -f hosting/previews/dmoptic/_redirects   || { echo "_redirects manquant"; exit 1; }
+          # Pas de test sur _redirects : ce fichier n'existe plus (Workers n'accepte que des
+          # chemins relatifs, et une redirection d'hôte ne s'y écrit pas — voir wrangler.toml).
+          test -f hosting/previews/dmoptic/_headers     || { echo "_headers manquant"; exit 1; }
           test -f wrangler.toml                         || { echo "wrangler.toml manquant"; exit 1; }
           n=$(find hosting/previews/dmoptic -type f | wc -l)
           echo "fichiers à publier : $n"

@@ -97,14 +97,18 @@ Cloudflare. La capture *Security Overview* du 22/10 la contredit :
    sitemap a été soumis sur `www` alors que ses 48 URL pointent l'apex, Google lit un fichier qui
    déclare un autre domaine que celui de la propriété. C'est une cause classique d'erreur de lecture.
 
-**Ce qui a été corrigé côté site (22/10) :** le build écrit maintenant un fichier `_redirects` qui
-renvoie **`www` → apex en 301**. Le site n'aura plus qu'une seule adresse. Il prend effet au prochain
-envoi du zip.
+**Ce qui a été corrigé côté site (22/10, puis corrigé une seconde fois) :** un fichier `_redirects`
+renvoyant `www` → apex avait été ajouté au build. **Il a fait échouer le déploiement Cloudflare**
+(`Only relative URLs are allowed`, code 100324) : les Workers n'acceptent que des chemins relatifs dans
+ce fichier, et `_redirects` ne compare jamais les hôtes. Le fichier est **retiré**. La redirection se
+fait dans la zone : **Cloudflare → Rules → Redirect Rules** (modèle « Redirect from WWW to root »),
+voir `launch/DEPLOIEMENT-CLOUDFLARE-2026-10-22.md` §3 ter. Le `canonical` de chaque page pointe déjà
+l'apex, donc les moteurs consolident même sans cette règle.
 
 ### Où cliquer, dans l'ordre (10 minutes)
 
 1. **Cloudflare → Workers & Pages → projet du site → Create deployment → upload** : déposer
-   `dmopticsarl.zip` (182 entrées). C'est ce qui met en ligne `/en/`, le `srcset` et le `_redirects`.
+   `dmopticsarl.zip` (182 entrées). C'est ce qui met en ligne `/en/` et le `srcset`.
 2. Vérifier ensuite `https://dmoptiquesarl.com/en/` (doit afficher l'anglais) et
    `https://www.dmoptiquesarl.com/` (doit **rediriger** vers l'apex).
 3. **Search Console → Sitemaps** : supprimer l'entrée en erreur, puis saisir **`sitemap.xml`**

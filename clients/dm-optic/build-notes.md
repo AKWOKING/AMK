@@ -1739,3 +1739,30 @@ Routes: Edit`). Un jeton personnalisé oblige à les retrouver à la main, et un
 « Authentication error » qui ne dit pas lequel manque. Et surtout : **ce jeton n'est pas nécessaire**
 tant qu'on reste sur Workers Builds — il ne sert qu'à la publication depuis GitHub Actions.
 
+## 22/10 (20) — `_redirects` a cassé le déploiement ; il est retiré
+
+**Le journal de build a parlé.** Workers Builds fonctionne (clone, `wrangler` 4.151.3, assets téléversés
+— 180 déjà en place, `+ /robots.txt`), puis échoue à la création de **version** :
+
+```
+Invalid _redirects configuration:
+Line 1: Only relative URLs are allowed. [code: 100324]
+```
+
+**Mon erreur :** j'ai écrit `https://www.dmoptiquesarl.com/* https://dmoptiquesarl.com/:splat 301` sur la
+foi de la documentation « Cloudflare Pages ». Or **Workers n'accepte que des chemins relatifs**, et
+surtout **`_redirects` ne compare jamais les hôtes** : une redirection d'hôte ne peut pas s'y écrire,
+quelle que soit la syntaxe. Un fichier qui n'aurait jamais pu fonctionner, et qui a bloqué le site trois
+déploiements de suite.
+
+**Retiré** du générateur et du dossier publié. Zip : **182 entrées** (sha `a07ad7c2a0c0a30e…`). La
+redirection `www` → apex se règle dans la zone (**Rules → Redirect Rules**, modèle « Redirect from WWW to
+root ») — ce n'est pas bloquant, le `canonical` pointe déjà l'apex.
+
+**Effet de bord à retenir :** quand la création de version échoue, les assets sont quand même
+téléversés, mais **le site en ligne ne bouge pas**. C'est ce qui donnait « le build ne se lance pas »
+alors qu'il se lançait très bien.
+
+**Sécurité :** le jeton API a été collé en clair dans la conversation → à rouler immédiatement. Il n'est
+de toute façon pas nécessaire à Workers Builds.
+

@@ -85,14 +85,13 @@ HEADERS = """/*
   Permissions-Policy: camera=(), microphone=(), geolocation=()
 """
 
-# 22/10 — une seule adresse pour le site. www.dmoptiquesarl.com repond aujourd'hui la copie
-# exacte du site, avec un canonical vers l'apex : Google consolide, mais c'est une ambiguite
-# gratuite — et c'est le genre d'ecart qui explique un sitemap « lu » sur un hote et pas sur
-# l'autre. Cloudflare Pages applique ce fichier avant de servir l'asset ; une regle invalide est
-# ignoree, pas fatale.
-REDIRECTS = """https://www.dmoptiquesarl.com/* https://dmoptiquesarl.com/:splat 301
-"""
-
+# 22/10 (soir) — PAS de fichier `_redirects`. Cloudflare Workers n'accepte que des chemins RELATIFS
+# dans ce fichier : « Invalid _redirects configuration: Line 1: Only relative URLs are allowed »
+# (code 100324), et le déploiement échoue — vérifié dans le journal de build du 22/10.
+# Surtout : `_redirects` ne compare que des CHEMINS, jamais des hôtes ; une redirection
+# www.dmoptiquesarl.com → dmoptiquesarl.com n'y a donc pas sa place, quelle que soit la syntaxe.
+# La redirection www se fait au niveau de la zone : Cloudflare → Rules → Redirect Rules.
+# (Le canonical vers l'apex reste la ceinture de sécurité pour les moteurs.)
 V2_CSS = """
 /* ── Pages v2 (D3, 20/10) : même identité, profondeur en plus ── */
 .v2-main section{padding-top:44px;padding-bottom:44px}
@@ -902,7 +901,6 @@ def main():
 '''
     (OUTDIR / "404.html").write_text(page404, encoding="utf-8")
     (OUTDIR / "_headers").write_text(HEADERS, encoding="utf-8")
-    (OUTDIR / "_redirects").write_text(REDIRECTS, encoding="utf-8")
 
     # ── Miroir anglais ──────────────────────────────────────────────────────────────────────────
     for path, en_title, en_desc in site.pairs:

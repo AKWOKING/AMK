@@ -24,3 +24,8 @@ directory = "./hosting/previews/dmoptic"
 # Une adresse inconnue sert 404.html (présent dans le dossier) : c'est la page
 # personnalisée déjà testée en ligne le 21/10.
 not_found_handling = "404-page"
+
+# Pas de fichier _redirects dans le dossier publié : Workers n'y accepte que des
+# chemins relatifs (« Only relative URLs are allowed », code 100324) et ne compare
+# jamais les hôtes. La redirection www → apex se règle dans la zone :
+# Cloudflare → Rules → Redirect Rules. Voir launch/DEPLOIEMENT-CLOUDFLARE-2026-10-22.md §3 ter.

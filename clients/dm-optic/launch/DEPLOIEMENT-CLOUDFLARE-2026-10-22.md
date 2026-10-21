@@ -94,30 +94,71 @@ journal y est lisible, contrairement à l'écran d'upload manuel.
 
 ---
 
-## 3 bis · Le premier build n'a pas pris — que regarder (22/10, après 6 min)
+## 3 bis · Le build tourne, et il échoue sur une seule ligne (22/10, journal de build)
 
-**Constat mesuré :** `https://dmoptiquesarl.com/en/` répond encore la page **404**. Le site en ligne est
-donc toujours l'ancienne version : **aucun déploiement n'a abouti**, ni réussi. Ce n'est pas une
-hypothèse, c'est le test.
+**Ce que le journal montre, et qui est une bonne nouvelle :** le build se déclenche, `wrangler` s'installe,
+les assets se téléversent (`180 already uploaded`, `+ /robots.txt`)… puis **la création de la version
+échoue** :
 
-**Où lire la réponse, en 30 secondes :** Cloudflare → Workers & Pages → **dmoptiquesarl** → onglet
-**Deployments** (à côté de *Metrics*). Chaque ligne porte un statut ; un échec ouvre un journal où la
-cause est écrite en clair. **C'est ce journal qu'il faut copier** — l'écran d'envoi manuel, lui, ne
-disait rien ; celui-ci parle.
+```
+Invalid _redirects configuration:
+Line 1: Only relative URLs are allowed. [code: 100324]
+Failed: error occurred while running deploy command
+```
 
-Les quatre causes possibles, dans l'ordre de probabilité, et leur correction :
+**Deux vérités que ça établit :**
 
-| # | Ce que dit le journal | Cause | Correction |
-|---|---|---|---|
-| 1 | **aucune ligne de build** (onglet vide) | Le `push` n'a déclenché personne : *Build watch paths* ne correspond pas au chemin modifié, ou la branche de production n'est pas `arena/2fffee3b-amk`. | *Settings → Build* : vérifier la branche, **vider Build watch paths** (ou y mettre `hosting/previews/dmoptic/**`), puis **Retry deployment**. |
-| 2 | `Could not resolve ... wrangler` / `npx` introuvable | Aucun `package.json` à la racine : `npx` tente de résoudre le paquet et échoue selon la version de Node de l'image. | Mettre **Deploy command** = `npx --yes wrangler@latest deploy`. |
-| 3 | `Authentication error` / `not authorized` | L'intégration GitHub n'a pas les droits sur le compte Workers. | *Settings → Build → Manage* (ou *Disconnect* puis *Connect*), réautoriser en cochant **tous les dépôts** et les droits Workers. |
-| 4 | `name` / `worker not found` / un second Worker apparaît | `name` dans `wrangler.toml` ≠ nom du Worker. | Il vaut `dmoptiquesarl` depuis le commit `9f5c26c` ; si un Worker en double est apparu, supprimer le doublon, pas l'original. |
+1. Workers Builds **fonctionne** : dépôt, branche, build command, deploy command, tout est branché.
+2. Le coupable est **mon `_redirects`**, pas ta configuration. Il contenait
+   `https://www.dmoptiquesarl.com/* https://dmoptiquesarl.com/:splat 301` — or **Workers n'accepte que
+   des chemins relatifs** dans ce fichier, et surtout **`_redirects` ne compare jamais les hôtes** : une
+   redirection `www` → apex ne peut pas s'y écrire, quelle que soit la syntaxe. C'était une erreur de ma
+   part, appuyée sur la documentation « Pages » et non sur celle des « Workers ».
 
-**Dans tous les cas :** après correction, *Deployments → **Retry deployment*** relance sans nouveau
-commit. Et si le tableau de bord refuse encore, la route C (§ route C, `npx wrangler deploy` depuis un
-ordinateur) publie le même dossier avec le même fichier de configuration — c'est le même travail, fait
-hors du navigateur.
+**Corrigé (commit à venir) :** le fichier `_redirects` est **supprimé** du site et du générateur. Le
+déploiement ne peut plus échouer pour cette raison. Le zip repasse à **182 entrées**.
+
+> **Détail à garder en tête :** les assets avaient bien été téléversés avant l'échec (180 fichiers
+> « already uploaded »), mais **la version n'a jamais été créée** — donc le site en ligne n'a pas bougé.
+> C'est exactement ce qu'on observait : `/en/` en 404, `/montures/` à l'ancienne version.
+
+---
+
+## 3 ter · La redirection www → apex se fait dans Cloudflare, pas dans le site
+
+`_redirects` ne peut pas la faire. La bonne place est la **zone**, et c'est trois clics :
+
+1. Cloudflare → **dmoptiquesarl.com** → **Rules** → **Redirect Rules** → **Create rule**.
+2. **When incoming requests match** → *Custom filter expression* :
+   - Field **Hostname** · Operator **equals** · Value `www.dmoptiquesarl.com`
+3. **Then** → Type **Static** · URL `https://dmoptiquesarl.com` · Status **301** ·
+   cocher **Preserve query string** → **Deploy**.
+
+Alternative en un clic : dans l'écran de création, l'onglet **Templates** propose
+**« Redirect from WWW to root »** — c'est exactement cette règle.
+
+**Si tu ne la fais pas :** le site reste accessible sur les deux adresses, et le `canonical` de chaque
+page pointe déjà l'apex — Google consolide. Ce n'est donc **pas bloquant** ; c'est du confort et de la
+propreté.
+
+---
+
+## 3 quater · 🔐 Le jeton API que tu as collé dans le chat est à remettre à zéro
+
+Le jeton `cfut_HicH…` a été **copié en clair dans la conversation**. Un jeton vaut un mot de passe : il
+donne le droit de publier sur le compte Workers.
+
+**À faire maintenant, dans cet ordre :**
+
+1. Cloudflare → **My Profile → API Tokens** → ligne `deploy-dmoptique-github` → **Roll** (ou *Delete*).
+   Le jeton affiché devient inutilisable immédiatement.
+2. **Create Token → Edit Cloudflare Workers** → *Use template* → même nom, mêmes ressources →
+   **Create** → **ne le colle nulle part dans un chat**.
+3. Il ne va qu'à **un seul endroit** : GitHub → dépôt AMK → *Settings → Secrets and variables → Actions*
+   → `CLOUDFLARE_API_TOKEN`. GitHub le chiffre, et il n'est plus jamais réaffiché.
+
+**Et rappelle-toi : ce jeton n'est pas nécessaire pour l'étape 3.** Workers Builds publie déjà sans lui.
+Il ne servira qu'à la publication depuis GitHub Actions (§4).
 
 ## 4 · Une fois pour toutes : le workflow `arena/**`
 
@@ -211,7 +252,8 @@ C'est la seule différence entre les deux méthodes, et elle vaut les 4 minutes 
 - **La branche ne se configure pas dans `wrangler.toml`.** Elle se règle dans Cloudflare (Workers
   Builds) ou dans le workflow GitHub. Écrire une branche dans le `.toml` donnerait l'illusion d'un
   réglage — et c'est précisément le piège à éviter.
-- **`_redirects` et `_headers` sont pris en charge** par les Workers avec assets (2 000 redirections,
-  100 règles d'en-têtes) : la redirection `www` → apex survivra.
+- **`_headers` est pris en charge** par les Workers avec assets. **`_redirects` aussi — mais uniquement
+  avec des chemins relatifs** : aucune redirection d'hôte ne peut y être écrite. La redirection
+  `www` → apex se fait dans *Rules → Redirect Rules* (§3 ter).
 - **`wrangler` publie en une commande et dit ce qui ne va pas**, là où l'écran d'upload tournait sans
   rien dire.
