@@ -24,7 +24,29 @@ Après création : **rien de publié** — capture de l'écran profil → suite 
 Business Account, catégorie, bio « Opticien à Bonabéri, Douala · inscrit à l'ONOC. WhatsApp :
 656 122 239. », avatar = même marque que Facebook, puis configuration du premier contenu).
 
-## Identité (pré-remplie)
+## Identité (mise à jour du 21/10 — compte CRÉÉ par King, capture)
+
+**Créé le 21/10** : nom affiché `DM OPTIQUE SARL` (= le nom de la fiche Google — même nom partout,
+conforme §3 de la recherche W43), pseudo `@dmoptique.bonaberi237` (variante 237, la 1ʳᵉ était
+prise), logo en avatar + story. 0 abonnement, 0 abonné — normal à J0.
+
+**Bio — en attente de la décision de King** (limite TikTok : 80 caractères). Objection de King du
+21/10 (la bio d'origine sonnait comme l'attestation d'une personne alors que le compte est celui
+du cabinet) : **retenue** — et recoupée par la recherche (`sales/research/2026-W43-techniques.md`
+§12) : la bio dit ce que le VISITEUR veut. Fait établi au passage : l'inscription ONOC est celle
+du cabinet (annuaire ONOC : DM OPTIQUE #102, 021/2016), pas le diplôme de M. Domche — elle reste
+une preuve d'autorité sur le site et la fiche Google.
+
+| # | Bio proposée | Caractères | Angle |
+|---|---|---|---|
+| A | `Voir mieux, à Bonabéri. Examen de vue · montures · WhatsApp : 656 122 239` | 74 | Désir du client d'abord |
+| B | `Opticien à Bonabéri · examen de vue & montures · WhatsApp 656 122 239` | 70 | Recherche locale d'abord |
+| C | `Inscrit à l'ONOC · Bonabéri · examen de vue & montures · WhatsApp 656 122 239` | 78 | Autorité d'abord |
+
+Recommandation de la recherche : **A**. Décision finale = King ; ensuite seulement : passage en
+Business Account, catégorie, « I'm interested in », et le premier contenu (§Premier contenu).
+
+## Identité (pré-remplie le 03/10 — conservée pour la marque typographique)
 - **Nom :** `@dmoptique.bonaberi` · affichage `DM OPTIQUE – Bonabéri`
 - **Bio :** `Opticien à Bonabéri, Douala · inscrit à l'ONOC. WhatsApp : 656 122 239.`
 - **Profil :** même marque typographique que Facebook (une maison, une signature).

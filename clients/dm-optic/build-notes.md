@@ -1201,3 +1201,24 @@ relecture statut sitemap (attendu « Success — 48 »).
 
 **Dépôt :** 10ᵉ wipe du bac (même restauration base `b134dd2` + webp orphelins) → remède debout,
 zéro perte.
+
+## 21/10 (2) — TikTok CRÉÉ (capture) ; recherche marketing W43 livrée ; bio : 3 candidats, décision King
+
+**Compte créé par King** (capture) : `DM OPTIQUE SARL` @`dmoptique.bonaberi237`, logo avatar +
+story, 0/0/0. Le nom affiché = le nom de la fiche Google (cohérence inter-plateforme — validé
+par la recherche §3). Rien publié. **Objection bio de King** : l'ancienne bio (« inscrit à
+l'ONOC ») sonnait personnel — fait recoupé : l'ONOC est l'inscription du SARL (#102, 021/2016,
+annuaire recoupé en octobre), pas le diplôme de M. Domche ; la bio est réécrite du côté client
+quoi qu'il en soit (§12 de la recherche).
+
+**Recherche ordonnée par King (verbatim conservé en tête de fichier), livrée :**
+`sales/research/2026-W43-techniques.md` — 11 frameworks étudiés un par un (Purple Cow,
+StoryBrand SB7, Cialdini 7, LF8, biais cognitifs, différenciation, USP, preuve sociale/autorité,
+branding, psychologie, digital marketing), chacun avec source datée + application DM, puis la
+synthèse : **« le client ne veut pas des lunettes »** — il veut voir sa vie normale, être pris
+au sérieux, ne pas se faire avoir, protéger ses enfants, être bien vu. 7 décisions en découlent
+(avis Google n°1 — message parti ce jour ; USP « le seul à Bonabéri dont vous voyez toutes les
+montures avant de vous déplacer » ; client-héros dans chaque vidéo ; angle enfants ; effets
+leurre/fausse rareté récusés ; peak-end ; rien ne change à l'identité figée — la recherche la
+valide). **La création TikTok reprend après la décision de King sur la bio** (candidats A/B/C
+dans le SETUP, recommandation A, 74/70/78 caractères).
