@@ -23,6 +23,12 @@ photo ne montre.
 **Relance :** `python3 clients/dm-optic/launch/social/build_frame_cards.py` (script versionné,
 polices du site, contrôle automatique de largeur des titres).
 
+**Fiches en ligne (vérifiées le 21/10 sur le domaine) :**
+
+- F01 → `https://dmoptiquesarl.com/montures/femmes/f01-ovale-doree/`
+- H08 → `https://dmoptiquesarl.com/montures/hommes/h08-double-pont-aviateur-noir-et-dore/`
+- E16 → `https://dmoptiquesarl.com/montures/enfants/e16-carree-bleue/`
+
 **Ordre d'envoi :** 1 → 2 → 3. Chaque carte porte le même gabarit, donc le carrousel se lit comme une
 série, pas comme trois images.
 

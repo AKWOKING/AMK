@@ -103,8 +103,12 @@ def build(card, frames):
     im = Image.open(src).convert("RGB")
 
     canvas = Image.new("RGB", (W, H), CREAM)
-    # bande photo : la photo garde ses proportions (4:3) et son propre fond crème
-    canvas.paste(im.resize((W, BAND), Image.LANCZOS), (0, 0))
+    # bande photo : la photo garde ses proportions (4:3) et son propre fond crème.
+    # On la réduit de 6 % et on la centre : le fond de prise de vue (246,236,225) est
+    # identique à CREAM, donc la marge est invisible — et aucune branche ne touche le bord.
+    scale = 0.94
+    pw, ph = int(W * scale), int(BAND * scale)
+    canvas.paste(im.resize((pw, ph), Image.LANCZOS), ((W - pw) // 2, (BAND - ph) // 2))
     d = ImageDraw.Draw(canvas)
 
     kicker = ImageFont.truetype(ttf("ibm-plex-mono-latin-500-normal.ttf"), 21)
