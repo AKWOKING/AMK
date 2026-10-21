@@ -226,8 +226,9 @@ message pré-rempli pour mesurer.
 
 - [ ] **`@username`** : `@dmoptiquesarl`, repli `@dmoptique.bonaberi` — **c'est lui qui donne une URL
       propre** (le lien numérique ne va ni sur le site, ni sur la fiche Google)
-- [ ] **Couverture** : `cover-1640x624.jpg` (la capture ne montre qu'un bandeau marine — vérifier que
-      l'image est bien chargée, puis regarder le rendu mobile)
+- [ ] **Couverture** : ✅ posée le 21/10, **mais ce n'est pas `cover-1640x624.jpg`** — la couverture en
+      ligne est une bannière de marque (logo + nom + promesse + WhatsApp), sans photo du cabinet. Décision
+      à prendre : la garder, ou passer à l'hybride photo + promesse. Comparatif : `CHECKLIST-LIVRAISON-2026-10.md` §7
 - [ ] **Bouton** « Envoyer un message WhatsApp » → `wa.me/237656122239` + message pré-rempli (§2)
 - [ ] **Horaires** : lundi–samedi, examen 8h30–13h00, autres besoins 8h30–17h30, dimanche fermé
       (la page affiche « Closed now » : vérifier que ce n'est pas « horaires absents »)

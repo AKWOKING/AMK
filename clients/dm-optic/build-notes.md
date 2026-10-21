@@ -1425,3 +1425,28 @@ King sur Cloudflare, et le banc d'essai Vercel sera redéployé au prochain tour
 **Bonus non appliqué :** le `place_id` donne aussi un **lien d'avis direct**
 (`search.google.com/local/writereview?placeid=…`). Il est en annexe du message d'avis — **pas dans le
 message approuvé**, qui ne bouge pas sans l'accord de King.
+
+## 21/10 (8) — « Est-ce qu'il reste quelque chose ? » : la réponse en une page
+
+King a le site, la page Facebook et TikTok. La question mérite une réponse qui ne mélange pas **ce qui
+reste à produire** et **ce qui reste à faire**.
+
+**Rien de neuf à produire pour le contrat.** Le Pack Global (site + mise en place FB/TikTok + gestion
+mensuelle) est construit. Ce qui reste, ce sont des **gestes** — et surtout **trois preuves** qui
+conditionnent le solde de 75 000 : les comptes au nom du client, le transfert écrit, et le site sur **son**
+domaine.
+
+D'où `launch/CHECKLIST-LIVRAISON-2026-10.md` : inventaire de ce qui est livré et prouvable, reste par
+propriétaire (AMK 4 · King 8 · cabinet 3), **PV de remise** à remplir, et cinq vérifications de 60 secondes
+que King peut faire seul — dont deux qui prouvent que le **dernier zip** est bien en ligne (le bouton
+« Itinéraire » qui était caché, et « Ouvrir dans Maps » qui doit ouvrir **la** fiche).
+
+**Un écart signalé, pas corrigé :** la couverture Facebook en ligne n'est **pas** celle du dépôt. King a
+posé une bannière de marque — logo en grand, nom, promesse, pastille WhatsApp — là où l'asset du dépôt
+montre la **photo réelle du mur de montures**. Les deux défendent des choses différentes : l'une prouve la
+marque, l'autre prouve **que le lieu existe**. Comparatif et recommandation (hybride : photo + promesse)
+dans la checklist §7 ; décision à King, ce n'est pas bloquant.
+
+**Détail qui compte :** la bannière en ligne annonce « **Réparation** ». C'est cohérent avec les six
+services du site, mais **aucun des six n'est confirmé par le cabinet** (item 8 de la checklist). On ne
+laisse pas un service affiché sans confirmation.
