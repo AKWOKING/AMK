@@ -208,7 +208,54 @@ def build_vertical(card, frames):
     return out
 
 
+def build_cover(frames):
+    """Couverture du 1er TikTok — 1080x1920, F24 en main (photo réelle), accroche du script.
+    Zones sûres : la grille de profil de TikTok recadre au CENTRE (1080x1080 autour de y=1920/2),
+    donc tout ce qui doit être lu reste entre y=420 et y=1500."""
+    f = frames["F24"]
+    src = os.path.join(SITE, f["photos"][0].lstrip("/"))
+    im = Image.open(src).convert("RGB")
+    Wv, Hv = 1080, 1920
+    canvas = Image.new("RGB", (Wv, Hv), CREAM)
+    # bande photo 4:3 (1080x810) posée à y=300 : la monture occupe le haut du carré central
+    canvas.paste(im.resize((1080, 810), Image.LANCZOS), (0, 300))
+    d = ImageDraw.Draw(canvas)
+
+    kicker = ImageFont.truetype(ttf("ibm-plex-mono-latin-500-normal.ttf"), 22)
+    title_f = ImageFont.truetype(ttf("schibsted-grotesk-latin-700-normal.ttf"), 84)
+    sub_f = ImageFont.truetype(ttf("ibm-plex-sans-latin-400-normal.ttf"), 34)
+    micro_f = ImageFont.truetype(ttf("ibm-plex-mono-latin-500-normal.ttf"), 20)
+
+    left, right_edge = 84, Wv - 84
+    spaced(d, (left, 196), "DM OPTIQUE SARL  ·  BONABÉRI", kicker, BRAND, tracking=4.2)
+    d.rectangle([left, 240, left + 56, 243], fill=BRAND)
+
+    y = 1180
+    for line in ["Vous éloignez", "votre téléphone", "pour lire ?"]:
+        wpx = d.textlength(line, font=title_f)
+        assert wpx <= right_edge - left, f"titre trop large ({wpx:.0f}px) : {line}"
+        d.text((left, y), line, font=title_f, fill=INK)
+        y += 96
+
+    y += 22
+    for line in wrap(d, "F24 · carrée écaille — en stock au cabinet", sub_f, right_edge - left):
+        d.text((left, y), line, font=sub_f, fill=MUTED)
+        y += 44
+
+    d.text((left, 1730), "Opticien optométriste · inscrit à l’ONOC · WhatsApp 656 122 239",
+           font=micro_f, fill=MUTED)
+
+    out = os.path.join(OUT, "tiktok-cover-f24.jpg")
+    canvas.save(out, "JPEG", quality=90, optimize=True, progressive=True)
+    print(f"{os.path.relpath(out, ROOT):60s} {os.path.getsize(out)//1024:4d} Ko  couverture TikTok")
+    return out
+
+
 def main():
+    if "--cover" in sys.argv:
+        frames = {f["code"]: f for f in json.load(open(os.path.join(ROOT, "clients/dm-optic/site/frames.json"), encoding="utf-8"))}
+        build_cover(frames)
+        return
     vertical = "--vertical" in sys.argv
     os.makedirs(os.path.join(OUT, "vertical") if vertical else OUT, exist_ok=True)
     frames = {f["code"]: f for f in json.load(open(os.path.join(ROOT, "clients/dm-optic/site/frames.json"), encoding="utf-8"))}

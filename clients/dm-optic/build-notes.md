@@ -1673,3 +1673,17 @@ maintenant d'adresse, ce qui est la seule façon d'avoir deux URL indexables.
 document). Résultat sur 97 pages : tout à zéro sauf le fil d'Ariane de la 404 (voulu, elle est en
 `noindex`). Livraison : zip 182 entrées.
 
+## 21/10 (16) — le kit du premier TikTok
+
+Le script existait, le tournage était fait ; il manquait tout ce qui se colle **autour** de la vidéo.
+Trois pièces produites : la **couverture 1080×1920** (`build_frame_cards.py --cover`, la F24 réelle,
+l'accroche du script, texte placé dans le carré central pour survivre au recadrage de la grille de
+profil), les **sous-titres manuels** (`.srt`, 8 blocs, découpe aux frontières de phrase, jamais l'auto)
+et une **fiche de publication** qui dit quoi faire à 5h30, dans l'ordre, avec la légende, le commentaire
+épinglé et le message de réponse qui rend la conversation attribuable.
+
+**Un défaut trouvé au passage, à trancher :** la **seconde photo de la fiche F24** montre une monture
+translucide multicolore, pas l'écaille à détail doré. La fiche affiche donc deux montures différentes —
+c'est la règle « le texte colle à la photo » qui tombe. La vidéo n'est pas concernée (le plan 3a
+n'utilise que la bonne photo) ; c'est le site qu'il faut corriger.
+

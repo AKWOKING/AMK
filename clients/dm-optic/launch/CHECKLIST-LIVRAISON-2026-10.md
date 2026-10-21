@@ -43,7 +43,7 @@
 | 2 | ~~Facebook : `@username`~~ → **impossible** : la page n'en propose pas | ✅ constaté — l'URL reste numérique, donc **on ne l'affiche nulle part** | rien |
 | 3 | **Facebook : bouton WhatsApp** (horaires ✅ posés le 21/10) | réglage de la page | conversions |
 | 4 | ~~TikTok : bio B~~ → ✅ **posée le 21/10** | — | fait |
-| 5 | **TikTok : publication programmée le 22/10 à 5h30** (tournage fait) | — | la campagne démarre |
+| 5 | **TikTok n°1 : le kit est prêt** — couverture 1080×1920 (`social/cards/tiktok-cover-f24.jpg`), sous-titres manuels (`.srt`), légende, commentaire épinglé, 6 gestes du matin → `content/month1/w1/tiktok-01-PUBLICATION.md` | montage + publication 22/10 **5h30** | la campagne démarre |
 | 6 | **Facebook : publier le 1er post** (`SETUP-FACEBOOK.md` §6) | ton feu vert | — |
 | 7 | **Search Console : 4 indexations + re-check sitemap** | ton compte | visibilité Google |
 | 8 | **Fiche Google : photos, services, profils sociaux** — description ✅ (version A), **posts ✅ 4 programmés le 21/10** | ton accès | conversion locale |
