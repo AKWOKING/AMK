@@ -304,7 +304,8 @@ au mois 2**. ⚠️ C4 exige 2–4 photos : elle n'est **pas** un repli sans-pho
 
 | Fichier | Contenu |
 |---|---|
-| `w1/ugc-script.md` | **La confiance** — à qui confier ses yeux |
+| `w1/ugc-script.md` | **La confiance** — à qui confier ses yeux *(V1, conservée ; n'est plus le premier post)* |
+| `w1/tiktok-01.md` | **Le premier TikTok** — plan de tournage 22 s, monture réelle, sous le gabarit W43 (validé King 21/10) |
 | `w2/ugc-script.md` | **L'examen** — ce qui se passe, quoi apporter |
 | `w3/ugc-script.md` | **La monture** — pourquoi elle reste dans l'étui |
 | `w4/ugc-script.md` | **La protection** — écran, conduite, soleil |

@@ -1,5 +1,11 @@
 # UGC IA — Semaine 1 · « À qui confier vos yeux ? »
 
+> **⚠️ Ce script n'est plus le PREMIER post TikTok.** Le 21/10/2026, King a validé le plan
+> `content/month1/w1/tiktok-01.md` (gabarit W43 : le cas client d'abord, une monture réelle, la sortie
+> honnête). Cette V1 reste **valable comme script UGC IA** si King veut la produire ; elle est
+> conservée intégralement, sans modification, conformément à la règle « on ne réécrit pas un
+> script approuvé en silence ».
+
 ```
 Status: APPROVED (King, 02/10/2026) — prêt pour le producteur   ·  Updated: 2026-10-02
 Audience: un habitant de Bonabéri/Douala qui cherche un opticien et ne sait pas à qui se fier

@@ -303,3 +303,33 @@ Search Console (secondaires, sans analytics tant que le point légal n'est pas t
 montures — R2). Test conditionné à l'accord du client : 2 clips de M. Domche (service/processus,
 20–34 s verticale). Arbitrage fin de mois sur achèvement + conversations, consigné ici.
 Aucun patient filmé, aucun témoignage sans accord écrit.
+
+## 10 · Porte W43 — appliquée à chaque pièce du mois 1 (ruling King, 21/10/2026)
+
+> Source : `sales/research/2026-W43-techniques.md` §12 (la synthèse) et §12b (le gabarit) ;
+> règle debout : `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md`. Ne réécrit pas les semaines
+> 1–4 : **il décide dans quel ordre elles se publient et ce que chaque pièce dit en premier.**
+
+**Ce qui change par rapport au plan du 01/10 :**
+
+| Avant | Après (21/10) |
+|---|---|
+| Semaine 1 = « être trouvable », on parle du registre ONOC en premier | **Le premier post parle du client** (son téléphone, sa fin de journée) ; l'ONOC arrive en preuve, au beat 4 |
+| UGC IA produit en externe, 4 scripts | **Le premier TikTok est réel** : 5 plans tournés au cabinet, une monture du stock, aucune image IA |
+| Le contenu montrait des objets | **Le contenu montre un objet réel ET sa fiche en ligne** — la vache pourpre : les 40 montures visibles avant de se déplacer |
+| Pas de porte écrite entre script et tournage | **Six cases §12b à cocher** avant tout tournage ou publication |
+
+**Les six cases, apposées à chaque pièce (copier-coller en tête du script) :**
+
+```
+Porte W43 §12b — [ ] cas client d'abord · [ ] un seul axe · [ ] objet réel · [ ] preuve citée une fois
+                 · [ ] sortie honnête · [ ] un seul CTA
+```
+
+**Le premier post :** `content/month1/w1/tiktok-01.md` — validé par King le 21/10, à tourner avant le
+27/10. Les scripts W1–W4 du 02/10 restent au dossier (V1 du W1 conservée en annexe) ; ils ne sont plus
+l'ordre de publication.
+
+**Ce que la porte ne change pas :** R1 (aucun symptôme nommé), R2 (aucun visage IA), R3 (surréel
+interdit sur les verres), R4 (structure oui, assets non), les horaires vérifiés (examen 8h30–13h00,
+lundi à samedi), l'interdiction de publier un prix, la cadence 2/semaine.

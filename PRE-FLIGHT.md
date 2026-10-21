@@ -63,6 +63,7 @@ Quand une règle change ou qu'un ruling est donné, cette table dit quels fichie
 | **Audit/vérification = skills ECC sélectifs en appui (ruling King 20/10, §1f⑥)** | `PRE-FLIGHT.md` §1f + §1b · `tools/ecc/README.md` · skills installés `~/.agents/skills/{accessibility,production-audit,verification-loop,security-review,seo,click-path-audit}/SKILL.md` (hors dépôt) · `tools/qa/` (les portiques maison font foi) · `clients/<client>/build-notes.md` (score, preuves, blockers) |
 | **Recherche UX/UI consultable = UI/UX Pro Max en appui (ruling King 20/10, §1f⑦)** | `PRE-FLIGHT.md` §1f + §1b · `tools/ui-ux-pro-max/README.md` · skill installé `~/.agents/skills/ui-ux-pro-max/SKILL.md` (hors dépôt) · `AMK-DESIGN-SKILLS.md` (lois maison, gagnent en cas de conflit) · `clients/<client>/build-notes.md` (grilles consultées, avis écartés) |
 | **Détection d'anti-patterns UI = Impeccable en portique d'appui (ruling King 20/10, §1f⑧)** | `PRE-FLIGHT.md` §1f + §1b · `tools/impeccable/README.md` · skill installé `~/.agents/skills/impeccable/SKILL.md` + moteur `~/.impeccable/bin/` (hors dépôt) · `tools/qa/` (les portiques maison font foi) · `clients/<client>/build-notes.md` (findings vérifiés, faux positifs nommés) |
+| **Gabarit W43 = porte de tout contenu client (ruling King 21/10, « implement »)** | `sales/research/2026-W43-techniques.md` **§12 + §12b** (la règle et le gabarit : 5 beats · 7 interdits · 6 cases) · `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` (règle debout) · `clients/<client>/content-plan-*.md` et `posting-calendar*.md` (porte de chaque pièce) · `clients/<client>/content/**` (chaque script coche les 6 cases) · `content/scripts/README.md` + `CONTENT-LESSONS` §10/§12 (les portes maison restent supérieures) |
 | **Clôture debout : inventaire outils en ouverture + propositions/audit en fin de chaque réponse (ruling King 20/10, §1f⑨)** | `PRE-FLIGHT.md` §0 + §1f⑨ (la règle) · toute réponse de l'orchestrateur (en-tête enrichi + bloc final) · `ops/TOOL-SCAN.md` (l'inventaire consulté) · `clients/<client>/build-notes.md` (audits qui alimentent le bloc) |
 
 Si cette table ne suffit plus à suivre la propagation entre fichiers, c'est le déclencheur pour réévaluer un outil de graphe de connaissances (voir la décision Graphify dans `sales/Activity-Log.md`).
@@ -110,7 +111,7 @@ pré-vol charge, **en plus du dossier métier**, les sections pertinentes de la 
 | Task type | + knowledge base |
 |---|---|
 | **Sales / outreach / proposal** | §2, §8 |
-| **Content / script / video / caption** | §7, §8 · **vidéo : `content/strategy/VIDEO-PIPELINE-FLOW-2026-10.md` (pipeline Flow + ChatGPT, remplace `render.mjs` ; `render.mjs` = secours uniquement)** |
+| **Content / script / video / caption** | §7, §8 · **gabarit W43 : `sales/research/2026-W43-techniques.md` §12/§12b — à cocher avant d'écrire** · **vidéo : `content/strategy/VIDEO-PIPELINE-FLOW-2026-10.md` (pipeline Flow + ChatGPT, remplace `render.mjs` ; `render.mjs` = secours uniquement)** |
 | **Marketing / strategy** | §3, §5 |
 | **Ads / campaign** | `clients/<slug>/ads/campaign-brief.md` (quand il existe) + §4, §5 |
 | **Design / build** | §1 |

@@ -13,6 +13,25 @@
 
 ---
 
+## Amendement du 21/10/2026 — le calendrier réel (TikTok créé, premier post sous le gabarit W43)
+
+> Les dates du tableau ci-dessous supposaient un lancement le 12/10 : elles sont **dépassées** et
+> restent au dossier comme plan de référence. Ce qui est vrai aujourd'hui :
+
+| Fait | État |
+|---|---|
+| Compte TikTok | **créé** par King le 21/10 — `@dmoptique.bonaberi237`, nom affiché `DM OPTIQUE SARL`, logo + story, 0/0/0 |
+| Bio | **B retenue** : `Opticien à Bonabéri · examen de vue & montures · WhatsApp 656 122 239` (à poser — `launch/SETUP-TIKTOK.md`) |
+| Business Account + catégorie | à poser **avant** la première publication |
+| Premier contenu | **`content/month1/w1/tiktok-01.md`** — 22 s, 5 plans au cabinet, aucune image IA, validé par King le 21/10 |
+| Tournage | jeudi 22 ou vendredi 23/10, **avant 13h** (lumière de la vitrine) |
+| Publication | **mardi 27/10** — ou dès que le montage est relu, si King préfère ne pas attendre |
+| Deuxième contenu | vendredi 30/10 — carrousel « la vitrine par familles » **si les photos réelles sont au dépôt** ; sinon variante service (repli du 02/10) |
+
+**Le calendrier ne promet rien qu'on ne puisse produire.** Une pièce qui n'a pas ses photos réelles
+n'est pas publiée avec des illustrations : elle est remplacée par une variante service, et le report
+est écrit ici.
+
 ## 1 · Vue d'ensemble
 
 | Semaine | Mardi — UGC IA *(script uniquement)* | Vendredi — carrousel *(MP4 de bout en bout)* | Publicité |
@@ -271,6 +290,7 @@ totalement, C4 devient aussi une variante « service ».***
 | 8 | **Rien d'inventé n'est publié** — adresse, horaire, marque, assurance : confirmé ou absent |
 | 9 | **Tout vit dans le dépôt** — chaque légende et chaque script est un fichier versionné |
 | 10 | **Format carrousel** — vertical 9:16 · 1080×1920 · 30 fps · SAR 1:1 · H.264 |
+| 11 | **Porte W43 §12b** (ruling King 21/10) — cas client d'abord · un seul axe · objet réel · preuve citée une fois · sortie honnête · un seul CTA (`sales/research/2026-W43-techniques.md` §12b) |
 
 ---
 

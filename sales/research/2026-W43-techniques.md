@@ -234,16 +234,62 @@ recherche la confirme au lieu de la changer.)
 verrous client, la cadence 2/semaine (elle sert le biais de familiarité), le site (déjà
 StoryBrand-conforme).
 
+## 12b · Le gabarit DM — la porte de CHAQUE contenu client (ruling King 21/10)
+
+> **Ordre de King (21/10) : « implement » — la synthèse vit au dépôt et alimente chaque futur
+> contenu client.** Ce gabarit est la forme courte du §12 : cinq beats, sept interdits, six cases.
+> Il ne remplace aucune porte de la maison (`content/scripts/README.md`, `CONTENT-LESSONS` §10/§12) :
+> il passe **avant** elles, au moment d'écrire.
+
+| # | Beat | Durée | Ce qu'il fait | Ce qu'il ne fait jamais |
+|---|---|---|---|---|
+| 1 | **Le cas** | 0–3 s | une situation vécue, à la 2ᵉ personne, une seule idée ; le lieu à l'écran dès la frame 0 | commencer par notre nom, notre certificat, notre offre |
+| 2 | **Le miroir** | 3–6 s | ce que ça coûte dans la journée — sans nommer un symptôme, sans diagnostic | promettre un résultat médical |
+| 3 | **Le réel** | 6–14 s | un objet réel du cabinet (monture, verre, équipement) + **un seul** axe différenciant | montrer un faux produit, une image IA, deux axes à la fois |
+| 4 | **La preuve** | 14–17 s | un fait vérifiable (ONOC #102 · 021/2016, adresse, horaires), cité **une fois** | en faire un titre, un superlatif, une promesse |
+| 5 | **La sortie honnête** | 17–22 s | « si ça ne vous concerne pas, ne venez pas » + l'action + le numéro | un prix, une urgence inventée, un CTA multiple |
+
+**Les sept interdits (rappel du §12.6) :** fausse rareté · faux avis · superlatif non prouvé · promesse
+de résultat médical · concurrent nommé · effet leurre · deux axes dans la même vidéo.
+
+**La porte, à cocher avant tournage ou publication :**
+
+- [ ] le premier mot est **une situation du client**, pas notre nom
+- [ ] **un seul axe** par vidéo
+- [ ] l'objet montré **existe** (et, s'il est en ligne, sa fiche dit la même chose)
+- [ ] la preuve est **vérifiable** et citée une seule fois
+- [ ] la **sortie honnête** est dite (qui n'a pas besoin, on le lui dit)
+- [ ] **un seul** numéro / CTA, identique au site
+
+**Où le gabarit s'applique (câblage du 21/10, ruling King) :**
+
+| Fichier | Ce qu'il porte désormais |
+|---|---|
+| `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` | la règle debout : tout script client passe la porte §12b |
+| `clients/dm-optic/content-plan-month1.md` §10 | la porte appliquée au mois 1 (et le premier post réel) |
+| `clients/dm-optic/posting-calendar.md` §6 | les dix règles de publication + la porte §12b |
+| `clients/dm-optic/content/month1/w1/tiktok-01.md` | le premier contenu produit sous le gabarit |
+| `PRE-FLIGHT.md` §0d + table de routage | la ligne « gabarit W43 » → fichiers gouvernés |
+
+**Une porte qui ne se voit pas ne s'applique pas.** C'est pour ça que le câblage est écrit ici, dans le
+même fichier que la règle, et vérifié par la table §0d du PRE-FLIGHT.
+
 ## 13 · Bio TikTok — candidats (limite plateforme : 80 caractères, comptés)
 
 | # | Bio | Caractères | Angle |
 |---|---|---|---|
 | A | `Voir mieux, à Bonabéri. Examen de vue · montures · WhatsApp : 656 122 239` | 74 | Désir d'abord (§12) |
-| B | `Opticien à Bonabéri · examen de vue & montures · WhatsApp 656 122 239` | 70 | Recherche locale d'abord |
+| B | `Opticien à Bonabéri · examen de vue & montures · WhatsApp 656 122 239` | 69 | Recherche locale d'abord |
 | C | `Inscrit à l'ONOC · Bonabéri · examen de vue & montures · WhatsApp 656 122 239` | 78 | Autorité d'abord |
 
 Lecture de la recherche : A > B > C (le désir et le lieu vendent ; l'autorité se prouve dans
-les vidéos et la fiche Google, pas dans une bio de 80 signes). **Décision = King.**
+les vidéos et la fiche Google, pas dans une bio de 80 signes).
+
+> **Décision de King, 21/10/2026 : B retenue** — `Opticien à Bonabéri · examen de vue & montures ·
+> WhatsApp 656 122 239`. C'est la bio à poser (guide : `clients/dm-optic/launch/SETUP-TIKTOK.md`).
+> B gagne parce que le nom affiché `DM OPTIQUE SARL` ne dit pas le métier : la bio doit le dire, et
+> « opticien » est le mot que les gens tapent. Le désir (§12) est porté par le contenu, le pseudo et
+> la story ; la bio fait le travail de **recherche**.
 
 ## 14 · Sources (toutes lues le 21/10/2026)
 

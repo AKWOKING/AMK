@@ -53,7 +53,8 @@
 | **Vérification** | L'e-mail propriétaire est le sien ; notre accès est révocable par lui |
 | **⚠️ Ordre** | **Avant toute création.** Un compte créé sur nos identifiants est très difficile à rétrocéder |
 | **Décision** | Verrouillée par King — `dossier.md` §3.1 |
-| **État** | ☐ |
+| **État** | 🟠 **partiel (21/10)** — TikTok créé sur l'**email du cabinet** (`dmoptiquesarl@gmail.com`), donc l'identité de départ est bien celle du cabinet ; mais le **mot de passe est dans le gestionnaire de King** : M. Domche n'est pas encore propriétaire récupérable. **À faire :** partage de l'accès au client (email de récupération / code) et consignation écrite du transfert. Le compte Facebook garde le même critère. |
+| **Conséquence** | Tant que la ligne est 🟠, la rétrocession n'est pas prouvée. Ce n'est pas bloquant pour publier (le compte est au nom du cabinet), c'est bloquant pour la **livraison** (solde de 75 000 FCFA). |
 
 ---
 
@@ -267,3 +268,16 @@ plateforme, pas des fichiers décoratifs. Doc Cloudflare (Direct Upload, lu le 2
 - [ ] **Fiche Google Business** : URL du site = `https://dmoptiquesarl.com/`, nom et horaires
   identiques au site — la préparation `local-seo` est dans `launch/SETUP-GOOGLE-BUSINESS.md`.
 - [ ] Note datée dans `sales/Activity-Log.md`. Jugement SEO à 30 jours, pas avant.
+
+---
+
+## Suivi du 21/10/2026 — TikTok et avis Google
+
+| Fait | État | Où c'est écrit |
+|---|---|---|
+| Compte TikTok créé | ✅ `@dmoptique.bonaberi237` · `DM OPTIQUE SARL` · logo + story · 0/0/0 | `launch/SETUP-TIKTOK.md` |
+| Bio (candidat B) | ⬜ **décidée, pas encore posée** : `Opticien à Bonabéri · examen de vue & montures · WhatsApp 656 122 239` | `launch/SETUP-TIKTOK.md` § Bio |
+| Business Account + catégorie | ⬜ avant la première publication | `launch/SETUP-TIKTOK.md` § Business Account |
+| Premier contenu | ✅ script validé (21/10) · ⬜ tournage · ⬜ montage relu par King · ⬜ publication | `content/month1/w1/tiktok-01.md` |
+| Message « avis Google » à M. Domche | 🕘 **envoi 21/10 à 09:00** (pas avant) · ⬜ 5 avis d'ici samedi 24/10 | `launch/MESSAGE-AVIS-GOOGLE-2026-10.md` |
+| GSC : 4 indexations + re-check sitemap | 🔴 rappel debout — quota du 20/10 à reprendre | `clients/dm-optic/pre-launch-checklist.md` (rappels) |

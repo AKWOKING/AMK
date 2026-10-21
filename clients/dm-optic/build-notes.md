@@ -1222,3 +1222,42 @@ montures avant de vous déplacer » ; client-héros dans chaque vidéo ; angle e
 leurre/fausse rareté récusés ; peak-end ; rien ne change à l'identité figée — la recherche la
 valide). **La création TikTok reprend après la décision de King sur la bio** (candidats A/B/C
 dans le SETUP, recommandation A, 74/70/78 caractères).
+
+## 21/10 (3) — bio B, premier TikTok prêt à tourner, gabarit W43 implémenté
+
+**Bio TikTok — King choisit B** : `Opticien à Bonabéri · examen de vue & montures · WhatsApp 656 122
+239` (69 caractères). Raison : le nom affiché `DM OPTIQUE SARL` ne dit pas le métier ; « opticien » est
+le mot tapé. Le guide écran par écran, le Business Account et la catégorie sont dans
+`launch/SETUP-TIKTOK.md`. **Conflit assumé** avec la checklist SEO TikTok (« lien en bio = le site ») :
+le champ Website n'est pas encore disponible pour ce compte → numéro écrit d'abord, site dès que le
+champ apparaît.
+
+**Message avis — envoi 21/10 à 09:00**, pas à 2h du matin. Un lien `wa.me/?text=` pré-rempli est dans
+le fichier pour que King n'ait qu'à choisir la conversation ; suivi jusqu'à samedi (5 avis), relance
+unique vendredi si zéro.
+
+**Premier TikTok — plan validé** (`content/month1/w1/tiktok-01.md`) : 22 s, 56 mots, 5 plans tournés
+au cabinet avec un téléphone, **aucune image IA, aucun visage**, une monture réelle (F24 · carrée
+écaille). Structure : cas client → miroir → monture réelle + les 40 en ligne → ONOC en preuve (une
+fois) → **sortie honnête** + numéro. Le script était le point faible de la V1 du 02/10 : elle ouvrait
+sur le certificat du cabinet, ce que la recherche W43 et l'objection de King sur la bio condamnent
+tous les deux. **La V1 n'est pas supprimée** : elle reste valable comme UGC IA, avec un renvoi en tête.
+
+**Vérifié en production avant d'écrire « c'est en ligne »** : `https://dmoptiquesarl.com/montures/`
+→ 200, 24 femmes + 6 hommes + 10 enfants = **40 montures** ; fiche `f24-carree-ecaille` → 200, 2
+photos. Le site dit « une photo ne dit pas tout » → le script dit « vous les voyez avant de vous
+déplacer, et vous les essayez au cabinet » : la promesse reste vraie.
+
+**« Implement » de la solution long terme — le gabarit est câblé, pas seulement écrit :**
+
+| Fichier | Ce qui y est |
+|---|---|
+| `sales/research/2026-W43-techniques.md` §12b | le gabarit (5 beats · 7 interdits · 6 cases) + la table de câblage + la bio B décidée |
+| `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` | règle debout « le gabarit W43 est la porte de tout contenu client » |
+| `content/scripts/README.md` | la porte W43 en tête de la convention de script client |
+| `content-plan-month1.md` §10 | la porte appliquée au mois 1 + ce qui change vs le plan du 01/10 |
+| `posting-calendar.md` | amendement du 21/10 (calendrier réel) + règle 11 au §6 |
+| `PRE-FLIGHT.md` §0d + routage | la ligne « gabarit W43 » → fichiers gouvernés ; le routage contenu la nomme |
+| `month1/README.md` | `w1/tiktok-01.md` ajouté à la table des fichiers |
+| `pre-launch-checklist.md` | suivi TikTok + avis ; item 4 passé 🟠 (compte au nom du cabinet mais mot de passe côté King → transfert à prouver avant livraison) |
+
