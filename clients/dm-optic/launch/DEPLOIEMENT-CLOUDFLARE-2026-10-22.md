@@ -173,11 +173,31 @@ redirection peut donc être posée — elle envoie désormais Google d'une adres
 > **Ne touche pas** à la carte existante « Redirect from HTTP to HTTPS » : elle fait un autre travail
 > (le http → https) et la supprimer casserait le site.
 
-### Juste après — 2 vérifications
+### ✅ Vérifié le 22/10 : la redirection fonctionne
 
-1. `https://www.dmoptiquesarl.com/` doit **rediriger** vers `https://dmoptiquesarl.com/`.
-2. Search Console → **Sitemaps** : **supprime l'entrée `www`**. Elle va passer au rouge, et c'est normal :
-   son URL redirige désormais. **Garde celle de l'apex**, c'est la seule qui compte à partir de maintenant.
+`https://www.dmoptiquesarl.com/` → `https://dmoptiquesarl.com/`. Constaté dans le navigateur, pas déduit.
+
+**L'avertissement « This rule may not apply to your traffic » était un faux positif.** Cloudflare le
+déclenche quand il ne reconnaît pas l'enregistrement `www` comme proxifié. Ici `www` et l'apex résolvent
+vers **les mêmes IP Cloudflare** (`2606:4700:3036::6815:1623`, `…3037::ac43:ca3b`, v4 `104.21.22.35`) :
+le trafic passait bien par le proxy, la règle s'applique.
+
+> **Ce qu'il ne fallait pas faire :** cocher « Create a new proxied DNS record ». Ce choix ajoute un
+> enregistrement au lieu de constater celui qui existe — doublon DNS, `www` hors service. On l'a écarté,
+> et il n'y a rien à réparer côté DNS.
+
+### Search Console : l'entrée `www` peut rester
+
+**Décision : on garde les deux entrées.** Aucun risque, aucun nettoyage à faire :
+
+| Point | Pourquoi ce n'est pas un problème |
+|---|---|
+| Duplicata | Le site déclare `canonical` en apex sur les 96 pages, et `www` redirige en 301. Google consolide tout seul. |
+| Découverte | Le sitemap n'est qu'une **aide** à la découverte. Les 96 URL sont déjà connues, deux fois. |
+| Statut | Elle peut passer au rouge (« redirect ») — c'est **cosmétique**. Un sitemap en erreur ne pénalise pas le site. |
+
+**Ne pas la supprimer n'apporte rien ; la supprimer non plus.** Si un jour elle s'affiche en erreur,
+c'est attendu : **on ne la traite pas**, on ne la resoumettra pas, on ne la supprime pas non plus.
 
 ### Pourquoi cette redirection, au fond
 

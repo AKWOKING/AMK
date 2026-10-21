@@ -148,7 +148,8 @@ l'apex, donc les moteurs consolident même sans cette règle.
    L'indexation peut commencer.
 2. **Le 403 du 21/10 est mort.** Il n'y avait ni refus de Googlebot, ni problème de `robots.txt` : la
    soumission avait été faite avant le déploiement, et Search Console affichait encore l'état d'avant.
-3. **La redirection `www` → apex peut être posée**, puis l'entrée `www` supprimée de Search Console.
+3. **La redirection `www` → apex est posée et vérifiée** (22/10). L'entrée `www` **reste** dans Search
+   Console : sans effet sur l'indexation, et une éventuelle erreur « redirect » y est cosmétique.
 4. **Ce qu'il faut regarder maintenant :** non plus la découverte, mais l'**indexation** —
    *Pages → Indexed* dans Search Console. Les 96 URL découvertes ne sont pas 96 URL indexées.
 

@@ -1842,3 +1842,21 @@ capture, c'est un instantané, pas une mesure** — attendre la seconde lecture 
 - **Le sujet suivant n'est plus la découverte mais l'indexation.** *Pages → Indexed* : combien des 96 URL
   sont réellement dans l'index. C'est la seule mesure qui dira si le site existe pour Google.
 
+## 22/10 (25) — redirection www vérifiée, et pourquoi on laisse `www` dans Search Console
+
+**`https://www.dmoptiquesarl.com/` redirige bien vers `https://dmoptiquesarl.com/`.** Constaté par King
+dans le navigateur. C'est le dernier maillon technique du déploiement : build vert, site servi, sitemap
+découvert, adresse unique.
+
+**L'avertissement Cloudflare était un faux positif**, comme le laissaient penser les IP identiques pour
+les deux hôtes. La leçon retient un piège : l'option « Create a new proxied DNS record » proposée dans
+cette boîte de dialogue **crée un doublon** au lieu de constater l'existant — elle aurait pu couper `www`.
+
+**Question posée : faut-il retirer l'entrée `www` de Search Console ?** Réponse : **non, pas besoin.** Les
+96 pages sont déjà découvertes deux fois, le `canonical` est en apex, et le 301 consolide. L'entrée est
+inerte. Si elle passe un jour en erreur (« redirect »), c'est cosmétique et on n'y touche pas — la
+supprimer ou la resoumettre n'apporterait rien.
+
+**Le sujet SEO est donc clos côté technique.** Ce qui reste à mesurer n'est plus la découverte, mais
+l'**indexation** : *Pages → Indexed* sur les URL apex. À lire dans quelques jours, pas maintenant.
+
