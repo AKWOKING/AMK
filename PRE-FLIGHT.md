@@ -44,6 +44,7 @@ Quand une règle change ou qu'un ruling est donné, cette table dit quels fichie
 
 | Règle | Fichiers qu'elle gouverne |
 |---|---|
+| **Marketing & création de contenu (ruling King 22/10)** | `knowledge/MARKETING-OPTICAL-2026-10-22.md` · `knowledge/CONTENT-CREATION-2026-10-22.md` · `PRE-FLIGHT.md` §1g · `clients/<client>/brand/BRAND-STRATEGY-*.md` · scripts `content/month1/**` · `tools/record/` · portique `tools/qa/audit_video_motion.py` |
 | **Credential rule** (ne jamais revendiquer ce qu'on ne peut pas prouver) | `content/strategy/RULE-CREDENTIAL-CLAIMS.md` · pages client (`clients/*/`, `site/`) · textes de publication (`content/carousels/`, `content/scripts/`) |
 | **Caption-split / découpage de légende (ruling King 12/10 : frontières de phrase, jamais de fragment)** | `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` · section « Règle debout — VO vidéo courte », **AMENDEMENT 2 (découpe des légendes)** (fichier d'origine ; le commit `9294cf2` le contient) · appliquée dans `content/scripts/` et `content/strategy/VIDEO-PIPELINE-FLOW-2026-10.md` |
 | **Wave gate / relances (24 h, 48 h, 7 j, changement de canal)** | `sales/CLIENT-MESSAGING-RULES.md` · `leads/CRM.csv` · `leads/build/crm.py` · `leads/PIPELINE.md` · `sales/Activity-Log.md` |
@@ -266,6 +267,38 @@ Recette éprouvée (avec travail non commité, **jamais** `--hard`) : `git fetch
   - **Propositions / Recommandations** — étapes suivantes, optimisations du flux de travail, opportunités repérées en cours de route. Ce bloc n'ouvre **aucun droit d'exécution** : une proposition attend le ruling de King (§4b, verrous).
   - **Audit** — auto-audit honnête de la réponse : ce qui a été vérifié contre la source (§0e), ce qui reste incertain ou non testé, les défauts connus laissés ouverts, la conformité aux portiques (§1b/§1f③…). Un audit qui relève un problème porte correctif/amélioration/action (§0e), et **tout problème résoluble porte sa solution long terme** (règle debout, outil, contrôle automatisé — pas seulement le correctif ponctuel) : l'audit d'une réponse prépare celui d'après (ruling King 20/10).
 - Le bloc s'applique **à toutes les réponses**, y compris les réponses courtes de consultation — c'est justement là que les propositions coûtent le moins et servent le plus.
+
+## 1g · Marketing, marque et création de contenu (ruling King 22/10)
+
+> *King 22/10 : « make sure you have written everything you just learned in the repo, in preflight too under marketing, content creation and other relevant topics ». *
+
+Toute tâche de **marketing, de marque, de vente optique ou de production de contenu** commence par ces
+deux bases de connaissance, **avant** d'écrire une ligne de script ou de lancer un rendu :
+
+| Fichier | Ce qu'il contient | Quand le lire |
+|---|---|---|
+| **`knowledge/MARKETING-OPTICAL-2026-10-22.md`** | l'ordre des leviers (avis > fiche > site > social), les 3 facteurs de Google, la vente optique (Laramy-K, Anagram), « être expert d'une chose », les chiffres sociaux, la structure de positionnement, **le cas Warby Parker**, les erreurs, le socle Cameroun | toute mission marketing, positionnement, acquisition, SEO local d'un client optique |
+| **`knowledge/CONTENT-CREATION-2026-10-22.md`** | la chaîne de production (PIL → ffmpeg → portique), les 9 règles de fabrication, la structure de script en 5 temps, les 4 piliers, ce qui se mesure, **la politique visages / UGC / IA**, la règle de source, les portes avant publication | toute vidéo, tout post, toute production sociale |
+
+**Routage rapide**
+
+| La tâche | D'abord | Ensuite |
+|---|---|---|
+| positionner une marque, écrire un statement | `knowledge/MARKETING-OPTICAL…` §6 | `clients/<client>/brand/BRAND-STRATEGY-*.md` |
+| écrire un script court | `knowledge/CONTENT-CREATION…` §3 | le gabarit du mois (`content/month1/…`) |
+| monter une vidéo | `knowledge/CONTENT-CREATION…` §1–2 | `tools/record/` + **portique** `tools/qa/audit_video_motion.py` (§1b) |
+| décider d'un contenu avec visage / IA | `knowledge/CONTENT-CREATION…` §6 | ruling de King — jamais de production avant |
+| sourcer un chiffre pour un client | `knowledge/MARKETING-OPTICAL…` §9 + `CONTENT-CREATION…` §7 | la source primaire nommée, sinon « non revérifié » |
+
+**Deux règles debout issues du 22/10 :**
+
+1. **Aucune statistique sans source primaire nommée n'entre dans une décision client.** Ce qui n'a pas pu
+   être revérifié est **écrit comme non revérifié**.
+2. **Un contenu qui ne porte aucune preuve de la marque est joli, pas utile.** Les preuves sont listées
+   dans `clients/dm-optic/brand/BRAND-STRATEGY-2026-10-22.md` §6 (modèle transposable aux autres clients).
+
+**Ce que ces sections ne remplacent pas** : les portiques §1b (livraison) et le ruling de publication —
+**rien n'est publié sans validation de King**.
 
 ## 2 · Uniqueness protocol (every website/design build, before a line of HTML)
 

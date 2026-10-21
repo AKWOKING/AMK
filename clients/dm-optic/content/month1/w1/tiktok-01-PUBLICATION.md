@@ -7,7 +7,8 @@
 > **Le problème pratique, dit franchement :** celle-ci est **déjà tournée**, la v2 demande
 > **40 minutes de montage** (voix + 6 images + sous-titres). Deux issues possibles :
 >
-> - **La v2 est prête avant 5h30** → elle part, et celle-ci devient la vidéo n°2 ou n°3.
+> - **La v2 est prête** ✅ *(montée le 22/10 à 18 h 55 — `tiktok-01-v2.mp4`, 23,0 s, 4,3 Mo, voix
+>   incluse, portique OK)* → **elle part le 22/10 à 5h30**, et celle-ci devient la vidéo n°2 ou n°3.
 > - **Elle ne l'est pas** → on publie **celle-ci** le 22/10 (elle est conforme et tournée), et la v2 part
 >   le **mardi 27/10**. Manquer la date pour une vidéo non montée serait le pire des deux choix.
 >

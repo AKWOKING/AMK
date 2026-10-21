@@ -1892,3 +1892,30 @@ assumé, documenté comme un coût (la recherche place les visages au premier ra
 **Le risque, dit à voix haute** : la v1 est tournée, la v2 ne l'est pas. Si le montage n'est pas prêt pour
 5h30, on publie la v1 et la v2 part le 27. Manquer la date pour une vidéo non montée serait le pire choix.
 
+## 22/10 (27) — la V2 est montée : 23 s, sans visage, portique vert
+
+**Livré** : `content/month1/w1/tiktok-01-v2.mp4` — 23,00 s, 1080×1920, 30 fps, H.264 + AAC, 4,3 Mo.
+Moteur : `tools/record/make_dmoptic_tiktok.py` (reproductible, une commande). Plan écrit avant de
+commencer : `MONTAGE-V2-ROADMAP.md`, avec son journal de montage en §7.
+
+**Ce qui n'existait pas ce matin dans le sandbox** : ni ffmpeg, ni PIL, ni police, ni brotli. Quatre
+paquets installés (`pillow`, `imageio-ffmpeg`, `numpy`, `fonttools`+`brotli`), polices du site converties
+de `woff2` en `ttf` et **versionnées** (`assets/fonts/`), pour que le montage soit rejouable.
+
+**Le portique a servi, et il a bloqué.** Première version : 5 fenêtres figées sur 11 — un diaporama.
+Cause : des zooms de 5 % et un carton final immobile. Correction : amplitudes de 14 à 16 %, déplacement
+en x **et** en y, carton final rendu à 1,22× puis **recadré en mouvement** (net et vivant à la fois).
+Verdict final : **0 fenêtre figée**.
+
+**Deux pièges de plus, à retenir :**
+
+1. **`-shortest` coupe le carton final.** La voix faisait 21,26 s pour un montage de 23 s : la vidéo
+   sortait à 21,2 s, sans le numéro WhatsApp. Correction : tempo doux (0,92) + `apad` + `-t 23`.
+   **Règle ajoutée au moteur** : la durée du montage est forcée, jamais déduite de l'audio.
+2. **Une photo de produit sur fond crème ne se pose pas sur un fond flou.** Ça donne deux zones grises
+   mortes. Correction : **carte crème sur fond nuit** — le produit n'est pas retouché, c'est le cadre qui
+   change.
+
+**Visages** : King a tranché (22/10) — les visages **du personnel** sont autorisés. Les deux photos du
+cabinet n'en contiennent aucun d'exploitable de toute façon (posters et mur de montures).
+
