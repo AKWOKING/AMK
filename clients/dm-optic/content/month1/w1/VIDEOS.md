@@ -13,6 +13,8 @@ Réponse : ils y sont maintenant, dans ce dossier. Chemins exacts au §1.
 |---|---|---|---|---|
 | **1 — 20/20/20** | **`tiktok-01-v2.mp4`** | `tiktok-01-v2-cover.jpg` | `tiktok-01-v2.fr.srt` | 23,00 s · 4,8 Mo |
 | **2 — UGC « on montre avant de vendre »** | **`ugc-03.mp4`** | `ugc-03-cover.jpg` | — (sous-titres incrustés) | 22,30 s · 6,8 Mo |
+| **3 — spot « au millimètre »** | **`spot-02.mp4`** | — | incrustés | 26,70 s · 12,7 Mo |
+| **4 — spot « trois choses qu'on ne fera pas »** | **`spot-03.mp4`** | — | incrustés | 28,40 s · 14,2 Mo |
 
 Chemin complet depuis la racine du dépôt :
 

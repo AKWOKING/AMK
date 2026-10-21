@@ -133,8 +133,16 @@ def rule(img: Image.Image, y: int, prog: float, width: int = 220, color=EMBER) -
 
 def block(img: Image.Image, lines, top: int, size: int, role: str = "title",
           color=INK, prog: float = 1.0, lh: float = 1.06, stagger: float = 0.14) -> None:
-    """Bloc de lignes qui montent une à une."""
+    """Bloc de lignes qui montent une à une.
+
+    La taille est réduite automatiquement jusqu'à ce que la ligne la plus longue tienne
+    dans la marge : une phrase qui sort du cadre est un défaut de fabrication, jamais un
+    choix. (Vu le 22/10 : « 3. On ne vous laissera pas choisir sans essayer. » débordait.)
+    """
     d = ImageDraw.Draw(img)
+    max_w = W - 2 * MARGIN
+    while size > 40 and any(d.textlength(l, font=font(role, size)) > max_w for l in lines):
+        size -= 2
     for i, line in enumerate(lines):
         p = ease(max(0.0, min(1.0, (prog - i * stagger) / max(0.05, 1 - stagger * (len(lines) - 1)))))
         if p <= 0:

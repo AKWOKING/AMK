@@ -53,7 +53,7 @@ même recadrée.
 ```
 Opticien optométriste à Bonabéri : en fin de journée, vous éloignez votre téléphone pour lire ?
 
-Vous pouvez voir les 40 montures en ligne avant de quitter la maison — et les essayer au cabinet.
+Vous pouvez voir les montures en ligne avant de quitter la maison — et les essayer au cabinet.
 Celle-ci y est, avec toutes les autres.
 
 📍 Immeuble West Hotel, 1er étage, dernière porte à droite — Ndobo Mayor, Bonabéri

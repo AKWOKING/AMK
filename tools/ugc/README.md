@@ -107,6 +107,22 @@ Puis dans le storyboard : `{"type": "clip", "src": "shots/plan-01.mp4", "dur": 4
 
 **Sans clé, ces fonctions lèvent une erreur explicite** — elles ne renvoient jamais un faux succès.
 
+## 4 bis · Les deux portiques, dans l'ordre
+
+```bash
+python3 tools/qa/audit_claims.py clients/dm-optic/content          # 1. les affirmations
+python3 tools/qa/audit_video_motion.py <fichier>.mp4               # 2. le mouvement
+python3 tools/ugc/editorial.py --story <storyboard>.json --out …   # 3. le rendu
+python3 tools/qa/audit_video_motion.py <fichier>.mp4               # 4. re-contrôle
+```
+
+Le premier vérifie qu'aucune phrase ne contredit un **verrou client** (prix publics, cardinal de stock,
+superlatif, allégation médicale). Le second vérifie qu'aucune fenêtre de 2 s ne gèle.
+
+**Règle de rythme du registre éditorial** : `MAX_PLAN = 1,9 s` dans `editorial.py`. Le moteur **refuse**
+un storyboard dont un plan dépasse cette durée et nomme la scène — parce qu'à 270 px (la largeur
+d'échantillonnage du portique), un carton crème de 3 s est mesuré comme figé.
+
 ## 5 · Le portique, en une ligne
 
 `python3 tools/qa/audit_video_motion.py <fichier>` — échantillonne à 12 fps, mesure l'écart entre

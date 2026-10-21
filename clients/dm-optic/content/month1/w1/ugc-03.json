@@ -17,9 +17,9 @@
       "type": "card",
       "dur": 3.4,
       "headline": "Sur le site, avant de venir",
-      "big": "40 montures",
-      "big_size": 132,
-      "foot": "photographiées · prix affichés",
+      "big": "Chaque monture",
+      "big_size": 104,
+      "foot": "photographiée ici · une par une",
       "src": "hosting/previews/dmoptic/cabinet-hero-1080.webp",
       "zoom": 0.55,
       "drift": 0.5,
@@ -35,7 +35,7 @@
       "layout": "product",
       "zoom": 0.14,
       "drift": 0.4,
-      "sub": "Celle-ci.\nCe prix. En photo."
+      "sub": "Celle-ci.\nEn photo. Au cabinet."
     },
     {
       "type": "photo",
@@ -44,7 +44,7 @@
       "layout": "product",
       "zoom": 0.14,
       "drift": -0.4,
-      "sub": "Pas de surprise\nà la caisse."
+      "sub": "Ce que vous voyez\nest au cabinet."
     },
     {
       "type": "photo",
@@ -81,12 +81,12 @@
     "y": 0.7,
     "lines": [
       [
-        "40 montures.",
+        "Une par une.",
         104,
         120
       ],
       [
-        "Le prix affiché.",
+        "En photo.",
         104,
         120
       ],

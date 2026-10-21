@@ -170,6 +170,29 @@ cartons et de la sortie honnête. Une vidéo brute reste une vidéo de télépho
 
 ---
 
+## 6 bis · Les verrous client qui ne se discutent pas (22/10)
+
+Trois règles sont **plus fortes** que le style. Elles viennent du client ou de King, elles sont écrites
+ici pour ne plus être redécouvertes après coup :
+
+| Verrou | Verbatim / source | Ce qu'il interdit |
+|---|---|---|
+| **Aucun prix public** | client, 10/10/2026 : « Pour le prix des montures c'est interdit de le diffuser car nous sommes régit par le ministère de la Santé Publique. » | un prix affiché, « le prix est en ligne », « avec son prix » en sous-titre, un montant en légende |
+| **Aucun cardinal de stock** | King, 21/10 : « avoid mentioning the number of frames available everywhere » | « 40 montures », « 400 modèles » — même quand le nombre est vrai |
+| **Aucun superlatif non prouvable** | règle de marque | « le meilleur opticien de Douala », « n°1 », « garanti » |
+
+**Et surtout : ces verrous ont un portique.** `tools/qa/audit_claims.py` les vérifie sur tous les
+livrables (storyboards JSON, scripts, légendes, sous-titres) et sort en code 1 au premier manquement.
+
+```bash
+python3 tools/qa/audit_claims.py clients/dm-optic/content     # doit afficher VERDICT : OK
+```
+
+**Pourquoi cet outil existe** : le 22/10, deux vidéos ont été livrées avec un prix annoncé « en ligne » et
+un compte de montures — deux affirmations fausses au regard de verrous **déjà écrits**. Une règle sans
+contrôle n'est pas une règle, c'est une intention. Désormais, toute production passe par ce portique
+**avant** le portique mouvement.
+
 ## 7 · La règle de source (posée le 22/10)
 
 > **Une statistique sans source primaire nommée n'entre pas dans une décision client.**

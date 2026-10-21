@@ -291,6 +291,8 @@ deux bases de connaissance, **avant** d'écrire une ligne de script ou de lancer
 | obtenir un **plan d'humain** / choisir un générateur, avec un prix | `research/ugc-video/2026-10-22-TOOLCHAIN-UGC.md` | `tools/ugc/providers.py` (Veo 3.1, HeyGen, Hedra, fal) |
 | décider d'un contenu avec visage / IA | `knowledge/CONTENT-CREATION…` §6 | ruling de King — jamais de production avant |
 | sourcer un chiffre pour un client | `knowledge/MARKETING-OPTICAL…` §9 + `CONTENT-CREATION…` §7 | la source primaire nommée, sinon « non revérifié » |
+| **écrire un post, un sous-titre, une légende, un DM** | **`tools/qa/audit_claims.py`** (verrous client : prix, stock, superlatifs, allégations) | `knowledge/CONTENT-CREATION…` §6 bis |
+| écrire à un gérant de clinique / opticien (prospection, DM froid) | `knowledge/OUTREACH-MESSAGING-2026-10-22.md` | vérifier la position réelle **avant** d'écrire |
 
 **Deux règles debout issues du 22/10 :**
 

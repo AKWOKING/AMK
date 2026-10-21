@@ -103,19 +103,19 @@
       "type": "type",
       "dur": 1.8,
       "lines": [
-        "3. On ne garde pas",
-        "le prix pour la caisse."
+        "3. On ne vous laissera pas",
+        "choisir sans essayer."
       ],
       "size": 92,
       "top": 780,
       "rule_y": 1080,
-      "note": "Il est affiché. En ligne."
+      "note": "Une monture se porte. Elle ne se regarde pas."
     },
     {
       "type": "frame",
       "dur": 1.8,
       "src": "hosting/previews/dmoptic/montures/monture-f61.webp",
-      "label_top": "Ce prix-là.",
+      "label_top": "Sur vous.",
       "label_y": 500,
       "label_size": 54,
       "width": 920,
@@ -136,6 +136,40 @@
       "top": 740,
       "rule_y": 1090,
       "note": "Ça arrive plus souvent qu'on croit."
+    },
+    {
+      "type": "type",
+      "dur": 1.9,
+      "lines": [
+        "Rien d'autre."
+      ],
+      "size": 104,
+      "top": 800,
+      "rule_y": 1020,
+      "note": "Pas de promesse de miracle."
+    },
+    {
+      "type": "frame",
+      "dur": 1.8,
+      "src": "hosting/previews/dmoptic/montures/monture-h01.webp",
+      "label_top": "Ajustée ici, pas ailleurs.",
+      "label_y": 500,
+      "label_size": 50,
+      "width": 930,
+      "cy": 1060,
+      "angle": -1.5,
+      "spin": 2.2,
+      "label": "H01 · ACÉTATE"
+    },
+    {
+      "type": "inset",
+      "dur": 1.8,
+      "photo": "hosting/previews/dmoptic/cabinet-enseigne.webp",
+      "label_top": "La porte est là.",
+      "label_y": 430,
+      "label_size": 54,
+      "cy": 700,
+      "label": "NDOBO MAYOR · BONABÉRI"
     },
     {
       "type": "dark",

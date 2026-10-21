@@ -29,7 +29,7 @@ promesse que la nouvelle couverture : *« Voir mieux, grandir plus loin »*, qui
 
 ### ① Les montures en médaillon ne sont pas (toutes) au cabinet ⚠️
 
-J'ai comparé les trois médaillons aux **40 montures réelles** du site (`site/frames.json` + les photos) :
+J'ai comparé les trois médaillons aux **montures réelles** du site (`site/frames.json` + les photos) :
 
 | Affiche | Médaillon | Dans les 40 ? |
 |---|---|---|

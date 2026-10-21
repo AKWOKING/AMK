@@ -47,7 +47,7 @@ réduite. Une seule personne filme, une seule personne est à l'image — pas be
 | **14h00–14h20** | **test caméra** : 20 s face caméra, on regarde, on corrige (cadrage, exposition, son) | réglages figés |
 | **14h20–15h20** | **bloc A — les 4 phrases face caméra** (pilier 4) : 3 prises chacune, on garde la plus simple | 4 clips de 15–25 s |
 | **15h20–16h10** | **bloc B — les mains** (pilier 1) : verre, branche, 20/20/20, essuyage | 6 clips de 10–20 s |
-| **16h10–16h50** | **bloc C — les montures** (pilier 2) : 3 montures, tenue + rotation + pose sur le comptoir | 3 × 3 clips |
+| **16h10–16h50** | **bloc C — les montures** (pilier 2) : trois montures <!-- claims-ok: compte de tournage, pas un stock --> , tenue + rotation + pose sur le comptoir | 3 × 3 clips |
 | **16h50–17h30** | **bloc D — la coulisse** (pilier 3) : le mesureur, l'écran, le geste, le mur de montures | 6 clips |
 | **17h30–18h00** | **les plans de réserve** : la porte, l'enseigne, la rue, le comptoir vide, la lumière du soir | 5 clips « bouche-trous » |
 

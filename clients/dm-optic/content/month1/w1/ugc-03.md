@@ -8,7 +8,7 @@ Portique mouvement: OK (aucune fenêtre figée)   ·  Visages: ceux du personnel
 ```
 
 **Rôle dans la série.** TikTok n°1 (V2) prouve *le cabinet et la monture*. UGC-03 prouve *la méthode* :
-la transparence avant la vente — quarante montures photographiées, le prix affiché, l'examen le matin.
+la transparence avant la vente — des montures photographiées une par une, au cabinet, l'examen le matin.
 C'est le contenu qui transforme « joli cabinet » en « je peux vérifier avant de me déplacer ».
 
 ---
@@ -18,21 +18,32 @@ C'est le contenu qui transforme « joli cabinet » en « je peux vérifier avant
 | # | Temps | Plan | Sous-titre | Voix |
 |---|---|---|---|---|
 | 1 | 0,0–3,4 | autorefractor, personnel en blouse | Choisir des lunettes, ça commence par mesurer. | idem |
-| 2 | 3,4–6,8 | carton sur le mur de montures | — | 40 modèles en ligne. |
-| 3 | 6,8–10,8 | monture f24, carte crème | Celle-ci. Ce prix. En photo. | avec son prix. |
-| 4 | 10,8–14,4 | monture h08, carte crème | Pas de surprise à la caisse. | — |
+| 2 | 3,4–6,8 | carton sur le mur de montures | — | une par une. |
+| 3 | 6,8–10,8 | monture f24, carte crème | Celle-ci. En photo. Au cabinet. | photographiée au cabinet. |
+| 4 | 10,8–14,4 | monture h08, carte crème | Ce que vous voyez est au cabinet. | — |
 | 5 | 14,4–18,0 | intérieur, mur de montures | Examen 8h30–13h00 / Opticien inscrit ONOC. | L'examen, c'est le matin, avec un opticien inscrit à l'ONOC. |
 | 6 | 18,0–22,3 | carton de fin sur l'enseigne | On montre avant de vendre. | On montre avant de vendre. WhatsApp : 656 122 239. |
 
 **Texte de la voix (22,1 s, `voice-00`, la voix de la maison) :**
 
-> Choisir des lunettes, ça commence par mesurer. Chez DM Optique, chaque monture est photographiée, avec
-> son prix. Quarante modèles en ligne. L'examen, c'est le matin, avec un opticien inscrit à l'ONOC. On
-> montre avant de vendre. WhatsApp : 656 122 239.
+> Choisir des lunettes, ça commence par mesurer. Chez DM Optique, chaque monture est photographiée, une par
+> une, au cabinet. L'examen, c'est le matin, avec un opticien inscrit à l'ONOC. On montre avant de vendre.
+> WhatsApp : 656 122 239.
 
-**Vérifications de contenu** : aucun prix affiché à l'écran (règle maison) · aucune allégation médicale ·
-aucun témoignage · aucun concurrent nommé · « 40 montures » = 40 modèles publiés sur le site (comptage du
-catalogue, pas une estimation) · « opticien inscrit ONOC » = registre Littoral l.102, inscription 021/2016.
+**Vérifications de contenu** — et cette fois **contrôlées par un outil**, pas à l'œil :
+`python3 tools/qa/audit_claims.py clients/dm-optic/content` → **0 infraction**.
+
+| Verrou | Source | État |
+|---|---|---|
+| **Aucun prix public** — ni à l'écran, ni en légende, ni « en ligne » | verbatim client 10/10 : « Pour le prix des montures c'est interdit de le diffuser car nous sommes régit par le ministère de la Santé Publique » | respecté |
+| **Aucun cardinal de stock** | ruling King 21/10 : « avoid mentioning the number of frames available everywhere » | respecté |
+| Aucune allégation médicale · aucun témoignage · aucun concurrent nommé | règles de marque | respecté |
+| « opticien inscrit ONOC » | registre Littoral l.102, inscription 021/2016 | sourcé |
+
+> **Ce qui s'était passé** : la première version affirmait qu'on pouvait y lire un montant, et
+> donnait un compte de montures — deux affirmations fausses au regard de deux verrous **déjà écrits** dans
+> le dépôt. Corrigé le 22/10 ; le contrôle est désormais automatisé (`audit_claims.py`), pour que la règle
+> ne dépende plus de ma mémoire.
 
 ---
 

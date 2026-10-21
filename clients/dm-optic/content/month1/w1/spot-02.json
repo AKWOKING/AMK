@@ -72,7 +72,7 @@
       "type": "frame",
       "dur": 1.8,
       "src": "hosting/previews/dmoptic/montures/monture-h08.webp",
-      "label_top": "Avec son prix.",
+      "label_top": "Avec sa référence.",
       "label_y": 500,
       "label_size": 56,
       "width": 940,
@@ -150,6 +150,18 @@
       "size": 100,
       "top": 820,
       "note": "dmoptiquesarl.com/montures"
+    },
+    {
+      "type": "type",
+      "dur": 1.8,
+      "lines": [
+        "Et si ça glisse,",
+        "on ajuste."
+      ],
+      "size": 96,
+      "top": 770,
+      "rule_y": 1050,
+      "note": "Sur place. Sans rendez-vous."
     },
     {
       "type": "type",

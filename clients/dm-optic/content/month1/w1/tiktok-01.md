@@ -25,7 +25,7 @@ Ce que le gabarit demande, et ce que cette vidéo fait :
 |---|---|---|
 | 1 | **Le cas** — une situation vécue, à la 2ᵉ personne | « En fin de journée, vous éloignez votre téléphone pour lire ? » |
 | 2 | **Le miroir** — ce que ça coûte, sans diagnostic | « Ça fatigue. On repousse. » |
-| 3 | **Le réel** — un objet du cabinet, un seul axe | La F24 en main + les **40 montures en ligne** (la vache pourpre : personne au quartier ne le fait) |
+| 3 | **Le réel** — un objet du cabinet, un seul axe | La F24 en main + les montures du cabinet **en ligne** (la vache pourpre : personne au quartier ne le fait) |
 | 4 | **La preuve** — un fait vérifiable, une fois | Inscrit à l'ONOC · Ndobo Mayor, Bonabéri |
 | 5 | **La sortie honnête** — qui n'a pas besoin, on le lui dit | « Si vous voyez bien, ne venez pas. » + horaires + numéro |
 
@@ -35,7 +35,7 @@ Ce que le gabarit demande, et ce que cette vidéo fait :
 |---|---|---|---|---|
 | **1** | 0:00–0:03 | « En fin de journée, vous éloignez votre téléphone pour lire ? » | la phrase, mot pour mot, + bandeau permanent **DM OPTIQUE · Opticien à Bonabéri** | un téléphone tenu **à bout de bras**, l'écran légèrement flou — pas d'effet, c'est la vraie mise au point |
 | **2** | 0:03–0:06 | « Ça fatigue. On repousse. » | **Ça fatigue. On repousse.** | le téléphone qu'on retourne face contre le comptoir ; l'horloge du cabinet |
-| **3** | 0:06–0:14 | « Cette monture est dans notre stock — et sur notre site, avec toutes les autres. » | **F24 · carrée écaille** puis **40 montures en ligne** | deux angles de la monture **dans la main**, sous la lumière de la vitrine ; puis le pouce fait défiler la page montures du site (écran net) |
+| **3** | 0:06–0:14 | « Cette monture est dans notre stock — et sur notre site, avec toutes les autres. » | **F24 · carrée écaille** puis **les montures du cabinet en ligne** | deux angles de la monture **dans la main**, sous la lumière de la vitrine ; puis le pouce fait défiler la page montures du site (écran net) |
 | **4** | 0:14–0:17 | « Opticien à Bonabéri, inscrit à l'ONOC. » | **Inscrit à l'ONOC · Ndobo Mayor** | le cadre ONOC au mur s'il est visible et lisible — sinon carton typographique marine (identité figée) |
 | **5** | 0:17–0:22 | « Si vous voyez bien, ne venez pas. Sinon, passez : examen de vue 8h30–13h00. WhatsApp 656 122 239. » | **Examen de vue 8h30–13h00** · **WhatsApp 656 122 239** | la monture reposée sur le présentoir ; carton final, stable 3 s |
 
@@ -121,7 +121,7 @@ du clic dans un partage WhatsApp.
 ```
 Opticien optométriste à Bonabéri : en fin de journée, vous éloignez votre téléphone pour lire ?
 
-Vous pouvez voir les 40 montures en ligne avant de quitter la maison — et les essayer au cabinet.
+Vous pouvez voir les montures en ligne avant de quitter la maison — et les essayer au cabinet.
 Celle-ci y est, avec toutes les autres.
 
 📍 Immeuble West Hotel, 1er étage, dernière porte à droite — Ndobo Mayor, Bonabéri
@@ -209,7 +209,7 @@ une seule demande ta décision.
    remplace pas une fiche à 0 avis. **Conséquence :** on garde 2 posts/semaine, et le temps gagné va aux
    avis, pas au montage.
 2. **La légende gagne une phrase** — celle qui dit au spectateur ce qu'il peut faire *maintenant* et
-   qu'il croyait ne pas pouvoir : **voir les 40 montures avant de quitter la maison**. C'est déjà dans le
+   qu'il croyait ne pas pouvoir : **voir les montures avant de quitter la maison**. C'est déjà dans le
    script au beat 3 ; on le remonte dans la légende, en deuxième ligne, parce que c'est là que se décide
    le clic dans un partage WhatsApp. Légende mise à jour dans `tiktok-01-PUBLICATION.md`.
 3. **La vidéo n°2 est choisie** (voir ci-dessous) : on ne cherchera pas au dernier moment.

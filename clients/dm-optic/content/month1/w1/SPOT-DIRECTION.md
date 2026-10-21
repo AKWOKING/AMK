@@ -20,7 +20,7 @@ Livré : tools/ugc/editorial.py + spot-02.mp4 + spot-03.mp4.
 | `QVPbqkqdkEA` — *OPTICIANS - REAL APPLICATION* | 19 s, **déclaré « Made with AI »** par YouTube, aucun visage réel | ce sont **des images générées** — exactement ce que tu ne veux pas, et la raison pour laquelle on ne copie pas ce modèle-là |
 
 **Ce qui manque dans les deux premières** et qu'on garde : le vrai nom du cabinet, le vrai numero, le vrai
-horaire, et la preuve (nos 40 montures photographiées). Elles vendent une ambiance ; nous vendons un lieu.
+horaire, et la preuve (les montures photographiées au cabinet). Elles vendent une ambiance ; nous vendons un lieu.
 
 ## 2 · Ce que j'ai traduit du texte du `Yd0S9p59eEg` (et ce que j'ai jeté)
 
@@ -50,13 +50,14 @@ seule promesse + un appel**. Chez nous, la promesse est mesurable : *on montre a
 | | **spot-02.mp4** | **spot-03.mp4** |
 |---|---|---|
 | Titre | « Une monture, ça se choisit au millimètre » | « Trois choses qu'on ne fera pas » |
-| Durée | **24,90 s** | **22,90 s** |
-| Poids | 11,9 Mo | 11,8 Mo |
-| Axe | la méthode : photographié, prix affiché, mesuré | la sortie honnête : ce qu'on refuse de faire |
-| Plans | 14 | 12 |
+| Durée | **26,70 s** | **28,40 s** |
+| Poids | 12,7 Mo | 14,2 Mo |
+| Axe | la méthode : photographié, essayé, mesuré | la sortie honnête : ce qu'on refuse de faire |
+| Plans | 15 | 15 |
 | Voix | `voice-00` (23,42 s ajustée) | `voice-00` (22,66 s) |
 | Son | voix + nappe (accords tenus + souffle sur chaque coupe) | idem |
-| Portique | **OK**, 12 fenêtres | **OK**, 11 fenêtres |
+| Portique mouvement | **OK** | **OK** |
+| Portique affirmations | **OK** (`audit_claims.py`) | **OK** |
 | Storyboard | `spot-02.json` | `spot-03.json` |
 
 **spot-03 est le plus fort des deux, et c'est volontaire.** « On ne vous vendra pas une monture qui ne
@@ -104,6 +105,28 @@ python3 tools/qa/audit_video_motion.py <fichier>     # doit sortir en code 0
 
 **Pour décliner sur un autre client** : changer la palette (`CREAM`, `INK`, `EMBER` en tête de fichier),
 les polices dans `assets/fonts/`, et les scènes. Rien n'est codé en dur sur DM Optique sauf le storyboard.
+
+## 6 bis · Correction du 22/10 — aucun prix, et un portique pour l'imposer
+
+King a relevé l'erreur : **les prix ne sont pas publics chez DM Optique**, c'est un verrou du client
+depuis le 10/10 (« c'est interdit de le diffuser car nous sommes régit par le ministère de la Santé
+Publique »). La v1 de `spot-03` disait « on ne garde pas le prix pour la caisse », la v1 de `spot-02`
+« avec son prix », et `ugc-03` allait jusqu'à montrer « le prix affiché ». **Trois livrables à corriger.**
+
+| Corrigé | Avant | Après |
+|---|---|---|
+| `spot-02` | « Avec son prix. » | « Avec sa référence. » |
+| `spot-03` | « 3. On ne garde pas le prix pour la caisse. » | « 3. On ne vous laissera pas choisir sans essayer. » |
+| `spot-03` (2ᵉ occurrence) | « Ce prix-là. » | « Sur vous. » |
+| `ugc-03` | « 40 montures / le prix affiché / ce prix en photo » | « chaque monture / en photo, au cabinet / ce que vous voyez est au cabinet » |
+
+Et pour que ça ne recommence pas : **`tools/qa/audit_claims.py`**, portique bloquant qui refuse un
+livrable contenant un prix consultable, un cardinal de stock, un superlatif non prouvable ou une
+allégation médicale. Il tourne sur tout `clients/dm-optic/content` et sort en code 1.
+
+> **La leçon, écrite pour de bon** : le verrou existait dans le dépôt (`onboarding/post-deposit-email.md`,
+> `launch/SETUP-FACEBOOK.md` §145, `posting-calendar.md` §297) mais **n'était pas dans les règles de
+> rédaction de contenu**. Une règle rangée dans un dossier que personne ne relit n'est pas une règle.
 
 ## 7 · Ce qui reste à décider (King)
 
