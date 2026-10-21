@@ -135,24 +135,22 @@ l'apex, donc les moteurs consolident même sans cette règle.
 
 | Sitemap soumis | Statut Search Console | Pages |
 |---|---|---|
+| `https://dmoptiquesarl.com/sitemap.xml` | **Success** · relu le 21/10 | **96** |
 | `https://www.dmoptiquesarl.com/sitemap.xml` | **Success** · relu le 21/10 | **96** |
-| `https://dmoptiquesarl.com/sitemap.xml` | **Couldn't fetch** (type « Unknown ») | 0 |
+
+> **Mise à jour, 18 h 20 :** les **deux** entrées sont au vert. Le « Couldn't fetch » de l'apex était un
+> état périmé hérité de la soumission du 21/10, faite avant le déploiement. Aucune action corrective
+> n'était nécessaire — juste une relecture.
 
 **Ce qu'il faut en conclure, sans se raconter d'histoires :**
 
-1. **Le blocage est levé.** Google a trouvé les **96 URL** (48 françaises + 48 anglaises), et ce sont les
-   adresses **apex** — celles que le site déclare en `canonical`. L'indexation peut donc commencer.
-2. **Le refus restant est propre à l'apex.** Le même fichier, sur `www`, est lu sans difficulté. Ce n'est
-   donc ni le fichier, ni `robots.txt`, ni le sitemap lui-même : c'est la façon dont l'apex répond à
-   Googlebot.
-3. **Ne pas rediriger `www` vers l'apex avant d'avoir compris ce refus** — sinon on envoie Google de
-   l'adresse qui marche vers celle qui échoue.
-4. **Le test qui tranche** (2 min, aucun risque) : coller `https://dmoptiquesarl.com/sitemap.xml` dans la
-   barre de Search Console → **Test live URL**.
-   - *URL is available* → l'échec était un **état périmé** du 21/10 : supprimer l'entrée rouge et la
-     resoumettre.
-   - *Couldn't fetch / 403* → l'apex refuse réellement le robot : Cloudflare → **Security → Events**,
-     filtrer sur `sitemap`.
+1. **Le blocage est levé.** Google a trouvé les **96 URL** (48 françaises + 48 anglaises), deux fois.
+   L'indexation peut commencer.
+2. **Le 403 du 21/10 est mort.** Il n'y avait ni refus de Googlebot, ni problème de `robots.txt` : la
+   soumission avait été faite avant le déploiement, et Search Console affichait encore l'état d'avant.
+3. **La redirection `www` → apex peut être posée**, puis l'entrée `www` supprimée de Search Console.
+4. **Ce qu'il faut regarder maintenant :** non plus la découverte, mais l'**indexation** —
+   *Pages → Indexed* dans Search Console. Les 96 URL découvertes ne sont pas 96 URL indexées.
 
 **Les 10 URL prioritaires du 21/10 ne changent pas** : elles sont dans les 96 découvertes, et une demande
 d'indexation manuelle reste utile pour elles — mais plus aucune n'est bloquée par le sitemap.

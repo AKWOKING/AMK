@@ -1823,3 +1823,22 @@ C'est la deuxième fois aujourd'hui qu'une de mes recommandations doit être ret
 règle que j'en tire : **ne pas proposer une règle de redirection avant de savoir ce que le robot sait
 déjà lire.**
 
+## 22/10 (24) — les deux sitemaps au vert, la redirection repart
+
+**Correction de mon propre diagnostic.** J'avais conclu, sur une capture de 18 h, que l'apex refusait
+Googlebot parce que son sitemap restait en *Couldn't fetch* alors que celui de `www` passait. La capture
+suivante montre les **deux entrées en Success, 96 pages chacune**. Le refus n'existait pas : c'était un
+**état périmé** de la soumission du 21/10, faite avant le déploiement.
+
+Deux fois de suite aujourd'hui, j'ai bâti une recommandation sur une capture unique. La règle : **une
+capture, c'est un instantané, pas une mesure** — attendre la seconde lecture avant de conclure à un refus.
+
+**Ce qui en sort, et qui est solide :**
+
+- **96 pages découvertes**, deux fois, sur les deux hôtes. Le sitemap ne bloque plus rien.
+- **La redirection `www` → apex est de nouveau la bonne étape** : elle envoie Google d'une adresse lue
+  vers une adresse lue. Après elle, on **supprime l'entrée `www`** de Search Console (elle passera au
+  rouge, c'est normal) et on garde l'apex.
+- **Le sujet suivant n'est plus la découverte mais l'indexation.** *Pages → Indexed* : combien des 96 URL
+  sont réellement dans l'index. C'est la seule mesure qui dira si le site existe pour Google.
+

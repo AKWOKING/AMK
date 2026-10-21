@@ -138,47 +138,40 @@ le schéma enrichi. **Workers Builds fait désormais son travail à chaque envoi
 
 ---
 
-## 3 ter · La redirection www → apex : **à ne PAS faire maintenant** (décision du 22/10, 18 h)
+## 3 ter · La redirection www → apex : **feu vert** (22/10, 18 h 20)
 
-Le build est passé au vert (`Success: Build completed`, version `f3288fc2`) et les deux hôtes servent le
-nouveau site. Mais **Search Console a changé la donne** :
+L'échec sur l'apex était bien un **état périmé**. Les deux sitemaps sont maintenant au vert :
 
-| Sitemap soumis | Statut | Pages trouvées |
-|---|---|---|
-| `https://www.dmoptiquesarl.com/sitemap.xml` | **Success** | **96** |
-| `https://dmoptiquesarl.com/sitemap.xml` | **Couldn't fetch** (type « Unknown ») | 0 |
+| Sitemap soumis | Statut | Dernière lecture | Pages |
+|---|---|---|---|
+| `https://dmoptiquesarl.com/sitemap.xml` | **Success** | 21 oct. 2026 | **96** |
+| `https://www.dmoptiquesarl.com/sitemap.xml` | **Success** | 21 oct. 2026 | **96** |
 
-**Ce que ça veut dire :** Google lit très bien le sitemap **sur `www`**. Ce qu'il n'arrive pas à lire,
-c'est le même fichier **sur l'apex**. Et l'apex est justement l'adresse vers laquelle je proposais de
-rediriger `www`…
+**96 pages découvertes, deux fois.** La découverte est faite et le sitemap ne bloque plus rien. La
+redirection peut donc être posée — elle envoie désormais Google d'une adresse lue vers une adresse lue.
 
-**Donc la redirection `www` → apex ferait passer Google de l'adresse qui marche vers celle qui échoue.**
-C'est exactement l'inverse du but. On la met en attente, et on ne la fait qu'après avoir compris le
-refus sur l'apex.
+### Les 4 gestes
 
-### L'étape qui tranche : « Test live URL » (2 minutes, aucun risque)
+1. Cloudflare → zone **`dmoptiquesarl.com`** → *Rules* → **Redirect Rules**.
+2. **Create new Single Redirect** → carte **« Redirect from WWW to root »** → **Create from template**.
+3. Vérifie que l'URL cible est `https://dmoptiquesarl.com` (apex) et que le statut est **301**.
+4. **Deploy**.
 
-1. Search Console → la barre de recherche en haut → colle **`https://dmoptiquesarl.com/sitemap.xml`**
-   → **Entrée**.
-2. Clique **Test live URL** (en haut à droite du résultat).
-3. Deux issues possibles :
+> **Ne touche pas** à la carte existante « Redirect from HTTP to HTTPS » : elle fait un autre travail
+> (le http → https) et la supprimer casserait le site.
 
-| Résultat du test | Interprétation | Ce qu'on fait |
-|---|---|---|
-| **URL is available / 200** | Google *peut* lire l'apex. L'échec du sitemap était un **état périmé** du 21/10 (soumis avant le déploiement, jamais relu). | Supprimer l'entrée rouge, **la resoumettre** — elle passera au vert sous 24 h. |
-| **Couldn't fetch / 403 / erreur** | L'apex **refuse** Googlebot, alors que `www` l'accepte. | **On ne redirige pas** `www` vers l'apex. On cherche le refus : Cloudflare → **Security → Events**, filtrer sur le chemin `sitemap`. |
+### Juste après — 2 vérifications
 
-### Ce qui est déjà acquis, et qui ne dépend de rien de tout ça
+1. `https://www.dmoptiquesarl.com/` doit **rediriger** vers `https://dmoptiquesarl.com/`.
+2. Search Console → **Sitemaps** : **supprime l'entrée `www`**. Elle va passer au rouge, et c'est normal :
+   son URL redirige désormais. **Garde celle de l'apex**, c'est la seule qui compte à partir de maintenant.
 
-**96 pages ont été découvertes** par Google via le sitemap de `www` — et ces 96 URL sont les adresses
-**apex** (c'est ce que contient le fichier, `canonical` à l'appui). La découverte est donc faite, et
-l'indexation peut commencer. Le sitemap n'est plus le point bloquant : il l'était hier, il ne l'est plus.
+### Pourquoi cette redirection, au fond
 
-### Si tu veux le faire quand même, plus tard
-
-Le modèle existe : **Rules → Redirect Rules → Create new Single Redirect → « Redirect from WWW to root »
-→ Create from template**. Mais tant que l'apex n'est pas lu par Google, cette règle dégrade la situation.
-Ordre à respecter : **apex lisible → alors rediriger**.
+Le site déclare déjà `canonical` en apex sur ses 96 pages. La redirection aligne le comportement sur ce
+que le site dit déjà : **une seule adresse**. Sans elle, les liens partagés en `www` (les anciens, ceux
+que les clients copient) mènent à une seconde adresse que Google doit réconcilier — avec elle, il n'y a
+plus qu'une porte.
 
 ## 3 quater · Le jeton API reste **hors du dépôt**
 
@@ -304,9 +297,8 @@ C'est la seule différence entre les deux méthodes, et elle vaut les 4 minutes 
 
 1. `https://dmoptiquesarl.com/en/` → l'anglais.
 2. `https://www.dmoptiquesarl.com/` → redirection vers l'apex.
-3. Search Console → **Sitemaps** : une entrée au vert suffit — aujourd'hui c'est celle de
-   `https://www.dmoptiquesarl.com/sitemap.xml` (96 pages). L'entrée apex est en *Couldn't fetch* et
-   s'instruit par « Test live URL » (§3 ter). Détail : `../seo/URLS-INDEXATION-2026-10-21.md` §8.
+3. Search Console → **Sitemaps** : l'entrée de l'apex doit être **Success, 96 pages**. L'entrée `www`
+   disparaît après la mise en place de la redirection (§3 ter). Détail : `../seo/URLS-INDEXATION-2026-10-21.md` §9.
 
 ---
 
@@ -318,7 +310,7 @@ C'est la seule différence entre les deux méthodes, et elle vaut les 4 minutes 
   réglage — et c'est précisément le piège à éviter.
 - **`_headers` est pris en charge** par les Workers avec assets. **`_redirects` aussi — mais uniquement
   avec des chemins relatifs** : aucune redirection d'hôte ne peut y être écrite.
-- **La redirection `www` → apex attend.** Google lit le sitemap sur `www` et échoue sur l'apex :
-  rediriger maintenant pointerait Google vers l'adresse qui ne répond pas (§3 ter).
+- **La redirection `www` → apex se pose maintenant** (§3 ter) : les deux sitemaps sont au vert, 96 pages
+  chacun. Une seule entrée à garder ensuite dans Search Console : celle de l'apex.
 - **`wrangler` publie en une commande et dit ce qui ne va pas**, là où l'écran d'upload tournait sans
   rien dire.
