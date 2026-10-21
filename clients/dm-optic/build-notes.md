@@ -1860,3 +1860,35 @@ supprimer ou la resoumettre n'apporterait rien.
 **Le sujet SEO est donc clos côté technique.** Ce qui reste à mesurer n'est plus la découverte, mais
 l'**indexation** : *Pages → Indexed* sur les URL apex. À lire dans quelques jours, pas maintenant.
 
+## 22/10 (26) — la recherche qui manquait : la marque, la vente, Warby Parker
+
+Deuxième vague de recherche, et elle a fait plus que compléter : elle a **donné un axe** à tout ce qu'on
+avait produit ces trois semaines.
+
+**Joanna Wiebe** (`YNJ18ggqwqM`) pose la distinction qui commande le reste : *célèbre* n'est pas
+*intéressant*. McDonald's est célèbre ; In-N-Out est intéressant. Et un écart qui n'est pas crédible
+n'est pas un écart — c'est une excentricité. Son test à deux phrases (« je suis différent parce que…
+et ça compte pour mes gens parce que… ») élimine les idées décoratives.
+
+**Warby Parker** n'a pas gagné avec un prix bas : ils ont **nommé un ennemi structurel** (les marges de
+Luxottica), **supprimé la friction** (cinq montures essayées chez soi), et **changé la catégorie** — des
+lunettes sont un accessoire qu'on porte toute la journée, pas un dispositif médical. On copie la posture,
+pas le modèle : nous avons un cabinet à Ndobo Mayor et un numéro WhatsApp, pas 120 000 $ et un marché de
+150 milliards.
+
+**Ce qui en sort pour DM Optique** — et c'est la pièce qui manquait :
+
+> **L'axe unique : la transparence avant la vente. On montre avant de vendre.**
+
+Tout était déjà là : les 40 montures photographiées, la phrase « si vous voyez bien, ne venez pas »,
+l'examen à des horaires dédiés. Ce n'était pas une collection de bons gestes — **c'était un
+positionnement qui n'avait pas encore été nommé**. Écrit dans `brand/BRAND-STRATEGY-2026-10-22.md`.
+
+**Décision de King sur le premier post** : option B, on ne publie pas la vidéo déjà tournée en premier —
+on ouvre sur la règle **20/20/20**, sans visage, montée à partir des photos du dépôt
+(`content/month1/w1/tiktok-01-v2-20-20-20.md`). Le mois sera **entièrement sans visage** : c'est un choix
+assumé, documenté comme un coût (la recherche place les visages au premier rang), à réévaluer sur chiffres.
+
+**Le risque, dit à voix haute** : la v1 est tournée, la v2 ne l'est pas. Si le montage n'est pas prêt pour
+5h30, on publie la v1 et la v2 part le 27. Manquer la date pour une vidéo non montée serait le pire choix.
+

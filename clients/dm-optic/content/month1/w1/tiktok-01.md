@@ -1,7 +1,10 @@
 # TikTok n°1 — « En fin de journée, vous éloignez votre téléphone ? »
 
 ```
-Status: APPROVED — plan de tournage + script (King, 21/10/2026)
+Status: REMPLACÉ le 22/10 — King a choisi l'option B : le premier post devient
+        tiktok-01-v2-20-20-20.md (20/20/20, sans visage, montage à partir des photos du dépôt).
+        Ce script reste valable : il est DÉJÀ TOURNÉ, et sert de repli si le montage v2
+        n'est pas prêt pour le 22/10 5h30, ou de vidéo n°2.
 Remplace pour le PREMIER POST le script W1 v1 (« À qui confier vos yeux ? », gardé en annexe)
 Source: gabarit W43 §12b — sales/research/2026-W43-techniques.md
 Angle: le cas (LF8 ③) → la monture réelle (Purple Cow) → la sortie honnête

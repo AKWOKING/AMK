@@ -1,5 +1,18 @@
 # TikTok n°1 — la fiche de publication (22/10, 5h30)
 
+> ⚠️ **22/10 — ce n'est plus la vidéo prévue pour le premier post.**
+> King a choisi l'option B : le premier post devient **`tiktok-01-v2-20-20-20.md`**
+> (la règle 20/20/20, sans visage, montée à partir des photos réelles du dépôt).
+>
+> **Le problème pratique, dit franchement :** celle-ci est **déjà tournée**, la v2 demande
+> **40 minutes de montage** (voix + 6 images + sous-titres). Deux issues possibles :
+>
+> - **La v2 est prête avant 5h30** → elle part, et celle-ci devient la vidéo n°2 ou n°3.
+> - **Elle ne l'est pas** → on publie **celle-ci** le 22/10 (elle est conforme et tournée), et la v2 part
+>   le **mardi 27/10**. Manquer la date pour une vidéo non montée serait le pire des deux choix.
+>
+> Le reste de cette fiche (légende, gestes du matin, réponses) vaut pour les deux.
+
 ```
 Compte      @dmoptique.bonaberi237 (compte personnel — Business indisponible au Cameroun)
 Vidéo       22 s · 1080x1920 · montage relu par King (verrou §7 du script)
