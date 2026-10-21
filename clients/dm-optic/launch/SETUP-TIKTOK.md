@@ -1,8 +1,28 @@
 # SETUP TIKTOK — DM OPTIQUE SARL · templated, exécutable jour J
 
-> Compte **au nom du cabinet** (téléphone de M. Domche), AMK en accès. Le Pack Global inclut TikTok
+> Compte **au nom du cabinet**, créé par l'agence (voie rapide Google du 20/10 étendue aux
+> réseaux — décision King du 21/10), AMK en accès. Le Pack Global inclut TikTok
 > (`posting-calendar.md`). Écrit le 03/10 ; **mis à jour le 19/10** (acompte consigné le 13/10) :
 > création avec le client, **rien de publié sans validation de King**.
+
+## Création du compte — valeurs exactes (21/10, mise à jour de la voie du 03/10)
+
+La voie du 03/10 prévoyait le téléphone de M. Domche : **remplacée par l'email du cabinet**
+(l'agence garde l'accès sans dépendre du client — même logique que le compte Google ; M. Domche
+recevra l'accès en partage après). Rien de publié avant validation de King.
+
+| Écran | Valeur |
+|---|---|
+| Sign up | **Use phone or email → Email** |
+| Email | `dmoptiquesarl@gmail.com` — le code de vérification arrive dans la boîte Gmail du cabinet |
+| Password | **gestionnaire de mots de passe de King** — jamais dans le dépôt (public) |
+| Birthday | la date de naissance de **King** (même règle que le compte Google) |
+| Username | `dmoptique.bonaberi` (si pris : `dmoptique.bonaberi237`) |
+| Name (affiché) | `DM OPTIQUE – Bonabéri` |
+
+Après création : **rien de publié** — capture de l'écran profil → suite guidée (passage en
+Business Account, catégorie, bio « Opticien à Bonabéri, Douala · inscrit à l'ONOC. WhatsApp :
+656 122 239. », avatar = même marque que Facebook, puis configuration du premier contenu).
 
 ## Identité (pré-remplie)
 - **Nom :** `@dmoptique.bonaberi` · affichage `DM OPTIQUE – Bonabéri`

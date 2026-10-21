@@ -1164,3 +1164,40 @@ invisible). Méthode consignée : pages publiques seulement, zéro FB/IG scrapé
 industrialisation = Scrapling chez King. Lecture stratégique honnête : DM déjà devant sur le web ;
 à surveiller = réputation Valdoz (→ 5 premiers avis Google DM) + modèle abonnement iris (noté,
 jamais copié sans ruling). Offre mensuelle décrite, tarif = décision King.
+
+## 21/10 — Firecrawl audité NON installé ; hypit audité INSTALLÉ (CLI testé) ; message avis Google approuvé ; TikTok démarré (voie email cabinet) ; gabarit de veille debout
+
+**Firecrawl (ordre « audit and install ») — verdict NON INSTALLÉ :** AGPL-3.0 (usage interne OK)
+mais cloud payant (compte + clé, injoignables du bac) et self-host = Docker + Redis + RabbitMQ +
+PostgreSQL NuQ + FoundationDB + Playwright — Docker absent du bac (vérifié) ; le besoin (veille
+mensuelle, pages publiques) est couvert par Scrapling (20/10, zéro infra). Règle 5 : pas d'état
+sans usage. Réévaluation seulement si compte cloud testé chez King ET besoin non couvert
+(/extract LLM massif). Entrée TOOL-SCAN.
+
+**hypit (ordre « audit and install ») — verdict INSTALLÉ :** moteur vidéo SVML pour agents
+(check/plan/pricing/build), Apache-2.0 **modifiée lue en entier** — travail pour clients PERMIS ;
+interdits multi-tenant/revente/logo-strip ; outputs à nous. Exécutable npm `@hypit/hypit@0.3.1`
+installé (`tools/hypit/install.sh`, `~/.npm-global`) — **testé** : `hypit --version` → 0.3.1 +
+CLI complet. Rendu complet NON testé au bac (Chromium au build) → premier usage réel = décision
+King ; Hyperframes reste le moteur brag. **Règles debout :** jamais cloner la vidéo réelle d'un
+créateur pour un client ; `check` + `pricing` avant tout build ; logo amont conservé ; portiques
+habitude. Détail `tools/hypit/README.md` + TOOL-SCAN.
+
+**Message « avis Google » approuvé et rédigé :** `launch/MESSAGE-AVIS-GOOGLE-2026-10.md`
+(message WhatsApp à M. Domche + phrase du comptoir + réponses aux objections ; règle : clients
+réels seulement, jamais d'avis acheté). Objectif : 5 avis d'ici samedi.
+
+**TikTok démarré (King suit écran par écran) :** voie du 03/10 mise à jour — création avec
+l'**email du cabinet** (`dmoptiquesarl@gmail.com`, décision 20/10 étendue aux réseaux), username
+`dmoptique.bonaberi`, nom affiché `DM OPTIQUE – Bonabéri`, anniversaire = King, mot de passe dans
+son gestionnaire. Section « Création du compte » ajoutée au SETUP-TIKTOK.
+
+**Gabarit de veille debout (approuvé par King, 21/10) :** `sales/VEILLE-GABARIT-MENSUEL.md` —
+structure fixe en 6 points (cibles nommées, collecte datée sourcée, comparatif, devant/à
+surveiller, actions suggérées, limites), 2 pages max, humanizer.
+
+**GSC rappel du jour (rappelé à King) :** les 4 « Demander une indexation » restantes +
+relecture statut sitemap (attendu « Success — 48 »).
+
+**Dépôt :** 10ᵉ wipe du bac (même restauration base `b134dd2` + webp orphelins) → remède debout,
+zéro perte.

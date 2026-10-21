@@ -531,3 +531,38 @@ l'exige, jamais avant · ChatGPT/Gemini free = déjà remplacés par l'orchestra
   `~/.agents/skills/scrapling/` + miroir. **Preuve par appel réel** : GET github.com → 200, title
   extrait (API v0.5 = `.css('sel::text').get()`). **Limite testée :** fetchers navigateur bloqués
   en sandbox (CDN) → `scrapling install` sur la machine de King pour le plein potentiel.
+
+## 21/10 — firecrawl/firecrawl : AUDITÉ — NON INSTALLÉ (AGPL-3.0 mais pile lourde, besoin déjà couvert)
+
+> Ordre King (« audit and install »). Clone de lecture `12c69db` (20/10/2026, 58 Mo).
+
+- **(a) Quoi :** scraping → markdown « LLM-ready », /extract ; API cloud payante (crédits) OU
+  self-host Docker Compose (API + workers + Playwright + **Redis + RabbitMQ + PostgreSQL NuQ +
+  FoundationDB**). Licence **AGPL-3.0** (usage interne OK ; copyleft si diffusion en réseau).
+- **(b) Verdict flux NON pour nous aujourd'hui :** cloud = compte + clé payants, injoignables du
+  bac ; self-host = 5 services + Docker — **Docker ABSENT du bac** (vérifié 21/10) et un état
+  maintenu de cette taille pour un besoin couvert par Scrapling (installé 20/10, BSD-3, zéro
+  infra, testé) contredit la règle 5. Vente : rien que la veille Scrapling ne fasse déjà.
+- **(c) Conditions de réévaluation (les deux à la fois) :** King ouvre un compte cloud testé chez
+  lui ET un besoin précis non couvert par Scrapling (ex. extraction LLM de centaines de pages à
+  la demande). Sinon on ne revient pas dessus.
+
+## 21/10 — hypit-ai/hypit : AUDITÉ puis INSTALLÉ (Apache-2.0 modifiée — clauses lues ; CLI testé)
+
+> Ordre King (« audit and install »). Clone de lecture `0d36de9` (18/10/2026) ; exécutable npm
+> `@hypit/hypit@0.3.1` installé `~/.npm-global` (installeur `tools/hypit/install.sh`).
+
+- **(a) Quoi :** moteur vidéo SVML pour agents (check/plan/pricing/build), rendu Chromium,
+  modèles génératifs optionnels payants — captions/motion/visuels code-rendus se compilent sans
+  modèle (donc sans coût de service).
+- **(b) Licence : Apache-2.0 MODIFIÉE, lue en entier** — **travail pour clients PERMIS** sans
+  licence commerciale ; interdits : multi-tenant (2ᵉ workspace hors organisation), revente de
+  l'outil, retrait du logo/copyright des rapports ; outputs à nous.
+- **(c) Flux : OUI-potentiel — testé :** `hypit --version` → 0.3.1, `--help` → CLI complet.
+  **Rendu complet NON testé au bac** (Chromium + charge au build) → premier usage réel = décision
+  King (candidat : formats captions/motion, ex. UGC W1) ; Hyperframes reste le moteur brag.
+- **(d) Règles debout :** jamais cloner la vidéo réelle d'un créateur pour un client (structure
+  inspirée, contenu à nous ; verrous « que du vrai », R2 pas de visages IA, musique générée ou
+  licenciée) ; `hypit check` + `hypit pricing` AVANT tout build ; logo amont des rapports
+  conservé ; pas de multi-tenant ; portiques vidéo habitude avant envoi client.
+- **(e) Détail :** `tools/hypit/README.md`.
