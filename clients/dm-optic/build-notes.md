@@ -1766,3 +1766,19 @@ alors qu'il se lançait très bien.
 **Sécurité :** le jeton API a été collé en clair dans la conversation → à rouler immédiatement. Il n'est
 de toute façon pas nécessaire à Workers Builds.
 
+## 22/10 (21) — le site publie tout seul, et il est vérifié en ligne
+
+Après retrait de `_redirects`, le build est passé au vert (commit `617eea1`). **Vérifié sur le domaine
+public, pas dans le tableau de bord :**
+
+- `/en/` sert la page anglaise (« DM OPTIQUE SARL — Optometrist optician in Douala ») ;
+- `/en/montures/femmes/f01-ovale-doree/` sert « F01 · Oval, gold » ;
+- `/sitemap.xml` annonce **96 URL** (48 FR + 48 EN) avec `lastmod` ;
+- une fiche française affiche les libellés anglais dans le DOM et la section « You may also like ».
+
+Workers Builds est donc branché pour de bon : **envoi sur `arena/2fffee3b-amk` = publication**, sans zip,
+sans glisser-déposer, sans écran qui tourne dans le vide.
+
+**Reste, hors du site :** la redirection `www` → apex (zone → Redirect Rules), et la resoumission du
+sitemap dans Search Console.
+

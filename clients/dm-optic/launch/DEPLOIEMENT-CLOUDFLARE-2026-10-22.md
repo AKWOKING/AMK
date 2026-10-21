@@ -122,6 +122,18 @@ déploiement ne peut plus échouer pour cette raison. Le zip repasse à **182 en
 > « already uploaded »), mais **la version n'a jamais été créée** — donc le site en ligne n'a pas bougé.
 > C'est exactement ce qu'on observait : `/en/` en 404, `/montures/` à l'ancienne version.
 
+### ✅ Déployé et vérifié en ligne (22/10, commit `617eea1`)
+
+| Vérification, faite sur le site public | Résultat |
+|---|---|
+| `https://dmoptiquesarl.com/en/` | **la page d'accueil anglaise**, titre « DM OPTIQUE SARL — Optometrist optician in Douala » |
+| `https://dmoptiquesarl.com/en/montures/femmes/f01-ovale-doree/` | « F01 · Oval, gold », texte EN complet |
+| `https://dmoptiquesarl.com/montures/femmes/f01-ovale-doree/` | « Vous aimerez aussi » traduit, textes EN dans le DOM |
+| `https://dmoptiquesarl.com/sitemap.xml` | **96 URL** (48 françaises + 48 anglaises), `lastmod` au 21/10 |
+
+Le build est donc vert, et le site publie bien le `srcset`, le miroir `/en/`, les descriptions uniques et
+le schéma enrichi. **Workers Builds fait désormais son travail à chaque envoi sur la branche.**
+
 ---
 
 ## 3 ter · La redirection www → apex se fait dans Cloudflare, pas dans le site
