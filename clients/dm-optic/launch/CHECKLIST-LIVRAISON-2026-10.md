@@ -152,3 +152,32 @@ bloquant.
 **Test à faire maintenant, sur ton téléphone :** ouvre la page en 4G. Si le numéro WhatsApp de la
 couverture est **coupé** ou si le logo est **illisible**, la couverture ne travaille pas — c'est le seul
 critère qui compte.
+
+---
+
+## 8 · Le titre professionnel — « opticien optométriste » (21/10)
+
+Le cabinet demande de **relier les deux mots à chaque fois** : « *nous ne sommes pas seulement Opticien
+mais OPTOMETRISTE également* ». Vérifié à la source : au Cameroun, la **loi n° 99/001 du 7 avril 1999**
+(art. 2 et 3-2) ne connaît pas d'« optométriste » séparé — elle définit **l'opticien** comme titulaire
+soit du diplôme d'**opticien lunetier**, soit du diplôme d'**opticien optométriste**, ce dernier ayant en
+plus les attributions d'examen et de prescription d'équipement. Le titre écrit est donc **« opticien
+optométriste »**, jamais « opticien » seul, jamais « optométriste » seul.
+
+**Livré et en ligne** (`dm-optique-sarl.vercel.app`, déploiement `dpl_4siqcWgtYsdKNfSc5ARtNaDaKhTu`,
+READY/PROMOTED) : le titre est dans la balise `title`, `og:title`, `og:description`, le premier écran, la
+carte d'identité, la légende de la photo, le texte alternatif de la photo d'examen, le pied de page, la
+vCard (`TITLE:`) et les données structurées (`description` + `jobTitle` du fondateur), plus les 40 pages
+montures et les pages examen / cabinet. Contrôle : **49 pages sur 49** portent la formule.
+
+**Trois gestes qui restent, côté comptes (5 minutes, textes à coller) :**
+
+| # | Où | Quoi |
+|---|---|---|
+| 1 | Page Facebook → *Présentation* | remplacer la bio par les **237 caractères** de `launch/SETUP-FACEBOOK.md` § bio |
+| 2 | TikTok → *Modifier le profil* | coller `Opticien optométriste à Bonabéri · examen de vue · WhatsApp 656 122 239` (**71 car.**) |
+| 3 | Fiche Google → *Description* | commencer par « Opticien optométriste à Bonabéri, Douala… » ; catégorie secondaire *Optométriste* si elle est proposée |
+
+> Le client a répondu « **D'accord je vais faire les modifications** » — il modifie lui-même la page
+> Facebook. Pour éviter deux formulations, **lui envoyer la chaîne exacte à coller** (les 237 caractères),
+> pas une consigne générale.
