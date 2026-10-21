@@ -258,10 +258,10 @@ Chaque ligne est un **triple** : le texte à l'écran, la phrase de voix (qui **
 | **H1** | Ce n'est pas / une photo floue. | Ce que vous voyez, c'est ce que voit quelqu'un qui n'a jamais fait mesurer ses yeux. | `cabinet-interieur.webp` flouté → net | « Un œil ne se règle pas tout seul. Il se mesure, en quatre étapes. » | **A — prêt** |
 | **H2** | Cet appareil / ne sert pas à voir. | Il sert à trouver ce que votre œil ne vous dit pas. | `dmoptic-mesure.webp` (macro) | « C'est la troisième des quatre étapes. Les deux premières se font sans lui. » | **A — prêt** |
 | **H3** | CONSULTATION. / C'est écrit sur la vitrine. | Depuis combien de temps passez-vous devant ? | `cabinet-enseigne.webp`, zoom lent sur le mot | « Ici, l'examen vient avant la monture : écouter, mesurer, lire, réfracter. » | **A — prêt** |
-| **H4** | Il écrit quelque chose / pendant que vous lisez. | Ce qu'il écrit, c'est ce que vos yeux ont répondu. | `cabinet-examen.webp`, cadré sur l'écran et le carnet | Les quatre étapes, nommées | **B — cadrage sans visage à confirmer** |
+| **H4** | Il écrit quelque chose / pendant que vous lisez. | Ce qu'il écrit, c'est ce que vos yeux ont répondu. | `cabinet-examen.webp` (droits confirmés, personnel posant) | Les quatre étapes, nommées | **A — prêt** |
 | **H5** | Les phares, la nuit, / en forme d'étoiles. | Ce n'est pas la fatigue. Ça se mesure. | simulation astigmate nocturne sur une photo du lieu | « L'astigmatisme ne se devine pas. » + mention simulation | **A — prêt** |
 | **H6** | « Demain, c'est toi / qui soigneras. » | Son père le lui a dit avant qu'il parte étudier. | `cabinet-enseigne.webp` + **diplôme à photographier** | EISY · Laquintinie · Kumba · Bethesda · Master | **C — accord du client + photo du diplôme** |
-| **H7** | L'examen a / quatre étapes. | La plupart des gens n'en connaissent qu'une. | quatre plans, un par étape (**photos à prendre**) | Les quatre noms, dans ses mots | **B — 4 photos manquantes** |
+| **H7** | L'examen a / quatre étapes. | La plupart des gens n'en connaissent qu'une. | `research/assets/etapes/01…04` (voir §11 bis) | Les quatre noms, dans ses mots | **A — prêt** |
 | **H8** | Vous plissez les yeux / pour lire ceci ? | Alors ce n'est pas la taille de l'écran. | écran de téléphone réel, texte net puis flou | « La netteté ne se règle pas. Elle se mesure. » | **B — une photo** |
 | **H9** | On ne vous dira pas / « c'est juste la fatigue ». | Parce qu'on ne peut pas le savoir sans mesurer. | carte typographique sur papier, image qui bouge dessous | Les quatre étapes, aucune sautée | **A — prêt** |
 | **H10** | Prenez votre téléphone. / Éloignez-le de 40 cm. | Maintenant, lisez. C'est net ? | main + téléphone (**photo à prendre**) | « Si ce n'est pas net, ce n'est pas une habitude. » | **B — 1 photo ; le plus fort en commentaires** |
@@ -297,14 +297,49 @@ Chaque ligne est un **triple** : le texte à l'écran, la phrase de voix (qui **
 | 9–13 s | Preuve 1/4 | photo étape anamnèse (à prendre) | **1 · On écoute** | « D'abord les plaintes, les antécédents, ce que vous devez voir. » |
 | 13–17 s | Preuve 2/4 | `dmoptic-mesure` autre angle | **2 · On mesure** | « Ensuite le bilan optique. » |
 | 17–21 s | Preuve 3/4 | affiche d'acuités / tableau | **3 · On lit** | « Puis les acuités, œil par œil. » |
-| 21–25 s | Preuve 4/4 | `cabinet-examen`, cadrage écran | **4 · On réfracte** | « Enfin la réfraction, qui donne la correction. » |
+| 21–25 s | Preuve 4/4 | `04-refraction` (ou macro `dmoptic-mesure`) | **4 · On réfracte** | « Enfin la réfraction, qui donne la correction. » |
 | 25–30 s | Demande | `cabinet-enseigne` | **Écrivez-nous avant de venir.** + *simulation approximative* | « Dites-nous ce que vous n'arrivez plus à voir. On vous dira quoi prévoir. » |
 
 **Ce qui doit être réglé avant de lancer :**
 
-1. **Quatre photos** — une par étape (l'écoute, le bilan, les acuités, la réfraction). Sans elles, la preuve reste abstraite.
-2. **L'accord du client** sur `cabinet-examen.webp` : un patient y est visible. Le cadrage proposé l'évite, mais la question du droit à l'image doit être tranchée avant, pas après.
+1. ~~Quatre photos~~ → **fait** : les quatre visuels d'étape existent (§11 bis).
+2. ~~Droit à l'image~~ → **levé** : `cabinet-examen.webp` montre un membre du personnel posant en patient, droits confirmés par le client (21/10).
 3. **Le portique** : chaque plan doit bouger (zoom 2–6 %) ; le texte, lui, peut traverser deux plans.
+4. **La règle d'affichage** des visuels générés (§11 bis) : à appliquer au montage, pas après.
+
+---
+
+## 11 bis · Les quatre visuels d'étape — ce qu'ils sont, ce qu'ils ne sont pas
+
+Générés le 21/10 sur demande du client, cadre demandé : **Douala, 2026, moderne**. Aucun visage de patient n'est identifiable sur les quatre. Fichiers : `research/assets/etapes/` (planche : `planche-4-etapes.jpg`).
+
+| Fichier | Ce qu'on voit | Ce qu'il porte | Risque d'usage |
+|---|---|---|---|
+| `01-anamnese.jpg` | le praticien de face à son bureau, patiente de dos, carnet ouvert, baie vitrée sur des palmiers | l'écoute, le temps pris, le décor urbain | **le plus exposé** : un praticien fictif, dans une salle qui n'est pas la sienne |
+| `02-bilan-optique.jpg` | l'autoréfractomètre, la nuque du patient, deux mains sur le joystick | la mesure, l'instrument | faible : aucun visage, gros plan |
+| `03-acuites.jpg` | patiente de dos face à l'échelle d'acuités, main et cache-œil | la lecture, œil par œil | faible : le lieu reste générique |
+| `04-refraction.jpg` | macro : insertion d'un verre dans la monture d'essai | la précision, le geste | nul : c'est un objet |
+
+### La règle, et pourquoi elle n'est pas négociable
+
+> **Une image générée ne dit jamais « voici notre cabinet ».** Elle illustre une **étape de procédure**. Le lieu, lui, se prouve avec les vraies photos : la vitrine, le mur de montures, l'affiche d'anatomie, la macro du phoroptère.
+
+Trois raisons, dans l'ordre d'importance :
+
+1. **Les gens du quartier connaissent la boutique.** Une salle qui n'est pas la sienne, présentée comme la sienne, se remarque en trois secondes — et c'est exactement le type d'écart que l'axe de marque interdit.
+2. **La contradiction interne.** On passe notre temps à dire « on montre avant de vendre ». Une pièce fabriquée présentée comme un constat casse l'argument mieux qu'elle ne le sert.
+3. **Le praticien existe, il est photographiable.** `cabinet-examen.webp` le montre vraiment, avec un membre du personnel qui pose. Une image générée pour le remplacer n'apporte rien et coûte de la crédibilité.
+
+### Application au montage
+
+| Plan | Source | Pourquoi |
+|---|---|---|
+| Ouverture (0–6 s) | `cabinet-interieur.webp` | le vrai lieu, c'est l'ancrage |
+| Lock-in (6–9 s) | `dmoptic-mesure.webp` | le vrai appareil |
+| Étapes 1 à 4 (9–25 s) | `01` à `04` générés, **ou** la vraie `cabinet-examen` pour l'étape 1 | la procédure, pas le lieu |
+| Demande (25–30 s) | `cabinet-enseigne.webp` | la vraie porte, le vrai mot CONSULTATION |
+
+**Si un visuel généré est publié seul** (post, Statut, carte), deux options : soit il est recadré en gros plan de geste — il ne prétend alors rien sur le lieu —, soit la légende dit **« illustration »**. Jamais l'un sans l'autre.
 
 ---
 
@@ -313,7 +348,7 @@ Chaque ligne est un **triple** : le texte à l'écran, la phrase de voix (qui **
 | Question | Pourquoi ça compte | À faire |
 |---|---|---|
 | Le client accepte-t-il d'être filmé **de dos / les mains seulement** ? | Débloquerait la catégorie ③ (mouvement du sujet) | une question, une fois |
-| Droit à l'image des patients visibles sur les photos du cabinet | Bloque H4 et le plan 8 | demander avant tournage |
+| Le client accepte-t-il que les **visuels d'étape générés** côtoient ses vraies photos ? | C'est une décision de direction, pas de fabrication | lui montrer la planche (§11 bis) |
 | Le compte WhatsApp est-il en **version Business** (Statut, catalogue, réponses rapides) ? | Conditionne tout le §7 | vérifier sur place |
 | Existe-t-il des **diplômes photographiables** ? | H6 est la meilleure preuve du dossier | demander |
 | Audience réelle actuelle (TikTok, Facebook) | On raisonne sans chiffres | un relevé, une fois |
