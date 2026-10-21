@@ -205,6 +205,10 @@ Deux versions, **jamais mélangées** :
 > WhatsApp : 656 122 239 · examen de vue 8h30–13h00, du lundi au samedi · Ndobo Mayor, Bonabéri.
 > Écrivez-nous avant de venir, on vous dit quand passer.
 
+**Post n° 2 — les affiches enfants :** `content/month1/w1/facebook-post-posters.md` (légende prête,
+deux points à trancher : les montures en médaillon ne sont pas dans les 40, et les visages sont générés).
+**Ne pas publier avant la décision de King.**
+
 **Pourquoi ce texte et pas « DM OPTIQUE est maintenant en ligne »** : l'annonce parle de nous ; ce
 texte parle de la personne qui plisse les yeux devant son téléphone. C'est la même matière que le
 premier TikTok (`content/month1/w1/tiktok-01.md`) — **une production, deux vitrines**, et le même
@@ -224,14 +228,17 @@ message pré-rempli pour mesurer.
 
 **État de la page au 21/10 — ce qui reste à finir (10 minutes, dans cet ordre) :**
 
-- [ ] **`@username`** : `@dmoptiquesarl`, repli `@dmoptique.bonaberi` — **c'est lui qui donne une URL
-      propre** (le lien numérique ne va ni sur le site, ni sur la fiche Google)
-- [ ] **Couverture** : ✅ posée le 21/10, **mais ce n'est pas `cover-1640x624.jpg`** — la couverture en
-      ligne est une bannière de marque (logo + nom + promesse + WhatsApp), sans photo du cabinet. Décision
-      à prendre : la garder, ou passer à l'hybride photo + promesse. Comparatif : `CHECKLIST-LIVRAISON-2026-10.md` §7
+- [x] ~~`@username`~~ — **la page n'en propose pas** (constaté par King le 21/10 : le champ n'existe pas,
+      il n'y a que le nom). Conséquence assumée : l'adresse de la page reste **numérique**
+      (`facebook.com/profile.php?id=1417215104801727`). On ne l'affiche donc nulle part — ni pied de page
+      du site, ni fiche Google — **avant** que le champ apparaisse ou qu'un nom d'utilisateur soit
+      attribué. Un lien numérique dans un pied de page fait plus de mal que pas de lien du tout.
+- [ ] **Couverture** : ✅ posée le 21/10 (bannière de marque). **La version hybride est prête** —
+      `facebook-assets/cover-1640x624-hybride.jpg` : photo réelle du mur de montures + **« Voir mieux,
+      grandir plus loin »** (la phrase du cabinet), texte dans la zone sûre (bord droit 707 px contre
+      738 px pour la photo, marge mobile 41 px, contrôlée en 820×312 **et** en 2,4:1). À téléverser si King la préfère.
 - [ ] **Bouton** « Envoyer un message WhatsApp » → `wa.me/237656122239` + message pré-rempli (§2)
-- [ ] **Horaires** : lundi–samedi, examen 8h30–13h00, autres besoins 8h30–17h30, dimanche fermé
-      (la page affiche « Closed now » : vérifier que ce n'est pas « horaires absents »)
+- [x] **Horaires** — ✅ posés le 21/10 (confirmé par King : « le horaires is there »)
 - [ ] **Portefeuille** : confirmer le nom (`DM OPTIQUE SARL`), que **King en est propriétaire**, que le
       **2FA** est actif et qu'AMK est en **accès personne** (jamais un mot de passe partagé)
 - [ ] **Premier post** : après ton feu vert, avec le texte du §6 et un commentaire épinglé

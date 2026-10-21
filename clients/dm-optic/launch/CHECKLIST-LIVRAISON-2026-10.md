@@ -33,17 +33,17 @@
 | 1 | **Dossier de remise** (ce document + le PV de rétrocession) | ✅ ce fichier |
 | 2 | **Rapport de fin de mois 1** — à produire **après** la ligne de base | ⬜ dépend de l'item ③·4 |
 | 3 | **Contenus S2 → S4** — scripts et carrousels | ⬜ 1er TikTok prêt, le reste suit le calendrier |
-| 4 | **Rebuild de la couverture Facebook** (voir §7) | ⬜ sur ta décision |
+| 4 | **Couverture Facebook hybride** (voir §7) | ✅ **produite** — `facebook-assets/cover-1640x624-hybride.jpg`, à téléverser si King la préfère |
 
 ### ③ · King (toi) — 8 gestes, ~2 heures au total
 
 | # | Quoi | Pourquoi c'est à toi | Bloque ? |
 |---|---|---|---|
 | 1 | **Téléverser `dmopticsarl.zip` sur Cloudflare** | le domaine et l'hébergement sont à toi | la vérif finale du site |
-| 2 | **Facebook : `@username`** (`@dmoptiquesarl`) | unique, réservé depuis ton compte | liens site + fiche Google |
-| 3 | **Facebook : bouton WhatsApp + horaires** | réglages de la page | conversions |
-| 4 | **TikTok : poser la bio B** (69 car.) | dans l'app | première impression |
-| 5 | **TikTok : tournage 22–23/10 avant 13h, publication 27/10** | caméra, lumière, montage | la campagne démarre |
+| 2 | ~~Facebook : `@username`~~ → **impossible** : la page n'en propose pas | ✅ constaté — l'URL reste numérique, donc **on ne l'affiche nulle part** | rien |
+| 3 | **Facebook : bouton WhatsApp** (horaires ✅ posés le 21/10) | réglage de la page | conversions |
+| 4 | ~~TikTok : bio B~~ → ✅ **posée le 21/10** | — | fait |
+| 5 | **TikTok : publication programmée le 22/10 à 5h30** (tournage fait) | — | la campagne démarre |
 | 6 | **Facebook : publier le 1er post** (`SETUP-FACEBOOK.md` §6) | ton feu vert | — |
 | 7 | **Search Console : 4 indexations + re-check sitemap** | ton compte | visibilité Google |
 | 8 | **Fiche Google : photos, description, services, profils sociaux** | ton accès | conversion locale |
@@ -121,7 +121,16 @@ Si les points 2 et 3 sont faux, c'est l'**ancien** zip qui est en ligne : on rem
 
 ---
 
-## 7 · La couverture Facebook en ligne n'est pas celle qu'on avait produite
+## 7 · La couverture Facebook en ligne — et l'hybride qui est prête
+
+> **Mise à jour du 21/10 : la version hybride existe.** `facebook-assets/cover-1640x624-hybride.jpg` :
+> **photo réelle** du mur de montures (l'image du cabinet, pas une illustration) + la promesse **du
+> cabinet**, reprise de ses propres affiches — *« Voir mieux, grandir plus loin »*. Le script de
+> composition est versionné (`build_cover.py`) et se relance en une commande.
+> Contrôles automatiques : texte le plus bas à **496 px / 624**, bord droit du texte à **707 px** contre
+> **738 px** pour la photo, marge mobile **41 px** après recadrage 2,4:1. Simulations relues : 820×312 et 640×360.
+
+### Le contexte d'origine
 
 Sur la capture du 21/10, la couverture affiche **le logo en grand + le nom + la promesse + la pastille
 WhatsApp** sur un fond bleu nuit. C'est une couverture **de marque**. Celle du dépôt

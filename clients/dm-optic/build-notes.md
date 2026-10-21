@@ -1450,3 +1450,50 @@ dans la checklist §7 ; décision à King, ce n'est pas bloquant.
 **Détail qui compte :** la bannière en ligne annonce « **Réparation** ». C'est cohérent avec les six
 services du site, mais **aucun des six n'est confirmé par le cabinet** (item 8 de la checklist). On ne
 laisse pas un service affiché sans confirmation.
+
+## 21/10 (9) — Couverture hybride, Vercel rétabli, verdict sur les affiches
+
+### ① La couverture hybride
+
+`facebook-assets/cover-1640x624-hybride.jpg` + `build_cover.py` (relançable). **La photo réelle** du mur de
+montures, rendue en « cover » — la première version laissait deux bandes marine en haut et en bas, avec
+une arête franche : recadrée en hauteur, fondue sur 420 px, voile à 10 %. Le texte reprend **la phrase du
+cabinet** (« Voir mieux, grandir plus loin »), pas une phrase d'agence.
+
+**Trois contrôles automatisés** plutôt qu'un avis à l'œil : texte le plus bas 496/624 ; bord droit du texte
+707 px **contre** 738 px pour la photo (aucun chevauchement) ; marge mobile 41 px après le recadrage
+2,4:1. Simulations 820×312 et 640×360 relues. C'est la leçon de la cover précédente, partie en trois
+itérations : **on mesure, puis on regarde**.
+
+### ② Vercel : le déploiement existait, mais il ne se déclenchait plus
+
+Le projet `dm-optique-sarl` est lié au dépôt avec `rootDirectory: hosting/previews/dmoptic`, mais le
+dernier déploiement datait de `29e449b` — quatre commits de retard. Le connecteur Vercel permet de le
+relancer explicitement : **`dpl_J2UiUijPC5fSgooYe1k2fGpGwQvc`**, READY / PROMOTED, alias
+`dm-optique-sarl.vercel.app`, commit `931d464`. **Règle tenue** : à partir de maintenant, tout changement
+du site est déployé **avant** d'être annoncé, et l'état est consigné.
+
+### ③ Les affiches enfants — bonnes, à deux conditions
+
+Reçues en trois versions (deux vertes, une bleue). **Archivées** dans `launch/facebook-assets/posters/`.
+Verdict complet dans `content/month1/w1/facebook-post-posters.md`. En résumé :
+
+- **La bonne idée** : la cible (les parents), la saison (la rentrée), et **la même promesse que la
+  couverture** — la page commence à avoir une voix.
+- **Condition 1 — les montures en médaillon ne sont pas au cabinet.** Comparaison faite avec les 40 réelles :
+  **aucune monture verte** au catalogue, et le violet brillant des affiches 1 et 2 ne correspond pas aux
+  photos de E14/E15 (violet sombre et mat). Or l'affiche dit « Disponible chez DM Optique ». Un parent
+  peut venir demander **cette** monture. Deux sorties : King confirme le stock, ou je remplace les
+  médaillons par de vraies montures du cabinet.
+- **Condition 2 — les visages sont générés.** Règle R2 + label Meta. Trois options proposées, la
+  recommandation étant **A : publier sans le visage** (médaillon + les trois promesses + le titre) — plus
+  différenciant, et zéro risque.
+
+**La légende est prête** (815 caractères) : elle commence par la situation de l'enfant, ne nomme aucun
+symptôme, oriente vers l'examen, et finit par la sortie honnête de la maison. **Rien n'est publié.**
+
+### ④ États corrigés
+
+- **Pas de `@username`** : King a constaté que la page n'en propose pas. L'adresse reste numérique → **on ne
+  l'affiche nulle part** (site, fiche Google). C'était une ligne de ma liste, elle tombe.
+- **Horaires ✅**, **bio TikTok ✅**, **1er TikTok programmé le 22/10 à 5h30**.
