@@ -32,6 +32,8 @@ tools/record/node_modules/
 #    supprimer les deux lignes ci-dessous et les fichiers suivis.
 !clients/dm-optic/content/month1/w1/tiktok-01-v2.mp4
 !clients/dm-optic/content/month1/w1/ugc-03.mp4
+!clients/dm-optic/content/month1/w1/spot-02.mp4
+!clients/dm-optic/content/month1/w1/spot-03.mp4
 # archives d'export : produites par un script, jamais versionnées
 /amk-site*.zip
 /site/*.zip

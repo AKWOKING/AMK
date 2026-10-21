@@ -8,7 +8,8 @@ Trois fichiers, aucun service externe obligatoire :
 
 | Fichier | Rôle |
 |---|---|
-| `ugc.py` | le moteur : scènes, mouvement, sous-titres incrustés, cartons, couverture, encodage, portique |
+| `ugc.py` | moteur « nuit » : scènes, mouvement, sous-titres incrustés, cartons, couverture, portique |
+| `editorial.py` | moteur « éditorial clair » : fond crème des fiches produit, détourage réel, typographie sujet — le registre des références client (voir `clients/dm-optic/content/month1/w1/SPOT-DIRECTION.md`) |
 | `providers.py` | les fournisseurs de **clips IA** (Veo, HeyGen, Hedra, fal) : devis, appel, refus propre sans clé |
 | `README.md` | ce document |
 
@@ -24,6 +25,20 @@ mesure. Une vidéo UGC qui convertit, c'est 60 % d'assemblage.
 
 Ce moteur prend le plan généré (ou filmé) comme **une scène parmi d'autres** et assemble autour de lui
 ce qui rend le contenu crédible et mesurable — avec les photos réelles du client, sa voix, son WhatsApp.
+
+## 1 bis · Deux moteurs, deux registres
+
+| | `ugc.py` | `editorial.py` |
+|---|---|---|
+| Fond | nuit dégradé | **crème 246,235,225** (le fond des fiches montures) |
+| Produit | carte crème sur fond nuit | **détouré**, flottant, ombre portée réelle |
+| Texte | bandeau de sous-titres | **typographie comme sujet** |
+| Rythme | plans de 3 à 4 s | **aucun plan > 1,9 s** (garde-fou bloquant) |
+| Son | voix seule | voix + nappe générée (accords tenus, souffle sur les coupes) |
+| Usage | UGC explicatif, cartons de marque | **spots publicitaires**, déclinés d'une référence |
+
+Le second est né d'un retour client : *« I don't like the videos »* — le registre sombre ne ressemblait
+pas aux vidéos de référence. Les deux restent disponibles ; le registre clair est le défaut pour un spot.
 
 ## 2 · Les quatre types de scène
 

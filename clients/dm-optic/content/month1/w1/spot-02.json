@@ -1,0 +1,185 @@
+{
+  "title": "Spot 02 · « Une monture, ça se choisit au millimètre »",
+  "note": "Registre éditorial clair : fond crème des fiches produit, produit héros, typographie. Aucun visage, aucune image générée. Règle : aucun plan > 1,9 s (voir tools/ugc/editorial.py, MAX_PLAN).",
+  "scenes": [
+    {
+      "type": "type",
+      "dur": 1.8,
+      "lines": [
+        "Une monture,"
+      ],
+      "size": 112,
+      "top": 780,
+      "rule_y": 1030,
+      "note": "ça se choisit au millimètre."
+    },
+    {
+      "type": "frame",
+      "dur": 1.8,
+      "src": "hosting/previews/dmoptic/montures/monture-f24.webp",
+      "label_top": "Pas au hasard.",
+      "label_y": 500,
+      "label_size": 56,
+      "width": 900,
+      "cy": 1060,
+      "angle": -2.0,
+      "spin": 2.6,
+      "label": "F24 · ÉCAILLE ET PAILLETTES"
+    },
+    {
+      "type": "frame",
+      "dur": 1.7,
+      "src": "hosting/previews/dmoptic/montures/monture-f24.webp",
+      "label_top": "Pas à la mode.",
+      "label_y": 500,
+      "label_size": 56,
+      "width": 960,
+      "cy": 1060,
+      "angle": 1.4,
+      "spin": -2.2,
+      "label": "F24 · ÉCAILLE ET PAILLETTES"
+    },
+    {
+      "type": "row",
+      "dur": 1.8,
+      "srcs": [
+        "hosting/previews/dmoptic/montures/monture-h08.webp",
+        "hosting/previews/dmoptic/montures/monture-f01.webp",
+        "hosting/previews/dmoptic/montures/monture-e15.webp"
+      ],
+      "names": [
+        "H08",
+        "F01",
+        "E15"
+      ],
+      "label_top": "Chacune photographiée.",
+      "label_y": 520,
+      "label_size": 56,
+      "cy": 980
+    },
+    {
+      "type": "type",
+      "dur": 1.7,
+      "lines": [
+        "Sur le site."
+      ],
+      "size": 110,
+      "top": 800,
+      "rule_y": 1050,
+      "note": "Une par une."
+    },
+    {
+      "type": "frame",
+      "dur": 1.8,
+      "src": "hosting/previews/dmoptic/montures/monture-h08.webp",
+      "label_top": "Avec son prix.",
+      "label_y": 500,
+      "label_size": 56,
+      "width": 940,
+      "cy": 1060,
+      "angle": 1.8,
+      "spin": -2.4,
+      "label": "H08 · AVIATEUR"
+    },
+    {
+      "type": "row",
+      "dur": 1.8,
+      "srcs": [
+        "hosting/previews/dmoptic/montures/monture-f24.webp",
+        "hosting/previews/dmoptic/montures/monture-f61.webp",
+        "hosting/previews/dmoptic/montures/monture-e13.webp"
+      ],
+      "names": [
+        "F24",
+        "F61",
+        "E13"
+      ],
+      "label_top": "Chaque famille.",
+      "label_y": 520,
+      "label_size": 56,
+      "cy": 980
+    },
+    {
+      "type": "row",
+      "dur": 1.8,
+      "srcs": [
+        "hosting/previews/dmoptic/montures/monture-e07.webp",
+        "hosting/previews/dmoptic/montures/monture-e14.webp",
+        "hosting/previews/dmoptic/montures/monture-e17.webp"
+      ],
+      "names": [
+        "E07",
+        "E14",
+        "E17"
+      ],
+      "label_top": "Pour les enfants aussi.",
+      "label_y": 520,
+      "label_size": 54,
+      "cy": 980
+    },
+    {
+      "type": "frame",
+      "dur": 1.8,
+      "src": "hosting/previews/dmoptic/montures/monture-f01.webp",
+      "label_top": "Monture essayée, monture mesurée.",
+      "label_y": 500,
+      "label_size": 50,
+      "width": 930,
+      "cy": 1060,
+      "angle": -1.4,
+      "spin": 2.2,
+      "label": "F01 · MÉTAL FIN"
+    },
+    {
+      "type": "inset",
+      "dur": 1.8,
+      "photo": "hosting/previews/dmoptic/cabinet-interieur.webp",
+      "label_top": "À Bonabéri.",
+      "label_y": 430,
+      "label_size": 56,
+      "cy": 700,
+      "label": "NDOBO MAYOR · IMMEUBLE WEST HOTEL"
+    },
+    {
+      "type": "dark",
+      "dur": 1.8,
+      "lines": [
+        "En ligne.",
+        "Avant de venir."
+      ],
+      "size": 100,
+      "top": 820,
+      "note": "dmoptiquesarl.com/montures"
+    },
+    {
+      "type": "type",
+      "dur": 1.7,
+      "lines": [
+        "Puis on mesure."
+      ],
+      "size": 108,
+      "top": 800,
+      "rule_y": 1050,
+      "note": "Une monture qui glisse ne sert à rien."
+    },
+    {
+      "type": "type",
+      "dur": 1.7,
+      "lines": [
+        "8h30 – 13h00."
+      ],
+      "size": 108,
+      "top": 820,
+      "rule_y": 1060,
+      "note": "Du lundi au samedi."
+    },
+    {
+      "type": "end",
+      "dur": 1.9,
+      "logo": "hosting/previews/dmoptic/dm-logo.webp",
+      "title": "DM OPTIQUE SARL",
+      "hours": "Examen de vue · 8h30–13h00",
+      "cta": "WhatsApp 656 122 239"
+    }
+  ]
+}
