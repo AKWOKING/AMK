@@ -116,7 +116,7 @@ du clic dans un partage WhatsApp.
 **Légende — à copier telle quelle :**
 
 ```
-Opticien à Bonabéri : en fin de journée, vous éloignez votre téléphone pour lire ?
+Opticien optométriste à Bonabéri : en fin de journée, vous éloignez votre téléphone pour lire ?
 
 Cette monture est dans notre stock — et sur notre site, avec toutes les autres.
 Vous les voyez avant de vous déplacer, et vous les essayez au cabinet.
@@ -174,7 +174,13 @@ rien au contenu ni à la portée organique ; on perd le badge, le champ site et 
 conversion WhatsApp. Analytics de base : **TikTok Studio** (Profil → ☰ → TikTok Studio → Analytics).
 Détail et ce qu'on ne fait pas : `launch/SETUP-TIKTOK.md` § « Business Account ». La bio retenue est le candidat **B** :
 
-> `Opticien à Bonabéri · examen de vue & montures · WhatsApp 656 122 239`
+> `Opticien optométriste à Bonabéri · examen de vue · WhatsApp 656 122 239` (71 car.)
+
+> **21/10 — le client demande « opticien optométriste » partout.** Le titre exact est celui de la loi
+> camerounaise (voir `content/strategy/RULE-CREDENTIAL-CLAIMS.md`). **La vidéo, elle, est déjà tournée** :
+> si le bandeau et le beat 4 disent encore « Opticien à Bonabéri », on ne refait pas le montage — le
+> titre complet passe dans la **bio** et la **légende** ci-dessous, qui sont modifiables au moment de
+> publier. Une seule chose compte : qu'aucun support ne dise « opticien » **seul**.
 
 ---
 

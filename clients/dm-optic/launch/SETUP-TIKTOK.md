@@ -31,16 +31,18 @@ Après création : **rien de publié** — la suite se fait dans cet ordre : **b
 **Le Business Account ne fait plus partie du parcours : il est indisponible au Cameroun** (section
 suivante, vérifié le 21/10).
 
-## Bio — DÉCIDÉE : candidat B (King, 21/10/2026)
+## Bio — DÉCIDÉE : candidat B, **révisé le 21/10** pour « opticien optométriste »
 
-**Texte exact à coller (69 caractères, limite plateforme 80) :**
+**Texte exact à coller (71 caractères, limite plateforme 80) :**
 
 ```
-Opticien à Bonabéri · examen de vue & montures · WhatsApp 656 122 239
+Opticien optométriste à Bonabéri · examen de vue · WhatsApp 656 122 239
 ```
 
 Pourquoi B : le nom affiché `DM OPTIQUE SARL` ne dit pas le métier ; la bio doit le dire, et
-« opticien » est le mot que les gens tapent. Le lieu, l'offre et le canal sont dans les trois
+« opticien » est le mot que les gens tapent — **« optométriste » suit le mot, il ne le remplace pas**
+(le client : « relier à chaque fois les 2 » ; la loi camerounaise dit « opticien optométriste »).
+La bio posée le 21/10 disait encore « Opticien à Bonabéri… » : **à remplacer par celle-ci.** Le lieu, l'offre et le canal sont dans les trois
 premiers mots utiles. L'ONOC reste une preuve — sur le site, la fiche Google et dans les vidéos —
 pas un titre de bio (c'était l'objection de King, et la recherche W43 la confirme : la bio parle du
 visiteur).

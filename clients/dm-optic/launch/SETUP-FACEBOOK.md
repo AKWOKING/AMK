@@ -74,7 +74,7 @@ deux façons de perdre la page :
 | **Nom de la page** | `DM OPTIQUE SARL` |
 | **Nom d'utilisateur (@)** | `@dmoptiquesarl` (si pris : `@dmoptique.bonaberi`) |
 | **Catégorie principale** | **Opticien** (repli : *Magasin de lunettes* ; jamais « Salon de beauté ») |
-| **Catégories secondaires** | *Service de santé* (facultatif) — **pas** « Clinique » |
+| **Catégories secondaires** | **Optométriste** si Meta la propose (c'est le second métier — voir `RULE-CREDENTIAL-CLAIMS.md`) · puis *Service de santé* — **pas** « Clinique » |
 | **Adresse** | Immeuble West Hotel, 1er étage, dernière porte à droite — Ndobo Mayor, Bonabéri, Douala IV |
 | **Téléphone** | `+237 656 122 239` |
 | **Email** | `dmoptiquesarl@gmail.com` |
@@ -83,11 +83,15 @@ deux façons de perdre la page :
 | **Bouton d'action** | **Envoyer un message WhatsApp** → `656 122 239` |
 | **Zone desservie** | Bonabéri · Douala IV (facultatif, mais utile en recherche locale) |
 
-### La bio (champ « Présentation / Intro », 241 caractères sur 255)
+### La bio (champ « Présentation / Intro », **237 caractères sur 255**)
 
 ```
-Opticien à Bonabéri, Douala IV. Examen de vue, montures femme/homme/enfant, solaires. Inscrit à l'ONOC. Immeuble West Hotel, 1er étage, dernière porte à droite. Lun–sam · examen 8h30–13h00 · autres besoins 8h30–17h30. WhatsApp : 656 122 239.
+Opticien optométriste à Bonabéri, Douala IV. Examen de vue, montures et solaires. Inscrit à l'ONOC. Immeuble West Hotel, 1er étage, dernière porte à droite. Lun–sam · examen 8h30–13h00 · autres besoins 8h30–17h30. WhatsApp : 656 122 239.
 ```
+
+> **Mise à jour 21/10** : le client demande **« opticien optométriste »** partout (pas « opticien »
+> seul). Le titre exact est celui de la loi camerounaise — voir `content/strategy/RULE-CREDENTIAL-CLAIMS.md`.
+> La bio en ligne aujourd'hui dit encore « Opticien à Bonabéri… » : **à remplacer par celle-ci.**
 
 **Pourquoi celle-là et pas « DM OPTIQUE est un cabinet fondé en… » :** elle commence par ce que les
 gens tapent (*opticien à Bonabéri*), donne les trois informations qui décident une visite (où, quand,

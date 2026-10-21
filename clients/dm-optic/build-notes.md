@@ -1497,3 +1497,45 @@ symptôme, oriente vers l'examen, et finit par la sortie honnête de la maison. 
 - **Pas de `@username`** : King a constaté que la page n'en propose pas. L'adresse reste numérique → **on ne
   l'affiche nulle part** (site, fiche Google). C'était une ligne de ma liste, elle tombe.
 - **Horaires ✅**, **bio TikTok ✅**, **1er TikTok programmé le 22/10 à 5h30**.
+
+## 21/10 (10) — « Opticien optométriste » : la demande du client, vérifiée avant d'être appliquée
+
+Le client écrit : « *nous ne sommes pas seulement Opticien mais OPTOMETRISTE également […] relier à
+chaque fois les 2* ». Deux réflexes, dans cet ordre : **ne pas appliquer à l'aveugle**, **ne pas
+refuser**.
+
+**Vérification** : la loi camerounaise **n° 99/001 du 7 avril 1999**, art. 2, définit l'opticien comme
+titulaire *soit* du diplôme d'opticien lunetier, *soit* du **diplôme d'opticien optométriste** ; l'art.
+3(2) donne à ce dernier des attributions en plus (formuler et concevoir l'équipement). L'optométrie n'est
+donc **pas** une profession séparée au Cameroun — et l'ONOC poursuit l'usurpation de titre. Écrire
+« optométriste » seul serait **plus risqué** que d'écrire « opticien » : ce n'est pas un titre protégé.
+
+**Forme retenue : « opticien optométriste ».** Les deux mots du client, dans l'ordre du droit.
+
+**Appliqué — 12 endroits dans le gabarit, 6 dans le constructeur :**
+
+| Où | Avant | Après |
+|---|---|---|
+| `<title>` | Opticien à Bonabéri, Douala | Opticien optométriste à Bonabéri, Douala (58 car.) |
+| og:title / og:description | Opticien… | Opticien optométriste… (144 car.) |
+| Kicker du premier écran | Opticien à Douala · inscrit à l'ONOC | Opticien optométriste à Douala · inscrit à l'ONOC |
+| Carte d'identité | « Opticien inscrit » / « L'opticien » | « Opticien optométriste » / « Le titulaire » |
+| Légende de la carte | Opticien inscrit à l'Ordre… | Opticien optométriste, inscrit à l'Ordre… |
+| Alt de la photo d'examen | opticien en blouse blanche | opticien optométriste en blouse blanche |
+| Pied de page | Opticien inscrit à l'ONOC | Opticien optométriste inscrit à l'ONOC |
+| vCard (`TITLE:`) | Opticien | Opticien optométriste |
+| JSON-LD | description sans le titre | description + `jobTitle` sur le fondateur |
+| Pages examen / cabinet (4 phrases) | opticien inscrit à l'ONOC | opticien optométriste inscrit à l'ONOC |
+
+**Décision de détail :** la ligne « L'opticien / M. Domche Noumbi » de la carte est devenue
+« **Le titulaire** ». Le libellé complet ne tenait pas dans la colonne, et « Le titulaire » ne dit rien de
+faux — le titre est écrit juste en dessous, dans la légende, en entier. On préfère un libellé neutre à
+un libellé tronqué.
+
+**Portiques :** html **49/49** · a11y `--strict` **rc 0 sur 49** · JS **49/49** · images **0** ·
+`test_dmoptic_page.mjs` vert · AEO **0** · hero **0**. Zip **132 fichiers**, `testzip` OK.
+
+**Ce qui reste à réviser côté plateformes** (gestes de King, textes fournis) : bio Facebook (237/255),
+bio TikTok (71 car.), catégorie secondaire « Optométriste » sur Facebook et Google, description Google.
+**TikTok n° 1** : le montage est déjà tourné — on ne refait pas la vidéo pour un bandeau, le titre complet
+passe dans la bio et la légende, qui se modifient au moment de publier.

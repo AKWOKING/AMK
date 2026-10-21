@@ -15,6 +15,8 @@ Gates: [ ] 3-second hook (question/specific, ONE person, no self-intro)
        [ ] one clear CTA (DM "PREVIEW" closing beat, separate from the payoff)
        [ ] no real clinic/school named without written permission (anonymise)
        [ ] 3-component pre-flight: script → visuals → voice
+       [ ] title/credential: "opticien optométriste" (never "opticien" alone) when the client holds both
+           — see content/strategy/RULE-CREDENTIAL-CLAIMS.md
 ```
 
 Then the beats: `HOOK (0-3s)` → `PROBLEM` → `DEMO (real website footage)` → `PAYOFF FRAME` → `CTA FRAME (DM PREVIEW)`.

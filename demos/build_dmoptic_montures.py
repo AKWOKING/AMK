@@ -605,7 +605,7 @@ def main():
     exam_main = f'''<section class="wrap">
     {site.crumbs([(B("Accueil", "Home"), "/"), (B("Examen de vue", "Eye examination"), None)])}
     <h1 class="rv">{B("Examen de vue à Bonabéri", "Eye examination in Bonaberi")}</h1>
-    <p class="lede rv">{B("On mesure ce que votre œil demande, avant de parler de monture. L'examen est réalisé au cabinet par le titulaire, M. Domche Noumbi, opticien inscrit à l'ONOC.", "We measure what your eye needs, before anyone talks about frames. The examination is done at the practice by the owner, Mr Domche Noumbi, an optician registered with the ONOC.")}</p>
+    <p class="lede rv">{B("On mesure ce que votre œil demande, avant de parler de monture. L'examen est réalisé au cabinet par le titulaire, M. Domche Noumbi, opticien optométriste inscrit à l'ONOC.", "We measure what your eye needs, before anyone talks about frames. The examination is done at the practice by the owner, Mr Domche Noumbi, an optometrist optician registered with the ONOC.")}</p>
     <figure class="v2-photo rv">
       <img src="/cabinet-interieur.webp" alt="Intérieur du cabinet DM OPTIQUE SARL à Bonabéri" width="1400" height="926" loading="lazy">
       <figcaption>{B("L'intérieur du cabinet, immeuble West Hotel.", "Inside the practice, West Hotel building.")}</figcaption>
@@ -637,7 +637,7 @@ def main():
     cabinet_main = f'''<section class="wrap">
     {site.crumbs([(B("Accueil", "Home"), "/"), (B("Le cabinet", "The practice"), None)])}
     <h1>{B("Le cabinet à Bonabéri", "The practice in Bonaberi")}</h1>
-    <p class="lede">{B("Cabinet d'optique médicale à Douala. Opticien inscrit à l'ONOC. Le titulaire, M. Domche Noumbi, reçoit au cabinet : temps consacré à chaque étape, accueil, confort du patient.", "Optical practice in Douala. Optician registered with the ONOC. The owner, Mr Domche Noumbi, sees you at the practice: time taken at every step, a proper welcome, patient comfort.")}</p>
+    <p class="lede">{B("Cabinet d'optique médicale à Douala. Opticien optométriste inscrit à l'ONOC. Le titulaire, M. Domche Noumbi, reçoit au cabinet : temps consacré à chaque étape, accueil, confort du patient.", "Optical practice in Douala. Optometrist optician registered with the ONOC. The owner, Mr Domche Noumbi, sees you at the practice: time taken at every step, a proper welcome, patient comfort.")}</p>
     <div class="v2-photos">
       <figure>
         <img src="/cabinet-interieur.webp" alt="{esc("Intérieur du cabinet DM OPTIQUE SARL à Bonabéri")}" width="1400" height="926" loading="lazy">
@@ -649,7 +649,7 @@ def main():
       </figure>
     </div>
     <dl class="v2-facts">
-      <div><dt>{B("L'opticien", "The optician")}</dt><dd>{B("M. Domche Noumbi", "Mr Domche Noumbi")}</dd></div>
+      <div><dt>{B("Le titulaire", "Owner")}</dt><dd>{B("M. Domche Noumbi", "Mr Domche Noumbi")}</dd></div>
       <div><dt>{B("Adresse", "Address")}</dt><dd>{B(ADDRESS_FR, ADDRESS_EN)}</dd></div>
       <div><dt>{B("Horaires", "Opening hours")}</dt><dd>{B(HOURS_FR, HOURS_EN)}</dd></div>
       <div><dt>{B("Paiement", "Payment")}</dt><dd>{B("Espèces, Mobile Money, paiement en plusieurs fois · livraison possible", "Cash, Mobile Money, payment in instalments · delivery possible")}</dd></div>
@@ -662,7 +662,7 @@ def main():
   </section>'''
     written.append(site.page(
         "/le-cabinet/", "Le cabinet DM OPTIQUE SARL à Bonabéri, Douala",
-        "Le cabinet d'optique médicale DM OPTIQUE SARL à Bonabéri, Douala : M. Domche Noumbi, opticien inscrit à l'ONOC. Photos réelles du cabinet.",
+        "Le cabinet d'optique médicale DM OPTIQUE SARL à Bonabéri, Douala : M. Domche Noumbi, opticien optométriste inscrit à l'ONOC. Photos réelles du cabinet.",
         cabinet_main, ld_graph=[site.crumb_ld([("Accueil", "/"), ("Le cabinet", "/le-cabinet/")])], dock_wa=VISIT_WA))
 
     # ── Contact ─────────────────────────────────────────────────────────────────

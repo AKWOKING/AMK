@@ -32,6 +32,20 @@ Les deux premiers sont déjà sur le site (accueil + contact). Le troisième est
 message d'avis** : il évite au client de chercher le cabinet par son nom — mais le message du 21/10 est
 approuvé tel quel, donc ce lien reste une **annexe à valider par King** (`launch/MESSAGE-AVIS-GOOGLE-2026-10.md`).
 
+## Le titre professionnel (21/10) — « opticien optométriste »
+
+Le client demande que les **deux** mots figurent partout. Le titre retenu est **« opticien
+optométriste »**, qui est celui de la **loi n° 99/001 du 07/04/1999 (art. 2 et 3(2))** — au Cameroun,
+l'optométrie n'est pas une profession séparée, c'est un diplôme d'opticien avec des attributions en plus.
+
+**Sur la fiche Google :**
+
+| Champ | Valeur |
+|---|---|
+| Catégorie principale | **Opticien** (la catégorie existe au Cameroun ; ne pas la changer) |
+| Catégorie secondaire | **Optométriste** si Google la propose dans la liste camerounaise — sinon laisser vide |
+| Description | commencer par « **Opticien optométriste** à Bonabéri, Douala. Examen de vue… » (455 caractères max) |
+
 ## Données (vérifiées, datées, zéro invention)
 - **Nom :** DM OPTIQUE SARL · **Catégorie principale :** Opticien · secondaire : Lunetterie.
 - **Adresse :** Ndobo Mayor, Douala IV (Bonabéri) — **partage de position WhatsApp demandé au client** à

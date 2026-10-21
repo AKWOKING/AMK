@@ -21,7 +21,7 @@
 | Fait | État |
 |---|---|
 | Compte TikTok | **créé** par King le 21/10 — `@dmoptique.bonaberi237`, nom affiché `DM OPTIQUE SARL`, logo + story, 0/0/0 |
-| Bio | **B retenue** : `Opticien à Bonabéri · examen de vue & montures · WhatsApp 656 122 239` (à poser — `launch/SETUP-TIKTOK.md`) |
+| Bio | **B, révisée le 21/10** : `Opticien optométriste à Bonabéri · examen de vue · WhatsApp 656 122 239` (71 car.) — **à remplacer** dans l'app (`launch/SETUP-TIKTOK.md`) |
 | Page Facebook | ✅ **créée le 21/10** — `DM OPTIQUE SARL`, catégorie Opticien, bio posée, logo en avatar, 0 follower. Reste : `@username`, couverture, bouton WhatsApp, horaires, story, **1er post après feu vert** (`launch/SETUP-FACEBOOK.md` §6–§7) |
 | Meta au Cameroun | **Publié et sponsorisé : oui. Boutique, Meta Pay, monétisation, badge : non** → `launch/META-CAMEROUN-2026-10.md`. La pub de S2 suppose une **carte internationale** (facturation en USD/EUR + TVA 19,25 %) : prérequis à vérifier avant la semaine 2 |
 | Business Account + catégorie | ⛔ **non disponible au Cameroun** (vérifié 21/10/2026 — le sélecteur de pays ne contient pas le Cameroun, et TikTok n'ouvre la vérification qu'à six marchés africains) → on reste en **compte personnel** ; analytics via **TikTok Studio** |
@@ -298,6 +298,7 @@ totalement, C4 devient aussi une variante « service ».***
 | 9 | **Tout vit dans le dépôt** — chaque légende et chaque script est un fichier versionné |
 | 10 | **Format carrousel** — vertical 9:16 · 1080×1920 · 30 fps · SAR 1:1 · H.264 |
 | 11 | **Porte W43 §12b** (ruling King 21/10) — cas client d'abord · un seul axe · objet réel · preuve citée une fois · sortie honnête · un seul CTA (`sales/research/2026-W43-techniques.md` §12b) |
+| 12 | **Titre professionnel** (demande client 21/10) — jamais « opticien » **seul** : écrire **« opticien optométriste »**, l'ordre de la loi camerounaise (99/001, art. 2). Voir `content/strategy/RULE-CREDENTIAL-CLAIMS.md` |
 
 ---
 
