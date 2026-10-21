@@ -1798,3 +1798,28 @@ n'est dans le dépôt (`git log -S` sur le préfixe : rien) ; le fragment de hui
 dans une note interne a été retiré. `.gitignore` refuse maintenant `.dev.vars`, `.env*`, `*.token`,
 `CLOUDFLARE_*` et `.wrangler/`.
 
+## 22/10 (23) — 96 pages découvertes, et la redirection www passe en attente
+
+**Le build est vert** (`Success: Build completed`, version `f3288fc2`, 39 s). Workers Builds publie donc
+pour de bon, et les deux hôtes servent la nouvelle version (vérifié sur `www` et sur l'apex).
+
+**Search Console a retourné la situation.** Deux sitemaps soumis, deux résultats :
+
+| Sitemap | Statut | Pages |
+|---|---|---|
+| `https://www.dmoptiquesarl.com/sitemap.xml` | **Success** | **96** |
+| `https://dmoptiquesarl.com/sitemap.xml` | **Couldn't fetch** | 0 |
+
+Google lit donc parfaitement le sitemap **sur `www`**, et échoue sur le **même fichier** en apex. La
+découverte est faite : 96 URL, toutes en apex (celles que le site déclare en `canonical`).
+
+**Conséquence directe : la redirection `www` → apex est reportée.** Elle ferait passer Google de
+l'adresse qui est lue vers celle qui échoue — l'inverse du but recherché. Ordre à respecter : apex
+lisible d'abord, redirection ensuite. Le test qui tranche est « Test live URL » sur l'apex, dans Search
+Console ; selon le résultat, soit c'est un état périmé (resoumettre), soit l'apex refuse le robot
+(Security → Events).
+
+C'est la deuxième fois aujourd'hui qu'une de mes recommandations doit être retirée devant les faits. La
+règle que j'en tire : **ne pas proposer une règle de redirection avant de savoir ce que le robot sait
+déjà lire.**
+

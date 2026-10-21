@@ -128,3 +128,32 @@ l'apex, donc les moteurs consolident même sans cette règle.
 - **Toucher aux règles de sécurité Cloudflare.** Rien n'est actif, il n'y a rien à désactiver — et
   désactiver une protection qui n'existe pas ne répare pas un 403.
 - **Renommer ou déplacer le sitemap.** Il est à sa place, à la racine, déclaré dans `robots.txt`.
+
+---
+
+## 9 · État réel au 22/10, 18 h — **96 pages découvertes**
+
+| Sitemap soumis | Statut Search Console | Pages |
+|---|---|---|
+| `https://www.dmoptiquesarl.com/sitemap.xml` | **Success** · relu le 21/10 | **96** |
+| `https://dmoptiquesarl.com/sitemap.xml` | **Couldn't fetch** (type « Unknown ») | 0 |
+
+**Ce qu'il faut en conclure, sans se raconter d'histoires :**
+
+1. **Le blocage est levé.** Google a trouvé les **96 URL** (48 françaises + 48 anglaises), et ce sont les
+   adresses **apex** — celles que le site déclare en `canonical`. L'indexation peut donc commencer.
+2. **Le refus restant est propre à l'apex.** Le même fichier, sur `www`, est lu sans difficulté. Ce n'est
+   donc ni le fichier, ni `robots.txt`, ni le sitemap lui-même : c'est la façon dont l'apex répond à
+   Googlebot.
+3. **Ne pas rediriger `www` vers l'apex avant d'avoir compris ce refus** — sinon on envoie Google de
+   l'adresse qui marche vers celle qui échoue.
+4. **Le test qui tranche** (2 min, aucun risque) : coller `https://dmoptiquesarl.com/sitemap.xml` dans la
+   barre de Search Console → **Test live URL**.
+   - *URL is available* → l'échec était un **état périmé** du 21/10 : supprimer l'entrée rouge et la
+     resoumettre.
+   - *Couldn't fetch / 403* → l'apex refuse réellement le robot : Cloudflare → **Security → Events**,
+     filtrer sur `sitemap`.
+
+**Les 10 URL prioritaires du 21/10 ne changent pas** : elles sont dans les 96 découvertes, et une demande
+d'indexation manuelle reste utile pour elles — mais plus aucune n'est bloquée par le sitemap.
+

@@ -68,9 +68,11 @@ Builds si tu veux un seul mécanisme.
 
 ## 3 · Aujourd'hui : publier en 5 clics (Workers Builds)
 
-> **État au 22/10 : ✅ FAIT.** Le dépôt est connecté (`AKWOKING/AMK`), la branche de production est
-> `arena/2fffee3b-amk`, Build command vide, Deploy command `npx wrangler deploy`, racine `/`.
-> Le premier build a été déclenché par le commit `9f5c26c`, qui corrige `name` en `dmoptiquesarl`.
+> **État au 22/10, 18 h : ✅ PUBLIÉ.** Le dépôt est connecté (`AKWOKING/AMK`), la branche de production
+> est `arena/2fffee3b-amk`, Build command vide, Deploy command `npx wrangler deploy`, racine `/`.
+> **Build vert** — `Success: Build completed`, version `f3288fc2`, 39 s de déploiement.
+> Deux corrections ont été nécessaires pour y arriver : `name = "dmoptiquesarl"` (commit `9f5c26c`) et le
+> retrait de `_redirects` (commit `617eea1`).
 
 
 1. **Cloudflare → Workers & Pages →** ouvre le projet du site.
@@ -136,24 +138,47 @@ le schéma enrichi. **Workers Builds fait désormais son travail à chaque envoi
 
 ---
 
-## 3 ter · La redirection www → apex se fait dans Cloudflare, pas dans le site
+## 3 ter · La redirection www → apex : **à ne PAS faire maintenant** (décision du 22/10, 18 h)
 
-`_redirects` ne peut pas la faire. La bonne place est la **zone**, et c'est trois clics :
+Le build est passé au vert (`Success: Build completed`, version `f3288fc2`) et les deux hôtes servent le
+nouveau site. Mais **Search Console a changé la donne** :
 
-1. Cloudflare → **dmoptiquesarl.com** → **Rules** → **Redirect Rules** → **Create rule**.
-2. **When incoming requests match** → *Custom filter expression* :
-   - Field **Hostname** · Operator **equals** · Value `www.dmoptiquesarl.com`
-3. **Then** → Type **Static** · URL `https://dmoptiquesarl.com` · Status **301** ·
-   cocher **Preserve query string** → **Deploy**.
+| Sitemap soumis | Statut | Pages trouvées |
+|---|---|---|
+| `https://www.dmoptiquesarl.com/sitemap.xml` | **Success** | **96** |
+| `https://dmoptiquesarl.com/sitemap.xml` | **Couldn't fetch** (type « Unknown ») | 0 |
 
-Alternative en un clic : dans l'écran de création, l'onglet **Templates** propose
-**« Redirect from WWW to root »** — c'est exactement cette règle.
+**Ce que ça veut dire :** Google lit très bien le sitemap **sur `www`**. Ce qu'il n'arrive pas à lire,
+c'est le même fichier **sur l'apex**. Et l'apex est justement l'adresse vers laquelle je proposais de
+rediriger `www`…
 
-**Si tu ne la fais pas :** le site reste accessible sur les deux adresses, et le `canonical` de chaque
-page pointe déjà l'apex — Google consolide. Ce n'est donc **pas bloquant** ; c'est du confort et de la
-propreté.
+**Donc la redirection `www` → apex ferait passer Google de l'adresse qui marche vers celle qui échoue.**
+C'est exactement l'inverse du but. On la met en attente, et on ne la fait qu'après avoir compris le
+refus sur l'apex.
 
----
+### L'étape qui tranche : « Test live URL » (2 minutes, aucun risque)
+
+1. Search Console → la barre de recherche en haut → colle **`https://dmoptiquesarl.com/sitemap.xml`**
+   → **Entrée**.
+2. Clique **Test live URL** (en haut à droite du résultat).
+3. Deux issues possibles :
+
+| Résultat du test | Interprétation | Ce qu'on fait |
+|---|---|---|
+| **URL is available / 200** | Google *peut* lire l'apex. L'échec du sitemap était un **état périmé** du 21/10 (soumis avant le déploiement, jamais relu). | Supprimer l'entrée rouge, **la resoumettre** — elle passera au vert sous 24 h. |
+| **Couldn't fetch / 403 / erreur** | L'apex **refuse** Googlebot, alors que `www` l'accepte. | **On ne redirige pas** `www` vers l'apex. On cherche le refus : Cloudflare → **Security → Events**, filtrer sur le chemin `sitemap`. |
+
+### Ce qui est déjà acquis, et qui ne dépend de rien de tout ça
+
+**96 pages ont été découvertes** par Google via le sitemap de `www` — et ces 96 URL sont les adresses
+**apex** (c'est ce que contient le fichier, `canonical` à l'appui). La découverte est donc faite, et
+l'indexation peut commencer. Le sitemap n'est plus le point bloquant : il l'était hier, il ne l'est plus.
+
+### Si tu veux le faire quand même, plus tard
+
+Le modèle existe : **Rules → Redirect Rules → Create new Single Redirect → « Redirect from WWW to root »
+→ Create from template**. Mais tant que l'apex n'est pas lu par Google, cette règle dégrade la situation.
+Ordre à respecter : **apex lisible → alors rediriger**.
 
 ## 3 quater · Le jeton API reste **hors du dépôt**
 
@@ -279,8 +304,9 @@ C'est la seule différence entre les deux méthodes, et elle vaut les 4 minutes 
 
 1. `https://dmoptiquesarl.com/en/` → l'anglais.
 2. `https://www.dmoptiquesarl.com/` → redirection vers l'apex.
-3. Search Console → **Sitemaps** → `sitemap.xml` doit passer à *Success* (une fois la redirection en
-   place, le 403 du 21/10 n'a plus de raison d'être). Détail : `../seo/URLS-INDEXATION-2026-10-21.md` §8.
+3. Search Console → **Sitemaps** : une entrée au vert suffit — aujourd'hui c'est celle de
+   `https://www.dmoptiquesarl.com/sitemap.xml` (96 pages). L'entrée apex est en *Couldn't fetch* et
+   s'instruit par « Test live URL » (§3 ter). Détail : `../seo/URLS-INDEXATION-2026-10-21.md` §8.
 
 ---
 
@@ -291,7 +317,8 @@ C'est la seule différence entre les deux méthodes, et elle vaut les 4 minutes 
   Builds) ou dans le workflow GitHub. Écrire une branche dans le `.toml` donnerait l'illusion d'un
   réglage — et c'est précisément le piège à éviter.
 - **`_headers` est pris en charge** par les Workers avec assets. **`_redirects` aussi — mais uniquement
-  avec des chemins relatifs** : aucune redirection d'hôte ne peut y être écrite. La redirection
-  `www` → apex se fait dans *Rules → Redirect Rules* (§3 ter).
+  avec des chemins relatifs** : aucune redirection d'hôte ne peut y être écrite.
+- **La redirection `www` → apex attend.** Google lit le sitemap sur `www` et échoue sur l'apex :
+  rediriger maintenant pointerait Google vers l'adresse qui ne répond pas (§3 ter).
 - **`wrangler` publie en une commande et dit ce qui ne va pas**, là où l'écran d'upload tournait sans
   rien dire.
