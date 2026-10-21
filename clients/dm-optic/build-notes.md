@@ -1703,3 +1703,22 @@ Vérifié dans la documentation Cloudflare : les Workers avec assets **prennent 
 `_headers`** (2 000 redirections statiques, 100 règles d'en-têtes) — la redirection www → apex survivra
 donc à la nouvelle méthode de publication.
 
+## 22/10 (18) — la branche ne se met pas dans wrangler.toml
+
+King a posé la bonne question : chaque conversation ouvre une branche neuve, donc un réglage
+« branche de production » dans Cloudflare devient faux à chaque chat.
+
+**Correction d'une idée fausse (la mienne, en creux) :** `wrangler.toml` **ne porte pas de branche**, et
+Cloudflare n'en lit aucune dedans. Y écrire `branch = "arena/…"` aurait l'air d'un réglage et n'en serait
+pas un — le genre d'illusion qui coûte une soirée de diagnostic. Le fichier dit seulement **quel dossier
+publier** et **quelle page servir en 404**.
+
+La branche se décide à deux endroits : *Settings → Build* dans Cloudflare (à changer chaque chat), ou un
+fichier de workflow avec `branches: ['arena/**']` (à ne faire qu'une fois, couvre toutes les branches
+présentes et futures). Le modèle est versionné dans `tools/deploy/workflow-deploy-dmoptic.yml` — hors de
+`.github/workflows`, parce que l'outil qui pousse ce dépôt n'a pas le droit d'y déposer un workflow
+(GitHub réserve ça aux comptes humains). Il se colle en une minute depuis l'interface GitHub.
+
+Mode d'emploi réécrit en entier : `launch/DEPLOIEMENT-CLOUDFLARE-2026-10-22.md` (§0 les chiffres, §1 la
+règle de la branche, §3 publier aujourd'hui, §4 le workflow une fois, §5 le rituel par chat).
+

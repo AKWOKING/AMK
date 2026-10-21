@@ -49,8 +49,10 @@
 | 8 | **Fiche Google : photos, services, profils sociaux** — description ✅ (version A), **posts ✅ 4 programmés le 21/10** | ton accès | conversion locale |
 | 9 | ~~Ligne de base Google~~ → ✅ **relevée le 21/10** : **0 interaction · 0 vue · < 50 recherches d'affichage** — c'est le point zéro | — | le rapport du mois 1 sera en chiffres absolus, pas en % |
 
-**Déploiement :** le tableau de bord Cloudflare plante sur 183 fichiers → on publie désormais depuis
-le dépôt (`wrangler.toml` + `DEPLOIEMENT-CLOUDFLARE-2026-10-22.md`). Fusion dans `main` = site à jour.
+**Déploiement :** le tableau de bord Cloudflare plante sur 183 fichiers → on publie depuis le dépôt.
+Mode d'emploi : `launch/DEPLOIEMENT-CLOUDFLARE-2026-10-22.md`. **La branche publiée ne se règle pas dans
+`wrangler.toml`** (ce champ n'existe pas) : soit dans Cloudflare *Settings → Build*, soit dans le
+workflow GitHub `arena/**` — c'est la seule méthode qui survit à un nouveau chat.
 
 **Deux dossiers de référence nés le 21/10 :** `seo/AUDIT-SEO-2026-10-21.md` (audit des 49 pages, rien de construit) et `seo/URLS-INDEXATION-2026-10-21.md` (les 10 URL à demander aujourd'hui).
 

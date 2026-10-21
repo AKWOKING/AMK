@@ -1,153 +1,161 @@
-# Déployer le site sur Cloudflare — 22/10/2026
+# Cloudflare — publication automatique du site DM OPTIQUE
 
-> **Le problème, en une phrase.** Le site n'est pas trop gros pour Cloudflare : **183 fichiers, 9 Mo**,
-> alors que la limite d'un Worker est de **20 000 fichiers et 25 Mo par fichier**. Ce qui bloque, c'est
-> **l'outil d'envoi du tableau de bord** (« Upload static files to update your Worker ») : il n'affiche
-> ni progression ni erreur, et il reste planté. On arrête donc de passer par lui.
+> **Version du 22/10/2026.** Remplace définitivement l'envoi manuel par le tableau de bord
+> (« Upload static files to update your Worker »), qui plante sur 183 fichiers sans afficher d'erreur.
 
 ---
 
-## 1 · Ce que montre ta capture
+## 0 · Ce que ton site demande, en chiffres
 
-| Ce que tu vois | Ce que ça dit |
-|---|---|
-| *Upload static files to update your Worker* | Tu es dans l'édition **manuelle des assets** d'un Worker — un outil prévu pour quelques fichiers de test, pas pour un site entier. |
-| *This uploader currently only supports static assets (HTML, CSS, and JS files)* | Le bandeau avertit lui-même : **ce n'est pas l'outil normal**. Il ignore ou avale mal les images, les polices, le sitemap. |
-| *Uploading 184 total file(s)* · aucune progression | Le compteur est faux dès le départ (**183 fichiers** dans le zip) : il compte un dossier ou un fichier fantôme. Signe que la liste est mal construite côté navigateur. |
-| dossiers `en` 3 Mo · `montures` 5 Mo | C'est ici que ça coince : deux gros dossiers, beaucoup de fichiers, un envoi qui n'avance plus. |
+| | Site | Limite Cloudflare Workers |
+|---|---|---|
+| Fichiers | **183** | 20 000 |
+| Fichier le plus lourd | **266 Ko** | 25 Mo |
+| Poids total | **9 Mo** | — |
 
-**Conclusion :** ce n'est pas le site qu'il faut alléger, c'est la méthode d'envoi qu'il faut changer.
-Un site statique de cette taille se publie **depuis le dépôt**, pas à la main.
+Le site n'a jamais été le problème. L'outil d'envoi du tableau de bord, si : il annonce 184 fichiers,
+ne montre aucune progression, et son propre bandeau précise qu'il ne gère que HTML/CSS/JS.
 
 ---
 
-## 2 · La bonne façon : Cloudflare construit lui-même depuis GitHub
+## 1 · La règle à comprendre avant tout : la branche n'est **pas** dans `wrangler.toml`
 
-Une fois branché, **chaque fusion dans `main` met le site en ligne tout seul** — plus de zip, plus de
-glisser-déposer, plus de plantage. C'est exactement ce qu'il faut pour un site qu'on fait évoluer.
+C'est le point qui bloque aujourd'hui, et il faut être clair : **`wrangler.toml` ne contient pas de
+branche, et Cloudflare ne lit aucune branche dedans.** Le fichier dit *quel dossier publier* et *quelle
+page servir en 404* — rien d'autre :
 
-Tout est déjà préparé dans le dépôt :
+```toml
+name = "dm-optique-sarl"                 # le nom du Worker (à recopier à l'identique)
+[assets]
+directory = "./hosting/previews/dmoptic" # le seul dossier publié
+not_found_handling = "404-page"
+```
 
-| Fichier | Rôle |
-|---|---|
-| `wrangler.toml` | dit à Cloudflare **quel dossier** publier (`hosting/previews/dmoptic`) et **quelle page** servir sur une adresse inconnue (`404.html`) |
+La branche, elle, se règle à **deux endroits possibles**, et c'est ce choix qui décide de ce que tu
+auras à faire à chaque nouveau chat :
 
-*(Le fichier de workflow GitHub Actions n'est pas dans le dépôt : l'outil qui pousse ce dépôt n'a pas le
-droit d'y déposer des workflows. Si tu choisis la route B, le fichier est fourni en clair au § B, à
-coller depuis l'interface GitHub.)*
+| | Qui décide de la branche | Ce que ça coûte à chaque nouveau chat |
+|---|---|---|
+| **Workers Builds** (tableau de bord) | un réglage dans *Settings → Build* de Cloudflare | **tu changes le nom de la branche à la main** (30 s) |
+| **GitHub Actions** (workflow) | le fichier `.github/workflows/deploy-dmoptic.yml`, avec `branches: ['arena/**']` | **rien** — toute branche `arena/…` publie |
 
-### Route A — Workers Builds : recommandée, aucun mot de passe à créer
+Une ligne du type `branch = "arena/2fffee3b-amk"` écrite dans `wrangler.toml` **ne serait pas lue** :
+ce n'est pas un champ reconnu. Le texte aurait l'air de faire le travail, et ne le ferait pas. C'est
+pour cette raison que la solution durable est le workflow, pas le fichier de configuration.
 
-1. **Cloudflare → Workers & Pages →** ouvre le projet du site (celui dont le nom est en haut de la page).
+---
+
+## 2 · Le problème des branches qui changent
+
+Chaque conversation ouvre une branche neuve (`arena/2fffee3b-amk` aujourd'hui, autre chose demain).
+Deux conséquences :
+
+1. **Un réglage « branche de production » dans Cloudflare devient faux à chaque nouveau chat.** Il faut
+   le rouvrir et le changer — sinon le site cesse d'être mis à jour, silencieusement.
+2. **Un fichier de workflow, lui, peut viser un motif** : `arena/**` couvre toutes les branches du
+   genre, présentes et futures. C'est exactement le cas d'usage.
+
+**Donc :** on démarre en Workers Builds pour publier **aujourd'hui** (§3), puis on installe le workflow
+(§4) pour ne plus jamais toucher au tableau de bord. Les deux peuvent cohabiter : le même contenu
+déployé deux fois ne casse rien. Quand le workflow aura publié une fois, tu peux déconnecter Workers
+Builds si tu veux un seul mécanisme.
+
+---
+
+## 3 · Aujourd'hui : publier en 5 clics (Workers Builds)
+
+1. **Cloudflare → Workers & Pages →** ouvre le projet du site.
 2. Onglet **Settings** → section **Build** → **Connect** (ou *Connect Git repository*).
-3. Choisis **GitHub** → autorise → dépôt **`AKWOKING/AMK`** → branche **`main`**.
-4. Réglages de build :
-   - **Build command** : *(vide)* — le site est déjà construit dans le dépôt ;
-   - **Deploy command** : `npx wrangler deploy` *(c'est la valeur par défaut)* ;
-   - **Root directory** : `/`.
-5. **Save**. Cloudflare lance un premier déploiement dans la minute.
+3. **GitHub** → autorise → dépôt **`AKWOKING/AMK`**.
+4. **Production branch** : `arena/2fffee3b-amk` *(la branche de la conversation en cours)*.
+5. **Build command** : *(vide — le site est déjà construit dans le dépôt)*
+   **Deploy command** : `npx wrangler deploy`  ·  **Root directory** : `/`
+6. **Save**. Le premier déploiement part dans la minute.
 
-À partir de là : **fusion dans `main` = site à jour.** Rien d'autre à faire.
+### Vérifier dans les 2 minutes
 
-> **Pourquoi c'est la bonne route :** le nom du Worker est déjà le bon, puisque tu le connectes depuis
-> la page du Worker existant. Avec la route B (ci-dessous), il faut recopier ce nom dans `wrangler.toml`
-> — et se tromper créerait un **second** Worker, le domaine continuant de pointer l'ancien.
-
-### Route B — depuis GitHub (si tu préfères tout piloter dans GitHub)
-
-1. Cloudflare → **My Profile → API Tokens → Create Token** → modèle **« Edit Cloudflare Workers »** →
-   *Continue* → *Create*. Copie le jeton (il ne s'affiche qu'une fois).
-2. Récupère l'**Account ID** : Cloudflare → Workers & Pages → colonne de droite de la page d'accueil.
-3. GitHub → dépôt AMK → **Settings → Secrets and variables → Actions → New repository secret** :
-   - `CLOUDFLARE_API_TOKEN` = le jeton ;
-   - `CLOUDFLARE_ACCOUNT_ID` = l'identifiant.
-4. Vérifie que `wrangler.toml` porte **exactement** le nom du Worker existant (première ligne).
-5. GitHub → **Add file → Create new file** → nom du fichier : `.github/workflows/deploy-dmoptic.yml`
-   → colle exactement ceci, puis **Commit** :
-
-```yaml
-name: Déployer DM Optique sur Cloudflare
-
-on:
-  push:
-    branches: [main]
-    paths:
-      - "hosting/previews/dmoptic/**"
-      - "wrangler.toml"
-  workflow_dispatch: {}
-
-permissions:
-  contents: read
-
-concurrency:
-  group: deploy-dmoptic
-  cancel-in-progress: true
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Vérifier le site avant publication
-        run: |
-          set -e
-          test -f hosting/previews/dmoptic/index.html
-          test -f hosting/previews/dmoptic/sitemap.xml
-          test -f hosting/previews/dmoptic/_redirects
-      - name: Publier sur Cloudflare
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: deploy
-```
-
-6. Onglet **Actions → « Déployer DM Optique sur Cloudflare » → Run workflow**.
-
-### Route C — depuis un ordinateur avec un terminal (3 commandes)
-
-```bash
-git clone https://github.com/AKWOKING/AMK && cd AMK
-export CLOUDFLARE_API_TOKEN=...        # le même jeton qu'à la route B
-npx wrangler deploy
-```
-
-`wrangler` envoie les 183 fichiers, applique `_redirects` (www → apex) et `_headers`, et ne laisse
-aucune place à un plantage d'interface.
-
----
-
-## 3 · Si tu veux quand même réessayer le tableau de bord
-
-Deux erreurs possibles, dans l'ordre :
-
-1. **Tu as déposé le dossier parent au lieu du site.** Le bon dossier est celui qui **contient
-   `index.html`** — pas celui qui contient le zip, ni un dossier « dmoptic ». C'est ce qui explique le
-   **184ᵉ fichier** : il y en a un de trop.
-2. **Tu as déposé le `.zip`.** Cet outil-là attend des fichiers, pas une archive : le zip n'est lu
-   comme un dossier par aucun navigateur.
-
-Et si l'envoi reste planté malgré tout : **ferme l'onglet, vide le cache du navigateur, réessaie en
-navigation privée**. C'est un défaut connu de cet écran, pas de ton site.
-
----
-
-## 4 · Après le déploiement — les 3 vérifications
-
-| À vérifier | Attendu |
+| À ouvrir | Attendu |
 |---|---|
-| `https://dmoptiquesarl.com/en/` | la page d'accueil **en anglais** (nouveauté du 22/10) |
+| `https://dmoptiquesarl.com/en/` | l'accueil **en anglais** (nouveau) |
 | `https://www.dmoptiquesarl.com/` | **redirige** vers l'adresse sans `www` |
-| `https://dmoptiquesarl.com/montures/femmes/f01-ovale-doree/` | s'affiche, et la photo arrive vite (image allégée) |
+| `https://dmoptiquesarl.com/montures/` | la page montures, rapide |
 
-Puis Search Console → **Sitemaps** : supprimer l'entrée en erreur, ressaisir **`sitemap.xml`**.
-Détail : `../seo/URLS-INDEXATION-2026-10-21.md` §8.
+Si `/en/` répond 404 : le déploiement n'a pas pris, va voir l'onglet **Deployments** du projet — le
+journal y est lisible, contrairement à l'écran d'upload manuel.
 
 ---
 
-## 5 · Ce qu'il faut retenir
+## 4 · Une fois pour toutes : le workflow `arena/**`
 
-- **Le site est dans les limites de Cloudflare**, largement : 183 fichiers sur 20 000.
-- **`_redirects` et `_headers` sont pris en charge** par les Workers avec assets — c'est documenté par
-  Cloudflare. La redirection www → apex fonctionnera donc dès que le site sera publié par `wrangler`.
-- **Le tableau de bord n'est pas un outil de publication.** Il l'a prouvé deux fois.
+Le fichier ci-dessous est aussi dans le dépôt (`tools/deploy/workflow-deploy-dmoptic.yml`). Il doit
+vivre dans **`.github/workflows/deploy-dmoptic.yml`** et, pour être hérité par les prochaines branches,
+il doit exister dans **`main`** — puisque chaque nouvelle conversation coupe sa branche depuis `main`.
+
+### 4.1 · Créer un jeton Cloudflare (2 min)
+
+**My Profile → API Tokens → Create Token** → modèle **« Edit Cloudflare Workers »** → *Continue* →
+*Create Token*. **Copie-le tout de suite** : il ne s'affiche qu'une fois.
+Note aussi l'**Account ID** : Workers & Pages → colonne de droite.
+
+### 4.2 · Poser les deux secrets dans GitHub (1 min)
+
+Dépôt AMK → **Settings → Secrets and variables → Actions → New repository secret** :
+
+| Nom | Valeur |
+|---|---|
+| `CLOUDFLARE_API_TOKEN` | le jeton de 4.1 |
+| `CLOUDFLARE_ACCOUNT_ID` | l'identifiant de compte |
+
+### 4.3 · Créer le fichier dans `main` (1 min)
+
+GitHub → dépôt → **Add file → Create new file** →
+nom : `.github/workflows/deploy-dmoptic.yml` → **branche : `main`** → colle le contenu de
+`tools/deploy/workflow-deploy-dmoptic.yml` → **Commit changes**.
+
+> C'est le seul geste que je ne peux pas faire à ta place : GitHub refuse qu'un outil automatique
+> dépose un fichier de workflow (c'est une protection contre les scripts qui modifieraient la chaîne
+> de publication). Le fichier est prêt, il ne reste qu'à le coller.
+
+### 4.4 · Fusionner la PR n°9
+
+La PR #9 apporte `wrangler.toml` et le site (183 fichiers) dans `main`. Sans elle, les prochaines
+branches n'auront pas la configuration, et le workflow échouera à la première exécution.
+
+### 4.5 · Vérifier
+
+Onglet **Actions** du dépôt → « Déployer DM Optique sur Cloudflare » → la dernière exécution doit être
+**verte**. En cas de rouge, le journal nomme la cause en une ligne (jeton absent, nom de Worker
+incorrect, dossier introuvable).
+
+---
+
+## 5 · À chaque nouveau chat — 30 secondes
+
+| Si tu utilises… | Ce que tu fais |
+|---|---|
+| **le workflow** (§4) | **rien.** La nouvelle branche publie d'elle-même au premier envoi. |
+| **Workers Builds seul** (§3) | Cloudflare → projet → *Settings → Build* → remplace la branche par celle de la conversation. |
+
+C'est la seule différence entre les deux méthodes, et elle vaut les 4 minutes du §4.
+
+---
+
+## 6 · Après chaque publication — les 3 vérifications
+
+1. `https://dmoptiquesarl.com/en/` → l'anglais.
+2. `https://www.dmoptiquesarl.com/` → redirection vers l'apex.
+3. Search Console → **Sitemaps** → `sitemap.xml` doit passer à *Success* (une fois la redirection en
+   place, le 403 du 21/10 n'a plus de raison d'être). Détail : `../seo/URLS-INDEXATION-2026-10-21.md` §8.
+
+---
+
+## 7 · Ce qu'il faut retenir
+
+- **Le site est largement dans les limites** : 183 fichiers sur 20 000.
+- **La branche ne se configure pas dans `wrangler.toml`.** Elle se règle dans Cloudflare (Workers
+  Builds) ou dans le workflow GitHub. Écrire une branche dans le `.toml` donnerait l'illusion d'un
+  réglage — et c'est précisément le piège à éviter.
+- **`_redirects` et `_headers` sont pris en charge** par les Workers avec assets (2 000 redirections,
+  100 règles d'en-têtes) : la redirection `www` → apex survivra.
+- **`wrangler` publie en une commande et dit ce qui ne va pas**, là où l'écran d'upload tournait sans
+  rien dire.
