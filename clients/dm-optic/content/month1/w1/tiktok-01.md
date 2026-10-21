@@ -144,7 +144,7 @@ Vous les voyez avant de vous déplacer, et vous les essayez au cabinet.
 | Mesure | Où | Quand |
 |---|---|---|
 | **Conversations WhatsApp entrantes** avec le message pré-rempli ci-dessus | téléphone du cabinet | J+7 |
-| Profils vus → abonnés | TikTok analytics (Business Account) | semaine 1 |
+| Profils vus → abonnés | **TikTok Studio** (compte personnel — Business indisponible au Cameroun) | semaine 1 |
 | Commentaires → réponses envoyées dans l'heure | TikTok boîte de réception | chaque jour, 10 min |
 
 **On ne promet ni vues ni abonnés.** 2/semaine, constance des signaux, et on garde ce qui produit une
@@ -168,8 +168,11 @@ conversation.
 
 ## 8 · Après ce post
 
-Business Account (analytics) et catégorie se posent **avant** la publication — voir
-`launch/SETUP-TIKTOK.md` § « Bio — DÉCIDÉE » et § « Business Account + catégorie ». La bio retenue est le candidat **B** :
+**Le Business Account n'est pas accessible au Cameroun** (vérifié le 21/10 : le pays est absent du sélecteur ; TikTok
+n'ouvre la vérification qu'à six marchés africains). On publie donc en **compte personnel** — ça ne change
+rien au contenu ni à la portée organique ; on perd le badge, le champ site et les exports Business, pas la
+conversion WhatsApp. Analytics de base : **TikTok Studio** (Profil → ☰ → TikTok Studio → Analytics).
+Détail et ce qu'on ne fait pas : `launch/SETUP-TIKTOK.md` § « Business Account ». La bio retenue est le candidat **B** :
 
 > `Opticien à Bonabéri · examen de vue & montures · WhatsApp 656 122 239`
 

@@ -27,8 +27,9 @@ recevra l'accès en partage après). Rien de publié avant validation de King.
 | Name (affiché) | `DM OPTIQUE – Bonabéri` |
 
 Après création : **rien de publié** — la suite se fait dans cet ordre : **bio B** (section suivante)
-→ **Business Account + catégorie** → **premier contenu** (`content/month1/w1/tiktok-01.md`) → relecture
-du montage par King → publication.
+→ **premier contenu** (`content/month1/w1/tiktok-01.md`) → relecture du montage par King → publication.
+**Le Business Account ne fait plus partie du parcours : il est indisponible au Cameroun** (section
+suivante, vérifié le 21/10).
 
 ## Bio — DÉCIDÉE : candidat B (King, 21/10/2026)
 
@@ -64,20 +65,50 @@ TikTok peut invalider une URL non éligible et faire perdre le texte. Le numéro
 > (le site est public, HTTPS, propriété du cabinet). Le numéro reste dans la bio : c'est le canal de
 > conversion, le site est la preuve.
 
-## Business Account + catégorie (à faire avant la première publication)
+## ⛔ Business Account — **NON DISPONIBLE AU CAMEROUN** (constaté et vérifié le 21/10/2026)
 
-| # | Où | Quoi |
+**Ce que la capture montre :** *Business registration → Basic info → Address → Select* → la recherche
+« Camero » répond **« No results found for Camero — Couldn't find your country? Don't worry, more
+countries will be available soon. »** Le parcours exige un pays **avant** de valider.
+
+**Ce que dit TikTok (page officielle « About business verification for TikTok accounts », table des
+marchés, consultée le 21/10/2026) :** en Afrique, la vérification d'entreprise est ouverte à
+**l'Algérie, l'Égypte, le Kenya, le Maroc, le Nigeria et l'Afrique du Sud**. **Le Cameroun n'y est
+pas.** La même absence se retrouve dans la liste des pays de création self-serve du Business Center
+et des comptes publicitaires. Ce n'est donc pas un bug de l'app ni une erreur de manipulation.
+
+### ⛔ Ce qu'on NE fait PAS
+
+- **Ne pas choisir un autre pays** (« Cameroun » introuvable → Nigeria, France…). Faux pays = fausse
+  adresse, risque de suspension du compte, et la région du compte influence la distribution : on
+  parlerait à un pays qui n'est pas le nôtre.
+- **Ne pas soumettre le formulaire** avec un pays inventé : il demande des justificatifs d'adresse.
+- **Ne pas créer un second compte** pour contourner : le compte actuel est bon, c'est la fonction qui
+  manque.
+- **Pas de VPN / changement de région** : TikTok lit la région du compte, et le contournement est un
+  motif de sanction.
+
+### Ce qu'on perd, et ce que ça change vraiment
+
+| Fonction | Disponible ? | Conséquence pour DM |
 |---|---|---|
-| 1 | Profil → menu **☰** → **Settings and privacy** → **Account** | chercher **Switch to Business Account** (parfois sous « Business tools ») |
-| 2 | Type de compte | **Business** (pas Creator) — analytics et outils pro |
-| 3 | Catégorie | la plus proche proposée localement : **« Optician »** si la liste la contient, sinon **« Medical & health »** (jamais « Beauty salon ») |
-| 4 | Coordonnées | le **numéro du cabinet** `(+237) 656 122 239` et l'email `dmoptiquesarl@gmail.com` si demandés |
-| 5 | Champ **Website** (s'il apparaît) | `https://dmoptiquesarl.com` |
-| 6 | Analytics | **Business Suite / Analytics** doit être visible dans le profil après bascule |
+| Badge / catégorie d'entreprise | ❌ | Aucune conséquence sur la portée organique |
+| Champ **Website** cliquable | ❌ | **Le numéro écrit dans la bio fait le travail** (bio B) + CTA parlé + commentaire épinglé |
+| Business Suite (exports, conversions) | ❌ | On mesure **dans l'app** et surtout par les **conversations WhatsApp** (message pré-rempli) |
+| Analytics de base (vues, durée, sources, abonnés) | ✅ via **TikTok Studio** (page d'aide TikTok : les creator tools sont ouverts aux comptes personnels **et** business) | `studio.tiktok.com` ou Profil → ☰ → **TikTok Studio** → Analytics ; sinon, « More insights » sous chaque vidéo |
+| Publicité TikTok | ❌ (Cameroun absent du self-serve) | Le payant reste **Meta / Click-to-WhatsApp** |
+| Musique commerciale (Commercial Music Library) | ❌ | **Déjà notre règle** : silence + voix, ou piste libre de droits documentée (R4) |
 
-**Ce qu'on ne fait pas :** pas de publicité TikTok (non planifiée, `posting-calendar.md`), pas de
-« Creator Rewards » (inéligible au Cameroun et exclu des comptes Business), pas de lien raccourci
-tiers, pas de partage d'accès à un tiers.
+**Nuance honnête (constatée dans nos propres fichiers) :** certains opticiens camerounais portent un
+badge Business (K Vision Care, Maff, Espace Lunetterie — fichiers de prospection de septembre). Ces
+comptes datent d'avant la vérification obligatoire, ou ont été créés autrement ; **un compte neuf ne
+peut pas passer par le parcours aujourd'hui.** Ça ne change rien à notre plan.
+
+**Conclusion opérationnelle :** on reste sur le **compte personnel**, on pose la **bio B**, on publie
+le premier contenu comme prévu. On ne perd que le badge et le champ site — pas la capacité de publier,
+d'être trouvé, ni de convertir en WhatsApp. Le point est **refermé** : on ne le retente pas à chaque
+connexion ; on le revérifie seulement si TikTok annonce l'ouverture du Cameroun (ou si le pays apparaît
+dans le sélecteur, un jour, par hasard — capture alors).
 
 ## Anciennes valeurs (pré-remplies le 03/10 — PÉRIMÉES, conservées pour mémoire)
 
@@ -86,9 +117,9 @@ tiers, pas de partage d'accès à un tiers.
   normalisé sur la fiche Google, bio refusée par King puis réécrite).
 
 ## Contrainte plateforme, traitée honnêtement
-Le lien en bio demande un compte Business + seuil d'abonnés selon région — **au jour J, compter sur le
-numéro écrit dans la bio et le CTA parlé**, pas sur un lien. Chaque vidéo se termine sur « WhatsApp :
-656 122 239 » en texte à l'écran + commentaire épinglé avec le numéro.
+Le lien en bio demande un compte Business — **et ce parcours n'est pas ouvert au Cameroun aujourd'hui** (ci-dessus). Donc
+**au jour J, on compte sur le numéro écrit dans la bio et le CTA parlé**, pas sur un lien. Chaque vidéo
+se termine sur « WhatsApp : 656 122 239 » en texte à l'écran + commentaire épinglé avec le numéro.
 
 ## Premier contenu (validé par King le 21/10/2026)
 
@@ -110,7 +141,7 @@ Répondre aux commentaires dans l'heure quand c'est possible (règle des 90 seco
 TikTok se cherche comme un moteur : les signaux doivent **dire la même chose partout** —
 « opticien · Bonabéri · Douala ».
 
-- **Compte Business** au nom du cabinet (analytics ; champ site web seulement s'il est réellement
+- **Compte personnel** (le Business est indisponible au Cameroun, cf. plus haut) : les analytics de base vivent dans **TikTok Studio** ; champ site web seulement s'il est réellement
   visible dans l'app pour ce compte — les règles varient selon région/type de compte ; tant qu'il
   n'est pas là, le numéro WhatsApp écrit dans la bio + à l'écran + en commentaire épinglé fait foi).
 - **Nom affiché recherchable** (service + lieu, pas un slogan), pseudo `@dmoptique.bonaberi` si libre,

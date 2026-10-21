@@ -1227,8 +1227,10 @@ dans le SETUP, recommandation A, 74/70/78 caractères).
 
 **Bio TikTok — King choisit B** : `Opticien à Bonabéri · examen de vue & montures · WhatsApp 656 122
 239` (69 caractères). Raison : le nom affiché `DM OPTIQUE SARL` ne dit pas le métier ; « opticien » est
-le mot tapé. Le guide écran par écran, le Business Account et la catégorie sont dans
-`launch/SETUP-TIKTOK.md`. **Conflit assumé** avec la checklist SEO TikTok (« lien en bio = le site ») :
+le mot tapé. Le guide écran par écran est dans `launch/SETUP-TIKTOK.md`. **Le Business Account s'est
+révélé impossible** : le parcours de vérification exige un pays, et le Cameroun est absent du sélecteur
+(page TikTok « About business verification » : six marchés africains — Algérie, Égypte, Kenya, Maroc,
+Nigeria, Afrique du Sud). On reste en compte personnel. **Conflit assumé** avec la checklist SEO TikTok (« lien en bio = le site ») :
 le champ Website n'est pas encore disponible pour ce compte → numéro écrit d'abord, site dès que le
 champ apparaît.
 
@@ -1260,4 +1262,38 @@ déplacer, et vous les essayez au cabinet » : la promesse reste vraie.
 | `PRE-FLIGHT.md` §0d + routage | la ligne « gabarit W43 » → fichiers gouvernés ; le routage contenu la nomme |
 | `month1/README.md` | `w1/tiktok-01.md` ajouté à la table des fichiers |
 | `pre-launch-checklist.md` | suivi TikTok + avis ; item 4 passé 🟠 (compte au nom du cabinet mais mot de passe côté King → transfert à prouver avant livraison) |
+
+## 21/10 (4) — Business Account TikTok : impossible au Cameroun, et ce que ça change
+
+**Constat (captures de King, 21/10).** Le passage en Business Account ouvre *Business registration →
+Basic info → Address → Select*. La recherche « Camero » répond « No results found for Camero —
+Couldn't find your country? Don't worry, more countries will be available soon. » Le bouton **Next**
+reste inactif sans pays. Le formulaire a par ailleurs demandé le site (www.dmoptiquesarl.com) et
+« Industry with audience restrictions » — renseignés pour rien : sans pays, la validation est bloquée.
+
+**Vérification à la source.** Page TikTok « About business verification for TikTok accounts »
+(consultée le 21/10/2026) : la table des marchés ne compte, pour l'Afrique, que l'Algérie, l'Égypte, le
+Kenya, le Maroc, le Nigeria et l'Afrique du Sud. **Le Cameroun n'y figure pas.** Les listes de création
+self-serve du Business Center et des comptes publicitaires ne le mentionnent pas davantage.
+
+**Décision.** Compte **personnel**. Ce qu'on ne fait pas : choisir un autre pays (fausse adresse →
+risque de suspension, et la région du compte oriente la distribution), soumettre le formulaire avec un
+pays inventé, créer un second compte, passer par un VPN. Aucun de ces contournements ne vaut le compte
+d'un client.
+
+**Ce que ça change vraiment.** Rien sur la capacité à publier, à être trouvé ou à convertir : la bio B
+porte le numéro, le CTA est parlé et le commentaire est épinglé — c'est exactement le repli déjà prévu
+par la « contrainte plateforme ». On perd le badge, le champ site cliquable et les exports Business.
+**On garde les analytics de base** : TikTok Studio (Profil → ☰ → TikTok Studio → Analytics) — la page
+d'aide TikTok précise que les creator tools sont ouverts aux comptes personnels comme aux comptes
+business ; repli : « More insights » sous chaque vidéo.
+
+**Nuance honnête.** Nos fichiers de prospection de septembre montrent des opticiens camerounais avec un
+badge Business (K Vision Care, Maff, Espace Lunetterie) : ces comptes datent d'avant la vérification
+obligatoire. Un compte neuf ne peut pas passer par ce parcours aujourd'hui. Ça ne change pas le plan.
+
+**Corrigé partout** (aucune instruction ne doit continuer à demander un Business Account) :
+`launch/SETUP-TIKTOK.md` (section « ⛔ Business Account » + ordre de la suite + optimisation locale),
+`content/strategy/TIKTOK-SEO-CHECKLIST-2026-10.md` §A, `posting-calendar.md` (amendement),
+`pre-launch-checklist.md` (suivi), `content/month1/w1/tiktok-01.md` (§6 mesure, §8).
 

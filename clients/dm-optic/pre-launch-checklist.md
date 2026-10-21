@@ -277,7 +277,7 @@ plateforme, pas des fichiers décoratifs. Doc Cloudflare (Direct Upload, lu le 2
 |---|---|---|
 | Compte TikTok créé | ✅ `@dmoptique.bonaberi237` · `DM OPTIQUE SARL` · logo + story · 0/0/0 | `launch/SETUP-TIKTOK.md` |
 | Bio (candidat B) | ⬜ **décidée, pas encore posée** : `Opticien à Bonabéri · examen de vue & montures · WhatsApp 656 122 239` | `launch/SETUP-TIKTOK.md` § Bio |
-| Business Account + catégorie | ⬜ avant la première publication | `launch/SETUP-TIKTOK.md` § Business Account |
+| Business Account + catégorie | ⛔ **impossible au Cameroun** (pays absent du sélecteur ; TikTok n'ouvre la vérification qu'à 6 marchés africains) — compte personnel assumé, analytics via TikTok Studio | `launch/SETUP-TIKTOK.md` § Business Account |
 | Premier contenu | ✅ script validé (21/10) · ⬜ tournage · ⬜ montage relu par King · ⬜ publication | `content/month1/w1/tiktok-01.md` |
 | Message « avis Google » à M. Domche | 🕘 **envoi 21/10 à 09:00** (pas avant) · ⬜ 5 avis d'ici samedi 24/10 | `launch/MESSAGE-AVIS-GOOGLE-2026-10.md` |
 | GSC : 4 indexations + re-check sitemap | 🔴 rappel debout — quota du 20/10 à reprendre | `clients/dm-optic/pre-launch-checklist.md` (rappels) |

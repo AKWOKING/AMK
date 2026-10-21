@@ -22,7 +22,7 @@
 |---|---|
 | Compte TikTok | **créé** par King le 21/10 — `@dmoptique.bonaberi237`, nom affiché `DM OPTIQUE SARL`, logo + story, 0/0/0 |
 | Bio | **B retenue** : `Opticien à Bonabéri · examen de vue & montures · WhatsApp 656 122 239` (à poser — `launch/SETUP-TIKTOK.md`) |
-| Business Account + catégorie | à poser **avant** la première publication |
+| Business Account + catégorie | ⛔ **non disponible au Cameroun** (vérifié 21/10/2026 — le sélecteur de pays ne contient pas le Cameroun, et TikTok n'ouvre la vérification qu'à six marchés africains) → on reste en **compte personnel** ; analytics via **TikTok Studio** |
 | Premier contenu | **`content/month1/w1/tiktok-01.md`** — 22 s, 5 plans au cabinet, aucune image IA, validé par King le 21/10 |
 | Tournage | jeudi 22 ou vendredi 23/10, **avant 13h** (lumière de la vitrine) |
 | Publication | **mardi 27/10** — ou dès que le montage est relu, si King préfère ne pas attendre |

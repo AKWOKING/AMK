@@ -26,10 +26,19 @@ ineligible — so follower growth is measured as discovery that produces WhatsAp
 - [ ] **Display name** — `Name + keyword` (it is searchable).
 - [ ] **Bio — 80 characters maximum** (not 160; see the batch contradiction). Formula:
       *what we do* + *who we help* + *CTA to WhatsApp*.
+- [ ] **Account type — vérifier le pays AVANT de promettre un Business Account.** TikTok n'ouvre la
+      vérification d'entreprise qu'à une liste de marchés : en Afrique, **Algérie, Égypte, Kenya,
+      Maroc, Nigeria, Afrique du Sud** (page « About business verification », consultée le 21/10/2026).
+      **Le Cameroun n'y est pas** → compte **personnel**, et les fonctions « site en bio » /
+      Business Suite sont indisponibles. Ne jamais choisir un autre pays pour contourner
+      (fausse adresse, risque de suspension, distribution orientée vers le mauvais marché).
+      Analytics de base : **TikTok Studio** (creator tools ouverts aux comptes personnels).
 - [ ] **Location tag / city keyword** — the city and neighbourhood appear in bio and captions.
       For DM Optique: Douala, Bonabéri, Ndobo Mayor.
 - [ ] Profile photo = logo, legible at small size.
-- [ ] Link in bio = the client's site (never a bare phone number).
+- [ ] Link in bio = the client's site — **quand le champ existe**. Au Cameroun, il n'existe pas
+      (Business indisponible) : le **numéro écrit** dans la bio devient le CTA, doublé du CTA parlé et
+      du commentaire épinglé. Exception documentée, pas un oubli.
 
 ## B · Research before proposing any format
 
