@@ -184,11 +184,16 @@ mais **la publicité de S2 est Facebook/Instagram** — à confirmer par King
 n'existe pas. **Repli (02/10) : si la prise de vue échoue totalement, la semaine 3 devient une
 variante « service » (confiance / catégorie) et les montures passent au mois 2.***
 
-### 🎬 Mardi 27/10 — UGC IA
+### 🎬 Mardi 27/10 — **tiktok-01-v2**, 19 h 00 *(arbitré par King le 22/10)*
+
+> **Ce n'est plus « comment choisir une monture ».** King a validé `tiktok-01-v2` — « 20 minutes d'écran,
+> 20 secondes à six mètres » — et c'est elle qui part mardi, 19 h. Raison : elle est montée, contrôlée,
+> et elle vend une **méthode** (A moteur), pas un produit. Le sujet « choisir une monture » tombe de toute
+> façon avec la semaine 3, bloquée faute de photos. Fiche complète : `content/month1/w1/tiktok-01-v2-20-20-20.md`.
 
 | | |
 |---|---|
-| **Sujet** | « Comment choisir une monture » |
+| **Sujet initial** *(remplacé)* | « Comment choisir une monture » |
 | **Les trois conseils** | La **forme du visage** · la **largeur et l'appui** · **ce que vous en faites** |
 | **L'argument vrai** | **Ça s'essaie sur votre visage, pas sur un écran** |
 | **CTA** | Pré-rempli : **« Bonjour, je cherche une monture »** |
