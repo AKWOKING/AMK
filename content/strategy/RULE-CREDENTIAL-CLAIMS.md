@@ -14,6 +14,34 @@ d'exercice).
 |---|---|---|
 | « Inscrit à l'ONOC » | registre ONOC, annuaire Littoral, ligne 102 : inscription 021/2016, arrêté 0382, titulaire M. Domche Noumbi (`clients/dm-optic/build-notes.md` l.54) | ✅ **autorisé** (trust bar du site) |
 | « Opticien diplômé » | **aucune** | ⛔ **retiré** de `SPEC-PAGES-v1` (seule occurrence au repo) |
+| **« Opticien optométriste »** | **déclaration écrite du titulaire, WhatsApp du 21/10/2026** (verbatim ci-dessous) + **loi n° 99/001 du 07/04/1999, art. 2 et 3(2)** : « Est opticien […] toute personne titulaire soit du diplôme d'opticien lunetier, soit du **diplôme d'opticien optométriste** » · « L'opticien optométriste, en plus des attributions d'opticien, est habilité à formuler et à concevoir tout équipement optique » | ✅ **autorisé et appliqué** (site, vCard, données structurées, docs Facebook/TikTok/Google) — **diplôme non archivé au repo** : demander une copie pour le dossier (recommandé, non bloquant : la source est le titulaire lui-même) |
+
+### Le titre exact, et pourquoi ce n'est pas « Optométriste » seul (21/10/2026)
+
+Le client a écrit : « *nous ne sommes pas seulement Opticien mais OPTOMETRISTE également […] doncil est
+important de dire non pas seulement Opticien mais OPTOMETRISTE/OPTICIEN* ».
+
+**Vérifié à la source** : au Cameroun, la loi n° 99/001 du 7 avril 1999 ne crée **pas** une profession
+d'« optométriste » séparée — elle définit **l'opticien** comme titulaire *soit* du diplôme d'opticien
+lunetier, *soit* du **diplôme d'opticien optométriste**, et donne à ce dernier des attributions
+supplémentaires (art. 3(2)). L'ONOC est l'ordre unique de la profession. Le titre protégé est donc
+**« opticien optométriste »** — les deux mots du client, dans l'ordre du droit.
+
+Conséquence pratique : partout où le site disait « opticien », il dit désormais **« opticien
+optométriste »**. On n'écrit **jamais** « optométriste » seul (titre non reconnu au Cameroun → risque
+d'usurpation, que l'ONOC poursuit).
+
+> **Verbatim du client (21/10/2026, WhatsApp)** : « Le nom du cabinet c'est bien DM OPTIQUE et nous
+> sommes bien inscrit à L'ONOC. Cependant nous sommes pas seulement Opticien mais OPTOMETRISTE également.
+> Donc il est important de dire non pas seulement Opticien mais OPTOMETRISTE/OPTICIEN. Genre : votre
+> OPTOMETRISTE/OPTICIEN est dans la ville de Douala… Bref relier à chaque fois les 2. L'opticien est celui
+> qui monte juste les lunettes l'optometriste est celui qui fait les examens de vue et autres… Comme nous
+> sommes spécialiste des 2, nous sommes donc OPTOMETRISTE/OPTICIEN. »
+
+**Réponse du cabinet à cette demande** : « *D'accord je vais faire les modifications* ». **Attention à
+l'attribution** (précision de King, 21/10) : ce « D'accord… » est **King**, pas le client — c'est AMK qui
+applique, et c'est AMK qui pose les bios Facebook / TikTok / Google. Ne pas l'écrire comme une réponse du
+cabinet, et ne pas lui renvoyer la tâche.
 
 ## Ruling 08/10 — balayage repo entier, remplacement partout (King)
 

@@ -1,0 +1,242 @@
+{
+ "F01": {
+  "nom": "F01 · Oval, gold",
+  "phrase": "Women's — oval shape, fine gold metal. Try them on at the practice.",
+  "forme": "Oval",
+  "couleur": "Gold"
+ },
+ "F04": {
+  "nom": "F04 · Butterfly, rose",
+  "phrase": "Women's — butterfly shape, fine rose metal. Try them on at the practice.",
+  "forme": "Butterfly",
+  "couleur": "Rose"
+ },
+ "F06": {
+  "nom": "F06 · Butterfly, clear",
+  "phrase": "Women's — butterfly shape, clear. Try them on at the practice.",
+  "forme": "Butterfly",
+  "couleur": "Clear"
+ },
+ "F08": {
+  "nom": "F08 · Hexagonal, tortoiseshell",
+  "phrase": "Women's — hexagonal shape, tortoiseshell pattern with metal. Try them on at the practice.",
+  "forme": "Hexagonal",
+  "couleur": "Tortoiseshell"
+ },
+ "F09": {
+  "nom": "F09 · Hexagonal, light tortoiseshell",
+  "phrase": "Women's — hexagonal shape, light tortoiseshell pattern. Try them on at the practice.",
+  "forme": "Hexagonal",
+  "couleur": "Tortoiseshell"
+ },
+ "F10": {
+  "nom": "F10 · Hexagonal, silver",
+  "phrase": "Women's — hexagonal shape, fine silver metal. Try them on at the practice.",
+  "forme": "Hexagonal",
+  "couleur": "Silver"
+ },
+ "F11": {
+  "nom": "F11 · Hexagonal, silver",
+  "phrase": "Women's — hexagonal shape, fine silver metal. Try them on at the practice.",
+  "forme": "Hexagonal",
+  "couleur": "Silver"
+ },
+ "F13": {
+  "nom": "F13 · Hexagonal, silver and rose",
+  "phrase": "Women's — hexagonal shape, silver, rose arms. Try them on at the practice.",
+  "forme": "Hexagonal",
+  "couleur": "Silver"
+ },
+ "F14": {
+  "nom": "F14 · Butterfly, translucent rose",
+  "phrase": "Women's — butterfly shape, translucent rose. Try them on at the practice.",
+  "forme": "Butterfly",
+  "couleur": "Rose"
+ },
+ "F17": {
+  "nom": "F17 · Butterfly, burgundy",
+  "phrase": "Women's — butterfly shape, burgundy and rose. Try them on at the practice.",
+  "forme": "Butterfly",
+  "couleur": "Burgundy"
+ },
+ "F19": {
+  "nom": "F19 · Butterfly, tortoiseshell",
+  "phrase": "Women's — butterfly shape, tortoiseshell pattern. Try them on at the practice.",
+  "forme": "Butterfly",
+  "couleur": "Tortoiseshell"
+ },
+ "F21": {
+  "nom": "F21 · Square, black",
+  "phrase": "Women's — square shape, black. Try them on at the practice.",
+  "forme": "Square",
+  "couleur": "Black"
+ },
+ "F24": {
+  "nom": "F24 · Square, tortoiseshell",
+  "phrase": "Women's — square shape, tortoiseshell pattern, gold detail on the arms. Try them on at the practice.",
+  "forme": "Square",
+  "couleur": "Tortoiseshell"
+ },
+ "F25": {
+  "nom": "F25 · Butterfly, translucent tortoiseshell",
+  "phrase": "Women's — butterfly shape, translucent tortoiseshell. Try them on at the practice.",
+  "forme": "Butterfly",
+  "couleur": "Tortoiseshell"
+ },
+ "F26": {
+  "nom": "F26 · Round, multi-coloured blue",
+  "phrase": "Women's — round shape, blue with multi-coloured reflections. Try them on at the practice.",
+  "forme": "Round",
+  "couleur": "Blue"
+ },
+ "F27": {
+  "nom": "F27 · Hexagonal, navy",
+  "phrase": "Women's — hexagonal shape, navy and metal. Try them on at the practice.",
+  "forme": "Hexagonal",
+  "couleur": "Blue"
+ },
+ "F29": {
+  "nom": "F29 · Hexagonal, grey",
+  "phrase": "Women's — hexagonal shape, grey. Try them on at the practice.",
+  "forme": "Hexagonal",
+  "couleur": "Grey"
+ },
+ "F34": {
+  "nom": "F34 · Oval, silver",
+  "phrase": "Women's — oval shape, fine silver metal. Try them on at the practice.",
+  "forme": "Oval",
+  "couleur": "Silver"
+ },
+ "F38": {
+  "nom": "F38 · Rectangular, black",
+  "phrase": "Women's — rectangular shape, black. Try them on at the practice.",
+  "forme": "Rectangular",
+  "couleur": "Black"
+ },
+ "F40": {
+  "nom": "F40 · Square, red and tortoiseshell",
+  "phrase": "Women's — square shape, red and tortoiseshell pattern. Try them on at the practice.",
+  "forme": "Square",
+  "couleur": "Red"
+ },
+ "F57": {
+  "nom": "F57 · Butterfly, black and gold",
+  "phrase": "Women's — butterfly shape, black and gold. Try them on at the practice.",
+  "forme": "Butterfly",
+  "couleur": "Black"
+ },
+ "F59": {
+  "nom": "F59 · Square, coral and tortoiseshell",
+  "phrase": "Women's — square shape, coral and tortoiseshell pattern. Try them on at the practice.",
+  "forme": "Square",
+  "couleur": "Coral"
+ },
+ "F60": {
+  "nom": "F60 · Square, grey",
+  "phrase": "Women's — square shape, grey, shiny details on the arms. Try them on at the practice.",
+  "forme": "Square",
+  "couleur": "Grey"
+ },
+ "F61": {
+  "nom": "F61 · Square, black and tortoiseshell",
+  "phrase": "Women's — square shape, black, tortoiseshell sides. Try them on at the practice.",
+  "forme": "Square",
+  "couleur": "Black"
+ },
+ "E07": {
+  "nom": "E07 · Oval, black and red",
+  "phrase": "Children's — oval shape, black, red tips. Try them on at the practice.",
+  "forme": "Oval",
+  "couleur": "Black"
+ },
+ "E13": {
+  "nom": "E13 · Round, black and red",
+  "phrase": "Children's — round shape, black, red tips. Try them on at the practice.",
+  "forme": "Round",
+  "couleur": "Black"
+ },
+ "E14": {
+  "nom": "E14 · Oval, purple",
+  "phrase": "Children's — oval shape, dark purple. Try them on at the practice.",
+  "forme": "Oval",
+  "couleur": "Purple"
+ },
+ "E15": {
+  "nom": "E15 · Oval, purple",
+  "phrase": "Children's — oval shape, purple. Try them on at the practice.",
+  "forme": "Oval",
+  "couleur": "Purple"
+ },
+ "E16": {
+  "nom": "E16 · Square, blue",
+  "phrase": "Children's — square shape, blue. Try them on at the practice.",
+  "forme": "Square",
+  "couleur": "Blue"
+ },
+ "E17": {
+  "nom": "E17 · Rectangular, clear",
+  "phrase": "Children's — rectangular shape, clear. Try them on at the practice.",
+  "forme": "Rectangular",
+  "couleur": "Clear"
+ },
+ "E18": {
+  "nom": "E18 · Rectangular, black and red",
+  "phrase": "Children's — rectangular shape, black, red tips. Try them on at the practice.",
+  "forme": "Rectangular",
+  "couleur": "Black"
+ },
+ "E19": {
+  "nom": "E19 · Oval, burgundy",
+  "phrase": "Children's — oval shape, burgundy. Try them on at the practice.",
+  "forme": "Oval",
+  "couleur": "Burgundy"
+ },
+ "E22": {
+  "nom": "E22 · Square, tortoiseshell",
+  "phrase": "Children's — square shape, tortoiseshell pattern. Try them on at the practice.",
+  "forme": "Square",
+  "couleur": "Tortoiseshell"
+ },
+ "E27": {
+  "nom": "E27 · Oval, translucent",
+  "phrase": "Children's — oval shape, light translucent. Try them on at the practice.",
+  "forme": "Oval",
+  "couleur": "Clear"
+ },
+ "H01": {
+  "nom": "H01 · Double bridge, black and gold",
+  "phrase": "Men's — double bridge, black and gold. Try them on at the practice.",
+  "forme": "Rectangular",
+  "couleur": "Black"
+ },
+ "H02": {
+  "nom": "H02 · Double bridge, rectangular, black",
+  "phrase": "Men's — double bridge, black and gold. Try them on at the practice.",
+  "forme": "Rectangular",
+  "couleur": "Black"
+ },
+ "H04": {
+  "nom": "H04 · Double bridge, gold",
+  "phrase": "Men's — double bridge, gold with a black lower rim. Try them on at the practice.",
+  "forme": "Square",
+  "couleur": "Gold"
+ },
+ "H05": {
+  "nom": "H05 · Double bridge, square, black and gold",
+  "phrase": "Men's — double bridge, black and gold. Try them on at the practice.",
+  "forme": "Square",
+  "couleur": "Black"
+ },
+ "H07": {
+  "nom": "H07 · Double bridge, grey",
+  "phrase": "Men's — double bridge, metal grey. Try them on at the practice.",
+  "forme": "Rectangular",
+  "couleur": "Grey"
+ },
+ "H08": {
+  "nom": "H08 · Double bridge aviator, black and gold",
+  "phrase": "Men's — double bridge, black and gold. Try them on at the practice.",
+  "forme": "Aviator",
+  "couleur": "Black"
+ }
+}

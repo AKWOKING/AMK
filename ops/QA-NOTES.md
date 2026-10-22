@@ -210,3 +210,13 @@ Vérification live : `https://dm-optique-sarl.vercel.app/` servi, titre et heure
 **Test QA :** `tools/qa/test_dmoptic_page.mjs` — 50/50. Deux assertions mises à jour : (1) le schéma peut contenir l'horaire Lun–Sam 08:30–17:30 décidé par King, et rien d'autre ; (2) le lien « Itinéraire » ne doit pas être `href="#"` (il n'a pas d'href tant que MAP_URL est vide).
 
 **Comptage des clics — recherche (aucune implémentation) :** voir la réponse ; TRACK_URL reste vide.
+
+## 21/10/2026 — backticks dans une chaîne bash double-quote (classe tooling)
+
+`gh pr comment 9 --body "...`code`..."` : bash exécute le contenu des backticks **avant** d'envoyer le
+texte. Résultat : les chemins et identifiants en `code` disparaissent silencieusement du commentaire
+(l'API le reçoit amputé, avec un code retour 0). Le commentaire a été corrigé par `gh api --method PATCH
+... -F body=@fichier`.
+
+**Règle :** tout corps de commentaire PR / issue contenant du markdown avec backticks s'écrit dans un
+**fichier** puis s'envoie par `--body-file` (ou `-F body=@fichier`). Jamais en chaîne double-quote.

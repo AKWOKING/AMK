@@ -53,7 +53,9 @@
 | **Vérification** | L'e-mail propriétaire est le sien ; notre accès est révocable par lui |
 | **⚠️ Ordre** | **Avant toute création.** Un compte créé sur nos identifiants est très difficile à rétrocéder |
 | **Décision** | Verrouillée par King — `dossier.md` §3.1 |
-| **État** | ☐ |
+| **État** | 🟠 **partiel (21/10)** — TikTok créé sur l'**email du cabinet** (`dmoptiquesarl@gmail.com`), donc l'identité de départ est bien celle du cabinet ; mais le **mot de passe est dans le gestionnaire de King** : M. Domche n'est pas encore propriétaire récupérable. **À faire :** partage de l'accès au client (email de récupération / code) et consignation écrite du transfert. Le compte Facebook garde le même critère. |
+| **Conséquence** | Tant que la ligne est 🟠, la rétrocession n'est pas prouvée. Ce n'est pas bloquant pour publier (le compte est au nom du cabinet), c'est bloquant pour la **livraison** (solde de 75 000 FCFA). |
+| **Facebook (21/10)** | Meta **exige un profil personnel** derrière chaque page — pas d'email seul, pas de profil au nom du cabinet (suspension, et la page tombe avec). Voie retenue : page créée depuis le profil réel de King, **placée dans un portefeuille Meta `DM OPTIQUE SARL`** (c'est le portefeuille qui détient la page), 2FA, AMK en accès personne ; **M. Domche administrateur** dès qu'il a un profil, ou transfert écrit à la livraison. Détail : `launch/SETUP-FACEBOOK.md` §1. |
 
 ---
 
@@ -210,3 +212,77 @@ facturation, la proforma ne part pas, l'acompte ne vient pas, et l'item 1 ne s'o
 ### 5 · Accords à mettre par écrit (ce que l'utilisateur confirme oralement)
 - [ ] Domaine et comptes au nom du client ; AMK les gère contre un abonnement mensuel (montant et durée à écrire).
 - [ ] Solde de 75 000 FCFA dû à la livraison ; confirmer le montant et la date.
+
+---
+
+## La mise en ligne — Cloudflare Pages (pas-à-pas King, écrit le 20/10)
+
+**Le livrable est prêt** : `dmopticsarl.zip` @ commit `8cb43bc` — 132 fichiers, `testzip` OK,
+**0 référence Vercel dans les HTML**, canonical/`og:url`/`og:image` déjà sur
+`https://dmoptiquesarl.com` (aucune passe `--url` nécessaire), **0 `noindex`** sur les pages
+(le 404 garde le sien, voulu), `llms.txt` inclus. Le dossier est construit pour Cloudflare Pages :
+`404.html` (page 404 native Pages) et `_headers` (en-têtes de sécurité) y sont des fonctions de la
+plateforme, pas des fichiers décoratifs. Doc Cloudflare (Direct Upload, lu le 20/10) : le
+**drag & drop accepte le zip ou le dossier extrait** (Wrangler, lui, refuse les zip) ; limites
+1 000 fichiers / 25 Mo par fichier — nous sommes à 132 fichiers, le plus lourd ~270 Ko.
+
+1. Télécharger `dmopticsarl.zip` **depuis GitHub** (branche `arena/2fffee3b-amk`, racine du dépôt).
+   Ne jamais assembler un dossier à la main : le zip EST le livrable (généré par le build, gardé).
+2. dash.cloudflare.com → **Workers & Pages** → Create application → Pages → **Drag and drop
+   your files**.
+3. Nom du projet : **`dmoptiquesarl`** → l'URL sera `dmoptiquesarl.pages.dev` (si le nom est pris,
+   Cloudflare ajoute des caractères : sans importance, le domaine final est le sien).
+4. Déposer le zip → **Deploy site**. Contrôler tout de suite : une URL inexistante sert bien la
+   404 bilingue, et `/llms.txt` répond. *(Fait le 20/10 : King a déployé via l'upload **Worker**
+   — `dmoptiquesarl.akwo-king-dev.workers.dev`, déploiement `b3ed20c2` — et la 404 bilingue,
+   `/llms.txt` et les fiches ont été vérifiés en ligne par l'orchestrateur : l'upload Worker sert
+   tout aussi bien que Pages, aucun changement de voie nécessaire.)*
+5. **Domaine personnalisé** : projet → **Custom domains** → `dmoptiquesarl.com` (+ `www` → le
+   domaine racine). Si la zone DNS du domaine est déjà dans ce compte Cloudflare, le CNAME se pose
+   tout seul ; sinon créer chez le registrar un CNAME `dmoptiquesarl.com` →
+   `dmoptiquesarl.pages.dev`, **proxifié** (à confirmer à l'écran au moment de l'ajout — le flow
+   du dashboard prime). Le domaine reste **au nom du client** (item 4 de cette checklist).
+6. **Vérifications en ligne, sur un téléphone, en plein jour** (portique 10.5 inchangé) : accueil
+   FR · bascule EN qui change tout · un WhatsApp pré-rempli qui s'ouvre · `/montures/` · une fiche
+   · le dock au bon message · 404 · `llms.txt` · partage du lien dans WhatsApp (la vignette
+   `og.jpg` doit apparaître).
+7. **Prévenir l'orchestrateur dès que c'est en ligne** : c'est le déclencheur du **brag de
+   livraison** (PRE-FLIGHT §1f② — brouillon présenté avec le livrable), de la note datée
+   Activity-Log, des vérifications relais (Search Console ci-dessous) et du point sur le solde
+   (item 5 des accords).
+
+## Search Console + relais — après la mise en ligne (complète le « Après la mise en ligne » ci-dessus)
+
+- [ ] **Propriété Domaine** recommandée (`dmoptiquesarl.com`, couvre http/https/www) : vérification
+  par enregistrement **TXT** dans la zone DNS — la même séance que le CNAME de l'étape 5.
+- [x] **Sitemap** : soumise (20/10) — www d'abord puis propriété Domaine vérifiée le même jour ;
+  **à relire 21/10** : statut attendu « Success — 48 discovered » sous 24–48 h.
+- [ ] **RAPPEL 21/10 (quota GSC atteint le 20/10 après 5 demandes) : « Demander une indexation »
+  sur les 4 URLs restantes, dans cet ordre** — `https://dmoptiquesarl.com/examen-de-vue/` ·
+  `https://dmoptiquesarl.com/le-cabinet/` · `https://dmoptiquesarl.com/contact/` ·
+  `https://dmoptiquesarl.com/montures/femmes/f01-ovale-doree/` (fiche témoin). Déjà demandé le
+  20/10 : `/`, `/montures/`, les 3 hubs de catégorie. Les 40 autres fiches ne se demandent PAS
+  une par une : elles arrivent par la sitemap + les liens internes des hubs.
+- [ ] **Inspection d'URL** → « Demander une indexation » sur `/`, `/montures/`, `/examen-de-vue/`
+  et une fiche (ex. F01).
+- [ ] Contrôler que Google lit bien `llms.txt` (inspection d'URL sur `/llms.txt`).
+- [ ] **Fiche Google Business** : URL du site = `https://dmoptiquesarl.com/`, nom et horaires
+  identiques au site — la préparation `local-seo` est dans `launch/SETUP-GOOGLE-BUSINESS.md`.
+- [ ] Note datée dans `sales/Activity-Log.md`. Jugement SEO à 30 jours, pas avant.
+
+---
+
+## Suivi du 21/10/2026 — TikTok et avis Google
+
+| Fait | État | Où c'est écrit |
+|---|---|---|
+| Compte TikTok créé | ✅ `@dmoptique.bonaberi237` · `DM OPTIQUE SARL` · logo + story · 0/0/0 | `launch/SETUP-TIKTOK.md` |
+| Bio (candidat B) | ✅ **posée le 21/10** avec le titre complet : `Opticien optométriste à Bonabéri · examen de vue · WhatsApp 656 122 239` (71 car.) | `launch/SETUP-TIKTOK.md` § Bio · `content/strategy/RULE-CREDENTIAL-CLAIMS.md` |
+| Business Account + catégorie | ⛔ **impossible au Cameroun** (pays absent du sélecteur ; TikTok n'ouvre la vérification qu'à 6 marchés africains) — compte personnel assumé, analytics via TikTok Studio | `launch/SETUP-TIKTOK.md` § Business Account |
+| Premier contenu | ✅ script validé (21/10) · ⬜ tournage · ⬜ montage relu par King · ⬜ publication | `content/month1/w1/tiktok-01.md` |
+| Message « avis Google » à M. Domche | 🕘 **envoi 21/10 à 09:00** (pas avant) · ⬜ 5 avis d'ici samedi 24/10 | `launch/MESSAGE-AVIS-GOOGLE-2026-10.md` |
+| Page Facebook | ✅ **créée le 21/10** — catégorie Opticien, bio, logo, 0 follower ; ⬜ reste : ~~`@username`~~ (inexistant côté Facebook), couverture, bouton WhatsApp, horaires, story, 1er post après feu vert (`launch/SETUP-FACEBOOK.md` §7) |
+| Livraison | 📋 **état consolidé** : ce qui est livré, ce qui reste (par propriétaire), et les **3 preuves** qui conditionnent le solde de 75 000 → `launch/CHECKLIST-LIVRAISON-2026-10.md` |
+| Meta au Cameroun | ✅ **cartographié le 21/10** — publier/sponsoriser : oui ; boutique, Meta Pay, monétisation, badge : non ; facturation en **USD/EUR + TVA 19,25 %** | `launch/META-CAMEROUN-2026-10.md` |
+| Carte internationale pour la pub | ✅ **King en a une (déclaré le 21/10)** — reste le contrôle du premier débit en devise ; le test de 5 000 FCFA est lançable en S2 | `launch/META-CAMEROUN-2026-10.md` §4③ |
+| GSC : 4 indexations + re-check sitemap | 🔴 rappel debout — quota du 20/10 à reprendre | `clients/dm-optic/pre-launch-checklist.md` (rappels) |

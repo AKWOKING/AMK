@@ -13,6 +13,30 @@
 
 ---
 
+## Amendement du 21/10/2026 — le calendrier réel (TikTok créé, premier post sous le gabarit W43)
+
+> Les dates du tableau ci-dessous supposaient un lancement le 12/10 : elles sont **dépassées** et
+> restent au dossier comme plan de référence. Ce qui est vrai aujourd'hui :
+
+| Fait | État |
+|---|---|
+| Compte TikTok | **créé** par King le 21/10 — `@dmoptique.bonaberi237`, nom affiché `DM OPTIQUE SARL`, logo + story, 0/0/0 |
+| Bio | ✅ **posée le 21/10** : `Opticien optométriste à Bonabéri · examen de vue · WhatsApp 656 122 239` (71 car.) — référence : `launch/SETUP-TIKTOK.md` |
+| Page Facebook | ✅ **créée le 21/10** — `DM OPTIQUE SARL`, catégorie Opticien, bio posée, logo en avatar, 0 follower. Reste : couverture, bouton WhatsApp, horaires, story, **1er post après feu vert** — ~~`@username`~~ : la page n'en propose pas (`launch/SETUP-FACEBOOK.md` §6–§7) |
+| Meta au Cameroun | **Publié et sponsorisé : oui. Boutique, Meta Pay, monétisation, badge : non** → `launch/META-CAMEROUN-2026-10.md`. La pub de S2 suppose une **carte internationale** (facturation en USD/EUR + TVA 19,25 %) : prérequis à vérifier avant la semaine 2 |
+| Business Account + catégorie | ⛔ **non disponible au Cameroun** (vérifié 21/10/2026 — le sélecteur de pays ne contient pas le Cameroun, et TikTok n'ouvre la vérification qu'à six marchés africains) → on reste en **compte personnel** ; analytics via **TikTok Studio** |
+| Premier contenu | **`content/month1/w1/tiktok-01.md`** — 22 s, 5 plans au cabinet, aucune image IA, validé par King le 21/10 |
+| Tournage | jeudi 22 ou vendredi 23/10, **avant 13h** (lumière de la vitrine) |
+| Publication | **mardi 27/10** — ou dès que le montage est relu, si King préfère ne pas attendre |
+| Deuxième contenu | ✅ **prêt** — carrousel « les trois montures » construit sur les **photos réelles du cabinet** (`content/month1/w1/facebook-post-famille.md`, cartes dans `launch/social/cards/`). Ce n'est plus une condition : les photos sont au dépôt. |
+| Site en ligne | ✅ **`https://dmoptiquesarl.com`** (Cloudflare) — terminologie « opticien optométriste » en production, sitemap 48 URL (vérifié 21/10) |
+
+| Post FB prêt | **`content/month1/w1/facebook-post-famille.md`** — carrousel 3 cartes (F01 · H08 · E16), légende + commentaire épinglé, publication = geste de King |
+
+**Le calendrier ne promet rien qu'on ne puisse produire.** Une pièce qui n'a pas ses photos réelles
+n'est pas publiée avec des illustrations : elle est remplacée par une variante service, et le report
+est écrit ici.
+
 ## 1 · Vue d'ensemble
 
 | Semaine | Mardi — UGC IA *(script uniquement)* | Vendredi — carrousel *(MP4 de bout en bout)* | Publicité |
@@ -137,7 +161,7 @@ mais **la publicité de S2 est Facebook/Instagram** — à confirmer par King
 
 | | |
 |---|---|
-| **Budget** | **5 000 FCFA — la totalité du budget mensuel, concentrée ici** |
+| **Budget** | **5 000 FCFA — la totalité du budget mensuel, concentrée ici**. En devise : compte en **USD ou EUR** (pas de XAF chez Meta), **+ 19,25 % de TVA**, + frais de change éventuels → prévoir ≈ 5 963 FCFA débités |
 | **Objectif** | **Messages WhatsApp** |
 | **Ciblage** | Bonabéri / Douala, rayon court, français |
 | **Créatif** | **La pièce organique de S2** — pour mesurer le même chemin, pas un autre |
@@ -147,19 +171,35 @@ mais **la publicité de S2 est Facebook/Instagram** — à confirmer par King
 > **Ce que ce test achète : un chiffre, pas du volume.** À 3 000 FCFA le message, 5 000 FCFA donnent
 > **moins de deux conversations**. Voir `content-plan-month1.md` §5.
 
+> **Prérequis (recherche 21/10)** : une **carte Visa/Mastercard internationale** ou un compte **PayPal**
+> rattaché au compte publicitaire. Meta ne prélève pas en francs CFA et n'offre pas de paiement mobile
+> local documenté pour le Cameroun. **✅ King confirme en avoir une (21/10)** — reste le contrôle du
+> premier débit en devise. Détail : `launch/META-CAMEROUN-2026-10.md` §4.
+
 ---
 
 ## 4 · Semaine 3 — Les montures
 
-*⛔ Bloquée **absolument** par : 6–8 photos de montures réelles (item 7). Sans elles, cette semaine
-n'existe pas. **Repli (02/10) : si la prise de vue échoue totalement, la semaine 3 devient une
-variante « service » (confiance / catégorie) et les montures passent au mois 2.***
+> ✅ **Levée le 22/10 (vérifiée dans le dépôt).** L'inventaire **est arrivé** : `clients/dm-optic/site/frames.json`
+> contient **l'inventaire complet**, et **65 images** sont versionnées dans
+> `hosting/previews/dmoptic/montures/` (`femmes/`, `hommes/`, `enfants/`), publiées sur
+> `dmoptiquesarl.com/montures/`. Ce blocage datait du **02/10**, avant la séance photo. Il n'existe plus.
+> Nuance qui compte pour la direction v2 : avoir les photos ne veut pas dire s'en servir comme catalogue —
+> elles servent **d'illustration à une explication**, jamais de vitrine.
 
-### 🎬 Mardi 27/10 — UGC IA
+~~Repli du 02/10 : « si la prise de vue échoue totalement, la semaine 3 devient une variante service et
+les montures passent au mois 2. »~~ **Sans objet** — la prise de vue a eu lieu.
+
+### 🎬 Mardi 27/10 — **tiktok-01-v2**, 19 h 00 *(arbitré par King le 22/10)*
+
+> **Ce n'est plus « comment choisir une monture ».** King a validé `tiktok-01-v2` — « 20 minutes d'écran,
+> 20 secondes à six mètres » — et c'est elle qui part mardi, 19 h. Raison : elle est montée, contrôlée,
+> et elle vend une **méthode** (A moteur), pas un produit. Le sujet « choisir une monture » tombe de toute
+> façon avec la semaine 3, bloquée faute de photos. Fiche complète : `content/month1/w1/tiktok-01-v2-20-20-20.md`.
 
 | | |
 |---|---|
-| **Sujet** | « Comment choisir une monture » |
+| **Sujet initial** *(remplacé)* | « Comment choisir une monture » |
 | **Les trois conseils** | La **forme du visage** · la **largeur et l'appui** · **ce que vous en faites** |
 | **L'argument vrai** | **Ça s'essaie sur votre visage, pas sur un écran** |
 | **CTA** | Pré-rempli : **« Bonjour, je cherche une monture »** |
@@ -265,12 +305,15 @@ totalement, C4 devient aussi une variante « service ».***
 | 2 | **Aucune allégation médicale** — « protège vos yeux », jamais « soigne » |
 | 3 | **Aucun témoignage, classement ou résultat inventé** — zéro avis, zéro étoile, zéro « premier sur… » |
 | 4 | **Jamais nommer un concurrent** — l'angle ONOC se dit **sur soi** |
-| 5 | **Aucun prix affiché** — le prix se répond dans la conversation, il ne s'affiche pas |
+| 5 | **Aucun montant publié** — le montant se répond dans la conversation, jamais à l'écran ni en légende |
 | 6 | **Aucune remise** — on échange du périmètre ou du calendrier |
 | 7 | **Aucun visage inventé** — pas de portrait généré, pas de patient fictif |
 | 8 | **Rien d'inventé n'est publié** — adresse, horaire, marque, assurance : confirmé ou absent |
 | 9 | **Tout vit dans le dépôt** — chaque légende et chaque script est un fichier versionné |
 | 10 | **Format carrousel** — vertical 9:16 · 1080×1920 · 30 fps · SAR 1:1 · H.264 |
+| 11 | **Porte W43 §12b** (ruling King 21/10) — cas client d'abord · un seul axe · objet réel · preuve citée une fois · sortie honnête · un seul CTA (`sales/research/2026-W43-techniques.md` §12b) |
+| 13 | **Direction de marque v2** (ruling King 22/10) — **relire `clients/dm-optic/brand/DIRECTION-MARQUE-v2-2026-10-22.md` avant d'écrire** · A moteur · B preuve · C limite · l'expertise avant le produit · aucun compte de montures, aucune carte de stock |
+| 12 | **Titre professionnel** (demande client 21/10) — jamais « opticien » **seul** : écrire **« opticien optométriste »**, l'ordre de la loi camerounaise (99/001, art. 2). Voir `content/strategy/RULE-CREDENTIAL-CLAIMS.md` |
 
 ---
 

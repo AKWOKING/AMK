@@ -1,0 +1,65 @@
+# DM OPTIQUE SARL
+
+> Cabinet d'optique médicale à Bonabéri, Douala (Cameroun), inscrit à l'ONOC. Examen de la vue, verres sur ordonnance, montures femme/homme/enfant, réglage et réparation. Le premier contact passe par WhatsApp : le message arrive déjà écrit.
+> Medical optical practice in Bonaberi, Douala (Cameroon), registered with the ONOC (national opticians order). Eye examinations, prescription lenses, frames for women, men and children, adjustment and repair. First contact is WhatsApp: the message arrives pre-written.
+
+## Pages
+
+- [Accueil — le cabinet, les services, les montures](https://dmoptiquesarl.com/) — Home — the practice, services, frames
+- [Montures — le catalogue complet](https://dmoptiquesarl.com/montures/) — Frames — the full catalogue
+- [Montures femme (24)](https://dmoptiquesarl.com/montures/femmes/) — Women's frames (24)
+- [Montures homme (6)](https://dmoptiquesarl.com/montures/hommes/) — Men's frames (6)
+- [Montures enfants (10)](https://dmoptiquesarl.com/montures/enfants/) — Children's frames (10)
+- [Examen de la vue — le déroulé, les horaires, ce qu'il faut apporter](https://dmoptiquesarl.com/examen-de-vue/) — Eye examination — the steps, hours, what to bring
+- [Le cabinet — l'équipement et l'adresse](https://dmoptiquesarl.com/le-cabinet/) — The practice — equipment and address
+- [Contact — adresse, horaires, WhatsApp](https://dmoptiquesarl.com/contact/) — Contact — address, hours, WhatsApp
+
+## Fiches des montures
+Chaque monture photographiée au cabinet a sa page ; chaque page existe en français et en anglais.
+
+- [F01 · Ovale dorée](https://dmoptiquesarl.com/montures/femmes/f01-ovale-doree/)
+- [F04 · Papillon rose](https://dmoptiquesarl.com/montures/femmes/f04-papillon-rose/)
+- [F06 · Papillon transparente](https://dmoptiquesarl.com/montures/femmes/f06-papillon-transparente/)
+- [F08 · Hexagonale écaille](https://dmoptiquesarl.com/montures/femmes/f08-hexagonale-ecaille/)
+- [F09 · Hexagonale écaille claire](https://dmoptiquesarl.com/montures/femmes/f09-hexagonale-ecaille-claire/)
+- [F10 · Hexagonale argentée](https://dmoptiquesarl.com/montures/femmes/f10-hexagonale-argentee/)
+- [F11 · Hexagonale argentée](https://dmoptiquesarl.com/montures/femmes/f11-hexagonale-argentee/)
+- [F13 · Hexagonale argentée et rose](https://dmoptiquesarl.com/montures/femmes/f13-hexagonale-argentee-et-rose/)
+- [F14 · Papillon rose translucide](https://dmoptiquesarl.com/montures/femmes/f14-papillon-rose-translucide/)
+- [F17 · Papillon bordeaux](https://dmoptiquesarl.com/montures/femmes/f17-papillon-bordeaux/)
+- [F19 · Papillon écaille](https://dmoptiquesarl.com/montures/femmes/f19-papillon-ecaille/)
+- [F21 · Carrée noire](https://dmoptiquesarl.com/montures/femmes/f21-carree-noire/)
+- [F24 · Carrée écaille](https://dmoptiquesarl.com/montures/femmes/f24-carree-ecaille/)
+- [F25 · Papillon écaille translucide](https://dmoptiquesarl.com/montures/femmes/f25-papillon-ecaille-translucide/)
+- [F26 · Ronde bleue multicolore](https://dmoptiquesarl.com/montures/femmes/f26-ronde-bleue-multicolore/)
+- [F27 · Hexagonale bleu marine](https://dmoptiquesarl.com/montures/femmes/f27-hexagonale-bleu-marine/)
+- [F29 · Hexagonale grise](https://dmoptiquesarl.com/montures/femmes/f29-hexagonale-grise/)
+- [F34 · Ovale argentée](https://dmoptiquesarl.com/montures/femmes/f34-ovale-argentee/)
+- [F38 · Rectangulaire noire](https://dmoptiquesarl.com/montures/femmes/f38-rectangulaire-noire/)
+- [F40 · Carrée rouge et écaille](https://dmoptiquesarl.com/montures/femmes/f40-carree-rouge-et-ecaille/)
+- [F57 · Papillon noire et dorée](https://dmoptiquesarl.com/montures/femmes/f57-papillon-noire-et-doree/)
+- [F59 · Carrée corail et écaille](https://dmoptiquesarl.com/montures/femmes/f59-carree-corail-et-ecaille/)
+- [F60 · Carrée grise](https://dmoptiquesarl.com/montures/femmes/f60-carree-grise/)
+- [F61 · Carrée noire et écaille](https://dmoptiquesarl.com/montures/femmes/f61-carree-noire-et-ecaille/)
+- [H01 · Double pont noir et doré](https://dmoptiquesarl.com/montures/hommes/h01-double-pont-noir-et-dore/)
+- [H02 · Double pont rectangulaire noir](https://dmoptiquesarl.com/montures/hommes/h02-double-pont-rectangulaire-noir/)
+- [H04 · Double pont doré](https://dmoptiquesarl.com/montures/hommes/h04-double-pont-dore/)
+- [H05 · Double pont carré noir et doré](https://dmoptiquesarl.com/montures/hommes/h05-double-pont-carre-noir-et-dore/)
+- [H07 · Double pont gris](https://dmoptiquesarl.com/montures/hommes/h07-double-pont-gris/)
+- [H08 · Double pont aviateur noir et doré](https://dmoptiquesarl.com/montures/hommes/h08-double-pont-aviateur-noir-et-dore/)
+- [E07 · Ovale noire et rouge](https://dmoptiquesarl.com/montures/enfants/e07-ovale-noire-et-rouge/)
+- [E13 · Ronde noire et rouge](https://dmoptiquesarl.com/montures/enfants/e13-ronde-noire-et-rouge/)
+- [E14 · Ovale violet](https://dmoptiquesarl.com/montures/enfants/e14-ovale-violet/)
+- [E15 · Ovale violette](https://dmoptiquesarl.com/montures/enfants/e15-ovale-violette/)
+- [E16 · Carrée bleue](https://dmoptiquesarl.com/montures/enfants/e16-carree-bleue/)
+- [E17 · Rectangulaire transparente](https://dmoptiquesarl.com/montures/enfants/e17-rectangulaire-transparente/)
+- [E18 · Rectangulaire noire et rouge](https://dmoptiquesarl.com/montures/enfants/e18-rectangulaire-noire-et-rouge/)
+- [E19 · Ovale bordeaux](https://dmoptiquesarl.com/montures/enfants/e19-ovale-bordeaux/)
+- [E22 · Carrée écaille](https://dmoptiquesarl.com/montures/enfants/e22-carree-ecaille/)
+- [E27 · Ovale translucide](https://dmoptiquesarl.com/montures/enfants/e27-ovale-translucide/)
+
+## Coordonnées
+- Adresse : Ndobo Mayor — Immeuble West Hotel, 1er étage, dernière porte à droite, Bonabéri, Douala
+- Téléphone et WhatsApp : +237 656 122 239
+- Horaires : Lundi–Samedi, 8h30–17h30 · examen de la vue 8h30–13h00
+- Langues : français et anglais sur toutes les pages · version anglaise : https://dmoptiquesarl.com/en/

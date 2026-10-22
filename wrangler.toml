@@ -1,0 +1,31 @@
+# Cloudflare — DM OPTIQUE SARL
+# -----------------------------------------------------------------------------
+# Ce fichier publie le site (dossier hosting/previews/dmoptic) comme assets
+# statiques du Worker existant, avec une seule commande :
+#
+#     npx wrangler deploy
+#
+# C'est aussi ce que lance Workers Builds à chaque envoi sur la branche de
+# production (Settings → Build, Deploy command = `npx wrangler deploy`).
+#
+# `name` = LE NOM DU WORKER EXISTANT, relevé dans le tableau de bord le 22/10 :
+# Cloudflare → Workers & Pages → « dmoptiquesarl ».
+# ⚠️ S'il ne correspond pas EXACTEMENT, wrangler crée un SECOND Worker et le
+#    domaine dmoptiquesarl.com continue de pointer l'ancien — panne silencieuse.
+
+name = "dmoptiquesarl"
+compatibility_date = "2026-10-01"
+
+# Le site est du HTML/CSS/JS déjà construit : aucun build, aucun framework.
+# `wrangler` envoie le dossier tel quel (183 fichiers, 9 Mo — limite : 20 000
+# fichiers et 25 Mo par fichier).
+[assets]
+directory = "./hosting/previews/dmoptic"
+# Une adresse inconnue sert 404.html (présent dans le dossier) : c'est la page
+# personnalisée déjà testée en ligne le 21/10.
+not_found_handling = "404-page"
+
+# Pas de fichier _redirects dans le dossier publié : Workers n'y accepte que des
+# chemins relatifs (« Only relative URLs are allowed », code 100324) et ne compare
+# jamais les hôtes. La redirection www → apex se règle dans la zone :
+# Cloudflare → Rules → Redirect Rules. Voir launch/DEPLOIEMENT-CLOUDFLARE-2026-10-22.md §3 ter.

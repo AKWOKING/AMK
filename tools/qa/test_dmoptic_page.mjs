@@ -34,7 +34,7 @@ const revealSrc = scriptAfter(html, "IntersectionObserver, jamais d'écouteur de
 console.log("═══ 0 · le contrat page ⇄ JavaScript ═══");
 
 const IDS = ["btn-fr", "btn-en", "say", "copy2", "vcard", "main", "top", "h-hero",
-             "actes", "etapes", "montures", "questions", "contact"];
+             "parcours", "montures", "actes", "etapes", "questions", "contact"];
 const missing = IDS.filter((id) => !html.includes('id="' + id + '"'));
 ok(`les ${IDS.length} identifiants attendus sont dans la page`, missing.length === 0, "manquants : " + missing.join(", "));
 
@@ -58,7 +58,7 @@ ok("un seul numéro dans toute la page : celui du cabinet, avec l'indicatif",
 
 const imgs = [...html.matchAll(/<img[^>]*data-alt-fr[^>]*>/g)].map((m) => m[0]);
 ok(`les ${imgs.length} images portent data-alt-fr ET data-alt-en`,
-   imgs.length === 5 && imgs.every((t) => t.includes("data-alt-en=") && !/alt=""/.test(t)));
+   imgs.length === 6 && imgs.every((t) => t.includes("data-alt-en=") && !/alt=""/.test(t)));
 
 /* ── la vitrine des montures (v2.1) : trois familles, trois conseils, et aucune marque inventée ───── */
 const showcase = (html.match(/<section id="montures"[\s\S]*?<\/section>/) || [""])[0];
@@ -66,16 +66,26 @@ const cards = showcase.match(/<article class="frame[\s\S]*?<\/article>/g) || [];
 ok("la vitrine montre trois familles de montures, une photo et un titre chacune",
    cards.length === 3 && cards.every((c) => c.includes("<img") && c.includes("<h3>")),
    "cartes : " + cards.length);
-ok("la vitrine dit que les photos sont des illustrations (jamais des montures du cabinet)",
-   /Photos d'illustration\./.test(showcase) && /Illustration photos\./.test(showcase));
+ok("la vitrine montre de vraies montures du cabinet ; seule la carte soleil reste une illustration légendée (20/10)",
+   /Montures photographiées au cabinet\. Lunettes de soleil : photo d'illustration\./.test(showcase) && /Frames photographed at the practice\. Sunglasses: illustration photo\./.test(showcase));
 ok("la vitrine ne nomme AUCUNE marque et n'affiche AUCUN prix",
    !/Ray-Ban|Oakley|Gucci|Tom Ford|Oliver Peoples|Essilor|Zeiss/i.test(showcase) && !/\d{3,}\s?(FCFA|XAF)/i.test(showcase));
 /* v2.1 : « une seule action ». Option B (King, 08/10) : quatre — les trois cartes de familles + la question
-   générique sur une monture précise ; toutes WhatsApp, aucun autre lien sortant dans la vitrine. */
-ok("la vitrine porte quatre actions, toutes WhatsApp (trois familles + la question sur une monture précise)",
-   (showcase.match(/class="btn /g) || []).length === 4 &&
-   (showcase.match(/<a [^>]*href="/g) || []).length === 4 &&
-   (showcase.match(/<a class="btn btn-wa wa/g) || []).length === 4);
+   générique sur une monture précise ; toutes WhatsApp, aucun autre lien sortant dans la vitrine.
+   19/10 : premier lot réel reçu — la vitrine gagne UN cinquième lien, vers /montures/
+   (le branchement prévu par build_dmoptic_montures.py : « à partir du premier vrai lot »). */
+ok("la vitrine porte quatre actions WhatsApp + un lien catalogue (premier lot réel, 19/10)",
+   (showcase.match(/<a [^>]*href="/g) || []).length === 5 &&
+   (showcase.match(/<a class="btn btn-wa wa/g) || []).length === 4 &&
+   (showcase.match(/href="\/montures\/"/g) || []).length === 1);
+
+/* 20/10 : la bande « Nos services » montre l'examen RÉEL du cabinet (OK client visages) —
+   la monture H01 retourne à ses écrans à elle : parcours, fiche, catégorie hommes. */
+const actes = (html.match(/<section id="actes"[\s\S]*?<\/section>/) || [""])[0];
+ok("la bande « Nos services » montre l'examen réel, légendé honnêtement (20/10)",
+   actes.includes("cabinet-examen.webp") && !actes.includes("monture-h01") &&
+   /L'examen de la vue, réalisé au cabinet\./.test(actes) &&
+   /The eye examination, carried out at the practice\./.test(actes));
 ok("les trois conseils du choix sont là (forme du visage, appui, usage)",
    (showcase.match(/<div>\s*<h3>/g) || []).length >= 3);
 
@@ -118,8 +128,12 @@ ok("Option B : chaque carte a aussi son message en anglais, différent des deux 
    new Set(cardLinks.map((l) => (l[0].match(/data-en="([^"]*)"/) || [])[1])).size === 3);
 ok("Option B : l'adresse statique de chaque carte = le message français encodé par le JavaScript",
    cardLinks.every((l, i) => (l[0].match(/href="([^"]+)"/) || [])[1] === WA + encodeURIComponent(CAT_FR[i])));
-ok("Option B : aucune page catalogue, aucun filtre, aucune barre de recherche dans la page",
-   !/href="\/montures|type="search"|role="search"|class="[^"]*\bpill\b/.test(html));
+ok("catalogue lié depuis nav, parcours, vitrine et pied ; toujours ni filtre ni recherche sur l'accueil (D3, 20/10)",
+   (html.match(/href="\/montures\/"/g) || []).length === 4 &&
+   !/type="search"|role="search"|class="[^"]*\bpill\b/.test(html));
+ok("D3 : le parcours ouvre les trois portes (examen, montures, contact) et la vitrine précède les services",
+   html.includes('id="parcours"') && html.includes('href="/examen-de-vue/"') && html.includes('href="/contact/"') &&
+   html.indexOf('id="parcours"') < html.indexOf('id="montures"') && html.indexOf('id="montures"') < html.indexOf('id="actes"'));
 ok("aucun prix dans le texte visible",
    !/\b\d{2,3}\s?\d{3}\s?(FCFA|XAF|fcfa)\b/i.test(html) && !/priceRange/.test(html));
 
@@ -280,6 +294,39 @@ seen = [];
 const live = runReveal({ window: { matchMedia: () => ({ matches: false }), IntersectionObserver: IO }, IO });
 ok("sinon : les blocs sont confiés à l'observateur, pas allumés d'avance",
    live.every((n) => !n.classList.contains("in")) && seen.length === 3);
+
+/* ═════════════ 2b · le catalogue v2 (D3, 20/10) : données taguées et pages générées ═════════════ */
+console.log("\n═══ 2b · le catalogue v2 : 40 montures, 3 catégories, des fiches ═══");
+
+const framesData = JSON.parse(fs.readFileSync(path.join(ROOT, "clients", "dm-optic", "site", "frames.json"), "utf8"));
+ok("frames.json v2 : 40 montures taguées sur le visible (catégorie, forme, couleur, photos)",
+   framesData.length === 40 && framesData.every((f) => f.code && f.categorie && f.forme && f.couleur && Array.isArray(f.photos) && f.photos.length >= 1));
+ok("frames.json v2 : aucun prix, aucune marque nommée",
+   !/FCFA|Ray-Ban|Chanel|Gucci|Tom Ford/i.test(JSON.stringify(framesData)));
+["femmes", "hommes", "enfants"].forEach((c) => {
+  const p = path.join(ROOT, "hosting", "previews", "dmoptic", "montures", c, "index.html");
+  const page = fs.existsSync(p) ? fs.readFileSync(p, "utf8") : "";
+  const n = framesData.filter((f) => f.categorie === c).length;
+  ok(`page catégorie ${c} : ${n} cartes, filtres forme/couleur à compteurs, aucun prix`,
+     (page.match(/class="v2-card(?: rv)?"/g) || []).length === n && page.includes('data-group="forme"') &&
+     page.includes('data-group="couleur"') && page.includes('v2-filter-toggle') && page.includes('v2-filters-panel') && !/\d{3,}\s?(FCFA|XAF)/i.test(page),
+     "générée par build_dmoptic_montures.py");
+});
+const f01 = framesData.find((f) => f.code === "F01");
+const ficheF01 = path.join(ROOT, "hosting", "previews", "dmoptic", "montures", "femmes", f01.slug, "index.html");
+const ficheF01Html = fs.existsSync(ficheF01) ? fs.readFileSync(ficheF01, "utf8") : "";
+ok("fiche F01 : galerie réelle + référence à donner au cabinet",
+   ficheF01Html.includes("monture-f01.webp") && ficheF01Html.includes("Référence à donner au cabinet") && ficheF01Html.includes("v2-fiche") && ficheF01Html.includes("v2-cta-mobile"));
+const ficheDock = (ficheF01Html.match(/<div class="dock">[\s\S]*?<\/div>/) || [""])[0];
+ok("fiche F01 : le dock mobile demande la monture affichée (pas le rendez-vous générique)",
+   ficheDock.includes("F01 · Ovale dorée") && !ficheDock.includes("rendez-vous pour un examen"));
+const notFoundPath = path.join(ROOT, "hosting", "previews", "dmoptic", "404.html");
+const notFoundHtml = fs.existsSync(notFoundPath) ? fs.readFileSync(notFoundPath, "utf8") : "";
+const headersPath = path.join(ROOT, "hosting", "previews", "dmoptic", "_headers");
+const headersTxt = fs.existsSync(headersPath) ? fs.readFileSync(headersPath, "utf8") : "";
+ok("404 bilingue noindex + en-têtes hôte prudents (préparation Cloudflare)",
+   notFoundHtml.includes("Page introuvable") && notFoundHtml.includes('content="noindex,follow"') &&
+   headersTxt.includes("X-Content-Type-Options: nosniff") && headersTxt.includes("X-Frame-Options: DENY"));
 
 /* ═════════════ 3 · les deux utilitaires : copier, enregistrer ═════════════ */
 console.log("\n═══ 3 · copier le numéro, enregistrer le contact ═══");

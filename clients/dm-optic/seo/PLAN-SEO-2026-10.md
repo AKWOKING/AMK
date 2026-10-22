@@ -43,3 +43,25 @@ Point d'attention : le message du 10/10 dit au client que l'ancien lien « ne se
 - Le montage `/montures` code en dur l'adresse Vercel dans son `canonical` et son `og:url`. Il faut la lire depuis `--url`, comme la page d'accueil, avant tout changement d'hébergement.
 - Le texte pour le client sur les paiements (espèces, Mobile Money, paiement en plusieurs fois) : approuvé par le client sur WhatsApp, 15/10 17:54. À ajouter sur la page.
 - Message WhatsApp sur les heures de service (le cabinet n'est pas ouvert 24h/24).
+
+---
+
+## 4 · Lecture Google du 19/10/2026 — ce qui change (et ce qui ne change pas)
+
+Sources primaires lues : *Tips to improve your local ranking on Google* (Business Profile Help) et
+*LocalBusiness structured data* (Search Central). État vérifié au dépôt ce jour : canonique sur
+`dmoptiquesarl.com`, schéma **`Optician`** présent dans `hosting/previews/dmoptic/index.html`
+(avec `OpeningHoursSpecification` et FAQ). La mise en ligne réelle reste à confirmer par King
+(Activity-Log 16/10 ; lecture en ligne impossible depuis la sandbox).
+
+| Ce que Google dit (texte officiel) | Décision DM |
+|---|---|
+| Le classement local repose surtout sur **pertinence, distance et prominence** ; « il n'y a aucun moyen de demander ou payer un meilleur classement ». | Aucune promesse de position au client. On optimise ce qu'on contrôle : pertinence et prominence. Jugement à 30 jours minimum. |
+| Des informations **complètes et exactes** (adresse, horaires, catégorie, attributs) rendent l'apparition plus probable. | Fiche Google = même nom, même adresse (avec étage/porte), mêmes horaires que le site (lun–sam ; examen 8h30–13h00 ; autres besoins 8h30–17h30). Cohérence stricte site ↔ fiche ↔ Facebook ↔ TikTok. |
+| **Répondre aux avis** montre qu'on valorise les retours ; avis positifs et réponses utiles aident à se démarquer. | Demander un avis après le service (lien court/QR au comptoir), **sans incitation ni sélection** des seuls satisfaits ; répondre factuellement, sans claim. Aucun avis repris sur le site (règles maison). |
+| **Photos et vidéos** racontent l'activité et montrent l'offre. | Les 10 photos du setup GBP après la séance réelle ; la vidéo d'annonce validée par King peut rejoindre la fiche. Aucune illustration présentée comme le cabinet. |
+| Les données structurées `LocalBusiness` décrivent horaires, départements, etc. ; valider au Rich Results Test. | Après confirmation en ligne : tester l'URL réelle, corriger les erreurs critiques, soumettre le sitemap dans Search Console (compte du cabinet, King admin). Aucun balisage d'avis auto-servi. |
+
+Restent côté King/client : vérification Search Console + fiche Google (code sur le téléphone du
+cabinet), soumission du sitemap, confirmation que le domaine répond. Les points 2, 5 et 7 du
+tableau §1 se ferment à ce moment-là, pas avant.

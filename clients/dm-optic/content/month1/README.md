@@ -1,5 +1,10 @@
 # Contenu mois 1 — méthode, contraintes, mesure
 
+> 🔒 **Avant d'écrire quoi que ce soit pour DM Optique : rouvrir
+> `clients/dm-optic/brand/DIRECTION-MARQUE-v2-2026-10-22.md`.** Direction arrêtée par King le 22/10/2026 :
+> **A moteur** (on explique), **B preuve** (on montre le geste), **C limite** (jamais de diagnostic).
+> On ne vend pas des montures : on vend l'expertise qui précède la vente.
+
 > **Livrable du 02/10/2026 : 4 scripts UGC IA + 4 outlines de carrousels, pour relecture.**
 > Plan approuvé en amont : `clients/dm-optic/content-plan-month1.md`.
 > ⛔ **Aucune vidéo produite par nous** : l'UGC IA est **produit en externe** par King — nous
@@ -283,7 +288,7 @@ images de la vitrine du site sont des **illustrations générées**, légendées
 |---|---|---|
 | **C1 — La carte** | aucune (typographique) | ✅ **Oui** |
 | **C2 — L'examen** | 1–2 photos du cabinet | ❌ Non |
-| **C3 — Les montures** | **6–8 photos de montures** | ❌ **Non** |
+| **C3 — Les montures** | **6–8 photos de montures** | ✅ **Oui — 65 images au dépôt** (22/10) |
 | **C4 — Par usage** | 2–4 photos (portées ou posées) | ❌ Non |
 
 **Ce qui est livré ici : les outlines complets, prêts à produire.** Chaque emplacement de photo est
@@ -304,7 +309,8 @@ au mois 2**. ⚠️ C4 exige 2–4 photos : elle n'est **pas** un repli sans-pho
 
 | Fichier | Contenu |
 |---|---|
-| `w1/ugc-script.md` | **La confiance** — à qui confier ses yeux |
+| `w1/ugc-script.md` | **La confiance** — à qui confier ses yeux *(V1, conservée ; n'est plus le premier post)* |
+| `w1/tiktok-01.md` | **Le premier TikTok** — plan de tournage 22 s, monture réelle, sous le gabarit W43 (validé King 21/10) |
 | `w2/ugc-script.md` | **L'examen** — ce qui se passe, quoi apporter |
 | `w3/ugc-script.md` | **La monture** — pourquoi elle reste dans l'étui |
 | `w4/ugc-script.md` | **La protection** — écran, conduite, soleil |

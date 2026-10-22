@@ -189,3 +189,90 @@ Défaut constaté à la revue King de la version finale de POST-01 v4 : des seco
 - **Vérification avant livraison :** mesurer les silences entre phrases sur le fichier final ; aucun > 0,3 s hors transitions volontaires.
 
 *Cause de fond (POST-01 v4) :* les clips VO ont été écrits pour des fenêtres de légende fixées à l'avance (5 s pour 1,5 s de voix). Le temps a été calé sur l'image, pas sur la voix.
+
+---
+
+## Règle debout — le gabarit W43 est la porte de tout contenu client (ruling King, 21/10/2026)
+
+> **Ordre de King (21/10) : « implement » — la synthèse vit au dépôt et alimente chaque futur contenu
+> client ; le gabarit §12 est le rappel « avis d'abord » de tout ce qu'on écrit.**
+
+Source unique : `sales/research/2026-W43-techniques.md` **§12** (la synthèse : « le client ne veut pas
+des lunettes ») et **§12b** (le gabarit : 5 beats · 7 interdits · 6 cases). Applicable aux contenus
+**clients** — TikTok, Reels, Shorts, carrousels, légendes, messages WhatsApp issus d'un contenu.
+
+**Ce que la règle impose, dans l'ordre :**
+
+1. **Le premier mot est une situation du client**, jamais notre nom, notre certificat ou notre offre.
+2. **Un seul axe différenciant par pièce.** Deux axes = deux pièces.
+3. **Le réel seulement** : un objet du cabinet existe ou il n'est pas montré (pas d'image IA de
+   produit, pas de faux avis, pas de fausse rareté).
+4. **Une preuve vérifiable, citée une fois** — jamais en titre.
+5. **La sortie honnête** : on dit à qui ça ne concerne pas qu'il n'a pas besoin de venir.
+6. **Un seul CTA**, identique au site.
+
+**Pourquoi cette règle est écrite ici et pas seulement dans la recherche :** une porte qui reste dans
+un fichier de recherche ne s'applique pas. Le câblage est vérifié par `PRE-FLIGHT.md` §0d (ligne
+« gabarit W43 »), et chaque script client cite le numéro de la case manquante s'il en manque une.
+
+**Ce qui reste inchangé :** les portes de la maison (`content/scripts/README.md`, `CONTENT-LESSONS`
+§10/§12), les verrous client, les règles R1–R4 de DM OPTIQUE, l'identité figée. En cas de conflit, les
+lois maison et les verrous client gagnent — le gabarit ne les remplace jamais, il les précède.
+
+**Première application :** `clients/dm-optic/content/month1/w1/tiktok-01.md` (premier post TikTok,
+validé par King le 21/10).
+
+---
+
+## Règle debout — le ton client : chaleureux, et vérifiable (ruling King, 21/10/2026)
+
+> King, 21/10 : « *a client reading this feels immediately reassured … I'll like to see the same type of
+> energy and tone when you write text meant for clients* », à propos de la description Google Business
+> du cabinet DM OPTIQUE.
+
+**Le ton à atteindre** — c'est celui de cette description :
+
+1. **On ouvre par une invitation**, pas par un produit : « Découvrez la différence chez… ».
+2. **On parle au « vous »**, et on nomme la personne réelle : la famille, l'enfant, la personne qui
+   travaille dehors.
+3. **On situe** : le lieu (« au cœur de Bonabéri ») fait partie de la réassurance — le client se
+   projette dans une adresse, pas dans un catalogue.
+4. **On raconte un geste**, pas une gamme : ce qui se passe quand on pousse la porte, ce qu'on vous
+   demande, ce qu'on ajuste.
+5. **La preuve vient en dernier** (ONOC, ordonnance, réglage) : elle **ferme** la réassurance, elle ne
+   l'ouvre pas. Un titre de crédibilité en première ligne fait commercial ; en dernière ligne, il rassure.
+6. **Phrases courtes, une idée par phrase.** Le rythme fait la confiance autant que les mots.
+
+**La seule limite, et elle n'est pas négociable : la chaleur se prouve, elle ne se déclare pas.**
+Un superlatif non vérifiable (« d'exception », « les plus hauts standards », « les meilleures mains »)
+transforme la réassurance en promesse — et une promesse se retourne contre le cabinet. On garde
+l'émotion, on remplace l'absolu par du concret :
+
+| Au lieu de | On écrit |
+|---|---|
+| des soins visuels **d'exception** | « un examen de la vue complet, des explications claires » |
+| notre **vaste** collection | « quarante montures pour hommes, femmes et enfants » |
+| les **plus hauts** standards | « les exigences de l'Ordre : examens au cabinet, verres taillés sur ordonnance » |
+| confier votre vision aux **meilleures** mains | « réglage de la monture avant de repartir » |
+
+**Où la règle s'applique :** tout texte lu par un client ou un patient — site, page Facebook, TikTok,
+fiche Google, message WhatsApp, avis, et les documents qu'on lui remet. Les notes internes et ce dépôt
+gardent leur ton technique.
+
+### Le corollaire du 21/10 — on ne chiffre pas le stock
+
+> King : « *avoid mentionning the number of frames available everywhere since this can change at any
+> moment* ».
+
+Un nombre de montures est **vrai un jour et faux le lendemain** : une vente, un réassort, et la phrase
+devient un mensonge involontaire. Donc **aucun chiffre de stock** dans un texte client — site, page
+Facebook, TikTok, fiche Google, légendes, affiches, dossier de remise. On écrit « nos montures »,
+« une sélection », « toutes nos montures ». Le catalogue, lui, reste visible : c'est la **liste** qui
+prouve, pas le compte.
+
+Exception technique, et une seule : le compteur de résultats du filtre (`/montures/`), qui compte les
+fiches **affichées** par le filtre en cours (« 12 affichées »), pas un stock annoncé. Il est calculé à
+l'affichage, jamais écrit en dur.
+
+**Contrôle avant publication (10 secondes) :** *est-ce que je peux montrer la phrase ?* Si oui, elle
+reste. Si non, elle devient un fait précis ou elle disparaît.

@@ -1,0 +1,193 @@
+{
+  "title": "Spot 03 · « Trois choses qu'on ne fera pas »",
+  "note": "Même registre, autre angle : la sortie honnête (pilier 4). Le seul spot du marché qui promet ce qu'il refuse de faire — c'est notre axe de marque, et personne ne peut le copier sans le tenir.",
+  "voice": "clients/dm-optic/content/month1/w1/assets/spot-03-voix.mp3",
+  "scenes": [
+    {
+      "type": "type",
+      "dur": 1.9,
+      "lines": [
+        "Trois choses",
+        "qu'on ne fera pas."
+      ],
+      "size": 100,
+      "top": 760,
+      "rule_y": 1080,
+      "note": "Ici, chez nous. À Bonabéri."
+    },
+    {
+      "type": "frame",
+      "dur": 1.8,
+      "src": "hosting/previews/dmoptic/montures/monture-e15.webp",
+      "label_top": "1. On ne vous vendra pas",
+      "label_y": 500,
+      "label_size": 52,
+      "width": 900,
+      "cy": 1060,
+      "angle": -1.8,
+      "spin": 2.4,
+      "label": "UNE MONTURE QUI NE VOUS VA PAS"
+    },
+    {
+      "type": "row",
+      "dur": 1.8,
+      "srcs": [
+        "hosting/previews/dmoptic/montures/monture-f01.webp",
+        "hosting/previews/dmoptic/montures/monture-h08.webp",
+        "hosting/previews/dmoptic/montures/monture-f24.webp"
+      ],
+      "names": [
+        "F01",
+        "H08",
+        "F24"
+      ],
+      "label_top": "On vous montre celles qui vont.",
+      "label_y": 520,
+      "label_size": 52,
+      "cy": 980
+    },
+    {
+      "type": "frame",
+      "dur": 1.9,
+      "src": "hosting/previews/dmoptic/montures/monture-f24.webp",
+      "label_top": "Essayée. Ajustée. Mesurée.",
+      "label_y": 500,
+      "label_size": 54,
+      "width": 930,
+      "cy": 1060,
+      "angle": -1.6,
+      "spin": 2.3,
+      "label": "F24 · ÉCAILLE ET PAILLETTES"
+    },
+    {
+      "type": "type",
+      "dur": 1.8,
+      "lines": [
+        "2. On ne dira pas",
+        "« c'est normal »."
+      ],
+      "size": 96,
+      "top": 780,
+      "rule_y": 1080,
+      "note": "Si ce n'est pas mesuré, ce n'est pas dit."
+    },
+    {
+      "type": "inset",
+      "dur": 1.8,
+      "photo": "hosting/previews/dmoptic/cabinet-examen.webp",
+      "label_top": "On mesure, d'abord.",
+      "label_y": 430,
+      "label_size": 56,
+      "cy": 700,
+      "label": "EXAMEN DE VUE · 8H30–13H00"
+    },
+    {
+      "type": "row",
+      "dur": 1.9,
+      "srcs": [
+        "hosting/previews/dmoptic/montures/monture-e07.webp",
+        "hosting/previews/dmoptic/montures/monture-e13.webp",
+        "hosting/previews/dmoptic/montures/monture-e15.webp"
+      ],
+      "names": [
+        "E07",
+        "E13",
+        "E15"
+      ],
+      "label_top": "Les enfants aussi.",
+      "label_y": 520,
+      "label_size": 54,
+      "cy": 980
+    },
+    {
+      "type": "type",
+      "dur": 1.8,
+      "lines": [
+        "3. On ne vous laissera pas",
+        "choisir sans essayer."
+      ],
+      "size": 92,
+      "top": 780,
+      "rule_y": 1080,
+      "note": "Une monture se porte. Elle ne se regarde pas."
+    },
+    {
+      "type": "frame",
+      "dur": 1.8,
+      "src": "hosting/previews/dmoptic/montures/monture-f61.webp",
+      "label_top": "Sur vous.",
+      "label_y": 500,
+      "label_size": 54,
+      "width": 920,
+      "cy": 1060,
+      "angle": 1.6,
+      "spin": -2.2,
+      "label": "F61 · ÉCAILLE"
+    },
+    {
+      "type": "type",
+      "dur": 1.9,
+      "lines": [
+        "Et le jour où vous",
+        "n'avez besoin de rien,",
+        "on vous le dit."
+      ],
+      "size": 84,
+      "top": 740,
+      "rule_y": 1090,
+      "note": "Ça arrive plus souvent qu'on croit."
+    },
+    {
+      "type": "type",
+      "dur": 1.9,
+      "lines": [
+        "Rien d'autre."
+      ],
+      "size": 104,
+      "top": 800,
+      "rule_y": 1020,
+      "note": "Pas de promesse de miracle."
+    },
+    {
+      "type": "frame",
+      "dur": 1.8,
+      "src": "hosting/previews/dmoptic/montures/monture-h01.webp",
+      "label_top": "Ajustée ici, pas ailleurs.",
+      "label_y": 500,
+      "label_size": 50,
+      "width": 930,
+      "cy": 1060,
+      "angle": -1.5,
+      "spin": 2.2,
+      "label": "H01 · ACÉTATE"
+    },
+    {
+      "type": "inset",
+      "dur": 1.8,
+      "photo": "hosting/previews/dmoptic/cabinet-enseigne.webp",
+      "label_top": "La porte est là.",
+      "label_y": 430,
+      "label_size": 54,
+      "cy": 700,
+      "label": "NDOBO MAYOR · BONABÉRI"
+    },
+    {
+      "type": "dark",
+      "dur": 1.9,
+      "lines": [
+        "Une seule promesse."
+      ],
+      "size": 100,
+      "top": 840,
+      "note": "On montre avant de vendre."
+    },
+    {
+      "type": "end",
+      "dur": 2.6,
+      "logo": "hosting/previews/dmoptic/dm-logo.webp",
+      "title": "DM OPTIQUE SARL",
+      "hours": "Examen de vue · 8h30–13h00",
+      "cta": "WhatsApp 656 122 239"
+    }
+  ]
+}

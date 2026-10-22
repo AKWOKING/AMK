@@ -1,0 +1,103 @@
+{
+  "title": "UGC-03 · « On montre avant de vendre » — sans visage",
+  "topband": "DM OPTIQUE · BONABÉRI",
+  "crf": 20,
+  "voice": "clients/dm-optic/content/month1/w1/assets/ugc-03-voix.mp3",
+  "scenes": [
+    {
+      "type": "photo",
+      "src": "hosting/previews/dmoptic/cabinet-examen.webp",
+      "dur": 3.4,
+      "focus": 0.5,
+      "zoom": 0.16,
+      "drift": 0.45,
+      "sub": "Choisir des lunettes,\nça commence par mesurer."
+    },
+    {
+      "type": "card",
+      "dur": 3.4,
+      "headline": "Sur le site, avant de venir",
+      "big": "Chaque monture",
+      "big_size": 104,
+      "foot": "photographiée ici · une par une",
+      "src": "hosting/previews/dmoptic/cabinet-hero-1080.webp",
+      "zoom": 0.55,
+      "drift": 0.5,
+      "dim": 0.4,
+      "scrim_top": 0.3,
+      "scrim_band": 0.88,
+      "grain": 2
+    },
+    {
+      "type": "photo",
+      "src": "hosting/previews/dmoptic/montures/monture-f24.webp",
+      "dur": 4.0,
+      "layout": "product",
+      "zoom": 0.14,
+      "drift": 0.4,
+      "sub": "Celle-ci.\nEn photo. Au cabinet."
+    },
+    {
+      "type": "photo",
+      "src": "hosting/previews/dmoptic/montures/monture-h08.webp",
+      "dur": 3.6,
+      "layout": "product",
+      "zoom": 0.14,
+      "drift": -0.4,
+      "sub": "Ce que vous voyez\nest au cabinet."
+    },
+    {
+      "type": "photo",
+      "src": "hosting/previews/dmoptic/cabinet-interieur.webp",
+      "dur": 3.6,
+      "focus": 0.3,
+      "zoom": 0.16,
+      "pan": -0.55,
+      "drift": 0.4,
+      "sub": "Examen 8h30–13h00\nOpticien inscrit ONOC."
+    },
+    {
+      "type": "endcard",
+      "dur": 4.3,
+      "logo": "hosting/previews/dmoptic/dm-logo.webp",
+      "headline": "EXAMEN DE VUE",
+      "big": "8h30–13h00",
+      "foot": "du lundi au samedi",
+      "cta": "WhatsApp 656 122 239",
+      "address": "Ndobo Mayor · Immeuble West Hotel, 1er étage",
+      "sub": "On montre avant de vendre.",
+      "src": "hosting/previews/dmoptic/cabinet-enseigne.webp",
+      "zoom": 0.55,
+      "drift": -0.5,
+      "dim": 0.34,
+      "tint_mix": 0.45,
+      "scrim_top": 0.3,
+      "scrim_band": 0.88,
+      "grain": 2
+    }
+  ],
+  "cover": {
+    "top": "DM OPTIQUE · BONABÉRI",
+    "y": 0.7,
+    "lines": [
+      [
+        "Une par une.",
+        104,
+        120
+      ],
+      [
+        "En photo.",
+        104,
+        120
+      ],
+      [
+        "Avant de venir.",
+        92,
+        110
+      ]
+    ],
+    "foot": "Examen 8h30–13h00 · WhatsApp 656 122 239",
+    "src": "hosting/previews/dmoptic/cabinet-interieur.webp",
+    "focus": 0.32
+  }
+}

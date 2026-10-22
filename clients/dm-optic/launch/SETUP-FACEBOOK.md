@@ -1,29 +1,251 @@
-# SETUP FACEBOOK — DM OPTIQUE SARL · templated, exécutable jour J
+# SETUP FACEBOOK — DM OPTIQUE SARL · exécutable écran par écran
 
-> Compte **au nom du cabinet, créé avec le téléphone de M. Domche** (ruling : le client est propriétaire
-> de ses comptes ; AMK admin pour travailler). Rien de public avant l'acompte encaissé. Écrit le 03/10.
+> **Écrit le 03/10, réécrit le 21/10/2026** après la création du compte TikTok. Compte **au nom du
+> cabinet**, AMK aux commandes, **rien de publié sans validation de King**.
+> Les visuels sont prêts : `launch/facebook-assets/` (voir §5). Le texte est prêt : §6.
 
-## Identité (pré-remplie, à coller)
-- **Nom :** `DM OPTIQUE – Opticien à Bonabéri, Douala`
-- **Catégorie :** Opticien (ajouter : Soins de santé → non, rester commerce : « Magasin de lunettes »)
-- **Bio :** `Opticien inscrit à l'ONOC. Examen de vue, montures homme/femme, solaires,
-  enfants. Ndobo Mayor, Bonabéri (Douala IV) · lundi à samedi, 8h30–17h30. Écrivez-nous sur WhatsApp.`
-- **Bouton d'action :** « Envoyer un message WhatsApp » → wa.me/237656122239 (message pré-rempli FR).
-- **Adresse/horaires/téléphone :** Ndobo Mayor, Douala IV · lundi à samedi · 8h30–17h30 · 656 122 239 — tels que publiés
-  par le cabinet, jamais « à confirmer ».
+---
 
-## Images (prêtes ou produisibles sans photos réelles)
-- **Profil :** marque typographique teal sur crème — « DM OPTIQUE » en Montserrat ExtraBold (rendu PIL
-  depuis la palette de `brand/CARTE-SIGNATURE-TABLEAU-VISION.html`).
-- **Couverture :** le tableau de vision de la carte signature (A6 agrandi en bannière) — c'est LA
-  signature visuelle, produisible aujourd'hui.
+## 0 · L'état réel avant de commencer (vérifié le 21/10)
 
-## Premier post (jour J, après le déclencheur)
-Texte : `DM OPTIQUE est maintenant en ligne. Opticien inscrit à l'ONOC, à Bonabéri.
-On vous répond sur WhatsApp : 656 122 239.` + la carte signature en visuel. Zéro claim médical, zéro
-remise, zéro « bientôt ». Épingler.
+| Question | Réponse | Preuve |
+|---|---|---|
+| Une page Facebook existe-t-elle ? | **OUI — créée le 21/10 par King** : `DM OPTIQUE SARL`, catégorie Opticien, bio posée, logo en photo de profil, 0 follower, « Not yet rated (0 reviews) » | captures du 21/10 (page + Business Suite, `asset_id` **1417215104801727**) |
+| Existait-elle avant ? | **Non** | recherche du 21/10 : « DM Optique Bonabéri » ne renvoie que des homonymes à l'étranger (DM Optics Ltd, DM Optiek Hamme, DM Optique France — fibre optique), et l'annuaire ONOC ne donne qu'une ligne de registre. Le contrôle approfondi du 24/09 disait la même chose |
+| Un compte TikTok existe-t-il ? | **Oui** — `@dmoptique.bonaberi237` | créé par King le 21/10 |
+| Une fiche Google existe-t-elle ? | **Oui** — « DM OPTIQUE SARL — Optician in Bonabéri » | créée le 20/10 |
 
-## Warm-up (semaine 1)
-Compléter À propos à 100 % · liker 10 pages locales de Bonabéri/Douala IV · publier le carrousel C1 le
-vendredi 16/10 (rythme `retainer-rhythm.md`). Pas de DM sortant : le cabinet n'est pas un prospect, c'est
-une vitrine — le trafic vient du site, de la pub S2 et du bouche-à-oreille.
+**Conséquence :** la page existe, et c'est la bonne — nom, catégorie et bio conformes à ce qui était
+prévu, aucun doublon. **Ce qui reste n'est pas de la création, c'est de la finition** (§7) : nom
+d'utilisateur, couverture, bouton WhatsApp, horaires, story, et le premier post — **après feu vert**.
+
+### 0 bis · Ce qui est disponible au Cameroun (recherche du 21/10, sources citées)
+
+Avant de créer quoi que ce soit, la carte du terrain — détaillée dans **`launch/META-CAMEROUN-2026-10.md`** :
+
+| | Au Cameroun |
+|---|---|
+| Créer la page, publier, Reels, messages, bouton WhatsApp | **oui** |
+| Publicités Meta (Facebook + Instagram), ciblage Bonabéri/Douala IV, Click-to-WhatsApp | **oui** — TVA camerounaise depuis le 01/10/2020 |
+| Facturation en francs CFA | **non** — compte en **USD ou EUR**, carte Visa/Mastercard ou PayPal |
+| Boutique / catalogue / encaissement dans Facebook (Shops, Meta Pay) | **non** |
+| Monétisation Facebook (Content Monetization, Stars, abonnements) | **non** |
+| Badge Meta Verified | **non documenté** — ne rien promettre, ne rien payer |
+
+**Trois conséquences pour la création de la page — aucune n'est bloquante :**
+la page se crée normalement ; on ne promet jamais de badge ; et **la publicité du mois 1 suppose une
+carte internationale** — **King confirme en avoir une (21/10)**, le prérequis est levé. Reste le contrôle
+du premier débit en devise.
+
+---
+
+## 1 · ⚠️ La contrainte Meta, dite d'avance (elle décide de la façon de créer)
+
+**Une page Facebook ne peut pas être créée avec un email seul.** Meta exige un **profil personnel**
+réel derrière chaque page — c'est une règle d'authenticité, pas un réglage. Deux façons de la violer,
+deux façons de perdre la page :
+
+- créer un **profil au nom du cabinet** (« DM Optique SARL » comme personne) → profil inauthentique,
+  suspension possible, et **la page tombe avec le profil** ;
+- **partager le mot de passe** d'un profil existant → c'est exactement ce que la règle « comptes au nom
+  du client » interdit.
+
+**La voie propre :**
+
+1. la page est créée depuis **ton profil personnel réel** (ton nom, ton visage) ;
+2. elle est immédiatement placée dans un **portefeuille d'entreprise Meta** nommé `DM OPTIQUE SARL` —
+   c'est le portefeuille qui détient la page, pas ta personne ;
+3. tu es administrateur, **AMK en accès personne** (jamais de mot de passe partagé), **2FA** partout ;
+4. **M. Domche devient administrateur** dès qu'il a un profil Facebook (ou à la livraison, avec un
+   transfert écrit). D'ici là, l'item 4 de `pre-launch-checklist.md` reste **🟠 partiel** : le compte
+   est au nom du cabinet dans ses contenus, mais la propriété récupérable n'est pas encore prouvée.
+
+> **Ce que le public voit :** rien de ton profil. Les visiteurs voient la page ; la transparence de la
+> page indique seulement le **nombre** de gestionnaires et leur pays, jamais leur nom.
+> **Ce que tu ne fais pas :** inviter tes amis « pour lancer la page », commenter avec ton profil au
+> lieu de la page, te taguer. C'est comme ça qu'un gestionnaire se retrouve exposé.
+
+---
+
+## 2 · Valeurs à coller (identiques partout — site, fiche Google, TikTok, page)
+
+| Champ | Valeur exacte |
+|---|---|
+| **Nom de la page** | `DM OPTIQUE SARL` |
+| **Nom d'utilisateur (@)** | `@dmoptiquesarl` (si pris : `@dmoptique.bonaberi`) |
+| **Catégorie principale** | **Opticien** (repli : *Magasin de lunettes* ; jamais « Salon de beauté ») |
+| **Catégories secondaires** | **Optométriste** si Meta la propose (c'est le second métier — voir `RULE-CREDENTIAL-CLAIMS.md`) · puis *Service de santé* — **pas** « Clinique » |
+| **Adresse** | Immeuble West Hotel, 1er étage, dernière porte à droite — Ndobo Mayor, Bonabéri, Douala IV |
+| **Téléphone** | `+237 656 122 239` |
+| **Email** | `dmoptiquesarl@gmail.com` |
+| **Site web** | `https://dmoptiquesarl.com` |
+| **Horaires** | lundi à samedi · **examen de vue 8h30–13h00** · autres besoins 8h30–17h30 · dimanche fermé |
+| **Bouton d'action** | **Envoyer un message WhatsApp** → `656 122 239` |
+| **Zone desservie** | Bonabéri · Douala IV (facultatif, mais utile en recherche locale) |
+
+### La bio (champ « Présentation / Intro », **237 caractères sur 255**)
+
+```
+Opticien optométriste à Bonabéri, Douala IV. Examen de vue, montures et solaires. Inscrit à l'ONOC. Immeuble West Hotel, 1er étage, dernière porte à droite. Lun–sam · examen 8h30–13h00 · autres besoins 8h30–17h30. WhatsApp : 656 122 239.
+```
+
+> **Mise à jour 21/10 — ✅ POSÉE.** King a mis la page à jour le 21/10 avec cette bio (titre complet).
+> Le texte ci-dessus reste la référence : si la page est reprise un jour, c'est **cette** chaîne qui revient.
+
+**Pourquoi celle-là et pas « DM OPTIQUE est un cabinet fondé en… » :** elle commence par ce que les
+gens tapent (*opticien à Bonabéri*), donne les trois informations qui décident une visite (où, quand,
+comment écrire), et place la preuve ONOC **une fois**, sans en faire un titre. C'est la porte §12b de
+`sales/research/2026-W43-techniques.md` appliquée à un champ de profil.
+
+---
+
+## 3 · Créer la page — écran par écran (10 minutes)
+
+| # | Où | Quoi faire |
+|---|---|---|
+| 1 | `facebook.com` (navigateur, pas l'app — les menus changent moins) | connecte-toi avec **ton profil réel** |
+| 2 | Menu **☰** → **Pages** → **Créer** (ou `facebook.com/pages/create`) | — |
+| 3 | **Nom de la page** | coller `DM OPTIQUE SARL` — exactement, sans « – Bonabéri » : le lieu est dans la bio et la catégorie |
+| 4 | **Catégorie** | taper « Opticien » → choisir **Opticien** ; si absent, **Magasin de lunettes** |
+| 5 | **Description / Bio** | coller la bio du §2 (241 caractères) |
+| 6 | **Créer la page** | la page existe — **rien n'est publié**, elle est vide |
+| 7 | **Paramètres → Autorisations de la page** | vérifier que tu es le seul gestionnaire pour l'instant |
+| 8 | **Paramètres → Comptes → Adresse e-mail** | ajouter `dmoptiquesarl@gmail.com` (adresse de contact publique) |
+| 9 | **Paramètres → Comptes → Site web** | `https://dmoptiquesarl.com` |
+
+### Puis le portefeuille d'entreprise (la partie qui protège la page)
+
+| # | Où | Quoi |
+|---|---|---|
+| 10 | `business.facebook.com` | **Créer un portefeuille d'entreprise** → nom : `DM OPTIQUE SARL` (sans point, sans tiret) |
+| 11 | Business Settings → **Comptes → Pages → Ajouter** | ajouter la page que tu viens de créer |
+| 12 | Business Settings → **Personnes** | t'ajouter en **contrôle total** ; ajouter **AMK** en accès personne quand King le décide |
+| 13 | Business Settings → **Sécurité** | activer la **2FA obligatoire** pour tous les utilisateurs |
+
+### Puis les visuels, le bouton, le premier post
+
+| # | Quoi | Détail |
+|---|---|---|
+| 14 | **Photo de profil** | `profile-1024.png` — le logo du cabinet, disque complet, lisible à 36 px |
+| 15 | **Photo de couverture** | `cover-1640x624.jpg` — voir §5 pour les zones de sécurité |
+| 16 | **Bouton d'action** | *Envoyer un message WhatsApp* → `+237 656 122 239` |
+| 17 | **À propos → tout compléter** | horaires, adresse, téléphone, email, site, zone desservie — un champ vide est un client perdu |
+| 18 | **Premier post** | §6 — **ne pas publier avant le feu vert de King** ; ensuite **épingler** |
+| 19 | **Story de lancement** (facultatif) | le logo + « Nous sommes à Bonabéri » — même visuel que le post |
+
+---
+
+## 4 · Ce qu'on ne fait pas (et pourquoi)
+
+| ⛔ | Raison |
+|---|---|
+| Créer un profil « DM Optique SARL » | profil inauthentique → suspension → **la page tombe avec** |
+| Acheter des abonnés / des likes | Meta purge, et un compte de santé qui gonfle en une nuit se voit |
+| Inviter tes amis en masse « pour amorcer » | gonfle un chiffre que personne ne mesure, et expose ton profil |
+| Mettre un prix, une remise, « -20 % » | verrou client : **aucun prix n'est publié** ; le prix se répond en conversation |
+| Promettre un résultat médical | R1 — on décrit la situation, on oriente vers l'examen |
+| Marquer « Ouvert 24h/24 » | faux, et ça tue la confiance au premier appel manqué |
+| Publier la vidéo brag d'AMK telle quelle | c'est un outil commercial d'AMK, pas la vitrine du cabinet (décision debout) |
+| **Coller un texte écrit pour une autre photo** | « cette monture » devant un mur de montures : le lecteur ne sait pas de laquelle on parle — **le texte suit le visuel** (§6) |
+
+---
+
+## 5 · Les visuels sont prêts — `clients/dm-optic/launch/facebook-assets/`
+
+| Fichier | Dimensions | Où | Contrôle fait |
+|---|---|---|---|
+| `profile-1024.png` | 1024 × 1024 | photo de profil | logo détouré sur blanc, **relu en cercle à 200 px et à 64 px** — « DM OPTIQUE » reste lisible |
+| `cover-1640x624.jpg` | 1640 × 624 (2,63:1) | couverture | **relu aux deux recadrages Facebook** : desktop 820×312 (fichier entier) et mobile 2,4:1 (côtés coupés) — texte et numéro **dans la zone sûre** |
+| `post-01-cabinet-1200.jpg` | 1200 × 1200 | premier post | la **vraie photo du cabinet** (mur de montures), bandeau marine de l'identité, adresse + horaires + bouton |
+
+**Comment la couverture est construite** (et pourquoi elle survivra aux recadrages) : fond marine
+`#0A1220`, à gauche le texte — *Opticien / à Bonabéri* — et les informations qui font venir ; à droite,
+**la photo réelle de la salle** (mur de montures), fondue dans le marine. Le texte le plus bas s'arrête
+à **496 px sur 624** : la bande mobile (2,4:1) coupe en haut et en bas, il reste entier. Aucun visuel
+généré, aucune image IA : la règle « le site ne montre que du vrai » vaut aussi pour Facebook.
+
+**Ce que ces visuels ne contiennent pas :** aucun prix, aucune marque de monture, aucun logo tiers,
+aucun visage inventé, aucun superlatif.
+
+---
+
+## 6 · Premier post (à publier **après** ton feu vert, puis à épingler)
+
+**Texte — copier tel quel (une seule idée par paragraphe, la première ligne est une situation du client) :**
+
+```
+En fin de journée, vous éloignez votre téléphone pour lire ?
+
+Ça fatigue. On repousse.
+
+Au cabinet, on regarde où vous en êtes et on vous explique ce qu'on voit — sans jargon et sans vous presser. C'est ce que vous venez chercher : savoir, pas acheter.
+
+Ce mur, c'est notre stock — pas une image de catalogue. Les montures que vous voyez sur le site sont ici, dans ce cabinet : vous savez ce qui vous attend avant de vous déplacer. Sur place, vous les essayez sur votre visage : une photo ne dit pas tout.
+
+Si vous voyez bien, ne venez pas. Sinon, passez nous voir.
+
+📍 Ndobo Mayor — Immeuble West Hotel, 1er étage, dernière porte à droite, Bonabéri
+🕗 Examen de vue : lundi à samedi, 8h30–13h00
+💬 WhatsApp : 656 122 239
+🌐 dmoptiquesarl.com
+```
+
+**Visuel :** `post-01-cabinet-1200.jpg` (ou la photo brute du cabinet — le texte ci-dessus marche pour les deux).
+
+**⚠️ Le texte suit le visuel — correction du 21/10 (signalée par King).** La phrase « *Cette monture est
+dans notre stock, et les autres sont sur le site…* » vient du script du premier TikTok, où le plan montre
+**une** monture (F24). Devant la photo du cabinet — **plusieurs** montures — elle devient fausse : on ne
+sait pas de laquelle on parle, et « les autres sont sur le site » suggère que celle-ci n'y est pas.
+Deux versions, **jamais mélangées** :
+
+| Visuel | Phrase juste |
+|---|---|
+| **le cabinet / le mur de montures** (post 1) | la version au pluriel ci-dessus : *« Ce mur, c'est notre stock… »* |
+| **une monture précise** (F24 ou autre, plus tard) | *« Cette monture est dans notre stock, et les autres sont sur le site… »* — et **la nommer** dans le texte |
+
+**Commentaire épinglé (à publier juste après) :**
+
+> WhatsApp : 656 122 239 · examen de vue 8h30–13h00, du lundi au samedi · Ndobo Mayor, Bonabéri.
+> Écrivez-nous avant de venir, on vous dit quand passer.
+
+**Post n° 2 — les affiches enfants :** `content/month1/w1/facebook-post-posters.md` (légende prête,
+deux points à trancher : les montures en médaillon ne sont pas dans les 40, et les visages sont générés).
+**Ne pas publier avant la décision de King.**
+
+**Pourquoi ce texte et pas « DM OPTIQUE est maintenant en ligne »** : l'annonce parle de nous ; ce
+texte parle de la personne qui plisse les yeux devant son téléphone. C'est la même matière que le
+premier TikTok (`content/month1/w1/tiktok-01.md`) — **une production, deux vitrines**, et le même
+message pré-rempli pour mesurer.
+
+---
+
+## 7 · Après la création (le jour même)
+
+| # | Quoi | Pourquoi |
+|---|---|---|
+| 1 | **Capture de la page** envoyée à AMK | ✅ **fait le 21/10** — nom, catégorie, bio et logo conformes ; restent à contrôler `@username`, couverture, bouton WhatsApp, horaires |
+| 2 | **Rien d'autre publié** avant validation de King | verrou debout |
+| 3 | **Lien de la page** consigné dans `build-notes.md` + `pre-launch-checklist.md` | il servira au site (pied de page) et à la fiche Google (profil social) |
+| 4 | **Réponse aux messages** : qui répond, en combien de temps | question 8.5 du questionnaire — sans ça, le bouton WhatsApp est une porte qui ne s'ouvre pas |
+| 5 | **Pas de publicité** | Meta/Click-to-WhatsApp reste une décision de King, budget 5 000 FCFA du mois 1 non entamé |
+
+**État de la page au 21/10 — ce qui reste à finir (10 minutes, dans cet ordre) :**
+
+- [x] ~~`@username`~~ — **la page n'en propose pas** (constaté par King le 21/10 : le champ n'existe pas,
+      il n'y a que le nom). Conséquence assumée : l'adresse de la page reste **numérique**
+      (`facebook.com/profile.php?id=1417215104801727`). On ne l'affiche donc nulle part — ni pied de page
+      du site, ni fiche Google — **avant** que le champ apparaisse ou qu'un nom d'utilisateur soit
+      attribué. Un lien numérique dans un pied de page fait plus de mal que pas de lien du tout.
+- [ ] **Couverture** : ✅ posée le 21/10 (bannière de marque). **La version hybride est prête** —
+      `facebook-assets/cover-1640x624-hybride.jpg` : photo réelle du mur de montures + **« Voir mieux,
+      grandir plus loin »** (la phrase du cabinet), texte dans la zone sûre (bord droit 707 px contre
+      738 px pour la photo, marge mobile 41 px, contrôlée en 820×312 **et** en 2,4:1). À téléverser si King la préfère.
+- [ ] **Bouton** « Envoyer un message WhatsApp » → `wa.me/237656122239` + message pré-rempli (§2)
+- [x] **Horaires** — ✅ posés le 21/10 (confirmé par King : « le horaires is there »)
+- [ ] **Portefeuille** : confirmer le nom (`DM OPTIQUE SARL`), que **King en est propriétaire**, que le
+      **2FA** est actif et qu'AMK est en **accès personne** (jamais un mot de passe partagé)
+- [ ] **Premier post** : après ton feu vert, avec le texte du §6 et un commentaire épinglé
+
+**Mesure (même règle que TikTok) :** on ne promet ni vues ni abonnés ; on compte les **conversations
+WhatsApp** et les **itinéraires/clics** sur la fiche Google. Une page qui parle à trois personnes du
+quartier vaut mieux qu'une page qui a 500 abonnés muets.

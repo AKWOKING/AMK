@@ -44,6 +44,7 @@ Quand une règle change ou qu'un ruling est donné, cette table dit quels fichie
 
 | Règle | Fichiers qu'elle gouverne |
 |---|---|
+| **Marketing & création de contenu (ruling King 22/10)** | `knowledge/MARKETING-OPTICAL-2026-10-22.md` · `knowledge/CONTENT-CREATION-2026-10-22.md` · `PRE-FLIGHT.md` §1g · `clients/<client>/brand/BRAND-STRATEGY-*.md` · scripts `content/month1/**` · `tools/record/` · portique `tools/qa/audit_video_motion.py` |
 | **Credential rule** (ne jamais revendiquer ce qu'on ne peut pas prouver) | `content/strategy/RULE-CREDENTIAL-CLAIMS.md` · pages client (`clients/*/`, `site/`) · textes de publication (`content/carousels/`, `content/scripts/`) |
 | **Caption-split / découpage de légende (ruling King 12/10 : frontières de phrase, jamais de fragment)** | `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` · section « Règle debout — VO vidéo courte », **AMENDEMENT 2 (découpe des légendes)** (fichier d'origine ; le commit `9294cf2` le contient) · appliquée dans `content/scripts/` et `content/strategy/VIDEO-PIPELINE-FLOW-2026-10.md` |
 | **Wave gate / relances (24 h, 48 h, 7 j, changement de canal)** | `sales/CLIENT-MESSAGING-RULES.md` · `leads/CRM.csv` · `leads/build/crm.py` · `leads/PIPELINE.md` · `sales/Activity-Log.md` |
@@ -55,6 +56,16 @@ Quand une règle change ou qu'un ruling est donné, cette table dit quels fichie
 | **Accès Flow / chiffres [NV] : vérifiés par King, pas par l'orchestrateur** | `content/strategy/VIDEO-PIPELINE-FLOW-2026-10.md` §9 et points ouverts |
 | **Publication : rien n'est publié sans validation de King** | `content/strategy/POSTING-CALENDAR.md` · `content/strategy/CALENDRIER-4-SEMAINES-2026-10-12.md` |
 | **POST-02 en attente (pas de script avant décision de King)** | `content/pipeline/CONTENT-PIPELINE.md` · `content/strategy/POSTING-CALENDAR.md` · `sales/Activity-Log.md` |
+| **Recherche externe = Agent Reach d'abord (ruling King 19/10, §1f①)** | `PRE-FLIGHT.md` §1f + lignes de routage recherche (§1, §1c, §2 étape 3) · `tools/agent-reach/README.md` · skill installé `~/.agents/skills/agent-reach/SKILL.md` (hors dépôt) · sorties de recherche (`research/`, `sales/research/`) |
+| **Brag de livraison à chaque site prêt (ruling King 19/10, §1f②)** | `PRE-FLIGHT.md` §1f + §1b · `tools/brag/README.md` · `tools/qa/audit_video_motion.py` (portique) · `clients/<client>/build-notes.md` (chemin du brouillon) · `hosting/previews/README.md` (deploy gate) |
+| **Déploiement Vercel DM Optique après chaque changement du site (ruling King 20/10, §1f③)** | `PRE-FLIGHT.md` §1f · `clients/dm-optic/build-notes.md` (id + état du déploiement) · `hosting/previews/dmoptic/` (racine du projet Vercel) · `sales/Activity-Log.md` |
+| **Design/build/revue = taste-skill appliqué (ruling King 20/10, §1f④)** | `PRE-FLIGHT.md` §1f + §1b · `tools/taste-skill/README.md` · skill installé `~/.agents/skills/design-taste-frontend/SKILL.md` (hors dépôt) · `AMK-DESIGN-SKILLS.md` (lois maison, gagnent en cas de conflit) · `clients/<client>/build-notes.md` + `inspiration.md` (direction tirée, redraws, scores) |
+| **Mouvement d'interface = design-motion-principles appliqué (ruling King 20/10, §1f⑤)** | `PRE-FLIGHT.md` §1f + §1b · `tools/design-motion-principles/README.md` · skill installé `~/.agents/skills/design-motion-principles/SKILL.md` (hors dépôt) · `AMK-DESIGN-SKILLS.md` (lois maison, gagnent en cas de conflit) · `clients/<client>/build-notes.md` (pondération des lentilles, findings motion) |
+| **Audit/vérification = skills ECC sélectifs en appui (ruling King 20/10, §1f⑥)** | `PRE-FLIGHT.md` §1f + §1b · `tools/ecc/README.md` · skills installés `~/.agents/skills/{accessibility,production-audit,verification-loop,security-review,seo,click-path-audit}/SKILL.md` (hors dépôt) · `tools/qa/` (les portiques maison font foi) · `clients/<client>/build-notes.md` (score, preuves, blockers) |
+| **Recherche UX/UI consultable = UI/UX Pro Max en appui (ruling King 20/10, §1f⑦)** | `PRE-FLIGHT.md` §1f + §1b · `tools/ui-ux-pro-max/README.md` · skill installé `~/.agents/skills/ui-ux-pro-max/SKILL.md` (hors dépôt) · `AMK-DESIGN-SKILLS.md` (lois maison, gagnent en cas de conflit) · `clients/<client>/build-notes.md` (grilles consultées, avis écartés) |
+| **Détection d'anti-patterns UI = Impeccable en portique d'appui (ruling King 20/10, §1f⑧)** | `PRE-FLIGHT.md` §1f + §1b · `tools/impeccable/README.md` · skill installé `~/.agents/skills/impeccable/SKILL.md` + moteur `~/.impeccable/bin/` (hors dépôt) · `tools/qa/` (les portiques maison font foi) · `clients/<client>/build-notes.md` (findings vérifiés, faux positifs nommés) |
+| **Gabarit W43 = porte de tout contenu client (ruling King 21/10, « implement »)** | `sales/research/2026-W43-techniques.md` **§12 + §12b** (la règle et le gabarit : 5 beats · 7 interdits · 6 cases) · `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` (règle debout) · `clients/<client>/content-plan-*.md` et `posting-calendar*.md` (porte de chaque pièce) · `clients/<client>/content/**` (chaque script coche les 6 cases) · `content/scripts/README.md` + `CONTENT-LESSONS` §10/§12 (les portes maison restent supérieures) |
+| **Clôture debout : inventaire outils en ouverture + propositions/audit en fin de chaque réponse (ruling King 20/10, §1f⑨)** | `PRE-FLIGHT.md` §0 + §1f⑨ (la règle) · toute réponse de l'orchestrateur (en-tête enrichi + bloc final) · `ops/TOOL-SCAN.md` (l'inventaire consulté) · `clients/<client>/build-notes.md` (audits qui alimentent le bloc) |
 
 Si cette table ne suffit plus à suivre la propagation entre fichiers, c'est le déclencheur pour réévaluer un outil de graphe de connaissances (voir la décision Graphify dans `sales/Activity-Log.md`).
 
@@ -75,13 +86,13 @@ The rule names abstract folders; these are where the lessons actually live. Load
 | **Closing / objection handling** | `sales/AMK-Sales-Playbook-v2.md` (Part I = 3A reframe, Part J = CLOSER, Part E = flips, Part C = closes) · `research/YouTube-Lessons.md` [7][8] |
 | **Any copywriting** | `research/YouTube-Lessons.md` [1]–[6] (+ [5] Harry Dry = the law) · `sales/Monday-Outreach-Pack.md` COPY CRAFT GATE · `AMK-DESIGN-SKILLS.md` §11 + §11b · `sales/swipe/README.md` · client's own words (FB/comments) per Part H |
 | **Visual design (mockups, brand, graphics)** | `AMK-DESIGN-SKILLS.md` (§1–§19: dials, anti-slop §3, locks §4, type §5, colour §6, layout §7, components §8, motion §9, images §10, copy-law §11b, redesign §12, pre-flight §13, style menu §14, image art-direction §15, patterns §17, §19 foundations) · `design/WORKFLOW.md` · `design/STYLE-TOKENS.md` · `design/MOTION.md` · `design/vendor/*` (registries) · `clients/_uniqueness-registry.md` |
-| **Website build** | `tools/qa/PROTOCOLE-LECTEUR-ECRAN.md` (**le test à l'oreille, à la main, 5 minutes : NVDA + TalkBack, les annonces attendues sur NOS pages**) · `tools/qa/test_site_a11y_behaviour.mjs` (les états de la page, exécutés dans un DOM) · `research/ACCESSIBILITE-2026-09-24.md` (le rapport du lot [27] : le niveau promis, les quatre choses qu'aucune machine ne vérifie) · **`tools/qa/audit_a11y.py`** (+ `test_audit_a11y.py`) — le contrôle d'ACCESSIBILITÉ, critère par critère, **WCAG 2.2 AA** (le niveau qu'un appel d'offres exige : ni A seul, ni AAA) : images et alts, hiérarchie des titres, étiquettes de champs, zoom non bloqué, clavier, focus visible, lang, noms des boutons · `AMK-DESIGN-SKILLS.md` **§27** (le niveau promis, et les quatre choses qu'aucune machine ne vérifie) · **`tools/qa/audit_hero.py`** (§26 + §29 : la grammaire du premier écran **et** son anatomie — trois questions, deux actions au maximum, la marque nommée) (+ `test_audit_hero.py`) — le contrôle du PREMIER ÉCRAN appris au lot [26] : mots écrits dans le CSS, hero 100vh sans `@media`, animations de mise en page sans `prefers-reduced-motion`, gabarits non remplis · `AMK-DESIGN-SKILLS.md` **§26** (la grammaire du hero) · All of the design row **plus** `AMK-DESIGN-SKILLS.md` §18 (spec-before-build, value provenance, verification ladder) + §19.3 (3-direction exploration) · copywriting row · `design/WORKFLOW.md` stages 1–9 · deploy gate `hosting/previews/README.md` · client context: `sales/research/<client>-deep-dive-*.md` + `clients/<client>/*` · **live inspiration research (step 3 of the uniqueness protocol)** |
+| **Website build** | `tools/qa/PROTOCOLE-LECTEUR-ECRAN.md` (**le test à l'oreille, à la main, 5 minutes : NVDA + TalkBack, les annonces attendues sur NOS pages**) · `tools/qa/test_site_a11y_behaviour.mjs` (les états de la page, exécutés dans un DOM) · `research/ACCESSIBILITE-2026-09-24.md` (le rapport du lot [27] : le niveau promis, les quatre choses qu'aucune machine ne vérifie) · **`tools/qa/audit_a11y.py`** (+ `test_audit_a11y.py`) — le contrôle d'ACCESSIBILITÉ, critère par critère, **WCAG 2.2 AA** (le niveau qu'un appel d'offres exige : ni A seul, ni AAA) : images et alts, hiérarchie des titres, étiquettes de champs, zoom non bloqué, clavier, focus visible, lang, noms des boutons · `AMK-DESIGN-SKILLS.md` **§27** (le niveau promis, et les quatre choses qu'aucune machine ne vérifie) · **`tools/qa/audit_hero.py`** (§26 + §29 : la grammaire du premier écran **et** son anatomie — trois questions, deux actions au maximum, la marque nommée) (+ `test_audit_hero.py`) — le contrôle du PREMIER ÉCRAN appris au lot [26] : mots écrits dans le CSS, hero 100vh sans `@media`, animations de mise en page sans `prefers-reduced-motion`, gabarits non remplis · `AMK-DESIGN-SKILLS.md` **§26** (la grammaire du hero) · All of the design row **plus** `AMK-DESIGN-SKILLS.md` §18 (spec-before-build, value provenance, verification ladder) + §19.3 (3-direction exploration) · copywriting row · `design/WORKFLOW.md` stages 1–9 · deploy gate `hosting/previews/README.md` · client context: `sales/research/<client>-deep-dive-*.md` + `clients/<client>/*` · **live inspiration research (step 3 of the uniqueness protocol)** · **`llms.txt` généré au build** (pattern DM : `build_dmoptic_montures.py` — fichier de découverte IA + garde anti-invention/compte de liens ; ruling « implement the solutions », 20/10) pour tout site client destiné à une production |
 | **SEO / site public (AMK ou client)** | `content/strategy/SEO-CHECKLIST-CLIENT-SITES-2026-10.md` (**la liste dans l'ordre + ce que Google dit de ne PAS faire**) · `site/SEO-REVIEW-2026-10-08.md` §8 · `tools/seo/bake_default_lang.py` (français/anglais par défaut dans le HTML) · `node tools/qa/test_amkcm_lang.mjs` · `content/strategy/RULE-CREDENTIAL-CLAIMS.md` (affirmations) |
 | **Photographie / images livrées** | `research/PHOTO-LABO-PIXEL-8A-2026-09-24.md` (ce que le Pixel 8A sait faire, la séance de 15 min, la lumière d'un laboratoire, la fiche à emporter FR, la vérification de 60 s) · `AMK-DESIGN-SKILLS.md` §25 (une photo = un sens) + §32 · `tools/qa/audit_images.py` (**contrôle**) |
 | **Prix / abonnement / récurrence** | `sales/PRIX-ET-RECURRENCE-2026-09-24.md` (**ce qui est tranché, et les 16 questions ouvertes — à lire AVANT toute conversation d'argent**) · `sales/REVUE-CONTRATS-GRILLE-2026-09-23.md` · `sales/ORDRE-DES-OFFRES-2026-09-23.md` |
-| **Delivery / handoff** | `AMK-DESIGN-SKILLS.md` §13 (pre-flight) + §18.4 (verification ladder) · `hosting/previews/README.md` (deploy gate) · `site/DEPLOY.md` · `sales/AMK-Playbook-Addendum-Outcomes-2026-09-15.md` (handoff video, care plan) |
+| **Delivery / handoff** | `AMK-DESIGN-SKILLS.md` §13 (pre-flight) + §18.4 (verification ladder) · `hosting/previews/README.md` (deploy gate) · `site/DEPLOY.md` · `sales/AMK-Playbook-Addendum-Outcomes-2026-09-15.md` (handoff video, care plan) · **brag de livraison en brouillon d'office (§1f②, `tools/brag/README.md`)** |
 | **Retention / upsell / referrals** | `sales/AMK-Sales-Playbook-v2.md` (A5 referral, F6, Part J reinforce-the-decision) · `sales/AMK-Playbook-Addendum-Outcomes-2026-09-15.md` · `sales/AMK-Playbook-Addendum-4-Marketing-Systems-2026-09-15.md` (monthly report, GBP layer) |
-| **Weekly research** | The field being studied → log the output back into that field's lessons: sales/marketing → `sales/research/<YYYY>-W<WW>-techniques.md`; video lessons → `research/YouTube-Lessons.md`; design/build → the relevant `AMK-DESIGN-SKILLS.md` section |
+| **Weekly research** | The field being studied → log the output back into that field's lessons: sales/marketing → `sales/research/<YYYY>-W<WW>-techniques.md`; video lessons → `research/YouTube-Lessons.md`; design/build → the relevant `AMK-DESIGN-SKILLS.md` section · **collecte externe via Agent Reach d'abord (§1f①, `tools/agent-reach/README.md`)** |
 
 | **CRM / pipeline** | `leads/build/crm.py` (schéma + énumération des étapes — C'EST LUI LA SOURCE, pas le CSV) · `leads/build/guard.py` + `generators.lock.json` (EMPREINTE des générateurs : `rebuild.sh` refuse d'écrire si un générateur a été remplacé par une version plus ancienne — 22/09 : une restauration d'instantané avait effacé l'état des deux fils chauds du CSV sans un seul message d'erreur) · `leads/CRM.csv` (état) · `sales/Activity-Log.md` (chronologie, append-only) · `sales/AMK-Sales-Playbook-v2.md` (règles debout, §A4 corrigé) · vue live : `leads/PIPELINE.md`, `leads/KILL-LIST.md`, `leads/STALE.md`, `leads/SOURCES.md`, `leads/Daily-Plan.csv` (toutes GÉNÉRÉES) · fiche d'un lead : `leads/records/<slug>.md` · **règle 02/10 (bug OraCare) : avant de remplir `source_detail` d'un lead content, vérifier que le lead a VU la vidéo — jamais déduire l'attribution de « la seule vidéo publiée »** · **règle 02/10 (fil Cavisa) : jamais re-poser la même question — au-delà de 7 jours sans réponse, changer de canal (texte → voix → appel), pas de wording ; un fix interne n'est jamais un prétexte d'outreach** · **règle 02/10 (piège de file, re-datée 03/10) : après édition de RELANCE_A_JOUR ou de toute structure planifiée à clés, vérifier la SORTIE de la file après rebuild — rc=0 n'est pas une preuve** · **règle 03/10 (tous prospects) : aucun travail non demandé sur la démo d'un prospect — sans demande explicite, la démo reste intouchée ; follow-up plain, chaud, court, sans prétexte ni re-ask ; le travail ne reprend que si le prospect demande quelque chose de spécifique** · **protocole 05/10 : premise check (une ligne, vérifiée contre le fil) avant toute sortie client-facing + passe second-reader + log dans ops/INFERENCE-ERRORS.md · **règle 05/10 (#7) : premise check d'un document financier = complétude du bloc émetteur au standard fiscal du client, pas seulement cohérence interne (« que demandera-t-il qui n'est pas là ? »)** |
 
@@ -101,7 +112,7 @@ pré-vol charge, **en plus du dossier métier**, les sections pertinentes de la 
 | Task type | + knowledge base |
 |---|---|
 | **Sales / outreach / proposal** | §2, §8 |
-| **Content / script / video / caption** | §7, §8 · **vidéo : `content/strategy/VIDEO-PIPELINE-FLOW-2026-10.md` (pipeline Flow + ChatGPT, remplace `render.mjs` ; `render.mjs` = secours uniquement)** |
+| **Content / script / video / caption** | §7, §8 · **DM Optique : `clients/dm-optic/brand/DIRECTION-MARQUE-v2-2026-10-22.md` — à relire avant d'écrire (King 22/10)** · **gabarit W43 : `sales/research/2026-W43-techniques.md` §12/§12b — à cocher avant d'écrire** · **vidéo : `content/strategy/VIDEO-PIPELINE-FLOW-2026-10.md` (pipeline Flow + ChatGPT, remplace `render.mjs` ; `render.mjs` = secours uniquement)** |
 | **Marketing / strategy** | §3, §5 |
 | **Ads / campaign** | `clients/<slug>/ads/campaign-brief.md` (quand il existe) + §4, §5 |
 | **Design / build** | §1 |
@@ -178,6 +189,120 @@ avance, personne d'autre n'a écrit ». Constat du 11/10, journalisé dans `ops/
 que dans le bac à sable — cf. la note du 21/09 (« perdues au 13ᵉ recul du bac, leur push avait échoué »).
 
 Recette éprouvée (avec travail non commité, **jamais** `--hard`) : `git fetch -q origin` → `R=$(git ls-remote origin refs/heads/arena/01a0f7ad-amk | cut -f1)` → `git reset -q --mixed $R` → vérifier `HEAD == R` → `git checkout HEAD -- leads/build/{crm.py,generators.lock.json,records.py,views.py}` si ces quatre fichiers reviennent périmés → `git status --short`. (`origin/<branche>` peut ne pas exister comme ref locale : le tip se lit par `ls-remote`.) Le `reset --hard` de la ligne ci-dessus ne vaut que pour un arbre propre.
+
+## 1f · Outils installés — usage proactif, sans que King ait à les nommer (ruling King 19/10)
+
+> *King 19/10 : « I shouldn't always tell you when to use them… when you need to answer a question or research something you should always use agent reach… when we finish a website and it is ready to be delivered you can use brag. »*
+
+**La règle : King ne nomme jamais l'outil.** Quand la tâche tombe dans l'un des deux cas ci-dessous, l'orchestrateur charge la chaîne, l'utilise, et **le dit dans son en-tête pré-vol** (canal/backend ou livrable produit). L'environnement ne survit pas entre sessions : si l'outil est absent, l'orchestrateur le **réinstalle tout seul** avant de travailler (`bash tools/agent-reach/install.sh --system --channels=all` · `bash tools/brag/install.sh` — installations approuvées le 19/10, hors dépôt, aucun sudo), sans demander.
+
+### ① Recherche ou question qui demande le web vivant → **Agent Reach d'abord**
+
+- **Portée :** toute information extérieure au dépôt — regarder/chercher YouTube, GitHub, le web, un RSS, Bilibili, la recherche Exa, les canaux sociaux quand ils sont configurés. Cas nommés : contrôles approfondis §1c, leçons YouTube (Weekly research), inspiration live (§2 étape 3), vérification d'un fait sur une plateforme, réponse à une question de King qui exige une source externe.
+- **Procédure :** exports PATH (voir `tools/agent-reach/README.md`) → `agent-reach doctor --json` (**`active_backend` fait foi**, un ✅ doctor n'est pas une preuve) → lire les sections utiles de `~/.agents/skills/agent-reach/SKILL.md` → appeler **l'outil upstream directement** (`gh`, `yt-dlp`, `bili`, `mcporter`, `curl` Jina, `feedparser`…). Le résultat cité vient d'un **appel réel**, jamais du doctor.
+- **Hiérarchie des sources inchangée :** un fait **interne** (client, pipeline, prix) se vérifie dans le dossier du dépôt d'abord (§0b, §0e). Agent Reach est le premier réflexe pour l'**externe**, pas un substitut au dossier.
+- **Repli honnête :** canal bloqué par l'egress de la sandbox ou non configuré → le dire dans la réponse, puis basculer sur `web_search`/`fetch_page`. **Jamais** présenter un résultat natif « comme si » Agent Reach avait répondu. Un canal login manquant (cookie compte **dédié**) se signale à King en une ligne ; on continue avec ce qui est atteignable, on ne bloque pas la tâche dessus.
+
+### ② Site fini, prêt à être livré → **brag de livraison produit d'office** (brouillon)
+
+- **Déclencheur :** build terminé **et** portes §1b vertes, page prête à être livrée/déployée. L'orchestrateur produit alors un **brouillon** de vidéo d'annonce verticale ~20 s selon `tools/brag/README.md` (plan · `hyperframes check` 0 erreur · snapshots relus à l'œil · rendu · poster en frame 0 · `audit_video_motion.py` **OK**) et le présente à King **avec** le livrable, chemin consigné dans les build-notes.
+- **Garde-fous inchangés :** rien n'est **publié ni envoyé au client** sans validation de King ; site client réel = que du vrai (pas de brag sur des photos d'illustration — briefs § « le site ne montre que du vrai ») ; étiquette de fiction sur concepts/démos ; tons `polished`/`app-store` pour santé/éducation ; musique générée ou licenciée seulement (jamais les pistes embarquées, licence non documentée).
+- **Sortie hors dépôt** (`brag-output*/` ou `/home/user/…`, ignorée par git) : aucun mp4 versionné.
+
+### ③ Site DM Optique modifié → **déploiement sur le projet Vercel de test, d'office** (ruling King 20/10)
+
+> *King 20/10 : « deploy the new version on vercel, do this every time you carry out changes to the site ».*
+
+- **Déclencheur :** tout changement du site DM Optique commité **et** poussé (portiques §1b verts) → l'orchestrateur déploie immédiatement ce commit sur le projet Vercel de test de King, sans qu'on le lui demande, et **vérifie en ligne** (état `READY` + lecture d'au moins une page modifiée).
+- **Cible :** projet `dm-optique-sarl` (`prj_vnTP9SW2lGh2rMqH15oU6S5NZvob`, équipe `team_EWqUU5nnB2OitkqqnARZ7Qrl`), racine `hosting/previews/dmoptic`, alias `https://dm-optique-sarl.vercel.app`. Le projet n'est pas lié Git (pas d'auto-déploiement) : déclenchement explicite via le connecteur Vercel, source GitHub `arena/2fffee3b-amk`, cible `production` du projet de test. Pièges connus : outils connecteur à recharger chaque tour ; `git_source` = chaîne JSON, pas objet ; `list_deployment_files` renvoie 404 sur ce projet → vérifier par lecture de page.
+- **Garde-fous inchangés :** Vercel = banc d'essai de King, pas une livraison client ; la production client (Cloudflare, domaine du cabinet) reste le geste de King après sa validation. L'id, l'état et le commit déployés se consignent dans `clients/dm-optic/build-notes.md` (+ Activity-Log).
+
+### ④ Tâche design / build / revue de page → **taste-skill lu et appliqué** (ruling King 20/10)
+
+> *King 20/10 : « before we go further I want you to install and use this [taste-skill] ».*
+
+- **Portée :** construire, designer, redesigner, restyler ou relire une page publique (le périmètre du skill lui-même). L'orchestrateur réinstalle si absent (`bash tools/taste-skill/install.sh`, épinglé — voir `tools/taste-skill/README.md`), lit `~/.agents/skills/design-taste-frontend/SKILL.md` (+ les `references/` utiles), et **le dit dans son en-tête pré-vol**.
+- **Procédure :** nouveau build = le « run » du skill (inventaire du sujet → argument → tirage de direction par `draw.mjs` → phrase-idée → copy deck → construction → portique `lint.mjs`/`inspect.mjs` → critique sur captures → mouvement → rapport honnête : direction tirée, redraws motivés, scores, contrôles **non** exécutés dits comme tels). Revue/restyle = le cas « existing page » du skill (avant/après mesurés). Sorties `.taste-skill/` ignorées par git.
+- **Hiérarchie en cas de conflit :** les lois maison (`AMK-DESIGN-SKILLS.md`, protocole d'unicité §2) et les verrous client (identité figée, textes approuvés, « le site ne montre que du vrai ») **gagnent** sur les règles maison du skill. Un conflit se signale à King, jamais un restylage silencieux ; `--allow`/`taste-skill-ignore` seulement avec raison écrite. Aucune donnée client dans les requêtes `assets.mjs`.
+- **Inspecteur dans la sandbox (jonction prouvée le 20/10) :** `inspect.mjs` tourne via le Chromium de la chaîne vidéo : `bash tools/video/install.sh` puis `CHROME_PATH=/tmp/amk-video/chrome-wrapper.sh` (recette : `tools/taste-skill/README.md`). Fichiers locaux OK ; URL live impossible (egress Chromium fermé) ; faux `font-fallback` possibles sur chemins absolus (son serveur sert la racine du dépôt). Si la jonction casse, le rapport le dit et seuls `lint.mjs` + les portiques §1b font foi.
+
+### ⑤ Mouvement d'interface (créer ou auditer) → **design-motion-principles lu et appliqué** (ruling King 20/10)
+
+> *King 20/10 : « install and use [kylezantos/design-motion-principles] ».*
+
+- **Portée :** ajouter, modifier ou auditer transitions, animations, états de survol/pression, révélations au scroll, micro-interactions. L'orchestrateur réinstalle si absent (`bash tools/design-motion-principles/install.sh`, épinglé — voir son README), lit `~/.agents/skills/design-motion-principles/SKILL.md` + le workflow du mode (create/audit) + `references/accessibility.md` (obligatoire), et **le dit dans son en-tête pré-vol**.
+- **Procédure :** reconnaissance du contexte → **pondération des trois lentilles écrite** (défaut santé/catalogue/conversion : Jakub primaire, Emil secondaire, Jhey sélectif — autre pondération seulement si King la demande) → checklist + anti-checklist → findings dans les build-notes du client (pas de dossier `motion-audits/` sans OK King, §4b). `prefers-reduced-motion` est non négociable ; un changement de motion sur le site DM = changement de site : portiques §1b + déploiement §1f③.
+- **Hiérarchie :** lois maison et verrous client gagnent ; un conflit (ex. boucle d'ambiance d'identité) se signale à King, jamais de restylage silencieux.
+
+### ⑥ Audit de production / vérification → **skills ECC sélectifs en appui** (ruling King 20/10)
+
+> *King 20/10 : « install and use [affaan-m/ECC] ».*
+
+- **Portée :** audit de pré-livraison, readiness, sécurité, SEO, accessibilité, parcours de clic, boucle de vérification — **en complément** des portiques maison, jamais à leur place. L'orchestrateur réinstalle si absent (`bash tools/ecc/install.sh`, épinglé — voir son README), lit le ou les `SKILL.md` pertinents parmi les six installés (`accessibility`, `production-audit`, `verification-loop`, `security-review`, `seo`, `click-path-audit`), et **le dit dans son en-tête pré-vol**.
+- **Procédure :** preuves locales d'abord (build, portiques, diff, lectures de pages) ; score et blockers au format `production-audit` quand il sert ; findings consignés dans les build-notes du client avec correctif/amélioration/action (§0e).
+- **Garde-fous :** installation **sélective seulement** — pas de profil full/core, pas de hooks runtime, pas de MCP, pas de mémoire ECC, pas d'auto-update, pas de scanner externe ni d'envoi de code/données client à un tiers sans l'accord explicite de King (règles TOOL-SCAN 3+4). Le harnais complet sur la machine de King est une décision séparée ; ne jamais empiler deux méthodes d'installation ECC sur la même cible.
+
+### ⑦ Recherche UX/UI ponctuelle → **UI/UX Pro Max interrogé d'abord** (ruling King 20/10)
+
+> *King 20/10 : « install and use [nextlevelbuilder/ui-ux-pro-max-skill] ».*
+
+- **Portée :** avant de corriger ou concevoir un composant, interroger la base locale (`search.py --domain ux|typography|landing|icons|gsap…`, Python stdlib, aucun réseau, aucune donnée client dans les requêtes) — en complément de taste-skill et des lois maison.
+- **Limite posée le 20/10 :** sa « design system » générée propose style/couleurs/typo **neuves** — sur un site à identité figée, elle est **écartée** (grille de lecture, pas direction) ; une identité neuve ne se choisit qu'avec King (protocole d'unicité §2).
+- Réinstallation : `bash tools/ui-ux-pro-max/install.sh` (épinglé, voir son README). Dit dans l'en-tête pré-vol.
+
+### ⑧ Détection d'anti-patterns UI → **Impeccable `detect` en portique d'appui** (ruling King 20/10)
+
+> *King 20/10 : « install and use [pbakaus/impeccable] ».*
+
+- **Portée :** `impeccable detect --json <pages>` en audit de finition, sur fichiers locaux ou URL ; chaque finding est **vérifié dans le code** avant toute correction (faux positifs nommés, ex. « cramped-padding » sur cartes à photo pleine bordure). Les commandes de polish (`polish`, `harden`, `critique`…) restent des propositions — un changement de site passe par le ruling de King, les portiques §1b et §1f③.
+- **Garde-fous :** moteur épinglé (engine v0.1.16 au pin du 20/10) ; **aucun hook Impeccable installé** (activation séparée, décision de King) ; pas de PRODUCT.md/DESIGN.md dans le dépôt sans son OK (§4b) ; re-téléchargement du moteur seulement depuis le canal officiel de l'amont.
+- Réinstallation : `bash tools/impeccable/install.sh` (épinglé, voir son README ; sur la machine de King l'installeur amont peut télécharger le moteur lui-même). Dit dans l'en-tête pré-vol.
+
+### ⑨ Chaque tâche de King → PRE-FLIGHT lu en entier, inventaire des outils, propositions + audit en clôture (ruling King 20/10)
+
+> *King 20/10 : « for each message/task I give read all the pre-flight document, go through all the skills and tools available/installed so that you know what to use and when, and at the end of each response write a proposition/recommendations and audit — you can leave it blank if there's nothing. »*
+
+- **Ouverture (renforce §0) :** le document PRE-FLIGHT est **lu en entier** à chaque tâche (aucune section sautée) et l'en-tête pré-vol nomme **l'inventaire des outils/skills examinés pour la tâche** — lesquels sont utilisés, lesquels ne le sont pas, et pourquoi en une ligne (§1f①–⑧ inclus, plus `ops/TOOL-SCAN.md` comme registre). L'objectif est la **connaissance permanente de l'arsenal** : le bon outil au bon moment, sans que King ait à le nommer.
+- **Clôture :** chaque réponse se termine par un **bloc debout à deux volets**, présent même vide (« Rien à signaler ») :
+  - **Propositions / Recommandations** — étapes suivantes, optimisations du flux de travail, opportunités repérées en cours de route. Ce bloc n'ouvre **aucun droit d'exécution** : une proposition attend le ruling de King (§4b, verrous).
+  - **Audit** — auto-audit honnête de la réponse : ce qui a été vérifié contre la source (§0e), ce qui reste incertain ou non testé, les défauts connus laissés ouverts, la conformité aux portiques (§1b/§1f③…). Un audit qui relève un problème porte correctif/amélioration/action (§0e), et **tout problème résoluble porte sa solution long terme** (règle debout, outil, contrôle automatisé — pas seulement le correctif ponctuel) : l'audit d'une réponse prépare celui d'après (ruling King 20/10).
+- Le bloc s'applique **à toutes les réponses**, y compris les réponses courtes de consultation — c'est justement là que les propositions coûtent le moins et servent le plus.
+
+## 1g · Marketing, marque et création de contenu (ruling King 22/10)
+
+> *King 22/10 : « make sure you have written everything you just learned in the repo, in preflight too under marketing, content creation and other relevant topics ». *
+
+Toute tâche de **marketing, de marque, de vente optique ou de production de contenu** commence par ces
+deux bases de connaissance, **avant** d'écrire une ligne de script ou de lancer un rendu :
+
+| Fichier | Ce qu'il contient | Quand le lire |
+|---|---|---|
+| **`knowledge/MARKETING-OPTICAL-2026-10-22.md`** | l'ordre des leviers (avis > fiche > site > social), les 3 facteurs de Google, la vente optique (Laramy-K, Anagram), « être expert d'une chose », les chiffres sociaux, la structure de positionnement, **le cas Warby Parker**, les erreurs, le socle Cameroun | toute mission marketing, positionnement, acquisition, SEO local d'un client optique |
+| **`knowledge/CONTENT-CREATION-2026-10-22.md`** | la chaîne de production (PIL → ffmpeg → portique), les 9 règles de fabrication, la structure de script en 5 temps, les 4 piliers, ce qui se mesure, **la politique visages / UGC / IA**, la règle de source, les portes avant publication | toute vidéo, tout post, toute production sociale |
+
+**Routage rapide**
+
+| La tâche | D'abord | Ensuite |
+|---|---|---|
+| positionner une marque, écrire un statement | `knowledge/MARKETING-OPTICAL…` §6 | `clients/<client>/brand/BRAND-STRATEGY-*.md` |
+| écrire un script court | `knowledge/CONTENT-CREATION…` §3 | le gabarit du mois (`content/month1/…`) |
+| monter une vidéo | `knowledge/CONTENT-CREATION…` §1–2 | `tools/record/` + **portique** `tools/qa/audit_video_motion.py` (§1b) |
+| monter une vidéo **UGC** (storyboard, produit, cartons, clip IA, voix) | `tools/ugc/README.md` | `python3 tools/ugc/ugc.py render <spec>.json --qc` |
+| obtenir un **plan d'humain** / choisir un générateur, avec un prix | `research/ugc-video/2026-10-22-TOOLCHAIN-UGC.md` | `tools/ugc/providers.py` (Veo 3.1, HeyGen, Hedra, fal) |
+| décider d'un contenu avec visage / IA | `knowledge/CONTENT-CREATION…` §6 | ruling de King — jamais de production avant |
+| sourcer un chiffre pour un client | `knowledge/MARKETING-OPTICAL…` §9 + `CONTENT-CREATION…` §7 | la source primaire nommée, sinon « non revérifié » |
+| **écrire un post, un sous-titre, une légende, un DM** | **`tools/qa/audit_claims.py`** (verrous client : prix, stock, superlatifs, allégations) | `knowledge/CONTENT-CREATION…` §6 bis |
+| écrire à un gérant de clinique / opticien (prospection, DM froid) | `knowledge/OUTREACH-MESSAGING-2026-10-22.md` | vérifier la position réelle **avant** d'écrire |
+
+**Deux règles debout issues du 22/10 :**
+
+1. **Aucune statistique sans source primaire nommée n'entre dans une décision client.** Ce qui n'a pas pu
+   être revérifié est **écrit comme non revérifié**.
+2. **Un contenu qui ne porte aucune preuve de la marque est joli, pas utile.** Les preuves sont listées
+   dans `clients/dm-optic/brand/BRAND-STRATEGY-2026-10-22.md` §6 (modèle transposable aux autres clients).
+
+**Ce que ces sections ne remplacent pas** : les portiques §1b (livraison) et le ruling de publication —
+**rien n'est publié sans validation de King**.
 
 ## 2 · Uniqueness protocol (every website/design build, before a line of HTML)
 

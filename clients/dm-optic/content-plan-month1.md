@@ -58,7 +58,7 @@ allégation médicale · aucun prix · aucun témoignage · aucun concurrent nom
 | **UGC IA** | *« Comment choisir une monture »* — trois conseils qui marchent : la **forme du visage** · la **largeur et l'appui** · **ce que vous en faites**. Et l'argument vrai : **ça s'essaie sur votre visage, pas sur un écran** |
 | **Carrousel** | **La vitrine par familles** — vue · soleil · enfants. Une photo, un conseil, **et un WhatsApp pré-rempli propre à chaque famille** |
 | **CTA** | **Un par famille** : « Cette monture est-elle en boutique ? » |
-| **Photos nécessaires** | ⛔ **6–8 photos de montures réelles.** Bloquant **absolu** — sans elles, cette semaine n'existe pas |
+| **Photos nécessaires** | ✅ **disponibles** — 65 images, 40 montures au dépôt. *(Noté « bloquant absolu » le 02/10 ; levé depuis.)* |
 
 ### Semaine 4 — **Les verres**
 
@@ -106,7 +106,7 @@ des promesses (« la Vision », « la Clarté » glisseraient vers l'allégation
 
 ### « Les plus demandées » — interdit aujourd'hui, mesurable dès le mois 2
 
-L'angle proposé par la recherche — *« Les 5 montures les plus demandées ce mois-ci »* — est excellent,
+L'angle proposé par la recherche — *« Les montures les plus demandées ce mois-ci »* — est excellent,
 mais **c'est un classement**, et la règle 4 interdit tout classement inventé. Nous n'avons **aucune
 donnée de vente**.
 
@@ -135,7 +135,7 @@ comme telles sur la page. Aucune photo réelle du cabinet ni de ses montures n'e
 |---|---|
 | **1** — Être trouvable | ✅ **Oui** — pièce typographique |
 | **2** — Examen de vue | ⚠️ Non — 1–2 photos du cabinet |
-| **3** — Montures | ⛔ **Non — 6–8 photos de montures réelles** |
+| **3** — Montures | ✅ **Oui — 65 images, inventaire complet** (vérifié 22/10) |
 | **4** — Verres | ⚠️ Non — 1–2 photos |
 
 **Conséquence à dire franchement.** Le rythme de 2 publications par semaine **ne peut pas tenir** sans
@@ -278,3 +278,65 @@ Les deux, dans cet ordre.
 
 **Ce que le mois 1 promet, en revanche** : huit pièces produites, un cabinet **trouvable**, un canal
 WhatsApp **mesuré**, et **un chiffre** sur le coût d'acquisition d'une conversation.
+
+---
+
+## 9 · Amendement du 19/10/2026 — piliers psychologiques, trafic utile, visage
+
+> Recherche du 19/10 (`research/market-analysis.md` §7). Ne réécrit pas les semaines 1–4 : il les
+> **relit** par les quatre moteurs d'achat. R1–R4 (`content/month1/README.md`) inchangées.
+
+| Pilier | Question du patient | Semaines existantes | Preuve/format |
+|---|---|---|---|
+| **Voir net** | « Est-ce que j'ai besoin d'un examen, et comment ça se passe ? » | S2 | Étapes de l'examen dans les mots du client (anamnèse, bilan, acuités, réfraction), situations d'usage. Aucun symptôme nommé (R1). |
+| **Se voir bien** | « Est-ce que cette monture me va ? » | S3 | Essayage, formes/visage, montures **nommées** (§2b), vraies photos seulement. |
+| **Confiance vérifiable** | « À qui je confie mes yeux ? » | S1 + fil rouge | ONOC, titulaire nommé, accueil/confort/temps par étape (verbatim client). |
+| **Accès sans déplacement inutile** | « Combien, où, quand ? » | S4 + chaque CTA | Devis en conversation WhatsApp (jamais de prix public), facilités de paiement, repère, horaires certains. |
+
+**Trafic site : le rôle juste.** Les réseaux n'envoient pas « du trafic » pour lui-même : en organique,
+le site est la **preuve** qu'on consulte avant d'écrire (profil → site → WhatsApp) ; en pub du
+mois 1, le CTA reste **directement WhatsApp** (attribution par variante, `ads/variant-messages.md`).
+On mesure donc : conversations (principal), puis actions Google (appels/itinéraires) et visites
+Search Console (secondaires, sans analytics tant que le point légal n'est pas tranché).
+
+**Visage (King : décider sur preuves).** Base mois 1 : réel sans visage IA (mains, cabinet,
+montures — R2). Test conditionné à l'accord du client : 2 clips de M. Domche (service/processus,
+20–34 s verticale). Arbitrage fin de mois sur achèvement + conversations, consigné ici.
+Aucun patient filmé, aucun témoignage sans accord écrit.
+
+## 10 · Porte W43 — appliquée à chaque pièce du mois 1 (ruling King, 21/10/2026)
+
+> Source : `sales/research/2026-W43-techniques.md` §12 (la synthèse) et §12b (le gabarit) ;
+> règle debout : `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md`. Ne réécrit pas les semaines
+> 1–4 : **il décide dans quel ordre elles se publient et ce que chaque pièce dit en premier.**
+
+**Ce qui change par rapport au plan du 01/10 :**
+
+| Avant | Après (21/10) |
+|---|---|
+| Semaine 1 = « être trouvable », on parle du registre ONOC en premier | **Le premier post parle du client** (son téléphone, sa fin de journée) ; l'ONOC arrive en preuve, au beat 4 |
+| UGC IA produit en externe, 4 scripts | **Le premier TikTok est réel** : 5 plans tournés au cabinet, une monture du stock, aucune image IA |
+| Le contenu montrait des objets | **Le contenu montre un objet réel ET sa fiche en ligne** — la vache pourpre : toutes les montures visibles avant de se déplacer |
+
+> **Amendement du 22/10 (soir) — cette ligne a produit une carte fautive.** La promesse « toutes les
+> montures visibles avant de se déplacer » a été appliquée au pied de la lettre dans `ugc-03` : une carte
+> y comptait les montures et annonçait des montants consultables, deux choses interdites. Le compte des
+> montures **n'est plus un argument de contenu** ; il reste un état du site, consultable par qui cherche.
+> La direction de marque v2 (`brand/DIRECTION-MARQUE-v2-2026-10-22.md`) déplace l'axe du stock vers
+> **l'expertise qui précède la vente**. La ligne ci-dessus est conservée comme trace, pas comme consigne.
+| Pas de porte écrite entre script et tournage | **Six cases §12b à cocher** avant tout tournage ou publication |
+
+**Les six cases, apposées à chaque pièce (copier-coller en tête du script) :**
+
+```
+Porte W43 §12b — [ ] cas client d'abord · [ ] un seul axe · [ ] objet réel · [ ] preuve citée une fois
+                 · [ ] sortie honnête · [ ] un seul CTA
+```
+
+**Le premier post :** `content/month1/w1/tiktok-01.md` — validé par King le 21/10, à tourner avant le
+27/10. Les scripts W1–W4 du 02/10 restent au dossier (V1 du W1 conservée en annexe) ; ils ne sont plus
+l'ordre de publication.
+
+**Ce que la porte ne change pas :** R1 (aucun symptôme nommé), R2 (aucun visage IA), R3 (surréel
+interdit sur les verres), R4 (structure oui, assets non), les horaires vérifiés (examen 8h30–13h00,
+lundi à samedi), l'interdiction de publier un prix, la cadence 2/semaine.

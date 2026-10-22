@@ -68,31 +68,48 @@ WA_BASE = "https://wa.me/237656122239?text="
 # coûté un contrôle le 24/09).
 SAFE = "!'()*-._~"
 
-# Une image = une signification (§25) : l'objet qu'on vient chercher, la vitrine des montures (trois
-# familles), et l'instrument qui mesure. Cinq images, toutes des MISES EN SITUATION — aucune photo du
-# cabinet n'existe encore, et la page le dit (« Photos d'illustration »).
+# Une image = une signification (§25). Depuis le 20/10, l'accueil montre les vraies montures du
+# catalogue et les vraies photos du cabinet (WebP déjà dans hosting/previews/dmoptic/). Il ne reste
+# qu'UNE mise en situation générée ici : les lunettes de soleil (aucune monture solaire réelle
+# photographiée à ce jour), légendée « photo d'illustration » dans le gabarit.
 # 15/10 : images externalisées en WebP (fichiers dans hosting/previews/dmoptic/, mêmes dimensions).
 # Clé = nom du fichier WebP écrit ; le gabarit l'appelle par __ASSET__<nom>.
 PHOTOS = {
-    "dmoptic-lunettes.webp": ("dmoptic-lunettes.jpg", "900x563", "75"),   # 16/10 — les services
-    "dmoptic-montures.webp": ("dmoptic-montures.jpg", "900x563", "75"),   # 16/10 — la vitrine : lunettes de vue
-    "dmoptic-solaires.webp": ("dmoptic-solaires.jpg", "900x563", "75"),   # 16/10 — la vitrine : solaires
-    "dmoptic-enfants.webp":  ("dmoptic-enfants.jpg",  "900x563", "75"),   # 16/10 — la vitrine : enfants
-    "dmoptic-mesure.webp":   ("dmoptic-mesure.jpg",   "900x675", "75"),   # 4/3  — l'examen de la vue (bande)
+    "dmoptic-solaires.webp": ("dmoptic-solaires.jpg", "900x563", "75"),   # 16/10 — la vitrine : solaires (illustration restante)
 }
+# 20/10 (demande client) : le fond du premier écran est LA photo du cabinet nommée par le client —
+# dérivée ici en WebP (même ratio, métadonnées retirées par -strip, GPS compris).
+HERO_BG_SRC = ROOT / "clients/dm-optic/photoshoot/others/PXL_20261016_131635710.MP.jpg"
+HERO_BG_NAME = "cabinet-hero.webp"
+HERO_BG_TARGET = "1920x1270"
+# 21/10 (audit SEO) : le premier écran est l'élément LCP (Cloudflare : P90 3,2 s, 9 % de visites
+# « mauvaises ») et 232 Ko de WebP partaient sur un écran de 390 px. Trois largeurs, même recadrage
+# couvert : le téléphone prend 640, la tablette 1080, le poste fixe 1920. Même image, trois poids.
+# (largeur, hauteur, qualité) — ratios identiques à 1920×1270.
+HERO_SIZES = ((640, 423, "70"), (1080, 714, "72"))
+# 20/10 (demande King, OK client pour les visages acquis le même jour) : la bande « Nos services »
+# de l'accueil ET la page Examen de vue montent LA photo d'examen réelle — autoréfractomètre,
+# titulaire en blouse blanche, patiente, valise de verres d'essai. Même dérivée que le hero :
+# recadrage centré, métadonnées retirées par -strip (GPS compris).
+EXAM_PHOTO_SRC = ROOT / "clients/dm-optic/photoshoot/others/PXL_20261016_132758528.MP.jpg"
+EXAM_PHOTO_NAME = "cabinet-examen.webp"
+EXAM_PHOTO_TARGET = "1920x1200"
 ASSET = "__ASSET__"                       # préfixe des fichiers : "" pour l'aperçu, chemin relatif pour demos/
 CONCEPT_ASSET = "../hosting/previews/dmoptic/"
 
 
-def prepare(name, target, quality, out):
+def prepare_from(src, target, quality, out):
     """Couvre la cible puis recadre AU CENTRE (`resize ^` + `extent`) : aucun décalage écrit en dur. Sortie WebP."""
-    src = IMG / name
     if not src.exists():
         sys.exit("photo manquante : %s" % src)
     subprocess.run(["convert", str(src), "-auto-orient", "-resize", target + "^",
                     "-gravity", "center", "-extent", target,
                     "-strip", "-quality", quality, "-define", "webp:method=6", str(out)], check=True)
     return out.stat().st_size
+
+
+def prepare(name, target, quality, out):
+    return prepare_from(IMG / name, target, quality, out)
 
 
 def b64(path):
@@ -245,6 +262,18 @@ def main():
             sys.exit("fichier absent du gabarit : %s" % fn)
         size = prepare(name, target, quality, PREVIEW / fn)
         print("  %-22s %s → %s (WebP, %5.1f Ko)" % (name, target, fn, size / 1024))
+    if ASSET + HERO_BG_NAME not in html:
+        sys.exit("fichier absent du gabarit : %s" % HERO_BG_NAME)
+    size = prepare_from(HERO_BG_SRC, HERO_BG_TARGET, "76", PREVIEW / HERO_BG_NAME)
+    print("  %-22s %s → %s (WebP, %5.1f Ko)" % (HERO_BG_SRC.name, HERO_BG_TARGET, HERO_BG_NAME, size / 1024))
+    for w, h, q in HERO_SIZES:
+        name = "cabinet-hero-%d.webp" % w
+        size = prepare_from(HERO_BG_SRC, "%dx%d" % (w, h), q, PREVIEW / name)
+        print("  %-22s %dx%d → %s (WebP, %5.1f Ko)" % ("", w, h, name, size / 1024))
+    if ASSET + EXAM_PHOTO_NAME not in html:
+        sys.exit("fichier absent du gabarit : %s" % EXAM_PHOTO_NAME)
+    size = prepare_from(EXAM_PHOTO_SRC, EXAM_PHOTO_TARGET, "76", PREVIEW / EXAM_PHOTO_NAME)
+    print("  %-22s %s → %s (WebP, %5.1f Ko)" % (EXAM_PHOTO_SRC.name, EXAM_PHOTO_TARGET, EXAM_PHOTO_NAME, size / 1024))
 
     logo_png = None
     if opts.logo:
