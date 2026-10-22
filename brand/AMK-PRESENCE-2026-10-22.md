@@ -56,6 +56,33 @@ Si la page n'existe pas, on la crée avec exactement ces valeurs. Si elle existe
 
 ---
 
+## 3bis · Vérifier la page en 60 secondes (fait le 22/10 : impossible d'ici)
+
+**Ce que j'ai essayé, et ce que ça a donné :** ouvrir `facebook.com/amkweb` par requête automatique →
+**HTTP 403**. Facebook ferme l'accès aux robots ; sans navigateur, la vérification est impossible depuis
+le bac. Le dépôt contient pourtant une trace : `ops/TOOL-SCAN.md` parle, le 10/10, d'une « **Page
+existante `@amkweb`** » — c'est une note interne, pas une preuve. **On ne sait donc pas, ce soir, si la
+page existe.** La question se tranche en une minute, sur un téléphone :
+
+1. Ouvrir `facebook.com/amkweb` dans un navigateur, **sans être connecté**.
+2. Trois issues possibles :
+
+| Ce que tu vois | Ce que ça veut dire | Ce qu'on fait |
+|---|---|---|
+| La page AMK, avec ses anciens posts | **elle existe** | on ne crée rien. On la finit : §3 ci-dessus, champ par champ. Si tu es le propriétaire, vérifier aussi que le nom d'utilisateur `@amkweb` est bien le sien |
+| « Cette page n'est pas disponible » | le nom d'utilisateur est **libre** ou appartenait à une page supprimée | on crée la page (§3), et on prend `@amkweb` si Facebook le propose |
+| La page d'une **autre** entreprise | le nom est **pris** | on crée avec un autre identifiant (`@amkcm`, `@amk.douala`) — **jamais** en imitant celui d'un autre |
+
+**Piège à connaître** : une page Facebook exige un **profil personnel réel** pour être créée (pas un
+e-mail seul), et un profil au nom de l'entreprise fait tomber la page. C'est déjà écrit pour DM Optique
+dans `clients/dm-optic/launch/SETUP-FACEBOOK.md` §1 — la même règle s'applique ici : création depuis le
+profil de King, page placée dans un portefeuille Meta `AMK`, 2FA activée.
+
+**Ce qu'on ne fait pas** : créer une deuxième page « pour voir ». Deux pages pour la même activité, c'est
+se couper en deux aux yeux de Facebook et de Google — et c'est plus difficile à réparer qu'à éviter.
+
+---
+
 ## 4 · Les quatre piliers de contenu AMK
 
 Ce que nous avons et que personne n'a ici : **des sites réels, ouverts dans un téléphone**, et un mois de méthode documentée.
