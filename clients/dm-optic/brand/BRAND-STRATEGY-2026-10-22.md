@@ -6,6 +6,10 @@ Auteur    AMK, à partir de la recherche du 22/10
 Sources   research/youtube-lessons/2026-10-22-brand-strategy/SYNTHESE.md
           research/youtube-lessons/2026-10-22-eyecare-marketing/SYNTHESE.md
 Statut    proposition — à valider par King avant toute production
+Révision  ⚠️ 22/10 (soir) — trois points amendés par DIRECTION-MARQUE-v2-2026-10-22.md : l'axe passe du
+          stock à l'expertise, le compte des montures disparaît partout (y compris à l'écran, §10.5
+          rectifié), et le pilier « la monture réelle » devient un exemple, pas un rendez-vous
+          hebdomadaire. Le ton (§8), la sortie honnête, la preuve ONOC et la porte §12b restent tels quels.
 ```
 
 ---
@@ -31,7 +35,7 @@ murs, pas à côté.
 | Adresse | Ndobo Mayor, Immeuble West Hotel, 1er étage, dernière porte à droite — Bonabéri, Douala |
 | Horaires | Lundi–samedi · examen de vue 8h30–13h00 · autres besoins 8h30–17h30 |
 | Contact | WhatsApp et téléphone **656 122 239** (message pré-rempli sur les 96 pages) |
-| Inventaire publié | **40 montures** photographiées au cabinet (24 femmes, 6 hommes, 10 enfants), 65 images |
+| Inventaire publié | **les montures du cabinet** photographiées (femmes, hommes, enfants), 65 images |
 | Site | 96 pages FR + EN, publié, découvert par Google |
 | Fiche Google | créée, description A, 4 posts programmés, **avis : 0 pour l'instant** |
 | Ce qui n'existe pas | prise de rendez-vous en ligne, e-mail marketing, boutique en ligne, publicité payante |
@@ -102,7 +106,7 @@ ouvrant la page montures. **Surprenant et vérifiable : c'est ce qui distingue u
 
 > **Pour les habitants de Bonabéri et de Douala qui doivent faire vérifier leur vue sans avoir envie
 > qu'on leur vende quelque chose, DM Optique est le cabinet d'optique qui montre avant de vendre —
-> parce que ses 40 montures sont photographiées et publiées, que l'examen est mesuré au cabinet, et
+> parce que ses montures sont photographiées et publiées, que l'examen est mesuré au cabinet, et
 > qu'on dit aux gens quand ils n'ont pas besoin de lunettes.**
 
 Lu à voix haute, il tient. Il ne contient qu'un axe. Il ne nomme aucun concurrent.
@@ -148,7 +152,7 @@ complimente pas pour vendre.
 | On dit | On ne dit pas |
 |---|---|
 | « Voilà ce que ça fait. » | « Une expérience inoubliable ! » |
-| « 40 montures, photographiées ici. » | « Des centaines de montures tendance ! » |
+| « Chaque monture, photographiée ici. » | « Des centaines de montures tendance ! » |
 | « Si vous voyez bien, ne venez pas. » | « Ne attendez plus, venez vite ! » |
 | « L'examen dure le matin, de 8h30 à 13h00. » | « Prise en charge rapide et efficace. » |
 | « Ça, on ne le fait pas. » | « Tous vos besoins en un seul endroit. » |
@@ -184,8 +188,8 @@ recherche appelle *un rythme qu'on peut tenir*, pas une campagne.
 1. **Refuser de pousser une marque qu'on ne porte pas.** Si quelqu'un demande une monture absente, on le
    dit et on l'oriente. (Laramy-K : c'est la règle d'or du comptoir, et elle devient une preuve publique.)
 2. **Refuser de vendre à qui n'en a pas besoin.** C'est déjà écrit ; ça doit rester écrit.
-3. **Refuser le prix comme argument d'entrée.** On explique ce qui fait le prix, on ne l'affiche pas en
-   gros pour attirer.
+3. **Refuser de faire du montant un argument d'entrée.** On explique ce qui le compose, on ne l'annonce
+   pas en gros pour attirer.
 4. **Refuser le visage.** Assumé pour ce mois : on perd la forme de contenu la plus performante selon la
    recherche, on garde le contrôle de l'image des patients. À réévaluer sur chiffres, pas sur opinion.
 5. **Refuser le nombre de montures dans la description Google** (règle de maison) — mais on peut le dire

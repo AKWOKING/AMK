@@ -1,11 +1,21 @@
 # UGC-03 · « On montre avant de vendre » — sans visage
 
 ```
-Status: PRODUIT, NON PUBLIÉ   ·  Date: 22/10/2026   ·  Format: 9:16, 1080x1920, 30 fps
+Status: ⛔ NE PAS PUBLIER — le MP4 livré est PÉRIMÉ (voir l'encadré ci-dessous)
+Date: 22/10/2026   ·  Format: 9:16, 1080x1920, 30 fps
 Fichier: ugc-03.mp4 (22,30 s, 6,8 Mo)   ·  Couverture: ugc-03-cover.jpg
 Moteur: tools/ugc/ugc.py   ·  Storyboard: ugc-03.json   ·  Voix: assets/ugc-03-voix.mp3
 Portique mouvement: OK (aucune fenêtre figée)   ·  Visages: ceux du personnel (autorisés, King 22/10)
 ```
+
+> ⛔ **Correction du 22/10 (soir) — le fichier sur disque n'est pas la version corrigée.**
+> Le storyboard `ugc-03.json` a été nettoyé le 22/10 (commit `542ee03`) : la carte du milieu ne compte plus
+> les montures et ne parle plus de montants. **Le MP4 n'a jamais été re-rendu après cette correction.**
+> Il contient donc toujours la carte fautive — celle que King a vue. Le rendu est antérieur au
+> storyboard, et le contrôle `audit_claims.py` ne l'a pas vu : **il lit le storyboard, pas les images.**
+> Conséquence : `ugc-03.mp4` est **interdit de publication**, même corrigé dans le texte, jusqu'à
+> re-rendu complet et relecture image par image. Décision de King (22/10) : **on ne le rattrape pas,
+> la pièce suivante est écrite sous la direction v2** (`brand/DIRECTION-MARQUE-v2-2026-10-22.md`).
 
 **Rôle dans la série.** TikTok n°1 (V2) prouve *le cabinet et la monture*. UGC-03 prouve *la méthode* :
 la transparence avant la vente — des montures photographiées une par une, au cabinet, l'examen le matin.

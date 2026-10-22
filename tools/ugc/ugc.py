@@ -30,6 +30,7 @@ import os
 import re
 import subprocess
 import sys
+from datetime import datetime, timezone
 
 import imageio_ffmpeg
 import numpy as np
@@ -556,6 +557,29 @@ def run_qc(path: str) -> int:
     return res.returncode
 
 
+def write_render_proof(out: str, spec_path: str, dur: float) -> None:
+    """Écrit la preuve de rendu : quel storyboard exact a produit ce fichier.
+
+    Sans cette preuve, personne ne peut dire si le MP4 correspond au storyboard corrigé — c'est
+    exactement ce qui s'est passé pour `ugc-03` le 22/10 (rendu livré depuis un storyboard périmé).
+    `tools/qa/audit_render_freshness.py` lit ce fichier.
+    """
+    import hashlib
+    with open(spec_path, "rb") as f:
+        digest = hashlib.sha256(f.read()).hexdigest()
+    proof = {
+        "storyboard": os.path.relpath(spec_path, ROOT),
+        "storyboard_sha256": digest,
+        "out": os.path.relpath(out, ROOT),
+        "duration": round(dur, 2),
+        "size_bytes": os.path.getsize(out),
+        "rendered_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+    }
+    with open(os.path.splitext(out)[0] + ".render.json", "w", encoding="utf-8") as f:
+        json.dump(proof, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+
+
 # ────────────────────────────────────────────────────────────────────── CLI
 def cmd_render(args):
     global FONTS
@@ -569,6 +593,7 @@ def cmd_render(args):
     dur = probe_duration(out)
     size = os.path.getsize(out) / 1e6
     print(f"ok -> {out}\n   {dur:.2f} s · {size:.1f} Mo · {W}x{H} @ {FPS} fps")
+    write_render_proof(out, args.spec, dur)
     if args.cover:
         make_cover(plan, args.cover, spec)
     for sc in plan["scenes"]:

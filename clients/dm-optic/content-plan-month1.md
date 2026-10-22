@@ -106,7 +106,7 @@ des promesses (« la Vision », « la Clarté » glisseraient vers l'allégation
 
 ### « Les plus demandées » — interdit aujourd'hui, mesurable dès le mois 2
 
-L'angle proposé par la recherche — *« Les 5 montures les plus demandées ce mois-ci »* — est excellent,
+L'angle proposé par la recherche — *« Les montures les plus demandées ce mois-ci »* — est excellent,
 mais **c'est un classement**, et la règle 4 interdit tout classement inventé. Nous n'avons **aucune
 donnée de vente**.
 
@@ -316,7 +316,14 @@ Aucun patient filmé, aucun témoignage sans accord écrit.
 |---|---|
 | Semaine 1 = « être trouvable », on parle du registre ONOC en premier | **Le premier post parle du client** (son téléphone, sa fin de journée) ; l'ONOC arrive en preuve, au beat 4 |
 | UGC IA produit en externe, 4 scripts | **Le premier TikTok est réel** : 5 plans tournés au cabinet, une monture du stock, aucune image IA |
-| Le contenu montrait des objets | **Le contenu montre un objet réel ET sa fiche en ligne** — la vache pourpre : les 40 montures visibles avant de se déplacer |
+| Le contenu montrait des objets | **Le contenu montre un objet réel ET sa fiche en ligne** — la vache pourpre : toutes les montures visibles avant de se déplacer |
+
+> **Amendement du 22/10 (soir) — cette ligne a produit une carte fautive.** La promesse « toutes les
+> montures visibles avant de se déplacer » a été appliquée au pied de la lettre dans `ugc-03` : une carte
+> y comptait les montures et annonçait des montants consultables, deux choses interdites. Le compte des
+> montures **n'est plus un argument de contenu** ; il reste un état du site, consultable par qui cherche.
+> La direction de marque v2 (`brand/DIRECTION-MARQUE-v2-2026-10-22.md`) déplace l'axe du stock vers
+> **l'expertise qui précède la vente**. La ligne ci-dessus est conservée comme trace, pas comme consigne.
 | Pas de porte écrite entre script et tournage | **Six cases §12b à cocher** avant tout tournage ou publication |
 
 **Les six cases, apposées à chaque pièce (copier-coller en tête du script) :**
