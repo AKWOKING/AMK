@@ -168,7 +168,56 @@ def build_square_post():
     return out
 
 
+def build_vertical():
+    """1080 × 1920 — la version TikTok / Reels / Stories du carré (§14.7).
+
+    TikTok pose son interface PAR-DESSUS la vidéo : à droite (boutons) et en bas (légende).
+    Tout le contenu utile reste donc dans x 72–1008 et y 260–1420, et le nom d'utilisateur
+    est placé DANS cette zone — sinon il est caché par les boutons.
+    """
+    W, H = 1080, 1920
+    SAFE = (72, 260, 1008, 1420)
+    img = Image.new("RGB", (W, H), NAVY)
+    d = ImageDraw.Draw(img)
+
+    d.rectangle((0, 0, W, 8), fill=AMBER)
+    d.rectangle((0, H - 8, W, H), fill=AMBER)
+
+    f1 = font("OpenSans-Bold.ttf", 92)
+    f2 = font("OpenSans-Regular.ttf", 38)
+    f3 = font("OpenSans-Bold.ttf", 34)
+
+    drawn = []
+
+    def line(y, text, f, fill):
+        centered(d, y, text, f, fill, W)
+        w = d.textlength(text, font=f)
+        drawn.append((text, (W - w) / 2, (W + w) / 2, y))
+        return w
+
+    line(520, "Sites web pour", f1, WHITE)
+    w2 = line(636, "écoles & cliniques", f1, WHITE)
+    d.rectangle((W / 2 - w2 / 2, 760, W / 2 + w2 / 2, 768), fill=AMBER)
+    line(812, "Bilingues FR | EN · Douala, Cameroun", f2, AMBER_L)
+    line(878, "Aperçu gratuit, envoyé sur WhatsApp", f2, SLATE)
+
+    handle = "@amkweb"
+    tw = d.textlength(handle, font=f3)
+    bx0 = (W - tw) / 2 - 30
+    d.rounded_rectangle((bx0, 1040, bx0 + tw + 60, 1108), radius=34, outline=NAVY2, width=3)
+    d.text(((W - tw) / 2, 1054), handle, font=f3, fill=WHITE)
+    drawn.append((handle, bx0, bx0 + tw + 60, 1040))
+
+    for text, x0, x1, y0 in drawn:
+        assert SAFE[0] <= x0 and x1 <= SAFE[2], f"trop large : {text}"
+        assert SAFE[1] <= y0 and y0 + 100 <= SAFE[3], f"trop haut/bas : {text}"
+
+    out = OUT / "post-vertical-1080x1920.png"
+    img.save(out, "PNG", optimize=True)
+    return out
+
+
 if __name__ == "__main__":
     OUT.mkdir(exist_ok=True)
-    for p in (build_profile(), build_cover(), build_square_post()):
+    for p in (build_profile(), build_cover(), build_square_post(), build_vertical()):
         print("wrote", p, round(p.stat().st_size / 1024), "KB")

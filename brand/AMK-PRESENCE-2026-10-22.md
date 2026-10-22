@@ -492,6 +492,7 @@ répondre — jamais un lien nu.
 | `brand/facebook/profile-1024.png` | la **marque seule** (cercle + triangle ambre), sur navy, sans le mot « AMK » | aperçu **à 40 px** généré (`profile-preview-40px.png`) : la forme reste lisible ; le motmark, lui, serait devenu une tache |
 | `brand/facebook/cover-1640x624.png` | couverture typographique : « Sites web pour écoles & cliniques » + « Bilingues FR \| EN » + « Aperçu gratuit … Douala » + l'adresse du site | **tout le texte tient dans la zone 820 × 312** (contrôlé par calcul dans le script), et le recadrage mobile est sorti à part : `cover-mobile-820x312.png` |
 | `brand/facebook/cover-mobile-820x312.png` | le recadrage téléphone, pour vérification à l'œil | — |
+| `brand/facebook/post-vertical-1080x1920.png` | **verticale 1080 × 1920** (tour 59) : la version TikTok / Reels / Stories — le carré y perd les deux tiers de l'écran ; contenu utile dans `x 72–1008`, `y 260–1420`, **le handle est dans la zone** (sinon les boutons de TikTok le cachent) | zone sûre tenue par `assert`, `@amkweb` lisible |
 | `brand/facebook/post-square-1080.png` | **carré 1080 × 1080** (§13.2, ajouté au tour 58) : la même grammaire que la couverture, pour la **première pièce Instagram** — la photo de profil, le nom et la bio ne se voient que si le profil porte au moins une image | zone sûre 96 px tenue, **soulignement mesuré** sur la deuxième ligne du titre (pas deviné), contrôle par `assert` |
 
 Reconstruits par `python3 brand/build_fb_assets.py` (les fichiers sont versionnés ; le script ne demande
@@ -596,6 +597,10 @@ chaque jour.
 **Recommandation : `amkweb.cm` sur les trois.** La longueur autorisée ne pose problème nulle part :
 **9 caractères** contre **24** sur TikTok, **30** sur Instagram, **50** sur Facebook — et TikTok
 n'accepte que lettres, chiffres, points et soulignés, ce qui rend `amkweb.cm` valide tel quel.
+
+> **⚠️ Le tableau du §13.2 a été corrigé au tour 59 par le `§14.2`** — nom Instagram (`AMK · Sites web
+> Cameroun`), nom TikTok, et la règle des identifiants (`amkweb` d'abord, `.cm` en secours). Les valeurs
+> du §13.2 restent lisibles comme trace ; **ce sont celles du §14.2 qui s'appliquent.**
 
 > **Correction du §12.2.** La chaîne recommandée hier — `amkweb` → `amk.cm` → `amkwebcm` — était pensée
 > plateforme par plateforme. Elle est **remplacée** : sur trois comptes qui doivent se renvoyer l'un à
@@ -736,3 +741,180 @@ novembre sera une conclusion sur le hasard.
 - **Non vérifié d'ici** : l'existence et le contenu de l'ancienne page `@amkweb` (403 pour tout robot
   depuis le bac), la disponibilité réelle de `amkweb.cm` sur TikTok et Facebook, et les libellés exacts
   de tes écrans.
+
+---
+
+## 14 · Ce que les trois captures prouvent — sept défauts, la copie exacte (22/10, tour 59)
+
+```
+Entrées   Facebook (1 abonné, 0 post) · Instagram @amkweb.cm (4 posts, 8 abonnés)
+          TikTok @amkweb (25 abonnés, 168/165/93 vues) · URL de la page : profile.php?id=…
+Verdict   les trois comptes existent, la bio Facebook est la bonne, et le reste est
+          encore celui d'avant : nom long, catégorie fausse, anglais seul, promesse
+          « 24 h » sans condition, lien Threads qui n'est pas à nous.
+```
+
+### 14.0 · Ce qui est déjà juste (ne pas y toucher)
+
+| Élément | Preuve dans la capture |
+|---|---|
+| **Bio Facebook** | `Sites web bilingues FR\|EN · écoles, cliniques, opticiens · Douala. Aperçu gratuit.` — la copie du §12.2, **82 / 101**, affichée en entier |
+| **À propos** | le texte du §12.2 est en place (tronqué à l'affichage, c'est normal) |
+| **Localisation** | `Douala, Douala, Cameroon` ✅ — condition des Recommandations remplie |
+| **Horaires** | renseignés (« Closed now » à 23:14 le prouve) — **à confirmer que ce sont les vrais** |
+| **Identifiant Instagram** | `@amkweb.cm` ✅ |
+| **Lien Instagram** | champ cliquable `amk-cm.vercel.app` ✅ |
+| **Photo de profil** | la marque seule, identique sur les trois ✅ |
+
+### 14.1 · Les sept défauts, par ordre de coût
+
+| # | Où | Défaut | Pourquoi ça coûte | Correctif |
+|---|---|---|---|---|
+| **1** | Facebook | **aucun nom d'utilisateur** : l'adresse de la page est `profile.php?id=61595803408384` | on ne peut **ni** l'imprimer, **ni** la mettre dans le pied de page du site (c'était le §9.7 en attente). Un lien `profile.php?id=…` dans un pied de page dit « amateur » | prendre `amkweb`, sinon `amkweb.cm` |
+| **2** | Facebook | **nom toujours long** : `AMK-Web Development & Digital Solutions` | tiret + formule descriptive ; et « Digital Solutions » est le slogan **retiré du site** le 22/10 | renommer `AMK` (§12.0) |
+| **3** | Facebook | **catégorie `Social Media Agency`** | Meta présente la page comme une **agence de réseaux sociaux** — ce que nous ne vendons pas, et ce qui pilote les pages « similaires » suggérées | `Concepteur de sites web` + `Agence de marketing` |
+| **4** | Instagram | **nom** `AMK - WEB DEVELOPMENT & DIGITAL SOLUTIONS` (en capitales, 42 car.) | même nom banni que le n° 2, **et** il dépasse la limite d'affichage : il passe à la ligne et mange la place de la bio | `AMK · Sites web Cameroun` — **24 / 30** |
+| **5** | Instagram **et** TikTok | **bio en anglais seul** | la cible lit français (le Cameroun francophone pèse ≈80 % du pays) ; les concurrents locaux publient en français | copies du §14.2 |
+| **6** | Instagram **et** TikTok | **« free 24h homepage preview »** — un délai **sans sa condition** | c'est le **même défaut que la carte de partage** corrigée hier : le site dit « sous 24 heures **après validation du brief** » ; la bio dit « 24h », ce qui se lit « livré en 24 h ». On promet plus large que le procédé | sortir le chiffre des bios (§14.5) |
+| **7** | Instagram | **badge Threads `@alex_aiproductlab`** | il pointe vers un profil qui n'est pas à nous, en haut du profil, juste sous la bio | retirer (ou remplacer par notre Threads si on en ouvre un) |
+
+**Deux détails du même ordre, non bloquants** : la bio Instagram se termine par l'URL **tapée en texte**
+(elle n'est pas cliquable et coûte 18 caractères alors que le champ *Lien* juste en dessous fait le
+travail) ; le TikTok affiche le **téléphone collé à l'URL** dans la bio, illisible, et sans lien
+cliquable — signe que le champ *Site web* n'est pas encore débloqué (§13.5).
+
+### 14.2 · La copie exacte à coller — Instagram et TikTok
+
+| Champ | Valeur exacte | Longueur |
+|---|---|---|
+| **Instagram — nom** | `AMK · Sites web Cameroun` | **24 / 30** |
+| **Instagram — bio** | `Sites web pour écoles & cliniques · Douala · FR/EN.` ↵ `Aperçu gratuit sur WhatsApp.` ↵ `Websites for schools & clinics in Cameroon.` | **124 / 150** |
+| **Instagram — lien** | `https://amk-cm.vercel.app` (déjà en place) | — |
+| **Instagram — Threads** | **retirer** | — |
+| **TikTok — nom (nickname)** | `AMK · Sites web Cameroun` (aujourd'hui : `@amk.cm` — un identifiant mis dans le champ du nom) | **24 / 30** |
+| **TikTok — bio** | `Sites web écoles & cliniques · Douala · FR/EN. Aperçu gratuit sur WhatsApp.` | **75 / 80** |
+| **TikTok — identifiant** | `@amkweb` — **on n'y touche pas** (§14.6) | 7 |
+| **Facebook — nom** | `AMK` | 3 / 75 |
+| **Facebook — catégorie** | `Concepteur de sites web` (puis `Agence de marketing`) | — |
+| **Facebook — identifiant** | `amkweb`, sinon `amkweb.cm` | ≤ 50 |
+
+**Pourquoi le nom Instagram change encore** (il était `AMK · Sites web FR\|EN` au §13.2) : c'est **moi**
+qui me corrige. `FR|EN` décrit une **caractéristique**, et la bio d'Instagram **n'est pas indexée par la
+recherche** — seuls le nom et l'identifiant le sont. Un nom qui contient `Cameroun` travaille ; « FR|EN »
+ne travaille pas. Et comme le nom ne se change que **deux fois en quatorze jours**, autant le poser juste
+du premier coup.
+
+**Pourquoi la bio Instagram est bilingue et celle de TikTok non** : 150 caractères laissent tenir le
+français **et** l'anglais ; 80 n'en laissent pas la place. Sur TikTok, `FR/EN` dans la première ligne dit
+aux anglophones (Buea, Bamenda, Limbé) qu'on les sert — c'est le maximum honnête dans 80 caractères.
+
+### 14.3 · Le lien Facebook affiche « vercel.app » — à vérifier avant tout
+
+La capture montre, dans *Links* : **`vercel.app`**, et pas `amk-cm.vercel.app`.
+
+Deux explications possibles, et **je ne peux pas trancher d'ici** :
+
+1. **Meta n'affiche que la racine du domaine** → tout va bien, le lien pointe au bon endroit ;
+2. **le champ contient `vercel.app`** (ou `https://vercel.app`) → le lien mène à la page d'accueil de
+   Vercel, pas à notre site. C'est **exactement** le défaut de la carte de partage corrigée hier : le bon
+   texte au bon endroit, sauf un détail qui annule tout.
+
+**Le test, 5 secondes** : touche le lien depuis la page, **sans être connecté**. Tu dois arriver sur la
+page d'accueil AMK (navy, « Sites web pour écoles & cliniques »). Si tu arrives sur Vercel → efface le
+champ et recolle **`https://amk-cm.vercel.app`** en entier.
+
+### 14.4 · Le lien Threads — ce qu'il est, et pourquoi il part
+
+`@alex_aiproductlab` n'apparaît **nulle part** dans le dépôt : ce profil n'est pas un actif AMK. Il est
+affiché **sous la bio**, à l'endroit le plus regardé du profil, et il envoie un visiteur chez quelqu'un
+d'autre. Retrait en trois taps : *Profil → Modifier le profil → Threads → Délier*.
+
+> Si ce compte Threads est le tien et que tu veux le garder : on le **renomme** avant de le relier. Un
+> badge sous la bio est une promesse de marque, pas un raccourci personnel.
+
+### 14.5 · La promesse « 24 h » : elle reste sur le site, elle sort des bios
+
+| Où | Formulation | Verdict |
+|---|---|---|
+| Site (accueil, pages métier) | « sous 24 heures **après validation du brief** » / « après votre premier message » | ✅ **reste** — la condition est dans la même phrase, c'est le procédé réel |
+| Bios Instagram / TikTok (aujourd'hui) | « free **24h** homepage preview » | ❌ **sort** — sans condition, ça se lit « site livré en 24 h » |
+| Bios (après correctif) | « Aperçu gratuit sur WhatsApp » | ✅ aucun chiffre, aucune ambiguïté |
+
+**Si tu préfères garder le chiffre** (il vend), la seule version défendable sur Instagram est :
+`Aperçu de votre page d'accueil sous 24 h ouvrées, sur WhatsApp.` — la condition est dedans, donc elle
+tient. **Sur TikTok, elle ne rentre pas** dans 80 caractères : c'est pour ça que la recommandation est
+« pas de chiffre dans les bios ».
+
+**Contrôle fait sur le dépôt** (recherche de `24 h` sans condition, 22/10) : les pages réelles
+`index`, `creation-site-web-ecole-cameroun`, `creation-site-web-clinique-cameroun` sont **propres**
+(0 occurrence non conditionnée) ; deux quasi-manquements dans `index.html` (« Same promise: 24 hours,
+free. » sur les fiches de démonstration, où la condition est dans la phrase d'avant) ; un faux positif
+dans `clinic-bonaberi.html` (« urgences 24h/24 »). **Les seules vraies violations sont les deux bios
+vivantes** — celles des captures.
+
+### 14.6 · TikTok : `@amkweb` ne bouge pas (je corrige le §13.1)
+
+Le §13.1 recommandait `amkweb.cm` sur les trois. **Je reviens sur ce point, avec la raison** :
+
+| | `@amkweb` (actuel) | `amkweb.cm` |
+|---|---|---|
+| Changement | aucun | **1 par 30 jours**, et l'URL du profil change |
+| Longueur à l'oral | 7 | 9, avec un point qu'on doit épeler |
+| Déjà écrit dans nos fichiers | — | `content/carousels/POST-READY.md`, calendrier, analytics |
+
+**La règle retenue, désormais** : la famille est **`amkweb`** ; `.cm` est un **suffixe de secours**
+employé là où `amkweb` est déjà pris — Facebook, probablement, et Instagram, déjà. Ce qui doit être
+identique partout, c'est **le nom affiché** (`AMK · Sites web Cameroun`) et **la marque** — pas la
+ponctuation d'un identifiant.
+
+> ⚠️ **Ce qui est vraiment cassé sur TikTok, c'est le champ du nom** : il contient `@amk.cm`, c'est-à-dire
+> un identifiant mis là où TikTok attend un nom lisible. Résultat : le profil affiche `@amk.cm` en gros et
+> `@amkweb` en petit, deux adresses différentes sur le même écran.
+
+### 14.7 · Ce que les chiffres disent déjà, et ce qu'ils ne disent pas
+
+| Compte | Abonnés | Vues par vidéo | Lecture |
+|---|---|---|---|
+| TikTok `@amkweb` | **25** | **168 · 165 · 93** | le seul canal qui **distribue** déjà : 3 vidéos à trois chiffres, audience 18–34, 99 % Cameroun |
+| Instagram `@amkweb.cm` | **8** | **7 · 47 · 47 · 47** | 3 vues sur 30 jours (contre 122 au 08/10) : la portée s'est effondrée, pas les abonnés |
+| Facebook | **1** | 0 post | normal : page d'hier |
+
+**Ce que ça change dans le plan** : le §6 (dimanche/lundi) supposait que les trois canaux se valent. Ils
+ne se valent pas. **TikTok porte la distribution**, Facebook portera la conversion (le canal où sont les
+gérants), Instagram suit. Concrètement : la première pièce part sur les **trois** — le carré
+`post-square-1080.png` sur Facebook et Instagram, et **une version verticale 1080 × 1920** pour TikTok
+(le carré y perd les deux tiers de l'écran). La verticale n'est pas encore produite : c'est le prochain
+livrable visuel, pas un blocage.
+
+**Ce qu'on ne conclut pas** : 25 abonnés ne sont pas une audience, 168 vues ne sont pas un marché, et un
+compte de trois semaines tourne **30 à 50 % sous la moyenne pendant 90 jours** (Quimby, Q3 2026). Aucune
+décision de contenu avant novembre.
+
+### 14.8 · L'ordre — 30 minutes, et le premier geste débloque le reste
+
+| # | Où | Geste | Pourquoi ce rang |
+|---|---|---|---|
+| **1** | Facebook | **identifiant `amkweb`** (sinon `amkweb.cm`) | **débloque le pied de page du site** ; sans lui, pas de lien social sur les 12 pages |
+| **2** | Facebook | **catégorie** → Concepteur de sites web (+ Agence de marketing) | gratuit, immédiat, corrige le positionnement vu par Meta |
+| **3** | Facebook | **nom** → `AMK` | part en revue (jusqu'à 3 j) ; plus tôt il part, plus tôt il est passé |
+| **4** | Facebook | **vérifier le lien `vercel.app`** (§14.3) | si le lien est faux, tout le trafic de la page tombe à côté |
+| **5** | Instagram | nom + bio + **retirer Threads** | 4 min |
+| **6** | TikTok | nom (`AMK · Sites web Cameroun`) + bio | 3 min |
+| **7** | Instagram | **relier le compte à la page** (§13.4) | boîte de réception commune |
+| **8** | Facebook + Instagram | **la première pièce** (carré) puis le post de bienvenue | une page à 0 post ne s'invite pas |
+| **9** | Facebook | **invitations** (20–30 personnes) | toujours en dernier |
+
+**Envoie-moi `01` → `04` au fur et à mesure** (protocole §10) : identifiant pris, catégorie changée, nom
+soumis, lien vérifié. Je valide champ par champ, et je branche le pied de page du site dès le n° 1.
+
+### 14.9 · Sources et limites du §14
+
+- **Limites de champs** (nom Instagram 30, bio 150, TikTok 80/160) : voir §13.8, mêmes sources du 22/10.
+- **Catégories Facebook** : liste de l'interface ; les libellés français (`Concepteur de sites web`) sont
+  ceux de l'appli en français — l'équivalent anglais est *Web Designer*.
+- **Non vérifié d'ici** : la valeur réelle du champ *Links* (le « vercel.app » de la capture est ambigu) ·
+  le contenu exact des horaires enregistrés · le type réel du compte TikTok (Studio s'affiche sur les
+  comptes Business **et** Créateur) · l'existence du profil Threads `alex_aiproductlab` et à qui il
+  appartient.
+- **Ce qui a été vérifié dans le dépôt** : bio Facebook 82/101 conforme au §12.2 · contrôle `24 h` sur
+  les 12 pages HTML (§14.5) · `audit_claims.py` sur ce fichier.
