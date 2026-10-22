@@ -46,9 +46,15 @@ RULES = [
         # la fenêtre est volontairement large : dans un storyboard JSON, « le prix » et
         # « est affiché » vivent sur deux lignes différentes.
         "pattern": re.compile(
-            r"(?:(?:prix|tarif)s?\b.{0,120}?\b(?:affich\w*|en ligne|sur le site|public\b|visible\b|en photo))"
+            # 22/10 : la fenêtre ne franchit plus une fin de phrase — « le prix suit le périmètre…
+            # le site est en ligne » n'est pas un prix publié (faux positif sur les 2 pages métier).
+            r"(?:(?:prix|tarif)s?\b[^.!?]{0,120}?\b(?:affich\w*|en ligne|sur le site|publics?\b|visibles?\b|en photo))"
             r"|(?:\bavec son prix\b)|(?:\b(?:affich|consultabl)\w*\b.{0,40}?\bprix\b)",
             re.I | re.S),
+        # Le verrou vise les MONTURES de DM Optique. Le site AMK (dossier `site/`) publie sa
+        # propre grille de prix volontairement, et ses pages métier demandent au client
+        # d'afficher SES tarifs : ce n'est pas la même règle. Faux positifs du 22/10.
+        "paths_exclude": ("site/",),
         "why": "VERROU CLIENT (10/10/2026, verbatim) : « Pour le prix des montures c'est interdit "
                "de le diffuser car nous sommes régit par le ministère de la Santé Publique. » "
                "Aucun prix n'est public, ni sur le site, ni en vidéo, ni en légende.",
@@ -140,8 +146,11 @@ def scan(path: str):
     import bisect
     seen = set()
     ext = os.path.splitext(path)[1].lstrip(".").lower()
+    rel = os.path.relpath(path, ROOT).replace(os.sep, "/")
     for rule in RULES:
         if "exts" in rule and ext not in rule["exts"]:
+            continue
+        if any(rel.startswith(p) for p in rule.get("paths_exclude", ())):
             continue
         for m in rule["pattern"].finditer(flat):
             snippet = m.group(0).strip()

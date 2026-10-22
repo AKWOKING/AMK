@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<script>document.documentElement.className+=" js";</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Création de site web école &amp; clinique, Cameroun | AMK Douala</title>
 <meta name="description" content="Votre école ou clinique est jugée sur Google avant qu'on vous appelle. Site bilingue FR|EN, rendez-vous WhatsApp, aperçu gratuit.">
@@ -33,7 +34,7 @@
    "url": "https://amk-cm.vercel.app/",
    "name": "AMK",
    "alternateName": [
-    "AMK – Web Development & Digital Solutions",
+    "AMK",
     "AMK Douala"
    ],
    "inLanguage": [
@@ -46,7 +47,7 @@
   },
   {
    "@type": "ProfessionalService",
-   "name": "AMK – Web Development & Digital Solutions",
+   "name": "AMK",
    "url": "https://amk-cm.vercel.app",
    "telephone": "+237677789631",
    "email": "akwo.king.dev@gmail.com",
@@ -363,11 +364,13 @@ h2.punch em{font-style:normal;color:#FFC24B}
 .svc-card h3{font-size:1rem;margin:8px 0 0}
 .svc-card p{font-size:.9rem;color:var(--mute);margin:.5rem 0 0}
 /* ambre clair sur blanc = contraste insuffisant (portique). Ambre foncé, 7.1:1. */
-.svc-card .mono{color:#7A4A00;font-size:.66rem}
+.svc-card .mono{color:#7A4A00;font-size:.7rem}  /* 22/10 : 10,56px → 11,2px, plancher de lisibilité */
 section .note{font-size:.85rem;color:var(--mute);margin-top:16px}
 
 /* reveal */
-.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+/* 22/10 : l'animation d'apparition ne s'arme que si JS est là. Avant, un script bloqué
+   ou une erreur laissait 41 blocs à opacity:0 — page vide pour qui n'exécute pas le JS. */
+html.js .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
 .rv.in{opacity:1;transform:none}
 
 /* progress */
@@ -399,6 +402,9 @@ nav.main a:hover{color:var(--amber-l)}
 
 /* hero */
 .hero{background:var(--navy4);color:#fff;padding:150px 0 90px;position:relative;overflow:hidden}
+/* a11y 22/10 : le sous-titre héritait du slate #64748B sur navy4 = 3,93:1 (WCAG AA exige 4,5:1).
+   Le défaut touchait aussi .process et .audit, qui portent la classe .dark. */
+.hero .sub,.hero p.sub,.dark .sub,.dark p.sub{color:#CBD5E1}
 .hero::before{content:"";position:absolute;top:-300px;right:-200px;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.14),transparent 62%)}
 .hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(148,163,184,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.05) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 30% 20%,black,transparent 70%)}
 .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
@@ -624,7 +630,7 @@ header#hdr small{color:#6B7584}
 header#hdr a{color:#72777E}
 header#hdr .lang-sw button{color:#6B7584}
 header#hdr .lang-sw button.on{color:var(--navy)}
-div#m-nav a.btn{color:#5C5C5C}
+div#m-nav a.btn{color:#0F172A}
 section#work span.loc{color:#6B7584}
 section#audit p.form-small{color:#6B7584}
 header#hdr span.t{color:#757575}
@@ -640,7 +646,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
   <div class="wrap h-in">
     <a class="brand" href="#top" aria-label="AMK">
       <svg aria-hidden="true" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1E293B"/><circle cx="32" cy="30" r="17" fill="none" stroke="#F59E0B" stroke-width="2.4"/><path d="M32 16v28M32 30L18 44M32 30l14 14" stroke="#FCD34D" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="16" r="3" fill="#F59E0B"/><circle cx="18" cy="44" r="3" fill="#F59E0B"/><circle cx="46" cy="44" r="3" fill="#F59E0B"/></svg>
-      <span class="t">AMK<small data-en="Web Development & Digital Solutions" data-fr="Développement Web & Solutions Digitales">Développement Web & Solutions Digitales</small></span>
+      <span class="t">AMK<small data-en="Websites for schools and clinics" data-fr="Sites web pour écoles et cliniques">Sites web pour écoles et cliniques</small></span>
     </a>
     <nav class="main">
       <a href="#work" data-en="Work" data-fr="Réalisations">Réalisations</a>
@@ -690,7 +696,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
         </div>
         <div class="h-panel" data-niche="clinic">
           <h2 class="punch"><span data-en="Your next patient is" data-fr="Votre prochain patient">Votre prochain patient</span> <em data-en="choosing" data-fr="choisit">choisit</em> <span data-en=", and they're searching right now." data-fr=", et il cherche en ce moment.">, et il cherche en ce moment.</span></h2>
-          <p class="sub" data-en="Patients search “dentist in Buea” or “clinic in Douala”. If they can't find you, or land on a Facebook page, they stop at your competitor's door. We build clinic sites that put you first: two languages, clear FCFA pricing, booking on WhatsApp." data-fr="Les patients cherchent « dentiste à Buea » ou « clinique à Douala ». S'ils ne vous trouvent pas, ou tombent sur une page Facebook, ils s'arrêtent chez votre concurrent. Nous construisons des sites de clinique qui vous placent en premier : deux langues, tarifs FCFA clairs, rendez-vous sur WhatsApp.">Les patients cherchent « dentiste à Buea » ou « clinique à Douala ». S'ils ne vous trouvent pas, ou tombent sur une page Facebook, ils s'arrêtent chez votre concurrent. Nous construisons des sites de clinique qui vous placent en premier : deux langues, tarifs FCFA clairs, rendez-vous sur WhatsApp.</p>
+          <p class="sub" data-en="Patients search “dentist in Buea” or “clinic in Douala”. If they can't find you, or land on a Facebook page, they stop at your competitor's door. We build clinic sites you can actually find: two languages, clear FCFA pricing, booking on WhatsApp." data-fr="Les patients cherchent « dentiste à Buea » ou « clinique à Douala ». S'ils ne vous trouvent pas, ou tombent sur une page Facebook, ils s'arrêtent chez votre concurrent. Nous construisons des sites de clinique qu'on trouve quand on cherche votre spécialité : deux langues, tarifs FCFA clairs, rendez-vous sur WhatsApp.">Les patients cherchent « dentiste à Buea » ou « clinique à Douala ». S'ils ne vous trouvent pas, ou tombent sur une page Facebook, ils s'arrêtent chez votre concurrent. Nous construisons des sites de clinique qu'on trouve quand on cherche votre spécialité : deux langues, tarifs FCFA clairs, rendez-vous sur WhatsApp.</p>
         </div>
       </div>
       <div class="h-ctas">
@@ -926,10 +932,10 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
     </div>
     <div class="steps">
       <div class="step rv"><div class="n">1</div><small data-en="Today" data-fr="Aujourd'hui">Aujourd'hui</small><h3 data-en="Message us" data-fr="Envoyez-nous un message">Envoyez-nous un message</h3><p data-en="One WhatsApp message: your school's or clinic's name, your town, your number." data-fr="Un message WhatsApp : le nom de votre école ou de votre clinique, votre ville, votre numéro.">Un message WhatsApp : le nom de votre école ou de votre clinique, votre ville, votre numéro.</p></div>
-      <div class="step rv" data-d="80"><div class="n">2</div><small data-en="Within 24h après validation du brief" data-fr="Sous 24h après validation du brief">Sous 24h après validation du brief</small><h3 data-en="Free preview" data-fr="Aperçu gratuit">Aperçu gratuit</h3><p data-en="We design your real homepage, your logo, your colors, your story, and send it to you. Free." data-fr="Nous concevons votre vraie page d'accueil, votre logo, vos couleurs, votre histoire, et nous vous l'envoyons. Gratuit.">Nous concevons votre vraie page d'accueil, votre logo, vos couleurs, votre histoire, et nous vous l'envoyons. Gratuit.</p></div>
+      <div class="step rv" data-d="80"><div class="n">2</div><small data-en="Within 24h of your first message" data-fr="Sous 24h après validation du brief">Sous 24h après validation du brief</small><h3 data-en="Free preview" data-fr="Aperçu gratuit">Aperçu gratuit</h3><p data-en="We design your real homepage, your logo, your colors, your story, and send it to you. Free." data-fr="Nous concevons votre vraie page d'accueil, votre logo, vos couleurs, votre histoire, et nous vous l'envoyons. Gratuit.">Nous concevons votre vraie page d'accueil, votre logo, vos couleurs, votre histoire, et nous vous l'envoyons. Gratuit.</p></div>
       <div class="step rv" data-d="160"><div class="n">3</div><small>48h</small><h3 data-en="Your words" data-fr="Vos remarques">Vos remarques</h3><p data-en="You review it with your team, we refine it. You don't pay until you approve." data-fr="Vous l'examinez avec votre équipe, nous l'ajustons. Vous ne payez rien avant votre validation.">Vous l'examinez avec votre équipe, nous l'ajustons. Vous ne payez rien avant votre validation.</p></div>
-      <div class="step rv" data-d="240"><div class="n">4</div><small data-en="as soon as you approve" data-fr="dès votre validation">dès votre validation</small><h3 data-en="Build & launch" data-fr="Construction & lancement">Construction & lancement</h3><p data-en="Domain, secure hosting, both languages, final checks. Live before the end of the week." data-fr="Domaine, hébergement sécurisé, deux langues, vérifications finales. En ligne avant la fin de la semaine.">Domaine, hébergement sécurisé, deux langues, vérifications finales. En ligne avant la fin de la semaine.</p></div>
-      <div class="step rv" data-d="320"><div class="n">5</div><small data-en="30 days" data-fr="30 jours">30 jours</small><h3 data-en="Support" data-fr="Support">Support</h3><p data-en="staff training, " data-fr="la formation du personnel, ">la formation du personnel, </p></div>
+      <div class="step rv" data-d="240"><div class="n">4</div><small data-en="as soon as you approve" data-fr="dès votre validation">dès votre validation</small><h3 data-en="Build & launch" data-fr="Construction & lancement">Construction & lancement</h3><p data-en="Domain, secure hosting, both languages, final checks. We launch as soon as you approve." data-fr="Domaine, hébergement sécurisé, deux langues, vérifications finales. On met en ligne dès votre validation.">Domaine, hébergement sécurisé, deux langues, vérifications finales. On met en ligne dès votre validation.</p></div>
+      <div class="step rv" data-d="320"><div class="n">5</div><small data-en="30 days" data-fr="30 jours">30 jours</small><h3 data-en="Support" data-fr="Support">Support</h3><p data-en="30 minutes of staff training, on your premises or on WhatsApp. The site is yours: domain, files, hosting." data-fr="30 minutes de formation de votre personnel, au cabinet ou sur WhatsApp. Le site est à vous : domaine, fichiers, hébergement.">30 minutes de formation de votre personnel, au cabinet ou sur WhatsApp. Le site est à vous : domaine, fichiers, hébergement.</p></div>
     </div>
   </div>
 </section>
@@ -1035,7 +1041,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
       <p class="sub" data-en="Send one message. Within 24 hours after brief sign-off, your homepage concept is on your phone, in both languages. Free, and nothing is owed until you approve it." data-fr="Envoyez un message. Sous 24 heures après validation du brief, le concept de votre page d'accueil est dans votre téléphone, dans les deux langues. Gratuit, et rien n'est dû avant votre validation.">Envoyez un message. Sous 24 heures après validation du brief, le concept de votre page d'accueil est dans votre téléphone, dans les deux langues. Gratuit, et rien n'est dû avant votre validation.</p>
       <div class="ap"><span class="b">1</span><p data-en="<b>Free.</b> No payment for the preview, and none until you approve it." data-fr="<b>Gratuit.</b> Aucun paiement pour l'aperçu, et aucun avant votre validation."><b>Gratuit.</b> Aucun paiement pour l'aperçu, et aucun avant votre validation.</p></div>
       <div class="ap"><span class="b">2</span><p data-en="<b>Yours.</b> Your logo, your colors, your story, not a generic template." data-fr="<b>Vôtre.</b> Votre logo, vos couleurs, votre histoire, pas un template générique."><b>Vôtre.</b> Votre logo, vos couleurs, votre histoire, pas un template générique.</p></div>
-      <div class="ap"><span class="b">3</span><p data-en="<b>Fast.</b> Preview in 24h après validation du brief. Full site live in as soon as you approve." data-fr="<b>Rapide.</b> Aperçu en 24h après validation du brief. Site complet en ligne en dès votre validation."><b>Rapide.</b> Aperçu en 24h après validation du brief. Site complet en ligne en dès votre validation.</p></div>
+      <div class="ap"><span class="b">3</span><p data-en="<b>Fast.</b> Preview within 24h of your first message. Full site live as soon as you approve." data-fr="<b>Rapide.</b> Aperçu sous 24 h après votre premier message. Site complet en ligne dès votre validation."><b>Rapide.</b> Aperçu sous 24 h après votre premier message. Site complet en ligne dès votre validation.</p></div>
       <div class="direct">
         <h3 data-en="Prefer to talk now?" data-fr="Vous préférez parler maintenant ?">Vous préférez parler maintenant ?</h3>
         <p data-en="WhatsApp / call:" data-fr="WhatsApp / appel :">WhatsApp / appel :</p>
@@ -1075,7 +1081,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
           <svg aria-hidden="true" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1E293B"/><circle cx="32" cy="30" r="17" fill="none" stroke="#F59E0B" stroke-width="2.4"/><path d="M32 16v28M32 30L18 44M32 30l14 14" stroke="#FCD34D" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="16" r="3" fill="#F59E0B"/><circle cx="18" cy="44" r="3" fill="#F59E0B"/><circle cx="46" cy="44" r="3" fill="#F59E0B"/></svg>
           <span class="t">AMK</span>
         </div>
-        <p style="font-size:14.5px" data-en="AMK · Web Development & Digital Solutions" data-fr="AMK · Développement Web & Solutions Digitales">AMK · Développement Web & Solutions Digitales</p>
+        <p style="font-size:14.5px" data-en="AMK · Websites for schools and clinics" data-fr="AMK · Sites web pour écoles et cliniques">AMK · Sites web pour écoles et cliniques</p>
         <p style="margin-top:8px;font-size:14px" data-en="Modern, bilingual websites for schools and clinics that are ready to be found." data-fr="Des sites modernes et bilingues pour les écoles et les cliniques prêtes à être trouvées.">Des sites modernes et bilingues pour les écoles et les cliniques prêtes à être trouvées.</p>
       </div>
       <div>

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>document.documentElement.className+=" js";</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Medical Clinic & Laboratory Website Concept · Bonabéri Medical Centre (Template) | AMK Cameroon</title>
 <meta name="description" content="A patient-first private clinic concept by AMK: transparent FCFA pricing, same-day laboratory, maternity scans, WhatsApp booking in English and French. Template for any clinic in Cameroon. Free preview.">
@@ -232,7 +233,7 @@ footer{background:#0C2E23;color:#9CB5AC;padding:48px 0 24px;font-size:14px}
 .mbar a{flex:1;min-height:52px;display:flex;align-items:center;justify-content:center}
 @media(max-width:860px){.proof-grid{grid-template-columns:1fr;gap:22px;padding:32px 0}.proof-rate{border-right:none;border-bottom:1px solid var(--line);padding:0 0 22px}.proof-q{grid-template-columns:1fr}}
 /* reveal */
-.rv{opacity:0;transform:translateY(22px);transition:opacity var(--dur-reveal) var(--ease-out),transform var(--dur-reveal) var(--ease-out)}
+html.js .rv{opacity:0;transform:translateY(22px);transition:opacity var(--dur-reveal) var(--ease-out),transform var(--dur-reveal) var(--ease-out)}
 .rv.in{opacity:1;transform:none}
 @media (hover:hover) and (pointer:fine){
   .btn-green:hover{transform:translateY(-2px)}
@@ -285,7 +286,7 @@ footer{background:#0C2E23;color:#9CB5AC;padding:48px 0 24px;font-size:14px}
 </head>
 <body>
 
-<div class="demobar" data-en="Demo / concept: fictional medical facility" data-fr="Démo / concept — établissement médical fictif">Demo / concept — fictional medical facility</div>
+<div class="demobar" data-en="Demo / concept — fictional medical facility" data-fr="Démo / concept — établissement médical fictif">Demo / concept — fictional medical facility</div>
 
 <header>
   <div class="wrap nav">
@@ -367,7 +368,7 @@ footer{background:#0C2E23;color:#9CB5AC;padding:48px 0 24px;font-size:14px}
       <p class="sub" data-en="Six services under one roof, so a consultation, a test and a scan do not mean three trips across town." data-fr="Six services sous un même toit : une consultation, un examen et une échographie ne vous font pas traverser la ville trois fois.">Six services under one roof, so a consultation, a test and a scan do not mean three trips across town.</p>
     </div>
     <div class="bento">
-      <div class="bcell rv"><div class="ico">🩺</div><h3 data-en="General consultation" data-fr="Consultation générale">General consultation</h3><p data-en="Adult and family medicine. Full examination, a diagnosis you understand and a written treatment plan." data-fr="Médecine générale adulte et familiale. Examen complet, diagnostic expliqué et plan de traitement écrit.">Full examination, a diagnosis you understand and a written treatment plan.</p><a class="more" href="#book" data-en="Book a visit →" data-fr="Prendre rendez-vous →">Book a visit →</a></div>
+      <div class="bcell rv"><div class="ico">🩺</div><h3 data-en="General consultation" data-fr="Consultation générale">General consultation</h3><p data-en="Adult and family medicine. Full examination, a diagnosis you understand and a written treatment plan." data-fr="Médecine générale adulte et familiale. Examen complet, diagnostic expliqué et plan de traitement écrit.">Adult and family medicine. Full examination, a diagnosis you understand and a written treatment plan.</p><a class="more" href="#book" data-en="Book a visit →" data-fr="Prendre rendez-vous →">Book a visit →</a></div>
       <div class="bcell photo rv" style="transition-delay:.06s"><div class="ph bg-mat" role="img" aria-label="Maternity ultrasound scan"></div><div class="pin"><div class="ico">🤰</div><h3 data-en="Maternity &amp; 4D ultrasound" data-fr="Maternité &amp; échographie 4D">Maternity &amp; 4D ultrasound</h3><p data-en="Antenatal visits with a live scan: see your baby, and leave with printed images." data-fr="Consultations prénatales avec échographie en direct : voyez votre bébé et repartez avec les images.">Antenatal visits with a live scan: see your baby, and leave with printed images.</p></div></div>
       <div class="bcell rv" style="transition-delay:.12s"><div class="ico">🧪</div><h3 data-en="Diagnostic laboratory" data-fr="Laboratoire d'analyses">Diagnostic laboratory</h3><p data-en="Blood counts, malaria and typhoid screening, blood sugar, urinalysis and more, same day." data-fr="Numérations sanguines, dépistages paludisme et fièvre typhoïde, glycémie, analyse d'urines et plus, le jour même.">Blood counts, malaria and typhoid screening, blood sugar, urinalysis and more, same day.</p><a class="more" href="#book" data-en="Book a test →" data-fr="Planifier un examen →">Book a test →</a></div>
       <div class="bcell photo rv"><div class="ph bg-lab" role="img" aria-label="Clinic laboratory"></div><div class="pin"><div class="ico">🔬</div><h3 data-en="Modern equipment" data-fr="Équipement moderne">Modern equipment</h3><p data-en="Maintained analyzers and sterile procedures for every patient, every time." data-fr="Analyseurs entretenus et procédures stériles pour chaque patient, à chaque fois.">Maintained analyzers and sterile procedures for every patient, every time.</p></div></div>
@@ -560,7 +561,7 @@ footer{background:#0C2E23;color:#9CB5AC;padding:48px 0 24px;font-size:14px}
 <footer>
   <div class="wrap">
     <div class="amk-bar">
-      <span class="t"><b data-en="This website is a concept by AMK" data-fr="Ce site est un concept d'AMK">This website is a concept by AMK</b> — Web Development &amp; Digital Solutions<small data-en="Patient-first, bilingual (EN|FR), mobile-fast clinic template with transparent FCFA pricing and WhatsApp booking. Replace the name, photos, prices and team with your clinic's own, and it is yours in 3 to 5 days after the deposit." data-fr="Modèle de clinique pensé patient, bilingue (EN|FR), rapide sur mobile, avec tarifs FCFA transparents et réservation WhatsApp. Remplacez nom, photos, tarifs et équipe par ceux de votre clinique, et il est à vous en 3 à 5 jours après l'acompte.">Patient-first, bilingual (EN|FR), mobile-fast clinic template with transparent FCFA pricing and WhatsApp booking. Replace the name, photos, prices and team with your clinic's own, and it is yours in 3 to 5 days after the deposit.</small></span>
+      <span class="t"><b data-en="This website is a concept by AMK" data-fr="Ce site est un concept d'AMK">This website is a concept by AMK</b> — Websites for schools and clinics<small data-en="Patient-first, bilingual (EN|FR), mobile-fast clinic template with transparent FCFA pricing and WhatsApp booking. Replace the name, photos, prices and team with your clinic's own, and it is yours." data-fr="Modèle de clinique pensé patient, bilingue (EN|FR), rapide sur mobile, avec tarifs FCFA transparents et réservation WhatsApp. Remplacez nom, photos, tarifs et équipe par ceux de votre clinique, et il est à vous.">Patient-first, bilingual (EN|FR), mobile-fast clinic template with transparent FCFA pricing and WhatsApp booking. Replace the name, photos, prices and team with your clinic's own, and it is yours.</small></span>
       <a class="btn btn-green" style="padding:12px 22px;font-size:14px" href="index.html" data-en="Back to AMK website" data-fr="Retour au site d'AMK">Back to AMK website</a>
     </div>
     <div class="f-grid">
@@ -587,7 +588,7 @@ footer{background:#0C2E23;color:#9CB5AC;padding:48px 0 24px;font-size:14px}
     </div>
     <div class="f-bottom">
       <span data-en="© 2026 Bonabéri Medical Centre (concept)" data-fr="© 2026 Bonabéri Medical Centre (concept)">© 2026 Bonabéri Medical Centre (concept)</span>
-      <span>Concept by AMK · Web Development &amp; Digital Solutions</span>
+      <span>Concept by AMK · Websites for schools and clinics</span>
     </div>
   </div>
 </footer>
