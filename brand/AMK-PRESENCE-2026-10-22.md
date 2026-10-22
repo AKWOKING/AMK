@@ -214,7 +214,7 @@ Aller directement à **`facebook.com/pages/create`** (plus court que le menu).
 | 2 | **Nom** | ⚠️ **voir l'arbitrage ci-dessous** | c'est le champ le plus difficile à changer |
 | 3 | **Catégorie principale** | **Concepteur de sites web** (*Web designer*) | décrit ce qu'on vend, pas ce qu'on est |
 | 4 | Catégories secondaires | *Marketing agency*, *Website designer*… | 3 maximum ; Meta permet d'en ajouter après |
-| 5 | **Bio (255 car.)** | `Sites web bilingues FR`\|`EN pour écoles, cliniques et opticiens au Cameroun. Aperçu gratuit sur WhatsApp, sous 24 h. Douala.` | le mot-clé + la promesse tenable |
+| 5 | **Bio (101 car. dans la nouvelle interface, pas 255 — corrigé au §12)** | `Sites web bilingues FR\|EN · écoles, cliniques, opticiens · Douala. Aperçu gratuit.` (82 car.) | le mot-clé + le lieu ; l'**About** (255) porte le reste |
 | 6 | **Photo de profil** | `AMK-logo-square.png` (1024²) | lisible en 40 px, pas de texte fin |
 | 7 | **Couverture** | 1640 × 624 px, zone utile centrée 820 × 312 | le mobile recadre : rien d'important sur les bords |
 | 8 | **Adresse** | Douala, Cameroun *(pas l'adresse exacte si tu travailles de chez toi : quartier suffit)* | **obligatoire pour activer les Recommandations** |
@@ -331,3 +331,209 @@ vérifient à la main, en cinq minutes.
   30–50 % sous les moyennes pendant les 90 premiers jours).
 - **Non vérifié d'ici** : l'existence réelle de `facebook.com/amkweb` (403 pour tout robot), la fiche
   Google d'AMK, et le nom exact qu'elles portent aujourd'hui.
+
+---
+
+## 12 · Remplir les onze champs — la copie exacte (22/10, tour 57)
+
+> **Ce que montre la capture (21:04, 22/10).** La page **existe déjà** : elle s'appelle
+> **« AMK-Web Development & Digital Solutions »**, écrite par un profil qui a l'appli Instagram à côté
+> dans la barre d'état — donc celui de King. **11 tâches, 0 faite.** C'est une bonne nouvelle : le moment
+> coûteux (créer) est passé, il reste 25 minutes de remplissage.
+>
+> **Rien n'est bloqué par moi.** Les deux visuels sont prêts ci-dessous ; le reste est de la copie à
+> coller. L'ordre du §12.1 n'est pas décoratif : il évite un travail à refaire.
+
+### 12.0 · D'abord, le nom — la seule décision qui a une date limite
+
+Le nom actuel a **deux problèmes**, et le second est le nôtre :
+
+1. **Il contient un tiret et une formule descriptive.** Les règles de Meta refusent la ponctuation et les
+   « mots ou phrases à la place d'un nom » ; les changements de nom passent désormais en **revue humaine**.
+   Un nom qui passe aujourd'hui peut être refusé demain, et c'est la page entière qui ralentit.
+2. **« Digital Solutions » est exactement le slogan banni par notre §11b** — et il n'apparaît **plus nulle
+   part sur le site** depuis le 22/10 (remplacé par « Sites web pour écoles et cliniques »). Une page
+   Facebook qui affiche un slogan retiré du site se contredit sur son propre nom.
+
+**Recommandation : renommer en `AMK`, maintenant.** Les raisons sont mécaniques :
+
+| Fait vérifié (22/10) | Conséquence |
+|---|---|
+| Une page ne peut changer de nom qu'**une fois tous les 60 jours**, et **deux fois par an** | chaque essai coûte deux mois : on ne « teste » pas un nom |
+| Après approbation, **7 jours** sans pouvoir renommer ni dépublier | à faire **avant** d'inviter qui que ce soit |
+| La revue prend **jusqu'à 3 jours** | on la lance **en premier**, elle tourne pendant qu'on remplit le reste |
+| La page a **0 abonné, 0 post, 0 invitation envoyée** | le changement ne coûte **rien** aujourd'hui ; il coûtera des liens et de la mémoire plus tard |
+
+**Si tu préfères garder le nom long**, ce n'est pas une faute : dans ce cas, **la bio doit porter les
+mots-clés** (elle le fait ci-dessous) et il faut accepter que le slogan « Digital Solutions » reste
+visible dans chaque partage. Dis-moi lequel des deux et je suis la ligne choisie, sans mélange.
+
+> Le **nom d'utilisateur** (`@…`, l'adresse de la page) est un champ **séparé** : renommer la page ne
+> change pas l'adresse. À prendre juste après : `amkweb` si libre (c'est déjà l'Instagram `@amkweb.cm`),
+> sinon `amk.cm`, sinon `amkwebcm`. Meta n'accepte que lettres, chiffres et points.
+
+### 12.1 · L'ordre d'exécution (ne pas inverser)
+
+| # | Champ | Temps | Pourquoi à ce moment-là |
+|---|---|---|---|
+| **1** | **Nom** → `AMK` | 1 min + revue | part en revue ; on ne l'attend pas pour continuer |
+| 2 | Photo de profil | 1 min | un visuel prêt, pas une recherche |
+| 3 | Couverture | 1 min | idem |
+| 4 | Bio (101) | 2 min | c'est ce que lisent les gens dans la recherche |
+| 5 | À propos (255) | 2 min | l'endroit où va la preuve |
+| 6 | Lien du site | 10 s | `https://amk-cm.vercel.app` |
+| 7 | Localisation + zone desservie | 2 min | **condition pour que les Recommandations s'affichent** |
+| 8 | Horaires | 1 min | une page sans horaires paraît abandonnée |
+| 9 | Téléphone | 10 s | `+237 677 789 631` |
+| 10 | WhatsApp Business | 2 min | c'est ce qui alimente le bouton |
+| 11 | Bouton d'action | 1 min | **en dernier** : il dépend du n° 10 |
+| 12 | Post de bienvenue | 5 min | la page doit avoir l'air vivante **avant** les invitations |
+| **13** | **Inviter des amis** | 2 min | **en dernier** — inviter sur une page vide gaspille l'invitation |
+
+### 12.2 · Les champs, valeur exacte, longueur comptée
+
+| Champ | Valeur à coller | Longueur |
+|---|---|---|
+| **Nom** | `AMK` | 3 |
+| **Catégorie principale** | `Concepteur de sites web` (*Web Designer*) | — |
+| **Catégories secondaires** | `Agence de marketing` (*Marketing agency*) · `Service de conception de sites` si proposé | 2 max |
+| **Photo de profil** | `brand/facebook/profile-1024.png` | — |
+| **Couverture** | `brand/facebook/cover-1640x624.png` | — |
+| **Bio (101)** | `Sites web bilingues FR\|EN · écoles, cliniques, opticiens · Douala. Aperçu gratuit.` | **82** |
+| **À propos (255)** | `AMK fait des sites web bilingues FR\|EN pour écoles privées, cliniques, laboratoires et opticiens du Cameroun. Aperçu de votre page d'accueil sur WhatsApp ; en ligne dès votre validation ; le site vous appartient : domaine, fichiers, hébergement. Douala.` | **253** |
+| **À propos — version EN** (si le champ bilingue existe, sinon en second paragraphe) | `AMK builds bilingual FR\|EN websites for private schools, clinics, laboratories and opticians in Cameroon. Homepage preview on WhatsApp; live as soon as you approve; the site is yours: domain, files, hosting. Douala.` | **215** |
+| **Site web** | `https://amk-cm.vercel.app` | — |
+| **Localisation** | `Douala, Cameroun` — quartier, pas l'adresse du domicile | — |
+| **Zone desservie** | `Douala` · `Yaoundé` · `Buea` · `Limbé` · `Bafoussam` · `Bamenda` (les six villes déjà citées sur le site) | — |
+| **Horaires** | **les vrais.** Si tu réponds sur WhatsApp du lundi au samedi de 8 h à 19 h, c'est ça. Ne coche **pas** « toujours ouvert » si c'est faux | — |
+| **Téléphone** | `+237 677 789 631` | — |
+| **WhatsApp Business** | le même numéro, compte WhatsApp Business (pas l'appli normale) | — |
+| **Bouton d'action** | **« Envoyer un message WhatsApp »**, message pré-rempli : `Bonjour AMK, j'ai vu votre page. Je voudrais un aperçu pour mon établissement.` | — |
+
+**Ce que la bio et l'À propos ne contiennent pas, volontairement** : aucun prix, aucun délai de livraison,
+aucun nombre de clients, aucun avis. Les trois sont soit interdits, soit non prouvables aujourd'hui.
+
+### 12.3 · Le post de bienvenue — texte à coller
+
+> **Pourquoi celui-là** : il dit ce qu'on fait, pour qui, et ce qu'on refuse. Il porte **deux preuves**
+> vérifiables (le site existe, l'aperçu existe) et **zéro** promesse de classement. Il tient en une
+> lecture de téléphone.
+
+```
+Votre école ou votre clinique est jugée avant qu'on vous appelle.
+
+Un parent cherche « école à Bonabéri » sur son téléphone. S'il ne vous trouve pas — ou s'il tombe
+sur une page Facebook sans les frais, sans les horaires, sans l'adresse — il appelle le suivant.
+
+On construit le site qui répond à ces questions en dix secondes, en français et en anglais.
+
+Ce qu'on fait, concrètement :
+• une page qui s'ouvre vite sur un téléphone en 3G
+• les frais ou les tarifs, écrits dans la page
+• un bouton WhatsApp, pas un formulaire à remplir
+• le site à vous : domaine, fichiers, hébergement
+
+Ce qu'on ne fait pas :
+• promettre une place dans Google — personne ne peut la garantir
+• inventer des avis
+• vendre un forfait que vous ne comprenez pas
+
+Et une chose qu'on assume : vous voyez l'aperçu de votre page d'accueil avant de payer quoi que
+ce soit.
+
+Écrivez « aperçu » en message : dites-nous votre métier et votre quartier, on vous répond.
+
+Le site est ici 👉 https://amk-cm.vercel.app
+```
+
+**En anglais, à mettre en premier commentaire** (pas dans le post : deux langues dans un même post
+doublent la longueur et coupent la lecture) :
+
+```
+Your school or clinic is judged before anyone calls you.
+
+A parent searches "school in Bonabéri" on their phone. If they can't find you — or they land on a
+Facebook page with no fees, no hours, no address — they call the next one.
+
+We build the site that answers those questions in ten seconds, in French and in English.
+
+What you get: a page that opens fast on a 3G phone · your fees written on the page · a WhatsApp
+button, not a form · the site is yours: domain, files, hosting.
+
+What we don't do: promise a Google ranking, invent reviews, or sell you a package you don't
+understand.
+
+And one thing we stand by: you see your homepage preview before paying anything.
+
+Write "preview" in a message — tell us your trade and your neighbourhood, we'll reply.
+
+https://amk-cm.vercel.app
+```
+
+**Le premier commentaire doit être posé dans la minute** qui suit la publication (la tactique du
+premier commentaire, §15.6 de `sales/research/2026-W43-techniques.md`), avec une question qui invite à
+répondre — jamais un lien nu.
+
+### 12.4 · Les deux visuels, prêts
+
+| Fichier | Ce que c'est | Contrôle fait |
+|---|---|---|
+| `brand/facebook/profile-1024.png` | la **marque seule** (cercle + triangle ambre), sur navy, sans le mot « AMK » | aperçu **à 40 px** généré (`profile-preview-40px.png`) : la forme reste lisible ; le motmark, lui, serait devenu une tache |
+| `brand/facebook/cover-1640x624.png` | couverture typographique : « Sites web pour écoles & cliniques » + « Bilingues FR \| EN » + « Aperçu gratuit … Douala » + l'adresse du site | **tout le texte tient dans la zone 820 × 312** (contrôlé par calcul dans le script), et le recadrage mobile est sorti à part : `cover-mobile-820x312.png` |
+| `brand/facebook/cover-mobile-820x312.png` | le recadrage téléphone, pour vérification à l'œil | — |
+
+Reconstruits par `python3 brand/build_fb_assets.py` (les fichiers sont versionnés ; le script ne demande
+aucune retouche manuelle).
+
+**Pourquoi une couverture typographique et pas une capture de site** : les six sites du catalogue sont
+des **concepts** avec des noms fictifs. Mettre une école inventée en couverture d'une page d'entreprise,
+c'est exactement ce que le §13 du protocole d'unicité interdit. La couverture changera le jour où un
+**vrai** client aura accepté qu'on montre son site — et ce jour-là, elle prendra sa capture.
+
+### 12.5 · Les trois pièges de cette page
+
+1. **« Inviter des amis » n'est pas « demander des avis ».** Invite **20 à 30 personnes** qui connaissent
+   le travail (pas les 500 du carnet) : une invitation massive ressemble à du spam et abîme la portée des
+   premières publications. Et ne demande **jamais** une recommandation à quelqu'un qui n'a pas été client :
+   c'est un faux avis, notre règle et celle de Meta.
+2. **Les Recommandations doivent être activées, mais elles resteront vides un moment.** Meta n'affiche une
+   note qu'à partir de **5 avis publics** ; en dessous, la page affiche « pas encore noté ». C'est normal,
+   et un faux 5/5 se voit de loin.
+3. **Le site ne renvoie pas encore vers la page.** Dès que la page existe, on ajoute son lien aux trois
+   pages réelles (§20.2, resté ouvert depuis l'audit du 22/10) — c'est le lien entrant le moins cher qu'on
+   aura jamais. 10 minutes, et je le fais sur ton feu vert.
+
+### 12.6 · Ce que j'attends en retour
+
+Les captures **01 → 09** du §10, une par étape. Sur chacune je vérifie : le champ exact, la longueur, et
+l'absence de prix, de délai et de superlatif. Je réponds « continue » ou « corrige ce champ » — et pour
+le nom, je te confirme le choix **avant** que tu envoies la demande de changement, parce qu'elle coûte
+60 jours.
+
+### 12.8 · Trouvé en chemin : la carte de partage du site promettait encore un délai
+
+En vérifiant ce qu'un lien du site affiche quand on le colle sur Facebook ou WhatsApp (c'est la première
+image qu'un prospect voit, avant la page elle-même), j'ai trouvé que **`site/img/og-cover.jpg` portait
+encore « live in 3–5 days »**. La promesse avait été retirée des pages le 22/10, mais **pas de l'image**
+— et une image ne se relit pas avec un `grep` sur le texte.
+
+- **Correctif** : le script `site/img/make_og.py` est corrigé (la pastille dit maintenant
+  « WhatsApp-first · Douala, Cameroun »), l'image est régénérée, et `amk-site.zip` reconstruit.
+- **Amélioration** : la règle « aucun délai promis » doit inclure **les visuels de partage**, qui sont
+  souvent les seuls lus. Contrôle à ajouter : un coup d'œil obligatoire à `og-cover.jpg` dans la passe
+  de livraison (une image se vérifie à l'œil, aucun portique ne lit du texte dans une image).
+- **Action** : fait par l'orchestrateur ; **King redéploie** pour que la nouvelle image soit servie (les
+  réseaux gardent l'ancienne en cache plusieurs jours — repasser par le *Facebook Sharing Debugger*).
+
+### 12.7 · Sources du §12 (lues le 22/10/2026)
+
+- **Limites de champs** : lettercounter.org (29/01/2026) · typecount.com (07/09/2026) · boldlytype.com
+  (19/08/2026) · recurpost.com (21/08/2026) — **bio de page = 101 caractères** dans la nouvelle
+  interface (le 255 d'avant ne s'applique plus au champ d'en-tête ; 255 = « À propos »).
+- **Renommage** : louisem.com (04/02/2026, qui cite le message de Meta : revue jusqu'à 3 jours, puis
+  7 jours sans renommer ni dépublier) · clepher.com (10/09/2026) · izoate.com (27/06/2026, **60 jours**
+  entre deux changements) · socialcrm.org (24/06/2026, **deux renommages par an** pour une page).
+- **Recommandations** : cloutly.com (06/09/2026, qui cite l'aide Meta : note affichée seulement à partir
+  de **5 avis publics**) · wisernotify.com (01/10/2026).
+- **Non vérifié d'ici** : l'interface exacte que tu as sous les yeux (les libellés bougent d'une version
+  d'appli à l'autre) et le nom d'utilisateur réellement libre.
