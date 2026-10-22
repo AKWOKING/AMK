@@ -39,7 +39,7 @@ faux avis). Source : suebehaviouraldesign.com (05/2026) · sevengoldagency.com (
 
 **Application DM.** Nos verrous existants (« que du vrai », pas de statistique inventée, pas de
 fausse urgence) sont la version éthique de cette liste — ils restent. Ce qui manque et qu'on
-ajoute : **l'ancrage par la preuve concrète** (une vraie photo vaut mieux qu'un adjectif ; « 40
+ajoute : **l'ancrage par la preuve concrète** (une vraie photo vaut mieux qu'un adjectif ; « des
 montures essayables au cabinet » ancre mieux que « grand choix ») et le **peak-end** : la fin
 d'une vidéo et la fin d'une visite au cabinet doivent être le meilleur moment (le brag de
 livraison existe pour ça).
@@ -89,7 +89,7 @@ wikipedia.org (07/2026) · medium.com/@zephyr.ventum (09/2026) · businessbookcl
 Bonabéri dont TOUT le stock est photographié et visible en ligne avant de bouger de chez soi**
 — personne dans le quartier ne le fait (prototype de veille du 20/10 : Valdoz, iris, Bronze sans
 site). C'est remarquable parce que c'est utile, pas parce que c'est bruyant. En TikTok, la vache
-pourpre = montrer les 40 montures RÉELLES, une par une (« la F17 essayable au cabinet »), et les
+pourpre = montrer les montures RÉELLES du cabinet, une par une (« la F17 essayable au cabinet »), et les
 coulisses vraies du cabinet. Interdit par cette théorie : les vidéos génériques « nous sommes
 les meilleurs ».
 
@@ -189,7 +189,7 @@ marketingmehn.com (07/2021).
    premier rendez-vous. Parler DE ÇA (« vous plissez les yeux depuis des semaines ? »), pas des
    verres.
 2. **① Vie/santé** : bien voir = travailler, conduire à Bonabéri, lire la nuit.
-3. **⑦ Protéger les proches** : les yeux des enfants (10 montures E du catalogue !) —
+3. **⑦ Protéger les proches** : les yeux des enfants (les montures enfants du catalogue !) —
    « les marques d'un enfant qui voit mal à l'école ».
 4. **⑧ Approbation sociale** : la monture est un choix d'apparence — « on ajuste à votre
    visage » (le site le dit déjà) ; montrer des montures portées (avec accord écrit).
@@ -308,3 +308,200 @@ Secteur optique : emitrr.com/blog/review-and-reputation-management-for-optometri
 ocuco.com/blog/online-reviews-for-opticians (22/12/2025) · growourreviews.com/get-more-customers/opticians ·
 ophthalmologymanagement.com (12/2023) · optometrymarketing.com (20/02/2025) ·
 pmc.ncbi.nlm.nih.gov/articles/PMC12049650 (25/01/2025).
+
+---
+
+## 15 · Audience, communauté, engagement — la recherche du 22/10 (tour 56)
+
+> **Origine.** King (22/10) : « not only to create content, but to create and grow an audience and
+> engagement… create a community/audience through social media first, giving tips to aspiring
+> entrepreneurs or other Cameroonian/African aspiring freelancers like me, by sharing content based on the
+> realities I am facing, the challenges, the advantages, the trends — while the goal of DM Optique is to
+> increase sales of frames and also acquire new patients. »
+> **Deux objectifs différents, deux mécaniques différentes.** Ce §15 les sépare au lieu de les confondre.
+
+### 15.1 · Le fait qui décide de tout (et qui contredit la moitié des vidéos)
+
+| Fait vérifié | Source | Conséquence pour nous |
+|---|---|---|
+| **Le programme de monétisation Facebook n'est pas ouvert au Cameroun** | tamtamugc.com (vérifié 08/2026) ; lilachbullock.com (17/10/2026), qui cite la liste de pays de Meta | **On ne fait pas de l'audience pour être payé par Meta.** Aucun revenu publicitaire à espérer : l'audience sert à vendre des sites, pas des vues |
+| **≈6,84 M d'utilisateurs Facebook au Cameroun** (21,9 % de la population), **≈637 000 sur Instagram** | NapoleonCat, 09/2026 | Facebook est le seul endroit où notre cible existe en nombre. Instagram reste un miroir, pas un canal |
+| **85,5 % de part du social mobile** pour Facebook | StatCounter, 09/2026 | le contenu se juge sur un téléphone, en 3G, sans son |
+| Facebook ≈ **58 % d'hommes / 42 % de femmes** | NapoleonCat, 09/2026 | pour DM Optique : la monture se montre aux deux, mais les femmes décident souvent — ne pas publier qu'avec des visages d'hommes |
+| L'économie créative africaine : **3 à 5,1 Md$**, projetée à **18 Md$ en 2030** — mais **6 créateurs sur 10 gagnent moins de 100 $/mois** | Techpoint Africa (29/01/2026), Africa Creator Economy Report 2026 | le récit « deviens créateur et vis de ça » est faux. Notre angle n'est pas « gagner de l'argent avec les vues », c'est **vendre un service** |
+| Freelancing : Kenya **+216 %** et Nigeria **+130 %** en cinq ans | bitcoinke.io (11/04/2025), Ecofin (15/01/2026) | la concurrence augmente vite ; la preuve et la réputation deviennent le seul fossé |
+
+**Ce que ça change, en une phrase :** on ne cherche pas la portée, on cherche **la bonne personne qui écrit
+sur WhatsApp**. Une page de 300 abonnés dont 10 sont des directeurs d'école vaut mieux que 30 000 abonnés
+de n'importe où.
+
+### 15.2 · Audience ≠ communauté (la distinction qui évite de perdre six mois)
+
+| | **Audience** | **Communauté** |
+|---|---|---|
+| Le rapport | on publie, ils regardent | ils se parlent, et ils reviennent |
+| Le lieu | un fil social (Facebook, TikTok) | un espace qu'on peut atteindre directement (WhatsApp, e-mail, groupe) |
+| Ce qu'on possède | rien : l'algorithme décide qui voit | la liste : on décide quand on écrit |
+| La mesure | portée, abonnés | **membres actifs à 30 jours**, réponses, DAU/MAU > 0,2 |
+| Ce qu'il faut pour démarrer | du contenu | **30 personnes qui se parlent** — pas 3 000 qui regardent |
+
+Recherche 2026 (cohérente sur ce point) : les plateformes sont des **moteurs de découverte**, pas des
+outils de rétention ; une communauté vivante commence petit, avec des rituels, et se mesure à la
+participation, pas à la taille (loudscale.com 27/08/2026 ; barakah.agency ; collabonly.com 09/08/2026).
+
+**Notre échelle de communauté, adaptée à ce qu'on a vraiment :**
+
+| Marche | Ce qui se passe | Ce qu'on fait |
+|---|---|---|
+| 0 · Découverte | quelqu'un voit un post | être trouvable et clair (page + profil) |
+| 1 · Conversation | il commente, il écrit | **répondre dans l'heure** — c'est le seul levier gratuit qui existe |
+| 2 · Appartenance | il revient | un rendez-vous fixe : « le lundi, une leçon » |
+| 3 · Possession | il est joignable directement | **canal WhatsApp** (5 minutes à créer) |
+
+**Ce qu'on n'ouvre pas maintenant :** un **groupe** Facebook ou une **communauté** WhatsApp. Un groupe vide
+est pire qu'aucun groupe. Seuil : **30 personnes qui ont déjà écrit** → alors on ouvre.
+
+### 15.3 · Les trois actifs, et ce que chacun doit prouver
+
+| Actif | Ce qu'il est | Public | Preuve à porter | Ce qu'on mesure |
+|---|---|---|---|---|
+| **Page AMK** | la vitrine de l'entreprise | un gérant qui vérifie avant de répondre | les sites livrés, l'audit, la méthode | messages WhatsApp qualifiés |
+| **Profil de King (mode pro)** | la voix : réalités, chiffres, erreurs, arbitrages | jeunes freelances camerounais/africains | **ce qui est arrivé pour de vrai**, captures à l'appui | réponses, partages, gens qui demandent « comment tu as fait ? » |
+| **Page DM Optique** | le commerce local | patient de Bonabéri | les montures réelles, l'examen, la sortie honnête | messages, visites, montures vendues |
+
+**La règle qui tient les trois ensemble :** une seule voix — la tienne — et **jamais deux fois le même
+contenu**. Ce qui change, c'est la preuve et le destinataire, pas le ton.
+
+### 15.4 · Le contenu personnel : quatre piliers, douze sujets réels
+
+Le piège du « partage de ton parcours » est connu : ça devient un journal intime que personne ne lit. Ce
+qui marche, c'est **une leçon + un chiffre + une décision** — vérifiable, et utile à quelqu'un qui est
+deux mois derrière toi. Quatre piliers, à alterner :
+
+| # | Pilier | La promesse au lecteur | Preuve exigée |
+|---|---|---|---|
+| **A** | **Le chiffre** | « voilà ce que ça coûte / rapporte vraiment » | un chiffre du dépôt ou de ta caisse, nommé, daté |
+| **B** | **La décision** | « j'ai choisi X plutôt que Y, voilà pourquoi » | l'arbitrage écrit, avec ce qu'on abandonne |
+| **C** | **L'erreur** | « j'ai perdu du temps là-dessus » | la trace : le commit, la capture, la facture |
+| **D** | **La preuve** | « voilà ce que ça donne, ouvrez-le » | un lien qui marche, une capture d'écran réelle |
+
+**Douze sujets qui existent déjà dans le dépôt** (aucune invention, aucun chiffre à fabriquer) :
+
+1. **A** — « ce que coûte un site de 10 pages quand on le fait à la main » (le temps réel, pas un prix).
+2. **B** — « pourquoi j'ai refusé de facturer un site avant d'avoir un RIB et un RCCM ».
+3. **C** — « j'ai laissé sept phrases cassées sur mon propre site pendant une semaine » — l'audit du 22/10, captures avant/après.
+4. **D** — « ouvrez le site d'une école fictive que j'ai construit pour vendre » (`sample-school`).
+5. **A** — « 97 pages, 0 avis Google : le vrai problème d'un cabinet qui a un site ».
+6. **B** — « je publie en français à l'écran et en anglais en légende : la raison ».
+7. **C** — « mon remplacement en masse a cassé sept phrases » — la leçon : relire les lignes touchées.
+8. **D** — « voilà à quoi ressemble un audit avant livraison » (les portiques, en capture).
+9. **A** — « ce qu'un client camerounais regarde avant de répondre à un message » (taux de réponse, délai).
+10. **B** — « pourquoi je ne promets aucun délai de livraison, même quand on me le demande ».
+11. **C** — « la page Facebook que j'ai mise six mois à ouvrir » — le vrai coût de l'attente.
+12. **D** — « la fiche Google avant le site : l'ordre que personne ne suit ».
+
+**Le filtre avant publication** (Wiebe, 22/10) : *« si une IA pouvait écrire ça, pourquoi le publier sous
+ton nom ? »* Un sujet qui ne contient ni chiffre, ni décision, ni erreur, ni lien réel ne sort pas.
+
+### 15.5 · DM Optique : de l'audience au patient (et pas l'inverse)
+
+L'optique est **deux commerces sous un même toit** : un cabinet qui examine, un magasin qui vend. La
+recherche 2026 est stable là-dessus : **le local d'abord, le social ensuite** — la fiche Google et les avis
+pèsent bien plus lourd que Facebook dans la décision d'un patient (repères d'agences 2026 : GBP ≈ 32 %,
+avis ≈ 20 %, social ≈ 4 % ; à lire comme des ordres de grandeur, pas comme des lois de Google).
+
+| Objectif de King | Le levier qui y répond | Ce qu'on publie | Ce qu'on ne publie pas |
+|---|---|---|---|
+| **Vendre des montures** | voir la monture **portée**, nommée, disponible | « F24 — carrée écaille, elle est en ligne » + la photo réelle + « essayez-la au cabinet » | un catalogue qui défile sans visage, un prix, « -20 % » |
+| **Acquérir des patients** | le geste utile + la preuve d'examen | « 20/20/20 », « quand changer de verres », la mesure expliquée | un visage de patient, une promesse anti-lumière-bleue |
+| **Faire revenir** | le rappel annuel, sur WhatsApp | « votre contrôle date de 11 mois » (message privé, jamais public) | une promotion permanente qui dévalue l'examen |
+
+**Ce qui est déjà décidé et ne bouge pas** : quatre piliers DM (geste utile · monture réelle · coulisse ·
+sortie honnête), deux posts par semaine, aucune promesse de prix ni de stock. La recherche du 22/10 **ne
+change rien** à ces quatre piliers — elle confirme l'ordre : la monture portée par un humain, jamais le
+catalogue ; et le rappel est le levier le plus rentable, mais il se fait en privé.
+
+**Une correction utile** : les benchmarks optiques internationaux parlent de campagnes de rappel par
+e-mail et SMS. Ici, **WhatsApp remplace les deux** — et il faut le consentement, message par message,
+jamais une liste achetée.
+
+### 15.6 · La cadence qu'on peut tenir (et le calcul qui l'impose)
+
+Ce qui existe déjà : AMK **dimanche + lundi**, DM **mardi + jeudi**. Ajouter « le profil de King » ne doit
+pas casser ces quatre pièces-là.
+
+| Canal | Pièces / semaine | Qui produit | D'où vient la matière |
+|---|---|---|---|
+| Page AMK | 2 (dim, lun) | machine | §5 du document de présence |
+| Profil de King | **2** (mer, ven) | **toi, 15 min** | un sujet du §15.4, écrit la veille |
+| DM Optique | 2 (mar, jeu) | machine | les 4 piliers DM |
+| Canal WhatsApp | **1** (sam) — un résumé de la semaine | machine, 5 min | les 3 meilleurs posts + un lien |
+
+**Total : 7 pièces par semaine, dont 2 que tu écris toi-même.** Si une semaine ne tient pas, **on coupe le
+canal WhatsApp avant de couper une des deux pièces DM** : la vente paie les factures, la communauté ne les
+paie pas encore.
+
+### 15.7 · Ce que la recherche du 22/10 confirme, et ce qu'elle contredit chez nous
+
+| Point | Ce qu'elle dit | Verdict pour nous |
+|---|---|---|
+| Vidéos courtes (6–10 s) pour la rétention | Adam Blakey, 22/10 | **contredit** notre gabarit DM (15–45 s, 5 temps). Le gabarit reste : il est adossé à ce qui a été mesuré chez DM. **Test** : même message en 12 s et en 25 s, sur quatre semaines, avant de trancher |
+| « Le premier commentaire » pour relancer la portée | Jeff Rose, 22/10 | **à tester** : un commentaire qui pose une question, jamais un lien nu |
+| Poser une question simple pour l'engagement | Blakey | **garde** — c'est aussi ce que fait notre §10 du document de présence |
+| Publier 25 fois par jour | Jeff Rose | **rejette** : c'est un modèle de page de contenu, pas une agence qui livre |
+| Pages « faceless » générées par IA | Jeff Rose / Anji Martin | **rejette** : notre avantage est d'être une personne réelle à Douala |
+| 95–97 % de la portée vient de non-abonnés | Anji Martin | **confirme** ce qu'on mesure déjà : ne pas juger au nombre d'abonnés |
+| « Tuer l'indicateur de volume », une seule question avant de publier | Joanna Wiebe | **adopte** : c'est le filtre du §15.4 |
+| L'IA pour co-penser, pas pour penser à ta place | Wiebe | **adopte** : déjà la règle du dépôt (le jugement reste humain) |
+| Gagner de l'argent avec les vues | Jeff Rose / Martin | **rejette au Cameroun** : programme non disponible (§15.1) |
+
+### 15.8 · Ce qu'on mesure (et ce qu'on refuse de mesurer)
+
+| Chiffre | Pourquoi celui-là | Fréquence |
+|---|---|---|
+| **messages WhatsApp qualifiés** (AMK) | c'est ce qui précède une vente | hebdo |
+| **montures essayées / vendues citées dans un message** (DM) | relie le post au chiffre d'affaires | hebdo |
+| **réponses à un post** (commentaires écrits, pas des likes) | le seul signe de conversation | par post |
+| **partages** | le seul canal gratuit vers des inconnus | par post |
+| **membres actifs du canal WhatsApp** (ont lu ≥ 1 message sur 4) | la seule mesure d'appartenance | mensuel |
+| ~~abonnés~~, ~~likes~~, ~~portée~~ | ne paient pas, et poussent à publier pour l'algorithme | notés, jamais visés |
+
+**Seuil de décision à 90 jours :** si le profil de King n'a produit **aucune** conversation utile en trois
+mois, le problème n'est pas la régularité, c'est le sujet — on change de pilier, pas de rythme.
+
+### 15.9 · Sources du §15 (lues le 22/10/2026)
+
+- **Cameroun / plateformes** : NapoleonCat, *Facebook users in Cameroon* (09/2026) et *Social media users in
+  Cameroon* (08/2026) · StatCounter, *Mobile social media stats Cameroon* (09/2026) · DataReportal,
+  *Digital 2026* (07/2026), pour le cadre global.
+- **Monétisation** : tamtamugc.com/en/countries/cameroon/facebook (vérifié 08/2026) · lilachbullock.com,
+  « Cameroon: Right Languages, Wrong Country List » (17/10/2026) · clip-short.com (23/09/2026).
+- **Audience vs communauté** : loudscale.com, *Community-Led Marketing 2026* (27/08/2026) ·
+  barakah.agency, *Online Community Building* · collabonly.com (09/08/2026) · sendseven.com (glossaire
+  « owned audience ») · getkanal.com, *WhatsApp Newsletter vs Broadcast vs Group* (11/09/2026).
+- **Benchmarks d'engagement** : iqfluence.io / Socialinsider (08/2026) · growth-onomics.com (23/08/2026) ·
+  improvado.io (28/08/2026, sur les 90 premiers jours d'un compte neuf).
+- **Optique** : reviewob.com, *2026 Social Media Playbook for Optical Retail* (18/05/2026) · ocuco.com,
+  *Short-form video for opticians* (14/07/2026) et *Optometrist marketing strategies* (28/07/2026) ·
+  bspkn.co, *Optometry marketing 2026* · emulent.com, *Local SEO ranking factors 2026* (26/08/2026 —
+  chiffres d'agence, **pas** de Google).
+- **Économie créative africaine** : techpoint.africa (29/01/2026) · Ecofin Agency (15/01/2026) ·
+  africa.com (09/07/2026).
+- **Non vérifié** : les chiffres de monétisation américains cités par les vidéos (31 000 $/mois) — invérifiables
+  d'ici, et **inapplicables au Cameroun** de toute façon.
+
+---
+
+## 16 · Les quatre vidéos du 22/10 — ce qui entre dans la maison
+
+Traitées en lot [45] de `research/YouTube-Lessons.md` (le détail, les contradictions et les rejets y sont).
+Ici, seulement **ce qui change une pratique cette semaine** :
+
+| Vidéo | Idée retenue | Où elle s'applique | Ce qu'on laisse |
+|---|---|---|---|
+| **Adam Blakey** — *Organically increase Facebook engagement & reach 2026* | rétention · engagement · **partageabilité** ; mieux vaut 3 bonnes pièces que 5 moyennes | la cadence §15.6 et le filtre du §15.4 | la course aux 6 secondes (notre gabarit DM tient), les giveaways à commentaire |
+| **Joanna Wiebe** — *Top 1% content strategies 2026* | **tuer l'indicateur de volume** ; une question avant de publier ; l'IA co-pense, elle ne pense pas | le filtre « si une IA pouvait l'écrire, pourquoi le publier sous ton nom ? » | rien : c'est la vidéo la plus utile des quatre |
+| **Jeff Rose** — *32 556 $/mois sur Facebook* | le **premier commentaire** comme relance de portée ; inspirer, pas copier | test sur 4 posts AMK | le volume industriel, les pages faceless, la monétisation (fermée au Cameroun) |
+| **Anji Martin** — *49 millions de personnes* | **95–97 % de la portée vient de non-abonnés** : arrêter de compter les abonnés | notre §15.8 et la mesure DM | les « follower campaigns », le print-on-demand, l'affiliation |
+
+---

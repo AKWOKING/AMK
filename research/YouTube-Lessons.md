@@ -2457,3 +2457,87 @@ l'exécution de la réécriture.
 enterré, le retainer CM écarté — et trois règles propres (closing WhatsApp, checklist design,
 cross-post FB) qui rejoignent des fichiers existants. Le framework est prêt ; la balle est à la
 réécriture POST-01, sur ordre de King.
+
+---
+
+## Lot [45] · FACEBOOK & AUDIENCE — 4 vidéos anglophones · 2026-10-22
+
+> **Origine.** King (22/10) : quatre liens YouTube à intégrer, « learn and integrate what's useful adapting
+> it to our goals and realities ». Traitées par lots de 4 comme les précédents.
+> **Limite de lecture, dite franchement :** les transcriptions ont été lues **au premier tiers** (le texte
+> complet fait 2 à 4 fois plus long). Le reste n'a pas été lu, donc **il n'est pas jugé ici**. Aucune vidéo
+> n'a été regardée : ce lot repose sur la parole des auteurs, pas sur leurs images.
+
+| # | Vidéo | Auteur | Durée / vues (22/10) | Ce qu'elle prétend |
+|---|---|---|---|---|
+| 1 | [HOW TO Organically Increase Facebook Engagement & Reach 2026](https://youtu.be/E2EObdgxyhA) | Adam Blakey | 18:18 · 40 221 | trois métriques (rétention, engagement, partageabilité) + régularité |
+| 2 | [Top 1% Content Strategies That Stand Out in 2026](https://youtu.be/fgvTvoBpafA) | Joanna Wiebe | 22:20 · 26 874 | l'IA a rendu le volume gratuit ; ce qui reste rare, c'est le jugement |
+| 3 | [How I Make $32,556/Mo Posting on Facebook (Using AI)](https://youtu.be/falYBqrtqeY) | Jeff Rose | 17:07 · 303 892 | niche + page + système reproductible + programme de monétisation |
+| 4 | [How I Trained Facebook to Push My Posts to 49 Million People](https://youtu.be/tf1ddc3h0P0) | Anji Martin | 10:40 · 35 802 | la portée vient des non-abonnés ; on « entraîne » l'algorithme |
+
+### Les trois idées à agir cette semaine
+
+1. **Tuer l'indicateur de volume** (Wiebe). Une seule question avant de publier : *« si une IA pouvait
+   écrire ça, pourquoi le publier sous mon nom ? »* → devient le **filtre du §15.4** de
+   `sales/research/2026-W43-techniques.md`. Coût : zéro. Effet : on arrête de publier pour remplir.
+2. **Le premier commentaire** (Rose). Publier la pièce, puis un commentaire qui **pose une question** —
+   pas un lien nu. À tester sur **4 posts AMK**, en comparant portée et réponses. Si ça ne bouge pas, on
+   arrête ; ce n'est pas une religion.
+3. **La portée vient des inconnus** (Martin : 95–97 % de non-abonnés sur ses gros posts). Conséquence
+   immédiate : **arrêter de lire le nombre d'abonnés**. On mesure les **réponses écrites** et les
+   **partages**, qui sont les deux seuls signaux qui amènent des gens qui ne nous connaissent pas.
+
+### Les trois idées à garder en réserve
+
+1. **Boucle offre gratuite → commentaire → e-mail** (Blakey). Puissant, mais **n'a de sens que quand on a
+   quelque chose à donner**. On a l'audit et les concepts : un jour, un « audit de page d'accueil en 5
+   points » pourrait remplir une liste. Pas maintenant : on n'a pas de canal e-mail.
+2. **Le test 12 s contre 25 s** (Blakey contre notre gabarit DM en 5 temps de 15–45 s). Vrai désaccord,
+   vraie expérience à faire sur quatre semaines avant de trancher.
+3. **« Inspirer, pas copier »** (Rose : aller chercher les idées sur X, Instagram, Reddit). On le fait déjà
+   pour le design (§2 du protocole d'unicité) ; l'étendre au **sujet** des posts est gratuit — mais la
+   source reste nommée, jamais recopiée.
+
+### Les trois idées à rejeter carrément
+
+1. **« Poster 25 fois par jour »** (Rose : « posting on the hour, every hour »). C'est un modèle de **page de
+   contenu**, pas d'une agence qui livre des sites à des cliniques. Incompatible avec la capacité de King et
+   avec la promesse de sérieux.
+2. **Les pages « faceless » générées par IA** (Rose et Martin en font la démonstration). Notre seul actif
+   défendable est **une personne réelle à Douala qui a fait le travail**. Devenir une page anonyme, c'est
+   jeter l'avantage pour imiter ce que tout le monde peut copier.
+3. **La monétisation Facebook comme objectif** (Rose : 32 556 $/mois ; Martin : plusieurs revenus empilés).
+   **Le programme n'est pas ouvert au Cameroun** (vérifié : tamtamugc.com 08/2026, lilachbullock.com
+   17/10/2026). Poursuivre cet objectif ici, c'est courir après un paiement qui n'arrivera pas.
+
+### Outils survivants de l'audit
+
+**Aucun outil installé, aucun acheté.** Les quatre vidéos reposent sur ChatGPT, un planificateur payant
+(PostPlanner), un programme de monétisation et des liens d'affiliation. Rien de tout ça n'entre dans le
+dépôt. Le seul « outil » retenu est une **question**, gratuite, à poser avant chaque publication.
+
+### Contradictions entre vidéos (et avec nos règles)
+
+| Sujet | Blakey | Rose / Martin | Notre règle | Verdict |
+|---|---|---|---|---|
+| Longueur | **6–10 s** pour doubler la rétention | des Reels de 10 s à plusieurs minutes, indifférent | gabarit DM **15–45 s, 5 temps** (adossé à ce qui a été mesuré chez DM) | **test 4 semaines**, pas de changement à l'aveugle |
+| Volume | « 3 bonnes plutôt que 5 moyennes » | **25 à 100 posts/jour** | 2 pièces par canal et par semaine | Blakey et nous ; Rose hors sujet pour une agence |
+| Visage | non traité | pages faceless viables | « le site ne montre que du vrai », une personne réelle | nous |
+| Revenu | non traité | la monétisation est le but | **vendre un service** | nous (et la géographie tranche) |
+| IA | non traité | l'IA écrit les légendes | l'IA co-pense, l'humain juge (Wiebe, et règle du dépôt) | Wiebe |
+
+### Le workflow AMK après ce lot
+
+1. **Filtre** avant publication (§15.4) : chiffre, décision, erreur ou preuve réelle — sinon, ça ne sort pas.
+2. **Premier commentaire** qui pose une question, sur les 4 prochains posts AMK, et on compare.
+3. **Mesure** : réponses écrites, partages, messages WhatsApp qualifiés. Les abonnés se notent, ne se visent pas.
+4. **Rien de nouveau à produire** : les douze sujets du §15.4 sont déjà dans le dépôt.
+
+### Verdict du lot pour AMK
+
+**Un lot utile, mais dont la moitié ne s'applique pas ici — et c'est une information en soi.** Ce qui
+reste après le tri : un filtre de publication (Wiebe), une tactique à tester (le premier commentaire), une
+correction de regard (la portée vient des inconnus). Ce qui part : le volume industriel, les pages sans
+visage, et la promesse d'être payé par Facebook depuis le Cameroun. **Zéro outil ajouté, zéro fichier
+nouveau** : les leçons sont allées dans deux documents existants (§9–§11 de
+`brand/AMK-PRESENCE-2026-10-22.md`, §15–§16 de `sales/research/2026-W43-techniques.md`).
