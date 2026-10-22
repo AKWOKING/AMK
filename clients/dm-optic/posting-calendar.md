@@ -294,13 +294,14 @@ totalement, C4 devient aussi une variante « service ».***
 | 2 | **Aucune allégation médicale** — « protège vos yeux », jamais « soigne » |
 | 3 | **Aucun témoignage, classement ou résultat inventé** — zéro avis, zéro étoile, zéro « premier sur… » |
 | 4 | **Jamais nommer un concurrent** — l'angle ONOC se dit **sur soi** |
-| 5 | **Aucun prix affiché** — le prix se répond dans la conversation, il ne s'affiche pas |
+| 5 | **Aucun montant publié** — le montant se répond dans la conversation, jamais à l'écran ni en légende |
 | 6 | **Aucune remise** — on échange du périmètre ou du calendrier |
 | 7 | **Aucun visage inventé** — pas de portrait généré, pas de patient fictif |
 | 8 | **Rien d'inventé n'est publié** — adresse, horaire, marque, assurance : confirmé ou absent |
 | 9 | **Tout vit dans le dépôt** — chaque légende et chaque script est un fichier versionné |
 | 10 | **Format carrousel** — vertical 9:16 · 1080×1920 · 30 fps · SAR 1:1 · H.264 |
 | 11 | **Porte W43 §12b** (ruling King 21/10) — cas client d'abord · un seul axe · objet réel · preuve citée une fois · sortie honnête · un seul CTA (`sales/research/2026-W43-techniques.md` §12b) |
+| 13 | **Direction de marque v2** (ruling King 22/10) — **relire `clients/dm-optic/brand/DIRECTION-MARQUE-v2-2026-10-22.md` avant d'écrire** · A moteur · B preuve · C limite · l'expertise avant le produit · aucun compte de montures, aucune carte de stock |
 | 12 | **Titre professionnel** (demande client 21/10) — jamais « opticien » **seul** : écrire **« opticien optométriste »**, l'ordre de la loi camerounaise (99/001, art. 2). Voir `content/strategy/RULE-CREDENTIAL-CLAIMS.md` |
 
 ---

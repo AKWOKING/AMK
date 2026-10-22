@@ -1,5 +1,10 @@
 # Contenu mois 1 — méthode, contraintes, mesure
 
+> 🔒 **Avant d'écrire quoi que ce soit pour DM Optique : rouvrir
+> `clients/dm-optic/brand/DIRECTION-MARQUE-v2-2026-10-22.md`.** Direction arrêtée par King le 22/10/2026 :
+> **A moteur** (on explique), **B preuve** (on montre le geste), **C limite** (jamais de diagnostic).
+> On ne vend pas des montures : on vend l'expertise qui précède la vente.
+
 > **Livrable du 02/10/2026 : 4 scripts UGC IA + 4 outlines de carrousels, pour relecture.**
 > Plan approuvé en amont : `clients/dm-optic/content-plan-month1.md`.
 > ⛔ **Aucune vidéo produite par nous** : l'UGC IA est **produit en externe** par King — nous

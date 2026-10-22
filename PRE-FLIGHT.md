@@ -112,7 +112,7 @@ pré-vol charge, **en plus du dossier métier**, les sections pertinentes de la 
 | Task type | + knowledge base |
 |---|---|
 | **Sales / outreach / proposal** | §2, §8 |
-| **Content / script / video / caption** | §7, §8 · **gabarit W43 : `sales/research/2026-W43-techniques.md` §12/§12b — à cocher avant d'écrire** · **vidéo : `content/strategy/VIDEO-PIPELINE-FLOW-2026-10.md` (pipeline Flow + ChatGPT, remplace `render.mjs` ; `render.mjs` = secours uniquement)** |
+| **Content / script / video / caption** | §7, §8 · **DM Optique : `clients/dm-optic/brand/DIRECTION-MARQUE-v2-2026-10-22.md` — à relire avant d'écrire (King 22/10)** · **gabarit W43 : `sales/research/2026-W43-techniques.md` §12/§12b — à cocher avant d'écrire** · **vidéo : `content/strategy/VIDEO-PIPELINE-FLOW-2026-10.md` (pipeline Flow + ChatGPT, remplace `render.mjs` ; `render.mjs` = secours uniquement)** |
 | **Marketing / strategy** | §3, §5 |
 | **Ads / campaign** | `clients/<slug>/ads/campaign-brief.md` (quand il existe) + §4, §5 |
 | **Design / build** | §1 |

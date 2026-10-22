@@ -6,7 +6,9 @@ Auteur    AMK, à partir de la recherche du 22/10
 Sources   research/youtube-lessons/2026-10-22-brand-strategy/SYNTHESE.md
           research/youtube-lessons/2026-10-22-eyecare-marketing/SYNTHESE.md
 Statut    proposition — à valider par King avant toute production
-Révision  ⚠️ 22/10 (soir) — trois points amendés par DIRECTION-MARQUE-v2-2026-10-22.md : l'axe passe du
+Révision  ⛔ 22/10 (soir) — **direction arrêtée dans DIRECTION-MARQUE-v2-2026-10-22.md** (King :
+          « A comme moteur, B comme preuve, C comme limite »). Ce document reste la trace de la v1.0 ;
+          c'est la v2 qu'on relit avant d'écrire. Trois points amendés par la v2 : l'axe passe du
           stock à l'expertise, le compte des montures disparaît partout (y compris à l'écran, §10.5
           rectifié), et le pilier « la monture réelle » devient un exemple, pas un rendez-vous
           hebdomadaire. Le ton (§8), la sortie honnête, la preuve ONOC et la porte §12b restent tels quels.

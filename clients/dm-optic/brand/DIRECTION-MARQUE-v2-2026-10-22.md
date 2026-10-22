@@ -6,8 +6,15 @@ Origine   demande de King : « analyse les conversations, dis-moi qui il est, qu
           et on choisira une direction — on ne vend pas des montures, on vend de l'expertise. »
 Remplace   BRAND-STRATEGY-2026-10-22.md v1.0 sur trois points précis (§5 ci-dessous). Le ton, la sortie
           honnête et la preuve ONOC restent.
-Statut    proposition — la direction se choisit avec King, pas sans lui.
+Statut    ✅ ARRÊTÉE par King le 22/10/2026 : « A comme moteur, B comme preuve, C comme limite ».
+          Ce document n'est plus une proposition.
 ```
+
+> 🔒 **RÈGLE DE LECTURE OBLIGATOIRE (King, 22/10/2026).**
+> **Aucun post et aucune vidéo DM Optique ne s'écrit sans avoir rouvert ce document.** C'est la première
+> chose qu'on lit, avant le script, avant le tournage, avant la légende. La règle est reprise dans
+> `PRE-FLIGHT.md` §0d, `content/month1/README.md`, `posting-calendar.md` §6 et `content-plan-month1.md`.
+> Un contenu DM qui ne peut pas dire de quel passage de ce document il vient n'est pas prêt à être produit.
 
 ---
 
