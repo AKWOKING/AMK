@@ -15,7 +15,7 @@ montre :
 Conséquence observée quatre fois le 22/10/2026 : le travail local disparaît, et surtout **on lit un
 arbre périmé en croyant lire le dépôt**. C'est ce qui a produit deux affirmations fausses dans la
 même journée (« frames.json est vide », « la semaine 3 est bloquée faute de photos »), alors que les
-40 montures et les 65 images étaient versionnées.
+tout l.inventaire et les 65 images étaient versionnés.
 
 Ce que fait ce script
 ---------------------
