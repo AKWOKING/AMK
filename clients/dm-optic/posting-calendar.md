@@ -180,9 +180,15 @@ mais **la publicité de S2 est Facebook/Instagram** — à confirmer par King
 
 ## 4 · Semaine 3 — Les montures
 
-*⛔ Bloquée **absolument** par : 6–8 photos de montures réelles (item 7). Sans elles, cette semaine
-n'existe pas. **Repli (02/10) : si la prise de vue échoue totalement, la semaine 3 devient une
-variante « service » (confiance / catégorie) et les montures passent au mois 2.***
+> ✅ **Levée le 22/10 (vérifiée dans le dépôt).** L'inventaire **est arrivé** : `clients/dm-optic/site/frames.json`
+> contient **l'inventaire complet**, et **65 images** sont versionnées dans
+> `hosting/previews/dmoptic/montures/` (`femmes/`, `hommes/`, `enfants/`), publiées sur
+> `dmoptiquesarl.com/montures/`. Ce blocage datait du **02/10**, avant la séance photo. Il n'existe plus.
+> Nuance qui compte pour la direction v2 : avoir les photos ne veut pas dire s'en servir comme catalogue —
+> elles servent **d'illustration à une explication**, jamais de vitrine.
+
+~~Repli du 02/10 : « si la prise de vue échoue totalement, la semaine 3 devient une variante service et
+les montures passent au mois 2. »~~ **Sans objet** — la prise de vue a eu lieu.
 
 ### 🎬 Mardi 27/10 — **tiktok-01-v2**, 19 h 00 *(arbitré par King le 22/10)*
 

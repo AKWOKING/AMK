@@ -58,7 +58,7 @@ allégation médicale · aucun prix · aucun témoignage · aucun concurrent nom
 | **UGC IA** | *« Comment choisir une monture »* — trois conseils qui marchent : la **forme du visage** · la **largeur et l'appui** · **ce que vous en faites**. Et l'argument vrai : **ça s'essaie sur votre visage, pas sur un écran** |
 | **Carrousel** | **La vitrine par familles** — vue · soleil · enfants. Une photo, un conseil, **et un WhatsApp pré-rempli propre à chaque famille** |
 | **CTA** | **Un par famille** : « Cette monture est-elle en boutique ? » |
-| **Photos nécessaires** | ⛔ **6–8 photos de montures réelles.** Bloquant **absolu** — sans elles, cette semaine n'existe pas |
+| **Photos nécessaires** | ✅ **disponibles** — 65 images, 40 montures au dépôt. *(Noté « bloquant absolu » le 02/10 ; levé depuis.)* |
 
 ### Semaine 4 — **Les verres**
 
@@ -135,7 +135,7 @@ comme telles sur la page. Aucune photo réelle du cabinet ni de ses montures n'e
 |---|---|
 | **1** — Être trouvable | ✅ **Oui** — pièce typographique |
 | **2** — Examen de vue | ⚠️ Non — 1–2 photos du cabinet |
-| **3** — Montures | ⛔ **Non — 6–8 photos de montures réelles** |
+| **3** — Montures | ✅ **Oui — 65 images, inventaire complet** (vérifié 22/10) |
 | **4** — Verres | ⚠️ Non — 1–2 photos |
 
 **Conséquence à dire franchement.** Le rythme de 2 publications par semaine **ne peut pas tenir** sans

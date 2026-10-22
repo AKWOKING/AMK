@@ -288,7 +288,7 @@ images de la vitrine du site sont des **illustrations générées**, légendées
 |---|---|---|
 | **C1 — La carte** | aucune (typographique) | ✅ **Oui** |
 | **C2 — L'examen** | 1–2 photos du cabinet | ❌ Non |
-| **C3 — Les montures** | **6–8 photos de montures** | ❌ **Non** |
+| **C3 — Les montures** | **6–8 photos de montures** | ✅ **Oui — 65 images au dépôt** (22/10) |
 | **C4 — Par usage** | 2–4 photos (portées ou posées) | ❌ Non |
 
 **Ce qui est livré ici : les outlines complets, prêts à produire.** Chaque emplacement de photo est
