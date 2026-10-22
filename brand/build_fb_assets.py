@@ -119,7 +119,56 @@ def build_cover():
     return out
 
 
+def build_square_post():
+    """1080 × 1080 — la première pièce d'Instagram (et la couverture d'un TikTok).
+
+    Même grammaire que la couverture : navy, deux filets ambre, titre blanc, sous-titre ambre,
+    pastille du domaine. Aucun prix, aucun délai, aucun site fictif.
+    """
+    S = 1080
+    MARGIN = 96                                   # zone sûre : un carré IG garde tout le centre
+    img = Image.new("RGB", (S, S), NAVY)
+    d = ImageDraw.Draw(img)
+
+    d.rectangle((0, 0, S, 8), fill=AMBER)
+    d.rectangle((0, S - 8, S, S), fill=AMBER)
+
+    f1 = font("OpenSans-Bold.ttf", 78)
+    f2 = font("OpenSans-Regular.ttf", 34)
+    f3 = font("OpenSans-Bold.ttf", 30)
+
+    drawn = []
+
+    def line(y, text, f, fill):
+        centered(d, y, text, f, fill, S)
+        w = d.textlength(text, font=f)
+        drawn.append((text, (S - w) / 2, (S + w) / 2, y))
+        return w
+
+    line(300, "Sites web pour", f1, WHITE)
+    w2 = line(396, "écoles & cliniques", f1, WHITE)
+    # le soulignement ambre souligne la DEUXIÈME ligne, mesurée, jamais devinée
+    d.rectangle((S / 2 - w2 / 2, 500, S / 2 + w2 / 2, 506), fill=AMBER)
+    line(540, "Bilingues FR | EN · Douala, Cameroun", f2, AMBER_L)
+    line(600, "Aperçu gratuit, envoyé sur WhatsApp", f2, SLATE)
+
+    label = "amk-cm.vercel.app"
+    tw = d.textlength(label, font=f3)
+    bx0 = (S - tw) / 2 - 26
+    d.rounded_rectangle((bx0, 726, bx0 + tw + 52, 786), radius=30, outline=NAVY2, width=3)
+    d.text(((S - tw) / 2, 738), label, font=f3, fill=WHITE)
+    drawn.append((label, bx0, bx0 + tw + 52, 726))
+
+    for text, x0, x1, y0 in drawn:
+        assert MARGIN <= x0 and x1 <= S - MARGIN, f"trop large : {text}"
+        assert MARGIN <= y0 and y0 + 80 <= S - MARGIN, f"trop haut/bas : {text}"
+
+    out = OUT / "post-square-1080.png"
+    img.save(out, "PNG", optimize=True)
+    return out
+
+
 if __name__ == "__main__":
     OUT.mkdir(exist_ok=True)
-    for p in (build_profile(), build_cover()):
+    for p in (build_profile(), build_cover(), build_square_post()):
         print("wrote", p, round(p.stat().st_size / 1024), "KB")

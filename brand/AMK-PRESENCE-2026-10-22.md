@@ -13,17 +13,24 @@ Règle    mêmes règles que pour un client : pas de prix public, pas de délai 
 
 | Canal | État | Détail |
 |---|---|---|
-| **Instagram** | ✅ existe — `@amkweb.cm` | 6 abonnés · 5 posts · 122 vues/30 j (relevé 08/10) · **anglais seul** |
-| **Facebook** | ⚠️ **une page `@amkweb` semble déjà exister** | citée dans `ops/TOOL-SCAN.md` comme « Page existante ». **À vérifier avant d'en créer une autre** |
-| **TikTok** | ✅ existe | vidéos v01–v04 (septembre) · audience 18–34 ans à 86–91 %, Cameroun ≈ 99 % |
+| **Instagram** | ✅ existe — `@amkweb.cm` | 6 abonnés · 5 posts · 122 vues/30 j (relevé 08/10) · **anglais seul** · cible de la refonte : **§13** |
+| **Facebook** | ✅ **page créée par King le 22/10 (tour 58)** | remplissage : **§12** · identité des trois comptes : **§13** · reste à confirmer : le **nom** et l'**URL** |
+| **TikTok** | ✅ existe | vidéos v01–v04 (septembre) · audience 18–34 ans à 86–91 %, Cameroun ≈ 99 % · cible : **§13.2 / §13.5** |
 | **Site** | ✅ en ligne | `amk-cm.vercel.app` — audit séparé : `site/OPTIMISATION-2026-10-22.md` |
 | **Threads** | ❓ lien `alex_aiproductlab` dans la bio IG | aucune trace au dépôt : voulu ou résiduel ? |
 
-**À vérifier en premier, 5 minutes :** ouvrir `facebook.com/amkweb`. Si la page existe, **on ne la recrée pas** — on la finit (nom, bio, bouton, liens, couverture). Créer une deuxième page pour la même activité, c'est se couper en deux aux yeux de Facebook et de Google.
+**⚠️ Mise à jour du 22/10, tour 58 :** la page existe désormais (créée par King). La vérification de
+`facebook.com/amkweb` **n'est donc plus un préalable** — mais elle reste utile pour un autre motif : si
+cette ancienne page existe encore, on a **deux pages pour la même activité**, et c'est le seul point de
+ce dossier que le temps aggrave. Procédure de fusion (irréversible) : **§13.6**.
 
 ---
 
 ## 2 · Les sept corrections d'Instagram (relevées le 08/10, toujours valables)
+
+> **État au 22/10 (tour 58)** : les sept points sont **écrits** mais **pas encore appliqués sur le
+> compte** — les valeurs qui les règlent sont au **§13.2** (nom, bio, lien, catégorie). La bio du §13.2
+> ne contient **aucun délai** : elle remplace d'un coup les points 3 et 4.
 
 | # | Constat | Pourquoi c'est grave | Correction |
 |---|---|---|---|
@@ -146,7 +153,11 @@ Quatre chiffres, les mêmes que pour un client :
 
 ## 8 · L'ordre des opérations
 
-1. **Vérifier** si la page Facebook `@amkweb` existe (5 min).
+> **Remplacé le 22/10 (tour 58) par `§13.3`** : les trois comptes existent, l'ordre est désormais
+> « Facebook → lien page ↔ Instagram → TikTok → première pièce ». La liste ci-dessous reste comme trace
+> de la version du 22/10 au matin.
+
+1. ~~**Vérifier** si la page Facebook `@amkweb` existe (5 min).~~ **fait : page créée le 22/10**.
 2. **Nettoyer Instagram** : les sept points du §2 (30 min).
 3. **Finir la page Facebook** : bio, bouton WhatsApp, liens, photo (30 min).
 4. **Ajouter nos liens sur notre site** — le même oubli qu'on vient de corriger chez DM Optique (30 min).
@@ -481,6 +492,7 @@ répondre — jamais un lien nu.
 | `brand/facebook/profile-1024.png` | la **marque seule** (cercle + triangle ambre), sur navy, sans le mot « AMK » | aperçu **à 40 px** généré (`profile-preview-40px.png`) : la forme reste lisible ; le motmark, lui, serait devenu une tache |
 | `brand/facebook/cover-1640x624.png` | couverture typographique : « Sites web pour écoles & cliniques » + « Bilingues FR \| EN » + « Aperçu gratuit … Douala » + l'adresse du site | **tout le texte tient dans la zone 820 × 312** (contrôlé par calcul dans le script), et le recadrage mobile est sorti à part : `cover-mobile-820x312.png` |
 | `brand/facebook/cover-mobile-820x312.png` | le recadrage téléphone, pour vérification à l'œil | — |
+| `brand/facebook/post-square-1080.png` | **carré 1080 × 1080** (§13.2, ajouté au tour 58) : la même grammaire que la couverture, pour la **première pièce Instagram** — la photo de profil, le nom et la bio ne se voient que si le profil porte au moins une image | zone sûre 96 px tenue, **soulignement mesuré** sur la deuxième ligne du titre (pas deviné), contrôle par `assert` |
 
 Reconstruits par `python3 brand/build_fb_assets.py` (les fichiers sont versionnés ; le script ne demande
 aucune retouche manuelle).
@@ -537,3 +549,190 @@ encore « live in 3–5 days »**. La promesse avait été retirée des pages le
   de **5 avis publics**) · wisernotify.com (01/10/2026).
 - **Non vérifié d'ici** : l'interface exacte que tu as sous les yeux (les libellés bougent d'une version
   d'appli à l'autre) et le nom d'utilisateur réellement libre.
+
+---
+
+## 13 · Trois comptes, une seule identité (22/10, tour 58)
+
+```
+État 21:5x, 22/10  King : « I have created the facebook page, now we have facebook page,
+                    instagram account and tiktok account. »
+Conséquence         les trois plateformes existent. Le travail n'est plus « ouvrir des comptes »,
+                    il est de faire dire la MÊME chose aux trois — sinon trois comptes valent
+                    moins qu'un.
+```
+
+### 13.0 · Ce que je sais, ce que je ne peux pas voir
+
+| Canal | Ce que je sais | Ce qu'il me manque |
+|---|---|---|
+| **Facebook** | une page a été **créée ce soir** (captures du §12 : elle existe, 0/11 champs) | le **nom retenu** (`AMK` ou le nom long ?) et l'**URL exacte** de la page |
+| **Instagram** | `@amkweb.cm` existe depuis avant · 6 abonnés · 5 posts · anglais seul (relevé 08/10) | que l'adresse n'a pas changé depuis |
+| **TikTok** | existe, vidéos v01–v04 (septembre) · 18–34 ans à 86–91 %, Cameroun ≈ 99 % | le **handle exact** et si le compte est Personnel ou Business |
+
+**Ce que j'attends de toi, en trois lignes** (pas de capture nécessaire) :
+
+```
+facebook.com/…            ← l'URL de la page
+instagram.com/…           ← confirmer @amkweb.cm
+tiktok.com/@…             ← le handle exact
+```
+
+Sans ces trois adresses, tout le reste de ce § est écrit juste mais **pas branché** : un lien faux dans
+un pied de page coûte plus cher que pas de lien du tout (c'est exactement ce qui a bloqué le §9.7 de
+`site/OPTIMISATION-2026-10-22.md`).
+
+### 13.1 · Une seule adresse sur les trois plateformes
+
+C'est la décision de ce tour, et elle n'a **pas** de date limite — mais elle coûte de plus en plus cher
+chaque jour.
+
+| Option | Ce qu'elle donne | Ce qu'elle coûte |
+|---|---|---|
+| **`amkweb.cm` partout** ✅ | un seul mot à retenir, un seul lien à imprimer, déjà **acquis sur Instagram** | rien : il suffit de le prendre sur Facebook et TikTok |
+| `amk.cm` partout | plus court, colle au futur domaine | il faut **changer le handle Instagram**, donc casser les liens déjà écrits (posts, bio, `content/carousels/POST-READY.md`), et `amk.cm` **n'est même pas encore un domaine à nous** |
+| trois handles différents | — | trois marques à mémoriser ; aucun client ne fait l'effort |
+
+**Recommandation : `amkweb.cm` sur les trois.** La longueur autorisée ne pose problème nulle part :
+**9 caractères** contre **24** sur TikTok, **30** sur Instagram, **50** sur Facebook — et TikTok
+n'accepte que lettres, chiffres, points et soulignés, ce qui rend `amkweb.cm` valide tel quel.
+
+> **Correction du §12.2.** La chaîne recommandée hier — `amkweb` → `amk.cm` → `amkwebcm` — était pensée
+> plateforme par plateforme. Elle est **remplacée** : sur trois comptes qui doivent se renvoyer l'un à
+> l'autre, la **constance** bat la brièveté. `@amkweb.cm` est déjà pris par nous, donc on ne migre rien.
+
+### 13.2 · La copie exacte, plateforme par plateforme (longueurs comptées)
+
+| Champ | Facebook | Instagram | TikTok |
+|---|---|---|---|
+| **Nom affiché** | `AMK` (décision §12.0) | `AMK · Sites web FR\|EN` — **21 / 30** | `AMK · Sites web` — **15 / 30** |
+| **Identifiant** | `amkweb.cm` | `amkweb.cm` (inchangé) | `amkweb.cm` — **9 / 24** |
+| **Bio / description** | `Sites web bilingues FR\|EN · écoles, cliniques, opticiens · Douala. Aperçu gratuit.` — **82 / 101** | `Sites web bilingues FR\|EN · écoles, cliniques, opticiens · Douala. Aperçu gratuit sur WhatsApp.` — **95 / 150** | `Sites web FR\|EN pour écoles et cliniques. Douala. Aperçu gratuit sur WhatsApp.` — **78 / 80** |
+| **Catégorie** | Concepteur de sites web | *Concepteur de sites web* + *Service de conception de sites* | *Services aux entreprises* |
+| **Lien** | `https://amk-cm.vercel.app` | 5 emplacements disponibles : **un seul**, le site | champ **Site web** séparé (voir 13.5) |
+| **Bouton** | *Envoyer un message WhatsApp* | *E-mail* + *Appeler* + *Itinéraire* | message direct |
+| **Photo** | `brand/facebook/profile-1024.png` | le **même** fichier | le **même** fichier |
+| **À propos** | 253 / 255 (§12.2) | — (le champ n'existe pas) | — |
+
+**Pourquoi ces trois textes diffèrent un peu, et c'est voulu** : la bio Facebook a **101** caractères
+disponibles, Instagram **150**, TikTok **80**. Recopier la même phrase partout, c'est soit perdre 50
+caractères utiles sur Instagram, soit se faire couper au milieu d'un mot sur TikTok. Ce qui **ne change
+jamais** : l'ordre des idées (ce qu'on fait → pour qui → où → la porte d'entrée) et **zéro** prix, **zéro**
+délai, **zéro** nombre de clients.
+
+> ⚠️ **TikTok coupe autour de 80 caractères.** Écris pour 80 même si ton champ en accepte 160 : le
+> compteur n'est pas le même selon les comptes (relevé 22/10 : TikTok ne publie plus de limite officielle,
+> certains comptes voient 160 depuis août 2025). **La règle maison : tenir en 80, considérer le reste comme
+> du bonus.**
+
+**Instagram : le champ « nom » est le seul cherché.** Ce qui est indexé par la recherche, c'est le **nom**
+(30 car.) et l'identifiant — **pas** la bio de 150. D'où `AMK · Sites web FR|EN` plutôt que `AMK` : le mot
+« sites web » travaille, la marque reste devant.
+
+### 13.3 · L'ordre, 40 minutes, trois onglets ouverts
+
+| # | Où | Quoi | Pourquoi ce rang |
+|---|---|---|---|
+| 1 | Facebook | **nom → `AMK`** (si tu ne l'as pas déjà fait) | part en revue (jusqu'à 3 j) ; on remplit pendant ce temps |
+| 2 | Facebook | les 10 champs restants (§12.2) | la page est le canal le plus gros (≈6,84 M d'utilisateurs au Cameroun) |
+| 3 | Facebook | **identifiant `amkweb.cm`** | à prendre **avant** d'inviter qui que ce soit : l'URL se fige |
+| 4 | Instagram | passage en **compte professionnel** (si ce n'est pas déjà fait) | condition **technique** du lien avec la page (13.4) |
+| 5 | Instagram | nom, bio, lien, catégorie, boutons | 6 min |
+| 6 | **Les deux** | **relier Instagram à la page** (13.4) | débloque la boîte de réception commune et le partage |
+| 7 | TikTok | identifiant `amkweb.cm`, nom, bio | 6 min |
+| 8 | TikTok | compte **Business** (13.5) | débloque le lien cliquable sans 1 000 abonnés |
+| 9 | Partout | **la même photo de profil** | la reconnaissance se joue à 40 px, pas dans la bio |
+| 10 | Facebook | **post de bienvenue** (§12.3) | une page vide ne se partage pas |
+| 11 | Instagram | **première pièce** : `brand/facebook/post-square-1080.png` + la légende du §12.3 | le carré réemploie la couverture, zéro production nouvelle |
+| 12 | Facebook | **invitations** (20–30 personnes, en dernier) | §12.5 |
+
+**Ce qui n'est pas dans la liste, volontairement** : aucune campagne publicitaire, aucun achat
+d'abonnés, aucun « boost » du post de bienvenue. On ne paie pas pour montrer une page qui a trois
+jours.
+
+### 13.4 · Relier Instagram à la page Facebook — ce n'est pas « Accounts Center »
+
+Deux liens différents existent, et **confondre les deux est la cause n° 1 des connexions qui ne
+fonctionnent pas** :
+
+| | Ce que ça relie | Ce que ça donne |
+|---|---|---|
+| **Accounts Center** | ton **profil personnel** Facebook ↔ Instagram | connexion unique, partage de stories entre profils perso |
+| **Le lien Page ↔ Instagram pro** ✅ | la **page** ↔ le compte **professionnel** | boîte de réception commune, publications croisées, statistiques combinées, pub |
+
+**Procédure (celle qui compte)** : se mettre **en tant que page** → *Paramètres* → *Comptes liés* →
+*Instagram* → **Connecter un compte** → accepter. Le compte Instagram doit être **professionnel**
+(Business ou Créateur) : un compte personnel ne se connecte pas à une page.
+
+**Ce que ça change pour nous, concrètement** : les DM Instagram arrivent dans **la même boîte** que les
+messages Facebook, donc **une seule personne peut répondre aux deux** — et c'est exactement le
+raisonnement WhatsApp-first de la maison. On active le partage **contenu par contenu**, jamais en
+automatique : un carrousel Instagram n'a pas sa place tel quel sur Facebook.
+
+### 13.5 · TikTok : le seul arbitrage qui coûte quelque chose
+
+| | Compte personnel | Compte **Business** |
+|---|---|---|
+| Lien cliquable dans le profil | à partir de **1 000 abonnés** | **tout de suite** |
+| Bibliothèque musicale | complète | **réduite** (les sons commerciaux populaires sont retirés) |
+
+**Recommandation : Business.** AMK ne danse pas sur des sons tendance ; elle a besoin qu'un gérant de
+clinique puisse **toucher le lien** et arriver sur le site. Une vidéo sans son tendance perd une partie
+de sa portée — mais une vidéo vue par quelqu'un qui ne peut pas nous joindre ne vaut rien.
+
+> **À vérifier sur ton écran** : TikTok demande parfois une **vérification d'entreprise** (justificatif)
+> pour le lien, pas seulement le passage en Business. Si le champ n'apparaît pas, ce n'est pas une
+> erreur de ta part — c'est la vérification qui manque, et elle attend un document.
+
+### 13.6 · Le seul risque qui peut encore casser ce soir : deux pages Facebook
+
+Le §1 signalait qu'une page `@amkweb` **semblait déjà exister**. Si elle existe toujours, on a maintenant
+**deux pages pour la même activité** — et c'est le seul défaut de ce tour que le temps **aggrave** :
+chaque abonné, chaque avis, chaque mention se divisent en deux.
+
+**La fusion est possible, mais elle est irréversible et elle se prépare** (aide Meta, consultée le 22/10) :
+
+1. **même nom** sur les deux pages (renommer d'abord, puis **attendre que le changement soit approuvé**) ;
+2. **même adresse** si les deux en déclarent une ;
+3. les deux pages **sous le même portefeuille Business**, et tu dois avoir le **contrôle total** des deux ;
+4. le formulaire : `facebook.com/pages/merge` (*Paramètres → Configuration de la page → Fusionner les pages*).
+
+**Ce que la fusion détruit** : les posts, photos, avis, notes et **le nom d'utilisateur** de la page
+absorbée. **Ce qu'elle garde** : les abonnés et les visites. **Aucun retour en arrière.**
+
+> **Donc : fusionner seulement si l'ancienne page a des abonnés ou des avis à récupérer.** Si elle est
+> vide, on ne fusionne pas — on la **supprime** (ou on la laisse mourir sans lien). Fusionner deux pages
+> vides, c'est prendre un risque irréversible pour zéro gain.
+
+### 13.7 · Ce qu'on mesure à 30 jours — les mêmes quatre chiffres
+
+Identiques au §7, additionnés sur les trois plateformes : **messages WhatsApp qualifiés** · **delta**
+d'abonnés (jamais le total) · **vues à 3 s** · **contacts qui ont enregistré le numéro**.
+
+**Ce qui ne se mesure pas encore** : le retour sur une page de trois jours. Un compte neuf tourne
+**30 à 50 % sous la moyenne pendant 90 jours** (Quimby, Q3 2026) — toute conclusion tirée avant
+novembre sera une conclusion sur le hasard.
+
+### 13.8 · Sources du §13 (lues le 22/10/2026)
+
+- **Limites Instagram** : bio **150** · nom **30** · identifiant **30** · **5 liens** · hashtags **5** par
+  post depuis décembre 2025 (outfy.com 10/09/2026 ; replug.io 11/10/2026, qui cite le Help Center ;
+  taskant.com 15/09/2026 ; howsociable.com 06/10/2026, qui cite « up to 150 characters » et « up to 5
+  websites »).
+- **Limites TikTok** : nom **30** (modifiable tous les 7 jours) · identifiant **2–24**, lettres/chiffres/
+  points/soulignés, modifiable tous les 30 jours · bio **80** selon l'aide historique, **160** rapportés
+  par des créateurs depuis août 2025, **aucune limite publiée** (tokconnect.com 08/10/2026 ;
+  sirency.com 01/10/2026 ; boomp.net 02/09/2026 ; liink.is 10/10/2026).
+- **Lien TikTok** : **1 000 abonnés** sur un compte personnel, **aucun minimum** sur un compte Business
+  vérifié ; 18 ans et plus (biolinko.me 24/09/2026 ; fybamedia.com 25/08/2026 ; tlinky.com 15/10/2026).
+  ⚠️ les sources **ne s'accordent pas** sur le point de départ du « Business suffit » : deux d'entre elles
+  exigent la **vérification d'entreprise** en plus du changement de type.
+- **Fusion de pages** : page d'aide Meta (facebook.com/help/249601088403018) — mêmes nom et adresse,
+  même portefeuille Business, perte des posts/photos/avis/nom d'utilisateur, **irréversible** ;
+  socialrails.com 20/07/2026 (délai d'attente après renommage) ; awajis.com 19/08/2026 ;
+  netolink.com 28/05/2026 (irréversibilité confirmée).
+- **Lien page ↔ Instagram** : facebook.com/business/help/connect-instagram-to-page ; socialrails.com
+  21/07/2026 et apaya.com 21/07/2026 (la distinction Accounts Center / lien Page, cause n° 1 des échecs).
+- **Non vérifié d'ici** : l'existence et le contenu de l'ancienne page `@amkweb` (403 pour tout robot
+  depuis le bac), la disponibilité réelle de `amkweb.cm` sur TikTok et Facebook, et les libellés exacts
+  de tes écrans.
