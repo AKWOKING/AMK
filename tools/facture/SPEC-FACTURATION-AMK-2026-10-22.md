@@ -21,10 +21,10 @@ Décision voir ops/ROADMAP-AMK-POST-DM-OPTIC-2026-10-22.md §1 : outil interne, 
 | Mention | Règle | Où elle vient |
 |---|---|---|
 | **Raison sociale + forme juridique** | « AMK … » au nom exact du RIB | à figer avant tout |
-| **NIU** | **la mention la plus contrôlée** — sans NIU, l'entreprise n'existe pas fiscalement | ⛔ **manquant aujourd'hui** |
-| **RCCM** | numéro d'immatriculation | ⛔ manquant |
+| **NIU** | **la mention la plus contrôlée** — sans NIU, l'entreprise n'existe pas fiscalement | ✅ **reçu le 22/10 : `P030218642934H`** |
+| **RCCM** | numéro d'immatriculation | ⛔ **toujours manquant — bloquant** |
 | **Adresse complète** | siège, téléphone, e-mail | partiel |
-| **Régime fiscal** | IGS / réel simplifié / réel normal — décide de la TVA | à trancher |
+| **Régime fiscal** | IGS / réel simplifié / réel normal — décide de la TVA | ⛔ à trancher avant toute facture |
 | **Identité du client** | nom ou raison sociale, adresse | à saisir |
 | **NIU du client** | **obligatoire en B2B** | à demander au client |
 | **Numéro séquentiel continu** | par type et par année, sans trou | généré |
@@ -105,7 +105,7 @@ D1 (SQLite)  ── export JSON quotidien vers R2  ──  téléchargement loca
 
 | Étape | Contenu | Durée |
 |---|---|---|
-| **0 · Préalable** | NIU, RCCM, RIB, régime fiscal d'AMK | **bloquant** |
+| **0 · Préalable** | ~~NIU~~ ✅ reçu · **RCCM, RIB et régime fiscal restent bloquants** | **bloquant** |
 | 1 | Réglages + clients + calculs + aperçu imprimable | 1 jour |
 | 2 | Numérotation, statuts, paiements partiels | 1 jour |
 | 3 | Avoir, export, sauvegarde | 0,5 jour |

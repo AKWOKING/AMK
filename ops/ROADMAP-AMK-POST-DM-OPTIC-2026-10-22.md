@@ -96,9 +96,16 @@ Le dossier `tryon-camera/` existe déjà. **Ce n'est pas un prototype vide : c'e
 
 ---
 
-## 3 · Publier deux fois par semaine (dimanche et lundi) — ce que disent les données
+## 3 · Publier deux fois par semaine — **deux calendriers distincts** (corrigé le 22/10)
 
-Ton instinct est **défendable sur TikTok**, moins sur Facebook. Les trois grandes études ne sont pas d'accord, et il faut le savoir avant de figer un calendrier.
+⚠️ **Correction du 22/10** : ce créneau dimanche + lundi concerne **les comptes d'AMK**, pas ceux de DM Optique. Un compte client et notre propre compte n'ont ni le même public ni la même fonction. Le détail des deux calendriers est dans `ops/CADENCE-PUBLICATION-2026-10-22.md`.
+
+| Compte | Jours | Heure | Fonction |
+|---|---|---|---|
+| **AMK** | dimanche + lundi | 19 h · 13 h | être connu, être cru |
+| **DM Optique** | mardi + jeudi | 19 h · 13 h | être vu, être cru |
+
+Ce qui suit explique **pourquoi** les deux jours d'AMK se défendent, et pourquoi ils ne conviennent pas à un opticien.
 
 | Source | TikTok | Facebook |
 |---|---|---|
@@ -116,8 +123,10 @@ Ton instinct est **défendable sur TikTok**, moins sur Facebook. Les trois grand
 
 | Jour | Heure | Quoi | Fonction |
 |---|---|---|---|
-| **Dimanche** | 19 h–20 h ( heure locale, quand les parents sont rentrés) | la vidéo de la série | être vu |
-| **Lundi** | 13 h | un post utile (photo du lieu, mythe à casser, réponse à une question) | être cru |
+| **Dimanche** (AMK) | 19 h | une pièce de fond : le métier, un cas, une leçon | être connu |
+| **Lundi** (AMK) | 13 h | une pièce courte : méthode, chiffre, outil | être cru |
+| **Mardi** (DM) | 19 h | la vidéo de la série | être vu |
+| **Jeudi** (DM) | 13 h | un post utile : le lieu, un mythe, une question | être cru |
 
 Pourquoi 19 h le dimanche et pas 9 h : les études mesurent l'engagement **des gens qui utilisent l'application**, pas ceux qui vont chez l'opticien. À Bonabéri, un dimanche matin, on est à l'église ou au marché. C'est une hypothèse — et c'est justement pour ça qu'il faut la noter et la vérifier sur 4 semaines.
 

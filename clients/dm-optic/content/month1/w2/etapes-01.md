@@ -73,9 +73,11 @@ Audio : 31,0 s · crête −2,0 dBFS · voix continue de 0 à 28 s
 
 ## 5 · Publication
 
-**Où** : TikTok (`@dmoptique.bonaberi237`) et Facebook. Puis en **Statut WhatsApp**, qui est le vrai canal de conversion ici — mais il ne touche que les contacts qui ont enregistré le numéro.
+**Accord du client** : « Je trouve ça pas mal… c'est assez simple et compréhensible » (WhatsApp, 22/10). Accord sans réserve → publication autorisée.
 
-**Légende proposée** (à valider) :
+**Où** : TikTok (`@dmoptique.bonaberi237`) **mardi 19 h**, Facebook le même jour, Statut WhatsApp le lendemain matin. Procédure complète : `etapes-01-PUBLICATION.md`.
+
+**Légende** (validée avec l'accord du client) :
 
 > Ce n'est pas une photo floue. C'est ce que voit quelqu'un qui n'a jamais fait mesurer ses yeux.
 >
