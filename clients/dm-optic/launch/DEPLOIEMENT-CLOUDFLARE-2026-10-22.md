@@ -206,7 +206,52 @@ que le site dit déjà : **une seule adresse**. Sans elle, les liens partagés e
 que les clients copient) mènent à une seconde adresse que Google doit réconcilier — avec elle, il n'y a
 plus qu'une porte.
 
-## 3 quater · Le jeton API reste **hors du dépôt**
+## 3 quater · Filtrer Workers Builds sur le dossier du site (King, 23/10)
+
+> **King, 23/10 : « filtre les Workers Builds Cloudflare sur `hosting/previews/dmoptic/*`. »**
+
+**Le problème, mesuré :** chaque envoi sur une branche de conversation déclenche une construction du
+Worker `dmoptiquesarl` — **même quand pas un seul fichier du site n'est touché** (cas du 23/10 : une PR de
+41 fichiers, aucun dans `hosting/previews/dmoptic`, et le contrôle « Workers Builds: dmoptiquesarl »
+passe au rouge). Ça salit chaque PR et ça donne l'impression d'un site cassé qui ne l'est pas.
+
+**Pourquoi je ne peux pas le faire moi-même, et c'est à dire :** ce réglage vit dans le tableau de bord
+Cloudflare (*Settings → Build → Build watch paths*), **pas** dans `wrangler.toml` — le fichier ne connaît
+pas ce champ, et l'y écrire donnerait l'illusion d'un réglage appliqué. Je n'ai **aucun accès API à
+Cloudflare** dans cet environnement (ni jeton, ni connecteur). C'est donc **deux champs à remplir par King**,
+et c'est fait en 60 secondes.
+
+**La marche exacte :**
+
+1. Cloudflare → **Workers & Pages** → **`dmoptiquesarl`** → onglet **Settings** ;
+2. section **Build** → **Build watch paths** (parfois nommé *Path(s)* sous *Build*) ;
+3. coller, **une ligne par chemin** :
+
+```
+hosting/previews/dmoptic/*
+wrangler.toml
+```
+
+4. **Save**. Le déclencheur ne se réveille plus que si l'un de ces deux chemins bouge.
+
+**Les deux autres champs à vérifier dans le même écran, tant qu'on y est :**
+
+| Champ | Valeur attendue | Pourquoi |
+|---|---|---|
+| **Production branch** | la branche de la conversation en cours | Workers Builds publie **cette** branche ; si elle est périmée, le site ne se met plus à jour (déjà arrivé le 22/10) |
+| **Deploy command** | `npx wrangler deploy` | c'est ce qui publie les assets ; sans lui, build vert et site inchangé |
+
+**Après le réglage — le contrôle qui prouve que ça marche :** pousser un commit **hors** du dossier du site
+(par exemple dans `knowledge/`) et vérifier que **aucune** construction Workers ne démarre. Un réglage qu'on
+n'a pas vu refuser un build n'est pas un réglage : c'est une case cochée.
+
+**Ce qui reste vrai sans ce réglage :** le workflow GitHub Actions (`.github/workflows/deploy-dmoptic.yml`)
+est déjà filtré sur `paths:` et ne publie que si le dossier change — **lui fait déjà le travail.** Le filtre
+Workers Builds sert à supprimer le bruit, pas à publier.
+
+---
+
+## 3 quinquies · Le jeton API reste **hors du dépôt**
 
 **Décision (King, 22/10) :** le jeton n'est pas révoqué, il est simplement **gardé local**. Il ne doit
 jamais entrer dans le dépôt — ni dans un fichier, ni dans un commit, ni dans un message.
@@ -229,7 +274,7 @@ qu'un fichier oublié sur le bureau ne parte jamais avec un `git add -A`.
 > déjà donnée. Il ne sert qu'à la route GitHub Actions (§4) — donc, tant que ce n'est pas fait, tu peux
 > le garder localement sans rien perdre.
 
-## 3 quinquies · ⚠️ Ne jamais « Retry » un ancien build
+## 3 sexies · ⚠️ Ne jamais « Retry » un ancien build
 
 **Ce qui s'est passé le 22/10 à 17 h 00** (capture du tableau de bord) : le build relancé portait le
 commit **`1dfee35`** — celui d'**avant** le retrait de `_redirects`. Il a donc échoué exactement comme la

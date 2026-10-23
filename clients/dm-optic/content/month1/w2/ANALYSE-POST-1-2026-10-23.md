@@ -256,8 +256,9 @@ durée prévue, avec 3 s de respiration au début de chaque plan), et on monte s
 seconde près ne se remonte pas.
 
 **Le script complet est dans `content/month1/w3/presbytie-55ans-SCRIPT.md`** — 9 blocs, 4 plans,
-20 minutes de tournage, deux montages. **Statut : non validé** (King, 23/10 : le journal). Décor refait,
-cible à confirmer.
+20 minutes de tournage, deux montages. **Statut : VALIDÉ le 23/10** (King : *« c'est le journal »* — le
+décor passe au téléphone, la cible est gardée), et **première vidéo de la série « vous demandez, on
+répond »** (`CONTENT-CREATION` §5 sexies).
 
 **Si King préfère ne pas toucher à la pièce déjà validée pour le 27/10** (`PLAN-27-10.md`, tiktok-01-v2,
 23 s), on la publie telle quelle — mais alors on accepte de ne rien apprendre de plus sur le format, et

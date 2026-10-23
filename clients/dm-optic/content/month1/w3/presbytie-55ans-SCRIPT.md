@@ -4,39 +4,29 @@
 Sujet      la presbytie, dite avec le geste que tout le monde fait déjà — pas le mot savant
 Pourquoi   55,5 % des spectateurs de la n°1 ont 55 ans et plus (ANALYSE-POST-1 §2②)
 Format     un tournage, deux montages : TikTok 14 s · Facebook 20 s (CONTENT-CREATION §5 quater)
-Statut     ⛔ NON VALIDÉ — King, 23/10 : « non sur la vidéo 55 ans, plus personne ne lit le journal »
-           Le décor a été refait (le téléphone) ; la question de la cible reste ouverte (§0)
+Statut     ✅ VALIDÉ — King, 23/10 : « c'est le journal » → le décor est corrigé (le téléphone),
+           la cible est gardée. Et il ouvre la série « vous demandez » (§2 bis).
+           Rien n'est rendu, rien n'est publié : le tournage reste à faire (4 plans, 20 min).
 Règles     aucun montant · aucun visage · aucune allégation médicale · « opticien optométriste »
 ```
 
 ---
 
-## 0 · Ce qui a été corrigé, et ce qui reste à trancher
+## 0 · La décision, et ce qu'elle tranche
 
-**King, 23/10 :** *« non sur la vidéo 55 ans — plus personne ne lit le journal. Regarder le journal à la
-télé oui, mais acheter et lire un papier journal, je n'en vois même pas autour de moi. »*
+**Ma question du tour précédent :** le « non » portait-il sur **le journal** ou sur **la cible 55 ans** ?
 
-**Il a raison, et ce n'était pas un détail de décor : c'était une erreur de méthode.** J'ai pris le geste
-classique de la presbytie dans les manuels occidentaux — « éloigner le journal » — sans vérifier qu'il
-existe encore ici. À Bonabéri, à 55 ans, on ne déplie pas un quotidien : **on écarte son téléphone pour
-lire un message, une capture, une photo de famille, ou le solde d'un compte.**
+**Réponse de King, 23/10 : « c'est le journal. »**
 
-| Ce que proposait la version refusée | Ce que propose la version refaite |
+| Ce qui était en cause | Verdict |
 |---|---|
-| un journal à bout de bras | **un téléphone tenu loin, à bout de bras, pour lire un message** |
-| « Vous éloignez le journal ? » | **« Vous éloignez votre téléphone pour lire ? »** |
-| un geste de manuel | un geste qu'on voit cent fois par jour dans la boutique |
+| **Le journal** comme objet | ⛔ refusé, à jamais : *« plus personne ne lit le journal, je n'en vois même pas autour de moi »* |
+| **La cible 55 ans et plus** | ✅ **gardée** — elle vient d'une mesure (55,5 % des spectateurs), pas d'une intuition |
+| Le geste (écarter les bras pour lire) | ✅ gardé — c'est l'objet qui a changé, pas le geste |
 
 **La règle qui sort de là, et qui vaut pour toutes les vidéos à venir :** *le décor doit exister chez le
-spectateur.* Un objet qu'on n'a pas vu depuis dix ans ne fait pas dire « c'est moi », il fait dire « c'est
-une publicité ». Écrit dans `knowledge/CONTENT-CREATION` §5 quinquies.
-
-**Ce qui reste à trancher — et c'est à toi de le dire :** ton « non » portait-il sur **le journal**, ou sur
-**la cible 55 ans** ? J'ai refait le décor et gardé la cible, parce que la cible vient d'une mesure (55,5 %
-des spectateurs), pas d'une intuition. Si le « non » portait aussi sur la cible, dis-le et je jette le
-script : on ne le retouche pas une troisième fois.
-
----
+spectateur.* Écrite dans `knowledge/CONTENT-CREATION` §5 quinquies, avec le test des trois secondes
+(montrer l'objet à la première personne qui passe dans la boutique : « tu as vu ça cette semaine ? »).
 
 ## 1 · L'idée, en une phrase
 
@@ -56,10 +46,32 @@ un chiffre qui explique, une porte de sortie honnête. **Aucune promesse, aucune
 | 5 | **Le geste utile** | 10,5 – 13,5 s | **UNE MESURE DE 5 MINUTES** + mains sur l'appareil | « Une mesure de cinq minutes, et on vous dit ce qu'il vous faut. » |
 | 6 | **La demande de partage** | 13,5 – 15,5 s | **ENVOYEZ ÇA À QUELQU'UN QUI ÉCARTE SON TÉLÉPHONE** | « Si quelqu'un chez vous écarte son téléphone pour lire, envoyez-lui cette vidéo. » |
 | 7 | **La sortie** | 15,5 – 17,5 s | **NDOBO MAYOR · BONABÉRI** + **6 56 12 22 39** | « Passez au cabinet, on reçoit jusqu'à dix-sept heures. » |
-| 8 | **La question** *(texte seul, tenu 2 s)* | 17,5 – 19,5 s | **DEPUIS QUAND ÉCARTEZ-VOUS VOTRE TÉLÉPHONE POUR LIRE ?** | *(silence)* |
+| 8 | **L'ouverture de la série** *(texte seul, tenu 2,5 s)* | 17,5 – 20 s | **POSEZ VOTRE QUESTION SUR LES YEUX — ON Y RÉPOND EN VIDÉO** | *(silence)* |
 
 **Montage TikTok :** blocs 1 à 5 puis 7 — **14 s**, sans le bloc 6 à l'oral (la demande de partage passe
-en légende), et le bloc 8 devient la première ligne de la légende.
+en légende), et le bloc 8 (la question) devient la dernière image, tenue 2,5 s.
+
+### 2 bis · C'est la première vidéo de la série « vous demandez, on répond »
+
+**Décision King, 23/10 :** *« oui, on démarre la série "vous demandez" avec la prochaine vidéo. »*
+La mécanique complète est dans `knowledge/CONTENT-CREATION` §5 sexies. Ce qu'elle change **ici** :
+
+| # | Ce qu'on ajoute à cette vidéo | Où |
+|---|---|---|
+| 1 | **la demande de question, à l'écran** — « posez votre question sur les yeux, on y répond en vidéo » | bloc 8, tenu 2,5 s |
+| 2 | **la même demande en première ligne de légende**, avec le numéro WhatsApp | légende |
+| 3 | **un dossier `questions/`** — capture + prénom + date, tenu par nous | interne, au cabinet |
+
+**Deux demandes dans une vidéo, est-ce un CTA de trop ?** Non, et voilà la distinction :
+
+| Demande | Comment elle est faite | Ce qu'elle coûte au spectateur | Ce qu'elle rapporte |
+|---|---|---|---|
+| **le rendez-vous** | à l'oral, une phrase, à la fin | un déplacement — c'est un engagement | un client |
+| **la question** | à l'écran, 2,5 s, sans rien promettre | **un commentaire — c'est un geste gratuit** | la matière des vidéos suivantes, et un commentaire qui pousse le post |
+
+**On ne demande jamais deux engagements à la fois.** Un déplacement *ou* un commentaire : le premier est
+une conversion, le second un échange. Les mettre au même niveau dilue les deux — c'est pour ça que le
+rendez-vous reste **parlé** et la question **écrite**.
 
 **Notes de montage :**
 - Le texte **en haut** du cadre sur TikTok (le bas est couvert par l'interface).
@@ -102,8 +114,9 @@ gens — c'est la leçon du 23/10).
 > Si quelqu'un chez vous écarte son téléphone pour lire, envoyez-lui cette vidéo. Ça lui évitera de croire
 > qu'il « fatigue ».
 >
-> **Depuis quand écartez-vous votre téléphone pour lire ?** Dites-le en commentaire, ça nous intéresse —
-> et ça rassurera le suivant.
+> **Votre question, maintenant :** qu'est-ce que vous aimeriez savoir sur vos yeux, et qu'on ne vous a
+> jamais expliqué ? Écrivez-la en commentaire ou sur WhatsApp. **On en choisit une par semaine et on y
+> répond en vidéo**, avec votre prénom (et seulement si vous êtes d'accord).
 >
 > 📍 Ndobo Mayor, Bonabéri · Douala
 > 📞 656 122 239 — écrivez-nous sur WhatsApp avant de venir, on vous dit quoi prévoir
@@ -115,7 +128,8 @@ gens — c'est la leçon du 23/10).
 
 > Vous écartez votre téléphone pour lire ? Ce n'est pas la fatigue. Une mesure de 5 min au cabinet, Bonabéri 📍 656 122 239
 >
-> Envoyez ça à quelqu'un qui écarte son téléphone 👇 Depuis quand écartez-vous le vôtre ?
+> Envoyez ça à quelqu'un qui écarte son téléphone 👇
+> Et posez-nous votre question sur les yeux : on y répond en vidéo (656 122 239).
 
 ---
 

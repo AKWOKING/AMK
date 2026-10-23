@@ -23,7 +23,42 @@ Applied: the header lists the files **actually loaded** (and says "partial" / "n
 > read end to end.
 
 Application : `knowledge/` est la couche de référence (table ci-dessous) ; une règle qui la contredit
-se dit **à voix haute**, et le document est corrigé le jour même — jamais contourné en silence. Une
+se dit **à voix haute**, et le document est corrigé le jour même — jamais contourné en silence.
+
+### 0c bis · La liste qu'on ne saute pas — et `CONTENT-CREATION` en fait partie (ruling King 23/10)
+
+> *King, 23/10 : « make sure `CONTENT-CREATION` is in the list of what you have to read when necessary in
+> preflight docs, write it. »*
+
+**Il y était** (table §1g, routage §1g, ligne 115), **mais dispersé sur trois endroits** — donc jamais lu
+comme une liste. Voici la liste, une seule fois, avec le déclencheur de chaque fichier. **Un tour qui touche
+l'un de ces sujets lit le fichier avant d'écrire, et le dit dans son en-tête.**
+
+| # | Fichier | Il se lit **quand** | Il ne se lit pas quand |
+|---|---|---|---|
+| 1 | **`knowledge/CONTENT-CREATION-2026-10-22.md`** | **toute vidéo, tout post, toute légende, tout script, tout aimant, toute analyse de performance sociale** — et dès qu'on parle de hook, de durée, de CTA, de mot-clé, d'opt-in, de décor, de série | la tâche ne touche aucune publication (prix, contrat, site, facture) |
+| 2 | `knowledge/MARKETING-OPTICAL-2026-10-22.md` | positionnement, acquisition, SEO local, avis, vente optique, un chiffre à sourcer pour un client | contenu purement interne à AMK |
+| 3 | `knowledge/OUTREACH-MESSAGING-2026-10-22.md` | tout message à un opticien, un gérant de clinique, un prospect | message à un client existant |
+| 4 | `knowledge/LANDING-FUNNEL-2026-10-23.md` | une page, un tunnel, une conversion, un formulaire | un post social |
+| 5 | `knowledge/MAINTENANCE-CLIENTS-2026-10-22.md` | une décision qui engage un client (périmètre, rythme, retainer, plafond) | une tâche de production |
+| 6 | `knowledge/PRIX-2026-10-24.md` · `ROAST-*` | tout prix, toute grille, toute remise, toute proposition | jamais, sinon |
+| 7 | `knowledge/VIDEOS-2026-10-23-AUDIT.md` | une vidéo à monter, à rendre ou à auditer | une vidéo à écrire seulement |
+| 8 | `knowledge/HOUSE-KNOWLEDGE-BASE.md` | l'index : quand on ne sait pas où chercher, on commence ici | on sait déjà quel fichier ouvrir |
+| 9 | `PRE-FLIGHT.md` (ce document) | **toujours**, en entier, avant tout | — |
+
+**Les trois sections de `CONTENT-CREATION` qui se lisent le plus souvent, et leur déclencheur :**
+
+| Section | Déclencheur |
+|---|---|
+| **§3 bis** (gabarit 9 blocs, rehook) · **§3 ter** (4 S, banque de hooks) | écrire un script |
+| **§5 quater** (un tournage, deux montages) | publier la même vidéo sur Facebook **et** TikTok |
+| **§5 quinquies** (le décor doit exister chez le spectateur) | **tout ce qu'on filme** — avant de tourner |
+| **§5 sexies** (série « vous demandez, on répond ») | demander une question à l'audience, taguer quelqu'un |
+| **§10 / §10 bis** (journal des sources) | **à chaque source reçue**, vidéo comprise |
+
+**La règle de compte rendu :** l'en-tête pré-vol nomme **les numéros** de cette liste qui ont été lus —
+`knowledge 1, 2 · dossier client` — et pas « knowledge lu ». Un numéro absent est un fichier non lu, et ça
+se voit. Une
 recherche neuve (vidéo, article, outil) atterrit dans `knowledge/` **avant** d'entrer dans une page
 ou un message : sinon elle n'existe pas. For DM Optique, "end to end" means `clients/dm-optic/` including `onboarding/CONDITIONS-D-INTERVENTION-*`, `site/SPEC-PAGES-v1.md`, the build notes (`build-notes.md`), the proforma, and the client's messages as logged in the CRM. **For the DM Optique site, the source of truth is `clients/dm-optic/site/CLIENT-REQUIREMENTS-BRIEF.md`: rulings cite it; a question it cannot answer extends it (its « Journal d'extension »), never a ruling from memory.**
 ---
@@ -430,6 +465,9 @@ deux bases de connaissance, **avant** d'écrire une ligne de script ou de lancer
 | décider d'un contenu avec visage / IA | `knowledge/CONTENT-CREATION…` §6 | ruling de King — jamais de production avant |
 | sourcer un chiffre pour un client | `knowledge/MARKETING-OPTICAL…` §9 + `CONTENT-CREATION…` §7 | la source primaire nommée, sinon « non revérifié » |
 | **écrire un post, un sous-titre, une légende, un DM** | **`tools/qa/audit_claims.py`** (verrous client : prix, stock, superlatifs, allégations) | `knowledge/CONTENT-CREATION…` §6 bis |
+| **publier la même vidéo sur Facebook et TikTok** | `knowledge/CONTENT-CREATION…` **§5 quater** (un tournage, deux montages : durées, première image, légendes, ce qu'on mesure) | le script du mois |
+| **filmer quoi que ce soit** | `knowledge/CONTENT-CREATION…` **§5 quinquies** (le décor doit exister chez le spectateur ; le test des trois secondes) | le plan de tournage |
+| **demander une question à l'audience / taguer quelqu'un** | `knowledge/CONTENT-CREATION…` **§5 sexies** (série « vous demandez, on répond », accord obligatoire avant le tag) | la vidéo de réponse |
 | écrire à un gérant de clinique / opticien (prospection, DM froid) | `knowledge/OUTREACH-MESSAGING-2026-10-22.md` | vérifier la position réelle **avant** d'écrire |
 
 **Deux règles debout issues du 22/10 :**

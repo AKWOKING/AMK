@@ -15,19 +15,29 @@ Angle      les deux messages commencent par LE COMPTE : dmoptiquesarl@gmail.com
 
 ---
 
-## ⚠️ Avant d'envoyer : le mot de passe ne part pas dans un message
+## 🔑 Le mot de passe — ruling King, 23/10 : **il part dans le message**
 
-Le compte existe, il lui faut son mot de passe. **On ne l'écrit pas sur WhatsApp** — un message se
-transfère, se capture, se retrouve dans un téléphone qu'on prête. Trois façons, dans l'ordre :
+**King, 23/10 : « écris le mot de passe dans le message. »** C'est son client, ses comptes, sa décision —
+elle est appliquée. Elle **remplace** la règle du 22/10 qui disait « les accès se remettent en main
+propre, pas par WhatsApp » (`launch/ANNONCE-COMPTES-2026-10-22.md`) : la nouvelle décision est écrite là-bas
+aussi, pour qu'on ne se contredise pas d'un fichier à l'autre.
 
-1. **de vive voix** — un appel de deux minutes, il le note dans son téléphone, on ne l'envoie jamais ;
-2. **en personne**, au cabinet, sur un papier ;
-3. s'il a perdu le mot de passe : **il le réinitialise lui-même** depuis la page de connexion Google
-   (« Mot de passe oublié »), avec le numéro de téléphone de secours du compte **656 122 239**. S'il n'y a
-   pas de numéro de secours, on le rajoute **ensemble**.
+**Ce que je ne peux pas faire, et il faut le dire :** **je n'ai pas le mot de passe.** Il est dans le
+gestionnaire de King (`build-notes.md`, `pre-launch-checklist.md`), pas dans le dépôt — et il n'a rien à y
+faire. **Il est donc écrit `[mot de passe]` ci-dessous : King le remplace avant d'envoyer.** Trois raisons
+de ne pas le mettre ici, dans l'ordre d'importance :
 
-**Ce qu'on ne fait pas :** lui créer un deuxième compte Google « pour aller plus vite ». Deux comptes, deux
-fiches, et Google ne sait plus laquelle montrer aux clients.
+1. **ce dépôt est public** — un mot de passe poussé ici est publié, et l'historique git le garde même s'il
+   est retiré ensuite ;
+2. il change la première fois qu'il se connecte, ou devrait ;
+3. le fichier sert à envoyer, pas à stocker.
+
+**Les deux précautions qui vont avec, et qu'on lui écrit noir sur blanc :**
+
+| Précaution | Pourquoi |
+|---|---|
+| **Changer le mot de passe** après la première connexion | il restera dans une conversation WhatsApp : ça se capture, ça se transfère |
+| **Activer la double vérification** avec le **656 122 239** | c'est ce qui protège réellement le compte, pas la longueur du mot de passe |
 
 ---
 
@@ -39,7 +49,9 @@ fiches, et Google ne sait plus laquelle montrer aux clients.
 > Ouvrez **gmail.com** (ou l'application Gmail) → **Se déconnecter** si un autre compte est ouvert →
 > **Se connecter** avec :
 > **dmoptiquesarl@gmail.com**
-> Le mot de passe, je vous le donne de vive voix — on ne l'écrit pas dans un message.
+> **Mot de passe : `[mot de passe]`**
+> *(changez-le tout de suite après : Paramètres du compte → Sécurité. Un mot de passe écrit dans une
+> conversation reste dans la conversation.)*
 >
 > **2. Ouvrez votre fiche.**
 > Dans le même téléphone, toujours connecté à ce compte, allez sur **google.com** et tapez :
@@ -71,8 +83,9 @@ fiche** — c'est le point qui pouvait bloquer, et il est levé.
 > Ouvrez l'application **Facebook** → menu **☰** (en haut à droite sur Android) → descendez tout en bas →
 > **Se déconnecter** → **Se connecter** avec :
 > **dmoptiquesarl@gmail.com**
-> *(si Facebook demande un mot de passe différent, c'est celui que vous avez choisi pour la page — dites-le
-> moi et on le remet ensemble)*
+> **Mot de passe : `[mot de passe]`**
+> *(c'est le même compte que pour Google — si Facebook refuse ce mot de passe, dites-le moi et on le remet
+> ensemble, sans en créer un deuxième)*
 >
 > **2. Ouvrez la page, pas votre profil.**
 > Une fois connecté, appuyez sur votre photo en haut → **« DM Optique SARL »** doit apparaître dans la
@@ -103,9 +116,10 @@ fiche** — c'est le point qui pouvait bloquer, et il est levé.
 
 ### Suivi
 
-| Date | Compte Google | Avis Google répondus | Commentaires FB répondus | Reste |
-|---|---|---|---|---|
-| 23/10 | `dmoptiquesarl@gmail.com` — **gère la fiche** (vu sur le tableau de bord) | 0 sur 4 | 0 sur 1 | **5 à faire** |
+| Date | Compte Google | Mot de passe envoyé | Avis Google répondus | Commentaires FB répondus | Reste |
+|---|---|---|---|---|---|
+| 23/10 | `dmoptiquesarl@gmail.com` — **gère la fiche** (vu sur le tableau de bord) | ☐ message ① · ☐ message ② | 0 sur 4 | 0 sur 1 | **5 à faire** |
+| | | **changement de mot de passe** ☐ | | | |
 | | | | | |
 
 ---
@@ -118,3 +132,5 @@ fiche** — c'est le point qui pouvait bloquer, et il est levé.
   deux guides de mise en place.
 - **Non vérifié** : **qui a le rôle admin sur la page Facebook** (nous ou lui), et **si un numéro de
   secours est attaché au compte Google**. Les deux se règlent en cinq minutes avec lui, pas dans le dépôt.
+- **Absent volontairement** : le mot de passe lui-même. Il se remplit **au moment de l'envoi**, dans
+  WhatsApp, jamais dans ce fichier (dépôt public).

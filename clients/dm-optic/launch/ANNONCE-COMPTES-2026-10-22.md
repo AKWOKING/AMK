@@ -1,5 +1,13 @@
 # Message du matin — les comptes sont créés
 
+> ## 🔑 Mise à jour du 23/10 — le mot de passe part désormais par WhatsApp
+> **King, 23/10 : « écris le mot de passe dans le message. »** La règle du 22/10 ci-dessous (« pas par
+> WhatsApp ») est **remplacée** pour ce client. Ce n'est pas un oubli : c'est une décision de King, et elle
+> est écrite ici pour qu'on ne se contredise pas d'un fichier à l'autre.
+> **Ce qui ne change pas :** le compte reste au cabinet, et **le mot de passe doit être changé après la
+> première connexion** + double vérification sur le 656 122 239 — c'est ce qui protège le compte, pas le
+> fait qu'on l'ait chuchoté. Détail : `launch/GUIDE-REPONDRE-AVIS-2026-10-23.md` §« Le mot de passe ».
+
 ```
 Objet    informer le client que les deux pages existent, qu'il peut déjà y envoyer ses clients,
          et que les comptes sont à lui
