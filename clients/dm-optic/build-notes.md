@@ -2016,3 +2016,42 @@ qu'on refuse, pour les raisons du point 2. Elle disparaîtra le jour où la sér
 
 **La vraie réponse reste la re-photo** : table blanche, lumière diffuse, 10 minutes par série. Le
 script rejouera alors la même présentation, avec cette fois un détourage possible.
+
+## 23/10/2026 (suite) — le socle : les montures ne flottent plus
+
+**Demande King** : « I see you have changed the background but that won't be quite enough to satisfy
+the client, can you generate something (the case or a bench) on which the frames will stand? research
+on github tools that can help you do it then install them ».
+
+**Recherche GitHub d'abord** (API, par étoiles), puis essai : `rembg` (25 162 ★, MIT) installé dans un
+venv et **écarté** — ses poids se téléchargent sur un hôte bloqué ici, et il est entraîné pour des
+sujets opaques, alors que nos montures sont transparentes. Le détail et les deux autres candidats sont
+dans `ops/TOOL-SCAN.md`. **Rien n'est donc installé** : le socle est dessiné par un script maison.
+
+**Ce qui est généré** — `tools/site/frame_bench.py` : un **socle en acrylique**, dalle translucide vue
+de face, arête claire sur le dessus, chants latéraux, ombre de contact, et le **reflet** de la monture
+dans la matière. Pas d'étui : nous n'en avons photographié aucun, on ne montre pas un produit que le
+cabinet ne vend pas. La monture, elle, n'est **jamais** redessinée : elle est détourée de sa photo.
+
+**Trois garde-fous, dans l'ordre où ils ont servi** :
+
+1. **charnières ressort** — récupérées par fermeture morphologique (un pixel clair *entouré* de monture
+   en fait partie) : e07 et e13, coupées en deux au tour 66, sont entières ;
+2. **papier bleu pâle** — la feuille bleutée du fournisseur laissait un ruban clair accroché aux
+   charnières (e07, e13). Retiré par une règle de couleur (clair **et** froid, `b - r ≥ 5`) : l'acier et
+   l'argent sont neutres, donc épargnés — f59, qui était la victime de la première tentative, reste
+   intacte ;
+3. **contrôle de pièces + repli** — si le détourage laisse des morceaux séparés, ou si la matière est
+   transparente (e17, e27, f06, f25, f25-2, f26, f59-2), la photo n'est **pas** découpée : elle est
+   affichée entière, fond ramené au blanc du set, posée sur le socle. Une monture entière sur un socle
+   vaut mieux qu'une monture amputée sur un beau fond.
+
+**Résultat** : 65 fichiers, 0 échec, **58 détourés + 7 en planche**, 1600 × 1200, 4,7 → 4,9 Mo, noms
+inchangés, `QUALITY=82`, réversible (`git show 3810e3b~1:…`). `dmopticsarl.zip` repacké :
+182 entrées, 4 706 Ko. Contrôle : `tools/qa/audit_images.py` — 0 faute sur femmes (24) et hommes (6).
+
+**Ce qui reste imparfait, et il faut le dire au client** : sur f25 et f25-2, le bord de la carte
+d'appui du fournisseur reste visible derrière le verre (on ne découpe pas, donc on ne l'efface pas) ;
+sur h05 et h08, prises de trois quarts, la monture repose sur son point le plus bas, ce qui la fait
+flotter d'un côté. **La vraie réponse reste la re-photo sur le socle** : dix minutes par série, et les
+65 photos sortent alors sans détourage du tout.

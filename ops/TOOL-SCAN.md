@@ -595,3 +595,31 @@ ici) : les fonctions « page rendue » resteront indisponibles et c'est écrit d
 ramenait l'ancien historique (`not our ref` sur le pin de l'amont) et la bascule échouait en laissant
 les 25 anciens skills. `install.sh` réécrit maintenant l'origine avant de chercher le pin, et vérifie
 52 skills au lieu de 25.
+
+## 23/10 — recherche « support de présentation » (montures DM) : `rembg` audité, **non retenu**
+
+> Demande King : « research on github tools that can help you do it then install them » — la recherche
+> est *exigée* avant toute installation. Elle a été faite sur l'API GitHub (recherche par étoiles), puis
+> l'outil a été **installé pour l'essayer** avant d'être jugé. Le verdict est tombé sur l'essai, pas sur
+> la popularité.
+
+| Candidat | Licence | État | Verdict | Pourquoi |
+|---|---|---|---|---|
+| `danielgatis/rembg` (25 162 ★) | MIT | poussé le 21/10/2026, non archivé | **essayé, non retenu** | le détourage de montures n'est pas son cas |
+| `noisyshade/PhotoRoom-Desktop` (8 ★) | MIT | appli de bureau | **écarté d'entrée** | application Electron, pas une bibliothèque : rien à piloter |
+| `shubham8kale/Product-photography-AI` (5 ★) | — | Stable Diffusion + rembg | **écarté** | génère un *produit* : on n'invente pas une monture |
+
+**Essai réel de `rembg` 2.0.86** (venv `/tmp/toolenv`, CPU) :
+
+1. `pip install "rembg[cpu]"` passe ; mais les poids `u2net.onnx` se téléchargent depuis
+   `release-assets.githubusercontent.com`, **bloqué ici** (TLS, comme la vidéo YouTube — voir les
+   culs-de-sac du tour 67). L'outil est donc inutilisable dans cet environnement, même installé.
+2. Même si les poids passaient, le modèle est entraîné pour des **sujets opaques sur fond chargé**.
+   Les montures DM sont l'inverse : verres transparents, acétate translucide, charnières ressort de la
+   couleur du fond. C'est précisément ce qui a déjà fait échouer le détourage maison au tour 66
+   (14 fichiers sur 65 amputés).
+
+**Décision** : pas de dépendance ajoutée, pas de modèle à télécharger, **0 FCFA**, et le support est
+dessiné par **`tools/site/frame_bench.py`** — déterministe, relisible, réversible, sans réseau. Le
+script porte ses propres garde-fous (détourage + contrôle de pièces + repli « planche »), ce qu'un
+modèle opaque ne peut pas offrir sur ces photos.
