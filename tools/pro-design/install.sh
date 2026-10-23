@@ -17,5 +17,13 @@ cp "$SRC" "$HOME/.claude/skills/pro-design/SKILL.md"
 test -f "$HOME/.agents/skills/pro-design/SKILL.md"
 grep -q '^name: pro-design' "$HOME/.agents/skills/pro-design/SKILL.md"
 grep -q '^## 4. Verification loop' "$HOME/.agents/skills/pro-design/SKILL.md"
+# La chaîne de vérification de design (étape 4 du skill) : on vérifie qu'elle est là,
+# sans l'installer — l'installation de Chromium coûte 40 s et c'est `shot.py` qui la réclame.
+if [ -d "${AMK_VIDEO_RUNTIME:-/tmp/amk-video}/node_modules/puppeteer-core" ]; then
+  echo "  boucle de vérification : PRÊTE (python3 tools/qa/shot.py <page>)"
+else
+  echo "  boucle de vérification : ABSENTE — lancer \`bash tools/video/install.sh\` (une fois par session)"
+fi
+
 echo "pro-design OK — 4 sections + quality floor + hand-off"
 echo "skill : $HOME/.agents/skills/pro-design/SKILL.md"

@@ -458,10 +458,14 @@ Skill  : [skill chargé, ou « aucun : la tâche n'en appelle pas »]
   **deux tours maximum puis stop**.
 - **Hiérarchie :** les lois maison gagnent — `AMK-DESIGN-SKILLS.md`, le protocole d'unicité, les verrous
   client, et **les portiques §1b** (ce sont eux qui bloquent une publication, pas la capture d'écran).
-- **Ce qui ne marche pas dans la sandbox, et qu'on dit :** une **URL live** est inaccessible au Chromium
-  (egress fermé, constaté le 20/10) ; les captures se font sur **fichier local** avec
-  `CHROME_PATH=/tmp/amk-video/chrome-wrapper.sh`. Si la jonction casse, le rapport le dit et seuls les
-  portiques font foi.
+- **La boucle tourne pour de vrai (23/10) — et elle a déjà trouvé deux défauts.** `bash tools/video/install.sh`
+  une fois par session, puis **`python3 tools/qa/shot.py <page>`** : Chromium embarqué (paquet
+  `@sparticuz/chromium`), **serveur HTTP local** qui sert le dossier du site à la racine (sinon les chemins
+  absolus `/fonts/...` cassent et l'outil crie au loup), défilement complet, captures **1440 et 390**,
+  puis mesure : débordement, texte coupé, images cassées, contraste AA, console, focus, h1 du premier écran,
+  blocs restés invisibles, zones vides. Sortie **P1/P2/P3 + `rapport.json`**, code 1 si P1.
+  **Une URL externe reste inaccessible** (egress Chromium fermé) : on teste **le fichier du dépôt**, servi
+  en local — et c'est même mieux, puisque c'est exactement ce qui sera publié.
 - **Un seul skill de design par page, et on le nomme :** `pro-design` pour **structurer et vérifier**,
   `taste-skill` pour **tirer une direction** quand la marque n'en a pas encore. Jamais les deux en même
   temps sur la même page.
@@ -486,7 +490,7 @@ deux bases de connaissance, **avant** d'écrire une ligne de script ou de lancer
 | La tâche | D'abord | Ensuite |
 |---|---|---|
 | positionner une marque, écrire un statement | `knowledge/MARKETING-OPTICAL…` §6 | `clients/<client>/brand/BRAND-STRATEGY-*.md` |
-| **construire ou redessiner une page** (site, landing, page de vente) | **`tools/pro-design/README.md`** + `bash tools/pro-design/install.sh` → skill **`pro-design`** (§1f⑪ : marque, motifs, mouvement, boucle 1440/390, deux tours max) | `AMK-DESIGN-SKILLS.md` (lois maison, elles gagnent) · `design/WORKFLOW.md` · les portiques `tools/qa/` avant publication |
+| **construire ou redessiner une page** (site, landing, page de vente) | **`tools/pro-design/README.md`** + `bash tools/pro-design/install.sh` → skill **`pro-design`** (§1f⑪ : marque, motifs, mouvement, boucle 1440/390, deux tours max) | **`python3 tools/qa/shot.py <page>`** (le vrai navigateur, §1f⑪) · `AMK-DESIGN-SKILLS.md` (lois maison, elles gagnent) · les portiques `tools/qa/` avant publication |
 | **créer, réparer ou optimiser une page sociale** (Facebook, Instagram, TikTok) | `brand/AMK-PRESENCE-2026-10-22.md` **§14** (l'audit des trois profils réels : les sept défauts, la copie exacte Instagram/TikTok, la règle des identifiants) + **§13** (identité des trois comptes, fusion de pages, lien page ↔ Instagram) + §12 (les onze champs Facebook) + §10 (protocole captures) · `sales/research/2026-W43-techniques.md` §15 (audience vs communauté, cadence, mesure) | le §3 de PRESENCE uniquement pour les visuels déjà validés — l'arbitrage du nom est au §12.0 ; **une promesse de délai ne va jamais dans une bio sans sa condition** (§14.5) |
 | écrire un script court | `knowledge/CONTENT-CREATION…` §3 **puis §3 bis** (gabarit 9 blocs, rehook) et **§3 ter** (4 S + banque de hooks) | le gabarit du mois (`content/month1/…`) |
 | choisir **le type de contenu selon l'objectif** (être connu / faire écrire / créer l'urgence / filtrer) | `knowledge/CONTENT-CREATION…` §4 bis | l'objectif du mois, écrit dans le plan |

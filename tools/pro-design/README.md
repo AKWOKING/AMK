@@ -39,17 +39,51 @@ pro-design §3  →  design/MOTION.md + tools/design-motion-principles (le skill
 pro-design §4  →  tools/qa/ (les portiques) + une capture réelle
 ```
 
-**Le seul endroit où il faut être honnête :** l'étape 4 demande « Playwright ou Claude in Chrome ».
-Dans la sandbox, **une URL live est inaccessible au Chromium** (l'egress est fermé — constaté le 20/10) ;
-ce qui marche, c'est **un fichier local** servi par un petit serveur, avec le Chromium de la chaîne vidéo :
+**L'étape 4 est outillée** (voir plus bas) : `python3 tools/qa/shot.py <page>` ouvre la page dans le
+Chromium embarqué et rend un verdict. Une **URL externe** reste hors de portée (egress fermé) ; on teste
+donc **le fichier du dépôt** servi en local — c'est même plus juste, puisque c'est ce qui sera publié.
+
+
+## La boucle de vérification, outillée (23/10)
+
+Ce que le skill demande à l'étape 4 — *« ouvrir dans un vrai navigateur, capturer à 1440 et 390, corriger
+en un lot, deux tours maximum »* — est désormais **une commande**, pas une intention :
 
 ```bash
-bash tools/video/install.sh
-CHROME_PATH=/tmp/amk-video/chrome-wrapper.sh   # recette : tools/taste-skill/README.md
+bash tools/video/install.sh                              # une fois par session (~40 s)
+python3 tools/qa/shot.py hosting/previews/dmoptic/index.html
+python3 tools/qa/shot.py hosting/previews/dmoptic/index.html --strict   # un P2 fait échouer
 ```
 
-Si la jonction casse, le rapport **le dit** et seuls `lint.mjs` + les portiques §1b font foi — jamais une
-capture inventée.
+**Ce que fait `shot.py` :**
+
+| Geste | Pourquoi |
+|---|---|
+| démarre un **serveur HTTP local** sur le dossier du site | les pages utilisent des chemins absolus (`/fonts/…`) ; en `file://` tout casse et l'outil mentirait |
+| ouvre **Chromium embarqué** (`@sparticuz/chromium`) | aucun téléchargement externe : les CDN de navigateurs sont bloqués ici |
+| défile **deux passes** avant de mesurer | sinon les révélations au scroll ne se déclenchent pas et la page paraît vide |
+| capture **1440**, **390**, et le **premier écran** de chacun | c'est ce que le visiteur voit avant de défiler |
+| mesure | débordement horizontal · texte coupé · images cassées · contraste **WCAG AA** · erreurs console · focus clavier visible · h1 dans le premier écran · blocs restés invisibles · zones vides |
+| sort `P1/P2/P3` + `rapport.json` | code 1 si un P1 — donc utilisable dans une porte |
+
+**Deux faux positifs déjà corrigés dans l'outil**, parce qu'un outil qui crie au loup ne sert à rien :
+les éléments d'un **carrousel horizontal** (hors écran par nature) ne sont plus signalés, et le
+`scroll-behavior:smooth` est neutralisé pendant le test (sinon la capture « premier écran » est prise
+à mi-défilement).
+
+**Ce qu'il a trouvé le jour de son installation, sur le site DM déjà « livré » :**
+
+| Défaut | Gravité | Correctif |
+|---|---|---|
+| l'en-tête débordait de **21 px** à 390 px : le bouton de menu sortait de l'écran | **P1** | `hosting/fix_dm_mobile_header.py` — sous 430 px, marges, écart et taille de marque ajustés |
+| **quatre cartes de services** restaient invisibles dans le carrousel (`.rv` hors écran, jamais révélé) | **P2** | même script — la révélation observe le conteneur du carrousel |
+
+Les deux corrections sont appliquées aux **97 pages**, et le script est idempotent (`--check` sort en 1
+s'il reste du travail).
+
+**La preuve après correction :** `index.html` **VERT** (0 P1 · 0 P2), `contact/` **VERT**, `montures/`
+**VERT**, `404.html` **VERT**. Les 3 P3 restants sont un dégradé décoratif (`span.wash`) et des libellés
+de nav mobile repliés : cosmétiques, hors du seuil.
 
 ## Vérifier / réinstaller
 
