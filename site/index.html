@@ -82,7 +82,7 @@
     }
    ],
    "description": "Création de sites web bilingues FR|EN pour écoles privées, cliniques et laboratoires au Cameroun. Aperçu gratuit, en ligne dès votre validation.",
-   "priceRange": "150 000 FCFA et plus",
+   "priceRange": "150 000 – 450 000 FCFA",
    "sameAs": [
     "https://maps.google.com/?cid=15115895992629938509",
     "https://www.facebook.com/profile.php?id=61595803408384",
@@ -691,6 +691,13 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
 .lang-sw .lang-a{display:inline-block;background:none;border:none;color:var(--slate-l);font-weight:700;font-size:13px;padding:7px 14px;text-decoration:none}
 header#hdr .lang-sw .lang-a{color:#6B7584}
 .m-actions .lang-a{display:inline-block;padding:6px 12px;text-decoration:none;color:inherit;font-weight:700}
+/* Paiement (24/10) : l'outil de facturation de la maison rend visible ce qui etait implicite --
+   devis ecrit, facture numerotee, 50/50, relance au 7e jour. */
+.pay{display:grid;gap:14px;margin-top:26px}
+@media(min-width:760px){.pay{grid-template-columns:repeat(3,1fr)}}
+.pay div{background:#fff;border:1px solid var(--border);border-radius:14px;padding:18px 20px}
+.pay b{display:block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#B45309;margin-bottom:6px}
+.pay span{font-size:14px;color:var(--slate)}
 </style>
 <style id="amk-design-2026-10-23">
 /* ============================================================================
@@ -1088,63 +1095,112 @@ header#hdr .lang-sw .lang-a{color:#6B7584}
   <div class="wrap">
     <div class="center rv">
       <span class="kicker" data-en="Pricing" data-fr="Tarifs">Tarifs</span>
-      <h2 data-en="A public entry price. Everything else quoted on screen." data-fr="Un prix d'entrée public. Le reste chiffré à l'écran.">Un prix d'entrée public. Le reste chiffré à l'écran.</h2>
-      <p class="sub" data-en="The base costs 150 000 FCFA and it is written out in full below. What falls outside the base is priced before we start — never after." data-fr="Le socle coûte 150 000 FCFA et il est écrit en entier ci-dessous. Ce qui sort du socle est chiffré avant de commencer, jamais après.">Le socle coûte 150 000 FCFA et il est écrit en entier ci-dessous. Ce qui sort du socle est chiffré avant de commencer, jamais après.</p>
+      <h2 data-en="Three formats. One public price each." data-fr="Trois formats. Un prix public chacun.">Trois formats. Un prix public chacun.</h2>
+      <p class="sub" data-en="The base is written out in full below, with its domain and hosting included for the first year. Nothing is added to the bill after you sign: what falls outside a format is quoted on screen, before we start." data-fr="Chaque format est écrit en entier ci-dessous, domaine et hébergement de la première année compris. Rien ne s'ajoute à la facture après votre signature : ce qui sort d'un format est chiffré à l'écran, avant de commencer.">Chaque format est écrit en entier ci-dessous, domaine et hébergement de la première année compris. Rien ne s'ajoute à la facture après votre signature : ce qui sort d'un format est chiffré à l'écran, avant de commencer.</p>
     </div>
     <div class="pr-grid three">
-      <div class="pr feat rv">
-        <h3 data-en="Base" data-fr="Le socle">Le socle</h3>
-        <p class="for" data-en="Clinics, practices, opticians, shops and schools: one complete site, ready to be found." data-fr="Cliniques, cabinets, opticiens, commerces et écoles : un site complet, prêt à être trouvé.">Cliniques, cabinets, opticiens, commerces et écoles : un site complet, prêt à être trouvé.</p>
+      <div class="pr rv">
+        <h3 data-en="Presence" data-fr="Présence">Présence</h3>
+        <p class="for" data-en="A practice or a shop that needs to exist on Google, honestly and quickly." data-fr="Un cabinet ou un commerce qui doit exister sur Google, honnêtement et vite.">Un cabinet ou un commerce qui doit exister sur Google, honnêtement et vite.</p>
         <div class="price-note" style="margin:0 0 2px;text-transform:uppercase;letter-spacing:.12em;font-size:11.5px;font-weight:800" data-en="Starting at" data-fr="À partir de">À partir de</div>
         <div class="price">150 000 <span class="cur">FCFA</span></div>
-        <div class="price-note" data-en="one-off setup · nothing owed before you approve" data-fr="mise en place, une fois · rien dû avant votre validation">mise en place, une fois · rien dû avant votre validation</div>
+        <div class="price-note" data-en="one-off · nothing owed before you approve" data-fr="une fois · rien dû avant votre validation">une fois · rien dû avant votre validation</div>
         <ul>
-          <li data-en="Bilingual EN|FR website, up to 6 pages" data-fr="Site bilingue EN|FR, jusqu'à 6 pages">Site bilingue EN|FR, jusqu'à 6 pages</li>
-          <li data-en="Google Business Profile created or optimised: hours, address with a landmark, category, photos" data-fr="Fiche Google créée ou optimisée : horaires, adresse avec un repère, catégorie, photos">Fiche Google créée ou optimisée : horaires, adresse avec un repère, catégorie, photos</li>
+          <li data-en="Bilingual EN|FR site, up to 3 pages" data-fr="Site bilingue EN|FR, jusqu'à 3 pages">Site bilingue EN|FR, jusqu'à 3 pages</li>
+          <li data-en="Google Business Profile created: hours, address with a landmark, category, photos" data-fr="Fiche Google créée : horaires, adresse avec un repère, catégorie, photos">Fiche Google créée : horaires, adresse avec un repère, catégorie, photos</li>
+          <li data-en="Domain and hosting, first year included" data-fr="Domaine et hébergement, première année compris">Domaine et hébergement, première année compris</li>
           <li data-en="Prefilled WhatsApp button on every screen" data-fr="Bouton WhatsApp prérempli sur chaque écran">Bouton WhatsApp prérempli sur chaque écran</li>
-          <li data-en="Domain and secure hosting set up, in your name" data-fr="Nom de domaine et hébergement sécurisé mis en place, à votre nom">Nom de domaine et hébergement sécurisé mis en place, à votre nom</li>
           <li data-en="30-minute training for your team" data-fr="Formation de 30 minutes pour votre équipe">Formation de 30 minutes pour votre équipe</li>
-          <li data-en="Live as soon as you approve" data-fr="En ligne dès votre validation">En ligne dès votre validation</li>
-          <li data-en="Free preview first: you see it before you pay anything" data-fr="Aperçu gratuit d'abord : vous le voyez avant de payer quoi que ce soit">Aperçu gratuit d'abord : vous le voyez avant de payer quoi que ce soit</li>
+          <li data-en="Free preview first, live once you approve" data-fr="Aperçu gratuit d'abord, en ligne dès votre validation">Aperçu gratuit d'abord, en ligne dès votre validation</li>
         </ul>
         <a href="#audit" class="btn btn-amber" data-en="Get my free preview →" data-fr="Recevoir mon aperçu gratuit →">Recevoir mon aperçu gratuit →</a>
       </div>
-      <div class="pr rv" data-d="120">
-        <h3 data-en="What raises the price" data-fr="Ce qui augmente le prix">Ce qui augmente le prix</h3>
-        <p class="for" data-en="Everything outside the base. Each line is priced on screen, before we start — never discovered afterwards." data-fr="Tout ce qui sort du socle. Chaque ligne est chiffrée à l'écran, avant de commencer — jamais découverte après.">Tout ce qui sort du socle. Chaque ligne est chiffrée à l'écran, avant de commencer — jamais découverte après.</p>
-        <div class="price" style="font-size:26px" data-en="Quoted on screen" data-fr="Chiffré à l'écran">Chiffré à l'écran</div>
-        <div class="price-note" data-en="no surprise line after signature" data-fr="aucune ligne surprise après la signature">aucune ligne surprise après la signature</div>
+      <div class="pr feat rv" data-d="120">
+        <h3 data-en="Standard" data-fr="Standard">Standard</h3>
+        <p class="for" data-en="The format most clinics, opticians and schools end up choosing: six pages, a Google profile that works." data-fr="Le format que choisissent la plupart des cliniques, opticiens et écoles : six pages, une fiche Google qui travaille.">Le format que choisissent la plupart des cliniques, opticiens et écoles : six pages, une fiche Google qui travaille.</p>
+        <div class="price-note" style="margin:0 0 2px;text-transform:uppercase;letter-spacing:.12em;font-size:11.5px;font-weight:800" data-en="Starting at" data-fr="À partir de">À partir de</div>
+        <div class="price">250 000 <span class="cur">FCFA</span></div>
+        <div class="price-note" data-en="one-off · first month of support included" data-fr="une fois · premier mois de support inclus">une fois · premier mois de support inclus</div>
         <ul>
-          <li data-en="Catalogue or shop page (products, prices, orders)" data-fr="Page catalogue ou boutique (produits, prix, commandes)">Page catalogue ou boutique (produits, prix, commandes)</li>
-          <li data-en="Content creation &amp; posting (writing, visuals, publishing)" data-fr="Création et publication de contenu (textes, visuels, publications)">Création et publication de contenu (textes, visuels, publications)</li>
-          <li data-en="Photo session at your premises" data-fr="Séance photo dans vos locaux">Séance photo dans vos locaux</li>
-          <li data-en="Logo creation and brand identity" data-fr="Création de logo et identité de marque">Création de logo et identité de marque</li>
-          <li data-en="More than 6 pages" data-fr="Plus de 6 pages">Plus de 6 pages</li>
-          <li data-en="Online booking agenda, linked to the site" data-fr="Agenda de rendez-vous en ligne, relié au site">Agenda de rendez-vous en ligne, relié au site</li>
-          <li data-en="Professional email address on your domain" data-fr="Adresse e-mail professionnelle sur votre domaine">Adresse e-mail professionnelle sur votre domaine</li>
-          <li data-en="Rebuilding a site you already have" data-fr="Refonte d'un site que vous avez déjà">Refonte d'un site que vous avez déjà</li>
-          <li data-en="Translation beyond FR|EN, or written SEO pages each month" data-fr="Traduction au-delà de FR|EN, ou pages de contenu SEO chaque mois">Traduction au-delà de FR|EN, ou pages de contenu SEO chaque mois</li>
-          <li data-en="Printed material: cards, flyers, signage" data-fr="Supports imprimés : cartes, flyers, signalétique">Supports imprimés : cartes, flyers, signalétique</li>
+          <li data-en="Bilingual EN|FR site, up to 6 pages" data-fr="Site bilingue EN|FR, jusqu'à 6 pages">Site bilingue EN|FR, jusqu'à 6 pages</li>
+          <li data-en="Google Business Profile optimised: categories, photos, 4 posts, review replies set up" data-fr="Fiche Google optimisée : catégories, photos, 4 publications, réponses aux avis préparées">Fiche Google optimisée : catégories, photos, 4 publications, réponses aux avis préparées</li>
+          <li data-en="Domain and hosting, first year included" data-fr="Domaine et hébergement, première année compris">Domaine et hébergement, première année compris</li>
+          <li data-en="Prefilled WhatsApp button on every screen" data-fr="Bouton WhatsApp prérempli sur chaque écran">Bouton WhatsApp prérempli sur chaque écran</li>
+          <li data-en="30-minute training + one month of WhatsApp support" data-fr="Formation de 30 minutes + un mois de support WhatsApp">Formation de 30 minutes + un mois de support WhatsApp</li>
+          <li data-en="Free preview first, live once you approve" data-fr="Aperçu gratuit d'abord, en ligne dès votre validation">Aperçu gratuit d'abord, en ligne dès votre validation</li>
         </ul>
-        <a href="#audit" class="btn btn-amber" data-en="Get my figure on WhatsApp →" data-fr="Recevoir mon chiffre sur WhatsApp →">Recevoir mon chiffre sur WhatsApp →</a>
+        <a href="#audit" class="btn btn-amber" data-en="Get my free preview →" data-fr="Recevoir mon aperçu gratuit →">Recevoir mon aperçu gratuit →</a>
       </div>
       <div class="pr rv" data-d="240">
-        <h3 data-en="Upkeep" data-fr="L'entretien">L'entretien</h3>
-        <p class="for" data-en="For those who would rather touch nothing. Optional, monthly, no contract." data-fr="Pour ceux qui préfèrent ne toucher à rien. Optionnel, mensuel, sans engagement.">Pour ceux qui préfèrent ne toucher à rien. Optionnel, mensuel, sans engagement.</p>
-        <div class="price" style="font-size:26px" data-en="Quoted with your project" data-fr="Chiffré avec votre projet">Chiffré avec votre projet</div>
-        <div class="price-note" data-en="monthly · cancel when you like" data-fr="mensuel · arrêtable quand vous voulez">mensuel · arrêtable quand vous voulez</div>
+        <h3 data-en="Catalogue" data-fr="Catalogue">Catalogue</h3>
+        <p class="for" data-en="When the customer must see the products: frames, shoes, stock, prices." data-fr="Quand le client doit voir les produits : montures, chaussures, stock, prix.">Quand le client doit voir les produits : montures, chaussures, stock, prix.</p>
+        <div class="price-note" style="margin:0 0 2px;text-transform:uppercase;letter-spacing:.12em;font-size:11.5px;font-weight:800" data-en="Starting at" data-fr="À partir de">À partir de</div>
+        <div class="price">450 000 <span class="cur">FCFA</span></div>
+        <div class="price-note" data-en="one-off · priced up with the number of references" data-fr="une fois · augmente avec le nombre de références">une fois · augmente avec le nombre de références</div>
         <ul>
-          <li data-en="Content updates, photos, news, hours" data-fr="Mises à jour de contenu, photos, actualités, horaires">Mises à jour de contenu, photos, actualités, horaires</li>
-          <li data-en="Backups, uptime and certificate checks" data-fr="Sauvegardes, disponibilité et certificat surveillés">Sauvegardes, disponibilité et certificat surveillés</li>
-          <li data-en="Google profile kept alive: posts, review replies" data-fr="Fiche Google tenue à jour : publications, réponses aux avis">Fiche Google tenue à jour : publications, réponses aux avis</li>
-          <li data-en="WhatsApp support when something breaks" data-fr="Support WhatsApp quand quelque chose casse">Support WhatsApp quand quelque chose casse</li>
-          <li data-en="Your domain and files stay 100% yours, whether you keep the plan or not" data-fr="Votre domaine et vos fichiers restent à 100 % à vous, que vous gardiez le forfait ou non">Votre domaine et vos fichiers restent à 100 % à vous, que vous gardiez le forfait ou non</li>
+          <li data-en="Everything in Standard, six pages" data-fr="Tout le Standard, six pages">Tout le Standard, six pages</li>
+          <li data-en="Catalogue or shop section, up to 30 references" data-fr="Catalogue ou boutique, jusqu'à 30 références">Catalogue ou boutique, jusqu'à 30 références</li>
+          <li data-en="Product pages with filters, photos and prices you set" data-fr="Pages produits avec filtres, photos et prix que vous fixez">Pages produits avec filtres, photos et prix que vous fixez</li>
+          <li data-en="Order button that opens WhatsApp with the product already named" data-fr="Bouton de commande qui ouvre WhatsApp avec le produit déjà nommé">Bouton de commande qui ouvre WhatsApp avec le produit déjà nommé</li>
+          <li data-en="30-minute training + one month of support" data-fr="Formation de 30 minutes + un mois de support">Formation de 30 minutes + un mois de support</li>
+          <li data-en="Beyond 30 references: quoted per pack of 10" data-fr="Au-delà de 30 références : chiffré par paquet de 10">Au-delà de 30 références : chiffré par paquet de 10</li>
         </ul>
-        <a href="#audit" class="btn btn-amber" data-en="Talk about upkeep →" data-fr="Parler de l'entretien →">Parler de l'entretien →</a>
+        <a href="#audit" class="btn btn-amber" data-en="Talk about a catalogue →" data-fr="Parler d'un catalogue →">Parler d'un catalogue →</a>
       </div>
+    </div>
+
+    <div class="center rv" style="margin-top:56px">
+      <span class="kicker" data-en="Keep it running" data-fr="Faire vivre">Faire vivre</span>
+      <h2 style="font-size:26px" data-en="Upkeep, monthly, no contract." data-fr="L'entretien, au mois, sans engagement.">L'entretien, au mois, sans engagement.</h2>
+      <p class="sub" data-en="A site that nobody feeds stops bringing patients. Two plans, and a written list of what happens each month." data-fr="Un site que personne ne nourrit cesse d'amener des patients. Deux forfaits, et une liste écrite de ce qui se fait chaque mois.">Un site que personne ne nourrit cesse d'amener des patients. Deux forfaits, et une liste écrite de ce qui se fait chaque mois.</p>
+    </div>
+    <div class="pr-grid">
+      <div class="pr rv">
+        <h3 data-en="Upkeep" data-fr="Suivi">Suivi</h3>
+        <p class="for" data-en="The site stays online, up to date, and visible on Google. Nothing more." data-fr="Le site reste en ligne, à jour et visible sur Google. Rien de plus.">Le site reste en ligne, à jour et visible sur Google. Rien de plus.</p>
+        <div class="price">25 000 <span class="cur">FCFA</span></div>
+        <div class="price-note" data-en="per month · cancel when you like" data-fr="par mois · arrêtable quand vous voulez">par mois · arrêtable quand vous voulez</div>
+        <ul>
+          <li data-en="Verified backups, updates, uptime and certificate checks" data-fr="Sauvegardes vérifiées, mises à jour, disponibilité et certificat surveillés">Sauvegardes vérifiées, mises à jour, disponibilité et certificat surveillés</li>
+          <li data-en="Domain renewal and hosting handled" data-fr="Renouvellement du domaine et hébergement gérés">Renouvellement du domaine et hébergement gérés</li>
+          <li data-en="Two Google posts a month" data-fr="Deux publications Google par mois">Deux publications Google par mois</li>
+          <li data-en="One-page monthly report: what was done, what it gave" data-fr="Rapport mensuel d'une page : ce qui a été fait, ce que ça a donné">Rapport mensuel d'une page : ce qui a été fait, ce que ça a donné</li>
+          <li data-en="WhatsApp support, answered the same day" data-fr="Support WhatsApp, réponse le jour même">Support WhatsApp, réponse le jour même</li>
+          <li data-en="Content changes up to 2 hours a month, then they wait for next month" data-fr="Modifications jusqu'à 2 heures par mois, ensuite elles attendent le mois suivant">Modifications jusqu'à 2 heures par mois, ensuite elles attendent le mois suivant</li>
+        </ul>
+        <a href="#audit" class="btn btn-amber" data-en="Take the upkeep plan →" data-fr="Prendre le forfait Suivi →">Prendre le forfait Suivi →</a>
+      </div>
+      <div class="pr rv" data-d="120">
+        <h3 data-en="Growth" data-fr="Croissance">Croissance</h3>
+        <p class="for" data-en="The site plus the content that fills it: eight pieces a month, one short video, the ads managed." data-fr="Le site plus le contenu qui le nourrit : huit pièces par mois, une vidéo courte, la pub gérée.">Le site plus le contenu qui le nourrit : huit pièces par mois, une vidéo courte, la pub gérée.</p>
+        <div class="price">75 000 <span class="cur">FCFA</span></div>
+        <div class="price-note" data-en="per month · ad budget paid separately, never touched by us" data-fr="par mois · budget publicitaire payé à part, jamais touché par nous">par mois · budget publicitaire payé à part, jamais touché par nous</div>
+        <ul>
+          <li data-en="Everything in Upkeep" data-fr="Tout le forfait Suivi">Tout le forfait Suivi</li>
+          <li data-en="8 social pieces a month, including one short video filmed at your premises" data-fr="8 pièces sociales par mois, dont une vidéo courte tournée chez vous">8 pièces sociales par mois, dont une vidéo courte tournée chez vous</li>
+          <li data-en="Four Google posts, review replies, hours kept current" data-fr="Quatre publications Google, réponses aux avis, horaires tenus à jour">Quatre publications Google, réponses aux avis, horaires tenus à jour</li>
+          <li data-en="Ad campaign set up and read every month (budget separate)" data-fr="Campagne publicitaire réglée et lue chaque mois (budget à part)">Campagne publicitaire réglée et lue chaque mois (budget à part)</li>
+          <li data-en="Quarterly review, in person or on a call" data-fr="Revue trimestrielle, en visio ou en boutique">Revue trimestrielle, en visio ou en boutique</li>
+          <li data-en="Content changes up to 4 hours a month" data-fr="Modifications jusqu'à 4 heures par mois">Modifications jusqu'à 4 heures par mois</li>
+        </ul>
+        <a href="#audit" class="btn btn-amber" data-en="Talk about Growth →" data-fr="Parler du forfait Croissance →">Parler du forfait Croissance →</a>
+      </div>
+    </div>
+
+    <div class="rv" style="max-width:980px;margin:34px auto 0;background:#fff;border:1px solid var(--border);border-radius:18px;padding:26px 28px">
+      <h3 style="font-size:18px;font-weight:800;margin-bottom:6px" data-en="What raises the price, always quoted on screen" data-fr="Ce qui augmente le prix, toujours chiffré à l'écran">Ce qui augmente le prix, toujours chiffré à l'écran</h3>
+      <p style="font-size:14px;color:var(--slate);margin-bottom:14px" data-en="Outside the three formats, and never discovered on the invoice." data-fr="En dehors des trois formats, et jamais découvert sur la facture.">En dehors des trois formats, et jamais découvert sur la facture.</p>
+      <p style="font-size:14.5px;color:var(--ink);line-height:1.9" data-en="Content creation &amp; posting · photo session at your premises · logo creation and brand identity · pages beyond the format · online booking agenda · professional email · rebuilding a site you already have · translation beyond FR|EN · written SEO pages each month · printed material (cards, flyers, signage) · a catalogue beyond 30 references" data-fr="Création et publication de contenu · séance photo dans vos locaux · création de logo et identité de marque · pages au-delà du format · agenda de rendez-vous en ligne · e-mail professionnel · refonte d'un site existant · traduction au-delà de FR|EN · pages de contenu SEO chaque mois · supports imprimés (cartes, flyers, signalétique) · catalogue au-delà de 30 références">Création et publication de contenu · séance photo dans vos locaux · création de logo et identité de marque · pages au-delà du format · agenda de rendez-vous en ligne · e-mail professionnel · refonte d'un site existant · traduction au-delà de FR|EN · pages de contenu SEO chaque mois · supports imprimés (cartes, flyers, signalétique) · catalogue au-delà de 30 références</p>
+      <p style="font-size:13.5px;color:var(--slate);margin-top:14px" data-en="Passing from Presence to Standard costs 120 000: it is a new build, not an upgrade discount. No discount is ever given — the scope changes, not the price." data-fr="Passer de Présence à Standard coûte 120 000 : c'est une reconstruction, pas une remise de mise à niveau. Aucune remise n'est jamais accordée — c'est le périmètre qui change, pas le prix.">Passer de Présence à Standard coûte 120 000 : c'est une reconstruction, pas une remise de mise à niveau. Aucune remise n'est jamais accordée — c'est le périmètre qui change, pas le prix.</p>
     </div>
   </div>
 </section>
+<div class="pay">
+  <div><b>1 &middot; Devis</b><span>Un devis &eacute;crit, un p&eacute;rim&egrave;tre, un prix. Rien ne d&eacute;marre sans votre &laquo; oui &raquo;.</span></div>
+  <div><b>2 &middot; Facture</b><span>Facture num&eacute;rot&eacute;e AMK-2026-00x&nbsp;: 50&nbsp;% au d&eacute;marrage, 50&nbsp;% &agrave; la mise en ligne. MTN, Orange ou esp&egrave;ces.</span></div>
+  <div><b>3 &middot; Relance</b><span>Une ligne reste ouverte&nbsp;? Nous relan&ccedil;ons au 7<sup>e</sup> jour, poliment, avec le montant exact.</span></div>
+</div>
+
 
 <!-- FAQ -->
 <section class="refus dark" id="refus">
@@ -1158,7 +1214,7 @@ header#hdr .lang-sw .lang-a{color:#6B7584}
       <div class="refus-item rv">
         <span class="ri">01</span>
         <h3 data-en="A price without its list" data-fr="Un prix sans sa liste">Un prix sans sa liste</h3>
-        <p data-en="Our entry price is public: 150 000 FCFA. Above a figure with no list underneath, a price is not information, it is bait. So every amount here comes with what it includes and what makes it climb — and nothing is added to the bill after you have signed." data-fr="Notre prix d'entrée est public : 150 000 FCFA. Au-dessus d'un chiffre sans liste, un prix n'est pas une information, c'est un appât. Donc chaque montant ici vient avec ce qu'il inclut et ce qui le fait monter — et rien ne s'ajoute à la facture après votre signature.">Notre prix d'entrée est public : 150 000 FCFA. Au-dessus d'un chiffre sans liste, un prix n'est pas une information, c'est un appât. Donc chaque montant ici vient avec ce qu'il inclut et ce qui le fait monter — et rien ne s'ajoute à la facture après votre signature.</p>
+        <p data-en="Our three prices are public: 150 000, 250 000, 450 000 FCFA. Above a figure with no list underneath, a price is not information, it is bait. So every amount here comes with what it includes and what makes it climb — and nothing is added to the bill after you have signed." data-fr="Nos trois prix sont publics : 150 000, 250 000, 450 000 FCFA. Au-dessus d'un chiffre sans liste, un prix n'est pas une information, c'est un appât. Donc chaque montant ici vient avec ce qu'il inclut et ce qui le fait monter — et rien ne s'ajoute à la facture après votre signature.">Notre prix d'entrée est public : 150 000 FCFA. Au-dessus d'un chiffre sans liste, un prix n'est pas une information, c'est un appât. Donc chaque montant ici vient avec ce qu'il inclut et ce qui le fait monter — et rien ne s'ajoute à la facture après votre signature.</p>
       </div>
       <div class="refus-item rv" data-d="80">
         <span class="ri">02</span>
@@ -1186,7 +1242,7 @@ header#hdr .lang-sw .lang-a{color:#6B7584}
       <h2 data-en="Asked before, answered honestly" data-fr="Posé avant, répondu honnêtement">Posé avant, répondu honnêtement</h2>
     </div>
     <div class="qa rv">
-      <details><summary data-en="How much does a website cost in Cameroon?&nbsp;" data-fr="Combien coûte la création d'un site web au Cameroun&nbsp;?">Combien coûte la création d'un site web au Cameroun&nbsp;?</summary><div class="ans" data-en="The base is 150 000 FCFA, once: a bilingual EN|FR site up to 6 pages, the Google Business Profile created or optimised, domain and secure hosting in your name, and a 30-minute training. What goes beyond it — a catalogue or shop page, photo session, logo and branding, content and posting, extra pages — is quoted on screen before we start, never after. The preview is free." data-fr="Le socle coûte 150 000 FCFA, une fois : un site bilingue EN|FR jusqu'à 6 pages, la fiche Google créée ou optimisée, le domaine et l'hébergement sécurisé à votre nom, et une formation de 30 minutes. Ce qui dépasse — catalogue ou boutique, séance photo, logo et identité, création de contenu et publications, pages supplémentaires — est chiffré à l'écran avant de commencer, jamais après. L'aperçu est gratuit.">Le socle coûte 150 000 FCFA, une fois : un site bilingue EN|FR jusqu'à 6 pages, la fiche Google créée ou optimisée, le domaine et l'hébergement sécurisé à votre nom, et une formation de 30 minutes. Ce qui dépasse — catalogue ou boutique, séance photo, logo et identité, création de contenu et publications, pages supplémentaires — est chiffré à l'écran avant de commencer, jamais après. L'aperçu est gratuit.</div></details>
+      <details><summary data-en="How much does a website cost in Cameroon?&nbsp;" data-fr="Combien coûte la création d'un site web au Cameroun&nbsp;?">Combien coûte la création d'un site web au Cameroun&nbsp;?</summary><div class="ans" data-en="Three formats, one public price each. <b>Presence 150 000 FCFA</b>: bilingual up to 3 pages, Google profile created, domain and hosting for the first year, 30-minute training. <b>Standard 250 000 FCFA</b>: up to 6 pages, Google profile optimised, one month of support. <b>Catalogue 450 000 FCFA and up</b>: up to 30 references, orders by WhatsApp. Upkeep is separate: 25 000 or 75 000 a month, no contract. The preview is free, and nothing is owed until you approve." data-fr="Trois formats, un prix public chacun. <b>Présence 150 000 FCFA</b> : bilingue jusqu'à 3 pages, fiche Google créée, domaine et hébergement la première année, formation de 30 minutes. <b>Standard 250 000 FCFA</b> : jusqu'à 6 pages, fiche Google optimisée, un mois de support. <b>Catalogue 450 000 FCFA et plus</b> : jusqu'à 30 références, commandes par WhatsApp. L'entretien est à part : 25 000 ou 75 000 par mois, sans engagement. L'aperçu est gratuit, et rien n'est dû avant votre validation.">Le socle coûte 150 000 FCFA, une fois : un site bilingue EN|FR jusqu'à 6 pages, la fiche Google créée ou optimisée, le domaine et l'hébergement sécurisé à votre nom, et une formation de 30 minutes. Ce qui dépasse — catalogue ou boutique, séance photo, logo et identité, création de contenu et publications, pages supplémentaires — est chiffré à l'écran avant de commencer, jamais après. L'aperçu est gratuit.</div></details>
       <details><summary data-en="Why are clinics and shops the focus, and not schools?&nbsp;" data-fr="Pourquoi les cliniques et les commerces d'abord, et pas les écoles&nbsp;?">Pourquoi les cliniques et les commerces d'abord, et pas les écoles&nbsp;?</summary><div class="ans" data-en="Because school demand follows the calendar: strong before the new term, quiet once the year is running. A clinic, a practice or a shop needs to be found every month of the year. The school page stays, and we prepare new-term campaigns in advance — that is when they work." data-fr="Parce que la demande scolaire suit le calendrier : forte avant la rentrée, calme une fois l'année lancée. Une clinique, un cabinet ou un commerce a besoin d'être trouvé tous les mois de l'année. La page école reste, et nous préparons les campagnes de rentrée à l'avance — c'est là qu'elles servent.">Parce que la demande scolaire suit le calendrier : forte avant la rentrée, calme une fois l'année lancée. Une clinique, un cabinet ou un commerce a besoin d'être trouvé tous les mois de l'année. La page école reste, et nous préparons les campagnes de rentrée à l'avance — c'est là qu'elles servent.</div></details>
       <details><summary data-en="How long does it really take?" data-fr="Combien de temps ça prend vraiment ?">Combien de temps ça prend vraiment ?</summary><div class="ans" data-en="We do not give a date before we know the scope. The preview reaches your phone within 24 hours of your first message; going live follows your approval." data-fr="Nous ne donnons pas de date avant de connaître le périmètre. L'aperçu est dans votre téléphone sous 24 heures après votre premier message ; la mise en ligne suit vos validations.">Nous ne donnons pas de date avant de connaître le périmètre. L'aperçu est dans votre téléphone sous 24 heures après votre premier message ; la mise en ligne suit vos validations.</div></details>
       <details><summary data-en="My staff aren't technical. Can they update the site?" data-fr="Mon personnel n'est pas technique. Peut-il mettre à jour le site ?">Mon personnel n'est pas technique. Peut-il mettre à jour le site ?</summary><div class="ans" data-en="Yes, that's the point. We design for non-technical staff, run a 30-minute training, and stay reachable on WhatsApp. News, photos, events: your team handles it." data-fr="Oui, c'est le but. Nous concevons pour du personnel non technique, faisons une formation de 30 minutes, et restons joignables sur WhatsApp. Actualités, photos, événements : votre équipe s'en charge.">Oui, c'est le but. Nous concevons pour du personnel non technique, faisons une formation de 30 minutes, et restons joignables sur WhatsApp. Actualités, photos, événements : votre équipe s'en charge.</div></details>
@@ -1198,7 +1254,7 @@ header#hdr .lang-sw .lang-a{color:#6B7584}
 
 <details><summary data-en="Do you work with schools and clinics outside Douala?" data-fr="Travaillez-vous avec des écoles et des cliniques hors de Douala&nbsp;?">Travaillez-vous avec des écoles et des cliniques hors de Douala&nbsp;?</summary><div class="ans" data-en="Yes, we work remotely, anywhere in Cameroon. Everything happens on WhatsApp: the preview, the revisions, the launch." data-fr="Oui, nous travaillons à distance, partout au Cameroun. Tout se fait par WhatsApp : l'aperçu, les corrections, la mise en ligne.">Oui, nous travaillons à distance, partout au Cameroun. Tout se fait par WhatsApp : l'aperçu, les corrections, la mise en ligne.</div></details>
 
-<details><summary data-en="Can I see a real website before deciding?" data-fr="Puis-je voir un vrai site avant de décider&nbsp;?">Puis-je voir un vrai site avant de décider&nbsp;?</summary><div class="ans" data-en="Yes, and the first one is real: DM OPTIQUE SARL, an optician in Bonabéri, is live on dmoptiquesarl.com with its Google profile. Below it, six complete concepts open from your phone: three for clinics, three for schools. The concepts use fictional names — we never show a client's site without written permission." data-fr="Oui, et le premier est réel : DM OPTIQUE SARL, opticien à Bonabéri, est en ligne sur dmoptiquesarl.com avec sa fiche Google. En dessous, six concepts complets s'ouvrent depuis votre téléphone : trois pour des cliniques, trois pour des écoles. Les concepts portent des noms fictifs — nous ne montrons jamais le site d'un client sans accord écrit.">Oui, et le premier est réel : DM OPTIQUE SARL, opticien à Bonabéri, est en ligne sur dmoptiquesarl.com avec sa fiche Google. En dessous, six concepts complets s'ouvrent depuis votre téléphone : trois pour des cliniques, trois pour des écoles. Les concepts portent des noms fictifs — nous ne montrons jamais le site d'un client sans accord écrit.</div></details>
+<details><summary data-en="Can I see a real website before deciding?" data-fr="Puis-je voir un vrai site avant de décider&nbsp;?">Puis-je voir un vrai site avant de décider&nbsp;?</summary><div class="ans" data-en="Yes, and the first one is real: DM OPTIQUE SARL, an optician in Bonabéri, is live on dmoptiquesarl.com with its Google profile. Below it, six complete concepts open from your phone: three for clinics, three for schools. The concepts use fictional names — we never show a client's site without written permission." data-fr="Oui, et le premier est réel : DM OPTIQUE SARL, opticien à Bonabéri, est en ligne sur dmoptiquesarl.com avec sa fiche Google. En dessous, six concepts complets s'ouvrent depuis votre téléphone : trois pour des cliniques, trois pour des écoles. Les concepts portent des noms fictifs — nous ne montrons jamais le site d'un client sans son accord.">Oui, et le premier est réel : DM OPTIQUE SARL, opticien à Bonabéri, est en ligne sur dmoptiquesarl.com avec sa fiche Google. En dessous, six concepts complets s'ouvrent depuis votre téléphone : trois pour des cliniques, trois pour des écoles. Les concepts portent des noms fictifs — nous ne montrons jamais le site d'un client sans son accord.</div></details>
 
 <details><summary data-en="Will my school or clinic be found on Google?" data-fr="Mon école ou ma clinique sera-t-elle trouvée sur Google ?">Mon école ou ma clinique sera-t-elle trouvée sur Google ?</summary><div class="ans" data-en="We build with local search in mind, fast pages, clean structure, both languages, and the way parents and patients actually search: “school in Buea”, “dentist in Buea”, “école privée à Douala”. We set you up to be found; your reputation does the rest." data-fr="Nous construisons avec la recherche locale en tête, pages rapides, structure propre, deux langues, et la manière dont les parents et les patients cherchent vraiment : « école à Buea », « dentiste à Buea », « école privée à Douala ». Nous vous mettons en position d'être trouvé ; votre réputation fait le reste.">Nous construisons avec la recherche locale en tête, pages rapides, structure propre, deux langues, et la manière dont les parents et les patients cherchent vraiment : « école à Buea », « dentiste à Buea », « école privée à Douala ». Nous vous mettons en position d'être trouvé ; votre réputation fait le reste.</div></details>
     </div>
