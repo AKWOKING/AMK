@@ -94,3 +94,125 @@ bien un **numéro d'inscription** — la source confirme elle-même `RULE-CREDEN
 **Ce que la source NE donne PAS :** aucune donnée d'ancienneté, nulle part — uniquement des numéros
 d'inscription et d'arrêté. **Rien, dans le registre, ne permet d'écrire « depuis YYYY ».** La règle du 08/10
 est confirmée par la source elle-même.
+
+---
+
+# LOT DU 24/10 — 5 prospects qualifiés (recherche du 23/10, envoi prévu le 24)
+
+> **Demande King 23/10 :** « a small batch of 5 clinics… check if there's a trace of any social media
+> activity… our ICP = same profile as DM Optique… find the 5 prospects today, write the first outreach
+> message, and prepare a plan for their demo website. »
+> **Méthode :** recherche web + lecture des pages publiques (Facebook, Instagram, TikTok, annuaires,
+> ONOC, Google). Aucun mot-clé inventé, aucun chiffre de trafic estimé. Les numéros viennent de pages
+> publiques et **se re-vérifient sur le profil WhatsApp avant chaque envoi** (règle du 05/10).
+
+## 1 · Le profil qui définit le lot
+
+DM OPTIQUE SARL, c'est : un cabinet de quartier, **un titulaire identifiable**, des **photos réelles**,
+un **numéro WhatsApp** comme porte d'entrée, **aucune équipe marketing**. Le prospect qui lui ressemble
+a donc : une activité sociale **visible et récente**, des **patients réels** (avis, commentaires), et
+**pas de maison à lui** sur le web — ou une maison en ruine (lien mort).
+
+**Le signal que King a repéré et qui est confirmé ici :** les cabinets qui « ne veulent pas de site »
+tiennent déjà un compte. Ils investissent du temps dans un canal qu'ils **louent** (Facebook, TikTok,
+Instagram) et n'ont rien qui leur appartienne.
+
+## 2 · Les cinq — ce qui est vérifié, et ce qui reste à vérifier
+
+| # | Cabinet | Quartier | Ce qu'on a vu (preuve) | Le trou | Contact public |
+|---|---|---|---|---|---|
+| 1 | **Fashion Vision Douala** | Bonapriso, rue Afcodi | Instagram **2 034 abonnés · 207 publications** ; page Facebook ; groupe présent dans 7 pays ; ONOC #142 (001/2016, PUILLE Nicolas) | **aucun site trouvé** pour la boutique de Douala | 656 22 38 63 · fvisiondouala@outlook.fr |
+| 2 | **Original Optique / Glamour Optique** | Akwa, face Palais Dika (+ Yaoundé) | TikTok **@original.optique** actif (vidéos pédagogiques, adresses, horaires) ; site `originaloptique-douala.com` | **le site répond HTTP 500** (vérifié 23/10) | 678 922 973 · 691 01 94 33 |
+| 3 | **Optix SARL** | Akwa, carrefour Idéal | Page Facebook active (« atelier spécialisé depuis plus de 10 ans ») ; fiche Google qui pointe encore un site | **`optix-sarl.business.site` renvoie 404** — Google a arrêté ce service en 2024 | 697 72 32 65 · lesoptix@gmail.com |
+| 4 | **SOS Vision** | Akwa, ancien Makumba | Facebook actif (publications récentes, lunettes de soleil) ; ONOC **#125** (007/2016, MEILO NGASSA Line) | **aucun site trouvé**, ni IG ni TikTok | 699 86 04 63 · sosvision05@gmail.com |
+| 5 | **House of Lunettes Optic** | Douala | Facebook avec **contenu éducatif régulier** (« quelle monture pour quel visage ») | **aucun site trouvé** ; le contenu ne vit que dans le fil | 674 43 08 92 · esemeebot@yahoo.fr |
+
+**Écartés du lot (et pourquoi) :** Valdoz Optic (site + IG + X actifs, groupe structuré — hors ICP) ·
+Maison Optique (site `.cm` + TikTok @maisonoptique237) · Golden Eyes (deux sites, marketing externalisé) ·
+Leroy Optique (site + IG + TikTok) · Bely (refus écrit du 24/09) · les 11 déjà contactés du lot d'octobre.
+
+## 3 · Les cinq messages d'ouverture (prêts à envoyer)
+
+Règles appliquées : 2–3 phrases, **aucune puce**, **aucune signature**, **aucune offre dans le premier
+message**, une seule question. Le fait cité est vrai et vérifiable — c'est lui qui ouvre la porte.
+
+**① Fashion Vision Douala**
+> Bonjour, je suis tombé sur votre Instagram — 207 publications, un vrai travail de montures et de
+> lunettes. Mais quand quelqu'un cherche « Fashion Vision Bonapriso » sur Google, il ne trouve pas votre
+> boutique. Vos clients vous demandent souvent l'adresse en message ?
+
+**② Original Optique**
+> Bonjour, le lien de votre site (originaloptique-douala.com) affiche une erreur depuis un moment — je
+> suis tombé dessus en cherchant vos horaires pour Akwa. Vous savez si quelqu'un s'en occupe encore ?
+
+**③ Optix**
+> Bonjour, le lien que Google affiche encore pour Optix mène à une page introuvable — le service qu'ils
+> utilisaient a fermé en 2024. Vous avez un autre endroit où envoyer les gens qui vous cherchent ?
+
+**④ SOS Vision**
+> Bonjour, votre page Facebook bouge, mais quelqu'un qui tape « SOS Vision Akwa » sur Google ne trouve ni
+> l'adresse ni les horaires. C'est par WhatsApp que vos clients vous joignent, ou ils passent
+> simplement ?
+
+**⑤ House of Lunettes**
+> Bonjour, vous publiez des conseils sur les formes de montures — c'est rare ici, et c'est utile. Mais un
+> conseil publié sur Facebook disparaît du fil en trois jours. Ça vous dirait qu'ils restent quelque
+> part qui vous appartienne ?
+
+## 4 · Cadence — un conflit à trancher par King
+
+Le ruling du 05/10 dit **1 envoi par jour, 2 maximum** (raison : signalement spam → numéro grillé →
+ liste brûlée). Cinq messages le même jour, sur un numéro qui n'a jamais envoyé à ces gens, c'est
+ exactement le motif qu'on a écarté.
+
+**Proposition :** les cinq sont **écrits et prêts** dès maintenant ; on en envoie **2 le 24/10**
+(09h00 et 17h00), **2 le 25/10**, **1 le 26/10**. Si King veut les cinq demain, alors il faut deux
+numéros, pas un.
+
+## 5 · La démo — un socle commun, cinq angles
+
+Voir la section « démo » du lot : même squelette pour les cinq (5 pages, héros en couches, JSON-LD,
+WhatsApp prérempli), et **une chose différente par prospect** — celle qui prouve qu'on l'a regardé lui.
+
+## 6 · Le plan de démo — ce qu'on construit si l'un dit oui
+
+### 6.1 · Le socle, réutilisé pour les cinq
+
+Ce que le chantier DM a laissé et qui se réutilise tel quel : HTML statique (aucun framework), système
+de jetons CSS, bascule FR/EN par attribut, données structurées `Optician`, CTA WhatsApp **prérempli**,
+`_headers` de cache, `404.html`, `robots.txt` + `sitemap.xml`, et les portiques `shot.py` /
+`audit_delivery.py`.
+
+**Cinq pages, jamais plus, pour une première démo :**
+
+| Page | Ce qu'elle contient | Pourquoi elle existe |
+|---|---|---|
+| Accueil | héros en couches (voir §7), 3 chemins, preuves, horaires, WhatsApp | c'est la seule page que 80 % des visiteurs liront |
+| Montures | galerie des photos **fournies par le cabinet**, filtres femme/homme/enfant | ce que le client vient voir |
+| Examen de vue | le déroulé en 4 étapes, ce qu'il faut apporter, horaires d'examen | la question qu'on nous pose en DM |
+| Le cabinet | le titulaire, l'équipement, l'adresse avec l'étage et la porte | la confiance |
+| Contact | adresse, itinéraire, téléphone, WhatsApp, horaires | la conversion |
+
+**Ce qu'on ne met pas dans une démo :** aucun prix, aucune marque de monture revendiquée, aucun avis
+client recopié, aucune photo empruntée à un autre cabinet. Les photos qu'on n'a pas encore → blocs
+grisés nommés « votre photo ici », pas une image de banque.
+
+**Le temps réel :** 3 à 4 h pour la première (socle + identité visuelle tirée de leurs publications),
+2 h 30 pour les suivantes. Les portiques tournent avant tout envoi de lien.
+
+### 6.2 · L'angle de chaque démo — la seule chose qui change
+
+| # | Prospect | L'angle de la démo | La preuve qu'on a regardé |
+|---|---|---|---|
+| 1 | Fashion Vision | **la vitrine Douala d'un groupe de 7 pays** : bilingue FR/EN, la galerie en avant, l'adresse de Bonapriso répétée à chaque section | leurs 207 publications, leur bio en anglais et en français |
+| 2 | Original Optique | **deux villes, un seul endroit où les trouver** : Akwa et Yaoundé, horaires distincts, itinéraire par boutique | leurs vidéos citent les deux adresses et deux numéros |
+| 3 | Optix | **l'atelier** : soudure, polissage, remise en état des montures, 10 ans de métier — le geste avant la monture | « atelier spécialisé depuis plus de 10 ans » sur leur page |
+| 4 | SOS Vision | **lentilles et solaires** : les deux catégories en tête, l'adaptation des lentilles expliquée en 3 étapes | leur présentation Facebook : « lunettes optiques, de soleil, lentilles » |
+| 5 | House of Lunettes | **les conseils deviennent des pages** : 3 articles courts (forme du visage, entretien, enfant) qui restent en ligne | ils publient déjà ce contenu, et il disparaît du fil |
+
+### 6.3 · Ce qu'on demande au premier échange (si la réponse est « oui, montrez-moi »)
+
+Quatre choses, pas plus : **6 à 10 photos** (devanture, intérieur, équipement, montures), **le nom exact**
+du titulaire et son numéro d'inscription à l'ONOC, **les horaires réels** (examen séparé de l'accueil),
+et **le numéro WhatsApp** qui reçoit les messages. Sans ça, la démo reste une maquette — et une maquette
+ne se montre pas comme un site.
