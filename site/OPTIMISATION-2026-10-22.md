@@ -260,3 +260,71 @@ Google d'AMK elle-même, avec des captures de Search Console — la seule preuve
 **Ce qui n'a pas changé et qui compte : le site ne promet rien qu'il ne puisse tenir.** Aucun avis inventé,
 aucun nombre de clients, aucun délai de livraison, aucun prix public — la seule promesse chiffrée est
 « aperçu sous 24 h », et elle est produite par la machine.
+
+---
+
+## 10 · La passe design du 23/10 — d'après deux prompts de structure
+
+```
+Entrées   deux prompts de sites fournis par King (23/10), tirés de websiteprompts.ai :
+          « Nadia Okonjo » (marque personnelle) et « Compound Search » (agence SEO).
+Demande   « adapt them and work on AMK website keeping of course our brand colors and text »
+Résultat  le SYSTÈME est repris, l'identité ne bouge pas, et aucune preuve inventée n'entre.
+```
+
+### 10.1 · The Design Read (protocole §2, étape 5)
+
+**Ce que ces deux prompts ont en commun, et qui manque à notre page** : une **voix technique**
+(étiquettes en monospace, chiffres à chasse fixe, index numérotés), une **échelle typographique
+franche** (le titre du premier écran occupe la place qu'il mérite), une **frise** qui rend le processus
+lisible d'un coup d'œil, et une section de **refus** — dire ce qu'on ne vend pas, ce qui vaut mieux que
+dire une fois de plus ce qu'on vend.
+
+**Ce qu'ils ont et que nous ne pouvons pas avoir, sans mentir** : une courbe de trafic à 61 400 sessions,
+« +412 % », « 1 840 mots-clés en top 3 », « 180 conférences », « 140 000 personnes dans la salle », des
+citations de clients nommés, des tarifs au mois. **Nous n'avons aucun de ces chiffres, et en inventer un
+seul détruirait la seule chose que ce site possède : il ne promet rien qu'il ne puisse tenir.**
+
+### 10.2 · Ce qui est repris, et comment c'est adapté
+
+| Emprunté | À qui | Comment c'est adapté à AMK | Où |
+|---|---|---|---|
+| **Étiquettes et données en monospace** | les deux | pile système (`ui-monospace…`), aucun téléchargement de police : le site reste rapide en 3G | `.kicker`, `.step small`, `.row-label`, `.f-grid h3`, `.amk-soc-lbl` |
+| **Chiffres à chasse fixe** (`tabular-nums`) | Compound | les compteurs ne « sautent » plus pendant l'animation | `.stat .n` |
+| **Échelle du titre du premier écran** | Nadia | `clamp(34px, 4.6vw, 64px)`, interligne 1.03, approche −0.03em — sans portrait : nous n'avons pas de visage à découper, et le protocole visages n'est pas tranché | `.punch` |
+| **Frise de processus** | Compound | un seul filet ambre de 1 px au-dessus des cinq étapes, et un halo sur l'étape révélée | `.steps::before` (≥ 900 px) |
+| **Section « ce qu'on ne fera pas »** | Compound | **quatre refus qui sont les nôtres** : prix affiché, délai sans condition, avis inventés, site qui reste chez nous | `#refus` |
+| **Marquee** | Nadia | déjà présent sur la page ; on n'en ajoute pas un deuxième | existant |
+
+### 10.3 · Ce qui est refusé, et pourquoi (à ne pas réintroduire)
+
+| Refusé | Pourquoi |
+|---|---|
+| **La courbe de trafic animée** | elle raconte la croissance d'un client. Nous n'avons pas de données de client à montrer — et une courbe inventée serait exactement ce que la section « refus » condamne deux écrans plus bas |
+| **« +412 % », « 1 840 mots-clés »** | chiffres de démonstration du prompt, pas des nôtres |
+| **Les tarifs au mois** | un prix public est interdit par notre grille (§11b) et la fiche DM. Le devis se fait après le brief |
+| **Les citations de clients nommés** | aucun client n'a encore accepté d'être cité |
+| **Les portraits découpés** | politique visages non tranchée (§6 du socle) — et le site « ne montre que du vrai » |
+| **Next.js / React / Framer Motion** | le site est un fichier HTML autonome, sans build ni dépendance : c'est ce qui le rend rapide en 3G et déployable par King en un glisser-déposer. Changer de pile pour une animation serait un coût sans bénéfice |
+
+### 10.4 · Deux défauts trouvés en chemin, et corrigés
+
+1. **Les sections vides (captures de King, 23/10).** Les 41 blocs `.rv` de l'accueil sont masqués par
+   `html.js .rv{opacity:0}` et révélés par un `IntersectionObserver`. Si cet observateur ne se déclenche
+   pas — JS partiellement bloqué, navigateur exotique, exception en amont — **la page reste blanche entre
+   l'en-tête et le pied de page**, et la capture le montre. Correctif : la révélation est enveloppée dans
+   `DOMContentLoaded`, `try/catch`, et **un minuteur force l'affichage après 1,2 s** quoi qu'il arrive.
+   Règle : **aucune animation ne doit pouvoir cacher le contenu.** Ajout d'un `@media (scripting:none)`.
+2. **Les logos sociaux n'étaient pas centrés dans leur rond.** Cause réelle : `footer a` et
+   `.f-grid a` (spécificité 0,1,1) écrasaient `display:inline-flex` (0,1,0) — le lien retombait en
+   `display:block` avec `padding:5px 0`, donc le glyphe partait en haut à gauche. Correctif : sélecteurs
+   `.amk-soc a.amk-soc-a` (0,2,1), `padding:0`, `line-height:1`, `svg` à 18 px explicites.
+   **Leçon** : un composant neuf hérite des règles `footer a` du site ; on écrit donc des sélecteurs à
+   spécificité supérieure, et on **regarde** le résultat — un portique ne rend pas le CSS.
+
+### 10.5 · Le troisième défaut, plus ancien, corrigé au passage
+
+Le compteur du premier écran disait **« 24 h — d'aperçu gratuit de page d'accueil »**, c'est-à-dire **un
+délai sans sa condition** — exactement ce que le §12.8 avait corrigé sur la carte de partage et le §14.5
+sur les bios. Il dit maintenant **« 24 h — pour un aperçu gratuit, après validation du brief »**. C'était
+la dernière promesse non conditionnée du site.

@@ -56,17 +56,16 @@ PATHS = {
 MARKER_CSS = "/* amk-social */"
 MARKER_BLOCK = 'class="amk-soc"'
 
-CSS = MARKER_CSS + """
-.amk-soc{margin-top:24px}
-.amk-soc-lbl{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.8;margin-bottom:10px}
-.amk-soc-l{display:flex;gap:10px;flex-wrap:wrap}
-.amk-soc-a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid rgba(148,163,184,.38);color:#E2E8F0;background:transparent;transition:color .18s ease,border-color .18s ease,transform .18s ease}
-.amk-soc-a:hover,.amk-soc-a:focus-visible{color:#F59E0B;border-color:#F59E0B;transform:translateY(-1px)}
-.amk-soc-a:focus-visible{outline:2px solid #FCD34D;outline-offset:2px}
-.amk-soc-a svg{display:block;fill:currentColor}
-.amk-soc-h{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
-@media (prefers-reduced-motion:reduce){.amk-soc-a{transition:none}.amk-soc-a:hover,.amk-soc-a:focus-visible{transform:none}}
-@media (max-width:420px){.amk-soc-a{width:40px;height:40px}}
+CSS = MARKER_CSS + """.amk-soc{margin-top:24px}
+.amk-soc .amk-soc-lbl{display:block;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#94A3B8;margin:0 0 10px}
+.amk-soc .amk-soc-l{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:0;padding:0}
+.amk-soc a.amk-soc-a{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;width:44px;height:44px;padding:0;margin:0;border-radius:50%;border:1px solid rgba(148,163,184,.45);color:#E2E8F0;background:transparent;line-height:1;text-decoration:none;box-sizing:border-box;transition:color .18s ease,border-color .18s ease,background-color .18s ease}
+.amk-soc a.amk-soc-a:hover,.amk-soc a.amk-soc-a:focus-visible{color:#F59E0B;border-color:#F59E0B;background:rgba(245,158,11,.08)}
+.amk-soc a.amk-soc-a:focus-visible{outline:2px solid #FCD34D;outline-offset:2px}
+.amk-soc a.amk-soc-a svg{display:block;width:18px;height:18px;flex:0 0 auto;fill:currentColor}
+.amk-soc .amk-soc-h{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+@media (prefers-reduced-motion:reduce){.amk-soc a.amk-soc-a{transition:none}}
+@media (max-width:420px){.amk-soc a.amk-soc-a{width:42px;height:42px}}
 """
 
 
