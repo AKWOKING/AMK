@@ -1957,3 +1957,29 @@ sa décision, pas la mienne.
 mois** (14h–18h, 4 blocs, 30–40 clips, 8 posts dont 4 à visage). Plan complet, liste de plans imprimable,
 autorisation d'image et circuit rush → post : `content/tournage/PLAN-TOURNAGE-MENSUEL.md`. Aucun
 abonnement d'avatar IA, aucune clé Veo achetée.
+
+---
+
+## 23/10/2026 — badge « source préférée sur Google » sur les 97 pages, et déploiement de test
+
+**Ce qui a changé.** Un badge deeplink (`https://www.google.com/preferences/source?q=dmoptiquesarl.com`)
+sous la description du pied de page, sur **les 97 pages** (FR + miroir `/en/` + fiches de montures).
+Pose par l'outil unique `tools/site/add_social_footer.py` (constante `PREF_DOMAIN`), **idempotent** :
+`--check` renvoie « 97 pages · 0 à corriger ». Bilingue par les `.fr-only` / `.en-only` existants.
+
+**Pourquoi le deeplink et pas le bouton JavaScript de Google.** Le bouton officiel charge une iframe
+`news.google.com` **à chaque vue de page** ; le site promet une page légère sur un téléphone en 3G. Le
+deeplink n'ajoute ni script ni requête tierce. Détail et sources : `site/PREFERRED-SOURCES-2026-10-23.md`.
+
+**Portes (§1b)** : `audit_html` 0 finding sur `index`, `en/index`, `montures/index`, `contact` ;
+`audit_a11y --strict` 0 faute / 0 avertissement sur `index` et `en/index`.
+
+**Déploiement de test (§1f③)** : projet `dm-optique-sarl` (`prj_vnTP9SW2lGh2rMqH15oU6S5NZvob`),
+déploiement **`dpl_3DnweMavAxXaZAFgRFXp4ZafT9gA`**, commit **`3e32490`**, cible `production`,
+état **READY / PROMOTED**, alias `https://dm-optique-sarl.vercel.app`. Piège reconfirmé : `git_source`
+attend `repoId` **numérique en chaîne** (`"1370149389"`) ; un `repoId` au format `owner/repo` renvoie
+400 « repository can't be found ».
+
+**Non vérifié** : la présence du badge dans la page servie. L'extracteur de texte de `fetch_page`
+**supprime le pied de page** (il ne montre pas non plus les liens Facebook/TikTok pourtant en ligne) :
+la preuve visuelle reste une capture de King.
