@@ -6,6 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Création de site web école &amp; clinique, Cameroun | AMK Douala</title>
 <meta name="description" content="Votre école ou clinique est jugée sur Google avant qu'on vous appelle. Site bilingue FR|EN, rendez-vous WhatsApp, aperçu gratuit.">
+
+<link rel="alternate" hreflang="fr" href="https://amk-cm.vercel.app/">
+<link rel="alternate" hreflang="en" href="https://amk-cm.vercel.app/en/">
+<link rel="alternate" hreflang="x-default" href="https://amk-cm.vercel.app/">
 <link rel="canonical" href="https://amk-cm.vercel.app/">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#0F172A">
@@ -656,6 +660,10 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
 .amk-psrc:focus-visible{outline:2px solid #FCD34D;outline-offset:2px}
 .amk-psrc svg{display:block;width:14px;height:14px;flex:0 0 auto;fill:#FCD34D}
 @media (prefers-reduced-motion:reduce){.amk-psrc{transition:none}}
+/* lien de langue EN */
+.lang-sw .lang-a{display:inline-block;background:none;border:none;color:var(--slate-l);font-weight:700;font-size:13px;padding:7px 14px;text-decoration:none}
+header#hdr .lang-sw .lang-a{color:#6B7584}
+.m-actions .lang-a{display:inline-block;padding:6px 12px;text-decoration:none;color:inherit;font-weight:700}
 </style>
 <style id="amk-design-2026-10-23">
 /* ============================================================================
@@ -725,7 +733,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
       <a href="#faq" data-en="FAQ" data-fr="FAQ">FAQ</a>
     </nav>
     <div class="lang-sw">
-      <button id="btn-en" aria-pressed="false" onclick="setLang('en')">EN</button>
+      <a class="lang-a" href="en/" hreflang="en">EN</a>
       <button id="btn-fr" class="on" aria-pressed="true" onclick="setLang('fr')">FR</button>
     </div>
     <a href="#audit" class="btn btn-amber h-cta" data-en="Free preview" data-fr="Aperçu gratuit">Aperçu gratuit</a>
@@ -740,7 +748,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
   <a href="#faq" onclick="closeM()" data-en="FAQ" data-fr="FAQ">FAQ</a>
   <a href="#audit" class="btn btn-amber" onclick="closeM()" data-en="Get my free preview" data-fr="Recevoir mon aperçu gratuit">Recevoir mon aperçu gratuit</a>
   <div class="lang-sw" style="align-self:center;margin-top:20px">
-    <button id="btn-en-m" aria-pressed="false" onclick="setLang('en')">EN</button>
+    <a class="lang-a" href="en/" hreflang="en">EN</a>
     <button id="btn-fr-m" class="on" aria-pressed="true" onclick="setLang('fr')">FR</button>
   </div>
 </div>

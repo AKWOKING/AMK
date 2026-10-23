@@ -8,4 +8,7 @@
   <url><loc>https://amk-cm.vercel.app/clinic-bonaberi.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://amk-cm.vercel.app/creation-site-web-ecole-cameroun.html</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://amk-cm.vercel.app/creation-site-web-clinique-cameroun.html</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://amk-cm.vercel.app/en/</loc><lastmod>2026-10-23</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://amk-cm.vercel.app/en/clinic-bonaberi.html</loc><lastmod>2026-10-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://amk-cm.vercel.app/en/mitoc.html</loc><lastmod>2026-10-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>

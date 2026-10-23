@@ -21,6 +21,9 @@ montrons, ce sont six sites concepts complets, ouvrables depuis la page d'accuei
 - [Accueil — l'offre, les six concepts, le processus, les questions](https://amk-cm.vercel.app/) — Home — the offer, the six concepts, the process, the questions
 - [Création de site web pour une école au Cameroun](https://amk-cm.vercel.app/creation-site-web-ecole-cameroun.html) — Website for a school in Cameroon
 - [Création de site web pour une clinique ou un laboratoire au Cameroun](https://amk-cm.vercel.app/creation-site-web-clinique-cameroun.html) — Website for a clinic or laboratory in Cameroon
+- [English version of the homepage](https://amk-cm.vercel.app/en/) — version anglaise de l'accueil
+- [English · clinic concept, Bonabéri](https://amk-cm.vercel.app/en/clinic-bonaberi.html) — version anglaise du concept clinique
+- [English · Midas Touch Optic Center, Buea](https://amk-cm.vercel.app/en/mitoc.html) — version anglaise du concept optique
 
 ## Les six concepts, en ligne et ouvrables
 

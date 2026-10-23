@@ -33,6 +33,10 @@ PAGES = [
     "mitoc.html",
     "creation-site-web-ecole-cameroun.html",
     "creation-site-web-clinique-cameroun.html",
+    # miroir anglais du 23/10 (outil : tools/site/build_en_pages.py) — servi sous /en/
+    "en/index.html",
+    "en/clinic-bonaberi.html",
+    "en/mitoc.html",
 ]
 ROOT_FILES = ["favicon.svg", "robots.txt", "sitemap.xml", "llms.txt",
              "google08d73756faeade69.html"]
