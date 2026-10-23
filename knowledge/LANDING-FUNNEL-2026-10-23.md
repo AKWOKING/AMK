@@ -161,8 +161,8 @@ la structure ont fait le travail »* — à propos de la page qui a produit **10
    un humain pressé : il décrit notre métier, pas son bénéfice.
 6. **Traiter les deux pages de niche** (`creation-site-web-clinique-cameroun.html`,
    `creation-site-web-ecole-cameroun.html`) comme les vraies landing pages de campagne — ce sont elles
-   qui portent « une offre, une audience ». Elles échouent aujourd'hui au P1 de navigation mobile : à
-   corriger avant d'y envoyer du trafic payant.
+   qui portent « une offre, une audience ». Elles échouaient au P1 de navigation mobile (aucun lien de
+   section sous 820 px) : **corrigé le 23/10**, un `<details>` sans JavaScript, voir §11.
 7. **FAQ : y mettre les prix et les délais en tête**, puisque ce sont les deux objections nommées.
 8. **Bannir les mots creux** de nos titres (« moderne », « sur mesure », « solution », « digital »,
    « innovation ») : la vidéo les cite comme le repoussoir n° 1 d'un décideur fatigué.
@@ -203,5 +203,14 @@ site/creation-site-web-clinique-cameroun.html 0 P1 · 1 P2 · 2 P3
 Témoin : `python3 tools/qa/test_audit_funnel.py` → **12/12**, une casse par contrôle.
 Porte : `bash tools/ops/gate-amk.sh` (état du dépôt → tunnel des trois pages → témoin).
 
+### La première correction, faite dans la foulée
+
+`audit_delivery.py` sur `site/` criait un **P1 D1** : sous 820 px, `nav.main` disparaissait et la barre
+du bas ne portait que WhatsApp — **aucune ancre de section n'était atteignable** sur les deux pages qui
+vont recevoir le trafic payant. Corrigé : un `<details class="mnav">` (44 px, trois barres, panneau
+pleine largeur calé sur l'en-tête) dans les deux pages. Sans JavaScript, sans dépendance, contrastes
+vérifiés (`audit_a11y --strict` rc=0, `audit_html` 0 constat).
+`site/` → **0 P1**.
+
 **Ce que la porte ne voit pas, et qui reste un œil humain** : la qualité d'un titre, la véracité d'une
-preuve, le choix de l'audience. Le portique attrape l'absence, pas la mediocrité.
+preuve, le choix de l'audience. Le portique attrape l'absence, pas la médiocrité.

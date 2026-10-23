@@ -159,6 +159,23 @@ em{font-style:normal;color:var(--amber)}
 .lang-sw button{border:0;background:transparent;color:#CBD5E1;font:700 12.5px inherit;padding:6px 11px;border-radius:99px;cursor:pointer}
 .lang-sw button.on{background:var(--amber);color:#0B1120}
 .h-cta{display:none}
+/* Menu mobile (23/10) : sous 820 px `nav.main` disparaissait et il ne restait que la barre du bas —
+   les ancres de section n'étaient plus atteignables (P1 D1 d'audit_delivery). Un <details> suffit,
+   sans JavaScript, sans dépendance. */
+.mnav{display:none;margin-left:0}
+/* le panneau se cale sur #hdr (sticky, donc positionné) : pleine largeur sous l'en-tête,
+   et non sur le bouton de 44 px — sinon left/right:12px lui donnaient 20 px de large. */
+.mnav summary{width:44px;height:44px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;list-style:none;cursor:pointer;border:1.5px solid var(--navy3);border-radius:11px;background:rgba(255,255,255,.06)}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav summary span{display:block;width:20px;height:2px;background:#fff;border-radius:2px;transition:transform .18s ease,opacity .18s ease}
+.mnav[open] summary span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.mnav[open] summary span:nth-child(2){opacity:0}
+.mnav[open] summary span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mnav nav{position:absolute;left:12px;right:12px;top:calc(100% + 4px);z-index:80;display:flex;flex-direction:column;background:var(--navy2);border:1px solid var(--navy3);border-radius:16px;padding:10px;box-shadow:0 18px 40px rgba(0,0,0,.42)}
+.mnav nav a{padding:13px 14px;border-radius:10px;color:#E2E8F0;font-weight:600;font-size:15.5px}
+.mnav nav a:active{background:rgba(255,255,255,.07)}
+.mnav nav .btn{margin-top:8px;text-align:center;color:#0B1120;background:var(--amber);font-weight:800}
+@media(max-width:819px){.mnav{display:block}}
 @media(min-width:820px){#hdr nav.main{display:flex}.lang-sw{margin-left:0}.h-cta{display:inline-flex;padding:12px 20px;font-size:14.5px}}
 .hero{background:linear-gradient(160deg,var(--navy4),var(--navy2));color:#fff;padding:64px 0 86px;position:relative;overflow:hidden}
 .hero::after{content:"";position:absolute;right:-140px;top:-140px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.18),transparent 70%)}
@@ -269,6 +286,16 @@ footer .nap{color:#E2E8F0}
       <button id="btn-en" onclick="setLang('en')">EN</button>
     </div>
     <a href="https://wa.me/237677789631?text=Bonjour%20AMK%2C%20je%20souhaite%20un%20site%20pour%20mon%20%C3%A9cole." class="btn btn-amber h-cta" data-en="Free preview" data-fr="Aperçu gratuit">Aperçu gratuit</a>
+      <details class="mnav">
+      <summary aria-label="Menu"><span></span><span></span><span></span></summary>
+      <nav>
+        <a href="index.html" data-en="Home" data-fr="Accueil">Accueil</a>
+        <a href="creation-site-web-clinique-cameroun.html" data-en="For clinics" data-fr="Pour les cliniques">Pour les cliniques</a>
+        <a href="index.html#pricing" data-en="Quote" data-fr="Devis">Devis</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://wa.me/237677789631?text=Bonjour%20AMK%2C%20je%20souhaite%20un%20site%20web." class="btn btn-amber" data-en="Free preview" data-fr="Aperçu gratuit">Aperçu gratuit</a>
+      </nav>
+    </details>
   </div>
 </header>
 
