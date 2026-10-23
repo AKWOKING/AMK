@@ -2097,3 +2097,39 @@ déclare un `Optician` (LocalBusiness) : il n'y a **pas de fil d'Ariane** sur un
 **Il n'y a rien à corriger sur la page pour ce panneau.** Si King veut quelque chose dans cette section
 sur l'accueil, l'item à ajouter est **`WebSite` + `Organization` avec `logo` et `sameAs`** (les profils
 sociaux déjà en pied de page) : c'est ce qui produit les améliorations « logo » et « identité du site ».
+
+## 23/10/2026 — l'audit extérieur : ce qu'il a trouvé, ce que nos portiques ne voyaient pas
+
+Le rapport est archivé tel quel : `clients/dm-optic/audits/AUDIT-EXTERNE-2026-10-23.md` (Chrome headless
+1366 et 390 px, axe-core, comparaison au domaine). **Deux P1**, et nos cinq portiques disaient tous
+« 0 faute » le même jour. Les deux étaient vrais : aucun des cinq ne regardait une feuille de style, des
+en-têtes HTTP ou un fichier absent.
+
+**Vérifié dans le dépôt, constat par constat** (pas de reprise de l'audit sur parole) :
+
+| # | Constat | Vérification locale | État |
+|---|---|---|---|
+| 1 | Aucune nav sous 980 px | `.nav{display:none}` + `@media (min-width:980px)`, **0 bouton `aria-expanded`** sur 90 pages | **confirmé** |
+| 2 | Cache `max-age=0` | `_headers` ne porte **aucune** règle de cache ; 491 images et 7 polices référencées | **confirmé** |
+| 3 | Pas de favicon | aucun fichier, aucune balise `<link rel="icon">` sur 97 pages | **confirmé** |
+| 4 | Double barre dans le JSON-LD | 4 occurrences, 2 par accueil FR/EN (`//cabinet-hero-1080.webp`, `//dm-logo.webp`) | **confirmé** |
+| 5 | HSTS absent | `_headers` = nosniff, referrer, frame, permissions | **confirmé** |
+| 6 | `og:image` en WebP | 80 pages sur 97 ; l'aperçu WhatsApp se teste en envoyant un lien, pas ici | à tester |
+| 7 | `llms.txt` FR seulement | 49 URL contre 96 au sitemap, **47 anglaises absentes** | **confirmé** |
+| 8 | Pas de `Product` | fiches montures : `BreadcrumbList` seul | **confirmé** |
+| 9 | Tirets cadratins | 685 — / 654 – | à trancher (voix DM) |
+| 10 | Pas de CSP | — | **confirmé** |
+| 11 | Fondateur et horaires | à confronter à la source (ONOC), pas au dépôt | à vérifier |
+| 12 | Images de partage partagées | 41 images pour 97 pages | **confirmé** |
+
+**Une erreur dans l'audit extérieur**, relevée et corrigée de notre côté : la règle de cache qu'il
+propose (`/*.webp`) **ne peut pas fonctionner** sur Cloudflare Pages, où le splat ne vaut qu'en fin de
+motif. Appliquée telle quelle, elle aurait laissé le défaut en place. Sur ce site les images vivent dans
+`/montures/`, mêlées aux pages : une règle par dossier cacherait aussi du HTML. La voie correcte est une
+**Cache Rule** du tableau de bord (extension `webp|jpg|png|woff2`, 7 jours pour les images, 1 an
+`immutable` pour les polices), et le HTML reste à `max-age=0, must-revalidate`.
+
+**Ce qui a changé dans nos outils** : `tools/qa/audit_delivery.py` (+ son témoin qui casse douze choses
+une par une), branché dans `PRE-FLIGHT.md` §1b. Leçons : `tools/qa/AUDIT-LESSONS-2026-10-23.md`.
+**Les défauts du site ne sont pas corrigés dans ce tour** : les P1 demandent du design (bouton de menu,
+focus, Échap) et un réglage côté Cloudflare, pas un `sed`. Proposé à King.

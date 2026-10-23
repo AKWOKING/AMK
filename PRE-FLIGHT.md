@@ -90,7 +90,7 @@ The rule names abstract folders; these are where the lessons actually live. Load
 | **SEO / site public (AMK ou client)** | `content/strategy/SEO-CHECKLIST-CLIENT-SITES-2026-10.md` (**la liste dans l'ordre + ce que Google dit de ne PAS faire**) · `site/SEO-REVIEW-2026-10-08.md` §8 · `tools/seo/bake_default_lang.py` (français/anglais par défaut dans le HTML) · `node tools/qa/test_amkcm_lang.mjs` · `content/strategy/RULE-CREDENTIAL-CLAIMS.md` (affirmations) |
 | **Photographie / images livrées** | `research/PHOTO-LABO-PIXEL-8A-2026-09-24.md` (ce que le Pixel 8A sait faire, la séance de 15 min, la lumière d'un laboratoire, la fiche à emporter FR, la vérification de 60 s) · `AMK-DESIGN-SKILLS.md` §25 (une photo = un sens) + §32 · `tools/qa/audit_images.py` (**contrôle**) |
 | **Prix / abonnement / récurrence** | `sales/PRIX-ET-RECURRENCE-2026-09-24.md` (**ce qui est tranché, et les 16 questions ouvertes — à lire AVANT toute conversation d'argent**) · `sales/REVUE-CONTRATS-GRILLE-2026-09-23.md` · `sales/ORDRE-DES-OFFRES-2026-09-23.md` |
-| **Delivery / handoff** | `AMK-DESIGN-SKILLS.md` §13 (pre-flight) + §18.4 (verification ladder) · `hosting/previews/README.md` (deploy gate) · `site/DEPLOY.md` · `sales/AMK-Playbook-Addendum-Outcomes-2026-09-15.md` (handoff video, care plan) · **brag de livraison en brouillon d'office (§1f②, `tools/brag/README.md`)** |
+| **Delivery / handoff** | **`tools/qa/audit_delivery.py`** (+ `test_audit_delivery.py`, leçons `tools/qa/AUDIT-LESSONS-2026-10-23.md`) — la porte qui mesure ce qui n'est pas dans le document (nav mobile, cache, icônes, URL, llms.txt, partage, schéma, en-têtes) · `AMK-DESIGN-SKILLS.md` §13 (pre-flight) + §18.4 (verification ladder) · `hosting/previews/README.md` (deploy gate) · `site/DEPLOY.md` · `sales/AMK-Playbook-Addendum-Outcomes-2026-09-15.md` (handoff video, care plan) · **brag de livraison en brouillon d'office (§1f②, `tools/brag/README.md`)** |
 | **Retention / upsell / referrals** | `sales/AMK-Sales-Playbook-v2.md` (A5 referral, F6, Part J reinforce-the-decision) · `sales/AMK-Playbook-Addendum-Outcomes-2026-09-15.md` · `sales/AMK-Playbook-Addendum-4-Marketing-Systems-2026-09-15.md` (monthly report, GBP layer) |
 | **Weekly research / veille vidéo** | `research/YouTube-Lessons.md` (le lot du jour ; **lot [46] du 23/10** = Facebook 2026, publicité Meta, méthodes Instagram) · `knowledge/CONTENT-CREATION-2026-10-22.md` **§9** (les cinq gestes de fabrication adoptés) · **lecture vidéo : `fetch_page` sur `youtube.com/watch?v=<id>` (anglophone) ou `youtubetotranscript.com/transcript?v=<id>` (francophone, seule source qui pagine)** — `ops/QA-NOTES.md`, 23/10. Une transcription n'est **pas** un visionnage : l'écrire dans le lot |
 | **Weekly research (générique)** | The field being studied → log the output back into that field's lessons: sales/marketing → `sales/research/<YYYY>-W<WW>-techniques.md`; video lessons → `research/YouTube-Lessons.md`; design/build → the relevant `AMK-DESIGN-SKILLS.md` section · **collecte externe via Agent Reach d'abord (§1f①, `tools/agent-reach/README.md`)** |
@@ -134,7 +134,18 @@ python3 tools/qa/audit_html.py <fichier-construit>      # doit finir sur « TOTA
 python3 tools/qa/audit_a11y.py --strict <fichier-construit>   # rc=0 : aucune faute de niveau A ou AA
 python3 tools/qa/audit_images.py <fichier-construit>          # 0 faute : ratio annoncé = ratio réel, poids, pas de GPS
 python3 tools/qa/audit_reveal.py site/                        # 0 faute : aucune animation ne cache du contenu (ajouté 23/10)
+python3 tools/qa/audit_delivery.py <dossier> --base <url>     # 0 P1 : navigation mobile, cache, icônes, URL, llms.txt, partage, schéma, en-têtes (ajouté 23/10)
 ```
+
+`audit_delivery.py` (23/10) ferme les deux angles morts qu'un audit extérieur a trouvés le jour où les
+cinq autres portiques rendaient « 0 faute » : **aucune navigation sous 980 px** (le CSS cachait la nav,
+aucun bouton de menu) et **`max-age=0` sur toutes les images et polices**. Un portique de documents ne
+peut pas voir ce qui n'est pas dans un document — une feuille de style, des en-têtes HTTP, un fichier
+d'icône absent. Il valide aussi la **forme** des motifs de `_headers` : sur Cloudflare Pages le splat ne
+vaut qu'en fin de motif, donc `/*.webp` ne matche rien (l'audit extérieur proposait exactement cette
+règle : elle aurait laissé le défaut en place). Son témoin, `tools/qa/test_audit_delivery.py`, casse
+douze choses une par une et vérifie que chacune est nommée. Leçons complètes :
+`tools/qa/AUDIT-LESSONS-2026-10-23.md`.
 Le troisième contrôle est né le 24/09 (lot [32]) avec l'arrivée des **vraies photos** : une photo de
 téléphone pèse 3 à 6 Mo et porte la position GPS. Il vérifie la structure et la vie privée — **jamais la
 beauté de la photo** (celle-là se juge à l'œil).
