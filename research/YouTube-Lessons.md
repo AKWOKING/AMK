@@ -2808,3 +2808,104 @@ fichier nouveau : le tri par marge et le filtre de prospection vont dans
 `sales/AMK-Sales-Playbook-v2.md` (Parts B et D) lors de la prochaine révision ; la vente de la
 récurrence après preuve appartient déjà à `sales/AMK-Playbook-Addendum-Outcomes-2026-09-15.md`. **Rien
 d'autre n'est repris, et aucun chiffre de la vidéo n'entre dans un livrable.**
+
+## Lot [48] · TIKTOK SEO 2026 — une pyramide de quatre étages, et ce qu'on en garde · 2026-10-23
+
+**Vidéo** : « How to Get Categorized on TikTok in 2026 — TikTok SEO Guide » · chaîne *Tiktok Growth
+Secrets* (Angel Talamantes) · 17 min 39 · publiée le 27/01/2026 · 1 385 vues · lien
+`youtu.be/MebRpuAdreI`, demandé par King (23/10/2026).
+
+**Ce que j'ai pu lire, et ce que je n'ai pas pu faire** : je n'ai pas regardé la vidéo. J'ai lu sa
+**transcription automatique** jusqu'aux deux tiers environ (le reste de la page ne renvoie que des
+recommandations). Les règles ci-dessous sont donc ce que dit la vidéo, pas ce qu'un test aurait
+prouvé. Aucun chiffre de la vidéo n'entre dans un livrable, conformément à §1g.
+
+### Le modèle, tel qu'il est exposé
+
+Une pyramide, du plus important au moins important :
+
+① **Recherche de catégorisation.** Chercher son sujet dans TikTok, ouvrir une vidéo, lire le terme
+proposé en haut (« gardening tips », « gardening for beginners »), filtrer sur 90 jours, répéter
+5–8 fois, puis retenir **trois piliers** sur lesquels bâtir le compte.
+② **Profil et bio.** Le nom de compte et la bio sont des métadonnées lues par TikTok *et* par le reste
+d'internet ; y mettre les mots de la catégorie, en phrase.
+③ **Légende, texte à l'écran, description, hashtags.** TikTok fait de la **reconnaissance de
+caractères** : le texte affiché est du contenu lisible par la machine, pas un décor. Le nom de
+fichier exporté compte un peu. **1 à 4 hashtags spécifiques**, jamais `#fyp` / `#viral` / `#pourtoi`.
+④ **Esthétique et format.** En 2026, une image trop produite est lue comme **une publicité ou de
+l'IA** : téléphone, lumière de fenêtre, ton casual.
+
+Trois affirmations de la vidéo, **non vérifiées et non reprises comme des faits** :
+« 70 % du trafic des vidéos optimisées vient de la recherche » · « les vidéos sont transcrites et
+indexées par Perplexity, Gemini et Google » · « le format *curiosity curator* fait décoller les
+comptes ».
+
+### Ce qu'on adopte
+
+| Ce que dit la vidéo | Chez AMK, ce que ça devient |
+|---|---|
+| Trois piliers de catégorie, choisis par recherche | **école · clinique · site web** — nos deux métiers et le mot que tape un dirigeant. Aucun pilier « agence » ni « IA » : ce sont des mots de prestataire, pas de client |
+| Mots-clés dans une phrase (« natural keyword stuffing »), pas en liste | nos légendes sont écrites comme on parle ; le linter refuse une légende qui n'est qu'un mur de hashtags |
+| 1–4 hashtags spécifiques | `#sitewebecole`, `#cliniquebuea`, `#creationdesiteweb` — et un emplacement, parce qu'on travaille à Douala et Buea |
+| La première ligne porte le sujet | le linter compte la longueur de la première ligne et vérifie que le pilier y est |
+| Le texte à l'écran est lu par la machine | nos vidéos portent un titre à l'écran, pas seulement une voix off — le script AMK est déjà bilingue |
+| Une image trop léchée est lue comme de l'IA | **le lien avec les montures du même jour** : un visuel de produit trop « studio » éveille la méfiance. C'est un argument pour **re-photographier** au téléphone, sur une table blanche, plutôt que de retoucher |
+
+### Ce qu'on refuse
+
+1. **Le format « curiosity curator »** — retenir volontairement l'information pour forcer le clic dans
+   les commentaires. C'est exactement l'inverse de la règle du site (« ne montrer que ce qui existe »)
+   et de la promesse de la page d'accueil. On peut être intéressant sans retenir ce qu'on sait.
+2. **« Manipuler l'algorithme »** comme objectif : on cherche à être trouvé par quelqu'un qui cherche,
+   pas à piéger un fil.
+3. **Les hausses de prix de la chaîne** (roadmap, académie, outil) : rien ici ne s'achète.
+
+### L'intégration, faite le jour même
+
+- **`tools/content/tiktok_caption.py`** — contrôle une légende avant publication : 1 à 4 hashtags,
+  hashtags génériques refusés, texte suffisant hors hashtags, pilier présent, appel à l'action, et
+  **nos verrous** (aucun prix, aucun délai sans condition, aucun superlatif, aucun nombre de clients).
+  Code de sortie 1 si une règle est cassée. `--pillars` rappelle les trois piliers.
+- **Trois légendes prêtes**, une par pilier, toutes validées par l'outil (voir ci-dessous).
+
+### Les trois légendes, écrites pour être lues par un humain d'abord
+
+**École**
+> Un parent cherche votre école sur son téléphone avant d'appeler.
+>
+> Il veut trois choses : les classes, les frais, et qui joindre. Un site web d'école qui répond à ces
+> trois questions, en français et en anglais, avec un bouton qui ouvre WhatsApp et le message déjà écrit.
+>
+> Six concepts complets sont en ligne, ouvrables depuis votre téléphone. Écris ÉCOLE en commentaire.
+> #sitewebecole #ecoleprivee #douala #cameroun
+
+**Clinique**
+> Il tape « laboratoire Buea » avant de sortir de chez lui.
+>
+> S'il ne vous trouve pas, il appelle celui d'à côté. Sur ce site concept : les examens, les horaires,
+> l'adresse, et un rendez-vous qui s'ouvre dans WhatsApp avec le message déjà rédigé.
+>
+> Écris CLINIQUE en message si tu veux le même.
+> #cliniquebuea #laboratoire #sante #cameroun
+
+**Devis**
+> Il n'y a pas de prix affiché. C'est volontaire.
+>
+> Le travail d'une école et celui d'une clinique n'ont rien à voir, et un chiffre écrit d'avance
+> serait faux à la deuxième question. Ce qu'on montre, c'est six sites complets, en ligne, à ouvrir
+> depuis ton téléphone.
+>
+> Tu regardes, tu dis ce qui te parle, le devis est écrit après le brief. Écris DEVIS sur WhatsApp.
+> #creationdesiteweb #siteinternet #cameroun #entrepreneur
+
+Contrôle : `python3 tools/content/tiktok_caption.py --file <fichier>` → les trois passent
+(**0 erreur**, 1 avertissement sur celle du devis : le pilier n'est pas dans la première ligne, ce qui
+est voulu — la première ligne vend l'idée, pas la catégorie).
+
+### Verdict du lot
+
+**Une vidéo, quatre étages, deux refus, un outil et trois légendes.** Ce qui reste à faire n'est pas du
+code : **lancer la recherche de catégorisation dans TikTok Cameroun** (chercher « école Douala »,
+« laboratoire Buea », « site web Cameroun », filtrer 90 jours et noter les termes que TikTok propose).
+C'est un travail de téléphone, pas de terminal — je ne peux pas le faire d'ici, et je ne vais pas
+inventer les termes à sa place.
