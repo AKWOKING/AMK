@@ -13,10 +13,10 @@
 
 | Nom | Qui / quoi | Ce qu'il apporte ici |
 |---|---|---|
-| **Liam Ottley** | Agence IA « Morningside AI », podcast et chaîne (~862 k abonnés) ; intervieweur de la vidéo | Le cadre « agence IA » : la page web est un actif de vente, pas une carte de visite |
+| **Liam Ottley** | Fondateur d'agence IA (Morningside AI), intervieweur de la vidéo | Le cadre « agence IA » : la page web est un actif de vente, pas une carte de visite |
 | **Arthur** (arthur-designs) | Designer kazakh, économiste de formation, **100+ landing pages** pour agences IA en deux ans, fondeur de <https://wecreatebrand.com/> | **La source** : la structure en 11 blocs et les six critiques de la vidéo |
 | **Brendan** (Inflate AI) | Client d'Arthur, agence « voice AI » ; sa page a servi d'étude de cas | La démonstration du **resserrage de niche** (V1 multi-offres → V2 voix uniquement) |
-| **Talk AI**, **Moni Group**, **Bizpoint**, **Tasken**, **Ocean**, **PromptLab** | Clients cités dans la vidéo ou sur wecreatebrand.com | Les chiffres cités en §5 viennent de là |
+| **Talk AI**, **Moni Group**, **Bizpoint** | Clients nommés dans la vidéo ou sur wecreatebrand.com — **seuls noms que j'ai pu relire dans une source** | Les chiffres cités en §5 viennent de là ; tout autre nom entendu dans la vidéo est laissé dehors |
 | **Framer** | Outil de publication des pages d'Arthur (marketplace de gabarits, publication en un clic) | Rappelle que **la structure compte plus que l'outil** ; nous restons en HTML statique, c'est équivalent |
 | **Cal.com**, **Wistia** | Prise de rendez-vous / hébergement des témoignages vidéo chez wecreatebrand | Équivalents AMK : WhatsApp `wa.me` prérempli, et nos concepts ouverts |
 | **Figma « funnel-fixer »** | Le tableau de la structure (§2), offert dans la description de la vidéo | Notre référence de disposition |
