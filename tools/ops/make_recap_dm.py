@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
-"""Récapitulatif de mise en ligne DM OPTIQUE — une page A4, PDF vectoriel.
+"""Récapitulatif mensuel DM OPTIQUE — une page A4, PDF vectoriel.
 
     pip install reportlab          # + pypdfium2 pour un aperçu PNG (optionnel)
-    python3 tools/ops/make_recap_dm.py
+    python3 tools/ops/make_recap_dm.py                          # chiffres d'octobre (défaut)
+    python3 tools/ops/make_recap_dm.py --data recap-2026-11.json --out RECAP-2026-11.pdf
 
-Sortie : clients/dm-optic/launch/RECAP-MISE-EN-LIGNE-2026-10-23.pdf
-Chaque chiffre porte sa date et sa source (règle §1g) : Facebook Business Suite et TikTok Studio,
-relevés le 23/10/2026 à 08h40. Aucun prix de monture, aucun visage de patient, aucune promesse de délai.
+Le modèle de données est `clients/dm-optic/launch/recap-2026-10.json` : on le copie, on change les
+chiffres et les dates, rien d'autre. Chaque chiffre porte sa date et sa source (règle §1g) : Facebook
+Business Suite et TikTok Studio. Aucun prix de monture, aucun visage de patient, aucune promesse de délai.
 """
 from __future__ import annotations
 
+import argparse
+import json
 from pathlib import Path
 
 from reportlab.lib.colors import HexColor
@@ -21,7 +24,22 @@ from reportlab.pdfgen import canvas
 
 ROOT = Path(__file__).resolve().parents[2]
 FONTS = ROOT / "clients/dm-optic/content/month1/w1/assets/fonts"
-OUT = ROOT / "clients/dm-optic/launch/RECAP-MISE-EN-LIGNE-2026-10-23.pdf"
+LAUNCH = ROOT / "clients/dm-optic/launch"
+OUT = LAUNCH / "RECAP-MISE-EN-LIGNE-2026-10-23.pdf"
+
+DEFAUT = {
+    "titre": "Récapitulatif de la mise en ligne",
+    "section1": "Ce qui est en ligne aujourd'hui",
+    "date_titre": "23 octobre 2026",
+    "releve": "23/10/2026 à 08h40",
+    "releve_court": "23/10 À 08H40",
+    "fb": {"date": "22/10", "views": "210", "viewers": "200", "watch": "4 s",
+           "full": "—", "react": "3", "com": "0", "share": "1"},
+    "tk": {"date": "22/10 à 14h36", "views": "90", "watch": "6,9 s",
+           "full": "4,9 %", "react": "8", "com": "1", "share": "1"},
+    "lendemain": "les prochains jours",
+}
+DATA = DEFAUT
 
 NAVY = HexColor("#0B1120")
 NAVY2 = HexColor("#1E293B")
@@ -84,14 +102,14 @@ def header(c: canvas.Canvas) -> float:
 
     c.setFont("HeadB", 13.5)
     c.setFillColor(WHITE)
-    c.drawString(M, H - 32 * mm, "Récapitulatif de la mise en ligne")
+    c.drawString(M, H - 32 * mm, DATA["titre"])
 
     c.setFont("Mono", 8)
     c.setFillColor(AMBER)
     c.drawRightString(W - M, H - 17 * mm, "AMK")
     c.setFillColor(SLATE_L)
     c.setFont("Sans", 8.5)
-    c.drawRightString(W - M, H - 22.5 * mm, "23 octobre 2026")
+    c.drawRightString(W - M, H - 22.5 * mm, DATA["date_titre"])
     return H - 40 * mm
 
 
@@ -128,19 +146,19 @@ def card(c, x, y, w, h, title, body, tag=None) -> None:
 def stat_table(c, y) -> float:
     """Deux colonnes : Facebook · TikTok. Chaque ligne a une seule vérité par colonne."""
     rows = [
-        ("Vues", "210", "90"),
-        ("Spectateurs uniques", "200", "non communiqué"),
-        ("Temps de visionnage moyen", "4 s", "6,9 s"),
-        ("Vidéo regardée en entier", "—", "4,9 %"),
-        ("Réactions", "3", "8"),
-        ("Commentaires", "0", "1"),
-        ("Partages", "0", "1"),
+        ("Vues", DATA["fb"]["views"], DATA["tk"]["views"]),
+        ("Spectateurs uniques", DATA["fb"]["viewers"], "non communiqué"),
+        ("Temps de visionnage moyen", DATA["fb"]["watch"], DATA["tk"]["watch"]),
+        ("Vidéo regardée en entier", DATA["fb"]["full"], DATA["tk"]["full"]),
+        ("Réactions", DATA["fb"]["react"], DATA["tk"]["react"]),
+        ("Commentaires", DATA["fb"]["com"], DATA["tk"]["com"]),
+        ("Partages", DATA["fb"]["share"], DATA["tk"]["share"]),
     ]
     x0, col2 = M, M + 62 * mm
     head_y = y
     c.setFont("SansB", 7.6)
     c.setFillColor(SLATE_L)
-    c.drawString(x0, head_y, "RELEVÉ DU 23/10 À 08H40")
+    c.drawString(x0, head_y, "RELEVÉ DU " + DATA["releve_court"])
     c.drawString(col2, head_y, "FACEBOOK")
     c.drawString(col2 + 46 * mm, head_y, "TIKTOK")
     y = head_y - 6 * mm
@@ -164,7 +182,7 @@ def stat_table(c, y) -> float:
 def build() -> None:
     fonts()
     c = canvas.Canvas(str(OUT), pagesize=A4)
-    c.setTitle("DM OPTIQUE SARL — récapitulatif de la mise en ligne")
+    c.setTitle("DM OPTIQUE SARL — " + DATA["titre"].lower())
     c.setAuthor("AMK")
     c.setSubject("Ce qui est en ligne au 23 octobre 2026")
 
@@ -175,7 +193,7 @@ def build() -> None:
     y -= 7 * mm
 
     # 1 — ce qui est en ligne
-    y = section(c, y, "Ce qui est en ligne aujourd'hui", "01 · la livraison")
+    y = section(c, y, DATA["section1"], "01 · la livraison")
     colw = (W - 2 * M - 6 * mm) / 2
     card(c, M, y, colw, 23 * mm, "Le site",
          "dmoptiquesarl.com — 96 pages en français et en anglais, une fiche par monture, "
@@ -185,10 +203,10 @@ def build() -> None:
          "itinéraire, bouton d'appel.", "ACTIVE")
     y -= 26.5 * mm
     card(c, M, y, colw, 23 * mm, "La page Facebook",
-         "DM OPTIQUE SARL — première vidéo publiée le 22/10 : les quatre temps de l'examen, "
-         "sur la photo réelle du cabinet.", "PUBLIÉE")
+         f"DM OPTIQUE SARL — première vidéo publiée le {DATA['fb']['date']} : les quatre temps "
+         "de l'examen, sur la photo réelle du cabinet.", "PUBLIÉE")
     card(c, M + colw + 6 * mm, y, colw, 23 * mm, "Le compte TikTok",
-         "@dmoptique.bonaberi237 — la même vidéo, publiée le 22/10 à 14h36. "
+         f"@dmoptique.bonaberi237 — la même vidéo, publiée le {DATA['tk']['date']}. "
          "Le téléphone du cabinet est dans la bio.", "PUBLIÉ")
     y -= 30 * mm
 
@@ -200,8 +218,8 @@ def build() -> None:
         c,
         "Un premier post ne dit pas si la stratégie marche : il dit que la mécanique fonctionne — la vidéo "
         "arrive, elle est vue, et le numéro du cabinet est joignable en un geste. Les chiffres ci-dessus "
-        "viennent des tableaux de bord Facebook et TikTok, relevés le 23/10/2026 à 08h40 ; ils bougeront "
-        "encore dans les prochains jours.",
+        f"viennent des tableaux de bord Facebook et TikTok, relevés le {DATA['releve']} ; ils bougeront "
+        f"encore dans {DATA['lendemain']}.",
         M, y - 1 * mm, W - 2 * M, size=8.2, leading=11.2) - 6 * mm
 
     # 3 — le mois
@@ -245,12 +263,24 @@ def build() -> None:
     c.drawString(M + 12 * mm, 11 * mm, "sites web bilingues pour cabinets, cliniques et commerces — Douala")
     c.drawRightString(W - M, 11 * mm, "akwo.king.dev@gmail.com · +237 677 78 96 31")
     c.setFont("Mono", 6.6)
-    c.drawRightString(W - M, 6 * mm, "chiffres relevés le 23/10/2026 à 08h40 · Facebook Business Suite, TikTok Studio")
+    c.drawRightString(W - M, 6 * mm, f"chiffres relevés le {DATA['releve']} · Facebook Business Suite, TikTok Studio")
 
     c.showPage()
     c.save()
-    print("écrit :", OUT.relative_to(ROOT))
+    try:
+        rel = OUT.relative_to(ROOT)
+    except ValueError:
+        rel = OUT
+    print("écrit :", rel)
 
 
 if __name__ == "__main__":
+    ap = argparse.ArgumentParser(description="Récapitulatif mensuel DM OPTIQUE (une page A4)")
+    ap.add_argument("--data", type=Path, help="JSON des chiffres du mois (défaut : ceux d'octobre)")
+    ap.add_argument("--out", type=Path, help="PDF de sortie")
+    a = ap.parse_args()
+    if a.data:
+        DATA = {**DEFAUT, **json.loads(a.data.read_text(encoding="utf-8"))}
+    if a.out:
+        OUT = a.out if a.out.is_absolute() else ROOT / a.out
     build()

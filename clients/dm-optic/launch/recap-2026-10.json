@@ -1,0 +1,28 @@
+{
+  "_modele": "Copier ce fichier en recap-2026-11.json, changer les chiffres relevés dans Facebook Business Suite et TikTok Studio le 1er ou le 2 du mois, puis lancer : python3 tools/ops/make_recap_dm.py --data clients/dm-optic/launch/recap-2026-11.json --out clients/dm-optic/launch/RECAP-2026-11.pdf",
+  "titre": "Récapitulatif de la mise en ligne",
+  "section1": "Ce qui est en ligne aujourd'hui",
+  "date_titre": "23 octobre 2026",
+  "releve": "23/10/2026 à 08h40",
+  "releve_court": "23/10 À 08H40",
+  "fb": {
+    "date": "22/10",
+    "views": "210",
+    "viewers": "200",
+    "watch": "4 s",
+    "full": "—",
+    "react": "3",
+    "com": "0",
+    "share": "1"
+  },
+  "tk": {
+    "date": "22/10 à 14h36",
+    "views": "90",
+    "watch": "6,9 s",
+    "full": "4,9 %",
+    "react": "8",
+    "com": "1",
+    "share": "1"
+  },
+  "lendemain": "les prochains jours"
+}

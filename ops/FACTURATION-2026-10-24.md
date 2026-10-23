@@ -64,4 +64,6 @@ Depuis le 24/10, la grille est unique (`knowledge/PRIX-2026-10-24.md`, séance
 Il ne dit pas si le prix est juste, il ne dit pas si le travail est livré, et il ne remplace pas la
 phrase qui compte au client : **« voilà ce que vous avez reçu ce mois-ci »**. C'est le rapport d'une
 page (`knowledge/MAINTENANCE-CLIENTS-2026-10-22.md` §4) qui justifie le prélèvement, pas la facture.
-Facturer le 1er, envoyer le rapport le 2 : l'ordre est déjà écrit, il ne reste qu'à le tenir.
+Facturer le 1er, envoyer le **récap d'une page + le rapport** le 2 : l'ordre est déjà écrit, il ne
+reste qu'à le tenir. Le récap se régénère en deux minutes (`tools/ops/make_recap_dm.py --data …`),
+ce qui est la seule façon qu'il parte vraiment tous les mois.
