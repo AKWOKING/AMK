@@ -54,6 +54,8 @@ RESULT_WORDS = (
 PROOF_MARKERS = (
     "témoignage", "témoignages", "avis", "cas client", "étude de cas", "ils nous font confiance",
     "preuve", "référence", "note de", "★", "★★★★★", "chiffres", "résultat client",
+    # l'anglais compte aussi : depuis le 23/10 les deux pages de la maison sont auditées
+    "testimonial", "case study", "trusted by", "review",
 )
 
 # Preuve « forte » : un client nommé, une histoire, un résultat. Les démonstrations (concepts, maquettes)
@@ -61,15 +63,19 @@ PROOF_MARKERS = (
 # à quelqu'un. Le Figma d'Arthur place l'étude de cas au-dessus du témoignage, et le témoignage au-dessus
 # du logo — cette hiérarchie est ici explicite.
 CASE_MARKERS = (
-    "cas client", "étude de cas", "témoignage", "témoignages", "ils nous font confiance",
-    "avis vérifié", "avant / après", "avant-après", "référence client",
+    "cas client", "étude de cas", "client réel", "témoignage", "témoignages",
+    "ils nous font confiance", "avis vérifié", "avant / après", "avant-après", "référence client",
+    "real client", "live client", "client story", "customer story",
 )
 
 # Placeholders **sans ambiguïté** seulement. « xxx » a été retiré le 23/10 : il attrapait une référence
 # de commande de démonstration (« BMC-XXXX ») et les masques de téléphone (« 6XX XX XX XX »), pas un
 # oubli. Un portique qui crie à tort apprend à être ignoré.
-PLACEHOLDERS = ("lorem ipsum", "lorem", "todo", "[insérer", "[à compléter", "placeholder",
-                "your text here", "texte à remplacer")
+PLACEHOLDERS = ("lorem ipsum", "lorem", "todo", "[insérer", "[à compléter", "your text here",
+                "texte à remplacer")
+# « placeholder » est un mot normal dans une phrase (« chaque nom est un emplacement ») et un défaut
+# quand il traîne seul dans une page : P3, pas P1. La nuance a coûté un faux positif le 23/10.
+PLACEHOLDER_SOFT = ("placeholder", "à remplacer", "à compléter", "to be filled")
 
 
 class Finding(NamedTuple):
@@ -269,6 +275,13 @@ def check(page: Path) -> list[Finding]:
             out.append(Finding("F10", "P1", f"« {ph} »",
                                "texte de remplacement oublié dans la page",
                                "écrire le vrai contenu ou retirer le bloc"))
+    if not any(ph in low for ph in PLACEHOLDERS):
+        for ph in PLACEHOLDER_SOFT:
+            if ph in low:
+                out.append(Finding("F10", "P3", f"« {ph} »",
+                                   "le mot apparaît : soit c'est une phrase, soit c'est un oubli",
+                                   "relire le passage ; si c'est un oubli, écrire le vrai contenu"))
+                break
             break
 
     # F11 · un CTA principal

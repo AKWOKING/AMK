@@ -214,3 +214,71 @@ vérifiés (`audit_a11y --strict` rc=0, `audit_html` 0 constat).
 
 **Ce que la porte ne voit pas, et qui reste un œil humain** : la qualité d'un titre, la véracité d'une
 preuve, le choix de l'audience. Le portique attrape l'absence, pas la médiocrité.
+
+---
+
+## 12 · Ce que King a tranché (23/10, après la lecture)
+
+Trois décisions, et ce qu'elles deviennent dans le site.
+
+### a. Le prix d'entrée est public : **150 000 FCFA**
+
+Le socle, une fois : site bilingue EN|FR jusqu'à 6 pages · fiche Google créée ou optimisée (horaires,
+repère, catégorie, photos) · bouton WhatsApp prérempli · domaine et hébergement sécurisé au nom du
+client · formation de 30 minutes · mise en ligne dès validation. Ce qui augmente le prix, écrit à
+l'écran : catalogue ou boutique · création et publication de contenu · séance photo · création de logo
+et identité · plus de 6 pages · agenda de rendez-vous en ligne · e-mail professionnel · refonte d'un
+site existant · traduction au-delà de FR|EN · supports imprimés. L'entretien mensuel reste chiffré
+avec le projet.
+
+Le conseil (séance `ROAST-2026-10-23-PRIX.md`, 7,4 = GO WITH CONDITIONS) demandait exactement ça :
+une ancre, la pile de livrables nommés, la liste de ce qui fait monter, pas de remise, et les trois
+formules après dix ventes. Les quatre premières conditions sont remplies ; la cinquième attend.
+
+**Ce que ça a cassé, et qu'il fallait réécrire** : la section `#refus` disait « nous n'affichons pas de
+prix sur cette page, un chiffre serait inventé ». C'était vrai hier, c'est faux aujourd'hui. Elle est
+devenue « un prix sans sa liste » — même refus, autrement dit : un montant au-dessus duquel il n'y a
+pas de liste n'informe pas, il appâte. `llms.txt` disait aussi « aucun prix n'est publié » : réécrit.
+
+### b. DM OPTIQUE SARL est la première preuve
+
+Un vrai client, en ligne, ouvrable : `dmoptiquesarl.com`, opticien médical à Bonabéri (Douala IV).
+Ce qui est écrit dans le bloc est **vérifiable dans le dépôt** (`clients/dm-optic/`) : site bilingue
+FR|EN au nom du cabinet, fiche Google créée le 20/10/2026, domaine et fichiers au nom du cabinet,
+WhatsApp prérempli sur chaque écran. **Aucun chiffre de résultat** : le cabinet n'a pas mesuré
+avant/après, et la phrase le dit à voix haute dans le bloc — c'est cette phrase qui rend la preuve
+crédible. La photo est celle du cabinet, sans visage de patient ; l'accord écrit du client reste la
+condition de publication, et il est noté dans `clients/dm-optic/dossier.md`.
+
+### c. La niche principale est le client toute l'année, pas l'école
+
+Le raisonnement de King, qui vaut d'être écrit tel quel : **la demande scolaire suit le calendrier** —
+forte avant la rentrée, froide pendant l'année scolaire. Un site qui dépend de septembre est une
+campagne, pas une base. Les cliniques, cabinets, opticiens, laboratoires et commerces cherchent un
+site tous les mois.
+
+Donc : `Patients & clients` devient l'onglet par défaut du hero, la page clinique passe avant la page
+école dans la navigation, les deux grilles d'exemples s'inversent, et le titre de la page dit le
+résultat (« Vos patients et vos clients vous trouvent avant d'appeler ») tandis que le mot-clé SEO
+descend en sous-titre. La page école **reste** : elle devient la page de campagne de la rentrée, et
+la FAQ explique pourquoi, sans détour.
+
+**La leçon générale, pour le prochain client** : avant de choisir une niche, demander *quand* sa
+demande a lieu. Une niche saisonnière se sert avec une campagne datée ; une niche permanente se sert
+avec la page d'accueil. Confondre les deux, c'est payer du trafic en février pour un produit de
+septembre.
+
+### Ce que la porte dit maintenant
+
+```
+site/index.html                                  0 P1 · 0 P2 · 0 P3
+site/en/index.html                               0 P1 · 0 P2 · 1 P3   (« placeholder » employé dans une phrase)
+site/creation-site-web-clinique-cameroun.html    0 P1 · 0 P2 · 2 P3   (F3 preuve, F5 trois étapes)
+site/creation-site-web-ecole-cameroun.html       0 P1 · 0 P2 · 2 P3   (idem)
+site/  (livraison, 97 pages)                     0 P1 · 1 P2 · 2 P3
+```
+
+Les quatre P3 restants sont nommés : deux pages de niche sans déroulé en trois étapes, deux blocs de
+preuve qui montrent des concepts avant de montrer un client (les pages de niche n'ont pas encore leur
+cas DM OPTIQUE). Ce sont les prochaines lignes, pas des oublis.
+

@@ -24,7 +24,7 @@ if ! python3 tools/ops/wake.py --check; then
 fi
 
 echo "── 2. tunnel des pages de vente ──"
-for page in site/index.html site/creation-site-web-ecole-cameroun.html site/creation-site-web-clinique-cameroun.html; do
+for page in site/index.html site/en/index.html site/creation-site-web-ecole-cameroun.html site/creation-site-web-clinique-cameroun.html; do
   out=$(python3 tools/qa/audit_funnel.py "$page" 2>&1)
   printf '  %s → %s\n' "$page" "$(echo "$out" | grep 'TOTAL' | sed 's/^ *//')"
   if echo "$out" | grep -q "\[P1\]"; then

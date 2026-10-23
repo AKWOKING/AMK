@@ -95,3 +95,19 @@ quatrième projet dépasse de 40 %, c'est toi qui paies la différence. »
 
 Écrire la ligne d'ancre et la pile de livrables dans la section `#pricing` de `site/index.html`, avec la
 liste « ce qui fait monter le prix » — puis repasser `bash tools/ops/gate-amk.sh` (le P3 F6 doit tomber).
+
+---
+
+## Suite donnée — 23/10, même journée
+
+King a tranché : **150 000 FCFA**, avec la liste de ce qui augmente le prix (catalogue ou boutique,
+création et publication de contenu, séance photo, logo et identité de marque) et la possibilité
+d'allonger la liste. La condition 1 (une ancre tenable) et la condition 2 (la pile de livrables) sont
+écrites dans `site/index.html` §`#pricing` ; la condition 3 (« ce qui fait monter le prix ») est une
+carte entière ; la condition 4 (pas de remise, on change les termes) tient : aucune remise n'apparaît
+nulle part. La condition 5 — trois formules après dix ventes — reste ouverte, et c'est voulu.
+
+**Le dissent de Buffett reste valable** : l'ancre est un engagement. Si un projet livré dépasse de
+40 % le travail prévu, la différence sort de notre poche. La phrase « plus de 6 pages » et la liste
+des options sont là pour que ce cas se voie **avant** la signature, pas après.
+
