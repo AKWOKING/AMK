@@ -594,6 +594,10 @@ chaque jour.
 | `amk.cm` partout | plus court, colle au futur domaine | il faut **changer le handle Instagram**, donc casser les liens déjà écrits (posts, bio, `content/carousels/POST-READY.md`), et `amk.cm` **n'est même pas encore un domaine à nous** |
 | trois handles différents | — | trois marques à mémoriser ; aucun client ne fait l'effort |
 
+> **⚠️ Deux corrections depuis (23/10)** : (1) l'identifiant **TikTok** ne bouge pas (`@amkweb`, §14.6) ;
+> (2) **`amkweb.cm` est refusé comme identifiant Facebook** — `.cm` est une extension de domaine, que
+> Meta interdit (aide Meta, §15.3). La famille retenue est **`amkweb`** partout où il est libre.
+
 **Recommandation : `amkweb.cm` sur les trois.** La longueur autorisée ne pose problème nulle part :
 **9 caractères** contre **24** sur TikTok, **30** sur Instagram, **50** sur Facebook — et TikTok
 n'accepte que lettres, chiffres, points et soulignés, ce qui rend `amkweb.cm` valide tel quel.
@@ -770,7 +774,7 @@ Verdict   les trois comptes existent, la bio Facebook est la bonne, et le reste 
 
 | # | Où | Défaut | Pourquoi ça coûte | Correctif |
 |---|---|---|---|---|
-| **1** | Facebook | **aucun nom d'utilisateur** : l'adresse de la page est `profile.php?id=61595803408384` | on ne peut **ni** l'imprimer, **ni** la mettre dans le pied de page du site (c'était le §9.7 en attente). Un lien `profile.php?id=…` dans un pied de page dit « amateur » | prendre `amkweb`, sinon `amkweb.cm` |
+| **1** | Facebook | **aucun nom d'utilisateur** : l'adresse de la page est `profile.php?id=61595803408384` | on ne peut **ni** l'imprimer, **ni** la mettre dans le pied de page du site (c'était le §9.7 en attente). Un lien `profile.php?id=…` dans un pied de page dit « amateur » | `amkweb` **sur ordinateur** — procédure et variantes : **§15.2–§15.3** |
 | **2** | Facebook | **nom toujours long** : `AMK-Web Development & Digital Solutions` | tiret + formule descriptive ; et « Digital Solutions » est le slogan **retiré du site** le 22/10 | renommer `AMK` (§12.0) |
 | **3** | Facebook | **catégorie `Social Media Agency`** | Meta présente la page comme une **agence de réseaux sociaux** — ce que nous ne vendons pas, et ce qui pilote les pages « similaires » suggérées | `Concepteur de sites web` + `Agence de marketing` |
 | **4** | Instagram | **nom** `AMK - WEB DEVELOPMENT & DIGITAL SOLUTIONS` (en capitales, 42 car.) | même nom banni que le n° 2, **et** il dépasse la limite d'affichage : il passe à la ligne et mange la place de la bio | `AMK · Sites web Cameroun` — **24 / 30** |
@@ -796,7 +800,7 @@ cliquable — signe que le champ *Site web* n'est pas encore débloqué (§13.5)
 | **TikTok — identifiant** | `@amkweb` — **on n'y touche pas** (§14.6) | 7 |
 | **Facebook — nom** | `AMK` | 3 / 75 |
 | **Facebook — catégorie** | `Concepteur de sites web` (puis `Agence de marketing`) | — |
-| **Facebook — identifiant** | `amkweb`, sinon `amkweb.cm` | ≤ 50 |
+| **Facebook — identifiant** | `amkweb` → `amkwebcm` → `amkwebsolutions` → `amkweb237` (§15.3) | 6 à 15 / 50 |
 
 **Pourquoi le nom Instagram change encore** (il était `AMK · Sites web FR\|EN` au §13.2) : c'est **moi**
 qui me corrige. `FR|EN` décrit une **caractéristique**, et la bio d'Instagram **n'est pas indexée par la
@@ -918,3 +922,111 @@ soumis, lien vérifié. Je valide champ par champ, et je branche le pied de page
   appartient.
 - **Ce qui a été vérifié dans le dépôt** : bio Facebook 82/101 conforme au §12.2 · contrôle `24 h` sur
   les 12 pages HTML (§14.5) · `audit_claims.py` sur ce fichier.
+
+---
+
+## 15 · Le nom d'utilisateur Facebook : pourquoi tu ne le vois pas, et comment l'obtenir (23/10, tour 60)
+
+```
+Réponses de King  1. le lien « vercel.app » mène bien à la page AMK  ✅ défaut §14.3 levé
+                  2. « I don't see any place available for username »  → §15.1
+                  3. « how do I get the type of link you recommend »    → §15.2–§15.3
+Capture du 23/10  catégorie « Web Designer » ✅ (§14.1 n° 3 corrigé) · téléphone +237 6 77 78 96 31 ✅
+                  nom toujours long ❌ · pas d'identifiant ❌ · 1 abonné, 0 post
+```
+
+### 15.1 · Pourquoi le champ n'existe pas sur ton téléphone
+
+**Le nom d'utilisateur d'une page ne se modifie que sur un ordinateur.** Dans l'application, le champ
+existe pour un **profil personnel**, pas pour une page — c'est pour ça que tu ne le trouves pas, et ce
+n'est pas un bug de ton côté. (Aide Meta, page « Create a username for your Facebook Page », consultée le
+23/10 : la procédure décrite est celle de l'ordinateur, et les sources du 23/10 le confirment — l'appli
+laisse changer le **nom** de la page, pas son **identifiant**.)
+
+### 15.2 · La procédure exacte, sur ordinateur
+
+1. **facebook.com** dans un navigateur d'ordinateur (pas l'appli), connecté à ton compte.
+2. **Ta photo de profil** (en haut à droite) → **Voir tous les profils** → **la page AMK**.
+   ⚠️ Il faut **être entré dans la page**, pas rester sur ton profil : sinon tu vois les réglages
+   personnels et le champ n'apparaît pas.
+3. **Paramètres et confidentialité** → **Paramètres**.
+4. Dans le menu de gauche : **Configuration de la page** (*Page setup*).
+5. Sur la ligne **Nom**, clique **Modifier** à côté de ton nom d'utilisateur.
+6. Tape `amkweb` → Meta vérifie en direct → **Enregistrer les modifications** (mot de passe demandé).
+7. Retourne sur la page : l'adresse doit être `facebook.com/amkweb`, et le `@amkweb` s'affiche **sous le
+   nom** de la page — exactement à l'endroit où le tien n'a rien aujourd'hui.
+
+### 15.3 · Les trois règles qui décident du résultat
+
+| Règle | Détail | Conséquence pour nous |
+|---|---|---|
+| **Pas d'extension de domaine** | les identifiants ne peuvent pas contenir `.com`, `.net`, `.ie`, `.de`, `.ca`… (**aide Meta**, consultée le 23/10) | ⚠️ **`amkweb.cm` sera REFUSÉ** : `.cm` est une extension de pays. **Je corrige le §13.1 et le §14.2** |
+| **5 à 50 caractères**, lettres, chiffres et points seulement | pas de tiret, pas de souligné, pas d'espace | `amkweb` = 6 ✅ |
+| **Les points et les majuscules ne différencient pas** | `amk.web` = `amkweb` = `AMKWeb` pour Meta | inutile d'essayer une variante pointée si `amkweb` est pris |
+
+**Ordre de tentative** (à faire dans cet ordre, le premier accepté gagne) :
+
+1. **`amkweb`** — court, déjà notre famille d'identifiants (TikTok), se dit au téléphone ;
+2. **`amkwebcm`** — sans point, donc pas une extension ; 8 caractères ;
+3. **`amkwebsolutions`** ;
+4. **`amkweb237`** — le 237 est l'indicatif du Cameroun, pas une extension.
+
+> **Ne perds pas de temps sur `amk.cm`** : refusé pour la même raison que `amkweb.cm`.
+
+### 15.4 · « Cette page n'est pas éligible » — ce que Meta dit vraiment
+
+L'aide officielle est **courte et vague** : *« les pages récemment créées peuvent ne pas être en mesure
+de créer un nom d'utilisateur immédiatement »*, et un identifiant peut être **retiré pour inactivité**.
+**Aucun seuil n'est publié** : ni 25 abonnés, ni 14 jours.
+
+Les blogs répètent « 25 mentions J'aime et au moins un post » — c'est un **chiffre retiré** par Meta
+(socialrails, 25/07/2026), et **plusieurs sources se contredisent** sur ce point. Ce qu'on sait de
+solide, et qui suffit :
+
+| Fait | Source | Ce qu'on en fait |
+|---|---|---|
+| page **récente** ⇒ champ absent | aide Meta (23/10) | on publie **d'abord** |
+| page **non publiée** ⇒ identifiant impossible | trypostbase | notre page est publiée ✅ |
+| il faut le **contrôle total** (accès Facebook), pas un accès tâche | aide Meta | tu es propriétaire ✅ |
+| un identifiant peut être **retiré si la page reste inactive** | aide Meta | c'est un argument de plus pour publier |
+
+**Le plan, si le champ est absent ou refusé** : publier le **post de bienvenue** (§12.3), inviter
+**20–30 personnes** (§12.5), puis **réessayer sur ordinateur 3 à 5 jours plus tard**. Une page avec un
+post et quelques abonnés passe là où une page vide bloque, quel que soit le vrai seuil.
+
+### 15.5 · En attendant : ce qu'on fait du lien numérique
+
+`facebook.com/profile.php?id=61595803408384` **fonctionne** (tu viens de le vérifier) — mais il ne va
+**pas** dans le pied de page du site : il est illisible, il ne se dit pas à l'oral, et il vieillit mal.
+
+**Donc, l'ordre tient** : le pied de page attend l'identifiant (§9.7 de `site/OPTIMISATION-2026-10-22.md`),
+et rien d'autre ne bloque. D'ici là, les trois liens sociaux restent hors du site — un lien mort coûte
+plus cher qu'un lien absent.
+
+### 15.6 · Ce qui reste sur la page, après ce tour
+
+| # | Élément | État |
+|---|---|---|
+| 1 | **Nom** → `AMK` | ❌ **à faire** (le champ, lui, existe dans l'appli : *Modifier* → *Nom*) |
+| 2 | **Identifiant** → `amkweb` | ❌ à faire **sur ordinateur** (§15.2) |
+| 3 | Catégorie | ✅ `Web Designer` — rien à changer |
+| 4 | Téléphone | ✅ `+237 6 77 78 96 31` |
+| 5 | Liens | ✅ vérifié le 23/10 par King |
+| 6 | Bio · À propos · Douala · horaires | ✅ en place |
+| 7 | **Photo de couverture** | ❓ **aucune sur les captures** — `brand/facebook/cover-1640x624.png` est prêt, c'est 1 minute |
+| 8 | **Premier post** | ❌ 0 post — c'est lui qui débloque probablement l'identifiant (§15.4) |
+| 9 | Invitations | ❌ après le post, toujours en dernier |
+
+### 15.7 · Sources du §15 (lues le 23/10/2026)
+
+- **Aide Meta, primaire** : `facebook.com/help/121237621291199` (**procédure sur ordinateur**, « newly-created
+  Pages may not immediately be able to create a username ») · `facebook.com/help/105399436216001`
+  (**règles** : 5 car. minimum, lettres/chiffres/points, **pas d'extension de domaine**, les points et
+  majuscules ne différencient pas).
+- **Secondaires** : socialpilot.co (15/09/2026 : identifiant de page **impossible dans l'appli**, ordinateur
+  seulement) · louisem.com (21/01/2026 : l'appli permet de changer le **nom**, pas l'identifiant) ·
+  socialrails.com (25/07/2026 : la règle des 25 « likes » est **retirée** des documents Meta) ·
+  trypostbase.com (12/11/2025 : page non publiée ⇒ pas d'identifiant) · roihacks.com (5–50 caractères).
+- **Non vérifié d'ici** : l'état réel de ton écran *Configuration de la page* (les libellés changent selon
+  la version), et la disponibilité réelle de `amkweb` — **seul Meta peut le dire**, le champ l'affiche en
+  direct.
