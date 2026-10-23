@@ -133,11 +133,15 @@ de la section quand même — **les sources servent à vérifier, pas à dépend
 python3 tools/qa/audit_html.py <fichier-construit>      # doit finir sur « TOTAL confirmed findings: 0 »
 python3 tools/qa/audit_a11y.py --strict <fichier-construit>   # rc=0 : aucune faute de niveau A ou AA
 python3 tools/qa/audit_images.py <fichier-construit>          # 0 faute : ratio annoncé = ratio réel, poids, pas de GPS
+python3 tools/qa/audit_reveal.py site/                        # 0 faute : aucune animation ne cache du contenu (ajouté 23/10)
 ```
 Le troisième contrôle est né le 24/09 (lot [32]) avec l'arrivée des **vraies photos** : une photo de
 téléphone pèse 3 à 6 Mo et porte la position GPS. Il vérifie la structure et la vie privée — **jamais la
 beauté de la photo** (celle-là se juge à l'œil).
-Contrôle **structure** (sections imbriquées, équilibre) + **contraste WCAG** de chaque texte (desktop et mobile). Motif : un `</div>` perdu en insérant le miroir opticien a rendu du texte blanc sur fond blanc (déclaré par King). Détail : `tools/qa/AUDIT-2026-09-17.md`.
+Contrôle **structure** (sections imbriquées, équilibre) + **contraste WCAG** de chaque texte (desktop et mobile).
+`audit_reveal.py` (23/10) garde la classe de bug qui a rendu **142 blocs invisibles** deux fois de suite :
+`html.js .rv{opacity:0}` étant plus **spécifique** que `.rv.in{opacity:1}`, le JavaScript ajoutait bien la
+classe et rien ne s'affichait. La règle de base doit porter `:not(.in)`. Motif : un `</div>` perdu en insérant le miroir opticien a rendu du texte blanc sur fond blanc (déclaré par King). Détail : `tools/qa/AUDIT-2026-09-17.md`.
 
 ## 1c · Contrôle approfondi — obligatoire sur CHAQUE prospect (King, 24 Sep 2026)
 

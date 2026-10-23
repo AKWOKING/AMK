@@ -172,9 +172,11 @@ footer .who{font-family:Montserrat,sans-serif;font-weight:800;color:#fff;letter-
 .sticky-wa .c{background:#fff;color:var(--blue-d);border:1px solid var(--line)}
 .sticky-wa svg{width:18px;height:18px;fill:currentColor}
 @media(min-width:900px){.sticky-wa{display:none}footer{padding-bottom:28px}.nav nav{display:flex}.cta.small{display:inline-flex}.hero-grid{grid-template-columns:1.02fr .98fr;gap:30px}.lang{margin-left:0}}
-html.js .rv{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+html.js .rv:not(.in){opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
 .rv.in{opacity:1;transform:none}
+html.js .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}*{animation:none!important}}
+@media (scripting:none){.rv{opacity:1!important;transform:none!important}}
 </style>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -535,6 +537,7 @@ html.js .rv{opacity:0;transform:translateY(14px);transition:opacity .5s ease,tra
   } else {
     [].forEach.call(document.querySelectorAll('.rv'),function(el){el.classList.add('in')});
   }
+  setTimeout(function(){ [].forEach.call(document.querySelectorAll('.rv'),function(el){el.classList.add('in')}); }, 1200);
 })();
 
 </script>

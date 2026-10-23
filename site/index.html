@@ -373,8 +373,9 @@ section .note{font-size:.85rem;color:var(--mute);margin-top:16px}
 /* reveal */
 /* 22/10 : l'animation d'apparition ne s'arme que si JS est là. Avant, un script bloqué
    ou une erreur laissait 41 blocs à opacity:0 — page vide pour qui n'exécute pas le JS. */
-html.js .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+html.js .rv:not(.in){opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
 .rv.in{opacity:1;transform:none}
+html.js .rv.in{opacity:1;transform:none}
 
 /* progress */
 #progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--amber),var(--amber-l));z-index:200}

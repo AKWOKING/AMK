@@ -2425,3 +2425,24 @@ construit.
   une capture valide le rendu**. Quand une capture contredit les outils, c'est la capture qui a raison.
 
 **La phrase à garder** : *ces deux prompts nous ont appris à resserrer, pas à ajouter.*
+
+### Addendum du 23/10 (soir) — la **spécificité** est la deuxième façon de cacher une page
+
+Le principe ① a été violé **deux fois** dans la même journée, par la même règle. `html.js .rv` pèse
+0,2,1 ; `.rv.in` pèse 0,2,0. Le JavaScript ajoutait la classe `in` — et le navigateur continuait
+d'appliquer `opacity:0`. **142 blocs invisibles sur six pages**, sans une seule erreur en console.
+
+Ce qu'on en garde, en trois lignes :
+
+1. **Ne jamais écrire une règle d'état plus faible que la règle de base.** La base porte `:not(.in)`,
+   l'état révélé n'a plus besoin de gagner : il ne concourt plus.
+2. **Un état caché doit avoir une sortie garantie** : `IO` absent, `IO` qui lève, ou simplement un
+   navigateur qui ne déclenche pas → `setTimeout(revealAll, 1200)` et `@media (scripting:none)`.
+3. **Un contrôle, pas une vigilance** : `tools/qa/audit_reveal.py` compte les blocs, vérifie la règle
+   de base, l'état révélé et le repli ; il est branché dans le pré-vol §1b. Un bug vu deux fois n'est
+   plus un accident, c'est un trou de portique.
+
+**Corollaire pour les portiques** : `audit_html.py` signalera des contrastes faux sur les textes blancs
+posés sur une **image de fond** (`.adband` : photo + voile sombre). Le calcul ne voit pas l'image ; le
+texte est lisible. Ces findings se **nomment** dans le rapport au lieu d'être « corrigés » à l'aveugle —
+changer la couleur d'un texte lisible casserait la page pour satisfaire un outil.

@@ -1983,3 +1983,26 @@ attend `repoId` **numérique en chaîne** (`"1370149389"`) ; un `repoId` au form
 **Non vérifié** : la présence du badge dans la page servie. L'extracteur de texte de `fetch_page`
 **supprime le pied de page** (il ne montre pas non plus les liens Facebook/TikTok pourtant en ligne) :
 la preuve visuelle reste une capture de King.
+
+
+---
+
+## 23/10/2026 — 65 photos de montures repassées sur un set studio
+
+**Demande King** : « can you edit/modify the images of the frames in the repo so that they look as the
+ones in the attached images ? » (visuels fournisseur : monture sur fond clair continu, ombre douce).
+
+**Ce qui a été fait** : `tools/site/restyle_frames.py` — détourage déduit du fond crème d'origine,
+taches isolées retirées (filigrane fournisseur), **fond studio** (dégradé blanc cassé + sol), ombre
+portée calculée depuis le masque réel, marge constante, 1600 × 1200 et noms de fichiers conservés.
+Verres laissés translucides : on voit le set au travers, comme sur un détourage produit.
+
+**Ce qui n'a pas été fait, volontairement** : aucune retouche de la forme, aucun redressement en 3/4,
+aucun étui ajouté (nous n'avons photographié aucun étui), aucune image générée. Une monture se choisit
+sur sa **forme** : un modèle qui « redresse » une paire envoie le client voir autre chose au cabinet.
+
+**Limite connue** : les montures à **fine monture métallique** (ex. F01) rendent moins bien que les
+montures plastique — le bord du verre est très clair. La vraie réponse reste une **re-photo sur table
+blanche** (10 minutes par série) ; le script est réversible (`git checkout` des 65 fichiers).
+
+**Poids** : dossier `montures/` 4,8 → 4,6 Mo ; `audit_images` 0 faute sur les pages testées.
