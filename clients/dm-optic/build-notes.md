@@ -2173,3 +2173,15 @@ avant toute livraison client.
 déploiement du `25e2289`/`3e314fd` parce que Workers Builds publie la branche **`arena/2fffee3b-amk`**,
 celle d'une conversation terminée. Le correctif tient en un champ à changer (Settings → Build →
 Branch) ou en un `npx wrangler deploy` depuis la racine du dépôt — voir `launch/CACHE-2026-10-23.md` §6.
+
+### 23/10 (nuit) — le déploiement a eu lieu, et il est prouvé
+
+Changer la branche de production **ne déclenche rien** : c'est l'**envoi** qui déclenche. Le premier
+envoi après le réglage de King (`e30dadb`) a été publié à 04:48 UTC — trois minutes après sa capture
+d'écran, d'où l'impression que « rien ne s'est passé ». Preuve côté public : `llms.txt` sert la section
+`## English pages`, écrite dans le même commit que le menu mobile.
+
+Les builds suivants échouent en une seconde sans produire de version : commande de déploiement
+`npx wrangler deploy`, qui attend une confirmation avant d'installer wrangler. À remplacer par
+`npx --yes wrangler@4.152.0 deploy` — détail et relevé minute par minute dans
+`launch/DEPLOIEMENT-CLOUDFLARE-2026-10-22.md` §6.
