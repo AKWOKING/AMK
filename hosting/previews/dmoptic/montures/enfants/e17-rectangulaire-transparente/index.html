@@ -47,6 +47,15 @@
   .mnav-panel a+a{border-top:1px solid var(--line-2)}
   .mnav-panel a:focus-visible{outline:3px solid var(--brand);outline-offset:-3px}
 }
+/* 23/10 — en-tête mobile : la marque ne pousse plus le menu hors de l'écran */
+@media (max-width:430px){
+  header.site .wrap{gap:10px;padding-left:14px;padding-right:14px}
+  header.site .brand{font-size:.96rem;gap:8px;letter-spacing:.04em;min-width:0}
+  header.site .brand svg{width:22px;height:22px}
+  header.site .langbox{gap:0}
+  header.site .langbox button{padding:6px 7px}
+  .mnav>summary{width:40px;height:40px}
+}
 </style>
 <script>/* Avant le premier rendu : on retire `no-js`, on pose `js` (c'est ce qui autorise les états d'entrée
    du CSS, §13) et on remet la langue choisie la dernière fois. Sans JavaScript, la page s'affiche en
@@ -759,6 +768,21 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
     en.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('in'); io.unobserve(e.target);} });
   },{rootMargin:'0px 0px -6% 0px',threshold:.08});
   els.forEach(function(e){io.observe(e)});
+  /* 23/10 — carrousel : les cartes hors écran ne restent plus invisibles
+     Un `.rv` placé dans un conteneur qui défile horizontalement n'entre jamais dans le champ de
+     l'observateur (il est hors écran à droite) : il restait donc à opacity:0. On observe le
+     conteneur, et quand il devient visible toutes ses cartes s'affichent. */
+  var strips=[].slice.call(document.querySelectorAll('.rv')).filter(function(e){
+    var n=e.parentElement; while(n&&n!==document.body){var cs=getComputedStyle(n);
+      if(/auto|scroll/.test(cs.overflowX)) return true; n=n.parentElement;} return false;});
+  if(strips.length){var io2=new IntersectionObserver(function(en){
+      en.forEach(function(e){ if(e.isIntersecting){
+        [].slice.call(e.target.querySelectorAll('.rv')).forEach(function(c){c.classList.add('in')});
+        e.target.classList.add('in'); io2.unobserve(e.target);} });},{threshold:.05});
+    var boxes=new Set(); strips.forEach(function(e){var n=e.parentElement;
+      while(n&&n!==document.body){var cs=getComputedStyle(n);
+        if(/auto|scroll/.test(cs.overflowX)){boxes.add(n);break;} n=n.parentElement;}});
+    boxes.forEach(function(b){io2.observe(b)});}
 }catch(e){ var all=document.querySelectorAll('.rv'); for(var i=0;i<all.length;i++){all[i].classList.add('in');} }})();
 </script>
 

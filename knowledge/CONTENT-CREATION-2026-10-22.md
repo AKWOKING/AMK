@@ -368,6 +368,10 @@ qu'elles doublent la portée. Le seuil du §6 de `ANALYSE-POST-1` le dira en deu
 > *King, 23/10, sur une vidéo qui commençait par un journal qu'on éloigne : « plus personne ne lit le
 > journal. Regarder le journal à la télé oui, mais acheter et lire un papier journal, je n'en vois même
 > pas autour de moi. »*
+>
+> **Précision du même jour, qui tranche la question : « c'est le journal. »** Le refus portait sur
+> **l'objet**, pas sur la cible : la vidéo pour les 45 ans et plus est **gardée**, le décor passe au
+> téléphone.
 
 **Ce n'était pas un détail de décor, c'était une erreur de méthode.** Le geste de la presbytie — écarter
 les bras pour lire — est juste ; **l'objet était faux**. J'avais pris la mise en scène d'un manuel
@@ -398,6 +402,9 @@ n'a pas vu.**
 
 > *King, 23/10 : « on peut aussi encourager notre audience à nous poser des questions sur ce qu'ils
 > aimeraient savoir, puis on peut leur répondre par une autre vidéo et les taguer. »*
+>
+> **Validé le 23/10 au soir : « oui, on démarre la série avec la prochaine vidéo. »** Le point de départ est
+> `clients/dm-optic/content/month1/w3/presbytie-55ans-SCRIPT.md` (bloc 8 : la demande de question).
 
 **Oui — et c'est la seule mécanique qui produit trois choses à la fois :** des commentaires (qui poussent le
 post), **la matière des vidéos suivantes** (on ne devine plus les sujets, ils arrivent tout seuls), et un

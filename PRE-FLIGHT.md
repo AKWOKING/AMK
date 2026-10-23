@@ -23,7 +23,42 @@ Applied: the header lists the files **actually loaded** (and says "partial" / "n
 > read end to end.
 
 Application : `knowledge/` est la couche de référence (table ci-dessous) ; une règle qui la contredit
-se dit **à voix haute**, et le document est corrigé le jour même — jamais contourné en silence. Une
+se dit **à voix haute**, et le document est corrigé le jour même — jamais contourné en silence.
+
+### 0c bis · La liste qu'on ne saute pas — et `CONTENT-CREATION` en fait partie (ruling King 23/10)
+
+> *King, 23/10 : « make sure `CONTENT-CREATION` is in the list of what you have to read when necessary in
+> preflight docs, write it. »*
+
+**Il y était** (table §1g, routage §1g, ligne 115), **mais dispersé sur trois endroits** — donc jamais lu
+comme une liste. Voici la liste, une seule fois, avec le déclencheur de chaque fichier. **Un tour qui touche
+l'un de ces sujets lit le fichier avant d'écrire, et le dit dans son en-tête.**
+
+| # | Fichier | Il se lit **quand** | Il ne se lit pas quand |
+|---|---|---|---|
+| 1 | **`knowledge/CONTENT-CREATION-2026-10-22.md`** | **toute vidéo, tout post, toute légende, tout script, tout aimant, toute analyse de performance sociale** — et dès qu'on parle de hook, de durée, de CTA, de mot-clé, d'opt-in, de décor, de série | la tâche ne touche aucune publication (prix, contrat, site, facture) |
+| 2 | `knowledge/MARKETING-OPTICAL-2026-10-22.md` | positionnement, acquisition, SEO local, avis, vente optique, un chiffre à sourcer pour un client | contenu purement interne à AMK |
+| 3 | `knowledge/OUTREACH-MESSAGING-2026-10-22.md` | tout message à un opticien, un gérant de clinique, un prospect | message à un client existant |
+| 4 | `knowledge/LANDING-FUNNEL-2026-10-23.md` | une page, un tunnel, une conversion, un formulaire | un post social |
+| 5 | `knowledge/MAINTENANCE-CLIENTS-2026-10-22.md` | une décision qui engage un client (périmètre, rythme, retainer, plafond) | une tâche de production |
+| 6 | `knowledge/PRIX-2026-10-24.md` · `ROAST-*` | tout prix, toute grille, toute remise, toute proposition | jamais, sinon |
+| 7 | `knowledge/VIDEOS-2026-10-23-AUDIT.md` | une vidéo à monter, à rendre ou à auditer | une vidéo à écrire seulement |
+| 8 | `knowledge/HOUSE-KNOWLEDGE-BASE.md` | l'index : quand on ne sait pas où chercher, on commence ici | on sait déjà quel fichier ouvrir |
+| 9 | `PRE-FLIGHT.md` (ce document) | **toujours**, en entier, avant tout | — |
+
+**Les trois sections de `CONTENT-CREATION` qui se lisent le plus souvent, et leur déclencheur :**
+
+| Section | Déclencheur |
+|---|---|
+| **§3 bis** (gabarit 9 blocs, rehook) · **§3 ter** (4 S, banque de hooks) | écrire un script |
+| **§5 quater** (un tournage, deux montages) | publier la même vidéo sur Facebook **et** TikTok |
+| **§5 quinquies** (le décor doit exister chez le spectateur) | **tout ce qu'on filme** — avant de tourner |
+| **§5 sexies** (série « vous demandez, on répond ») | demander une question à l'audience, taguer quelqu'un |
+| **§10 / §10 bis** (journal des sources) | **à chaque source reçue**, vidéo comprise |
+
+**La règle de compte rendu :** l'en-tête pré-vol nomme **les numéros** de cette liste qui ont été lus —
+`knowledge 1, 2 · dossier client` — et pas « knowledge lu ». Un numéro absent est un fichier non lu, et ça
+se voit. Une
 recherche neuve (vidéo, article, outil) atterrit dans `knowledge/` **avant** d'entrer dans une page
 ou un message : sinon elle n'existe pas. For DM Optique, "end to end" means `clients/dm-optic/` including `onboarding/CONDITIONS-D-INTERVENTION-*`, `site/SPEC-PAGES-v1.md`, the build notes (`build-notes.md`), the proforma, and the client's messages as logged in the CRM. **For the DM Optique site, the source of truth is `clients/dm-optic/site/CLIENT-REQUIREMENTS-BRIEF.md`: rulings cite it; a question it cannot answer extends it (its « Journal d'extension »), never a ruling from memory.**
 ---
@@ -134,7 +169,7 @@ Quand une règle change ou qu'un ruling est donné, cette table dit quels fichie
 | **Recherche externe = Agent Reach d'abord (ruling King 19/10, §1f①)** | `PRE-FLIGHT.md` §1f + lignes de routage recherche (§1, §1c, §2 étape 3) · `tools/agent-reach/README.md` · skill installé `~/.agents/skills/agent-reach/SKILL.md` (hors dépôt) · sorties de recherche (`research/`, `sales/research/`) |
 | **Brag de livraison à chaque site prêt (ruling King 19/10, §1f②)** | `PRE-FLIGHT.md` §1f + §1b · `tools/brag/README.md` · `tools/qa/audit_video_motion.py` (portique) · `clients/<client>/build-notes.md` (chemin du brouillon) · `hosting/previews/README.md` (deploy gate) |
 | **Déploiement Vercel DM Optique après chaque changement du site (ruling King 20/10, §1f③)** | `PRE-FLIGHT.md` §1f · `clients/dm-optic/build-notes.md` (id + état du déploiement) · `hosting/previews/dmoptic/` (racine du projet Vercel) · `sales/Activity-Log.md` |
-| **Design/build/revue = taste-skill appliqué (ruling King 20/10, §1f④)** | `PRE-FLIGHT.md` §1f + §1b · `tools/taste-skill/README.md` · skill installé `~/.agents/skills/design-taste-frontend/SKILL.md` (hors dépôt) · `AMK-DESIGN-SKILLS.md` (lois maison, gagnent en cas de conflit) · `clients/<client>/build-notes.md` + `inspiration.md` (direction tirée, redraws, scores) |
+| **Design/build/revue = pro-design en porte, taste-skill en direction (ruling King 20/10, complété 23/10 — §1f⑪)** : `tools/pro-design/README.md` + `bash tools/pro-design/install.sh` (la boucle 1440/390, deux tours max) ; taste-skill seulement quand la marque n'a pas encore de direction | `PRE-FLIGHT.md` §1f + §1b · `tools/taste-skill/README.md` · skill installé `~/.agents/skills/design-taste-frontend/SKILL.md` (hors dépôt) · `AMK-DESIGN-SKILLS.md` (lois maison, gagnent en cas de conflit) · `clients/<client>/build-notes.md` + `inspiration.md` (direction tirée, redraws, scores) |
 | **Mouvement d'interface = design-motion-principles appliqué (ruling King 20/10, §1f⑤)** | `PRE-FLIGHT.md` §1f + §1b · `tools/design-motion-principles/README.md` · skill installé `~/.agents/skills/design-motion-principles/SKILL.md` (hors dépôt) · `AMK-DESIGN-SKILLS.md` (lois maison, gagnent en cas de conflit) · `clients/<client>/build-notes.md` (pondération des lentilles, findings motion) |
 | **Audit/vérification = skills ECC sélectifs en appui (ruling King 20/10, §1f⑥)** | `PRE-FLIGHT.md` §1f + §1b · `tools/ecc/README.md` · skills installés `~/.agents/skills/{accessibility,production-audit,verification-loop,security-review,seo,click-path-audit}/SKILL.md` (hors dépôt) · `tools/qa/` (les portiques maison font foi) · `clients/<client>/build-notes.md` (score, preuves, blockers) |
 | **Recherche UX/UI consultable = UI/UX Pro Max en appui (ruling King 20/10, §1f⑦)** | `PRE-FLIGHT.md` §1f + §1b · `tools/ui-ux-pro-max/README.md` · skill installé `~/.agents/skills/ui-ux-pro-max/SKILL.md` (hors dépôt) · `AMK-DESIGN-SKILLS.md` (lois maison, gagnent en cas de conflit) · `clients/<client>/build-notes.md` (grilles consultées, avis écartés) |
@@ -319,9 +354,13 @@ Recette éprouvée (avec travail non commité, **jamais** `--hard`) : `git fetch
 - **Cible :** projet `dm-optique-sarl` (`prj_vnTP9SW2lGh2rMqH15oU6S5NZvob`, équipe `team_EWqUU5nnB2OitkqqnARZ7Qrl`), racine `hosting/previews/dmoptic`, alias `https://dm-optique-sarl.vercel.app`. Le projet n'est pas lié Git (pas d'auto-déploiement) : déclenchement explicite via le connecteur Vercel, source GitHub `arena/2fffee3b-amk`, cible `production` du projet de test. Pièges connus : outils connecteur à recharger chaque tour ; `git_source` = chaîne JSON, pas objet ; `list_deployment_files` renvoie 404 sur ce projet → vérifier par lecture de page.
 - **Garde-fous inchangés :** Vercel = banc d'essai de King, pas une livraison client ; la production client (Cloudflare, domaine du cabinet) reste le geste de King après sa validation. L'id, l'état et le commit déployés se consignent dans `clients/dm-optic/build-notes.md` (+ Activity-Log).
 
-### ④ Tâche design / build / revue de page → **taste-skill lu et appliqué** (ruling King 20/10)
+### ④ Tâche design / build / revue de page → **pro-design en porte (23/10), taste-skill en direction**
 
 > *King 20/10 : « before we go further I want you to install and use this [taste-skill] ».*
+>
+> **Complété le 23/10 :** toute page neuve passe d'abord par **`pro-design`** (§1f⑪) — marque, motifs,
+> mouvement, boucle de vérification avec **deux tours maximum**. **taste-skill** sert ensuite à **tirer une
+> direction** quand la marque n'en a pas encore ; les deux ne se lancent pas sur la même page en même temps.
 
 - **Portée :** construire, designer, redesigner, restyler ou relire une page publique (le périmètre du skill lui-même). L'orchestrateur réinstalle si absent (`bash tools/taste-skill/install.sh`, épinglé — voir `tools/taste-skill/README.md`), lit `~/.agents/skills/design-taste-frontend/SKILL.md` (+ les `references/` utiles), et **le dit dans son en-tête pré-vol**.
 - **Procédure :** nouveau build = le « run » du skill (inventaire du sujet → argument → tirage de direction par `draw.mjs` → phrase-idée → copy deck → construction → portique `lint.mjs`/`inspect.mjs` → critique sur captures → mouvement → rapport honnête : direction tirée, redraws motivés, scores, contrôles **non** exécutés dits comme tels). Revue/restyle = le cas « existing page » du skill (avant/après mesurés). Sorties `.taste-skill/` ignorées par git.
@@ -394,13 +433,45 @@ Skill  : [skill chargé, ou « aucun : la tâche n'en appelle pas »]
 |---|---|---|
 | **Connecteurs** | Notion (mémoire, miroir §0g) · Vercel (déploiement) · GitHub (`gh` : PR, issues, contenu) · Google Drive / Agenda | toute écriture de connaissance, tout déploiement, tout geste de dépôt |
 | **Recherche** | `web_search` · `fetch_page` · **Agent Reach** (§1f①) | un chiffre à vérifier, une source à ouvrir, une vidéo à transcrire |
-| **Skills installés** (§1f④–⑧, hors dépôt) | `design-taste-frontend` · `design-motion-principles` · `ui-ux-pro-max` · `impeccable` · ECC (`accessibility`, `production-audit`, `verification-loop`, `security-review`, `seo`, `click-path-audit`) | page publique, composant, mouvement, audit de livraison |
+| **Skills installés** (§1f④–⑧ et ⑪, hors dépôt) | **`pro-design`** (la porte d'entrée des pages neuves — §1f⑪) · `design-taste-frontend` · `design-motion-principles` · `ui-ux-pro-max` · `impeccable` · ECC (`accessibility`, `production-audit`, `verification-loop`, `security-review`, `seo`, `click-path-audit`) | page publique, composant, mouvement, audit de livraison |
 | **Portiques maison** (§1b) | `tools/ops/gate-amk.sh` · `tools/qa/audit_*.py` · `tools/qa/test_site_a11y_behaviour.mjs` | **avant toute publication** — les portiques maison font foi |
 | **Outils média** | `tools/video/` (rendu, sous-titres) · `tools/record/` · `tools/pdf/` | toute pièce vidéo, capture, PDF |
 | **Mémoire et journal** | `knowledge/` (§0c) · Notion (§0g) · `§10` journal des sources | **à chaque source nouvelle** — le journal s'ouvre à la réception |
 
 **Deux cas où l'inventaire est court et c'est normal :** une question de conversation sans livrable
 (trois lignes, « aucun skill »), et une tâche déjà couverte par le ⑨. **Zéro cas où il est absent.**
+
+### ⑪ Construire ou redessiner une page → **pro-design d'abord** (skill installé le 23/10, donné par King)
+
+> *King, 23/10 : « read and install » — skill `pro-design`, quatre temps : marque, bibliothèque de motifs,
+> mouvement, boucle de vérification.*
+
+- **Portée :** **toute page neuve** (site client, landing, page de vente) et **tout redesign**. C'est la
+  porte d'entrée ; les autres skills de design passent derrière.
+- **Source et installation :** la source vit **dans le dépôt** (`tools/pro-design/SKILL.md`) ; le skill
+  s'installe par `bash tools/pro-design/install.sh` (idempotent, hors réseau, aucun sudo) dans
+  `~/.agents/skills/pro-design/` et `~/.claude/skills/pro-design/`. Mode d'emploi, hiérarchie et limites :
+  `tools/pro-design/README.md`.
+- **Procédure :** §1 les fichiers de marque (jamais réécrits s'ils sont validés par le client) → §2 un
+  motif **par section, avec sa raison** → §3 **un** moment de mouvement, 150–250 ms / 600–900 ms,
+  `prefers-reduced-motion` → §4 construire **tout**, captures **1440 et 390**, corriger en un lot,
+  **deux tours maximum puis stop**.
+- **Hiérarchie :** les lois maison gagnent — `AMK-DESIGN-SKILLS.md`, le protocole d'unicité, les verrous
+  client, et **les portiques §1b** (ce sont eux qui bloquent une publication, pas la capture d'écran).
+- **La boucle tourne pour de vrai (23/10) — et elle a déjà trouvé deux défauts.** `bash tools/video/install.sh`
+  une fois par session, puis **`python3 tools/qa/shot.py <page>`** : Chromium embarqué (paquet
+  `@sparticuz/chromium`), **serveur HTTP local** qui sert le dossier du site à la racine (sinon les chemins
+  absolus `/fonts/...` cassent et l'outil crie au loup), défilement complet, captures **1440 et 390**,
+  puis mesure : débordement, texte coupé, images cassées, contraste AA, console, focus, h1 du premier écran,
+  blocs restés invisibles, zones vides. Sortie **P1/P2/P3 + `rapport.json`**, code 1 si P1.
+  **Une URL externe reste inaccessible** (egress Chromium fermé) : on teste **le fichier du dépôt**, servi
+  en local — et c'est même mieux, puisque c'est exactement ce qui sera publié.
+- **Un seul skill de design par page, et on le nomme :** `pro-design` pour **structurer et vérifier**,
+  `taste-skill` pour **tirer une direction** quand la marque n'en a pas encore. Jamais les deux en même
+  temps sur la même page.
+
+**Phrase de sortie attendue, à la fin d'un build :** *direction en deux phrases + ce que la boucle a
+attrapé* — c'est le « hand-off » du skill, et ça va dans le bloc Audit de la réponse.
 
 ## 1g · Marketing, marque et création de contenu (ruling King 22/10)
 
@@ -419,6 +490,7 @@ deux bases de connaissance, **avant** d'écrire une ligne de script ou de lancer
 | La tâche | D'abord | Ensuite |
 |---|---|---|
 | positionner une marque, écrire un statement | `knowledge/MARKETING-OPTICAL…` §6 | `clients/<client>/brand/BRAND-STRATEGY-*.md` |
+| **construire ou redessiner une page** (site, landing, page de vente) | **`tools/pro-design/README.md`** + `bash tools/pro-design/install.sh` → skill **`pro-design`** (§1f⑪ : marque, motifs, mouvement, boucle 1440/390, deux tours max) | **`python3 tools/qa/shot.py <page>`** (le vrai navigateur, §1f⑪) · `AMK-DESIGN-SKILLS.md` (lois maison, elles gagnent) · les portiques `tools/qa/` avant publication |
 | **créer, réparer ou optimiser une page sociale** (Facebook, Instagram, TikTok) | `brand/AMK-PRESENCE-2026-10-22.md` **§14** (l'audit des trois profils réels : les sept défauts, la copie exacte Instagram/TikTok, la règle des identifiants) + **§13** (identité des trois comptes, fusion de pages, lien page ↔ Instagram) + §12 (les onze champs Facebook) + §10 (protocole captures) · `sales/research/2026-W43-techniques.md` §15 (audience vs communauté, cadence, mesure) | le §3 de PRESENCE uniquement pour les visuels déjà validés — l'arbitrage du nom est au §12.0 ; **une promesse de délai ne va jamais dans une bio sans sa condition** (§14.5) |
 | écrire un script court | `knowledge/CONTENT-CREATION…` §3 **puis §3 bis** (gabarit 9 blocs, rehook) et **§3 ter** (4 S + banque de hooks) | le gabarit du mois (`content/month1/…`) |
 | choisir **le type de contenu selon l'objectif** (être connu / faire écrire / créer l'urgence / filtrer) | `knowledge/CONTENT-CREATION…` §4 bis | l'objectif du mois, écrit dans le plan |
@@ -430,6 +502,9 @@ deux bases de connaissance, **avant** d'écrire une ligne de script ou de lancer
 | décider d'un contenu avec visage / IA | `knowledge/CONTENT-CREATION…` §6 | ruling de King — jamais de production avant |
 | sourcer un chiffre pour un client | `knowledge/MARKETING-OPTICAL…` §9 + `CONTENT-CREATION…` §7 | la source primaire nommée, sinon « non revérifié » |
 | **écrire un post, un sous-titre, une légende, un DM** | **`tools/qa/audit_claims.py`** (verrous client : prix, stock, superlatifs, allégations) | `knowledge/CONTENT-CREATION…` §6 bis |
+| **publier la même vidéo sur Facebook et TikTok** | `knowledge/CONTENT-CREATION…` **§5 quater** (un tournage, deux montages : durées, première image, légendes, ce qu'on mesure) | le script du mois |
+| **filmer quoi que ce soit** | `knowledge/CONTENT-CREATION…` **§5 quinquies** (le décor doit exister chez le spectateur ; le test des trois secondes) | le plan de tournage |
+| **demander une question à l'audience / taguer quelqu'un** | `knowledge/CONTENT-CREATION…` **§5 sexies** (série « vous demandez, on répond », accord obligatoire avant le tag) | la vidéo de réponse |
 | écrire à un gérant de clinique / opticien (prospection, DM froid) | `knowledge/OUTREACH-MESSAGING-2026-10-22.md` | vérifier la position réelle **avant** d'écrire |
 
 **Deux règles debout issues du 22/10 :**

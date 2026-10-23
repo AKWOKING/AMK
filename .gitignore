@@ -5,6 +5,7 @@ __pycache__/
 # shot pipeline working files
 tools/shots/node_modules/
 tools/shots/out/
+tools/qa/out/
 
 # video compositor working files
 tools/record/node_modules/
