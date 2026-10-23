@@ -2541,3 +2541,220 @@ correction de regard (la portée vient des inconnus). Ce qui part : le volume in
 visage, et la promesse d'être payé par Facebook depuis le Cameroun. **Zéro outil ajouté, zéro fichier
 nouveau** : les leçons sont allées dans deux documents existants (§9–§11 de
 `brand/AMK-PRESENCE-2026-10-22.md`, §15–§16 de `sales/research/2026-W43-techniques.md`).
+
+---
+
+## Lot [46] · CINQ VIDÉOS, DEUX MÉTIERS DIFFÉRENTS — Facebook 2026, publicité Meta, et trois méthodes Instagram · 2026-10-23
+
+```
+Entrées   5 liens YouTube donnés par King (23/10), transcrits et lus.
+Méthode   ⚠️ CHANGEMENT D'OUTIL : jusqu'au 22/10 la lecture YouTube était déclarée BLOQUÉE depuis le
+          bac (chunks 0 seulement, « aucune vidéo regardée »). Le 23/10, `fetch_page` rend la
+          transcription complète (page YouTube pour les vidéos anglophones, youtubetotranscript.com
+          pour les francophones). C'est la première fois que ce dépôt lit vraiment des vidéos.
+Limite    on a lu des TRANSCRIPTS, pas des images : ce qui se voit à l'écran (montage, plans, exemples
+          visuels) n'est pas couvert. C'est écrit ici pour que personne ne cite ce lot comme un
+          visionnage.
+```
+
+### Les cinq vidéos
+
+| # | Titre | Chaîne | Date | Durée | Vues | Lu |
+|---|---|---|---|---|---|---|
+| 1 | Facebook's 2026 Rules for Reach & Relevance | Social Media Examiner | 16/04/2026 | 45:52 | 3 531 | chunks 0 (transcription) |
+| 2 | Comment créer une campagne publicitaire sur Facebook de A à Z | Raphaël BOTOYIYE | 12/10/2026 | 13:20 | 12 890 | **intégral** |
+| 3 | La méthode pour exploser sur INSTA en 2026 | FrenchStartupper | 26/01/2026 | 17:26 | 37 736 | **intégral** |
+| 4 | Comment passer de 0 à 70 000 abonnés sur Instagram | Création Singulière | **01/12/2023** | 12:01 | 96 464 | chunks 0–1 |
+| 5 | Comment GRANDIR sur INSTAGRAM en 2026 ? | HubSpot France | 10/11/2025 | 15:33 | 4 605 | chunks 0–1 |
+
+⚠️ **La vidéo 4 porte « 2026 » dans son titre mais date de décembre 2023** (date d'upload lue sur la
+page). Elle est utile — la méthode n'a pas vieilli — mais **aucun chiffre qu'elle cite ne vaut comme
+preuve 2026**. C'est le piège du genre : un titre re-daté par le créateur pour rester dans les résultats.
+
+---
+
+### 1 · Facebook 2026 : « original only » (Social Media Examiner, Tara Zirker)
+
+**Ce que la vidéo dit**
+
+- Meta a explicitement annoncé ne **promouvoir que le contenu original** : vidéos ou posts *filmés ou
+  produits directement* par le créateur ou le propriétaire de la page.
+- Le **remix est encore accepté** s'il ajoute quelque chose de substantiel (analyse, information neuve,
+  récit). Ce qui est rétrogradé jusqu'à disparaître : les **republis de faible valeur** — stitches, clips,
+  réactions sans commentaire, « petites retouches ».
+- Ça s'applique **au fil ET aux Reels**.
+- Le mécanisme n'est pas la reconnaissance faciale : Meta prend une **empreinte** de la vidéo (comme côté
+  publicité) et regarde le **motif**. Une page qui publie majoritairement de l'original est « en zone
+  sûre » ; une page qui republie est identifiée par son historique.
+- Hypothèse forte des deux intervenants, **dite comme hypothèse** : « original » veut dire **original
+  pour Facebook** — donc republier sa propre vidéo YouTube ou TikTok, ou garder le **filigrane**, pénalise.
+- Chiffres cités : **vues et temps passé sur les Reels Facebook ≈ ×2** au 2ᵉ semestre 2025 vs 2024.
+- Trois autres sujets : un **sondage d'intérêt réel** des utilisateurs sur les Reels (avec un défaut
+  connu : les gens répondent vite et mal), le **programme d'affiliation en libre-service** de Facebook, et
+  **Meta Vibes**, une app de génération de vidéo IA qui intéresse surtout les annonceurs.
+
+**Ce qu'on prend pour AMK**
+
+1. **Règle neuve, immédiate : nos vidéos ne sortent jamais avec un filigrane TikTok/YouTube.** On exporte
+   propre depuis `tools/record/` ou on refait le montage. C'est gratuit et ça se contrôle avant publication.
+2. **On ne republie pas les vidéos d'un autre** — nos quatre vidéos du lot [45] sont à nous, elles partent
+   telles quelles. Le risque est ailleurs : ne pas « repartager » un contenu de clinique comme s'il était
+   nôtre.
+3. **Les Reels Facebook valent la peine pour les écoles et cliniques** : c'est le seul format vidéo qui
+   double sur le canal où sont les décideurs (≈6,84 M d'utilisateurs au Cameroun).
+4. **Vibes / affiliation : on regarde, on n'adopte pas.** L'affiliation suppose un programme de
+   monétisation auquel le Cameroun n'a pas accès (voir lot [45]) ; l'app IA vidéo touche notre politique
+   visages (§6 du socle) — donc **ruling de King avant toute production**.
+
+**Ce qu'on rejette** : l'idée qu'il faudrait « produire une empreinte originale » en permanence, c'est-à-dire
+publier plus. Notre contrainte n'est pas la détection, c'est la capacité (deux pièces par semaine).
+
+---
+
+### 2 · Publicité Meta de A à Z (Raphaël BOTOYIYE) — la plus concrète des cinq
+
+**Ce que la vidéo dit** (boutique en ligne, produit unique, marché africain francophone)
+
+- Objectif **Ventes**, **budget au niveau de la campagne** (et non de l'ensemble de publicités) — pour que
+  Meta répartisse sur ce qui performe.
+- **Pixel** créé, installé, vérifié avec l'extension *Meta Pixel Helper* ; **événement de conversion =
+  achat**, pas ajout au panier ni début de paiement.
+- Date de fin **laissée vide** (sinon Meta dépense tout d'un coup) ; début à minuit le lendemain.
+- **3 à 4 pays maximum** pour un budget de 8 $ ; il cite Cameroun, Kenya, Côte d'Ivoire, Bénin.
+- **« Publicités multi-annonceurs » désactivé** — sinon notre pub passe après celles des concurrents.
+- **Une campagne = une page produit**, jamais la boutique entière.
+- Au niveau de l'annonce : **page Facebook obligatoire**, profil Instagram optionnel, numéro WhatsApp
+  laissé sur « utiliser la page Facebook » (sinon des numéros s'affichent au milieu de l'annonce).
+- **Dupliquer l'annonce** pour tester deux visuels (et « générer une variante » de texte).
+- Créatif écrit avec l'IA à partir des images, puis relu.
+
+**Ce qu'on prend pour AMK**
+
+| Son réglage | Notre réalité | Ce qu'on garde |
+|---|---|---|
+| objectif Ventes + pixel + événement achat | nous vendons un **service** ; le contact se fait sur **WhatsApp**, il n'y a pas de panier | **objectif Messages / prospects**, destination **WhatsApp** — on ne garde **pas** le pixel |
+| budget au niveau campagne | valable quel que soit l'objectif | ✅ on garde |
+| 8 $ pour 3–4 pays | nous servons **un pays**, six villes | budget **plus petit**, **Cameroun seul**, villes en ciblage |
+| date de fin vide | règle de plateforme | ✅ on garde |
+| multi-annonceurs désactivé | règle de plateforme | ✅ on garde |
+| une campagne = un produit | une campagne = **une offre** (aperçu gratuit) | ✅ on garde, reformulé |
+| dupliquer pour tester 2 visuels | on a déjà 2 visuels prêts (carré + verticale) | ✅ on garde |
+
+**Ce qu'on rejette pour l'instant** : **aucune campagne avant que la page ait des preuves** (0 post
+aujourd'hui, §15.6 de `PRESENCE`). Payer pour montrer une page vide, c'est acheter un clic qui n'a nulle
+part où aller. Et l'auteur lui-même parle depuis une boutique avec des ventes ; notre cycle est une
+conversation WhatsApp, pas un achat impulsif.
+
+---
+
+### 3 · Les cinq clés de FrenchStartupper (0 → 600 000 abonnés)
+
+1. **Posture professionnelle** : le pro publie même quand il n'en a pas envie. « Une vidéo par jour pendant
+   365 jours et ta vie aura changé. » Il montre son propre YouTube : **plus d'un an sans résultat** avant
+   le déclic.
+2. **L'accroche** : **3 secondes** pour décider. Si l'accroche rate, l'algorithme en conclut que le contenu
+   est mauvais.
+3. **La donnée** : lire **à quelle seconde les gens décrochent**, regarder ce qu'on disait à ce moment,
+   corriger la vidéo suivante.
+4. **Travailler intelligemment** : blocs de tournage hebdomadaires, contenu d'avance, planneur ;
+   l'improvisation du soir est la faute.
+5. **S'inspirer de ce qui marche** (citation de Balzac : « copier, c'est vivre ») : reprendre l'idée, le
+   format, l'accroche — **jamais** la recopier à l'identique.
+
+**Ce qu'on prend** : les clés **2 et 3**, telles quelles. Notre gabarit DM a déjà 5 temps ; il lui manque
+un **test d'accroche explicite** et une **lecture de la courbe de rétention** (§9 du socle de contenu).
+**Ce qu'on adapte** : la clé 1, en gardant la discipline mais **pas le volume** — un post par jour n'est
+pas tenable ici, et son propre exemple montre **un an** avant le déclic : c'est un argument pour la
+**patience**, pas pour la fréquence.
+**Ce qu'on rejette** : la clé 5 appliquée à la marque. Notre protocole d'unicité interdit de copier une
+identité ; on s'inspire d'un **format**, jamais d'une direction artistique.
+
+---
+
+### 4 · Création Singulière (0 → 70 000 abonnés, méthode de 2023)
+
+Cinq étapes : **direction artistique** (palette, typo, ambiance, tonalité tutoiement/vouvoiement) · **type
+de compte** (personnel / professionnel / créateur) · **optimisation du profil** (nom d'utilisateur clair,
+bio, photo) · **stratégie de contenu** (cible, format vertical) · **planification et régularité**.
+
+**Ce qu'on prend** : la **tonalité** comme décision explicite (nous : vouvoiement sur le site, tutoiement
+nulle part — à écrire une fois, pas à improviser par post).
+**Ce qu'on rejette** : tout le reste est **déjà fait chez nous** (DA navy/ambre + marque AMK, nom et bio
+du §14.2, plan de deux pièces/semaine). Le refaire serait un restyle sans raison — et c'est exactement ce
+que le protocole d'unicité interdit.
+
+---
+
+### 5 · HubSpot France — la plus alignée avec notre réalité
+
+**Optimisation du profil**
+
+- Le **nom** (pas la bio) porte les mots-clés et **pèse sur la recherche** : « Aura Champêtre » devient
+  « Aura Champêtre · vêtement de randonnée ». → **confirme notre §14.2** (`AMK · Sites web Cameroun`) et
+  clôt le débat : `FR|EN` ne travaille pas, le métier et le pays oui.
+- Bio : qui, quoi, pour qui. **Posts épinglés** = ce que le visiteur voit en premier (bienvenue, histoire,
+  valeurs, procédé). **Stories à la une** par thème, quelques-unes suffisent.
+- Catégorie + **boutons de contact** activés (e-mail, appel, itinéraire) — on les a posés au §14.2.
+
+**Stratégie de contenu**
+
+- Fréquence : les pros disent **5 posts/semaine** ; elle recommande **3 si la qualité n'y est pas**.
+- **2–3 piliers** : éduquer, divertir, faire interagir ; chaque pièce se range dans un pilier.
+- Un même fond peut vivre en Reel **puis** en carrousel.
+
+**Visibilité (la partie la plus opérationnelle)**
+
+- **Prononcer les mots-clés dans les 3 premières secondes** : Instagram lit l'audio et en déduit à qui
+  montrer la vidéo.
+- **Légende explicite** : pas « ambiance forêt », mais le produit, l'usage, la saison, le lieu.
+- **Hashtags : 2 de niche + 2 locaux + 2 tendance.**
+- **Géotaguer systématiquement**, même une marque 100 % en ligne (page Explorateur locale).
+- **Texte alternatif** à la publication : conçu pour l'accessibilité, il sert aussi le référencement.
+
+**Outils natifs** : éditeur et musique d'Instagram, **collaborations** (la publication apparaît sur les
+deux comptes), **stories tous les jours** (plus permissives que le fil), stickers de lien.
+
+**Capitaliser** : trier ses posts par **partages** et **comptes atteints**, pas par likes ; remixer ce qui a
+marché.
+
+**Ce qu'on prend, tel quel** (c'est la liste la plus courte et la plus utile du lot) : mots-clés prononcés
+dans les 3 s · légendes explicites · **2+2+2 hashtags** · **géotag** · **alt text** · trier par partages ·
+posts épinglés · stories à la une par thème.
+**Ce qu'on adapte** : « stories tous les jours » → **3 par semaine**, adossées aux deux pièces déjà
+publiées (pas de production nouvelle).
+**Ce qu'on rejette** : les collaborations avec des créateurs locaux pour l'instant — elles supposent des
+visages et un accord, deux choses qui ne sont pas tranchées (§6 du socle).
+
+---
+
+### Contradictions entre les cinq vidéos (et avec nos règles)
+
+| Sujet | Ce que disent les vidéos | Notre règle | Verdict |
+|---|---|---|---|
+| **Fréquence** | 1/jour (v3), 5/semaine (v5), 3 si qualité (v5) | 2 pièces/semaine, dim + lun | **nous** — et les stories quotidiennes sont le seul ajout compatible |
+| **Visage à l'écran** | format roi : « réel face caméra » (v5), multiple personnalités autorisées (v1) | politique visages non tranchée (§6) | **ruling de King**, pas une décision d'orchestrateur |
+| **Objectif** | abonnés, vues, viralité | **messages WhatsApp qualifiés**, delta d'abonnés | **nous** (§7 de `PRESENCE`) |
+| **Publicité** | vendre un produit avec pixel (v2) | vendre un service par conversation | **adapté** : objectif messages, pas de pixel |
+| **Monétisation** | affiliation Meta (v1) | Cameroun hors programme de monétisation | **hors sujet ici** |
+| **Originalité** | original only (v1) | protocole d'unicité : jamais copier une identité | **convergent** — l'un parle de plateforme, l'autre de marque |
+| **IA** | écrit les créatifs (v2), assiste tout (v3) | l'IA co-pense, l'humain juge | **nous** |
+
+### Les cinq décisions adoptées (et où elles sont écrites)
+
+| # | Décision | Où |
+|---|---|---|
+| 1 | **Aucun filigrane** sur une vidéo publiée sur Facebook/Instagram (export propre) | §9 du socle de contenu |
+| 2 | **Accroche testée à 3 s** + mots-clés **prononcés** dans ces 3 s | §9 du socle, gabarit W43 §12 |
+| 3 | **Lire la courbe de rétention** (seconde de décrochage) après chaque pièce | §9 du socle |
+| 4 | **Bilingue dans la même pièce** : légende explicite, mots-clés FR **et** EN | §9 du socle |
+| 5 | **Hashtags 2+2+2, géotag, alt text, tri par partages** — la routine de publication | §9 du socle |
+
+### Verdict du lot
+
+**Le meilleur lot depuis longtemps, parce que la moitié est vérifiable et l'autre moitié est datée.**
+Deux vidéos (2 et 5) donnent des gestes précis qu'on peut exécuter cette semaine ; une (1) donne une règle
+de plateforme qui nous concerne directement (pas de filigrane, original seulement) ; deux (3 et 4) sont de
+la motivation et du déjà-fait. Ce qui reste après le tri n'est pas du volume : c'est **une accroche, une
+courbe, six hashtags, une épingle et un géotag**. Rien de tout cela ne demande une production nouvelle —
+et **aucun fichier nouveau** : les leçons sont allées dans ce lot et dans le §9 de
+`knowledge/CONTENT-CREATION-2026-10-22.md`.

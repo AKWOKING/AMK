@@ -220,3 +220,16 @@ texte. Résultat : les chemins et identifiants en `code` disparaissent silencieu
 
 **Règle :** tout corps de commentaire PR / issue contenant du markdown avec backticks s'écrit dans un
 **fichier** puis s'envoie par `--body-file` (ou `-F body=@fichier`). Jamais en chaîne double-quote.
+
+## 2026-10-23 · YouTube n'est plus « bloqué » — la lecture vidéo passe par `fetch_page`
+
+Jusqu'au 22/10, le dépôt portait « YouTube bloqué par l'egress, chunks 0 seulement, aucune vidéo
+regardée » (lots [45]). Le 23/10, les cinq liens de King ont été lus **en transcription** avec `fetch_page` :
+
+- **vidéos anglophones** : `https://www.youtube.com/watch?v=<id>` rend titre, chaîne, date, durée, vues,
+  description et **transcription**. ⚠️ `chunkIndex > 0` sur cette page rend un **blob de navigation**
+  (401, menus), pas la suite : pour la suite, changer de source.
+- **vidéos francophones** : `https://youtubetotranscript.com/transcript?v=<id>` pagine proprement
+  (`chunkIndex` 0, 1, 2…).
+- **ce qui reste faux** : on lit des transcriptions, **pas des images**. Un lot vidéo ne peut donc jamais
+  se citer comme un visionnage. L'écrire dans chaque lot (fait au lot [46]).

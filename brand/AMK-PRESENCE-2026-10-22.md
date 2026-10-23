@@ -1030,3 +1030,80 @@ plus cher qu'un lien absent.
 - **Non vérifié d'ici** : l'état réel de ton écran *Configuration de la page* (les libellés changent selon
   la version), et la disponibilité réelle de `amkweb` — **seul Meta peut le dire**, le champ l'affiche en
   direct.
+
+### 15.8 · Ruling de King (23/10) : **on garde le nom actuel**, et voici le lien
+
+```
+Décision   King, 23/10 : « je propose que on laisse le nom qui est là »
+Nom retenu AMK-Web Development & Digital Solutions   (figé, on n'y revient plus)
+```
+
+**Ce que la décision coûte, dit une fois et sans y revenir** : le slogan « Digital Solutions » reste
+visible dans chaque partage, et le tiret reste un point de friction avec les règles de nommage de Meta.
+**Ce qu'elle ne coûte pas** : l'identifiant (`@handle`) est un champ **séparé** — garder le nom **ne bloque
+rien**. La bio porte déjà les mots-clés (§12.2). Décision prise, dossier fermé.
+
+#### Le lien, tel qu'il est aujourd'hui
+
+| Usage | Valeur exacte |
+|---|---|
+| **Lien canonique** (à copier partout) | `https://www.facebook.com/profile.php?id=61595803408384` |
+| **Forme courte à tester** (5 secondes) | `https://www.facebook.com/61595803408384` — si elle ouvre la page, c'est plus propre et ça ressemble à ce que Google attend |
+| **Où le copier proprement** | sur la page → **⋯** (à droite de *More*) → **Partager** → **Copier le lien**. C'est le lien que Meta considère comme le bon, il ne périme pas |
+| **Ce qui ne change jamais** | le numéro `61595803408384` : même si un jour tu obtiens `@amkweb`, l'ancien lien continuera de fonctionner |
+
+#### Pied de page du site — **oui, on peut le brancher maintenant**
+
+Le visiteur voit le mot **« Facebook »**, pas l'URL : un lien numérique est **invisible** dans un pied de
+page. Ce qui bloquait (§9.7 de `site/OPTIMISATION-2026-10-22.md`) était l'absence de lien **vérifié** ;
+il est vérifié depuis le 23/10. **Il ne reste qu'un mot de ta part** et je pose les trois liens
+(Facebook, Instagram `@amkweb.cm`, TikTok `@amkweb`) sur les 12 pages, en dix minutes.
+
+#### Google Business Profile — la procédure exacte, et un piège
+
+1. **Profil d'établissement** → **Modifier le profil** → onglet **Contact**.
+2. Section **« Profils sociaux »** (*Social profiles*) → **Modifier** (crayon).
+3. Liste déroulante → **Facebook** → champ **Adresse web** → coller le lien → **Enregistrer**.
+4. Recommencer pour **Instagram** (`https://www.instagram.com/amkweb.cm`) et **TikTok**
+   (`https://www.tiktok.com/@amkweb`) — **un seul lien par plateforme**, sept plateformes possibles.
+5. Publication des modifications : **≈10 minutes**, parfois jusqu'à 24 h.
+
+⚠️ **Le piège** : Google documente le format `https://www.facebook.com/{username}`. Un lien
+`profile.php?id=…` **peut être refusé** par le champ. Trois réactions, dans cet ordre :
+1. essaie d'abord la **forme courte** `https://www.facebook.com/61595803408384` ;
+2. si elle est refusée aussi, **laisse le champ Facebook vide** — les profils sociaux sont
+   **facultatifs**, un champ vide ne coûte rien, un lien refusé fait perdre du temps ;
+3. le jour où `@amkweb` existe, tu remplaces en 30 secondes.
+
+⚠️ **Autre piège, vérifié** : le champ **« Site web »** de la fiche Google **n'accepte pas** une page
+Facebook (règle de septembre 2025) — le site AMK y va, le Facebook va dans *Profils sociaux*. Les deux ne
+se mélangent pas.
+
+⚠️ **Disponibilité régionale** : Google indique que les liens sociaux ne sont **pas disponibles dans tous
+les pays**. Si la section « Profils sociaux » est absente de ta fiche, ce n'est pas une erreur de ta part —
+il n'y a pas de contournement, et le reste de la fiche (site, horaires, photos) suffit.
+
+#### Si tu veux quand même retenter l'identifiant (facultatif, 2 minutes)
+
+Deux chemins que le §15.2 ne couvrait pas, dans l'ordre, **sur ordinateur** :
+
+1. **Le bouton `Edit` en haut à droite de la page** (visible sur ta capture) → **Nom** → regarde s'il y a un
+   champ **Nom d'utilisateur** en dessous. Sur certaines versions, c'est là qu'il se cache.
+2. **`business.facebook.com`** → sélectionner la page (sélecteur en haut à gauche) → **Paramètres** →
+   **Configuration de la page**.
+
+Et **si rien n'apparaît** : c'est la règle des pages récentes (§15.4). Publie, invite, et retente dans
+**3 à 5 jours**. Le lien numérique fonctionne en attendant — ce n'est pas un blocage, c'est un confort qui
+viendra.
+
+#### Sources du §15.8 (lues le 23/10/2026)
+
+- **Google, primaire** : `support.google.com/business/answer/13580646` — « Manage your social media links »
+  : **un lien par plateforme**, sept plateformes, format Facebook `https://www.facebook.com/{username}`,
+  **disponibilité limitée à certains pays**.
+- **Secondaires** : vendasta.com (02/10/2026 : chemin *Edit profile → Contact → Social profiles*, délai
+  ≈10 min, et **le champ Site web refuse un lien social** depuis la mise à jour du 03/09/2025) ·
+  theresakamath.com (19/05/2026 : jusqu'à 24 h) · dmnetsolutions.com (07/08/2026 : utiliser l'URL de
+  profil principale, jamais un post ni un raccourcisseur).
+- **Non vérifié d'ici** : si le champ accepte `profile.php?id=…` (aucune source ne le dit ; **seul ton
+  écran le dira**), et si la section existe sur une fiche camerounaise.
