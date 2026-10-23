@@ -392,3 +392,30 @@ parce qu'un GitHub App sans permission `workflows` ne peut pas le pousser). Il v
 la porte de livraison **avant** la publication et épingle `wranglerVersion: 4.152.0`. Il demande deux
 secrets (`CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID` = `fa5fe266d7198ea5dc98567329d932fd`) et un
 copier-coller dans `main`.
+
+### 6 ter · 23/10, 06:21 — la chaîne automatique est en place, et elle est verte
+
+Commit `591a0ce` sur `main` (le workflow enfin au bon chemin) → **run `39905310242`** :
+
+| Job | Durée | Résultat |
+|---|---|---|
+| Porte de livraison (--strict) | 25 s | ✅ (témoin 15/15 + `audit_delivery.py --strict` rc=0) |
+| deploy (`cloudflare/wrangler-action@v3`, wrangler 4.152.0) | 37 s | ✅ — `wrangler deploy` sort en 0, le site est publié |
+
+**Le rouge qui reste n'est pas cette chaîne.** C'est l'ancienne intégration **Workers Builds**, qui part
+sur le même envoi, vers le même Worker, et échoue **en 0 seconde** : elle n'a pas le temps de compiler
+quoi que ce soit, elle se heurte au déploiement déjà en cours (`Build ID l46404e7-154f-41d2-a517-a706c7e677ae`,
+aucune version produite).
+
+**À faire une fois (10 s)** : Workers & Pages → `dmoptiquesarl` → **Settings → Build → Disable builds**
+(la bascule déjà visible sur la capture). À partir de là :
+
+- un seul mécanisme publie ;
+- plus de croix rouge sur chaque envoi ;
+- plus de nom de branche à tenue à jour ;
+- **aucun P1/P2 ne peut partir en production** : la porte s'exécute avant `wrangler deploy`, dans le
+  même workflow.
+
+Alternative si King préfère garder Workers Builds : remplacer sa Deploy command par
+`npx --yes wrangler@4.152.0 deploy` **et** couper les envois automatiques du workflow (`on: workflow_dispatch`
+seulement) — deux mécanismes qui publient en même temps se disputeront toujours le même Worker.
