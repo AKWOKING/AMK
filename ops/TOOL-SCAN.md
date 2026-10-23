@@ -623,3 +623,16 @@ les 25 anciens skills. `install.sh` réécrit maintenant l'origine avant de cher
 dessiné par **`tools/site/frame_bench.py`** — déterministe, relisible, réversible, sans réseau. Le
 script porte ses propres garde-fous (détourage + contrôle de pièces + repli « planche »), ce qu'un
 modèle opaque ne peut pas offrir sur ces photos.
+
+---
+
+## 23/10 — **pro-design** (donné par King, installé) — verdict : **pursue**
+
+- **(a) Problème :** une page construite sans méthode sort « générique » et la revue n'en finit pas.
+- **(b) Use case AMK nommé :** toute page neuve ou redesign (site client, landing, page de vente) —
+  il impose une raison par section, **un** moment de mouvement, et **deux tours de vérification maximum**.
+- **(c) Coût :** nul. Markdown pur, source dans le dépôt (`tools/pro-design/SKILL.md`), install
+  `bash tools/pro-design/install.sh`, aucun réseau, aucun abonnement.
+- **(d) Effort + verdict :** 0 (déjà lu et installé le 23/10) → **pursue**. Le seul apport qu'aucun autre
+  skill ne donne : **la limite explicite de la boucle de polissage.** Borné à ce que les portiques maison
+  ne couvrent pas : les portiques §1b restent seuls juges.
