@@ -118,7 +118,7 @@ Quand une règle change ou qu'un ruling est donné, cette table dit quels fichie
 | **Contrat d'une page (ruling King 23/10)** | `ops/templates/CONTRAT-UNE-PAGE-2026-10.md` · `.pdf` · `tools/ops/make_contrat.py` · `sales/REVUE-CONTRATS-GRILLE-2026-09-23.md` (addendum 23/10) |
 | **Un opt-in, un seul (ruling King 23/10)** | `sales/lead-magnets/CONTROLE-PRESENCE-EN-LIGNE-2026-10-23.pdf` · `tools/ops/make_magnet.py` · `knowledge/CONTENT-CREATION-2026-10-22.md` §5 bis |
 | **Knowledge first (ruling King 23/10)** | `knowledge/**` (la couche de référence) · `PRE-FLIGHT.md` §0c · table de routage §1g |
-| **Versionnage : fusion sur jalon ou > 1 000 commits (King 23/10)** | `PRE-FLIGHT.md` §1i · `tools/ops/wake.py` · `tools/ops/gate-amk.sh` |
+| **Versionnage : fusion sur jalon, ou ≈ 3 000 lignes / 40 fichiers / 6 tours — « 1 000 CHANGES, pas 1 000 commits » (King 23/10, corrigé le 23/10)** | `PRE-FLIGHT.md` §1i · `tools/ops/wake.py` · `tools/ops/gate-amk.sh` |
 | **Plafond 5 clients · Présence ≤ 3 pages · grille pour la prochaine signature seulement (King 23–24/10)** | `PRE-FLIGHT.md` §1h · `knowledge/PRIX-2026-10-24.md` §4–§5 · `knowledge/MAINTENANCE-CLIENTS-2026-10-22.md` · `site/index.html` · `site/en/index.html` · `site/creation-site-web-*.html` · `sales/PRIX-ET-RECURRENCE-2026-09-24.md` · `ops/FACTURATION-2026-10-24.md` |
 | **Credential rule** (ne jamais revendiquer ce qu'on ne peut pas prouver) | `content/strategy/RULE-CREDENTIAL-CLAIMS.md` · pages client (`clients/*/`, `site/`) · textes de publication (`content/carousels/`, `content/scripts/`) |
 | **Caption-split / découpage de légende (ruling King 12/10 : frontières de phrase, jamais de fragment)** | `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` · section « Règle debout — VO vidéo courte », **AMENDEMENT 2 (découpe des légendes)** (fichier d'origine ; le commit `9294cf2` le contient) · appliquée dans `content/scripts/` et `content/strategy/VIDEO-PIPELINE-FLOW-2026-10.md` |
@@ -461,22 +461,43 @@ mensuel (4 h par Suivi, 12 h par Croissance) ne tient plus, et ce sont les livra
 
 ## 1i · Versionnage : quand on fusionne une branche
 
-> **Règle King 23/10 : on ne fusionne que sur un jalon, ou au-delà de 1 000 commits sur la branche.**
+> **Règle King 23/10, corrigée par lui le 23/10 : « I told you to merge only at a milestone or 1k
+> commits, but I meant 1k changes. »** Le seuil porte donc sur **les lignes changées**, pas sur le nombre
+> de commits — un tour peut faire 1 commit et 1 200 lignes, ou 12 commits et 40 lignes.
 
 Par défaut, chaque tour **pousse** sur la branche de session et **laisse la PR ouverte**. On fusionne
-dans `main` seulement si l'un des deux est vrai :
+dans `main` quand l'un de ces trois est vrai :
 
-1. **Jalon** — une étape est finie et utilisable seule (ex. un prix publié et propagé, un site livré,
-   une campagne prête à partir) ; ou
-2. **> 1 000 commits** sur la branche (garde-fou anti-branche éternelle).
+| Déclencheur | Seuil | Comment il se lit |
+|---|---|---|
+| **Jalon** | une étape finie et utilisable seule | à la main, en une phrase |
+| **Volume** | **≈ 3 000 lignes changées** ou **40 fichiers** | `git diff --numstat <base> HEAD \| awk '{a+=$1;d+=$2} END{print a+d}'` |
+| **Durée** | **6 tours** sur la même branche | compté dans le journal |
 
-Ce que ça change : `main` accuse moins de bruit, une PR reste le lieu où King relit, et une
-correction peut encore arriver sur la branche avant que `main` ne bouge. Ce que ça ne change pas :
-la porte (`tools/ops/gate-amk.sh`) se lance **à chaque tour**, et un tour qui échoue à la porte ne
-pousse pas.
+**Pourquoi 3 000 et pas 1 000.** 1 000 lignes se font en un tour dense (le 23/10 : quatre tours ont
+dépassé 700 lignes chacun). À 1 000, on fusionnerait tous les deux tours, et `main` deviendrait illisible.
+3 000 correspond à ce qu'une relecture humaine peut encore suivre d'un œil, et à ce que nos portiques
+savent encore vérifier.
 
-**Application :** la PR d'une branche en cours reste ouverte entre deux tours ; on ne la ferme pas
-« pour ranger ». Le compte de commits se lit avec `git rev-list --count origin/main..HEAD`.
+**Ce que « la mémoire » veut dire ici, honnêtement.** La taille de la branche n'abîme pas la mémoire de
+l'orchestrateur : il relit ses fichiers à chaque tour, et le dépôt est la source de vérité. Ce qui se
+dégrade, c'est **autre chose** :
+
+1. **le résumé de session** — à chaque tour, la conversation est condensée ; ce qui n'est pas écrit dans
+   un fichier finit par se perdre. **La défense n'est pas de fusionner, c'est d'écrire.**
+2. **la relecture du diff** — au-delà de ~3 000 lignes, plus personne ne relit vraiment, et une erreur
+   passe.
+3. **le nombre de décisions en vol** — au-delà d'une dizaine de règles annoncées dans un même tour sans
+   être écrites, elles se contredisent.
+
+**Le garde-fou anti-hallucination n'est donc pas un compteur, c'est le §0e** : on vérifie un chiffre, une
+règle ou un état **contre la source**, jamais contre son souvenir du tour précédent. Le compteur de lignes
+protège la relecture, pas la vérité.
+
+**Application :** la PR d'une branche en cours reste ouverte entre deux tours ; on ne la ferme pas « pour
+ranger ». Le volume se lit avec `git diff --numstat $(git merge-base HEAD origin/main) HEAD`. **Au 23/10,
+la branche de session était à 3 684 lignes et 39 fichiers : au seuil — fusionnée.**
+
 
 ## 2 · Uniqueness protocol (every website/design build, before a line of HTML)
 

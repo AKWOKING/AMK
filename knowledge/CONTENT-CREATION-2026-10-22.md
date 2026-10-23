@@ -299,6 +299,69 @@ cabinet : le numéro qui reçoit le message doit être celui qui peut y répondr
 
 ---
 
+## 5 quater · Une vidéo, deux plateformes : un tournage, deux montages (ruling King 23/10)
+
+> *King, 23/10 : « since Facebook and TikTok give different results for the same video, shouldn't we
+> create a video adapted for each of them ? and you are right, shares and comments always help the boost
+> of a post, so we should make sure our videos push watchers to do so. »*
+
+**Oui — mais pas deux créations.** Ce qui change n'est pas la matière, c'est le montage. Ce qui suit est
+mesuré sur la première vidéo de DM Optique (voir `ANALYSE-POST-1`, relevé à 24 h).
+
+### Ce que nos deux tableaux de bord disent, sur le même film
+
+| | Facebook | TikTok | Lecture |
+|---|---|---|---|
+| Vues | 227 | 80 | Facebook distribue plus large |
+| Lecture moyenne | 4 s / 31 = **12 %** | 4,7 s / 18 = **26 %** | **TikTok juge mieux le film** |
+| Sortie massive | 0:05 | **0:02** | deux causes différentes |
+| Complètes | 2,4 % (à 20 s) | 6,67 % | idem |
+
+**Les deux réseaux ne mesurent pas la même chose :**
+- **TikTok note le film.** Le pourcentage de lecture est le seul juge ; une vidéo à 26 % est « bonne mais
+  pas assez » pour être poussée. Les deux premières secondes décident du reste.
+- **Facebook distribue le film.** Il donne des vues à un film imparfait, puis s'arrête quand les gens
+  partent. Le nombre de vues ne dit rien de la qualité ; **le partage, si** — c'est le seul geste qui
+  remet la vidéo devant quelqu'un qui ne nous suit pas.
+
+### La grille des deux montages
+
+| | **TikTok** | **Facebook** |
+|---|---|---|
+| Durée | 12–16 s | 16–22 s |
+| Première image | l'action, déjà commencée — jamais un logo, jamais une façade | la même action |
+| Texte | 3–5 mots, très gros, **en haut** (le bas est couvert par l'interface) | 3–5 mots + **sous-titres intégrés** |
+| Légende | 2 lignes | 6–10 lignes — Facebook se lit |
+| Partage | demandé à l'oral, une fois | demandé dans la légende **et** à l'oral |
+| Question | réponse en un mot ou un chiffre | la même, en fin de légende |
+| Ce qu'on mesure | % de lecture, % de complètes | vues, partages, commentaires |
+
+**La règle de tournage qui rend les deux possibles :** on filme **large et long** — deux fois la durée
+prévue, 3 secondes de respiration au début de chaque plan. Un plan tourné à la seconde près ne se
+remonte pas pour l'autre réseau.
+
+### Faire partager et commenter — sans mendier
+
+Un « partagez svp » ne marche pas : il demande un effort sans dire à qui. Les quatre mécaniques qui
+marchent, dans l'ordre :
+
+| # | Mécanique | Exemple |
+|---|---|---|
+| 1 | **nommer la personne à qui l'envoyer** | « montrez ça à quelqu'un qui éloigne son téléphone pour lire » |
+| 2 | **une question dont la réponse est un mot ou un chiffre** | « à quel âge avez-vous commencé à éloigner le journal ? » |
+| 3 | **répondre à chaque commentaire dans l'heure** | une réponse relance la conversation et prévient le suivant |
+| 4 | **remercier nommément**, jamais « merci à tous » | « merci Madame, c'est noté pour la monture » |
+
+**Ce qu'on ne fait pas :** demander un like, un abonnement, ou « commentez un emoji ». Ça produit des
+commentaires vides, et un commentaire vide n'apprend rien à l'algorithme **ni à nous**.
+
+⚠️ **Ce qui est mesuré et ce qui ne l'est pas.** Les quatre mécaniques ci-dessus reposent sur un
+raisonnement (un partage met la vidéo devant un nouvel audience) et sur nos 0 partage constatés — **pas
+sur une étude**. On les applique parce qu'elles ne coûtent rien et qu'elles sont vraies ; on ne promet pas
+qu'elles doublent la portée. Le seuil du §6 de `ANALYSE-POST-1` le dira en deux vidéos.
+
+---
+
 ## 6 · Visages, UGC et modèles IA — la position du dépôt
 
 **Rappel des faits** : le client (King) et le docteur ont évoqué la possibilité de **modèles UGC
@@ -493,5 +556,7 @@ les textes de méthode : le zip de l'outil de factures a sa ligne, la capture Wh
 sienne.
 
 | 23/10 | **`amk-factures-pwa.zip`** — l'outil de factures de King | l'inventaire réel de l'outil (échéance, proforma, reçu, MoMo/OM/banque, modèles) — et la leçon : **lire le code avant de dire ce qui manque** | `ops/amk-factures-pwa/` · `ops/FACTURATION-2026-10-24.md` §3 bis | ses deux affirmations de ma part sur des manques inexistants : corrigées, pas reprises |
+| 23/10 | **Captures Facebook + TikTok du post « lunettes pour enfants »** (poster, 23/10) | le texte de la légende Facebook (structure « accroche → preuve mesurable → adresse ») et la confirmation que le même visuel tourne sur les deux réseaux | §5 quater · `ANALYSE-POST-1` §4 bis | le visuel généré : il reste, mais il ne se refait pas (pas de visage inventé) |
+| 23/10 | **Insights 24 h du reel** (Facebook Business Suite, TikTok Studio) | la preuve que les deux réseaux ne mesurent pas la même chose : 12 % de lecture moyenne sur Facebook contre 26 % sur TikTok pour le même film | §5 quater | la comparaison brute des vues (227 contre 80) : elle ne dit rien de la qualité |
 | 23/10 | **Capture WhatsApp DM OPTIQUE** (13h00, message d'avis du client) | le texte exact de sa demande d'avis, ses liens, et l'heure | `clients/dm-optic/launch/SOLDE-75K-2026-10-23.md` §3 bis | la tentation d'y répondre : c'est un message de masse, pas une question |
 

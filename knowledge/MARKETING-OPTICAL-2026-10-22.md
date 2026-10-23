@@ -219,26 +219,32 @@ avec réponse — parce que le suivant lit la réponse, pas l'avis.
 | 1–2 étoiles | **le jour même**, et par téléphone d'abord | lui, jamais par écrit en premier |
 | Commentaire sous un post | sous 24 h | nous (ou lui s'il n'a pas donné l'accès) |
 
-### 11.3 · Les six réponses types (à adapter, jamais à copier telles quelles)
+### 11.3 · On ne rédige pas ses réponses — et voilà pourquoi
 
-**① 5 étoiles, court** — « Merci beaucoup, ça nous fait plaisir. À bientôt au cabinet. — DM OPTIQUE »
+**Correction de King, 23/10 :** *« since we are proposing that he replies to the reviews himself, I don't
+think we should write any text for him — how's that different from us sending it ourselves ? »*
 
-**② 5 étoiles, avec un détail nommé** — reprendre **un mot de l'avis** (la monture, l'accueil, le
-délai) : « Merci d'avoir pris le temps. Content que la monture vous plaise — c'est exactement ce qu'on
-cherche quand on essaie dix paires. À bientôt. »
+**Il a raison, et ça invalidait la version précédente de cette section** (six réponses prêtes à copier).
+Un avis se répond avec la voix de celui qui a reçu le client dans la boutique ; un texte écrit par une
+agence, collé sous son nom, est un faux — et ça se sent à la deuxième ligne. Ce qu'on donne, c'est **la
+méthode et le geste**, pas les mots.
 
-**③ 4 étoiles** — remercier, puis **une question**, jamais une justification : « Merci pour ces quatre
-étoiles. Qu'est-ce qui aurait manqué pour la cinquième ? Ça nous intéresse vraiment. »
+**Ce qu'on lui apprend, en quatre points :**
 
-**④ 3 étoiles** — reconnaître, ne pas expliquer : « Merci de nous l'avoir dit. Ce que vous décrivez
-n'est pas ce qu'on veut offrir ; on regarde ce qui s'est passé. Si vous repassez, demandez-moi. »
+| # | Le geste | Pourquoi ça marche |
+|---|---|---|
+| 1 | **remercier d'abord, en une phrase** | la première phrase décide de la lecture ; un remerciement ne s'argumente pas |
+| 2 | **reprendre un mot de SON avis** | prouve qu'on l'a lu — c'est la seule chose qui distingue une vraie réponse d'un modèle |
+| 3 | **une phrase, deux au maximum** | une réponse longue sous un avis court sonne comme une plaidoirie |
+| 4 | **signer du prénom ou « DM OPTIQUE »**, jamais « l'équipe » | il est seul, et c'est sa force |
 
-**⑤ 1–2 étoiles** — **jamais de défense, jamais de détail médical, jamais de remboursement public** :
-« Je suis désolé de cette expérience, ce n'est pas notre façon de travailler. Je vous appelle aujourd'hui
-pour comprendre. » **Puis on l'appelle vraiment.**
+**Et le reste, c'est de l'interdit** (voir 11.4) : pas de détail de santé, pas de geste commercial en
+public, pas de justification sous un avis négatif.
 
-**⑥ Question de prix dans un commentaire** — « Le tarif dépend de la correction et de la monture ; un
-message en privé et on vous répond précisément. » Jamais de prix en public (§ verrous DM).
+**Ce qu'on fournit quand même, parce que ce n'est pas du texte de réponse :**
+- **la marche à suivre** pour trouver la fiche, se connecter et répondre (`clients/dm-optic/launch/GUIDE-REPONDRE-AVIS-2026-10-23.md`, deux messages prêts à envoyer) ;
+- **le rappel des délais** (48 h / 24 h / le jour même) ;
+- **la règle du téléphone** pour un 1–2 étoiles : on appelle avant d'écrire.
 
 ### 11.4 · Les quatre interdits
 

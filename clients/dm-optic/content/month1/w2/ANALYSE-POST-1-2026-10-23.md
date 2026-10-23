@@ -115,6 +115,28 @@ Sur Facebook, le hook a fonctionné (34 % restent à 3 s) puis on a perdu le fil
 moitié **avant** que le contenu commence — c'est une question de montage, pas d'idée. Les deux se
 corrigent par la même règle : **quelque chose doit se passer dans le cadre à la première seconde.**
 
+### ③ bis · Pourquoi le même film ne donne pas le même résultat sur les deux réseaux
+
+King, 23/10 : *« since Facebook and TikTok give different results for the same video, shouldn't we create
+a video adapted for each of them ? »* — **Oui. Mais à partir d'un seul tournage.**
+
+| | Facebook | TikTok | Ce que ça prouve |
+|---|---|---|---|
+| Vues | 227 | 80 | Meta pousse plus large, plus longtemps |
+| Lecture moyenne | 4 s = **12 %** | 4,7 s = **26 %** | **TikTok juge mieux le film** : le pourcentage y est deux fois meilleur |
+| Ils partent à | 0:05 | **0:02** | deux causes différentes (voir ③) |
+| Complètes | 2,4 % à 20 s | **6,67 %** | idem |
+
+**Ce n'est pas la même mesure, donc ce n'est pas le même métier :**
+- **TikTok note le film** : ce que les gens font dans les deux premières secondes décide de tout le reste.
+  Un bon TikTok se juge au **pourcentage** (26 % > 30 % visé), pas au nombre de vues.
+- **Facebook distribue** : il donne des vues à un film imparfait, puis s'arrête quand les gens partent.
+  Un bon Facebook se juge aux **vues et aux partages**, parce que le partage est le seul geste qui remet
+  la vidéo devant quelqu'un d'autre.
+
+**La conséquence pratique, écrite au §4 bis :** un tournage, deux montages. Pas deux créations — le
+budget de production ne double pas, le montage change.
+
 ### ④ Personne n'a partagé, personne ne s'est abonné.
 
 **0 partage sur les deux réseaux, 0 nouvel abonné.** Pour un cabinet de quartier, ce n'est pas
@@ -123,11 +145,18 @@ qui plisse les yeux. **Aucune vidéo ne lui a donné une raison de le faire.** U
 ça à quelqu'un qui éloigne son téléphone pour lire » coûte trois secondes et vise exactement les 55 % de
 l'audience qu'on a mesurés.
 
-### ⑤ Le doublon de 15h24 a fait zéro vue.
+### ⑤ Un post de 15h24 affiche 0 vue — et je m'étais trompé sur la cause.
 
-Deux envois du même reel à la même minute : le second a été enterré. **Une publication = un envoi**, et
-on vérifie que la vidéo tourne avant de fermer l'application. C'est une erreur d'exploitation, pas de
-création — mais elle a coûté un post.
+J'avais écrit « doublon : le même reel envoyé deux fois ». **C'est faux, King l'a corrigé le 23/10 : ce
+sont deux publications différentes — le reel, et l'affiche de l'enfant.** Ce que je voyais, c'était deux
+vignettes qui se ressemblent dans une liste, et j'en ai tiré une erreur d'exploitation. **Une vignette
+n'est pas une preuve** ; j'ai écrit une conclusion sur une image de 120 pixels.
+
+**Ce qui reste vrai, et qui suffit :** un post de 15h24 affiche **0 vue** alors que le reel de la même
+minute en affiche 228. Hypothèse, pas conclusion : l'affiche de l'enfant était **déjà** publiée à 08h30
+(22 vues) ; republiée le même jour, Facebook ne l'a pas rediffusée. La leçon n'est donc pas « ne pas
+doublonner un fichier » mais **« ne pas republier le même contenu le même jour »** — et, avant d'affirmer
+la cause, demander à celui qui a publié.
 
 ### ⑥ La fiche Google a déjà changé de catégorie.
 
@@ -187,6 +216,30 @@ délai.**
    recommandation familiale.
 5. **17 s.** Une idée, un geste, une sortie.
 
+## 4 bis · Un tournage, deux montages (décision King 23/10)
+
+Le même film, monté deux fois. **Ce qui change n'est pas la matière, c'est le rythme, la première image
+et la demande faite au spectateur.**
+
+| | **Montage TikTok** | **Montage Facebook** |
+|---|---|---|
+| Durée | **12–16 s** | **16–22 s** |
+| Première image | **l'action, déjà commencée** — pas de logo, pas de façade, pas de titre d'ouverture | la même action, on peut tenir 1 s de plus |
+| Texte à l'écran | 3 à 5 mots, très gros, **en haut** (le bas est couvert par l'interface) | 3 à 5 mots + **sous-titres intégrés** |
+| Voix | courte, ou aucune — le texte porte | voix complète, la légende est lue |
+| Légende | **2 lignes**, le sujet et le rendez-vous | **6 à 10 lignes** : Facebook se lit, TikTok se regarde |
+| Demande de partage | à l'oral, **une seule fois**, au moment où l'info devient utile | **dans la légende** (elle reste) **et** à l'oral |
+| Question pour les commentaires | une question dont la réponse est **un mot ou un chiffre** | la même, posée en fin de légende |
+| Son | le son de la pièce, ou une musique si elle est vraiment connue | la voix devant, musique discrète |
+| Ce qu'on mesure | **% de lecture** et % de complètes | **vues, partages, commentaires** |
+
+**Pourquoi un seul tournage :** le décor, la main, la lumière et le geste sont les mêmes ; seul le montage
+diffère. Deux tournages pour deux réseaux, c'est deux fois le travail pour la même image.
+
+**La règle de tournage qui rend les deux montages possibles :** on filme **large et long** (deux fois la
+durée prévue, avec 3 s de respiration au début de chaque plan), et on monte serré. Un plan tourné à la
+seconde près ne se remonte pas.
+
 **Si King préfère ne pas toucher à la pièce déjà validée pour le 27/10** (`PLAN-27-10.md`, tiktok-01-v2,
 23 s), on la publie telle quelle — mais alors on accepte de ne rien apprendre de plus sur le format, et
 on ajoute seulement le lien pré-rempli en légende.
@@ -200,7 +253,9 @@ on ajoute seulement le lien pré-rempli en légende.
 | **Quelque chose bouge dans le cadre à la première seconde** | TikTok perd la moitié à 0:02, Facebook à 0:05 |
 | **Un sujet par tranche d'âge, assumé** | 55 % des spectateurs ont 55 ans et plus |
 | **Une phrase qui donne une raison de partager** | 0 partage sur deux plateformes |
-| **Un seul envoi par post, vérifié** | le doublon de 15h24 a fait 0 vue |
+| **On ne republie pas le même contenu le même jour** | l'affiche de l'enfant, publiée deux fois, a fait 0 vue au second envoi |
+| **Une raison de partager, nommée** | 0 partage sur 227 vues ; « montrez ça à quelqu'un qui éloigne son téléphone » désigne la personne |
+| **Une question à réponse courte en fin de vidéo** | un commentaire coûte moins qu'un partage, et il pousse autant |
 | **Un lien pré-rempli par vidéo** | sans lui, aucune conversation n'est attribuable |
 | **17–22 s pour un geste, 45–90 s pour une explication** | la durée suit la matière |
 | **On ne juge pas une vidéo seule** | la n°2 se compare à la n°1, à volume comparable |
@@ -216,6 +271,7 @@ Relevés au même moment, 48 h et 72 h après publication :
 | Arrêt à 2 s (TikTok) | la moitié partie | **> 60 % encore là à 2 s** |
 | Lecture moyenne (TikTok) | 26 % | **> 30 %** |
 | Partages | 0 | **≥ 1** — un seul suffit à changer la nature du post |
+| Commentaires | 1 (FB) / 0 (TikTok) | **≥ 3** — et chacun reçoit une réponse dans l'heure |
 | Conversations WhatsApp | non mesuré | **≥ 1** avec le lien pré-rempli |
 | **Avis Google** | 4 | **≥ 6** — c'est le chiffre qui parle au client |
 
