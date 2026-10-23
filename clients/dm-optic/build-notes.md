@@ -2055,3 +2055,45 @@ d'appui du fournisseur reste visible derrière le verre (on ne découpe pas, don
 sur h05 et h08, prises de trois quarts, la monture repose sur son point le plus bas, ce qui la fait
 flotter d'un côté. **La vraie réponse reste la re-photo sur le socle** : dix minutes par série, et les
 65 photos sortent alors sans détourage du tout.
+
+## 23/10/2026 — la page d'accueil non indexée : un 403 à la dernière visite, et un panneau vide qui est normal
+
+**Ce que la Search Console montre** (captures de King, 23/10) : `/examen-de-vue/` est indexée, avec
+« Breadcrumbs : 1 valid item ». `/` ne l'est pas, avec « **Page is not indexed: Blocked due to access
+forbidden (403)** », dernier crawl **20 oct. 2026 à 22:21:35**, crawlé comme **Googlebot smartphone**,
+« Crawl allowed: Yes », « Page fetch: Failed ». Le **test en direct du 23/10 à 04:17** dit l'inverse :
+« URL is available to Google… Page can be indexed ».
+
+**Ce que le dépôt prouve, et qui innocente les fichiers** :
+
+| Vérifié dans `hosting/previews/dmoptic/` | Résultat |
+|---|---|
+| `robots.txt` | `User-agent: * / Allow: /` — rien de bloqué, sitemap déclaré |
+| `sitemap.xml` | **96 URL**, et `https://dmoptiquesarl.com/` en **première** ligne — la découverte n'a jamais manqué |
+| `_headers` | sécurité seulement (nosniff, frame, referrer) — aucun `X-Robots-Tag`, aucun blocage |
+| `index.html` | pas de `noindex`, canonical correcte, `@graph` avec l'entité `Optician` |
+
+Un 403 n'est donc **pas produit par le site** : il vient de la couche qui le sert (Cloudflare). Il a
+duré le temps d'un crawl, quatre jours avant la capture, et il a disparu — le test en direct le prouve.
+
+**Ce qu'il faut faire, dans cet ordre** :
+
+1. **Search Console → URL inspection → `/` → onglet « Google index » → REQUEST INDEXING** (pas le bouton
+   du test en direct, qui ne demande rien à l'index). C'est ce qui remet la page dans la file.
+2. Si le 403 revient dans 48–72 h : **Cloudflare → Security → Events**, filtrer sur `Path = /` et sur
+   les ASN de Google, autour du 20/10 22:21. Chercher une règle WAF, un *rate limit* ou un
+   « Under Attack Mode » activé pendant le déploiement. C'est le scénario le plus probable du blocage
+   d'une **seule** URL racine alors que les sous-pages passaient.
+3. Contrôle indépendant : `curl -A "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P)
+   AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36 (compatible;
+   Googlebot/2.1; +http://www.google.com/bot.html)" -sI https://dmoptiquesarl.com/` → attendre `200`.
+
+**Pourquoi « Enhancements and experience » est vide sur l'accueil, et pourquoi c'est normal** : le
+panneau ne liste que les **types d'items présents et validés** (fil d'Ariane, FAQ, produit…). L'accueil
+déclare un `Optician` (LocalBusiness) : il n'y a **pas de fil d'Ariane** sur une racine — un
+`BreadcrumbList` d'un seul élément n'est pas un fil d'Ariane. `/examen-de-vue/` en a un à deux niveaux
+(Accueil → Examen de vue), d'où la ligne. Deux causes se cumulent ici : la page **n'a jamais été lue**
+(403), donc rien n'a pu être validé ; et même une fois indexée, elle n'affichera pas de fil d'Ariane.
+**Il n'y a rien à corriger sur la page pour ce panneau.** Si King veut quelque chose dans cette section
+sur l'accueil, l'item à ajouter est **`WebSite` + `Organization` avec `logo` et `sameAs`** (les profils
+sociaux déjà en pied de page) : c'est ce qui produit les améliorations « logo » et « identité du site ».
