@@ -135,6 +135,7 @@ python3 tools/qa/audit_a11y.py --strict <fichier-construit>   # rc=0 : aucune fa
 python3 tools/qa/audit_images.py <fichier-construit>          # 0 faute : ratio annoncé = ratio réel, poids, pas de GPS
 python3 tools/qa/audit_reveal.py site/                        # 0 faute : aucune animation ne cache du contenu (ajouté 23/10)
 python3 tools/qa/audit_delivery.py <dossier> --base <url>     # 0 P1 : navigation mobile, cache, icônes, URL, llms.txt, partage, schéma, en-têtes (ajouté 23/10)
+bash tools/ops/gate-dm.sh                                     # porte DM complète ; son étape 4 lance audit_delivery.py --strict (livraison client)
 ```
 
 `audit_delivery.py` (23/10) ferme les deux angles morts qu'un audit extérieur a trouvés le jour où les

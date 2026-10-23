@@ -2133,3 +2133,43 @@ motif. Appliquée telle quelle, elle aurait laissé le défaut en place. Sur ce 
 une par une), branché dans `PRE-FLIGHT.md` §1b. Leçons : `tools/qa/AUDIT-LESSONS-2026-10-23.md`.
 **Les défauts du site ne sont pas corrigés dans ce tour** : les P1 demandent du design (bouton de menu,
 focus, Échap) et un réglage côté Cloudflare, pas un `sed`. Proposé à King.
+
+---
+
+## 23/10/2026 (soir) — les deux P1 corrigés, et une correction de nos propres conclusions
+
+**Deux erreurs de ce matin, corrigées ici parce qu'elles étaient écrites noir sur blanc** :
+
+1. Le paragraphe ci-dessus présente la **Cache Rule** comme « la voie correcte ». C'est faux pour cet
+   hébergement : le site est servi par un **Worker** (`wrangler.toml`, `[assets]`), et la doc Cloudflare
+   dit que *« Cache Rules, Cache Page Rules, Page Rules … have no effect on a Worker's cache »*
+   (<https://developers.cloudflare.com/workers/cache/>). La bonne porte est `_headers`, que Workers lit
+   (<https://developers.cloudflare.com/workers/static-assets/headers/>) et qui fixe le défaut
+   `max-age=0`. Détail et règle de secours : `launch/CACHE-2026-10-23.md`.
+2. Le portique condamnait `/*.webp` **partout**. Vrai sur Pages (splat en fin seulement), faux sur
+   Workers, dont la doc donne justement `/*.jpg` en exemple. `audit_delivery.py` détecte maintenant
+   `wrangler.toml` (`uses_workers_assets`) et juge le motif selon l'hôte ; le fichier livré nomme
+   quand même les onze fichiers racine, pour rester vrai si le site repasse un jour sur Pages.
+
+**Livré (commit `b68239e`, poussé sur `arena/29c013f1-amk`)** :
+
+| P1 / P2 de l'audit extérieur | Correction | Preuve |
+|---|---|---|
+| 1 · pas de nav sous 980 px | `<details class="mnav">` + `<summary>` 44 px sur **97 pages**, liens recopiés de la nav (les bascules FR/EN continuent), Échap/clic dehors/`resize` en confort, **rien n'exige JS** | `audit_delivery.py` D1 : 0 page |
+| 2 · cache `max-age=0` | `_headers` : polices + logo 1 an `immutable`, montures et images racine 7 j, HTML laissé à `must-revalidate` | `--strict` rc=0 |
+| 3 · pas de favicon | `favicon.ico` (16/32/48), `favicon-32.png`, `favicon-192.png`, `apple-touch-icon.png` tirés de `dm-logo.webp` ; 4 `<link>` sur 97 pages | 4 fichiers + 97 pages |
+| 4 · `//` dans le JSON-LD | 4 occurrences supprimées (2 accueils) | D4 : 0 |
+| 5 · HSTS absent | `Strict-Transport-Security: max-age=31536000; includeSubDomains` | D8 : 0 |
+| 6 · `og:image` WebP | **65 cartes JPEG 1200 × 630** (`make_dm_og.py`, photo réelle recadrée) + `og:image:type` | D6 : 0 page en WebP |
+| 7 · `llms.txt` FR seul | bloc anglais régénéré depuis les fichiers (`build_dm_llms.py`) : 47 URL | D5 : 0 |
+| 8 · pas de `Product` | `Product` ajouté aux **80 fiches**, **sans prix, sans offre, sans marque inventée** (`sku`, `name`, `image`, `description`) | D7 : 0 |
+| 10 · pas de CSP | politique conservatrice, aucune ressource hors `self` (vérifié : les 1 102 liens externes sont des `<a>`, aucun script distant) | D8 : 0 |
+
+**Résultat de la porte** : `0 P1 · 0 P2 · 1 P3` (P3 = aperçus partagés entre pages de même famille),
+`--strict` **rc=0**. `tools/ops/gate-dm.sh` porte désormais l'étape 4 : `audit_delivery.py --strict`
+avant toute livraison client.
+
+**Ce qui n'est toujours pas en ligne** : rien de tout cela. La prod Cloudflare est restée sur le
+déploiement du `25e2289`/`3e314fd` parce que Workers Builds publie la branche **`arena/2fffee3b-amk`**,
+celle d'une conversation terminée. Le correctif tient en un champ à changer (Settings → Build →
+Branch) ou en un `npx wrangler deploy` depuis la racine du dépôt — voir `launch/CACHE-2026-10-23.md` §6.
