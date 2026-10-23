@@ -3,26 +3,43 @@
 """Donne aux photos de montures DM Optique la **présentation** des visuels du fournisseur.
 
 Ruling King 23/10/2026 : « can you edit/modify the images of the frames in the repo so that they look
-as the ones in the attached images ? » — les visuels joints montrent une monture posée sur un fond
-clair continu, avec une ombre douce, cadrée large, sur un set blanc.
+as the ones in the attached images ? » — les visuels joints montrent une monture sur un **fond clair
+continu**, cadrée large, sans décor.
 
-Ce que l'outil fait — et surtout ce qu'il ne fait pas :
-  • il **ne touche pas à la monture** : aucune déformation, aucun redressement, aucun rendu 3D, aucun
-    accessoire inventé (pas d'étui ajouté : nous n'avons photographié aucun étui) ;
-  • il remplace le fond crème « détouré » par un **set studio** : dégradé blanc cassé, sol légèrement
-    plus sombre, ombre portée douce calculée depuis le détourage réel ;
-  • il garde le cadrage, la taille (1600 × 1200) et le nom des fichiers.
+Ce que l'outil fait — et ce qu'il ne fait pas :
+  • il **ne redessine pas la monture** : ni déformation, ni redressement en 3/4, ni rendu 3D, ni
+    image générée, ni accessoire inventé (pas d'étui : nous n'avons photographié aucun étui) ;
+  • il ne l'isole pas non plus de son support. Voir « pourquoi pas de détourage » plus bas ;
+  • il garde la taille (1600 × 1200) et le nom des fichiers : aucune page HTML à retoucher.
 
-Pourquoi ce n'est pas une retouche IA image par image : une monture se choisit sur sa **forme**. Un
-modèle génératif qui « redresse » une paire en 3/4 la redessine — et le client reçoit autre chose que
-ce qu'il essaiera au cabinet. La forme reste donc pixel pour pixel celle du cabinet.
+Trois gestes, dans l'ordre :
+  1. **fond crème → blanc du set** : un gain par canal, mesuré aux quatre coins de la photo, amène le
+     crème du fournisseur à `(250,250,250)`. C'est un changement de **température** du fond, pas de
+     la monture : ses couleurs, ses reflets et son ombre sont conservés ;
+  2. **recadrage** sur la monture, marge constante, centrée dans le cadre ;
+  3. **pose** sur un set blanc uni, sans ombre ajoutée : l'ombre réelle de la photo reste, c'est elle
+     qui fait tenir une monture claire sur un fond clair.
 
-Le détourage est déduit du fond uni d'origine (couleur du coin), avec un seuil et un adoucissement de
-1 px pour éviter une découpe en escalier. Les zones très claires *à l'intérieur* de la monture sont
-conservées par un **remplissage depuis les bords** : seuls les pixels reliés au bord deviennent du fond.
+Pourquoi pas de détourage — mesuré sur les 65 fichiers :
+
+  • les **charnières ressort** de plusieurs montures sont presque de la couleur du fond (écart < 25
+    par canal). Un seuil de détourage les emporte : la paire apparaît **coupée en deux** (e07, e13)
+    ou amputée de ses branches (e17). 14 fichiers sur 65 sont dans ce cas ;
+  • les **verres** vont du très clair au bleuté, et sur une monture **percée** ou **semi-cerclée**
+    (f01, h01, h04), les verres *sont* la monture : les rendre transparents efface le produit ;
+  • un détourage réussi sur 43 photos et raté sur 22 donne une page où **une monture sur trois est
+    cassée**. Sur une page qui doit inspirer confiance, c'est pire que le fond crème de départ.
+
+La **carte d'appui** bleutée sur laquelle les montures sont photographiées est conservée : elle est
+dans la photo, discrète, et l'effacer proprement demanderait de découper la monture — exactement ce
+qu'on refuse. Elle disparaîtra d'elle-même le jour où la série sera re-photographiée sur fond blanc.
+
+La vraie réponse pour des visuels « produit » nets reste donc une **re-photo sur fond blanc uni**
+(10 minutes par série). L'outil est réversible (`git checkout` des 65 fichiers) et rejouera la même
+présentation sur des photos propres.
 
 Usage :
-    python3 tools/site/restyle_frames.py --sample 3 --out /tmp/preview   # regarder avant d'appliquer
+    python3 tools/site/restyle_frames.py --sample 3 --out /tmp/preview   # regarder avant d'écrire
     python3 tools/site/restyle_frames.py --check                          # état, n'écrit rien
     python3 tools/site/restyle_frames.py                                  # applique aux 65 fichiers
 """
@@ -31,127 +48,53 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from PIL import Image, ImageChops, ImageDraw, ImageFilter
+from PIL import Image, ImageChops, ImageFilter
 
 ROOT = Path(__file__).resolve().parents[2]
 FRAMES = ROOT / "hosting" / "previews" / "dmoptic" / "montures"
 
 SIZE = (1600, 1200)
-BG_TOLERANCE = 34      # écart de couleur toléré comme « fond » (0–255, par canal)
-LENS_ALPHA = 64        # les verres restent à peine visibles : on voit le set au travers, comme sur
-                       # un vrai détourage produit — mais le reflet de la photo ne disparaît pas
-EDGE_SOFTEN = 1.0      # px de flou sur le masque : anti-escalier
-MARGIN = 0.055         # marge minimale autour de la monture (fraction de la largeur)
+SET_RGB = (250, 250, 250)   # blanc du set, celui des visuels du fournisseur
+MARGIN = 0.055              # marge autour de la monture (fraction du cadre)
+CROP_PAD = 0.02             # air ajouté autour de la monture avant recadrage
 QUALITY = 82
 
 
-def backdrop(w: int, h: int) -> Image.Image:
-    """Set studio : mur blanc cassé en haut, sol un peu plus dense, transition douce."""
-    img = Image.new("RGB", (w, h), (253, 253, 251))
-    d = ImageDraw.Draw(img)
-    horizon = int(h * 0.78)
-    for y in range(h):
-        if y < horizon:
-            t = y / max(horizon, 1)
-            c = (253 - int(4 * t), 253 - int(4 * t), 251 - int(3 * t))
-        else:
-            t = (y - horizon) / max(h - horizon, 1)
-            c = (249 - int(10 * t), 249 - int(11 * t), 248 - int(12 * t))
-        d.line([(0, y), (w, y)], fill=c)
-    return img
-
-
-def cut(frame: Image.Image) -> tuple[Image.Image, Image.Image]:
-    """(monture RGBA, masque plein) — fond déduit des quatre coins, verres conservés en transparence.
-
-    1. le fond d'origine est un crème presque uni : on mesure la moyenne des coins et on prend
-       l'écart par canal (tolérance `BG_TOLERANCE`) ;
-    2. les **trous** intérieurs (verres) sont repérés par remplissage depuis le bord : ce qui n'est
-       pas relié au bord n'est pas du fond ;
-    3. la monture est opaque, les verres le sont à `LENS_ALPHA` : le set se voit au travers, comme
-       sur un détourage produit — mais le reflet photographié reste un peu présent.
-    """
-    frame = frame.convert("RGB")
-    w, h = frame.size
-    corners = [frame.getpixel(p) for p in ((2, 2), (w - 3, 2), (2, h - 3), (w - 3, h - 3))]
-    bg = tuple(sum(c[i] for c in corners) // 4 for i in range(3))
-
-    diff = ImageChops.difference(frame, Image.new("RGB", frame.size, bg)).convert("L")
-    solid = diff.point(lambda v: 255 if v > BG_TOLERANCE else 0).filter(ImageFilter.MedianFilter(7))
-
-    solid = _keep_big(solid)
-
-    flood = solid.copy()
-    ImageDraw.floodfill(flood, (0, 0), 128, thresh=0)          # 128 = fond extérieur
-    filled = flood.point(lambda v: 0 if v == 128 else 255)     # monture + verres
-
-    alpha = filled.point(lambda v: LENS_ALPHA if v else 0)     # verres : translucides
-    alpha.paste(255, (0, 0), solid)                            # monture : opaque
-    alpha = alpha.filter(ImageFilter.GaussianBlur(EDGE_SOFTEN))
-
-    subject = frame.convert("RGBA")
-    subject.putalpha(alpha)
-    return subject, filled
-
-
-def _keep_big(mask: Image.Image, min_frac: float = 0.0025) -> Image.Image:
-    """Retire les taches isolées (filigrane, poussière) : seules les taches reliées et assez
-    grandes restent. Le calcul se fait sur un masque réduit (÷4) pour rester rapide en pur Python."""
-    small = mask.resize((mask.width // 4, mask.height // 4), Image.BOX)
-    px = small.load()
-    w, h = small.size
-    seen = bytearray(w * h)
-    keep = Image.new("L", small.size, 0)
-    kp = keep.load()
-    min_px = int(w * h * min_frac)
-    for y in range(h):
-        for x in range(w):
-            if px[x, y] < 128 or seen[y * w + x]:
-                continue
-            stack = [(x, y)]
-            seen[y * w + x] = 1
-            comp = []
-            while stack:
-                cx, cy = stack.pop()
-                comp.append((cx, cy))
-                for nx, ny in ((cx + 1, cy), (cx - 1, cy), (cx, cy + 1), (cx, cy - 1)):
-                    if 0 <= nx < w and 0 <= ny < h and px[nx, ny] >= 128 and not seen[ny * w + nx]:
-                        seen[ny * w + nx] = 1
-                        stack.append((nx, ny))
-            if len(comp) >= min_px:
-                for cx, cy in comp:
-                    kp[cx, cy] = 255
-    return ImageChops.multiply(mask, keep.resize(mask.size, Image.LANCZOS))
+def _neutralise(src: Image.Image) -> Image.Image:
+    """Amène le fond crème du fournisseur au blanc du set, sans toucher aux couleurs du produit."""
+    w, h = src.size
+    corners = [src.getpixel(p) for p in ((2, 2), (w - 3, 2), (2, h - 3), (w - 3, h - 3))]
+    cream = tuple(sum(c[i] for c in corners) / 4 for i in range(3))
+    luts = []
+    for i in range(3):
+        gain = SET_RGB[i] / max(cream[i], 1.0)
+        luts.append([min(255, int(v * gain + 0.5)) for v in range(256)])
+    return Image.merge("RGB", [src.getchannel(i).point(luts[i]) for i in range(3)])
 
 
 def restyle(path: Path) -> bytes | None:
+    """Neutralise le fond, recadre sur la monture, pose sur le set. Ne découpe rien."""
     src = Image.open(path).convert("RGB")
-    subject, mask = cut(src)
+    flat = _neutralise(src)
 
-    bbox = mask.getbbox()
+    bg = Image.new("RGB", flat.size, SET_RGB)
+    diff = ImageChops.difference(flat, bg).convert("L")
+    bbox = diff.point(lambda v: 255 if v > 8 else 0).filter(ImageFilter.MedianFilter(9)).getbbox()
     if not bbox:
         return None
-    sw, sh = bbox[2] - bbox[0], bbox[3] - bbox[1]
 
-    canvas = backdrop(*SIZE)
-    # échelle : la monture occupe le cadre avec une marge constante
-    scale = min((SIZE[0] * (1 - 2 * MARGIN)) / sw, (SIZE[1] * (1 - 2 * MARGIN)) / sh, 1.0)
-    nw, nh = int(sw * scale), int(sh * scale)
-    sub = subject.crop(bbox).resize((nw, nh), Image.LANCZOS)
-    x = (SIZE[0] - nw) // 2
-    y = int(SIZE[1] * 0.5 - nh / 2)
+    side = max(bbox[2] - bbox[0], bbox[3] - bbox[1])
+    pad = int(side * CROP_PAD)
+    box = (max(bbox[0] - pad, 0), max(bbox[1] - pad, 0),
+           min(bbox[2] + pad, flat.width), min(bbox[3] + pad, flat.height))
+    crop = flat.crop(box)
+    cw, ch = crop.size
 
-    # ombre portée : le profil bas de la monture, écrasé et flouté, posé sous elle
-    mask_crop = mask.crop(bbox).resize((nw, nh), Image.LANCZOS)
-    band = mask_crop.crop((0, max(nh - int(nh * 0.35), 1), nw, nh))
-    sh_h = max(int(nh * 0.10), 6)
-    sh = band.resize((nw, sh_h), Image.LANCZOS).filter(
-        ImageFilter.GaussianBlur(max(int(SIZE[0] * 0.012), 8)))
-    shadow = Image.new("RGBA", SIZE, (0, 0, 0, 0))
-    shadow.paste((48, 45, 40, 70), (x, y + nh - sh_h // 2), sh)
-    canvas = Image.alpha_composite(canvas.convert("RGBA"), shadow).convert("RGB")
+    scale = min((SIZE[0] * (1 - 2 * MARGIN)) / cw, (SIZE[1] * (1 - 2 * MARGIN)) / ch, 1.0)
+    nw, nh = int(cw * scale), int(ch * scale)
 
-    canvas.paste(sub, (x, y), sub)
+    canvas = Image.new("RGB", SIZE, SET_RGB)
+    canvas.paste(crop.resize((nw, nh), Image.LANCZOS), ((SIZE[0] - nw) // 2, (SIZE[1] - nh) // 2))
 
     out = path.with_suffix(".tmp.webp")
     canvas.save(out, "WEBP", quality=QUALITY, method=6)
@@ -180,13 +123,10 @@ def main() -> int:
             continue
         data = restyle(p)
         if data is None:
-            print(f"  ✗ {p.name} : détourage impossible")
+            print(f"  ✗ {p.name} : recadrage impossible")
             failed += 1
             continue
-        if args.out:
-            (args.out / p.name).write_bytes(data)
-        else:
-            p.write_bytes(data)
+        (args.out / p.name if args.out else p).write_bytes(data)
         done += 1
     if not args.check:
         print(f"{done} fichier(s) écrit(s), {failed} échec(s), cible = {args.out or FRAMES}")

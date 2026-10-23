@@ -1987,22 +1987,31 @@ la preuve visuelle reste une capture de King.
 
 ---
 
-## 23/10/2026 — 65 photos de montures repassées sur un set studio
+## 23/10/2026 — 65 photos de montures passées sur un set blanc
 
 **Demande King** : « can you edit/modify the images of the frames in the repo so that they look as the
-ones in the attached images ? » (visuels fournisseur : monture sur fond clair continu, ombre douce).
+ones in the attached images ? » (visuels fournisseur : monture sur fond clair continu, cadrée large).
 
-**Ce qui a été fait** : `tools/site/restyle_frames.py` — détourage déduit du fond crème d'origine,
-taches isolées retirées (filigrane fournisseur), **fond studio** (dégradé blanc cassé + sol), ombre
-portée calculée depuis le masque réel, marge constante, 1600 × 1200 et noms de fichiers conservés.
-Verres laissés translucides : on voit le set au travers, comme sur un détourage produit.
+**Deux tentatives, la seconde est la bonne.** La première détourait la monture pour la reposer sur un
+set calculé. Elle a été **abandonnée après contrôle image par image** :
 
-**Ce qui n'a pas été fait, volontairement** : aucune retouche de la forme, aucun redressement en 3/4,
-aucun étui ajouté (nous n'avons photographié aucun étui), aucune image générée. Une monture se choisit
-sur sa **forme** : un modèle qui « redresse » une paire envoie le client voir autre chose au cabinet.
+- 14 fichiers sur 65 ont des **charnières ressort presque de la couleur du fond** (écart < 25 par
+  canal). Le seuil les emportait : e07 et e13 sortaient **coupées en deux**, e17 sans ses branches ;
+- sur les montures **percées** ou **semi-cerclées** (f01, h01, h04), les verres *sont* la monture :
+  les rendre transparents effaçait la moitié du produit ;
+- une monture cassée sur trois, sur la page qui doit inspirer confiance, c'est pire que le fond crème.
 
-**Limite connue** : les montures à **fine monture métallique** (ex. F01) rendent moins bien que les
-montures plastique — le bord du verre est très clair. La vraie réponse reste une **re-photo sur table
-blanche** (10 minutes par série) ; le script est réversible (`git checkout` des 65 fichiers).
+**Ce qui est livré** (`tools/site/restyle_frames.py`) : le fond crème du fournisseur est ramené au
+blanc du set par un gain mesuré aux quatre coins (changement de **température** du fond), la photo est
+recadrée sur la monture à marge constante et posée sur un set blanc uni. **Aucune découpe** : forme,
+couleur, reflets et ombre restent ceux de la photo. 65 fichiers, 0 échec, 4,8 → 4,6 Mo, 1600 × 1200,
+noms inchangés.
 
-**Poids** : dossier `montures/` 4,8 → 4,6 Mo ; `audit_images` 0 faute sur les pages testées.
+**Ce qui reste visible, et pourquoi** : la **carte d'appui bleutée** du fournisseur est toujours là,
+en gris très clair, parce qu'elle est sous la monture. L'effacer proprement demande de découper la
+monture — exactement ce qu'on refuse. Elle disparaîtra d'elle-même le jour où la série sera
+re-photographiée sur fond blanc uni.
+
+**La vraie réponse reste la re-photo** : une table blanche, une lumière diffuse, 10 minutes par série.
+Le script est réversible (`git checkout` des 65 WebP) et rejouera la même présentation sur des photos
+propres, avec cette fois un détourage possible.
