@@ -109,6 +109,11 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
 .logo{display:inline-block;flex:none;aspect-ratio:171/160;background:var(--logo) center/contain no-repeat;mix-blend-mode:multiply}
 .brand .logo{height:40px;max-width:190px}
 .idtop .logo{height:64px;max-width:200px}
+.psrc{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:14px;padding:0 14px;border:1px solid rgba(169,184,207,.42);border-radius:999px;color:var(--on-night-2);font-size:13px;line-height:1.2;text-decoration:none;box-sizing:border-box;transition:color .18s ease,border-color .18s ease}
+.psrc:hover,.psrc:focus-visible{color:var(--ember-2);border-color:var(--ember-2);background:rgba(240,145,96,.08)}
+.psrc:focus-visible{outline:2px solid var(--ember-2);outline-offset:2px}
+.psrc svg{display:block;width:14px;height:14px;flex:0 0 auto;fill:var(--ember-2)}
+@media (prefers-reduced-motion:reduce){.psrc{transition:none}}
 footer.site .logo{height:48px;box-sizing:content-box;border:5px solid #fff;border-radius:10px;background-color:#fff;background-origin:content-box;mix-blend-mode:normal}
 .nav{display:none}
 @media (min-width:980px){
@@ -531,6 +536,7 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
           <span class="logo" aria-hidden="true"></span>
         </a>
         <p><span class="fr-only" lang="fr">Cabinet d'optique médicale à Douala. Opticien optométriste inscrit à l'ONOC.</span><span class="en-only" lang="en">Optical practice in Douala. Optometrist optician registered with the ONOC.</span></p>
+        <a class="psrc" href="https://www.google.com/preferences/source?q=dmoptiquesarl.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.6l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.4l-5.8 3.06 1.11-6.46-4.7-4.58 6.49-.94z"/></svg><span class="fr-only" lang="fr">Ajouter DM OPTIQUE comme source préférée sur Google</span><span class="en-only" lang="en">Add DM OPTIQUE as a preferred source on Google</span></a>
       </div>
       <div>
         <h2><span class="fr-only" lang="fr">La page</span><span class="en-only" lang="en">This page</span></h2>

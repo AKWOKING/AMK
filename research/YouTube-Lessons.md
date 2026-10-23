@@ -2758,3 +2758,53 @@ la motivation et du déjà-fait. Ce qui reste après le tri n'est pas du volume 
 courbe, six hashtags, une épingle et un géotag**. Rien de tout cela ne demande une production nouvelle —
 et **aucun fichier nouveau** : les leçons sont allées dans ce lot et dans le §9 de
 `knowledge/CONTENT-CREATION-2026-10-22.md`.
+
+---
+
+## Lot [47] · UNE VIDÉO, UN MODÈLE D'AGENCE — et les cinq gestes qui survivent à notre réalité · 2026-10-23
+
+**Source** : `JmROLfnb9xk` — Abou Toure, *« Start Your AI Web Design Agency In 2026 (Full Guide) »*,
+52,8 k abonnés. Transcription lue en entier (5 blocs), **pas un visionnage** : les images ne sont pas
+commentées ici. Date de publication non affichée sur la page de transcription — **non vérifiée**.
+
+**Ce que la vidéo vend** : 18 000 $ sur dix jours (10–20 juin), des sites vendus 1 500 à 3 000 $,
+« 200 $ de dépôt », « 1 000 $/mois de fee marketing dont 500 $ reversés à un partenaire », des sites
+montés en une heure sur Base44 ou achetés 36 $ sur Fiverr. **Aucun de ces chiffres n'est vérifiable**,
+et aucun n'entre dans un livrable AMK. Ce qui reste, c'est la **structure** — et elle est bonne.
+
+### Les cinq gestes retenus, et leur adaptation
+
+| Ce qu'il fait | Pourquoi ça marche | Chez nous, ce que ça devient |
+|---|---|---|
+| **① Choisir une niche qui gagne cher par client** : il refuse les restaurants (10 $ de marge → 100 couverts pour payer un site) et prend les couvreurs (20 000 $ par chantier) | le prix du site se juge contre **une seule vente** du client, pas contre son budget | **déjà notre logique, à dire plus tôt** : une école privée à Douala vit d'une inscription par an, une clinique d'un examen + une paire. L'argumentaire « ce site doit ramener un élève » se dit au premier appel, pas dans la proposition |
+| **② Le DM en deux temps** : une vraie question sur son métier d'abord (pour sortir de l'onglet « demandes »), le pitch ensuite | un premier message qui vend est lu comme du démarchage | **adopté, sans la partie mensongère** : il conseille de « se faire passer pour un client ». **Refusé** — nous posons une question réelle sur leur établissement (site, photos, page Facebook), et nous ne prétendons jamais être un client |
+| **③ Filtrer avant d'appeler** : il appelle tout ce qui a **moins de 60–100 avis** (au-dessus, il y a une réceptionniste) | le temps de prospection se dépense là où quelqu'un décroche | **adapté au Cameroun** : le seuil n'a aucun sens ici (peu d'avis). L'équivalent : **moins de 20 avis mais une fiche active**, ou une page Facebook alimentée et **aucun site** — c'est le signal « il se donne du mal, il n'a pas d'outil » |
+| **④ Le site est déjà construit avant l'appel** | on ne vend pas un projet, on montre un objet | **déjà notre modèle** (six concepts). La différence : lui le fait **par prospect** ; nous avons **six concepts par métier**, réutilisables. C'est moins personnalisé et beaucoup moins coûteux — et ça respecte la règle du 03/10 (ne pas retravailler la démo d'un prospect sans demande) |
+| **⑤ Vendre la récurrence au moment de la preuve**, une à deux semaines après la livraison, quand le client a déjà reçu des messages | on vend l'entretien à quelqu'un qui a vu le site travailler | **adopté** : notre forfait mensuel se propose **après** le lancement et un premier retour d'usage, jamais à la signature. C'est aussi ce qui évite la faute qu'il raconte lui-même : son client à 4 900 $ **a annulé à cause des allers-retours** |
+
+### Les quatre choses qu'on ne prend pas
+
+1. **Le site en un prompt** (Base44) et le site à 36 $ (Fiverr) : ce n'est pas notre produit, et un
+   site qui ne dit que ce que le modèle a inventé est exactement ce que la section « ce qu'on ne fera
+   pas » refuse.
+2. **« Tu n'as pas besoin de savoir faire des sites »** : chez nous, la compétence est la garantie.
+3. **Vendre des ads qu'on ne sait pas piloter** et payer un partenaire pour les faire : on ne vend que
+   ce qu'on peut tenir.
+4. **« 3 000 $ prêts à brûler »** en publicité : aucun budget publicitaire n'est engagé sans un
+   ruling de King et un plafond écrit.
+
+### La leçon la plus utile pour cette semaine
+
+**Son échec est plus instructif que ses succès** : un client à 4 900 $ perdu parce que le dossier
+avançait par allers-retours. Notre réponse existe déjà et elle est écrite — **un brief validé avant
+l'aperçu, une condition dans chaque délai**. La vidéo confirme, par un cas inverse, la phrase qu'on a
+mise sur la page d'accueil le 23/10 : *« en ligne en 24 heures » ne veut rien dire sans « une fois le
+brief validé »*.
+
+### Verdict du lot
+
+**Une vidéo, cinq gestes, trois refus, aucune ligne de code.** Ce qui s'applique ne demande aucun
+fichier nouveau : le tri par marge et le filtre de prospection vont dans
+`sales/AMK-Sales-Playbook-v2.md` (Parts B et D) lors de la prochaine révision ; la vente de la
+récurrence après preuve appartient déjà à `sales/AMK-Playbook-Addendum-Outcomes-2026-09-15.md`. **Rien
+d'autre n'est repris, et aucun chiffre de la vidéo n'entre dans un livrable.**

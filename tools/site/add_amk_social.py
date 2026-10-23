@@ -55,6 +55,18 @@ PATHS = {
 
 MARKER_CSS = "/* amk-social */"
 MARKER_BLOCK = 'class="amk-soc"'
+MARKER_PREF = 'class="amk-psrc"'
+
+# ── source préférée sur Google (23/10/2026) ───────────────────────────────────
+# Le domaine est celui de la canonique de la page, pas une invention : la fonction n'accepte
+# qu'un domaine ou un sous-domaine (doc Search Central, « Feature availability »). Le jour où le
+# site passe sur son domaine propre, cette seule ligne change et l'outil est relancé.
+PREF_DOMAIN = "amk-cm.vercel.app"
+PREF_URL = f"https://www.google.com/preferences/source?q={PREF_DOMAIN}"
+# Étoile dessinée par nous (aucun logo Google reproduit) : Simple Icons ne publie pas d'icône
+# « source préférée », et imiter le G de Google poserait un problème de marque.
+PREF_STAR = ("M12 2.6l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.4l-5.8 3.06 1.11-6.46"
+             "-4.7-4.58 6.49-.94z")
 
 CSS = MARKER_CSS + """.amk-soc{margin-top:24px}
 .amk-soc .amk-soc-lbl{display:block;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#94A3B8;margin:0 0 10px}
@@ -87,6 +99,26 @@ def build_block() -> str:
     )
 
 
+# Feuille du badge, gardée à part : les pages déjà équipées du bloc social n'ont pas été
+# réécrites quand le badge est arrivé (23/10) — le marqueur `.amk-psrc{` dit si la règle est là.
+PREF_CSS = """.amk-psrc{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:14px;padding:0 14px;border:1px solid rgba(148,163,184,.45);border-radius:999px;color:#E2E8F0;background:transparent;font-size:13px;line-height:1.2;text-decoration:none;box-sizing:border-box;transition:color .18s ease,border-color .18s ease,background-color .18s ease}
+.amk-psrc:hover,.amk-psrc:focus-visible{color:#F59E0B;border-color:#F59E0B;background:rgba(245,158,11,.08)}
+.amk-psrc:focus-visible{outline:2px solid #FCD34D;outline-offset:2px}
+.amk-psrc svg{display:block;width:14px;height:14px;flex:0 0 auto;fill:#FCD34D}
+@media (prefers-reduced-motion:reduce){.amk-psrc{transition:none}}
+"""
+
+
+def build_pref() -> str:
+    return (
+        f'<a class="amk-psrc" href="{PREF_URL}" target="_blank" rel="noopener">'
+        f'<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="{PREF_STAR}"/>'
+        f'</svg><span data-en="Add AMK as a preferred source on Google" '
+        f'data-fr="Ajouter AMK comme source préférée sur Google">'
+        f'Ajouter AMK comme source préférée sur Google</span></a>'
+    )
+
+
 def _match_div(html: str, open_idx: int) -> int:
     """Index du `</div>` qui ferme le `<div` ouvert à `open_idx` (comptage de balises)."""
     depth = 0
@@ -100,8 +132,8 @@ def _match_div(html: str, open_idx: int) -> int:
 
 def insert_block(html: str) -> str:
     """Dans la première colonne du `.f-grid` du pied de page (ou juste avant `</footer>`)."""
-    if MARKER_BLOCK in html:          # idempotence : le bloc est déjà là
-        return html
+    if MARKER_BLOCK in html:          # idempotence : le bloc est déjà là → on ne pose que le badge
+        return insert_pref(html)
     foot = html.find("<footer")
     if foot < 0:
         raise ValueError("pas de pied de page")
@@ -115,13 +147,34 @@ def insert_block(html: str) -> str:
     return html[:end] + "<div class=\"wrap\">" + build_block() + "</div>\n  " + html[end:]
 
 
+def insert_pref(html: str) -> str:
+    """Pose le badge « source préférée » à la fin du bloc `.amk-soc`, une seule fois."""
+    if MARKER_PREF in html:
+        return html
+    at = html.find(MARKER_BLOCK)
+    if at < 0:
+        raise ValueError("pas de bloc social pour ancrer le badge")
+    # fin du <div class="amk-soc"> : on referme juste avant son </div>
+    end = _match_div(html, html.rfind("<div", 0, at))
+    return html[:end] + build_pref() + html[end:]
+
+
 def insert_css(html: str) -> str:
     if MARKER_CSS in html:
-        return html
+        return insert_pref_css(html)
     at = html.find("</style>")
     if at < 0:
         raise ValueError("pas de feuille de style")
     return html[:at] + CSS + html[at:]
+
+
+def insert_pref_css(html: str) -> str:
+    if ".amk-psrc{" in html:
+        return html
+    at = html.find("</style>")
+    if at < 0:
+        raise ValueError("pas de feuille de style")
+    return html[:at] + PREF_CSS + html[at:]
 
 
 def update_sameas(html: str) -> str:
@@ -161,12 +214,13 @@ def main() -> int:
             "logique" if MARKER_CSS in html else "CSS manquant",
             "bloc" if MARKER_BLOCK in html else "bloc manquant",
             "sameAs" if all(u in html for _, _, u in SOCIAL) else "sameAs partiel",
+            "source" if MARKER_PREF in html else "badge manquant",
         ]
         print(f"{name:46s} {' · '.join(state)}")
         if args.check:
             continue
         try:
-            out = update_sameas(insert_css(insert_block(html)))
+            out = update_sameas(insert_pref(insert_css(insert_block(html))))
         except ValueError as exc:
             print(f"  ✗ {exc}")
             rc = 1

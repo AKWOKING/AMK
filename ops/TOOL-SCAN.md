@@ -566,3 +566,27 @@ l'exige, jamais avant · ChatGPT/Gemini free = déjà remplacés par l'orchestra
   licenciée) ; `hypit check` + `hypit pricing` AVANT tout build ; logo amont des rapports
   conservé ; pas de multi-tenant ; portiques vidéo habitude avant envoi client.
 - **(e) Détail :** `tools/hypit/README.md`.
+
+---
+
+## 23/10 — quatre outils installés **sur demande de King** (hors scan hebdomadaire)
+
+> Ce n'est pas le scan du dimanche (qui plafonne à 3 outils et part d'un problème nommé) : c'est une
+> demande explicite — « audit then install/setup » quatre dépôts. Les quatre sont installés
+> **épinglés** dans `tools/<nom>/install.sh`, hors dépôt pour les fichiers, avec README et preuve par
+> appel réel. Règles 3 et 5 tenues : rien ne tourne en production sans que King l'ait utilisé, et
+> chaque outil remplace du travail (audit, mise en page, second avis) au lieu d'ajouter de l'état.
+
+| Outil | Licence | Installé dans | Verdict | Ce qu'il remplace |
+|---|---|---|---|---|
+| `AgriciDaniel/claude-seo` v2.5.0 (19 729 ★) | MIT | `~/.claude/skills/seo` + 19 agents, miroir `~/.agents/skills` | **pursue** | la partie « audit SEO large » qu'aucun de nos six scripts ne couvre (E-E-A-T, hreflang, backlinks, rapports) |
+| `zubair-trabzada/geo-seo-claude` (11 186 ★) | MIT | `~/.claude/skills/geo` + venv isolé | **pursue** | la lecture « crawlers IA / citabilité / llms.txt » — le trou relevé ce matin sur le site AMK |
+| `nateherkai/roast-room` (1 004 ★) | **NOASSERTION** | `~/.claude/skills/roast-room` + agents | **hold** | un second avis structuré sur les décisions chères ; **licence à lire avant tout usage hors maison** → usage interne seulement |
+| `mysticaltech/marketingskills` (362 ★) | MIT | 25 skills dans `~/.claude/skills`, miroir | **pursue, avec réserve** | des procédures écrites (copy, pricing, launch, analytics) là où nous improvisions. **Réserve** : le fork est figé au 10/02/2026 et porte 25 skills ; l'amont `coreyhaines31` en porte 52 au 22/10/2026 |
+
+**Coût total** : 0 FCFA ; ~1 Go de disque **hors dépôt**, dont deux venvs Python (exclus des
+sauvegardes). Aucun service, aucune clé, aucun compte. Chromium n'est installé nulle part (impossible
+ici) : les fonctions « page rendue » resteront indisponibles et c'est écrit dans les README.
+
+**Décision en attente de King** : basculer `marketingskills` sur l'amont (deux lignes dans
+`install.sh`) — 27 skills de plus, dont `ai-seo`, `cold-email`, `link-building`.

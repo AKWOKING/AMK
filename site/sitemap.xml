@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- URL de production. lastmod = date du dernier changement RÉEL du contenu (accueil + 2 pages métier : passe SEO du 08/10/2026, audit et corrections du 22/10/2026) ; absent ailleurs plutôt que faux. Pages en noindex (mitoc, sample-polyclinic, sample-maternity) volontairement absentes. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://amk-cm.vercel.app/</loc><lastmod>2026-10-22</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://amk-cm.vercel.app/</loc><lastmod>2026-10-23</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://amk-cm.vercel.app/sample-school.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://amk-cm.vercel.app/sample-nursery.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://amk-cm.vercel.app/sample-secondary.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
