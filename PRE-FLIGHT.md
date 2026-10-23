@@ -135,7 +135,9 @@ python3 tools/qa/audit_a11y.py --strict <fichier-construit>   # rc=0 : aucune fa
 python3 tools/qa/audit_images.py <fichier-construit>          # 0 faute : ratio annoncé = ratio réel, poids, pas de GPS
 python3 tools/qa/audit_reveal.py site/                        # 0 faute : aucune animation ne cache du contenu (ajouté 23/10)
 python3 tools/qa/audit_delivery.py <dossier> --base <url>     # 0 P1 : navigation mobile, cache, icônes, URL, llms.txt, partage, schéma, en-têtes (ajouté 23/10)
+python3 tools/qa/audit_funnel.py site/index.html             # 0 P1 : premier écran, preuve, problème→solution, étapes, prix, FAQ, barre collante (ajouté 23/10)
 bash tools/ops/gate-dm.sh                                     # porte DM complète ; son étape 4 lance audit_delivery.py --strict (livraison client)
+bash tools/ops/gate-amk.sh                                    # porte AMK (site propre + deux pages de niche) : tunnel, témoin, état du dépôt
 ```
 
 `audit_delivery.py` (23/10) ferme les deux angles morts qu'un audit extérieur a trouvés le jour où les
@@ -147,6 +149,14 @@ vaut qu'en fin de motif, donc `/*.webp` ne matche rien (l'audit extérieur propo
 règle : elle aurait laissé le défaut en place). Son témoin, `tools/qa/test_audit_delivery.py`, casse
 douze choses une par une et vérifie que chacune est nommée. Leçons complètes :
 `tools/qa/AUDIT-LESSONS-2026-10-23.md`.
+
+`audit_funnel.py` (23/10) vient d'ailleurs : d'une source **externe**, la vidéo Liam Ottley ×
+Arthur du 04/09/2025 et son tableau Figma « funnel-fixer » (`knowledge/LANDING-FUNNEL-2026-10-23.md`).
+Il vérifie la **structure** d'une page de vente : CTA dans le premier écran, titre de résultat et
+non de technologie, preuve présente (et si elle est un cas client ou seulement une démonstration),
+douleur suivie d'une solution, trois étapes, prix ou devis expliqué, FAQ, action toujours à portée,
+mots creux interdits, texte de remplacement. Il ne juge pas la **qualité** d'un titre — c'est écrit
+dans son en-tête, pour que personne n'attende de lui ce qu'il ne peut pas faire.
 Le troisième contrôle est né le 24/09 (lot [32]) avec l'arrivée des **vraies photos** : une photo de
 téléphone pèse 3 à 6 Mo et porte la position GPS. Il vérifie la structure et la vie privée — **jamais la
 beauté de la photo** (celle-là se juge à l'œil).

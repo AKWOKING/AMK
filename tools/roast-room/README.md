@@ -37,3 +37,18 @@ Nécessite Claude Code et une clé Anthropic (absente ici). Le verdict est gén�
 en sort n'est une donnée** — il ne se cite pas dans un livrable client.
 
 Réinstallation : `bash tools/roast-room/install.sh`.
+
+## ⚠️ L'installation ne survit pas à la session (constaté le 23/10, 06:40)
+
+Entre deux tours, `~/.roast-room`, `~/.claude/skills/roast-room` et les douze agents **avaient
+disparu** : seuls `tools/roast-room/README.md` et `install.sh` (dans le dépôt) avaient survécu. Le
+clone et les skills vivent hors de ce qui est versionné.
+
+**Donc, au début de toute session où l'on veut s'en servir** :
+
+```bash
+bash tools/roast-room/install.sh     # ~1 s, idempotent, épinglé e40f406
+```
+
+Vérifié le 23/10 après relance : clone présent, `SKILL.md` présent, 12 agents (`council-bezos.md` …),
+`node --check app/server.mjs` passe. Si la commande échoue, c'est le réseau GitHub, pas le dépôt.
