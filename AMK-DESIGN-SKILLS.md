@@ -630,6 +630,13 @@ Research finding: output truncation is a **deliberate RLHF brevity bias, not a d
 - **Bottom strip:** copyright · AMK concept/preview disclaimer · privacy note — small, low-contrast (legal *fades*, hierarchy [19]) + a **back-to-top** link [19].
 - Mobile order: brand → CTA → contact → nav → strip (action before index). Desktop: 4 columns with column titles so the eye orients instantly [19].
 
+**20.2b — Liens sociaux derrière les logos (ruling King 23/10).** Les icônes de réseaux sociaux se posent **seules**, jamais derrière un mot : le visiteur doit reconnaître la plateforme sans lire. Trois règles non négociables :
+1. **Nom accessible obligatoire** — `<span>` masqué (`clip: rect(0 0 0 0)`), texte qui suit la langue de la page, plus un `title` (sans lui, échec WCAG 4.1.2 : « lien sans nom »).
+2. **Tracés officiels, jamais redessinés** — Simple Icons (CC0) ou le kit de la marque. Un logo approximatif n'est plus le logo.
+3. **Cible de 44 × 44 px minimum**, `:focus-visible` visible, `rel="noopener"`, et `prefers-reduced-motion` respecté. Mettre aussi les adresses dans le `sameAs` du JSON-LD (c'est ce que Google lit).
+
+Outils : `tools/site/add_amk_social.py` (pose, idempotent) · `tools/qa/raster_svg_path.py` (voir un tracé avant livraison — `render_svg.py` bouche les trous et transforme le logo Instagram en carré plein).
+
 ### 20.3 Space & hierarchy [19]
 - The footer is a **designed screen**, never leftover: generous negative space, and **one scale contrast** — a large brand/wordmark (or one large element), a medium one (photo/motif), small body/legal type.
 - Negative space is the **canvas** where personality goes [19] — but §3 still governs: no decorative versions, no fake live counters, no ghost chrome.
@@ -2350,3 +2357,92 @@ hiérarchie visuelle.**
 C'est le Design Read, dit plus précisément que nous ne le disions. Aucun outil n'est nécessaire —
 c'est le travail de l'orchestrateur. (La vidéo dont vient cet affinement faisait faire ce travail
 par une IA ; nous le faisons nous-mêmes, et c'est aussi bien.)
+
+---
+
+## §38 — DEUX PROMPTS, UN SYSTÈME · et les quatre choses qu'on ne copie jamais (23 Oct 2026, tour 63)
+
+Sources : deux prompts de génération de sites fournis par King (`websiteprompts.ai`) — *Nadia Okonjo*
+(marque personnelle) et *Compound Search* (agence SEO). Demande : « adapt them and work on AMK website
+keeping of course our brand colors and text ». Application : `site/index.html`, section `#refus`,
+`site/OPTIMISATION-2026-10-22.md` §10.
+
+**Ce que ces prompts prouvent, et qui vaut pour toute page future** : le luxe, ici, ne vient pas d'un
+dégradé. Il vient de **la précision**. Un chiffre à chasse fixe, une étiquette en monospace, un filet de
+1 px qui traverse la page : le lecteur ne sait pas nommer ce qui le rassure, mais il reconnaît un travail
+qui a été mesuré.
+
+### Les six principes à retenir
+
+**① Une animation ne conditionne jamais l'affichage.** Les deux prompts confient tout leur contenu à des
+révélations au défilement. Reproduit tel quel sur notre accueil : `html.js .rv{opacity:0}` + un
+`IntersectionObserver` sans filet = une page **blanche entre l'en-tête et le pied de page** dès que
+l'observateur ne coche pas (capture de King, 23/10). Règle désormais : tout ce qui cache du contenu par
+défaut a **trois** sorties — l'observateur, un `catch`/absence qui appelle `revealAll()`, et un
+`setTimeout(revealAll, 1200)` — plus un `@media (scripting:none){opacity:1!important}`. **Le contenu est
+la vérité ; l'animation est un supplément.**
+
+**② Étiquettes en monospace, chiffres tabulaires.** C'est le signal technique le moins coûteux qui
+existe : zéro octet de police téléchargée (`ui-monospace, SFMono-Regular, Menlo, Consolas`),
+`font-variant-numeric:tabular-nums` sur les compteurs pour qu'ils ne sautent pas pendant le décompte.
+On l'applique aux **étiquettes**, jamais au corps de texte.
+
+**③ Deux tailles, pas cinq.** Le titre du premier écran en `clamp(34px, 4.6vw, 64px)`, interligne 1.03,
+approche négative ; tout le reste petit ; **rien entre les deux**. La hiérarchie se voit de loin, et la
+page n'a plus besoin d'être « remplie ».
+
+**④ Une frise, c'est un trait.** Cinq étapes ne sont pas cinq cartes : c'est **une ligne** (`::before`,
+1 px, dégradé ambre) et cinq points posés dessus, qui s'allument quand l'étape entre dans l'écran. Moins
+d'objets flottants, plus de lecture.
+
+**⑤ La section des refus est un argument de vente.** « Ce qu'on ne fera pas » — un prix affiché, un délai
+sans sa condition, des avis que personne n'a écrits, un site qui reste chez nous — quatre refus, quatre
+index monospace, deux colonnes séparées par des filets. Elle travaille **mieux** qu'un témoignage, parce
+qu'elle est vérifiable : le lecteur peut aller contrôler. C'est notre §12.8 mis en page.
+
+**⑥ La preuve est ce qu'on peut ouvrir.** Les prompts affichent une courbe de trafic, « +412 % », « 1 840
+mots-clés en top 3 », des citations de clients nommés. Nous n'avons **aucun** de ces chiffres. Un site
+qui n'a rien à prouver encore doit montrer **ce qui existe** : ses pages réelles, ses captures, son
+travail en cours. Inventer un seul graphique détruirait précisément la crédibilité que le principe ⑤
+construit.
+
+### Les quatre choses qu'on ne copie jamais
+
+1. **Leurs couleurs** — corail `hsl(8,92%,62%)`, chartreuse `#d4ee32` → on garde ambre et navy.
+2. **Leurs textes, chiffres, prix et témoignages** — un prompt est une **structure**, pas une source.
+3. **Leur pile** — Next.js, React, Framer Motion : notre page est un fichier autonome, sans build. Une
+   animation ne justifie pas de changer d'architecture.
+4. **Leur portrait découpé** — politique visages non tranchée, et le site ne montre que du vrai.
+
+### Deux pièges de mise en œuvre, vus ce jour-là
+
+- **Spécificité.** Un composant neuf (`.amk-soc a`) hérite de `footer a` / `.f-grid a` (0,1,1) qui écrasent
+  son `display:inline-flex` (0,1,0) : le logo retombe en `display:block; padding:5px 0` et part en haut à
+  gauche de la pastille. Écrire `.amk-soc a.amk-soc-a` (0,2,1), `padding:0`, `line-height:1`, et une
+  taille **explicite** sur le `svg`.
+- **Le portique ne voit pas le CSS.** `audit_html.py`, `audit_a11y.py` et `node --check` étaient tous verts
+  pendant que la page s'affichait blanche chez King. Un contrôle statique valide la structure ; **seule
+  une capture valide le rendu**. Quand une capture contredit les outils, c'est la capture qui a raison.
+
+**La phrase à garder** : *ces deux prompts nous ont appris à resserrer, pas à ajouter.*
+
+### Addendum du 23/10 (soir) — la **spécificité** est la deuxième façon de cacher une page
+
+Le principe ① a été violé **deux fois** dans la même journée, par la même règle. `html.js .rv` pèse
+0,2,1 ; `.rv.in` pèse 0,2,0. Le JavaScript ajoutait la classe `in` — et le navigateur continuait
+d'appliquer `opacity:0`. **142 blocs invisibles sur six pages**, sans une seule erreur en console.
+
+Ce qu'on en garde, en trois lignes :
+
+1. **Ne jamais écrire une règle d'état plus faible que la règle de base.** La base porte `:not(.in)`,
+   l'état révélé n'a plus besoin de gagner : il ne concourt plus.
+2. **Un état caché doit avoir une sortie garantie** : `IO` absent, `IO` qui lève, ou simplement un
+   navigateur qui ne déclenche pas → `setTimeout(revealAll, 1200)` et `@media (scripting:none)`.
+3. **Un contrôle, pas une vigilance** : `tools/qa/audit_reveal.py` compte les blocs, vérifie la règle
+   de base, l'état révélé et le repli ; il est branché dans le pré-vol §1b. Un bug vu deux fois n'est
+   plus un accident, c'est un trou de portique.
+
+**Corollaire pour les portiques** : `audit_html.py` signalera des contrastes faux sur les textes blancs
+posés sur une **image de fond** (`.adband` : photo + voile sombre). Le calcul ne voit pas l'image ; le
+texte est lisible. Ces findings se **nomment** dans le rapport au lieu d'être « corrigés » à l'aveugle —
+changer la couleur d'un texte lisible casserait la page pour satisfaire un outil.

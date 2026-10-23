@@ -188,8 +188,8 @@ livrables (storyboards JSON, scripts, légendes, sous-titres) et sort en code 1 
 python3 tools/qa/audit_claims.py clients/dm-optic/content     # doit afficher VERDICT : OK
 ```
 
-**Pourquoi cet outil existe** : le 22/10, deux vidéos ont été livrées avec un prix annoncé « en ligne » et
-un compte de montures — deux affirmations fausses au regard de verrous **déjà écrits**. Une règle sans
+**Pourquoi cet outil existe** : le 22/10, deux vidéos ont été livrées avec une **somme en francs** affichée
+et un **cardinal de stock** — deux affirmations fausses au regard de verrous **déjà écrits**. Une règle sans
 contrôle n'est pas une règle, c'est une intention. Désormais, toute production passe par ce portique
 **avant** le portique mouvement.
 
@@ -214,3 +214,37 @@ le chiffre n'a pas été revérifié à la source — auquel cas il est **signal
 - [ ] **Audio dans le fichier**
 - [ ] **Portique mouvement : 0 fenêtre figée**
 - [ ] Relu par le client — rien n'est publié sans lui
+
+---
+
+## 9 · Ce que cinq vidéos du 23/10 changent dans la fabrication (lot [46])
+
+> Source : `research/YouTube-Lessons.md` lot [46]. Cinq vidéos lues en transcription (pas vues) :
+> Facebook 2026, publicité Meta, trois méthodes Instagram. **Ne s'applique qu'après le ruling de
+> publication habituel** : rien ne sort sans validation de King.
+
+### 9.1 · Les cinq gestes adoptés
+
+| # | Geste | Pourquoi (source) | Coût |
+|---|---|---|---|
+| 1 | **Aucun filigrane** (TikTok/YouTube) sur une vidéo publiée sur Facebook ou Instagram ; export propre | Meta ne promeut que l'**original** et déteste les filigranes (Social Media Examiner, 16/04/2026) | 0 — c'est un réglage d'export |
+| 2 | **Accroche de 3 secondes**, avec les **mots-clés prononcés** dedans | 3 s = temps de décision ; Instagram lit l'audio (FrenchStartupper ; HubSpot France) | 0 — le premier temps du gabarit |
+| 3 | **Lire la courbe de rétention** après chaque pièce : à quelle seconde on décroche, et ce qu'on disait | la donnée corrige la pièce suivante (FrenchStartupper) | 5 min par pièce |
+| 4 | **Légende explicite** : le métier, la ville, l'usage — jamais « ambiance » | Instagram lit la légende pour classer (HubSpot France) | 0 — on écrivait déjà des légendes |
+| 5 | **2 hashtags de niche + 2 locaux + 2 tendance**, **géotag systématique**, **alt text** à la publication | visibilité locale et accessibilité (HubSpot France) | 2 min par pièce |
+
+### 9.2 · Ce qui ne change pas
+
+- **Deux pièces par semaine** (dim 19 h, lun 13 h pour AMK ; mar/jeu pour DM). Aucune vidéo ne justifie de
+  passer à un post par jour : le seul exemple de réussite cité (FrenchStartupper) a mis **plus d'un an**
+  avant le premier déclic.
+- **Le gabarit en 5 temps** (W43 §12) reste la porte. L'accroche de 3 s est **le premier des cinq temps**,
+  elle ne s'y ajoute pas comme un sixième.
+- **Aucun chiffre sans source, aucun délai promis, aucun prix, aucun visage** sans ruling : les vidéos ne
+  changent pas les verrous.
+
+### 9.3 · La tension à trancher par King
+
+Trois des cinq vidéos placent **le visage face caméra** en tête des formats qui marchent. Notre §6 ne l'a
+pas tranché. Tant que ce n'est pas tranché, la production part sur **ce qui ne montre personne** : écran,
+mains, documents, lieux, texte animé. Ce n'est pas un refus — c'est l'attente d'une décision.

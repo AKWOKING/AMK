@@ -2457,3 +2457,455 @@ l'exécution de la réécriture.
 enterré, le retainer CM écarté — et trois règles propres (closing WhatsApp, checklist design,
 cross-post FB) qui rejoignent des fichiers existants. Le framework est prêt ; la balle est à la
 réécriture POST-01, sur ordre de King.
+
+---
+
+## Lot [45] · FACEBOOK & AUDIENCE — 4 vidéos anglophones · 2026-10-22
+
+> **Origine.** King (22/10) : quatre liens YouTube à intégrer, « learn and integrate what's useful adapting
+> it to our goals and realities ». Traitées par lots de 4 comme les précédents.
+> **Limite de lecture, dite franchement :** les transcriptions ont été lues **au premier tiers** (le texte
+> complet fait 2 à 4 fois plus long). Le reste n'a pas été lu, donc **il n'est pas jugé ici**. Aucune vidéo
+> n'a été regardée : ce lot repose sur la parole des auteurs, pas sur leurs images.
+
+| # | Vidéo | Auteur | Durée / vues (22/10) | Ce qu'elle prétend |
+|---|---|---|---|---|
+| 1 | [HOW TO Organically Increase Facebook Engagement & Reach 2026](https://youtu.be/E2EObdgxyhA) | Adam Blakey | 18:18 · 40 221 | trois métriques (rétention, engagement, partageabilité) + régularité |
+| 2 | [Top 1% Content Strategies That Stand Out in 2026](https://youtu.be/fgvTvoBpafA) | Joanna Wiebe | 22:20 · 26 874 | l'IA a rendu le volume gratuit ; ce qui reste rare, c'est le jugement |
+| 3 | [How I Make $32,556/Mo Posting on Facebook (Using AI)](https://youtu.be/falYBqrtqeY) | Jeff Rose | 17:07 · 303 892 | niche + page + système reproductible + programme de monétisation |
+| 4 | [How I Trained Facebook to Push My Posts to 49 Million People](https://youtu.be/tf1ddc3h0P0) | Anji Martin | 10:40 · 35 802 | la portée vient des non-abonnés ; on « entraîne » l'algorithme |
+
+### Les trois idées à agir cette semaine
+
+1. **Tuer l'indicateur de volume** (Wiebe). Une seule question avant de publier : *« si une IA pouvait
+   écrire ça, pourquoi le publier sous mon nom ? »* → devient le **filtre du §15.4** de
+   `sales/research/2026-W43-techniques.md`. Coût : zéro. Effet : on arrête de publier pour remplir.
+2. **Le premier commentaire** (Rose). Publier la pièce, puis un commentaire qui **pose une question** —
+   pas un lien nu. À tester sur **4 posts AMK**, en comparant portée et réponses. Si ça ne bouge pas, on
+   arrête ; ce n'est pas une religion.
+3. **La portée vient des inconnus** (Martin : 95–97 % de non-abonnés sur ses gros posts). Conséquence
+   immédiate : **arrêter de lire le nombre d'abonnés**. On mesure les **réponses écrites** et les
+   **partages**, qui sont les deux seuls signaux qui amènent des gens qui ne nous connaissent pas.
+
+### Les trois idées à garder en réserve
+
+1. **Boucle offre gratuite → commentaire → e-mail** (Blakey). Puissant, mais **n'a de sens que quand on a
+   quelque chose à donner**. On a l'audit et les concepts : un jour, un « audit de page d'accueil en 5
+   points » pourrait remplir une liste. Pas maintenant : on n'a pas de canal e-mail.
+2. **Le test 12 s contre 25 s** (Blakey contre notre gabarit DM en 5 temps de 15–45 s). Vrai désaccord,
+   vraie expérience à faire sur quatre semaines avant de trancher.
+3. **« Inspirer, pas copier »** (Rose : aller chercher les idées sur X, Instagram, Reddit). On le fait déjà
+   pour le design (§2 du protocole d'unicité) ; l'étendre au **sujet** des posts est gratuit — mais la
+   source reste nommée, jamais recopiée.
+
+### Les trois idées à rejeter carrément
+
+1. **« Poster 25 fois par jour »** (Rose : « posting on the hour, every hour »). C'est un modèle de **page de
+   contenu**, pas d'une agence qui livre des sites à des cliniques. Incompatible avec la capacité de King et
+   avec la promesse de sérieux.
+2. **Les pages « faceless » générées par IA** (Rose et Martin en font la démonstration). Notre seul actif
+   défendable est **une personne réelle à Douala qui a fait le travail**. Devenir une page anonyme, c'est
+   jeter l'avantage pour imiter ce que tout le monde peut copier.
+3. **La monétisation Facebook comme objectif** (Rose : 32 556 $/mois ; Martin : plusieurs revenus empilés).
+   **Le programme n'est pas ouvert au Cameroun** (vérifié : tamtamugc.com 08/2026, lilachbullock.com
+   17/10/2026). Poursuivre cet objectif ici, c'est courir après un paiement qui n'arrivera pas.
+
+### Outils survivants de l'audit
+
+**Aucun outil installé, aucun acheté.** Les quatre vidéos reposent sur ChatGPT, un planificateur payant
+(PostPlanner), un programme de monétisation et des liens d'affiliation. Rien de tout ça n'entre dans le
+dépôt. Le seul « outil » retenu est une **question**, gratuite, à poser avant chaque publication.
+
+### Contradictions entre vidéos (et avec nos règles)
+
+| Sujet | Blakey | Rose / Martin | Notre règle | Verdict |
+|---|---|---|---|---|
+| Longueur | **6–10 s** pour doubler la rétention | des Reels de 10 s à plusieurs minutes, indifférent | gabarit DM **15–45 s, 5 temps** (adossé à ce qui a été mesuré chez DM) | **test 4 semaines**, pas de changement à l'aveugle |
+| Volume | « 3 bonnes plutôt que 5 moyennes » | **25 à 100 posts/jour** | 2 pièces par canal et par semaine | Blakey et nous ; Rose hors sujet pour une agence |
+| Visage | non traité | pages faceless viables | « le site ne montre que du vrai », une personne réelle | nous |
+| Revenu | non traité | la monétisation est le but | **vendre un service** | nous (et la géographie tranche) |
+| IA | non traité | l'IA écrit les légendes | l'IA co-pense, l'humain juge (Wiebe, et règle du dépôt) | Wiebe |
+
+### Le workflow AMK après ce lot
+
+1. **Filtre** avant publication (§15.4) : chiffre, décision, erreur ou preuve réelle — sinon, ça ne sort pas.
+2. **Premier commentaire** qui pose une question, sur les 4 prochains posts AMK, et on compare.
+3. **Mesure** : réponses écrites, partages, messages WhatsApp qualifiés. Les abonnés se notent, ne se visent pas.
+4. **Rien de nouveau à produire** : les douze sujets du §15.4 sont déjà dans le dépôt.
+
+### Verdict du lot pour AMK
+
+**Un lot utile, mais dont la moitié ne s'applique pas ici — et c'est une information en soi.** Ce qui
+reste après le tri : un filtre de publication (Wiebe), une tactique à tester (le premier commentaire), une
+correction de regard (la portée vient des inconnus). Ce qui part : le volume industriel, les pages sans
+visage, et la promesse d'être payé par Facebook depuis le Cameroun. **Zéro outil ajouté, zéro fichier
+nouveau** : les leçons sont allées dans deux documents existants (§9–§11 de
+`brand/AMK-PRESENCE-2026-10-22.md`, §15–§16 de `sales/research/2026-W43-techniques.md`).
+
+---
+
+## Lot [46] · CINQ VIDÉOS, DEUX MÉTIERS DIFFÉRENTS — Facebook 2026, publicité Meta, et trois méthodes Instagram · 2026-10-23
+
+```
+Entrées   5 liens YouTube donnés par King (23/10), transcrits et lus.
+Méthode   ⚠️ CHANGEMENT D'OUTIL : jusqu'au 22/10 la lecture YouTube était déclarée BLOQUÉE depuis le
+          bac (chunks 0 seulement, « aucune vidéo regardée »). Le 23/10, `fetch_page` rend la
+          transcription complète (page YouTube pour les vidéos anglophones, youtubetotranscript.com
+          pour les francophones). C'est la première fois que ce dépôt lit vraiment des vidéos.
+Limite    on a lu des TRANSCRIPTS, pas des images : ce qui se voit à l'écran (montage, plans, exemples
+          visuels) n'est pas couvert. C'est écrit ici pour que personne ne cite ce lot comme un
+          visionnage.
+```
+
+### Les cinq vidéos
+
+| # | Titre | Chaîne | Date | Durée | Vues | Lu |
+|---|---|---|---|---|---|---|
+| 1 | Facebook's 2026 Rules for Reach & Relevance | Social Media Examiner | 16/04/2026 | 45:52 | 3 531 | chunks 0 (transcription) |
+| 2 | Comment créer une campagne publicitaire sur Facebook de A à Z | Raphaël BOTOYIYE | 12/10/2026 | 13:20 | 12 890 | **intégral** |
+| 3 | La méthode pour exploser sur INSTA en 2026 | FrenchStartupper | 26/01/2026 | 17:26 | 37 736 | **intégral** |
+| 4 | Comment passer de 0 à 70 000 abonnés sur Instagram | Création Singulière | **01/12/2023** | 12:01 | 96 464 | chunks 0–1 |
+| 5 | Comment GRANDIR sur INSTAGRAM en 2026 ? | HubSpot France | 10/11/2025 | 15:33 | 4 605 | chunks 0–1 |
+
+⚠️ **La vidéo 4 porte « 2026 » dans son titre mais date de décembre 2023** (date d'upload lue sur la
+page). Elle est utile — la méthode n'a pas vieilli — mais **aucun chiffre qu'elle cite ne vaut comme
+preuve 2026**. C'est le piège du genre : un titre re-daté par le créateur pour rester dans les résultats.
+
+---
+
+### 1 · Facebook 2026 : « original only » (Social Media Examiner, Tara Zirker)
+
+**Ce que la vidéo dit**
+
+- Meta a explicitement annoncé ne **promouvoir que le contenu original** : vidéos ou posts *filmés ou
+  produits directement* par le créateur ou le propriétaire de la page.
+- Le **remix est encore accepté** s'il ajoute quelque chose de substantiel (analyse, information neuve,
+  récit). Ce qui est rétrogradé jusqu'à disparaître : les **republis de faible valeur** — stitches, clips,
+  réactions sans commentaire, « petites retouches ».
+- Ça s'applique **au fil ET aux Reels**.
+- Le mécanisme n'est pas la reconnaissance faciale : Meta prend une **empreinte** de la vidéo (comme côté
+  publicité) et regarde le **motif**. Une page qui publie majoritairement de l'original est « en zone
+  sûre » ; une page qui republie est identifiée par son historique.
+- Hypothèse forte des deux intervenants, **dite comme hypothèse** : « original » veut dire **original
+  pour Facebook** — donc republier sa propre vidéo YouTube ou TikTok, ou garder le **filigrane**, pénalise.
+- Chiffres cités : **vues et temps passé sur les Reels Facebook ≈ ×2** au 2ᵉ semestre 2025 vs 2024.
+- Trois autres sujets : un **sondage d'intérêt réel** des utilisateurs sur les Reels (avec un défaut
+  connu : les gens répondent vite et mal), le **programme d'affiliation en libre-service** de Facebook, et
+  **Meta Vibes**, une app de génération de vidéo IA qui intéresse surtout les annonceurs.
+
+**Ce qu'on prend pour AMK**
+
+1. **Règle neuve, immédiate : nos vidéos ne sortent jamais avec un filigrane TikTok/YouTube.** On exporte
+   propre depuis `tools/record/` ou on refait le montage. C'est gratuit et ça se contrôle avant publication.
+2. **On ne republie pas les vidéos d'un autre** — nos quatre vidéos du lot [45] sont à nous, elles partent
+   telles quelles. Le risque est ailleurs : ne pas « repartager » un contenu de clinique comme s'il était
+   nôtre.
+3. **Les Reels Facebook valent la peine pour les écoles et cliniques** : c'est le seul format vidéo qui
+   double sur le canal où sont les décideurs (≈6,84 M d'utilisateurs au Cameroun).
+4. **Vibes / affiliation : on regarde, on n'adopte pas.** L'affiliation suppose un programme de
+   monétisation auquel le Cameroun n'a pas accès (voir lot [45]) ; l'app IA vidéo touche notre politique
+   visages (§6 du socle) — donc **ruling de King avant toute production**.
+
+**Ce qu'on rejette** : l'idée qu'il faudrait « produire une empreinte originale » en permanence, c'est-à-dire
+publier plus. Notre contrainte n'est pas la détection, c'est la capacité (deux pièces par semaine).
+
+---
+
+### 2 · Publicité Meta de A à Z (Raphaël BOTOYIYE) — la plus concrète des cinq
+
+**Ce que la vidéo dit** (boutique en ligne, produit unique, marché africain francophone)
+
+- Objectif **Ventes**, **budget au niveau de la campagne** (et non de l'ensemble de publicités) — pour que
+  Meta répartisse sur ce qui performe.
+- **Pixel** créé, installé, vérifié avec l'extension *Meta Pixel Helper* ; **événement de conversion =
+  achat**, pas ajout au panier ni début de paiement.
+- Date de fin **laissée vide** (sinon Meta dépense tout d'un coup) ; début à minuit le lendemain.
+- **3 à 4 pays maximum** pour un budget de 8 $ ; il cite Cameroun, Kenya, Côte d'Ivoire, Bénin.
+- **« Publicités multi-annonceurs » désactivé** — sinon notre pub passe après celles des concurrents.
+- **Une campagne = une page produit**, jamais la boutique entière.
+- Au niveau de l'annonce : **page Facebook obligatoire**, profil Instagram optionnel, numéro WhatsApp
+  laissé sur « utiliser la page Facebook » (sinon des numéros s'affichent au milieu de l'annonce).
+- **Dupliquer l'annonce** pour tester deux visuels (et « générer une variante » de texte).
+- Créatif écrit avec l'IA à partir des images, puis relu.
+
+**Ce qu'on prend pour AMK**
+
+| Son réglage | Notre réalité | Ce qu'on garde |
+|---|---|---|
+| objectif Ventes + pixel + événement achat | nous vendons un **service** ; le contact se fait sur **WhatsApp**, il n'y a pas de panier | **objectif Messages / prospects**, destination **WhatsApp** — on ne garde **pas** le pixel |
+| budget au niveau campagne | valable quel que soit l'objectif | ✅ on garde |
+| 8 $ pour 3–4 pays | nous servons **un pays**, six villes | budget **plus petit**, **Cameroun seul**, villes en ciblage |
+| date de fin vide | règle de plateforme | ✅ on garde |
+| multi-annonceurs désactivé | règle de plateforme | ✅ on garde |
+| une campagne = un produit | une campagne = **une offre** (aperçu gratuit) | ✅ on garde, reformulé |
+| dupliquer pour tester 2 visuels | on a déjà 2 visuels prêts (carré + verticale) | ✅ on garde |
+
+**Ce qu'on rejette pour l'instant** : **aucune campagne avant que la page ait des preuves** (0 post
+aujourd'hui, §15.6 de `PRESENCE`). Payer pour montrer une page vide, c'est acheter un clic qui n'a nulle
+part où aller. Et l'auteur lui-même parle depuis une boutique avec des ventes ; notre cycle est une
+conversation WhatsApp, pas un achat impulsif.
+
+---
+
+### 3 · Les cinq clés de FrenchStartupper (0 → 600 000 abonnés)
+
+1. **Posture professionnelle** : le pro publie même quand il n'en a pas envie. « Une vidéo par jour pendant
+   365 jours et ta vie aura changé. » Il montre son propre YouTube : **plus d'un an sans résultat** avant
+   le déclic.
+2. **L'accroche** : **3 secondes** pour décider. Si l'accroche rate, l'algorithme en conclut que le contenu
+   est mauvais.
+3. **La donnée** : lire **à quelle seconde les gens décrochent**, regarder ce qu'on disait à ce moment,
+   corriger la vidéo suivante.
+4. **Travailler intelligemment** : blocs de tournage hebdomadaires, contenu d'avance, planneur ;
+   l'improvisation du soir est la faute.
+5. **S'inspirer de ce qui marche** (citation de Balzac : « copier, c'est vivre ») : reprendre l'idée, le
+   format, l'accroche — **jamais** la recopier à l'identique.
+
+**Ce qu'on prend** : les clés **2 et 3**, telles quelles. Notre gabarit DM a déjà 5 temps ; il lui manque
+un **test d'accroche explicite** et une **lecture de la courbe de rétention** (§9 du socle de contenu).
+**Ce qu'on adapte** : la clé 1, en gardant la discipline mais **pas le volume** — un post par jour n'est
+pas tenable ici, et son propre exemple montre **un an** avant le déclic : c'est un argument pour la
+**patience**, pas pour la fréquence.
+**Ce qu'on rejette** : la clé 5 appliquée à la marque. Notre protocole d'unicité interdit de copier une
+identité ; on s'inspire d'un **format**, jamais d'une direction artistique.
+
+---
+
+### 4 · Création Singulière (0 → 70 000 abonnés, méthode de 2023)
+
+Cinq étapes : **direction artistique** (palette, typo, ambiance, tonalité tutoiement/vouvoiement) · **type
+de compte** (personnel / professionnel / créateur) · **optimisation du profil** (nom d'utilisateur clair,
+bio, photo) · **stratégie de contenu** (cible, format vertical) · **planification et régularité**.
+
+**Ce qu'on prend** : la **tonalité** comme décision explicite (nous : vouvoiement sur le site, tutoiement
+nulle part — à écrire une fois, pas à improviser par post).
+**Ce qu'on rejette** : tout le reste est **déjà fait chez nous** (DA navy/ambre + marque AMK, nom et bio
+du §14.2, plan de deux pièces/semaine). Le refaire serait un restyle sans raison — et c'est exactement ce
+que le protocole d'unicité interdit.
+
+---
+
+### 5 · HubSpot France — la plus alignée avec notre réalité
+
+**Optimisation du profil**
+
+- Le **nom** (pas la bio) porte les mots-clés et **pèse sur la recherche** : « Aura Champêtre » devient
+  « Aura Champêtre · vêtement de randonnée ». → **confirme notre §14.2** (`AMK · Sites web Cameroun`) et
+  clôt le débat : `FR|EN` ne travaille pas, le métier et le pays oui.
+- Bio : qui, quoi, pour qui. **Posts épinglés** = ce que le visiteur voit en premier (bienvenue, histoire,
+  valeurs, procédé). **Stories à la une** par thème, quelques-unes suffisent.
+- Catégorie + **boutons de contact** activés (e-mail, appel, itinéraire) — on les a posés au §14.2.
+
+**Stratégie de contenu**
+
+- Fréquence : les pros disent **5 posts/semaine** ; elle recommande **3 si la qualité n'y est pas**.
+- **2–3 piliers** : éduquer, divertir, faire interagir ; chaque pièce se range dans un pilier.
+- Un même fond peut vivre en Reel **puis** en carrousel.
+
+**Visibilité (la partie la plus opérationnelle)**
+
+- **Prononcer les mots-clés dans les 3 premières secondes** : Instagram lit l'audio et en déduit à qui
+  montrer la vidéo.
+- **Légende explicite** : pas « ambiance forêt », mais le produit, l'usage, la saison, le lieu.
+- **Hashtags : 2 de niche + 2 locaux + 2 tendance.**
+- **Géotaguer systématiquement**, même une marque 100 % en ligne (page Explorateur locale).
+- **Texte alternatif** à la publication : conçu pour l'accessibilité, il sert aussi le référencement.
+
+**Outils natifs** : éditeur et musique d'Instagram, **collaborations** (la publication apparaît sur les
+deux comptes), **stories tous les jours** (plus permissives que le fil), stickers de lien.
+
+**Capitaliser** : trier ses posts par **partages** et **comptes atteints**, pas par likes ; remixer ce qui a
+marché.
+
+**Ce qu'on prend, tel quel** (c'est la liste la plus courte et la plus utile du lot) : mots-clés prononcés
+dans les 3 s · légendes explicites · **2+2+2 hashtags** · **géotag** · **alt text** · trier par partages ·
+posts épinglés · stories à la une par thème.
+**Ce qu'on adapte** : « stories tous les jours » → **3 par semaine**, adossées aux deux pièces déjà
+publiées (pas de production nouvelle).
+**Ce qu'on rejette** : les collaborations avec des créateurs locaux pour l'instant — elles supposent des
+visages et un accord, deux choses qui ne sont pas tranchées (§6 du socle).
+
+---
+
+### Contradictions entre les cinq vidéos (et avec nos règles)
+
+| Sujet | Ce que disent les vidéos | Notre règle | Verdict |
+|---|---|---|---|
+| **Fréquence** | 1/jour (v3), 5/semaine (v5), 3 si qualité (v5) | 2 pièces/semaine, dim + lun | **nous** — et les stories quotidiennes sont le seul ajout compatible |
+| **Visage à l'écran** | format roi : « réel face caméra » (v5), multiple personnalités autorisées (v1) | politique visages non tranchée (§6) | **ruling de King**, pas une décision d'orchestrateur |
+| **Objectif** | abonnés, vues, viralité | **messages WhatsApp qualifiés**, delta d'abonnés | **nous** (§7 de `PRESENCE`) |
+| **Publicité** | vendre un produit avec pixel (v2) | vendre un service par conversation | **adapté** : objectif messages, pas de pixel |
+| **Monétisation** | affiliation Meta (v1) | Cameroun hors programme de monétisation | **hors sujet ici** |
+| **Originalité** | original only (v1) | protocole d'unicité : jamais copier une identité | **convergent** — l'un parle de plateforme, l'autre de marque |
+| **IA** | écrit les créatifs (v2), assiste tout (v3) | l'IA co-pense, l'humain juge | **nous** |
+
+### Les cinq décisions adoptées (et où elles sont écrites)
+
+| # | Décision | Où |
+|---|---|---|
+| 1 | **Aucun filigrane** sur une vidéo publiée sur Facebook/Instagram (export propre) | §9 du socle de contenu |
+| 2 | **Accroche testée à 3 s** + mots-clés **prononcés** dans ces 3 s | §9 du socle, gabarit W43 §12 |
+| 3 | **Lire la courbe de rétention** (seconde de décrochage) après chaque pièce | §9 du socle |
+| 4 | **Bilingue dans la même pièce** : légende explicite, mots-clés FR **et** EN | §9 du socle |
+| 5 | **Hashtags 2+2+2, géotag, alt text, tri par partages** — la routine de publication | §9 du socle |
+
+### Verdict du lot
+
+**Le meilleur lot depuis longtemps, parce que la moitié est vérifiable et l'autre moitié est datée.**
+Deux vidéos (2 et 5) donnent des gestes précis qu'on peut exécuter cette semaine ; une (1) donne une règle
+de plateforme qui nous concerne directement (pas de filigrane, original seulement) ; deux (3 et 4) sont de
+la motivation et du déjà-fait. Ce qui reste après le tri n'est pas du volume : c'est **une accroche, une
+courbe, six hashtags, une épingle et un géotag**. Rien de tout cela ne demande une production nouvelle —
+et **aucun fichier nouveau** : les leçons sont allées dans ce lot et dans le §9 de
+`knowledge/CONTENT-CREATION-2026-10-22.md`.
+
+---
+
+## Lot [47] · UNE VIDÉO, UN MODÈLE D'AGENCE — et les cinq gestes qui survivent à notre réalité · 2026-10-23
+
+**Source** : `JmROLfnb9xk` — Abou Toure, *« Start Your AI Web Design Agency In 2026 (Full Guide) »*,
+52,8 k abonnés. Transcription lue en entier (5 blocs), **pas un visionnage** : les images ne sont pas
+commentées ici. Date de publication non affichée sur la page de transcription — **non vérifiée**.
+
+**Ce que la vidéo vend** : 18 000 $ sur dix jours (10–20 juin), des sites vendus 1 500 à 3 000 $,
+« 200 $ de dépôt », « 1 000 $/mois de fee marketing dont 500 $ reversés à un partenaire », des sites
+montés en une heure sur Base44 ou achetés 36 $ sur Fiverr. **Aucun de ces chiffres n'est vérifiable**,
+et aucun n'entre dans un livrable AMK. Ce qui reste, c'est la **structure** — et elle est bonne.
+
+### Les cinq gestes retenus, et leur adaptation
+
+| Ce qu'il fait | Pourquoi ça marche | Chez nous, ce que ça devient |
+|---|---|---|
+| **① Choisir une niche qui gagne cher par client** : il refuse les restaurants (10 $ de marge → 100 couverts pour payer un site) et prend les couvreurs (20 000 $ par chantier) | le prix du site se juge contre **une seule vente** du client, pas contre son budget | **déjà notre logique, à dire plus tôt** : une école privée à Douala vit d'une inscription par an, une clinique d'un examen + une paire. L'argumentaire « ce site doit ramener un élève » se dit au premier appel, pas dans la proposition |
+| **② Le DM en deux temps** : une vraie question sur son métier d'abord (pour sortir de l'onglet « demandes »), le pitch ensuite | un premier message qui vend est lu comme du démarchage | **adopté, sans la partie mensongère** : il conseille de « se faire passer pour un client ». **Refusé** — nous posons une question réelle sur leur établissement (site, photos, page Facebook), et nous ne prétendons jamais être un client |
+| **③ Filtrer avant d'appeler** : il appelle tout ce qui a **moins de 60–100 avis** (au-dessus, il y a une réceptionniste) | le temps de prospection se dépense là où quelqu'un décroche | **adapté au Cameroun** : le seuil n'a aucun sens ici (peu d'avis). L'équivalent : **moins de 20 avis mais une fiche active**, ou une page Facebook alimentée et **aucun site** — c'est le signal « il se donne du mal, il n'a pas d'outil » |
+| **④ Le site est déjà construit avant l'appel** | on ne vend pas un projet, on montre un objet | **déjà notre modèle** (six concepts). La différence : lui le fait **par prospect** ; nous avons **six concepts par métier**, réutilisables. C'est moins personnalisé et beaucoup moins coûteux — et ça respecte la règle du 03/10 (ne pas retravailler la démo d'un prospect sans demande) |
+| **⑤ Vendre la récurrence au moment de la preuve**, une à deux semaines après la livraison, quand le client a déjà reçu des messages | on vend l'entretien à quelqu'un qui a vu le site travailler | **adopté** : notre forfait mensuel se propose **après** le lancement et un premier retour d'usage, jamais à la signature. C'est aussi ce qui évite la faute qu'il raconte lui-même : son client à 4 900 $ **a annulé à cause des allers-retours** |
+
+### Les quatre choses qu'on ne prend pas
+
+1. **Le site en un prompt** (Base44) et le site à 36 $ (Fiverr) : ce n'est pas notre produit, et un
+   site qui ne dit que ce que le modèle a inventé est exactement ce que la section « ce qu'on ne fera
+   pas » refuse.
+2. **« Tu n'as pas besoin de savoir faire des sites »** : chez nous, la compétence est la garantie.
+3. **Vendre des ads qu'on ne sait pas piloter** et payer un partenaire pour les faire : on ne vend que
+   ce qu'on peut tenir.
+4. **« 3 000 $ prêts à brûler »** en publicité : aucun budget publicitaire n'est engagé sans un
+   ruling de King et un plafond écrit.
+
+### La leçon la plus utile pour cette semaine
+
+**Son échec est plus instructif que ses succès** : un client à 4 900 $ perdu parce que le dossier
+avançait par allers-retours. Notre réponse existe déjà et elle est écrite — **un brief validé avant
+l'aperçu, une condition dans chaque délai**. La vidéo confirme, par un cas inverse, la phrase qu'on a
+mise sur la page d'accueil le 23/10 : *« en ligne en 24 heures » ne veut rien dire sans « une fois le
+brief validé »*.
+
+### Verdict du lot
+
+**Une vidéo, cinq gestes, trois refus, aucune ligne de code.** Ce qui s'applique ne demande aucun
+fichier nouveau : le tri par marge et le filtre de prospection vont dans
+`sales/AMK-Sales-Playbook-v2.md` (Parts B et D) lors de la prochaine révision ; la vente de la
+récurrence après preuve appartient déjà à `sales/AMK-Playbook-Addendum-Outcomes-2026-09-15.md`. **Rien
+d'autre n'est repris, et aucun chiffre de la vidéo n'entre dans un livrable.**
+
+## Lot [48] · TIKTOK SEO 2026 — une pyramide de quatre étages, et ce qu'on en garde · 2026-10-23
+
+**Vidéo** : « How to Get Categorized on TikTok in 2026 — TikTok SEO Guide » · chaîne *Tiktok Growth
+Secrets* (Angel Talamantes) · 17 min 39 · publiée le 27/01/2026 · 1 385 vues · lien
+`youtu.be/MebRpuAdreI`, demandé par King (23/10/2026).
+
+**Ce que j'ai pu lire, et ce que je n'ai pas pu faire** : je n'ai pas regardé la vidéo. J'ai lu sa
+**transcription automatique** jusqu'aux deux tiers environ (le reste de la page ne renvoie que des
+recommandations). Les règles ci-dessous sont donc ce que dit la vidéo, pas ce qu'un test aurait
+prouvé. Aucun chiffre de la vidéo n'entre dans un livrable, conformément à §1g.
+
+### Le modèle, tel qu'il est exposé
+
+Une pyramide, du plus important au moins important :
+
+① **Recherche de catégorisation.** Chercher son sujet dans TikTok, ouvrir une vidéo, lire le terme
+proposé en haut (« gardening tips », « gardening for beginners »), filtrer sur 90 jours, répéter
+5–8 fois, puis retenir **trois piliers** sur lesquels bâtir le compte.
+② **Profil et bio.** Le nom de compte et la bio sont des métadonnées lues par TikTok *et* par le reste
+d'internet ; y mettre les mots de la catégorie, en phrase.
+③ **Légende, texte à l'écran, description, hashtags.** TikTok fait de la **reconnaissance de
+caractères** : le texte affiché est du contenu lisible par la machine, pas un décor. Le nom de
+fichier exporté compte un peu. **1 à 4 hashtags spécifiques**, jamais `#fyp` / `#viral` / `#pourtoi`.
+④ **Esthétique et format.** En 2026, une image trop produite est lue comme **une publicité ou de
+l'IA** : téléphone, lumière de fenêtre, ton casual.
+
+Trois affirmations de la vidéo, **non vérifiées et non reprises comme des faits** :
+« 70 % du trafic des vidéos optimisées vient de la recherche » · « les vidéos sont transcrites et
+indexées par Perplexity, Gemini et Google » · « le format *curiosity curator* fait décoller les
+comptes ».
+
+### Ce qu'on adopte
+
+| Ce que dit la vidéo | Chez AMK, ce que ça devient |
+|---|---|
+| Trois piliers de catégorie, choisis par recherche | **école · clinique · site web** — nos deux métiers et le mot que tape un dirigeant. Aucun pilier « agence » ni « IA » : ce sont des mots de prestataire, pas de client |
+| Mots-clés dans une phrase (« natural keyword stuffing »), pas en liste | nos légendes sont écrites comme on parle ; le linter refuse une légende qui n'est qu'un mur de hashtags |
+| 1–4 hashtags spécifiques | `#sitewebecole`, `#cliniquebuea`, `#creationdesiteweb` — et un emplacement, parce qu'on travaille à Douala et Buea |
+| La première ligne porte le sujet | le linter compte la longueur de la première ligne et vérifie que le pilier y est |
+| Le texte à l'écran est lu par la machine | nos vidéos portent un titre à l'écran, pas seulement une voix off — le script AMK est déjà bilingue |
+| Une image trop léchée est lue comme de l'IA | **le lien avec les montures du même jour** : un visuel de produit trop « studio » éveille la méfiance. C'est un argument pour **re-photographier** au téléphone, sur une table blanche, plutôt que de retoucher |
+
+### Ce qu'on refuse
+
+1. **Le format « curiosity curator »** — retenir volontairement l'information pour forcer le clic dans
+   les commentaires. C'est exactement l'inverse de la règle du site (« ne montrer que ce qui existe »)
+   et de la promesse de la page d'accueil. On peut être intéressant sans retenir ce qu'on sait.
+2. **« Manipuler l'algorithme »** comme objectif : on cherche à être trouvé par quelqu'un qui cherche,
+   pas à piéger un fil.
+3. **Les hausses de prix de la chaîne** (roadmap, académie, outil) : rien ici ne s'achète.
+
+### L'intégration, faite le jour même
+
+- **`tools/content/tiktok_caption.py`** — contrôle une légende avant publication : 1 à 4 hashtags,
+  hashtags génériques refusés, texte suffisant hors hashtags, pilier présent, appel à l'action, et
+  **nos verrous** (aucun prix, aucun délai sans condition, aucun superlatif, aucun nombre de clients).
+  Code de sortie 1 si une règle est cassée. `--pillars` rappelle les trois piliers.
+- **Trois légendes prêtes**, une par pilier, toutes validées par l'outil (voir ci-dessous).
+
+### Les trois légendes, écrites pour être lues par un humain d'abord
+
+**École**
+> Un parent cherche votre école sur son téléphone avant d'appeler.
+>
+> Il veut trois choses : les classes, les frais, et qui joindre. Un site web d'école qui répond à ces
+> trois questions, en français et en anglais, avec un bouton qui ouvre WhatsApp et le message déjà écrit.
+>
+> Six concepts complets sont en ligne, ouvrables depuis votre téléphone. Écris ÉCOLE en commentaire.
+> #sitewebecole #ecoleprivee #douala #cameroun
+
+**Clinique**
+> Il tape « laboratoire Buea » avant de sortir de chez lui.
+>
+> S'il ne vous trouve pas, il appelle celui d'à côté. Sur ce site concept : les examens, les horaires,
+> l'adresse, et un rendez-vous qui s'ouvre dans WhatsApp avec le message déjà rédigé.
+>
+> Écris CLINIQUE en message si tu veux le même.
+> #cliniquebuea #laboratoire #sante #cameroun
+
+**Devis**
+> Il n'y a pas de prix affiché. C'est volontaire.
+>
+> Le travail d'une école et celui d'une clinique n'ont rien à voir, et un chiffre écrit d'avance
+> serait faux à la deuxième question. Ce qu'on montre, c'est six sites complets, en ligne, à ouvrir
+> depuis ton téléphone.
+>
+> Tu regardes, tu dis ce qui te parle, le devis est écrit après le brief. Écris DEVIS sur WhatsApp.
+> #creationdesiteweb #siteinternet #cameroun #entrepreneur
+
+Contrôle : `python3 tools/content/tiktok_caption.py --file <fichier>` → les trois passent
+(**0 erreur**, 1 avertissement sur celle du devis : le pilier n'est pas dans la première ligne, ce qui
+est voulu — la première ligne vend l'idée, pas la catégorie).
+
+### Verdict du lot
+
+**Une vidéo, quatre étages, deux refus, un outil et trois légendes.** Ce qui reste à faire n'est pas du
+code : **lancer la recherche de catégorisation dans TikTok Cameroun** (chercher « école Douala »,
+« laboratoire Buea », « site web Cameroun », filtrer 90 jours et noter les termes que TikTok propose).
+C'est un travail de téléphone, pas de terminal — je ne peux pas le faire d'ici, et je ne vais pas
+inventer les termes à sa place.

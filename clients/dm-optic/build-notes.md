@@ -1957,3 +1957,231 @@ sa décision, pas la mienne.
 mois** (14h–18h, 4 blocs, 30–40 clips, 8 posts dont 4 à visage). Plan complet, liste de plans imprimable,
 autorisation d'image et circuit rush → post : `content/tournage/PLAN-TOURNAGE-MENSUEL.md`. Aucun
 abonnement d'avatar IA, aucune clé Veo achetée.
+
+---
+
+## 23/10/2026 — badge « source préférée sur Google » sur les 97 pages, et déploiement de test
+
+**Ce qui a changé.** Un badge deeplink (`https://www.google.com/preferences/source?q=dmoptiquesarl.com`)
+sous la description du pied de page, sur **les 97 pages** (FR + miroir `/en/` + fiches de montures).
+Pose par l'outil unique `tools/site/add_social_footer.py` (constante `PREF_DOMAIN`), **idempotent** :
+`--check` renvoie « 97 pages · 0 à corriger ». Bilingue par les `.fr-only` / `.en-only` existants.
+
+**Pourquoi le deeplink et pas le bouton JavaScript de Google.** Le bouton officiel charge une iframe
+`news.google.com` **à chaque vue de page** ; le site promet une page légère sur un téléphone en 3G. Le
+deeplink n'ajoute ni script ni requête tierce. Détail et sources : `site/PREFERRED-SOURCES-2026-10-23.md`.
+
+**Portes (§1b)** : `audit_html` 0 finding sur `index`, `en/index`, `montures/index`, `contact` ;
+`audit_a11y --strict` 0 faute / 0 avertissement sur `index` et `en/index`.
+
+**Déploiement de test (§1f③)** : projet `dm-optique-sarl` (`prj_vnTP9SW2lGh2rMqH15oU6S5NZvob`),
+déploiement **`dpl_3DnweMavAxXaZAFgRFXp4ZafT9gA`**, commit **`3e32490`**, cible `production`,
+état **READY / PROMOTED**, alias `https://dm-optique-sarl.vercel.app`. Piège reconfirmé : `git_source`
+attend `repoId` **numérique en chaîne** (`"1370149389"`) ; un `repoId` au format `owner/repo` renvoie
+400 « repository can't be found ».
+
+**Non vérifié** : la présence du badge dans la page servie. L'extracteur de texte de `fetch_page`
+**supprime le pied de page** (il ne montre pas non plus les liens Facebook/TikTok pourtant en ligne) :
+la preuve visuelle reste une capture de King.
+
+
+---
+
+## 23/10/2026 — 65 photos de montures passées sur un set blanc
+
+**Demande King** : « can you edit/modify the images of the frames in the repo so that they look as the
+ones in the attached images ? » (visuels fournisseur : monture sur fond clair continu, cadrée large).
+
+**Trois méthodes ont été essayées, dans cet ordre, et les deux premières ont été jetées après
+contrôle image par image** — c'est le détail qui compte pour la suite :
+
+1. **Gain de couleur** par canal pour amener le crème au blanc. Rejeté : il éclaircit aussi le
+   produit. Mesuré sur f01 — le doré de la monture passait de `(236,194,117)` à `(255,223,160)`,
+   un or devenu pâle. Un client qui commande sur cette photo ne reçoit pas cette couleur.
+2. **Détourage** (seuil sur le fond, verres rendus transparents). Rejeté : 14 fichiers sur 65 ont des
+   **charnières ressort presque de la couleur du fond** — e07 et e13 sortaient coupées en deux, e17
+   sans ses branches —, et sur les montures **percées ou semi-cerclées** (f01, h01, h04) les verres
+   *sont* la monture : les rendre transparents effaçait la moitié du produit.
+3. **Substitution de couleur** — retenue. Le fond est remplacé pixel par pixel, la monture n'est pas
+   touchée. La flèche du filigrane, détachée dans un coin, est effacée ; tout ce qui est dans le
+   cadre de la paire reste.
+
+**Ce qui est livré** (`tools/site/restyle_frames.py`) : fond crème → `(250,250,250)`, flèche du
+filigrane retirée, recadrage sur la monture à marge constante, pose sur set blanc uni. 65 fichiers,
+0 échec, 4,8 → 4,7 Mo, 1600 × 1200, noms inchangés, 0,8 s par image, réversible.
+
+**Ce qui reste visible, et pourquoi** : la **carte d'appui bleutée** du fournisseur est toujours là,
+sous la monture. Elle est dans la photo ; l'effacer proprement demande de découper la monture — ce
+qu'on refuse, pour les raisons du point 2. Elle disparaîtra le jour où la série sera re-photographiée.
+
+**La vraie réponse reste la re-photo** : table blanche, lumière diffuse, 10 minutes par série. Le
+script rejouera alors la même présentation, avec cette fois un détourage possible.
+
+## 23/10/2026 (suite) — le socle : les montures ne flottent plus
+
+**Demande King** : « I see you have changed the background but that won't be quite enough to satisfy
+the client, can you generate something (the case or a bench) on which the frames will stand? research
+on github tools that can help you do it then install them ».
+
+**Recherche GitHub d'abord** (API, par étoiles), puis essai : `rembg` (25 162 ★, MIT) installé dans un
+venv et **écarté** — ses poids se téléchargent sur un hôte bloqué ici, et il est entraîné pour des
+sujets opaques, alors que nos montures sont transparentes. Le détail et les deux autres candidats sont
+dans `ops/TOOL-SCAN.md`. **Rien n'est donc installé** : le socle est dessiné par un script maison.
+
+**Ce qui est généré** — `tools/site/frame_bench.py` : un **socle en acrylique**, dalle translucide vue
+de face, arête claire sur le dessus, chants latéraux, ombre de contact, et le **reflet** de la monture
+dans la matière. Pas d'étui : nous n'en avons photographié aucun, on ne montre pas un produit que le
+cabinet ne vend pas. La monture, elle, n'est **jamais** redessinée : elle est détourée de sa photo.
+
+**Trois garde-fous, dans l'ordre où ils ont servi** :
+
+1. **charnières ressort** — récupérées par fermeture morphologique (un pixel clair *entouré* de monture
+   en fait partie) : e07 et e13, coupées en deux au tour 66, sont entières ;
+2. **papier bleu pâle** — la feuille bleutée du fournisseur laissait un ruban clair accroché aux
+   charnières (e07, e13). Retiré par une règle de couleur (clair **et** froid, `b - r ≥ 5`) : l'acier et
+   l'argent sont neutres, donc épargnés — f59, qui était la victime de la première tentative, reste
+   intacte ;
+3. **contrôle de pièces + repli** — si le détourage laisse des morceaux séparés, ou si la matière est
+   transparente (e17, e27, f06, f25, f25-2, f26, f59-2), la photo n'est **pas** découpée : elle est
+   affichée entière, fond ramené au blanc du set, posée sur le socle. Une monture entière sur un socle
+   vaut mieux qu'une monture amputée sur un beau fond.
+
+**Résultat** : 65 fichiers, 0 échec, **58 détourés + 7 en planche**, 1600 × 1200, 4,7 → 4,9 Mo, noms
+inchangés, `QUALITY=82`, réversible (`git show 3810e3b~1:…`). `dmopticsarl.zip` repacké :
+182 entrées, 4 706 Ko. Contrôle : `tools/qa/audit_images.py` — 0 faute sur femmes (24) et hommes (6).
+
+**Ce qui reste imparfait, et il faut le dire au client** : sur f25 et f25-2, le bord de la carte
+d'appui du fournisseur reste visible derrière le verre (on ne découpe pas, donc on ne l'efface pas) ;
+sur h05 et h08, prises de trois quarts, la monture repose sur son point le plus bas, ce qui la fait
+flotter d'un côté. **La vraie réponse reste la re-photo sur le socle** : dix minutes par série, et les
+65 photos sortent alors sans détourage du tout.
+
+## 23/10/2026 — la page d'accueil non indexée : un 403 à la dernière visite, et un panneau vide qui est normal
+
+**Ce que la Search Console montre** (captures de King, 23/10) : `/examen-de-vue/` est indexée, avec
+« Breadcrumbs : 1 valid item ». `/` ne l'est pas, avec « **Page is not indexed: Blocked due to access
+forbidden (403)** », dernier crawl **20 oct. 2026 à 22:21:35**, crawlé comme **Googlebot smartphone**,
+« Crawl allowed: Yes », « Page fetch: Failed ». Le **test en direct du 23/10 à 04:17** dit l'inverse :
+« URL is available to Google… Page can be indexed ».
+
+**Ce que le dépôt prouve, et qui innocente les fichiers** :
+
+| Vérifié dans `hosting/previews/dmoptic/` | Résultat |
+|---|---|
+| `robots.txt` | `User-agent: * / Allow: /` — rien de bloqué, sitemap déclaré |
+| `sitemap.xml` | **96 URL**, et `https://dmoptiquesarl.com/` en **première** ligne — la découverte n'a jamais manqué |
+| `_headers` | sécurité seulement (nosniff, frame, referrer) — aucun `X-Robots-Tag`, aucun blocage |
+| `index.html` | pas de `noindex`, canonical correcte, `@graph` avec l'entité `Optician` |
+
+Un 403 n'est donc **pas produit par le site** : il vient de la couche qui le sert (Cloudflare). Il a
+duré le temps d'un crawl, quatre jours avant la capture, et il a disparu — le test en direct le prouve.
+
+**Ce qu'il faut faire, dans cet ordre** :
+
+1. **Search Console → URL inspection → `/` → onglet « Google index » → REQUEST INDEXING** (pas le bouton
+   du test en direct, qui ne demande rien à l'index). C'est ce qui remet la page dans la file.
+2. Si le 403 revient dans 48–72 h : **Cloudflare → Security → Events**, filtrer sur `Path = /` et sur
+   les ASN de Google, autour du 20/10 22:21. Chercher une règle WAF, un *rate limit* ou un
+   « Under Attack Mode » activé pendant le déploiement. C'est le scénario le plus probable du blocage
+   d'une **seule** URL racine alors que les sous-pages passaient.
+3. Contrôle indépendant : `curl -A "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P)
+   AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36 (compatible;
+   Googlebot/2.1; +http://www.google.com/bot.html)" -sI https://dmoptiquesarl.com/` → attendre `200`.
+
+**Pourquoi « Enhancements and experience » est vide sur l'accueil, et pourquoi c'est normal** : le
+panneau ne liste que les **types d'items présents et validés** (fil d'Ariane, FAQ, produit…). L'accueil
+déclare un `Optician` (LocalBusiness) : il n'y a **pas de fil d'Ariane** sur une racine — un
+`BreadcrumbList` d'un seul élément n'est pas un fil d'Ariane. `/examen-de-vue/` en a un à deux niveaux
+(Accueil → Examen de vue), d'où la ligne. Deux causes se cumulent ici : la page **n'a jamais été lue**
+(403), donc rien n'a pu être validé ; et même une fois indexée, elle n'affichera pas de fil d'Ariane.
+**Il n'y a rien à corriger sur la page pour ce panneau.** Si King veut quelque chose dans cette section
+sur l'accueil, l'item à ajouter est **`WebSite` + `Organization` avec `logo` et `sameAs`** (les profils
+sociaux déjà en pied de page) : c'est ce qui produit les améliorations « logo » et « identité du site ».
+
+## 23/10/2026 — l'audit extérieur : ce qu'il a trouvé, ce que nos portiques ne voyaient pas
+
+Le rapport est archivé tel quel : `clients/dm-optic/audits/AUDIT-EXTERNE-2026-10-23.md` (Chrome headless
+1366 et 390 px, axe-core, comparaison au domaine). **Deux P1**, et nos cinq portiques disaient tous
+« 0 faute » le même jour. Les deux étaient vrais : aucun des cinq ne regardait une feuille de style, des
+en-têtes HTTP ou un fichier absent.
+
+**Vérifié dans le dépôt, constat par constat** (pas de reprise de l'audit sur parole) :
+
+| # | Constat | Vérification locale | État |
+|---|---|---|---|
+| 1 | Aucune nav sous 980 px | `.nav{display:none}` + `@media (min-width:980px)`, **0 bouton `aria-expanded`** sur 90 pages | **confirmé** |
+| 2 | Cache `max-age=0` | `_headers` ne porte **aucune** règle de cache ; 491 images et 7 polices référencées | **confirmé** |
+| 3 | Pas de favicon | aucun fichier, aucune balise `<link rel="icon">` sur 97 pages | **confirmé** |
+| 4 | Double barre dans le JSON-LD | 4 occurrences, 2 par accueil FR/EN (`//cabinet-hero-1080.webp`, `//dm-logo.webp`) | **confirmé** |
+| 5 | HSTS absent | `_headers` = nosniff, referrer, frame, permissions | **confirmé** |
+| 6 | `og:image` en WebP | 80 pages sur 97 ; l'aperçu WhatsApp se teste en envoyant un lien, pas ici | à tester |
+| 7 | `llms.txt` FR seulement | 49 URL contre 96 au sitemap, **47 anglaises absentes** | **confirmé** |
+| 8 | Pas de `Product` | fiches montures : `BreadcrumbList` seul | **confirmé** |
+| 9 | Tirets cadratins | 685 — / 654 – | à trancher (voix DM) |
+| 10 | Pas de CSP | — | **confirmé** |
+| 11 | Fondateur et horaires | à confronter à la source (ONOC), pas au dépôt | à vérifier |
+| 12 | Images de partage partagées | 41 images pour 97 pages | **confirmé** |
+
+**Une erreur dans l'audit extérieur**, relevée et corrigée de notre côté : la règle de cache qu'il
+propose (`/*.webp`) **ne peut pas fonctionner** sur Cloudflare Pages, où le splat ne vaut qu'en fin de
+motif. Appliquée telle quelle, elle aurait laissé le défaut en place. Sur ce site les images vivent dans
+`/montures/`, mêlées aux pages : une règle par dossier cacherait aussi du HTML. La voie correcte est une
+**Cache Rule** du tableau de bord (extension `webp|jpg|png|woff2`, 7 jours pour les images, 1 an
+`immutable` pour les polices), et le HTML reste à `max-age=0, must-revalidate`.
+
+**Ce qui a changé dans nos outils** : `tools/qa/audit_delivery.py` (+ son témoin qui casse douze choses
+une par une), branché dans `PRE-FLIGHT.md` §1b. Leçons : `tools/qa/AUDIT-LESSONS-2026-10-23.md`.
+**Les défauts du site ne sont pas corrigés dans ce tour** : les P1 demandent du design (bouton de menu,
+focus, Échap) et un réglage côté Cloudflare, pas un `sed`. Proposé à King.
+
+---
+
+## 23/10/2026 (soir) — les deux P1 corrigés, et une correction de nos propres conclusions
+
+**Deux erreurs de ce matin, corrigées ici parce qu'elles étaient écrites noir sur blanc** :
+
+1. Le paragraphe ci-dessus présente la **Cache Rule** comme « la voie correcte ». C'est faux pour cet
+   hébergement : le site est servi par un **Worker** (`wrangler.toml`, `[assets]`), et la doc Cloudflare
+   dit que *« Cache Rules, Cache Page Rules, Page Rules … have no effect on a Worker's cache »*
+   (<https://developers.cloudflare.com/workers/cache/>). La bonne porte est `_headers`, que Workers lit
+   (<https://developers.cloudflare.com/workers/static-assets/headers/>) et qui fixe le défaut
+   `max-age=0`. Détail et règle de secours : `launch/CACHE-2026-10-23.md`.
+2. Le portique condamnait `/*.webp` **partout**. Vrai sur Pages (splat en fin seulement), faux sur
+   Workers, dont la doc donne justement `/*.jpg` en exemple. `audit_delivery.py` détecte maintenant
+   `wrangler.toml` (`uses_workers_assets`) et juge le motif selon l'hôte ; le fichier livré nomme
+   quand même les onze fichiers racine, pour rester vrai si le site repasse un jour sur Pages.
+
+**Livré (commit `b68239e`, poussé sur `arena/29c013f1-amk`)** :
+
+| P1 / P2 de l'audit extérieur | Correction | Preuve |
+|---|---|---|
+| 1 · pas de nav sous 980 px | `<details class="mnav">` + `<summary>` 44 px sur **97 pages**, liens recopiés de la nav (les bascules FR/EN continuent), Échap/clic dehors/`resize` en confort, **rien n'exige JS** | `audit_delivery.py` D1 : 0 page |
+| 2 · cache `max-age=0` | `_headers` : polices + logo 1 an `immutable`, montures et images racine 7 j, HTML laissé à `must-revalidate` | `--strict` rc=0 |
+| 3 · pas de favicon | `favicon.ico` (16/32/48), `favicon-32.png`, `favicon-192.png`, `apple-touch-icon.png` tirés de `dm-logo.webp` ; 4 `<link>` sur 97 pages | 4 fichiers + 97 pages |
+| 4 · `//` dans le JSON-LD | 4 occurrences supprimées (2 accueils) | D4 : 0 |
+| 5 · HSTS absent | `Strict-Transport-Security: max-age=31536000; includeSubDomains` | D8 : 0 |
+| 6 · `og:image` WebP | **65 cartes JPEG 1200 × 630** (`make_dm_og.py`, photo réelle recadrée) + `og:image:type` | D6 : 0 page en WebP |
+| 7 · `llms.txt` FR seul | bloc anglais régénéré depuis les fichiers (`build_dm_llms.py`) : 47 URL | D5 : 0 |
+| 8 · pas de `Product` | `Product` ajouté aux **80 fiches**, **sans prix, sans offre, sans marque inventée** (`sku`, `name`, `image`, `description`) | D7 : 0 |
+| 10 · pas de CSP | politique conservatrice, aucune ressource hors `self` (vérifié : les 1 102 liens externes sont des `<a>`, aucun script distant) | D8 : 0 |
+
+**Résultat de la porte** : `0 P1 · 0 P2 · 1 P3` (P3 = aperçus partagés entre pages de même famille),
+`--strict` **rc=0**. `tools/ops/gate-dm.sh` porte désormais l'étape 4 : `audit_delivery.py --strict`
+avant toute livraison client.
+
+**Ce qui n'est toujours pas en ligne** : rien de tout cela. La prod Cloudflare est restée sur le
+déploiement du `25e2289`/`3e314fd` parce que Workers Builds publie la branche **`arena/2fffee3b-amk`**,
+celle d'une conversation terminée. Le correctif tient en un champ à changer (Settings → Build →
+Branch) ou en un `npx wrangler deploy` depuis la racine du dépôt — voir `launch/CACHE-2026-10-23.md` §6.
+
+### 23/10 (nuit) — le déploiement a eu lieu, et il est prouvé
+
+Changer la branche de production **ne déclenche rien** : c'est l'**envoi** qui déclenche. Le premier
+envoi après le réglage de King (`e30dadb`) a été publié à 04:48 UTC — trois minutes après sa capture
+d'écran, d'où l'impression que « rien ne s'est passé ». Preuve côté public : `llms.txt` sert la section
+`## English pages`, écrite dans le même commit que le menu mobile.
+
+Les builds suivants échouent en une seconde sans produire de version : commande de déploiement
+`npx wrangler deploy`, qui attend une confirmation avant d'installer wrangler. À remplacer par
+`npx --yes wrangler@4.152.0 deploy` — détail et relevé minute par minute dans
+`launch/DEPLOIEMENT-CLOUDFLARE-2026-10-22.md` §6.

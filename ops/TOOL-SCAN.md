@@ -566,3 +566,60 @@ l'exige, jamais avant · ChatGPT/Gemini free = déjà remplacés par l'orchestra
   licenciée) ; `hypit check` + `hypit pricing` AVANT tout build ; logo amont des rapports
   conservé ; pas de multi-tenant ; portiques vidéo habitude avant envoi client.
 - **(e) Détail :** `tools/hypit/README.md`.
+
+---
+
+## 23/10 — quatre outils installés **sur demande de King** (hors scan hebdomadaire)
+
+> Ce n'est pas le scan du dimanche (qui plafonne à 3 outils et part d'un problème nommé) : c'est une
+> demande explicite — « audit then install/setup » quatre dépôts. Les quatre sont installés
+> **épinglés** dans `tools/<nom>/install.sh`, hors dépôt pour les fichiers, avec README et preuve par
+> appel réel. Règles 3 et 5 tenues : rien ne tourne en production sans que King l'ait utilisé, et
+> chaque outil remplace du travail (audit, mise en page, second avis) au lieu d'ajouter de l'état.
+
+| Outil | Licence | Installé dans | Verdict | Ce qu'il remplace |
+|---|---|---|---|---|
+| `AgriciDaniel/claude-seo` v2.5.0 (19 729 ★) | MIT | `~/.claude/skills/seo` + 19 agents, miroir `~/.agents/skills` | **pursue** | la partie « audit SEO large » qu'aucun de nos six scripts ne couvre (E-E-A-T, hreflang, backlinks, rapports) |
+| `zubair-trabzada/geo-seo-claude` (11 186 ★) | MIT | `~/.claude/skills/geo` + venv isolé | **pursue** | la lecture « crawlers IA / citabilité / llms.txt » — le trou relevé ce matin sur le site AMK |
+| `nateherkai/roast-room` (1 004 ★) | **NOASSERTION** | `~/.claude/skills/roast-room` + agents | **hold** | un second avis structuré sur les décisions chères ; **licence à lire avant tout usage hors maison** → usage interne seulement |
+| `mysticaltech/marketingskills` (362 ★) → **remplacé** | MIT | — | **abandonné le 23/10** | fork figé au 10/02/2026, 25 skills. Ruling King du 23/10 : basculer sur l'amont |
+| `coreyhaines31/marketingskills` (56 063 ★) | MIT | 52 skills dans `~/.claude/skills`, miroir vérifié 52/52 | **pursue** | procédures (copy, pricing, launch, analytics, `ai-seo`, `schema`, `seo-audit`, `cold-email`) là où nous improvisions. Épinglé `e85f3cb` (22/10/2026) |
+
+**Coût total** : 0 FCFA ; ~1 Go de disque **hors dépôt**, dont deux venvs Python (exclus des
+sauvegardes). Aucun service, aucune clé, aucun compte. Chromium n'est installé nulle part (impossible
+ici) : les fonctions « page rendue » resteront indisponibles et c'est écrit dans les README.
+
+**Décision prise (King, 23/10/2026)** : `marketingskills` est passé sur l'amont `coreyhaines31`
+— **52 skills** au lieu de 25, épinglé `e85f3cbc2e4a79bf33b2a12e9bdd9087d414735b`. Le fork
+`mysticaltech` est abandonné. **Piège rencontré** : le clone existant venait du fork ; `git fetch`
+ramenait l'ancien historique (`not our ref` sur le pin de l'amont) et la bascule échouait en laissant
+les 25 anciens skills. `install.sh` réécrit maintenant l'origine avant de chercher le pin, et vérifie
+52 skills au lieu de 25.
+
+## 23/10 — recherche « support de présentation » (montures DM) : `rembg` audité, **non retenu**
+
+> Demande King : « research on github tools that can help you do it then install them » — la recherche
+> est *exigée* avant toute installation. Elle a été faite sur l'API GitHub (recherche par étoiles), puis
+> l'outil a été **installé pour l'essayer** avant d'être jugé. Le verdict est tombé sur l'essai, pas sur
+> la popularité.
+
+| Candidat | Licence | État | Verdict | Pourquoi |
+|---|---|---|---|---|
+| `danielgatis/rembg` (25 162 ★) | MIT | poussé le 21/10/2026, non archivé | **essayé, non retenu** | le détourage de montures n'est pas son cas |
+| `noisyshade/PhotoRoom-Desktop` (8 ★) | MIT | appli de bureau | **écarté d'entrée** | application Electron, pas une bibliothèque : rien à piloter |
+| `shubham8kale/Product-photography-AI` (5 ★) | — | Stable Diffusion + rembg | **écarté** | génère un *produit* : on n'invente pas une monture |
+
+**Essai réel de `rembg` 2.0.86** (venv `/tmp/toolenv`, CPU) :
+
+1. `pip install "rembg[cpu]"` passe ; mais les poids `u2net.onnx` se téléchargent depuis
+   `release-assets.githubusercontent.com`, **bloqué ici** (TLS, comme la vidéo YouTube — voir les
+   culs-de-sac du tour 67). L'outil est donc inutilisable dans cet environnement, même installé.
+2. Même si les poids passaient, le modèle est entraîné pour des **sujets opaques sur fond chargé**.
+   Les montures DM sont l'inverse : verres transparents, acétate translucide, charnières ressort de la
+   couleur du fond. C'est précisément ce qui a déjà fait échouer le détourage maison au tour 66
+   (14 fichiers sur 65 amputés).
+
+**Décision** : pas de dépendance ajoutée, pas de modèle à télécharger, **0 FCFA**, et le support est
+dessiné par **`tools/site/frame_bench.py`** — déterministe, relisible, réversible, sans réseau. Le
+script porte ses propres garde-fous (détourage + contrôle de pièces + repli « planche »), ce qu'un
+modèle opaque ne peut pas offrir sur ces photos.

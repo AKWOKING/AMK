@@ -4,10 +4,13 @@
 #   bash tools/ops/gate-dm.sh                        # contrôle l'état + les nouveaux rendus
 #   bash tools/ops/gate-dm.sh chemin/vers/fichier.md # + contrôle des affirmations de ce fichier
 #
-# Trois questions, dans cet ordre :
+# Quatre questions, dans cet ordre :
 #   1. l'arbre est-il le vrai dépôt ?      (sinon tout ce qu'on lit est faux)
 #   2. les rendus sont-ils frais ?          (un MP4 plus vieux que son storyboard est interdit)
 #   3. les affirmations tiennent-elles ?    (prix, nombre de montures, promesses)
+#   4. le site livré tient-il debout ?      (menu mobile, cache, icônes, partage, schéma, en-têtes)
+#
+# L'étape 4 est `--strict` : c'est une livraison **client**, un P2 est un défaut, pas une note.
 set -u
 cd "$(dirname "$0")/../.." || exit 1
 fail=0
@@ -40,6 +43,19 @@ if [ "$#" -gt 0 ]; then
     echo "  aucune infraction"
   fi
 fi
+
+echo "── 4. porte de livraison (client → --strict) ──"
+delivery_log=$(mktemp)
+if python3 tools/qa/audit_delivery.py hosting/previews/dmoptic \
+     --base https://dmoptiquesarl.com --strict >"$delivery_log" 2>&1; then
+  grep -E "TOTAL" "$delivery_log" | sed 's/^  /  /'
+else
+  echo "  ⛔ le site livré a un défaut P1/P2 :"
+  grep -E "^  \[P[12]\]" "$delivery_log"
+  grep -E "TOTAL" "$delivery_log"
+  fail=1
+fi
+rm -f "$delivery_log"
 
 echo
 if [ "$fail" -ne 0 ]; then

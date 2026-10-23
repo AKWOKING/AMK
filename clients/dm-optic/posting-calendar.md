@@ -213,7 +213,13 @@ les montures passent au mois 2. »~~ **Sans objet** — la prise de vue a eu lie
 > Mais surtout : ça s'essaie. Sur votre visage, pas sur un écran. Venez au cabinet — Ndobo Mayor,
 > Bonabéri.
 
-### 🖼 Vendredi 30/10 — Carrousel
+### 🖼 Jeudi 30/10, 19 h — **« Pourquoi on revient »** *(direction v2, pièce n° 5)*
+
+> Le carrousel « la vitrine par familles » prévu ici **est remplacé**. Il faisait exactement ce que la
+> direction v2 arrête : une parade de montures. À la place, une pièce de service : le réglage.
+> Fiche complète, script, plans à tourner et légende : `content/month1/w3/pourquoi-on-revient.md`.
+
+### 🖼 Vendredi 30/10 — Carrousel *(remplacé, conservé pour mémoire)*
 
 | | |
 |---|---|

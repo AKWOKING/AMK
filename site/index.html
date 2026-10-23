@@ -2,14 +2,19 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<script>document.documentElement.className+=" js";</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Création de site web école &amp; clinique, Cameroun | AMK Douala</title>
 <meta name="description" content="Votre école ou clinique est jugée sur Google avant qu'on vous appelle. Site bilingue FR|EN, rendez-vous WhatsApp, aperçu gratuit.">
+
+<link rel="alternate" hreflang="fr" href="https://amk-cm.vercel.app/">
+<link rel="alternate" hreflang="en" href="https://amk-cm.vercel.app/en/">
+<link rel="alternate" hreflang="x-default" href="https://amk-cm.vercel.app/">
 <link rel="canonical" href="https://amk-cm.vercel.app/">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#0F172A">
 <meta property="og:title" content="Création de site web pour écoles et cliniques au Cameroun | AMK">
-<meta property="og:description" content="Un site fait pour être trouvé. Aperçu gratuit · bilingue FR|EN · en ligne en 3 à 5 jours après l'acompte.">
+<meta property="og:description" content="Un site fait pour être trouvé. Aperçu gratuit · bilingue FR|EN · en ligne dès votre validation.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:locale:alternate" content="en_US">
@@ -20,7 +25,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AMK · Sites web bilingues pour les écoles et cliniques du Cameroun">
-<meta name="twitter:description" content="Aperçu gratuit · bilingue FR|EN · WhatsApp d'abord · en ligne en 3 à 5 jours après l'acompte.">
+<meta name="twitter:description" content="Aperçu gratuit · bilingue FR|EN · WhatsApp d'abord · en ligne dès votre validation.">
 <meta name="twitter:image" content="https://amk-cm.vercel.app/img/og-cover.jpg">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <script type="application/ld+json">
@@ -33,7 +38,7 @@
    "url": "https://amk-cm.vercel.app/",
    "name": "AMK",
    "alternateName": [
-    "AMK – Web Development & Digital Solutions",
+    "AMK",
     "AMK Douala"
    ],
    "inLanguage": [
@@ -46,7 +51,7 @@
   },
   {
    "@type": "ProfessionalService",
-   "name": "AMK – Web Development & Digital Solutions",
+   "name": "AMK",
    "url": "https://amk-cm.vercel.app",
    "telephone": "+237677789631",
    "email": "akwo.king.dev@gmail.com",
@@ -76,9 +81,12 @@
      "name": "Bamenda"
     }
    ],
-   "description": "Création de sites web bilingues FR|EN pour écoles privées, cliniques et laboratoires au Cameroun. Aperçu gratuit, en ligne en 3 à 5 jours après l'acompte.",
+   "description": "Création de sites web bilingues FR|EN pour écoles privées, cliniques et laboratoires au Cameroun. Aperçu gratuit, en ligne dès votre validation.",
    "sameAs": [
-    "https://maps.google.com/?cid=15115895992629938509"
+    "https://maps.google.com/?cid=15115895992629938509",
+    "https://www.facebook.com/profile.php?id=61595803408384",
+    "https://www.instagram.com/amkweb.cm",
+    "https://www.tiktok.com/@amkweb"
    ],
    "currenciesAccepted": "XAF",
    "paymentAccepted": "MTN Mobile Money, Orange Money, espèces",
@@ -169,7 +177,7 @@
      "name": "Combien de temps ça prend vraiment ?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "3 à 5 jours après l'acompte entre votre validation et la mise en ligne pour un site de départ. Et l'aperçu est dans votre téléphone sous 24 heures après votre premier message."
+      "text": "Nous ne donnons pas de date avant de connaître le périmètre. L'aperçu est dans votre téléphone sous 24 heures après votre premier message ; la mise en ligne suit vos validations."
      }
     },
     {
@@ -293,6 +301,13 @@ h2{font-size:clamp(28px,4.2vw,42px);font-weight:800;letter-spacing:-.025em;line-
 .mbar .btn{min-height:52px;display:flex;align-items:center;justify-content:center;flex:1;padding:12px 16px}
 .mbar .btn-ghost{flex:0 0 118px;background:rgba(30,41,59,.6)}
 
+/* 23/10 — la barre mobile attend que le hero sorte de l'écran. Posée dès le chargement, elle recouvrait
+   le second bouton du hero à 390 px (bouton fantôme « Ouvrir un site concept »). Sans JS, `html.js`
+   n'existe pas et la barre reste visible : c'est le filet. */
+html.js .mbar{transform:translateY(115%);pointer-events:none;transition:transform .25s ease}
+html.js .mbar.on{transform:none;pointer-events:auto}
+@media(prefers-reduced-motion:reduce){html.js .mbar{transition:none}}
+
 /* form type chips */
 .f-types{display:flex;gap:8px}
 .f-type{flex:1;border:1.5px solid var(--border);background:#fff;border-radius:99px;padding:12px 10px;font-family:inherit;font-size:14px;font-weight:700;color:var(--slate);cursor:pointer;transition:.15s}
@@ -363,12 +378,15 @@ h2.punch em{font-style:normal;color:#FFC24B}
 .svc-card h3{font-size:1rem;margin:8px 0 0}
 .svc-card p{font-size:.9rem;color:var(--mute);margin:.5rem 0 0}
 /* ambre clair sur blanc = contraste insuffisant (portique). Ambre foncé, 7.1:1. */
-.svc-card .mono{color:#7A4A00;font-size:.66rem}
+.svc-card .mono{color:#7A4A00;font-size:.7rem}  /* 22/10 : 10,56px → 11,2px, plancher de lisibilité */
 section .note{font-size:.85rem;color:var(--mute);margin-top:16px}
 
 /* reveal */
-.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+/* 22/10 : l'animation d'apparition ne s'arme que si JS est là. Avant, un script bloqué
+   ou une erreur laissait 41 blocs à opacity:0 — page vide pour qui n'exécute pas le JS. */
+html.js .rv:not(.in){opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
 .rv.in{opacity:1;transform:none}
+html.js .rv.in{opacity:1;transform:none}
 
 /* progress */
 #progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--amber),var(--amber-l));z-index:200}
@@ -399,6 +417,9 @@ nav.main a:hover{color:var(--amber-l)}
 
 /* hero */
 .hero{background:var(--navy4);color:#fff;padding:150px 0 90px;position:relative;overflow:hidden}
+/* a11y 22/10 : le sous-titre héritait du slate #64748B sur navy4 = 3,93:1 (WCAG AA exige 4,5:1).
+   Le défaut touchait aussi .process et .audit, qui portent la classe .dark. */
+.hero .sub,.hero p.sub,.dark .sub,.dark p.sub{color:#CBD5E1}
 .hero::before{content:"";position:absolute;top:-300px;right:-200px;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.14),transparent 62%)}
 .hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(148,163,184,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.05) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 30% 20%,black,transparent 70%)}
 .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
@@ -604,6 +625,9 @@ footer{background:var(--navy);color:#94A3B8;padding:70px 0 30px;border-top:1px s
   .lang-sw button{white-space:nowrap}
   .brand .t{font-size:17px}
   .mbar{display:flex}
+  html.js .vx-fab{transition:bottom .25s ease}
+  body.mbar-on .vx-fab{bottom:calc(74px + 14px)}
+  body.mbar-on .vx-panel{bottom:calc(74px + 84px)}
   body{padding-bottom:74px}
   .cards3,.w-grid,.w-grid.two,.svc-grid,.pr-grid,.steps{grid-template-columns:1fr}
   .pr-grid{max-width:440px}
@@ -624,12 +648,80 @@ header#hdr small{color:#6B7584}
 header#hdr a{color:#72777E}
 header#hdr .lang-sw button{color:#6B7584}
 header#hdr .lang-sw button.on{color:var(--navy)}
-div#m-nav a.btn{color:#5C5C5C}
+div#m-nav a.btn{color:#0F172A}
 section#work span.loc{color:#6B7584}
 section#audit p.form-small{color:#6B7584}
 header#hdr span.t{color:#757575}
 /* exception : le CTA ambre de l'en-tête garde son texte sombre (l'override ci-dessus visait le texte sur blanc) */
 header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
+/* amk-social */
+.amk-soc{margin-top:24px}
+.amk-soc .amk-soc-lbl{display:block;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#94A3B8;margin:0 0 10px}
+.amk-soc .amk-soc-l{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:0;padding:0}
+.amk-soc a.amk-soc-a{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;width:44px;height:44px;padding:0;margin:0;border-radius:50%;border:1px solid rgba(148,163,184,.45);color:#E2E8F0;background:transparent;line-height:1;text-decoration:none;box-sizing:border-box;transition:color .18s ease,border-color .18s ease,background-color .18s ease}
+.amk-soc a.amk-soc-a:hover,.amk-soc a.amk-soc-a:focus-visible{color:#F59E0B;border-color:#F59E0B;background:rgba(245,158,11,.08)}
+.amk-soc a.amk-soc-a:focus-visible{outline:2px solid #FCD34D;outline-offset:2px}
+.amk-soc a.amk-soc-a svg{display:block;width:18px;height:18px;flex:0 0 auto;fill:currentColor}
+.amk-soc .amk-soc-h{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+@media (prefers-reduced-motion:reduce){.amk-soc a.amk-soc-a{transition:none}}
+@media (max-width:420px){.amk-soc a.amk-soc-a{width:42px;height:42px}}
+.amk-psrc{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:14px;padding:0 14px;border:1px solid rgba(148,163,184,.45);border-radius:999px;color:#E2E8F0;background:transparent;font-size:13px;line-height:1.2;text-decoration:none;box-sizing:border-box;transition:color .18s ease,border-color .18s ease,background-color .18s ease}
+.amk-psrc:hover,.amk-psrc:focus-visible{color:#F59E0B;border-color:#F59E0B;background:rgba(245,158,11,.08)}
+.amk-psrc:focus-visible{outline:2px solid #FCD34D;outline-offset:2px}
+.amk-psrc svg{display:block;width:14px;height:14px;flex:0 0 auto;fill:#FCD34D}
+@media (prefers-reduced-motion:reduce){.amk-psrc{transition:none}}
+/* lien de langue EN */
+.lang-sw .lang-a{display:inline-block;background:none;border:none;color:var(--slate-l);font-weight:700;font-size:13px;padding:7px 14px;text-decoration:none}
+header#hdr .lang-sw .lang-a{color:#6B7584}
+.m-actions .lang-a{display:inline-block;padding:6px 12px;text-decoration:none;color:inherit;font-weight:700}
+</style>
+<style id="amk-design-2026-10-23">
+/* ============================================================================
+   Passe design du 23/10/2026 — d'après deux prompts de structure fournis par King
+   (site de marque personnelle « Nadia Okonjo », agence SEO « Compound Search »).
+   Ce qui est repris : le SYSTÈME (étiquettes monospace, échelle typographique du
+   titre, frise de processus, section des refus), pas leur identité — la nôtre est
+   navy + ambre, et elle ne bouge pas.
+   Ce qui est refusé, et c'est écrit ici pour que personne ne le réintroduise :
+   courbe de trafic, « +412 % », nombre de clients, tarifs au mois, citations de
+   clients inventés. Aucune preuve que nous ne pouvons pas ouvrir.
+   ========================================================================== */
+:root{--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace}
+
+/* 1 — la voix technique : étiquettes en monospace, chiffres alignés */
+.kicker,.step small,.row-label,.pcard .loc,.f-grid h3,.amk-soc-lbl{font-family:var(--mono)}
+.kicker{font-weight:500;letter-spacing:.16em;font-size:11px}
+.step small{font-weight:500;letter-spacing:.16em}
+.stat .n,.cmp-cell .n{font-variant-numeric:tabular-nums}
+
+/* 2 — le titre du premier écran prend la place qu'il mérite */
+.punch{font-size:clamp(34px,4.6vw,64px);line-height:1.03;letter-spacing:-.03em}
+
+/* 3 — la frise du processus : un seul trait, cinq étapes */
+@media (min-width:900px){
+  .steps{position:relative}
+  .steps::before{content:"";position:absolute;left:19px;right:19px;top:-22px;height:1px;
+    background:linear-gradient(90deg,var(--amber),rgba(245,158,11,.12))}
+  .step .n{transition:box-shadow .3s ease}
+  .step.in .n{box-shadow:0 0 0 5px rgba(245,158,11,.12)}
+}
+
+/* 4 — la section des refus : quatre cases, filet fin, index en monospace */
+#refus{padding:84px 0;background:var(--navy);color:#E2E8F0}
+#refus h2{color:#FFFFFF}
+#refus p.sub{color:#CBD5E1}
+#refus .kicker{color:var(--amber-l);background:rgba(245,158,11,.10);border-color:rgba(245,158,11,.28)}
+.refus-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:44px;
+  background:rgba(148,163,184,.28);border:1px solid rgba(148,163,184,.28)}
+.refus-item{background:var(--navy);padding:26px 24px}
+.refus-item .ri{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+  color:var(--amber-l);margin-bottom:12px}
+.refus-item h3{font-size:17px;color:#fff;margin:0 0 8px;letter-spacing:-.01em}
+.refus-item p{font-size:14.5px;line-height:1.62;color:#CBD5E1;margin:0}
+@media (max-width:760px){.refus-grid{grid-template-columns:1fr}}
+
+/* 5 — filet de sécurité : sans JavaScript, rien ne reste invisible */
+@media (scripting:none){.rv{opacity:1!important;transform:none!important}}
 </style>
 </head>
 <body>
@@ -640,7 +732,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
   <div class="wrap h-in">
     <a class="brand" href="#top" aria-label="AMK">
       <svg aria-hidden="true" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1E293B"/><circle cx="32" cy="30" r="17" fill="none" stroke="#F59E0B" stroke-width="2.4"/><path d="M32 16v28M32 30L18 44M32 30l14 14" stroke="#FCD34D" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="16" r="3" fill="#F59E0B"/><circle cx="18" cy="44" r="3" fill="#F59E0B"/><circle cx="46" cy="44" r="3" fill="#F59E0B"/></svg>
-      <span class="t">AMK<small data-en="Web Development & Digital Solutions" data-fr="Développement Web & Solutions Digitales">Développement Web & Solutions Digitales</small></span>
+      <span class="t">AMK<small data-en="Websites for schools and clinics" data-fr="Sites web pour écoles et cliniques">Sites web pour écoles et cliniques</small></span>
     </a>
     <nav class="main">
       <a href="#work" data-en="Work" data-fr="Réalisations">Réalisations</a>
@@ -651,7 +743,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
       <a href="#faq" data-en="FAQ" data-fr="FAQ">FAQ</a>
     </nav>
     <div class="lang-sw">
-      <button id="btn-en" aria-pressed="false" onclick="setLang('en')">EN</button>
+      <a class="lang-a" href="en/" hreflang="en">EN</a>
       <button id="btn-fr" class="on" aria-pressed="true" onclick="setLang('fr')">FR</button>
     </div>
     <a href="#audit" class="btn btn-amber h-cta" data-en="Free preview" data-fr="Aperçu gratuit">Aperçu gratuit</a>
@@ -666,7 +758,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
   <a href="#faq" onclick="closeM()" data-en="FAQ" data-fr="FAQ">FAQ</a>
   <a href="#audit" class="btn btn-amber" onclick="closeM()" data-en="Get my free preview" data-fr="Recevoir mon aperçu gratuit">Recevoir mon aperçu gratuit</a>
   <div class="lang-sw" style="align-self:center;margin-top:20px">
-    <button id="btn-en-m" aria-pressed="false" onclick="setLang('en')">EN</button>
+    <a class="lang-a" href="en/" hreflang="en">EN</a>
     <button id="btn-fr-m" class="on" aria-pressed="true" onclick="setLang('fr')">FR</button>
   </div>
 </div>
@@ -690,7 +782,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
         </div>
         <div class="h-panel" data-niche="clinic">
           <h2 class="punch"><span data-en="Your next patient is" data-fr="Votre prochain patient">Votre prochain patient</span> <em data-en="choosing" data-fr="choisit">choisit</em> <span data-en=", and they're searching right now." data-fr=", et il cherche en ce moment.">, et il cherche en ce moment.</span></h2>
-          <p class="sub" data-en="Patients search “dentist in Buea” or “clinic in Douala”. If they can't find you, or land on a Facebook page, they stop at your competitor's door. We build clinic sites that put you first: two languages, clear FCFA pricing, booking on WhatsApp." data-fr="Les patients cherchent « dentiste à Buea » ou « clinique à Douala ». S'ils ne vous trouvent pas, ou tombent sur une page Facebook, ils s'arrêtent chez votre concurrent. Nous construisons des sites de clinique qui vous placent en premier : deux langues, tarifs FCFA clairs, rendez-vous sur WhatsApp.">Les patients cherchent « dentiste à Buea » ou « clinique à Douala ». S'ils ne vous trouvent pas, ou tombent sur une page Facebook, ils s'arrêtent chez votre concurrent. Nous construisons des sites de clinique qui vous placent en premier : deux langues, tarifs FCFA clairs, rendez-vous sur WhatsApp.</p>
+          <p class="sub" data-en="Patients search “dentist in Buea” or “clinic in Douala”. If they can't find you, or land on a Facebook page, they stop at your competitor's door. We build clinic sites you can actually find: two languages, clear FCFA pricing, booking on WhatsApp." data-fr="Les patients cherchent « dentiste à Buea » ou « clinique à Douala ». S'ils ne vous trouvent pas, ou tombent sur une page Facebook, ils s'arrêtent chez votre concurrent. Nous construisons des sites de clinique qu'on trouve quand on cherche votre spécialité : deux langues, tarifs FCFA clairs, rendez-vous sur WhatsApp.">Les patients cherchent « dentiste à Buea » ou « clinique à Douala ». S'ils ne vous trouvent pas, ou tombent sur une page Facebook, ils s'arrêtent chez votre concurrent. Nous construisons des sites de clinique qu'on trouve quand on cherche votre spécialité : deux langues, tarifs FCFA clairs, rendez-vous sur WhatsApp.</p>
         </div>
       </div>
       <div class="h-ctas">
@@ -700,7 +792,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
       <div class="h-checks">
         <span><b>✓</b> <span data-en="No payment until you approve" data-fr="Aucun paiement avant validation">Aucun paiement avant validation</span></span>
         <span><b>✓</b> <span data-en="EN|FR standard on every site" data-fr="EN|FR standard sur chaque site">EN|FR standard sur chaque site</span></span>
-        <span><b>✓</b> <span data-en="Live in 3–5 days after the deposit" data-fr="En ligne en 3–5 jours après l'acompte">En ligne en 3–5 jours après l'acompte</span></span>
+        <span><b>✓</b> <span data-en="Live as soon as you approve" data-fr="En ligne dès votre validation">En ligne dès votre validation</span></span>
       </div>
     </div>
     <div class="h-visual">
@@ -722,10 +814,10 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
 <!-- STATS -->
 <div class="stats dark">
   <div class="wrap">
-    <div class="stat rv"><div class="n"><span data-count="24">0</span>h</div><div class="l" data-en="free homepage preview" data-fr="d'aperçu gratuit de page d'accueil">d'aperçu gratuit de page d'accueil</div></div>
-    <div class="stat rv" data-d="80"><div class="n">3–5</div><div class="l" data-en="days to launch (starter site)" data-fr="jours pour lancer (site de départ)">jours pour lancer (site de départ)</div></div>
-    <div class="stat rv" data-d="160"><div class="n"><span data-count="2">0</span></div><div class="l" data-en="languages, standard & included" data-fr="langues, standard et incluses">langues, standard et incluses</div></div>
-    <div class="stat rv" data-d="240"><div class="n"><span data-count="4">0</span></div><div class="l" data-en="concept sites open today" data-fr="sites concepts à ouvrir aujourd'hui">sites concepts à ouvrir aujourd'hui</div></div>
+    <div class="stat rv"><div class="n"><span data-count="24">24</span>h</div><div class="l" data-en="for a free preview, after brief sign-off" data-fr="pour un aperçu gratuit, après validation du brief">pour un aperçu gratuit, après validation du brief</div></div>
+    <div class="stat rv" data-d="80"><div class="n">100 %</div><div class="l" data-en="yours: domain, files, hosting" data-fr="à vous : domaine, fichiers, hébergement">à vous : domaine, fichiers, hébergement</div></div>
+    <div class="stat rv" data-d="160"><div class="n"><span data-count="2">2</span></div><div class="l" data-en="languages, standard & included" data-fr="langues, standard et incluses">langues, standard et incluses</div></div>
+    <div class="stat rv" data-d="240"><div class="n"><span data-count="6">6</span></div><div class="l" data-en="concept sites open today" data-fr="sites concepts à ouvrir aujourd'hui">sites concepts à ouvrir aujourd'hui</div></div>
   </div>
 </div>
 
@@ -774,7 +866,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
     <div class="center rv">
       <span class="kicker" data-en="Proof, honestly" data-fr="Les preuves, honnêtement">Les preuves, honnêtement</span>
       <h2 data-en="Our proof is a website you can open." data-fr="Notre preuve, c'est un site que vous pouvez ouvrir.">Notre preuve, c'est un site que vous pouvez ouvrir.</h2>
-      <p class="sub" data-en="Four complete concepts, live right now, three for schools, one for clinics. Open any of them: every name, logo and stat is a placeholder we replace with yours in 24 hours after brief sign-off, free." data-fr="Quatre concepts complets, en ligne dès maintenant, trois pour les écoles, un pour les cliniques. Ouvrez celui de votre choix : chaque nom, logo et chiffre est un emplacement que nous remplaçons par les vôtres en 24 heures après validation du brief, gratuitement.">Quatre concepts complets, en ligne dès maintenant, trois pour les écoles, un pour les cliniques. Ouvrez celui de votre choix : chaque nom, logo et chiffre est un emplacement que nous remplaçons par les vôtres en 24 heures après validation du brief, gratuitement.</p>
+      <p class="sub" data-en="Six complete concepts, live right now, three for schools, three for clinics. Open any of them: every name, logo and stat is a placeholder we replace with yours in 24 hours after brief sign-off, free." data-fr="Six concepts complets, en ligne dès maintenant, trois pour les écoles, trois pour les cliniques. Ouvrez celui de votre choix : chaque nom, logo et chiffre est un emplacement que nous remplaçons par les vôtres en 24 heures après validation du brief, gratuitement.">Six concepts complets, en ligne dès maintenant, trois pour les écoles, trois pour les cliniques. Ouvrez celui de votre choix : chaque nom, logo et chiffre est un emplacement que nous remplaçons par les vôtres en 24 heures après validation du brief, gratuitement.</p>
     </div>
     <div class="row-label rv"><span class="dot"></span><span data-en="For schools" data-fr="Pour les écoles">Pour les écoles</span></div>
     <div class="w-grid">
@@ -794,7 +886,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
           <span class="tag" data-en="Concept 02 · Complete" data-fr="Concept 02 · Terminé">Concept 02 · Terminé</span>
           <h3 data-en="Nursery & Primary Concept" data-fr="Concept Maternelle & Primaire">Concept Maternelle & Primaire</h3>
           <span class="loc" data-en="Template · ages 2–11" data-fr="Modèle · 2–11 ans">Modèle · 2–11 ans</span>
-          <p data-en="A warm, playful homepage for nursery & primary schools, age-group classrooms, parent quick-hub, and an admissions form that speaks JSON to your backend. Same promise: 24 hours, free." data-fr="Une page d'accueil chaleureuse et joyeuse pour maternelles et primaires, classes par âge, centre rapide parents, et un formulaire d'admission qui parle JSON à votre backend. Même promesse : 24 heures après validation du brief, gratuitement.">Une page d'accueil chaleureuse et joyeuse pour maternelles et primaires, classes par âge, centre rapide parents, et un formulaire d'admission qui parle JSON à votre backend. Même promesse : 24 heures après validation du brief, gratuitement.</p>
+          <p data-en="A warm, playful homepage for nursery & primary schools, age-group classrooms, parent quick-hub, and an admissions form that speaks JSON to your backend. Same promise: a free preview 24 hours after your first message." data-fr="Une page d'accueil chaleureuse et joyeuse pour maternelles et primaires, classes par âge, centre rapide parents, et un formulaire d'admission qui parle JSON à votre backend. Même promesse : 24 heures après validation du brief, gratuitement.">Une page d'accueil chaleureuse et joyeuse pour maternelles et primaires, classes par âge, centre rapide parents, et un formulaire d'admission qui parle JSON à votre backend. Même promesse : 24 heures après validation du brief, gratuitement.</p>
           <a class="btn btn-amber" href="sample-nursery.html" data-en="Open the concept site ↗" data-fr="Ouvrir le site concept ↗">Ouvrir le site concept ↗</a>
         </div>
       </div>
@@ -804,7 +896,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
           <span class="tag" data-en="Concept 03 · Complete" data-fr="Concept 03 · Terminé">Concept 03 · Terminé</span>
           <h3 data-en="Secondary School Concept" data-fr="Concept Lycée (Secondaire)">Concept Lycée (Secondaire)</h3>
           <span class="loc" data-en="Template · grades 6–12" data-fr="Modèle · 6e–12e années">Modèle · 6e–12e années</span>
-          <p data-en="A Cameroon-built homepage for private secondary colleges, GCE Ordinary and Advanced Level programmes, day and boarding, transparent FCFA fees, student-life gallery and admissions by WhatsApp in English and French. Same promise: 24 hours, free." data-fr="Une page d'accueil conçue pour le Cameroun et les collèges secondaires privés, programmes GCE Ordinary et Advanced Level, externat et internat, frais en FCFA transparents, galerie de vie scolaire et inscriptions par WhatsApp en anglais et en français. Même promesse : 24 heures après validation du brief, gratuitement.">Une page d'accueil conçue pour le Cameroun et les collèges secondaires privés, programmes GCE Ordinary et Advanced Level, externat et internat, frais en FCFA transparents, galerie de vie scolaire et inscriptions par WhatsApp en anglais et en français. Même promesse : 24 heures après validation du brief, gratuitement.</p>
+          <p data-en="A Cameroon-built homepage for private secondary colleges, GCE Ordinary and Advanced Level programmes, day and boarding, transparent FCFA fees, student-life gallery and admissions by WhatsApp in English and French. Same promise: a free preview 24 hours after your first message." data-fr="Une page d'accueil conçue pour le Cameroun et les collèges secondaires privés, programmes GCE Ordinary et Advanced Level, externat et internat, frais en FCFA transparents, galerie de vie scolaire et inscriptions par WhatsApp en anglais et en français. Même promesse : 24 heures après validation du brief, gratuitement.">Une page d'accueil conçue pour le Cameroun et les collèges secondaires privés, programmes GCE Ordinary et Advanced Level, externat et internat, frais en FCFA transparents, galerie de vie scolaire et inscriptions par WhatsApp en anglais et en français. Même promesse : 24 heures après validation du brief, gratuitement.</p>
           <a class="btn btn-amber" href="sample-secondary.html" data-en="Open the concept site ↗" data-fr="Ouvrir le site concept ↗">Ouvrir le site concept ↗</a>
         </div>
       </div>
@@ -922,14 +1014,14 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
   <div class="wrap">
     <div class="center rv">
       <span class="kicker" data-en="How it works" data-fr="Comment ça marche">Comment ça marche</span>
-      <h2 data-en="From first message to launch, in one week." data-fr="Du premier message au lancement, en une semaine.">Du premier message au lancement, en une semaine.</h2>
+      <h2 data-en="From first message to launch." data-fr="Du premier message au lancement.">Du premier message au lancement.</h2>
     </div>
     <div class="steps">
       <div class="step rv"><div class="n">1</div><small data-en="Today" data-fr="Aujourd'hui">Aujourd'hui</small><h3 data-en="Message us" data-fr="Envoyez-nous un message">Envoyez-nous un message</h3><p data-en="One WhatsApp message: your school's or clinic's name, your town, your number." data-fr="Un message WhatsApp : le nom de votre école ou de votre clinique, votre ville, votre numéro.">Un message WhatsApp : le nom de votre école ou de votre clinique, votre ville, votre numéro.</p></div>
-      <div class="step rv" data-d="80"><div class="n">2</div><small data-en="Within 24h après validation du brief" data-fr="Sous 24h après validation du brief">Sous 24h après validation du brief</small><h3 data-en="Free preview" data-fr="Aperçu gratuit">Aperçu gratuit</h3><p data-en="We design your real homepage, your logo, your colors, your story, and send it to you. Free." data-fr="Nous concevons votre vraie page d'accueil, votre logo, vos couleurs, votre histoire, et nous vous l'envoyons. Gratuit.">Nous concevons votre vraie page d'accueil, votre logo, vos couleurs, votre histoire, et nous vous l'envoyons. Gratuit.</p></div>
+      <div class="step rv" data-d="80"><div class="n">2</div><small data-en="Within 24h of your first message" data-fr="Sous 24h après validation du brief">Sous 24h après validation du brief</small><h3 data-en="Free preview" data-fr="Aperçu gratuit">Aperçu gratuit</h3><p data-en="We design your real homepage, your logo, your colors, your story, and send it to you. Free." data-fr="Nous concevons votre vraie page d'accueil, votre logo, vos couleurs, votre histoire, et nous vous l'envoyons. Gratuit.">Nous concevons votre vraie page d'accueil, votre logo, vos couleurs, votre histoire, et nous vous l'envoyons. Gratuit.</p></div>
       <div class="step rv" data-d="160"><div class="n">3</div><small>48h</small><h3 data-en="Your words" data-fr="Vos remarques">Vos remarques</h3><p data-en="You review it with your team, we refine it. You don't pay until you approve." data-fr="Vous l'examinez avec votre équipe, nous l'ajustons. Vous ne payez rien avant votre validation.">Vous l'examinez avec votre équipe, nous l'ajustons. Vous ne payez rien avant votre validation.</p></div>
-      <div class="step rv" data-d="240"><div class="n">4</div><small data-en="3–5 days after the deposit" data-fr="3–5 jours après l'acompte">3–5 jours après l'acompte</small><h3 data-en="Build & launch" data-fr="Construction & lancement">Construction & lancement</h3><p data-en="Domain, secure hosting, both languages, final checks. Live before the end of the week." data-fr="Domaine, hébergement sécurisé, deux langues, vérifications finales. En ligne avant la fin de la semaine.">Domaine, hébergement sécurisé, deux langues, vérifications finales. En ligne avant la fin de la semaine.</p></div>
-      <div class="step rv" data-d="320"><div class="n">5</div><small data-en="30 days" data-fr="30 jours">30 jours</small><h3 data-en="Support" data-fr="Support">Support</h3><p data-en="staff training, " data-fr="la formation du personnel, ">la formation du personnel, </p></div>
+      <div class="step rv" data-d="240"><div class="n">4</div><small data-en="as soon as you approve" data-fr="dès votre validation">dès votre validation</small><h3 data-en="Build & launch" data-fr="Construction & lancement">Construction & lancement</h3><p data-en="Domain, secure hosting, both languages, final checks. We launch as soon as you approve." data-fr="Domaine, hébergement sécurisé, deux langues, vérifications finales. On met en ligne dès votre validation.">Domaine, hébergement sécurisé, deux langues, vérifications finales. On met en ligne dès votre validation.</p></div>
+      <div class="step rv" data-d="320"><div class="n">5</div><small data-en="30 days" data-fr="30 jours">30 jours</small><h3 data-en="Support" data-fr="Support">Support</h3><p data-en="30 minutes of staff training, on your premises or on WhatsApp. The site is yours: domain, files, hosting." data-fr="30 minutes de formation de votre personnel, au cabinet ou sur WhatsApp. Le site est à vous : domaine, fichiers, hébergement.">30 minutes de formation de votre personnel, au cabinet ou sur WhatsApp. Le site est à vous : domaine, fichiers, hébergement.</p></div>
     </div>
   </div>
 </section>
@@ -977,7 +1069,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
           <li data-en="WhatsApp button on every screen" data-fr="Bouton WhatsApp sur chaque écran">Bouton WhatsApp sur chaque écran</li>
           <li data-en="Domain + secure hosting setup" data-fr="Domaine + installation de l'hébergement sécurisé">Domaine + installation de l'hébergement sécurisé</li>
           <li data-en="Staff training (30 min) " data-fr="Formation du personnel (30 min) ">Formation du personnel (30 min) </li>
-          <li data-en="Live in 3–5 days after the deposit" data-fr="En ligne en 3–5 jours après l'acompte">En ligne en 3–5 jours après l'acompte</li>
+          <li data-en="Live as soon as you approve" data-fr="En ligne dès votre validation">En ligne dès votre validation</li>
           <li data-en="Optional monthly care plan after launch, quoted with your scope" data-fr="Forfait mensuel optionnel après lancement, chiffré avec votre projet">Forfait mensuel optionnel après lancement, chiffré avec votre projet</li>
         </ul>
         <a href="#audit" class="btn btn-amber" data-en="Ask for a quote →" data-fr="Demander un devis →">Demander un devis →</a>
@@ -993,7 +1085,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
           <li data-en="Admissions or booking section: fees, requirements, calendar" data-fr="Section admissions ou rendez-vous : frais, conditions, calendrier">Section admissions ou rendez-vous : frais, conditions, calendrier</li>
           <li data-en="WhatsApp booking wired end-to-end" data-fr="Prise de rendez-vous WhatsApp branchée de bout en bout">Prise de rendez-vous WhatsApp branchée de bout en bout</li>
           <li data-en="Priority support + SEO fine-tuning" data-fr="Support prioritaire + affinage SEO">Support prioritaire + affinage SEO</li>
-          <li data-en="Live in 5–7 days after the deposit" data-fr="En ligne en 5–7 jours après l'acompte">En ligne en 5–7 jours après l'acompte</li>
+          <li data-en="Live as soon as you approve" data-fr="En ligne dès votre validation">En ligne dès votre validation</li>
         </ul>
         <a href="#audit" class="btn btn-amber" data-en="Ask for the growth quote →" data-fr="Demander le devis croissance →">Demander le devis croissance →</a>
       </div>
@@ -1002,6 +1094,38 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
 </section>
 
 <!-- FAQ -->
+<section class="refus dark" id="refus">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="kicker" data-en="What we will not do" data-fr="Ce qu'on ne fera pas">Ce qu'on ne fera pas</span>
+      <h2 data-en="Four things we will not sell you." data-fr="Quatre choses qu'on ne vous vendra pas.">Quatre choses qu'on ne vous vendra pas.</h2>
+      <p class="sub" data-en="Every school and clinic site in Cameroon is sold with the same three promises. Here is what we refuse to add to the pile." data-fr="Tous les sites d'école et de clinique au Cameroun se vendent avec les trois mêmes promesses. Voici ce qu'on refuse d'ajouter à la liste.">Tous les sites d'école et de clinique au Cameroun se vendent avec les trois mêmes promesses. Voici ce qu'on refuse d'ajouter à la liste.</p>
+    </div>
+    <div class="refus-grid">
+      <div class="refus-item rv">
+        <span class="ri">01</span>
+        <h3 data-en="A price printed on this page" data-fr="Un prix affiché sur cette page">Un prix affiché sur cette page</h3>
+        <p data-en="The work a school or a clinic needs depends on the pages, the languages, the photos you already have. A figure printed here would be invented, or wrong by the second question. We price it after the brief, in writing." data-fr="Le travail dont une école ou une clinique a besoin dépend des pages, des langues et des photos dont vous disposez déjà. Un chiffre affiché ici serait inventé, ou faux dès la deuxième question. On le chiffre après le brief, par écrit.">Le travail dont une école ou une clinique a besoin dépend des pages, des langues et des photos dont vous disposez déjà. Un chiffre affiché ici serait inventé, ou faux dès la deuxième question. On le chiffre après le brief, par écrit.</p>
+      </div>
+      <div class="refus-item rv" data-d="80">
+        <span class="ri">02</span>
+        <h3 data-en="A deadline without its condition" data-fr="Un délai sans sa condition">Un délai sans sa condition</h3>
+        <p data-en="“Live in 24 hours” means nothing without “once the brief is approved”. Every time we give a date, its condition sits in the same sentence, never in a footnote." data-fr="« En ligne en 24 heures » ne veut rien dire sans « une fois le brief validé ». Chaque fois qu'on donne un délai, sa condition est dans la même phrase — jamais en bas de page.">« En ligne en 24 heures » ne veut rien dire sans « une fois le brief validé ». Chaque fois qu'on donne un délai, sa condition est dans la même phrase — jamais en bas de page.</p>
+      </div>
+      <div class="refus-item rv" data-d="160">
+        <span class="ri">03</span>
+        <h3 data-en="Reviews nobody wrote" data-fr="Des avis que personne n'a écrits">Des avis que personne n'a écrits</h3>
+        <p data-en="An invented testimonial survives exactly as long as one phone call. Our proof is a site you can open right now, in this page, and walk through yourself." data-fr="Un témoignage inventé ne survit pas à un coup de fil. Notre preuve, c'est un site que vous pouvez ouvrir maintenant, depuis cette page, et parcourir vous-même.">Un témoignage inventé ne survit pas à un coup de fil. Notre preuve, c'est un site que vous pouvez ouvrir maintenant, depuis cette page, et parcourir vous-même.</p>
+      </div>
+      <div class="refus-item rv" data-d="240">
+        <span class="ri">04</span>
+        <h3 data-en="A site that stays with us" data-fr="Un site qui reste chez nous">Un site qui reste chez nous</h3>
+        <p data-en="Domain, files and hosting are in your name before the site goes live. If one day you want to leave, leaving is possible, and that is the only honest way to sell a website." data-fr="Le domaine, les fichiers et l'hébergement sont à votre nom avant la mise en ligne. Si un jour vous voulez partir, partir est possible — c'est la seule façon honnête de vendre un site.">Le domaine, les fichiers et l'hébergement sont à votre nom avant la mise en ligne. Si un jour vous voulez partir, partir est possible — c'est la seule façon honnête de vendre un site.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="faq" id="faq">
   <div class="wrap">
     <div class="center rv">
@@ -1009,7 +1133,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
       <h2 data-en="Asked before, answered honestly" data-fr="Posé avant, répondu honnêtement">Posé avant, répondu honnêtement</h2>
     </div>
     <div class="qa rv">
-      <details><summary data-en="How long does it really take?" data-fr="Combien de temps ça prend vraiment ?">Combien de temps ça prend vraiment ?</summary><div class="ans" data-en="3–5 days after the deposit from your approval to live for a starter site. And the preview is on your phone within 24 hours of brief sign-off of your first message." data-fr="3 à 5 jours après l'acompte entre votre validation et la mise en ligne pour un site de départ. Et l'aperçu est dans votre téléphone sous 24 heures après votre premier message.">3 à 5 jours après l'acompte entre votre validation et la mise en ligne pour un site de départ. Et l'aperçu est dans votre téléphone sous 24 heures après votre premier message.</div></details>
+      <details><summary data-en="How long does it really take?" data-fr="Combien de temps ça prend vraiment ?">Combien de temps ça prend vraiment ?</summary><div class="ans" data-en="We do not give a date before we know the scope. The preview reaches your phone within 24 hours of your first message; going live follows your approval." data-fr="Nous ne donnons pas de date avant de connaître le périmètre. L'aperçu est dans votre téléphone sous 24 heures après votre premier message ; la mise en ligne suit vos validations.">Nous ne donnons pas de date avant de connaître le périmètre. L'aperçu est dans votre téléphone sous 24 heures après votre premier message ; la mise en ligne suit vos validations.</div></details>
       <details><summary data-en="My staff aren't technical. Can they update the site?" data-fr="Mon personnel n'est pas technique. Peut-il mettre à jour le site ?">Mon personnel n'est pas technique. Peut-il mettre à jour le site ?</summary><div class="ans" data-en="Yes, that's the point. We design for non-technical staff, run a 30-minute training, and stay reachable on WhatsApp. News, photos, events: your team handles it." data-fr="Oui, c'est le but. Nous concevons pour du personnel non technique, faisons une formation de 30 minutes, et restons joignables sur WhatsApp. Actualités, photos, événements : votre équipe s'en charge.">Oui, c'est le but. Nous concevons pour du personnel non technique, faisons une formation de 30 minutes, et restons joignables sur WhatsApp. Actualités, photos, événements : votre équipe s'en charge.</div></details>
       <details><summary data-en="Is bilingual (EN|FR) really included in the price?" data-fr="Le bilingue (EN|FR) est-il vraiment inclus dans le prix ?">Le bilingue (EN|FR) est-il vraiment inclus dans le prix ?</summary><div class="ans" data-en="Yes, it's the standard on every site we build, not an add-on. A school or clinic in Cameroon serves both languages; your website should too." data-fr="Oui, c'est le standard sur chaque site que nous construisons, pas une option. Une école ou une clinique au Cameroun sert les deux langues ; votre site aussi.">Oui, c'est le standard sur chaque site que nous construisons, pas une option. Une école ou une clinique au Cameroun sert les deux langues ; votre site aussi.</div></details>
       <details><summary data-en="Do you really work with clinics, or is that an add-on?" data-fr="Travaillez-vous vraiment avec les cliniques, ou c'est un simple ajout ?">Travaillez-vous vraiment avec les cliniques, ou c'est un simple ajout ?</summary><div class="ans" data-en="Clinics are one of our two core niches, schools and clinics. The clinic concept on this page is live: transparent FCFA pricing, WhatsApp booking, EN|FR, built patient-first." data-fr="Les cliniques sont l'une de nos deux niches principales, écoles et cliniques. Le concept de clinique de cette page est en ligne : tarifs FCFA transparents, prise de rendez-vous WhatsApp, EN|FR, pensé patient d'abord.">Les cliniques sont l'une de nos deux niches principales, écoles et cliniques. Le concept de clinique de cette page est en ligne : tarifs FCFA transparents, prise de rendez-vous WhatsApp, EN|FR, pensé patient d'abord.</div></details>
@@ -1035,7 +1159,7 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
       <p class="sub" data-en="Send one message. Within 24 hours after brief sign-off, your homepage concept is on your phone, in both languages. Free, and nothing is owed until you approve it." data-fr="Envoyez un message. Sous 24 heures après validation du brief, le concept de votre page d'accueil est dans votre téléphone, dans les deux langues. Gratuit, et rien n'est dû avant votre validation.">Envoyez un message. Sous 24 heures après validation du brief, le concept de votre page d'accueil est dans votre téléphone, dans les deux langues. Gratuit, et rien n'est dû avant votre validation.</p>
       <div class="ap"><span class="b">1</span><p data-en="<b>Free.</b> No payment for the preview, and none until you approve it." data-fr="<b>Gratuit.</b> Aucun paiement pour l'aperçu, et aucun avant votre validation."><b>Gratuit.</b> Aucun paiement pour l'aperçu, et aucun avant votre validation.</p></div>
       <div class="ap"><span class="b">2</span><p data-en="<b>Yours.</b> Your logo, your colors, your story, not a generic template." data-fr="<b>Vôtre.</b> Votre logo, vos couleurs, votre histoire, pas un template générique."><b>Vôtre.</b> Votre logo, vos couleurs, votre histoire, pas un template générique.</p></div>
-      <div class="ap"><span class="b">3</span><p data-en="<b>Fast.</b> Preview in 24h après validation du brief. Full site live in 3–5 days after the deposit." data-fr="<b>Rapide.</b> Aperçu en 24h après validation du brief. Site complet en ligne en 3–5 jours après l'acompte."><b>Rapide.</b> Aperçu en 24h après validation du brief. Site complet en ligne en 3–5 jours après l'acompte.</p></div>
+      <div class="ap"><span class="b">3</span><p data-en="<b>Fast.</b> Preview within 24h of your first message. Full site live as soon as you approve." data-fr="<b>Rapide.</b> Aperçu sous 24 h après votre premier message. Site complet en ligne dès votre validation."><b>Rapide.</b> Aperçu sous 24 h après votre premier message. Site complet en ligne dès votre validation.</p></div>
       <div class="direct">
         <h3 data-en="Prefer to talk now?" data-fr="Vous préférez parler maintenant ?">Vous préférez parler maintenant ?</h3>
         <p data-en="WhatsApp / call:" data-fr="WhatsApp / appel :">WhatsApp / appel :</p>
@@ -1075,9 +1199,10 @@ header#hdr a.btn-amber,header#hdr a.btn-amber span{color:#0F172A}
           <svg aria-hidden="true" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1E293B"/><circle cx="32" cy="30" r="17" fill="none" stroke="#F59E0B" stroke-width="2.4"/><path d="M32 16v28M32 30L18 44M32 30l14 14" stroke="#FCD34D" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="16" r="3" fill="#F59E0B"/><circle cx="18" cy="44" r="3" fill="#F59E0B"/><circle cx="46" cy="44" r="3" fill="#F59E0B"/></svg>
           <span class="t">AMK</span>
         </div>
-        <p style="font-size:14.5px" data-en="AMK · Web Development & Digital Solutions" data-fr="AMK · Développement Web & Solutions Digitales">AMK · Développement Web & Solutions Digitales</p>
+        <p style="font-size:14.5px" data-en="AMK · Websites for schools and clinics" data-fr="AMK · Sites web pour écoles et cliniques">AMK · Sites web pour écoles et cliniques</p>
         <p style="margin-top:8px;font-size:14px" data-en="Modern, bilingual websites for schools and clinics that are ready to be found." data-fr="Des sites modernes et bilingues pour les écoles et les cliniques prêtes à être trouvées.">Des sites modernes et bilingues pour les écoles et les cliniques prêtes à être trouvées.</p>
-      </div>
+      <div class="amk-soc"><span class="amk-soc-lbl" data-en="Follow AMK" data-fr="Suivre AMK">Suivre AMK</span><div class="amk-soc-l"><a class="amk-soc-a" href="https://www.facebook.com/profile.php?id=61595803408384" target="_blank" rel="noopener" title="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg><span class="amk-soc-h" data-en="AMK on Facebook" data-fr="AMK sur Facebook">AMK sur Facebook</span></a><a class="amk-soc-a" href="https://www.instagram.com/amkweb.cm" target="_blank" rel="noopener" title="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg><span class="amk-soc-h" data-en="AMK on Instagram" data-fr="AMK sur Instagram">AMK sur Instagram</span></a><a class="amk-soc-a" href="https://www.tiktok.com/@amkweb" target="_blank" rel="noopener" title="TikTok"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg><span class="amk-soc-h" data-en="AMK on TikTok" data-fr="AMK sur TikTok">AMK sur TikTok</span></a></div><a class="amk-psrc" href="https://www.google.com/preferences/source?q=amk-cm.vercel.app" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.6l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.4l-5.8 3.06 1.11-6.46-4.7-4.58 6.49-.94z"/></svg><span data-en="Add AMK as a preferred source on Google" data-fr="Ajouter AMK comme source préférée sur Google">Ajouter AMK comme source préférée sur Google</span></a></div>
+        </div>
       <div>
         <h3 data-en="Explore" data-fr="Explorer">Explorer</h3>
         <a href="#work" data-en="Work" data-fr="Réalisations">Réalisations</a>
@@ -1161,28 +1286,63 @@ function wireWaLinks(){
   if (bar) bar.href = "https://wa.me/" + WA_NUM + "?text=" + encodeURIComponent(waMessage(fr, "bar"));
 }
 document.addEventListener("DOMContentLoaded", wireWaLinks);
+
+// 23/10 — la barre mobile suit le hero (voir la règle CSS) : elle apparaît quand les boutons du hero
+// ont quitté l'écran, jamais avant. Pas d'observateur, ou pas de hero sur la page : la barre reste
+// visible, c'est-à-dire le comportement d'avant. Un observateur qui lève ne cache rien.
+(function(){
+  var bar = document.querySelector(".mbar"), hero = document.querySelector(".hero");
+  if (!bar || !hero || !("IntersectionObserver" in window)) return;
+  try{
+    new IntersectionObserver(function(es){
+      var on = !es[0].isIntersecting;
+      bar.classList.toggle("on", on);
+      document.body.classList.toggle("mbar-on", on);
+    }, {threshold: 0}).observe(hero);
+  }catch(e){ bar.classList.add("on"); }
+})();
 // header + progress
 window.addEventListener("scroll", function(){
   var h = document.getElementById("hdr");
   h.classList.toggle("scrolled", window.scrollY > 40);
   var max = document.documentElement.scrollHeight - window.innerHeight;
-  document.getElementById("progress").style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + "%";
+  var pr = document.getElementById("progress");
+  if (pr) pr.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + "%";
 }, {passive:true});
-// reveal
-var io = new IntersectionObserver(function(entries){
-  entries.forEach(function(e){
-    if (e.isIntersecting){
-      e.target.classList.add("in");
-      e.target.querySelectorAll("[data-count]").forEach(runCount);
-      io.unobserve(e.target);
-    }
+// reveal — ⚠ aucune animation ne doit pouvoir CACHER le contenu (constat du 23/10 : page blanche)
+// Trois filets, du plus fin au plus gros :
+//   1. IntersectionObserver quand il existe (animation d'entrée) ;
+//   2. si l'observateur lève, ou n'existe pas, on affiche tout de suite ;
+//   3. dans tous les cas, un minuteur force l'affichage après 1,2 s.
+// Un visiteur avec un JS cassé, un bloqueur ou un navigateur exotique voit la page, pas un trou.
+function revealAll(){
+  document.querySelectorAll(".rv:not(.in)").forEach(function(el){
+    el.classList.add("in");
+    el.querySelectorAll("[data-count]").forEach(function(c){ c.textContent = c.getAttribute("data-count"); });
   });
-},{threshold:.12});
-document.querySelectorAll(".rv").forEach(function(el){
-  if (REDUCED_MOTION){ el.classList.add("in"); el.querySelectorAll("[data-count]").forEach(function(c){ c.textContent = c.getAttribute("data-count"); }); return; }
-  el.style.transitionDelay = (el.getAttribute("data-d") || 0) + "ms";
-  io.observe(el);
-});
+}
+function wireReveal(){
+  var els = document.querySelectorAll(".rv");
+  if (REDUCED_MOTION || !("IntersectionObserver" in window)){ revealAll(); return; }
+  try {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){
+          e.target.classList.add("in");
+          e.target.querySelectorAll("[data-count]").forEach(runCount);
+          io.unobserve(e.target);
+        }
+      });
+    },{threshold:.12});
+    els.forEach(function(el){
+      el.style.transitionDelay = (el.getAttribute("data-d") || 0) + "ms";
+      io.observe(el);
+    });
+  } catch(err){ revealAll(); return; }
+  setTimeout(revealAll, 1200);
+}
+if (document.readyState === "loading"){ document.addEventListener("DOMContentLoaded", wireReveal); }
+else { wireReveal(); }
 // counters
 function runCount(el){
   if (el.dataset.done) return;
@@ -1334,7 +1494,7 @@ function sendAudit(e){
 
     { chip:{en:"How long does it take?", fr:"Combien de temps ca prend ?"},
       k:["delai","combien de temps","duree","jours","long","vite","rapide","live","en ligne","mise en ligne","quand est-ce","prend combien"],
-      en:"Once you approve the preview, the site is live in 3 to 5 days after the deposit.",
+      en:"Once you approve the preview, the site goes live as soon as the deposit clears.",
       fr:"Apres votre validation, le site est en ligne en 3 a 5 jours." },
 
     { chip:{en:"What about after launch?", fr:"Et apres le lancement ?"},
@@ -1351,7 +1511,7 @@ function sendAudit(e){
       fr:"AMK travaille avec deux types d'etablissements : les ecoles et les cliniques. Un concept de clinique est en ligne sur cette page, vous pouvez l'ouvrir maintenant." },
 
     { k:["inclus","comprend","included","include","contient","offre","package","pack","formule","sections"],
-      en:"A starter site includes a one-page bilingual homepage of up to six sections, a WhatsApp button on every screen, domain and secure hosting set up, 30 minutes of staff training, and launch in 3 to 5 days after the deposit.",
+      en:"A starter site includes a one-page bilingual homepage of up to six sections, a WhatsApp button on every screen, domain and secure hosting set up, 30 minutes of staff training, and launch as soon as you approve.",
       fr:"Un site de depart comprend une page d'accueil bilingue jusqu'a six sections, un bouton WhatsApp sur chaque ecran, la configuration du domaine et de l'hebergement, 30 minutes de formation pour votre personnel, et la mise en ligne en 3 a 5 jours." },
 
     { k:["personnel","staff","modifier","update","mettre a jour","changer","equipe","technique","photos","actualites","news"],

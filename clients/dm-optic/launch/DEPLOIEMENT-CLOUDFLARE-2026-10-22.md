@@ -347,3 +347,48 @@ C'est la seule différence entre les deux méthodes, et elle vaut les 4 minutes 
   chacun. Une seule entrée à garder ensuite dans Search Console : celle de l'apex.
 - **`wrangler` publie en une commande et dit ce qui ne va pas**, là où l'écran d'upload tournait sans
   rien dire.
+
+---
+
+## 6 · 23/10/2026 — « j'ai changé la branche, rien ne s'est passé »
+
+**Ce qui s'est réellement passé, minute par minute** (relevé sur les *check runs* GitHub, app
+`cloudflare-workers-and-pages`, projet `dmoptiquesarl`, compte `fa5fe266d7198ea5dc98567329d932fd`) :
+
+| Heure UTC | Commit | Résultat |
+|---|---|---|
+| 04:34–04:36 | `b68239e`, `489340f`, `479b508` | échec (avant le changement de branche : rien à publier) |
+| **04:48:25** | **`e30dadb`** | **succès — Version ID `79223b1f-1d52-4fba-9b36-07899017b26b`** |
+| 04:50:01 | `69e196b` | échec |
+| 04:53:19 | `788199b` | échec |
+
+**Changer la branche ne déclenche aucun build** : Cloudflare publie à chaque **envoi** sur la branche
+de production. Le premier envoi après le réglage a donc été le vrai déclencheur — et il a réussi. Le
+site en ligne porte bien les correctifs du 23/10 : `https://dmoptiquesarl.com/llms.txt` contient
+désormais la section `## English pages` (47 URL), qui date du même commit que le menu mobile, les
+icônes et les cartes JPEG.
+
+**Les builds suivants, eux, échouent en une seconde**, sans version produite et sans annotation : le
+rapport GitHub ne contient que le *Build ID*, pas la sortie du build. Deux symptômes, une cause
+probable : la commande de déploiement est `npx wrangler deploy`, et `npx` demande confirmation avant
+d'installer un paquet absent — dans un runner non interactif, il s'arrête aussitôt. D'où l'échec
+instantané.
+
+**Correctif (un champ, 30 secondes)** : Workers & Pages → `dmoptiquesarl` → **Settings → Build →
+Deploy command** :
+
+```
+npx --yes wrangler@4.152.0 deploy
+```
+
+Puis **New deployment** (ou *Retry* sur le build rouge). Si l'échec persiste, la ligne rouge du build
+dit laquelle des causes restantes s'applique : jeton absent, nom de Worker différent, dossier
+introuvable, quota de builds. **Cette ligne, je ne peux pas la lire d'ici** : le tableau de bord
+Cloudflare demande une session, et le sandbox n'a ni jeton ni accès réseau à `api.cloudflare.com`.
+
+**Et le correctif durable**, celui qui rend la question sans objet : le workflow
+`.github/workflows/deploy-dmoptic.yml` (versionné dans `tools/deploy/workflow-deploy-dmoptic.yml`,
+parce qu'un GitHub App sans permission `workflows` ne peut pas le pousser). Il vise `arena/**`, lance
+la porte de livraison **avant** la publication et épingle `wranglerVersion: 4.152.0`. Il demande deux
+secrets (`CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID` = `fa5fe266d7198ea5dc98567329d932fd`) et un
+copier-coller dans `main`.

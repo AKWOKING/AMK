@@ -8,7 +8,8 @@ verification file (google08d73756faeade69.html, it MUST stay deployed or the
 GSC property loses verification), the brand files (favicon/robots/sitemap) and
 ONLY the images the pages actually reference (checked 08/10: every local
 src/href/og:image resolves). The concept pages embed their photos as base64,
-so the big concept JPGs are intentionally excluded. NOT shipped: builders,
+so the big concept JPGs are intentionally excluded. llms.txt (23/10) is the AI-discovery
+file: it is served at the root, so it ships with the pages. NOT shipped: builders,
 research notes, DEPLOY.md, SEO-REVIEW, mockup-hero.html (unlinked) and
 index.html.backup-pre-king24. Before 08/10 this list held 6 pages and would have
 dropped four live pages plus the GSC file: never reuse the old list.
@@ -32,8 +33,13 @@ PAGES = [
     "mitoc.html",
     "creation-site-web-ecole-cameroun.html",
     "creation-site-web-clinique-cameroun.html",
+    # miroir anglais du 23/10 (outil : tools/site/build_en_pages.py) — servi sous /en/
+    "en/index.html",
+    "en/clinic-bonaberi.html",
+    "en/mitoc.html",
 ]
-ROOT_FILES = ["favicon.svg", "robots.txt", "sitemap.xml", "google08d73756faeade69.html"]
+ROOT_FILES = ["favicon.svg", "robots.txt", "sitemap.xml", "llms.txt",
+             "google08d73756faeade69.html"]
 THUMBS = [
     # WebP (08/10 : 2,28 Mo de PNG -> 0,47 Mo) ; les deux PNG restants servent d'og:image aux pages en noindex
     "nova.webp", "littleoaks.webp", "crestwood.webp", "clinic.webp",

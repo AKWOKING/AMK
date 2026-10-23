@@ -58,3 +58,8 @@ CLOUDFLARE_*
 .claude/
 .wrangler/
 
+
+# Le fichier de workflow ne peut pas être poussé par l'outil (GitHub App sans permission `workflows`).
+# Il vit dans tools/deploy/workflow-deploy-dmoptic.yml et se colle à la main dans main.
+# Cette ligne empêche un `git add -A` de le remettre dans un commit — ce qui ferait échouer TOUS les pushs.
+.github/workflows/deploy-dmoptic.yml

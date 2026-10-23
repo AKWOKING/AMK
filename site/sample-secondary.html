@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>document.documentElement.className+=" js";</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cameroon Secondary School Website Concept · Crestwood College (Template) | AMK</title>
+<title>Secondary School Website Concept · Crestwood College | AMK</title>
 <meta name="description" content="A bilingual private secondary school concept by AMK for Cameroon colleges: GCE Ordinary and Advanced Level programmes, boarding, transparent FCFA fees, admissions by WhatsApp in English and French.">
 <link rel="canonical" href="https://amk-cm.vercel.app/sample-secondary.html">
 <meta property="og:title" content="Crestwood College · Secondary School Website Concept">
@@ -274,8 +275,9 @@ footer{background:var(--navy-b);color:#A9BACC;padding:48px 0 24px;font-size:14px
 .cell .more:active,.concept-chip:active,.logo:active{transform:scale(.97)}
 .concept-chip,.logo{transition:transform var(--dur-press) var(--ease-out)}
 .drawer nav a:active{transform:scale(.99)}
-.rv{opacity:0;transform:translateY(22px);transition:opacity var(--dur-reveal) var(--ease-out),transform var(--dur-reveal) var(--ease-out)}
+html.js .rv:not(.in){opacity:0;transform:translateY(22px);transition:opacity var(--dur-reveal) var(--ease-out),transform var(--dur-reveal) var(--ease-out)}
 .rv.in{opacity:1;transform:none}
+html.js .rv.in{opacity:1;transform:none}
 @media (hover:hover) and (pointer:fine){
   .btn-navy:hover,.btn-gold:hover,.btn-cream:hover{transform:translateY(-2px)}
   .cell:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
@@ -335,6 +337,7 @@ footer{background:var(--navy-b);color:#A9BACC;padding:48px 0 24px;font-size:14px
   .rv{opacity:1}
   .drawer nav a{opacity:1;transform:none;transition:none!important}
 }
+@media (scripting:none){.rv{opacity:1!important;transform:none!important}}
 </style>
 </head>
 <body>
@@ -717,7 +720,7 @@ footer{background:var(--navy-b);color:#A9BACC;padding:48px 0 24px;font-size:14px
 <footer>
   <div class="wrap">
     <div class="amk-bar">
-      <span><b data-en="This website is a concept by AMK" data-fr="Ce site est un concept d'AMK">This website is a concept by AMK</b> · Web Development &amp; Digital Solutions<small data-en="Bilingual (EN|FR), mobile-fast college template with GCE programmes, transparent FCFA fees, boarding and WhatsApp admissions. Replace the name, crest, photos, fees and results with your college's own, and it is yours in 3 to 5 days after the deposit." data-fr="Modèle de collège bilingue (EN|FR), rapide sur mobile, avec programmes GCE, frais FCFA transparents, internat et inscriptions WhatsApp. Remplacez nom, écusson, photos, frais et résultats par ceux de votre collège, et il est à vous en 3 à 5 jours après l'acompte.">Bilingual (EN|FR), mobile-fast college template with GCE programmes, transparent FCFA fees, boarding and WhatsApp admissions. Replace the name, crest, photos, fees and results with your college's own, and it is yours in 3 to 5 days after the deposit.</small></span>
+      <span><b data-en="This website is a concept by AMK" data-fr="Ce site est un concept d'AMK">This website is a concept by AMK</b> · Web Development &amp; Digital Solutions<small data-en="Bilingual (EN|FR), mobile-fast college template with GCE programmes, transparent FCFA fees, boarding and WhatsApp admissions. Replace the name, crest, photos, fees and results with your college's own, and it is yours." data-fr="Modèle de collège bilingue (EN|FR), rapide sur mobile, avec programmes GCE, frais FCFA transparents, internat et inscriptions WhatsApp. Remplacez nom, écusson, photos, frais et résultats par ceux de votre collège, et il est à vous.">Bilingual (EN|FR), mobile-fast college template with GCE programmes, transparent FCFA fees, boarding and WhatsApp admissions. Replace the name, crest, photos, fees and results with your college's own, and it is yours.</small></span>
       <a class="btn btn-cream" style="padding:12px 22px;font-size:14px" href="index.html" data-en="Back to AMK website" data-fr="Retour au site d'AMK">Back to AMK website</a>
     </div>
     <div class="f-grid">
@@ -744,7 +747,7 @@ footer{background:var(--navy-b);color:#A9BACC;padding:48px 0 24px;font-size:14px
     </div>
     <div class="f-bottom">
       <span data-en="© 2026 Crestwood College (concept)" data-fr="© 2026 Crestwood College (concept)">© 2026 Crestwood College (concept)</span>
-      <span>Concept by AMK · Web Development &amp; Digital Solutions</span>
+      <span>Concept by AMK · Websites for schools and clinics</span>
     </div>
   </div>
 </footer>
@@ -772,8 +775,16 @@ function toggleDrawer(open){
   b.setAttribute("aria-expanded", String(open));
   document.body.style.overflow = open ? "hidden" : "";
 }
-var io = new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } }); }, {threshold:.12});
-document.querySelectorAll(".rv").forEach(function(el){ io.observe(el); });
+function revealAll(){ document.querySelectorAll(".rv").forEach(function(el){ el.classList.add("in"); }); }
+function wireReveal(){
+  if(!("IntersectionObserver" in window)){ revealAll(); return; }
+  try{
+    var io = new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } }); }, {threshold:.12});
+    document.querySelectorAll(".rv").forEach(function(el){ io.observe(el); });
+  }catch(e){ revealAll(); }
+}
+if(document.readyState === "loading"){ document.addEventListener("DOMContentLoaded", wireReveal); } else { wireReveal(); }
+setTimeout(revealAll, 1200);
 var counted = false;
 var REDUCED_MOTION = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 function setStatsFinal(){ document.querySelectorAll(".stat-num[data-count]").forEach(function(el){ el.innerHTML = el.getAttribute("data-count") + (el.getAttribute("data-suffix") || ""); }); }

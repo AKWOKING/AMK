@@ -90,9 +90,10 @@ The rule names abstract folders; these are where the lessons actually live. Load
 | **SEO / site public (AMK ou client)** | `content/strategy/SEO-CHECKLIST-CLIENT-SITES-2026-10.md` (**la liste dans l'ordre + ce que Google dit de ne PAS faire**) · `site/SEO-REVIEW-2026-10-08.md` §8 · `tools/seo/bake_default_lang.py` (français/anglais par défaut dans le HTML) · `node tools/qa/test_amkcm_lang.mjs` · `content/strategy/RULE-CREDENTIAL-CLAIMS.md` (affirmations) |
 | **Photographie / images livrées** | `research/PHOTO-LABO-PIXEL-8A-2026-09-24.md` (ce que le Pixel 8A sait faire, la séance de 15 min, la lumière d'un laboratoire, la fiche à emporter FR, la vérification de 60 s) · `AMK-DESIGN-SKILLS.md` §25 (une photo = un sens) + §32 · `tools/qa/audit_images.py` (**contrôle**) |
 | **Prix / abonnement / récurrence** | `sales/PRIX-ET-RECURRENCE-2026-09-24.md` (**ce qui est tranché, et les 16 questions ouvertes — à lire AVANT toute conversation d'argent**) · `sales/REVUE-CONTRATS-GRILLE-2026-09-23.md` · `sales/ORDRE-DES-OFFRES-2026-09-23.md` |
-| **Delivery / handoff** | `AMK-DESIGN-SKILLS.md` §13 (pre-flight) + §18.4 (verification ladder) · `hosting/previews/README.md` (deploy gate) · `site/DEPLOY.md` · `sales/AMK-Playbook-Addendum-Outcomes-2026-09-15.md` (handoff video, care plan) · **brag de livraison en brouillon d'office (§1f②, `tools/brag/README.md`)** |
+| **Delivery / handoff** | **`tools/qa/audit_delivery.py`** (+ `test_audit_delivery.py`, leçons `tools/qa/AUDIT-LESSONS-2026-10-23.md`) — la porte qui mesure ce qui n'est pas dans le document (nav mobile, cache, icônes, URL, llms.txt, partage, schéma, en-têtes) · `AMK-DESIGN-SKILLS.md` §13 (pre-flight) + §18.4 (verification ladder) · `hosting/previews/README.md` (deploy gate) · `site/DEPLOY.md` · `sales/AMK-Playbook-Addendum-Outcomes-2026-09-15.md` (handoff video, care plan) · **brag de livraison en brouillon d'office (§1f②, `tools/brag/README.md`)** |
 | **Retention / upsell / referrals** | `sales/AMK-Sales-Playbook-v2.md` (A5 referral, F6, Part J reinforce-the-decision) · `sales/AMK-Playbook-Addendum-Outcomes-2026-09-15.md` · `sales/AMK-Playbook-Addendum-4-Marketing-Systems-2026-09-15.md` (monthly report, GBP layer) |
-| **Weekly research** | The field being studied → log the output back into that field's lessons: sales/marketing → `sales/research/<YYYY>-W<WW>-techniques.md`; video lessons → `research/YouTube-Lessons.md`; design/build → the relevant `AMK-DESIGN-SKILLS.md` section · **collecte externe via Agent Reach d'abord (§1f①, `tools/agent-reach/README.md`)** |
+| **Weekly research / veille vidéo** | `research/YouTube-Lessons.md` (le lot du jour ; **lot [46] du 23/10** = Facebook 2026, publicité Meta, méthodes Instagram) · `knowledge/CONTENT-CREATION-2026-10-22.md` **§9** (les cinq gestes de fabrication adoptés) · **lecture vidéo : `fetch_page` sur `youtube.com/watch?v=<id>` (anglophone) ou `youtubetotranscript.com/transcript?v=<id>` (francophone, seule source qui pagine)** — `ops/QA-NOTES.md`, 23/10. Une transcription n'est **pas** un visionnage : l'écrire dans le lot |
+| **Weekly research (générique)** | The field being studied → log the output back into that field's lessons: sales/marketing → `sales/research/<YYYY>-W<WW>-techniques.md`; video lessons → `research/YouTube-Lessons.md`; design/build → the relevant `AMK-DESIGN-SKILLS.md` section · **collecte externe via Agent Reach d'abord (§1f①, `tools/agent-reach/README.md`)** |
 
 | **CRM / pipeline** | `leads/build/crm.py` (schéma + énumération des étapes — C'EST LUI LA SOURCE, pas le CSV) · `leads/build/guard.py` + `generators.lock.json` (EMPREINTE des générateurs : `rebuild.sh` refuse d'écrire si un générateur a été remplacé par une version plus ancienne — 22/09 : une restauration d'instantané avait effacé l'état des deux fils chauds du CSV sans un seul message d'erreur) · `leads/CRM.csv` (état) · `sales/Activity-Log.md` (chronologie, append-only) · `sales/AMK-Sales-Playbook-v2.md` (règles debout, §A4 corrigé) · vue live : `leads/PIPELINE.md`, `leads/KILL-LIST.md`, `leads/STALE.md`, `leads/SOURCES.md`, `leads/Daily-Plan.csv` (toutes GÉNÉRÉES) · fiche d'un lead : `leads/records/<slug>.md` · **règle 02/10 (bug OraCare) : avant de remplir `source_detail` d'un lead content, vérifier que le lead a VU la vidéo — jamais déduire l'attribution de « la seule vidéo publiée »** · **règle 02/10 (fil Cavisa) : jamais re-poser la même question — au-delà de 7 jours sans réponse, changer de canal (texte → voix → appel), pas de wording ; un fix interne n'est jamais un prétexte d'outreach** · **règle 02/10 (piège de file, re-datée 03/10) : après édition de RELANCE_A_JOUR ou de toute structure planifiée à clés, vérifier la SORTIE de la file après rebuild — rc=0 n'est pas une preuve** · **règle 03/10 (tous prospects) : aucun travail non demandé sur la démo d'un prospect — sans demande explicite, la démo reste intouchée ; follow-up plain, chaud, court, sans prétexte ni re-ask ; le travail ne reprend que si le prospect demande quelque chose de spécifique** · **protocole 05/10 : premise check (une ligne, vérifiée contre le fil) avant toute sortie client-facing + passe second-reader + log dans ops/INFERENCE-ERRORS.md · **règle 05/10 (#7) : premise check d'un document financier = complétude du bloc émetteur au standard fiscal du client, pas seulement cohérence interne (« que demandera-t-il qui n'est pas là ? »)** |
 
@@ -132,11 +133,27 @@ de la section quand même — **les sources servent à vérifier, pas à dépend
 python3 tools/qa/audit_html.py <fichier-construit>      # doit finir sur « TOTAL confirmed findings: 0 »
 python3 tools/qa/audit_a11y.py --strict <fichier-construit>   # rc=0 : aucune faute de niveau A ou AA
 python3 tools/qa/audit_images.py <fichier-construit>          # 0 faute : ratio annoncé = ratio réel, poids, pas de GPS
+python3 tools/qa/audit_reveal.py site/                        # 0 faute : aucune animation ne cache du contenu (ajouté 23/10)
+python3 tools/qa/audit_delivery.py <dossier> --base <url>     # 0 P1 : navigation mobile, cache, icônes, URL, llms.txt, partage, schéma, en-têtes (ajouté 23/10)
+bash tools/ops/gate-dm.sh                                     # porte DM complète ; son étape 4 lance audit_delivery.py --strict (livraison client)
 ```
+
+`audit_delivery.py` (23/10) ferme les deux angles morts qu'un audit extérieur a trouvés le jour où les
+cinq autres portiques rendaient « 0 faute » : **aucune navigation sous 980 px** (le CSS cachait la nav,
+aucun bouton de menu) et **`max-age=0` sur toutes les images et polices**. Un portique de documents ne
+peut pas voir ce qui n'est pas dans un document — une feuille de style, des en-têtes HTTP, un fichier
+d'icône absent. Il valide aussi la **forme** des motifs de `_headers` : sur Cloudflare Pages le splat ne
+vaut qu'en fin de motif, donc `/*.webp` ne matche rien (l'audit extérieur proposait exactement cette
+règle : elle aurait laissé le défaut en place). Son témoin, `tools/qa/test_audit_delivery.py`, casse
+douze choses une par une et vérifie que chacune est nommée. Leçons complètes :
+`tools/qa/AUDIT-LESSONS-2026-10-23.md`.
 Le troisième contrôle est né le 24/09 (lot [32]) avec l'arrivée des **vraies photos** : une photo de
 téléphone pèse 3 à 6 Mo et porte la position GPS. Il vérifie la structure et la vie privée — **jamais la
 beauté de la photo** (celle-là se juge à l'œil).
-Contrôle **structure** (sections imbriquées, équilibre) + **contraste WCAG** de chaque texte (desktop et mobile). Motif : un `</div>` perdu en insérant le miroir opticien a rendu du texte blanc sur fond blanc (déclaré par King). Détail : `tools/qa/AUDIT-2026-09-17.md`.
+Contrôle **structure** (sections imbriquées, équilibre) + **contraste WCAG** de chaque texte (desktop et mobile).
+`audit_reveal.py` (23/10) garde la classe de bug qui a rendu **142 blocs invisibles** deux fois de suite :
+`html.js .rv{opacity:0}` étant plus **spécifique** que `.rv.in{opacity:1}`, le JavaScript ajoutait bien la
+classe et rien ne s'affichait. La règle de base doit porter `:not(.in)`. Motif : un `</div>` perdu en insérant le miroir opticien a rendu du texte blanc sur fond blanc (déclaré par King). Détail : `tools/qa/AUDIT-2026-09-17.md`.
 
 ## 1c · Contrôle approfondi — obligatoire sur CHAQUE prospect (King, 24 Sep 2026)
 
@@ -285,6 +302,7 @@ deux bases de connaissance, **avant** d'écrire une ligne de script ou de lancer
 | La tâche | D'abord | Ensuite |
 |---|---|---|
 | positionner une marque, écrire un statement | `knowledge/MARKETING-OPTICAL…` §6 | `clients/<client>/brand/BRAND-STRATEGY-*.md` |
+| **créer, réparer ou optimiser une page sociale** (Facebook, Instagram, TikTok) | `brand/AMK-PRESENCE-2026-10-22.md` **§14** (l'audit des trois profils réels : les sept défauts, la copie exacte Instagram/TikTok, la règle des identifiants) + **§13** (identité des trois comptes, fusion de pages, lien page ↔ Instagram) + §12 (les onze champs Facebook) + §10 (protocole captures) · `sales/research/2026-W43-techniques.md` §15 (audience vs communauté, cadence, mesure) | le §3 de PRESENCE uniquement pour les visuels déjà validés — l'arbitrage du nom est au §12.0 ; **une promesse de délai ne va jamais dans une bio sans sa condition** (§14.5) |
 | écrire un script court | `knowledge/CONTENT-CREATION…` §3 | le gabarit du mois (`content/month1/…`) |
 | monter une vidéo | `knowledge/CONTENT-CREATION…` §1–2 | `tools/record/` + **portique** `tools/qa/audit_video_motion.py` (§1b) |
 | monter une vidéo **UGC** (storyboard, produit, cartons, clip IA, voix) | `tools/ugc/README.md` | `python3 tools/ugc/ugc.py render <spec>.json --qc` |

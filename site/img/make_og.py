@@ -53,7 +53,7 @@ def chip(x, y, text):
     return tw+36
 w1 = chip(LX, 452, "Free 24h preview · Aperçu gratuit")
 chip(LX+w1+12, 452, "EN | FR")
-chip(LX, 504, "WhatsApp-first · live in 3–5 days")
+chip(LX, 504, "WhatsApp-first · Douala, Cameroun")
 
 d.text((LX, 566), "amk-cm.vercel.app", font=font("OpenSans-Bold.ttf", 23), fill=WHITE)
 

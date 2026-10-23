@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Création de site web pour clinique et laboratoire au Cameroun | AMK Douala</title>
-<meta name="description" content="Création de site web pour cliniques, cabinets médicaux et laboratoires d'analyses au Cameroun : rendez-vous sur WhatsApp, examens et préparations expliqués, tarifs de la clinique en FCFA. En ligne en 3–5 jours après l'acompte.">
+<meta name="description" content="Création de site web pour cliniques, cabinets médicaux et laboratoires d'analyses au Cameroun : rendez-vous sur WhatsApp, examens et préparations expliqués, tarifs de la clinique en FCFA. En ligne dès votre validation.">
 <link rel="canonical" href="https://amk-cm.vercel.app/creation-site-web-clinique-cameroun.html">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#0F172A">
 <meta property="og:title" content="Création de site web pour clinique et laboratoire au Cameroun | AMK">
-<meta property="og:description" content="Vos patients vous trouvent, voient vos tarifs en FCFA et prennent rendez-vous sur WhatsApp. Live en 3–5 jours après l'acompte.">
+<meta property="og:description" content="Vos patients vous trouvent, voient vos tarifs en FCFA et prennent rendez-vous sur WhatsApp. Live as soon as you approve, and the free preview is on your phone within 24 hours of brief sign-off.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:locale:alternate" content="en_US">
@@ -31,7 +31,7 @@
  "provider": {
   "@type": "ProfessionalService",
   "@id": "https://amk-cm.vercel.app/#amk",
-  "name": "AMK – Web Development & Digital Solutions",
+  "name": "AMK",
   "telephone": "+237677789631",
   "email": "akwo.king.dev@gmail.com",
   "address": {
@@ -41,8 +41,11 @@
    "addressCountry": "CM"
   },
   "sameAs": [
-   "https://maps.google.com/?cid=15115895992629938509"
-  ],
+   "https://maps.google.com/?cid=15115895992629938509",
+    "https://www.facebook.com/profile.php?id=61595803408384",
+    "https://www.instagram.com/amkweb.cm",
+    "https://www.tiktok.com/@amkweb"
+   ],
   "hasMap": "https://maps.google.com/?cid=15115895992629938509"
  },
  "areaServed": [
@@ -77,7 +80,7 @@
  },
  "offers": {
   "@type": "Offer",
-  "description": "Site bilingue FR|EN avec prise de rendez-vous sur WhatsApp, en ligne en 3 à 5 jours après l'acompte."
+  "description": "Site bilingue FR|EN avec prise de rendez-vous sur WhatsApp, en ligne dès votre validation."
  },
  "availableLanguage": [
   "fr",
@@ -91,7 +94,7 @@
  "@type": "FAQPage",
  "mainEntity": [
   {"@type":"Question","name":"Combien coûte un site web pour une clinique au Cameroun ?",
-   "acceptedAnswer":{"@type":"Answer","text":"Cela dépend de ce qu'il vous faut : le prix suit le périmètre, et vous recevez un devis écrit avant que nous commencions. Un site bilingue complet est en ligne en 3 à 5 jours après l'acompte, avec le domaine, l'hébergement et 30 minutes de formation de votre personnel, et rien n'est dû avant votre accord sur l'aperçu gratuit."}},
+   "acceptedAnswer":{"@type":"Answer","text":"Cela dépend de ce qu'il vous faut : le prix suit le périmètre, et vous recevez un devis écrit avant que nous commencions. Un site bilingue complet est en ligne dès votre validation, avec le domaine, l'hébergement et 30 minutes de formation de votre personnel, et rien n'est dû avant votre accord sur l'aperçu gratuit."}},
   {"@type":"Question","name":"Que met-on sur le site d'une clinique ou d'un laboratoire ?",
    "acceptedAnswer":{"@type":"Answer","text":"Ce que le patient cherche : les services et spécialités réellement disponibles, la préparation des examens (à jeun ou pas, ce qu'il faut apporter), les horaires, l'adresse avec un repère connu du quartier, et un bouton WhatsApp pour prendre rendez-vous sur chaque écran."}},
   {"@type":"Question","name":"Peut-on prendre les rendez-vous sur WhatsApp au lieu du téléphone ?",
@@ -148,7 +151,7 @@ em{font-style:normal;color:var(--amber)}
 #hdr .brand{display:flex;align-items:center;gap:10px}
 #hdr .brand svg{width:38px;height:38px;flex:none}
 #hdr .brand .t{color:#fff;font-weight:800;font-size:16px;letter-spacing:.02em;display:flex;flex-direction:column;line-height:1.15}
-#hdr .brand .t small{font-weight:500;font-size:10.5px;color:#94A3B8;letter-spacing:.03em}
+#hdr .brand .t small{font-weight:500;font-size:11px;color:#94A3B8;letter-spacing:.03em}
 #hdr nav.main{display:none;gap:24px;margin-left:auto}
 #hdr nav.main a{color:#CBD5E1;font-size:14.5px;font-weight:500}
 #hdr nav.main a:hover{color:#fff}
@@ -221,6 +224,31 @@ footer .nap{color:#E2E8F0}
 @media(min-width:760px){.pad-b{padding-bottom:0}}
 .wasvg{width:19px;height:19px;fill:currentColor;flex:none}
 :is(a,button,summary):focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:10px}
+/* a11y 22/10 — la page n'avait aucun bloc prefers-reduced-motion alors qu'elle utilise
+   scroll-behavior:smooth ; on respecte la préférence système. */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+/* amk-social */
+.amk-soc{margin-top:24px}
+.amk-soc .amk-soc-lbl{display:block;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#94A3B8;margin:0 0 10px}
+.amk-soc .amk-soc-l{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:0;padding:0}
+.amk-soc a.amk-soc-a{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;width:44px;height:44px;padding:0;margin:0;border-radius:50%;border:1px solid rgba(148,163,184,.45);color:#E2E8F0;background:transparent;line-height:1;text-decoration:none;box-sizing:border-box;transition:color .18s ease,border-color .18s ease,background-color .18s ease}
+.amk-soc a.amk-soc-a:hover,.amk-soc a.amk-soc-a:focus-visible{color:#F59E0B;border-color:#F59E0B;background:rgba(245,158,11,.08)}
+.amk-soc a.amk-soc-a:focus-visible{outline:2px solid #FCD34D;outline-offset:2px}
+.amk-soc a.amk-soc-a svg{display:block;width:18px;height:18px;flex:0 0 auto;fill:currentColor}
+.amk-soc .amk-soc-h{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+@media (prefers-reduced-motion:reduce){.amk-soc a.amk-soc-a{transition:none}}
+@media (max-width:420px){.amk-soc a.amk-soc-a{width:42px;height:42px}}
+/* voix technique — passe du 23/10 (cohérence avec l'accueil) */
+:root{--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace}
+.kicker{font-family:var(--mono);font-weight:500;letter-spacing:.16em}
+.amk-psrc{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:14px;padding:0 14px;border:1px solid rgba(148,163,184,.45);border-radius:999px;color:#E2E8F0;background:transparent;font-size:13px;line-height:1.2;text-decoration:none;box-sizing:border-box;transition:color .18s ease,border-color .18s ease,background-color .18s ease}
+.amk-psrc:hover,.amk-psrc:focus-visible{color:#F59E0B;border-color:#F59E0B;background:rgba(245,158,11,.08)}
+.amk-psrc:focus-visible{outline:2px solid #FCD34D;outline-offset:2px}
+.amk-psrc svg{display:block;width:14px;height:14px;flex:0 0 auto;fill:#FCD34D}
+@media (prefers-reduced-motion:reduce){.amk-psrc{transition:none}}
 </style>
 </head>
 <body>
@@ -228,7 +256,7 @@ footer .nap{color:#E2E8F0}
   <div class="wrap h-in">
     <a class="brand" href="index.html" aria-label="AMK">
       <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#1E293B"/><circle cx="32" cy="30" r="17" fill="none" stroke="#F59E0B" stroke-width="2.4"/><path d="M32 16v28M32 30L18 44M32 30l14 14" stroke="#FCD34D" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="16" r="3" fill="#F59E0B"/><circle cx="18" cy="44" r="3" fill="#F59E0B"/><circle cx="46" cy="44" r="3" fill="#F59E0B"/></svg>
-      <span class="t">AMK<small data-en="Web Development &amp; Digital Solutions" data-fr="Développement Web &amp; Solutions Digitales">Développement Web &amp; Solutions Digitales</small></span>
+      <span class="t">AMK<small data-en="Websites for schools and clinics" data-fr="Sites web pour écoles et cliniques">Sites web pour écoles et cliniques</small></span>
     </a>
     <nav class="main">
       <a href="index.html" data-en="Home" data-fr="Accueil">Accueil</a>
@@ -248,7 +276,7 @@ footer .nap{color:#E2E8F0}
   <div class="wrap">
     <div class="center"><span class="kicker" data-en="Websites for clinics & labs · Cameroon" data-fr="Sites pour cliniques & labos · Cameroun">Sites pour cliniques & labos · Cameroun</span></div>
     <h1 data-en="A website for your clinic or laboratory, so patients find you before they call someone else." data-fr="Un site web pour votre clinique ou laboratoire, pour que les patients vous trouvent avant d'appeler ailleurs.">Un site web pour votre clinique ou laboratoire, pour que les patients vous trouvent avant d'appeler ailleurs.</h1>
-    <p class="sub" data-en="Appointments on WhatsApp, your tests and their preparation explained, your fees in FCFA. Live in 3–5 days after the deposit." data-fr="Les rendez-vous sur WhatsApp, vos examens et leur préparation expliqués, vos tarifs en FCFA. En ligne en 3 à 5 jours après l'acompte, et l'aperçu gratuit est dans votre téléphone sous 24 heures après validation du brief.">Les rendez-vous sur WhatsApp, vos examens et leur préparation expliqués, vos tarifs en FCFA. En ligne en 3 à 5 jours après l'acompte, et l'aperçu gratuit est dans votre téléphone sous 24 heures après validation du brief.</p>
+    <p class="sub" data-en="Appointments on WhatsApp, your tests and their preparation explained, your fees in FCFA. Live as soon as you approve, and the free preview is on your phone within 24 hours of brief sign-off." data-fr="Les rendez-vous sur WhatsApp, vos examens et leur préparation expliqués, vos tarifs en FCFA. En ligne dès votre validation, et l'aperçu gratuit est dans votre téléphone sous 24 heures après validation du brief.">Les rendez-vous sur WhatsApp, vos examens et leur préparation expliqués, vos tarifs en FCFA. En ligne dès votre validation, et l'aperçu gratuit est dans votre téléphone sous 24 heures après validation du brief.</p>
     <div class="cta-row">
       <a class="btn btn-wa" href="https://wa.me/237677789631?text=Bonjour%20AMK%2C%20je%20souhaite%20un%20site%20pour%20ma%20clinique.">
         <svg class="wasvg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-1-.3-1.8-.7-2.2-1-3.6-3.3-3.7-3.5-.1-.1-.9-1.2-.9-2.3s.6-1.6.8-1.9c.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .5.4l.7 1.7c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.2.3-.1.5.1.2.6 1 1.2 1.6.8.7 1.4.9 1.6 1 .2.1.4.1.5 0l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.3.2.4.3.4.5Z"/></svg>
@@ -259,15 +287,15 @@ footer .nap{color:#E2E8F0}
     <div class="trust">
       <span data-en="<b>No payment</b> before you approve" data-fr="<b>Aucun paiement</b> avant votre accord"><b>Aucun paiement</b> avant votre accord</span>
       <span data-en="<b>Bilingual</b> EN|FR included" data-fr="<b>Bilingue</b> FR|EN inclus"><b>Bilingue</b> FR|EN inclus</span>
-      <span data-en="<b>Live in 3–5 days after the deposit</b>" data-fr="<b>En ligne en 3–5 jours après l'acompte</b>"><b>En ligne en 3–5 jours après l'acompte</b></span>
+      <span data-en="<b>Live as soon as you approve</b>" data-fr="<b>En ligne dès votre validation</b>"><b>En ligne dès votre validation</b></span>
     </div>
   </div>
 </section>
 
 <div class="facts">
   <div class="wrap">
-    <div><div class="n">24h après validation du brief</div><div class="l" data-en="for your free homepage preview, no payment, no commitment" data-fr="pour votre aperçu gratuit d'accueil, sans paiement, sans engagement">pour votre aperçu gratuit d'accueil, sans paiement, sans engagement</div></div>
-    <div><div class="n" data-en="3–5 days after the deposit" data-fr="3–5 jours après l'acompte">3–5 jours après l'acompte</div><div class="l" data-en="from your approval to the site being live" data-fr="entre votre validation et la mise en ligne">entre votre validation et la mise en ligne</div></div>
+    <div><div class="n" data-en="24h after brief sign-off" data-fr="24h après validation du brief">24h après validation du brief</div><div class="l" data-en="for your free homepage preview, no payment, no commitment" data-fr="pour votre aperçu gratuit d'accueil, sans paiement, sans engagement">pour votre aperçu gratuit d'accueil, sans paiement, sans engagement</div></div>
+    <div><div class="n" data-en="as soon as you approve" data-fr="dès votre validation">dès votre validation</div><div class="l" data-en="from your approval to the site being live" data-fr="entre votre validation et la mise en ligne">entre votre validation et la mise en ligne</div></div>
     <div><div class="n" data-en="WhatsApp" data-fr="WhatsApp">WhatsApp</div><div class="l" data-en="<b>Bilingual</b> EN|FR included" data-fr="<b>Bilingue</b> FR|EN inclus"><b>Bilingue</b> FR|EN inclus</div></div>
   </div>
 </div>
@@ -370,7 +398,7 @@ footer .nap{color:#E2E8F0}
     <div class="center"><span class="kicker">FAQ</span>
       <h2 data-en="Asked before, answered honestly" data-fr="Posé avant, répondu honnêtement">Posé avant, répondu honnêtement</h2></div>
     <div class="qa">
-      <details><summary data-en="How much does a clinic website cost in Cameroon?" data-fr="Combien coûte un site web pour une clinique au Cameroun ?">Combien coûte un site web pour une clinique au Cameroun ?</summary><div class="ans" data-en="It depends on what you need, so the price follows the scope: you get a written quote before we start. A complete bilingual site is live in 3–5 days after the deposit, with domain, hosting and 30 minutes of staff training, and nothing is due until you approve the free preview." data-fr="Cela dépend de ce qu'il vous faut : le prix suit le périmètre, et vous recevez un devis écrit avant que nous commencions. Un site bilingue complet est en ligne en 3 à 5 jours après l'acompte, avec le domaine, l'hébergement et 30 minutes de formation de votre personnel, et rien n'est dû avant votre accord sur l'aperçu gratuit.">Cela dépend de ce qu'il vous faut : le prix suit le périmètre, et vous recevez un devis écrit avant que nous commencions. Un site bilingue complet est en ligne en 3 à 5 jours après l'acompte, avec le domaine, l'hébergement et 30 minutes de formation de votre personnel, et rien n'est dû avant votre accord sur l'aperçu gratuit.</div></details>
+      <details><summary data-en="How much does a clinic website cost in Cameroon?" data-fr="Combien coûte un site web pour une clinique au Cameroun ?">Combien coûte un site web pour une clinique au Cameroun ?</summary><div class="ans" data-en="It depends on what you need, so the price follows the scope: you get a written quote before we start. A complete bilingual site is live as soon as you approve, with domain, hosting and 30 minutes of staff training, and nothing is due until you approve the free preview." data-fr="Cela dépend de ce qu'il vous faut : le prix suit le périmètre, et vous recevez un devis écrit avant que nous commencions. Un site bilingue complet est en ligne dès votre validation, avec le domaine, l'hébergement et 30 minutes de formation de votre personnel, et rien n'est dû avant votre accord sur l'aperçu gratuit.">Cela dépend de ce qu'il vous faut : le prix suit le périmètre, et vous recevez un devis écrit avant que nous commencions. Un site bilingue complet est en ligne dès votre validation, avec le domaine, l'hébergement et 30 minutes de formation de votre personnel, et rien n'est dû avant votre accord sur l'aperçu gratuit.</div></details>
       <details><summary data-en="Can appointments go through WhatsApp instead of the phone?" data-fr="Les rendez-vous peuvent-ils passer par WhatsApp au lieu du téléphone ?">Les rendez-vous peuvent-ils passer par WhatsApp au lieu du téléphone ?</summary><div class="ans" data-en="Yes, and it's what works best in Cameroon: the patient writes instead of calling, often outside your hours." data-fr="Oui, et c'est ce qui marche le mieux au Cameroun : le patient écrit au lieu d'appeler, souvent en dehors de vos heures d'ouverture, et le message arrive avec la question déjà rédigée.">Oui, et c'est ce qui marche le mieux au Cameroun : le patient écrit au lieu d'appeler, souvent en dehors de vos heures d'ouverture, et le message arrive avec la question déjà rédigée.</div></details>
       <details><summary data-en="Do I have to publish my fees?" data-fr="Suis-je obligé de publier mes tarifs ?">Suis-je obligé de publier mes tarifs ?</summary><div class="ans" data-en="No, but it filters your calls. A patient who sees the fee only calls when he's decided." data-fr="Non, mais ça filtre vos appels. Un patient qui voit le tarif n'appelle que s'il est décidé, et vous passez moins de temps au téléphone à expliquer les mêmes prix. Vous décidez ce qui est affiché et ce qui est dit en consultation.">Non, mais ça filtre vos appels. Un patient qui voit le tarif n'appelle que s'il est décidé, et vous passez moins de temps au téléphone à expliquer les mêmes prix. Vous décidez ce qui est affiché et ce qui est dit en consultation.</div></details>
       <details><summary data-en="Do you also work with laboratories and opticians?" data-fr="Travaillez-vous aussi avec des laboratoires et des opticiens ?">Travaillez-vous aussi avec des laboratoires et des opticiens ?</summary><div class="ans" data-en="Yes. Analysis laboratories, imaging centres, dental cabinets and opticians. For a laboratory, the most useful page lists the tests and how to prepare." data-fr="Oui. Laboratoires d'analyses, centres d'imagerie, cabinets dentaires et opticiens. Pour un laboratoire, la page la plus utile est celle des examens et de leur préparation, c'est la question qu'on vous pose au téléphone toute la journée.">Oui. Laboratoires d'analyses, centres d'imagerie, cabinets dentaires et opticiens. Pour un laboratoire, la page la plus utile est celle des examens et de leur préparation, c'est la question qu'on vous pose au téléphone toute la journée.</div></details>
@@ -394,11 +422,12 @@ footer .nap{color:#E2E8F0}
           <svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#1E293B"/><circle cx="32" cy="30" r="17" fill="none" stroke="#F59E0B" stroke-width="2.4"/><path d="M32 16v28M32 30L18 44M32 30l14 14" stroke="#FCD34D" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="16" r="3" fill="#F59E0B"/><circle cx="18" cy="44" r="3" fill="#F59E0B"/><circle cx="46" cy="44" r="3" fill="#F59E0B"/></svg>
           <span style="color:#fff;font-weight:800">AMK</span>
         </div>
-        <p class="nap" style="margin-top:14px" data-en="AMK – Web Development &amp; Digital Solutions" data-fr="AMK – Développement Web &amp; Solutions Digitales">AMK – Développement Web &amp; Solutions Digitales</p>
+        <p class="nap" style="margin-top:14px" data-en="AMK" data-fr="AMK – Sites web pour écoles et cliniques">AMK – Sites web pour écoles et cliniques</p>
         <p style="margin-top:8px" data-en="Websites for schools, clinics and laboratories in Cameroon. Bilingual, mobile-first, WhatsApp-ready." data-fr="Des sites web pour les écoles, cliniques et laboratoires au Cameroun. Bilingues, mobile d'abord, prêts pour WhatsApp.">Des sites web pour les écoles, cliniques et laboratoires au Cameroun. Bilingues, mobile d'abord, prêts pour WhatsApp.</p>
         <p style="margin-top:12px"><a href="tel:+237677789631" style="display:inline">+237 677 789 631</a> · <a href="mailto:akwo.king.dev@gmail.com" style="display:inline">akwo.king.dev@gmail.com</a></p>
         <p style="margin-top:6px" data-en="Douala, Littoral, Cameroon" data-fr="Douala, Littoral, Cameroun">Douala, Littoral, Cameroun</p>
-      </div>
+      <div class="amk-soc"><span class="amk-soc-lbl" data-en="Follow AMK" data-fr="Suivre AMK">Suivre AMK</span><div class="amk-soc-l"><a class="amk-soc-a" href="https://www.facebook.com/profile.php?id=61595803408384" target="_blank" rel="noopener" title="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg><span class="amk-soc-h" data-en="AMK on Facebook" data-fr="AMK sur Facebook">AMK sur Facebook</span></a><a class="amk-soc-a" href="https://www.instagram.com/amkweb.cm" target="_blank" rel="noopener" title="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg><span class="amk-soc-h" data-en="AMK on Instagram" data-fr="AMK sur Instagram">AMK sur Instagram</span></a><a class="amk-soc-a" href="https://www.tiktok.com/@amkweb" target="_blank" rel="noopener" title="TikTok"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg><span class="amk-soc-h" data-en="AMK on TikTok" data-fr="AMK sur TikTok">AMK sur TikTok</span></a></div><a class="amk-psrc" href="https://www.google.com/preferences/source?q=amk-cm.vercel.app" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.6l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.4l-5.8 3.06 1.11-6.46-4.7-4.58 6.49-.94z"/></svg><span data-en="Add AMK as a preferred source on Google" data-fr="Ajouter AMK comme source préférée sur Google">Ajouter AMK comme source préférée sur Google</span></a></div>
+        </div>
       <div>
         <h5 data-en="Pages" data-fr="Pages">Pages</h5>
         <a href="index.html" data-en="Home" data-fr="Accueil">Accueil</a>
@@ -413,7 +442,7 @@ footer .nap{color:#E2E8F0}
         <a href="sample-secondary.html" data-en="Secondary, GCE" data-fr="Secondaire, GCE">Secondaire, GCE</a>
       </div>
     </div>
-    <p style="margin-top:30px;font-size:13.5px;color:#94A3B8" data-en="© 2026 AMK – Web Development &amp; Digital Solutions · Douala, Cameroon. Names and figures shown in concept sites are placeholders." data-fr="© 2026 AMK – Développement Web &amp; Solutions Digitales · Douala, Cameroun. Les noms et chiffres des sites concepts sont des exemples.">© 2026 AMK – Développement Web &amp; Solutions Digitales · Douala, Cameroun. Les noms et chiffres des sites concepts sont des exemples.</p>
+    <p style="margin-top:30px;font-size:13.5px;color:#94A3B8" data-en="© 2026 AMK – Websites for schools and clinics · Douala, Cameroon. Names and figures shown in concept sites are placeholders." data-fr="© 2026 AMK – Sites web pour écoles et cliniques · Douala, Cameroun. Les noms et chiffres des sites concepts sont des exemples.">© 2026 AMK – Sites web pour écoles et cliniques · Douala, Cameroun. Les noms et chiffres des sites concepts sont des exemples.</p>
   </div>
 </footer>
 
