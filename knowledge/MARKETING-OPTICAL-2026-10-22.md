@@ -181,3 +181,69 @@ primaire). Voir `knowledge/CONTENT-CREATION-2026-10-22.md` §7 pour la règle de
 - **Constance** 2 posts/semaine > fréquence.
 - **WhatsApp** est le tunnel de conversion, pas le site.
 - **Aucune statistique sans source primaire** n'entre dans une décision client.
+
+---
+
+## 11 · Répondre aux avis : qui, quand, comment (ruling en attente de King, 23/10)
+
+> **La question posée par King le 23/10 :** *« the reviews on GBP and comments on Facebook have started
+> coming in, one thing I didn't discuss with the client is who has to answer ».* Cette section prépare la
+> décision ; elle ne l'a pas encore reçue.
+
+**Le chiffre qui la rend urgente** : **89 % des consommateurs attendent une réponse à tous les avis**
+(BrightLocal, `knowledge/MARKETING-OPTICAL` §5). Un avis sans réponse fait plus de dégât qu'un avis moyen
+avec réponse — parce que le suivant lit la réponse, pas l'avis.
+
+### 11.1 · Qui répond — la recommandation
+
+| Canal | Qui répond | Pourquoi |
+|---|---|---|
+| **Avis Google** | **le client**, en son nom, avec un texte que nous écrivons | la réponse s'affiche sous le nom du cabinet ; un patient qui a vu M. Domche veut lire M. Domche, pas une agence. Et la réponse engage sa responsabilité de soignant : elle ne sort pas de sa main |
+| **Commentaires Facebook** (sous nos posts) | **nous**, si et quand il nous donne accès à la page | ce sont des commentaires sur du contenu que nous avons produit ; y répondre est notre travail |
+| **Messages privés Facebook / WhatsApp** | **le client, toujours** | on n'a aucun accès à son WhatsApp Business (verrou), et un message privé mène à un rendez-vous, donc à son agenda |
+| **Avis 1 ou 2 étoiles** | **le client**, le jour même, avec un texte préparé par nous | il faut une voix humaine et un geste commercial qui n'appartient qu'à lui |
+
+**Ce que ça implique pour le contrat** — à dire au client, noir sur blanc :
+
+- **compris dans le forfait contenu** : nous écrivons les réponses aux avis Google (il n'a qu'à copier-
+  coller), et nous répondons aux commentaires de nos publications s'il nous ouvre la page ;
+- **pas compris** : la modération quotidienne de ses messages privés, et toute promesse commerciale
+  (geste, remise, reprise) — **ça, c'est lui, et seulement lui**.
+
+### 11.2 · Quand
+
+| Avis | Délai | Qui |
+|---|---|---|
+| 4–5 étoiles | **sous 48 h** | lui, texte fourni |
+| 3 étoiles | **sous 24 h** | lui, texte fourni + appel |
+| 1–2 étoiles | **le jour même**, et par téléphone d'abord | lui, jamais par écrit en premier |
+| Commentaire sous un post | sous 24 h | nous (ou lui s'il n'a pas donné l'accès) |
+
+### 11.3 · Les six réponses types (à adapter, jamais à copier telles quelles)
+
+**① 5 étoiles, court** — « Merci beaucoup, ça nous fait plaisir. À bientôt au cabinet. — DM OPTIQUE »
+
+**② 5 étoiles, avec un détail nommé** — reprendre **un mot de l'avis** (la monture, l'accueil, le
+délai) : « Merci d'avoir pris le temps. Content que la monture vous plaise — c'est exactement ce qu'on
+cherche quand on essaie dix paires. À bientôt. »
+
+**③ 4 étoiles** — remercier, puis **une question**, jamais une justification : « Merci pour ces quatre
+étoiles. Qu'est-ce qui aurait manqué pour la cinquième ? Ça nous intéresse vraiment. »
+
+**④ 3 étoiles** — reconnaître, ne pas expliquer : « Merci de nous l'avoir dit. Ce que vous décrivez
+n'est pas ce qu'on veut offrir ; on regarde ce qui s'est passé. Si vous repassez, demandez-moi. »
+
+**⑤ 1–2 étoiles** — **jamais de défense, jamais de détail médical, jamais de remboursement public** :
+« Je suis désolé de cette expérience, ce n'est pas notre façon de travailler. Je vous appelle aujourd'hui
+pour comprendre. » **Puis on l'appelle vraiment.**
+
+**⑥ Question de prix dans un commentaire** — « Le tarif dépend de la correction et de la monture ; un
+message en privé et on vous répond précisément. » Jamais de prix en public (§ verrous DM).
+
+### 11.4 · Les quatre interdits
+
+1. **Jamais de détail de santé** dans une réponse publique : ni correction, ni acuité, ni diagnostic.
+2. **Jamais d'avis demandé contre un avantage** (remise, cadeau) : Google le détecte et pénalise la fiche.
+3. **Jamais de réponse automatique** : un avis se répond en une phrase qui prouve qu'on l'a lu.
+4. **Jamais de silence.** Un avis sans réponse est plus visible qu'un avis tiède.
+

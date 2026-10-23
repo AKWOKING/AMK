@@ -370,6 +370,38 @@ Recette éprouvée (avec travail non commité, **jamais** `--hard`) : `git fetch
   - **Audit** — auto-audit honnête de la réponse : ce qui a été vérifié contre la source (§0e), ce qui reste incertain ou non testé, les défauts connus laissés ouverts, la conformité aux portiques (§1b/§1f③…). Un audit qui relève un problème porte correctif/amélioration/action (§0e), et **tout problème résoluble porte sa solution long terme** (règle debout, outil, contrôle automatisé — pas seulement le correctif ponctuel) : l'audit d'une réponse prépare celui d'après (ruling King 20/10).
 - Le bloc s'applique **à toutes les réponses**, y compris les réponses courtes de consultation — c'est justement là que les propositions coûtent le moins et servent le plus.
 
+### ⑩ La forme exacte de l'inventaire — et pourquoi elle existe (ruling King 23/10)
+
+> *King 23/10 : « each time a decision is taken or a task is given or a question asked, go through all the
+> tools and skills available to you then choose the ones suitable for the situation — I had already told
+> you this, isn't it written in preflight ? »*
+
+**Oui, c'était écrit — au ⑨ ci-dessus, depuis le 20/10.** Le ⑨ n'était donc pas un manque de règle : c'est
+un **manque d'exécution**. Deux réponses du 23/10 n'ont pas porté l'inventaire. Une règle non appliquée
+n'existe pas (§0e, « instruction ≠ état ») : le ⑩ lui donne une forme fixe, courte, impossible à oublier.
+
+**Forme obligatoire — trois lignes, en tête de réponse, juste après le pré-vol :**
+
+```
+Outil  : [ce que j'utilise, et pourquoi en trois mots]
+Écarté : [ce que j'ai examiné et laissé — une raison par outil]
+Skill  : [skill chargé, ou « aucun : la tâche n'en appelle pas »]
+```
+
+**L'arsenal à passer en revue, chaque fois, dans cet ordre** (registre vivant : `ops/TOOL-SCAN.md`) :
+
+| Famille | Ce que c'est | Déclencheur |
+|---|---|---|
+| **Connecteurs** | Notion (mémoire, miroir §0g) · Vercel (déploiement) · GitHub (`gh` : PR, issues, contenu) · Google Drive / Agenda | toute écriture de connaissance, tout déploiement, tout geste de dépôt |
+| **Recherche** | `web_search` · `fetch_page` · **Agent Reach** (§1f①) | un chiffre à vérifier, une source à ouvrir, une vidéo à transcrire |
+| **Skills installés** (§1f④–⑧, hors dépôt) | `design-taste-frontend` · `design-motion-principles` · `ui-ux-pro-max` · `impeccable` · ECC (`accessibility`, `production-audit`, `verification-loop`, `security-review`, `seo`, `click-path-audit`) | page publique, composant, mouvement, audit de livraison |
+| **Portiques maison** (§1b) | `tools/ops/gate-amk.sh` · `tools/qa/audit_*.py` · `tools/qa/test_site_a11y_behaviour.mjs` | **avant toute publication** — les portiques maison font foi |
+| **Outils média** | `tools/video/` (rendu, sous-titres) · `tools/record/` · `tools/pdf/` | toute pièce vidéo, capture, PDF |
+| **Mémoire et journal** | `knowledge/` (§0c) · Notion (§0g) · `§10` journal des sources | **à chaque source nouvelle** — le journal s'ouvre à la réception |
+
+**Deux cas où l'inventaire est court et c'est normal :** une question de conversation sans livrable
+(trois lignes, « aucun skill »), et une tâche déjà couverte par le ⑨. **Zéro cas où il est absent.**
+
 ## 1g · Marketing, marque et création de contenu (ruling King 22/10)
 
 > *King 22/10 : « make sure you have written everything you just learned in the repo, in preflight too under marketing, content creation and other relevant topics ». *

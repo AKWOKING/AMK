@@ -34,3 +34,22 @@ node --check <(python3 -c "import re,sys;print(re.search(r'<script>(.*?)</script
 
 Puis, sur un téléphone : créer une facture antidatée (échéance passée) → la liste doit afficher
 « en retard de N jours », et le résumé « dont X en retard ». Si ce n'est pas le cas, on n'a rien gagné.
+
+## Les deux façons de publier
+
+**① Le zip, pour un envoi manuel** — `amk-factures-pwa-v2.zip` à la racine du dépôt (6 fichiers, à plat).
+King le télécharge depuis GitHub et le dépose dans Vercel (*Deploy* → *Upload*). C'est la voie qui ne
+dépend de personne.
+
+**② Le projet lié au dépôt** — `amk-factures-pwa-preview` (Vercel), racine `ops/amk-factures-pwa` :
+chaque envoi sur la branche donne une preview, et la production ne bouge que sur décision.
+
+**Dans les deux cas, vérifier avant :**
+
+```bash
+node test-calculs.mjs      # 8 assertions : statut, jours de retard, solde, montant
+```
+
+Puis sur un téléphone : une facture antidatée doit afficher « en retard de N jours » et le résumé doit
+dire « dont X en retard ». Le service worker passe en cache `v4` — un appareil qui avait l'ancienne
+version se met à jour au deuxième chargement.

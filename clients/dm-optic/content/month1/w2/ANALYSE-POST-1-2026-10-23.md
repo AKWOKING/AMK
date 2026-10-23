@@ -1,111 +1,222 @@
-# DM OPTIQUE — analyse du premier post, et structure du second
+# DM OPTIQUE — ce que les chiffres disent vraiment (relevé à 24 h)
 
 ```
-Sujet      la première vidéo publiée (etapes-01, « Ce n'est pas une photo floue »), 31,0 s
-Données    relevées le 23/10/2026 à 08h40 — Facebook Business Suite, TikTok Studio
-Statut     analyse ; la structure du n°2 est une PROPOSITION, pas une décision
-Règle      aucun chiffre sans source (§1g) ; aucun échantillon ne devient une loi
+Sujet      vidéo n°1 « Ce n'est pas une photo floue » (etapes-01) — Facebook 31 s, TikTok 18 s
+Données    relevées le 23/10/2026, ~23 h après publication, captures de King
+           Facebook Business Suite · TikTok Studio · fiche Google Business Profile
+Statut     analyse définitive sur ces chiffres ; la vidéo n°2 est une PROPOSITION
+Règle      aucun chiffre sans source (§1g) ; une capture n'est pas une tendance
 ```
 
-> ⚠️ **Relevé à 08h40 le 23/10, soit ~18 h après la publication (22/10, 14h36).** King fournira le
-> relevé **à 24 h** : il remplace les chiffres ci-dessous, il ne s'y ajoute pas. **Aucune décision de
-> format n'est définitive avant ce relevé** — la structure proposée au §4 reste une proposition.
+> **Ce qui remplace quoi.** Le relevé de 08h40 (18 h) est **remplacé**, pas complété. Deux différences
+> à dire tout de suite : **TikTok affiche une vidéo de 18,00 s publiée à 16h17**, alors que le relevé de
+> la veille parlait d'une vidéo de 31 s — **ce ne sont pas les mêmes fichiers**, et les 90 vues de la
+> veille ne se comparent pas aux 80 d'aujourd'hui. Les deux relevés TikTok ne parlent donc pas du même
+> post ; le Facebook, si.
 
 ---
 
-## 1 · Ce que les deux tableaux de bord disent, sans interprétation
+## 1 · Les chiffres, sans interprétation
 
-| | Facebook (reel) | TikTok |
+### Facebook — le reel
+
+| | Valeur | Ce que ça veut dire en clair |
 |---|---|---|
-| Vues | **210** | **90** |
-| Spectateurs uniques | 200 | non communiqué |
-| Ont passé 3 s | **70** (33 % des vues) | — |
-| Temps de visionnage moyen | **4 s** sur 31 | **6,9 s** sur 31 |
-| Ont regardé en entier | — | **4,9 %** (≈ 4 personnes) |
-| Temps total regardé | 12 min 06 s | 11 min 42 s |
-| Réactions · commentaires · partages | 3 · 0 · 1 | 8 · 1 · 1 |
-| Pic de décrochage | **à 0:05** | — |
+| Vues | **227** | 206 personnes, 1,10 vue par personne |
+| Encore là à 3 s | **78** — **34 %** | deux sur trois partent avant la 3ᵉ seconde |
+| Lecture moyenne | **4 s** sur 31 = **12 %** | le spectateur typique regarde l'accroche, puis s'en va |
+| Ont atteint 20 s | **2,4 %** (≈ 5 personnes) | le cœur de la vidéo n'est presque jamais vu |
+| Temps total regardé | **13 min 40 s** | sur 227 vues, c'est 3,6 s par vue |
+| Réactions · commentaires · partages · clics | **6 · 1 · 0 · 1** | 0 partage |
+| Abonnés / non-abonnés | **4,8 % (11)** / **95,2 % (216)** | la vidéo a touché des inconnus |
+| Nouveaux abonnés | **0** | personne ne s'est dit « je veux en voir d'autres » |
+| D'où viennent les vues | **Reels 92,5 %** · page 4,8 % · fil 1,3 % · stories 0,9 % | c'est l'algorithme qui a distribué, pas nos abonnés |
+| Pic de décrochage | **0:05** | dans le plan 2, « Quatre étapes » |
 
-**Les deux seuls chiffres qui décident quelque chose :** **33 %** des spectateurs Facebook restent
-après 3 secondes (le hook fait son travail), et **4 secondes** de visionnage moyen (ils partent juste
-après). Le décrochage est au même endroit sur les deux : **vers la 5ᵉ seconde**.
+### Facebook — le reste de la page, la même semaine
 
-## 2 · Le diagnostic, tel qu'il se lit dans la structure
+| Post | Vues |
+|---|---|
+| 22/10 15h24 — le reel | **228** |
+| 22/10 15h24 — **deuxième envoi du même reel** | **0** |
+| 22/10 08h30 — « lunettes pour enfants » (image) | 22 |
+| 21/10 05h17 | 24 |
+| 21/10 02h50 | 22 |
+| 21/10 04h16 | 1 |
+| **Total de la page sur six posts** | **297 — dont 77 % sur un seul** |
 
-Le film a 8 plans. Les deux premiers occupent **0 → 6,8 s** :
+### TikTok — 18,00 s, publié le 22/10 à 16h17
 
-| Temps | Ce qui est à l'écran | Ce que ça demande au spectateur |
+| | Valeur |
+|---|---|
+| Vues | **80** |
+| Temps de lecture moyen | **4,7 s** = **26 %** |
+| Ont regardé en entier | **6,67 %** (≈ 5 personnes) |
+| Temps total | **7 min 06 s** |
+| J'aime · commentaires · partages · enregistrements | **3 · 0 · 0 · 0** |
+| Nouveaux abonnés | **0** |
+| **Là où ils s'arrêtent** | **0:02** |
+| Là où ils aiment | 0:07 |
+
+### Fiche Google — la vraie nouvelle du tour
+
+| | Valeur |
+|---|---|
+| Note | **5,0 ★★★★★** |
+| Avis | **4** |
+| Force du profil | « Complete info » |
+| Interactions client | 2 |
+| À faire | **« 3 new customer reviews »** — des avis arrivés et pas encore lus |
+
+---
+
+## 2 · Ce que ces chiffres disent
+
+### ① La distribution n'est pas le problème. La rétention l'est.
+
+**92,5 % des vues viennent de l'onglet Reels** : l'algorithme a testé la vidéo devant 227 personnes qui
+ne nous connaissent pas, et la courbe monte encore à 20 h. Un compte à 11 abonnés qui obtient 210 vues
+organiques, c'est Meta qui pousse — pas nos abonnés.
+
+Ce qui arrête la poussée, c'est le **12 % de lecture moyenne**. Meta arrête d'élargir un contenu que les
+gens quittent. Autrement dit : **on n'a pas un problème de visibilité, on a un problème de deuxième
+seconde.** C'est une bonne nouvelle, parce que c'est le seul des deux qu'on peut corriger en studio.
+
+### ② Le vrai sujet, c'est l'âge des spectateurs.
+
+| Tranche | Part |
+|---|---|
+| **65 +** | **33,4 %** |
+| 55–64 | 22,1 % |
+| 45–54 | 15,8 % |
+| 35–44 | 13,9 % |
+| 25–34 | 9,4 % |
+| 18–24 | 5,4 % |
+
+**55 ans et plus = 55,5 % des spectateurs.** La vidéo parle d'écrans, de 40 cm et de 20-20-20 : un
+message de trentenaire devant un ordinateur. **On a parlé à 45 % de l'audience et ignoré la moitié la
+plus nombreuse.** À Bonabéri, à 65 ans, le problème n'est pas la fatigue d'écran : c'est le journal
+qu'on éloigne pour lire, l'aiguille qu'on ne voit plus, et les lunettes qu'on remplace tous les deux ans.
+
+⚠️ **Ce que je ne conclus pas** : je ne sais pas si c'est *notre* contenu qui attire les seniors ou si
+c'est simplement la population Facebook au Cameroun. Le post « enfants » a touché 50 % de 35–44 ans —
+donc l'audience suit le sujet. Il faut **une vidéo de plus** pour trancher. Ce que je sais déjà : à
+l'écran comme dans la voix, on ne peut plus parler uniquement aux actifs.
+
+### ③ Deux plateformes, deux causes de départ — et ce n'est pas le même problème.
+
+| | Facebook | TikTok |
 |---|---|---|
-| 0–3,4 s | « Ce n'est pas une photo floue. » + le flou se résout | rien : c'est une curiosité, ça marche |
-| 3,4–6,8 s | « Quatre étapes. Aucune ne se saute. » + l'appareil | **de nous croire sur parole** : on annonce un contenu, on ne le donne pas |
+| Ils partent à | **0:05** | **0:02** |
+| Ce qu'il y a à ce moment | la phrase « Quatre étapes. Aucune ne se saute » | les premières images, avant même que quoi que ce soit soit dit |
+| Cause probable | **lock-in manquant** : on annonce un contenu, on ne le donne pas | **la première image** : plan large, aucune action, rien qui bouge |
 
-**C'est là que ça casse.** Le pic de décrochage à 0:05 tombe exactement dans le plan 2 : on a ouvert une
-boucle, puis on a demandé au spectateur d'attendre 25 secondes pour la refermer, sans lui dire ce qu'il
-allait y gagner. C'est la définition d'un **lock-in manquant** (`knowledge/CONTENT-CREATION…` §3 bis) :
-le hook a acheté l'attention, la deuxième phrase ne l'a pas gardée.
+Sur Facebook, le hook a fonctionné (34 % restent à 3 s) puis on a perdu le fil. Sur TikTok, on perd la
+moitié **avant** que le contenu commence — c'est une question de montage, pas d'idée. Les deux se
+corrigent par la même règle : **quelque chose doit se passer dans le cadre à la première seconde.**
 
-**Le second problème est la longueur.** 31 s pour une audience froide, avec une seule idée à retenir
-(« l'examen se fait en quatre étapes ») : le rapport contenu/durée est mauvais. Ce n'est pas la vidéo qui
-est mauvaise, c'est le format choisi pour la deuxième vidéo d'un compte qui a trois jours.
+### ④ Personne n'a partagé, personne ne s'est abonné.
 
-## 3 · Ce qu'on ne peut PAS conclure
+**0 partage sur les deux réseaux, 0 nouvel abonné.** Pour un cabinet de quartier, ce n'est pas
+forcément grave — mais un partage, ici, vaut cent vues : c'est une fille qui envoie la vidéo à sa mère
+qui plisse les yeux. **Aucune vidéo ne lui a donné une raison de le faire.** Une phrase du type « montrez
+ça à quelqu'un qui éloigne son téléphone pour lire » coûte trois secondes et vise exactement les 55 % de
+l'audience qu'on a mesurés.
 
-- **On ne sait pas si le contenu plaît.** 210 vues, c'est un échantillon, pas un verdict.
-- **On ne sait pas d'où viennent les vues.** Aucun message pré-rempli propre à cette vidéo : une
-  conversation WhatsApp qui arrive ne dit pas si elle vient du reel, du TikTok ou de la fiche Google.
-- **On ne compare rien.** Il n'y a qu'une vidéo. Pas d'A/B, pas de groupe témoin, pas de semaine de
-  référence. La seule comparaison honnête sera **la n°2 contre la n°1**, à volume comparable.
-- **Le décrochage à 0:05 sur Facebook n'est pas une preuve pour TikTok** : deux algorithmes, deux
-  audiences, deux heures de publication différentes.
+### ⑤ Le doublon de 15h24 a fait zéro vue.
 
-## 4 · La structure proposée pour la vidéo n°2
+Deux envois du même reel à la même minute : le second a été enterré. **Une publication = un envoi**, et
+on vérifie que la vidéo tourne avant de fermer l'application. C'est une erreur d'exploitation, pas de
+création — mais elle a coûté un post.
 
-**La matière ne change pas** : le geste utile 20/20/20 (règle des 20 minutes d'écran → 20 secondes à
-6 mètres → 20 clignements), déjà validée par King pour le 27/10. **La forme change** : 17 s au lieu de
-23, et l'accroche à l'écran avant la voix.
+### ⑥ La fiche Google a déjà changé de catégorie.
+
+**4 avis, 5,0 étoiles, profil complet** — l'objectif envoyé à M. Domche samedi était « 5 avis ». On est à
+4, en quatre jours, sans un franc dépensé. Selon l'ordre des leviers
+(`knowledge/MARKETING-OPTICAL` §1), **les avis valent plus que les vidéos** : ce résultat vaut plus que
+les 227 vues, et il faut le dire au client avant de lui parler de contenu.
+
+Trois avis ne sont pas encore lus. Ça devient le sujet du point suivant : **qui répond, et dans quel
+délai.**
+
+---
+
+## 3 · Ce qu'on ne peut pas conclure
+
+- **227 vues, ce n'est pas un verdict.** C'est un échantillon d'un post, sur un compte de trois jours.
+- **On ne sait pas ce qui plaît**, seulement ce qui fait rester. Nuance : les 5 personnes arrivées à
+  20 s ne disent rien de leurs intentions.
+- **Le lien entre l'âge des spectateurs et le sujet de la vidéo n'est pas démontré** (voir le ⚠️ du ②).
+- **Les deux relevés TikTok ne parlent pas du même fichier** (18 s contre 31 s). Toute comparaison
+  TikTok entre les deux relèves serait fausse.
+- **Aucune attribution.** Il n'y a pas de lien pré-rempli sur ce post : une conversation qui arrive ne
+  dit pas si elle vient du reel, du TikTok ou de la fiche Google.
+
+---
+
+## 4 · Ce que je propose pour la vidéo n°2 (proposition, pas décision)
+
+**Deux changements de fond, un changement de forme.**
+
+1. **Le sujet passe aux 55 ans et plus.** Le geste utile existe et il est déjà validé : la presbytie —
+   « vous éloignez le journal pour lire ». Il parle aux 55 % qu'on a mesurés, il est vrai, et il ne
+   promet rien de médical.
+2. **La première seconde montre un geste, pas un lieu.** Pas de plan large du cabinet, pas de logo : une
+   main qui éloigne un journal, nette, plein cadre.
+3. **La forme tombe à 15–18 s** : une idée, un geste, une sortie.
 
 | # | Bloc | Temps | À l'écran (écrit d'abord) | Voix |
 |---|---|---|---|---|
-| 1 | **Hook** | 0 – 1,6 s | **VOS YEUX TRAVAILLENT 40 CM** (5 mots, plein cadre, sur la photo du cabinet) | « Vos yeux travaillent à quarante centimètres. » |
-| 2 | **Lock-in** | 1,6 – 4,6 s | **20 · 20 · 20** (le chiffre seul, gros) | « Trois chiffres, et ça se fait en trente secondes. » |
-| 3 | **Rehook** | 4,6 – 6,2 s | **ET CE N'EST PAS LE PIRE** | « Et ce n'est pas le téléphone qui fatigue le plus. » |
-| 4 | **Body** | 6,2 – 12,2 s | **20 MIN D'ÉCRAN → 20 S À 6 M → 20 CLIGNEMENTS** (3 lignes qui s'allument l'une après l'autre) | « Toutes les vingt minutes : vingt secondes à six mètres, puis vingt clignements. » |
-| 5 | **CTA** | 12,2 – 17 s | **ENVIEZ « PAUSE »** + WhatsApp 656 122 239 | « Si vous voulez la fiche complète, écrivez pause. Examen de vue, 8h30–13h00. » |
+| 1 | **Hook visuel** | 0 – 1,5 s | un journal qu'on éloigne, net, plein cadre — texte **« VOUS ÉLOIGNEZ LE JOURNAL ? »** | — (silence) |
+| 2 | **Lock-in** | 1,5 – 4 s | **CE N'EST PAS LA FATIGUE** | « Ce n'est pas la fatigue. C'est l'âge du cristallin. » |
+| 3 | **Preuve douce** | 4 – 8 s | **APRÈS 45 ANS, IL DEVIENT PLUS RIGIDE** | « Après quarante-cinq ans, il devient plus rigide : c'est normal, et ça se corrige. » |
+| 4 | **Le geste** | 8 – 13 s | **UNE MESURE, DEUX VERBES** | « Une mesure de cinq minutes, et on vous dit ce qu'il vous faut. Pas de devis à l'aveugle. » |
+| 5 | **Sortie** | 13 – 17 s | **NDOBO MAYOR · BONABÉRI** + 6 56 12 22 39 | « Passez au cabinet, on vous reçoit jusqu'à dix-sept heures. » |
 
 **Pourquoi cette forme, point par point :**
 
-1. **Le texte arrive avant la voix** (règle du 23/10 : hook visuel > hook écrit > hook parlé). Le premier
-   mot se lit en 0,3 s ; la voix, elle, a besoin d'une seconde pour être comprise.
-2. **Le rehook tombe à 4,6 s** — exactement là où la première vidéo perd ses spectateurs. C'est le seul
-   endroit où on sait qu'il faut agir, parce qu'on l'a mesuré.
-3. **Un CTA mesurable** : mot-clé `PAUSE` dans le message pré-rempli
-   (`wa.me/237656122239?text=PAUSE`). C'est la seule attribution possible sans cookie, et elle se met en
-   place en une ligne dans la bio et dans le commentaire épinglé.
-4. **17 s, pas 31.** Une idée, un geste, une sortie. Si le geste se démontre en 17 s, le rallonger est une
-   faute de goût, pas une stratégie.
-5. **Aucune promesse santé.** « Ça repose », jamais « ça corrige », jamais « ça guérit » (§6 bis).
+1. **Le hook est un geste, pas une phrase.** Sur TikTok, la moitié part à 0:02 : la première image doit
+   montrer quelqu'un en train de faire quelque chose, pas un décor.
+2. **Le texte arrive avant la voix** (règle du 23/10 : visuel > écrit > parlé) — et **sous-titres
+   obligatoires**, la vidéo doit marcher sans son.
+3. **Pas de mot-clé.** Décision du 23/10 : sur DM OPTIQUE, on demande **un rendez-vous**, pas un mot à
+   commenter. L'attribution se fait par un lien `wa.me` **pré-rempli** (« Bonjour, je viens de votre
+   vidéo ») : un appui, rien à mémoriser, et on sait d'où vient la conversation.
+4. **Le partage est demandé une fois, à la fin**, et il vise la bonne personne : « montrez ça à quelqu'un
+   qui éloigne son téléphone pour lire ». C'est la seule phrase qui peut transformer un visionnage en
+   recommandation familiale.
+5. **17 s.** Une idée, un geste, une sortie.
 
-**Ce que ça remplace :** la version 23 s validée le 22/10 pour le 27/10. Si King préfère ne pas toucher à
-une pièce validée, on publie la 23 s telle quelle — mais alors on accepte de ne rien apprendre de plus,
-puisqu'elle ne porte pas de CTA mesurable.
+**Si King préfère ne pas toucher à la pièce déjà validée pour le 27/10** (`PLAN-27-10.md`, tiktok-01-v2,
+23 s), on la publie telle quelle — mais alors on accepte de ne rien apprendre de plus sur le format, et
+on ajoute seulement le lien pré-rempli en légende.
+
+---
 
 ## 5 · Ce qui change dans la production, à partir de maintenant
 
 | Règle | Pourquoi, concrètement |
 |---|---|
-| **Un mot-clé par vidéo, dans le message pré-rempli** | sans lui, chaque conversation est anonyme |
-| **Le rehook est obligatoire dès 12 s** | c'est mesuré chez nous : la chute est à 0:05 |
-| **17–22 s pour un geste, 45–90 s pour une explication** | la durée suit la matière, jamais l'inverse |
-| **Le texte à l'écran s'écrit avant la voix** | l'œil comprend avant l'oreille |
+| **Quelque chose bouge dans le cadre à la première seconde** | TikTok perd la moitié à 0:02, Facebook à 0:05 |
+| **Un sujet par tranche d'âge, assumé** | 55 % des spectateurs ont 55 ans et plus |
+| **Une phrase qui donne une raison de partager** | 0 partage sur deux plateformes |
+| **Un seul envoi par post, vérifié** | le doublon de 15h24 a fait 0 vue |
+| **Un lien pré-rempli par vidéo** | sans lui, aucune conversation n'est attribuable |
+| **17–22 s pour un geste, 45–90 s pour une explication** | la durée suit la matière |
 | **On ne juge pas une vidéo seule** | la n°2 se compare à la n°1, à volume comparable |
 
 ## 6 · Comment on saura que la n°2 est meilleure
 
-Trois chiffres, relevés au même moment de la journée, 72 h après publication :
+Relevés au même moment, 48 h et 72 h après publication :
 
-1. **% de spectateurs encore là à 5 s** (Facebook) — doit dépasser **33 %** ;
-2. **temps de visionnage moyen** — doit dépasser **4 s** sur Facebook et **6,9 s** sur TikTok ;
-3. **nombre de messages « PAUSE »** — le seul qui parle d'argent. S'il est à zéro, ni l'un ni l'autre des
-   deux premiers ne compte.
+| Chiffre | La n°1 | Seuil pour dire « mieux » |
+|---|---|---|
+| Encore là à 3 s (Facebook) | 34 % | **> 34 %** |
+| Lecture moyenne (Facebook) | 4 s | **> 5 s** |
+| Arrêt à 2 s (TikTok) | la moitié partie | **> 60 % encore là à 2 s** |
+| Lecture moyenne (TikTok) | 26 % | **> 30 %** |
+| Partages | 0 | **≥ 1** — un seul suffit à changer la nature du post |
+| Conversations WhatsApp | non mesuré | **≥ 1** avec le lien pré-rempli |
+| **Avis Google** | 4 | **≥ 6** — c'est le chiffre qui parle au client |
 
-Aucun de ces trois ne devient une règle avant d'avoir été lu **deux fois** (deux vidéos, deux relevés).
+Aucun de ces seuils ne devient une règle avant d'avoir été lu **deux fois** (deux vidéos, deux relevés).
