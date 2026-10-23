@@ -102,20 +102,20 @@ feu vert de King) :
 3. preview d'abord, capture à King, production **après son accord**.
 
 **Où en est le déploiement, le 23/10 (vérifié, pas supposé) :**
-- la **source** est dans le dépôt, `ops/amk-factures-pwa/`, commit `54e90f7` ;
-- un projet Vercel **`amk-factures-pwa-preview`** (`prj_p0jOq44hpb98NhiYg1ViNzJOXVZw`) a été créé, lié
-  au dépôt `AKWOKING/AMK`, racine `ops/amk-factures-pwa` ;
-- **l'envoi des fichiers par le connecteur a échoué** (`projectSettings` exigé pour un projet neuf), et un
-  déploiement d'essai sans les bons fichiers a été supprimé : rien n'a bougé en production ;
-- **le chemin qui reste, et il est propre :** dans Vercel → `amk-factures-pwa-preview` → *Deployments* →
-  *Create deployment* → branche `arena/000d42c4-amk`. Le fichier publié est alors celui du dépôt, donc
-  exactement celui qui a été vérifié. La production reste sur l'ancienne version tant que King n'a pas dit oui.
+- la **source** est dans le dépôt, `ops/amk-factures-pwa/`, commit `68f16db` ;
+- **le zip est reconstruit** : `amk-factures-pwa-v2.zip` à la racine (6 fichiers, à plat) — pour un envoi
+  manuel si King préfère ;
+- le projet **`amk-factures-pwa-preview`** (`prj_p0jOq44hpb98NhiYg1ViNzJOXVZw`) est lié au dépôt, racine
+  `ops/amk-factures-pwa`, et **déploie tout seul à chaque envoi sur la branche** :
+  `https://amk-factures-pwa-preview-git-arena-000d42c4-amk-amk-5d61.vercel.app` (alias de branche, stable) ;
+- **dernier déploiement en ligne** : `dpl_HsP52JkuJBwuHHwTDdNca6czFJqZ`, état **READY**, commit `68f16db`
+  → `https://amk-factures-pwa-preview-ihe2xn2j9-amk-5d61.vercel.app` ;
+- ⚠️ **la preview est derrière la connexion Vercel** (protection standard du compte) : elle s'ouvre pour
+  King connecté, pas pour un tiers. **Je n'ai donc pas pu lire la page moi-même** — la première chose à
+  vérifier, c'est qu'elle affiche la liste des factures et pas une page 404 ;
+- **la production n'a pas bougé** : `amk-factures-pwa.vercel.app` sert toujours l'ancienne version.
+- **la production ne se met pas à jour par ce projet** : c'est un projet de preview. Le jour où King dit
+  oui, deux voies : promouvoir un déploiement dans *son* projet (celui du domaine), ou déposer le zip.
 
-## 4 · Ce que l'outil ne fera jamais à notre place
-
-Il ne dit pas si le prix est juste, il ne dit pas si le travail est livré, et il ne remplace pas la
-phrase qui compte au client : **« voilà ce que vous avez reçu ce mois-ci »**. C'est le rapport d'une
-page (`knowledge/MAINTENANCE-CLIENTS-2026-10-22.md` §4) qui justifie le prélèvement, pas la facture.
-Facturer le 1er, envoyer le **récap d'une page + le rapport** le 2 : l'ordre est déjà écrit, il ne
-reste qu'à le tenir. Le récap se régénère en deux minutes (`tools/ops/make_recap.py --data …`, gabarit `tools/ops/recap-modele.json`),
-ce qui est la seule façon qu'il parte vraiment tous les mois.
+**Ce qu'on garde de la leçon :** un fichier neuf dans le dépôt ne déploie pas tout seul dans le projet
+existant — il faut un projet **lié**. C'était ça, le vrai manque ; il est comblé.
