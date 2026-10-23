@@ -50,8 +50,9 @@ Depuis le 24/10, la grille est unique (`knowledge/PRIX-2026-10-24.md`, séance
 
 ## 3 · Ce qui reste à décider par King
 
-1. **Le canal d'encaissement** à afficher par défaut : MTN 677 78 96 31 ou Orange 692 89 07 47 — l'outil
-   n'affiche aujourd'hui que les montants, pas les coordonnées de paiement.
+1. ~~**Le canal d'encaissement** à afficher par défaut~~ — **réglé** : MoMo, Orange Money et les
+   coordonnées bancaires figurent déjà sur la facture (King, 23/10). Reste seulement l'ordre d'affichage
+   si les trois ne tiennent pas sur une ligne.
 2. **La mention fiscale** : ni « conforme DGI » ni « facture normalisée » ne doivent apparaître tant que
    les spécifications ne sont pas publiées ; une phrase honnête est à écrire une fois (proforma + NIU +
    RIB, comme pour DM OPTIQUE) et à réutiliser.
@@ -59,12 +60,25 @@ Depuis le 24/10, la grille est unique (`knowledge/PRIX-2026-10-24.md`, séance
    le prix reste, sans augmentation ni réduction. L'écart éventuel se règle **en heures livrées**,
    jamais en réécrivant le contrat. Toute nouvelle facture DM reste à 30 000.
 
-## 3 bis · Ce que la facture doit porter, et ce qui manque encore
+## 3 bis · Ce que la facture doit porter — et ce qui manque vraiment
 
-Numéro annuel continu · date d'émission · **date d'échéance** · lignes détaillées · coordonnées de
-paiement · solde restant. Les trois premiers et les lignes sont dans l'outil ; **l'échéance et les
-coordonnées de paiement ne le sont pas**. La liste complète (contrat + facture + échelle d'impayé) est
-dans `sales/REVUE-CONTRATS-GRILLE-2026-09-23.md`, addendum du 23/10.
+**Correction du 23/10 (King) :** j'avais écrit que « les coordonnées de paiement manquent ». **C'est
+faux** — l'outil porte déjà **MoMo, Orange Money et les coordonnées bancaires**. Je parlais sans avoir
+ouvert l'écran ; l'affirmation est retirée.
+
+| Élément | État réel |
+|---|---|
+| Numéro annuel continu (`AMK-2026-001`) | ✅ présent |
+| Date d'émission | ✅ présent |
+| Lignes détaillées | ✅ présent |
+| **MoMo · Orange Money · coordonnées bancaires** | ✅ **présent** (vérifié par King, 23/10) |
+| Montant encaissé / reste dû | ✅ présent (75 000 / 75 000) |
+| **Date d'échéance** | ❌ **le seul vrai manque** |
+
+**Pourquoi l'échéance compte, et pas pour faire joli :** sans elle, « payable sous 7 jours » n'existe que
+dans le contrat ; avec elle, la facture dit d'elle-même quand elle devient en retard, et **la relance
+cesse d'être un choix personnel**. C'est aussi la ligne qui rend la pénalité de retard applicable sans
+négociation. Deux champs : `émise le` + `échéance à 7 jours` calculée, rien de plus.
 
 ## 4 · Ce que l'outil ne fera jamais à notre place
 

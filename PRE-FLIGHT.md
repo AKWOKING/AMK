@@ -50,6 +50,29 @@ Tout audit qui relève un problème doit contenir trois éléments. Un audit san
 
 ---
 
+## 0f · Le tour se lit avant de répondre : trois couches, dans cet ordre (ruling King 23/10)
+
+> *King 23/10 : « at each turn you go through the preflight doc, the knowledge docs, and other docs
+> depending on the task or question ».*
+
+Ce n'est pas une recommandation, c'est **la première chose que fait un tour**. Trois couches, toujours
+dans cet ordre, et le compte rendu en tête de réponse dit **ce qui a été lu et ce qui ne l'a pas été** :
+
+| # | Couche | Ce qu'on y cherche | Temps |
+|---|---|---|---|
+| 1 | **`PRE-FLIGHT.md`** (§0 à §5, en entier) | la règle qui gouverne la tâche, les portiques, les verrous, les rulings en vigueur | 2 min |
+| 2 | **`knowledge/`** — les documents dont le périmètre couvre la tâche (§0c + table §1g) | ce que le dépôt sait déjà : sources vérifiées, chiffres, structure, retours d'expérience | 3 min |
+| 3 | **Les documents de la tâche** : dossier client (§0b), brief, devis, données, captures, pièces jointes | l'état réel du sujet traité | variable |
+
+**Règle de sortie :** si une couche n'a pas été lue, la réponse le dit et explique pourquoi (fichier
+absent, hors périmètre, illisible) — jamais un silence. Une réponse qui invente une règle déjà écrite,
+ou qui redécouvre un chiffre déjà sourcé, a sauté la couche 2.
+
+**Et le contrôle qui va avec :** avant d'affirmer *(a)* une règle, *(b)* un chiffre, *(c)* l'état d'un
+fichier ou d'un compte, on l'a **lu dans la source**, pas dans sa mémoire du tour précédent (§0e).
+
+---
+
 ## 0d · Décision → fichiers touchés (table manuelle, 13/10/2026)
 
 Quand une règle change ou qu'un ruling est donné, cette table dit quels fichiers il faut relire et mettre à jour. Chaque ligne est vérifiée contre le dépôt. Ajouter une ligne à chaque nouvelle règle permanente.
@@ -57,6 +80,9 @@ Quand une règle change ou qu'un ruling est donné, cette table dit quels fichie
 | Règle | Fichiers qu'elle gouverne |
 |---|---|
 | **Marketing & création de contenu (ruling King 22/10)** | `knowledge/MARKETING-OPTICAL-2026-10-22.md` · `knowledge/CONTENT-CREATION-2026-10-22.md` · `PRE-FLIGHT.md` §1g · `clients/<client>/brand/BRAND-STRATEGY-*.md` · scripts `content/month1/**` · `tools/record/` · portique `tools/qa/audit_video_motion.py` |
+| **Lecture par tour, trois couches (ruling King 23/10)** | `PRE-FLIGHT.md` §0f · §0c · §1g · ce tableau |
+| **Contrat d'une page (ruling King 23/10)** | `ops/templates/CONTRAT-UNE-PAGE-2026-10.md` · `.pdf` · `tools/ops/make_contrat.py` · `sales/REVUE-CONTRATS-GRILLE-2026-09-23.md` (addendum 23/10) |
+| **Un opt-in, un seul (ruling King 23/10)** | `sales/lead-magnets/CONTROLE-PRESENCE-EN-LIGNE-2026-10-23.pdf` · `tools/ops/make_magnet.py` · `knowledge/CONTENT-CREATION-2026-10-22.md` §5 bis |
 | **Knowledge first (ruling King 23/10)** | `knowledge/**` (la couche de référence) · `PRE-FLIGHT.md` §0c · table de routage §1g |
 | **Versionnage : fusion sur jalon ou > 1 000 commits (King 23/10)** | `PRE-FLIGHT.md` §1i · `tools/ops/wake.py` · `tools/ops/gate-amk.sh` |
 | **Plafond 5 clients · Présence ≤ 3 pages · grille pour la prochaine signature seulement (King 23–24/10)** | `PRE-FLIGHT.md` §1h · `knowledge/PRIX-2026-10-24.md` §4–§5 · `knowledge/MAINTENANCE-CLIENTS-2026-10-22.md` · `site/index.html` · `site/en/index.html` · `site/creation-site-web-*.html` · `sales/PRIX-ET-RECURRENCE-2026-09-24.md` · `ops/FACTURATION-2026-10-24.md` |
@@ -328,7 +354,10 @@ deux bases de connaissance, **avant** d'écrire une ligne de script ou de lancer
 |---|---|---|
 | positionner une marque, écrire un statement | `knowledge/MARKETING-OPTICAL…` §6 | `clients/<client>/brand/BRAND-STRATEGY-*.md` |
 | **créer, réparer ou optimiser une page sociale** (Facebook, Instagram, TikTok) | `brand/AMK-PRESENCE-2026-10-22.md` **§14** (l'audit des trois profils réels : les sept défauts, la copie exacte Instagram/TikTok, la règle des identifiants) + **§13** (identité des trois comptes, fusion de pages, lien page ↔ Instagram) + §12 (les onze champs Facebook) + §10 (protocole captures) · `sales/research/2026-W43-techniques.md` §15 (audience vs communauté, cadence, mesure) | le §3 de PRESENCE uniquement pour les visuels déjà validés — l'arbitrage du nom est au §12.0 ; **une promesse de délai ne va jamais dans une bio sans sa condition** (§14.5) |
-| écrire un script court | `knowledge/CONTENT-CREATION…` §3 | le gabarit du mois (`content/month1/…`) |
+| écrire un script court | `knowledge/CONTENT-CREATION…` §3 **puis §3 bis** (gabarit 9 blocs, rehook) et **§3 ter** (4 S + banque de hooks) | le gabarit du mois (`content/month1/…`) |
+| choisir **le type de contenu selon l'objectif** (être connu / faire écrire / créer l'urgence / filtrer) | `knowledge/CONTENT-CREATION…` §4 bis | l'objectif du mois, écrit dans le plan |
+| poser un **aimant à prospects** (opt-in unique) | `knowledge/CONTENT-CREATION…` §5 bis | `sales/lead-magnets/` + `tools/ops/make_magnet.py` |
+| faire signer un **nouveau client** | `ops/templates/CONTRAT-UNE-PAGE-2026-10.md` | `sales/REVUE-CONTRATS-GRILLE…` addendum 23/10 |
 | monter une vidéo | `knowledge/CONTENT-CREATION…` §1–2 | `tools/record/` + **portique** `tools/qa/audit_video_motion.py` (§1b) |
 | monter une vidéo **UGC** (storyboard, produit, cartons, clip IA, voix) | `tools/ugc/README.md` | `python3 tools/ugc/ugc.py render <spec>.json --qc` |
 | obtenir un **plan d'humain** / choisir un générateur, avec un prix | `research/ugc-video/2026-10-22-TOOLCHAIN-UGC.md` | `tools/ugc/providers.py` (Veo 3.1, HeyGen, Hedra, fal) |

@@ -278,6 +278,11 @@ lignes détaillées (pas un total), coordonnées de paiement, et la mention du s
 a un. Aujourd'hui l'outil fait les trois premiers et les lignes ; **l'échéance et les coordonnées
 manquent** — c'est une ligne de code, pas un chantier.
 
+**Le document existe désormais** (ruling King 23/10) : `ops/templates/CONTRAT-UNE-PAGE-2026-10.pdf`,
+texte source `.md`, régénérable par `python3 tools/ops/make_contrat.py`. Dix clauses, une page, deux
+exemplaires. Il couvre les sept points ci-dessus **plus** le droit à l'image (photos de patients) et la
+propriété des comptes dès paiement. À faire relire **une fois** par un juriste, puis à réutiliser tel quel.
+
 **Le trou connu, à ne pas maquiller :** DM OPTIQUE tourne sur un accord verbal. Ce n'est pas un oubli
 de rédaction, c'est un choix assumé sous contrainte de temps. Il se rattrape sur le **prochain** client,
 pas en faisant signer un document rétroactif à celui-ci au moment de lui demander 75 000 FCFA.

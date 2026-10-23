@@ -68,6 +68,102 @@ Celle qui traverse toutes les sources et qu'on applique :
 
 ---
 
+## 3 bis · Le gabarit en 9 blocs (Kallaway) — et comment il se pose sur nos 5 temps
+
+Sources reçues de King le 23/10 : *Short-Form Storytelling (Writing Guide)* (3 p.) et *100 Viral Hooks*
+(BrandIt, 16 p.), tous deux de l'école **Kane Kallaway**. Vérifié au passage : le format et les « 4 S »
+sont bien les siens (atelier hooks, `luma.com/sfa-hooks` ; podcast Castmagic 2025 ; analyse build-os 2026).
+
+**Le gabarit, mot pour mot :** Hook (1–2 phrases) → **Lock-in zone** (2–4) → Body block 1 (3–5, avec au
+moins une idée contre-intuitive) → **Rehook 1** (1 phrase) → Body block 2 (3–5) → **Rehook 2** (1) →
+(option) Body block 3 → (option) Closing → **CTA** (1 phrase, idéalement un **lead magnet aligné**).
+
+**Ce que chaque bloc fait :**
+
+| Bloc | Fonction | Erreur fatale |
+|---|---|---|
+| Hook | nomme le sujet, pose l'enjeu, en mots simples | se présenter, ou une accroche « jolie » qui ne dit pas le sujet |
+| Lock-in | convainc que la suite vaut les 20 prochaines secondes : preuve annoncée, contraste, « boîte magique », objection désarmée | enchaîner sur le corps sans avoir mérité l'attention |
+| Body block | une idée non évidente + 2 à 4 phrases qui la défendent | empiler des généralités |
+| Rehook | remet le sablier à zéro (contraste, nouvelle curiosité) | une transition plaquée, « mais ce n'est pas tout » |
+| CTA | rampe vers de la valeur supplémentaire, mesurable | deux CTA, ou « abonnez-vous » sans contrepartie |
+
+**Deux principes qui changent notre façon d'écrire :**
+
+1. **L'alignement du hook compte plus que le hook.** Ordre d'importance, selon Kallaway : **hook visuel >
+   hook écrit (texte à l'écran) > hook parlé**. Nos cartons doivent donc porter l'accroche *écrite*, pas
+   seulement la voix.
+2. **Le rehook est un besoin physiologique, pas un tic d'écriture.** Selon Kallaway, l'attention moyenne
+   sur un short tourne autour de **20 à 25 secondes** — *chiffre de praticien, pas une étude* : on le
+   retient comme **hypothèse de travail**, on ne le cite jamais comme une statistique (§1g). Conséquence
+   pratique : un rehook au milieu achète une vingtaine de secondes de plus.
+
+**Comment on le pose sur nos 5 temps (§3), sans trahir ni l'un ni l'autre :**
+
+| Nos 5 temps | Blocs Kallaway | Ce qu'on garde de nous |
+|---|---|---|
+| 1 · Le cas | **Hook** | la situation vécue à la 2ᵉ personne, dans les 3 premières secondes |
+| 2 · Le miroir | **Lock-in zone** | ce que ça coûte, sans diagnostic |
+| 3 · Le réel | **Body block 1** | un seul objet du cabinet, un seul axe |
+| — | **Rehook** | « et ce n'est pas le pire » → amène la preuve |
+| 4 · La preuve | **Body block 2** | un fait vérifiable, une fois |
+| 5 · La sortie | **CTA** | un seul CTA + l'honnêteté (« si vous voyez bien, ne venez pas ») |
+
+**Les six principes d'écriture qui vont avec** (ils valent plus que le gabarit lui-même) :
+
+1. **Couper le gras** — chaque phrase qui ne fait pas avancer s'enlève.
+2. **Le plus court possible** — leur fourchette idéale est 45–90 s ; on ne rallonge jamais pour remplir.
+3. **Une logique évidente** — chaque phrase se rattache à la précédente, ou ouvre clairement une nouvelle
+   chaîne. Sauter d'une idée à l'autre rend la vidéo illisible.
+4. **Annoncer la valeur tôt** — dire pourquoi rester, dès le début, pas à la fin.
+5. **Des mots simples** — le mot que le patient emploierait, pas le mot du métier.
+6. **La clarté avant l'élégance** — si une formulation est jolie mais moins claire, on garde la claire.
+
+**La seule tension, et elle est réelle :** Kallaway vise **45–90 s** ; nos scripts DM tiennent en
+**21–34 s**. On ne rallonge pas pour rentrer dans un gabarit — un short de 30 s qui garde 30 % vaut mieux
+qu'un 70 s qui garde 12 %. Le gabarit sert quand **la matière le justifie** (une explication, un
+« pourquoi »), pas pour remplir. Règle : **rehook obligatoire dès qu'on dépasse 25 s**.
+
+---
+
+## 3 ter · Les quatre S du hook, et la banque de hooks adaptée
+
+**Les quatre S** (Kallaway) : **S**ujet (le sujet est dit dans la première phrase) · **S**takes (une
+raison de rester) · **S**imple (mots de tous les jours) · **S**uperclear (structure limpide, une seule
+idée par phrase).
+
+**Banque adaptée** — 15 hooks dérivés de *100 Viral Hooks* (les originaux sont en anglais, à la 2ᵉ
+personne, avec des trous). On garde **la structure**, jamais le contenu : un hook copié tel quel sonne
+faux et ne parle pas de Bonabéri.
+
+| # | Hook (français, adapté au cabinet) | D'où il vient (structure) |
+|---|---|---|
+| 1 | « Vous pensez qu'il faut une ordonnance pour changer de monture. En réalité, il n'en faut pas toujours. » | « People think you need X, but in reality you only need Y » |
+| 2 | « Ne faites jamais nettoyer vos verres au tee-shirt avant de savoir ces deux choses. » | « Never start X before you understand these N things » |
+| 3 | « Arrêtez de plisser les yeux pour lire votre téléphone jusqu'à ce que vous ayez fait ceci. » | « Stop X until you Y » |
+| 4 | « Il y a deux façons de choisir une monture. Devinez laquelle vous fait porter la même que tout le monde. » | « A vs B — who do you think gets X? » |
+| 5 | « Si quelqu'un vous dit qu'il voit bien, demandez-lui de lire la plaque d'un taxi à dix mètres. » | « If someone says they don't like X, just Y » |
+| 6 | « Ça, c'est le moment où la plupart des gens achètent la mauvaise monture. » | « This is exactly what you want to see when… » |
+| 7 | « Votre ordonnance date de deux ans ? Voici ce que ça change concrètement. » | « Do you struggle with X? » |
+| 8 | « Je suis opticien à Bonabéri, et voici ce que je refuse de vendre. » | « I am X in Y, and this is… » |
+| 9 | « Regardez ces deux verres : même correction, même prix. Un seul est sale depuis six mois. » | « Look at these two: same X, the left one… » |
+| 10 | « Trois choses que les patients croient normales, et qui ne le sont pas. » | « N things X think are normal, but aren't » |
+| 11 | « Le chiffre qui vous coûte le plus cher quand vous commandez des lunettes en ligne. » | « There's one number that will kill you in X » |
+| 12 | « Vous avez déjà eu mal à la tête à 16 h sans savoir pourquoi ? C'est peut-être ça. » | « Have you ever noticed that X… » |
+| 13 | « Personne ne vous le dira au comptoir : voilà comment on reconnaît une monture trop lourde. » | « No more gatekeeping. These are my N… » |
+| 14 | « J'ai payé pour apprendre ça. Je vous le dis en trente secondes. » | « I paid $X to learn this » |
+| 15 | « Si vous devez acheter une seule chose cette année pour vos yeux, c'est celle-ci. » | « People only spend money on N things » |
+
+**Trois règles d'usage** (sinon la banque devient un générateur de clickbait) :
+
+- **le hook ne promet rien que la vidéo ne tienne** — un hook qui ment coûte le compte, pas la vue ;
+- **aucun hook ne touche aux verrous client** : pas de prix de monture, pas de délai, pas de superlatif,
+  pas d'allégation santé (« guérir », « corriger définitivement ») — voir §6 bis ;
+- **on teste trois hooks pour la même vidéo**, on garde celui qui retient, et on note le numéro gagnant
+  dans le fichier de la semaine.
+
+---
+
 ## 4 · Les quatre piliers de contenu (modèle DM Optique, transposable)
 
 | Pilier | Ce que c'est | Preuve mobilisée |
@@ -79,6 +175,27 @@ Celle qui traverse toutes les sources et qu'on applique :
 
 **Rythme** : 2 posts/semaine — un pilier 1 ou 4, un pilier 2 ou 3. C'est ce qui supprime la question
 « que poster aujourd'hui ? ».
+
+---
+
+## 4 bis · Choisir le type de contenu selon l'objectif visé
+
+Source reçue le 23/10 : @ameliagonzamonte, *« posting content just because it's going viral is one of the
+best ways to never reach your specific goals »*. Le principe est le bon et il manquait : **on choisit le
+type de contenu d'après l'objectif, pas d'après la tendance.**
+
+| Objectif réel | Type de contenu qui y mène | Ce que ça donne chez DM |
+|---|---|---|
+| **être connu comme la référence** (opticien, pas « un opticien ») | prises de position, prédictions, cadre maison, série signée | « ce qu'on refuse de vendre », « pourquoi on mesure avant de vendre » |
+| **faire écrire en DM / au WhatsApp** | Q&R, jeu de rôle, réponses aux objections, démonstration | « votre ordonnance date de deux ans », « ma monture glisse » |
+| **créer l'urgence de ne pas rester bloqué** | transformations, erreurs qui coûtent, cadre comparatif — **poussée douce, jamais la peur** | « ce que ça coûte d'attendre » (sans dramatiser, sans promesse) |
+| **attirer les bons et écarter les mauvais** | prise de position claire sur **pour qui on n'est pas** | « si vous cherchez le moins cher, ce n'est pas ici » |
+
+**Ce que ça interdit :** publier « parce que ça peut devenir viral ». Une vidéo virale qui n'appelle
+personne est un feu de paille : elle coûte une journée de production et ne laisse **aucun** avis, aucune
+conversation, aucun patient.
+
+**Ce qui relie les quatre lignes :** chacune se termine par **le même** CTA — un seul opt-in, (§5 bis).
 
 ---
 
@@ -94,6 +211,29 @@ Celle qui traverse toutes les sources et qu'on applique :
 **Le message pré-rempli est la seule attribution fiable** : chaque vidéo a son propre texte
 (`wa.me/237…?text=…`), sinon une conversation ne dit pas d'où elle vient. Pas de cookies, pas d'UTM côté
 WhatsApp.
+
+---
+
+## 5 bis · Un opt-in, un seul (ruling King 23/10)
+
+Un seul aimant à prospects, un seul mot-clé, une seule destination. Pas deux : deux aimants divisent
+l'attention et rendent le taux de conversion illisible.
+
+```
+Aimant    sales/lead-magnets/CONTROLE-PRESENCE-EN-LIGNE-2026-10-23.pdf   (une page, 12 points)
+Mot-clé   CONTRÔLE
+Canal     wa.me/237 677 78 96 31?text=CONTRÔLE     (et le commentaire « CONTRÔLE » sous les vidéos)
+Suite     J+2, une seule question : « je regarde les 12 points pour votre cabinet ? »
+Généré    python3 tools/ops/make_magnet.py
+```
+
+**Pourquoi une checklist et pas un e-book :** elle se lit en 8 minutes, se vérifie sur son propre
+cabinet, et **révèle un manque** que le cabinet ne peut pas combler tout seul. C'est le seul format qui
+fait vouloir la conversation suivante.
+
+**Sur les chiffres de conversion des lead magnets :** les sources secondaires consultées le 23/10 se
+contredisent (de 5 % à 42 % selon le format et le trafic). **Aucun chiffre n'entre ici** (§1g). On
+mesurera le nôtre : combien de « CONTRÔLE » reçus, combien de conversations, combien de rendez-vous.
 
 ---
 
