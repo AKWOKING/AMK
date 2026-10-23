@@ -419,3 +419,36 @@ aucune version produite).
 Alternative si King préfère garder Workers Builds : remplacer sa Deploy command par
 `npx --yes wrangler@4.152.0 deploy` **et** couper les envois automatiques du workflow (`on: workflow_dispatch`
 seulement) — deux mécanismes qui publient en même temps se disputeront toujours le même Worker.
+
+---
+
+## 7 · Ce que la nuit du 23/10 a appris sur la chaîne de déploiement
+
+``` 
+Constat   un déploiement a bien eu lieu à 04:48 UTC ; les trois pushes suivants ont échoué en ~60 s.
+Preuve    curl -sI https://dmoptiquesarl.com/dm-logo.webp
+          → cache-control: public, max-age=31536000, immutable · cf-cache-status: HIT
+          curl -s https://dmoptiquesarl.com/404.html | grep -c 'class="mnav'
+          → 1  (le menu mobile n'est dans aucun build antérieur au 23/10)
+```
+
+**Le piège de l'interface.** Changer la *branche de production* (Settings → Builds & deployments)
+**ne déclenche aucun déploiement** : c'est le **push** qui déclenche. Un déploiement lancé à 04:45
+pour tester la branche, trois minutes avant le push décisif de 04:48, montre donc l'ancien site — et
+on croit que « rien ne s'est passé ».
+
+**La panne suivante, probable et non prouvée.** Après 04:48, chaque push échoue en ~60 s, sans
+message dans le check GitHub ; l'erreur n'est visible que dans `dash.cloudflare.com`. Le suspect n° 1
+est l'installation non interactive de `npx wrangler` (la commande de déploiement tire la dernière
+version à chaque build) :
+
+```
+Deploy command : npx --yes wrangler@4.152.0 deploy
+```
+
+**La sortie durable** : `tools/deploy/workflow-deploy-dmoptic.yml`, un workflow GitHub Actions
+(`workflow_dispatch` + push sur `main`, limites de concurrence, portique de livraison avant le
+déploiement, vérification `curl` du `cache-control` après). Il n'est **pas** dans `.github/workflows/`
+parce que l'App GitHub utilisée ici n'a pas la permission `workflows` : deux tentatives (git push,
+API `contents`) ont répondu **403**. Il doit être collé par King sur `main`, avec les secrets
+`CLOUDFLARE_API_TOKEN` et `CLOUDFLARE_ACCOUNT_ID` (`fa5fe266d7198ea5dc98567329d932fd`).
