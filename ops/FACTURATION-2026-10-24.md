@@ -80,6 +80,37 @@ dans le contrat ; avec elle, la facture dit d'elle-même quand elle devient en r
 cesse d'être un choix personnel**. C'est aussi la ligne qui rend la pénalité de retard applicable sans
 négociation. Deux champs : `émise le` + `échéance à 7 jours` calculée, rien de plus.
 
+## 3 ter · Quand King donnera le code (23/10)
+
+King : *« when you will be ready I will give you the code of the invoice tool so that you can modify it
+and deploy on vercel »*. On est prêts. Ce qui suivra, dans l'ordre, et rien d'autre au premier passage :
+
+| # | Modification | Détail | Risque |
+|---|---|---|---|
+| 1 | **Champ `date d'échéance`** | saisie au moment de l'émission, **+7 jours par défaut**, modifiable | aucun — champ additif |
+| 2 | **Affichage sur la facture** | « Émise le … · À régler avant le … » sous le numéro | faible |
+| 3 | **Badge dans la liste** | « en retard » quand `échéance < aujourd'hui` et `reste dû > 0` | faible |
+| 4 | **Rien d'autre** | pas de refonte, pas de TVA, pas de relances automatiques | — |
+
+**Pourquoi ces quatre lignes et pas une refonte.** L'outil fonctionne déjà : numérotation annuelle,
+lignes détaillées, MoMo / Orange Money / coordonnées bancaires, encaissé vs reste dû. Le seul manque
+identifié est l'échéance (§3 bis). On ajoute le champ, on l'affiche, on le signale — et on s'arrête là.
+
+**La procédure de déploiement** (à appliquer quand le code arrive) :
+
+1. cloner le dépôt de l'outil dans le sandbox, `npm install`, `npm run build` — **si le build casse, on
+   ne touche à rien** : on le dit à King avant toute modification ;
+2. faire les quatre lignes ci-dessus **sur une branche**, jamais directement sur la production ;
+3. **aucune valeur réelle dans le code** : pas de NIU, pas de RIB, pas de numéro de client. Ces valeurs
+   vivent dans les données, pas dans le dépôt (§16 du playbook) ;
+4. `vercel preview` d'abord, **production seulement après le feu vert de King** — c'est son outil, et
+   c'est lui qui encaisse ;
+5. vérifier après déploiement : une facture de test s'émet, l'échéance s'affiche, le badge apparaît
+   quand on antidate.
+
+**Ce qu'on ne fera pas sans qu'il le demande :** ajouter un compte client, une TVA, un export comptable ou
+une relance automatique. Chacun de ces ajouts change le métier de l'outil, pas son confort.
+
 ## 4 · Ce que l'outil ne fera jamais à notre place
 
 Il ne dit pas si le prix est juste, il ne dit pas si le travail est livré, et il ne remplace pas la

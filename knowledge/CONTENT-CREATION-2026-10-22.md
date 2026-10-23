@@ -237,6 +237,54 @@ mesurera le nôtre : combien de « CONTRÔLE » reçus, combien de conversations
 
 ---
 
+## 5 ter · La bibliothèque derrière l'aimant : un seul mot-clé, plusieurs portes
+
+Ruling King 23/10 : *« the lead magnet will be to attract people to our WhatsApp and that's where we
+will give them the free resource »*. Donc **l'aimant n'est pas le PDF, c'est la conversation** — le PDF
+est ce qu'on donne en échange du numéro. Et la matière existe déjà : la base de connaissance, c'est une
+bibliothèque de ressources écrites, pas un dossier d'archives.
+
+**La règle qui évite de tout donner d'un coup :** une seule entrée (mot-clé `CONTRÔLE`), puis **une
+ressource par étape** de la conversation. Quatre, pas dix. Chacune répond à une objection précise qu'on
+entend au téléphone.
+
+| Étape | La ressource | L'objection qu'elle lève | Elle vient de |
+|---|---|---|---|
+| 1 · Entrée | **Le contrôle présence en ligne** (12 points) | « je ne sais pas où j'en suis » | `sales/lead-magnets/CONTROLE-PRESENCE-EN-LIGNE-2026-10-23.pdf` |
+| 2 · Autorité | **Le calendrier de 12 publications** (quoi publier, quand, et pourquoi ça tient en 2 h/mois) | « je n'ai pas le temps de publier » | `knowledge/CONTENT-CREATION…` §4 + `clients/dm-optic/content/month1/` (le vrai calendrier tenu) |
+| 3 · Preuve | **Le récapitulatif d'une page** (le vrai, celui de DM) | « qu'est-ce que je reçois pour 30 000 par mois ? » | `clients/dm-optic/launch/RECAP-MISE-EN-LIGNE-2026-10-23.pdf` (version publique, chiffres conservés) |
+| 4 · Qualification | **Le contrat d'une page** | « et si je veux arrêter ? » | `ops/templates/CONTRAT-UNE-PAGE-2026-10.pdf` |
+
+**Ce que l'ordre fait :** l'étape 1 coûte 8 minutes au prospect ; l'étape 2 lui coûte une demi-journée
+de lecture ; l'étape 3 prouve qu'on travaille ; l'étape 4 dit qu'on est un prestataire, pas un ami. Un
+prospect qui demande l'étape 4 sans avoir lu l'étape 1 est un curieux, pas un client.
+
+**Comment on livre — et pourquoi pas une liste de diffusion.** Relevé le 23/10 (guides WhatsApp
+2026, tous alignés sur la politique Meta) :
+
+| Fait de plateforme | Conséquence pour nous |
+|---|---|
+| Une **liste de diffusion** de l'application gratuite plafonne à **256 contacts** et ne délivre **qu'aux personnes qui ont enregistré notre numéro** | inutilisable pour des prospects : la plupart n'ont pas notre numéro en contact |
+| Une **chaîne WhatsApp** n'est pas une diffusion : pas de réponse privée, pas de fichier échangé | ne sert pas à livrer une ressource |
+| L'**opt-in est obligatoire** ; les blocages font chuter la qualité du numéro et peuvent le faire restreindre | on ne message jamais un numéro qui n'a pas écrit d'abord |
+| Sur l'API payante, la fenêtre de service est de **24 h** après le message du client | on répond dans l'heure, pas le lendemain |
+
+**Donc le seul chemin qui marche ici** : le prospect écrit `CONTRÔLE` → on répond dans la conversation
+1:1 avec le PDF → on pose **une** question. Aucune liste, aucun envoi de masse, aucun outil à installer.
+C'est aussi la raison pour laquelle l'aimant doit vivre sur nos propres comptes (AMK), pas sur ceux du
+cabinet : le numéro qui reçoit le message doit être celui qui peut y répondre.
+
+**Deux règles debout (ruling King 23/10) :**
+
+1. **On mesure l'aimant avant d'en créer un second.** Un seul opt-in = un seul chiffre à lire : combien
+   de `CONTRÔLE` reçus, combien de conversations, combien de rendez-vous. Créer un deuxième aimant avant
+   d'avoir ces trois nombres, c'est brouiller la seule mesure propre dont on dispose.
+2. **45–90 s pour les explications, 20–30 s pour les gestes.** La fourchette Kallaway s'applique quand il
+   y a une démonstration à tenir (un « pourquoi », un cadre). Un geste utile qui tient en 20 s ne se
+   rallonge pas : un short de 30 s qui retient passe devant un 70 s qui ennuie.
+
+---
+
 ## 6 · Visages, UGC et modèles IA — la position du dépôt
 
 **Rappel des faits** : le client (King) et le docteur ont évoqué la possibilité de **modèles UGC
@@ -388,3 +436,26 @@ le chiffre n'a pas été revérifié à la source — auquel cas il est **signal
 Trois des cinq vidéos placent **le visage face caméra** en tête des formats qui marchent. Notre §6 ne l'a
 pas tranché. Tant que ce n'est pas tranché, la production part sur **ce qui ne montre personne** : écran,
 mains, documents, lieux, texte animé. Ce n'est pas un refus — c'est l'attente d'une décision.
+
+---
+
+## 10 · Journal des sources — « lu, adapté, intégré, et où »
+
+> **Pourquoi cette section existe.** King, 23/10 : *« where did you write this "les deux documents lus,
+> adaptés, intégrés" ?? you need to write it somewhere so that we don't forget that's what the knowledge
+> base is for ».* Sans ce journal, une source lue reste dans un tour de conversation : elle est perdue
+> au tour suivant, et le dépôt ne sait pas qu'il la sait. **Toute source reçue entre ici le jour où elle
+> est lue**, avec l'endroit exact où elle a atterri — et ce qu'on en a écarté.
+
+| Date | Source | Ce qu'on en a pris | Où ça vit maintenant | Écarté (et pourquoi) |
+|---|---|---|---|---|
+| 23/10 | **Short-Form Storytelling (Writing Guide)** — Kallaway, PDF 3 p., reçu de King | le gabarit 9 blocs ; les 6 principes d'écriture ; les 6 mécaniques de lock-in ; les 4 S du hook | §3 bis, §3 ter | la fourchette 45–90 s, appliquée aux explications seulement (§5 ter, règle 2) |
+| 23/10 | **100 Viral Hooks** — BrandIt, PDF 16 p., 99 hooks, reçu de King | la **structure** des 99 accroches → 15 hooks adaptés au cabinet | §3 ter | les hooks anglais tels quels (ils sonnent faux et ne parlent pas de Bonabéri) |
+| 23/10 | Capture **@kallawaymarketing** (schéma du format) | confirmation visuelle de l'ordre des blocs + le « lead magnet aligné » dans le CTA | §3 bis, §5 bis | — |
+| 23/10 | Capture **@ameliagonzamonte** (« posting for viral ») | le principe : type de contenu choisi **par objectif** ; l'urgence douce, jamais la peur | §4 bis | les catégories non transposables (thought leadership B2B US) |
+| 23/10 | **Deya**, *how to send contracts & invoices* (2022) | les 7 lignes de contrat + l'échelle d'impayé | `sales/AMK-Sales-Playbook-v2.md` Addendum 5 · `sales/REVUE-CONTRATS-GRILLE-2026-09-23.md` | ses outils (Wise, HelloSign, Dubsado, Wave) : inutilisables ici |
+| 23/10 | **Adam Erhart**, *Marketing & Sales Strategy for Service Business* (2025) | langage de la ligne d'arrivée · caractéristique → bénéfice · tunnel CASE | `sales/AMK-Sales-Playbook-v2.md` Addendum 5 | son anecdote « agenda rempli en 2 semaines » : cas unique, pas une preuve (§1g) |
+
+**La règle d'écriture de ce journal :** une ligne par source, **le jour où elle est lue**, avec la
+section qui la porte. Une source sans ligne ici n'est pas dans le dépôt — même si on s'en souvient.
+

@@ -73,6 +73,39 @@ fichier ou d'un compte, on l'a **lu dans la source**, pas dans sa mémoire du to
 
 ---
 
+## 0g · Notion = second cerveau, et sauvegarde lisible (ruling King 23/10)
+
+> *King 23/10 : « everything has to be documented on another note do you have access to notion ?? if yes
+> you can use that as your second brain and backup ».* Accès confirmé le 23/10 ; la page existe.
+
+```
+Notion      « AMK · second cerveau — miroir du dépôt »
+ID          4024b1d8-9633-814c-8837-dcbc1b7f28b0
+Parent      Pipeline42 (espace de travail)
+URL         https://app.notion.com/p/AMK-second-cerveau-miroir-du-d-p-t-4024b1d89633814c8837dcbc1b7f28b0
+```
+
+**La règle de priorité, et elle ne se discute pas : le dépôt fait loi.** Notion est un **miroir** —
+lisible depuis un téléphone, et une **sauvegarde** si le dépôt devient inaccessible. Quand les deux se
+contredisent, c'est Notion qui est corrigé, le jour même, jamais le dépôt.
+
+**Ce qui se recopie dans Notion** (et seulement ça) :
+
+| Contenu | Fréquence |
+|---|---|
+| l'**état debout** : branche, PR, commits d'avance, clients récurrents, ce qui est encaissé / dû | à chaque tour qui change un de ces faits |
+| les **documents qui font loi** (table sujet → fichier → ce qu'il tranche) | quand un document structurant est créé ou déplacé |
+| les **règles debout** en cinq lignes | quand un ruling en ajoute ou en retire une |
+| les **prochaines actions** (cases à cocher) | à chaque tour |
+| le **journal** daté, une ligne par tour qui change quelque chose | à chaque tour |
+
+**Ce qui ne va pas dans Notion** : les secrets (NIU, RIB, mots de passe, numéros de clients), les
+documents client complets, les fichiers binaires. Notion est un **résumé et un index**, pas un dépôt
+secondaire : dupliquer un document entier crée deux vérités, et c'est exactement ce que §0f interdit.
+
+**En cas de doute sur l'état d'un fichier**, on lit le dépôt — pas la page Notion, qui peut avoir un tour
+de retard.
+
 ## 0d · Décision → fichiers touchés (table manuelle, 13/10/2026)
 
 Quand une règle change ou qu'un ruling est donné, cette table dit quels fichiers il faut relire et mettre à jour. Chaque ligne est vérifiée contre le dépôt. Ajouter une ligne à chaque nouvelle règle permanente.
@@ -80,6 +113,7 @@ Quand une règle change ou qu'un ruling est donné, cette table dit quels fichie
 | Règle | Fichiers qu'elle gouverne |
 |---|---|
 | **Marketing & création de contenu (ruling King 22/10)** | `knowledge/MARKETING-OPTICAL-2026-10-22.md` · `knowledge/CONTENT-CREATION-2026-10-22.md` · `PRE-FLIGHT.md` §1g · `clients/<client>/brand/BRAND-STRATEGY-*.md` · scripts `content/month1/**` · `tools/record/` · portique `tools/qa/audit_video_motion.py` |
+| **Notion = miroir + sauvegarde (ruling King 23/10)** | page Notion `4024b1d8-9633-814c-8837-dcbc1b7f28b0` · ce §0g · le journal de la page |
 | **Lecture par tour, trois couches (ruling King 23/10)** | `PRE-FLIGHT.md` §0f · §0c · §1g · ce tableau |
 | **Contrat d'une page (ruling King 23/10)** | `ops/templates/CONTRAT-UNE-PAGE-2026-10.md` · `.pdf` · `tools/ops/make_contrat.py` · `sales/REVUE-CONTRATS-GRILLE-2026-09-23.md` (addendum 23/10) |
 | **Un opt-in, un seul (ruling King 23/10)** | `sales/lead-magnets/CONTROLE-PRESENCE-EN-LIGNE-2026-10-23.pdf` · `tools/ops/make_magnet.py` · `knowledge/CONTENT-CREATION-2026-10-22.md` §5 bis |
