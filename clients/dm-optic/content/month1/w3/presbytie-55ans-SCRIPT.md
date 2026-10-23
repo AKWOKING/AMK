@@ -165,3 +165,68 @@ Relevés à 24 h puis 72 h, **aux mêmes heures que les précédents** :
 | Conversations WhatsApp pré-remplies | non mesuré | **≥ 1** |
 
 **Et le seul chiffre qui parle au client : les avis Google continuent-ils de monter ?** 4 le 23/10.
+
+---
+
+## 6 · Version IA — ce qu'on génère, ce qu'on ne génère jamais (ruling King 23/10)
+
+> *King 23/10 : « we will try to generate it with an AI tool, post and then see how the algorithm and
+> our audience react to it… you can do it or you recommend another tool (free) ».*
+
+**La réponse courte : je ne peux pas générer de vidéo ici** — il n'y a pas de générateur vidéo dans mon
+environnement, et les URL des fournisseurs sont fermées depuis la sandbox. Ce que je peux faire : **écrire
+les prompts, tourner ce qui doit être tourné, et assembler les deux formats** dès que les fichiers
+existent (`tools/moneyprinter/assemble.sh`, testé le 23/10).
+
+**Ce qui passe à l'IA, et ce qui reste réel.** Le test porte sur l'attention, pas sur la vérité du lieu.
+
+| Plan | Source | Pourquoi |
+|---|---|---|
+| **A** — une main tient un téléphone à bout de bras, écran flou | **IA acceptée** | aucun visage, aucune marque, aucun lieu identifiable : rien à garantir |
+| **B** — la main rapproche puis écarte le téléphone | **IA acceptée** | même raison ; c'est le plan qui « prouve », il doit être net |
+| **C** — mains sur l'appareil de mesure | **réel** | c'est l'appareil du cabinet ; un appareil inventé est un mensonge visible |
+| **D** — la porte, l'enseigne, la rue | **réel** | c'est la seule chose que la vidéo promet au spectateur : *ce lieu existe* |
+
+**La règle qui rend le test honnête :** aucun texte à l'écran ne dit « au cabinet » sur un plan généré.
+Le plan D porte l'adresse ; les plans IA portent le symptôme. Si le résultat marche, on saura que c'est
+**le sujet** qui accroche — et on retournera les plans A et B en vrai pour la série.
+
+**Outil recommandé (gratuit) :** **Google Flow** (onglet déjà ouvert dans les captures du 23/10, modèle
+Veo). C'est le seul générateur gratuit qui rende des mains crédibles en 9:16. **Nano Banana Pro** est
+écarté ce jour : la capture montre « Remaining 0 credits ». MoneyPrinterTurbo **n'est pas** un
+générateur — ses fournisseurs vidéo (wavespeed, seedance, muapi, ofox) sont tous payants, et il ne sert
+ici qu'à l'assemblage.
+
+### Les deux prompts, prêts à coller (Flow, 9:16, 8 s)
+
+```text
+Shot A — Realistic close-up, vertical 9:16. A single adult hand holding a smartphone at arm's length
+in soft morning daylight near a shop window. The phone screen is ON but out of focus, glowing. Shallow
+depth of field, the hand and phone sharp, warm neutral background. No face, no text, no logo, no brand.
+Documentary style, 35 mm look, subtle natural motion, no music.
+```
+
+```text
+Shot B — Same scene, same light, same hand. The hand brings the smartphone closer to the eyes, holds
+a beat, then pushes it away again. Smooth, slow movement, 8 seconds, static camera. Phone screen blurred
+throughout. No face, no text, no logo, no brand. Documentary style, natural grain.
+```
+
+**Ce qu'on vérifie sur la sortie, avant de l'utiliser :** six doigts · un pouce qui traverse l'écran ·
+une marque lisible sur le téléphone · une écriture sur l'écran. **Un seul de ces défauts et le plan est
+refait** — une main ratée se voit plus qu'une main absente.
+
+### L'assemblage, quand les quatre fichiers existent
+
+```bash
+bash tools/moneyprinter/assemble.sh \
+  --clips /tmp/rushs-55ans \
+  --audio /tmp/voix.m4a \
+  --script "Vous éloignez votre téléphone pour lire ? Ce n'est pas la fatigue. Ça arrive à tout le monde, vers quarante-cinq ans. Une mesure de cinq minutes, et on vous dit ce qu'il vous faut." \
+  --out /tmp/55ans --aspect 9:16
+# puis la même commande avec --aspect 16:9 : un tournage, deux montages
+```
+
+**La voix :** enregistrée au téléphone, 30 secondes, une seule prise. La voix de synthèse (edge-tts) est
+disponible dans l'outil et **volontairement non utilisée** : sur un sujet de santé, une voix de machine se sent
+au premier mot et coûte la confiance qu'on demande au spectateur.
