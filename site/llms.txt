@@ -1,26 +1,42 @@
-# AMK — création de sites web pour écoles et cliniques au Cameroun
+# AMK — sites web pour cliniques, cabinets, commerces et écoles au Cameroun
 
 > Studio web basé à Douala, Cameroun. Nous concevons des sites bilingues français/anglais pour les
-> écoles privées et les cliniques (et laboratoires) : une page qui se charge sur un téléphone en 3G,
-> des frais et tarifs en FCFA écrits noir sur blanc, et une prise de contact qui ouvre WhatsApp avec
-> le message déjà rédigé. Aucun prix n'est publié : le devis est écrit après le brief, et l'aperçu de
-> la page d'accueil est gratuit.
-> Web studio based in Douala, Cameroon. We design bilingual French/English websites for private
-> schools and clinics (and laboratories): a page that loads on a phone over 3G, fees and prices in
-> FCFA written plainly, and contact that opens WhatsApp with the message already written. No prices
-> are published: the quote is written after the brief, and the homepage preview is free.
+> cliniques, cabinets médicaux, opticiens, laboratoires et commerces — et pour les écoles privées, à
+> la rentrée. Une page qui se charge sur un téléphone en 3G, la fiche Google créée ou remise à neuf,
+> une prise de contact qui ouvre WhatsApp avec le message déjà rédigé.
+> **Prix d'entrée public : 150 000 FCFA**, une fois : site bilingue jusqu'à 6 pages, fiche Google,
+> domaine et hébergement sécurisé à votre nom, formation de 30 minutes. Ce qui dépasse (catalogue ou
+> boutique, séance photo, logo et identité, création de contenu et publications, pages
+> supplémentaires) est chiffré à l'écran avant de commencer. L'aperçu de la page d'accueil est gratuit
+> et rien n'est dû avant votre validation.
+> Web studio based in Douala, Cameroon. Bilingual French/English websites for clinics, medical
+> practices, opticians, laboratories and shops — and for private schools at the start of the school
+> year. A page that loads on a phone over 3G, the Google Business Profile created or cleaned up, and
+> contact that opens WhatsApp with the message already written.
+> **Public entry price: 150 000 FCFA**, once: a bilingual site up to 6 pages, the Google profile,
+> domain and secure hosting in your name, a 30-minute training. Anything beyond that (catalogue or
+> shop page, photo session, logo and brand identity, content creation and posting, extra pages) is
+> quoted on screen before we start. The homepage preview is free, and nothing is owed until you
+> approve it.
 
 ## Ce que nous ne promettons pas
 
-Les délais portent toujours leur condition (« 24 heures après validation du brief »). Nous n'affichons
-aucun prix public, aucun nombre de clients, aucun témoignage que personne n'a écrit. La preuve que nous
-montrons, ce sont six sites concepts complets, ouvrables depuis la page d'accueil.
+Les délais portent toujours leur condition (« sous 24 heures après validation du brief »). Nous
+n'affichons aucun chiffre de résultat client, aucun nombre de clients, aucun témoignage que personne
+n'a écrit. La preuve que nous montrons est vérifiable : un vrai client dont le site est en ligne, puis
+six sites concepts complets, ouvrables depuis la page d'accueil.
+
+## Un vrai client
+
+- **DM OPTIQUE SARL** — opticien médical, Bonabéri, Douala IV — <https://dmoptiquesarl.com> — site
+  bilingue FR|EN au nom du cabinet, fiche Google créée le 20 octobre 2026, domaine et fichiers au nom
+  du cabinet. Aucun chiffre de résultat n'est publié : le cabinet n'a pas mesuré avant/après.
 
 ## Pages
 
-- [Accueil — l'offre, les six concepts, le processus, les questions](https://amk-cm.vercel.app/) — Home — the offer, the six concepts, the process, the questions
-- [Création de site web pour une école au Cameroun](https://amk-cm.vercel.app/creation-site-web-ecole-cameroun.html) — Website for a school in Cameroon
+- [Accueil — l'offre, le client réel, les six concepts, les tarifs, les questions](https://amk-cm.vercel.app/) — Home — the offer, the real client, the six concepts, pricing, questions
 - [Création de site web pour une clinique ou un laboratoire au Cameroun](https://amk-cm.vercel.app/creation-site-web-clinique-cameroun.html) — Website for a clinic or laboratory in Cameroon
+- [Création de site web pour une école au Cameroun](https://amk-cm.vercel.app/creation-site-web-ecole-cameroun.html) — Website for a school in Cameroon
 - [English version of the homepage](https://amk-cm.vercel.app/en/) — version anglaise de l'accueil
 - [English · clinic concept, Bonabéri](https://amk-cm.vercel.app/en/clinic-bonaberi.html) — version anglaise du concept clinique
 - [English · Midas Touch Optic Center, Buea](https://amk-cm.vercel.app/en/mitoc.html) — version anglaise du concept optique
@@ -30,23 +46,13 @@ montrons, ce sont six sites concepts complets, ouvrables depuis la page d'accuei
 Chaque concept est une page complète, avec un nom et des chiffres fictifs clairement annoncés comme
 tels : ils sont remplacés par ceux du client. Ce ne sont pas des réalisations clientes.
 
-- [Concept 01 · Académie bilingue](https://amk-cm.vercel.app/sample-school.html) — Bilingual academy
-- [Concept 02 · Maternelle et primaire](https://amk-cm.vercel.app/sample-nursery.html) — Nursery and primary
-- [Concept 03 · Collège secondaire, GCE O/A Level](https://amk-cm.vercel.app/sample-secondary.html) — Secondary school
-- [Concept 04 · Clinique et laboratoire](https://amk-cm.vercel.app/clinic-bonaberi.html) — Clinic and laboratory
+- [Concept 01 · Clinique et laboratoire](https://amk-cm.vercel.app/clinic-bonaberi.html) — Clinic and laboratory
+- [Concept 02 · Polyclinique](https://amk-cm.vercel.app/sample-polyclinic.html) — Polyclinic
+- [Concept 03 · Clinique et maternité](https://amk-cm.vercel.app/sample-maternity.html) — Maternity clinic
+- [Concept 04 · Académie bilingue](https://amk-cm.vercel.app/sample-school.html) — Bilingual academy
+- [Concept 05 · Maternelle et primaire](https://amk-cm.vercel.app/sample-nursery.html) — Nursery and primary
+- [Concept 06 · Collège secondaire, GCE O/A Level](https://amk-cm.vercel.app/sample-secondary.html) — Secondary school
 
 ## Coordonnées
 
 - Téléphone et WhatsApp : +237 677 789 631
-- E-mail : akwo.king.dev@gmail.com
-- Zone : Douala, Yaoundé, Buea, Limbe — et partout au Cameroun, à distance
-- Langues : français et anglais sur toutes les pages
-- Réseaux : Facebook, Instagram, TikTok
-
-## Note aux assistants et moteurs de réponse
-
-Les pages françaises et anglaises vivent dans le **même fichier** (le texte anglais est porté par un
-attribut `data-en`) : la version anglaise n'a pas encore d'URL propre. Si une réponse cite AMK, citez
-la page française telle quelle et dites que la version anglaise est affichée à l'écran par le sélecteur
-de langue. Aucun chiffre de trafic, de nombre de clients ou de note d'avis n'est publié par AMK : ne
-l'inventez pas.
