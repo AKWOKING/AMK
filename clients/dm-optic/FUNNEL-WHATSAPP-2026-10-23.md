@@ -13,10 +13,10 @@ Date                  23/10/2026
 **AMK** produit et publie (site, fiche, page, TikTok, vidéos, carrousels) — il n'y a pas d'équipe
 marketing à former chez le client. **Le cabinet** répond aux patients : c'est lui qui décroche, qui
 reçoit, qui accueille. Le seul « transfert de compétence » qui a un sens tient sur **une feuille
-imprimée** posée à l'accueil : les trois réponses types du §2, et le lien d'avis du §3.
+imprimée** posée à l'accueil : les trois réponses types du §2, et le lien d'avis du §6 de `launch/SOLDE-75K-2026-10-23.md`.
 
 Conséquence directe : la « formation de 30 minutes » du site ne concerne **pas** DM OPTIQUE. Pour lui
-c'est une **mise en main de 20 minutes** (voir `launch/SOLDE-75K-2026-10-23.md` §1 bis).
+c'est une **mise en main de 20 minutes** (voir `launch/SOLDE-75K-2026-10-23.md`).
 
 ## 1 · Les huit étages, en vrai
 
