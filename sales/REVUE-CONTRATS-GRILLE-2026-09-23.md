@@ -252,3 +252,33 @@ comptable.
 promis, clauses qui manquent à l'expérience. Pour les clauses elles-mêmes — clause pénale, recouvrement
 d'impayé, responsabilité en cas de perte de données dans un laboratoire — **une relecture par un juriste
 camerounais vaut son prix**, et ce coût se met **dans le prix d'une mission**, pas en litige.
+
+---
+
+## Addendum 23/10/2026 — la liste de contrôle, tirée d'une source praticienne
+
+Source : **Deya**, *how to send contracts & invoices as a freelancer* (2022-03-02, 22:54). Retenu parce
+que la liste est concrète et vérifiable ligne par ligne ; écarté : les outils américains qu'elle cite
+(Wise, HelloSign, Dubsado, Wave) — **aucun n'est utilisable ici** : pas de Stripe, pas de carte
+bancaire en ligne côté client camerounais, et un reçu tamponné vaut mieux qu'un PDF étranger.
+
+**Ce qu'un contrat AMK doit contenir, au minimum :**
+
+- [ ] les **parties**, en nom complet, avec adresse ;
+- [ ] la **date de début** (et, pour un récurrent, le premier jour facturé) ;
+- [ ] le **périmètre détaillé** : nombre de pages, langues, ce qui est inclus, **nombre d'aller-retours
+      inclus**, et ce qui ne l'est pas ;
+- [ ] le **montant et l'échéancier** : 50 % à la commande, 50 % à la livraison, moyen de paiement ;
+- [ ] les **pénalités de retard** (taux et point de départ) ;
+- [ ] le **préavis** de résiliation, symétrique ;
+- [ ] à qui appartiennent **domaine, comptes et contenus** — au client, toujours.
+
+**Ce qu'une facture AMK doit porter :** numéro annuel continu, date d'émission, **date d'échéance**,
+lignes détaillées (pas un total), coordonnées de paiement, et la mention du solde restant quand il y en
+a un. Aujourd'hui l'outil fait les trois premiers et les lignes ; **l'échéance et les coordonnées
+manquent** — c'est une ligne de code, pas un chantier.
+
+**Le trou connu, à ne pas maquiller :** DM OPTIQUE tourne sur un accord verbal. Ce n'est pas un oubli
+de rédaction, c'est un choix assumé sous contrainte de temps. Il se rattrape sur le **prochain** client,
+pas en faisant signer un document rétroactif à celui-ci au moment de lui demander 75 000 FCFA.
+

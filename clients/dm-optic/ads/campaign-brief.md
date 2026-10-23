@@ -56,8 +56,8 @@ Un test qui n'apprend rien n'est pas un test raté, c'est un test non noté.
 ## 4 · Ce qui doit être vrai avant d'allumer
 
 - [ ] **Déclencheur acompte** : fonds crédités + proforma tamponnée retournée (`content/month1/README.md` §4d)
-- [ ] Numéro WhatsApp Business connecté à Meta Business Suite (§4, setup 1)
-- [ ] Message d'accueil + réponses rapides dans WhatsApp Business (§4, setup 4)
+- [ ] Numéro WhatsApp Business connecté à Meta Business Suite (§4, setup 1) — **à faire par le client : AMK n'a pas accès à son application WhatsApp Business (23/10)**
+- [ ] Message d'accueil + réponses rapides dans WhatsApp Business (§4, setup 4) — **idem, geste du client ; à défaut, la carte d'avis imprimée fait le travail d'avis**
 - [ ] **Qui répond, et en combien de temps** — la règle de l'heure (`CLIENT-MESSAGING-RULES.md`) ; un test
       qui génère des messages sans réponse brûle le budget et la confiance
 - [ ] Pixel + événements de conversation, si disponibles (§4, setup 5) — sinon le pré-rempli suffit pour

@@ -143,11 +143,13 @@ la conversation · pas de formulaire, pas de redirection, pas d'attente de rappe
 énormément.
 
 **Règles de setup :**
-1. Connecter le numéro WhatsApp Business à Meta Business Suite.
+1. Connecter le numéro WhatsApp Business à Meta Business Suite — **impossible sans le téléphone du
+   client : c'est un geste du client, pas une tâche AMK** (constaté sur DM OPTIQUE, 23/10).
 2. Objectif **« Engagement » ou « Leads »** — **pas « Traffic »**. Traffic optimise pour le clic, pas la
    conversation.
 3. Écrire le message pré-rempli. C'est la première chose que le prospect voit.
-4. Message d'accueil + réponses rapides dans WhatsApp Business.
+4. Message d'accueil + réponses rapides dans WhatsApp Business — **même limite** : à demander au
+   client, ou à remplacer par le support imprimé (carte d'avis avec QR).
 5. Meta Pixel + événements de conversation.
 6. Ciblage géographique au niveau **quartier / ville**, jamais national.
 

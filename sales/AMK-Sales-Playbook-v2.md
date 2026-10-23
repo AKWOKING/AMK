@@ -552,3 +552,51 @@ de la grille.
     fiscal, coordonnées bancaires) utilisée dans un document client est **copiée dans le document
     source avec date + provenance**, jamais fetchée en direct au moment du rendu. (Né du proforma :
     le NIU venait de pro.txt d'un autre dépôt — maintenant figé dans PROFORMA-2026-10-05.md.)
+
+---
+
+## Addendum 5 · Vendre un service, et le facturer (23/10/2026)
+
+Deux sources regardées le 23/10 : **Deya**, *how to send contracts & invoices as a freelancer* (2022) et
+**Adam Erhart**, *Marketing & Sales Strategy for Service Based Business* (2025). Ce qui suit est ce
+qu'on garde, et ce qu'on en fait chez nous — pas un résumé des vidéos.
+
+### A · Trois principes de vente (Erhart)
+
+1. **Le langage de la ligne d'arrivée.** Un service est invisible : le client n'achète pas les étapes,
+   il achète la vie d'après. Ne jamais vendre « un site 6 pages » — vendre « on vous trouve quand on
+   cherche un opticien à Bonabéri ». *Chez nous : le H1 du site est déjà écrit comme ça
+   (« Vos patients et vos clients vous trouvent avant d'appeler ») ; les fiches de prestation, non —
+   elles décrivent encore le procédé (« 6 pages », « bilingue »). C'est là qu'il faut traduire.*
+2. **Chaque caractéristique cache un bénéfice.** « Bilingue FR/EN » = « le patient anglophone de
+   Bonabéri comprend sa correction ». « Bouton WhatsApp » = « le client écrit à 21 h, vous répondez le
+   matin ». Une fiche sans bénéfice est un devis, pas une offre.
+3. **Le tunnel CASE** : Trafic → Opt-in → Amplificateur d'autorité → Candidature → Prise de rendez-vous
+   → Appel. *Chez nous, il manque l'opt-in* : le visiteur arrive et repart, on ne garde rien. Un guide
+   court (« les 7 questions à poser avant d'acheter des lunettes ») envoyé contre un numéro serait le
+   premier étage qu'on n'a pas.
+
+**Ce qu'on ne reprend pas :** l'anecdote de la coach dont « l'agenda s'est rempli en deux semaines »
+après réécriture. C'est un cas unique, pas une preuve — et on ne cite pas de chiffre qu'on ne peut pas
+sourcer (§1g).
+
+### B · Six règles de contrat et de facture (Deya)
+
+| # | Règle | Où on en est |
+|---|---|---|
+| 1 | **Le contrat protège le travail, il ne l'embellit pas** | DM OPTIQUE : accord **verbal**. C'est le trou le plus cher du dossier |
+| 2 | **Le périmètre s'écrit jusqu'aux révisions** (nombre de pages, d'aller-retours, ce qui n'est pas inclus) | écrit dans les devis, jamais dans un contrat signé |
+| 3 | **L'acompte est la procédure, pas un manque de confiance** — 50 % minimum | appliqué (75 000 / 75 000) et matérialisé dans l'outil de facturation |
+| 4 | **Des pénalités de retard** — un incitatif écrit, jamais brandi | **absent** de nos documents |
+| 5 | **Un préavis de fin** (7 ou 14 jours, les deux parties) | **absent** — le récurrent peut s'arrêter du jour au lendemain, dans les deux sens |
+| 6 | **La facture est un document** : numéro annuel, date d'émission, échéance, lignes détaillées, moyens de paiement | numéro et lignes : oui (`AMK-2026-001`) ; **échéance et coordonnées de paiement : non** |
+
+**L'échelle d'impayé**, dans cet ordre et jamais en sautant une marche : rappel courtois à J+3 → relance
+avec la facture et l'échéance rappelées à J+7 → appel, pas un message, à J+14 → suspension du service
+annoncée par écrit (pas appliquée par surprise) → recouvrement. **Aucune de ces étapes ne s'écrit dans
+l'émotion** ; chacune est prévue au contrat, ce qui la rend banale.
+
+**Ce que ça change pour le prochain client, pas pour DM :** un contrat d'une page avec les six lignes
+ci-dessus, signé avant le premier pixel. C'est déjà ce que demandait `ROADMAP-AMK-POST-DM-OPTIC` §157 —
+cette liste dit juste quoi mettre dedans.
+

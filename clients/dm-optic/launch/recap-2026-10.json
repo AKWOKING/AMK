@@ -1,28 +1,66 @@
 {
-  "_modele": "Copier ce fichier en recap-2026-11.json, changer les chiffres relevés dans Facebook Business Suite et TikTok Studio le 1er ou le 2 du mois, puis lancer : python3 tools/ops/make_recap_dm.py --data clients/dm-optic/launch/recap-2026-11.json --out clients/dm-optic/launch/RECAP-2026-11.pdf",
+  "identite": {
+    "nom": "DM OPTIQUE SARL",
+    "sous_titre": "Cabinet d'optique médicale · Ndobo Mayor, Bonabéri, Douala",
+    "agence": "AMK",
+    "pied_gauche": "sites web bilingues pour cabinets, cliniques et commerces — Douala",
+    "pied_droite": "akwo.king.dev@gmail.com · +237 677 78 96 31"
+  },
   "titre": "Récapitulatif de la mise en ligne",
-  "section1": "Ce qui est en ligne aujourd'hui",
   "date_titre": "23 octobre 2026",
+  "section1": "Ce qui est en ligne aujourd'hui",
+  "kicker1": "01 · la livraison",
+  "section2": "Ce que la première vidéo a donné",
+  "kicker2": "02 · les chiffres, sans arrondi flatteur",
+  "section3": "Ce qui tourne maintenant",
+  "kicker3": "03 · le forfait mensuel",
+  "section4": "Vos accès",
+  "kicker4": "04 · ce qui vous appartient",
   "releve": "23/10/2026 à 08h40",
   "releve_court": "23/10 À 08H40",
-  "fb": {
-    "date": "22/10",
-    "views": "210",
-    "viewers": "200",
-    "watch": "4 s",
-    "full": "—",
-    "react": "3",
-    "com": "0",
-    "share": "1"
+  "livraison": [
+    {
+      "titre": "Le site",
+      "corps": "dmoptiquesarl.com — 96 pages en français et en anglais, une fiche par monture, bouton WhatsApp déjà écrit sur chaque écran.",
+      "tag": "EN LIGNE"
+    },
+    {
+      "titre": "La fiche Google",
+      "corps": "Créée au nom du cabinet : adresse avec repère, horaires (examen 8h30–13h00), photos, itinéraire, bouton d'appel.",
+      "tag": "ACTIVE"
+    },
+    {
+      "titre": "La page Facebook",
+      "corps": "DM OPTIQUE SARL — première vidéo publiée le 22/10 : les quatre temps de l'examen, sur la photo réelle du cabinet.",
+      "tag": "PUBLIÉE"
+    },
+    {
+      "titre": "Le compte TikTok",
+      "corps": "@dmoptique.bonaberi237 — la même vidéo, publiée le 22/10 à 14h36. Le téléphone du cabinet est dans la bio.",
+      "tag": "PUBLIÉ"
+    }
+  ],
+  "chiffres": {
+    "colonnes": ["Facebook", "TikTok"],
+    "lignes": [
+      ["Vues", "210", "90"],
+      ["Spectateurs uniques", "200", "non communiqué"],
+      ["Temps de visionnage moyen", "4 s", "6,9 s"],
+      ["Vidéo regardée en entier", "—", "4,9 %"],
+      ["Réactions", "3", "8"],
+      ["Commentaires", "0", "1"],
+      ["Partages", "0", "1"]
+    ],
+    "note": "Un premier post ne dit pas si la stratégie marche : il dit que la mécanique fonctionne — la vidéo arrive, elle est vue, et le numéro du cabinet est joignable en un geste. Les chiffres ci-dessus viennent des tableaux de bord Facebook et TikTok, relevés le 23/10/2026 à 08h40 ; ils bougeront encore dans les prochains jours."
   },
-  "tk": {
-    "date": "22/10 à 14h36",
-    "views": "90",
-    "watch": "6,9 s",
-    "full": "4,9 %",
-    "react": "8",
-    "com": "1",
-    "share": "1"
-  },
-  "lendemain": "les prochains jours"
+  "mensuel": [
+    ["8 publications par mois", "deux par semaine : une vidéo courte et un carrousel, sur la page et sur TikTok."],
+    ["2 publications Google", "la fiche reste vivante — c'est ce qui la fait remonter sur « opticien Bonabéri »."],
+    ["Le site entretenu", "sauvegardes, mises à jour, certificat, disponibilité surveillés."],
+    ["Un récap d'une page", "le 2 de chaque mois, avec le rapport : ce qui a été publié, ce que ça a donné, ce qui vient."]
+  ],
+  "acces": {
+    "corps": "Le domaine, la fiche Google et la page Facebook sont au nom du cabinet, sur le compte dmoptiquesarl@gmail.com. AMK gère au quotidien ; vous gardez la propriété et les identifiants — si vous changez de prestataire, rien ne part avec nous.",
+    "pied": "chiffres relevés le 23/10/2026 à 08h40 · Facebook Business Suite, TikTok Studio"
+  }
 }

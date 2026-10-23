@@ -59,11 +59,18 @@ Depuis le 24/10, la grille est unique (`knowledge/PRIX-2026-10-24.md`, séance
    le prix reste, sans augmentation ni réduction. L'écart éventuel se règle **en heures livrées**,
    jamais en réécrivant le contrat. Toute nouvelle facture DM reste à 30 000.
 
+## 3 bis · Ce que la facture doit porter, et ce qui manque encore
+
+Numéro annuel continu · date d'émission · **date d'échéance** · lignes détaillées · coordonnées de
+paiement · solde restant. Les trois premiers et les lignes sont dans l'outil ; **l'échéance et les
+coordonnées de paiement ne le sont pas**. La liste complète (contrat + facture + échelle d'impayé) est
+dans `sales/REVUE-CONTRATS-GRILLE-2026-09-23.md`, addendum du 23/10.
+
 ## 4 · Ce que l'outil ne fera jamais à notre place
 
 Il ne dit pas si le prix est juste, il ne dit pas si le travail est livré, et il ne remplace pas la
 phrase qui compte au client : **« voilà ce que vous avez reçu ce mois-ci »**. C'est le rapport d'une
 page (`knowledge/MAINTENANCE-CLIENTS-2026-10-22.md` §4) qui justifie le prélèvement, pas la facture.
 Facturer le 1er, envoyer le **récap d'une page + le rapport** le 2 : l'ordre est déjà écrit, il ne
-reste qu'à le tenir. Le récap se régénère en deux minutes (`tools/ops/make_recap_dm.py --data …`),
+reste qu'à le tenir. Le récap se régénère en deux minutes (`tools/ops/make_recap.py --data …`, gabarit `tools/ops/recap-modele.json`),
 ce qui est la seule façon qu'il parte vraiment tous les mois.

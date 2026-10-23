@@ -66,7 +66,7 @@ Si l'entretien dépasse 2 h, ce n'est plus de l'entretien : c'est un projet. On 
 
 **L'ordre du mois, en trois dates (ruling King 23/10) :** facture le **1er** · récap d'une page et
 rapport le **2** · la conversation qui va avec dans la foulée. Le récap est un **PDF d'une page**
-(`tools/ops/make_recap_dm.py` pour DM OPTIQUE), régénéré depuis un fichier de chiffres
+(`tools/ops/make_recap.py --data …`, le même moteur pour tous les clients), régénéré depuis un fichier de chiffres
 (`clients/dm-optic/launch/recap-2026-10.json` à copier) : mêmes blocs chaque mois, seuls les chiffres
 et les dates changent. Un client qui reçoit la même page, avec de nouveaux chiffres, comprend en
 trois secondes qu'il paie pour quelque chose qui tourne.
