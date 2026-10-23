@@ -192,6 +192,9 @@ async function audit(width, height, label, fullPage) {
       first.focus();
       const cs = getComputedStyle(first);
       focusVisible = (cs.outlineStyle !== 'none' && parseFloat(cs.outlineWidth) > 0) || cs.boxShadow !== 'none';
+      // on rend le focus au document : sinon la capture montre le liseré du curseur clavier
+      // (par exemple le lien « Aller au contenu ») que le visiteur, lui, ne voit pas.
+      first.blur();
     }
 
     // contenu qui n'apparaît qu'après une animation : opacité 0 / visibilité cachée
