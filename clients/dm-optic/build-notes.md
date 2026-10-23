@@ -1992,26 +1992,27 @@ la preuve visuelle reste une capture de King.
 **Demande King** : « can you edit/modify the images of the frames in the repo so that they look as the
 ones in the attached images ? » (visuels fournisseur : monture sur fond clair continu, cadrée large).
 
-**Deux tentatives, la seconde est la bonne.** La première détourait la monture pour la reposer sur un
-set calculé. Elle a été **abandonnée après contrôle image par image** :
+**Trois méthodes ont été essayées, dans cet ordre, et les deux premières ont été jetées après
+contrôle image par image** — c'est le détail qui compte pour la suite :
 
-- 14 fichiers sur 65 ont des **charnières ressort presque de la couleur du fond** (écart < 25 par
-  canal). Le seuil les emportait : e07 et e13 sortaient **coupées en deux**, e17 sans ses branches ;
-- sur les montures **percées** ou **semi-cerclées** (f01, h01, h04), les verres *sont* la monture :
-  les rendre transparents effaçait la moitié du produit ;
-- une monture cassée sur trois, sur la page qui doit inspirer confiance, c'est pire que le fond crème.
+1. **Gain de couleur** par canal pour amener le crème au blanc. Rejeté : il éclaircit aussi le
+   produit. Mesuré sur f01 — le doré de la monture passait de `(236,194,117)` à `(255,223,160)`,
+   un or devenu pâle. Un client qui commande sur cette photo ne reçoit pas cette couleur.
+2. **Détourage** (seuil sur le fond, verres rendus transparents). Rejeté : 14 fichiers sur 65 ont des
+   **charnières ressort presque de la couleur du fond** — e07 et e13 sortaient coupées en deux, e17
+   sans ses branches —, et sur les montures **percées ou semi-cerclées** (f01, h01, h04) les verres
+   *sont* la monture : les rendre transparents effaçait la moitié du produit.
+3. **Substitution de couleur** — retenue. Le fond est remplacé pixel par pixel, la monture n'est pas
+   touchée. La flèche du filigrane, détachée dans un coin, est effacée ; tout ce qui est dans le
+   cadre de la paire reste.
 
-**Ce qui est livré** (`tools/site/restyle_frames.py`) : le fond crème du fournisseur est ramené au
-blanc du set par un gain mesuré aux quatre coins (changement de **température** du fond), la photo est
-recadrée sur la monture à marge constante et posée sur un set blanc uni. **Aucune découpe** : forme,
-couleur, reflets et ombre restent ceux de la photo. 65 fichiers, 0 échec, 4,8 → 4,6 Mo, 1600 × 1200,
-noms inchangés.
+**Ce qui est livré** (`tools/site/restyle_frames.py`) : fond crème → `(250,250,250)`, flèche du
+filigrane retirée, recadrage sur la monture à marge constante, pose sur set blanc uni. 65 fichiers,
+0 échec, 4,8 → 4,7 Mo, 1600 × 1200, noms inchangés, 0,8 s par image, réversible.
 
 **Ce qui reste visible, et pourquoi** : la **carte d'appui bleutée** du fournisseur est toujours là,
-en gris très clair, parce qu'elle est sous la monture. L'effacer proprement demande de découper la
-monture — exactement ce qu'on refuse. Elle disparaîtra d'elle-même le jour où la série sera
-re-photographiée sur fond blanc uni.
+sous la monture. Elle est dans la photo ; l'effacer proprement demande de découper la monture — ce
+qu'on refuse, pour les raisons du point 2. Elle disparaîtra le jour où la série sera re-photographiée.
 
-**La vraie réponse reste la re-photo** : une table blanche, une lumière diffuse, 10 minutes par série.
-Le script est réversible (`git checkout` des 65 WebP) et rejouera la même présentation sur des photos
-propres, avec cette fois un détourage possible.
+**La vraie réponse reste la re-photo** : table blanche, lumière diffuse, 10 minutes par série. Le
+script rejouera alors la même présentation, avec cette fois un détourage possible.
