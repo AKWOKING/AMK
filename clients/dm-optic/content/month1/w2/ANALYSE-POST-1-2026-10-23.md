@@ -253,7 +253,7 @@ on ajoute seulement le lien pré-rempli en légende.
 | **Quelque chose bouge dans le cadre à la première seconde** | TikTok perd la moitié à 0:02, Facebook à 0:05 |
 | **Un sujet par tranche d'âge, assumé** | 55 % des spectateurs ont 55 ans et plus |
 | **Une phrase qui donne une raison de partager** | 0 partage sur deux plateformes |
-| **On ne republie pas le même contenu le même jour** | l'affiche de l'enfant, publiée deux fois, a fait 0 vue au second envoi |
+| **On ne republie pas le même contenu le même jour** | hypothèse la plus probable du post à 0 vue : l'affiche de l'enfant était déjà sortie à 08h30 |
 | **Une raison de partager, nommée** | 0 partage sur 227 vues ; « montrez ça à quelqu'un qui éloigne son téléphone » désigne la personne |
 | **Une question à réponse courte en fin de vidéo** | un commentaire coûte moins qu'un partage, et il pousse autant |
 | **Un lien pré-rempli par vidéo** | sans lui, aucune conversation n'est attribuable |
