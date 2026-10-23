@@ -216,6 +216,9 @@ brille. **IMPROVE** en le réécrivant avec nos mots :
 | Conversion | validation + acompte 50 % | relance au 7ᵉ jour, à tenir |
 | PAID | la facture `AMK-2026-00x` | l'outil existe, la routine reste à installer |
 
+> Le tunnel complet, étage par étage, avec le message exact de chaque étape et ce qui fuit :
+> `clients/dm-optic/FUNNEL-WHATSAPP-2026-10-23.md`.
+
 **REJECT** l'automatisation e-mail comme priorité 2026 : pas de liste, pas d'audience, et la réponse
 se fait sur WhatsApp. Le « welcome email » devient **le vocal de bienvenue** : 30 secondes, le jour
 du premier message, avec le nom du client et l'heure de l'aperçu.

@@ -2,7 +2,7 @@
 
 ```
 Date     22/10/2026
-Pour qui tout client en retainer (aujourd'hui DM Optique, demain 3 clients max)
+Pour qui tout client en retainer (aujourd'hui DM Optique ; **5 clients maximum, dont 2 Croissance** — ruling King 23/10)
 Principe ce qui n'est pas dans cette liste ne se fait pas ; ce qui dépasse le budget temps se facture.
 ```
 
@@ -125,7 +125,11 @@ C'est le rendez-vous qu'on saute toujours. C'est aussi celui qui fait rester les
 
 Pour un client à **75 000 FCFA/mois**, 11 h de travail : la routine n'est pas un supplément de service, c'est **ce qui justifie le prix**. Un client qui ne reçoit qu'un fichier par mois finit par se demander pourquoi il paie.
 
-Pour **trois clients** : 33 h/mois de maintenance et de production récurrente — soit un tiers du temps utile. C'est là que se trouve le vrai plafond : **on ne dépasse pas trois clients à ce prix sans embaucher ou sans automatiser.**
+Pour **cinq clients** (3 Suivi à 4 h + 2 Croissance à 12 h) : **36 h/mois** de maintenance et de
+production récurrente — soit un tiers du temps utile. C'est le plafond retenu par King le 23/10 :
+au-delà, il faut embaucher ou automatiser, et **un troisième Croissance ne rentre pas** dans le mois.
+(L'ancienne note disait trois clients à 33 h : elle datait du prix de 25 000, où trois Suivi ne
+couvraient même pas les charges fixes de 85 000.)
 
 ---
 

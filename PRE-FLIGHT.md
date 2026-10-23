@@ -13,7 +13,19 @@ Structural, not a memory test: the header is the **first line** of every respons
 
 > **§0b — CLIENT DOSSIER FIRST.** Before any ruling on a client's site, document, or message, read the client's full dossier end-to-end. State in the pre-flight header which files were loaded. If a ruling is being made on a client artifact without the dossier loaded, the ruling is incomplete.
 
-Applied: the header lists the files **actually loaded** (and says "partial" / "not read" where that is true) — never the whole folder by assumption. For DM Optique, "end to end" means `clients/dm-optic/` including `onboarding/CONDITIONS-D-INTERVENTION-*`, `site/SPEC-PAGES-v1.md`, the build notes (`build-notes.md`), the proforma, and the client's messages as logged in the CRM. **For the DM Optique site, the source of truth is `clients/dm-optic/site/CLIENT-REQUIREMENTS-BRIEF.md`: rulings cite it; a question it cannot answer extends it (its « Journal d'extension »), never a ruling from memory.**
+Applied: the header lists the files **actually loaded** (and says "partial" / "not read" where that is true) — never the whole folder by assumption.
+
+### 0c · Knowledge docs first (standing rule, King 23/10)
+
+> **§0c — KNOWLEDGE FIRST.** Before any task, list `knowledge/` and read the documents whose scope
+> covers the task — the client dossier alone is **not** enough. The pre-flight header names the files
+> actually read. A task started without the knowledge layer is incomplete, even when the dossier was
+> read end to end.
+
+Application : `knowledge/` est la couche de référence (table ci-dessous) ; une règle qui la contredit
+se dit **à voix haute**, et le document est corrigé le jour même — jamais contourné en silence. Une
+recherche neuve (vidéo, article, outil) atterrit dans `knowledge/` **avant** d'entrer dans une page
+ou un message : sinon elle n'existe pas. For DM Optique, "end to end" means `clients/dm-optic/` including `onboarding/CONDITIONS-D-INTERVENTION-*`, `site/SPEC-PAGES-v1.md`, the build notes (`build-notes.md`), the proforma, and the client's messages as logged in the CRM. **For the DM Optique site, the source of truth is `clients/dm-optic/site/CLIENT-REQUIREMENTS-BRIEF.md`: rulings cite it; a question it cannot answer extends it (its « Journal d'extension »), never a ruling from memory.**
 ---
 
 **The rule: no task begins without a pre-flight.** Identify the task type → load the lessons for that field from this repo → read them → only then start work. Work that skips the pre-flight is invalid.
@@ -45,6 +57,9 @@ Quand une règle change ou qu'un ruling est donné, cette table dit quels fichie
 | Règle | Fichiers qu'elle gouverne |
 |---|---|
 | **Marketing & création de contenu (ruling King 22/10)** | `knowledge/MARKETING-OPTICAL-2026-10-22.md` · `knowledge/CONTENT-CREATION-2026-10-22.md` · `PRE-FLIGHT.md` §1g · `clients/<client>/brand/BRAND-STRATEGY-*.md` · scripts `content/month1/**` · `tools/record/` · portique `tools/qa/audit_video_motion.py` |
+| **Knowledge first (ruling King 23/10)** | `knowledge/**` (la couche de référence) · `PRE-FLIGHT.md` §0c · table de routage §1g |
+| **Versionnage : fusion sur jalon ou > 1 000 commits (King 23/10)** | `PRE-FLIGHT.md` §1i · `tools/ops/wake.py` · `tools/ops/gate-amk.sh` |
+| **Plafond 5 clients · Présence ≤ 3 pages · grille pour la prochaine signature seulement (King 23–24/10)** | `PRE-FLIGHT.md` §1h · `knowledge/PRIX-2026-10-24.md` §4–§5 · `knowledge/MAINTENANCE-CLIENTS-2026-10-22.md` · `site/index.html` · `site/en/index.html` · `site/creation-site-web-*.html` · `sales/PRIX-ET-RECURRENCE-2026-09-24.md` · `ops/FACTURATION-2026-10-24.md` |
 | **Credential rule** (ne jamais revendiquer ce qu'on ne peut pas prouver) | `content/strategy/RULE-CREDENTIAL-CLAIMS.md` · pages client (`clients/*/`, `site/`) · textes de publication (`content/carousels/`, `content/scripts/`) |
 | **Caption-split / découpage de légende (ruling King 12/10 : frontières de phrase, jamais de fragment)** | `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` · section « Règle debout — VO vidéo courte », **AMENDEMENT 2 (découpe des légendes)** (fichier d'origine ; le commit `9294cf2` le contient) · appliquée dans `content/scripts/` et `content/strategy/VIDEO-PIPELINE-FLOW-2026-10.md` |
 | **Wave gate / relances (24 h, 48 h, 7 j, changement de canal)** | `sales/CLIENT-MESSAGING-RULES.md` · `leads/CRM.csv` · `leads/build/crm.py` · `leads/PIPELINE.md` · `sales/Activity-Log.md` |
@@ -331,6 +346,42 @@ deux bases de connaissance, **avant** d'écrire une ligne de script ou de lancer
 
 **Ce que ces sections ne remplacent pas** : les portiques §1b (livraison) et le ruling de publication —
 **rien n'est publié sans validation de King**.
+
+## 1h · Règles commerciales debout (rulings King, 23–24/10)
+
+Quatre règles, valables jusqu'à ce que King les change — elles ne se rediscutent pas en cours de
+devis, et elles ne se « réinterprètent » pas au cas par cas.
+
+| # | Règle | Ce qu'elle interdit en pratique | Où elle s'applique |
+|---|---|---|---|
+| 1 | **Plafond de 5 clients récurrents** | prendre un 6ᵉ client mensuel sans passer la main ou monter le prix ; empiler des Suivi « pour le volume » | `knowledge/PRIX-2026-10-24.md` §5 · `knowledge/MAINTENANCE-CLIENTS-2026-10-22.md` · `ops/ROADMAP-AMK-POST-DM-OPTIC-2026-10-22.md` |
+| 2 | **Présence ne dépasse jamais 3 pages** | glisser 4, 5 ou 6 pages « pour faire plaisir » dans le palier à 150 000 ; appeler « Présence » un site qui est un Standard | `knowledge/PRIX-2026-10-24.md` §4 · `site/index.html` · `site/en/index.html` · pages de niche |
+| 3 | **La grille ne vaut que pour la prochaine signature** | appliquer rétroactivement 30 000 ou 75 000 à un contrat accepté avant la grille (cas DM OPTIQUE : figé à 30 000) | `knowledge/PRIX-2026-10-24.md` §5 · `ops/FACTURATION-2026-10-24.md` |
+| 4 | **Aucune remise, jamais : on change le périmètre** | baisser un prix pour clore ; offrir une page, un mois, une vidéo « pour compenser » | `sales/PRIX-ET-RECURRENCE-2026-09-24.md` · `sales/AMK-Sales-Playbook-v2.md` |
+
+**Le calcul derrière la règle 1** (à connaître par cœur, il tient en une phrase) : les charges fixes
+de King sont de **85 000/mois** ; trois Suivi à 30 000 = 90 000, soit le point d'équilibre exact. Un
+4ᵉ et un 5ᵉ client sont les premiers qui paient réellement — au-delà de cinq, la qualité du travail
+mensuel (4 h par Suivi, 12 h par Croissance) ne tient plus, et ce sont les livrables qui cassent.
+
+## 1i · Versionnage : quand on fusionne une branche
+
+> **Règle King 23/10 : on ne fusionne que sur un jalon, ou au-delà de 1 000 commits sur la branche.**
+
+Par défaut, chaque tour **pousse** sur la branche de session et **laisse la PR ouverte**. On fusionne
+dans `main` seulement si l'un des deux est vrai :
+
+1. **Jalon** — une étape est finie et utilisable seule (ex. un prix publié et propagé, un site livré,
+   une campagne prête à partir) ; ou
+2. **> 1 000 commits** sur la branche (garde-fou anti-branche éternelle).
+
+Ce que ça change : `main` accuse moins de bruit, une PR reste le lieu où King relit, et une
+correction peut encore arriver sur la branche avant que `main` ne bouge. Ce que ça ne change pas :
+la porte (`tools/ops/gate-amk.sh`) se lance **à chaque tour**, et un tour qui échoue à la porte ne
+pousse pas.
+
+**Application :** la PR d'une branche en cours reste ouverte entre deux tours ; on ne la ferme pas
+« pour ranger ». Le compte de commits se lit avec `git rev-list --count origin/main..HEAD`.
 
 ## 2 · Uniqueness protocol (every website/design build, before a line of HTML)
 
