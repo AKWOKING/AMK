@@ -44,6 +44,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import posixpath
 import re
 import sys
 from pathlib import Path, PurePosixPath
@@ -166,6 +167,21 @@ def nav_links_state(css: str, inner: str) -> tuple[int, int, set[int]]:
 
 
 
+
+def has_menu_control(html: str) -> bool:
+    """Un menu peut être un `<button aria-expanded aria-controls>` **ou** une divulgation native
+    `<details><summary>` — le portique ne doit pas imposer une implémentation. Le cas DM du 23/10 est
+    justement un `<details>` : sans cette branche, la correction aurait été refusée par le contrôle."""
+    for b in MENU_BTN_RE.finditer(html):
+        if re.search(r"aria-controls\s*=", b.group(0), re.I):
+            return True
+    for m in re.finditer(r"<details\b[^>]*>(.*?)</details>", html, re.I | re.S):
+        body = m.group(1)
+        if re.search(r"<summary\b", body, re.I) and len(re.findall(r"<a\b", body, re.I)) >= 2:
+            return True
+    return False
+
+
 def check_nav(site: Path, pages: list[Path]) -> list[Finding]:
     """D1 : sous un point de rupture, **tous** les liens de la nav disparaissent-ils sans bouton de menu ?
 
@@ -189,7 +205,7 @@ def check_nav(site: Path, pages: list[Path]) -> list[Finding]:
         nav_hidden = _hidden_below(css, _nav_class(nav.group(1))) is not None
         if not nav_hidden and (total == 0 or hidden < total):
             continue
-        if any(re.search(r"aria-controls\s*=", b.group(0), re.I) for b in MENU_BTN_RE.finditer(html)):
+        if has_menu_control(html):
             continue
         hrefs = re.findall(r'<a\b[^>]*href\s*=\s*["\']([^"\']+)', nav.group(2), re.I)
         bucket = pages_site if any(not h.startswith("#") for h in hrefs) else pages_ancre
@@ -237,11 +253,25 @@ def parse_headers(path: Path) -> list[tuple[str, dict[str, str]]]:
     return blocks
 
 
-def pattern_is_valid(pattern: str) -> bool:
+def uses_workers_assets(site: Path) -> bool:
+    """Le site est-il publié par **Workers static assets** (wrangler) plutôt que Pages ?
+
+    La différence compte : la doc Workers accepte un splat au milieu d'un motif (son exemple est
+    `/*.jpg`), la doc Pages ne l'accepte qu'en fin. Un portique qui ignore l'hôte condamne un motif
+    valide — c'était le cas de `/*.webp` pour DM OPTIQUE, publié par Workers depuis le 22/10."""
+    for d in [site, *site.parents]:
+        if (d / "wrangler.toml").exists() or (d / "wrangler.jsonc").exists() or (d / "wrangler.json").exists():
+            return True
+    return False
+
+
+def pattern_is_valid(pattern: str, workers: bool = False) -> bool:
     """Cloudflare Pages / Netlify : un splat `*` **uniquement en fin de motif**, un motif de chemin
     commençant par `/`. `/*.webp` ne matche donc aucun fichier — c'est le piège de l'audit du 23/10."""
     if not pattern.startswith("/"):
         return False
+    if workers:
+        return pattern.count("*") <= 1          # un seul splat, où qu'il soit
     return "*" not in pattern[:-1]
 
 
@@ -269,7 +299,7 @@ def _assets(site: Path, pages: list[Path]) -> tuple[set[str], set[str]]:
         raw = raw.split("?")[0].split("#")[0]
         path = PurePosixPath(raw) if raw.startswith("/") else PurePosixPath(
             (base.relative_to(site) / raw).as_posix())
-        norm = "/" + str(path).lstrip("/")
+        norm = posixpath.normpath("/" + str(path).lstrip("/"))   # `/contact/../x.webp` → `/x.webp`
         (fonts if re.search(r"\.(woff2?|ttf|otf)$", norm, re.I) else imgs).add(norm)
 
     for page in pages:
@@ -302,7 +332,8 @@ def check_headers(site: Path, host: str) -> list[Finding]:
         return out
 
     blocks = parse_headers(hfile)
-    bad = [p for p, _ in blocks if not pattern_is_valid(p)]
+    workers = uses_workers_assets(site)
+    bad = [p for p, _ in blocks if not pattern_is_valid(p, workers)]
     if bad:
         out.append(Finding(
             "D2", "P1", f"_headers · {', '.join(bad[:3])}",
@@ -316,7 +347,7 @@ def check_headers(site: Path, host: str) -> list[Finding]:
     def uncovered(paths: set[str]) -> list[str]:
         miss = []
         for path in sorted(paths):
-            covered = any(pattern_is_valid(pat) and pattern_matches(pat, path)
+            covered = any(pattern_is_valid(pat, workers) and pattern_matches(pat, path)
                           and max_age(h.get("cache-control", "")) > 0 for pat, h in blocks)
             if not covered:
                 miss.append(path)
