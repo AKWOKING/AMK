@@ -38,7 +38,7 @@ Depuis le 24/10, la grille est unique (`knowledge/PRIX-2026-10-24.md`, séance
 | Présence | 150 000 | jusqu'à 3 pages, fiche Google créée, domaine + hébergement 1ʳᵉ année, formation |
 | Standard | 250 000 | jusqu'à 6 pages, fiche Google optimisée, 1 mois de support |
 | Catalogue | 450 000 + | jusqu'à 30 références, commandes WhatsApp |
-| Suivi (mensuel) | 25 000 | sauvegardes, mises à jour, 2 posts Google, rapport, 2 h de modifications |
+| Suivi (mensuel) | 30 000 | sauvegardes, mises à jour, 2 posts Google, rapport, 2 h de modifications |
 | Croissance (mensuel) | 75 000 | Suivi + 8 pièces sociales, 4 posts Google, pub gérée, revue trimestrielle |
 | Montée Présence → Standard | 120 000 | reconstruction, pas une remise |
 
@@ -55,9 +55,9 @@ Depuis le 24/10, la grille est unique (`knowledge/PRIX-2026-10-24.md`, séance
 2. **La mention fiscale** : ni « conforme DGI » ni « facture normalisée » ne doivent apparaître tant que
    les spécifications ne sont pas publiées ; une phrase honnête est à écrire une fois (proforma + NIU +
    RIB, comme pour DM OPTIQUE) et à réutiliser.
-3. **Le sort de DM OPTIQUE** : il paie 30 000/mois pour un périmètre « Croissance » (75 000). On ne
-   réécrit pas un contrat en cours ; au renouvellement, deux issues écrites — 75 000, ou périmètre
-   réduit à ce que 30 000 achètent.
+3. **DM OPTIQUE : ne pas y toucher.** 30 000/mois accepté avant la grille, sans périmètre écrit →
+   le prix reste, sans augmentation ni réduction. L'écart éventuel se règle **en heures livrées**,
+   jamais en réécrivant le contrat. Toute nouvelle facture DM reste à 30 000.
 
 ## 4 · Ce que l'outil ne fera jamais à notre place
 

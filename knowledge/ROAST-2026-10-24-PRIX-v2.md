@@ -86,7 +86,7 @@ coût direct) ; ce n'est pas une porte à sens unique : un palier se retire ou s
 
 ## Entretien — deuxième tour, même séance
 
-**Options** — X. Suivi 25 000 / Croissance 75 000 · Y. 30 000 / 60 000 · Z. 20 000 / 50 000.
+**Options** — X. Suivi 30 000 / Croissance 75 000 · Y. 30 000 / 60 000 · Z. 20 000 / 50 000.
 
 | Siège | Poids | X | Y | Z |
 |---|---|---|---|---|
