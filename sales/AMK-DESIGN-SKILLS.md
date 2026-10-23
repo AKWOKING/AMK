@@ -76,3 +76,15 @@ c'est ce que les schémas en couches montrent déjà.
 
 **La loi qui tranche :** un effet qui coûte plus de 100 ms de LCP ne va pas dans un site client — même
 gratuit, même beau. La profondeur est une affaire de superposition et de lumière, pas de moteur 3D.
+
+### 4 · Appliqué, mesuré — 23/10
+
+Le socle est écrit et tourne : **`hosting/previews/demo-clinique/index.html`** (démonstration du
+héros en couches + match cut sur un cabinet dentaire). Vérifié au portique dans un vrai Chromium :
+**0 P1 · 0 P2 · 0 P3** à 1440 px et à 390 px, contraste AA compris.
+
+Trois chiffres qui valent mieux que l'argument :
+- l'objet héro est mesuré **à `top:88px` sur deux positions de défilement** — il ne bouge pas ;
+- le fil avance de **0,00 à 1,00** avec la progression du récit (vérifié : 0,830 à mi-parcours) ;
+- le coût réseau de l'effet est de **0 Ko** : aucun canvas, aucun script externe, deux `blur()` et
+  une `drop-shadow()`. C'est ce qui rend le refus du WebGL tenable sans rien perdre.

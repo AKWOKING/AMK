@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Socle clinique — démonstration AMK</title>
+<meta name="description" content="Socle de démonstration : héros en couches, match cut, profondeur en CSS seul. Contenu remplacé au premier échange avec le cabinet.">
+<meta name="theme-color" content="#FBFAF7">
+<!--
+  SOCLE CLINIQUE — application de `sales/AMK-DESIGN-SKILLS.md` (addendum 23/10).
+  Cette page est le gabarit des cinq démos du lot du 24/10. Ce qui se garde, ce qui se change :
+
+  LES CINQ COUCHES DU HÉROS (§1 de l'addendum) — nommées dans le code, pas seulement décrites :
+    ⓠ couche 0 — fond          .hero-arc  (une forme large, floutée, jamais un dégradé par défaut)
+    ⓠ couche 1 — objet         .obj       (UN seul objet, détouré, même place du début à la fin)
+    ⓠ couche 2 — texte         .hero-copy (titre + sous-titre + CTA groupés à une position)
+    ⓠ couche 3 — barre         header.bar (logo · nav · CTA sur la même grille que le texte)
+    ⓠ couche 4 — appui         .appui     (trois données discrètes, supprimables sans perte)
+
+  LE MATCH CUT (§2) — sept gestes, tous présents ici :
+    1. la page raconte une histoire : entrer → mesurer → soigner → régler → sortir
+    2. l'objet ne bouge pas (colonne de droite, `position:sticky`, même échelle)
+    3. un fil de 4 px relie les étapes (`scaleY(--p)`, `transform-origin:top`)
+    4. même angle et même lumière sur les photos → ici : les blocs « votre photo ici »
+       imposent le cadrage, la photo réelle est prise en une seule séance
+    5. fondu croisé : chaque étape entre quand la précédente n'est pas encore partie
+    6. une ligne de donnée par étape (mono, alignée à gauche du titre)
+    7. on finit sur des cartes qui reprennent l'objet du récit
+
+  CE QUE JE REFUSE (§3) : aucun <canvas>, aucun WebGL, aucune librairie.
+  La profondeur est en CSS seul — flou de fond, ombre douce, parallaxe de 12 px maximum,
+  désactivée sous `prefers-reduced-motion`. Coût réseau de l'effet : 0 Ko.
+
+  LES SIX JETONS (§ règle « 6 tokens nommés + 1 ingrédient signature par page ») :
+    1. layout    → --max 1120px · colonne texte 58 % / rail objet 42 %
+    2. styling   → rayons 14 / 20 / 999
+    3. couleurs  → encre #0F1C2E · surface #FBFAF7 · marque #0B5D4E · accent #C2703D
+    4. ombres    → 0 14px 34px rgba(15,28,46,.10)
+    5. typo      → Schibsted Grotesk (titres) · IBM Plex Sans 17/27 (corps) · IBM Plex Mono (données)
+    6. motion    → 160 / 220 / 320 / 480 ms, cubic-bezier(.22,.61,.36,1)
+    7. SIGNATURE → le fil + l'objet unique. C'est la seule chose qu'on ne réutilise pas telle quelle :
+                   elle change d'objet (dent → œil → monture) et garde la place.
+
+  CONTENU : tout ce qui est factuel est un PLACEHOLDER (horaires, adresse, étage, chiffres).
+  Il est remplacé au premier échange (§6.3 du fichier de prospection) : 6–10 photos, nom exact du
+  titulaire + n° ONOC, horaires réels, numéro WhatsApp. Aucun prix, aucune marque, aucune photo
+  empruntée. Les blocs « votre photo ici » ne sont pas une coquetterie : c'est la règle.
+-->
+<style>
+/* ---------- polices auto-hébergées (fontsource, OFL-1.1), sous-ensemble latin ---------- */
+@font-face{font-family:"Schibsted Grotesk";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/schibsted-grotesk-latin-600-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Schibsted Grotesk";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/schibsted-grotesk-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/ibm-plex-sans-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/ibm-plex-sans-latin-600-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/ibm-plex-mono-latin-500-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+/* ---------- 1 · LES JETONS ---------- */
+:root{
+  /* couleurs */
+  --ink:#0F1C2E; --ink-2:#4A5A70; --ink-3:#5F6E80;
+  --paper:#FBFAF7; --card:#FFFFFF; --line:#E2DDD2;
+  --brand:#0B5D4E; --brand-2:#08463B; --brand-tint:#E3EFEA;
+  --accent:#C2703D; --accent-ink:#9C5227; --accent-tint:#F7EBE1;
+  /* layout */
+  --max:1120px; --gut:20px; --copy:58%;
+  /* rayons */
+  --r:14px; --r-lg:20px; --pill:999px;
+  /* ombres */
+  --sh:0 14px 34px rgba(15,28,46,.10);
+  --sh-s:0 4px 14px rgba(15,28,46,.07);
+  /* typo */
+  --f-d:"Schibsted Grotesk",system-ui,sans-serif;
+  --f-b:"IBM Plex Sans",system-ui,sans-serif;
+  --f-m:"IBM Plex Mono",ui-monospace,monospace;
+  --fs-body:17px; --lh-body:1.62;
+  /* motion */
+  --t1:160ms; --t2:220ms; --t3:320ms; --t4:480ms;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+/* ---------- base ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font:400 var(--fs-body)/var(--lh-body) var(--f-b);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:var(--f-d);font-weight:600;letter-spacing:-.02em;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:var(--brand)}
+img,svg{max-width:100%}
+:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:14px;top:14px;z-index:90;transform:translateY(-160%);
+  background:var(--brand);color:#fff;padding:12px 16px;border-radius:var(--r);font-weight:600;
+  text-decoration:none;transition:transform var(--t2) var(--ease)}
+.skip:focus{transform:none}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+.kicker{margin:0;font:500 12px/1.4 var(--f-m);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.lede{color:var(--ink-2);max-width:46ch}
+
+/* ---------- la pastille de démonstration (elle part avec le vrai contenu) ---------- */
+.chip{font:500 9.5px/1 var(--f-m);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--accent-ink);background:var(--accent-tint);border:1px solid #EBD8C8;
+  padding:6px 8px;border-radius:var(--pill);white-space:nowrap}
+
+/* ---------- couche 3 · la barre ---------- */
+.bar{position:sticky;top:0;z-index:50;
+  background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:18px;min-height:68px}
+.brand{display:inline-flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);
+  font:600 15px/1 var(--f-d);letter-spacing:.06em;text-transform:uppercase}
+.brand svg{width:30px;height:30px;flex:none}
+.brand .place{display:block;margin-top:5px;font:500 10px/1 var(--f-m);letter-spacing:.18em;
+  color:var(--ink-3);text-transform:uppercase}
+.nav{display:flex;gap:26px;margin-left:auto}
+.nav a{text-decoration:none;color:var(--ink-2);font-weight:600;font-size:15px;
+  padding-bottom:2px;border-bottom:1px solid transparent;transition:color var(--t1),border-color var(--t1)}
+.nav a:hover{color:var(--ink);border-color:var(--brand)}
+.cta{display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+  background:var(--brand);color:#fff;font:600 15px/1 var(--f-b);
+  padding:14px 18px;border-radius:var(--pill);box-shadow:var(--sh-s);
+  transition:background var(--t1) var(--ease),transform var(--t1) var(--ease)}
+.cta:hover{background:var(--brand-2);transform:translateY(-1px)}
+.cta svg{width:17px;height:17px}
+@media (max-width:860px){ .nav{display:none} .cta{margin-left:auto;padding:12px 14px;font-size:14px} }
+
+/* ---------- le récit : colonne de texte + rail de l'objet ---------- */
+.story{position:relative;max-width:var(--max);margin:0 auto;padding:0 var(--gut);
+  display:grid;grid-template-columns:minmax(0,1fr) 42%;align-items:start}
+.copy{grid-column:1;min-width:0}
+.obj{grid-column:2;position:sticky;top:88px;align-self:start;
+  display:grid;place-items:center;padding:26px 0 40px 34px;z-index:0}
+.obj svg{width:100%;max-width:330px;height:auto;
+  filter:drop-shadow(0 22px 34px rgba(15,28,46,.16));
+  transform:scale(1.04);will-change:transform}
+.obj .halo{max-width:420px;position:absolute;top:6%;left:14%;right:-6%;bottom:10%;
+  background:radial-gradient(circle at 55% 42%,var(--brand-tint),transparent 68%);
+  filter:blur(24px);transform:scale(1.1);z-index:-1;pointer-events:none}
+
+/* ---------- couche 0 · la forme large du héros ---------- */
+.hero{position:relative;padding:64px 0 8px;isolation:isolate}
+.hero-arc{position:absolute;z-index:-1;top:-40px;left:0;right:0;height:560px;
+  border-radius:50%;
+  background:radial-gradient(closest-side at 46% 44%,var(--brand-tint) 0%,rgba(227,239,234,.5) 62%,transparent 100%);
+  filter:blur(22px);pointer-events:none;
+  -webkit-mask-image:radial-gradient(closest-side at 46% 44%,#000 26%,transparent 82%);
+  mask-image:radial-gradient(closest-side at 46% 44%,#000 26%,transparent 82%)}
+.hero h1{font-size:clamp(2.05rem,4.6vw,3.35rem);line-height:1.03;margin-top:18px}
+.hero h1 em{font-style:normal;color:var(--brand)}
+.hero .lede{margin-top:20px;font-size:clamp(1.02rem,1.5vw,1.15rem)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.ghost{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);
+  font-weight:600;font-size:15px;padding:14px 18px;border-radius:var(--pill);
+  border:1px solid var(--line);background:var(--card);transition:border-color var(--t1),transform var(--t1)}
+.ghost:hover{border-color:var(--brand);transform:translateY(-1px)}
+
+/* ---------- couche 4 · l'appui ---------- */
+.appui{display:flex;flex-wrap:wrap;gap:10px;margin:34px 0 0;padding:0;list-style:none}
+.appui li{font:500 12px/1 var(--f-m);letter-spacing:.06em;color:var(--ink-2);
+  background:var(--card);border:1px solid var(--line);border-radius:var(--pill);padding:10px 13px}
+
+/* ---------- le fil (signature) ---------- */
+.thread{position:absolute;top:118px;bottom:120px;right:calc(42% - 3px);width:4px;
+  border-radius:var(--pill);background:var(--line);z-index:0;pointer-events:none}
+.thread::after{content:"";position:absolute;inset:0;border-radius:inherit;
+  background:linear-gradient(180deg,var(--brand) 0%,var(--accent) 100%);
+  transform:scaleY(var(--p,0));transform-origin:top;
+  transition:transform 120ms linear}
+
+/* ---------- les étapes : fondu croisé + une donnée par étape ---------- */
+.step{position:relative;padding:76px 0 8px;border-top:1px solid transparent}
+.step .num{font:500 12px/1 var(--f-m);letter-spacing:.18em;color:var(--accent-ink)}
+.step h2{font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.12;margin:14px 0 0;max-width:22ch}
+.step p{margin-top:16px;color:var(--ink-2);max-width:44ch}
+.step .data{display:inline-block;margin-top:22px;font:500 12px/1 var(--f-m);letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-2);background:var(--brand-tint);
+  padding:9px 12px;border-radius:var(--pill)}
+html.js .step{opacity:0;transform:translateY(18px);
+  transition:opacity var(--t4) var(--ease),transform var(--t4) var(--ease)}
+html.js .step.in{opacity:1;transform:none}
+
+/* ---------- couche 4 bis · les photos qui n'existent pas encore ---------- */
+.photo{margin-top:26px;border:1px dashed var(--line);border-radius:var(--r-lg);
+  background:
+    linear-gradient(135deg,rgba(227,239,234,.5),rgba(247,235,225,.5));
+  min-height:170px;display:grid;place-items:center;padding:22px;text-align:center}
+.photo span{font:500 11px/1.6 var(--f-m);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+
+/* ---------- cartes de sortie ---------- */
+.cards{display:grid;gap:14px;margin-top:34px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:20px;box-shadow:var(--sh-s);transition:transform var(--t2) var(--ease),box-shadow var(--t2)}
+.card:hover{transform:translateY(-3px);box-shadow:var(--sh)}
+.card h3{font-size:1.05rem;line-height:1.25}
+.card p{margin-top:9px;font-size:14.5px;color:var(--ink-2)}
+.card .ph{margin-top:16px;height:74px;border-radius:var(--r);border:1px dashed var(--line);
+  display:grid;place-items:center;font:500 9.5px/1 var(--f-m);letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-3);background:var(--paper)}
+
+/* ---------- contact ---------- */
+.contact{margin-top:96px;background:var(--ink);color:#fff;padding:72px 0}
+.contact .wrap{display:grid;gap:34px}
+@media (min-width:880px){.contact .wrap{grid-template-columns:1.1fr .9fr;align-items:start;gap:56px}}
+.contact h2{font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.1}
+.contact p{color:#C3CDD9;margin-top:14px;max-width:46ch}
+.contact .kicker{color:#8FA3B8}
+.facts{margin:0;padding:0;list-style:none;display:grid;gap:14px}
+.facts li{border-top:1px solid rgba(255,255,255,.16);padding-top:14px}
+.facts b{display:block;font:500 11px/1 var(--f-m);letter-spacing:.16em;text-transform:uppercase;
+  color:#8FA3B8;margin-bottom:7px;font-weight:500}
+.facts span{font:600 15px/1.4 var(--f-b)}
+.contact .cta{background:#fff;color:var(--ink);box-shadow:none}
+.contact .cta:hover{background:var(--brand-tint)}
+.contact-note{margin-top:22px;font:500 11px/1.7 var(--f-m);letter-spacing:.04em;color:#8FA3B8}
+
+/* ---------- pied ---------- */
+footer{padding:40px 0 56px;color:var(--ink-3);font-size:13.5px}
+footer .wrap{display:grid;gap:10px}
+footer b{color:var(--ink-2)}
+
+/* ---------- mobile : l'objet reste, mais en petit, en haut ; le fil disparaît ---------- */
+@media (max-width:860px){
+  /* le clip n'existe que sur mobile : sur grand écran, la lueur doit passer la colonne */
+  .hero{overflow:hidden;overflow:clip}
+  /* sur 390 px, un objet qui flotte au-dessus du texte le recouvre : il ouvre le récit,
+     une seule fois, et c'est le fil + les numéros qui portent la continuité. */
+  .story{display:flex;flex-direction:column}
+  .obj{order:-1;position:static;padding:0;margin:18px 0 -20px;
+    display:flex;justify-content:flex-end;pointer-events:none}
+  .obj svg{max-width:124px;transform:none;
+    filter:drop-shadow(0 12px 18px rgba(15,28,46,.14))}
+  .obj .halo{display:none}
+  .thread{display:none}
+  .copy{display:flex;flex-direction:column}
+  .hero{padding-top:26px}
+  .step{padding-top:64px;border-top:1px solid var(--line)}
+  .hero-arc{top:-60px;height:520px}
+  .bar .wrap{gap:10px}
+  .chip{display:none}
+}
+@media (max-width:520px){
+  .brand{font-size:12.5px;gap:9px;white-space:nowrap}
+  .brand svg{width:26px;height:26px}
+  .brand .place{display:none}
+  .cta{padding:12px 13px;font-size:13px;white-space:nowrap;gap:7px}
+  .cta svg{width:15px;height:15px}
+}
+@media (prefers-reduced-motion:reduce){
+  html.js .step{opacity:1;transform:none;transition:none}
+  .thread::after{transition:none}
+  .cta:hover,.ghost:hover,.card:hover{transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#recit">Aller au contenu</a>
+
+<!-- ⓠ couche 3 — la barre : logo · navigation · CTA, sur la grille du texte -->
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#" aria-label="Accueil du cabinet">
+      <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="2.4"/>
+        <path d="M11 22c3 5 7 7 12 7" fill="none" stroke="var(--brand)" stroke-width="2.4" stroke-linecap="round"/>
+        <circle cx="25.5" cy="14" r="2.6" fill="var(--accent)"/>
+      </svg>
+      <span>Cabinet dentaire<span class="place">Douala · quartier · étage</span></span>
+    </a>
+    <span class="chip">démo</span>
+    <nav class="nav" aria-label="Sections">
+      <a href="#recit">Le cabinet</a>
+      <a href="#soins">Les soins</a>
+      <a href="#contact">Horaires &amp; contact</a>
+    </nav>
+    <a class="cta" href="#contact">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 20.5l1.4-5.6A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+      Écrire sur WhatsApp
+    </a>
+  </div>
+</header>
+
+<main id="recit">
+  <!-- ⓠ Le récit : la colonne de texte défile, l'objet reste (geste n°2) -->
+  <div class="story">
+    <div class="copy">
+
+      <!-- ⓠ couche 0 (fond) · couche 2 (texte) · couche 4 (appui) -->
+      <section class="hero">
+        <div class="hero-arc" aria-hidden="true"></div>
+        <p class="kicker">Cabinet dentaire · Douala</p>
+        <h1>Un cabinet qui se trouve,<br>et qui <em>répond</em>.</h1>
+        <p class="lede">L'adresse, l'étage, les horaires, les soins, la façon de prendre rendez-vous :
+           tout est écrit ici, noir sur blanc. Pas besoin d'appeler pour savoir si c'est ouvert.</p>
+        <div class="hero-actions">
+          <a class="cta" href="#contact">Prendre rendez-vous</a>
+          <a class="ghost" href="#soins">Voir les soins</a>
+        </div>
+        <!-- couche 4 : elle doit pouvoir disparaître sans perte — les 3 données sont dans la barre et au contact -->
+        <ul class="appui">
+          <li>Lun–Ven · 8h30–17h00</li>
+          <li>Sur rendez-vous</li>
+          <li>Reconnu ONCDC</li>
+        </ul>
+      </section>
+
+      <!-- geste n°6 : une donnée par étape -->
+      <section class="step" aria-labelledby="s1">
+        <p class="num">01 — ENTRER</p>
+        <h2 id="s1">On entre par une porte, pas par un formulaire.</h2>
+        <p>Le cabinet est au deuxième étage, derrière la pharmacie, à côté de la station.
+           La porte est vitrée, le nom est sur la plaque.</p>
+        <p class="data">8h30 — 17h00</p>
+        <div class="photo"><span>Votre photo ici — la porte, prise de face</span></div>
+      </section>
+
+      <section class="step" aria-labelledby="s2">
+        <p class="num">02 — MESURER</p>
+        <h2 id="s2">Quatre étapes, expliquées avant de commencer.</h2>
+        <p>On vous dit ce qu'on regarde et pourquoi. Si quelque chose sort du cabinet — une radio,
+           un spécialiste — vous le savez avant de payer quoi que ce soit.</p>
+        <p class="data">4 étapes</p>
+      </section>
+
+      <section class="step" id="soins" aria-labelledby="s3">
+        <p class="num">03 — SOIGNER</p>
+        <h2 id="s3">Ce qui se soigne ici, et ce qui s'envoie ailleurs.</h2>
+        <p>Trois familles de soins, décrites en français simple. Ce qui ne se fait pas au cabinet
+           est nommé, avec le nom du confrère vers qui on vous envoie.</p>
+        <p class="data">3 familles de soins</p>
+        <div class="photo"><span>Votre photo ici — le fauteuil, lumière de la même fenêtre</span></div>
+      </section>
+
+      <section class="step" aria-labelledby="s4">
+        <p class="num">04 — RÉGLER</p>
+        <h2 id="s4">Le devis avant le soin, pas après.</h2>
+        <p>Chaque acte est annoncé à l'écrit, en francs, avant qu'il commence. Les assurances
+           conventionnées sont listées sur la page contact.</p>
+        <p class="data">Devis écrit</p>
+      </section>
+
+      <section class="step" aria-labelledby="s5">
+        <p class="num">05 — SORTIR</p>
+        <h2 id="s5">On repart avec la suite par écrit.</h2>
+        <p>La date du prochain contrôle, ce qu'il ne faut pas faire cette semaine, et le numéro
+           à joindre si ça saigne ou si ça chauffe.</p>
+        <p class="data">6 jours sur 7</p>
+        <!-- geste n°7 : on finit sur les cartes, qui reprennent l'objet du récit -->
+        <div class="cards">
+          <article class="card">
+            <h3>Détartrage</h3>
+            <p>Une séance, un contrôle, et ce qu'il faut changer dans le brossage.</p>
+            <div class="ph">Photo</div>
+          </article>
+          <article class="card">
+            <h3>Soins conservateurs</h3>
+            <p>La carie traitée avant qu'elle ne devienne une couronne.</p>
+            <div class="ph">Photo</div>
+          </article>
+          <article class="card">
+            <h3>Prothèse</h3>
+            <p>L'empreinte, l'essai, la pose — les trois rendez-vous sont annoncés d'avance.</p>
+            <div class="ph">Photo</div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <!-- ⓠ couche 1 — l'objet, UN seul, même place du premier au dernier écran.
+         Pour un cabinet d'ophtalmologie : on remplace ce tracé par un œil, même viewBox,
+         même place, même ombre. Rien d'autre ne bouge. -->
+    <div class="obj" aria-hidden="true">
+      <div class="halo"></div>
+      <svg viewBox="0 0 200 220" fill="none" role="presentation" focusable="false">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#FFFFFF"/>
+            <stop offset="1" stop-color="#EDEAE2"/>
+          </linearGradient>
+        </defs>
+        <path d="M100 18c-31 0-47 19-47 47 0 21 7 37 13 58 5 18 8 37 20 37 11 0 11-22 14-36 3 14 3 36 14 36 12 0 15-19 20-37 6-21 13-37 13-58 0-28-16-47-47-47Z"
+              fill="url(#g)" stroke="#0F1C2E" stroke-width="3.4" stroke-linejoin="round"/>
+        <path d="M76 52c7-11 17-15 27-15" stroke="#0B5D4E" stroke-width="3.4" stroke-linecap="round" opacity=".65"/>
+        <circle cx="134" cy="44" r="6" fill="#C2703D"/>
+      </svg>
+    </div>
+
+    <!-- geste n°3 : le fil, 4 px, scaleY(progress) -->
+    <div class="thread" aria-hidden="true"></div>
+  </div>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div>
+        <p class="kicker">Horaires &amp; contact</p>
+        <h2>Le cabinet, sans détour.</h2>
+        <p>Un message suffit. On répond entre deux patients, dans la journée.</p>
+        <p><a class="cta" href="#" aria-label="Écrire au cabinet sur WhatsApp">Écrire sur WhatsApp</a></p>
+        <p class="contact-note">Message déjà écrit, il ne reste qu'à appuyer sur envoyer.<br>
+          Urgence dentaire la nuit : appelez, ne patientez pas.</p>
+      </div>
+      <ul class="facts">
+        <li><b>Adresse</b><span>Immeuble — 2<sup>e</sup> étage<br>Quartier, Douala</span></li>
+        <li><b>Horaires</b><span>Lundi – vendredi : 8h30 – 17h00<br>Samedi : 8h30 – 13h00</span></li>
+        <li><b>Téléphone</b><span>+237 6 00 00 00 00</span></li>
+        <li><b>Inscription</b><span>ONCDC — numéro à confirmer avec le titulaire</span></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>Socle de démonstration.</b> Les horaires, l'adresse, le nom du titulaire et les photos
+       sont des emplacements : ils sont remplacés au premier échange avec le cabinet.</p>
+    <p>Aucun prix, aucune marque de matériel, aucune photo empruntée — les blocs « votre photo ici »
+       attendent les vraies.</p>
+  </div>
+</footer>
+
+<script>
+/* Deux choses, pas une de plus. Le reste est du CSS. */
+(function(){
+  document.documentElement.classList.add('js');
+  var line = document.querySelector('.thread');
+  var story = document.querySelector('.story');
+  var steps = Array.prototype.slice.call(document.querySelectorAll('.step'));
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* geste n°5 — le fondu croisé : une étape entre quand la précédente n'est pas partie */
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.15 });
+    steps.forEach(function(s){ io.observe(s); });
+  } else {
+    steps.forEach(function(s){ s.classList.add('in'); });
+  }
+
+  /* geste n°3 — l'avancement du fil */
+  if (!line || !story) return;
+  if (reduce) { line.style.setProperty('--p', '1'); return; }
+  var raf = 0;
+  function draw(){
+    raf = 0;
+    var r = story.getBoundingClientRect();
+    var span = r.height - innerHeight * 0.55;
+    var p = span > 0 ? (-r.top + innerHeight * 0.30) / span : 1;
+    line.style.setProperty('--p', Math.max(0, Math.min(1, p)).toFixed(3));
+  }
+  function onScroll(){ if (!raf) raf = requestAnimationFrame(draw); }
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', onScroll);
+  draw();
+})();
+</script>
+</body>
+</html>

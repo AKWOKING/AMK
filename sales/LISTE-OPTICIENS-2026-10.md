@@ -106,16 +106,19 @@ est confirmée par la source elle-même.
 > ONOC, Google). Aucun mot-clé inventé, aucun chiffre de trafic estimé. Les numéros viennent de pages
 > publiques et **se re-vérifient sur le profil WhatsApp avant chaque envoi** (règle du 05/10).
 
-## 1 · Le profil qui définit le lot
+## 1 · Le profil qui définit le lot — **corrigé le 23/10**
 
-DM OPTIQUE SARL, c'est : un cabinet de quartier, **un titulaire identifiable**, des **photos réelles**,
-un **numéro WhatsApp** comme porte d'entrée, **aucune équipe marketing**. Le prospect qui lui ressemble
-a donc : une activité sociale **visible et récente**, des **patients réels** (avis, commentaires), et
-**pas de maison à lui** sur le web — ou une maison en ruine (lien mort).
+> **Correction de King (23/10) :** ce n'est pas le bon profil. DM OPTIQUE SARL **n'avait aucune
+> présence en ligne au départ** — ni site, ni page, ni compte. Un cabinet à 207 publications a déjà
+> quelqu'un qui s'occupe de son image : ce n'est pas notre prospect, c'est son concurrent.
+> Les cinq ci-dessous sont donc devenus **le groupe de contrôle** (voir §8), et le vrai lot est en §7.
 
-**Le signal que King a repéré et qui est confirmé ici :** les cabinets qui « ne veulent pas de site »
-tiennent déjà un compte. Ils investissent du temps dans un canal qu'ils **louent** (Facebook, TikTok,
-Instagram) et n'ont rien qui leur appartienne.
+Le profil retenu par King : **un cabinet privé de Douala, 1 à 10 salariés, qui n'a rien en ligne** —
+pas de site, pas de page, pas de compte. Il existe par le bouche-à-oreille, une plaque et un numéro.
+C'est l'état de DM OPTIQUE SARL avant qu'on travaille ensemble.
+
+**Ce que ça change dans la méthode :** on ne cherche plus une preuve d'activité, on cherche une
+**absence** — et une absence ne se prouve pas, elle se constate par élimination. La méthode est en §7.1.
 
 ## 2 · Les cinq — ce qui est vérifié, et ce qui reste à vérifier
 
@@ -159,15 +162,24 @@ message**, une seule question. Le fait cité est vrai et vérifiable — c'est l
 > conseil publié sur Facebook disparaît du fil en trois jours. Ça vous dirait qu'ils restent quelque
 > part qui vous appartienne ?
 
-## 4 · Cadence — un conflit à trancher par King
+## 4 · Cadence — **correction du 23/10 : je me suis trompé**
 
-Le ruling du 05/10 dit **1 envoi par jour, 2 maximum** (raison : signalement spam → numéro grillé →
- liste brûlée). Cinq messages le même jour, sur un numéro qui n'a jamais envoyé à ces gens, c'est
- exactement le motif qu'on a écarté.
+Ce que j'avais écrit ici — « cinq le même jour, c'est le motif qu'on a écarté, il faut deux numéros » —
+était une extrapolation, pas la règle. Et elle ne tient pas debout :
 
-**Proposition :** les cinq sont **écrits et prêts** dès maintenant ; on en envoie **2 le 24/10**
-(09h00 et 17h00), **2 le 25/10**, **1 le 26/10**. Si King veut les cinq demain, alors il faut deux
-numéros, pas un.
+- le motif du 05/10 visait un **envoi groupé, texte identique, vers beaucoup de monde**. Ici : dix
+  destinataires, **dix textes différents**, aucun lien dans le premier message. Ce n'est pas un motif
+  de masse, c'est dix conversations qui commencent.
+- « signaler le numéro » ne parle pas du destinataire : chaque personne peut nous **bloquer** ou nous
+  **signaler**, et c'est **notre numéro expéditeur** qui accumule. Sur cinq à dix messages, c'est un
+  risque marginal. Je l'ai présenté comme une contrainte dure, ce n'était pas honnête.
+- **ce qui reste vrai et suffit** : ① dix textes différents, jamais de copier-coller ; ② **aucun lien
+  dans le premier message** ; ③ pas plus d'un message par heure ; ④ on s'arrête net si deux personnes
+  nous bloquent.
+
+**Décision proposée :** les dix partent **demain, sur un seul numéro**, espacés d'environ 45 minutes
+(09h00 → 16h00). Si le ruling « 1/jour » reste ta règle ferme, on fait 5 demain et 5 le 25/10 — c'est
+ton choix, ce n'est plus un problème technique.
 
 ## 5 · La démo — un socle commun, cinq angles
 
@@ -216,3 +228,123 @@ Quatre choses, pas plus : **6 à 10 photos** (devanture, intérieur, équipement
 du titulaire et son numéro d'inscription à l'ONOC, **les horaires réels** (examen séparé de l'accueil),
 et **le numéro WhatsApp** qui reçoit les messages. Sans ça, la démo reste une maquette — et une maquette
 ne se montre pas comme un site.
+
+## 7 · LOT DU 24/10 — cinq cliniques **sans aucune présence en ligne**
+
+### 7.1 · Comment on constate une absence (et ce que ça ne prouve pas)
+
+Une présence se prouve ; une **absence** se constate par élimination. Quatre contrôles par piste :
+
+1. **Recherche nominative** — le nom exact, puis le nom + `facebook`, + `instagram`, + `site web`.
+2. **Tri des résultats** — si tout ce qui remonte est un **annuaire** (Maligah, DoualaTour, Pages
+   Pratiques, Pages Jaunes, Ayila'a), un **réseau d'assurance** (ASCOMA, NSIA, Pass24, Sogécable WTW)
+   ou une fiche d'avis, alors le cabinet n'a **rien qui lui appartienne**.
+3. **Aucun domaine** au nom du cabinet (attention aux homonymes : `souriredentaire.com` est au Niger,
+   pas à Bali-Douala).
+4. **Contrôle à la main avant envoi** — recherche Facebook/Instagram dans l'application et champ
+   « site web » de la fiche Google. C'est le seul contrôle qui vaut ; le reste est un indice.
+
+**La limite, écrite noir sur blanc :** une page Facebook peut exister sans être indexée, et une fiche
+Google sans site reste une présence. Donc **on ne dit jamais « vous n'avez rien en ligne »** — on dit
+**« je n'ai rien trouvé »**. C'est vrai, c'est vérifiable, et ça n'insulte personne. Les cinq messages
+sont écrits comme ça.
+
+### 7.2 · Les cinq
+
+| # | Établissement | Type | Quartier / adresse | Mobiles | Ce que j'ai trouvé — et rien d'autre |
+|---|---|---|---|---|---|
+| 6 | **Cabinet Dentaire Bouda Seidou** (Dr Seidou Bouda) | dentaire | Bonanjo, Immeuble Neuilly II, 1682 av. du Général de Gaulle, à côté de la station Total | 677 76 03 49 · 696 00 01 11 | reconnu à l'**ONCDC** ; sinon **deux adresses** (Maligah dit Akwa, 1376 bd de la Liberté) et **quatre numéros** selon la source ; aucun site, aucune page |
+| 7 | **Cabinet Dentaire Le Sourire** (Dr Nadine Towe-Kalla) | dentaire | Bali, 298 rue Dikoumé Bell, face maison de l'étanchéité | 698 00 78 08 · 699 62 94 55 | **Pages Jaunes** + annuaire de l'**AFECDEC** (elle y est secrétaire adjointe) ; aucun site, aucune page |
+| 8 | **Cabinet Dentaire IVY** | dentaire | Bonanjo, 882 rue Christian Tobie Kuoh (rue Ivy) | 697 945 251 · 699 943 186 | **DoualaTour** + une place de marché de dentistes ; la fiche le classe « **ORL ⚊ dentiste** » — un autre métier que le sien |
+| 9 | **COMED** — Centre d'Ophtalmologie et de Médecine de Douala | ophtalmo + médecine générale | Bonapriso, 370 rue 1.225 (route Dominique Savio), BP 2763 | 699 915 652 · 233 42 03 85 | **créé en 1993**, 33 ans de métier ; en ligne : une ligne d'annuaire, sans horaires ni photos |
+| 10 | **CMO JOLINOM** — Centre Médical d'Ophtalmologie | ophtalmo | Deido, derrière la pharmacie de la Bourse (Grand Moulin) | 677 466 425 · 677 46 64 25 | listé chez **NSIA, ASCOMA, Medlog** ; **deux mobiles différents** selon l'assureur, aucune adresse plus précise que « derrière la pharmacie » |
+
+**Taille** : 1 à 5 personnes pour les trois cabinets dentaires, 4 à 10 pour les deux centres. Aucun n'a
+de service marketing, aucun ne publie.
+
+### 7.3 · Écartés — et le motif, parce que c'est le motif qui compte
+
+| Écarté | Pourquoi |
+|---|---|
+| Cabinet Dentaire **CERAM** (Deido) | **page Facebook à 1 726 abonnés** — il y a quelqu'un derrière. C'est exactement le cas d'école de ta règle |
+| Cabinet dentaire **YAKS** (Logbessou) | page Facebook active, et **déjà contacté le 16/09**, parqué depuis |
+| Clinique Dentaire **WADO** (Logpom) | **Instagram 175 publications + TikTok + YouTube** — présence construite, hors ICP |
+| **CMODN** (Makepe, ophtalmo) | page Facebook ; déjà classé « Piste 4 » le 10/10 |
+| **Sparks · Shine · Maison Optique · La Cerisaie · Lynx Vision · DIEC · C2T · La Grâce · Etienno · Rond-Point · SAFY · BZK · Shekina · Sony** | ont un site, ou une page tenue |
+| **Cabinet Dentaire Azur · Cabinet Dentaire du Palais · Clinique Kerthan · Clinique Ndassa** | **réserve** : rien trouvé en ligne, mais informations contradictoires (Azur : 413 rue Gouverneur Carras *et* 1.066 rue Clemenceau ; Kerthan et Ndassa : un seul annuaire, pas d'adresse vérifiable) |
+
+### 7.4 · Les cinq messages (prêts, 2 phrases, une question, aucun lien)
+
+**⑥ Bouda Seidou**
+> Bonjour docteur, en cherchant votre cabinet je n'ai trouvé que des annuaires, avec deux adresses
+> différentes et plusieurs numéros selon les sites. Vous êtes bien à l'immeuble Neuilly II aujourd'hui ?
+
+**⑦ Le Sourire**
+> Bonjour docteur, je n'ai trouvé votre cabinet que sur les Pages Jaunes et sur un annuaire
+> d'association — rien à vous, ni horaires ni photos. Vos patients vous demandent encore l'adresse au
+> téléphone ?
+
+**⑧ IVY**
+> Bonjour, le cabinet de la rue Ivy n'apparaît que dans un annuaire, classé « ORL et dentiste » à la
+> fois, avec deux numéros et aucune page à lui. Vous n'avez jamais eu de site, ou vous en aviez un que
+> personne n'a renouvelé ?
+
+**⑨ COMED**
+> Bonjour, le COMED existe depuis 1993 à Bonapriso et je n'ai rien trouvé en ligne à part une ligne
+> d'annuaire : pas d'horaires, pas de photos. Ce sont les patients qui vous recommandent, ou vous
+> recevez aussi des gens qui vous ont cherché sur internet ?
+
+**⑩ JOLINOM**
+> Bonjour, votre centre est listé chez plusieurs assureurs avec deux numéros différents et pour seule
+> adresse « derrière la pharmacie de la Bourse ». Lequel des deux est le bon aujourd'hui ?
+
+### 7.5 · Ce qui doit être vrai avant d'envoyer
+
+1. **Le numéro ouvre WhatsApp** — un mobile d'annuaire n'est pas une preuve. C'est la leçon du 10/10 :
+   sur 18 pistes, 15 sont tombées pour cette raison. Quatre de mes cinq ont deux numéros ; on teste le
+   premier, on garde le second.
+2. **L'adresse et les horaires sont confirmés par eux**, pas par un annuaire — c'est précisément ce
+   qu'on leur demande dans le message.
+3. **Aucune affirmation absolue** : « je n'ai rien trouvé », jamais « vous n'avez rien ».
+4. Aucun prix, aucun lien, aucune promesse de délai dans le premier message (verrous DM en vigueur).
+
+### 7.6 · L'angle de démo de chacun (le socle du §6.1 ne change pas)
+
+> **Le socle est construit** : `hosting/previews/demo-clinique/index.html` — héros en 5 couches,
+> match cut, profondeur en CSS seul, **0 Ko d'effet**, portique `shot.py` **VERT (0 P1 · 0 P2 · 0 P3)**.
+> Pour chaque prospect : on change le `<svg>` de l'objet, `--brand`, et le texte. Rien d'autre.
+
+| # | Prospect | L'angle | Ce qui le rend vrai |
+|---|---|---|---|
+| 6 | Bouda Seidou | **une seule adresse, enfin** : l'itinéraire, l'étage, l'immeuble, le téléphone unique en haut de chaque page | deux adresses et quatre numéros circulent aujourd'hui |
+| 7 | Le Sourire | **la page qui remplace l'annuaire** : horaires réels, soins, photos du cabinet | n'existe que sur deux annuaires |
+| 8 | IVY | **dire ce qu'il soigne** : dentisterie, pas ORL — un titre, une phrase, les soins en 4 lignes | l'annuaire le classe ORL |
+| 9 | COMED | **1993** : une page d'histoire (« 33 ans à Bonapriso »), l'équipe, les examens | créé en 1993, âge vérifiable |
+| 10 | JOLINOM | **un numéro, une adresse, un plan** : tout tient dans la première page | deux numéros et pas d'adresse |
+
+---
+
+## 8 · Le test que tu veux faire — et ce qu'il peut vraiment dire
+
+**Groupe A (sans présence) :** les cinq du §7. **Groupe B (avec présence) :** les cinq du §2.
+
+**Ta prédiction :** A dit oui, B ne répond pas ou refuse, parce que B est déjà servi par ses réseaux.
+
+**Ce qui la valide :** 2 réponses positives ou plus sur 5 en A, et 0 ou 1 en B.
+**Ce qui la tue :** A muet aussi — alors le problème n'est pas la présence en ligne, il est dans le
+message, le canal ou le numéro.
+
+**Les trois limites, dites franchement :**
+1. **n = 10.** L'historique du fichier est à **2 réponses sur 31 envois (6,5 %)**. Sur dix, l'espérance
+   est inférieure à une réponse : ce test donne un **signal**, pas une preuve. Pour conclure, il faut
+   trois vagues de dix.
+2. **Deux métiers différents.** A est fait de dentistes et d'ophtalmologues, B d'opticiens. Si A répond
+   et B non, on ne saura pas si c'est la présence en ligne ou le métier. Pour trancher, la deuxième
+   vague doit être **cinq opticiens sans présence** (il en existe : c'est le vivier de la §2, ceux
+   écartés pour un site en ruine).
+3. **La livraison.** Un numéro qui n'est pas sur WhatsApp ne dit rien sur la théorie — il dit qu'on
+   n'a pas frappé à la bonne porte. On le note comme **non testé**, jamais comme un refus.
+
+**Pour que ce soit comparable**, les dix partent avec la même structure (2 phrases, un fait vérifié,
+une question, aucun lien), le même expéditeur, le même jour. Et on note pour chacun : envoyé / livré /
+lu / répondu / bloqué.
