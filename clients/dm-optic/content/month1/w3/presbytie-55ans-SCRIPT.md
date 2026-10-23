@@ -144,8 +144,9 @@ gens — c'est la leçon du 23/10).
 | 5 | **« Opticien optométriste »**, jamais « opticien » seul | règle de titre professionnel (99/001, art. 2) |
 | 6 | **Le numéro est le bon : 6 56 12 22 39** | un CTA faux ne se rattrape pas |
 | 7 | **Les horaires sont réels** (« jusqu'à 17 h ») | vérifié : la fiche indique « Closes 5 pm » |
-| 8 | **Un seul CTA** : le rendez-vous | pas de mot-clé (ruling du 23/10) |
+| 8 | **Un seul engagement demandé** : le rendez-vous *ou* le commentaire — jamais les deux au même niveau | le rendez-vous est parlé, la question est écrite (§2 bis) ; pas de mot-clé (ruling du 23/10) |
 | 9 | **Le décor existe chez le spectateur** | vérifié : un téléphone, oui ; un journal, non |
+| 10 | **La question posée est répondable sans données patient** | on récolte des sujets de vidéo, pas des dossiers médicaux |
 
 ---
 
