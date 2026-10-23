@@ -636,3 +636,22 @@ modèle opaque ne peut pas offrir sur ces photos.
 - **(d) Effort + verdict :** 0 (déjà lu et installé le 23/10) → **pursue**. Le seul apport qu'aucun autre
   skill ne donne : **la limite explicite de la boucle de polissage.** Borné à ce que les portiques maison
   ne couvrent pas : les portiques §1b restent seuls juges.
+
+---
+
+## 23/10 — **MoneyPrinterTurbo** (`harry0703`, MIT) — verdict : **pursue, borné à l'assemblage**
+
+- **(a) Problème :** nos vidéos se montent à la main (`tools/video/compose.py` fait des cartes et du
+  mouvement de capture ; il ne coupe pas des rushes à la durée d'une voix, et il ne rend pas deux
+  formats d'un seul coup). Chaque tournage réel demandait un montage manuel.
+- **(b) Use case AMK nommé :** « un tournage, deux montages » (§5 quater) — quatre plans tournés au
+  téléphone, une voix enregistrée, et deux fichiers 9:16 / 16:9 coupés à la seconde.
+- **(c) Coût :** **0 FCFA**, aucun compte, aucune clé. 733 Mo de source + 1,2 Go de venv, **hors du
+  dépôt** (`/tmp/amk-moneyprinter`). ffmpeg embarqué, pas de paquet système, pas de sudo.
+- **(d) Effort + verdict :** installé, **2 341 tests amont passés / 0 échec**, et un assemblage réel
+  produit ici (20,0 s, 1080×1920, 30 i/s) → **pursue**. Borné : `--video-source local` est forcé par
+  notre enveloppe ; banque d'images, voix de synthèse et script par modèle sont **refusés** (le décor
+  doit exister, le script est le nôtre). Sous-titres : Whisper, modèle téléchargé au premier usage —
+  donc pas testé dans la sandbox, et jamais présenté comme testé.
+- **Ce que l'outil ne fait pas et qu'on ne lui demande pas :** générer des plans. Un plan inventé ne
+  remplace pas un plan tourné.

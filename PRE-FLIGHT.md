@@ -170,6 +170,7 @@ Quand une règle change ou qu'un ruling est donné, cette table dit quels fichie
 | **Brag de livraison à chaque site prêt (ruling King 19/10, §1f②)** | `PRE-FLIGHT.md` §1f + §1b · `tools/brag/README.md` · `tools/qa/audit_video_motion.py` (portique) · `clients/<client>/build-notes.md` (chemin du brouillon) · `hosting/previews/README.md` (deploy gate) |
 | **Déploiement Vercel DM Optique après chaque changement du site (ruling King 20/10, §1f③)** | `PRE-FLIGHT.md` §1f · `clients/dm-optic/build-notes.md` (id + état du déploiement) · `hosting/previews/dmoptic/` (racine du projet Vercel) · `sales/Activity-Log.md` |
 | **Design/build/revue = pro-design en porte, taste-skill en direction (ruling King 20/10, complété 23/10 — §1f⑪)** : `tools/pro-design/README.md` + `bash tools/pro-design/install.sh` (la boucle 1440/390, deux tours max) ; taste-skill seulement quand la marque n'a pas encore de direction | `PRE-FLIGHT.md` §1f + §1b · `tools/taste-skill/README.md` · skill installé `~/.agents/skills/design-taste-frontend/SKILL.md` (hors dépôt) · `AMK-DESIGN-SKILLS.md` (lois maison, gagnent en cas de conflit) · `clients/<client>/build-notes.md` + `inspiration.md` (direction tirée, redraws, scores) |
+| **Montage vidéo de rushes réels = MoneyPrinterTurbo en assemblage (ruling King 23/10, §1f⑫)** | `PRE-FLIGHT.md` §1f + §1g · `tools/moneyprinter/README.md` + `bash tools/moneyprinter/install.sh` (épinglé `f063a2b`) · `bash tools/moneyprinter/assemble.sh --clips … --audio … --script …` (9:16 puis 16:9) · `tools/qa/audit_video_motion.py` (portique) · `ops/TOOL-SCAN.md` |
 | **Mouvement d'interface = design-motion-principles appliqué (ruling King 20/10, §1f⑤)** | `PRE-FLIGHT.md` §1f + §1b · `tools/design-motion-principles/README.md` · skill installé `~/.agents/skills/design-motion-principles/SKILL.md` (hors dépôt) · `AMK-DESIGN-SKILLS.md` (lois maison, gagnent en cas de conflit) · `clients/<client>/build-notes.md` (pondération des lentilles, findings motion) |
 | **Audit/vérification = skills ECC sélectifs en appui (ruling King 20/10, §1f⑥)** | `PRE-FLIGHT.md` §1f + §1b · `tools/ecc/README.md` · skills installés `~/.agents/skills/{accessibility,production-audit,verification-loop,security-review,seo,click-path-audit}/SKILL.md` (hors dépôt) · `tools/qa/` (les portiques maison font foi) · `clients/<client>/build-notes.md` (score, preuves, blockers) |
 | **Recherche UX/UI consultable = UI/UX Pro Max en appui (ruling King 20/10, §1f⑦)** | `PRE-FLIGHT.md` §1f + §1b · `tools/ui-ux-pro-max/README.md` · skill installé `~/.agents/skills/ui-ux-pro-max/SKILL.md` (hors dépôt) · `AMK-DESIGN-SKILLS.md` (lois maison, gagnent en cas de conflit) · `clients/<client>/build-notes.md` (grilles consultées, avis écartés) |
@@ -473,6 +474,25 @@ Skill  : [skill chargé, ou « aucun : la tâche n'en appelle pas »]
 **Phrase de sortie attendue, à la fin d'un build :** *direction en deux phrases + ce que la boucle a
 attrapé* — c'est le « hand-off » du skill, et ça va dans le bloc Audit de la réponse.
 
+### ⑫ Tournage tourné → **MoneyPrinterTurbo assemble, et ne génère rien** (ruling King 23/10)
+
+> *King 23/10 : « audit, analyze, install test MoneyPrinterTurbo then integrate into workflow ».*
+
+- **Déclencheur :** on a les rushes (4 plans, un téléphone) **et** la voix enregistrée. Avant, le
+  montage se faisait à la main ; maintenant il se commande.
+- **Procédure :** `bash tools/moneyprinter/install.sh` (une fois par session, ~50 s, hors dépôt) puis
+  `bash tools/moneyprinter/assemble.sh --clips <dossier> --audio <voix> --script "<texte dit>" --out <dossier> --aspect 9:16`,
+  et **la même commande en 16:9** : c'est la règle « un tournage, deux montages » rendue mécanique.
+- **Ce que l'enveloppe interdit, et pourquoi :** `--video-source local` est forcé (aucune banque
+  d'images : le décor doit exister), `--script` est **obligatoire** (sinon l'outil appelle un LLM
+  Moonshot/OpenAI — un outil qui peut appeler un modèle sans qu'on le sache doit être enveloppé),
+  le BGM automatique est coupé. La voix de synthèse n'est pas utilisée : on enregistre.
+- **Portique :** le `.mp4` sorti passe **`tools/qa/audit_video_motion.py`** comme avant ; un montage
+  n'est pas publié parce qu'il existe.
+- **Limite dite à voix haute :** les sous-titres demandent Whisper (modèle téléchargé au premier
+  usage). Dans la sandbox, le réseau est fermé : la chaîne sous-titres n'est **pas** testée, et ne se
+  présente jamais comme telle. Sur la machine de King, `--subtitles` fonctionne.
+
 ## 1g · Marketing, marque et création de contenu (ruling King 22/10)
 
 > *King 22/10 : « make sure you have written everything you just learned in the repo, in preflight too under marketing, content creation and other relevant topics ». *
@@ -490,6 +510,7 @@ deux bases de connaissance, **avant** d'écrire une ligne de script ou de lancer
 | La tâche | D'abord | Ensuite |
 |---|---|---|
 | positionner une marque, écrire un statement | `knowledge/MARKETING-OPTICAL…` §6 | `clients/<client>/brand/BRAND-STRATEGY-*.md` |
+| **monter une vidéo à partir de rushes réels** | **`tools/moneyprinter/README.md`** (§1f⑫ : assembler, jamais générer) | `bash tools/moneyprinter/assemble.sh` (9:16 puis 16:9) · `tools/qa/audit_video_motion.py` · les légendes écrites dans le script du tournage |
 | **construire ou redessiner une page** (site, landing, page de vente) | **`tools/pro-design/README.md`** + `bash tools/pro-design/install.sh` → skill **`pro-design`** (§1f⑪ : marque, motifs, mouvement, boucle 1440/390, deux tours max) | **`python3 tools/qa/shot.py <page>`** (le vrai navigateur, §1f⑪) · `AMK-DESIGN-SKILLS.md` (lois maison, elles gagnent) · les portiques `tools/qa/` avant publication |
 | **créer, réparer ou optimiser une page sociale** (Facebook, Instagram, TikTok) | `brand/AMK-PRESENCE-2026-10-22.md` **§14** (l'audit des trois profils réels : les sept défauts, la copie exacte Instagram/TikTok, la règle des identifiants) + **§13** (identité des trois comptes, fusion de pages, lien page ↔ Instagram) + §12 (les onze champs Facebook) + §10 (protocole captures) · `sales/research/2026-W43-techniques.md` §15 (audience vs communauté, cadence, mesure) | le §3 de PRESENCE uniquement pour les visuels déjà validés — l'arbitrage du nom est au §12.0 ; **une promesse de délai ne va jamais dans une bio sans sa condition** (§14.5) |
 | écrire un script court | `knowledge/CONTENT-CREATION…` §3 **puis §3 bis** (gabarit 9 blocs, rehook) et **§3 ter** (4 S + banque de hooks) | le gabarit du mois (`content/month1/…`) |
