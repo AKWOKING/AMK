@@ -2,6 +2,12 @@
 
 > **Site : source de vérité = [`site/CLIENT-REQUIREMENTS-BRIEF.md`](site/CLIENT-REQUIREMENTS-BRIEF.md)** (ruling King 08/10, 12e message). Tout ruling sur le site de ce client le cite ; une question sans réponse dans le brief l'étend.
 
+> **Preuve publique — état au 24/10/2026.** King a donné son accord **verbal** (pas écrit) pour que
+> DM OPTIQUE SARL apparaisse comme cas client sur le site d'AMK : nom, photo du cabinet (sans visage de
+> patient), ce qui a été livré, aucun chiffre de résultat. Le site ne dit nulle part « accord écrit » —
+> la phrase a été corrigée le 24/10 (FAQ FR, FAQ EN, JSON-LD EN). **À faire** : une ligne écrite du
+> cabinet (WhatsApp suffit) avant toute campagne qui pousserait cette page à des inconnus.
+>
 > **État : accord verbal. Rien n'est public — ni site, ni page, ni fiche Google, ni contenu — tant que
 > l'acompte n'est pas encaissé.**
 >

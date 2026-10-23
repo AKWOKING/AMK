@@ -210,3 +210,25 @@ pas l'entreprise du client n'est pas visé.
 
 **Ce que ce n'est PAS :** ce n'est **pas** une phrase d'accroche de prospection (ruling King). Elle
 va dans les documents de portée, pas dans le premier message.
+
+---
+
+## ⚠️ Mise à jour du 24/10/2026 — la grille unique existe
+
+Ce document disait « le prix de la création est tranché (150 000) / la récurrence, non ». Les deux
+sont désormais tranchés, avec la recherche et le conseil :
+
+| Ligne | Prix | Source |
+|---|---|---|
+| **Présence** (3 pages, fiche Google créée, domaine + hébergement 1ʳᵉ année) | **150 000** | `knowledge/PRIX-2026-10-24.md` §4 |
+| **Standard** (6 pages, fiche Google optimisée, 1 mois de support) | **250 000** | idem |
+| **Catalogue** (30 références, commandes WhatsApp) | **450 000 +** | idem |
+| **Suivi** mensuel | **25 000** | §5 |
+| **Croissance** mensuel | **75 000** | §5 |
+| Montée Présence → Standard | 120 000 | séance du 24/10, condition Buffett |
+
+Ce que ça règle dans le tableau du §2 : **10 000, 12 000 et 35 000 sont retirés** ; **30 000** survit
+comme prix de fait pour DM OPTIQUE (contrat en cours) et **non** comme prix de la grille — le périmètre
+de DM correspond à Croissance (75 000). Les questions restées ouvertes (§3·C, §3·D) ne sont pas
+fermées par ce changement : elles restent la liste de travail.
+

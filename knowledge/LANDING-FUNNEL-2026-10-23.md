@@ -223,6 +223,11 @@ Trois décisions, et ce qu'elles deviennent dans le site.
 
 ### a. Le prix d'entrée est public : **150 000 FCFA**
 
+> **Note du 24/10** : ce paragraphe décrit la décision du 23/10, qui a été **remplacée** le lendemain.
+> La grille publique est aujourd'hui **150 000 / 250 000 / 450 000** (trois formats) et l'entretien
+> **25 000 / 75 000** — voir `knowledge/PRIX-2026-10-24.md`. L'histoire n'est pas réécrite : 150 000
+> pour six pages était sous le coût réel, la recherche l'a montré en une page de calcul.
+
 Le socle, une fois : site bilingue EN|FR jusqu'à 6 pages · fiche Google créée ou optimisée (horaires,
 repère, catégorie, photos) · bouton WhatsApp prérempli · domaine et hébergement sécurisé au nom du
 client · formation de 30 minutes · mise en ligne dès validation. Ce qui augmente le prix, écrit à

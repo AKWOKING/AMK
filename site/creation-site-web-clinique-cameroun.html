@@ -266,6 +266,14 @@ footer .nap{color:#E2E8F0}
 .amk-psrc:focus-visible{outline:2px solid #FCD34D;outline-offset:2px}
 .amk-psrc svg{display:block;width:14px;height:14px;flex:0 0 auto;fill:#FCD34D}
 @media (prefers-reduced-motion:reduce){.amk-psrc{transition:none}}
+/* Trois étapes (24/10) : le tunnel d'Arthur demande un démarrage qui paraît faisable ce soir.
+   Ajouté aux deux pages de niche, qui n'en avaient aucune. */
+.steps3{display:grid;gap:16px;margin-top:28px}
+@media(min-width:760px){.steps3{grid-template-columns:repeat(3,1fr)}}
+.step3{background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px 22px 24px;position:relative}
+.step3 .n3{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--amber);color:#0B1120;font-weight:800;font-size:14px;margin-bottom:12px}
+.step3 h3{font-size:17px;font-weight:800;margin-bottom:6px}
+.step3 p{font-size:14px;color:var(--slate)}
 </style>
 </head>
 <body>
@@ -369,12 +377,29 @@ footer .nap{color:#E2E8F0}
   </div>
 </section>
 
+
+<section id="processus">
+  <div class="wrap">
+    <div class="center">
+      <span class="kicker" data-en="Three steps" data-fr="Trois étapes">Trois étapes</span>
+      <h2 data-en="From one message to a live site" data-fr="D'un message à un site en ligne">D'un message à un site en ligne</h2>
+      <p class="sub" data-en="No form to fill, no account to create, no meeting before you have seen something." data-fr="Aucun formulaire à remplir, aucun compte à créer, aucune réunion avant d'avoir vu quelque chose.">Aucun formulaire à remplir, aucun compte à créer, aucune réunion avant d'avoir vu quelque chose.</p>
+    </div>
+    <div class="steps3">
+      <div class="step3"><span class="n3">1</span><h3 data-en="One message" data-fr="Un message">Un message</h3><p data-en="Tell us the specialty, the town, what is missing. Two minutes on WhatsApp, with the message already written." data-fr="Dites-nous la spécialité, la ville, ce qui vous manque. Deux minutes sur WhatsApp, avec le message déjà écrit.">Dites-nous la spécialité, la ville, ce qui vous manque. Deux minutes sur WhatsApp, avec le message déjà écrit.</p></div>
+<div class="step3"><span class="n3">2</span><h3 data-en="The preview, within 24 h after brief sign-off" data-fr="L'aperçu, sous 24 h après validation du brief">L'aperçu, sous 24 h après validation du brief</h3><p data-en="A complete page, French and English, on your phone. Free, nothing owed." data-fr="Vous recevez une page complète, en français et en anglais, sur votre téléphone. Gratuit, et rien n'est dû.">Vous recevez une page complète, en français et en anglais, sur votre téléphone. Gratuit, et rien n'est dû.</p></div>
+<div class="step3"><span class="n3">3</span><h3 data-en="Live as soon as you approve" data-fr="En ligne dès votre validation">En ligne dès votre validation</h3><p data-en="Domain, hosting, Google profile and 30-minute training: we install, you approve." data-fr="Domaine, hébergement, fiche Google et formation de 30 minutes : nous installons, vous validez.">Domaine, hébergement, fiche Google et formation de 30 minutes : nous installons, vous validez.</p></div>
+
+    </div>
+  </div>
+</section>
+
 <section class="price">
   <div class="wrap">
     <div class="box">
       <span class="kicker on-dark" data-en="The base, and its price" data-fr="Le socle, et son prix">Le socle, et son prix</span>
-      <div class="amount" data-en="150 000 FCFA" data-fr="150 000 FCFA">150 000 FCFA</div>
-      <p class="split" data-en="Starting at 150 000 FCFA, once: a bilingual site up to 6 pages, the Google profile created or optimised, domain and hosting. Anything beyond that — catalogue, photo session, logo, content — is quoted on screen before we start, never after. The preview is free." data-fr="À partir de 150 000 FCFA, une fois : site bilingue jusqu'à 6 pages, fiche Google créée ou optimisée, domaine et hébergement. Au-delà — catalogue, séance photo, logo, contenu — c'est chiffré à l'écran avant de commencer, jamais après. L'aperçu est gratuit.">À partir de 150 000 FCFA, une fois : site bilingue jusqu'à 6 pages, fiche Google créée ou optimisée, domaine et hébergement. Au-delà — catalogue, séance photo, logo, contenu — c'est chiffré à l'écran avant de commencer, jamais après. L'aperçu est gratuit.</p>
+      <div class="amount" data-en="À partir de 150 000 FCFA" data-fr="À partir de 150 000 FCFA">À partir de 150 000 FCFA</div>
+      <p class="split" data-en="Presence 150 000 FCFA (up to 3 pages) · Standard 250 000 FCFA (up to 6 pages) · Catalogue 450 000 FCFA and up. Domain and hosting for the first year included, 30-minute training included. Upkeep is separate: 25 000 or 75 000 a month, no contract. The preview is free." data-fr="Présence 150 000 FCFA (jusqu'à 3 pages) · Standard 250 000 FCFA (jusqu'à 6 pages) · Catalogue 450 000 FCFA et plus. Domaine et hébergement de la première année compris, formation de 30 minutes incluse. L'entretien est à part : 25 000 ou 75 000 par mois, sans engagement. L'aperçu est gratuit.">Présence 150 000 FCFA (jusqu'à 3 pages) · Standard 250 000 FCFA (jusqu'à 6 pages) · Catalogue 450 000 FCFA et plus. Domaine et hébergement de la première année compris, formation de 30 minutes incluse. L'entretien est à part : 25 000 ou 75 000 par mois, sans engagement. L'aperçu est gratuit.</p>
       <ul>
         <li data-en="A complete bilingual page (French and English, one click apart)" data-fr="Une page complète bilingue (français et anglais, à un clic l'un de l'autre)">Une page complète bilingue (français et anglais, à un clic l'un de l'autre)</li>
         <li data-en="Your services, your fees in FCFA, prep instructions, address and map" data-fr="Vos services, vos tarifs en FCFA, les consignes de préparation, l'adresse et le plan">Vos services, vos tarifs en FCFA, les consignes de préparation, l'adresse et le plan</li>

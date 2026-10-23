@@ -4,20 +4,22 @@
 > cliniques, cabinets médicaux, opticiens, laboratoires et commerces — et pour les écoles privées, à
 > la rentrée. Une page qui se charge sur un téléphone en 3G, la fiche Google créée ou remise à neuf,
 > une prise de contact qui ouvre WhatsApp avec le message déjà rédigé.
-> **Prix d'entrée public : 150 000 FCFA**, une fois : site bilingue jusqu'à 6 pages, fiche Google,
-> domaine et hébergement sécurisé à votre nom, formation de 30 minutes. Ce qui dépasse (catalogue ou
-> boutique, séance photo, logo et identité, création de contenu et publications, pages
-> supplémentaires) est chiffré à l'écran avant de commencer. L'aperçu de la page d'accueil est gratuit
-> et rien n'est dû avant votre validation.
+> **Trois formats, un prix public chacun** : **Présence 150 000 FCFA** (bilingue jusqu'à 3 pages, fiche
+> Google créée, domaine et hébergement 1ʳᵉ année, formation de 30 min) · **Standard 250 000 FCFA**
+> (jusqu'à 6 pages, fiche Google optimisée, un mois de support) · **Catalogue 450 000 FCFA et plus**
+> (jusqu'à 30 références, commandes par WhatsApp). **Entretien** : 25 000 ou 75 000 FCFA par mois, sans
+> engagement. Ce qui dépasse est chiffré à l'écran avant de commencer ; aucune remise, on change le
+> périmètre. L'aperçu de la page d'accueil est gratuit et rien n'est dû avant votre validation.
 > Web studio based in Douala, Cameroon. Bilingual French/English websites for clinics, medical
 > practices, opticians, laboratories and shops — and for private schools at the start of the school
 > year. A page that loads on a phone over 3G, the Google Business Profile created or cleaned up, and
 > contact that opens WhatsApp with the message already written.
-> **Public entry price: 150 000 FCFA**, once: a bilingual site up to 6 pages, the Google profile,
-> domain and secure hosting in your name, a 30-minute training. Anything beyond that (catalogue or
-> shop page, photo session, logo and brand identity, content creation and posting, extra pages) is
-> quoted on screen before we start. The homepage preview is free, and nothing is owed until you
-> approve it.
+> **Three formats, one public price each**: **Presence 150 000 FCFA** (bilingual up to 3 pages,
+> Google profile created, domain and hosting for year one, 30-minute training) · **Standard
+> 250 000 FCFA** (up to 6 pages, Google profile optimised, one month of support) · **Catalogue
+> 450 000 FCFA and up** (up to 30 references, orders by WhatsApp). **Upkeep**: 25 000 or 75 000 FCFA a
+> month, no contract. Anything beyond a format is quoted on screen before we start; no discounts, the
+> scope changes. The homepage preview is free, and nothing is owed until you approve it.
 
 ## Ce que nous ne promettons pas
 
@@ -36,7 +38,7 @@ six sites concepts complets, ouvrables depuis la page d'accueil.
 
 - [Accueil — l'offre, le client réel, les six concepts, les tarifs, les questions](https://amk-cm.vercel.app/) — Home — the offer, the real client, the six concepts, pricing, questions
 - [Création de site web pour une clinique ou un laboratoire au Cameroun](https://amk-cm.vercel.app/creation-site-web-clinique-cameroun.html) — Website for a clinic or laboratory in Cameroon
-- [Création de site web pour une école au Cameroun](https://amk-cm.vercel.app/creation-site-web-ecole-cameroun.html) — Website for a school in Cameroon
+- [Site web pour une école au Cameroun — campagne de rentrée](https://amk-cm.vercel.app/creation-site-web-ecole-cameroun.html) — Dated new-term campaign: new-term projects taken from April 2027, live before enrolment opens; the page stays online year-round
 - [English version of the homepage](https://amk-cm.vercel.app/en/) — version anglaise de l'accueil
 - [English · clinic concept, Bonabéri](https://amk-cm.vercel.app/en/clinic-bonaberi.html) — version anglaise du concept clinique
 - [English · Midas Touch Optic Center, Buea](https://amk-cm.vercel.app/en/mitoc.html) — version anglaise du concept optique
