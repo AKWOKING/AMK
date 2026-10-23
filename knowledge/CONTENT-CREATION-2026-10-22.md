@@ -473,3 +473,25 @@ mains, documents, lieux, texte animé. Ce n'est pas un refus — c'est l'attente
 **La règle d'écriture de ce journal :** une ligne par source, **le jour où elle est lue**, avec la
 section qui la porte. Une source sans ligne ici n'est pas dans le dépôt — même si on s'en souvient.
 
+### 10 bis · La procédure (règle King, 23/10) — le journal s'ouvre **à la réception**, pas à la fin
+
+King, 23/10 : *« Ouvre le journal des sources à chaque nouvelle vidéo ou PDF. »* Ce n'est pas une
+recommandation, c'est l'ordre de travail. À chaque fichier reçu — un PDF, une capture, un zip, une vidéo,
+une story — la même séquence, dans cet ordre, avant toute autre chose :
+
+| # | Geste | Où ça s'écrit |
+|---|---|---|
+| 1 | **la ligne existe d'abord** : date, source, « reçu, pas encore lu » | §10, ce tableau |
+| 2 | on lit, et on écrit **ce qu'on en prend** et **ce qu'on écarte** | §10, colonnes 3 et 5 |
+| 3 | on nomme **la section qui le porte** — si aucune section ne le porte, on en crée une | §10, colonne 4 |
+| 4 | ce qui devient une **règle** est écrit au §correspondant, pas seulement au journal | la section ellemême |
+
+**Pourquoi cet ordre.** Une source lue mais non journalisée disparaît au tour suivant ; une source
+journalisée mais non atterrie est un décor. La ligne 1, posée avant la lecture, est ce qui empêche les
+deux. Depuis le 23/10, le journal couvre **les vidéos et les fichiers de travail aussi**, pas seulement
+les textes de méthode : le zip de l'outil de factures a sa ligne, la capture WhatsApp du client a la
+sienne.
+
+| 23/10 | **`amk-factures-pwa.zip`** — l'outil de factures de King | l'inventaire réel de l'outil (échéance, proforma, reçu, MoMo/OM/banque, modèles) — et la leçon : **lire le code avant de dire ce qui manque** | `ops/amk-factures-pwa/` · `ops/FACTURATION-2026-10-24.md` §3 bis | ses deux affirmations de ma part sur des manques inexistants : corrigées, pas reprises |
+| 23/10 | **Capture WhatsApp DM OPTIQUE** (13h00, message d'avis du client) | le texte exact de sa demande d'avis, ses liens, et l'heure | `clients/dm-optic/launch/SOLDE-75K-2026-10-23.md` §3 bis | la tentation d'y répondre : c'est un message de masse, pas une question |
+

@@ -101,6 +101,16 @@ feu vert de King) :
 2. test fonctionnel sur un téléphone : une facture antidatée doit afficher « en retard de N jours » ;
 3. preview d'abord, capture à King, production **après son accord**.
 
+**Où en est le déploiement, le 23/10 (vérifié, pas supposé) :**
+- la **source** est dans le dépôt, `ops/amk-factures-pwa/`, commit `54e90f7` ;
+- un projet Vercel **`amk-factures-pwa-preview`** (`prj_p0jOq44hpb98NhiYg1ViNzJOXVZw`) a été créé, lié
+  au dépôt `AKWOKING/AMK`, racine `ops/amk-factures-pwa` ;
+- **l'envoi des fichiers par le connecteur a échoué** (`projectSettings` exigé pour un projet neuf), et un
+  déploiement d'essai sans les bons fichiers a été supprimé : rien n'a bougé en production ;
+- **le chemin qui reste, et il est propre :** dans Vercel → `amk-factures-pwa-preview` → *Deployments* →
+  *Create deployment* → branche `arena/000d42c4-amk`. Le fichier publié est alors celui du dépôt, donc
+  exactement celui qui a été vérifié. La production reste sur l'ancienne version tant que King n'a pas dit oui.
+
 ## 4 · Ce que l'outil ne fera jamais à notre place
 
 Il ne dit pas si le prix est juste, il ne dit pas si le travail est livré, et il ne remplace pas la
