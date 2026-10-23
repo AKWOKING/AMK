@@ -223,7 +223,7 @@ sont désormais tranchés, avec la recherche et le conseil :
 | **Présence** (3 pages, fiche Google créée, domaine + hébergement 1ʳᵉ année) | **150 000** | `knowledge/PRIX-2026-10-24.md` §4 |
 | **Standard** (6 pages, fiche Google optimisée, 1 mois de support) | **250 000** | idem |
 | **Catalogue** (30 références, commandes WhatsApp) | **450 000 +** | idem |
-| **Suivi** mensuel | **25 000** | §5 |
+| **Suivi** mensuel | **30 000** | §5 |
 | **Croissance** mensuel | **75 000** | §5 |
 | Montée Présence → Standard | 120 000 | séance du 24/10, condition Buffett |
 
