@@ -87,3 +87,28 @@ Huit classes, huit codes : **D1** navigation mobile · **D2** cache des assets (
 
 Les deux P1 de DM et le P1 d'AMK sont **antérieurs** à ce fichier : le portique les révèle, il ne les a
 pas créés.
+
+---
+
+## Deuxième leçon, le même jour : le portique peut se tromper d'hôte
+
+Le matin, `audit_delivery.py` a condamné `/*.webp` — à juste titre sur Cloudflare **Pages**, où le splat
+ne vaut qu'en fin de motif. L'après-midi, en lisant la doc Workers pour écrire la règle de cache, une
+évidence : DM OPTIQUE n'est pas sur Pages, il est sur **Workers static assets**, et la doc Workers donne
+justement `/*.jpg` en exemple (`/workers/static-assets/headers/`). Le portique interdisait donc un motif
+que l'hôte lit.
+
+Trois corrections, dans l'ordre de gravité :
+
+1. **`uses_workers_assets(site)`** : la validité d'un motif dépend de l'hôte (`wrangler.toml` → un seul
+   splat, où qu'il soit ; sinon splat en fin seulement). Un contrôle qui ignore l'hôte n'est pas strict,
+   il est approximatif.
+2. **`posixpath.normpath`** sur les chemins d'assets : `/contact/../x.webp` était compté comme non
+   couvert alors qu'il désigne `/x.webp`. 250 fausses alertes sur 494.
+3. **`has_menu_control`** accepte `<details><summary>` autant que `<button aria-expanded>` : un portique
+   dit ce qui manque, il n'impose pas l'implémentation qu'il a en tête.
+
+Et la leçon de fond, qui n'est pas dans le code : **une Cache Rule Cloudflare ne fait rien sur un Worker**
+(« no zone configuration for caching applies to Workers Caching »). Écrire la règle demandée aurait été
+la faute du matin, en plus cher. La règle utile est `_headers`, dans le dépôt, et elle se prouve par un
+`curl -I`.
