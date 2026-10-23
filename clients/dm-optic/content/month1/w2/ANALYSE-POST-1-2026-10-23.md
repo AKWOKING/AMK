@@ -7,6 +7,10 @@ Statut     analyse ; la structure du n°2 est une PROPOSITION, pas une décision
 Règle      aucun chiffre sans source (§1g) ; aucun échantillon ne devient une loi
 ```
 
+> ⚠️ **Relevé à 08h40 le 23/10, soit ~18 h après la publication (22/10, 14h36).** King fournira le
+> relevé **à 24 h** : il remplace les chiffres ci-dessous, il ne s'y ajoute pas. **Aucune décision de
+> format n'est définitive avant ce relevé** — la structure proposée au §4 reste une proposition.
+
 ---
 
 ## 1 · Ce que les deux tableaux de bord disent, sans interprétation

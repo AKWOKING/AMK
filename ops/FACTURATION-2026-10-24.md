@@ -60,56 +60,46 @@ Depuis le 24/10, la grille est unique (`knowledge/PRIX-2026-10-24.md`, séance
    le prix reste, sans augmentation ni réduction. L'écart éventuel se règle **en heures livrées**,
    jamais en réécrivant le contrat. Toute nouvelle facture DM reste à 30 000.
 
-## 3 bis · Ce que la facture doit porter — et ce qui manque vraiment
+## 3 bis · Ce que la facture porte — vérifié dans le code, le 23/10
 
-**Correction du 23/10 (King) :** j'avais écrit que « les coordonnées de paiement manquent ». **C'est
-faux** — l'outil porte déjà **MoMo, Orange Money et les coordonnées bancaires**. Je parlais sans avoir
-ouvert l'écran ; l'affirmation est retirée.
+**Deuxième correction, et la bonne cette fois.** J'avais d'abord écrit que les coordonnées de paiement
+manquaient (faux : King l'a dit), puis que **seule l'échéance** manquait — **faux aussi**. J'ai ouvert le
+code le 23/10 (`amk-factures-pwa.zip`, 750 lignes, source copiée dans `ops/amk-factures-pwa/`) :
 
-| Élément | État réel |
+| Élément | État réel, lu dans le code |
 |---|---|
-| Numéro annuel continu (`AMK-2026-001`) | ✅ présent |
-| Date d'émission | ✅ présent |
-| Lignes détaillées | ✅ présent |
-| **MoMo · Orange Money · coordonnées bancaires** | ✅ **présent** (vérifié par King, 23/10) |
-| Montant encaissé / reste dû | ✅ présent (75 000 / 75 000) |
-| **Date d'échéance** | ❌ **le seul vrai manque** |
+| Numéro annuel continu | ✅ `nextNumber()` — `AMK-2026-001`, séquence par préfixe et par an |
+| Date d'émission | ✅ `inv.date` |
+| **Date d'échéance** | ✅ `inv.due`, **+14 jours par défaut**, réglable (`dueDays`) |
+| **Statut « en retard »** | ✅ `statusOf()` compare `due` à aujourd'hui, badge dans la liste |
+| Lignes détaillées, remise, acomptes | ✅ `calc()` : sous-total, remise, payé, solde |
+| **Proforma et reçu de paiement** | ✅ `docType:'proforma'`, reçu avec mode de paiement |
+| **MoMo · Orange Money · banque · NIU** | ✅ dans les réglages et imprimés sur le PDF |
+| Modèles de message (acompte, solde, relance, mensuel) | ✅ `MSG_KINDS` + `suggestKind()` |
+| Sauvegarde | ✅ copier-coller du JSON (`copyBackup`) |
+| PDF et envoi WhatsApp | ✅ |
 
-**Pourquoi l'échéance compte, et pas pour faire joli :** sans elle, « payable sous 7 jours » n'existe que
-dans le contrat ; avec elle, la facture dit d'elle-même quand elle devient en retard, et **la relance
-cesse d'être un choix personnel**. C'est aussi la ligne qui rend la pénalité de retard applicable sans
-négociation. Deux champs : `émise le` + `échéance à 7 jours` calculée, rien de plus.
+**Conclusion honnête : l'outil était déjà complet sur tout ce que j'avais listé.** Deux fois de suite j'ai
+affirmé un manque sans ouvrir le fichier — c'est exactement ce que le §0e interdit. La leçon est écrite
+dans `ops/amk-factures-pwa/README.md` : **on lit le code avant de dire ce qui manque.**
 
-## 3 ter · Quand King donnera le code (23/10)
+## 3 ter · Les trois ajouts du 23/10 (et rien d'autre)
 
-King : *« when you will be ready I will give you the code of the invoice tool so that you can modify it
-and deploy on vercel »*. On est prêts. Ce qui suivra, dans l'ordre, et rien d'autre au premier passage :
+| # | Ajout | Pourquoi |
+|---|---|---|
+| 1 | **`dont X en retard`** sous « À encaisser » | le total dû mélangeait le courant et le retard : on ne voyait pas ce qui est déjà en faute |
+| 2 | **`en retard de N jours`** sur la ligne | « Reste 75 000 » ne dit pas depuis quand ; la priorité de relance se lit d'un coup d'œil |
+| 3 | **`Enregistrer un fichier`** à côté de « Copier la sauvegarde » | un presse-papiers se perd ; un `.json` daté se range dans les notes |
 
-| # | Modification | Détail | Risque |
-|---|---|---|---|
-| 1 | **Champ `date d'échéance`** | saisie au moment de l'émission, **+7 jours par défaut**, modifiable | aucun — champ additif |
-| 2 | **Affichage sur la facture** | « Émise le … · À régler avant le … » sous le numéro | faible |
-| 3 | **Badge dans la liste** | « en retard » quand `échéance < aujourd'hui` et `reste dû > 0` | faible |
-| 4 | **Rien d'autre** | pas de refonte, pas de TVA, pas de relances automatiques | — |
+Aucune refonte, aucune migration de données : les trois lisent des champs qui existaient déjà.
 
-**Pourquoi ces quatre lignes et pas une refonte.** L'outil fonctionne déjà : numérotation annuelle,
-lignes détaillées, MoMo / Orange Money / coordonnées bancaires, encaissé vs reste dû. Le seul manque
-identifié est l'échéance (§3 bis). On ajoute le champ, on l'affiche, on le signale — et on s'arrête là.
+**Procédure de déploiement** (état : source dans `ops/amk-factures-pwa/`, projet Vercel
+`amk-factures-pwa-preview` lié à la branche, **preview seulement** ; la production ne bouge que sur le
+feu vert de King) :
 
-**La procédure de déploiement** (à appliquer quand le code arrive) :
-
-1. cloner le dépôt de l'outil dans le sandbox, `npm install`, `npm run build` — **si le build casse, on
-   ne touche à rien** : on le dit à King avant toute modification ;
-2. faire les quatre lignes ci-dessus **sur une branche**, jamais directement sur la production ;
-3. **aucune valeur réelle dans le code** : pas de NIU, pas de RIB, pas de numéro de client. Ces valeurs
-   vivent dans les données, pas dans le dépôt (§16 du playbook) ;
-4. `vercel preview` d'abord, **production seulement après le feu vert de King** — c'est son outil, et
-   c'est lui qui encaisse ;
-5. vérifier après déploiement : une facture de test s'émet, l'échéance s'affiche, le badge apparaît
-   quand on antidate.
-
-**Ce qu'on ne fera pas sans qu'il le demande :** ajouter un compte client, une TVA, un export comptable ou
-une relance automatique. Chacun de ces ajouts change le métier de l'outil, pas son confort.
+1. `node --check` sur le script extrait — **fait, OK** ;
+2. test fonctionnel sur un téléphone : une facture antidatée doit afficher « en retard de N jours » ;
+3. preview d'abord, capture à King, production **après son accord**.
 
 ## 4 · Ce que l'outil ne fera jamais à notre place
 

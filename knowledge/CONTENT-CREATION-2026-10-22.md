@@ -214,28 +214,42 @@ WhatsApp.
 
 ---
 
-## 5 bis · Un opt-in, un seul (ruling King 23/10)
+## 5 bis · Un opt-in, un seul — et où vit le mot-clé (ruling King 23/10)
 
-Un seul aimant à prospects, un seul mot-clé, une seule destination. Pas deux : deux aimants divisent
-l'attention et rendent le taux de conversion illisible.
+**Correction d'abord, parce que ma phrase était ambiguë :** « `CONTRÔLE` dans la bio » ne voulait **pas**
+dire remplacer la bio par ce mot. La bio garde son texte ; le mot est une **porte**, pas un titre.
 
-```
-Aimant    sales/lead-magnets/CONTROLE-PRESENCE-EN-LIGNE-2026-10-23.pdf   (une page, 12 points)
-Mot-clé   CONTRÔLE
-Canal     wa.me/237 677 78 96 31?text=CONTRÔLE     (et le commentaire « CONTRÔLE » sous les vidéos)
-Suite     J+2, une seule question : « je regarde les 12 points pour votre cabinet ? »
-Généré    python3 tools/ops/make_magnet.py
-```
+**Et l'aimant ne concerne pas les patients de DM.** Il parle aux **opticiens et gérants de cliniques** —
+des prospects AMK. Donc :
 
-**Pourquoi une checklist et pas un e-book :** elle se lit en 8 minutes, se vérifie sur son propre
-cabinet, et **révèle un manque** que le cabinet ne peut pas combler tout seul. C'est le seul format qui
-fait vouloir la conversation suivante.
+| Compte | Public | CTA | Mot-clé |
+|---|---|---|---|
+| **AMK** | opticiens, cliniques, écoles | « commentez **CONTRÔLE** » | `CONTRÔLE` → le contrôle présence en ligne |
+| **DM OPTIQUE** | patients du cabinet | « écrivez-nous / passez au cabinet » | **aucun aimant** : un patient veut un rendez-vous, pas un PDF |
 
-**Sur les chiffres de conversion des lead magnets :** les sources secondaires consultées le 23/10 se
-contredisent (de 5 % à 42 % selon le format et le trafic). **Aucun chiffre n'entre ici** (§1g). On
-mesurera le nôtre : combien de « CONTRÔLE » reçus, combien de conversations, combien de rendez-vous.
+**Où placer le mot, dans l'ordre d'efficacité réel** (règle du 23/10 : hook visuel > écrit > parlé) :
 
----
+1. **à l'écran, dans les dernières secondes de la vidéo** — c'est là que le CTA est vu ;
+2. **première ligne de la légende** — c'est ce que le lecteur voit avant « plus » ;
+3. **commentaire épinglé**, avec le lien `wa.me/…?text=CONTRÔLE` ;
+4. **dernière ligne de la bio** — utile seulement quand quelqu'un visite le profil après la vidéo.
+
+**Commentaire ou message privé ?** Les deux, dans cet ordre : on demande **un commentaire** (il pousse la
+vidéo et il est public), puis on répond **en message** avec le PDF. Un commentaire par personne, réponse
+manuelle sous quelques heures : à notre volume, aucun outil n'est nécessaire — et l'automatisation de
+réponse par mot-clé (ManyChat et compagnie) demande un accès API et un abonnement qu'on n'a pas.
+
+**Et « abonne-toi d'abord, puis écris » ?** Évalué honnêtement :
+
+| Ce que ça donne | Ce que ça coûte |
+|---|---|
+| des abonnés en plus, et un compte qui paraît vivant | une étape de plus avant la conversation, sur un prospect qui ne nous connaît pas |
+| | aucun moyen technique de le vérifier côté TikTok — on ne peut pas conditionner la réponse |
+| | pour un commerce local, **un abonné ne vaut pas une conversation WhatsApp** : c'est la conversation qui devient un devis |
+
+**Décision : pas de porte d'abonnement.** Le commentaire suffit à faire vivre la vidéo, et le message fait
+le reste. Si les chiffres montrent un jour que les abonnés manquent, on en reparlera avec un test — pas
+avant.
 
 ## 5 ter · La bibliothèque derrière l'aimant : un seul mot-clé, plusieurs portes
 
