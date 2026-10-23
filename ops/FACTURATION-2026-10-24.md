@@ -50,8 +50,9 @@ Depuis le 24/10, la grille est unique (`knowledge/PRIX-2026-10-24.md`, séance
 
 ## 3 · Ce qui reste à décider par King
 
-1. **Le canal d'encaissement** à afficher par défaut : MTN 677 78 96 31 ou Orange 692 89 07 47 — l'outil
-   n'affiche aujourd'hui que les montants, pas les coordonnées de paiement.
+1. ~~**Le canal d'encaissement** à afficher par défaut~~ — **réglé** : MoMo, Orange Money et les
+   coordonnées bancaires figurent déjà sur la facture (King, 23/10). Reste seulement l'ordre d'affichage
+   si les trois ne tiennent pas sur une ligne.
 2. **La mention fiscale** : ni « conforme DGI » ni « facture normalisée » ne doivent apparaître tant que
    les spécifications ne sont pas publiées ; une phrase honnête est à écrire une fois (proforma + NIU +
    RIB, comme pour DM OPTIQUE) et à réutiliser.
@@ -59,9 +60,62 @@ Depuis le 24/10, la grille est unique (`knowledge/PRIX-2026-10-24.md`, séance
    le prix reste, sans augmentation ni réduction. L'écart éventuel se règle **en heures livrées**,
    jamais en réécrivant le contrat. Toute nouvelle facture DM reste à 30 000.
 
-## 4 · Ce que l'outil ne fera jamais à notre place
+## 3 bis · Ce que la facture porte — vérifié dans le code, le 23/10
 
-Il ne dit pas si le prix est juste, il ne dit pas si le travail est livré, et il ne remplace pas la
-phrase qui compte au client : **« voilà ce que vous avez reçu ce mois-ci »**. C'est le rapport d'une
-page (`knowledge/MAINTENANCE-CLIENTS-2026-10-22.md` §4) qui justifie le prélèvement, pas la facture.
-Facturer le 1er, envoyer le rapport le 2 : l'ordre est déjà écrit, il ne reste qu'à le tenir.
+**Deuxième correction, et la bonne cette fois.** J'avais d'abord écrit que les coordonnées de paiement
+manquaient (faux : King l'a dit), puis que **seule l'échéance** manquait — **faux aussi**. J'ai ouvert le
+code le 23/10 (`amk-factures-pwa.zip`, 750 lignes, source copiée dans `ops/amk-factures-pwa/`) :
+
+| Élément | État réel, lu dans le code |
+|---|---|
+| Numéro annuel continu | ✅ `nextNumber()` — `AMK-2026-001`, séquence par préfixe et par an |
+| Date d'émission | ✅ `inv.date` |
+| **Date d'échéance** | ✅ `inv.due`, **+14 jours par défaut**, réglable (`dueDays`) |
+| **Statut « en retard »** | ✅ `statusOf()` compare `due` à aujourd'hui, badge dans la liste |
+| Lignes détaillées, remise, acomptes | ✅ `calc()` : sous-total, remise, payé, solde |
+| **Proforma et reçu de paiement** | ✅ `docType:'proforma'`, reçu avec mode de paiement |
+| **MoMo · Orange Money · banque · NIU** | ✅ dans les réglages et imprimés sur le PDF |
+| Modèles de message (acompte, solde, relance, mensuel) | ✅ `MSG_KINDS` + `suggestKind()` |
+| Sauvegarde | ✅ copier-coller du JSON (`copyBackup`) |
+| PDF et envoi WhatsApp | ✅ |
+
+**Conclusion honnête : l'outil était déjà complet sur tout ce que j'avais listé.** Deux fois de suite j'ai
+affirmé un manque sans ouvrir le fichier — c'est exactement ce que le §0e interdit. La leçon est écrite
+dans `ops/amk-factures-pwa/README.md` : **on lit le code avant de dire ce qui manque.**
+
+## 3 ter · Les trois ajouts du 23/10 (et rien d'autre)
+
+| # | Ajout | Pourquoi |
+|---|---|---|
+| 1 | **`dont X en retard`** sous « À encaisser » | le total dû mélangeait le courant et le retard : on ne voyait pas ce qui est déjà en faute |
+| 2 | **`en retard de N jours`** sur la ligne | « Reste 75 000 » ne dit pas depuis quand ; la priorité de relance se lit d'un coup d'œil |
+| 3 | **`Enregistrer un fichier`** à côté de « Copier la sauvegarde » | un presse-papiers se perd ; un `.json` daté se range dans les notes |
+
+Aucune refonte, aucune migration de données : les trois lisent des champs qui existaient déjà.
+
+**Procédure de déploiement** (état : source dans `ops/amk-factures-pwa/`, projet Vercel
+`amk-factures-pwa-preview` lié à la branche, **preview seulement** ; la production ne bouge que sur le
+feu vert de King) :
+
+1. `node --check` sur le script extrait — **fait, OK** ;
+2. test fonctionnel sur un téléphone : une facture antidatée doit afficher « en retard de N jours » ;
+3. preview d'abord, capture à King, production **après son accord**.
+
+**Où en est le déploiement, le 23/10 (vérifié, pas supposé) :**
+- la **source** est dans le dépôt, `ops/amk-factures-pwa/`, commit `68f16db` ;
+- **le zip est reconstruit** : `amk-factures-pwa-v2.zip` à la racine (6 fichiers, à plat) — pour un envoi
+  manuel si King préfère ;
+- le projet **`amk-factures-pwa-preview`** (`prj_p0jOq44hpb98NhiYg1ViNzJOXVZw`) est lié au dépôt, racine
+  `ops/amk-factures-pwa`, et **déploie tout seul à chaque envoi sur la branche** :
+  `https://amk-factures-pwa-preview-git-arena-000d42c4-amk-amk-5d61.vercel.app` (alias de branche, stable) ;
+- **dernier déploiement en ligne** : `dpl_HsP52JkuJBwuHHwTDdNca6czFJqZ`, état **READY**, commit `68f16db`
+  → `https://amk-factures-pwa-preview-ihe2xn2j9-amk-5d61.vercel.app` ;
+- ⚠️ **la preview est derrière la connexion Vercel** (protection standard du compte) : elle s'ouvre pour
+  King connecté, pas pour un tiers. **Je n'ai donc pas pu lire la page moi-même** — la première chose à
+  vérifier, c'est qu'elle affiche la liste des factures et pas une page 404 ;
+- **la production n'a pas bougé** : `amk-factures-pwa.vercel.app` sert toujours l'ancienne version.
+- **la production ne se met pas à jour par ce projet** : c'est un projet de preview. Le jour où King dit
+  oui, deux voies : promouvoir un déploiement dans *son* projet (celui du domaine), ou déposer le zip.
+
+**Ce qu'on garde de la leçon :** un fichier neuf dans le dépôt ne déploie pas tout seul dans le projet
+existant — il faut un projet **lié**. C'était ça, le vrai manque ; il est comblé.

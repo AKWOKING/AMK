@@ -13,7 +13,19 @@ Structural, not a memory test: the header is the **first line** of every respons
 
 > **§0b — CLIENT DOSSIER FIRST.** Before any ruling on a client's site, document, or message, read the client's full dossier end-to-end. State in the pre-flight header which files were loaded. If a ruling is being made on a client artifact without the dossier loaded, the ruling is incomplete.
 
-Applied: the header lists the files **actually loaded** (and says "partial" / "not read" where that is true) — never the whole folder by assumption. For DM Optique, "end to end" means `clients/dm-optic/` including `onboarding/CONDITIONS-D-INTERVENTION-*`, `site/SPEC-PAGES-v1.md`, the build notes (`build-notes.md`), the proforma, and the client's messages as logged in the CRM. **For the DM Optique site, the source of truth is `clients/dm-optic/site/CLIENT-REQUIREMENTS-BRIEF.md`: rulings cite it; a question it cannot answer extends it (its « Journal d'extension »), never a ruling from memory.**
+Applied: the header lists the files **actually loaded** (and says "partial" / "not read" where that is true) — never the whole folder by assumption.
+
+### 0c · Knowledge docs first (standing rule, King 23/10)
+
+> **§0c — KNOWLEDGE FIRST.** Before any task, list `knowledge/` and read the documents whose scope
+> covers the task — the client dossier alone is **not** enough. The pre-flight header names the files
+> actually read. A task started without the knowledge layer is incomplete, even when the dossier was
+> read end to end.
+
+Application : `knowledge/` est la couche de référence (table ci-dessous) ; une règle qui la contredit
+se dit **à voix haute**, et le document est corrigé le jour même — jamais contourné en silence. Une
+recherche neuve (vidéo, article, outil) atterrit dans `knowledge/` **avant** d'entrer dans une page
+ou un message : sinon elle n'existe pas. For DM Optique, "end to end" means `clients/dm-optic/` including `onboarding/CONDITIONS-D-INTERVENTION-*`, `site/SPEC-PAGES-v1.md`, the build notes (`build-notes.md`), the proforma, and the client's messages as logged in the CRM. **For the DM Optique site, the source of truth is `clients/dm-optic/site/CLIENT-REQUIREMENTS-BRIEF.md`: rulings cite it; a question it cannot answer extends it (its « Journal d'extension »), never a ruling from memory.**
 ---
 
 **The rule: no task begins without a pre-flight.** Identify the task type → load the lessons for that field from this repo → read them → only then start work. Work that skips the pre-flight is invalid.
@@ -38,6 +50,62 @@ Tout audit qui relève un problème doit contenir trois éléments. Un audit san
 
 ---
 
+## 0f · Le tour se lit avant de répondre : trois couches, dans cet ordre (ruling King 23/10)
+
+> *King 23/10 : « at each turn you go through the preflight doc, the knowledge docs, and other docs
+> depending on the task or question ».*
+
+Ce n'est pas une recommandation, c'est **la première chose que fait un tour**. Trois couches, toujours
+dans cet ordre, et le compte rendu en tête de réponse dit **ce qui a été lu et ce qui ne l'a pas été** :
+
+| # | Couche | Ce qu'on y cherche | Temps |
+|---|---|---|---|
+| 1 | **`PRE-FLIGHT.md`** (§0 à §5, en entier) | la règle qui gouverne la tâche, les portiques, les verrous, les rulings en vigueur | 2 min |
+| 2 | **`knowledge/`** — les documents dont le périmètre couvre la tâche (§0c + table §1g) | ce que le dépôt sait déjà : sources vérifiées, chiffres, structure, retours d'expérience | 3 min |
+| 3 | **Les documents de la tâche** : dossier client (§0b), brief, devis, données, captures, pièces jointes | l'état réel du sujet traité | variable |
+
+**Règle de sortie :** si une couche n'a pas été lue, la réponse le dit et explique pourquoi (fichier
+absent, hors périmètre, illisible) — jamais un silence. Une réponse qui invente une règle déjà écrite,
+ou qui redécouvre un chiffre déjà sourcé, a sauté la couche 2.
+
+**Et le contrôle qui va avec :** avant d'affirmer *(a)* une règle, *(b)* un chiffre, *(c)* l'état d'un
+fichier ou d'un compte, on l'a **lu dans la source**, pas dans sa mémoire du tour précédent (§0e).
+
+---
+
+## 0g · Notion = second cerveau, et sauvegarde lisible (ruling King 23/10)
+
+> *King 23/10 : « everything has to be documented on another note do you have access to notion ?? if yes
+> you can use that as your second brain and backup ».* Accès confirmé le 23/10 ; la page existe.
+
+```
+Notion      « AMK · second cerveau — miroir du dépôt »
+ID          4024b1d8-9633-814c-8837-dcbc1b7f28b0
+Parent      Pipeline42 (espace de travail)
+URL         https://app.notion.com/p/AMK-second-cerveau-miroir-du-d-p-t-4024b1d89633814c8837dcbc1b7f28b0
+```
+
+**La règle de priorité, et elle ne se discute pas : le dépôt fait loi.** Notion est un **miroir** —
+lisible depuis un téléphone, et une **sauvegarde** si le dépôt devient inaccessible. Quand les deux se
+contredisent, c'est Notion qui est corrigé, le jour même, jamais le dépôt.
+
+**Ce qui se recopie dans Notion** (et seulement ça) :
+
+| Contenu | Fréquence |
+|---|---|
+| l'**état debout** : branche, PR, commits d'avance, clients récurrents, ce qui est encaissé / dû | à chaque tour qui change un de ces faits |
+| les **documents qui font loi** (table sujet → fichier → ce qu'il tranche) | quand un document structurant est créé ou déplacé |
+| les **règles debout** en cinq lignes | quand un ruling en ajoute ou en retire une |
+| les **prochaines actions** (cases à cocher) | à chaque tour |
+| le **journal** daté, une ligne par tour qui change quelque chose | à chaque tour |
+
+**Ce qui ne va pas dans Notion** : les secrets (NIU, RIB, mots de passe, numéros de clients), les
+documents client complets, les fichiers binaires. Notion est un **résumé et un index**, pas un dépôt
+secondaire : dupliquer un document entier crée deux vérités, et c'est exactement ce que §0f interdit.
+
+**En cas de doute sur l'état d'un fichier**, on lit le dépôt — pas la page Notion, qui peut avoir un tour
+de retard.
+
 ## 0d · Décision → fichiers touchés (table manuelle, 13/10/2026)
 
 Quand une règle change ou qu'un ruling est donné, cette table dit quels fichiers il faut relire et mettre à jour. Chaque ligne est vérifiée contre le dépôt. Ajouter une ligne à chaque nouvelle règle permanente.
@@ -45,6 +113,13 @@ Quand une règle change ou qu'un ruling est donné, cette table dit quels fichie
 | Règle | Fichiers qu'elle gouverne |
 |---|---|
 | **Marketing & création de contenu (ruling King 22/10)** | `knowledge/MARKETING-OPTICAL-2026-10-22.md` · `knowledge/CONTENT-CREATION-2026-10-22.md` · `PRE-FLIGHT.md` §1g · `clients/<client>/brand/BRAND-STRATEGY-*.md` · scripts `content/month1/**` · `tools/record/` · portique `tools/qa/audit_video_motion.py` |
+| **Notion = miroir + sauvegarde (ruling King 23/10)** | page Notion `4024b1d8-9633-814c-8837-dcbc1b7f28b0` · ce §0g · le journal de la page |
+| **Lecture par tour, trois couches (ruling King 23/10)** | `PRE-FLIGHT.md` §0f · §0c · §1g · ce tableau |
+| **Contrat d'une page (ruling King 23/10)** | `ops/templates/CONTRAT-UNE-PAGE-2026-10.md` · `.pdf` · `tools/ops/make_contrat.py` · `sales/REVUE-CONTRATS-GRILLE-2026-09-23.md` (addendum 23/10) |
+| **Un opt-in, un seul (ruling King 23/10)** | `sales/lead-magnets/CONTROLE-PRESENCE-EN-LIGNE-2026-10-23.pdf` · `tools/ops/make_magnet.py` · `knowledge/CONTENT-CREATION-2026-10-22.md` §5 bis |
+| **Knowledge first (ruling King 23/10)** | `knowledge/**` (la couche de référence) · `PRE-FLIGHT.md` §0c · table de routage §1g |
+| **Versionnage : fusion sur jalon, ou ≈ 3 000 lignes / 40 fichiers / 6 tours — « 1 000 CHANGES, pas 1 000 commits » (King 23/10, corrigé le 23/10)** | `PRE-FLIGHT.md` §1i · `tools/ops/wake.py` · `tools/ops/gate-amk.sh` |
+| **Plafond 5 clients · Présence ≤ 3 pages · grille pour la prochaine signature seulement (King 23–24/10)** | `PRE-FLIGHT.md` §1h · `knowledge/PRIX-2026-10-24.md` §4–§5 · `knowledge/MAINTENANCE-CLIENTS-2026-10-22.md` · `site/index.html` · `site/en/index.html` · `site/creation-site-web-*.html` · `sales/PRIX-ET-RECURRENCE-2026-09-24.md` · `ops/FACTURATION-2026-10-24.md` |
 | **Credential rule** (ne jamais revendiquer ce qu'on ne peut pas prouver) | `content/strategy/RULE-CREDENTIAL-CLAIMS.md` · pages client (`clients/*/`, `site/`) · textes de publication (`content/carousels/`, `content/scripts/`) |
 | **Caption-split / découpage de légende (ruling King 12/10 : frontières de phrase, jamais de fragment)** | `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` · section « Règle debout — VO vidéo courte », **AMENDEMENT 2 (découpe des légendes)** (fichier d'origine ; le commit `9294cf2` le contient) · appliquée dans `content/scripts/` et `content/strategy/VIDEO-PIPELINE-FLOW-2026-10.md` |
 | **Wave gate / relances (24 h, 48 h, 7 j, changement de canal)** | `sales/CLIENT-MESSAGING-RULES.md` · `leads/CRM.csv` · `leads/build/crm.py` · `leads/PIPELINE.md` · `sales/Activity-Log.md` |
@@ -295,6 +370,38 @@ Recette éprouvée (avec travail non commité, **jamais** `--hard`) : `git fetch
   - **Audit** — auto-audit honnête de la réponse : ce qui a été vérifié contre la source (§0e), ce qui reste incertain ou non testé, les défauts connus laissés ouverts, la conformité aux portiques (§1b/§1f③…). Un audit qui relève un problème porte correctif/amélioration/action (§0e), et **tout problème résoluble porte sa solution long terme** (règle debout, outil, contrôle automatisé — pas seulement le correctif ponctuel) : l'audit d'une réponse prépare celui d'après (ruling King 20/10).
 - Le bloc s'applique **à toutes les réponses**, y compris les réponses courtes de consultation — c'est justement là que les propositions coûtent le moins et servent le plus.
 
+### ⑩ La forme exacte de l'inventaire — et pourquoi elle existe (ruling King 23/10)
+
+> *King 23/10 : « each time a decision is taken or a task is given or a question asked, go through all the
+> tools and skills available to you then choose the ones suitable for the situation — I had already told
+> you this, isn't it written in preflight ? »*
+
+**Oui, c'était écrit — au ⑨ ci-dessus, depuis le 20/10.** Le ⑨ n'était donc pas un manque de règle : c'est
+un **manque d'exécution**. Deux réponses du 23/10 n'ont pas porté l'inventaire. Une règle non appliquée
+n'existe pas (§0e, « instruction ≠ état ») : le ⑩ lui donne une forme fixe, courte, impossible à oublier.
+
+**Forme obligatoire — trois lignes, en tête de réponse, juste après le pré-vol :**
+
+```
+Outil  : [ce que j'utilise, et pourquoi en trois mots]
+Écarté : [ce que j'ai examiné et laissé — une raison par outil]
+Skill  : [skill chargé, ou « aucun : la tâche n'en appelle pas »]
+```
+
+**L'arsenal à passer en revue, chaque fois, dans cet ordre** (registre vivant : `ops/TOOL-SCAN.md`) :
+
+| Famille | Ce que c'est | Déclencheur |
+|---|---|---|
+| **Connecteurs** | Notion (mémoire, miroir §0g) · Vercel (déploiement) · GitHub (`gh` : PR, issues, contenu) · Google Drive / Agenda | toute écriture de connaissance, tout déploiement, tout geste de dépôt |
+| **Recherche** | `web_search` · `fetch_page` · **Agent Reach** (§1f①) | un chiffre à vérifier, une source à ouvrir, une vidéo à transcrire |
+| **Skills installés** (§1f④–⑧, hors dépôt) | `design-taste-frontend` · `design-motion-principles` · `ui-ux-pro-max` · `impeccable` · ECC (`accessibility`, `production-audit`, `verification-loop`, `security-review`, `seo`, `click-path-audit`) | page publique, composant, mouvement, audit de livraison |
+| **Portiques maison** (§1b) | `tools/ops/gate-amk.sh` · `tools/qa/audit_*.py` · `tools/qa/test_site_a11y_behaviour.mjs` | **avant toute publication** — les portiques maison font foi |
+| **Outils média** | `tools/video/` (rendu, sous-titres) · `tools/record/` · `tools/pdf/` | toute pièce vidéo, capture, PDF |
+| **Mémoire et journal** | `knowledge/` (§0c) · Notion (§0g) · `§10` journal des sources | **à chaque source nouvelle** — le journal s'ouvre à la réception |
+
+**Deux cas où l'inventaire est court et c'est normal :** une question de conversation sans livrable
+(trois lignes, « aucun skill »), et une tâche déjà couverte par le ⑨. **Zéro cas où il est absent.**
+
 ## 1g · Marketing, marque et création de contenu (ruling King 22/10)
 
 > *King 22/10 : « make sure you have written everything you just learned in the repo, in preflight too under marketing, content creation and other relevant topics ». *
@@ -313,7 +420,10 @@ deux bases de connaissance, **avant** d'écrire une ligne de script ou de lancer
 |---|---|---|
 | positionner une marque, écrire un statement | `knowledge/MARKETING-OPTICAL…` §6 | `clients/<client>/brand/BRAND-STRATEGY-*.md` |
 | **créer, réparer ou optimiser une page sociale** (Facebook, Instagram, TikTok) | `brand/AMK-PRESENCE-2026-10-22.md` **§14** (l'audit des trois profils réels : les sept défauts, la copie exacte Instagram/TikTok, la règle des identifiants) + **§13** (identité des trois comptes, fusion de pages, lien page ↔ Instagram) + §12 (les onze champs Facebook) + §10 (protocole captures) · `sales/research/2026-W43-techniques.md` §15 (audience vs communauté, cadence, mesure) | le §3 de PRESENCE uniquement pour les visuels déjà validés — l'arbitrage du nom est au §12.0 ; **une promesse de délai ne va jamais dans une bio sans sa condition** (§14.5) |
-| écrire un script court | `knowledge/CONTENT-CREATION…` §3 | le gabarit du mois (`content/month1/…`) |
+| écrire un script court | `knowledge/CONTENT-CREATION…` §3 **puis §3 bis** (gabarit 9 blocs, rehook) et **§3 ter** (4 S + banque de hooks) | le gabarit du mois (`content/month1/…`) |
+| choisir **le type de contenu selon l'objectif** (être connu / faire écrire / créer l'urgence / filtrer) | `knowledge/CONTENT-CREATION…` §4 bis | l'objectif du mois, écrit dans le plan |
+| poser un **aimant à prospects** (opt-in unique) | `knowledge/CONTENT-CREATION…` §5 bis | `sales/lead-magnets/` + `tools/ops/make_magnet.py` |
+| faire signer un **nouveau client** | `ops/templates/CONTRAT-UNE-PAGE-2026-10.md` | `sales/REVUE-CONTRATS-GRILLE…` addendum 23/10 |
 | monter une vidéo | `knowledge/CONTENT-CREATION…` §1–2 | `tools/record/` + **portique** `tools/qa/audit_video_motion.py` (§1b) |
 | monter une vidéo **UGC** (storyboard, produit, cartons, clip IA, voix) | `tools/ugc/README.md` | `python3 tools/ugc/ugc.py render <spec>.json --qc` |
 | obtenir un **plan d'humain** / choisir un générateur, avec un prix | `research/ugc-video/2026-10-22-TOOLCHAIN-UGC.md` | `tools/ugc/providers.py` (Veo 3.1, HeyGen, Hedra, fal) |
@@ -331,6 +441,93 @@ deux bases de connaissance, **avant** d'écrire une ligne de script ou de lancer
 
 **Ce que ces sections ne remplacent pas** : les portiques §1b (livraison) et le ruling de publication —
 **rien n'est publié sans validation de King**.
+
+## 1h · Règles commerciales debout (rulings King, 23–24/10)
+
+Quatre règles, valables jusqu'à ce que King les change — elles ne se rediscutent pas en cours de
+devis, et elles ne se « réinterprètent » pas au cas par cas.
+
+| # | Règle | Ce qu'elle interdit en pratique | Où elle s'applique |
+|---|---|---|---|
+| 1 | **Plafond de 5 clients récurrents** | prendre un 6ᵉ client mensuel sans passer la main ou monter le prix ; empiler des Suivi « pour le volume » | `knowledge/PRIX-2026-10-24.md` §5 · `knowledge/MAINTENANCE-CLIENTS-2026-10-22.md` · `ops/ROADMAP-AMK-POST-DM-OPTIC-2026-10-22.md` |
+| 2 | **Présence ne dépasse jamais 3 pages** | glisser 4, 5 ou 6 pages « pour faire plaisir » dans le palier à 150 000 ; appeler « Présence » un site qui est un Standard | `knowledge/PRIX-2026-10-24.md` §4 · `site/index.html` · `site/en/index.html` · pages de niche |
+| 3 | **La grille ne vaut que pour la prochaine signature** | appliquer rétroactivement 30 000 ou 75 000 à un contrat accepté avant la grille (cas DM OPTIQUE : figé à 30 000) | `knowledge/PRIX-2026-10-24.md` §5 · `ops/FACTURATION-2026-10-24.md` |
+| 4 | **Aucune remise, jamais : on change le périmètre** | baisser un prix pour clore ; offrir une page, un mois, une vidéo « pour compenser » | `sales/PRIX-ET-RECURRENCE-2026-09-24.md` · `sales/AMK-Sales-Playbook-v2.md` |
+
+**Le calcul derrière la règle 1** (à connaître par cœur, il tient en une phrase) : les charges fixes
+de King sont de **85 000/mois** ; trois Suivi à 30 000 = 90 000, soit le point d'équilibre exact. Un
+4ᵉ et un 5ᵉ client sont les premiers qui paient réellement — au-delà de cinq, la qualité du travail
+mensuel (4 h par Suivi, 12 h par Croissance) ne tient plus, et ce sont les livrables qui cassent.
+
+## 1i · Versionnage : quand on fusionne une branche
+
+> **Règle King 23/10, corrigée par lui le 23/10 : « I told you to merge only at a milestone or 1k
+> commits, but I meant 1k changes. »** Le seuil porte donc sur **les lignes changées**, pas sur le nombre
+> de commits — un tour peut faire 1 commit et 1 200 lignes, ou 12 commits et 40 lignes.
+> **Les trois seuils ci-dessous sont validés par King le 23/10** (message du soir, point 5).
+
+Par défaut, chaque tour **pousse** sur la branche de session et **laisse la PR ouverte**. On fusionne
+dans `main` quand l'un de ces trois est vrai :
+
+| Déclencheur | Seuil | Comment il se lit |
+|---|---|---|
+| **Jalon** | une étape finie et utilisable seule | à la main, en une phrase |
+| **Volume** | **≈ 3 000 lignes changées** ou **40 fichiers** | `git diff --numstat <base> HEAD \| awk '{a+=$1;d+=$2} END{print a+d}'` |
+| **Durée** | **6 tours** sur la même branche | compté dans le journal |
+
+**Pourquoi 3 000 et pas 1 000.** 1 000 lignes se font en un tour dense (le 23/10 : quatre tours ont
+dépassé 700 lignes chacun). À 1 000, on fusionnerait tous les deux tours, et `main` deviendrait illisible.
+3 000 correspond à ce qu'une relecture humaine peut encore suivre d'un œil, et à ce que nos portiques
+savent encore vérifier.
+
+**Ce que « la mémoire » veut dire ici, honnêtement.** La taille de la branche n'abîme pas la mémoire de
+l'orchestrateur : il relit ses fichiers à chaque tour, et le dépôt est la source de vérité. Ce qui se
+dégrade, c'est **autre chose** :
+
+1. **le résumé de session** — à chaque tour, la conversation est condensée ; ce qui n'est pas écrit dans
+   un fichier finit par se perdre. **La défense n'est pas de fusionner, c'est d'écrire.**
+2. **la relecture du diff** — au-delà de ~3 000 lignes, plus personne ne relit vraiment, et une erreur
+   passe.
+3. **le nombre de décisions en vol** — au-delà d'une dizaine de règles annoncées dans un même tour sans
+   être écrites, elles se contredisent.
+
+**Le garde-fou anti-hallucination n'est donc pas un compteur, c'est le §0e** : on vérifie un chiffre, une
+règle ou un état **contre la source**, jamais contre son souvenir du tour précédent. Le compteur de lignes
+protège la relecture, pas la vérité.
+
+**Application :** la PR d'une branche en cours reste ouverte entre deux tours ; on ne la ferme pas « pour
+ranger ». Le volume se lit avec `git diff --numstat $(git merge-base HEAD origin/main) HEAD`.
+
+### 1i bis · Avant toute fusion : `fetch`, puis regarder `main` (ruling King 23/10)
+
+> *King, 23/10 : « can you do a git pull or a git fetch before merging ? »*
+
+**Oui, et c'était le vrai défaut du 23/10 :** la PR a été fusionnée sans avoir regardé `main` une seule
+fois dans le tour ; GitHub a répondu « head branch is out of date ». Le `fetch` n'est pas une formalité,
+c'est ce qui révèle **trois cas** qu'aucune autre commande ne montre :
+
+| Ce que le fetch révèle | Ce qu'on fait |
+|---|---|
+| `main` a avancé normalement | on **fusionne `main` dans la branche**, on résout, on repousse |
+| **`main` a été réécrit** (aucun ancêtre commun) | on **ne force rien** : on dit à King ce qui s'est passé, et on demande avant de toucher à l'histoire du dépôt |
+| `main` a bougé ET le diff touche les mêmes fichiers | on relit le diff de `main` **avant** de résoudre, jamais `-X ours` en aveugle |
+
+**La séquence, toujours dans cet ordre :**
+
+```bash
+git fetch origin
+git log --oneline -3 origin/main            # main a-t-il bougé ?
+git merge-base HEAD origin/main || echo "AUCUN ANCETRE — main a été réécrit"
+git diff --stat origin/main HEAD | tail -5  # l'écart réel, en fichiers
+# puis seulement : fusion locale, push, et fusion de la PR
+```
+
+**Ce que le 23/10 a appris concrètement :** `main` porte un commit unique « invoice » (14h34) sans ancêtre
+commun avec la branche de session. Mais **son arbre est identique à celui de la base de la branche, plus un
+fichier** (`amk-factures-pwa.zip`). Autrement dit : une réécriture **sans perte de contenu** — vérifiable
+en une commande (`git diff --stat <base> origin/main`), et c'est cette vérification qui autorise une fusion
+sereine, pas la confiance.
+
 
 ## 2 · Uniqueness protocol (every website/design build, before a line of HTML)
 

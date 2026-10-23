@@ -1,0 +1,56 @@
+{
+  "_modele": "Copier ce fichier dans clients/<slug>/launch/recap-<AAAA-MM>.json, remplir, puis : python3 tools/ops/make_recap.py --data <fichier> --out clients/<slug>/launch/RECAP-<AAAA-MM>.pdf",
+  "_regles": [
+    "Un chiffre sans date ni source ne s'écrit pas (§1g).",
+    "Aucun prix de monture, aucun visage de patient, aucun délai promis, aucune statistique sans source.",
+    "Le récap tient sur UNE page : si le moteur signale un débordement, on raccourcit un bloc, on n'ajoute pas une page."
+  ],
+  "identite": {
+    "nom": "NOM DU CLIENT",
+    "sous_titre": "Activité · quartier, ville",
+    "agence": "AMK",
+    "pied_gauche": "sites web bilingues pour cabinets, cliniques et commerces — Douala",
+    "pied_droite": "akwo.king.dev@gmail.com · +237 677 78 96 31"
+  },
+  "titre": "Récapitulatif du mois",
+  "date_titre": "1 novembre 2026",
+  "section1": "Ce qui est en ligne",
+  "kicker1": "01 · la livraison",
+  "section2": "Ce que ça a donné",
+  "kicker2": "02 · les chiffres, sans arrondi flatteur",
+  "section3": "Ce qui tourne maintenant",
+  "kicker3": "03 · le forfait mensuel",
+  "section4": "Vos accès",
+  "kicker4": "04 · ce qui vous appartient",
+  "releve": "01/11/2026 à 09h00",
+  "releve_court": "01/11 À 09H00",
+  "livraison": [
+    { "titre": "Le site", "corps": "adresse.com — nombre de pages, langues, bouton de contact sur chaque écran.", "tag": "EN LIGNE" },
+    { "titre": "La fiche Google", "corps": "Adresse avec repère, horaires, photos, itinéraire, bouton d'appel.", "tag": "ACTIVE" },
+    { "titre": "La page Facebook", "corps": "Nom de la page — ce qui a été publié ce mois-ci, en une phrase.", "tag": "PUBLIÉE" },
+    { "titre": "Le compte TikTok", "corps": "@compte — même contenu, même semaine, téléphone dans la bio.", "tag": "PUBLIÉ" }
+  ],
+  "chiffres": {
+    "colonnes": ["Facebook", "TikTok"],
+    "lignes": [
+      ["Vues", "0", "0"],
+      ["Spectateurs uniques", "0", "non communiqué"],
+      ["Temps de visionnage moyen", "0 s", "0 s"],
+      ["Vidéo regardée en entier", "—", "0 %"],
+      ["Réactions", "0", "0"],
+      ["Commentaires", "0", "0"],
+      ["Partages", "0", "0"]
+    ],
+    "note": "D'où viennent ces chiffres, sur quelle période, et ce qu'ils ne disent pas — deux phrases."
+  },
+  "mensuel": [
+    ["8 publications par mois", "deux par semaine : une vidéo courte et un carrousel."],
+    ["2 publications Google", "la fiche reste vivante."],
+    ["Le site entretenu", "sauvegardes, mises à jour, certificat, disponibilité."],
+    ["Un récap d'une page", "le 2 de chaque mois, avec le rapport."]
+  ],
+  "acces": {
+    "corps": "Ce qui est au nom du client, sur quel compte, et ce qui reste chez lui s'il change de prestataire.",
+    "pied": "chiffres relevés le 01/11/2026 à 09h00 · Facebook Business Suite, TikTok Studio"
+  }
+}

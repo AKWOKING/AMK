@@ -181,3 +181,75 @@ primaire). Voir `knowledge/CONTENT-CREATION-2026-10-22.md` §7 pour la règle de
 - **Constance** 2 posts/semaine > fréquence.
 - **WhatsApp** est le tunnel de conversion, pas le site.
 - **Aucune statistique sans source primaire** n'entre dans une décision client.
+
+---
+
+## 11 · Répondre aux avis : qui, quand, comment (ruling en attente de King, 23/10)
+
+> **La question posée par King le 23/10 :** *« the reviews on GBP and comments on Facebook have started
+> coming in, one thing I didn't discuss with the client is who has to answer ».* Cette section prépare la
+> décision ; elle ne l'a pas encore reçue.
+
+**Le chiffre qui la rend urgente** : **89 % des consommateurs attendent une réponse à tous les avis**
+(BrightLocal, `knowledge/MARKETING-OPTICAL` §5). Un avis sans réponse fait plus de dégât qu'un avis moyen
+avec réponse — parce que le suivant lit la réponse, pas l'avis.
+
+### 11.1 · Qui répond — la recommandation
+
+| Canal | Qui répond | Pourquoi |
+|---|---|---|
+| **Avis Google** | **le client**, en son nom, avec un texte que nous écrivons | la réponse s'affiche sous le nom du cabinet ; un patient qui a vu M. Domche veut lire M. Domche, pas une agence. Et la réponse engage sa responsabilité de soignant : elle ne sort pas de sa main |
+| **Commentaires Facebook** (sous nos posts) | **nous**, si et quand il nous donne accès à la page | ce sont des commentaires sur du contenu que nous avons produit ; y répondre est notre travail |
+| **Messages privés Facebook / WhatsApp** | **le client, toujours** | on n'a aucun accès à son WhatsApp Business (verrou), et un message privé mène à un rendez-vous, donc à son agenda |
+| **Avis 1 ou 2 étoiles** | **le client**, le jour même, avec un texte préparé par nous | il faut une voix humaine et un geste commercial qui n'appartient qu'à lui |
+
+**Ce que ça implique pour le contrat** — à dire au client, noir sur blanc :
+
+- **compris dans le forfait contenu** : nous écrivons les réponses aux avis Google (il n'a qu'à copier-
+  coller), et nous répondons aux commentaires de nos publications s'il nous ouvre la page ;
+- **pas compris** : la modération quotidienne de ses messages privés, et toute promesse commerciale
+  (geste, remise, reprise) — **ça, c'est lui, et seulement lui**.
+
+### 11.2 · Quand
+
+| Avis | Délai | Qui |
+|---|---|---|
+| 4–5 étoiles | **sous 48 h** | lui, texte fourni |
+| 3 étoiles | **sous 24 h** | lui, texte fourni + appel |
+| 1–2 étoiles | **le jour même**, et par téléphone d'abord | lui, jamais par écrit en premier |
+| Commentaire sous un post | sous 24 h | nous (ou lui s'il n'a pas donné l'accès) |
+
+### 11.3 · On ne rédige pas ses réponses — et voilà pourquoi
+
+**Correction de King, 23/10 :** *« since we are proposing that he replies to the reviews himself, I don't
+think we should write any text for him — how's that different from us sending it ourselves ? »*
+
+**Il a raison, et ça invalidait la version précédente de cette section** (six réponses prêtes à copier).
+Un avis se répond avec la voix de celui qui a reçu le client dans la boutique ; un texte écrit par une
+agence, collé sous son nom, est un faux — et ça se sent à la deuxième ligne. Ce qu'on donne, c'est **la
+méthode et le geste**, pas les mots.
+
+**Ce qu'on lui apprend, en quatre points :**
+
+| # | Le geste | Pourquoi ça marche |
+|---|---|---|
+| 1 | **remercier d'abord, en une phrase** | la première phrase décide de la lecture ; un remerciement ne s'argumente pas |
+| 2 | **reprendre un mot de SON avis** | prouve qu'on l'a lu — c'est la seule chose qui distingue une vraie réponse d'un modèle |
+| 3 | **une phrase, deux au maximum** | une réponse longue sous un avis court sonne comme une plaidoirie |
+| 4 | **signer du prénom ou « DM OPTIQUE »**, jamais « l'équipe » | il est seul, et c'est sa force |
+
+**Et le reste, c'est de l'interdit** (voir 11.4) : pas de détail de santé, pas de geste commercial en
+public, pas de justification sous un avis négatif.
+
+**Ce qu'on fournit quand même, parce que ce n'est pas du texte de réponse :**
+- **la marche à suivre** pour trouver la fiche, se connecter et répondre (`clients/dm-optic/launch/GUIDE-REPONDRE-AVIS-2026-10-23.md`, deux messages prêts à envoyer) ;
+- **le rappel des délais** (48 h / 24 h / le jour même) ;
+- **la règle du téléphone** pour un 1–2 étoiles : on appelle avant d'écrire.
+
+### 11.4 · Les quatre interdits
+
+1. **Jamais de détail de santé** dans une réponse publique : ni correction, ni acuité, ni diagnostic.
+2. **Jamais d'avis demandé contre un avantage** (remise, cadeau) : Google le détecte et pénalise la fiche.
+3. **Jamais de réponse automatique** : un avis se répond en une phrase qui prouve qu'on l'a lu.
+4. **Jamais de silence.** Un avis sans réponse est plus visible qu'un avis tiède.
+

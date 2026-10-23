@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0F172A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>AMK Factures</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=DM+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: phone-first single column, summary on top, bottom tab bar; invoice paper stays white in both themes. */
+:root{
+  --bg:#F2F5FA; --surface:#FFFFFF; --fg:#0F172A; --muted:#5A6579; --line:#DCE2EC;
+  --accent:#B45309; --fill:#F59E0B; --on-fill:#0F172A; --navy:#0F172A; --shadow:0 1px 2px rgba(15,23,42,.06),0 4px 16px rgba(15,23,42,.05);
+  --ok:#166534; --ok-bg:#DCFCE7; --warn:#92400E; --warn-bg:#FEF3C7; --bad:#991B1B; --bad-bg:#FEE2E2; --info:#1E3A8A; --info-bg:#DBEAFE;
+  --paper:#FFFFFF; --ink:#0F172A; --ink-soft:#56627A; --ink-line:#DCE2EC; --ink-accent:#B45309;
+  --f-display:'Bricolage Grotesque',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-body:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0A1120; --surface:#121B2E; --fg:#EDF1F8; --muted:#9AA6BB; --line:#24304B;
+  --accent:#FBBF24; --shadow:none;
+  --ok:#86EFAC; --ok-bg:#12331F; --warn:#FCD34D; --warn-bg:#3A2A0A; --bad:#FCA5A5; --bad-bg:#3B1515; --info:#93C5FD; --info-bg:#14264A;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0A1120; --surface:#121B2E; --fg:#EDF1F8; --muted:#9AA6BB; --line:#24304B;
+  --accent:#FBBF24; --shadow:none;
+  --ok:#86EFAC; --ok-bg:#12331F; --warn:#FCD34D; --warn-bg:#3A2A0A; --bad:#FCA5A5; --bad-bg:#3B1515; --info:#93C5FD; --info-bg:#14264A;
+  color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.45;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 96px;margin:0}
+.wrap{max-width:720px;margin:0 auto}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);display:flex;align-items:center;gap:10px;padding:12px 0}
+.top svg{width:34px;height:34px;border-radius:8px;flex:none}
+.brand{font-family:var(--f-display);font-weight:700;font-size:18px;letter-spacing:.01em;line-height:1.1}
+.brand small{display:block;font-family:var(--f-body);font-weight:500;font-size:12px;color:var(--muted);letter-spacing:0}
+.top .sp{flex:1}
+.langbtn{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 12px;font-weight:600;font-size:13px;letter-spacing:.04em}
+h1.h1{font-family:var(--f-display);font-size:26px;line-height:1.15;margin:14px 0 14px;text-wrap:balance}
+h2.h2{font-family:var(--f-display);font-size:17px;margin:22px 0 10px}
+.muted{color:var(--muted)}
+.sum{background:var(--navy);color:#F8FAFC;border-radius:14px;padding:18px;display:grid;gap:4px;margin-top:4px}
+.sum .lbl{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#CBD5E1}
+.sum .big{font-family:var(--f-display);font-weight:700;font-size:32px;line-height:1.1;font-variant-numeric:tabular-nums;color:#FCD34D}
+.sum .sub{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:#CBD5E1;margin-top:6px}
+.sum .sub b{color:#F8FAFC;font-variant-numeric:tabular-nums}
+.chips{display:flex;gap:8px;margin:16px 0 10px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 14px;font-size:14px}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.list{display:grid;gap:8px}
+.inv{display:grid;grid-template-columns:1fr auto;gap:2px 12px;text-align:left;width:100%;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow)}
+.inv .n{font-weight:600}
+.inv .c{color:var(--muted);font-size:14px;min-width:0;overflow-wrap:anywhere}
+.inv .a{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.inv .r{text-align:right;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.pill{display:inline-block;border-radius:999px;padding:2px 9px;font-size:12px;font-weight:600;margin-left:6px;vertical-align:1px}
+.pill.paid{background:var(--ok-bg);color:var(--ok)}.pill.partial{background:var(--info-bg);color:var(--info)}
+.pill.unpaid{background:var(--warn-bg);color:var(--warn)}.pill.overdue{background:var(--bad-bg);color:var(--bad)}
+.sum .sub.late{color:var(--bad);font-weight:600}
+.empty{border:1px dashed var(--line);border-radius:12px;padding:22px;text-align:center;color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.form{display:grid;gap:6px}
+.form label{font-size:13px;font-weight:600;color:var(--muted);margin-top:8px}
+.form label:first-child{margin-top:0}
+input,select,textarea{width:100%;min-width:0;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+textarea{min-height:76px;resize:vertical}
+.row{display:flex;gap:8px;align-items:center}
+.row>*{min-width:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:380px){.grid2{grid-template-columns:1fr}}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:10px 14px;font-weight:600}
+.btn.primary{background:var(--fill);border-color:var(--fill);color:var(--on-fill)}
+.btn.danger{color:var(--bad)}
+.btn.ghost{background:transparent;white-space:nowrap}
+.btn.sm{padding:7px 11px;font-size:14px}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.item{border:1px solid var(--line);border-radius:10px;padding:10px;display:grid;gap:8px;background:var(--bg)}
+.item .line{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.tot{display:grid;gap:4px;margin-top:10px;font-variant-numeric:tabular-nums}
+.tot div{display:flex;justify-content:space-between;gap:12px}
+.tot .grand{font-weight:700;font-size:17px;border-top:1px solid var(--line);padding-top:6px;margin-top:4px}
+.tabs{position:fixed;left:0;right:0;bottom:0;z-index:6;background:var(--surface);border-top:1px solid var(--line);
+  display:flex;justify-content:center;padding:6px max(8px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(8px,env(safe-area-inset-left,0px))}
+.tabs nav{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;width:100%;max-width:720px}
+.tab{border:0;background:transparent;display:grid;justify-items:center;gap:2px;padding:6px 4px;border-radius:10px;font-size:12px;font-weight:600;color:var(--muted)}
+.tab svg{width:22px;height:22px}
+.tab[aria-current="page"]{color:var(--accent)}
+.tab.new{color:var(--on-fill)}
+.tab.new span.ic{background:var(--fill);border-radius:999px;width:34px;height:34px;display:grid;place-items:center;margin-top:-14px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.tab.new{color:var(--muted)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(84px + env(safe-area-inset-bottom,0px));background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:999px;font-weight:600;z-index:20;max-width:90vw}
+.sheet{position:fixed;inset:0;background:rgba(10,17,32,.6);z-index:30;display:grid;align-items:end;padding:0}
+.sheet .box{background:var(--surface);border-radius:16px 16px 0 0;padding:16px max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));max-height:80vh;overflow:auto;display:grid;gap:10px}
+.sheet textarea{min-height:160px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px}
+/* invoice paper */
+.paperbox{overflow-x:auto}
+.paper{background:var(--paper);color:var(--ink);border-radius:6px;box-shadow:0 2px 18px rgba(0,0,0,.18);padding:24px;font-size:13px;position:relative;min-width:300px}
+.paper .hd{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:flex-start}
+.paper .logo{display:flex;gap:10px;align-items:center}
+.paper .logo svg{width:44px;height:44px;border-radius:9px}
+.paper .logo b{font-family:var(--f-display);font-size:22px;letter-spacing:.02em;display:block;line-height:1}
+.paper .logo span{color:var(--ink-soft);font-size:12px}
+.paper .ttl{text-align:right}
+.paper .ttl h3{margin:0;font-family:var(--f-display);font-size:26px;letter-spacing:.06em;color:var(--ink)}
+.paper .ttl div{color:var(--ink-soft)}
+.paper .ttl .no{color:var(--ink);font-weight:600;font-size:14px}
+.paper .bar{height:3px;background:#F59E0B;margin:16px 0}
+.paper .parties{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:460px){.paper .parties{grid-template-columns:1fr}}
+.paper h4{margin:0 0 4px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.paper table{width:100%;border-collapse:collapse;margin-top:18px}
+.paper th{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);text-align:left;border-bottom:2px solid var(--ink);padding:6px 4px}
+.paper td{padding:8px 4px;border-bottom:1px solid var(--ink-line);vertical-align:top}
+.paper .r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.paper .totals{margin:14px 0 0 auto;width:min(100%,300px);display:grid;gap:4px;font-variant-numeric:tabular-nums}
+.paper .totals div{display:flex;justify-content:space-between;gap:12px}
+.paper .totals .gt{font-weight:700;font-size:15px;border-top:2px solid var(--ink);padding-top:6px;margin-top:2px}
+.paper .totals .due{background:#0F172A;color:#FCD34D;padding:8px 10px;border-radius:6px;font-weight:700;font-size:15px;margin-top:6px}
+.paper .pay{margin-top:20px;border-top:1px solid var(--ink-line);padding-top:12px;display:grid;gap:3px}
+.paper .note{margin-top:12px;color:var(--ink-soft);white-space:pre-wrap}
+.paper .sign{margin-top:22px;display:flex;justify-content:flex-end}
+.paper .sign .box{width:min(100%,240px);height:96px;border:1px dashed var(--ink-line);border-radius:6px;padding:6px 10px;color:var(--ink-soft);font-size:12px}
+.paper .foot{margin-top:18px;color:var(--ink-soft);font-size:12px;text-align:center}
+.paper .stamp{position:absolute;right:24px;top:96px;border:3px solid #166534;color:#166534;border-radius:8px;padding:2px 12px;font-family:var(--f-display);font-weight:700;letter-spacing:.12em;transform:rotate(-8deg);font-size:20px}
+.pays{display:grid;gap:6px;margin-top:6px}
+.pays .p{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:14px;font-variant-numeric:tabular-nums}
+@media print{
+  body{background:#fff;padding:0}
+  .top,.tabs,.noprint,.toast,.sheet,h1.h1{display:none!important}
+  .paper{box-shadow:none;border-radius:0;padding:0;font-size:11.5pt}
+  .paperbox{overflow:visible}
+  @page{size:A4;margin:14mm}
+}
+@media (prefers-reduced-motion:no-preference){.toast{animation:up .18s ease-out}@keyframes up{from{opacity:0;transform:translate(-50%,8px)}}}
+</style>
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}img{max-width:100%}</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top" id="top"></header>
+  <main id="main"></main>
+</div>
+<div class="tabs noprint"><nav id="tabs" aria-label="Navigation"></nav></div>
+<div id="layer"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+const IS_PWA = true;
+const KEY = 'amk-invoices-v1';
+const q = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uid = () => Math.random().toString(36).slice(2, 9);
+const isoOf = d => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+const todayISO = () => isoOf(new Date());
+const addDays = (iso, n) => { const d = new Date(iso + 'T12:00:00'); d.setDate(d.getDate() + n); return isoOf(d); };
+const num = v => { const n = parseFloat(String(v).replace(',', '.')); return isFinite(n) ? n : 0; };
+
+const T = {
+  fr: {
+    app:'Factures', tInv:'Factures', tNew:'Nouvelle', tCli:'Clients', tSet:'Réglages',
+    toCollect:'À encaisser', openCount:n=>n+(n>1?' factures ouvertes':' facture ouverte'), collected:'Déjà encaissé',
+    fAll:'Toutes', fOpen:'En cours', fPaid:'Payées', none:'Aucune facture ici pour le moment.', noneHint:'Touchez « Nouvelle » pour créer votre première facture.',
+    st:{paid:'Payée',partial:'Acompte reçu',unpaid:'Impayée',overdue:'En retard'}, left:'Reste',
+    lateOn:n=>'dont '+(n)+' en retard', lateFor:n=>'en retard de '+n+(n>1?' jours':' jour'),
+    newInv:'Nouvelle facture', editInv:'Modifier la facture', client:'Client', pick:'Choisir un client…', newClient:'Nouveau client',
+    number:'Numéro', date:'Date', due:'Échéance', lang:'Langue de la facture', items:'Prestations', desc:'Description', qty:'Qté', price:'Prix unitaire (FCFA)',
+    addItem:'Ajouter une ligne', discount:'Remise (FCFA)', deposit:'Acompte déjà reçu (FCFA)', notes:'Note (facultatif)',
+    sub:'Sous-total', disc:'Remise', total:'Total', paidSoFar:'Déjà payé', balance:'Reste à payer',
+    save:'Enregistrer', cancel:'Annuler', back:'Retour', edit:'Modifier', del:'Supprimer', delSure:'Confirmer la suppression',
+    wa:'WhatsApp', copy:'Copier le texte', pdf:'PDF / Imprimer', addPay:'Enregistrer un paiement', payments:'Paiements reçus', noPay:'Aucun paiement enregistré.',
+    amount:'Montant (FCFA)', method:'Moyen', momo:'MTN MoMo', om:'Orange Money', bank:'Virement', cash:'Espèces', other:'Autre',
+    errClient:'Choisissez un client.', errItem:'Ajoutez au moins une prestation avec une description.', saved:'Facture enregistrée', copied:'Texte copié', copyFail:'Copiez le texte ci-dessous',
+    clients:'Clients', addClient:'Ajouter un client', cName:'Nom du client ou de la société', cPhone:'Téléphone (WhatsApp)', cEmail:'E-mail', cAddr:'Adresse / ville', cNiu:'N° contribuable (NIU), si connu', cContact:'Personne à contacter',
+    cNone:'Aucun client enregistré.', cInv:n=>n+(n>1?' factures':' facture'), cHas:'Ce client a des factures, il ne peut pas être supprimé.', errName:'Le nom est obligatoire.',
+    settings:'Réglages', biz:'Votre entreprise', bName:'Nom', bTag:'Activité', bPhone:'Téléphone', bEmail:'E-mail', bWeb:'Site web', bCity:'Ville',
+    payInfo:'Informations de paiement', pMomo:'Numéro MTN MoMo', pOm:'Numéro Orange Money', pBank:'Banque', pHolder:'Titulaire du compte', pAcc:'Numéro de compte', pNiu:'NIU',
+    numbering:'Numérotation', prefix:'Préfixe', dueDays:'Délai de paiement (jours)', appLang:'Langue de l’application',
+    saveBackup:'Enregistrer un fichier', backup:'Sauvegarde', backupHint:'Les données restent sur cet appareil. Copiez la sauvegarde de temps en temps et gardez-la dans vos notes.', copyBackup:'Copier la sauvegarde', restore:'Restaurer', pasteHere:'Collez ici une sauvegarde', restored:'Données restaurées', badBackup:'Sauvegarde invalide.',
+    invoice:'FACTURE', billTo:'Facturé à', from:'Émetteur', dateL:'Date', dueL:'Échéance', dL:'Description', qL:'Qté', uL:'Prix unit.', aL:'Montant', payTo:'Pour payer', accountL:'Compte', holderL:'Titulaire', paidStamp:'PAYÉE',
+    thanks:'Merci pour votre confiance.', close:'Fermer', waIntro:'Bonjour, voici votre facture',
+    docType:'Type de document', dtInvoice:'Facture', dtProforma:'Facture proforma', convert:'Convertir en facture', proformaTitle:'FACTURE PROFORMA', proformaTag:'Proforma',
+    receiptBtn:'Reçu', receiptTitle:'REÇU DE PAIEMENT', rcpReceived:'Reçu de', rcpSum:'Somme reçue', rcpBy:'Mode de paiement', rcpInvoice:'Facture', rcpTotal:'Total de la facture', rcpAfter:'Reste à payer après ce paiement', sign:'Cachet et signature', rcpSettled:'Facture soldée',
+    bLegal:'Nom légal', bAddr:'Adresse', bRc:'RC / RCCM', rcpCopied:'Reçu copié',
+    msgTitle:'Message à envoyer avec le PDF', mDep:'Acompte', mBal:'Solde', mRem:'Relance', mMon:'Mensuel', sendMsg:'Message seul', copyMsg:'Copier le message', msgCopied:'Message copié', msgHint:'Modifiez le message avant d’envoyer. Sur certains téléphones WhatsApp n’affiche pas le texte avec le fichier : copiez-le d’abord.',
+    sharePdf:'Envoyer le PDF sur WhatsApp', waText:'WhatsApp (texte)', pdfSaved:'PDF téléchargé : joignez-le dans WhatsApp', pdfFail:'PDF impossible ici : envoi du texte à la place', pdfMake:'Création du PDF…',
+  },
+  en: {
+    app:'Invoices', tInv:'Invoices', tNew:'New', tCli:'Clients', tSet:'Settings',
+    toCollect:'To collect', openCount:n=>n+(n===1?' open invoice':' open invoices'), collected:'Already collected',
+    fAll:'All', fOpen:'Open', fPaid:'Paid', none:'No invoices here yet.', noneHint:'Tap “New” to create your first invoice.',
+    st:{paid:'Paid',partial:'Deposit received',unpaid:'Unpaid',overdue:'Overdue'}, left:'Left',
+    lateOn:n=>'incl. '+n+' overdue', lateFor:n=>n+(n>1?' days':' day')+' late',
+    newInv:'New invoice', editInv:'Edit invoice', client:'Client', pick:'Choose a client…', newClient:'New client',
+    number:'Number', date:'Date', due:'Due date', lang:'Invoice language', items:'Services', desc:'Description', qty:'Qty', price:'Unit price (XAF)',
+    addItem:'Add a line', discount:'Discount (XAF)', deposit:'Deposit already received (XAF)', notes:'Note (optional)',
+    sub:'Subtotal', disc:'Discount', total:'Total', paidSoFar:'Paid so far', balance:'Balance due',
+    save:'Save', cancel:'Cancel', back:'Back', edit:'Edit', del:'Delete', delSure:'Confirm delete',
+    wa:'WhatsApp', copy:'Copy text', pdf:'PDF / Print', addPay:'Record a payment', payments:'Payments received', noPay:'No payment recorded.',
+    amount:'Amount (XAF)', method:'Method', momo:'MTN MoMo', om:'Orange Money', bank:'Bank transfer', cash:'Cash', other:'Other',
+    errClient:'Choose a client.', errItem:'Add at least one service with a description.', saved:'Invoice saved', copied:'Text copied', copyFail:'Copy the text below',
+    clients:'Clients', addClient:'Add a client', cName:'Client or company name', cPhone:'Phone (WhatsApp)', cEmail:'Email', cAddr:'Address / city', cNiu:'Tax ID (NIU), if known', cContact:'Contact person',
+    cNone:'No clients saved yet.', cInv:n=>n+(n===1?' invoice':' invoices'), cHas:'This client has invoices and cannot be deleted.', errName:'Name is required.',
+    settings:'Settings', biz:'Your business', bName:'Name', bTag:'What you do', bPhone:'Phone', bEmail:'Email', bWeb:'Website', bCity:'City',
+    payInfo:'Payment details', pMomo:'MTN MoMo number', pOm:'Orange Money number', pBank:'Bank', pHolder:'Account holder', pAcc:'Account number', pNiu:'Tax ID (NIU)',
+    numbering:'Numbering', prefix:'Prefix', dueDays:'Payment term (days)', appLang:'App language',
+    saveBackup:'Save a file', backup:'Backup', backupHint:'Your data stays on this device. Copy the backup now and then and keep it in your notes.', copyBackup:'Copy backup', restore:'Restore', pasteHere:'Paste a backup here', restored:'Data restored', badBackup:'Invalid backup.',
+    invoice:'INVOICE', billTo:'Billed to', from:'From', dateL:'Date', dueL:'Due date', dL:'Description', qL:'Qty', uL:'Unit price', aL:'Amount', payTo:'How to pay', accountL:'Account', holderL:'Holder', paidStamp:'PAID',
+    thanks:'Thank you for your business.', close:'Close', waIntro:'Hello, here is your invoice',
+    docType:'Document type', dtInvoice:'Invoice', dtProforma:'Proforma invoice', convert:'Convert to invoice', proformaTitle:'PROFORMA INVOICE', proformaTag:'Proforma',
+    receiptBtn:'Receipt', receiptTitle:'PAYMENT RECEIPT', rcpReceived:'Received from', rcpSum:'Amount received', rcpBy:'Payment method', rcpInvoice:'Invoice', rcpTotal:'Invoice total', rcpAfter:'Balance after this payment', sign:'Stamp and signature', rcpSettled:'Invoice settled',
+    bLegal:'Legal name', bAddr:'Address', bRc:'Company registration', rcpCopied:'Receipt copied',
+    msgTitle:'Message to send with the PDF', mDep:'Deposit', mBal:'Balance', mRem:'Reminder', mMon:'Monthly', sendMsg:'Message only', copyMsg:'Copy message', msgCopied:'Message copied', msgHint:'Edit the message before sending. On some phones WhatsApp drops the text when a file is shared: copy it first.',
+    sharePdf:'Send PDF on WhatsApp', waText:'WhatsApp (text)', pdfSaved:'PDF downloaded: attach it in WhatsApp', pdfFail:'PDF not possible here: sending the text instead', pdfMake:'Creating the PDF…',
+  }
+};
+const tl = (lang, k, ...a) => { const v = T[lang][k]; return typeof v === 'function' ? v(...a) : v; };
+const t = (k, ...a) => tl(db.settings.lang, k, ...a);
+
+/* ---------- data ---------- */
+const DEFAULT_SETTINGS = { lang:'fr', name:'AMK', legal:'Akwo Makembe King Guerschon', tag:'AMK Web & Digital Solutions', phone:'+237 677 78 96 31', email:'akwo.king.dev@gmail.com', web:'amk-cm.vercel.app',
+  addr:'Deido, Douala (Cameroun)', city:'Douala, Cameroun', rc:'Non applicable (personne physique sous NIU)',
+  momo:'677789631', om:'692890747', bank:'Afriland First Bank', holder:'AKWO MAKEMBE KING', acc:'00069-00000097794-90', niu:'P030218642934H', prefix:'AMK', dueDays:14 };
+const DM = { name:'DM OPTIQUE SARL', contact:'M. Domche Noumbi', phone:'656122239', email:'', addr:'Immeuble West Hotel, Ndobo Mayor, Bonabéri, Douala IV', niu:'' };
+const DM_ITEMS = [{ desc:'Création du site vitrine bilingue (français + anglais)', qty:1, price:100000 }, { desc:'Configuration Facebook et TikTok (comptes au nom du cabinet, CTA WhatsApp, premier contenu)', qty:1, price:50000 }];
+const DM_NOTE = 'Acompte de 75 000 FCFA encaissé le 13/10/2026 (espèces). Solde de 75 000 FCFA dû à la livraison : site, fiche Google, pages Facebook et TikTok en ligne et premier contenu publié.';
+function seed() {
+  const today = todayISO();
+  const cid = uid();
+  return {
+    settings: Object.assign({}, DEFAULT_SETTINGS),
+    clients: [Object.assign({ id:cid }, DM)],
+    invoices: [{ id:uid(), docType:'invoice', number:'AMK-' + today.slice(0,4) + '-001', date:today, due:addDays(today,14), clientId:cid, lang:'fr',
+      items:JSON.parse(JSON.stringify(DM_ITEMS)), discount:0, notes:DM_NOTE,
+      payments:[{ id:uid(), date:today.slice(0,4) + '-10-13', amount:75000, method:'cash' }] }],
+    services: { 'Création du site vitrine bilingue (français + anglais)':100000, 'Configuration Facebook et TikTok (comptes au nom du cabinet, CTA WhatsApp, premier contenu)':50000, 'Abonnement mensuel : publications et maintenance du site':30000 }
+  };
+}
+function migrate(d) {
+  const st = d.settings;
+  if (st.niu === 'P0302') st.niu = DEFAULT_SETTINGS.niu;
+  Object.keys(DEFAULT_SETTINGS).forEach(k => { if (st[k] === undefined) st[k] = DEFAULT_SETTINGS[k]; });
+  if (st.tag === 'Création de sites web') st.tag = DEFAULT_SETTINGS.tag;
+  if (st.phone === '+237 677 789 631') st.phone = DEFAULT_SETTINGS.phone;
+  d.clients.forEach(c => { if (c.name === 'DM optique SARL') Object.assign(c, DM, { id:c.id }); if (c.contact === undefined) c.contact = ''; });
+  d.services = d.services || {};
+  d.invoices.forEach(i => {
+    if (!i.docType) i.docType = 'invoice';
+    if (i.items.length === 1 && i.items[0].desc === 'Création de site web' && num(i.items[0].price) === 150000) { i.items = JSON.parse(JSON.stringify(DM_ITEMS)); if (!i.notes) i.notes = DM_NOTE; }
+    i.payments.forEach(p => { if (p.method === 'other' && num(p.amount) === 75000 && p.date === i.date) { p.method = 'cash'; p.date = i.date.slice(0, 4) + '-10-13'; } });
+  });
+  return d;
+}
+let db;
+function load() {
+  try { const raw = localStorage.getItem(KEY); if (raw) { const d = JSON.parse(raw); if (d && d.invoices && d.clients && d.settings) return migrate(d); } } catch (e) {}
+  return seed();
+}
+function persist() { try { localStorage.setItem(KEY, JSON.stringify(db)); } catch (e) {} }
+db = load();
+
+const calc = inv => {
+  const sub = (inv.items || []).reduce((s, i) => s + num(i.qty) * num(i.price), 0);
+  const disc = Math.min(Math.max(num(inv.discount), 0), sub);
+  const total = sub - disc;
+  const paid = (inv.payments || []).reduce((s, p) => s + num(p.amount), 0);
+  return { sub, disc, total, paid, bal: Math.max(total - paid, 0) };
+};
+const statusOf = inv => {
+  const c = calc(inv);
+  if (c.total > 0 && c.bal === 0) return 'paid';
+  if (inv.due && inv.due < todayISO()) return 'overdue';
+  return c.paid > 0 ? 'partial' : 'unpaid';
+};
+const lateDays = inv => {
+  if (!inv.due || inv.due >= todayISO()) return 0;
+  return Math.max(1, Math.round((new Date(todayISO() + 'T12:00:00') - new Date(inv.due + 'T12:00:00')) / 86400000));
+};
+const money = (n, lang) => Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ' + (lang === 'fr' ? 'FCFA' : 'XAF');
+const fdate = (iso, lang) => iso ? new Date(iso + 'T12:00:00').toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-GB', { day:'numeric', month:'long', year:'numeric' }) : '';
+const clientOf = id => db.clients.find(c => c.id === id);
+const invOf = id => db.invoices.find(i => i.id === id);
+const nextNumber = (dateISO, docType) => {
+  const y = (dateISO || todayISO()).slice(0, 4), p = (db.settings.prefix || 'INV') + (docType === 'proforma' ? '-PRO' : '');
+  const re = new RegExp('^' + p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '-' + y + '-(\\d+)$');
+  let max = 0; db.invoices.forEach(i => { const m = re.exec(i.number); if (m) max = Math.max(max, +m[1]); });
+  return p + '-' + y + '-' + String(max + 1).padStart(3, '0');
+};
+
+/* ---------- ui state ---------- */
+const state = { msgFor:null, msgKind:'dep', msgText:null, view:'list', id:null, filter:'all', draft:null, payForm:false, confirmDel:false, returnTo:null };
+const LOGO = `<svg viewBox="0 0 1024 1024" aria-hidden="true"><rect width="1024" height="1024" fill="#0F172A"/><circle cx="512" cy="508" r="275" fill="none" stroke="#D08A0B" stroke-width="14"/><path d="M512 270 L308 744 H718 Z" fill="none" stroke="#FCD34D" stroke-width="34" stroke-linejoin="round"/><g fill="#F59E0B"><circle cx="512" cy="270" r="50"/><circle cx="308" cy="744" r="50"/><circle cx="718" cy="744" r="50"/></g></svg>`;
+const ICON = {
+  list:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4M10 12h6M10 16h6"/></svg>',
+  plus:'<svg viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>',
+  users:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 4.7a3.5 3.5 0 0 1 0 6.6M18 14.8c1.7.7 2.9 2.3 3.3 5"/></svg>',
+  gear:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>'
+};
+
+function go(view, id) { state.view = view; if (id !== undefined) state.id = id; state.payForm = false; state.confirmDel = false; render(); window.scrollTo(0, 0); }
+function toast(msg) {
+  const old = q('.toast'); if (old) old.remove();
+  const el = document.createElement('div'); el.className = 'toast noprint'; el.textContent = msg; el.setAttribute('role', 'status');
+  document.body.appendChild(el); setTimeout(() => el.remove(), 2200);
+}
+function sheet(title, text) {
+  q('#layer').innerHTML = `<div class="sheet noprint" data-a="closeSheet"><div class="box" data-stop><b>${esc(title)}</b><textarea id="sheet-ta" readonly>${esc(text)}</textarea><button class="btn primary" data-a="closeSheet">${t('close')}</button></div></div>`;
+  const ta = q('#sheet-ta'); ta.focus(); ta.select();
+}
+function copyText(text, okMsg) {
+  const fail = () => sheet(t('copyFail'), text);
+  try { navigator.clipboard.writeText(text).then(() => toast(okMsg), fail); } catch (e) { fail(); }
+}
+
+/* ---------- views ---------- */
+function topHTML() {
+  return `${LOGO}<div class="brand">${esc(db.settings.name)}<small>${t('app')}</small></div><div class="sp"></div><button class="langbtn" data-a="toggleLang" aria-label="Langue / Language">${db.settings.lang === 'fr' ? 'FR · en' : 'EN · fr'}</button>`;
+}
+function tabsHTML() {
+  const cur = ['list','view','receipt'].includes(state.view) ? 'list' : ['edit'].includes(state.view) ? 'new' : ['clients','client'].includes(state.view) ? 'clients' : 'settings';
+  const b = (k, ic, label, extra = '') => `<button class="tab ${extra}" data-a="tab" data-k="${k}" ${cur === k ? 'aria-current="page"' : ''}>${extra ? `<span class="ic">${ic}</span>` : ic}<span>${label}</span></button>`;
+  return b('list', ICON.list, t('tInv')) + b('new', ICON.plus, t('tNew'), 'new') + b('clients', ICON.users, t('tCli')) + b('settings', ICON.gear, t('tSet'));
+}
+
+function listHTML() {
+  const all = db.invoices.slice().sort((a, b) => (b.date + b.number).localeCompare(a.date + a.number));
+  let owed = 0, got = 0, open = 0, late = 0;
+  all.forEach(i => { const c = calc(i); owed += c.bal; got += c.paid; if (c.bal > 0) open++; if (statusOf(i) === 'overdue') late += c.bal; });
+  const L = db.settings.lang;
+  const rows = all.filter(i => state.filter === 'all' || (state.filter === 'paid') === (statusOf(i) === 'paid'));
+  return `<div class="sum"><div class="lbl">${t('toCollect')}</div><div class="big">${money(owed, L)}</div>
+    <div class="sub"><span>${t('openCount', open)}</span><span>${t('collected')} <b>${money(got, L)}</b></span></div>
+    ${late > 0 ? `<div class="sub late"><span>${t('lateOn', money(late, L))}</span></div>` : ''}</div>
+    <div class="chips" role="group">${[['all','fAll'],['open','fOpen'],['paid','fPaid']].map(([k, l]) => `<button class="chip" data-a="filter" data-k="${k}" aria-pressed="${state.filter === k}">${t(l)}</button>`).join('')}</div>
+    <div class="list">${rows.length ? rows.map(i => { const c = calc(i), s = statusOf(i), cl = clientOf(i.clientId); return `<button class="inv" data-a="open" data-id="${i.id}">
+      <span class="n">${esc(i.number)}<span class="pill ${s}">${t('st')[s]}</span></span><span class="a">${money(c.total, L)}</span>
+      <span class="c">${i.docType === 'proforma' ? t('proformaTag') + ' · ' : ''}${esc(cl ? cl.name : '—')} · ${fdate(i.date, L)}</span><span class="r">${c.bal > 0 ? (s === 'overdue' ? t('lateFor', lateDays(i)) + ' · ' + money(c.bal, L) : t('left') + ' ' + money(c.bal, L)) : ''}</span></button>`; }).join('')
+      : `<div class="empty"><b>${t('none')}</b><br>${t('noneHint')}</div>`}</div>`;
+}
+
+function newDraft() {
+  const date = todayISO();
+  return { isNew:true, id:uid(), docType:'invoice', number:nextNumber(date, 'invoice'), date, due:addDays(date, db.settings.dueDays || 14), clientId:'', lang:db.settings.lang,
+    items:[{ desc:'', qty:1, price:'' }], discount:'', deposit:'', notes:'', payments:[] };
+}
+function editHTML() {
+  const d = state.draft, L = d.lang;
+  const svc = Object.keys(db.services || {}).map(k => `<option value="${esc(k)}"></option>`).join('');
+  return `<h1 class="h1">${d.isNew ? t('newInv') : t('editInv')}</h1><div class="card form">
+    <label for="f-client">${t('client')}</label>
+    <div class="row"><select id="f-client" data-f="clientId"><option value="">${t('pick')}</option>${db.clients.map(c => `<option value="${c.id}" ${c.id === d.clientId ? 'selected' : ''}>${esc(c.name)}</option>`).join('')}</select>
+      <button class="btn ghost" data-a="newClientFromEdit">+ ${t('newClient')}</button></div>
+    <label for="f-doctype">${t('docType')}</label><select id="f-doctype" data-f="docType"><option value="invoice" ${d.docType !== 'proforma' ? 'selected' : ''}>${t('dtInvoice')}</option><option value="proforma" ${d.docType === 'proforma' ? 'selected' : ''}>${t('dtProforma')}</option></select>
+    <div class="grid2"><div><label for="f-number">${t('number')}</label><input id="f-number" data-f="number" value="${esc(d.number)}"></div>
+      <div><label for="f-lang">${t('lang')}</label><select id="f-lang" data-f="lang"><option value="fr" ${L === 'fr' ? 'selected' : ''}>Français</option><option value="en" ${L === 'en' ? 'selected' : ''}>English</option></select></div></div>
+    <div class="grid2"><div><label for="f-date">${t('date')}</label><input id="f-date" type="date" data-f="date" value="${d.date}"></div>
+      <div><label for="f-due">${t('due')}</label><input id="f-due" type="date" data-f="due" value="${d.due}"></div></div>
+    <label>${t('items')}</label>
+    <datalist id="svc">${svc}</datalist>
+    <div class="form" id="items">${d.items.map((it, i) => `<div class="item">
+      <input data-i="${i}" data-k="desc" list="svc" placeholder="${t('desc')}" value="${esc(it.desc)}" aria-label="${t('desc')}">
+      <div class="grid2"><input data-i="${i}" data-k="qty" type="number" inputmode="decimal" min="0" step="any" value="${esc(it.qty)}" aria-label="${t('qty')}" placeholder="${t('qty')}">
+        <input data-i="${i}" data-k="price" type="number" inputmode="decimal" min="0" step="any" value="${esc(it.price)}" aria-label="${t('price')}" placeholder="${t('price')}"></div>
+      <div class="line"><span data-line="${i}">${money(num(it.qty) * num(it.price), L)}</span>${d.items.length > 1 ? `<button class="btn sm danger" data-a="rmItem" data-i="${i}">${t('del')}</button>` : ''}</div></div>`).join('')}</div>
+    <button class="btn" data-a="addItem">+ ${t('addItem')}</button>
+    <div class="grid2"><div><label for="f-disc">${t('discount')}</label><input id="f-disc" data-f="discount" type="number" inputmode="decimal" min="0" value="${esc(d.discount)}"></div>
+      ${d.isNew ? `<div><label for="f-dep">${t('deposit')}</label><input id="f-dep" data-f="deposit" type="number" inputmode="decimal" min="0" value="${esc(d.deposit)}"></div>` : '<div></div>'}</div>
+    <label for="f-notes">${t('notes')}</label><textarea id="f-notes" data-f="notes">${esc(d.notes)}</textarea>
+    <div class="tot" id="tot"></div></div>
+    <div class="actions"><button class="btn primary" data-a="saveInv">${t('save')}</button><button class="btn" data-a="cancelEdit">${t('cancel')}</button></div>
+    <div id="err" class="muted" role="alert"></div>`;
+}
+function updateTotals() {
+  const d = state.draft, c = calc(d), L = d.lang, dep = d.isNew ? num(d.deposit) : c.paid;
+  const el = q('#tot'); if (!el) return;
+  el.innerHTML = `<div><span>${tl(L, 'sub')}</span><span>${money(c.sub, L)}</span></div>` + (c.disc ? `<div><span>${tl(L, 'disc')}</span><span>− ${money(c.disc, L)}</span></div>` : '')
+    + `<div class="grand"><span>${tl(L, 'total')}</span><span>${money(c.total, L)}</span></div>` + (dep ? `<div><span>${tl(L, 'paidSoFar')}</span><span>${money(dep, L)}</span></div><div><b>${tl(L, 'balance')}</b><b>${money(Math.max(c.total - dep, 0), L)}</b></div>` : '');
+  d.items.forEach((it, i) => { const s = q(`[data-line="${i}"]`); if (s) s.textContent = money(num(it.qty) * num(it.price), L); });
+}
+
+function paperHTML(inv) {
+  const L = inv.lang, c = calc(inv), cl = clientOf(inv.clientId) || { name:'—' }, s = db.settings, X = k => tl(L, k);
+  const line = (a, b) => b ? `<div>${a}${esc(b)}</div>` : '';
+  return `<div class="paper" id="paper">${c.total > 0 && c.bal === 0 ? `<div class="stamp">${X('paidStamp')}</div>` : ''}
+    <div class="hd"><div class="logo">${LOGO}<div><b>${esc(s.name)}</b><span>${esc(s.tag)}</span></div></div>
+      <div class="ttl"><h3>${inv.docType === 'proforma' ? X('proformaTitle') : X('invoice')}</h3><div class="no">${esc(inv.number)}</div><div>${X('dateL')} : ${fdate(inv.date, L)}</div><div>${X('dueL')} : ${fdate(inv.due, L)}</div></div></div>
+    <div class="bar"></div>
+    <div class="parties"><div><h4>${X('from')}</h4><div><b>${esc(s.legal || s.name)}</b></div>${line('', s.tag)}${line('', s.addr || s.city)}${line('', s.phone)}${line('', s.email)}${s.niu ? `<div>NIU : ${esc(s.niu)}</div>` : ''}${s.rc ? `<div>RC / RCCM : ${esc(s.rc)}</div>` : ''}</div>
+      <div><h4>${X('billTo')}</h4><div><b>${esc(cl.name)}</b></div>${line('', cl.contact)}${line('', cl.addr)}${line('', cl.phone)}${line('', cl.email)}${cl.niu ? `<div>NIU : ${esc(cl.niu)}</div>` : ''}</div></div>
+    <table><thead><tr><th>${X('dL')}</th><th class="r">${X('qL')}</th><th class="r">${X('uL')}</th><th class="r">${X('aL')}</th></tr></thead><tbody>
+    ${inv.items.map(i => `<tr><td>${esc(i.desc)}</td><td class="r">${esc(i.qty)}</td><td class="r">${money(num(i.price), L)}</td><td class="r">${money(num(i.qty) * num(i.price), L)}</td></tr>`).join('')}</tbody></table>
+    <div class="totals"><div><span>${X('sub')}</span><span>${money(c.sub, L)}</span></div>${c.disc ? `<div><span>${X('disc')}</span><span>− ${money(c.disc, L)}</span></div>` : ''}
+      <div class="gt"><span>${X('total')}</span><span>${money(c.total, L)}</span></div>
+      ${c.paid ? `<div><span>${X('paidSoFar')}</span><span>− ${money(c.paid, L)}</span></div>` : ''}
+      <div class="due"><span>${X('balance')}</span><span>${money(c.bal, L)}</span></div></div>
+    <div class="pay"><h4>${X('payTo')}</h4>
+      ${s.momo ? `<div>MTN MoMo : <b>${esc(s.momo)}</b></div>` : ''}${s.om ? `<div>Orange Money : <b>${esc(s.om)}</b></div>` : ''}
+      ${s.bank ? `<div>${esc(s.bank)} · ${X('accountL')} <b>${esc(s.acc)}</b></div><div>${X('holderL')} : ${esc(s.holder)}</div>` : ''}</div>
+    ${inv.notes ? `<div class="note">${esc(inv.notes)}</div>` : ''}
+    <div class="sign"><div class="box"><span>${X('sign')}</span></div></div>
+    <div class="foot">${X('thanks')}</div></div>`;
+}
+function invText(inv) {
+  const L = inv.lang, c = calc(inv), cl = clientOf(inv.clientId), s = db.settings, X = k => tl(L, k);
+  return [`${X('waIntro')} ${inv.number}${cl ? ' — ' + cl.name : ''}`, '',
+    ...inv.items.map(i => `• ${i.desc} : ${money(num(i.qty) * num(i.price), L)}`),
+    '', `${X('total')} : ${money(c.total, L)}`, ...(c.paid ? [`${X('paidSoFar')} : ${money(c.paid, L)}`] : []), `${X('balance')} : ${money(c.bal, L)}`,
+    `${X('dueL')} : ${fdate(inv.due, L)}`, '', X('payTo'), s.momo ? `MTN MoMo : ${s.momo}` : '', s.om ? `Orange Money : ${s.om}` : '',
+    s.bank ? `${s.bank} — ${s.holder} — ${s.acc}` : '', '', `${s.name} · ${s.phone}`].filter((x, i, a) => !(x === '' && a[i - 1] === '')).join('\n');
+}
+function waNumber(p) { let d = String(p || '').replace(/\D/g, ''); if (d.length === 9 && d[0] === '6') d = '237' + d; return d; }
+
+function viewHTML() {
+  const inv = invOf(state.id); if (!inv) return '';
+  const L = db.settings.lang, c = calc(inv), s = statusOf(inv);
+  const methods = ['momo','om','bank','cash','other'];
+  if (state.msgFor !== inv.id) { state.msgFor = inv.id; state.msgKind = suggestKind(inv); state.msgText = null; }
+  const msg = state.msgText !== null ? state.msgText : msgFor(state.msgKind, inv);
+  const msgCard = `<div class="card noprint form" style="margin-top:14px"><b>${t('msgTitle')}</b>
+    <div class="chips" style="margin:6px 0 4px" role="group">${MSG_KINDS.map(([k, l]) => `<button class="chip" data-a="msgKind" data-k="${k}" aria-pressed="${state.msgKind === k}">${t(l)}</button>`).join('')}</div>
+    <textarea id="msg-ta" style="min-height:230px" aria-label="${t('msgTitle')}">${esc(msg)}</textarea><span class="muted" style="font-size:13px">${t('msgHint')}</span>
+    <div class="actions"><button class="btn primary" data-a="sharePdf">${t('sharePdf')}</button><button class="btn" data-a="msgOnly">${t('sendMsg')}</button><button class="btn" data-a="copyMsg">${t('copyMsg')}</button></div></div>`;
+  return `<div class="actions noprint" style="margin-top:12px"><button class="btn sm" data-a="tab" data-k="list">← ${t('back')}</button><span class="pill ${s}" style="align-self:center">${t('st')[s]}</span></div>
+    <div class="paperbox">${paperHTML(inv)}</div>
+    ${msgCard}
+    <div class="actions noprint">${IS_PWA ? `<button class="btn" data-a="print">${t('pdf')}</button>` : ''}<button class="btn" data-a="editInv">${t('edit')}</button>${inv.docType === 'proforma' ? `<button class="btn" data-a="convert">${t('convert')}</button>` : ''}</div>
+    <div class="card noprint"><div class="row" style="justify-content:space-between"><b>${t('payments')}</b>${c.bal > 0 ? `<button class="btn sm primary" data-a="payForm">${t('addPay')}</button>` : ''}</div>
+      <div class="pays">${inv.payments.length ? inv.payments.map(p => `<div class="p"><span>${fdate(p.date, L)} · ${t(p.method || 'other')}</span><span><b>${money(num(p.amount), L)}</b> <button class="btn sm" data-a="receipt" data-id="${p.id}">${t('receiptBtn')}</button> <button class="btn sm danger" data-a="rmPay" data-id="${p.id}" aria-label="${t('del')}">✕</button></span></div>`).join('') : `<span class="muted">${t('noPay')}</span>`}</div>
+      ${state.payForm ? `<div class="form" style="margin-top:12px"><div class="grid2"><div><label for="p-amt">${t('amount')}</label><input id="p-amt" type="number" inputmode="decimal" min="0" value="${c.bal}"></div>
+        <div><label for="p-date">${t('date')}</label><input id="p-date" type="date" value="${todayISO()}"></div></div>
+        <label for="p-method">${t('method')}</label><select id="p-method">${methods.map(m => `<option value="${m}">${t(m)}</option>`).join('')}</select>
+        <div class="actions"><button class="btn primary" data-a="savePay">${t('save')}</button><button class="btn" data-a="payForm">${t('cancel')}</button></div></div>` : ''}</div>
+    <div class="actions noprint"><button class="btn danger" data-a="delInv">${state.confirmDel ? t('delSure') : t('del')}</button></div>`;
+}
+
+function receiptData(inv, payId) {
+  const idx = inv.payments.findIndex(p => p.id === payId), p = inv.payments[idx], c = calc(inv);
+  const before = inv.payments.slice(0, idx + 1).reduce((a, x) => a + num(x.amount), 0);
+  return { p, no:inv.number + '-R' + (idx + 1), after:Math.max(c.total - before, 0), total:c.total };
+}
+function receiptHTML(inv, payId) {
+  const L = inv.lang, X = k => tl(L, k), s = db.settings, cl = clientOf(inv.clientId) || { name:'—' }, r = receiptData(inv, payId);
+  if (!r.p) return '';
+  const line = b => b ? `<div>${esc(b)}</div>` : '';
+  return `<div class="paper" id="paper">${r.after === 0 ? `<div class="stamp">${X('rcpSettled')}</div>` : ''}
+    <div class="hd"><div class="logo">${LOGO}<div><b>${esc(s.name)}</b><span>${esc(s.tag)}</span></div></div>
+      <div class="ttl"><h3>${X('receiptTitle')}</h3><div class="no">${esc(r.no)}</div><div>${X('dateL')} : ${fdate(r.p.date, L)}</div></div></div>
+    <div class="bar"></div>
+    <div class="parties"><div><h4>${X('from')}</h4><div><b>${esc(s.legal || s.name)}</b></div>${line(s.addr || s.city)}${line(s.phone)}${s.niu ? `<div>NIU : ${esc(s.niu)}</div>` : ''}</div>
+      <div><h4>${X('rcpReceived')}</h4><div><b>${esc(cl.name)}</b></div>${line(cl.contact)}${line(cl.addr)}${cl.niu ? `<div>NIU : ${esc(cl.niu)}</div>` : ''}</div></div>
+    <table><tbody><tr><td>${X('rcpSum')}</td><td class="r"><b style="font-size:16px">${money(num(r.p.amount), L)}</b></td></tr>
+      <tr><td>${X('rcpBy')}</td><td class="r">${tl(L, r.p.method || 'other')}</td></tr>
+      <tr><td>${X('rcpInvoice')}</td><td class="r">${esc(inv.number)}</td></tr>
+      <tr><td>${X('rcpTotal')}</td><td class="r">${money(r.total, L)}</td></tr>
+      <tr><td><b>${X('rcpAfter')}</b></td><td class="r"><b>${money(r.after, L)}</b></td></tr></tbody></table>
+    <div class="sign"><div class="box"><span>${X('sign')}</span></div></div>
+    <div class="foot">${X('thanks')}</div></div>`;
+}
+function receiptText(inv, payId) {
+  const L = inv.lang, X = k => tl(L, k), cl = clientOf(inv.clientId), r = receiptData(inv, payId);
+  return [`${X('receiptTitle')} ${r.no}`, `${X('rcpReceived')} : ${cl ? cl.name : ''}`, `${X('rcpSum')} : ${money(num(r.p.amount), L)}`, `${X('rcpBy')} : ${tl(L, r.p.method || 'other')}`, `${X('dateL')} : ${fdate(r.p.date, L)}`, `${X('rcpInvoice')} ${inv.number} — ${X('rcpAfter')} : ${money(r.after, L)}`, '', `${db.settings.name} · ${db.settings.phone}`].join('\n');
+}
+function receiptViewHTML() {
+  const inv = invOf(state.id); if (!inv) return '';
+  return `<div class="actions noprint" style="margin-top:12px"><button class="btn sm" data-a="backToInv">← ${t('back')}</button></div>
+    <div class="paperbox">${receiptHTML(inv, state.payId)}</div>
+    <div class="actions noprint"><button class="btn primary" data-a="sharePdfReceipt">${t('sharePdf')}</button><button class="btn" data-a="copyReceipt">${t('copy')}</button>${IS_PWA ? `<button class="btn" data-a="print">${t('pdf')}</button>` : ''}</div>`;
+}
+
+function clientsHTML() {
+  const L = db.settings.lang;
+  return `<h1 class="h1">${t('clients')}</h1><div class="actions" style="margin-top:0"><button class="btn primary" data-a="addClient">+ ${t('addClient')}</button></div>
+    <div class="list">${db.clients.length ? db.clients.map(c => { const mine = db.invoices.filter(i => i.clientId === c.id); const owed = mine.reduce((s, i) => s + calc(i).bal, 0);
+      return `<button class="inv" data-a="editClient" data-id="${c.id}"><span class="n">${esc(c.name)}</span><span class="a">${owed ? money(owed, L) : ''}</span><span class="c">${esc(c.phone || c.email || '')}</span><span class="r">${t('cInv', mine.length)}</span></button>`; }).join('')
+      : `<div class="empty">${t('cNone')}</div>`}</div>`;
+}
+function clientFormHTML() {
+  const c = state.draft;
+  const f = (id, label, k, type = 'text') => `<label for="${id}">${label}</label><input id="${id}" type="${type}" data-cf="${k}" value="${esc(c[k])}">`;
+  return `<h1 class="h1">${c.isNew ? t('addClient') : esc(c.name)}</h1><div class="card form">${f('c-name', t('cName'), 'name')}${f('c-contact', t('cContact'), 'contact')}${f('c-phone', t('cPhone'), 'phone', 'tel')}${f('c-email', t('cEmail'), 'email', 'email')}${f('c-addr', t('cAddr'), 'addr')}${f('c-niu', t('cNiu'), 'niu')}</div>
+    <div id="err" class="muted" role="alert" style="margin-top:8px"></div>
+    <div class="actions"><button class="btn primary" data-a="saveClient">${t('save')}</button><button class="btn" data-a="cancelClient">${t('cancel')}</button>${c.isNew ? '' : `<button class="btn danger" data-a="delClient">${state.confirmDel ? t('delSure') : t('del')}</button>`}</div>`;
+}
+
+function settingsHTML() {
+  const s = db.settings;
+  const f = (k, label, type = 'text') => `<label for="s-${k}">${label}</label><input id="s-${k}" type="${type}" data-sf="${k}" value="${esc(s[k])}">`;
+  return `<h1 class="h1">${t('settings')}</h1>
+    <h2 class="h2">${t('biz')}</h2><div class="card form">${f('name', t('bName'))}${f('legal', t('bLegal'))}${f('tag', t('bTag'))}${f('addr', t('bAddr'))}${f('phone', t('bPhone'), 'tel')}${f('email', t('bEmail'), 'email')}${f('web', t('bWeb'))}${f('rc', t('bRc'))}</div>
+    <h2 class="h2">${t('payInfo')}</h2><div class="card form">${f('momo', t('pMomo'), 'tel')}${f('om', t('pOm'), 'tel')}${f('bank', t('pBank'))}${f('holder', t('pHolder'))}${f('acc', t('pAcc'))}${f('niu', t('pNiu'))}</div>
+    <h2 class="h2">${t('numbering')}</h2><div class="card form"><div class="grid2"><div>${f('prefix', t('prefix'))}</div><div>${f('dueDays', t('dueDays'), 'number')}</div></div>
+      <label for="s-lang">${t('appLang')}</label><select id="s-lang" data-sf="lang"><option value="fr" ${s.lang === 'fr' ? 'selected' : ''}>Français</option><option value="en" ${s.lang === 'en' ? 'selected' : ''}>English</option></select></div>
+    <h2 class="h2">${t('backup')}</h2><div class="card form"><span class="muted">${t('backupHint')}</span><div class="actions"><button class="btn" data-a="copyBackup">${t('copyBackup')}</button><button class="btn" data-a="saveBackupFile">${t('saveBackup')}</button></div>
+      <label for="restore-ta">${t('restore')}</label><textarea id="restore-ta" placeholder="${t('pasteHere')}"></textarea><div class="actions"><button class="btn" data-a="restore">${t('restore')}</button></div></div>`;
+}
+
+function render() {
+  q('#top').innerHTML = topHTML();
+  q('#tabs').innerHTML = tabsHTML();
+  const v = state.view;
+  q('#main').innerHTML = v === 'list' ? listHTML() : v === 'edit' ? editHTML() : v === 'view' ? viewHTML() : v === 'receipt' ? receiptViewHTML() : v === 'clients' ? clientsHTML() : v === 'client' ? clientFormHTML() : settingsHTML();
+  if (v === 'edit') updateTotals();
+  document.documentElement.lang = db.settings.lang;
+}
+
+/* ---------- message templates ---------- */
+const MSG_KINDS = [['dep', 'mDep'], ['bal', 'mBal'], ['rem', 'mRem'], ['mon', 'mMon']];
+function suggestKind(inv) {
+  const c = calc(inv), s = statusOf(inv);
+  if (inv.items.some(i => /mensuel|monthly|abonnement|retainer/i.test(i.desc))) return 'mon';
+  if (s === 'overdue') return 'rem';
+  return c.paid > 0 ? 'bal' : 'dep';
+}
+function payLine(L) {
+  const s = db.settings, fr = L === 'fr';
+  return [s.momo ? 'MTN MoMo : ' + s.momo : '', s.om ? 'Orange Money : ' + s.om : '', s.bank ? (fr ? 'Virement : ' : 'Bank transfer: ') + s.bank + ' ' + s.acc + ' (' + s.holder + ')' : ''].filter(Boolean).join('\n');
+}
+function greeting(inv, cl) {
+  const L = inv.lang, who = (cl && (cl.contact || cl.name)) || '';
+  if (L === 'fr') return /^(m\.|mr\.?|monsieur)(\s|$)/i.test(who) ? 'Bonjour Monsieur,' : /^(mme|madame)(\s|$)/i.test(who) ? 'Bonjour Madame,' : 'Bonjour ' + who + ',';
+  return 'Hello ' + who.replace(/^(m\.|mr\.?)\s+/i, 'Mr ').replace(/^(mme|mrs\.?)\s+/i, 'Mrs ') + ',';
+}
+function msgFor(kind, inv) {
+  const L = inv.lang, fr = L === 'fr', c = calc(inv), cl = clientOf(inv.clientId), st = db.settings, m = x => money(x, L);
+  const hi = greeting(inv, cl), pay = payLine(L), no = inv.number;
+  const sign = fr ? 'Cordialement,\n' + (st.legal || st.name) + '\n' + st.tag : 'Kind regards,\n' + (st.legal || st.name) + '\n' + st.tag;
+  const doc = inv.docType === 'proforma' ? (fr ? 'la facture proforma' : 'the proforma invoice') : (fr ? 'la facture' : 'the invoice');
+  const half = Math.round(c.total / 2);
+  let body;
+  if (kind === 'dep') {
+    body = fr
+      ? `Merci pour votre confiance. Comme convenu, voici ${doc} ${no}, en pièce jointe.\n\nTotal : ${m(c.total)}\nAcompte pour démarrer : ${m(half)}\nSolde à la livraison : ${m(c.total - half)}\n\nLe travail démarre dès que l'acompte est encaissé. Vous pouvez régler comme cela vous arrange :\n${pay}\n\nJe vous remets un reçu signé et tamponné à chaque paiement.`
+      : `Thank you for your trust. As agreed, please find ${doc} ${no} attached.\n\nTotal: ${m(c.total)}\nDeposit to start: ${m(half)}\nBalance on delivery: ${m(c.total - half)}\n\nWork starts as soon as the deposit is received. You can pay whichever way suits you:\n${pay}\n\nI give you a signed and stamped receipt for every payment.`;
+  } else if (kind === 'bal') {
+    body = fr
+      ? `Tout ce qui était prévu est livré et en ligne. Voici la facture ${no} à jour, en pièce jointe : l'acompte de ${m(c.paid)} est déjà déduit.\n\nReste à payer : ${m(c.bal)}\nÉchéance : ${fdate(inv.due, L)}\n\nVous pouvez régler par :\n${pay}\n\nDès réception, je vous remets le reçu signé et tamponné.`
+      : `Everything we agreed on is delivered and live. Please find invoice ${no} attached, updated: the deposit of ${m(c.paid)} is already deducted.\n\nBalance due: ${m(c.bal)}\nDue date: ${fdate(inv.due, L)}\n\nYou can pay by:\n${pay}\n\nOnce received, I will send you the signed and stamped receipt.`;
+  } else if (kind === 'rem') {
+    body = fr
+      ? `Un petit rappel, en toute simplicité : la facture ${no} (${m(c.bal)} restant) était attendue le ${fdate(inv.due, L)}. Elle est en pièce jointe.\n\nSi le paiement est déjà parti, envoyez-moi simplement la preuve et je mets tout à jour. Sinon :\n${pay}\n\nSi une date vous arrange mieux, ou un paiement en deux fois, dites-le-moi et nous trouvons une solution ensemble.`
+      : `A friendly reminder: invoice ${no} (${m(c.bal)} remaining) was due on ${fdate(inv.due, L)}. It is attached.\n\nIf the payment has already been sent, just send me the proof and I will update everything. Otherwise:\n${pay}\n\nIf another date suits you better, or paying in two instalments, tell me and we will find a way together.`;
+  } else {
+    const month = new Date(inv.date + 'T12:00:00').toLocaleDateString(fr ? 'fr-FR' : 'en-GB', { month:'long', year:'numeric' });
+    body = fr
+      ? `Voici la facture ${no} pour la gestion ${/^[aeiouhéèô]/i.test(month) ? "d'" : 'de '}${month}, en pièce jointe.\n\nMontant du mois : ${m(c.total)}\nÉchéance : ${fdate(inv.due, L)}\n\nElle couvre les contenus publiés, l'entretien du site et des pages, et le suivi du mois. Vous recevez le rapport du mois à la fin.\n\nPour régler :\n${pay}\n\nVous recevrez le reçu dès le paiement.`
+      : `Please find invoice ${no} for ${month} management attached.\n\nAmount for the month: ${m(c.total)}\nDue date: ${fdate(inv.due, L)}\n\nIt covers published content, upkeep of the site and pages, and monthly follow-up. You receive the month's report at the end.\n\nTo pay:\n${pay}\n\nYou will get the receipt as soon as payment arrives.`;
+  }
+  return hi + '\n\n' + body + '\n\n' + sign;
+}
+
+/* ---------- PDF (jsPDF) and sharing ---------- */
+const pdfSafe = x => String(x ?? '').replace(/[−–—]/g, '-').replace(/[‘’]/g, "'").replace(/[“”]/g, '"').replace(/•/g, '-').replace(/[ ]/g, ' ').replace(/[^\u0000-ÿ]/g, '');
+function buildPdf(inv, payId) {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ unit:'pt', format:'a4' });
+  const L = inv.lang, X = k => pdfSafe(tl(L, k)), st = db.settings, cl = clientOf(inv.clientId) || { name:'-' };
+  const W = 595.28, H = 841.89, M = 42, c = calc(inv);
+  const NAVY = [15, 23, 42], AMB = [245, 158, 11], YEL = [252, 211, 77], SOFT = [86, 98, 122], LINE = [220, 226, 236], GREEN = [22, 101, 52];
+  const isReceipt = payId !== null && payId !== undefined;
+  const rc = isReceipt ? receiptData(inv, payId) : null;
+  const T = (x, y, str, o = {}) => { doc.setFont('helvetica', o.b ? 'bold' : 'normal'); doc.setFontSize(o.sz || 9); doc.setTextColor(...(o.col || NAVY)); doc.text(pdfSafe(str), x, y, { align:o.al || 'left', angle:o.angle || 0 }); };
+  const wrap = (str, w, sz) => { doc.setFontSize(sz); return doc.splitTextToSize(pdfSafe(str), w); };
+  const logo = (x, y, sz) => {
+    const k = sz / 1024, px = v => x + v * k, py = v => y + v * k;
+    doc.setFillColor(...NAVY); doc.roundedRect(x, y, sz, sz, 9, 9, 'F');
+    doc.setDrawColor(208, 138, 11); doc.setLineWidth(14 * k); doc.circle(px(512), py(508), 275 * k, 'S');
+    doc.setDrawColor(...YEL); doc.setLineWidth(34 * k); doc.setLineJoin('round'); doc.triangle(px(512), py(270), px(308), py(744), px(718), py(744), 'S');
+    doc.setFillColor(...AMB); [[512, 270], [308, 744], [718, 744]].forEach(pt => doc.circle(px(pt[0]), py(pt[1]), 50 * k, 'F'));
+  };
+  const block = (x, y, head, rows) => {
+    T(x, y, head.toUpperCase(), { b:1, sz:7.5, col:SOFT }); y += 14;
+    rows.filter(r => r && r[0]).forEach(r => { wrap(r[0], W / 2 - M - 20, 9).forEach(ln => { T(x, y, ln, { b:r[1] }); y += 12; }); });
+    return y;
+  };
+  // header
+  logo(M, M, 44); T(M + 56, M + 22, st.name, { b:1, sz:20 }); T(M + 56, M + 36, st.tag, { sz:8.5, col:SOFT });
+  const title = isReceipt ? X('receiptTitle') : (inv.docType === 'proforma' ? X('proformaTitle') : X('invoice'));
+  T(W - M, M + 16, title, { b:1, sz:20, al:'right' });
+  const hl = isReceipt ? [[rc.no, 1, NAVY], [X('dateL') + ' : ' + fdate(rc.p.date, L), 0, SOFT]] : [[inv.number, 1, NAVY], [X('dateL') + ' : ' + fdate(inv.date, L), 0, SOFT], [X('dueL') + ' : ' + fdate(inv.due, L), 0, SOFT]];
+  hl.forEach((r, i) => T(W - M, M + 34 + i * 13, r[0], { b:r[1], col:r[2], al:'right' }));
+  doc.setFillColor(...AMB); doc.rect(M, M + 78, W - 2 * M, 3, 'F');
+  let y = M + 102;
+  const issuer = [[st.legal || st.name, 1], [isReceipt ? '' : st.tag, 0], [st.addr || st.city, 0], [st.phone, 0], [isReceipt ? '' : st.email, 0], [st.niu ? 'NIU : ' + st.niu : '', 0], [!isReceipt && st.rc ? 'RC / RCCM : ' + st.rc : '', 0]];
+  const y1 = block(M, y, isReceipt ? X('from') : X('from'), issuer);
+  const y2 = block(W / 2 + 10, y, isReceipt ? X('rcpReceived') : X('billTo'), [[cl.name, 1], [cl.contact, 0], [cl.addr, 0], [cl.phone, 0], [cl.niu ? 'NIU : ' + cl.niu : '', 0]]);
+  y = Math.max(y1, y2) + 14;
+  const signBox = yy => { doc.setDrawColor(...LINE); doc.setLineWidth(0.8); doc.setLineDashPattern([3, 3], 0); doc.roundedRect(W - M - 170, yy, 170, 70, 5, 5, 'S'); doc.setLineDashPattern([], 0); T(W - M - 162, yy + 14, X('sign'), { sz:8, col:SOFT }); };
+  const foot = () => T(W / 2, H - M + 8, X('thanks'), { sz:8.5, col:SOFT, al:'center' });
+  if (isReceipt) {
+    const rows = [[X('rcpSum'), money(num(rc.p.amount), L), 1], [X('rcpBy'), tl(L, rc.p.method || 'other'), 0], [X('rcpInvoice'), inv.number, 0], [X('rcpTotal'), money(rc.total, L), 0], [X('rcpAfter'), money(rc.after, L), 1]];
+    y += 10; doc.setDrawColor(...NAVY); doc.setLineWidth(1.6); doc.line(M, y, W - M, y);
+    rows.forEach(r => { y += 24; T(M, y, r[0], { b:r[2], sz:10.5 }); T(W - M, y, r[1], { b:r[2], sz:r[0] === X('rcpSum') ? 12 : 10.5, al:'right' }); y += 8; doc.setDrawColor(...LINE); doc.setLineWidth(0.6); doc.line(M, y, W - M, y); });
+    signBox(y + 30); foot();
+    if (rc.after === 0) T(W - M - 20, 150, X('rcpSettled'), { b:1, sz:20, col:GREEN, al:'right', angle:8 });
+  } else {
+    const cols = { q:W - M - 215, u:W - M - 120, a:W - M };
+    T(M, y, X('dL').toUpperCase(), { b:1, sz:7.5, col:SOFT }); T(cols.q, y, X('qL').toUpperCase(), { b:1, sz:7.5, col:SOFT, al:'right' }); T(cols.u, y, X('uL').toUpperCase(), { b:1, sz:7.5, col:SOFT, al:'right' }); T(cols.a, y, X('aL').toUpperCase(), { b:1, sz:7.5, col:SOFT, al:'right' });
+    doc.setDrawColor(...NAVY); doc.setLineWidth(1.6); doc.line(M, y + 6, W - M, y + 6); y += 24;
+    inv.items.forEach(it => {
+      const ls = wrap(it.desc, cols.q - M - 40, 9.5);
+      if (y + ls.length * 12 > H - 230) { foot(); doc.addPage(); y = M + 20; }
+      ls.forEach((ln, i) => T(M, y + 12 * i, ln, { sz:9.5 }));
+      T(cols.q, y, String(it.qty), { sz:9.5, al:'right' }); T(cols.u, y, money(num(it.price), L), { sz:9.5, al:'right' }); T(cols.a, y, money(num(it.qty) * num(it.price), L), { sz:9.5, al:'right' });
+      y += 12 * ls.length + 6; doc.setDrawColor(...LINE); doc.setLineWidth(0.6); doc.line(M, y - 2, W - M, y - 2); y += 12;
+    });
+    if (y > H - 230) { foot(); doc.addPage(); y = M + 20; }
+    const bx = W - M - 230; y += 4;
+    T(bx, y, X('sub'), { sz:9.5 }); T(W - M, y, money(c.sub, L), { sz:9.5, al:'right' }); y += 16;
+    if (c.disc) { T(bx, y, X('disc'), { sz:9.5 }); T(W - M, y, '- ' + money(c.disc, L), { sz:9.5, al:'right' }); y += 16; }
+    doc.setDrawColor(...NAVY); doc.setLineWidth(1.4); doc.line(bx, y - 11, W - M, y - 11); y += 3;
+    T(bx, y, X('total'), { b:1, sz:11 }); T(W - M, y, money(c.total, L), { b:1, sz:11, al:'right' }); y += 17;
+    if (c.paid) { T(bx, y, X('paidSoFar'), { sz:9.5 }); T(W - M, y, '- ' + money(c.paid, L), { sz:9.5, al:'right' }); y += 10; } else y += 0;
+    doc.setFillColor(...NAVY); doc.roundedRect(bx - 8, y, 238, 28, 5, 5, 'F');
+    T(bx, y + 18, X('balance'), { b:1, sz:10.5, col:YEL }); T(W - M - 8, y + 18, money(c.bal, L), { b:1, sz:10.5, col:YEL, al:'right' }); y += 52;
+    doc.setDrawColor(...LINE); doc.setLineWidth(0.6); doc.line(M, y, W - M, y); y += 16;
+    T(M, y, X('payTo').toUpperCase(), { b:1, sz:7.5, col:SOFT }); y += 14;
+    [[st.momo ? 'MTN MoMo : ' + st.momo : '', 1], [st.om ? 'Orange Money : ' + st.om : '', 1], [st.bank ? st.bank + ' - ' + X('accountL') + ' ' + st.acc : '', 0], [st.bank ? X('holderL') + ' : ' + st.holder : '', 0]].filter(r => r[0]).forEach(r => { T(M, y, r[0], { b:r[1], sz:9.5 }); y += 13; });
+    y += 6;
+    if (inv.notes) wrap(inv.notes, W - 2 * M, 9).forEach(ln => { T(M, y, ln, { sz:9, col:SOFT }); y += 12; });
+    if (y + 80 > H - M) { foot(); doc.addPage(); y = M; }
+    signBox(y + 8); foot();
+    if (c.total > 0 && c.bal === 0) T(W - M - 20, 150, X('paidStamp'), { b:1, sz:20, col:GREEN, al:'right', angle:8 });
+  }
+  const slug = String(cl.name).normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^A-Za-z0-9]+/g, '-').replace(/^-|-$/g, '').toUpperCase();
+  const name = (isReceipt ? 'Recu-' + rc.no : (inv.docType === 'proforma' ? 'Proforma-' : 'Facture-') + inv.number) + '-' + slug + '.pdf';
+  return { doc, name, text:isReceipt ? receiptText(inv, payId) : invText(inv) };
+}
+function waFallback(inv, payId, msg) {
+  const cl = clientOf(inv.clientId), txt = msg || (payId ? receiptText(inv, payId) : invText(inv));
+  window.open('https://wa.me/' + waNumber(cl && cl.phone) + '?text=' + encodeURIComponent(txt), '_blank', 'noopener');
+}
+async function doShare(inv, payId, msg) {
+  let pdf;
+  try { pdf = buildPdf(inv, payId); } catch (e) { toast(t('pdfFail')); waFallback(inv, payId, msg); return; }
+  toast(t('pdfMake'));
+  const blob = pdf.doc.output('blob');
+  try {
+    const file = new File([blob], pdf.name, { type:'application/pdf' });
+    if (navigator.canShare && navigator.canShare({ files:[file] })) { await navigator.share({ files:[file], title:pdf.name, text:msg || pdf.text }); return; }
+  } catch (e) { if (e && e.name === 'AbortError') return; }
+  if (IS_PWA) {
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = pdf.name; document.body.appendChild(a); a.click();
+    setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 4000); toast(t('pdfSaved')); return;
+  }
+  try {
+    const dl = window.claude && window.claude.use ? await window.claude.use('downloads') : null;
+    if (dl) { await dl.save({ filename:pdf.name, data:blob }); return; }
+  } catch (e) { if (e && e.code === 'declined') return; }
+  toast(t('pdfFail')); waFallback(inv, payId, msg);
+}
+
+/* ---------- events ---------- */
+const actions = {
+  tab(el) {
+    const k = el.dataset.k;
+    if (k === 'new') { state.draft = newDraft(); go('edit'); } else go(k);
+  },
+  toggleLang() { db.settings.lang = db.settings.lang === 'fr' ? 'en' : 'fr'; persist(); render(); },
+  filter(el) { state.filter = el.dataset.k; render(); },
+  open(el) { go('view', el.dataset.id); },
+  closeSheet(el, e) { if (e.target === el || el.tagName === 'BUTTON') q('#layer').innerHTML = ''; },
+  addItem() { state.draft.items.push({ desc:'', qty:1, price:'' }); render(); },
+  rmItem(el) { state.draft.items.splice(+el.dataset.i, 1); render(); },
+  newClientFromEdit() { state.returnTo = 'edit'; state.clientBack = state.draft; state.draft = { isNew:true, id:uid(), name:'', contact:'', phone:'', email:'', addr:'', niu:'' }; go('client'); },
+  cancelEdit() { go(state.id && invOf(state.id) && !state.draft.isNew ? 'view' : 'list'); },
+  saveInv() {
+    const d = state.draft, err = q('#err');
+    d.items = d.items.filter(i => String(i.desc).trim());
+    if (!d.clientId) { err.textContent = t('errClient'); if (!d.items.length) d.items = [{ desc:'', qty:1, price:'' }]; return; }
+    if (!d.items.length) { err.textContent = t('errItem'); d.items = [{ desc:'', qty:1, price:'' }]; render(); q('#err').textContent = t('errItem'); return; }
+    const inv = { id:d.id, docType:d.docType || 'invoice', number:d.number.trim() || nextNumber(d.date, d.docType), date:d.date, due:d.due, clientId:d.clientId, lang:d.lang,
+      items:d.items.map(i => ({ desc:String(i.desc).trim(), qty:num(i.qty) || 1, price:num(i.price) })), discount:num(d.discount), notes:d.notes, payments:d.payments || [] };
+    if (d.isNew && num(d.deposit) > 0) inv.payments.push({ id:uid(), date:d.date, amount:num(d.deposit), method:'other' });
+    inv.items.forEach(i => { db.services[i.desc] = i.price; });
+    const at = db.invoices.findIndex(i => i.id === inv.id);
+    if (at >= 0) db.invoices[at] = inv; else db.invoices.push(inv);
+    persist(); toast(t('saved')); state.msgFor = null; go('view', inv.id);
+  },
+  editInv() { const inv = invOf(state.id); state.draft = JSON.parse(JSON.stringify(inv)); state.draft.isNew = false; state.draft.discount = inv.discount || ''; go('edit'); },
+  delInv() { if (!state.confirmDel) { state.confirmDel = true; render(); return; } db.invoices = db.invoices.filter(i => i.id !== state.id); persist(); go('list'); },
+  payForm() { state.payForm = !state.payForm; render(); },
+  savePay() {
+    const amt = num(q('#p-amt').value); if (amt <= 0) return;
+    invOf(state.id).payments.push({ id:uid(), date:q('#p-date').value || todayISO(), amount:amt, method:q('#p-method').value });
+    persist(); state.payForm = false; state.msgFor = null; render(); toast(t('saved'));
+  },
+  rmPay(el) { const inv = invOf(state.id); inv.payments = inv.payments.filter(p => p.id !== el.dataset.id); persist(); state.msgFor = null; render(); },
+  wa() {
+    const inv = invOf(state.id), cl = clientOf(inv.clientId);
+    window.open('https://wa.me/' + waNumber(cl && cl.phone) + '?text=' + encodeURIComponent(invText(inv)), '_blank', 'noopener');
+  },
+  copyInv() { copyText(invText(invOf(state.id)), t('copied')); },
+  print() { window.print(); },
+  sharePdf() { const ta = q('#msg-ta'); doShare(invOf(state.id), null, ta ? ta.value : null); },
+  msgKind(el) { state.msgKind = el.dataset.k; state.msgText = null; render(); },
+  msgOnly() { const ta = q('#msg-ta'); waFallback(invOf(state.id), null, ta ? ta.value : null); },
+  copyMsg() { const ta = q('#msg-ta'); copyText(ta ? ta.value : '', t('msgCopied')); },
+  sharePdfReceipt() { doShare(invOf(state.id), state.payId); },
+  receipt(el) { state.payId = el.dataset.id; go('receipt'); },
+  backToInv() { go('view'); },
+  copyReceipt() { copyText(receiptText(invOf(state.id), state.payId), t('rcpCopied')); },
+  convert() { const inv = invOf(state.id); inv.docType = 'invoice'; inv.number = nextNumber(inv.date, 'invoice'); inv.date = todayISO(); inv.due = addDays(inv.date, db.settings.dueDays || 14); persist(); render(); toast(t('saved')); },
+  addClient() { state.returnTo = null; state.draft = { isNew:true, id:uid(), name:'', contact:'', phone:'', email:'', addr:'', niu:'' }; go('client'); },
+  editClient(el) { state.returnTo = null; state.draft = Object.assign({ isNew:false }, clientOf(el.dataset.id)); go('client'); },
+  cancelClient() { if (state.returnTo === 'edit') { state.draft = state.clientBack; state.returnTo = null; go('edit'); } else go('clients'); },
+  saveClient() {
+    const c = state.draft; if (!c.name.trim()) { q('#err').textContent = t('errName'); return; }
+    const rec = { id:c.id, name:c.name.trim(), contact:(c.contact || '').trim(), phone:c.phone.trim(), email:c.email.trim(), addr:c.addr.trim(), niu:c.niu.trim() };
+    const at = db.clients.findIndex(x => x.id === rec.id); if (at >= 0) db.clients[at] = rec; else db.clients.push(rec);
+    persist();
+    if (state.returnTo === 'edit') { state.draft = state.clientBack; state.draft.clientId = rec.id; state.returnTo = null; go('edit'); } else go('clients');
+  },
+  delClient() {
+    const c = state.draft;
+    if (db.invoices.some(i => i.clientId === c.id)) { q('#err').textContent = t('cHas'); return; }
+    if (!state.confirmDel) { state.confirmDel = true; render(); return; }
+    db.clients = db.clients.filter(x => x.id !== c.id); persist(); go('clients');
+  },
+  copyBackup() { copyText(JSON.stringify(db), t('copied')); },
+  saveBackupFile() {
+    const blob = new Blob([JSON.stringify(db)], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'amk-factures-' + todayISO() + '.json';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+  },
+  restore() {
+    try { const d = JSON.parse(q('#restore-ta').value); if (!d || !Array.isArray(d.invoices) || !Array.isArray(d.clients) || !d.settings) throw 0; d.services = d.services || {}; db = d; persist(); render(); toast(t('restored')); }
+    catch (e) { toast(t('badBackup')); }
+  }
+};
+document.addEventListener('click', e => {
+  if (e.target.closest('[data-stop]') && !e.target.closest('button')) return;
+  const el = e.target.closest('[data-a]'); if (!el) return;
+  const fn = actions[el.dataset.a]; if (fn) fn(el, e);
+});
+document.addEventListener('input', e => {
+  const el = e.target;
+  if (el.dataset.f) { state.draft[el.dataset.f] = el.value; if (['discount','deposit'].includes(el.dataset.f)) updateTotals(); }
+  else if (el.dataset.i !== undefined) { state.draft.items[+el.dataset.i][el.dataset.k] = el.value; updateTotals(); }
+  else if (el.id === 'msg-ta') state.msgText = el.value;
+  else if (el.dataset.cf) state.draft[el.dataset.cf] = el.value;
+  else if (el.dataset.sf) { const k = el.dataset.sf; db.settings[k] = k === 'dueDays' ? (parseInt(el.value, 10) || 0) : el.value; persist(); }
+});
+document.addEventListener('change', e => {
+  const el = e.target;
+  if (el.dataset.f === 'lang') { state.draft.lang = el.value; updateTotals(); }
+  if (el.dataset.f === 'date') { state.draft.due = addDays(el.value || todayISO(), db.settings.dueDays || 14); if (state.draft.isNew) state.draft.number = nextNumber(el.value, state.draft.docType); render(); }
+  if (el.dataset.f === 'docType') { state.draft.docType = el.value; if (state.draft.isNew) state.draft.number = nextNumber(state.draft.date, el.value); render(); }
+  if (el.dataset.sf === 'lang') render();
+  if (el.dataset.k === 'desc' && db.services[el.value] !== undefined) {
+    const it = state.draft.items[+el.dataset.i]; if (!num(it.price)) { it.price = db.services[el.value]; render(); }
+  }
+});
+render();
+if (IS_PWA && 'serviceWorker' in navigator && location.protocol.startsWith('http')) { try { navigator.serviceWorker.register('sw.js'); } catch (e) {} }
+</script>
+</body>
+</html>

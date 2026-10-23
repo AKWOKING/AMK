@@ -1,5 +1,16 @@
 # Message « avis Google » — pour M. Domche (draft 21/10/2026, approuvé King, à envoyer par WhatsApp)
 
+> ## ✅ RÉSULTAT, 23/10/2026 — l'action a marché
+> **4 avis, note 5,0 ★★★★★, fiche « Complete info ».** L'objectif envoyé était « 5 avis d'ici samedi » ;
+> on est à 4 le jeudi, sans un franc dépensé. **Trois avis ne sont pas encore lus** (« 3 new customer
+> reviews » dans le tableau de bord). Voir `clients/dm-optic/content/month1/w2/ANALYSE-POST-1-2026-10-23.md` §2⑥.
+>
+> **La question ouverte, et elle est pour King** : *qui répond ?* Proposition écrite dans
+> `knowledge/MARKETING-OPTICAL` **§11** — **lui répond sur Google**, **nous** sur les commentaires Facebook
+> s'il ouvre la page, **lui seul** sur les messages privés et les 1–2 étoiles.
+> **On ne rédige pas ses réponses** (ruling King 23/10) : on lui apprend le geste, il écrit ses mots.
+> Mode d'emploi envoyé : `launch/GUIDE-REPONDRE-AVIS-2026-10-23.md`.
+
 > **ENVOI : mercredi 21/10/2026 à 09:00 (heure de Douala).** Décidé par King le 21/10 : à 2h du matin,
 > M. Domche dort — on n'envoie pas un message d'action à cette heure-là. Rien ne part avant 9h.
 
