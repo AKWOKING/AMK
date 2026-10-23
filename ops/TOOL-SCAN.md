@@ -655,3 +655,40 @@ modèle opaque ne peut pas offrir sur ces photos.
   donc pas testé dans la sandbox, et jamais présenté comme testé.
 - **Ce que l'outil ne fait pas et qu'on ne lui demande pas :** générer des plans. Un plan inventé ne
   remplace pas un plan tourné.
+
+---
+
+## 23/10 — **ui-ux-pro-max** (amont mis à jour) — verdict : **pursue, périmètre élargi**
+
+- **Ce qui change :** l'amont ne livre plus **un** skill mais **six** (`design`, `design-system`,
+  `brand`, `ui-styling`, `banner-design`, `slides`). Le pin passe de `56ea9cf` à **`d14efff`** et
+  l'installeur lie désormais les six — un skill non lié est un skill qui n'existe pas.
+- **Coût :** nul (markdown + recherche Python stdlib, hors réseau, hors dépôt).
+- **Verdict :** pursue. `design` et `design-system` servent aux pages publiques ; `brand` et
+  `banner-design` aux visuels sociaux ; `slides` seulement si King demande un deck (pas de porte
+  d'abonnement, jamais en livrable client sans accord).
+
+## 23/10 — **awesome-claude-design** (VoltAgent, MIT) — verdict : **référence, pas outil**
+
+- **Ce qu'il contient réellement :** un **README** — un index vers 68 `DESIGN.md` hébergés ailleurs.
+  Les fichiers ne sont pas dans le dépôt et ne sont pas accessibles sans réseau.
+- **Décision :** installé comme **index consultable** (`~/.agents/skills/awesome-claude-design/`), pas
+  comme outil. Ce qu'on en garde : **nommer une direction** avant de dessiner. Ce qu'on n'en fait pas :
+  copier une palette ou une typographie sur un client.
+- **Verdict :** pursue comme référence, 0 FCFA, aucun code exécuté.
+
+## 23/10 — **design-md-chrome** (bergside, MIT) — verdict : **pursue, installé sans l'extension**
+
+- **(a) Problème :** on décrivait nos systèmes de design de mémoire, et une refonte dérive en trois pages.
+- **(b) Use case AMK nommé :** codifier le système d'une page — la nôtre (contrôle de cohérence avant
+  refonte) ou une référence (extraire la **direction**, pas la copie).
+- **(c) Coût :** 0 FCFA. L'extension n'est pas installée : on réutilise son `content-script.js` et ses
+  générateurs dans le Chromium embarqué (`tools/design-md/extract.mjs`, amont intact).
+- **(d) Effort + verdict :** 1 h → **pursue**. Preuve du jour : le site DM rend un `DESIGN.md` de
+  72 lignes **validé 14/14** (IBM Plex Sans 17 px, `#0c1524`, rayons 14/20/999, motion 160–380 ms).
+  Limite dite : l'audience et la surface sont **devinées** par le générateur (« e-commerce ») et se
+  réécrivent à la main ; il relève, il ne juge pas — le contraste reste l'affaire de `shot.py`.
+
+## 23/10 — **design-motion-principles** (kylezantos, MIT) — revérifié
+
+- Pin inchangé (`4a9ca87`), réinstallation rejouée : `OK`. Aucune action.

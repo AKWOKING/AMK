@@ -5,7 +5,7 @@
 # La recherche est un script Python stdlib local (aucun réseau, aucun paquet installé).
 set -euo pipefail
 
-PIN="56ea9cf174ed86786187daa9de0e6247cb0747e4"
+PIN="d14efff8ed1faa4187f004f79926f428c8074ec7"
 DEST="$HOME/.ui-ux-pro-max-skill"
 
 if [ -d "$DEST/.git" ]; then
@@ -16,8 +16,13 @@ fi
 git -C "$DEST" checkout -q "$PIN"
 
 mkdir -p "$HOME/.claude/skills" "$HOME/.agents/skills"
-ln -sfn "$DEST/.claude/skills/ui-ux-pro-max" "$HOME/.claude/skills/ui-ux-pro-max"
-ln -sfn "$DEST/.claude/skills/ui-ux-pro-max" "$HOME/.agents/skills/ui-ux-pro-max"
+# 23/10 : l'amont ne livre plus un seul skill mais six (design, design-system, brand, ui-styling,
+# banner-design, slides). On les lie tous — un skill non lié est un skill qui n'existe pas.
+for s in "$DEST"/.claude/skills/*/; do
+  name="$(basename "$s")"
+  ln -sfn "$s" "$HOME/.claude/skills/$name"
+  ln -sfn "$s" "$HOME/.agents/skills/$name"
+done
 
 # Preuve par appel réel (recherche locale, hors projet : requête générique)
 python3 "$HOME/.agents/skills/ui-ux-pro-max/scripts/search.py" "accessible form validation" --domain ux -n 1 >/dev/null

@@ -170,6 +170,7 @@ Quand une règle change ou qu'un ruling est donné, cette table dit quels fichie
 | **Brag de livraison à chaque site prêt (ruling King 19/10, §1f②)** | `PRE-FLIGHT.md` §1f + §1b · `tools/brag/README.md` · `tools/qa/audit_video_motion.py` (portique) · `clients/<client>/build-notes.md` (chemin du brouillon) · `hosting/previews/README.md` (deploy gate) |
 | **Déploiement Vercel DM Optique après chaque changement du site (ruling King 20/10, §1f③)** | `PRE-FLIGHT.md` §1f · `clients/dm-optic/build-notes.md` (id + état du déploiement) · `hosting/previews/dmoptic/` (racine du projet Vercel) · `sales/Activity-Log.md` |
 | **Design/build/revue = pro-design en porte, taste-skill en direction (ruling King 20/10, complété 23/10 — §1f⑪)** : `tools/pro-design/README.md` + `bash tools/pro-design/install.sh` (la boucle 1440/390, deux tours max) ; taste-skill seulement quand la marque n'a pas encore de direction | `PRE-FLIGHT.md` §1f + §1b · `tools/taste-skill/README.md` · skill installé `~/.agents/skills/design-taste-frontend/SKILL.md` (hors dépôt) · `AMK-DESIGN-SKILLS.md` (lois maison, gagnent en cas de conflit) · `clients/<client>/build-notes.md` + `inspiration.md` (direction tirée, redraws, scores) |
+| **Système de design à codifier = design-md (ruling King 23/10, §1f⑬)** | `PRE-FLIGHT.md` §1f + §1g · `tools/design-md/README.md` + `bash tools/design-md/install.sh` · `python3 tools/design-md/extract.py <page> --name "…"` · `shot.py` (le jugement) · `ops/TOOL-SCAN.md` |
 | **Montage vidéo de rushes réels = MoneyPrinterTurbo en assemblage (ruling King 23/10, §1f⑫)** | `PRE-FLIGHT.md` §1f + §1g · `tools/moneyprinter/README.md` + `bash tools/moneyprinter/install.sh` (épinglé `f063a2b`) · `bash tools/moneyprinter/assemble.sh --clips … --audio … --script …` (9:16 puis 16:9) · `tools/qa/audit_video_motion.py` (portique) · `ops/TOOL-SCAN.md` |
 | **Mouvement d'interface = design-motion-principles appliqué (ruling King 20/10, §1f⑤)** | `PRE-FLIGHT.md` §1f + §1b · `tools/design-motion-principles/README.md` · skill installé `~/.agents/skills/design-motion-principles/SKILL.md` (hors dépôt) · `AMK-DESIGN-SKILLS.md` (lois maison, gagnent en cas de conflit) · `clients/<client>/build-notes.md` (pondération des lentilles, findings motion) |
 | **Audit/vérification = skills ECC sélectifs en appui (ruling King 20/10, §1f⑥)** | `PRE-FLIGHT.md` §1f + §1b · `tools/ecc/README.md` · skills installés `~/.agents/skills/{accessibility,production-audit,verification-loop,security-review,seo,click-path-audit}/SKILL.md` (hors dépôt) · `tools/qa/` (les portiques maison font foi) · `clients/<client>/build-notes.md` (score, preuves, blockers) |
@@ -493,6 +494,25 @@ attrapé* — c'est le « hand-off » du skill, et ça va dans le bloc Audit de 
   usage). Dans la sandbox, le réseau est fermé : la chaîne sous-titres n'est **pas** testée, et ne se
   présente jamais comme telle. Sur la machine de King, `--subtitles` fonctionne.
 
+### ⑬ Avant une refonte, ou après avoir tiré une direction → **design-md relève le système** (ruling King 23/10)
+
+> *King 23/10 : « audit, analyze, install test [ui-ux-pro-max, awesome-claude-design, design-md-chrome,
+> design-motion-principles] then integrate into workflow ».*
+
+- **Déclencheur :** on va refondre une page, ou on veut vérifier qu'une page respecte **un seul**
+  système. Aussi : quand une référence plaît (catalogue `awesome-claude-design`) et qu'on veut savoir
+  **ce qu'elle fait exactement** avant de s'en inspirer.
+- **Procédure :** `bash tools/design-md/install.sh` puis
+  `python3 tools/design-md/extract.py <dossier|fichier|URL> --name "<Marque>"` → `DESIGN.md` + `SKILL.md`
+  validés. Le dossier est servi en HTTP local si c'est un fichier du dépôt.
+- **Ce que le document vaut, et ce qu'il ne vaut pas :** les **jetons** (tailles, couleurs, rayons,
+  durées) sont lus dans le navigateur, donc justes ; la **prose** (audience, surface) est devinée par
+  le générateur amont et se réécrit. Il **relève**, il ne juge pas : le contraste reste l'affaire de
+  `tools/qa/shot.py`, la livraison celle d'`audit_delivery.py`.
+- **Hiérarchie :** `pro-design` construit (marque → motifs → mouvement → boucle 1440/390), `design-md`
+  relève après coup. Une référence extérieure ne remplace jamais la marque du client : on prend la
+  **direction**, jamais la palette.
+
 ## 1g · Marketing, marque et création de contenu (ruling King 22/10)
 
 > *King 22/10 : « make sure you have written everything you just learned in the repo, in preflight too under marketing, content creation and other relevant topics ». *
@@ -510,6 +530,7 @@ deux bases de connaissance, **avant** d'écrire une ligne de script ou de lancer
 | La tâche | D'abord | Ensuite |
 |---|---|---|
 | positionner une marque, écrire un statement | `knowledge/MARKETING-OPTICAL…` §6 | `clients/<client>/brand/BRAND-STRATEGY-*.md` |
+| **codifier un système de design (le nôtre ou une référence)** | **`tools/design-md/README.md`** (§1f⑬) — il relève, il ne juge pas | `python3 tools/design-md/extract.py <page>` puis relecture à la main de l'audience et de la surface · `tools/qa/shot.py` pour le contraste |
 | **monter une vidéo à partir de rushes réels** | **`tools/moneyprinter/README.md`** (§1f⑫ : assembler, jamais générer) | `bash tools/moneyprinter/assemble.sh` (9:16 puis 16:9) · `tools/qa/audit_video_motion.py` · les légendes écrites dans le script du tournage |
 | **construire ou redessiner une page** (site, landing, page de vente) | **`tools/pro-design/README.md`** + `bash tools/pro-design/install.sh` → skill **`pro-design`** (§1f⑪ : marque, motifs, mouvement, boucle 1440/390, deux tours max) | **`python3 tools/qa/shot.py <page>`** (le vrai navigateur, §1f⑪) · `AMK-DESIGN-SKILLS.md` (lois maison, elles gagnent) · les portiques `tools/qa/` avant publication |
 | **créer, réparer ou optimiser une page sociale** (Facebook, Instagram, TikTok) | `brand/AMK-PRESENCE-2026-10-22.md` **§14** (l'audit des trois profils réels : les sept défauts, la copie exacte Instagram/TikTok, la règle des identifiants) + **§13** (identité des trois comptes, fusion de pages, lien page ↔ Instagram) + §12 (les onze champs Facebook) + §10 (protocole captures) · `sales/research/2026-W43-techniques.md` §15 (audience vs communauté, cadence, mesure) | le §3 de PRESENCE uniquement pour les visuels déjà validés — l'arbitrage du nom est au §12.0 ; **une promesse de délai ne va jamais dans une bio sans sa condition** (§14.5) |

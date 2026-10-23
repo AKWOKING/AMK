@@ -32,7 +32,13 @@ bash tools/moneyprinter/assemble.sh \
 ```
 
 Sortie : un `.mp4` coupé à la durée de l'audio, dans `--out`. Relancer avec `--aspect 16:9` pour le
-deuxième montage. `--subtitles` ajoute les sous-titres (télécharge le modèle Whisper).
+deuxième montage.
+
+| Option | Ce qu'elle fait | Réseau ? |
+|---|---|---|
+| `--subtitles` | **sous-titres sans Whisper** : le script connu est découpé au temps (`srt.py`) puis incrusté par ffmpeg, police du projet | **non** |
+| `--whisper` | sous-titres par Whisper (chemin natif de MPT) | oui — modèle au 1er usage |
+| `--music none\|random` | musique de fond depuis `resource/songs` (29 titres) | non |
 
 **Ce qui reste hors du dépôt :** la source (733 Mo, dont 198 Mo de polices et de musiques) et le venv
 (1,2 Go) vivent dans `/tmp/amk-moneyprinter`, comme Chromium dans `/tmp/amk-video`. Un dépôt n'est pas
@@ -49,6 +55,20 @@ un disque dur.
 | assemblage réel | 4 plans 1080×1920 + un audio de 20 s → **`final-1.mp4` 20,0 s · 1080×1920 · 30 i/s · avec son**, en **38 s** |
 | deux formats | 9:16 (1,1 Mo) et 16:9 (562 Ko) depuis le même dossier de rushes |
 | ce qui n'a pas pu être testé | voix edge-tts, banques d'images, sous-titres Whisper : **tous demandent le réseau**, fermé ici |
+
+## 5 · Ce qui manquait pour le faire tourner « efficacement », et comment c'est compensé (23/10)
+
+| Ce qui manque à l'outil brut | Pourquoi c'est bloquant | La compensation |
+|---|---|---|
+| un **script** (il appelle un LLM) | sans clé Moonshot/OpenAI, la tâche échoue à la première étape | `--script` **obligatoire** : le texte est le nôtre, écrit et relu |
+| une **voix** (edge-tts, réseau) | voix de synthèse sur un sujet de santé = perte de confiance | voix **enregistrée** au téléphone ; `--custom-audio-file` |
+| des **sous-titres** (Whisper ~150 Mo à 3 Go) | modèle à télécharger, et une transcription d'un texte qu'on connaît déjà | `srt.py` : découpage déterministe du script au temps de l'audio, incrusté par ffmpeg — **0 téléchargement** |
+| des **plans** (banques d'images, clés payantes) | le décor doit exister | `--video-source local` forcé : nos rushes, copiés dans `storage/local_videos` |
+| une **musique** | `bgm_type` par défaut peut chercher ailleurs | `--music` pointe les 29 titres embarqués, ou `none` |
+| la **durée** : l'outil boucle si la vidéo est plus courte que l'audio | une boucle se voit | on tourne large (3 s de respiration) ; l'outil le dit dans son journal (`looping clips`) |
+
+**Le résultat mesuré le 23/10 :** 4 plans + 20 s d'audio → 20 s montées en 38 s, puis sous-titres
+incrustés en ~5 s. **Aucun appel réseau** sur ce chemin.
 
 **La leçon de l'installation :** le premier essai a échoué — sans `--video-script`, l'outil appelle un
 LLM et s'arrête faute de clé. `assemble.sh` refuse donc maintenant de démarrer sans script. Un outil
