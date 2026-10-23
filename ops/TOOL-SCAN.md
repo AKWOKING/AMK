@@ -582,11 +582,16 @@ l'exige, jamais avant · ChatGPT/Gemini free = déjà remplacés par l'orchestra
 | `AgriciDaniel/claude-seo` v2.5.0 (19 729 ★) | MIT | `~/.claude/skills/seo` + 19 agents, miroir `~/.agents/skills` | **pursue** | la partie « audit SEO large » qu'aucun de nos six scripts ne couvre (E-E-A-T, hreflang, backlinks, rapports) |
 | `zubair-trabzada/geo-seo-claude` (11 186 ★) | MIT | `~/.claude/skills/geo` + venv isolé | **pursue** | la lecture « crawlers IA / citabilité / llms.txt » — le trou relevé ce matin sur le site AMK |
 | `nateherkai/roast-room` (1 004 ★) | **NOASSERTION** | `~/.claude/skills/roast-room` + agents | **hold** | un second avis structuré sur les décisions chères ; **licence à lire avant tout usage hors maison** → usage interne seulement |
-| `mysticaltech/marketingskills` (362 ★) | MIT | 25 skills dans `~/.claude/skills`, miroir | **pursue, avec réserve** | des procédures écrites (copy, pricing, launch, analytics) là où nous improvisions. **Réserve** : le fork est figé au 10/02/2026 et porte 25 skills ; l'amont `coreyhaines31` en porte 52 au 22/10/2026 |
+| `mysticaltech/marketingskills` (362 ★) → **remplacé** | MIT | — | **abandonné le 23/10** | fork figé au 10/02/2026, 25 skills. Ruling King du 23/10 : basculer sur l'amont |
+| `coreyhaines31/marketingskills` (56 063 ★) | MIT | 52 skills dans `~/.claude/skills`, miroir vérifié 52/52 | **pursue** | procédures (copy, pricing, launch, analytics, `ai-seo`, `schema`, `seo-audit`, `cold-email`) là où nous improvisions. Épinglé `e85f3cb` (22/10/2026) |
 
 **Coût total** : 0 FCFA ; ~1 Go de disque **hors dépôt**, dont deux venvs Python (exclus des
 sauvegardes). Aucun service, aucune clé, aucun compte. Chromium n'est installé nulle part (impossible
 ici) : les fonctions « page rendue » resteront indisponibles et c'est écrit dans les README.
 
-**Décision en attente de King** : basculer `marketingskills` sur l'amont (deux lignes dans
-`install.sh`) — 27 skills de plus, dont `ai-seo`, `cold-email`, `link-building`.
+**Décision prise (King, 23/10/2026)** : `marketingskills` est passé sur l'amont `coreyhaines31`
+— **52 skills** au lieu de 25, épinglé `e85f3cbc2e4a79bf33b2a12e9bdd9087d414735b`. Le fork
+`mysticaltech` est abandonné. **Piège rencontré** : le clone existant venait du fork ; `git fetch`
+ramenait l'ancien historique (`not our ref` sur le pin de l'amont) et la bascule échouait en laissant
+les 25 anciens skills. `install.sh` réécrit maintenant l'origine avant de chercher le pin, et vérifie
+52 skills au lieu de 25.

@@ -1,17 +1,21 @@
 #!/usr/bin/env bash
-# marketingskills (mysticaltech/marketingskills) — fork MIT de coreyhaines31, épinglé.
-# Épinglé 9ee486c2002f3edac53c4481315e5acb6d42f7a1 (10/02/2026) — c'est le dernier commit du fork.
-# ⚠ Le dépôt amont (coreyhaines31/marketingskills) est à jour (22/10/2026) et porte 52 skills ;
-# ce fork en porte 25. Installer l'amont = changer UPSTREAM/BRANCH ci-dessous, avec l'accord de King.
-# Portée : copie des 25 dossiers de skills dans ~/.claude/skills + miroir ~/.agents/skills.
+# marketingskills — AMONT coreyhaines31/marketingskills (MIT), épinglé.
+# Ruling King du 23/10/2026 : « Basculer marketingskills sur l'amont (52 skills au lieu de 25) ».
+# Épinglé e85f3cbc2e4a79bf33b2a12e9bdd9087d414735b (branche main, 22/10/2026) — 52 skills.
+# Historique : le fork mysticaltech/marketingskills (25 skills, figé le 10/02/2026) a été installé le
+# 23/10 sur demande, puis abandonné sur ce ruling. Ne pas y revenir sans un nouveau ruling.
+# Portée : copie des dossiers de skills dans ~/.claude/skills + miroir ~/.agents/skills.
 # Aucun script de cycle de vie, aucun sudo, aucun hook.
 set -euo pipefail
-REPO="https://github.com/mysticaltech/marketingskills.git"
-PIN="9ee486c2002f3edac53c4481315e5acb6d42f7a1"
+REPO="https://github.com/coreyhaines31/marketingskills.git"
+PIN="e85f3cbc2e4a79bf33b2a12e9bdd9087d414735b"
 DEST="$HOME/.marketingskills"
 
 if [ -d "$DEST/.git" ]; then
-  git -C "$DEST" fetch -q origin || true
+  # le clone existant peut venir d'un autre dépôt (le fork de février 2026) : on réécrit l'origine,
+  # sinon `git fetch` ramène l'ancien historique et le pin de l'amont reste introuvable
+  git -C "$DEST" remote set-url origin "$REPO"
+  git -C "$DEST" fetch -q origin '+refs/heads/*:refs/remotes/origin/*'
 else
   git clone -q --filter=blob:none "$REPO" "$DEST"
 fi
@@ -26,5 +30,5 @@ for d in "$DEST"/skills/*/; do
   ln -sfn "$HOME/.claude/skills/$name" "$HOME/.agents/skills/$name"
   n=$((n+1))
 done
-test "$n" -ge 25
-echo "marketingskills OK (pin $PIN) → $n skills dans ~/.claude/skills + miroir ~/.agents/skills"
+test "$n" -ge 52
+echo "marketingskills OK — amont coreyhaines31 (pin $PIN) → $n skills dans ~/.claude/skills + miroir ~/.agents/skills"
