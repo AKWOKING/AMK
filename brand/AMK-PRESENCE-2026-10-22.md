@@ -1107,3 +1107,94 @@ viendra.
   profil principale, jamais un post ni un raccourcisseur).
 - **Non vérifié d'ici** : si le champ accepte `profile.php?id=…` (aucune source ne le dit ; **seul ton
   écran le dira**), et si la section existe sur une fiche camerounaise.
+
+---
+
+## 16 · Les liens sociaux dans le site, et la fiche Google (23/10, tour 61)
+
+```
+Décision King  « add the links of the social media on the website but I do not want you hiding the
+                links behind words, I want it behind their respective logos »
+État           fait sur les trois pages réelles · fiche Google : profils sociaux ajoutés par King
+```
+
+### 16.1 · Ce qui est en ligne dans le code (3 pages, pas 12)
+
+| Page | État |
+|---|---|
+| `index.html` | bloc social + CSS + `sameAs` ✅ |
+| `creation-site-web-ecole-cameroun.html` | ✅ |
+| `creation-site-web-clinique-cameroun.html` | ✅ |
+| **9 autres fichiers** (`sample-*`, `clinic-bonaberi`, `mitoc`, `mockup-hero`, `google…`) | **non touchés, volontairement** : ce sont des **concepts clients** (nom, adresse, téléphone d'un prospect ou d'un établissement fictif). Y poser nos icônes mélangerait deux marques — c'est la même règle que « le site ne montre que du vrai ». |
+
+**Ce qui a été posé, exactement** : trois pastilles rondes de 44 px (40 px sous 420 px de large), contour
+1 px, glyphe 20 px qui prend la couleur du lien ; survol et focus clavier en ambre ; `prefers-reduced-motion`
+respecté. Liens en `target="_blank" rel="noopener"`. **Aucun mot visible** : le logo *est* le lien, comme
+demandé.
+
+**Accessibilité, le point qu'un logo seul casse** : un lien sans texte est un lien « sans nom » pour un
+lecteur d'écran (échec WCAG 4.1.2). Chaque lien porte donc un `<span>` masqué (`AMK sur Facebook` /
+`AMK on Facebook`) qui **suit la langue de la page** comme le reste du site, plus un `title` au survol.
+Vérifié : `audit_a11y --strict` **0 faute** sur les trois pages.
+
+**Référencement** : les trois adresses entrent aussi dans le `sameAs` du JSON-LD — c'est ce que Google lit
+pour relier la marque à ses comptes. Un `sameAs` sans les réseaux, c'est une marque sans empreinte.
+
+**Outil** : `python3 tools/site/add_amk_social.py` (idempotent, `--check` pour l'état). Les trois tracés
+viennent de **Simple Icons 15.0.0** (npm, **CC0 1.0**) : ce sont les logos officiels, pas des dessins
+approximatifs. Une seule source pour les adresses, en tête du fichier.
+
+> **Ce qui a failli être livré faux, et comment ça a été vu** : le premier rendu de contrôle sortait le
+> logo Instagram en **carré plein** — `tools/qa/render_svg.py` remplit chaque sous-chemin séparément et
+> bouche les trous. Nouvel outil écrit pour l'occasion : `tools/qa/raster_svg_path.py` (balayage, règle
+> **nonzero**, comme un navigateur). Sans lui, on aurait « vérifié » un logo qui n'était pas le bon.
+
+### 16.2 · La fiche Google : ce qui est fait, et les deux choses qui restent
+
+**Fait par King** : Facebook ajouté dans *Profils sociaux*. La capture du 23/10 montre **TikTok + Facebook**.
+
+**Deux manques, visibles sur la même capture** :
+
+1. **Instagram n'y est pas.** Il peut être ajouté dans la même section : `https://www.instagram.com/amkweb.cm`.
+2. **La description « From AMK » n'est pas de nous.** Google l'a **générée** à partir du web, et elle
+   contient **trois choses que nos propres règles interdisent** :
+
+| Ce que la fiche affiche | Pourquoi c'est un problème |
+|---|---|
+| « a **premier** web development and digital solutions agency » | superlatif **non prouvé** (§11b) **et** le slogan « digital solutions » retiré du site |
+| « a free initial preview **within 24 hours** » | un **délai sans sa condition** — le site dit « sous 24 heures **après validation du brief** » |
+| « domain registration and **hosting services** » | nous vendons un site **qui appartient au client** ; nous ne nous présentons pas comme un hébergeur |
+
+**Correctif** : remplacer la description par celle du **§16.3** (659 / 750 caractères) dans
+*Modifier le profil → À propos*. Google laisse le propriétaire éditer ce champ ; la version générée ne
+revient pas ensuite.
+
+### 16.3 · La description de la fiche Google, prête à coller (659 / 750)
+
+```
+AMK conçoit des sites web bilingues français/anglais pour les écoles privées, cliniques, laboratoires et
+opticiens du Cameroun. Depuis Douala, nous servons Yaoundé, Buea, Limbé, Bafoussam et Bamenda.
+
+Vous nous dites ce que votre établissement fait et à qui il s'adresse ; nous vous envoyons un aperçu de
+votre page d'accueil sur WhatsApp, gratuitement ; vous le corrigez ; le site est mis en ligne dès votre
+validation. Le site vous appartient : nom de domaine, fichiers et hébergement sont à votre nom.
+
+Chaque page existe en français et en anglais, pas un bouton de traduction. Vos visiteurs vous écrivent sur
+WhatsApp, pas dans un formulaire qu'on oublie.
+```
+
+Aucun prix, aucun délai, aucun nombre de clients, aucun superlatif. Les trois villes secondaires citées
+sont celles du `sameAs` du site et de la bio Facebook — la même liste partout.
+
+### 16.4 · Après ce tour : ce qui reste ouvert sur la présence
+
+| # | Élément | État |
+|---|---|---|
+| 1 | Nom de la page Facebook | **figé** (ruling du 23/10, `AMK-Web Development & Digital Solutions`) |
+| 2 | Nom d'utilisateur Facebook | absent — le lien numérique fait le travail ; on retentera après quelques posts |
+| 3 | Bio / nom Instagram et TikTok | ❌ **toujours l'anglais seul et l'ancien nom** (§14.2, prêt à coller) |
+| 4 | Couverture Facebook | ❌ aucune sur les captures ; `cover-1640x624.png` est prêt |
+| 5 | Premier post | ❌ 0 post |
+| 6 | Liens sociaux du site | ✅ **fait ce soir** |
+| 7 | Profils sociaux de la fiche Google | partiel : TikTok + Facebook ; **Instagram manque** ; description à remplacer |
+| 8 | Déploiement | **King redéploie** pour servir les trois pages modifiées + la nouvelle `og-cover.jpg` |

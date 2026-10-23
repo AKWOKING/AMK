@@ -630,6 +630,13 @@ Research finding: output truncation is a **deliberate RLHF brevity bias, not a d
 - **Bottom strip:** copyright · AMK concept/preview disclaimer · privacy note — small, low-contrast (legal *fades*, hierarchy [19]) + a **back-to-top** link [19].
 - Mobile order: brand → CTA → contact → nav → strip (action before index). Desktop: 4 columns with column titles so the eye orients instantly [19].
 
+**20.2b — Liens sociaux derrière les logos (ruling King 23/10).** Les icônes de réseaux sociaux se posent **seules**, jamais derrière un mot : le visiteur doit reconnaître la plateforme sans lire. Trois règles non négociables :
+1. **Nom accessible obligatoire** — `<span>` masqué (`clip: rect(0 0 0 0)`), texte qui suit la langue de la page, plus un `title` (sans lui, échec WCAG 4.1.2 : « lien sans nom »).
+2. **Tracés officiels, jamais redessinés** — Simple Icons (CC0) ou le kit de la marque. Un logo approximatif n'est plus le logo.
+3. **Cible de 44 × 44 px minimum**, `:focus-visible` visible, `rel="noopener"`, et `prefers-reduced-motion` respecté. Mettre aussi les adresses dans le `sameAs` du JSON-LD (c'est ce que Google lit).
+
+Outils : `tools/site/add_amk_social.py` (pose, idempotent) · `tools/qa/raster_svg_path.py` (voir un tracé avant livraison — `render_svg.py` bouche les trous et transforme le logo Instagram en carré plein).
+
 ### 20.3 Space & hierarchy [19]
 - The footer is a **designed screen**, never leftover: generous negative space, and **one scale contrast** — a large brand/wordmark (or one large element), a medium one (photo/motif), small body/legal type.
 - Negative space is the **canvas** where personality goes [19] — but §3 still governs: no decorative versions, no fake live counters, no ghost chrome.

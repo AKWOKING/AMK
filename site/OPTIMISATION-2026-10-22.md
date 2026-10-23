@@ -237,10 +237,12 @@ Google d'AMK elle-même, avec des captures de Search Console — la seule preuve
    montrer uniquement par lien direct — ou les garder indexables en rendant le bandeau « démo » plus explicite
    pour un visiteur qui arrive de Google. *Mon avis : `noindex` sur les quatre, et le sitemap ne garde que
    l'accueil et les deux pages métier.*
-2. **Nos liens sociaux dans le pied de page** (Instagram / Facebook / TikTok) : aucun des 11 fichiers n'en porte.
-   La règle §20.2 les demande ; je ne les ai pas ajoutés parce que la page Facebook **n'est pas vérifiée**
-   (403) et qu'un lien mort dans un pied de page coûte plus qu'il ne rapporte. **Dis-moi quand `amkweb` est
-   vérifiée, j'ajoute les trois en dix minutes.**
+2. ~~**Nos liens sociaux dans le pied de page** (Instagram / Facebook / TikTok)~~ — **fait le 23/10, tour 61.**
+   Les trois pastilles (logos seuls, pas de texte, nom accessible au lecteur d'écran) sont posées sur les
+   **trois pages réelles** par `tools/site/add_amk_social.py`, avec les trois adresses dans le `sameAs` du
+   JSON-LD. Les neuf concepts (`sample-*`, `clinic-bonaberi`, `mitoc`) restent **sans** nos icônes : ce sont
+   les identités de clients fictifs ou prospects, et la règle « le site ne montre que du vrai » s'y applique.
+   Détail et arbitrages : `brand/AMK-PRESENCE-2026-10-22.md` §16.
 3. **La ligne de crédit « Site par AMK »** : présente sur les démos, absente des 3 pages réelles (§20.4). Sur
    notre propre site elle n'apporte rien ; sur les sites **clients**, c'est le lien entrant de la liste SEO §5.
    *Mon avis : ne rien mettre sur AMK, l'inscrire au contrat client.*
