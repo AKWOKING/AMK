@@ -134,3 +134,57 @@ fiche** — c'est le point qui pouvait bloquer, et il est levé.
   secours est attaché au compte Google**. Les deux se règlent en cinq minutes avec lui, pas dans le dépôt.
 - **Absent volontairement** : le mot de passe lui-même. Il se remplit **au moment de l'envoi**, dans
   WhatsApp, jamais dans ce fichier (dépôt public).
+
+---
+
+## Les deux messages, prêts à envoyer (23/10)
+
+> **Dans le chat, pas seulement dans le fichier** — King, 23/10. Recopiés ici tels quels, avec
+> `[à compléter]` à la place du mot de passe : le dépôt est public, le mot de passe se colle dans
+> WhatsApp, jamais dans un fichier versionné.
+
+### Message ① — Google
+
+```text
+Bonjour M. Domche. Voici comment répondre aux avis Google — trois minutes sur votre téléphone.
+
+1. Entrez dans le compte du cabinet.
+Ouvrez gmail.com (ou l'application Gmail). Si un autre compte est ouvert, déconnectez-le d'abord. Puis connectez-vous avec :
+dmoptiquesarl@gmail.com
+Mot de passe : [à compléter]
+
+2. Ouvrez votre fiche.
+Toujours sur le même téléphone, allez sur google.com et tapez : DM OPTIQUE SARL. Votre fiche apparaît avec les étoiles et le nombre d'avis.
+Si vous voyez écrit « Vous gérez cette fiche », vous êtes au bon endroit. Si ce texte n'apparaît pas, arrêtez-vous et dites-le-moi : le compte n'est pas le bon.
+
+3. Répondez.
+Sous le nom, appuyez sur « Avis » (ou sur le 4 à côté des étoiles). Sous un avis, appuyez sur « Répondre ». Vous écrivez, puis « Publier ».
+
+Deux choses seulement : remerciez d'abord en une phrase, et reprenez un mot de son avis à lui. Ne parlez jamais de la vue ou de la correction d'un patient dans une réponse publique, même en bien.
+
+Prenez les quatre d'affilée, ça va plus vite que d'y revenir.
+
+Une dernière chose : changez ce mot de passe après votre première connexion, et activez la double vérification avec le 656 122 239. Un mot de passe écrit dans une conversation reste dans la conversation.
+```
+
+### Message ② — Facebook
+
+```text
+Bonjour M. Domche. Pour Facebook, c'est le même compte que pour Google — pas besoin d'en créer un autre.
+
+1. Entrez dans le compte du cabinet.
+Ouvrez l'application Facebook, menu ☰ en haut à droite, descendez tout en bas, « Se déconnecter ». Puis « Se connecter » avec :
+dmoptiquesarl@gmail.com
+Mot de passe : [à compléter]
+
+2. Ouvrez la page, pas votre profil.
+Une fois connecté, appuyez sur votre photo en haut : « DM Optique SARL » doit apparaître dans la liste des pages. Appuyez dessus. Vous devez voir « Page » en haut, pas « Fil d'actualité ».
+
+3. Répondez aux avis de la page.
+Sous la photo de couverture, onglet « Avis ». S'il n'apparaît pas, les trois points ⋯ juste en dessous, puis Avis. Sous chaque avis, « Répondre ».
+
+4. Répondez aux commentaires.
+Ouvrez la publication (la photo des lunettes d'enfant par exemple). Sous le commentaire, « Répondre ». Vérifiez qu'au-dessus de votre message c'est bien « DM Optique SARL » qui s'affiche, et pas votre nom.
+
+Une seule règle : si quelqu'un se plaint, ne répondez pas tout de suite par écrit. Envoyez-moi le message, on l'appelle. Un client mécontent se calme au téléphone, jamais dans un fil public.
+```
