@@ -348,9 +348,10 @@ marchent, dans l'ordre :
 | # | Mécanique | Exemple |
 |---|---|---|
 | 1 | **nommer la personne à qui l'envoyer** | « montrez ça à quelqu'un qui éloigne son téléphone pour lire » |
-| 2 | **une question dont la réponse est un mot ou un chiffre** | « à quel âge avez-vous commencé à éloigner le journal ? » |
+| 2 | **une question dont la réponse est un mot ou un chiffre** | « depuis quand écartez-vous votre téléphone pour lire ? » |
 | 3 | **répondre à chaque commentaire dans l'heure** | une réponse relance la conversation et prévient le suivant |
 | 4 | **remercier nommément**, jamais « merci à tous » | « merci Madame, c'est noté pour la monture » |
+| 5 | **répondre à une question par une vidéo** (§5 sexies) | « la question de Sandrine » en ouverture |
 
 **Ce qu'on ne fait pas :** demander un like, un abonnement, ou « commentez un emoji ». Ça produit des
 commentaires vides, et un commentaire vide n'apprend rien à l'algorithme **ni à nous**.
@@ -359,6 +360,79 @@ commentaires vides, et un commentaire vide n'apprend rien à l'algorithme **ni �
 raisonnement (un partage met la vidéo devant un nouvel audience) et sur nos 0 partage constatés — **pas
 sur une étude**. On les applique parce qu'elles ne coûtent rien et qu'elles sont vraies ; on ne promet pas
 qu'elles doublent la portée. Le seuil du §6 de `ANALYSE-POST-1` le dira en deux vidéos.
+
+---
+
+## 5 quinquies · Le décor doit exister chez le spectateur (ruling King 23/10)
+
+> *King, 23/10, sur une vidéo qui commençait par un journal qu'on éloigne : « plus personne ne lit le
+> journal. Regarder le journal à la télé oui, mais acheter et lire un papier journal, je n'en vois même
+> pas autour de moi. »*
+
+**Ce n'était pas un détail de décor, c'était une erreur de méthode.** Le geste de la presbytie — écarter
+les bras pour lire — est juste ; **l'objet était faux**. J'avais pris la mise en scène d'un manuel
+occidental sans vérifier qu'elle existe encore ici.
+
+**La règle : tout objet filmé doit avoir été vu dans la journée par quelqu'un de Bonabéri.** Pas « dans
+un pays proche », pas « il y a dix ans » : **cette semaine, à Douala.**
+
+| Objet | Verdict |
+|---|---|
+| un téléphone tenu à bout de bras | ✅ tout le monde le fait, dix fois par jour |
+| un écran d'ordinateur à 40 cm | ⚠️ vrai pour les actifs, faux pour la moitié de l'audience mesurée |
+| un journal déplié | ⛔ a disparu |
+| une carte de visite, un flyer | ⛔ remplacés par le contact WhatsApp |
+| un rendez-vous noté dans un agenda papier | ⛔ rare |
+| une ordonnance, une monture, l'appareil de mesure | ✅ objets du métier, mais **jamais lisibles** (verrou données patient) |
+
+**Le test des trois secondes, avant de tourner :** montre l'objet à la première personne qui passe dans
+la boutique et demande **« tu as vu ça cette semaine ? »** Si la réponse hésite, l'objet sort du plan.
+
+**Corollaire pour l'écriture :** la même règle vaut pour les mots. « Presbytie » ne se dit pas ; « vous
+écartez votre téléphone pour lire » se dit. **Un mot que le spectateur n'emploie pas est un objet qu'il
+n'a pas vu.**
+
+---
+
+## 5 sexies · « Vous demandez, on répond » — la série qui fait commenter (ruling King 23/10)
+
+> *King, 23/10 : « on peut aussi encourager notre audience à nous poser des questions sur ce qu'ils
+> aimeraient savoir, puis on peut leur répondre par une autre vidéo et les taguer. »*
+
+**Oui — et c'est la seule mécanique qui produit trois choses à la fois :** des commentaires (qui poussent le
+post), **la matière des vidéos suivantes** (on ne devine plus les sujets, ils arrivent tout seuls), et un
+lien personnel avec ceux qui ont demandé.
+
+### Le cycle, en quatre gestes
+
+| # | Geste | Où | Quand |
+|---|---|---|---|
+| 1 | **on demande la question** — à l'écran dans les 2 dernières secondes, et en première ligne de légende : *« quelle question vous pose-t-on le plus souvent sur les yeux ? »* | vidéo + légende | en continu |
+| 2 | **on garde la question et le prénom** — capture d'écran, dossier `questions/` | interne | le jour même |
+| 3 | **on répond en vidéo** — la question à l'écran au début (*« la question de Sandrine »*), la réponse en 15 s | vidéo suivante | une par semaine |
+| 4 | **on tague la personne** dans la légende et le commentaire, **avec son accord** | publication | à la sortie |
+
+### Ce qui rend la série tenable
+
+- **Une question = une vidéo de 15 s.** Aucune ne demande de tournage : le cabinet est le décor, la réponse
+  se dit en une prise.
+- **On ne répond qu'aux questions qu'on peut traiter sans données patient.** « Pourquoi mes yeux piquent le
+  soir ? » oui ; « est-ce que ma correction est bonne ? » non — ça se voit au cabinet, et ça se dit ainsi.
+- **Le tag demande l'accord, toujours.** Une personne qui pose une question en commentaire public n'a pas
+  donné son nom pour une vidéo. **On demande en message privé ; sans réponse, on anonymise** (« une
+  cliente du quartier ») — et on dit pourquoi.
+
+### Ce que ça change dans nos chiffres
+
+| Chiffre | La n°1 | Ce que la série doit produire |
+|---|---|---|
+| Commentaires | 1 | **≥ 3 par vidéo** — et chacun est une question potentielle |
+| Matière pour le mois suivant | on l'inventait | **elle vient de l'audience** |
+| Tag / partage | 0 | la personne taguée voit la vidéo **et** la partage souvent |
+
+⚠️ **Ce qui n'est pas prouvé :** je n'ai pas de mesure AMK sur l'effet d'une série « questions ». Ce qui est
+sûr, c'est que **répondre à une question nommée produit un commentaire de plus** (la personne répond), et
+qu'un commentaire de plus vaut mieux qu'un commentaire inventé.
 
 ---
 
@@ -557,6 +631,8 @@ sienne.
 
 | 23/10 | **`amk-factures-pwa.zip`** — l'outil de factures de King | l'inventaire réel de l'outil (échéance, proforma, reçu, MoMo/OM/banque, modèles) — et la leçon : **lire le code avant de dire ce qui manque** | `ops/amk-factures-pwa/` · `ops/FACTURATION-2026-10-24.md` §3 bis | ses deux affirmations de ma part sur des manques inexistants : corrigées, pas reprises |
 | 23/10 | **Captures Facebook + TikTok du post « lunettes pour enfants »** (poster, 23/10) | le texte de la légende Facebook (structure « accroche → preuve mesurable → adresse ») et la confirmation que le même visuel tourne sur les deux réseaux | §5 quater · `ANALYSE-POST-1` §4 bis | le visuel généré : il reste, mais il ne se refait pas (pas de visage inventé) |
+| 23/10 | **Correction King : « plus personne ne lit le journal »** (23/10, à propos de la vidéo n°3) | la règle du décor : tout objet filmé doit avoir été vu cette semaine à Douala — et le remplacement du journal par le téléphone | §5 quinquies | le geste de manuel occidental, pris sans vérification |
+| 23/10 | **Ruling King : « vous demandez, on répond »** (23/10) | la série questions → vidéo → tag, avec l'accord obligatoire avant de taguer | §5 sexies | le tag sans accord, écarté pour la même raison qu'un visage sans autorisation |
 | 23/10 | **Insights 24 h du reel** (Facebook Business Suite, TikTok Studio) | la preuve que les deux réseaux ne mesurent pas la même chose : 12 % de lecture moyenne sur Facebook contre 26 % sur TikTok pour le même film | §5 quater | la comparaison brute des vues (227 contre 80) : elle ne dit rien de la qualité |
 | 23/10 | **Capture WhatsApp DM OPTIQUE** (13h00, message d'avis du client) | le texte exact de sa demande d'avis, ses liens, et l'heure | `clients/dm-optic/launch/SOLDE-75K-2026-10-23.md` §3 bis | la tentation d'y répondre : c'est un message de masse, pas une question |
 

@@ -464,6 +464,7 @@ mensuel (4 h par Suivi, 12 h par Croissance) ne tient plus, et ce sont les livra
 > **Règle King 23/10, corrigée par lui le 23/10 : « I told you to merge only at a milestone or 1k
 > commits, but I meant 1k changes. »** Le seuil porte donc sur **les lignes changées**, pas sur le nombre
 > de commits — un tour peut faire 1 commit et 1 200 lignes, ou 12 commits et 40 lignes.
+> **Les trois seuils ci-dessous sont validés par King le 23/10** (message du soir, point 5).
 
 Par défaut, chaque tour **pousse** sur la branche de session et **laisse la PR ouverte**. On fusionne
 dans `main` quand l'un de ces trois est vrai :
@@ -495,8 +496,37 @@ règle ou un état **contre la source**, jamais contre son souvenir du tour pré
 protège la relecture, pas la vérité.
 
 **Application :** la PR d'une branche en cours reste ouverte entre deux tours ; on ne la ferme pas « pour
-ranger ». Le volume se lit avec `git diff --numstat $(git merge-base HEAD origin/main) HEAD`. **Au 23/10,
-la branche de session était à 3 684 lignes et 39 fichiers : au seuil — fusionnée.**
+ranger ». Le volume se lit avec `git diff --numstat $(git merge-base HEAD origin/main) HEAD`.
+
+### 1i bis · Avant toute fusion : `fetch`, puis regarder `main` (ruling King 23/10)
+
+> *King, 23/10 : « can you do a git pull or a git fetch before merging ? »*
+
+**Oui, et c'était le vrai défaut du 23/10 :** la PR a été fusionnée sans avoir regardé `main` une seule
+fois dans le tour ; GitHub a répondu « head branch is out of date ». Le `fetch` n'est pas une formalité,
+c'est ce qui révèle **trois cas** qu'aucune autre commande ne montre :
+
+| Ce que le fetch révèle | Ce qu'on fait |
+|---|---|
+| `main` a avancé normalement | on **fusionne `main` dans la branche**, on résout, on repousse |
+| **`main` a été réécrit** (aucun ancêtre commun) | on **ne force rien** : on dit à King ce qui s'est passé, et on demande avant de toucher à l'histoire du dépôt |
+| `main` a bougé ET le diff touche les mêmes fichiers | on relit le diff de `main` **avant** de résoudre, jamais `-X ours` en aveugle |
+
+**La séquence, toujours dans cet ordre :**
+
+```bash
+git fetch origin
+git log --oneline -3 origin/main            # main a-t-il bougé ?
+git merge-base HEAD origin/main || echo "AUCUN ANCETRE — main a été réécrit"
+git diff --stat origin/main HEAD | tail -5  # l'écart réel, en fichiers
+# puis seulement : fusion locale, push, et fusion de la PR
+```
+
+**Ce que le 23/10 a appris concrètement :** `main` porte un commit unique « invoice » (14h34) sans ancêtre
+commun avec la branche de session. Mais **son arbre est identique à celui de la base de la branche, plus un
+fichier** (`amk-factures-pwa.zip`). Autrement dit : une réécriture **sans perte de contenu** — vérifiable
+en une commande (`git diff --stat <base> origin/main`), et c'est cette vérification qui autorise une fusion
+sereine, pas la confiance.
 
 
 ## 2 · Uniqueness protocol (every website/design build, before a line of HTML)

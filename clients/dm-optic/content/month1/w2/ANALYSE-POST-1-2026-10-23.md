@@ -95,8 +95,13 @@ seconde.** C'est une bonne nouvelle, parce que c'est le seul des deux qu'on peut
 
 **55 ans et plus = 55,5 % des spectateurs.** La vidéo parle d'écrans, de 40 cm et de 20-20-20 : un
 message de trentenaire devant un ordinateur. **On a parlé à 45 % de l'audience et ignoré la moitié la
-plus nombreuse.** À Bonabéri, à 65 ans, le problème n'est pas la fatigue d'écran : c'est le journal
-qu'on éloigne pour lire, l'aiguille qu'on ne voit plus, et les lunettes qu'on remplace tous les deux ans.
+plus nombreuse.** À Bonabéri, à 65 ans, le problème n'est pas la fatigue d'écran : c'est **le téléphone
+qu'on écarte pour lire un message**, l'aiguille qu'on ne voit plus, et les lunettes qu'on remplace tous les
+deux ans.
+
+⚠️ **Correction du 23/10 :** j'avais écrit « le journal qu'on éloigne ». **Faux** — King : *« plus personne
+ne lit le journal, je n'en vois même pas autour de moi. »* Le geste est le même, l'objet a changé : c'est
+le téléphone. Voir `CONTENT-CREATION` §5 quinquies.
 
 ⚠️ **Ce que je ne conclus pas** : je ne sais pas si c'est *notre* contenu qui attire les seniors ou si
 c'est simplement la population Facebook au Cameroun. Le post « enfants » a touché 50 % de 35–44 ans —
@@ -145,18 +150,27 @@ qui plisse les yeux. **Aucune vidéo ne lui a donné une raison de le faire.** U
 ça à quelqu'un qui éloigne son téléphone pour lire » coûte trois secondes et vise exactement les 55 % de
 l'audience qu'on a mesurés.
 
-### ⑤ Un post de 15h24 affiche 0 vue — et je m'étais trompé sur la cause.
+### ⑤ Un affichage à 15h24 montre 0 vue — et je me suis trompé **deux fois** sur la cause.
 
-J'avais écrit « doublon : le même reel envoyé deux fois ». **C'est faux, King l'a corrigé le 23/10 : ce
-sont deux publications différentes — le reel, et l'affiche de l'enfant.** Ce que je voyais, c'était deux
-vignettes qui se ressemblent dans une liste, et j'en ai tiré une erreur d'exploitation. **Une vignette
-n'est pas une preuve** ; j'ai écrit une conclusion sur une image de 120 pixels.
+**Première version (fausse) :** « doublon, le même reel envoyé deux fois ».
+**Deuxième version (probablement fausse aussi) :** « l'affiche de l'enfant republiée le même jour ».
 
-**Ce qui reste vrai, et qui suffit :** un post de 15h24 affiche **0 vue** alors que le reel de la même
-minute en affiche 228. Hypothèse, pas conclusion : l'affiche de l'enfant était **déjà** publiée à 08h30
-(22 vues) ; republiée le même jour, Facebook ne l'a pas rediffusée. La leçon n'est donc pas « ne pas
-doublonner un fichier » mais **« ne pas republier le même contenu le même jour »** — et, avant d'affirmer
-la cause, demander à celui qui a publié.
+**Ce que King dit, et il était devant l'écran :** *« c'était sûrement la story Facebook, pas le post en
+lui-même. »*
+
+**Ce que je sais vraiment :** une vignette apparaît dans la liste des publications avec **0 vue**. Je ne
+sais pas ce qu'elle est, et **je n'ai aucun moyen de le savoir depuis une capture**. Une story republiée
+n'a pas d'audience propre dans cette liste ; un post non distribué non plus. **Les deux hypothèses se
+valent, donc aucune ne devient une règle.**
+
+**La leçon, et elle est pour moi :** j'ai expliqué deux fois de suite un zéro en inventant un mécanisme.
+**Un zéro n'a pas besoin d'une cause, il a besoin d'une vérification.** La bonne question à poser était une
+seule, et je ne l'ai pas posée : *« c'est quoi, ce post de 15h24 ? »* — deux mots, au lieu de deux
+paragraphes d'explication.
+
+**Ce qui reste, et qui ne dépend d'aucune hypothèse :** un contenu de la page n'a reçu aucune vue. Ça
+n'appelle **aucune règle de production** ; ça appelle un coup d'œil au prochain envoi, pour voir combien de
+vues il prend dans les dix minutes.
 
 ### ⑥ La fiche Google a déjà changé de catégorie.
 
@@ -188,15 +202,16 @@ délai.**
 **Deux changements de fond, un changement de forme.**
 
 1. **Le sujet passe aux 55 ans et plus.** Le geste utile existe et il est déjà validé : la presbytie —
-   « vous éloignez le journal pour lire ». Il parle aux 55 % qu'on a mesurés, il est vrai, et il ne
-   promet rien de médical.
+   **« vous écartez votre téléphone pour lire »**. Il parle aux 55 % qu'on a mesurés, il est vrai, et il
+   ne promet rien de médical. *(Version refusée le 23/10 : « éloigner le journal », un objet qui n'existe
+   plus chez le spectateur.)*
 2. **La première seconde montre un geste, pas un lieu.** Pas de plan large du cabinet, pas de logo : une
-   main qui éloigne un journal, nette, plein cadre.
+   main qui écarte un téléphone, nette, plein cadre.
 3. **La forme tombe à 15–18 s** : une idée, un geste, une sortie.
 
 | # | Bloc | Temps | À l'écran (écrit d'abord) | Voix |
 |---|---|---|---|---|
-| 1 | **Hook visuel** | 0 – 1,5 s | un journal qu'on éloigne, net, plein cadre — texte **« VOUS ÉLOIGNEZ LE JOURNAL ? »** | — (silence) |
+| 1 | **Hook visuel** | 0 – 1,5 s | un téléphone qu'on écarte, écran allumé mais flou, plein cadre — texte **« VOUS ÉCARTEZ VOTRE TÉLÉPHONE ? »** | — (silence) |
 | 2 | **Lock-in** | 1,5 – 4 s | **CE N'EST PAS LA FATIGUE** | « Ce n'est pas la fatigue. C'est l'âge du cristallin. » |
 | 3 | **Preuve douce** | 4 – 8 s | **APRÈS 45 ANS, IL DEVIENT PLUS RIGIDE** | « Après quarante-cinq ans, il devient plus rigide : c'est normal, et ça se corrige. » |
 | 4 | **Le geste** | 8 – 13 s | **UNE MESURE, DEUX VERBES** | « Une mesure de cinq minutes, et on vous dit ce qu'il vous faut. Pas de devis à l'aveugle. » |
@@ -239,6 +254,10 @@ diffère. Deux tournages pour deux réseaux, c'est deux fois le travail pour la 
 **La règle de tournage qui rend les deux montages possibles :** on filme **large et long** (deux fois la
 durée prévue, avec 3 s de respiration au début de chaque plan), et on monte serré. Un plan tourné à la
 seconde près ne se remonte pas.
+
+**Le script complet est dans `content/month1/w3/presbytie-55ans-SCRIPT.md`** — 9 blocs, 4 plans,
+20 minutes de tournage, deux montages. **Statut : non validé** (King, 23/10 : le journal). Décor refait,
+cible à confirmer.
 
 **Si King préfère ne pas toucher à la pièce déjà validée pour le 27/10** (`PLAN-27-10.md`, tiktok-01-v2,
 23 s), on la publie telle quelle — mais alors on accepte de ne rien apprendre de plus sur le format, et
