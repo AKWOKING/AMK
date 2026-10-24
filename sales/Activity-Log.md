@@ -5501,3 +5501,27 @@ livrables : le CRM ne bouge pas, l'échéance de publication non plus.
 3. **RIB + NIU d'AMK** toujours absents (`PAIEMENT-SOLDE-ET-RETAINER-2026-10-22.md` §3) : sans eux, pas
    de proforma émissible. Un paiement en espèces ne les rend pas moins nécessaires — il les rend plus
    urgents, parce qu'il ne laisse aucune autre trace.
+
+## 24/10/2026 (soir) — DM Optique : la page rendue pour de vrai, et ce qu'elle montre
+
+Ruling de King : « *go through the screenshot and code and review the site* ». La page a été servie en
+local et **rendue dans Chromium headless** (1440 et 390), puis mesurée — l'outil existait depuis le
+08/10 (`tools/video/install.sh`), l'affirmation « pas de navigateur dans le bac » était fausse et est
+corrigée ici. Revue complète : `clients/dm-optic/launch/REVUE-RENDU-2026-10-24.md` + 4 captures.
+
+Trois écarts mesurés, que les deux portiques ne pouvaient pas voir :
+
+1. **L'anneau ne se lit pas comme un cercle.** Aucune largeur ne le laisse entier et libre : sous
+   1024 px il traverse jusqu'à **48 %** de la boîte du titre, à 1024 px la carte blanche en couvre
+   **50 %**, à 1440 px **18 %**. Proposition mesurée : l'ancrer sur la carte (0 % de collision avec
+   titre, chapeau, lignes d'information et boutons à 390 / 768 / 1024 / 1440, aucun débordement).
+2. **Le petit texte du premier écran échoue au contraste** : sur-titre 13 px `--ink-3` à **3,73:1**
+   au pire pixel (seuil 4,5), étiquettes à 4,48 — et **3,91** sur téléphone. Correctif chiffré :
+   `--ink-3` #586476 → #46536A, **4,83:1**.
+3. **La photo** : voile de 0,92 à 0,16 ; luminance du fond **0,72** dans la colonne de texte contre
+   **0,32** dans la bande droite. C'est la demande du client (« rendre la photo plus visible »), et
+   le levier est de resserrer le voile, pas de le baisser partout.
+
+Vérifié et sain : focus 3 px sur 8 arrêts, `prefers-reduced-motion` (anneau `none`, 0/40 bloc caché),
+menu `<details>` qui s'ouvre et se ferme par `Échap`, zéro débordement horizontal, zéro erreur console,
+6/6 images chargées, `body{padding-bottom:84px}` contre une barre de 73 px.
