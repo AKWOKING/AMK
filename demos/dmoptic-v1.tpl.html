@@ -46,7 +46,7 @@ var l=localStorage.getItem("dmoptic-lang");if(l==="en"||l==="fr")h.setAttribute(
      Le bleu est la couleur du cabinet — celle du cachet de l'Ordre ; la braise n'apparaît qu'une fois,
      sur ce qui manque encore. Le dégradé du premier écran vit dans le bleu, jamais dans le violet. */
   --paper:#EEF1F5; --card:#FFFFFF; --card-2:#F7F9FC;
-  --ink:#0C1524; --ink-2:#43506A; --ink-3:#586476;
+  --ink:#0C1524; --ink-2:#43506A; --ink-3:#46536A;
   --line:#D6DDE7; --line-2:#E6EBF2; --line-strong:#B9C4D4;
   --brand:#1A3F86; --brand-2:#14336C; --brand-tint:#E4EAF6;
   --night:#0A1220; --night-2:#101B2E; --night-line:rgba(255,255,255,.14);
@@ -154,9 +154,9 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
 @media (min-width:780px){ .hero{padding-top:72px} }
 .hero-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:38% 50%;pointer-events:none}
 .hero-scrim{position:absolute;inset:0;z-index:0;pointer-events:none;
-  background:linear-gradient(90deg,rgba(238,241,245,.92) 0%,rgba(238,241,245,.80) 44%,rgba(238,241,245,.34) 76%,rgba(238,241,245,.16) 100%),
-             linear-gradient(180deg,rgba(238,241,245,.16),rgba(238,241,245,.48))}
-@media (max-width:779px){ .hero-scrim{background:linear-gradient(180deg,rgba(238,241,245,.92) 0%,rgba(238,241,245,.78) 58%,rgba(238,241,245,.90) 100%)} }
+  background:linear-gradient(90deg,rgba(238,241,245,.94) 0%,rgba(238,241,245,.86) 40%,rgba(238,241,245,.30) 58%,rgba(238,241,245,.08) 78%,rgba(238,241,245,.04) 100%),
+             linear-gradient(180deg,rgba(238,241,245,.14),rgba(238,241,245,.44))}
+@media (max-width:779px){ .hero-scrim{background:linear-gradient(180deg,rgba(238,241,245,.90) 0%,rgba(238,241,245,.76) 52%,rgba(238,241,245,.88) 100%)} }
 .wash{position:absolute;z-index:0;inset:-28% -18% auto -18%;height:150%;pointer-events:none;
   background:
     radial-gradient(34% 40% at 24% 30%, rgba(26,63,134,.20), rgba(26,63,134,0) 70%),
@@ -171,14 +171,15 @@ html.js .wash{animation:drift 2.8s var(--ease) 1 both}
 /* 24/10 (demande client, relayée par King) : l'anneau de verre du premier écran revient.
    Il avait disparu le 11/10 avec le correctif « cercle-logo » (commit ffe789b) — le CSS
    était resté, l'élément non. Géométrie et couleurs d'origine ; rien d'autre n'a bougé. */
-.lensring{position:absolute;z-index:0;right:-88px;top:34px;width:290px;height:290px;pointer-events:none}
+.lensring{position:absolute;z-index:0;left:50%;top:50%;translate:-50% -50%;width:min(470px,calc(100% + 120px));aspect-ratio:1;height:auto;pointer-events:none}
 html.js .lensring{animation:spin 24s linear infinite}
 /* 20/10 (demande client relayée par King) : la photo réelle du cabinet
    (clients/dm-optic/photoshoot/others/PXL_20261016_131635710.MP.jpg) devient le fond du
    premier écran (.hero-bg) ; le voile clair (.hero-scrim) ne sert qu'à la lisibilité. */
 .h-city{display:block;margin-top:.35em;font-size:.5em;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-2)}
 @keyframes spin{to{transform:rotate(360deg)}}
-@media (min-width:780px){ .lensring{right:-60px;top:20px;width:380px;height:380px} }
+@media (min-width:600px){ .lensring{width:440px} }
+@media (min-width:1024px){ .lensring{width:560px} }
 .hero-grid{position:relative;z-index:1;display:grid;gap:34px}
 @media (min-width:980px){ .hero-grid{grid-template-columns:1.02fr .98fr;gap:54px;align-items:start} }
 .hero h1{margin-top:18px}
@@ -205,7 +206,7 @@ html.js .lensring{animation:spin 24s linear infinite}
 .idrows dt{font:500 var(--fs-label)/1.7 var(--f-m);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
 .idrows dd{margin:0;font:500 var(--fs-sm)/1.5 var(--f-m);text-align:right;color:var(--ink)}
 .idfoot{margin-top:16px;font-size:var(--fs-xs);color:var(--ink-3)}
-.idwrap{margin:0}
+.idwrap{position:relative;margin:0}
 .idwrap figcaption{margin-top:12px;font:500 var(--fs-xs)/1.6 var(--f-m);color:var(--ink-3)}
 
 /* ── LES ACTES : six cartes en bande glissante sur téléphone, trois colonnes sur ordinateur ──────── */
@@ -384,19 +385,6 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
       alt="Intérieur du cabinet DM OPTIQUE SARL à Bonabéri, murs de montures et assise.">
     <span class="hero-scrim" aria-hidden="true"></span>
     <span class="wash" aria-hidden="true"></span>
-    <!-- 24/10 (demande client) : le cercle dégradé du premier écran, rétabli à l'identique.
-         Retiré le 11/10 par le correctif du cercle-logo (ffe789b) : ce n'était pas une décision
-         de design, c'était une pièce emportée. Deux cercles, un dégradé bleu → braise, 24 s/tour. -->
-    <svg class="lensring" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
-      <defs><linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#7FA6E8" stop-opacity="0"></stop>
-        <stop offset=".45" stop-color="#2A5CB8" stop-opacity=".55"></stop>
-        <stop offset=".78" stop-color="#E0703A" stop-opacity=".38"></stop>
-        <stop offset="1" stop-color="#E0703A" stop-opacity="0"></stop>
-      </linearGradient></defs>
-      <circle cx="100" cy="100" r="92" fill="none" stroke="url(#sheen)" stroke-width="9"></circle>
-      <circle cx="100" cy="100" r="70" fill="none" stroke="url(#sheen)" stroke-width="2.5" opacity=".8"></circle>
-    </svg>
     <!-- 20/10 (demande client) : la photo du cabinet est le fond du premier écran ; la carte reste la preuve à droite. -->
     <div class="wrap hero-grid">
       <div>
@@ -436,6 +424,24 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
       </div>
 
       <figure class="idwrap rv">
+    <!-- 24/10 (demande client) : le cercle dégradé du premier écran.
+         Retiré le 11/10 par un ruling client qui demandait son logo à la place ; le logo a ensuite
+         quitté le premier écran (20/10). Deux cercles, un dégradé bleu → braise, 24 s/tour,
+         arrêté net par prefers-reduced-motion.
+         24/10 (soir) : l'anneau s'ancre sur la carte d'identité, plus sur le premier écran. Mesuré
+         avant : sous 1024 px il traversait jusqu'à 48 % de la boîte du titre, à 1024 px la carte
+         blanche en couvrait 50 %. Autour de la carte, 0 % de collision avec le titre, le chapeau,
+         les lignes et les boutons (390 / 768 / 1024 / 1440). Voir launch/REVUE-RENDU-2026-10-24.md. -->
+    <svg class="lensring" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+      <defs><linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#7FA6E8" stop-opacity="0"></stop>
+        <stop offset=".45" stop-color="#2A5CB8" stop-opacity=".55"></stop>
+        <stop offset=".78" stop-color="#E0703A" stop-opacity=".38"></stop>
+        <stop offset="1" stop-color="#E0703A" stop-opacity="0"></stop>
+      </linearGradient></defs>
+      <circle cx="100" cy="100" r="92" fill="none" stroke="url(#sheen)" stroke-width="9"></circle>
+      <circle cx="100" cy="100" r="70" fill="none" stroke="url(#sheen)" stroke-width="2.5" opacity=".8"></circle>
+    </svg>
         <div class="idcard">
           <div class="idtop">
             <span class="mark" aria-hidden="true"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><circle class="o" cx="20" cy="20" r="16"></circle><circle class="i" cx="20" cy="20" r="10.5"></circle><path class="glint" d="M11.6 14.2a10.5 10.5 0 0 1 8.4-4.1"></path></svg></span>

@@ -138,3 +138,74 @@ laisser la droite presque nue. À mesurer au tour suivant dans les mêmes condit
 | Le petit texte | `--ink-3` → `#46536A` (§4) | 1 variable |
 | La photo | resserrer le voile sur la colonne de texte (§5) | 1 dégradé, à remesurer |
 | La réponse au client | §5 + §3, dans cet ordre : d'abord « la photo se verra », ensuite « le cercle se lit » | — |
+
+---
+
+## 9 · Le lot appliqué (24/10, soir) — mesure avant / après
+
+Ruling King : « go ». Les trois points du §8 ont été appliqués **ensemble**, puis remesurés dans les
+mêmes conditions (Chromium headless, anneau figé par `prefers-reduced-motion`, fond capturé sans texte).
+Fichiers touchés : `hosting/previews/dmoptic/index.html`, `…/en/index.html`, `demos/dmoptic-v1.tpl.html`
+(le gabarit, pour que le prochain rebuild ne défasse rien). **97 pages** touchées par la seule variable
+`--ink-3` ; 3 fichiers par le déplacement de l'anneau et le voile.
+
+### 9.1 · L'anneau — ancré sur la carte
+
+| Largeur | Ø avant | Titre avant | Ø après | Titre | Chapeau | Infos | Boutons | Carte sur l'anneau |
+|---|---|---|---|---|---|---|---|---|
+| 390 | 290 | **48 %** | 470 | 0 % | 0 % | 0 % | 0 % | 97 % |
+| 600 | 290 | 29 % | 440 | 0 % | 0 % | 0 % | 0 % | — |
+| 768 | 290 | 23 % | 440 | 0 % | 0 % | 0 % | 0 % | 53 % |
+| 1024 | 380 | 0 % | 560 | 0 % | 0 % | 0 % | 0 % | 99 % |
+| 1280 | 380 | 0 % | 560 | 0 % | 0 % | 0 % | 0 % | 97 % |
+| 1440 | 380 | 0 % (mais carte **18 %**) | 560 | 0 % | 0 % | 0 % | 0 % | 97 % |
+| 1680 | 380 | 0 % | 560 | 0 % | 0 % | 0 % | 0 % | 97 % |
+
+Zéro débordement horizontal partout (`scrollWidth` = largeur de fenêtre), zéro erreur console.
+
+**Le trait visible, mesuré au pixel de contour** (deux cercles échantillonnés tous les 2°) : **44–47 %**
+du trait est visible hors de la carte à 1024/1280/1440 — contre 0 % du temps où il passait *derrière*
+la carte. Autrement dit : le cercle se lit maintenant comme un cercle autour de la fiche, pas comme deux
+arcs sur la photo. Sous 1024 px il descend avec la carte (il commence à ~700 px sur 844) : c'est
+l'arbitrage annoncé, et il est visible sur `06-mobile-apres.jpg`.
+
+### 9.2 · Le contraste — mesuré sur le fond réel, avant / après
+
+| Zone | Avant 1440 (médian / pire) | Après 1440 | Avant 390 | Après 390 | Seuil |
+|---|---|---|---|---|---|
+| Sur-titre 13 px | 4,10 / **3,60** | **5,41 / 4,76** | 4,64 / 4,05 | **6,04 / 5,51** | 4,5 |
+| Étiquettes 13 px | 4,79 / **4,48** | **6,30 / 5,79** | 4,40 / 4,03 | **5,57 / 5,06** | 4,5 |
+| Chapeau 18,9 px | 5,83 / 5,37 | 5,94 / 5,55 | 5,83 / 5,00 | 6,31 / 4,91 | 4,5 |
+| Titre 52 px | 12,55 / 11,02 | 12,61 / 11,20 | — | — | 3,0 |
+
+**Tout passe désormais, au pire pixel.** Le gain vient de l'encre (`--ink-3` #586476 → **#46536A**),
+pas du voile : c'est dit pour que personne n'attribue à la photo un mérite qui n'est pas le sien.
+
+### 9.3 · La photo — plus visible là où elle est, sans coût de lisibilité
+
+| Zone (1440, hero) | Source | Avant | Après |
+|---|---|---|---|
+| Colonne de texte | 0,28 | 0,72 | **0,72** (inchangé : c'est la lisibilité) |
+| Colonne de la carte | 0,27 | 0,86 | **0,83** |
+| **Bande droite** | 0,12 | 0,32 | **0,24** |
+
+Le voile tient la colonne de texte (0,72) et **rend la moitié droite à la photo** : l'écart avec la
+source passe de 0,20 à 0,12 en luminance — la photo est 33 % plus présente là où il n'y a pas de texte.
+C'est la réponse chiffrée à « je peux rendre la photo plus visible ».
+
+### 9.4 · Ce que le lot n'a pas touché
+
+Rien d'autre : ni la copie, ni les liens WhatsApp, ni le menu, ni le dock, ni les 94 pages intérieures
+au-delà de la variable `--ink-3`. Portes après le lot : `test_dmoptic_page.mjs` **62/62**,
+`audit_a11y --strict` **0**, `audit_html` **0**, `audit_images` **0** (12 images), `check_inline_js`
+**0**, `audit_hero` **0**, `audit_delivery --strict` **VERT** (0 P1, 0 P2, 1 P3 connu). Le garde
+`build_dmoptic.py` refuse toujours de reconstruire (`.mnav, .mnav-panel, .psrc`) — c'est voulu.
+
+### 9.5 · Un 4ᵉ point, trouvé en chemin et **pas** corrigé
+
+`tools/qa/audit_reveal.py` signale **4 fautes** sur les deux pages du premier écran : la règle
+`html.js .rv{opacity:0}` n'a pas été convertie en `html.js .rv:not(.in)` le 23/10, contrairement à ce
+qu'annonçait le commit (les six autres pages l'ont). **Mesuré : identique avant et après ce lot**, et
+sans effet visible — `html.js .rv.in` (spécificité 0,3,0) l'emporte sur `html.js .rv` (0,2,0), et le
+navigateur montre bien 40 blocs révélés sur 40. Ça reste une porte qui crie pour rien : correctif d'une
+ligne par page, à faire sur ton feu vert, pas glissé dans un lot déjà validé.

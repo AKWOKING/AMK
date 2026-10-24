@@ -2318,3 +2318,38 @@ gauche → bleu `#2A5CB8` → braise `#E0703A` en bas à droite, un tour en 24 s
 voulu. Sous 780 px il fait 290 px (`right:-88px;top:34px`), dès 780 px 380 px (`right:-60px;top:20px`). Avec
 « réduire les animations » activé dans le système, il doit être **immobile** (règle
 `prefers-reduced-motion`).
+
+### 24/10 (soir) — les trois corrections de la revue de rendu, et leurs chiffres
+
+Ruling de King après la revue : « go ». Trois changements, mesurés avant et après dans Chromium
+headless (revue complète : `launch/REVUE-RENDU-2026-10-24.md` §9, captures `launch/revue-2026-10-24/`) :
+
+1. **L'anneau dégradé passe du premier écran à la carte d'identité.** Même élément, même `#sheen`,
+   même `spin 24 s`, même coupure par `prefers-reduced-motion` : seule l'ancre change. Dans la page,
+   le `<svg class="lensring">` est désormais **le premier enfant de `<figure class="idwrap">`** (et non
+   plus un frère de `.hero-grid`), `.idwrap` reçoit `position:relative`, et l'anneau
+   `left/top 50 % + translate:-50% -50%`, `width:min(470px,calc(100% + 120px))`, `aspect-ratio:1` —
+   440 px dès 600, 560 px dès 1024. Mesure : la part de la boîte du titre traversée passe de **48 % à
+   0 %** (390 px) et la carte blanche de 18 % à **0 %** de recouvrement (1440 px) ; **44–47 % du trait**
+   est visible à 1024/1280/1440, contre 0 % avant. Le gabarit `demos/dmoptic-v1.tpl.html` a reçu le
+   même changement — sans ça, le prochain rebuild ramenait l'ancien placement.
+
+2. **`--ink-3` : #586476 → #46536A**, sur les 97 pages. Le sur-titre 13 px du premier écran passe de
+   **3,60:1 à 4,76:1** au pire pixel (seuil AA 4,5), les étiquettes de 4,48 à **5,79:1**. Vérifié avant
+   de changer : les 20 règles qui emploient `var(--ink-3)` vivent toutes sur fond clair, aucune sur le
+   bloc de nuit du pied de page.
+
+3. **Le voile du premier écran resserré sur la colonne de texte** (0,92→0,94 à gauche, fin de voile à
+   58 % au lieu de 76 %, 0,04 au bord droit). Luminance moyenne du fond : colonne de texte **0,72 →
+   0,72** (lisibilité intacte), bande droite **0,32 → 0,24** pour une source à 0,12 → la photo est
+   **33 % plus présente** là où il n'y a pas de texte. C'est la réponse à « je peux rendre la photo
+   plus visible », sans reprendre le contraste gagné au point 2.
+
+Portes après le lot : test de page **62/62**, `audit_a11y --strict` 0, `audit_html` 0, `audit_images` 0
+(12 images), `check_inline_js` 0, `audit_hero` 0, `audit_delivery --strict` **VERT** (1 P3 connu).
+Le garde refuse toujours de reconstruire (`.mnav, .mnav-panel, .psrc`) : la reconstruction reste
+interdite tant que le 23/10 n'est pas reporté dans le gabarit.
+
+**Trouvé et non corrigé, exprès** : `audit_reveal` signale 4 fautes sur les deux pages du premier écran
+(`html.js .rv` sans `:not(.in)`), identiques avant et après ce lot et sans effet mesurable (40 blocs
+révélés sur 40). Une ligne par page, sur feu vert.
