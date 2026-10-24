@@ -212,7 +212,9 @@ def build_citation_edges(nodes: dict, meta: dict) -> tuple[list[dict], dict]:
 
 
 SELF_STALE = re.compile(
-    r"(ce document|cette page|ce fichier|cette version|ce texte|cette r[èe]gle|la version|cette liste)"
+    # « la version » a été retirée le 24/10 : « la version française portait une copie obsolète »
+    # faisait passer pour périmé un document de revue SEO qui parlait d'autre chose.
+    r"(ce document|cette page|ce fichier|cette version|ce texte|cette r[èe]gle|cette liste)"
     r"[^.]{0,80}?(p[ée]rim[ée]e?|obsol[èe]te|remplac[ée]e?|ne (?:s'applique|s applique) plus|n'est plus en vigueur)",
     re.I)
 
@@ -240,11 +242,23 @@ def build_supersede_edges(meta: dict) -> tuple[list[dict], set[str]]:
             if not STALE_RE.search(line) and not SELF_STALE.search(line):
                 continue
             low = line.lower()
+            # Correction du 24/10 (optimisation 2/5) : « marqueur dans les 25 premières lignes »
+            # flaggait 37 documents dont la plupart PARLENT d'une chose périmée (une vidéo, une bio,
+            # une version de démo). Un document n'est périmé que si le marqueur le vise LUI :
+            #   (a) la ligne nomme son propre fichier,
+            #   (b) la phrase dit « ce document / cette version … est périmé »,
+            #   (c) c'est un titre de tête (8 premières lignes) qui ne cite aucun autre fichier.
+            head = line.lstrip()
+            # (c) une BANNIÈRE de tête : un titre (`#`/`>`) des 8 premières lignes qui porte le statut.
+            # Les lignes de tableau sont exclues : « | a | **Prix périmé.** | … » parle du prix, pas du
+            # document. Et un titre qui pointe vers son remplaçant reste un titre qui se déclare mort.
+            banner = (i < 8 and head.startswith(("#", ">")) and len(line) < 200
+                      and bool(re.search(r"superseded|p[ée]rim[ée]|obsol[èe]te|ne plus (?:utiliser|envoyer)",
+                                         low)))
             self_declared = (
-                i < 25
-                or own in low
+                own in low
                 or bool(SELF_STALE.search(line))
-                or bool(re.search(r"^#{1,6}\s.*(p[ée]rim[ée]e?|obsol[èe]te|superseded)", line, re.I))
+                or banner
             )
             if self_declared and re.search(r"p[ée]rim[ée]e?|obsol[èe]te|superseded", low):
                 stale.add(nid)

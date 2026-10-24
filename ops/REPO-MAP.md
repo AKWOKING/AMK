@@ -11,7 +11,7 @@ carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10
 
 - **11990 nœuds** — dont 766 documents, 165 scripts, 21 modules, 139 pages HTML, 395 images, 8 vidéos, 40 audios, 35 fichiers de données, 11 PDF.
 - **2866 citations entre documents** (2280 en chemin exact, 586 par nom unique)
-- **121 arêtes de remplacement** · **37 documents marqués périmés**
+- **121 arêtes de remplacement** · **1 documents marqués périmés**
 - **412 documents que personne ne cite** (atteignables par aucun chemin de lecture)
 - **Couverture : 1642 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
 
@@ -87,17 +87,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 | Document périmé | Encore cité par |
 |---|---|
-| `site/SEO-REVIEW-2026-10-08.md` | 4 : `RULE-CREDENTIAL-CLAIMS.md`, `QA-NOTES.md`, `Activity-Log.md`, `DEPLOY.md` |
-| `content/pipeline/CONTENT-PIPELINE.md` | 2 : `PRE-FLIGHT.md`, `Pipeline-Status.md` |
-| `clients/dm-optic/build-notes.md` | 2 : `QA-NOTES.md`, `Activity-Log.md` |
-| `clients/dm-optic/content/month1/w1/ugc-03.md` | 1 : `START-NEW-CHAT.md` |
-| `clients/dm-optic/launch/SETUP-TIKTOK.md` | 1 : `Activity-Log.md` |
-| `content/strategy/RULE-CREDENTIAL-CLAIMS.md` | 1 : `Activity-Log.md` |
-| `sales/social/founding-post-tiktok-ig.md` | 1 : `Pipeline-Status.md` |
-| `sales/AMK-Playbook-Addendum-Outcomes-2026-09-15.md` | 1 : `Pipeline-Status.md` |
-| `content/videos/v01-instagram-vs-website/STATUS.md` | 1 : `Pipeline-Status.md` |
 | `sales/Walk-In-Batch-2026-09-15.md` | 1 : `Walk-In-Deep-Dives-2026-09-15.md` |
-| `sales/Outreach-Pack-2026-09-14.md` | 1 : `2026-W37-techniques.md` |
 
 ## 3 bis · Ce que personne ne cite — à relire ou à archiver
 
