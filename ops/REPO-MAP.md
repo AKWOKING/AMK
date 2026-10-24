@@ -2,13 +2,13 @@
 
 ```text
 Généré par tools/graphify/build_full_graph.py — 2026-10-24
-Source : graphify-out/graph.json (11843 nœuds, 14106 arêtes)
+Source : graphify-out/graph.json (11847 nœuds, 14115 arêtes)
 Aucun LLM, aucune clé : tout est déterministe et rejouable en ~10 secondes.
 ```
 
 ## 0 · En une page
 
-- **11843 nœuds** — dont 766 documents, 158 scripts, 21 modules, 139 pages HTML, 395 images, 8 vidéos, 40 audios, 34 fichiers de données, 11 PDF.
+- **11847 nœuds** — dont 766 documents, 158 scripts, 21 modules, 139 pages HTML, 395 images, 8 vidéos, 40 audios, 34 fichiers de données, 11 PDF.
 - **2654 citations entre documents** (2107 en chemin exact, 547 par nom unique)
 - **115 arêtes de remplacement** · **37 documents marqués périmés**
 - **412 documents que personne ne cite** (atteignables par aucun chemin de lecture)
@@ -249,7 +249,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | config | 6 | `.github/workflows/deploy-dmoptic.yml`, `hosting/previews/dmoptic/sitemap.xml`, `hosting/samples/sitemap.xml` |
 | archive | 3 | `amk-factures-pwa-v2.zip`, `amk-factures-pwa.zip`, `dmopticsarl.zip` |
 | sous-titre | 3 | `clients/dm-optic/content/month1/w1/tiktok-01-v2.fr.srt`, `clients/dm-optic/content/month1/w1/tiktok-01.fr.srt`, `clients/dm-optic/content/month1/w2/etapes-01.srt` |
-| symboles extraits (titres de documents + fonctions/classes du code) | 10211 | — |
+| symboles extraits (titres de documents + fonctions/classes du code) | 10215 | — |
 
 ### Les outils et skills installés — 1 dossier = 1 outil
 
