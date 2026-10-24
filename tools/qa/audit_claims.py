@@ -177,12 +177,105 @@ def scan(path: str):
     return hits
 
 
+# ─────────────────────────────────────────── mode « sources » : la porte faible du §1g du pré-vol
+# Une statistique sans source primaire n'a pas sa place dans un document qui fait loi — mais un script
+# ne sait pas juger une source. Il sait seulement qu'une ligne porte un pourcentage et **aucun chemin,
+# aucun lien, aucun « selon », aucune mention « non revérifié »**. C'est peu, et c'est déjà beaucoup :
+# le 24/10, la règle existait sans aucune vérification, donc elle ne tenait que par la mémoire.
+SOURCE_MARK = re.compile(
+    r"https?://|www\.|\bselon\b|d'apr[eè]s|\bsource\b|§|`[^`]*\.(md|py|json|html)`"
+    r"|\bTier\b|\bn\s*=|échantillon|non rev[eé]rifi|claims-ok|r\s*=\s*0?\.\d"
+    # une source nommée sur la ligne compte : « BrightLocal 2023 », « Sprout Social », « cité par Ocuco »
+    r"|\bcit[eé]\w*\s+par\b|\brelay[eé]\w*\s+par\b"
+    r"|\b(?:BrightLocal|Metricool|Sprout|Statista|DataReportal|Hootsuite|We Are Social|GSMA|Ocuco"
+    r"|Nielsen|HubSpot|McKinsey|Gartner|Forrester|Pew|INSEE|Banque mondiale|Data\.?ai|Semrush|Ahrefs"
+    r"|Wyzowl|Wordstream|Backlinko|Moz|Similarweb)\b"
+    r"|\b[A-Z][A-Za-z]{2,}(?:\s+(?:Social|Data|Research|Insights?|Digital|Analytics|Local))?\s+(?:19|20)\d{2}\b")
+PERCENT = re.compile(r"\b\d{1,3}(?:[.,]\d+)?\s*%")
+STYLE_LINE = re.compile(r"(width|height|opacity|transform|filter|top|left|right|bottom|scale|"
+                        r"flex-basis|font-size|zoom)\s*:", re.I)
+# Un pourcentage qui accompagne un MONTANT est une arithmétique commerciale (acompte, TVA, marge),
+# pas une statistique sur le monde. On ne le juge pas ici.
+MONEY_LINE = re.compile(r"\b\d[\d\s.,]*\s*(FCFA|XAF|EUR|USD|\$|€)\b|\b(FCFA|XAF)\b", re.I)
+# Une statistique parle du monde : marché, entreprises, gens, usage, conversion, taux. Sans ce lexique,
+# le pourcentage est un dosage (« 10 % du temps d'appel »), pas une affirmation à sourcer.
+# La cible du pourcentage, pas le sujet de la page : « 42 % des gens », « 75 % des consommateurs ».
+# C'est la forme qui se cite à un prospect. Un dosage (« 10 % du temps d'appel »), une arithmétique
+# (« 4 s / 31 = 12 % ») ou une part de prix (« acompte 50 % ») ne sont pas des affirmations sur le monde.
+CLAIM_WORDS = re.compile(
+    r"%\s*(?:des|de\s+la|du|d')\s*(?:entreprises?|pme|commerces?|boutiques?|internautes?"
+    r"|consommateurs?|gens|prospects?|clients?|utilisateurs?|visiteurs?|personnes|population"
+    r"|francophones?|cam[ée]rounais\w*|africains?\w*|march[ée]|d[ée]cideurs?)"
+    r"|\btaux\s+de\s+(?:conversion|r[ée]ponse|clic|refus)\b", re.I)
+
+
+def iter_md(paths):
+    """Comme iter_files, mais SANS la liste SKIP_DIRS : en mode sources, `knowledge/` est justement
+    le dossier à lire — c'est lui qui porte les chiffres (le portique client, lui, l'exclut)."""
+    for p in paths:
+        p = p if os.path.isabs(p) else os.path.join(ROOT, p)
+        if os.path.isfile(p):
+            if p.endswith(".md"):
+                yield p
+            continue
+        for base, dirs, files in os.walk(p):
+            dirs[:] = [d for d in dirs if d not in (".git", "node_modules", "__pycache__")]
+            for f in files:
+                if f.endswith(".md") and f not in SKIP_NAMES:
+                    yield os.path.join(base, f)
+
+
+def source_gaps(path: str):
+    """Les lignes qui affirment un pourcentage sans rien pour l'étayer."""
+    gaps = []
+    try:
+        lines = open(path, encoding="utf-8", errors="ignore").read().splitlines()
+    except OSError:
+        return gaps
+    in_fence = False
+    for i, line in enumerate(lines, 1):
+        stripped = line.strip()
+        if stripped.startswith("```"):
+            in_fence = not in_fence
+            continue
+        if in_fence or not PERCENT.search(line):
+            continue
+        if SOURCE_MARK.search(line) or STYLE_LINE.search(line) or ALLOW.search(line):
+            continue
+        if MONEY_LINE.search(line) or not CLAIM_WORDS.search(line):
+            continue
+        gaps.append({"file": os.path.relpath(path, ROOT), "line": i,
+                     "match": PERCENT.search(line).group(0),
+                     "context": stripped[:170]})
+    return gaps
+
+
 def main():
     ap = argparse.ArgumentParser(description="Portique des affirmations client")
     ap.add_argument("paths", nargs="*", default=[])
     ap.add_argument("--all", action="store_true", help="tout clients/ et hosting/")
     ap.add_argument("--json", action="store_true")
+    ap.add_argument("--sources", action="store_true",
+                    help="porte faible §1g : pourcentages sans lien, chemin, « selon » ni « non revérifié »")
     a = ap.parse_args()
+
+    if a.sources:
+        targets = a.paths or ["knowledge", "sales"]
+        gaps, nf = [], 0
+        for f in iter_md(targets):
+            nf += 1
+            gaps += source_gaps(f)
+        if a.json:
+            print(json.dumps(gaps, ensure_ascii=False, indent=2))
+        else:
+            print(f"\naudit sources · {nf} document(s) · {len(gaps)} pourcentage(s) sans appui")
+            for g in gaps[:20]:
+                print(f"  {g['file']}:{g['line']}  « {g['match']} »  {g['context'][:110]}")
+            if len(gaps) > 20:
+                print(f"  … et {len(gaps) - 20} autre(s)")
+            print("\n  Ce mode ne juge PAS la source : il dit seulement qu'il n'y a ni lien, ni chemin,"
+                  "\n  ni « selon », ni « non revérifié » sur la même ligne. Sévérité souple, jamais bloquante.")
+        return 0 if not gaps else 1
 
     paths = a.paths or (["clients", "hosting"] if a.all else ["clients/dm-optic/content"])
     hits = []

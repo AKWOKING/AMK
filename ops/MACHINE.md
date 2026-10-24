@@ -174,6 +174,7 @@ Une porte est un **code retour**, pas une impression. Si elle n'a pas été lanc
 | Provision | `bash tools/ops/provision.sh --list` | outil absent de la session | la version réellement utilisée |
 | **Règles** | `bash tools/ops/machine.sh --rules` | les 7 portes dures du registre §9 | les 2 règles sans porte, dites en clair |
 | **Crochet** | `bash tools/ops/install-hooks.sh` (une fois par clone) → `.git/hooks/pre-push` | un push avec un secret ou un chemin mort | la carte rejouée (trop lent pour un crochet) |
+| **Sources** | `python3 tools/qa/audit_claims.py --sources knowledge` | un pourcentage affirmé sans appui sur sa ligne | la qualité de la source, et ce qui est sourcé deux lignes plus haut |
 | **Usage** | `bash tools/ops/machine.sh --usage` | un outil provisionné qu'aucune trace ne montre appelé | ce qui ne laisse aucune trace : scripts QA lancés à la main, skills lus, recherche web |
 
 **La trace d'usage, et pourquoi elle existe.** Un outil « installé » n'est pas un outil « utilisé » : le
@@ -242,15 +243,21 @@ muets »* : un outil installé que rien n'appelle est un candidat à sortir (inv
 | 8 | Le comptage des fichiers a moins de sept jours | `ops/AUDIT-FICHIERS` | chaque semaine | âge de `ops/FILE-AUDIT-*.md` — ⚠ souple |
 | 9 | L'état de reprise a moins de trois jours | `ops/HANDOFF-*.md` | tous les trois jours | âge du dernier handoff — ⚠ souple |
 | 10 | Tout `.md` neuf à la racine ou dans `ops/` se déclare avant de devenir loi | PRE-FLIGHT §4b | apparition d'un doc souverain | `git diff --diff-filter=A` — ⚠ souple |
-| 11 | Aucune statistique sans source primaire nommée | PRE-FLIGHT §1g | chaque chiffre écrit | ○ **sans porte machine** |
+| 11 | Aucune statistique sans source primaire nommée | PRE-FLIGHT §1g | chaque chiffre écrit | `audit_claims.py --sources knowledge` — ⚠ souple (porte faible) |
 | 12 | Un fichier debout nouveau n'existe qu'avec le oui de King | PRE-FLIGHT §4b | création d'un document souverain | ○ **sans porte machine** |
 
-**Les deux trous, dits franchement.** Les règles 11 et 12 ne peuvent pas être jugées par un code retour :
-un script ne sait pas si un chiffre a une source, ni si King a dit oui. Elles restent dans le registre
-avec leur marque `○` plutôt que d'être rangées dans un document que personne ne relit. Leur substitut
-mécanique est **la forme de la réponse** : un chiffre sans chemin est refusé à la relecture, et un
-document souverain neuf est *proposé* dans la réponse avant d'être committé. Si un jour l'une des deux
-devient vérifiable, elle passe en porte dure — c'est le seul sens de circulation autorisé.
+**Une porte faible, et un trou qui reste.** La règle 11 n'a pas de porte *forte* : aucun script ne sait
+si une source est bonne. Elle a une porte **faible**, et c'est déjà autre chose que rien :
+`audit_claims.py --sources` liste les lignes qui affirment un pourcentage **sans lien, sans chemin, sans
+« selon », sans « non revérifié »**. Sa précision est choisie : sur 126 documents, elle ramène 7 lignes
+(4 dans `knowledge/`) au lieu des 185 qu'une règle naïve produisait — une alerte qu'on apprend à ignorer
+ne vaut pas mieux que pas d'alerte. Elle est **souple** : elle signale, elle ne bloque pas, parce qu'un
+script ne doit jamais arrêter une publication sur une intuition.
+
+La règle 12 (**un fichier debout neuf exige le oui de King**) reste sans porte : personne ne peut
+vérifier un accord qui n'a pas laissé de trace. Son substitut est **la forme de la réponse** — le fichier
+est *proposé* avec son emplacement avant d'être committé. Si un jour l'une des deux devient vérifiable,
+elle monte en porte dure ; c'est le seul sens de circulation autorisé.
 
 **Ce que le registre interdit** : ajouter une règle ici sans lui donner de porte, ou de sévérité
 explicite. Une règle sans porte est un trou ; un trou caché est une panne.
@@ -270,7 +277,8 @@ explicite. Une règle sans porte est un trou ; un trou caché est une panne.
 - **`provision.sh` dépend du réseau** : sans GitHub ni PyPI, une session neuve n'a que les outils locaux (`tools/qa`, `tools/ops`, `tools/graphify` une fois installé).
 - **Notion reste manuel, mais il n'est plus oubliable** : la porte `miroir-notion` compare la ligne
   `MIRROR` aux commits qui touchent un fait debout ; elle dit *qu'il faut y aller*, elle n'y va pas.
-- **Les règles 11 et 12 n'ont pas de porte** (voir §9) : elles tiennent par la forme de la réponse.
+- **La règle 12 n'a pas de porte** (voir §9) : elle tient par la forme de la réponse. La règle 11 a une
+  porte faible, souple, qui nomme les lignes fautives sans jamais bloquer.
 - **Aucun outil ne juge un document** : `audit_files.py` compte, il ne lit pas. Le jugement reste entier.
 
 *Cette carte se relit quand un outil entre ou sort, quand une porte change, ou quand une panne nouvelle

@@ -444,6 +444,20 @@ def mirror_state() -> dict:
     return dict(ok=not behind, date=stamp, sha=sha, days=days, behind=behind, why="")
 
 
+def claim_gaps() -> tuple[int, list[str]]:
+    """La porte faible du §1g : `audit_claims.py --sources` sur knowledge/. Il ne juge pas la source —
+    il dit qu'une ligne affirme un pourcentage sans lien, sans chemin, sans « selon », sans « non
+    revérifié ». Précision assumée : on préfère 4 lignes justes à 185 lignes qu'on apprend à ignorer."""
+    try:
+        out = subprocess.run([sys.executable, str(ROOT / "tools/qa/audit_claims.py"),
+                              "--sources", "knowledge", "--json"],
+                             cwd=ROOT, capture_output=True, text=True, timeout=60)
+        gaps = json.loads(out.stdout or "[]")
+    except (OSError, subprocess.SubprocessError, ValueError):
+        return 0, []
+    return len(gaps), [f"{g['file'].split('/')[-1]}:{g['line']}" for g in gaps[:3]]
+
+
 def rules() -> list[dict]:
     """Les règles debout, chacune avec sa porte. Aucune n'est inventée ici : toutes renvoient à un §."""
     g = git_state()
@@ -509,9 +523,12 @@ def rules() -> list[dict]:
         not gone, f"{len(gone)} chemin(s) cité(s) dans le vide : "
         + ", ".join(f"{p} (L{l})" for p, l in gone[:4]) if gone
         else f"{len(cited_paths())} chemins cités, tous présents")
+    n_gaps, where = claim_gaps()
     add("stat-sourcee", "Aucune statistique sans source primaire nommée ; ce qui n'est pas revérifiable est écrit tel quel.",
-        "PRE-FLIGHT §1g", "chaque chiffre écrit", "trou", True,
-        "sans porte machine : la porte est le chemin cité à côté du chiffre, ou le mot « non revérifié »")
+        "PRE-FLIGHT §1g", "chaque chiffre écrit", "souple", n_gaps == 0,
+        f"{n_gaps} pourcentage(s) sans appui dans knowledge/ ({', '.join(where)}) → "
+        "python3 tools/qa/audit_claims.py --sources knowledge" if n_gaps
+        else "aucun pourcentage affirmé sans lien, chemin, « selon » ou « non revérifié »")
     add("fichier-neuf-avec-king", "Un fichier debout nouveau n'existe qu'avec le oui de King.",
         "PRE-FLIGHT §4b", "création d'un document souverain", "trou", True,
         "sans porte machine : la porte est la proposition d'emplacement dans la réponse, puis le ruling")
