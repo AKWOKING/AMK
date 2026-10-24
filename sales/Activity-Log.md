@@ -5459,3 +5459,45 @@ remonté `sales/MESSAGES-2026-09-23-PERSUASION.md` §4 : **aucune relance sur un
 (coches grises) — mot pour mot de King, 24/09. Trois fichiers corrigés : `OUTREACH-REECRITURE` §5.4 et §6,
 `LISTE-OPTICIENS` §3, `CLIENT-MESSAGING-RULES` §13. **La condition de lecture précède désormais toute
 relance, y compris la rupture.**
+
+## 24/10/2026 (14:02–14:45) — DM Optique : le cercle revient, et le solde est promis pour le 31/10 en espèces
+
+Deux messages du client, reçus le même après-midi, sur deux sujets distincts. Verbatim, sans
+reformulation.
+
+**① Le cercle du premier écran.** Message du client, capture transmise par King :
+« *Il y avait un cercle à peu près comme ce que j'ai dessiné. C'était très bien.* » — la capture est
+annotée à la main (trois traits : bleu, vert, rouge). Le cercle retrouvé est `.lensring`, l'anneau
+dégradé bleu → braise du premier écran, présent du 24/09 au 11/10, retiré le 11/10 par un **ruling
+client** qui demandait son logo à la place. Rétabli à l'identique ; fiche technique et réserves dans
+`clients/dm-optic/build-notes.md` (24/10 soir). Deux questions restent ouvertes : le vert du dessin
+n'existe pas dans l'anneau, et « cercle » peut désigner le logo posé dans un anneau.
+
+**② Le paiement.** Message du client à 14:44 : « *Je termine ton accompte samedi prochain en cash si
+Dieu le permet.* » Réponse de King : « *D'accord merci.* » Puis, à 14:45, le client précise lui-même sa
+propre formule : « *Dieu le permet signifie simplement que si on est toujours vivant. On ne connaît pas
+demain.* »
+
+**Ce que l'on sait, et ce que l'on ne sait pas.**
+
+| | État au 24/10 |
+|---|---|
+| Montant payé | **75 000 FCFA**, le 13/10, en espèces, **sans reçu** (déclaré par l'opérateur, `pre-launch-checklist.md` item 1) |
+| Montant annoncé | **non chiffré** dans le message : « accompte » peut désigner le solde de 75 000 ou une seconde tranche |
+| Date annoncée | **samedi 31/10** (« samedi prochain », le 24/10 étant un samedi) |
+| Moyen annoncé | **espèces**, comme la première fois |
+| Condition | posée par le client lui-même, et il l'assume : « si on est toujours vivant » |
+
+**Ce que ce message n'est pas.** Ce n'est pas un encaissement. Le déclencheur du dossier (§14) reste
+« fonds crédités **et** proforma tamponnée retournée » — pas « promis ». Rien ne change donc dans les
+livrables : le CRM ne bouge pas, l'échéance de publication non plus.
+
+**Ce qu'il faut préparer avant le 31/10, et qui nous appartient.**
+1. **Un reçu, même manuscrit.** Deux paiements en espèces sans pièce, c'est un trou de traçabilité
+   que le client — SARL sous contrôle fiscal — finira par nous opposer. Un reçu signé en deux
+   exemplaires ne demande ni RIB ni NIU ; c'est la seule pièce qu'on peut produire **aujourd'hui**.
+2. **La question du montant, posée en une phrase** : « *Pour être sûr d'écrire le bon montant sur le
+   reçu : c'est le solde de 75 000, ou une autre tranche ?* » — on ne devine pas un chiffre.
+3. **RIB + NIU d'AMK** toujours absents (`PAIEMENT-SOLDE-ET-RETAINER-2026-10-22.md` §3) : sans eux, pas
+   de proforma émissible. Un paiement en espèces ne les rend pas moins nécessaires — il les rend plus
+   urgents, parce qu'il ne laisse aucune autre trace.

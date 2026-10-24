@@ -2220,3 +2220,68 @@ Il reste dans l'arbre tant que la publication n'a pas réussi, et c'est volontai
 n'a pas pu aboutir le 24/10 au soir (hôte d'upload de GitHub injoignable depuis la session). Elle
 vérifie son propre résultat par un aller-retour avant de dire « publié » ; ensuite seulement,
 `git rm --cached` retire le fichier du suivi et la ligne `.gitignore` qui l'exemptait disparaît.
+
+## 24/10/2026 (soir) — le cercle revient dans le premier écran, et l'historique dit pourquoi il était parti
+
+**Demande du client** (relayée par King, capture WhatsApp du 24/10) : « Il y avait un cercle à peu près
+comme ce que j'ai dessiné. C'était très bien. » Le client veut le cercle dégradé du premier écran.
+
+**Ce que j'ai retrouvé, et daté.** Ce cercle est `.lensring` : un SVG de deux cercles concentriques, un
+dégradé `#7FA6E8 → #2A5CB8 → #E0703A` (bleu clair → bleu de cachet → braise), rotation de 24 s. Il a
+existé du 24/09 au **11/10**, puis a été **remplacé par le logo du cabinet** (`.herologo`) — et ce
+n'était pas un accident de build, c'était un ruling : le commentaire du gabarit disait mot pour mot
+« *11/10 (ruling client) : l'anneau bleu-braise « lensring » est remplacé par LE LOGO du cabinet* ».
+Le logo a ensuite quitté le premier écran le 20/10, quand la photo du cabinet est devenue le fond —
+et le CSS, lui, est resté tout ce temps, sans élément pour l'utiliser.
+
+**Ce qui est fait.** L'élément est rétabli **à l'identique** (géométrie, arrêts de dégradé, opacités,
+`aria-hidden`, la règle `prefers-reduced-motion` qui l'arrête déjà). Rien d'autre n'a bougé : ni la
+photo de fond, ni le voile, ni la carte, ni les textes.
+
+**Contrôles** (page de production et aperçu) : `audit_html` 0 constat · `audit_a11y --strict`
+0 faute/0 avertissement · `audit_images` 0 · `check_inline_js` 0 · `audit_hero` 0 ·
+`test_dmoptic_page.mjs` **62/62**.
+
+**Deux choses que je ne tranche pas seul, et qui sont écrites ici pour être posées au client :**
+
+1. **Le dessin montre du vert.** La capture est annotée à la main (trois traits : bleu, vert clair,
+   rouge) — le rouge sort même de la carte. Le cercle du site n'a jamais contenu de vert : c'est un
+   dégradé bleu → braise. Si le client veut *ces* couleurs-là, c'est une autre demande, et elle se
+   traite en changeant trois arrêts de dégradé, pas en devinant.
+2. **Le 11/10, c'est lui qui avait demandé son logo à la place.** Le cercle revient donc *en plus* du
+   logo (qui est dans l'en-tête), pas *contre* lui. Si ce qu'il appelle « cercle » est son logo posé
+   dans un anneau, c'est une ligne à changer — mais ce n'est pas la même pièce.
+
+**Non déployé par moi** : la construction est faite (`hosting/previews/dmoptic/`), le déploiement passe
+par Cloudflare Workers Builds (branche `main`) ou par le geste de King.
+
+**Contrôle visuel** : le bac n'a pas de navigateur. L'anneau a été rendu hors navigateur, arrêt par
+arrêt, pour vérifier l'orientation du dégradé (bleu en haut à gauche, braise en bas à droite) — c'est
+une **approximation fidèle du tracé**, pas un rendu du navigateur. L'œil final reste celui de King.
+
+### Ce que ce rebuild a failli emporter — et le garde qui l'empêche désormais
+
+En reconstruisant la page pour y remettre le cercle, j'ai lancé `build_dmoptic.py --production` puis
+`build_dmoptic_montures.py`. Résultat : **107 fichiers modifiés**, dont **191 lignes perdues sur la
+seule page contact**. Cause : le **23/10**, le menu mobile (`.mnav`, `.mnav-panel`, un bloc
+`<details>` dans le corps) et le badge « source préférée sur Google » (`.psrc`) ont été écrits dans les
+pages **déjà construites**, sans jamais repasser par le gabarit. Le gabarit ne les connaît donc pas, et
+tout rebuild les efface en silence.
+
+Mesure : la page en place porte **58 classes CSS**, le gabarit en produit **54**. L'écart est exactement
+`.logo` (injecté par le script, donc normal), `.mnav`, `.mnav-panel`, `.psrc` — plus le `<details>`.
+
+**Corrigé par un refus, pas par une note.** `build_dmoptic.py` compare maintenant, avant d'écrire,
+l'ensemble des classes de la page en place à celui qu'il s'apprête à écrire. S'il en manque une, il
+**refuse** et les nomme :
+
+```
+refus : la page en place porte des classes que le gabarit ne produit pas : .mnav, .mnav-panel, .psrc
+        reconstruire les effacerait. Deux issues : les reporter dans demos/dmoptic-v1.tpl.html (le bon geste),
+        ou lancer avec --force-rebuild si la perte est voulue. Rien n'a été écrit.
+```
+
+`--force-rebuild` existe pour le cas où la perte est voulue. Le bon geste, lui, reste de **reporter le
+23/10 dans le gabarit** — c'est un chantier de 30 minutes, non fait ce soir, et il est nommé ici pour ne
+pas être oublié : tant qu'il n'est pas fait, `build_dmoptic.py` refuse de reconstruire, et c'est
+volontaire.

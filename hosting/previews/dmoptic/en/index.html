@@ -203,6 +203,9 @@ html.js .wash{animation:drift 2.8s var(--ease) 1 both}
   50%{transform:translate3d(3%,2.5%,0) scale(1.09)}
   100%{transform:translate3d(-1%,3%,0) scale(1.04)}
 }
+/* 24/10 (demande client, relayée par King) : l'anneau de verre du premier écran revient.
+   Retiré le 11/10 par un ruling client (son logo à la place) ; le logo a quitté le hero le 20/10.
+   Le CSS était resté sans élément : on remet l'élément, pas une nouvelle pièce. */
 .lensring{position:absolute;z-index:0;right:-88px;top:34px;width:290px;height:290px;pointer-events:none}
 html.js .lensring{animation:spin 24s linear infinite}
 /* 20/10 (demande client relayée par King) : la photo réelle du cabinet
@@ -433,6 +436,20 @@ html.js .glint{stroke-dasharray:22 120;stroke-dashoffset:22;animation:draw .95s 
       alt="Inside the DM OPTIQUE SARL practice in Bonaberi, frame display walls and seating.">
     <span class="hero-scrim" aria-hidden="true"></span>
     <span class="wash" aria-hidden="true"></span>
+    <!-- 24/10 (demande client) : le cercle dégradé du premier écran, rétabli à l'identique.
+         Retiré le 11/10 par un ruling client qui demandait son logo à la place ; le logo a ensuite
+         quitté le premier écran (20/10). Deux cercles, un dégradé bleu → braise, 24 s/tour,
+         arrêté net par prefers-reduced-motion. -->
+    <svg class="lensring" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+      <defs><linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#7FA6E8" stop-opacity="0"></stop>
+        <stop offset=".45" stop-color="#2A5CB8" stop-opacity=".55"></stop>
+        <stop offset=".78" stop-color="#E0703A" stop-opacity=".38"></stop>
+        <stop offset="1" stop-color="#E0703A" stop-opacity="0"></stop>
+      </linearGradient></defs>
+      <circle cx="100" cy="100" r="92" fill="none" stroke="url(#sheen)" stroke-width="9"></circle>
+      <circle cx="100" cy="100" r="70" fill="none" stroke="url(#sheen)" stroke-width="2.5" opacity=".8"></circle>
+    </svg>
     <!-- 20/10 (demande client) : la photo du cabinet est le fond du premier écran ; la carte reste la preuve à droite. -->
     <div class="wrap hero-grid">
       <div>

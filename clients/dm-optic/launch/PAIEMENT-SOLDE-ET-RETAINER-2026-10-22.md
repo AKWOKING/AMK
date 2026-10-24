@@ -34,9 +34,14 @@ C'est un engagement qui nous oblige — donc il est crédible.
 | **J+1** (demain matin) | Annonce des comptes (`ANNONCE-COMPTES-2026-10-22.md`) | **Zéro euro dans ce message** |
 | **J+2 → J+4** | Il valide la vidéo → on publie sur TikTok et Facebook | La livraison devient démontrable |
 | **J+5** | On lui envoie **une fiche d'une page** : ce qui est en ligne, ce qui est produit, les premiers chiffres | Il voit avant qu'on demande |
-| **J+7** | **Message solde** (§4) | Après une preuve, jamais avant |
+| **J+7** | **Message solde** (§4) | Après une preuve, jamais avant. ⚠️ **Périmé le 24/10 : le client a pris les devants** — il annonce lui-même le paiement en espèces « samedi prochain » (**31/10**), sans qu'on demande. Le message §4 ne doit donc **pas** partir : on répond à son annonce, on ne la double pas |
 | **J+9 / J+10** | **Message retainer** (§5), séparé | Deux conversations, pas une |
 | **01/11** | Démarrage du retainer, facturé d'avance | Un mois plein, pas un démarrage à la découpe |
+
+**Samedi 31/10, ce qu'on apporte** (ajouté le 24/10) : un **reçu manuscrit en deux exemplaires** — deux
+paiements en espèces sans pièce est un trou que le client, SARL sous contrôle fiscal, finira par nous
+opposer — et **une question, une seule** : « c'est le solde de 75 000, ou une autre tranche ? ». On
+n'écrit pas un montant sur un reçu avant de l'avoir demandé.
 
 **Ce qu'on ne fait pas** : demander le solde le lendemain de l'annonce des comptes. Le message d'annonce et la demande d'argent séparés par 24 h, c'est la même chose que collés : il comprend qu'on annonce pour facturer.
 
