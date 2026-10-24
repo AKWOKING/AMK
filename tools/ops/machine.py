@@ -241,6 +241,40 @@ def git_state() -> dict:
                 ahead=ahead, behind=behind)
 
 
+def merge_gauge() -> dict:
+    """La règle de fusion de PRE-FLIGHT §1i, rendue mécanique : jalon, 3 000 lignes, 40 fichiers, 6 tours."""
+    base = run(["git", "merge-base", "HEAD", "origin/main"])
+    if not base:
+        return dict(ok=False, base=None, files=0, lines=0, added=0, deleted=0, commits=0,
+                    due=False, why="pas de base commune avec origin/main — demander avant de toucher à main")
+    numstat = run(["git", "diff", "--numstat", base, "HEAD"], timeout=60)
+    files = lines = added = deleted = 0
+    for row in numstat.splitlines():
+        parts = row.split("\t")
+        if len(parts) < 2:
+            continue
+        files += 1
+        for i in (0, 1):
+            try:
+                v = int(parts[i])
+            except ValueError:
+                v = 0  # fichier binaire : compté en fichier, pas en ligne
+            if i == 0:
+                added += v
+            else:
+                deleted += v
+    lines = added + deleted
+    commits = int(run(["git", "rev-list", "--count", f"{base}..HEAD"]) or 0)
+    due = files >= 40 or lines >= 3000
+    why = ""
+    if files >= 40:
+        why = f"{files} fichiers (seuil 40)"
+    if lines >= 3000:
+        why = (why + " · " if why else "") + f"{lines} lignes (seuil 3 000)"
+    return dict(ok=True, base=base[:7], files=files, lines=lines, added=added, deleted=deleted,
+                commits=commits, due=due, why=why)
+
+
 def newest_source() -> tuple[float, str]:
     """Le fichier suivi le plus récemment modifié, hors sorties régénérables."""
     files = run(["git", "ls-files", "-z"], timeout=60).split("\0")
@@ -338,6 +372,17 @@ def cockpit() -> int:
         print(f"  {YEL}⚠{OFF}  {g['ahead']} commit(s) d'avance, {g['behind']} de retard sur le distant")
     else:
         print(f"  {GRN}✓{OFF}  branche alignée sur le distant")
+    mg = merge_gauge()
+    if not mg["ok"]:
+        print(f"  {RED}⛔{OFF} {mg['why']}")
+        hard.append("pas de base commune avec main")
+    elif mg["due"]:
+        print(f"  {RED}⛔{OFF} fusion due — {mg['why']} · {mg['commits']} commit(s) depuis main")
+        print(f"     {DIM}→ bash tools/ops/machine.sh --merge{OFF}")
+        hard.append("fusion due (PRE-FLIGHT §1i)")
+    else:
+        print(f"  {GRN}✓{OFF}  branche sous les seuils de fusion — {mg['files']} fichiers · "
+              f"{mg['lines']} lignes · {mg['commits']} commit(s) depuis main")
     if gr["stale"]:
         print(f"  {RED}⛔{OFF} carte périmée — `{gr['stale_by']}` est plus récent que ops/REPO-MAP.md")
         print(f"     {DIM}→ python3 tools/graphify/build_full_graph.py{OFF}")
@@ -421,6 +466,35 @@ def who(query: str) -> int:
     return 0
 
 
+def merge_card() -> int:
+    mg = merge_gauge()
+    print(f"{BOLD}FUSION — PRE-FLIGHT §1i et §1i bis{OFF}\n")
+    if not mg["ok"]:
+        print(f"  {RED}⛔{OFF} {mg['why']}")
+        return 1
+    tag = f"{RED}due{OFF}" if mg["due"] else f"{GRN}pas encore due{OFF}"
+    print(f"  depuis {mg['base']} : {mg['files']} fichiers · +{mg['added']} −{mg['deleted']} "
+          f"({mg['lines']} lignes) · {mg['commits']} commit(s) → {tag}")
+    print(f"  {DIM}seuils : jalon · 3 000 lignes · 40 fichiers · 6 tours{OFF}\n")
+    print(f"{BOLD}La séquence, dans cet ordre{OFF}")
+    for i, x in enumerate([
+        "git fetch origin",
+        "git log --oneline -3 origin/main            # main a-t-il bougé ?",
+        "git merge-base HEAD origin/main || echo \"AUCUN ANCETRE — main a été réécrit\"",
+        "git diff --stat origin/main HEAD | tail -5  # l'écart réel",
+        "# main a avancé : git merge origin/main dans la branche, résoudre, repousser",
+        "gh pr merge <numéro> --merge                 # puis seulement",
+        "git log --oneline -1 origin/main             # vérifier que main le porte",
+    ], 1):
+        print(f"  {i}. {x}")
+    print(f"\n{BOLD}Ce qu'on ne fait pas{OFF}\n"
+          "  · fermer la PR « pour ranger » entre deux tours\n"
+          "  · fusionner sans `fetch` : GitHub répondrait « head branch is out of date »\n"
+          "  · `-X ours` en aveugle quand main et la branche touchent les mêmes fichiers\n"
+          "  · forcer si main a été réécrit (aucun ancêtre commun) — on demande d'abord")
+    return 0
+
+
 def check() -> int:
     gr = graph_state()
     prov = provision_state()
@@ -431,6 +505,11 @@ def check() -> int:
         problems.append(f"carte périmée ({gr['stale_by']} plus récent)")
     if not prov["ok"]:
         problems.append("aucun outil provisionné cette session → bash tools/ops/provision.sh")
+    mg = merge_gauge()
+    if not mg["ok"]:
+        problems.append(mg["why"])
+    elif mg["due"]:
+        problems.append(f"fusion due — {mg['why']} → bash tools/ops/machine.sh --merge")
     for p in problems:
         print(f"{RED}⛔{OFF} {p}")
     if problems:
@@ -448,6 +527,8 @@ def main(argv: list[str]) -> int:
         return 0
     if a == "--check":
         return check()
+    if a == "--merge":
+        return merge_card()
     if a == "--who":
         if len(argv) < 2:
             print("usage : machine.py --who <sujet>", file=sys.stderr)

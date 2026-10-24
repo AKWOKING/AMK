@@ -11,6 +11,7 @@
 bash tools/ops/machine.sh              # le cockpit : l'étape, ce qui est frais, ce qui ne l'est plus
 bash tools/ops/machine.sh 2            # la fiche de l'étape 2 (lecture) : quoi lire, quoi lancer, quand c'est fini
 bash tools/ops/machine.sh --who prix   # qui tranche le sujet « prix », et ce qui le vérifie
+bash tools/ops/machine.sh --merge      # la jauge de fusion : combien de fichiers/lignes depuis main
 bash tools/ops/provision.sh --list     # les 24 outils : installés cette session, ou pas
 ```
 
@@ -62,7 +63,7 @@ sait pourquoi le chiffre était faux.
 | 4 | **Exécution** | *Quel outil fait ce travail — et est-il installé, épinglé, jugé ?* | la commande lancée + son code retour | `provision.sh` · `tools/<domaine>/` · `ops/TOOL-SCAN.md` |
 | 5 | **Preuve** | *Qu'est-ce qui prouve que c'est fait ?* | la sortie de la porte, recopiée dans la réponse | `gate-dm.sh` · `gate-amk.sh` · `tools/qa/*` · skill `verification-before-completion` |
 | 6 | **Mémoire** | *Où est-ce écrit pour la session qui ne se souvient de rien ?* | 1 à 3 lignes datées dans le bon fichier | `sales/Activity-Log.md` · `ops/TOOL-SCAN.md` · `clients/_uniqueness-registry.md` · `ops/HANDOFF-*` · Notion (miroir) |
-| 7 | **Sortie** | *Est-ce poussé ?* | `git push` fait, branche à jour | `git` · `PRE-FLIGHT.md` §1i (seuils 3 000 / 40 / 6) · `wake.py --check` |
+| 7 | **Sortie** | *Est-ce poussé — et est-ce que la branche doit être fusionnée ?* | `git push` fait, branche à jour, **jauge de fusion lue** | `git` · `PRE-FLIGHT.md` §1i (jalon · 3 000 lignes · 40 fichiers · 6 tours) · `bash tools/ops/machine.sh --merge` · `wake.py --check` |
 
 ### Pourquoi ces huit-là, et pas d'autres
 
@@ -173,6 +174,10 @@ Une porte est un **code retour**, pas une impression. Si elle n'a pas été lanc
 5. **Chaque actif a une date et un propriétaire.** Un doc sans date ne se périme pas ; il pourrit.
 6. **Un outil entre par un ruling, reste par un pin, sort par une note datée.** Jamais par oubli.
 7. **Le tour finit poussé.** Un commit local n'existe pas pour la session suivante.
+8. **La branche se fusionne sur seuil, pas sur humeur.** Jalon, ou 3 000 lignes, ou 40 fichiers, ou 6 tours
+   (`PRE-FLIGHT.md` §1i). Le seuil n'est pas une mémoire : `bash tools/ops/machine.sh` l'affiche, et
+   `--check` échoue tant qu'il est dépassé. Trou constaté le 24/10 : **22 commits, 544 fichiers, 59 722
+   lignes** sur la même branche sans fusion — la règle existait, rien ne la rappelait.
 
 ---
 
@@ -187,6 +192,7 @@ Une porte est un **code retour**, pas une impression. Si elle n'a pas été lanc
 | Carte qui se cite elle-même | le graphe change à chaque reconstruction sans qu'un fichier bouge | `REPO-MAP.md` est exclu de son propre index |
 | Session neuve sans skills | l'agent « ne trouve pas » un skill installé la veille | `provision.sh`, au début de chaque session |
 | Handoff qui vieillit | un état de travail de trois jours présenté comme actuel | le cockpit affiche son âge ; au-delà de 3 jours, il est réécrit |
+| Branche qui ne fusionne jamais | 22 commits et 59 722 lignes sur la même branche, `main` figé depuis trois jours | la jauge de fusion du cockpit, et `machine.sh --merge` pour la séquence `fetch` → diff → PR |
 
 ---
 
