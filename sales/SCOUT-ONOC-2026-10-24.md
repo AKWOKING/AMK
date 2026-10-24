@@ -114,7 +114,7 @@ précède : `python3 leads/build/guard.py check` (rc 1 si un générateur a boug
 
 | Ce qui reste | Pourquoi ce n'est pas fait ici | Qui |
 |---|---|---|
-| **Porte A** sur les 20 numéros (profil WhatsApp vu) | il faut un téléphone qui ouvre WhatsApp et un jugement : le numéro de l'Ordre peut être un fixe, une ligne d'agence ou un numéro partagé | **King**, 20 ouvertures, ~4 min |
+| **Porte A** sur les 20 numéros (profil WhatsApp vu) | il faut un téléphone qui ouvre WhatsApp et un jugement : le numéro de l'Ordre peut être un fixe, une ligne d'agence ou un numéro partagé | **King**, 20 ouvertures, ~4 min — liste prête à cocher : `sales/PORTE-A-2026-10-25.md` |
 | Vérifier s'ils ont déjà un site ou une page Facebook | demande une recherche par cabinet (20 × 2) ; inutile tant que la porte A n'a pas dit qui est joignable | après la porte A |
 | Écrire les messages | un message par cabinet, avec son quartier et sa fuite réelle : **pas avant** la porte A et le contrôle du site (règle « pas de site par prospect avant réponse ») | après la porte A |
 | Choisir le segment (cold vs re-engage) | tous les 21 sont **cold** : aucun n'a jamais été contacté | — |

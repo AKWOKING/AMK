@@ -17,6 +17,31 @@
   pas rebuild — couche config dans le build Univers).
 - Ils veulent « quelque chose + site web » : le pack est exactement cette demande.
 
+## Le contre-exemple vérifiable — la fiche Google de DM Optique (25/10, ruling King)
+
+Quand un opticien demande « à quoi ça ressemble, une fiche complète ? », **on ne décrit pas : on montre
+DM Optique**. Sa fiche Google est en ligne, complète, et c'est **notre** travail — donc elle est à nous,
+elle ne dépend d'aucune capture d'un tiers, et elle est vérifiable par le prospect en dix secondes.
+
+Ce qu'elle porte, et qui fait la démonstration à notre place :
+
+| Ce qu'un patient voit | DM Optique (fiche complète) | Optix (capture du 24/10) |
+|---|---|---|
+| catégorie | Opticien | « Optician in Douala » — correcte, mais en anglais |
+| adresse | complète (rue, quartier) | « OPTIX SARL, Douala » — **aucune rue** |
+| horaires | publiés | Google réclame « **Add business hours** » |
+| site web | renseigné | Google réclame « **Add website** » |
+| avis | collectés, répondus | « **Be the first to review** » |
+
+**Comment s'en servir, en une phrase** (jamais avant qu'il demande, jamais en ouverture) : « votre fiche
+ressemble à ça aujourd'hui *[la sienne]* ; celle-ci est celle d'un opticien de Douala qu'on a faite
+*[DM Optique]* — même métier, même ville ». Puis on se tait.
+
+**Ce qu'on ne dit pas** : « voilà ce qu'on a fait pour lui » sans qu'il demande (preuve sociale non
+sollicitée = vantardise), et **aucun chiffre de résultat** tant que le premier client n'a pas payé
+(§Preuve ci-dessus). La fiche est un **objet**, pas un résultat — c'est exactement pour ça qu'elle peut
+se montrer : elle ne promet rien.
+
 ## Ce que le pack n'est JAMAIS
 Pas de claim médical · pas de remise (trade scope/timing) · pas de Play Store · pas de mensuel creux ·
 pas de travail sur la démo d'un prospect sans demande (règle 03/10) · pas de site re-pitché à Univers.

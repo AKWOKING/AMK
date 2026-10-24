@@ -5680,3 +5680,47 @@ citent maintenant les entrées de journal du 20 et du 21/10.
 
 **Le prochain geste, un seul.** Les cinq messages froids du lot du 26/10 partent d'abord (Optix avec sa
 capture, §10.3). La porte A des 20 numéros se passe ensuite, en une session de 4 minutes.
+
+## 25/10/2026 — Optix part aujourd'hui, seul, et le message dit enfin une chose vraie
+
+**Trois rulings de King, appliqués.** ① Optix part **le dimanche 25/10**, et c'est le **seul** message
+du jour : il a réagi 👍 le 24/10 à 12:12, on ne le fait pas attendre « un jour plein » pour obéir à un
+délai J+2/J+3 qui protège les **silencieux**, pas ceux qui ont montré quelque chose. ② La fiche Google
+de **DM Optique** sert de **contre-exemple** face à un opticien qui demande à quoi ressemble une fiche
+complète — documenté au `PACK-OPTICIEN` §« Le contre-exemple vérifiable ». ③ La liste des numéros à
+vérifier est écrite : `sales/PORTE-A-2026-10-25.md`, **26 numéros** (6 du lot + 20 du scout), format
+à cocher, ~4 minutes.
+
+**Et le message a été réécrit, parce que King a démonté celui d'avant — à juste titre.** Quatre
+reproches, tous fondés : « bonjour à Akwa ou à Optix ? », « la capture ci-jointe vient de votre fiche —
+elle a fait quoi ?? », « votre page Facebook… est faux », et « je ne comprends pas ce que vous essayez
+de transmettre ».
+
+**Le fond du reproche sur Facebook est le plus grave, et il change un fait du dossier.** La page
+« Optic Sar l | Douala » que Google affiche **n'est pas celle du cabinet** : c'est un **cabinet
+d'expertise comptable** (« optimisation des coûts, fiscalité, création d'entreprise, business plan,
+contrôle de gestion, formation », page « Service de comptabilité », `ange raphael, Douala`,
+**6 96 14 77 46**, `formation-optic@gmail.com`, 333 abonnés). Même nom à une lettre près, autre métier,
+autre numéro. Le cabinet, lui, n'a **aucune** page Facebook visible sur Google. Donc :
+- « Google vous présente comme une entreprise de contrôle de gestion » était **faux** — Google classe
+  bien Optix « Optician in Douala » ; le contrôle de gestion est le métier de l'homonyme ;
+- « votre page Facebook renvoie vers un site qui n'existe plus » est **retiré** : le 404 est daté, mais
+  l'appartenance de cette page au cabinet n'est pas prouvée par une capture. **Ce qu'on ne peut pas
+  dater ne part pas.**
+
+**Le nouveau message — 54 mots, 4 phrases, 1 question, porte OK 0/0, capture jointe :**
+
+> Bonjour, c'est King. À Akwa carrefour Idéal, voici ce que Google affiche pour Optix : la fiche est
+> classée « Optician in Douala », sans rue, sans site, sans horaires — et à côté apparaît un autre
+> « Optic Sarl », un cabinet de contrôle de gestion.
+> Ce n'est pas de votre fait.
+> Deux minutes, sans moi : ça vous parle ?
+
+Il ne dit plus **que** ce que la capture montre. L'homonyme n'est pas une preuve contre lui : c'est ce
+que **son patient** voit, et c'est pour ça que le message ne l'accuse de rien. La capture a été
+**refaite** pour le dire correctement (bloc 1 = sa fiche, bloc 2 = la page de l'homonyme, chacune
+nommée pour ce qu'elle est).
+
+**Le calendrier qui suit** : dimanche 25/10 Optix seul · lundi 26/10 Bouda · mardi 27/10 COMED ·
+mercredi 28/10 IVY · jeudi 29/10 Jolinom · vendredi 30/10 Le Sourire · **rien le 31/10** (jour du
+paiement DM Optique).
