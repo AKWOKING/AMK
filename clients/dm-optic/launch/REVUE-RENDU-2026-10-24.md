@@ -275,3 +275,73 @@ Une réserve à dire : à **1024 px**, l'anneau décalé n'est visible qu'à **4
 de place relative). Il faudra donc, si King valide, un réglage par palier (`width: 620px` au-dessus de
 1280, `720px` entre 1024 et 1280) et une vérification à 390 px. Rien de cela n'est fait : la variante
 n'existe aujourd'hui que dans la capture.
+
+---
+
+## 11 · La décision prise par `brainstorming` — et ce qu'elle a changé (24/10, 23h)
+
+King : *« for these choices I want you to use superpower skill to decide… what does brainstorming
+propose? we will go with that. »* Le skill `tools/superpowers/skills/brainstorming` a été lu et appliqué
+(`bash tools/superpowers/use.sh brainstorming`). Il impose trois choses : **regarder le contexte avant
+de demander**, **jouer en retour ce qu'on croit avoir compris**, et **poser les approches dans un
+message à part avant d'écrire**. Note de conception : `docs/superpowers/specs/2026-10-24-cercle-placement-design.md`.
+
+### 11.1 · Ce que le skill a fait apparaître, et qui manquait aux quatre variantes
+
+Le skill commence par « qu'est-ce que je sais déjà ? » — pas par « quelle variante est la meilleure ».
+Deux pièces du dossier ont alors changé la question :
+
+1. **Le client a déjà reçu deux branches** de King, pas une : *« 1. Je peux rendre la photo plus
+   visible — 2. Je peux retirer la photo et mettre le fond blanc qui avait le dessin. »* Les quatre
+   variantes mesurées la veille répondaient à « où mettre le cercle **sur la photo** ». La branche 2
+   n'avait jamais été rendue.
+2. **La photo du cabinet n'est pas un accident** : demande client du 10/10 (« c'est mieux la photo du
+   cabinet »), posée le 20/10, avec une mesure à l'appui (média du premier écran **12 % → 75 %**). La
+   retirer n'est pas un réglage, c'est défaire une demande.
+
+### 11.2 · La mesure qui a tranché : l'encre, pas la géométrie
+
+Le dégradé `#sheen` va de l'opacité **0 → 0,55 → 0,38 → 0** : un arc peut être géométriquement dehors
+et invisible. Chaque point du trait a donc été **pondéré par son opacité réelle** et par l'épaisseur du
+trait (9 px pour r=92, 2,5 px pour r=70).
+
+| Approche | Encre visible 1440 | Encre visible 1024 | Titre / chapeau / boutons | Ce qu'on paie |
+|---|---|---|---|---|
+| **A** livré ce soir (centré sous la carte) | 55 % | 61 % | 0 / 0 / 0 | — |
+| **C** carte en verre 88 % + flou (proposition de King) | 74 % | 63 % | 0 / **3 %** / 2 % (**6 / 8 / 1 %** à 1024) | la fiche qui porte les faits devient translucide |
+| **D** cercle décalé sur le coin haut-droit | **79 %** | **48 %** | 0 / 0 / 0 | rien |
+| **F** branche 2 du client : sans photo, fond clair, cercle à sa place | **21 %** | — | 0 / 0 / 0 | la photo du cabinet disparaît… pour un cercle **plus pâle** |
+
+Le résultat décisif est **F** : retirer la photo ne rend pas le cercle visible, elle le rend **moins**
+visible (21 % contre 55 %). Les deux extrémités du dégradé sont à l'opacité 0 et le bleu clair
+s'efface sur le papier. Les deux options offertes au client ne sont donc pas symétriques : l'une rend
+le cercle plus lisible, l'autre pas.
+
+### 11.3 · Décision
+
+**D, avec un réglage par palier**, appliqué aux deux pages et au gabarit :
+
+| Largeur | Ø | Ancrage | Encre visible | Collisions |
+|---|---|---|---|---|
+| < 1024 | 470 px (inchangé) | centré sur la carte (inchangé) | 33 % | 0 |
+| 1024–1199 | 620 px | coin haut-droit (`right:-34% ; top:-16%`) | 48 % | 0 |
+| ≥ 1200 | 700 px | idem | 67 % (1280) · **79 % (1440, 1680)** | 0 |
+
+Contrôlé dans Chromium à **390, 768, 1024, 1200, 1280, 1440, 1680** : zéro collision, zéro débordement,
+zéro erreur console. Le cercle passe au-dessus du bord droit du premier écran (40 px à 390, 124 px à
+1024) : c'est voulu, `.hero` est en `overflow:hidden`.
+
+Portes après le changement : `test_dmoptic_page` **62/62**, `audit_a11y --strict` **0**, `audit_html`
+**0**, `audit_delivery --strict` **VERT** (1 P3 connu), `audit_reveal` **4 fautes préexistantes**
+(identiques à celles d'avant, sans effet mesuré).
+
+### 11.4 · Ce que le skill a écarté, et ce qu'il laisse ouvert
+
+Écartés : **B** (cercle 760 non déplacé — traverse le titre à 19 %), **H** (un disque clair derrière la
+carte pour porter le cercle — 75 % d'encre, mais lave la légende et fabrique un projecteur), **C + D**
+ensemble (deux changements pour 0 à 4 points d'encre).
+
+Laissé ouvert, **et à ne pas promettre** : la force du trait. À 33 % d'encre sur téléphone, le cercle
+reste discret. Le rendre plus présent demanderait d'épaissir le trait ou de relever les arrêts
+d'opacité — donc de **changer le dessin**, qui est une décision du client (son croquis a du bleu, du
+vert et du rouge ; le cercle n'a jamais eu de vert).

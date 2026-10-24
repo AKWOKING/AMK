@@ -217,7 +217,13 @@ html.js .lensring{animation:spin 24s linear infinite}
 .h-city{display:block;margin-top:.35em;font-size:.5em;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-2)}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (min-width:600px){ .lensring{width:440px} }
-@media (min-width:1024px){ .lensring{width:560px} }
+/* 24/10 (soir, decision « brainstorming ») : le cercle s'ancre sur le coin haut-droit de la
+   carte au lieu d'etre centre dessous. Mesure : l'encre visible passe de 55 % a 79 % a 1440,
+   et 0 % de collision avec le titre, le chapeau, les lignes et les boutons. La carte reste
+   opaque : c'est elle qui porte les faits (titulaire, adresse, horaires).
+   Note de conception : docs/superpowers/specs/2026-10-24-cercle-placement-design.md */
+@media (min-width:1024px){ .lensring{width:620px;left:auto;right:-34%;top:-16%;translate:0 0} }
+@media (min-width:1200px){ .lensring{width:700px} }
 .hero-grid{position:relative;z-index:1;display:grid;gap:34px}
 @media (min-width:980px){ .hero-grid{grid-template-columns:1.02fr .98fr;gap:54px;align-items:start} }
 .hero h1{margin-top:18px}
