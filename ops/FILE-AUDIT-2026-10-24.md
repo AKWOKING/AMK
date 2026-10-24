@@ -46,29 +46,26 @@ Aucun doublon à l'intérieur d'un même projet.
 
 ## 3 · Médias sans aucune référence par leur nom
 
-63 fichiers, 5.0 Mo. **Piste, pas preuve** : un manifeste, un CSS ou un `JSON` peut les appeler autrement.
+60 fichiers, 3.5 Mo. **Piste, pas preuve** : un manifeste, un CSS ou un `JSON` peut les appeler autrement.
 
 | Dossier | Fichiers | Poids | Exemples |
 |---|---|---|---|
-| `tryon-camera/apercus/` | 2 | 1008.1 Ko | apercu-interface.png, apercu-inventaire.png |
-| `clients/_mockups/labs/` | 3 | 647.2 Ko | 2k-labo.jpg, interlabo.jpg, meka.jpg |
-| `clients/_mockups/` | 3 | 574.4 Ko | EXEMPLE-clinique.jpg, EXEMPLE-college-2devices.jpg, EXEMPLE-college-portable.jpg |
-| `content/Avatar/` | 3 | 410.1 Ko | M.jpeg, N.jpeg, WhatsApp Image 2026-10-12 at 18.34.29.jpeg |
-| `hosting/previews/dmoptic/montures/` | 7 | 280.6 Ko | monture-f04-3.jpg, monture-f06-2.jpg, monture-f13-2.jpg |
-| `sales/social/videos/` | 3 | 257.8 Ko | clinic-founding-en-cover.jpg, clinic-founding-fr-cover.jpg, school-founding-en-cover.jpg |
-| `content/pipeline/post01/vo/v5-sentences/` | 14 | 256.4 Ko | s04.mp3, s05.mp3, s06.mp3 |
-| `sales/` | 1 | 226.3 Ko | AMK-5-Stage-Funnel.png |
-| `brand/v1-green/` | 1 | 225.4 Ko | funnel-v1-green.png |
-| `content/carousels/c01-vous-etes-ouverts/` | 2 | 219.8 Ko | slide-5.png, slide-6.png |
-| `mockups/` | 2 | 188.8 Ko | amk-phone.png, concept-phone.png |
-| `clients/_mockups/labs/img/` | 1 | 174.2 Ko | hero-lab.jpg |
-| `content/pipeline/post01/vo/` | 9 | 163.4 Ko | vo-b1.mp3, vo-b2.mp3, vo-b3.mp3 |
-| `content/videos/v06-facebook-no-booking/narration/` | 3 | 155.6 Ko | n1.mp3, n2.mp3, n3.mp3 |
-| `content/carousels/c02-test-des-10-secondes/` | 2 | 119.0 Ko | slide-5.png, slide-6.png |
-| `content/carousels/c03-avant-de-payer/` | 2 | 96.2 Ko | slide-5.png, slide-6.png |
-| `tryon-camera/` | 1 | 79.9 Ko | og-uo-camera.jpg |
-| `clients/dm-optic/content/month1/c1-render/` | 2 | 78.9 Ko | slide-5.png, slide-6.png |
-| `sales/walkin/` | 2 | 6.5 Ko | qr-wa-en.png, qr-wa-fr.png |
+| `clients/_mockups/bonanjo-img/` | 3 | 526.1 Ko | imagerie.jpg, maternite.jpg, neuro.jpg |
+| `clients/dm-optic/launch/facebook-assets/posters/` | 3 | 437.5 Ko | poster-01-garcon-vert.jpeg, poster-02-fille-verte.jpeg, poster-03-fille-bleue.jpeg |
+| `clients/_mockups/` | 2 | 408.9 Ko | EXEMPLE-college-telephone.jpg, EXEMPLE-dentaire-2devices.jpg |
+| `content/Avatar/` | 3 | 359.8 Ko | E.jpeg, I.jpeg, K.jpeg |
+| `content/carousels/c03-avant-de-payer/` | 3 | 320.5 Ko | slide-2.png, slide-3.png, slide-4.png |
+| `hosting/previews/dmoptic/montures/` | 7 | 290.2 Ko | monture-e14-3.jpg, monture-f01-2.jpg, monture-f08-3.jpg |
+| `content/pipeline/post01/vo/v5-sentences/` | 14 | 276.8 Ko | s07.mp3, s08.mp3, s09.mp3 |
+| `content/carousels/c01-vous-etes-ouverts/` | 3 | 177.3 Ko | slide-2.png, slide-3.png, slide-4.png |
+| `content/pipeline/post01/vo/` | 9 | 176.9 Ko | vo-b4.mp3, vo-b4a.mp3, vo-b4b.mp3 |
+| `content/carousels/c02-test-des-10-secondes/` | 3 | 165.6 Ko | slide-2.png, slide-3.png, slide-4.png |
+| `clients/dm-optic/content/month1/c1-render/` | 3 | 117.8 Ko | slide-2.png, slide-3.png, slide-4.png |
+| `sales/social/videos/` | 1 | 97.3 Ko | school-founding-fr-cover.jpg |
+| `content/videos/v06-facebook-no-booking/narration/` | 2 | 86.4 Ko | n4.mp3, n5.mp3 |
+| `clients/dm-optic/website/logo/` | 1 | 79.2 Ko | source-extrait-du-pdf-1240x992.jpg |
+| `clients/dm-optic/brand/` | 1 | 70.1 Ko | CARTE-SIGNATURE-TABLEAU-VISION-preview.png |
+| `content/videos/v07-stock-invisible/assets/` | 2 | 38.0 Ko | maquette-ui-1.png, maquette-ui-2.png |
 
 *Les photos de `clients/dm-optic/photoshoot/` ne sont PAS une rafale : c'est le **catalogue montures** du client — 160 photos, une par monture (156 montures + 4 vues du cabinet), 395 Mo. Elles sont listées parce qu'elles pèsent, pas parce qu'elles sont mortes : `sales/Activity-Log.md` (19/10) en garde **84 en réserve** pour le lot 2 du catalogue. Les supprimer effacerait la source d'un livrable à venir. Ce qui se discute ici, c'est de les sortir de git (stockage externe), pas de les effacer.*
 
