@@ -1,6 +1,6 @@
 # Cabinet d'Optique la Rétine
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-13. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-24. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -34,11 +34,10 @@ LOT 3 (préparé le 24/09, PAS ENVOYÉ). Repère publié : Akwa, « non loin de 
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 3 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 2 ligne(s).*
 
 `L3633` · 4. **Cabinet d'Optique la Rétine** (Akwa) · 695 474 364
 `L3652` · **Net Optique Médical** (675 785 930) · **Cabinet d'Optique la Rétine** (695 474 364).
-`L4223` · d'entretien, vis et plaquettes » : la source ne dit que « **accessoires d'optique** ». Réécrite en
 
 ---
 

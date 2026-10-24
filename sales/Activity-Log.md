@@ -5645,3 +5645,38 @@ jamais l'éditeur** — « la description de votre page Facebook », pas « Goog
 
 Deux numéros coexistent chez Optix, et il faut les garder distincts : Google affiche **6 81 36 92 33**,
 la page Facebook **697 72 32 65** — c'est le second qui a reçu le message et le 👍.
+
+## 24/10/2026 (23h50) — Scout ONOC : 21 cabinets neufs entrés par le générateur, et le générateur qui avait reculé
+
+**Le scout.** Les 75 cabinets du Littoral publiés par l'Ordre ont été recopiés et croisés avec les 61
+lignes opticien du CRM (nom normalisé *et* numéro) : **21 cabinets manquaient**. Ils sont entrés par
+`leads/build/crm.py` (`OPTICIENS_ONOC_2410`) — jamais à la main dans le CSV. **20 ont un mobile**,
+entrés en `prospecting` / `wa_verified="unknown"` / `contacted="No"`, aucun message écrit : la porte A
+(§8b) reste à passer. Le 21ᵉ, **Prism Optique**, ne publie qu'un **fixe** (233 42 62 73) : entré **sans**
+numéro WhatsApp, avec la raison écrite, pour qu'il n'atterrisse pas dans une file d'envoi. CRM : **163 →
+184 lignes**. Tableau complet et pièges : `sales/SCOUT-ONOC-2026-10-24.md`.
+
+**Deux pièges traités par le croisement, pas à l'œil.** Star Optic (ligne 154) publie le numéro de
+**Médina Optic** (699 93 93 34) : une ligne, pas deux, et pas de seconde touche à un cabinet déjà
+contacté le 24/09. Et « Centrale Optique » (ligne 145, disqualifiée le 12/10 faute de WhatsApp) n'est
+**pas** « Centrale d'Optique Panafricaine » (ligne 89, neuve, 695 29 79 04) : deux titulaires, deux
+numéros, et le verdict de l'une ne s'étend pas à l'autre.
+
+**Le trou, et il était sérieux.** Au premier rebuild, le CSV est passé de **163 à 162 lignes** et quatre
+leads sont revenus de `parked`/`qualifying` à `prospecting`. Cause : **`crm.py` en tête de branche était
+la version du 10/10** — le travail du 12/10 (`excluded_no_wa` sur Faby et Centrale, refus de Jired à
+11:47, envoi Planète, tags Maff/Horizon/Kamaïs, RDV Univers Optique du 16/10) et la relance Planète du
+13/10 existaient dans `9a49aa1` et `71851af`, mais le fichier avait été remplacé par une version
+antérieure. Le CSV, lui, portait l'état du 13/10 : le dépôt avait donc **un générateur en retard sur sa
+propre donnée**, et le premier rebuild allait effacer six semaines de rulings. C'est exactement le
+scénario contre lequel `guard.py` a été écrit le 22/09 — et la leçon du jour est que `git log -- file`
+ment : il s'arrête au 10/10 sur un fichier modifié le 12 et le 13.
+
+**Réparé et contrôlé.** Générateur repris depuis `71851af` (13/10) + bloc scout par-dessus, empreinte
+re-scellée (`guard.py lock`, puis `check` → rc 0). Contrôle après rebuild : **163 lignes identiques
+champ par champ** (comparaison colonne à colonne, 0 différence) **+ 21 nouvelles**. Les fiches
+(`leads/records/`, 127 fichiers) et les vues sont régénérées : elles avaient **11 jours de retard** et
+citent maintenant les entrées de journal du 20 et du 21/10.
+
+**Le prochain geste, un seul.** Les cinq messages froids du lot du 26/10 partent d'abord (Optix avec sa
+capture, §10.3). La porte A des 20 numéros se passe ensuite, en une session de 4 minutes.

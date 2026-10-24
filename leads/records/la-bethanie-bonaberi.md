@@ -1,6 +1,6 @@
 # Clinique La Béthanie
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-13. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-24. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -31,7 +31,7 @@ Capture de King : +237 77760782 sans profil Business (aucun nom, aucune catégor
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 8 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 9 ligne(s).*
 
 `L23` · | **jeu 17/09** | **LA BÉTHANIE** (Bonabéri, 677 76 07 82) | msg 1 + maquette | **ENVOYÉ (confirmé par King 18/09)** | **Non** |
 `L71` · - **38 messages envoyés** depuis le 14/09 (dont **5 relances**) — dont **L'Opticien, La Béthanie et JEMPO, partis le jeudi 17/09** (correction de King, 18/09 : ma feuille d'envoi du 18/09 les listait encore comme « à envoyer », c'était une erreur de planification de ma part).
@@ -41,6 +41,7 @@ Capture de King : +237 77760782 sans profil Business (aucun nom, aucune catégor
 `L1774` · - `labethanie-concept.vercel.app` — Clinique La Béthanie (mort 22/09)
 `L1781` · - Les dossiers locaux (`hosting/previews/jempo`, `labethanie`, `sah`, `sasse`, `comobil`, `demos/concept-*`)
 `L2332` · lecteur : JEMPO (jamais contacté), La Béthanie (parquée), SJC Sasse (parquée), COMOBIL (parquée depuis le
+`L5610` · prospects dans les six : noms, quartiers, et **deux numéros** dans Béthanie. Verdict : **on réutilise la
 
 ---
 
