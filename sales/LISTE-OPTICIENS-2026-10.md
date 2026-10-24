@@ -134,33 +134,35 @@ C'est l'état de DM OPTIQUE SARL avant qu'on travaille ensemble.
 Maison Optique (site `.cm` + TikTok @maisonoptique237) · Golden Eyes (deux sites, marketing externalisé) ·
 Leroy Optique (site + IG + TikTok) · Bely (refus écrit du 24/09) · les 11 déjà contactés du lot d'octobre.
 
-## 3 · Les cinq messages d'ouverture (prêts à envoyer)
+## 3 · Le groupe de contrôle — **quatre parqués, un réécrit**
 
-Règles appliquées : 2–3 phrases, **aucune puce**, **aucune signature**, **aucune offre dans le premier
-message**, une seule question. Le fait cité est vrai et vérifiable — c'est lui qui ouvre la porte.
+> **Version du 23/10 : PÉRIMÉE.** Les cinq textes d'origine sont remplacés. La raison, le diagnostic
+> ligne par ligne et les nouveaux textes à envoyer aujourd'hui sont dans
+> **`sales/OUTREACH-REECRITURE-2026-10-24.md`** §1 et §4.2.
 
-**① Fashion Vision Douala**
-> Bonjour, je suis tombé sur votre Instagram — 207 publications, un vrai travail de montures et de
-> lunettes. Mais quand quelqu'un cherche « Fashion Vision Bonapriso » sur Google, il ne trouve pas votre
-> boutique. Vos clients vous demandent souvent l'adresse en message ?
+Ce que les deux captures du 24/10 ont changé :
 
-**② Original Optique**
-> Bonjour, le lien de votre site (originaloptique-douala.com) affiche une erreur depuis un moment — je
-> suis tombé dessus en cherchant vos horaires pour Akwa. Vous savez si quelqu'un s'en occupe encore ?
+| # | Prospect | Statut au 24/10 | Motif |
+|---|---|---|---|
+| ① | Fashion Vision | **ne pas réécrire** | **déjà contacté le 24/09** (deux coches, jamais ouvert). Relance possible à J+30 avec le gabarit de rupture, pas une « nouvelle ouverture » |
+| ② | Original Optique | **relance J+2 (26/10)** | message du 24/10 envoyé 11:52 → **réponse automatique** (« pas disponibles ») alors que la fiche dit « Open until 2:00 PM ». C'est une fuite vue à l'écran, pas une théorie |
+| ③ | Optix | **part aujourd'hui** | site en 404 : l'exception écrite dans la règle de King (site cassé = on demande pourquoi il a été abandonné) |
+| ④ | SOS Vision | **parqué** | Facebook actif, ni IG ni site : c'est le profil « les réseaux suffisent » — le groupe qu'on **mesure**, pas celui sur qui on mise |
+| ⑤ | House of Lunettes | **parqué** | page Facebook éducative, aucun site. Même raison |
 
-**③ Optix**
-> Bonjour, le lien que Google affiche encore pour Optix mène à une page introuvable — le service qu'ils
-> utilisaient a fermé en 2024. Vous avez un autre endroit où envoyer les gens qui vous cherchent ?
+**Le seul texte du §3 qui part aujourd'hui — Optix (697 72 32 65) :**
 
-**④ SOS Vision**
-> Bonjour, votre page Facebook bouge, mais quelqu'un qui tape « SOS Vision Akwa » sur Google ne trouve ni
-> l'adresse ni les horaires. C'est par WhatsApp que vos clients vous joignent, ou ils passent
-> simplement ?
+> Bonjour, votre lien optix-sarl.business.site ouvre une page « introuvable » : Google a fermé ce
+> service en 2024, sans prévenir les cabinets qui l'utilisaient.
+> Quelqu'un qui clique dessus aujourd'hui ne sait plus si vous êtes encore ouvert.
+> Vous l'avez laissé tomber exprès, ou personne ne vous a prévenu ?
 
-**⑤ House of Lunettes**
-> Bonjour, vous publiez des conseils sur les formes de montures — c'est rare ici, et c'est utile. Mais un
-> conseil publié sur Facebook disparaît du fil en trois jours. Ça vous dirait qu'ils restent quelque
-> part qui vous appartienne ?
+**Relance d'Original Optique — jeudi 26/10 seulement, si toujours rien :**
+
+> Bonjour, sur votre compte, deux choses se contredisent : la fiche affiche « ouvert » et le message
+> automatique répond « nous ne sommes pas disponibles ».
+> Un patient qui écrit à 14 h reçoit une réponse qui dit le contraire de ce qu'il voit.
+> Je vous envoie les deux captures côte à côte ?
 
 ## 4 · Cadence — **correction du 23/10 : je me suis trompé**
 
@@ -273,30 +275,40 @@ de service marketing, aucun ne publie.
 | **Sparks · Shine · Maison Optique · La Cerisaie · Lynx Vision · DIEC · C2T · La Grâce · Etienno · Rond-Point · SAFY · BZK · Shekina · Sony** | ont un site, ou une page tenue |
 | **Cabinet Dentaire Azur · Cabinet Dentaire du Palais · Clinique Kerthan · Clinique Ndassa** | **réserve** : rien trouvé en ligne, mais informations contradictoires (Azur : 413 rue Gouverneur Carras *et* 1.066 rue Clemenceau ; Kerthan et Ndassa : un seul annuaire, pas d'adresse vérifiable) |
 
-### 7.4 · Les cinq messages (prêts, 2 phrases, une question, aucun lien)
+### 7.4 · Les cinq messages — **réécrits le 24/10**
 
-**⑥ Bouda Seidou**
-> Bonjour docteur, en cherchant votre cabinet je n'ai trouvé que des annuaires, avec deux adresses
-> différentes et plusieurs numéros selon les sites. Vous êtes bien à l'immeuble Neuilly II aujourd'hui ?
+> Les versions du 23/10 étaient des constats : elles demandaient au docteur de faire le travail de
+> relier « pas de site » à « patients perdus ». Diagnostic et sources : **`sales/OUTREACH-REECRITURE-2026-10-24.md`**.
 
-**⑦ Le Sourire**
-> Bonjour docteur, je n'ai trouvé votre cabinet que sur les Pages Jaunes et sur un annuaire
-> d'association — rien à vous, ni horaires ni photos. Vos patients vous demandent encore l'adresse au
-> téléphone ?
+Format : **fait vérifiable (ligne 1) → ce que fait le patient (ligne 2) → une question fermée (ligne 3)**.
+35 à 55 mots. Aucune signature, aucun lien, aucun prix.
 
-**⑧ IVY**
-> Bonjour, le cabinet de la rue Ivy n'apparaît que dans un annuaire, classé « ORL et dentiste » à la
-> fois, avec deux numéros et aucune page à lui. Vous n'avez jamais eu de site, ou vous en aviez un que
-> personne n'a renouvelé ?
+**⑥ Bouda Seidou — 677 76 03 49**
+> Bonjour Docteur, votre cabinet apparaît sur quatre annuaires différents, avec quatre numéros et deux adresses.
+> Un patient qui cherche un dentiste à Bonanjo tombe sur une de ces pages, appelle un numéro que vous n'utilisez peut-être plus, et raccroche.
+> Je vous montre ce qu'il voit ?
 
-**⑨ COMED**
-> Bonjour, le COMED existe depuis 1993 à Bonapriso et je n'ai rien trouvé en ligne à part une ligne
-> d'annuaire : pas d'horaires, pas de photos. Ce sont les patients qui vous recommandent, ou vous
-> recevez aussi des gens qui vous ont cherché sur internet ?
+**⑦ Le Sourire — 698 00 78 08**
+> Bonjour Docteur, je suis tombé sur l'annuaire de l'association des chirurgiens-dentistes où vous êtes secrétaire adjointe — et c'est, avec les Pages Jaunes, tout ce qui existe au nom de votre cabinet.
+> Un patient qui cherche un dentiste à Bali ne vous trouve pas : il trouve les cabinets qui ont une page, et il appelle l'un d'eux.
+> Je vous montre ce qu'il voit ?
 
-**⑩ JOLINOM**
-> Bonjour, votre centre est listé chez plusieurs assureurs avec deux numéros différents et pour seule
-> adresse « derrière la pharmacie de la Bourse ». Lequel des deux est le bon aujourd'hui ?
+**⑧ IVY — 697 945 251**
+> Bonjour Docteur, sur DoualaTour, votre cabinet de la rue Ivy est classé « ORL et dentiste », avec deux numéros et aucune page à lui.
+> Un patient qui cherche un dentiste lit « ORL » et passe au suivant — il ne saura jamais que c'est vous qu'il cherchait.
+> Je vous envoie la fiche telle qu'il la lit ?
+
+**⑨ COMED — 699 915 652**
+> Bonjour Docteur, le COMED soigne à Bonapriso depuis 1993, et tout ce qu'un patient trouve en ligne, c'est une ligne d'annuaire : un numéro fixe, pas d'horaires.
+> Un patient qui cherche un ophtalmologue un samedi ne peut pas savoir que vous êtes ouvert — il appelle celui qui l'affiche.
+> Je vous montre ce qu'il voit ?
+
+**⑩ CMO Jolinom — 677 466 425**
+> Bonjour Docteur, votre centre est enregistré chez trois assureurs avec deux numéros différents et, pour seule adresse, « derrière la pharmacie de la Bourse ».
+> Un patient avec une ordonnance appelle le numéro que son assureur lui donne — pas forcément le vôtre.
+> Lequel des deux est le bon aujourd'hui ?
+
+**Lot du 24/10 : ces cinq + Optix = 6 messages, un seul numéro, espacés d'environ 45 minutes.**
 
 ### 7.5 · Ce qui doit être vrai avant d'envoyer
 
