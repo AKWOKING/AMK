@@ -16,6 +16,7 @@ bash tools/ops/machine.sh --rules      # les 12 règles debout, chacune avec sa 
 bash tools/ops/provision.sh --list     # les 24 outils : installés cette session, ou pas
 bash tools/ops/install-hooks.sh        # pose le crochet pre-push : un push rouge ne part plus
 python3 tools/ops/machine.py --ci      # ce que le crochet joue, et ce que la CI jouera
+bash tools/ops/machine.sh --turns      # le rendement du jour : commits, fichiers, lignes, refus
 ```
 
 Le miroir Notion (PRE-FLIGHT §0g) est **daté ici**, dans une ligne que la machine lit :
@@ -175,6 +176,7 @@ Une porte est un **code retour**, pas une impression. Si elle n'a pas été lanc
 | **Règles** | `bash tools/ops/machine.sh --rules` | les 7 portes dures du registre §9 | les 2 règles sans porte, dites en clair |
 | **Crochet** | `bash tools/ops/install-hooks.sh` (une fois par clone) → `.git/hooks/pre-push` | un push avec un secret ou un chemin mort | la carte rejouée (trop lent pour un crochet) |
 | **Sources** | `python3 tools/qa/audit_claims.py --sources knowledge` | un pourcentage affirmé sans appui sur sa ligne | la qualité de la source, et ce qui est sourcé deux lignes plus haut |
+| **Rendement** | `bash tools/ops/machine.sh --turns` | le volume du jour (commits, fichiers, lignes) et le nombre de refus | la valeur du travail : un gros commit peut être du déchet |
 | **Usage** | `bash tools/ops/machine.sh --usage` | un outil provisionné qu'aucune trace ne montre appelé | ce qui ne laisse aucune trace : scripts QA lancés à la main, skills lus, recherche web |
 
 **La trace d'usage, et pourquoi elle existe.** Un outil « installé » n'est pas un outil « utilisé » : le

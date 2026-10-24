@@ -11,6 +11,7 @@ audit, handoff, outils), et il renvoie au document qui tranche. La carte complè
     python3 tools/ops/machine.py --rules        # les règles debout, chacune avec sa porte
     python3 tools/ops/machine.py --usage        # quels outils ont laissé une trace (et lesquels sont muets)
     python3 tools/ops/machine.py --ci           # la variante runner : secrets + chemins cités (code 1 sinon)
+    python3 tools/ops/machine.py --turns        # le rendement du jour : commits, fichiers, lignes, refus
 """
 from __future__ import annotations
 
@@ -567,6 +568,7 @@ def ci() -> int:
     mg = merge_gauge()
     if mg["ok"] and mg["due"]:
         print(f"  {YEL}⚠{OFF} fusion due — {mg['why']} (non bloquant en CI)")
+    note_usage("check", "ok" if not ko else "ko:" + ",".join(r["id"] for r in ko))
     if ko:
         print(f"\n{RED}CI ROUGE{OFF} : " + " · ".join(r["id"] for r in ko))
         return 1
@@ -825,9 +827,74 @@ def merge_card() -> int:
     return 0
 
 
+
+# ───────────────────────────────────────────────── le rendement du jour
+def turn_log() -> dict:
+    """Ce que la journée a produit : commits, fichiers, lignes — et combien de fois la machine a dit non.
+    Ce n'est pas une mesure de qualité : un gros commit peut être du déchet, une petite correction peut
+    valoir plus. C'est une mesure de ** volume**, pour que l'inefficacité se voie au lieu de se raconter."""
+    today = date.today().isoformat()
+    raw = run(["git", "log", f"--since={today} 00:00", "--no-merges", "--numstat",
+               "--format=%x00%h\x1f%ad\x1f%s", "--date=format:%H:%M"], timeout=60)
+    commits: list[dict] = []
+    cur: dict | None = None
+    for line in raw.splitlines():
+        if line.startswith("\x00"):
+            sha, when, subject = (line[1:].split("\x1f") + ["", ""])[:3]
+            if subject.startswith("Merge "):   # un clone superficiel fait passer une fusion pour un commit
+                cur = None
+                continue
+            cur = dict(sha=sha, when=when, subject=subject, files=0, added=0, deleted=0)
+            commits.append(cur)
+        elif cur is not None and "\t" in line:
+            parts = line.split("\t")
+            if len(parts) >= 2:
+                cur["files"] += 1
+                for i in (0, 1):
+                    try:
+                        cur["added" if i == 0 else "deleted"] += int(parts[i])
+                    except ValueError:
+                        pass
+    u = usage_state()
+    checks = [(ln.split("\t")[1], ln.split("\t")[2]) for ln in
+              (USAGE.read_text(encoding="utf-8", errors="ignore").splitlines() if USAGE.exists() else [])
+              if ln.startswith(today) and "\tcheck\t" in ln]
+    ko = [c[1] for c in checks if c[1].startswith("ko")]
+    rules_ko: dict[str, int] = {}
+    for k in ko:
+        for rid in k.replace("ko:", "").split(","):
+            if rid:
+                rules_ko[rid] = rules_ko.get(rid, 0) + 1
+    return dict(commits=commits,
+                files=sum(c["files"] for c in commits),
+                added=sum(c["added"] for c in commits),
+                deleted=sum(c["deleted"] for c in commits),
+                checks=len(checks), ko=len(ko), rules_ko=rules_ko,
+                tools=len(u["today"]))
+
+
+def print_turns() -> int:
+    t = turn_log()
+    print(f"\n{BOLD}RENDEMENT DU JOUR{OFF} — {date.today().isoformat()}")
+    print(f"  {len(t['commits'])} commit(s) · {t['files']} fichier(s) · "
+          f"+{t['added']} −{t['deleted']} lignes   (fusions exclues : elles ne produisent rien, elles livrent)")
+    if t["commits"]:
+        print(f"\n  {'heure':<6} {'sha':<9} {'fich.':>5} {'lignes':>7}  sujet")
+        for c in t["commits"]:
+            print(f"  {c['when']:<6} {c['sha']:<9} {c['files']:>5} {c['added'] + c['deleted']:>7}  {c['subject'][:58]}")
+    print(f"\n  portes vérifiées : {t['checks']} fois · {t['ko']} refus"
+          + (f" ({', '.join(f'{k} ×{v}' for k, v in sorted(t['rules_ko'].items(), key=lambda x: -x[1]))})" if t["rules_ko"] else ""))
+    print(f"  outils tracés aujourd'hui : {t['tools']}")
+    print(f"\n  {YEL}⚠{OFF} Ce que ce tableau ne dit pas : la valeur du travail. Un commit de 400 lignes")
+    print("     peut être du déchet, une ligne corrigée peut valoir une journée. Il rend le volume visible,")
+    print("     pas la qualité — c'est déjà ce qui manquait.")
+    return 0
+
+
 def check() -> int:
     """Une seule porte : les règles dures du registre. Ce que `--check` vérifie est ce que `--rules` imprime."""
     hard = [r for r in rules() if r["sev"] == "dure" and not r["ok"]]
+    note_usage("check", "ok" if not hard else "ko:" + ",".join(r["id"] for r in hard))
     for r in hard:
         print(f"{RED}\u26d4{OFF} {r['id']} — {r['detail']}")
         print(f"     {r['doc']} : {r['rule']}")
@@ -854,6 +921,8 @@ def main(argv: list[str]) -> int:
         return print_usage()
     if a == "--ci":
         return ci()
+    if a == "--turns":
+        return print_turns()
     if a == "--merge":
         return merge_card()
     if a == "--who":
