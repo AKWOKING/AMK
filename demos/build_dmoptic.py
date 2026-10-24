@@ -243,6 +243,9 @@ def main():
     ap.add_argument("--no-logo", action="store_true", help="reconstruire sans logo (symbole rond d'origine)")
     ap.add_argument("--logo-mode", choices=("symbol", "full"), default="symbol",
                     help="symbol : le texte du nom reste ; full : le logo contient déjà le nom")
+    ap.add_argument("--force-rebuild", action="store_true",
+                    help="passer outre le garde du 24/10 : accepte de perdre les classes posées à la main "
+                         "dans la page en place (.mnav, .psrc…) — à n'utiliser qu'en connaissance de cause")
     ap.add_argument("--production", action="store_true",
                     help="version de production : sans noindex, sans la ligne « aperçu » du pied de page ; "
                          "domaine %s par défaut" % CANON_BASE)
@@ -325,6 +328,27 @@ def main():
     unresolved = re.findall(r'href="[^"]*%(?:20)?[^"]*"', html)
     if any("__" in h for h in unresolved):
         sys.exit("adresse non résolue : %s" % unresolved[0])
+
+    # ── GARDE DU 24/10 : un rebuild ne doit pas effacer ce qui a été posé À LA MAIN ────────────────
+    # Le 23/10, le menu mobile (.mnav) et le badge « source préférée » (.psrc) ont été écrits dans les
+    # pages DÉJÀ construites, sans repasser par le gabarit. Mesuré le 24/10 : la page déployée porte
+    # 4 classes que le gabarit ne produit pas (.logo — injecté par ce script —, .mnav, .mnav-panel,
+    # .psrc) et un bloc <details class="mnav">. Reconstruire depuis le gabarit les supprimait en
+    # silence : 107 fichiers modifiés, dont 191 lignes perdues sur la seule page contact.
+    # Ce garde compare l'ensemble des classes CSS de la page EN PLACE à celui que ce build va écrire.
+    # S'il en manque, il refuse et dit lesquelles — on ne perd plus un ajout post-build par accident.
+    if OUT_PREVIEW.exists() and not opts.force_rebuild:
+        def css_classes(doc: str) -> set[str]:
+            style = "\n".join(re.findall(r"<style[^>]*>(.*?)</style>", doc, re.S))
+            return set(re.findall(r"^\s*\.([a-zA-Z][\w-]*)", style, re.M))
+        in_place, about_to_write = css_classes(OUT_PREVIEW.read_text(encoding="utf-8")), css_classes(html)
+        lost = sorted(in_place - about_to_write)
+        if lost:
+            sys.exit(
+                "refus : la page en place porte des classes que le gabarit ne produit pas : %s\n"
+                "        reconstruire les effacerait. Deux issues : les reporter dans %s (le bon geste),\n"
+                "        ou lancer avec --force-rebuild si la perte est voulue. Rien n'a été écrit."
+                % (", ".join("." + c for c in lost), TPL.relative_to(ROOT)))
 
     OUT_CONCEPT.write_text(html_concept, encoding="utf-8")
     PREVIEW.mkdir(parents=True, exist_ok=True)

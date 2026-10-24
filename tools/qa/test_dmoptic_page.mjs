@@ -199,7 +199,14 @@ const MESSAGES = [
 const ALT = ["Une paire de lunettes de vue posée sur une surface claire, lumière douce.",
              "A pair of prescription glasses resting on a pale surface in soft light."];
 
-function run(lang, stored) {
+/* `location` est un GLOBAL du navigateur : dans `new Function`, sans lui, `urlFor()` jette
+   « location is not defined » et toute la suite 1 meurt sur le clic FR|EN. Constaté le 24/10 :
+   ce test était cassé depuis le 21/10, le jour où la bascule a reçu une adresse (`urlFor`).
+   Le chemin par défaut est celui du fichier d'aperçu, ouvert en local : `.html` → `urlFor`
+   renvoie , donc la bascule se fait SUR PLACE — c'est ce que la suite 1 vérifie. Le chemin
+   déployé (« / ») est testé à part, à la fin : là, la bascule doit CHANGER d'adresse. */
+function run(lang, stored, pathname = "/demos/concept-dmoptic-v1.html") {
+  const location = { pathname, href: pathname };
   const store = localStorageStub();
   if (stored) store.setItem("dmoptic-lang", stored);
   const anchors = MESSAGES.map(([fr]) => {
@@ -222,10 +229,20 @@ function run(lang, stored) {
     "QA:.hero .btn": [],
   }, buttons);
   const document = doc(registry, lang);
-  new Function("document", "window", "localStorage", "navigator", langSrc)(
-    document, { matchMedia: () => ({ matches: false }) }, store, {});
-  return { document, anchors, image, say, buttons, store };
+  new Function("document", "window", "localStorage", "navigator", "location", langSrc)(
+    document, { matchMedia: () => ({ matches: false }) }, store, {}, location);
+  return { document, anchors, image, say, buttons, store, location };
 }
+
+/* La bascule SUR la page déployée : le 21/10, le bouton FR|EN ne changeait pas d'adresse — la page
+   restait en français sur /en/. Ce contrôle-là n'existait pas ; il tient en trois lignes. */
+const deployed = run("fr", null, "/");
+deployed.buttons["btn-en"].fire("click");
+ok("page déployée : cliquer EN change d'adresse vers /en/ (et ne bascule pas sur place)",
+   deployed.location.href === "/en/", "reçu : " + deployed.location.href);
+ok("page déployée : depuis /en/, cliquer FR ramène à /",
+   (() => { const d = run("en", null, "/en/"); d.buttons["btn-fr"].fire("click"); return d.location.href === "/"; })(),
+   "attendu : /");
 
 let r = run("fr");
 ok("départ en français : la page se déclare en français",

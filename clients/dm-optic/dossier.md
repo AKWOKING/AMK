@@ -58,6 +58,13 @@ comptable — elle se traite par des **documents**, jamais par un message. C'est
 **acompte de 75 000 FCFA**. Aucun de ces trois éléments n'est reçu à l'heure où ce dossier est écrit.
 L'étape CRM reste **`closing`** — elle ne passe à `won` qu'à l'encaissement.
 
+**Paiement — état au 24/10/2026.** Acompte de **75 000 FCFA encaissé en espèces le 13/10**, sans reçu
+(voir `pre-launch-checklist.md` item 1). Le client a **annoncé** le 24/10 à 14:44 : « *Je termine ton
+accompte samedi prochain en cash si Dieu le permet* » — **samedi 31/10**, en espèces, montant non
+chiffré. C'est une **promesse**, pas un encaissement : le déclencheur du §14 n'est pas atteint, et le
+montant (« accompte » = solde de 75 000, ou autre tranche ?) doit être demandé, jamais deviné. Détail et
+verbatim : `sales/Activity-Log.md` 24/10.
+
 **Règle de trésorerie.** ⛔ **Rien ne se livre, rien ne se publie, rien ne se produit avant
 l'encaissement de l'acompte.** Aucun travail de production n'est engagé sur la seule foi de l'accord
 verbal.
