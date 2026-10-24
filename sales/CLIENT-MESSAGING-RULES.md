@@ -242,7 +242,7 @@ Règles appliquées :
 - **En attendant :** chaque envoi du test est noté dans `sales/Activity-Log.md` avec son bras (A ou B), la date et l'identifiant CRM.
 - **Après approbation :** colonne ajoutée via `crm.py`, puis rebuild et vérification de la sortie (règle du 02/10 : rc=0 n'est pas une preuve).
 
-## 13 · Première touche froide — la structure en trois lignes (ruling King 24/10)
+## 13 · Première touche froide — la structure en quatre temps (ruling King 24/10)
 
 **Origine.** Deux captures montrées par King : Fashion Vision (message du 24/09, deux coches, jamais
 ouvert) et Original Optique (message envoyé le 24/10, réponse automatique « pas disponibles » alors
