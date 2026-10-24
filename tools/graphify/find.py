@@ -42,6 +42,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 GRAPH = ROOT / "graphify-out" / "graph.json"
 
+LAW_NAMES = (
+    "RULES", "STANDARD", "PLAYBOOK", "GUIDE", "DECLINAISON", "MESSAGES", "PERSUASION",
+    "PRE-FLIGHT", "TOOL-SCAN", "README",
+)
+
 STOP = {
     "le", "la", "les", "de", "des", "du", "un", "une", "et", "ou", "à", "au", "aux", "en", "pour",
     "dans", "sur", "que", "qui", "quoi", "avec", "sans", "par", "ce", "cet", "cette", "il", "elle",
@@ -109,7 +114,22 @@ def main() -> int:
                 if len(excerpts) < 3:
                     loc = (n.get("source_location") or "").lstrip("L")
                     excerpts.append(f"L{loc} · {label[:96]}")
-        score = head_hits * 3 + file_hits * 2 + inbound.get(src, 0)
+        # Un journal de 5 000 lignes ne doit pas enterrer une règle de 130 lignes : on divise par la
+        # racine de la taille, et on remonte les fichiers qui PORTENT une règle (knowledge/, *RULES*,
+        # *STANDARD*, *PLAYBOOK*, *GUIDE*…). Sans ça, `ASK` sur « message prospect » sortait
+        # Activity-Log en tête et le fichier de King en 4ᵉ position.
+        # Un journal qui touche 32 titres n'est pas plus pertinent qu'une règle qui en touche 2 :
+        # on plafonne les titres comptés (6), on divise par la racine de la taille, et on remonte les
+        # fichiers qui PORTENT une règle — mais seulement s'ils ont effectivement touché quelque chose.
+        total = sum(1 for n in nodes if n.get("node_kind") == "heading") or 1
+        base = min(head_hits, 6) * 3 + file_hits * 2 + inbound.get(src, 0)
+        if base == 0:
+            continue
+        score = base / (1 + total / 40) ** 0.5
+        if src.startswith("knowledge/"):
+            score += 6
+        if any(k in Path(src).name.upper() for k in LAW_NAMES):
+            score += 3
         if score >= args.min:
             scored.append((score, src, head_hits, file_hits, inbound.get(src, 0), excerpts))
 
@@ -120,7 +140,7 @@ def main() -> int:
 
     print(f"« {' '.join(words)} » — {len(scored)} document(s), les {min(args.top, len(scored))} premiers :\n")
     for score, src, hh, fh, deg, ex in scored[: args.top]:
-        print(f"[{score:3d}] {src}   (titres {hh} · nom {fh} · cité {deg}×)")
+        print(f"[{score:5.1f}] {src}   (titres {hh} · nom {fh} · cité {deg}×)")
         for e in ex:
             print(f"        {e}")
         print()

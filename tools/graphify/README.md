@@ -71,5 +71,20 @@ La sortie liste des fichiers réels avec leurs numéros de ligne. L'en-tête pr�
 |---|---|
 | `install.sh` | venv jetable + pin 0.9.95 + lien `/usr/local/bin/graphify` |
 | `build_docs_graph.py` | passe l'extracteur Markdown sur les 734 documents, fusionne avec le AST de code, clusterise |
-| `find.py` | le moteur de `ask.sh` : score les documents par titres touchés, nom de fichier, citations reçues |
+| `find.py` | le moteur de `ask.sh` : score par titres touchés (plafonné à 6), nom de fichier, citations reçues ; divise par la racine de la taille du fichier et remonte `knowledge/` et les fichiers de règle |
 | `ask.sh` | le point d'entrée qu'on tape vraiment |
+
+## Le classement, et pourquoi il est fait comme ça
+
+Premier essai : `ask.sh "message prospect clinique"` sortait `sales/Activity-Log.md` en tête — 32 titres
+touchés dans un journal de 5 000 lignes, contre 2 dans une règle de 130 lignes. **Le journal gagnait.**
+Trois corrections, mesurées sur ce dépôt :
+
+1. **les titres comptés sont plafonnés à 6** — un fichier qui touche 32 titres est un journal, pas une règle ;
+2. **le score est divisé par la racine de la taille** (nombre de titres du fichier) ;
+3. **`knowledge/` et les fichiers de règle** (`RULES`, `STANDARD`, `PLAYBOOK`, `GUIDE`, `DECLINAISON`,
+   `MESSAGES`, `PERSUASION`) reçoivent une remontée — **seulement s'ils ont touché quelque chose**
+   (sinon un fichier sans rapport sortait avec un score artificiel de 6).
+
+Résultat : `ask.sh "relance rupture"` remonte `MESSAGES-2026-09-23-PERSUASION.md` §4 en tête — la règle
+qui interdit la relance sur un message jamais ouvert. C'est exactement le document qu'il fallait.
