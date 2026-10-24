@@ -701,6 +701,36 @@ def write_map(g: dict, nodes_meta: dict, stale: set[str], stats: dict, comm: dic
     return "\n".join(L) + "\n"
 
 
+
+def _graphify_pin() -> str:
+    """L'épinglage vit dans install.sh (une seule source) — on le relit au lieu de le recopier."""
+    try:
+        m = re.search(r'^PIN="([^"]+)"', (ROOT / "tools/graphify/install.sh").read_text(encoding="utf-8"), re.M)
+        return m.group(1) if m else "0.9.95"
+    except OSError:
+        return "0.9.95"
+
+
+def _bootstrap_graphify() -> bool:
+    """Troisième CI rouge du 24/10 : le runner n'a pas le paquet amont, donc ce script sortait en code 2
+    et l'étape « la carte se rejoue à l'identique » échouait — pas à cause d'une carte périmée, à cause
+    d'une dépendance manquante. On l'installe ici, épinglée, pour que la porte mesure ce qu'elle prétend
+    mesurer. Désactivable : AMK_SKIP_BOOTSTRAP=1."""
+    if os.environ.get("AMK_SKIP_BOOTSTRAP") == "1":
+        return False
+    pin = _graphify_pin()
+    print(f"[full] graphify absent — installation épinglée graphifyy=={pin}", file=sys.stderr)
+    try:
+        r = subprocess.run([sys.executable, "-m", "pip", "install", "--quiet", f"graphifyy=={pin}"],
+                           capture_output=True, text=True, timeout=300)
+    except (OSError, subprocess.SubprocessError):
+        return False
+    if r.returncode != 0:
+        print((r.stderr or "")[-400:], file=sys.stderr)
+        return False
+    return True
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--no-map", action="store_true", help="ne pas réécrire ops/REPO-MAP.md")
@@ -713,8 +743,15 @@ def main() -> int:
         venv_py = Path(os.environ.get("AMK_GRAPHIFY_VENV", "/tmp/amk-graphify")) / "bin" / "python"
         if venv_py.exists() and Path(sys.prefix).resolve() != venv_py.parents[1].resolve():
             os.execv(str(venv_py), [str(venv_py), str(Path(__file__).resolve()), *sys.argv[1:]])
-        print("graphify absent : bash tools/graphify/install.sh", file=sys.stderr)
-        return 2
+        if _bootstrap_graphify():
+            try:
+                from graphify.extract import extract as ast_extract
+            except ImportError:
+                print("graphify installé mais importable ? — abandon", file=sys.stderr)
+                return 2
+        else:
+            print("graphify absent : bash tools/graphify/install.sh", file=sys.stderr)
+            return 2
 
     files = walk()
     print(f"[full] {len(files)} fichier(s) balayés")
