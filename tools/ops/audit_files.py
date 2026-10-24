@@ -286,8 +286,12 @@ def main() -> int:
     for d, (n, s, ex) in sorted(by_dir.items(), key=lambda kv: -kv[1][1])[:20]:
         A(f"| `{d}/` | {n} | {human(s)} | {', '.join(ex)} |")
     A("")
-    A("*Les photos brutes de `clients/dm-optic/photoshoot/` sont des sources client, pas des "
-      "déchets : elles sont listées ici parce qu'elles pèsent, pas parce qu'elles sont mortes.*")
+    A("*Les photos de `clients/dm-optic/photoshoot/` ne sont PAS une rafale : c'est le **catalogue "
+      "montures** du client — 160 photos, une par monture (156 montures + 4 vues du cabinet), "
+      "395 Mo. Elles sont listées parce qu'elles pèsent, pas parce qu'elles sont mortes : "
+      "`sales/Activity-Log.md` (19/10) en garde **84 en réserve** pour le lot 2 du catalogue. "
+      "Les supprimer effacerait la source d'un livrable à venir. Ce qui se discute ici, c'est de "
+      "les sortir de git (stockage externe), pas de les effacer.*")
     A("")
 
     A("## 4 · Documents")
