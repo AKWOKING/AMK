@@ -190,7 +190,7 @@ SOURCE_MARK = re.compile(
     r"|\b(?:BrightLocal|Metricool|Sprout|Statista|DataReportal|Hootsuite|We Are Social|GSMA|Ocuco"
     r"|Nielsen|HubSpot|McKinsey|Gartner|Forrester|Pew|INSEE|Banque mondiale|Data\.?ai|Semrush|Ahrefs"
     r"|Wyzowl|Wordstream|Backlinko|Moz|Similarweb)\b"
-    r"|\b[A-Z][A-Za-z]{2,}(?:\s+(?:Social|Data|Research|Insights?|Digital|Analytics|Local))?\s+(?:19|20)\d{2}\b")
+    r"|\b[A-Z][A-Za-z]{2,}[^.\n]{0,60}?\b(?:19|20)\d{2}\b")
 PERCENT = re.compile(r"\b\d{1,3}(?:[.,]\d+)?\s*%")
 STYLE_LINE = re.compile(r"(width|height|opacity|transform|filter|top|left|right|bottom|scale|"
                         r"flex-basis|font-size|zoom)\s*:", re.I)
@@ -240,7 +240,12 @@ def source_gaps(path: str):
             continue
         if in_fence or not PERCENT.search(line):
             continue
-        if SOURCE_MARK.search(line) or STYLE_LINE.search(line) or ALLOW.search(line):
+        # Une source vit souvent sur la ligne suivante (« … 93 % attendent une réponse » puis
+        # « (BrightLocal, LCRS 2024) »). On regarde donc la ligne ET les deux suivantes — la faille
+        # corrigée le 24/10 : après avoir sourcé correctement quatre chiffres, la porte les signalait
+        # encore parce que le crédit était à la ligne d'en dessous.
+        window = " ".join(lines[max(0, i - 3):i + 2])
+        if SOURCE_MARK.search(window) or STYLE_LINE.search(line) or ALLOW.search(line):
             continue
         if MONEY_LINE.search(line) or not CLAIM_WORDS.search(line):
             continue

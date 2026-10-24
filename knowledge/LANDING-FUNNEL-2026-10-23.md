@@ -45,7 +45,10 @@ Ordre exact du tableau, avec **la fonction** de chaque bloc et non seulement son
 
 ## 3 · À qui la page parle (profil visiteur du tableau)
 
-- **90 % des visiteurs = décideurs pressés**, 30–50 ans, temps limité.
+- **Hypothèse de travail, pas une mesure** : le visiteur type est un décideur pressé, 30–50 ans, temps
+  limité. Aucune source ne chiffre cette part — corrigé le 24/10 : ce document écrivait « 90 % des
+  visiteurs = décideurs pressés », un pourcentage qu'aucune étude ne porte. On ne l'écrit plus en
+  pourcentage, et on ne le cite pas à un prospect.
 - **Ils cherchent** : une explication simple du produit ; le bénéfice chiffré (gagner de l'argent, des
   clients, du temps) ; de la preuve (études de cas, chiffres, témoignages) ; la certitude que ça colle à
   **leur** situation.

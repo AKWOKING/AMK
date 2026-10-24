@@ -18,7 +18,7 @@ vidéo courte n'est pas le premier levier. La fiche Google et ses avis le sont.*
 |---|---|---|---|
 | **1** | **Avis Google** (5 étoiles, récents, répondus) | `CAC8tfNDXMg` ouvre là-dessus : « la seule chose » qui attire ; le three-pack décide | du temps, pas d'argent |
 | **2** | **Fiche Google complète** (photos récentes, services, posts) | `BTzZ5uAOl0`, `QXhPqHftsvw` : c'est le premier point de contact, avant le site | 1 h de paramétrage |
-| **3** | **Cohérence NAP** (nom, adresse, téléphone partout) | 93 % agacés par une info fausse, **80 %** perdent confiance, **40 %** arrêtent de chercher (BrightLocal, cité par Ocuco) | un audit |
+| **3** | **Cohérence NAP** (nom, adresse, téléphone partout) | 93 % agacés par une info fausse, **80 %** perdent confiance, **40 %** arrêtent de chercher (BrightLocal, **cité par Ocuco** — source secondaire, non revérifiée à la source primaire) | un audit |
 | **4** | **Site qui convertit** (mobile, vitesse, un seul geste évident) | 75 % de la crédibilité tient à la conception (Stanford, cité 2×) | déjà fait pour DM |
 | **5** | **Contenu social régulier** | constance > fréquence ; 2–3 posts/semaine suffisent sous 1 000 abonnés (`-Y8I-ZEUHrY`) | 2 h/semaine |
 | **6** | **E-mail / rappels** | 36 × ROI, 34 % d'ouverture, 6 × de revenus si personnalisé | n'existe pas au Cameroun → **remplacer par WhatsApp** |
@@ -99,7 +99,7 @@ vente** (voir `clients/dm-optic/brand/BRAND-STRATEGY-2026-10-22.md`).
 | Achat via Instagram | 29 % des consommateurs | Sprout Social |
 | Ouverture e-mail en santé | 34 % | Litmus, cité par Ocuco |
 | ROI e-mail | 36 × | Litmus |
-| Réponse attendue à **tous** les avis | 89 % des consommateurs | BrightLocal |
+| Réponse attendue aux avis | **93 %** attendent qu'une entreprise réponde à leurs avis ; **88 %** utiliseraient une entreprise qui répond à tous ses avis, contre **47 %** une entreprise qui n'en répond à aucun | BrightLocal, *Local Consumer Review Survey 2024* — panel US de 1 141 personnes (SurveyMonkey) |
 
 **Formats qui fonctionnent en optique** (masterclass vidéo courte) : essayages · **conseils d'entretien**
 · **mythe vs réalité** (l'exemple cité : les verres anti-lumière bleue) · **coulisses** (taillage,
@@ -190,9 +190,16 @@ primaire). Voir `knowledge/CONTENT-CREATION-2026-10-22.md` §7 pour la règle de
 > coming in, one thing I didn't discuss with the client is who has to answer ».* Cette section prépare la
 > décision ; elle ne l'a pas encore reçue.
 
-**Le chiffre qui la rend urgente** : **89 % des consommateurs attendent une réponse à tous les avis**
-(BrightLocal, `knowledge/MARKETING-OPTICAL` §5). Un avis sans réponse fait plus de dégât qu'un avis moyen
-avec réponse — parce que le suivant lit la réponse, pas l'avis.
+**Le chiffre qui la rend urgente** : **93 % des consommateurs attendent qu'une entreprise réponde à leurs
+avis**, et **88 %** déclarent qu'ils utiliseraient une entreprise qui répond à tous ses avis — contre
+**47 %** pour une entreprise qui n'en répond à aucun (BrightLocal, *Local Consumer Review Survey 2024*,
+panel US de 1 141 personnes, SurveyMonkey).
+
+**Correction du 24/10** : ce document disait « 89 % des consommateurs attendent une réponse à tous les
+avis ». C'était une **mauvaise lecture** du chiffre BrightLocal 2022, qui mesurait non pas l'attente mais
+la probabilité d'utiliser une entreprise (« 89 % seraient plutôt ou tout à fait enclins à utiliser une
+entreprise qui répond à tous ses avis »). Un avis sans réponse fait plus de dégât qu'un avis moyen avec
+réponse — mais la phrase doit dire ce que la source dit.
 
 ### 11.1 · Qui répond — la recommandation
 

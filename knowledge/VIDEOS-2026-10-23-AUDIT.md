@@ -94,7 +94,9 @@ elle vend un audit gratuit, et c'est légitime de le dire avant de la citer.
 **Ce qu'elle dit.** Le site est la fondation (rapide, mobile, témoignages, accréditations, politique
 de confidentialité, réservation en ligne) ; la SEO locale repose sur trois facteurs — pertinence,
 distance, notoriété ; 75 % des consommateurs UK/US utilisent Google pour chercher une entreprise
-locale ; 80 % perdent confiance devant des coordonnées incohérentes ; le 1ᵉʳ résultat organique est
+locale (chiffre **du fournisseur**, non vérifié à sa source — le repère vérifiable est BrightLocal
+*Local Consumer Review Survey 2023* : 87 % des consommateurs ont utilisé Google pour évaluer une
+entreprise locale en 2022) ; 80 % perdent confiance devant des coordonnées incohérentes ; le 1ᵉʳ résultat organique est
 ~10 fois plus cliqué que le 10ᵉ ; un cas à 34 leads/mois à 13,74 £/lead ; les campagnes de rappel
 par e-mail à « 36x ROI ».
 
