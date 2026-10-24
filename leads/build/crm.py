@@ -2356,6 +2356,104 @@ LOT2_0210_KING = {
 }
 
 
+# ── LE LOT DU 26/10 — les six cibles d'envoi, absentes du CRM jusqu'au 25/10 ─────────────────────
+# Pourquoi elles sont ici : le lot d'envoi nommait six cabinets qu'aucune ligne du CRM ne portait.
+# Une cible d'envoi qui n'existe pas dans la base ne peut pas être vérifiée, ni suivie, ni exclue —
+# et c'est exactement ainsi qu'on envoie deux fois au même endroit. Les six entrent donc au CRM le
+# jour où King passe la porte A dessus (25/10), avec le résultat de son test WhatsApp.
+# Sources de la fiche (nom, quartier, numéro) : `sales/ENVOI-LOT-2026-10-26.md` §2 et §4.
+LOT_2610_LEADS = [
+    dict(slug="comed-bonapriso", org="COMED", city="Douala (Bonapriso)", org_type="clinic", language="FR",
+         wa_number="699 91 56 52", wa_verified="yes", profile_name_seen="COMED",
+         contact_name="", contact_role="Médecin / direction", contact_channel="WhatsApp",
+         source="directory", source_detail="Lot d'envoi du 26/10 — centre médical COMED, Bonapriso (1993)",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-25",
+         notes="Lot du 26/10. Porte A passée par King le 25/10 : le 699 91 56 52 EST sur WhatsApp, "
+               "profil affiché « COMED ». Message du lot prêt (§2 ⑨)."),
+    dict(slug="ivy-bonanjo", org="IVY", city="Douala (Bonanjo)", org_type="clinic", language="FR",
+         wa_number="697 94 52 51", wa_verified="yes", profile_name_seen="IVY",
+         contact_name="", contact_role="", contact_channel="WhatsApp",
+         source="directory", source_detail="Lot d'envoi du 26/10 — cabinet de la rue Ivy, Bonanjo",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-25",
+         notes="Lot du 26/10. Porte A du 25/10 : le numéro EST sur WhatsApp, profil « IVY » — mais la "
+               "photo est une photo de personne, pas un profil Business : c'est peut-être la ligne "
+               "personnelle du praticien. À confirmer avant l'envoi (le message parle de « votre cabinet »)."),
+    dict(slug="optix-sarl", org="OPTIX SARL", city="Douala (Akwa, carrefour Idéal)", org_type="other", language="FR",
+         wa_number="697 72 32 65", wa_verified="yes", profile_name_seen="",
+         contact_name="", contact_role="", contact_channel="WhatsApp",
+         source="directory", source_detail="Annuaire ONOC + fiche Google (681 36 92 33) — suivi du 24/10",
+         stage="prospecting", contacted="Yes", reply="No", demo="No", added_on="2026-10-25",
+         last_send_state="delivered",
+         notes="Message envoyé le 24/10 12:12 (101 mots, BLOQUÉ par la porte : ne pas le reprendre comme "
+               "modèle). Réaction 👍 à 12:12. Porte A : le numéro est VIVANT (message livré + réaction), "
+               "même si le profil affiché n'a pas été relevé. Suivi du 25/10 : capture + message de 55 "
+               "mots, voir `sales/ENVOI-LOT-2026-10-26.md` §10."),
+    dict(slug="bouda-seidou-bonanjo", org="Cabinet Bouda Seidou", city="Douala (Bonanjo)", org_type="clinic", language="FR",
+         wa_number="677 76 03 49", wa_verified="no", contact_channel="",
+         wa_number_note="25/10 (test King) : 677 76 03 49 introuvable sur WhatsApp — aucune discussion, "
+                        "aucun contact à ce numéro.",
+         contact_name="", contact_role="", source="directory",
+         source_detail="Lot d'envoi du 26/10 — cabinet à Bonanjo, quatre annuaires",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-25",
+         notes="Lot du 26/10 — NE PART PAS : numéro absent de WhatsApp. Le cabinet existe (quatre "
+               "annuaires publics), c'est le numéro qui est mort ou mal recopié. Aucun canal de repli "
+               "décidé pour les cliniques (le ruling WhatsApp-only du 12/10 vise les opticiens)."),
+    dict(slug="le-sourire-bali", org="Le Sourire", city="Douala (Bali)", org_type="clinic", language="FR",
+         wa_number="698 00 78 08", wa_verified="no", contact_channel="",
+         wa_number_note="25/10 (test King) : 698 00 78 08 introuvable sur WhatsApp.",
+         contact_name="", contact_role="", source="directory",
+         source_detail="Lot d'envoi du 26/10 — cabinet à Bali, deux annuaires",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-25",
+         notes="Lot du 26/10 — NE PART PAS : numéro absent de WhatsApp. C'était déjà le message le plus "
+               "faible du lot ; il sort du calendrier sans regret."),
+    dict(slug="cmo-jolinom-deido", org="CMO Jolinom", city="Douala (Deido)", org_type="clinic", language="FR",
+         wa_number="677 46 64 25", wa_verified="no", contact_channel="",
+         wa_number_note="25/10 (test King) : 677466425 introuvable sur WhatsApp.",
+         contact_name="", contact_role="", source="directory",
+         source_detail="Lot d'envoi du 26/10 — centre médical ophtalmologique Jolinom, Deido",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-25",
+         notes="Lot du 26/10 — NE PART PAS : numéro absent de WhatsApp. Trois assureurs, deux numéros : "
+               "c'est le second numéro qu'il faut retrouver avant de retenter."),
+]
+
+
+# ── PORTE A DU 25/10 — les dix numéros vérifiés par King dans WhatsApp ───────────────────────────
+# Ce que la capture montre, et rien d'autre : le numéro est-il sur WhatsApp, et sous quel nom le
+# profil s'affiche-t-il. Les six autres résultats (non trouvés) sont déjà portés par les lignes
+# LOT_2610_LEADS ci-dessus ; cette table ne corrige que les QUATRE lignes du scout ONOC.
+VERIF_WA_2510 = {
+    "saoudia-optique": {
+        "wa_verified": "yes", "profile_name_seen": "Saoudia Optique",
+        "Notes_extra": "Porte A du 25/10 (capture King) : 696 04 04 13 EST sur WhatsApp, profil "
+                       "« Saoudia Optique ». Joignable, jamais contacté : entre dans la vague suivante.",
+    },
+    "isee": {
+        "wa_verified": "yes", "profile_name_seen": "I See Better",
+        "Notes_extra": "Porte A du 25/10 (capture King) : 656 97 80 43 EST sur WhatsApp, PROFIL BUSINESS "
+                       "« I See Better » — « Cabinet d'optique médicale », BP 3549 Douala, "
+                       "iseecameron@gmail.com, carte affichée. Meilleur signal de la liste : le cabinet "
+                       "tient déjà une fiche soignée, il se soucie de son image.",
+    },
+    "free-optic": {
+        "wa_verified": "yes", "profile_name_seen": "Free Optic",
+        "Notes_extra": "Porte A du 25/10 (capture King) : 679 11 37 60 EST sur WhatsApp, PROFIL BUSINESS "
+                       "« Free Optic » — catégorie « Medical & health », description « examens de vue, "
+                       "vente de lunettes médicales, optiques et solaires… », base à Akwa/Bonamoussadi. "
+                       "Second meilleur signal de la liste.",
+    },
+    "centrale-d-optique-panafricaine-sarl": {
+        "wa_verified": "no", "stage": "disqualified",
+        "wa_number_note": "25/10 (test King) : 695 29 79 04 introuvable sur WhatsApp.",
+        "disqualification_reason": "excluded_no_wa (25/10) : 695 29 79 04 introuvable sur WhatsApp "
+                                   "(test King) ; pas d'appel (ruling 12/10 — un opticien sans WhatsApp "
+                                   "n'entre pas au pipeline).",
+        "Notes_extra": "Porte A du 25/10 : numéro absent de WhatsApp. Ne pas confondre avec "
+                       "« Centrale Optique » (693 96 89 56, ZOBO Jean), disqualifiée le 12/10 pour la "
+                       "même raison : deux cabinets différents, deux verdicts séparés, même conclusion.",
+    },
+}
+
+
 def _apply_state(out: list, table: dict, name: str) -> None:
     """Applique une table d'état au relevé : elle ÉCRASE les champs scalaires qu'elle cite (elle est
     plus récente que tout le monde) et APPEND les deux champs de récit (`Conversation_extra`,
@@ -3995,6 +4093,11 @@ def main() -> int:
     for p in OPTICIENS_ONOC_2410:
         out.append({"School": p["org"], **p})
 
+    # 3 ter · LE LOT DU 26/10 (25/10) — six cibles d'envoi qui n'avaient AUCUNE ligne au CRM.
+    #         Elles entrent avant les `_apply_state` pour que la porte A du 25/10 puisse les patcher.
+    for p in LOT_2610_LEADS:
+        out.append({"School": p["org"], **p})
+
     # le nom de colonne du classeur est `School` : on le garde tel quel, comme demandé
     for rec in out:
         rec.pop("org", None)
@@ -4063,6 +4166,7 @@ def main() -> int:
     _apply_state(out, REVISION_2409, "REVISION_2409")
     _apply_state(out, LOT_0210_KING, "LOT_0210_KING")
     _apply_state(out, LOT2_0210_KING, "LOT2_0210_KING")
+    _apply_state(out, VERIF_WA_2510, "VERIF_WA_2510")
     check_reply_types(out)
     check_tables_sans_doublon()
 

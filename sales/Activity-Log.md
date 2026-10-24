@@ -5724,3 +5724,38 @@ nommée pour ce qu'elle est).
 **Le calendrier qui suit** : dimanche 25/10 Optix seul · lundi 26/10 Bouda · mardi 27/10 COMED ·
 mercredi 28/10 IVY · jeudi 29/10 Jolinom · vendredi 30/10 Le Sourire · **rien le 31/10** (jour du
 paiement DM Optique).
+
+## 25/10/2026 — la porte A, premier tour : 10 numéros testés, 6 joignables, et trois cibles mortes
+
+**Ce que King a testé, capture par capture, et ce que ça change.**
+
+| Cible | Résultat |
+|---|---|
+| **③ Optix** (697 72 32 65) | **vivant** — message du 24/10 livré, réaction 👍 (profil non relevé) |
+| **⑨ COMED** (699 91 56 52) | **vivant** — profil « COMED » |
+| **⑧ IVY** (697 94 52 51) | **vivant mais ambigu** — profil « IVY », **photo de personne**, pas de profil Business |
+| **⑥ Bouda Seidou** | **mort** — introuvable |
+| **⑩ CMO Jolinom** | **mort** — introuvable |
+| **⑦ Le Sourire** | **mort** — introuvable |
+| **Saoudia Optique** (696 04 04 13) | **vivant** — profil « Saoudia Optique » |
+| **ISEE** (656 97 80 43) | **vivant, profil Business** « I See Better », cabinet d'optique médicale, BP 3549 Douala |
+| **Free Optic** (679 11 37 60) | **vivant, profil Business** « Free Optic », « Medical & health » |
+| **Centrale d'Optique Panafricaine** (695 29 79 04) | **mort** → disqualifiée (`excluded_no_wa`, ruling 12/10) |
+
+**Conséquence immédiate : le lot de six messages redevient un lot de deux envois sûrs.** Optix dimanche
+25/10, COMED lundi 26/10, IVY le 27 **si le profil est bien celui du cabinet**. Les trois autres ne
+partent pas — trois messages auraient été envoyés dans le vide, dont un vers un numéro inexistant.
+
+**Un trou nommé, pas oublié** : le ruling WhatsApp-only du 12/10 vise les **opticiens**. Pour une
+**clinique** dont le numéro n'est pas sur WhatsApp (Bouda, Jolinom, Le Sourire), **aucun canal de repli
+n'est décidé** — ni SMS, ni appel. Elles restent `prospecting` au CRM, sans envoi, jusqu'à un ruling.
+
+**Les dix sont inscrits par le générateur, pas à la main** : `LOT_2610_LEADS` (les six cibles du lot, qui
+n'avaient **aucune ligne au CRM** jusqu'à aujourd'hui — un envoi à une cible absente de la base ne peut
+ni se vérifier ni s'exclure) et `VERIF_WA_2510` (les quatre du scout). CRM **184 → 190 lignes**, contrôle
+après rebuild : **4 lignes modifiées** (les quatre du scout) + **6 ajoutées**, rien d'autre.
+
+**Et le message d'Optix a été réécrit une seconde fois.** « Deux minutes, sans moi : ça vous parle ? »
+était de l'argot de prospection — King n'y comprenait rien, et il a raison : ça ne veut rien dire pour
+un opticien. Remplacé par une question en français simple : **« Deux minutes à regarder, vous voulez
+qu'on en parle ? »** (55 mots, 4 phrases, porte OK 0/0).

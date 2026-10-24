@@ -35,7 +35,7 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : MAKONGO Jean Dury. Probleme : etre
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 13 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 14 ligne(s).*
 
 `L815` · j'écris les 5 suivants (Optic Laser · Planète · Médina · Fashion · MegaOptic) dans la foulée.
 `L4946` · - **Planète Optique (Douala) :** premier message le 12/10 à 11:34 (aperçu de présence en ligne avec bouton WhatsApp, « vous voulez le voir ? »), sans réponse. Relance d'aujourd'hui, 13/10 à 11:01 : « je voulais juste m'assurer que vous l'avez bien reçu, rien d'urgent ». Fenêtre de réponse de 48 h ; on attend, rien d'autre.
@@ -50,6 +50,7 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : MAKONGO Jean Dury. Probleme : etre
 `L5250` · - **Planète Optique :** la relance du 13/10 11:01 n'était pas au journal CRM. Ajoutée dans `crm.py` (source), rebuild propre. Dans le CSV, seule la ligne Planète change. Fenêtre 48 h : on attend.
 `L5251` · - **Verrou des générateurs :** le garde-fou a refusé le rebuild parce que `crm.py` avait changé. Seul changement non commité dans `leads/build` : ma ligne Planète. Verrou mis à jour (`guard.py lock`), puis rebuild OK. Cela suit la procédure du garde-fou pour un changement voulu.
 `L5254` · - **Non décidé (King) :** l'étape CRM de JiredOptic (reste `parked`, ou `disqualified` avec raison ?) ; la date de suivi de Planète (`2026-10-13` dans la source, périmée).
+`L5668` · 11:47, envoi Planète, tags Maff/Horizon/Kamaïs, RDV Univers Optique du 16/10) et la relance Planète du
 
 ---
 

@@ -35,7 +35,7 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : BALLA Saïdou. Probleme : etre dan
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 11 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 12 ligne(s).*
 
 `L815` · j'écris les 5 suivants (Optic Laser · Planète · Médina · Fashion · MegaOptic) dans la foulée.
 `L876` · **Trois questions à King :** Médina Optic (hors WhatsApp ou choix ?) · Bonanjo (ce soir ou demain 09:00 ?) ·
@@ -48,6 +48,7 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : BALLA Saïdou. Probleme : etre dan
 `L3468` · dans le tableau (699 939 334), donc la personne qui répond peut être l'un ou l'autre.
 `L3471` · prospect, et **jamais** le statut administratif lu dans le registre (« arrêté en cours » pour Médina) — une
 `L3520` · Espace Lunetterie 12:00 · MegaOptic 12:03 · Médina 12:08 · Cavisa 12:10**. Tous **livrés** (✓✓), tous sur des
+`L5660` · **Médina Optic** (699 93 93 34) : une ligne, pas deux, et pas de seconde touche à un cabinet déjà
 
 ---
 

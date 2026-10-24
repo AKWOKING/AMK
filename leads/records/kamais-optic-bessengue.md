@@ -30,7 +30,7 @@ Envoyé 18/09 19:42, sans maquette. · ⚰️ MORT le 22/09 (lot du 18/09) — j
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 14 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 15 ligne(s).*
 
 `L44` · | **ven 18/09 19:42** | **Kamaïs Optic** (Bessengue, 678 435 460) | msg 1 — sans maquette | Envoyé | **Non** |
 `L112` · | 19:42 | Centre Médical de Bonanjo · Kamaïs Optic |
@@ -46,6 +46,7 @@ Envoyé 18/09 19:42, sans maquette. · ⚰️ MORT le 22/09 (lot du 18/09) — j
 `L5082` · - **KamaïsOptic :** ruling King 12/10 : « Kamais est mort on ne le relance pas » → la décision du
 `L5108` · excluded_already_contacted. Kamaïs : tag excluded_already_contacted.
 `L5192` · - **Ruling 2 — décompte (CORRECTION) :** la vague comptait **7 envois à froid** ; **5 sur 7** ont échoué aux gates (Horizon, Faby, Centrale : WhatsApp · Kamaïs, Maff : déjà contactés) ; **2 sur 7** ont passé (JiredOptic a refusé, Planète silence). Lumumba n'est pas à froid (contacté 24/09), traité à part. Le « 5 sur 8 » était une erreur de notre part. `RETRO-VAGUE-2026-10-12.md` §1/§3 corrigés.
+`L5668` · 11:47, envoi Planète, tags Maff/Horizon/Kamaïs, RDV Univers Optique du 16/10) et la relance Planète du
 
 ---
 

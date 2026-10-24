@@ -7,9 +7,9 @@
 
 | Étape | Nombre | Taux |
 |---|---|---|
-| Base (leads au fichier) | **184** | — |
-| Contactés | **68** | 37.0 % de la base |
-| Réponses humaines | **10** | 14.7 % des contactés |
+| Base (leads au fichier) | **190** | — |
+| Contactés | **69** | 36.3 % de la base |
+| Réponses humaines | **10** | 14.5 % des contactés |
 | Réponses automatiques | 1 | — |
 | Aperçus produits | **24** | (hors chaîne : souvent produits AVANT contact) |
 | Prix posé / en négociation | **2** | 8.3 % des aperçus |
@@ -19,7 +19,7 @@
 
 | Source | Leads | Contactés | Réponses humaines | Taux de réponse |
 |---|---|---|---|---|
-| directory | 131 | 57 | **7** | 12.3 % |
+| directory | 137 | 58 | **7** | 12.1 % |
 | onoc_registry | 7 | 5 | **3** | 60.0 % |
 | (non renseigné) | 38 | 4 | **0** | 0.0 % |
 | google_maps | 2 | 2 | **0** | 0.0 % |
@@ -29,8 +29,8 @@
 
 ## Le diagnostic, en trois lignes
 
-1. **Le volume contacté est le premier goulot** : 116 lead(s) sur 184 n'ont jamais reçu un message (63 % de la base). Aucune amélioration de texte ne compense un lead jamais contacté.
-2. **Le taux de réponse humain** est de 14.7 % des contactés — c'est le chiffre à surveiller d'un envoi à l'autre (il se lit avec `SOURCES.md` : quelle liste répond).
+1. **Le volume contacté est le premier goulot** : 121 lead(s) sur 190 n'ont jamais reçu un message (64 % de la base). Aucune amélioration de texte ne compense un lead jamais contacté.
+2. **Le taux de réponse humain** est de 14.5 % des contactés — c'est le chiffre à surveiller d'un envoi à l'autre (il se lit avec `SOURCES.md` : quelle liste répond).
 3. **La conversion en rendez-vous, elle, ne fuit pas** : 2 des 10 réponses humaines ont donné un rendez-vous ou un prix posé. Le travail n'est donc pas de « mieux closer », il est de **contacter plus**, et de choisir les bonnes listes.
 
 > Règle de lecture : une réponse automatique n'est PAS une réponse. Un aperçu produit n'est pas un prospect chaud — il se compte à part, et `Demo made` ne remplace jamais `reply_type = human`.

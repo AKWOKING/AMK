@@ -56,7 +56,7 @@ trace de l'override proposé puis refusé. · Tag 12/10 : excluded_already_conta
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 158 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 159 ligne(s).*
 
 `L51` · | **ven 18/09 20:02** | **Clinique de L'université** (Bassa, 694 36 02 03) | msg 1 — sans maquette | Envoyé | **Non** |
 `L113` · | 20:02 | Cabinet Dentaire Emmanuel · Clinique de L'université · MEDI LABO |
@@ -216,6 +216,7 @@ trace de l'override proposé puis refusé. · Tag 12/10 : excluded_already_conta
 `L5024` · - **10:43 ENVOI King → Univers Optique :** « Bonjour Docteur, merci pour votre retour. Vendredi me
 `L5036` · ## lun 12/10 10:46 — RÉPONSE Univers Optique : RDV CONFIRMÉ
 `L5183` · - **Livrables (propositions, non loi) :** `sales/ICP-OPTICIENS-2026-10.md` (7 axes + veto, checklist, calibration DM/Univers) · `sales/QUALIFICATION-PROTOCOL-2026-10.md` (recherche citée §0, mapping BANT→AMK, question de besoin, question de délai) · `sales/RETRO-VAGUE-2026-10-12.md` (8 prospects scorés).
+`L5668` · 11:47, envoi Planète, tags Maff/Horizon/Kamaïs, RDV Univers Optique du 16/10) et la relance Planète du
 
 ---
 
