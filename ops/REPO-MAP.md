@@ -2,14 +2,14 @@
 
 ```text
 Généré par tools/graphify/build_full_graph.py — 2026-10-24
-Source : graphify-out/graph.json (11803 nœuds, 14677 arêtes)
+Source : graphify-out/graph.json (11804 nœuds, 14678 arêtes)
 Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même
 carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.
 ```
 
 ## 0 · En une page
 
-- **11803 nœuds** — dont 745 documents, 169 scripts, 21 modules, 139 pages HTML, 394 images, 3 vidéos, 40 audios, 35 fichiers de données, 11 PDF.
+- **11804 nœuds** — dont 745 documents, 169 scripts, 21 modules, 139 pages HTML, 394 images, 3 vidéos, 40 audios, 35 fichiers de données, 11 PDF.
 - **3039 citations entre documents** (2457 en chemin exact, 582 par nom unique)
 - **121 arêtes de remplacement** · **1 documents marqués périmés**
 - **389 documents que personne ne cite** (atteignables par aucun chemin de lecture)
@@ -67,7 +67,7 @@ C'est ce réseau qui décide de ce qui s'applique à un travail. Si un document 
 | 7 | `sales/CLIENT-MESSAGING-RULES.md` | **18** | 20 |
 | 8 | `sales/MESSAGES-2026-09-23-PERSUASION.md` | **17** | 14 |
 | 9 | `sales/PRIX-ET-RECURRENCE-2026-09-24.md` | **17** | 16 |
-| 10 | `clients/dm-optic/build-notes.md` | **16** | 94 |
+| 10 | `clients/dm-optic/build-notes.md` | **16** | 95 |
 | 11 | `hosting/previews/README.md` | **16** | 6 |
 | 12 | `ops/TOOL-SCAN.md` | **16** | 44 |
 | 13 | `clients/_uniqueness-registry.md` | **15** | 1 |
@@ -227,7 +227,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | vidéo | 3 | `clients/dm-optic/brag/brag.mp4`, `content/videos/v06-facebook-no-booking/Video_06_Facebook_No_Booking.mp4`, `content/videos/v06-facebook-no-booking/Video_06_Facebook_No_Booking_VOIX.mp4` |
 | sous-titre | 3 | `clients/dm-optic/content/month1/w1/tiktok-01-v2.fr.srt`, `clients/dm-optic/content/month1/w1/tiktok-01.fr.srt`, `clients/dm-optic/content/month1/w2/etapes-01.srt` |
 | archive | 1 | `dmopticsarl-2026-10-21.zip` |
-| symboles extraits (titres de documents + fonctions/classes du code) | 10183 | — |
+| symboles extraits (titres de documents + fonctions/classes du code) | 10184 | — |
 
 ### Les outils et skills installés — 1 dossier = 1 outil
 
