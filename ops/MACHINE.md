@@ -463,9 +463,19 @@ date**, ni dans leur chemin ni dans leur en-tête. Un document sans date ne peut
 `archive/2026-09/`. Campagnes terminées, zéro citation entrante, rien qui en dépende. `archive/` sort du
 corpus (ni carte, ni portes, ni audit) mais reste dans git : on archive, on ne supprime pas.
 
-**Reste à décider** : les 29 `research/youtube-lessons` (récolte du 11–12/10, à synthétiser avant
-d'archiver), les 11 orphelins de `clients/dm-optic` (à citer depuis le dossier, pas à archiver), les 6
-`STATUS.md` de vidéos (partent avec le lot du mois), et les 29 documents sans date (à dater).
+**Deuxième lot, le même soir — les 29 récoltes YouTube.** Synthétisées avant d'être archivées, comme la
+règle le demande : `research/YOUTUBE-SYNTHESE-2026-10-24.md` tient en une page les 33 rapports de vidéo
+(11–12/10) — 14 leçons adoptées avec leur destination, 7 refus nommés, 5 questions ouvertes, 2 trous
+(v20 sans source vérifiable, v18 doublon de v11). Les 27 fichiers bruts partent dans
+`archive/2026-10/youtube-lessons/`, et les cinq pointeurs de `research/YouTube-Lessons.md` suivent —
+sinon la synthèse serait exacte et les liens morts.
+
+**Effet mesuré** : 412 → **393 orphelins**, 82 → **63 à traiter**. La plus grosse famille disparaît de
+la liste sans qu'un seul fichier soit perdu.
+
+**Reste à décider** : les 15 orphelins de `clients/dm-optic` (à citer depuis le dossier, pas à archiver),
+les 7 `STATUS.md` de vidéos (partent avec le lot du mois), les 7 de `ops/` et les **41 documents sans
+date** — ceux-là sont le vrai chantier : un document sans date ne peut pas expirer.
 
 ### ⑤ Les contrôles en amont, et une session qui démarre en une minute
 
