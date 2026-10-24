@@ -177,7 +177,7 @@ Une porte est un **code retour**, pas une impression. Si elle n'a pas été lanc
 | Accessibilité | `tools/qa/audit_a11y.py <page>` | WCAG 2.2 AA, critère par critère | quatre choses écrites dans `AMK-DESIGN-SKILLS.md` §27 |
 | Dépôt | `python3 tools/ops/audit_files.py` | doublons, orphelins, fichiers périmés, caches | la qualité d'un document |
 | Provision | `bash tools/ops/provision.sh --list` | outil absent de la session | la version réellement utilisée |
-| **Règles** | `bash tools/ops/machine.sh --rules` | les 7 portes dures du registre §9 | les 2 règles sans porte, dites en clair |
+| **Règles** | `bash tools/ops/machine.sh --rules` | les portes dures du registre §9, et toute règle du code qui manquerait au tableau | les règles souples et le trou, dits en clair |
 | **Crochet** | `bash tools/ops/install-hooks.sh` (une fois par clone) → `.git/hooks/pre-push` | un push avec un secret ou un chemin mort | la carte rejouée (trop lent pour un crochet) |
 | **CI GitHub** | `.github/workflows/machine.yml` — à chaque push et PR | secret, chemin mort, carte non reproductible | la valeur du travail, et tout ce qui demande un jugement |
 | **Sources** | `python3 tools/qa/audit_claims.py --sources knowledge` | un pourcentage affirmé sans appui sur sa ligne | la qualité de la source, et ce qui est sourcé deux lignes plus haut |
@@ -242,22 +242,34 @@ même porte finissent toujours par diverger, et c'est la plus vieille qui gagne.
 > commande qui la vérifie**. `bash tools/ops/machine.sh --rules` les imprime toutes ; `--check` échoue
 > dès qu'une porte dure est fermée.
 
-| # | Règle | Fondement | Déclencheur | Porte |
-|---|---|---|---|---|
-| 1 | Rien ne reste hors commit quand le tour se dit fini | PRE-FLIGHT §1e | fin de tour | `git status --porcelain` vide |
-| 2 | Le tour finit poussé ; une branche sans remote n'est pas un travail rendu | §7 invariant 7 | fin de tour | `rev-list @{u}..HEAD` = 0 |
-| 3 | La branche se fusionne sur seuil, pas sur humeur | PRE-FLIGHT §1i | chaque sortie | `machine.sh --merge` — 40 fichiers / 3 000 lignes |
-| 4 | La carte du dépôt est reconstruite quand un fichier suivi bouge | PRE-FLIGHT §0h | fichier modifié | `REPO-MAP.md` plus récent que tout fichier suivi |
-| 5 | Une session neuve rejoue le noyau épinglé avant de travailler | PRE-FLIGHT §1f | début de session | estampes `~/.amk-provisioned` (graphify, superpowers) |
-| 6 | Le miroir Notion suit le jour même tout changement d'un fait debout | PRE-FLIGHT §0g | commit sur un fait debout | `git diff MIRROR..HEAD` sur les chemins de §0g |
-| 7 | Ni mot de passe, ni clé, ni jeton dans un dépôt public | PRE-FLIGHT §0g | avant chaque push | `git grep` des motifs de secret (code tiers exclu) |
-| 8 | Le comptage des fichiers a moins de sept jours | `ops/AUDIT-FICHIERS` | chaque semaine | âge de `ops/FILE-AUDIT-*.md` — ⚠ souple |
-| 9 | L'état de reprise a moins de trois jours | `ops/HANDOFF-*.md` | tous les trois jours | âge du dernier handoff — ⚠ souple |
-| 10 | Tout `.md` neuf à la racine ou dans `ops/` se déclare avant de devenir loi | PRE-FLIGHT §4b | apparition d'un doc souverain | `git diff --diff-filter=A` — ⚠ souple |
-| 11 | Aucune statistique sans source primaire nommée | PRE-FLIGHT §1g | chaque chiffre écrit | `audit_claims.py --sources knowledge` — ⚠ souple (porte faible) |
-| 12 | Un fichier debout nouveau n'existe qu'avec le oui de King | PRE-FLIGHT §4b | création d'un document souverain | ○ **sans porte machine** |
+| # | id | Règle | Fondement | Déclencheur | Porte |
+|---|---|---|---|---|---|
+| 1 | `arbre-propre` | Rien ne reste hors commit quand le tour se dit fini | PRE-FLIGHT §1e | fin de tour | `git status --porcelain` vide |
+| 2 | `tour-pousse` | Le tour finit poussé ; une branche sans remote n'est pas un travail rendu | §7 invariant 7 | fin de tour | `rev-list @{u}..HEAD` = 0 |
+| 3 | `fusion-sur-seuil` | La branche se fusionne sur seuil, pas sur humeur | PRE-FLIGHT §1i | chaque sortie | `machine.sh --merge` — 40 fichiers / 3 000 lignes / 6 tours |
+| 4 | `carte-fraiche` | La carte du dépôt est reconstruite quand un fichier suivi bouge | PRE-FLIGHT §0h | fichier modifié | `REPO-MAP.md` plus récent que toute source (le cockpit exempté, voir plus bas) |
+| 5 | `outils-provisionnes` | Une session neuve rejoue le noyau épinglé avant de travailler | PRE-FLIGHT §1f | début de session | estampes `~/.amk-provisioned` (graphify, superpowers) |
+| 6 | `miroir-notion` | Le miroir Notion suit le jour même tout changement d'un fait debout | PRE-FLIGHT §0g | commit sur un fait debout | `git diff MIRROR..HEAD` sur les chemins de §0g |
+| 7 | `aucun-secret` | Ni mot de passe, ni clé, ni jeton dans un dépôt public | PRE-FLIGHT §0g | avant chaque push | `git grep` des motifs de secret (code tiers exclu) |
+| 8 | `docs-existants` | Tout chemin cité par les tableaux de la machine existe encore | MACHINE §5 · §6 · §9 | chaque modification de la carte | chaque chemin cité résolu sur le disque |
+| 9 | `audit-frais` | Le comptage des fichiers a moins de sept jours | `ops/FILE-AUDIT-*.md` | chaque semaine | âge de l'audit — ⚠ souple |
+| 10 | `handoff-frais` | L'état de reprise a moins de trois jours | `ops/HANDOFF-*.md` | tous les trois jours | âge du dernier handoff — ⚠ souple |
+| 11 | `document-neuf` | Tout `.md` neuf à la racine ou dans `ops/` se déclare avant de devenir loi | PRE-FLIGHT §4b | apparition d'un doc souverain | `git diff --diff-filter=A` — ⚠ souple |
+| 12 | `stat-sourcee` | Aucune statistique sans source primaire nommée | PRE-FLIGHT §1g | chaque chiffre écrit | `audit_claims.py --sources knowledge` — ⚠ souple (porte faible) |
+| 13 | `registre-complet` | Aucune règle du code ne peut disparaître de ce tableau sans faire échouer la porte | ce § | chaque `--check` | chaque id connu de `machine.py` présent ci-dessus |
+| 14 | `fichier-neuf-avec-king` | Un fichier debout nouveau n'existe qu'avec le oui de King | PRE-FLIGHT §4b | création d'un document souverain | ○ **sans porte machine** |
 
-**Une porte faible, et un trou qui reste.** La règle 11 n'a pas de porte *forte* : aucun script ne sait
+**Pourquoi la 13 existe.** Le 24/10 au soir, ce tableau listait douze règles quand le code en appliquait
+treize : `docs-existants` avait été ajoutée dans `machine.py` et **pas ici**. Une règle écrite à un seul
+endroit est une règle à moitié tenue — l'agent lit le code, King lit le tableau, et les deux ne parlent
+pas du même dépôt. La porte 13 compare les deux listes et échoue à la première divergence.
+
+**Pourquoi le cockpit est exempté de la porte 4.** `ops/MACHINE.md` porte la ligne `MIRROR`, réécrite à la
+fin de chaque tour, après la reconstruction de la carte. La compter rendrait la porte rouge **par
+construction**, à chaque tour. Une porte toujours rouge n'est pas une règle : c'est du bruit qu'on apprend
+à ignorer. Le cockpit reste un nœud de la carte ; seuls ses changements ne la déclenchent pas.
+
+**Une porte faible, et un trou qui reste.** La règle 12 (`stat-sourcee`) n'a pas de porte *forte* : aucun script ne sait
 si une source est bonne. Elle a une porte **faible**, et c'est déjà autre chose que rien :
 `audit_claims.py --sources` liste les lignes qui affirment un pourcentage **sans lien, sans chemin, sans
 « selon », sans « non revérifié »**. Sa précision est choisie : sur 126 documents, elle ramène 7 lignes
@@ -265,7 +277,7 @@ si une source est bonne. Elle a une porte **faible**, et c'est déjà autre chos
 ne vaut pas mieux que pas d'alerte. Elle est **souple** : elle signale, elle ne bloque pas, parce qu'un
 script ne doit jamais arrêter une publication sur une intuition.
 
-La règle 12 (**un fichier debout neuf exige le oui de King**) reste sans porte : personne ne peut
+La règle 14 (`fichier-neuf-avec-king` — **un fichier debout neuf exige le oui de King**) reste sans porte : personne ne peut
 vérifier un accord qui n'a pas laissé de trace. Son substitut est **la forme de la réponse** — le fichier
 est *proposé* avec son emplacement avant d'être committé. Si un jour l'une des deux devient vérifiable,
 elle monte en porte dure ; c'est le seul sens de circulation autorisé.
@@ -292,8 +304,10 @@ explicite. Une règle sans porte est un trou ; un trou caché est une panne.
 - **`provision.sh` dépend du réseau** : sans GitHub ni PyPI, une session neuve n'a que les outils locaux (`tools/qa`, `tools/ops`, `tools/graphify` une fois installé).
 - **Notion reste manuel, mais il n'est plus oubliable** : la porte `miroir-notion` compare la ligne
   `MIRROR` aux commits qui touchent un fait debout ; elle dit *qu'il faut y aller*, elle n'y va pas.
-- **La règle 12 n'a pas de porte** (voir §9) : elle tient par la forme de la réponse. La règle 11 a une
+- **La règle 14 n'a pas de porte** (voir §9) : elle tient par la forme de la réponse. La règle 12 a une
   porte faible, souple, qui nomme les lignes fautives sans jamais bloquer.
+- **Le tableau §9 peut mentir par omission** : c'est désormais la porte 13 qui le dit (`registre-complet`).
+  Elle a été écrite le jour où le tableau annonçait douze règles quand le code en appliquait treize.
 - **Aucun outil ne juge un document** : `audit_files.py` compte, il ne lit pas. Le jugement reste entier.
 
 *Cette carte se relit quand un outil entre ou sort, quand une porte change, ou quand une panne nouvelle

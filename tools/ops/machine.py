@@ -472,6 +472,17 @@ def claim_gaps() -> tuple[int, list[str]]:
     return len(gaps), [f"{g['file'].split('/')[-1]}:{g['line']}" for g in gaps[:3]]
 
 
+def register_section() -> str:
+    """Le texte du §9 de la carte : la version que King lit, opposée à celle que le code applique."""
+    try:
+        txt = MACHINE.read_text(encoding="utf-8", errors="ignore")
+    except OSError:
+        return ""
+    if "## 9 \u00b7" not in txt:
+        return ""
+    return txt.split("## 9 \u00b7", 1)[1].split("\n## ", 1)[0]
+
+
 def rules() -> list[dict]:
     """Les règles debout, chacune avec sa porte. Aucune n'est inventée ici : toutes renvoient à un §."""
     g = git_state()
@@ -557,6 +568,14 @@ def rules() -> list[dict]:
     add("document-neuf", "Tout .md neuf à la racine ou dans ops/ se déclare (ruling §4b) avant de devenir loi.",
         "PRE-FLIGHT §4b", "apparition d'un .md souverain", "souple",
         not new_docs, f"à faire confirmer : {', '.join(new_docs[:3])}" if new_docs else "aucun document souverain ajouté")
+    # la porte du registre : le tableau de §9 et cette fonction ne peuvent pas diverger en silence
+    sec = register_section()
+    known = [r["id"] for r in out] + ["registre-complet"]
+    missing = [i for i in known if f"`{i}`" not in sec]
+    add("registre-complet", "Aucune règle du code ne peut disparaître du tableau §9 sans faire échouer la porte.",
+        "MACHINE §9", "chaque --check", "dure", not missing,
+        f"{len(missing)} règle(s) appliquée(s) par le code et absente(s) de §9 : {', '.join(missing)}"
+        if missing else f"{len(known)} règles, toutes présentes dans §9")
     return out
 
 
@@ -613,8 +632,12 @@ def print_rules() -> int:
 def newest_source() -> tuple[float, str]:
     """Le fichier suivi le plus récemment modifié, hors sorties régénérables."""
     files = run(["git", "ls-files", "-z"], timeout=60).split("\0")
-    # les sorties régénérables ne rendent pas la carte périmée : elles sont des produits, pas des sources
-    skip = ("graphify-out/", "ops/REPO-MAP.md", "ops/FILE-AUDIT-", ".git/")
+    # les sorties régénérables ne rendent pas la carte périmée : elles sont des produits, pas des sources.
+    # ops/MACHINE.md est exempté pour une raison mécanique : la ligne MIRROR y est réécrite à la fin de
+    # chaque tour, après la carte. La compter rendrait la porte rouge par construction, à chaque tour —
+    # et une porte toujours rouge est une porte qu'on apprend à ignorer. Le cockpit reste un nœud de la
+    # carte ; seuls ses changements ne déclenchent pas une reconstruction.
+    skip = ("graphify-out/", "ops/REPO-MAP.md", "ops/FILE-AUDIT-", ".git/", "ops/MACHINE.md")
     best, name = 0.0, "—"
     for f in files:
         if not f or f.startswith(skip):
@@ -629,7 +652,7 @@ def newest_source() -> tuple[float, str]:
         rel = str(p.relative_to(ROOT))
         if not p.is_file() or ".git" in p.parts or "graphify-out" in p.parts:
             continue
-        if rel.startswith(("ops/REPO-MAP.md", "ops/FILE-AUDIT-")):
+        if rel.startswith(("ops/REPO-MAP.md", "ops/FILE-AUDIT-")) or rel == "ops/MACHINE.md":
             continue
         try:
             m = p.stat().st_mtime
