@@ -317,33 +317,67 @@ def human(n: int) -> str:
 
 
 def compute_communities(g: dict, by_id: dict, meta: dict) -> dict[str, int]:
-    """Communautés sur le réseau des CITATIONS (Louvain de networkx, local, déterministe par graine).
+    """Communautés sur le réseau des CITATIONS — calculées ici, sans bibliothèque et sans aléa.
 
-    Le `cluster-only` de l'amont refuse d'écrire sur un graphe qui contient nos nœuds d'inventaire
-    (« saved semantic node(s) are missing »), et il clusterise aussi les 9 000 titres — ce qui noie
-    la structure. Ici on ne regroupe que les documents, sur les liens qui veulent dire quelque chose :
-    `cites` et `supersedes`. Une communauté = un sujet qu'on peut nommer par ses trois fichiers pivots.
+    Histoire courte. Le 24/10 au soir, cette fonction appelait `nx.community.louvain_communities(G,
+    seed=42)` avec le commentaire « déterministe par graine ». C'était vrai dans un environnement, faux
+    entre deux : la même révision produisait **13 communautés** sur le poste et **15** sur le runner,
+    et l'étape « la carte se rejoue à l'identique » tombait rouge sans qu'aucun fichier du dépôt n'ait
+    bougé. Une graine ne protège pas d'un algorithme dont l'itération dépend de l'ordre du graphe et de
+    la version de la bibliothèque.
+
+    D'où une propagation d'étiquettes écrite ici, en trente lignes, dont le résultat ne dépend que de
+    (nœuds triés, arêtes triées) — même commit, même carte, quel que soit l'interpréteur :
+
+    1. chaque document part avec sa propre étiquette ;
+    2. à chaque tour, il adopte l'étiquette majoritaire dans son voisinage, **égalité tranchée par la
+       plus petite étiquette** (c'est là que se joue le déterminisme) ;
+    3. on s'arrête quand plus rien ne bouge, et on renumérote par taille puis par premier membre.
+
+    Louvain reste dans `graphify-out/graph.json` (non suivi) pour les requêtes ; ce qui est **versionné**
+    n'en dépend plus.
     """
-    try:
-        import networkx as nx
-    except ImportError:
-        return {}
     sub = [e for e in g["edges"] if e["relation"] in ("cites", "supersedes", "references")
            and e["source"] in by_id and e["target"] in by_id
            and by_id[e["source"]].get("kind") == "document"
            and by_id[e["target"]].get("kind") == "document"]
-    G = nx.Graph()
-    for e in sub:
-        G.add_edge(e["source"], e["target"])
-    if G.number_of_nodes() < 10:
+    adj: dict[str, set[str]] = {}
+    for e in sorted(sub, key=lambda e: (e["source"], e["target"])):
+        a, b = e["source"], e["target"]
+        adj.setdefault(a, set()).add(b)
+        adj.setdefault(b, set()).add(a)
+    if len(adj) < 10:
         return {}
-    communities = nx.community.louvain_communities(G, seed=42)
-    label: dict[str, int] = {}
-    for i, c in enumerate(sorted(communities, key=len, reverse=True)):
-        for nid in c:
-            label[nid] = i
-    return label
 
+    # ── propagation d'étiquettes : grossière, mais reproductible À L'OCTET ──────────────────────
+    # Chaque document part avec sa propre étiquette, puis adopte à chaque tour l'étiquette majoritaire
+    # de son voisinage — l'égalité se tranche par la plus petite étiquette, l'ordre de passage est
+    # `sorted()`. Aucune graine, aucun ordre de dictionnaire, aucune version de bibliothèque : le
+    # résultat ne dépend que des arêtes du dépôt.
+    #
+    # Pourquoi pas Louvain (qui segmente mieux) : `louvain_communities(seed=42)` a produit 13
+    # communautés ici et 15 sur le runner pour le MÊME commit — une graine ne fixe pas l'ordre interne
+    # d'un graphe. Ce qui est versionné doit se rejouer ; ce qui segmente finement reste disponible
+    # dans `graphify-out/graph.json`, qui n'est pas suivi.
+    label = {n: n for n in sorted(adj)}
+    for _ in range(30):
+        changed = 0
+        for n in sorted(adj):
+            counts: Counter[str] = Counter(label[m] for m in sorted(adj[n]))
+            if not counts:
+                continue
+            best = min(counts, key=lambda lab: (-counts[lab], lab))
+            if best != label[n]:
+                label[n] = best
+                changed += 1
+        if changed == 0:
+            break
+
+    groups: dict[str, list[str]] = defaultdict(list)
+    for n, lab in label.items():
+        groups[lab].append(n)
+    order = sorted(groups.values(), key=lambda members: (-len(members), sorted(members)[0]))
+    return {n: i for i, members in enumerate(order) for n in members}
 
 def isolated_docs(g: dict, by_id: dict) -> list[str]:
     """Les documents qu'aucune arête de citation ne touche : hors réseau, pas hors sujet."""
@@ -387,7 +421,7 @@ def write_communities_section(A, g, by_id, comm, indeg) -> None:
             internal.setdefault(comm[a], Counter())[b] += 1
     A("## 4 · Les communautés du dépôt — les sujets, tels que les documents se relient")
     A("")
-    A(f"{len(groups)} communautés détectées sur le réseau des citations (Louvain, graine fixe). "
+    A(f"{len(groups)} communautés détectées sur le réseau des citations (propagation d'étiquettes, sans aléa). "
       "Chaque bloc est un sujet réel : les documents qui s'y trouvent se citent entre eux.")
     A("")
     A("*Le pivot d'une communauté est le document que **les autres membres du groupe** citent le "
