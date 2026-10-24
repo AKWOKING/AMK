@@ -99,8 +99,8 @@ def walk() -> list[Path]:
         rel = Path(dirpath).relative_to(ROOT)
         for name in filenames:
             relpath = rel / name if str(rel) != "." else Path(name)
-            if relpath == MAP.relative_to(ROOT):
-                continue  # la carte se cite elle-même : elle ne s'indexe pas (sinon le graphe boucle)
+            if relpath == MAP.relative_to(ROOT) or relpath.name.startswith(("FILE-AUDIT-", "REPO-MAP")):
+                continue  # les rapports générés se citent eux-mêmes : les indexer fait boucler le graphe
             files.append(relpath)
     return sorted(files)
 

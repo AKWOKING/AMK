@@ -2,27 +2,27 @@
 
 ```text
 Généré par tools/graphify/build_full_graph.py — 2026-10-24
-Source : graphify-out/graph.json (12093 nœuds, 14437 arêtes)
+Source : graphify-out/graph.json (12103 nœuds, 14473 arêtes)
 Aucun LLM, aucune clé : tout est déterministe et rejouable en ~10 secondes.
 ```
 
 ## 0 · En une page
 
-- **12093 nœuds** — dont 738 documents, 170 scripts, 22 modules, 176 pages HTML, 675 images, 13 vidéos, 40 audios, 33 fichiers de données, 11 PDF.
+- **12103 nœuds** — dont 738 documents, 171 scripts, 22 modules, 176 pages HTML, 675 images, 11 vidéos, 40 audios, 33 fichiers de données, 11 PDF.
 - **2922 citations entre documents** (2376 en chemin exact, 546 par nom unique)
 - **133 arêtes de remplacement** · **40 documents marqués périmés**
 - **395 documents que personne ne cite** (atteignables par aucun chemin de lecture)
-- **Couverture : 1935 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
+- **Couverture : 1932 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
 
 ### Les dossiers du dépôt, par poids — et ce que chacun porte
 
 | Dossier | Fichiers | Ce que c'est |
 |---|---|---|
 | `clients/` | 431 | Dossiers clients |
-| `hosting/` | 359 | Sites déployés et aperçus |
+| `hosting/` | 358 | Sites déployés et aperçus |
 | `design/` | 179 | Design, skills, vendor |
-| `content/` | 162 | Contenu, vidéos, carrousels, scripts |
-| `tools/` | 156 | Outils et skills installés |
+| `content/` | 160 | Contenu, vidéos, carrousels, scripts |
+| `tools/` | 157 | Outils et skills installés |
 | `leads/` | 146 | CRM machine (CSV, records, vues générées) |
 | `sales/` | 137 | Vente, prospection, CRM humain |
 | `demos/` | 129 | Maquettes et concepts |
@@ -237,19 +237,19 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | document | 738 | `AGENTS.md`, `AMK-DESIGN-SKILLS.md`, `AMK-SEO-PLAYBOOK.md` |
 | image | 675 | `brand/AMK-logo-mono.png`, `brand/AMK-logo-mono.svg`, `brand/AMK-logo-primary.png` |
 | page | 176 | `brand/AMK-Logo-Kit.html`, `brand/v1-green/AMK-Logo-Kit.html`, `clients/dm-optic/brand/CARTE-SIGNATURE-TABLEAU-VISION.html` |
-| script | 170 | `brand/build_fb_assets.py`, `clients/dm-optic/launch/facebook-assets/build_cover.py`, `clients/dm-optic/launch/social/build_frame_cards.py` |
+| script | 171 | `brand/build_fb_assets.py`, `clients/dm-optic/launch/facebook-assets/build_cover.py`, `clients/dm-optic/launch/social/build_frame_cards.py` |
 | audio | 40 | `content/pipeline/post01/vo/v5-sentences/s01.mp3`, `content/pipeline/post01/vo/v5-sentences/s02.mp3`, `content/pipeline/post01/vo/v5-sentences/s03.mp3` |
 | données | 33 | `clients/dm-optic/content/month1/w1/spot-02.json`, `clients/dm-optic/content/month1/w1/spot-03.json`, `clients/dm-optic/content/month1/w1/ugc-03.json` |
 | police | 26 | `clients/dm-optic/content/month1/w1/assets/fonts/ibm-plex-mono-latin-600-normal.ttf`, `clients/dm-optic/content/month1/w1/assets/fonts/ibm-plex-sans-latin-400-normal.ttf`, `clients/dm-optic/content/month1/w1/assets/fonts/schibsted-grotesk-latin-500-normal.ttf` |
 | code | 22 | `content/pipeline/post01/render.mjs`, `demos/_unilabo_v2_js_form.js`, `demos/_unilabo_v2_js_links.js` |
-| vidéo | 13 | `clients/dm-optic/brag/brag.mp4`, `clients/dm-optic/content/month1/w1/spot-02.mp4`, `clients/dm-optic/content/month1/w1/spot-03.mp4` |
+| vidéo | 11 | `clients/dm-optic/brag/brag.mp4`, `clients/dm-optic/content/month1/w1/spot-02.mp4`, `clients/dm-optic/content/month1/w1/spot-03.mp4` |
 | pdf | 11 | `clients/dm-optic/launch/CARTE-AVIS-2026-10-23.pdf`, `clients/dm-optic/launch/RECAP-MISE-EN-LIGNE-2026-10-23.pdf`, `clients/dm-optic/onboarding/print/AMK-PROFORMA-2026-10-05-DM-OPTIQUE-v2.pdf` |
 | texte | 10 | `clients/dm-optic/brag/share-copy.txt`, `clients/dm-optic/launch/LISTE-40-MONTURES-WHATSAPP.txt`, `clients/dm-optic/launch/baseline/README.txt` |
 | config | 6 | `.github/workflows/deploy-dmoptic.yml`, `hosting/previews/dmoptic/sitemap.xml`, `hosting/samples/sitemap.xml` |
 | autre | 6 | `.gitignore`, `design/vendor/LICENSE-bergside`, `design/vendor/LICENSE-emil` |
-| archive | 6 | `amk-factures-pwa-v2.zip`, `amk-factures-pwa.zip`, `amk-site.zip` |
+| archive | 4 | `amk-factures-pwa-v2.zip`, `amk-factures-pwa.zip`, `amk-site.zip` |
 | sous-titre | 3 | `clients/dm-optic/content/month1/w1/tiktok-01-v2.fr.srt`, `clients/dm-optic/content/month1/w1/tiktok-01.fr.srt`, `clients/dm-optic/content/month1/w2/etapes-01.srt` |
-| symboles extraits (titres de documents + fonctions/classes du code) | 10158 | — |
+| symboles extraits (titres de documents + fonctions/classes du code) | 10171 | — |
 
 ### Les outils et skills installés — 1 dossier = 1 outil
 
@@ -278,7 +278,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | `marketingskills/` | `README.md` `install.sh` | 1 doc(s) · 1 shell/CI | marketingskills — 52 skills, **amont** coreyhaines31 (basculé le 23/10/2026, rul |
 | `moneyprinter/` | `README.md` `install.sh` | 1 script(s) · 1 doc(s) · 2 shell/CI | MoneyPrinterTurbo — installé pour assembler **nos** plans |
 | `open-seo/` | `README.md` `install.sh` | 1 doc(s) · 1 shell/CI | open-seo (every-app/open-seo) — skills SEO/AEO en méthodologie |
-| `ops/` | — | 6 script(s) · 2 shell/CI | — |
+| `ops/` | — | 7 script(s) · 2 shell/CI | — |
 | `outreach/` | `README-MOCKUP.md` | 4 script(s) · 1 doc(s) | — |
 | `photo/` | `README.md` `install.sh` | 1 script(s) · 1 doc(s) · 1 shell/CI | tools/photo — édition photo client, locale, pour le web |
 | `pro-design/` | `README.md` `install.sh` `SKILL.md` | 2 doc(s) · 1 shell/CI | pro-design — le skill de construction de pages (installé le 23/10/2026) |
