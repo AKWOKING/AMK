@@ -209,3 +209,69 @@ qu'annonçait le commit (les six autres pages l'ont). **Mesuré : identique avan
 sans effet visible — `html.js .rv.in` (spécificité 0,3,0) l'emporte sur `html.js .rv` (0,2,0), et le
 navigateur montre bien 40 blocs révélés sur 40. Ça reste une porte qui crie pour rien : correctif d'une
 ligne par page, à faire sur ton feu vert, pas glissé dans un lot déjà validé.
+
+---
+
+## 10 · « Le cercle est caché derrière la carte » — quatre réponses, mesurées (24/10, 22h)
+
+Question de King : *« can I propose we make the card transparent so that we see the circle, or is it
+better design choice to change the position? »* Les deux sont mesurables ; voici les chiffres, puis la
+recommandation. Quatre variantes rendues à 1440 / 1280 / 1024, captures `09` à `14`.
+
+| Variante | Ø | Trait visible | Trait **sous** la carte | Titre traversé | Chapeau | Boutons | Fond de la carte |
+|---|---|---|---|---|---|---|---|
+| **A** aujourd'hui | 560 | 43 % | **57 %** | 0 % | 0 % | 0 % | blanc opaque |
+| **B** anneau 760 | 760 | **77 %** | 13 % | **10–19 %** | **15–21 %** | **12–14 %** | blanc opaque |
+| **C** carte en verre 88 % + flou, anneau 640 | 640 | 60 % | 37 % | 0 % | 3 % | 2 % | `rgba(255,255,255,.88)` |
+| **D** anneau décalé sur le coin haut-droit | 620 | **65 %** | 35 % | **0 %** | **0 %** | **0 %** | blanc opaque |
+
+### 10.1 · La carte transparente (C) : c'est possible, et le texte tient
+
+Le point qui décide, quand on rend une carte transparente, c'est le **contraste du texte dessus**. Il a
+été mesuré sur le fond réel de la carte, verre compris (capture du fond seul, texte masqué) :
+
+| | Fond de la carte (p10 / médian / p90) | Encre `--ink`, pire | Petit texte `--ink-3`, pire | Seuil |
+|---|---|---|---|---|
+| A opaque | 0,936 / 1,000 / 1,000 | 18,29 | 7,76 | 4,5 |
+| C verre 88 % | 0,827 / 0,922 / 0,947 | **17,36** | **7,37** | 4,5 |
+
+Autrement dit : **le verre ne coûte presque rien** — 7,37:1 au lieu de 7,76:1 sur le plus petit texte,
+soit 45 % de marge au-dessus du seuil. Ce qui change n'est pas la lisibilité, c'est le **caractère** de
+la carte : la fiche d'identité devient une plaque de verre posée sur la photo. C'est joli, et c'est un
+choix de marque, pas une correction.
+
+**Ce que le verre ne règle pas** : le cercle reste **à 63 % sous la carte** (37 % sous le verre, 37 %
+seulement dehors). On le devine à travers, on ne le lit pas. Et il traverse le bloc « Lundi – Samedi ·
+8h30 – 13h00 », où un cerne bleu passe derrière une ligne de texte — invisible sur la capture, visible
+en vrai.
+
+### 10.2 · Changer la position (D) : le seul qui donne un cercle sans rien perdre
+
+Anneau de 620 px centré sur le **coin haut-droit** de la carte (`right:-34% ; top:-16%`) :
+
+- **65 % du trait visible** contre 43 % aujourd'hui — c'est le meilleur rapport des quatre ;
+- **0 %** de collision avec le titre, le chapeau, les lignes d'information et les boutons, à 1440
+  comme à 1280 **et à 1024** (là où B traverse le titre à 19 %) ;
+- aucun débordement horizontal ;
+- la carte reste **parfaitement opaque** : rien à payer côté contraste.
+
+Le dessin obtenu : un arc franc qui sort par le haut et la droite de la fiche, comme un verre posé
+derrière elle. C'est le seul des quatre où l'anneau est **vu en entier par le regard** sans être
+interrompu par une surface.
+
+### 10.3 · Agrandir (B) : non, et le chiffre dit pourquoi
+
+L'anneau à 760 px fait passer le trait visible à 77 % — le meilleur chiffre brut — mais il **traverse
+le titre (10–19 %), le chapeau (15–21 %) et les boutons (12–14 %)**. On retombe exactement sur le
+défaut corrigé ce soir : un cercle par-dessus le texte. Écarté.
+
+### 10.4 · Recommandation
+
+**D, et seulement D.** Il ne demande aucune concession : ni sur la lisibilité de la carte, ni sur celle
+du premier écran. Le verre (C) est la bonne réponse à une autre question — « comment la fiche se pose
+sur la photo » — et il reste disponible *par-dessus* D si le client veut une carte moins pesante.
+
+Une réserve à dire : à **1024 px**, l'anneau décalé n'est visible qu'à **41 %** (la carte occupe plus
+de place relative). Il faudra donc, si King valide, un réglage par palier (`width: 620px` au-dessus de
+1280, `720px` entre 1024 et 1280) et une vérification à 390 px. Rien de cela n'est fait : la variante
+n'existe aujourd'hui que dans la capture.
