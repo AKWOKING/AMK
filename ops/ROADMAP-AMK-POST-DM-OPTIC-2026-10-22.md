@@ -9,6 +9,27 @@ Règle    un seul chantier de développement à la fois. Trois clients à servir
 
 ---
 
+## 0 bis · Ruling King, 24/10/2026 — deux jours d'optimisation, prospection lundi
+
+> King : *« we will restart outreach on monday, today (24/10) and tomorrow (25/10) we will focus on
+> our optimisation »*.
+
+| Quand | Ce qu'on fait | Ce qu'on ne fait pas |
+|---|---|---|
+| **24–25/10** | optimisation : la machine, les portes, les fichiers, les chiffres, la qualité de ce qui existe | aucune prospection, aucun message sortant, aucune relance |
+| **lundi 26/10** | reprise de la prospection | pas de nouveau chantier de développement tant qu'un client n'est pas signé |
+
+**Ce que « optimisation » veut dire ici**, pour que ce ne soit pas un mot : rendre mesurable ce qui ne
+l'était pas (registre des règles, `--usage`, `--turns`, CI), retirer ce qui ne sert plus (médias ignorés
+par nos propres règles), et corriger ce qui est faux ou non sourcé (les 4 statistiques nommées par
+`audit_claims.py --sources`). Un chantier d'optimisation qui ne produit pas de chiffre avant/après n'est
+pas de l'optimisation, c'est du rangement.
+
+Ce ruling **ne remplace pas** l'ordre des chantiers ci-dessous : il déplace la prospection au lundi et
+réserve le week-end à la machine.
+
+---
+
 ## 0 · L'ordre, et pourquoi c'est celui-là
 
 | # | Chantier | Quand | Pourquoi à ce moment |

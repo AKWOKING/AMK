@@ -68,3 +68,33 @@ entrées, et la modification non commitée est bien retrouvée dans `/tmp/amk-wi
 
 **Ce que le remède ne fait pas :** il ne protège pas un tour commencé puis interrompu par un
 réapprovisionnement en cours d'écriture. D'où la règle 2 — écrire, commiter, pousser, puis continuer.
+
+---
+
+## 24/10/2026 — décision King : **on garde l'historique**
+
+> King : *« garder **historique** `.git` »* — la question ouverte depuis le 24/10 au matin est tranchée.
+
+Ce qui était en jeu : le dépôt complet pesait **1,06 Gio** de `.git` (mesure du matin, clone complet),
+et l'idée d'une réécriture d'historique (branche orpheline, `filter-repo`, force-push) traînait sans
+décision. **Elle est abandonnée, pas reportée.**
+
+Trois raisons, dans l'ordre de poids :
+
+1. **L'historique est la seule sauvegarde qui a déjà servi.** Le 22/10, quatre fois dans la journée, le
+   travail local a disparu ; c'est `git` qui l'a rendu. Réécrire l'histoire, c'est échanger une
+   sauvegarde prouvée contre 800 Mo de disque.
+2. **Le coût ne se paie pas une fois.** Une réécriture casse les clones existants, invalide les liens
+   des PR et des commits cités dans nos propres documents (il y en a des dizaines), et il faudrait
+   re-signer, re-pousser, re-vérifier — pour un gain qui ne se voit que sur un disque.
+3. **Le poids qui compte n'est pas là.** Ce qui alourdit la journée d'un agent, c'est le nombre de
+   fichiers qu'il doit lire, pas les octets de `.git`. Le 24/10, 438 Mo ont été retirés de l'arbre de
+   travail sans toucher à l'historique — c'est ça, le levier utile.
+
+**Ce qui est mesuré, et dans quelles conditions** : `1,06 Gio` = clone complet (mesure du 24/10 au
+matin). Le bac à sable de travail, lui, est un clone **superficiel** : 155 Mo pour 4 commits. Les deux
+chiffres sont vrais, ils ne parlent pas du même objet — c'est pourquoi la décision ne s'appuie pas
+dessus, mais sur les trois raisons ci-dessus.
+
+**Ce qui reste vrai** : le dépôt n'est pas un disque dur (règle du 23/09). Un fichier lourd qui n'est
+pas un livrable se range dehors. Cette règle-là n'est pas levée par la décision d'aujourd'hui.

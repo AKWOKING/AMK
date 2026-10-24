@@ -179,6 +179,7 @@ Une porte est un **code retour**, pas une impression. Si elle n'a pas été lanc
 | Provision | `bash tools/ops/provision.sh --list` | outil absent de la session | la version réellement utilisée |
 | **Règles** | `bash tools/ops/machine.sh --rules` | les 7 portes dures du registre §9 | les 2 règles sans porte, dites en clair |
 | **Crochet** | `bash tools/ops/install-hooks.sh` (une fois par clone) → `.git/hooks/pre-push` | un push avec un secret ou un chemin mort | la carte rejouée (trop lent pour un crochet) |
+| **CI GitHub** | `.github/workflows/machine.yml` — à chaque push et PR | secret, chemin mort, carte non reproductible | la valeur du travail, et tout ce qui demande un jugement |
 | **Sources** | `python3 tools/qa/audit_claims.py --sources knowledge` | un pourcentage affirmé sans appui sur sa ligne | la qualité de la source, et ce qui est sourcé deux lignes plus haut |
 | **Rendement** | `bash tools/ops/machine.sh --turns` | le volume du jour (commits, fichiers, lignes) et le nombre de refus | la valeur du travail : un gros commit peut être du déchet |
 | **Usage** | `bash tools/ops/machine.sh --usage` | un outil provisionné qu'aucune trace ne montre appelé | ce qui ne laisse aucune trace : scripts QA lancés à la main, skills lus, recherche web |
@@ -190,6 +191,10 @@ dépôt (`~/.amk-provisioned/usage.log`) que les outils écrivent eux-mêmes —
 qui laisse une trace : un script QA lancé à la main, un skill lu, une recherche web n'y figurent pas, donc
 ils ne sont jamais comptés à la place de King. Sa sortie la plus utile est la ligne *« provisionnés mais
 muets »* : un outil installé que rien n'appelle est un candidat à sortir (invariant 6), pas un acquis.
+
+**Une seule copie du workflow.** Il vit dans `.github/workflows/machine.yml` et nulle part ailleurs :
+la version « à copier par King » a été supprimée le 24/10 dès que la vraie a existé. Deux copies d'une
+même porte finissent toujours par diverger, et c'est la plus vieille qui gagne.
 
 **Ce qu'aucune porte ne fait ici** : regarder une vidéo, ouvrir un site comme un visiteur, capturer un
 écran. Ce qui doit être vu se fait relire par King, **avant** publication (`AGENTS.md` §5).
@@ -272,11 +277,15 @@ explicite. Une règle sans porte est un trou ; un trou caché est une panne.
 
 ## 10 · Ce qui manque encore, dit franchement
 
-- **L'intégration continue est locale, pas encore côté GitHub** : le crochet `pre-push` bloque un push
-  avec un secret ou un chemin cité mort, et il est posé par `install-hooks.sh`. Le workflow qui ferait la
-  même chose *dans* GitHub est écrit et testé (`tools/ops/machine.workflow.yml`) mais **la GitHub App de
-  l'atelier n'a pas la permission `workflows`** : il doit être copié par King vers
-  `.github/workflows/machine.yml`. Tant qu'il ne l'est pas, la porte dépend d'un clone préparé.
+- **L'intégration continue est en place depuis le 24/10** : `.github/workflows/machine.yml` (posé par
+  King — la GitHub App de l'atelier n'a pas la permission `workflows`, donc **toute évolution de ce
+  fichier passe par lui**) lance `machine.py --ci` puis reconstruit la carte et échoue si elle change.
+  Trois rouges de suite le jour de sa mise en route, trois causes réelles : la carte lisait le disque au
+  lieu du dépôt, puis l'historique git au lieu de l'arbre, puis elle accusait un fichier périmé quand il
+  manquait seulement une dépendance (`graphify`, désormais installée épinglée par le script lui-même).
+  C'est exactement ce qu'on attendait d'elle : elle a trouvé trois choses que la relecture n'avait pas vues.
+- **Le crochet local reste** (`install-hooks.sh`) : il attrape un secret ou un chemin mort avant même que
+  le push parte, et il se contourne bruyamment (`AMK_SKIP_CI=1`).
 - **Le crochet se contourne** : `AMK_SKIP_CI=1 git push` — et il le dit à voix haute. Un garde-fou qui ne
   se contourne pas serait un mur ; un garde-fou muet serait un piège.
 - **La fraîcheur du handoff n'est pas automatique** : le cockpit la signale, il ne la répare pas.
