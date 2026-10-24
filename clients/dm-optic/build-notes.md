@@ -2285,3 +2285,36 @@ refus : la page en place porte des classes que le gabarit ne produit pas : .mnav
 23/10 dans le gabarit** — c'est un chantier de 30 minutes, non fait ce soir, et il est nommé ici pour ne
 pas être oublié : tant qu'il n'est pas fait, `build_dmoptic.py` refuse de reconstruire, et c'est
 volontaire.
+
+### Mise en ligne du 24/10 sur Vercel — pour l'œil de King, avant Cloudflare
+
+Le cercle est maintenant **en ligne sur l'aperçu Vercel**, pas encore sur le domaine Cloudflare.
+
+| quoi | valeur |
+| --- | --- |
+| déploiement | `dpl_BcDLwRSMAhpsHzbY86nRYHqNbqva` (production, prêt en 3,8 s) |
+| commit construit | `3a7ca28307aefc8ad48e504f6440eec1cc19352a` (`main`) |
+| URL publique | https://dm-optique-sarl.vercel.app |
+| URL du déploiement | https://dm-optique-sarl-gdf9do57o-amk-5d61.vercel.app |
+| pages à regarder | `/` (FR) et `/en/` (miroir anglais) |
+
+Le projet Vercel `dm-optique-sarl` a pour racine `hosting/previews/dmoptic` et **aucune commande de
+build** : les fichiers du dépôt sont servis tels quels. Le journal de build dit
+« Cloning github.com/AKWOKING/AMK (Branch: main, Commit: 3a7ca28) » puis « Build Completed in
+/vercel/output [128ms] ». Ce que King voit est donc exactement ce que contient `main`.
+
+**Ce qui est prouvé, et ce qui ne l'est pas.** Prouvé : l'alias `dm-optique-sarl.vercel.app` pointe sur
+ce déploiement (liste `alias` du déploiement), il a été construit sur `3a7ca28`, et ce commit contient
+l'anneau (`<svg class="lensring">` une fois dans `index.html`, une fois dans `en/index.html`, avec le
+dégradé `#sheen` et l'animation `spin`). Non prouvé : le rendu pixel. Le bac n'a pas de navigateur et
+les requêtes sortantes vers `vercel.app` y sont bloquées (TLS coupé) — impossible de récupérer le HTML
+servi pour y compter l'anneau. L'œil final reste celui de King, et c'est bien pour ça que la mise en
+ligne passe par Vercel avant Cloudflare.
+
+**Ce qu'il faut regarder** : l'anneau est en haut à droite du premier écran, derrière le titre, deux
+cercles concentriques (`r=92`, trait 9 ; `r=70`, trait 2,5 à 80 %), dégradé bleu `#7FA6E8` en haut à
+gauche → bleu `#2A5CB8` → braise `#E0703A` en bas à droite, un tour en 24 s. Il est posé à
+`right:-88px`, dans un `.hero` en `overflow:hidden` : **le bord droit est coupé par la page**, c'est
+voulu. Sous 780 px il fait 290 px (`right:-88px;top:34px`), dès 780 px 380 px (`right:-60px;top:20px`). Avec
+« réduire les animations » activé dans le système, il doit être **immobile** (règle
+`prefers-reduced-motion`).
