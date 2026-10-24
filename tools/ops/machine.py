@@ -8,6 +8,7 @@ audit, handoff, outils), et il renvoie au document qui tranche. La carte complè
     python3 tools/ops/machine.py 2              # la fiche de l'étape 2
     python3 tools/ops/machine.py --who prix     # qui tranche ce sujet
     python3 tools/ops/machine.py --check        # code 1 si une porte dure est fermée
+    python3 tools/ops/machine.py --rules        # les règles debout, chacune avec sa porte
 """
 from __future__ import annotations
 
@@ -21,6 +22,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 MAP = ROOT / "ops" / "REPO-MAP.md"
+MACHINE = ROOT / "ops" / "MACHINE.md"
 STAMPS = Path.home() / ".amk-provisioned"
 SKILLS = Path.home() / ".claude" / "skills"
 
@@ -275,6 +277,148 @@ def merge_gauge() -> dict:
                 commits=commits, due=due, why=why)
 
 
+# ───────────────────────────────────────────────── les règles, et leur porte
+# Une règle sans porte est un trou. Chaque entrée ci-dessous dit : ce qu'elle interdit, le document
+# qui la porte, ce qui la déclenche, et **la commande qui la vérifie**. `sev` :
+#   dure  = la porte fermée fait échouer `--check` et `--rules` (code 1)
+#   souple = signalée, jamais bloquante (une alerte qu'on ignore est pire qu'une absence)
+#   trou  = aucune machine ne peut la vérifier — elle est dite ici, pas cachée
+MIRROR_LINE = re.compile(r"^MIRROR\s+(\d{4}-\d{2}-\d{2})\s+·\s+([0-9a-f]{7,40})", re.M)
+
+# Ce qui, une fois changé, oblige le miroir Notion à suivre le jour même (PRE-FLIGHT §0g).
+# Un préfixe ; le fichier est comparé tel quel ou par préfixe.
+# `ops/MACHINE.md` n'y figure pas : c'est le porteur de l'estampille, il ne se mesure pas lui-même.
+STANDING = (
+    "PRE-FLIGHT.md", "AGENTS.md", "ops/LIFECYCLE.md",
+    "knowledge/PRIX-", "clients/_uniqueness-registry.md", "clients/dm-optic/dossier.md",
+    "sales/Activity-Log.md", "sales/RESEARCH-STANDARD.md",
+)
+SECRET_SCAN = r"(password|passwd|mot de passe|api[_-]?key|bearer|secret)[[:space:]]*[:=][[:space:]]*[A-Za-z0-9_/+-]{8,}"
+
+
+def mirror_state() -> dict:
+    """Le miroir Notion a-t-il suivi les faits debout ? Lu sur la ligne MIRROR de ops/MACHINE.md."""
+    try:
+        txt = MACHINE.read_text(encoding="utf-8", errors="ignore")
+    except OSError:
+        return dict(ok=False, date=None, sha=None, days=None, behind=[], why="ops/MACHINE.md illisible")
+    m = MIRROR_LINE.search(txt)
+    if not m:
+        return dict(ok=False, date=None, sha=None, days=None, behind=[],
+                    why="aucune ligne MIRROR dans ops/MACHINE.md — le miroir n'a jamais été daté")
+    stamp, sha = m.group(1), m.group(2)
+    days = (date.today() - date.fromisoformat(stamp)).days
+    exists = subprocess.run(["git", "cat-file", "-e", f"{sha}^{{commit}}"], cwd=ROOT,
+                            capture_output=True).returncode == 0
+    if not exists:
+        return dict(ok=False, date=stamp, sha=sha, days=days, behind=[],
+                    why=f"MIRROR pointe {sha}, qui n'existe plus dans l'historique — re-dater après vérification")
+    names = [n for n in run(["git", "diff", "--name-only", f"{sha}..HEAD"], timeout=60).splitlines() if n]
+    behind = sorted({n for n in names if n.startswith(STANDING) or n in STANDING})
+
+    return dict(ok=not behind, date=stamp, sha=sha, days=days, behind=behind, why="")
+
+
+def rules() -> list[dict]:
+    """Les règles debout, chacune avec sa porte. Aucune n'est inventée ici : toutes renvoient à un §."""
+    g = git_state()
+    mg = merge_gauge()
+    gr = graph_state()
+    prov = provision_state()
+    _, audit_age = dated_file("ops/FILE-AUDIT-*.md")
+    _, handoff_age = dated_file("ops/HANDOFF-*.md")
+    mir = mirror_state()
+    out: list[dict] = []
+
+    def add(rid, rule, doc, when, sev, ok, detail):
+        out.append(dict(id=rid, rule=rule, doc=doc, when=when, sev=sev, ok=ok, detail=detail))
+
+    add("arbre-propre", "Rien ne reste hors commit quand le tour se dit fini.",
+        "PRE-FLIGHT §1e", "fin de tour, avant de pousser", "dure",
+        g["dirty"] == 0, f"{g['dirty']} fichier(s) modifié(s) non committé(s)" if g["dirty"] else "arbre propre")
+    upstream = run(["git", "rev-parse", "--abbrev-ref", "@{u}"])
+    add("tour-pousse", "Le tour finit poussé ; une branche sans remote n'est pas un travail rendu.",
+        "MACHINE §7 invariant 7", "fin de tour", "dure",
+        bool(upstream) and g["ahead"] == 0,
+        "pas de remote pour cette branche → git push -u origin <branche>" if not upstream
+        else (f"{g['ahead']} commit(s) non poussé(s)" if g["ahead"] else f"à jour avec {upstream}"))
+    add("fusion-sur-seuil", "La branche se fusionne sur seuil (40 fichiers · 3 000 lignes · jalon), pas sur humeur.",
+        "PRE-FLIGHT §1i · §1i bis", "chaque sortie de tour", "dure",
+        (not mg["ok"]) or (not mg["due"]),
+        mg["why"] + " → bash tools/ops/machine.sh --merge" if mg.get("due") else
+        (mg["why"] or f"{mg['files']} fichiers · {mg['lines']} lignes · {mg['commits']} commits — sous les seuils"))
+    add("carte-fraiche", "La carte du dépôt est reconstruite quand un fichier suivi bouge.",
+        "PRE-FLIGHT §0h", "dès qu'un fichier suivi change", "dure",
+        gr["ok"] and not gr["stale"],
+        f"plus récent que la carte : {gr['stale_by']} → python3 tools/graphify/build_full_graph.py"
+        if gr.get("stale") else (f"{gr['nodes']} nœuds · {gr['cites']} citations" if gr["ok"] else "ops/REPO-MAP.md absent"))
+    core = {"graphify", "superpowers"}
+    add("outils-provisionnes", "Une session neuve rejoue le noyau épinglé (graphify, superpowers) avant de travailler.",
+        "PRE-FLIGHT §1f", "début de session", "dure",
+        core <= set(prov["ok"]),
+        f"noyau complet · {len(prov['ok'])}/{prov['total']} au total" if core <= set(prov["ok"])
+        else f"noyau incomplet ({', '.join(sorted(core - set(prov['ok'])))}) → bash tools/ops/provision.sh --core")
+    add("miroir-notion", "Le miroir Notion suit le jour même tout changement d'un fait debout.",
+        "PRE-FLIGHT §0g", "commit qui touche un fait debout", "dure",
+        mir["ok"], (f"miroir daté {mir['date']} · à jour sur {mir['sha']}" if mir["ok"] and mir.get("sha") else
+                    (f"{len(mir['behind'])} fichier(s) de fait debout changé(s) depuis MIRROR {mir['sha']} "
+                    f"({', '.join(mir['behind'][:3])}{'…' if len(mir['behind']) > 3 else ''}) → mettre Notion à jour, puis re-dater MIRROR")
+                     if mir.get("sha") else mir["why"]))
+    secret_hits = run(["git", "grep", "-nIiE", SECRET_SCAN, "--", ".",
+                       ":!tools/superpowers/", ":!tools/graphify/"], timeout=60)
+    add("aucun-secret", "Ni mot de passe, ni clé, ni jeton dans un dépôt public.",
+        "PRE-FLIGHT §0g (ce qui ne va pas dans Notion)", "avant chaque push", "dure",
+        not secret_hits, f"{len(secret_hits.splitlines())} ligne(s) à vérifier → git grep -nIiE …"
+        if secret_hits else "aucune ligne de secret dans les fichiers suivis (superpowers exclu : code tiers épinglé)")
+    add("audit-frais", "Le comptage des fichiers a moins de sept jours.",
+        "ops/AUDIT-FICHIERS-2026-10-24.md", "chaque semaine", "souple",
+        audit_age is not None and audit_age <= 7,
+        f"{audit_age} j → python3 tools/ops/audit_files.py" if audit_age is not None else "aucun FILE-AUDIT-*.md")
+    add("handoff-frais", "L'état de reprise a moins de trois jours.",
+        "ops/HANDOFF-*.md", "tous les trois jours", "souple",
+        handoff_age is not None and handoff_age <= 3,
+        f"{handoff_age} j → réécrire le handoff" if handoff_age is not None else "aucun handoff daté")
+    add("stat-sourcee", "Aucune statistique sans source primaire nommée ; ce qui n'est pas revérifiable est écrit tel quel.",
+        "PRE-FLIGHT §1g", "chaque chiffre écrit", "trou", True,
+        "sans porte machine : la porte est le chemin cité à côté du chiffre, ou le mot « non revérifié »")
+    add("fichier-neuf-avec-king", "Un fichier debout nouveau n'existe qu'avec le oui de King.",
+        "PRE-FLIGHT §4b", "création d'un document souverain", "trou", True,
+        "sans porte machine : la porte est la proposition d'emplacement dans la réponse, puis le ruling")
+
+    # porte de conseil : ce qui a été ajouté et qui ressemble à une loi
+    base = mg.get("base")
+    new_docs = []
+    if base:
+        for n in run(["git", "diff", "--diff-filter=A", "--name-only", f"{base}..HEAD"], timeout=60).splitlines():
+            if n.endswith(".md") and (n.count("/") == 0 or n.startswith("ops/")) and not n.startswith("ops/templates/"):
+                new_docs.append(n)
+    add("document-neuf", "Tout .md neuf à la racine ou dans ops/ se déclare (ruling §4b) avant de devenir loi.",
+        "PRE-FLIGHT §4b", "apparition d'un .md souverain", "souple",
+        not new_docs, f"à faire confirmer : {', '.join(new_docs[:3])}" if new_docs else "aucun document souverain ajouté")
+    return out
+
+
+def print_rules() -> int:
+    rs = rules()
+    print(f"\n{BOLD}LES RÈGLES ET LEUR PORTE{OFF} — {len(rs)} règles · "
+          f"{sum(1 for r in rs if r['sev'] == 'dure')} portes dures · "
+          f"{sum(1 for r in rs if r['sev'] == 'trou')} sans porte, dites\n")
+    width = max(len(r["id"]) for r in rs) + 2
+    for r in rs:
+        sev = r["sev"]
+        tag = (f"{GRN}✓{OFF}" if r["ok"] else f"{RED}⛔{OFF}") if sev == "dure" else (
+            (f"{GRN}✓{OFF}" if r["ok"] else f"{YEL}⚠{OFF}") if sev == "souple" else f"○ ")
+        print(f"  {tag} {r['id']:<{width}} {r['doc']}")
+        print(f"      {r['rule']}")
+        print(f"      ↳ {r['detail']}\n")
+    hard = [r for r in rs if r["sev"] == "dure" and not r["ok"]]
+    if hard:
+        print(f"{RED}{len(hard)} porte(s) dure(s) fermée(s){OFF} : " + " · ".join(r["id"] for r in hard))
+        return 1
+    print(f"{GRN}✓{OFF} toutes les portes dures sont ouvertes")
+    return 0
+
+
 def newest_source() -> tuple[float, str]:
     """Le fichier suivi le plus récemment modifié, hors sorties régénérables."""
     files = run(["git", "ls-files", "-z"], timeout=60).split("\0")
@@ -496,25 +640,15 @@ def merge_card() -> int:
 
 
 def check() -> int:
-    gr = graph_state()
-    prov = provision_state()
-    problems = []
-    if not gr["ok"]:
-        problems.append("ops/REPO-MAP.md absent")
-    elif gr["stale"]:
-        problems.append(f"carte périmée ({gr['stale_by']} plus récent)")
-    if not prov["ok"]:
-        problems.append("aucun outil provisionné cette session → bash tools/ops/provision.sh")
-    mg = merge_gauge()
-    if not mg["ok"]:
-        problems.append(mg["why"])
-    elif mg["due"]:
-        problems.append(f"fusion due — {mg['why']} → bash tools/ops/machine.sh --merge")
-    for p in problems:
-        print(f"{RED}⛔{OFF} {p}")
-    if problems:
+    """Une seule porte : les règles dures du registre. Ce que `--check` vérifie est ce que `--rules` imprime."""
+    hard = [r for r in rules() if r["sev"] == "dure" and not r["ok"]]
+    for r in hard:
+        print(f"{RED}\u26d4{OFF} {r['id']} — {r['detail']}")
+        print(f"     {r['doc']} : {r['rule']}")
+    if hard:
+        print(f"\n{RED}PORTE FERMÉE{OFF} : {len(hard)} règle(s) dure(s) — détail : bash tools/ops/machine.sh --rules")
         return 1
-    print(f"{GRN}✓{OFF} portes dures ouvertes (carte à jour, outils provisionnés)")
+    print(f"{GRN}✓{OFF} portes dures ouvertes — détail : bash tools/ops/machine.sh --rules")
     return 0
 
 
@@ -527,6 +661,8 @@ def main(argv: list[str]) -> int:
         return 0
     if a == "--check":
         return check()
+    if a == "--rules":
+        return print_rules()
     if a == "--merge":
         return merge_card()
     if a == "--who":
@@ -540,6 +676,7 @@ def main(argv: list[str]) -> int:
             graph={k: v for k, v in graph_state().items() if k != "stale_by"},
             provision={k: len(v) if isinstance(v, list) else v for k, v in provision_state().items()},
             skills=skills_state(),
+            rules=[{k: v for k, v in r.items() if k != "rule"} for r in rules()],
         ), ensure_ascii=False, indent=2))
         return 0
     try:

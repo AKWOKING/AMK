@@ -12,8 +12,19 @@ bash tools/ops/machine.sh              # le cockpit : l'étape, ce qui est frais
 bash tools/ops/machine.sh 2            # la fiche de l'étape 2 (lecture) : quoi lire, quoi lancer, quand c'est fini
 bash tools/ops/machine.sh --who prix   # qui tranche le sujet « prix », et ce qui le vérifie
 bash tools/ops/machine.sh --merge      # la jauge de fusion : combien de fichiers/lignes depuis main
+bash tools/ops/machine.sh --rules      # les 12 règles debout, chacune avec sa porte (§9)
 bash tools/ops/provision.sh --list     # les 24 outils : installés cette session, ou pas
 ```
+
+Le miroir Notion (PRE-FLIGHT §0g) est **daté ici**, dans une ligne que la machine lit :
+
+```text
+MIRROR 2026-10-24 · 960051e6
+```
+
+Tant qu'un fichier de **fait debout** (pré-vol, machine, prix, dossiers clients, journal des ventes)
+change après ce commit, la porte `miroir-notion` reste fermée et `--check` échoue. On met Notion à jour,
+puis on re-date la ligne.
 
 Une session neuve n'a **ni skills, ni venvs, ni clones** : `bash tools/ops/provision.sh` les refait
 depuis les installateurs épinglés du dépôt. C'est l'étape 0 de la machine, pas une option.
@@ -159,6 +170,7 @@ Une porte est un **code retour**, pas une impression. Si elle n'a pas été lanc
 | Accessibilité | `tools/qa/audit_a11y.py <page>` | WCAG 2.2 AA, critère par critère | quatre choses écrites dans `AMK-DESIGN-SKILLS.md` §27 |
 | Dépôt | `python3 tools/ops/audit_files.py` | doublons, orphelins, fichiers périmés, caches | la qualité d'un document |
 | Provision | `bash tools/ops/provision.sh --list` | outil absent de la session | la version réellement utilisée |
+| **Règles** | `bash tools/ops/machine.sh --rules` | les 7 portes dures du registre §9 | les 2 règles sans porte, dites en clair |
 
 **Ce qu'aucune porte ne fait ici** : regarder une vidéo, ouvrir un site comme un visiteur, capturer un
 écran. Ce qui doit être vu se fait relire par King, **avant** publication (`AGENTS.md` §5).
@@ -196,12 +208,51 @@ Une porte est un **code retour**, pas une impression. Si elle n'a pas été lanc
 
 ---
 
-## 9 · Ce qui manque encore, dit franchement
+---
+
+## 9 · Les règles et leurs portes — le registre
+
+> Ruling King, 24/10 : *« il faut mettre en place des règles pour que tu n'oublies plus »*. Une règle
+> écrite dans un document et rappelée par la mémoire de l'agent **ne tient pas** : elle se perd au
+> troisième tour. Ici, chaque règle porte **le document qui la fonde**, **ce qui la déclenche** et **la
+> commande qui la vérifie**. `bash tools/ops/machine.sh --rules` les imprime toutes ; `--check` échoue
+> dès qu'une porte dure est fermée.
+
+| # | Règle | Fondement | Déclencheur | Porte |
+|---|---|---|---|---|
+| 1 | Rien ne reste hors commit quand le tour se dit fini | PRE-FLIGHT §1e | fin de tour | `git status --porcelain` vide |
+| 2 | Le tour finit poussé ; une branche sans remote n'est pas un travail rendu | §7 invariant 7 | fin de tour | `rev-list @{u}..HEAD` = 0 |
+| 3 | La branche se fusionne sur seuil, pas sur humeur | PRE-FLIGHT §1i | chaque sortie | `machine.sh --merge` — 40 fichiers / 3 000 lignes |
+| 4 | La carte du dépôt est reconstruite quand un fichier suivi bouge | PRE-FLIGHT §0h | fichier modifié | `REPO-MAP.md` plus récent que tout fichier suivi |
+| 5 | Une session neuve rejoue le noyau épinglé avant de travailler | PRE-FLIGHT §1f | début de session | estampes `~/.amk-provisioned` (graphify, superpowers) |
+| 6 | Le miroir Notion suit le jour même tout changement d'un fait debout | PRE-FLIGHT §0g | commit sur un fait debout | `git diff MIRROR..HEAD` sur les chemins de §0g |
+| 7 | Ni mot de passe, ni clé, ni jeton dans un dépôt public | PRE-FLIGHT §0g | avant chaque push | `git grep` des motifs de secret (code tiers exclu) |
+| 8 | Le comptage des fichiers a moins de sept jours | `ops/AUDIT-FICHIERS` | chaque semaine | âge de `ops/FILE-AUDIT-*.md` — ⚠ souple |
+| 9 | L'état de reprise a moins de trois jours | `ops/HANDOFF-*.md` | tous les trois jours | âge du dernier handoff — ⚠ souple |
+| 10 | Tout `.md` neuf à la racine ou dans `ops/` se déclare avant de devenir loi | PRE-FLIGHT §4b | apparition d'un doc souverain | `git diff --diff-filter=A` — ⚠ souple |
+| 11 | Aucune statistique sans source primaire nommée | PRE-FLIGHT §1g | chaque chiffre écrit | ○ **sans porte machine** |
+| 12 | Un fichier debout nouveau n'existe qu'avec le oui de King | PRE-FLIGHT §4b | création d'un document souverain | ○ **sans porte machine** |
+
+**Les deux trous, dits franchement.** Les règles 11 et 12 ne peuvent pas être jugées par un code retour :
+un script ne sait pas si un chiffre a une source, ni si King a dit oui. Elles restent dans le registre
+avec leur marque `○` plutôt que d'être rangées dans un document que personne ne relit. Leur substitut
+mécanique est **la forme de la réponse** : un chiffre sans chemin est refusé à la relecture, et un
+document souverain neuf est *proposé* dans la réponse avant d'être committé. Si un jour l'une des deux
+devient vérifiable, elle passe en porte dure — c'est le seul sens de circulation autorisé.
+
+**Ce que le registre interdit** : ajouter une règle ici sans lui donner de porte, ou de sévérité
+explicite. Une règle sans porte est un trou ; un trou caché est une panne.
+
+---
+
+## 10 · Ce qui manque encore, dit franchement
 
 - **Pas d'intégration continue** : les portes se lancent à la main. Rien ne bloque un push qui n'a pas passé `gate-amk.sh`.
 - **La fraîcheur du handoff n'est pas automatique** : le cockpit la signale, il ne la répare pas.
 - **`provision.sh` dépend du réseau** : sans GitHub ni PyPI, une session neuve n'a que les outils locaux (`tools/qa`, `tools/ops`, `tools/graphify` une fois installé).
-- **Notion reste manuel** : le miroir est une décision de tour, pas un script.
+- **Notion reste manuel, mais il n'est plus oubliable** : la porte `miroir-notion` compare la ligne
+  `MIRROR` aux commits qui touchent un fait debout ; elle dit *qu'il faut y aller*, elle n'y va pas.
+- **Les règles 11 et 12 n'ont pas de porte** (voir §9) : elles tiennent par la forme de la réponse.
 - **Aucun outil ne juge un document** : `audit_files.py` compte, il ne lit pas. Le jugement reste entier.
 
 *Cette carte se relit quand un outil entre ou sort, quand une porte change, ou quand une panne nouvelle
