@@ -485,6 +485,34 @@ def mirror_state() -> dict:
     return dict(ok=not behind, date=stamp, sha=sha, days=days, behind=behind, why="")
 
 
+WORKFLOW_LIVE = ROOT / ".github" / "workflows" / "machine.yml"
+WORKFLOW_PROPOSE = ROOT / "ops" / "machine.yml.propose"
+# La ligne de séparation qui termine l'en-tête du .propose ; ce qui suit EST le workflow.
+PROPOSE_SEP = "# ───────────────────────────────────────────────────────────────────────────────────\n\n"
+
+
+def workflow_state() -> dict:
+    """Le workflow proposé est-il celui qui tourne ?
+
+    Pourquoi cette règle existe : GitHub refuse tout push qui touche `.github/workflows/`
+    sans la permission `workflows`, et l'App qui pousse appartient à Arena — elle n'est pas
+    dans les « Developer settings » de King (vérifié à l'écran le 24/10 : « No GitHub Apps »).
+    Le dépôt ne peut donc PAS modifier son propre workflow. Sans cette porte, un patch CI
+    oublié ne se voit nulle part : il pourrit dans `ops/` en ayant l'air appliqué.
+    """
+    try:
+        propose = WORKFLOW_PROPOSE.read_text(encoding="utf-8")
+        live = WORKFLOW_LIVE.read_text(encoding="utf-8")
+    except OSError as exc:
+        return dict(ok=False, why=f"illisible ({exc.__class__.__name__})")
+    body = propose.split(PROPOSE_SEP, 1)[-1]
+    if body == live:
+        return dict(ok=True, why=f"le workflow en place est celui du .propose ({len(body.splitlines())} lignes)")
+    a, b = body.splitlines(), live.splitlines()
+    diff = sum(1 for x, y in zip(a, b) if x != y) + abs(len(a) - len(b))
+    return dict(ok=False, why=f"{diff} ligne(s) de différence avec .github/workflows/machine.yml")
+
+
 def claim_gaps() -> tuple[int, list[str]]:
     """La porte faible du §1g : `audit_claims.py --sources` sur TOUT le dépôt (765 documents le 24/10).
     Il ne juge pas la source — il dit qu'une ligne affirme un pourcentage sans lien, sans chemin, sans
@@ -687,6 +715,12 @@ def rules() -> list[dict]:
         "MACHINE §11 ⑤ · tools/ops/install-hooks.sh", "chaque --check", "souple",
         hk["ok"], "pre-commit et pre-push posés, identiques au dépôt" if hk["ok"]
         else f"{hk['why']} → bash tools/ops/install-hooks.sh")
+    wf = workflow_state()
+    add("workflow-colle", "Le workflow proposé au dépôt est celui qui tourne vraiment.",
+        "MACHINE §11 ⑤ · ops/machine.yml.propose", "chaque --check", "souple",
+        wf["ok"], wf["why"] if wf["ok"] else
+        f"{wf['why']} → coller ops/machine.yml.propose dans .github/workflows/machine.yml "
+        "(l'App n'a pas la permission `workflows`)")
     add("fichier-neuf-avec-king", "Un fichier debout nouveau n'existe qu'avec le oui de King.",
         "PRE-FLIGHT §4b", "création d'un document souverain", "trou", True,
         "sans porte machine : la porte est la proposition d'emplacement dans la réponse, puis le ruling")

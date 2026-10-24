@@ -280,6 +280,7 @@ même porte finissent toujours par diverger, et c'est la plus vieille qui gagne.
 | 15 | `fichier-neuf-avec-king` | Un fichier debout nouveau n'existe qu'avec le oui de King | PRE-FLIGHT §4b | création d'un document souverain | ○ **sans porte machine** |
 | 16 | `medias-avec-empreinte` | Un dossier qui porte des médias a un inventaire par empreinte, à jour | MACHINE §11 ③ · `tools/ops/media_inventory.py` | chaque commit | nombre de fichiers vs l'inventaire du dossier — ⚠ souple |
 | 17 | `crochets-poses` | Les crochets qui jouent la CI avant le push sont posés, et à jour | MACHINE §11 ⑤ · `tools/ops/install-hooks.sh` | chaque `--check` | `pre-commit`/`pre-push` présents et identiques au dépôt — ⚠ souple |
+| 18 | `workflow-colle` | Le workflow proposé au dépôt est celui qui tourne vraiment | MACHINE §11 ⑤ · `ops/machine.yml.propose` | chaque `--check` | corps du `.propose` comparé à `.github/workflows/machine.yml` — ⚠ souple |
 
 **Pourquoi la 13 existe.** Le 24/10 au soir, ce tableau listait douze règles quand le code en appliquait
 treize : `docs-existants` avait été ajoutée dans `machine.py` et **pas ici**. Une règle écrite à un seul
@@ -568,6 +569,29 @@ références de ce document et les PR ouvertes. À décider par King, pas par un
 
 **Si le run suivant ne descend pas sous 30 s, je le dirai** — et alors le levier suivant sera de
 mettre le venv installé en cache, pas de re-cacher des roues.
+
+**3 bis · Pourquoi ce patch ne peut pas partir d'ici — et la porte qui remplace le patch oublié.**
+Le 24/10, la commande a été exécutée telle quelle : `git apply` a marché, le commit s'est fait, et
+GitHub a refusé **le push entier** — `refusing to allow a GitHub App to create or update workflow …
+without 'workflows' permission`. Le commit a été annulé, l'arbre est resté propre : rien n'est parti.
+
+Ce n'est pas une limite du bac, c'est une règle de la plateforme. En 2022, la CVE-2022-46258 a permis
+de créer des workflows avec le token d'un workflow, donc d'escalader vers les secrets : depuis, aucun
+`permissions:` ne peut donner cette portée au `GITHUB_TOKEN`, et une App ne l'obtient que si elle la
+demande explicitement.
+
+**Et c'est là que mon conseil était faux.** J'ai proposé à King d'accorder `Workflows: Read and write`
+à l'App. Il a ouvert son écran : **« Settings → Developer settings → GitHub Apps » répond « No GitHub
+Apps »**. L'App qui pousse appartient à **Arena**, pas à lui — il ne peut ni la voir ni la modifier.
+Il n'y a donc pas d'option A. Il reste deux gestes, et un seul est à sa portée sans terminal :
+**éditer le fichier depuis l'éditeur GitHub** (le commit est alors signé par son compte, qui a tous les
+droits), ou `git apply` en local.
+
+**Le trou que ça laissait** : un patch CI oublié ne se voyait nulle part. Il pouvait pourrir des
+semaines dans `ops/` en ayant l'air appliqué. D'où la règle 18, `workflow-colle` (souple) : à chaque
+`--check`, `tools/ops/machine.py` compare le **corps** de `ops/machine.yml.propose` à
+`.github/workflows/machine.yml`. Mesuré aujourd'hui : **46 lignes de différence** — le patch n'est pas
+appliqué, et le système le dit sans qu'on ait à s'en souvenir.
 
 **4 · Une panne trouvée en chemin, et corrigée.** Pendant ce tour, `graphify-out/` avait disparu du
 bac : `audit_files.py` a alors annoncé **743 orphelins, 351 à traiter** — et un lecteur pressé en aurait
