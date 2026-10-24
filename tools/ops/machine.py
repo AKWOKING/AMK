@@ -710,6 +710,11 @@ def ci() -> int:
     note_usage("check", "ok" if not ko else "ko:" + ",".join(r["id"] for r in ko))
     if ko:
         print(f"\n{RED}CI ROUGE{OFF} : " + " · ".join(r["id"] for r in ko))
+        # Une porte qui échoue doit dire POURQUOI dans le run lui-même : le log n'est pas toujours
+        # accessible (le 24/10 il ne l'était pas), mais une annotation reste attachée au run et se lit
+        # par l'API. Le détail de chaque règle rouge part donc en annotation, pas seulement en stdout.
+        for r in ko:
+            print(f"::error title={r['id']}::{r['rule']} — {r['detail']}")
         return 1
     print(f"\n{GRN}✓{OFF} CI verte — les portes vérifiables dans un runner sont ouvertes")
     return 0
