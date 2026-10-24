@@ -2194,3 +2194,16 @@ téléphone. Elles sortent du suivi git à sa demande. Ce qui reste dans le doss
 sous-titres, plans de publication et commandes de remontage. Rien n'est détruit — l'historique git
 les porte encore — et le `.gitignore` explique les deux décisions successives (22/10 puis 24/10),
 pour que la question ne se rouvre pas une troisième fois sans le contexte.
+
+## 24/10/2026 — l'archive du 21/10 porte enfin sa date
+
+`dmopticsarl.zip` s'appelle désormais **`dmopticsarl-2026-10-21.zip`**. C'est la même archive : le site
+tel qu'il a été construit le 21/10 (182 entrées, 4,8 Mo), entré dans le dépôt le 24/10.
+
+Pourquoi le nom change : au 24/10 au soir, le même nom désignait deux choses différentes — l'archive
+figée du 21/10 et ce que `python3 demos/pack_dmoptic.py` produirait aujourd'hui (251 entrées, 7,6 Mo).
+Un nom qui ne dit pas sa date finit toujours par mentir sur son contenu.
+
+Ce qui ne change pas : le zip du jour ne s'ajoute plus au dépôt (`/dmopticsarl*.zip` est ignoré) ; il
+se reconstruit à la demande, en une commande, et c'est lui qu'on téléverse sur Cloudflare. L'archive
+datée, elle, reste comme trace de ce qui a existé.

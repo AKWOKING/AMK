@@ -38,6 +38,11 @@ tools/record/node_modules/
 # archives d'export : produites par un script, jamais versionnées
 /amk-site*.zip
 /site/*.zip
+# Le zip « du jour » se refait par `python3 demos/pack_dmoptic.py` et ne s'ajoute pas au dépôt.
+/dmopticsarl*.zip
+# Exception unique et datée, APRÈS la règle d'ignorance (git retient la dernière qui matche) :
+# l'archive du site DM telle qu'elle a été construite le 21/10, avec sa date dans le nom.
+!/dmopticsarl-2026-10-21.zip
 
 # brag : dossiers de travail et rendus (produits par la chaîne, hors dépôt — voir tools/brag/)
 brag-output*/

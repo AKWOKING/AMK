@@ -90,7 +90,7 @@ Aucun doublon à l'intérieur d'un même projet.
 |---|---|---|---|
 | `amk-factures-pwa-v2.zip` | 86.1 Ko | — | 6 fichier(s), plus récent 2026-10-23 |
 | `amk-factures-pwa.zip` | 85.8 Ko | — | 6 fichier(s), plus récent 2026-10-23 |
-| `dmopticsarl.zip` | 4.6 Mo | `demos/pack_dmoptic.py` | 182 fichier(s), plus récent 2026-10-21 |
+| `dmopticsarl-2026-10-21.zip` | 4.6 Mo | — | 182 fichier(s), plus récent 2026-10-21 |
 
 ## 6 · Les 20 plus gros fichiers — ce qui pèse dans l'historique
 
@@ -98,7 +98,7 @@ Aucun doublon à l'intérieur d'un même projet.
 |---|---|
 | `clients/dm-optic/brag/brag.mp4` | 14.6 Mo |
 | `clients/dm-optic/photoshoot/others/PXL_20261016_132758528.MP.jpg` | 8.4 Mo |
-| `dmopticsarl.zip` | 4.6 Mo |
+| `dmopticsarl-2026-10-21.zip` | 4.6 Mo |
 | `content/videos/v06-facebook-no-booking/Video_06_Facebook_No_Booking_VOIX.mp4` | 4.1 Mo |
 | `content/videos/v06-facebook-no-booking/Video_06_Facebook_No_Booking.mp4` | 3.2 Mo |
 | `clients/dm-optic/photoshoot/others/PXL_20261016_131635710.MP.jpg` | 3.0 Mo |

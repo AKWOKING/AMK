@@ -2,18 +2,18 @@
 
 ```text
 Généré par tools/graphify/build_full_graph.py — 2026-10-24
-Source : graphify-out/graph.json (11995 nœuds, 14591 arêtes)
+Source : graphify-out/graph.json (12006 nœuds, 14607 arêtes)
 Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même
 carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.
 ```
 
 ## 0 · En une page
 
-- **11995 nœuds** — dont 766 documents, 165 scripts, 21 modules, 139 pages HTML, 393 images, 3 vidéos, 40 audios, 35 fichiers de données, 11 PDF.
-- **2848 citations entre documents** (2266 en chemin exact, 582 par nom unique)
+- **12006 nœuds** — dont 766 documents, 165 scripts, 21 modules, 139 pages HTML, 393 images, 3 vidéos, 40 audios, 35 fichiers de données, 11 PDF.
+- **2852 citations entre documents** (2269 en chemin exact, 583 par nom unique)
 - **121 arêtes de remplacement** · **1 documents marqués périmés**
 - **412 documents que personne ne cite** (atteignables par aucun chemin de lecture)
-- **Couverture : 1635 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
+- **Couverture : 1636 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
 
 ### Les dossiers du dépôt, par poids — et ce que chacun porte
 
@@ -67,7 +67,7 @@ C'est ce réseau qui décide de ce qui s'applique à un travail. Si un document 
 | 7 | `sales/CLIENT-MESSAGING-RULES.md` | **18** | 20 |
 | 8 | `sales/MESSAGES-2026-09-23-PERSUASION.md` | **17** | 14 |
 | 9 | `sales/PRIX-ET-RECURRENCE-2026-09-24.md` | **17** | 16 |
-| 10 | `clients/dm-optic/build-notes.md` | **16** | 90 |
+| 10 | `clients/dm-optic/build-notes.md` | **16** | 91 |
 | 11 | `hosting/previews/README.md` | **16** | 6 |
 | 12 | `ops/TOOL-SCAN.md` | **16** | 44 |
 | 13 | `clients/_uniqueness-registry.md` | **15** | 1 |
@@ -237,10 +237,10 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | pdf | 11 | `clients/dm-optic/launch/CARTE-AVIS-2026-10-23.pdf`, `clients/dm-optic/launch/RECAP-MISE-EN-LIGNE-2026-10-23.pdf`, `clients/dm-optic/onboarding/print/AMK-PROFORMA-2026-10-05-DM-OPTIQUE-v2.pdf` |
 | texte | 10 | `clients/dm-optic/brag/share-copy.txt`, `clients/dm-optic/launch/LISTE-40-MONTURES-WHATSAPP.txt`, `clients/dm-optic/launch/baseline/README.txt` |
 | config | 7 | `.github/workflows/deploy-dmoptic.yml`, `.github/workflows/machine.yml`, `hosting/previews/dmoptic/sitemap.xml` |
-| archive | 3 | `amk-factures-pwa-v2.zip`, `amk-factures-pwa.zip`, `dmopticsarl.zip` |
+| archive | 4 | `amk-factures-pwa-v2.zip`, `amk-factures-pwa.zip`, `dmopticsarl-2026-10-21.zip` |
 | vidéo | 3 | `clients/dm-optic/brag/brag.mp4`, `content/videos/v06-facebook-no-booking/Video_06_Facebook_No_Booking.mp4`, `content/videos/v06-facebook-no-booking/Video_06_Facebook_No_Booking_VOIX.mp4` |
 | sous-titre | 3 | `clients/dm-optic/content/month1/w1/tiktok-01-v2.fr.srt`, `clients/dm-optic/content/month1/w1/tiktok-01.fr.srt`, `clients/dm-optic/content/month1/w2/etapes-01.srt` |
-| symboles extraits (titres de documents + fonctions/classes du code) | 10360 | — |
+| symboles extraits (titres de documents + fonctions/classes du code) | 10370 | — |
 
 ### Les outils et skills installés — 1 dossier = 1 outil
 
