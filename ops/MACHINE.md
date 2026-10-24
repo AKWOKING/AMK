@@ -593,6 +593,32 @@ semaines dans `ops/` en ayant l'air appliqué. D'où la règle 18, `workflow-col
 `.github/workflows/machine.yml`. Mesuré aujourd'hui : **46 lignes de différence** — le patch n'est pas
 appliqué, et le système le dit sans qu'on ait à s'en souvenir.
 
+**3 ter · Mesuré après application, le 24/10 à 19 h 25 (commit de King `4485052`).** Le workflow est
+collé : 58 lignes, **identique à l'octet** au corps de `ops/machine.yml.propose`, et la règle 18 passe
+au vert. Le premier commit a fait tomber la CI — la carte n'était pas reconstruite (7 clés YAML
+nouvelles = 7 symboles de plus, 11 786 → 11 793 nœuds) : c'est la panne que le crochet attrape sur le
+poste, et que l'éditeur GitHub contourne. Carte reconstruite, CI verte.
+
+**Le gain, tel qu'il est mesuré — pas tel qu'il était annoncé.**
+
+| | Avant (workflow 42 lignes) | Après (workflow 58 lignes) |
+|---|---|---|
+| Runs par poussée de branche | **2** (push + pull_request) sur **12 commits de 25** | **1** |
+| Durée d'un run | 36 s (médiane de 4) | **27–28 s** (2 derniers runs verts) |
+| Coût d'une poussée | **72 s** | **27 s** — **−62 %** |
+| Verdicts à lire | 2, parfois divergents | **1** |
+
+**Où passent les 25 s du job, décomposées par les trois repères** (`portes-debut`, `portes-fin`,
+`carte-fin`, lus dans les annotations faute de logs) : mise en route **2 s** · checkout + setup-python
+**7 s** · portes **1 s** · **carte 15 s** · queue **2 s**.
+
+Les 15 s de la carte sont presque entièrement **l'installation de `graphifyy`** : 8–9 s mesurées pour
+le `pip install` (31,8 Mo à dépaqueter), contre 3,9 s pour la construction de la carte elle-même. Le
+cache pip, lui, ne gagne que ~0,5 s — il évite le téléchargement, pas le dépaquetage. **Le prochain
+levier n'est donc pas de cacher des roues, mais le venv installé** (`actions/cache` sur
+`/tmp/amk-graphify`) : ~7 s de plus, et une troisième édition du workflow. À décider par King, pas
+d'office : chaque édition passe par son navigateur.
+
 **4 · Une panne trouvée en chemin, et corrigée.** Pendant ce tour, `graphify-out/` avait disparu du
 bac : `audit_files.py` a alors annoncé **743 orphelins, 351 à traiter** — et un lecteur pressé en aurait
 archivé 350. Sans graphe, l'audit rendait un dictionnaire vide, donc *tout* document paraissait orphelin.
