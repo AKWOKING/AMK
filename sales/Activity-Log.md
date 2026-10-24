@@ -5536,3 +5536,48 @@ Correction d'une affirmation du même jour : « Cloudflare : rien n'est parti »
 possibles : `clients/dm-optic/build-notes.md`, entrée « 24/10 (soir) — ce que le dépôt faisait tout
 seul ». Rien changé dans le workflow (il appartient à King) ; l'ordre « Vercel d'abord » est à rétablir
 par un geste de King sur les secrets ou le déclencheur.
+
+## 24/10/2026 (22h–23h) — le cercle est en production, et les six messages n'étaient pas prêts
+
+### ① Le cercle du premier écran — décidé par `brainstorming`, déployé, vérifié
+
+King a demandé que le choix (carte transparente contre cercle déplacé) soit tranché par le skill
+`superpowers/brainstorming`, et de suivre sa réponse. Le skill a d'abord imposé de relire le contexte,
+et c'est là qu'il a changé la question : les quatre variantes mesurées la veille répondaient toutes à
+« où mettre le cercle **sur la photo** », alors que King avait offert au client **deux** branches, dont
+« retirer la photo et remettre le fond blanc ». Cette branche n'avait jamais été rendue. Rendue, elle
+donne **21 % d'encre visible** contre 55 % aujourd'hui : sans la photo, le cercle devient **plus pâle**,
+pas plus visible (le dégradé finit à l'opacité 0, le bleu clair s'efface sur le papier).
+
+**Décision : cercle décalé sur le coin haut-droit de la carte, par palier** — `≥1024 px` 620 px
+(`right:-34% ; top:-16%`), `≥1200 px` 700 px, sous 1024 inchangé. Encre visible mesurée : 33 / 24 / 48 /
+61 / 67 / **79** / **79 %** à 390 / 768 / 1024 / 1200 / 1280 / 1440 / 1680, **zéro collision**, zéro
+erreur console. Appliqué aux deux pages **et au gabarit**. Détail : `launch/REVUE-RENDU-2026-10-24.md`
+§11, note de conception `docs/superpowers/specs/2026-10-24-cercle-placement-design.md`.
+
+**En production** : `main` `544dde3` (PR #37), puis §11.5 (PR #38) → `e86a3cd`. Déploiement Vercel
+`dpl_AKmNB4Hv2rTCaaoDYbTNf3EMQtrx`, **READY / PROMOTED**, alias `dm-optique-sarl.vercel.app`, construit
+sur le SHA `544dde3`. **Rien poussé sur Cloudflare.**
+
+### ② Les six messages du lot : deux bloquants, quinze avertissements — et aucune porte pour les voir
+
+Les six messages déclarés « prêts » le 24/10 ont été repassés par une porte écrite ce soir
+(`tools/qa/audit_outreach.py`, 15/15 cas de son test). Résultat : **2 bloquants** — un « Rien à vous,
+donc » (attaque déguisée, `DECLINAISON` §1②, celle qui a tué le message INSES) et un message à 57 mots —
+et **15 avertissements**, dont le plus grave et le plus répété : **les six messages n'avaient pas la
+sortie sans friction** que `knowledge/OUTREACH-MESSAGING` §3 met au cinquième temps du motif. Quatre
+messages sur six ne mettaient pas non plus le quartier dans les douze premiers mots, alors que WhatsApp
+n'affiche que deux lignes dans la notification.
+
+**Correctif** : `sales/ENVOI-LOT-2026-10-26.md` — six messages **v3** qui passent la porte
+(0 bloquant, 1 avertissement assumé : le domaine cité chez Optix *est* la preuve), trois angles de
+rechange, l'ordre d'envoi un par jour du 26 au 31/10, le gabarit de rupture et le tracker.
+**Amélioration durable** : la porte est branchée dans `CLIENT-MESSAGING-RULES` §13 bis, avec les deux
+structures (4 temps / 5 temps) dites à voix haute au lieu d'être supposées identiques.
+
+**Ce que le lot ne peut pas encore faire** : la **porte A** du §8b exige un numéro **vérifié sur
+WhatsApp par King** — les six sont à vérifier, et c'est le seul geste qui bloque l'envoi. Et le §8c
+exige un **verdict écrit par affirmation** : aucun des six n'a de fiche dans `leads/records/`, les faits
+vivent uniquement dans le document de vente. **Un fait vérifié ce soir** : `optix-sarl.business.site`
+renvoie bien une **erreur 404** (Google a fermé les sites `business.site` en mars 2024, redirection
+arrêtée le 10 juin 2024).
