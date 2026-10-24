@@ -164,7 +164,7 @@ maximum** — la règle WhatsApp du 02/10 (« laissez l'IA et parlons normalemen
 *(La question est double **par nécessité** : deux passés proposés, pas deux actions. La réponse choisit
 tout l'angle de la suite.)*
 
-### 5.3 · La relance — **jeudi 26/10**, pas avant
+### 5.3 · La relance — **lundi 26/10**, pas avant
 
 Le message d'aujourd'hui a produit une réponse **automatique**, pas humaine : la fenêtre du §7 ne
 démarre pas. Ce texte part jeudi si rien d'humain n'est arrivé.
