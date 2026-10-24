@@ -14,7 +14,7 @@ pertinence, avec leurs titres — donc les règles qu'on aurait dû lire, et qu'
 
 Ce qu'il fait, exactement
 -------------------------
-Il lit `graphify-out/graph.json` (produit par `build_docs_graph.py`, local, sans clé d'API) et
+Il lit `graphify-out/graph.json` (produit par `build_full_graph.py`, local, sans clé d'API) et
 compte, pour chaque document :
   · les titres du fichier qui contiennent un des mots cherchés  (signal fort)
   · le nom du fichier lui-même                                 (signal moyen)
@@ -24,7 +24,7 @@ Il n'invente rien : chaque ligne renvoyée est un fichier réel, avec des numér
 Usage
 -----
     bash tools/graphify/install.sh
-    python3 tools/graphify/build_docs_graph.py
+    python3 tools/graphify/build_full_graph.py
     python3 tools/graphify/find.py "message prospect clinique" --top 8
 
 Sortie : une ligne par document — score, chemin, nombre de titres touchés, extraits.
@@ -90,13 +90,16 @@ def main() -> int:
         if src:
             by_file[src].append(n)
 
+    # degré entrant : on lit le `source_file` du nœud visé (le graphe complet le porte sur tous
+    # les nœuds). L'ancienne version comparait des préfixes et tombait sur un préfixe vide —
+    # `.gitignore` sortait « cité 3 055× » et prenait la première place.
+    id_to_file = {n["id"]: n["source_file"] for n in g["nodes"] if n.get("source_file")}
     inbound: dict[str, int] = defaultdict(int)
     for e in g.get("edges", []):
-        if e.get("relation") in ("references", "mentions", "cites"):
-            t = e.get("target", "")
-            for src in by_file:
-                if t.startswith(_id_prefix(src)):
-                    inbound[src] += 1
+        if e.get("relation") in ("references", "mentions", "cites", "supersedes"):
+            src = id_to_file.get(e.get("target", ""))
+            if src in by_file:
+                inbound[src] += 1
 
     scored = []
     for src, nodes in by_file.items():
@@ -122,12 +125,14 @@ def main() -> int:
         # on plafonne les titres comptés (6), on divise par la racine de la taille, et on remonte les
         # fichiers qui PORTENT une règle — mais seulement s'ils ont effectivement touché quelque chose.
         total = sum(1 for n in nodes if n.get("node_kind") == "heading") or 1
-        base = min(head_hits, 6) * 3 + file_hits * 2 + inbound.get(src, 0)
-        if base == 0:
-            continue
+        if head_hits == 0 and file_hits == 0:
+            continue  # aucune trace du sujet dans le fichier : sa centralité ne le rend pas pertinent
+        base = min(head_hits, 6) * 3 + file_hits * 2 + min(inbound.get(src, 0), 8)
         score = base / (1 + total / 40) ** 0.5
+        # `knowledge/` = la couche qui fait loi (10 documents). Elle est petite, donc elle n'a pas
+        # beaucoup de titres : on la remonte franchement — c'est la règle qu'on n'a pas lue le 24/10.
         if src.startswith("knowledge/"):
-            score += 6
+            score = score * 1.6 + 8
         if any(k in Path(src).name.upper() for k in LAW_NAMES):
             score += 3
         if score >= args.min:
@@ -146,12 +151,6 @@ def main() -> int:
         print()
     print("→ Ces fichiers se lisent AVANT d'écrire. Ceux qui ne sont pas lus se disent dans l'en-tête pré-vol.")
     return 0
-
-
-def _id_prefix(src: str) -> str:
-    """Reproduit le préfixe d'identifiant utilisé par graphify (chemin sans extension, normalisé)."""
-    p = src.rsplit(".", 1)[0]
-    return norm(p).replace(" ", "_")[:60]
 
 
 if __name__ == "__main__":

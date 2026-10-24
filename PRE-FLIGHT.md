@@ -195,16 +195,37 @@ avant tout message à un prospect ») et `sales/RESEARCH-STANDARD.md` §10 (qui 
 statistique citée comme valide). La règle §0c existait. Le routage existait. **La recherche, elle, se
 faisait de mémoire.**
 
-**Le graphe remplace la mémoire.** `tools/graphify/` (installé 24/10, local, 0 clé d'API, 0 €) :
-734 documents, 10 208 nœuds, 7 594 titres, 11 323 arêtes, construits en ~10 s.
+**Le graphe remplace la mémoire.** `tools/graphify/`, local, 0 clé d'API, 0 €, ~10 s :
+**1 935 fichiers indexés** (documents, code, images, vidéos, audios, PDF, polices, archives, CSV),
+**≈12 100 nœuds, ≈14 400 arêtes, ≈2 900 citations, 13 communautés** sur les 515 documents reliés.
+
+**La carte est dans le dépôt : `ops/REPO-MAP.md`.** Elle est générée, jamais éditée à la main.
 
 **Obligatoire avant d'écrire** un message, un document de vente, un script, une règle ou une page :
 
 ```bash
 bash tools/graphify/install.sh                      # une fois par session
-python3 tools/graphify/build_docs_graph.py          # le graphe (code + documents)
+python3 tools/graphify/build_full_graph.py          # TOUT le dépôt + ops/REPO-MAP.md (~10 s)
 bash tools/graphify/ask.sh "message prospect clinique" --top 8
 ```
+
+**Puis lire la carte, dans cet ordre — trois minutes, pas une de plus :**
+
+| # | Section de `ops/REPO-MAP.md` | La question à laquelle elle répond |
+|---|---|---|
+| 1 | §0 | Combien de fichiers, combien de documents, combien d'orphelins — et un chiffre qui a bougé depuis la dernière fois ? |
+| 2 | §6 | **Le sujet que je m'apprête à écrire est-il dans la table de routage ?** S'il n'y est pas, c'est le sujet qui est neuf, pas le dépôt qui est vide |
+| 3 | §2 puis §3 | Les documents qui font le squelette — et ceux qui sont **périmés mais encore cités**, donc les consignes mortes à ne pas réappliquer |
+| 4 | §1 | La couche `knowledge/` : ce qui fait loi, et le nombre de fois où c'est cité |
+| 5 | §3 bis | Ce que je vais créer existe-t-il déjà, sans être cité nulle part ? (un orphelin se cite, ne se duplique pas) |
+
+**Un tour n'est pas fini tant que la carte n'est pas à jour** si le tour a créé un document ou une règle :
+`python3 tools/graphify/build_full_graph.py` puis vérifier que le nouveau fichier apparaît au §2, §3 bis
+ou §4. Un document qui n'entre dans aucun des trois est un document que le prochain tour ne retrouvera pas.
+
+**Ce que la carte ne peut pas dire** : le §3 (« périmé ») est une détection **lexicale**, donc une piste ;
+le §4 nomme des sujets par leurs pivots, pas par une intention ; une image est **recensée**, pas lue.
+La lecture et le jugement restent entiers — c'est tout l'intérêt.
 
 **La règle de compte rendu, dans l'en-tête pré-vol :** citer les fichiers **lus** et ceux qui ont été
 **listés mais non lus**, par leur chemin. « Graphe interrogé » sans nom de fichier ne prouve rien.
