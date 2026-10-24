@@ -1,11 +1,12 @@
 <!-- généré par tools/ops/media_inventory.py — ne pas éditer à la main -->
+<!-- empreintes: 1307a67d6d626c88dfc4d16643839b8637b59a4c2028efd21a92e0bc585599c1 -->
 
 # MÉDIAS — `site/img/`
 
 **43 fichier(s) · 5.0 Mo.** Empreinte = identité du fichier : deux fichiers de même empreinte sont le même fichier, quelle que soit leur adresse.
 
 - **23 fichier(s) en double** (même empreinte qu'un autre média du dépôt)
-- **0 média(s) que nul document ne nomme**
+- **1 média(s) que nul document ne nomme**
 
 | Fichier | Dimensions | Poids | Empreinte | Citations |
 |---|---|---|---|---|
@@ -15,11 +16,11 @@
 | `crestwood.webp` | 1280×800 | 74.6 Ko | `42cd2698c71b` | 4 |
 | `littleoaks.png` | 1280×800 | 219.3 Ko | `a301f29736a4` | 10 |
 | `mit-wall.jpg` | 1200×760 | 109.7 Ko | `fd51a478ed42` | 3 |
-| `mmc-consult.jpg` | 1448×1086 | 192.7 Ko | `aaf29f9471cd` | 1 |
+| `mmc-consult.jpg` | 1448×1086 | 192.7 Ko | `aaf29f9471cd` | 2 |
 | `mmc-hero.jpg` | 1586×992 | 144.0 Ko | `fc06e303d60e` | 1 |
 | `mmc-lab.jpg` | 1448×1086 | 125.5 Ko | `03c2699617aa` | 1 |
 | `mmc-maternity.jpg` | 1448×1086 | 169.2 Ko | `e90262d12bd8` | 1 |
-| `nova.png` | 1280×800 | 232.4 Ko | `48d3d3160a35` | 7 |
+| `nova.png` | 1280×800 | 232.4 Ko | `48d3d3160a35` | 8 |
 | `og-cover.jpg` | 1200×630 | 104.0 Ko | `e0565eb138e5` | 16 |
 | `og-crestwood.jpg` | 1200×630 | 98.4 Ko | `21f6ac9e47b3` | 2 |
 | `sample-maternity.png` | 1280×800 | 435.8 Ko | `c80245f0fb1f` | 2 |
@@ -57,3 +58,9 @@
 - `20b04cb4b0a5` — 2 copies : `hosting/samples/img/sec-lab.jpg`, `sec-lab.jpg`
 - `2ea9182da067` — 2 copies : `hosting/samples/img/sec-lib.jpg`, `sec-lib.jpg`
 - `252e897543d8` — 2 copies : `hosting/samples/img/sec-sports.jpg`, `sec-sports.jpg`
+
+## Ce que rien ne nomme
+
+Un média non nommé n'est pas inutile : il est inatteignable. Soit on le cite là où il sert, soit il n'a rien à faire ici.
+
+- `clinic.jpg` — 73.9 Ko

@@ -1,4 +1,5 @@
 <!-- généré par tools/ops/media_inventory.py — ne pas éditer à la main -->
+<!-- empreintes: cd6eeebadd78049fc4123cefb298ffd56879839e30ea1ee2c2ca36a77d424759 -->
 
 # MÉDIAS — `content/assets/fonts/`
 

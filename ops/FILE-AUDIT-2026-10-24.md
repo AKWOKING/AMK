@@ -10,7 +10,7 @@ Aucune suppression automatique : les décisions sont listées, pas prises.
 
 | Classe | Fichiers | Poids | Action |
 |---|---|---|---|
-| caches (`__pycache__`, `*.pyc`) | 1 | 84.8 Ko | `python3 tools/ops/audit_files.py --clean-cache` |
+| caches (`__pycache__`, `*.pyc`) | 0 | 0 o | `python3 tools/ops/audit_files.py --clean-cache` |
 
 ## 2 · Doublons exacts — octet pour octet
 

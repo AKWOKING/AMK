@@ -26,6 +26,7 @@ Usage
 from __future__ import annotations
 
 import argparse
+import difflib
 import json
 import os
 import re
@@ -138,6 +139,7 @@ def walk() -> list[Path]:
         if relpath == MAP.relative_to(ROOT) or relpath.name.startswith(("FILE-AUDIT-", "REPO-MAP")):
             continue  # les rapports générés se citent eux-mêmes : les indexer fait boucler le graphe
         out.append(relpath)
+    out.sort()   # l'ordre ne doit venir que du chemin, jamais de l'index ni du disque
     return sorted(set(out))
 
 
@@ -315,33 +317,67 @@ def human(n: int) -> str:
 
 
 def compute_communities(g: dict, by_id: dict, meta: dict) -> dict[str, int]:
-    """Communautés sur le réseau des CITATIONS (Louvain de networkx, local, déterministe par graine).
+    """Communautés sur le réseau des CITATIONS — calculées ici, sans bibliothèque et sans aléa.
 
-    Le `cluster-only` de l'amont refuse d'écrire sur un graphe qui contient nos nœuds d'inventaire
-    (« saved semantic node(s) are missing »), et il clusterise aussi les 9 000 titres — ce qui noie
-    la structure. Ici on ne regroupe que les documents, sur les liens qui veulent dire quelque chose :
-    `cites` et `supersedes`. Une communauté = un sujet qu'on peut nommer par ses trois fichiers pivots.
+    Histoire courte. Le 24/10 au soir, cette fonction appelait `nx.community.louvain_communities(G,
+    seed=42)` avec le commentaire « déterministe par graine ». C'était vrai dans un environnement, faux
+    entre deux : la même révision produisait **13 communautés** sur le poste et **15** sur le runner,
+    et l'étape « la carte se rejoue à l'identique » tombait rouge sans qu'aucun fichier du dépôt n'ait
+    bougé. Une graine ne protège pas d'un algorithme dont l'itération dépend de l'ordre du graphe et de
+    la version de la bibliothèque.
+
+    D'où une propagation d'étiquettes écrite ici, en trente lignes, dont le résultat ne dépend que de
+    (nœuds triés, arêtes triées) — même commit, même carte, quel que soit l'interpréteur :
+
+    1. chaque document part avec sa propre étiquette ;
+    2. à chaque tour, il adopte l'étiquette majoritaire dans son voisinage, **égalité tranchée par la
+       plus petite étiquette** (c'est là que se joue le déterminisme) ;
+    3. on s'arrête quand plus rien ne bouge, et on renumérote par taille puis par premier membre.
+
+    Louvain reste dans `graphify-out/graph.json` (non suivi) pour les requêtes ; ce qui est **versionné**
+    n'en dépend plus.
     """
-    try:
-        import networkx as nx
-    except ImportError:
-        return {}
     sub = [e for e in g["edges"] if e["relation"] in ("cites", "supersedes", "references")
            and e["source"] in by_id and e["target"] in by_id
            and by_id[e["source"]].get("kind") == "document"
            and by_id[e["target"]].get("kind") == "document"]
-    G = nx.Graph()
-    for e in sub:
-        G.add_edge(e["source"], e["target"])
-    if G.number_of_nodes() < 10:
+    adj: dict[str, set[str]] = {}
+    for e in sorted(sub, key=lambda e: (e["source"], e["target"])):
+        a, b = e["source"], e["target"]
+        adj.setdefault(a, set()).add(b)
+        adj.setdefault(b, set()).add(a)
+    if len(adj) < 10:
         return {}
-    communities = nx.community.louvain_communities(G, seed=42)
-    label: dict[str, int] = {}
-    for i, c in enumerate(sorted(communities, key=len, reverse=True)):
-        for nid in c:
-            label[nid] = i
-    return label
 
+    # ── propagation d'étiquettes : grossière, mais reproductible À L'OCTET ──────────────────────
+    # Chaque document part avec sa propre étiquette, puis adopte à chaque tour l'étiquette majoritaire
+    # de son voisinage — l'égalité se tranche par la plus petite étiquette, l'ordre de passage est
+    # `sorted()`. Aucune graine, aucun ordre de dictionnaire, aucune version de bibliothèque : le
+    # résultat ne dépend que des arêtes du dépôt.
+    #
+    # Pourquoi pas Louvain (qui segmente mieux) : `louvain_communities(seed=42)` a produit 13
+    # communautés ici et 15 sur le runner pour le MÊME commit — une graine ne fixe pas l'ordre interne
+    # d'un graphe. Ce qui est versionné doit se rejouer ; ce qui segmente finement reste disponible
+    # dans `graphify-out/graph.json`, qui n'est pas suivi.
+    label = {n: n for n in sorted(adj)}
+    for _ in range(30):
+        changed = 0
+        for n in sorted(adj):
+            counts: Counter[str] = Counter(label[m] for m in sorted(adj[n]))
+            if not counts:
+                continue
+            best = min(counts, key=lambda lab: (-counts[lab], lab))
+            if best != label[n]:
+                label[n] = best
+                changed += 1
+        if changed == 0:
+            break
+
+    groups: dict[str, list[str]] = defaultdict(list)
+    for n, lab in label.items():
+        groups[lab].append(n)
+    order = sorted(groups.values(), key=lambda members: (-len(members), sorted(members)[0]))
+    return {n: i for i, members in enumerate(order) for n in members}
 
 def isolated_docs(g: dict, by_id: dict) -> list[str]:
     """Les documents qu'aucune arête de citation ne touche : hors réseau, pas hors sujet."""
@@ -385,7 +421,7 @@ def write_communities_section(A, g, by_id, comm, indeg) -> None:
             internal.setdefault(comm[a], Counter())[b] += 1
     A("## 4 · Les communautés du dépôt — les sujets, tels que les documents se relient")
     A("")
-    A(f"{len(groups)} communautés détectées sur le réseau des citations (Louvain, graine fixe). "
+    A(f"{len(groups)} communautés détectées sur le réseau des citations (propagation d'étiquettes, sans aléa). "
       "Chaque bloc est un sujet réel : les documents qui s'y trouvent se citent entre eux.")
     A("")
     A("*Le pivot d'une communauté est le document que **les autres membres du groupe** citent le "
@@ -430,12 +466,28 @@ def write_communities_section(A, g, by_id, comm, indeg) -> None:
         A("")
 
 
+def commit_date() -> str:
+    """La date de la carte = la date du commit HEAD, pas celle de la machine.
+
+    Le 24/10 au soir, la CI est passée au rouge sur l'étape « la carte se rejoue à l'identique » : la
+    seule chose qui pouvait différer entre le poste et le runner était l'horloge, recopiée telle quelle
+    dans l'en-tête. Une carte doit être une fonction du commit — même commit, même carte, à l'octet —
+    sinon la porte mesure le fuseau horaire du runner, pas le dépôt."""
+    try:
+        out = subprocess.run(["git", "log", "-1", "--format=%ad", "--date=short"], cwd=ROOT,
+                             capture_output=True, text=True, timeout=30).stdout.strip()
+    except (OSError, subprocess.SubprocessError):
+        out = ""
+    return out or "date inconnue"
+
+
 def write_map(g: dict, nodes_meta: dict, stale: set[str], stats: dict, comm: dict | None = None) -> str:
     indeg, outdeg = degrees(g)
     by_id = {n["id"]: n for n in g["nodes"]}
     domains = Counter(n.get("domain") for n in g["nodes"])
     kinds = Counter(n.get("kind") for n in g["nodes"])
 
+    stamp = commit_date()
     cites_edges = [e for e in g["edges"] if e["relation"] == "cites"]
     sup_edges = [e for e in g["edges"] if e["relation"] == "supersedes"]
 
@@ -453,7 +505,7 @@ def write_map(g: dict, nodes_meta: dict, stale: set[str], stats: dict, comm: dic
     A = L.append
     A(f"# CARTE DU DÉPÔT — ce qui existe, où c'est, et ce qui n'est atteignable par aucun chemin")
     A("")
-    A(f"```text\nGénéré par tools/graphify/build_full_graph.py — {date.today().isoformat()}\n"
+    A(f"```text\nGénéré par tools/graphify/build_full_graph.py — {stamp}\n"
       f"Source : graphify-out/graph.json ({len(g['nodes'])} nœuds, {len(g['edges'])} arêtes)\n"
       f"Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même\n"
       f"carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.\n```")
@@ -748,6 +800,37 @@ def _bootstrap_graphify() -> bool:
     return True
 
 
+def announce_map_delta(content: str) -> None:
+    """Dit à voix haute ce qui diffère de la carte COMMITÉE — et le dit de façon lisible même quand
+    personne ne peut ouvrir le log.
+
+    Pourquoi : le 24/10 au soir, la CI est tombée rouge sur l'étape « la carte se rejoue à
+    l'identique » sans que la cause soit lisible — le log d'un run n'est pas toujours accessible, et
+    `git diff --quiet` ne dit que « différent ». Une porte qui ne dit pas POURQUOI est une porte
+    qu'on finit par contourner. Ici le script compare sa sortie à `git show HEAD:<carte>` et, si
+    elles diffèrent, écrit une **annotation GitHub** (`::error::`) : elle reste attachée au run et se
+    lit par l'API, même quand les logs sont hors d'atteinte.
+    """
+    try:
+        committed = subprocess.run(["git", "show", f"HEAD:{MAP.relative_to(ROOT)}"], cwd=ROOT,
+                                   capture_output=True, text=True, timeout=30)
+    except (OSError, subprocess.SubprocessError):
+        return
+    if committed.returncode != 0:
+        return                      # pas de git, ou carte pas encore commitée : rien à comparer
+    if committed.stdout == content:
+        return                      # identique : silence
+    diff = [l for l in difflib.unified_diff(committed.stdout.splitlines(), content.splitlines(),
+                                            "commitée", "rejouée", n=0, lineterm="")]
+    changed = [l for l in diff if l[:1] in "+-" and l[:3] not in ("+++", "---")]
+    print(f"[full] ⛔ la carte rejouée diffère de celle du commit — {len(changed)} ligne(s)", file=sys.stderr)
+    for line in diff[:40]:
+        print(line, file=sys.stderr)
+    excerpt = " | ".join(l[:110] for l in changed[:3]) or "(aucune ligne de contenu ?)"
+    print(f"::error title=La carte rejouée n'est pas celle du commit::"
+          f"{len(changed)} ligne(s) diffèrent. {excerpt}")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--no-map", action="store_true", help="ne pas réécrire ops/REPO-MAP.md")
@@ -831,8 +914,10 @@ def main() -> int:
     print(f"[full] communautés : {len(set(comm.values()))} sur {len(comm)} documents")
 
     if not args.no_map:
-        MAP.write_text(write_map(g, meta, stale, stats, comm), encoding="utf-8")
+        content = write_map(g, meta, stale, stats, comm)
+        MAP.write_text(content, encoding="utf-8")
         print(f"[full] carte écrite → {MAP.relative_to(ROOT)}")
+        announce_map_delta(content)
     try:  # trace d'usage : « la carte a été reconstruite » doit être une ligne, pas un souvenir
         from datetime import datetime as _dt
         stamp = Path.home() / ".amk-provisioned"

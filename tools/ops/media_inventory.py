@@ -125,6 +125,10 @@ def corpus_texts(files: list[str]) -> list[tuple[str, str]]:
     for f in files:
         if os.path.splitext(f)[1].lower() not in (".md", ".py", ".sh", ".json", ".html", ".yml", ".yaml", ".txt"):
             continue
+        # L'inventaire ne compte pas comme citation : sinon chaque MEDIA.md se cite lui-même en listant
+        # les fichiers, et plus aucun média n'est orphelin — la mesure s'annulerait elle-même.
+        if os.path.basename(f) == "MEDIA.md":
+            continue
         try:
             out.append((f, (ROOT / f).read_text(encoding="utf-8", errors="ignore")))
         except OSError:
@@ -150,10 +154,17 @@ def scan() -> tuple[dict, dict]:
     return rows, {f: t for f, t in texts}
 
 
+def signature(paths: list[str], rows: dict) -> str:
+    """L'identité d'un dossier : ses fichiers et leurs empreintes. PAS les citations — elles changent
+    dès qu'un autre document est édité, et feraient crier « périmé » sans qu'un média ait bougé."""
+    listing = "\n".join(f"{p} {rows[p]['size']} {rows[p]['sha']}" for p in sorted(paths))
+    return hashlib.sha256(listing.encode()).hexdigest()
+
+
 def render(dirname: str, rows: dict, hashes: dict[str, list[str]]) -> str:
     paths = sorted(p for p in rows if os.path.dirname(p) == dirname)
     total = sum(rows[p]["size"] for p in paths)
-    L = [MARK, "", f"# MÉDIAS — `{dirname}/`", ""]
+    L = [MARK, f"<!-- empreintes: {signature(paths, rows)} -->", "", f"# MÉDIAS — `{dirname}/`", ""]
     L.append(f"**{len(paths)} fichier(s) · {human(total)}.** Empreinte = identité du fichier : deux "
              "fichiers de même empreinte sont le même fichier, quelle que soit leur adresse.")
     L.append("")
@@ -268,9 +279,15 @@ def main() -> int:
         target = ROOT / d / "MEDIA.md"
         content = render(d, rows, hashes)
         old = target.read_text(encoding="utf-8") if target.exists() else ""
-        if old != content:
+        if args.check:
+            # le contrôle strict ne regarde que les empreintes : une citation qui change n'est pas
+            # un média qui bouge. Le texte complet, lui, se rafraîchit par --write.
+            veut = f"<!-- empreintes: {signature(by_dir[d], rows)} -->"
+            if veut not in old:
+                stale.append(d)
+        elif old != content:
             stale.append(d)
-            if args.write and not args.check:
+            if args.write:
                 target.write_text(content, encoding="utf-8")
 
     poids_dup = sum(rows[g[0]]["size"] * (len(g) - 1) for g in groups.values())

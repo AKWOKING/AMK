@@ -1,4 +1,5 @@
 <!-- généré par tools/ops/media_inventory.py — ne pas éditer à la main -->
+<!-- empreintes: 01d502a7b4bb1ea5c2da1957e2759652ec7b852beded158bd2171ce3399702cb -->
 
 # MÉDIAS — `hosting/samples/img/`
 
@@ -15,11 +16,11 @@
 | `mit-flatlay.jpg` | 560×700 | 47.9 Ko | `b1dc3074968a` | 2 |
 | `mit-hero.jpg` | 760×950 | 62.3 Ko | `396706a3e80f` | 3 |
 | `mit-wall.jpg` | 1200×760 | 109.7 Ko | `fd51a478ed42` | 3 |
-| `mmc-consult.jpg` | 1448×1086 | 192.7 Ko | `aaf29f9471cd` | 1 |
+| `mmc-consult.jpg` | 1448×1086 | 192.7 Ko | `aaf29f9471cd` | 2 |
 | `mmc-hero.jpg` | 1586×992 | 144.0 Ko | `fc06e303d60e` | 1 |
 | `mmc-lab.jpg` | 1448×1086 | 125.5 Ko | `03c2699617aa` | 1 |
 | `mmc-maternity.jpg` | 1448×1086 | 169.2 Ko | `e90262d12bd8` | 1 |
-| `nova.png` | 1280×800 | 232.4 Ko | `48d3d3160a35` | 7 |
+| `nova.png` | 1280×800 | 232.4 Ko | `48d3d3160a35` | 8 |
 | `og-cover.jpg` | 1200×630 | 103.6 Ko | `ad62eb133cfa` | 16 |
 | `sec-awards.jpg` | 780×585 | 66.3 Ko | `520caf6a518a` | 3 |
 | `sec-campus.jpg` | 1400×800 | 156.0 Ko | `ae04041cb70b` | 3 |

@@ -2,15 +2,15 @@
 
 ```text
 Généré par tools/graphify/build_full_graph.py — 2026-10-24
-Source : graphify-out/graph.json (11763 nœuds, 14619 arêtes)
+Source : graphify-out/graph.json (11771 nœuds, 14634 arêtes)
 Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même
 carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.
 ```
 
 ## 0 · En une page
 
-- **11763 nœuds** — dont 745 documents, 168 scripts, 21 modules, 139 pages HTML, 393 images, 3 vidéos, 40 audios, 35 fichiers de données, 11 PDF.
-- **3035 citations entre documents** (2454 en chemin exact, 581 par nom unique)
+- **11771 nœuds** — dont 745 documents, 168 scripts, 21 modules, 139 pages HTML, 393 images, 3 vidéos, 40 audios, 35 fichiers de données, 11 PDF.
+- **3036 citations entre documents** (2455 en chemin exact, 581 par nom unique)
 - **121 arêtes de remplacement** · **1 documents marqués périmés**
 - **390 documents que personne ne cite** (atteignables par aucun chemin de lecture)
 - **Couverture : 1615 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
@@ -109,7 +109,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 ## 4 · Les communautés du dépôt — les sujets, tels que les documents se relient
 
-13 communautés détectées sur le réseau des citations (Louvain, graine fixe). Chaque bloc est un sujet réel : les documents qui s'y trouvent se citent entre eux.
+13 communautés détectées sur le réseau des citations (propagation d'étiquettes, sans aléa). Chaque bloc est un sujet réel : les documents qui s'y trouvent se citent entre eux.
 
 *Le pivot d'une communauté est le document que **les autres membres du groupe** citent le plus (degré interne) — pas le document le plus cité du dépôt, qui l'est partout.*
 
@@ -117,84 +117,57 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 | # | Docs | Les 3 pivots internes | Ce que le groupe a en propre |
 |---|---|---|---|
-| 0 | 170 | `Activity-Log.md` · `MESSAGES-2026-09-23-PERSUASION.md` · `Send-BATCH-2026-09-24-Opticiens-2.md` | `leads/` (70 % du groupe) |
-| 1 | 73 | `pre-launch-checklist.md` · `tiktok-01.md` · `content-plan-month1.md` | `clients/` (75 % du groupe) |
-| 2 | 58 | `AMK-DESIGN-SKILLS.md` · `YouTube-Lessons.md` · `FICHE-GOOGLE-PROFILE.md` | `research/` (39 % du groupe) |
-| 3 | 51 | `PRE-FLIGHT.md` · `TOOL-SCAN.md` · `README.md` | `tools/` (45 % du groupe) |
-| 4 | 46 | `Outreach-Pack-2026-09-14.md` · `Clinic-Batch-2026-09-15.md` · `Outreach-Pack-2026-09-16.md` | `sales/` (86 % du groupe) |
-| 5 | 35 | `AGENTS.md` · `DIRECTION-MARQUE-v2-2026-10-22.md` · `PRIX-2026-10-24.md` | `tools/` (31 % du groupe) |
-| 6 | 32 | `ANALYTICS-LOG.md` · `CONTENT-LESSONS.md` · `variant-messages.md` | `content/` (56 % du groupe) |
-| 7 | 20 | `analyst-common.md` · `context-safety.md` · `report.md` | `tools/` (100 % du groupe) |
-| 8 | 7 | `PHOTOSHOOT-FICHE-1PAGE-2026-10.md` · `DEMO-SCRIPT-2026-10-07.md` · `VISIT-RUNSHEET-2026-10-07.md` | `clients/` (85 % du groupe) |
-| 9 | 4 | `root-cause-tracing.md` · `defense-in-depth.md` · `condition-based-waiting.md` | `tools/` (100 % du groupe) |
-| 10 | 3 | `builder-check-prompt.md` · `visual-companion.md` | `tools/` (100 % du groupe) |
+| 0 | 154 | `AMK-DESIGN-SKILLS.md` · `YouTube-Lessons.md` · `PHOTO-LABO-PIXEL-8A-2026-09-24.md` | `sales/` (51 % du groupe) |
+| 1 | 151 | `RULE-CREDENTIAL-CLAIMS.md` · `PRE-FLIGHT.md` · `build-notes.md` | `clients/` (44 % du groupe) |
+| 2 | 127 | `Activity-Log.md` · `Send-BATCH-2026-09-24-Opticiens-2.md` · `Send-BATCH-2026-09-24-Opticiens.md` | `leads/` (87 % du groupe) |
+| 3 | 22 | `ANALYTICS-LOG.md` · `CONTENT-LESSONS.md` · `variant-messages.md` | `content/` (72 % du groupe) |
+| 4 | 20 | `analyst-common.md` · `context-safety.md` · `report.md` | `tools/` (100 % du groupe) |
+| 5 | 6 | `Send-LE-CRISTALLIN-2026-09-21-Soir.md` · `build-notes.md` · `Send-LE-CRISTALLIN-2026-09-23-Matin.md` | `sales/` (50 % du groupe) |
+| 6 | 5 | `claude-code-tools.md` · `codex-tools.md` · `pi-tools.md` | `tools/` (100 % du groupe) |
+| 7 | 4 | `PHOTOSHOOT-FICHE-1PAGE-2026-10.md` · `DEMO-SCRIPT-2026-10-07.md` · `VISIT-RUNSHEET-2026-10-07.md` | `clients/` (100 % du groupe) |
+| 8 | 4 | `root-cause-tracing.md` · `defense-in-depth.md` · `condition-based-waiting.md` | `tools/` (100 % du groupe) |
+| 9 | 3 | `builder-check-prompt.md` · `visual-companion.md` | `tools/` (100 % du groupe) |
+| 10 | 3 | `implementer-prompt.md` · `task-reviewer-prompt.md` | `tools/` (100 % du groupe) |
 | 11 | 2 | `etapes-01-PUBLICATION.md` | `clients/` (100 % du groupe) |
 | 12 | 2 | `DESIGN.md` | `design/` (100 % du groupe) |
 
-### Communauté 0 — 170 documents
+### Communauté 0 — 154 documents
 
-- `sales/Activity-Log.md` — cité 135× dans le groupe, 167× au total
-- `sales/MESSAGES-2026-09-23-PERSUASION.md` — cité 10× dans le groupe, 17× au total
-- `sales/Send-BATCH-2026-09-24-Opticiens-2.md` — cité 9× dans le groupe, 10× au total
-- `leads/KILL-LIST.md` — cité 7× dans le groupe, 10× au total
-- `sales/Send-BATCH-2026-09-24-Opticiens.md` — cité 6× dans le groupe, 7× au total
-- `leads/STALE.md` — cité 5× dans le groupe, 8× au total
-
-### Communauté 1 — 73 documents
-
-- `clients/dm-optic/pre-launch-checklist.md` — cité 12× dans le groupe, 15× au total
-- `clients/dm-optic/content/month1/w1/tiktok-01.md` — cité 10× dans le groupe, 12× au total
-- `clients/dm-optic/content-plan-month1.md` — cité 10× dans le groupe, 15× au total
-- `content/strategy/RULE-CREDENTIAL-CLAIMS.md` — cité 8× dans le groupe, 24× au total
-- `clients/dm-optic/a-completer.md` — cité 7× dans le groupe, 12× au total
-- `content/scripts/README.md` — cité 7× dans le groupe, 15× au total
-
-### Communauté 2 — 58 documents
-
-- `AMK-DESIGN-SKILLS.md` — cité 19× dans le groupe, 40× au total
-- `research/YouTube-Lessons.md` — cité 12× dans le groupe, 27× au total
+- `AMK-DESIGN-SKILLS.md` — cité 27× dans le groupe, 40× au total
+- `research/YouTube-Lessons.md` — cité 17× dans le groupe, 27× au total
+- `research/PHOTO-LABO-PIXEL-8A-2026-09-24.md` — cité 11× dans le groupe, 13× au total
+- `sales/MESSAGES-2026-09-23-PERSUASION.md` — cité 11× dans le groupe, 17× au total
+- `sales/RESEARCH-STANDARD.md` — cité 11× dans le groupe, 19× au total
 - `sales/FICHE-GOOGLE-PROFILE.md` — cité 10× dans le groupe, 13× au total
-- `research/PHOTO-LABO-PIXEL-8A-2026-09-24.md` — cité 10× dans le groupe, 13× au total
-- `content/strategy/TIKTOK-SEO-CHECKLIST-2026-10.md` — cité 10× dans le groupe, 14× au total
-- `sales/PRIX-ET-RECURRENCE-2026-09-24.md` — cité 7× dans le groupe, 17× au total
 
-### Communauté 3 — 51 documents
+### Communauté 1 — 151 documents
 
-- `PRE-FLIGHT.md` — cité 12× dans le groupe, 28× au total
-- `ops/TOOL-SCAN.md` — cité 9× dans le groupe, 16× au total
-- `hosting/previews/README.md` — cité 8× dans le groupe, 16× au total
-- `clients/_uniqueness-registry.md` — cité 7× dans le groupe, 15× au total
-- `sales/RESEARCH-STANDARD.md` — cité 6× dans le groupe, 19× au total
-- `content/strategy/SEO-CHECKLIST-CLIENT-SITES-2026-10.md` — cité 5× dans le groupe, 13× au total
+- `content/strategy/RULE-CREDENTIAL-CLAIMS.md` — cité 17× dans le groupe, 24× au total
+- `PRE-FLIGHT.md` — cité 17× dans le groupe, 28× au total
+- `clients/dm-optic/build-notes.md` — cité 13× dans le groupe, 16× au total
+- `clients/dm-optic/pre-launch-checklist.md` — cité 13× dans le groupe, 15× au total
+- `ops/TOOL-SCAN.md` — cité 12× dans le groupe, 16× au total
+- `clients/dm-optic/content-plan-month1.md` — cité 12× dans le groupe, 15× au total
 
-### Communauté 4 — 46 documents
+### Communauté 2 — 127 documents
 
-- `sales/Outreach-Pack-2026-09-14.md` — cité 7× dans le groupe, 9× au total
-- `sales/Clinic-Batch-2026-09-15.md` — cité 5× dans le groupe, 5× au total
-- `sales/Outreach-Pack-2026-09-16.md` — cité 4× dans le groupe, 4× au total
-- `sales/Outreach-AFRIQUE-LABO-v1.md` — cité 4× dans le groupe, 9× au total
-- `sales/Invitation-First-Replan-2026-09-15.md` — cité 4× dans le groupe, 7× au total
-- `sales/Pipeline-Status.md` — cité 3× dans le groupe, 9× au total
+- `sales/Activity-Log.md` — cité 117× dans le groupe, 167× au total
+- `sales/Send-BATCH-2026-09-24-Opticiens-2.md` — cité 7× dans le groupe, 10× au total
+- `sales/Send-BATCH-2026-09-24-Opticiens.md` — cité 6× dans le groupe, 7× au total
+- `sales/Send-Soir-2026-09-23.md` — cité 4× dans le groupe, 4× au total
+- `sales/WAVE-TEMPLATE-CURRENT.md` — cité 3× dans le groupe, 3× au total
+- `sales/VAGUE-CLINIQUES-LABOS-2026-10-10.md` — cité 3× dans le groupe, 3× au total
 
-### Communauté 5 — 35 documents
+### Communauté 3 — 22 documents
 
-- `AGENTS.md` — cité 6× dans le groupe, 6× au total
-- `clients/dm-optic/brand/DIRECTION-MARQUE-v2-2026-10-22.md` — cité 5× dans le groupe, 11× au total
-- `knowledge/PRIX-2026-10-24.md` — cité 5× dans le groupe, 8× au total
-- `ops/GIT-STABILITY-NOTE.md` — cité 4× dans le groupe, 4× au total
-- `knowledge/ROAST-2026-10-24-PRIX-v2.md` — cité 4× dans le groupe, 4× au total
-- `ops/CADENCE-PUBLICATION-2026-10-22.md` — cité 3× dans le groupe, 3× au total
-
-### Communauté 6 — 32 documents
-
-- `content/pipeline/ANALYTICS-LOG.md` — cité 10× dans le groupe, 11× au total
-- `content/lessons/CONTENT-LESSONS.md` — cité 7× dans le groupe, 15× au total
-- `clients/dm-optic/ads/variant-messages.md` — cité 5× dans le groupe, 8× au total
-- `sales/CLIENT-MESSAGING-RULES.md` — cité 3× dans le groupe, 18× au total
+- `content/pipeline/ANALYTICS-LOG.md` — cité 8× dans le groupe, 11× au total
+- `content/lessons/CONTENT-LESSONS.md` — cité 6× dans le groupe, 15× au total
+- `clients/dm-optic/ads/variant-messages.md` — cité 4× dans le groupe, 8× au total
 - `content/handover/2026-09-17-content-handover.md` — cité 3× dans le groupe, 3× au total
-- `content/strategy/POSTING-CALENDAR.md` — cité 3× dans le groupe, 7× au total
+- `content/strategy/POSTING-CALENDAR.md` — cité 2× dans le groupe, 7× au total
+- `research/Video-Toolchain-Research.md` — cité 2× dans le groupe, 4× au total
 
-### Communauté 7 — 20 documents
+### Communauté 4 — 20 documents
 
 - `tools/superpowers/skills/diagnosing-superpowers/prompts/analyst-common.md` — cité 8× dans le groupe, 8× au total
 - `tools/superpowers/skills/diagnosing-superpowers/references/context-safety.md` — cité 4× dans le groupe, 4× au total
@@ -203,20 +176,37 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 - `tools/superpowers/skills/diagnosing-superpowers/templates/issue.md` — cité 2× dans le groupe, 2× au total
 - `tools/superpowers/skills/diagnosing-superpowers/references/redaction-policy.md` — cité 2× dans le groupe, 2× au total
 
-### Communauté 8 — 7 documents
+### Communauté 5 — 6 documents
 
-- `clients/dm-optic/photoshoot/PHOTOSHOOT-FICHE-1PAGE-2026-10.md` — cité 3× dans le groupe, 3× au total
+- `sales/Send-LE-CRISTALLIN-2026-09-21-Soir.md` — cité 2× dans le groupe, 4× au total
+- `clients/le-cristallin/build-notes.md` — cité 2× dans le groupe, 3× au total
+- `sales/Send-LE-CRISTALLIN-2026-09-23-Matin.md` — cité 2× dans le groupe, 3× au total
+- `clients/le-cristallin/inspiration.md` — cité 1× dans le groupe, 2× au total
+- `sales/Send-UNIVERS-OPTIQUE-2026-09-22-Soir.md` — cité 1× dans le groupe, 3× au total
+
+### Communauté 6 — 5 documents
+
+- `tools/superpowers/skills/using-superpowers/references/claude-code-tools.md` — cité 1× dans le groupe, 1× au total
+- `tools/superpowers/skills/using-superpowers/references/codex-tools.md` — cité 1× dans le groupe, 1× au total
+- `tools/superpowers/skills/using-superpowers/references/pi-tools.md` — cité 1× dans le groupe, 1× au total
+- `tools/superpowers/skills/using-superpowers/references/antigravity-tools.md` — cité 1× dans le groupe, 1× au total
+
+### Communauté 7 — 4 documents
+
+- `clients/dm-optic/photoshoot/PHOTOSHOOT-FICHE-1PAGE-2026-10.md` — cité 2× dans le groupe, 3× au total
 - `clients/dm-optic/onboarding/DEMO-SCRIPT-2026-10-07.md` — cité 2× dans le groupe, 2× au total
 - `clients/dm-optic/onboarding/VISIT-RUNSHEET-2026-10-07.md` — cité 1× dans le groupe, 1× au total
-- `clients/dm-optic/photoshoot/PHOTOSHOOT-BRIEF-2026-10.md` — cité 1× dans le groupe, 1× au total
-- `ops/AUDIT-FICHIERS-2026-10-24.md` — cité 1× dans le groupe, 2× au total
-- `clients/dm-optic/photoshoot/RETRAIT-2026-10-24.md` — cité 1× dans le groupe, 1× au total
 
-### Communauté 9 — 4 documents
+### Communauté 8 — 4 documents
 
 - `tools/superpowers/skills/systematic-debugging/root-cause-tracing.md` — cité 1× dans le groupe, 1× au total
 - `tools/superpowers/skills/systematic-debugging/defense-in-depth.md` — cité 1× dans le groupe, 1× au total
 - `tools/superpowers/skills/systematic-debugging/condition-based-waiting.md` — cité 1× dans le groupe, 1× au total
+
+### Communauté 9 — 3 documents
+
+- `tools/superpowers/skills/brainstorming/builder-check-prompt.md` — cité 1× dans le groupe, 1× au total
+- `tools/superpowers/skills/brainstorming/visual-companion.md` — cité 1× dans le groupe, 1× au total
 
 ## 5 · Le reste du dépôt, par nature
 
@@ -237,7 +227,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | vidéo | 3 | `clients/dm-optic/brag/brag.mp4`, `content/videos/v06-facebook-no-booking/Video_06_Facebook_No_Booking.mp4`, `content/videos/v06-facebook-no-booking/Video_06_Facebook_No_Booking_VOIX.mp4` |
 | sous-titre | 3 | `clients/dm-optic/content/month1/w1/tiktok-01-v2.fr.srt`, `clients/dm-optic/content/month1/w1/tiktok-01.fr.srt`, `clients/dm-optic/content/month1/w2/etapes-01.srt` |
 | archive | 1 | `dmopticsarl-2026-10-21.zip` |
-| symboles extraits (titres de documents + fonctions/classes du code) | 10148 | — |
+| symboles extraits (titres de documents + fonctions/classes du code) | 10156 | — |
 
 ### Les outils et skills installés — 1 dossier = 1 outil
 

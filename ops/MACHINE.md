@@ -23,7 +23,7 @@ bash tools/ops/machine.sh --turns      # le rendement du jour : commits, fichier
 Le miroir Notion (PRE-FLIGHT §0g) est **daté ici**, dans une ligne que la machine lit :
 
 ```text
-MIRROR 2026-10-24 · 11291ab
+MIRROR 2026-10-24 · f0c1018
 ```
 
 Tant qu'un fichier de **fait debout** (pré-vol, machine, prix, dossiers clients, journal des ventes)
@@ -209,7 +209,7 @@ même porte finissent toujours par diverger, et c'est la plus vieille qui gagne.
 
 ---
 
-## 7 · Les sept invariants
+## 7 · Les dix invariants
 
 1. **Un seul arbre vrai.** Tout ce qui est lu ou mesuré vient d'un dépôt remis au sommet distant dans le même tour.
 2. **Une seule vérité par sujet.** La table §5 est exhaustive : un sujet sans souverain est un sujet qui va se contredire.
@@ -222,6 +222,15 @@ même porte finissent toujours par diverger, et c'est la plus vieille qui gagne.
    (`PRE-FLIGHT.md` §1i). Le seuil n'est pas une mémoire : `bash tools/ops/machine.sh` l'affiche, et
    `--check` échoue tant qu'il est dépassé. Trou constaté le 24/10 : **22 commits, 544 fichiers, 59 722
    lignes** sur la même branche sans fusion — la règle existait, rien ne la rappelait.
+
+9. **Aucune valeur de la machine dans un artefact suivi.** La carte recopiait `date.today()` dans son
+   en-tête : juste sur le poste, faux sur le runner, et l'étape « la carte se rejoue à l'identique » est
+   tombée rouge sur un dépôt qui n'avait pas bougé d'un octet. La date vient maintenant du commit
+   (`git log -1 --date=short`). Ni heure, ni fuseau, ni nom d'hôte, ni `$HOME` dans un fichier versionné.
+10. **Une porte ne s'ouvre jamais sur une absence.** Le 24/10, `fusion-sur-seuil` s'est déclarée satisfaite
+   parce que `origin/main` manquait dans le clone : faute de mesure, elle a répondu « rien à signaler »,
+   et 544 fichiers ont attendu quatre tours de trop. Une mesure impossible est une panne, pas une
+   permission.
 
 ---
 
@@ -237,6 +246,7 @@ même porte finissent toujours par diverger, et c'est la plus vieille qui gagne.
 | Session neuve sans skills | l'agent « ne trouve pas » un skill installé la veille | `provision.sh`, au début de chaque session |
 | Handoff qui vieillit | un état de travail de trois jours présenté comme actuel | le cockpit affiche son âge ; au-delà de 3 jours, il est réécrit |
 | Branche qui ne fusionne jamais | 22 commits et 59 722 lignes sur la même branche, `main` figé depuis trois jours | la jauge de fusion du cockpit, et `machine.sh --merge` pour la séquence `fetch` → diff → PR |
+| Carte rouge alors que rien n'a bougé | la CI échoue sur « la carte se rejoue à l'identique » (exit 1 dans la branche `git diff --quiet`), le même commit est vert sur le poste | première cause trouvée le 24/10 : la **date** venait de l'horloge (corrigée, invariant 9). **Seconde cause, trouvée et corrigée le 25/10** (elle était ouverte au 24/10) : le §4 de la carte classait les documents par `nx.community.louvain_communities(G, seed=42)` — **13 communautés ici, 15 sur le runner, même commit**. Une graine ne fixe pas l'ordre interne d'un graphe : elle ne rend pas un algorithme reproductible. Le remplacement est une propagation d'étiquettes écrite dans le dépôt (tri + égalité tranchée par la plus petite étiquette), et la carte est désormais identique à l'octet sous trois hash/TZ différents. Louvain reste dans le graphe généré (dossier `graphify-out/`, non suivi par git) |
 
 ---
 
@@ -417,7 +427,7 @@ les vignettes.
 **Le premier pas — fait le 24/10 au soir.** `tools/ops/media_inventory.py` (0 dépendance) lit
 l'empreinte et les dimensions de chaque média suivi, puis écrit un `MEDIA.md` par dossier de plus de
 2 Mo. Mesuré : **460 médias suivis, 104 Mo** (72 % de l'arbre), **12 dossiers** inventoriés,
-**85 médias que rien ne nomme** (contre 66 estimés — l'estimation était basse), et surtout
+**95 médias que rien ne nomme** (contre 66 estimés — l'estimation était basse), et surtout
 **25 empreintes partagées = 27 copies inutiles, 2,6 Mo** que l'œil ne voyait pas :
 
 | Empreinte | Poids | Copies |
@@ -434,6 +444,17 @@ fichier, en regardant qui l'appelle.
 Deux modes de plus : `--thumbs DIR` écrit les vignettes 800 px **hors du dépôt** (jamais dans git : une
 vignette est un cache, pas un livrable), et `--check` compare les empreintes — c'est la version stricte,
 la porte 16 se contentant du nombre de fichiers (un sha256 de 104 Mo coûterait 8 s à chaque tour).
+
+**Deux pièges de mesure, trouvés en écrivant l'outil, et tous les deux corrigés :**
+
+1. **Un inventaire qui se cite lui-même.** Le premier comptage a annoncé 67 médias non nommés au lieu de
+   95 : les `MEDIA.md` venaient de lister les fichiers, donc chaque média était « cité » — par sa propre
+   fiche. Un thermomètre qui se met dans le four. Les inventaires sont désormais exclus du corpus de
+   citations ;
+2. **« périmé » à cause d'une virgule dans un autre document.** Le nombre de citations figure dans le
+   tableau, donc éditer n'importe quel document rendait tous les inventaires « périmés ». `--check`
+   compare maintenant une **signature d'empreintes** écrite dans le fichier ; le texte se rafraîchit par
+   `--write`, la porte ne juge que les octets.
 
 ### ④ Décroissance documentaire : 765 documents, 412 orphelins
 

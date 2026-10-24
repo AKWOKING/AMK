@@ -1,4 +1,5 @@
 <!-- généré par tools/ops/media_inventory.py — ne pas éditer à la main -->
+<!-- empreintes: 34d6d235e9fb815208d265e7989605b78bce64d89518800263f15e2b415a170c -->
 
 # MÉDIAS — `content/pipeline/post01/layers/`
 

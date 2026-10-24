@@ -1,4 +1,5 @@
 <!-- généré par tools/ops/media_inventory.py — ne pas éditer à la main -->
+<!-- empreintes: 372bba7095b9ddd04a3c0dda5dea0b05cea383b869f308fa97adb298119e2f09 -->
 
 # MÉDIAS — `clients/dm-optic/brag/`
 
