@@ -2,7 +2,7 @@
 
 ```text
 Généré par tools/ops/audit_files.py — 2026-10-24
-1622 fichiers · 137.4 Mo · dont 23.0 Mo dans des fichiers > 5 Mo
+1623 fichiers · 137.3 Mo · dont 23.0 Mo dans des fichiers > 5 Mo
 Aucune suppression automatique : les décisions sont listées, pas prises.
 ```
 
@@ -10,7 +10,7 @@ Aucune suppression automatique : les décisions sont listées, pas prises.
 
 | Classe | Fichiers | Poids | Action |
 |---|---|---|---|
-| caches (`__pycache__`, `*.pyc`) | 2 | 144.0 Ko | `python3 tools/ops/audit_files.py --clean-cache` |
+| caches (`__pycache__`, `*.pyc`) | 0 | 0 o | `python3 tools/ops/audit_files.py --clean-cache` |
 
 ## 2 · Doublons exacts — octet pour octet
 
@@ -75,82 +75,168 @@ Aucun doublon à l'intérieur d'un même projet.
 
 ## 4 · Documents
 
-- **404 documents sans citation entrante** — à relire ou à archiver (voir `ops/REPO-MAP.md` §3 bis).
-- **1 documents marqués périmés par leur propre texte** — détection lexicale, à vérifier un par un.
+- **757 documents sans citation entrante** — à relire ou à archiver (voir `ops/REPO-MAP.md` §3 bis).
+- **0 documents marqués périmés par leur propre texte** — détection lexicale, à vérifier un par un.
 
 | Périmé (d'après lui-même) | Cité par |
 |---|---|
-| `sales/Walk-In-Batch-2026-09-15.md` | 3× |
 
 ⚠️ **Ni l'orphelin ni le « périmé » ne se supprime automatiquement.** Le 24/10, `AMK-DESIGN-SKILLS.md` était signalé « remplacé par Activity-Log » — c'est faux, et une suppression sur cette base aurait effacé 1 400 lignes de règles de design.
 
 ## 4 bis · Les orphelins datés — ce que personne ne cite, et qui ne peut pas expirer
 
-**404 orphelins** au total, mais **74 seulement à traiter** : les autres sont normaux (164 imports tiers, 116 fiches CRM reliées par la base, 50 README d'outils installés).
+**757 orphelins** au total, mais **365 seulement à traiter** : les autres sont normaux (167 imports tiers, 119 fiches CRM reliées par la base, 106 README d'outils installés).
 
-- **29 n'ont aucune date**, ni dans leur chemin, ni dans leurs douze premières lignes : un document sans date ne peut pas expirer, donc il ne meurt jamais.
-- Les 45 autres s'étalent du **2026-09-21** au **2026-10-24**.
+- **95 n'ont aucune date**, ni dans leur chemin, ni dans leurs douze premières lignes : un document sans date ne peut pas expirer, donc il ne meurt jamais.
+- Les 270 autres s'étalent du **2026-09-12** au **2026-10-24**.
 
 | Famille | Orphelins | Le plus ancien | Verdict proposé |
 |---|---|---|---|
-| `research/youtube-lessons` | 29 | 2026-10-11 | archiver après synthèse |
-| `clients/dm-optic` | 11 | 2026-10-07 | citer (point d'entrée d'un dossier vivant) |
-| `ops/` | 7 | 2026-10-07 | à décider |
-| `content/videos` | 6 | 2026-10-22 | archiver avec le lot du mois |
-| `content/scripts` | 4 | sans date | à décider |
-| `ops/templates` | 3 | sans date | citer depuis la machine |
-| `sales/` | 3 | 2026-09-21 | à décider |
-| `content/pipeline` | 2 | 2026-10-05 | à décider |
+| `sales/` | 98 | 2026-09-12 | à décider |
+| `clients/dm-optic` | 83 | 2026-09-24 | à décider |
+| `research/youtube-lessons` | 44 | 2026-10-11 | archiver après synthèse |
+| `ops/` | 22 | 2026-10-07 | à décider |
+| `research/` | 12 | 2026-09-18 | archiver après synthèse |
+| `content/strategy` | 11 | 2026-09-23 | à décider |
+| `content/pipeline` | 10 | 2026-09-17 | à décider |
+| `knowledge/` | 10 | 2026-10-02 | à décider |
+| `content/videos` | 9 | 2026-09-22 | archiver avec le lot du mois |
+| `leads/` | 8 | 2026-09-18 | à décider |
+| `content/scripts` | 7 | 2026-09-22 | citer (point d'entrée d'un dossier vivant) |
+| `design/` | 6 | 2026-09-15 | à décider |
+| `sales/research` | 6 | 2026-09-16 | à décider |
+| `site/` | 6 | 2026-10-08 | à décider |
+| `ops/templates` | 5 | 2026-09-23 | citer depuis la machine |
+| `clients/` | 2 | 2026-10-24 | citer (point d'entrée d'un dossier vivant) |
+| `clients/le-cristallin` | 2 | sans date | à décider |
 | `hosting/samples` | 2 | sans date | à décider |
+| `sales/social` | 2 | sans date | à décider |
+| `AGENTS.md/` | 1 | sans date | à décider |
+| `AMK-DESIGN-SKILLS.md/` | 1 | sans date | à décider |
+| `AMK-SEO-PLAYBOOK.md/` | 1 | sans date | à décider |
+| `PRE-FLIGHT.md/` | 1 | sans date | à décider |
+| `brand/` | 1 | 2026-10-22 | à décider |
+| `clients/labiomed` | 1 | 2026-10-24 | à décider |
 | `content/` | 1 | sans date | citer (point d'entrée d'un dossier vivant) |
 | `content/assets` | 1 | sans date | à décider |
+| `content/carousels` | 1 | 2026-10-13 | à décider |
+| `content/handover` | 1 | 2026-09-17 | à décider |
+| `content/lessons` | 1 | 2026-09-17 | à décider |
 | `content/studio` | 1 | sans date | citer (point d'entrée d'un dossier vivant) |
-| `design/` | 1 | sans date | citer (point d'entrée d'un dossier vivant) |
-| `leads/` | 1 | sans date | à décider |
+| `demos/shots` | 1 | 2026-10-24 | citer (point d'entrée d'un dossier vivant) |
+| `hosting/previews` | 1 | 2026-10-24 | citer (point d'entrée d'un dossier vivant) |
+| `ops/amk-factures-pwa` | 1 | sans date | citer (point d'entrée d'un dossier vivant) |
+| `research/ugc-video` | 1 | 2026-10-22 | archiver après synthèse |
 | `sales/VAGUE-2026-10-12` | 1 | 2026-10-12 | archiver |
-| `site/` | 1 | 2026-10-23 | à décider |
+| `sales/swipe` | 1 | sans date | citer (point d'entrée d'un dossier vivant) |
+| `sales/templates` | 1 | 2026-09-15 | à décider |
+| `tryon-camera/` | 1 | 2026-10-22 | à décider |
 
 *Le verdict est une **proposition**, pas une décision : archiver = `git mv` vers `archive/`, jamais supprimer. `archive/` sort du corpus (ni carte, ni portes, ni audit) mais reste dans git.*
 
 **Les documents sans date** (à dater ou à archiver) :
 
+- `AGENTS.md`
+- `AMK-DESIGN-SKILLS.md`
+- `AMK-SEO-PLAYBOOK.md`
+- `PRE-FLIGHT.md`
+- `clients/README.md`
+- `clients/dm-optic/brag/brag-plan.md`
 - `clients/dm-optic/content/month1/c1-render/README.md`
+- `clients/dm-optic/content/month1/carousels.md`
+- `clients/dm-optic/content/month1/w1/MONTAGE-V2-ROADMAP.md`
+- `clients/dm-optic/content/month1/w1/SPOT-DIRECTION.md`
+- `clients/dm-optic/content/month1/w1/tiktok-01-PUBLICATION.md`
+- `clients/dm-optic/content/month1/w1/tiktok-01.md`
+- `clients/dm-optic/content/month1/w2/PLAN-27-10.md`
+- `clients/dm-optic/content/month1/w2/etapes-01-PUBLICATION.md`
 - `clients/dm-optic/content/month1/w2/etapes-01-validation-client.md`
 - `clients/dm-optic/content/month1/w2/etapes-01.md`
 - `clients/dm-optic/content/month1/w2/facebook-post-enfants.md`
+- `clients/dm-optic/content/month1/w3/presbytie-55ans-SCRIPT.md`
+- `clients/dm-optic/launch/SETUP-GOOGLE-BUSINESS.md`
+- `clients/dm-optic/launch/SETUP-TIKTOK.md`
 - `clients/dm-optic/onboarding/VISIT-FALLBACKS.md`
 - `clients/dm-optic/onboarding/VOICE-NOTE-MARDI-06-10.md`
+- `clients/dm-optic/onboarding/intake-questionnaire.md`
+- `clients/dm-optic/onboarding/post-deposit-email.md`
+- `clients/dm-optic/photoshoot/PHOTOSHOOT-FICHE-1PAGE-2026-10.md`
+- `clients/dm-optic/retainer-rhythm.md`
+- `clients/dm-optic/site/SPEC-PAGES-v1.md`
+- `clients/dm-optic/website/BUILD-KICKOFF.md`
+- `clients/le-cristallin/build-notes.md`
+- `clients/le-cristallin/inspiration.md`
 - `content/README.md`
 - `content/assets/ASSETS.md`
+- `content/pipeline/CONTENT-PIPELINE.md`
+- `content/pipeline/CONTENT-SHORTLIST.md`
+- `content/pipeline/TIKTOK-POST-01-BUG-LOGO.md`
+- `content/pipeline/VIDEO-12-CANDIDAT-BUG-AFFICHAGE.md`
+- `content/pipeline/post01/BEAT-TABLE-v4.md`
 - `content/pipeline/post01/SENTENCE-TIMING-v5d.md`
+- `content/scripts/README.md`
 - `content/scripts/v01-instagram-vs-website.md`
 - `content/scripts/v02-five-website-answers.md`
 - `content/scripts/v03-part2-three-reasons.md`
 - `content/scripts/v04-before-whatsapp.md`
+- `content/scripts/v05-schools.md`
+- `content/strategy/CONTENT-STRATEGY.md`
 - `content/studio/README.md`
+- `content/videos/README.md`
+- `content/videos/v01-instagram-vs-website/STATUS.md`
 - `content/videos/v02-five-website-answers/STATUS.md`
 - `content/videos/v03-part2-three-reasons/STATUS.md`
 - `content/videos/v04-before-whatsapp/STATUS.md`
 - `content/videos/v05-schools/STATUS.md`
+- `design/MOTION.md`
 - `design/README.md`
+- `design/STYLE-TOKENS.md`
+- `design/WORKFLOW.md`
 - `hosting/samples/DEPLOY.md`
 - `hosting/samples/design-research.md`
+- `leads/CONTRADICTIONS.md`
 - `leads/M1-EXTRACTION-REPORT.md`
 - `ops/CHANGELOG-VENDREDI.md`
 - `ops/CHECKPOINT-MARDI-06-10-20H.md`
 - `ops/FIRST-CLIENT-PRE-MORTEM.md`
+- `ops/GIT-STABILITY-NOTE.md`
+- `ops/INFERENCE-ERRORS.md`
+- `ops/LIFECYCLE.md`
+- `ops/LIVRAISONS.md`
+- `ops/ONBOARDING.md`
 - `ops/POST-WEDNESDAY-2026-10.md`
+- `ops/QA-NOTES.md`
+- `ops/TOOL-SCAN.md`
+- `ops/amk-factures-pwa/README.md`
 - `ops/templates/TASK-TEMPLATE-CARROUSEL.md`
 - `ops/templates/TASK-TEMPLATE-SITE-BUILD.md`
 - `ops/templates/TASK-TEMPLATE-UGC-SCRIPT.md`
+- `research/BUILDER-TEST-KING-2026-10.md`
+- `research/Video-Toolchain-Research.md`
+- `research/YouTube-Lessons.md`
+- `sales/AMK-Facebook-Page-Setup.md`
+- `sales/Activity-Log.md`
+- `sales/LISTE-OPTICIENS-2026-10.md`
+- `sales/Monday-Outreach-Pack.md`
+- `sales/OFFRE-VIDEO-LIVRAISON-2026-10.md`
+- `sales/Outreach-AFRIQUE-LABO-v1.md`
+- `sales/Outreach-JEMPO-v1.md`
+- `sales/Outreach-LOpticien-v1.md`
+- `sales/PACK-OPTICIEN-2026-10.md`
+- `sales/RESEARCH-STANDARD.md`
+- `sales/research/2026-W37-techniques.md`
+- `sales/research/2026-W43-techniques.md`
+- `sales/research/Market-Ammunition-2020-2026.md`
+- `sales/social/founding-post-tiktok-ig.md`
+- `sales/social/youtube-shorts-metadata.md`
+- `sales/swipe/README.md`
+- `site/design-research.md`
 
 ## 5 · Archives et artefacts
 
 | Archive | Taille | Fabriquée par | Contenu |
 |---|---|---|---|
-| `amk-factures-pwa-v2.zip` | 86.1 Ko | — | 6 fichier(s), plus récent 2026-10-23 |
-| `amk-factures-pwa.zip` | 85.8 Ko | — | 6 fichier(s), plus récent 2026-10-23 |
-| `dmopticsarl-2026-10-21.zip` | 4.6 Mo | — | 182 fichier(s), plus récent 2026-10-21 |
+| `dmopticsarl-2026-10-21.zip` | 4.6 Mo | `tools/ops/release.sh` | 182 fichier(s), plus récent 2026-10-21 |
 
 ## 6 · Les 20 plus gros fichiers — ce qui pèse dans l'historique
 
@@ -181,4 +267,4 @@ Aucun doublon à l'intérieur d'un même projet.
 
 ---
 
-*Rejouable : `python3 tools/ops/audit_files.py`. Rapport précédent à comparer : 1622 fichiers, 137.4 Mo.*
+*Rejouable : `python3 tools/ops/audit_files.py`. Rapport précédent à comparer : 1623 fichiers, 137.3 Mo.*

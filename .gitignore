@@ -42,7 +42,13 @@ tools/record/node_modules/
 /dmopticsarl*.zip
 # Exception unique et datée, APRÈS la règle d'ignorance (git retient la dernière qui matche) :
 # l'archive du site DM telle qu'elle a été construite le 21/10, avec sa date dans le nom.
+# ELLE ATTEND SA RELEASE (ops/LIVRAISONS.md) : le jour où elle y entre, supprimer cette ligne —
+# sinon le zip daté du jour revient par la même porte.
 !/dmopticsarl-2026-10-21.zip
+# Le livrable de l'outil de factures se refait à l'identique par `bash tools/ops/pack_factures.sh`
+# (digest de contenu vérifié dans ops/LIVRAISONS.md). Il sort de l'arbre le 24/10 et n'y rentre plus :
+# le script écrit dans /tmp, et cette règle est le garde-fou s'il écrit ailleurs un jour.
+/amk-factures-pwa*.zip
 
 # brag : dossiers de travail et rendus (produits par la chaîne, hors dépôt — voir tools/brag/)
 brag-output*/

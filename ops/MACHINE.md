@@ -374,9 +374,28 @@ sans ambiguïté ; le clone reste petit.
 
 **Le coût.** 10 minutes par livraison, une fois, avec `gh release create`.
 
-**Le premier pas.** Fait à moitié ce soir : l'archive existante est renommée `dmopticsarl-2026-10-21.zip`
-pour porter sa date, et `/dmopticsarl*.zip` est ignoré pour que le zip du jour n'entre plus. La prochaine
-livraison part en release.
+**Le premier pas — fait le 24/10 au soir, en deux temps, et le second vaut mieux que le premier.**
+
+1. **`tools/ops/release.sh`** publie un livrable et ne le déclare publié qu'après un **aller-retour réel** :
+   `gh release create`, puis retéléchargement de l'asset et comparaison du sha256 et de la taille. Une
+   publication non vérifiée n'est pas une publication. Il refuse aussi de commencer si
+   `uploads.github.com` (l'hôte qui reçoit le fichier, distinct d'`api.github.com` qui crée la release)
+   n'est pas joignable — le `EOF` de `gh`, sans cette garde, ne dit rien.
+2. **`tools/ops/pack_factures.sh`** : le livrable de l'outil de factures (88 Ko) **se refait à
+   l'identique** depuis `ops/amk-factures-pwa/`, qui reste versionné. Il est donc sorti de l'arbre — non
+   pas publié puis supprimé, mais jamais eu besoin d'être là. L'empreinte de contenu le prouve :
+   `5902f1f5…ecf6` avant et après, et le script **échoue** si la source bouge d'un octet (testé).
+
+**Mesuré, sans se raconter d'histoire** : le livrable retiré pèse **88 Ko**, soit 0,06 % d'un arbre de
+144 Mo. Ce n'est pas une optimisation de poids — le gros du poids est dans la vidéo et les photos du
+catalogue, et ① le plafonne déjà. Le gain de ② est **structurel** : un livrable n'entre plus dans
+l'arbre, et chaque livraison devient datée, empreintée et retrouvable sans ambiguïté. L'archive du
+site (4,6 Mo) attend sa Release : elle n'est pas reproductible (182 entrées contre 251 aujourd'hui), donc
+elle reste dans l'arbre tant qu'elle n'est pas publiée — on ne remplace pas un fichier par une promesse.
+
+**Ce qui bloque, nommé** : depuis l'environnement de session du 24/10, `uploads.github.com` est
+injoignable alors qu'`api.github.com` répond. La commande est prête, le commentaire de version est écrit,
+le registre `ops/LIVRAISONS.md` dit quoi lancer. Sur une machine ordinaire, une ligne et c'est fait.
 
 ### ③ Les médias par empreinte, pas par octets
 
