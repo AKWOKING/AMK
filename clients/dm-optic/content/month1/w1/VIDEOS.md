@@ -1,8 +1,12 @@
 # Où sont les vidéos — état au 22/10/2026
 
 ```
-Question de King : « je ne trouve pas ugc-03.mp4 sur github » · « where is post 1 ?? »
-Réponse : ils y sont maintenant, dans ce dossier. Chemins exacts au §1.
+24/10/2026 · LES MASTERS NE SONT PLUS DANS LE DÉPÔT
+King : « je l'ai déjà dans mon téléphone, et maintenant ça existe aussi sur Facebook et TikTok. »
+Les cinq vidéos de ce dossier et leurs couvertures sont publiées, copies chez King, et sorties
+du suivi git. Le nom du fichier reste la référence ; le fichier, lui, vit hors du dépôt.
+Ce qui reste ici : les storyboards (.json), les .srt, les plans de publication, les commandes de
+remontage — c'est-à-dire de quoi refaire la vidéo, pas la vidéo.
 ```
 
 ---

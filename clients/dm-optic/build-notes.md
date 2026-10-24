@@ -2185,3 +2185,12 @@ Les builds suivants échouent en une seconde sans produire de version : commande
 `npx wrangler deploy`, qui attend une confirmation avant d'installer wrangler. À remplacer par
 `npx --yes wrangler@4.152.0 deploy` — détail et relevé minute par minute dans
 `launch/DEPLOIEMENT-CLOUDFLARE-2026-10-22.md` §6.
+
+## 24/10/2026 — les masters vidéo sortent du dépôt
+
+Les cinq vidéos du mois 1 (`tiktok-01-v2`, `ugc-03`, `spot-02`, `spot-03`, `etapes-01`) et leurs
+couvertures sont publiées, présentes sur TikTok et Facebook, et King en garde les fichiers sur son
+téléphone. Elles sortent du suivi git à sa demande. Ce qui reste dans le dossier : storyboards,
+sous-titres, plans de publication et commandes de remontage. Rien n'est détruit — l'historique git
+les porte encore — et le `.gitignore` explique les deux décisions successives (22/10 puis 24/10),
+pour que la question ne se rouvre pas une troisième fois sans le contexte.

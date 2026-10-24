@@ -5,6 +5,7 @@ Visuel   etapes-01.mp4 · 31,0 s · 1080×1920 · 11,6 Mo · voix incluse
 Cover    etapes-01-cover.jpg · 1080×1920
 Accord   « Je trouve ça pas mal… c'est assez simple et compréhensible » (WhatsApp, 22/10, 09:59)
 Statut   accord implicite, sans réserve → on publie, en le disant au client dans la même heure
+Fichier  publié sur TikTok + Facebook le 21–22/10 · sorti du dépôt le 24/10 (copie chez King)
 ```
 
 ---
