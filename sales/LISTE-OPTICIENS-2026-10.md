@@ -157,7 +157,7 @@ Ce que les deux captures du 24/10 ont changé :
 > Quelqu'un qui clique dessus aujourd'hui ne sait plus si vous êtes encore ouvert.
 > Vous l'avez laissé tomber exprès, ou personne ne vous a prévenu ?
 
-**Relance d'Original Optique — jeudi 26/10 seulement, si toujours rien :**
+**Relance d'Original Optique — lundi 26/10 seulement, si toujours rien :**
 
 > Bonjour, sur votre compte, deux choses se contredisent : la fiche affiche « ouvert » et le message
 > automatique répond « nous ne sommes pas disponibles ».
