@@ -8,10 +8,15 @@
 `_uniqueness-registry.md` (registre d'unicité, cité 13×, il sert au design de DM) et
 `_mockups/` (bibliothèque de maquettes lue par `tools/outreach/mockup.py`).
 
-**Labiomed n'a pas de dossier dans `clients/`** — il existe comme aperçu
+**Labiomed n'avait pas de dossier dans `clients/`** — il existait comme aperçu
 (`hosting/previews/labiomed/`), fiche de lead (`leads/records/labiomed-deido.md`), maquette
 (`clients/_mockups/labs/labiomed.jpg`) et réponse envoyée (`sales/Reply-LABIOMED-2026-09-19.md`).
 Rien à retirer, rien à garder de plus : le nom était déjà couvert ailleurs.
+
+> **Ajout du 24/10 (soir)** — King redemande « keep DM, labiomed and cristallin ». Pour qu'une session
+> future ne cherche pas un dossier absent, `clients/labiomed/dossier.md` existe maintenant : c'est un
+> **point d'entrée** (identité, ce qui existe et où, état du fil daté), **pas une source** — l'état
+> vivant reste `leads/records/labiomed-deido.md`, et rien n'y est recopié.
 
 ## Ce qui a été retiré — 14 dossiers, 83 fichiers, 31,0 Mo
 
