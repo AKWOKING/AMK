@@ -144,7 +144,7 @@ Ce que les deux captures du 24/10 ont changé :
 
 | # | Prospect | Statut au 24/10 | Motif |
 |---|---|---|---|
-| ① | Fashion Vision | **ne pas réécrire** | **déjà contacté le 24/09** (deux coches, jamais ouvert). Relance possible à J+30 avec le gabarit de rupture, pas une « nouvelle ouverture » |
+| ① | Fashion Vision | **parqué, aucune relance** | message du 24/09 **livré, jamais ouvert** → règle du 24/09 (`MESSAGES-2026-09-23-PERSUASION` §4) : on ne relance pas ce qui n'a jamais été ouvert. Le fil ne rouvre que s'ils écrivent |
 | ② | Original Optique | **relance J+2 (26/10)** | message du 24/10 envoyé 11:52 → **réponse automatique** (« pas disponibles ») alors que la fiche dit « Open until 2:00 PM ». C'est une fuite vue à l'écran, pas une théorie |
 | ③ | Optix | **part aujourd'hui** | site en 404 : l'exception écrite dans la règle de King (site cassé = on demande pourquoi il a été abandonné) |
 | ④ | SOS Vision | **parqué** | Facebook actif, ni IG ni site : c'est le profil « les réseaux suffisent » — le groupe qu'on **mesure**, pas celui sur qui on mise |
@@ -275,32 +275,30 @@ de service marketing, aucun ne publie.
 | **Sparks · Shine · Maison Optique · La Cerisaie · Lynx Vision · DIEC · C2T · La Grâce · Etienno · Rond-Point · SAFY · BZK · Shekina · Sony** | ont un site, ou une page tenue |
 | **Cabinet Dentaire Azur · Cabinet Dentaire du Palais · Clinique Kerthan · Clinique Ndassa** | **réserve** : rien trouvé en ligne, mais informations contradictoires (Azur : 413 rue Gouverneur Carras *et* 1.066 rue Clemenceau ; Kerthan et Ndassa : un seul annuaire, pas d'adresse vérifiable) |
 
-### 7.4 · Les cinq messages — **réécrits le 24/10**
+### 7.4 · Les cinq messages — **version finale du 24/10**
 
-> Les versions du 23/10 étaient des constats : elles demandaient au docteur de faire le travail de
-> relier « pas de site » à « patients perdus ». Diagnostic et sources : **`sales/OUTREACH-REECRITURE-2026-10-24.md`**.
-
-Format : **fait vérifiable (ligne 1) → ce que fait le patient (ligne 2) → une question fermée (ligne 3)**.
-35 à 55 mots. Aucune signature, aucun lien, aucun prix.
+> Structure : **fait daté → dédouanement + cause → le patient → une question fermée** (le motif du
+> `knowledge/OUTREACH-MESSAGING-2026-10-22.md`, resserré à 3 phrases). Le dédouanement est ce qui
+> empêche le message d'être lu comme un reproche. Détail et sources : `sales/OUTREACH-REECRITURE-2026-10-24.md`.
 
 **⑥ Bouda Seidou — 677 76 03 49**
-> Bonjour Docteur, votre cabinet apparaît sur quatre annuaires différents, avec quatre numéros et deux adresses.
-> Un patient qui cherche un dentiste à Bonanjo tombe sur une de ces pages, appelle un numéro que vous n'utilisez peut-être plus, et raccroche.
+> Bonjour Docteur, ce matin, votre cabinet apparaît sur quatre annuaires, avec quatre numéros et deux adresses.
+> Ce n'est pas votre travail qui est en cause, c'est cette fiche : un patient qui cherche un dentiste à Bonanjo appelle un numéro que vous n'utilisez peut-être plus, et raccroche.
 > Je vous montre ce qu'il voit ?
 
 **⑦ Le Sourire — 698 00 78 08**
-> Bonjour Docteur, je suis tombé sur l'annuaire de l'association des chirurgiens-dentistes où vous êtes secrétaire adjointe — et c'est, avec les Pages Jaunes, tout ce qui existe au nom de votre cabinet.
-> Un patient qui cherche un dentiste à Bali ne vous trouve pas : il trouve les cabinets qui ont une page, et il appelle l'un d'eux.
+> Bonjour Docteur, je n'ai trouvé votre cabinet qu'à deux endroits : l'annuaire de l'association des chirurgiens-dentistes, et les Pages Jaunes.
+> Rien à vous, donc — et un patient qui cherche un dentiste à Bali appelle celui qui a une page.
 > Je vous montre ce qu'il voit ?
 
 **⑧ IVY — 697 945 251**
 > Bonjour Docteur, sur DoualaTour, votre cabinet de la rue Ivy est classé « ORL et dentiste », avec deux numéros et aucune page à lui.
-> Un patient qui cherche un dentiste lit « ORL » et passe au suivant — il ne saura jamais que c'est vous qu'il cherchait.
+> Le classement n'est pas de votre fait, mais un patient qui cherche un dentiste lit « ORL » et passe au suivant.
 > Je vous envoie la fiche telle qu'il la lit ?
 
 **⑨ COMED — 699 915 652**
-> Bonjour Docteur, le COMED soigne à Bonapriso depuis 1993, et tout ce qu'un patient trouve en ligne, c'est une ligne d'annuaire : un numéro fixe, pas d'horaires.
-> Un patient qui cherche un ophtalmologue un samedi ne peut pas savoir que vous êtes ouvert — il appelle celui qui l'affiche.
+> Bonjour Docteur, le COMED soigne à Bonapriso depuis 1993, et en ligne il n'y a qu'une ligne d'annuaire : un numéro fixe, sans horaires.
+> Votre réputation n'est pas en cause, c'est la page qui la porte qui manque — un patient qui cherche un ophtalmologue un samedi appelle celui qui affiche ses horaires.
 > Je vous montre ce qu'il voit ?
 
 **⑩ CMO Jolinom — 677 466 425**

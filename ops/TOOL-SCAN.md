@@ -692,3 +692,25 @@ modèle opaque ne peut pas offrir sur ces photos.
 ## 23/10 — **design-motion-principles** (kylezantos, MIT) — revérifié
 
 - Pin inchangé (`4a9ca87`), réinstallation rejouée : `OK`. Aucune action.
+
+## 24/10 — **graphify** (Graphify-Labs, Apache-2.0) — installé, testé, branché
+
+- **(a) Ce que c'est :** un skill/CLI qui transforme un dépôt en **graphe de connaissances** interrogeable
+  (`graph.json` + `graph.html` + `GRAPH_REPORT.md`) : AST tree-sitter pour le code (~40 langages),
+  structure des documents (titres, liens entre fichiers), requêtes `query` / `path` / `explain`.
+- **(b) Use case AMK nommé :** **trouver la règle avant d'écrire.** Le 24/10, deux documents existants
+  n'ont pas été lus avant une réécriture complète (voir PRE-FLIGHT §0h). Le graphe rend cette recherche
+  mécanique : `bash tools/graphify/ask.sh "message prospect clinique"` → 6 documents classés, avec
+  numéros de ligne, en 0,3 s.
+- **(c) Coût :** 0 FCFA, 0 clé d'API, 0 donnée sortante. PyPI `graphifyy==0.9.95` dans un venv jetable
+  (`/tmp`), épinglé, amont `92741d1` du 23/10.
+- **(d) Effort + verdict :** 1 h 30 → **pursue**. Mesuré sur le dépôt : **734 documents, 10 208 nœuds
+  (7 594 titres), 11 323 arêtes, ~10 s**. Ce qui a été construit en plus de l'amont :
+  `build_docs_graph.py` (l'extracteur Markdown déterministe n'est **pas** branché sur la CLI headless —
+  `GRAPHIFY_BACKEND=none` écarte tous les non-code ; le script le rattrape) et `ask.sh`/`find.py`.
+- **(e) Limites dites :** sans LLM on extrait la **structure**, pas le sens — une arête `contains` dit
+  « ce titre est dans ce fichier », jamais « ce paragraphe parle de X ». `graph.json` pèse 7,4 Mo :
+  `graphify-out/` est dans `.gitignore` et se reconstruit en 10 s.
+- **(f) Décision du 13/10 inversée, et pourquoi c'est légitime :** son prémisse (« un backend LLM est
+  requis ») ne vaut que pour l'extraction **sémantique**. Les deux déclencheurs de réévaluation écrits
+  au 13/10 se sont produits : dépôt ≫ 150 fichiers, et **2 incidents « fichier introuvable » le 24/10**.

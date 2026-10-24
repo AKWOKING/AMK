@@ -253,17 +253,20 @@ trouvé que des annuaires »). Un état ne déclenche rien. Le docteur, lui, a d
 salle d'attente : il lit six mots et il efface. **Il faut décrire un patient en train de se perdre,
 pas un site en train de manquer.**
 
-**La structure obligatoire, toute première touche froide :**
+**La structure obligatoire, toute première touche froide — quatre temps, pas trois** (le motif du
+`knowledge/OUTREACH-MESSAGING-2026-10-22.md`, écrit par King, resserré) :
 
-1. **Le fait** — vrai sur lui, vérifiable en 10 secondes, 12 mots maximum, un chiffre ou un nom propre.
-   Jamais un adjectif. (« quatre annuaires, quatre numéros, deux adresses »)
-2. **Le patient** — ce qu'un patient **fait** à cause de ce fait, **au présent**, en une scène.
+1. **Le fait daté** — vrai sur lui, vérifiable en 10 secondes, 12 mots maximum, un chiffre ou un nom
+   propre. Jamais un adjectif. (« ce matin, votre cabinet apparaît sur quatre annuaires »)
+2. **Le dédouanement + la cause** — « ce n'est pas votre travail, c'est X ». **C'est le temps que
+   j'avais oublié le 24/10**, et c'est lui qui empêche le message d'être lu comme un reproche.
+3. **Le patient** — ce qu'un patient **fait** à cause de ça, **au présent**, en une scène.
    (« appelle un numéro que vous n'utilisez peut-être plus, et raccroche »)
-3. **La question** — une seule, fermée, à laquelle **un mot suffit**. Aucun rendez-vous demandé,
-   aucun lien, aucun prix.
+4. **La question** — une seule, fermée, à laquelle **un mot suffit**. Ni rendez-vous, ni lien, ni prix.
 
-**Longueur : 35 à 55 mots.** Au-delà, ça se lit comme un rapport d'incident — et un rapport
-d'incident ne se répond pas, il se classe.
+**Longueur : 35 à 55 mots, trois phrases.** Au-delà, ça se lit comme un rapport d'incident — et un
+rapport d'incident ne se répond pas, il se classe. La règle du 02/10 (« laissez l'IA et parlons
+normalement ») n'a jamais été levée : le dédouanement se dit dans une clause, pas dans un paragraphe.
 
 **Les six premiers mots portent tout.** WhatsApp n'affiche que deux lignes dans la notification : si
 elles ne contiennent ni son nom, ni son quartier, ni un fait qui ne peut concerner que lui, le message
@@ -280,6 +283,16 @@ est mort avant d'être lu.
 | signature, lien, prix, puces, emojis | signe de message envoyé en série (§1, ruling 02/10) |
 | un chiffre inventé sur **son** activité (patients perdus, manque à gagner) | on n'a ni son volume, ni son panier : une fuite se décrit, ne se chiffre pas (`DETECTION-FUITES` §2) |
 
-**Relance.** Une seule, à J+7, avec le **gabarit de rupture** (« je clos le sujet ») — c'est la touche
-au meilleur taux de réponse de toute la séquence. Jamais deux. Une réponse automatique **n'est pas une
-réponse** : le compteur de fenêtre (§7) ne démarre qu'à une réponse humaine.
+**Relance — et d'abord son droit d'exister.** Une seule, à J+7, avec le **gabarit de rupture**
+(« je clos le sujet »). **Mais jamais sur un message livré et non ouvert** : décision King du 24/09
+(`MESSAGES-2026-09-23-PERSUASION.md` §4 — « ils n'ont ouvert aucun de mes messages, c'est un signe clair
+qu'ils ne sont pas intéressés »). Coches grises = `parked`, raison datée ; le fil ne rouvre que si le
+cabinet écrit. Deux coches bleues sans réponse = la seule situation où la rupture est légitime. Une
+réponse automatique **n'est pas une réponse** : le compteur de fenêtre (§7) ne démarre qu'à une réponse
+humaine.
+
+**Ce que le dépôt avait déjà écrit, et qu'il faut lire avant (§0c du PRE-FLIGHT, ligne 3) :**
+`knowledge/OUTREACH-MESSAGING-2026-10-22.md` — le motif en quatre temps, le dédouanement, la sortie
+sans friction (« ça prend 2 minutes, et vous pouvez le faire sans moi »), et la règle **« on fait le
+test avant d'écrire »**. Trouver ces documents ne doit plus dépendre de la mémoire :
+`bash tools/graphify/ask.sh "message prospect clinique"` (voir PRE-FLIGHT §0g).

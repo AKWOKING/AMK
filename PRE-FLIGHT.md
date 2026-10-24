@@ -179,9 +179,45 @@ Quand une règle change ou qu'un ruling est donné, cette table dit quels fichie
 | **Gabarit W43 = porte de tout contenu client (ruling King 21/10, « implement »)** | `sales/research/2026-W43-techniques.md` **§12 + §12b** (la règle et le gabarit : 5 beats · 7 interdits · 6 cases) · `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` (règle debout) · `clients/<client>/content-plan-*.md` et `posting-calendar*.md` (porte de chaque pièce) · `clients/<client>/content/**` (chaque script coche les 6 cases) · `content/scripts/README.md` + `CONTENT-LESSONS` §10/§12 (les portes maison restent supérieures) |
 | **Clôture debout : inventaire outils en ouverture + propositions/audit en fin de chaque réponse (ruling King 20/10, §1f⑨)** | `PRE-FLIGHT.md` §0 + §1f⑨ (la règle) · toute réponse de l'orchestrateur (en-tête enrichi + bloc final) · `ops/TOOL-SCAN.md` (l'inventaire consulté) · `clients/<client>/build-notes.md` (audits qui alimentent le bloc) |
 
-Si cette table ne suffit plus à suivre la propagation entre fichiers, c'est le déclencheur pour réévaluer un outil de graphe de connaissances (voir la décision Graphify dans `sales/Activity-Log.md`).
+Cette table ne suffit plus : **elle a été réévaluée le 24/10 et doublée par le graphe du dépôt** (§0h). Le déclencheur écrit le 13/10 s'est produit deux fois en une journée.
 
 ---
+
+## 0h · Le graphe avant l'écriture — finding the rule stopped being a memory exercise (ruling King 24/10)
+
+> *King, 24/10 : « I've told you several times to always go through the repo before starting anything.
+> You see `DECLINAISON-9-DECLENCHEURS`, §1② — there are so many documents and lessons you could've
+> learned from and avoid mistakes. »*
+
+**Ce qui s'est passé le 24/10.** Une réécriture complète des messages d'approche a été livrée sans deux
+documents du dépôt : `knowledge/OUTREACH-MESSAGING-2026-10-22.md` (table §0c, **ligne 3** : « à lire
+avant tout message à un prospect ») et `sales/RESEARCH-STANDARD.md` §10 (qui avait **déjà réfuté** une
+statistique citée comme valide). La règle §0c existait. Le routage existait. **La recherche, elle, se
+faisait de mémoire.**
+
+**Le graphe remplace la mémoire.** `tools/graphify/` (installé 24/10, local, 0 clé d'API, 0 €) :
+734 documents, 10 208 nœuds, 7 594 titres, 11 323 arêtes, construits en ~10 s.
+
+**Obligatoire avant d'écrire** un message, un document de vente, un script, une règle ou une page :
+
+```bash
+bash tools/graphify/install.sh                      # une fois par session
+python3 tools/graphify/build_docs_graph.py          # le graphe (code + documents)
+bash tools/graphify/ask.sh "message prospect clinique" --top 8
+```
+
+**La règle de compte rendu, dans l'en-tête pré-vol :** citer les fichiers **lus** et ceux qui ont été
+**listés mais non lus**, par leur chemin. « Graphe interrogé » sans nom de fichier ne prouve rien.
+
+| Ce que le graphe a trouvé le 24/10 (en 2 commandes) | Ce que j'avais écrit sans lui |
+|---|---|
+| `knowledge/OUTREACH-MESSAGING-2026-10-22.md` §3 — le **dédouanement** (« ce n'est pas votre qualité, c'est votre fiche ») et la **sortie sans friction** | une structure en 3 temps qui reprochait au gérant ce qu'il n'avait pas fait |
+| `sales/RESEARCH-STANDARD.md` §10 — cadrage de perte **rejeté** (O'Keefe & Jensen, 165 études, N = 50 780, r = .016) | « +19 % de cadrage de perte », tiré d'un blog |
+| `sales/DECLINAISON-9-DECLENCHEURS` §1② — l'attaque déguisée et le cas INSES | trois messages qui commençaient par un constat-reproche |
+
+**Interaction avec `research/` et les sources externes :** le graphe dit **où** est la règle ; il ne dit
+pas si elle est juste. Le tier de la source (§1g) continue de s'appliquer — et un chiffre trouvé sur le
+web ne remplace jamais une réfutation déjà écrite dans `RESEARCH-STANDARD.md`.
 
 ## 1 · Routing table (King's fields → the actual files in this repo)
 

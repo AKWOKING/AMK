@@ -63,3 +63,7 @@ CLOUDFLARE_*
 # Le fichier de workflow est désormais versionné dans `main` (posé par King le 23/10, commit 591a0ce)
 # et hérité par chaque nouvelle branche : plus besoin de l'ignorer. Il reste impossible à MODIFIER
 # depuis l'outil (GitHub App sans permission `workflows`) — toute retouche passe par King.
+
+# Graphify (24/10/2026) — artefact GÉNÉRÉ, jamais versionné : 7,4 Mo de graph.json + 12 Mo de cache.
+# Il se reconstruit en 10 secondes : bash tools/graphify/install.sh && python3 tools/graphify/build_docs_graph.py
+graphify-out/
