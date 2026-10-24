@@ -123,6 +123,10 @@ dépôt qui reste utilisable.
 | **Vie** | installateur épinglé sous `tools/<nom>/install.sh` + estampes `provision.sh` + nœud dans `ops/REPO-MAP.md` | `provision.sh --list` dit « installé », le graphe le nomme | 24 outils épinglés, 1 installateur par outil |
 | **Sortie** | retrait **daté**, note dans `ops/`, documents qui le citaient mis à jour, empreinte gardée si c'était un design | la note existe et `grep` ne trouve plus d'appel vivant | `clients/` (15 dossiers, 155 fichiers) et `tools/video/anonymise.py`, 24/10 |
 
+**Un skill s'appelle, il ne se cite pas** : `bash tools/superpowers/use.sh <skill>` affiche le skill et
+laisse une trace datée. Sans cette ligne, « je m'en suis servi » est exactement le genre d'affirmation que
+la machine a été construite pour ne pas croire.
+
 **La loi de l'actif** : un actif sans date est un actif qu'on ne saura pas périmer. Un document mort qui
 reste cité est plus dangereux qu'un document absent — il a l'air vivant.
 

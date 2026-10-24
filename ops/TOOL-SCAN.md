@@ -736,6 +736,13 @@ modèle opaque ne peut pas offrir sur ces photos.
   écrit dans le contexte au démarrage est exactement ce que la convention `marketingskills` refuse
   (aucun hook, aucun sudo, aucun script de cycle de vie). `--with-hook` existe pour l'activer un jour,
   sciemment, avec sauvegarde de `settings.json` — il n'a pas été lancé.
+- **(f bis) Usage tracé — 24/10, 14:20.** Le compteur `machine.sh --usage` a nommé superpowers dans la
+  ligne *« provisionnés mais muets »* : installé le matin, appelé par rien. Plutôt que de le laisser
+  pourrir ou de le sortir, il est **appelé** : `bash tools/superpowers/use.sh verification-before-completion`
+  affiche le skill et écrit une ligne datée dans `~/.amk-provisioned/usage.log`. Le skill a servi le jour
+  même — il exige une preuve fraîche avant toute affirmation de réussite, ce qui est exactement la
+  vérification de clôture du lot CI. **Verdict maintenu : pursue**, et désormais mesurable : sans trace,
+  un outil est un candidat à sortir (invariant 6) ; avec trace, il reste.
 - **(f) Limite dite :** ces skills décrivent un **processus**, pas notre métier. Ils ne remplacent aucune
   règle du dépôt (structure en quatre temps, §1g, registre d'unicité) ; ils disent comment travailler,
   pas quoi écrire. Le nœud vit dans le graphe sous `tools/superpowers/` — vérifié par
