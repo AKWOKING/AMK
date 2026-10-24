@@ -310,6 +310,15 @@ def doc_subject(n: dict, meta: dict) -> str:
     return "—"
 
 
+def clip(text: str, width: int) -> str:
+    """Tronque sur un mot entier — une carte ne coupe pas « demande K » au milieu."""
+    text = " ".join(text.split())
+    if len(text) <= width:
+        return text
+    cut = text[: width + 1].rsplit(" ", 1)[0].rstrip(" ,;:·—-")
+    return cut + " …"
+
+
 def write_communities_section(A, g, by_id, comm, indeg) -> None:
     if not comm:
         return
@@ -536,7 +545,7 @@ def write_map(g: dict, nodes_meta: dict, stale: set[str], stats: dict, comm: dic
                 for line in rd.read_text(encoding="utf-8", errors="ignore").splitlines():
                     t = line.strip().lstrip("#").strip().strip("*").strip()
                     if len(t) > 5 and not t.startswith(("```", "|", ">")):
-                        desc = t[:80]
+                        desc = clip(t, 96)
                         break
             A(f"| `{d.name}/` | {' '.join(entry_bits)} | {content} | {desc} |")
         A("")
@@ -581,12 +590,19 @@ def write_map(g: dict, nodes_meta: dict, stale: set[str], stats: dict, comm: dic
             status = "—"
             st = d / "STATUS.md"
             if st.exists():
-                lines = [l.strip().lstrip(">-#|* ").strip().strip("*")
-                         for l in st.read_text(encoding="utf-8", errors="ignore").splitlines()]
-                lines = [l for l in lines if len(l) > 4 and not l.startswith("```")]
-                keyed = [l for l in lines if re.match(r"(statut|status|état|etat)\b", l, re.I)]
+                raw = st.read_text(encoding="utf-8", errors="ignore").splitlines()
+                lines = []
+                for l in raw:
+                    t = re.sub(r"^[\s>#\-|]*", "", l)
+                    t = t.replace("**", "").replace("__", "").strip()
+                    if len(t) > 4 and not t.startswith("```"):
+                        lines.append(t)
+                KEY = re.compile(r"(?:statut|status|état|etat)(?:\s+[^:—–-]{0,24})?\s*[:—–-]\s*", re.I)
+                keyed = [l for l in lines if KEY.search(l)]
+                # une ligne « Statut : … » prime ; sinon la 2e ligne, qui porte le fait daté
                 pick = keyed[0] if keyed else (lines[1] if len(lines) > 1 else (lines[0] if lines else "—"))
-                status = re.sub(r"\s*[·|]\s*$", "", pick)[:80]
+                pick = KEY.split(pick, maxsplit=1)[-1] if KEY.search(pick) else pick
+                status = clip(re.sub(r"\s*[·|]\s*$", "", pick), 90)
             A(f"| `{d.name}` | {len(files)} | "
               f"{'oui (' + scripts[0].name + ')' if scripts else '—'} | "
               f"{str(len(mp4)) + ' fichier(s)' if mp4 else '—'} | {status} |")

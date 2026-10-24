@@ -714,3 +714,29 @@ modèle opaque ne peut pas offrir sur ces photos.
 - **(f) Décision du 13/10 inversée, et pourquoi c'est légitime :** son prémisse (« un backend LLM est
   requis ») ne vaut que pour l'extraction **sémantique**. Les deux déclencheurs de réévaluation écrits
   au 13/10 se sont produits : dépôt ≫ 150 fichiers, et **2 incidents « fichier introuvable » le 24/10**.
+
+## 24/10 — **superpowers** (obra, MIT) — installé, 15 skills branchés, sans les hooks
+
+- **(a) Problème :** on écrit des plans que personne ne relit, et une page se corrige avant d'avoir
+  compris ce qui clochait. Le dépôt a une règle de méthode (`PRE-FLIGHT`) mais **aucune procédure
+  exécutable** pour l'appliquer : chaque session réinvente l'ordre spec → plan → exécution → revue.
+- **(b) Use case AMK nommé :** `brainstorming` (ne rien construire avant d'avoir écrit ce que King
+  veut vraiment), `writing-plans` (un plan qu'un exécutant peut suivre sans nous), `systematic-debugging`
+  (l'incident du 24/10 : deux documents réécrits sans avoir été lus) et `verification-before-completion`
+  (le contrôle « zéro se vérifie »). Ruling King du 24/10 : *« install … don't forget to add it as a
+  node and update the graph »*.
+- **(c) Coût :** 0 FCFA, 0 clé, **0 réseau à l'installation** — les 15 skills sont vendus dans le dépôt
+  (`tools/superpowers/skills/`, 668 Ko) et le script ne fait que copier. Amont épinglé
+  `2ce8aa15d05bd57213e6f746f953aafb7ded7a8b` (branche `main`, 21/10/2026, version 7.0.1).
+- **(d) Effort + verdict :** 45 min → **pursue**. `bash tools/superpowers/install.sh` → 15 skills dans
+  `~/.claude/skills` + miroir en lien symbolique `~/.agents/skills` ; `--check` affiche 15/15.
+- **(e) Ce qui n'est PAS installé, et pourquoi :** le dépôt amont livre aussi des **hooks** de session
+  (`hooks/session-start`, injecté par `.claude-plugin`), des `scripts/` de packaging et un `index.js`.
+  **Rien de tout cela n'est actif** : nos harnais lisent les skills par leur description, et un hook qui
+  écrit dans le contexte au démarrage est exactement ce que la convention `marketingskills` refuse
+  (aucun hook, aucun sudo, aucun script de cycle de vie). `--with-hook` existe pour l'activer un jour,
+  sciemment, avec sauvegarde de `settings.json` — il n'a pas été lancé.
+- **(f) Limite dite :** ces skills décrivent un **processus**, pas notre métier. Ils ne remplacent aucune
+  règle du dépôt (structure en quatre temps, §1g, registre d'unicité) ; ils disent comment travailler,
+  pas quoi écrire. Le nœud vit dans le graphe sous `tools/superpowers/` — vérifié par
+  `build_full_graph.py` le 24/10.
