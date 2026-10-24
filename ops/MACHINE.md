@@ -538,20 +538,36 @@ lignes (branche, commits depuis `main`, âge de la carte, orphelins à traiter) 
 Mesuré pour de vrai en effaçant le venv et les estampes : **12,1 s** (dont 11 s de `pip install graphify`
 épinglé). Contre ~5 min et 4,5 Go avant le 24/10.
 
-**3 · Le cache CI — prêt, non appliqué.** `ops/CI-CACHE.patch` : quatre lignes dans
-`.github/workflows/machine.yml` (`cache: pip` + `cache-dependency-path: tools/graphify/install.sh`),
-vérifiées par `git apply --check` — elles s'appliquent proprement. Le workflow appartient à King : la
-GitHub App n'a pas la permission `workflows`, donc je ne peux pas le pousser moi-même. **Une commande :**
+**3 · La CI — mesurée avant d'être optimisée, et le remède n'est pas celui que je croyais.** Le
+workflow appartient à King : la GitHub App n'a pas la permission `workflows`, donc je fournis
+`ops/CI-CACHE.patch`, vérifié par `git apply --check`. **Une commande :**
 
 ```bash
-git apply ops/CI-CACHE.patch && git commit -am "CI : cache pip" && git push
+git apply ops/CI-CACHE.patch && git commit -am "CI : un run par commit, historique sans blobs, cache pip" && git push
 ```
 
-Le gain attendu, à vérifier après application et non à supposer : la CI fait **34 s** aujourd'hui
-(`run_duration_ms` de `ebc2756`). L'installation de `graphifyy==0.9.95` coûte **11 s** quand on la
-refait à froid — mesuré ici en session froide, pas dans le runner : c'est l'ordre de grandeur que le
-cache supprimerait, pas une mesure du gain. **Si le run suivant ne descend pas sous 30 s, le cache
-n'aura servi à rien et je le dirai.**
+Ce que j'ai mesuré le 24/10 avant de le proposer — et qui contredit ce que j'avais annoncé :
+
+| Levier | Ce que ça coûte vraiment | Gain mesuré |
+|---|---|---|
+| `cache: pip` | `pip download` de **31,8 Mo** : **4,3 s** sans cache, **3,8 s** avec. L'installation elle-même (`pip install`) : 8,6 s sans cache, 8,1 à 9,5 s avec | **≈ 0,5 s** — le cache ne supprime pas le dépaquetage |
+| `filter: blob:none` | le dépôt pèse **848 Mo** ; l'historique sans blobs (691 commits) = **1,3 Mo** ; l'arbre de HEAD = **250 Mo** | **≈ 10 s estimés** (848 → 250 Mo à télécharger) |
+| un seul run par commit | **12 commits sur 25** jouaient deux fois (push + pull_request) | **la moitié des minutes** |
+
+Le run de `838fba8` fait **37 s** (33 s de job). J'avais annoncé « 40 s → 15 s » : c'était une
+extrapolation, pas une mesure. Le cache pip, tel quel, ne tient pas cette promesse. Le vrai poids est
+le **clone** — `fetch-depth: 0` télécharge les 848 Mo d'un dépôt dont 600 Mo d'images mortes — et le
+**doublon d'exécution**. Le patch fait donc les trois : clone partiel (l'historique reste complet, donc
+`merge-base` et la jauge de fusion continuent de fonctionner ; seuls les blobs changent), un push ne
+déclenche plus qu'un run (les branches sont couvertes par `pull_request`, `main` par le push d'après
+fusion), et deux poussées rapprochées s'annulent au lieu de s'empiler.
+
+**Ce que je ne fais pas** : réécrire l'historique pour retirer les 600 Mo d'images mortes
+(`git filter-repo`). Ça marcherait — mais ça change tous les hachages, donc la ligne `MIRROR`, les
+références de ce document et les PR ouvertes. À décider par King, pas par un script.
+
+**Si le run suivant ne descend pas sous 30 s, je le dirai** — et alors le levier suivant sera de
+mettre le venv installé en cache, pas de re-cacher des roues.
 
 **4 · Une panne trouvée en chemin, et corrigée.** Pendant ce tour, `graphify-out/` avait disparu du
 bac : `audit_files.py` a alors annoncé **743 orphelins, 351 à traiter** — et un lecteur pressé en aurait
