@@ -77,7 +77,7 @@
 **Page de démonstration publique :** `hosting/previews/mboacare-demo/index.html` — copie de `content/studio/after.html`, `noindex`, titre préfixé `[DÉMO AMK]`, **audit HTML 0 anomalie** ; ⚠ au passage : `content/studio/after.html` avait **10 anomalies de contraste** (dont un `p` global qui écrasait la couleur du footer) — corrigé à la source, le studio reste donc synchronisé.
 
 ## I · Chaîne vidéo reconstruite (17 Sep, nuit) — capture réelle disponible
-**Déblocage :** `@sparticuz/chromium` (déjà dans `tools/shots/package.json`) **embarque le binaire** → aucun CDN à joindre. Chaîne complète dans `tools/video/` (`install.sh` · `capture.mjs` · `compose.py` · `anonymise.py`), portique `tools/qa/audit_video_motion.py`, recherche d'outillage dans `research/Video-Toolchain-Research.md`.
+**Déblocage :** `@sparticuz/chromium` (déjà dans `tools/shots/package.json`) **embarque le binaire** → aucun CDN à joindre. Chaîne complète dans `tools/video/` (`install.sh` · `capture.mjs` · `compose.py`) — `anonymise.py` retiré le 24/10, portique `tools/qa/audit_video_motion.py`, recherche d'outillage dans `research/Video-Toolchain-Research.md`.
 **Preuves produites (les deux passent le portique — mouvement dans chaque fenêtre de 2 s) :**
 | Fichier | Résumé | Durée |
 |---|---|---|

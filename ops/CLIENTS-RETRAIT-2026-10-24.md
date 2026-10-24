@@ -76,8 +76,10 @@ se comparer après coup à un HTML.
 **Mis à jour en conséquence :** `hosting/previews/README.md` (3 aperçus, gel du Cristallin seul),
 `demos/shots/README.md` (règle + format, plus d'index mort), `hosting/build_previews.py` (son
 `SLUGS` ne contient plus que `cristallin`), `tools/site/fix_details_summary.py` (la ligne
-`bonanjo` retirée), `tools/video/anonymise.py` (sortie par défaut déplacée hors de
-`hosting/previews/demo/`, qui n'existe plus).
+`bonanjo` retirée), `tools/video/anonymise.py` (**supprimé** le 24/10, ruling King « it goes, no
+retargeting » — ses cinq concepts sources avaient déjà quitté le dépôt ; `tools/video/README.md`,
+`content/pipeline/CONTENT-PIPELINE.md` et `research/Video-Toolchain-Research.md` le disent
+désormais daté).
 
 ## Ce que le retrait laisse derrière lui
 

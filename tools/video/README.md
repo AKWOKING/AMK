@@ -35,13 +35,17 @@ python3 tools/video/compose.py --frames /tmp/cap/frames --out clip.mp4 --lang fr
 python3 tools/qa/audit_video_motion.py clip.mp4      # doit afficher : OK
 ```
 
-### Démos publiables (bibliothèque)
-```bash
-python3 tools/video/anonymise.py --all     # 5 concepts → hosting/previews/demo/*.html
-                                           # 0 fuite d'identité + audit HTML 0 anomalie
-```
-Les pages produites sont **fictives** (MboaCare), sans nom réel, sans vrai numéro, `noindex`,
-avec bandeau de démonstration. C'est ce qui rend nos concepts **publiables**.
+### Démos publiables — retiré le 24/10/2026
+`anonymise.py` (5 concepts → `hosting/previews/demo/*.html`) **a été supprimé**, ruling King
+« it goes, no retargeting ». Les concepts qu'il anonymisait (JEMPO, La Béthanie, SJC Sasse,
+COMOBIL, SAHISCOL) avaient déjà quitté le dépôt avec les prospects non clients, et la
+bibliothèque de démos `hosting/previews/demo/` est partie avec eux.
+
+**La règle reste, elle ne dépend pas du script** : aucun nom réel de clinique ou d'école dans un
+contenu public sans autorisation écrite ; sans autorisation, on floute ou on renomme (voir
+`content/lessons/CONTENT-LESSONS.md` et `content/strategy/CONTENT-STRATEGY.md`). Une capture
+destinée à une vidéo se fabrique aujourd'hui à la main, avec l'étiquette de fiction — le travail
+d'anonymisation ne disparaît pas, il n'a plus d'automatisme dédié.
 
 ## Ce qui NE tourne PAS ici (et pourquoi)
 
