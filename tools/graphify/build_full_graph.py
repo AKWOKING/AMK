@@ -748,6 +748,14 @@ def main() -> int:
     if not args.no_map:
         MAP.write_text(write_map(g, meta, stale, stats, comm), encoding="utf-8")
         print(f"[full] carte écrite → {MAP.relative_to(ROOT)}")
+    try:  # trace d'usage : « la carte a été reconstruite » doit être une ligne, pas un souvenir
+        from datetime import datetime as _dt
+        stamp = Path.home() / ".amk-provisioned"
+        stamp.mkdir(parents=True, exist_ok=True)
+        with (stamp / "usage.log").open("a", encoding="utf-8") as f:
+            f.write(f"{_dt.now().isoformat(timespec='seconds')}\tgraphify\tcarte ({len(g['nodes'])} nœuds)\n")
+    except OSError:
+        pass
     return 0
 
 

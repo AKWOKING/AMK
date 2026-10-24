@@ -102,6 +102,7 @@ for t in "${tools[@]}"; do
            | sed -E 's/^[A-Z_]+=?//; s/"//g; s/^ +//' | cut -c1-12)"
     printf '%s  installé  %ss  pin=%s\n' "✅" "$(( $(date +%s) - t0 ))" "${pin:-—}"
     echo "$(date -Iseconds) pin=${pin:-—}" > "$STAMPS/$t.ok"
+    printf '%s\tprovision\t%s installé\n' "$(date -Iseconds)" "$t" >> "$STAMPS/usage.log"
     rm -f "$STAMPS/$t.failed"
     ok=$((ok+1))
   else

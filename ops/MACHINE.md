@@ -171,6 +171,15 @@ Une porte est un **code retour**, pas une impression. Si elle n'a pas été lanc
 | Dépôt | `python3 tools/ops/audit_files.py` | doublons, orphelins, fichiers périmés, caches | la qualité d'un document |
 | Provision | `bash tools/ops/provision.sh --list` | outil absent de la session | la version réellement utilisée |
 | **Règles** | `bash tools/ops/machine.sh --rules` | les 7 portes dures du registre §9 | les 2 règles sans porte, dites en clair |
+| **Usage** | `bash tools/ops/machine.sh --usage` | un outil provisionné qu'aucune trace ne montre appelé | ce qui ne laisse aucune trace : scripts QA lancés à la main, skills lus, recherche web |
+
+**La trace d'usage, et pourquoi elle existe.** Un outil « installé » n'est pas un outil « utilisé » : le
+24/10, la panne notée en §8 disait *24 installateurs, 3 outils appelés*. `--usage` lit un journal hors
+dépôt (`~/.amk-provisioned/usage.log`) que les outils écrivent eux-mêmes — `machine`, `provision`,
+`graphify`, `ask` — et **oppose une trace à chaque phrase « j'ai utilisé l'outil »**. Il ne voit que ce
+qui laisse une trace : un script QA lancé à la main, un skill lu, une recherche web n'y figurent pas, donc
+ils ne sont jamais comptés à la place de King. Sa sortie la plus utile est la ligne *« provisionnés mais
+muets »* : un outil installé que rien n'appelle est un candidat à sortir (invariant 6), pas un acquis.
 
 **Ce qu'aucune porte ne fait ici** : regarder une vidéo, ouvrir un site comme un visiteur, capturer un
 écran. Ce qui doit être vu se fait relire par King, **avant** publication (`AGENTS.md` §5).
@@ -200,7 +209,7 @@ Une porte est un **code retour**, pas une impression. Si elle n'a pas été lanc
 | Arbre périmé | deux chiffres qui se contredisent dans la même réponse | étape 0, toujours, même pour « juste lire » |
 | Mémoire qui remplace le journal | « ils ont répondu » sans ligne dans `Activity-Log` | étape 6 avant toute affirmation sur un prospect |
 | Règle recréée de zéro | un document neuf qui dit ce qu'un ancien disait déjà | étape 2 : `ask.sh` + `REPO-MAP` §3 bis |
-| Outil installé, jamais utilisé | 24 installateurs, 3 outils appelés | `provision.sh --list` + l'étape 4 nomme l'outil |
+| Outil installé, jamais utilisé | 24 installateurs, 3 outils appelés | `machine.sh --usage` : trace datée par outil ; les muets sont nommés |
 | Carte qui se cite elle-même | le graphe change à chaque reconstruction sans qu'un fichier bouge | `REPO-MAP.md` est exclu de son propre index |
 | Session neuve sans skills | l'agent « ne trouve pas » un skill installé la veille | `provision.sh`, au début de chaque session |
 | Handoff qui vieillit | un état de travail de trois jours présenté comme actuel | le cockpit affiche son âge ; au-delà de 3 jours, il est réécrit |

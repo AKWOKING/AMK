@@ -9,6 +9,7 @@ audit, handoff, outils), et il renvoie au document qui tranche. La carte complè
     python3 tools/ops/machine.py --who prix     # qui tranche ce sujet
     python3 tools/ops/machine.py --check        # code 1 si une porte dure est fermée
     python3 tools/ops/machine.py --rules        # les règles debout, chacune avec sa porte
+    python3 tools/ops/machine.py --usage        # quels outils ont laissé une trace (et lesquels sont muets)
 """
 from __future__ import annotations
 
@@ -275,6 +276,75 @@ def merge_gauge() -> dict:
         why = (why + " · " if why else "") + f"{lines} lignes (seuil 3 000)"
     return dict(ok=True, base=base[:7], files=files, lines=lines, added=added, deleted=deleted,
                 commits=commits, due=due, why=why)
+
+
+# ───────────────────────────────────────────────── la trace d'usage des outils
+# Un outil « installé » n'est pas un outil « utilisé ». Le 24/10, la panne notée dans MACHINE.md §8
+# était : 24 installateurs, 3 outils appelés. Ce compteur existe pour que la phrase « j'ai utilisé
+# l'outil » ne soit plus une affirmation mais une ligne horodatée, écrite par l'outil lui-même.
+# Il ne voit QUE ce qui laisse une trace : scripts lancés à la main, skills lus, web → invisibles, donc
+# jamais comptés à la place de King.
+USAGE = STAMPS / "usage.log"
+WRAPPED = ("machine", "provision", "graphify", "ask")
+
+
+def note_usage(tool: str, what: str = "") -> None:
+    """Best-effort : rater une trace ne casse jamais le travail."""
+    try:
+        STAMPS.mkdir(parents=True, exist_ok=True)
+        with USAGE.open("a", encoding="utf-8") as f:
+            f.write(f"{datetime.now().isoformat(timespec='seconds')}\t{tool}\t{what[:80]}\n")
+    except OSError:
+        pass
+
+
+def usage_state() -> dict:
+    counts: dict[str, int] = {}
+    last: dict[str, str] = {}
+    today: set[str] = set()
+    try:
+        lines = USAGE.read_text(encoding="utf-8", errors="ignore").splitlines()
+    except OSError:
+        lines = []
+    stamp_day = date.today().isoformat()
+    for ln in lines:
+        parts = ln.split("\t")
+        if len(parts) < 2:
+            continue
+        when, tool = parts[0], parts[1]
+        counts[tool] = counts.get(tool, 0) + 1
+        last[tool] = when
+        if when.startswith(stamp_day):
+            today.add(tool)
+    return dict(counts=counts, last=last, today=sorted(today), total=len(lines))
+
+
+def print_usage() -> int:
+    u = usage_state()
+    prov = provision_state()
+    tools = sorted(p.parent.name for p in (ROOT / "tools").glob("*/install.sh"))
+    print(f"\n{BOLD}USAGE RÉEL{OFF} — la trace laissée par les outils, pas la mémoire de l'agent")
+    print(f"fichier : {USAGE} · {u['total']} ligne(s)\n")
+    print(f"  {'outil':<26} {'installé':<10} {'vu':>4}  dernière trace")
+    seen_installed = 0
+    for t in tools:
+        inst = "oui" if t in prov["ok"] else ("échec" if t in prov["ko"] else "hors session")
+        n = u["counts"].get(t, 0)
+        if n and t in prov["ok"]:
+            seen_installed += 1
+        print(f"  {t:<26} {inst:<10} {n:>4}  {u['last'].get(t, '—')}")
+    silent = [t for t in tools if t in prov["ok"] and u["counts"].get(t, 0) == 0]
+    outside = [t for t in tools if t not in prov["ok"] and t not in prov["ko"]]
+    print(f"\n  hors installateurs : " + " · ".join(
+        f"{w} {u['counts'].get(w, 0)}" for w in WRAPPED))
+    print(f"\n  {seen_installed}/{len(prov['ok'])} outil(s) provisionné(s) ont laissé une trace · "
+          f"{len(outside)} hors session, donc sans trace possible.")
+    if silent:
+        print(f"  {YEL}⚠{OFF} Provisionnés mais muets : {', '.join(silent)} — un outil installé jamais "
+              "appelé est un candidat à sortir (invariant 6), pas un acquis.")
+    print(f"  {YEL}⚠{OFF} Ce que ce compteur ne voit pas : scripts de tools/qa lancés à la main, skills "
+          "lus, recherche web. Ces ressources ne sont donc jamais comptées à la place de King.")
+    return 0
 
 
 # ───────────────────────────────────────────────── les règles, et leur porte
@@ -545,6 +615,9 @@ def cockpit() -> int:
     trous = [r["id"] for r in rs if r["sev"] == "trou"]
     tag = f"{GRN}✓{OFF}" if not hard_ko else f"{RED}⛔{OFF}"
     note = "" if not hard_ko else " — " + " · ".join(hard_ko)
+    u = usage_state()
+    print(f"  {GRN}✓{OFF}  usage : {len(u['today'])} outil(s) tracé(s) aujourd'hui · "
+          f"{u['total']} trace(s) au total → bash tools/ops/machine.sh --usage")
     print(f"  {tag}  règles : {len(rs)} déclarées · {len(hard_ko)} porte(s) dure(s) fermée(s)"
           f" · {len(trous)} sans porte{note}")
     if handoff_age is not None:
@@ -660,6 +733,7 @@ def check() -> int:
 
 
 def main(argv: list[str]) -> int:
+    note_usage("machine", argv[0] if argv else "cockpit")
     if not argv:
         return cockpit()
     a = argv[0]
@@ -670,6 +744,8 @@ def main(argv: list[str]) -> int:
         return check()
     if a == "--rules":
         return print_rules()
+    if a == "--usage":
+        return print_usage()
     if a == "--merge":
         return merge_card()
     if a == "--who":
