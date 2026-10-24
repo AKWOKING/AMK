@@ -2,7 +2,7 @@
 
 ```text
 Généré par tools/ops/audit_files.py — 2026-10-24
-1934 fichiers · 693.3 Mo · dont 141.3 Mo dans des fichiers > 5 Mo
+1852 fichiers · 662.2 Mo · dont 141.3 Mo dans des fichiers > 5 Mo
 Aucune suppression automatique : les décisions sont listées, pas prises.
 ```
 
@@ -46,41 +46,41 @@ Aucun doublon à l'intérieur d'un même projet.
 
 ## 3 · Médias sans aucune référence par leur nom
 
-249 fichiers, 301.5 Mo. **Piste, pas preuve** : un manifeste, un CSS ou un `JSON` peut les appeler autrement.
+240 fichiers, 297.2 Mo. **Piste, pas preuve** : un manifeste, un CSS ou un `JSON` peut les appeler autrement.
 
 | Dossier | Fichiers | Poids | Exemples |
 |---|---|---|---|
-| `clients/dm-optic/photoshoot/femmes_1.1/` | 34 | 76.4 Mo | PXL_20261016_122104123.jpg, PXL_20261016_122106204.jpg, PXL_20261016_122115786.jpg |
-| `clients/dm-optic/photoshoot/femmes_1.0/` | 31 | 70.2 Mo | PXL_20261016_122347752.jpg, PXL_20261016_122354458.jpg, PXL_20261016_122428455.jpg |
-| `clients/dm-optic/photoshoot/femmes_2.0/` | 16 | 38.8 Mo | PXL_20261016_122735241.jpg, PXL_20261016_122743257.jpg, PXL_20261016_122809925.jpg |
-| `clients/dm-optic/photoshoot/femmes_1.2/` | 12 | 26.0 Mo | PXL_20261016_122955746.jpg, PXL_20261016_123021545.jpg, PXL_20261016_123027305.jpg |
-| `clients/dm-optic/photoshoot/enfants_2/` | 9 | 18.0 Mo | PXL_20261016_121139264.jpg, PXL_20261016_121224164.jpg, PXL_20261016_121316693.jpg |
-| `clients/dm-optic/photoshoot/enfants_3/` | 10 | 17.8 Mo | PXL_20261016_120526089.jpg, PXL_20261016_120556417.jpg, PXL_20261016_120606719.jpg |
-| `clients/dm-optic/photoshoot/hommes/` | 6 | 16.9 Mo | PXL_20261016_125910898.PORTRAIT.jpg, PXL_20261016_125918162.PORTRAIT.jpg, PXL_20261016_125945069.PORTRAIT.jpg |
-| `demos/img/` | 16 | 9.0 Mo | laligne-visage-oblong.jpg, laligne-visage-ovale.jpg, laligne-visage-rond.jpg |
-| `clients/dm-optic/photoshoot/enfants_1/` | 3 | 7.4 Mo | PXL_20261016_121322724.jpg, PXL_20261016_121433707.jpg, PXL_20261016_121632969.jpg |
-| `clients/dm-optic/photoshoot/reference-composition-NE-PAS-PUBLIER/` | 3 | 6.8 Mo | B2-salle-examen.png, C1-mains-qui-ajustent.png, C2-monture-tenue-hauteur.png |
-| `clients/dm-optic/photoshoot/enfants_1.1/` | 3 | 6.6 Mo | PXL_20261016_121358717.jpg, PXL_20261016_121556204.jpg, PXL_20261016_121727371.jpg |
-| `content/Avatar/_composites/busts-694/` | 3 | 1.2 Mo | avatar-surprised-694.png, avatar-talking-694.png, avatar-thinking-694.png |
-| `hosting/previews/dmoptic/montures/` | 22 | 1003.3 Ko | monture-f01-2.jpg, monture-f01-3.jpg, monture-f04-2.jpg |
-| `clients/dm-optic/launch/facebook-assets/` | 2 | 495.6 Ko | cover-check-desktop-820x312.png, cover-check-mobile-640x360.png |
-| `clients/dm-optic/launch/facebook-assets/posters/` | 3 | 437.5 Ko | poster-01-garcon-vert.jpeg, poster-02-fille-verte.jpeg, poster-03-fille-bleue.jpeg |
-| `content/carousels/c03-avant-de-payer/` | 5 | 416.7 Ko | slide-2.png, slide-3.png, slide-4.png |
-| `clients/_mockups/` | 2 | 408.9 Ko | EXEMPLE-college-telephone.jpg, EXEMPLE-dentaire-2devices.jpg |
-| `content/carousels/c01-vous-etes-ouverts/` | 5 | 397.1 Ko | slide-2.png, slide-3.png, slide-4.png |
-| `content/Avatar/` | 3 | 359.8 Ko | E.jpeg, I.jpeg, K.jpeg |
-| `sales/social/videos/` | 4 | 355.1 Ko | clinic-founding-en-cover.jpg, clinic-founding-fr-cover.jpg, school-founding-en-cover.jpg |
+| `clients/dm-optic/photoshoot/femmes_1.1/` | 34 | 76.0 Mo | PXL_20261016_122014035.jpg, PXL_20261016_122027540.jpg, PXL_20261016_122034181.jpg |
+| `clients/dm-optic/photoshoot/femmes_1.0/` | 31 | 70.2 Mo | PXL_20261016_122307431.jpg, PXL_20261016_122317186.jpg, PXL_20261016_122343710.jpg |
+| `clients/dm-optic/photoshoot/femmes_2.0/` | 16 | 37.0 Mo | PXL_20261016_122647441.jpg, PXL_20261016_122701776.jpg, PXL_20261016_122727349.jpg |
+| `clients/dm-optic/photoshoot/femmes_1.2/` | 12 | 27.8 Mo | PXL_20261016_122903124.jpg, PXL_20261016_122939810.jpg, PXL_20261016_123033016.jpg |
+| `clients/dm-optic/photoshoot/enfants_3/` | 10 | 19.0 Mo | PXL_20261016_120423387.jpg, PXL_20261016_120431301.jpg, PXL_20261016_120518772.jpg |
+| `clients/dm-optic/photoshoot/enfants_2/` | 9 | 16.5 Mo | PXL_20261016_120939643.jpg, PXL_20261016_121023823.jpg, PXL_20261016_121105878.jpg |
+| `clients/dm-optic/photoshoot/hommes/` | 6 | 15.5 Mo | PXL_20261016_125820415.jpg, PXL_20261016_125835304.PORTRAIT.jpg, PXL_20261016_125842284.PORTRAIT.jpg |
+| `demos/img/` | 16 | 9.2 Mo | dmoptic-enfants.jpg, dmoptic-montures.jpg, laligne-visage-coeur.jpg |
+| `clients/dm-optic/photoshoot/enfants_1/` | 3 | 5.5 Mo | PXL_20261016_120911723.jpg, PXL_20261016_121032138.jpg, PXL_20261016_121155806.jpg |
+| `clients/dm-optic/photoshoot/reference-composition-NE-PAS-PUBLIER/` | 3 | 4.5 Mo | A1-monture-face-catalogue.png, A3-profil-branches.png, B1-entree-cabinet.png |
+| `clients/dm-optic/photoshoot/enfants_1.1/` | 2 | 4.1 Mo | PXL_20261016_121111382.jpg, PXL_20261016_121231967.jpg |
+| `tryon-camera/apercus/` | 3 | 2.0 Mo | apercu-interface.png, apercu-inventaire.png, exemples-6-montures.png |
+| `demos/` | 4 | 1.9 Mo | shot-desktop-full.png, shot-desktop-hero.png, shot-mobile-full.png |
+| `mockups/` | 3 | 1.8 Mo | amk-phone.png, concept-phone.png, oracare-phone.png |
+| `content/Avatar/_composites/busts-694/` | 3 | 1.1 Mo | avatar-approving-694.png, avatar-idle-694.png, avatar-pointing-694.png |
+| `hosting/previews/dmoptic/montures/` | 22 | 1013.6 Ko | monture-e14-2.jpg, monture-e14-3.jpg, monture-e19-2.jpg |
+| `clients/_mockups/labs/` | 3 | 647.2 Ko | 2k-labo.jpg, interlabo.jpg, meka.jpg |
+| `clients/_mockups/` | 3 | 574.4 Ko | EXEMPLE-clinique.jpg, EXEMPLE-college-2devices.jpg, EXEMPLE-college-portable.jpg |
+| `content/Avatar/` | 3 | 410.1 Ko | M.jpeg, N.jpeg, WhatsApp Image 2026-10-12 at 18.34.29.jpeg |
+| `content/pipeline/post01/vo/v5-sentences/` | 17 | 322.1 Ko | s04.mp3, s05.mp3, s06.mp3 |
 
 *Les photos de `clients/dm-optic/photoshoot/` ne sont PAS une rafale : c'est le **catalogue montures** du client — 160 photos, une par monture (156 montures + 4 vues du cabinet), 395 Mo. Elles sont listées parce qu'elles pèsent, pas parce qu'elles sont mortes : `sales/Activity-Log.md` (19/10) en garde **84 en réserve** pour le lot 2 du catalogue. Les supprimer effacerait la source d'un livrable à venir. Ce qui se discute ici, c'est de les sortir de git (stockage externe), pas de les effacer.*
 
 ## 4 · Documents
 
-- **395 documents sans citation entrante** — à relire ou à archiver (voir `ops/REPO-MAP.md` §3 bis).
-- **40 documents marqués périmés par leur propre texte** — détection lexicale, à vérifier un par un.
+- **378 documents sans citation entrante** — à relire ou à archiver (voir `ops/REPO-MAP.md` §3 bis).
+- **37 documents marqués périmés par leur propre texte** — détection lexicale, à vérifier un par un.
 
 | Périmé (d'après lui-même) | Cité par |
 |---|---|
-| `content/strategy/RULE-CREDENTIAL-CLAIMS.md` | 25× |
+| `content/strategy/RULE-CREDENTIAL-CLAIMS.md` | 24× |
 | `clients/dm-optic/build-notes.md` | 16× |
 | `sales/AMK-Playbook-Addendum-Outcomes-2026-09-15.md` | 10× |
 | `site/SEO-REVIEW-2026-10-08.md` | 10× |
@@ -89,12 +89,12 @@ Aucun doublon à l'intérieur d'un même projet.
 | `content/pipeline/CONTENT-PIPELINE.md` | 7× |
 | `clients/dm-optic/content/month1/w1/ugc-03.md` | 6× |
 | `sales/RDV-UNILABO-2026-09-25.md` | 6× |
-| `sales/Walk-In-Batch-2026-09-15.md` | 5× |
 | `leads/CONTRADICTIONS.md` | 4× |
-| `sales/Walk-In-Deep-Dives-2026-09-15.md` | 4× |
 | `sales/social/founding-post-tiktok-ig.md` | 4× |
 | `site/DEPLOY.md` | 4× |
 | `AGENTS.md` | 3× |
+| `ops/GIT-STABILITY-NOTE.md` | 3× |
+| `sales/OUTREACH-REECRITURE-2026-10-24.md` | 3× |
 
 ⚠️ **Ni l'orphelin ni le « périmé » ne se supprime automatiquement.** Le 24/10, `AMK-DESIGN-SKILLS.md` était signalé « remplacé par Activity-Log » — c'est faux, et une suppression sur cette base aurait effacé 1 400 lignes de règles de design.
 
@@ -127,13 +127,13 @@ Aucun doublon à l'intérieur d'un même projet.
 | `clients/dm-optic/photoshoot/femmes_1.1/PXL_20261016_123745403.jpg` | 4.4 Mo |
 | `content/videos/v06-facebook-no-booking/Video_06_Facebook_No_Booking_VOIX.mp4` | 4.1 Mo |
 | `clients/dm-optic/photoshoot/femmes_1.2/PXL_20261016_122856736.jpg` | 3.8 Mo |
-| `clients/univers-optique/PXL_20260925_095427316.jpg` | 3.8 Mo |
 | `clients/dm-optic/photoshoot/enfants_1.1/PXL_20261016_120943026.jpg` | 3.8 Mo |
 | `clients/dm-optic/photoshoot/femmes_1.1/PXL_20261016_123838121.jpg` | 3.8 Mo |
 | `clients/dm-optic/photoshoot/femmes_1.0/PXL_20261016_122551307.jpg` | 3.7 Mo |
+| `clients/dm-optic/photoshoot/femmes_1.2/PXL_20261016_125157364.PORTRAIT.jpg` | 3.6 Mo |
 
 ⚠️ **Le `.git` ne perd rien quand on supprime un fichier.** Un binaire retiré reste dans l'historique ; seul un `git filter-repo` (réécriture + force-push) le retire vraiment. Tant que ce n'est pas fait, supprimer un gros média allège le disque, pas le dépôt.
 
 ---
 
-*Rejouable : `python3 tools/ops/audit_files.py`. Rapport précédent à comparer : 1934 fichiers, 693.3 Mo.*
+*Rejouable : `python3 tools/ops/audit_files.py`. Rapport précédent à comparer : 1852 fichiers, 662.2 Mo.*
