@@ -8,7 +8,7 @@ fiction MboaCare + numéro de démonstration), **étiquetée comme fiction**, pu
 au portique HTML (`tools/qa/audit_html.py`) : 0 anomalie ou échec.
 
 Usage :
-    python3 tools/video/anonymise.py --concept jempo --out hosting/previews/demo/jempo-demo.html
+    python3 tools/video/anonymise.py --concept jempo --out content/videos/anonyme/jempo-demo.html
     python3 tools/video/anonymise.py --all          # produit la bibliothèque complète
 """
 import argparse
@@ -197,7 +197,7 @@ if __name__ == "__main__":
         sys.exit("--out obligatoire (ou --all)")
     failures = 0
     for slug in jobs:
-        out = a.out if (not a.all and a.out) else f"hosting/previews/demo/{slug}-demo.html"
+        out = a.out if (not a.all and a.out) else f"content/videos/anonyme/{slug}-demo.html"
         print(f"▸ {slug} → {out}")
         path, leaks = anonymise(slug, out)
         if leaks:

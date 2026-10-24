@@ -18,8 +18,9 @@ import re
 import sys
 
 FILES = [
+    # 24/10/2026 — `hosting/previews/bonanjo/` retiré avec les prospects non clients.
+    # Ne restent que les aperçus conservés (dmoptic, labiomed, cristallin).
     "hosting/previews/labiomed/index.html",
-    "hosting/previews/bonanjo/index.html",
 ]
 
 # <summary class="fr-only">A</summary> ... <summary class="en-only">B</summary>

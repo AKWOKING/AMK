@@ -2,7 +2,7 @@
 
 ```text
 Généré par tools/ops/audit_files.py — 2026-10-24
-1852 fichiers · 662.2 Mo · dont 141.3 Mo dans des fichiers > 5 Mo
+1697 fichiers · 626.0 Mo · dont 141.3 Mo dans des fichiers > 5 Mo
 Aucune suppression automatique : les décisions sont listées, pas prises.
 ```
 
@@ -18,64 +18,64 @@ Aucun doublon à l'intérieur d'un même projet.
 
 ### Paires source / déploiement — à garder, mais à surveiller
 
-58 groupes. Le concept vit dans `demos/`, la copie déployée dans `hosting/previews/`. **Ce n'est pas du gras** : supprimer la copie déployée casse un site. Le risque réel est la **dérive** — deux copies qui divergent sans qu'on le sache.
+32 groupes. Le concept vit dans `demos/`, la copie déployée dans `hosting/previews/`. **Ce n'est pas du gras** : supprimer la copie déployée casse un site. Le risque réel est la **dérive** — deux copies qui divergent sans qu'on le sache.
 
 | Source | Déploiement | Taille |
 |---|---|---|
-| `demos/concept-skye-v1.html` | `hosting/previews/skye/index.html` | 1007.8 Ko |
-| `demos/concept-univers-optique-v2.html` | `hosting/previews/univers-note/index.html` | 737.5 Ko |
-| `demos/concept-univers-optique-v1.html` | `hosting/previews/univers-v1/index.html` | 722.8 Ko |
-| `demos/univers-optique-site-v2.html` | `hosting/previews/univers/index.html` | 701.2 Ko |
-| `demos/concept-yaks-v1.html` | `hosting/previews/yaks/index.html` | 612.9 Ko |
 | `demos/concept-le-cristallin-v1.html` | `hosting/previews/cristallin/index.html` | 608.7 Ko |
-| `demos/concept-laligne-v1.html` | `hosting/previews/laligne/index.html` | 424.8 Ko |
-| `demos/concept-opticien-lopticien.html` | `hosting/previews/opticien/index.html` | 329.3 Ko |
-| `demos/concept-afriquelabo-v1.html` | `hosting/previews/afriquelabo/index.html` | 292.9 Ko |
-| `demos/concept-cinqsens-v1.html` | `hosting/previews/cinqsens/index.html` | 278.7 Ko |
 | `hosting/samples/img/nova.png` | `site/img/nova.png` | 232.4 Ko |
 | `hosting/samples/img/littleoaks.png` | `site/img/littleoaks.png` | 219.3 Ko |
-| `demos/concept-cavisa-v1.html` | `hosting/previews/cavisa/index.html` | 216.0 Ko |
 | `clients/_mockups/labs/labiomed.jpg` | `hosting/previews/labiomed/og.jpg` | 212.2 Ko |
 | `hosting/samples/img/mmc-consult.jpg` | `site/assets/mockup-clinique.jpg`, `site/img/mmc-consult.jpg` | 192.7 Ko |
 | `hosting/samples/img/mmc-maternity.jpg` | `site/img/mmc-maternity.jpg` | 169.2 Ko |
 | `hosting/samples/img/sec-campus.jpg` | `site/img/sec-campus.jpg` | 156.0 Ko |
 | `hosting/samples/img/mmc-hero.jpg` | `site/img/mmc-hero.jpg` | 144.0 Ko |
 | `hosting/samples/img/mmc-lab.jpg` | `site/img/mmc-lab.jpg` | 125.5 Ko |
-| `demos/img/unilabo-preparation.jpg` | `hosting/previews/unilabo/img/unilabo-preparation.jpg` | 119.8 Ko |
+| `hosting/samples/img/mit-wall.jpg` | `site/img/mit-wall.jpg` | 109.7 Ko |
+| `hosting/samples/img/sec-hero.jpg` | `site/img/sec-hero.jpg` | 103.4 Ko |
+| `hosting/samples/img/sec-class.jpg` | `site/assets/mockup-college.jpg`, `site/img/sec-class.jpg` | 88.5 Ko |
+| `hosting/samples/build_sample_secondary.py` | `site/build_sample_secondary.py` | 73.3 Ko |
+| `hosting/samples/img/sec-dorm.jpg` | `site/img/sec-dorm.jpg` | 66.6 Ko |
+| `hosting/samples/img/sec-awards.jpg` | `site/img/sec-awards.jpg` | 66.3 Ko |
+| `hosting/samples/img/mit-hero.jpg` | `site/img/mit-hero.jpg` | 62.3 Ko |
+| `hosting/samples/build_sample_clinic.py` | `site/build_sample_clinic.py` | 58.6 Ko |
+| `hosting/samples/img/sec-sports.jpg` | `site/img/sec-sports.jpg` | 58.3 Ko |
+| `hosting/samples/img/sec-lab.jpg` | `site/img/sec-lab.jpg` | 57.9 Ko |
+| `hosting/samples/build_sample_mitoc.py` | `site/build_sample_mitoc.py` | 54.4 Ko |
 
 
 ## 3 · Médias sans aucune référence par leur nom
 
-240 fichiers, 297.2 Mo. **Piste, pas preuve** : un manifeste, un CSS ou un `JSON` peut les appeler autrement.
+232 fichiers, 293.9 Mo. **Piste, pas preuve** : un manifeste, un CSS ou un `JSON` peut les appeler autrement.
 
 | Dossier | Fichiers | Poids | Exemples |
 |---|---|---|---|
-| `clients/dm-optic/photoshoot/femmes_1.1/` | 34 | 76.0 Mo | PXL_20261016_122014035.jpg, PXL_20261016_122027540.jpg, PXL_20261016_122034181.jpg |
-| `clients/dm-optic/photoshoot/femmes_1.0/` | 31 | 70.2 Mo | PXL_20261016_122307431.jpg, PXL_20261016_122317186.jpg, PXL_20261016_122343710.jpg |
-| `clients/dm-optic/photoshoot/femmes_2.0/` | 16 | 37.0 Mo | PXL_20261016_122647441.jpg, PXL_20261016_122701776.jpg, PXL_20261016_122727349.jpg |
-| `clients/dm-optic/photoshoot/femmes_1.2/` | 12 | 27.8 Mo | PXL_20261016_122903124.jpg, PXL_20261016_122939810.jpg, PXL_20261016_123033016.jpg |
-| `clients/dm-optic/photoshoot/enfants_3/` | 10 | 19.0 Mo | PXL_20261016_120423387.jpg, PXL_20261016_120431301.jpg, PXL_20261016_120518772.jpg |
-| `clients/dm-optic/photoshoot/enfants_2/` | 9 | 16.5 Mo | PXL_20261016_120939643.jpg, PXL_20261016_121023823.jpg, PXL_20261016_121105878.jpg |
-| `clients/dm-optic/photoshoot/hommes/` | 6 | 15.5 Mo | PXL_20261016_125820415.jpg, PXL_20261016_125835304.PORTRAIT.jpg, PXL_20261016_125842284.PORTRAIT.jpg |
-| `demos/img/` | 16 | 9.2 Mo | dmoptic-enfants.jpg, dmoptic-montures.jpg, laligne-visage-coeur.jpg |
-| `clients/dm-optic/photoshoot/enfants_1/` | 3 | 5.5 Mo | PXL_20261016_120911723.jpg, PXL_20261016_121032138.jpg, PXL_20261016_121155806.jpg |
-| `clients/dm-optic/photoshoot/reference-composition-NE-PAS-PUBLIER/` | 3 | 4.5 Mo | A1-monture-face-catalogue.png, A3-profil-branches.png, B1-entree-cabinet.png |
-| `clients/dm-optic/photoshoot/enfants_1.1/` | 2 | 4.1 Mo | PXL_20261016_121111382.jpg, PXL_20261016_121231967.jpg |
-| `tryon-camera/apercus/` | 3 | 2.0 Mo | apercu-interface.png, apercu-inventaire.png, exemples-6-montures.png |
-| `demos/` | 4 | 1.9 Mo | shot-desktop-full.png, shot-desktop-hero.png, shot-mobile-full.png |
-| `mockups/` | 3 | 1.8 Mo | amk-phone.png, concept-phone.png, oracare-phone.png |
-| `content/Avatar/_composites/busts-694/` | 3 | 1.1 Mo | avatar-approving-694.png, avatar-idle-694.png, avatar-pointing-694.png |
-| `hosting/previews/dmoptic/montures/` | 22 | 1013.6 Ko | monture-e14-2.jpg, monture-e14-3.jpg, monture-e19-2.jpg |
-| `clients/_mockups/labs/` | 3 | 647.2 Ko | 2k-labo.jpg, interlabo.jpg, meka.jpg |
-| `clients/_mockups/` | 3 | 574.4 Ko | EXEMPLE-clinique.jpg, EXEMPLE-college-2devices.jpg, EXEMPLE-college-portable.jpg |
-| `content/Avatar/` | 3 | 410.1 Ko | M.jpeg, N.jpeg, WhatsApp Image 2026-10-12 at 18.34.29.jpeg |
-| `content/pipeline/post01/vo/v5-sentences/` | 17 | 322.1 Ko | s04.mp3, s05.mp3, s06.mp3 |
+| `clients/dm-optic/photoshoot/femmes_1.1/` | 34 | 76.4 Mo | PXL_20261016_122104123.jpg, PXL_20261016_122106204.jpg, PXL_20261016_122115786.jpg |
+| `clients/dm-optic/photoshoot/femmes_1.0/` | 31 | 70.2 Mo | PXL_20261016_122347752.jpg, PXL_20261016_122354458.jpg, PXL_20261016_122428455.jpg |
+| `clients/dm-optic/photoshoot/femmes_2.0/` | 16 | 38.8 Mo | PXL_20261016_122735241.jpg, PXL_20261016_122743257.jpg, PXL_20261016_122809925.jpg |
+| `clients/dm-optic/photoshoot/femmes_1.2/` | 11 | 22.4 Mo | PXL_20261016_122955746.jpg, PXL_20261016_123021545.jpg, PXL_20261016_123027305.jpg |
+| `clients/dm-optic/photoshoot/enfants_2/` | 9 | 18.0 Mo | PXL_20261016_121139264.jpg, PXL_20261016_121224164.jpg, PXL_20261016_121316693.jpg |
+| `clients/dm-optic/photoshoot/enfants_3/` | 10 | 17.8 Mo | PXL_20261016_120526089.jpg, PXL_20261016_120556417.jpg, PXL_20261016_120606719.jpg |
+| `clients/dm-optic/photoshoot/hommes/` | 6 | 16.9 Mo | PXL_20261016_125910898.PORTRAIT.jpg, PXL_20261016_125918162.PORTRAIT.jpg, PXL_20261016_125945069.PORTRAIT.jpg |
+| `clients/dm-optic/photoshoot/enfants_1/` | 3 | 7.4 Mo | PXL_20261016_121322724.jpg, PXL_20261016_121433707.jpg, PXL_20261016_121632969.jpg |
+| `clients/dm-optic/photoshoot/reference-composition-NE-PAS-PUBLIER/` | 3 | 6.8 Mo | B2-salle-examen.png, C1-mains-qui-ajustent.png, C2-monture-tenue-hauteur.png |
+| `clients/dm-optic/photoshoot/enfants_1.1/` | 3 | 6.6 Mo | PXL_20261016_121358717.jpg, PXL_20261016_121556204.jpg, PXL_20261016_121727371.jpg |
+| `demos/img/` | 5 | 5.2 Mo | le-cristallin-hero.jpg, le-cristallin-hero.png, le-cristallin-lab.jpg |
+| `content/Avatar/_composites/busts-694/` | 3 | 1.2 Mo | avatar-surprised-694.png, avatar-talking-694.png, avatar-thinking-694.png |
+| `hosting/previews/dmoptic/montures/` | 22 | 1003.3 Ko | monture-f01-2.jpg, monture-f01-3.jpg, monture-f04-2.jpg |
+| `clients/_mockups/bonanjo-img/` | 3 | 526.1 Ko | imagerie.jpg, maternite.jpg, neuro.jpg |
+| `clients/dm-optic/launch/facebook-assets/` | 2 | 495.6 Ko | cover-check-desktop-820x312.png, cover-check-mobile-640x360.png |
+| `clients/dm-optic/launch/facebook-assets/posters/` | 3 | 437.5 Ko | poster-01-garcon-vert.jpeg, poster-02-fille-verte.jpeg, poster-03-fille-bleue.jpeg |
+| `content/carousels/c03-avant-de-payer/` | 5 | 416.7 Ko | slide-2.png, slide-3.png, slide-4.png |
+| `clients/_mockups/` | 2 | 408.9 Ko | EXEMPLE-college-telephone.jpg, EXEMPLE-dentaire-2devices.jpg |
+| `content/carousels/c01-vous-etes-ouverts/` | 5 | 397.1 Ko | slide-2.png, slide-3.png, slide-4.png |
+| `content/Avatar/` | 3 | 359.8 Ko | E.jpeg, I.jpeg, K.jpeg |
 
 *Les photos de `clients/dm-optic/photoshoot/` ne sont PAS une rafale : c'est le **catalogue montures** du client — 160 photos, une par monture (156 montures + 4 vues du cabinet), 395 Mo. Elles sont listées parce qu'elles pèsent, pas parce qu'elles sont mortes : `sales/Activity-Log.md` (19/10) en garde **84 en réserve** pour le lot 2 du catalogue. Les supprimer effacerait la source d'un livrable à venir. Ce qui se discute ici, c'est de les sortir de git (stockage externe), pas de les effacer.*
 
 ## 4 · Documents
 
-- **378 documents sans citation entrante** — à relire ou à archiver (voir `ops/REPO-MAP.md` §3 bis).
+- **376 documents sans citation entrante** — à relire ou à archiver (voir `ops/REPO-MAP.md` §3 bis).
 - **37 documents marqués périmés par leur propre texte** — détection lexicale, à vérifier un par un.
 
 | Périmé (d'après lui-même) | Cité par |
@@ -136,4 +136,4 @@ Aucun doublon à l'intérieur d'un même projet.
 
 ---
 
-*Rejouable : `python3 tools/ops/audit_files.py`. Rapport précédent à comparer : 1852 fichiers, 662.2 Mo.*
+*Rejouable : `python3 tools/ops/audit_files.py`. Rapport précédent à comparer : 1697 fichiers, 626.0 Mo.*

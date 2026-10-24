@@ -47,6 +47,38 @@ Rien n'est perdu :
 | la maquette montrée au prospect | `hosting/previews/` et `demos/concept-*.html` — inchangés |
 | les fichiers eux-mêmes | l'historique git — `git checkout 10c86b64 -- clients/<nom>/` |
 
+## Les designs — ce qui est parti, et ce qui les remplace (2ᵉ passe)
+
+King, 24/10 : « cut the ones belonging to retired prospects and keep `dmoptic`, `labiomed` and
+`cristallin` — I used to keep them because I didn't want to repeat the same design twice, but the
+uniqueness register solves that problem. »
+
+| Retiré | Fichiers |
+|---|---|
+| `hosting/previews/` — 15 dossiers (`afriquelabo`, `bonanjo`, `cavisa`, `cinqsens`, `demo`, `demo-clinique`, `laligne`, `mboacare-demo`, `opticien`, `skye`, `unilabo`, `univers`, `univers-note`, `univers-v1`, `yaks`) | 46 |
+| `demos/` — 14 pages `concept-*.html`, 2 `univers-optique-site-v2*`, 2 modules de contenu, 15 builders, 4 modules `_unilabo_v2_*`, 3 gabarits `.tpl.html`, 3 scripts d'école | 43 |
+| `demos/img/` — les visuels de ces pages | 37 |
+| `demos/shots/` — maquettes et captures d'envoi de ces prospects | 14 |
+| `demos/shot-*.png` — captures OraCare / La Retraite / SAHISCOL | 15 |
+| **Total** | **155** |
+
+**Conservés :** `hosting/previews/dmoptic/`, `labiomed/`, `cristallin/` ; `demos/build_dmoptic.py`,
+`build_dmoptic_montures.py`, `dmoptic-v1.tpl.html`, `pack_dmoptic.py`, `build_le_cristallin.py`,
+`le_cristallin_content.json`, `concept-dmoptic-v1.html`, `concept-le-cristallin-v1.html`, les 11
+visuels de `demos/img/` que ces builders lisent, et `demos/shots/README.md` (la règle de capture).
+
+**Ce qui remplace les fichiers, pour ne pas refaire deux fois le même design :**
+`clients/_uniqueness-registry.md`. Ses 16 lignes concernées portent désormais la mention
+« fichier retiré du dépôt (24/10), l'empreinte ci-contre est ce qui reste » — archétype de mise en
+page, palette, typographie et ton restent lisibles, et **se lisent avant de construire** au lieu de
+se comparer après coup à un HTML.
+
+**Mis à jour en conséquence :** `hosting/previews/README.md` (3 aperçus, gel du Cristallin seul),
+`demos/shots/README.md` (règle + format, plus d'index mort), `hosting/build_previews.py` (son
+`SLUGS` ne contient plus que `cristallin`), `tools/site/fix_details_summary.py` (la ligne
+`bonanjo` retirée), `tools/video/anonymise.py` (sortie par défaut déplacée hors de
+`hosting/previews/demo/`, qui n'existe plus).
+
 ## Ce que le retrait laisse derrière lui
 
 - **Des références historiques** dans `sales/Activity-Log.md` (28), `leads/build/crm.py` (35,
@@ -54,12 +86,10 @@ Rien n'est perdu :
   décrivent ce qui a été fait : on ne les réécrit pas, ce serait falsifier le journal.
 - **Aucun script ne casse** : les cinq `demos/build_*.py` ne lisaient ces dossiers que dans leurs
   docstrings ; leurs images viennent de `demos/img/`. Vérifié par lecture et par `ast.parse`.
-- **Les aperçus restent en place** (`hosting/previews/afriquelabo`, `cavisa`, `cinqsens`,
-  `laligne`, `opticien`, `unilabo`, `univers*`, `skye`, `yaks`, `bonanjo`, `demo-clinique`,
-  `mboacare-demo`). Ce sont des démonstrations publiées, pas des dossiers clients. Si King veut
-  aussi les retirer, c'est une décision séparée — chaque aperçu a sa ligne dans
-  `ops/REPO-MAP.md` §5 quater et son builder dans `demos/`.
-
+- **Les aperçus et les pages canoniques sont partis aussi** (même ruling, deuxième passe du 24/10,
+  voir §« Les designs » ci-dessous). Ce qui reste de ces 15 prospects dans le dépôt : les fiches de
+  `leads/records/`, les envois de `sales/`, et leurs empreintes de design dans
+  `clients/_uniqueness-registry.md`.
 ---
 
 *Retrait exécuté le 24/10/2026. Pour en ramener un : `git log --oneline -- clients/<nom>/` puis
