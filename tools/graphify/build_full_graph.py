@@ -92,6 +92,24 @@ def read(p: Path, cap: int = 2_000_000) -> str:
         return ""
 
 
+
+_TRACKED: set[str] | None = None
+
+
+def tracked_under(prefix: str) -> list[Path]:
+    """Les fichiers SUIVIS sous un préfixe — jamais le disque.
+
+    Correction du 24/10 (deuxième CI rouge) : ces tableaux comptaient avec `rglob`, donc un fichier
+    non versionné, un `.DS_Store` ou un cache local changeaient la carte. La carte décrit le dépôt ;
+    elle doit être identique à l'octet dans un clone propre, sinon la CI ne peut pas la rejouer.
+    """
+    global _TRACKED
+    if _TRACKED is None:
+        _TRACKED = {str(p) for p in walk()}
+    pref = prefix.rstrip("/") + "/"
+    return [Path(t) for t in sorted(_TRACKED) if t.startswith(pref)]
+
+
 def walk() -> list[Path]:
     """La carte décrit **le dépôt**, pas le disque : elle ne lit que les fichiers suivis par git.
 
@@ -538,8 +556,8 @@ def write_map(g: dict, nodes_meta: dict, stale: set[str], stats: dict, comm: dic
         for d in sorted(tools_dir.iterdir()):
             if not d.is_dir() or d.name.startswith((".", "_")):
                 continue
-            files = [f for f in d.rglob("*") if f.is_file()
-                     and "__pycache__" not in f.parts and not f.name.startswith(".")]
+            files = [ROOT / f for f in tracked_under(str(d.relative_to(ROOT)))
+                     if not f.name.startswith(".")]
             n_py = sum(1 for f in files if f.suffix in (".py", ".mjs", ".js"))
             n_md = sum(1 for f in files if f.suffix == ".md")
             n_sh = sum(1 for f in files if f.suffix in (".sh", ".yml", ".yaml"))
@@ -571,23 +589,20 @@ def write_map(g: dict, nodes_meta: dict, stale: set[str], stats: dict, comm: dic
     if clients_dir.is_dir():
         A("### Un dossier client = une ligne — ce qui existe, et s'il y a un brief")
         A("")
-        A("| Client | Fichiers | Documents | Brief ? | Dernier commit sur le dossier |")
-        A("|---|---|---|---|---|")
+        # Pas de colonne « dernier commit » : l'historique n'est pas reproductible (un clone superficiel
+        # et un clone complet ne donnent pas la même date), et la carte doit être identique à l'octet
+        # d'un clone à l'autre — c'est ce que la CI vérifie. La carte décrit l'ARBRE, pas l'historique.
+        A("| Client | Fichiers | Documents | Brief ? |")
+        A("|---|---|---|---|")
         for d in sorted(clients_dir.iterdir()):
             if not d.is_dir() or d.name.startswith(("_", ".")):
                 continue
-            files = [f for f in d.rglob("*") if f.is_file() and "__pycache__" not in f.parts]
+            files = [ROOT / f for f in tracked_under(str(d.relative_to(ROOT)))]
             docs_n = sum(1 for f in files if f.suffix == ".md")
             if not files:
                 continue
             brief = "oui" if any("brief" in f.name.lower() for f in files) else "—"
-            try:
-                stamp = subprocess.run(
-                    ["git", "log", "-1", "--format=%ad", "--date=short", "--", f"clients/{d.name}"],
-                    cwd=ROOT, capture_output=True, text=True, timeout=20).stdout.strip() or "—"
-            except (OSError, subprocess.SubprocessError):
-                stamp = "—"
-            A(f"| `{d.name}/` | {len(files)} | {docs_n} | {brief} | {stamp} |")
+            A(f"| `{d.name}/` | {len(files)} | {docs_n} | {brief} |")
         A("")
 
     # 5 ter · les vidéos et leurs pièces
@@ -600,7 +615,7 @@ def write_map(g: dict, nodes_meta: dict, stale: set[str], stats: dict, comm: dic
         for d in sorted(vids.iterdir()):
             if not d.is_dir() or d.name.startswith(("_", ".")):
                 continue
-            files = [f for f in d.rglob("*") if f.is_file()]
+            files = [ROOT / f for f in tracked_under(str(d.relative_to(ROOT)))]
             scripts = [f for f in files if f.suffix == ".md" and "status" not in f.name.lower()]
             mp4 = [f for f in files if f.suffix in (".mp4", ".mov", ".webm")]
             status = "—"
