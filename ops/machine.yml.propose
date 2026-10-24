@@ -1,0 +1,70 @@
+# ── CE FICHIER N'EST PAS LE WORKFLOW ───────────────────────────────────────────────
+# C'est la version À COLLER dans `.github/workflows/machine.yml`.
+# Pourquoi une copie : la GitHub App du bac n'a pas la permission `workflows`, donc
+# tout push qui touche `.github/workflows/` est refusé par GitHub (mesuré le 24/10 :
+# « refusing to allow a GitHub App to create or update workflow … without `workflows`
+# permission »). Le dépôt n'a donc aucun moyen de modifier son propre workflow.
+# Deux façons de l'appliquer, au choix :
+#   1. en local : git apply ops/CI-CACHE.patch && git commit -am "CI : un run par commit" && git push
+#   2. depuis GitHub : ouvrir `.github/workflows/machine.yml`, « Edit », remplacer tout
+#      par le contenu ci-dessous (sans ces dix lignes d'en-tête), commit sur main.
+# ───────────────────────────────────────────────────────────────────────────────────
+
+# Ce qu'il fait : à chaque push et à chaque PR, `machine.py --ci` (secrets, chemins cités) puis la
+# reconstruction de la carte, qui échoue si `ops/REPO-MAP.md` n'est pas à jour. Ce que la CI ne
+# remplace pas : les règles qui demandent un jugement — elles restent dans `--rules`, marquées
+# « sans porte ».
+#
+# Une fois posé, il n'y a plus rien à faire : chaque push est vérifié sans intervention.
+
+name: La machine
+
+on:
+  # Une seule exécution par commit. Avant, `push:` et `pull_request:` jouaient le MÊME commit
+  # deux fois (mesuré le 24/10 : 12 commits sur 25) — la moitié des minutes pour rien.
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch: {}
+
+# Deux poussées rapprochées : la première n'est plus la vérité, on l'annule.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  portes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Historique complet pour merge-base, mais SANS les blobs : ils sont récupérés
+          # à la demande. Mesuré : 691 commits = 1,3 Mo de métadonnées ; l'arbre de HEAD = 250 Mo ;
+          # le dépôt entier = 848 Mo. On ne télécharge plus les images mortes de l'historique.
+          fetch-depth: 0
+          filter: blob:none
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          # La seule dépendance installée par la CI : graphifyy, épinglé dans install.sh.
+          # La clé du cache suit donc ce fichier — changer l'épinglage refait le cache.
+          cache-dependency-path: tools/graphify/install.sh
+
+      - name: Les portes vérifiables dans un runner (secrets, chemins cités)
+        run: python3 tools/ops/machine.py --ci
+
+      - name: La carte du dépôt se rejoue à l'identique
+        run: |
+          python3 tools/graphify/build_full_graph.py
+          if ! git diff --quiet -- ops/REPO-MAP.md; then
+            echo "⛔ ops/REPO-MAP.md n'est pas à jour : un fichier suivi a changé sans que la carte soit reconstruite."
+            echo "   Remède : python3 tools/graphify/build_full_graph.py && git add ops/REPO-MAP.md"
+            git diff --stat -- ops/REPO-MAP.md
+            exit 1
+          fi
+          echo "✓ carte à jour (rejouée, aucune différence)"
