@@ -1,13 +1,22 @@
 # ── CE FICHIER N'EST PAS LE WORKFLOW ───────────────────────────────────────────────
 # C'est la version À COLLER dans `.github/workflows/machine.yml`.
-# Pourquoi une copie : la GitHub App du bac n'a pas la permission `workflows`, donc
-# tout push qui touche `.github/workflows/` est refusé par GitHub (mesuré le 24/10 :
-# « refusing to allow a GitHub App to create or update workflow … without `workflows`
-# permission »). Le dépôt n'a donc aucun moyen de modifier son propre workflow.
-# Deux façons de l'appliquer, au choix :
-#   1. en local : git apply ops/CI-CACHE.patch && git commit -am "CI : un run par commit" && git push
-#   2. depuis GitHub : ouvrir `.github/workflows/machine.yml`, « Edit », remplacer tout
-#      par le contenu ci-dessous (sans ces dix lignes d'en-tête), commit sur main.
+#
+# Pourquoi une copie, et pourquoi ce ne sera jamais automatique :
+#   1. GitHub refuse tout push qui touche `.github/workflows/` sans la permission
+#      `workflows` — mesuré le 24/10 : « refusing to allow a GitHub App to create or
+#      update workflow … without `workflows` permission ».
+#   2. Cette permission ne peut pas être accordée ici : l'App qui pousse appartient à
+#      Arena, pas à King. Son écran « Settings → Developer settings → GitHub Apps »
+#      répond « No GitHub Apps » (capture du 24/10). Il n'y a donc pas d'option cachée.
+#
+# Le dépôt ne peut pas modifier son propre workflow. Deux façons de l'appliquer :
+#   A. GitHub, éditeur web (recommandé, 30 s) :
+#      ouvrir https://github.com/AKWOKING/AMK/edit/main/.github/workflows/machine.yml
+#      tout sélectionner, coller le corps de ce fichier (à partir de « # Ce qu'il fait »),
+#      commit sur main.
+#   B. En local : git apply ops/CI-CACHE.patch && git commit -am "CI : un run par commit" && git push
+#
+# Tant que ce n'est pas appliqué, la règle `workflow-colle` le dit à chaque --check.
 # ───────────────────────────────────────────────────────────────────────────────────
 
 # Ce qu'il fait : à chaque push et à chaque PR, `machine.py --ci` (secrets, chemins cités) puis la
