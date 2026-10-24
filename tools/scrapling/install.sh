@@ -9,10 +9,13 @@ set -euo pipefail
 PIN="fd53131"
 DEST="$HOME/.scrapling"
 
+# `--depth 1` ne ramène que la pointe de la branche par défaut : le pin (20/10) n'y est pas et le
+# checkout échouait depuis le 24/10 (« pathspec 'fd53131' did not match »). `--filter=blob:none`
+# ramène tous les commits sans les blobs — même convention que tools/marketingskills/install.sh.
 if [ -d "$DEST/.git" ]; then
-  git -C "$DEST" fetch -q origin
+  git -C "$DEST" fetch -q origin "+refs/heads/*:refs/remotes/origin/*"
 else
-  git clone -q --depth 1 https://github.com/D4Vinci/Scrapling.git "$DEST"
+  git clone -q --filter=blob:none https://github.com/D4Vinci/Scrapling.git "$DEST"
 fi
 git -C "$DEST" checkout -q "$PIN"
 

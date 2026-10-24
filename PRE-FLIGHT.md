@@ -240,6 +240,28 @@ La lecture et le jugement restent entiers — c'est tout l'intérêt.
 pas si elle est juste. Le tier de la source (§1g) continue de s'appliquer — et un chiffre trouvé sur le
 web ne remplace jamais une réfutation déjà écrite dans `RESEARCH-STANDARD.md`.
 
+## 0i · La machine — l'ordre rendu exécutable (ruling King 24/10)
+
+> *King, 24/10 : « what everything done and installed … should work like a single machine ».*
+
+**`ops/MACHINE.md` est le câblage** : huit étapes (réveil → cadrage → lecture → plan → exécution →
+preuve → mémoire → sortie), trois boucles (le tour, l'engagement, l'actif), et **une table « qui tranche
+quoi »** — un sujet, un document souverain, une porte. Elle **n'énonce aucune règle métier** : quand elle
+contredit ce pré-vol ou `knowledge/`, c'est le document qui gagne.
+
+```bash
+bash tools/ops/machine.sh              # le cockpit : l'étape, la fraîcheur, les outils installés
+bash tools/ops/machine.sh 2            # la fiche de l'étape 2 (lecture) : quoi lire, quoi lancer
+bash tools/ops/machine.sh --who prix   # qui tranche ce sujet, et ce qui le vérifie
+bash tools/ops/provision.sh            # session neuve : rejoue les 24 installateurs épinglés
+```
+
+**Ce que la machine ajoute à ce pré-vol** : §0f et §0h donnaient les couches et le graphe ; la machine
+donne **le passage d'une étape à la suivante** et **la preuve de sortie** de chacune. Une étape sans
+sortie de commande n'a pas eu lieu (§7, invariant 3).
+
+---
+
 ## 1 · Routing table (King's fields → the actual files in this repo)
 
 The rule names abstract folders; these are where the lessons actually live. Load **all** relevant rows when a task spans several types.

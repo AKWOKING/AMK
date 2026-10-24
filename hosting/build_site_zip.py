@@ -15,6 +15,10 @@ index.html.backup-pre-king24. Before 08/10 this list held 6 pages and would have
 dropped four live pages plus the GSC file: never reuse the old list.
 
 Deploy steps + verification: see site/DEPLOY.md.
+
+
+Sortie NON versionnée (`.gitignore` : `/amk-site*.zip`) : le bundle se régénère en une
+commande. Le zip du 23/10 a été retiré du suivi le 24/10 (`ops/AUDIT-FICHIERS-2026-10-24.md` §3).
 """
 import pathlib, zipfile
 

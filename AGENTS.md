@@ -6,14 +6,19 @@ Tout ce qui compte doit donc être écrit ici ou dans `ops/`.
 
 ---
 
-## 1 · Le rituel de reprise — trois commandes, dans cet ordre
+## 1 · Le rituel de reprise — quatre commandes, dans cet ordre
 
 ```bash
 cd /home/user/AMK
+bash tools/ops/machine.sh          # 0. où j'en suis : l'étape, ce qui est frais, ce qui ne l'est plus
 python3 tools/ops/wake.py          # 1. l'arbre est-il le vrai dépôt ? (répare si besoin)
-cat ops/HANDOFF-2026-10-22.md      # 2. où en est le travail, ce qui est décidé, ce qui reste
+cat ops/HANDOFF-*.md | tail -60    # 2. où en est le travail, ce qui est décidé, ce qui reste
 bash tools/ops/gate-dm.sh          # 3. la porte : état + rendus frais (avant tout contenu DM)
 ```
+
+**La machine est dans `ops/MACHINE.md`** : huit étapes, trois boucles, une table « qui tranche quoi ».
+Elle ne dit aucune règle métier — elle dit l'ordre, ce qui vérifie, et où ça s'écrit. Une session neuve
+n'a ni skills ni venvs : `bash tools/ops/provision.sh` les refait depuis les installateurs épinglés.
 
 **Sans l'étape 1, tout ce que tu lis peut être faux.** Ce n'est pas une précaution théorique : le
 22/10/2026, deux affirmations ont été publiées dans la même journée sur la base d'un arbre périmé
@@ -79,5 +84,6 @@ King, sur son téléphone, **avant** publication.
 
 ## 6 · Où continuer
 
-`ops/HANDOFF-2026-10-22.md` — état, décisions, chantiers ouverts, prochaines actions, questions en
-attente. C'est le document à mettre à jour en fin de session, avant tout le reste.
+`ops/MACHINE.md` — l'ordre du travail, les portes, et qui tranche quoi : c'est le câblage de tout le
+reste. Puis `ops/HANDOFF-<date>.md` — état, décisions, chantiers ouverts, prochaines actions, questions
+en attente. C'est le document à mettre à jour en fin de session, avant tout le reste.

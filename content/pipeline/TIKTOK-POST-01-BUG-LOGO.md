@@ -71,6 +71,12 @@ plan.
   par King) puis complet `content/pipeline/POST-01-BUG-LOGO-2026-10-12.mp4`.
 - **NE PAS PUBLIER** — approbation King requise sur le MP4 final. Publication visée : mardi 13/10.
 
+> **24/10/2026 — le MP4 est retiré du suivi.** `POST-01-BUG-LOGO-2026-10-12.mp4` (3,8 Mo), comme
+> `POST-01-v3-TIKTOK-2026-10-13.mp4` et `POST-01-v4-TIKTOK.mp4` (58,9 Mo), sont des **artefacts de
+> build** d'un post déjà publié : la règle du `.gitignore` (`*.mp4` ignoré, seules les vidéos livrées
+> sont suivies nommément) s'appliquait à eux. Audit du 24/10 : `ops/AUDIT-FICHIERS-2026-10-24.md` §3.
+> Récupérables à tout moment : `git show 907742f8:content/pipeline/POST-01-v4-TIKTOK.mp4 > /tmp/v4.mp4`.
+
 ---
 
 ## PARKÉ 12/10 nuit — RÉÉCRITURE À VENIR (framework Lot [42])

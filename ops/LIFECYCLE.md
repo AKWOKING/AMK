@@ -40,3 +40,6 @@ Tout engagement client passe par les cinq phases, quel que soit le service.
 
 *Un engagement qui saute une phase saute un garde-fou. Si une phase ne s'applique pas, on l'écrit
 dans le dossier client — on ne la passe pas en silence.*
+
+**Ce que chaque phase produit, et la porte qui la ferme :** voir `ops/MACHINE.md` §3 — sans quoi
+« on est en Production » reste une déclaration.

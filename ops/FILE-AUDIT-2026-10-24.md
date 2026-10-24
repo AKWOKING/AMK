@@ -2,7 +2,7 @@
 
 ```text
 Généré par tools/ops/audit_files.py — 2026-10-24
-1788 fichiers · 626.5 Mo · dont 141.3 Mo dans des fichiers > 5 Mo
+1789 fichiers · 560.1 Mo · dont 85.1 Mo dans des fichiers > 5 Mo
 Aucune suppression automatique : les décisions sont listées, pas prises.
 ```
 
@@ -46,12 +46,12 @@ Aucun doublon à l'intérieur d'un même projet.
 
 ## 3 · Médias sans aucune référence par leur nom
 
-232 fichiers, 293.9 Mo. **Piste, pas preuve** : un manifeste, un CSS ou un `JSON` peut les appeler autrement.
+230 fichiers, 286.8 Mo. **Piste, pas preuve** : un manifeste, un CSS ou un `JSON` peut les appeler autrement.
 
 | Dossier | Fichiers | Poids | Exemples |
 |---|---|---|---|
-| `clients/dm-optic/photoshoot/femmes_1.1/` | 34 | 76.4 Mo | PXL_20261016_122104123.jpg, PXL_20261016_122106204.jpg, PXL_20261016_122115786.jpg |
-| `clients/dm-optic/photoshoot/femmes_1.0/` | 31 | 70.2 Mo | PXL_20261016_122347752.jpg, PXL_20261016_122354458.jpg, PXL_20261016_122428455.jpg |
+| `clients/dm-optic/photoshoot/femmes_1.1/` | 33 | 72.8 Mo | PXL_20261016_122104123.jpg, PXL_20261016_122106204.jpg, PXL_20261016_122115786.jpg |
+| `clients/dm-optic/photoshoot/femmes_1.0/` | 30 | 66.7 Mo | PXL_20261016_122347752.jpg, PXL_20261016_122354458.jpg, PXL_20261016_122428455.jpg |
 | `clients/dm-optic/photoshoot/femmes_2.0/` | 16 | 38.8 Mo | PXL_20261016_122735241.jpg, PXL_20261016_122743257.jpg, PXL_20261016_122809925.jpg |
 | `clients/dm-optic/photoshoot/femmes_1.2/` | 11 | 22.4 Mo | PXL_20261016_122955746.jpg, PXL_20261016_123021545.jpg, PXL_20261016_123027305.jpg |
 | `clients/dm-optic/photoshoot/enfants_2/` | 9 | 18.0 Mo | PXL_20261016_121139264.jpg, PXL_20261016_121224164.jpg, PXL_20261016_121316693.jpg |
@@ -75,7 +75,7 @@ Aucun doublon à l'intérieur d'un même projet.
 
 ## 4 · Documents
 
-- **415 documents sans citation entrante** — à relire ou à archiver (voir `ops/REPO-MAP.md` §3 bis).
+- **414 documents sans citation entrante** — à relire ou à archiver (voir `ops/REPO-MAP.md` §3 bis).
 - **37 documents marqués périmés par leur propre texte** — détection lexicale, à vérifier un par un.
 
 | Périmé (d'après lui-même) | Cité par |
@@ -87,13 +87,13 @@ Aucun doublon à l'intérieur d'un même projet.
 | `sales/Outreach-Pack-2026-09-14.md` | 9× |
 | `content/pipeline/CONTENT-PIPELINE.md` | 8× |
 | `clients/dm-optic/launch/SETUP-TIKTOK.md` | 7× |
+| `AGENTS.md` | 6× |
 | `clients/dm-optic/content/month1/w1/ugc-03.md` | 6× |
 | `sales/RDV-UNILABO-2026-09-25.md` | 6× |
-| `AGENTS.md` | 5× |
 | `leads/CONTRADICTIONS.md` | 4× |
+| `ops/GIT-STABILITY-NOTE.md` | 4× |
 | `sales/social/founding-post-tiktok-ig.md` | 4× |
 | `site/DEPLOY.md` | 4× |
-| `ops/GIT-STABILITY-NOTE.md` | 3× |
 | `sales/OUTREACH-REECRITURE-2026-10-24.md` | 3× |
 
 ⚠️ **Ni l'orphelin ni le « périmé » ne se supprime automatiquement.** Le 24/10, `AMK-DESIGN-SKILLS.md` était signalé « remplacé par Activity-Log » — c'est faux, et une suppression sur cette base aurait effacé 1 400 lignes de règles de design.
@@ -104,14 +104,12 @@ Aucun doublon à l'intérieur d'un même projet.
 |---|---|---|---|
 | `amk-factures-pwa-v2.zip` | 86.1 Ko | — | 6 fichier(s), plus récent 2026-10-23 |
 | `amk-factures-pwa.zip` | 85.8 Ko | — | 6 fichier(s), plus récent 2026-10-23 |
-| `amk-site.zip` | 4.9 Mo | `hosting/build_site_zip.py` | 32 fichier(s), plus récent 2026-10-23 |
 | `dmopticsarl.zip` | 4.6 Mo | `demos/pack_dmoptic.py` | 182 fichier(s), plus récent 2026-10-21 |
 
 ## 6 · Les 20 plus gros fichiers — ce qui pèse dans l'historique
 
 | Fichier | Taille |
 |---|---|
-| `content/pipeline/POST-01-v4-TIKTOK.mp4` | 56.2 Mo |
 | `clients/dm-optic/brag/brag.mp4` | 14.6 Mo |
 | `clients/dm-optic/content/month1/w1/spot-03.mp4` | 13.6 Mo |
 | `clients/dm-optic/content/month1/w1/spot-02.mp4` | 12.1 Mo |
@@ -121,7 +119,6 @@ Aucun doublon à l'intérieur d'un même projet.
 | `clients/dm-optic/content/month1/w1/ugc-03.mp4` | 6.5 Mo |
 | `clients/dm-optic/photoshoot/femmes_1.2/PXL_20261016_122947032.MP.jpg` | 6.4 Mo |
 | `clients/dm-optic/photoshoot/others/PXL_20261016_132806564.jpg` | 5.6 Mo |
-| `amk-site.zip` | 4.9 Mo |
 | `dmopticsarl.zip` | 4.6 Mo |
 | `clients/dm-optic/content/month1/w1/tiktok-01-v2.mp4` | 4.5 Mo |
 | `clients/dm-optic/photoshoot/femmes_1.1/PXL_20261016_123745403.jpg` | 4.4 Mo |
@@ -131,9 +128,11 @@ Aucun doublon à l'intérieur d'un même projet.
 | `clients/dm-optic/photoshoot/femmes_1.1/PXL_20261016_123838121.jpg` | 3.8 Mo |
 | `clients/dm-optic/photoshoot/femmes_1.0/PXL_20261016_122551307.jpg` | 3.7 Mo |
 | `clients/dm-optic/photoshoot/femmes_1.2/PXL_20261016_125157364.PORTRAIT.jpg` | 3.6 Mo |
+| `clients/dm-optic/photoshoot/femmes_1.1/PXL_20261016_125310334.PORTRAIT.jpg` | 3.6 Mo |
+| `clients/dm-optic/photoshoot/femmes_1.0/PXL_20261016_124221299.PORTRAIT.jpg` | 3.5 Mo |
 
 ⚠️ **Le `.git` ne perd rien quand on supprime un fichier.** Un binaire retiré reste dans l'historique ; seul un `git filter-repo` (réécriture + force-push) le retire vraiment. Tant que ce n'est pas fait, supprimer un gros média allège le disque, pas le dépôt.
 
 ---
 
-*Rejouable : `python3 tools/ops/audit_files.py`. Rapport précédent à comparer : 1788 fichiers, 626.5 Mo.*
+*Rejouable : `python3 tools/ops/audit_files.py`. Rapport précédent à comparer : 1789 fichiers, 560.1 Mo.*
