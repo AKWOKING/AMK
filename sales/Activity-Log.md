@@ -5525,3 +5525,14 @@ Trois écarts mesurés, que les deux portiques ne pouvaient pas voir :
 Vérifié et sain : focus 3 px sur 8 arrêts, `prefers-reduced-motion` (anneau `none`, 0/40 bloc caché),
 menu `<details>` qui s'ouvre et se ferme par `Échap`, zéro débordement horizontal, zéro erreur console,
 6/6 images chargées, `body{padding-bottom:84px}` contre une barre de 73 px.
+
+## 24/10/2026 (21h) — le dépôt publiait sur Cloudflare à chaque envoi, et je l'avais nié
+
+Correction d'une affirmation du même jour : « Cloudflare : rien n'est parti » était **faux**.
+`.github/workflows/deploy-dmoptic.yml` se déclenche sur tout envoi touchant
+`hosting/previews/dmoptic/**`, `arena/**` compris ; ses secrets sont posés et l'étape
+`wrangler deploy` finit en **succès**. Douze exécutions depuis le 23/10, dont 19:53 (le cercle) et
+20:40–20:41 (les trois corrections du premier écran). Détail, limites de preuve et trois correctifs
+possibles : `clients/dm-optic/build-notes.md`, entrée « 24/10 (soir) — ce que le dépôt faisait tout
+seul ». Rien changé dans le workflow (il appartient à King) ; l'ordre « Vercel d'abord » est à rétablir
+par un geste de King sur les secrets ou le déclencheur.

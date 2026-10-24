@@ -2353,3 +2353,40 @@ interdite tant que le 23/10 n'est pas reporté dans le gabarit.
 **Trouvé et non corrigé, exprès** : `audit_reveal` signale 4 fautes sur les deux pages du premier écran
 (`html.js .rv` sans `:not(.in)`), identiques avant et après ce lot et sans effet mesurable (40 blocs
 révélés sur 40). Une ligne par page, sur feu vert.
+
+### 24/10 (soir) — ce que le dépôt faisait tout seul : chaque envoi publiait sur Cloudflare
+
+**La correction d'abord.** Le 24/10 au tour précédent, j'ai écrit « Cloudflare : rien n'est parti ».
+**C'était faux.** Je m'étais appuyé sur les checks `Workers Builds: dmoptiquesarl` en échec (0 s) sans
+regarder le second mécanisme de publication, qui lui réussissait.
+
+**Le fait, relevé dans les journaux d'Actions.** `.github/workflows/deploy-dmoptic.yml` (« Déployer DM
+Optique sur Cloudflare ») se déclenche sur **tout envoi** touchant `hosting/previews/dmoptic/**`, sur
+les branches **`arena/**` comme sur `main`**, et ses deux secrets sont posés : l'étape « Les secrets
+sont-ils posés ? » répond `ok`, et l'étape « Publier sur Cloudflare » (`wrangler-action@v3`, commande
+`deploy`) se termine en **succès**. Relevé de `gh run view --json jobs` : les étapes sont `success`,
+pas `skipped` — donc `wrangler deploy` a bien tourné. Douze exécutions réussies depuis le 23/10, dont
+celles de ce soir : **19:53** (branche `arena/6812192f-amk`, le cercle), **19:55** (`main`), **20:40**
+et **20:41** (`arena/a72c0b8f-amk`, les trois corrections du premier écran).
+
+**Conséquence, dite simplement** : le domaine du cabinet `dmoptiquesarl.com` reçoit chaque envoi sans
+que personne ne l'ait demandé. Le banc Vercel n'est donc pas un banc d'essai : c'est un second miroir
+de ce qui est déjà en ligne. L'ordre voulu par King (« d'abord Vercel, tu testes, ensuite Cloudflare »)
+est court-circuité par le dépôt lui-même.
+
+**Ce que je ne peux pas prouver d'ici** : le CSS réellement servi par Cloudflare. Les proxys de texte
+sont bloqués dans le bac (`allorigins`, `codetabs`, `r.jina.ai` renvoient du markdown ou expirent) et
+`curl` n'atteint pas `vercel.app`/`dmoptiquesarl.com`. Ce qui est prouvé : la commande de publication a
+tourné et réussi après chaque envoi. Ce qui ne l'est pas : que le Worker ait servi la nouvelle version
+au premier visiteur, et à quel moment (cache de bord).
+
+**Le correctif, à trancher par King** — trois options, dans l'ordre de sûreté :
+
+| # | Geste | Effet | Coût |
+|---|---|---|---|
+| 1 | Retirer les deux secrets `CLOUDFLARE_API_TOKEN` / `CLOUDFLARE_ACCOUNT_ID` (Settings → Secrets) | plus aucune publication automatique ; le workflow sort en avertissement lisible ; publication redevenue un geste manuel | 30 s, réversible |
+| 2 | Restreindre le déclencheur à `branches: ["main"]` et garder `workflow_dispatch` | une branche de conversation ne publie plus ; `main` publie encore (donc au merge) | 1 ligne, mais un fichier `workflows` ne se pousse pas avec le jeton d'Arena |
+| 3 | Ne rien changer, et considérer Cloudflare comme la production continue | simple, mais « je teste d'abord sur Vercel » devient faux | 0 |
+
+Je n'ai **rien** changé dans le workflow : il n'est pas à moi (`PRE-FLIGHT` §0i : les fichiers
+`workflows` appartiennent à King), et le pousser demanderait une permission que le jeton n'a pas.
