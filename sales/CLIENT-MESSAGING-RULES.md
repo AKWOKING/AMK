@@ -296,3 +296,35 @@ humaine.
 sans friction (« ça prend 2 minutes, et vous pouvez le faire sans moi »), et la règle **« on fait le
 test avant d'écrire »**. Trouver ces documents ne doit plus dépendre de la mémoire :
 `bash tools/graphify/ask.sh "message prospect clinique"` (voir PRE-FLIGHT §0g).
+
+### 13 bis · La porte du §13 — les quatre temps sont maintenant exécutables (24/10, 23h)
+
+**Le défaut que ça corrige.** Les quatre temps du §13 et les cinq temps de
+`knowledge/OUTREACH-MESSAGING` §3 étaient **écrits, jamais exécutés**. Le 24/10 au soir, les six
+messages déclarés « prêts » ont été repassés à la main : **2 bloquants et 15 avertissements** — un
+« Rien à vous » (attaque déguisée, §1② de `DECLINAISON`), un message à 57 mots, et **six messages sur
+six sans la sortie sans friction**.
+
+**La porte, désormais :**
+
+```bash
+python3 tools/qa/audit_outreach.py sales/<fichier>.md          # code 1 au premier manquement
+python3 tools/qa/audit_outreach.py sales/<fichier>.md --strict  # les avertissements bloquent aussi
+python3 tools/qa/test_audit_outreach.py                        # 15/15 : elle refuse bien ce qu'elle dit
+```
+
+Le fichier doit mettre chaque message sous la forme `**⑥ Nom — Quartier — 677 00 00 00**` suivi de
+lignes `>`. Le script cite la règle et le document source à chaque manquement, et son en-tête dit ce
+qu'il **ne** juge pas : la vérité du fait (§8c), les trois portes (§8b) et le goût. Un message qui
+passe la porte peut encore être faux ou plat — la porte ne remplace pas la lecture, elle empêche
+seulement de renvoyer ce qu'on a déjà écrit comme interdit.
+
+**Les deux structures, dites à voix haute** (elles ne sont pas identiques, et c'est volontaire) :
+
+| Document | Temps | Ce qu'il ajoute |
+|---|---|---|
+| ce §13 | **4** : fait daté · dédouanement+cause · patient · question | la longueur (35–55 mots) et l'interdit des deux questions |
+| `knowledge/OUTREACH-MESSAGING` §3 | **5** : + la **preuve sociale minimale** et la **sortie sans friction** | le « vous pouvez le faire sans moi », qui retire la peur de répondre |
+
+Les messages d'un premier lot suivent **les cinq**. Le cinquième temps coûte huit mots et c'est lui qui
+manquait partout.
