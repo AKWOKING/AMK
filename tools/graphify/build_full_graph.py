@@ -356,7 +356,8 @@ def write_communities_section(A, g, by_id, comm, indeg) -> None:
             pivots = sorted(members, key=lambda n: -indeg[n])[:3]
         names = " · ".join(f"`{by_id[n]['label']}`" for n in pivots)
         doms = Counter(by_id[n].get("domain") for n in members)
-        top_dom, top_n = doms.most_common(1)[0]
+        # ex æquo départagé par le nom : sinon deux runs identiques peuvent écrire deux cartes
+        top_dom, top_n = sorted(doms.items(), key=lambda kv: (-kv[1], str(kv[0])))[0]
         share = f"{100 * top_n // len(members)} %"
         A(f"| {cid} | {len(members)} | {names} | `{top_dom}/` ({share} du groupe) |")
     A("")
