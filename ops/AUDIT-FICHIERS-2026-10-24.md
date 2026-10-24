@@ -7,10 +7,10 @@
 
 ## 1 · Ce qui a été mesuré
 
-| | Avant | Après | Écart |
+| | Avant (24/10, matin) | Après (24/10, soir) | Écart |
 |---|---|---|---|
-| Fichiers suivis | 1 788 | 1 788 | ±0 (4 retirés, 4 ajoutés : machine + audit) |
-| Poids de l'arbre suivi | 626,5 Mo | **560,1 Mo** | **−66,4 Mo** |
+| Fichiers | 1 788 | **1 632** | −156 (4 artefacts + 158 photos − 6 fichiers neufs) |
+| Poids de l'arbre | 626,5 Mo | **188,5 Mo** | **−438,0 Mo** |
 | Médias sans nom cité | 232 | 227 | −5 |
 | Documents orphelins | 415 | 415 | inchangé (voir §5) |
 | `.git` (historique) | 861 Mo → **1,06 Gio** | | **non touché** (voir §6) |
@@ -51,7 +51,7 @@ git si besoin »).
 
 | Zone | Poids | Pourquoi ça reste |
 |---|---|---|
-| `clients/dm-optic/photoshoot/` | **395 Mo**, 168 fichiers | photos brutes du shooting client (PXL_*.jpg, 4–9 Mo pièce). **Origine du travail** : c'est de là que sortent les visuels du mois 1 et 2. Non supprimées — voir §6, la décision vous revient |
+| `clients/dm-optic/photoshoot/` | **23 Mo**, 10 fichiers | **pruné le 24/10** (ruling King) : 158 frames brutes retirées de l'arbre (389,7 Mo), restent les **2 photos lues par `demos/build_dmoptic.py`** et les 6 cartes de composition. Registre fichier par fichier et commandes de reprise : `clients/dm-optic/photoshoot/RETRAIT-2026-10-24.md` |
 | Vidéos `clients/dm-optic/content/` | 52 Mo | **livrables suivis nommément** (exception `.gitignore` du 22/10 après « where is post 1 ?? ») : `spot-02`, `spot-03`, `etapes-01`, `ugc-03`, `tiktok-01-v2`, `brag.mp4` |
 | `design/vendor/` | 12 Mo | skills tierces importées (taste, emil), nécessaires à `tools/taste-skill` |
 | `hosting/previews/` | 20 Mo | trois sites déployés (`dmoptic`, `cristallin`, `labiomed`) — un aperçu déployé n'est pas une copie morte |
@@ -75,12 +75,12 @@ git si besoin »).
 
 ## 6 · Ce qui demande votre décision — et ce que je propose
 
-**① Les photos brutes — 395 Mo, dont 286 Mo qu'aucun document ne nomme.** Elles sont dans l'historique :
-les retirer de la tête n'allège pas un clone. Trois options :
-- **garder** (statut actuel) : coût disque, zéro risque ;
-- **garder la sélection** (les images réellement utilisées dans `month1`/`month2`), retirer les autres de
-  la tête : ‑300 Mo sur l'arbre, récupérables par git ;
-- **sortir tout le shooting** vers un stockage externe (Google Drive) et ne garder que la sélection.
+**① Les photos brutes — tranché le 24/10 : prunées.** 158 frames retirées de l'arbre de travail
+(389,7 Mo), 8 fichiers gardés parce que **lus par du code** (2 photos en production) ou **références
+dessinées** (6 cartes de composition). L'historique les garde toutes :
+`git checkout 47597f91 -- clients/dm-optic/photoshoot/`. Le détail, fichier par fichier, est dans
+`clients/dm-optic/photoshoot/RETRAIT-2026-10-24.md`. `.gitignore` empêche un prochain import de revenir
+tout seul.
 
 **② L'historique — `.git` = 1,06 Gio.** C'est devenu le vrai poids du dépôt, et il ne se réduit pas par
 `git rm` : il faut réécrire l'historique (`git filter-repo`) — opération **destructive, à fenêtre

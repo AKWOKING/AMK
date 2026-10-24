@@ -67,3 +67,11 @@ CLOUDFLARE_*
 # Graphify (24/10/2026) — artefact GÉNÉRÉ, jamais versionné : 7,4 Mo de graph.json + 12 Mo de cache.
 # Il se reconstruit en 10 secondes : bash tools/graphify/install.sh && python3 tools/graphify/build_docs_graph.py
 graphify-out/
+
+# ── PHOTOS BRUTES DU SHOOTING (règle du 24/10/2026, ruling King : « prune the raw photos »)
+# Seules les frames **lues par du code** restent suivies (les deux photos en production).
+# Les 158 autres sont dans l'historique : `git show 47597f91:clients/dm-optic/photoshoot/<dossier>/<fichier>`
+# Registre du retrait, un fichier par ligne : clients/dm-optic/photoshoot/RETRAIT-2026-10-24.md
+clients/dm-optic/photoshoot/*/PXL_*.jpg
+!clients/dm-optic/photoshoot/others/PXL_20261016_131635710.MP.jpg
+!clients/dm-optic/photoshoot/others/PXL_20261016_132758528.MP.jpg
