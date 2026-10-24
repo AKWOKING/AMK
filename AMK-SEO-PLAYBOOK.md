@@ -119,13 +119,15 @@ distingue **ce que la vidéo affirme**, **ce que nous pouvons vérifier**, et **
 
 - **Les deux métiers du site s'en vont ailleurs.** *Être trouvé* passe de Google à l'assistant ; *inspirer
   confiance* passe du texte écrit à la vidéo.
-- **Chiffres cités** : 43 % des gens ont utilisé un assistant IA pour se renseigner avant un achat · 1 sur 4
+- **Chiffres cités** (relevé de l'auteur, **non revérifiés un par un** — à retraiter avant tout usage client) :
+  43 % des gens ont utilisé un assistant IA pour se renseigner avant un achat · 1 sur 4
   dit que l'IA est sa **source principale** de recommandation (devant le site de l'entreprise) · **YouTube
   est la première source citée dans les réponses IA de Google** et près de **30 % de ces réponses
   contiennent une vidéo** · SimilarWeb : **1,3 milliard de clics sortis des chatbots en un mois**, la
   **première destination juste après la conversation est YouTube** (plus que Facebook + Wikipédia + Reddit
-  réunis), dont environ **trois quarts depuis ChatGPT** · 53 % des utilisateurs d'IA s'en servent surtout
-  pour **comparer et réduire** une liste · **85 % revérifient** ailleurs ce que l'IA leur a dit.
+  réunis), dont environ **trois quarts depuis ChatGPT** · **53 %** des utilisateurs d'IA s'en servent surtout
+  pour **comparer et réduire** une liste *(relevé de l'auteur, non revérifié)* · **85 % revérifient** ailleurs
+  ce que l'IA leur a dit.
 - **Pourquoi YouTube plutôt que les sites** (hypothèse de l'auteur, présentée comme telle) : n'importe qui
   peut écrire n'importe quoi sur son propre site ; une vidéo vit sur une plateforme qu'on ne contrôle pas et
   qui pèse lourd.

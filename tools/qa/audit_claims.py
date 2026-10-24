@@ -185,6 +185,8 @@ def scan(path: str):
 SOURCE_MARK = re.compile(
     r"https?://|www\.|\bselon\b|d'apr[eè]s|\bsource\b|§|`[^`]*\.(md|py|json|html)`"
     r"|\bTier\b|\bn\s*=|échantillon|non rev[eé]rifi|claims-ok|r\s*=\s*0?\.\d"
+    # un chiffre CALCULÉ est sourcé par son calcul : « 14,7 % (10 ÷ 68) »
+    r"|calcul[eé]|÷|/\s*\d+\s*contact|inv[eé]rifiable"
     # une source nommée sur la ligne compte : « BrightLocal 2023 », « Sprout Social », « cité par Ocuco »
     r"|\bcit[eé]\w*\s+par\b|\brelay[eé]\w*\s+par\b"
     r"|\b(?:BrightLocal|Metricool|Sprout|Statista|DataReportal|Hootsuite|We Are Social|GSMA|Ocuco"
@@ -205,7 +207,9 @@ MONEY_LINE = re.compile(r"\b\d[\d\s.,]*\s*(FCFA|XAF|EUR|USD|\$|€)\b|\b(FCFA|XA
 CLAIM_WORDS = re.compile(
     r"%\s*(?:des|de\s+la|du|d')\s*(?:entreprises?|pme|commerces?|boutiques?|internautes?"
     r"|consommateurs?|gens|prospects?|clients?|utilisateurs?|visiteurs?|personnes|population"
-    r"|francophones?|cam[ée]rounais\w*|africains?\w*|march[ée]|d[ée]cideurs?)"
+    r"|francophones?|cam[ée]rounais\w*|africains?\w*|march[ée]|d[ée]cideurs?"
+    # nos métiers : une phrase qui parle d'opticiens ou de cliniques est une affirmation de marché
+    r"|opticiens?|opticiennes?|cliniques?|cabinets?|pharmacies?|patients?)"
     r"|\btaux\s+de\s+(?:conversion|r[ée]ponse|clic|refus)\b", re.I)
 
 
@@ -244,7 +248,7 @@ def source_gaps(path: str):
         # « (BrightLocal, LCRS 2024) »). On regarde donc la ligne ET les deux suivantes — la faille
         # corrigée le 24/10 : après avoir sourcé correctement quatre chiffres, la porte les signalait
         # encore parce que le crédit était à la ligne d'en dessous.
-        window = " ".join(lines[max(0, i - 3):i + 2])
+        window = " ".join(lines[max(0, i - 3):i + 4])
         if SOURCE_MARK.search(window) or STYLE_LINE.search(line) or ALLOW.search(line):
             continue
         if MONEY_LINE.search(line) or not CLAIM_WORDS.search(line):

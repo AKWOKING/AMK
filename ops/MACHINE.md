@@ -180,7 +180,7 @@ Une porte est un **code retour**, pas une impression. Si elle n'a pas été lanc
 | **Règles** | `bash tools/ops/machine.sh --rules` | les portes dures du registre §9, et toute règle du code qui manquerait au tableau | les règles souples et le trou, dits en clair |
 | **Crochet** | `bash tools/ops/install-hooks.sh` (une fois par clone) → `.git/hooks/pre-push` | un push avec un secret ou un chemin mort | la carte rejouée (trop lent pour un crochet) |
 | **CI GitHub** | `.github/workflows/machine.yml` — à chaque push et PR | secret, chemin mort, carte non reproductible | la valeur du travail, et tout ce qui demande un jugement |
-| **Sources** | `python3 tools/qa/audit_claims.py --sources knowledge` | un pourcentage affirmé sans appui sur sa ligne | la qualité de la source, et ce qui est sourcé deux lignes plus haut |
+| **Sources** | `python3 tools/qa/audit_claims.py --sources .` | un pourcentage affirmé sans appui dans **tout le dépôt** (765 documents), sur une fenêtre de 3 lignes avant et 3 après | la qualité de la source ; un chiffre copié d'une étude ancienne reste « sourcé » |
 | **Rendement** | `bash tools/ops/machine.sh --turns` | le volume du jour (commits, fichiers, lignes) et le nombre de refus | la valeur du travail : un gros commit peut être du déchet |
 | **Usage** | `bash tools/ops/machine.sh --usage` | un outil provisionné qu'aucune trace ne montre appelé | ce qui ne laisse aucune trace : scripts QA lancés à la main, skills lus, recherche web |
 
@@ -259,7 +259,7 @@ même porte finissent toujours par diverger, et c'est la plus vieille qui gagne.
 | 9 | `audit-frais` | Le comptage des fichiers a moins de sept jours | `ops/FILE-AUDIT-*.md` | chaque semaine | âge de l'audit — ⚠ souple |
 | 10 | `handoff-frais` | L'état de reprise a moins de trois jours | `ops/HANDOFF-*.md` | tous les trois jours | âge du dernier handoff — ⚠ souple |
 | 11 | `document-neuf` | Tout `.md` neuf à la racine ou dans `ops/` se déclare avant de devenir loi | PRE-FLIGHT §4b | apparition d'un doc souverain | `git diff --diff-filter=A` — ⚠ souple |
-| 12 | `stat-sourcee` | Aucune statistique sans source primaire nommée | PRE-FLIGHT §1g | chaque chiffre écrit | `audit_claims.py --sources knowledge` — ⚠ souple (porte faible) |
+| 12 | `stat-sourcee` | Aucune statistique sans source primaire nommée | PRE-FLIGHT §1g | chaque chiffre écrit | `audit_claims.py --sources .` — tout le dépôt, ⚠ souple (porte faible), visible à chaque `--check` |
 | 13 | `registre-complet` | Aucune règle du code ne peut disparaître de ce tableau sans faire échouer la porte | ce § | chaque `--check` | chaque id connu de `machine.py` présent ci-dessus |
 | 14 | `fichier-neuf-avec-king` | Un fichier debout nouveau n'existe qu'avec le oui de King | PRE-FLIGHT §4b | création d'un document souverain | ○ **sans porte machine** |
 
@@ -276,10 +276,15 @@ construction**, à chaque tour. Une porte toujours rouge n'est pas une règle : 
 **Une porte faible, et un trou qui reste.** La règle 12 (`stat-sourcee`) n'a pas de porte *forte* : aucun script ne sait
 si une source est bonne. Elle a une porte **faible**, et c'est déjà autre chose que rien :
 `audit_claims.py --sources` liste les lignes qui affirment un pourcentage **sans lien, sans chemin, sans
-« selon », sans « non revérifié »**. Sa précision est choisie : sur 126 documents, elle ramène 7 lignes
-(4 dans `knowledge/`) au lieu des 185 qu'une règle naïve produisait — une alerte qu'on apprend à ignorer
-ne vaut pas mieux que pas d'alerte. Elle est **souple** : elle signale, elle ne bloque pas, parce qu'un
-script ne doit jamais arrêter une publication sur une intuition.
+« selon », sans « non revérifié », sans calcul, sans « invérifiable »**. Sa précision est choisie : elle
+lisait `knowledge/` le matin du 24/10 (7 lignes sur 126 documents), elle lit **tout le dépôt** le soir
+(765 documents) et ramène **0 ligne**. Quatre lignes sont tombées au passage, pas 185 : un 53 % recopié
+d'un blog sans lien, un 90 % de commerces sans étude, un 14,7 % qui était un calcul (10 ÷ 68, désormais
+dit comme tel), un 20–30 % qui était un objectif stratégique et non une mesure. Sa fenêtre de lecture est
+de **3 lignes avant, 3 après** : une source posée sous son chiffre compte autant qu'au-dessus.
+Elle est **souple** : elle signale, elle ne bloque pas, parce qu'un script ne doit jamais arrêter une
+publication sur une intuition — mais `--check` l'affiche désormais à chaque tour, parce qu'une alerte
+qu'on ne voit jamais est une règle morte en trois tours.
 
 La règle 14 (`fichier-neuf-avec-king` — **un fichier debout neuf exige le oui de King**) reste sans porte : personne ne peut
 vérifier un accord qui n'a pas laissé de trace. Son substitut est **la forme de la réponse** — le fichier

@@ -31,7 +31,7 @@ positionnement, contenu/viralité, confiance, erreurs ; le reste = publicité Bl
 ## 3 · TOOL AUDIT — PRINCIPES, PAS OUTILS
 
 Aucun outil vendu qui nous concerne (leur stack = podcast + Blast). **Principes extraits :**
-1. **Viser 20–30 % du marché, « transparence violente »** — plaire à tout le monde = lisse = invisible.
+1. **Viser une part de marché de 20–30 %** (objectif de l'auteur, pas une mesure), « transparence violente » — plaire à tout le monde = lisse = invisible.
 2. **Récurrence + répétition du même axe** — ne pas changer de sujet tous les jours ; être prêt à se
    répéter comme une pub TV.
 3. **Ne pas chercher la viralité ; chercher la régularité** — les 100 premières vidéos = apprentissage

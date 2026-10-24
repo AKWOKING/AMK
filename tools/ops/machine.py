@@ -474,12 +474,14 @@ def mirror_state() -> dict:
 
 
 def claim_gaps() -> tuple[int, list[str]]:
-    """La porte faible du §1g : `audit_claims.py --sources` sur knowledge/. Il ne juge pas la source —
-    il dit qu'une ligne affirme un pourcentage sans lien, sans chemin, sans « selon », sans « non
-    revérifié ». Précision assumée : on préfère 4 lignes justes à 185 lignes qu'on apprend à ignorer."""
+    """La porte faible du §1g : `audit_claims.py --sources` sur TOUT le dépôt (765 documents le 24/10).
+    Il ne juge pas la source — il dit qu'une ligne affirme un pourcentage sans lien, sans chemin, sans
+    « selon », sans « non revérifié », sans calcul. Précision assumée : on préfère 4 lignes justes à
+    185 lignes qu'on apprend à ignorer. Élargi de `knowledge/` au dépôt entier le 24/10, à la demande
+    de King (« les document d'information ne sont pas sources ») : 4 lignes sont tombées, pas 185."""
     try:
         out = subprocess.run([sys.executable, str(ROOT / "tools/qa/audit_claims.py"),
-                              "--sources", "knowledge", "--json"],
+                              "--sources", ".", "--json"],
                              cwd=ROOT, capture_output=True, text=True, timeout=60)
         gaps = json.loads(out.stdout or "[]")
     except (OSError, subprocess.SubprocessError, ValueError):
@@ -566,8 +568,8 @@ def rules() -> list[dict]:
     n_gaps, where = claim_gaps()
     add("stat-sourcee", "Aucune statistique sans source primaire nommée ; ce qui n'est pas revérifiable est écrit tel quel.",
         "PRE-FLIGHT §1g", "chaque chiffre écrit", "souple", n_gaps == 0,
-        f"{n_gaps} pourcentage(s) sans appui dans knowledge/ ({', '.join(where)}) → "
-        "python3 tools/qa/audit_claims.py --sources knowledge" if n_gaps
+        f"{n_gaps} pourcentage(s) sans appui dans le dépôt ({', '.join(where)}) → "
+        "python3 tools/qa/audit_claims.py --sources ." if n_gaps
         else "aucun pourcentage affirmé sans lien, chemin, « selon » ou « non revérifié »")
     add("fichier-neuf-avec-king", "Un fichier debout nouveau n'existe qu'avec le oui de King.",
         "PRE-FLIGHT §4b", "création d'un document souverain", "trou", True,
@@ -953,6 +955,11 @@ def check() -> int:
         print(f"\n{RED}PORTE FERMÉE{OFF} : {len(hard)} règle(s) dure(s) — détail : bash tools/ops/machine.sh --rules")
         return 1
     print(f"{GRN}✓{OFF} portes dures ouvertes — détail : bash tools/ops/machine.sh --rules")
+    # ce qui est souple ne bloque pas, mais ne se cache pas : une porte qu'on ne voit jamais est
+    # exactement la façon dont une règle meurt en trois tours.
+    for r in rules():
+        if r["sev"] == "souple" and not r["ok"]:
+            print(f"{YEL}⚠{OFF} souple : {r['id']} — {r['detail']}")
     return 0
 
 

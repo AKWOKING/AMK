@@ -58,7 +58,7 @@ Et une découverte qui va compter dans 12 mois : **la facture électronique obli
 | **Intégration directe MTN / Orange** | **5 à 15 millions FCFA** (développement, tests, certification) | **3 à 7 mois** |
 
 Conséquence pratique : si un client veut « le paiement MoMo sur sa facture », **on passe par CamPay ou Fapshi**,
-jamais par l'opérateur. Et pour un simple encaissement noté dans la comptabilité (ce dont 90 % des commerces ont
+jamais par l'opérateur. Et pour un simple encaissement noté dans la comptabilité (ce dont l'immense majorité des commerces a
 besoin), on crée deux modes de paiement « MTN MoMo » et « Orange Money » avec la **référence du SMS** : zéro
 commission, zéro intégration.
 
