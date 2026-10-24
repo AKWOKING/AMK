@@ -117,6 +117,14 @@ CAS: list[tuple[str, str, str, str]] = [
         "absent des 12 premiers mots",
     ),
     (
+        "faux positif : « ou » ailleurs dans la phrase",
+        "Bonjour Docteur, à Bonanjo, votre fiche donne un numéro qui n'existe plus ou qui a changé. "
+        "Ce n'est pas votre travail, c'est la fiche : un patient appelle et raccroche. "
+        "Je vous l'envoie ? Deux minutes.",
+        "Bonanjo",
+        "",
+    ),
+    (
         "question à deux branches",
         BON.replace("Je vous l'envoie ?", "C'est vous qui l'avez retiré, ou personne ne vous a prévenu ?"),
         "Bonanjo",

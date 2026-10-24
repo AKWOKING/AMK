@@ -5581,3 +5581,32 @@ exige un **verdict écrit par affirmation** : aucun des six n'a de fiche dans `l
 vivent uniquement dans le document de vente. **Un fait vérifié ce soir** : `optix-sarl.business.site`
 renvoie bien une **erreur 404** (Google a fermé les sites `business.site` en mars 2024, redirection
 arrêtée le 10 juin 2024).
+
+## 24/10/2026 (12:12) — Optix : un 👍, et un message qui n'avait pas passé la porte
+
+**Ce qui est parti.** Un message à **OPTIX SARL Douala** (697 72 32 65) à 12:12, angle « fiche Google
+abandonnée ». Ce n'est pas le texte du lot du 26/10 : c'est un autre, et la porte le refuse —
+**101 mots, 7 phrases**, pas de dédouanement, pas de sortie sans friction, le quartier absent des douze
+premiers mots. Deux défauts que le script ne voit pas : « **qui vous font perdre des clients tous les
+jours** » est un chiffre inventé sur son activité (`DETECTION-FUITES` §2), et « **On règle ça ensemble
+cette semaine ?** » est un rendez-vous dans le premier message (§13).
+
+**Les trois affirmations, vérifiées ce soir** : le lien de site est mort (**VRAI** — 404 constaté, et la
+page Facebook du cabinet l'affiche encore) · zéro avis (**VRAI** — « Not yet rated (0 Reviews) » sur la
+même page) · la catégorie « contrôle de gestion » (**NON VÉRIFIÉ**, aucune source retrouvée : à ne pas
+répéter sans capture) · « il manque vos horaires » (**NON VÉRIFIÉ**).
+
+**La réaction.** Le cabinet a **réagi 👍** à 12:12. Premier signe d'un opticien sur une première touche.
+Ce n'est ni un oui ni un non : il a lu, il n'a pas répondu. Le seul geste suivant est **un message le
+27/10** (§10 du lot d'envoi), puis plus rien — message lu sans réponse = `parked` au-delà.
+
+**La porte s'est améliorée au passage.** Elle criait « question à deux branches » sur un « ou » qui
+n'était pas une question ; corrigée le jour même (découpage par phrase). Son banc de test passe de
+**15 à 16 cas**, dont ce faux positif précis.
+
+**Réutilisation des concepts dentaire et labo (question de King).** Le bac était un clone **shallow** :
+historique récupéré (`fetch --unshallow`, 730 commits). Les six pages supprimées le 24/10 sont
+récupérables (`54d962cb`, `38b7f06c`) — mais le contrôle de fuite trouve l'identité complète des anciens
+prospects dans les six : noms, quartiers, et **deux numéros** dans Béthanie. Verdict : **on réutilise la
+direction** (déjà consignée au registre d'unicité), **pas le fichier** ; deux concepts neufs sur le
+gabarit DM, contrôle de fuite en porte de sortie. Détail : note de conception §6.

@@ -130,3 +130,60 @@ rouvre.
 5. **Les cinq concepts à construire** (dentaire, laboratoire, clinique) : aucun n'existe, et le
    registre d'unicité doit être lu avant le premier (trois familles déjà prises : dentaire, labo,
    clinique).
+
+---
+
+## 6 · Réutiliser les designs dentaire et labo — la réponse, avec le prix réel
+
+King : *« we can reuse the designs for dentaire and labo since no client has bought it yet, what do you
+think ? »* **Oui, et c'est même la meilleure nouvelle du week-end** — mais pas en l'état : les six pages
+récupérables portent l'identité complète de leurs anciens prospects.
+
+### 6.1 · Elles sont récupérables, et je l'ai vérifié
+
+Le bac était un clone **shallow** (`git rev-list --all` = 2 commits) : l'historique a été récupéré
+(`git fetch --unshallow`, 730 commits), et chaque fichier supprimé le 24/10 a été retrouvé à son commit
+d'origine (`54d962cb` pour cinq d'entre eux, `38b7f06c` pour JEMPO et Béthanie).
+
+| Métier | Page | Taille | Ce qu'elle contient comme design |
+|---|---|---|---|
+| **Dentaire** | `concept-yaks-v1.html` | 616 Ko | roue des spécialités, bande de preuve, bento services |
+| **Dentaire** | `concept-oracare-v3.html` | 1,1 Mo | bento + cartes de prix + hero photo, EN d'abord |
+| **Laboratoire** | `concept-unilabo-v2.html` | 84 Ko | **la fiche de prélèvement comme unique motif**, fiche vivante |
+| **Laboratoire** | `concept-afriquelabo-v1.html` | 296 Ko | console d'analyses, catalogue consultable, mono numéroté |
+| Clinique (bonus) | `concept-labethanie-v1.html` | 260 Ko | dépliant de soins, liste cochable → un message WhatsApp |
+| Clinique (bonus) | `concept-jempo-v1.html` | 164 Ko | quatre portes (spécialité → praticien → rendez-vous) |
+
+### 6.2 · Ce qui bloque la réutilisation telle quelle
+
+Le contrôle de fuite sur les six, fait ce soir :
+
+| Fichier | Ce qui reste dedans |
+|---|---|
+| yaks | `YAKS`, `Skye`, `Logbessou` |
+| oracare | `OraCare`, `Skye`, `Molyko` |
+| unilabo | `UNI-LABO`, `Bonamoussadi`, `Bonabéri` |
+| afriquelabo | `AFRIQUE LABO`, `Bessengue`, **numéro `690 54 70 93`** |
+| labethanie | `La Béthanie`, `Bonabéri`, **deux numéros** |
+| jempo | `JEMPO`, `Deido`, `Bessengue` |
+
+Aucune n'est réutilisable en l'état : publier la page d'un ancien prospect sous un nom fictif, avec son
+numéro dedans, c'est exactement ce que `tools/video/anonymise.py` a été écrit pour empêcher (son contrôle
+fort avait trouvé **21 fuites** que l'ancien test laissait passer).
+
+### 6.3 · Ce que je recommande
+
+**Réutiliser la direction, pas le fichier** — trois raisons :
+
+1. **Le registre d'unicité garde déjà l'essentiel** (`clients/_uniqueness-registry.md`) : archétype,
+   palette, typographie, ton de chaque page. C'est ça qui coûte cher à inventer, et c'est déjà écrit.
+2. **Les fichiers sont lourds** (616 Ko à 1,1 Mo, images en base64, polices embarquées) : repartir d'eux
+   pour en faire une page générique coûte plus qu'un build neuf sur le gabarit DM, plus léger et déjà
+   outillé (`demos/dmoptic-v1.tpl.html` + builder).
+3. **La règle du 20/10** — le site ne montre que du vrai : une page de concept ne peut pas hériter des
+   photos d'un cabinet qui n'a pas signé.
+
+**Donc : deux concepts neufs (dentaire, laboratoire), construits sur le gabarit DM, avec les directions
+déjà tirées** — « roue des spécialités » pour le dentaire, « la fiche de prélèvement » pour le labo — et
+**le contrôle de fuite en porte de sortie**, pas en option. Les anciens fichiers restent dans l'historique
+git comme référence visuelle : on les ouvre, on ne les publie pas.

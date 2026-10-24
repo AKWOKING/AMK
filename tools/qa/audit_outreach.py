@@ -227,8 +227,8 @@ def check(msg: Message) -> None:
 
     # 7 bis · une question à deux branches — le §13 interdit « deux questions » ;
     # « A ou B ? » en est une seule à l'écrit, mais deux réponses à choisir à l'oral.
-    for sent in re.split(r"(?<=[?])\s+", body):
-        if "?" in sent and " ou " in fold(sent):
+    for sent in re.split(r"(?<=[.!?])\s+", body):
+        if sent.rstrip().endswith("?") and " ou " in fold(sent):
             msg.warns.append("question à deux branches (« X ou Y ? ») — justifier ou simplifier, §13")
             break
 
