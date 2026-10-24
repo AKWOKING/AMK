@@ -10,7 +10,7 @@ Aucune suppression automatique : les décisions sont listées, pas prises.
 
 | Classe | Fichiers | Poids | Action |
 |---|---|---|---|
-| caches (`__pycache__`, `*.pyc`) | 0 | 0 o | `python3 tools/ops/audit_files.py --clean-cache` |
+| caches (`__pycache__`, `*.pyc`) | 1 | 84.8 Ko | `python3 tools/ops/audit_files.py --clean-cache` |
 
 ## 2 · Doublons exacts — octet pour octet
 
@@ -46,191 +46,103 @@ Aucun doublon à l'intérieur d'un même projet.
 
 ## 3 · Médias sans aucune référence par leur nom
 
-86 fichiers, 6.4 Mo. **Piste, pas preuve** : un manifeste, un CSS ou un `JSON` peut les appeler autrement.
+84 fichiers, 8.3 Mo. **Piste, pas preuve** : un manifeste, un CSS ou un `JSON` peut les appeler autrement.
 
 | Dossier | Fichiers | Poids | Exemples |
 |---|---|---|---|
-| `content/Avatar/_composites/busts-694/` | 3 | 1.2 Mo | avatar-surprised-694.png, avatar-talking-694.png, avatar-thinking-694.png |
-| `hosting/previews/dmoptic/montures/` | 22 | 1003.3 Ko | monture-f01-2.jpg, monture-f01-3.jpg, monture-f04-2.jpg |
-| `clients/_mockups/bonanjo-img/` | 3 | 526.1 Ko | imagerie.jpg, maternite.jpg, neuro.jpg |
-| `clients/dm-optic/launch/facebook-assets/` | 2 | 495.6 Ko | cover-check-desktop-820x312.png, cover-check-mobile-640x360.png |
-| `clients/dm-optic/launch/facebook-assets/posters/` | 3 | 437.5 Ko | poster-01-garcon-vert.jpeg, poster-02-fille-verte.jpeg, poster-03-fille-bleue.jpeg |
-| `clients/_mockups/` | 2 | 408.9 Ko | EXEMPLE-college-telephone.jpg, EXEMPLE-dentaire-2devices.jpg |
-| `demos/img/` | 3 | 400.7 Ko | le-cristallin-hero.jpg, le-cristallin-lab.jpg, le-cristallin-tryon.jpg |
-| `content/Avatar/` | 3 | 359.8 Ko | E.jpeg, I.jpeg, K.jpeg |
-| `content/carousels/c03-avant-de-payer/` | 3 | 320.5 Ko | slide-2.png, slide-3.png, slide-4.png |
-| `content/pipeline/post01/vo/v5-sentences/` | 14 | 276.8 Ko | s07.mp3, s08.mp3, s09.mp3 |
-| `content/carousels/c01-vous-etes-ouverts/` | 3 | 177.3 Ko | slide-2.png, slide-3.png, slide-4.png |
-| `content/pipeline/post01/vo/` | 9 | 176.9 Ko | vo-b4.mp3, vo-b4a.mp3, vo-b4b.mp3 |
-| `content/carousels/c02-test-des-10-secondes/` | 3 | 165.6 Ko | slide-2.png, slide-3.png, slide-4.png |
-| `clients/dm-optic/content/month1/c1-render/` | 3 | 117.8 Ko | slide-2.png, slide-3.png, slide-4.png |
-| `sales/social/videos/` | 1 | 97.3 Ko | school-founding-fr-cover.jpg |
-| `content/videos/v06-facebook-no-booking/narration/` | 2 | 86.4 Ko | n4.mp3, n5.mp3 |
-| `clients/dm-optic/website/logo/` | 1 | 79.2 Ko | source-extrait-du-pdf-1240x992.jpg |
-| `site/img/` | 1 | 73.9 Ko | clinic.jpg |
-| `clients/dm-optic/brand/` | 1 | 70.1 Ko | CARTE-SIGNATURE-TABLEAU-VISION-preview.png |
-| `content/videos/v07-stock-invisible/assets/` | 2 | 38.0 Ko | maquette-ui-1.png, maquette-ui-2.png |
+| `content/Avatar/_composites/busts-694/` | 3 | 1.1 Mo | avatar-approving-694.png, avatar-idle-694.png, avatar-pointing-694.png |
+| `hosting/previews/dmoptic/montures/` | 22 | 1013.6 Ko | monture-e14-2.jpg, monture-e14-3.jpg, monture-e19-2.jpg |
+| `tryon-camera/apercus/` | 2 | 1008.1 Ko | apercu-interface.png, apercu-inventaire.png |
+| `clients/dm-optic/photoshoot/reference-composition-NE-PAS-PUBLIER/` | 1 | 990.8 Ko | A1-monture-face-catalogue.png |
+| `clients/_mockups/labs/` | 3 | 647.2 Ko | 2k-labo.jpg, interlabo.jpg, meka.jpg |
+| `clients/_mockups/` | 3 | 574.4 Ko | EXEMPLE-clinique.jpg, EXEMPLE-college-2devices.jpg, EXEMPLE-college-portable.jpg |
+| `demos/img/` | 2 | 436.4 Ko | dmoptic-enfants.jpg, dmoptic-montures.jpg |
+| `content/Avatar/` | 3 | 410.1 Ko | M.jpeg, N.jpeg, WhatsApp Image 2026-10-12 at 18.34.29.jpeg |
+| `sales/social/videos/` | 3 | 257.8 Ko | clinic-founding-en-cover.jpg, clinic-founding-fr-cover.jpg, school-founding-en-cover.jpg |
+| `content/pipeline/post01/vo/v5-sentences/` | 14 | 256.4 Ko | s04.mp3, s05.mp3, s06.mp3 |
+| `sales/` | 1 | 226.3 Ko | AMK-5-Stage-Funnel.png |
+| `brand/v1-green/` | 1 | 225.4 Ko | funnel-v1-green.png |
+| `content/carousels/c01-vous-etes-ouverts/` | 2 | 219.8 Ko | slide-5.png, slide-6.png |
+| `mockups/` | 2 | 188.8 Ko | amk-phone.png, concept-phone.png |
+| `clients/_mockups/labs/img/` | 1 | 174.2 Ko | hero-lab.jpg |
+| `content/pipeline/post01/vo/` | 9 | 163.4 Ko | vo-b1.mp3, vo-b2.mp3, vo-b3.mp3 |
+| `content/videos/v06-facebook-no-booking/narration/` | 3 | 155.6 Ko | n1.mp3, n2.mp3, n3.mp3 |
+| `content/carousels/c02-test-des-10-secondes/` | 2 | 119.0 Ko | slide-5.png, slide-6.png |
+| `content/carousels/c03-avant-de-payer/` | 2 | 96.2 Ko | slide-5.png, slide-6.png |
+| `tryon-camera/` | 1 | 79.9 Ko | og-uo-camera.jpg |
 
 *Les photos de `clients/dm-optic/photoshoot/` ne sont PAS une rafale : c'est le **catalogue montures** du client — 160 photos, une par monture (156 montures + 4 vues du cabinet), 395 Mo. Elles sont listées parce qu'elles pèsent, pas parce qu'elles sont mortes : `sales/Activity-Log.md` (19/10) en garde **84 en réserve** pour le lot 2 du catalogue. Les supprimer effacerait la source d'un livrable à venir. Ce qui se discute ici, c'est de les sortir de git (stockage externe), pas de les effacer.*
 
 ## 4 · Documents
 
-- **757 documents sans citation entrante** — à relire ou à archiver (voir `ops/REPO-MAP.md` §3 bis).
-- **0 documents marqués périmés par leur propre texte** — détection lexicale, à vérifier un par un.
+- **404 documents sans citation entrante** — à relire ou à archiver (voir `ops/REPO-MAP.md` §3 bis).
+- **1 documents marqués périmés par leur propre texte** — détection lexicale, à vérifier un par un.
 
 | Périmé (d'après lui-même) | Cité par |
 |---|---|
+| `sales/Walk-In-Batch-2026-09-15.md` | 3× |
 
 ⚠️ **Ni l'orphelin ni le « périmé » ne se supprime automatiquement.** Le 24/10, `AMK-DESIGN-SKILLS.md` était signalé « remplacé par Activity-Log » — c'est faux, et une suppression sur cette base aurait effacé 1 400 lignes de règles de design.
 
 ## 4 bis · Les orphelins datés — ce que personne ne cite, et qui ne peut pas expirer
 
-**757 orphelins** au total, mais **365 seulement à traiter** : les autres sont normaux (167 imports tiers, 119 fiches CRM reliées par la base, 106 README d'outils installés).
+**404 orphelins** au total, mais **74 seulement à traiter** : les autres sont normaux (164 imports tiers, 116 fiches CRM reliées par la base, 50 README d'outils installés).
 
-- **95 n'ont aucune date**, ni dans leur chemin, ni dans leurs douze premières lignes : un document sans date ne peut pas expirer, donc il ne meurt jamais.
-- Les 270 autres s'étalent du **2026-09-12** au **2026-10-24**.
+- **29 n'ont aucune date**, ni dans leur chemin, ni dans leurs douze premières lignes : un document sans date ne peut pas expirer, donc il ne meurt jamais.
+- Les 45 autres s'étalent du **2026-09-21** au **2026-10-24**.
 
 | Famille | Orphelins | Le plus ancien | Verdict proposé |
 |---|---|---|---|
-| `sales/` | 98 | 2026-09-12 | à décider |
-| `clients/dm-optic` | 83 | 2026-09-24 | à décider |
-| `research/youtube-lessons` | 44 | 2026-10-11 | archiver après synthèse |
-| `ops/` | 22 | 2026-10-07 | à décider |
-| `research/` | 12 | 2026-09-18 | archiver après synthèse |
-| `content/strategy` | 11 | 2026-09-23 | à décider |
-| `content/pipeline` | 10 | 2026-09-17 | à décider |
-| `knowledge/` | 10 | 2026-10-02 | à décider |
-| `content/videos` | 9 | 2026-09-22 | archiver avec le lot du mois |
-| `leads/` | 8 | 2026-09-18 | à décider |
-| `content/scripts` | 7 | 2026-09-22 | citer (point d'entrée d'un dossier vivant) |
-| `design/` | 6 | 2026-09-15 | à décider |
-| `sales/research` | 6 | 2026-09-16 | à décider |
-| `site/` | 6 | 2026-10-08 | à décider |
-| `ops/templates` | 5 | 2026-09-23 | citer depuis la machine |
-| `clients/` | 2 | 2026-10-24 | citer (point d'entrée d'un dossier vivant) |
-| `clients/le-cristallin` | 2 | sans date | à décider |
+| `research/youtube-lessons` | 29 | 2026-10-11 | archiver après synthèse |
+| `clients/dm-optic` | 11 | 2026-10-07 | citer (point d'entrée d'un dossier vivant) |
+| `ops/` | 7 | 2026-10-07 | à décider |
+| `content/videos` | 6 | 2026-10-22 | archiver avec le lot du mois |
+| `content/scripts` | 4 | sans date | à décider |
+| `ops/templates` | 3 | sans date | citer depuis la machine |
+| `sales/` | 3 | 2026-09-21 | à décider |
+| `content/pipeline` | 2 | 2026-10-05 | à décider |
 | `hosting/samples` | 2 | sans date | à décider |
-| `sales/social` | 2 | sans date | à décider |
-| `AGENTS.md/` | 1 | sans date | à décider |
-| `AMK-DESIGN-SKILLS.md/` | 1 | sans date | à décider |
-| `AMK-SEO-PLAYBOOK.md/` | 1 | sans date | à décider |
-| `PRE-FLIGHT.md/` | 1 | sans date | à décider |
-| `brand/` | 1 | 2026-10-22 | à décider |
-| `clients/labiomed` | 1 | 2026-10-24 | à décider |
 | `content/` | 1 | sans date | citer (point d'entrée d'un dossier vivant) |
 | `content/assets` | 1 | sans date | à décider |
-| `content/carousels` | 1 | 2026-10-13 | à décider |
-| `content/handover` | 1 | 2026-09-17 | à décider |
-| `content/lessons` | 1 | 2026-09-17 | à décider |
 | `content/studio` | 1 | sans date | citer (point d'entrée d'un dossier vivant) |
-| `demos/shots` | 1 | 2026-10-24 | citer (point d'entrée d'un dossier vivant) |
-| `hosting/previews` | 1 | 2026-10-24 | citer (point d'entrée d'un dossier vivant) |
-| `ops/amk-factures-pwa` | 1 | sans date | citer (point d'entrée d'un dossier vivant) |
-| `research/ugc-video` | 1 | 2026-10-22 | archiver après synthèse |
+| `design/` | 1 | sans date | citer (point d'entrée d'un dossier vivant) |
+| `leads/` | 1 | sans date | à décider |
 | `sales/VAGUE-2026-10-12` | 1 | 2026-10-12 | archiver |
-| `sales/swipe` | 1 | sans date | citer (point d'entrée d'un dossier vivant) |
-| `sales/templates` | 1 | 2026-09-15 | à décider |
-| `tryon-camera/` | 1 | 2026-10-22 | à décider |
+| `site/` | 1 | 2026-10-23 | à décider |
 
 *Le verdict est une **proposition**, pas une décision : archiver = `git mv` vers `archive/`, jamais supprimer. `archive/` sort du corpus (ni carte, ni portes, ni audit) mais reste dans git.*
 
 **Les documents sans date** (à dater ou à archiver) :
 
-- `AGENTS.md`
-- `AMK-DESIGN-SKILLS.md`
-- `AMK-SEO-PLAYBOOK.md`
-- `PRE-FLIGHT.md`
-- `clients/README.md`
-- `clients/dm-optic/brag/brag-plan.md`
 - `clients/dm-optic/content/month1/c1-render/README.md`
-- `clients/dm-optic/content/month1/carousels.md`
-- `clients/dm-optic/content/month1/w1/MONTAGE-V2-ROADMAP.md`
-- `clients/dm-optic/content/month1/w1/SPOT-DIRECTION.md`
-- `clients/dm-optic/content/month1/w1/tiktok-01-PUBLICATION.md`
-- `clients/dm-optic/content/month1/w1/tiktok-01.md`
-- `clients/dm-optic/content/month1/w2/PLAN-27-10.md`
-- `clients/dm-optic/content/month1/w2/etapes-01-PUBLICATION.md`
 - `clients/dm-optic/content/month1/w2/etapes-01-validation-client.md`
 - `clients/dm-optic/content/month1/w2/etapes-01.md`
 - `clients/dm-optic/content/month1/w2/facebook-post-enfants.md`
-- `clients/dm-optic/content/month1/w3/presbytie-55ans-SCRIPT.md`
-- `clients/dm-optic/launch/SETUP-GOOGLE-BUSINESS.md`
-- `clients/dm-optic/launch/SETUP-TIKTOK.md`
 - `clients/dm-optic/onboarding/VISIT-FALLBACKS.md`
 - `clients/dm-optic/onboarding/VOICE-NOTE-MARDI-06-10.md`
-- `clients/dm-optic/onboarding/intake-questionnaire.md`
-- `clients/dm-optic/onboarding/post-deposit-email.md`
-- `clients/dm-optic/photoshoot/PHOTOSHOOT-FICHE-1PAGE-2026-10.md`
-- `clients/dm-optic/retainer-rhythm.md`
-- `clients/dm-optic/site/SPEC-PAGES-v1.md`
-- `clients/dm-optic/website/BUILD-KICKOFF.md`
-- `clients/le-cristallin/build-notes.md`
-- `clients/le-cristallin/inspiration.md`
 - `content/README.md`
 - `content/assets/ASSETS.md`
-- `content/pipeline/CONTENT-PIPELINE.md`
-- `content/pipeline/CONTENT-SHORTLIST.md`
-- `content/pipeline/TIKTOK-POST-01-BUG-LOGO.md`
-- `content/pipeline/VIDEO-12-CANDIDAT-BUG-AFFICHAGE.md`
-- `content/pipeline/post01/BEAT-TABLE-v4.md`
 - `content/pipeline/post01/SENTENCE-TIMING-v5d.md`
-- `content/scripts/README.md`
 - `content/scripts/v01-instagram-vs-website.md`
 - `content/scripts/v02-five-website-answers.md`
 - `content/scripts/v03-part2-three-reasons.md`
 - `content/scripts/v04-before-whatsapp.md`
-- `content/scripts/v05-schools.md`
-- `content/strategy/CONTENT-STRATEGY.md`
 - `content/studio/README.md`
-- `content/videos/README.md`
-- `content/videos/v01-instagram-vs-website/STATUS.md`
 - `content/videos/v02-five-website-answers/STATUS.md`
 - `content/videos/v03-part2-three-reasons/STATUS.md`
 - `content/videos/v04-before-whatsapp/STATUS.md`
 - `content/videos/v05-schools/STATUS.md`
-- `design/MOTION.md`
 - `design/README.md`
-- `design/STYLE-TOKENS.md`
-- `design/WORKFLOW.md`
 - `hosting/samples/DEPLOY.md`
 - `hosting/samples/design-research.md`
-- `leads/CONTRADICTIONS.md`
 - `leads/M1-EXTRACTION-REPORT.md`
 - `ops/CHANGELOG-VENDREDI.md`
 - `ops/CHECKPOINT-MARDI-06-10-20H.md`
 - `ops/FIRST-CLIENT-PRE-MORTEM.md`
-- `ops/GIT-STABILITY-NOTE.md`
-- `ops/INFERENCE-ERRORS.md`
-- `ops/LIFECYCLE.md`
-- `ops/LIVRAISONS.md`
-- `ops/ONBOARDING.md`
 - `ops/POST-WEDNESDAY-2026-10.md`
-- `ops/QA-NOTES.md`
-- `ops/TOOL-SCAN.md`
-- `ops/amk-factures-pwa/README.md`
 - `ops/templates/TASK-TEMPLATE-CARROUSEL.md`
 - `ops/templates/TASK-TEMPLATE-SITE-BUILD.md`
 - `ops/templates/TASK-TEMPLATE-UGC-SCRIPT.md`
-- `research/BUILDER-TEST-KING-2026-10.md`
-- `research/Video-Toolchain-Research.md`
-- `research/YouTube-Lessons.md`
-- `sales/AMK-Facebook-Page-Setup.md`
-- `sales/Activity-Log.md`
-- `sales/LISTE-OPTICIENS-2026-10.md`
-- `sales/Monday-Outreach-Pack.md`
-- `sales/OFFRE-VIDEO-LIVRAISON-2026-10.md`
-- `sales/Outreach-AFRIQUE-LABO-v1.md`
-- `sales/Outreach-JEMPO-v1.md`
-- `sales/Outreach-LOpticien-v1.md`
-- `sales/PACK-OPTICIEN-2026-10.md`
-- `sales/RESEARCH-STANDARD.md`
-- `sales/research/2026-W37-techniques.md`
-- `sales/research/2026-W43-techniques.md`
-- `sales/research/Market-Ammunition-2020-2026.md`
-- `sales/social/founding-post-tiktok-ig.md`
-- `sales/social/youtube-shorts-metadata.md`
-- `sales/swipe/README.md`
-- `site/design-research.md`
 
 ## 5 · Archives et artefacts
 

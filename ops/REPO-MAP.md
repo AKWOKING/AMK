@@ -2,25 +2,25 @@
 
 ```text
 Généré par tools/graphify/build_full_graph.py — 2026-10-24
-Source : graphify-out/graph.json (11902 nœuds, 14513 arêtes)
+Source : graphify-out/graph.json (11915 nœuds, 14523 arêtes)
 Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même
 carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.
 ```
 
 ## 0 · En une page
 
-- **11902 nœuds** — dont 758 documents, 165 scripts, 21 modules, 139 pages HTML, 393 images, 3 vidéos, 40 audios, 35 fichiers de données, 11 PDF.
-- **2840 citations entre documents** (2257 en chemin exact, 583 par nom unique)
+- **11915 nœuds** — dont 759 documents, 167 scripts, 21 modules, 139 pages HTML, 393 images, 3 vidéos, 40 audios, 35 fichiers de données, 11 PDF.
+- **2838 citations entre documents** (2255 en chemin exact, 583 par nom unique)
 - **121 arêtes de remplacement** · **1 documents marqués périmés**
 - **404 documents que personne ne cite** (atteignables par aucun chemin de lecture)
-- **Couverture : 1627 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
+- **Couverture : 1628 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
 
 ### Les dossiers du dépôt, par poids — et ce que chacun porte
 
 | Dossier | Fichiers | Ce que c'est |
 |---|---|---|
 | `hosting/` | 312 | Sites déployés et aperçus |
-| `tools/` | 254 | Outils et skills installés |
+| `tools/` | 256 | Outils et skills installés |
 | `clients/` | 186 | Dossiers clients |
 | `design/` | 179 | Design, skills, vendor |
 | `content/` | 157 | Contenu, vidéos, carrousels, scripts |
@@ -28,7 +28,7 @@ carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10
 | `sales/` | 130 | Vente, prospection, CRM humain |
 | `site/` | 79 | Site AMK |
 | `research/` | 57 | Recherche externe (vidéos, articles) |
-| `ops/` | 34 | Opérations, portiques, facturation |
+| `ops/` | 35 | Opérations, portiques, facturation |
 | `brand/` | 25 | Marque AMK |
 | `demos/` | 20 | Maquettes et concepts |
 | `knowledge/` | 10 | Couche connaissance — les règles de référence |
@@ -108,126 +108,126 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 ## 4 · Les communautés du dépôt — les sujets, tels que les documents se relient
 
-15 communautés détectées sur le réseau des citations (Louvain, graine fixe). Chaque bloc est un sujet réel : les documents qui s'y trouvent se citent entre eux.
+14 communautés détectées sur le réseau des citations (Louvain, graine fixe). Chaque bloc est un sujet réel : les documents qui s'y trouvent se citent entre eux.
 
 *Le pivot d'une communauté est le document que **les autres membres du groupe** citent le plus (degré interne) — pas le document le plus cité du dépôt, qui l'est partout.*
 
-**513 documents sur 758 sont dans un sujet.** Les 228 autres ne touchent aucune citation — ni entrante, ni sortante : ce sont eux qui se perdent (voir §3 bis). Un sujet se nomme par ses pivots ; un document hors sujet ne se retrouve pas tout seul.
+**514 documents sur 759 sont dans un sujet.** Les 228 autres ne touchent aucune citation — ni entrante, ni sortante : ce sont eux qui se perdent (voir §3 bis). Un sujet se nomme par ses pivots ; un document hors sujet ne se retrouve pas tout seul.
 
 | # | Docs | Les 3 pivots internes | Ce que le groupe a en propre |
 |---|---|---|---|
-| 0 | 136 | `Activity-Log.md` · `Send-BATCH-2026-09-24-Opticiens-2.md` · `Send-BATCH-2026-09-24-Opticiens.md` | `leads/` (83 % du groupe) |
-| 1 | 57 | `tiktok-01.md` · `SETUP-FACEBOOK.md` · `2026-W43-techniques.md` | `clients/` (59 % du groupe) |
-| 2 | 52 | `YouTube-Lessons.md` · `TIKTOK-SEO-CHECKLIST-2026-10.md` · `PHOTO-LABO-PIXEL-8A-2026-09-24.md` | `research/` (51 % du groupe) |
-| 3 | 44 | `AGENTS.md` · `DIRECTION-MARQUE-v2-2026-10-22.md` · `GIT-STABILITY-NOTE.md` | `clients/` (29 % du groupe) |
-| 4 | 42 | `AMK-DESIGN-SKILLS.md` · `README.md` · `PRE-FLIGHT.md` | `tools/` (26 % du groupe) |
-| 5 | 40 | `a-completer.md` · `RULE-CREDENTIAL-CLAIMS.md` · `CLIENT-MESSAGING-RULES.md` | `clients/` (37 % du groupe) |
-| 6 | 40 | `Outreach-Pack-2026-09-14.md` · `Clinic-Batch-2026-09-15.md` · `Outreach-Pack-2026-09-16.md` | `sales/` (87 % du groupe) |
-| 7 | 26 | `KILL-LIST.md` · `RESEARCH-STANDARD.md` · `AMK-Sales-Playbook-v2.md` | `sales/` (42 % du groupe) |
-| 8 | 23 | `ANALYTICS-LOG.md` · `CONTENT-LESSONS.md` · `2026-09-17-content-handover.md` | `content/` (73 % du groupe) |
-| 9 | 22 | `FICHE-GOOGLE-PROFILE.md` · `RDV-UNIVERS-OPTIQUE-2026-09-25.md` · `PRIX-ET-RECURRENCE-2026-09-24.md` | `sales/` (86 % du groupe) |
-| 10 | 20 | `analyst-common.md` · `context-safety.md` · `report.md` | `tools/` (100 % du groupe) |
-| 11 | 4 | `root-cause-tracing.md` · `defense-in-depth.md` · `condition-based-waiting.md` | `tools/` (100 % du groupe) |
-| 12 | 3 | `builder-check-prompt.md` · `visual-companion.md` | `tools/` (100 % du groupe) |
-| 13 | 2 | `etapes-01-PUBLICATION.md` | `clients/` (100 % du groupe) |
+| 0 | 139 | `Activity-Log.md` · `Send-BATCH-2026-09-24-Opticiens-2.md` · `Send-BATCH-2026-09-24-Opticiens.md` | `leads/` (84 % du groupe) |
+| 1 | 66 | `tiktok-01.md` · `content-plan-month1.md` · `pre-launch-checklist.md` | `clients/` (60 % du groupe) |
+| 2 | 63 | `YouTube-Lessons.md` · `RESEARCH-STANDARD.md` · `PRIX-ET-RECURRENCE-2026-09-24.md` | `sales/` (25 % du groupe) |
+| 3 | 50 | `Outreach-Pack-2026-09-14.md` · `Outreach-AFRIQUE-LABO-v1.md` · `Clinic-Batch-2026-09-15.md` | `sales/` (88 % du groupe) |
+| 4 | 43 | `AMK-DESIGN-SKILLS.md` · `PHOTO-LABO-PIXEL-8A-2026-09-24.md` · `TIKTOK-SEO-CHECKLIST-2026-10.md` | `research/` (44 % du groupe) |
+| 5 | 36 | `AGENTS.md` · `DIRECTION-MARQUE-v2-2026-10-22.md` · `GIT-STABILITY-NOTE.md` | `clients/` (36 % du groupe) |
+| 6 | 32 | `a-completer.md` · `RULE-CREDENTIAL-CLAIMS.md` · `intake-questionnaire.md` | `clients/` (43 % du groupe) |
+| 7 | 32 | `ANALYTICS-LOG.md` · `CONTENT-LESSONS.md` · `_uniqueness-registry.md` | `content/` (53 % du groupe) |
+| 8 | 22 | `CRAFT-FLOOR.md` · `LESSONS.md` · `WORKFLOW.md` | `sales/` (45 % du groupe) |
+| 9 | 20 | `analyst-common.md` · `context-safety.md` · `report.md` | `tools/` (100 % du groupe) |
+| 10 | 4 | `root-cause-tracing.md` · `defense-in-depth.md` · `condition-based-waiting.md` | `tools/` (100 % du groupe) |
+| 11 | 3 | `builder-check-prompt.md` · `visual-companion.md` | `tools/` (100 % du groupe) |
+| 12 | 2 | `etapes-01-PUBLICATION.md` | `clients/` (100 % du groupe) |
+| 13 | 2 | `DESIGN.md` | `design/` (100 % du groupe) |
 
-### Communauté 0 — 136 documents
+### Communauté 0 — 139 documents
 
-- `sales/Activity-Log.md` — cité 119× dans le groupe, 167× au total
-- `sales/Send-BATCH-2026-09-24-Opticiens-2.md` — cité 7× dans le groupe, 10× au total
+- `sales/Activity-Log.md` — cité 126× dans le groupe, 167× au total
+- `sales/Send-BATCH-2026-09-24-Opticiens-2.md` — cité 8× dans le groupe, 10× au total
 - `sales/Send-BATCH-2026-09-24-Opticiens.md` — cité 6× dans le groupe, 7× au total
+- `leads/KILL-LIST.md` — cité 5× dans le groupe, 10× au total
+- `leads/STALE.md` — cité 4× dans le groupe, 8× au total
 - `sales/Send-Soir-2026-09-23.md` — cité 4× dans le groupe, 4× au total
-- `sales/Send-LE-CRISTALLIN-2026-09-21-Soir.md` — cité 3× dans le groupe, 4× au total
-- `clients/le-cristallin/build-notes.md` — cité 3× dans le groupe, 3× au total
 
-### Communauté 1 — 57 documents
+### Communauté 1 — 66 documents
 
 - `clients/dm-optic/content/month1/w1/tiktok-01.md` — cité 10× dans le groupe, 12× au total
+- `clients/dm-optic/content-plan-month1.md` — cité 9× dans le groupe, 15× au total
+- `clients/dm-optic/pre-launch-checklist.md` — cité 8× dans le groupe, 15× au total
 - `clients/dm-optic/launch/SETUP-FACEBOOK.md` — cité 7× dans le groupe, 10× au total
 - `sales/research/2026-W43-techniques.md` — cité 7× dans le groupe, 15× au total
-- `clients/dm-optic/pre-launch-checklist.md` — cité 7× dans le groupe, 15× au total
 - `content/scripts/README.md` — cité 7× dans le groupe, 15× au total
-- `clients/dm-optic/content-plan-month1.md` — cité 7× dans le groupe, 15× au total
 
-### Communauté 2 — 52 documents
+### Communauté 2 — 63 documents
 
-- `research/YouTube-Lessons.md` — cité 14× dans le groupe, 31× au total
-- `content/strategy/TIKTOK-SEO-CHECKLIST-2026-10.md` — cité 9× dans le groupe, 13× au total
-- `research/PHOTO-LABO-PIXEL-8A-2026-09-24.md` — cité 8× dans le groupe, 13× au total
-- `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` — cité 6× dans le groupe, 14× au total
-- `sales/MESSAGES-2026-09-23-PERSUASION.md` — cité 4× dans le groupe, 17× au total
-- `clients/dm-optic/photoshoot/PHOTOSHOOT-FICHE-1PAGE-2026-10.md` — cité 3× dans le groupe, 3× au total
+- `research/YouTube-Lessons.md` — cité 12× dans le groupe, 31× au total
+- `sales/RESEARCH-STANDARD.md` — cité 10× dans le groupe, 20× au total
+- `sales/PRIX-ET-RECURRENCE-2026-09-24.md` — cité 8× dans le groupe, 17× au total
+- `sales/MESSAGES-2026-09-23-PERSUASION.md` — cité 7× dans le groupe, 17× au total
+- `knowledge/PRIX-2026-10-24.md` — cité 6× dans le groupe, 8× au total
+- `sales/CLIENT-MESSAGING-RULES.md` — cité 6× dans le groupe, 18× au total
 
-### Communauté 3 — 44 documents
+### Communauté 3 — 50 documents
+
+- `sales/Outreach-Pack-2026-09-14.md` — cité 7× dans le groupe, 9× au total
+- `sales/Outreach-AFRIQUE-LABO-v1.md` — cité 6× dans le groupe, 9× au total
+- `sales/Clinic-Batch-2026-09-15.md` — cité 5× dans le groupe, 5× au total
+- `sales/Outreach-Pack-2026-09-16.md` — cité 4× dans le groupe, 4× au total
+- `sales/Invitation-First-Replan-2026-09-15.md` — cité 4× dans le groupe, 7× au total
+- `sales/Pipeline-Status.md` — cité 3× dans le groupe, 9× au total
+
+### Communauté 4 — 43 documents
+
+- `AMK-DESIGN-SKILLS.md` — cité 17× dans le groupe, 39× au total
+- `research/PHOTO-LABO-PIXEL-8A-2026-09-24.md` — cité 11× dans le groupe, 13× au total
+- `content/strategy/TIKTOK-SEO-CHECKLIST-2026-10.md` — cité 8× dans le groupe, 13× au total
+- `sales/FICHE-GOOGLE-PROFILE.md` — cité 6× dans le groupe, 13× au total
+- `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` — cité 5× dans le groupe, 14× au total
+- `sales/QUESTIONNAIRE-REUNIONS-2026-09-25.md` — cité 3× dans le groupe, 6× au total
+
+### Communauté 5 — 36 documents
 
 - `AGENTS.md` — cité 6× dans le groupe, 6× au total
 - `clients/dm-optic/brand/DIRECTION-MARQUE-v2-2026-10-22.md` — cité 5× dans le groupe, 11× au total
 - `ops/GIT-STABILITY-NOTE.md` — cité 4× dans le groupe, 4× au total
-- `knowledge/ROAST-2026-10-24-PRIX-v2.md` — cité 4× dans le groupe, 4× au total
-- `knowledge/PRIX-2026-10-24.md` — cité 4× dans le groupe, 8× au total
 - `clients/dm-optic/content/month1/w1/ugc-03.md` — cité 3× dans le groupe, 6× au total
+- `research/ugc-video/2026-10-22-TOOLCHAIN-UGC.md` — cité 3× dans le groupe, 5× au total
+- `ops/MACHINE.md` — cité 2× dans le groupe, 5× au total
 
-### Communauté 4 — 42 documents
-
-- `AMK-DESIGN-SKILLS.md` — cité 14× dans le groupe, 39× au total
-- `hosting/previews/README.md` — cité 8× dans le groupe, 16× au total
-- `PRE-FLIGHT.md` — cité 8× dans le groupe, 28× au total
-- `clients/_uniqueness-registry.md` — cité 8× dans le groupe, 15× au total
-- `design/STYLE-TOKENS.md` — cité 6× dans le groupe, 11× au total
-- `design/MOTION.md` — cité 6× dans le groupe, 9× au total
-
-### Communauté 5 — 40 documents
+### Communauté 6 — 32 documents
 
 - `clients/dm-optic/a-completer.md` — cité 8× dans le groupe, 12× au total
-- `content/strategy/RULE-CREDENTIAL-CLAIMS.md` — cité 8× dans le groupe, 24× au total
-- `sales/CLIENT-MESSAGING-RULES.md` — cité 7× dans le groupe, 18× au total
+- `content/strategy/RULE-CREDENTIAL-CLAIMS.md` — cité 7× dans le groupe, 24× au total
 - `clients/dm-optic/onboarding/intake-questionnaire.md` — cité 6× dans le groupe, 6× au total
 - `clients/dm-optic/site/SPEC-PAGES-v1.md` — cité 6× dans le groupe, 9× au total
 - `content/strategy/SEO-CHECKLIST-CLIENT-SITES-2026-10.md` — cité 5× dans le groupe, 13× au total
+- `clients/dm-optic/research/market-analysis.md` — cité 5× dans le groupe, 8× au total
 
-### Communauté 6 — 40 documents
-
-- `sales/Outreach-Pack-2026-09-14.md` — cité 7× dans le groupe, 9× au total
-- `sales/Clinic-Batch-2026-09-15.md` — cité 5× dans le groupe, 5× au total
-- `sales/Outreach-Pack-2026-09-16.md` — cité 4× dans le groupe, 4× au total
-- `sales/Outreach-AFRIQUE-LABO-v1.md` — cité 4× dans le groupe, 9× au total
-- `sales/Invitation-First-Replan-2026-09-15.md` — cité 4× dans le groupe, 7× au total
-- `sales/Pipeline-Status.md` — cité 3× dans le groupe, 9× au total
-
-### Communauté 7 — 26 documents
-
-- `leads/KILL-LIST.md` — cité 4× dans le groupe, 10× au total
-- `sales/RESEARCH-STANDARD.md` — cité 4× dans le groupe, 20× au total
-- `sales/AMK-Sales-Playbook-v2.md` — cité 3× dans le groupe, 12× au total
-- `leads/SOURCES.md` — cité 3× dans le groupe, 6× au total
-- `leads/CONTRADICTIONS.md` — cité 3× dans le groupe, 4× au total
-- `leads/PIPELINE.md` — cité 2× dans le groupe, 6× au total
-
-### Communauté 8 — 23 documents
+### Communauté 7 — 32 documents
 
 - `content/pipeline/ANALYTICS-LOG.md` — cité 10× dans le groupe, 11× au total
 - `content/lessons/CONTENT-LESSONS.md` — cité 6× dans le groupe, 15× au total
+- `clients/_uniqueness-registry.md` — cité 5× dans le groupe, 15× au total
+- `leads/records/labiomed-deido.md` — cité 3× dans le groupe, 4× au total
 - `content/handover/2026-09-17-content-handover.md` — cité 3× dans le groupe, 3× au total
 - `content/strategy/POSTING-CALENDAR.md` — cité 3× dans le groupe, 7× au total
-- `content/carousels/POST-READY.md` — cité 3× dans le groupe, 6× au total
-- `research/Video-Toolchain-Research.md` — cité 2× dans le groupe, 4× au total
 
-### Communauté 9 — 22 documents
+### Communauté 8 — 22 documents
 
-- `sales/FICHE-GOOGLE-PROFILE.md` — cité 7× dans le groupe, 13× au total
-- `sales/RDV-UNIVERS-OPTIQUE-2026-09-25.md` — cité 6× dans le groupe, 9× au total
-- `sales/PRIX-ET-RECURRENCE-2026-09-24.md` — cité 5× dans le groupe, 17× au total
-- `sales/BUSINESS-CASE-UNIVERS-OPTIQUE-2026-09-25.md` — cité 3× dans le groupe, 4× au total
-- `sales/templates/monthly-care-report.md` — cité 3× dans le groupe, 5× au total
-- `sales/RDV-UNILABO-2026-09-25.md` — cité 3× dans le groupe, 6× au total
+- `design/CRAFT-FLOOR.md` — cité 6× dans le groupe, 8× au total
+- `design/LESSONS.md` — cité 5× dans le groupe, 6× au total
+- `design/WORKFLOW.md` — cité 4× dans le groupe, 10× au total
+- `design/MOTION.md` — cité 4× dans le groupe, 9× au total
+- `design/STYLE-TOKENS.md` — cité 3× dans le groupe, 11× au total
+- `sales/Send-LE-CRISTALLIN-2026-09-21-Soir.md` — cité 2× dans le groupe, 4× au total
+
+### Communauté 9 — 20 documents
+
+- `tools/superpowers/skills/diagnosing-superpowers/prompts/analyst-common.md` — cité 8× dans le groupe, 8× au total
+- `tools/superpowers/skills/diagnosing-superpowers/references/context-safety.md` — cité 4× dans le groupe, 4× au total
+- `tools/superpowers/skills/diagnosing-superpowers/templates/report.md` — cité 3× dans le groupe, 3× au total
+- `tools/superpowers/skills/diagnosing-superpowers/templates/case.md` — cité 2× dans le groupe, 2× au total
+- `tools/superpowers/skills/diagnosing-superpowers/templates/issue.md` — cité 2× dans le groupe, 2× au total
+- `tools/superpowers/skills/diagnosing-superpowers/references/redaction-policy.md` — cité 2× dans le groupe, 2× au total
 
 ## 5 · Le reste du dépôt, par nature
 
 | Nature | Fichiers | Où |
 |---|---|---|
-| document | 758 | `AGENTS.md`, `AMK-DESIGN-SKILLS.md`, `AMK-SEO-PLAYBOOK.md` |
+| document | 759 | `AGENTS.md`, `AMK-DESIGN-SKILLS.md`, `AMK-SEO-PLAYBOOK.md` |
 | image | 393 | `brand/AMK-logo-mono.png`, `brand/AMK-logo-mono.svg`, `brand/AMK-logo-primary.png` |
-| script | 165 | `brand/build_fb_assets.py`, `clients/dm-optic/launch/facebook-assets/build_cover.py`, `clients/dm-optic/launch/social/build_frame_cards.py` |
+| script | 167 | `brand/build_fb_assets.py`, `clients/dm-optic/launch/facebook-assets/build_cover.py`, `clients/dm-optic/launch/social/build_frame_cards.py` |
 | page | 139 | `brand/AMK-Logo-Kit.html`, `brand/v1-green/AMK-Logo-Kit.html`, `clients/dm-optic/brand/CARTE-SIGNATURE-TABLEAU-VISION.html` |
 | audio | 40 | `content/pipeline/post01/vo/v5-sentences/s01.mp3`, `content/pipeline/post01/vo/v5-sentences/s02.mp3`, `content/pipeline/post01/vo/v5-sentences/s03.mp3` |
 | données | 35 | `clients/dm-optic/content/month1/w1/spot-02.json`, `clients/dm-optic/content/month1/w1/spot-03.json`, `clients/dm-optic/content/month1/w1/ugc-03.json` |
@@ -237,10 +237,10 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | pdf | 11 | `clients/dm-optic/launch/CARTE-AVIS-2026-10-23.pdf`, `clients/dm-optic/launch/RECAP-MISE-EN-LIGNE-2026-10-23.pdf`, `clients/dm-optic/onboarding/print/AMK-PROFORMA-2026-10-05-DM-OPTIQUE-v2.pdf` |
 | texte | 10 | `clients/dm-optic/brag/share-copy.txt`, `clients/dm-optic/launch/LISTE-40-MONTURES-WHATSAPP.txt`, `clients/dm-optic/launch/baseline/README.txt` |
 | config | 7 | `.github/workflows/deploy-dmoptic.yml`, `.github/workflows/machine.yml`, `hosting/previews/dmoptic/sitemap.xml` |
-| archive | 3 | `amk-factures-pwa-v2.zip`, `amk-factures-pwa.zip`, `dmopticsarl-2026-10-21.zip` |
 | vidéo | 3 | `clients/dm-optic/brag/brag.mp4`, `content/videos/v06-facebook-no-booking/Video_06_Facebook_No_Booking.mp4`, `content/videos/v06-facebook-no-booking/Video_06_Facebook_No_Booking_VOIX.mp4` |
 | sous-titre | 3 | `clients/dm-optic/content/month1/w1/tiktok-01-v2.fr.srt`, `clients/dm-optic/content/month1/w1/tiktok-01.fr.srt`, `clients/dm-optic/content/month1/w2/etapes-01.srt` |
-| symboles extraits (titres de documents + fonctions/classes du code) | 10275 | — |
+| archive | 1 | `dmopticsarl-2026-10-21.zip` |
+| symboles extraits (titres de documents + fonctions/classes du code) | 10287 | — |
 
 ### Les outils et skills installés — 1 dossier = 1 outil
 
@@ -269,7 +269,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | `marketingskills/` | `README.md` `install.sh` | 1 doc(s) · 1 shell/CI | marketingskills — 52 skills, **amont** coreyhaines31 (basculé le 23/10/2026, ruling King) |
 | `moneyprinter/` | `README.md` `install.sh` | 1 script(s) · 1 doc(s) · 2 shell/CI | MoneyPrinterTurbo — installé pour assembler **nos** plans |
 | `open-seo/` | `README.md` `install.sh` | 1 doc(s) · 1 shell/CI | open-seo (every-app/open-seo) — skills SEO/AEO en méthodologie |
-| `ops/` | — | 8 script(s) · 5 shell/CI | — |
+| `ops/` | — | 8 script(s) · 7 shell/CI | — |
 | `outreach/` | `README-MOCKUP.md` | 4 script(s) · 1 doc(s) | — |
 | `photo/` | `README.md` `install.sh` | 1 script(s) · 1 doc(s) · 1 shell/CI | tools/photo — édition photo client, locale, pour le web |
 | `pro-design/` | `README.md` `install.sh` `SKILL.md` | 2 doc(s) · 1 shell/CI | pro-design — le skill de construction de pages (installé le 23/10/2026) |
