@@ -2,17 +2,18 @@
 
 ```text
 Généré par tools/graphify/build_full_graph.py — 2026-10-24
-Source : graphify-out/graph.json (11888 nœuds, 14173 arêtes)
-Aucun LLM, aucune clé : tout est déterministe et rejouable en ~10 secondes.
+Source : graphify-out/graph.json (12001 nœuds, 14610 arêtes)
+Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même
+carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.
 ```
 
 ## 0 · En une page
 
-- **11888 nœuds** — dont 766 documents, 160 scripts, 21 modules, 139 pages HTML, 395 images, 8 vidéos, 40 audios, 34 fichiers de données, 11 PDF.
-- **2656 citations entre documents** (2108 en chemin exact, 548 par nom unique)
-- **115 arêtes de remplacement** · **37 documents marqués périmés**
+- **12001 nœuds** — dont 766 documents, 165 scripts, 21 modules, 139 pages HTML, 395 images, 8 vidéos, 40 audios, 35 fichiers de données, 11 PDF.
+- **2867 citations entre documents** (2281 en chemin exact, 586 par nom unique)
+- **121 arêtes de remplacement** · **37 documents marqués périmés**
 - **412 documents que personne ne cite** (atteignables par aucun chemin de lecture)
-- **Couverture : 1636 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
+- **Couverture : 1643 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
 
 ### Les dossiers du dépôt, par poids — et ce que chacun porte
 
@@ -23,7 +24,7 @@ Aucun LLM, aucune clé : tout est déterministe et rejouable en ~10 secondes.
 | `clients/` | 193 | Dossiers clients |
 | `design/` | 179 | Design, skills, vendor |
 | `content/` | 157 | Contenu, vidéos, carrousels, scripts |
-| `leads/` | 146 | CRM machine (CSV, records, vues générées) |
+| `leads/` | 152 | CRM machine (CSV, records, vues générées) |
 | `sales/` | 137 | Vente, prospection, CRM humain |
 | `site/` | 79 | Site AMK |
 | `research/` | 58 | Recherche externe (vidéos, articles) |
@@ -34,7 +35,7 @@ Aucun LLM, aucune clé : tout est déterministe et rejouable en ~10 secondes.
 | `tryon-camera/` | 9 | Expérimentation |
 | `https___amk-cm.vercel.app_-Performance-on-Search-2026-10-08/` | 7 | — |
 | `mockups/` | 5 | Captures et mockups |
-| `.github/` | 1 | — |
+| `.github/` | 2 | — |
 
 ## 1 · La couche connaissance — les 10 documents qui font loi
 
@@ -236,20 +237,20 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 |---|---|---|
 | document | 766 | `AGENTS.md`, `AMK-DESIGN-SKILLS.md`, `AMK-SEO-PLAYBOOK.md` |
 | image | 395 | `brand/AMK-logo-mono.png`, `brand/AMK-logo-mono.svg`, `brand/AMK-logo-primary.png` |
-| script | 160 | `brand/build_fb_assets.py`, `clients/dm-optic/launch/facebook-assets/build_cover.py`, `clients/dm-optic/launch/social/build_frame_cards.py` |
+| script | 165 | `brand/build_fb_assets.py`, `clients/dm-optic/launch/facebook-assets/build_cover.py`, `clients/dm-optic/launch/social/build_frame_cards.py` |
 | page | 139 | `brand/AMK-Logo-Kit.html`, `brand/v1-green/AMK-Logo-Kit.html`, `clients/dm-optic/brand/CARTE-SIGNATURE-TABLEAU-VISION.html` |
 | audio | 40 | `content/pipeline/post01/vo/v5-sentences/s01.mp3`, `content/pipeline/post01/vo/v5-sentences/s02.mp3`, `content/pipeline/post01/vo/v5-sentences/s03.mp3` |
-| données | 34 | `clients/dm-optic/content/month1/w1/spot-02.json`, `clients/dm-optic/content/month1/w1/spot-03.json`, `clients/dm-optic/content/month1/w1/ugc-03.json` |
+| données | 35 | `clients/dm-optic/content/month1/w1/spot-02.json`, `clients/dm-optic/content/month1/w1/spot-03.json`, `clients/dm-optic/content/month1/w1/ugc-03.json` |
 | police | 21 | `clients/dm-optic/content/month1/w1/assets/fonts/ibm-plex-mono-latin-600-normal.ttf`, `clients/dm-optic/content/month1/w1/assets/fonts/ibm-plex-sans-latin-400-normal.ttf`, `clients/dm-optic/content/month1/w1/assets/fonts/schibsted-grotesk-latin-500-normal.ttf` |
 | code | 21 | `content/pipeline/post01/render.mjs`, `ops/amk-factures-pwa/sw.js`, `ops/amk-factures-pwa/test-calculs.mjs` |
 | autre | 18 | `.gitignore`, `design/vendor/LICENSE-bergside`, `design/vendor/LICENSE-emil` |
 | pdf | 11 | `clients/dm-optic/launch/CARTE-AVIS-2026-10-23.pdf`, `clients/dm-optic/launch/RECAP-MISE-EN-LIGNE-2026-10-23.pdf`, `clients/dm-optic/onboarding/print/AMK-PROFORMA-2026-10-05-DM-OPTIQUE-v2.pdf` |
 | texte | 10 | `clients/dm-optic/brag/share-copy.txt`, `clients/dm-optic/launch/LISTE-40-MONTURES-WHATSAPP.txt`, `clients/dm-optic/launch/baseline/README.txt` |
+| config | 8 | `.github/workflows/deploy-dmoptic.yml`, `.github/workflows/machine.yml`, `hosting/previews/dmoptic/sitemap.xml` |
 | vidéo | 8 | `clients/dm-optic/brag/brag.mp4`, `clients/dm-optic/content/month1/w1/spot-02.mp4`, `clients/dm-optic/content/month1/w1/spot-03.mp4` |
-| config | 7 | `.github/workflows/deploy-dmoptic.yml`, `hosting/previews/dmoptic/sitemap.xml`, `hosting/samples/sitemap.xml` |
 | archive | 3 | `amk-factures-pwa-v2.zip`, `amk-factures-pwa.zip`, `dmopticsarl.zip` |
 | sous-titre | 3 | `clients/dm-optic/content/month1/w1/tiktok-01-v2.fr.srt`, `clients/dm-optic/content/month1/w1/tiktok-01.fr.srt`, `clients/dm-optic/content/month1/w2/etapes-01.srt` |
-| symboles extraits (titres de documents + fonctions/classes du code) | 10252 | — |
+| symboles extraits (titres de documents + fonctions/classes du code) | 10358 | — |
 
 ### Les outils et skills installés — 1 dossier = 1 outil
 

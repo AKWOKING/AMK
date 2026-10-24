@@ -93,16 +93,31 @@ def read(p: Path, cap: int = 2_000_000) -> str:
 
 
 def walk() -> list[Path]:
-    files: list[Path] = []
-    for dirpath, dirnames, filenames in os.walk(ROOT):
-        dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS]
-        rel = Path(dirpath).relative_to(ROOT)
-        for name in filenames:
-            relpath = rel / name if str(rel) != "." else Path(name)
-            if relpath == MAP.relative_to(ROOT) or relpath.name.startswith(("FILE-AUDIT-", "REPO-MAP")):
-                continue  # les rapports générés se citent eux-mêmes : les indexer fait boucler le graphe
-            files.append(relpath)
-    return sorted(files)
+    """La carte décrit **le dépôt**, pas le disque : elle ne lit que les fichiers suivis par git.
+
+    Correction du 24/10 (CI rouge) : la marche précédente parcourait le système de fichiers, donc un
+    fichier de travail non versionné, un cache ou un venv local changeaient la carte. Deux clones du
+    même commit produisaient deux cartes — et la CI, qui part d'une copie propre, ne pouvait pas la
+    rejouer à l'identique. `git ls-files` est la source unique : même commit, même carte, à l'octet.
+    """
+    tracked = subprocess.run(["git", "ls-files", "-z"], cwd=ROOT, capture_output=True, text=True)
+    if tracked.returncode == 0:
+        files = [Path(f) for f in tracked.stdout.split("\0") if f]
+    else:                                             # repli sans git : on retombe sur le disque
+        files = []
+        for dirpath, dirnames, filenames in os.walk(ROOT):
+            dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS]
+            rel = Path(dirpath).relative_to(ROOT)
+            for name in filenames:
+                files.append(rel / name if str(rel) != "." else Path(name))
+    out: list[Path] = []
+    for relpath in files:
+        if relpath.parts and relpath.parts[0] in SKIP_DIRS:
+            continue
+        if relpath == MAP.relative_to(ROOT) or relpath.name.startswith(("FILE-AUDIT-", "REPO-MAP")):
+            continue  # les rapports générés se citent eux-mêmes : les indexer fait boucler le graphe
+        out.append(relpath)
+    return sorted(set(out))
 
 
 def build_file_nodes(files: list[Path]) -> tuple[dict, dict]:
@@ -405,7 +420,8 @@ def write_map(g: dict, nodes_meta: dict, stale: set[str], stats: dict, comm: dic
     A("")
     A(f"```text\nGénéré par tools/graphify/build_full_graph.py — {date.today().isoformat()}\n"
       f"Source : graphify-out/graph.json ({len(g['nodes'])} nœuds, {len(g['edges'])} arêtes)\n"
-      f"Aucun LLM, aucune clé : tout est déterministe et rejouable en ~10 secondes.\n```")
+      f"Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même\n"
+      f"carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.\n```")
     A("")
     A("## 0 · En une page")
     A("")
