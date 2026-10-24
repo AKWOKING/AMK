@@ -2,18 +2,18 @@
 
 ```text
 Généré par tools/graphify/build_full_graph.py — 2026-10-24
-Source : graphify-out/graph.json (11845 nœuds, 14724 arêtes)
+Source : graphify-out/graph.json (11863 nœuds, 14738 arêtes)
 Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même
 carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.
 ```
 
 ## 0 · En une page
 
-- **11845 nœuds** — dont 746 documents, 169 scripts, 21 modules, 139 pages HTML, 408 images, 3 vidéos, 40 audios, 35 fichiers de données, 11 PDF.
-- **3060 citations entre documents** (2470 en chemin exact, 590 par nom unique)
+- **11863 nœuds** — dont 747 documents, 169 scripts, 21 modules, 139 pages HTML, 412 images, 3 vidéos, 40 audios, 35 fichiers de données, 11 PDF.
+- **3062 citations entre documents** (2472 en chemin exact, 590 par nom unique)
 - **121 arêtes de remplacement** · **1 documents marqués périmés**
 - **389 documents que personne ne cite** (atteignables par aucun chemin de lecture)
-- **Couverture : 1635 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
+- **Couverture : 1640 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
 
 ### Les dossiers du dépôt, par poids — et ce que chacun porte
 
@@ -21,7 +21,7 @@ carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10
 |---|---|---|
 | `hosting/` | 314 | Sites déployés et aperçus |
 | `tools/` | 259 | Outils et skills installés |
-| `clients/` | 206 | Dossiers clients |
+| `clients/` | 210 | Dossiers clients |
 | `design/` | 179 | Design, skills, vendor |
 | `content/` | 161 | Contenu, vidéos, carrousels, scripts |
 | `leads/` | 152 | CRM machine (CSV, records, vues générées) |
@@ -36,6 +36,7 @@ carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10
 | `https___amk-cm.vercel.app_-Performance-on-Search-2026-10-08/` | 7 | — |
 | `mockups/` | 5 | Captures et mockups |
 | `.github/` | 2 | — |
+| `docs/` | 1 | — |
 
 ## 1 · La couche connaissance — les 10 documents qui font loi
 
@@ -67,7 +68,7 @@ C'est ce réseau qui décide de ce qui s'applique à un travail. Si un document 
 | 7 | `sales/CLIENT-MESSAGING-RULES.md` | **18** | 20 |
 | 8 | `sales/MESSAGES-2026-09-23-PERSUASION.md` | **17** | 14 |
 | 9 | `sales/PRIX-ET-RECURRENCE-2026-09-24.md` | **17** | 16 |
-| 10 | `clients/dm-optic/build-notes.md` | **16** | 97 |
+| 10 | `clients/dm-optic/build-notes.md` | **16** | 98 |
 | 11 | `hosting/previews/README.md` | **16** | 6 |
 | 12 | `ops/TOOL-SCAN.md` | **16** | 44 |
 | 13 | `clients/_uniqueness-registry.md` | **15** | 1 |
@@ -113,11 +114,11 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 *Le pivot d'une communauté est le document que **les autres membres du groupe** citent le plus (degré interne) — pas le document le plus cité du dépôt, qui l'est partout.*
 
-**504 documents sur 746 sont dans un sujet.** Les 214 autres ne touchent aucune citation — ni entrante, ni sortante : ce sont eux qui se perdent (voir §3 bis). Un sujet se nomme par ses pivots ; un document hors sujet ne se retrouve pas tout seul.
+**505 documents sur 747 sont dans un sujet.** Les 214 autres ne touchent aucune citation — ni entrante, ni sortante : ce sont eux qui se perdent (voir §3 bis). Un sujet se nomme par ses pivots ; un document hors sujet ne se retrouve pas tout seul.
 
 | # | Docs | Les 3 pivots internes | Ce que le groupe a en propre |
 |---|---|---|---|
-| 0 | 461 | `Activity-Log.md` · `AMK-DESIGN-SKILLS.md` · `PRE-FLIGHT.md` | `leads/` (27 % du groupe) |
+| 0 | 462 | `Activity-Log.md` · `AMK-DESIGN-SKILLS.md` · `PRE-FLIGHT.md` | `leads/` (27 % du groupe) |
 | 1 | 20 | `analyst-common.md` · `context-safety.md` · `report.md` | `tools/` (100 % du groupe) |
 | 2 | 5 | `claude-code-tools.md` · `codex-tools.md` · `pi-tools.md` | `tools/` (100 % du groupe) |
 | 3 | 4 | `PHOTOSHOOT-FICHE-1PAGE-2026-10.md` · `DEMO-SCRIPT-2026-10-07.md` · `VISIT-RUNSHEET-2026-10-07.md` | `clients/` (100 % du groupe) |
@@ -127,7 +128,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | 7 | 2 | `etapes-01-PUBLICATION.md` | `clients/` (100 % du groupe) |
 | 8 | 2 | `DESIGN.md` | `design/` (100 % du groupe) |
 
-### Communauté 0 — 461 documents
+### Communauté 0 — 462 documents
 
 - `sales/Activity-Log.md` — cité 164× dans le groupe, 167× au total
 - `AMK-DESIGN-SKILLS.md` — cité 39× dans le groupe, 41× au total
@@ -186,8 +187,8 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 | Nature | Fichiers | Où |
 |---|---|---|
-| document | 746 | `AGENTS.md`, `AMK-DESIGN-SKILLS.md`, `AMK-SEO-PLAYBOOK.md` |
-| image | 408 | `brand/AMK-logo-mono.png`, `brand/AMK-logo-mono.svg`, `brand/AMK-logo-primary.png` |
+| document | 747 | `AGENTS.md`, `AMK-DESIGN-SKILLS.md`, `AMK-SEO-PLAYBOOK.md` |
+| image | 412 | `brand/AMK-logo-mono.png`, `brand/AMK-logo-mono.svg`, `brand/AMK-logo-primary.png` |
 | script | 169 | `brand/build_fb_assets.py`, `clients/dm-optic/launch/facebook-assets/build_cover.py`, `clients/dm-optic/launch/social/build_frame_cards.py` |
 | page | 139 | `brand/AMK-Logo-Kit.html`, `brand/v1-green/AMK-Logo-Kit.html`, `clients/dm-optic/brand/CARTE-SIGNATURE-TABLEAU-VISION.html` |
 | audio | 40 | `content/pipeline/post01/vo/v5-sentences/s01.mp3`, `content/pipeline/post01/vo/v5-sentences/s02.mp3`, `content/pipeline/post01/vo/v5-sentences/s03.mp3` |
@@ -201,7 +202,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | vidéo | 3 | `clients/dm-optic/brag/brag.mp4`, `content/videos/v06-facebook-no-booking/Video_06_Facebook_No_Booking.mp4`, `content/videos/v06-facebook-no-booking/Video_06_Facebook_No_Booking_VOIX.mp4` |
 | sous-titre | 3 | `clients/dm-optic/content/month1/w1/tiktok-01-v2.fr.srt`, `clients/dm-optic/content/month1/w1/tiktok-01.fr.srt`, `clients/dm-optic/content/month1/w2/etapes-01.srt` |
 | archive | 1 | `dmopticsarl-2026-10-21.zip` |
-| symboles extraits (titres de documents + fonctions/classes du code) | 10210 | — |
+| symboles extraits (titres de documents + fonctions/classes du code) | 10223 | — |
 
 ### Les outils et skills installés — 1 dossier = 1 outil
 
@@ -251,7 +252,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 | Client | Fichiers | Documents | Brief ? |
 |---|---|---|---|
-| `dm-optic/` | 182 | 88 | oui |
+| `dm-optic/` | 186 | 88 | oui |
 | `labiomed/` | 1 | 1 | — |
 | `le-cristallin/` | 2 | 2 | — |
 

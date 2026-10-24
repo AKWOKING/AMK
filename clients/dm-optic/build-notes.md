@@ -2390,3 +2390,40 @@ au premier visiteur, et à quel moment (cache de bord).
 
 Je n'ai **rien** changé dans le workflow : il n'est pas à moi (`PRE-FLIGHT` §0i : les fichiers
 `workflows` appartiennent à King), et le pousser demanderait une permission que le jeton n'a pas.
+
+### 24/10 (23h) — le cercle décalé sur le coin de la carte, décidé par « brainstorming »
+
+King a demandé que le choix (carte transparente contre cercle déplacé) soit tranché par le skill
+`superpowers/brainstorming`, et de suivre sa réponse. Lu et appliqué ; note de conception déposée dans
+`docs/superpowers/specs/2026-10-24-cercle-placement-design.md`, détail des mesures dans
+`launch/REVUE-RENDU-2026-10-24.md` §11.
+
+**Ce que le skill a changé dans la question.** Il oblige à relire le contexte avant de choisir : les
+quatre variantes mesurées la veille répondaient toutes à « où mettre le cercle *sur la photo* », alors
+que King avait offert au client **deux** branches, dont « retirer la photo et remettre le fond blanc ».
+Celle-là n'avait jamais été rendue. Elle l'a été : **21 % d'encre visible** contre 55 % aujourd'hui —
+retirer la photo rend le cercle *plus pâle*, pas plus visible, parce que le dégradé finit à l'opacité 0
+et que le bleu clair s'efface sur le papier. La promesse faite au client est donc asymétrique, et c'est
+maintenant chiffré.
+
+**La mesure qui tranche : l'encre, pas la géométrie.** Chaque point du trait est pondéré par l'opacité
+réelle du dégradé (0 → 0,55 → 0,38 → 0) et par l'épaisseur du trait (9 px / 2,5 px). À 1440 :
+livré ce soir 55 %, verre 74 %, **décalé 79 %** ; à 1024 : 61 %, 63 %, **48 %** (et le verre commence à
+traverser le titre à 6-8 %).
+
+**Décision : D, par palier.** `≥1024 px` : 620 px, `right:-34% ; top:-16%`, `translate:0` ; `≥1200 px` :
+700 px. Sous 1024, rien ne change (470 px centré). Appliqué aux deux pages **et au gabarit**
+`demos/dmoptic-v1.tpl.html` — même raison que le matin : sans le gabarit, un rebuild ramène l'ancien
+placement.
+
+**Contrôlé dans Chromium** à 390, 768, 1024, 1200, 1280, 1440, 1680 : encre visible 33 / 24 / 48 / 61 /
+67 / **79** / **79 %**, zéro collision avec titre, chapeau, lignes et boutons, zéro débordement, zéro
+erreur console. Le cercle dépasse à droite du premier écran (40 px à 390, 124 px à 1024) : `.hero` est en
+`overflow:hidden`, donc il est coupé net — c'est le dessin, pas un bug.
+
+**Portes** : test de page 62/62 · `audit_a11y --strict` 0 · `audit_html` 0 · `audit_delivery --strict`
+VERT (1 P3 connu) · `audit_reveal` 4 fautes préexistantes, inchangées.
+
+**Ce que je ne promets pas** : que le cercle soit *franc* sur téléphone. À 33 % d'encre il reste
+discret ; l'affermir demande d'épaissir le trait ou de relever les arrêts du dégradé, donc de changer le
+dessin du client. C'est une question à lui poser, pas un réglage à glisser.
