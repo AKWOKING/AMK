@@ -209,7 +209,7 @@ même porte finissent toujours par diverger, et c'est la plus vieille qui gagne.
 
 ---
 
-## 7 · Les sept invariants
+## 7 · Les dix invariants
 
 1. **Un seul arbre vrai.** Tout ce qui est lu ou mesuré vient d'un dépôt remis au sommet distant dans le même tour.
 2. **Une seule vérité par sujet.** La table §5 est exhaustive : un sujet sans souverain est un sujet qui va se contredire.
@@ -222,6 +222,15 @@ même porte finissent toujours par diverger, et c'est la plus vieille qui gagne.
    (`PRE-FLIGHT.md` §1i). Le seuil n'est pas une mémoire : `bash tools/ops/machine.sh` l'affiche, et
    `--check` échoue tant qu'il est dépassé. Trou constaté le 24/10 : **22 commits, 544 fichiers, 59 722
    lignes** sur la même branche sans fusion — la règle existait, rien ne la rappelait.
+
+9. **Aucune valeur de la machine dans un artefact suivi.** La carte recopiait `date.today()` dans son
+   en-tête : juste sur le poste, faux sur le runner, et l'étape « la carte se rejoue à l'identique » est
+   tombée rouge sur un dépôt qui n'avait pas bougé d'un octet. La date vient maintenant du commit
+   (`git log -1 --date=short`). Ni heure, ni fuseau, ni nom d'hôte, ni `$HOME` dans un fichier versionné.
+10. **Une porte ne s'ouvre jamais sur une absence.** Le 24/10, `fusion-sur-seuil` s'est déclarée satisfaite
+   parce que `origin/main` manquait dans le clone : faute de mesure, elle a répondu « rien à signaler »,
+   et 544 fichiers ont attendu quatre tours de trop. Une mesure impossible est une panne, pas une
+   permission.
 
 ---
 
@@ -237,6 +246,7 @@ même porte finissent toujours par diverger, et c'est la plus vieille qui gagne.
 | Session neuve sans skills | l'agent « ne trouve pas » un skill installé la veille | `provision.sh`, au début de chaque session |
 | Handoff qui vieillit | un état de travail de trois jours présenté comme actuel | le cockpit affiche son âge ; au-delà de 3 jours, il est réécrit |
 | Branche qui ne fusionne jamais | 22 commits et 59 722 lignes sur la même branche, `main` figé depuis trois jours | la jauge de fusion du cockpit, et `machine.sh --merge` pour la séquence `fetch` → diff → PR |
+| Carte rouge alors que rien n'a bougé | la CI échoue sur « la carte se rejoue à l'identique », le même commit est vert sur le poste | un artefact versionné ne contient **aucune valeur de la machine** : la date de la carte vient du commit (invariant 9) |
 
 ---
 
