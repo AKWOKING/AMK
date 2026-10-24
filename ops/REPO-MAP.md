@@ -2,7 +2,7 @@
 
 ```text
 Généré par tools/graphify/build_full_graph.py — 2026-10-24
-Source : graphify-out/graph.json (11843 nœuds, 14105 arêtes)
+Source : graphify-out/graph.json (11843 nœuds, 14106 arêtes)
 Aucun LLM, aucune clé : tout est déterministe et rejouable en ~10 secondes.
 ```
 

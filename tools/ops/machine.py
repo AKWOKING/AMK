@@ -540,6 +540,13 @@ def cockpit() -> int:
     if audit_age is not None:
         tag = f"{GRN}✓{OFF}" if audit_age <= 7 else f"{YEL}⚠{OFF}"
         print(f"  {tag}  audit des fichiers : {audit_file.name} ({audit_age} j)")
+    rs = rules()
+    hard_ko = [r["id"] for r in rs if r["sev"] == "dure" and not r["ok"]]
+    trous = [r["id"] for r in rs if r["sev"] == "trou"]
+    tag = f"{GRN}✓{OFF}" if not hard_ko else f"{RED}⛔{OFF}"
+    note = "" if not hard_ko else " — " + " · ".join(hard_ko)
+    print(f"  {tag}  règles : {len(rs)} déclarées · {len(hard_ko)} porte(s) dure(s) fermée(s)"
+          f" · {len(trous)} sans porte{note}")
     if handoff_age is not None:
         tag = f"{GRN}✓{OFF}" if handoff_age <= 3 else f"{YEL}⚠{OFF}"
         note = "" if handoff_age <= 3 else " — au-delà de 3 jours, il est réécrit"
