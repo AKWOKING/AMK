@@ -24,7 +24,7 @@ bash tools/ops/machine.sh --turns      # le rendement du jour : commits, fichier
 Le miroir Notion (PRE-FLIGHT §0g) est **daté ici**, dans une ligne que la machine lit :
 
 ```text
-MIRROR 2026-10-24 · f0c1018
+MIRROR 2026-10-24 · 99ad22e
 ```
 
 Tant qu'un fichier de **fait debout** (pré-vol, machine, prix, dossiers clients, journal des ventes)
@@ -558,6 +558,15 @@ bac : `audit_files.py` a alors annoncé **743 orphelins, 351 à traiter** — et
 archivé 350. Sans graphe, l'audit rendait un dictionnaire vide, donc *tout* document paraissait orphelin.
 Il dit maintenant **« non mesurés »** et donne la commande. C'est la même leçon que la jauge de fusion :
 **une mesure impossible n'est pas un zéro.**
+
+**5 · Une deuxième panne trouvée en chemin : l'audit se lisait lui-même.** En rejouant
+`audit_files.py` deux fois de suite, le nombre de médias sans référence faisait **63 → 60 → 63**.
+Cause : le rapport `ops/FILE-AUDIT-<date>.md` cite les noms des médias qu'il déclare sans référence ;
+en entrant dans le corpus, il les référençait lui-même, et chaque exécution réécrivait la liste que la
+suivante allait lire. Les rapports d'audit sortent donc du corpus (`is_own_report()`), et trois
+exécutions consécutives rendent maintenant le même octet. **Le chiffre corrigé monte : 104 médias sans
+référence** au lieu de 60 — les 44 de différence n'étaient cités que par le rapport lui-même. Aucun
+n'est supprimé pour autant : c'est une piste, pas une preuve.
 
 ---
 

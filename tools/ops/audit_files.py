@@ -14,7 +14,7 @@ Ce qu'il regarde, et ce que ça vaut comme preuve
 |---|---|---|
 | CACHE | `__pycache__`, `*.pyc` | supprimable sans réflexion |
 | DOUBLON | md5 identique, octet pour octet | une seule copie suffit — **sauf** si les deux sont déployées séparément |
-| SANS RÉFÉRENCE | nom de fichier absent de tout le texte du dépôt | piste, pas preuve : une image peut être appelée par un manifeste ou un CSS |
+| SANS RÉFÉRENCE | nom de fichier absent de tout le texte du dépôt, **rapports d'audit exclus** | piste, pas preuve : une image peut être appelée par un manifeste ou un CSS |
 | ORPHELIN | document sans citation entrante (graphe) | à relire, pas à supprimer : il peut être de la connaissance morte *ou* non branchée |
 | PÉRIMÉ | le document dit lui-même qu'il est remplacé | à vérifier au cas par cas — la détection est lexicale |
 | ARTEFACT | `.zip` reconstruit par un script | vérifier que le script existe encore |
@@ -97,11 +97,21 @@ def walk() -> list[Path]:
     return sorted(out)
 
 
+def is_own_report(rel: Path) -> bool:
+    """Un rapport d'audit ne compte pas comme une référence.
+
+    Il cite les noms des médias qu'il déclare sans référence : s'il entrait dans le corpus,
+    il se référencerait lui-même et deux exécutions de suite ne donneraient pas le même
+    chiffre (63 puis 60, puis 63). Mesuré le 24/10 : sans cette exclusion, l'audit oscillait.
+    """
+    return rel.parent == Path("ops") and rel.name.startswith("FILE-AUDIT-") and rel.suffix == ".md"
+
+
 def build_corpus(files: list[Path]) -> list[tuple[str, str]]:
     corpus = []
     for rel in files:
         p = ROOT / rel
-        if p.suffix.lower() not in TEXT_EXT:
+        if p.suffix.lower() not in TEXT_EXT or is_own_report(rel):
             continue
         try:
             if p.stat().st_size > 3_000_000:
@@ -322,7 +332,9 @@ def main() -> int:
     A("## 3 · Médias sans aucune référence par leur nom")
     A("")
     A(f"{len(unreferenced)} fichiers, {human(sum(s for _, s, _ in unreferenced))}. "
-      "**Piste, pas preuve** : un manifeste, un CSS ou un `JSON` peut les appeler autrement.")
+      "**Piste, pas preuve** : un manifeste, un CSS ou un `JSON` peut les appeler autrement. "
+      "Les rapports `ops/FILE-AUDIT-*.md` sont hors corpus : sans cela, l'audit se citerait "
+      "lui-même et le chiffre changerait à chaque exécution.")
     A("")
     by_dir: dict[str, list] = defaultdict(lambda: [0, 0, []])
     for p, s, _ in unreferenced:
