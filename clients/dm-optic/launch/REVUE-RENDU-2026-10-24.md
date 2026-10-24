@@ -345,3 +345,10 @@ Laissé ouvert, **et à ne pas promettre** : la force du trait. À 33 % d'encre 
 reste discret. Le rendre plus présent demanderait d'épaissir le trait ou de relever les arrêts
 d'opacité — donc de **changer le dessin**, qui est une décision du client (son croquis a du bleu, du
 vert et du rouge ; le cercle n'a jamais eu de vert).
+
+### 11.5 · Où c'est en ligne
+
+`main` = **`544dde3`** (PR #37). Déploiement Vercel de production **`dpl_AKmNB4Hv2rTCaaoDYbTNf3EMQtrx`** —
+`READY` / `PROMOTED`, alias `dm-optique-sarl.vercel.app`, construit sur le SHA `544dde3`. Captures du
+rendu : `15-final-cercle-decale-1440.jpg`, `16-final-cercle-decale-1024.jpg`, `17-final-mobile.jpg`,
+`18-sans-photo-fond-blanc.jpg` (la branche 2 du client, pour la conversation).
