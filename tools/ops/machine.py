@@ -10,6 +10,7 @@ audit, handoff, outils), et il renvoie au document qui tranche. La carte complè
     python3 tools/ops/machine.py --check        # code 1 si une porte dure est fermée
     python3 tools/ops/machine.py --rules        # les règles debout, chacune avec sa porte
     python3 tools/ops/machine.py --usage        # quels outils ont laissé une trace (et lesquels sont muets)
+    python3 tools/ops/machine.py --ci           # la variante runner : secrets + chemins cités (code 1 sinon)
 """
 from __future__ import annotations
 
@@ -19,6 +20,7 @@ import re
 import subprocess
 import sys
 from datetime import date, datetime
+from functools import lru_cache
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -278,6 +280,59 @@ def merge_gauge() -> dict:
                 commits=commits, due=due, why=why)
 
 
+
+# ───────────────────────────────────────────────── les chemins cités existent-ils ?
+# Une carte qui cite un fichier disparu envoie lire dans le vide — c'est la moitié des « consignes
+# mortes » du 24/10. La règle est bête et c'est ce qu'on veut : chaque chemin entre backticks, dans les
+# tableaux de ops/MACHINE.md, doit exister (un glob est accepté s'il matche au moins un fichier).
+CITE = re.compile(r"`([A-Za-z0-9_./*§ -]+\.(?:md|py|sh|json|ya?ml|pdf))`")
+
+
+def cited_paths() -> list[tuple[str, int]]:
+    out: list[tuple[str, int]] = []
+    try:
+        lines = MACHINE.read_text(encoding="utf-8", errors="ignore").splitlines()
+    except OSError:
+        return out
+    for i, line in enumerate(lines, 1):
+        if not line.lstrip().startswith("|"):
+            continue
+        # Une ligne de retrait cite par nature un fichier disparu : c'est son métier, on ne la juge pas.
+        if re.search(r"retrait|retiré|supprim|ex-", line, re.I):
+            continue
+        for m in CITE.finditer(line):
+            for part in m.group(1).split():
+                if part.endswith((".md", ".py", ".sh", ".json", ".yml", ".yaml", ".pdf")):
+                    out.append((part, i))
+    return out
+
+
+@lru_cache(maxsize=1)
+def _basenames() -> dict[str, int]:
+    idx: dict[str, int] = {}
+    for f in run(["git", "ls-files"], timeout=60).splitlines():
+        if f:
+            idx[f.rsplit("/", 1)[-1]] = idx.get(f.rsplit("/", 1)[-1], 0) + 1
+    return idx
+
+
+def missing_cites() -> list[tuple[str, int]]:
+    """Un chemin cité résout par chemin exact, par glob, ou par nom de fichier **unique** dans le dépôt.
+    Ce qui ne résout pas est une consigne morte : la carte envoie lire un fichier qui n'existe plus."""
+    idx = _basenames()
+    gone: list[tuple[str, int]] = []
+    for path, line in cited_paths():
+        if "*" in path:
+            ok = bool(list(ROOT.glob(path)))
+        elif (ROOT / path).exists():
+            ok = True
+        else:
+            ok = idx.get(path.rsplit("/", 1)[-1], 0) == 1
+        if not ok:
+            gone.append((path, line))
+    return gone
+
+
 # ───────────────────────────────────────────────── la trace d'usage des outils
 # Un outil « installé » n'est pas un outil « utilisé ». Le 24/10, la panne notée dans MACHINE.md §8
 # était : 24 installateurs, 3 outils appelés. Ce compteur existe pour que la phrase « j'ai utilisé
@@ -448,6 +503,12 @@ def rules() -> list[dict]:
         "ops/HANDOFF-*.md", "tous les trois jours", "souple",
         handoff_age is not None and handoff_age <= 3,
         f"{handoff_age} j → réécrire le handoff" if handoff_age is not None else "aucun handoff daté")
+    gone = missing_cites()
+    add("docs-existants", "Tout chemin cité par les tableaux de la machine existe encore.",
+        "MACHINE §5 · §9 · §10", "chaque modification de la carte", "dure",
+        not gone, f"{len(gone)} chemin(s) cité(s) dans le vide : "
+        + ", ".join(f"{p} (L{l})" for p, l in gone[:4]) if gone
+        else f"{len(cited_paths())} chemins cités, tous présents")
     add("stat-sourcee", "Aucune statistique sans source primaire nommée ; ce qui n'est pas revérifiable est écrit tel quel.",
         "PRE-FLIGHT §1g", "chaque chiffre écrit", "trou", True,
         "sans porte machine : la porte est le chemin cité à côté du chiffre, ou le mot « non revérifié »")
@@ -466,6 +527,34 @@ def rules() -> list[dict]:
         "PRE-FLIGHT §4b", "apparition d'un .md souverain", "souple",
         not new_docs, f"à faire confirmer : {', '.join(new_docs[:3])}" if new_docs else "aucun document souverain ajouté")
     return out
+
+
+CI_RULES = ("aucun-secret", "docs-existants")
+
+
+def ci() -> int:
+    """La variante d'un runner : ne garde que ce qui est vrai sans estampes, sans ~/, sans historique local.
+    La jauge de fusion est imprimée mais ne bloque pas : un PR au-dessus du seuil n'est pas une faute,
+    c'est le signal qu'il faut fusionner."""
+    rs = {r["id"]: r for r in rules()}
+    ko = [rs[i] for i in CI_RULES if i in rs and not rs[i]["ok"]]
+    for r in rs.values():
+        if r["sev"] == "dure" and r["id"] not in CI_RULES:
+            print(f"  · {r['id']:<22} hors CI ({r['detail']})")
+    for i in CI_RULES:
+        r = rs.get(i)
+        if not r:
+            continue
+        tag = f"{GRN}✓{OFF}" if r["ok"] else f"{RED}⛔{OFF}"
+        print(f"  {tag} {r['id']:<22} {r['detail']}")
+    mg = merge_gauge()
+    if mg["ok"] and mg["due"]:
+        print(f"  {YEL}⚠{OFF} fusion due — {mg['why']} (non bloquant en CI)")
+    if ko:
+        print(f"\n{RED}CI ROUGE{OFF} : " + " · ".join(r["id"] for r in ko))
+        return 1
+    print(f"\n{GRN}✓{OFF} CI verte — les portes vérifiables dans un runner sont ouvertes")
+    return 0
 
 
 def print_rules() -> int:
@@ -746,6 +835,8 @@ def main(argv: list[str]) -> int:
         return print_rules()
     if a == "--usage":
         return print_usage()
+    if a == "--ci":
+        return ci()
     if a == "--merge":
         return merge_card()
     if a == "--who":

@@ -1,0 +1,45 @@
+# LA MACHINE — les portes qui ne dépendent de rien de local.
+#
+# Pourquoi ce fichier : jusqu'au 24/10, `machine.sh --check` s'ouvrait **à la main**. Un push pouvait
+# partir avec une carte périmée, un secret dans un fichier ou un chemin cité qui n'existe plus.
+# Ce workflow rejoue la variante `--ci` : elle ne teste que ce qui est vrai dans un runner — pas
+# d'estampes d'outils (~/.amk-provisioned), pas d'historique local, pas de miroir Notion.
+#
+# Ce que la CI ne remplace pas : les règles qui demandent un jugement (stat sourcée, oui de King avant
+# un fichier debout neuf). Elles restent dans `--rules`, marquées « sans porte ».
+
+name: La machine
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  portes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # la jauge de fusion a besoin de merge-base avec origin/main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Les portes vérifiables dans un runner (secrets, chemins cités)
+        run: python3 tools/ops/machine.py --ci
+
+      - name: La carte du dépôt se rejoue à l'identique
+        run: |
+          python3 tools/graphify/build_full_graph.py
+          if ! git diff --quiet -- ops/REPO-MAP.md; then
+            echo "⛔ ops/REPO-MAP.md n'est pas à jour : un fichier suivi a changé sans que la carte soit reconstruite."
+            echo "   Remède : python3 tools/graphify/build_full_graph.py && git add ops/REPO-MAP.md"
+            git diff --stat -- ops/REPO-MAP.md
+            exit 1
+          fi
+          echo "✓ carte à jour (rejouée, aucune différence)"
