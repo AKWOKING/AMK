@@ -572,6 +572,31 @@ def media_state() -> dict:
     return dict(dirs=len(cibles), stale=stale)
 
 
+def hooks_state() -> dict:
+    """Les crochets git sont-ils posés dans CE clone, et à jour par rapport au dépôt ?
+
+    Un crochet vit dans `.git/hooks`, donc un clone neuf n'en a aucun : la porte ne peut pas être
+    « dure » (elle empêcherait de committer après un `git clone` avant d'avoir lancé un script), mais
+    elle ne doit pas se taire — c'est exactement le ⑤ : les contrôles en amont, ou leur absence.
+    """
+    try:
+        hooks = Path(run(["git", "rev-parse", "--git-path", "hooks"]) or ".git/hooks")
+        if not hooks.is_absolute():
+            hooks = ROOT / hooks
+    except OSError:
+        return dict(ok=False, why="chemin des crochets illisible", manquants=["pre-commit", "pre-push"])
+    manquants, perimes = [], []
+    for h in ("pre-commit", "pre-push"):
+        installe, source = hooks / h, ROOT / "tools" / "ops" / "hooks" / h
+        if not installe.exists():
+            manquants.append(h)
+        elif source.exists() and installe.read_bytes() != source.read_bytes():
+            perimes.append(h)
+    return dict(ok=not manquants and not perimes, manquants=manquants, perimes=perimes,
+                why="" if not (manquants or perimes) else
+                (f"absent(s) : {', '.join(manquants)}" if manquants else f"périmé(s) : {', '.join(perimes)}"))
+
+
 def rules() -> list[dict]:
     """Les règles debout, chacune avec sa porte. Aucune n'est inventée ici : toutes renvoient à un §."""
     g = git_state()
@@ -582,6 +607,7 @@ def rules() -> list[dict]:
     _, handoff_age = dated_file("ops/HANDOFF-*.md")
     mir = mirror_state()
     med = media_state()
+    hk = hooks_state()
     out: list[dict] = []
 
     def add(rid, rule, doc, when, sev, ok, detail):
@@ -657,6 +683,10 @@ def rules() -> list[dict]:
         f"{med['dirs']} dossier(s) de médias, tous inventoriés" if not med["stale"]
         else f"{len(med['stale'])} inventaire(s) périmé(s) : {', '.join(med['stale'][:3])} "
              "→ python3 tools/ops/media_inventory.py --write")
+    add("crochets-poses", "Les crochets qui jouent la CI avant le push sont posés, et à jour.",
+        "MACHINE §11 ⑤ · tools/ops/install-hooks.sh", "chaque --check", "souple",
+        hk["ok"], "pre-commit et pre-push posés, identiques au dépôt" if hk["ok"]
+        else f"{hk['why']} → bash tools/ops/install-hooks.sh")
     add("fichier-neuf-avec-king", "Un fichier debout nouveau n'existe qu'avec le oui de King.",
         "PRE-FLIGHT §4b", "création d'un document souverain", "trou", True,
         "sans porte machine : la porte est la proposition d'emplacement dans la réponse, puis le ruling")

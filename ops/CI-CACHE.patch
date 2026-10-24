@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/machine.yml b/.github/workflows/machine.yml
+index f06cc03..bc9a92e 100644
+--- a/.github/workflows/machine.yml
++++ b/.github/workflows/machine.yml
+@@ -26,6 +26,10 @@ jobs:
+       - uses: actions/setup-python@v5
+         with:
+           python-version: "3.12"
++          cache: pip
++          # la seule dépendance installée par la CI : graphifyy, épinglé dans install.sh.
++          # La clé du cache suit donc ce fichier — changer l'épinglage refait le cache.
++          cache-dependency-path: tools/graphify/install.sh
+ 
+       - name: Les portes vérifiables dans un runner (secrets, chemins cités)
+         run: python3 tools/ops/machine.py --ci

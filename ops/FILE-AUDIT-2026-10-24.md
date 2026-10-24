@@ -2,7 +2,7 @@
 
 ```text
 Généré par tools/ops/audit_files.py — 2026-10-24
-1610 fichiers · 137.2 Mo · dont 23.0 Mo dans des fichiers > 5 Mo
+1613 fichiers · 137.2 Mo · dont 23.0 Mo dans des fichiers > 5 Mo
 Aucune suppression automatique : les décisions sont listées, pas prises.
 ```
 
@@ -194,4 +194,4 @@ Aucun doublon à l'intérieur d'un même projet.
 
 ---
 
-*Rejouable : `python3 tools/ops/audit_files.py`. Rapport précédent à comparer : 1610 fichiers, 137.2 Mo.*
+*Rejouable : `python3 tools/ops/audit_files.py`. Rapport précédent à comparer : 1613 fichiers, 137.2 Mo.*
