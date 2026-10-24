@@ -38,6 +38,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import shutil
 from collections import defaultdict
 from datetime import date
@@ -46,7 +47,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 GRAPH = ROOT / "graphify-out" / "graph.json"
 
-SKIP_DIRS = {".git", "graphify-out", "node_modules", "__pycache__", ".venv", "dist",
+SKIP_DIRS = {".git", "graphify-out", "node_modules", "__pycache__", ".venv", "dist", "archive",
              "build", ".cache", ".next"}
 
 TEXT_EXT = {".md", ".html", ".js", ".mjs", ".py", ".json", ".css", ".yml", ".yaml",
@@ -144,6 +145,47 @@ def md5(path: Path) -> str:
         for chunk in iter(lambda: fh.read(1 << 20), b""):
             h.update(chunk)
     return h.hexdigest()
+
+
+DOC_DATE = re.compile(r"(20\d{2})-(\d{2})-(\d{2})")
+DOC_DATE_FR = re.compile(r"(\d{2})/(\d{2})/(20\d{2})")
+FAMILLES = {
+    "research/": ("récolte ponctuelle", "archiver après synthèse"),
+    "sales/Send-": ("envoi daté d'une campagne finie", "archiver"),
+    "sales/VAGUE-": ("envoi daté d'une campagne finie", "archiver"),
+    "sales/PLAN-2026-09": ("plan de campagne finie", "archiver"),
+    "sales/Passe-Vitrine": ("campagne finie", "archiver"),
+    "sales/Expansion-Geography": ("étude de septembre", "archiver"),
+    "ops/templates/": ("gabarit réutilisable", "citer depuis la machine"),
+    "content/videos/": ("état d'une vidéo livrée", "archiver avec le lot du mois"),
+}
+
+
+def doc_date(rel: Path) -> str:
+    """La date d'un document : dans son chemin d'abord (le plus fiable), dans son en-tête ensuite.
+    Un document sans date ne peut pas expirer — c'est précisément le défaut que le § ④ corrige."""
+    m = DOC_DATE.search(str(rel))
+    if m:
+        return m.group(0)
+    try:
+        head = "\n".join((ROOT / rel).read_text(encoding="utf-8", errors="ignore").splitlines()[:12])
+    except OSError:
+        return "sans date"
+    m = DOC_DATE.search(head) or DOC_DATE_FR.search(head)
+    if not m:
+        return "sans date"
+    if m.re is DOC_DATE:
+        return m.group(0)
+    return f"{m.group(3)}-{m.group(2)}-{m.group(1)}"
+
+
+def verdict(rel: Path) -> str:
+    for pre, (_, v) in FAMILLES.items():
+        if str(rel).startswith(pre):
+            return v
+    if rel.name.startswith("README"):
+        return "citer (point d'entrée d'un dossier vivant)"
+    return "à décider"
 
 
 def main() -> int:
@@ -308,6 +350,45 @@ def main() -> int:
       "`AMK-DESIGN-SKILLS.md` était signalé « remplacé par Activity-Log » — c'est faux, et une "
       "suppression sur cette base aurait effacé 1 400 lignes de règles de design.")
     A("")
+
+    # 4 bis · les orphelins datés — le chantier ④ de la carte, mesuré à chaque audit
+    normales = ("design/vendor/", "leads/records/", "tools/")
+    a_traiter = [p for p in orphans if not str(p).startswith(normales)]
+    dates = {p: doc_date(p) for p in a_traiter}
+    sans_date = [p for p in a_traiter if dates[p] == "sans date"]
+    dated = sorted((p for p in a_traiter if dates[p] != "sans date"), key=lambda p: dates[p])
+    fam: dict[str, list[Path]] = defaultdict(list)
+    for p in a_traiter:
+        parts = str(p).split("/")
+        fam["/".join(parts[:2]) if len(parts) > 2 else parts[0] + "/"].append(p)
+
+    A("## 4 bis · Les orphelins datés — ce que personne ne cite, et qui ne peut pas expirer")
+    A("")
+    A(f"**{len(orphans)} orphelins** au total, mais **{len(a_traiter)} seulement à traiter** : les "
+      f"autres sont normaux ({len([p for p in orphans if str(p).startswith('design/vendor/')])} imports "
+      f"tiers, {len([p for p in orphans if str(p).startswith('leads/records/')])} fiches CRM reliées par "
+      f"la base, {len([p for p in orphans if str(p).startswith('tools/')])} README d'outils installés).")
+    A("")
+    A(f"- **{len(sans_date)} n'ont aucune date**, ni dans leur chemin, ni dans leurs douze premières "
+      "lignes : un document sans date ne peut pas expirer, donc il ne meurt jamais.")
+    A(f"- Les {len(dated)} autres s'étalent du **{dates[dated[0]]}** au **{dates[dated[-1]]}**.")
+    A("")
+    A("| Famille | Orphelins | Le plus ancien | Verdict proposé |")
+    A("|---|---|---|---|")
+    for k, v in sorted(fam.items(), key=lambda kv: -len(kv[1])):
+        ds = sorted(dates[p] for p in v if dates[p] != "sans date")
+        old = ds[0] if ds else "sans date"
+        A(f"| `{k}` | {len(v)} | {old} | {verdict(v[0])} |")
+    A("")
+    A("*Le verdict est une **proposition**, pas une décision : archiver = `git mv` vers `archive/`, "
+      "jamais supprimer. `archive/` sort du corpus (ni carte, ni portes, ni audit) mais reste dans git.*")
+    A("")
+    if sans_date:
+        A("**Les documents sans date** (à dater ou à archiver) :")
+        A("")
+        for p in sans_date:
+            A(f"- `{p}`")
+        A("")
 
     A("## 5 · Archives et artefacts")
     A("")

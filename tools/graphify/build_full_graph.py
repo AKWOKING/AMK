@@ -41,7 +41,10 @@ OUT = ROOT / "graphify-out"
 GRAPH = OUT / "graph.json"
 MAP = ROOT / "ops" / "REPO-MAP.md"
 
-SKIP_DIRS = {".git", "node_modules", "graphify-out", "__pycache__", ".venv", "dist", "build", ".cache"}
+# `archive/` est un cimetière vivant : les documents y restent lisibles et récupérables, mais ils
+# sortent du corpus — ni nœud, ni citation, ni orphelin. C'est ce qui rend l'archivage utile :
+# le dépôt garde sa mémoire sans que la carte ni les portes paient pour elle.
+SKIP_DIRS = {".git", "node_modules", "graphify-out", "__pycache__", ".venv", "dist", "build", ".cache", "archive"}
 TEXT_EXT = {".md", ".mdx", ".txt", ".py", ".sh", ".mjs", ".js", ".html", ".css", ".yml", ".yaml",
             ".toml", ".csv", ".json", ".srt", ".xml", ".bat", ".gitignore", ""}
 KIND = {

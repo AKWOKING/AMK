@@ -415,8 +415,19 @@ portes plus précises, parce qu'elles cessent de crier sur des brouillons de sep
 
 **Le coût.** Un tri de deux heures, puis zéro entretien : la péremption fait le travail.
 
-**Le premier pas.** Aucune décision nécessaire : générer la liste des 412 orphelins avec leur date et leur
-dernière citation, et la proposer en une page. C'est le prochain chantier que je proposerais.
+**Le premier pas — fait le 24/10 au soir.** L'inventaire est régénéré à chaque audit (`ops/FILE-AUDIT-*.md`
+§ 4 bis) : sur **412 orphelins**, **82 seulement sont à traiter** — les 330 autres sont normaux (164
+imports tiers, 116 fiches CRM, 50 README d'outils). Et le défaut apparaît : **29 de ces 82 n'ont aucune
+date**, ni dans leur chemin ni dans leur en-tête. Un document sans date ne peut pas expirer.
+
+**Premier lot archivé** : huit documents de septembre (`Send-Pack` ×4, `PLAN-2026-09-19-21`,
+`Passe-Vitrine-2026-09-23`, `Expansion-Geography-2026-09-18`, `Social-Growth-Synthesis-2026-09-18`) →
+`archive/2026-09/`. Campagnes terminées, zéro citation entrante, rien qui en dépende. `archive/` sort du
+corpus (ni carte, ni portes, ni audit) mais reste dans git : on archive, on ne supprime pas.
+
+**Reste à décider** : les 29 `research/youtube-lessons` (récolte du 11–12/10, à synthétiser avant
+d'archiver), les 11 orphelins de `clients/dm-optic` (à citer depuis le dossier, pas à archiver), les 6
+`STATUS.md` de vidéos (partent avec le lot du mois), et les 29 documents sans date (à dater).
 
 ### ⑤ Les contrôles en amont, et une session qui démarre en une minute
 
