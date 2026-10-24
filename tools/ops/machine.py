@@ -442,6 +442,13 @@ MIRROR_LINE = re.compile(r"^MIRROR\s+(\d{4}-\d{2}-\d{2})\s+·\s+([0-9a-f]{7,40})
 # Ce qui, une fois changé, oblige le miroir Notion à suivre le jour même (PRE-FLIGHT §0g).
 # Un préfixe ; le fichier est comparé tel quel ou par préfixe.
 # `ops/MACHINE.md` n'y figure pas : c'est le porteur de l'estampille, il ne se mesure pas lui-même.
+# Les documents neufs que King a explicitement confirmés, et le jour où il l'a dit. Un fichier n'entre
+# ici que sur une phrase de lui — jamais parce qu'il a « l'air » d'un document de travail. C'est la
+# seule façon dont la règle 15 cesse de signaler un fichier : le ruling, daté, pas l'usure.
+CONFIRMES = {
+    "ops/LIVRAISONS.md": "2026-10-24",
+}
+
 STANDING = (
     "PRE-FLIGHT.md", "AGENTS.md", "ops/LIFECYCLE.md",
     "knowledge/PRIX-", "clients/_uniqueness-registry.md", "clients/dm-optic/dossier.md",
@@ -465,8 +472,13 @@ def mirror_state() -> dict:
     exists = subprocess.run(["git", "cat-file", "-e", f"{sha}^{{commit}}"], cwd=ROOT,
                             capture_output=True).returncode == 0
     if not exists:
+        # Un clone superficiel (`--depth 1`) ne contient pas le commit du miroir : on ne peut donc
+        # pas PROUVER que Notion est à jour. La porte reste fermée, mais le message doit dire le geste.
+        shallow = run(["git", "rev-parse", "--is-shallow-repository"]) == "true"
         return dict(ok=False, date=stamp, sha=sha, days=days, behind=[],
-                    why=f"MIRROR pointe {sha}, qui n'existe plus dans l'historique — re-dater après vérification")
+                    why=(f"MIRROR pointe {sha}, absent de cet historique "
+                         f"({'clone superficiel' if shallow else 'commit inconnu'}) — vérifier Notion, "
+                         "puis re-dater la ligne MIRROR sur le commit courant"))
     names = [n for n in run(["git", "diff", "--name-only", f"{sha}..HEAD"], timeout=60).splitlines() if n]
     behind = sorted({n for n in names if n.startswith(STANDING) or n in STANDING})
 
@@ -526,6 +538,40 @@ def weight_state() -> dict:
                 big=biggest, big_mb=biggest_n / 1048576)
 
 
+MEDIA_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg", ".mp4", ".mov", ".webm",
+                  ".mp3", ".wav", ".ttf", ".otf", ".pdf"}
+MEDIA_DIR_MO = 2.0
+
+
+def media_state() -> dict:
+    """Chaque dossier qui porte plus de 2 Mo de médias a-t-il un inventaire à jour ?
+    Version bon marché de `tools/ops/media_inventory.py --check` : on compare le NOMBRE de fichiers,
+    pas les empreintes (sha256 de 104 Mo coûterait 8 s à chaque `--check`). Le contrôle strict, lui,
+    vit dans l'outil ; ici on veut seulement qu'un dossier de médias ne puisse pas grossir en silence."""
+    files = [f for f in run(["git", "ls-files"]).splitlines() if f]
+    sizes: dict[str, list[int]] = {}
+    for f in files:
+        ext = os.path.splitext(f)[1].lower()
+        if ext not in MEDIA_SUFFIXES:
+            continue
+        try:
+            size = (ROOT / f).stat().st_size
+        except OSError:
+            continue
+        sizes.setdefault(os.path.dirname(f), []).append(size)
+    cibles = {d: v for d, v in sizes.items() if sum(v) >= MEDIA_DIR_MO * 1048576}
+    stale = []
+    for d, v in cibles.items():
+        inv = ROOT / d / "MEDIA.md"
+        if not inv.exists():
+            stale.append(f"{d or '.'}/ (aucun MEDIA.md)")
+            continue
+        m = re.search(r"\*\*(\d+) fichier", inv.read_text(encoding="utf-8", errors="ignore"))
+        if not m or int(m.group(1)) != len(v):
+            stale.append(f"{d or '.'}/ ({'?' if not m else m.group(1)} listé(s) pour {len(v)} présent(s))")
+    return dict(dirs=len(cibles), stale=stale)
+
+
 def rules() -> list[dict]:
     """Les règles debout, chacune avec sa porte. Aucune n'est inventée ici : toutes renvoient à un §."""
     g = git_state()
@@ -535,6 +581,7 @@ def rules() -> list[dict]:
     _, audit_age = dated_file("ops/FILE-AUDIT-*.md")
     _, handoff_age = dated_file("ops/HANDOFF-*.md")
     mir = mirror_state()
+    med = media_state()
     out: list[dict] = []
 
     def add(rid, rule, doc, when, sev, ok, detail):
@@ -569,8 +616,8 @@ def rules() -> list[dict]:
         "PRE-FLIGHT §0g", "commit qui touche un fait debout", "dure",
         mir["ok"], (f"miroir daté {mir['date']} · à jour sur {mir['sha']}" if mir["ok"] and mir.get("sha") else
                     (f"{len(mir['behind'])} fichier(s) de fait debout changé(s) depuis MIRROR {mir['sha']} "
-                    f"({', '.join(mir['behind'][:3])}{'…' if len(mir['behind']) > 3 else ''}) → mettre Notion à jour, puis re-dater MIRROR")
-                     if mir.get("sha") else mir["why"]))
+                     f"({', '.join(mir['behind'][:3])}{'…' if len(mir['behind']) > 3 else ''}) → mettre Notion à jour, puis re-dater MIRROR")
+                     if mir.get("behind") else mir["why"]))
     secret_hits = run(["git", "grep", "-nIiE", SECRET_SCAN, "--", ".",
                        ":!tools/superpowers/", ":!tools/graphify/"], timeout=60)
     add("aucun-secret", "Ni mot de passe, ni clé, ni jeton dans un dépôt public.",
@@ -604,6 +651,12 @@ def rules() -> list[dict]:
         f"{w['mb']:.0f} Mo suivis · plus gros fichier {w['big']} ({w['big_mb']:.1f} Mo)"
         + ("" if w["mb"] <= MAX_TRACKED_MB and w["big_mb"] <= MAX_FILE_MB
            else f" → au-delà du seuil ({MAX_TRACKED_MB} Mo / {MAX_FILE_MB} Mo) : sortir, compresser, ou le dire"))
+    add("medias-avec-empreinte", "Un dossier qui porte des médias a un inventaire par empreinte, à jour.",
+        "MACHINE §11 ③ · tools/ops/media_inventory.py", "chaque commit", "souple",
+        not med["stale"],
+        f"{med['dirs']} dossier(s) de médias, tous inventoriés" if not med["stale"]
+        else f"{len(med['stale'])} inventaire(s) périmé(s) : {', '.join(med['stale'][:3])} "
+             "→ python3 tools/ops/media_inventory.py --write")
     add("fichier-neuf-avec-king", "Un fichier debout nouveau n'existe qu'avec le oui de King.",
         "PRE-FLIGHT §4b", "création d'un document souverain", "trou", True,
         "sans porte machine : la porte est la proposition d'emplacement dans la réponse, puis le ruling")
@@ -611,13 +664,17 @@ def rules() -> list[dict]:
     # porte de conseil : ce qui a été ajouté et qui ressemble à une loi
     base = mg.get("base")
     new_docs = []
+    confirmes = []
     if base:
         for n in run(["git", "diff", "--diff-filter=A", "--name-only", f"{base}..HEAD"], timeout=60).splitlines():
             if n.endswith(".md") and (n.count("/") == 0 or n.startswith("ops/")) and not n.startswith("ops/templates/"):
-                new_docs.append(n)
+                (confirmes if n in CONFIRMES else new_docs).append(n)
     add("document-neuf", "Tout .md neuf à la racine ou dans ops/ se déclare (ruling §4b) avant de devenir loi.",
         "PRE-FLIGHT §4b", "apparition d'un .md souverain", "souple",
-        not new_docs, f"à faire confirmer : {', '.join(new_docs[:3])}" if new_docs else "aucun document souverain ajouté")
+        not new_docs, f"à faire confirmer : {', '.join(new_docs[:3])}" if new_docs else
+        (f"aucun en attente · {len(confirmes)} confirmé(s) par King : "
+         + ", ".join(f"{n} ({CONFIRMES[n]})" for n in confirmes) if confirmes
+         else "aucun document souverain ajouté"))
     # la porte du registre : le tableau de §9 et cette fonction ne peuvent pas diverger en silence
     sec = register_section()
     known = [r["id"] for r in out] + ["registre-complet"]

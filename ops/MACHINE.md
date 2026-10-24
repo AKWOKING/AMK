@@ -12,7 +12,7 @@ bash tools/ops/machine.sh              # le cockpit : l'étape, ce qui est frais
 bash tools/ops/machine.sh 2            # la fiche de l'étape 2 (lecture) : quoi lire, quoi lancer, quand c'est fini
 bash tools/ops/machine.sh --who prix   # qui tranche le sujet « prix », et ce qui le vérifie
 bash tools/ops/machine.sh --merge      # la jauge de fusion : combien de fichiers/lignes depuis main
-bash tools/ops/machine.sh --rules      # les 15 règles debout, chacune avec sa porte (§9)
+bash tools/ops/machine.sh --rules      # les 16 règles debout, chacune avec sa porte (§9)
 bash tools/ops/provision.sh            # le noyau de travail : 4 outils (les 24 : --all)
 bash tools/ops/provision.sh --list     # les 24 outils : installés cette session, ou pas
 bash tools/ops/install-hooks.sh        # pose le crochet pre-push : un push rouge ne part plus
@@ -23,7 +23,7 @@ bash tools/ops/machine.sh --turns      # le rendement du jour : commits, fichier
 Le miroir Notion (PRE-FLIGHT §0g) est **daté ici**, dans une ligne que la machine lit :
 
 ```text
-MIRROR 2026-10-24 · 6c26883
+MIRROR 2026-10-24 · 11291ab
 ```
 
 Tant qu'un fichier de **fait debout** (pré-vol, machine, prix, dossiers clients, journal des ventes)
@@ -267,6 +267,7 @@ même porte finissent toujours par diverger, et c'est la plus vieille qui gagne.
 | 13 | `registre-complet` | Aucune règle du code ne peut disparaître de ce tableau sans faire échouer la porte | ce § | chaque `--check` | chaque id connu de `machine.py` présent ci-dessus |
 | 14 | `poids-raisonnable` | Le poids suivi reste sous 160 Mo et aucun fichier ne dépasse 15 Mo sans décision | règle du 23/09 « le dépôt n'est pas un disque dur » | chaque commit | `git ls-files` pesé — ⚠ souple |
 | 15 | `fichier-neuf-avec-king` | Un fichier debout nouveau n'existe qu'avec le oui de King | PRE-FLIGHT §4b | création d'un document souverain | ○ **sans porte machine** |
+| 16 | `medias-avec-empreinte` | Un dossier qui porte des médias a un inventaire par empreinte, à jour | MACHINE §11 ③ · `tools/ops/media_inventory.py` | chaque commit | nombre de fichiers vs l'inventaire du dossier — ⚠ souple |
 
 **Pourquoi la 13 existe.** Le 24/10 au soir, ce tableau listait douze règles quand le code en appliquait
 treize : `docs-existants` avait été ajoutée dans `machine.py` et **pas ici**. Une règle écrite à un seul
@@ -374,9 +375,28 @@ sans ambiguïté ; le clone reste petit.
 
 **Le coût.** 10 minutes par livraison, une fois, avec `gh release create`.
 
-**Le premier pas.** Fait à moitié ce soir : l'archive existante est renommée `dmopticsarl-2026-10-21.zip`
-pour porter sa date, et `/dmopticsarl*.zip` est ignoré pour que le zip du jour n'entre plus. La prochaine
-livraison part en release.
+**Le premier pas — fait le 24/10 au soir, en deux temps, et le second vaut mieux que le premier.**
+
+1. **`tools/ops/release.sh`** publie un livrable et ne le déclare publié qu'après un **aller-retour réel** :
+   `gh release create`, puis retéléchargement de l'asset et comparaison du sha256 et de la taille. Une
+   publication non vérifiée n'est pas une publication. Il refuse aussi de commencer si
+   `uploads.github.com` (l'hôte qui reçoit le fichier, distinct d'`api.github.com` qui crée la release)
+   n'est pas joignable — le `EOF` de `gh`, sans cette garde, ne dit rien.
+2. **`tools/ops/pack_factures.sh`** : le livrable de l'outil de factures (88 Ko) **se refait à
+   l'identique** depuis `ops/amk-factures-pwa/`, qui reste versionné. Il est donc sorti de l'arbre — non
+   pas publié puis supprimé, mais jamais eu besoin d'être là. L'empreinte de contenu le prouve :
+   `5902f1f5…ecf6` avant et après, et le script **échoue** si la source bouge d'un octet (testé).
+
+**Mesuré, sans se raconter d'histoire** : le livrable retiré pèse **88 Ko**, soit 0,06 % d'un arbre de
+144 Mo. Ce n'est pas une optimisation de poids — le gros du poids est dans la vidéo et les photos du
+catalogue, et ① le plafonne déjà. Le gain de ② est **structurel** : un livrable n'entre plus dans
+l'arbre, et chaque livraison devient datée, empreintée et retrouvable sans ambiguïté. L'archive du
+site (4,6 Mo) attend sa Release : elle n'est pas reproductible (182 entrées contre 251 aujourd'hui), donc
+elle reste dans l'arbre tant qu'elle n'est pas publiée — on ne remplace pas un fichier par une promesse.
+
+**Ce qui bloque, nommé** : depuis l'environnement de session du 24/10, `uploads.github.com` est
+injoignable alors qu'`api.github.com` répond. La commande est prête, le commentaire de version est écrit,
+le registre `ops/LIVRAISONS.md` dit quoi lancer. Sur une machine ordinaire, une ligne et c'est fait.
 
 ### ③ Les médias par empreinte, pas par octets
 
@@ -394,8 +414,26 @@ fichiers que personne n'utilise ; les 395 Mo restent dehors **sans être perdus*
 **Le coût.** 30 minutes par dossier client, une fois. Un script de 40 lignes pour générer les sha256 et
 les vignettes.
 
-**Le premier pas.** Le refaire pour `clients/dm-optic/photoshoot` (23 Mo ici, 395 Mo chez King) : c'est le
-seul dossier où l'écart entre ce qu'on a et ce qu'on croit avoir est déjà prouvé.
+**Le premier pas — fait le 24/10 au soir.** `tools/ops/media_inventory.py` (0 dépendance) lit
+l'empreinte et les dimensions de chaque média suivi, puis écrit un `MEDIA.md` par dossier de plus de
+2 Mo. Mesuré : **460 médias suivis, 104 Mo** (72 % de l'arbre), **12 dossiers** inventoriés,
+**85 médias que rien ne nomme** (contre 66 estimés — l'estimation était basse), et surtout
+**25 empreintes partagées = 27 copies inutiles, 2,6 Mo** que l'œil ne voyait pas :
+
+| Empreinte | Poids | Copies |
+|---|---|---|
+| `48d3d3160a35` | 232 Ko | `hosting/samples/img/nova.png` **=** `site/img/nova.png` |
+| `aaf29f9471cd` | 193 Ko | `hosting/samples/img/mmc-consult.jpg` **=** `site/assets/mockup-clinique.jpg` **=** `site/img/mmc-consult.jpg` |
+| `942ff33b65ee` | 212 Ko | `clients/_mockups/labs/labiomed.jpg` **=** `hosting/previews/labiomed/og.jpg` |
+
+Ce que l'outil ne fait pas, et c'est volontaire : il ne supprime ni ne remplace aucune référence. Une
+copie qui « ne sert à rien » peut être l'image qu'un HTML déployé appelle par son nom — le dédoublonnage
+est une décision, pas une déduction. Ce tour apporte la **preuve** ; la suppression viendra fichier par
+fichier, en regardant qui l'appelle.
+
+Deux modes de plus : `--thumbs DIR` écrit les vignettes 800 px **hors du dépôt** (jamais dans git : une
+vignette est un cache, pas un livrable), et `--check` compare les empreintes — c'est la version stricte,
+la porte 16 se contentant du nombre de fichiers (un sha256 de 104 Mo coûterait 8 s à chaque tour).
 
 ### ④ Décroissance documentaire : 765 documents, 412 orphelins
 
@@ -425,9 +463,19 @@ date**, ni dans leur chemin ni dans leur en-tête. Un document sans date ne peut
 `archive/2026-09/`. Campagnes terminées, zéro citation entrante, rien qui en dépende. `archive/` sort du
 corpus (ni carte, ni portes, ni audit) mais reste dans git : on archive, on ne supprime pas.
 
-**Reste à décider** : les 29 `research/youtube-lessons` (récolte du 11–12/10, à synthétiser avant
-d'archiver), les 11 orphelins de `clients/dm-optic` (à citer depuis le dossier, pas à archiver), les 6
-`STATUS.md` de vidéos (partent avec le lot du mois), et les 29 documents sans date (à dater).
+**Deuxième lot, le même soir — les 29 récoltes YouTube.** Synthétisées avant d'être archivées, comme la
+règle le demande : `research/YOUTUBE-SYNTHESE-2026-10-24.md` tient en une page les 33 rapports de vidéo
+(11–12/10) — 14 leçons adoptées avec leur destination, 7 refus nommés, 5 questions ouvertes, 2 trous
+(v20 sans source vérifiable, v18 doublon de v11). Les 27 fichiers bruts partent dans
+`archive/2026-10/youtube-lessons/`, et les cinq pointeurs de `research/YouTube-Lessons.md` suivent —
+sinon la synthèse serait exacte et les liens morts.
+
+**Effet mesuré** : 412 → **393 orphelins**, 82 → **63 à traiter**. La plus grosse famille disparaît de
+la liste sans qu'un seul fichier soit perdu.
+
+**Reste à décider** : les 15 orphelins de `clients/dm-optic` (à citer depuis le dossier, pas à archiver),
+les 7 `STATUS.md` de vidéos (partent avec le lot du mois), les 7 de `ops/` et les **41 documents sans
+date** — ceux-là sont le vrai chantier : un document sans date ne peut pas expirer.
 
 ### ⑤ Les contrôles en amont, et une session qui démarre en une minute
 

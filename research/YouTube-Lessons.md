@@ -2009,7 +2009,9 @@ sa raison d'être est la méthode rejetée). Les quatre plateformes de la vidéo
 
 ## Lot [40] · RECHERCHE VIDÉO — BATCH 5 of 7 (4 vidéos) · 2026-10-11 · GTM ENGINEERING
 
-Dossiers : `research/youtube-lessons/2026-10-11-batch-5/` (video-12 → video-15 + INDEX).
+> **24/10/2026 — les rapports bruts des lots [40] à [44] sont archivés** dans `archive/2026-10/youtube-lessons/` (27 fichiers, intacts). Leur synthèse tient en une page : `research/YOUTUBE-SYNTHESE-2026-10-24.md`. Les lots [36] à [39] restent en place : leurs rapports sont encore cités par des documents vivants.
+
+Dossiers : `archive/2026-10/youtube-lessons/2026-10-11-batch-5/` (archivé le 24/10) (video-12 → video-15 + INDEX).
 Transcripts voie §0, complets (vidéo 12 en hindi/devanagari). Vidéos 13 et 14 = **Salesforge, vendor
 sponsorisé** ; vidéo 15 = consultant (biais conseil) ; vidéo 12 = créatrice carrière (Inde).
 
@@ -2072,7 +2074,7 @@ WhatsApp-first, Cameroun. Donc : adopter le protocole §8d, rejeter les achats.
 
 ## Lot [41] · RECHERCHE VIDÉO — BATCH 6 of 7 (6 vidéos) · 2026-10-12 · OUTILS DE CONTENU IA
 
-Dossiers : `research/youtube-lessons/2026-10-12-batch-6/` (video-16 → video-21 + INDEX).
+Dossiers : `archive/2026-10/youtube-lessons/2026-10-12-batch-6/` (archivé le 24/10) (video-16 → video-21 + INDEX).
 Traitement avancé de mercredi à lundi (ruling King 12/10). Transcripts voie §0, complets : 16, 17
 (Jad M.H, EN), 19 (Ai Dadaji, hindi), 21 (Create a Pro Website, EN). **Vidéo 18 = doublon du lot
 [39]** (même URL `1vSIb047QKE`, cross-ref, pas de re-transcription). **Vidéo 20 = URL non trouvée**
@@ -2139,7 +2141,7 @@ pièces solides sont méthodologiques (rythme, boucles, critique itérative, ban
 idée de section client. L'orchestrateur + HyperFrames déjà évalué couvrent tout le besoin réel.
 ## Lot [42] · RECHERCHE VIDÉO — BATCH HOOKS/RÉTENTION/STORYTELLING (4 vidéos) · 2026-10-12
 
-Dossiers : `research/youtube-lessons/2026-10-12-batch-hooks/` (video-22 → video-25 + INDEX).
+Dossiers : `archive/2026-10/youtube-lessons/2026-10-12-batch-hooks/` (archivé le 24/10) (video-22 → video-25 + INDEX).
 Batch demandé par King après visionnage du POST-01 v4 (3 défauts : pas de hook 0–3 s, pas de cadre
 narratif, ouverture « tuto design »). Transcripts voie §0 : 23 complet ; 22, 24, 25 par chapitres
 porteurs (détail par rapport). Métadonnées watch pages tirées le 12/10 pour les 4. Batches 2 et 3
@@ -2239,7 +2241,7 @@ tuto-read = coût du problème avant la solution + transformation). Aucun outil,
 pipeline ; la réécriture POST-01 est le seul chantier immédiat.
 ## Lot [43] · RECHERCHE VIDÉO — BATCH 2 of 3 ANIMATION/FORMATS (4 vidéos) · 2026-10-12
 
-Dossiers : `research/youtube-lessons/2026-10-12-batch-animation/` (video-26 → video-29 + INDEX).
+Dossiers : `archive/2026-10/youtube-lessons/2026-10-12-batch-animation/` (archivé le 24/10) (video-26 → video-29 + INDEX).
 ⚠️ La liste d'URLs de King était **décalée d'un cran** : chaque URL fournie a été vérifiée sur sa
 watch page et ré-associée au bon titre (tableau dans l'INDEX) ; l'URL `M9Bj4uBMP3A` (community
 management FR, Chedjou Kamdem) appartient au **batch 3** et n'a pas été traitée ; `dgCSN-rnN0E` =
@@ -2349,7 +2351,7 @@ contraste (génération probabiliste = crédits, artéfacts, incohérence) et le
 comme anti-positionnement. Prochain chantier inchangé : réécriture POST-01 (Lot [42]).
 ## Lot [44] · RECHERCHE VIDÉO — BATCH 3 of 3 FINAL : vente, CM, vibe coding, stickman (4 vidéos) · 2026-10-12
 
-Dossiers : `research/youtube-lessons/2026-10-12-batch-final/` (video-30 → video-33 + INDEX).
+Dossiers : `archive/2026-10/youtube-lessons/2026-10-12-batch-final/` (archivé le 24/10) (video-30 → video-33 + INDEX).
 ⚠️ Liste d'URLs de King **encore décalée d'un cran** (comme batch 2) : chaque URL vérifiée sur sa
 watch page avant traitement (tableau dans l'INDEX). Doublons batch 2 non re-transcrits
 (`XZjag0_TiWc` = vidéo 28 ; `9yvQTR2siPM` = vidéo 29). URLs retenues : 30 = `Fo3lreTdy0g` (Mark

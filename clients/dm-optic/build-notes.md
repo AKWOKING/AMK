@@ -2207,3 +2207,16 @@ Un nom qui ne dit pas sa date finit toujours par mentir sur son contenu.
 Ce qui ne change pas : le zip du jour ne s'ajoute plus au dépôt (`/dmopticsarl*.zip` est ignoré) ; il
 se reconstruit à la demande, en une commande, et c'est lui qu'on téléverse sur Cloudflare. L'archive
 datée, elle, reste comme trace de ce qui a existé.
+
+## 24/10/2026 (soir) — l'archive attend sa Release, et ce n'est pas un oubli
+
+`dmopticsarl-2026-10-21.zip` doit sortir de l'arbre vers une Release GitHub (`ops/LIVRAISONS.md`,
+tag prévu `livraison-dmoptic-2026-10-21`). Le fichier n'est **pas** reproductible : il contient l'état du
+site au 21/10 (182 entrées), là où `pack_dmoptic.py` en produit 251 aujourd'hui. On ne peut donc pas le
+supprimer « puisqu'on peut le refaire » — ce serait faux.
+
+Il reste dans l'arbre tant que la publication n'a pas réussi, et c'est volontaire : la commande
+`bash tools/ops/release.sh --tag livraison-dmoptic-2026-10-21 --file dmopticsarl-2026-10-21.zip`
+n'a pas pu aboutir le 24/10 au soir (hôte d'upload de GitHub injoignable depuis la session). Elle
+vérifie son propre résultat par un aller-retour avant de dire « publié » ; ensuite seulement,
+`git rm --cached` retire le fichier du suivi et la ligne `.gitignore` qui l'exemptait disparaît.
