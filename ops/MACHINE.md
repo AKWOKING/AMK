@@ -246,7 +246,7 @@ même porte finissent toujours par diverger, et c'est la plus vieille qui gagne.
 | Session neuve sans skills | l'agent « ne trouve pas » un skill installé la veille | `provision.sh`, au début de chaque session |
 | Handoff qui vieillit | un état de travail de trois jours présenté comme actuel | le cockpit affiche son âge ; au-delà de 3 jours, il est réécrit |
 | Branche qui ne fusionne jamais | 22 commits et 59 722 lignes sur la même branche, `main` figé depuis trois jours | la jauge de fusion du cockpit, et `machine.sh --merge` pour la séquence `fetch` → diff → PR |
-| Carte rouge alors que rien n'a bougé | la CI échoue sur « la carte se rejoue à l'identique », le même commit est vert sur le poste | un artefact versionné ne contient **aucune valeur de la machine** : la date de la carte vient du commit (invariant 9) |
+| Carte rouge alors que rien n'a bougé | la CI échoue sur « la carte se rejoue à l'identique » (exit 1 dans la branche `git diff --quiet`), le même commit est vert sur le poste | première cause trouvée le 24/10 : la **date** venait de l'horloge (corrigée, invariant 9). **Seconde cause, ouverte au 24/10 au soir** : la carte est produite par l'extracteur graphify, exécuté ici dans un venv Python 3.11 et là par un `pip install` dans le Python 3.12 du runner ; deux interpréteurs peuvent ne pas produire le même graphe. Tant que ce n'est pas mesuré sur un 3.12, la porte reste rouge et **personne ne doit la contourner** — le remède est de faire tourner la carte dans l'interpréteur du runner, pas de retirer l'étape |
 
 ---
 

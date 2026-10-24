@@ -138,6 +138,7 @@ def walk() -> list[Path]:
         if relpath == MAP.relative_to(ROOT) or relpath.name.startswith(("FILE-AUDIT-", "REPO-MAP")):
             continue  # les rapports générés se citent eux-mêmes : les indexer fait boucler le graphe
         out.append(relpath)
+    out.sort()   # l'ordre ne doit venir que du chemin, jamais de l'index ni du disque
     return sorted(set(out))
 
 
