@@ -1,28 +1,41 @@
-# demos/shots/ + demos/shot-*.png — Concept Production Standard screenshots
+# demos/shots/ — captures et maquettes d'envoi
 
-Standard (per `AMK-DESIGN-SKILLS.md` §13 and the Concept Production Standard):
-every sent concept gets a 1280×800 hero shot (after reveal), a 390-wide mobile shot, and a laptop+phone mockup when sending. Public use of named shots only after client permission; until then public content is nameless (Nova / Little Oaks / Crestwood).
+**Règle** (`AMK-DESIGN-SKILLS.md` §13 et le Concept Production Standard) : chaque page envoyée à un
+prospect reçoit une capture hero 1280×800 (après le reveal), une capture mobile 390 px, et une
+maquette ordinateur + téléphone quand on envoie. Usage public de captures nommées seulement après
+accord du client ; tant qu'il n'y a pas d'accord, le contenu public reste **nameless** (Nova /
+Little Oaks / Crestwood).
 
-## Captured 15 Sep — pipeline-built (see `tools/shots/`)
-- `mockup-secondary.png` (1920×1080 master) + `mockup-secondary-wa.jpg` (1600×900, ~177 KB, **WhatsApp-send copy**) — nameless bilingual-secondary concept (`site/sample-secondary.html`, Crestwood); accompanies school first messages.
-- `mockup-clinic.png` + `mockup-clinic-wa.jpg` — nameless clinic/lab concept (`site/clinic-bonaberi.html`, Bonabéri Medical Centre, Douala); accompanies clinic first messages.
-- `mockup-mitoc.png` + `mockup-mitoc-wa.jpg` — **named MITOC** mockup (`site/mitoc.html`); private to MITOC only, never public/nameless use.
+**État au 24/10/2026 — le dossier est vide de captures, volontairement.** Les maquettes et captures
+des prospects retirés (`mockup-secondary`, `mockup-clinic`, `mockup-mitoc`, `mockup-skye`,
+`mockup-yaks`, `mockup-opticien`, `mockup-afriquelabo`, `mockup-jempo`, `mockup-labethanie`,
+`oracare-*`) ont été retirées avec leurs dossiers clients. Ce qui reste ici : cette règle, et les
+prochaines captures.
 
-Send rule: attach the `-wa.jpg` (bypasses WA's heavy recompression at the long-edge limit), masters stay for print/portfolio. Regenerate WA copies from masters with a Lanczos 1600×900 / q88 JPEG.
+**Ramener une capture :** `git log --oneline -- demos/shots/` puis
+`git checkout <commit>^ -- demos/shots/<fichier>`.
 
-## Captured 14 Sep (King)
-- `oracare-concept.png` — 1280-wide hero of OraCare **v2** (prices build, no assistant FAB)
-- `oracare-mockup.png` — laptop/phone mockup for the send
-- `demos/shot-orac-desktop.png` · `shot-orac-fr.png` (FR state) · `shot-orac-mobile.png` · `shot-orac-bot.png` · `shot-orac-bot-mobile.png` — v1/v2 era
-- `demos/shot-sah-hero.png` · `shot-sah-full.png` · `shot-sah-mobile.png` — SAHISCOL concept
-- `demos/shot-ret-hero.png` · `shot-ret-full.png` · `shot-ret-mobile.png` — La Retraite (parked; hold from public use)
+## Format et nommage
 
-## Owed
-| File | Concept | Why / when |
-|---|---|---|
-| `oracare-v3-concept.png` (+ mobile, + bot panel) | `demos/concept-oracare-v3.html` | Re-shoot once hosted: v3 is the send file and adds the 24/7 assistant FAB; the v2 shot above must not be reused as if it showed v3. |
-| `sasse-v2-concept.png` (+ mobile) | `demos/sjc-sasse-v2.html` | Capture before/at TikTok DM send (King's file; chapel photo in hero). |
-| `comobil-v1-concept.png` (+ mobile) | `demos/concept-comobil-v1.html` | On COMOBIL "yes", same day. |
+| Fichier | Usage |
+|---|---|
+| `<slug>-concept.png` | master 1280×800, après reveal |
+| `<slug>-mobile.png` | 390 px de large |
+| `<slug>-wa.jpg` | copie d'envoi WhatsApp, 1600×900, Lanczos, q88 — elle passe la recompression de WhatsApp, le master reste pour l'impression |
 
-## How
-Open the hosted link (or the file) in Chrome; device toolbar for 390px; wait ~1s for reveals; screenshot. Hosted links live after King deploys `hosting/previews/` (see its README).
+Regénérer une copie WA depuis le master :
+
+```bash
+convert <slug>-concept.png -resize 1600x900^ -gravity center -extent 1600x900 -quality 88 <slug>-wa.jpg
+```
+
+## Comment capturer
+
+`tools/shots/` porte la chaîne (Chromium embarqué via `@sparticuz/chromium`), `tools/video/capture.mjs`
+la commande. Envoi : **l'image d'abord**, le texte ensuite, jamais les deux dans le même message.
+
+## À faire
+
+Aucune capture n'est due pour un prospect. La prochaine est due pour **DM Optique** si King veut une
+maquette d'envoi de la page en production, et pour **Le Cristallin** quand le gel sera levé
+(`hosting/previews/README.md`).

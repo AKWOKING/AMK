@@ -5421,3 +5421,41 @@ Source : déclaration de l'utilisateur (ce qui se passe en pratique). Le dépôt
 - 22/10/2026 · **DM Optique — erreur de prix corrigée, portique d'affirmations créé, motifs de prospection consignés** : King relève que **les prix ne sont pas publics** chez le client — verrou écrit depuis le 10/10 (« Pour le prix des montures c'est interdit de le diffuser car nous sommes régit par le ministère de la Santé Publique ») que **trois livrables contredisaient** (`spot-02` « avec son prix », `spot-03` « le prix pour la caisse », `ugc-03` « le prix affiché » + « 40 montures », second verrou du 21/10). **Correction** : « avec sa référence » · « on ne vous laissera pas choisir sans essayer » · « sur vous » · « chaque monture / en photo, au cabinet » ; voix réenregistrées ; **trois fichiers remontés et revalidés** (`ugc-03` 22,30 s, `spot-02` 26,70 s, `spot-03` 28,40 s, portique mouvement **OK** ×3). **Correctif de fond** : `tools/qa/audit_claims.py` — **portique des affirmations** (4 règles : prix consultable, cardinal de stock, superlatif non prouvable, allégation médicale), citant le verrou d'origine et le correctif, **code 1** au premier manquement ; `clients/dm-optic/content` passe désormais **VERDICT : OK**. Bug de rendu corrigé au passage : dépassement de texte hors marge (`block()` ajuste la taille jusqu'à tenir dans 888 px). **Motifs de prospection** : les trois captures Instagram (agences vendant aux cliniques de la vue) sont décomposées dans `knowledge/OUTREACH-MESSAGING-2026-10-22.md` — le motif en 4 temps (geste du patient → question de classement → coût de l'inaction → micro-engagement), sa transposition en **DM froid vérifié** (on fait le test Google Maps avant d'écrire, on ne prétend jamais un classement), ses interdits, et la frontière avec le contenu patient. PRE-FLIGHT §1g et `CONTENT-CREATION` §6 bis mis à jour. **Instagram reel non consultable** : `instagram.com` renvoie 403 depuis le bac (reel `DTVWU8akR5Z`) — demandé à King.
 
 | 23/10/2026 | — (interne) | Site DM : badge « source préférée sur Google » sur 97 pages | Déployé sur le banc de test `dm-optique-sarl.vercel.app` (commit 3e32490, READY) | — |
+
+## 24/10/2026 — Graphify entre (décision du 13/10 inversée) · deux règles non lues · messages du lot réécrits
+
+**Le déclencheur écrit le 13/10 s'est produit deux fois dans la même journée.** La décision du 13/10
+(« Graphify : non retenu pour l'instant ») posait trois conditions de réévaluation : dépôt > 150 fichiers ·
+**2+ incidents « fichier introuvable » en une semaine** · une règle à propager dans 5+ fichiers oubliée.
+Deux sur trois sont tombées le 24/10.
+
+**Ce qui s'est passé, nommément.**
+1. Messages d'approche réécrits le matin **sans lire** `knowledge/OUTREACH-MESSAGING-2026-10-22.md` —
+   pourtant ligne 3 de la table §0c du PRE-FLIGHT (« tout message à un opticien, un gérant de clinique,
+   un prospect »). Ce document, écrit par King le 22/10, contient le **dédouanement** et la **sortie sans
+   friction** qui manquaient à mes textes.
+2. Un chiffre cité comme acquis (« cadrage de perte +19 % ») alors que `sales/RESEARCH-STANDARD.md` §10
+   l'avait **réfuté le 13/10** (O'Keefe & Jensen, 165 études, N = 50 780, r = .016).
+3. Une affirmation fausse sur Fashion Vision (« jamais contacté ») alors que
+   `sales/Send-BATCH-2026-09-24-Opticiens-2.md` dit « ✔ PARTI LE 24/09 ».
+
+**Correctif.** `tools/graphify/` installé, testé, branché (README + `install.sh` + `build_docs_graph.py` +
+`ask.sh`). PRE-FLIGHT **§0h** : avant d'écrire, `ask.sh`, et l'en-tête pré-vol cite les fichiers lus
+**et ceux listés mais non lus**. Mesure : 734 documents, 10 208 nœuds, 11 323 arêtes, ~10 s, 0 clé.
+
+**Ce que le graphe a trouvé en trois commandes** (ce que la mémoire avait raté) :
+`OUTREACH-MESSAGING-2026-10-22.md` (le dédouanement, la sortie sans friction) · `RESEARCH-STANDARD.md` §10
+(cadrage de perte déjà réfuté) · `MESSAGES-2026-09-23-PERSUASION.md` §4 — **la règle « on ne relance pas ce
+qui n'a jamais été ouvert »** (décision King 24/09), qui **annule** la relance J+30 que je proposais pour
+Fashion Vision. Fashion Vision passe `parked` : livré, jamais ouvert, aucune relance.
+
+**Livrables du jour :** `sales/OUTREACH-REECRITURE-2026-10-24.md` (v2, structure en 4 temps : fait daté →
+dédouanement/cause → patient → question fermée), 6 messages prêts (Bouda Seidou, Le Sourire, IVY, COMED,
+Jolinom, Optix), relance Original Optique calée au 26/10, `CLIENT-MESSAGING-RULES` §13 amendée,
+`ops/TOOL-SCAN` +1, `PRE-FLIGHT` §0h, `.gitignore` (graphify-out).
+
+**Troisième trouvaille, et la plus coûteuse si elle avait été envoyée.** `ask.sh "relance rupture J+7"` a
+remonté `sales/MESSAGES-2026-09-23-PERSUASION.md` §4 : **aucune relance sur un message jamais ouvert**
+(coches grises) — mot pour mot de King, 24/09. Trois fichiers corrigés : `OUTREACH-REECRITURE` §5.4 et §6,
+`LISTE-OPTICIENS` §3, `CLIENT-MESSAGING-RULES` §13. **La condition de lecture précède désormais toute
+relance, y compris la rupture.**

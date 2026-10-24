@@ -199,6 +199,48 @@ conversation, aucun patient.
 
 ---
 
+## 4 ter · Les six formats de la matrice, outillés pour le cabinet (23/10)
+
+Le §4 bis dit **quel type de contenu pour quel objectif**. Il ne dit pas **comment on le fabrique**
+quand on a un téléphone, un cabinet et aucun acteur. C'est ce trou que cette section ferme.
+Six formats, une seule règle de fond : **le format ne change jamais ce qu'on a le droit de dire**
+(verrous du §6 bis — aucun montant, aucune marque de monture, aucun visage, aucun délai promis).
+
+| Format | Objectif servi | La version DM — concrètement | La preuve qu'il faut avoir | Le piège |
+|---|---|---|---|---|
+| **La démonstration** | faire écrire (§4 bis, ligne 2) | on filme **le geste** : mesurer une monture, régler un tenon, souffler sur un verre — 8 s, mains seules | le geste a été fait au cabinet cette semaine | filmer un appareil qu'on ne sait pas nommer : ça se voit |
+| **La réponse à une objection** | faire écrire | on prend **la phrase exacte** d'un client (« c'est cher », « j'attends l'ordonnance ») et on y répond en 20 s, sans la déformer | la phrase a été **entendue**, pas imaginée | répondre à une objection que personne ne pose : c'est un argumentaire, pas une vidéo |
+| **Le jeu de rôle** | faire écrire | deux voix, un seul téléphone tenu à la main : « — Docteur, ma vue a baissé. — Depuis quand ? » — la question qu'on pose vraiment en consultation | le script suit **notre** protocole de questions (§contenu examen) | jouer un patient mécontent : ça invente un problème qui n'existe pas |
+| **L'erreur qui coûte** | l'urgence douce | « trois choses qui abîment vos verres sans que vous le sachiez » — on montre, on ne dramatise pas | chaque erreur est **constatée au comptoir** | glisser vers la peur (« vous allez perdre la vue ») : interdit, et faux |
+| **La transformation** | l'urgence douce | avant/après **d'un objet**, jamais d'un patient : une monture tordue puis redressée, un verre rayé puis changé | la monture existe, la photo est réelle | montrer un visage, même de dos, même flouté |
+| **La prise de position** | attirer les bons, écarter les autres | « on ne vend pas une monture sans l'essayer » · « on dit quand vous n'avez pas besoin de nous » — une phrase, tenue | c'est **notre** pratique, pas une posture | la fausse polarité gratuite (« les autres opticiens sont nuls ») : on parle de nous |
+
+**Ce qu'on garde de la source, mot pour mot :** *« copycats never stand out »*. Traduit en une règle de
+fabrication : **si la vidéo pourrait être postée par n'importe quel opticien de Douala, elle ne sort pas.**
+Le test tient en une question — *qu'est-ce qui, dans cette vidéo, ne pourrait exister qu'ici ?* Si la
+réponse est « rien », on jette le plan, pas la journée.
+
+**Ce qu'on écarte de la source, et pourquoi :** les **prédictions** (« voici ce qui va changer en 2026 »)
+supposent une autorité de marché qu'un cabinet de quartier n'a pas — et une prédiction sur la santé est
+une promesse déguisée. Les **réactions** (commenter l'actualité) demandent une actualité optique suivie ;
+on ne l'a pas. Restent **quatre** formats sur six : démonstration, objection, erreur qui coûte,
+prise de position — plus le jeu de rôle, réservé aux semaines où le protocole de questions change.
+
+**Le calendrier qui en découle** (2 posts/semaine, §4) :
+
+| Semaine | Mardi | Vendredi | Objectif travaillé |
+|---|---|---|---|
+| 1 | démonstration (mesurer une monture) | prise de position (« on ne vend pas sans essayer ») | crédibilité + tri |
+| 2 | erreur qui coûte (les verres) | réponse à une objection entendue | urgence douce + conversation |
+| 3 | transformation (monture redressée) | « vous demandez, on répond » (§5 sexies) | preuve + série |
+| 4 | jeu de rôle (les questions de l'examen) | démonstration (réglage) | conversation |
+
+**La mesure, une seule, à 30 jours :** nombre de conversations WhatsApp ouvertes **après** un post,
+comparé au mois précédent. Les vues ne disent rien (§5) ; une démonstration qui n'ouvre aucune
+conversation est un plan réussi et une vidéo ratée.
+
+---
+
 ## 5 · Ce qui produit un résultat (et ce qui ne le produit pas)
 
 | On mesure | On ne mesure pas |
@@ -611,6 +653,7 @@ mains, documents, lieux, texte animé. Ce n'est pas un refus — c'est l'attente
 | 23/10 | **100 Viral Hooks** — BrandIt, PDF 16 p., 99 hooks, reçu de King | la **structure** des 99 accroches → 15 hooks adaptés au cabinet | §3 ter | les hooks anglais tels quels (ils sonnent faux et ne parlent pas de Bonabéri) |
 | 23/10 | Capture **@kallawaymarketing** (schéma du format) | confirmation visuelle de l'ordre des blocs + le « lead magnet aligné » dans le CTA | §3 bis, §5 bis | — |
 | 23/10 | Capture **@ameliagonzamonte** (« posting for viral ») | le principe : type de contenu choisi **par objectif** ; l'urgence douce, jamais la peur | §4 bis | les catégories non transposables (thought leadership B2B US) |
+| 23/10 (2ᵉ lecture) | **Même capture @ameliagonzamonte**, relue à la demande de King (« read, research, adapt and learn ») | la matrice **format → objectif** descendue au niveau du geste : les 6 formats traduits en tournages possibles avec un téléphone, et le test « qu'est-ce qui ne pourrait exister qu'ici ? » | §4 ter | les **prédictions** (autorité de marché inventée + promesse de santé déguisée) et les **réactions** (pas d'actualité optique suivie) |
 | 23/10 | **Deya**, *how to send contracts & invoices* (2022) | les 7 lignes de contrat + l'échelle d'impayé | `sales/AMK-Sales-Playbook-v2.md` Addendum 5 · `sales/REVUE-CONTRATS-GRILLE-2026-09-23.md` | ses outils (Wise, HelloSign, Dubsado, Wave) : inutilisables ici |
 | 23/10 | **Adam Erhart**, *Marketing & Sales Strategy for Service Business* (2025) | langage de la ligne d'arrivée · caractéristique → bénéfice · tunnel CASE | `sales/AMK-Sales-Playbook-v2.md` Addendum 5 | son anecdote « agenda rempli en 2 semaines » : cas unique, pas une preuve (§1g) |
 

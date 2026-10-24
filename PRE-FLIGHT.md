@@ -170,6 +170,8 @@ Quand une règle change ou qu'un ruling est donné, cette table dit quels fichie
 | **Brag de livraison à chaque site prêt (ruling King 19/10, §1f②)** | `PRE-FLIGHT.md` §1f + §1b · `tools/brag/README.md` · `tools/qa/audit_video_motion.py` (portique) · `clients/<client>/build-notes.md` (chemin du brouillon) · `hosting/previews/README.md` (deploy gate) |
 | **Déploiement Vercel DM Optique après chaque changement du site (ruling King 20/10, §1f③)** | `PRE-FLIGHT.md` §1f · `clients/dm-optic/build-notes.md` (id + état du déploiement) · `hosting/previews/dmoptic/` (racine du projet Vercel) · `sales/Activity-Log.md` |
 | **Design/build/revue = pro-design en porte, taste-skill en direction (ruling King 20/10, complété 23/10 — §1f⑪)** : `tools/pro-design/README.md` + `bash tools/pro-design/install.sh` (la boucle 1440/390, deux tours max) ; taste-skill seulement quand la marque n'a pas encore de direction | `PRE-FLIGHT.md` §1f + §1b · `tools/taste-skill/README.md` · skill installé `~/.agents/skills/design-taste-frontend/SKILL.md` (hors dépôt) · `AMK-DESIGN-SKILLS.md` (lois maison, gagnent en cas de conflit) · `clients/<client>/build-notes.md` + `inspiration.md` (direction tirée, redraws, scores) |
+| **Système de design à codifier = design-md (ruling King 23/10, §1f⑬)** | `PRE-FLIGHT.md` §1f + §1g · `tools/design-md/README.md` + `bash tools/design-md/install.sh` · `python3 tools/design-md/extract.py <page> --name "…"` · `shot.py` (le jugement) · `ops/TOOL-SCAN.md` |
+| **Montage vidéo de rushes réels = MoneyPrinterTurbo en assemblage (ruling King 23/10, §1f⑫)** | `PRE-FLIGHT.md` §1f + §1g · `tools/moneyprinter/README.md` + `bash tools/moneyprinter/install.sh` (épinglé `f063a2b`) · `bash tools/moneyprinter/assemble.sh --clips … --audio … --script …` (9:16 puis 16:9) · `tools/qa/audit_video_motion.py` (portique) · `ops/TOOL-SCAN.md` |
 | **Mouvement d'interface = design-motion-principles appliqué (ruling King 20/10, §1f⑤)** | `PRE-FLIGHT.md` §1f + §1b · `tools/design-motion-principles/README.md` · skill installé `~/.agents/skills/design-motion-principles/SKILL.md` (hors dépôt) · `AMK-DESIGN-SKILLS.md` (lois maison, gagnent en cas de conflit) · `clients/<client>/build-notes.md` (pondération des lentilles, findings motion) |
 | **Audit/vérification = skills ECC sélectifs en appui (ruling King 20/10, §1f⑥)** | `PRE-FLIGHT.md` §1f + §1b · `tools/ecc/README.md` · skills installés `~/.agents/skills/{accessibility,production-audit,verification-loop,security-review,seo,click-path-audit}/SKILL.md` (hors dépôt) · `tools/qa/` (les portiques maison font foi) · `clients/<client>/build-notes.md` (score, preuves, blockers) |
 | **Recherche UX/UI consultable = UI/UX Pro Max en appui (ruling King 20/10, §1f⑦)** | `PRE-FLIGHT.md` §1f + §1b · `tools/ui-ux-pro-max/README.md` · skill installé `~/.agents/skills/ui-ux-pro-max/SKILL.md` (hors dépôt) · `AMK-DESIGN-SKILLS.md` (lois maison, gagnent en cas de conflit) · `clients/<client>/build-notes.md` (grilles consultées, avis écartés) |
@@ -177,7 +179,86 @@ Quand une règle change ou qu'un ruling est donné, cette table dit quels fichie
 | **Gabarit W43 = porte de tout contenu client (ruling King 21/10, « implement »)** | `sales/research/2026-W43-techniques.md` **§12 + §12b** (la règle et le gabarit : 5 beats · 7 interdits · 6 cases) · `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` (règle debout) · `clients/<client>/content-plan-*.md` et `posting-calendar*.md` (porte de chaque pièce) · `clients/<client>/content/**` (chaque script coche les 6 cases) · `content/scripts/README.md` + `CONTENT-LESSONS` §10/§12 (les portes maison restent supérieures) |
 | **Clôture debout : inventaire outils en ouverture + propositions/audit en fin de chaque réponse (ruling King 20/10, §1f⑨)** | `PRE-FLIGHT.md` §0 + §1f⑨ (la règle) · toute réponse de l'orchestrateur (en-tête enrichi + bloc final) · `ops/TOOL-SCAN.md` (l'inventaire consulté) · `clients/<client>/build-notes.md` (audits qui alimentent le bloc) |
 
-Si cette table ne suffit plus à suivre la propagation entre fichiers, c'est le déclencheur pour réévaluer un outil de graphe de connaissances (voir la décision Graphify dans `sales/Activity-Log.md`).
+Cette table ne suffit plus : **elle a été réévaluée le 24/10 et doublée par le graphe du dépôt** (§0h). Le déclencheur écrit le 13/10 s'est produit deux fois en une journée.
+
+---
+
+## 0h · Le graphe avant l'écriture — finding the rule stopped being a memory exercise (ruling King 24/10)
+
+> *King, 24/10 : « I've told you several times to always go through the repo before starting anything.
+> You see `DECLINAISON-9-DECLENCHEURS`, §1② — there are so many documents and lessons you could've
+> learned from and avoid mistakes. »*
+
+**Ce qui s'est passé le 24/10.** Une réécriture complète des messages d'approche a été livrée sans deux
+documents du dépôt : `knowledge/OUTREACH-MESSAGING-2026-10-22.md` (table §0c, **ligne 3** : « à lire
+avant tout message à un prospect ») et `sales/RESEARCH-STANDARD.md` §10 (qui avait **déjà réfuté** une
+statistique citée comme valide). La règle §0c existait. Le routage existait. **La recherche, elle, se
+faisait de mémoire.**
+
+**Le graphe remplace la mémoire.** `tools/graphify/`, local, 0 clé d'API, 0 €, ~10 s :
+**1 935 fichiers indexés** (documents, code, images, vidéos, audios, PDF, polices, archives, CSV),
+**≈12 100 nœuds, ≈14 400 arêtes, ≈2 900 citations, 13 communautés** sur les 515 documents reliés.
+
+**La carte est dans le dépôt : `ops/REPO-MAP.md`.** Elle est générée, jamais éditée à la main.
+
+**Obligatoire avant d'écrire** un message, un document de vente, un script, une règle ou une page :
+
+```bash
+bash tools/graphify/install.sh                      # une fois par session
+python3 tools/graphify/build_full_graph.py          # TOUT le dépôt + ops/REPO-MAP.md (~10 s)
+bash tools/graphify/ask.sh "message prospect clinique" --top 8
+```
+
+**Puis lire la carte, dans cet ordre — trois minutes, pas une de plus :**
+
+| # | Section de `ops/REPO-MAP.md` | La question à laquelle elle répond |
+|---|---|---|
+| 1 | §0 | Combien de fichiers, combien de documents, combien d'orphelins — et un chiffre qui a bougé depuis la dernière fois ? |
+| 2 | §6 | **Le sujet que je m'apprête à écrire est-il dans la table de routage ?** S'il n'y est pas, c'est le sujet qui est neuf, pas le dépôt qui est vide |
+| 3 | §2 puis §3 | Les documents qui font le squelette — et ceux qui sont **périmés mais encore cités**, donc les consignes mortes à ne pas réappliquer |
+| 4 | §1 | La couche `knowledge/` : ce qui fait loi, et le nombre de fois où c'est cité |
+| 5 | §3 bis | Ce que je vais créer existe-t-il déjà, sans être cité nulle part ? (un orphelin se cite, ne se duplique pas) |
+
+**Un tour n'est pas fini tant que la carte n'est pas à jour** si le tour a créé un document ou une règle :
+`python3 tools/graphify/build_full_graph.py` puis vérifier que le nouveau fichier apparaît au §2, §3 bis
+ou §4. Un document qui n'entre dans aucun des trois est un document que le prochain tour ne retrouvera pas.
+
+**Ce que la carte ne peut pas dire** : le §3 (« périmé ») est une détection **lexicale**, donc une piste ;
+le §4 nomme des sujets par leurs pivots, pas par une intention ; une image est **recensée**, pas lue.
+La lecture et le jugement restent entiers — c'est tout l'intérêt.
+
+**La règle de compte rendu, dans l'en-tête pré-vol :** citer les fichiers **lus** et ceux qui ont été
+**listés mais non lus**, par leur chemin. « Graphe interrogé » sans nom de fichier ne prouve rien.
+
+| Ce que le graphe a trouvé le 24/10 (en 2 commandes) | Ce que j'avais écrit sans lui |
+|---|---|
+| `knowledge/OUTREACH-MESSAGING-2026-10-22.md` §3 — le **dédouanement** (« ce n'est pas votre qualité, c'est votre fiche ») et la **sortie sans friction** | une structure en 3 temps qui reprochait au gérant ce qu'il n'avait pas fait |
+| `sales/RESEARCH-STANDARD.md` §10 — cadrage de perte **rejeté** (O'Keefe & Jensen, 165 études, N = 50 780, r = .016) | « +19 % de cadrage de perte », tiré d'un blog |
+| `sales/DECLINAISON-9-DECLENCHEURS` §1② — l'attaque déguisée et le cas INSES | trois messages qui commençaient par un constat-reproche |
+
+**Interaction avec `research/` et les sources externes :** le graphe dit **où** est la règle ; il ne dit
+pas si elle est juste. Le tier de la source (§1g) continue de s'appliquer — et un chiffre trouvé sur le
+web ne remplace jamais une réfutation déjà écrite dans `RESEARCH-STANDARD.md`.
+
+## 0i · La machine — l'ordre rendu exécutable (ruling King 24/10)
+
+> *King, 24/10 : « what everything done and installed … should work like a single machine ».*
+
+**`ops/MACHINE.md` est le câblage** : huit étapes (réveil → cadrage → lecture → plan → exécution →
+preuve → mémoire → sortie), trois boucles (le tour, l'engagement, l'actif), et **une table « qui tranche
+quoi »** — un sujet, un document souverain, une porte. Elle **n'énonce aucune règle métier** : quand elle
+contredit ce pré-vol ou `knowledge/`, c'est le document qui gagne.
+
+```bash
+bash tools/ops/machine.sh              # le cockpit : l'étape, la fraîcheur, les outils installés
+bash tools/ops/machine.sh 2            # la fiche de l'étape 2 (lecture) : quoi lire, quoi lancer
+bash tools/ops/machine.sh --who prix   # qui tranche ce sujet, et ce qui le vérifie
+bash tools/ops/provision.sh            # session neuve : rejoue les 24 installateurs épinglés
+```
+
+**Ce que la machine ajoute à ce pré-vol** : §0f et §0h donnaient les couches et le graphe ; la machine
+donne **le passage d'une étape à la suivante** et **la preuve de sortie** de chacune. Une étape sans
+sortie de commande n'a pas eu lieu (§7, invariant 3).
 
 ---
 
@@ -473,6 +554,44 @@ Skill  : [skill chargé, ou « aucun : la tâche n'en appelle pas »]
 **Phrase de sortie attendue, à la fin d'un build :** *direction en deux phrases + ce que la boucle a
 attrapé* — c'est le « hand-off » du skill, et ça va dans le bloc Audit de la réponse.
 
+### ⑫ Tournage tourné → **MoneyPrinterTurbo assemble, et ne génère rien** (ruling King 23/10)
+
+> *King 23/10 : « audit, analyze, install test MoneyPrinterTurbo then integrate into workflow ».*
+
+- **Déclencheur :** on a les rushes (4 plans, un téléphone) **et** la voix enregistrée. Avant, le
+  montage se faisait à la main ; maintenant il se commande.
+- **Procédure :** `bash tools/moneyprinter/install.sh` (une fois par session, ~50 s, hors dépôt) puis
+  `bash tools/moneyprinter/assemble.sh --clips <dossier> --audio <voix> --script "<texte dit>" --out <dossier> --aspect 9:16`,
+  et **la même commande en 16:9** : c'est la règle « un tournage, deux montages » rendue mécanique.
+- **Ce que l'enveloppe interdit, et pourquoi :** `--video-source local` est forcé (aucune banque
+  d'images : le décor doit exister), `--script` est **obligatoire** (sinon l'outil appelle un LLM
+  Moonshot/OpenAI — un outil qui peut appeler un modèle sans qu'on le sache doit être enveloppé),
+  le BGM automatique est coupé. La voix de synthèse n'est pas utilisée : on enregistre.
+- **Portique :** le `.mp4` sorti passe **`tools/qa/audit_video_motion.py`** comme avant ; un montage
+  n'est pas publié parce qu'il existe.
+- **Limite dite à voix haute :** les sous-titres demandent Whisper (modèle téléchargé au premier
+  usage). Dans la sandbox, le réseau est fermé : la chaîne sous-titres n'est **pas** testée, et ne se
+  présente jamais comme telle. Sur la machine de King, `--subtitles` fonctionne.
+
+### ⑬ Avant une refonte, ou après avoir tiré une direction → **design-md relève le système** (ruling King 23/10)
+
+> *King 23/10 : « audit, analyze, install test [ui-ux-pro-max, awesome-claude-design, design-md-chrome,
+> design-motion-principles] then integrate into workflow ».*
+
+- **Déclencheur :** on va refondre une page, ou on veut vérifier qu'une page respecte **un seul**
+  système. Aussi : quand une référence plaît (catalogue `awesome-claude-design`) et qu'on veut savoir
+  **ce qu'elle fait exactement** avant de s'en inspirer.
+- **Procédure :** `bash tools/design-md/install.sh` puis
+  `python3 tools/design-md/extract.py <dossier|fichier|URL> --name "<Marque>"` → `DESIGN.md` + `SKILL.md`
+  validés. Le dossier est servi en HTTP local si c'est un fichier du dépôt.
+- **Ce que le document vaut, et ce qu'il ne vaut pas :** les **jetons** (tailles, couleurs, rayons,
+  durées) sont lus dans le navigateur, donc justes ; la **prose** (audience, surface) est devinée par
+  le générateur amont et se réécrit. Il **relève**, il ne juge pas : le contraste reste l'affaire de
+  `tools/qa/shot.py`, la livraison celle d'`audit_delivery.py`.
+- **Hiérarchie :** `pro-design` construit (marque → motifs → mouvement → boucle 1440/390), `design-md`
+  relève après coup. Une référence extérieure ne remplace jamais la marque du client : on prend la
+  **direction**, jamais la palette.
+
 ## 1g · Marketing, marque et création de contenu (ruling King 22/10)
 
 > *King 22/10 : « make sure you have written everything you just learned in the repo, in preflight too under marketing, content creation and other relevant topics ». *
@@ -490,6 +609,8 @@ deux bases de connaissance, **avant** d'écrire une ligne de script ou de lancer
 | La tâche | D'abord | Ensuite |
 |---|---|---|
 | positionner une marque, écrire un statement | `knowledge/MARKETING-OPTICAL…` §6 | `clients/<client>/brand/BRAND-STRATEGY-*.md` |
+| **codifier un système de design (le nôtre ou une référence)** | **`tools/design-md/README.md`** (§1f⑬) — il relève, il ne juge pas | `python3 tools/design-md/extract.py <page>` puis relecture à la main de l'audience et de la surface · `tools/qa/shot.py` pour le contraste |
+| **monter une vidéo à partir de rushes réels** | **`tools/moneyprinter/README.md`** (§1f⑫ : assembler, jamais générer) | `bash tools/moneyprinter/assemble.sh` (9:16 puis 16:9) · `tools/qa/audit_video_motion.py` · les légendes écrites dans le script du tournage |
 | **construire ou redessiner une page** (site, landing, page de vente) | **`tools/pro-design/README.md`** + `bash tools/pro-design/install.sh` → skill **`pro-design`** (§1f⑪ : marque, motifs, mouvement, boucle 1440/390, deux tours max) | **`python3 tools/qa/shot.py <page>`** (le vrai navigateur, §1f⑪) · `AMK-DESIGN-SKILLS.md` (lois maison, elles gagnent) · les portiques `tools/qa/` avant publication |
 | **créer, réparer ou optimiser une page sociale** (Facebook, Instagram, TikTok) | `brand/AMK-PRESENCE-2026-10-22.md` **§14** (l'audit des trois profils réels : les sept défauts, la copie exacte Instagram/TikTok, la règle des identifiants) + **§13** (identité des trois comptes, fusion de pages, lien page ↔ Instagram) + §12 (les onze champs Facebook) + §10 (protocole captures) · `sales/research/2026-W43-techniques.md` §15 (audience vs communauté, cadence, mesure) | le §3 de PRESENCE uniquement pour les visuels déjà validés — l'arbitrage du nom est au §12.0 ; **une promesse de délai ne va jamais dans une bio sans sa condition** (§14.5) |
 | écrire un script court | `knowledge/CONTENT-CREATION…` §3 **puis §3 bis** (gabarit 9 blocs, rehook) et **§3 ter** (4 S + banque de hooks) | le gabarit du mois (`content/month1/…`) |

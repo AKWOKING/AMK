@@ -2,6 +2,12 @@
 
 > À coller tel quel dans le premier message d'une nouvelle session. Le dépôt porte tout le reste.
 
+> **Mise à jour du 24/10/2026 — l'ordre de démarrage n'est plus un texte, c'est une commande :**
+> `bash tools/ops/machine.sh` (carte : `ops/MACHINE.md`), puis `bash tools/ops/provision.sh` sur une
+> session neuve. Le message ci-dessous reste utile pour **le contexte métier daté du 22/10** — les
+> trois chantiers qu'il liste ont été traités ou requalifiés depuis ; l'état vrai est au handoff le
+> plus récent, pas ici.
+
 ---
 
 ## Le message à copier

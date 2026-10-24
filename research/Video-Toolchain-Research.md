@@ -49,7 +49,7 @@ La recherche ci-dessous cible donc quatre besoins : **capture**, **montage**, **
 | `tools/video/install.sh` | installe la chaîne (~70 Mo dans `/tmp/amk-video`), extrait les couches `al2023`/`fonts`/`swiftshader` (brotli+tar) et **vérifie en capturant une vraie page** |
 | `tools/video/capture.mjs` | capture le **défilement réel** d'une page en images JPEG (1080×1920 par défaut, cadence fixe, vitesse lisible, `manifest.json`) |
 | `tools/video/compose.py` | hook animé → capture → payoff → carte CTA ; **toutes les cartes ont un mouvement continu** (apparitions, reflets, barres de progression, pastilles qui respirent) |
-| `tools/video/anonymise.py` | transforme un concept client en **page de démonstration publiable** (fiction MboaCare) + **contrôle de fuite fort** (numéros, marques, noms de praticiens, adresses) + portique HTML |
+| ~~`tools/video/anonymise.py`~~ | **Retiré du dépôt le 24/10/2026** (ruling King : « it goes, no retargeting ») — transformait un concept client en **page de démonstration publiable** (fiction MboaCare) + **contrôle de fuite fort** (numéros, marques, noms de praticiens, adresses) + portique HTML. Ses cinq concepts sources ont été retirés le même jour avec les prospects non clients. |
 | `tools/qa/audit_video_motion.py` | **portique bloquant** : mesure l'écart d'image par fenêtre de 2 s, refuse tout diaporama |
 
 **Problèmes résolus en route (traces utiles) :**

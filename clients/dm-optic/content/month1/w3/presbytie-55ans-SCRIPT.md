@@ -165,3 +165,182 @@ Relevés à 24 h puis 72 h, **aux mêmes heures que les précédents** :
 | Conversations WhatsApp pré-remplies | non mesuré | **≥ 1** |
 
 **Et le seul chiffre qui parle au client : les avis Google continuent-ils de monter ?** 4 le 23/10.
+
+---
+
+## 6 · Version IA — ce qu'on génère, ce qu'on ne génère jamais (ruling King 23/10)
+
+> *King 23/10 : « we will try to generate it with an AI tool, post and then see how the algorithm and
+> our audience react to it… you can do it or you recommend another tool (free) ».*
+
+**La réponse courte : je ne peux pas générer de vidéo ici** — il n'y a pas de générateur vidéo dans mon
+environnement, et les URL des fournisseurs sont fermées depuis la sandbox. Ce que je peux faire : **écrire
+les prompts, tourner ce qui doit être tourné, et assembler les deux formats** dès que les fichiers
+existent (`tools/moneyprinter/assemble.sh`, testé le 23/10).
+
+**Ce qui passe à l'IA, et ce qui reste réel.** Le test porte sur l'attention, pas sur la vérité du lieu.
+
+| Plan | Source | Pourquoi |
+|---|---|---|
+| **A** — une main tient un téléphone à bout de bras, écran flou | **IA acceptée** | aucun visage, aucune marque, aucun lieu identifiable : rien à garantir |
+| **B** — la main rapproche puis écarte le téléphone | **IA acceptée** | même raison ; c'est le plan qui « prouve », il doit être net |
+| **C** — mains sur l'appareil de mesure | **réel** | c'est l'appareil du cabinet ; un appareil inventé est un mensonge visible |
+| **D** — la porte, l'enseigne, la rue | **réel** | c'est la seule chose que la vidéo promet au spectateur : *ce lieu existe* |
+
+**La règle qui rend le test honnête :** aucun texte à l'écran ne dit « au cabinet » sur un plan généré.
+Le plan D porte l'adresse ; les plans IA portent le symptôme. Si le résultat marche, on saura que c'est
+**le sujet** qui accroche — et on retournera les plans A et B en vrai pour la série.
+
+**Outil recommandé (gratuit) :** **Google Flow** (onglet déjà ouvert dans les captures du 23/10, modèle
+Veo). C'est le seul générateur gratuit qui rende des mains crédibles en 9:16. **Nano Banana Pro** est
+écarté ce jour : la capture montre « Remaining 0 credits ». MoneyPrinterTurbo **n'est pas** un
+générateur — ses fournisseurs vidéo (wavespeed, seedance, muapi, ofox) sont tous payants, et il ne sert
+ici qu'à l'assemblage.
+
+### Les deux prompts, prêts à coller (Flow, 9:16, 8 s)
+
+```text
+Shot A — Realistic close-up, vertical 9:16. A single adult hand holding a smartphone at arm's length
+in soft morning daylight near a shop window. The phone screen is ON but out of focus, glowing. Shallow
+depth of field, the hand and phone sharp, warm neutral background. No face, no text, no logo, no brand.
+Documentary style, 35 mm look, subtle natural motion, no music.
+```
+
+```text
+Shot B — Same scene, same light, same hand. The hand brings the smartphone closer to the eyes, holds
+a beat, then pushes it away again. Smooth, slow movement, 8 seconds, static camera. Phone screen blurred
+throughout. No face, no text, no logo, no brand. Documentary style, natural grain.
+```
+
+**Ce qu'on vérifie sur la sortie, avant de l'utiliser :** six doigts · un pouce qui traverse l'écran ·
+une marque lisible sur le téléphone · une écriture sur l'écran. **Un seul de ces défauts et le plan est
+refait** — une main ratée se voit plus qu'une main absente.
+
+### L'assemblage, quand les quatre fichiers existent
+
+```bash
+bash tools/moneyprinter/assemble.sh \
+  --clips /tmp/rushs-55ans \
+  --audio /tmp/voix.m4a \
+  --script "Vous éloignez votre téléphone pour lire ? Ce n'est pas la fatigue. Ça arrive à tout le monde, vers quarante-cinq ans. Une mesure de cinq minutes, et on vous dit ce qu'il vous faut." \
+  --out /tmp/55ans --aspect 9:16
+# puis la même commande avec --aspect 16:9 : un tournage, deux montages
+```
+
+**La voix :** enregistrée au téléphone, 30 secondes, une seule prise. La voix de synthèse (edge-tts) est
+disponible dans l'outil et **volontairement non utilisée** : sur un sujet de santé, une voix de machine se sent
+au premier mot et coûte la confiance qu'on demande au spectateur.
+
+---
+
+## 7 · Tournage dans Google Flow — le dossier de production complet (23/10)
+
+> *King 23/10 : « if we are using google flow for the video write a detail and complete prompt along
+> side the script, as you can see we can create a character, choose a voice, and add images of the brand ».*
+
+### 7.1 · Ce qu'on met dans le projet, avant le premier prompt
+
+| Élément | Quoi exactement | Pourquoi |
+|---|---|---|
+| **Modèle** | Flow → *Veo* (le plus récent disponible), **9:16**, **8 s** par plan | 8 s est la plus longue durée qui reste nette ; on coupe au montage |
+| **Images de marque** | `dm-logo.webp`, `cabinet-enseigne.webp`, `cabinet-hero-1080.webp`, 3 montures (`monture-f01`, `h02`, `e16`) | pour la cohérence de lumière et de couleur — **jamais** pour « inventer » la façade |
+| **Personnage** | **les mains** (voir 7.2) — pas un visage | un visage généré sur un sujet de santé est un patient inventé |
+| **Voix** | une voix **hors champ**, posée, adulte, français neutre (pas « publicité ») | le texte est une explication, pas une promotion |
+| **Crédits** | la capture du 23/10 montre **10 crédits par génération** | 4 plans = 40 crédits ; on ne relance pas « pour voir » |
+
+### 7.2 · Le personnage : « les mains de 45 ans »
+
+Créer **un seul** personnage, réutilisé dans les quatre plans (c'est ce qui fait qu'on croit au film) :
+
+```text
+Character reference — "The reading hand": an adult hand and forearm, medium-dark brown skin, short
+clean nails, a thin gold ring on the ring finger (optional), wearing a plain dark grey cotton sleeve
+with a soft cuff, slightly worn. No watch, no bracelet, no tattoos. The hand is calm and precise, a
+reader's hand, not a model's. Shot in warm morning light.
+```
+
+**Ce qu'on ne crée pas :** un visage. Ni « opticien », ni « patient », ni « cliente de 55 ans ». Le
+verrou DM interdit un visage — et une audience pardonne une main imparfaite, jamais un faux patient.
+
+### 7.3 · La voix : comment la choisir en 30 secondes
+
+Écouter trois voix avec **la même phrase** : *« Ce n'est pas la fatigue. Ça arrive à tout le monde,
+vers quarante-cinq ans. »*
+
+- **On garde** : débit lent, articulation nette, timbre grave-medium, aucune intonation montante en
+  fin de phrase.
+- **On écarte** : les voix « dynamiques » (rythme de pub), les voix très jeunes, les accents
+  non africains sur un texte qui parle de Douala.
+- **Le test qui tranche** : si la voix peut dire « Ndobo Mayor » sans qu'on ait envie de rire, elle
+  est bonne.
+
+> **Décision du 23/10 :** la voix de Flow sert au **test**. Pour la série, on enregistre la voix du
+> cabinet (30 s au téléphone) : c'est elle qui porte la confiance, et elle ne coûte aucun crédit.
+
+### 7.4 · Les quatre prompts (un par plan, 9:16, 8 s)
+
+**Plan A — le téléphone tenu à bout de bras**
+
+```text
+Vertical 9:16, 8 seconds, realistic documentary style.
+Close-up of the "reading hand" holding a smartphone at arm's length, elbow slightly bent, in soft
+morning daylight coming from a window on the left. The phone screen is ON but out of focus — only a
+warm glow, no readable text. Shallow depth of field: the hand and the phone edge are sharp, the
+background (a plain wall, a sliver of window frame) is soft. Slow, almost imperceptible camera drift
+to the right. Natural grain, 35 mm look, no music.
+NEGATIVE: no face, no second person, no text on screen, no logo, no brand marks, no extra fingers,
+no watch, no reflections of a camera crew.
+```
+
+**Plan B — il rapproche, puis il écarte**
+
+```text
+Vertical 9:16, 8 seconds, same hand, same light, same background as the previous shot.
+The hand slowly brings the smartphone closer toward the viewer (as if to read), holds for one beat,
+then pushes it back out to arm's length. The movement is smooth and slightly tired. Static camera.
+Screen stays blurred the whole time. Identical colour grade and grain.
+NEGATIVE: no face, no text, no logo, no fast motion, no zoom, no cut.
+```
+
+**Plan C — les mains sur l'appareil** *(option IA ; le réel est meilleur)*
+
+```text
+Vertical 9:16, 8 seconds. Close-up of two hands resting on the chin-rest and the adjustment knob of a
+generic optical measurement instrument (white and grey, no readable brand). One hand turns the knob
+slowly. Warm indoor light, shallow depth of field, calm and precise movement.
+NEGATIVE: no face, no patient, no readable brand, no text on the device.
+```
+
+**Plan D — la porte** → **INTERDIT EN IA.** On filme la vraie porte, 5 secondes, une fois. Un plan
+généré de « façade de cabinet » est la seule chose que la vidéo ne peut pas se permettre : c'est
+l'adresse qu'on donne au spectateur.
+
+### 7.5 · Le script, plan par plan (16 s au montage)
+
+| Temps | Plan | Texte à l'écran | Voix |
+|---|---|---|---|
+| 0 – 2 s | A | **VOUS ÉLOIGNEZ VOTRE TÉLÉPHONE ?** | *(silence)* |
+| 2 – 4,5 s | A (continu) | **CE N'EST PAS LA FATIGUE** | « Ce n'est pas la fatigue. » |
+| 4,5 – 6,5 s | B | **ÇA ARRIVE À TOUT LE MONDE APRÈS 45 ANS** | « Ça arrive à tout le monde, vers quarante-cinq ans. » |
+| 6,5 – 10,5 s | B puis C | **L'ŒIL DEVIENT PLUS RIGIDE — C'EST NORMAL** | « L'œil devient plus rigide : c'est normal. » |
+| 10,5 – 13,5 s | C | **UNE MESURE DE 5 MINUTES** | « Une mesure de cinq minutes, et on vous dit ce qu'il vous faut. » |
+| 13,5 – 15,5 s | D (réel) | **NDOBO MAYOR · BONABÉRI · 6 56 12 22 39** | « Passez au cabinet, on reçoit jusqu'à dix-sept heures. » |
+| 15,5 – 18 s | D (réel) | **POSEZ VOTRE QUESTION — ON Y RÉPOND EN VIDÉO** | *(silence)* |
+
+### 7.6 · Le contrôle, avant de monter
+
+Sur chaque plan généré : **six doigts** · un **pouce qui traverse** l'écran · une **marque lisible**
+sur le téléphone · du **texte lisible** sur l'écran · une **deuxième main** qui entre dans le cadre.
+Un seul défaut → le plan est refait (ou abandonné : on a le plan réel en 20 minutes).
+
+### 7.7 · Le montage, une fois les fichiers sur la machine
+
+```bash
+# les 4 plans dans un dossier, la voix enregistrée à côté
+bash tools/moneyprinter/assemble.sh --clips /tmp/rushs-55ans --audio /tmp/voix.m4a \
+  --script "Vous éloignez votre téléphone pour lire ? Ce n'est pas la fatigue. Ça arrive à tout le monde, vers quarante-cinq ans. L'œil devient plus rigide, c'est normal. Une mesure de cinq minutes, et on vous dit ce qu'il vous faut." \
+  --out /tmp/55ans --aspect 9:16 --subtitles
+# puis la même commande avec --aspect 16:9 : un tournage, deux montages
+```
+
+**Ce que le montage ne corrige pas :** une main ratée. Il corrige la durée, la coupe, les sous-titres.

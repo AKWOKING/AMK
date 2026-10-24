@@ -636,3 +636,107 @@ modèle opaque ne peut pas offrir sur ces photos.
 - **(d) Effort + verdict :** 0 (déjà lu et installé le 23/10) → **pursue**. Le seul apport qu'aucun autre
   skill ne donne : **la limite explicite de la boucle de polissage.** Borné à ce que les portiques maison
   ne couvrent pas : les portiques §1b restent seuls juges.
+
+---
+
+## 23/10 — **MoneyPrinterTurbo** (`harry0703`, MIT) — verdict : **pursue, borné à l'assemblage**
+
+- **(a) Problème :** nos vidéos se montent à la main (`tools/video/compose.py` fait des cartes et du
+  mouvement de capture ; il ne coupe pas des rushes à la durée d'une voix, et il ne rend pas deux
+  formats d'un seul coup). Chaque tournage réel demandait un montage manuel.
+- **(b) Use case AMK nommé :** « un tournage, deux montages » (§5 quater) — quatre plans tournés au
+  téléphone, une voix enregistrée, et deux fichiers 9:16 / 16:9 coupés à la seconde.
+- **(c) Coût :** **0 FCFA**, aucun compte, aucune clé. 733 Mo de source + 1,2 Go de venv, **hors du
+  dépôt** (`/tmp/amk-moneyprinter`). ffmpeg embarqué, pas de paquet système, pas de sudo.
+- **(d) Effort + verdict :** installé, **2 341 tests amont passés / 0 échec**, et un assemblage réel
+  produit ici (20,0 s, 1080×1920, 30 i/s) → **pursue**. Borné : `--video-source local` est forcé par
+  notre enveloppe ; banque d'images, voix de synthèse et script par modèle sont **refusés** (le décor
+  doit exister, le script est le nôtre). Sous-titres : Whisper, modèle téléchargé au premier usage —
+  donc pas testé dans la sandbox, et jamais présenté comme testé.
+- **Ce que l'outil ne fait pas et qu'on ne lui demande pas :** générer des plans. Un plan inventé ne
+  remplace pas un plan tourné.
+
+---
+
+## 23/10 — **ui-ux-pro-max** (amont mis à jour) — verdict : **pursue, périmètre élargi**
+
+- **Ce qui change :** l'amont ne livre plus **un** skill mais **six** (`design`, `design-system`,
+  `brand`, `ui-styling`, `banner-design`, `slides`). Le pin passe de `56ea9cf` à **`d14efff`** et
+  l'installeur lie désormais les six — un skill non lié est un skill qui n'existe pas.
+- **Coût :** nul (markdown + recherche Python stdlib, hors réseau, hors dépôt).
+- **Verdict :** pursue. `design` et `design-system` servent aux pages publiques ; `brand` et
+  `banner-design` aux visuels sociaux ; `slides` seulement si King demande un deck (pas de porte
+  d'abonnement, jamais en livrable client sans accord).
+
+## 23/10 — **awesome-claude-design** (VoltAgent, MIT) — verdict : **référence, pas outil**
+
+- **Ce qu'il contient réellement :** un **README** — un index vers 68 `DESIGN.md` hébergés ailleurs.
+  Les fichiers ne sont pas dans le dépôt et ne sont pas accessibles sans réseau.
+- **Décision :** installé comme **index consultable** (`~/.agents/skills/awesome-claude-design/`), pas
+  comme outil. Ce qu'on en garde : **nommer une direction** avant de dessiner. Ce qu'on n'en fait pas :
+  copier une palette ou une typographie sur un client.
+- **Verdict :** pursue comme référence, 0 FCFA, aucun code exécuté.
+
+## 23/10 — **design-md-chrome** (bergside, MIT) — verdict : **pursue, installé sans l'extension**
+
+- **(a) Problème :** on décrivait nos systèmes de design de mémoire, et une refonte dérive en trois pages.
+- **(b) Use case AMK nommé :** codifier le système d'une page — la nôtre (contrôle de cohérence avant
+  refonte) ou une référence (extraire la **direction**, pas la copie).
+- **(c) Coût :** 0 FCFA. L'extension n'est pas installée : on réutilise son `content-script.js` et ses
+  générateurs dans le Chromium embarqué (`tools/design-md/extract.mjs`, amont intact).
+- **(d) Effort + verdict :** 1 h → **pursue**. Preuve du jour : le site DM rend un `DESIGN.md` de
+  72 lignes **validé 14/14** (IBM Plex Sans 17 px, `#0c1524`, rayons 14/20/999, motion 160–380 ms).
+  Limite dite : l'audience et la surface sont **devinées** par le générateur (« e-commerce ») et se
+  réécrivent à la main ; il relève, il ne juge pas — le contraste reste l'affaire de `shot.py`.
+
+## 23/10 — **design-motion-principles** (kylezantos, MIT) — revérifié
+
+- Pin inchangé (`4a9ca87`), réinstallation rejouée : `OK`. Aucune action.
+
+## 24/10 — **graphify** (Graphify-Labs, Apache-2.0) — installé, testé, branché
+
+- **(a) Ce que c'est :** un skill/CLI qui transforme un dépôt en **graphe de connaissances** interrogeable
+  (`graph.json` + `graph.html` + `GRAPH_REPORT.md`) : AST tree-sitter pour le code (~40 langages),
+  structure des documents (titres, liens entre fichiers), requêtes `query` / `path` / `explain`.
+- **(b) Use case AMK nommé :** **trouver la règle avant d'écrire.** Le 24/10, deux documents existants
+  n'ont pas été lus avant une réécriture complète (voir PRE-FLIGHT §0h). Le graphe rend cette recherche
+  mécanique : `bash tools/graphify/ask.sh "message prospect clinique"` → 6 documents classés, avec
+  numéros de ligne, en 0,3 s.
+- **(c) Coût :** 0 FCFA, 0 clé d'API, 0 donnée sortante. PyPI `graphifyy==0.9.95` dans un venv jetable
+  (`/tmp`), épinglé, amont `92741d1` du 23/10.
+- **(d) Effort + verdict :** 1 h 30 → **pursue**. Mesuré sur le dépôt : **734 documents, 10 208 nœuds
+  (7 594 titres), 11 323 arêtes, ~10 s**. Ce qui a été construit en plus de l'amont :
+  `build_docs_graph.py` (l'extracteur Markdown déterministe n'est **pas** branché sur la CLI headless —
+  `GRAPHIFY_BACKEND=none` écarte tous les non-code ; le script le rattrape) et `ask.sh`/`find.py`.
+- **(e) Limites dites :** sans LLM on extrait la **structure**, pas le sens — une arête `contains` dit
+  « ce titre est dans ce fichier », jamais « ce paragraphe parle de X ». `graph.json` pèse 7,4 Mo :
+  `graphify-out/` est dans `.gitignore` et se reconstruit en 10 s.
+- **(f) Décision du 13/10 inversée, et pourquoi c'est légitime :** son prémisse (« un backend LLM est
+  requis ») ne vaut que pour l'extraction **sémantique**. Les deux déclencheurs de réévaluation écrits
+  au 13/10 se sont produits : dépôt ≫ 150 fichiers, et **2 incidents « fichier introuvable » le 24/10**.
+
+## 24/10 — **superpowers** (obra, MIT) — installé, 15 skills branchés, sans les hooks
+
+- **(a) Problème :** on écrit des plans que personne ne relit, et une page se corrige avant d'avoir
+  compris ce qui clochait. Le dépôt a une règle de méthode (`PRE-FLIGHT`) mais **aucune procédure
+  exécutable** pour l'appliquer : chaque session réinvente l'ordre spec → plan → exécution → revue.
+- **(b) Use case AMK nommé :** `brainstorming` (ne rien construire avant d'avoir écrit ce que King
+  veut vraiment), `writing-plans` (un plan qu'un exécutant peut suivre sans nous), `systematic-debugging`
+  (l'incident du 24/10 : deux documents réécrits sans avoir été lus) et `verification-before-completion`
+  (le contrôle « zéro se vérifie »). Ruling King du 24/10 : *« install … don't forget to add it as a
+  node and update the graph »*.
+- **(c) Coût :** 0 FCFA, 0 clé, **0 réseau à l'installation** — les 15 skills sont vendus dans le dépôt
+  (`tools/superpowers/skills/`, 668 Ko) et le script ne fait que copier. Amont épinglé
+  `2ce8aa15d05bd57213e6f746f953aafb7ded7a8b` (branche `main`, 21/10/2026, version 7.0.1).
+- **(d) Effort + verdict :** 45 min → **pursue**. `bash tools/superpowers/install.sh` → 15 skills dans
+  `~/.claude/skills` + miroir en lien symbolique `~/.agents/skills` ; `--check` affiche 15/15.
+- **(e) Ce qui n'est PAS installé, et pourquoi :** le dépôt amont livre aussi des **hooks** de session
+  (`hooks/session-start`, injecté par `.claude-plugin`), des `scripts/` de packaging et un `index.js`.
+  **Rien de tout cela n'est actif** : nos harnais lisent les skills par leur description, et un hook qui
+  écrit dans le contexte au démarrage est exactement ce que la convention `marketingskills` refuse
+  (aucun hook, aucun sudo, aucun script de cycle de vie). `--with-hook` existe pour l'activer un jour,
+  sciemment, avec sauvegarde de `settings.json` — il n'a pas été lancé.
+- **(f) Limite dite :** ces skills décrivent un **processus**, pas notre métier. Ils ne remplacent aucune
+  règle du dépôt (structure en quatre temps, §1g, registre d'unicité) ; ils disent comment travailler,
+  pas quoi écrire. Le nœud vit dans le graphe sous `tools/superpowers/` — vérifié par
+  `build_full_graph.py` le 24/10.
