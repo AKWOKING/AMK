@@ -824,10 +824,10 @@ occasions de panne en plus** (c'est exactement ainsi que la CI est tombée trois
 3. **Sortir du défaut, pas du dépôt** : les quinze autres gardent leur `install.sh` épinglé (8 Ko
    chacun) et se remettent par `bash tools/ops/provision.sh --only <nom>`. Supprimer l'installeur
    serait perdre la recette pour économiser 120 Ko ; on retire la cuisson, pas la recette.
-4. **Changer le défaut de `provision.sh`** : aujourd'hui `bash tools/ops/provision.sh` sans argument
-   rejoue les 24. Le défaut devrait être le noyau (4), le reste sur demande — c'est déjà la doctrine
-   du §1f (« une session neuve rejoue le **noyau épinglé** »). **En attente du oui de King** : c'est son
-   rituel de session, pas le mien.
+4. **Changer le défaut de `provision.sh`** : fait le 24/10 au soir, sur le oui de King. `bash
+   tools/ops/provision.sh` sans argument installe le **noyau de travail** — `graphify`, `superpowers`,
+   `photo`, `video` — et affiche comment installer un autre outil (`--only <nom>`). `--all` retrouve
+   l'ancien comportement (24 outils, ~5 min, 4,5 Go).
 
 ### 5 · Ce que l'étude ne prouve pas
 

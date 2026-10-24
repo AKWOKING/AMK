@@ -98,3 +98,24 @@ dessus, mais sur les trois raisons ci-dessus.
 
 **Ce qui reste vrai** : le dépôt n'est pas un disque dur (règle du 23/09). Un fichier lourd qui n'est
 pas un livrable se range dehors. Cette règle-là n'est pas levée par la décision d'aujourd'hui.
+
+## 24/10/2026 (soir) — « est-ce que la taille gêne vraiment le travail ? » : non, et voilà le chiffre
+
+> King : *« si la taille du dépôt affecte notre méthode de travail, retire les vidéos même des commits »*.
+
+La question est conditionnelle, donc on la mesure avant d'y répondre.
+
+| Ce qui pèse | Mesure | Ce que ça coûte au travail |
+|---|---|---|
+| L'arbre suivi | **144 Mo** · plus gros fichier 14,6 Mo (`brag.mp4`) | rien : git ne lit que le diff |
+| Le `.git` de la session | **154 MiB**, clone **superficiel** (33 commits) | le clone prend des secondes |
+| Le `.git` complet | ~**1,06 GiB** (mesure du matin) | un clone complet, une fois, sur une machine neuve |
+| Les vidéos dans l'historique | **8 blobs `mp4`, ~70 Mo** | 7 % du clone complet |
+
+**Conclusion : les vidéos ne sont pas le poids.** Retirer 70 Mo d'un dépôt de 1,06 GiB en réécrivant tout
+l'historique coûte plus que ça ne rapporte — et le clone que la session utilise **est déjà superficiel** :
+c'est la taille de l'arbre, pas celle de l'historique, qui décide de la vitesse au quotidien.
+
+Donc **pas de réécriture**, et à la place un garde-fou qui empêche le retour du gras : la règle 14
+(`poids-raisonnable`, souple) mesure le poids à chaque tour. Si un jour c'est le **clone complet** qui
+gêne, le remède est un `git clone --depth 1` documenté, pas un `filter-repo`.

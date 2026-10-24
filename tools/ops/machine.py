@@ -500,6 +500,32 @@ def register_section() -> str:
     return txt.split("## 9 \u00b7", 1)[1].split("\n## ", 1)[0]
 
 
+# Le dépôt n'est pas un disque dur (règle du 23/09), mais rien ne mesurait le poids suivi : le 24/10,
+# 144 Mo de fichiers suivis dont un mp4 de 14,6 Mo. Un seuil souple vaut mieux qu'une bonne intention :
+# il ne bloque pas, il empêche le retour silencieux du gras.
+MAX_TRACKED_MB = 160
+MAX_FILE_MB = 15.0
+
+
+def weight_state() -> dict:
+    """Le poids réellement suivi par git — pas le disque, pas le .git : l'arbre."""
+    files = run(["git", "ls-files", "-z"], timeout=60).split("\0")
+    total = 0
+    biggest, biggest_n = "", 0
+    for f in files:
+        if not f:
+            continue
+        try:
+            n = (ROOT / f).stat().st_size
+        except OSError:
+            continue
+        total += n
+        if n > biggest_n:
+            biggest, biggest_n = f, n
+    return dict(mb=total / 1048576, files=len([f for f in files if f]),
+                big=biggest, big_mb=biggest_n / 1048576)
+
+
 def rules() -> list[dict]:
     """Les règles debout, chacune avec sa porte. Aucune n'est inventée ici : toutes renvoient à un §."""
     g = git_state()
@@ -571,6 +597,13 @@ def rules() -> list[dict]:
         f"{n_gaps} pourcentage(s) sans appui dans le dépôt ({', '.join(where)}) → "
         "python3 tools/qa/audit_claims.py --sources ." if n_gaps
         else "aucun pourcentage affirmé sans lien, chemin, « selon » ou « non revérifié »")
+    w = weight_state()
+    add("poids-raisonnable", "Le poids suivi reste sous 160 Mo et aucun fichier ne dépasse 15 Mo sans décision.",
+        "règle du 23/09 « le dépôt n'est pas un disque dur »", "chaque commit", "souple",
+        w["mb"] <= MAX_TRACKED_MB and w["big_mb"] <= MAX_FILE_MB,
+        f"{w['mb']:.0f} Mo suivis · plus gros fichier {w['big']} ({w['big_mb']:.1f} Mo)"
+        + ("" if w["mb"] <= MAX_TRACKED_MB and w["big_mb"] <= MAX_FILE_MB
+           else f" → au-delà du seuil ({MAX_TRACKED_MB} Mo / {MAX_FILE_MB} Mo) : sortir, compresser, ou le dire"))
     add("fichier-neuf-avec-king", "Un fichier debout nouveau n'existe qu'avec le oui de King.",
         "PRE-FLIGHT §4b", "création d'un document souverain", "trou", True,
         "sans porte machine : la porte est la proposition d'emplacement dans la réponse, puis le ruling")
