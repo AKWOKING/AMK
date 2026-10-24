@@ -26,6 +26,7 @@ Usage
 from __future__ import annotations
 
 import argparse
+import difflib
 import json
 import os
 import re
@@ -765,6 +766,37 @@ def _bootstrap_graphify() -> bool:
     return True
 
 
+def announce_map_delta(content: str) -> None:
+    """Dit à voix haute ce qui diffère de la carte COMMITÉE — et le dit de façon lisible même quand
+    personne ne peut ouvrir le log.
+
+    Pourquoi : le 24/10 au soir, la CI est tombée rouge sur l'étape « la carte se rejoue à
+    l'identique » sans que la cause soit lisible — le log d'un run n'est pas toujours accessible, et
+    `git diff --quiet` ne dit que « différent ». Une porte qui ne dit pas POURQUOI est une porte
+    qu'on finit par contourner. Ici le script compare sa sortie à `git show HEAD:<carte>` et, si
+    elles diffèrent, écrit une **annotation GitHub** (`::error::`) : elle reste attachée au run et se
+    lit par l'API, même quand les logs sont hors d'atteinte.
+    """
+    try:
+        committed = subprocess.run(["git", "show", f"HEAD:{MAP.relative_to(ROOT)}"], cwd=ROOT,
+                                   capture_output=True, text=True, timeout=30)
+    except (OSError, subprocess.SubprocessError):
+        return
+    if committed.returncode != 0:
+        return                      # pas de git, ou carte pas encore commitée : rien à comparer
+    if committed.stdout == content:
+        return                      # identique : silence
+    diff = [l for l in difflib.unified_diff(committed.stdout.splitlines(), content.splitlines(),
+                                            "commitée", "rejouée", n=0, lineterm="")]
+    changed = [l for l in diff if l[:1] in "+-" and l[:3] not in ("+++", "---")]
+    print(f"[full] ⛔ la carte rejouée diffère de celle du commit — {len(changed)} ligne(s)", file=sys.stderr)
+    for line in diff[:40]:
+        print(line, file=sys.stderr)
+    excerpt = " | ".join(l[:110] for l in changed[:3]) or "(aucune ligne de contenu ?)"
+    print(f"::error title=La carte rejouée n'est pas celle du commit::"
+          f"{len(changed)} ligne(s) diffèrent. {excerpt}")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--no-map", action="store_true", help="ne pas réécrire ops/REPO-MAP.md")
@@ -848,8 +880,10 @@ def main() -> int:
     print(f"[full] communautés : {len(set(comm.values()))} sur {len(comm)} documents")
 
     if not args.no_map:
-        MAP.write_text(write_map(g, meta, stale, stats, comm), encoding="utf-8")
+        content = write_map(g, meta, stale, stats, comm)
+        MAP.write_text(content, encoding="utf-8")
         print(f"[full] carte écrite → {MAP.relative_to(ROOT)}")
+        announce_map_delta(content)
     try:  # trace d'usage : « la carte a été reconstruite » doit être une ligne, pas un souvenir
         from datetime import datetime as _dt
         stamp = Path.home() / ".amk-provisioned"
