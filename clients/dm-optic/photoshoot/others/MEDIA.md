@@ -1,4 +1,5 @@
 <!-- généré par tools/ops/media_inventory.py — ne pas éditer à la main -->
+<!-- empreintes: 3f90a69c2cd9a2b8e033c3c7ec80d5a7724a550e8fce3ab519f8c9611ea3dd31 -->
 
 # MÉDIAS — `clients/dm-optic/photoshoot/others/`
 

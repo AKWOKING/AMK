@@ -430,12 +430,28 @@ def write_communities_section(A, g, by_id, comm, indeg) -> None:
         A("")
 
 
+def commit_date() -> str:
+    """La date de la carte = la date du commit HEAD, pas celle de la machine.
+
+    Le 24/10 au soir, la CI est passée au rouge sur l'étape « la carte se rejoue à l'identique » : la
+    seule chose qui pouvait différer entre le poste et le runner était l'horloge, recopiée telle quelle
+    dans l'en-tête. Une carte doit être une fonction du commit — même commit, même carte, à l'octet —
+    sinon la porte mesure le fuseau horaire du runner, pas le dépôt."""
+    try:
+        out = subprocess.run(["git", "log", "-1", "--format=%ad", "--date=short"], cwd=ROOT,
+                             capture_output=True, text=True, timeout=30).stdout.strip()
+    except (OSError, subprocess.SubprocessError):
+        out = ""
+    return out or "date inconnue"
+
+
 def write_map(g: dict, nodes_meta: dict, stale: set[str], stats: dict, comm: dict | None = None) -> str:
     indeg, outdeg = degrees(g)
     by_id = {n["id"]: n for n in g["nodes"]}
     domains = Counter(n.get("domain") for n in g["nodes"])
     kinds = Counter(n.get("kind") for n in g["nodes"])
 
+    stamp = commit_date()
     cites_edges = [e for e in g["edges"] if e["relation"] == "cites"]
     sup_edges = [e for e in g["edges"] if e["relation"] == "supersedes"]
 
@@ -453,7 +469,7 @@ def write_map(g: dict, nodes_meta: dict, stale: set[str], stats: dict, comm: dic
     A = L.append
     A(f"# CARTE DU DÉPÔT — ce qui existe, où c'est, et ce qui n'est atteignable par aucun chemin")
     A("")
-    A(f"```text\nGénéré par tools/graphify/build_full_graph.py — {date.today().isoformat()}\n"
+    A(f"```text\nGénéré par tools/graphify/build_full_graph.py — {stamp}\n"
       f"Source : graphify-out/graph.json ({len(g['nodes'])} nœuds, {len(g['edges'])} arêtes)\n"
       f"Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même\n"
       f"carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.\n```")

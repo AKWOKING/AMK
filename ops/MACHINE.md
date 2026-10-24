@@ -417,7 +417,7 @@ les vignettes.
 **Le premier pas — fait le 24/10 au soir.** `tools/ops/media_inventory.py` (0 dépendance) lit
 l'empreinte et les dimensions de chaque média suivi, puis écrit un `MEDIA.md` par dossier de plus de
 2 Mo. Mesuré : **460 médias suivis, 104 Mo** (72 % de l'arbre), **12 dossiers** inventoriés,
-**85 médias que rien ne nomme** (contre 66 estimés — l'estimation était basse), et surtout
+**95 médias que rien ne nomme** (contre 66 estimés — l'estimation était basse), et surtout
 **25 empreintes partagées = 27 copies inutiles, 2,6 Mo** que l'œil ne voyait pas :
 
 | Empreinte | Poids | Copies |
@@ -434,6 +434,17 @@ fichier, en regardant qui l'appelle.
 Deux modes de plus : `--thumbs DIR` écrit les vignettes 800 px **hors du dépôt** (jamais dans git : une
 vignette est un cache, pas un livrable), et `--check` compare les empreintes — c'est la version stricte,
 la porte 16 se contentant du nombre de fichiers (un sha256 de 104 Mo coûterait 8 s à chaque tour).
+
+**Deux pièges de mesure, trouvés en écrivant l'outil, et tous les deux corrigés :**
+
+1. **Un inventaire qui se cite lui-même.** Le premier comptage a annoncé 67 médias non nommés au lieu de
+   95 : les `MEDIA.md` venaient de lister les fichiers, donc chaque média était « cité » — par sa propre
+   fiche. Un thermomètre qui se met dans le four. Les inventaires sont désormais exclus du corpus de
+   citations ;
+2. **« périmé » à cause d'une virgule dans un autre document.** Le nombre de citations figure dans le
+   tableau, donc éditer n'importe quel document rendait tous les inventaires « périmés ». `--check`
+   compare maintenant une **signature d'empreintes** écrite dans le fichier ; le texte se rafraîchit par
+   `--write`, la porte ne juge que les octets.
 
 ### ④ Décroissance documentaire : 765 documents, 412 orphelins
 

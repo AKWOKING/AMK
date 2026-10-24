@@ -1,4 +1,5 @@
 <!-- généré par tools/ops/media_inventory.py — ne pas éditer à la main -->
+<!-- empreintes: 93ed2bb92f748dd882e6cb0c215695222ed0de01bee2225f092665ace9f7acb0 -->
 
 # MÉDIAS — `content/videos/v06-facebook-no-booking/`
 

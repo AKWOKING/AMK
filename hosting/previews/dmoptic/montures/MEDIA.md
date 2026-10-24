@@ -1,4 +1,5 @@
 <!-- généré par tools/ops/media_inventory.py — ne pas éditer à la main -->
+<!-- empreintes: d441001063accf6624cb54a6126721f3c01e139f0f4eb55787650a74d2f39409 -->
 
 # MÉDIAS — `hosting/previews/dmoptic/montures/`
 
@@ -48,7 +49,7 @@ Un média non nommé n'est pas inutile : il est inatteignable. Soit on le cite l
 - `monture-e19-2.jpg` — 47.7 Ko
 - `monture-f21-3.jpg` — 46.4 Ko
 - `monture-f09-2.jpg` — 46.0 Ko
+- `monture-f01-3.jpg` — 45.2 Ko
+- `monture-f04-2.jpg` — 44.8 Ko
 - `monture-f59-2.jpg` — 44.0 Ko
-- `monture-e14-3.jpg` — 44.0 Ko
-- `monture-f08-3.jpg` — 43.9 Ko
 - … et 7 autre(s)
