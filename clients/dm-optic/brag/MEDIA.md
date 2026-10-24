@@ -1,0 +1,13 @@
+<!-- généré par tools/ops/media_inventory.py — ne pas éditer à la main -->
+
+# MÉDIAS — `clients/dm-optic/brag/`
+
+**2 fichier(s) · 14.6 Mo.** Empreinte = identité du fichier : deux fichiers de même empreinte sont le même fichier, quelle que soit leur adresse.
+
+- **0 fichier(s) en double** (même empreinte qu'un autre média du dépôt)
+- **0 média(s) que nul document ne nomme**
+
+| Fichier | Dimensions | Poids | Empreinte | Citations |
+|---|---|---|---|---|
+| `brag.mp4` | — | 14.6 Mo | `d8c8148d6d66` | 13 |
+| `poster.jpg` | 1080×1920 | 12.2 Ko | `1c98b027e476` | 3 |
