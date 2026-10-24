@@ -20,6 +20,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 from datetime import date, datetime
 from functools import lru_cache
 from pathlib import Path
@@ -753,10 +754,26 @@ def rules() -> list[dict]:
 CI_RULES = ("aucun-secret", "docs-existants")
 
 
+def ci_clock(label: str) -> float:
+    """Horodatage lisible depuis l'API GitHub quand les logs du runner sont inaccessibles.
+
+    Le 24/10, `gh run view --log` et `gh api .../logs` rendent 0 octet ou une erreur EOF :
+    impossible de savoir où passent les 35 s d'un run. Une annotation `::notice::`, elle, se
+    lit par l'API (`check-runs/<job>/annotations`). D'où ces trois repères, en epoch :
+    entrée des portes, sortie des portes, fin de la carte. En les recoupant avec `started_at`
+    du job, on obtient le temps du clone, celui des portes et celui de la carte.
+    """
+    now = time.time()
+    if os.environ.get("CI") == "true":
+        print(f"::notice title=CI-horloge::{label} epoch={now:.0f}")
+    return now
+
+
 def ci() -> int:
     """La variante d'un runner : ne garde que ce qui est vrai sans estampes, sans ~/, sans historique local.
     La jauge de fusion est imprimée mais ne bloque pas : un PR au-dessus du seuil n'est pas une faute,
     c'est le signal qu'il faut fusionner."""
+    t0 = ci_clock("portes-debut")
     rs = {r["id"]: r for r in rules()}
     ko = [rs[i] for i in CI_RULES if i in rs and not rs[i]["ok"]]
     for r in rs.values():
@@ -772,6 +789,7 @@ def ci() -> int:
     if mg["ok"] and mg["due"]:
         print(f"  {YEL}⚠{OFF} fusion due — {mg['why']} (non bloquant en CI)")
     note_usage("check", "ok" if not ko else "ko:" + ",".join(r["id"] for r in ko))
+    ci_clock(f"portes-fin duree={time.time() - t0:.1f}s")
     if ko:
         print(f"\n{RED}CI ROUGE{OFF} : " + " · ".join(r["id"] for r in ko))
         # Une porte qui échoue doit dire POURQUOI dans le run lui-même : le log n'est pas toujours

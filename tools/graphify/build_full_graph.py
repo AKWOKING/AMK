@@ -800,6 +800,13 @@ def _bootstrap_graphify() -> bool:
     return True
 
 
+def announce_clock(label: str) -> None:
+    """Un repère lisible par l'API quand les logs du runner ne le sont pas (voir machine.ci_clock)."""
+    import os, time
+    if os.environ.get("CI") == "true":
+        print(f"::notice title=CI-horloge::{label} epoch={time.time():.0f}")
+
+
 def announce_map_delta(content: str) -> None:
     """Dit à voix haute ce qui diffère de la carte COMMITÉE — et le dit de façon lisible même quand
     personne ne peut ouvrir le log.
@@ -918,6 +925,7 @@ def main() -> int:
         MAP.write_text(content, encoding="utf-8")
         print(f"[full] carte écrite → {MAP.relative_to(ROOT)}")
         announce_map_delta(content)
+    announce_clock("carte-fin")
     try:  # trace d'usage : « la carte a été reconstruite » doit être une ligne, pas un souvenir
         from datetime import datetime as _dt
         stamp = Path.home() / ".amk-provisioned"
