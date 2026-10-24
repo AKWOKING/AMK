@@ -465,8 +465,13 @@ def mirror_state() -> dict:
     exists = subprocess.run(["git", "cat-file", "-e", f"{sha}^{{commit}}"], cwd=ROOT,
                             capture_output=True).returncode == 0
     if not exists:
+        # Un clone superficiel (`--depth 1`) ne contient pas le commit du miroir : on ne peut donc
+        # pas PROUVER que Notion est à jour. La porte reste fermée, mais le message doit dire le geste.
+        shallow = run(["git", "rev-parse", "--is-shallow-repository"]) == "true"
         return dict(ok=False, date=stamp, sha=sha, days=days, behind=[],
-                    why=f"MIRROR pointe {sha}, qui n'existe plus dans l'historique — re-dater après vérification")
+                    why=(f"MIRROR pointe {sha}, absent de cet historique "
+                         f"({'clone superficiel' if shallow else 'commit inconnu'}) — vérifier Notion, "
+                         "puis re-dater la ligne MIRROR sur le commit courant"))
     names = [n for n in run(["git", "diff", "--name-only", f"{sha}..HEAD"], timeout=60).splitlines() if n]
     behind = sorted({n for n in names if n.startswith(STANDING) or n in STANDING})
 
@@ -569,8 +574,8 @@ def rules() -> list[dict]:
         "PRE-FLIGHT §0g", "commit qui touche un fait debout", "dure",
         mir["ok"], (f"miroir daté {mir['date']} · à jour sur {mir['sha']}" if mir["ok"] and mir.get("sha") else
                     (f"{len(mir['behind'])} fichier(s) de fait debout changé(s) depuis MIRROR {mir['sha']} "
-                    f"({', '.join(mir['behind'][:3])}{'…' if len(mir['behind']) > 3 else ''}) → mettre Notion à jour, puis re-dater MIRROR")
-                     if mir.get("sha") else mir["why"]))
+                     f"({', '.join(mir['behind'][:3])}{'…' if len(mir['behind']) > 3 else ''}) → mettre Notion à jour, puis re-dater MIRROR")
+                     if mir.get("behind") else mir["why"]))
     secret_hits = run(["git", "grep", "-nIiE", SECRET_SCAN, "--", ".",
                        ":!tools/superpowers/", ":!tools/graphify/"], timeout=60)
     add("aucun-secret", "Ni mot de passe, ni clé, ni jeton dans un dépôt public.",
