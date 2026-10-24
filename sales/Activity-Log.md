@@ -5610,3 +5610,38 @@ récupérables (`54d962cb`, `38b7f06c`) — mais le contrôle de fuite trouve l'
 prospects dans les six : noms, quartiers, et **deux numéros** dans Béthanie. Verdict : **on réutilise la
 direction** (déjà consignée au registre d'unicité), **pas le fichier** ; deux concepts neufs sur le
 gabarit DM, contrôle de fuite en porte de sortie. Détail : note de conception §6.
+
+## 24/10/2026 (23h30) — Optix : la capture part avec le message, on ne demande plus la permission
+
+**Ce que King a tranché.** La version d'avant proposait la capture au cabinet — *« Je vous envoie la
+capture ? »*. C'est un aller-retour inutile : le fait a déjà été annoncé dans le premier message, la
+pièce qui le prouve **part avec le suivi**. On ne demande pas la permission de livrer une preuve qu'on
+a déjà dit détenir. Le motif « il n'a rien demandé, donc on n'envoie pas » est **rejeté** pour ce fil.
+
+**La capture existe maintenant.** `clients/dm-optic/launch/optix/capture-optix-2026-10-24.png` (900×900,
+250 Ko) : deux blocs encadrés en rouge — le résultat Facebook et la fiche Google, tous deux extraits des
+captures de King du 24/10, aucune retouche — et à droite, trois lignes de commentaire qui nomment ce que
+Google réclame lui-même (« Add business hours », « Add website », « Be the first to review »). Six
+assemblages ont été relus à l'œil avant de retenir celui-ci : deux coupaient la carte au lieu de la
+fiche, un superposait le titre au panneau.
+
+**Le message — 48 mots, 3 phrases, 1 question, porte OK, 0 bloquant, 0 avertissement :**
+
+> Bonjour, à Akwa carrefour Idéal, je reviens une fois : la capture ci-jointe vient de votre fiche.
+> Votre page Facebook renvoie vers un site qui n'existe plus, et Google n'a aucun site à afficher —
+> ce n'est pas de votre fait.
+> Deux minutes à lire, sans moi : ça vous parle ?
+
+Il remplace **le texte du §2 du lot**, qui finissait lui aussi par « Je vous envoie la capture ? » — la
+même faute, à un autre endroit. Le lot est donc désormais **cinq messages froids et un suivi**, et le
+suivi part le **lundi 26/10 à 9 h** (J+2, 42 h après le 👍), pas le 27.
+
+**Et la vérification qui change une phrase.** Les captures tranchent la seule affirmation non vérifiée :
+le panneau Google dit **« OPTIX SARL · Optician in Douala »** — la catégorie est **juste**. La phrase
+« entreprise spécialisée dans le contrôle de gestion » est la **description de la page Facebook**,
+reprise par Google dans ses résultats. Donc le message du 24/10 disait **faux au sens strict**, et le
+nouveau message ne la reprend pas. Règle qui en sort, ajoutée au §10.2 du lot : **nommer la surface,
+jamais l'éditeur** — « la description de votre page Facebook », pas « Google dit ».
+
+Deux numéros coexistent chez Optix, et il faut les garder distincts : Google affiche **6 81 36 92 33**,
+la page Facebook **697 72 32 65** — c'est le second qui a reçu le message et le 👍.
