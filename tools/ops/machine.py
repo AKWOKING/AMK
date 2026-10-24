@@ -354,6 +354,16 @@ def note_usage(tool: str, what: str = "") -> None:
         pass
 
 
+# Les outils qui n'écrivent aucune trace PAR CONSTRUCTION : ce sont des skills — des fichiers markdown
+# qu'un agent lit s'il est branché sur ~/.agents/skills ou ~/.claude/skills. Cet agent-ci ne les charge
+# pas ; leur silence ne dit donc rien de leur utilité. Mesuré le 24/10 : quinze sur vingt-quatre.
+# Étude complète, trois passes, verdict par outil : ops/TOOL-SCAN.md (§ 24/10/2026).
+SKILL_TOOLS = frozenset({
+    "agency-agents", "awesome-claude-design", "claude-seo", "design-md",
+    "design-motion-principles", "ecc", "geo-seo-claude", "humanizer", "impeccable",
+    "marketingskills", "open-seo", "pro-design", "roast-room", "taste-skill", "ui-ux-pro-max",
+})
+
 def usage_state() -> dict:
     """Deux choses différentes, comptées séparément : INSTALLER n'est pas UTILISER.
 
@@ -403,16 +413,21 @@ def print_usage() -> int:
         last = u["last"].get(t, "installé " + u["installed"][t][:16] if t in u["installed"] else "—")
         print(f"  {t:<26} {inst:<10} {n:>4}  {last}")
     silent = [t for t in tools if t in prov["ok"] and u["counts"].get(t, 0) == 0]
+    muets = [t for t in silent if t not in SKILL_TOOLS]     # une trace était possible, il n'y en a pas
+    inertes = [t for t in silent if t in SKILL_TOOLS]       # aucune trace ne peut exister
     outside = [t for t in tools if t not in prov["ok"] and t not in prov["ko"]]
     print(f"\n  hors installateurs : " + " · ".join(
         f"{w} {u['counts'].get(w, 0)}" for w in WRAPPED))
     print(f"\n  {seen_installed}/{len(prov['ok'])} outil(s) provisionné(s) ont laissé une trace · "
           f"{len(outside)} hors session, donc sans trace possible.")
-    if silent:
-        print(f"  {YEL}⚠{OFF} Provisionnés mais muets : {', '.join(silent)} — un outil installé jamais "
-              "appelé est un candidat à sortir (invariant 6), pas un acquis.")
-    print(f"  {YEL}⚠{OFF} Ce que ce compteur ne voit pas : scripts de tools/qa lancés à la main, skills "
-          "lus, recherche web. Ces ressources ne sont donc jamais comptées à la place de King.")
+    if muets:
+        print(f"  {YEL}⚠{OFF} Muets alors qu'une trace était possible : {', '.join(muets)} — "
+              "installés, appelables, jamais appelés. Candidats à sortir (invariant 6).")
+    print(f"  {YEL}⚠{OFF} Sans trace possible ({len(inertes)}) : ce sont des skills que cet agent ne "
+          "charge pas. Leur silence ne prouve pas leur inutilité — l'étude du 24/10 les juge sur une "
+          "tâche nommée, pas sur un compteur : ops/TOOL-SCAN.md.")
+    print(f"  {YEL}⚠{OFF} Ce que ce compteur ne voit pas non plus : scripts de tools/qa lancés à la main, "
+          "recherche web.")
     return 0
 
 

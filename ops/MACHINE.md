@@ -189,8 +189,12 @@ Une porte est un **code retour**, pas une impression. Si elle n'a pas été lanc
 dépôt (`~/.amk-provisioned/usage.log`) que les outils écrivent eux-mêmes — `machine`, `provision`,
 `graphify`, `ask` — et **oppose une trace à chaque phrase « j'ai utilisé l'outil »**. Il ne voit que ce
 qui laisse une trace : un script QA lancé à la main, un skill lu, une recherche web n'y figurent pas, donc
-ils ne sont jamais comptés à la place de King. Sa sortie la plus utile est la ligne *« provisionnés mais
-muets »* : un outil installé que rien n'appelle est un candidat à sortir (invariant 6), pas un acquis.
+ils ne sont jamais comptés à la place de King. Sa sortie la plus utile est la ligne *« muets alors qu'une trace était possible »* : un outil
+installé que rien n'appelle est un candidat à sortir (invariant 6), pas un acquis. Depuis le
+24/10, le compteur sépare deux silences qui n'ont rien à voir : **muet mesurable** (un CLI qui
+pouvait tracer) et **sans trace possible** (15 skills en markdown, que cet agent ne charge pas —
+leur silence ne dit rien de leur utilité). L'étude qui les juge, outil par outil et sur une tâche
+nommée, est dans `ops/TOOL-SCAN.md` (§ 24/10/2026).
 
 **Une seule copie du workflow.** Il vit dans `.github/workflows/machine.yml` et nulle part ailleurs :
 la version « à copier par King » a été supprimée le 24/10 dès que la vraie a existé. Deux copies d'une
@@ -309,6 +313,10 @@ explicite. Une règle sans porte est un trou ; un trou caché est une panne.
 - **Le tableau §9 peut mentir par omission** : c'est désormais la porte 13 qui le dit (`registre-complet`).
   Elle a été écrite le jour où le tableau annonçait douze règles quand le code en appliquait treize.
 - **Aucun outil ne juge un document** : `audit_files.py` compte, il ne lit pas. Le jugement reste entier.
+- **La session pèse plus lourd que le dépôt** : mesuré le 24/10, les 24 outils installés occupent
+  ~4,5 Go (`/tmp` + `~`) contre 165 Mo pour le dépôt. Rien de tout cela n'est dans Git, et tout
+  disparaît avec la session — le coût n'est pas le disque, c'est **cinq minutes de réinstallation
+  et vingt occasions de panne par session**. C'est ainsi que la CI est tombée trois fois le 24/10.
 
 *Cette carte se relit quand un outil entre ou sort, quand une porte change, ou quand une panne nouvelle
 apparaît. Sinon, elle se lance : `bash tools/ops/machine.sh`.*
