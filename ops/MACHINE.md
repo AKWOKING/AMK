@@ -14,6 +14,8 @@ bash tools/ops/machine.sh --who prix   # qui tranche le sujet « prix », et ce 
 bash tools/ops/machine.sh --merge      # la jauge de fusion : combien de fichiers/lignes depuis main
 bash tools/ops/machine.sh --rules      # les 12 règles debout, chacune avec sa porte (§9)
 bash tools/ops/provision.sh --list     # les 24 outils : installés cette session, ou pas
+bash tools/ops/install-hooks.sh        # pose le crochet pre-push : un push rouge ne part plus
+python3 tools/ops/machine.py --ci      # ce que le crochet joue, et ce que la CI jouera
 ```
 
 Le miroir Notion (PRE-FLIGHT §0g) est **daté ici**, dans une ligne que la machine lit :
@@ -171,6 +173,7 @@ Une porte est un **code retour**, pas une impression. Si elle n'a pas été lanc
 | Dépôt | `python3 tools/ops/audit_files.py` | doublons, orphelins, fichiers périmés, caches | la qualité d'un document |
 | Provision | `bash tools/ops/provision.sh --list` | outil absent de la session | la version réellement utilisée |
 | **Règles** | `bash tools/ops/machine.sh --rules` | les 7 portes dures du registre §9 | les 2 règles sans porte, dites en clair |
+| **Crochet** | `bash tools/ops/install-hooks.sh` (une fois par clone) → `.git/hooks/pre-push` | un push avec un secret ou un chemin mort | la carte rejouée (trop lent pour un crochet) |
 | **Usage** | `bash tools/ops/machine.sh --usage` | un outil provisionné qu'aucune trace ne montre appelé | ce qui ne laisse aucune trace : scripts QA lancés à la main, skills lus, recherche web |
 
 **La trace d'usage, et pourquoi elle existe.** Un outil « installé » n'est pas un outil « utilisé » : le
@@ -256,7 +259,13 @@ explicite. Une règle sans porte est un trou ; un trou caché est une panne.
 
 ## 10 · Ce qui manque encore, dit franchement
 
-- **Pas d'intégration continue** : les portes se lancent à la main. Rien ne bloque un push qui n'a pas passé `gate-amk.sh`.
+- **L'intégration continue est locale, pas encore côté GitHub** : le crochet `pre-push` bloque un push
+  avec un secret ou un chemin cité mort, et il est posé par `install-hooks.sh`. Le workflow qui ferait la
+  même chose *dans* GitHub est écrit et testé (`tools/ops/machine.workflow.yml`) mais **la GitHub App de
+  l'atelier n'a pas la permission `workflows`** : il doit être copié par King vers
+  `.github/workflows/machine.yml`. Tant qu'il ne l'est pas, la porte dépend d'un clone préparé.
+- **Le crochet se contourne** : `AMK_SKIP_CI=1 git push` — et il le dit à voix haute. Un garde-fou qui ne
+  se contourne pas serait un mur ; un garde-fou muet serait un piège.
 - **La fraîcheur du handoff n'est pas automatique** : le cockpit la signale, il ne la répare pas.
 - **`provision.sh` dépend du réseau** : sans GitHub ni PyPI, une session neuve n'a que les outils locaux (`tools/qa`, `tools/ops`, `tools/graphify` une fois installé).
 - **Notion reste manuel, mais il n'est plus oubliable** : la porte `miroir-notion` compare la ligne

@@ -1,12 +1,15 @@
-# LA MACHINE — les portes qui ne dépendent de rien de local.
+# À POSER PAR KING : copier ce fichier tel quel vers `.github/workflows/machine.yml`.
 #
-# Pourquoi ce fichier : jusqu'au 24/10, `machine.sh --check` s'ouvrait **à la main**. Un push pouvait
-# partir avec une carte périmée, un secret dans un fichier ou un chemin cité qui n'existe plus.
-# Ce workflow rejoue la variante `--ci` : elle ne teste que ce qui est vrai dans un runner — pas
-# d'estampes d'outils (~/.amk-provisioned), pas d'historique local, pas de miroir Notion.
+# Pourquoi il n'est pas déjà là : la GitHub App de l'atelier n'a pas la permission `workflows`,
+# et GitHub refuse le push (« refusing to allow a GitHub App to create or update workflow »).
+# Le fichier reste donc ici, versionné et testé, à la portée d'un copier-coller.
 #
-# Ce que la CI ne remplace pas : les règles qui demandent un jugement (stat sourcée, oui de King avant
-# un fichier debout neuf). Elles restent dans `--rules`, marquées « sans porte ».
+# Ce qu'il fait : à chaque push et à chaque PR, `machine.py --ci` (secrets, chemins cités) puis la
+# reconstruction de la carte, qui échoue si `ops/REPO-MAP.md` n'est pas à jour. Ce que la CI ne
+# remplace pas : les règles qui demandent un jugement — elles restent dans `--rules`, marquées
+# « sans porte ».
+#
+# Une fois posé, il n'y a plus rien à faire : chaque push est vérifié sans intervention.
 
 name: La machine
 
