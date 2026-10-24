@@ -41,7 +41,10 @@ OUT = ROOT / "graphify-out"
 GRAPH = OUT / "graph.json"
 MAP = ROOT / "ops" / "REPO-MAP.md"
 
-SKIP_DIRS = {".git", "node_modules", "graphify-out", "__pycache__", ".venv", "dist", "build", ".cache"}
+# `archive/` est un cimetière vivant : les documents y restent lisibles et récupérables, mais ils
+# sortent du corpus — ni nœud, ni citation, ni orphelin. C'est ce qui rend l'archivage utile :
+# le dépôt garde sa mémoire sans que la carte ni les portes paient pour elle.
+SKIP_DIRS = {".git", "node_modules", "graphify-out", "__pycache__", ".venv", "dist", "build", ".cache", "archive"}
 TEXT_EXT = {".md", ".mdx", ".txt", ".py", ".sh", ".mjs", ".js", ".html", ".css", ".yml", ".yaml",
             ".toml", ".csv", ".json", ".srt", ".xml", ".bat", ".gitignore", ""}
 KIND = {
@@ -92,17 +95,50 @@ def read(p: Path, cap: int = 2_000_000) -> str:
         return ""
 
 
+
+_TRACKED: set[str] | None = None
+
+
+def tracked_under(prefix: str) -> list[Path]:
+    """Les fichiers SUIVIS sous un préfixe — jamais le disque.
+
+    Correction du 24/10 (deuxième CI rouge) : ces tableaux comptaient avec `rglob`, donc un fichier
+    non versionné, un `.DS_Store` ou un cache local changeaient la carte. La carte décrit le dépôt ;
+    elle doit être identique à l'octet dans un clone propre, sinon la CI ne peut pas la rejouer.
+    """
+    global _TRACKED
+    if _TRACKED is None:
+        _TRACKED = {str(p) for p in walk()}
+    pref = prefix.rstrip("/") + "/"
+    return [Path(t) for t in sorted(_TRACKED) if t.startswith(pref)]
+
+
 def walk() -> list[Path]:
-    files: list[Path] = []
-    for dirpath, dirnames, filenames in os.walk(ROOT):
-        dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS]
-        rel = Path(dirpath).relative_to(ROOT)
-        for name in filenames:
-            relpath = rel / name if str(rel) != "." else Path(name)
-            if relpath == MAP.relative_to(ROOT) or relpath.name.startswith(("FILE-AUDIT-", "REPO-MAP")):
-                continue  # les rapports générés se citent eux-mêmes : les indexer fait boucler le graphe
-            files.append(relpath)
-    return sorted(files)
+    """La carte décrit **le dépôt**, pas le disque : elle ne lit que les fichiers suivis par git.
+
+    Correction du 24/10 (CI rouge) : la marche précédente parcourait le système de fichiers, donc un
+    fichier de travail non versionné, un cache ou un venv local changeaient la carte. Deux clones du
+    même commit produisaient deux cartes — et la CI, qui part d'une copie propre, ne pouvait pas la
+    rejouer à l'identique. `git ls-files` est la source unique : même commit, même carte, à l'octet.
+    """
+    tracked = subprocess.run(["git", "ls-files", "-z"], cwd=ROOT, capture_output=True, text=True)
+    if tracked.returncode == 0:
+        files = [Path(f) for f in tracked.stdout.split("\0") if f]
+    else:                                             # repli sans git : on retombe sur le disque
+        files = []
+        for dirpath, dirnames, filenames in os.walk(ROOT):
+            dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS]
+            rel = Path(dirpath).relative_to(ROOT)
+            for name in filenames:
+                files.append(rel / name if str(rel) != "." else Path(name))
+    out: list[Path] = []
+    for relpath in files:
+        if relpath.parts and relpath.parts[0] in SKIP_DIRS:
+            continue
+        if relpath == MAP.relative_to(ROOT) or relpath.name.startswith(("FILE-AUDIT-", "REPO-MAP")):
+            continue  # les rapports générés se citent eux-mêmes : les indexer fait boucler le graphe
+        out.append(relpath)
+    return sorted(set(out))
 
 
 def build_file_nodes(files: list[Path]) -> tuple[dict, dict]:
@@ -179,7 +215,9 @@ def build_citation_edges(nodes: dict, meta: dict) -> tuple[list[dict], dict]:
 
 
 SELF_STALE = re.compile(
-    r"(ce document|cette page|ce fichier|cette version|ce texte|cette r[èe]gle|la version|cette liste)"
+    # « la version » a été retirée le 24/10 : « la version française portait une copie obsolète »
+    # faisait passer pour périmé un document de revue SEO qui parlait d'autre chose.
+    r"(ce document|cette page|ce fichier|cette version|ce texte|cette r[èe]gle|cette liste)"
     r"[^.]{0,80}?(p[ée]rim[ée]e?|obsol[èe]te|remplac[ée]e?|ne (?:s'applique|s applique) plus|n'est plus en vigueur)",
     re.I)
 
@@ -207,11 +245,23 @@ def build_supersede_edges(meta: dict) -> tuple[list[dict], set[str]]:
             if not STALE_RE.search(line) and not SELF_STALE.search(line):
                 continue
             low = line.lower()
+            # Correction du 24/10 (optimisation 2/5) : « marqueur dans les 25 premières lignes »
+            # flaggait 37 documents dont la plupart PARLENT d'une chose périmée (une vidéo, une bio,
+            # une version de démo). Un document n'est périmé que si le marqueur le vise LUI :
+            #   (a) la ligne nomme son propre fichier,
+            #   (b) la phrase dit « ce document / cette version … est périmé »,
+            #   (c) c'est un titre de tête (8 premières lignes) qui ne cite aucun autre fichier.
+            head = line.lstrip()
+            # (c) une BANNIÈRE de tête : un titre (`#`/`>`) des 8 premières lignes qui porte le statut.
+            # Les lignes de tableau sont exclues : « | a | **Prix périmé.** | … » parle du prix, pas du
+            # document. Et un titre qui pointe vers son remplaçant reste un titre qui se déclare mort.
+            banner = (i < 8 and head.startswith(("#", ">")) and len(line) < 200
+                      and bool(re.search(r"superseded|p[ée]rim[ée]|obsol[èe]te|ne plus (?:utiliser|envoyer)",
+                                         low)))
             self_declared = (
-                i < 25
-                or own in low
+                own in low
                 or bool(SELF_STALE.search(line))
-                or bool(re.search(r"^#{1,6}\s.*(p[ée]rim[ée]e?|obsol[èe]te|superseded)", line, re.I))
+                or banner
             )
             if self_declared and re.search(r"p[ée]rim[ée]e?|obsol[èe]te|superseded", low):
                 stale.add(nid)
@@ -405,7 +455,8 @@ def write_map(g: dict, nodes_meta: dict, stale: set[str], stats: dict, comm: dic
     A("")
     A(f"```text\nGénéré par tools/graphify/build_full_graph.py — {date.today().isoformat()}\n"
       f"Source : graphify-out/graph.json ({len(g['nodes'])} nœuds, {len(g['edges'])} arêtes)\n"
-      f"Aucun LLM, aucune clé : tout est déterministe et rejouable en ~10 secondes.\n```")
+      f"Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même\n"
+      f"carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.\n```")
     A("")
     A("## 0 · En une page")
     A("")
@@ -522,8 +573,8 @@ def write_map(g: dict, nodes_meta: dict, stale: set[str], stats: dict, comm: dic
         for d in sorted(tools_dir.iterdir()):
             if not d.is_dir() or d.name.startswith((".", "_")):
                 continue
-            files = [f for f in d.rglob("*") if f.is_file()
-                     and "__pycache__" not in f.parts and not f.name.startswith(".")]
+            files = [ROOT / f for f in tracked_under(str(d.relative_to(ROOT)))
+                     if not f.name.startswith(".")]
             n_py = sum(1 for f in files if f.suffix in (".py", ".mjs", ".js"))
             n_md = sum(1 for f in files if f.suffix == ".md")
             n_sh = sum(1 for f in files if f.suffix in (".sh", ".yml", ".yaml"))
@@ -555,23 +606,20 @@ def write_map(g: dict, nodes_meta: dict, stale: set[str], stats: dict, comm: dic
     if clients_dir.is_dir():
         A("### Un dossier client = une ligne — ce qui existe, et s'il y a un brief")
         A("")
-        A("| Client | Fichiers | Documents | Brief ? | Dernier commit sur le dossier |")
-        A("|---|---|---|---|---|")
+        # Pas de colonne « dernier commit » : l'historique n'est pas reproductible (un clone superficiel
+        # et un clone complet ne donnent pas la même date), et la carte doit être identique à l'octet
+        # d'un clone à l'autre — c'est ce que la CI vérifie. La carte décrit l'ARBRE, pas l'historique.
+        A("| Client | Fichiers | Documents | Brief ? |")
+        A("|---|---|---|---|")
         for d in sorted(clients_dir.iterdir()):
             if not d.is_dir() or d.name.startswith(("_", ".")):
                 continue
-            files = [f for f in d.rglob("*") if f.is_file() and "__pycache__" not in f.parts]
+            files = [ROOT / f for f in tracked_under(str(d.relative_to(ROOT)))]
             docs_n = sum(1 for f in files if f.suffix == ".md")
             if not files:
                 continue
             brief = "oui" if any("brief" in f.name.lower() for f in files) else "—"
-            try:
-                stamp = subprocess.run(
-                    ["git", "log", "-1", "--format=%ad", "--date=short", "--", f"clients/{d.name}"],
-                    cwd=ROOT, capture_output=True, text=True, timeout=20).stdout.strip() or "—"
-            except (OSError, subprocess.SubprocessError):
-                stamp = "—"
-            A(f"| `{d.name}/` | {len(files)} | {docs_n} | {brief} | {stamp} |")
+            A(f"| `{d.name}/` | {len(files)} | {docs_n} | {brief} |")
         A("")
 
     # 5 ter · les vidéos et leurs pièces
@@ -584,7 +632,7 @@ def write_map(g: dict, nodes_meta: dict, stale: set[str], stats: dict, comm: dic
         for d in sorted(vids.iterdir()):
             if not d.is_dir() or d.name.startswith(("_", ".")):
                 continue
-            files = [f for f in d.rglob("*") if f.is_file()]
+            files = [ROOT / f for f in tracked_under(str(d.relative_to(ROOT)))]
             scripts = [f for f in files if f.suffix == ".md" and "status" not in f.name.lower()]
             mp4 = [f for f in files if f.suffix in (".mp4", ".mov", ".webm")]
             status = "—"
@@ -670,6 +718,36 @@ def write_map(g: dict, nodes_meta: dict, stale: set[str], stats: dict, comm: dic
     return "\n".join(L) + "\n"
 
 
+
+def _graphify_pin() -> str:
+    """L'épinglage vit dans install.sh (une seule source) — on le relit au lieu de le recopier."""
+    try:
+        m = re.search(r'^PIN="([^"]+)"', (ROOT / "tools/graphify/install.sh").read_text(encoding="utf-8"), re.M)
+        return m.group(1) if m else "0.9.95"
+    except OSError:
+        return "0.9.95"
+
+
+def _bootstrap_graphify() -> bool:
+    """Troisième CI rouge du 24/10 : le runner n'a pas le paquet amont, donc ce script sortait en code 2
+    et l'étape « la carte se rejoue à l'identique » échouait — pas à cause d'une carte périmée, à cause
+    d'une dépendance manquante. On l'installe ici, épinglée, pour que la porte mesure ce qu'elle prétend
+    mesurer. Désactivable : AMK_SKIP_BOOTSTRAP=1."""
+    if os.environ.get("AMK_SKIP_BOOTSTRAP") == "1":
+        return False
+    pin = _graphify_pin()
+    print(f"[full] graphify absent — installation épinglée graphifyy=={pin}", file=sys.stderr)
+    try:
+        r = subprocess.run([sys.executable, "-m", "pip", "install", "--quiet", f"graphifyy=={pin}"],
+                           capture_output=True, text=True, timeout=300)
+    except (OSError, subprocess.SubprocessError):
+        return False
+    if r.returncode != 0:
+        print((r.stderr or "")[-400:], file=sys.stderr)
+        return False
+    return True
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--no-map", action="store_true", help="ne pas réécrire ops/REPO-MAP.md")
@@ -682,8 +760,15 @@ def main() -> int:
         venv_py = Path(os.environ.get("AMK_GRAPHIFY_VENV", "/tmp/amk-graphify")) / "bin" / "python"
         if venv_py.exists() and Path(sys.prefix).resolve() != venv_py.parents[1].resolve():
             os.execv(str(venv_py), [str(venv_py), str(Path(__file__).resolve()), *sys.argv[1:]])
-        print("graphify absent : bash tools/graphify/install.sh", file=sys.stderr)
-        return 2
+        if _bootstrap_graphify():
+            try:
+                from graphify.extract import extract as ast_extract
+            except ImportError:
+                print("graphify installé mais importable ? — abandon", file=sys.stderr)
+                return 2
+        else:
+            print("graphify absent : bash tools/graphify/install.sh", file=sys.stderr)
+            return 2
 
     files = walk()
     print(f"[full] {len(files)} fichier(s) balayés")
@@ -748,6 +833,14 @@ def main() -> int:
     if not args.no_map:
         MAP.write_text(write_map(g, meta, stale, stats, comm), encoding="utf-8")
         print(f"[full] carte écrite → {MAP.relative_to(ROOT)}")
+    try:  # trace d'usage : « la carte a été reconstruite » doit être une ligne, pas un souvenir
+        from datetime import datetime as _dt
+        stamp = Path.home() / ".amk-provisioned"
+        stamp.mkdir(parents=True, exist_ok=True)
+        with (stamp / "usage.log").open("a", encoding="utf-8") as f:
+            f.write(f"{_dt.now().isoformat(timespec='seconds')}\tgraphify\tcarte ({len(g['nodes'])} nœuds)\n")
+    except OSError:
+        pass
     return 0
 
 

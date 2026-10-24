@@ -24,21 +24,25 @@ tools/record/node_modules/
 *.flac
 # la vidéo 06 est déjà suivie et doit le rester (exception explicite, pour la lisibilité)
 !content/videos/v06-facebook-no-booking/**
-# ── LIVRABLES VIDÉO CLIENTS, SUIVIS EXPLICITEMENT (22/10/2026)
-#    King : « je ne trouve pas ugc-03.mp4 sur github » · « where is post 1 ?? ».
-#    Un fichier ignoré n'est pas « rangé ailleurs » : il est hors de toute sauvegarde et invisible
-#    sur GitHub. Les vidéos FINIES livrées à un client sont donc versionnées, une par une,
-#    nommément. Rien d'autre n'entre : ni les brouillons, ni les .silent.mp4, ni les rushs.
-#    Coût actuel : ~11,6 Mo pour deux vidéos. Si King préfère revenir à la règle du 23/09,
-#    supprimer les deux lignes ci-dessous et les fichiers suivis.
-!clients/dm-optic/content/month1/w1/tiktok-01-v2.mp4
-!clients/dm-optic/content/month1/w1/ugc-03.mp4
-!clients/dm-optic/content/month1/w1/spot-02.mp4
-!clients/dm-optic/content/month1/w1/spot-03.mp4
-!clients/dm-optic/content/month1/w2/etapes-01.mp4
+# ── LIVRABLES VIDÉO CLIENTS : SORTIS DU DÉPÔT LE 24/10/2026
+#    22/10 — King : « je ne trouve pas ugc-03.mp4 sur github » · « where is post 1 ?? ».
+#    Cinq vidéos finies avaient donc été suivies nommément, avec leurs couvertures.
+#    24/10 — King : « la vidéo de DM optique qu'on a postée sur TikTok et Facebook, je l'ai déjà
+#    dans mon téléphone, et maintenant ça existe aussi sur Facebook et TikTok ». Le motif du 22/10
+#    a disparu : il ne les cherche plus sur GitHub, il les a, et le client les a aussi.
+#    Sortis du suivi : tiktok-01-v2.mp4, ugc-03.mp4, spot-02.mp4, spot-03.mp4, etapes-01.mp4
+#    + les deux couvertures etapes-01-cover.jpg et tiktok-01-v2-cover.jpg.
+#    Restent : les storyboards (.json, .md), les .srt, les plans de publication, les scripts de
+#    rendu. Rien n'est détruit : les cinq vidéos restent dans l'historique (jusqu'au commit
+#    d9b0e6f et antérieurs) et les couvertures aussi.
 # archives d'export : produites par un script, jamais versionnées
 /amk-site*.zip
 /site/*.zip
+# Le zip « du jour » se refait par `python3 demos/pack_dmoptic.py` et ne s'ajoute pas au dépôt.
+/dmopticsarl*.zip
+# Exception unique et datée, APRÈS la règle d'ignorance (git retient la dernière qui matche) :
+# l'archive du site DM telle qu'elle a été construite le 21/10, avec sa date dans le nom.
+!/dmopticsarl-2026-10-21.zip
 
 # brag : dossiers de travail et rendus (produits par la chaîne, hors dépôt — voir tools/brag/)
 brag-output*/

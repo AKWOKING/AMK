@@ -102,7 +102,7 @@ if 'Pipeline - 5 Stages' in wb.sheetnames:
     ci_next = pcol('next') or 7
     for nl in new_leads:
         ps.append([None] * (ci_name - 1) + [nl['School']] + [None] * (ci_stage - ci_name - 1) +
-                  ['1 -> 2 walk-in Tue 15', f"Tue 15 walk-in (sales/Walk-In-Batch-2026-09-15.md): meet principal, get WA, book preview review; concept within 24h on warm yes."])
+                  ['1 -> 2 walk-in Tue 15', f"Tue 15 walk-in (sales/Walk-In-Batch-2026-09-15.md — séquencement SUPERSEDED, voir Invitation-First-Replan-2026-09-15.md): meet principal, get WA, book preview review; concept within 24h on warm yes."])
 
 wb.save('leads/leads_50.xlsx')
 print('added', len(new_leads), 'leads; total', ws.max_row - 1)

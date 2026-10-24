@@ -8,6 +8,10 @@ audit, handoff, outils), et il renvoie au document qui tranche. La carte complè
     python3 tools/ops/machine.py 2              # la fiche de l'étape 2
     python3 tools/ops/machine.py --who prix     # qui tranche ce sujet
     python3 tools/ops/machine.py --check        # code 1 si une porte dure est fermée
+    python3 tools/ops/machine.py --rules        # les règles debout, chacune avec sa porte
+    python3 tools/ops/machine.py --usage        # quels outils ont laissé une trace (et lesquels sont muets)
+    python3 tools/ops/machine.py --ci           # la variante runner : secrets + chemins cités (code 1 sinon)
+    python3 tools/ops/machine.py --turns        # le rendement du jour : commits, fichiers, lignes, refus
 """
 from __future__ import annotations
 
@@ -17,10 +21,12 @@ import re
 import subprocess
 import sys
 from datetime import date, datetime
+from functools import lru_cache
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 MAP = ROOT / "ops" / "REPO-MAP.md"
+MACHINE = ROOT / "ops" / "MACHINE.md"
 STAMPS = Path.home() / ".amk-provisioned"
 SKILLS = Path.home() / ".claude" / "skills"
 
@@ -275,11 +281,413 @@ def merge_gauge() -> dict:
                 commits=commits, due=due, why=why)
 
 
+
+# ───────────────────────────────────────────────── les chemins cités existent-ils ?
+# Une carte qui cite un fichier disparu envoie lire dans le vide — c'est la moitié des « consignes
+# mortes » du 24/10. La règle est bête et c'est ce qu'on veut : chaque chemin entre backticks, dans les
+# tableaux de ops/MACHINE.md, doit exister (un glob est accepté s'il matche au moins un fichier).
+CITE = re.compile(r"`([A-Za-z0-9_./*§ -]+\.(?:md|py|sh|json|ya?ml|pdf))`")
+
+
+def cited_paths() -> list[tuple[str, int]]:
+    out: list[tuple[str, int]] = []
+    try:
+        lines = MACHINE.read_text(encoding="utf-8", errors="ignore").splitlines()
+    except OSError:
+        return out
+    for i, line in enumerate(lines, 1):
+        if not line.lstrip().startswith("|"):
+            continue
+        # Une ligne de retrait cite par nature un fichier disparu : c'est son métier, on ne la juge pas.
+        if re.search(r"retrait|retiré|supprim|ex-", line, re.I):
+            continue
+        for m in CITE.finditer(line):
+            for part in m.group(1).split():
+                if part.endswith((".md", ".py", ".sh", ".json", ".yml", ".yaml", ".pdf")):
+                    out.append((part, i))
+    return out
+
+
+@lru_cache(maxsize=1)
+def _basenames() -> dict[str, int]:
+    idx: dict[str, int] = {}
+    for f in run(["git", "ls-files"], timeout=60).splitlines():
+        if f:
+            idx[f.rsplit("/", 1)[-1]] = idx.get(f.rsplit("/", 1)[-1], 0) + 1
+    return idx
+
+
+def missing_cites() -> list[tuple[str, int]]:
+    """Un chemin cité résout par chemin exact, par glob, ou par nom de fichier **unique** dans le dépôt.
+    Ce qui ne résout pas est une consigne morte : la carte envoie lire un fichier qui n'existe plus."""
+    idx = _basenames()
+    gone: list[tuple[str, int]] = []
+    for path, line in cited_paths():
+        if "*" in path:
+            ok = bool(list(ROOT.glob(path)))
+        elif (ROOT / path).exists():
+            ok = True
+        else:
+            ok = idx.get(path.rsplit("/", 1)[-1], 0) == 1
+        if not ok:
+            gone.append((path, line))
+    return gone
+
+
+# ───────────────────────────────────────────────── la trace d'usage des outils
+# Un outil « installé » n'est pas un outil « utilisé ». Le 24/10, la panne notée dans MACHINE.md §8
+# était : 24 installateurs, 3 outils appelés. Ce compteur existe pour que la phrase « j'ai utilisé
+# l'outil » ne soit plus une affirmation mais une ligne horodatée, écrite par l'outil lui-même.
+# Il ne voit QUE ce qui laisse une trace : scripts lancés à la main, skills lus, web → invisibles, donc
+# jamais comptés à la place de King.
+USAGE = STAMPS / "usage.log"
+WRAPPED = ("machine", "provision", "graphify", "ask")
+
+
+def note_usage(tool: str, what: str = "") -> None:
+    """Best-effort : rater une trace ne casse jamais le travail."""
+    try:
+        STAMPS.mkdir(parents=True, exist_ok=True)
+        with USAGE.open("a", encoding="utf-8") as f:
+            f.write(f"{datetime.now().isoformat(timespec='seconds')}\t{tool}\t{what[:80]}\n")
+    except OSError:
+        pass
+
+
+# Les outils qui n'écrivent aucune trace PAR CONSTRUCTION : ce sont des skills — des fichiers markdown
+# qu'un agent lit s'il est branché sur ~/.agents/skills ou ~/.claude/skills. Cet agent-ci ne les charge
+# pas ; leur silence ne dit donc rien de leur utilité. Mesuré le 24/10 : quinze sur vingt-quatre.
+# Étude complète, trois passes, verdict par outil : ops/TOOL-SCAN.md (§ 24/10/2026).
+SKILL_TOOLS = frozenset({
+    "agency-agents", "awesome-claude-design", "claude-seo", "design-md",
+    "design-motion-principles", "ecc", "geo-seo-claude", "humanizer", "impeccable",
+    "marketingskills", "open-seo", "pro-design", "roast-room", "taste-skill", "ui-ux-pro-max",
+})
+
+def usage_state() -> dict:
+    """Deux choses différentes, comptées séparément : INSTALLER n'est pas UTILISER.
+
+    Le 24/10, `provision.sh` a installé les 24 outils d'un coup ; si l'installation comptait comme un
+    usage, le compteur aurait annoncé « 24/24 utilisés » le jour où il n'en avait jamais servi un seul.
+    """
+    counts: dict[str, int] = {}
+    installed: dict[str, str] = {}
+    last: dict[str, str] = {}
+    today: set[str] = set()
+    try:
+        lines = USAGE.read_text(encoding="utf-8", errors="ignore").splitlines()
+    except OSError:
+        lines = []
+    stamp_day = date.today().isoformat()
+    for ln in lines:
+        parts = ln.split("\t")
+        if len(parts) < 2:
+            continue
+        when, tool = parts[0], parts[1]
+        what = parts[2] if len(parts) > 2 else ""
+        if tool == "provision":                    # trace d'installation, pas d'usage
+            name = what.split()[0] if what else ""
+            if name:
+                installed[name] = when
+            continue
+        counts[tool] = counts.get(tool, 0) + 1
+        last[tool] = when
+        if when.startswith(stamp_day):
+            today.add(tool)
+    return dict(counts=counts, installed=installed, last=last, today=sorted(today), total=len(lines))
+
+
+def print_usage() -> int:
+    u = usage_state()
+    prov = provision_state()
+    tools = sorted(p.parent.name for p in (ROOT / "tools").glob("*/install.sh"))
+    print(f"\n{BOLD}USAGE RÉEL{OFF} — la trace laissée par les outils, pas la mémoire de l'agent")
+    print(f"fichier : {USAGE} · {u['total']} ligne(s)\n")
+    print(f"  {'outil':<26} {'installé':<10} {'vu':>4}  dernière trace")
+    seen_installed = 0
+    for t in tools:
+        inst = "oui" if t in prov["ok"] else ("échec" if t in prov["ko"] else "hors session")
+        n = u["counts"].get(t, 0)
+        if n and t in prov["ok"]:
+            seen_installed += 1
+        last = u["last"].get(t, "installé " + u["installed"][t][:16] if t in u["installed"] else "—")
+        print(f"  {t:<26} {inst:<10} {n:>4}  {last}")
+    silent = [t for t in tools if t in prov["ok"] and u["counts"].get(t, 0) == 0]
+    muets = [t for t in silent if t not in SKILL_TOOLS]     # une trace était possible, il n'y en a pas
+    inertes = [t for t in silent if t in SKILL_TOOLS]       # aucune trace ne peut exister
+    outside = [t for t in tools if t not in prov["ok"] and t not in prov["ko"]]
+    print(f"\n  hors installateurs : " + " · ".join(
+        f"{w} {u['counts'].get(w, 0)}" for w in WRAPPED))
+    print(f"\n  {seen_installed}/{len(prov['ok'])} outil(s) provisionné(s) ont laissé une trace · "
+          f"{len(outside)} hors session, donc sans trace possible.")
+    if muets:
+        print(f"  {YEL}⚠{OFF} Muets alors qu'une trace était possible : {', '.join(muets)} — "
+              "installés, appelables, jamais appelés. Candidats à sortir (invariant 6).")
+    print(f"  {YEL}⚠{OFF} Sans trace possible ({len(inertes)}) : ce sont des skills que cet agent ne "
+          "charge pas. Leur silence ne prouve pas leur inutilité — l'étude du 24/10 les juge sur une "
+          "tâche nommée, pas sur un compteur : ops/TOOL-SCAN.md.")
+    print(f"  {YEL}⚠{OFF} Ce que ce compteur ne voit pas non plus : scripts de tools/qa lancés à la main, "
+          "recherche web.")
+    return 0
+
+
+# ───────────────────────────────────────────────── les règles, et leur porte
+# Une règle sans porte est un trou. Chaque entrée ci-dessous dit : ce qu'elle interdit, le document
+# qui la porte, ce qui la déclenche, et **la commande qui la vérifie**. `sev` :
+#   dure  = la porte fermée fait échouer `--check` et `--rules` (code 1)
+#   souple = signalée, jamais bloquante (une alerte qu'on ignore est pire qu'une absence)
+#   trou  = aucune machine ne peut la vérifier — elle est dite ici, pas cachée
+MIRROR_LINE = re.compile(r"^MIRROR\s+(\d{4}-\d{2}-\d{2})\s+·\s+([0-9a-f]{7,40})", re.M)
+
+# Ce qui, une fois changé, oblige le miroir Notion à suivre le jour même (PRE-FLIGHT §0g).
+# Un préfixe ; le fichier est comparé tel quel ou par préfixe.
+# `ops/MACHINE.md` n'y figure pas : c'est le porteur de l'estampille, il ne se mesure pas lui-même.
+STANDING = (
+    "PRE-FLIGHT.md", "AGENTS.md", "ops/LIFECYCLE.md",
+    "knowledge/PRIX-", "clients/_uniqueness-registry.md", "clients/dm-optic/dossier.md",
+    "sales/Activity-Log.md", "sales/RESEARCH-STANDARD.md",
+)
+SECRET_SCAN = r"(password|passwd|mot de passe|api[_-]?key|bearer|secret)[[:space:]]*[:=][[:space:]]*[A-Za-z0-9_/+-]{8,}"
+
+
+def mirror_state() -> dict:
+    """Le miroir Notion a-t-il suivi les faits debout ? Lu sur la ligne MIRROR de ops/MACHINE.md."""
+    try:
+        txt = MACHINE.read_text(encoding="utf-8", errors="ignore")
+    except OSError:
+        return dict(ok=False, date=None, sha=None, days=None, behind=[], why="ops/MACHINE.md illisible")
+    m = MIRROR_LINE.search(txt)
+    if not m:
+        return dict(ok=False, date=None, sha=None, days=None, behind=[],
+                    why="aucune ligne MIRROR dans ops/MACHINE.md — le miroir n'a jamais été daté")
+    stamp, sha = m.group(1), m.group(2)
+    days = (date.today() - date.fromisoformat(stamp)).days
+    exists = subprocess.run(["git", "cat-file", "-e", f"{sha}^{{commit}}"], cwd=ROOT,
+                            capture_output=True).returncode == 0
+    if not exists:
+        return dict(ok=False, date=stamp, sha=sha, days=days, behind=[],
+                    why=f"MIRROR pointe {sha}, qui n'existe plus dans l'historique — re-dater après vérification")
+    names = [n for n in run(["git", "diff", "--name-only", f"{sha}..HEAD"], timeout=60).splitlines() if n]
+    behind = sorted({n for n in names if n.startswith(STANDING) or n in STANDING})
+
+    return dict(ok=not behind, date=stamp, sha=sha, days=days, behind=behind, why="")
+
+
+def claim_gaps() -> tuple[int, list[str]]:
+    """La porte faible du §1g : `audit_claims.py --sources` sur TOUT le dépôt (765 documents le 24/10).
+    Il ne juge pas la source — il dit qu'une ligne affirme un pourcentage sans lien, sans chemin, sans
+    « selon », sans « non revérifié », sans calcul. Précision assumée : on préfère 4 lignes justes à
+    185 lignes qu'on apprend à ignorer. Élargi de `knowledge/` au dépôt entier le 24/10, à la demande
+    de King (« les document d'information ne sont pas sources ») : 4 lignes sont tombées, pas 185."""
+    try:
+        out = subprocess.run([sys.executable, str(ROOT / "tools/qa/audit_claims.py"),
+                              "--sources", ".", "--json"],
+                             cwd=ROOT, capture_output=True, text=True, timeout=60)
+        gaps = json.loads(out.stdout or "[]")
+    except (OSError, subprocess.SubprocessError, ValueError):
+        return 0, []
+    return len(gaps), [f"{g['file'].split('/')[-1]}:{g['line']}" for g in gaps[:3]]
+
+
+def register_section() -> str:
+    """Le texte du §9 de la carte : la version que King lit, opposée à celle que le code applique."""
+    try:
+        txt = MACHINE.read_text(encoding="utf-8", errors="ignore")
+    except OSError:
+        return ""
+    if "## 9 \u00b7" not in txt:
+        return ""
+    return txt.split("## 9 \u00b7", 1)[1].split("\n## ", 1)[0]
+
+
+# Le dépôt n'est pas un disque dur (règle du 23/09), mais rien ne mesurait le poids suivi : le 24/10,
+# 144 Mo de fichiers suivis dont un mp4 de 14,6 Mo. Un seuil souple vaut mieux qu'une bonne intention :
+# il ne bloque pas, il empêche le retour silencieux du gras.
+MAX_TRACKED_MB = 160
+MAX_FILE_MB = 15.0
+
+
+def weight_state() -> dict:
+    """Le poids réellement suivi par git — pas le disque, pas le .git : l'arbre."""
+    files = run(["git", "ls-files", "-z"], timeout=60).split("\0")
+    total = 0
+    biggest, biggest_n = "", 0
+    for f in files:
+        if not f:
+            continue
+        try:
+            n = (ROOT / f).stat().st_size
+        except OSError:
+            continue
+        total += n
+        if n > biggest_n:
+            biggest, biggest_n = f, n
+    return dict(mb=total / 1048576, files=len([f for f in files if f]),
+                big=biggest, big_mb=biggest_n / 1048576)
+
+
+def rules() -> list[dict]:
+    """Les règles debout, chacune avec sa porte. Aucune n'est inventée ici : toutes renvoient à un §."""
+    g = git_state()
+    mg = merge_gauge()
+    gr = graph_state()
+    prov = provision_state()
+    _, audit_age = dated_file("ops/FILE-AUDIT-*.md")
+    _, handoff_age = dated_file("ops/HANDOFF-*.md")
+    mir = mirror_state()
+    out: list[dict] = []
+
+    def add(rid, rule, doc, when, sev, ok, detail):
+        out.append(dict(id=rid, rule=rule, doc=doc, when=when, sev=sev, ok=ok, detail=detail))
+
+    add("arbre-propre", "Rien ne reste hors commit quand le tour se dit fini.",
+        "PRE-FLIGHT §1e", "fin de tour, avant de pousser", "dure",
+        g["dirty"] == 0, f"{g['dirty']} fichier(s) modifié(s) non committé(s)" if g["dirty"] else "arbre propre")
+    upstream = run(["git", "rev-parse", "--abbrev-ref", "@{u}"])
+    add("tour-pousse", "Le tour finit poussé ; une branche sans remote n'est pas un travail rendu.",
+        "MACHINE §7 invariant 7", "fin de tour", "dure",
+        bool(upstream) and g["ahead"] == 0,
+        "pas de remote pour cette branche → git push -u origin <branche>" if not upstream
+        else (f"{g['ahead']} commit(s) non poussé(s)" if g["ahead"] else f"à jour avec {upstream}"))
+    add("fusion-sur-seuil", "La branche se fusionne sur seuil (40 fichiers · 3 000 lignes · jalon), pas sur humeur.",
+        "PRE-FLIGHT §1i · §1i bis", "chaque sortie de tour", "dure",
+        (not mg["ok"]) or (not mg["due"]),
+        mg["why"] + " → bash tools/ops/machine.sh --merge" if mg.get("due") else
+        (mg["why"] or f"{mg['files']} fichiers · {mg['lines']} lignes · {mg['commits']} commits — sous les seuils"))
+    add("carte-fraiche", "La carte du dépôt est reconstruite quand un fichier suivi bouge.",
+        "PRE-FLIGHT §0h", "dès qu'un fichier suivi change", "dure",
+        gr["ok"] and not gr["stale"],
+        f"plus récent que la carte : {gr['stale_by']} → python3 tools/graphify/build_full_graph.py"
+        if gr.get("stale") else (f"{gr['nodes']} nœuds · {gr['cites']} citations" if gr["ok"] else "ops/REPO-MAP.md absent"))
+    core = {"graphify", "superpowers"}
+    add("outils-provisionnes", "Une session neuve rejoue le noyau épinglé (graphify, superpowers) avant de travailler.",
+        "PRE-FLIGHT §1f", "début de session", "dure",
+        core <= set(prov["ok"]),
+        f"noyau complet · {len(prov['ok'])}/{prov['total']} au total" if core <= set(prov["ok"])
+        else f"noyau incomplet ({', '.join(sorted(core - set(prov['ok'])))}) → bash tools/ops/provision.sh --core")
+    add("miroir-notion", "Le miroir Notion suit le jour même tout changement d'un fait debout.",
+        "PRE-FLIGHT §0g", "commit qui touche un fait debout", "dure",
+        mir["ok"], (f"miroir daté {mir['date']} · à jour sur {mir['sha']}" if mir["ok"] and mir.get("sha") else
+                    (f"{len(mir['behind'])} fichier(s) de fait debout changé(s) depuis MIRROR {mir['sha']} "
+                    f"({', '.join(mir['behind'][:3])}{'…' if len(mir['behind']) > 3 else ''}) → mettre Notion à jour, puis re-dater MIRROR")
+                     if mir.get("sha") else mir["why"]))
+    secret_hits = run(["git", "grep", "-nIiE", SECRET_SCAN, "--", ".",
+                       ":!tools/superpowers/", ":!tools/graphify/"], timeout=60)
+    add("aucun-secret", "Ni mot de passe, ni clé, ni jeton dans un dépôt public.",
+        "PRE-FLIGHT §0g (ce qui ne va pas dans Notion)", "avant chaque push", "dure",
+        not secret_hits, f"{len(secret_hits.splitlines())} ligne(s) à vérifier → git grep -nIiE …"
+        if secret_hits else "aucune ligne de secret dans les fichiers suivis (superpowers exclu : code tiers épinglé)")
+    add("audit-frais", "Le comptage des fichiers a moins de sept jours.",
+        "ops/AUDIT-FICHIERS-2026-10-24.md", "chaque semaine", "souple",
+        audit_age is not None and audit_age <= 7,
+        f"{audit_age} j → python3 tools/ops/audit_files.py" if audit_age is not None else "aucun FILE-AUDIT-*.md")
+    add("handoff-frais", "L'état de reprise a moins de trois jours.",
+        "ops/HANDOFF-*.md", "tous les trois jours", "souple",
+        handoff_age is not None and handoff_age <= 3,
+        f"{handoff_age} j → réécrire le handoff" if handoff_age is not None else "aucun handoff daté")
+    gone = missing_cites()
+    add("docs-existants", "Tout chemin cité par les tableaux de la machine existe encore.",
+        "MACHINE §5 · §9 · §10", "chaque modification de la carte", "dure",
+        not gone, f"{len(gone)} chemin(s) cité(s) dans le vide : "
+        + ", ".join(f"{p} (L{l})" for p, l in gone[:4]) if gone
+        else f"{len(cited_paths())} chemins cités, tous présents")
+    n_gaps, where = claim_gaps()
+    add("stat-sourcee", "Aucune statistique sans source primaire nommée ; ce qui n'est pas revérifiable est écrit tel quel.",
+        "PRE-FLIGHT §1g", "chaque chiffre écrit", "souple", n_gaps == 0,
+        f"{n_gaps} pourcentage(s) sans appui dans le dépôt ({', '.join(where)}) → "
+        "python3 tools/qa/audit_claims.py --sources ." if n_gaps
+        else "aucun pourcentage affirmé sans lien, chemin, « selon » ou « non revérifié »")
+    w = weight_state()
+    add("poids-raisonnable", "Le poids suivi reste sous 160 Mo et aucun fichier ne dépasse 15 Mo sans décision.",
+        "règle du 23/09 « le dépôt n'est pas un disque dur »", "chaque commit", "souple",
+        w["mb"] <= MAX_TRACKED_MB and w["big_mb"] <= MAX_FILE_MB,
+        f"{w['mb']:.0f} Mo suivis · plus gros fichier {w['big']} ({w['big_mb']:.1f} Mo)"
+        + ("" if w["mb"] <= MAX_TRACKED_MB and w["big_mb"] <= MAX_FILE_MB
+           else f" → au-delà du seuil ({MAX_TRACKED_MB} Mo / {MAX_FILE_MB} Mo) : sortir, compresser, ou le dire"))
+    add("fichier-neuf-avec-king", "Un fichier debout nouveau n'existe qu'avec le oui de King.",
+        "PRE-FLIGHT §4b", "création d'un document souverain", "trou", True,
+        "sans porte machine : la porte est la proposition d'emplacement dans la réponse, puis le ruling")
+
+    # porte de conseil : ce qui a été ajouté et qui ressemble à une loi
+    base = mg.get("base")
+    new_docs = []
+    if base:
+        for n in run(["git", "diff", "--diff-filter=A", "--name-only", f"{base}..HEAD"], timeout=60).splitlines():
+            if n.endswith(".md") and (n.count("/") == 0 or n.startswith("ops/")) and not n.startswith("ops/templates/"):
+                new_docs.append(n)
+    add("document-neuf", "Tout .md neuf à la racine ou dans ops/ se déclare (ruling §4b) avant de devenir loi.",
+        "PRE-FLIGHT §4b", "apparition d'un .md souverain", "souple",
+        not new_docs, f"à faire confirmer : {', '.join(new_docs[:3])}" if new_docs else "aucun document souverain ajouté")
+    # la porte du registre : le tableau de §9 et cette fonction ne peuvent pas diverger en silence
+    sec = register_section()
+    known = [r["id"] for r in out] + ["registre-complet"]
+    missing = [i for i in known if f"`{i}`" not in sec]
+    add("registre-complet", "Aucune règle du code ne peut disparaître du tableau §9 sans faire échouer la porte.",
+        "MACHINE §9", "chaque --check", "dure", not missing,
+        f"{len(missing)} règle(s) appliquée(s) par le code et absente(s) de §9 : {', '.join(missing)}"
+        if missing else f"{len(known)} règles, toutes présentes dans §9")
+    return out
+
+
+CI_RULES = ("aucun-secret", "docs-existants")
+
+
+def ci() -> int:
+    """La variante d'un runner : ne garde que ce qui est vrai sans estampes, sans ~/, sans historique local.
+    La jauge de fusion est imprimée mais ne bloque pas : un PR au-dessus du seuil n'est pas une faute,
+    c'est le signal qu'il faut fusionner."""
+    rs = {r["id"]: r for r in rules()}
+    ko = [rs[i] for i in CI_RULES if i in rs and not rs[i]["ok"]]
+    for r in rs.values():
+        if r["sev"] == "dure" and r["id"] not in CI_RULES:
+            print(f"  · {r['id']:<22} hors CI ({r['detail']})")
+    for i in CI_RULES:
+        r = rs.get(i)
+        if not r:
+            continue
+        tag = f"{GRN}✓{OFF}" if r["ok"] else f"{RED}⛔{OFF}"
+        print(f"  {tag} {r['id']:<22} {r['detail']}")
+    mg = merge_gauge()
+    if mg["ok"] and mg["due"]:
+        print(f"  {YEL}⚠{OFF} fusion due — {mg['why']} (non bloquant en CI)")
+    note_usage("check", "ok" if not ko else "ko:" + ",".join(r["id"] for r in ko))
+    if ko:
+        print(f"\n{RED}CI ROUGE{OFF} : " + " · ".join(r["id"] for r in ko))
+        return 1
+    print(f"\n{GRN}✓{OFF} CI verte — les portes vérifiables dans un runner sont ouvertes")
+    return 0
+
+
+def print_rules() -> int:
+    rs = rules()
+    print(f"\n{BOLD}LES RÈGLES ET LEUR PORTE{OFF} — {len(rs)} règles · "
+          f"{sum(1 for r in rs if r['sev'] == 'dure')} portes dures · "
+          f"{sum(1 for r in rs if r['sev'] == 'trou')} sans porte, dites\n")
+    width = max(len(r["id"]) for r in rs) + 2
+    for r in rs:
+        sev = r["sev"]
+        tag = (f"{GRN}✓{OFF}" if r["ok"] else f"{RED}⛔{OFF}") if sev == "dure" else (
+            (f"{GRN}✓{OFF}" if r["ok"] else f"{YEL}⚠{OFF}") if sev == "souple" else f"○ ")
+        print(f"  {tag} {r['id']:<{width}} {r['doc']}")
+        print(f"      {r['rule']}")
+        print(f"      ↳ {r['detail']}\n")
+    hard = [r for r in rs if r["sev"] == "dure" and not r["ok"]]
+    if hard:
+        print(f"{RED}{len(hard)} porte(s) dure(s) fermée(s){OFF} : " + " · ".join(r["id"] for r in hard))
+        return 1
+    print(f"{GRN}✓{OFF} toutes les portes dures sont ouvertes")
+    return 0
+
+
 def newest_source() -> tuple[float, str]:
     """Le fichier suivi le plus récemment modifié, hors sorties régénérables."""
     files = run(["git", "ls-files", "-z"], timeout=60).split("\0")
-    # les sorties régénérables ne rendent pas la carte périmée : elles sont des produits, pas des sources
-    skip = ("graphify-out/", "ops/REPO-MAP.md", "ops/FILE-AUDIT-", ".git/")
+    # les sorties régénérables ne rendent pas la carte périmée : elles sont des produits, pas des sources.
+    # ops/MACHINE.md est exempté pour une raison mécanique : la ligne MIRROR y est réécrite à la fin de
+    # chaque tour, après la carte. La compter rendrait la porte rouge par construction, à chaque tour —
+    # et une porte toujours rouge est une porte qu'on apprend à ignorer. Le cockpit reste un nœud de la
+    # carte ; seuls ses changements ne déclenchent pas une reconstruction.
+    skip = ("graphify-out/", "ops/REPO-MAP.md", "ops/FILE-AUDIT-", ".git/", "ops/MACHINE.md")
     best, name = 0.0, "—"
     for f in files:
         if not f or f.startswith(skip):
@@ -294,7 +702,7 @@ def newest_source() -> tuple[float, str]:
         rel = str(p.relative_to(ROOT))
         if not p.is_file() or ".git" in p.parts or "graphify-out" in p.parts:
             continue
-        if rel.startswith(("ops/REPO-MAP.md", "ops/FILE-AUDIT-")):
+        if rel.startswith(("ops/REPO-MAP.md", "ops/FILE-AUDIT-")) or rel == "ops/MACHINE.md":
             continue
         try:
             m = p.stat().st_mtime
@@ -396,6 +804,16 @@ def cockpit() -> int:
     if audit_age is not None:
         tag = f"{GRN}✓{OFF}" if audit_age <= 7 else f"{YEL}⚠{OFF}"
         print(f"  {tag}  audit des fichiers : {audit_file.name} ({audit_age} j)")
+    rs = rules()
+    hard_ko = [r["id"] for r in rs if r["sev"] == "dure" and not r["ok"]]
+    trous = [r["id"] for r in rs if r["sev"] == "trou"]
+    tag = f"{GRN}✓{OFF}" if not hard_ko else f"{RED}⛔{OFF}"
+    note = "" if not hard_ko else " — " + " · ".join(hard_ko)
+    u = usage_state()
+    print(f"  {GRN}✓{OFF}  usage : {len(u['today'])} outil(s) tracé(s) aujourd'hui · "
+          f"{u['total']} trace(s) au total → bash tools/ops/machine.sh --usage")
+    print(f"  {tag}  règles : {len(rs)} déclarées · {len(hard_ko)} porte(s) dure(s) fermée(s)"
+          f" · {len(trous)} sans porte{note}")
     if handoff_age is not None:
         tag = f"{GRN}✓{OFF}" if handoff_age <= 3 else f"{YEL}⚠{OFF}"
         note = "" if handoff_age <= 3 else " — au-delà de 3 jours, il est réécrit"
@@ -495,30 +913,91 @@ def merge_card() -> int:
     return 0
 
 
+
+# ───────────────────────────────────────────────── le rendement du jour
+def turn_log() -> dict:
+    """Ce que la journée a produit : commits, fichiers, lignes — et combien de fois la machine a dit non.
+    Ce n'est pas une mesure de qualité : un gros commit peut être du déchet, une petite correction peut
+    valoir plus. C'est une mesure de ** volume**, pour que l'inefficacité se voie au lieu de se raconter."""
+    today = date.today().isoformat()
+    raw = run(["git", "log", f"--since={today} 00:00", "--no-merges", "--numstat",
+               "--format=%x00%h\x1f%ad\x1f%s", "--date=format:%H:%M"], timeout=60)
+    commits: list[dict] = []
+    cur: dict | None = None
+    for line in raw.splitlines():
+        if line.startswith("\x00"):
+            sha, when, subject = (line[1:].split("\x1f") + ["", ""])[:3]
+            if subject.startswith("Merge "):   # un clone superficiel fait passer une fusion pour un commit
+                cur = None
+                continue
+            cur = dict(sha=sha, when=when, subject=subject, files=0, added=0, deleted=0)
+            commits.append(cur)
+        elif cur is not None and "\t" in line:
+            parts = line.split("\t")
+            if len(parts) >= 2:
+                cur["files"] += 1
+                for i in (0, 1):
+                    try:
+                        cur["added" if i == 0 else "deleted"] += int(parts[i])
+                    except ValueError:
+                        pass
+    u = usage_state()
+    checks = [(ln.split("\t")[1], ln.split("\t")[2]) for ln in
+              (USAGE.read_text(encoding="utf-8", errors="ignore").splitlines() if USAGE.exists() else [])
+              if ln.startswith(today) and "\tcheck\t" in ln]
+    ko = [c[1] for c in checks if c[1].startswith("ko")]
+    rules_ko: dict[str, int] = {}
+    for k in ko:
+        for rid in k.replace("ko:", "").split(","):
+            if rid:
+                rules_ko[rid] = rules_ko.get(rid, 0) + 1
+    return dict(commits=commits,
+                files=sum(c["files"] for c in commits),
+                added=sum(c["added"] for c in commits),
+                deleted=sum(c["deleted"] for c in commits),
+                checks=len(checks), ko=len(ko), rules_ko=rules_ko,
+                tools=len(u["today"]))
+
+
+def print_turns() -> int:
+    t = turn_log()
+    print(f"\n{BOLD}RENDEMENT DU JOUR{OFF} — {date.today().isoformat()}")
+    print(f"  {len(t['commits'])} commit(s) · {t['files']} fichier(s) · "
+          f"+{t['added']} −{t['deleted']} lignes   (fusions exclues : elles ne produisent rien, elles livrent)")
+    if t["commits"]:
+        print(f"\n  {'heure':<6} {'sha':<9} {'fich.':>5} {'lignes':>7}  sujet")
+        for c in t["commits"]:
+            print(f"  {c['when']:<6} {c['sha']:<9} {c['files']:>5} {c['added'] + c['deleted']:>7}  {c['subject'][:58]}")
+    print(f"\n  portes vérifiées : {t['checks']} fois · {t['ko']} refus"
+          + (f" ({', '.join(f'{k} ×{v}' for k, v in sorted(t['rules_ko'].items(), key=lambda x: -x[1]))})" if t["rules_ko"] else ""))
+    print(f"  outils tracés aujourd'hui : {t['tools']}")
+    print(f"\n  {YEL}⚠{OFF} Ce que ce tableau ne dit pas : la valeur du travail. Un commit de 400 lignes")
+    print("     peut être du déchet, une ligne corrigée peut valoir une journée. Il rend le volume visible,")
+    print("     pas la qualité — c'est déjà ce qui manquait.")
+    return 0
+
+
 def check() -> int:
-    gr = graph_state()
-    prov = provision_state()
-    problems = []
-    if not gr["ok"]:
-        problems.append("ops/REPO-MAP.md absent")
-    elif gr["stale"]:
-        problems.append(f"carte périmée ({gr['stale_by']} plus récent)")
-    if not prov["ok"]:
-        problems.append("aucun outil provisionné cette session → bash tools/ops/provision.sh")
-    mg = merge_gauge()
-    if not mg["ok"]:
-        problems.append(mg["why"])
-    elif mg["due"]:
-        problems.append(f"fusion due — {mg['why']} → bash tools/ops/machine.sh --merge")
-    for p in problems:
-        print(f"{RED}⛔{OFF} {p}")
-    if problems:
+    """Une seule porte : les règles dures du registre. Ce que `--check` vérifie est ce que `--rules` imprime."""
+    hard = [r for r in rules() if r["sev"] == "dure" and not r["ok"]]
+    note_usage("check", "ok" if not hard else "ko:" + ",".join(r["id"] for r in hard))
+    for r in hard:
+        print(f"{RED}\u26d4{OFF} {r['id']} — {r['detail']}")
+        print(f"     {r['doc']} : {r['rule']}")
+    if hard:
+        print(f"\n{RED}PORTE FERMÉE{OFF} : {len(hard)} règle(s) dure(s) — détail : bash tools/ops/machine.sh --rules")
         return 1
-    print(f"{GRN}✓{OFF} portes dures ouvertes (carte à jour, outils provisionnés)")
+    print(f"{GRN}✓{OFF} portes dures ouvertes — détail : bash tools/ops/machine.sh --rules")
+    # ce qui est souple ne bloque pas, mais ne se cache pas : une porte qu'on ne voit jamais est
+    # exactement la façon dont une règle meurt en trois tours.
+    for r in rules():
+        if r["sev"] == "souple" and not r["ok"]:
+            print(f"{YEL}⚠{OFF} souple : {r['id']} — {r['detail']}")
     return 0
 
 
 def main(argv: list[str]) -> int:
+    note_usage("machine", argv[0] if argv else "cockpit")
     if not argv:
         return cockpit()
     a = argv[0]
@@ -527,6 +1006,14 @@ def main(argv: list[str]) -> int:
         return 0
     if a == "--check":
         return check()
+    if a == "--rules":
+        return print_rules()
+    if a == "--usage":
+        return print_usage()
+    if a == "--ci":
+        return ci()
+    if a == "--turns":
+        return print_turns()
     if a == "--merge":
         return merge_card()
     if a == "--who":
@@ -540,6 +1027,7 @@ def main(argv: list[str]) -> int:
             graph={k: v for k, v in graph_state().items() if k != "stale_by"},
             provision={k: len(v) if isinstance(v, list) else v for k, v in provision_state().items()},
             skills=skills_state(),
+            rules=[{k: v for k, v in r.items() if k != "rule"} for r in rules()],
         ), ensure_ascii=False, indent=2))
         return 0
     try:

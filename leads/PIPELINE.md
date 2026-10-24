@@ -16,7 +16,7 @@
 | ⛔ Écarté | **15** |
 | **Total** | **163** |
 
-- **Contactés :** 68 · **Réponses humaines :** 10 · **Taux de réponse : 14.7 %**
+- **Contactés :** 68 · **Réponses humaines :** 10 · **Taux de réponse : 14.7 %** (calculé : 10 ÷ 68)
 - **Réponses automatiques (hors PRR) :** 1
 - **Clients :** 0 · **Revenu :** 0 FCFA
 

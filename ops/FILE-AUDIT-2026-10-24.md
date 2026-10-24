@@ -2,7 +2,7 @@
 
 ```text
 Généré par tools/ops/audit_files.py — 2026-10-24
-1634 fichiers · 188.5 Mo · dont 66.2 Mo dans des fichiers > 5 Mo
+1622 fichiers · 137.4 Mo · dont 23.0 Mo dans des fichiers > 5 Mo
 Aucune suppression automatique : les décisions sont listées, pas prises.
 ```
 
@@ -10,7 +10,7 @@ Aucune suppression automatique : les décisions sont listées, pas prises.
 
 | Classe | Fichiers | Poids | Action |
 |---|---|---|---|
-| caches (`__pycache__`, `*.pyc`) | 0 | 0 o | `python3 tools/ops/audit_files.py --clean-cache` |
+| caches (`__pycache__`, `*.pyc`) | 2 | 144.0 Ko | `python3 tools/ops/audit_files.py --clean-cache` |
 
 ## 2 · Doublons exacts — octet pour octet
 
@@ -75,28 +75,74 @@ Aucun doublon à l'intérieur d'un même projet.
 
 ## 4 · Documents
 
-- **412 documents sans citation entrante** — à relire ou à archiver (voir `ops/REPO-MAP.md` §3 bis).
-- **37 documents marqués périmés par leur propre texte** — détection lexicale, à vérifier un par un.
+- **404 documents sans citation entrante** — à relire ou à archiver (voir `ops/REPO-MAP.md` §3 bis).
+- **1 documents marqués périmés par leur propre texte** — détection lexicale, à vérifier un par un.
 
 | Périmé (d'après lui-même) | Cité par |
 |---|---|
-| `content/strategy/RULE-CREDENTIAL-CLAIMS.md` | 24× |
-| `clients/dm-optic/build-notes.md` | 16× |
-| `sales/AMK-Playbook-Addendum-Outcomes-2026-09-15.md` | 10× |
-| `site/SEO-REVIEW-2026-10-08.md` | 10× |
-| `sales/Outreach-Pack-2026-09-14.md` | 9× |
-| `content/pipeline/CONTENT-PIPELINE.md` | 8× |
-| `clients/dm-optic/launch/SETUP-TIKTOK.md` | 7× |
-| `AGENTS.md` | 6× |
-| `clients/dm-optic/content/month1/w1/ugc-03.md` | 6× |
-| `sales/RDV-UNILABO-2026-09-25.md` | 6× |
-| `leads/CONTRADICTIONS.md` | 4× |
-| `ops/GIT-STABILITY-NOTE.md` | 4× |
-| `sales/social/founding-post-tiktok-ig.md` | 4× |
-| `site/DEPLOY.md` | 4× |
-| `sales/OUTREACH-REECRITURE-2026-10-24.md` | 3× |
+| `sales/Walk-In-Batch-2026-09-15.md` | 3× |
 
 ⚠️ **Ni l'orphelin ni le « périmé » ne se supprime automatiquement.** Le 24/10, `AMK-DESIGN-SKILLS.md` était signalé « remplacé par Activity-Log » — c'est faux, et une suppression sur cette base aurait effacé 1 400 lignes de règles de design.
+
+## 4 bis · Les orphelins datés — ce que personne ne cite, et qui ne peut pas expirer
+
+**404 orphelins** au total, mais **74 seulement à traiter** : les autres sont normaux (164 imports tiers, 116 fiches CRM reliées par la base, 50 README d'outils installés).
+
+- **29 n'ont aucune date**, ni dans leur chemin, ni dans leurs douze premières lignes : un document sans date ne peut pas expirer, donc il ne meurt jamais.
+- Les 45 autres s'étalent du **2026-09-21** au **2026-10-24**.
+
+| Famille | Orphelins | Le plus ancien | Verdict proposé |
+|---|---|---|---|
+| `research/youtube-lessons` | 29 | 2026-10-11 | archiver après synthèse |
+| `clients/dm-optic` | 11 | 2026-10-07 | citer (point d'entrée d'un dossier vivant) |
+| `ops/` | 7 | 2026-10-07 | à décider |
+| `content/videos` | 6 | 2026-10-22 | archiver avec le lot du mois |
+| `content/scripts` | 4 | sans date | à décider |
+| `ops/templates` | 3 | sans date | citer depuis la machine |
+| `sales/` | 3 | 2026-09-21 | à décider |
+| `content/pipeline` | 2 | 2026-10-05 | à décider |
+| `hosting/samples` | 2 | sans date | à décider |
+| `content/` | 1 | sans date | citer (point d'entrée d'un dossier vivant) |
+| `content/assets` | 1 | sans date | à décider |
+| `content/studio` | 1 | sans date | citer (point d'entrée d'un dossier vivant) |
+| `design/` | 1 | sans date | citer (point d'entrée d'un dossier vivant) |
+| `leads/` | 1 | sans date | à décider |
+| `sales/VAGUE-2026-10-12` | 1 | 2026-10-12 | archiver |
+| `site/` | 1 | 2026-10-23 | à décider |
+
+*Le verdict est une **proposition**, pas une décision : archiver = `git mv` vers `archive/`, jamais supprimer. `archive/` sort du corpus (ni carte, ni portes, ni audit) mais reste dans git.*
+
+**Les documents sans date** (à dater ou à archiver) :
+
+- `clients/dm-optic/content/month1/c1-render/README.md`
+- `clients/dm-optic/content/month1/w2/etapes-01-validation-client.md`
+- `clients/dm-optic/content/month1/w2/etapes-01.md`
+- `clients/dm-optic/content/month1/w2/facebook-post-enfants.md`
+- `clients/dm-optic/onboarding/VISIT-FALLBACKS.md`
+- `clients/dm-optic/onboarding/VOICE-NOTE-MARDI-06-10.md`
+- `content/README.md`
+- `content/assets/ASSETS.md`
+- `content/pipeline/post01/SENTENCE-TIMING-v5d.md`
+- `content/scripts/v01-instagram-vs-website.md`
+- `content/scripts/v02-five-website-answers.md`
+- `content/scripts/v03-part2-three-reasons.md`
+- `content/scripts/v04-before-whatsapp.md`
+- `content/studio/README.md`
+- `content/videos/v02-five-website-answers/STATUS.md`
+- `content/videos/v03-part2-three-reasons/STATUS.md`
+- `content/videos/v04-before-whatsapp/STATUS.md`
+- `content/videos/v05-schools/STATUS.md`
+- `design/README.md`
+- `hosting/samples/DEPLOY.md`
+- `hosting/samples/design-research.md`
+- `leads/M1-EXTRACTION-REPORT.md`
+- `ops/CHANGELOG-VENDREDI.md`
+- `ops/CHECKPOINT-MARDI-06-10-20H.md`
+- `ops/FIRST-CLIENT-PRE-MORTEM.md`
+- `ops/POST-WEDNESDAY-2026-10.md`
+- `ops/templates/TASK-TEMPLATE-CARROUSEL.md`
+- `ops/templates/TASK-TEMPLATE-SITE-BUILD.md`
+- `ops/templates/TASK-TEMPLATE-UGC-SCRIPT.md`
 
 ## 5 · Archives et artefacts
 
@@ -104,25 +150,19 @@ Aucun doublon à l'intérieur d'un même projet.
 |---|---|---|---|
 | `amk-factures-pwa-v2.zip` | 86.1 Ko | — | 6 fichier(s), plus récent 2026-10-23 |
 | `amk-factures-pwa.zip` | 85.8 Ko | — | 6 fichier(s), plus récent 2026-10-23 |
-| `dmopticsarl.zip` | 4.6 Mo | `demos/pack_dmoptic.py` | 182 fichier(s), plus récent 2026-10-21 |
+| `dmopticsarl-2026-10-21.zip` | 4.6 Mo | — | 182 fichier(s), plus récent 2026-10-21 |
 
 ## 6 · Les 20 plus gros fichiers — ce qui pèse dans l'historique
 
 | Fichier | Taille |
 |---|---|
 | `clients/dm-optic/brag/brag.mp4` | 14.6 Mo |
-| `clients/dm-optic/content/month1/w1/spot-03.mp4` | 13.6 Mo |
-| `clients/dm-optic/content/month1/w1/spot-02.mp4` | 12.1 Mo |
-| `clients/dm-optic/content/month1/w2/etapes-01.mp4` | 11.1 Mo |
 | `clients/dm-optic/photoshoot/others/PXL_20261016_132758528.MP.jpg` | 8.4 Mo |
-| `clients/dm-optic/content/month1/w1/ugc-03.mp4` | 6.5 Mo |
-| `dmopticsarl.zip` | 4.6 Mo |
-| `clients/dm-optic/content/month1/w1/tiktok-01-v2.mp4` | 4.5 Mo |
+| `dmopticsarl-2026-10-21.zip` | 4.6 Mo |
 | `content/videos/v06-facebook-no-booking/Video_06_Facebook_No_Booking_VOIX.mp4` | 4.1 Mo |
 | `content/videos/v06-facebook-no-booking/Video_06_Facebook_No_Booking.mp4` | 3.2 Mo |
 | `clients/dm-optic/photoshoot/others/PXL_20261016_131635710.MP.jpg` | 3.0 Mo |
 | `tryon-camera/V2 Try-On Camera.html` | 2.9 Mo |
-| `tryon-camera/archive/V1 Try-On Camera.html` | 2.9 Mo |
 | `demos/img/le-cristallin-lab.png` | 2.6 Mo |
 | `demos/img/le-cristallin-hero.png` | 2.5 Mo |
 | `clients/dm-optic/photoshoot/reference-composition-NE-PAS-PUBLIER/B1-entree-cabinet.png` | 2.4 Mo |
@@ -130,9 +170,15 @@ Aucun doublon à l'intérieur d'un même projet.
 | `demos/img/le-cristallin-tryon.png` | 2.3 Mo |
 | `clients/dm-optic/photoshoot/reference-composition-NE-PAS-PUBLIER/B2-salle-examen.png` | 2.2 Mo |
 | `clients/dm-optic/photoshoot/reference-composition-NE-PAS-PUBLIER/C2-monture-tenue-hauteur.png` | 2.2 Mo |
+| `mockups/oracare-phone.png` | 1.6 Mo |
+| `content/assets/host/s1_hook.png` | 1.2 Mo |
+| `brand/avatar-amk.png` | 1.1 Mo |
+| `clients/dm-optic/photoshoot/reference-composition-NE-PAS-PUBLIER/A3-profil-branches.png` | 1.1 Mo |
+| `tryon-camera/apercus/exemples-6-montures.png` | 1009.3 Ko |
+| `content/pipeline/post01/vo/vo-master-v5d.mp3` | 992.9 Ko |
 
 ⚠️ **Le `.git` ne perd rien quand on supprime un fichier.** Un binaire retiré reste dans l'historique ; seul un `git filter-repo` (réécriture + force-push) le retire vraiment. Tant que ce n'est pas fait, supprimer un gros média allège le disque, pas le dépôt.
 
 ---
 
-*Rejouable : `python3 tools/ops/audit_files.py`. Rapport précédent à comparer : 1634 fichiers, 188.5 Mo.*
+*Rejouable : `python3 tools/ops/audit_files.py`. Rapport précédent à comparer : 1622 fichiers, 137.4 Mo.*

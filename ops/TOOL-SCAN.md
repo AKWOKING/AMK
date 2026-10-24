@@ -736,7 +736,105 @@ modèle opaque ne peut pas offrir sur ces photos.
   écrit dans le contexte au démarrage est exactement ce que la convention `marketingskills` refuse
   (aucun hook, aucun sudo, aucun script de cycle de vie). `--with-hook` existe pour l'activer un jour,
   sciemment, avec sauvegarde de `settings.json` — il n'a pas été lancé.
+- **(f bis) Usage tracé — 24/10, 14:20.** Le compteur `machine.sh --usage` a nommé superpowers dans la
+  ligne *« provisionnés mais muets »* : installé le matin, appelé par rien. Plutôt que de le laisser
+  pourrir ou de le sortir, il est **appelé** : `bash tools/superpowers/use.sh verification-before-completion`
+  affiche le skill et écrit une ligne datée dans `~/.amk-provisioned/usage.log`. Le skill a servi le jour
+  même — il exige une preuve fraîche avant toute affirmation de réussite, ce qui est exactement la
+  vérification de clôture du lot CI. **Verdict maintenu : pursue**, et désormais mesurable : sans trace,
+  un outil est un candidat à sortir (invariant 6) ; avec trace, il reste.
 - **(f) Limite dite :** ces skills décrivent un **processus**, pas notre métier. Ils ne remplacent aucune
   règle du dépôt (structure en quatre temps, §1g, registre d'unicité) ; ils disent comment travailler,
   pas quoi écrire. Le nœud vit dans le graphe sous `tools/superpowers/` — vérifié par
   `build_full_graph.py` le 24/10.
+
+---
+
+## 24/10/2026 — **les 22 outils muets** : étude complète, trois passes (demande de King)
+
+> King : « en ce qui concerne les 22 outils muets, je veux que tu fasses une étude complète sur eux et
+> tu vérifies trois fois si ça ne peut servir à rien à une web agency comme la nôtre. »
+
+### 0 · Ce que « muet » voulait dire, et ce qu'il ne disait pas
+
+`machine.sh --usage` affichait « **2/24 outils tracent** ». Ce chiffre était juste et trompeur : sur les
+24, **quinze n'écrivent aucune trace par construction** — ce sont des *skills*, des fichiers markdown
+qu'un agent lit s'il est branché sur `~/.agents/skills` ou `~/.claude/skills`. Cet agent-ci ne les lit
+pas automatiquement. Un skill muet ne prouve donc pas qu'il est inutile : il prouve qu'on l'a installé
+pour un harnais qu'on n'utilise pas. La correction du compteur est faite dans le même commit
+(`--usage` sépare désormais « muets mesurables » et « sans trace possible »).
+
+### 1 · La méthode — trois passes, indépendantes
+
+| Passe | Ce qu'elle regarde | Ce qu'elle ne peut pas voir |
+|---|---|---|
+| **P1 · l'annonce** | le dépôt d'origine : description, étoiles, dernier commit, licence (API GitHub, 24/10) | si le contenu tient ses promesses |
+| **P2 · le dépôt sur le disque** | ce que `install.sh` pose réellement : où, combien de Mo, quelles dépendances, quel binaire | si ça produit un résultat utile |
+| **P3 · la tâche** | une tâche AMK **nommée, datée, de cette semaine** que l'outil ferait mieux que ce qu'on a | si la tâche apparaîtra dans un mois |
+
+Le verdict tombe sur la conjonction : **P3 vide = sortir**, même si P1 est brillant et P2 propre.
+
+### 2 · Le tableau — 22 outils
+
+| Outil | P1 · l'annonce (★ · dernier commit · licence) | P2 · ce qu'il pose sur le disque | P3 · la tâche de cette semaine | Verdict |
+|---|---|---|---|---|
+| `agency-agents` | 163 641 ★ · 19/10 · MIT · 100+ personas d'agents | 12 Mo de clones + personnes dans `~/.claude/agents` (5 Mo) | aucune : un humain + un agent, et nos personas sont nos documents | **sortir** |
+| `agent-reach` | 101 557 ★ · 23/10 · MIT · lire Twitter/Reddit/YouTube | venv dédié ; **API payantes**, clés absentes | aucune : nos prospects sont sur Facebook/WhatsApp à Douala, pas sur Reddit | **sortir** |
+| `awesome-claude-design` | 4 194 ★ · 20/06 · MIT · 68 systèmes de design en DESIGN.md | 139 Ko de markdown, zéro code | aucune cette semaine ; utile le jour d'une nouvelle direction | **réserver** |
+| `brag` | 18 278 ★ · 23/10 · MIT · transformer un projet en vidéo de lancement | 202 Mo (`/tmp/amk-brag`) + 17 Mo de skill | aucune : on ne lance pas de produit, et AMK n'a aucune présence en ligne à alimenter | **sortir** |
+| `claude-seo` | 20 032 ★ · 22/10 · MIT · 26 sous-skills SEO | **765 Mo** — le skill embarque `ms-playwright` (navigateurs) | aucune : l'audit SEO des 97 pages DM est fait, et notre playbook maison tranche | **sortir** |
+| `design-md` | 3 064 ★ · 25/05 · MIT · extension Chrome → DESIGN.md | 334 Ko ; l'extension ne tourne pas ici | aucune : nos sites sont les nôtres, on ne reverse-ingénie pas un design | **sortir** |
+| `design-motion-principles` | 1 411 ★ · 30/05 · MIT · motion design | 32 Ko de markdown | aucune : sites statiques, très peu d'animation | **sortir** |
+| `ecc` | 287 761 ★ · 20/10 · MIT · « performance d'harness » | 276 Ko + 5 Mo d'agents | aucune : c'est notre `ops/MACHINE.md` qui joue ce rôle, avec nos règles | **sortir** |
+| `geo-seo-claude` | 11 219 ★ · 24/10 · MIT · SEO pour réponses IA | **222 Mo** | aucune : à Douala, la recherche passe par Facebook et WhatsApp, pas par un chatbot | **sortir** |
+| `humanizer` | 60 159 ★ · 16/10 · MIT · retirer les tics d'écriture IA | 32 Ko | **oui, mais bornée** : les 48 pages anglaises du site DM, où ces tics sont anglais | **réserver** |
+| `hypit` | 25 295 ★ · 23/10 · licence modifiée · cloner une vidéo virale | CLI npm + dépendances ; clonage de visages | aucune, et on ne veut pas : nos vidéos sont tournées chez le client | **sortir** |
+| `impeccable` | 85 969 ★ · 24/10 · Apache-2.0 · langage de design pour agents | 100 Ko de markdown | oui : les trois prochaines pages publiques (cliniques) | **garder** |
+| `marketingskills` | 56 331 ★ · 22/10 · MIT · CRO, copy, analytics | 100+ skills dans `~/.agents/skills` | aucune : `knowledge/` et `sales/RESEARCH-STANDARD.md` disent déjà quoi faire, et mieux pour notre marché | **sortir** |
+| `moneyprinter` | 134 758 ★ · 24/10 · MIT · vidéo IA depuis un mot-clé | **2,0 Go** (`/tmp/amk-moneyprinter`) | aucune : nos vidéos sont des tournages client, pas du stock | **sortir** |
+| `open-seo` | 24 775 ★ · 23/10 · MIT · alternative à Semrush | 68 Mo de source ; demande un serveur et une base | aucune : pas d'hébergement persistant, et 3 clients | **sortir** |
+| `photo` | *(maison)* · rembg + Pillow | **817 Mo** de venv + 85 Mo de modèle | oui, à la première photo client | **garder** |
+| `pro-design` | *(maison, donné par King)* | 32 Ko, markdown pur | oui : la boucle de vérification de chaque page | **garder** |
+| `roast-room` | 1 079 ★ · 22/10 · licence modifiée · 7 conseillers qui critiquent un projet | 1,4 Mo | une fois par trimestre, pas cette semaine | **réserver** |
+| `scrapling` | 89 429 ★ · 22/10 · BSD-3 · framework de scraping | 348 Ko + paquet pip | aucune : les cibles utiles (pages Facebook) interdisent le scraping, et les annuaires se lisent à la main | **sortir** |
+| `taste-skill` | 101 860 ★ · 20/10 · MIT · « le goût » pour agents | 100 Ko | aucune : doublon d'`impeccable` et de `pro-design` | **sortir** |
+| `ui-ux-pro-max` | 139 757 ★ · 23/10 · MIT · intelligence UI/UX | 200 Ko | aucune : doublon ; le site DM est déjà construit et validé | **sortir** |
+| `video` | *(maison)* · Chromium + Puppeteer | 120 Mo (`/tmp/amk-video`) | oui : c'est la chaîne qui a produit les cinq vidéos publiées | **garder** |
+
+**Bilan : 4 garder · 3 réserver · 15 sortir.** (`graphify` et `superpowers` sont hors tableau : ce sont
+les deux seuls qui laissent une trace, 19 et 1 appels.)
+
+### 3 · Ce que la mesure a révélé et qui n'était pas la question
+
+En mesurant P2, une chose est apparue, plus grosse que le tableau : **les outils pèsent 4,5 Go dans la
+session quand le dépôt pèse 165 Mo.** MoneyPrinterTurbo seul fait 2,0 Go, le venv photo 817 Mo,
+`claude-seo` 765 Mo de navigateurs, `geo` 222 Mo. On installait 27 fois le poids du dépôt pour produire
+ce que quatre outils produisent.
+
+Rien de tout cela n'est dans Git — c'est du `/tmp` et du `~` qui disparaissent avec la session. Le coût
+n'est donc pas le disque de King : c'est **cinq minutes de réinstallation à chaque session, et vingt
+occasions de panne en plus** (c'est exactement ainsi que la CI est tombée trois fois le 24/10).
+
+### 4 · La décision proposée
+
+1. **Garder installés par défaut** : `graphify`, `superpowers`, `photo`, `video` — plus `pro-design`,
+   qui est du markdown dans le dépôt et ne coûte rien.
+2. **Réserver** : `impeccable` (lu, pas installé en permanence), `humanizer` (pages EN),
+   `awesome-claude-design`, `roast-room` — installables en une commande, jamais par défaut.
+3. **Sortir du défaut, pas du dépôt** : les quinze autres gardent leur `install.sh` épinglé (8 Ko
+   chacun) et se remettent par `bash tools/ops/provision.sh --only <nom>`. Supprimer l'installeur
+   serait perdre la recette pour économiser 120 Ko ; on retire la cuisson, pas la recette.
+4. **Changer le défaut de `provision.sh`** : fait le 24/10 au soir, sur le oui de King. `bash
+   tools/ops/provision.sh` sans argument installe le **noyau de travail** — `graphify`, `superpowers`,
+   `photo`, `video` — et affiche comment installer un autre outil (`--only <nom>`). `--all` retrouve
+   l'ancien comportement (24 outils, ~5 min, 4,5 Go).
+
+### 5 · Ce que l'étude ne prouve pas
+
+- **Elle ne prouve pas qu'un outil sorti est mauvais.** Elle prouve qu'aucune tâche de cette semaine ne
+  l'appelle. Un outil sorti revient en une commande.
+- **Elle ne prouve pas que P3 est stable.** Une tâche peut apparaître dans trois semaines (une vidéo de
+  lancement, une deuxième langue, un audit SEO de dix pages) — et le verdict change avec elle. C'est
+  écrit ici pour que le retour ne soit pas vécu comme un aveu.
+- **Les étoiles ne sont pas une preuve d'utilité.** Les deux dépôts les plus étoilés de la liste
+  (`ecc`, 287 761 ★) et (`moneyprinter`, 134 758 ★) sont précisément deux des sorties les plus nettes.

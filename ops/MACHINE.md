@@ -12,11 +12,29 @@ bash tools/ops/machine.sh              # le cockpit : l'étape, ce qui est frais
 bash tools/ops/machine.sh 2            # la fiche de l'étape 2 (lecture) : quoi lire, quoi lancer, quand c'est fini
 bash tools/ops/machine.sh --who prix   # qui tranche le sujet « prix », et ce qui le vérifie
 bash tools/ops/machine.sh --merge      # la jauge de fusion : combien de fichiers/lignes depuis main
+bash tools/ops/machine.sh --rules      # les 15 règles debout, chacune avec sa porte (§9)
+bash tools/ops/provision.sh            # le noyau de travail : 4 outils (les 24 : --all)
 bash tools/ops/provision.sh --list     # les 24 outils : installés cette session, ou pas
+bash tools/ops/install-hooks.sh        # pose le crochet pre-push : un push rouge ne part plus
+python3 tools/ops/machine.py --ci      # ce que le crochet joue, et ce que la CI jouera
+bash tools/ops/machine.sh --turns      # le rendement du jour : commits, fichiers, lignes, refus
 ```
 
-Une session neuve n'a **ni skills, ni venvs, ni clones** : `bash tools/ops/provision.sh` les refait
-depuis les installateurs épinglés du dépôt. C'est l'étape 0 de la machine, pas une option.
+Le miroir Notion (PRE-FLIGHT §0g) est **daté ici**, dans une ligne que la machine lit :
+
+```text
+MIRROR 2026-10-24 · 6c26883
+```
+
+Tant qu'un fichier de **fait debout** (pré-vol, machine, prix, dossiers clients, journal des ventes)
+change après ce commit, la porte `miroir-notion` reste fermée et `--check` échoue. On met Notion à jour,
+puis on re-date la ligne.
+
+Une session neuve n'a **ni skills, ni venvs, ni clones** : `bash tools/ops/provision.sh` refait le
+**noyau de travail** — `graphify`, `superpowers`, `photo`, `video` — depuis les installateurs épinglés
+du dépôt. C'est l'étape 0 de la machine, pas une option. Depuis l'étude du 24/10, les vingt autres
+outils ne sont plus installés par défaut : `--only <nom>` quand une tâche les demande, `--all` pour
+retrouver l'ancien comportement (`ops/TOOL-SCAN.md` § 24/10).
 
 ---
 
@@ -109,6 +127,10 @@ dépôt qui reste utilisable.
 | **Vie** | installateur épinglé sous `tools/<nom>/install.sh` + estampes `provision.sh` + nœud dans `ops/REPO-MAP.md` | `provision.sh --list` dit « installé », le graphe le nomme | 24 outils épinglés, 1 installateur par outil |
 | **Sortie** | retrait **daté**, note dans `ops/`, documents qui le citaient mis à jour, empreinte gardée si c'était un design | la note existe et `grep` ne trouve plus d'appel vivant | `clients/` (15 dossiers, 155 fichiers) et `tools/video/anonymise.py`, 24/10 |
 
+**Un skill s'appelle, il ne se cite pas** : `bash tools/superpowers/use.sh <skill>` affiche le skill et
+laisse une trace datée. Sans cette ligne, « je m'en suis servi » est exactement le genre d'affirmation que
+la machine a été construite pour ne pas croire.
+
 **La loi de l'actif** : un actif sans date est un actif qu'on ne saura pas périmer. Un document mort qui
 reste cité est plus dangereux qu'un document absent — il a l'air vivant.
 
@@ -159,6 +181,28 @@ Une porte est un **code retour**, pas une impression. Si elle n'a pas été lanc
 | Accessibilité | `tools/qa/audit_a11y.py <page>` | WCAG 2.2 AA, critère par critère | quatre choses écrites dans `AMK-DESIGN-SKILLS.md` §27 |
 | Dépôt | `python3 tools/ops/audit_files.py` | doublons, orphelins, fichiers périmés, caches | la qualité d'un document |
 | Provision | `bash tools/ops/provision.sh --list` | outil absent de la session | la version réellement utilisée |
+| **Règles** | `bash tools/ops/machine.sh --rules` | les portes dures du registre §9, et toute règle du code qui manquerait au tableau | les règles souples et le trou, dits en clair |
+| **Crochet** | `bash tools/ops/install-hooks.sh` (une fois par clone) → `.git/hooks/pre-push` | un push avec un secret ou un chemin mort | la carte rejouée (trop lent pour un crochet) |
+| **CI GitHub** | `.github/workflows/machine.yml` — à chaque push et PR | secret, chemin mort, carte non reproductible | la valeur du travail, et tout ce qui demande un jugement |
+| **Sources** | `python3 tools/qa/audit_claims.py --sources .` | un pourcentage affirmé sans appui dans **tout le dépôt** (765 documents), sur une fenêtre de 3 lignes avant et 3 après | la qualité de la source ; un chiffre copié d'une étude ancienne reste « sourcé » |
+| **Rendement** | `bash tools/ops/machine.sh --turns` | le volume du jour (commits, fichiers, lignes) et le nombre de refus | la valeur du travail : un gros commit peut être du déchet |
+| **Usage** | `bash tools/ops/machine.sh --usage` | un outil provisionné qu'aucune trace ne montre appelé | ce qui ne laisse aucune trace : scripts QA lancés à la main, skills lus, recherche web |
+
+**La trace d'usage, et pourquoi elle existe.** Un outil « installé » n'est pas un outil « utilisé » : le
+24/10, la panne notée en §8 disait *24 installateurs, 3 outils appelés*. `--usage` lit un journal hors
+dépôt (`~/.amk-provisioned/usage.log`) que les outils écrivent eux-mêmes — `machine`, `provision`,
+`graphify`, `ask` — et **oppose une trace à chaque phrase « j'ai utilisé l'outil »**. Il ne voit que ce
+qui laisse une trace : un script QA lancé à la main, un skill lu, une recherche web n'y figurent pas, donc
+ils ne sont jamais comptés à la place de King. Sa sortie la plus utile est la ligne *« muets alors qu'une trace était possible »* : un outil
+installé que rien n'appelle est un candidat à sortir (invariant 6), pas un acquis. Depuis le
+24/10, le compteur sépare deux silences qui n'ont rien à voir : **muet mesurable** (un CLI qui
+pouvait tracer) et **sans trace possible** (15 skills en markdown, que cet agent ne charge pas —
+leur silence ne dit rien de leur utilité). L'étude qui les juge, outil par outil et sur une tâche
+nommée, est dans `ops/TOOL-SCAN.md` (§ 24/10/2026).
+
+**Une seule copie du workflow.** Il vit dans `.github/workflows/machine.yml` et nulle part ailleurs :
+la version « à copier par King » a été supprimée le 24/10 dès que la vraie a existé. Deux copies d'une
+même porte finissent toujours par diverger, et c'est la plus vieille qui gagne.
 
 **Ce qu'aucune porte ne fait ici** : regarder une vidéo, ouvrir un site comme un visiteur, capturer un
 écran. Ce qui doit être vu se fait relire par King, **avant** publication (`AGENTS.md` §5).
@@ -188,7 +232,7 @@ Une porte est un **code retour**, pas une impression. Si elle n'a pas été lanc
 | Arbre périmé | deux chiffres qui se contredisent dans la même réponse | étape 0, toujours, même pour « juste lire » |
 | Mémoire qui remplace le journal | « ils ont répondu » sans ligne dans `Activity-Log` | étape 6 avant toute affirmation sur un prospect |
 | Règle recréée de zéro | un document neuf qui dit ce qu'un ancien disait déjà | étape 2 : `ask.sh` + `REPO-MAP` §3 bis |
-| Outil installé, jamais utilisé | 24 installateurs, 3 outils appelés | `provision.sh --list` + l'étape 4 nomme l'outil |
+| Outil installé, jamais utilisé | 24 installateurs, 3 outils appelés | `machine.sh --usage` : trace datée par outil ; les muets sont nommés |
 | Carte qui se cite elle-même | le graphe change à chaque reconstruction sans qu'un fichier bouge | `REPO-MAP.md` est exclu de son propre index |
 | Session neuve sans skills | l'agent « ne trouve pas » un skill installé la veille | `provision.sh`, au début de chaque session |
 | Handoff qui vieillit | un état de travail de trois jours présenté comme actuel | le cockpit affiche son âge ; au-delà de 3 jours, il est réécrit |
@@ -196,13 +240,227 @@ Une porte est un **code retour**, pas une impression. Si elle n'a pas été lanc
 
 ---
 
-## 9 · Ce qui manque encore, dit franchement
+---
 
-- **Pas d'intégration continue** : les portes se lancent à la main. Rien ne bloque un push qui n'a pas passé `gate-amk.sh`.
+## 9 · Les règles et leurs portes — le registre
+
+> Ruling King, 24/10 : *« il faut mettre en place des règles pour que tu n'oublies plus »*. Une règle
+> écrite dans un document et rappelée par la mémoire de l'agent **ne tient pas** : elle se perd au
+> troisième tour. Ici, chaque règle porte **le document qui la fonde**, **ce qui la déclenche** et **la
+> commande qui la vérifie**. `bash tools/ops/machine.sh --rules` les imprime toutes ; `--check` échoue
+> dès qu'une porte dure est fermée.
+
+| # | id | Règle | Fondement | Déclencheur | Porte |
+|---|---|---|---|---|---|
+| 1 | `arbre-propre` | Rien ne reste hors commit quand le tour se dit fini | PRE-FLIGHT §1e | fin de tour | `git status --porcelain` vide |
+| 2 | `tour-pousse` | Le tour finit poussé ; une branche sans remote n'est pas un travail rendu | §7 invariant 7 | fin de tour | `rev-list @{u}..HEAD` = 0 |
+| 3 | `fusion-sur-seuil` | La branche se fusionne sur seuil, pas sur humeur | PRE-FLIGHT §1i | chaque sortie | `machine.sh --merge` — 40 fichiers / 3 000 lignes / 6 tours |
+| 4 | `carte-fraiche` | La carte du dépôt est reconstruite quand un fichier suivi bouge | PRE-FLIGHT §0h | fichier modifié | `REPO-MAP.md` plus récent que toute source (le cockpit exempté, voir plus bas) |
+| 5 | `outils-provisionnes` | Une session neuve rejoue le noyau épinglé avant de travailler | PRE-FLIGHT §1f | début de session | estampes `~/.amk-provisioned` (graphify, superpowers) |
+| 6 | `miroir-notion` | Le miroir Notion suit le jour même tout changement d'un fait debout | PRE-FLIGHT §0g | commit sur un fait debout | `git diff MIRROR..HEAD` sur les chemins de §0g |
+| 7 | `aucun-secret` | Ni mot de passe, ni clé, ni jeton dans un dépôt public | PRE-FLIGHT §0g | avant chaque push | `git grep` des motifs de secret (code tiers exclu) |
+| 8 | `docs-existants` | Tout chemin cité par les tableaux de la machine existe encore | MACHINE §5 · §6 · §9 | chaque modification de la carte | chaque chemin cité résolu sur le disque |
+| 9 | `audit-frais` | Le comptage des fichiers a moins de sept jours | `ops/FILE-AUDIT-*.md` | chaque semaine | âge de l'audit — ⚠ souple |
+| 10 | `handoff-frais` | L'état de reprise a moins de trois jours | `ops/HANDOFF-*.md` | tous les trois jours | âge du dernier handoff — ⚠ souple |
+| 11 | `document-neuf` | Tout `.md` neuf à la racine ou dans `ops/` se déclare avant de devenir loi | PRE-FLIGHT §4b | apparition d'un doc souverain | `git diff --diff-filter=A` — ⚠ souple |
+| 12 | `stat-sourcee` | Aucune statistique sans source primaire nommée | PRE-FLIGHT §1g | chaque chiffre écrit | `audit_claims.py --sources .` — tout le dépôt, ⚠ souple (porte faible), visible à chaque `--check` |
+| 13 | `registre-complet` | Aucune règle du code ne peut disparaître de ce tableau sans faire échouer la porte | ce § | chaque `--check` | chaque id connu de `machine.py` présent ci-dessus |
+| 14 | `poids-raisonnable` | Le poids suivi reste sous 160 Mo et aucun fichier ne dépasse 15 Mo sans décision | règle du 23/09 « le dépôt n'est pas un disque dur » | chaque commit | `git ls-files` pesé — ⚠ souple |
+| 15 | `fichier-neuf-avec-king` | Un fichier debout nouveau n'existe qu'avec le oui de King | PRE-FLIGHT §4b | création d'un document souverain | ○ **sans porte machine** |
+
+**Pourquoi la 13 existe.** Le 24/10 au soir, ce tableau listait douze règles quand le code en appliquait
+treize : `docs-existants` avait été ajoutée dans `machine.py` et **pas ici**. Une règle écrite à un seul
+endroit est une règle à moitié tenue — l'agent lit le code, King lit le tableau, et les deux ne parlent
+pas du même dépôt. La porte 13 compare les deux listes et échoue à la première divergence.
+
+**Pourquoi le cockpit est exempté de la porte 4.** `ops/MACHINE.md` porte la ligne `MIRROR`, réécrite à la
+fin de chaque tour, après la reconstruction de la carte. La compter rendrait la porte rouge **par
+construction**, à chaque tour. Une porte toujours rouge n'est pas une règle : c'est du bruit qu'on apprend
+à ignorer. Le cockpit reste un nœud de la carte ; seuls ses changements ne la déclenchent pas.
+
+**Une porte faible, et un trou qui reste.** La règle 12 (`stat-sourcee`) n'a pas de porte *forte* : aucun script ne sait
+si une source est bonne. Elle a une porte **faible**, et c'est déjà autre chose que rien :
+`audit_claims.py --sources` liste les lignes qui affirment un pourcentage **sans lien, sans chemin, sans
+« selon », sans « non revérifié », sans calcul, sans « invérifiable »**. Sa précision est choisie : elle
+lisait `knowledge/` le matin du 24/10 (7 lignes sur 126 documents), elle lit **tout le dépôt** le soir
+(765 documents) et ramène **0 ligne**. Quatre lignes sont tombées au passage, pas 185 : un 53 % recopié
+d'un blog sans lien, un 90 % de commerces sans étude, un 14,7 % qui était un calcul (10 ÷ 68, désormais
+dit comme tel), un 20–30 % qui était un objectif stratégique et non une mesure. Sa fenêtre de lecture est
+de **3 lignes avant, 3 après** : une source posée sous son chiffre compte autant qu'au-dessus.
+Elle est **souple** : elle signale, elle ne bloque pas, parce qu'un script ne doit jamais arrêter une
+publication sur une intuition — mais `--check` l'affiche désormais à chaque tour, parce qu'une alerte
+qu'on ne voit jamais est une règle morte en trois tours.
+
+La règle 15 (`fichier-neuf-avec-king` — **un fichier debout neuf exige le oui de King**) reste sans porte : personne ne peut
+vérifier un accord qui n'a pas laissé de trace. Son substitut est **la forme de la réponse** — le fichier
+est *proposé* avec son emplacement avant d'être committé. Si un jour l'une des deux devient vérifiable,
+elle monte en porte dure ; c'est le seul sens de circulation autorisé.
+
+**Ce que le registre interdit** : ajouter une règle ici sans lui donner de porte, ou de sévérité
+explicite. Une règle sans porte est un trou ; un trou caché est une panne.
+
+---
+
+## 10 · Ce qui manque encore, dit franchement
+
+- **L'intégration continue est en place depuis le 24/10** : `.github/workflows/machine.yml` (posé par
+  King — la GitHub App de l'atelier n'a pas la permission `workflows`, donc **toute évolution de ce
+  fichier passe par lui**) lance `machine.py --ci` puis reconstruit la carte et échoue si elle change.
+  Trois rouges de suite le jour de sa mise en route, trois causes réelles : la carte lisait le disque au
+  lieu du dépôt, puis l'historique git au lieu de l'arbre, puis elle accusait un fichier périmé quand il
+  manquait seulement une dépendance (`graphify`, désormais installée épinglée par le script lui-même).
+  C'est exactement ce qu'on attendait d'elle : elle a trouvé trois choses que la relecture n'avait pas vues.
+- **Le crochet local reste** (`install-hooks.sh`) : il attrape un secret ou un chemin mort avant même que
+  le push parte, et il se contourne bruyamment (`AMK_SKIP_CI=1`).
+- **Le crochet se contourne** : `AMK_SKIP_CI=1 git push` — et il le dit à voix haute. Un garde-fou qui ne
+  se contourne pas serait un mur ; un garde-fou muet serait un piège.
 - **La fraîcheur du handoff n'est pas automatique** : le cockpit la signale, il ne la répare pas.
 - **`provision.sh` dépend du réseau** : sans GitHub ni PyPI, une session neuve n'a que les outils locaux (`tools/qa`, `tools/ops`, `tools/graphify` une fois installé).
-- **Notion reste manuel** : le miroir est une décision de tour, pas un script.
+- **Notion reste manuel, mais il n'est plus oubliable** : la porte `miroir-notion` compare la ligne
+  `MIRROR` aux commits qui touchent un fait debout ; elle dit *qu'il faut y aller*, elle n'y va pas.
+- **La règle 15 n'a pas de porte** (voir §9) : elle tient par la forme de la réponse. La règle 12 a une
+  porte faible, souple, qui nomme les lignes fautives sans jamais bloquer.
+- **Le tableau §9 peut mentir par omission** : c'est désormais la porte 13 qui le dit (`registre-complet`).
+  Elle a été écrite le jour où le tableau annonçait douze règles quand le code en appliquait treize.
 - **Aucun outil ne juge un document** : `audit_files.py` compte, il ne lit pas. Le jugement reste entier.
+- **La session pèse plus lourd que le dépôt** : mesuré le 24/10, les 24 outils installés occupent
+  ~4,5 Go (`/tmp` + `~`) contre 165 Mo pour le dépôt. Rien de tout cela n'est dans Git, et tout
+  disparaît avec la session — le coût n'est pas le disque, c'est **cinq minutes de réinstallation
+  et vingt occasions de panne par session**. C'est ainsi que la CI est tombée trois fois le 24/10.
+
+## 11 · Cinq chantiers pour que ça tienne dans la durée (recherche du 24/10)
+
+> King : *« donne-moi cinq façons de nettoyer et d'optimiser ce dépôt, et de rendre notre méthode plus
+> efficace sur le long terme »*. Les cinq sont classées par **levier**, pas par facilité. Chacune dit ce
+> qu'elle règle, ce qu'elle coûte, et le premier pas qui ne demande aucune décision.
+
+**Ce que la mesure dit ce soir** avant de proposer quoi que ce soit : 1 638 fichiers suivis, **144 Mo**
+dans l'arbre, plus gros fichier **14,6 Mo** (`clients/dm-optic/brag/brag.mp4`) ; `.git` **154 MiB** en
+clone superficiel et ~**1,06 GiB** en clone complet ; **765 documents** `.md` dont **412 que personne ne
+cite** ; 406 médias suivis dont **66 jamais nommés** (5,9 Mo) ; CI **32–40 s** par push et **trois rouges
+en une journée** ; provisioning **4,5 Go et ~5 min** avant le changement de ce soir.
+
+### ① Un plafond de poids, pas une purge
+
+**Le problème.** Le dépôt grossit par accrétion : chaque livraison, chaque rendu, chaque export entre par
+la racine et n'en ressort jamais. Une purge annuelle ne règle rien : elle remet le compteur à zéro une
+fois, puis le dépôt regrossit.
+
+**Le mécanisme.** Un seuil **mesuré à chaque tour** — c'est la règle 14, posée aujourd'hui : **160 Mo**
+suivis, **15 Mo** par fichier au maximum. Souple : elle avertit, elle ne bloque pas. Le geste pour
+redescendre est toujours le même : sortir les livrables (②), pas compresser des originaux.
+
+**Le gain.** Aujourd'hui 141 Mo / 14,6 Mo : sous le seuil, mais à 88 %. Le seuil est là pour être **vu**
+avant d'être franchi, pas après.
+
+**Le coût.** Zéro : la règle existe et tourne en 200 ms.
+
+**Le premier pas.** Déjà fait. La suite, quand on approchera de 150 Mo : baisser le plafond par fichier à
+8 Mo et exiger une ligne de justification dans ce document pour toute exception.
+
+### ② Les livrables sortent de l'arbre : une Release par livraison
+
+**Le problème.** Un zip de livraison dans le dépôt ne sert qu'une fois — le jour où on le téléverse — et
+pèse ensuite pour toujours. Preuve de ce soir : l'archive du 21/10 (182 entrées) ne correspond plus au
+site (251 entrées). Un livrable figé dans l'arbre **ment** dès que la source bouge.
+
+**Le mécanisme.** Une **Release GitHub par livraison** : `dmoptic-v2-2026-11`, asset zip, notes de
+version dans la release. Le dépôt garde trois lignes dans `build-notes.md` (date, empreinte, lien) et
+refait le zip à la demande par `python3 demos/pack_dmoptic.py`. Les releases acceptent 2 Go par fichier
+et ne comptent **pas** dans la taille du dépôt.
+
+**Le gain.** L'arbre cesse de grandir avec les livraisons ; chaque livraison devient datée et retrouvable
+sans ambiguïté ; le clone reste petit.
+
+**Le coût.** 10 minutes par livraison, une fois, avec `gh release create`.
+
+**Le premier pas.** Fait à moitié ce soir : l'archive existante est renommée `dmopticsarl-2026-10-21.zip`
+pour porter sa date, et `/dmopticsarl*.zip` est ignoré pour que le zip du jour n'entre plus. La prochaine
+livraison part en release.
+
+### ③ Les médias par empreinte, pas par octets
+
+**Le problème.** 406 médias suivis, dont 66 que **rien** ne nomme (5,9 Mo) : ils sont là, personne ne les
+appelle, et la carte les compte. À l'inverse, les 395 Mo de photos brutes du shooting vivent hors du
+dépôt — et rien dans le dépôt ne dit **lesquelles** existent, ni où.
+
+**Le mécanisme.** Un `MEDIA.md` par dossier client : nom du fichier, **sha256**, dimensions, poids, **où
+il vit** (disque de King, Drive, téléphone), et une vignette 800 px suivie à sa place. On garde la
+traçabilité, pas les octets. Les 66 médias non nommés sont soit cités quelque part, soit sortis.
+
+**Le gain.** Retrouver un original devient possible sans le stocker ; la carte cesse de compter des
+fichiers que personne n'utilise ; les 395 Mo restent dehors **sans être perdus**.
+
+**Le coût.** 30 minutes par dossier client, une fois. Un script de 40 lignes pour générer les sha256 et
+les vignettes.
+
+**Le premier pas.** Le refaire pour `clients/dm-optic/photoshoot` (23 Mo ici, 395 Mo chez King) : c'est le
+seul dossier où l'écart entre ce qu'on a et ce qu'on croit avoir est déjà prouvé.
+
+### ④ Décroissance documentaire : 765 documents, 412 orphelins
+
+**Le problème.** Plus de la moitié des documents du dépôt ne sont **cités par aucun autre** (412 sur 765).
+Un document orphelin n'est pas inutile : il est **inatteignable** — donc il ne contredit personne, ne se
+relit jamais, et vieillit en silence. C'est exactement le mécanisme qui a produit les 37 « périmés » et
+les quatre statistiques fausses de ce week-end.
+
+**Le mécanisme.** Chaque document porte en tête deux lignes : **propriétaire** et **date de péremption**
+(90 jours pour une recherche, 365 pour une doctrine). À l'échéance, il part dans `archive/` — **hors de la
+carte et hors des portes**, jamais supprimé. Et un document souverain doit être cité par l'index, sinon
+la porte 13 le dit.
+
+**Le gain.** Lire, cartographier et auditer coûte proportionnellement au nombre de documents vivants. Passer
+de 765 à ~250 vivants divise par trois le bruit de la carte, des audits et de mes relectures — et rend les
+portes plus précises, parce qu'elles cessent de crier sur des brouillons de septembre.
+
+**Le coût.** Un tri de deux heures, puis zéro entretien : la péremption fait le travail.
+
+**Le premier pas — fait le 24/10 au soir.** L'inventaire est régénéré à chaque audit (`ops/FILE-AUDIT-*.md`
+§ 4 bis) : sur **412 orphelins**, **82 seulement sont à traiter** — les 330 autres sont normaux (164
+imports tiers, 116 fiches CRM, 50 README d'outils). Et le défaut apparaît : **29 de ces 82 n'ont aucune
+date**, ni dans leur chemin ni dans leur en-tête. Un document sans date ne peut pas expirer.
+
+**Premier lot archivé** : huit documents de septembre (`Send-Pack` ×4, `PLAN-2026-09-19-21`,
+`Passe-Vitrine-2026-09-23`, `Expansion-Geography-2026-09-18`, `Social-Growth-Synthesis-2026-09-18`) →
+`archive/2026-09/`. Campagnes terminées, zéro citation entrante, rien qui en dépende. `archive/` sort du
+corpus (ni carte, ni portes, ni audit) mais reste dans git : on archive, on ne supprime pas.
+
+**Reste à décider** : les 29 `research/youtube-lessons` (récolte du 11–12/10, à synthétiser avant
+d'archiver), les 11 orphelins de `clients/dm-optic` (à citer depuis le dossier, pas à archiver), les 6
+`STATUS.md` de vidéos (partent avec le lot du mois), et les 29 documents sans date (à dater).
+
+### ⑤ Les contrôles en amont, et une session qui démarre en une minute
+
+**Le problème.** Aujourd'hui, trois choses coûtent du temps **après** le travail : la CI rougit après le
+push (trois fois le 24/10), la carte se reconstruit après coup, et une session neuve repart de zéro
+(4,5 Go et ~5 min). Ce sont des allers-retours, pas du travail.
+
+**Le mécanisme.** (a) Le **pre-commit** joue ce que la CI joue (carte reproductible, chemins cités,
+sources), pour que le rouge arrive avant le push et non après ; (b) **cache des dépendances** dans le
+workflow (le venv `graphify` épinglé est identique à chaque run : 40 s → ~15 s) ; (c) provisioning par
+défaut réduit au noyau — **fait ce soir** : 4 outils au lieu de 24, ~1 min au lieu de 5.
+
+**Le gain.** Mesurable : trois rouges évités = trois allers-retours de 5 minutes ; 25 s par run de CI ;
+4 minutes par session.
+
+**Le coût.** Une heure pour le pre-commit, 15 minutes pour le cache (côté King : le workflow est à lui
+seul, la GitHub App n'a pas la permission `workflows`).
+
+**Le premier pas.** Fait : le provisioning ne rejoue plus que le noyau. Reste le cache CI (à demander à
+King) et le pre-commit.
+
+---
+
+**Ce que je ne recommande pas**, et pourquoi :
+
+- **Réécrire l'historique pour retirer les vidéos.** Mesuré : 8 blobs `mp4` pèsent ~70 Mo, soit **~7 %**
+  d'un clone complet (~1,06 GiB). En échange, **tous** les SHA changent — les 33 commits cités dans nos
+  documents, les PR #13 à #17, les lignes `MIRROR` — et GitHub garde de toute façon les objets atteignables
+  par les PR. On paierait une rupture pour 70 Mo sur 1 060.
+- **Supprimer les documents périmés.** Le 24/10, une suppression fondée sur « périmé » aurait effacé
+  1 400 lignes de règles de design. On archive, on ne supprime pas.
+- **Un outil de plus pour ranger.** Le rangement est un geste hebdomadaire, pas un logiciel : trois outils
+  de plus seraient trois endroits de plus où chercher.
 
 *Cette carte se relit quand un outil entre ou sort, quand une porte change, ou quand une panne nouvelle
 apparaît. Sinon, elle se lance : `bash tools/ops/machine.sh`.*

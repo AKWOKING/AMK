@@ -1,0 +1,42 @@
+# Ce qu'il fait : à chaque push et à chaque PR, `machine.py --ci` (secrets, chemins cités) puis la
+# reconstruction de la carte, qui échoue si `ops/REPO-MAP.md` n'est pas à jour. Ce que la CI ne
+# remplace pas : les règles qui demandent un jugement — elles restent dans `--rules`, marquées
+# « sans porte ».
+#
+# Une fois posé, il n'y a plus rien à faire : chaque push est vérifié sans intervention.
+
+name: La machine
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  portes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # la jauge de fusion a besoin de merge-base avec origin/main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Les portes vérifiables dans un runner (secrets, chemins cités)
+        run: python3 tools/ops/machine.py --ci
+
+      - name: La carte du dépôt se rejoue à l'identique
+        run: |
+          python3 tools/graphify/build_full_graph.py
+          if ! git diff --quiet -- ops/REPO-MAP.md; then
+            echo "⛔ ops/REPO-MAP.md n'est pas à jour : un fichier suivi a changé sans que la carte soit reconstruite."
+            echo "   Remède : python3 tools/graphify/build_full_graph.py && git add ops/REPO-MAP.md"
+            git diff --stat -- ops/REPO-MAP.md
+            exit 1
+          fi
+          echo "✓ carte à jour (rejouée, aucune différence)"

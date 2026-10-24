@@ -39,7 +39,7 @@ Si l'entretien dépasse 2 h, ce n'est plus de l'entretien : c'est un projet. On 
 
 | # | Quoi | Pourquoi |
 |---|---|---|
-| 1 | **Répondre aux commentaires et messages** (WhatsApp, Facebook, TikTok) | 42 % des gens attendent moins d'une heure. Une question sans réponse est un client parti |
+| 1 | **Répondre aux commentaires et messages** (WhatsApp, Facebook, TikTok) | 42 % des personnes qui **contactent une marque sur les réseaux sociaux** attendent une réponse dans l'heure (Edison Research / *The Social Habit*, 2012, via Convince & Convert ; base : 690 personnes ayant contacté une marque sur 3 000+ interrogés). Étude **ancienne et américaine** : ordre de grandeur, pas une mesure camerounaise. La règle tient sans le chiffre : une question sans réponse est un client parti |
 | 2 | **Signaler, pas répondre à sa place** : prix, disponibilité, conseil médical → on renvoie au cabinet | on n'engage pas le client sur ce qu'on ne sait pas |
 | 3 | **Vérifier que le lien du jour fonctionne** (page, bouton WhatsApp, formulaire) | un bouton mort coûte plus qu'une publication manquée |
 | 4 | **Noter toute question nouvelle** dans un fichier | trois fois la même question = un contenu à faire |

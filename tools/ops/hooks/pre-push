@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Le crochet pre-push d'AMK — la version locale de la CI, posée par tools/ops/install-hooks.sh.
+#
+# Il lance `machine.py --ci` avant que le push ne parte : secrets dans un fichier suivi, chemin cité
+# qui n'existe plus. Un push rouge ne quitte donc pas la machine.
+#
+# Ce qu'il ne vérifie pas : la carte reconstruite (trop lent pour un crochet) — c'est le travail du
+# workflow. Sortie de secours, assumée et bruyante : AMK_SKIP_CI=1 git push
+set -u
+cd "$(git rev-parse --show-toplevel)" || exit 1
+[ "${AMK_SKIP_CI:-0}" = "1" ] && { echo "⚠ crochet AMK contourné (AMK_SKIP_CI=1)"; exit 0; }
+command -v python3 >/dev/null 2>&1 || { echo "⚠ python3 absent : crochet AMK non joué"; exit 0; }
+if ! out=$(python3 tools/ops/machine.py --ci 2>&1); then
+  echo "$out" | grep -E '⛔|CI ROUGE' || echo "$out"
+  echo
+  echo "PUSH BLOQUÉ — les portes de la machine sont fermées."
+  echo "  correction : python3 tools/ops/machine.py --ci"
+  echo "  contournement assumé : AMK_SKIP_CI=1 git push"
+  exit 1
+fi
+echo "✓ crochet AMK : portes ouvertes (--ci)"
+exit 0

@@ -15,7 +15,8 @@ synthèse commande les décisions (§12) — pas l'inverse.** Sources datées da
 
 **Ce que ça dit.** Le parcours du patient optique est désormais : recherche locale (Google/Maps)
 → lectures d'avis → visite du site/fiche → contact WhatsApp/appel → passage au cabinet. Les
-chiffres du secteur optique : ~77–86 % des patients lisent des avis en ligne avant de choisir un
+chiffres du secteur optique (sources en fin de bloc, non revérifiées une par une) : ~77–86 % des
+patients lisent des avis en ligne avant de choisir un
 professionnel de santé ; Google est le n°1 des sites d'avis santé ; pour un opticien type,
 ~60 % des nouveaux patients viennent de la recherche Google locale, ~20 % du bouche-à-oreille ;
 81 % vérifient un professionnel en ligne MÊME après un recommandation, et 90 % changent d'avis si

@@ -118,7 +118,7 @@ Quatre leviers, par ordre d'efficacité selon lui : **l'apparence du messager**,
 
 Dix familles de hooks : teaser · question · statistique · émotionnel · histoire personnelle · humoristique · scénique (visuel) · témoignage · action · prix.
 
-Sur les dix, **deux sont fermés** chez nous : le **prix** (verrou client) et le **témoignage** (aucun avis réel — contrainte 4). La **statistique** est piégeuse : elle est autorisée si elle porte sur l'examen (un nombre d'étapes, une durée) et **interdite** si elle prétend un résultat (« 85 % des patients voient mieux »).
+Sur les dix, **deux sont fermés** chez nous : le **prix** (verrou client) et le **témoignage** (aucun avis réel — contrainte 4). La **statistique** est piégeuse : elle est autorisée si elle porte sur l'examen (un nombre d'étapes, une durée) et **interdite** si elle prétend un résultat (« 85 % des patients voient mieux » — exemple d'allégation, invérifiable).
 
 Ce qui reste ouvert et nous va : **scénique** (notre matière première), **question** (le quotidien du patient), **action** (un test à faire devant l'écran), **histoire personnelle** (le père — à valider), **teaser**.
 

@@ -3,16 +3,21 @@
 #
 # Le problème : le bac repart d'un clone neuf, donc `~/.claude/skills`, les venvs et les clones
 # d'outils ont disparu — mais le dépôt, lui, a tout ce qu'il faut pour les refaire. Ce script
-# rejoue les 24 installateurs épinglés de `tools/*/install.sh`, dans l'ordre alphabétique, et
-# laisse une **estampe** par outil (`~/.amk-provisioned/<outil>`) : c'est ce qui permet de dire
-# « installé cette session » au lieu de le supposer.
+# rejoue les installateurs épinglés de `tools/*/install.sh` — quatre par défaut, les vingt
+# autres à la demande — et laisse une **estampe** par outil (`~/.amk-provisioned/<outil>`) :
+# c'est ce qui permet de dire « installé cette session » au lieu de le supposer.
 #
 #   bash tools/ops/provision.sh --list                # l'état, sans rien installer
-#   bash tools/ops/provision.sh                       # installe ce qui manque (24 outils)
+#   bash tools/ops/provision.sh                       # le NOYAU DE TRAVAIL (4 outils) — pas les 24
 #   bash tools/ops/provision.sh --core                # le minimum d'un tour : graphify + superpowers
-#   bash tools/ops/provision.sh --only graphify,superpowers
-#   bash tools/ops/provision.sh --force               # rejoue tout, même ce qui est estampillé
+#   bash tools/ops/provision.sh --only moneyprinter   # un outil précis, quand une tâche le demande
+#   bash tools/ops/provision.sh --all                 # les 24, comme avant le 24/10 (5 min, 4,5 Go)
+#   bash tools/ops/provision.sh --force               # rejoue tout ce qui est sélectionné
 #   bash tools/ops/provision.sh --failures            # ne rejoue que ce qui a échoué
+#
+# Pourquoi le défaut a changé le 24/10 : sur 24 outils, 4 servaient une tâche réelle et quinze
+# n'étaient que des skills que cet agent ne charge pas (étude complète : ops/TOOL-SCAN.md).
+# Installer les 24 à chaque session coûtait ~4,5 Go et cinq minutes, et cassait parfois la CI.
 #
 # Aucun sudo. Aucun secret. Chaque installateur est épinglé dans son propre fichier — ce script
 # ne décide de rien, il exécute et il rapporte.
@@ -24,6 +29,7 @@ ONLY=""
 FORCE=0
 LIST=0
 FAILED_ONLY=0
+ALL=0
 TIMEOUT="${AMK_PROVISION_TIMEOUT:-300}"
 
 while [ $# -gt 0 ]; do
@@ -31,6 +37,7 @@ while [ $# -gt 0 ]; do
     --list)      LIST=1 ;;
     --force)     FORCE=1 ;;
     --failures)  FAILED_ONLY=1 ;;
+    --all)       ALL=1 ;;
     --core)      ONLY="graphify,superpowers" ;;   # réveil + lecture + méthode : ~1 min
     --only)      shift; ONLY="${1:-}" ;;
     --only=*)    ONLY="${1#--only=}" ;;
@@ -42,6 +49,13 @@ while [ $# -gt 0 ]; do
 done
 
 mkdir -p "$STAMPS"
+
+# Le noyau de travail : les quatre outils qui font un vrai travail dans ce dépôt.
+CORE_WORK="graphify,superpowers,photo,video"
+if [ -z "$ONLY" ] && [ "$ALL" -eq 0 ] && [ "$FAILED_ONLY" -eq 0 ] && [ "$LIST" -eq 0 ]; then
+  ONLY="$CORE_WORK"
+  DEFAULTED=1
+fi
 
 tools=()
 for f in tools/*/install.sh; do tools+=("$(basename "$(dirname "$f")")"); done
@@ -102,6 +116,7 @@ for t in "${tools[@]}"; do
            | sed -E 's/^[A-Z_]+=?//; s/"//g; s/^ +//' | cut -c1-12)"
     printf '%s  installé  %ss  pin=%s\n' "✅" "$(( $(date +%s) - t0 ))" "${pin:-—}"
     echo "$(date -Iseconds) pin=${pin:-—}" > "$STAMPS/$t.ok"
+    printf '%s\tprovision\t%s installé\n' "$(date -Iseconds)" "$t" >> "$STAMPS/usage.log"
     rm -f "$STAMPS/$t.failed"
     ok=$((ok+1))
   else
@@ -118,5 +133,9 @@ done
 
 echo
 echo "$ok installé(s) · $skip déjà là · $ko en échec · estampes dans $STAMPS"
+if [ "${DEFAULTED:-0}" -eq 1 ]; then
+  echo "noyau de travail seulement. Un autre outil, quand une tâche le demande :"
+  echo "  bash tools/ops/provision.sh --only <nom>        (les 24 : --all)"
+fi
 [ -n "$failed" ] && echo "rejouer les échecs : bash tools/ops/provision.sh --failures"
 exit 0
