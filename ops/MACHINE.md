@@ -8,14 +8,15 @@
 ## 0 · Trois commandes, et vous savez où vous êtes
 
 ```bash
+bash tools/ops/session.sh              # ouvrir une session : fetch · noyau · crochets · portes · état (0,9 s à chaud, 12 s à froid)
 bash tools/ops/machine.sh              # le cockpit : l'étape, ce qui est frais, ce qui ne l'est plus
 bash tools/ops/machine.sh 2            # la fiche de l'étape 2 (lecture) : quoi lire, quoi lancer, quand c'est fini
 bash tools/ops/machine.sh --who prix   # qui tranche le sujet « prix », et ce qui le vérifie
 bash tools/ops/machine.sh --merge      # la jauge de fusion : combien de fichiers/lignes depuis main
-bash tools/ops/machine.sh --rules      # les 16 règles debout, chacune avec sa porte (§9)
+bash tools/ops/machine.sh --rules      # les 17 règles debout, chacune avec sa porte (§9)
 bash tools/ops/provision.sh            # le noyau de travail : 4 outils (les 24 : --all)
 bash tools/ops/provision.sh --list     # les 24 outils : installés cette session, ou pas
-bash tools/ops/install-hooks.sh        # pose le crochet pre-push : un push rouge ne part plus
+bash tools/ops/install-hooks.sh        # pose pre-commit (portes + carte) et pre-push (portes) : un rouge ne part plus
 python3 tools/ops/machine.py --ci      # ce que le crochet joue, et ce que la CI jouera
 bash tools/ops/machine.sh --turns      # le rendement du jour : commits, fichiers, lignes, refus
 ```
@@ -182,7 +183,7 @@ Une porte est un **code retour**, pas une impression. Si elle n'a pas été lanc
 | Dépôt | `python3 tools/ops/audit_files.py` | doublons, orphelins, fichiers périmés, caches | la qualité d'un document |
 | Provision | `bash tools/ops/provision.sh --list` | outil absent de la session | la version réellement utilisée |
 | **Règles** | `bash tools/ops/machine.sh --rules` | les portes dures du registre §9, et toute règle du code qui manquerait au tableau | les règles souples et le trou, dits en clair |
-| **Crochet** | `bash tools/ops/install-hooks.sh` (une fois par clone) → `.git/hooks/pre-push` | un push avec un secret ou un chemin mort | la carte rejouée (trop lent pour un crochet) |
+| **Crochets** | `bash tools/ops/install-hooks.sh` (une fois par clone) → `.git/hooks/pre-commit` et `pre-push` | un commit avec un secret ou un chemin mort ; **et la carte**, reconstruite et ré-ajoutée si elle a changé (5 s) | les rapports lents : `audit_files.py` (7,5 s), `media_inventory.py --check` (9,8 s), `audit_claims.py` — ils restent dans `--check` et la CI |
 | **CI GitHub** | `.github/workflows/machine.yml` — à chaque push et PR | secret, chemin mort, carte non reproductible | la valeur du travail, et tout ce qui demande un jugement |
 | **Sources** | `python3 tools/qa/audit_claims.py --sources .` | un pourcentage affirmé sans appui dans **tout le dépôt** (765 documents), sur une fenêtre de 3 lignes avant et 3 après | la qualité de la source ; un chiffre copié d'une étude ancienne reste « sourcé » |
 | **Rendement** | `bash tools/ops/machine.sh --turns` | le volume du jour (commits, fichiers, lignes) et le nombre de refus | la valeur du travail : un gros commit peut être du déchet |
@@ -278,6 +279,7 @@ même porte finissent toujours par diverger, et c'est la plus vieille qui gagne.
 | 14 | `poids-raisonnable` | Le poids suivi reste sous 160 Mo et aucun fichier ne dépasse 15 Mo sans décision | règle du 23/09 « le dépôt n'est pas un disque dur » | chaque commit | `git ls-files` pesé — ⚠ souple |
 | 15 | `fichier-neuf-avec-king` | Un fichier debout nouveau n'existe qu'avec le oui de King | PRE-FLIGHT §4b | création d'un document souverain | ○ **sans porte machine** |
 | 16 | `medias-avec-empreinte` | Un dossier qui porte des médias a un inventaire par empreinte, à jour | MACHINE §11 ③ · `tools/ops/media_inventory.py` | chaque commit | nombre de fichiers vs l'inventaire du dossier — ⚠ souple |
+| 17 | `crochets-poses` | Les crochets qui jouent la CI avant le push sont posés, et à jour | MACHINE §11 ⑤ · `tools/ops/install-hooks.sh` | chaque `--check` | `pre-commit`/`pre-push` présents et identiques au dépôt — ⚠ souple |
 
 **Pourquoi la 13 existe.** Le 24/10 au soir, ce tableau listait douze règles quand le code en appliquait
 treize : `docs-existants` avait été ajoutée dans `machine.py` et **pas ici**. Une règle écrite à un seul
@@ -517,6 +519,45 @@ seul, la GitHub App n'a pas la permission `workflows`).
 
 **Le premier pas.** Fait : le provisioning ne rejoue plus que le noyau. Reste le cache CI (à demander à
 King) et le pre-commit.
+
+#### Fait le 25/10 — les trois pièces, avec leurs chiffres
+
+**1 · `pre-commit` (nouveau) — 1 à 5 s.** Il joue `machine.py --ci` (secrets, chemins cités : 0,8 s) puis
+reconstruit la carte et **la ré-ajoute au commit si elle a changé** (0,5 à 5 s). C'est la panne la plus
+fréquente du dépôt : on touche trois fichiers, on oublie `build_full_graph.py`, la CI tombe rouge.
+Mesuré sur un vrai commit : **5,8 s au total**, dont 5 s de carte, et le message « 🗺 carte reconstruite
+et ajoutée au commit » — jamais en silence.
+
+Ce qu'il ne joue **pas**, exprès : `audit_files.py` (7,5 s), `media_inventory.py --check` (9,8 s),
+`audit_claims.py`. Un crochet de vingt secondes se contourne avec `--no-verify`, et un crochet contourné
+ne vérifie plus rien. Ces trois-là restent dans `--check` et dans la CI.
+
+**2 · `session.sh` (nouveau) — 12 s à froid, 0,9 s à chaud.** `git fetch` → noyau (`provision --core`,
+saut immédiat si les estampes existent) → crochets posés s'ils manquent → `--check` → l'état en quatre
+lignes (branche, commits depuis `main`, âge de la carte, orphelins à traiter) → le temps total affiché.
+Mesuré pour de vrai en effaçant le venv et les estampes : **12,1 s** (dont 11 s de `pip install graphify`
+épinglé). Contre ~5 min et 4,5 Go avant le 24/10.
+
+**3 · Le cache CI — prêt, non appliqué.** `ops/CI-CACHE.patch` : quatre lignes dans
+`.github/workflows/machine.yml` (`cache: pip` + `cache-dependency-path: tools/graphify/install.sh`),
+vérifiées par `git apply --check` — elles s'appliquent proprement. Le workflow appartient à King : la
+GitHub App n'a pas la permission `workflows`, donc je ne peux pas le pousser moi-même. **Une commande :**
+
+```bash
+git apply ops/CI-CACHE.patch && git commit -am "CI : cache pip" && git push
+```
+
+Le gain attendu, à vérifier après application et non à supposer : la CI fait **34 s** aujourd'hui
+(`run_duration_ms` de `ebc2756`). L'installation de `graphifyy==0.9.95` coûte **11 s** quand on la
+refait à froid — mesuré ici en session froide, pas dans le runner : c'est l'ordre de grandeur que le
+cache supprimerait, pas une mesure du gain. **Si le run suivant ne descend pas sous 30 s, le cache
+n'aura servi à rien et je le dirai.**
+
+**4 · Une panne trouvée en chemin, et corrigée.** Pendant ce tour, `graphify-out/` avait disparu du
+bac : `audit_files.py` a alors annoncé **743 orphelins, 351 à traiter** — et un lecteur pressé en aurait
+archivé 350. Sans graphe, l'audit rendait un dictionnaire vide, donc *tout* document paraissait orphelin.
+Il dit maintenant **« non mesurés »** et donne la commande. C'est la même leçon que la jauge de fusion :
+**une mesure impossible n'est pas un zéro.**
 
 ---
 

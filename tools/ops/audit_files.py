@@ -112,10 +112,16 @@ def build_corpus(files: list[Path]) -> list[tuple[str, str]]:
     return corpus
 
 
-def load_graph() -> tuple[dict, dict]:
-    """(citations entrantes par fichier, documents marqués périmés)."""
+def load_graph() -> tuple[dict | None, dict]:
+    """(citations entrantes par fichier, documents marqués périmés).
+
+    `None` quand le graphe n'existe pas. C'est le 25/10 qu'on a vu pourquoi : sans
+    `graphify-out/graph.json`, l'ancienne version rendait un dictionnaire vide, donc **tous** les
+    documents paraissaient orphelins — le rapport annonçait 743 orphelins, 351 « à traiter », et un
+    lecteur pressé en aurait archivé 350. Un fichier absent n'est pas une mesure : c'est une panne.
+    """
     if not GRAPH.exists():
-        return {}, {}
+        return None, {}
     g = json.loads(GRAPH.read_text(encoding="utf-8"))
     by_id = {n["id"]: n for n in g["nodes"]}
     # Comme la carte : on ne compte que les arêtes qui visent le NŒUD FICHIER, pas ses titres.
@@ -238,7 +244,9 @@ def main() -> int:
     unreferenced = [(p, s, r) for p, s, r in media if r == 0]
 
     docs = [p for p in files if p.suffix.lower() == ".md"]
-    orphans = [p for p in docs if inbound.get(str(p), 0) == 0 and str(p) != "ops/REPO-MAP.md"]
+    mesurable = inbound is not None
+    orphans = ([p for p in docs if inbound.get(str(p), 0) == 0 and str(p) != "ops/REPO-MAP.md"]
+               if mesurable else [])
     stale_docs = [p for p in docs if str(p) in stale or p.as_posix() in stale]
 
     zips = [p for p in files if p.suffix.lower() == ".zip"]
@@ -338,57 +346,74 @@ def main() -> int:
 
     A("## 4 · Documents")
     A("")
-    A(f"- **{len(orphans)} documents sans citation entrante** — à relire ou à archiver (voir `ops/REPO-MAP.md` §3 bis).")
+    A(f"- **{len(orphans)} documents sans citation entrante** — à relire ou à archiver (voir `ops/REPO-MAP.md` §3 bis)."
+      if mesurable else
+      "- **orphelins : NON MESURÉS** — le graphe des citations est absent (`graphify-out/graph.json`). "
+      "Sans lui, tout document paraît orphelin : aucun chiffre ne veut dire quoi que ce soit. "
+      "Remède : `python3 tools/graphify/build_full_graph.py`, puis rejouer cet audit.")
     A(f"- **{len(stale_docs)} documents marqués périmés par leur propre texte** — détection lexicale, à vérifier un par un.")
     A("")
     A("| Périmé (d'après lui-même) | Cité par |")
     A("|---|---|")
-    for p in sorted(stale_docs, key=lambda p: -inbound.get(str(p), 0))[:15]:
-        A(f"| `{p}` | {inbound.get(str(p), 0)}× |")
+    for p in sorted(stale_docs, key=lambda p: -(inbound or {}).get(str(p), 0))[:15]:
+        A(f"| `{p}` | {(inbound or {}).get(str(p), 0)}× |")
     A("")
     A("⚠️ **Ni l'orphelin ni le « périmé » ne se supprime automatiquement.** Le 24/10, "
       "`AMK-DESIGN-SKILLS.md` était signalé « remplacé par Activity-Log » — c'est faux, et une "
       "suppression sur cette base aurait effacé 1 400 lignes de règles de design.")
     A("")
 
-    # 4 bis · les orphelins datés — le chantier ④ de la carte, mesuré à chaque audit
-    normales = ("design/vendor/", "leads/records/", "tools/")
-    a_traiter = [p for p in orphans if not str(p).startswith(normales)]
-    dates = {p: doc_date(p) for p in a_traiter}
-    sans_date = [p for p in a_traiter if dates[p] == "sans date"]
-    dated = sorted((p for p in a_traiter if dates[p] != "sans date"), key=lambda p: dates[p])
-    fam: dict[str, list[Path]] = defaultdict(list)
-    for p in a_traiter:
-        parts = str(p).split("/")
-        fam["/".join(parts[:2]) if len(parts) > 2 else parts[0] + "/"].append(p)
-
+    # 4 bis · les orphelins datés — le chantier ④ de la carte, mesuré à chaque audit.
+    # Sans graphe, on ne mesure pas : on le dit. Un fichier absent produisait sinon 743 orphelins
+    # « trouvés » et 351 « à traiter » — de quoi archiver 350 documents vivants sur une panne d'outil.
     A("## 4 bis · Les orphelins datés — ce que personne ne cite, et qui ne peut pas expirer")
     A("")
-    A(f"**{len(orphans)} orphelins** au total, mais **{len(a_traiter)} seulement à traiter** : les "
-      f"autres sont normaux ({len([p for p in orphans if str(p).startswith('design/vendor/')])} imports "
-      f"tiers, {len([p for p in orphans if str(p).startswith('leads/records/')])} fiches CRM reliées par "
-      f"la base, {len([p for p in orphans if str(p).startswith('tools/')])} README d'outils installés).")
-    A("")
-    A(f"- **{len(sans_date)} n'ont aucune date**, ni dans leur chemin, ni dans leurs douze premières "
-      "lignes : un document sans date ne peut pas expirer, donc il ne meurt jamais.")
-    A(f"- Les {len(dated)} autres s'étalent du **{dates[dated[0]]}** au **{dates[dated[-1]]}**.")
-    A("")
-    A("| Famille | Orphelins | Le plus ancien | Verdict proposé |")
-    A("|---|---|---|---|")
-    for k, v in sorted(fam.items(), key=lambda kv: -len(kv[1])):
-        ds = sorted(dates[p] for p in v if dates[p] != "sans date")
-        old = ds[0] if ds else "sans date"
-        A(f"| `{k}` | {len(v)} | {old} | {verdict(v[0])} |")
-    A("")
-    A("*Le verdict est une **proposition**, pas une décision : archiver = `git mv` vers `archive/`, "
-      "jamais supprimer. `archive/` sort du corpus (ni carte, ni portes, ni audit) mais reste dans git.*")
-    A("")
-    if sans_date:
-        A("**Les documents sans date** (à dater ou à archiver) :")
+    if not mesurable:
+        A("**Non mesurés.** Le graphe des citations est absent (`graphify-out/graph.json`) : sans lui, "
+          "tout document paraît orphelin et aucun chiffre ne veut dire quoi que ce soit. Le reste de ce "
+          "rapport (poids, doublons, médias) reste valable ; cette section, non.")
         A("")
-        for p in sans_date:
-            A(f"- `{p}`")
+        A("```bash")
+        A("python3 tools/graphify/build_full_graph.py && python3 tools/ops/audit_files.py")
+        A("```")
         A("")
+    else:
+        normales = ("design/vendor/", "leads/records/", "tools/")
+        a_traiter = [p for p in orphans if not str(p).startswith(normales)]
+        dates = {p: doc_date(p) for p in a_traiter}
+        sans_date = [p for p in a_traiter if dates[p] == "sans date"]
+        dated = sorted((p for p in a_traiter if dates[p] != "sans date"), key=lambda p: dates[p])
+        fam: dict[str, list[Path]] = defaultdict(list)
+        for p in a_traiter:
+            parts = str(p).split("/")
+            fam["/".join(parts[:2]) if len(parts) > 2 else parts[0] + "/"].append(p)
+
+        A(f"**{len(orphans)} orphelins** au total, mais **{len(a_traiter)} seulement à traiter** : les "
+          f"autres sont normaux ({len([p for p in orphans if str(p).startswith('design/vendor/')])} imports "
+          f"tiers, {len([p for p in orphans if str(p).startswith('leads/records/')])} fiches CRM reliées par "
+          f"la base, {len([p for p in orphans if str(p).startswith('tools/')])} README d'outils installés).")
+        A("")
+        A(f"- **{len(sans_date)} n'ont aucune date**, ni dans leur chemin, ni dans leurs douze premières "
+          "lignes : un document sans date ne peut pas expirer, donc il ne meurt jamais.")
+        if dated:
+            A(f"- Les {len(dated)} autres s'étalent du **{dates[dated[0]]}** au **{dates[dated[-1]]}**.")
+        A("")
+        A("| Famille | Orphelins | Le plus ancien | Verdict proposé |")
+        A("|---|---|---|---|")
+        for k, v in sorted(fam.items(), key=lambda kv: -len(kv[1])):
+            ds = sorted(dates[p] for p in v if dates[p] != "sans date")
+            old = ds[0] if ds else "sans date"
+            A(f"| `{k}` | {len(v)} | {old} | {verdict(v[0])} |")
+        A("")
+        A("*Le verdict est une **proposition**, pas une décision : archiver = `git mv` vers `archive/`, "
+          "jamais supprimer. `archive/` sort du corpus (ni carte, ni portes, ni audit) mais reste dans git.*")
+        A("")
+        if sans_date:
+            A("**Les documents sans date** (à dater ou à archiver) :")
+            A("")
+            for p in sans_date:
+                A(f"- `{p}`")
+            A("")
 
     A("## 5 · Archives et artefacts")
     A("")
@@ -436,7 +461,8 @@ def main() -> int:
 
     print(f"[audit] {len(files)} fichiers · {human(total)} · "
           f"{len(cache)} cache(s) · {len(dups)} groupe(s) de doublons · "
-          f"{len(unreferenced)} média(s) sans référence · {len(orphans)} orphelin(s) · "
+          f"{len(unreferenced)} média(s) sans référence · "
+          f"{len(orphans) if mesurable else '?':>1} orphelin(s) · "
           f"{len(stale_docs)} périmé(s)")
     return 0
 

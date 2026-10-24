@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+# Le crochet pre-commit d'AMK — la version locale de la CI, posée par tools/ops/install-hooks.sh.
+#
+# Ce qu'il joue, et pourquoi ces deux-là seulement :
+#
+#   1. `machine.py --ci`  (~1 s) — secrets dans un fichier suivi, chemins cités qui n'existent plus.
+#      C'est exactement ce que le runner vérifie en premier : autant le savoir avant d'écrire le
+#      message de commit, pas cinq minutes après le push.
+#   2. la **carte** (~1 s à 5 s) — reconstruite, puis ré-ajoutée à l'index SI elle a changé. C'est la
+#      panne la plus fréquente du dépôt : on touche trois fichiers, on oublie `build_full_graph.py`,
+#      la CI tombe rouge sur « la carte se rejoue à l'identique ». Ici, elle se répare toute seule —
+#      et elle le dit à voix haute, jamais en silence.
+#
+# Ce qu'il ne joue pas, exprès : `audit_files.py` (7,5 s), `media_inventory.py --check` (9,8 s),
+# `audit_claims.py` (sur 765 documents). Un crochet qui prend vingt secondes se fait contourner avec
+# `--no-verify`, et un crochet contourné ne vérifie plus rien. Ces trois-là restent dans `--check` et
+# dans la CI.
+#
+# Sorties de secours, assumées et bruyantes :
+#   AMK_SKIP_CI=1 git commit …     → ne joue aucune porte
+#   AMK_NO_MAP=1  git commit …     → joue les portes, ne touche pas à la carte
+#   git commit --no-verify …       → contourne git lui-même (aucun garde-fou)
+set -u
+cd "$(git rev-parse --show-toplevel)" || exit 1
+[ "${AMK_SKIP_CI:-0}" = "1" ] && { echo "⚠ crochet AMK contourné (AMK_SKIP_CI=1)"; exit 0; }
+command -v python3 >/dev/null 2>&1 || { echo "⚠ python3 absent : crochet AMK non joué"; exit 0; }
+
+t0=$(date +%s)
+
+# ── 1 · les portes rapides (les mêmes que la CI)
+if ! out=$(python3 tools/ops/machine.py --ci 2>&1); then
+  echo "$out" | grep -E '⛔|CI ROUGE|::error' || echo "$out"
+  echo
+  echo "COMMIT BLOQUÉ — les portes de la machine sont fermées."
+  echo "  correction : python3 tools/ops/machine.py --ci"
+  echo "  contournement assumé : AMK_SKIP_CI=1 git commit …"
+  exit 1
+fi
+
+# ── 2 · la carte, si elle peut être reconstruite ici
+# `AMK_SKIP_BOOTSTRAP=1` : jamais de `pip install` dans un crochet. Si graphify n'est pas là, on le dit
+# et on continue — bloquer un commit parce qu'un venv manque ferait contourner le crochet pour de bon.
+if [ "${AMK_NO_MAP:-0}" != "1" ]; then
+  if AMK_SKIP_BOOTSTRAP=1 python3 tools/graphify/build_full_graph.py >/tmp/amk-map.log 2>&1; then
+    if ! git diff --quiet -- ops/REPO-MAP.md; then
+      git add ops/REPO-MAP.md
+      echo "🗺  carte reconstruite et ajoutée au commit (elle avait changé)"
+    fi
+  else
+    echo "⚠ carte non rejouée — graphify injoignable depuis ce python :"
+    tail -1 /tmp/amk-map.log | sed 's/^/     /'
+    echo "     remède : bash tools/graphify/install.sh   (ou AMK_NO_MAP=1 pour ignorer)"
+  fi
+fi
+
+echo "✓ crochet AMK : $(( $(date +%s) - t0 ))s — portes ouvertes, carte à jour"
+exit 0
