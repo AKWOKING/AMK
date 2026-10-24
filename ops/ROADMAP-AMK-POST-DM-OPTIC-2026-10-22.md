@@ -25,6 +25,19 @@ par nos propres règles), et corriger ce qui est faux ou non sourcé (les 4 stat
 `audit_claims.py --sources`). Un chantier d'optimisation qui ne produit pas de chiffre avant/après n'est
 pas de l'optimisation, c'est du rangement.
 
+### Résultats mesurés du chantier d'optimisation (24/10)
+
+| # | Chantier | Avant | Après | Ce qui a réellement changé |
+|---|---|---|---|---|
+| 1 | Statistiques sans source | 4 dans `knowledge/`, 7 dans le dépôt | **0 et 0** | quatre chiffres corrigés (un était une mauvaise lecture de BrightLocal, un venait d'une étude de 2012, un n'existait pas, un était un chiffre de fournisseur) + deux failles de la porte corrigées |
+| 2 | Documents « périmés » | **37** annoncés, 11 encore cités | **1**, déjà étiqueté et lié à son remplaçant | la mesure était fausse : 36 documents *parlaient* d'une chose périmée sans l'être. Détecteur corrigé, pas le dépôt |
+| 3 | Médias sans référence | **227** annoncés (232 dans la carte) | **64** · 10,6 Mo, **rien supprimé** | même cause : la mesure. Les 64 restants sont des aperçus, des avatars, une ancienne version de marque — trop peu de gras pour risquer de casser une page |
+| 4 | Photos brutes du shooting | 395 Mo | **en attente de King** | la seule décision de poids du dépôt : ce sont des originaux, ils ne se régénèrent pas |
+| 5 | Outils disponibles | 2/24 provisionnés | **24/24 installés, 0 échec** | mais **2 seulement ont une trace d'usage** : installer n'est pas utiliser, et le compteur le dit maintenant |
+
+Ce que ce tableau montre, et c'est la leçon du week-end : **trois des cinq chantiers ont consisté à réparer
+une mesure, pas un fichier**. Un chiffre alarmant qu'on corrige sans le vérifier fait perdre une journée.
+
 Ce ruling **ne remplace pas** l'ordre des chantiers ci-dessous : il déplace la prospection au lundi et
 réserve le week-end à la machine.
 

@@ -2,7 +2,7 @@
 
 ```text
 Généré par tools/ops/audit_files.py — 2026-10-24
-1634 fichiers · 188.5 Mo · dont 66.2 Mo dans des fichiers > 5 Mo
+1638 fichiers · 188.5 Mo · dont 66.2 Mo dans des fichiers > 5 Mo
 Aucune suppression automatique : les décisions sont listées, pas prises.
 ```
 
@@ -10,7 +10,7 @@ Aucune suppression automatique : les décisions sont listées, pas prises.
 
 | Classe | Fichiers | Poids | Action |
 |---|---|---|---|
-| caches (`__pycache__`, `*.pyc`) | 0 | 0 o | `python3 tools/ops/audit_files.py --clean-cache` |
+| caches (`__pycache__`, `*.pyc`) | 2 | 144.0 Ko | `python3 tools/ops/audit_files.py --clean-cache` |
 
 ## 2 · Doublons exacts — octet pour octet
 
@@ -46,55 +46,41 @@ Aucun doublon à l'intérieur d'un même projet.
 
 ## 3 · Médias sans aucune référence par leur nom
 
-86 fichiers, 6.4 Mo. **Piste, pas preuve** : un manifeste, un CSS ou un `JSON` peut les appeler autrement.
+87 fichiers, 12.0 Mo. **Piste, pas preuve** : un manifeste, un CSS ou un `JSON` peut les appeler autrement.
 
 | Dossier | Fichiers | Poids | Exemples |
 |---|---|---|---|
-| `content/Avatar/_composites/busts-694/` | 3 | 1.2 Mo | avatar-surprised-694.png, avatar-talking-694.png, avatar-thinking-694.png |
-| `hosting/previews/dmoptic/montures/` | 22 | 1003.3 Ko | monture-f01-2.jpg, monture-f01-3.jpg, monture-f04-2.jpg |
-| `clients/_mockups/bonanjo-img/` | 3 | 526.1 Ko | imagerie.jpg, maternite.jpg, neuro.jpg |
-| `clients/dm-optic/launch/facebook-assets/` | 2 | 495.6 Ko | cover-check-desktop-820x312.png, cover-check-mobile-640x360.png |
-| `clients/dm-optic/launch/facebook-assets/posters/` | 3 | 437.5 Ko | poster-01-garcon-vert.jpeg, poster-02-fille-verte.jpeg, poster-03-fille-bleue.jpeg |
-| `clients/_mockups/` | 2 | 408.9 Ko | EXEMPLE-college-telephone.jpg, EXEMPLE-dentaire-2devices.jpg |
-| `demos/img/` | 3 | 400.7 Ko | le-cristallin-hero.jpg, le-cristallin-lab.jpg, le-cristallin-tryon.jpg |
-| `content/Avatar/` | 3 | 359.8 Ko | E.jpeg, I.jpeg, K.jpeg |
-| `content/carousels/c03-avant-de-payer/` | 3 | 320.5 Ko | slide-2.png, slide-3.png, slide-4.png |
-| `content/pipeline/post01/vo/v5-sentences/` | 14 | 276.8 Ko | s07.mp3, s08.mp3, s09.mp3 |
-| `content/carousels/c01-vous-etes-ouverts/` | 3 | 177.3 Ko | slide-2.png, slide-3.png, slide-4.png |
-| `content/pipeline/post01/vo/` | 9 | 176.9 Ko | vo-b4.mp3, vo-b4a.mp3, vo-b4b.mp3 |
-| `content/carousels/c02-test-des-10-secondes/` | 3 | 165.6 Ko | slide-2.png, slide-3.png, slide-4.png |
-| `clients/dm-optic/content/month1/c1-render/` | 3 | 117.8 Ko | slide-2.png, slide-3.png, slide-4.png |
-| `sales/social/videos/` | 1 | 97.3 Ko | school-founding-fr-cover.jpg |
-| `content/videos/v06-facebook-no-booking/narration/` | 2 | 86.4 Ko | n4.mp3, n5.mp3 |
-| `clients/dm-optic/website/logo/` | 1 | 79.2 Ko | source-extrait-du-pdf-1240x992.jpg |
-| `site/img/` | 1 | 73.9 Ko | clinic.jpg |
-| `clients/dm-optic/brand/` | 1 | 70.1 Ko | CARTE-SIGNATURE-TABLEAU-VISION-preview.png |
-| `content/videos/v07-stock-invisible/assets/` | 2 | 38.0 Ko | maquette-ui-1.png, maquette-ui-2.png |
+| `clients/dm-optic/photoshoot/reference-composition-NE-PAS-PUBLIER/` | 2 | 2.1 Mo | A1-monture-face-catalogue.png, A3-profil-branches.png |
+| `tryon-camera/apercus/` | 3 | 2.0 Mo | apercu-interface.png, apercu-inventaire.png, exemples-6-montures.png |
+| `mockups/` | 3 | 1.8 Mo | amk-phone.png, concept-phone.png, oracare-phone.png |
+| `content/Avatar/_composites/busts-694/` | 3 | 1.1 Mo | avatar-approving-694.png, avatar-idle-694.png, avatar-pointing-694.png |
+| `hosting/previews/dmoptic/montures/` | 22 | 1013.6 Ko | monture-e14-2.jpg, monture-e14-3.jpg, monture-e19-2.jpg |
+| `clients/_mockups/labs/` | 3 | 647.2 Ko | 2k-labo.jpg, interlabo.jpg, meka.jpg |
+| `clients/_mockups/` | 3 | 574.4 Ko | EXEMPLE-clinique.jpg, EXEMPLE-college-2devices.jpg, EXEMPLE-college-portable.jpg |
+| `demos/img/` | 2 | 436.4 Ko | dmoptic-enfants.jpg, dmoptic-montures.jpg |
+| `content/Avatar/` | 3 | 410.1 Ko | M.jpeg, N.jpeg, WhatsApp Image 2026-10-12 at 18.34.29.jpeg |
+| `sales/social/videos/` | 3 | 257.8 Ko | clinic-founding-en-cover.jpg, clinic-founding-fr-cover.jpg, school-founding-en-cover.jpg |
+| `content/pipeline/post01/vo/v5-sentences/` | 14 | 256.4 Ko | s04.mp3, s05.mp3, s06.mp3 |
+| `sales/` | 1 | 226.3 Ko | AMK-5-Stage-Funnel.png |
+| `brand/v1-green/` | 1 | 225.4 Ko | funnel-v1-green.png |
+| `content/carousels/c01-vous-etes-ouverts/` | 2 | 219.8 Ko | slide-5.png, slide-6.png |
+| `clients/_mockups/labs/img/` | 1 | 174.2 Ko | hero-lab.jpg |
+| `content/pipeline/post01/vo/` | 9 | 163.4 Ko | vo-b1.mp3, vo-b2.mp3, vo-b3.mp3 |
+| `content/videos/v06-facebook-no-booking/narration/` | 3 | 155.6 Ko | n1.mp3, n2.mp3, n3.mp3 |
+| `content/carousels/c02-test-des-10-secondes/` | 2 | 119.0 Ko | slide-5.png, slide-6.png |
+| `content/carousels/c03-avant-de-payer/` | 2 | 96.2 Ko | slide-5.png, slide-6.png |
+| `tryon-camera/` | 1 | 79.9 Ko | og-uo-camera.jpg |
 
 *Les photos de `clients/dm-optic/photoshoot/` ne sont PAS une rafale : c'est le **catalogue montures** du client — 160 photos, une par monture (156 montures + 4 vues du cabinet), 395 Mo. Elles sont listées parce qu'elles pèsent, pas parce qu'elles sont mortes : `sales/Activity-Log.md` (19/10) en garde **84 en réserve** pour le lot 2 du catalogue. Les supprimer effacerait la source d'un livrable à venir. Ce qui se discute ici, c'est de les sortir de git (stockage externe), pas de les effacer.*
 
 ## 4 · Documents
 
 - **412 documents sans citation entrante** — à relire ou à archiver (voir `ops/REPO-MAP.md` §3 bis).
-- **37 documents marqués périmés par leur propre texte** — détection lexicale, à vérifier un par un.
+- **1 documents marqués périmés par leur propre texte** — détection lexicale, à vérifier un par un.
 
 | Périmé (d'après lui-même) | Cité par |
 |---|---|
-| `content/strategy/RULE-CREDENTIAL-CLAIMS.md` | 24× |
-| `clients/dm-optic/build-notes.md` | 16× |
-| `sales/AMK-Playbook-Addendum-Outcomes-2026-09-15.md` | 10× |
-| `site/SEO-REVIEW-2026-10-08.md` | 10× |
-| `sales/Outreach-Pack-2026-09-14.md` | 9× |
-| `content/pipeline/CONTENT-PIPELINE.md` | 8× |
-| `clients/dm-optic/launch/SETUP-TIKTOK.md` | 7× |
-| `AGENTS.md` | 6× |
-| `clients/dm-optic/content/month1/w1/ugc-03.md` | 6× |
-| `sales/RDV-UNILABO-2026-09-25.md` | 6× |
-| `leads/CONTRADICTIONS.md` | 4× |
-| `ops/GIT-STABILITY-NOTE.md` | 4× |
-| `sales/social/founding-post-tiktok-ig.md` | 4× |
-| `site/DEPLOY.md` | 4× |
-| `sales/OUTREACH-REECRITURE-2026-10-24.md` | 3× |
+| `sales/Walk-In-Batch-2026-09-15.md` | 3× |
 
 ⚠️ **Ni l'orphelin ni le « périmé » ne se supprime automatiquement.** Le 24/10, `AMK-DESIGN-SKILLS.md` était signalé « remplacé par Activity-Log » — c'est faux, et une suppression sur cette base aurait effacé 1 400 lignes de règles de design.
 
@@ -135,4 +121,4 @@ Aucun doublon à l'intérieur d'un même projet.
 
 ---
 
-*Rejouable : `python3 tools/ops/audit_files.py`. Rapport précédent à comparer : 1634 fichiers, 188.5 Mo.*
+*Rejouable : `python3 tools/ops/audit_files.py`. Rapport précédent à comparer : 1638 fichiers, 188.5 Mo.*

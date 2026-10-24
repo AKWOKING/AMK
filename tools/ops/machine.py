@@ -355,7 +355,13 @@ def note_usage(tool: str, what: str = "") -> None:
 
 
 def usage_state() -> dict:
+    """Deux choses différentes, comptées séparément : INSTALLER n'est pas UTILISER.
+
+    Le 24/10, `provision.sh` a installé les 24 outils d'un coup ; si l'installation comptait comme un
+    usage, le compteur aurait annoncé « 24/24 utilisés » le jour où il n'en avait jamais servi un seul.
+    """
     counts: dict[str, int] = {}
+    installed: dict[str, str] = {}
     last: dict[str, str] = {}
     today: set[str] = set()
     try:
@@ -368,11 +374,17 @@ def usage_state() -> dict:
         if len(parts) < 2:
             continue
         when, tool = parts[0], parts[1]
+        what = parts[2] if len(parts) > 2 else ""
+        if tool == "provision":                    # trace d'installation, pas d'usage
+            name = what.split()[0] if what else ""
+            if name:
+                installed[name] = when
+            continue
         counts[tool] = counts.get(tool, 0) + 1
         last[tool] = when
         if when.startswith(stamp_day):
             today.add(tool)
-    return dict(counts=counts, last=last, today=sorted(today), total=len(lines))
+    return dict(counts=counts, installed=installed, last=last, today=sorted(today), total=len(lines))
 
 
 def print_usage() -> int:
@@ -388,7 +400,8 @@ def print_usage() -> int:
         n = u["counts"].get(t, 0)
         if n and t in prov["ok"]:
             seen_installed += 1
-        print(f"  {t:<26} {inst:<10} {n:>4}  {u['last'].get(t, '—')}")
+        last = u["last"].get(t, "installé " + u["installed"][t][:16] if t in u["installed"] else "—")
+        print(f"  {t:<26} {inst:<10} {n:>4}  {last}")
     silent = [t for t in tools if t in prov["ok"] and u["counts"].get(t, 0) == 0]
     outside = [t for t in tools if t not in prov["ok"] and t not in prov["ko"]]
     print(f"\n  hors installateurs : " + " · ".join(

@@ -2,14 +2,14 @@
 
 ```text
 Généré par tools/graphify/build_full_graph.py — 2026-10-24
-Source : graphify-out/graph.json (11990 nœuds, 14596 arêtes)
+Source : graphify-out/graph.json (11991 nœuds, 14597 arêtes)
 Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même
 carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.
 ```
 
 ## 0 · En une page
 
-- **11990 nœuds** — dont 766 documents, 165 scripts, 21 modules, 139 pages HTML, 395 images, 8 vidéos, 40 audios, 35 fichiers de données, 11 PDF.
+- **11991 nœuds** — dont 766 documents, 165 scripts, 21 modules, 139 pages HTML, 395 images, 8 vidéos, 40 audios, 35 fichiers de données, 11 PDF.
 - **2866 citations entre documents** (2280 en chemin exact, 586 par nom unique)
 - **121 arêtes de remplacement** · **1 documents marqués périmés**
 - **412 documents que personne ne cite** (atteignables par aucun chemin de lecture)
@@ -240,7 +240,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | config | 7 | `.github/workflows/deploy-dmoptic.yml`, `.github/workflows/machine.yml`, `hosting/previews/dmoptic/sitemap.xml` |
 | archive | 3 | `amk-factures-pwa-v2.zip`, `amk-factures-pwa.zip`, `dmopticsarl.zip` |
 | sous-titre | 3 | `clients/dm-optic/content/month1/w1/tiktok-01-v2.fr.srt`, `clients/dm-optic/content/month1/w1/tiktok-01.fr.srt`, `clients/dm-optic/content/month1/w2/etapes-01.srt` |
-| symboles extraits (titres de documents + fonctions/classes du code) | 10348 | — |
+| symboles extraits (titres de documents + fonctions/classes du code) | 10349 | — |
 
 ### Les outils et skills installés — 1 dossier = 1 outil
 
