@@ -19,7 +19,7 @@ bash tools/ops/provision.sh --list     # les 24 outils : installés cette sessio
 Le miroir Notion (PRE-FLIGHT §0g) est **daté ici**, dans une ligne que la machine lit :
 
 ```text
-MIRROR 2026-10-24 · 960051e6
+MIRROR 2026-10-24 · 19be2a4
 ```
 
 Tant qu'un fichier de **fait debout** (pré-vol, machine, prix, dossiers clients, journal des ventes)
