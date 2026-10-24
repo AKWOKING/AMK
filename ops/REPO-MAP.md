@@ -2,18 +2,18 @@
 
 ```text
 Généré par tools/graphify/build_full_graph.py — 2026-10-24
-Source : graphify-out/graph.json (11901 nœuds, 14820 arêtes)
+Source : graphify-out/graph.json (11913 nœuds, 14834 arêtes)
 Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même
 carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.
 ```
 
 ## 0 · En une page
 
-- **11901 nœuds** — dont 748 documents, 171 scripts, 21 modules, 139 pages HTML, 412 images, 3 vidéos, 40 audios, 35 fichiers de données, 11 PDF.
-- **3079 citations entre documents** (2484 en chemin exact, 595 par nom unique)
+- **11913 nœuds** — dont 749 documents, 171 scripts, 21 modules, 139 pages HTML, 412 images, 3 vidéos, 40 audios, 35 fichiers de données, 11 PDF.
+- **3083 citations entre documents** (2486 en chemin exact, 597 par nom unique)
 - **121 arêtes de remplacement** · **1 documents marqués périmés**
-- **389 documents que personne ne cite** (atteignables par aucun chemin de lecture)
-- **Couverture : 1643 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
+- **390 documents que personne ne cite** (atteignables par aucun chemin de lecture)
+- **Couverture : 1644 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
 
 ### Les dossiers du dépôt, par poids — et ce que chacun porte
 
@@ -36,7 +36,7 @@ carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10
 | `https___amk-cm.vercel.app_-Performance-on-Search-2026-10-08/` | 7 | — |
 | `mockups/` | 5 | Captures et mockups |
 | `.github/` | 2 | — |
-| `docs/` | 1 | — |
+| `docs/` | 2 | — |
 
 ## 1 · La couche connaissance — les 10 documents qui font loi
 
@@ -92,9 +92,9 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 ## 3 bis · Ce que personne ne cite — à relire ou à archiver
 
-389 documents n'ont aucune citation entrante. Un orphelin n'est pas inutile : il est **inatteignable**. Soit il faut le citer là où il sert, soit il faut l'archiver.
+390 documents n'ont aucune citation entrante. Un orphelin n'est pas inutile : il est **inatteignable**. Soit il faut le citer là où il sert, soit il faut l'archiver.
 
-- **109 à traiter** · 164 dans `design/vendor/` (imports tiers, normal) · 116 dans `leads/records/` (reliés par le CRM, pas par citation)
+- **110 à traiter** · 164 dans `design/vendor/` (imports tiers, normal) · 116 dans `leads/records/` (reliés par le CRM, pas par citation)
 
 - **`tools/`** — 50 : `tools/claude-seo/README.md`, `tools/content/README.md`, `tools/docs/README.md`, `tools/geo-seo-claude/README.md`, `tools/graphify/README.md`, `tools/humanizer/README.md` … (+44)
 - **`content/`** — 19 : `content/Avatar/_composites/busts-694/MEDIA.md`, `content/README.md`, `content/assets/ASSETS.md`, `content/assets/fonts/MEDIA.md`, `content/pipeline/CONTENT-UNBLOCK-2026-10-05.md`, `content/pipeline/post01/SENTENCE-TIMING-v5d.md` … (+13)
@@ -106,6 +106,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 - **`site/`** — 2 : `site/SEO-AUDIT-2026-10-23.md`, `site/img/MEDIA.md`
 - **`demos/`** — 1 : `demos/img/MEDIA.md`
 - **`design/`** — 1 : `design/README.md`
+- **`docs/`** — 1 : `docs/superpowers/specs/2026-10-24-flux-prospection-design.md`
 - **`leads/`** — 1 : `leads/M1-EXTRACTION-REPORT.md`
 
 ## 4 · Les communautés du dépôt — les sujets, tels que les documents se relient
@@ -114,7 +115,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 *Le pivot d'une communauté est le document que **les autres membres du groupe** citent le plus (degré interne) — pas le document le plus cité du dépôt, qui l'est partout.*
 
-**506 documents sur 748 sont dans un sujet.** Les 214 autres ne touchent aucune citation — ni entrante, ni sortante : ce sont eux qui se perdent (voir §3 bis). Un sujet se nomme par ses pivots ; un document hors sujet ne se retrouve pas tout seul.
+**506 documents sur 749 sont dans un sujet.** Les 214 autres ne touchent aucune citation — ni entrante, ni sortante : ce sont eux qui se perdent (voir §3 bis). Un sujet se nomme par ses pivots ; un document hors sujet ne se retrouve pas tout seul.
 
 | # | Docs | Les 3 pivots internes | Ce que le groupe a en propre |
 |---|---|---|---|
@@ -187,7 +188,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 | Nature | Fichiers | Où |
 |---|---|---|
-| document | 748 | `AGENTS.md`, `AMK-DESIGN-SKILLS.md`, `AMK-SEO-PLAYBOOK.md` |
+| document | 749 | `AGENTS.md`, `AMK-DESIGN-SKILLS.md`, `AMK-SEO-PLAYBOOK.md` |
 | image | 412 | `brand/AMK-logo-mono.png`, `brand/AMK-logo-mono.svg`, `brand/AMK-logo-primary.png` |
 | script | 171 | `brand/build_fb_assets.py`, `clients/dm-optic/launch/facebook-assets/build_cover.py`, `clients/dm-optic/launch/social/build_frame_cards.py` |
 | page | 139 | `brand/AMK-Logo-Kit.html`, `brand/v1-green/AMK-Logo-Kit.html`, `clients/dm-optic/brand/CARTE-SIGNATURE-TABLEAU-VISION.html` |
@@ -202,7 +203,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | vidéo | 3 | `clients/dm-optic/brag/brag.mp4`, `content/videos/v06-facebook-no-booking/Video_06_Facebook_No_Booking.mp4`, `content/videos/v06-facebook-no-booking/Video_06_Facebook_No_Booking_VOIX.mp4` |
 | sous-titre | 3 | `clients/dm-optic/content/month1/w1/tiktok-01-v2.fr.srt`, `clients/dm-optic/content/month1/w1/tiktok-01.fr.srt`, `clients/dm-optic/content/month1/w2/etapes-01.srt` |
 | archive | 1 | `dmopticsarl-2026-10-21.zip` |
-| symboles extraits (titres de documents + fonctions/classes du code) | 10258 | — |
+| symboles extraits (titres de documents + fonctions/classes du code) | 10269 | — |
 
 ### Les outils et skills installés — 1 dossier = 1 outil
 
