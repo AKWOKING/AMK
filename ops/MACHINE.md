@@ -69,13 +69,17 @@ dans trois mois.
 
 ## 2 · Boucle 1 — le tour, en huit étapes
 
+> **L'étape 0 porte deux gestes, dans cet ordre : `wake.py` (l'arbre) puis `bash tools/graphify/preflight.sh`
+> (le graphe).** Ruling King 25/10, 141ᵉ message : *« use graphify update or read graph, before you read
+> pre-flight document »* — le graphe passe **avant** la lecture de `PRE-FLIGHT.md`, donc avant l'étape 1.
+
 Chaque étape a **une question**, **une sortie vérifiable** et **un incident qui l'a créée**. Un tour qui
 saute une étape ne plante pas tout de suite : il plante trois tours plus tard, quand plus personne ne
 sait pourquoi le chiffre était faux.
 
 | # | Étape | La question | La sortie qui prouve que l'étape est faite | Ce qui intervient |
 |---|---|---|---|---|
-| 0 | **Réveil** | *L'arbre que je lis est-il le vrai dépôt ?* | `wake.py --check` passe (code 0) | `tools/ops/wake.py` · `ops/GIT-STABILITY-NOTE.md` |
+| 0 | **Réveil + graphe** | *L'arbre que je lis est-il le vrai dépôt — et le graphe reconstruit dessus ?* | `wake.py --check` code 0 **et** la ligne d'étape 0 de `tools/graphify/preflight.sh` (graphe rejoué, carte lue, fichiers nommés) | `tools/ops/wake.py` · `tools/graphify/preflight.sh` · `ops/REPO-MAP.md` · `ops/GIT-STABILITY-NOTE.md` |
 | 1 | **Cadrage** | *Que demande King, et qu'est-ce qui est déjà tranché ?* | la demande en une phrase + les rulings cités **par chemin** | `PRE-FLIGHT.md` §0–§5 · `knowledge/` couche 2 · skill `brainstorming` si la demande est ouverte |
 | 2 | **Lecture** | *Quelle règle gouvernait déjà ce sujet ?* | la liste des fichiers **lus** et **listés non lus**, en tête de réponse | `ops/REPO-MAP.md` §0 §6 §2 §1 §3 bis · `tools/graphify/ask.sh` |
 | 3 | **Plan** | *Quels fichiers, dans quel ordre, et à quoi je verrai que c'est fini ?* | 3 à 8 lignes, chaque ligne avec sa porte | skills `writing-plans` / `executing-plans` · `PRE-FLIGHT.md` §0d · `ops/templates/` |
@@ -88,7 +92,7 @@ sait pourquoi le chiffre était faux.
 
 | Étape | L'incident qui l'a rendue obligatoire | Date |
 |---|---|---|
-| 0 Réveil | Quatre fois dans la même journée, le travail local a disparu et deux affirmations fausses ont été publiées (« le catalogue est vide », « la semaine 3 est bloquée ») — l'arbre lu n'était pas le dépôt | 22/10 |
+| 0 Réveil + graphe | Quatre fois dans la même journée, le travail local a disparu et deux affirmations fausses ont été publiées (« le catalogue est vide », « la semaine 3 est bloquée ») — l'arbre lu n'était pas le dépôt. **Complété le 25/10** : le graphe se lit avant `PRE-FLIGHT.md`, sinon la règle se cherche de mémoire (ruling 141) | 22/10 et 25/10 |
 | 1 Cadrage | Un ruling de King appliqué à moitié, faute d'avoir relu ce qui était déjà tranché | continu |
 | 2 Lecture | Messages d'approche entièrement réécrits sans `OUTREACH-MESSAGING` ni `RESEARCH-STANDARD` §10 — deux règles existaient, aucune n'a été lue | 24/10 |
 | 3 Plan | Une refonte partie d'un seul fichier et qui en a touché douze sans que personne ne l'ait décidé | 13/10 |

@@ -100,6 +100,13 @@ VERBES_ACTION = ["voulez", "souhaitez", "préférez", "montre", "envoi", "propos
                  "donnez", "appel", "répondez", "regardez", "comparez", "essayez", "passe", "partage",
                  "transmet", "fixe", "choisissez"]
 
+# Auto-présentation — ruling King 25/10 (141ᵉ message) : « on dit bonjour c'est King alors qu'au
+# premier message on ne sait pas se présenter ». Une présentation qui ne porte pas la raison du message
+# n'est pas une présentation, c'est du remplissage — et devant un prospect déjà tiède (il a reçu un
+# message hier, il y a répondu), elle parle à un inconnu qu'il n'est pas.
+SELF_INTRO = ["c'est king", "c'est akwo", "je suis king", "je suis akwo", "moi c'est king",
+              "akwo king", "king de amk", "king, de amk"]
+
 # Sortie sans friction — knowledge/OUTREACH-MESSAGING §3, temps 5.
 SORTIE = ["sans moi", "2 minutes", "deux minutes", "sans engagement", "le faire vous-même",
           "un mot", "une ligne", "un chiffre"]
@@ -227,6 +234,12 @@ def check(msg: Message) -> None:
     if EMOJI_RE.search(body):
         msg.fails.append("emoji — §13")
 
+    # 5 bis · auto-présentation — ruling 141. Bloque : c'est une règle de méthode, pas de goût.
+    for s in SELF_INTRO:
+        if s in flat:
+            msg.fails.append(f"auto-présentation : « {s} » — la présentation doit porter la raison du "
+                             f"message, pas le prénom seul — ruling 141 (25/10)")
+
     # 6 · dédouanement — §13 temps 2
     if not any(fold(d) in flat for d in DEDOUANEMENT):
         msg.warns.append("pas de dédouanement : le fait se lira comme un reproche — §13 temps 2")
@@ -241,6 +254,16 @@ def check(msg: Message) -> None:
         if sent.rstrip().endswith("?") and " ou " in fold(sent):
             msg.warns.append("question à deux branches (« X ou Y ? ») — justifier ou simplifier, §13")
             break
+
+    # 7 ter · une sortie sans friction qui ne dit pas ce qu'elle produit — ruling 141 : « un mot
+    #        suffit pour faire quoi ?? ». Une phrase de sortie seule (≤ 4 mots) en fin de message
+    #        demande une réponse sans nommer son usage.
+    last = [s for s in re.split(r"(?<=[.!?])\s+", body.strip()) if s.strip()]
+    if last:
+        tail = fold(last[-1])
+        if len(words(last[-1])) <= 4 and any(fold(x) in tail for x in SORTIE):
+            msg.warns.append("sortie seule en fin de message : elle ne dit pas ce que la réponse "
+                             "produit (« un mot suffit » — pour faire quoi ?) — ruling 141 (25/10)")
 
     # 8 · le quartier doit apparaître tôt — DECLINAISON §1①, six premiers mots
     q = fold(msg.quartier.split("(")[0].strip())

@@ -5853,3 +5853,65 @@ prévenir. Toute affirmation de type « nous avons N clients » porte désormais
 Médicale** (Business, « Optometrist • Optician », Bonamoussadi), **Optique Pro** (profil
 « **Laury Ntemtsa** » — la ligne directe du titulaire), **Maranatha Optics**. Total : **27 testés, 21
 joignables, 6 morts**. Il reste **World Vision** (656 03 21 72).
+
+## 25/10/2026 (tour 141) — le graphe passe AVANT la pré-vol, le message cesse de se présenter, et la porte A ferme
+
+**① Une règle de méthode, et elle change l'ordre des gestes.** King : *« new standing rule : use
+graphify update or read graph, before you read pre-flight document »*. Le graphe n'était pas absent du
+dépôt — il était **mal placé** : `PRE-FLIGHT.md` §0h le rangeait *dans* la pré-vol, donc après la
+lecture du document qui dit quoi lire. Lire d'abord la pré-vol, c'est chercher la règle de mémoire.
+
+Ce qui a été construit, et ce n'est pas un paragraphe de plus :
+
+- **`tools/graphify/preflight.sh`** — une seule commande : ① rejoue le graphe (~10 s), ② lit
+  `ops/REPO-MAP.md` dans l'ordre §0 → §6 → §2 → §3 → §1 → §3 bis, ③ cherche le sujet du tour et
+  **nomme les fichiers**, ④ imprime la ligne d'en-tête à coller. `--read` lit sans reconstruire.
+- **`PRE-FLIGHT.md` §00** — nouveau, au-dessus de tout : *« Étape 0 — le graphe d'abord, avant ce
+  document »*, avec l'ordre complet `wake.py → preflight.sh → PRE-FLIGHT.md → dossier client →
+  knowledge/`. Le §0h garde l'historique, les cinq sections et les limites de la carte.
+- **`AGENTS.md` §1** — le rituel passe de quatre à cinq commandes, le graphe en 0 bis (après `wake.py`,
+  parce qu'un graphe bâti sur un arbre faux est faux aussi).
+- **`ops/MACHINE.md` §2** + **`tools/ops/machine.py`** — l'étape 0 devient « Réveil + graphe » : elle
+  n'est finie que si `wake.py --check` passe **et** si `preflight.sh` a imprimé sa ligne.
+- **`tools/graphify/README.md`**, `sales/CLIENT-MESSAGING-RULES.md` §13 et
+  `sales/OUTREACH-REECRITURE-2026-10-24.md` : les trois renvois qui pointaient vers la vieille place
+  sont corrigés.
+
+**② Le message Optix — deux reproches, une seule cause.** King : *« on dit bonjour c'est King alors
+qu'au premier message on ne sait pas se présenter, let's not forget he is a warm prospect, un mot
+suffit pour faire quoi ?? »*. L'ouverture donnait un prénom sans raison à un homme qui a reçu un message
+hier et y a répondu 👍 ; et « Un mot suffit » demandait une réponse sans dire ce qu'elle produit.
+**6ᵉ version** (55 mots, 3 phrases, 1 question, porte 0/0) :
+
+> Je vous ai envoyé hier ce que Google affiche à Akwa : un cabinet comptable passe avant Optix, dont
+> la fiche n'a ni horaires, ni site, ni avis — pas votre faute.
+> Dites-moi combien de patients vous arrivent par Google ?
+> Un chiffre suffit : je le compare à ce que la fiche laisse filer — vous saurez quoi corriger.
+
+Trois conséquences dans le lot : **plus un seul « Bonjour, c'est King »** ; les trois froids dont la
+sortie était nue (« Deux minutes. ») disent maintenant ce que la réponse rend (« et vous verrez ce qu'il
+lit avant d'appeler ») ; ⑦ ⑧ ⑨ ont été resserrés pour rester sous 55 mots (54, 54, 54). **Lot entier :
+6 messages, 0 bloquant, 0 avertissement.**
+
+**③ La porte, qui a appris deux règles.** `tools/qa/audit_outreach.py` : `SELF_INTRO` (bloque
+l'auto-présentation — ruling 141) et « sortie seule en fin de message » (signale une formule de sortie
+de ≤ 4 mots qui ne dit pas ce qu'elle produit). Banc : **20/20** (17 + 3 cas, dont un faux positif tiède
+qui doit passer propre). Les deux règles sont écrites dans `sales/CLIENT-MESSAGING-RULES.md`
+**§13 quater**, avec le tableau des trois fautes et les deux tests d'avant-envoi. Le ruling WhatsApp,
+lui, passe dans **§13 ter** — il ne vivait que dans `crm.py` et dans `PORTE-A`, c'est-à-dire dans la
+donnée, pas dans la règle.
+
+**④ La porte A ferme.** **World Vision (656 03 21 72) est vivant** : la capture montre le numéro sous le
+titre **« Contacts »** (et non « Not in your contacts »), avec le nom « World Vision » et un logo de
+globe — le contact est donc déjà enregistré sur le téléphone. `wa_verified=yes`,
+`profile_name_seen="World Vision"` au CRM. **Total : 28 testés · 22 joignables · 6 morts · 0 restant.**
+
+**⑤ Une porte pour le ruling WhatsApp, parce qu'il n'en avait pas.** `check_no_wa_is_dead()` dans
+`leads/build/crm.py` fait échouer `rebuild.sh` (donc n'écrit rien) si une entrée de `VERIF_WA_2510`
+testée introuvable reste dans le pipeline. Vérifié qu'elle mord (entrée factice → code 1). Nuance
+écrite : le contrôle porte sur les numéros **testés** ; dans les lots antérieurs, `wa_verified="no"`
+veut dire « jamais vérifié » (20 lignes) — on ne tue pas ce qu'on n'a pas testé.
+
+**État** : CRM **190 lignes**, **67 `wa_verified=yes`**, **21 disqualifiés**. Graphe rejoué après
+écriture (`ops/REPO-MAP.md` régénéré : la nouvelle commande et les deux sections y entrent).
+Envois : Optix **dimanche 25/10, seul** · COMED **lundi 26/10** · IVY **mardi 27/10 si confirmé**.

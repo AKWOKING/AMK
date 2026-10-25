@@ -31,7 +31,9 @@ SCOUT ONOC du 24/10 — ligne 139 de l'annuaire (Littoral). Numéro PUBLIÉ PAR 
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Aucune ligne du journal ne cite encore ce lead. S'il a été contacté, c'est que l'envoi n'a pas été loggé — **à corriger dans `Activity-Log.md`**.*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 1 ligne(s).*
+
+`L5851` · **③ Troisième tour de porte A, 6 numéros, 6 captures.** Joignables : **Emeraude Optique**, **El Shadai**
 
 ---
 

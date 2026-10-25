@@ -755,7 +755,10 @@ def write_map(g: dict, nodes_meta: dict, stale: set[str], stats: dict, comm: dic
 
     A("## 7 · Les questions qu'on peut poser au graphe dès maintenant")
     A("")
+    A("**Étape 0 de tout tour (ruling King 25/10, 141ᵉ message) : le graphe passe avant `PRE-FLIGHT.md`.**")
+    A("")
     A("```bash")
+    A('bash tools/graphify/preflight.sh "le sujet du tour"          # rejoue + lit CETTE carte + nomme les fichiers')
     A('bash tools/graphify/ask.sh "message prospect clinique"      # quelles règles lire avant d\'écrire')
     A('bash tools/graphify/ask.sh "prix grille remise"               # la couche tarifaire')
     A('bash tools/graphify/ask.sh "vidéo script accroche"            # la couche contenu')

@@ -31,7 +31,7 @@ Active FB page (1,785 likes, school fundraiser). Need phone before outreach — 
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 11 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 12 ligne(s).*
 
 `L50` · | **ven 18/09 20:02** | **Cabinet Dentaire Emmanuel** (Bonamoussadi, 694 42 62 39) | msg 1 — sans maquette | Envoyé | **Non** |
 `L53` · | **ven 18/09 20:22** | **The Skye** (Bonamoussadi, 677 79 69 99) | **FU1 (M+2)** — texte du pack §A | Envoyé | **Non** |
@@ -44,6 +44,7 @@ Active FB page (1,785 likes, school fundraiser). Need phone before outreach — 
 `L3982` · Beneficial Life · Bonamoussadi, rond-point Maetur face Ola Energy) et trois numéros. Le message disait
 `L3987` · · **Lumumba** — deux pages Facebook + fiche APIE : **Bonamoussadi, face Parcours VITA**. Le message
 `L4992` · Conflit de quartier (Makepe ↔ Bonamoussadi) non résolu — à trancher avant tout re-engage.
+`L5853` · Médicale** (Business, « Optometrist • Optician », Bonamoussadi), **Optique Pro** (profil
 
 ---
 

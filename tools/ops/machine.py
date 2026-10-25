@@ -34,14 +34,17 @@ SKILLS = Path.home() / ".claude" / "skills"
 # ─────────────────────────────────────────────────────────── les huit étapes
 STAGES = [
     dict(
-        id=0, name="Réveil", alias=["reveil", "wake", "arbre"],
-        question="L'arbre que je lis est-il le vrai dépôt ?",
-        lis=["ops/GIT-STABILITY-NOTE.md (§ du 22/10)"],
-        lance=["python3 tools/ops/wake.py", "python3 tools/ops/wake.py --check"],
-        produit="un arbre au sommet distant, ou une réparation faite et dite",
-        fini="`wake.py --check` sort en code 0.",
+        id=0, name="Réveil + graphe", alias=["reveil", "wake", "arbre", "graphe", "graphify"],
+        question="L'arbre que je lis est-il le vrai dépôt — et le graphe est-il reconstruit dessus ?",
+        lis=["ops/GIT-STABILITY-NOTE.md (§ du 22/10)", "ops/REPO-MAP.md (écrit par l'étape 0, pas lu à la main)"],
+        lance=["python3 tools/ops/wake.py", "python3 tools/ops/wake.py --check",
+               'bash tools/graphify/preflight.sh "le sujet du tour"'],
+        produit="un arbre au sommet distant + le graphe rejoué + la carte lue + les fichiers à ouvrir, nommés",
+        fini="`wake.py --check` code 0 **et** `preflight.sh` a imprimé la ligne d'étape 0 (ruling 141 : le graphe avant PRE-FLIGHT.md).",
         pourquoi="22/10 : quatre fois dans la journée, le travail local a disparu et deux affirmations "
-                 "fausses ont été publiées (« le catalogue est vide », « la semaine 3 est bloquée »).",
+                 "fausses ont été publiées (« le catalogue est vide », « la semaine 3 est bloquée »). "
+                 "25/10 (ruling 141) : le graphe se lit ou se rejoue AVANT PRE-FLIGHT.md — la carte dit "
+                 "quelle règle existe, ce document dit comment la servir.",
     ),
     dict(
         id=1, name="Cadrage", alias=["cadrage", "demande", "ruling"],
@@ -60,8 +63,7 @@ STAGES = [
         question="Quelle règle gouvernait déjà ce sujet ?",
         lis=["ops/REPO-MAP.md §0 (chiffres) · §6 (routage) · §2 (squelette) · §1 (knowledge) · §3 bis (orphelins)",
              "ops/REPO-MAP.md §3 (périmé mais encore cité = consigne morte)"],
-        lance=["bash tools/graphify/install.sh",
-               "python3 tools/graphify/build_full_graph.py",
+        lance=["# le graphe a déjà été rejoué à l'étape 0 (preflight.sh) ; ici on ouvre ce qu'il a nommé",
                'bash tools/graphify/ask.sh "message prospect clinique" --top 8'],
         produit="la liste des fichiers LUS et des fichiers LISTÉS NON LUS, en tête de réponse",
         fini="aucune règle citée ne vient de mémoire ; chaque affirmation a un chemin.",

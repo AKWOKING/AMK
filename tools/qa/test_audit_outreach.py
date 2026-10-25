@@ -120,7 +120,7 @@ CAS: list[tuple[str, str, str, str]] = [
         "faux positif : « ou » ailleurs dans la phrase",
         "Bonjour Docteur, à Bonanjo, votre fiche donne un numéro qui n'existe plus ou qui a changé. "
         "Ce n'est pas votre travail, c'est la fiche : un patient appelle et raccroche. "
-        "Je vous l'envoie ? Deux minutes.",
+        "Je vous l'envoie ? Deux minutes, et vous verrez ce que le patient voit.",
         "Bonanjo",
         "",
     ),
@@ -129,6 +129,28 @@ CAS: list[tuple[str, str, str, str]] = [
         BON.replace("Je vous l'envoie ?", "C'est vous qui l'avez retiré, ou personne ne vous a prévenu ?"),
         "Bonanjo",
         "deux branches",
+    ),
+    (
+        "auto-présentation au premier message",
+        "Bonjour, c'est King. " + BON,
+        "Bonanjo",
+        "auto-présentation",
+    ),
+    (
+        "sortie qui ne dit pas ce qu'elle produit",
+        BON.replace("Je vous l'envoie ? Deux minutes à lire, vous décidez après.",
+                    "Je vous l'envoie ? Un mot suffit."),
+        "Bonanjo",
+        "sortie seule en fin de message",
+    ),
+    (
+        "faux positif : message tiède, sans bonjour ni présentation",
+        "Je vous ai envoyé hier ce que Google affiche à Akwa : un cabinet comptable passe avant Optix, "
+        "dont la fiche n'a ni horaires, ni site, ni avis — pas votre faute. "
+        "Dites-moi combien de patients vous arrivent par Google ? "
+        "Un chiffre suffit : je le compare à ce que la fiche laisse filer — vous saurez quoi corriger.",
+        "Akwa",
+        "",
     ),
     (
         "question finale décorative",

@@ -32,11 +32,12 @@ SCOUT ONOC du 24/10 — ligne 141 de l'annuaire (Littoral). Numéro PUBLIÉ PAR 
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 3 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 4 ligne(s).*
 
 `L3896` · La Fibre Optique 694 422 640 · Pagrot 699 90 46 91. **Rien n'est envoyé.**
 `L3951` · réserves (§9 du lot 4 : Capelli, Optique Pro, Maranatha, La Fibre, Pagrot — contrôle approfondi à faire
 `L4005` · 690 03 48 18 · Maranatha 658 163 190 · La Fibre 694 422 640 · Pagrot 699 90 46 91.
+`L5852` · (vivant mais **aucun nom d'établissement** — photo de personne), **Pagrot Optique**, **Capelli Optique
 
 ---
 

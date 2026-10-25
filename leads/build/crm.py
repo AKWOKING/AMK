@@ -2469,6 +2469,14 @@ VERIF_WA_2510 = {
         "Notes_extra": "Porte A du 25/10 (2ᵉ tour) : 677 64 87 90 EST sur WhatsApp, profil « Light Optique » "
                        "avec photo de boutique. Joignable.",
     },
+    "world-vision": {
+        "wa_verified": "yes", "profile_name_seen": "World Vision",
+        "Notes_extra": "Porte A du 25/10 (4ᵉ tour, capture King) : 656 03 21 72 EST sur WhatsApp. La capture "
+                       "affiche le numéro sous le titre « Contacts » (et non « Not in your contacts »), avec "
+                       "le nom « World Vision » et un logo de globe — le contact est donc déjà enregistré "
+                       "sur le téléphone de King. Profil vivant, dernier numéro de la porte A : 28 testés, "
+                       "22 joignables, 6 morts. Jamais contacté.",
+    },
     "ets-espace-medical": {
         "wa_verified": "yes", "profile_name_seen": "Optic Medical Favour and Joy",
         "Notes_extra": "Porte A du 25/10 (2ᵉ tour) : 655 04 95 29 EST sur WhatsApp, PROFIL BUSINESS « Optic "
@@ -2620,6 +2628,28 @@ def check_tables_sans_doublon() -> None:
     if souci:
         sys.exit("✗ clé(s) DUPLIQUÉE(S) dans un littéral de table — la seconde écrase la première en "
                  "silence :\n   " + "\n   ".join(souci))
+
+
+def check_no_wa_is_dead(out: list) -> None:
+    """Ruling King 25/10 (« consider dead those that aren't found on whatsapp ») — la porte du ruling.
+
+    Toute ligne de `VERIF_WA_2510` dont le numéro a été **testé et introuvable** doit être
+    `disqualified`, avec un motif daté : pas de SMS, pas d'appel, pas de `parked`, pas de repli.
+    Sans ce contrôle, le ruling n'existait que dans la mémoire du tour qui l'a reçu.
+
+    Le contrôle porte sur `VERIF_WA_2510` — la table des numéros réellement testés — et **pas** sur
+    les `wa_verified="no"` des lots antérieurs : dans ces lots, « no » veut dire « jamais vérifié »
+    (l'ancien `unknown`). Confondre les deux ferait disqualifier 20 lignes jamais testées.
+    """
+    fautives = sorted(
+        slug for slug, patch in VERIF_WA_2510.items()
+        if str(patch.get("wa_verified") or "").strip().lower() == "no"
+        and str(patch.get("stage") or "").strip().lower() not in ("disqualified", "lost", "won")
+    )
+    if fautives:
+        sys.exit("✗ %d numéro(s) testé(s) introuvable(s) sur WhatsApp et encore dans le pipeline : %s"
+                 " — ruling 25/10 : disqualified + motif daté, pas de repli. Rien n'a été écrit."
+                 % (len(fautives), " · ".join(fautives)))
 
 
 def check_reply_types(out: list) -> None:
@@ -4265,6 +4295,7 @@ def main() -> int:
     _apply_state(out, LOT2_0210_KING, "LOT2_0210_KING")
     _apply_state(out, VERIF_WA_2510, "VERIF_WA_2510")
     check_reply_types(out)
+    check_no_wa_is_dead(out)
     check_tables_sans_doublon()
 
     cols = headers + NEW_FIELDS

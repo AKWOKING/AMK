@@ -32,11 +32,12 @@ SCOUT ONOC du 24/10 — ligne 158 de l'annuaire (Littoral). Numéro PUBLIÉ PAR 
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 3 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 4 ligne(s).*
 
 `L3895` · Réserve prête (§9) : Capelli 675 26 89 81 · Optique Pro 690 03 48 18 · Maranatha 658 163 190 ·
 `L3951` · réserves (§9 du lot 4 : Capelli, Optique Pro, Maranatha, La Fibre, Pagrot — contrôle approfondi à faire
 `L4005` · 690 03 48 18 · Maranatha 658 163 190 · La Fibre 694 422 640 · Pagrot 699 90 46 91.
+`L5854` · « **Laury Ntemtsa** » — la ligne directe du titulaire), **Maranatha Optics**. Total : **27 testés, 21
 
 ---
 
