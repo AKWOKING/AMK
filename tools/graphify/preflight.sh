@@ -127,7 +127,11 @@ STAMP="$(date '+%d/%m %H:%M')"
 say ""
 rule
 say "④ À COLLER DANS L'EN-TÊTE PRÉ-VOL (avant la ligne PRE-FLIGHT.md) :"
-say "   Étape 0 : graphe rejoué $STAMP (${NODES:-nœuds ?}) · carte lue §0/§6/§2/§3/§1/§3 bis · ask « ${TOPIC:-—} »"
+if [ "$READ_ONLY" -eq 1 ]; then
+  say "   Étape 0 : carte lue SANS reconstruction ($STAMP, ${NODES:-nœuds ?}) · §0/§6/§2/§3/§1/§3 bis · ask « ${TOPIC:-—} »"
+else
+  say "   Étape 0 : graphe rejoué $STAMP (${NODES:-nœuds ?}) · carte lue §0/§6/§2/§3/§1/§3 bis · ask « ${TOPIC:-—} »"
+fi
 say ""
 say "   Puis seulement : PRE-FLIGHT.md lu, §0b dossier client, §0c knowledge/."
 say ""
