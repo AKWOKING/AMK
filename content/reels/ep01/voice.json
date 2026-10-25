@@ -1,12 +1,36 @@
 {
-  "_comment": "Texte définitif de la voix d'EP01 v4 (tour 148). La v4 change l'accroche (quatre mots : sujet, action, objectif, contraste) ; le reste est celui de la v3 — le conseil gratuit de release2, l'utilité au sens de la formule de confiance. Une phrase par beat. Les durées réelles sont dans timing.json, mesurées par build_timing.py — la voix n'est jamais coupée.",
-  "voice_id": "voice-03",
+  "_comment": "Texte définitif de la voix d'EP01 v4 (tour 149 — voix re-synthétisée : voice-04, +0,4 s plus lente que la voix du tour 148). L'accroche est raccourcie de deux mots pour tenir dans les 5 s du contexte (règle V8 + slide 3) : « il appelle les autres, pas vous ». On raccourcit le texte, jamais la voix.",
+  "voice_id": "voice-04",
   "beats": [
-    {"beat": "hook", "file": "b1-hook.mp3", "text": "Tapez votre nom sur Google : il appelle ceux qui ont un site, pas vous."},
-    {"beat": "spike1", "file": "b2-spike1.mp3", "text": "Google demande trois choses : horaires, site, premier avis."},
-    {"beat": "release1", "file": "b3-release1.mp3", "text": "Vous en avez une."},
-    {"beat": "spike2", "file": "b4-spike2.mp3", "text": "Un site ne sert pas à avoir un site. Il répond avant l'appel."},
-    {"beat": "release2", "file": "b5-release2.mp3", "text": "Dix minutes, et c'est gratuit."},
-    {"beat": "cta", "file": "b6-cta.mp3", "text": "Écrivez APERÇU sur WhatsApp."}
+    {
+      "beat": "hook",
+      "file": "b1-hook.mp3",
+      "text": "Tapez votre nom sur Google : il appelle les autres, pas vous."
+    },
+    {
+      "beat": "spike1",
+      "file": "b2-spike1.mp3",
+      "text": "Google demande trois choses : horaires, site, premier avis."
+    },
+    {
+      "beat": "release1",
+      "file": "b3-release1.mp3",
+      "text": "Vous en avez une."
+    },
+    {
+      "beat": "spike2",
+      "file": "b4-spike2.mp3",
+      "text": "Un site ne sert pas à avoir un site. Il répond avant l'appel."
+    },
+    {
+      "beat": "release2",
+      "file": "b5-release2.mp3",
+      "text": "Dix minutes, et c'est gratuit."
+    },
+    {
+      "beat": "cta",
+      "file": "b6-cta.mp3",
+      "text": "Écrivez APERÇU sur WhatsApp."
+    }
   ]
 }

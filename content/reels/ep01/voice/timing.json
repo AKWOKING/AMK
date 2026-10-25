@@ -1,12 +1,12 @@
 {
   "_comment": "Durées mesurées sur la voix (build_timing.py). Le beat s'allonge jusqu'à la voix ; la voix n'est jamais coupée. Plafond 25 s vérifié à l'écriture.",
-  "total": 24.28,
+  "total": 24.76,
   "beats": [
     {
       "name": "hook",
       "file": "b1-hook.mp3",
-      "voice": 4.66,
-      "rms": 0.0984,
+      "voice": 4.25,
+      "rms": 0.1044,
       "breath": false,
       "duration": 5.0,
       "peak": 70,
@@ -16,19 +16,19 @@
     {
       "name": "spike1",
       "file": "b2-spike1.mp3",
-      "voice": 5.21,
-      "rms": 0.0979,
+      "voice": 5.09,
+      "rms": 0.0959,
       "breath": false,
-      "duration": 5.51,
+      "duration": 5.39,
       "peak": 92,
       "kind": "contraste",
-      "over": 0.91
+      "over": 0.79
     },
     {
       "name": "release1",
       "file": "b3-release1.mp3",
-      "voice": 1.61,
-      "rms": 0.0975,
+      "voice": 1.66,
+      "rms": 0.0865,
       "breath": false,
       "duration": 2.3,
       "peak": 58,
@@ -38,30 +38,30 @@
     {
       "name": "spike2",
       "file": "b4-spike2.mp3",
-      "voice": 4.85,
-      "rms": 0.0965,
+      "voice": 5.33,
+      "rms": 0.0924,
       "breath": false,
-      "duration": 5.15,
+      "duration": 5.63,
       "peak": 88,
       "kind": "contraste",
-      "over": 1.85
+      "over": 2.33
     },
     {
       "name": "release2",
       "file": "b5-release2.mp3",
-      "voice": 2.42,
-      "rms": 0.0871,
+      "voice": 2.54,
+      "rms": 0.0868,
       "breath": false,
-      "duration": 2.72,
+      "duration": 2.84,
       "peak": 60,
       "kind": "relache",
-      "over": 0.42
+      "over": 0.54
     },
     {
       "name": "cta",
       "file": "b6-cta.mp3",
-      "voice": 2.98,
-      "rms": 0.1063,
+      "voice": 3.29,
+      "rms": 0.0883,
       "breath": false,
       "duration": 3.6,
       "peak": 95,

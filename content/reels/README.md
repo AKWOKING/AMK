@@ -38,6 +38,7 @@ python3 content/reels/ep01/voice/build_timing.py                          # ② 
 python3 tools/qa/audit_hook.py content/reels/ep01/make_ep01.py            # ① l'accroche (4 mots, niveau)
 python3 tools/qa/audit_trust.py content/reels/ep01/make_ep01.py           # ② la porte du jeu
 python3 content/reels/ep01/make_ep01.py content/reels/ep01/ep01-v4.mp4    # ③ ≈ 30 s de rendu
+python3 tools/ops/projection.py                                            # ④ la salle : http://0.0.0.0:8000/
 ```
 
 **L'ordre n'est pas décoratif** : la porte lit `BEATS`, construit depuis `voice/timing.json`. Une voix trop
@@ -64,11 +65,18 @@ fichier variable** (744 936 octets chacun). Sans `set_variation_by_name`, PIL re
 **Thin**. Le premier rendu sortait donc en maigre alors que le code demandait `ExtraBold`.
 `reelkit.font()` demande l'axe ; ne pas le retirer.
 
-## 4 · L'épisode 01 — « Tapez votre nom sur Google. » (v4, 24,28 s)
+## 4 · L'épisode 01 — « Tapez votre nom sur Google. » (v4, 24,76 s)
+
+> **Re-rendu le 26/10 (tour 149)** — même pièce, **voix changée**. Les `.mp3` ne persistent pas d'un bac
+> à l'autre : la voix du tour 148 n'existait plus. Re-synthèse avec `voice-04`, **0,4 s plus lente** que
+> l'ancienne → l'accroche ne tenait plus dans les 5 s du contexte (5,21 s). Le texte a donc été raccourci
+> de deux mots : « il appelle ceux qui ont un site » → **« il appelle les autres »**. Même 4/4 mots, même
+> niveau 3, même case de grille. **24,76 s**, trois portes vertes. C'est la deuxième fois que le plafond
+> de 5 s écrit l'accroche — la leçon est dans `CONTENT-LESSONS` §21.
 
 | Beat | Durée | La voix dit | L'écran montre | La cime | D'où vient le fait |
 |---|---|---|---|---|---|
-| **hook** | 0,00–5,00 | « Tapez votre nom sur Google : il appelle ceux qui ont un site, pas vous. » | le champ « opticien akwa », **deux** résultats — un avec site (coche verte), un sans (croix orange) — et l'accroche en quatre lignes | 70 | — (mécanisme, aucun chiffre) |
+| **hook** | 0,00–5,00 | « Tapez votre nom sur Google : il appelle les autres, pas vous. » | le champ « opticien akwa », **deux** résultats — un avec site (coche verte), un sans (croix orange) — et l'accroche en quatre lignes | 70 | — (mécanisme, aucun chiffre) |
 | **spike1** | 5,00–10,51 | « Google demande trois choses : horaires, site, premier avis. » | trois cartes punaisées : `Add business hours` · `Add website` · `Pas encore d'avis` | **92** | capture Optix **24/10** (`PACK-OPTICIEN`) |
 | **release1** | 10,51–12,81 | « Vous en avez une. » | le mot « une. » qui s'allume, puis « jamais les trois » | 58 | — |
 | **spike2** | 12,81–17,96 | « Un site ne sert pas à avoir un site. Il répond avant l'appel. » | la phrase barrée, puis Horaires · Adresse · WhatsApp avec la coche dessinée | **88** | ruling 142 : le site est le produit |
@@ -83,14 +91,14 @@ objectif, contraste) · `✓ arc 24,3 s · 6 beats · 3 cimes` · `✓ rôle por
 | | v1 (20:25) | v2 (21:45) | v3 (22:35) | **v4 (23:40)** |
 |---|---|---|---|---|
 | ouverture | carton de titre, **à zéro** | on est **déjà** dans l'écran de recherche | idem | idem, **deux** résultats — le contraste est montré |
-| accroche | carton | « Votre cabinet existe. Votre site, non. » | idem | **« Tapez votre nom sur Google : il appelle ceux qui ont un site, pas vous. »** |
+| accroche | carton | « Votre cabinet existe. Votre site, non. » | idem | **« Tapez votre nom sur Google : il appelle les autres, pas vous. »** |
 | mots de puissance | — | 2 / 4 (sujet, contraste) | 2 / 4 | **4 / 4** |
 | échelle | — | niveau 1 (Reporter) | niveau 1 | **niveau 3** (Fortuneteller) |
 | pics | **un seul** (le CTA final) | **trois** (5,0 · 12,7 · 20,2 s) | trois, resserrés par la voix | trois (5,00 · 12,81 · 20,68 s) |
 | voix | aucune | 6 clips | `release2` n'est plus muet | 6 clips, accroche re-synthétisée **trois fois** pour tenir en 5 s |
 | `release2` | décorative | **souffle** muet | **le conseil gratuit** | inchangé |
 | utilité (jeu 5) | 2 | 3 | 4 | 4 |
-| durée | 21,4 s | 23,4 s | 23,76 s | **24,28 s** |
+| durée | 21,4 s | 23,4 s | 23,76 s | **24,76 s** |
 | vérification | aucune | `audit_reel` | + `audit_trust` (20/125) | **+ `audit_hook`** (4/4, niveau 3, grille case 3) |
 
 **La voix** : `voice-03` (masculine, registre publicitaire), français, synthèse du 25/10. Les six clips sont
@@ -133,7 +141,7 @@ déclaré est une dette de contenu — il occupe 2,3 s de l'attention et ne rend
 quatre mots obligatoires — sujet, action, objectif, contraste. La v3 en avait deux : elle **constatait**
 (« votre site, non ») sans donner ni geste ni résultat. Le spectateur ne pouvait rien en faire. La v4
 ouvre sur un geste de dix secondes qu'il peut exécuter immédiatement (« tapez votre nom »), sur un
-résultat annoncé (« il appelle ceux qui ont un site ») et sur le contraste qui le concerne (« pas vous »).
+résultat annoncé (« il appelle les autres ») et sur le contraste qui le concerne (« pas vous »).
 
 **Et la contrainte qui a décidé de la formulation** : l'arc plafonne le contexte à **5 s**
 (`audit_reel.py`). Une première version en 23 mots durait **8,03 s** ; une deuxième en 15 mots, **5,27 s** ;
@@ -144,7 +152,7 @@ le plafond. Le résultat est plus dur : huit mots utiles au lieu de vingt-trois.
 
 | # | Sujet (playbook §2) | Accroche | État |
 |---|---|---|---|
-| EP01 | **T2** | « Tapez votre nom sur Google : il appelle ceux qui ont un site, pas vous. » | ✅ **v4 rendue — accroche 4/4, niveau 3, porte 20/125, case 3 de la grille 331** |
+| EP01 | **T2** | « Tapez votre nom sur Google : il appelle les autres, pas vous. » | ✅ **v4 rendue — accroche 4/4, niveau 3, porte 20/125, case 3 de la grille 331** |
 | EP02 | **B1** | « Une fiche Google complète, à quoi ça ressemble » — la fiche DM Optique, trois captures | à écrire |
 | EP03 | **M5** | « 3 questions avant de payer un site » | à écrire |
 | EP04 | **T7** | « Deux accueils, même cabinet » — deux écrans côte à côte | à écrire |

@@ -124,7 +124,7 @@ from audit_trust import Piece  # noqa: E402
 HOOK = Hook(
     text=(
         "Tapez votre nom sur Google : "
-        "il appelle ceux qui ont un site, pas vous."
+        "il appelle les autres, pas vous."
     ),
     level=3,   # Fortuneteller : on annonce ce que fait le patient. Niveau 4 = le plan, plus tard.
 )
@@ -213,8 +213,8 @@ def s_hook(kit, img, d, t, dur):
     lignes = [
         ("Tapez votre nom", P["ink"]),
         ("sur Google.", P["ink"]),
-        ("Il appelle ceux", P["ink"]),
-        ("qui ont un site.", P["orange"]),
+        ("Il appelle", P["ink"]),
+        ("les autres.", P["orange"]),
     ]
     for i, (ligne, couleur) in enumerate(lignes):
         a = ease((t - 0.7 - i * 0.16) / 0.5)
@@ -405,8 +405,15 @@ def mux(video: str, out: str) -> str:
 
 
 if __name__ == "__main__":
-    out = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "ep01-v4.mp4")
-    with_voice = "--sans-voix" not in sys.argv
+    # Les options commencent par `--` : sans ce tri, `--sans-voix` devenait le NOM DU FICHIER
+    # de sortie (bug du tour 149 : un master de 1,6 Mo écrit dans un fichier nommé « --sans-voix »).
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    flags = {a for a in sys.argv[1:] if a.startswith("--")}
+    inconnues = flags - {"--sans-voix"}
+    if inconnues:
+        sys.exit(f"option inconnue : {' '.join(sorted(inconnues))} — connu : --sans-voix")
+    out = args[0] if args else os.path.join(HERE, "ep01-v4.mp4")
+    with_voice = "--sans-voix" not in flags
     kit = build()
     silent = os.path.join(HERE, "ep01-v4-silent.mp4")
     kit.render(silent)

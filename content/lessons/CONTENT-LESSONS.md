@@ -495,3 +495,9 @@ texte du module, pas ce que la voix prononce).
 
 **Ce que ça ne change pas** : le score de rôle (20/125) — une porte reste une porte ; l'idée reste un
 tuyau 6 (`IDEA-PIPES` §6) ; la dixième vidéo reste **ouverte**, et la porte l'affiche.
+
+**Répétition du 26/10 (tour 149)** : la voix a dû être re-synthétisée (les `.mp3` ne persistent pas d'un
+bac à l'autre) ; 0,4 s plus lente → **5,21 s** sur une place de **5,00 s**. Deux mots sont tombés :
+« il appelle **ceux qui ont un site** » → « il appelle **les autres** ». Même leçon, même plafond, deuxième
+démonstration : **c'est la place qui écrit l'accroche**. Une leçon qui se vérifie deux fois cesse d'être
+une anecdote.
