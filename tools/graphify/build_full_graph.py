@@ -30,6 +30,7 @@ import difflib
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import unicodedata
@@ -862,6 +863,16 @@ def main() -> int:
         else:
             print("graphify absent : bash tools/graphify/install.sh", file=sys.stderr)
             return 2
+
+    # ── la carte doit être la même à chaud et à froid ────────────────────────────────────────
+    # La CI reconstruit sur un arbre **froid** (`graphify-out/` n'est pas versionné). Un rebuild
+    # local « chaud » réutilise le cache d'extraction et rend une carte différente : mesuré le
+    # 25/10, 15 509 arêtes à chaud contre 15 513 à froid sur le **même commit** — la porte
+    # « la carte se rejoue à l'identique » échouait donc en CI sans qu'aucun fichier suivi n'ait
+    # changé. On efface le cache avant chaque reconstruction complète : même arbre, même carte,
+    # quel que soit l'état du bac.
+    if OUT.exists():
+        shutil.rmtree(OUT, ignore_errors=True)
 
     files = walk()
     print(f"[full] {len(files)} fichier(s) balayés")
