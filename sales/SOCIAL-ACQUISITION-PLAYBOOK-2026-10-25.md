@@ -538,8 +538,28 @@ dire. **Mardi** (porte) peut être un remix du gabarit EP01 à 9 constantes ; **
 chiffre daté, donc un actif que nous possédons ; **samedi** (autorité ≥ 2 min) demande un seed **contraire**,
 pas un constat. Et le premier lot de recherche — la watchlist — conditionne les trois.
 
-**La chaîne, à ne plus sauter** : `audit_ideas.py` (idée) → `audit_trust.py` (rôle) → `audit_reel.py`
-(forme). Une pièce bien montée qui vient d'un original non déclaré échoue à la première.
+**La chaîne, à ne plus sauter** : `audit_ideas.py` (idée) → `audit_hook.py` (accroche) →
+`audit_trust.py` (rôle) → `audit_reel.py` (forme). Une pièce bien montée qui vient d'un original non
+déclaré échoue à la première.
+
+### 5 sexies · L'accroche, l'échelle et la grille (25/10, trois captures du même compte)
+
+Trois captures de `kallowaymarketing` (tier C) ferment le dernier trou de fabrication : **ce qui doit se
+trouver dans la première phrase**, **jusqu'où monter dans une durée donnée**, et **combien de pièces
+prévoir avant de savoir laquelle doubler**. Doctrine : `knowledge/HOOKS-2026-10-25.md` ; portes :
+`tools/qa/audit_hook.py` et `--grid`.
+
+- **Les quatre mots obligatoires** : sujet (*vous*), action (*tapez*), objectif (*il appelle*),
+  **contraste** (*pas vous*). Le contraste est le plus important de la pile — c'est lui qui oppose
+  l'état de départ au résultat.
+- **L'échelle des histoires** : Reporter (constat) → Magician (mécanisme) → Fortuneteller (annonce) →
+  Architect (plan) → Maestro. Une pièce **déclare** son niveau ; un niveau 4 dans 25 s est un mensonge.
+  Corollaire pour la semaine : **mardi (porte) vise 2–3**, **samedi (autorité ≥ 2 min) vise 4**.
+- **La grille 331** : 3 sujets × 3 formats = 9 pièces (`content/ideas/GRID-331-2026-10-25.md`), et la
+  **dixième** se choisit **après** les neuf, sur la combinaison qui a le mieux marché. C'est ce qui
+  remplace l'intuition par notre propre donnée — la seule que nous ayons.
+- **Et un refus** : une quatrième image, sans auteur (« Admit · Pain · Emergency »), proposait l'urgence
+  comme levier. **Refusée**, et **codée** : `audit_hook.py` refuse le champ lexical de la peur.
 
 
 ---

@@ -448,3 +448,50 @@ métrique, tuyau 5, original sans outlier, peu de constantes, lot sans aucune id
 avoir des outliers**. Les opticiens de Douala publient très peu de vidéos : notre tuyau 2 peut rester vide
 même bien exécuté. Ce jour-là, la doctrine ne dit rien — et nous ne remplirons pas le vide avec une
 capture d'écran inventée.
+
+---
+
+## 21 · 25/10/2026 (23:40) — l'accroche avait deux mots sur quatre, et c'est pour ça qu'elle ne faisait rien faire
+
+**Les sources** : trois captures de `kallowaymarketing` (mêmes captures, même fil que les deux textes de
+la soirée — **tier C**) et une image sans auteur (**tier D**). Elles disent trois choses différentes, et
+les trois manquaient.
+
+**① Les six mots de puissance.** Un hook porte **sujet**, **action**, **objectif**, **contraste** (les
+quatre obligatoires), plus deux mots d'intrigue facultatifs. Le contraste est *« the most important in the
+entire stack »*.
+
+**Appliqué à EP01 v3** : *« Votre cabinet existe. Votre site, non. »* — sujet ✓, contraste ✓ (« non »),
+**action ✗**, **objectif ✗**. Le spectateur entendait un diagnostic **et ne pouvait rien en faire** : pas
+de geste, pas de résultat annoncé. Ce n'est pas un problème de ton, c'est une pièce manquante dans la
+phrase. La v4 : *« Tapez votre nom sur Google : il appelle ceux qui ont un site, pas vous. »* — 4/4.
+
+**② L'échelle des histoires** : Reporter (constat) → Magician (mécanisme) → Fortuneteller (annonce) →
+Architect (plan) → Maestro. Une pièce **déclare** son niveau. EP01 v3 était **niveau 1** : elle
+constatait. La v4 est **niveau 3** : elle annonce ce que fait le patient. Le niveau 4 exige un plan
+**lisible** (« d'abord, ensuite, puis ») — dans 24 s, le déclarer serait un mensonge, et c'est pour ça que
+la porte refuse un niveau 4 sans ordre écrit.
+
+**③ La grille 331** : 3 sujets × 3 formats = 9 pièces, et la **dixième** se choisit **après** les neuf,
+sur la combinaison qui a le mieux marché (« the first time you stop guessing »). EP01 n'avait **aucune
+case** : pièce isolée, donc incomparable, donc inenseignable. Elle est maintenant la **case 3** —
+*fiche Google × scénario* — d'un plan de neuf, écrit dans `content/ideas/GRID-331-2026-10-25.md`.
+
+**④ Un refus, et il est codé.** La quatrième image (sans auteur, sans date) propose « Admit · Pain ·
+**Emergency** ». On garde *Admit* (nommer la douleur avec ses mots, ce que nos captures font déjà) ; on
+**refuse Emergency** — l'urgence fabriquée est exclue par ruling. Le refus n'est pas seulement écrit :
+`audit_hook.py` échoue sur « urgence », « dernière chance », « catastrophe », « avant qu'il ne soit trop
+tard ».
+
+**La leçon de fabrication la plus utile du tour** : **c'est le plafond de l'arc qui a écrit l'accroche.**
+`audit_reel.py` limite le contexte à **5 s**. Première version : 23 mots → **8,03 s**, refusée. Deuxième :
+15 mots → **5,27 s**, refusée. Retenue : 14 mots → **5,00 s pile**. Trois réécritures du **texte** — jamais
+de la voix, jamais du plafond. Et le résultat est *meilleur* : huit mots utiles au lieu de vingt-trois.
+
+**Un défaut trouvé en vérifiant** : la première restitution affichait encore « Ouvrez votre nom » à
+l'écran alors que la voix disait « Tapez ». Une pièce se vérifie **en image et en son**, pas dans le code :
+la capture de contrôle a rattrapé une incohérence que les trois portes laissaient passer (elles lisent le
+texte du module, pas ce que la voix prononce).
+
+**Ce que ça ne change pas** : le score de rôle (20/125) — une porte reste une porte ; l'idée reste un
+tuyau 6 (`IDEA-PIPES` §6) ; la dixième vidéo reste **ouverte**, et la porte l'affiche.

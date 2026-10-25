@@ -1,10 +1,12 @@
 # IDEAS — les lots de recherche d'idées
 
-Ici vivent les **lots d'idées**, un fichier par quinzaine : `SHORTLIST-YYYY-MM-DD.md`.
+Ici vivent les **lots d'idées**, un fichier par quinzaine : `SHORTLIST-YYYY-MM-DD.md` — et la
+**grille 331** (`GRID-331-2026-10-25.md` : 3 sujets × 3 formats, plus la dixième qui attend la donnée).
 La doctrine est `knowledge/IDEA-PIPES-2026-10-25.md` ; la porte est **`tools/qa/audit_ideas.py`**.
 
 ```bash
 python3 tools/qa/audit_ideas.py content/ideas/SHORTLIST-2026-10-25.md
+python3 tools/qa/audit_hook.py --grid content/ideas/GRID-331-2026-10-25.md
 ```
 
 ## Le format, et pourquoi il est aussi contraint

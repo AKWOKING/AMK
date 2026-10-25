@@ -1,8 +1,8 @@
 {
-  "_comment": "Texte définitif de la voix d'EP01 v3 (tour 146). La v3 remplace le souffle muet de release2 par le conseil gratuit — l'utilité, au sens de la formule de confiance. Une phrase par beat. Les durées réelles sont dans timing.json, mesurées par build_timing.py — la voix n'est jamais coupée.",
+  "_comment": "Texte définitif de la voix d'EP01 v4 (tour 148). La v4 change l'accroche (quatre mots : sujet, action, objectif, contraste) ; le reste est celui de la v3 — le conseil gratuit de release2, l'utilité au sens de la formule de confiance. Une phrase par beat. Les durées réelles sont dans timing.json, mesurées par build_timing.py — la voix n'est jamais coupée.",
   "voice_id": "voice-03",
   "beats": [
-    {"beat": "hook", "file": "b1-hook.mp3", "text": "Votre cabinet existe. Votre site, non."},
+    {"beat": "hook", "file": "b1-hook.mp3", "text": "Tapez votre nom sur Google : il appelle ceux qui ont un site, pas vous."},
     {"beat": "spike1", "file": "b2-spike1.mp3", "text": "Google demande trois choses : horaires, site, premier avis."},
     {"beat": "release1", "file": "b3-release1.mp3", "text": "Vous en avez une."},
     {"beat": "spike2", "file": "b4-spike2.mp3", "text": "Un site ne sert pas à avoir un site. Il répond avant l'appel."},

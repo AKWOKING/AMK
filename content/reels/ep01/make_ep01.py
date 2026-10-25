@@ -1,4 +1,4 @@
-"""EP 01 — « Votre nom existe. Votre site, non. » · v3 · arc moderne + voix + conseil gratuit
+"""EP 01 — « Ouvrez votre nom sur Google. » · v4 · accroche à quatre mots + échelle 3 + grille 331
 
 v1 (25/10, 20:25) : 5 plans, ouverture sur un carton de titre, une seule montée (le CTA final).
 C'était **l'arc classique** que `knowledge/STORY-ARC-2026-10-25.md` rejette (slide 2).
@@ -8,6 +8,14 @@ v3 (25/10, 21:55) applique la formule de confiance du jeu 5 (`knowledge/CONTENT-
 le souffle muet de `release2` devient **le conseil gratuit** — le spectateur repart avec ce qu'il
 peut faire sans nous, et avec ce qui reste à construire. Utilité 3 → 4, porte recevable, autorité
 toujours irrecevable (23 s ne peut pas valoir 40/125).
+
+v4 (**25/10, 23:30**) applique les trois sources du soir (`knowledge/HOOKS-2026-10-25.md`) :
+① l'accroche passe aux **quatre mots obligatoires** — *sujet* (« votre »), *action* (« Tapez »),
+*objectif* (« il appelle »), *contraste* (« pas vous ») : la v3 n'avait ni action ni
+objectif, un spectateur ne pouvait rien y faire ; ② l'échelle est déclarée **niveau 3
+(Fortuneteller)** — annoncer ce qui va se passer — parce qu'un niveau 4 (le plan dans l'ordre) est
+un mensonge dans 24 s ; ③ la pièce prend sa case dans la **grille 331** : *fiche Google × scénario*,
+case 3 sur 9 (`content/ideas/GRID-331-2026-10-25.md`).
 
     python3 content/reels/ep01/make_ep01.py            # rendu + voix si voice/timing.json existe
     python3 tools/qa/audit_reel.py content/reels/ep01/make_ep01.py   # la porte, avant le rendu
@@ -50,7 +58,7 @@ TIMING = os.path.join(HERE, "voice", "timing.json")
 
 # Le plan par défaut, si la voix n'a pas encore été générée (v2 pré-voix).
 DEFAULT = [
-    ("hook", 5.0, 70, "contexte", None),
+    ("hook", 5.5, 70, "contexte", None),
     ("spike1", 5.4, 92, "contraste", "capture Optix 24/10"),
     ("release1", 2.3, 58, "relache", None),
     ("spike2", 5.0, 88, "contraste", "capture Optix 24/10"),
@@ -75,6 +83,7 @@ PLAN = load_plan()
 
 # ── la forme déclarée à la porte (`tools/qa/audit_reel.py`) ─────────────────────
 BEAT_FACTS = {
+    "hook": None,
     "spike1": "Add business hours · Add website · Be the first to review",
     "spike2": "neuf fiches, zéro site",
 }
@@ -106,7 +115,19 @@ DURATION = round(sum(p[1] for p in PLAN), 3)
 # ── le jeu auquel la pièce appartient (`knowledge/CONTENT-GAMES-2026-10-25.md`, §8) ─────────
 # EP01 est une **porte** : courte par construction, elle fait entrer, elle ne construit pas la
 # confiance. Déclarée « autorité », la même pièce échoue (`trop-court`) — c'est la leçon du 25/10.
+from audit_hook import Hook  # noqa: E402
 from audit_trust import Piece  # noqa: E402
+
+# ── l'accroche, telle que la porte la lit (`knowledge/HOOKS-2026-10-25.md`) ───────────────────
+# Les quatre mots obligatoires, un par clause. Le contraste est **le dernier**, il ferme l'accroche :
+# « pas celui qui n'en a pas ». Aucun chiffre de résultat, aucune promesse, aucune urgence.
+HOOK = Hook(
+    text=(
+        "Tapez votre nom sur Google : "
+        "il appelle ceux qui ont un site, pas vous."
+    ),
+    level=3,   # Fortuneteller : on annonce ce que fait le patient. Niveau 4 = le plan, plus tard.
+)
 
 TRUST = Piece(
     name="EP01",
@@ -159,24 +180,52 @@ def search_bar(d, y, query, y2=None):
 
 
 def s_hook(kit, img, d, t, dur):
+    """Deux résultats, un seul a un site : le contraste de l'accroche est **montré**.
+
+    v3 ouvrait sur un seul résultat (« Aucun site · pas d'horaires ») et un constat. Ici le spectateur
+    voit la comparaison que l'accroche nomme — celui qu'on appelle, celui qu'on saute — donc la vidéo
+    ne décrit plus un problème, elle montre un choix.
+    """
     label(d, "GOOGLE · DOUALA")
     search_bar(d, 250, "opticien akwa")
-    if t > 0.35:
-        a = ease((t - 0.35) / 0.5)
-        y = 400 + int((1 - a) * 20)
-        rounded_card(img, (MARGIN, y, W - MARGIN, y + 150), P["cream_light"], radius=16, shadow=6)
-        d.text((MARGIN + 40, y + 46), "Optique …", font=font("Montserrat-Bold.ttf", 46), fill=P["ink"])
-        d.text((MARGIN + 40, y + 104), "Aucun site  ·  pas d'horaires",
-               font=font("Montserrat-Medium.ttf", 34), fill=P["orange"])
 
-    fnt = font("Montserrat-ExtraBold.ttf", 104)
-    lines = [("Votre cabinet", P["ink"]), ("existe.", P["ink"]), ("Votre site,", P["ink"]), ("non.", P["orange"])]
-    for i, (line, color) in enumerate(lines):
-        a = ease((t - 0.6 - i * 0.18) / 0.5)
+    resultats = [
+        ("Optique Akwa", "un site · 6 photos · 12 avis", True),
+        ("Optique …", "aucun site · pas d'horaires", False),
+    ]
+    for i, (nom, detail, bon) in enumerate(resultats):
+        a = ease((t - 0.35 - i * 0.22) / 0.5)
         if a <= 0:
             continue
-        draw_text(d, (MARGIN, 640 + i * 118 + int((1 - a) * 24)), line, fnt, color)
-    kit.mascot.draw(img, 30, 1120, t, height=720)
+        y = 400 + i * 172 + int((1 - a) * 22)
+        rounded_card(img, (MARGIN, y, W - MARGIN, y + 148), P["cream_light"], radius=16, shadow=6)
+        d.text((MARGIN + 40, y + 32), nom, font=font("Montserrat-Bold.ttf", 44), fill=P["ink"])
+        d.text((MARGIN + 40, y + 92), detail, font=font("Montserrat-Medium.ttf", 30),
+               fill=P["green"] if bon else P["orange"])
+        cx, cy = W - MARGIN - 70, y + 74
+        if bon:
+            draw_check(d, (cx - 26, cy), 52, P["green"], width=9)
+        else:   # la croix se dessine : `✗` n'existe pas plus que `✓` dans Montserrat
+            d.line([(cx - 26, cy - 26), (cx + 26, cy + 26)], fill=P["orange"], width=9)
+            d.line([(cx + 26, cy - 26), (cx - 26, cy + 26)], fill=P["orange"], width=9)
+
+    fnt = font("Montserrat-ExtraBold.ttf", 92)
+    lignes = [
+        ("Tapez votre nom", P["ink"]),
+        ("sur Google.", P["ink"]),
+        ("Il appelle ceux", P["ink"]),
+        ("qui ont un site.", P["orange"]),
+    ]
+    for i, (ligne, couleur) in enumerate(lignes):
+        a = ease((t - 0.7 - i * 0.16) / 0.5)
+        if a <= 0:
+            continue
+        draw_text(d, (MARGIN, 764 + i * 104 + int((1 - a) * 22)), ligne, fnt, couleur)
+
+    if t > 2.2:
+        draw_text(d, (MARGIN, 1210), "Pas vous.", font("Montserrat-Bold.ttf", 56),
+                  P["ink_soft"] if a > 0.5 else P["ink_soft"])
+    kit.mascot.draw(img, 30, 1270, t, height=600)
 
 
 # ─────────────────────────────────────────────────── beat 2 · secousse (92) ──
@@ -356,10 +405,10 @@ def mux(video: str, out: str) -> str:
 
 
 if __name__ == "__main__":
-    out = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "ep01-v3.mp4")
+    out = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "ep01-v4.mp4")
     with_voice = "--sans-voix" not in sys.argv
     kit = build()
-    silent = os.path.join(HERE, "ep01-v3-silent.mp4")
+    silent = os.path.join(HERE, "ep01-v4-silent.mp4")
     kit.render(silent)
     print(f"✅ image : {silent} · {DURATION:.1f} s")
     if with_voice and os.path.exists(TIMING):

@@ -125,6 +125,7 @@ ordre, et chacune a son outil.
 | Ordre | Porte | Question | Outil | Refus type |
 |---|---|---|---|---|
 | 1 | **idée** | d'où vient-elle, et qu'a-t-on changé ? | `tools/qa/audit_ideas.py` | `pipe-sans-chiffre`, `preuve-manquante`, `trop-de-briques` |
+| 1 bis | **accroche** *(ajoutée le 25/10 au soir)* | les quatre mots obligatoires, l'échelle déclarée, ni peur ni promesse | `tools/qa/audit_hook.py` | `mots-manquants`, `peur`, `promesse` |
 | 2 | **rôle** | quel jeu sert-elle, et tient-elle son plancher ? | `tools/qa/audit_trust.py` | `trop-court`, `objectif-vues`, `inutile` |
 | 3 | **forme** | l'arc tient-il, et la voix est-elle mesurée ? | `tools/qa/audit_reel.py` + `voice/build_timing.py` | `depart-bas`, `cime-manquante`, `muet` |
 
