@@ -193,3 +193,38 @@ Ce que la porte refuse :
 **Ce que la source apporte, et que nous n'avions pas** : un **nom** pour ce que nous faisions déjà à moitié
 (le jeu 5), une **formule** pour arbitrer entre deux idées de post, et un **chiffre à l'envers** — la
 longueur est un facteur de confiance, pas un défaut à corriger.
+
+---
+
+## 10 · Les nœuds liés — ce que cette doctrine branche, et sur quoi
+
+> La règle du 25/10 (King, tour 146 ①) : **lire les nœuds et les lier avant d'écrire**. Ce tableau est la
+> trace de ce branchement : chaque ligne est un fichier qui **existe** dans le dépôt, avec ce qu'il apporte
+> à cette doctrine et ce qu'elle lui ajoute. Ce qui n'a pas été lu est dit au §10 bis, pas passé sous silence.
+
+| Nœud | Type | Ce qu'il apporte **ici** | Ce que cette doctrine lui ajoute |
+|---|---|---|---|
+| `sales/SOCIAL-ACQUISITION-PLAYBOOK-2026-10-25.md` | document | la carte de contenu (§2 sujets, §3 calendrier, §5 modèles, §6.1 les 5 chiffres du samedi) | **§5 quater** : le rôle de chaque pièce, le barème, la rétrogradation de T5/T10/T12 |
+| `knowledge/CONTENT-CREATION-2026-10-22.md` | knowledge | §4 bis (le type de contenu selon l'objectif), §5 bis (un seul opt-in), §7 (la règle de source) | un renvoi au §4 bis : « quel jeu » était l'étage manquant ; les deux sources du 25/10 entrent au **journal §10** |
+| `knowledge/STORY-ARC-2026-10-25.md` | knowledge | la forme (départ à 70, 3 cimes, CTA en dernière cime) | la **contrainte de rôle** : une porte peut être bien formée et rester une porte — la forme ne change pas le plancher |
+| `content/lessons/CONTENT-LESSONS.md` | lessons | §1–§3 (empreinte, qualité, entonnoir), §18 (l'arc), §6 (échecs techniques) | **§19** : la viralité n'est pas l'objectif ; « un relâchement n'est pas un trou à remplir de silence » |
+| `content/pipeline/ANALYTICS-LOG.md` | données | 18 % / 13 % de lecture moyenne, falaise à **0:02**, 277 vues lues, **0 demande** | ces chiffres cessent d'être des résultats : ils deviennent le **diagnostic** d'un rôle mal choisi |
+| `sales/RESEARCH-STANDARD.md` | sales | §1–3 : hiérarchie des sources, `[NEEDS DATA]`, ce qu'on ne promet pas | une **source tier C** entre dans cette hiérarchie, avec sa règle d'usage (décider, jamais citer) |
+| `tools/qa/audit_trust.py` (+ `test_audit_trust.py`, **15/15**) | outil | la porte : `Piece`, `audit()`, les codes et les trois planchers | — (c'est son document de référence) |
+| `tools/qa/audit_reel.py` (+ test **12/12**) | outil | la porte de l'**arc** — elle passe **après** celle du rôle | l'ordre des deux portes est écrit dans `PRE-FLIGHT.md` §1 |
+| `content/reels/reelkit.py` · `content/reels/ep01/make_ep01.py` · `voice/build_timing.py` | outil / pièce | le moteur, la pièce, la mesure des durées | `make_ep01.py` déclare désormais `TRUST = Piece(role="porte", …)` — la pièce dit elle-même à quel jeu elle appartient |
+| `content/reels/README.md` | document | le mode d'emploi du studio, les deux pièges (Montserrat, coche), la porte avant diffusion | §4 : le tableau des **trois versions** d'EP01 et pourquoi le souffle est devenu un conseil |
+| `PRE-FLIGHT.md` | rulebook | §0c (knowledge), §0g (Notion), §1 (routage) | une ligne de routage **« Contenu vidéo / réel / post publié »** : *le rôle d'abord, la forme ensuite* |
+| `ops/MACHINE.md` + `tools/ops/machine.py` | machine | les 19 règles, la ligne `MIRROR`, la carte du dépôt rejouée | `MIRROR` re-daté après le miroir Notion ; la carte passe à **12 387 nœuds** |
+| `sales/Activity-Log.md` | journal | la chronologie append-only | le tour 146, en huit points |
+| Notion `4024b1d8-9633-814c-8837-dcbc1b7f28b0` | miroir | l'état debout lisible depuis un téléphone | une section datée « tour 146 » + les deux prochaines actions |
+
+### 10 bis · Ce qui n'a pas été lu ce tour (et ne fait donc pas autorité ici)
+
+- **Le texte source lui-même n'est pas dans le dépôt** : il a été collé, pas reçu en fichier. Il n'existe
+  que par ce document (§1, §7). Aucun extrait long n'est reproduit — la formulation est la nôtre.
+- `research/YouTube-Lessons.md` n'a pas été relu ce tour : rien ici n'en dépend directement, mais une
+  contradiction éventuelle avec les lots [46]+ ne serait **pas** détectée par cette relecture.
+- Le §6.1 du playbook (les 5 chiffres du samedi) est **antérieur** à cette doctrine : il mesure encore des
+  vues parmi cinq chiffres. Le §5 quater les requalifie en diagnostic, il ne réécrit pas le tableau — **à
+  trancher par King** au prochain samedi de mesure.
