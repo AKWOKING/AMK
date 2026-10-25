@@ -197,6 +197,16 @@ conversation, aucun patient.
 
 **Ce qui relie les quatre lignes :** chacune se termine par **le même** CTA — un seul opt-in, (§5 bis).
 
+**Ce que cette section ne disait pas encore (ajouté le 25/10)** : *quel jeu* on joue. Choisir le type de
+contenu selon l'objectif ne suffit pas si l'objectif lui-même est mal nommé — une pièce peut être bien
+faite, bien ciblée, et viser la **portée** alors que notre monétisation est **hors plateforme**. Le texte
+« The 5 Content Games » (25/10, tier C) le tranche : AMK vend un service → **jeu 5, l'autorité** ; la
+formule de confiance est `minutes watchées × pertinence × utilité`, et une pièce courte **plafonne à
+25/125**. La doctrine complète — les cinq jeux, le diagnostic en quatre questions, le barème, les quatre
+conflits tranchés et la semaine en trois rôles — est dans **`knowledge/CONTENT-GAMES-2026-10-25.md`** ;
+sa porte est **`tools/qa/audit_trust.py`**. Le §4 bis reste la règle de *quoi publier* ; le document des
+jeux est la règle de *pourquoi*, et de *quel rôle* la pièce tient dans la semaine.
+
 ---
 
 ## 4 ter · Les six formats de la matrice, outillés pour le cabinet (23/10)
@@ -685,10 +695,14 @@ sienne.
 | 23/10 | **Ruling King : « vous demandez, on répond »** (23/10) | la série questions → vidéo → tag, avec l'accord obligatoire avant de taguer | §5 sexies | le tag sans accord, écarté pour la même raison qu'un visage sans autorisation |
 | 23/10 | **Insights 24 h du reel** (Facebook Business Suite, TikTok Studio) | la preuve que les deux réseaux ne mesurent pas la même chose : 12 % de lecture moyenne sur Facebook contre 26 % sur TikTok pour le même film | §5 quater | la comparaison brute des vues (227 contre 80) : elle ne dit rien de la qualité |
 | 23/10 | **Capture WhatsApp DM OPTIQUE** (13h00, message d'avis du client) | le texte exact de sa demande d'avis, ses liens, et l'heure | `clients/dm-optic/launch/SOLDE-75K-2026-10-23.md` §3 bis | la tentation d'y répondre : c'est un message de masse, pas une question |
+| **25/10** | **Capture @kallowaymarketing** (7 slides, reçue de King) | l'arc moderne : départ à **70**, secousse entre 5 et 10 s, **trois cimes**, relâchements, CTA en dernière cime | §3 bis (l'ordre des blocs — l'arc en est la version sociale) · `knowledge/STORY-ARC-2026-10-25.md` · `tools/qa/audit_reel.py` | le « 742 jours / 207 clients » de la slide : cas unique, pas une preuve (§1g) — non repris |
+| **25/10** | **« The 5 Content Games »** (texte collé par King ; **ni auteur, ni URL, ni date → tier C**) | les 5 jeux et ce que chacun monétise ; le diagnostic en 4 questions ; `confiance = minutes × pertinence × utilité` ; « pure virality is a trap for games 3, 4, 5 » ; la semaine en 3 rôles | `knowledge/CONTENT-GAMES-2026-10-25.md` (9 sections) · §4 bis (le renvoi) · `sales/SOCIAL-ACQUISITION-PLAYBOOK-2026-10-25.md` §5 quater · `tools/qa/audit_trust.py` | les noms de marques cités (AG1, Meta Ray-Ban) comme exemples de jeu 4 : jamais cités dans un post · les « on-target views » : **non mesurables**, on garde le principe, pas le chiffre |
 
 ---
 
-## 7 · Reels explainer — le studio `content/reels/` (25/10/2026)
+## 11 · Reels explainer — le studio `content/reels/` (25/10/2026)
+
+> *Numéroté §7 par erreur le 25/10 : le §7 de ce document est la **règle de source**. Contenu inchangé.*
 
 Un troisième moteur, à côté de `tools/record/make_dmoptic_tiktok.py` : `content/reels/reelkit.py`.
 Il rend un réel vertical complet **sans navigateur, sans tournage, sans capture** — fond, cartes,
@@ -711,3 +725,10 @@ pastilles et mascotte dessinés à la volée, frames poussées dans le pipe ffmp
 
 **Coût mesuré** : 30 s de rendu pour 23 s de vidéo, 2 dépendances (`pillow`, `imageio-ffmpeg`), zéro
 `apt`. C'est ce qui rend le format tenable par un opérateur seul, trois fois par semaine.
+
+**Ce que la v3 a changé (25/10, soir)** : EP01 déclare désormais son **jeu** dans le module
+(`TRUST = Piece(role="porte", …)`), et `audit_trust.py` la lit — 23,76 s, **20/125**, plancher de porte tenu,
+plancher d'autorité (40) hors d'atteinte par construction. Le relâchement muet de `release2` est devenu
+**le conseil gratuit** (« Dix minutes, et c'est gratuit. ») : c'est le seul endroit de l'arc où l'on peut
+rendre service sans rien vendre, donc le seul où l'**utilité** s'achète. Détail de fabrication :
+`content/reels/README.md` §4.

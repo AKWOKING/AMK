@@ -1,9 +1,13 @@
-"""EP 01 — « Votre nom existe. Votre site, non. » · v2 · arc moderne + voix · 1080×1920
+"""EP 01 — « Votre nom existe. Votre site, non. » · v3 · arc moderne + voix + conseil gratuit
 
 v1 (25/10, 20:25) : 5 plans, ouverture sur un carton de titre, une seule montée (le CTA final).
 C'était **l'arc classique** que `knowledge/STORY-ARC-2026-10-25.md` rejette (slide 2).
 v2 applique la doctrine : départ à 70, secousse entre 5 et 10 s, **trois cimes**, relâchements,
 CTA en dernière cime — et une **voix** posée sur le master.
+v3 (25/10, 21:55) applique la formule de confiance du jeu 5 (`knowledge/CONTENT-GAMES-2026-10-25.md`) :
+le souffle muet de `release2` devient **le conseil gratuit** — le spectateur repart avec ce qu'il
+peut faire sans nous, et avec ce qui reste à construire. Utilité 3 → 4, porte recevable, autorité
+toujours irrecevable (23 s ne peut pas valoir 40/125).
 
     python3 content/reels/ep01/make_ep01.py            # rendu + voix si voice/timing.json existe
     python3 tools/qa/audit_reel.py content/reels/ep01/make_ep01.py   # la porte, avant le rendu
@@ -47,11 +51,11 @@ TIMING = os.path.join(HERE, "voice", "timing.json")
 # Le plan par défaut, si la voix n'a pas encore été générée (v2 pré-voix).
 DEFAULT = [
     ("hook", 5.0, 70, "contexte", None),
-    ("spike1", 4.5, 92, "contraste", "capture Optix 24/10"),
-    ("release1", 3.5, 58, "relache", None),
-    ("spike2", 3.5, 88, "contraste", "capture Optix 24/10"),
-    ("release2", 1.7, 60, "relache", None),
-    ("cta", 3.7, 95, "appel", None),
+    ("spike1", 5.4, 92, "contraste", "capture Optix 24/10"),
+    ("release1", 2.3, 58, "relache", None),
+    ("spike2", 5.0, 88, "contraste", "capture Optix 24/10"),
+    ("release2", 2.4, 60, "relache", None),
+    ("cta", 3.6, 95, "appel", None),
 ]
 
 
@@ -98,6 +102,23 @@ def build_beats():
 
 BEATS = build_beats()
 DURATION = round(sum(p[1] for p in PLAN), 3)
+
+# ── le jeu auquel la pièce appartient (`knowledge/CONTENT-GAMES-2026-10-25.md`, §8) ─────────
+# EP01 est une **porte** : courte par construction, elle fait entrer, elle ne construit pas la
+# confiance. Déclarée « autorité », la même pièce échoue (`trop-court`) — c'est la leçon du 25/10.
+from audit_trust import Piece  # noqa: E402
+
+TRUST = Piece(
+    name="EP01",
+    game=5,
+    role="porte",
+    minutes=DURATION / 60,
+    relevance=5,
+    usefulness=4,      # v3 : le spectateur repart avec ce qu'il peut faire gratuitement, et ce qui reste
+    on_target="opticien ou clinique de Douala, fiche Google existante, pas de site",
+    next_step="écrire APERÇU sur WhatsApp (wa.me/237677789631)",
+    goal="conversations",
+)
 
 
 # ───────────────────────────────────────────────────────────── primitives ────
@@ -226,21 +247,37 @@ def s_spike2(kit, img, d, t, dur):
 
 
 def s_release2(kit, img, d, t, dur):
-    """Le souffle : pas de voix ici, une image qui respire avant le CTA."""
-    draw_text(d, (MARGIN, 640), "Pas de devis.", font("Montserrat-SemiBold.ttf", 60), P["ink_soft"])
-    fnt = font("Montserrat-ExtraBold.ttf", 74)
-    draw_text(d, (MARGIN, 730), "Un aperçu,", fnt, P["ink"])
-    draw_text(d, (MARGIN, 820), "à votre nom.", fnt, P["orange"])
-    # la petite page qui se dessine : le seul mouvement du beat
-    a = ease(t / 0.6)
-    x0, y0 = W - MARGIN - 210, 720
-    d.rounded_rectangle((x0, y0, x0 + 200, y0 + 250), radius=12, outline=P["sand"], width=4)
-    for i in range(3):
-        w = int(130 * a) - i * 26
-        if w > 10:
-            d.rounded_rectangle((x0 + 30, y0 + 50 + i * 54, x0 + 30 + w, y0 + 62 + i * 54), radius=6,
-                                fill=P["sand"] if i else P["orange"])
-    kit.mascot.draw(img, 40, 1080, t, height=660)
+    """Le conseil gratuit — la pièce doit laisser quelque chose d'appliquable (utilité, jeu 5).
+
+    Ce qui est vrai, et que la pièce peut donc montrer : les horaires se publient en dix minutes,
+    la fiche se réclame, l'avis ne se fabrique pas — il vient d'un patient. Le site, lui, se
+    construit : c'est le seul des trois qui soit notre travail.
+    """
+    label(d, "CE QUI EST DÉJÀ GRATUIT")
+    draw_text(d, (MARGIN, 250), "Deux se font", font("Montserrat-ExtraBold.ttf", 72), P["ink"])
+    draw_text(d, (MARGIN, 330), "sans personne.", font("Montserrat-ExtraBold.ttf", 72), P["orange"])
+
+    rows = [
+        ("Horaires", "10 minutes, vous-même", True),
+        ("Votre fiche", "à réclamer", True),
+        ("L'avis", "un patient l'écrit", False),
+    ]
+    for i, (titre, detail, coche) in enumerate(rows):
+        a = ease((t - 0.15 - i * 0.15) / 0.35)
+        if a <= 0:
+            continue
+        y = 520 + i * 150 + int((1 - a) * 18)
+        d.rounded_rectangle((MARGIN, y, W - MARGIN, y + 122), radius=12, fill=P["cream_light"])
+        d.text((MARGIN + 36, y + 30), titre, font=font("Montserrat-Bold.ttf", 44), fill=P["ink"])
+        d.text((MARGIN + 36, y + 80), detail, font=font("Montserrat-Medium.ttf", 28), fill=P["ink_soft"])
+        if coche:
+            draw_check(d, (W - MARGIN - 70, y + 61), 52, P["green"], width=10)
+        else:
+            d.line([(W - MARGIN - 96, y + 61), (W - MARGIN - 44, y + 61)], fill=P["orange"], width=8)
+
+    draw_text(d, (MARGIN, 1020), "Le site, c'est le seul qui se construise.",
+              font("Montserrat-SemiBold.ttf", 40), P["ink_soft"])
+    kit.mascot.draw(img, 40, 1120, t, talking=1.0, height=620)
 
 
 # ────────────────────────────────────────────────────── beat 6 · CTA (95) ──
@@ -319,10 +356,10 @@ def mux(video: str, out: str) -> str:
 
 
 if __name__ == "__main__":
-    out = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "ep01-v2.mp4")
+    out = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "ep01-v3.mp4")
     with_voice = "--sans-voix" not in sys.argv
     kit = build()
-    silent = os.path.join(HERE, "ep01-v2-silent.mp4")
+    silent = os.path.join(HERE, "ep01-v3-silent.mp4")
     kit.render(silent)
     print(f"✅ image : {silent} · {DURATION:.1f} s")
     if with_voice and os.path.exists(TIMING):

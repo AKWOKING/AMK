@@ -2,6 +2,9 @@
 
 **Version v0.9** · 19 Sep 2026 · sources: `content/handover/2026-09-17-content-handover.md` (previous chat, authoritative), King's 17 Sep brief, repo content history, `research/YouTube-Lessons.md` batches 1–3, `research/HyperFrames-Evaluation-2026-09-19.md`.
 **Rule:** append dated entries; never silently rewrite. Conflicts get logged and go to King.
+**Numérotation (corrigée le 25/10)** : les entrées datées reprennent après §17 — les deux entrées du 25/10
+sont **§18** (l'arc) et **§19** (les jeux). Elles avaient été écrites §13 et §14, en collision avec des
+sections existantes ; le contenu n'a pas changé, seuls les numéros.
 
 ---
 
@@ -324,7 +327,7 @@ décision verrouillée gagne (§2, §11, §14, §15) — et on le dit, on ne le 
 
 ---
 
-## 13 · 25/10/2026 — la falaise à 0:02 était un défaut d'ARC, pas de sujet
+## 18 · 25/10/2026 — la falaise à 0:02 était un défaut d'ARC, pas de sujet
 
 **Ce qu'on croyait** : les deux publications fondatrices perdaient le spectateur à la deuxième seconde
 (analytics TikTok du 17/09, §12) parce que le **sujet** était mauvais ou la vidéo mal montée.
@@ -349,3 +352,50 @@ ce que la source ne dit pas). **La porte existe** : `tools/qa/audit_reel.py` (12
 
 **Ce qui n'a pas changé** : aucun chiffre de résultat, aucune mention d'IA (ruling 11/10), aucun nom de
 client, sous-titres écrits à la main. Un arc meilleur ne rend pas une preuve fausse acceptable.
+
+---
+
+## 19 · 25/10/2026 (soir) — la viralité n'est pas l'objectif, et le jeu choisit la pièce
+
+**La source** : un texte non signé, « The 5 Content Games », collé par King le 25/10 (ni auteur, ni URL,
+ni date → **tier C** : il fait décider, il ne se cite pas dans un post). Il classe tout contenu en cinq
+jeux et dit ce que chacun monétise : 1 célébrité grand public (vues → pub) · 2 célébrité de niche (marques) ·
+3 produit intuitif (achat par envie) · 4 produit explicatif (éduquer avant l'achat) · **5 autorité**
+(confiance → contrats **hors plateforme**).
+
+**Le diagnostic, en quatre questions** : je vends un service → **jeu 5** ; un produit de commodité →
+jeu 3 ; un produit différencié qui s'explique → jeu 4 ; pas encore d'offre → jeu 2 puis jeu 5. AMK vend un
+service, à des opticiens nommables de Douala : **jeu 5**, mécanique 4 à l'intérieur.
+
+**Ce que ça change pour nous — trois renversements :**
+
+| Ce qu'on faisait | Ce que le jeu 5 impose |
+|---|---|
+| viser la portée (TOFU) | **la pertinence d'abord** : 1 000 vues de la bonne personne > 100 000 déconnectées |
+| mesurer les vues | les vues sont un **diagnostic**, pas un résultat ; la mesure est *minutes watchées × pertinence × utilité* |
+| un seul type de publication | **trois rôles** dans la semaine : porte (≤ 25 s) · preuve (≥ 24) · autorité (≥ 2 min) |
+
+**T5, T10 et T12 sont rétrogradés** : ce sont des pièces de portée (célébrité/humour de niche), pas des
+pièces d'autorité. Elles ne disparaissent pas — elles passent **derrière** la porte, ou ne servent pas.
+Et la phrase qui coûte le plus cher à entendre : *« pure virality is a trap for games 3, 4, 5 »* — une
+vidéo virale **hors cible** n'abîme pas seulement son propre retour, elle **abîme les suivantes** (l'algorithme
+nous montre aux mauvaises personnes).
+
+**Le barème est écrit, et il est dur** : `tier(minutes) × pertinence × utilité` sur 125, avec des planchers
+par rôle — **porte 12 · preuve 24 · autorité 40** — et une autorité exige un tier ≥ 3 (**2 minutes**).
+Conséquence arithmétique : **une pièce de 23 s plafonne à 25/125**. Elle peut être une excellente porte et
+elle ne sera jamais une autorité. Le dire évite de tricher au moment du bilan.
+
+**La porte** : `tools/qa/audit_trust.py` (+ 15 cas). Codes : `mauvais-jeu`, `hors-cible`, `cible-muette`,
+`objectif-vues`, `sans-entonnoir`, `inutile`, `role`, `trop-court`, `score-faible`, avertissement `mince`.
+
+**Ce que la pièce a appris en la repassant** : EP01 v2 déclarait — implicitement — être une pièce d'autorité.
+Lue par la porte, elle échoue (`trop-court`). Reclassée **porte**, elle passe à 20/125… et **l'utilité
+était son point faible** : `release2` était un souffle muet, 2,3 s d'attention pour zéro chose emportée.
+La v3 lui écrit une phrase utile (« Dix minutes, et c'est gratuit. ») et montre les trois choses qui se font
+sans nous. Utilité 3 → 4, durée 23,76 s, `SOUFFLE` vidé. **Un relâchement de l'arc n'est pas un trou à
+remplir de silence : c'est le seul endroit où l'on peut rendre service gratuitement.**
+
+**Ce que la source ne permet pas** : elle ne dit pas comment mesurer les « on-target views » — aucune
+plateforme ne les expose. On garde le principe, on ne fabrique pas le chiffre (pas d'estimation présentée
+comme mesure). Et comme partout : **une règle sans porte est un trou** — d'où `audit_trust.py`.
