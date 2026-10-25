@@ -20,8 +20,8 @@
 | `ep01/voice.json` | le texte de la voix, beat par beat |
 | `tools/qa/audit_reel.py` | **la porte de l'arc** — refuse un réel mal formé avant le rendu |
 | `tools/qa/audit_trust.py` | **la porte du jeu** — refuse une pièce dont le rôle ne tient pas le score (`CONTENT-GAMES`, §3) |
-| `ep01/poster.jpg` | la couverture (frame 2,2 s) pour la vignette |
-| `ep01/frames/` | les captures de contrôle (inspection avant diffusion) |
+| `ep01/poster.jpg` | la couverture — frame **2,2 s du master v3** pour la vignette |
+| `ep01/frames/` | les captures de contrôle (inspection avant diffusion) — `v3-*` sont les six beats du master courant |
 | `ep01/assets/mascot.png` | la mascotte — illustration générée, fond retiré par diffusion |
 
 ## 2 · Lancer
