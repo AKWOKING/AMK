@@ -5973,3 +5973,17 @@ même moment. Registre `ops/MACHINE.md` §9 tenu à jour (la porte `registre-com
 (Saoudia Optique vivant, Centrale d'Optique Panafricaine morte, ISEE = Business « I See Better »,
 Free Optic = Business « Free Optic ») étaient enregistrés au tour précédent. Aucune double ligne, aucun
 recomptage : **28 testés · 22 joignables · 6 morts**.
+
+## 25/10/2026 (tour 143) — PLAYBOOK D'ACQUISITION SOCIALE : 7 artéfacts, la source appliquée, nos chiffres datés
+
+**① Ce qui a été produit** : `sales/SOCIAL-ACQUISITION-PLAYBOOK-2026-10-25.md` — offre et 3 ICP, carte de 36 sujets (12/12/12), système hebdomadaire (3 posts/semaine, lot du dimanche 2 h 30, calendrier rempli 26/10 → 21/11), chemin de conversion (un lien `wa.me/237677789631`, une action « APERÇU »), 8 modèles, déploiement 90 j (13 points de contrôle, 5 critères d'arrêt), audit binaire des 7 échecs. Source : BONT, 12:56 (`youtu.be/Wcju7Xt_dGU`).
+
+**② Six conflits tranchés, tous écrits au §0** : (a) la source annonce « 5 mistakes », en énumère 7 et numérote deux fois le 3 → renumérotés 1-7 ; (b) « CTA dans chaque post » (source) contre « CTA parfois » (`CONTENT-STRATEGY-V2` §2, 05/10) → **la source gagne pour le social**, le ruling du 05/10 a produit 0 demande entrante en trois semaines ; (c) LinkedIn par défaut → **Facebook** (6,84 M au Cameroun contre 637 k sur Instagram, NapoleonCat/StatCounter 09/2026, déjà cités dans `AMK-PRESENCE` §8) ; (d) page de réservation → **pas de page à construire**, WhatsApp est le lien unique ; (e) prix → **jamais dans un post** (décision 08/10) ; (f) try-on en tête (`PACK-OPTICIEN`, 05/10) contre site en tête (ruling 142) → **le site mène**, le try-on ne s'annonce jamais dans un post.
+
+**③ Chiffres : aucun n'est inventé.** Prix 200 000 / 50 000 / 900 000 = `PACK-OPTICIEN` (05/10) ; marché 175–450 k = `knowledge/PRIX-2026-10-24.md` §1 (relevé 24/10) ; audience = NapoleonCat + StatCounter 09/2026. Les seuils du §6.3 sont déclarés `[INFERENCE]` : des **déclencheurs de décision**, pas des prévisions. Le seul résultat manquant — un chiffre de résultat client — reste `[NEEDS DATA]`, et les 3 sujets BOFU qui en dépendent (B9, B10, B11) sont marqués 🔴 et **non planifiés**.
+
+**④ Ce que le playbook corrige dans le dépôt** : le calendrier `CALENDRIER-4-SEMAINES-2026-10-12.md` est remplacé **pour la partie sociale** à partir du 26/10 (il mesurait Instagram/TikTok et prévoyait un CTA « parfois »), mais son point de décision du 04/11 reste lu : il porte sur l'ancien canal et ne tue pas celui-ci.
+
+**⑤ Les garde-fous du ruling 142 sont conservés** : aucun post ne promet de mesure des appels, la fiche Google reste un bonus conditionnel (sujet B6), et aucun client n'est nommé sans accord écrit (sujet B8 en 🟡, B9 en 🔴).
+
+**⑥ Reste à faire, par King** : confirmer le **nom et l'URL** de la page Facebook (créée le 22/10, `AMK-PRESENCE` §1), régler le bouton « Envoyer un message WhatsApp » sur `wa.me/237677789631`, et **publier** — le premier post est mardi 27/10 à 18:00.
