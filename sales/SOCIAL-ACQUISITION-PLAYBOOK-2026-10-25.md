@@ -468,6 +468,99 @@ acceptable — la « shocking stat » de la source est **la seule de ses trois f
 n'utilisons pas** tant qu'aucun résultat n'est mesuré (ruling 142). Nous tirons au **contraste** et à
 **l'affirmation contraire**.
 
+### 5 quater · Les cinq jeux — à quel jeu appartient chaque pièce de cette carte (25/10, texte de King)
+
+Une **troisième source**, collée par King le 25/10 : *« The 5 Content Games »* (ni auteur, ni URL, ni
+date → **tier C** : elle fait décider, elle ne se cite pas dans un post). Elle est synthétisée dans
+**`knowledge/CONTENT-GAMES-2026-10-25.md`** et vérifiée par **`tools/qa/audit_trust.py`**.
+
+**Le diagnostic, en une ligne :** nous vendons un **service**, à des opticiens nommables de Douala →
+**jeu 5, l'autorité** (monétisation **hors plateforme**). La mécanique du jeu 4 (éduquer avant l'achat)
+travaille **à l'intérieur** du jeu 5. Nous ne sommes pas au jeu 1 ni 2 : nous ne cherchons pas la portée.
+
+| Ce que le texte renverse | Conséquence pour cette carte |
+|---|---|
+| la portée comme objectif | `confiance = minutes watchées × pertinence × utilité` ; **1 000 vues de la bonne personne > 100 000 déconnectées** |
+| les vues comme résultat | les vues sont un **diagnostic** (§6.1 inchangé : la conversation décide) |
+| un seul type de publication | **trois rôles par semaine**, ci-dessous |
+| « publier ce qui peut devenir viral » (§4 bis) | *« pure virality is a trap for games 3, 4, 5 »* — une pièce virale **hors cible** abîme les suivantes |
+
+**La semaine, en trois rôles** (le calendrier du §3 reste, c'est le **rôle** de chaque pièce qui est nommé) :
+
+| Jour | Rôle | Règle de format | Plancher de score |
+|---|---|---|---|
+| **mardi** | **porte** | ≤ 25 s, une seule idée, un CTA | **12**/125 |
+| **jeudi** | **preuve** | carrousel ou texte, chiffre daté et sourcé | **24**/125 |
+| **samedi** | **autorité** | **≥ 2 minutes** (fenêtre 12:00–14:00), cadre, ce qu'on refuse | **40**/125 |
+
+**Le plancher BONT tient** : trois posts par semaine, un seul CTA par pièce, aucun prix dans un post.
+Le rôle s'ajoute, il ne remplace pas.
+
+**Le barème, appliqué à ce qu'on a déjà produit** : `tier(minutes) × pertinence × utilité`, sur 125.
+EP01 v3 (23,76 s) → tier 1, pertinence 5, utilité 4 = **20/125** : **porte recevable, autorité irrecevable**.
+Une pièce de 23 s **plafonne à 25** — il n'y a pas de montage qui contourne l'arithmétique, seulement une
+pièce plus longue. C'est pourquoi le samedi existe.
+
+**Ce que la source ne permet pas** : mesurer les « on-target views » (aucune plateforme ne les expose).
+On garde le principe comme critère de **choix de sujet**, et on ne fabrique **aucun** chiffre de cible.
+Trois sujets sont **rétrogradés** par ce classement — **T5, T10, T12** : ce sont des pièces de portée
+(célébrité, humour de niche), pas d'autorité. Ils ne disparaissent pas du §2 ; ils passent **derrière** la
+porte ou ne servent pas.
+
+**La porte** : `python3 tools/qa/audit_trust.py <module>.py` — la pièce déclare son jeu (`TRUST = Piece(…)`),
+la porte refuse `trop-court`, `objectif-vues`, `cible-muette`, `sans-entonnoir`, `inutile`.
+
+### 5 quinquies · Avant le jeu, l'idée : les six tuyaux (25/10, suite du même fil)
+
+Le §5 quater dit **quel rôle** tient une pièce. Il ne disait pas **d'où vient son idée** — et c'est là que
+se joue, selon la source suivante, la différence entre 10 000 et 1 000 000 de vues. Synthèse :
+**`knowledge/IDEA-PIPES-2026-10-25.md`** ; porte : **`tools/qa/audit_ideas.py`** ; lots :
+**`content/ideas/`**.
+
+**Une idée = topic + seed + substance.** Deux prédicteurs : la pertinence du topic **pour l'acheteur**, et
+l'intérêt réel du seed et de la substance.
+
+| # | Tuyau | Ce qu'il vaut pour nous, aujourd'hui |
+|---|---|---|
+| 1 | **nos outliers** | **vide** : 156 et 121 vues, aucune n'est un outlier, et l'audience est à 91 % / 86 % de 18–34 ans — pas l'acheteur |
+| 2 | **les outliers des concurrents** | **vide** : aucune watchlist ; c'est **la** chose à faire (45 min, 10–15 comptes du même acheteur, 30 jours) |
+| 3 | **les autres médias** | c'est là que nos deux emprunts vivent : le format « 3 niveaux » de la source, et le `[≈5:00]` de BONT — **sans métrique**, donc non validés |
+| 4 | **l'actualité de la catégorie** | **vide** : nous ne suivons aucune source d'actualité ; une news sans date est un souvenir |
+| 5 | **les non-outliers des concurrents** | rien de ce que nous avons ne permet de l'affirmer — un pari, jamais une preuve |
+| 6 | **les originaux** | **EP01 est ici** : topic pertinent, seed honnête, substance réelle — et **aucune donnée** |
+
+**La règle du remix** : garder **8 à 10 briques constantes** (nous en avons onze nommées : topic, seed,
+substance, ouverture, arc, hook, mise en page, hôte, voix, CTA, durée), changer **1 à 3**. La porte refuse
+au-delà de trois : « ce n'est plus un remix, c'est un original déguisé ».
+
+**Conséquence pour la semaine** : les trois rôles du §5 quater ne se remplissent pas au tuyau 6 sans le
+dire. **Mardi** (porte) peut être un remix du gabarit EP01 à 9 constantes ; **jeudi** (preuve) demande un
+chiffre daté, donc un actif que nous possédons ; **samedi** (autorité ≥ 2 min) demande un seed **contraire**,
+pas un constat. Et le premier lot de recherche — la watchlist — conditionne les trois.
+
+**La chaîne, à ne plus sauter** : `audit_ideas.py` (idée) → `audit_hook.py` (accroche) →
+`audit_trust.py` (rôle) → `audit_reel.py` (forme). Une pièce bien montée qui vient d'un original non
+déclaré échoue à la première.
+
+### 5 sexies · L'accroche, l'échelle et la grille (25/10, trois captures du même compte)
+
+Trois captures de `kallowaymarketing` (tier C) ferment le dernier trou de fabrication : **ce qui doit se
+trouver dans la première phrase**, **jusqu'où monter dans une durée donnée**, et **combien de pièces
+prévoir avant de savoir laquelle doubler**. Doctrine : `knowledge/HOOKS-2026-10-25.md` ; portes :
+`tools/qa/audit_hook.py` et `--grid`.
+
+- **Les quatre mots obligatoires** : sujet (*vous*), action (*tapez*), objectif (*il appelle*),
+  **contraste** (*pas vous*). Le contraste est le plus important de la pile — c'est lui qui oppose
+  l'état de départ au résultat.
+- **L'échelle des histoires** : Reporter (constat) → Magician (mécanisme) → Fortuneteller (annonce) →
+  Architect (plan) → Maestro. Une pièce **déclare** son niveau ; un niveau 4 dans 25 s est un mensonge.
+  Corollaire pour la semaine : **mardi (porte) vise 2–3**, **samedi (autorité ≥ 2 min) vise 4**.
+- **La grille 331** : 3 sujets × 3 formats = 9 pièces (`content/ideas/GRID-331-2026-10-25.md`), et la
+  **dixième** se choisit **après** les neuf, sur la combinaison qui a le mieux marché. C'est ce qui
+  remplace l'intuition par notre propre donnée — la seule que nous ayons.
+- **Et un refus** : une quatrième image, sans auteur (« Admit · Pain · Emergency »), proposait l'urgence
+  comme levier. **Refusée**, et **codée** : `audit_hook.py` refuse le champ lexical de la peur.
+
 
 ---
 
@@ -578,7 +671,9 @@ qu'elle n'a pas dit.
 | L'offre passe-t-elle « I do websites is vague » ? | OUI — métier + ville + état de départ + effet + raison de l'expert | §1.1 |
 | **Un** lien, **une** action ? | OUI — `wa.me/237677789631`, le mot APERÇU ; aucun second lien, aucune page à construire | §4.1 |
 | Chaque modèle finit-il par une demande d'appel ? | OUI — le CTA canonique nomme les 10 minutes, et les 12 CTA du calendrier en sont la forme courte | §3.4, §5 |
-| Les vues sont-elles optimisées quelque part ? | NON — elles sont hors du tableau de bord décisionnel ; seule la conversation décide | §2, §6.1 |
+| Les vues sont-elles optimisées quelque part ? | NON — elles sont hors du tableau de bord décisionnel ; seule la conversation décide | §2, §6.1, §5 quater |
+| Chaque pièce a-t-elle un **rôle** déclaré et un plancher tenu ? | OUI depuis le 25/10 — porte ≤ 25 s (**12**), preuve (**24**), autorité ≥ 2 min (**40**) ; vérifié par `tools/qa/audit_trust.py` | §5 quater |
+| Chaque pièce a-t-elle une **idée sourcée**, et sait-on ce qu'on a changé ? | OUI depuis le 25/10 — tuyau 1–6 + preuve + cible + ≤ 3 briques changées ; vérifié par `tools/qa/audit_ideas.py`. **Le premier lot est à 0 idée validée** et le dit | §5 quinquies |
 | Les sept artéfacts sont-ils présents, sans résumé ? | OUI — §1 à §7 | — |
 | Aucun chiffre inventé ? | OUI — prix, marché et audience ont une source datée ; les seuils du §6.3 sont déclarés comme des **décisions**, pas des prévisions ; les résultats manquants sont `[NEEDS DATA]` | §1.3, §6.3 |
 
@@ -593,3 +688,6 @@ qu'elle n'a pas dit.
 4. **Offre, preuve, ruling 142** : `sales/PACK-OPTICIEN-2026-10.md`, `sales/CLIENT-MESSAGING-RULES.md` §13 quinquies.
 5. **Base d'échec mesurée** : `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` §4 (trois vidéos product-led,
    **0 demande** entrante) — c'est la raison du §0 ligne 2, pas une opinion.
+6. **« The 5 Content Games »** (25/10, texte collé par King, **auteur et date non fournis**) : tiers **C** —
+   utilisé pour **décider** (§5 quater, semaine en trois rôles, barème), jamais cité comme donnée dans un
+   post, jamais nommé à un client. Sa provenance est consignée dans `knowledge/CONTENT-GAMES-2026-10-25.md` §7.

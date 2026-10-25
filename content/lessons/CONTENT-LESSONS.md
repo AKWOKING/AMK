@@ -2,6 +2,9 @@
 
 **Version v0.9** · 19 Sep 2026 · sources: `content/handover/2026-09-17-content-handover.md` (previous chat, authoritative), King's 17 Sep brief, repo content history, `research/YouTube-Lessons.md` batches 1–3, `research/HyperFrames-Evaluation-2026-09-19.md`.
 **Rule:** append dated entries; never silently rewrite. Conflicts get logged and go to King.
+**Numérotation (corrigée le 25/10)** : les entrées datées reprennent après §17 — les deux entrées du 25/10
+sont **§18** (l'arc) et **§19** (les jeux). Elles avaient été écrites §13 et §14, en collision avec des
+sections existantes ; le contenu n'a pas changé, seuls les numéros.
 
 ---
 
@@ -324,7 +327,7 @@ décision verrouillée gagne (§2, §11, §14, §15) — et on le dit, on ne le 
 
 ---
 
-## 13 · 25/10/2026 — la falaise à 0:02 était un défaut d'ARC, pas de sujet
+## 18 · 25/10/2026 — la falaise à 0:02 était un défaut d'ARC, pas de sujet
 
 **Ce qu'on croyait** : les deux publications fondatrices perdaient le spectateur à la deuxième seconde
 (analytics TikTok du 17/09, §12) parce que le **sujet** était mauvais ou la vidéo mal montée.
@@ -349,3 +352,152 @@ ce que la source ne dit pas). **La porte existe** : `tools/qa/audit_reel.py` (12
 
 **Ce qui n'a pas changé** : aucun chiffre de résultat, aucune mention d'IA (ruling 11/10), aucun nom de
 client, sous-titres écrits à la main. Un arc meilleur ne rend pas une preuve fausse acceptable.
+
+---
+
+## 19 · 25/10/2026 (soir) — la viralité n'est pas l'objectif, et le jeu choisit la pièce
+
+**La source** : un texte non signé, « The 5 Content Games », collé par King le 25/10 (ni auteur, ni URL,
+ni date → **tier C** : il fait décider, il ne se cite pas dans un post). Il classe tout contenu en cinq
+jeux et dit ce que chacun monétise : 1 célébrité grand public (vues → pub) · 2 célébrité de niche (marques) ·
+3 produit intuitif (achat par envie) · 4 produit explicatif (éduquer avant l'achat) · **5 autorité**
+(confiance → contrats **hors plateforme**).
+
+**Le diagnostic, en quatre questions** : je vends un service → **jeu 5** ; un produit de commodité →
+jeu 3 ; un produit différencié qui s'explique → jeu 4 ; pas encore d'offre → jeu 2 puis jeu 5. AMK vend un
+service, à des opticiens nommables de Douala : **jeu 5**, mécanique 4 à l'intérieur.
+
+**Ce que ça change pour nous — trois renversements :**
+
+| Ce qu'on faisait | Ce que le jeu 5 impose |
+|---|---|
+| viser la portée (TOFU) | **la pertinence d'abord** : 1 000 vues de la bonne personne > 100 000 déconnectées |
+| mesurer les vues | les vues sont un **diagnostic**, pas un résultat ; la mesure est *minutes watchées × pertinence × utilité* |
+| un seul type de publication | **trois rôles** dans la semaine : porte (≤ 25 s) · preuve (≥ 24) · autorité (≥ 2 min) |
+
+**T5, T10 et T12 sont rétrogradés** : ce sont des pièces de portée (célébrité/humour de niche), pas des
+pièces d'autorité. Elles ne disparaissent pas — elles passent **derrière** la porte, ou ne servent pas.
+Et la phrase qui coûte le plus cher à entendre : *« pure virality is a trap for games 3, 4, 5 »* — une
+vidéo virale **hors cible** n'abîme pas seulement son propre retour, elle **abîme les suivantes** (l'algorithme
+nous montre aux mauvaises personnes).
+
+**Le barème est écrit, et il est dur** : `tier(minutes) × pertinence × utilité` sur 125, avec des planchers
+par rôle — **porte 12 · preuve 24 · autorité 40** — et une autorité exige un tier ≥ 3 (**2 minutes**).
+Conséquence arithmétique : **une pièce de 23 s plafonne à 25/125**. Elle peut être une excellente porte et
+elle ne sera jamais une autorité. Le dire évite de tricher au moment du bilan.
+
+**La porte** : `tools/qa/audit_trust.py` (+ 15 cas). Codes : `mauvais-jeu`, `hors-cible`, `cible-muette`,
+`objectif-vues`, `sans-entonnoir`, `inutile`, `role`, `trop-court`, `score-faible`, avertissement `mince`.
+
+**Ce que la pièce a appris en la repassant** : EP01 v2 déclarait — implicitement — être une pièce d'autorité.
+Lue par la porte, elle échoue (`trop-court`). Reclassée **porte**, elle passe à 20/125… et **l'utilité
+était son point faible** : `release2` était un souffle muet, 2,3 s d'attention pour zéro chose emportée.
+La v3 lui écrit une phrase utile (« Dix minutes, et c'est gratuit. ») et montre les trois choses qui se font
+sans nous. Utilité 3 → 4, durée 23,76 s, `SOUFFLE` vidé. **Un relâchement de l'arc n'est pas un trou à
+remplir de silence : c'est le seul endroit où l'on peut rendre service gratuitement.**
+
+**Ce que la source ne permet pas** : elle ne dit pas comment mesurer les « on-target views » — aucune
+plateforme ne les expose. On garde le principe, on ne fabrique pas le chiffre (pas d'estimation présentée
+comme mesure). Et comme partout : **une règle sans porte est un trou** — d'où `audit_trust.py`.
+
+---
+
+## 20 · 25/10/2026 (nuit) — l'idée d'abord : six tuyaux, trois briques, et notre chaîne de portes
+
+**La source** : « The 6 Idea Pipes », suite annoncée du texte des cinq jeux, même fil, même provenance
+(**tier C** — auteur non nommé, ni URL ni date). Elle déplace la question : ce n'est pas le montage qui
+décide entre 10 000 et 1 000 000 de vues, c'est **le choix de l'idée**.
+
+**Une idée = trois choses** : *topic* (le sujet) + *seed* (la phrase-tête, la prise de position) +
+*substance* (les faits et exemples qui la portent). Deux prédicteurs, plus forts que la qualité :
+① le topic est-il pertinent **pour l'acheteur** ? ② le seed et la substance sont-ils intéressants ou
+utiles **pour lui** ?
+
+**Les six tuyaux, du plus prouvé au plus risqué** : 1 nos outliers · 2 ceux des concurrents · 3 les
+autres médias · 4 l'actualité de la catégorie · 5 les non-outliers des concurrents · 6 les originaux.
+La source est catégorique : *« most beginners start with #6… the lowest hit rate source. Start with #2
+instead. »*
+
+**Le remix** : garder **8 à 10 briques** constantes, n'en changer que **1 à 3**. Nous avons maintenant
+**onze briques nommées** (topic, seed, substance, ouverture, arc, hook, mise en page, hôte, voix, CTA,
+durée) — et c'est là que se lit la vraie histoire d'EP01 : il ne changeait pas 3 briques sur 11, il
+**n'avait pas de bibliothèque** ; les briques 4 à 11 sont nées avec lui. Un original paie le gabarit.
+C'est le seul cadeau qu'il fait aux pièces suivantes, et il ne le fait qu'une fois.
+
+**Ce que ça dit de nous, sans ménagement** : EP01 est un **tuyau 6** — un original, sans outlier à nous,
+sans concurrent étudié, sans actualité datée. Le tour 146 l'a classé « porte » (rôle) ; il manquait une
+ligne au-dessus : *porte dont l'idée n'a jamais été validée*. Et notre tuyau 1 est **vide** : nos deux
+publications mesurées font 156 et 121 vues, avec 91 % / 86 % d'audience à 18–34 ans quand l'acheteur a
+35–54 ans. **Un topic pertinent ne garantit pas la bonne personne.**
+
+**Ce qui a été écrit, et rendu opposable** : `knowledge/IDEA-PIPES-2026-10-25.md` (10 sections) ·
+`tools/qa/audit_ideas.py` (**21 cas**, refus : tuyau inconnu, champ manquant, `[NEEDS DATA]`, seed mou,
+seed = topic, cible floue, tuyau 1–2 sans chiffre, > 3 briques changées ; avertissements : tuyau 3 sans
+métrique, tuyau 5, original sans outlier, peu de constantes, lot sans aucune idée validée) ·
+`content/ideas/SHORTLIST-2026-10-25.md` (premier lot, **4 idées, 0 validée** — et le fichier le dit).
+**La chaîne est désormais explicite : idée → rôle → forme.** Trois portes, trois outils, dans cet ordre.
+
+**Deux défauts trouvés en vérifiant, la même heure :**
+
+| Défaut | Ce que la porte comptait | Le correctif |
+|---|---|---|
+| **une date n'est pas une métrique** | `re.search(r"\d")` comptait « 23/10 » comme un chiffre de vues : un tuyau 2 sans aucune donnée passait | les dates **et les timecodes** (`[≈5:00]`) sont retirés avant la recherche ; il faut ensuite un nombre d'au moins deux chiffres |
+| **une section de prose n'est pas une idée** | tout titre `##` devenait une idée — le lot échouait sur son propre paragraphe « ce que le lot ne contient pas » | seuls les blocs `## IDEA-…` sont lus |
+
+**Ce que la source ne règle pas, et qui nous concerne** : que faire quand la niche est **trop petite pour
+avoir des outliers**. Les opticiens de Douala publient très peu de vidéos : notre tuyau 2 peut rester vide
+même bien exécuté. Ce jour-là, la doctrine ne dit rien — et nous ne remplirons pas le vide avec une
+capture d'écran inventée.
+
+---
+
+## 21 · 25/10/2026 (23:40) — l'accroche avait deux mots sur quatre, et c'est pour ça qu'elle ne faisait rien faire
+
+**Les sources** : trois captures de `kallowaymarketing` (mêmes captures, même fil que les deux textes de
+la soirée — **tier C**) et une image sans auteur (**tier D**). Elles disent trois choses différentes, et
+les trois manquaient.
+
+**① Les six mots de puissance.** Un hook porte **sujet**, **action**, **objectif**, **contraste** (les
+quatre obligatoires), plus deux mots d'intrigue facultatifs. Le contraste est *« the most important in the
+entire stack »*.
+
+**Appliqué à EP01 v3** : *« Votre cabinet existe. Votre site, non. »* — sujet ✓, contraste ✓ (« non »),
+**action ✗**, **objectif ✗**. Le spectateur entendait un diagnostic **et ne pouvait rien en faire** : pas
+de geste, pas de résultat annoncé. Ce n'est pas un problème de ton, c'est une pièce manquante dans la
+phrase. La v4 : *« Tapez votre nom sur Google : il appelle ceux qui ont un site, pas vous. »* — 4/4.
+
+**② L'échelle des histoires** : Reporter (constat) → Magician (mécanisme) → Fortuneteller (annonce) →
+Architect (plan) → Maestro. Une pièce **déclare** son niveau. EP01 v3 était **niveau 1** : elle
+constatait. La v4 est **niveau 3** : elle annonce ce que fait le patient. Le niveau 4 exige un plan
+**lisible** (« d'abord, ensuite, puis ») — dans 24 s, le déclarer serait un mensonge, et c'est pour ça que
+la porte refuse un niveau 4 sans ordre écrit.
+
+**③ La grille 331** : 3 sujets × 3 formats = 9 pièces, et la **dixième** se choisit **après** les neuf,
+sur la combinaison qui a le mieux marché (« the first time you stop guessing »). EP01 n'avait **aucune
+case** : pièce isolée, donc incomparable, donc inenseignable. Elle est maintenant la **case 3** —
+*fiche Google × scénario* — d'un plan de neuf, écrit dans `content/ideas/GRID-331-2026-10-25.md`.
+
+**④ Un refus, et il est codé.** La quatrième image (sans auteur, sans date) propose « Admit · Pain ·
+**Emergency** ». On garde *Admit* (nommer la douleur avec ses mots, ce que nos captures font déjà) ; on
+**refuse Emergency** — l'urgence fabriquée est exclue par ruling. Le refus n'est pas seulement écrit :
+`audit_hook.py` échoue sur « urgence », « dernière chance », « catastrophe », « avant qu'il ne soit trop
+tard ».
+
+**La leçon de fabrication la plus utile du tour** : **c'est le plafond de l'arc qui a écrit l'accroche.**
+`audit_reel.py` limite le contexte à **5 s**. Première version : 23 mots → **8,03 s**, refusée. Deuxième :
+15 mots → **5,27 s**, refusée. Retenue : 14 mots → **5,00 s pile**. Trois réécritures du **texte** — jamais
+de la voix, jamais du plafond. Et le résultat est *meilleur* : huit mots utiles au lieu de vingt-trois.
+
+**Un défaut trouvé en vérifiant** : la première restitution affichait encore « Ouvrez votre nom » à
+l'écran alors que la voix disait « Tapez ». Une pièce se vérifie **en image et en son**, pas dans le code :
+la capture de contrôle a rattrapé une incohérence que les trois portes laissaient passer (elles lisent le
+texte du module, pas ce que la voix prononce).
+
+**Ce que ça ne change pas** : le score de rôle (20/125) — une porte reste une porte ; l'idée reste un
+tuyau 6 (`IDEA-PIPES` §6) ; la dixième vidéo reste **ouverte**, et la porte l'affiche.
+
+**Répétition du 26/10 (tour 149)** : la voix a dû être re-synthétisée (les `.mp3` ne persistent pas d'un
+bac à l'autre) ; 0,4 s plus lente → **5,21 s** sur une place de **5,00 s**. Deux mots sont tombés :
+« il appelle **ceux qui ont un site** » → « il appelle **les autres** ». Même leçon, même plafond, deuxième
+démonstration : **c'est la place qui écrit l'accroche**. Une leçon qui se vérifie deux fois cesse d'être
+une anecdote.

@@ -154,6 +154,14 @@ faux et ne parle pas de Bonabéri.
 | 14 | « J'ai payé pour apprendre ça. Je vous le dis en trente secondes. » | « I paid $X to learn this » |
 | 15 | « Si vous devez acheter une seule chose cette année pour vos yeux, c'est celle-ci. » | « People only spend money on N things » |
 
+**Ce que les quatre S ne disaient pas (ajouté le 25/10, soir)** : *ce qui doit se trouver dans la
+phrase*. Trois captures du même compte (`kallowaymarketing`) donnent les **six mots de puissance** —
+sujet, action, objectif, **contraste** (le plus important), et deux mots d'intrigue facultatifs —
+l'**échelle des histoires** en cinq niveaux (Reporter → Maestro) et la **grille 331**. Doctrine :
+**`knowledge/HOOKS-2026-10-25.md`** ; porte : **`tools/qa/audit_hook.py`** (+ `--grid`). Les quatre S
+disent **quoi dire** ; les six mots disent **ce qui doit y être** ; l'échelle dit **jusqu'où on monte**
+dans une durée donnée. Les deux modèles ne se remplacent pas, ils s'empilent.
+
 **Trois règles d'usage** (sinon la banque devient un générateur de clickbait) :
 
 - **le hook ne promet rien que la vidéo ne tienne** — un hook qui ment coûte le compte, pas la vue ;
@@ -196,6 +204,24 @@ personne est un feu de paille : elle coûte une journée de production et ne lai
 conversation, aucun patient.
 
 **Ce qui relie les quatre lignes :** chacune se termine par **le même** CTA — un seul opt-in, (§5 bis).
+
+**Ce que cette section ne disait pas encore (ajouté le 25/10)** : *quel jeu* on joue. Choisir le type de
+contenu selon l'objectif ne suffit pas si l'objectif lui-même est mal nommé — une pièce peut être bien
+faite, bien ciblée, et viser la **portée** alors que notre monétisation est **hors plateforme**. Le texte
+« The 5 Content Games » (25/10, tier C) le tranche : AMK vend un service → **jeu 5, l'autorité** ; la
+formule de confiance est `minutes watchées × pertinence × utilité`, et une pièce courte **plafonne à
+25/125**. La doctrine complète — les cinq jeux, le diagnostic en quatre questions, le barème, les quatre
+conflits tranchés et la semaine en trois rôles — est dans **`knowledge/CONTENT-GAMES-2026-10-25.md`** ;
+sa porte est **`tools/qa/audit_trust.py`**. Le §4 bis reste la règle de *quoi publier* ; le document des
+jeux est la règle de *pourquoi*, et de *quel rôle* la pièce tient dans la semaine.
+
+**Et ce qui précède encore le jeu (25/10, soir)** : l'**idée**. Le texte suivant du même fil,
+« The 6 Idea Pipes », dit que la différence entre 10 000 et 1 000 000 de vues se joue dans le **choix**
+de l'idée — topic + seed + substance — et que l'idée doit venir d'un des **six tuyaux** (nos outliers, ceux
+des concurrents, les autres médias, l'actualité, les non-outliers, les originaux), en gardant **8 à 10
+briques constantes** et en n'en changeant que 1 à 3. Doctrine : **`knowledge/IDEA-PIPES-2026-10-25.md`** ;
+porte : **`tools/qa/audit_ideas.py`** ; lots : **`content/ideas/`**. L'ordre est désormais
+**idée → rôle → forme**, et il ne se saute pas.
 
 ---
 
@@ -685,10 +711,19 @@ sienne.
 | 23/10 | **Ruling King : « vous demandez, on répond »** (23/10) | la série questions → vidéo → tag, avec l'accord obligatoire avant de taguer | §5 sexies | le tag sans accord, écarté pour la même raison qu'un visage sans autorisation |
 | 23/10 | **Insights 24 h du reel** (Facebook Business Suite, TikTok Studio) | la preuve que les deux réseaux ne mesurent pas la même chose : 12 % de lecture moyenne sur Facebook contre 26 % sur TikTok pour le même film | §5 quater | la comparaison brute des vues (227 contre 80) : elle ne dit rien de la qualité |
 | 23/10 | **Capture WhatsApp DM OPTIQUE** (13h00, message d'avis du client) | le texte exact de sa demande d'avis, ses liens, et l'heure | `clients/dm-optic/launch/SOLDE-75K-2026-10-23.md` §3 bis | la tentation d'y répondre : c'est un message de masse, pas une question |
+| **25/10** | **Capture @kallowaymarketing** (7 slides, reçue de King) | l'arc moderne : départ à **70**, secousse entre 5 et 10 s, **trois cimes**, relâchements, CTA en dernière cime | §3 bis (l'ordre des blocs — l'arc en est la version sociale) · `knowledge/STORY-ARC-2026-10-25.md` · `tools/qa/audit_reel.py` | le « 742 jours / 207 clients » de la slide : cas unique, pas une preuve (§1g) — non repris |
+| **25/10** | **Captures @kallowaymarketing — « the 6 Hook Power Words »** | les **six mots** et les quatre obligatoires (sujet, action, objectif, **contraste**) ; le contraste comme « the most important in the entire stack » | `knowledge/HOOKS-2026-10-25.md` §1 · `tools/qa/audit_hook.py` · §3 ter (le renvoi) | l'idée qu'un mot suffit : un hook de 4 mots sans action ne fait rien faire (mesuré sur EP01 v3) |
+| **25/10** | **Capture @kallowaymarketing — « the Story Ladder »** | les 5 niveaux (Reporter, Magician, Fortuneteller, Architect, Maestro) et l'idée qu'on monte un niveau à la fois | `knowledge/HOOKS-2026-10-25.md` §2 · `Hook.level` dans la pièce | le niveau 5 (Maestro) : hors de portée d'un opérateur seul, et non vérifiable |
+| **25/10** | **Capture @kallowaymarketing — « the 331 Strategy »** | 3 sujets × 3 formats = 9 pièces, et une **dixième** décidée par la donnée | `content/ideas/GRID-331-2026-10-25.md` · `audit_hook.py --grid` | les « 20 formats » annoncés mais non fournis (« comment FORMATS ») : nous n'en nommons que trois, les nôtres |
+| **25/10** | **Image sans auteur « How to sell · Admit · Pain · Emergency » (tier D)** | **Admit** (nommer la douleur avec ses mots) — et le refus explicite d'**Emergency** | `knowledge/HOOKS-2026-10-25.md` §4 · `audit_hook.py` (lexique `peur`) | tout le reste : aucune provenance, donc aucune autorité ; l'urgence fabriquée est exclue par ruling |
+| **25/10** | **« The 6 Idea Pipes »** (même fil, même provenance — **tier C**) | l'idée = **topic + seed + substance** ; les deux prédicteurs (pertinence pour l'acheteur, intérêt du seed et de la substance) ; les **6 tuyaux** ordonnés par probabilité ; la règle du **remix** (8–10 briques constantes, 1–3 changées) ; le processus de recherche en deux semaines | `knowledge/IDEA-PIPES-2026-10-25.md` (10 sections) · `tools/qa/audit_ideas.py` (19/19) · `content/ideas/SHORTLIST-2026-10-25.md` · §4 bis (le renvoi) · playbook §5 quinquies · `PRE-FLIGHT.md` §1 | l'outil **Sandcastles** (payant, et nous n'avons pas d'accès plateforme) : le protocole est réécrit à la main · le « 10K vs 1M » (accroche, pas une mesure) |
+| **25/10** | **« The 5 Content Games »** (texte collé par King ; **ni auteur, ni URL, ni date → tier C**) | les 5 jeux et ce que chacun monétise ; le diagnostic en 4 questions ; `confiance = minutes × pertinence × utilité` ; « pure virality is a trap for games 3, 4, 5 » ; la semaine en 3 rôles | `knowledge/CONTENT-GAMES-2026-10-25.md` (9 sections) · §4 bis (le renvoi) · `sales/SOCIAL-ACQUISITION-PLAYBOOK-2026-10-25.md` §5 quater · `tools/qa/audit_trust.py` | les noms de marques cités (AG1, Meta Ray-Ban) comme exemples de jeu 4 : jamais cités dans un post · les « on-target views » : **non mesurables**, on garde le principe, pas le chiffre |
 
 ---
 
-## 7 · Reels explainer — le studio `content/reels/` (25/10/2026)
+## 11 · Reels explainer — le studio `content/reels/` (25/10/2026)
+
+> *Numéroté §7 par erreur le 25/10 : le §7 de ce document est la **règle de source**. Contenu inchangé.*
 
 Un troisième moteur, à côté de `tools/record/make_dmoptic_tiktok.py` : `content/reels/reelkit.py`.
 Il rend un réel vertical complet **sans navigateur, sans tournage, sans capture** — fond, cartes,
@@ -711,3 +746,10 @@ pastilles et mascotte dessinés à la volée, frames poussées dans le pipe ffmp
 
 **Coût mesuré** : 30 s de rendu pour 23 s de vidéo, 2 dépendances (`pillow`, `imageio-ffmpeg`), zéro
 `apt`. C'est ce qui rend le format tenable par un opérateur seul, trois fois par semaine.
+
+**Ce que la v3 a changé (25/10, soir)** : EP01 déclare désormais son **jeu** dans le module
+(`TRUST = Piece(role="porte", …)`), et `audit_trust.py` la lit — 23,76 s, **20/125**, plancher de porte tenu,
+plancher d'autorité (40) hors d'atteinte par construction. Le relâchement muet de `release2` est devenu
+**le conseil gratuit** (« Dix minutes, et c'est gratuit. ») : c'est le seul endroit de l'arc où l'on peut
+rendre service sans rien vendre, donc le seul où l'**utilité** s'achète. Détail de fabrication :
+`content/reels/README.md` §4.

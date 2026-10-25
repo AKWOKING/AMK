@@ -30,14 +30,14 @@ PLAN = {
     "spike1": (4.6, 92, "contraste"),
     "release1": (2.3, 58, "relache"),
     "spike2": (3.3, 88, "contraste"),
-    "release2": (1.5, 60, "relache"),
-    "cta": (4.4, 95, "appel"),
+    "release2": (2.3, 60, "relache"),
+    "cta": (3.6, 95, "appel"),
 }
 ORDRE = list(PLAN)
 
 # Le beat SANS voix. Ce n'est pas un trou : c'est le souffle avant la sortie. Il est déclaré ici,
 # donc la porte audio le sait — un silence non déclaré, lui, est un défaut.
-SOUFFLE = {"release2"}
+SOUFFLE: set[str] = set()  # plus aucun beat muet : release2 porte le conseil gratuit
 
 
 def rms(ff: str, path: str) -> float:
