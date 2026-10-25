@@ -686,3 +686,28 @@ sienne.
 | 23/10 | **Insights 24 h du reel** (Facebook Business Suite, TikTok Studio) | la preuve que les deux réseaux ne mesurent pas la même chose : 12 % de lecture moyenne sur Facebook contre 26 % sur TikTok pour le même film | §5 quater | la comparaison brute des vues (227 contre 80) : elle ne dit rien de la qualité |
 | 23/10 | **Capture WhatsApp DM OPTIQUE** (13h00, message d'avis du client) | le texte exact de sa demande d'avis, ses liens, et l'heure | `clients/dm-optic/launch/SOLDE-75K-2026-10-23.md` §3 bis | la tentation d'y répondre : c'est un message de masse, pas une question |
 
+---
+
+## 7 · Reels explainer — le studio `content/reels/` (25/10/2026)
+
+Un troisième moteur, à côté de `tools/record/make_dmoptic_tiktok.py` : `content/reels/reelkit.py`.
+Il rend un réel vertical complet **sans navigateur, sans tournage, sans capture** — fond, cartes,
+pastilles et mascotte dessinés à la volée, frames poussées dans le pipe ffmpeg.
+
+| Ce qu'il fait | Comment |
+|---|---|
+| 1080×1920 · 30 fps · H.264 + AAC | `Kit.render()` puis `mux()` (voix posée par beat, `adelay` + `amix`) |
+| style « post-it » (crème, trame, orange) | `_base()`, `rounded_card()`, `pill()` |
+| **arc moderne** (départ à 70, 3 cimes, CTA final) | `BEATS` + `tools/qa/audit_reel.py` — voir `knowledge/STORY-ARC-2026-10-25.md` |
+| voix | `generate_speech` par beat → `voice/timing.json` → `voice/build_timing.py` (refuse un clip muet) |
+
+**Deux pièges déjà payés**, à ne pas repayer :
+
+1. **Les quatre `Montserrat-*.ttf` du dépôt sont le même fichier variable.** Sans
+   `set_variation_by_name`, PIL rend l'instance par défaut, c'est-à-dire **Thin** — tout « ExtraBold »
+   sort maigre. `reelkit.font()` demande l'axe. (C'est la même famille de bug que `set_variation_by_axes`
+   au §6 de `CONTENT-LESSONS`.)
+2. **`✓` n'est pas dans Montserrat** : une coche se dessine (`reelkit.draw_check`).
+
+**Coût mesuré** : 30 s de rendu pour 23 s de vidéo, 2 dépendances (`pillow`, `imageio-ffmpeg`), zéro
+`apt`. C'est ce qui rend le format tenable par un opérateur seul, trois fois par semaine.

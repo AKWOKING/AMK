@@ -237,7 +237,7 @@ Semaine 1 = **26/10 → 01/11**. Chaque ligne est prête à produire : le sujet 
 
 | Date | Étage | Format | Sujet | Accroche | CTA | Actif | Statut |
 |---|---|---|---|---|---|---|---|
-| **Mar 03/11** | TOFU | vidéo 25 s | T2 | « Pourquoi votre site n'apparaît pas quand on cherche votre nom » | « Si votre nom ne sort pas, écrivez **APERÇU** : 10 minutes, je regarde avec vous. » | **✅ `content/reels/ep01/ep01-v1.mp4`** (21,4 s, §5 bis) | rendu |
+| **Mar 03/11** | TOFU | vidéo 25 s | T2 | « Pourquoi votre site n'apparaît pas quand on cherche votre nom » | « Si votre nom ne sort pas, écrivez **APERÇU** : 10 minutes, je regarde avec vous. » | **✅ `content/reels/ep01/ep01-v2.mp4`** (23,4 s, voix + 3 cimes, §5 bis et §5 ter) | rendu · avancer au 27/10 possible |
 | **Jeu 05/11** | MOFU | carrousel 7 | M12 | « Un aperçu, en 4 étapes : ce que vous voyez avant de payer » | « L'étape 1 prend deux minutes. Écrivez **APERÇU** — on fait les 10 minutes ensemble. » | `content/carousels/` (gabarit c03) | à adapter |
 | **Sam 07/11** | BOFU | texte | B5 | « J'ouvre deux aperçus à votre nom cette semaine » | « Deux places. Écrivez **APERÇU** — 10 minutes, la première est prise quand elle est prise. » | capacité réelle | à écrire |
 
@@ -444,6 +444,29 @@ cartes punaisées, pastille bicolore, mascotte — sans voix, sans visage, sans 
 
 **EP01 est déjà planifié** : c'est le sujet **T2**, mardi 03/11. Il peut avancer au 27/10 si le carrousel T1
 n'est pas prêt — c'est la règle (c) du calendrier, appliquée.
+
+
+### 5 ter · L'arc moderne — la forme que tout réel doit avoir (25/10, source distincte)
+
+Une **seconde source**, apportée par King le 25/10 : un carrousel Instagram
+(`kallowaymarketing`, captures du 23/10) sur la structure des stories qui marchent. Elle est synthétisée
+dans **`knowledge/STORY-ARC-2026-10-25.md`** et vérifiée par **`tools/qa/audit_reel.py`**. Ce qu'elle
+change pour les vidéos de cette carte de contenu :
+
+| Ce qu'on faisait | Ce qu'on fait |
+|---|---|
+| ouvrir sur un carton de titre, un logo, une phrase d'intro | **ouvrir à 70/100** : on est déjà dans une situation commencée |
+| une seule montée, le CTA à la fin (l'arc classique) | **trois cimes minimum**, chacune rouvre l'attention, **le CTA est la dernière** |
+| pas de place pour le relâchement | **relâcher** après chaque cime : un pic sans creux est un fond |
+
+**Pourquoi ça touche nos chiffres** : la falaise à **0:02** mesurée le 17/09 sur les deux publications
+n'était pas un problème de sujet, c'était **un départ à zéro**. Et les trois vidéos product-led
+(277 vues lues, **0 demande**) avaient un seul pic, à la fin.
+
+**Ce que ça ne change pas** : aucune règle de preuve. Un meilleur arc ne rend pas un chiffre inventé
+acceptable — la « shocking stat » de la source est **la seule de ses trois formes de secousse que nous
+n'utilisons pas** tant qu'aucun résultat n'est mesuré (ruling 142). Nous tirons au **contraste** et à
+**l'affirmation contraire**.
 
 
 ---

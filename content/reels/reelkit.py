@@ -171,6 +171,15 @@ def pill(
     return box[2], box[3]
 
 
+def draw_check(d: ImageDraw.ImageDraw, center: tuple[int, int], size: int, color, width: int = 12):
+    """Une coche dessinée en segments. Montserrat n'a pas le glyphe ✓ : un `d.text("✓")` sort
+    une boîte vide (déjà vu le 17/09, `content/lessons/CONTENT-LESSONS.md` §6). On la trace."""
+    cx, cy = center
+    h = size // 2
+    d.line([(cx - h, cy), (cx - h // 3, cy + h // 2)], fill=color, width=width, joint="curve")
+    d.line([(cx - h // 3, cy + h // 2), (cx + h, cy - h // 2)], fill=color, width=width, joint="curve")
+
+
 def progress_bar(img: Image.Image, p: float, y: int = 1742, color=None):
     d = ImageDraw.Draw(img, "RGBA")
     color = color or PALETTE["orange"]

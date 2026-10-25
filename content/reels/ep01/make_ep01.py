@@ -1,221 +1,333 @@
-"""EP 01 — « Votre nom existe. Votre site, non. » · 21 s · 1080×1920
+"""EP 01 — « Votre nom existe. Votre site, non. » · v2 · arc moderne + voix · 1080×1920
 
-Sujet : carte de contenu du playbook §2, **T2** (TOFU, vidéo 25 s) — « pourquoi votre site
-n'apparaît pas quand on cherche votre nom ». Rendu en 5 plans, sans voix, texte incrusté
-(sous-titres écrits à la main — ruling King 11/10, jamais d'auto).
+v1 (25/10, 20:25) : 5 plans, ouverture sur un carton de titre, une seule montée (le CTA final).
+C'était **l'arc classique** que `knowledge/STORY-ARC-2026-10-25.md` rejette (slide 2).
+v2 applique la doctrine : départ à 70, secousse entre 5 et 10 s, **trois cimes**, relâchements,
+CTA en dernière cime — et une **voix** posée sur le master.
 
-Sources des faits montrés à l'écran :
-  · « Add business hours » / « Add website » = ce que Google réclame sur la fiche d'Optix,
-    capture du 24/10 (sales/PACK-OPTICIEN-2026-10.md, tableau « Ce qu'un patient voit »).
-  · « Pas encore d'avis » = « Be the first to review », même capture.
-  · Aucun chiffre de résultat, aucun nom de client, aucune promesse de mesure.
+    python3 content/reels/ep01/make_ep01.py            # rendu + voix si voice/timing.json existe
+    python3 tools/qa/audit_reel.py content/reels/ep01/make_ep01.py   # la porte, avant le rendu
 
-    python3 content/reels/ep01/make_ep01.py
+Faits montrés : capture de la fiche Optix du **24/10** (`sales/PACK-OPTICIEN-2026-10.md`,
+tableau « Ce qu'un patient voit ») — « Add business hours », « Add website », « Be the first to review ».
+Aucun chiffre de résultat, aucun nom de client, aucune promesse de mesure (ruling 142).
 """
 
 from __future__ import annotations
 
+import json
 import os
+import subprocess
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(HERE))), "tools", "qa"))
 
 from reelkit import (  # noqa: E402
     H,
     PALETTE as P,
+    W,
     Kit,
     Mascot,
     draw_text,
     ease,
+    find_ffmpeg,
     font,
+    draw_check,
     pill,
     rounded_card,
     text_width,
-    W,
 )
 
 MARGIN = 90
-OUT_DIR = HERE
 MASCOT = os.path.join(HERE, "assets", "mascot.png")
+TIMING = os.path.join(HERE, "voice", "timing.json")
+
+# Le plan par défaut, si la voix n'a pas encore été générée (v2 pré-voix).
+DEFAULT = [
+    ("hook", 5.0, 70, "contexte", None),
+    ("spike1", 4.5, 92, "contraste", "capture Optix 24/10"),
+    ("release1", 3.5, 58, "relache", None),
+    ("spike2", 3.5, 88, "contraste", "capture Optix 24/10"),
+    ("release2", 1.7, 60, "relache", None),
+    ("cta", 3.7, 95, "appel", None),
+]
 
 
-def label(d, text, xy=(MARGIN, 200)):
-    fnt = font("Montserrat-SemiBold.ttf", 30)
-    d.text(xy, text, font=fnt, fill=P["ink_soft"], anchor="la")
+def load_plan():
+    """Lit les durées mesurées sur la voix ; retombe sur le plan par défaut."""
+    if os.path.exists(TIMING):
+        data = json.load(open(TIMING, encoding="utf-8"))
+        plan = []
+        for beat in data["beats"]:
+            base = next(b for b in DEFAULT if b[0] == beat["name"])
+            plan.append((beat["name"], float(beat["duration"]), base[2], base[3], base[4]))
+        return plan
+    return DEFAULT
 
 
-def headline(d, lines, y=300, size=120, accent_last=True):
-    """Grand titre ; la dernière ligne est en orange (l'accent de la référence)."""
-    fnt = font("Montserrat-ExtraBold.ttf", size)
-    line_h = int(size * 1.12)
-    for i, line in enumerate(lines):
-        color = P["orange"] if (accent_last and i == len(lines) - 1) else P["ink"]
-        draw_text(d, (MARGIN, y + i * line_h), line, fnt, color)
-    return y + len(lines) * line_h
+PLAN = load_plan()
+
+# ── la forme déclarée à la porte (`tools/qa/audit_reel.py`) ─────────────────────
+BEAT_FACTS = {
+    "spike1": "Add business hours · Add website · Be the first to review",
+    "spike2": "neuf fiches, zéro site",
+}
 
 
-# ────────────────────────────────────────────────────────────── 1 · accroche ──
+def build_beats():
+    from audit_reel import Beat
+
+    beats, t = [], 0.0
+    for name, dur, peak, kind, source in PLAN:
+        beats.append(
+            Beat(
+                name=name,
+                start=round(t, 3),
+                end=round(t + dur, 3),
+                peak=peak,
+                kind=kind,
+                fact=BEAT_FACTS.get(name),
+                source=source,
+            )
+        )
+        t += dur
+    return beats
 
 
-def s1_hook(kit, img, d, t):
-    label(d, "AMK · 01 — OPTICIEN", (MARGIN, 190))
-    a = ease(t / 0.6)
-    # le titre monte de 30 px à l'apparition
-    dy = int((1 - a) * 30)
-    fnt_big = font("Montserrat-ExtraBold.ttf", 122)
-    lines = [("Votre nom", P["ink"]), ("existe.", P["ink"]),
-             ("Votre site,", P["ink"]), ("non.", P["orange"])]
+BEATS = build_beats()
+DURATION = round(sum(p[1] for p in PLAN), 3)
+
+
+# ───────────────────────────────────────────────────────────── primitives ────
+
+
+def label(d, text, xy=(MARGIN, 190)):
+    d.text(xy, text, font=font("Montserrat-SemiBold.ttf", 30), fill=P["ink_soft"], anchor="la")
+
+
+def punch(img, t, at, strength=0.16, span=0.45):
+    """La secousse : un voile sombre qui tombe et repart en 0,45 s. Marque la cime."""
+    if t < at - 0.02 or t > at + span:
+        return
+    k = (t - at) / span
+    alpha = int(255 * strength * (1 - k) ** 1.5)
+    if alpha > 0:
+        img.paste((14, 10, 8), (0, 0, W, H), None) if False else None
+        overlay = img.copy()
+        from PIL import ImageDraw
+
+        d = ImageDraw.Draw(overlay, "RGBA")
+        d.rectangle((0, 0, W, H), fill=(16, 11, 8, alpha))
+        img.paste(overlay, (0, 0))
+
+
+def search_bar(d, y, query, y2=None):
+    """Le champ de recherche — l'histoire commence dans l'écran du spectateur."""
+    rounded_card(d._image if hasattr(d, "_image") else None, (MARGIN, y, W - MARGIN, y + 108), P["white"], radius=54) if False else None
+    d.rounded_rectangle((MARGIN, y, W - MARGIN, y + 108), radius=54, fill=P["white"],
+                        outline=(214, 200, 184), width=3)
+    d.ellipse((MARGIN + 40, y + 38, MARGIN + 68, y + 66), outline=P["ink_soft"], width=4)
+    d.line((MARGIN + 62, y + 62, MARGIN + 78, y + 78), fill=P["ink_soft"], width=4)
+    d.text((MARGIN + 104, y + 54), query, font=font("Montserrat-Medium.ttf", 44),
+           fill=P["ink"], anchor="lm")
+
+
+# ─────────────────────────────────────────────────── beat 1 · contexte (70) ──
+
+
+def s_hook(kit, img, d, t, dur):
+    label(d, "GOOGLE · DOUALA")
+    search_bar(d, 250, "opticien akwa")
+    if t > 0.35:
+        a = ease((t - 0.35) / 0.5)
+        y = 400 + int((1 - a) * 20)
+        rounded_card(img, (MARGIN, y, W - MARGIN, y + 150), P["cream_light"], radius=16, shadow=6)
+        d.text((MARGIN + 40, y + 46), "Optique …", font=font("Montserrat-Bold.ttf", 46), fill=P["ink"])
+        d.text((MARGIN + 40, y + 104), "Aucun site  ·  pas d'horaires",
+               font=font("Montserrat-Medium.ttf", 34), fill=P["orange"])
+
+    fnt = font("Montserrat-ExtraBold.ttf", 104)
+    lines = [("Votre cabinet", P["ink"]), ("existe.", P["ink"]), ("Votre site,", P["ink"]), ("non.", P["orange"])]
     for i, (line, color) in enumerate(lines):
-        draw_text(d, (MARGIN, 330 + i * 138 + dy), line, fnt_big, color)
-    if t > 0.8:
-        a2 = ease((t - 0.8) / 0.5)
-        uy = 330 + 3 * 138 + 128
-        d.rectangle((MARGIN + 6, uy, MARGIN + 6 + int(210 * a2), uy + 9), fill=P["orange"])
-    kit.mascot.draw(img, 30, 1080, t, height=760)
-    if t > 1.4:
-        pill(img, (720, 1030), [("cherchez ", P["white"]), ("vous-même", P["orange"])], size=52)
+        a = ease((t - 0.6 - i * 0.18) / 0.5)
+        if a <= 0:
+            continue
+        draw_text(d, (MARGIN, 640 + i * 118 + int((1 - a) * 24)), line, fnt, color)
+    kit.mascot.draw(img, 30, 1120, t, height=720)
 
 
-# ──────────────────────────────────────────────── 2 · ce que Google réclame ──
+# ─────────────────────────────────────────────────── beat 2 · secousse (92) ──
 
 
-CARDS = [
-    ("HORAIRES", "Add business hours"),
-    ("SITE WEB", "Add website"),
-    ("AVIS", "Pas encore d'avis"),
-]
+CARDS = [("HORAIRES", "Add business hours"), ("SITE WEB", "Add website"), ("AVIS", "Pas encore d'avis")]
 
 
-def s2_missing(kit, img, d, t):
-    label(d, "LA FICHE DU CABINET", (MARGIN, 190))
-    fnt_h = font("Montserrat-ExtraBold.ttf", 84)
-    draw_text(d, (MARGIN, 250), "Ce que Google\nréclame :", fnt_h, P["ink"], spacing=10)
-
+def s_spike1(kit, img, d, t, dur):
+    punch(img, t, 0.0)
+    label(d, "LA FICHE DU CABINET")
+    draw_text(d, (MARGIN, 250), "Google demande\ntrois choses.", font("Montserrat-ExtraBold.ttf", 78),
+              P["ink"], spacing=8)
     for i, (name, prompt) in enumerate(CARDS):
-        appear = ease((t - 0.35 - i * 0.25) / 0.45)
+        appear = ease((t - 0.2 - i * 0.2) / 0.4)
         if appear <= 0:
             continue
-        y = 620 + i * 222 + int((1 - appear) * 26)
-        x0, x1 = MARGIN, W - MARGIN
+        y = 600 + i * 214 + int((1 - appear) * 26)
         fill = [P["orange_soft"], P["blue_soft"], P["green_soft"]][i]
-        rounded_card(img, (x0, y, x1, y + 186), fill, radius=14, pin=P["orange"])
-        d.text((x0 + 44, y + 46), name, font=font("Montserrat-SemiBold.ttf", 30), fill=P["ink_soft"])
-        d.text((x0 + 44, y + 92), prompt, font=font("Montserrat-Bold.ttf", 56), fill=P["ink"])
-        d.text((x1 - 48, y + 140), "—", font=font("Montserrat-ExtraBold.ttf", 80),
-               fill=P["orange"], anchor="ra")
-
-    kit.mascot.draw(img, -10, 1250, t, talking=1.0 if t > 1.2 else 0.0, height=560)
-    if t > 1.6:
-        pill(img, (700, 1360), [("les trois ", P["white"]), ("manquent", P["orange"])], size=50)
-
-
-# ─────────────────────────────────────────────── 3 · le mur des fiches ──
-
-
-WALL = [
-    "Horaires", "Photos", "Avis", "Adresse",
-    "Services", "Langue", "Téléphone", "Itinéraire",
-    "Catalogue", "Tarifs", "Équipe", "Rendez-vous",
-]
-
-
-def s3_wall(kit, img, d, t):
-    fnt_h = font("Montserrat-ExtraBold.ttf", 78)
-    draw_text(d, (MARGIN, 200), "Tout le monde\na une fiche.", fnt_h, P["ink"], spacing=8)
-    draw_text(d, (MARGIN, 400), "Cherchez le site.", font("Montserrat-SemiBold.ttf", 46),
-              P["ink_soft"])
-
-    cols, rows = 3, 3
-    cw, ch = 286, 196
-    gap_x, gap_y = 24, 26
-    grid_w = cols * cw + (cols - 1) * gap_x
-    x0 = (W - grid_w) // 2
-    y0 = 540
-    tones = [P["cream_light"], P["orange_soft"], P["green_soft"], P["blue_soft"]]
-    for idx in range(cols * rows):
-        appear = ease((t - 0.15 - idx * 0.07) / 0.34)
-        if appear <= 0:
-            continue
-        r, c = divmod(idx, cols)
-        x = x0 + c * (cw + gap_x)
-        y = y0 + r * (ch + gap_y) + int((1 - appear) * 18)
-        tone = tones[(idx + r) % len(tones)]
-        rounded_card(img, (x, y, x + cw, y + ch), tone, radius=8, shadow=5, pin=P["orange"])
-        d.text((x + 26, y + 34), "FICHE", font=font("Montserrat-SemiBold.ttf", 22), fill=P["ink_soft"])
-        d.text((x + 26, y + 74), WALL[idx], font=font("Montserrat-Bold.ttf", 38), fill=P["ink"])
-        d.text((x + cw - 26, y + ch - 30), "0 site", font=font("Montserrat-Bold.ttf", 30),
-               fill=P["ink_soft"], anchor="ra")
-
-    kit.mascot.draw(img, 0, 1240, t, talking=1.0, height=580)
-    if t > 1.3:
-        pill(img, (690, 1340), [("partout ", P["white"]), ("pareil", P["orange"])], size=48)
-
-
-# ──────────────────────────────────────────────── 4 · ce qui règle les trois ──
-
-
-def s4_site(kit, img, d, t):
-    a = ease(t / 0.55)
-    draw_text(d, (MARGIN, 230 + int((1 - a) * 24)), "Ce qui règle\nles trois :",
-              font("Montserrat-ExtraBold.ttf", 84), P["ink"], spacing=10)
-
-    appear = ease((t - 0.5) / 0.6)
-    if appear > 0:
-        y = 690 + int((1 - appear) * 40)
-        box = (MARGIN, y, W - MARGIN, y + 520)
-        rounded_card(img, box, P["green_soft"], radius=18, pin=P["green"])
-        d.text((MARGIN + 48, y + 54), "VOTRE SITE", font=font("Montserrat-SemiBold.ttf", 30),
-               fill=P["ink_soft"])
-        fnt = font("Montserrat-Bold.ttf", 62)
-        for i, line in enumerate(["Horaires", "Adresse", "WhatsApp"]):
-            draw_text(d, (MARGIN + 48, y + 120 + i * 96), line, fnt, P["ink"])
-        d.text((W - MARGIN - 60, y + 300), "✓", font=font("Montserrat-ExtraBold.ttf", 150),
-               fill=P["green"], anchor="mm")
-        d.text((MARGIN + 48, y + 440), "visible quand on cherche le cabinet",
-               font=font("Montserrat-Medium.ttf", 34), fill=P["ink_soft"])
-
-    kit.mascot.draw(img, 10, 1190, t, talking=1.0 if t > 1.0 else 0.0, height=600)
-    if t > 1.1:
-        pill(img, (690, 1300), [("un site ", P["white"]), ("à votre nom", P["orange"])], size=46)
-
-
-# ─────────────────────────────────────────────────────────────────── 5 · CTA ──
-
-
-def s5_cta(kit, img, d, t):
-    label(d, "LE MOT SUFFIT", (MARGIN, 250))
-    a = ease(t / 0.55)
-    dy = int((1 - a) * 26)
-    draw_text(d, (MARGIN, 330 + dy), "Écrivez", font("Montserrat-ExtraBold.ttf", 96), P["ink"])
-    fnt = font("Montserrat-ExtraBold.ttf", 172)
-    draw_text(d, (MARGIN, 440 + dy), "APERÇU", fnt, P["orange"])
-    d.rectangle((MARGIN, 700 + dy, MARGIN + text_width(fnt, "APERÇU"), 716 + dy), fill=P["orange"])
-    draw_text(d, (MARGIN, 780 + dy), "sur WhatsApp", font("Montserrat-SemiBold.ttf", 56), P["ink"])
-    draw_text(d, (MARGIN, 870 + dy), "677 78 96 31", font("Montserrat-Bold.ttf", 62), P["ink_soft"])
-
+        rounded_card(img, (MARGIN, y, W - MARGIN, y + 180), fill, radius=14, pin=P["orange"])
+        d.text((MARGIN + 44, y + 44), name, font=font("Montserrat-SemiBold.ttf", 30), fill=P["ink_soft"])
+        d.text((MARGIN + 44, y + 88), prompt, font=font("Montserrat-Bold.ttf", 54), fill=P["ink"])
+    kit.mascot.draw(img, -10, 1270, t, talking=1.0, height=560)
     if t > 0.9:
-        b = ease((t - 0.9) / 0.5)
-        pill(img, (W // 2, 1050), [("10 minutes", P["white"]), (" cette semaine", P["orange"])],
-             size=52, pad=(44, 30))
-        if b > 0.99:
-            draw_text(d, (MARGIN, 1150), "Réponse le jour même.", font("Montserrat-Medium.ttf", 38),
-                      P["ink_soft"])
-
-    kit.mascot.draw(img, 40, 1240, t, talking=1.0 if t > 1.0 else 0.0, height=600)
+        pill(img, (700, 1380), [("trois ", P["white"]), ("choses", P["orange"])], size=50)
 
 
-def build(out: str = os.path.join(OUT_DIR, "ep01-v1.mp4")) -> Kit:
+# ─────────────────────────────────────────────────── beat 3 · relâche (58) ──
+
+
+def s_release1(kit, img, d, t, dur):
+    draw_text(d, (MARGIN, 520), "Vous en avez", font("Montserrat-ExtraBold.ttf", 92), P["ink"])
+    a = ease((t - 0.4) / 0.6)
+    word = "une."
+    fnt = font("Montserrat-ExtraBold.ttf", 150)
+    draw_text(d, (MARGIN, 640), word, fnt, P["orange"] if a > 0.35 else P["sand"])
+    if a > 0.5:
+        draw_text(d, (MARGIN, 900), "Jamais les trois.", font("Montserrat-Medium.ttf", 48), P["ink_soft"])
+    kit.mascot.draw(img, 20, 1080, t, height=740)
+
+
+# ─────────────────────────────────────────────────── beat 4 · secousse (88) ──
+
+
+def s_spike2(kit, img, d, t, dur):
+    punch(img, t, 0.0, strength=0.14)
+    label(d, "CE QUE FAIT UN SITE")
+    draw_text(d, (MARGIN, 250), "Un site ne sert pas", font("Montserrat-ExtraBold.ttf", 66), P["ink"])
+    fnt = font("Montserrat-ExtraBold.ttf", 66)
+    draw_text(d, (MARGIN, 336), "à « avoir un site ».", fnt, P["orange"])
+    # le trait sous la phrase qu'on retire (pas de rature sur les glyphes : illisible)
+    d.rectangle((MARGIN + 4, 336 + 72, MARGIN + text_width(fnt, "à « avoir un site »."), 336 + 80),
+                fill=P["orange"])
+
+    if t > 0.5:
+        a = ease((t - 0.5) / 0.5)
+        y = 520 + int((1 - a) * 30)
+        rounded_card(img, (MARGIN, y, W - MARGIN, y + 350), P["green_soft"], radius=18, pin=P["green"])
+        d.text((MARGIN + 48, y + 46), "IL RÉPOND AVANT L'APPEL", font=font("Montserrat-SemiBold.ttf", 28),
+               fill=P["ink_soft"])
+        for i, line in enumerate(["Horaires", "Adresse", "WhatsApp"]):
+            draw_text(d, (MARGIN + 48, y + 104 + i * 88), line, font("Montserrat-Bold.ttf", 58), P["ink"])
+        draw_check(d, (W - MARGIN - 90, y + 210), 92, P["green"], width=14)
+    kit.mascot.draw(img, 0, 1270, t, talking=1.0, height=560)
+
+
+# ─────────────────────────────────────────────────── beat 5 · relâche (60) ──
+
+
+def s_release2(kit, img, d, t, dur):
+    """Le souffle : pas de voix ici, une image qui respire avant le CTA."""
+    draw_text(d, (MARGIN, 640), "Pas de devis.", font("Montserrat-SemiBold.ttf", 60), P["ink_soft"])
+    fnt = font("Montserrat-ExtraBold.ttf", 74)
+    draw_text(d, (MARGIN, 730), "Un aperçu,", fnt, P["ink"])
+    draw_text(d, (MARGIN, 820), "à votre nom.", fnt, P["orange"])
+    # la petite page qui se dessine : le seul mouvement du beat
+    a = ease(t / 0.6)
+    x0, y0 = W - MARGIN - 210, 720
+    d.rounded_rectangle((x0, y0, x0 + 200, y0 + 250), radius=12, outline=P["sand"], width=4)
+    for i in range(3):
+        w = int(130 * a) - i * 26
+        if w > 10:
+            d.rounded_rectangle((x0 + 30, y0 + 50 + i * 54, x0 + 30 + w, y0 + 62 + i * 54), radius=6,
+                                fill=P["sand"] if i else P["orange"])
+    kit.mascot.draw(img, 40, 1080, t, height=660)
+
+
+# ────────────────────────────────────────────────────── beat 6 · CTA (95) ──
+
+
+def s_cta(kit, img, d, t, dur):
+    punch(img, t, 0.0, strength=0.12, span=0.35)
+    label(d, "LE MOT SUFFIT", (MARGIN, 240))
+    draw_text(d, (MARGIN, 320), "Écrivez", font("Montserrat-ExtraBold.ttf", 88), P["ink"])
+    fnt = font("Montserrat-ExtraBold.ttf", 156)
+    draw_text(d, (MARGIN, 420), "APERÇU", fnt, P["orange"])
+    d.rectangle((MARGIN, 660, MARGIN + text_width(fnt, "APERÇU"), 674), fill=P["orange"])
+    draw_text(d, (MARGIN, 730), "sur WhatsApp", font("Montserrat-SemiBold.ttf", 52), P["ink"])
+    draw_text(d, (MARGIN, 810), "677 78 96 31", font("Montserrat-Bold.ttf", 58), P["ink_soft"])
+    if t > 0.5:
+        pill(img, (W // 2, 960), [("10 minutes", P["white"]), (" cette semaine", P["orange"])],
+             size=48, pad=(40, 26))
+        draw_text(d, (MARGIN, 1040), "Réponse le jour même.", font("Montserrat-Medium.ttf", 36), P["ink_soft"])
+    kit.mascot.draw(img, 40, 1140, t, talking=1.0, height=620)
+
+
+SCENES = {
+    "hook": s_hook,
+    "spike1": s_spike1,
+    "release1": s_release1,
+    "spike2": s_spike2,
+    "release2": s_release2,
+    "cta": s_cta,
+}
+
+
+def build() -> Kit:
+    """Chaque scène reçoit sa durée : la voix décide du temps, pas l'inverse."""
     kit = Kit(mascot=Mascot(MASCOT, height=620))
-    kit.scene(4.0, s1_hook)
-    kit.scene(5.0, s2_missing)
-    kit.scene(4.2, s3_wall)
-    kit.scene(4.2, s4_site)
-    kit.scene(4.0, s5_cta)
+    for name, dur, _, _, _ in PLAN:
+        fn = SCENES[name]
+        kit.scene(dur, lambda k, i, d, t, _fn=fn, _dur=dur: _fn(k, i, d, t, _dur))
     return kit
 
 
+# ─────────────────────────────────────────────────────────────── audio ───────
+
+
+def mux(video: str, out: str) -> str:
+    """Pose la voix sur le master : chaque clip démarre à son beat, le reste est du silence."""
+    ffmpeg = find_ffmpeg()
+    timing = json.load(open(TIMING, encoding="utf-8"))
+    starts, t = [], 0.0
+    for name, dur, *_ in PLAN:
+        starts.append(t)
+        t += dur
+    clips = [b for b in timing["beats"] if b.get("file")]
+    if not clips:
+        raise SystemExit("aucun clip de voix : lancer d'abord la génération (voir README §7)")
+
+    args = [ffmpeg, "-y", "-loglevel", "error", "-i", video]
+    for b in clips:
+        args += ["-i", os.path.join(HERE, "voice", b["file"])]
+    filters, labels = [], []
+    for i, b in enumerate(clips):
+        idx = next(j for j, (n, *_rest) in enumerate(PLAN) if n == b["name"])
+        delay = int(starts[idx] * 1000)
+        filters.append(f"[{i + 1}:a]adelay={delay}|{delay},volume=1.0[a{i}]")
+        labels.append(f"[a{i}]")
+    filters.append(
+        f"{''.join(labels)}amix=inputs={len(clips)}:normalize=0:dropout_transition=0,"
+        f"apad,atrim=0:{DURATION},afade=t=out:st={DURATION - 0.4}:d=0.4[aout]"
+    )
+    args += [
+        "-filter_complex", ";".join(filters),
+        "-map", "0:v", "-map", "[aout]",
+        "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", out,
+    ]
+    subprocess.run(args, check=True)
+    return out
+
+
 if __name__ == "__main__":
-    kit = build(sys.argv[1] if len(sys.argv) > 1 else os.path.join(OUT_DIR, "ep01-v1.mp4"))
-    path = kit.render(sys.argv[1] if len(sys.argv) > 1 else os.path.join(OUT_DIR, "ep01-v1.mp4"))
-    print(f"✅ {path} · {kit.total():.1f} s · {W}×{H} · 30 fps")
+    out = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "ep01-v2.mp4")
+    with_voice = "--sans-voix" not in sys.argv
+    kit = build()
+    silent = os.path.join(HERE, "ep01-v2-silent.mp4")
+    kit.render(silent)
+    print(f"✅ image : {silent} · {DURATION:.1f} s")
+    if with_voice and os.path.exists(TIMING):
+        mux(silent, out)
+        print(f"✅ master : {out} · {DURATION:.1f} s · voix posée")
+    else:
+        os.replace(silent, out)
+        print(f"⚠️  master sans voix (timing absent) : {out}")
