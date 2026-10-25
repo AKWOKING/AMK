@@ -1,6 +1,6 @@
 # Saoudia Optique
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-24. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-25. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -32,7 +32,9 @@ SCOUT ONOC du 24/10 — ligne 88 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Aucune ligne du journal ne cite encore ce lead. S'il a été contacté, c'est que l'envoi n'a pas été loggé — **à corriger dans `Activity-Log.md`**.*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 1 ligne(s).*
+
+`L5740` · | **Saoudia Optique** (696 04 04 13) | **vivant** — profil « Saoudia Optique » |
 
 ---
 

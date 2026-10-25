@@ -1,6 +1,6 @@
 # COMED
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-24. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-25. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -31,7 +31,9 @@ Lot du 26/10. Porte A passée par King le 25/10 : le 699 91 56 52 EST sur WhatsA
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Aucune ligne du journal ne cite encore ce lead. S'il a été contacté, c'est que l'envoi n'a pas été loggé — **à corriger dans `Activity-Log.md`**.*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 1 ligne(s).*
+
+`L5735` · | **⑨ COMED** (699 91 56 52) | **vivant** — profil « COMED » |
 
 ---
 

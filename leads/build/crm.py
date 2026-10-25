@@ -2394,7 +2394,8 @@ LOT_2610_LEADS = [
                         "aucun contact à ce numéro.",
          contact_name="", contact_role="", source="directory",
          source_detail="Lot d'envoi du 26/10 — cabinet à Bonanjo, quatre annuaires",
-         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-25",
+         stage="disqualified", contacted="No", reply="No", demo="No", added_on="2026-10-25",
+         disqualification_reason="excluded_no_wa (25/10, ruling King) : numéro introuvable sur WhatsApp ; pas de SMS, pas d'appel — qui n'est pas sur WhatsApp ne paiera pas un site de toute façon.",
          notes="Lot du 26/10 — NE PART PAS : numéro absent de WhatsApp. Le cabinet existe (quatre "
                "annuaires publics), c'est le numéro qui est mort ou mal recopié. Aucun canal de repli "
                "décidé pour les cliniques (le ruling WhatsApp-only du 12/10 vise les opticiens)."),
@@ -2403,7 +2404,8 @@ LOT_2610_LEADS = [
          wa_number_note="25/10 (test King) : 698 00 78 08 introuvable sur WhatsApp.",
          contact_name="", contact_role="", source="directory",
          source_detail="Lot d'envoi du 26/10 — cabinet à Bali, deux annuaires",
-         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-25",
+         stage="disqualified", contacted="No", reply="No", demo="No", added_on="2026-10-25",
+         disqualification_reason="excluded_no_wa (25/10, ruling King) : numéro introuvable sur WhatsApp ; pas de SMS, pas d'appel — qui n'est pas sur WhatsApp ne paiera pas un site de toute façon.",
          notes="Lot du 26/10 — NE PART PAS : numéro absent de WhatsApp. C'était déjà le message le plus "
                "faible du lot ; il sort du calendrier sans regret."),
     dict(slug="cmo-jolinom-deido", org="CMO Jolinom", city="Douala (Deido)", org_type="clinic", language="FR",
@@ -2411,7 +2413,8 @@ LOT_2610_LEADS = [
          wa_number_note="25/10 (test King) : 677466425 introuvable sur WhatsApp.",
          contact_name="", contact_role="", source="directory",
          source_detail="Lot d'envoi du 26/10 — centre médical ophtalmologique Jolinom, Deido",
-         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-25",
+         stage="disqualified", contacted="No", reply="No", demo="No", added_on="2026-10-25",
+         disqualification_reason="excluded_no_wa (25/10, ruling King) : numéro introuvable sur WhatsApp ; pas de SMS, pas d'appel — qui n'est pas sur WhatsApp ne paiera pas un site de toute façon.",
          notes="Lot du 26/10 — NE PART PAS : numéro absent de WhatsApp. Trois assureurs, deux numéros : "
                "c'est le second numéro qu'il faut retrouver avant de retenter."),
 ]
@@ -2450,6 +2453,64 @@ VERIF_WA_2510 = {
         "Notes_extra": "Porte A du 25/10 : numéro absent de WhatsApp. Ne pas confondre avec "
                        "« Centrale Optique » (693 96 89 56, ZOBO Jean), disqualifiée le 12/10 pour la "
                        "même raison : deux cabinets différents, deux verdicts séparés, même conclusion.",
+    },
+    "alpha-optic": {
+        "wa_verified": "yes", "profile_name_seen": "Alpha Optic",
+        "Notes_extra": "Porte A du 25/10 (2ᵉ tour, capture King) : 699 57 34 57 EST sur WhatsApp, profil "
+                       "« Alpha Optic » avec photo. Joignable, jamais contacté.",
+    },
+    "la-fierte-de-l-optique": {
+        "wa_verified": "yes", "profile_name_seen": "La Fierté de l'Optique",
+        "Notes_extra": "Porte A du 25/10 (2ᵉ tour) : 695 17 90 57 EST sur WhatsApp, profil « La Fierté de "
+                       "l'Optique ». Joignable.",
+    },
+    "light-optique": {
+        "wa_verified": "yes", "profile_name_seen": "Light Optique",
+        "Notes_extra": "Porte A du 25/10 (2ᵉ tour) : 677 64 87 90 EST sur WhatsApp, profil « Light Optique » "
+                       "avec photo de boutique. Joignable.",
+    },
+    "ets-espace-medical": {
+        "wa_verified": "yes", "profile_name_seen": "Optic Medical Favour and Joy",
+        "Notes_extra": "Porte A du 25/10 (2ᵉ tour) : 655 04 95 29 EST sur WhatsApp, PROFIL BUSINESS « Optic "
+                       "Medical Favour and Joy » — catégorie Medical & health, Entrée Eneo PK11 Douala, "
+                       "favourjoyopticmedical@gmail.com, produits et description. ATTENTION : le nom "
+                       "commercial n'est PAS celui de l'annuaire de l'Ordre (« Ets Espace Médical ») — tout "
+                       "message doit utiliser le nom que le cabinet affiche, pas celui du tableau.",
+    },
+    "s-o-s-vision": {
+        "wa_verified": "yes", "profile_name_seen": "Sos Vision",
+        "Notes_extra": "Porte A du 25/10 (2ᵉ tour) : 699 86 04 63 EST sur WhatsApp, PROFIL BUSINESS « Sos "
+                       "Vision » — « Optician • Sunglasses and eyewear shop • Ophthalmologist », catalogue "
+                       "produits, horaires. Le seul de la liste qui se déclare aussi ophtalmologiste.",
+    },
+    "ass-pour-rrphdd": {
+        "wa_verified": "yes", "profile_name_seen": "AMBASSADOR Vision Sarl",
+        "Notes_extra": "Porte A du 25/10 (2ᵉ tour) : 675 39 90 23 EST sur WhatsApp, PROFIL BUSINESS "
+                       "« AMBASSADOR Vision Sarl » — Medical & health, description lunetterie/verres/"
+                       "montures + service après-vente gratuit. Le nom du tableau de l'Ordre (« ASS pour "
+                       "RRPHDD ») n'est PAS le nom commercial : n'écrire que « Ambassador Vision ».",
+    },
+    "bellevue-optique": {
+        "wa_verified": "yes", "profile_name_seen": "bellevueoptique",
+        "Notes_extra": "Porte A du 25/10 (2ᵉ tour) : 694 89 26 96 EST sur WhatsApp, PROFIL BUSINESS "
+                       "« bellevueoptique » — catégorie Optician, Bali Serena Hôtel rue des pavés, "
+                       "bellevue.optique@yahoo.fr, garanties 3 et 6 mois affichées. Fiche très tenue : "
+                       "bonne cible de re-engagement, le sujet l'intéresse déjà.",
+    },
+    "optimat-vision-sarl": {
+        "wa_verified": "no", "stage": "disqualified",
+        "wa_number_note": "25/10 (2ᵉ tour, test King) : 699 86 53 46 introuvable sur WhatsApp.",
+        "disqualification_reason": "excluded_no_wa (25/10, ruling King) : 699 86 53 46 introuvable sur "
+                                   "WhatsApp ; pas de SMS, pas d'appel. Ruling : qui n'est pas sur WhatsApp "
+                                   "n'investira pas dans un site — et le site n'aurait personne pour répondre.",
+        "Notes_extra": "Porte A du 25/10 : mort. Ne pas rechercher de canal de repli.",
+    },
+    "la-fibre-optique": {
+        "wa_verified": "no", "stage": "disqualified",
+        "wa_number_note": "25/10 (2ᵉ tour, test King) : 694 42 26 40 introuvable sur WhatsApp.",
+        "disqualification_reason": "excluded_no_wa (25/10, ruling King) : 694 42 26 40 introuvable sur "
+                                   "WhatsApp ; pas de SMS, pas d'appel.",
+        "Notes_extra": "Porte A du 25/10 : mort. Ne pas rechercher de canal de repli.",
     },
 }
 

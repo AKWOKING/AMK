@@ -130,6 +130,14 @@ CAS: list[tuple[str, str, str, str]] = [
         "Bonanjo",
         "deux branches",
     ),
+    (
+        "question finale décorative",
+        "Bonjour Docteur, à Bonanjo ce matin, votre cabinet apparaît sur quatre annuaires. Ce n'est "
+        "pas votre travail, c'est la fiche recopiée. Un patient appelle et raccroche. Deux minutes "
+        "à lire, ça vous parle ?",
+        "Bonanjo",
+        "ne demande aucune action",
+    ),
 ]
 
 

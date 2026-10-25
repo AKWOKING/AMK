@@ -1,6 +1,6 @@
 # IVY
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-24. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-25. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -31,7 +31,9 @@ Lot du 26/10. Porte A du 25/10 : le numéro EST sur WhatsApp, profil « IVY » �
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Aucune ligne du journal ne cite encore ce lead. S'il a été contacté, c'est que l'envoi n'a pas été loggé — **à corriger dans `Activity-Log.md`**.*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 1 ligne(s).*
+
+`L5736` · | **⑧ IVY** (697 94 52 51) | **vivant mais ambigu** — profil « IVY », **photo de personne**, pas de profil Business |
 
 ---
 

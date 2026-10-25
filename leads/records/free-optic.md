@@ -1,6 +1,6 @@
 # Free Optic
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-24. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-25. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -32,7 +32,9 @@ SCOUT ONOC du 24/10 — ligne 105 de l'annuaire (Littoral). Numéro PUBLIÉ PAR 
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Aucune ligne du journal ne cite encore ce lead. S'il a été contacté, c'est que l'envoi n'a pas été loggé — **à corriger dans `Activity-Log.md`**.*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 1 ligne(s).*
+
+`L5742` · | **Free Optic** (679 11 37 60) | **vivant, profil Business** « Free Optic », « Medical & health » |
 
 ---
 

@@ -91,6 +91,15 @@ DEDOUANEMENT = [
     "pas votre faute",
 ]
 
+# Verbes d'action — la question finale doit demander quelque chose de FIXABLE.
+# Ajouté le 25/10 après le reproche de King le plus utile de la semaine : « what actions do we expect
+# from the prospect? » — le message décrivait une capture et ne demandait rien. La porte mesurait la
+# forme (mots, phrases, interdits) et laissait passer un message qui ne vendait rien. Ce contrôle ne
+# remplace pas le jugement : il attrape le cas où la question finale est décorative.
+VERBES_ACTION = ["voulez", "souhaitez", "préférez", "montre", "envoi", "propose", "dites", "dis-moi",
+                 "donnez", "appel", "répondez", "regardez", "comparez", "essayez", "passe", "partage",
+                 "transmet", "fixe", "choisissez"]
+
 # Sortie sans friction — knowledge/OUTREACH-MESSAGING §3, temps 5.
 SORTIE = ["sans moi", "2 minutes", "deux minutes", "sans engagement", "le faire vous-même"]
 
@@ -237,6 +246,15 @@ def check(msg: Message) -> None:
     first = fold(" ".join(words(body)[:12]))
     if q and q not in first:
         msg.warns.append(f"« {msg.quartier} » absent des 12 premiers mots — DECLINAISON §1①")
+
+    # 9 · la question finale doit demander quelque chose — leçon du 25/10 (« what actions do we
+    #     expect from the prospect? »). Un message qui passe la forme peut ne rien vendre.
+    questions = [s for s in re.split(r"(?<=[.!?])\s+", body) if s.rstrip().endswith("?")]
+    if questions:
+        qlast = fold(questions[-1])
+        if not any(v in qlast for v in VERBES_ACTION):
+            msg.warns.append("la question finale ne demande aucune action (ni « voulez », ni « montre », "
+                             "ni « dites »…) — elle est décorative, à réécrire")
 
 
 def main() -> int:

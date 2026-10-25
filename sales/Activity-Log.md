@@ -5759,3 +5759,51 @@ après rebuild : **4 lignes modifiées** (les quatre du scout) + **6 ajoutées**
 était de l'argot de prospection — King n'y comprenait rien, et il a raison : ça ne veut rien dire pour
 un opticien. Remplacé par une question en français simple : **« Deux minutes à regarder, vous voulez
 qu'on en parle ? »** (55 mots, 4 phrases, porte OK 0/0).
+
+## 25/10/2026 (00h30) — « le message ne vend rien » : la psychologie entre dans le lot, et les numéros morts meurent
+
+**Le reproche le plus utile de la semaine — il est fondé.** Sur le message d'Optix : *« what does this
+message aim to achieve ? deux minutes à regarder quoi ? où est la douleur, l'urgence, l'aversion à la
+perte, le FOMO, la psychologie de vente ?? »*. La version d'avant **décrivait une capture**. Elle avait
+été écrite pour **passer la porte**, et la porte ne mesure que la forme — mots, phrases, questions,
+interdits. **La forme n'est pas la persuasion.** C'est un trou, il est nommé ici.
+
+**Le message, quatrième version — 54 mots, 4 phrases, 1 question, porte OK 0/0 :**
+
+> Bonjour, c'est King. En octobre, à Akwa, les parents font examiner les yeux des enfants : qui cherche
+> un opticien tombe sur un cabinet de comptabilité, et appelle le suivant. Votre fiche n'a ni horaires,
+> ni site, ni avis — pas de votre fait. Un opticien de Douala affiche tout ça : vous voulez voir,
+> deux minutes ?
+
+| Levier | Où | Pourquoi c'est vrai |
+|---|---|---|
+| urgence **réelle** | « en octobre, les parents font examiner les yeux » | saison des examens de vue des enfants (doctrine `PERSUASION` §4) — **expire le 31/10** |
+| douleur nommée | « tombe sur un cabinet de comptabilité » | capture du 25/10 : l'homonyme comptable remonte sur son nom |
+| aversion à la perte | « et appelle le suivant » | comportement du patient, pas une statistique inventée |
+| preuve sociale | « un opticien de Douala affiche tout ça » | DM Optique, contre-exemple validé |
+| action attendue | « vous voulez voir, deux minutes ? » | une réponse d'un mot ; la capture est **déjà jointe** |
+
+**Et la porte a gagné le contrôle qui manquait** : la question finale doit contenir un **verbe d'action**
+(« voulez », « montre », « dites »…), sinon avertissement. Banc de test : **17/17** (un cas neuf, la
+« question finale décorative »). Ça attrape le message qui n'attend rien ; ça n'attrape pas un message
+sans douleur — **ça reste humain**, un mot-clé ne reconnaît pas une douleur.
+
+**Ruling du 25/10 sur les numéros morts — appliqué au CRM, pas seulement noté.** « Pas sur WhatsApp =
+mort. Pas de SMS, pas d'appel : qui n'a même pas pris l'initiative d'exister sur WhatsApp n'achètera pas
+un site, et le site n'aurait personne pour répondre. » Les **sept** lignes sans WhatsApp passent donc
+`disqualified` avec motif daté : Bouda, CMO Jolinom, Le Sourire, Centrale d'Optique Panafricaine,
+Optimat Vision, La Fibre Optique — et le trou « canal de repli des cliniques » que j'avais nommé ce
+matin est **fermé**.
+
+**Deuxième tour de porte A, 9 numéros, 9 captures de King :** joignables — **Alpha Optic**, **La Fierté
+de l'Optique**, **Light Optique**, **Ets Espace Médical** (profil Business « Optic Medical Favour and
+Joy »), **S.O.S Vision** (Business « Sos Vision », se déclare aussi ophtalmologiste), **ASS pour
+RRPHDD** (Business « AMBASSADOR Vision Sarl »), **Bellevue Optique** (Business « bellevueoptique »,
+Bali Serena Hôtel). Morts — **Optimat Vision**, **La Fibre Optique**. Total : **22 testés, 15
+joignables, 7 morts**, 7 restants.
+
+**Ce que les captures ont révélé et qui n'était écrit nulle part** : **le nom commercial n'est presque
+jamais le nom de l'annuaire de l'Ordre.** « Ets Espace Médical » = Optic Medical Favour and Joy ;
+« ASS pour RRPHDD » = AMBASSADOR Vision Sarl ; « ISEE » = I See Better. Écrire à un cabinet avec le nom
+du tableau officiel, c'est écrire à une entreprise qui ne se reconnaît pas. **On utilise le nom du
+profil WhatsApp.**
