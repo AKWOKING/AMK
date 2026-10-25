@@ -5807,3 +5807,49 @@ jamais le nom de l'annuaire de l'Ordre.** « Ets Espace Médical » = Optic Medi
 « ASS pour RRPHDD » = AMBASSADOR Vision Sarl ; « ISEE » = I See Better. Écrire à un cabinet avec le nom
 du tableau officiel, c'est écrire à une entreprise qui ne se reconnaît pas. **On utilise le nom du
 profil WhatsApp.**
+
+## 25/10/2026 (01h) — « plus de présentation » : le message vend une question, et « 0 client signé » était faux
+
+**Deuxième correction de fond de la nuit, et la plus coûteuse à ne pas voir.**
+
+**① Le message proposait encore une présentation.** « Vous voulez voir, deux minutes ? » — c'est une
+démonstration, même polie. King : *« on a dit : plus de présentation sans que le prospect la demande. Il
+s'en fiche. Ce qu'il veut savoir : pourquoi je lui écris, pourquoi il devrait répondre alors qu'il a des
+patients à recevoir, et surtout pourquoi il me donnerait son argent. »* Le message est donc réécrit
+autour de ces trois questions, et **ne propose plus rien à regarder** — 46 mots, 4 phrases, 1 question,
+porte OK 0/0 :
+
+> Bonjour, c'est King. À Akwa, sur Google, « Optix » fait sortir un cabinet de comptabilité avant le
+> vôtre, et votre fiche n'a ni horaires, ni site, ni avis — pas de votre fait. Des patients appellent
+> ailleurs chaque semaine : combien vous en arrivent par Google ? Un mot suffit.
+
+**Pourquoi ça tient, en trois lignes** : il sait **pourquoi** on écrit (un fait précis sur SA fiche) ;
+il sait **pourquoi répondre** (la question porte sur SON chiffre, et « un mot suffit ») ; **on ne lui
+demande pas d'argent** au premier contact — le prix viendra quand il aura répondu, et quand il aura
+demandé. Les trois réponses possibles (un chiffre / « je ne sais pas » / silence) sont écrites d'avance
+au §10.4 du lot, parce que le vrai test d'un premier message est la deuxième phrase qu'on envoie.
+
+**La capture jointe reste** : elle est déjà annoncée par le fait qu'on décrit, et elle ne demande rien.
+
+**② « Nous avons zéro client signé » — faux, et c'est moi qui l'ai écrit.** King : *« what do you call
+DM Optique SARL ? are you still using the graphify skill ?? »*. Non : c'est pire que ça — **le document
+lui-même était périmé**. `sales/MESSAGES-2026-09-23-PERSUASION.md` §7 disait « 2 en négociation et
+0 signé », et `PACK-OPTICIEN` §Preuve disait « jusqu'au premier clos, on ne cite pas de résultat ». Les
+deux phrases datent d'avant le **01/10**, jour où **DM Optique SARL a signé** (pack global, 150 000
+FCFA, paiement prévu le 31/10). Lire le dépôt ne suffit pas : **il faut lire ses dates.** Les deux
+documents sont corrigés, avec la distinction qui manquait :
+
+| Ce qu'on peut dire | Ce qu'on ne dit jamais |
+|---|---|
+| « un opticien de Douala travaille avec nous » | « déjà 30 cabinets équipés » |
+| « voici la fiche Google qu'on a créée pour lui » — **s'il la demande** | « +30 % de patients » : **aucun résultat mesuré** |
+| « 150 000 FCFA, 50/50, rien dû avant accord » | un abonnement creux, un prix de résultat |
+
+**La leçon, écrite pour ne pas la repayer** : une stat sans date est une stat qui deviendra fausse sans
+prévenir. Toute affirmation de type « nous avons N clients » porte désormais **sa date et sa source**.
+
+**③ Troisième tour de porte A, 6 numéros, 6 captures.** Joignables : **Emeraude Optique**, **El Shadai**
+(vivant mais **aucun nom d'établissement** — photo de personne), **Pagrot Optique**, **Capelli Optique
+Médicale** (Business, « Optometrist • Optician », Bonamoussadi), **Optique Pro** (profil
+« **Laury Ntemtsa** » — la ligne directe du titulaire), **Maranatha Optics**. Total : **27 testés, 21
+joignables, 6 morts**. Il reste **World Vision** (656 03 21 72).

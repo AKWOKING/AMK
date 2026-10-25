@@ -36,10 +36,11 @@ SCOUT ONOC du 24/10 — ligne 89 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 2 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 3 ligne(s).*
 
 `L5662` · **pas** « Centrale d'Optique Panafricaine » (ligne 89, neuve, 695 29 79 04) : deux titulaires, deux
 `L5743` · | **Centrale d'Optique Panafricaine** (695 29 79 04) | **mort** → disqualifiée (`excluded_no_wa`, ruling 12/10) |
+`L5794` · `disqualified` avec motif daté : Bouda, CMO Jolinom, Le Sourire, Centrale d'Optique Panafricaine,
 
 ---
 

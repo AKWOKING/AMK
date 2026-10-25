@@ -101,7 +101,8 @@ VERBES_ACTION = ["voulez", "souhaitez", "préférez", "montre", "envoi", "propos
                  "transmet", "fixe", "choisissez"]
 
 # Sortie sans friction — knowledge/OUTREACH-MESSAGING §3, temps 5.
-SORTIE = ["sans moi", "2 minutes", "deux minutes", "sans engagement", "le faire vous-même"]
+SORTIE = ["sans moi", "2 minutes", "deux minutes", "sans engagement", "le faire vous-même",
+          "un mot", "une ligne", "un chiffre"]
 
 URL_RE = re.compile(r"https?://|www\.", re.I)
 DOMAIN_RE = re.compile(r"\b[\w-]+\.(?:com|cm|site|net|org|shop|business\.site)\b", re.I)

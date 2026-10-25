@@ -32,7 +32,10 @@ SCOUT ONOC du 24/10 — ligne 106 de l'annuaire (Littoral). Numéro PUBLIÉ PAR 
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Aucune ligne du journal ne cite encore ce lead. S'il a été contacté, c'est que l'envoi n'a pas été loggé — **à corriger dans `Activity-Log.md`**.*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 2 ligne(s).*
+
+`L5798` · **Deuxième tour de porte A, 9 numéros, 9 captures de King :** joignables — **Alpha Optic**, **La Fierté
+`L5799` · de l'Optique**, **Light Optique**, **Ets Espace Médical** (profil Business « Optic Medical Favour and
 
 ---
 

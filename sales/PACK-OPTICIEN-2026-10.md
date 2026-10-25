@@ -47,8 +47,21 @@ Pas de claim médical · pas de remise (trade scope/timing) · pas de Play Store
 pas de travail sur la démo d'un prospect sans demande (règle 03/10) · pas de site re-pitché à Univers.
 
 ## Preuve (chronologie)
-Mercredi 07/10 : DM Optique (premier cas) · après mercredi : Univers Optique (si close). Le pack se
-vend avec la preuve, jamais avant : jusqu'au premier clos, on vend le pack, on ne cite pas de résultat.
+
+**Corrigé le 25/10** — cette section disait « jusqu'au premier clos, on ne cite pas de résultat », ce
+qui se lisait comme « nous n'avons aucun client ». C'est faux et c'est grave : **DM Optique SARL est
+signé** (pack global accordé le 01/10, 150 000 FCFA, installation en cours, paiement prévu le 31/10), et
+**Univers Optique** est en négociation. La règle exacte, à ne plus confondre :
+
+| Ce qu'on peut dire | Ce qu'on ne dit pas |
+|---|---|
+| « un opticien de Douala travaille avec nous » | « déjà 30 cabinets équipés » |
+| « voici la fiche Google que nous avons créée pour lui » (montrée **s'il la demande**) | « +30 % de patients », « plus d'appels », tout **résultat** — aucun n'est encore mesuré |
+| « le pack coûte 150 000 FCFA, 50/50, rien dû avant accord » | un prix de résultat, un abonnement creux |
+
+**Aucun résultat n'est mesurable avant la mise en ligne complète et une mesure de départ** (Cloudflare
+Web Analytics + Search Console, décidés le 20/10). Donc : la preuve, c'est **le travail visible** (la
+fiche, la page), jamais un chiffre.
 
 ## Fait de marché — prix des opticiens au Cameroun (08/10) : ce qui est établi, et ce qui ne l'est pas
 

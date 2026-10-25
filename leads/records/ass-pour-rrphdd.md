@@ -32,7 +32,10 @@ SCOUT ONOC du 24/10 — ligne 134 de l'annuaire (Littoral). Numéro PUBLIÉ PAR 
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Aucune ligne du journal ne cite encore ce lead. S'il a été contacté, c'est que l'envoi n'a pas été loggé — **à corriger dans `Activity-Log.md`**.*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 2 ligne(s).*
+
+`L5801` · RRPHDD** (Business « AMBASSADOR Vision Sarl »), **Bellevue Optique** (Business « bellevueoptique »,
+`L5807` · « ASS pour RRPHDD » = AMBASSADOR Vision Sarl ; « ISEE » = I See Better. Écrire à un cabinet avec le nom
 
 ---
 

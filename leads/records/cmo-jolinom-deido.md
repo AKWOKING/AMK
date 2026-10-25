@@ -34,12 +34,13 @@ Lot du 26/10 — NE PART PAS : numéro absent de WhatsApp. Trois assureurs, deux
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 4 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 5 ligne(s).*
 
 `L5454` · Jolinom, Optix), relance Original Optique calée au 26/10, `CLIENT-MESSAGING-RULES` §13 amendée,
 `L5725` · mercredi 28/10 IVY · jeudi 29/10 Jolinom · vendredi 30/10 Le Sourire · **rien le 31/10** (jour du
 `L5738` · | **⑩ CMO Jolinom** | **mort** — introuvable |
 `L5750` · **clinique** dont le numéro n'est pas sur WhatsApp (Bouda, Jolinom, Le Sourire), **aucun canal de repli
+`L5794` · `disqualified` avec motif daté : Bouda, CMO Jolinom, Le Sourire, Centrale d'Optique Panafricaine,
 
 ---
 

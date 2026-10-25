@@ -2497,6 +2497,42 @@ VERIF_WA_2510 = {
                        "bellevue.optique@yahoo.fr, garanties 3 et 6 mois affichées. Fiche très tenue : "
                        "bonne cible de re-engagement, le sujet l'intéresse déjà.",
     },
+    "emeraude-optique-sarl": {
+        "wa_verified": "yes", "profile_name_seen": "Emeraude Optique",
+        "Notes_extra": "Porte A du 25/10 (3ᵉ tour) : 699 90 99 60 EST sur WhatsApp, profil « Emeraude "
+                       "Optique » avec logo. Joignable, jamais contacté.",
+    },
+    "la-lunetterie-medicale-el-shadai": {
+        "wa_verified": "yes", "profile_name_seen": "",
+        "Notes_extra": "Porte A du 25/10 (3ᵉ tour) : 696 89 64 11 EST sur WhatsApp, mais le profil "
+                       "n'affiche AUCUN nom d'établissement — photo de personne, pas de profil Business. "
+                       "C'est probablement la ligne personnelle du gérant : à confirmer avant d'écrire "
+                       "« votre cabinet ».",
+    },
+    "pagrot-optique": {
+        "wa_verified": "yes", "profile_name_seen": "Pagrot Optique",
+        "Notes_extra": "Porte A du 25/10 (3ᵉ tour) : 699 90 46 91 EST sur WhatsApp, profil « Pagrot "
+                       "Optique » (initiale dans un rond vert, pas de photo). Joignable.",
+    },
+    "capelli-optique-medicale": {
+        "wa_verified": "yes", "profile_name_seen": "CAPELLI OPTIQUE MÉDICALE",
+        "Notes_extra": "Porte A du 25/10 (3ᵉ tour) : 675 26 89 81 EST sur WhatsApp, PROFIL BUSINESS "
+                       "« CAPELLI OPTIQUE MÉDICALE » — catégories « Optometrist • Optician », adresse "
+                       "« immeuble collé à la mairie de Douala 5 » (Bonamoussadi), visuel « la qualité de "
+                       "la vision supérieure ». Fiche tenue : bonne cible.",
+    },
+    "optique-pro": {
+        "wa_verified": "yes", "profile_name_seen": "Laury Ntemtsa",
+        "Notes_extra": "Porte A du 25/10 (3ᵉ tour) : 690 03 48 18 EST sur WhatsApp sous « Laury Ntemtsa » "
+                       "(catégorie « Post office », photo de personne). Le nom correspond au titulaire du "
+                       "tableau de l'Ordre (TEKENG NTEMTSA Sintiche Laury) : c'est la ligne DIRECTE du "
+                       "décideur, pas un standard. Écrire à Ntemtsa, pas « Optique Pro ».",
+    },
+    "maranatha-optics": {
+        "wa_verified": "yes", "profile_name_seen": "Maranatha Optics",
+        "Notes_extra": "Porte A du 25/10 (3ᵉ tour) : 658 16 31 90 EST sur WhatsApp, profil « Maranatha "
+                       "Optics » avec visuel de montures. Joignable.",
+    },
     "optimat-vision-sarl": {
         "wa_verified": "no", "stage": "disqualified",
         "wa_number_note": "25/10 (2ᵉ tour, test King) : 699 86 53 46 introuvable sur WhatsApp.",
