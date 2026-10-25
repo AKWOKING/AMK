@@ -135,6 +135,9 @@ timeline à maintenir : **le code est le montage**.
 
 ## 6 · Porte avant diffusion (§7 du playbook, version vidéo)
 
+- [ ] `python3 tools/qa/audit_ideas.py content/ideas/SHORTLIST-YYYY-MM-DD.md` → **✓** (la pièce a une
+      ligne de lot : tuyau, preuve, cible, briques — `knowledge/IDEA-PIPES-2026-10-25.md`)
+- [ ] `python3 tools/qa/audit_trust.py content/reels/epNN/make_epNN.py` → **✓** (le rôle tient son plancher)
 - [ ] `python3 tools/qa/audit_reel.py content/reels/epNN/make_epNN.py` → **✓** (6 règles de l'arc)
 - [ ] durée ≤ 25 s et lisible **sans son** (le texte porte l'histoire, la voix la double)
 - [ ] un seul accent orange par écran, aucun texte sous 30 px
@@ -142,4 +145,5 @@ timeline à maintenir : **le code est le montage**.
 - [ ] aucun nom de client sans accord écrit
 - [ ] le master est inspecté en captures (`frames/`), pas seulement en lecture rapide
 - [ ] la voix est **audible là où elle doit l'être** : RMS mesuré par beat (`build_timing.py`)
+- [ ] le tuyau de l'idée est **écrit** : un original (tuyau 6) se déclare, il ne se déguise pas en outlier
 - [ ] King publie — l'agent ne publie jamais

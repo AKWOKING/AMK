@@ -45,3 +45,19 @@ propre offre, pas pour un prospect. **V-05 est rendue (FR + EN) mais montre des 
 ne sort pas tant que les éléments identifiants ne sont pas floutés.** V-06/V-07 (cas réels AFRIQUE
 LABO, YAKS, Skye, OraCare) passent en capture anonymisée ou sont reconstruits sur MboaCare.
 Aucune ligne de ce fichier n'a été effacée — c'est un addendum, pas une réécriture.
+
+---
+
+## 🔎 Addendum 25/10/2026 — *quoi produire* ≠ *d'où vient l'idée*
+
+Ce fichier reste **l'inventaire des pièces approuvées par King le 17/09** : audience, douleur, actif de
+départ, étage d'entonnoir, droits. Il ne dit **rien** de la provenance de l'idée, et c'est exactement le
+trou que la source du 25/10 a nommé (« The 6 Idea Pipes »).
+
+Depuis le 25/10, une vidéo de cette liste qui entre en production doit avoir **une ligne de lot** dans
+`content/ideas/SHORTLIST-YYYY-MM-DD.md` : tuyau (1–6), preuve, cible, briques constantes et changées.
+La porte `tools/qa/audit_ideas.py` la vérifie ; la doctrine est `knowledge/IDEA-PIPES-2026-10-25.md`.
+
+Ce qui ne change pas ici : aucune ligne n'est effacée, y compris V-05 qui ne sort pas (addendum droits
+du 21/09). L'inventaire et le lot sont **deux documents, deux questions** — et un sujet sans provenance
+n'est pas un sujet refusé, c'est un sujet **non encore sourcé**.

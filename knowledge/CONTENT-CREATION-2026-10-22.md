@@ -207,6 +207,14 @@ conflits tranchés et la semaine en trois rôles — est dans **`knowledge/CONTE
 sa porte est **`tools/qa/audit_trust.py`**. Le §4 bis reste la règle de *quoi publier* ; le document des
 jeux est la règle de *pourquoi*, et de *quel rôle* la pièce tient dans la semaine.
 
+**Et ce qui précède encore le jeu (25/10, soir)** : l'**idée**. Le texte suivant du même fil,
+« The 6 Idea Pipes », dit que la différence entre 10 000 et 1 000 000 de vues se joue dans le **choix**
+de l'idée — topic + seed + substance — et que l'idée doit venir d'un des **six tuyaux** (nos outliers, ceux
+des concurrents, les autres médias, l'actualité, les non-outliers, les originaux), en gardant **8 à 10
+briques constantes** et en n'en changeant que 1 à 3. Doctrine : **`knowledge/IDEA-PIPES-2026-10-25.md`** ;
+porte : **`tools/qa/audit_ideas.py`** ; lots : **`content/ideas/`**. L'ordre est désormais
+**idée → rôle → forme**, et il ne se saute pas.
+
 ---
 
 ## 4 ter · Les six formats de la matrice, outillés pour le cabinet (23/10)
@@ -696,6 +704,7 @@ sienne.
 | 23/10 | **Insights 24 h du reel** (Facebook Business Suite, TikTok Studio) | la preuve que les deux réseaux ne mesurent pas la même chose : 12 % de lecture moyenne sur Facebook contre 26 % sur TikTok pour le même film | §5 quater | la comparaison brute des vues (227 contre 80) : elle ne dit rien de la qualité |
 | 23/10 | **Capture WhatsApp DM OPTIQUE** (13h00, message d'avis du client) | le texte exact de sa demande d'avis, ses liens, et l'heure | `clients/dm-optic/launch/SOLDE-75K-2026-10-23.md` §3 bis | la tentation d'y répondre : c'est un message de masse, pas une question |
 | **25/10** | **Capture @kallowaymarketing** (7 slides, reçue de King) | l'arc moderne : départ à **70**, secousse entre 5 et 10 s, **trois cimes**, relâchements, CTA en dernière cime | §3 bis (l'ordre des blocs — l'arc en est la version sociale) · `knowledge/STORY-ARC-2026-10-25.md` · `tools/qa/audit_reel.py` | le « 742 jours / 207 clients » de la slide : cas unique, pas une preuve (§1g) — non repris |
+| **25/10** | **« The 6 Idea Pipes »** (même fil, même provenance — **tier C**) | l'idée = **topic + seed + substance** ; les deux prédicteurs (pertinence pour l'acheteur, intérêt du seed et de la substance) ; les **6 tuyaux** ordonnés par probabilité ; la règle du **remix** (8–10 briques constantes, 1–3 changées) ; le processus de recherche en deux semaines | `knowledge/IDEA-PIPES-2026-10-25.md` (10 sections) · `tools/qa/audit_ideas.py` (19/19) · `content/ideas/SHORTLIST-2026-10-25.md` · §4 bis (le renvoi) · playbook §5 quinquies · `PRE-FLIGHT.md` §1 | l'outil **Sandcastles** (payant, et nous n'avons pas d'accès plateforme) : le protocole est réécrit à la main · le « 10K vs 1M » (accroche, pas une mesure) |
 | **25/10** | **« The 5 Content Games »** (texte collé par King ; **ni auteur, ni URL, ni date → tier C**) | les 5 jeux et ce que chacun monétise ; le diagnostic en 4 questions ; `confiance = minutes × pertinence × utilité` ; « pure virality is a trap for games 3, 4, 5 » ; la semaine en 3 rôles | `knowledge/CONTENT-GAMES-2026-10-25.md` (9 sections) · §4 bis (le renvoi) · `sales/SOCIAL-ACQUISITION-PLAYBOOK-2026-10-25.md` §5 quater · `tools/qa/audit_trust.py` | les noms de marques cités (AG1, Meta Ray-Ban) comme exemples de jeu 4 : jamais cités dans un post · les « on-target views » : **non mesurables**, on garde le principe, pas le chiffre |
 
 ---

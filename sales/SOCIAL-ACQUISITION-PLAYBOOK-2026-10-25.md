@@ -510,6 +510,37 @@ porte ou ne servent pas.
 **La porte** : `python3 tools/qa/audit_trust.py <module>.py` — la pièce déclare son jeu (`TRUST = Piece(…)`),
 la porte refuse `trop-court`, `objectif-vues`, `cible-muette`, `sans-entonnoir`, `inutile`.
 
+### 5 quinquies · Avant le jeu, l'idée : les six tuyaux (25/10, suite du même fil)
+
+Le §5 quater dit **quel rôle** tient une pièce. Il ne disait pas **d'où vient son idée** — et c'est là que
+se joue, selon la source suivante, la différence entre 10 000 et 1 000 000 de vues. Synthèse :
+**`knowledge/IDEA-PIPES-2026-10-25.md`** ; porte : **`tools/qa/audit_ideas.py`** ; lots :
+**`content/ideas/`**.
+
+**Une idée = topic + seed + substance.** Deux prédicteurs : la pertinence du topic **pour l'acheteur**, et
+l'intérêt réel du seed et de la substance.
+
+| # | Tuyau | Ce qu'il vaut pour nous, aujourd'hui |
+|---|---|---|
+| 1 | **nos outliers** | **vide** : 156 et 121 vues, aucune n'est un outlier, et l'audience est à 91 % / 86 % de 18–34 ans — pas l'acheteur |
+| 2 | **les outliers des concurrents** | **vide** : aucune watchlist ; c'est **la** chose à faire (45 min, 10–15 comptes du même acheteur, 30 jours) |
+| 3 | **les autres médias** | c'est là que nos deux emprunts vivent : le format « 3 niveaux » de la source, et le `[≈5:00]` de BONT — **sans métrique**, donc non validés |
+| 4 | **l'actualité de la catégorie** | **vide** : nous ne suivons aucune source d'actualité ; une news sans date est un souvenir |
+| 5 | **les non-outliers des concurrents** | rien de ce que nous avons ne permet de l'affirmer — un pari, jamais une preuve |
+| 6 | **les originaux** | **EP01 est ici** : topic pertinent, seed honnête, substance réelle — et **aucune donnée** |
+
+**La règle du remix** : garder **8 à 10 briques constantes** (nous en avons onze nommées : topic, seed,
+substance, ouverture, arc, hook, mise en page, hôte, voix, CTA, durée), changer **1 à 3**. La porte refuse
+au-delà de trois : « ce n'est plus un remix, c'est un original déguisé ».
+
+**Conséquence pour la semaine** : les trois rôles du §5 quater ne se remplissent pas au tuyau 6 sans le
+dire. **Mardi** (porte) peut être un remix du gabarit EP01 à 9 constantes ; **jeudi** (preuve) demande un
+chiffre daté, donc un actif que nous possédons ; **samedi** (autorité ≥ 2 min) demande un seed **contraire**,
+pas un constat. Et le premier lot de recherche — la watchlist — conditionne les trois.
+
+**La chaîne, à ne plus sauter** : `audit_ideas.py` (idée) → `audit_trust.py` (rôle) → `audit_reel.py`
+(forme). Une pièce bien montée qui vient d'un original non déclaré échoue à la première.
+
 
 ---
 
@@ -622,6 +653,7 @@ qu'elle n'a pas dit.
 | Chaque modèle finit-il par une demande d'appel ? | OUI — le CTA canonique nomme les 10 minutes, et les 12 CTA du calendrier en sont la forme courte | §3.4, §5 |
 | Les vues sont-elles optimisées quelque part ? | NON — elles sont hors du tableau de bord décisionnel ; seule la conversation décide | §2, §6.1, §5 quater |
 | Chaque pièce a-t-elle un **rôle** déclaré et un plancher tenu ? | OUI depuis le 25/10 — porte ≤ 25 s (**12**), preuve (**24**), autorité ≥ 2 min (**40**) ; vérifié par `tools/qa/audit_trust.py` | §5 quater |
+| Chaque pièce a-t-elle une **idée sourcée**, et sait-on ce qu'on a changé ? | OUI depuis le 25/10 — tuyau 1–6 + preuve + cible + ≤ 3 briques changées ; vérifié par `tools/qa/audit_ideas.py`. **Le premier lot est à 0 idée validée** et le dit | §5 quinquies |
 | Les sept artéfacts sont-ils présents, sans résumé ? | OUI — §1 à §7 | — |
 | Aucun chiffre inventé ? | OUI — prix, marché et audience ont une source datée ; les seuils du §6.3 sont déclarés comme des **décisions**, pas des prévisions ; les résultats manquants sont `[NEEDS DATA]` | §1.3, §6.3 |
 

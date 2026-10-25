@@ -399,3 +399,52 @@ remplir de silence : c'est le seul endroit où l'on peut rendre service gratuite
 **Ce que la source ne permet pas** : elle ne dit pas comment mesurer les « on-target views » — aucune
 plateforme ne les expose. On garde le principe, on ne fabrique pas le chiffre (pas d'estimation présentée
 comme mesure). Et comme partout : **une règle sans porte est un trou** — d'où `audit_trust.py`.
+
+---
+
+## 20 · 25/10/2026 (nuit) — l'idée d'abord : six tuyaux, trois briques, et notre chaîne de portes
+
+**La source** : « The 6 Idea Pipes », suite annoncée du texte des cinq jeux, même fil, même provenance
+(**tier C** — auteur non nommé, ni URL ni date). Elle déplace la question : ce n'est pas le montage qui
+décide entre 10 000 et 1 000 000 de vues, c'est **le choix de l'idée**.
+
+**Une idée = trois choses** : *topic* (le sujet) + *seed* (la phrase-tête, la prise de position) +
+*substance* (les faits et exemples qui la portent). Deux prédicteurs, plus forts que la qualité :
+① le topic est-il pertinent **pour l'acheteur** ? ② le seed et la substance sont-ils intéressants ou
+utiles **pour lui** ?
+
+**Les six tuyaux, du plus prouvé au plus risqué** : 1 nos outliers · 2 ceux des concurrents · 3 les
+autres médias · 4 l'actualité de la catégorie · 5 les non-outliers des concurrents · 6 les originaux.
+La source est catégorique : *« most beginners start with #6… the lowest hit rate source. Start with #2
+instead. »*
+
+**Le remix** : garder **8 à 10 briques** constantes, n'en changer que **1 à 3**. Nous avons maintenant
+**onze briques nommées** (topic, seed, substance, ouverture, arc, hook, mise en page, hôte, voix, CTA,
+durée) — et c'est là que se lit la vraie histoire d'EP01 : il ne changeait pas 3 briques sur 11, il
+**n'avait pas de bibliothèque** ; les briques 4 à 11 sont nées avec lui. Un original paie le gabarit.
+C'est le seul cadeau qu'il fait aux pièces suivantes, et il ne le fait qu'une fois.
+
+**Ce que ça dit de nous, sans ménagement** : EP01 est un **tuyau 6** — un original, sans outlier à nous,
+sans concurrent étudié, sans actualité datée. Le tour 146 l'a classé « porte » (rôle) ; il manquait une
+ligne au-dessus : *porte dont l'idée n'a jamais été validée*. Et notre tuyau 1 est **vide** : nos deux
+publications mesurées font 156 et 121 vues, avec 91 % / 86 % d'audience à 18–34 ans quand l'acheteur a
+35–54 ans. **Un topic pertinent ne garantit pas la bonne personne.**
+
+**Ce qui a été écrit, et rendu opposable** : `knowledge/IDEA-PIPES-2026-10-25.md` (10 sections) ·
+`tools/qa/audit_ideas.py` (**21 cas**, refus : tuyau inconnu, champ manquant, `[NEEDS DATA]`, seed mou,
+seed = topic, cible floue, tuyau 1–2 sans chiffre, > 3 briques changées ; avertissements : tuyau 3 sans
+métrique, tuyau 5, original sans outlier, peu de constantes, lot sans aucune idée validée) ·
+`content/ideas/SHORTLIST-2026-10-25.md` (premier lot, **4 idées, 0 validée** — et le fichier le dit).
+**La chaîne est désormais explicite : idée → rôle → forme.** Trois portes, trois outils, dans cet ordre.
+
+**Deux défauts trouvés en vérifiant, la même heure :**
+
+| Défaut | Ce que la porte comptait | Le correctif |
+|---|---|---|
+| **une date n'est pas une métrique** | `re.search(r"\d")` comptait « 23/10 » comme un chiffre de vues : un tuyau 2 sans aucune donnée passait | les dates **et les timecodes** (`[≈5:00]`) sont retirés avant la recherche ; il faut ensuite un nombre d'au moins deux chiffres |
+| **une section de prose n'est pas une idée** | tout titre `##` devenait une idée — le lot échouait sur son propre paragraphe « ce que le lot ne contient pas » | seuls les blocs `## IDEA-…` sont lus |
+
+**Ce que la source ne règle pas, et qui nous concerne** : que faire quand la niche est **trop petite pour
+avoir des outliers**. Les opticiens de Douala publient très peu de vidéos : notre tuyau 2 peut rester vide
+même bien exécuté. Ce jour-là, la doctrine ne dit rien — et nous ne remplirons pas le vide avec une
+capture d'écran inventée.
