@@ -24,6 +24,13 @@ tools/record/node_modules/
 *.flac
 # la vidéo 06 est déjà suivie et doit le rester (exception explicite, pour la lisibilité)
 !content/videos/v06-facebook-no-booking/**
+# ── EP01 : EXCEPTION EXPLICITE (26/10/2026) — King, deux fois : « where is the mp4 video that I
+#    can watch » · « still can't find the video, give me a link to it ». Le master d'EP01 est la
+#    pièce courante du pipeline : il doit être atteignable par un LIEN, pas par un chemin dans un
+#    bac qui redémarre. Seuls le master et sa vignette entrent ; le rendu muet reste dehors (il se
+#    refait en 30 s). Poids : 1,9 Mo — c'est le prix d'un lien qui marche.
+!content/reels/ep01/ep01-v4.mp4
+!content/reels/ep01/poster.jpg
 # ── LIVRABLES VIDÉO CLIENTS : SORTIS DU DÉPÔT LE 24/10/2026
 #    22/10 — King : « je ne trouve pas ugc-03.mp4 sur github » · « where is post 1 ?? ».
 #    Cinq vidéos finies avaient donc été suivies nommément, avec leurs couvertures.
