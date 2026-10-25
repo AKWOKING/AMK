@@ -42,9 +42,29 @@ sollicitée = vantardise), et **aucun chiffre de résultat** tant que le premier
 (§Preuve ci-dessus). La fiche est un **objet**, pas un résultat — c'est exactement pour ça qu'elle peut
 se montrer : elle ne promet rien.
 
+## Le produit, le bonus, et ce qui ne se promet pas (ruling King 25/10, 142ᵉ message)
+
+> *« shouldn't we stick to the website ?? which will show up when they search optix and give all the
+> information the client will need then we can also update his google business profile as a bonus,
+> it's already created so it's not much work that is if he has the logins »*
+
+| Objet | Son statut | Ce qu'on en dit |
+|---|---|---|
+| **Le site vitrine** (bloc Installation) | **le produit** | « un site à votre nom s'affiche quand on cherche le cabinet, avec horaires, adresse et WhatsApp » |
+| **La fiche Google du cabinet** | **bonus conditionnel** — elle existe déjà, la compléter demande peu | se propose **si le prospect en a les accès** ; ne se vend pas seule, ne se promet pas sans accès |
+| **Une mesure des patients venus de Google** | **n'existe pas** — le cabinet n'a pas de compteur d'appels, nous n'y avons pas accès | **jamais promise.** C'était la faute de la v6 du message Optix, corrigée le 25/10 |
+
+**Ce que « bonus » veut dire, exactement** : on ne facture pas la fiche séparément **dans le message** et
+on ne l'érige pas en livrable — elle accompagne l'installation quand les accès existent. *Si un jour
+elle devient un travail lourd (revendication, doublon, suspension), c'est un arbitrage de King, pas une
+ligne de ce document.*
+
+**Ce qu'on peut mesurer, et c'est tout** : **notre** site — Cloudflare Web Analytics + Search Console
+(20/10), donc après la mise en ligne, sur notre périmètre. Les appels du cabinet, non.
+
 ## Ce que le pack n'est JAMAIS
 Pas de claim médical · pas de remise (trade scope/timing) · pas de Play Store · pas de mensuel creux ·
-pas de travail sur la démo d'un prospect sans demande (règle 03/10) · pas de site re-pitché à Univers.
+pas de travail sur la démo d'un prospect sans demande (règle 03/10) · pas de site re-pitché à Univers · pas de mesure promise sur les appels du cabinet.
 
 ## Preuve (chronologie)
 

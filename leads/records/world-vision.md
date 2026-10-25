@@ -32,9 +32,10 @@ SCOUT ONOC du 24/10 — ligne 157 de l'annuaire (Littoral). Numéro PUBLIÉ PAR 
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 1 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 2 ligne(s).*
 
 `L5855` · joignables, 6 morts**. Il reste **World Vision** (656 03 21 72).
+`L5904` · **④ La porte A ferme.** **World Vision (656 03 21 72) est vivant** : la capture montre le numéro sous le
 
 ---
 

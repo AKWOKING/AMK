@@ -310,7 +310,7 @@ six sans la sortie sans friction**.
 ```bash
 python3 tools/qa/audit_outreach.py sales/<fichier>.md          # code 1 au premier manquement
 python3 tools/qa/audit_outreach.py sales/<fichier>.md --strict  # les avertissements bloquent aussi
-python3 tools/qa/test_audit_outreach.py                        # 20/20 : elle refuse bien ce qu'elle dit
+python3 tools/qa/test_audit_outreach.py                        # 21/21 : elle refuse bien ce qu'elle dit
 ```
 
 Le fichier doit mettre chaque message sous la forme `**⑥ Nom — Quartier — 677 00 00 00**` suivi de
@@ -382,3 +382,36 @@ Trois fautes, une seule cause : **le message parlait de nous au lieu de parler d
 **Une exception, et elle est étroite** : le **premier** message à un **froid** garde la salutation
 (« Bonjour Docteur, à Bonanjo… ») — elle coûte deux mots et situe le message — mais **jamais** le
 prénom seul. Et cette salutation ne dispense pas de la raison : la première phrase reste le fait.
+
+### 13 quinquies · Le produit, le bonus, et la question qui ne promet que ce qu'on sait faire (ruling King 25/10, 142ᵉ message)
+
+> *« how do we know/find out ce que la fiche laisse filer, and he probably doesn't have any tool to
+> track those that come from google, shouldn't we stick to the website ?? which will show up when they
+> search optix and give all the information the client will need then we can also update his google
+> business profile as a bonus, it's already created so it's not much work that is if he has the logins »*
+
+**① Le produit est le site. La fiche Google est un bonus conditionnel.**
+
+| | Ce que c'est | Comment on en parle |
+|---|---|---|
+| **Le site** | la chose qu'on construit, qui s'affiche quand on cherche le nom du cabinet, et qui donne au patient **horaires, adresse, WhatsApp** | c'est **le produit** : on le nomme, sans maquette et sans prix au premier contact |
+| **La fiche Google** | un objet **déjà créé** par le cabinet ; la compléter (horaires, site, photos) demande peu de travail | **bonus, jamais produit** : on ne la vend pas seule, et on ne la promet **que si le prospect en a les accès** |
+| **Une mesure des patients venus de Google** | un compteur d'appels que **le cabinet n'a pas** et auquel **nous n'avons pas accès** | **jamais promise.** On ne peut pas savoir « ce que la fiche laisse filer » |
+
+**② La règle, en une phrase : une question ne peut promettre qu'un travail qu'on sait faire.**
+Avant d'écrire une question, on écrit la phrase qui vient après la réponse. Si cette phrase demande un
+outil que personne ne possède — un compteur d'appels, un historique de recherches, des statistiques que
+le cabinet ne tient pas — la question est fausse et le message avec elle.
+
+- ❌ « Combien de patients vous arrivent par Google ? … je le compare à ce que la fiche laisse filer. »
+  → suppose un compteur chez lui et un accès chez nous. **Aucun des deux n'existe.**
+- ✅ « Dites-moi si vous avez les accès ? Un mot suffit : la fiche suit le jour même. »
+  → suppose une information qu'il a ou qu'il n'a pas, et déclenche un travail réel dans la journée.
+
+**③ Ce qu'on peut mesurer, et c'est tout** : **notre** site (Cloudflare Web Analytics + Search Console,
+décidés le 20/10) — donc **après** la mise en ligne, et **sur notre périmètre**, jamais sur les appels
+du cabinet. Tant que rien n'est mesuré, on ne cite aucun chiffre de résultat (`PACK-OPTICIEN` §Preuve).
+
+**④ La porte** : `MESURE_IMPOSSIBLE` dans `tools/qa/audit_outreach.py` **bloque** les formulations du
+type « ce que la fiche laisse filer », « je le compare à », « combien de patients vous arrivent par
+Google » (banc : 21/21). Le goût reste humain ; la promesse impossible, non.

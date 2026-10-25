@@ -5915,3 +5915,61 @@ veut dire « jamais vérifié » (20 lignes) — on ne tue pas ce qu'on n'a pas 
 **État** : CRM **190 lignes**, **67 `wa_verified=yes`**, **21 disqualifiés**. Graphe rejoué après
 écriture (`ops/REPO-MAP.md` régénéré : la nouvelle commande et les deux sections y entrent).
 Envois : Optix **dimanche 25/10, seul** · COMED **lundi 26/10** · IVY **mardi 27/10 si confirmé**.
+
+## 25/10/2026 (tour 142) — « ce que la fiche laisse filer » n'existe pas : le message vend le site, la fiche Google devient un bonus
+
+**① Le reproche qui portait sur une promesse impossible.** King : *« how do we know/find out ce que la
+fiche laisse filer, and he probably doesn't have any tool to track those that come from google,
+shouldn't we stick to the website ?? »*. La v6 demandait « combien de patients vous arrivent par
+Google ? » et promettait de comparer ce chiffre « à ce que la fiche laisse filer ». **C'était une
+compétence inventée** : le gérant n'a aucun outil de suivi des appels venus de Google, et nous n'avons
+aucun accès à ses appels. On demandait donc au prospect de nous prêter une mesure que personne ne
+possède. C'est la faute la plus coûteuse des six versions — pas une maladresse de ton, un mensonge de
+capacité.
+
+**② La règle qui en sort, et elle vaut pour tous les messages** : **une question ne peut promettre
+qu'un travail qu'on sait faire.** Avant d'écrire la question, on écrit la phrase qui suit la réponse ;
+si cette phrase exige un outil que personne n'a, la question est fausse. Écrit dans
+`sales/CLIENT-MESSAGING-RULES.md` **§13 quinquies**, avec la porte `MESURE_IMPOSSIBLE` dans
+`tools/qa/audit_outreach.py` (bloque « ce que la fiche laisse filer », « je le compare à », « combien de
+patients vous arrivent par Google »). Banc : **21/21**.
+
+**③ Le produit est le site ; la fiche Google est un bonus conditionnel.** Ruling King 25/10, écrit dans
+`PACK-OPTICIEN` (« Le produit, le bonus, et ce qui ne se promet pas ») :
+
+| Objet | Statut |
+|---|---|
+| **le site vitrine** — il s'affiche quand on cherche le nom du cabinet, avec horaires, adresse, WhatsApp | **le produit** |
+| **la fiche Google** — elle existe déjà ; la compléter demande peu | **bonus**, proposé **si le prospect en a les accès** ; jamais vendu seul, jamais promis sans accès |
+| **une mesure des patients venus de Google** | **jamais promise** — aucun des deux ne peut la produire |
+
+**Ce qu'on peut mesurer reste ce qu'on possède** : notre site (Cloudflare Web Analytics + Search
+Console, 20/10), après mise en ligne, sur notre périmètre.
+
+**④ La 8ᵉ version du message Optix — 52 mots · 4 phrases · 1 question · porte 0/0.**
+
+> Je vous ai envoyé hier ce que Google affiche à Akwa : un cabinet comptable passe avant Optix — pas
+> votre faute. Un site à votre nom prend cette place, avec horaires, adresse et WhatsApp. Dites-moi si
+> vous avez les accès de votre fiche Google ? Un mot suffit : je la complète le jour même.
+
+Trois changements : l'ouverture que King a validée (« Je vous ai envoyé hier… ») est reprise telle
+quelle ; la question porte sur **une information que le gérant possède ou non** (les accès) au lieu d'un
+calcul qu'il ne fait pas ; et la conséquence est **immédiate et vérifiable** (la fiche complétée le jour
+même) au lieu d'une comparaison impossible. Le lot entier reste à **0 bloquant · 0 avertissement**.
+
+**⑤ Le mapping par nom est tranché.** King : *« 77648790 == 677 64 87 90 and 550 49 52 9 == 655 04 95
+29 — I have checked and crosschecked »*. Les deux doutes du tour 140 sont clos : ce ne sont pas deux
+lignes, ce sont deux écritures du même numéro. Notes datées dans `VERIF_WA_2510` (`leads/build/crm.py`,
+donc elles survivent au rebuild) et dans `sales/PORTE-A-2026-10-25.md` §2.
+
+**⑥ « Do not forget graphify before pre-flight » — la règle a maintenant une porte.** Une consigne
+qu'on doit se rappeler à chaque tour n'est pas une règle, c'est une intention. `preflight.sh` écrit donc
+une **estampe** (`~/.amk-provisioned/preflight.stamp` : date, mode, nœuds, sujet), et `machine.py` gagne
+la règle **`etape-0-graphe`** : elle passe si l'estampe est du jour **et** si la carte a été écrite au
+même moment. Registre `ops/MACHINE.md` §9 tenu à jour (la porte `registre-complet` l'exige).
+
+**⑦ Les dix captures renvoyées sont déjà au CRM — rien de neuf, et c'est vérifié.** Les six du lot
+(COMED vivant, IVY vivant-ambigu, Optix vivant, Bouda/Jolinom/Le Sourire morts) et les quatre du scout
+(Saoudia Optique vivant, Centrale d'Optique Panafricaine morte, ISEE = Business « I See Better »,
+Free Optic = Business « Free Optic ») étaient enregistrés au tour précédent. Aucune double ligne, aucun
+recomptage : **28 testés · 22 joignables · 6 morts**.

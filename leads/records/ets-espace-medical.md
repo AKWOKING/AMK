@@ -24,7 +24,7 @@
 
 ## Notes
 
-SCOUT ONOC du 24/10 — ligne 124 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée. · Porte A du 25/10 (2ᵉ tour) : 655 04 95 29 EST sur WhatsApp, PROFIL BUSINESS « Optic Medical Favour and Joy » — catégorie Medical & health, Entrée Eneo PK11 Douala, favourjoyopticmedical@gmail.com, produits et description. ATTENTION : le nom commercial n'est PAS celui de l'annuaire de l'Ordre (« Ets Espace Médical ») — tout message doit utiliser le nom que le cabinet affiche, pas celui du tableau.
+SCOUT ONOC du 24/10 — ligne 124 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée. · Porte A du 25/10 (2ᵉ tour) : 655 04 95 29 EST sur WhatsApp, PROFIL BUSINESS « Optic Medical Favour and Joy » — catégorie Medical & health, Entrée Eneo PK11 Douala, favourjoyopticmedical@gmail.com, produits et description. ATTENTION : le nom commercial n'est PAS celui de l'annuaire de l'Ordre (« Ets Espace Médical ») — tout message doit utiliser le nom que le cabinet affiche, pas celui du tableau. MAPPING CONFIRMÉ par King le 25/10 : « 550 49 52 9 » EST 655 04 95 29 (« checked and crosschecked ») — c'est bien le même cabinet, pas deux numéros.
 
 ## Prochaine action
 

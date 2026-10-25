@@ -107,6 +107,13 @@ VERBES_ACTION = ["voulez", "souhaitez", "préférez", "montre", "envoi", "propos
 SELF_INTRO = ["c'est king", "c'est akwo", "je suis king", "je suis akwo", "moi c'est king",
               "akwo king", "king de amk", "king, de amk"]
 
+# Promesse de mesure — ruling King 25/10 (142ᵉ message). Un message ne peut promettre qu'un travail
+# qu'on sait faire. La v6 demandait « combien de patients vous arrivent par Google ? » et promettait de
+# comparer ce chiffre « à ce que la fiche laisse filer » : le gérant n'a aucun outil de suivi des appels,
+# nous n'avons aucun accès à ses appels, donc la comparaison n'existait pas. Fermé ici pour de bon.
+MESURE_IMPOSSIBLE = ["ce que la fiche laisse filer", "je le compare à", "combien ça vous coûte",
+                     "je mesure vos", "combien de patients vous arrivent par google"]
+
 # Sortie sans friction — knowledge/OUTREACH-MESSAGING §3, temps 5.
 SORTIE = ["sans moi", "2 minutes", "deux minutes", "sans engagement", "le faire vous-même",
           "un mot", "une ligne", "un chiffre"]
@@ -239,6 +246,12 @@ def check(msg: Message) -> None:
         if s in flat:
             msg.fails.append(f"auto-présentation : « {s} » — la présentation doit porter la raison du "
                              f"message, pas le prénom seul — ruling 141 (25/10)")
+
+    # 5 ter · promesse de mesure impossible — ruling 142.
+    for m in MESURE_IMPOSSIBLE:
+        if m in flat:
+            msg.fails.append(f"promesse de mesure impossible : « {m} » — le prospect n'a pas l'outil, "
+                             f"nous n'avons pas l'accès — ruling 142 (25/10)")
 
     # 6 · dédouanement — §13 temps 2
     if not any(fold(d) in flat for d in DEDOUANEMENT):

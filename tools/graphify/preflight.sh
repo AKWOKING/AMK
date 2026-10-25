@@ -58,6 +58,16 @@ fi
 
 [ -f "$MAP" ] || { say "✗ carte absente : python3 tools/graphify/build_full_graph.py"; exit 1; }
 
+# ① bis — l'estampe : une étape 0 qui ne laisse pas de trace ne peut pas être vérifiée (ruling 142).
+STAMP_DIR="${HOME}/.amk-provisioned"
+mkdir -p "$STAMP_DIR" 2>/dev/null || true
+MODE="rebuild"; [ "$READ_ONLY" -eq 1 ] && MODE="read"
+printf '%s\t%s\t%s\t%s\n' "$(date -Iseconds)" "$MODE" \
+  "$(grep -m1 -o '[0-9]* nœuds' "$MAP" 2>/dev/null | cut -d' ' -f1)" "${TOPIC:-—}" \
+  >> "$STAMP_DIR/preflight.stamp" 2>/dev/null || true
+tail -n 200 "$STAMP_DIR/preflight.stamp" > "$STAMP_DIR/preflight.stamp.tmp" 2>/dev/null \
+  && mv "$STAMP_DIR/preflight.stamp.tmp" "$STAMP_DIR/preflight.stamp" 2>/dev/null || true
+
 # ② — la carte, dans l'ordre obligatoire
 say ""
 say "② la carte, dans cet ordre : §0 → §6 → §2 → §3 → §1 → §3 bis"

@@ -2467,7 +2467,9 @@ VERIF_WA_2510 = {
     "light-optique": {
         "wa_verified": "yes", "profile_name_seen": "Light Optique",
         "Notes_extra": "Porte A du 25/10 (2ᵉ tour) : 677 64 87 90 EST sur WhatsApp, profil « Light Optique » "
-                       "avec photo de boutique. Joignable.",
+                       "avec photo de boutique. Joignable. MAPPING CONFIRMÉ par King le 25/10 : la forme "
+                       "courte « 77648790 » EST 677 64 87 90 (« checked and crosschecked ») — la seule "
+                       "ligne « Light Optique » du lot, aucun risque de doublon.",
     },
     "world-vision": {
         "wa_verified": "yes", "profile_name_seen": "World Vision",
@@ -2483,7 +2485,9 @@ VERIF_WA_2510 = {
                        "Medical Favour and Joy » — catégorie Medical & health, Entrée Eneo PK11 Douala, "
                        "favourjoyopticmedical@gmail.com, produits et description. ATTENTION : le nom "
                        "commercial n'est PAS celui de l'annuaire de l'Ordre (« Ets Espace Médical ») — tout "
-                       "message doit utiliser le nom que le cabinet affiche, pas celui du tableau.",
+                       "message doit utiliser le nom que le cabinet affiche, pas celui du tableau. "
+                       "MAPPING CONFIRMÉ par King le 25/10 : « 550 49 52 9 » EST 655 04 95 29 "
+                       "(« checked and crosschecked ») — c'est bien le même cabinet, pas deux numéros.",
     },
     "s-o-s-vision": {
         "wa_verified": "yes", "profile_name_seen": "Sos Vision",

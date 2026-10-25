@@ -118,7 +118,7 @@
 | ScientiLabo | Douala (Akwa, 1749 rue Gallieni) | 696 423 477 | — |
 | Win Optic Plus | Douala | 699 12 59 06 | `L3928` |
 | Wonders Medical Foundation | Douala (Bonamoussadi) | — | — |
-| World Vision | Douala | 656 03 21 72 | `L5855` |
+| World Vision | Douala | 656 03 21 72 | `L5904` |
 
 ## ❌ Perdu — 2
 

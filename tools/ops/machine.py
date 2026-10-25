@@ -658,6 +658,10 @@ def rules() -> list[dict]:
         (not mg["ok"]) or (not mg["due"]),
         mg["why"] + " → bash tools/ops/machine.sh --merge" if mg.get("due") else
         (mg["why"] or f"{mg['files']} fichiers · {mg['lines']} lignes · {mg['commits']} commits — sous les seuils"))
+    st0 = step0_state()
+    add("etape-0-graphe", "Le graphe est rejoué (ou la carte lue) AVANT la lecture de PRE-FLIGHT.md.",
+        "PRE-FLIGHT §00 · ruling 141-142", "au début de chaque tour", "souple",
+        st0["ok"], st0["why"])
     add("carte-fraiche", "La carte du dépôt est reconstruite quand un fichier suivi bouge.",
         "PRE-FLIGHT §0h", "dès qu'un fichier suivi change", "dure",
         gr["ok"] and not gr["stale"],
@@ -876,6 +880,40 @@ def graph_state() -> dict:
                 cites=(cites.group(1) if cites else "?").replace(" ", ""),
                 orphans=(orphans.group(1) if orphans else "?"),
                 stale=stale, stale_by=newest_file if stale else None)
+
+
+def step0_state() -> dict:
+    """L'étape 0 (le graphe avant PRE-FLIGHT) a-t-elle été jouée aujourd'hui, et la carte vient-elle de là ?
+
+    Ruling King 25/10 (141ᵉ et 142ᵉ messages) : « do not forget graphify before pre-flight ». Une règle
+    qu'on doit se rappeler à chaque tour n'est pas une règle, c'est une intention — d'où l'estampe que
+    `tools/graphify/preflight.sh` écrit à chaque exécution. La règle vérifie deux choses : la date (le
+    tour d'aujourd'hui), et la cohérence (la carte a bien été écrite à ce moment-là, pas la veille).
+    """
+    stamp = STAMPS / "preflight.stamp"
+    if not stamp.exists():
+        return dict(ok=False, when=None, mode=None, why="aucune estampe → bash tools/graphify/preflight.sh \"<sujet>\"")
+    last = stamp.read_text(encoding="utf-8", errors="ignore").strip().splitlines()[-1:]
+    if not last:
+        return dict(ok=False, when=None, mode=None, why="estampe vide")
+    parts = last[0].split("\t")
+    try:
+        when = datetime.fromisoformat(parts[0])
+    except ValueError:
+        return dict(ok=False, when=None, mode=None, why="estampe illisible — relancer preflight.sh")
+    same_day = when.date() == date.today()
+    mode = parts[1] if len(parts) > 1 else "?"
+    fresh = MAP.exists() and abs(MAP.stat().st_mtime - when.timestamp()) < 900
+    ok = same_day and fresh
+    if ok:
+        why = f"graphe joué {when:%H:%M} ({mode}) · carte écrite au même moment"
+    elif not same_day:
+        why = (f"dernière étape 0 le {when:%d/%m %H:%M} — pas aujourd'hui → "
+               f"bash tools/graphify/preflight.sh \"<sujet>\"")
+    else:
+        why = (f"étape 0 jouée {when:%H:%M} mais la carte n'a pas été écrite au même moment "
+               f"→ python3 tools/graphify/build_full_graph.py")
+    return dict(ok=ok, when=when, mode=mode, why=why)
 
 
 def dated_file(pattern: str) -> tuple[Path | None, int | None]:

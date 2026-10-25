@@ -145,12 +145,20 @@ CAS: list[tuple[str, str, str, str]] = [
     ),
     (
         "faux positif : message tiède, sans bonjour ni présentation",
-        "Je vous ai envoyé hier ce que Google affiche à Akwa : un cabinet comptable passe avant Optix, "
-        "dont la fiche n'a ni horaires, ni site, ni avis — pas votre faute. "
-        "Dites-moi combien de patients vous arrivent par Google ? "
-        "Un chiffre suffit : je le compare à ce que la fiche laisse filer — vous saurez quoi corriger.",
+        "Hier, à Akwa, Google sort un cabinet comptable avant Optix — ce n'est pas votre faute. "
+        "Un site à votre nom s'affiche à cette place avec horaires, adresse et WhatsApp ; je complète "
+        "votre fiche Google si vous en avez les accès. Dites-moi si vous les avez ? "
+        "Un mot suffit : la fiche suit le jour même.",
         "Akwa",
         "",
+    ),
+    (
+        "promesse de mesure impossible",
+        "Hier, à Akwa, Google sort un cabinet comptable avant Optix — ce n'est pas votre faute. "
+        "Dites-moi combien de patients vous arrivent par Google ? Un chiffre suffit : je le compare à "
+        "ce que la fiche laisse filer.",
+        "Akwa",
+        "promesse de mesure impossible",
     ),
     (
         "question finale décorative",
