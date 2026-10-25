@@ -1,0 +1,44 @@
+# ASS pour RRPHDD
+
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-25. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+
+## État (lu dans `leads/CRM.csv`)
+
+| Champ | Valeur |
+|---|---|
+| Slug | ass-pour-rrphdd |
+| Type | other |
+| Ville | Douala |
+| Langue de contact | FR |
+| Étape | prospecting |
+| WhatsApp | 675 39 90 23 |
+| Numéro vérifié | yes |
+| Profil vu | AMBASSADOR Vision Sarl |
+| Contact | NDE Bruno |
+| Canal | WhatsApp |
+| Contacté | No |
+| Réponse | No |
+| Maquette / site | No |
+| Source | directory |
+| Détail source | Annuaire officiel ONOC, Littoral ligne 134 — relevé le 24/10/2026 |
+
+## Notes
+
+SCOUT ONOC du 24/10 — ligne 134 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée. · Porte A du 25/10 (2ᵉ tour) : 675 39 90 23 EST sur WhatsApp, PROFIL BUSINESS « AMBASSADOR Vision Sarl » — Medical & health, description lunetterie/verres/montures + service après-vente gratuit. Le nom du tableau de l'Ordre (« ASS pour RRPHDD ») n'est PAS le nom commercial : n'écrire que « Ambassador Vision ».
+
+## Prochaine action
+
+**Prospecter** : vérifier l'identité du numéro sur WhatsApp avant d'écrire (nom + catégorie).
+
+## Historique — lignes du journal qui citent ce lead
+
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 2 ligne(s).*
+
+`L5801` · RRPHDD** (Business « AMBASSADOR Vision Sarl »), **Bellevue Optique** (Business « bellevueoptique »,
+`L5807` · « ASS pour RRPHDD » = AMBASSADOR Vision Sarl ; « ISEE » = I See Better. Écrire à un cabinet avec le nom
+
+---
+
+## À la main (facultatif)
+
+*Ce que tu écris ici est perdu au prochain passage du générateur. Pour garder une information, mets-la dans `sales/Activity-Log.md`.*

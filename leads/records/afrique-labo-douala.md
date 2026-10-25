@@ -1,6 +1,6 @@
 # Afrique Labo SARL
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-13. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-25. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -35,7 +35,7 @@ Message 1 envoyé 17/09 13:24. **FU1 (M+2) ENVOYÉE par King le 19/09** (confirm
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 33 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 35 ligne(s).*
 
 `L61` · | jeu 17/09 13:24 | AFRIQUE LABO (690 54 70 93) | msg 1 | Envoyé, 2 coches | **Non** |
 `L78` · - **Fils ouverts sans réponse au 18/09 :** OraCare · MITOC · Baptist Comprehensive · Baird Memorial · The Skye · YAKS · AFRIQUE LABO · L'Opticien · La Béthanie · JEMPO. **31 fils ouverts · 2 réponses humaines (St. Theresa, UNI-LABO) · PRR = 2/31 = 6,5 %.**
@@ -70,6 +70,8 @@ Message 1 envoyé 17/09 13:24. **FU1 (M+2) ENVOYÉE par King le 19/09** (confirm
 `L3812` · **Récit de King, mot pour mot :** *« Répondu à Cavisa. Pas de relance pour Disc, Tchaya et Afrique Labo,
 `L3834` · ### ② DISC · TCHAYA · AFRIQUE LABO — la règle « on ne relance pas ce qui n'a jamais été ouvert »
 `L3837` · jour réclamait pour eux une relance 1/3, et pour Afrique Labo sa **troisième et dernière touche**. King
+`L5297` · pages Meta officielles Click-to-Message/WhatsApp ; Vision Council 2024 ; OMS Afrique 2025.
+`L5397` · - 21/10/2026 · **DM Optique — TikTok : Business Account IMPOSSIBLE au Cameroun (constaté sur capture + vérifié à la source) ; le plan continue en compte personnel** : King a tenté le passage en Business Account → écran « Business registration → Address → Select » → « Camero » renvoie **« No results found »** ; la page TikTok « About business verification » (consultée le 21/10) n'ouvre la vérification qu'à six marchés africains — Algérie, Égypte, Kenya, Maroc, Nigeria, Afrique du Sud, **pas le Cameroun** (même absence dans les listes Business Center / comptes pub self-serve). Décision : **compte personnel**, pas de faux pays (fausse adresse = risque de suspension + distribution vers le mauvais marché), pas de VPN, pas de second compte. Ce qu'on perd : badge, champ site, exports Business ; ce qui reste : publier, être trouvé, convertir en WhatsApp, et les analytics de base via **TikTok Studio** (creator tools ouverts aux comptes personnels). Bio B inchangée (le numéro devient le seul CTA écrit — ce que la contrainte prévoyait déjà). Corrigé aux 6 endroits qui annonçaient encore le Business : `launch/SETUP-TIKTOK.md` (section dédiée + ordre de la suite + optimisation locale), `content/strategy/TIKTOK-SEO-CHECKLIST-2026-10.md` §A, `posting-calendar.md`, `pre-launch-checklist.md`, `content/month1/w1/tiktok-01.md` (§6 mesure, §8). Détail : `clients/dm-optic/build-notes.md`.
 
 ---
 

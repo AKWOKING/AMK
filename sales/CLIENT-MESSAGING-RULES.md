@@ -295,7 +295,7 @@ humaine.
 `knowledge/OUTREACH-MESSAGING-2026-10-22.md` — le motif en quatre temps, le dédouanement, la sortie
 sans friction (« ça prend 2 minutes, et vous pouvez le faire sans moi »), et la règle **« on fait le
 test avant d'écrire »**. Trouver ces documents ne doit plus dépendre de la mémoire :
-`bash tools/graphify/ask.sh "message prospect clinique"` (voir PRE-FLIGHT §0g).
+`bash tools/graphify/ask.sh "message prospect clinique"` (voir PRE-FLIGHT §00 : le graphe passe **avant** la pré-vol).
 
 ### 13 bis · La porte du §13 — les quatre temps sont maintenant exécutables (24/10, 23h)
 
@@ -310,7 +310,7 @@ six sans la sortie sans friction**.
 ```bash
 python3 tools/qa/audit_outreach.py sales/<fichier>.md          # code 1 au premier manquement
 python3 tools/qa/audit_outreach.py sales/<fichier>.md --strict  # les avertissements bloquent aussi
-python3 tools/qa/test_audit_outreach.py                        # 15/15 : elle refuse bien ce qu'elle dit
+python3 tools/qa/test_audit_outreach.py                        # 21/21 : elle refuse bien ce qu'elle dit
 ```
 
 Le fichier doit mettre chaque message sous la forme `**⑥ Nom — Quartier — 677 00 00 00**` suivi de
@@ -328,3 +328,90 @@ seulement de renvoyer ce qu'on a déjà écrit comme interdit.
 
 Les messages d'un premier lot suivent **les cinq**. Le cinquième temps coûte huit mots et c'est lui qui
 manquait partout.
+
+### 13 ter · Le canal : WhatsApp, ou rien (ruling King 25/10)
+
+> *King, 25/10 : « consider dead those that aren't found on whatsapp » — « qui n'a même pas pris
+> l'initiative d'exister sur WhatsApp n'achètera pas un site ».*
+
+**La règle, dans l'ordre où elle s'applique :**
+
+1. **On teste le numéro sur WhatsApp AVANT d'écrire un mot.** C'est la porte A du
+   `sales/RESEARCH-STANDARD.md` §8b : profil vu, capture datée, nom affiché. Un numéro de l'annuaire de
+   l'Ordre n'est jamais une preuve d'existence.
+2. **Introuvable sur WhatsApp = `disqualified` au CRM, le jour même**, avec le motif daté
+   (`excluded_no_wa`). Pas `parked`, pas « à revoir » : mort.
+3. **Aucun canal de repli.** Pas de SMS, pas d'appel, pas d'e-mail, pas de visite. Le repli n'est pas
+   de la persévérance : c'est un contournement de la porte, et un cabinet qui ne répond pas sur le seul
+   canal où il est joignable ne répondra pas ailleurs.
+4. **Un numéro vivant n'est pas un acheteur** : vivant, ambigu (photo de personne, pas de nom
+   d'établissement) ou Business — c'est un fait sur la ligne, jamais sur l'intention.
+
+**Où c'est écrit, et pourquoi ici.** Le ruling vivait d'abord dans `leads/build/crm.py` (`VERIF_WA_2510`)
+et dans `sales/PORTE-A-2026-10-25.md` — c'est-à-dire dans la **donnée** et dans le **journal**, pas dans
+la **règle**. Une règle qui n'existe qu'en données disparaît au prochain rebuild. Elle est donc ici, et
+la porte est le CRM lui-même : `check_no_wa_is_dead()` dans `leads/build/crm.py` fait **échouer**
+`leads/build/rebuild.sh` — donc n'écrit rien — si une entrée de `VERIF_WA_2510` testée introuvable
+(`wa_verified="no"`) reste dans le pipeline au lieu d'être `disqualified`.
+
+**Une nuance qui compte** : ce contrôle porte sur `VERIF_WA_2510`, la table des numéros **réellement
+testés**. Dans les lots antérieurs, `wa_verified="no"` veut dire « jamais vérifié » (l'ancien
+`unknown`) : 20 lignes sont dans ce cas, et les disqualifier serait une faute — on ne tue pas ce qu'on
+n'a pas testé.
+
+### 13 quater · À qui on parle vraiment : présentation, prospect tiède, et le but de la réponse (ruling King 25/10, 141ᵉ message)
+
+> *« on dit bonjour c'est King alors qu'au premier message on ne sait pas se présenter, let's not forget
+> he is a warm prospect, un mot suffit pour faire quoi ?? »*
+
+Trois fautes, une seule cause : **le message parlait de nous au lieu de parler de lui.**
+
+| Faute | Ce qu'elle produisait | La règle |
+|---|---|---|
+| **« Bonjour, c'est King »** en ouverture | un prénom sans raison. Le prospect lit six mots et ne sait toujours pas pourquoi on écrit | **La présentation porte la raison du message.** À un prospect tiède (il a reçu un message hier, il y a répondu), on n'ouvre pas par une salutation : on ouvre sur **ce qu'il a déjà reçu** — « Je vous ai envoyé hier ce que Google affiche à Akwa ». Aucune auto-présentation : la porte la bloque (`SELF_INTRO` dans `audit_outreach.py`) |
+| **Un ton de premier contact** sur quelqu'un qui a déjà répondu | il refait connaissance avec un inconnu imaginaire, et le fil retombe à zéro | **Un prospect tiède se traite comme tiède** : on reprend le fil, on ne redécrit pas le décor, on ne redemande pas la permission. Le 👍 du 24/10 vaut ce qu'il vaut (pas un oui), mais il **prouve la lecture** |
+| **« Un mot suffit »** sans dire pour quoi | une question dont la réponse ne déclenche rien : elle se répond « oui » et meurt | **Toute question finale nomme ce que la réponse produit.** « Un chiffre suffit : je le compare à ce que la fiche laisse filer — vous saurez quoi corriger. » La porte le signale (`sortie seule en fin de message`) |
+
+**Les deux tests à passer avant d'envoyer, et ils tiennent en deux questions :**
+
+- *si je supprime la première phrase, le prospect sait-il encore pourquoi j'écris ?* Si non, la première
+  phrase était une présentation, donc du remplissage.
+- *si le prospect répond exactement ce que je demande, qu'est-ce qu'il reçoit ?* Si la réponse est
+  « rien, on verra », la question est décorative et le message ne vend rien.
+
+**Une exception, et elle est étroite** : le **premier** message à un **froid** garde la salutation
+(« Bonjour Docteur, à Bonanjo… ») — elle coûte deux mots et situe le message — mais **jamais** le
+prénom seul. Et cette salutation ne dispense pas de la raison : la première phrase reste le fait.
+
+### 13 quinquies · Le produit, le bonus, et la question qui ne promet que ce qu'on sait faire (ruling King 25/10, 142ᵉ message)
+
+> *« how do we know/find out ce que la fiche laisse filer, and he probably doesn't have any tool to
+> track those that come from google, shouldn't we stick to the website ?? which will show up when they
+> search optix and give all the information the client will need then we can also update his google
+> business profile as a bonus, it's already created so it's not much work that is if he has the logins »*
+
+**① Le produit est le site. La fiche Google est un bonus conditionnel.**
+
+| | Ce que c'est | Comment on en parle |
+|---|---|---|
+| **Le site** | la chose qu'on construit, qui s'affiche quand on cherche le nom du cabinet, et qui donne au patient **horaires, adresse, WhatsApp** | c'est **le produit** : on le nomme, sans maquette et sans prix au premier contact |
+| **La fiche Google** | un objet **déjà créé** par le cabinet ; la compléter (horaires, site, photos) demande peu de travail | **bonus, jamais produit** : on ne la vend pas seule, et on ne la promet **que si le prospect en a les accès** |
+| **Une mesure des patients venus de Google** | un compteur d'appels que **le cabinet n'a pas** et auquel **nous n'avons pas accès** | **jamais promise.** On ne peut pas savoir « ce que la fiche laisse filer » |
+
+**② La règle, en une phrase : une question ne peut promettre qu'un travail qu'on sait faire.**
+Avant d'écrire une question, on écrit la phrase qui vient après la réponse. Si cette phrase demande un
+outil que personne ne possède — un compteur d'appels, un historique de recherches, des statistiques que
+le cabinet ne tient pas — la question est fausse et le message avec elle.
+
+- ❌ « Combien de patients vous arrivent par Google ? … je le compare à ce que la fiche laisse filer. »
+  → suppose un compteur chez lui et un accès chez nous. **Aucun des deux n'existe.**
+- ✅ « Dites-moi si vous avez les accès ? Un mot suffit : la fiche suit le jour même. »
+  → suppose une information qu'il a ou qu'il n'a pas, et déclenche un travail réel dans la journée.
+
+**③ Ce qu'on peut mesurer, et c'est tout** : **notre** site (Cloudflare Web Analytics + Search Console,
+décidés le 20/10) — donc **après** la mise en ligne, et **sur notre périmètre**, jamais sur les appels
+du cabinet. Tant que rien n'est mesuré, on ne cite aucun chiffre de résultat (`PACK-OPTICIEN` §Preuve).
+
+**④ La porte** : `MESURE_IMPOSSIBLE` dans `tools/qa/audit_outreach.py` **bloque** les formulations du
+type « ce que la fiche laisse filer », « je le compare à », « combien de patients vous arrivent par
+Google » (banc : 21/21). Le goût reste humain ; la promesse impossible, non.

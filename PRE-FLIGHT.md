@@ -1,10 +1,52 @@
-> **Every orchestrator response to King must begin with the §0 pre-flight header. Every King-issued task that passes through the chief of staff will re-state this requirement at the top of the task. Non-compliance = returned message.** *(standing rule, King 08/10, 11th message)*
+> **Every orchestrator response to King must begin with the §0 pre-flight header, itself preceded by the step-0 graph line (§00, ruling King 25/10). Every King-issued task that passes through the chief of staff will re-state this requirement at the top of the task. Non-compliance = returned message.** *(standing rule, King 08/10, 11th message; completed 25/10 — 141ᵉ message)*
 
 # AMK — PRE-FLIGHT PROTOCOL (standing rule, King 17 Sep 2026)
 
+## 00 · ÉTAPE 0 — LE GRAPHE D'ABORD, AVANT CE DOCUMENT (ruling King 25/10, 141ᵉ message)
+
+> *King, 25/10 : « new standing rule : use graphify update or read graph, before you read pre-flight
+> document ».*
+
+**L'ordre est la règle.** Ce n'est pas une étape de la pré-vol : c'est l'étape qui la précède. Lire ce
+document d'abord, c'est déjà avoir choisi de se fier à sa mémoire pour trouver quelle règle s'applique.
+
+```bash
+cd /home/user/AMK
+bash tools/graphify/preflight.sh "le sujet du tour"     # ① graphe rejoué ② carte lue ③ sujet cherché
+```
+
+**Sur un arbre non vérifié, `wake.py` passe avant** : un graphe bâti sur un arbre faux est faux aussi
+(`AGENTS.md` §1, étapes 0 puis 0 bis). L'ordre complet, et il n'a pas d'autre forme :
+
+```text
+wake.py  →  tools/graphify/preflight.sh  →  PRE-FLIGHT.md  →  le dossier client  →  knowledge/
+```
+
+Une seule commande, ~10 s, locale, 0 clé, 0 réseau. Elle fait quatre choses et n'en fait pas d'autre :
+① rejouer le graphe du dépôt (`build_full_graph.py`, qui réécrit `ops/REPO-MAP.md`) ; ② lire la carte
+**dans cet ordre** — §0 (volumétrie et orphelins) · §6 (le sujet est-il dans la table de routage ?) ·
+§2 (le squelette) · §3 (les documents périmés encore cités, donc les consignes mortes) · §1 (la couche
+`knowledge/`) · §3 bis (ce que je vais créer existe-t-il déjà, sans être cité ?) ; ③ chercher le sujet
+du tour (`find.py`) et **nommer** les fichiers à ouvrir ; ④ imprimer la ligne d'en-tête à coller.
+
+**La ligne d'en-tête, désormais en premier** — avant la ligne `PRE-FLIGHT.md read` :
+
+```text
+Étape 0 : graphe rejoué 25/10 06:12 (12 153 nœuds) · carte lue §0/§6/§2/§3/§1/§3 bis · ask « … » →
+  sales/CLIENT-MESSAGING-RULES.md, knowledge/OUTREACH-MESSAGING-2026-10-22.md
+Pre-flight : [type de tâche] → PRE-FLIGHT.md read, [autres fichiers chargés].
+```
+
+« Graphe interrogé » sans nom de fichier ne prouve rien : on cite les fichiers **lus**, et ceux qui ont
+été **listés mais non lus**. `--read` lit la carte sans la reconstruire (utile hors écriture) ;
+`AMK_GRAPH_LINES` raccourcit l'affichage. Le détail de la procédure, les cinq sections et les limites de
+la carte restent au **§0h** ci-dessous — ce §00 ne dit que **l'ordre**.
+
+---
+
 ## 0 · MANDATORY FIRST READ (standing rule, King 08/10)
 
-> **§0 — MANDATORY FIRST READ.** Before beginning any task, read this document in full. Every task begins with §1e resync, then a §0 pre-flight confirmation in the response header: *"Pre-flight: [task type] → PRE-FLIGHT.md read, [other files loaded]."* A response without this header is incomplete and will be returned.
+> **§0 — MANDATORY FIRST READ.** Before beginning any task, read this document in full — **after** §00, jamais avant. Every task begins with §1e resync, then a §0 pre-flight confirmation in the response header: *"Pre-flight: [task type] → PRE-FLIGHT.md read, [other files loaded]."* A response without this header is incomplete and will be returned.
 
 Structural, not a memory test: the header is the **first line** of every response, so King can see the precondition was met without asking. (Supersedes the looser one-line format below; same discipline, now with the explicit « PRE-FLIGHT.md read » confirmation.)
 
@@ -184,6 +226,11 @@ Cette table ne suffit plus : **elle a été réévaluée le 24/10 et doublée pa
 ---
 
 ## 0h · Le graphe avant l'écriture — finding the rule stopped being a memory exercise (ruling King 24/10)
+
+> **Déplacé le 25/10 (ruling 141) : la procédure est en §00, et elle s'exécute AVANT la lecture de
+> ce document.** Ce §0h garde l'historique, les cinq sections détaillées et les limites de la
+> carte ; l'ordre, lui, n'est plus négociable : `bash tools/graphify/preflight.sh "<sujet>"`
+> d'abord, §0 ensuite.
 
 > *King, 24/10 : « I've told you several times to always go through the repo before starting anything.
 > You see `DECLINAISON-9-DECLENCHEURS`, §1② — there are so many documents and lessons you could've

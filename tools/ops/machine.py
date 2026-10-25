@@ -34,14 +34,17 @@ SKILLS = Path.home() / ".claude" / "skills"
 # ─────────────────────────────────────────────────────────── les huit étapes
 STAGES = [
     dict(
-        id=0, name="Réveil", alias=["reveil", "wake", "arbre"],
-        question="L'arbre que je lis est-il le vrai dépôt ?",
-        lis=["ops/GIT-STABILITY-NOTE.md (§ du 22/10)"],
-        lance=["python3 tools/ops/wake.py", "python3 tools/ops/wake.py --check"],
-        produit="un arbre au sommet distant, ou une réparation faite et dite",
-        fini="`wake.py --check` sort en code 0.",
+        id=0, name="Réveil + graphe", alias=["reveil", "wake", "arbre", "graphe", "graphify"],
+        question="L'arbre que je lis est-il le vrai dépôt — et le graphe est-il reconstruit dessus ?",
+        lis=["ops/GIT-STABILITY-NOTE.md (§ du 22/10)", "ops/REPO-MAP.md (écrit par l'étape 0, pas lu à la main)"],
+        lance=["python3 tools/ops/wake.py", "python3 tools/ops/wake.py --check",
+               'bash tools/graphify/preflight.sh "le sujet du tour"'],
+        produit="un arbre au sommet distant + le graphe rejoué + la carte lue + les fichiers à ouvrir, nommés",
+        fini="`wake.py --check` code 0 **et** `preflight.sh` a imprimé la ligne d'étape 0 (ruling 141 : le graphe avant PRE-FLIGHT.md).",
         pourquoi="22/10 : quatre fois dans la journée, le travail local a disparu et deux affirmations "
-                 "fausses ont été publiées (« le catalogue est vide », « la semaine 3 est bloquée »).",
+                 "fausses ont été publiées (« le catalogue est vide », « la semaine 3 est bloquée »). "
+                 "25/10 (ruling 141) : le graphe se lit ou se rejoue AVANT PRE-FLIGHT.md — la carte dit "
+                 "quelle règle existe, ce document dit comment la servir.",
     ),
     dict(
         id=1, name="Cadrage", alias=["cadrage", "demande", "ruling"],
@@ -60,8 +63,7 @@ STAGES = [
         question="Quelle règle gouvernait déjà ce sujet ?",
         lis=["ops/REPO-MAP.md §0 (chiffres) · §6 (routage) · §2 (squelette) · §1 (knowledge) · §3 bis (orphelins)",
              "ops/REPO-MAP.md §3 (périmé mais encore cité = consigne morte)"],
-        lance=["bash tools/graphify/install.sh",
-               "python3 tools/graphify/build_full_graph.py",
+        lance=["# le graphe a déjà été rejoué à l'étape 0 (preflight.sh) ; ici on ouvre ce qu'il a nommé",
                'bash tools/graphify/ask.sh "message prospect clinique" --top 8'],
         produit="la liste des fichiers LUS et des fichiers LISTÉS NON LUS, en tête de réponse",
         fini="aucune règle citée ne vient de mémoire ; chaque affirmation a un chemin.",
@@ -656,6 +658,10 @@ def rules() -> list[dict]:
         (not mg["ok"]) or (not mg["due"]),
         mg["why"] + " → bash tools/ops/machine.sh --merge" if mg.get("due") else
         (mg["why"] or f"{mg['files']} fichiers · {mg['lines']} lignes · {mg['commits']} commits — sous les seuils"))
+    st0 = step0_state()
+    add("etape-0-graphe", "Le graphe est rejoué (ou la carte lue) AVANT la lecture de PRE-FLIGHT.md.",
+        "PRE-FLIGHT §00 · ruling 141-142", "au début de chaque tour", "souple",
+        st0["ok"], st0["why"])
     add("carte-fraiche", "La carte du dépôt est reconstruite quand un fichier suivi bouge.",
         "PRE-FLIGHT §0h", "dès qu'un fichier suivi change", "dure",
         gr["ok"] and not gr["stale"],
@@ -874,6 +880,40 @@ def graph_state() -> dict:
                 cites=(cites.group(1) if cites else "?").replace(" ", ""),
                 orphans=(orphans.group(1) if orphans else "?"),
                 stale=stale, stale_by=newest_file if stale else None)
+
+
+def step0_state() -> dict:
+    """L'étape 0 (le graphe avant PRE-FLIGHT) a-t-elle été jouée aujourd'hui, et la carte vient-elle de là ?
+
+    Ruling King 25/10 (141ᵉ et 142ᵉ messages) : « do not forget graphify before pre-flight ». Une règle
+    qu'on doit se rappeler à chaque tour n'est pas une règle, c'est une intention — d'où l'estampe que
+    `tools/graphify/preflight.sh` écrit à chaque exécution. La règle vérifie deux choses : la date (le
+    tour d'aujourd'hui), et la cohérence (la carte a bien été écrite à ce moment-là, pas la veille).
+    """
+    stamp = STAMPS / "preflight.stamp"
+    if not stamp.exists():
+        return dict(ok=False, when=None, mode=None, why="aucune estampe → bash tools/graphify/preflight.sh \"<sujet>\"")
+    last = stamp.read_text(encoding="utf-8", errors="ignore").strip().splitlines()[-1:]
+    if not last:
+        return dict(ok=False, when=None, mode=None, why="estampe vide")
+    parts = last[0].split("\t")
+    try:
+        when = datetime.fromisoformat(parts[0])
+    except ValueError:
+        return dict(ok=False, when=None, mode=None, why="estampe illisible — relancer preflight.sh")
+    same_day = when.date() == date.today()
+    mode = parts[1] if len(parts) > 1 else "?"
+    fresh = MAP.exists() and abs(MAP.stat().st_mtime - when.timestamp()) < 900
+    ok = same_day and fresh
+    if ok:
+        why = f"graphe joué {when:%H:%M} ({mode}) · carte écrite au même moment"
+    elif not same_day:
+        why = (f"dernière étape 0 le {when:%d/%m %H:%M} — pas aujourd'hui → "
+               f"bash tools/graphify/preflight.sh \"<sujet>\"")
+    else:
+        why = (f"étape 0 jouée {when:%H:%M} mais la carte n'a pas été écrite au même moment "
+               f"→ python3 tools/graphify/build_full_graph.py")
+    return dict(ok=ok, when=when, mode=mode, why=why)
 
 
 def dated_file(pattern: str) -> tuple[Path | None, int | None]:

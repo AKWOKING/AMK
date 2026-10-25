@@ -117,10 +117,56 @@ CAS: list[tuple[str, str, str, str]] = [
         "absent des 12 premiers mots",
     ),
     (
+        "faux positif : « ou » ailleurs dans la phrase",
+        "Bonjour Docteur, à Bonanjo, votre fiche donne un numéro qui n'existe plus ou qui a changé. "
+        "Ce n'est pas votre travail, c'est la fiche : un patient appelle et raccroche. "
+        "Je vous l'envoie ? Deux minutes, et vous verrez ce que le patient voit.",
+        "Bonanjo",
+        "",
+    ),
+    (
         "question à deux branches",
         BON.replace("Je vous l'envoie ?", "C'est vous qui l'avez retiré, ou personne ne vous a prévenu ?"),
         "Bonanjo",
         "deux branches",
+    ),
+    (
+        "auto-présentation au premier message",
+        "Bonjour, c'est King. " + BON,
+        "Bonanjo",
+        "auto-présentation",
+    ),
+    (
+        "sortie qui ne dit pas ce qu'elle produit",
+        BON.replace("Je vous l'envoie ? Deux minutes à lire, vous décidez après.",
+                    "Je vous l'envoie ? Un mot suffit."),
+        "Bonanjo",
+        "sortie seule en fin de message",
+    ),
+    (
+        "faux positif : message tiède, sans bonjour ni présentation",
+        "Hier, à Akwa, Google sort un cabinet comptable avant Optix — ce n'est pas votre faute. "
+        "Un site à votre nom s'affiche à cette place avec horaires, adresse et WhatsApp ; je complète "
+        "votre fiche Google si vous en avez les accès. Dites-moi si vous les avez ? "
+        "Un mot suffit : la fiche suit le jour même.",
+        "Akwa",
+        "",
+    ),
+    (
+        "promesse de mesure impossible",
+        "Hier, à Akwa, Google sort un cabinet comptable avant Optix — ce n'est pas votre faute. "
+        "Dites-moi combien de patients vous arrivent par Google ? Un chiffre suffit : je le compare à "
+        "ce que la fiche laisse filer.",
+        "Akwa",
+        "promesse de mesure impossible",
+    ),
+    (
+        "question finale décorative",
+        "Bonjour Docteur, à Bonanjo ce matin, votre cabinet apparaît sur quatre annuaires. Ce n'est "
+        "pas votre travail, c'est la fiche recopiée. Un patient appelle et raccroche. Deux minutes "
+        "à lire, ça vous parle ?",
+        "Bonanjo",
+        "ne demande aucune action",
     ),
 ]
 

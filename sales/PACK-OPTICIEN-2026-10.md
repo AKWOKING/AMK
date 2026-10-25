@@ -17,13 +17,71 @@
   pas rebuild — couche config dans le build Univers).
 - Ils veulent « quelque chose + site web » : le pack est exactement cette demande.
 
+## Le contre-exemple vérifiable — la fiche Google de DM Optique (25/10, ruling King)
+
+Quand un opticien demande « à quoi ça ressemble, une fiche complète ? », **on ne décrit pas : on montre
+DM Optique**. Sa fiche Google est en ligne, complète, et c'est **notre** travail — donc elle est à nous,
+elle ne dépend d'aucune capture d'un tiers, et elle est vérifiable par le prospect en dix secondes.
+
+Ce qu'elle porte, et qui fait la démonstration à notre place :
+
+| Ce qu'un patient voit | DM Optique (fiche complète) | Optix (capture du 24/10) |
+|---|---|---|
+| catégorie | Opticien | « Optician in Douala » — correcte, mais en anglais |
+| adresse | complète (rue, quartier) | « OPTIX SARL, Douala » — **aucune rue** |
+| horaires | publiés | Google réclame « **Add business hours** » |
+| site web | renseigné | Google réclame « **Add website** » |
+| avis | collectés, répondus | « **Be the first to review** » |
+
+**Comment s'en servir, en une phrase** (jamais avant qu'il demande, jamais en ouverture) : « votre fiche
+ressemble à ça aujourd'hui *[la sienne]* ; celle-ci est celle d'un opticien de Douala qu'on a faite
+*[DM Optique]* — même métier, même ville ». Puis on se tait.
+
+**Ce qu'on ne dit pas** : « voilà ce qu'on a fait pour lui » sans qu'il demande (preuve sociale non
+sollicitée = vantardise), et **aucun chiffre de résultat** tant que le premier client n'a pas payé
+(§Preuve ci-dessus). La fiche est un **objet**, pas un résultat — c'est exactement pour ça qu'elle peut
+se montrer : elle ne promet rien.
+
+## Le produit, le bonus, et ce qui ne se promet pas (ruling King 25/10, 142ᵉ message)
+
+> *« shouldn't we stick to the website ?? which will show up when they search optix and give all the
+> information the client will need then we can also update his google business profile as a bonus,
+> it's already created so it's not much work that is if he has the logins »*
+
+| Objet | Son statut | Ce qu'on en dit |
+|---|---|---|
+| **Le site vitrine** (bloc Installation) | **le produit** | « un site à votre nom s'affiche quand on cherche le cabinet, avec horaires, adresse et WhatsApp » |
+| **La fiche Google du cabinet** | **bonus conditionnel** — elle existe déjà, la compléter demande peu | se propose **si le prospect en a les accès** ; ne se vend pas seule, ne se promet pas sans accès |
+| **Une mesure des patients venus de Google** | **n'existe pas** — le cabinet n'a pas de compteur d'appels, nous n'y avons pas accès | **jamais promise.** C'était la faute de la v6 du message Optix, corrigée le 25/10 |
+
+**Ce que « bonus » veut dire, exactement** : on ne facture pas la fiche séparément **dans le message** et
+on ne l'érige pas en livrable — elle accompagne l'installation quand les accès existent. *Si un jour
+elle devient un travail lourd (revendication, doublon, suspension), c'est un arbitrage de King, pas une
+ligne de ce document.*
+
+**Ce qu'on peut mesurer, et c'est tout** : **notre** site — Cloudflare Web Analytics + Search Console
+(20/10), donc après la mise en ligne, sur notre périmètre. Les appels du cabinet, non.
+
 ## Ce que le pack n'est JAMAIS
 Pas de claim médical · pas de remise (trade scope/timing) · pas de Play Store · pas de mensuel creux ·
-pas de travail sur la démo d'un prospect sans demande (règle 03/10) · pas de site re-pitché à Univers.
+pas de travail sur la démo d'un prospect sans demande (règle 03/10) · pas de site re-pitché à Univers · pas de mesure promise sur les appels du cabinet.
 
 ## Preuve (chronologie)
-Mercredi 07/10 : DM Optique (premier cas) · après mercredi : Univers Optique (si close). Le pack se
-vend avec la preuve, jamais avant : jusqu'au premier clos, on vend le pack, on ne cite pas de résultat.
+
+**Corrigé le 25/10** — cette section disait « jusqu'au premier clos, on ne cite pas de résultat », ce
+qui se lisait comme « nous n'avons aucun client ». C'est faux et c'est grave : **DM Optique SARL est
+signé** (pack global accordé le 01/10, 150 000 FCFA, installation en cours, paiement prévu le 31/10), et
+**Univers Optique** est en négociation. La règle exacte, à ne plus confondre :
+
+| Ce qu'on peut dire | Ce qu'on ne dit pas |
+|---|---|
+| « un opticien de Douala travaille avec nous » | « déjà 30 cabinets équipés » |
+| « voici la fiche Google que nous avons créée pour lui » (montrée **s'il la demande**) | « +30 % de patients », « plus d'appels », tout **résultat** — aucun n'est encore mesuré |
+| « le pack coûte 150 000 FCFA, 50/50, rien dû avant accord » | un prix de résultat, un abonnement creux |
+
+**Aucun résultat n'est mesurable avant la mise en ligne complète et une mesure de départ** (Cloudflare
+Web Analytics + Search Console, décidés le 20/10). Donc : la preuve, c'est **le travail visible** (la
+fiche, la page), jamais un chiffre.
 
 ## Fait de marché — prix des opticiens au Cameroun (08/10) : ce qui est établi, et ce qui ne l'est pas
 

@@ -150,8 +150,11 @@ et vous me dites ce qui est faux. On ne publie rien avant que vous ayez dit oui.
   Le héros d'une histoire, c'est **le prospect**, avec ses vraies données (année d'ouverture, quartier, acte rare).
 - **Aucune urgence de notre fabrication** (« plus que 2 places », « réponse avant vendredi »). On a une urgence
   vraie : la saison, sa page cassée, son adresse morte. Elle suffit.
-- **Aucun faux compte** ni « déjà 30 cabinets équipés » — nous en avons **2 en négociation et 0 signé**. Le
-  mensonge le plus rentable à court terme est celui qui coûte la campagne entière.
+- **Aucun faux compte** ni « déjà 30 cabinets équipés ». Le compte VRAI, arrêté au 25/10 : **un client
+  signé — DM Optique SARL, pack global accordé le 01/10, 150 000 FCFA, paiement prévu le 31/10 — et un
+  en négociation (Univers Optique)**. Ce qui ne se dit pas, c'est un **résultat** : aucun n'est encore
+  mesuré. « Un opticien de Douala travaille avec nous » est vrai et se dit ; « +30 % de patients » est
+  faux et ne se dira jamais. Le mensonge le plus rentable à court terme coûte la campagne entière.
 - **Aucun « je vous relance une dernière fois puis j'arrête »** suivi d'une relance — la règle tient : quand on
   l'écrit, on s'y tient.
 

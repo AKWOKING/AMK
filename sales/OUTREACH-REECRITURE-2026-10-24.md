@@ -21,7 +21,7 @@ le dépôt** :
 **La faute n'est pas d'avoir mal cherché : c'est d'avoir cherché à la main.** Les deux fichiers
 existaient, étaient indexés dans le PRE-FLIGHT, et je ne les ai pas ouverts.
 
-**Ce qui change à partir d'aujourd'hui** (règle `PRE-FLIGHT.md` §0g, ajoutée ce jour) : avant d'écrire
+**Ce qui change à partir d'aujourd'hui** (règle `PRE-FLIGHT.md` §0h, déplacée en §00 le 25/10 : le graphe passe avant la pré-vol) : avant d'écrire
 un document de vente ou un message, on lance `bash tools/graphify/ask.sh "<sujet>"`. La sortie liste
 les documents à lire ; l'en-tête pré-vol **cite ceux qui ont été lus et ceux qui ne l'ont pas été**.
 L'outil est local, gratuit, sans clé d'API : `tools/graphify/` (README là-bas).

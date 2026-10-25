@@ -321,3 +321,31 @@ décision verrouillée gagne (§2, §11, §14, §15) — et on le dit, on ne le 
 4. **Typographie française :** espace insécable avant ? : ! » et après « ; la ponctuation reste collée au mot surligné ; lignes équilibrées (pas de mot orphelin).
 5. **Montserrat « static » = variable à l'axe Thin par défaut** (rappel de §6) : fixer le poids (`set_variation_by_axes`) sinon tout sort en filet de 100.
 6. **Texte alternatif par slide** livré avec la légende ; hashtags : huit, volumes non vérifiés (hypothèse).
+
+---
+
+## 13 · 25/10/2026 — la falaise à 0:02 était un défaut d'ARC, pas de sujet
+
+**Ce qu'on croyait** : les deux publications fondatrices perdaient le spectateur à la deuxième seconde
+(analytics TikTok du 17/09, §12) parce que le **sujet** était mauvais ou la vidéo mal montée.
+
+**Ce qu'on sait maintenant** : les deux démarraient **à zéro** — carton de titre, logo, phrase
+d'introduction qui n'apprend rien. Le carrousel `kallowaymarketing` du 23/10 nomme ça exactement :
+« It doesn't start at zero. It starts at **70 out of 100** » et rejette l'arc classique
+(« That **does NOT work** on social media »). Nous faisions l'arc classique — une seule montée, le CTA
+à la fin.
+
+**La doctrine est écrite** : `knowledge/STORY-ARC-2026-10-25.md` (six règles, trois formes de secousse,
+ce que la source ne dit pas). **La porte existe** : `tools/qa/audit_reel.py` (12/12 cas).
+**Preuve sur pièce** : EP01 v1 (21,4 s, un seul pic) → EP01 v2 (23,4 s, **trois** cimes, voix posée).
+
+**Trois leçons de fabrication, payées le même soir :**
+
+| Leçon | Détail |
+|---|---|
+| **Un fichier audio qui existe n'est pas un fichier qui parle** | un clip TTS rendu « avec succès » (9 549 octets, 2,33 s) était **muet** — RMS 0,003 contre 0,096. `build_timing.py` mesure le niveau et refuse ; le beat concerné est devenu un **souffle déclaré**, pas un trou |
+| **La voix commande, l'image suit** | les durées de beat sont **mesurées** sur les clips (`timing.json`), jamais écrites à la main ; un beat trop long pour sa voix se raccourcit **dans le texte**, jamais dans l'audio |
+| **`✓` n'existe pas dans Montserrat** | `d.text("✓")` sort une boîte vide — la coche se **dessine** (`reelkit.draw_check`) |
+
+**Ce qui n'a pas changé** : aucun chiffre de résultat, aucune mention d'IA (ruling 11/10), aucun nom de
+client, sous-titres écrits à la main. Un arc meilleur ne rend pas une preuve fausse acceptable.

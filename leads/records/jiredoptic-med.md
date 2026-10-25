@@ -1,6 +1,6 @@
 # JiredOptic Med
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-13. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-25. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -31,7 +31,7 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : LIPOTH Pierrette. Probleme : etre 
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 8 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 11 ligne(s).*
 
 `L4986` · - **Contrôle documenté :** `sales/WAVE-TEMPLATE-CURRENT.md` créé (texte du 12/10). Preuve vérifiée : Planète Optique (capture, 12/10 11:34). **JiredOptic : non vérifié** (CRM : `Contacted = No`, aucune trace d'envoi dans le dépôt). À confirmer par King.
 `L5033` · Kamaïs/Bonanjo · Maff/Bonadibong · Faby · JiredOptic · Planète · Centrale) ; Lumumba + Bali hors
@@ -41,6 +41,9 @@ VAGUE 1 OPTICIENS (21/09). Titulaire public : LIPOTH Pierrette. Probleme : etre 
 `L5088` · - **JiredOptic 11:53 :** King envoie la sortie de courtoisie (✓✓, capture) : « Bonjour Madame, merci
 `L5185` · - **Résultat rétro :** 0/8 passent 5/7 en M0 (max 4/7). Les deux envois réels (JiredOptic 3/7, Planète 2/7) auraient été retenus. DM Optique (3/7 en M0, clos ensuite à 7/7) serait refusé par l'option B.
 `L5192` · - **Ruling 2 — décompte (CORRECTION) :** la vague comptait **7 envois à froid** ; **5 sur 7** ont échoué aux gates (Horizon, Faby, Centrale : WhatsApp · Kamaïs, Maff : déjà contactés) ; **2 sur 7** ont passé (JiredOptic a refusé, Planète silence). Lumumba n'est pas à froid (contacté 24/09), traité à part. Le « 5 sur 8 » était une erreur de notre part. `RETRO-VAGUE-2026-10-12.md` §1/§3 corrigés.
+`L5247` · ## 13/10/2026 (mardi, 14:50) — réconciliation JiredOptic / Planète · CRM via crm.py · commit
+`L5249` · - **JiredOptic (vérifié par capture, 13/10 14:33) :** envoi 12/10 11:37 (« Bonjour Mme Pierrette — JiredOptic Med… »). Réponse 11:47 : « non », puis « bonjour monsieur ». Clôture de King 11:53. **Aucune relance.** Le CRM source (`crm.py`, après fusion) enregistre déjà `contacted=Yes`, `reply=Yes`, `stage=parked`. **Mon affirmation précédente (« contacted=No ») venait d'une lecture d'une version périmée : fausse.** Le fichier contrôle est corrigé.
+`L5254` · - **Non décidé (King) :** l'étape CRM de JiredOptic (reste `parked`, ou `disqualified` avec raison ?) ; la date de suivi de Planète (`2026-10-13` dans la source, périmée).
 
 ---
 

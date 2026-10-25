@@ -5581,3 +5581,441 @@ exige un **verdict écrit par affirmation** : aucun des six n'a de fiche dans `l
 vivent uniquement dans le document de vente. **Un fait vérifié ce soir** : `optix-sarl.business.site`
 renvoie bien une **erreur 404** (Google a fermé les sites `business.site` en mars 2024, redirection
 arrêtée le 10 juin 2024).
+
+## 24/10/2026 (12:12) — Optix : un 👍, et un message qui n'avait pas passé la porte
+
+**Ce qui est parti.** Un message à **OPTIX SARL Douala** (697 72 32 65) à 12:12, angle « fiche Google
+abandonnée ». Ce n'est pas le texte du lot du 26/10 : c'est un autre, et la porte le refuse —
+**101 mots, 7 phrases**, pas de dédouanement, pas de sortie sans friction, le quartier absent des douze
+premiers mots. Deux défauts que le script ne voit pas : « **qui vous font perdre des clients tous les
+jours** » est un chiffre inventé sur son activité (`DETECTION-FUITES` §2), et « **On règle ça ensemble
+cette semaine ?** » est un rendez-vous dans le premier message (§13).
+
+**Les trois affirmations, vérifiées ce soir** : le lien de site est mort (**VRAI** — 404 constaté, et la
+page Facebook du cabinet l'affiche encore) · zéro avis (**VRAI** — « Not yet rated (0 Reviews) » sur la
+même page) · la catégorie « contrôle de gestion » (**NON VÉRIFIÉ**, aucune source retrouvée : à ne pas
+répéter sans capture) · « il manque vos horaires » (**NON VÉRIFIÉ**).
+
+**La réaction.** Le cabinet a **réagi 👍** à 12:12. Premier signe d'un opticien sur une première touche.
+Ce n'est ni un oui ni un non : il a lu, il n'a pas répondu. Le seul geste suivant est **un message le
+27/10** (§10 du lot d'envoi), puis plus rien — message lu sans réponse = `parked` au-delà.
+
+**La porte s'est améliorée au passage.** Elle criait « question à deux branches » sur un « ou » qui
+n'était pas une question ; corrigée le jour même (découpage par phrase). Son banc de test passe de
+**15 à 16 cas**, dont ce faux positif précis.
+
+**Réutilisation des concepts dentaire et labo (question de King).** Le bac était un clone **shallow** :
+historique récupéré (`fetch --unshallow`, 730 commits). Les six pages supprimées le 24/10 sont
+récupérables (`54d962cb`, `38b7f06c`) — mais le contrôle de fuite trouve l'identité complète des anciens
+prospects dans les six : noms, quartiers, et **deux numéros** dans Béthanie. Verdict : **on réutilise la
+direction** (déjà consignée au registre d'unicité), **pas le fichier** ; deux concepts neufs sur le
+gabarit DM, contrôle de fuite en porte de sortie. Détail : note de conception §6.
+
+## 24/10/2026 (23h30) — Optix : la capture part avec le message, on ne demande plus la permission
+
+**Ce que King a tranché.** La version d'avant proposait la capture au cabinet — *« Je vous envoie la
+capture ? »*. C'est un aller-retour inutile : le fait a déjà été annoncé dans le premier message, la
+pièce qui le prouve **part avec le suivi**. On ne demande pas la permission de livrer une preuve qu'on
+a déjà dit détenir. Le motif « il n'a rien demandé, donc on n'envoie pas » est **rejeté** pour ce fil.
+
+**La capture existe maintenant.** `clients/dm-optic/launch/optix/capture-optix-2026-10-24.png` (900×900,
+250 Ko) : deux blocs encadrés en rouge — le résultat Facebook et la fiche Google, tous deux extraits des
+captures de King du 24/10, aucune retouche — et à droite, trois lignes de commentaire qui nomment ce que
+Google réclame lui-même (« Add business hours », « Add website », « Be the first to review »). Six
+assemblages ont été relus à l'œil avant de retenir celui-ci : deux coupaient la carte au lieu de la
+fiche, un superposait le titre au panneau.
+
+**Le message — 48 mots, 3 phrases, 1 question, porte OK, 0 bloquant, 0 avertissement :**
+
+> Bonjour, à Akwa carrefour Idéal, je reviens une fois : la capture ci-jointe vient de votre fiche.
+> Votre page Facebook renvoie vers un site qui n'existe plus, et Google n'a aucun site à afficher —
+> ce n'est pas de votre fait.
+> Deux minutes à lire, sans moi : ça vous parle ?
+
+Il remplace **le texte du §2 du lot**, qui finissait lui aussi par « Je vous envoie la capture ? » — la
+même faute, à un autre endroit. Le lot est donc désormais **cinq messages froids et un suivi**, et le
+suivi part le **lundi 26/10 à 9 h** (J+2, 42 h après le 👍), pas le 27.
+
+**Et la vérification qui change une phrase.** Les captures tranchent la seule affirmation non vérifiée :
+le panneau Google dit **« OPTIX SARL · Optician in Douala »** — la catégorie est **juste**. La phrase
+« entreprise spécialisée dans le contrôle de gestion » est la **description de la page Facebook**,
+reprise par Google dans ses résultats. Donc le message du 24/10 disait **faux au sens strict**, et le
+nouveau message ne la reprend pas. Règle qui en sort, ajoutée au §10.2 du lot : **nommer la surface,
+jamais l'éditeur** — « la description de votre page Facebook », pas « Google dit ».
+
+Deux numéros coexistent chez Optix, et il faut les garder distincts : Google affiche **6 81 36 92 33**,
+la page Facebook **697 72 32 65** — c'est le second qui a reçu le message et le 👍.
+
+## 24/10/2026 (23h50) — Scout ONOC : 21 cabinets neufs entrés par le générateur, et le générateur qui avait reculé
+
+**Le scout.** Les 75 cabinets du Littoral publiés par l'Ordre ont été recopiés et croisés avec les 61
+lignes opticien du CRM (nom normalisé *et* numéro) : **21 cabinets manquaient**. Ils sont entrés par
+`leads/build/crm.py` (`OPTICIENS_ONOC_2410`) — jamais à la main dans le CSV. **20 ont un mobile**,
+entrés en `prospecting` / `wa_verified="unknown"` / `contacted="No"`, aucun message écrit : la porte A
+(§8b) reste à passer. Le 21ᵉ, **Prism Optique**, ne publie qu'un **fixe** (233 42 62 73) : entré **sans**
+numéro WhatsApp, avec la raison écrite, pour qu'il n'atterrisse pas dans une file d'envoi. CRM : **163 →
+184 lignes**. Tableau complet et pièges : `sales/SCOUT-ONOC-2026-10-24.md`.
+
+**Deux pièges traités par le croisement, pas à l'œil.** Star Optic (ligne 154) publie le numéro de
+**Médina Optic** (699 93 93 34) : une ligne, pas deux, et pas de seconde touche à un cabinet déjà
+contacté le 24/09. Et « Centrale Optique » (ligne 145, disqualifiée le 12/10 faute de WhatsApp) n'est
+**pas** « Centrale d'Optique Panafricaine » (ligne 89, neuve, 695 29 79 04) : deux titulaires, deux
+numéros, et le verdict de l'une ne s'étend pas à l'autre.
+
+**Le trou, et il était sérieux.** Au premier rebuild, le CSV est passé de **163 à 162 lignes** et quatre
+leads sont revenus de `parked`/`qualifying` à `prospecting`. Cause : **`crm.py` en tête de branche était
+la version du 10/10** — le travail du 12/10 (`excluded_no_wa` sur Faby et Centrale, refus de Jired à
+11:47, envoi Planète, tags Maff/Horizon/Kamaïs, RDV Univers Optique du 16/10) et la relance Planète du
+13/10 existaient dans `9a49aa1` et `71851af`, mais le fichier avait été remplacé par une version
+antérieure. Le CSV, lui, portait l'état du 13/10 : le dépôt avait donc **un générateur en retard sur sa
+propre donnée**, et le premier rebuild allait effacer six semaines de rulings. C'est exactement le
+scénario contre lequel `guard.py` a été écrit le 22/09 — et la leçon du jour est que `git log -- file`
+ment : il s'arrête au 10/10 sur un fichier modifié le 12 et le 13.
+
+**Réparé et contrôlé.** Générateur repris depuis `71851af` (13/10) + bloc scout par-dessus, empreinte
+re-scellée (`guard.py lock`, puis `check` → rc 0). Contrôle après rebuild : **163 lignes identiques
+champ par champ** (comparaison colonne à colonne, 0 différence) **+ 21 nouvelles**. Les fiches
+(`leads/records/`, 127 fichiers) et les vues sont régénérées : elles avaient **11 jours de retard** et
+citent maintenant les entrées de journal du 20 et du 21/10.
+
+**Le prochain geste, un seul.** Les cinq messages froids du lot du 26/10 partent d'abord (Optix avec sa
+capture, §10.3). La porte A des 20 numéros se passe ensuite, en une session de 4 minutes.
+
+## 25/10/2026 — Optix part aujourd'hui, seul, et le message dit enfin une chose vraie
+
+**Trois rulings de King, appliqués.** ① Optix part **le dimanche 25/10**, et c'est le **seul** message
+du jour : il a réagi 👍 le 24/10 à 12:12, on ne le fait pas attendre « un jour plein » pour obéir à un
+délai J+2/J+3 qui protège les **silencieux**, pas ceux qui ont montré quelque chose. ② La fiche Google
+de **DM Optique** sert de **contre-exemple** face à un opticien qui demande à quoi ressemble une fiche
+complète — documenté au `PACK-OPTICIEN` §« Le contre-exemple vérifiable ». ③ La liste des numéros à
+vérifier est écrite : `sales/PORTE-A-2026-10-25.md`, **26 numéros** (6 du lot + 20 du scout), format
+à cocher, ~4 minutes.
+
+**Et le message a été réécrit, parce que King a démonté celui d'avant — à juste titre.** Quatre
+reproches, tous fondés : « bonjour à Akwa ou à Optix ? », « la capture ci-jointe vient de votre fiche —
+elle a fait quoi ?? », « votre page Facebook… est faux », et « je ne comprends pas ce que vous essayez
+de transmettre ».
+
+**Le fond du reproche sur Facebook est le plus grave, et il change un fait du dossier.** La page
+« Optic Sar l | Douala » que Google affiche **n'est pas celle du cabinet** : c'est un **cabinet
+d'expertise comptable** (« optimisation des coûts, fiscalité, création d'entreprise, business plan,
+contrôle de gestion, formation », page « Service de comptabilité », `ange raphael, Douala`,
+**6 96 14 77 46**, `formation-optic@gmail.com`, 333 abonnés). Même nom à une lettre près, autre métier,
+autre numéro. Le cabinet, lui, n'a **aucune** page Facebook visible sur Google. Donc :
+- « Google vous présente comme une entreprise de contrôle de gestion » était **faux** — Google classe
+  bien Optix « Optician in Douala » ; le contrôle de gestion est le métier de l'homonyme ;
+- « votre page Facebook renvoie vers un site qui n'existe plus » est **retiré** : le 404 est daté, mais
+  l'appartenance de cette page au cabinet n'est pas prouvée par une capture. **Ce qu'on ne peut pas
+  dater ne part pas.**
+
+**Le nouveau message — 54 mots, 4 phrases, 1 question, porte OK 0/0, capture jointe :**
+
+> Bonjour, c'est King. À Akwa carrefour Idéal, voici ce que Google affiche pour Optix : la fiche est
+> classée « Optician in Douala », sans rue, sans site, sans horaires — et à côté apparaît un autre
+> « Optic Sarl », un cabinet de contrôle de gestion.
+> Ce n'est pas de votre fait.
+> Deux minutes, sans moi : ça vous parle ?
+
+Il ne dit plus **que** ce que la capture montre. L'homonyme n'est pas une preuve contre lui : c'est ce
+que **son patient** voit, et c'est pour ça que le message ne l'accuse de rien. La capture a été
+**refaite** pour le dire correctement (bloc 1 = sa fiche, bloc 2 = la page de l'homonyme, chacune
+nommée pour ce qu'elle est).
+
+**Le calendrier qui suit** : dimanche 25/10 Optix seul · lundi 26/10 Bouda · mardi 27/10 COMED ·
+mercredi 28/10 IVY · jeudi 29/10 Jolinom · vendredi 30/10 Le Sourire · **rien le 31/10** (jour du
+paiement DM Optique).
+
+## 25/10/2026 — la porte A, premier tour : 10 numéros testés, 6 joignables, et trois cibles mortes
+
+**Ce que King a testé, capture par capture, et ce que ça change.**
+
+| Cible | Résultat |
+|---|---|
+| **③ Optix** (697 72 32 65) | **vivant** — message du 24/10 livré, réaction 👍 (profil non relevé) |
+| **⑨ COMED** (699 91 56 52) | **vivant** — profil « COMED » |
+| **⑧ IVY** (697 94 52 51) | **vivant mais ambigu** — profil « IVY », **photo de personne**, pas de profil Business |
+| **⑥ Bouda Seidou** | **mort** — introuvable |
+| **⑩ CMO Jolinom** | **mort** — introuvable |
+| **⑦ Le Sourire** | **mort** — introuvable |
+| **Saoudia Optique** (696 04 04 13) | **vivant** — profil « Saoudia Optique » |
+| **ISEE** (656 97 80 43) | **vivant, profil Business** « I See Better », cabinet d'optique médicale, BP 3549 Douala |
+| **Free Optic** (679 11 37 60) | **vivant, profil Business** « Free Optic », « Medical & health » |
+| **Centrale d'Optique Panafricaine** (695 29 79 04) | **mort** → disqualifiée (`excluded_no_wa`, ruling 12/10) |
+
+**Conséquence immédiate : le lot de six messages redevient un lot de deux envois sûrs.** Optix dimanche
+25/10, COMED lundi 26/10, IVY le 27 **si le profil est bien celui du cabinet**. Les trois autres ne
+partent pas — trois messages auraient été envoyés dans le vide, dont un vers un numéro inexistant.
+
+**Un trou nommé, pas oublié** : le ruling WhatsApp-only du 12/10 vise les **opticiens**. Pour une
+**clinique** dont le numéro n'est pas sur WhatsApp (Bouda, Jolinom, Le Sourire), **aucun canal de repli
+n'est décidé** — ni SMS, ni appel. Elles restent `prospecting` au CRM, sans envoi, jusqu'à un ruling.
+
+**Les dix sont inscrits par le générateur, pas à la main** : `LOT_2610_LEADS` (les six cibles du lot, qui
+n'avaient **aucune ligne au CRM** jusqu'à aujourd'hui — un envoi à une cible absente de la base ne peut
+ni se vérifier ni s'exclure) et `VERIF_WA_2510` (les quatre du scout). CRM **184 → 190 lignes**, contrôle
+après rebuild : **4 lignes modifiées** (les quatre du scout) + **6 ajoutées**, rien d'autre.
+
+**Et le message d'Optix a été réécrit une seconde fois.** « Deux minutes, sans moi : ça vous parle ? »
+était de l'argot de prospection — King n'y comprenait rien, et il a raison : ça ne veut rien dire pour
+un opticien. Remplacé par une question en français simple : **« Deux minutes à regarder, vous voulez
+qu'on en parle ? »** (55 mots, 4 phrases, porte OK 0/0).
+
+## 25/10/2026 (00h30) — « le message ne vend rien » : la psychologie entre dans le lot, et les numéros morts meurent
+
+**Le reproche le plus utile de la semaine — il est fondé.** Sur le message d'Optix : *« what does this
+message aim to achieve ? deux minutes à regarder quoi ? où est la douleur, l'urgence, l'aversion à la
+perte, le FOMO, la psychologie de vente ?? »*. La version d'avant **décrivait une capture**. Elle avait
+été écrite pour **passer la porte**, et la porte ne mesure que la forme — mots, phrases, questions,
+interdits. **La forme n'est pas la persuasion.** C'est un trou, il est nommé ici.
+
+**Le message, quatrième version — 54 mots, 4 phrases, 1 question, porte OK 0/0 :**
+
+> Bonjour, c'est King. En octobre, à Akwa, les parents font examiner les yeux des enfants : qui cherche
+> un opticien tombe sur un cabinet de comptabilité, et appelle le suivant. Votre fiche n'a ni horaires,
+> ni site, ni avis — pas de votre fait. Un opticien de Douala affiche tout ça : vous voulez voir,
+> deux minutes ?
+
+| Levier | Où | Pourquoi c'est vrai |
+|---|---|---|
+| urgence **réelle** | « en octobre, les parents font examiner les yeux » | saison des examens de vue des enfants (doctrine `PERSUASION` §4) — **expire le 31/10** |
+| douleur nommée | « tombe sur un cabinet de comptabilité » | capture du 25/10 : l'homonyme comptable remonte sur son nom |
+| aversion à la perte | « et appelle le suivant » | comportement du patient, pas une statistique inventée |
+| preuve sociale | « un opticien de Douala affiche tout ça » | DM Optique, contre-exemple validé |
+| action attendue | « vous voulez voir, deux minutes ? » | une réponse d'un mot ; la capture est **déjà jointe** |
+
+**Et la porte a gagné le contrôle qui manquait** : la question finale doit contenir un **verbe d'action**
+(« voulez », « montre », « dites »…), sinon avertissement. Banc de test : **17/17** (un cas neuf, la
+« question finale décorative »). Ça attrape le message qui n'attend rien ; ça n'attrape pas un message
+sans douleur — **ça reste humain**, un mot-clé ne reconnaît pas une douleur.
+
+**Ruling du 25/10 sur les numéros morts — appliqué au CRM, pas seulement noté.** « Pas sur WhatsApp =
+mort. Pas de SMS, pas d'appel : qui n'a même pas pris l'initiative d'exister sur WhatsApp n'achètera pas
+un site, et le site n'aurait personne pour répondre. » Les **sept** lignes sans WhatsApp passent donc
+`disqualified` avec motif daté : Bouda, CMO Jolinom, Le Sourire, Centrale d'Optique Panafricaine,
+Optimat Vision, La Fibre Optique — et le trou « canal de repli des cliniques » que j'avais nommé ce
+matin est **fermé**.
+
+**Deuxième tour de porte A, 9 numéros, 9 captures de King :** joignables — **Alpha Optic**, **La Fierté
+de l'Optique**, **Light Optique**, **Ets Espace Médical** (profil Business « Optic Medical Favour and
+Joy »), **S.O.S Vision** (Business « Sos Vision », se déclare aussi ophtalmologiste), **ASS pour
+RRPHDD** (Business « AMBASSADOR Vision Sarl »), **Bellevue Optique** (Business « bellevueoptique »,
+Bali Serena Hôtel). Morts — **Optimat Vision**, **La Fibre Optique**. Total : **22 testés, 15
+joignables, 7 morts**, 7 restants.
+
+**Ce que les captures ont révélé et qui n'était écrit nulle part** : **le nom commercial n'est presque
+jamais le nom de l'annuaire de l'Ordre.** « Ets Espace Médical » = Optic Medical Favour and Joy ;
+« ASS pour RRPHDD » = AMBASSADOR Vision Sarl ; « ISEE » = I See Better. Écrire à un cabinet avec le nom
+du tableau officiel, c'est écrire à une entreprise qui ne se reconnaît pas. **On utilise le nom du
+profil WhatsApp.**
+
+## 25/10/2026 (01h) — « plus de présentation » : le message vend une question, et « 0 client signé » était faux
+
+**Deuxième correction de fond de la nuit, et la plus coûteuse à ne pas voir.**
+
+**① Le message proposait encore une présentation.** « Vous voulez voir, deux minutes ? » — c'est une
+démonstration, même polie. King : *« on a dit : plus de présentation sans que le prospect la demande. Il
+s'en fiche. Ce qu'il veut savoir : pourquoi je lui écris, pourquoi il devrait répondre alors qu'il a des
+patients à recevoir, et surtout pourquoi il me donnerait son argent. »* Le message est donc réécrit
+autour de ces trois questions, et **ne propose plus rien à regarder** — 46 mots, 4 phrases, 1 question,
+porte OK 0/0 :
+
+> Bonjour, c'est King. À Akwa, sur Google, « Optix » fait sortir un cabinet de comptabilité avant le
+> vôtre, et votre fiche n'a ni horaires, ni site, ni avis — pas de votre fait. Des patients appellent
+> ailleurs chaque semaine : combien vous en arrivent par Google ? Un mot suffit.
+
+**Pourquoi ça tient, en trois lignes** : il sait **pourquoi** on écrit (un fait précis sur SA fiche) ;
+il sait **pourquoi répondre** (la question porte sur SON chiffre, et « un mot suffit ») ; **on ne lui
+demande pas d'argent** au premier contact — le prix viendra quand il aura répondu, et quand il aura
+demandé. Les trois réponses possibles (un chiffre / « je ne sais pas » / silence) sont écrites d'avance
+au §10.4 du lot, parce que le vrai test d'un premier message est la deuxième phrase qu'on envoie.
+
+**La capture jointe reste** : elle est déjà annoncée par le fait qu'on décrit, et elle ne demande rien.
+
+**② « Nous avons zéro client signé » — faux, et c'est moi qui l'ai écrit.** King : *« what do you call
+DM Optique SARL ? are you still using the graphify skill ?? »*. Non : c'est pire que ça — **le document
+lui-même était périmé**. `sales/MESSAGES-2026-09-23-PERSUASION.md` §7 disait « 2 en négociation et
+0 signé », et `PACK-OPTICIEN` §Preuve disait « jusqu'au premier clos, on ne cite pas de résultat ». Les
+deux phrases datent d'avant le **01/10**, jour où **DM Optique SARL a signé** (pack global, 150 000
+FCFA, paiement prévu le 31/10). Lire le dépôt ne suffit pas : **il faut lire ses dates.** Les deux
+documents sont corrigés, avec la distinction qui manquait :
+
+| Ce qu'on peut dire | Ce qu'on ne dit jamais |
+|---|---|
+| « un opticien de Douala travaille avec nous » | « déjà 30 cabinets équipés » |
+| « voici la fiche Google qu'on a créée pour lui » — **s'il la demande** | « +30 % de patients » : **aucun résultat mesuré** |
+| « 150 000 FCFA, 50/50, rien dû avant accord » | un abonnement creux, un prix de résultat |
+
+**La leçon, écrite pour ne pas la repayer** : une stat sans date est une stat qui deviendra fausse sans
+prévenir. Toute affirmation de type « nous avons N clients » porte désormais **sa date et sa source**.
+
+**③ Troisième tour de porte A, 6 numéros, 6 captures.** Joignables : **Emeraude Optique**, **El Shadai**
+(vivant mais **aucun nom d'établissement** — photo de personne), **Pagrot Optique**, **Capelli Optique
+Médicale** (Business, « Optometrist • Optician », Bonamoussadi), **Optique Pro** (profil
+« **Laury Ntemtsa** » — la ligne directe du titulaire), **Maranatha Optics**. Total : **27 testés, 21
+joignables, 6 morts**. Il reste **World Vision** (656 03 21 72).
+
+## 25/10/2026 (tour 141) — le graphe passe AVANT la pré-vol, le message cesse de se présenter, et la porte A ferme
+
+**① Une règle de méthode, et elle change l'ordre des gestes.** King : *« new standing rule : use
+graphify update or read graph, before you read pre-flight document »*. Le graphe n'était pas absent du
+dépôt — il était **mal placé** : `PRE-FLIGHT.md` §0h le rangeait *dans* la pré-vol, donc après la
+lecture du document qui dit quoi lire. Lire d'abord la pré-vol, c'est chercher la règle de mémoire.
+
+Ce qui a été construit, et ce n'est pas un paragraphe de plus :
+
+- **`tools/graphify/preflight.sh`** — une seule commande : ① rejoue le graphe (~10 s), ② lit
+  `ops/REPO-MAP.md` dans l'ordre §0 → §6 → §2 → §3 → §1 → §3 bis, ③ cherche le sujet du tour et
+  **nomme les fichiers**, ④ imprime la ligne d'en-tête à coller. `--read` lit sans reconstruire.
+- **`PRE-FLIGHT.md` §00** — nouveau, au-dessus de tout : *« Étape 0 — le graphe d'abord, avant ce
+  document »*, avec l'ordre complet `wake.py → preflight.sh → PRE-FLIGHT.md → dossier client →
+  knowledge/`. Le §0h garde l'historique, les cinq sections et les limites de la carte.
+- **`AGENTS.md` §1** — le rituel passe de quatre à cinq commandes, le graphe en 0 bis (après `wake.py`,
+  parce qu'un graphe bâti sur un arbre faux est faux aussi).
+- **`ops/MACHINE.md` §2** + **`tools/ops/machine.py`** — l'étape 0 devient « Réveil + graphe » : elle
+  n'est finie que si `wake.py --check` passe **et** si `preflight.sh` a imprimé sa ligne.
+- **`tools/graphify/README.md`**, `sales/CLIENT-MESSAGING-RULES.md` §13 et
+  `sales/OUTREACH-REECRITURE-2026-10-24.md` : les trois renvois qui pointaient vers la vieille place
+  sont corrigés.
+
+**② Le message Optix — deux reproches, une seule cause.** King : *« on dit bonjour c'est King alors
+qu'au premier message on ne sait pas se présenter, let's not forget he is a warm prospect, un mot
+suffit pour faire quoi ?? »*. L'ouverture donnait un prénom sans raison à un homme qui a reçu un message
+hier et y a répondu 👍 ; et « Un mot suffit » demandait une réponse sans dire ce qu'elle produit.
+**6ᵉ version** (55 mots, 3 phrases, 1 question, porte 0/0) :
+
+> Je vous ai envoyé hier ce que Google affiche à Akwa : un cabinet comptable passe avant Optix, dont
+> la fiche n'a ni horaires, ni site, ni avis — pas votre faute.
+> Dites-moi combien de patients vous arrivent par Google ?
+> Un chiffre suffit : je le compare à ce que la fiche laisse filer — vous saurez quoi corriger.
+
+Trois conséquences dans le lot : **plus un seul « Bonjour, c'est King »** ; les trois froids dont la
+sortie était nue (« Deux minutes. ») disent maintenant ce que la réponse rend (« et vous verrez ce qu'il
+lit avant d'appeler ») ; ⑦ ⑧ ⑨ ont été resserrés pour rester sous 55 mots (54, 54, 54). **Lot entier :
+6 messages, 0 bloquant, 0 avertissement.**
+
+**③ La porte, qui a appris deux règles.** `tools/qa/audit_outreach.py` : `SELF_INTRO` (bloque
+l'auto-présentation — ruling 141) et « sortie seule en fin de message » (signale une formule de sortie
+de ≤ 4 mots qui ne dit pas ce qu'elle produit). Banc : **20/20** (17 + 3 cas, dont un faux positif tiède
+qui doit passer propre). Les deux règles sont écrites dans `sales/CLIENT-MESSAGING-RULES.md`
+**§13 quater**, avec le tableau des trois fautes et les deux tests d'avant-envoi. Le ruling WhatsApp,
+lui, passe dans **§13 ter** — il ne vivait que dans `crm.py` et dans `PORTE-A`, c'est-à-dire dans la
+donnée, pas dans la règle.
+
+**④ La porte A ferme.** **World Vision (656 03 21 72) est vivant** : la capture montre le numéro sous le
+titre **« Contacts »** (et non « Not in your contacts »), avec le nom « World Vision » et un logo de
+globe — le contact est donc déjà enregistré sur le téléphone. `wa_verified=yes`,
+`profile_name_seen="World Vision"` au CRM. **Total : 28 testés · 22 joignables · 6 morts · 0 restant.**
+
+**⑤ Une porte pour le ruling WhatsApp, parce qu'il n'en avait pas.** `check_no_wa_is_dead()` dans
+`leads/build/crm.py` fait échouer `rebuild.sh` (donc n'écrit rien) si une entrée de `VERIF_WA_2510`
+testée introuvable reste dans le pipeline. Vérifié qu'elle mord (entrée factice → code 1). Nuance
+écrite : le contrôle porte sur les numéros **testés** ; dans les lots antérieurs, `wa_verified="no"`
+veut dire « jamais vérifié » (20 lignes) — on ne tue pas ce qu'on n'a pas testé.
+
+**État** : CRM **190 lignes**, **67 `wa_verified=yes`**, **21 disqualifiés**. Graphe rejoué après
+écriture (`ops/REPO-MAP.md` régénéré : la nouvelle commande et les deux sections y entrent).
+Envois : Optix **dimanche 25/10, seul** · COMED **lundi 26/10** · IVY **mardi 27/10 si confirmé**.
+
+## 25/10/2026 (tour 142) — « ce que la fiche laisse filer » n'existe pas : le message vend le site, la fiche Google devient un bonus
+
+**① Le reproche qui portait sur une promesse impossible.** King : *« how do we know/find out ce que la
+fiche laisse filer, and he probably doesn't have any tool to track those that come from google,
+shouldn't we stick to the website ?? »*. La v6 demandait « combien de patients vous arrivent par
+Google ? » et promettait de comparer ce chiffre « à ce que la fiche laisse filer ». **C'était une
+compétence inventée** : le gérant n'a aucun outil de suivi des appels venus de Google, et nous n'avons
+aucun accès à ses appels. On demandait donc au prospect de nous prêter une mesure que personne ne
+possède. C'est la faute la plus coûteuse des six versions — pas une maladresse de ton, un mensonge de
+capacité.
+
+**② La règle qui en sort, et elle vaut pour tous les messages** : **une question ne peut promettre
+qu'un travail qu'on sait faire.** Avant d'écrire la question, on écrit la phrase qui suit la réponse ;
+si cette phrase exige un outil que personne n'a, la question est fausse. Écrit dans
+`sales/CLIENT-MESSAGING-RULES.md` **§13 quinquies**, avec la porte `MESURE_IMPOSSIBLE` dans
+`tools/qa/audit_outreach.py` (bloque « ce que la fiche laisse filer », « je le compare à », « combien de
+patients vous arrivent par Google »). Banc : **21/21**.
+
+**③ Le produit est le site ; la fiche Google est un bonus conditionnel.** Ruling King 25/10, écrit dans
+`PACK-OPTICIEN` (« Le produit, le bonus, et ce qui ne se promet pas ») :
+
+| Objet | Statut |
+|---|---|
+| **le site vitrine** — il s'affiche quand on cherche le nom du cabinet, avec horaires, adresse, WhatsApp | **le produit** |
+| **la fiche Google** — elle existe déjà ; la compléter demande peu | **bonus**, proposé **si le prospect en a les accès** ; jamais vendu seul, jamais promis sans accès |
+| **une mesure des patients venus de Google** | **jamais promise** — aucun des deux ne peut la produire |
+
+**Ce qu'on peut mesurer reste ce qu'on possède** : notre site (Cloudflare Web Analytics + Search
+Console, 20/10), après mise en ligne, sur notre périmètre.
+
+**④ La 8ᵉ version du message Optix — 52 mots · 4 phrases · 1 question · porte 0/0.**
+
+> Je vous ai envoyé hier ce que Google affiche à Akwa : un cabinet comptable passe avant Optix — pas
+> votre faute. Un site à votre nom prend cette place, avec horaires, adresse et WhatsApp. Dites-moi si
+> vous avez les accès de votre fiche Google ? Un mot suffit : je la complète le jour même.
+
+Trois changements : l'ouverture que King a validée (« Je vous ai envoyé hier… ») est reprise telle
+quelle ; la question porte sur **une information que le gérant possède ou non** (les accès) au lieu d'un
+calcul qu'il ne fait pas ; et la conséquence est **immédiate et vérifiable** (la fiche complétée le jour
+même) au lieu d'une comparaison impossible. Le lot entier reste à **0 bloquant · 0 avertissement**.
+
+**⑤ Le mapping par nom est tranché.** King : *« 77648790 == 677 64 87 90 and 550 49 52 9 == 655 04 95
+29 — I have checked and crosschecked »*. Les deux doutes du tour 140 sont clos : ce ne sont pas deux
+lignes, ce sont deux écritures du même numéro. Notes datées dans `VERIF_WA_2510` (`leads/build/crm.py`,
+donc elles survivent au rebuild) et dans `sales/PORTE-A-2026-10-25.md` §2.
+
+**⑥ « Do not forget graphify before pre-flight » — la règle a maintenant une porte.** Une consigne
+qu'on doit se rappeler à chaque tour n'est pas une règle, c'est une intention. `preflight.sh` écrit donc
+une **estampe** (`~/.amk-provisioned/preflight.stamp` : date, mode, nœuds, sujet), et `machine.py` gagne
+la règle **`etape-0-graphe`** : elle passe si l'estampe est du jour **et** si la carte a été écrite au
+même moment. Registre `ops/MACHINE.md` §9 tenu à jour (la porte `registre-complet` l'exige).
+
+**⑦ Les dix captures renvoyées sont déjà au CRM — rien de neuf, et c'est vérifié.** Les six du lot
+(COMED vivant, IVY vivant-ambigu, Optix vivant, Bouda/Jolinom/Le Sourire morts) et les quatre du scout
+(Saoudia Optique vivant, Centrale d'Optique Panafricaine morte, ISEE = Business « I See Better »,
+Free Optic = Business « Free Optic ») étaient enregistrés au tour précédent. Aucune double ligne, aucun
+recomptage : **28 testés · 22 joignables · 6 morts**.
+
+## 25/10/2026 (tour 143) — PLAYBOOK D'ACQUISITION SOCIALE : 7 artéfacts, la source appliquée, nos chiffres datés
+
+**① Ce qui a été produit** : `sales/SOCIAL-ACQUISITION-PLAYBOOK-2026-10-25.md` — offre et 3 ICP, carte de 36 sujets (12/12/12), système hebdomadaire (3 posts/semaine, lot du dimanche 2 h 30, calendrier rempli 26/10 → 21/11), chemin de conversion (un lien `wa.me/237677789631`, une action « APERÇU »), 8 modèles, déploiement 90 j (13 points de contrôle, 5 critères d'arrêt), audit binaire des 7 échecs. Source : BONT, 12:56 (`youtu.be/Wcju7Xt_dGU`).
+
+**② Six conflits tranchés, tous écrits au §0** : (a) la source annonce « 5 mistakes », en énumère 7 et numérote deux fois le 3 → renumérotés 1-7 ; (b) « CTA dans chaque post » (source) contre « CTA parfois » (`CONTENT-STRATEGY-V2` §2, 05/10) → **la source gagne pour le social**, le ruling du 05/10 a produit 0 demande entrante en trois semaines ; (c) LinkedIn par défaut → **Facebook** (6,84 M au Cameroun contre 637 k sur Instagram, NapoleonCat/StatCounter 09/2026, déjà cités dans `AMK-PRESENCE` §8) ; (d) page de réservation → **pas de page à construire**, WhatsApp est le lien unique ; (e) prix → **jamais dans un post** (décision 08/10) ; (f) try-on en tête (`PACK-OPTICIEN`, 05/10) contre site en tête (ruling 142) → **le site mène**, le try-on ne s'annonce jamais dans un post.
+
+**③ Chiffres : aucun n'est inventé.** Prix 200 000 / 50 000 / 900 000 = `PACK-OPTICIEN` (05/10) ; marché 175–450 k = `knowledge/PRIX-2026-10-24.md` §1 (relevé 24/10) ; audience = NapoleonCat + StatCounter 09/2026. Les seuils du §6.3 sont déclarés `[INFERENCE]` : des **déclencheurs de décision**, pas des prévisions. Le seul résultat manquant — un chiffre de résultat client — reste `[NEEDS DATA]`, et les 3 sujets BOFU qui en dépendent (B9, B10, B11) sont marqués 🔴 et **non planifiés**.
+
+**④ Ce que le playbook corrige dans le dépôt** : le calendrier `CALENDRIER-4-SEMAINES-2026-10-12.md` est remplacé **pour la partie sociale** à partir du 26/10 (il mesurait Instagram/TikTok et prévoyait un CTA « parfois »), mais son point de décision du 04/11 reste lu : il porte sur l'ancien canal et ne tue pas celui-ci.
+
+**⑤ Les garde-fous du ruling 142 sont conservés** : aucun post ne promet de mesure des appels, la fiche Google reste un bonus conditionnel (sujet B6), et aucun client n'est nommé sans accord écrit (sujet B8 en 🟡, B9 en 🔴).
+
+**⑥ Reste à faire, par King** : confirmer le **nom et l'URL** de la page Facebook (créée le 22/10, `AMK-PRESENCE` §1), régler le bouton « Envoyer un message WhatsApp » sur `wa.me/237677789631`, et **publier** — le premier post est mardi 27/10 à 18:00.
+
+## 25/10/2026 (tour 144) — « CONTENT LIKE THESE » : OUI — le studio explainer existe, EP01 est rendu
+
+**① La réponse était oui, et elle est en code.** King a envoyé trois captures d'un reel « post-it animé » en demandant *« I want content like these, can you do it ?? yes or no »*. Réponse : **oui**. Ce qui n'existait pas à 20:20 existe à 20:25 : `content/reels/reelkit.py` (moteur) + `content/reels/ep01/make_ep01.py` (épisode) → `ep01-v1.mp4`, **1080×1920, 30 fps, 21,4 s, 1,5 Mo**, rendu en 28 s, sans tournage, sans voix, sans visage.
+
+**② Le format est repris, pas les images.** Fond crème + trame de points · titres Montserrat noir avec **le dernier mot en orange** · cartes punaisées (punaise, ombre portée, `0 site` en pied de carte comme les `0 visitors` de la référence) · **pastille bicolore** noire avec le second mot orange · mascotte en bas à gauche qui désigne · barre de progression fine. **Aucune capture de King n'est copiée dans le dépôt.**
+
+**③ Un vrai bug de police, trouvé et corrigé.** Les quatre fichiers `content/assets/fonts/Montserrat-{Bold,ExtraBold,SemiBold,Medium}.ttf` sont **le même fichier variable** (744 936 octets chacun) : PIL rendait l'instance par défaut, **Thin**. Le premier rendu sortait maigre alors que le code demandait ExtraBold. `reelkit.font()` demande maintenant l'axe (`set_variation_by_name`) et retombe sur l'instance statique pour Poppins. **Conséquence pour tout le dépôt** : tout rendu d'image qui utilise ces fichiers sans l'axe sort en Thin — le kit est désormais le seul chemin de rendu recommandé.
+
+**④ Le fond de la mascotte est retiré par diffusion, pas par couleur.** Une découpe couleur globale mangeait le visage ; `cut_background()` part des quatre coins et s'arrête sur les traits noirs. La mascotte se pose proprement sur la trame.
+
+**⑤ Aucune règle du dépôt n'a été pliée.** L'épisode ne contient **aucun chiffre de résultat**, aucun nom de client ni de concurrent, aucune mesure promise (ruling 142), aucune mention d'IA (ruling 11/10), et le texte est **écrit**, pas sous-titré automatiquement (ruling 11/10). Les seuls faits montrés — `Add business hours`, `Add website`, `Be the first to review` — viennent de la capture Optix du **24/10**, déjà citée dans `PACK-OPTICIEN`.
+
+**⑥ L'épisode est déjà planifié, pas un jouet.** C'est le sujet **T2** du playbook (§2) : **mardi 03/11**, et il peut avancer au **27/10** si le carrousel T1 n'est pas prêt. Le playbook gagne un **§5 bis** : le réel explainer sans voix, produisible par l'agent seul, qui couvre huit des vingt-quatre sujets vidéo. La voix, elle, reste une présence humaine — elle se posera sur le **même master**, sans refaire les images.
+
+**⑦ Reste** : EP02 (fiche DM Optique), EP03 (3 questions avant de payer), EP04 (deux accueils), EP05 (deux aperçus) — un fichier de 150 lignes par épisode, cinq fonctions. Le mode d'emploi, les garde-fous et la file sont dans `content/reels/README.md`.
+
+## 25/10/2026 (tour 145) — L'ARC MODERNE : la falaise à 0:02 n'était pas le sujet, c'était le départ à zéro ; EP01 passe en v2 avec voix
+
+**① La source.** King a envoyé le carrousel « How to tell a story that works on social media » (`kallowaymarketing`, captures du 23/10, 7 slides dont une non capturée). Ce qu'elle dit : l'arc classique (conflit → montée → **climax** → chute → résolution) « does **NOT** work on social media » ; à la place, un arc qui **ne démarre pas à zéro** mais à **70/100**, avec un contexte posé dans les **5 premières secondes**, une **secousse entre 5 et 10 s** (contraste, affirmation contraire, ou chiffre qui frappe), puis **peak → release → peak** jusqu'à la fin, le climax n'étant pas au milieu mais **empilé en petites cimes**. La slide 7/7 n'était pas dans les captures : **trou déclaré**, contenu non inventé.
+
+**② Pourquoi ça nous concerne, chiffres en main.** La « falaise à 0:02 » du 17/09 (`ANALYTICS-LOG`) n'était pas un défaut de sujet : nos deux vidéos **démarraient à zéro** (carton, logo, intro). Et les trois vidéos product-led (277 vues lues, **0 demande**) avaient **un seul pic, le CTA final** — l'arc classique, exactement ce que la slide 2 rejette.
+
+**③ Ce qui a été écrit, et rendu opposable.** Nouveau document **`knowledge/STORY-ARC-2026-10-25.md`** (six règles exécutables, trois formes de secousse, ce que la source ne tranche pas). Nouvelle porte **`tools/qa/audit_reel.py`** : refus si le départ est sous 70, si la première cime sort de 5–10 s, s'il y a moins de 3 cimes, si deux cimes se touchent sans relâchement, si le CTA n'est pas la dernière cime ou dépasse 4,5 s, si un chiffre n'a ni source ni date, ou si le réel dépasse 25 s. **Banc `test_audit_reel.py` : 12/12** — y compris le cas « réel sain » qui doit passer.
+
+**④ EP01 v1 → v2, sur pièce.** v1 : 21,4 s, ouverture sur un carton de titre, **un seul pic**. v2 : **23,4 s, 6 beats, 3 cimes** (5,0 s · 12,4 s · 19,0 s), ouverture **dans** l'écran de recherche (« opticien akwa »), et **une voix** — `voice-03`, 6 clips, une phrase par beat. La porte passe : `✓ ep01 23,4 s · 6 beats · 3 cimes`.
+
+**⑤ Deux défauts trouvés en vérifiant, pas en relisant.** (a) Le clip de voix de `release2` a été généré **sans erreur** — 9 549 octets, 2,33 s — et il est **muet** : RMS 0,003 contre 0,096 pour les cinq autres. Un fichier qui existe n'est pas un fichier qui parle ; `build_timing.py` mesure désormais le **niveau** de chaque clip et refuse une synthèse muette. `release2` devient un **souffle déclaré** (`SOUFFLE = {"release2"}`) : un silence voulu, pas un trou. (b) `✓` n'existe pas dans Montserrat — la coche sortait en boîte vide (§6 de `CONTENT-LESSONS`, déjà vu le 17/09) : elle est maintenant **dessinée** (`reelkit.draw_check`).
+
+**⑥ La voix commande, l'image suit.** Les durées de beat ne sont plus écrites à la main : elles sont **mesurées** sur les clips (`voice/timing.json`, produit par `build_timing.py`). Le beat s'allonge jusqu'à la voix, jamais l'inverse ; si le total dépasse 25 s, la porte **échoue en nommant le beat à raccourcir** — on coupe le texte, pas la voix. Total actuel : **23,4 s** pour un plafond de 25.
+
+**⑦ Ce qui n'a pas bougé.** Aucun chiffre de résultat, aucun nom de client, aucune promesse de mesure (ruling 142), aucune mention d'IA (ruling 11/10), sous-titres **écrits**. La seule chose que la v2 ajoute, c'est une **forme**. **À faire par King** : écouter le master (`content/reels/ep01/ep01-v2.mp4`), dire si la voix lui va, puis publier — mardi 03/11, avancable au 27/10.

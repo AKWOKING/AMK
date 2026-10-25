@@ -83,7 +83,18 @@ graphify query "règles de relance" --budget 1200
 graphify god-nodes --top 15
 ```
 
-## La règle qu'il sert (PRE-FLIGHT §0h)
+## La commande de l'étape 0 — `preflight.sh`
+
+```bash
+bash tools/graphify/preflight.sh "le sujet du tour"   # ruling King 25/10 (141ᵉ message)
+```
+
+Rejoue le graphe, lit `ops/REPO-MAP.md` dans l'ordre §0 → §6 → §2 → §3 → §1 → §3 bis, cherche le
+sujet, nomme les fichiers à ouvrir et **imprime la ligne d'en-tête à coller avant la ligne
+`PRE-FLIGHT.md read`**. `--read` lit la carte sans la reconstruire ; `AMK_GRAPH_LINES` raccourcit
+l'affichage. Elle s'exécute **avant** la lecture de `PRE-FLIGHT.md`, jamais après.
+
+## La règle qu'il sert (PRE-FLIGHT §00 pour l'ordre, §0h pour le détail)
 
 **Avant d'écrire un document de vente, un message, un script ou une règle** : `ask.sh` sur le sujet.
 La sortie liste des fichiers réels avec leurs numéros de ligne. L'en-tête pré-vol **cite ceux qui ont

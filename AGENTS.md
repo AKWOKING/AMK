@@ -6,15 +6,22 @@ Tout ce qui compte doit donc être écrit ici ou dans `ops/`.
 
 ---
 
-## 1 · Le rituel de reprise — quatre commandes, dans cet ordre
+## 1 · Le rituel de reprise — cinq commandes, dans cet ordre
 
 ```bash
 cd /home/user/AMK
-bash tools/ops/machine.sh          # 0. où j'en suis : l'étape, ce qui est frais, ce qui ne l'est plus
-python3 tools/ops/wake.py          # 1. l'arbre est-il le vrai dépôt ? (répare si besoin)
+python3 tools/ops/wake.py          # 0. l'arbre est-il le vrai dépôt ? (répare si besoin) — sans lui, le graphe est faux
+bash tools/graphify/preflight.sh "le sujet du tour"   # 0 bis. LE GRAPHE — avant PRE-FLIGHT.md (ruling 141)
+bash tools/ops/machine.sh          # 1. où j'en suis : l'étape, ce qui est frais, ce qui ne l'est plus
 cat ops/HANDOFF-*.md | tail -60    # 2. où en est le travail, ce qui est décidé, ce qui reste
 bash tools/ops/gate-dm.sh          # 3. la porte : état + rendus frais (avant tout contenu DM)
 ```
+
+**L'étape 0 passe avant tout le reste, y compris avant la lecture de `PRE-FLIGHT.md`** (ruling King
+25/10, 141ᵉ message : *« use graphify update or read graph, before you read pre-flight document »*).
+Elle rejoue le graphe (~10 s), lit `ops/REPO-MAP.md` dans l'ordre §0 → §6 → §2 → §3 → §1 → §3 bis,
+cherche le sujet du tour et **nomme les fichiers à ouvrir**. Sa ligne d'en-tête se colle en tête de
+réponse, avant la ligne `PRE-FLIGHT.md read`. Détail et limites de la carte : `PRE-FLIGHT.md` §00 et §0h.
 
 **La machine est dans `ops/MACHINE.md`** : huit étapes, trois boucles, une table « qui tranche quoi ».
 Elle ne dit aucune règle métier — elle dit l'ordre, ce qui vérifie, et où ça s'écrit. Une session neuve

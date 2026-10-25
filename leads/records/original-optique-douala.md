@@ -1,6 +1,6 @@
 # Original Optique
 
-> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-13. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
+> ⚙️ **Fiche générée** par `leads/build/records.py` le 2026-10-25. Ne pas modifier à la main — les corrections vont dans `sales/Activity-Log.md`, et remontent ici au passage suivant.
 
 ## État (lu dans `leads/CRM.csv`)
 
@@ -35,9 +35,10 @@ NE PAS ENVOYER. A un site vivant. Ecarte le 21/09 pendant la preparation de la v
 
 ## Historique — lignes du journal qui citent ce lead
 
-*Source : `sales/Activity-Log.md` — citation, jamais recopie. 1 ligne(s).*
+*Source : `sales/Activity-Log.md` — citation, jamais recopie. 2 ligne(s).*
 
 `L611` · **Original Optique** (a un site vivant). *C'est la vérification qui coûte 2 minutes et évite un message gênant.*
+`L5454` · Jolinom, Optix), relance Original Optique calée au 26/10, `CLIENT-MESSAGING-RULES` §13 amendée,
 
 ---
 

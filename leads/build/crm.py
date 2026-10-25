@@ -842,8 +842,8 @@ OPTICIENS_2109 = [
          wa_number="699 25 28 74", wa_verified="yes",
          contact_channel="WhatsApp", decision="BAYANG BIHEN Calvin", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah + Google Maps + Wayback + kerawa (2022)",
-         stage="closing", contacted="Yes", reply="Yes", demo="Yes",
-         reply_type="human", last_send_state="delivered",
+         stage="qualifying", contacted="Yes", reply="Yes", demo="Yes",
+         reply_type="human", last_send_state="delivered", stage_since="2026-10-12",
          site_url="", site_checked_on="2026-09-21",
          Website="univers-optique.com — HORS LIGNE (aucun enregistrement DNS, vérifié 21/09 ; dernière copie Wayback vivante 02/11/2023, répertoire Apache vide au 09/01/2024)",
          **{"Website status": "AUCUN site à moderniser : le domaine est MORT. Le cabinet existe en ligne "
@@ -851,7 +851,7 @@ OPTICIENS_2109 = [
             "Maligah à champs vides, annonce kerawa retirée. C'EST UNE REPRISE, PAS UNE REFONTE. "
             "Dernière page vivante = WordPress avec le nom d'un autre opticien (« Gweleo ») dans le texte, "
             "3 cartes pointant vers la même URL, et une bannière « 15 % » sans offre derrière."},
-         **{"Follow-up date": "2026-09-22", "Conversation": "Message 1 lun 21/09 17:50 (variante C) · "
+         **{"Follow-up date": "2026-10-16", "Conversation": "Message 1 lun 21/09 17:50 (variante C) · "
             "17:56 il répond « Combien ça me coûte » (2e question de prix de la campagne) · 18:08 King : "
             "100 000 FCFA la page complète FR|EN, mise en ligne 3 à 5 jours, 50 000 pour commencer + 50 000 "
             "à la mise en ligne, rien dû avant accord, aperçu gratuit promis « d'ici demain » · AUCUN prix "
@@ -887,8 +887,23 @@ OPTICIENS_2109 = [
          wa_number="692 08 00 55", wa_verified="unknown",
          contact_channel="WhatsApp", decision="BOUDZAP ZOYEM Hermine", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
-         stage="prospecting", contacted="No", reply="No", demo="No",
+         stage="disqualified", contacted="No", reply="No", demo="No",
+         disqualification_reason="excluded_no_wa (12/10) : ni 692 08 00 55 ni 672 55 21 37 sur "
+         "WhatsApp (tests King) ; pas d'appel (ruling 12/10 — un opticien sans WhatsApp n'entre "
+         "pas au pipeline).",
+         wa_number_note="12/10 : 692 08 00 55 PAS sur WhatsApp ; 2ᵉ numéro 672 55 21 37 testé par "
+         "King, PAS sur WhatsApp non plus.",
          notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : BOUDZAP ZOYEM Hermine. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
+    dict(slug="centrale-optique", org="Centrale Optique", city="Douala", org_type="other", language="FR",
+         wa_number="693 96 89 56", wa_verified="no",
+         contact_channel="WhatsApp", decision="ZOBO Jean", source="directory",
+         source_detail="Annuaire officiel ONOC #145 (044/2020) + « inscrits » (ZOGO Jean Prosper, 699 59 82 86)",
+         stage="disqualified", contacted="No", reply="No", demo="No",
+         disqualification_reason="excluded_no_wa (12/10) : 693 96 89 56 et 699 59 82 86 pas sur "
+         "WhatsApp (tests King) ; pas d'appel (ruling 12/10).",
+         notes="VAGUE 12/10. Titulaire public : ZOBO Jean (annuaire) / ZOGO Jean Prosper (inscrits) — "
+               "même cabinet physique (ruling 11/10 : n° d'inscription 044 unique). Jamais contacté ; "
+               "exclu de toute vague : aucun WhatsApp sur aucun numéro."),
     dict(slug="horizon-optique", org="Horizon Optique", city="Douala", org_type="other", language="FR",
          wa_number="677 44 74 17", wa_verified="unknown",
          contact_channel="WhatsApp", decision="DJEUMO FEUNOU Siméon", source="directory",
@@ -935,13 +950,24 @@ OPTICIENS_2109 = [
          wa_number="696 26 50 31", wa_verified="unknown",
          contact_channel="WhatsApp", decision="LIPOTH Pierrette", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
-         stage="prospecting", contacted="No", reply="No", demo="No",
+         stage="parked", contacted="Yes", reply="Yes", demo="No",
+         reply_type="human", last_send_state="delivered", stage_since="2026-10-12",
+         **{"Conversation": "12/10 11:37 — VAGUE : message gabarit envoyé au 696 26 50 31 (compte WA "
+            "business « jirehopticmed », optique médicale, 08:00–18:00, jirehopticmed@gmail.com). "
+            "11:47 — ELLE : « non » puis « bonjour monsieur » = PREMIER REFUS de la vague (10 min). "
+            "Règle : pas de re-ask ; une seule sortie de courtoisie proposée, puis silence sauf retour "
+            "spontané. Parké 12/10, motif daté ; dépark seulement si elle réécrit."},
          notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : LIPOTH Pierrette. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
     dict(slug="plan-te-optique", org="Planète Optique", city="Douala", org_type="other", language="FR",
          wa_number="699 85 58 35", wa_verified="unknown",
          contact_channel="WhatsApp", decision="MAKONGO Jean Dury", source="directory",
          source_detail="Annuaire officiel ONOC + Maligah",
-         stage="prospecting", contacted="No", reply="No", demo="No",
+         stage="qualifying", contacted="Yes", reply="No", demo="No",
+         last_send_state="sent", stage_since="2026-10-12",
+         **{"Follow-up date": "2026-10-13",
+            "Conversation": "12/10 matin — VAGUE : message gabarit envoyé au 699 85 58 35. "
+            "Fenêtre : silence → note vocale 13/10, appel 15/10 ; une réponse annule la fenêtre. "
+            "13/10 11:01 : relance « je voulais juste m'assurer que vous l'avez bien reçu, rien d'urgent » (capture King 13/10). Sans réponse à 14:33. Fenêtre 48 h (§7) : on attend."},
          notes="VAGUE 1 OPTICIENS (21/09). Titulaire public : MAKONGO Jean Dury. Probleme : etre dans la listanuaire de l'Ordre (150+ noms) n'est pas etre trouve, et un patient ne peut voir aucune monture avant de venir."),
     dict(slug="maff-optique", org="Maff Optique", city="Douala", org_type="other", language="FR",
          wa_number="699 93 19 56", wa_verified="unknown",
@@ -1077,6 +1103,148 @@ OPT_ECARTES = [
     ("original-optique-douala", "Original Optique", "Douala (Carrefour Dika)", "659 09 71 50",
      "https://originaloptique-douala.com/", "A un site vivant."),
 ]
+
+# ── SCOUT ONOC DU 24/10/2026 — les cabines du Littoral absentes du CRM ────────────────────────
+#    Source : annuaire officiel de l'Ordre, https://onocameroun.com/annuaire-des-opticiens-par-region/
+#    (tableau « REGION DU LITTORAL », lignes 85 à 159 = 75 cabinets à Douala). Relevé le 24/10.
+#    21 cabinets absents du CRM après contrôle croisé (nom normalisé + numéro) : 20 avec un MOBILE,
+#    1 avec un fixe seul (Prism Optique, ligne 86) — sans WhatsApp possible, on le garde en trace.
+#    Deux pièges traités ici, pas ailleurs :
+#      · Star Optic (154) publie 699 93 93 34, le numéro de Médina Optic (91) — même ligne, pas deux leads ;
+#      · Prism Optique ne publie qu'un fixe (233 42 62 73) : on ne le met PAS dans `wa_number`,
+#        sinon il part dans la file d'envoi et on découvre l'erreur au moment de coller le message.
+#    Aucun de ces 21 numéros n'a été vérifié sur WhatsApp : la PORTE A (profil vu, §8b) reste à passer.
+#    `wa_verified` est donc « unknown », `contacted` est « No », et aucun n'est dans un lot d'envoi.
+OPTICIENS_ONOC_2410 = [
+    dict(slug="prism-optique", org="Prism Optique", city="Douala", org_type="other", language="FR",
+         wa_number="", wa_verified="no", contact_channel="",
+         wa_number_note="Fixe seul publié par l'Ordre : 233 42 62 73. Aucun WhatsApp possible en l'état — ne pas mettre dans la file d'envoi.",
+         decision="AHMER SHEIKH Ahmer", source="directory",
+         source_detail="Annuaire officiel ONOC, Littoral ligne 86 — relevé le 24/10/2026",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-24",
+         notes="SCOUT ONOC du 24/10 — ligne 86. Injoignable sur WhatsApp (fixe seul) : le cabinet entre au CRM comme trace de couverture de l'annuaire, pas comme cible d'envoi. À rouvrir si un mobile apparaît."),
+    dict(slug="alpha-optic", org="Alpha Optic", city="Douala", org_type="other", language="FR",
+         wa_number="699 57 34 57", wa_verified="unknown", contact_channel="WhatsApp",
+         decision="AKINHOLA Abdou Aziz Adewale", source="directory",
+         source_detail="Annuaire officiel ONOC, Littoral ligne 87 — relevé le 24/10/2026",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-24",
+         notes="SCOUT ONOC du 24/10 — ligne 87 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée."),
+    dict(slug="saoudia-optique", org="Saoudia Optique", city="Douala", org_type="other", language="FR",
+         wa_number="696 04 04 13", wa_verified="unknown", contact_channel="WhatsApp",
+         decision="Ali MOUSTAPHA Abdou", source="directory",
+         source_detail="Annuaire officiel ONOC, Littoral ligne 88 — relevé le 24/10/2026",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-24",
+         notes="SCOUT ONOC du 24/10 — ligne 88 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée."),
+    dict(slug="centrale-d-optique-panafricaine-sarl", org="Centrale d'Optique Panafricaine Sarl", city="Douala", org_type="other", language="FR",
+         wa_number="695 29 79 04", wa_verified="unknown", contact_channel="WhatsApp",
+         decision="ATONGO Marie Albert", source="directory",
+         source_detail="Annuaire officiel ONOC, Littoral ligne 89 — relevé le 24/10/2026",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-24",
+         notes="SCOUT ONOC du 24/10 — ligne 89 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée."),
+    dict(slug="isee", org="ISEE", city="Douala", org_type="other", language="FR",
+         wa_number="656 97 80 43", wa_verified="unknown", contact_channel="WhatsApp",
+         decision="AZEUFACK Raissa", source="directory",
+         source_detail="Annuaire officiel ONOC, Littoral ligne 90 — relevé le 24/10/2026",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-24",
+         notes="SCOUT ONOC du 24/10 — ligne 90 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée."),
+    dict(slug="free-optic", org="Free Optic", city="Douala", org_type="other", language="FR",
+         wa_number="679 11 37 60", wa_verified="unknown", contact_channel="WhatsApp",
+         decision="FEUKOUO Rigobert", source="directory",
+         source_detail="Annuaire officiel ONOC, Littoral ligne 105 — relevé le 24/10/2026",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-24",
+         notes="SCOUT ONOC du 24/10 — ligne 105 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée."),
+    dict(slug="la-fierte-de-l-optique", org="La Fierté de l'Optique", city="Douala", org_type="other", language="FR",
+         wa_number="695 17 90 57", wa_verified="unknown", contact_channel="WhatsApp",
+         decision="Fierté Clarisse EKEN EKOLLO", source="directory",
+         source_detail="Annuaire officiel ONOC, Littoral ligne 106 — relevé le 24/10/2026",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-24",
+         notes="SCOUT ONOC du 24/10 — ligne 106 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée."),
+    dict(slug="emeraude-optique-sarl", org="Emeraude Optique Sarl", city="Douala", org_type="other", language="FR",
+         wa_number="699 90 99 60", wa_verified="unknown", contact_channel="WhatsApp",
+         decision="FOGNEMAFOPOKAM Sebastine", source="directory",
+         source_detail="Annuaire officiel ONOC, Littoral ligne 108 — relevé le 24/10/2026",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-24",
+         notes="SCOUT ONOC du 24/10 — ligne 108 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée."),
+    dict(slug="optimat-vision-sarl", org="Optimat Vision Sarl", city="Douala", org_type="other", language="FR",
+         wa_number="699 86 53 46", wa_verified="unknown", contact_channel="WhatsApp",
+         decision="KAMDEM KOUAM Serge Versel", source="directory",
+         source_detail="Annuaire officiel ONOC, Littoral ligne 111 — relevé le 24/10/2026",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-24",
+         notes="SCOUT ONOC du 24/10 — ligne 111 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée."),
+    dict(slug="light-optique", org="Light Optique", city="Douala", org_type="other", language="FR",
+         wa_number="677 64 87 90", wa_verified="unknown", contact_channel="WhatsApp",
+         decision="KEMAJOU épse NUSHA Singer", source="directory",
+         source_detail="Annuaire officiel ONOC, Littoral ligne 114 — relevé le 24/10/2026",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-24",
+         notes="SCOUT ONOC du 24/10 — ligne 114 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée."),
+    dict(slug="ets-espace-medical", org="Ets Espace Médical", city="Douala", org_type="other", language="FR",
+         wa_number="655 04 95 29", wa_verified="unknown", contact_channel="WhatsApp",
+         decision="MBIAMI MENVENGUE", source="directory",
+         source_detail="Annuaire officiel ONOC, Littoral ligne 124 — relevé le 24/10/2026",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-24",
+         notes="SCOUT ONOC du 24/10 — ligne 124 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée."),
+    dict(slug="s-o-s-vision", org="S.O.S Vision", city="Douala", org_type="other", language="FR",
+         wa_number="699 86 04 63", wa_verified="unknown", contact_channel="WhatsApp",
+         decision="MEILO NGASSA Line", source="directory",
+         source_detail="Annuaire officiel ONOC, Littoral ligne 125 — relevé le 24/10/2026",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-24",
+         notes="SCOUT ONOC du 24/10 — ligne 125 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée."),
+    dict(slug="ass-pour-rrphdd", org="ASS pour RRPHDD", city="Douala", org_type="other", language="FR",
+         wa_number="675 39 90 23", wa_verified="unknown", contact_channel="WhatsApp",
+         decision="NDE Bruno", source="directory",
+         source_detail="Annuaire officiel ONOC, Littoral ligne 134 — relevé le 24/10/2026",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-24",
+         notes="SCOUT ONOC du 24/10 — ligne 134 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée."),
+    dict(slug="bellevue-optique", org="Bellevue Optique", city="Douala", org_type="other", language="FR",
+         wa_number="694 89 26 96", wa_verified="unknown", contact_channel="WhatsApp",
+         decision="NDOUNG Erick Georges", source="directory",
+         source_detail="Annuaire officiel ONOC, Littoral ligne 135 — relevé le 24/10/2026",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-24",
+         notes="SCOUT ONOC du 24/10 — ligne 135 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée."),
+    dict(slug="la-fibre-optique", org="La Fibre Optique", city="Douala", org_type="other", language="FR",
+         wa_number="694 42 26 40", wa_verified="unknown", contact_channel="WhatsApp",
+         decision="NGUEPI Stéphane", source="directory",
+         source_detail="Annuaire officiel ONOC, Littoral ligne 138 — relevé le 24/10/2026",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-24",
+         notes="SCOUT ONOC du 24/10 — ligne 138 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée."),
+    dict(slug="la-lunetterie-medicale-el-shadai", org="La Lunetterie Médicale El Shadai", city="Douala", org_type="other", language="FR",
+         wa_number="696 89 64 11", wa_verified="unknown", contact_channel="WhatsApp",
+         decision="NGUEGANG DJOMO Richeleau", source="directory",
+         source_detail="Annuaire officiel ONOC, Littoral ligne 139 — relevé le 24/10/2026",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-24",
+         notes="SCOUT ONOC du 24/10 — ligne 139 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée."),
+    dict(slug="pagrot-optique", org="Pagrot Optique", city="Douala", org_type="other", language="FR",
+         wa_number="699 90 46 91", wa_verified="unknown", contact_channel="WhatsApp",
+         decision="NGUIFFO épse KAMGA Lyse Esther", source="directory",
+         source_detail="Annuaire officiel ONOC, Littoral ligne 141 — relevé le 24/10/2026",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-24",
+         notes="SCOUT ONOC du 24/10 — ligne 141 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée."),
+    dict(slug="capelli-optique-medicale", org="Capelli Optique Médicale", city="Douala", org_type="other", language="FR",
+         wa_number="675 26 89 81", wa_verified="unknown", contact_channel="WhatsApp",
+         decision="TCHOUMBA Annie Nadège", source="directory",
+         source_detail="Annuaire officiel ONOC, Littoral ligne 155 — relevé le 24/10/2026",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-24",
+         notes="SCOUT ONOC du 24/10 — ligne 155 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée."),
+    dict(slug="optique-pro", org="Optique Pro", city="Douala", org_type="other", language="FR",
+         wa_number="690 03 48 18", wa_verified="unknown", contact_channel="WhatsApp",
+         decision="TEKENG NTEMTSA Sintiche Laury", source="directory",
+         source_detail="Annuaire officiel ONOC, Littoral ligne 156 — relevé le 24/10/2026",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-24",
+         notes="SCOUT ONOC du 24/10 — ligne 156 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée."),
+    dict(slug="world-vision", org="World Vision", city="Douala", org_type="other", language="FR",
+         wa_number="656 03 21 72", wa_verified="unknown", contact_channel="WhatsApp",
+         decision="TONGOUANG Serge Bruno", source="directory",
+         source_detail="Annuaire officiel ONOC, Littoral ligne 157 — relevé le 24/10/2026",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-24",
+         notes="SCOUT ONOC du 24/10 — ligne 157 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée."),
+    dict(slug="maranatha-optics", org="Maranatha Optics", city="Douala", org_type="other", language="FR",
+         wa_number="658 16 31 90", wa_verified="unknown", contact_channel="WhatsApp",
+         decision="WONDJE Madeleine Florence", source="directory",
+         source_detail="Annuaire officiel ONOC, Littoral ligne 158 — relevé le 24/10/2026",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-24",
+         notes="SCOUT ONOC du 24/10 — ligne 158 de l'annuaire (Littoral). Numéro PUBLIÉ PAR L'ORDRE, jamais vérifié sur WhatsApp : la porte A (§8b, profil vu) reste à passer avant tout message. Aucun site vérifié, aucune touche envoyée."),
+]
+
 
 def _opt_rows():
     out = []
@@ -2188,6 +2356,213 @@ LOT2_0210_KING = {
 }
 
 
+# ── LE LOT DU 26/10 — les six cibles d'envoi, absentes du CRM jusqu'au 25/10 ─────────────────────
+# Pourquoi elles sont ici : le lot d'envoi nommait six cabinets qu'aucune ligne du CRM ne portait.
+# Une cible d'envoi qui n'existe pas dans la base ne peut pas être vérifiée, ni suivie, ni exclue —
+# et c'est exactement ainsi qu'on envoie deux fois au même endroit. Les six entrent donc au CRM le
+# jour où King passe la porte A dessus (25/10), avec le résultat de son test WhatsApp.
+# Sources de la fiche (nom, quartier, numéro) : `sales/ENVOI-LOT-2026-10-26.md` §2 et §4.
+LOT_2610_LEADS = [
+    dict(slug="comed-bonapriso", org="COMED", city="Douala (Bonapriso)", org_type="clinic", language="FR",
+         wa_number="699 91 56 52", wa_verified="yes", profile_name_seen="COMED",
+         contact_name="", contact_role="Médecin / direction", contact_channel="WhatsApp",
+         source="directory", source_detail="Lot d'envoi du 26/10 — centre médical COMED, Bonapriso (1993)",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-25",
+         notes="Lot du 26/10. Porte A passée par King le 25/10 : le 699 91 56 52 EST sur WhatsApp, "
+               "profil affiché « COMED ». Message du lot prêt (§2 ⑨)."),
+    dict(slug="ivy-bonanjo", org="IVY", city="Douala (Bonanjo)", org_type="clinic", language="FR",
+         wa_number="697 94 52 51", wa_verified="yes", profile_name_seen="IVY",
+         contact_name="", contact_role="", contact_channel="WhatsApp",
+         source="directory", source_detail="Lot d'envoi du 26/10 — cabinet de la rue Ivy, Bonanjo",
+         stage="prospecting", contacted="No", reply="No", demo="No", added_on="2026-10-25",
+         notes="Lot du 26/10. Porte A du 25/10 : le numéro EST sur WhatsApp, profil « IVY » — mais la "
+               "photo est une photo de personne, pas un profil Business : c'est peut-être la ligne "
+               "personnelle du praticien. À confirmer avant l'envoi (le message parle de « votre cabinet »)."),
+    dict(slug="optix-sarl", org="OPTIX SARL", city="Douala (Akwa, carrefour Idéal)", org_type="other", language="FR",
+         wa_number="697 72 32 65", wa_verified="yes", profile_name_seen="",
+         contact_name="", contact_role="", contact_channel="WhatsApp",
+         source="directory", source_detail="Annuaire ONOC + fiche Google (681 36 92 33) — suivi du 24/10",
+         stage="prospecting", contacted="Yes", reply="No", demo="No", added_on="2026-10-25",
+         last_send_state="delivered",
+         notes="Message envoyé le 24/10 12:12 (101 mots, BLOQUÉ par la porte : ne pas le reprendre comme "
+               "modèle). Réaction 👍 à 12:12. Porte A : le numéro est VIVANT (message livré + réaction), "
+               "même si le profil affiché n'a pas été relevé. Suivi du 25/10 : capture + message de 55 "
+               "mots, voir `sales/ENVOI-LOT-2026-10-26.md` §10."),
+    dict(slug="bouda-seidou-bonanjo", org="Cabinet Bouda Seidou", city="Douala (Bonanjo)", org_type="clinic", language="FR",
+         wa_number="677 76 03 49", wa_verified="no", contact_channel="",
+         wa_number_note="25/10 (test King) : 677 76 03 49 introuvable sur WhatsApp — aucune discussion, "
+                        "aucun contact à ce numéro.",
+         contact_name="", contact_role="", source="directory",
+         source_detail="Lot d'envoi du 26/10 — cabinet à Bonanjo, quatre annuaires",
+         stage="disqualified", contacted="No", reply="No", demo="No", added_on="2026-10-25",
+         disqualification_reason="excluded_no_wa (25/10, ruling King) : numéro introuvable sur WhatsApp ; pas de SMS, pas d'appel — qui n'est pas sur WhatsApp ne paiera pas un site de toute façon.",
+         notes="Lot du 26/10 — NE PART PAS : numéro absent de WhatsApp. Le cabinet existe (quatre "
+               "annuaires publics), c'est le numéro qui est mort ou mal recopié. Aucun canal de repli "
+               "décidé pour les cliniques (le ruling WhatsApp-only du 12/10 vise les opticiens)."),
+    dict(slug="le-sourire-bali", org="Le Sourire", city="Douala (Bali)", org_type="clinic", language="FR",
+         wa_number="698 00 78 08", wa_verified="no", contact_channel="",
+         wa_number_note="25/10 (test King) : 698 00 78 08 introuvable sur WhatsApp.",
+         contact_name="", contact_role="", source="directory",
+         source_detail="Lot d'envoi du 26/10 — cabinet à Bali, deux annuaires",
+         stage="disqualified", contacted="No", reply="No", demo="No", added_on="2026-10-25",
+         disqualification_reason="excluded_no_wa (25/10, ruling King) : numéro introuvable sur WhatsApp ; pas de SMS, pas d'appel — qui n'est pas sur WhatsApp ne paiera pas un site de toute façon.",
+         notes="Lot du 26/10 — NE PART PAS : numéro absent de WhatsApp. C'était déjà le message le plus "
+               "faible du lot ; il sort du calendrier sans regret."),
+    dict(slug="cmo-jolinom-deido", org="CMO Jolinom", city="Douala (Deido)", org_type="clinic", language="FR",
+         wa_number="677 46 64 25", wa_verified="no", contact_channel="",
+         wa_number_note="25/10 (test King) : 677466425 introuvable sur WhatsApp.",
+         contact_name="", contact_role="", source="directory",
+         source_detail="Lot d'envoi du 26/10 — centre médical ophtalmologique Jolinom, Deido",
+         stage="disqualified", contacted="No", reply="No", demo="No", added_on="2026-10-25",
+         disqualification_reason="excluded_no_wa (25/10, ruling King) : numéro introuvable sur WhatsApp ; pas de SMS, pas d'appel — qui n'est pas sur WhatsApp ne paiera pas un site de toute façon.",
+         notes="Lot du 26/10 — NE PART PAS : numéro absent de WhatsApp. Trois assureurs, deux numéros : "
+               "c'est le second numéro qu'il faut retrouver avant de retenter."),
+]
+
+
+# ── PORTE A DU 25/10 — les dix numéros vérifiés par King dans WhatsApp ───────────────────────────
+# Ce que la capture montre, et rien d'autre : le numéro est-il sur WhatsApp, et sous quel nom le
+# profil s'affiche-t-il. Les six autres résultats (non trouvés) sont déjà portés par les lignes
+# LOT_2610_LEADS ci-dessus ; cette table ne corrige que les QUATRE lignes du scout ONOC.
+VERIF_WA_2510 = {
+    "saoudia-optique": {
+        "wa_verified": "yes", "profile_name_seen": "Saoudia Optique",
+        "Notes_extra": "Porte A du 25/10 (capture King) : 696 04 04 13 EST sur WhatsApp, profil "
+                       "« Saoudia Optique ». Joignable, jamais contacté : entre dans la vague suivante.",
+    },
+    "isee": {
+        "wa_verified": "yes", "profile_name_seen": "I See Better",
+        "Notes_extra": "Porte A du 25/10 (capture King) : 656 97 80 43 EST sur WhatsApp, PROFIL BUSINESS "
+                       "« I See Better » — « Cabinet d'optique médicale », BP 3549 Douala, "
+                       "iseecameron@gmail.com, carte affichée. Meilleur signal de la liste : le cabinet "
+                       "tient déjà une fiche soignée, il se soucie de son image.",
+    },
+    "free-optic": {
+        "wa_verified": "yes", "profile_name_seen": "Free Optic",
+        "Notes_extra": "Porte A du 25/10 (capture King) : 679 11 37 60 EST sur WhatsApp, PROFIL BUSINESS "
+                       "« Free Optic » — catégorie « Medical & health », description « examens de vue, "
+                       "vente de lunettes médicales, optiques et solaires… », base à Akwa/Bonamoussadi. "
+                       "Second meilleur signal de la liste.",
+    },
+    "centrale-d-optique-panafricaine-sarl": {
+        "wa_verified": "no", "stage": "disqualified",
+        "wa_number_note": "25/10 (test King) : 695 29 79 04 introuvable sur WhatsApp.",
+        "disqualification_reason": "excluded_no_wa (25/10) : 695 29 79 04 introuvable sur WhatsApp "
+                                   "(test King) ; pas d'appel (ruling 12/10 — un opticien sans WhatsApp "
+                                   "n'entre pas au pipeline).",
+        "Notes_extra": "Porte A du 25/10 : numéro absent de WhatsApp. Ne pas confondre avec "
+                       "« Centrale Optique » (693 96 89 56, ZOBO Jean), disqualifiée le 12/10 pour la "
+                       "même raison : deux cabinets différents, deux verdicts séparés, même conclusion.",
+    },
+    "alpha-optic": {
+        "wa_verified": "yes", "profile_name_seen": "Alpha Optic",
+        "Notes_extra": "Porte A du 25/10 (2ᵉ tour, capture King) : 699 57 34 57 EST sur WhatsApp, profil "
+                       "« Alpha Optic » avec photo. Joignable, jamais contacté.",
+    },
+    "la-fierte-de-l-optique": {
+        "wa_verified": "yes", "profile_name_seen": "La Fierté de l'Optique",
+        "Notes_extra": "Porte A du 25/10 (2ᵉ tour) : 695 17 90 57 EST sur WhatsApp, profil « La Fierté de "
+                       "l'Optique ». Joignable.",
+    },
+    "light-optique": {
+        "wa_verified": "yes", "profile_name_seen": "Light Optique",
+        "Notes_extra": "Porte A du 25/10 (2ᵉ tour) : 677 64 87 90 EST sur WhatsApp, profil « Light Optique » "
+                       "avec photo de boutique. Joignable. MAPPING CONFIRMÉ par King le 25/10 : la forme "
+                       "courte « 77648790 » EST 677 64 87 90 (« checked and crosschecked ») — la seule "
+                       "ligne « Light Optique » du lot, aucun risque de doublon.",
+    },
+    "world-vision": {
+        "wa_verified": "yes", "profile_name_seen": "World Vision",
+        "Notes_extra": "Porte A du 25/10 (4ᵉ tour, capture King) : 656 03 21 72 EST sur WhatsApp. La capture "
+                       "affiche le numéro sous le titre « Contacts » (et non « Not in your contacts »), avec "
+                       "le nom « World Vision » et un logo de globe — le contact est donc déjà enregistré "
+                       "sur le téléphone de King. Profil vivant, dernier numéro de la porte A : 28 testés, "
+                       "22 joignables, 6 morts. Jamais contacté.",
+    },
+    "ets-espace-medical": {
+        "wa_verified": "yes", "profile_name_seen": "Optic Medical Favour and Joy",
+        "Notes_extra": "Porte A du 25/10 (2ᵉ tour) : 655 04 95 29 EST sur WhatsApp, PROFIL BUSINESS « Optic "
+                       "Medical Favour and Joy » — catégorie Medical & health, Entrée Eneo PK11 Douala, "
+                       "favourjoyopticmedical@gmail.com, produits et description. ATTENTION : le nom "
+                       "commercial n'est PAS celui de l'annuaire de l'Ordre (« Ets Espace Médical ») — tout "
+                       "message doit utiliser le nom que le cabinet affiche, pas celui du tableau. "
+                       "MAPPING CONFIRMÉ par King le 25/10 : « 550 49 52 9 » EST 655 04 95 29 "
+                       "(« checked and crosschecked ») — c'est bien le même cabinet, pas deux numéros.",
+    },
+    "s-o-s-vision": {
+        "wa_verified": "yes", "profile_name_seen": "Sos Vision",
+        "Notes_extra": "Porte A du 25/10 (2ᵉ tour) : 699 86 04 63 EST sur WhatsApp, PROFIL BUSINESS « Sos "
+                       "Vision » — « Optician • Sunglasses and eyewear shop • Ophthalmologist », catalogue "
+                       "produits, horaires. Le seul de la liste qui se déclare aussi ophtalmologiste.",
+    },
+    "ass-pour-rrphdd": {
+        "wa_verified": "yes", "profile_name_seen": "AMBASSADOR Vision Sarl",
+        "Notes_extra": "Porte A du 25/10 (2ᵉ tour) : 675 39 90 23 EST sur WhatsApp, PROFIL BUSINESS "
+                       "« AMBASSADOR Vision Sarl » — Medical & health, description lunetterie/verres/"
+                       "montures + service après-vente gratuit. Le nom du tableau de l'Ordre (« ASS pour "
+                       "RRPHDD ») n'est PAS le nom commercial : n'écrire que « Ambassador Vision ».",
+    },
+    "bellevue-optique": {
+        "wa_verified": "yes", "profile_name_seen": "bellevueoptique",
+        "Notes_extra": "Porte A du 25/10 (2ᵉ tour) : 694 89 26 96 EST sur WhatsApp, PROFIL BUSINESS "
+                       "« bellevueoptique » — catégorie Optician, Bali Serena Hôtel rue des pavés, "
+                       "bellevue.optique@yahoo.fr, garanties 3 et 6 mois affichées. Fiche très tenue : "
+                       "bonne cible de re-engagement, le sujet l'intéresse déjà.",
+    },
+    "emeraude-optique-sarl": {
+        "wa_verified": "yes", "profile_name_seen": "Emeraude Optique",
+        "Notes_extra": "Porte A du 25/10 (3ᵉ tour) : 699 90 99 60 EST sur WhatsApp, profil « Emeraude "
+                       "Optique » avec logo. Joignable, jamais contacté.",
+    },
+    "la-lunetterie-medicale-el-shadai": {
+        "wa_verified": "yes", "profile_name_seen": "",
+        "Notes_extra": "Porte A du 25/10 (3ᵉ tour) : 696 89 64 11 EST sur WhatsApp, mais le profil "
+                       "n'affiche AUCUN nom d'établissement — photo de personne, pas de profil Business. "
+                       "C'est probablement la ligne personnelle du gérant : à confirmer avant d'écrire "
+                       "« votre cabinet ».",
+    },
+    "pagrot-optique": {
+        "wa_verified": "yes", "profile_name_seen": "Pagrot Optique",
+        "Notes_extra": "Porte A du 25/10 (3ᵉ tour) : 699 90 46 91 EST sur WhatsApp, profil « Pagrot "
+                       "Optique » (initiale dans un rond vert, pas de photo). Joignable.",
+    },
+    "capelli-optique-medicale": {
+        "wa_verified": "yes", "profile_name_seen": "CAPELLI OPTIQUE MÉDICALE",
+        "Notes_extra": "Porte A du 25/10 (3ᵉ tour) : 675 26 89 81 EST sur WhatsApp, PROFIL BUSINESS "
+                       "« CAPELLI OPTIQUE MÉDICALE » — catégories « Optometrist • Optician », adresse "
+                       "« immeuble collé à la mairie de Douala 5 » (Bonamoussadi), visuel « la qualité de "
+                       "la vision supérieure ». Fiche tenue : bonne cible.",
+    },
+    "optique-pro": {
+        "wa_verified": "yes", "profile_name_seen": "Laury Ntemtsa",
+        "Notes_extra": "Porte A du 25/10 (3ᵉ tour) : 690 03 48 18 EST sur WhatsApp sous « Laury Ntemtsa » "
+                       "(catégorie « Post office », photo de personne). Le nom correspond au titulaire du "
+                       "tableau de l'Ordre (TEKENG NTEMTSA Sintiche Laury) : c'est la ligne DIRECTE du "
+                       "décideur, pas un standard. Écrire à Ntemtsa, pas « Optique Pro ».",
+    },
+    "maranatha-optics": {
+        "wa_verified": "yes", "profile_name_seen": "Maranatha Optics",
+        "Notes_extra": "Porte A du 25/10 (3ᵉ tour) : 658 16 31 90 EST sur WhatsApp, profil « Maranatha "
+                       "Optics » avec visuel de montures. Joignable.",
+    },
+    "optimat-vision-sarl": {
+        "wa_verified": "no", "stage": "disqualified",
+        "wa_number_note": "25/10 (2ᵉ tour, test King) : 699 86 53 46 introuvable sur WhatsApp.",
+        "disqualification_reason": "excluded_no_wa (25/10, ruling King) : 699 86 53 46 introuvable sur "
+                                   "WhatsApp ; pas de SMS, pas d'appel. Ruling : qui n'est pas sur WhatsApp "
+                                   "n'investira pas dans un site — et le site n'aurait personne pour répondre.",
+        "Notes_extra": "Porte A du 25/10 : mort. Ne pas rechercher de canal de repli.",
+    },
+    "la-fibre-optique": {
+        "wa_verified": "no", "stage": "disqualified",
+        "wa_number_note": "25/10 (2ᵉ tour, test King) : 694 42 26 40 introuvable sur WhatsApp.",
+        "disqualification_reason": "excluded_no_wa (25/10, ruling King) : 694 42 26 40 introuvable sur "
+                                   "WhatsApp ; pas de SMS, pas d'appel.",
+        "Notes_extra": "Porte A du 25/10 : mort. Ne pas rechercher de canal de repli.",
+    },
+}
+
+
 def _apply_state(out: list, table: dict, name: str) -> None:
     """Applique une table d'état au relevé : elle ÉCRASE les champs scalaires qu'elle cite (elle est
     plus récente que tout le monde) et APPEND les deux champs de récit (`Conversation_extra`,
@@ -2257,6 +2632,28 @@ def check_tables_sans_doublon() -> None:
     if souci:
         sys.exit("✗ clé(s) DUPLIQUÉE(S) dans un littéral de table — la seconde écrase la première en "
                  "silence :\n   " + "\n   ".join(souci))
+
+
+def check_no_wa_is_dead(out: list) -> None:
+    """Ruling King 25/10 (« consider dead those that aren't found on whatsapp ») — la porte du ruling.
+
+    Toute ligne de `VERIF_WA_2510` dont le numéro a été **testé et introuvable** doit être
+    `disqualified`, avec un motif daté : pas de SMS, pas d'appel, pas de `parked`, pas de repli.
+    Sans ce contrôle, le ruling n'existait que dans la mémoire du tour qui l'a reçu.
+
+    Le contrôle porte sur `VERIF_WA_2510` — la table des numéros réellement testés — et **pas** sur
+    les `wa_verified="no"` des lots antérieurs : dans ces lots, « no » veut dire « jamais vérifié »
+    (l'ancien `unknown`). Confondre les deux ferait disqualifier 20 lignes jamais testées.
+    """
+    fautives = sorted(
+        slug for slug, patch in VERIF_WA_2510.items()
+        if str(patch.get("wa_verified") or "").strip().lower() == "no"
+        and str(patch.get("stage") or "").strip().lower() not in ("disqualified", "lost", "won")
+    )
+    if fautives:
+        sys.exit("✗ %d numéro(s) testé(s) introuvable(s) sur WhatsApp et encore dans le pipeline : %s"
+                 " — ruling 25/10 : disqualified + motif daté, pas de repli. Rien n'a été écrit."
+                 % (len(fautives), " · ".join(fautives)))
 
 
 def check_reply_types(out: list) -> None:
@@ -2531,7 +2928,8 @@ ENVOI_2409 = {
         "Notes_extra":
             "24/09 11:56 — PREMIER LOT, ENVOYÉ par King. Message livré (✓✓). Profil WhatsApp : "
             "« MAFF optique », Business Account. Aucune réponse au relevé du soir ; toute réponse se "
-            "traite dans l'heure et s'écrit dans `sales/Activity-Log.md`.",
+            "traite dans l'heure et s'écrit dans `sales/Activity-Log.md`. Tag 12/10 : "
+            "excluded_dead_lead + excluded_already_contacted (règle §9) — aucun second envoi.",
     },
     "espace-lunetterie": {
         "Contacted": "Yes", "Contact channel": "WhatsApp", "wa_verified": "yes",
@@ -3180,7 +3578,8 @@ ENVOI_2409_2 = {
             "recherche doualatour sans résultat ; les « Horizon Optique » de Dakar, Grenoble, Tanger et "
             "Verny sont des homonymes, écartés). ⚠️ Un numéro sans WhatsApp reste souvent une ligne "
             "valide : la route de repli est un SMS court ou un appel, scripts prêts dans "
-            "`sales/Send-BATCH-2026-09-24-Opticiens-2.md` §6. Ne pas réessayer sur WhatsApp sans nouveau numéro.",
+            "`sales/Send-BATCH-2026-09-24-Opticiens-2.md` §6. Ne pas réessayer sur WhatsApp sans nouveau numéro. "
+            "Tag 12/10 : excluded_no_wa (règle §9) — pas d'appel (ruling 12/10).",
     },
 }
 
@@ -3278,8 +3677,8 @@ REPONSE_UNIVERS_2509 = {
     "univers-optique": {
         "Contacted": "Yes", "Reply": "Yes", "reply_type": "human",
         "Demo made": "Yes", "Offer made": "No",
-        "last_send_state": "sent", "stage": "qualifying", "stage_since": "2026-09-25",
-        "Follow-up date": "2026-10-14",
+        "last_send_state": "delivered", "stage": "qualifying", "stage_since": "2026-10-12",
+        "Follow-up date": "2026-10-16",
         "contradiction":
             "Le CRM portait `closing` et « les 50 000, on les met quand ? » comme dernière étape. Le "
             "25/09, le client a écarté le site et demandé un outil : le sujet a changé, rien n'a été "
@@ -3318,7 +3717,7 @@ comme NON ENVOYÉ : il n'est pas journalisé comme envoyé. · FENÊTRE (règle 
 §7) : 24 h ouvrées = ven. 09/10 15:21 (on attend, rien d'autre) ; palier 48 h = note vocale chaleureuse \
 mar. 13/10 (= `Follow-up date`) ; palier 7 jours = appel de 2 minutes jeu. 15/10 ; une réponse du client \
 ANNULE la fenêtre (règle du 08/10). Pitch de l'outil toujours retenu tant que l'acompte DM Optique n'est \
-pas encaissé. Appareil : réponse « Tablette ou smart Phone » = le client n'a pas tranché. · 10/10 (sam., 17e message de King, capture) — LE CLIENT A RÉPONDU le ven. 09/10 : 12:31 « Merci j'attends le modèle » (verbatim) puis 12:32 une NOTE VOCALE de 0:14 DONT LE CONTENU N'EST PAS ENCORE TRANSCRIT (King doit la transcrire : elle répond peut-être à la question du 08/10 15:21 = case de la feuille de ROI). 09/10 13:20 King (fragment lisible seulement) : « …rien ne se finalise sans votre validation. Je vous envoie le lien ce soir… ». 10/10 10:35 King a envoyé le lien d'essai https://uo-essayage-camera.vercel.app + un message d'explication (texte non capturé) ; un seul ✓ au moment de la capture = pas encore délivré. La réponse du 09/10 ANNULE la fenêtre précédente : la voix du mar. 13/10 et l'appel du jeu. 15/10 sont SANS OBJET. Nouvelle fenêtre = depuis la LIVRAISON du lien (double ✓), lecture stricte lun–ven de la règle §7 : palier 1 attente · palier 2 (voix) mer. 14/10 seulement si le client reste muet · palier 3 (appel 2 min) à 7 jours ; lecture calendaire alternative = voix lun. 12/10, appel sam. 17/10 : à confirmer par King. `Follow-up date` passée à 2026-10-14. Le pitch reste retenu jusqu'à l'acompte DM Optique ; si le client demande le prix, décision de King (rien de préparé à envoyer sans lui). Le code de l'outil en ligne n'est pas dans le dépôt (seulement `assets/try-on-v1/`).",
+pas encaissé. Appareil : réponse « Tablette ou smart Phone » = le client n'a pas tranché. · 10/10 (sam., 17e message de King, capture) — LE CLIENT A RÉPONDU le ven. 09/10 : 12:31 « Merci j'attends le modèle » (verbatim) puis 12:32 une NOTE VOCALE de 0:14 DONT LE CONTENU N'EST PAS ENCORE TRANSCRIT (King doit la transcrire : elle répond peut-être à la question du 08/10 15:21 = case de la feuille de ROI). 09/10 13:20 King (fragment lisible seulement) : « …rien ne se finalise sans votre validation. Je vous envoie le lien ce soir… ». 10/10 10:35 King a envoyé le lien d'essai https://uo-essayage-camera.vercel.app + un message d'explication (texte non capturé) ; un seul ✓ au moment de la capture = pas encore délivré. La réponse du 09/10 ANNULE la fenêtre précédente : la voix du mar. 13/10 et l'appel du jeu. 15/10 sont SANS OBJET. Nouvelle fenêtre = depuis la LIVRAISON du lien (double ✓), lecture stricte lun–ven de la règle §7 : palier 1 attente · palier 2 (voix) mer. 14/10 seulement si le client reste muet · palier 3 (appel 2 min) à 7 jours ; lecture calendaire alternative = voix lun. 12/10, appel sam. 17/10 : à confirmer par King. `Follow-up date` passée à 2026-10-14. Le pitch reste retenu jusqu'à l'acompte DM Optique ; si le client demande le prix, décision de King (rien de préparé à envoyer sans lui). Le code de l'outil en ligne n'est pas dans le dépôt (seulement `assets/try-on-v1/`). · \\\n12/10 05:58 — LE CLIENT : « Peut-être faudrait il que nous convenions pour les essais en cabinets stp \\\ncar je ne m'en sors pas. » (capture King) · 12/10 10:43 — King : « vendredi me convient bien, je \\\nviendrai avec tout ce qu'il faut pour qu'on teste ensemble dans votre cabinet. Quelle heure vous \\\narrange ? Samedi reste possible si c'est plus simple. » → la visite = SESSION DE TRAVAIL (tester \\\nensemble, observer, zéro pitch) ; les 3 questions d'économie se posent sur place. `Follow-up date` = \\\n2026-10-16, stage `qualifying` confirmé (ruling King 12/10). La fenêtre voix du 14/10 est SANS OBJET \\\n(réponse reçue). Bug Pixel : NON défini dans le dépôt au 12/10 — décision fix/disclose avant le 16/10 \\\nsuspendue à la description du bug par King. · \\\n12/10 10:46 — LE CLIENT : « Vendredi 10h stp » (capture King) → **RDV CONFIRMÉ : ven. 16/10 10:00** \\\nau cabinet. Session de travail : tester ensemble, observer, zéro pitch ; les 3 questions d'économie \\\nsur place. Aucune relance avant le 16/10 — le repli samedi et l'hypothèse d'un toucher jeudi sont \\\nSANS OBJET (la réponse est arrivée). Note vocale du 09/10 : King vérifie s'il contient autre chose de \\\nmatériel ; si oui, ajout ici. · \\\n12/10 — King : « Kamais est mort on ne le relance pas » → CONFIRMÉ : aucun envoi, aucun appel, \\\njamais. Le message personnalisé préparé le 12/10 n'est PAS envoyé ; il reste au journal comme \\\ntrace de l'override proposé puis refusé. · Tag 12/10 : excluded_already_contacted (règle §9).",
     },
 }
 
@@ -3679,13 +4078,21 @@ REVISION_2409 = {
         # remappé (la normalisation est déjà passée) et ferait REFUSER la construction.
         "Decision maker": "abandonné — King, 24/09",
         "disqualification_reason": "abandonné sur décision de King (24/09) — WhatsApp indisponible au "
-                                  "677 44 74 17 et aucune autre trace de la boutique",
+                                  "677 44 74 17 et aucune autre trace de la boutique · Tag 12/10 : "
+                                  "excluded_no_wa (règle §9), pas d'appel (ruling 12/10)",
         "Notes_extra":
             "24/09 — ABANDONNÉ sur décision de King (« on laisse tomber Horizon, passons à la prochaine "
             "vague »). Le message préparé n'est jamais parti (WhatsApp indisponible) ; la route de repli "
             "(SMS + script d'appel) reste écrite dans `sales/Send-BATCH-2026-09-24-Opticiens-2.md` §6 sans "
             "être exécutée. Aucune relance, aucun réessai : si un numéro ou une fiche apparaît un jour, le "
             "lead repart de `prospecting`.",
+    },
+    # ── 12/10 — WAVE LIST GATE §9 : Faby testée sur ses deux numéros, aucun WhatsApp ───────────
+    "faby-optique": {
+        "stage": "disqualified", "stage_since": "2026-10-12",
+        "disqualification_reason":
+            "excluded_no_wa (12/10) : ni 692 08 00 55 ni 672 55 21 37 sur WhatsApp (tests King) ; "
+            "pas d'appel (ruling 12/10 — un opticien sans WhatsApp n'entre pas au pipeline).",
     },
     # ── 24/09 (nuit) — LA PORTE A, PREMIERS RÉSULTATS DE KING SUR LE LOT 4 ──────────────────────
     # King a ouvert les numéros dans l'application : c'est la seule vérification qui compte (Horizon).
@@ -3809,6 +4216,19 @@ def main() -> int:
     for p in PROSE_LEADS:
         out.append({"School": p["org"], **p})
 
+    # 3 bis · SCOUT ONOC du 24/10 (21 cabinets du Littoral) — AJOUTÉS EN FIN DE FICHIER, à dessein :
+    #      insérés au milieu, à côté des autres opticiens, ils décalaient l'`ID` des lignes du classeur
+    #      et transformaient un ajout de 21 lignes en réécriture de tout le CSV. Placés ici, le
+    #      contrôle est net : 184 lignes = 163 identiques à l'octet près + 21 nouvelles, et la colonne
+    #      `ID` reste vide sur ces 21, comme sur les autres lignes générées (vérifié après rebuild).
+    for p in OPTICIENS_ONOC_2410:
+        out.append({"School": p["org"], **p})
+
+    # 3 ter · LE LOT DU 26/10 (25/10) — six cibles d'envoi qui n'avaient AUCUNE ligne au CRM.
+    #         Elles entrent avant les `_apply_state` pour que la porte A du 25/10 puisse les patcher.
+    for p in LOT_2610_LEADS:
+        out.append({"School": p["org"], **p})
+
     # le nom de colonne du classeur est `School` : on le garde tel quel, comme demandé
     for rec in out:
         rec.pop("org", None)
@@ -3877,7 +4297,9 @@ def main() -> int:
     _apply_state(out, REVISION_2409, "REVISION_2409")
     _apply_state(out, LOT_0210_KING, "LOT_0210_KING")
     _apply_state(out, LOT2_0210_KING, "LOT2_0210_KING")
+    _apply_state(out, VERIF_WA_2510, "VERIF_WA_2510")
     check_reply_types(out)
+    check_no_wa_is_dead(out)
     check_tables_sans_doublon()
 
     cols = headers + NEW_FIELDS
