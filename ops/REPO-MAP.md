@@ -2,14 +2,14 @@
 
 ```text
 Généré par tools/graphify/build_full_graph.py — 2026-10-25
-Source : graphify-out/graph.json (12220 nœuds, 15255 arêtes)
+Source : graphify-out/graph.json (12222 nœuds, 15255 arêtes)
 Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même
 carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.
 ```
 
 ## 0 · En une page
 
-- **12220 nœuds** — dont 778 documents, 172 scripts, 21 modules, 139 pages HTML, 413 images, 3 vidéos, 40 audios, 35 fichiers de données, 11 PDF.
+- **12222 nœuds** — dont 778 documents, 172 scripts, 21 modules, 139 pages HTML, 413 images, 3 vidéos, 40 audios, 35 fichiers de données, 11 PDF.
 - **3246 citations entre documents** (2618 en chemin exact, 628 par nom unique)
 - **128 arêtes de remplacement** · **1 documents marqués périmés**
 - **415 documents que personne ne cite** (atteignables par aucun chemin de lecture)
@@ -59,7 +59,7 @@ C'est ce réseau qui décide de ce qui s'applique à un travail. Si un document 
 
 | Rang | Document | Cité par | Titres |
 |---|---|---|---|
-| 1 | `sales/Activity-Log.md` | **194** | 256 |
+| 1 | `sales/Activity-Log.md` | **194** | 257 |
 | 2 | `AMK-DESIGN-SKILLS.md` | **41** | 173 |
 | 3 | `PRE-FLIGHT.md` | **32** | 41 |
 | 4 | `research/YouTube-Lessons.md` | **27** | 202 |
@@ -219,7 +219,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | vidéo | 3 | `clients/dm-optic/brag/brag.mp4`, `content/videos/v06-facebook-no-booking/Video_06_Facebook_No_Booking.mp4`, `content/videos/v06-facebook-no-booking/Video_06_Facebook_No_Booking_VOIX.mp4` |
 | sous-titre | 3 | `clients/dm-optic/content/month1/w1/tiktok-01-v2.fr.srt`, `clients/dm-optic/content/month1/w1/tiktok-01.fr.srt`, `clients/dm-optic/content/month1/w2/etapes-01.srt` |
 | archive | 1 | `dmopticsarl-2026-10-21.zip` |
-| symboles extraits (titres de documents + fonctions/classes du code) | 10545 | — |
+| symboles extraits (titres de documents + fonctions/classes du code) | 10547 | — |
 
 ### Les outils et skills installés — 1 dossier = 1 outil
 
@@ -292,7 +292,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 |---|---|
 | Écrire un message / relancer | `sales/CLIENT-MESSAGING-RULES.md`, `sales/MESSAGES-2026-09-23-PERSUASION.md`, `sales/AMK-Sales-Playbook-v2.md` |
 | Prix, grille, remise | `knowledge/PRIX-2026-10-24.md`, `sales/PRIX-ET-RECURRENCE-2026-09-24.md`, `sales/REVUE-CONTRATS-GRILLE-2026-09-23.md` |
-| Contenu, vidéo, script | `sales/SOCIAL-ACQUISITION-PLAYBOOK-2026-10-25.md`, `research/youtube-lessons/2026-10-11-batch-3/video-8-tiktok-beginners-guide.md`, `content/pipeline/CONTENT-PIPELINE.md` |
+| Contenu, vidéo, script | `research/youtube-lessons/2026-10-11-batch-3/video-8-tiktok-beginners-guide.md`, `sales/SOCIAL-ACQUISITION-PLAYBOOK-2026-10-25.md`, `content/pipeline/CONTENT-PIPELINE.md` |
 | Design, page, tokens | `design/WORKFLOW.md`, `knowledge/LANDING-FUNNEL-2026-10-23.md`, `sales/Playbook-Addendum-3-Conversion-Design-2026-09-15.md` |
 | Déploiement, QA, portiques | `tools/qa/AUDIT-LESSONS-2026-10-23.md`, `PRE-FLIGHT.md`, `site/OPTIMISATION-2026-10-22.md` |
 | Client DM Optique | `clients/dm-optic/pre-launch-checklist.md`, `clients/dm-optic/dossier.md`, `clients/dm-optic/site/CLIENT-REQUIREMENTS-BRIEF.md` |

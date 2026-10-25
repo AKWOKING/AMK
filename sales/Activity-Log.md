@@ -5987,3 +5987,19 @@ recomptage : **28 testés · 22 joignables · 6 morts**.
 **⑤ Les garde-fous du ruling 142 sont conservés** : aucun post ne promet de mesure des appels, la fiche Google reste un bonus conditionnel (sujet B6), et aucun client n'est nommé sans accord écrit (sujet B8 en 🟡, B9 en 🔴).
 
 **⑥ Reste à faire, par King** : confirmer le **nom et l'URL** de la page Facebook (créée le 22/10, `AMK-PRESENCE` §1), régler le bouton « Envoyer un message WhatsApp » sur `wa.me/237677789631`, et **publier** — le premier post est mardi 27/10 à 18:00.
+
+## 25/10/2026 (tour 144) — « CONTENT LIKE THESE » : OUI — le studio explainer existe, EP01 est rendu
+
+**① La réponse était oui, et elle est en code.** King a envoyé trois captures d'un reel « post-it animé » en demandant *« I want content like these, can you do it ?? yes or no »*. Réponse : **oui**. Ce qui n'existait pas à 20:20 existe à 20:25 : `content/reels/reelkit.py` (moteur) + `content/reels/ep01/make_ep01.py` (épisode) → `ep01-v1.mp4`, **1080×1920, 30 fps, 21,4 s, 1,5 Mo**, rendu en 28 s, sans tournage, sans voix, sans visage.
+
+**② Le format est repris, pas les images.** Fond crème + trame de points · titres Montserrat noir avec **le dernier mot en orange** · cartes punaisées (punaise, ombre portée, `0 site` en pied de carte comme les `0 visitors` de la référence) · **pastille bicolore** noire avec le second mot orange · mascotte en bas à gauche qui désigne · barre de progression fine. **Aucune capture de King n'est copiée dans le dépôt.**
+
+**③ Un vrai bug de police, trouvé et corrigé.** Les quatre fichiers `content/assets/fonts/Montserrat-{Bold,ExtraBold,SemiBold,Medium}.ttf` sont **le même fichier variable** (744 936 octets chacun) : PIL rendait l'instance par défaut, **Thin**. Le premier rendu sortait maigre alors que le code demandait ExtraBold. `reelkit.font()` demande maintenant l'axe (`set_variation_by_name`) et retombe sur l'instance statique pour Poppins. **Conséquence pour tout le dépôt** : tout rendu d'image qui utilise ces fichiers sans l'axe sort en Thin — le kit est désormais le seul chemin de rendu recommandé.
+
+**④ Le fond de la mascotte est retiré par diffusion, pas par couleur.** Une découpe couleur globale mangeait le visage ; `cut_background()` part des quatre coins et s'arrête sur les traits noirs. La mascotte se pose proprement sur la trame.
+
+**⑤ Aucune règle du dépôt n'a été pliée.** L'épisode ne contient **aucun chiffre de résultat**, aucun nom de client ni de concurrent, aucune mesure promise (ruling 142), aucune mention d'IA (ruling 11/10), et le texte est **écrit**, pas sous-titré automatiquement (ruling 11/10). Les seuls faits montrés — `Add business hours`, `Add website`, `Be the first to review` — viennent de la capture Optix du **24/10**, déjà citée dans `PACK-OPTICIEN`.
+
+**⑥ L'épisode est déjà planifié, pas un jouet.** C'est le sujet **T2** du playbook (§2) : **mardi 03/11**, et il peut avancer au **27/10** si le carrousel T1 n'est pas prêt. Le playbook gagne un **§5 bis** : le réel explainer sans voix, produisible par l'agent seul, qui couvre huit des vingt-quatre sujets vidéo. La voix, elle, reste une présence humaine — elle se posera sur le **même master**, sans refaire les images.
+
+**⑦ Reste** : EP02 (fiche DM Optique), EP03 (3 questions avant de payer), EP04 (deux accueils), EP05 (deux aperçus) — un fichier de 150 lignes par épisode, cinq fonctions. Le mode d'emploi, les garde-fous et la file sont dans `content/reels/README.md`.

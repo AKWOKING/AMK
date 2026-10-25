@@ -237,7 +237,7 @@ Semaine 1 = **26/10 → 01/11**. Chaque ligne est prête à produire : le sujet 
 
 | Date | Étage | Format | Sujet | Accroche | CTA | Actif | Statut |
 |---|---|---|---|---|---|---|---|
-| **Mar 03/11** | TOFU | vidéo 25 s | T2 | « Pourquoi votre site n'apparaît pas quand on cherche votre nom » | « Si votre nom ne sort pas, écrivez **APERÇU** : 10 minutes, je regarde avec vous. » | capture d'écran + voix | à produire |
+| **Mar 03/11** | TOFU | vidéo 25 s | T2 | « Pourquoi votre site n'apparaît pas quand on cherche votre nom » | « Si votre nom ne sort pas, écrivez **APERÇU** : 10 minutes, je regarde avec vous. » | **✅ `content/reels/ep01/ep01-v1.mp4`** (21,4 s, §5 bis) | rendu |
 | **Jeu 05/11** | MOFU | carrousel 7 | M12 | « Un aperçu, en 4 étapes : ce que vous voyez avant de payer » | « L'étape 1 prend deux minutes. Écrivez **APERÇU** — on fait les 10 minutes ensemble. » | `content/carousels/` (gabarit c03) | à adapter |
 | **Sam 07/11** | BOFU | texte | B5 | « J'ouvre deux aperçus à votre nom cette semaine » | « Deux places. Écrivez **APERÇU** — 10 minutes, la première est prise quand elle est prise. » | capacité réelle | à écrire |
 
@@ -428,6 +428,23 @@ l'appel, pas seulement le mot-clé.
 
 **Règle de réutilisation** : ces huit modèles couvrent les 36 sujets. Un sujet sans modèle est un sujet
 qu'on n'a pas encore écrit — il attend, il ne s'improvise pas.
+
+### 5 bis · Le sixième format, né le 25/10 : le réel explainer sans voix
+
+Un format que la source ne décrit pas (`[INFERENCE]`), et qui existe maintenant en code :
+`content/reels/reelkit.py` + `content/reels/ep01/make_ep01.py` rendent **21,4 s** en 1080×1920, fond crème,
+cartes punaisées, pastille bicolore, mascotte — sans voix, sans visage, sans tournage.
+
+| | |
+|---|---|
+| **Pourquoi il compte** | il est produit **par l'agent seul**, en 30 s de rendu, donc il ne coûte ni la présence de King ni un créneau de tournage |
+| **Ce qu'il remplace** | la vidéo 25 s des sujets T2, T5, T9, T12, M3, M10, B3, B7 — huit des vingt-quatre — quand le tournage n'est pas possible |
+| **Ce qu'il ne remplace pas** | une vidéo avec voix : la voix reste une **présence humaine** (§3.3), et elle se pose sur le même master sans refaire les images |
+| **Garde-fous** | durée ≤ 25 s, lisible sans son, un accent orange par écran, **aucun chiffre de résultat**, aucun nom de client, aucune mention d'IA (ruling 11/10) |
+
+**EP01 est déjà planifié** : c'est le sujet **T2**, mardi 03/11. Il peut avancer au 27/10 si le carrousel T1
+n'est pas prêt — c'est la règle (c) du calendrier, appliquée.
+
 
 ---
 
