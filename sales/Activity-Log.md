@@ -6904,3 +6904,16 @@ King ne les a pas données, et une heure inventée vaut moins qu'une heure absen
   Livrables hors dépôt : `/home/user/brag-output-dr-ophtalmo/{brag.mp4 10,4 Mo, brag-whatsapp.mp4 2,28 Mo,
   poster.jpg}` ; plan dans `clients/dr-ophtalmo/brag/brag-plan.md`. **Brouillon : rien n'est publié sans
   validation de King.**
+
+- 26/10/2026 · **La vidéo brag de Dr Ophtalmo entre dans le dépôt** (demande de King : « push the brag
+  video to github »). Le motif est nommé : les deux fichiers de la veille ne vivaient que dans `/tmp` et
+  `/home/user/brag-output-dr-ophtalmo/`, **effacés au redémarrage de l'environnement** — un livrable
+  « prêt » qu'on ne peut plus ouvrir n'est pas un livrable. Vidéos **rendues à nouveau** (captures réelles,
+  `hyperframes check` 0 erreur / 19-19 AA, `audit_video_motion.py` **OK** sur les deux fichiers ; le
+  premier rendu était **BLOQUÉ**, fenêtre 18–20 s figée à 1,39, corrigé par un troisième halo et un fond
+  qui avance sur les 20 s). Deux défauts trouvés **à l'œil** sur les images rendues et corrigés : le
+  panoramique à 1,14 rognage le texte du site sur les côtés (→ échelle 1 → 1,02) et la carte de légende
+  laissait traverser le texte de la page (→ fond opaque, pastille « Horaires à confirmer » déplacée dans
+  la carte). Versionné : `clients/dr-ophtalmo/brag/brag.mp4` (4,1 Mo) + `brag-whatsapp.mp4` (2,5 Mo) +
+  `poster.jpg` (67 Ko), exception datée dans `.gitignore` comme EP01 ; le master de 14 Mo reste dehors.
+  Documentation : `clients/dr-ophtalmo/brag/brag-plan.md` (scènes, portiques, reprise de zéro).
