@@ -6718,3 +6718,31 @@ Optic ajouté en `disqualified` (absent de WhatsApp). **15 lignes de preuve** aj
 
 **⑥ Ce que je ne peux pas prouver.** Que ces cinq aient WhatsApp ouvert : deux le sont (profils vus le
 25/10), deux demandent les 60 secondes de King, et le cinquième repose sur un numéro d'Ordre.
+
+---
+
+## Tour 170 · 26/10/2026 (16 h 40) — fin de l'outreach, CRM à jour, plan du 28/10
+
+**① Ce que King a décidé.** L'outreach s'arrête aujourd'hui : les quinze messages sont partis (LOT 1, 2, 3),
+et la reprise est fixée au **mercredi 28/10**.
+
+**② Le CRM ne savait rien de la journée.** Les quinze lignes étaient encore en `prospecting`,
+`last_send_state` vide, aucune date de suivi. Corrigé sur les quinze : `sent`, `stage_since=2026-10-26`,
+`Follow-up date=2026-10-28`, `follow_ups_sent=0`, `Contacted=Yes`, et le lot noté dans `Notes`. **ISEE**
+passe en `parked`, `reply_type=salutation`, **sans date de relance** — le fil a été fermé par King le 26/10
+à 16 h 04.
+
+**③ Le tracker.** `sales/CAMPAGNE-VOLUME-2026-10-26.md` §5 : quinze lignes cochées « envoyé 26/10 »,
+colonne « Relance » à 28/10 pour quatorze, « aucune » pour ISEE. Les colonnes « Lu » et « Répondu » restent
+vides : elles ne se remplissent qu'avec une capture.
+
+**④ Le plan du 28/10** (`sales/PLAN-RELANCE-2026-10-28.md`) : la règle écrite dit J+7, la reprise demandée
+est J+2 — c'est donc une **exception datée**, et elle est écrite comme telle. Trois approches posées,
+**B recommandée** : regarder les accusés de lecture le matin, ne relancer que les lus sans réponse, et si
+moins de trois relances partent, enchaîner sur un lot neuf.
+
+**⑤ Trois modèles de relance** dans `sales/RELANCE-2026-10-28.md`, un par lot, **53 / 70 / 67 mots, 0
+bloquant, 0 avertissement**. Ce ne sont pas des gabarits : chaque fait sera revérifié le matin même.
+
+**⑥ Ce que je ne peux pas prouver.** Que les quinze soient lus, et que la relance convertisse. Le seul
+chiffre vivant reste **1 réponse sur 15**, arrivée sur un message faux.

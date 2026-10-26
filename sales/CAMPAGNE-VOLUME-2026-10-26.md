@@ -94,52 +94,40 @@ Trois sources, dans l'ordre de rendement observé :
 3. **Le passage** — une affiche relevée en boutique vaut trois numéros d'annuaire (une seule ligne du
    CRM vient de là, et c'est la mieux renseignée).
 
-## 5 · Le tracker — une ligne par message, cinq colonnes
+## 5 · Le tracker — quinze messages partis le 26/10, relance le 28/10
 
-À tenir dans `leads/Daily Ops.csv` (jamais à la main dans le CRM : `leads/build/crm.py`).
+| # | Lot | Cabinet | Envoyé | Lu | Répondu | Relance |
+|---|---|---|---|---|---|---|
+| 1 | 1 | Ets Espace Médical · 655 04 95 29 | **☑ 26/10** | ☐ | ☐ | 28/10 |
+| 2 | 1 | ASS pour RRPHDD · 675 39 90 23 | **☑ 26/10** | ☐ | ☐ | 28/10 |
+| 3 | 1 | ISEE · 656 97 80 43 | **☑ 26/10 15:15** | **☑ 15:41** | **☑ « Bonjour » 15:41** | **aucune — clos 16:04** |
+| 4 | 1 | Bellevue Optique · 694 89 26 96 | **☑ 26/10** | ☐ | ☐ | 28/10 |
+| 5 | 1 | S.O.S Vision · 699 86 04 63 | **☑ 26/10** | ☐ | ☐ | 28/10 |
+| 6 | 2 | Capelli Optique Médicale · 675 26 89 81 | **☑ 26/10** | ☐ | ☐ | 28/10 |
+| 7 | 2 | Saoudia Optique · 696 04 04 13 | **☑ 26/10** | ☐ | ☐ | 28/10 |
+| 8 | 2 | Pagrot Optique · 699 90 46 91 | **☑ 26/10** | ☐ | ☐ | 28/10 |
+| 9 | 2 | Light Optique · 677 64 87 90 | **☑ 26/10** | ☐ | ☐ | 28/10 |
+| 10 | 2 | Optique Pro · 690 03 48 18 | **☑ 26/10** | ☐ | ☐ | 28/10 |
+| 11 | 3 | Free Optic · 679 11 37 60 | **☑ 26/10** | ☐ | ☐ | 28/10 |
+| 12 | 3 | London Vision · 696 76 81 16 | **☑ 26/10** | ☐ | ☐ | 28/10 |
+| 13 | 3 | Maranatha Optics · 658 16 31 90 | **☑ 26/10** | ☐ | ☐ | 28/10 |
+| 14 | 3 | Africa Optic · 691 28 02 37 | **☑ 26/10** | ☐ | ☐ | 28/10 |
+| 15 | 3 | Alpha Optic · 699 57 34 57 | **☑ 26/10** | ☐ | ☐ | 28/10 |
 
-| # | Cabinet | Envoyé | Lu | Répondu | Bloqué |
-|---|---|---|---|---|---|
-| 1 | Ets Espace Médical · 655 04 95 29 | **☑ 26/10** | ☐ | ☐ | ☐ |
-| 2 | ASS pour RRPHDD · 675 39 90 23 | **☑ 26/10** | ☐ | ☐ | ☐ |
-| 3 | ISEE · 656 97 80 43 | **☑ 26/10 15:15** | **☑ 15:41** | **☑ « Bonjour » 15:41** | ☐ |
-| 4 | Bellevue Optique · 694 89 26 96 | **☑ 26/10** | ☐ | ☐ | ☐ |
-| 5 | S.O.S Vision · 699 86 04 63 | **☑ 26/10** | ☐ | ☐ | ☐ |
-| 6 | Capelli Optique Médicale · 675 26 89 81 | ☐ | ☐ | ☐ | ☐ |
-| 7 | Saoudia Optique · 696 04 04 13 | ☐ | ☐ | ☐ | ☐ |
-| 8 | Pagrot Optique · 699 90 46 91 | ☐ | ☐ | ☐ | ☐ |
-| 9 | Light Optique · 677 64 87 90 | ☐ | ☐ | ☐ | ☐ |
-| 10 | Optique Pro · 690 03 48 18 | ☐ | ☐ | ☐ | ☐ |
+**État au 26/10, 16 h 30.** Quinze messages partis, **une réponse** (ISEE, 26 minutes, sur un message faux),
+**zéro conversation engagée**, un fil fermé par King lui-même. Les quinze lignes sont dans `leads/CRM.csv`
+avec `last_send_state=sent`, `stage_since=2026-10-26`, `Follow-up date=2026-10-28` — sauf ISEE, `parked`,
+sans date de relance.
 
-**Les cinq du LOT 1 sont partis le 26/10** (message v5, aperçu promis après le oui). Le LOT 2
-(`sales/LOT-2-2026-10-27.md`) est écrit et contrôlé, **pas encore envoyé**. La règle du §2 s'applique
-dès la première réponse : un blocage arrête la journée.
+**Les colonnes « Lu » et « Répondu » ne se remplissent qu'avec une capture.** Un accusé de lecture n'est
+pas une réponse, et l'absence d'accusé ne prouve pas que le message n'a pas été lu : sur WhatsApp Business,
+les ticks bleus dépendent des réglages du destinataire.
 
-**ISEE est la première réponse du lot, en 26 minutes** — et elle arrive sur un message faux :
-`iseecameroon.com` existe, la correction est écrite (`sales/REPARATION-ISEE-2026-10-26.md`) et doit partir
-avant la démo promise à 15 h 45.
+**Le chiffre qui décide de la suite** reste `réponses < 48 h` : **1 / 15** à cette heure, et elle est
+arrivée sur un message faux. Aucun taux camerounais n'existe encore dans nos sources.
 
-**Ce qui compte n'est pas « envoyé » mais « répondu »** — et le seul chiffre qui décide de la suite est
-`réponses < 48 h`. Aujourd'hui : **1 réponse sur 5**, à qualifier après la réparation.
-
-
-### 5 bis · LOT 3 — cinq lignes ouvertes, aucune cochée
-
-| # | Cabinet | Envoyé | Lu | Répondu | Bloqué |
-|---|---|---|---|---|---|
-| 11 | Free Optic · 679 11 37 60 | ☐ | ☐ | ☐ | ☐ |
-| 12 | London Vision · 696 76 81 16 | ☐ (contrôle 60 s) | ☐ | ☐ | ☐ |
-| 13 | Maranatha Optics · 658 16 31 90 | ☐ | ☐ | ☐ | ☐ |
-| 14 | Africa Optic · 691 28 02 37 | ☐ (contrôle 60 s) | ☐ | ☐ | ☐ |
-| 15 | Alpha Optic · 699 57 34 57 | ☐ | ☐ | ☐ | ☐ |
-
-**Trois morts du LOT 3, enterrés le 26/10 soir** (ruling King) : Star Optic (654 04 68 45, **absent de
-WhatsApp**) · Cabinet d'Optique la Rétine (**contacté 24/09**, sans réponse → lead mort) · Kamaïs Optic
-(**contacté 02/10**, trop tard pour une relance). **Tchaya Optique Akwa** les rejoint : contacté le 24/09,
-livré, **jamais ouvert** — ruling du 24/09, aucune relance.
-
-**ISEE (n° 3) est clos le 26/10 à 16 h 04** : King a fermé la conversation lui-même. Aucune relance après
-un mot pareil.
+**Le plan de relance est écrit** : `sales/PLAN-RELANCE-2026-10-28.md` — qui relancer, avec quel second
+fait, et pourquoi la relance du 28/10 est **une exception datée** à la règle du J+7.
 
 ## 6 · Les 25 minutes du matin
 
