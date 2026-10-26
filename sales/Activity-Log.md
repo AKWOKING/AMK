@@ -6664,3 +6664,29 @@ cinq interdits qui restent.
 
 **⑥ Ce que je ne peux pas prouver.** Que v7 réponde mieux que v6. Aucun des deux n'est parti. Deux textes
 reçus disent ce qui se lit bien, pas ce qui répond.
+
+---
+
+## Tour 168 · 26/10/2026 (nuit) — deuxième passe sur le LOT 3, et deux corrections avant envoi
+
+**① Ce que King a demandé.** Les lots 1 et 2 sont partis ; il veut voir le troisième **dans le chat**, avec
+la certitude qu'aucun des cinq n'a de site. Donc : deuxième passe, ce soir, sur les cinq — puis les
+messages recopiés dans la conversation.
+
+**② Ce que la seconde passe a changé.** ① Free Optic : sa page Facebook **déclare bien `freeoptic.cm`**, et
+le domaine ne répond toujours pas — troisième essai. Le message passe de « deux essais » à « trois ». ②
+Tchaya : le numéro est confirmé par quatre sources, mais **les horaires se contredisent** (08:00 sans les
+jours sur Mont-Pandi, 08:30 → 18:30 et samedi 08:30 → 13:00 sur maligah). L'ancien message disait « trois
+numéros et des horaires sans les jours », ce qui mélangeait deux fiches : réécrit sur le fait exact.
+
+**③ Ce qui a tenu.** ③ Star Optic : trois sources rue des Palmiers, une au carrefour Hôtel de l'Air, aucun
+site camerounais. ④ la Rétine : registre de l'Ordre (053/2018, KEMWOUA Serge Bertin, 699 79 74 15) contre
+695 47 43 64 sur la fiche. ⑤ Kamaïs : la fiche colle réellement les deux numéros en un seul
+(`wa.me/237693927766678435460`). Et les deux exclusions tiennent : `maison-optique.cm` et
+`originaloptique-douala.com` répondent toujours.
+
+**④ État.** `sales/LOT-3-2026-10-26.md` v7 : **68 / 69 / 64 / 67 / 68 mots, 0 bloquant, 0 avertissement**.
+Huit lignes de preuve ajoutées au CSV (25 au total).
+
+**⑤ Ce qui reste à King.** Le contrôle de 60 secondes sur les liens WhatsApp de ②③④ (numéros d'annuaire), et
+le ruling sur ⑤ Kamaïs, déjà contacté le 02/10 par un gabarit.
