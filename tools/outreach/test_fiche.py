@@ -53,7 +53,7 @@ def _():
 
 @cas("les cinq cartes du LOT 1 portent le nom affiché et le verdict ENVOYER")
 def _():
-    cs = fiche.cartes(RACINE / "sales" / "ENVOI-VAGUE-2-2026-10-26.md", 5, "2026-10-27")
+    cs = fiche.cartes(RACINE / "sales" / "LOT-1-2026-10-27.md", 5, "2026-10-27")
     assert len(cs) == 5, len(cs)
     assert all(c["verdict"] == "ENVOYER" for c in cs), [c["verdict"] for c in cs]
     assert cs[0]["affiche"] == "Optic Medical Favour and Joy", cs[0]["affiche"]
@@ -90,27 +90,28 @@ def _():
 
 @cas("le message réécrit avec un fait trouvé passe la porte")
 def _():
-    texte = ("Bonjour, à PK11 votre compte WhatsApp s'appelle « Optic Medical Favour and Joy », "
-             "et le tableau de l'Ordre vous inscrit « Ets Espace Médical ».\n"
-             "Ce n'est pas votre travail, c'est le nom : tapez « opticien PK11 » sur votre téléphone, "
-             "vous n'y êtes pas.\n"
-             "Dites-moi en un mot : lequel des deux noms vos clients prononcent ?")
+    texte = ("Bonjour, je sais que c'est inattendu : à PK11 votre compte WhatsApp s'appelle « Optic "
+             "Medical Favour and Joy », et le tableau de l'Ordre vous inscrit « Ets Espace Médical ».\n"
+             "Deux noms dans deux registres qui ne sont pas à vous : le patient cherche l'un et trouve "
+             "l'autre.\n"
+             "J'ai fait le site d'un opticien d'ici, il est en ligne.\n"
+             "Dites-moi un mot : lequel en haut du site, avec WhatsApp ?")
     fails, warns, n = fiche.controle(texte)
     assert not fails and not warns, (fails, warns)
-    assert 35 <= n <= 55, n
+    assert 35 <= n <= 70, n
     return f"{n} mots, 0/0"
 
 
-@cas("le même message sans son dédouanement est refusé en avertissement")
+@cas("le même message sans sa cause nommée est refusé en avertissement")
 def _():
-    texte = ("Bonjour, à PK11 votre compte WhatsApp s'appelle « Optic Medical Favour and Joy », "
-             "et le tableau de l'Ordre vous inscrit « Ets Espace Médical ».\n"
-             "Tapez « opticien PK11 » sur votre téléphone : quatre noms passent avant le vôtre, "
-             "et aucun n'est vous.\n"
-             "Dites-moi en un mot : lequel des deux noms vos clients prononcent ?")
+    texte = ("Bonjour, je sais que c'est inattendu : à PK11 votre compte WhatsApp s'appelle « Optic "
+             "Medical Favour and Joy », et le tableau de l'Ordre vous inscrit « Ets Espace Médical ».\n"
+             "Votre nom est inscrit deux fois, et c'est bien normal.\n"
+             "J'ai fait le site d'un opticien d'ici, il est en ligne.\n"
+             "Dites-moi un mot : lequel en haut du site, avec WhatsApp ?")
     fails, warns, n = fiche.controle(texte)
     assert not fails, fails
-    assert any("dédouanement" in w for w in warns), warns
+    assert any("pas de cause nommée" in w for w in warns), warns
     return "avertissement nommé : le fait se lirait comme un reproche"
 
 

@@ -86,23 +86,69 @@ PADDING = [
     "excellence",
 ]
 
-# Dédouanement — CLIENT-MESSAGING-RULES §13 temps 2. Sans lui, le message se lit comme un reproche.
-# Ce que le message observe chez le prospect. Le dédouanement n'a de sens que s'il y a une
-# observation à désamorcer : un message d'offre qui n'affirme rien sur lui (« vous êtes X à Akwa,
-# j'ai fait la page d'un opticien d'ici ») n'a rien à dédouaner, et l'exiger punissait la bonne
-# forme. Ajouté le 26/10 en même temps que la fabrique de messages à volume.
+# Dédouanement — CLIENT-MESSAGING-RULES §13 temps 2, réécrit le 26/10 (ruling King, 152ᵉ message).
+#
+# Le ruling précédent disait : « ce n'est pas votre travail, c'est X ». King l'a cassé en deux
+# questions, et il avait raison : *c'est la faute de qui ?* — la phrase ne répond pas — et *où est
+# le problème ?* — elle ne le dit pas non plus. Pire, « ce n'est pas votre travail » renvoie la
+# faute à celui qui a rempli la fiche, c'est-à-dire souvent à un employé du prospect.
+#
+# Le temps 2 doit donc **nommer ce qui retient le patient** (Google, WhatsApp, les annuaires,
+# l'absence de site) — un objet, jamais une personne — **et situer le problème** (ce que le patient
+# ne peut pas faire). Une absolution seule ne passe plus.
 OBSERVATION = ["votre compte", "votre profil", "votre page", "votre site", "votre cabinet",
                "votre fiche", "votre numéro", "vos horaires", "au tableau", "vous apparaissez",
                "apparaît", "apparait", "s'affiche", "au registre", "chez vous"]
 
-DEDOUANEMENT = [
-    "ce n'est pas votre",
+# La cause nommée : un objet qui détient l'information et qui n'est pas le prospect.
+CAUSE = [
+    "pas à vous",
+    "n'est à vous",
+    "pas chez vous",
+    "n'est chez vous",
     "pas de votre fait",
-    "n'est pas en cause",
-    "pas vous qui",
-    "pas votre travail",
-    "pas votre faute",
+    "pas en cause",
+    "chez google",
+    "chez whatsapp",
+    "chez facebook",
+    "c'est google",
+    "c'est whatsapp",
+    "c'est facebook",
+    "les annuaires",
+    "l'annuaire",
+    "un annuaire",
+    "vous le louez",
+    "ne vous appartient pas",
+    "ne vous appartiennent pas",
 ]
+
+# L'absolution seule — celle que King refuse. Elle n'est plus acceptée comme dédouanement : elle
+# doit être suivie, dans la même phrase, par la cause nommée, sinon le message laisse le prospect
+# devant deux questions sans réponse (« c'est la faute de qui ? », « où est le problème ? »).
+ABSOLUTION_SEULE = [
+    "ce n'est pas votre faute",
+    "ce n'est pas votre travail",
+    "ce n'est pas votre page",
+    "ce n'est pas votre organisation",
+    "aucun reproche",
+    "vous n'y pouvez rien",
+]
+
+# Chaque phrase doit nommer l'endroit où le patient lit le prospect, ou le site qui répondrait.
+# Ruling King 26/10 : « make sure each line you write in the messages makes the client aware he
+# needs a site / a stronger online presence ». Une phrase qui ne nomme ni l'un ni l'autre est une
+# phrase qui décrit le décor : elle se supprime ou elle se réécrit.
+ANCRAGE = [
+    "site", "en ligne", "google", "facebook", "whatsapp", "annuaire", "annuaires", "fiche",
+    "profil", "registre", "tableau", "vitrine", "catalogue", "à vous", "chez vous", "votre nom",
+]
+
+# Désarmement — mécanisme 1 de Cameron Jeanes (26/10) : la première ligne excuse l'intrusion.
+DESARMEMENT = ["inattendu", "surprenant", "surprend", "je sais que c'est", "sans doute", "étrange"]
+
+# Preuve sociale — mécanisme 5. Un site qui existe déjà (DM Optique, en ligne) vaut mieux qu'une
+# promesse : on nomme ce qu'on a construit, jamais un chiffre de résultat.
+PREUVE = ["j'ai fait", "j'ai construit", "en ligne", "tourne", "un opticien d'ici", "le site d'un"]
 
 # Verbes d'action — la question finale doit demander quelque chose de FIXABLE.
 # Ajouté le 25/10 après le reproche de King le plus utile de la semaine : « what actions do we expect
@@ -213,14 +259,46 @@ def check(msg: Message) -> None:
     body = msg.body
     flat = fold(body)
 
-    # 1 · longueur — CLIENT-MESSAGING-RULES §13 : 35 à 55 mots, trois phrases
-    if msg.n_words > 55:
-        msg.fails.append(f"{msg.n_words} mots (maximum 55) — §13")
+    # 1 · longueur — CLIENT-MESSAGING-RULES §13. Le plafond passe de 55 à 70 mots le 26/10 :
+    #     le désarmement et la preuve sociale entrent dans chaque message (ruling King), et chacun
+    #     coûte six à dix mots. On monte le plafond d'autant, on ne le supprime pas — au-delà de
+    #     quatre phrases, ça redevient le rapport d'incident que le §13 refuse.
+    if msg.n_words > 70:
+        msg.fails.append(f"{msg.n_words} mots (maximum 70) — §13")
     elif msg.n_words < 30:
         msg.warns.append(f"{msg.n_words} mots (plancher 35) — §13")
     n_sent = sentences(body)
     if n_sent > 4:
-        msg.warns.append(f"{n_sent} phrases (la règle dit trois) — §13")
+        msg.warns.append(f"{n_sent} phrases (la règle dit quatre depuis le 26/10) — §13")
+
+    # 1 bis · chaque phrase vend le besoin — ruling King 26/10. Une phrase qui ne nomme ni
+    #     l'endroit où le patient lit le prospect ni le site qui répondrait ne fait pas avancer
+    #     la vente : elle décrit le décor.
+    for sent in re.split(r"(?<=[.!?])\s+", body.strip()):
+        if len(words(sent)) < 3:
+            continue
+        if not any(fold(a) in fold(sent) for a in ANCRAGE):
+            msg.warns.append(
+                "une phrase ne nomme ni l'endroit où le patient vous lit ni le site qui "
+                f"répondrait — « {sent.strip()[:60]} » — ruling King 26/10")
+            break
+
+    # 1 ter · désarmement — mécanisme 1 de Cameron Jeanes. Il se juge sur l'ouverture, et seulement
+    #     sur une **première touche froide** : un prospect tiède (il a déjà répondu) ne se désarme pas,
+    #     il se rappelle à lui (§13 quater, ruling 141). Le repère est la salutation : elle est de
+    #     règle sur un froid, et absente sur un tiède.
+    froid = "bonjour" in fold(" ".join(words(body)[:3]))
+    if froid and not any(fold(d) in fold(" ".join(words(body)[:12])) for d in DESARMEMENT):
+        msg.warns.append(
+            "pas de désarmement dans les douze premiers mots — la première ligne excuse "
+            "l'intrusion, sinon elle se lit comme un guet-apens (Cameron Jeanes, 26/10)")
+
+    # 1 quater · preuve sociale — mécanisme 5. Elle est nommable : DM Optique est en ligne.
+    #     Même périmètre que le désarmement : une première touche froide.
+    if froid and not any(fold(x) in flat for x in PREUVE):
+        msg.warns.append(
+            "aucune preuve sociale : nommer un site qui existe déjà (DM Optique, en ligne) — "
+            "mécanisme 5 (Cameron Jeanes, 26/10)")
 
     # 2 · une seule question — §13 interdit
     if msg.n_questions > 1:
@@ -266,9 +344,21 @@ def check(msg: Message) -> None:
             msg.fails.append(f"promesse de mesure impossible : « {m} » — le prospect n'a pas l'outil, "
                              f"nous n'avons pas l'accès — ruling 142 (25/10)")
 
-    # 6 · dédouanement — §13 temps 2 (seulement si le message observe quelque chose chez lui)
-    if not any(fold(d) in flat for d in DEDOUANEMENT) and any(fold(o) in flat for o in OBSERVATION):
-        msg.warns.append("pas de dédouanement : le fait se lira comme un reproche — §13 temps 2")
+    # 6 · la cause nommée — §13 temps 2, réécrit le 26/10. Deux fautes distinctes :
+    #     a) le message observe quelque chose chez lui et ne nomme aucune cause ;
+    #     b) il absout sans dire qui détient l'information — c'est le défaut que King a nommé.
+    if not any(fold(c) in flat for c in CAUSE) and any(fold(o) in flat for o in OBSERVATION):
+        msg.warns.append(
+            "pas de cause nommée : le fait se lira comme un reproche — dire qui détient "
+            "l'information (Google, WhatsApp, les annuaires) — §13 temps 2")
+    for sent in re.split(r"(?<=[.!?])\s+", body):
+        f_sent = fold(sent)
+        if any(fold(a) in f_sent for a in ABSOLUTION_SEULE) and not any(fold(c) in f_sent for c in CAUSE):
+            msg.warns.append(
+                "absolution qui n'explique rien : « c'est la faute de qui ? » et « où est le "
+                "problème ? » restent sans réponse — nommer la cause dans la même phrase "
+                "(ruling King 26/10)")
+            break
 
     # 7 · sortie sans friction — knowledge §3 temps 5 (avertissement : deux structures coexistent)
     if not any(fold(x) in flat for x in SORTIE):

@@ -167,17 +167,21 @@ def _():
     return f"{len(libres)} ligne(s) encore libres sur {len(leads)} composables"
 
 
-@cas("le lot retiré du 26/10 reste lisible et propre — retiré pour ses cibles, pas pour son texte")
+@cas("le lot retiré du 26/10 reste lisible et sans bloquant — on ne réécrit pas l'histoire")
 def _():
+    # Un lot retiré ne sera jamais envoyé : il est la trace de ce qu'on a refusé, pas un lot en
+    # attente. Il ne doit donc plus porter de **bloquant** (fait faux, prix, lien, deux questions) ;
+    # ses avertissements, eux, sont datés — depuis le 26/10 la porte demande le désarmement, la
+    # preuve sociale et une cause nommée, et ce lot ne les avait pas.
     p = compose.RACINE / "sales/retires/ENVOI-VAGUE-3-2026-10-26.md"
     msgs = compose.parse(p)
     assert len(msgs) == 16, len(msgs)
     for m in msgs:
         compose.check(m)
     compose.ressemblance(msgs)
-    fautes = [f for m in msgs for f in m.fails + m.warns]
+    fautes = [f for m in msgs for f in m.fails]
     assert not fautes, fautes
-    return "16 messages, 0 bloquant, 0 avertissement"
+    return "16 messages, 0 bloquant (avertissements datés, assumés)"
 
 
 def main() -> int:

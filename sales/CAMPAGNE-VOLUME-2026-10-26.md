@@ -4,9 +4,11 @@
 DÉCISION King, 26/10 : « we can't be sending just 1 message per day, we send between 20-50 ».
 Ce document dit comment on tient cette cadence sans perdre le numéro, ce que la fabrique garantit,
 et ce que King fait chaque matin en 25 minutes.
-Deux fichiers, 37 messages écrits et mesurés le 26/10, tous à 0 bloquant 0 avertissement :
-         sales/ENVOI-VAGUE-2-2026-10-26.md (7 à la main, tous à 3/3)
+Deux fichiers, 35 messages écrits et mesurés le 26/10, tous à 0 bloquant 0 avertissement :
+         sales/LOT-1-2026-10-27.md (5 à la main, tous à 3/3, version v4 du 26/10)
          sales/ENVOI-VOLUME-2026-10-27.md (30 par la fabrique, partis en 13 puis 17)
+La vague 2 est retirée : sales/retires/ENVOI-VAGUE-2-2026-10-26.md (doublon du LOT 1 + deux messages
+non réécrits : Free Optic et Capelli passent au LOT 2).
 Le troisième lot du matin est retiré : sales/retires/ENVOI-VAGUE-3-2026-10-26.md (12 cibles mortes
 ou déjà pourvues d'un site, 4 doublons).
 ```
