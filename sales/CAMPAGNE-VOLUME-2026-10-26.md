@@ -130,15 +130,22 @@ arrivée sur un message faux. Aucun taux camerounais n'existe encore dans nos so
 fait, et pourquoi la relance du 28/10 est **une exception datée** à la règle du J+7.
 
 
-### 5 bis · LOT 3 — cinq lignes ouvertes, aucune cochée
+### 5 bis · Le LOT 3 v9 n'est jamais parti — et ne partira pas
 
-| # | Cabinet | Envoyé | Lu | Répondu | Bloqué |
-|---|---|---|---|---|---|
-| 11 | Free Optic · 679 11 37 60 | ☐ | ☐ | ☐ | ☐ |
-| 12 | Tchaya Optique Akwa · 699 98 87 24 | ☐ (contrôle 60 s) | ☐ | ☐ | ☐ |
-| 13 | Star Optic · 654 04 68 45 | ☐ (contrôle 60 s) | ☐ | ☐ | ☐ |
-| 14 | Cabinet d'Optique la Rétine · 695 47 43 64 | ☐ (contrôle 60 s) | ☐ | ☐ | ☐ |
-| 15 | Kamaïs Optic · 678 43 54 60 | ☐ (ruling : 2ᵉ approche) | ☐ | ☐ | ☐ |
+Le §5 ci-dessus est le seul état vrai : **les cinq du LOT 3 sont Free Optic, London Vision, Maranatha,
+Africa Optic et Alpha Optic** (v8), tous cochés. Le **v9** — Free Optic, Tchaya, Star Optic, la Rétine,
+Kamaïs — est resté sur la table et **n'a jamais été envoyé** :
+
+| Candidat du v9 | Pourquoi il ne part pas |
+|---|---|
+| Free Optic | déjà parti dans le v8 : le réécrire, c'est écrire deux fois au même cabinet |
+| Tchaya Optique | `disqualified` le 26/10 — contacté le 24/09, livré et jamais ouvert, ruling du 24/09 : aucune relance |
+| la Rétine | `disqualified` le 26/10 — contacté le 24/09, aucune réponse |
+| Kamaïs Optic | `disqualified` le 26/10 — contacté le 02/10 par gabarit, sans réponse |
+| Star Optic | **aucun numéro sur WhatsApp** (654 04 68 45 absent, constaté par King) — `not_sent` au CRM |
+
+Le v9 a été écrit sans relire ces cinq lignes-là : c'est la faute du tour 172, rejouée au tour 173. Le
+lot est corrigé, l'erreur reste écrite ici pour qu'on ne la refasse pas.
 
 **ISEE (n° 3) est clos le 26/10 à 16 h 04** : King a fermé la conversation lui-même (« autant pour moi, je
 n'avais pas vu votre site… bonne continuation »). Aucune relance après un mot pareil — le dossier reste
