@@ -3,7 +3,7 @@
 ```text
 SOURCE    deux messages écrits ailleurs, envoyés par King les 26/10 (soir), mêmes destinataires types
 PORTE     audit_outreach.py --strict : 146 mots, emoji, 5 phrases → 2 bloquants, 6 avertissements
-          (puis 116 mots, 5 phrases → BLOQUÉ pour la première version)
+          (puis 72 mots, 5 phrases → BLOQUÉ pour la première version — compte corrigé le 26/10 au soir)
 CE QUE ÇA CHANGE   sales/LOT-2-2026-10-27.md passe en v7 : l'ouverture dit ce qui marche avant le défaut
 CE QUE ÇA NE CHANGE PAS   la phrase « je vous ai préparé » n'entre pas tant qu'aucun aperçu n'existe (§8)
 ```

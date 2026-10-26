@@ -6541,7 +6541,7 @@ message, pas une preuve qu'ils achèteront.
 personnalisé avec vos horaires ») et demande : *à la place d'un opticien, tu ne dirais pas oui ?* C'est une
 mesure de closing, pas une remarque de style — le lot n'était pas parti, il pouvait encore changer.
 
-**② Le texte reçu passé à la porte.** 116 mots, 5 phrases → **BLOQUÉ**, quatre motifs (longueur, nombre de
+**② Le texte reçu passé à la porte.** 72 mots, 5 phrases → **BLOQUÉ**, quatre motifs (longueur, nombre de
 phrases, une phrase sans ancrage, aucune cause nommée). La forme échoue ; le fond gagne deux points que
 nos cinq n'avaient pas.
 
@@ -6820,3 +6820,32 @@ avec `sales/`.
 
 **⑦ Ce que je ne peux pas prouver.** Que les quinze soient lus, ni qu'une relance convertisse. Le seul
 chiffre vivant reste **1 réponse sur 15** — et elle est arrivée sur un message faux.
+
+---
+
+## Tour 174 · 26/10/2026 (21 h) — la comparaison, et un compte de mots qui était faux
+
+**① La question.** King renvoie le texte du concurrent et demande : « compare it to the messages you have
+written … and in the place of an optician won't you say yes ». Réponse : **oui, je dirais oui — mais oui à
+*voir*, pas oui à un site.** Leur oui ne coûte rien parce que la chose existe déjà ; le nôtre demande de
+croire un inconnu, puis d'attendre.
+
+**② Ce qui est mesuré, et qui manquait.** Le texte reçu, verbatim, passe à la porte : **72 mots, 5
+phrases → BLOQUÉ**, quatre motifs. Le document de méthode annonçait **116 mots** : un compte à la main,
+jamais revérifié. Corrigé dans les quatre endroits qui le reprenaient — un chiffre faux circule plus vite
+qu'un chiffre absent.
+
+**③ Ce qu'on vole, ce qu'on ne vole pas.** Volé : **l'ordre** — le monde du prospect, la perte côté
+patient, le fait daté, la permission. Refusé : la promesse d'un aperçu déjà fait, tant qu'il n'existe pas.
+L'essai est écrit dans `sales/LOT-2-2026-10-27.md` §8 bis : **un contre quatre**, ① Capelli avec un vrai
+aperçu, les quatre autres inchangés — un mot de King, et il part.
+
+**④ L'essai sur le seul lot non parti.** ① Free Optic réécrit dans cet ordre : **65 mots, 0 bloquant, 0
+avertissement**, même fait, même source. Seule la première phrase change de sujet : l'endroit où le patient
+le cherche, au lieu de ce qui manque au cabinet. Les quatre autres restent en v9.
+
+**⑤ Ce que je ne peux pas prouver.** Qu'un ordre inversé fasse répondre davantage. Un texte reçu, zéro
+mesure de réponse : c'est une hypothèse, écrite comme telle.
+
+**⑥ Références.** PR #69 **MERGED `a777bc5`** · PR #70 **MERGED `6230318`** · PR #71 **MERGED** ·
+`Workers Builds: dmoptiquesarl` échoue aussi sur le commit déjà mergé (panne antérieure, sans rapport).
