@@ -23,7 +23,7 @@ Aucune compilation, aucune dépendance : le site est servi tel quel. Les modules
 **Tests qui tournent sans navigateur :**
 
 ```bash
-node tests/logic.test.mjs     # 34 vérifications : configuration, semaine, FR/EN, validation, WhatsApp
+node tests/logic.test.mjs     # 40 vérifications : configuration, semaine, FR/EN, validation, WhatsApp
 ```
 
 ---
@@ -123,14 +123,14 @@ js/lib/schedule.js         la semaine se déduit des lieux
 js/lib/validators.js       validation + messages localisés
 js/app.js                  rendu et interactions (le seul fichier qui touche au DOM)
 assets/                    3 images en 3 largeurs (webp), 6 fichiers de police locaux
-tests/logic.test.mjs       34 vérifications sans navigateur
+tests/logic.test.mjs       40 vérifications sans navigateur
 ```
 
 ---
 
 ## 7 · Ce qui a été vérifié
 
-- **34 vérifications de logique** (`tests/logic.test.mjs`) : quatre lieux, semaine déduite, jours
+- **40 vérifications de logique** (`tests/logic.test.mjs`) : quatre lieux, semaine déduite, jours
   traduits, parité stricte des clefs FR/EN, validation (nom, téléphone, e-mail, date passée, date trop
   lointaine, message trop long), message WhatsApp (lieu, date en clair, aucun `undefined`), encodage
   `wa.me` sans `+`, absence de lien quand aucun numéro n'est configuré.
@@ -138,10 +138,13 @@ tests/logic.test.mjs       34 vérifications sans navigateur
   H1 en trois lignes, quatre lieux dans le sélecteur et dans le formulaire, sept jours dont le dimanche
   vide, bascule FR↔EN qui conserve le lieu choisi et la saisie en cours, erreurs de formulaire annoncées
   avec `aria-invalid`, message préparé nommant le lieu choisi, aucun `undefined` affiché.
-- **Non vérifié ici** : le rendu pixel d'un vrai navigateur (aucun Chromium disponible dans
-  l'environnement de construction) et les mesures de contraste à l'écran. La page est ouverte en aperçu
-  pour ce contrôle visuel ; les tailles de police, les points de rupture (1440 · 1024 · 768 · 390 · 320)
-  et l'absence de débordement horizontal ont été traités dans la feuille de style, pas mesurés.
+- **Mesuré dans un vrai Chromium** (26/10, après `bash tools/video/install.sh`), aux largeurs
+  1440 · 1024 · 768 · 390 · 320 : **0 débordement horizontal**, **0 image cassée**, **0 erreur console**,
+  aucun texte sous 12 px (10,2 px avant correction), anneau de focus 3 px, en-tête à 60 px en 320 px,
+  H1 sur trois lignes, `document.fonts.status === "loaded"`.
+- **Non vérifié** : le rendu sur un vrai téléphone en 3G, l'aperçu d'un lien collé dans une vraie
+  conversation WhatsApp, et les polices sur un Android ancien. La page est déployée en aperçu privé
+  (`dr-ophtalmo-preview.vercel.app`, `noindex`) précisément pour ce contrôle-là.
 
 ---
 

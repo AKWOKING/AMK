@@ -6,7 +6,7 @@ dmoptic/      client payant, en production sur dmoptiquesarl.com
 labiomed/     laboratoire de Deido-Bassa — aperçu envoyé, lien labiomed.vercel.app
 cristallin/   opticien — refonte, aperçu construit, GELÉ (voir plus bas)
 dr-ophtalmo/  médecin ophtalmologue itinérant — aperçu construit le 26/10, NON publié, aucune
-              coordonnée réelle : voir son README (ce qu'il reste à fournir, et où)
+              coordonnée réelle ; lien de travail dr-ophtalmo-preview.vercel.app (noindex)
 ```
 
 **Décision King, 24/10 :** « cut the ones belonging to retired prospects and keep `dmoptic`,
@@ -31,7 +31,7 @@ construire au lieu de se comparer après.
 | `dmoptic/` | `demos/concept-dmoptic-v1.html` ← `demos/dmoptic-v1.tpl.html` + `demos/build_dmoptic.py` (+ `build_dmoptic_montures.py` pour les 40 fiches) | **production** — `dmoptiquesarl.com`, déployé sur Cloudflare. C'est le seul aperçu qui se déploie encore depuis ce dépôt. |
 | `labiomed/` | aucun builder dans le dépôt — le dossier est autonome (`index.html`, `og.jpg`, `img/`) | **envoyé** — `labiomed.vercel.app`, message du 19/09 avec le lien et le prix. Le fil est en « report motivé », pas en oui commercial. |
 | `cristallin/` | `demos/concept-le-cristallin-v1.html` ← `demos/build_le_cristallin.py` + `demos/le_cristallin_content.json` | **gelé** — voir ci-dessous |
-| `dr-ophtalmo/` | aucun builder — dossier autonome (HTML + CSS + modules ES + `js/config/doctor.js`) | **aperçu, non publié** — aucune donnée de contact réelle ; `node tests/logic.test.mjs` (34 vérifications) |
+| `dr-ophtalmo/` | aucun builder — dossier autonome (HTML + CSS + modules ES + `js/config/doctor.js`) | **aperçu, non publié** — aucune donnée de contact réelle ; `node tests/logic.test.mjs` (40 vérifications) ; déployé pour lecture sur `dr-ophtalmo-preview.vercel.app` (projet Vercel `dr-ophtalmo-preview`, racine ce dossier, `noindex` + `robots.txt`) |
 
 ## ⛔ GEL — Le Cristallin (décision de King, 23/09/2026 au soir)
 

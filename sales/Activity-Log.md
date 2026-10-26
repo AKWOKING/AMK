@@ -6877,3 +6877,30 @@ seule ligne de données, et le test reste disponible pour le prochain lot.
 **⑤ Ce qui reste ouvert.** 14 relances au 28/10 (`sales/PLAN-RELANCE-2026-10-28.md`), **1 réponse sur 15**
 (ISEE, sur un message faux), zéro conversation engagée. Les heures d'envoi du jour ne sont pas notées —
 King ne les a pas données, et une heure inventée vaut moins qu'une heure absente.
+
+## 26/10/2026 · Dr Ophtalmo — audit design au navigateur, aperçu privé en ligne, vidéo de lancement
+
+- 26/10/2026 · **Audit design mesuré pour de vrai** (`/tmp/audit/audit.mjs`, Puppeteer + Chromium de
+  `tools/video/install.sh`) aux largeurs **1440 · 1024 · 768 · 390 · 320** : **0 débordement horizontal,
+  0 image cassée, 0 erreur console**, H1 sur trois lignes, en-tête à **60 px** en 320 px, CTA du hero
+  visible, `document.fonts.status = loaded`, JSON-LD 356 caractères. **Le défaut trouvé n'était pas
+  visible à la lecture du CSS** : texte à **10,2 px** et anneau de focus de 2 px. Corrigé : plancher
+  typographique `0.8rem` (**42 règles**), focus **3 px**, `:active` 0,975 sous garde
+  `prefers-reduced-motion`, `.heading-lg` 30ch, en-tête mobile resserré. EN : **0 tiret cadratin** (5
+  avant). Détail : `clients/dr-ophtalmo/build-notes.md` §5.
+- 26/10/2026 · **Partage et confidentialité de l'aperçu** : `og:image` était un **WebP** (WhatsApp n'en
+  dessine pas d'aperçu) → JPEG **1200 × 630** `assets/img/og.jpg` + `og:image:type/width/height/alt` ;
+  `meta robots noindex` + `robots.txt` `Disallow: /` + `_headers` (HSTS, CSP fermée, cache) + `llms.txt`.
+  Porte de livraison `audit_delivery.py --strict` : **VERT, 0 P1**, 1 P2 (JSON-LD sans téléphone ni
+  adresse — non inventés) et 1 P3 (pas de `sameAs`) assumés. Tests : **40 vérifications** (36 → 40).
+- 26/10/2026 · **Aperçu privé en ligne pour lecture** : projet Vercel `dr-ophtalmo-preview` (racine
+  `hosting/previews/dr-ophtalmo`, source GitHub `AKWOKING/AMK`) → déploiement
+  `dpl_4f4QJpE1WMuXDZpxrYECtACToaNY` **READY / PROMOTED**, alias **`dr-ophtalmo-preview.vercel.app`**,
+  commit `f177b6c`. Vérifié par lecture externe : page servie, `robots.txt` servi. **Rien n'est envoyé au
+  médecin** — le lien part d'abord à King avec le message de présentation.
+- 26/10/2026 · **Vidéo de lancement (brag, §1f②)** : 20 s, 1080×1920, 30 fps, captures **réelles** du
+  site ; `hyperframes check` **0 issue, 19/19 AA**, `audit_video_motion.py` **OK** sur les deux fichiers
+  (fenêtre la plus faible 1,93), musique **générée ffmpeg** (jamais la piste brag, issue #59).
+  Livrables hors dépôt : `/home/user/brag-output-dr-ophtalmo/{brag.mp4 10,4 Mo, brag-whatsapp.mp4 2,28 Mo,
+  poster.jpg}` ; plan dans `clients/dr-ophtalmo/brag/brag-plan.md`. **Brouillon : rien n'est publié sans
+  validation de King.**
