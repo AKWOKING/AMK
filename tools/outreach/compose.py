@@ -273,6 +273,22 @@ class Lead:
         return "\n".join(self.lignes)
 
 
+def ecarte(leads: list[Lead], verif: Path) -> tuple[list[Lead], list[Lead]]:
+    """Ce que le vérificateur a condamné ne s'écrit pas, même bien.
+
+    Deux verdicts seulement ferment la porte à l'écriture : `JAMAIS` (le numéro ne joint pas WhatsApp —
+    écrire là, c'est remplir une journée avec du vide) et `HORS-CIBLE` (le cabinet a déjà un site : lui
+    dire qu'il lui en manque un est la faute du 24/09). Les 2/3 et les 1/3 restent dans le lot : leur
+    porte A se ferme à l'envoi, en huit secondes, pas à l'écriture.
+    """
+    import json
+    v = {x["num"]: x["verdict"] for x in json.loads(verif.read_text(encoding="utf-8"))}
+    garde, ecartes = [], []
+    for l in leads:
+        (ecartes if v.get(l.numero) in ("JAMAIS", "HORS-CIBLE") else garde).append(l)
+    return garde, ecartes
+
+
 def lit_crm(chemin: Path) -> list[Lead]:
     out: list[Lead] = []
     with chemin.open(encoding="utf-8-sig", newline="") as f:
@@ -458,14 +474,11 @@ def main() -> int:
         leads = [l for l in leads if l.numero in permis]
         print(f"Filtre `--verif` : {len(leads)} ligne(s) sur {avant} ont les trois portes (§8b).")
     if a.ecarter:
-        import json
-        v = {x["num"]: x["verdict"] for x in json.loads(Path(a.ecarter).read_text(encoding="utf-8"))}
         avant = len(leads)
-        ecartes = [l.nom for l in leads
-                   if v.get(l.numero) in ("JAMAIS", "HORS-CIBLE")]
-        leads = [l for l in leads if v.get(l.numero) not in ("JAMAIS", "HORS-CIBLE")]
+        leads, ecartes = ecarte(leads, Path(a.ecarter))
         print(f"Filtre `--ecarter` : {len(ecartes)} ligne(s) sur {avant} écartée(s) — numéro mort "
-              f"ou site déjà en ligne : " + ", ".join(ecartes[:6]) + ("…" if len(ecartes) > 6 else ""))
+              f"ou site déjà en ligne : " + ", ".join(l.nom for l in ecartes[:6])
+              + ("…" if len(ecartes) > 6 else ""))
     if a.angle:
         leads = [l for l in leads if l.angle == a.angle]
     if a.deja:
