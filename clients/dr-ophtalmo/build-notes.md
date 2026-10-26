@@ -131,3 +131,61 @@ la composition décrite scène par scène et les captures reproductibles en 10 s
 
 Tant que ces trois points ne sont pas tranchés, le site reste un aperçu privé et **la vidéo reste un
 brouillon** : rien n'est publié ni envoyé au médecin sans la validation de King.
+
+## 6 · 26/10/2026 (soir) — le site devient celui du Dr Fogue
+
+Le médecin s'est identifié dans la conversation WhatsApp du 26/10 : **Dr Fogue, ophtalmologue**,
+**691 280 237**, quatre lieux de consultation. Le site, écrit pour lui, tournait encore avec un
+portrait généré, un nom vide et aucun contact. Ce qui a été fait, et ce qui reste à confirmer.
+
+### 6.1 · Photographies — les trois siennes remplacent toutes les images générées
+
+| Fichier produit | Source | Usage | Recadrage |
+|---|---|---|---|
+| `dr-fogue-hero-{640,960,1440}.webp` | affiche bleue (portrait en blouse blanche) | hero, à droite | bandeau « Dr Fogue Ophtalmologue · LIVE TikTok » retiré sous le buste |
+| `dr-fogue-cabinet-{640,960,1440}.webp` | photo au cabinet, mur turquoise | section « Le médecin » | 4:3, sol et arrière-plan rognés |
+| `dr-fogue-consultation-{480,720}.webp` | affiche « Consultation de la vue » | sous la semaine de consultation | titre, œil illustré, vignette « Bloc 7 » et bandeau bleu retirés |
+| `og.jpg` 1200×630 | affiche bleue | partage WhatsApp | visage centré, aucun texte |
+
+`portrait-*.webp`, `examination-*.webp` et `equipment-*.webp` (générées) **supprimées du dépôt**.
+Quatre tests vérifient que chaque fichier annoncé existe et qu'aucun texte d'alt ou de légende ne
+présente une photo comme « générée ».
+
+**La photo d'équipe n'est pas publiée.** Le panneau « Hôpital de Paris — Service d'Ophtalmologie »
+n'est pas vérifiable, et rien ne prouve que le Dr Fogue y exerce ou y a été formé. La publier
+reviendrait à inventer une affiliation.
+
+### 6.2 · Ce qui est publié, et d'où cela vient
+
+| Élément | Valeur | Source |
+|---|---|---|
+| Nom, titre, spécialité | Dr Fogue · Ophtalmologie | conversation du 26/10, 17:26 — « par contre je suis ophtalmologue » |
+| WhatsApp / téléphone | +237 691 280 237 | affiche (« Contact: 691280237 ») + conversation |
+| Mbouda | lundi, mardi | 26/10, 17:53 |
+| Bafoussam | mercredi, jeudi | 26/10, 17:53 |
+| Africa Médical, Douala (ancien dépôt Guinness) | vendredi | 26/10, 17:53 |
+| Hôpital Charity, Bonabéri (Grand Hangar, Bloc 7) | samedi, sur rendez-vous | 26/10, 17:53 |
+
+Horaires d'ouverture : **aucun n'a été communiqué** → ils restent vides et l'écran écrit
+« Horaires à confirmer ». Aucune heure n'a été inventée.
+
+### 6.3 · Les sept questions à poser avant publication
+
+1. L'affiche annonce « vendredi, Douala, Bonabéri Grand Hangar Bloc 7, 8 h à 15 h » ; le message du
+   26/10 place le vendredi à Africa Médical et le samedi à l'hôpital Charity. **Laquelle est la bonne ?**
+2. Horaires d'ouverture des quatre lieux.
+3. Adresse exacte à Mbouda et à Bafoussam (seule la ville est connue).
+4. « Dr Fogue » suffit-il, ou faut-il le nom complet ?
+5. Inscription à l'Ordre national des médecins (à publier ou non).
+6. Langues de consultation.
+7. La photographie d'équipe : où a-t-elle été prise, et veut-il la publier ?
+
+### 6.4 · État technique
+
+`node tests/logic.test.mjs` **45/45** · `audit_a11y` **0 faute** · `audit_images` **0** ·
+`audit_delivery --strict` **0 P1 / 0 P2 / 1 P3** (`sameAs`, aucun réseau social à déclarer) ·
+`audit_aeo` **0** · `app.js` exécuté sur un DOM vide sans erreur (le bac n'a pas de navigateur).
+
+Le JSON-LD est passé du JavaScript au HTML (`Physician`, téléphone, quatre villes, service) : il est
+lisible sans exécuter de script. `audit_delivery` apprend au passage que `Physician` est une entité
+locale — un médecin en exercice en est une.
