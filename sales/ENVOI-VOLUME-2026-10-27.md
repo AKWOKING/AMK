@@ -1,3 +1,10 @@
+> **NEUF DES TRENTE SONT DÉJÀ ÉCRITS — 26/10.** Ce fichier a été composé avant l'envoi du 26/10 :
+> Optique Pro, Saoudia, Pagrot, Light, Alpha Optic, Free Optic, London Vision, Maranatha et Africa Optic
+> ont reçu un message le 26/10 (`sales/CAMPAGNE-VOLUME-2026-10-26.md` §5). Et **Africa Optic est le
+> Dr Fogue**, en conversation : ce n'est plus une cible froide. Le lot réellement prévu pour le 27 est
+> **`sales/LOT-2026-10-27.md`** — quinze cabinets jamais contactés, faits datés, 0 bloquant, 0 avertissement.
+> Ce fichier reste comme file de vérification de la fabrique, pas comme ordre d'envoi.
+
 # ENVOI — LE LOT VOLUME (27 et 28 octobre 2026) · 30 messages
 
 ```text

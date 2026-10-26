@@ -6938,3 +6938,36 @@ King ne les a pas données, et une heure inventée vaut moins qu'une heure absen
   **② « Docteur »** : Africa Optic est un opticien du tableau de l'Ordre (titulaire MINTEU NZONGA Eric Aimé).
   L'appeler « Docteur » flatte peut-être juste, mais s'il ne l'est pas, la première phrase du premier message
   devient une erreur qu'il voit. À trancher par King avant le message suivant.
+
+## 2026-10-26 (soir) — le lot du 27/10 : quinze cabinets jamais contactés, et neuf doublons évités
+
+**Ce qui a été trouvé en préparant demain.** La file d'attente de la fabrique
+(`sales/ENVOI-VOLUME-2026-10-27.md`, trente messages) avait été composée **avant** l'envoi du 26/10 :
+neuf de ses destinataires avaient déjà reçu un message la veille (Optique Pro, Saoudia, Pagrot, Light,
+Alpha Optic, Free Optic, London Vision, Maranatha, Africa Optic). Envoyer depuis ce fichier, c'était
+écrire deux fois aux mêmes cabinets en vingt-quatre heures — ce que WhatsApp sanctionne, et ce que le
+§10 du protocole interdit. Un bandeau a été posé en tête du fichier ; le lot du jour est ailleurs.
+
+**Africa Optic, lui, n'est plus une cible froide** : c'est le Dr Fogue, qui a répondu le 26/10 et attend
+ses photos. Il sort de toute file d'envoi.
+
+**Le lot du 27** (`sales/LOT-2026-10-27.md`, quinze messages, trois sous-lots de cinq) :
+`audit_outreach.py --strict` → **0 bloquant, 0 avertissement**. Chaque message porte un fait daté, une
+source lisible dans `§3` du fichier, et un angle différent : deux numéros (Optic Swiss), deux boutiques
+(Leroy), une rue absente (Le Cristallin), quatre numéros (Bely), des agences hors de Douala (Gift
+Optical), deux cabinets de même nom (Planète Optique), un fixe chez l'assureur (Espace Vision, Caprice),
+deux rues (L'Opticien), une fiche vide (Jucia), le registre de l'Ordre pour les cinq derniers.
+
+**Ce que le lot ne prétend pas.** Aucun des quinze numéros n'a été ouvert sur WhatsApp : le bac n'a pas
+WhatsApp, et la porte A ne se simule pas. Les quinze lignes sont donc marquées **⏳ 60 s**, et le geste
+de King reste entier. **Dix** reposent sur un fait croisé (deux sources), **cinq** sur le seul registre de
+l'Ordre : c'est écrit dans le fichier, pas masqué.
+
+**Écarté, avec le motif** : Doyoan Optic (`doyoanoptic.com`), Mega Optic (sa fiche déclare `megaoptic.cm`),
+Optic Laser, Cristalys, LyfyOptic, Maison Optique, Original Optique, Vision Care Center (domaines vivants),
+et les huit cabinets déjà écrits le 26/10.
+
+**Bookkeeping** : cinq fiches ajoutées au CRM (196 lignes) pour les cabinets qui n'y étaient pas —
+Optic Swiss, Leroy, Le Cristallin, Bely, SkyOptic — en `prospecting`, `wa_verified=no`, source datée.
+
+**Reste à faire** : les quinze ouvertures WhatsApp de King, puis l'envoi par sous-lot, une heure d'écart.
