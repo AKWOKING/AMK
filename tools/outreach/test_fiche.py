@@ -114,6 +114,18 @@ def _():
     return "avertissement nommé : le fait se lirait comme un reproche"
 
 
+@cas("une affirmation d'absence est signalée, même quand le texte passe la porte")
+def _():
+    texte = ("Bonjour, à Douala, « ISEE » au tableau de l'Ordre et « I See Better » sur WhatsApp, "
+             "avec une adresse postale et un email.\n"
+             "Ce n'est pas votre travail, c'est le nom : tapez « I See Better Douala », Google ne connaît pas.\n"
+             "Dites-moi en un mot : lequel des deux vos patients utilisent ?")
+    fails, warns, n = fiche.controle(texte)
+    assert not fails, fails
+    assert any("affirmation d'absence" in w for w in warns), warns
+    return f"{n} mots, porte OK, rappel présent"
+
+
 def main() -> int:
     ko = 0
     for nom, fn in CAS:

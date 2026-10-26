@@ -2,16 +2,16 @@
 
 ```text
 Généré par tools/graphify/build_full_graph.py — 2026-10-26
-Source : graphify-out/graph.json (13147 nœuds, 16965 arêtes)
+Source : graphify-out/graph.json (13148 nœuds, 16989 arêtes)
 Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même
 carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.
 ```
 
 ## 0 · En une page
 
-- **13147 nœuds** — dont 816 documents, 202 scripts, 21 modules, 139 pages HTML, 459 images, 6 vidéos, 40 audios, 40 fichiers de données, 11 PDF.
-- **3594 citations entre documents** (2916 en chemin exact, 678 par nom unique)
-- **129 arêtes de remplacement** · **1 documents marqués périmés**
+- **13148 nœuds** — dont 816 documents, 202 scripts, 21 modules, 139 pages HTML, 459 images, 6 vidéos, 40 audios, 40 fichiers de données, 11 PDF.
+- **3593 citations entre documents** (2915 en chemin exact, 678 par nom unique)
+- **152 arêtes de remplacement** · **1 documents marqués périmés**
 - **414 documents que personne ne cite** (atteignables par aucun chemin de lecture)
 - **Couverture : 1797 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
 
@@ -69,10 +69,10 @@ C'est ce réseau qui décide de ce qui s'applique à un travail. Si un document 
 
 | Rang | Document | Cité par | Titres |
 |---|---|---|---|
-| 1 | `sales/Activity-Log.md` | **199** | 274 |
+| 1 | `sales/Activity-Log.md` | **199** | 275 |
 | 2 | `AMK-DESIGN-SKILLS.md` | **41** | 173 |
 | 3 | `PRE-FLIGHT.md` | **36** | 41 |
-| 4 | `research/YouTube-Lessons.md` | **29** | 202 |
+| 4 | `research/YouTube-Lessons.md` | **30** | 202 |
 | 5 | `content/strategy/RULE-CREDENTIAL-CLAIMS.md` | **25** | 11 |
 | 6 | `sales/RESEARCH-STANDARD.md` | **23** | 15 |
 | 7 | `clients/dm-optic/build-notes.md` | **22** | 98 |
@@ -80,7 +80,7 @@ C'est ce réseau qui décide de ce qui s'applique à un travail. Si un document 
 | 9 | `sales/MESSAGES-2026-09-23-PERSUASION.md` | **20** | 14 |
 | 10 | `clients/_uniqueness-registry.md` | **18** | 1 |
 | 11 | `clients/dm-optic/pre-launch-checklist.md` | **18** | 22 |
-| 12 | `content/lessons/CONTENT-LESSONS.md` | **18** | 40 |
+| 12 | `content/lessons/CONTENT-LESSONS.md` | **18** | 41 |
 | 13 | `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` | **18** | 16 |
 | 14 | `hosting/previews/README.md` | **17** | 6 |
 | 15 | `sales/PRIX-ET-RECURRENCE-2026-09-24.md` | **17** | 16 |
@@ -146,7 +146,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 - `AMK-DESIGN-SKILLS.md` — cité 38× dans le groupe, 41× au total
 - `PRE-FLIGHT.md` — cité 29× dans le groupe, 36× au total
-- `research/YouTube-Lessons.md` — cité 26× dans le groupe, 29× au total
+- `research/YouTube-Lessons.md` — cité 26× dans le groupe, 30× au total
 - `sales/RESEARCH-STANDARD.md` — cité 20× dans le groupe, 23× au total
 - `hosting/previews/README.md` — cité 15× dans le groupe, 17× au total
 - `clients/_uniqueness-registry.md` — cité 15× dans le groupe, 18× au total
@@ -232,7 +232,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | vidéo | 6 | `clients/dm-optic/brag/brag.mp4`, `content/reels/ep01/ep01-v4.mp4`, `content/reels/ep01/ep01-v5.mp4` |
 | sous-titre | 3 | `clients/dm-optic/content/month1/w1/tiktok-01-v2.fr.srt`, `clients/dm-optic/content/month1/w1/tiktok-01.fr.srt`, `clients/dm-optic/content/month1/w2/etapes-01.srt` |
 | archive | 1 | `dmopticsarl-2026-10-21.zip` |
-| symboles extraits (titres de documents + fonctions/classes du code) | 11350 | — |
+| symboles extraits (titres de documents + fonctions/classes du code) | 11351 | — |
 
 ### Les outils et skills installés — 1 dossier = 1 outil
 
@@ -307,7 +307,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | Prix, grille, remise | `knowledge/PRIX-2026-10-24.md`, `sales/PRIX-ET-RECURRENCE-2026-09-24.md`, `sales/REVUE-CONTRATS-GRILLE-2026-09-23.md` |
 | Contenu, vidéo, script | `sales/SOCIAL-ACQUISITION-PLAYBOOK-2026-10-25.md`, `research/youtube-lessons/2026-10-11-batch-3/video-8-tiktok-beginners-guide.md`, `knowledge/HOOKS-2026-10-25.md` |
 | Design, page, tokens | `design/WORKFLOW.md`, `knowledge/LANDING-FUNNEL-2026-10-23.md`, `sales/Playbook-Addendum-3-Conversion-Design-2026-09-15.md` |
-| Déploiement, QA, portiques | `tools/qa/AUDIT-LESSONS-2026-10-23.md`, `PRE-FLIGHT.md`, `site/OPTIMISATION-2026-10-22.md` |
+| Déploiement, QA, portiques | `tools/qa/AUDIT-LESSONS-2026-10-23.md`, `site/OPTIMISATION-2026-10-22.md`, `knowledge/CONTENT-CREATION-2026-10-22.md` |
 | Client DM Optique | `clients/dm-optic/pre-launch-checklist.md`, `clients/dm-optic/dossier.md`, `clients/dm-optic/site/CLIENT-REQUIREMENTS-BRIEF.md` |
 | Outils et skills | `tools/agent-reach/README.md`, `tools/pro-design/README.md`, `tools/ecc/README.md` |
 | CRM, pipeline, activité | `leads/CRM-AUDIT-AND-PROPOSAL-2026-09-18.md`, `leads/records/univers-optique.md`, `leads/CONTRADICTIONS.md` |

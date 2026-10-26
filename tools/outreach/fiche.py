@@ -32,6 +32,8 @@ from audit_outreach import words  # noqa: E402  — le même compteur que la por
 RACINE = compose.RACINE
 CRM = RACINE / "leads" / "CRM.csv"
 MAIL = re.compile(r"[\w.+-]+@[\w-]+\.[\w.]+")
+# Ce qu'un message ne peut pas affirmer sans preuve : qu'une chose n'existe pas sur le web.
+ABSENCE = re.compile(r"ne (connait|connaît|voit|lit|trouve|sort|rend) pas|n'existe pas|ignore|introuvable|invisible")
 
 
 def numero_intl(n: str) -> str:
@@ -169,6 +171,12 @@ def controle(texte: str) -> tuple[list[str], list[str], int]:
     from audit_outreach import Message, check
     m = Message(label="message réécrit", quartier="", phone="", body=texte.strip(), line=0)
     check(m)
+    # Le trou du 26/10 : deux messages affirmaient « Google ne vous voit pas » et Google les voyait.
+    # Ce n'est pas une porte — c'est un rappel : une affirmation d'absence exige une capture datée.
+    plat = compose.fold(m.body)
+    if ABSENCE.search(plat):
+        m.warns.append("affirmation d'absence (« Google ne… », « ignore », « n'existe pas ») : elle exige "
+                       "une capture datée — sans elle, le prospect la dément en dix secondes")
     return m.fails, m.warns, len(words(m.body))
 
 
