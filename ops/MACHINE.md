@@ -24,7 +24,7 @@ bash tools/ops/machine.sh --turns      # le rendement du jour : commits, fichier
 Le miroir Notion (PRE-FLIGHT §0g) est **daté ici**, dans une ligne que la machine lit :
 
 ```text
-MIRROR 2026-10-26 · 7e56785 · LOT 3 v7, deuxième passe livrée
+MIRROR 2026-10-26 · c168c3b · LOT 3 v8 (quatre remplacements, quatre morts au CRM)
 ```
 
 Tant qu'un fichier de **fait debout** (pré-vol, machine, prix, dossiers clients, journal des ventes)
