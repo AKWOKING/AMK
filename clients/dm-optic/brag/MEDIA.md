@@ -10,5 +10,5 @@
 
 | Fichier | Dimensions | Poids | Empreinte | Citations |
 |---|---|---|---|---|
-| `brag.mp4` | — | 14.6 Mo | `d8c8148d6d66` | 13 |
-| `poster.jpg` | 1080×1920 | 12.2 Ko | `1c98b027e476` | 6 |
+| `brag.mp4` | — | 14.6 Mo | `d8c8148d6d66` | 16 |
+| `poster.jpg` | 1080×1920 | 12.2 Ko | `1c98b027e476` | 9 |

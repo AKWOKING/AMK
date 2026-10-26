@@ -2,3 +2,6 @@ Où consulter cette semaine ?
 Un médecin ophtalmologue, quatre lieux — Mbouda, Bafoussam, Douala, Bonabéri — et les jours de
 consultation, lieu par lieu. Ce qui n'est pas encore communiqué est écrit « à confirmer » sur la page.
 Aperçu privé, non publié : dr-ophtalmo-preview.vercel.app
+
+La vidéo de 20 secondes (captures réelles du site, horaires laissés « à confirmer ») :
+https://github.com/AKWOKING/AMK/raw/main/clients/dr-ophtalmo/brag/brag-whatsapp.mp4

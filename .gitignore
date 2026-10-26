@@ -24,6 +24,15 @@ tools/record/node_modules/
 *.flac
 # la vidéo 06 est déjà suivie et doit le rester (exception explicite, pour la lisibilité)
 !content/videos/v06-facebook-no-booking/**
+# ── BRAG DR OPHTALMO : EXCEPTION EXPLICITE (26/10/2026) — King : « push the brag video to github ».
+#    Le motif du 26/10 est le même que celui d'EP01 : un livrable qu'on regarde doit être atteignable
+#    par un LIEN, pas par un chemin dans /tmp qui redémarre. Entrent : la version de lecture
+#    (brag.mp4, 4,1 Mo) et la version statut WhatsApp (brag-whatsapp.mp4, 2,5 Mo), plus l'affiche.
+#    Le master non recompressé (14 Mo) reste dehors : il se refait par un rendu de 70 s.
+#    Total versionné : 6,7 Mo — le prix de deux liens qui marchent.
+!clients/dr-ophtalmo/brag/brag.mp4
+!clients/dr-ophtalmo/brag/brag-whatsapp.mp4
+!clients/dr-ophtalmo/brag/poster.jpg
 # ── EP01 : EXCEPTION EXPLICITE (26/10/2026) — King, deux fois : « where is the mp4 video that I
 #    can watch » · « still can't find the video, give me a link to it ». Le master d'EP01 est la
 #    pièce courante du pipeline : il doit être atteignable par un LIEN, pas par un chemin dans un

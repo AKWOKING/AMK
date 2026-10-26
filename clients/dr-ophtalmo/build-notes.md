@@ -112,9 +112,15 @@ où le client tarde à envoyer ses informations — c'est-à-dire presque tous.
 `dpl_4f4QJpE1WMuXDZpxrYECtACToaNY` **READY / PROMOTED** sur le commit `f177b6c`. Vérifié à la lecture
 externe : la page se sert, `robots.txt` aussi. `noindex` + `robots.txt` : le site **ne s'indexe pas**.
 
-**Vidéo de lancement** (brag, §1f②) : 20 s, 1080 × 1920, 30 fps — plan complet, portiques et chemins
-de fichiers dans `clients/dr-ophtalmo/brag/brag-plan.md`. Fichiers hors dépôt :
-`/home/user/brag-output-dr-ophtalmo/{brag.mp4, brag-whatsapp.mp4, poster.jpg}`.
+**Vidéo de lancement** (brag, §1f②) : 20 s, 1080 × 1920, 30 fps, captures réelles du site — plan
+complet et portiques dans `clients/dr-ophtalmo/brag/brag-plan.md`. **Dans le dépôt** depuis le 26/10 au
+soir (demande de King), sous `clients/dr-ophtalmo/brag/` : `brag.mp4` (4,1 Mo, lecture),
+`brag-whatsapp.mp4` (2,5 Mo, statut WhatsApp), `poster.jpg` (67 Ko). Le master de 14 Mo reste dehors.
+
+**Ce qui s'est passé avec le premier envoi :** les vidéos n'existaient que dans `/tmp` et dans
+`/home/user/brag-output-dr-ophtalmo/` ; l'environnement a redémarré, **ces chemins n'existaient plus**.
+Un livrable annoncé « prêt » n'était plus atteignable. Cette fois les fichiers sont dans le dépôt, avec
+la composition décrite scène par scène et les captures reproductibles en 10 s.
 
 **Trois décisions qui ne sont pas les miennes :**
 
