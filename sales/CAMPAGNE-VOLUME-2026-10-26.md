@@ -129,6 +129,21 @@ arrivée sur un message faux. Aucun taux camerounais n'existe encore dans nos so
 **Le plan de relance est écrit** : `sales/PLAN-RELANCE-2026-10-28.md` — qui relancer, avec quel second
 fait, et pourquoi la relance du 28/10 est **une exception datée** à la règle du J+7.
 
+
+### 5 bis · LOT 3 — cinq lignes ouvertes, aucune cochée
+
+| # | Cabinet | Envoyé | Lu | Répondu | Bloqué |
+|---|---|---|---|---|---|
+| 11 | Free Optic · 679 11 37 60 | ☐ | ☐ | ☐ | ☐ |
+| 12 | Tchaya Optique Akwa · 699 98 87 24 | ☐ (contrôle 60 s) | ☐ | ☐ | ☐ |
+| 13 | Star Optic · 654 04 68 45 | ☐ (contrôle 60 s) | ☐ | ☐ | ☐ |
+| 14 | Cabinet d'Optique la Rétine · 695 47 43 64 | ☐ (contrôle 60 s) | ☐ | ☐ | ☐ |
+| 15 | Kamaïs Optic · 678 43 54 60 | ☐ (ruling : 2ᵉ approche) | ☐ | ☐ | ☐ |
+
+**ISEE (n° 3) est clos le 26/10 à 16 h 04** : King a fermé la conversation lui-même (« autant pour moi, je
+n'avais pas vu votre site… bonne continuation »). Aucune relance après un mot pareil — le dossier reste
+chaud pour dans six mois, pas pour cette semaine.
+
 ## 6 · Les 25 minutes du matin
 
 | Minute | Geste |

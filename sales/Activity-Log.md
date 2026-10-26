@@ -6746,3 +6746,36 @@ bloquant, 0 avertissement**. Ce ne sont pas des gabarits : chaque fait sera rev�
 
 **⑥ Ce que je ne peux pas prouver.** Que les quinze soient lus, et que la relance convertisse. Le seul
 chiffre vivant reste **1 réponse sur 15**, arrivée sur un message faux.
+
+---
+
+## Tour 166 · 26/10/2026 (soir) — LOT 3, et deux prospects éliminés par la vérification
+
+**① La demande.** King : « make sure this type of error doesn't repeat itself, check and double check for
+a website … bring the 3rd batch after checking they have no website ». ISEE a coûté un message faux ; le
+lot suivant ne part pas sans les cinq voies.
+
+**② Deux candidats éliminés avant écriture.** **Maison Optique Douala** a `maison-optique.cm` — trouvé
+par le **numéro** 694 38 65 82, pas par le nom. **Original Optique** a `originaloptique-douala.com`
+(« GLAMOUR OPTIQUE, ex-Original Optique »). Les deux étaient dans la liste des « sans site » héritée du
+24/09. C'est exactement la faute d'ISEE, rattrapée cette fois.
+
+**③ Un troisième piège désamorcé.** **Optic Medical Favour and Joy** : le lien d'appel de sa fiche compose
+`655 04 95 29`, qui est le numéro d'**Ets Espace Médical** (prospect du LOT 1), et les numéros du texte ne
+correspondent pas à ceux du champ. Écarté : un message au mauvais cabinet coûte plus qu'un message perdu.
+
+**④ Les cinq du LOT 3** (`sales/LOT-3-2026-10-26.md`) : Free Optic (page Facebook qui annonce un site
+mort), Tchaya Optique Akwa (trois numéros, aucun jour, Facebook pour seule vitrine), Star Optic (deux
+adresses selon l'assureur et l'annuaire), la Rétine (« non loin de l'ancien Cinéma Étoile »), Kamaïs
+(l'annuaire a fusionné ses deux numéros en un numéro de 21 chiffres). **68 / 68 / 65 / 67 / 68 mots, 0
+bloquant, 0 avertissement**, chaque message portant sa ligne `SITE-CHECK` datée.
+
+**⑤ Porte A, honnêtement.** Franchie pour Free Optic (profil vu) et Kamaïs (vérifié, mais déjà contacté le
+02/10 par un gabarit → ruling de King). Pour Tchaya, Star Optic et la Rétine : numéro d'annuaire, donc
+**60 secondes de contrôle par King** avant l'envoi. C'est écrit dans le lot, pas caché.
+
+**⑥ ISEE clos.** King a fermé lui-même à 16 h 04 (« autant pour moi, je n'avais pas vu votre site… bonne
+continuation »). Aucune relance : le dossier reste chaud pour dans six mois, pas pour cette semaine.
+
+**⑦ Ce que je ne peux pas prouver.** Aucun taux. 1 réponse sur 5 messages du LOT 1, arrivée sur un message
+faux. Les cinq du LOT 3 ne sont pas partis au moment d'écrire.
