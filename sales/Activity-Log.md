@@ -6321,3 +6321,33 @@ fois, donc pas une preuve.
 dit, **5,1** pour parquer les deux. Buffett a écrit la condition : aucun chiffre qui ne soit dans une
 capture datée ; Graham a obtenu que ① nomme le vrai enchaînement (fiche tenue → annuaire) au lieu de
 féliciter.
+
+## 26/10/2026 (13 h, tour 158) — « page » ne veut pas dire « site », et une question doit donner
+
+**① Le mot.** King : « est-ce qu'un propriétaire de cabinet au Cameroun sait que quand on parle de page, on
+parle d'un site ? » Non. À Douala, « une page » = une page Facebook ; il en a une, il la tient. Le mot ne dit
+ni ce que le patient y trouve (horaires, adresse, services, prix), ni ce qu'il peut faire (écrire sur
+WhatsApp en un clic), ni ce qui se passe **avant qu'il se déplace**. **« page » a donc disparu des 37
+messages du dépôt** : les cinq du LOT 1 disent « le site » avec un usage, et les réservoirs de la fabrique
+(`compose.py`, 7 lignes) ont été réécrits — les 30 messages du lot volume ont été régénérés, 0 bloquant 0
+avertissement, et plus une seule occurrence du mot.
+
+**② La question.** King : « pourquoi lui demander quel numéro sonne ? c'est pas mieux de dire "lequel sonne
+encore ce soir pour que je l'ajoute sur votre site" ? » Oui — et la règle existait déjà (§13 quater : toute
+question finale nomme ce que la réponse produit) ; nos messages ne l'appliquaient pas. Les cinq questions
+donnent maintenant quelque chose : « je l'ajoute sur le site avec un bouton WhatsApp », « je vous montre le
+site », « je mets ce nom en haut du site ». 50 à 55 mots, 0/0.
+
+**③ La vidéo de Cameron Jeanes (21/10/2024, 59 553 vues) mise en face de nos messages.** Trois mécanismes
+nous manquaient : **désarmer** (« je sais que c'est un peu inattendu »), **la preuve sociale nommée** (« les
+résultats obtenus pour d'autres entreprises » — nous avons DM Optique, en production, jamais cité), et
+**l'appel à l'action qui offre** (une maquette gratuite, pas un diagnostic). Deux choses refusées : ses
+statistiques sans source (70 % / 60 %) et sa garantie « ça marche à coup sûr ». Et une confirmation : sa
+sortie de secours sur la maquette (« au pire elle va dans votre portfolio, ou sert pour un autre client du
+même secteur ») **est** notre règle « une page par métier ».
+
+**④ Ce que ça a produit** : `knowledge/OUTREACH-CAMERON-JEANES-2026-10-26.md` (dans le graphe, lié depuis
+`PRE-FLIGHT`), `REPONSE-OUI` reçoit son **étape 1 bis** — la page **et** l'explication, la vidéo de 5 min
+restant une dette datée — et la leçon §32. Le désarmement et la preuve sociale passent en test sur le
+LOT 2 : à 54 mots, il n'y a pas la place pour deux ajouts sans tomber dans le publipostage que la vidéo
+dénonce elle-même.
