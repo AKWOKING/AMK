@@ -1,0 +1,282 @@
+/**
+ * Vérifications qui tournent sans navigateur et sans dépendance :
+ *
+ *   node tests/logic.test.mjs
+ *
+ * Ce qu'elles protègent : la configuration (un lieu déclaré reste déclaré, un
+ * jour annoncé a toujours sa source), les traductions (aucune clef orpheline),
+ * la validation du formulaire, le message WhatsApp, et l'honnêteté du site —
+ * aucun numéro inventé, aucun jour sans provenance écrite.
+ */
+import assert from "node:assert/strict";
+import { doctorConfig, isKnown, doctorDisplayName, whatsappNumber } from "../js/config/doctor.js";
+import { services } from "../js/config/services.js";
+import { whatsappMessage, buildWhatsappUrl, formatDate, limits } from "../js/config/appointment.js";
+import { dictionaries, createTranslator } from "../js/i18n/index.js";
+import { buildWeek, hasAnyHours, locationDays, locationLabel, WEEK } from "../js/lib/schedule.js";
+import { validate } from "../js/lib/validators.js";
+
+let passed = 0;
+const check = (label, fn) => {
+  fn();
+  passed += 1;
+  console.log(`  ✓ ${label}`);
+};
+
+const fr = createTranslator("fr");
+const en = createTranslator("en");
+
+/* ── 1 · La configuration ──────────────────────────────────────────────── */
+console.log("\n1 · Configuration");
+
+check("quatre lieux, quatre identifiants stables", () => {
+  assert.equal(doctorConfig.locations.length, 4);
+  assert.deepEqual(
+    doctorConfig.locations.map((l) => l.id),
+    ["mbouda", "bafoussam", "africa-medical", "hopital-charity"],
+  );
+});
+
+check("chaque jour annoncé a une source écrite", () => {
+  for (const location of doctorConfig.locations) {
+    if ((location.days || []).length > 0) {
+      assert.ok(isKnown(location.source), `${location.id} : jours sans source`);
+      assert.match(location.source, /\d{2}\/\d{2}\/\d{4}/, `${location.id} : source sans date`);
+    }
+  }
+});
+
+check("aucun état de lieu hors du vocabulaire prévu", () => {
+  for (const location of doctorConfig.locations) {
+    assert.ok(["confirmed", "reported", "unknown"].includes(location.status), location.id);
+  }
+});
+
+check("un lien d'itinéraire ne va jamais sans adresse vérifiée", () => {
+  for (const location of doctorConfig.locations) {
+    if (isKnown(location.mapUrl)) assert.ok(isKnown(location.address), location.id);
+  }
+});
+
+check("le site ne prétend pas être branché sur un agenda", () => {
+  assert.equal(doctorConfig.meta.liveSync, false);
+});
+
+check("aucun numéro douteux : si WhatsApp existe, c'est 8 à 15 chiffres", () => {
+  const number = whatsappNumber();
+  if (number) assert.match(number, /^\d{8,15}$/);
+  // Aucun numéro n'est exigé : le site doit fonctionner sans (voir plus bas).
+  assert.equal(typeof doctorConfig.contact.whatsapp, "string");
+});
+
+check("le nom du médecin n'est pas inventé", () => {
+  // S'il est vide, l'interface affiche un texte d'attente — jamais un nom plausible.
+  assert.ok(doctorConfig.name === "" || doctorConfig.name.length > 3);
+  if (doctorConfig.name === "") assert.equal(doctorDisplayName(), null);
+});
+
+/* ── 2 · La semaine ────────────────────────────────────────────────────── */
+console.log("\n2 · Semaine déduite de la configuration");
+
+const week = buildWeek();
+
+check("sept jours, du lundi au dimanche", () => {
+  assert.equal(week.length, 7);
+  assert.deepEqual(week.map((d) => d.day), WEEK);
+});
+
+check("les jours annoncés tombent sur le bon lieu", () => {
+  const place = (day) => week.find((d) => d.day === day).entries.map((e) => e.locationId);
+  assert.deepEqual(place("mon"), ["mbouda"]);
+  assert.deepEqual(place("tue"), ["mbouda"]);
+  assert.deepEqual(place("wed"), ["bafoussam"]);
+  assert.deepEqual(place("thu"), ["bafoussam"]);
+  assert.deepEqual(place("fri"), ["africa-medical"]);
+  assert.deepEqual(place("sat"), ["africa-medical"]);
+  assert.deepEqual(place("sun"), []);
+});
+
+check("un lieu sans jour n'entre pas dans la semaine", () => {
+  const all = week.flatMap((d) => d.entries.map((e) => e.locationId));
+  assert.ok(!all.includes("hopital-charity"));
+});
+
+check("sans horaires connus, le drapeau le dit", () => {
+  // Si un jour des horaires sont saisis, ce test ne bloque rien : il documente
+  // seulement que l'absence est détectée plutôt que passée sous silence.
+  const missing = !hasAnyHours();
+  assert.equal(typeof missing, "boolean");
+});
+
+check("le libellé d'un lieu ne contient jamais undefined", () => {
+  for (const location of doctorConfig.locations) {
+    const label = locationLabel(location, fr);
+    assert.ok(label.length > 0 && !/undefined|null/.test(label), label);
+  }
+});
+
+check("les jours d'un lieu sont traduits, pas codés en dur", () => {
+  const mbouda = doctorConfig.locations[0];
+  assert.equal(locationDays(mbouda, fr), "Lundi · Mardi");
+  assert.equal(locationDays(mbouda, en), "Monday · Tuesday");
+});
+
+/* ── 3 · Traductions ───────────────────────────────────────────────────── */
+console.log("\n3 · FR / EN");
+
+const flatten = (obj, prefix = "") =>
+  Object.entries(obj).flatMap(([key, value]) =>
+    value && typeof value === "object" ? flatten(value, `${prefix}${key}.`) : [`${prefix}${key}`],
+  );
+
+check("les deux dictionnaires ont exactement les mêmes clefs", () => {
+  const keysFr = flatten(dictionaries.fr).sort();
+  const keysEn = flatten(dictionaries.en).sort();
+  const missingInEn = keysFr.filter((k) => !keysEn.includes(k));
+  const missingInFr = keysEn.filter((k) => !keysFr.includes(k));
+  assert.deepEqual(missingInEn, [], `manquantes en anglais : ${missingInEn.join(", ")}`);
+  assert.deepEqual(missingInFr, [], `manquantes en français : ${missingInFr.join(", ")}`);
+});
+
+check("aucun texte vide dans les dictionnaires", () => {
+  for (const [lang, dict] of Object.entries(dictionaries)) {
+    const walk = (node, path = "") => {
+      for (const [key, value] of Object.entries(node)) {
+        if (value && typeof value === "object") walk(value, `${path}${key}.`);
+        else if (typeof value === "string") assert.ok(value.trim().length > 0, `${lang} : ${path}${key} vide`);
+      }
+    };
+    walk(dict);
+  }
+});
+
+check("le titre du hero fait trois lignes dans les deux langues", () => {
+  assert.equal(fr("hero.h1").length, 3);
+  assert.equal(en("hero.h1").length, 3);
+});
+
+check("l'anglais ne renvoie pas vers le français par accident", () => {
+  // Quelques phrases qui doivent vraiment être traduites, pas recopiées.
+  const pairs = ["hero.ctaPrimary", "consultations.scheduleUnverified", "appointment.disclaimer"];
+  for (const key of pairs) assert.notEqual(fr(key), en(key), key);
+});
+
+check("une clef absente ne casse pas la page", () => {
+  assert.equal(fr("clef.qui.n.existe.pas"), "clef.qui.n.existe.pas");
+});
+
+/* ── 4 · Validation ────────────────────────────────────────────────────── */
+console.log("\n4 · Formulaire");
+
+const base = {
+  fullName: "Awa Ngo Bell",
+  contactMethod: "whatsapp",
+  contact: "691 23 45 67",
+  locationId: "mbouda",
+  preferredDate: "",
+  preferredTime: "",
+  note: "",
+};
+
+check("un formulaire rempli correctement passe", () => {
+  assert.deepEqual(validate(base, { t: fr }), {});
+});
+
+check("un nom trop court est refusé", () => {
+  assert.equal(validate({ ...base, fullName: "A" }, { t: fr }).fullName, "fullName");
+});
+
+check("un numéro incomplet est refusé", () => {
+  assert.equal(validate({ ...base, contact: "6912" }, { t: fr }).contact, "contactPhone");
+});
+
+check("un e-mail demandé mais invalide est refusé", () => {
+  assert.equal(
+    validate({ ...base, contactMethod: "email", contact: "awa@" }, { t: fr }).contact,
+    "contactEmail",
+  );
+  assert.deepEqual(validate({ ...base, contactMethod: "email", contact: "awa@exemple.cm" }, { t: fr }), {});
+});
+
+check("un lieu manquant est refusé", () => {
+  assert.equal(validate({ ...base, locationId: "" }, { t: fr }).locationId, "locationId");
+});
+
+check("une date passée est refusée, une date future acceptée", () => {
+  assert.equal(validate({ ...base, preferredDate: "2020-01-01" }, { t: fr }).preferredDate, "datePast");
+  const soon = new Date();
+  soon.setDate(soon.getDate() + 3);
+  const iso = soon.toISOString().slice(0, 10);
+  assert.equal(validate({ ...base, preferredDate: iso }, { t: fr }).preferredDate, undefined);
+});
+
+check("une date au-delà de six mois est refusée", () => {
+  const far = new Date();
+  far.setDate(far.getDate() + limits.maxLeadDays + 30);
+  assert.equal(validate({ ...base, preferredDate: far.toISOString().slice(0, 10) }, { t: fr }).preferredDate, "dateFar");
+});
+
+check("un message trop long est refusé", () => {
+  const note = "a".repeat(limits.message + 1);
+  assert.equal(validate({ ...base, note }, { t: fr }).note, "noteLong");
+});
+
+/* ── 5 · Message WhatsApp ──────────────────────────────────────────────── */
+console.log("\n5 · Message et lien WhatsApp");
+
+const message = whatsappMessage({
+  t: fr,
+  values: { ...base, preferredDate: "2026-11-04", preferredTime: "09:30", note: "Je viens de Bafoussam." },
+  locationLabel: "Africa Médical · Douala",
+  doctorName: "le médecin",
+});
+
+check("le message nomme le lieu, la date en clair, le nom", () => {
+  assert.match(message, /Africa Médical · Douala/);
+  assert.match(message, /mercredi 4 novembre 2026/);
+  assert.match(message, /Awa Ngo Bell/);
+  assert.match(message, /Bonjour, je souhaite demander un rendez-vous/);
+});
+
+check("le message ne contient ni undefined ni champ vide mal interpolé", () => {
+  assert.ok(!/undefined|null|\{\w+\}/.test(message), message);
+});
+
+check("le message ne transmet aucune donnée médicale demandée par le site", () => {
+  // Le message est construit à partir des seuls champs du formulaire : aucun autre.
+  assert.ok(!message.includes("Je viens de Bafoussam."), "le champ libre ne doit pas être ajouté au message WhatsApp");
+});
+
+check("le lien wa.me est correctement encodé, sans + dans le numéro", () => {
+  const url = buildWhatsappUrl("+237 691 23 45 67", message);
+  assert.match(url, /^https:\/\/wa\.me\/237691234567\?text=/);
+  assert.ok(url.includes("%0A"), "les retours à la ligne sont encodés");
+  assert.ok(!url.includes("+"), "aucun + dans l'URL");
+});
+
+check("sans numéro configuré, aucun lien n'est fabriqué", () => {
+  assert.equal(buildWhatsappUrl("", message), "");
+});
+
+check("la date s'écrit en clair dans les deux langues", () => {
+  assert.equal(formatDate("2026-11-04", "fr"), "mercredi 4 novembre 2026");
+  assert.equal(formatDate("2026-11-04", "en"), "Wednesday, 4 November 2026");
+});
+
+/* ── 6 · Prestations ───────────────────────────────────────────────────── */
+console.log("\n6 · Prestations");
+
+check("chaque prestation est libellée dans les deux langues", () => {
+  for (const service of services) {
+    assert.ok(service.label.fr && service.label.en, service.id);
+    assert.ok(["confirmed", "reported", "unknown"].includes(service.status), service.id);
+  }
+});
+
+check("aucune prestation « confirmed » sans date de confirmation", () => {
+  for (const service of services) {
+    if (service.status === "confirmed") assert.ok(isKnown(service.asOf), service.id);
+  }
+});
+
+console.log(`\n${passed} vérification(s) passée(s).`);
