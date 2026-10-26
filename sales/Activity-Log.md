@@ -6203,3 +6203,19 @@ recomptage : **28 testés · 22 joignables · 6 morts**.
 **④ Trois corrections de chiffres, trouvées en vérifiant.** Le stock envoyable est **78**, pas 71 (mesure `plan`). Les doublons sont **3 numéros** au CRM mais **1 seul** dans le stock envoyable (CEMECES ↔ INSES, 674 93 66 04) — la campagne disait « 3, ils sont écartés », ce qui était faux à moitié. Et le scout garde **77** lignes sur 190, pas 62.
 
 **⑤ Ce qui n'est toujours pas fait.** Aucun message envoyé, aucun numéro ouvert : la porte A reste le geste de King, 8 secondes par ligne. Les 42 lignes du lot volume ne sont pas un lot d'envoi, c'est une **file d'attente de vérification** — et le document le dit à la première ligne plutôt qu'en note de bas de page.
+
+## 26/10/2026 (15 h 20, tour 155) — la fabrique écrit la journée, et le plan de montée tombe sur le stock
+
+**① Un second vérificateur de plus en plus gênant.** Le lot de 49 messages du matin passait la porte avec **0 bloquant** ; il contenait **neuf** cabinets à 2/3 et **un** à 1/3, dont sa première ligne. Un texte propre n'est pas un message qu'on a le droit d'envoyer. Corrigé dans les deux sens : `scout.py verify` nomme les contradictions (§5), et chaque lot déclare en tête son compte de portes.
+
+**② La fabrique réécrite — trois phrases, sept variantes, une charnière.** `tools/outreach/compose.py` assemble chaque message à partir de trois réservoirs et d'une question, avec la charnière `(a, b, a+b)` sur sept éléments : deux messages ne partagent jamais deux phrases, donc aucune séquence de douze mots ne revient. Il **refuse** d'écrire une phrase de douze mots hors nom propre (c'est ce qui faisait revenir un motif dans cinq messages), juge le lot entier avec `audit_outreach`, et répare en changeant de combinaison — jamais de phrase. La page offerte dépend du **métier** : `dmoptiquesarl.com` à un opticien, la clinique de Bonabéri à une clinique, MITOC à une école, Labiomed à un laboratoire. Banc `test_compose.py` **10/10**.
+
+**③ Ce que la fabrique a trouvé dans les données, et qui n'était pas dans les documents.** Seize lignes du CRM ont un **nom de personne dans la colonne ville** (« Madam Namondo Alexander ») : la fabrique refuse de les écrire, et les compte comme dette de données. Douze lignes sont composables en théorie et ne le sont pas en pratique. Le stock réel n'est pas 71, ni 78 : **52 lignes composables**, dont **7 prouvées** à 3/3.
+
+**④ `supply.py`, l'outil qui dit non.** Deux commandes : `plan` compare jour par jour ce que la cadence demande et ce que le stock prouve — il rend **20 (27/10) · 22 (28/10) · 11 (29/10) · 0 (30/10)** et refuse d'écrire un plan plus flatteur ; `ingest` valide une liste collée (neuf chiffres, `+237`/`00237`, doublons du CRM, doublons internes) et produit un fichier de **transit**, jamais le CRM. Banc `test_supply.py` **11/11**.
+
+**⑤ Le lot du jour, refait pour la troisième fois — et c'est la bonne raison.** `sales/ENVOI-VAGUE-3-2026-10-26.md` (16 messages) et `sales/ENVOI-VOLUME-2026-10-27.md` (30, refait avec la nouvelle fabrique : l'ancien avait des villes qui étaient des noms de personnes). Les trois fichiers — 53 messages — passent `--strict` à **0 bloquant, 0 avertissement**.
+
+**⑥ Ce que la recherche change, et ce qu'elle ne change pas.** Palier 2 (nom + quartier + métier) : 4,4 % de réponses ; palier 3 (une ligne recherchée) : 7,8 % ; palier 4 (déclencheur) : 11,2 %. À 20/jour au palier 2 ≈ 0,9 réponse/jour ; à 7/jour au palier 3 ≈ 0,8. **Le volume gagne de peu, et seulement si on ne descend pas au palier 1.** Donc le prochain effort de qualité ne va pas dans plus de phrases : il va dans une ligne de fait par prospect — c'est-à-dire dans les profils que King ouvre.
+
+**⑦ Ce qui n'est pas fait.** Aucun message envoyé, aucun numéro ouvert, aucune ligne sourcée : le réseau de cet environnement s'arrête à GitHub, npm et PyPI. Le stock tient deux jours et demi, et la seule voie vers 40/jour est un annuaire que King seul peut ouvrir.

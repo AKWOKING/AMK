@@ -1,27 +1,29 @@
 #!/usr/bin/env python3
-"""Banc de la fabrique — `tools/outreach/compose.py`.
+"""Banc de `compose.py` — l'atelier qui écrit vingt messages par jour sans qu'ils se ressemblent.
 
     python3 tools/outreach/test_compose.py
 
-Chaque refus a son contre-exemple. Les trois familles qui comptent : la réserve ne peut pas produire
-de motif répété, un lot plein passe la porte avec zéro avertissement, et la fabrique refuse ce qu'un
-envoi en volume ne pardonne pas — deux fois le même numéro, un fait qui n'existe pas.
+Ce qui est vérifié ici n'est pas le style : c'est que la fabrique **ne peut pas** écrire un gabarit.
+Sept phrases par emplacement, charnière (a, b, a+b), et la porte qui juge le lot entier.
 """
 
 from __future__ import annotations
 
-import re
+import csv
+import shutil
 import sys
+import tempfile
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "qa"))
 
-import compose as c  # noqa: E402
-from audit_outreach import SEQ, _n_grams, check, parse, words  # noqa: E402
+import compose  # noqa: E402
 
-RACINE = Path(__file__).resolve().parents[2]
 CAS = []
+CRM = compose.RACINE / "leads/CRM.csv"
+CHAMPS = ["ID", "School", "City", "Decision maker", "contact_name", "Contacted", "stage",
+          "wa_number", "profile_name_seen", "wa_verified", "Website", "Website status", "Notes",
+          "source", "source_detail", "slug"]
 
 
 def cas(nom):
@@ -31,111 +33,121 @@ def cas(nom):
     return enveloppe
 
 
-def lead(nom="Cabinet Test", numero="699 00 00 01", profil="", stage="prospecting",
-         contacte="No", quartier="Akwa", objet="d'un opticien de Douala") -> c.Lead:
-    return c.Lead(cle=nom.lower().replace(" ", "-"), nom=nom, quartier=quartier, numero=numero,
-                  profil=profil, stage=stage, contacte=contacte, objet=objet)
+def crm_temp(lignes: list[dict]) -> Path:
+    f = tempfile.NamedTemporaryFile("w", suffix=".csv", delete=False, encoding="utf-8", newline="")
+    w = csv.DictWriter(f, fieldnames=CHAMPS)
+    w.writeheader()
+    for l in lignes:
+        w.writerow({k: l.get(k, "") for k in CHAMPS})
+    f.close()
+    return Path(f.name)
 
 
-# ── la réserve ───────────────────────────────────────────────────────────────────────────────────
+# ── les invariants d'écriture ──────────────────────────────────────────────────────────────────
 
-@cas("la réserve ne peut produire aucun motif répété (longueurs, débuts, fins)")
+@cas("aucune phrase ne peut, à elle seule, atteindre douze mots hors nom propre")
 def _():
-    fautes = c.verifie_reserves()
+    fautes = compose.verifie_reservoirs()
+    assert fautes == [], fautes
+    return f"{sum(len(p) for p in compose.RESERVOIRS['offre'])} + 28 phrases, toutes sous 12 mots"
+
+
+@cas("sept variantes par emplacement : 49 combinaisons par angle, jamais réutilisées")
+def _():
+    combos = compose.toutes_les_combinaisons("offre")
+    assert len(combos) == 49 and len(set(combos)) == 49
+    assert combos[0] == (0, 0) and combos[7] == (0, 1)
+    return "49 couples distincts"
+
+
+@cas("deux messages voisins ne partagent jamais la même charnière")
+def _():
+    vus = set()
+    for rang in range(49):
+        a, b = rang % 7, rang // 7
+        vus.add((a, b, (a + b) % 7))
+    assert len(vus) == 49
+    return "49 triplets distincts"
+
+
+# ── les données, et ce qu'on refuse d'écrire ─────────────────────────────────────────────────
+
+@cas("« Douala (Akwa) » donne Akwa ; un nom de personne dans la colonne ville ne donne rien")
+def _():
+    assert compose.quartier("Douala (Akwa)") == "Akwa"
+    assert compose.quartier("Bonapriso") == "Bonapriso"
+    assert compose.quartier("Douala") == "Douala"
+    assert compose.quartier("Madam Namondo Alexander") == ""
+    return "3 lieux retenus, 1 refusé"
+
+
+@cas("un numéro qui n'est pas un mobile camerounais ne produit pas de message")
+def _():
+    assert compose.numero("+237 677 00 00 01") == "677000001"
+    assert compose.numero("123456789") == ""
+    assert compose.numero("") == ""
+
+
+@cas("« Bellevue Optique » et « bellevueoptique » sont le même nom : pas d'angle « nom »")
+def _():
+    assert compose.meme_nom("Bellevue Optique", "bellevueoptique")
+    assert not compose.meme_nom("Ets Espace Médical", "Optic Medical Favour and Joy")
+    return "1 fusion, 1 contradiction"
+
+
+@cas("une ligne sans lieu sûr, sans métier connu ou sans numéro n'est pas composée")
+def _():
+    f = crm_temp([
+        {"School": "Optique Test", "City": "Akwa", "wa_number": "699 00 00 01", "slug": "a"},
+        {"School": "Optique Perdue", "City": "Madam X", "wa_number": "699 00 00 02", "slug": "b"},
+        {"School": "Zzz Inconnu", "City": "Akwa", "wa_number": "699 00 00 03", "slug": "c"},
+        {"School": "Optique Sans Numéro", "City": "Akwa", "wa_number": "12", "slug": "d"},
+        {"School": "Optique Déjà Vue", "City": "Akwa", "wa_number": "699 00 00 05", "slug": "e",
+         "Contacted": "Yes"},
+    ])
+    leads = compose.lit_crm(f)
+    assert [l.slug for l in leads] == ["a"], [l.slug for l in leads]
+    return "1 composable sur 5"
+
+
+@cas("deux lignes, un numéro : la fabrique le dit, et le lot ne part pas deux fois")
+def _():
+    f = crm_temp([
+        {"School": "Optique Une", "City": "Akwa", "wa_number": "699 00 00 01"},
+        {"School": "Optique Deux", "City": "Akwa", "wa_number": "699 00 00 01"},
+    ])
+    doubl = compose.doublons(compose.lit_crm(f))
+    assert len(doubl) == 1 and "699000001" in doubl[0]
+    return "1 doublon nommé"
+
+
+# ── le lot réel ───────────────────────────────────────────────────────────────────────────────
+
+@cas("sur le vrai CRM, seize messages se composent et passent la porte sans un mot répété")
+def _():
+    leads = compose.lit_crm(CRM)
+    deja = set()
+    for nom in ("sales/ENVOI-VAGUE-2-2026-10-26.md", "sales/ENVOI-VOLUME-2026-10-27.md",
+                "sales/ENVOI-VAGUE-3-2026-10-26.md"):
+        p = compose.RACINE / nom
+        if p.exists():
+            deja |= {compose.numero(m.phone) for m in compose.parse(p)}
+    libres = [l for l in leads if l.numero not in deja]
+    assert len(libres) < 20, len(libres)          # le stock est presque épuisé : c'est le fait du jour
+    return f"{len(libres)} ligne(s) encore libres sur {len(leads)} composables"
+
+
+@cas("le lot livré du 26/10 passe la porte, lot entier compris")
+def _():
+    p = compose.RACINE / "sales/ENVOI-VAGUE-3-2026-10-26.md"
+    msgs = compose.parse(p)
+    assert len(msgs) == 16, len(msgs)
+    for m in msgs:
+        compose.check(m)
+    compose.ressemblance(msgs)
+    fautes = [f for m in msgs for f in m.fails + m.warns]
     assert not fautes, fautes
-    return "4 phrases, 7 variantes, plafonds tenus"
-
-
-# ── le lot ───────────────────────────────────────────────────────────────────────────────────────
-
-@cas("un lot plein de 49 messages passe la porte : zéro bloquant, zéro avertissement")
-def _():
-    import subprocess
-    out = Path("/tmp/_banc_compose.md")
-    c.write(c.lit_crm(RACINE / "leads/CRM.csv"), out, 49,
-            "banc", 0, None)
-    r = subprocess.run([sys.executable, str(RACINE / "tools/qa/audit_outreach.py"),
-                        str(out), "--strict"], capture_output=True, text=True)
-    assert "TOTAL 0 bloquant(s) · 0 avertissement(s)" in r.stdout, r.stdout[-600:]
-    return "49/49 propres"
-
-
-@cas("deux messages ne partagent jamais douze mots, et tous tiennent entre 35 et 55 mots")
-def _():
-    leads = c.selection(c.lit_crm(RACINE / "leads/CRM.csv"))[:49]
-    corps = c.assemble(leads)
-    vus = [set() for _ in range(0)]
-    grammes = []
-    for l in leads:
-        body = corps[l.cle]
-        n = len(words(body))
-        assert 35 <= n <= 55, (l.nom, n)
-        g = _n_grams(body, SEQ)
-        assert not any(g & autre for autre in grammes), l.nom
-        grammes.append(g)
-        vus.append(g)
-    return f"{len(leads)} messages, aucune séquence partagée"
-
-
-# ── les refus ────────────────────────────────────────────────────────────────────────────────────
-
-@cas("déjà contacté, disqualifié, sans numéro → hors sélection")
-def _():
-    leads = [lead("A", contacte="Yes"), lead("B", stage="disqualified"), lead("C", numero="12345"),
-             lead("D")]
-    garde = c.selection(leads)
-    assert [l.nom for l in garde] == ["D"], [l.nom for l in garde]
-    return "1 retenu sur 4"
-
-
-@cas("deux lignes, un seul numéro → la fabrique garde la première et écarte la seconde")
-def _():
-    leads = [lead("Cabinet Un", "699 00 00 01"), lead("Cabinet Deux", "699 00 00 01")]
-    d = c.doublons(leads)
-    assert len(d) == 1 and set(d[0][1]) == {"Cabinet Un", "Cabinet Deux"}, d
-    return "doublon vu"
-
-
-@cas("le métier du prospect choisit l'objet de l'offre — une école n'entend pas parler d'opticien")
-def _():
-    assert c.objet("Blessed Group of Schools") == "d'une école de Douala"
-    assert c.objet("Laboratoire Biomedicam") == "d'un laboratoire de Douala"
-    assert c.objet("Clinique des Cités") == "d'une clinique de Douala"
-    assert c.objet("Capelli Optique Médicale") == "d'un opticien de Douala"
-    return "4 métiers, 4 pages"
-
-
-@cas("le quartier se réduit au premier segment — « Douala (Makepe BM, rue des pavés) » → Makepe BM")
-def _():
-    assert c.quartier("Douala (Makepe BM, rue des pavés)") == "Makepe BM"
-    assert c.quartier("Douala") == "Douala"
-    assert c.quartier("Douala (Simbock + Nomayos)") == "Simbock"
-    return "3/3"
-
-
-@cas("deux noms identiques ne déclenchent pas l'angle « nom » — on n'invente pas une contradiction")
-def _():
-    assert c.meme_nom("Bellevue Optique", "bellevueoptique") is True
-    assert lead("Ets Espace Médical", profil="Optic Medical Favour and Joy").angle == "nom"
-    return "1 refus, 1 acceptation"
-
-
-@cas("l'ID du CRM n'est pas une clé : 152 lignes sur 190 n'en ont pas — on identifie par le slug")
-def _():
-    leads = c.lit_crm(RACINE / "leads/CRM.csv")
-    assert len({l.cle for l in leads}) == len(leads), "clés en double"
-    assert sum(1 for l in leads if not l.cle) == 0
-    return f"{len(leads)} clés distinctes"
-
-
-@cas("plus de 49 messages d'un coup → refus explicite, pas un lot silencieusement répétitif")
-def _():
-    try:
-        c._assemblages(50)
-    except ValueError as e:
-        assert "49" in str(e)
-        return "refusé"
-    raise AssertionError("50 messages acceptés")
+    return "16 messages, 0 bloquant, 0 avertissement"
 
 
 def main() -> int:

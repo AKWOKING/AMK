@@ -133,3 +133,64 @@ le prospect, donc zéro risque de la phrase fausse** qui a coûté le 24/09.
   (clé = `slug`), pas côté données.
 - **La vidéo de 5 minutes n'existe pas.** Nous avons des reels de 20–30 s. C'est une dette datée, pas
   un oubli : elle ne se produit pas avant EP02.
+
+## 8 · Ce que la journée a appris en écrivant — la contrainte n'est pas la cadence, c'est la preuve
+
+Le §6 recommandait 20 → 30 → 40 → 40 → 50. Trois heures plus tard, en construisant de quoi le tenir,
+trois chiffres ont changé la recommandation.
+
+**① Le stock n'est pas de 71 lignes, il est de 52 messages.** Mesuré par la fabrique, pas estimé : sur
+190 lignes du CRM, 78 ont un numéro joignable et ne sont pas contactées ; 52 seulement ont un numéro, un
+métier avec une page qui existe, et un **lieu sûr**. Seize lignes ont une ville qui est un nom de
+personne (« Madam Namondo Alexander ») : écrire « à Madam Namondo Alexander vous êtes… » serait la faute
+la plus visible du lot. On ne les écrit pas — on les compte comme dette de données.
+
+**② La preuve est encore plus rare que le stock : 7 lignes sur 77 sont à 3/3.** Le vérificateur du matin
+l'a dit (`leads/VERIF-2026-10-26.md`) : sept ENVOYER, neuf KING-TRANCHE, soixante et une sans aucune
+porte franchie. Autrement dit, **la contrainte de la semaine n'est pas « combien on envoie par jour »,
+c'est « combien de profils King ouvre le matin »**. À huit secondes par ligne, ouvrir quarante profils
+coûte cinq minutes — c'est faisable, et c'est le seul chemin vers 40 par jour.
+
+**③ Un texte propre n'est pas un message qu'on a le droit d'envoyer.** Le lot de 49 messages du matin
+passait la porte avec **0 bloquant** — et contenait **neuf cabinets à 2/3** et **un à 1/3**, dont sa
+première ligne. La porte mesure le texte ; le vérificateur mesure le droit d'écrire. Il fallait les deux,
+et c'est désormais écrit dans le lot lui-même (`sales/ENVOI-VOLUME-2026-10-27.md`, section du compte).
+
+### La table qui remplace le plan de montée
+
+| Jour | Envois | D'où | Réserve après |
+|---|---|---|---|
+| **lun. 27/10** | **20** | 7 écrits à la main (3/3) + 13 de la vague 3 | 33 |
+| **mar. 28/10** | **22** | lot volume, opticiens d'abord | 11 |
+| **mer. 29/10** | **11** | fin du lot volume + les 3 restants de la vague 3 | **0** |
+| jeu. 30/10 | **0** | plus une ligne composable : journée de **sourcing**, pas d'envoi | 0 |
+
+C'est moins glorieux que 50, et c'est vrai. `python3 tools/outreach/supply.py plan` rend ce tableau et
+**refuse** de promettre davantage : il compare, jour par jour, ce que la cadence demande et ce que le
+stock prouve.
+
+### Ce que la recherche dit du palier où nous sommes
+
+Les messages de ces trois lots sont au **palier 2** — nom de l'établissement, quartier, métier, page du
+métier. Ce n'est pas de la personnalisation profonde, et il faut le dire : sur 500 courriels mesurés en
+2026, ce palier rend **4,4 %** de réponses, quand une ligne vraiment recherchée en rend **7,8 %** et un
+déclencheur réel **11,2 %** (Gangly). À 20 par jour, cela vaut **0,9 réponse par jour** ; à 7 par jour
+en personnalisation profonde, **0,8**. Le volume gagne donc — mais de peu, et seulement tant qu'on ne
+descend pas au palier 1 (prénom seul) ni au palier 0 (publipostage).
+
+**Conséquence pratique** : le prochain euro de qualité ne s'investit pas dans plus de phrases, il
+s'investit dans **une ligne de fait par prospect** — c'est-à-dire dans les profils que King ouvre.
+
+### Ce qui a été construit pour tenir, et ce qui manque encore
+
+| Pièce | Ce qu'elle fait | Ce qu'elle refuse |
+|---|---|---|
+| `tools/outreach/compose.py batch` | écrit la journée (7 variantes × 3 phrases, charnière `(a, b, a+b)`), une page par métier | d'écrire un lot où une phrase atteint douze mots hors nom propre, ou deux messages partagent une séquence |
+| `tools/outreach/supply.py plan` | dit ce que la cadence demande et ce que le stock tient | de promettre plus de messages qu'il n'y a de lignes |
+| `tools/outreach/supply.py ingest` | valide une liste collée (annuaire, page Facebook, passage) : neuf chiffres, doublons écartés | d'écrire dans le CRM — il ne produit qu'un fichier de transit |
+| `tools/outreach/scout.py verify` | applique les trois portes et nomme les contradictions | d'inventer une porte : sans capture datée, elle reste `inconnue` |
+
+**Ce qui manque, et qui ne s'invente pas dimanche soir** : les numéros. Il en faut **200 par semaine**
+pour tenir 40/jour, et cet environnement n'a de réseau que vers GitHub, npm et PyPI — aucun annuaire.
+La seule voie est celle du §7 : King ouvre les annuaires et les pages Facebook, `supply.py ingest`
+nettoie ce qu'il colle, `scout.py verify` dit ce qui a le droit de partir.
