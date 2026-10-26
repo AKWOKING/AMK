@@ -29,11 +29,11 @@ RMS_MIN = 0.02  # en dessous, le clip est muet : une synthèse « réussie » pe
 # cette voix parle à ~0,45 s/mot, donc 25 s = ~50 mots, pas 65. Total 24,15 s.
 PLAN = {
     "hook": (5.0, 70, "contexte"),
-    "spike1": (4.45, 92, "contraste"),
-    "release1": (3.45, 58, "relache"),  # v5 : le cadeau passe au beat 3 (il était à 18 s en v4)
-    "spike2": (3.2, 88, "contraste"),   # v5 : le rehook — le beat que la v4 n'avait pas
-    "release2": (4.85, 60, "relache"),
-    "cta": (3.2, 95, "appel"),
+    "spike1": (3.46, 92, "contraste"),   # v6 : preuve prononcée, phrase courte
+    "release1": (3.19, 58, "relache"),   # v6 : le cadeau (réciprocité) au beat 3
+    "spike2": (3.77, 88, "contraste"),   # v6 : le rehook
+    "release2": (2.90, 60, "relache"),   # v6 : le mécanisme (autorité par le diagnostic)
+    "cta": (4.19, 95, "appel"),          # v6 : le CTA porte sa récompense, mais l'arc plafonne à 4,5 s
 }
 ORDRE = list(PLAN)
 

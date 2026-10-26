@@ -2,18 +2,18 @@
 
 ```text
 Généré par tools/graphify/build_full_graph.py — 2026-10-26
-Source : graphify-out/graph.json (12600 nœuds, 15971 arêtes)
+Source : graphify-out/graph.json (12604 nœuds, 15973 arêtes)
 Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même
 carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.
 ```
 
 ## 0 · En une page
 
-- **12600 nœuds** — dont 790 documents, 186 scripts, 21 modules, 139 pages HTML, 447 images, 5 vidéos, 40 audios, 37 fichiers de données, 11 PDF.
-- **3414 citations entre documents** (2761 en chemin exact, 653 par nom unique)
+- **12604 nœuds** — dont 790 documents, 186 scripts, 21 modules, 139 pages HTML, 447 images, 6 vidéos, 40 audios, 37 fichiers de données, 11 PDF.
+- **3415 citations entre documents** (2762 en chemin exact, 653 par nom unique)
 - **128 arêtes de remplacement** · **1 documents marqués périmés**
 - **413 documents que personne ne cite** (atteignables par aucun chemin de lecture)
-- **Couverture : 1739 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
+- **Couverture : 1740 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
 
 ### Les dossiers du dépôt, par poids — et ce que chacun porte
 
@@ -22,7 +22,7 @@ carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10
 | `hosting/` | 314 | Sites déployés et aperçus |
 | `tools/` | 273 | Outils et skills installés |
 | `clients/` | 211 | Dossiers clients |
-| `content/` | 207 | Contenu, vidéos, carrousels, scripts |
+| `content/` | 208 | Contenu, vidéos, carrousels, scripts |
 | `design/` | 179 | Design, skills, vendor |
 | `leads/` | 178 | CRM machine (CSV, records, vues générées) |
 | `sales/` | 134 | Vente, prospection, CRM humain |
@@ -45,14 +45,14 @@ carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10
 | `knowledge/PRIX-2026-10-24.md` | 10 | 10× | Le prix du socle et de l'entretien — recherche du 24/10/2026 |
 | `knowledge/IDEA-PIPES-2026-10-25.md` | 12 | 9× | LES SIX TUYAUX À IDÉES — d'où vient une idée, avant de savoir si elle est bonne |
 | `knowledge/OUTREACH-MESSAGING-2026-10-22.md` | 8 | 9× | Le message qui accroche un gérant de clinique — motifs tirés de trois comptes, 22/10/2026 |
-| `knowledge/CONTENT-CREATION-2026-10-22.md` | 38 | 8× | Création de contenu — ce que le dépôt sait faire, au 22/10/2026 |
+| `knowledge/CONTENT-CREATION-2026-10-22.md` | 39 | 8× | Création de contenu — ce que le dépôt sait faire, au 22/10/2026 |
 | `knowledge/CONTENT-GAMES-2026-10-25.md` | 12 | 7× | LES CINQ JEUX DE CONTENU — quel jeu nous jouons, et ce que ça change |
 | `knowledge/STORY-ARC-2026-10-25.md` | 7 | 7× | L'ARC MODERNE — comment un réel tient 21 secondes |
 | `knowledge/HOOKS-2026-10-25.md` | 13 | 6× | L'ACCROCHE, L'ÉCHELLE ET LA GRILLE — trois sources du 25/10, et une seule pièce refaite |
 | `knowledge/ROAST-2026-10-24-PRIX-v2.md` | 8 | 4× | Roast Room — séance du 24/10/2026 · « quel prix pour le socle, et pour l'entretien ? » |
-| `knowledge/ROAST-2026-10-26-SCRIPT-EP01.md` | 11 | 4× | Roast Room — séance du 26/10/2026 · « le script d'EP01 est-il bon, ou seulement bien accro |
 | `knowledge/LANDING-FUNNEL-2026-10-23.md` | 18 | 3× | Le tunnel qui convertit — ce qu'on a appris, ce qu'on applique, ce qu'on refuse |
 | `knowledge/MAINTENANCE-CLIENTS-2026-10-22.md` | 11 | 3× | La routine de maintenance clients — quotidien, hebdomadaire, mensuel |
+| `knowledge/ROAST-2026-10-26-SCRIPT-EP01.md` | 11 | 3× | Roast Room — séance du 26/10/2026 · « le script d'EP01 est-il bon, ou seulement bien accro |
 | `knowledge/HOUSE-KNOWLEDGE-BASE.md` | 16 | 2× | HOUSE KNOWLEDGE BASE — la couche de référence |
 | `knowledge/MARKETING-OPTICAL-2026-10-22.md` | 19 | 2× | Marketing de l'optique — ce que le dépôt sait, au 22/10/2026 |
 | `knowledge/VIDEOS-2026-10-23-AUDIT.md` | 10 | 2× | Cinq vidéos, deux images — ce qu'on garde, ce qu'on corrige, ce qu'on jette |
@@ -64,7 +64,7 @@ C'est ce réseau qui décide de ce qui s'applique à un travail. Si un document 
 
 | Rang | Document | Cité par | Titres |
 |---|---|---|---|
-| 1 | `sales/Activity-Log.md` | **198** | 263 |
+| 1 | `sales/Activity-Log.md` | **198** | 264 |
 | 2 | `AMK-DESIGN-SKILLS.md` | **41** | 173 |
 | 3 | `PRE-FLIGHT.md` | **36** | 41 |
 | 4 | `research/YouTube-Lessons.md` | **29** | 202 |
@@ -74,7 +74,7 @@ C'est ce réseau qui décide de ce qui s'applique à un travail. Si un document 
 | 8 | `sales/CLIENT-MESSAGING-RULES.md` | **20** | 24 |
 | 9 | `sales/MESSAGES-2026-09-23-PERSUASION.md` | **19** | 14 |
 | 10 | `clients/dm-optic/pre-launch-checklist.md` | **18** | 22 |
-| 11 | `content/lessons/CONTENT-LESSONS.md` | **18** | 32 |
+| 11 | `content/lessons/CONTENT-LESSONS.md` | **18** | 33 |
 | 12 | `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` | **18** | 16 |
 | 13 | `clients/_uniqueness-registry.md` | **17** | 1 |
 | 14 | `sales/PRIX-ET-RECURRENCE-2026-09-24.md` | **17** | 16 |
@@ -124,10 +124,10 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 | # | Docs | Les 3 pivots internes | Ce que le groupe a en propre |
 |---|---|---|---|
-| 0 | 231 | `AMK-DESIGN-SKILLS.md` · `PRE-FLIGHT.md` · `YouTube-Lessons.md` | `sales/` (38 % du groupe) |
+| 0 | 232 | `AMK-DESIGN-SKILLS.md` · `PRE-FLIGHT.md` · `YouTube-Lessons.md` | `sales/` (37 % du groupe) |
 | 1 | 144 | `Activity-Log.md` · `Send-BATCH-2026-09-24-Opticiens-2.md` · `Send-BATCH-2026-09-24-Opticiens.md` | `leads/` (90 % du groupe) |
 | 2 | 95 | `pre-launch-checklist.md` · `content-plan-month1.md` · `tiktok-01.md` | `clients/` (63 % du groupe) |
-| 3 | 32 | `ANALYTICS-LOG.md` · `IDEA-PIPES-2026-10-25.md` · `CONTENT-LESSONS.md` | `content/` (62 % du groupe) |
+| 3 | 31 | `ANALYTICS-LOG.md` · `IDEA-PIPES-2026-10-25.md` · `CONTENT-LESSONS.md` | `content/` (64 % du groupe) |
 | 4 | 20 | `analyst-common.md` · `context-safety.md` · `report.md` | `tools/` (100 % du groupe) |
 | 5 | 5 | `claude-code-tools.md` · `codex-tools.md` · `pi-tools.md` | `tools/` (100 % du groupe) |
 | 6 | 4 | `PHOTOSHOOT-FICHE-1PAGE-2026-10.md` · `DEMO-SCRIPT-2026-10-07.md` · `VISIT-RUNSHEET-2026-10-07.md` | `clients/` (100 % du groupe) |
@@ -138,7 +138,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | 11 | 2 | `etapes-01-PUBLICATION.md` | `clients/` (100 % du groupe) |
 | 12 | 2 | `DESIGN.md` | `design/` (100 % du groupe) |
 
-### Communauté 0 — 231 documents
+### Communauté 0 — 232 documents
 
 - `AMK-DESIGN-SKILLS.md` — cité 38× dans le groupe, 41× au total
 - `PRE-FLIGHT.md` — cité 25× dans le groupe, 36× au total
@@ -165,7 +165,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 - `content/strategy/RULE-CREDENTIAL-CLAIMS.md` — cité 10× dans le groupe, 25× au total
 - `sales/research/2026-W43-techniques.md` — cité 9× dans le groupe, 15× au total
 
-### Communauté 3 — 32 documents
+### Communauté 3 — 31 documents
 
 - `content/pipeline/ANALYTICS-LOG.md` — cité 11× dans le groupe, 14× au total
 - `knowledge/IDEA-PIPES-2026-10-25.md` — cité 7× dans le groupe, 9× au total
@@ -229,10 +229,10 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | pdf | 11 | `clients/dm-optic/launch/CARTE-AVIS-2026-10-23.pdf`, `clients/dm-optic/launch/RECAP-MISE-EN-LIGNE-2026-10-23.pdf`, `clients/dm-optic/onboarding/print/AMK-PROFORMA-2026-10-05-DM-OPTIQUE-v2.pdf` |
 | texte | 10 | `clients/dm-optic/brag/share-copy.txt`, `clients/dm-optic/launch/LISTE-40-MONTURES-WHATSAPP.txt`, `clients/dm-optic/launch/baseline/README.txt` |
 | config | 7 | `.github/workflows/deploy-dmoptic.yml`, `.github/workflows/machine.yml`, `hosting/previews/dmoptic/sitemap.xml` |
-| vidéo | 5 | `clients/dm-optic/brag/brag.mp4`, `content/reels/ep01/ep01-v4.mp4`, `content/reels/ep01/ep01-v5.mp4` |
+| vidéo | 6 | `clients/dm-optic/brag/brag.mp4`, `content/reels/ep01/ep01-v4.mp4`, `content/reels/ep01/ep01-v5.mp4` |
 | sous-titre | 3 | `clients/dm-optic/content/month1/w1/tiktok-01-v2.fr.srt`, `clients/dm-optic/content/month1/w1/tiktok-01.fr.srt`, `clients/dm-optic/content/month1/w2/etapes-01.srt` |
 | archive | 1 | `dmopticsarl-2026-10-21.zip` |
-| symboles extraits (titres de documents + fonctions/classes du code) | 10861 | — |
+| symboles extraits (titres de documents + fonctions/classes du code) | 10864 | — |
 
 ### Les outils et skills installés — 1 dossier = 1 outil
 

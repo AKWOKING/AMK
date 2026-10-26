@@ -540,3 +540,39 @@ avertit sur cinq, et **la v4 réelle y échoue** (le banc le vérifie : c'est le
 **contre** « réécrire les lignes sans toucher l'ordre » (6,5/10) : le défaut n'était pas dans les
 phrases, il était dans la **séquence**. Buffett, seul contre quatre, a posé la condition qui a évité le
 pire : **garder la v4 rendue comme filet** et ne pas toucher au hook. Elle est dans le dépôt, à côté.
+
+---
+
+## 23 · 26/10/2026 (00:45) — « ça sonne robotique » et « écrivez APERÇU pour faire quoi ? » : deux défauts que les portes ne voyaient pas
+
+**Le premier est une question de langue, pas de structure.** La v5 était correctement ordonnée (porte du
+récit ✓) et parlait comme un panneau de signalisation. `humanizer` a trouvé **cinq tics sur cinquante
+mots** : un fragment théâtral (« Pas vous. »), une triade forcée (« Horaires, adresse, WhatsApp »), des
+ouvertures répétées (« Votre patient… / Il appelle… / Sa fiche… / La vôtre… »), des deux-points en série
+(« Sa fiche : un site, douze avis »), et un mot d'annonce (« gratuit ») posé seul. Le mécanisme est
+toujours le même : **le modèle choisit ce qui convient au plus grand nombre ; l'humain écrit pour une
+personne.** La correction n'est pas de « rendre plus chaleureux » — c'est de remplacer la typographie par
+de la parole : « Les horaires, **ça se change** en dix minutes. **Sans moi.** »
+
+**Le second est un défaut de contrat.** « Écrivez APERÇU sur WhatsApp » décrit **l'action** et tait **la
+récompense**. Dans un fil, le message d'accueil explique ; dans une vidéo de 23 s, personne ne l'a sous
+les yeux. Le CTA doit donc **porter sa propre explication** : « Écrivez APERÇU. **Voyez votre page avant
+de payer.** » Et il existe maintenant une vérification : `audit_story` avertit `cta-sans-recompense`.
+
+**La tension mesurée du tour** : porter la récompense dans le CTA l'allonge, et la porte de l'arc plafonne
+la sortie à **4,5 s**. « Écrivez APERÇU. Vous voyez votre page avant de payer » faisait 4,81 s ⛔ ;
+« Écrivez APERÇU. Voyez votre page avant de payer » fait **3,38 s de voix → 4,19 s de beat** ✓. Quatrième
+fois en deux jours que **le plafond écrit le texte**. Ce n'est plus une remarque, c'est la façon de
+travailler.
+
+**Ce que les cinq tactiques ont changé, et ce qu'elles n'ont pas changé.** Trois tiennent dans 23 s :
+**réciprocité** (le cadeau des dix minutes, tôt et utilisable sans nous), **cohérence** (le plus petit pas
+possible : un mot, pas un nom de cabinet), **autorité** (le diagnostic — nommer le mécanisme que le client
+n'avait pas vu — jamais le titre). Deux sont écartées : **la rareté**, parce qu'elle grille le crédit
+qu'on est en train d'acheter sur un premier contact (elle revient en BOFU, avec la capacité réelle) ; et
+**la preuve sociale de quartier**, parce qu'on a **un** client et aucune mesure — le seul fait social
+disponible est la fiche du concurrent (douze avis), et il est déjà dans la pièce.
+
+**La leçon de méthode.** Chaque reproche de King est devenu soit **une règle écrite**, soit **une
+vérification**. C'est le seul traitement qui empêche le même défaut de revenir à la case suivante de la
+grille.

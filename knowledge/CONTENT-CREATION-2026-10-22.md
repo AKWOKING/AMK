@@ -186,6 +186,20 @@ trouvés en dix secondes (`knowledge/ROAST-2026-10-26-SCRIPT-EP01.md`).
 **Un rôle peut en porter deux** (`lockin+preuve`) : dans un beat de 4 s, exiger une fonction par phrase
 fabrique un script haché. C'est la porte qui s'est pliée à l'écriture, pas l'inverse.
 
+### 3 quinquies · Deux passages obligatoires avant le rendu (26/10)
+
+1. **`humanizer`** sur le **texte prononcé** — jamais sur les libellés d'écran. Cinq tics ont été trouvés
+   sur les 50 mots d'EP01 v5 : fragment théâtral, triade forcée, ouvertures répétées, deux-points en
+   série, langage d'annonce. Détail : `knowledge/HUMANIZER-EP01-2026-10-26.md`.
+2. **Les cinq tactiques de vente**, passées au crible du format : `knowledge/SALES-5-TACTICS-2026-10-26.md`.
+   Trois tiennent dans 25 s (réciprocité, cohérence par le plus petit pas, autorité par le diagnostic),
+   **la rareté est refusée en premier contact** et réservée au BOFU, la preuve sociale se limite aux
+   faits qu'on peut montrer.
+
+**Le CTA a désormais sa vérification** : `audit_story` avertit `cta-sans-recompense` quand la sortie
+nomme l'action sans dire ce qu'on reçoit. C'est le reproche exact de King le 26/10 (« écrivez APERÇU pour
+faire quoi ? »), devenu une règle.
+
 **Trois règles d'usage** (sinon la banque devient un générateur de clickbait) :
 
 - **le hook ne promet rien que la vidéo ne tienne** — un hook qui ment coûte le compte, pas la vue ;

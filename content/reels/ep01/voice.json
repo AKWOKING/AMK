@@ -1,36 +1,36 @@
 {
-  "_comment": "Texte définitif de la voix d'EP01 v5 (tour 150, 26/10). Le Roast Room a refusé la v4 pour quatre raisons mesurables : pas de scène, pas de rehook, preuve montrée mais jamais dite, cadeau enterré à 18 s. La v5 raconte la scène (le patient qui tape), prononce la preuve (douze avis, capture Optix du 24/10), place le cadeau au beat 3 (9,6 s) et finit par le CTA inchangé. Durées réelles dans timing.json.",
+  "_comment": "Texte définitif de la voix d'EP01 v6 (tour 151, 26/10). Trois corrections de King : ① passage humanizer — plus de deux-points en série, plus de triade, plus de fragment théâtral ; ② le CTA porte sa récompense (« vous voyez votre page avant de payer ») ; ③ trois des cinq tactiques de vente sont appliquées (réciprocité au beat 3, cohérence par le plus petit pas, autorité par le diagnostic). La rareté est refusée en premier contact. Durées réelles dans timing.json.",
   "voice_id": "voice-04",
   "beats": [
     {
       "beat": "hook",
       "file": "b1-hook.mp3",
-      "text": "Votre patient tape opticien Akwa. Il appelle l'un des deux. Pas vous."
+      "text": "Votre patient tape opticien Akwa. Il appelle l'autre, pas vous."
     },
     {
       "beat": "spike1",
       "file": "b2-spike1.mp3",
-      "text": "Sa fiche : un site, douze avis. La vôtre : un nom."
+      "text": "Sa fiche a douze avis. La vôtre n'a qu'un nom."
     },
     {
       "beat": "release1",
       "file": "b3-release1.mp3",
-      "text": "Horaires et fiche : dix minutes, gratuit."
+      "text": "Les horaires, ça se change en dix minutes. Sans moi."
     },
     {
       "beat": "spike2",
       "file": "b4-spike2.mp3",
-      "text": "Ce n'est pas le site. Il veut venir ce soir."
+      "text": "Le soir, il veut venir. Et personne ne répond."
     },
     {
       "beat": "release2",
       "file": "b5-release2.mp3",
-      "text": "Un site répond à 22 heures. Horaires, adresse, WhatsApp."
+      "text": "Une page avec vos horaires répond à votre place."
     },
     {
       "beat": "cta",
       "file": "b6-cta.mp3",
-      "text": "Écrivez APERÇU sur WhatsApp."
+      "text": "Écrivez APERÇU. Voyez votre page avant de payer."
     }
   ]
 }

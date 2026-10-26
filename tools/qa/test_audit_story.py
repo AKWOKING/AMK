@@ -53,7 +53,7 @@ BIEN = [
      "rehook+corps", 12.4, 16.6),
     ("release2", "Un site répond à vingt-deux heures. Horaires, adresse, WhatsApp.",
      "corps", 16.6, 20.2),
-    ("cta", "Écrivez APERÇU sur WhatsApp.", "sortie", 20.2, 23.0),
+    ("cta", "Écrivez APERÇU. Voyez votre page avant de payer.", "sortie", 20.2, 23.0),
 ]
 
 
@@ -256,6 +256,21 @@ def _():
             "corps+preuve", 16.6, 20.2)
     v = audit(piece(b))
     assert "preuve-tardive" in wcodes(v), v.warns
+
+
+@cas("cta-sans-recompense : le CTA nomme l'action, pas ce qu'on reçoit")
+def _():
+    b = list(BIEN)
+    b[5] = ("cta", "Écrivez APERÇU sur WhatsApp.", "sortie", 20.2, 23.0)
+    v = audit(piece(b))
+    assert "cta-sans-recompense" in wcodes(v), v.warns
+    assert "cta-non-aligne" not in codes(v), v.fails
+
+
+@cas("un CTA qui dit ce qu'on obtient ne déclenche pas l'avertissement")
+def _():
+    v = audit(piece())
+    assert "cta-sans-recompense" not in wcodes(v), v.warns
 
 
 @cas("debit : un texte trop lent pour une voix")
