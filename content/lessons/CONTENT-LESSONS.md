@@ -576,3 +576,38 @@ disponible est la fiche du concurrent (douze avis), et il est déjà dans la pi�
 **La leçon de méthode.** Chaque reproche de King est devenu soit **une règle écrite**, soit **une
 vérification**. C'est le seul traitement qui empêche le même défaut de revenir à la case suivante de la
 grille.
+
+## 24 · 26/10/2026 (01:55) — publier le jour même ne demande pas une vidéo de plus : il demande un kit
+
+**King a dit « je publie aujourd'hui à 12 h ».** La veille, le dépôt avait un master mesuré, quatre portes
+vertes, un CTA tranché à 7,1 et un message d'accueil réécrit. Il n'avait **rien de ce qu'une publication
+exige à 11 h 55** : ni légende, ni bouton réglé, ni réponse prête, ni compteur. C'est le seul angle mort
+que les cinq portes ne voyaient pas — elles vérifient la **pièce**, aucune ne vérifiait le **jour J**.
+
+**Ce que le kit contient, et pourquoi chaque pièce existe** (`content/reels/ep01/PUBLICATION-2026-10-26.md`) :
+la **légende** avec l'accroche sur la première ligne (Facebook coupe avant « Voir plus »), l'**épinglé**,
+la **réponse d'accueil** avec le nom du cabinet en première ligne, et le **compteur**. Une pièce manquante
+et la publication rate pour une raison qui n'a rien à voir avec le montage.
+
+**Sur l'heure, une décision et pas une intuition.** Le dépôt a deux mesures TikTok qui ne s'accordent pas
+(19:25 → 156 vues ; 12:02 → 121) et qui diffèrent aussi par l'audio : **aucune heure n'est attribuable**
+(`POSTING-CALENDAR` §E2). La v6 part donc à **12 h** pour une raison qui n'est pas la portée mais la
+**disponibilité** : King peut répondre jusqu'à 15 h. La règle qui en sort : *choisir une heure, c'est
+choisir quand on peut répondre — pas quand on espère être vu.*
+
+**La conséquence sur le calendrier, trouvée en le relisant.** Le §3.4 prévoyait un carrousel le **mardi
+27/10** et une vidéo le **mar 03/11** dont l'actif n'existait pas encore. Publier le lundi poussait donc
+deux pièces en 24 h, sur une page à zéro abonné. Le T1 passe au **mar 03/11** (son actif, les captures
+datées, existe déjà), la semaine 1 reste à trois posts, et rien n'est produit dans l'urgence.
+
+**La leçon de méthode**, la même que le §23 mais retournée : une règle sans porte est un trou — **une
+décision sans kit est un vœu**. La publication a maintenant sa porte
+(`tools/qa/audit_publication.py`, **18/18**), et elle vérifie aussi le master : **≤ 25 s**, mesuré, pas
+supposé.
+
+**Ce que ce tour refuse de faire, et qui compte autant.** Le skill « high-ticket » proposait une bande de
+3 000 à 25 000 $ (1,77 à 14,75 M FCFA). Le mécanisme est bon — se payer sur le revenu du client — mais le
+montant exige une preuve que nous n'avons pas : **un client, zéro résultat mesuré**. D'où un **plafond
+écrit** : aucun palier de site au-delà de 450 000 FCFA avant un résultat (`PRIX` §4 bis). Une source qui
+donne des **prix** ne donne pas une **preuve** — et c'est la seule différence qui compte entre un cadre et
+une promesse.

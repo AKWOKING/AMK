@@ -68,8 +68,12 @@ appels — c'est le ruling 142 (`CLIENT-MESSAGING-RULES.md` §13 quinquies), et 
 | **Disqualifiants (un seul suffit)** | Numéro **sans WhatsApp** (ruling 139 : c'est une ligne morte) · pas d'enseigne physique · chaîne dont le siège décide hors Cameroun · site **vivant et complet** de moins de six mois · refuse de donner les accès de la fiche **et** n'a pas de site | Hôpital ou structure publique (marché public, délai incompatible) · exige des allégations médicales · urgence 24/7 non confirmable par une source · budget sous le seuil | Groupe avec webmaster interne · site vivant · hors saison d'admissions (le besoin n'est pas ressenti) |
 | **Où il se trouve** | Facebook (page du cabinet), Google Maps, annuaire de l'Ordre | Facebook, Google Maps, recommandation | Facebook, groupes de parents, panneaux d'entrée |
 
-**Un ICP par semaine dans le calendrier** : les quatre semaines du §3 alternent A, B, A, C — on ne
-parle jamais aux trois le même jour, sinon le post ne parle à personne.
+**Verrou de niche (26/10) — un ICP par mois, pas par semaine.** Le §3.4 alternait A, B, A, C : trois
+acheteurs en quatre semaines, pour une page qui n'a **qu'un client vivant** (DM Optique, opticien), qu'un
+actif montrable dans cette niche et un reel dont l'accroche dit « opticien Akwa ». `knowledge/HIGH-TICKET-2026-10-26.md`
+§3② dit la même chose par l'autre bout : l'expertise se paie, la dispersion ne se paie pas. Donc
+**semaines 1 et 2 = ICP A** ; la semaine 3 était déjà A ; la semaine 4 (C) passe au **point du 04/11**,
+et elle ne se produit pas sans actif. Un post ne parle jamais à trois acheteurs le même jour.
 
 ### 1.3 Prix (la source est muette — c'est notre recherche, pas la sienne)
 
@@ -229,15 +233,18 @@ Semaine 1 = **26/10 → 01/11**. Chaque ligne est prête à produire : le sujet 
 
 | Date | Étage | Format | Sujet | Accroche | CTA (mot pour mot) | Actif | Statut |
 |---|---|---|---|---|---|---|---|
-| **Mar 27/10** | TOFU | carrousel 7 | T1 | « Tapez le nom de votre cabinet sur Google. Regardez ce qui apparaît sous l'adresse. » | « Vous voulez le même contrôle sur votre fiche ? Écrivez **APERÇU** — 10 minutes cette semaine. » | captures 24–25/10, noms masqués | à produire |
+| **Lun 26/10 · 12 h** | TOFU | réel 23,7 s | **EP01 v6** | « Votre patient tape opticien Akwa. Il appelle l'autre. » | « Écrivez **APERÇU** sur WhatsApp : 677 78 96 31. Vous voyez votre page avant de payer. » | `content/reels/ep01/ep01-v6.mp4` + `PUBLICATION-2026-10-26.md` | **publié par King le 26/10 (décision §1 du brainstorm)** |
 | **Jeu 29/10** | MOFU | texte | M5 | « Les 3 questions à poser avant de payer un site » | « Les trois réponses pour votre cabinet, je les donne de vive voix. Écrivez **APERÇU** — 10 minutes. » | texte seul | à écrire |
 | **Sam 31/10** | BOFU | carrousel 7 | B2 | « La même fiche, avant et après : trois captures datées » | « Deux aperçus cette semaine. Écrivez **APERÇU** sur WhatsApp — 10 minutes, et vous voyez la page. » | fiche DM + captures datées | à produire |
 
-#### Semaine 2 — « Le site contre la fiche » · ICP B (clinique)
+#### Semaine 2 — « Le site contre la fiche », suite · ICP A (opticien) — verrou du 26/10
+
+*Le TOFU de cette semaine n'est plus T2 (vidéo à produire) : c'est **T1, déplacé du 27/10**, dont l'actif
+existait déjà. Le reel du 26/10 a pris la place du mardi ; on ne publie pas deux pièces en 24 h.*
 
 | Date | Étage | Format | Sujet | Accroche | CTA | Actif | Statut |
 |---|---|---|---|---|---|---|---|
-| **Mar 03/11** | TOFU | vidéo 25 s | T2 | « Pourquoi votre site n'apparaît pas quand on cherche votre nom » | « Si votre nom ne sort pas, écrivez **APERÇU** : 10 minutes, je regarde avec vous. » | **✅ `content/reels/ep01/ep01-v2.mp4`** (23,4 s, voix + 3 cimes, §5 bis et §5 ter) | rendu · avancer au 27/10 possible |
+| **Mar 03/11** | TOFU | carrousel 7 | T1 | « Tapez le nom de votre cabinet sur Google. Regardez ce qui apparaît sous l'adresse. » | « Vous voulez le même contrôle sur votre fiche ? Écrivez **APERÇU** — 10 minutes cette semaine. » | captures 24–25/10, noms masqués | à produire (déplacé du 27/10) |
 | **Jeu 05/11** | MOFU | carrousel 7 | M12 | « Un aperçu, en 4 étapes : ce que vous voyez avant de payer » | « L'étape 1 prend deux minutes. Écrivez **APERÇU** — on fait les 10 minutes ensemble. » | `content/carousels/` (gabarit c03) | à adapter |
 | **Sam 07/11** | BOFU | texte | B5 | « J'ouvre deux aperçus à votre nom cette semaine » | « Deux places. Écrivez **APERÇU** — 10 minutes, la première est prise quand elle est prise. » | capacité réelle | à écrire |
 
@@ -259,7 +266,8 @@ Semaine 1 = **26/10 → 01/11**. Chaque ligne est prête à produire : le sujet 
 
 **Les douze CTA ci-dessus sont la forme courte du CTA canonique du §5** : chacun nomme l'appel (« 10 minutes »), un seul lien, une seule action. Un post dont la dernière ligne ne contient ni « APERÇU » ni « 10 minutes » ne sort pas.
 
-**Trois règles du calendrier**, à ne pas casser : (a) trois posts, trois étages, **un** ICP par semaine ;
+**Trois règles du calendrier**, à ne pas casser : (a) trois posts, trois étages, **un** ICP par mois
+(verrou du 26/10 — la semaine 4 se rouvre au point du 04/11) ;
 (b) **un seul actif lourd** par semaine — le carrousel de mardi peut être réutilisé jeudi en texte, jamais
 l'inverse ; (c) le BOFU du samedi est **toujours** celui qui peut être décalé d'une semaine si l'actif
 n'est pas prêt, parce que c'est le seul dont l'absence ne casse pas le rythme.
@@ -320,6 +328,16 @@ visite). Trois messages maximum avant l'appel. Jamais de prix avant la question.
 > M1 : « Merci. Le nom du cabinet, et le quartier ? »
 > M2 (après sa réponse) : « Je regarde ce que Google affiche pour vous aujourd'hui, et je vous dis ce qui manque. »
 > M3 (dans la journée) : « Ce qui manque : [1 fait vérifiable, daté]. Je vous propose 10 minutes demain à [heure] pour vous montrer l'aperçu — ou je vous l'envoie ici. »
+
+**La question de valeur (26/10, `HIGH-TICKET` §3①)** — une question, jamais un chiffre de notre côté :
+
+> « Une question, pour ne pas parler dans le vide : **un patient, il vous laisse combien ?** Je ne promets
+> aucun patient — je veux juste savoir si le sujet vaut votre temps. »
+
+Elle remplace le silence gênant quand le prospect demande « et ça coûte combien ? » : on ne donne pas un
+prix, on demande **son** chiffre, et c'est lui qui rend le prix défendable. Précédent unique dans le dépôt :
+`BUSINESS-CASE-UNIVERS-OPTIQUE-2026-09-25.md` §3 (« si une paire lui laisse 15 000 FCFA, le site est payé
+après 7 paires » — *à barrer si son chiffre est différent*).
 
 **Ouverture 2 — il a commenté un post sans écrire.**
 
