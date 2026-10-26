@@ -142,6 +142,21 @@ ANCRAGE = [
     "profil", "registre", "tableau", "vitrine", "catalogue", "à vous", "chez vous", "votre nom",
 ]
 
+# Affirmer qu'un prospect n'a pas de site est une affirmation de fait — la seule que ce script ne
+# peut pas vérifier. Le 26/10, un message du LOT 1 a dit à ISEE que « aucune de ces deux vitrines ne
+# permet de vous joindre » alors que `iseecameroon.com` existe, avec un bouton WhatsApp par monture.
+# King l'a vu avant le client. Règle : une telle phrase exige une ligne **SITE-CHECK datée** sous le
+# titre, qui dit par quelles voies on a cherché. Le script vérifie la ligne, pas la recherche.
+SANS_SITE = [
+    "aucun site", "pas de site", "n'a pas de site", "aucune de ces pages", "aucune de ces vitrines",
+    "aucune des deux", "aucune de ces deux", "ne mene nulle part", "ne mene pas",
+    "ne permet pas de vous joindre", "aucune vitrine", "aucune de ces", "aucune de vos",
+    "aucune des trois", "aucune des deux",
+]
+SITE_CHECK = re.compile(r"site-check[^\n]*?\d{4}-\d{2}-\d{2}[^\n]*")
+SITE_CHECK_RIEN = ["aucun site", "aucun domaine", "pas de site", "introuvable", "rien trouve",
+                   "aucune trace"]
+
 # Désarmement — mécanisme 1 de Cameron Jeanes (26/10) : la première ligne excuse l'intrusion.
 DESARMEMENT = ["inattendu", "surprenant", "surprend", "je sais que c'est", "sans doute", "étrange"]
 
@@ -209,6 +224,7 @@ class Message:
     phone: str
     body: str
     line: int
+    verif: str = ""  # lignes entre le titre et le corps : SITE-CHECK, etc.
     fails: list[str] = field(default_factory=list)
     warns: list[str] = field(default_factory=list)
 
@@ -235,6 +251,7 @@ def parse(path: Path) -> list[Message]:
         phone = m.group(3).strip()
         start = i + 1
         body_lines: list[str] = []
+        pre: list[str] = []
         j = i + 1
         while j < len(lines):
             s = lines[j].strip()
@@ -250,9 +267,11 @@ def parse(path: Path) -> list[Message]:
                 continue
             if body_lines:  # texte nu après une citation = fin du bloc
                 break
+            pre.append(s)  # ligne entre le titre et le corps (SITE-CHECK…)
             j += 1
         if body_lines:
-            out.append(Message(label, quartier, phone, "\n".join(body_lines), start))
+            out.append(Message(label, quartier, phone, "\n".join(body_lines), start,
+                               verif="\n".join(pre)))
         i = j if j > i else i + 1
     return out
 
@@ -398,6 +417,21 @@ def check(msg: Message) -> None:
             msg.warns.append("la question finale ne demande aucune action (ni « voulez », ni « montre », "
                              "ni « dites »…) — elle est décorative, à réécrire")
 
+
+    # 11 · affirmer l'absence de site sans SITE-CHECK daté — la leçon ISEE du 26/10.
+    #      Le script ne peut pas savoir si le cabinet a un site ; il peut exiger que la question ait
+    #      été posée et datée. Quatre voies : nom exact, nom affiché sur WhatsApp, numéro, Google Maps.
+    if any(fold(x) in flat for x in SANS_SITE):
+        stamp = SITE_CHECK.search(fold(msg.verif))
+        if not stamp:
+            msg.fails.append(
+                "affirme qu'il n'y a pas de site sans SITE-CHECK daté sous le titre — chercher par nom "
+                "exact, nom affiché sur WhatsApp, numéro, et Google Maps, puis écrire « SITE-CHECK "
+                "aaaa-mm-jj · voies · résultat » (ISEE, 26/10)")
+        elif not any(r in stamp.group(0) for r in SITE_CHECK_RIEN):
+            msg.fails.append(
+                "SITE-CHECK ne dit pas qu'aucun site n'a été trouvé — si la recherche a rendu un site, "
+                "le message ne peut pas affirmer le contraire (ISEE, 26/10)")
 
 # ── §10 · la ressemblance — la seule règle que le volume ajoute ─────────────────────────────────
 #

@@ -28,8 +28,8 @@ BON = (
 )
 
 
-def msg(body: str, quartier: str = "Bonanjo") -> Message:
-    m = Message(label="Test", quartier=quartier, phone="677 00 00 00", body=body, line=1)
+def msg(body: str, quartier: str = "Bonanjo", verif: str = "") -> Message:
+    m = Message(label="Test", quartier=quartier, phone="677 00 00 00", body=body, line=1, verif=verif)
     check(m)
     return m
 
@@ -203,6 +203,26 @@ CAS: list[tuple[str, str, str, str]] = [
         "ne demande aucune action",
     ),
     (
+        "affirme l'absence de site sans SITE-CHECK",
+        BON.replace("et rien n'est à vous", "et aucun site ne porte votre nom"),
+        "Bonanjo",
+        "SITE-CHECK",
+    ),
+    (
+        "absence de site, mais SITE-CHECK daté sous le titre",
+        BON.replace("et rien n'est à vous", "et aucun site ne porte votre nom"),
+        "Bonanjo",
+        "",
+        "SITE-CHECK 2026-10-26 · nom exact, nom WhatsApp, numéro, Google Maps → aucun site",
+    ),
+    (
+        "SITE-CHECK qui dit avoir trouvé un site",
+        BON.replace("et rien n'est à vous", "et aucun site ne porte votre nom"),
+        "Bonanjo",
+        "SITE-CHECK ne dit pas",
+        "SITE-CHECK 2026-10-26 · nom exact → site trouvé : iseecameroon.com",
+    ),
+    (
         "faux positif : message tiède, sans bonjour (le désarmement n'a pas à y être)",
         "Hier, à Akwa, Google sort un cabinet comptable avant Optix — la place est chez lui, pas "
         "chez vous. Un site à votre nom prend cette place, avec horaires et WhatsApp ; je complète "
@@ -216,8 +236,10 @@ CAS: list[tuple[str, str, str, str]] = [
 
 def main() -> int:
     echecs = 0
-    for nom, corps, quartier, attendu in CAS:
-        m = msg(corps, quartier)
+    for cas in CAS:
+        nom, corps, quartier, attendu = cas[:4]
+        verif = cas[4] if len(cas) > 4 else ""
+        m = msg(corps, quartier, verif)
         if not attendu:
             ok = not m.fails and not m.warns
             detail = f"{len(m.fails)} bloquant(s), {len(m.warns)} avertissement(s)"
