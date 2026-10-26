@@ -140,7 +140,7 @@ def applique() -> None:
         "     8 miroirs anglais. Les 80 fiches de montures restent en ligne mais en noindex,follow —\n"
         "     elles servent au lien WhatsApp, pas au référencement. Voir\n"
         "     clients/dm-optic/seo/DIAGNOSTIC-INDEXATION-2026-10-26.md §3.3 et\n"
-        "     tools/ops/dm_index_surface.py (porte : --check). -->\n"
+        "     tools/ops/dm_index_surface.py, option check. -->\n"
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "".join(u + "\n" for u in urls) + "</urlset>\n", encoding="utf-8")
     print(f"  sitemap : {len(urls)} URL (avant : 96)")
@@ -189,6 +189,21 @@ def check() -> list[str]:
     if not SITEMAP.exists():
         return pbs + ["sitemap.xml absent"]
     texte = SITEMAP.read_text(encoding="utf-8")
+
+    # Le 26/10, un commentaire XML a été écrit avec « --check » : le tiret double est INTERDIT dans un
+    # commentaire XML, Google a répondu « Sitemap can be read, but has errors / Parsing error, line 6 »,
+    # et 0 URL découverte. Cette porte ne regardait que le contenu des <loc> ; elle ne lisait pas le
+    # fichier comme un parseur le lit. Elle le lit maintenant, avant tout le reste.
+    import xml.etree.ElementTree as ET
+    try:
+        ET.fromstring(texte)
+    except ET.ParseError as e:
+        ligne = getattr(e, "position", (0, 0))[0]
+        cause = "un « -- » dans un commentaire XML (interdit)" if "--" in texte.split("<urlset")[0] \
+            else "un caractère non échappé"
+        pbs.append(f"sitemap : XML illisible — ligne {ligne}, {cause} ; Google refuse le fichier entier")
+        return pbs
+
     locs = re.findall(r"<loc>([^<]+)</loc>", texte)
     attendu = {base() + p for p in coeur() + sorted(garde)}
     if len(locs) != len(set(locs)):

@@ -3,7 +3,7 @@
      8 miroirs anglais. Les 80 fiches de montures restent en ligne mais en noindex,follow —
      elles servent au lien WhatsApp, pas au référencement. Voir
      clients/dm-optic/seo/DIAGNOSTIC-INDEXATION-2026-10-26.md §3.3 et
-     tools/ops/dm_index_surface.py (porte : --check). -->
+     tools/ops/dm_index_surface.py, option check. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://dmoptiquesarl.com/</loc><lastmod>2026-10-21</lastmod></url>
   <url><loc>https://dmoptiquesarl.com/montures/</loc><lastmod>2026-10-21</lastmod></url>
