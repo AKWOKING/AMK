@@ -101,6 +101,26 @@ Sur **son** téléphone, la nuit si possible (`AMK-DESIGN-SKILLS` §24.3.5) :
 
 ---
 
+## 5 bis · La question du prix — écrite à l'avance, jamais improvisée (26/10, soir)
+
+Le premier message ne dit **aucun** prix (§13). Mais dès la deuxième réponse, la question arrive, dans
+cet ordre : *c'est combien ?* puis *et l'entretien ?* Une réponse improvisée à 22 h coûte plus cher que
+le prix lui-même. Voilà donc les trois phrases, tirées de `knowledge/PRIX-2026-10-24.md` §4 (respecter
+la grille : **aucune remise**, on change le périmètre — PRE-FLIGHT §1h, règle 4).
+
+| Ce qu'il demande | La réponse, mot pour mot | Ce qu'on ne dit pas |
+|---|---|---|
+| **« C'est combien ? »** | « Le site tient en trois pages : **150 000** FCFA, domaine et hébergement de la première année compris, et la fiche Google créée. » | aucun « à partir de », aucune fourchette qui invite à négocier |
+| **« Et après ? »** | « L'entretien, c'est **30 000** par mois : hébergement, sauvegardes, une modification par mois. Vous pouvez arrêter, le site reste à vous. » | aucune promesse de trafic, aucun chiffre de patients |
+| **« Vous faites un prix ? »** | « Non, mais je peux changer le périmètre : deux pages au lieu de trois, ou la fiche Google seule dans un premier temps. » | **jamais** de remise : c'est la règle 4 du §1h |
+
+**L'ordre compte plus que les chiffres.** On ne dit le prix qu'après avoir montré l'aperçu : un prix sur
+un objet qu'il n'a pas vu n'est qu'un nombre. Et si le oui arrive **avant** l'aperçu, on envoie
+l'aperçu d'abord, le prix ensuite — l'inverse fait d'un cadeau une facture.
+
+**Ce que cette section ne fait pas** : elle ne fixe pas de prix. Elle recopie la grille arrêtée le 24/10
+et la met à portée de main. Un prix qui bouge pendant une conversation est un prix qui n'existait pas.
+
 ## 5 · Si le oui n'arrive jamais — la règle de sortie
 
 Un message froid qui reste sans réponse **n'est pas un refus** : c'est un silence. La règle du dépôt

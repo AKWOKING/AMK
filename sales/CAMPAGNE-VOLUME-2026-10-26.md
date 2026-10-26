@@ -100,10 +100,20 @@ Trois sources, dans l'ordre de rendement observé :
 
 | # | Cabinet | Envoyé | Lu | Répondu | Bloqué |
 |---|---|---|---|---|---|
-| 1 | Ets Espace Médical · 655 04 95 29 | ☐ | ☐ | ☐ | ☐ |
-| 2 | ASS pour RRPHDD · 675 39 90 23 | ☐ | ☐ | ☐ | ☐ |
-| 3 | ISEE · 656 97 80 43 | ☐ | ☐ | ☐ | ☐ |
-| … | les 7 de la vague 2 **en tête**, puis les 13 du lot volume, puis les 17 | ☐ | ☐ | ☐ | ☐ |
+| 1 | Ets Espace Médical · 655 04 95 29 | **☑ 26/10** | ☐ | ☐ | ☐ |
+| 2 | ASS pour RRPHDD · 675 39 90 23 | **☑ 26/10** | ☐ | ☐ | ☐ |
+| 3 | ISEE · 656 97 80 43 | **☑ 26/10** | ☐ | ☐ | ☐ |
+| 4 | Bellevue Optique · 694 89 26 96 | **☑ 26/10** | ☐ | ☐ | ☐ |
+| 5 | S.O.S Vision · 699 86 04 63 | **☑ 26/10** | ☐ | ☐ | ☐ |
+| 6 | Capelli Optique Médicale · 675 26 89 81 | ☐ | ☐ | ☐ | ☐ |
+| 7 | Saoudia Optique · 696 04 04 13 | ☐ | ☐ | ☐ | ☐ |
+| 8 | Pagrot Optique · 699 90 46 91 | ☐ | ☐ | ☐ | ☐ |
+| 9 | Light Optique · 677 64 87 90 | ☐ | ☐ | ☐ | ☐ |
+| 10 | Optique Pro · 690 03 48 18 | ☐ | ☐ | ☐ | ☐ |
+
+**Les cinq du LOT 1 sont partis le 26/10** (message v5, aperçu promis après le oui). Le LOT 2
+(`sales/LOT-2-2026-10-27.md`) est écrit et contrôlé, **pas encore envoyé**. La règle du §2 s'applique
+dès la première réponse : un blocage arrête la journée.
 
 **Ce qui compte n'est pas « envoyé » mais « répondu »** — et le seul chiffre qui décide de la suite est
 `réponses < 48 h`. Aujourd'hui il vaut **0**.

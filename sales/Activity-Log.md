@@ -6494,3 +6494,41 @@ au pluriel la veille) : trois motifs ajoutés, **un cas de banc** (la preuve vag
 site, lui, se paie, et le prix n'entre pas dans un premier message (§13). Si la première réponse est
 « c'est combien ? », elle est prête : c'est la deuxième réponse, pas la première. Et rien n'est mesuré :
 **aucun message n'est parti**, et aucun taux camerounais n'existe.
+
+### Tour 163 — 26/10/2026 (nuit) — les cinq du LOT 1 sont partis, le LOT 2 est prêt
+
+**① Ce qui est parti.** Les cinq du LOT 1 sont **envoyés le 26/10** — Ets Espace Médical, ASS pour
+RRPHDD, ISEE, Bellevue, S.O.S Vision. Le tracker (`sales/CAMPAGNE-VOLUME-2026-10-26.md` §5) porte cinq
+coches datées. **Ce qui compte maintenant n'est pas « envoyé » mais « répondu »** : le chiffre est à zéro
+et il décide de tout, à 48 h.
+
+**② Le LOT 2 est écrit, contrôlé, et pas parti** (`sales/LOT-2-2026-10-27.md`) : **Capelli** (3/3),
+**Saoudia**, **Pagrot**, **Light Optique**, **Optique Pro** — porte A passée pour les cinq (profils vus le
+25/10), 62 à 70 mots, quatre phrases, **0 bloquant, 0 avertissement**.
+
+**③ Chaque message repose sur un fait daté, et les faits sont neufs.** Trois annuaires lus aujourd'hui :
+Mont-Pandi donne **deux numéros** à Saoudia et **« jours d'ouverture : non renseignés »** ; la même fiche
+donne à Capelli une **seconde adresse en mots** et un second numéro ; DoualaTour classe **Pagrot** en
+ophtalmologue, horlogerie, opticien et lunetterie ; BusinessList marque **Light Optique** « unverified »
+avec **une question de patient du 30/06/2024 restée sans réponse**. Douze lignes de preuve dans
+`leads/RECHERCHE-LOT-2-2026-10-26.csv`.
+
+**④ Ce que l'audit humanizer a imposé.** Trois des cinq premières versions ont été refusées par la
+**porte §10** : la même phrase de preuve et la même chute revenaient dans les cinq — c'est la signature
+d'un compte qui diffuse, et c'est exactement ce que le skill appelle une ossature. Quatre formulations de
+preuve et cinq fermetures différentes ont été écrites ; les cinq passent.
+
+**⑤ Une exclusion, et elle est le meilleur prospect du stock.** **Free Optic** est 3/3 mais sa page
+Facebook annonce le domaine **freeoptic.cm** : s'il existe, il a un site et le message serait faux. Le
+domaine ne répond pas et aucune recherche ne rend de site — **vérification de King en dix secondes**. S'il
+est mort, Free Optic passe en tête du LOT 3 avec le fait le plus fort du stock : « votre page Facebook
+annonce freeoptic.cm, et le lien ne mène nulle part ».
+
+**⑥ Le taux de fermeture, et ce qui le fait monter.** Le prix est désormais écrit **avant** qu'on nous le
+demande (`sales/REPONSE-OUI-2026-10-26.md` §5 bis) : 150 000 le socle trois pages, 30 000 l'entretien,
+aucune remise — on change le périmètre. Un prix improvisé à 22 h coûte plus cher que le prix lui-même.
+L'ordre compte : l'aperçu d'abord, le prix ensuite.
+
+**⑦ Ce que je ne peux pas prouver.** Aucun taux. Cinq messages partis, zéro réponse consignée. Et la
+porte B n'est franchie par personne pour ②③④⑤ : ces cabinets n'ont pas de page à eux — c'est le sujet du
+message, pas une preuve qu'ils achèteront.
