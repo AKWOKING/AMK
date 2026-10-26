@@ -63,7 +63,7 @@ C'est le livrable. Une page, cinq constats, chacun avec sa preuve et son chiffre
 |---|---|---|---|
 | 1 | **Dernière mise à jour du site** | `iseecameroon.com/sitemap_index.xml` → 14/11/2024 pour les pages, 08/07/2024 pour les produits | un site figé depuis deux ans ne dit plus ses prix ni ses nouveautés |
 | 2 | **Vitesse sur téléphone** | PageSpeed Insights sur l'accueil, onglet mobile → le score et le temps de chargement | un patient à Deido sur un forfait data abandonne avant la deuxième seconde |
-| 3 | **Fiche Google** | chercher « I See Better Douala » sur un téléphone : propriétaire revendiqué ou non, catégories, horaires, photos, lien « Prendre RDV » | c'est là que 80 % des patients le trouvent, avant le site |
+| 3 | **Fiche Google** | chercher « I See Better Douala » sur un téléphone : propriétaire revendiqué ou non, catégories, horaires, photos, lien « Prendre RDV » | c'est par là que passe le patient qui cherche un cabinet dans son quartier, avant d'ouvrir un site |
 | 4 | **Les trois noms** | taper « ISEE », « I See Better », « Isee Cameroun » : est-ce que les trois mènent au même endroit ? | un patient qui hésite appelle le numéro qu'il a déjà sous la main |
 | 5 | **Le parcours « Prendre RDV »** | le faire soi-même, sur téléphone, en se chronométrant | s'il faut plus de trois champs, il ne le fait pas |
 
