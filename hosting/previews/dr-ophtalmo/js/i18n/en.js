@@ -6,7 +6,7 @@
 export const en = {
   meta: {
     lang: "en",
-    title: "Ophthalmology in Cameroon — consultations in Mbouda, Bafoussam, Douala and Bonabéri",
+    title: "Ophthalmology in Cameroon: consultations in Mbouda, Bafoussam, Douala and Bonabéri",
     description:
       "Professional website of an itinerant ophthalmologist in Cameroon: consultation locations, weekly days, and appointment requests by WhatsApp or phone.",
   },
@@ -28,7 +28,7 @@ export const en = {
     required: "required",
     optional: "optional",
     backToTop: "Back to top",
-    emDash: "—",
+    emDash: ":",
     today: "Today",
   },
 
@@ -52,8 +52,8 @@ export const en = {
     placesNote:
       "These cities are consultation locations. They do not mean the doctor consults in each of them every day.",
     portraitCaption:
-      "Illustrative portrait (generated image) — to be replaced by the doctor’s own photograph.",
-    statusLine: "Information reported on 26 October 2026 — reconfirm before travelling.",
+      "Illustrative portrait (generated image), to be replaced by the doctor’s own photograph.",
+    statusLine: "Information reported on 26 October 2026. Reconfirm before travelling.",
   },
 
   parcours: {
@@ -87,8 +87,8 @@ export const en = {
     servicesNotice:
       "The list of services performed will be published once the doctor confirms it. If in doubt, ask when you request an appointment.",
     examinationCaption:
-      "Eye examination in a consultation room — illustrative photograph (generated image), not tied to any particular partner facility.",
-    equipmentCaption: "Slit lamp and examination chair — illustrative photograph (generated image).",
+      "Eye examination in a consultation room: an illustrative photograph (generated image), not tied to any particular partner facility.",
+    equipmentCaption: "Slit lamp and examination chair, an illustrative photograph (generated image).",
     photoNote:
       "The photographs on this page are generated illustrations. They show neither the doctor nor a specific partner location.",
   },
@@ -192,7 +192,7 @@ export const en = {
     review: "Review before sending",
     copy: "Copy the message",
     copied: "Message copied",
-    copyFailed: "Copy failed — select the text and copy it.",
+    copyFailed: "Copy failed. Select the text and copy it.",
     preparedTitle: "Your message is ready",
     preparedNote:
       "Nothing is sent from this page. Copy the message and send it yourself: you decide.",
@@ -234,6 +234,7 @@ export const en = {
       "List built from the site configuration. Every empty line shows “to be confirmed” on the page: nothing is invented to fill it.",
     editHint: "Fill in js/config/doctor.js, then have the doctor confirm each line.",
     backToTop: "Top of page",
-    rights: "Professional website — Cameroon",
+    rights: "Professional website · Cameroon",
+    credit: "AMK preview, not published: the doctor’s details are still to be confirmed.",
   },
 };

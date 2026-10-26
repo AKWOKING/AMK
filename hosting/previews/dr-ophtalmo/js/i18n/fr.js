@@ -236,5 +236,6 @@ export const fr = {
     editHint: "À renseigner dans js/config/doctor.js, puis à confirmer avec le médecin.",
     backToTop: "Haut de page",
     rights: "Site professionnel — Cameroun",
+    credit: "Aperçu AMK, non publié — les informations du médecin restent à confirmer.",
   },
 };

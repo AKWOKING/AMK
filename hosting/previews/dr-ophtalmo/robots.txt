@@ -1,0 +1,3 @@
+# Aperçu privé, non publié : rien à indexer tant que le médecin n'a pas validé le site.
+User-agent: *
+Disallow: /
