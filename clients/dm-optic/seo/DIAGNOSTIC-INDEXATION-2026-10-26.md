@@ -214,3 +214,52 @@ exactement ce qui produit un « Redirect error » permanent.
 
 **Recommandation :** suivre une **propriété Domaine** (`dmoptiquesarl.com`, qui couvre `http`, `https`,
 `www` et l'apex), et garder la propriété `www` seulement pour valider le correctif des 403.
+
+## 8 · Les gestes de King, faits le 26/10 au soir (20 h)
+
+| Geste | Ce qui a été fait | Preuve |
+|---|---|---|
+| **Always Use HTTPS** | **ON** — « last changed a few seconds ago » | capture Cloudflare, 26/10 |
+| **Validation du 403** | **Validation started 26/10/2026** — 8 pages en attente, **0 en échec** | capture Search Console, 26/10 |
+| **Propriété** | passage à une **propriété Domaine** `dmoptiquesarl.com` (couvre `http`, `https`, `www`, apex) | message de King, 26/10 |
+
+**Ce que ça règle, et ce qu'il faut vérifier soi-même :**
+
+- `http://` → `https://` : la famille n°1 des 8 URL est fermée côté zone. À revérifier demain en
+  rouvrant `http://dmoptiquesarl.com/` : l'adresse doit basculer **avant** l'affichage.
+- Les familles « `www` » et « sans barre finale » étaient **déjà** correctes (relevés du §7.2). La
+  validation en cours ne fait que le constater côté Google.
+- **HSTS** : le bouton « Enable HSTS » est resté inactif. **C'est bien ainsi** : le site envoie déjà
+  `Strict-Transport-Security` par `_headers`, et HSTS au niveau de la zone est difficile à défaire.
+  On l'active plus tard, si un jour on en a besoin.
+
+## 9 · Les 89 « Discovered » décortiquées — la surface est confirmée
+
+L'export des 89 URL (`preuves-2026-10-26/gsc-decouvertes-2026-10-23.csv`, « Last crawled : 1970-01-01 »
+= jamais visitées) se répartit exactement ainsi :
+
+| Catégorie | Nombre | Ce qu'il en advient après le 26/10 |
+|---|---|---|
+| **Fiches de montures** (39 FR + 40 EN) | **79** | passées en `noindex,follow` et sorties du sitemap → elles cesseront d'être « découvertes » et deviendront « exclues par noindex » (état normal, pas une erreur) |
+| **Pages cœur** | **10** | `/contact/`, `/le-cabinet/`, `/montures/{femmes,hommes,enfants}/`, `/en/examen-de-vue/`, `/en/le-cabinet/`, `/en/montures/{femmes,hommes,enfants}/` — **toutes dans le sitemap de 16 URL** |
+| Variantes `www` / `http` / sans barre | **0** | aucune : ce lot-là est propre |
+
+**Conclusion : le sitemap de 16 URL ne perd aucune page utile.** Les 10 pages qui comptent y sont
+toutes ; les 79 autres n'avaient pas de contenu à défendre et ne sont plus demandées à Google.
+
+## 10 · Ce qui reste à faire, et ce qu'on regarde au 16/11
+
+| # | Geste | Qui | Quand |
+|---|---|---|---|
+| 1 | Soumettre `https://dmoptiquesarl.com/sitemap.xml` **dans la nouvelle propriété Domaine** | King | aujourd'hui |
+| 2 | Ne **rien** renvoyer d'autre : la validation du 403 tourne (8 en attente) | — | — |
+| 3 | Relever `http://dmoptiquesarl.com/` : doit basculer en `https://` | King | demain |
+| 4 | Lire l'export au 16/11 et remplir le tableau ci-dessous | moi | 16/11 |
+
+| Ce qu'on lit | 23/10 | Objectif 16/11 | Relevé réel |
+|---|---|---|---|
+| Pages indexées | 4 | ≥ 12 / 16 | |
+| Blocked (403) | 8 (validation en cours) | 0 | |
+| Redirect error | 2 | 0 | |
+| Discovered – not indexed | 89 | ≤ 20 (les fiches sortent) | |
+| Impressions / jour | 0 à 11 | > 0 régulièrement | |
