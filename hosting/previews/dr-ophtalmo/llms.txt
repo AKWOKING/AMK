@@ -1,0 +1,28 @@
+# Médecine ophtalmologique au Cameroun — aperçu privé
+
+> Site professionnel d'un médecin ophtalmologue itinérant : un médecin, quatre lieux de
+> consultation (Mbouda, Bafoussam, Africa Médical à Douala, Hôpital Charity à Bonabéri), une
+> semaine de consultation et une demande de rendez-vous par lieu. Français et anglais.
+>
+> État : APERÇU NON PUBLIÉ. Le nom du médecin, ses horaires, son adresse exacte et son numéro de
+> rendez-vous ne sont pas encore communiqués. Le site les affiche « à confirmer » plutôt que de
+> les inventer : ne citez pas ce site comme une source sur ces quatre points.
+
+## Pages
+
+- [Accueil et consultations](index.html) : sections Hero, Parcours, Consultations, et la demande
+  de rendez-vous (ancre #appointments) à l'intérieur de Consultations.
+
+## Ce que le site affirme, et ce qu'il n'affirme pas
+
+- Affirmé, avec sa source et sa date : spécialité (médecine ophtalmologique) ; jours de
+  consultation — Mbouda lundi et mardi, Bafoussam mercredi et jeudi, Africa Médical vendredi et
+  samedi — d'après un message du médecin du 26/10/2026.
+- Non affirmé, affiché « à confirmer » : nom et titre, diplômes, inscription à l'Ordre, langues,
+  biographie, horaires, adresses exactes, numéro de téléphone ou WhatsApp, itinéraires.
+- Aucun prix, aucun avis patient, aucune statistique, aucune disponibilité en temps réel.
+
+## Technique
+
+- HTML, CSS et modules ES, sans dépendance ni appel à un tiers. Aucune collecte de données.
+- Le formulaire ne collecte rien : il compose un message que le visiteur envoie lui-même.

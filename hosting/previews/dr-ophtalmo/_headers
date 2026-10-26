@@ -1,0 +1,18 @@
+# Aperçu Dr Ophtalmo — règles de cache et d'en-têtes (lues par Cloudflare Pages / Netlify).
+# Le site n'a ni cookie, ni mesure d'audience, ni backend : la CSP reste donc très fermée.
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'self'
+
+/assets/img/*
+  Cache-Control: public, max-age=604800
+
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/css/*
+  Cache-Control: public, max-age=3600

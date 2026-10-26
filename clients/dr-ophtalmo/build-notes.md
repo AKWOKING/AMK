@@ -62,15 +62,41 @@ Trois images générées le 26/10 (`assets/src/*.png`, converties en webp 1440/9
 **Elles ne sont pas le médecin.** Deux légendes le disent à l'écran ; `isRealPhoto: false` commande la
 mention. Le jour où le vrai portrait arrive : remplacer les trois fichiers, l'`alt`, et passer le drapeau.
 
-## 5 · Ce que je n'ai pas pu vérifier
+## 5 · Ce que j'ai vérifié, et dans quoi
 
-- **Le rendu d'un vrai navigateur.** Aucun Chromium dans l'environnement (bibliothèques NSS absentes, pas
-  de réseau vers les dépôts système). J'ai vérifié la structure et le comportement dans un DOM simulé
-  (46 assertions) et relu le CSS point de rupture par point de rupture ; **je n'ai pas vu la page**.
-  C'est la raison pour laquelle elle est ouverte en aperçu : le contrôle visuel est à faire, pas à croire.
-- **Les contrastes mesurés.** Les couples employés sont choisis pour tenir (texte `#f7fafc` sur `#07111d`,
-  `#142536` sur `#f6f8fa`, `#76b9b4` sur `#07111d` en accent), mais aucun outil de mesure n'a tourné ici.
-- **La taille du texte dans les captures.** Non mesurable sans navigateur.
+**Corrigé le 26/10 au soir (tour 179).** La version du matin disait « je n'ai pas vu la page » : c'était
+vrai alors, plus maintenant. `bash tools/video/install.sh` installe un Chromium avec ses bibliothèques
+(`/tmp/amk-video`), donc la page a été **mesurée**, pas relue.
+
+| Largeur | Débordement horizontal | Texte < 12 px | Images cassées | Erreurs console |
+|---|---|---|---|---|
+| 1440 / 1024 / 768 / 390 / 320 px | **0** aux cinq | **0** après correction (10,2 px avant) | 0 | 0 |
+
+- **Typographie** : 42 règles tombaient sous 12 px (`0.6x`/`0.7xrem`) → plancher `0.8rem`. L'échelle est
+  maintenant tenue à 320 px comme à 1440 px, et `.heading-lg` passe de 20ch à 30ch (un titre de deux
+  lignes au lieu de trois).
+- **Focus clavier** : anneau de 2 px → **3 px**, et `:active { scale(.975) }` partout, sous garde
+  `prefers-reduced-motion`.
+- **En-tête mobile** : 60 px de haut à 320 px (wordmark 41 px, sous-titre masqué) — le CTA du hero reste
+  visible au premier écran.
+- **Polices** : `document.fonts.status === "loaded"` (aucun FOUT résiduel), et aucune requête hors du
+  domaine.
+- **EN** : 0 tiret cadratin (5 avant), 0 champ sans étiquette, `aria-pressed` correct sur FR/EN.
+- **Partage** : `og:image` était un **WebP** — WhatsApp n'en dessine pas d'aperçu. Remplacé par un JPEG
+  **1200 × 630** (`assets/img/og.jpg`, 80 Ko), avec `og:image:type/width/height/alt`.
+- **Aperçu privé** : `<meta name="robots" content="noindex, nofollow">`, `robots.txt` en `Disallow: /`,
+  `_headers` (HSTS, CSP fermée, cache par type de fichier) et `llms.txt` qui écrit noir sur blanc ce que
+  le site affirme et ce qu'il laisse à confirmer.
+- **Porte de livraison** : `python3 tools/qa/audit_delivery.py hosting/previews/dr-ophtalmo --strict`
+  → **VERT, 0 P1**, 1 P2 et 1 P3 **assumés** : le JSON-LD n'a ni téléphone ni adresse parce que le
+  médecin ne les a pas donnés (les inventer serait pire que le silence), et pas de `sameAs` puisqu'il
+  n'a pas de profil social connu.
+- **Tests** : `node tests/logic.test.mjs` → **40 vérifications** (36 → 40 : noindex, robots.txt,
+  `og.jpg` présent avec ses dimensions, en-têtes de sécurité).
+
+**Ce qui reste non vérifié, et le reste à la décision de King :** le rendu sur un vrai téléphone
+camerounais en 3G, la lecture de l'aperçu WhatsApp depuis une conversation réelle, et le rendu des
+polices sur Android ancien.
 
 ## 6 · La leçon à garder
 
@@ -78,3 +104,24 @@ mention. Le jour où le vrai portrait arrive : remplacer les trois fichiers, l'`
 pas encore.* Ici, l'inconnu est un état graphique : « Communiqué » / « À confirmer », une phrase qui le dit,
 et un bouton qui montre au médecin ce qu'il reste à envoyer. La même mécanique servira au prochain dossier
 où le client tarde à envoyer ses informations — c'est-à-dire presque tous.
+
+## 7 · Le lien, la vidéo, et ce qui attend une décision
+
+**Lien d'aperçu :** `https://dr-ophtalmo-preview.vercel.app` — projet Vercel `dr-ophtalmo-preview`
+(racine `hosting/previews/dr-ophtalmo`, source GitHub `AKWOKING/AMK`, production), déploiement
+`dpl_4f4QJpE1WMuXDZpxrYECtACToaNY` **READY / PROMOTED** sur le commit `f177b6c`. Vérifié à la lecture
+externe : la page se sert, `robots.txt` aussi. `noindex` + `robots.txt` : le site **ne s'indexe pas**.
+
+**Vidéo de lancement** (brag, §1f②) : 20 s, 1080 × 1920, 30 fps — plan complet, portiques et chemins
+de fichiers dans `clients/dr-ophtalmo/brag/brag-plan.md`. Fichiers hors dépôt :
+`/home/user/brag-output-dr-ophtalmo/{brag.mp4, brag-whatsapp.mp4, poster.jpg}`.
+
+**Trois décisions qui ne sont pas les miennes :**
+
+1. **Le nom et le titre** du médecin (« Dr [NOM DU MÉDECIN] » s'affiche entre crochets, exprès).
+2. **Les horaires** — la semaine est là, les heures sont « à confirmer ».
+3. **Le numéro** de téléphone ou WhatsApp — tant qu'il manque, le formulaire compose un message
+   copiable et n'affiche aucun bouton : c'est testé.
+
+Tant que ces trois points ne sont pas tranchés, le site reste un aperçu privé et **la vidéo reste un
+brouillon** : rien n'est publié ni envoyé au médecin sans la validation de King.

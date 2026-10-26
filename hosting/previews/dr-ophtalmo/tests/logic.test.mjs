@@ -279,4 +279,73 @@ check("aucune prestation « confirmed » sans date de confirmation", () => {
   }
 });
 
+/* ── 7 · Vie privée : ce site ne parle à aucun tiers ───────────────────── */
+console.log("\n7 · Aucun appel externe");
+
+import fs from "node:fs";
+import path from "node:path";
+
+const root = path.resolve(new URL("..", import.meta.url).pathname);
+const readAll = (dir) =>
+  fs
+    .readdirSync(dir, { withFileTypes: true })
+    .flatMap((entry) => {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) return entry.name === "node_modules" ? [] : readAll(full);
+      return /[.](html|css|js)$/.test(entry.name) ? [fs.readFileSync(full, "utf8")] : [];
+    });
+
+const sources = readAll(root);
+
+check("aucune ressource servie depuis un domaine tiers", () => {
+  const found = [];
+  for (const src of sources) {
+    for (const m of src.matchAll(/https?:\/\/[^"'`)\s]+/g)) {
+      const url = m[0];
+      // Seuls les liens de documentation et les URI de schéma sont tolérés.
+      if (/schema\.org|w3\.org|github\.com\/AKWOKING|mdn\.|example\.com|wa\.me/.test(url)) continue;
+      found.push(url);
+    }
+  }
+  assert.deepEqual(found, [], `domaines tiers : ${found.slice(0, 5).join(", ")}`);
+});
+
+check("aucun formulaire n'envoie de données, aucun cookie, aucune mesure", () => {
+  const joined = sources.join("\n");
+  assert.ok(!/fetch\(|XMLHttpRequest|navigator\.sendBeacon/.test(joined), "un appel réseau est présent");
+  assert.ok(!/document\.cookie/.test(joined), "un cookie est écrit");
+  assert.ok(
+    !/googletagmanager|gtag\(|google-analytics|plausible\.io|matomo\.(js|php)/i.test(joined),
+    "une mesure d'audience est branchée",
+  );
+});
+
+/* ── 8 · L'aperçu reste privé ──────────────────────────────────────────── */
+console.log("\n8 · Aperçu privé, partage lisible");
+
+check("la page demande aux moteurs de ne pas l'indexer", () => {
+  const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
+  assert.match(html, /<meta name="robots" content="noindex, nofollow" \/>/);
+});
+
+check("robots.txt interdit tout le site", () => {
+  const txt = fs.readFileSync(path.join(root, "robots.txt"), "utf8");
+  assert.match(txt, /User-agent: \*\s*\nDisallow: \/\s*$/);
+});
+
+check("og:image est un JPEG 1200 × 630 présent sur le disque", () => {
+  const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
+  assert.match(html, /property="og:image" content="assets\/img\/og\.jpg"/);
+  assert.match(html, /property="og:image:width" content="1200"/);
+  assert.match(html, /property="og:image:height" content="630"/);
+  assert.ok(fs.existsSync(path.join(root, "assets/img/og.jpg")), "og.jpg absent");
+});
+
+check("les en-têtes de sécurité sont déclarés", () => {
+  const headers = fs.readFileSync(path.join(root, "_headers"), "utf8");
+  for (const name of ["Strict-Transport-Security", "Content-Security-Policy", "X-Content-Type-Options"]) {
+    assert.ok(headers.includes(name), `${name} absent`);
+  }
+});
+
 console.log(`\n${passed} vérification(s) passée(s).`);
