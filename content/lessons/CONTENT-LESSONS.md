@@ -660,3 +660,22 @@ eu besoin d'affirmer sur leur site — ils montrent qu'un patient qui cherche l'
 **Et une mesure de méthode** : pour la première fois, un lot froid passe `audit_outreach --strict` avec
 **0 bloquant et 0 avertissement**. Ce n'est pas que les textes soient meilleurs ; c'est que le plafond de
 55 mots et le quartier dans la première ligne ont été écrits **avant** la première phrase, pas après.
+
+## 27 · 26/10/2026 (13 h) — le volume n'est pas l'ennemi ; le gabarit l'est
+
+**La leçon tient en une phrase de recherche, et elle est contre-intuitive.** Sur courriel, où les
+chiffres sont mesurés, **30 messages très personnalisés produisent presque autant de réponses que 200
+génériques** (3,6 contre 4,0 par jour) — mais coûtent 2 h 30 contre 1 h 40. Le volume n'est donc pas un
+levier ; c'est la **personnalisation au palier 2** (nom + entreprise) qui décide, et elle coûte du temps
+que la main ne fournit pas à quarante messages par jour.
+
+**La réponse n'est pas d'écrire plus vite, c'est de changer ce qu'on affirme.** Nos deux angles ne
+demandent aucun fait nouveau : *le nom* (le profil WhatsApp ne porte pas le nom de l'établissement,
+capture du 25/10) et *l'offre* (une page existe déjà dans le métier du destinataire). Le second ne dit
+**rien** sur le prospect — donc il ne peut pas être faux. C'est ce qui a coûté le 24/09 : une phrase
+vraie à 90 % vaut zéro.
+
+**Et une mesure de méthode** : à sept messages, deux phrases communes ne se voient pas ; à quarante,
+c'est une signature. Le seul garde-fou utile est mécanique — **aucune séquence de douze mots ne revient
+trois fois** — et il a fallu le construire avant d'écrire le premier message du lot, pas après. Premier
+lot de 49 messages froids à passer `--strict` avec zéro avertissement dans ce dépôt.

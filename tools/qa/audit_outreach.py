@@ -27,6 +27,11 @@ Ce qu'il ne juge PAS (et qui reste humain)
   vérifient à la main, avant l'écriture ;
 - **le goût** — un message qui passe les portes peut rester plat.
 
+Depuis le 26/10, il juge aussi **la ressemblance entre les messages du lot** (§10). À sept messages
+écrits à la main, deux phrases communes ne sont rien ; à quarante messages par jour, une séquence de
+douze mots qui revient est la signature d'un compte qui diffuse — c'est ce que WhatsApp sanctionne,
+et c'est le seul risque que la cadence de King ajoute.
+
 Usage
 -----
     python3 tools/qa/audit_outreach.py sales/ENVOI-LOT-2026-10-26.md
@@ -82,6 +87,14 @@ PADDING = [
 ]
 
 # Dédouanement — CLIENT-MESSAGING-RULES §13 temps 2. Sans lui, le message se lit comme un reproche.
+# Ce que le message observe chez le prospect. Le dédouanement n'a de sens que s'il y a une
+# observation à désamorcer : un message d'offre qui n'affirme rien sur lui (« vous êtes X à Akwa,
+# j'ai fait la page d'un opticien d'ici ») n'a rien à dédouaner, et l'exiger punissait la bonne
+# forme. Ajouté le 26/10 en même temps que la fabrique de messages à volume.
+OBSERVATION = ["votre compte", "votre profil", "votre page", "votre site", "votre cabinet",
+               "votre fiche", "votre numéro", "vos horaires", "au tableau", "vous apparaissez",
+               "apparaît", "apparait", "s'affiche", "au registre", "chez vous"]
+
 DEDOUANEMENT = [
     "ce n'est pas votre",
     "pas de votre fait",
@@ -253,8 +266,8 @@ def check(msg: Message) -> None:
             msg.fails.append(f"promesse de mesure impossible : « {m} » — le prospect n'a pas l'outil, "
                              f"nous n'avons pas l'accès — ruling 142 (25/10)")
 
-    # 6 · dédouanement — §13 temps 2
-    if not any(fold(d) in flat for d in DEDOUANEMENT):
+    # 6 · dédouanement — §13 temps 2 (seulement si le message observe quelque chose chez lui)
+    if not any(fold(d) in flat for d in DEDOUANEMENT) and any(fold(o) in flat for o in OBSERVATION):
         msg.warns.append("pas de dédouanement : le fait se lira comme un reproche — §13 temps 2")
 
     # 7 · sortie sans friction — knowledge §3 temps 5 (avertissement : deux structures coexistent)
@@ -294,6 +307,57 @@ def check(msg: Message) -> None:
                              "ni « dites »…) — elle est décorative, à réécrire")
 
 
+# ── §10 · la ressemblance — la seule règle que le volume ajoute ─────────────────────────────────
+#
+# Ajouté le 26/10 quand King est passé de 1 à 20-50 messages par jour. Le risque change de nature :
+# un message seul ne peut pas ressembler à lui-même. Quarante messages qui partagent une phrase sont,
+# pour WhatsApp, un compte qui diffuse — et la sanction ne vient pas du contenu, elle vient du motif.
+#
+# Le seuil est calibré sur le lot du 26/10 (sept messages écrits à la main) : Jaccard maximal 0,124,
+# une séquence de douze mots partagée par deux messages. Ce lot reste donc propre, et la règle ne
+# s'allume qu'au-delà. Une séquence vue dans trois messages est bloquante à partir de là ; deux, dans
+# un lot de douze ou plus, est un avertissement ; en dessous de douze messages, deux n'est pas un motif.
+
+SEQ = 12          # longueur de la séquence qui compte pour WhatsApp
+SHINGLE = 6       # longueur pour la ressemblance globale
+JACCARD_FAIL = 0.45
+JACCARD_WARN = 0.30
+
+
+def _n_grams(t: str, n: int) -> set[tuple[str, ...]]:
+    w = fold(t).split()
+    return {tuple(w[i:i + n]) for i in range(max(0, len(w) - n + 1))}
+
+
+def ressemblance(msgs: list[Message]) -> None:
+    from collections import Counter
+
+    seqs = {m.line: _n_grams(m.body, SEQ) for m in msgs}
+    vus: Counter = Counter(g for s in seqs.values() for g in s)
+
+    for m in msgs:
+        pire = max((vus[g] for g in seqs[m.line]), default=0)
+        if pire >= 3:
+            m.fails.append(f"une séquence de {SEQ} mots revient dans {pire} messages — signature de "
+                           f"diffusion (§10). Changer la phrase, pas le prénom")
+        elif pire == 2 and len(msgs) >= 12:
+            m.warns.append(f"une séquence de {SEQ} mots est partagée avec un autre message du lot (§10)")
+
+    for i, a in enumerate(msgs):
+        for b in msgs[i + 1:]:
+            if fold(a.body) == fold(b.body):
+                a.fails.append(f"corps identique à « {b.label} » — un seul envoi, pas deux (§10)")
+                continue
+            sa, sb = _n_grams(a.body, SHINGLE), _n_grams(b.body, SHINGLE)
+            if not (sa | sb):
+                continue
+            j = len(sa & sb) / len(sa | sb)
+            if j >= JACCARD_FAIL:
+                a.fails.append(f"trop proche de « {b.label} » ({j:.0%} de recouvrement) — (§10)")
+            elif j >= JACCARD_WARN:
+                a.warns.append(f"proche de « {b.label} » ({j:.0%}) — varier la phrase (§10)")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("file")
@@ -313,6 +377,8 @@ def main() -> int:
     print(f"\nPORTE DES MESSAGES FROIDS — {path}  ({len(msgs)} message(s))\n")
     for m in msgs:
         check(m)
+    ressemblance(msgs)
+    for m in msgs:
         total_f += len(m.fails)
         total_w += len(m.warns)
         verdict = "BLOQUÉ" if m.fails else ("À RELIRE" if m.warns else "OK")
