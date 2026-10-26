@@ -6292,3 +6292,32 @@ cinq d'en barrer un. Une ligne barrée vaut plus que quatre lignes envoyées.
 CRM, `verifie` relit la fiche livrée contre le CRM (et refuse une fiche vide), `controle` juge **un seul**
 message réécrit. Banc **8/8**, dont le cas qui compte : le fait ajouté sans son dédouanement est refusé en
 avertissement — « le fait se lira comme un reproche ».
+
+### 12 h — les captures de King démentent les deux meilleurs messages du LOT 1
+
+**Ce qu'elles prouvent.** ① Google écrit « Optic Medical Favour & Joy *(also known as Ets Espace Médical)* »
+et affiche une fiche tenue (**4,0 · 3 avis**, photos, horaires) : les deux affirmations du message v1
+tombent — le nom est réconcilié, et le cabinet n'est pas invisible. ② « Ambassador Vision » sort sur
+LeFish, DoualaTour ×2, Cameroon Business Directory, Maligah et sa page Facebook (**355 abonnés**) : l'angle
+du nom tombe aussi.
+
+**Ce qui les remplace, et qui était dans les mêmes captures.** ① les pages qu'un patient lit après la
+fiche ne sont pas à eux (`ayilaa.com`, `mont-pandi.com`, `yandex.com` — Mont-Pandi recopie leur
+description mot pour mot). ② **trois numéros publics différents** : 699 86 02 02 sur Google, 696 21 41 20
+sur Facebook, 675 39 90 23 sur WhatsApp.
+
+**Les deux messages sont réécrits** : 53 et 54 mots, 3 phrases, une question qui demande une action,
+**0 bloquant 0 avertissement**. La v1 reste dans le fichier avec sa raison de refus — on ne supprime pas un
+fait faux, on le date.
+
+**Trois choses trouvées sans les chercher.** ① **deux de nos cinq prospects sont dans le même bloc** —
+Ambassador « Bali côté Hôtel Serena » et bellevueoptique « Bali, Serena Hôtel » : angles différents, un jour
+d'écart, aucune mention croisée. ② le numéro de ② n'est publié **nulle part ailleurs** : ce n'est pas un
+arrêt (le profil est bien à eux), c'est le sujet du message, et sa réponse nous dira si la ligne vit. ③ un
+quatrième numéro existe (694 15 04 29, Maligah) : **écarté du message** par le Roast Room — vu une seule
+fois, donc pas une preuve.
+
+**Roast Room** : cinq sièges, **2,9** pour garder l'angle adouci, **7,7** pour basculer sur ce que le web
+dit, **5,1** pour parquer les deux. Buffett a écrit la condition : aucun chiffre qui ne soit dans une
+capture datée ; Graham a obtenu que ① nomme le vrai enchaînement (fiche tenue → annuaire) au lieu de
+féliciter.

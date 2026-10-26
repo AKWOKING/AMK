@@ -723,3 +723,28 @@ n'est pas une preuve d'absence de problème.**
 
 **Le chiffre qui décide** n'est donc jamais « combien on a écrit », c'est « combien partent sans qu'on
 ait à décider » — aujourd'hui **7 sur 37**.
+
+## 31 · 26/10/2026 (12 h) — les deux messages les mieux écrits du lot étaient les deux faux
+
+Cinq captures de King, une heure de son temps, et deux messages sur cinq à refaire. Les deux étaient les
+plus convaincants à la lecture :
+
+- ① « un patient cherche l'un des deux noms et trouve l'autre » — Google écrit « **also known as** Ets
+  Espace Médical ». Il relie les deux noms lui-même.
+- ② « le patient qui cherche Ambassador Vision ne le voit pas » — six pages publiques, dont sa propre page
+  Facebook à 355 abonnés.
+
+**La règle qui en sort** : un message qui affirme « Google ne vous voit pas » se vérifie **avant** l'envoi.
+Sur quatre angles de nom testés ce matin, **deux étaient faux** — et les deux étaient les mieux tournés.
+
+**Pourquoi la fabrique ne pouvait pas nous sauver** : `compose.py` écrit à partir du CRM, et le CRM ne
+sait pas ce que Google affiche. `--ecarter` écarte un numéro mort ou un cabinet déjà pourvu d'un site ; il
+ne dit rien d'un **fait faux**. Le fait ne peut venir que d'une capture, et la capture d'un humain.
+
+**Le remplacement, lui, était dans la même capture** : trois numéros publics différents pour un cabinet,
+c'est un fait que le patient subit, que le prospect rejoue en dix secondes, et qui produit une réponse
+d'un mot — « lequel sonne encore ce soir ? ».
+
+**Ce que ça coûte, et ce que ça achète** : une demi-heure de réécriture, deux phrases de rechange de plus
+dans la banque, et un message qui ne peut pas être démenti. C'est le seul achat de la journée dont on
+connaît le prix et le rendement.
