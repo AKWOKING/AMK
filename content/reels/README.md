@@ -27,6 +27,8 @@
 | `tools/qa/audit_story.py` | **la porte du récit** — la scène, le lock-in, la preuve **prononcée**, le rehook, le CTA aligné (`CONTENT-CREATION` §3/§3 bis) |
 | `tools/qa/audit_publication.py` | **la porte de la publication** — légende (accroche en première ligne, un seul CTA, aucun prix, aucune promesse), réponse d'accueil (nom du cabinet en première ligne, heure de livraison), lien, compteur, et la durée du master (≤ 25 s). Banc : `test_audit_publication.py`, **18/18** |
 | `ep01/PUBLICATION-2026-10-26.md` | **le kit du 26/10 12 h** : les quatre gestes avant l'heure, la légende, l'épinglé, la réponse d'accueil, le compteur et les règles de décision |
+| `tools/qa/audit_platform.py` | **la porte des légendes** — 3 à 8 hashtags (local + niche + marque), sous-titres **manuels**, légende Instagram **en anglais** (FR à l'écran), alt text, lieu, commentaire épinglé, un seul CTA. Banc : `test_audit_platform.py`, **16/16** |
+| `ep01/PUBLICATION-TIKTOK-INSTAGRAM-2026-10-26.md` | **les deux légendes du 26/10** : TikTok (français, 6 hashtags, six sous-titres à taper) et Instagram (anglais, 7 hashtags, alt text) + la réponse sur la coupe 16 s |
 | `ep01/poster.jpg` | la couverture — frame **2,2 s du master v6** pour la vignette (régénérée le 26/10) |
 | `ep01/frames/` | les captures de contrôle (inspection avant diffusion) — `v3-*` sont les six beats du master courant |
 | `ep01/assets/mascot.png` | la mascotte — illustration générée, fond retiré par diffusion |
@@ -45,6 +47,7 @@ python3 tools/qa/audit_trust.py content/reels/ep01/make_ep01.py           # ② 
 python3 content/reels/ep01/make_ep01.py content/reels/ep01/ep01-v4.mp4    # ③ ≈ 30 s de rendu
 python3 tools/ops/projection.py                                            # ④ la salle : http://0.0.0.0:8000/
 python3 tools/qa/audit_publication.py content/reels/ep01/PUBLICATION-*.md content/reels/ep01/ep01-v6.mp4  # ⑤ la porte AVANT de publier
+python3 tools/qa/audit_platform.py content/reels/ep01/PUBLICATION-TIKTOK-*.md content/reels/ep01/ep01-v6.mp4  # ⑥ les légendes, avant de coller
 ```
 
 **L'ordre n'est pas décoratif** : la porte lit `BEATS`, construit depuis `voice/timing.json`. Une voix trop

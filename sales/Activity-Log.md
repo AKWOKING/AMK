@@ -6147,3 +6147,15 @@ recomptage : **28 testés · 22 joignables · 6 morts**.
 **⑥ Le skill « High-Ticket Lead Gen Agency » : deux pièces sur huit, et un plafond.** `knowledge/HIGH-TICKET-2026-10-26.md` — **pris** : l'unité de vente (le patient retrouvé, donc la question « un patient vous laisse combien ? » ajoutée au fil WhatsApp), le verrou de niche (semaines 1–2 en ICP A, semaine 4 au point du 04/11), l'ancrage sur la valeur. **Refusés** : la bande 3 000–25 000 $ (7 à 59 × notre Standard, avec un client et zéro mesure), le pont pubs + agent vocal (quatre prérequis absents, et une promesse de rendez-vous qu'on ne saurait pas compter), le « 1 h/semaine » (ce n'est pas notre entretien, c'est un produit). **La règle qui en sort** : aucun palier de site au-delà de **450 000 FCFA** avant un résultat mesuré (`knowledge/PRIX-2026-10-24.md` §4 bis ; le try-on à 900 000 est un produit, pas un palier).
 
 **⑦ Ce qui reste à King** : publier à 12 h, répondre jusqu'à 15 h, remplir le compteur ce soir. **Aucun taux n'est annoncé** : la première mesure réelle est le nombre de messages portant APERÇU.
+
+## 26/10/2026 (11 h, tour 153) — TikTok et Instagram : deux légendes, un seul master, et une dette datée
+
+**① Graphe, pré-vol, brainstorm.** `preflight.sh` (**12 730 nœuds**), `ask` « tiktok instagram hashtags légende format plateforme adaptation » → 80 documents ; `superpowers/brainstorming`. Réflexion : `ops/BRAINSTORM-PLATEFORMES-2026-10-26.md`.
+
+**② La réponse sur le montage — non aujourd'hui, oui pour EP02.** La règle du 23/10 existe déjà (`CONTENT-CREATION` §5 quater : TikTok 12–16 s, Facebook 16–22 s) et la v6 la dépasse (23,71 s). Mesures faites avant de décider : texte utile entre **12 % et 53 %** de la hauteur, bas de l'image = mascotte + barre (décor), droite libre 19–46 %, **aucun filigrane** → le master se réemploie tel quel sur les deux réseaux. Une coupe 16 s exige de **réécrire et re-synthétiser** les beats (40 min) et change le texte validé par King une heure avant publication : la coupe est **datée pour EP02**, décidée avant d'écrire le script.
+
+**③ Les deux légendes** (`content/reels/ep01/PUBLICATION-TIKTOK-INSTAGRAM-2026-10-26.md`) : TikTok en **français**, deux lignes, mot-clé en tête, **6 hashtags** (#Douala #Cameroun #opticien #opticienDouala #lunettesDouala #AMKweb) et les **six sous-titres manuels** à taper avec leurs bornes ; Instagram en **anglais** (règle FR à l'écran / EN en légende), **7 hashtags**, alt text, lieu Douala, premier commentaire en français. Aucun son tendance par-dessus la voix (17/09 : narration 6,2 s de lecture contre 3,8 s).
+
+**④ Une porte de plus : `tools/qa/audit_platform.py`** — hashtags 3–8 avec local + marque, mot-clé APERÇU, aucun prix, aucune mendicité (#fyp, « abonnez-vous »), un seul CTA, sous-titres **manuels** déclarés, légende Instagram **en anglais**, alt text, lieu, commentaire épinglé ; avertit `coupe-tiktok-manquante` au-delà de 16 s. Banc `test_audit_platform.py` : **16/16**.
+
+**⑤ Ce qui n'est pas mesuré** : aucune portée, aucun taux, aucun « hashtag qui marche ». La seule mesure IG reste celle du 08/10 (6 abonnés, 122 vues/30 j) ; la seule mesure TikTok reste 156 et 121 vues.
