@@ -2,15 +2,15 @@
 
 ```text
 Généré par tools/graphify/build_full_graph.py — 2026-10-26
-Source : graphify-out/graph.json (13317 nœuds, 17206 arêtes)
+Source : graphify-out/graph.json (13320 nœuds, 17207 arêtes)
 Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même
 carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.
 ```
 
 ## 0 · En une page
 
-- **13317 nœuds** — dont 830 documents, 202 scripts, 21 modules, 139 pages HTML, 459 images, 6 vidéos, 40 audios, 43 fichiers de données, 11 PDF.
-- **3668 citations entre documents** (2985 en chemin exact, 683 par nom unique)
+- **13320 nœuds** — dont 830 documents, 202 scripts, 21 modules, 139 pages HTML, 459 images, 6 vidéos, 40 audios, 43 fichiers de données, 11 PDF.
+- **3666 citations entre documents** (2983 en chemin exact, 683 par nom unique)
 - **157 arêtes de remplacement** · **1 documents marqués périmés**
 - **417 documents que personne ne cite** (atteignables par aucun chemin de lecture)
 - **Couverture : 1814 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
@@ -63,11 +63,11 @@ carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10
 | `knowledge/ROAST-2026-10-26-SCRIPT-EP01.md` | 11 | 3× | Roast Room — séance du 26/10/2026 · « le script d'EP01 est-il bon, ou seulement bien accro |
 | `knowledge/HOUSE-KNOWLEDGE-BASE.md` | 16 | 2× | HOUSE KNOWLEDGE BASE — la couche de référence |
 | `knowledge/MARKETING-OPTICAL-2026-10-22.md` | 19 | 2× | Marketing de l'optique — ce que le dépôt sait, au 22/10/2026 |
-| `knowledge/PORTE-C-SITE-AVANT-D-AFFIRMER-2026-10-26.md` | 7 | 2× | On ne dit pas à quelqu'un ce qu'il n'a pas avant d'avoir cherché tous ses noms |
 | `knowledge/PREUVE-VAGUE-ET-PERMISSION-2026-10-26.md` | 5 | 2× | La preuve vague, et le droit de ne pas construire d'avance (26/10/2026) |
 | `knowledge/VIDEOS-2026-10-23-AUDIT.md` | 10 | 2× | Cinq vidéos, deux images — ce qu'on garde, ce qu'on corrige, ce qu'on jette |
 | `knowledge/CE-QUI-FAIT-DIRE-OUI-2026-10-26.md` | 8 | 1× | Ce qui fait dire oui — la comparaison du 26/10, texte reçu contre texte écrit |
 | `knowledge/DEUX-TEXTES-RECUS-2026-10-26.md` | 6 | 1× | Deux textes reçus, une seule leçon : ne rien faire admettre (26/10/2026) |
+| `knowledge/PORTE-C-SITE-AVANT-D-AFFIRMER-2026-10-26.md` | 7 | 1× | On ne dit pas à quelqu'un ce qu'il n'a pas avant d'avoir cherché tous ses noms |
 | `knowledge/ROAST-2026-10-23-PRIX.md` | 9 | 1× | Roast Room — séance du 23/10/2026 · « faut-il afficher un prix sur le site AMK ? » |
 | `knowledge/ROAST-2026-10-26-LOT-1-V2.md` | 9 | 0× | Roast Room — séance du 26/10/2026 · « ce que Google dit de vous » remplace-t-il « ce que G |
 | `knowledge/ROAST-2026-10-26-LOT-5.md` | 10 | 0× | Roast Room — séance du 26/10/2026 · « cinq messages, et King cherche avant d'envoyer : bon |
@@ -78,7 +78,7 @@ C'est ce réseau qui décide de ce qui s'applique à un travail. Si un document 
 
 | Rang | Document | Cité par | Titres |
 |---|---|---|---|
-| 1 | `sales/Activity-Log.md` | **201** | 285 |
+| 1 | `sales/Activity-Log.md` | **201** | 287 |
 | 2 | `AMK-DESIGN-SKILLS.md` | **41** | 173 |
 | 3 | `PRE-FLIGHT.md` | **37** | 41 |
 | 4 | `research/YouTube-Lessons.md` | **30** | 202 |
@@ -241,7 +241,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | vidéo | 6 | `clients/dm-optic/brag/brag.mp4`, `content/reels/ep01/ep01-v4.mp4`, `content/reels/ep01/ep01-v5.mp4` |
 | sous-titre | 3 | `clients/dm-optic/content/month1/w1/tiktok-01-v2.fr.srt`, `clients/dm-optic/content/month1/w1/tiktok-01.fr.srt`, `clients/dm-optic/content/month1/w2/etapes-01.srt` |
 | archive | 1 | `dmopticsarl-2026-10-21.zip` |
-| symboles extraits (titres de documents + fonctions/classes du code) | 11503 | — |
+| symboles extraits (titres de documents + fonctions/classes du code) | 11506 | — |
 
 ### Les outils et skills installés — 1 dossier = 1 outil
 

@@ -128,14 +128,18 @@ avant la démo promise à 15 h 45.
 | # | Cabinet | Envoyé | Lu | Répondu | Bloqué |
 |---|---|---|---|---|---|
 | 11 | Free Optic · 679 11 37 60 | ☐ | ☐ | ☐ | ☐ |
-| 12 | Tchaya Optique Akwa · 699 98 87 24 | ☐ (contrôle 60 s) | ☐ | ☐ | ☐ |
-| 13 | Star Optic · 654 04 68 45 | ☐ (contrôle 60 s) | ☐ | ☐ | ☐ |
-| 14 | Cabinet d'Optique la Rétine · 695 47 43 64 | ☐ (contrôle 60 s) | ☐ | ☐ | ☐ |
-| 15 | Kamaïs Optic · 678 43 54 60 | ☐ (ruling : 2ᵉ approche) | ☐ | ☐ | ☐ |
+| 12 | London Vision · 696 76 81 16 | ☐ (contrôle 60 s) | ☐ | ☐ | ☐ |
+| 13 | Maranatha Optics · 658 16 31 90 | ☐ | ☐ | ☐ | ☐ |
+| 14 | Africa Optic · 691 28 02 37 | ☐ (contrôle 60 s) | ☐ | ☐ | ☐ |
+| 15 | Alpha Optic · 699 57 34 57 | ☐ | ☐ | ☐ | ☐ |
 
-**ISEE (n° 3) est clos le 26/10 à 16 h 04** : King a fermé la conversation lui-même (« autant pour moi, je
-n'avais pas vu votre site… bonne continuation »). Aucune relance après un mot pareil — le dossier reste
-chaud pour dans six mois, pas pour cette semaine.
+**Trois morts du LOT 3, enterrés le 26/10 soir** (ruling King) : Star Optic (654 04 68 45, **absent de
+WhatsApp**) · Cabinet d'Optique la Rétine (**contacté 24/09**, sans réponse → lead mort) · Kamaïs Optic
+(**contacté 02/10**, trop tard pour une relance). **Tchaya Optique Akwa** les rejoint : contacté le 24/09,
+livré, **jamais ouvert** — ruling du 24/09, aucune relance.
+
+**ISEE (n° 3) est clos le 26/10 à 16 h 04** : King a fermé la conversation lui-même. Aucune relance après
+un mot pareil.
 
 ## 6 · Les 25 minutes du matin
 
