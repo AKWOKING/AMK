@@ -6634,3 +6634,33 @@ continuation »). Aucune relance : le dossier reste chaud pour dans six mois, pa
 
 **⑦ Ce que je ne peux pas prouver.** Aucun taux. 1 réponse sur 5 messages du LOT 1, arrivée sur un message
 faux. Les cinq du LOT 3 ne sont pas partis au moment d'écrire.
+
+---
+
+## Tour 167 · 26/10/2026 (nuit) — le second texte reçu, et la seule chose qu'il nous apprend
+
+**① Le fait.** King renvoie un message écrit ailleurs, plus long et mieux fini que celui de l'après-midi
+(146 mots contre 116). Audité : **2 bloquants, 6 avertissements**. Rien à envier sur la forme — sauf sur un
+point, et c'est celui qui compte.
+
+**② La différence réelle.** Il ne demande à personne d'admettre quoi que ce soit. Sa phrase clé n'est pas
+une promesse, c'est une concession : « vous trouve sur Google Maps ou WhatsApp, **mais** passe à côté ». Le
+site devient un ajout à ce qui marche, pas la réparation de ce qui est cassé. Nos messages v5 et v6
+ouvraient sur un défaut — vrai, daté, et légèrement humiliant.
+
+**③ Ce qui a changé.** `sales/LOT-2-2026-10-27.md` passe en **v7** : chaque message ouvre sur ce qui
+marche déjà (« on vous trouve déjà sur l'annuaire Mont-Pandi », « votre ligne WhatsApp existe »), le défaut
+vient en deuxième et reste attribué à la fiche. **69 / 70 / 69 / 65 / 66 mots, 0 bloquant, 0 avertissement**
+— les cinq messages ont même raccourci de trois mots en gagnant la nuance.
+
+**④ Ce qui n'a pas changé, et pourquoi.** « Je vous ai préparé » n'entre pas : aucun aperçu n'existe pour
+ces cinq cabinets, et une phrase fausse meurt à la première réponse. Le ruling est posé au §8 du lot, avec
+une mesure : **une maquette pour ① Capelli seulement**, les quatre autres inchangés, comparaison 1 contre 4
+à J+7. Un quart d'heure et un fichier.
+
+**⑤ Le doc de knowledge.** `knowledge/DEUX-TEXTES-RECUS-2026-10-26.md` : les trois mécanismes dans l'ordre
+de force (rien à admettre > rien à décider > le patient dans la phrase), la phrase qui fait répondre, et les
+cinq interdits qui restent.
+
+**⑥ Ce que je ne peux pas prouver.** Que v7 réponde mieux que v6. Aucun des deux n'est parti. Deux textes
+reçus disent ce qui se lit bien, pas ce qui répond.
