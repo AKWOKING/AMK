@@ -145,9 +145,12 @@ ANCRAGE = [
 # Désarmement — mécanisme 1 de Cameron Jeanes (26/10) : la première ligne excuse l'intrusion.
 DESARMEMENT = ["inattendu", "surprenant", "surprend", "je sais que c'est", "sans doute", "étrange"]
 
-# Preuve sociale — mécanisme 5. Un site qui existe déjà (DM Optique, en ligne) vaut mieux qu'une
-# promesse : on nomme ce qu'on a construit, jamais un chiffre de résultat.
-PREUVE = ["j'ai fait", "j'ai construit", "en ligne", "tourne", "un opticien d'ici", "le site d'un"]
+# Preuve sociale — mécanisme 5. Un site qui existe déjà vaut mieux qu'une promesse : on nomme le
+# métier et la ville, jamais un chiffre de résultat. **Ruling King 26/10** : le client n'est pas nommé
+# tant qu'on ne lui a pas demandé (« je fais les sites pour les opticiens de Douala »), et la phrase
+# reste une preuve d'existence — un site tourne, en ligne — pas un palmarès.
+PREUVE = ["j'ai fait", "j'ai construit", "en ligne", "tourne", "un opticien d'ici", "le site d'un",
+          "les sites pour les opticiens", "sites pour les opticiens", "site pour un opticien"]
 
 # Verbes d'action — la question finale doit demander quelque chose de FIXABLE.
 # Ajouté le 25/10 après le reproche de King le plus utile de la semaine : « what actions do we expect
@@ -296,8 +299,8 @@ def check(msg: Message) -> None:
     #     Même périmètre que le désarmement : une première touche froide.
     if froid and not any(fold(x) in flat for x in PREUVE):
         msg.warns.append(
-            "aucune preuve sociale : nommer un site qui existe déjà (DM Optique, en ligne) — "
-            "mécanisme 5 (Cameron Jeanes, 26/10)")
+            "aucune preuve sociale : dire le métier et la ville, et qu'un site tourne déjà — "
+            "mécanisme 5, ruling King 26/10 (client jamais nommé sans son accord)")
 
     # 2 · une seule question — §13 interdit
     if msg.n_questions > 1:

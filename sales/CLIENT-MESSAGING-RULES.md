@@ -443,7 +443,7 @@ est le produit ; sans elle, l'absolution n'est que de la politesse.
 |---|---|---|
 | 1 · **Désarmer + le fait** | « je sais que c'est inattendu : à PK11 votre fiche Google est tenue… » — l'intrusion est excusée, puis un fait vérifiable | `DESARMEMENT` (douze premiers mots) |
 | 2 · **La cause nommée + le manque** | « …tombe sur Mont-Pandi et deux annuaires… et n'a rien à ouvrir qui vienne de vous » | `CAUSE` + `ANCRAGE` |
-| 3 · **La preuve** | « j'ai fait le site d'un opticien d'ici, il est en ligne » — un objet, jamais un chiffre | `PREUVE` |
+| 3 · **La preuve** | « je fais les sites pour les opticiens de Douala, et l'un des leurs est en ligne » — le métier et la ville, jamais le nom du client sans son accord (ruling King 26/10), et jamais un chiffre | `PREUVE` |
 | 4 · **La question qui offre** | « …pour que je l'ajoute sur le site avec un bouton WhatsApp ? » | `VERBES_ACTION` + `SORTIE` |
 
 **Deux interdits neufs, nés du ruling** :
@@ -453,6 +453,17 @@ est le produit ; sans elle, l'absolution n'est que de la politesse.
   (`ABSOLUTION_SEULE`). King a montré pourquoi : la phrase laisse le prospect devant deux questions.
 - **Pas de phrase qui décrit le décor.** Une phrase qui ne nomme ni l'endroit où le patient lit le
   cabinet, ni le site qui répondrait, ne fait pas avancer la vente (`ANCRAGE`).
+
+**La preuve n'est plus nominative (ruling King 26/10, soir).** « J'ai fait le site d'un opticien d'ici »
+supposait un client nommable ; DM Optique n'a pas donné son accord, et King veut qu'on le lui demande —
+plus tard. La phrase devient **« je fais les sites pour les opticiens de Douala, et l'un des leurs est en
+ligne »** : un métier, une ville, un site qui existe. Le détail, la ligne rouge (« la plupart » est
+interdit) et la recherche qui l'appuie sont dans `knowledge/PREUVE-VAGUE-ET-PERMISSION-2026-10-26.md`.
+
+**Ce que la v5 répond en plus de la v4** — les quatre questions du patron, dans son ordre : *qu'est-ce
+que je reçois* (l'aperçu, nommé), *c'est combien* (« l'aperçu ne coûte rien »), *qu'est-ce que je fais*
+(un mot, et ce qu'il produit), *et après* (un fichier, pas un rendez-vous ; le prix vient dans la
+conversation). Séance : `knowledge/ROAST-2026-10-26-LOT-1-V5.md`.
 
 **Périmètre.** Le désarmement et la preuve sociale s'exigent sur une **première touche froide** — repère :
 la salutation. Un prospect tiède ne se désarme pas, il se rappelle à lui (§13 quater).

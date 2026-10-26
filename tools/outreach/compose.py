@@ -70,14 +70,15 @@ NOM_CAUSE = [               # le deuxième fait, ET la cause nommée : un regist
     "Ce registre le nomme « {s} » : jamais à vous.",
     "« {s} » au tableau : rien n'est à vous.",
 ]
-NOM_PREUVE = [              # la preuve sociale : le site existe vraiment (DM Optique, en ligne)
-    "J'ai fait le site d'un opticien d'ici, il tourne.",
-    "Le site d'un opticien de Douala est en ligne.",
-    "J'ai construit le site d'un opticien d'ici, il vit.",
-    "Un opticien d'ici a le sien en ligne.",
-    "J'ai fait le site d'un opticien, il répond.",
-    "Celui d'un opticien d'ici tourne, avec WhatsApp.",
+NOM_PREUVE = [              # la preuve sociale, **vague par ruling King 26/10** : le métier et la ville,
+                            # jamais le nom du client sans son accord. Un site existe et il tourne.
+    "Je fais les sites pour les opticiens de Douala.",
+    "Les sites des opticiens de Douala, c'est mon métier.",
     "Chez un opticien de Douala, le site est en ligne.",
+    "Je fais les sites pour les opticiens de Douala, avec WhatsApp.",
+    "Un opticien de Douala a le sien en ligne.",
+    "Je fais les sites pour les opticiens de Douala, horaires compris.",
+    "Le site d'un opticien de Douala tourne.",
 ]
 NOM_QUESTION = [            # la question offre le site : elle ne demande plus un diagnostic
     "Dites-moi un mot : lequel en haut du site ?",
