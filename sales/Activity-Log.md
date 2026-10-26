@@ -6433,3 +6433,21 @@ livrable et le délai (« je vous envoie le site ce soir »).
 **⑦ Ce qui a bougé dans la porte** : `CAUSE` accepte désormais « annuaires » au singulier comme au
 pluriel (la cause nommée restait invisible quand la phrase disait « deux annuaires »). Banc toujours
 **25/25** ; les cinq du LOT 1 et les trente du volume restent **0/0**.
+
+### Tour 160 bis — 26/10/2026 (15 h 30) — trois affirmations corrigées, deux crochets posés
+
+1. **PR #59 fusionnée** (merge `bbc0a5e`) : l'audit humanizer du LOT 1 est dans `main`.
+2. **`knowledge/OUTREACH-CAMERON-JEANES` §6 mentait par retard** : il annonçait « désarmement et preuve
+   sociale à tester au LOT 2 ». Les deux sont dans les cinq messages du LOT 1 depuis la v3. Corrigé dans la
+   table **et** dans le paragraphe de clôture, avec le renvoi vers l'audit humanizer.
+3. **Les quatre pourcentages sans appui portent maintenant leur origine** : `28 % (7/25) contre 0 % (0/15)`
+   et `p = 0,033` renvoyé au §2.3 de `flux-prospection` ; le seuil de `10 %` est dit « posé ici — non
+   revérifié » ; `4,4 % → 7,8 %` est dit « estimation du Roast Room, aucune source publique » ; `14,5 %`
+   est calculé (`10 / 69`, `leads/CRM.csv`). `audit_claims.py --sources .` → **0 pourcentage sans appui**
+   sur 856 documents, et la porte souple `stat-sourcee` se ferme.
+4. **Crochets posés** (`install-hooks.sh`) : pre-commit et pre-push. Ils ont tourné au commit suivant :
+   **9 s**, portes ouvertes, carte reconstruite et ré-ajoutée. La leçon du 26/10 — « un geste écrit dans un
+   document n'est pas un geste fait » — s'applique aussi à ces deux lignes.
+5. **Ce qui reste ouvert** : le handoff date du 22/10 (quatre jours), et le LOT 1 attend toujours la
+   décision de King sur la v5. `knowledge/AUDIT-LOT-1-HUMANIZER-2026-10-26.md` §5 en donne le prix :
+   dix minutes par prospect, cinquante pour cinq.
