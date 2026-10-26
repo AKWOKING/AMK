@@ -6251,3 +6251,15 @@ recomptage : **28 testés · 22 joignables · 6 morts**.
 **⑦ Ce que la vidéo change, et ce qu'elle ne change pas.** Notre propre site comme preuve : pris. Maquette gratuite au premier message : refusée (15 aperçus pour 1 client payant, 24/10). Vidéo de 5 minutes : dette datée, pas avant EP02.
 
 **⑧ Ce qui n'est pas fait.** Aucun message envoyé, aucun profil rouvert : la porte A reste le geste de King, huit secondes par ligne. Et le réseau de cet environnement s'arrête à GitHub, npm et PyPI — la fabrique compose, elle ne cherche pas.
+
+### 18 h 10 — le plan du matin, et le chiffre qui le remplace
+
+`tools/outreach/plan_jour.py` rend le seul tableau que King ouvre au réveil : **37 messages écrits, dont
+**7** partent sans décision, 14 après huit secondes de WhatsApp, 16 dans la file de vérification. Trois
+gestes, dans l'ordre, et aucune ligne `JAMAIS` ne se glisse dans le lot. Banc : **6/6**.
+
+Le reste du stock est à **0** : les 36 lignes composables après filtrage sont toutes écrites, et les 4
+dernières sont condamnées (numéro mort ou site déjà en ligne). La cadence de 20–50 ne tient donc que
+jusqu'au **28/10** — c'est écrit dans `sales/PLAN-2026-10-27.md`, dans `CAMPAGNE-VOLUME` §1 et dans
+`ops/BRAINSTORM-VOLUME` §8, avec les deux gestes qui la débloquent : une date par cabinet
+(`sales/SWEEP-PORTE-B-2026-10-27.md`) et des numéros (`sales/SOURCING-2026-10-27.md`).

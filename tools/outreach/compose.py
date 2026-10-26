@@ -93,28 +93,28 @@ OFFRE_OUVERTURE = [
     "Bonjour, à {q} vous êtes {s}.",
     "Bonjour, à {q} je vois {s} dans l'annuaire.",
     "Bonjour, {s} : à {q}, j'ai quelque chose à montrer.",
-    "Bonjour, à {q} je travaille avec les opticiens d'ici.",
+    "Bonjour, à {q} je fais des pages pour les cabinets d'ici.",
     "Bonjour, à {q} votre nom est {s}, je crois.",
     "Bonjour, {s} à {q} : deux lignes, et je vous laisse juge.",
-    "Bonjour, à {q} je passais par votre nom ce matin, {s}.",
+    "Bonjour, {s} : une page à vous montrer, à {q}.",
 ]
 OFFRE_CONTENU = [   # {m} = le métier du destinataire : jamais la page d'un opticien à une école
-    "J'ai fait la page d'{m} d'ici, en ligne et publique.",
-    "Une page d'{m} tourne déjà, du même genre.",
-    "Cette page d'{m} existe : elle est en ligne.",
-    "Voilà la page d'{m}, prête, avec les horaires.",
-    "Et la page d'{m} existe, avec ce qu'on vient chercher.",
-    "Une page d'{m} est en ligne, montrable en cinq minutes.",
-    "La page d'un confrère est debout, avec ses services.",
+    "J'ai fait la page d'{m} d'ici, et elle tourne.",
+    "Une page d'{m} tourne, avec horaires et numéro.",
+    "La page d'{m} est en ligne, prête à montrer.",
+    "Elle montre les horaires, les services, le numéro.",
+    "Un patient l'ouvre sans compte et sans application.",
+    "Elle tient sur un écran de téléphone, sans installer.",
+    "Une page d'{m}, simple, se lit en trente secondes.",
 ]
 OFFRE_SUITE = [
-    "Je peux vous envoyer le lien, sans rien préparer.",
-    "Je vous l'envoie : vous regardez sur votre téléphone.",
-    "Le lien part quand vous voulez, sans condition.",
-    "Vous l'ouvrez, et vous jugez vous-même.",
-    "Je vous le transmets, vous comparez avec la vôtre.",
-    "Cinq minutes sur votre téléphone, et vous verrez.",
-    "Je vous donne l'adresse, vous ouvrez quand vous voulez.",
+    "Je vous envoie le lien, vous regardez quand vous voulez.",
+    "Je vous le transmets ici, sans rien préparer.",
+    "Le lien, c'est tout : vous jugez sur votre écran.",
+    "Je vous donne l'adresse, elle s'ouvre en un geste.",
+    "Vous l'ouvrez sur votre téléphone, et vous voyez.",
+    "Je vous l'envoie ce soir, vous décidez après.",
+    "C'est une adresse, rien de plus, et elle marche.",
 ]
 OFFRE_QUESTION = [
     "Dites-moi en un mot : je vous l'envoie ?",
@@ -488,6 +488,12 @@ def main() -> int:
             if p.exists():
                 pris |= {numero(m.phone) for m in parse(p)}
         leads = [l for l in leads if l.numero not in pris]
+
+    if not a.verif and not a.ecarter:
+        v = RACINE / "leads" / f"VERIF-{a.date or '2026-10-27'}.json"
+        if v.exists():
+            print(f"⚠ aucun filtre de vérification : `{v.name}` existe et n'est pas lu.")
+            print("  Un texte propre n'est pas un droit d'écrire — passer `--ecarter` (ou `--verif`).")
 
     if a.action == "plan":
         par: dict[str, int] = {}
