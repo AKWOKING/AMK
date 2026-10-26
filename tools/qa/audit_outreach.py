@@ -114,9 +114,8 @@ CAUSE = [
     "c'est google",
     "c'est whatsapp",
     "c'est facebook",
-    "les annuaires",
-    "l'annuaire",
-    "un annuaire",
+    "annuaire",          # « les annuaires », « deux annuaires », « un annuaire » : la cause est nommée
+    "annuaires",
     "vous le louez",
     "ne vous appartient pas",
     "ne vous appartiennent pas",

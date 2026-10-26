@@ -6398,3 +6398,38 @@ corrections de King, §3 phrase par phrase). `sales/ENVOI-VAGUE-2-2026-10-26.md`
 `sales/retires/` : cinq de ses sept messages sont ceux du LOT 1, et ses deux autres (Free Optic, Capelli)
 attendent le LOT 2. Le plan du 27/10 est régénéré : **5 ENVOYER, 14 KING-TRANCHE, 16 PAS-ENVOYÉ, 35
 messages**, et deux lignes de stock sans message écrit (Free Optic, Capelli).
+
+---
+
+## Tour 160 — 26/10/2026 (15 h) · audit humanizer, et la question du patron de clinique
+
+**① Ce que King a demandé.** Passer les cinq messages au **skill humanizer**, chercher dans le graphe ce
+qui les rendrait plus humains, chercher en ligne, puis répondre à sa place : *si j'étais patron d'une
+clinique privée, est-ce que je dirais « oui, envoyez-moi ma démo personnalisée » ?*
+
+**② Ce que le skill trouve** (`knowledge/AUDIT-LOT-1-HUMANIZER-2026-10-26.md`) : **5 tirets cadratins**
+(§8), **la même négation en deuxième position dans les cinq** (« qui n'est pas à vous » — §1 « not X but
+Y »), **la même ossature** aux mêmes endroits (§7), **la chute d'une ligne** à la même place (§2), et
+**« un opticien d'ici »** cinq fois, alors que le nom existe (§14). Ce que le skill **ne** trouve pas :
+aucune inflation, aucune autorité empruntée, aucun résidu de chatbot. Le problème est la **silhouette**,
+pas le vocabulaire — et la porte ne sait pas la mesurer.
+
+**③ Le tell qui n'est pas dans la liste** : « je sais que c'est inattendu » est le calque de l'anglais de
+Cameron Jeanes. Personne ne parle comme ça à Douala.
+
+**④ La réponse à sa question : non.** Un patron de clinique ne dit pas « envoyez-moi ma démo » parce que
+**rien ne promet sa page** : l'appel dit « je vous montre le site » — celui d'un opticien. Le livrable
+n'est pas nommé, le coût nul n'est pas dit, et la preuve vient d'un autre métier. Au mieux, ces messages
+obtiennent une réponse de curiosité.
+
+**⑤ Ce qui manque, et son prix** : nommer le livrable **à son nom** (« l'aperçu de votre site part avec
+vos horaires »). Coût réel : **dix minutes par prospect** (la page du métier existe, on la remplit avec
+les faits déjà capturés), soit cinquante minutes pour cinq. C'est **la ligne du ruling 155** (maquette par
+prospect refusée : 15 aperçus pour 1 client payant) — donc c'est à King de trancher, pas à moi.
+
+**⑥ L'essai ① en v5** : 64 mots, 4 phrases, **0 bloquant, 0 avertissement**. La question nomme le
+livrable et le délai (« je vous envoie le site ce soir »).
+
+**⑦ Ce qui a bougé dans la porte** : `CAUSE` accepte désormais « annuaires » au singulier comme au
+pluriel (la cause nommée restait invisible quand la phrase disait « deux annuaires »). Banc toujours
+**25/25** ; les cinq du LOT 1 et les trente du volume restent **0/0**.
