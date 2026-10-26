@@ -1,8 +1,12 @@
 # RÉPONSE « OUI » — ce qui se passe dans les 24 heures (26/10/2026)
 
 ```text
-Déclencheur : un des sept du lot `sales/ENVOI-VAGUE-2-2026-10-26.md` répond oui, ou demande « montre-moi ».
-Promesse     : la page à son nom, dans son téléphone, sous 24 h — c'est la promesse publique du site AMK.
+Déclencheur : un des cinq de `sales/LOT-1-2026-10-27.md` répond « celui-ci sonne », ou un des sept de
+             `sales/ENVOI-VAGUE-2-2026-10-26.md` répond oui, ou demande « montre-moi ».
+Promesse     : le site à son nom, dans son téléphone, sous 24 h — c'est la promesse publique d'AMK.
+Deuxième étage (ajouté le 26/10, source tierce) : la page **et** l'explication. Le prospect ne sait pas
+             ce qu'un site lui apporte : il faut le lui montrer, pas le lui dire — `knowledge/
+             OUTREACH-CAMERON-JEANES-2026-10-26.md` §3 mécanisme 7.
 Portes       : les six qui existent déjà + la porte de livraison `audit_delivery.py` + le deploy gate téléphone.
 Interdit     : publier son nom en clair sur une page publique · promettre une fiche Google validée · annoncer un prix
                qu'il n'a pas demandé.
@@ -33,7 +37,28 @@ la promesse est une **borne**, pas une performance.
 
 ---
 
-## 2 · Le message à envoyer une fois la page prête
+## 1 bis · L'étape qui manquait — l'explication, pas seulement la page (§5 bis)
+
+Une source tierce (Cameron Jeanes, 21/10/2024 — `knowledge/OUTREACH-CAMERON-JEANES-2026-10-26.md`) décrit
+le deuxième message de sa séquence : la maquette **plus** une vidéo de cinq minutes qui explique **en quoi
+un site est utile**, avec trois arguments qu'un opticien de Douala comprend :
+
+| L'argument | Ce qu'on dit | Ce qu'on ne dit pas |
+|---|---|---|
+| **être trouvé** | « quand un patient tape opticien et votre quartier, il tombe sur vous, avec l'adresse » | aucun chiffre de trafic, aucune promesse de classement |
+| **la crédibilité** | « vos horaires, vos garanties, vos photos, lus avant l'appel » | aucun faux avis, aucune norme inventée |
+| **la suite** | « le patient vous écrit sur WhatsApp d'un bouton, et vous n'avez rien à faire » | aucune automatisation qu'on ne sait pas brancher |
+
+**État réel** : cette vidéo **n'existe pas** — c'est la dette du 26/10, confirmée par la source. Elle se
+produit **avant EP02**, avec les mêmes portes que les autres pièces (`audit_story`, `audit_reel`,
+`audit_publication`). Tant qu'elle n'existe pas, l'étape se fait **de vive voix** : trois minutes au
+téléphone valent la vidéo, et le §7 du protocole le permet.
+
+**Ce qu'on refuse de copier de la vidéo** : ses deux statistiques (« +70 % d'engagement, +60 % de ventes »)
+et sa garantie « ça marche à coup sûr ». Pas de source, pas d'échantillon, et nos propres taux de réponse
+valent zéro aujourd'hui.
+
+## 2 · Le message à envoyer une fois le site prêt
 
 **Image d'abord, texte ensuite** — jamais les deux dans le même message (`hosting/previews/README.md`
 §règles d'envoi).
@@ -47,7 +72,7 @@ d'engagement. Le prix se dit **quand il le demande**, jamais avant (`PLAYBOOK` �
 
 ---
 
-## 3 · Ce que la page ne fait jamais, même sur un « oui »
+## 3 · Ce que le site ne fait jamais, même sur un « oui »
 
 | Interdit | Pourquoi |
 |---|---|

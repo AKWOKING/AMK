@@ -126,6 +126,17 @@ def _():
     return f"{n} mots, porte OK, rappel présent"
 
 
+@cas("« page » est signalé — le produit s'appelle « le site » à Douala")
+def _():
+    texte = ("Bonjour, à PK11 votre fiche Google est bien tenue : horaires, photos, trois avis.\n"
+             "Ce n'est pas votre travail, c'est le web : cette page vous appartient, et le patient y lit tout.\n"
+             "Dites-moi un mot : je vous montre le site, avec un bouton WhatsApp ?")
+    fails, warns, n = fiche.controle(texte)
+    assert not fails, fails
+    assert any("page" in w and "Facebook" in w for w in warns), warns
+    return f"{n} mots, rappel « page » présent"
+
+
 def main() -> int:
     ko = 0
     for nom, fn in CAS:

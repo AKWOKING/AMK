@@ -34,6 +34,8 @@ CRM = RACINE / "leads" / "CRM.csv"
 MAIL = re.compile(r"[\w.+-]+@[\w-]+\.[\w.]+")
 # Ce qu'un message ne peut pas affirmer sans preuve : qu'une chose n'existe pas sur le web.
 ABSENCE = re.compile(r"ne (connait|connaît|voit|lit|trouve|sort|rend) pas|n'existe pas|ignore|introuvable|invisible")
+# « page » à Douala = page Facebook (ruling King 26/10). Le produit s'appelle « le site », avec un usage.
+PAGE_SEULE = re.compile(r"\bpages?\b(?!\s+facebook)")
 
 
 def numero_intl(n: str) -> str:
@@ -174,6 +176,9 @@ def controle(texte: str) -> tuple[list[str], list[str], int]:
     # Le trou du 26/10 : deux messages affirmaient « Google ne vous voit pas » et Google les voyait.
     # Ce n'est pas une porte — c'est un rappel : une affirmation d'absence exige une capture datée.
     plat = compose.fold(m.body)
+    if PAGE_SEULE.search(plat):
+        m.warns.append("le mot « page » se lit comme une page Facebook à Douala — dire « le site », "
+                       "et lui donner un usage (horaires, adresse, bouton WhatsApp)")
     if ABSENCE.search(plat):
         m.warns.append("affirmation d'absence (« Google ne… », « ignore », « n'existe pas ») : elle exige "
                        "une capture datée — sans elle, le prospect la dément en dix secondes")

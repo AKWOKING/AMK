@@ -748,3 +748,27 @@ d'un mot — « lequel sonne encore ce soir ? ».
 **Ce que ça coûte, et ce que ça achète** : une demi-heure de réécriture, deux phrases de rechange de plus
 dans la banque, et un message qui ne peut pas être démenti. C'est le seul achat de la journée dont on
 connaît le prix et le rendement.
+
+## 32 · 26/10/2026 (13 h) — une question sans contrepartie est une question de curieux
+
+King, devant le message ② : *« pourquoi lui demander quel numéro sonne ? c'est pas mieux de dire "lequel
+sonne encore ce soir pour que je l'ajoute sur votre site" — là il a une raison de répondre. »*
+
+Il a raison, et la règle existait déjà dans le dépôt (`CLIENT-MESSAGING-RULES` §13 quater : « toute
+question finale nomme ce que la réponse produit »). Nos messages ne l'appliquaient pas : ils demandaient au
+prospect de **nous renseigner** — « lequel des deux noms vos patients utilisent ? » — et ne lui donnaient
+rien en échange. Une question dont la réponse ne déclenche que notre travail est une question de curieux.
+
+**La correction coûte six mots** et change la nature du message : *« lequel sonne encore ce soir, pour que
+je l'ajoute sur le site avec un bouton WhatsApp ? »*. Le prospect ne répond plus pour rendre service : il
+répond **pour se voir sur un site** que ses patients ouvrent.
+
+**Le second mot piégé : « page ».** À Douala, un opticien qui entend « une page » pense à sa page Facebook —
+il en a une, il la tient. Le mot ne dit ni ce que le patient y trouve, ni ce qu'il peut faire, ni ce qui se
+passe **avant qu'il se déplace**. Le produit s'appelle **le site**, et chaque message doit en donner **un
+usage** : les horaires, l'adresse, un bouton WhatsApp.
+
+**Ce que la source tierce (Cameron Jeanes, 21/10/2024) ajoute, et qui manquait** : le deuxième étage.
+Après le oui, il n'envoie pas seulement la maquette — il envoie une vidéo de cinq minutes qui explique
+**pourquoi** un site. Nos `REPONSE-OUI` n'avaient que la page. La vidéo reste une dette, mais sa place est
+désormais écrite.
