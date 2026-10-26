@@ -6263,3 +6263,32 @@ dernières sont condamnées (numéro mort ou site déjà en ligne). La cadence d
 jusqu'au **28/10** — c'est écrit dans `sales/PLAN-2026-10-27.md`, dans `CAMPAGNE-VOLUME` §1 et dans
 `ops/BRAINSTORM-VOLUME` §8, avec les deux gestes qui la débloquent : une date par cabinet
 (`sales/SWEEP-PORTE-B-2026-10-27.md`) et des numéros (`sales/SOURCING-2026-10-27.md`).
+
+## 26/10/2026 (11 h 55, tour 156) — le premier lot de cinq, et la recherche bornée à trois minutes
+
+**① Le lot de cinq, avec son numéro et son message.** `sales/LOT-1-2026-10-27.md` : les cinq premiers des
+sept cabinets à 3/3 — Ets Espace Médical (PK11), ASS pour RRPHDD (Ambassador Vision), ISEE (I See Better),
+Bellevue Optique (Bali), S.O.S Vision. Cinq messages, 50 à 55 mots, **0 bloquant 0 avertissement**, et les
+numéros peuvent être ouverts d'un clic (`wa.me`). **5 n'est pas la cadence** : c'est un bloc de
+vérification ; la journée reste à 20 (quatre lots).
+
+**② La recherche de King, bornée.** Trois requêtes par cabinet, trois minutes, **une** trouvaille — et
+elle **remplace la phrase ②**, elle ne s'ajoute pas : le message est à 55 mots au maximum et la phrase ②
+porte le dédouanement. Dix phrases de rechange sont écrites d'avance (42 à 53 mots) et **déjà passées à la
+porte**. Si la recherche ne donne rien, le message part tel quel : un lot n'attend jamais.
+
+**③ Le Roast Room a recalé l'option « recherche longue ».** Cinq sièges, verdict **7,8** pour trois
+requêtes contre **5,9** pour l'envoi tel quel et **4,9** pour la recherche libre. L'argument qui tranche
+n'est pas le taux de réponse (+0,17 attendu par lot, 4,4 % → 7,8 %) : c'est que **5 h par jour pour 20
+messages** est une journée de conseil, pas de prospection. Buffett a posé la condition qui rend l'option
+tenable : les phrases de rechange sont écrites et contrôlées **avant**, jamais improvisées à 22 h.
+
+**④ Trois résultats arrêtent l'envoi**, et c'est eux qui paient les 3 minutes : un **site qui s'ouvre**
+(on ne dit pas à qui en a un qu'il lui en manque), un **numéro perdu**, un **nom affiché changé depuis le
+25/10**. Sur cinq cabinets, l'expérience du 25/10 (6 numéros morts sur 28) dit qu'il y a une chance sur
+cinq d'en barrer un. Une ligne barrée vaut plus que quatre lignes envoyées.
+
+**⑤ L'outil qui empêche la faute de recopie.** `tools/outreach/fiche.py` : `cartes` sort les numéros du
+CRM, `verifie` relit la fiche livrée contre le CRM (et refuse une fiche vide), `controle` juge **un seul**
+message réécrit. Banc **8/8**, dont le cas qui compte : le fait ajouté sans son dédouanement est refusé en
+avertissement — « le fait se lira comme un reproche ».
