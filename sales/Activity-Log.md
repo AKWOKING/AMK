@@ -6532,3 +6532,41 @@ L'ordre compte : l'aperçu d'abord, le prix ensuite.
 **⑦ Ce que je ne peux pas prouver.** Aucun taux. Cinq messages partis, zéro réponse consignée. Et la
 porte B n'est franchie par personne pour ②③④⑤ : ces cabinets n'ont pas de page à eux — c'est le sujet du
 message, pas une preuve qu'ils achèteront.
+
+---
+
+## Tour 164 · 26/10/2026 (nuit) — le texte reçu, la comparaison, et v6
+
+**① La question de King.** Il envoie un message écrit ailleurs (« je vous ai préparé un aperçu
+personnalisé avec vos horaires ») et demande : *à la place d'un opticien, tu ne dirais pas oui ?* C'est une
+mesure de closing, pas une remarque de style — le lot n'était pas parti, il pouvait encore changer.
+
+**② Le texte reçu passé à la porte.** 116 mots, 5 phrases → **BLOQUÉ**, quatre motifs (longueur, nombre de
+phrases, une phrase sans ancrage, aucune cause nommée). La forme échoue ; le fond gagne deux points que
+nos cinq n'avaient pas.
+
+**③ Ce qu'il fait mieux.** Il vend **ce que le patient perd** (« un patient qui vous cherche en ligne
+passe à côté de tout ce que vous proposez »), et il nomme **le contenu** de l'aperçu (« avec vos
+horaires »). Nos v5 disaient un défaut de fiche ; lui dit une vie de patient.
+
+**④ v6, les cinq réécrits.** Chaque message ajoute **ce que le patient fait ensuite** — il appelle
+l'annuaire (①), il ne sait pas (②), il repart (③), il reste seul avec sa question (④), il hésite (⑤) — et
+nomme les objets du site : plan, jours et fêtes, examens et montures, assurances et garanties, nom et
+horaires. 70 / 68 / 66 / 68 / 70 mots, **0 bloquant, 0 avertissement**, quatre phrases, une question.
+
+**⑤ Ce qui a été refusé du texte reçu.** « vrai site web » (insinue que l'existant est faux), « en un clin
+d'œil », « sans engagement », « transformer ces recherches en clients directs » (promesse invérifiable,
+ruling 142), « catalogue », « praticien ». Et ④ est **adouci** : « fiche unverified, sans un seul avis »
+sort, la question datée du 30/06/2024 reste — la faute est à la fiche, pas au patron.
+
+**⑥ La ligne laissée de côté, avec son ruling.** « Je vous ai **préparé** » est le meilleur mot du texte
+reçu : il change une offre en livraison. Pas écrit, parce qu'aucun aperçu n'existait. Trois voies dans
+`LOT-2` §8 (maquette par prospect · maquette par quartier · rien) ; avis : la deuxième, pour le LOT 3, pas
+au milieu d'une mesure.
+
+**⑦ La règle ajoutée.** `knowledge/CE-QUI-FAIT-DIRE-OUI-2026-10-26.md` : un message froid nomme un fait
+daté, l'endroit où le patient le lit, **et ce que ce patient fait ensuite**. Le fait sans le comportement
+est un audit ; le comportement sans le fait est un tract.
+
+**⑧ Ce que je ne peux toujours pas prouver.** Aucun taux. Cinq messages partis, zéro réponse consignée ;
+les cinq de v6 ne sont pas partis au moment d'écrire.
