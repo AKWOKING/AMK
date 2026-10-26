@@ -3,7 +3,7 @@
 
     python3 tools/outreach/test_plan_jour.py
 
-Le cas qui compte est le dernier : sur les vrais lots du 26/10, le plan doit dire **37 messages, dont 7
+Le cas qui compte est le dernier : sur les vrais lots du 26/10, le plan doit dire **35 messages, dont 5
 prêts**, et jamais compter un numéro mort comme envoyable. Un plan qui se trompe d'un cran envoie un
 message qu'on n'a pas le droit d'écrire — c'est pire que pas de plan du tout.
 """
@@ -21,7 +21,7 @@ import plan_jour  # noqa: E402
 
 CAS = []
 RACINE = plan_jour.RACINE
-LOTS = ["sales/ENVOI-VAGUE-2-2026-10-26.md", "sales/ENVOI-VOLUME-2026-10-27.md"]
+LOTS = ["sales/LOT-1-2026-10-27.md", "sales/ENVOI-VOLUME-2026-10-27.md"]
 
 
 def cas(nom):
@@ -31,13 +31,13 @@ def cas(nom):
     return enveloppe
 
 
-@cas("le plan lit les deux lots vivants : 37 messages, 7 prêts")
+@cas("le plan lit les deux lots vivants : 35 messages, 5 prêts")
 def _():
     p = plan_jour.plan("2026-10-27", choisis=LOTS)
-    assert len(p["lignes"]) == 37, len(p["lignes"])
-    assert p["compte"]["ENVOYER"] == 7, p["compte"]
+    assert len(p["lignes"]) == 35, len(p["lignes"])
+    assert p["compte"]["ENVOYER"] == 5, p["compte"]
     assert p["compte"]["JAMAIS"] == 0 and p["compte"]["HORS-CIBLE"] == 0, p["compte"]
-    return f"37 lignes · {p['compte']['KING-TRANCHE']} à trancher · {p['compte']['PAS-ENVOYÉ']} sans porte"
+    return f"35 lignes · {p['compte']['KING-TRANCHE']} à trancher · {p['compte']['PAS-ENVOYÉ']} sans porte"
 
 
 @cas("l'ordre met les 3/3 devant, et le mort en dernier")
@@ -46,7 +46,7 @@ def _():
     vus = [l["verdict"] for l in p["lignes"]]
     assert vus == sorted(vus, key=plan_jour.ORDRE.index), vus
     assert vus[0] == "ENVOYER"
-    return "sept ENVOYER en tête, aucun verdict mélangé"
+    return "cinq ENVOYER en tête, aucun verdict mélangé"
 
 
 @cas("un numéro absent du vérificateur n'est jamais compté prêt")

@@ -772,3 +772,33 @@ usage** : les horaires, l'adresse, un bouton WhatsApp.
 Après le oui, il n'envoie pas seulement la maquette — il envoie une vidéo de cinq minutes qui explique
 **pourquoi** un site. Nos `REPONSE-OUI` n'avaient que la page. La vidéo reste une dette, mais sa place est
 désormais écrite.
+
+## 33 · 26/10/2026 (14 h) — « ce n'est pas votre faute » : deux questions sans réponse
+
+King, devant la v3 : *« quel est le but de lignes comme "Ce n'est pas votre faute" (la question se pose :
+c'est la faute de qui ?) et ça ne lui dit même pas où est le problème ? ou "c'est pas votre travail"
+(c'est alors le travail de qui ?) on rejette la faute sur celui qui a fait la fiche ?? »*
+
+Il a raison sur les trois points, et le troisième est le plus grave : **« ce n'est pas votre travail,
+c'est le nom » déplace le reproche** — sur l'employé qui a rempli la fiche, sur le graphiste, sur
+n'importe qui. Une phrase qui absout sans accuser personne ne dit rien : elle laisse le prospect devant
+deux questions, et il n'a aucune raison d'y répondre.
+
+**La correction tient en une règle : la cause est un objet, jamais une personne.** Google, WhatsApp, les
+annuaires, le profil : voilà qui détient l'information. Et le problème se situe toujours au même endroit —
+**le patient n'a rien à ouvrir qui soit à vous**. Ce n'est la faute de personne, et c'est exactement ce
+que le site corrige. La phrase devient donc double : *ce qui retient le patient* + *ce qui manque*.
+
+**La seconde exigence de King, ligne par ligne** : *« make sure each line you write in the messages makes
+the client aware he needs a site »*. Une phrase qui ne nomme ni l'endroit où le patient lit le cabinet, ni
+le site qui répondrait, décrit le décor. Elle se supprime ou elle se réécrit — et la porte le vérifie
+désormais au lieu de compter sur la relecture.
+
+**Ce que ça a coûté** : deux mécanismes de plus par message (désarmer, prouver) et donc **quatorze mots**.
+Le plafond du §13 est passé de 55 à **70 mots, quatre phrases au maximum** — on monte de ce que la règle
+coûte, jamais au-delà. La fabrique à volume a été réécrite le même jour : ses réservoirs ne contiennent
+plus une seule absolution, et les trente messages ont été régénérés.
+
+**La leçon transférable** : quand une phrase « adoucit » sans nommer, elle ne protège pas le prospect —
+elle protège celui qui écrit. Le test est toujours le même : *à la place du prospect, qu'est-ce que
+j'apprends sur ce qui me manque ?* Si la réponse est « rien », la phrase est du remplissage.

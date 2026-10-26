@@ -1,3 +1,15 @@
+# ⛔ RETIRÉ — VAGUE 2 (26/10/2026) · remplacé par LOT 1 v4, ne pas envoyer
+
+```text
+RETIRÉ LE 26/10, avant tout envoi. Trois raisons, dans l'ordre d'importance :
+  ① ses cinq premiers messages sont ceux du LOT 1, désormais en v4 (sales/LOT-1-2026-10-27.md) :
+     cause nommée, désarmement, preuve sociale, question qui offre le site ;
+  ② ses messages ⑥ et ⑦ (Free Optic, Capelli) n'ont pas encore été réécrits — ils passent au LOT 2 ;
+  ③ il portait « Ce n'est pas votre travail, c'est le nom » — la phrase que King a cassée le 26/10
+     (« c'est alors le travail de qui ? »).
+Ce fichier reste comme trace : on ne réécrit pas l'histoire d'un lot, on la date.
+```
+
 # ENVOI — VAGUE 2 · les sept qui ont les trois portes (26/10/2026)
 
 ```text

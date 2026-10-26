@@ -52,82 +52,82 @@ from audit_outreach import check, parse, ressemblance  # noqa: E402  — la port
 # douze mots — au-delà, elle contiendrait à elle seule la séquence qui compte, et reviendrait telle
 # quelle dans chaque message. C'est la seule contrainte d'écriture ; le style suit.
 
-NOM_OUVERTURE = [
-    "Bonjour, à {q} votre compte s'appelle « {p} ».",
-    "Bonjour, à {q} vous apparaissez sous « {p} ».",
-    "Bonjour, à {q} votre profil affiche « {p} ».",
-    "Bonjour, à {q} le nom sur votre profil est « {p} ».",
-    "Bonjour, à {q} vos clients lisent « {p} » sur WhatsApp.",
-    "Bonjour, à {q} c'est « {p} » qu'on voit sur votre compte.",
-    "Bonjour, à {q} la fiche WhatsApp dit « {p} ».",
+NOM_OUVERTURE = [           # désarmement + ce que voit un patient : le nom du profil
+    "Bonjour, c'est inattendu : à {q}, sur WhatsApp, « {p} ».",
+    "Bonjour, inattendu, je sais : à {q}, WhatsApp affiche « {p} ».",
+    "Bonjour, ça surprend : à {q}, votre profil dit « {p} ».",
+    "Bonjour, sans doute inattendu : à {q}, votre profil « {p} ».",
+    "Bonjour, c'est étrange : à {q}, WhatsApp lit 「{p}」.".replace("「", "«").replace("」", "»"),
+    "Bonjour, je sais que c'est inattendu : à {q}, profil {s}.",
+    "Bonjour, ça peut surprendre : à {q}, WhatsApp, « {p} ».",
 ]
-NOM_REGISTRE = [
-    "Les tableaux de l'Ordre portent « {s} ».",
-    "L'Ordre, lui, vous inscrit « {s} ».",
-    "Au registre de l'Ordre, vous êtes « {s} ».",
-    "Votre inscription au tableau porte « {s} ».",
-    "Le tableau de l'Ordre dit « {s} ».",
-    "Sur le registre, c'est « {s} » qui figure.",
-    "Votre nom d'inscription, lui, est « {s} ».",
+NOM_CAUSE = [               # le deuxième fait, ET la cause nommée : un registre, pas le prospect
+    "L'Ordre vous inscrit « {s} » : pas à vous.",
+    "Le tableau dit « {s} » : pas chez vous.",
+    "Deux noms, aucun des deux n'est chez vous.",
+    "WhatsApp garde la vitrine, l'Ordre « {s} ».",
+    "Votre nom vit chez Google, et Google décide.",
+    "Ce registre le nomme « {s} » : jamais à vous.",
+    "« {s} » au tableau : rien n'est à vous.",
 ]
-NOM_CONSENTEMENT = [
-    "Ce n'est pas votre faute : deux noms, deux recherches.",
-    "Ce n'est pas votre travail : le patient, lui, cherche.",
-    "Ce n'est pas votre page : c'est le nom.",
-    "Personne ne vous reproche rien : le nom se divise.",
-    "Ce n'est pas votre faute, et vous n'y pouvez rien.",
-    "Le tort n'est pas vôtre : deux noms, deux chemins.",
-    "Aucun reproche : le nom, lui, se cherche deux fois.",
+NOM_PREUVE = [              # la preuve sociale : le site existe vraiment (DM Optique, en ligne)
+    "J'ai fait le site d'un opticien d'ici, il tourne.",
+    "Le site d'un opticien de Douala est en ligne.",
+    "J'ai construit le site d'un opticien d'ici, il vit.",
+    "Un opticien d'ici a le sien en ligne.",
+    "J'ai fait le site d'un opticien, il répond.",
+    "Celui d'un opticien d'ici tourne, avec WhatsApp.",
+    "Chez un opticien de Douala, le site est en ligne.",
 ]
-NOM_QUESTION = [
-    "Dites-moi en un mot : lequel vos patients prononcent ?",
-    "Un mot suffit : lequel je retiens ?",
-    "Répondez par un mot : lequel vous gardez ?",
-    "Un mot : lequel vos clients utilisent ?",
-    "Dites-moi un mot : lequel je garde ?",
-    "Un mot, et je m'aligne : lequel vous préférez ?",
-    "Vous me dites un mot : lequel je mets devant ?",
+NOM_QUESTION = [            # la question offre le site : elle ne demande plus un diagnostic
+    "Dites-moi un mot : lequel en haut du site ?",
+    "Un mot suffit : lequel passe en haut du site ?",
+    "Répondez par un mot : lequel en haut du site ?",
+    "Choisissez un mot : lequel va sur le site ?",
+    "Dites-moi un mot : lequel en haut, avec WhatsApp ?",
+    "Donnez-moi un mot : lequel pour votre site ?",
+    "Sur le site, dites-moi lequel devant ?",
 ]
 
-OFFRE_OUVERTURE = [
-    "Bonjour, à {q} vous êtes {s}.",
-    "Bonjour, à {q} je vois {s} dans l'annuaire.",
-    "Bonjour, {s} : à {q}, j'ai quelque chose à montrer.",
-    "Bonjour, à {q} je fais des sites pour les cabinets d'ici.",
-    "Bonjour, à {q} votre nom est {s}, je crois.",
-    "Bonjour, {s} à {q} : deux lignes, et je vous laisse juge.",
-    "Bonjour, {s} : un site à vous montrer, à {q}.",
+OFFRE_OUVERTURE = [         # désarmement + le nom que le patient lit sur le profil ou l'annuaire
+    "Bonjour, c'est inattendu : à {q}, profil {s}.",
+    "Bonjour, inattendu, je sais : à {q}, l'annuaire dit {s}.",
+    "Bonjour, ça surprend : à {q}, votre profil dit {s}.",
+    "Bonjour, sans doute inattendu : à {q}, WhatsApp dit {s}.",
+    "Bonjour, c'est étrange : à {q}, l'annuaire affiche {s}.",
+    "Bonjour, ça peut surprendre : à {q}, Google dit {s}.",
+    "Bonjour, je sais que c'est inattendu : profil {s}, à {q}.",
 ]
-OFFRE_CONTENU = [   # {m} = le métier du destinataire : jamais la page d'un opticien à une école
-    "J'ai fait le site d'{m} d'ici, et il tourne.",
+OFFRE_CAUSE = [             # la cause nommée : les annuaires, Google, le profil — jamais lui
+    "Ce que Google sort n'est pas à vous.",
+    "Les annuaires parlent de vous, pas à vous.",
+    "Rien de ce qui sort n'est chez vous.",
+    "Google vous rend chez les annuaires, pas chez vous.",
+    "Ce que le patient lit vient des annuaires.",
+    "Votre vitrine tient chez Google, pas chez vous.",
+    "Les annuaires recopient votre fiche, sans vous.",
+]
+OFFRE_PREUVE = [            # {m} = le métier du destinataire : jamais la page d'un opticien à une école
+    "J'ai fait le site d'{m} d'ici, il tourne.",
+    "Le site d'{m} d'ici est en ligne.",
+    "J'ai construit le site d'{m} d'ici, il vit.",
     "Un site d'{m} tourne, avec horaires et numéro.",
-    "Le site d'{m} est en ligne, prêt à montrer.",
-    "Il montre les horaires, les services, le numéro.",
-    "Un patient l'ouvre sans compte et sans installer.",
-    "Il tient sur un téléphone et se lit en trente secondes.",
-    "Le patient y écrit sur WhatsApp, d'un bouton.",
+    "J'ai fait le site d'{m}, il répond.",
+    "Le site d'{m} d'ici répond, jour et nuit.",
+    "Celui d'{m} d'ici tourne, avec WhatsApp.",
 ]
-OFFRE_SUITE = [
-    "Je vous envoie le lien, vous regardez quand vous voulez.",
-    "Vos horaires y sont, et le bouton WhatsApp aussi.",
-    "Le lien, c'est tout : vous jugez sur votre écran.",
-    "Je vous donne l'adresse, elle s'ouvre en un geste.",
-    "Vous l'ouvrez sur votre téléphone, et vous voyez.",
-    "Je vous l'envoie ce soir, vous décidez après.",
-    "Le patient trouve tout avant de se déplacer.",
-]
-OFFRE_QUESTION = [
-    "Dites-moi en un mot : je vous l'envoie ?",
-    "Un mot suffit : vous voulez que je l'envoie ?",
-    "Répondez par un mot : je vous le transmets ?",
-    "Un mot, un seul : vous voulez voir ?",
-    "Un mot : je vous montre le lien ?",
-    "Dites-moi juste un mot : je l'envoie ce soir ?",
-    "Vous me dites un mot : je partage le lien ?",
+OFFRE_QUESTION = [          # la question offre le site — jamais un rendez-vous, jamais un prix
+    "Un mot : je vous envoie le site ?",
+    "Dites-moi un mot : voir le site d'{m} ?",
+    "Un mot, un seul : je vous montre le site ?",
+    "Répondez par un mot : je partage le site ?",
+    "Vous voulez le site, et WhatsApp : un mot ?",
+    "Montrez-moi un mot : j'envoie le site ?",
+    "Je transmets le site ce soir : un mot ?",
 ]
 
-RESERVOIRS = {"nom": (NOM_OUVERTURE, NOM_REGISTRE, NOM_CONSENTEMENT, NOM_QUESTION),
-              "offre": (OFFRE_OUVERTURE, OFFRE_CONTENU, OFFRE_SUITE, OFFRE_QUESTION)}
+RESERVOIRS = {"nom": (NOM_OUVERTURE, NOM_CAUSE, NOM_PREUVE, NOM_QUESTION),
+              "offre": (OFFRE_OUVERTURE, OFFRE_CAUSE, OFFRE_PREUVE, OFFRE_QUESTION)}
 
 # Une page par métier, qui existe vraiment : le message ne promet rien qu'on n'ait déjà construit.
 def verifie_reservoirs() -> list[str]:
@@ -239,7 +239,7 @@ def nom_propre(nom: str) -> str:
     dans le nom).
     """
     court = re.split(r"\s+[—–]\s+|\s+-\s+", nom.strip())[0].strip()
-    return court or nom.strip()
+    return (court or nom.strip()).replace(".", "")
 
 
 def metier(nom: str) -> str:
@@ -325,16 +325,17 @@ def lit_crm(chemin: Path) -> list[Lead]:
 
 
 def triple(rang: int, angle: str) -> tuple[int, ...]:
-    """Les trois phrases, en base 7 sur le rang : deux messages n'ont jamais la même combinaison.
+    """Les quatre phrases, en base 7 sur le rang : deux messages n'ont jamais la même combinaison.
 
-    343 combinaisons par angle (7³), parcourues dans un ordre mélangé mais déterministe. C'est ce qui
-    garantit qu'aucune paire de phrases ne revient — donc qu'aucune séquence de douze mots ne revient
-    par la charnière, ce que la porte vérifie de son côté.
+    Depuis le 26/10 il y a quatre réservoirs (ouverture, cause, preuve, question) : les indices
+    deviennent (a, a+b, a+2b, a+3b). Le couple (a, b) se lit dans les deux premiers — donc deux
+    messages qui partagent une paire de phrases partageraient aussi le rang, ce qui n'arrive pas.
+    C'est ce que la porte vérifie de son côté (§10) : une séquence de douze mots vue trois fois est
+    la signature d'un compte qui diffuse.
     """
     n = len(RESERVOIRS[angle][0])
     a, b = rang % n, (rang // n) % n
-    c = (a + b) % n          # Reed-Solomon sur 7 : (a,b) détermine (b,c), donc aucune charnière ne revient
-    return (a, b, c)
+    return (a, (a + b) % n, (a + 2 * b) % n, (a + 3 * b) % n)
 
 
 def phrase(lead: Lead, i: int, j: int) -> str:
@@ -343,16 +344,15 @@ def phrase(lead: Lead, i: int, j: int) -> str:
         m=PAGES.get(lead.metier, ("", "un cabinet"))[1])
 
 
-def indice_question(idx: tuple[int, ...]) -> int:
+def indice_question(idx: tuple[int, ...], angle: str = "nom") -> int:
     """La question suit la même loi que les autres phrases : elle ne peut pas revenir deux fois non plus."""
-    n = len(NOM_QUESTION)
+    n = len(RESERVOIRS[angle][3])
     return (idx[0] + 2 * idx[1]) % n
 
 
 def compose(lead: Lead, idx: tuple[int, ...]) -> str:
-    """Trois phrases variables, puis une question qui demande quelque chose de fixable (§13)."""
+    """Quatre phrases : désarmer, nommer la cause, prouver, offrir (ruling King 26/10)."""
     lignes = [phrase(lead, i, j) for i, j in enumerate(idx)]
-    lignes.append(phrase(lead, 3, indice_question(idx)))
     return "\n".join(lignes)
 
 
@@ -396,16 +396,15 @@ def toutes_les_combinaisons(angle: str) -> list[tuple[int, int]]:
 def assemble(leads: list[Lead]) -> dict[str, list[str]]:
     """Compose le lot, puis répare — en changeant de combinaison, jamais de phrase.
 
-    La réparation juge le **lot entier** à chaque essai : une combinaison peut être propre seule et
-    heurter un autre message par sa charnière. Juger message par message laisserait passer exactement
-    ce que la porte reproche.
+    Un message = **un rang**. Le rang donne les quatre indices (a, a+b, a+2b, a+3b) : deux messages
+    d'un même angle ne partagent donc jamais une paire de phrases. La réparation juge le **lot
+    entier** à chaque essai, parce qu'une combinaison propre seule peut heurter un autre message
+    par sa charnière — et c'est la charnière que WhatsApp lit comme une signature.
     """
-    pris: dict[str, set[tuple[int, int]]] = {}
+    pris: dict[str, set[int]] = {}
     for rang, lead in enumerate(leads):
-        combos = toutes_les_combinaisons(lead.angle)
-        choix = combos[rang % len(combos)]
-        pris.setdefault(lead.angle, set()).add(choix)
-        lead.lignes = compose(lead, (choix[0], choix[1], (choix[0] + choix[1]) % 7)).splitlines()
+        pris.setdefault(lead.angle, set()).add(rang % 49)
+        lead.lignes = compose(lead, triple(rang % 49, lead.angle)).splitlines()
 
     for _ in range(3):
         soucis = juge(leads)
@@ -414,15 +413,12 @@ def assemble(leads: list[Lead]) -> dict[str, list[str]]:
         for lead in leads:
             if lead.slug not in soucis:
                 continue
-            libres = [c for c in toutes_les_combinaisons(lead.angle) if c not in pris[lead.angle]]
             depart = list(lead.lignes)
-            for c in libres[:24]:
-                lead.lignes = compose(lead, (c[0], c[1], (c[0] + c[1]) % 7)).splitlines()
+            libres = [r for r in range(49) if r not in pris[lead.angle]]
+            for r in libres[:49]:
+                lead.lignes = compose(lead, triple(r, lead.angle)).splitlines()
                 if lead.slug not in juge(leads):
-                    for ancien in [x for x in pris[lead.angle]
-                                   if compose(lead, (x[0], x[1], (x[0] + x[1]) % 7)).splitlines() == depart]:
-                        pris[lead.angle].discard(ancien)
-                    pris[lead.angle].add(c)
+                    pris[lead.angle].add(r)
                     break
             else:
                 lead.lignes = depart

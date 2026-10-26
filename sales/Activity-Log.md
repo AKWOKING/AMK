@@ -6351,3 +6351,50 @@ même secteur ») **est** notre règle « une page par métier ».
 restant une dette datée — et la leçon §32. Le désarmement et la preuve sociale passent en test sur le
 LOT 2 : à 54 mots, il n'y a pas la place pour deux ajouts sans tomber dans le publipostage que la vidéo
 dénonce elle-même.
+
+---
+
+## Tour 159 — 26/10/2026 (14 h) · « ce n'est pas votre faute » : la phrase qui ne répond à rien
+
+**① Ce que King a demandé.** Trois choses en une : les deux mécanismes de la vidéo de Cameron Jeanes
+(désarmer, preuve sociale) **passent en test maintenant** et non au LOT 2 ; **chaque ligne** des messages
+doit rendre visible le besoin d'un site ; et la vidéo de Self-Made Web Designer (30 min, 14 méthodes) est
+mise en face de nos messages. Rien n'est parti : le lot est intact, donc tout est encore réécrivable.
+
+**② Sa critique la plus dure, et elle est juste.** *« Quel est le but de lignes comme "Ce n'est pas votre
+faute" (la question se pose : c'est la faute de qui ?) et ça ne lui dit même pas où est le problème ? ou
+"c'est pas votre travail" (c'est alors le travail de qui ?) on rejette la faute sur celui qui a fait la
+fiche ?? »* — les deux questions sont sans réponse, et la troisième remarque est la pire : « ce n'est pas
+votre travail » **déplace** le reproche sur l'employé qui a rempli la fiche.
+
+**③ La règle neuve : la cause est un objet, jamais une personne.** Google, WhatsApp, les annuaires, le
+profil — voilà qui détient l'information. Et le problème se situe au même endroit pour les cinq : **le
+patient n'a rien à ouvrir qui soit à vous**. La phrase devient double : *ce qui retient le patient* **+**
+*ce qui manque*. Une absolution seule est désormais signalée par la porte (`ABSOLUTION_SEULE`).
+
+**④ Ce que ça a coûté** : le désarmement (6 mots) et la preuve sociale (8 mots) entrent dans les cinq
+messages → le plafond du §13 passe de **55 à 70 mots**, quatre phrases maximum. Cinq messages : **63 à 70
+mots, 0 bloquant, 0 avertissement**.
+
+**⑤ La porte a été réécrite, pas seulement la consigne** (`tools/qa/audit_outreach.py`) : `CAUSE` remplace
+l'ancien dédouanement, `ABSOLUTION_SEULE`, `DESARMEMENT`, `PREUVE` et `ANCRAGE` (chaque phrase doit nommer
+l'endroit où le patient lit le cabinet, ou le site qui répondrait) sont neufs. Banc
+`tools/qa/test_audit_outreach.py` : **25/25**, dont cinq cas neufs. Les trois autres bancs suivent :
+`test_compose` **12/12**, `test_fiche` **10/10**, `test_plan_jour` **6/6**.
+
+**⑥ La fabrique à volume a suivi** : les réservoirs de `compose.py` ne contiennent plus une seule
+absolution ; les quatre temps (désarmer · cause · preuve · question qui offre) y sont, avec quatre
+réservoirs et une loi d'indices (a, a+b, a+2b, a+3b) qui interdit qu'une paire de phrases revienne. Les
+**30 messages** ont été régénérés : **0/0**, Jour 1 = 13, Jour 2 = 17.
+
+**⑦ La vidéo de Self-Made (17/04/2025, 92 583 vues, 14 méthodes)** → `knowledge/OUTREACH-SELF-MADE-2026-10-26.md`.
+On garde quatre mécanismes (construire d'abord et proposer ensuite · une page par métier réutilisable ·
+local d'abord · donner avant de demander) ; on refuse ses revenus annoncés (« 5 000 à 10 000 $ par
+client »), son portfolio de clients fictifs, et les plateformes (Upwork, job boards) où nos trois portes
+ne se vérifient pas.
+
+**⑧ Les lots, à jour.** `sales/LOT-1-2026-10-27.md` passe en **v4** (cinq messages, §0 ter pour les trois
+corrections de King, §3 phrase par phrase). `sales/ENVOI-VAGUE-2-2026-10-26.md` est **retirée** vers
+`sales/retires/` : cinq de ses sept messages sont ceux du LOT 1, et ses deux autres (Free Optic, Capelli)
+attendent le LOT 2. Le plan du 27/10 est régénéré : **5 ENVOYER, 14 KING-TRANCHE, 16 PAS-ENVOYÉ, 35
+messages**, et deux lignes de stock sans message écrit (Free Optic, Capelli).

@@ -258,15 +258,25 @@ pas un site en train de manquer.**
 
 1. **Le fait daté** — vrai sur lui, vérifiable en 10 secondes, 12 mots maximum, un chiffre ou un nom
    propre. Jamais un adjectif. (« ce matin, votre cabinet apparaît sur quatre annuaires »)
-2. **Le dédouanement + la cause** — « ce n'est pas votre travail, c'est X ». **C'est le temps que
-   j'avais oublié le 24/10**, et c'est lui qui empêche le message d'être lu comme un reproche.
+2. **La cause nommée** — un **objet** qui détient l'information (Google, WhatsApp, les annuaires, le
+   profil), jamais une personne. **Réécrit le 26/10 (ruling King)** : l'ancienne formule « ce n'est pas
+   votre travail, c'est X » posait deux questions sans réponse — *c'est la faute de qui ?* et *où est le
+   problème ?* — et renvoyait la faute à celui qui avait rempli la fiche, souvent un employé du cabinet.
+   Une absolution seule ne passe plus : la phrase doit dire **ce qui retient le patient** et **ce qui
+   manque** (le site), sinon elle ne vend rien.
 3. **Le patient** — ce qu'un patient **fait** à cause de ça, **au présent**, en une scène.
    (« appelle un numéro que vous n'utilisez peut-être plus, et raccroche »)
 4. **La question** — une seule, fermée, à laquelle **un mot suffit**. Ni rendez-vous, ni lien, ni prix.
 
-**Longueur : 35 à 55 mots, trois phrases.** Au-delà, ça se lit comme un rapport d'incident — et un
-rapport d'incident ne se répond pas, il se classe. La règle du 02/10 (« laissez l'IA et parlons
-normalement ») n'a jamais été levée : le dédouanement se dit dans une clause, pas dans un paragraphe.
+**Longueur : 35 à 70 mots, quatre phrases au maximum.** Le plafond était de 55 jusqu'au 26/10 : le
+**désarmement** (« je sais que c'est inattendu » — Cameron Jeanes, Self-Made) et la **preuve sociale**
+(« j'ai fait le site d'un opticien d'ici, il est en ligne ») coûtent quatorze mots à eux deux, et King
+les veut dans chaque message. On monte le plafond de ce qu'ils coûtent, on ne le supprime pas : au-delà
+de quatre phrases, ça redevient le rapport d'incident que ce paragraphe refuse depuis le 24/10.
+
+**La règle qui les rend exécutables** : *chaque phrase doit rendre le besoin visible* — soit l'endroit
+où le patient lit le cabinet, soit le site qui répondrait. Une phrase qui ne nomme ni l'un ni l'autre
+décrit le décor ; la porte la signale (`ANCRAGE` dans `tools/qa/audit_outreach.py`).
 
 **Les six premiers mots portent tout.** WhatsApp n'affiche que deux lignes dans la notification : si
 elles ne contiennent ni son nom, ni son quartier, ni un fait qui ne peut concerner que lui, le message
@@ -415,3 +425,37 @@ du cabinet. Tant que rien n'est mesuré, on ne cite aucun chiffre de résultat (
 **④ La porte** : `MESURE_IMPOSSIBLE` dans `tools/qa/audit_outreach.py` **bloque** les formulations du
 type « ce que la fiche laisse filer », « je le compare à », « combien de patients vous arrivent par
 Google » (banc : 21/21). Le goût reste humain ; la promesse impossible, non.
+
+### 13 sexies · Les quatre temps de la v4, et ce qu'ils exigent de chaque phrase (ruling King 26/10)
+
+> *« make sure each line you write in the messages makes the client aware he needs a site / stronger
+> online presence, that brings us closer to closing »* — et, sur la v3 : *« ce n'est pas votre faute
+> (la question se pose : c'est la faute de qui ?) et ça ne lui dit même pas où est le problème ».*
+
+**Le temps 2 change de nature** : il ne dédouane plus, il **accuse un objet et situe le problème**. Ce
+n'est la faute de personne — c'est que l'information est **chez Google, chez WhatsApp, chez les
+annuaires**, et que le patient **n'a rien à ouvrir qui soit à vous**. La deuxième moitié de la phrase
+est le produit ; sans elle, l'absolution n'est que de la politesse.
+
+**Les quatre temps, tels qu'ils s'écrivent désormais** :
+
+| Temps | Ce qu'il fait | La porte qui le vérifie |
+|---|---|---|
+| 1 · **Désarmer + le fait** | « je sais que c'est inattendu : à PK11 votre fiche Google est tenue… » — l'intrusion est excusée, puis un fait vérifiable | `DESARMEMENT` (douze premiers mots) |
+| 2 · **La cause nommée + le manque** | « …tombe sur Mont-Pandi et deux annuaires… et n'a rien à ouvrir qui vienne de vous » | `CAUSE` + `ANCRAGE` |
+| 3 · **La preuve** | « j'ai fait le site d'un opticien d'ici, il est en ligne » — un objet, jamais un chiffre | `PREUVE` |
+| 4 · **La question qui offre** | « …pour que je l'ajoute sur le site avec un bouton WhatsApp ? » | `VERBES_ACTION` + `SORTIE` |
+
+**Deux interdits neufs, nés du ruling** :
+
+- **Pas d'absolution seule.** « Ce n'est pas votre faute », « ce n'est pas votre travail », « aucun
+  reproche » : si la cause nommée n'est pas dans la **même phrase**, la porte le signale
+  (`ABSOLUTION_SEULE`). King a montré pourquoi : la phrase laisse le prospect devant deux questions.
+- **Pas de phrase qui décrit le décor.** Une phrase qui ne nomme ni l'endroit où le patient lit le
+  cabinet, ni le site qui répondrait, ne fait pas avancer la vente (`ANCRAGE`).
+
+**Périmètre.** Le désarmement et la preuve sociale s'exigent sur une **première touche froide** — repère :
+la salutation. Un prospect tiède ne se désarme pas, il se rappelle à lui (§13 quater).
+
+**Banc** : `python3 tools/qa/test_audit_outreach.py` → **25/25**, dont cinq cas neufs (cause absente,
+absolution seule, désarmement absent, preuve absente, phrase sans ancrage).
