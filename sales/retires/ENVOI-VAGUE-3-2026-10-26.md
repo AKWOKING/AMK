@@ -1,3 +1,14 @@
+# ⛔ RETIRÉ le 26/10 (17 h 30) — NE PAS ENVOYER
+
+```text
+CE QU'IL CONTIENT   16 messages composés le 26/10 au matin, texte propre (0 bloquant, 0 avertissement)
+POURQUOI RETIRÉ     12 des 16 visent un numéro vu MORT le 25/10 ou un cabinet qui a DÉJÀ un site ;
+                    les 4 autres sont des doublons de sales/ENVOI-VOLUME-2026-10-27.md
+CE QUI LE REMPLACE  sales/ENVOI-VOLUME-2026-10-27.md — 30 messages, aucun numéro mort, aucun cabinet
+                    déjà pourvu (filtre `--ecarter` de compose.py)
+LEÇON               un texte propre n'est pas un droit d'écrire : content/lessons/CONTENT-LESSONS.md §29
+```
+
 # ENVOI — VAGUE 3 · la journée de 20 du 27/10 (16 messages composés)
 
 ```text

@@ -1,38 +1,58 @@
-# ENVOI — LE LOT VOLUME (28 et 29 octobre 2026) · 30 messages
+# ENVOI — LE LOT VOLUME (27 et 28 octobre 2026) · 30 messages
 
 ```text
 PORTE    python3 tools/qa/audit_outreach.py sales/ENVOI-VOLUME-2026-10-27.md --strict
          → 0 bloquant, 0 avertissement sur 30 messages.
-SOURCE   tools/outreach/compose.py batch --limit 30 --deja ENVOI-VAGUE-2 ENVOI-VAGUE-3
-         (le lot du matin — 49 messages sur les mêmes lignes — a été refait : il contenait des
-          villes qui étaient des noms de personnes, et neuf cabinets qui n'ont pas la porte B)
-ORDRE    deux passes : les opticiens d'abord (28 % de réponses mesurées), le reste ensuite.
+SOURCE   tools/outreach/compose.py batch --limit 40 --deja ENVOI-VAGUE-2 --ecarter VERIF-2026-10-27
+         → 30 messages écrits, **16 lignes écartées** : numéro mort ou cabinet ayant déjà un site.
+ORDRE    les sept cabinets à 3/3 sont SORTIS de ce lot : ils ont leur fichier, écrit à la main
+         (sales/ENVOI-VAGUE-2-2026-10-26.md). Ici, le reste.
 ```
 
 ## Ce que ce lot est
 
-**30 messages, écrits par la fabrique, jugés par la porte.** Chaque message nomme l'établissement, son
-quartier, et offre une page qui **existe** dans son métier : `dmoptiquesarl.com` pour un opticien,
-`hosting/samples/clinic-bonaberi.html` pour une clinique, `hosting/samples/mitoc.html` pour une école,
-`hosting/previews/labiomed/` pour un laboratoire. Aucun ne dit « vous n'avez pas de site » : nous ne
-l'avons pas vérifié (§8c).
+**30 messages, dont 14 à 2/3 et 16 à 1/3** — mesuré, numéro par numéro, contre `leads/VERIF-2026-10-27.md`.
+
+**16 lignes ont été écartées avant d'écrire**, et c'est la seule chose qui compte dans cette phrase :
+`--ecarter` a retiré les numéros que King a vus **morts** le 25/10, et les cabinets qui ont **déjà un site
+dédié** (Cristalys, LyfyOptic, Royal Optic, Win Optic Plus, Biolex, Biomedicam…). Écrire à ceux-là aurait
+été une faute : on ne dit pas « il vous manque une page » à quelqu'un qui en a une (§8c).
+
+**Ce qu'ils disent** : le nom de l'établissement, son quartier, et l'offre du lien d'une page qui **existe
+déjà** dans le métier du destinataire — `dmoptiquesarl.com` pour un opticien, la clinique de Bonabéri,
+MITOC pour une école, Labiomed pour un laboratoire. Rien sur le prospect : ni « vous n'avez pas de site »,
+ni « votre fiche est vide ».
 
 **Ce qu'ils ne sont pas** : du sur-mesure. C'est le palier 2 de la recherche — nom, quartier, métier —
-mesuré à 4,4 % de réponses, contre 11,2 % pour une ligne vraiment recherchée. À 40 messages par jour,
-ce palier produit plus de réponses que dix messages parfaits ; c'est le calcul qui autorise la cadence,
-et il est écrit dans `ops/BRAINSTORM-VOLUME-2026-10-26.md` §1.
+mesuré à 4,4 % de réponses contre 11,2 % pour une ligne vraiment recherchée (`ops/BRAINSTORM-VOLUME` §8).
 
-## Ce que ce lot n'est pas : un lot d'envoi
+## La porte A se ferme au moment de l'envoi
 
-**Aucune de ces trente lignes n'a été ouverte sur WhatsApp par King.** Le geste de huit secondes reste
-obligatoire avant chaque envoi : ouvrir le profil, vérifier que le numéro vit et que c'est un cabinet.
-Les cabinets qui échouent se **barrent** — pas de SMS, pas d'appel (ruling 25/10).
+| Verdict du vérificateur | Combien | Ce que ça veut dire pour King |
+|---|---|---|
+| **3/3 → envoi direct** | **0** | les sept 3/3 sont dans `sales/ENVOI-VAGUE-2-2026-10-26.md` |
+| **2/3 → King tranche** | **14** | profil Business vu + titulaire nommé ; **la preuve numérique manque** |
+| **1/3 → aucune porte franchie** | **16** | numéro jamais ouvert sur WhatsApp |
+| numéro mort ou site existant | **0** | écartés à l'écriture, pas à l'envoi |
 
-**Et le stock s'arrête là.** 52 lignes composables au total, 53 messages écrits avec la vague 2 : à
-20 par jour, **deux jours et demi** puis plus rien. `supply.py plan` le dit avant l'envoi, et c'est le
-vrai sujet de la semaine — pas la cadence.
+**Ce fichier est une file d'attente de vérification, pas un lot d'envoi.** Ce qui le transforme en lot,
+c'est le geste de King : ouvrir chaque numéro, huit secondes, barrer ce qui n'est pas un cabinet. Les 14
+à 2/3 n'ont besoin que d'une date (`sales/SWEEP-PORTE-B-2026-10-27.md`) ; les 16 à 1/3 ont besoin des
+trois choses, et c'est le même geste qui les donne.
+
+**Pourquoi on les écrit d'avance** : le message ne dépend pas de ce que la vérification trouvera — il ne
+dit rien du prospect. Écrire d'avance ne coûte que du temps machine ; vérifier d'abord coûterait un jour.
+
+## Ce que King fait, dans cet ordre
+
+1. **Vérifier le numéro** sur WhatsApp (8 s) ; barrer les morts plutôt que les composer.
+2. **Envoyer dans l'ordre du fichier** — les portes déjà franchies sont devant.
+3. **Répondre dans l'heure** à qui répond.
+4. **Cocher le tracker** le soir (`sales/CAMPAGNE-VOLUME-2026-10-26.md` §5).
 
 ## Les messages
+
+## Jour 1 — mardi 27/10 · 13 messages
 
 **#1 Optique Pro — Douala — 690034818**
 > Bonjour, à Douala votre compte s'appelle « Laury Ntemtsa ».
@@ -64,8 +84,8 @@ vrai sujet de la semaine — pas la cadence.
 > Vous l'ouvrez, et vous jugez vous-même.
 > Dites-moi en un mot : je vous l'envoie ?
 
-**#6 Cristalys Optic — Douala — 690945150**
-> Bonjour, Cristalys Optic à Douala : deux lignes, et je vous laisse juge.
+**#6 Dumbu Lunetterie — Douala — 690114323**
+> Bonjour, Dumbu Lunetterie à Douala : deux lignes, et je vous laisse juge.
 > J'ai fait la page d'un opticien d'ici, en ligne et publique.
 > Cinq minutes sur votre téléphone, et vous verrez.
 > Dites-moi juste un mot : je l'envoie ce soir ?
@@ -100,116 +120,119 @@ vrai sujet de la semaine — pas la cadence.
 > Je vous le transmets, vous comparez avec la vôtre.
 > Dites-moi juste un mot : je l'envoie ce soir ?
 
-**#12 L'Opticien SARL — Douala — 694336582**
-> Bonjour, à Douala votre nom est L'Opticien SARL, je crois.
+**#12 Grâce Vision — Douala — 691392878**
+> Bonjour, à Douala votre nom est Grâce Vision, je crois.
 > Une page d'un opticien tourne déjà, du même genre.
 > Cinq minutes sur votre téléphone, et vous verrez.
 > Vous me dites un mot : je partage le lien ?
 
-**#13 La Fierté de l'Optique — Douala — 695179057**
-> Bonjour, La Fierté de l'Optique à Douala : deux lignes, et je vous laisse juge.
+**#13 Jucia Optics — Akwa — 653449349**
+> Bonjour, Jucia Optics à Akwa : deux lignes, et je vous laisse juge.
 > Une page d'un opticien tourne déjà, du même genre.
 > Je vous donne l'adresse, vous ouvrez quand vous voulez.
 > Dites-moi en un mot : je vous l'envoie ?
 
-**#14 La Lunetterie Médicale El Shadai — Douala — 696896411**
-> Bonjour, à Douala je passais par votre nom ce matin, La Lunetterie Médicale El Shadai.
+## Jour 2 — mercredi 28/10 · 17 messages
+
+**#14 L'Opticien SARL — Douala — 694336582**
+> Bonjour, à Douala je passais par votre nom ce matin, L'Opticien SARL.
 > Une page d'un opticien tourne déjà, du même genre.
 > Je peux vous envoyer le lien, sans rien préparer.
 > Un mot suffit : vous voulez que je l'envoie ?
 
-**#15 Le Samaritain Optique — Douala — 670197451**
-> Bonjour, à Douala vous êtes Le Samaritain Optique.
+**#15 La Fierté de l'Optique — Douala — 695179057**
+> Bonjour, à Douala vous êtes La Fierté de l'Optique.
 > Cette page d'un opticien existe : elle est en ligne.
 > Le lien part quand vous voulez, sans condition.
 > Un mot : je vous montre le lien ?
 
-**#16 Light Optique — Douala — 677648790**
-> Bonjour, à Douala je vois Light Optique dans l'annuaire.
+**#16 La Lunetterie Médicale El Shadai — Douala — 696896411**
+> Bonjour, à Douala je vois La Lunetterie Médicale El Shadai dans l'annuaire.
 > Cette page d'un opticien existe : elle est en ligne.
 > Vous l'ouvrez, et vous jugez vous-même.
 > Dites-moi juste un mot : je l'envoie ce soir ?
 
-**#17 London Vision — Douala — 696768116**
-> Bonjour, à Douala vous êtes London Vision.
+**#17 Le Samaritain Optique — Douala — 670197451**
+> Bonjour, à Douala vous êtes Le Samaritain Optique.
 > Une page d'un opticien est en ligne, montrable en cinq minutes.
 > Cinq minutes sur votre téléphone, et vous verrez.
 > Un mot, un seul : vous voulez voir ?
 
-**#18 Lux Optique — Douala — 655040549**
+**#18 Light Optique — Douala — 677648790**
 > Bonjour, à Douala je travaille avec les opticiens d'ici.
 > Cette page d'un opticien existe : elle est en ligne.
 > Cinq minutes sur votre téléphone, et vous verrez.
 > Dites-moi en un mot : je vous l'envoie ?
 
-**#19 LyfyOptic — Douala — 699980666**
-> Bonjour, à Douala je vois LyfyOptic dans l'annuaire.
+**#19 London Vision — Douala — 696768116**
+> Bonjour, à Douala je vois London Vision dans l'annuaire.
 > Une page d'un opticien est en ligne, montrable en cinq minutes.
 > Je vous donne l'adresse, vous ouvrez quand vous voulez.
 > Un mot : je vous montre le lien ?
 
-**#20 Maranatha Optics — Douala — 658163190**
-> Bonjour, Maranatha Optics à Douala : deux lignes, et je vous laisse juge.
+**#20 Lux Optique — Douala — 655040549**
+> Bonjour, Lux Optique à Douala : deux lignes, et je vous laisse juge.
 > Cette page d'un opticien existe : elle est en ligne.
 > Je peux vous envoyer le lien, sans rien préparer.
 > Répondez par un mot : je vous le transmets ?
 
-**#21 Mel's Optic — Douala — 690988518**
-> Bonjour, Mel's Optic : à Douala, j'ai quelque chose à montrer.
+
+**#21 Maison Optique — Douala — 657737045**
+> Bonjour, Maison Optique : à Douala, j'ai quelque chose à montrer.
 > Cette page d'un opticien existe : elle est en ligne.
 > Je vous le transmets, vous comparez avec la vôtre.
 > Vous me dites un mot : je partage le lien ?
 
-**#22 Mouscou Optique Médicale — Douala — 696654164**
-> Bonjour, à Douala vous êtes Mouscou Optique Médicale.
+**#22 Maranatha Optics — Douala — 658163190**
+> Bonjour, à Douala vous êtes Maranatha Optics.
 > Voilà la page d'un opticien, prête, avec les horaires.
 > Vous l'ouvrez, et vous jugez vous-même.
 > Vous me dites un mot : je partage le lien ?
 
-**#23 OMB Optique — Douala — 699770234**
-> Bonjour, à Douala je vois OMB Optique dans l'annuaire.
+**#23 Mel's Optic — Douala — 690988518**
+> Bonjour, à Douala je vois Mel's Optic dans l'annuaire.
 > Voilà la page d'un opticien, prête, avec les horaires.
 > Je vous le transmets, vous comparez avec la vôtre.
 > Dites-moi en un mot : je vous l'envoie ?
 
-**#24 Optic Laser Médical — Douala — 677827434**
-> Bonjour, Optic Laser Médical : à Douala, j'ai quelque chose à montrer.
+**#24 Mouscou Optique Médicale — Douala — 696654164**
+> Bonjour, Mouscou Optique Médicale : à Douala, j'ai quelque chose à montrer.
 > Voilà la page d'un opticien, prête, avec les horaires.
 > Cinq minutes sur votre téléphone, et vous verrez.
 > Un mot suffit : vous voulez que je l'envoie ?
 
-**#25 OpticPlus — Douala — 699379150**
+**#25 OMB Optique — Douala — 699770234**
 > Bonjour, à Douala je travaille avec les opticiens d'ici.
 > Voilà la page d'un opticien, prête, avec les horaires.
 > Je vous donne l'adresse, vous ouvrez quand vous voulez.
 > Répondez par un mot : je vous le transmets ?
 
-**#26 Pagrot Optique — Douala — 699904691**
-> Bonjour, à Douala votre nom est Pagrot Optique, je crois.
+**#26 Optic Laser Médical — Douala — 677827434**
+> Bonjour, à Douala votre nom est Optic Laser Médical, je crois.
 > Voilà la page d'un opticien, prête, avec les horaires.
 > Je peux vous envoyer le lien, sans rien préparer.
 > Un mot, un seul : vous voulez voir ?
 
-**#27 Saoudia Optique — Douala — 696040413**
-> Bonjour, Saoudia Optique à Douala : deux lignes, et je vous laisse juge.
+**#27 OpticPlus — Douala — 699379150**
+> Bonjour, OpticPlus à Douala : deux lignes, et je vous laisse juge.
 > Voilà la page d'un opticien, prête, avec les horaires.
 > Je vous l'envoie : vous regardez sur votre téléphone.
 > Un mot : je vous montre le lien ?
 
-**#28 Win Optic Plus — Douala — 699125906**
-> Bonjour, à Douala je passais par votre nom ce matin, Win Optic Plus.
+**#28 Pagrot Optique — Douala — 699904691**
+> Bonjour, à Douala je passais par votre nom ce matin, Pagrot Optique.
 > Voilà la page d'un opticien, prête, avec les horaires.
 > Le lien part quand vous voulez, sans condition.
 > Dites-moi juste un mot : je l'envoie ce soir ?
 
-**#29 World Vision — Douala — 656032172**
-> Bonjour, à Douala vous êtes World Vision.
+**#29 Saoudia Optique — Douala — 696040413**
+> Bonjour, à Douala vous êtes Saoudia Optique.
 > Et la page d'un opticien existe, avec ce qu'on vient chercher.
 > Je vous le transmets, vous comparez avec la vôtre.
 > Un mot suffit : vous voulez que je l'envoie ?
 
-**#30 Blessed Group of Schools (BGS / Blessed Anglo-Saxon) — Simbock — 680139453**
-> Bonjour, à Simbock je vois Blessed Group of Schools (BGS / Blessed Anglo-Saxon) dans l'annuaire.
-> Et la page d'une école existe, avec ce qu'on vient chercher.
+**#30 World Vision — Douala — 656032172**
+> Bonjour, à Douala je vois World Vision dans l'annuaire.
+> Et la page d'un opticien existe, avec ce qu'on vient chercher.
 > Cinq minutes sur votre téléphone, et vous verrez.
 > Répondez par un mot : je vous le transmets ?

@@ -689,3 +689,19 @@ lot de 49 messages froids à passer `--strict` avec zéro avertissement dans ce 
 **La leçon.** Tout artefact de volume doit porter **deux verdicts**, et le second doit être visible **avant** le premier message du fichier. Un « 0 bloquant » en tête d'un document qui contient des lignes non prouvées n'est pas une garantie, c'est une impression.
 
 **Comment on l'applique.** `scout.py verify` écrit une section « contradictions » qui liste nommément tout cabinet déjà présent dans un lot et qui n'est pas à 3/3. Un banc l'exige (`tools/outreach/test_scout.py`). Et chaque lot de volume déclare, en tête, combien de ses lignes sont à 3/3, à 2/3 et à 1/3 — ici : **0 / 9 / 33**.
+
+## 29 · 26/10/2026 (17 h 30) — sur 49 messages « propres », seize visaient un mort ou un cabinet déjà servi
+
+Le §28 a dit qu'un texte propre n'est pas un droit d'écrire. Ce tour lui donne son prix : sur le lot de
+49 messages fabriqué le matin, **16 lignes** sont tombées à la vérification — numéros vus **morts** le
+25/10, et cabinets ayant **déjà un site dédié** (Cristalys, LyfyOptic, Royal Optic, Win Optic Plus,
+Biolex, Biomedicam…).
+
+**Ce que ça coûte** : un message parfait adressé à quelqu'un qui a déjà une page dit « il vous manque une
+page » — la faute que le §8c interdit depuis le 24/09. Et un message envoyé à un numéro mort ne coûte pas
+zéro : il consomme une place dans la journée, et il apprend à King que la liste est fiable quand elle ne
+l'est pas.
+
+**La règle, désormais outillée** : deux mesures avant chaque envoi, jamais une. Le texte est-il propre
+(`audit_outreach --strict`) **et** a-t-on le droit d'écrire (`verify.py`, portes §8b + hors-cible) ? Un
+lot qui n'a que la première est un gabarit bien écrit.

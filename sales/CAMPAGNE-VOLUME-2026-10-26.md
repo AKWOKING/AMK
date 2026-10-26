@@ -4,10 +4,11 @@
 DÉCISION King, 26/10 : « we can't be sending just 1 message per day, we send between 20-50 ».
 Ce document dit comment on tient cette cadence sans perdre le numéro, ce que la fabrique garantit,
 et ce que King fait chaque matin en 25 minutes.
-Trois fichiers, 53 messages écrits et mesurés le 26/10, tous à 0 bloquant 0 avertissement :
+Deux fichiers, 37 messages écrits et mesurés le 26/10, tous à 0 bloquant 0 avertissement :
          sales/ENVOI-VAGUE-2-2026-10-26.md (7 à la main, tous à 3/3)
-         sales/ENVOI-VAGUE-3-2026-10-26.md (16 par la fabrique, 13 partent le 27)
-         sales/ENVOI-VOLUME-2026-10-27.md (30 par la fabrique, 28 et 29/10)
+         sales/ENVOI-VOLUME-2026-10-27.md (30 par la fabrique, partis en 13 puis 17)
+Le troisième lot du matin est retiré : sales/retires/ENVOI-VAGUE-3-2026-10-26.md (12 cibles mortes
+ou déjà pourvues d'un site, 4 doublons).
 ```
 
 ## 1 · La montée, jour par jour
@@ -18,22 +19,21 @@ précédent n'a produit aucun blocage.
 
 | Jour | Messages | D'où ils viennent | Ce qui doit être vrai la veille |
 |---|---|---|---|
-| **lun. 27/10** | **20** | les **7** écrits à la main (3/3, en tête) + **13** de la vague 3 | — |
-| **mar. 28/10** | **22** | lot volume, opticiens d'abord | 0 blocage, 0 signalement le 27 |
-| **mer. 29/10** | **11** | fin du lot volume + les **3** restants de la vague 3 | 0 blocage le 28 |
-| jeu. 30/10 | **0** | plus une ligne composable | **journée de sourcing, pas d'envoi** |
-| sam. 31/10 | — | rien : paiement DM Optique, on ne mélange pas | — |
-| lun. 02/11 | 40–50 | **nouveau stock obligatoire** (≈ 200 numéros/semaine, §4) | ratio de blocages < 1 % |
+| **lun. 27/10** | **20** | les **7** écrits à la main (3/3, en tête) + **13** du lot volume | — |
+| **mar. 28/10** | **17** | fin du lot volume, opticiens d'abord | 0 blocage, 0 signalement le 27 |
+| **mer. 29/10** | **0** | plus une seule ligne composable | **journée de sourcing, pas d'envoi** |
+| jeu. 30/10 | 20 | **nouveau stock obligatoire** (§4) | 0 blocage le 28 |
+| ven. 31/10 | — | rien : paiement DM Optique, on ne mélange pas | — |
+| lun. 02/11 | 20–30 | nouveau stock + les dates de la porte B | ratio de blocages < 1 % |
 
-**Ce que la table dit vraiment** : la cadence de 20–50 tient **deux jours et demi**, puis elle bute sur
-le stock. 52 lignes sont composables au total ; 53 messages sont écrits. Et la moitié de ces 52 n'a
-jamais été ouverte sur WhatsApp : la vérification de huit secondes décidera de leur sort.
+**Ce que la table dit vraiment** : la cadence de 20–50 tient **deux jours**, puis elle bute sur le stock.
+52 lignes sont composables au total, **16 sont écartées** (numéro mort ou cabinet déjà pourvu d'un site),
+**36 restent** — et **37 messages sont écrits** : il n'y a plus une seule ligne libre.
 
-**Le vrai chiffre du jour** : assez de texte pour trois jours, assez de numéros **prouvés pour un** (les
-sept). `tools/outreach/supply.py plan` rend ce tableau et refuse d'en promettre un plus flatteur : il
-compte les **pistes** que voit le vérificateur (77) et les **messages** que la fabrique peut écrire (52),
-et il dit l'écart — 53 messages écrits pour 52 lignes, donc **un** message sans ligne. Le reste
-du plan dépend d'une seule chose — ouvrir des annuaires — et c'est le §4.
+**Le vrai chiffre du jour** : assez de texte pour deux jours, assez de numéros **prouvés pour sept** (les
+3/3 de la vague 2), et **30 messages dont 14 seulement ont deux portes sur trois**. `supply.py plan` rend
+un tableau plus flatteur (20 / 22 / 36) parce qu'il compte les **pistes** ; la fabrique, elle, ne peut
+écrire que ce que la ligne prouve. L'écart entre les deux est exactement le sujet du §4.
 
 ## 2 · L'interrupteur — la seule métrique qui arrête la campagne
 
@@ -64,8 +64,8 @@ cochée = un blocage.** Pas de mesure automatique : nous n'avons pas d'accès à
 | l'objet de l'offre correspond au **métier** (une école n'entend pas parler d'opticien) | que l'interlocuteur soit le décideur (porte C) |
 
 **Réserve** : la fabrique plafonne à **49 messages par lot** — au-delà, elle refuse plutôt que de
-répéter un motif. Étendre la réserve (8ᵉ et 9ᵉ variantes par phrase) est un travail de 20 minutes qui
-ouvre un lot de 81.
+répéter un motif. Ce n'est pas la limite du jour : **le stock s'épuise avant les variantes** (37 écrits,
+0 ligne libre). Étendre les variantes n'ouvrirait rien tant que le §4 n'est pas fait.
 
 ## 4 · Le stock — la contrainte que la cadence révèle
 
@@ -74,10 +74,11 @@ ouvre un lot de 81.
 | Opticiens ONOC | **0** | 28 testés le 25/10, 22 joignables, **0 restant** |
 | Annuaire (137 lignes) | ~70 jamais contactées | dont **17** avec un profil vu le 25/10 — les autres sont des numéros non prouvés |
 | Cliniques, labos, écoles | ~36 | verticales mesurées à **0/15** de réponses : à ne rouvrir qu'avec l'offre, pas avec l'angle « nom » |
-| **Total envoyable** | **78** | 1,9 jour à 40/jour — **49 déjà écrites**, donc 29 en réserve |
+| **Total envoyable** | **78** | mais **41 sans message écrit** : ni métier avec une page, ni lieu sûr — c'est le stock à sourcer, pas à composer |
 
-**Ce qu'il faut** : environ **200 numéros par semaine** pour tenir 40/jour. Trois sources, dans l'ordre
-de rendement observé :
+**Ce qu'il faut** : environ **200 numéros par semaine** pour tenir 40/jour. Le mode d'emploi complet —
+quatre sources nommées, vingt minutes de gestes, ce qu'on écarte — est dans `sales/SOURCING-2026-10-27.md`.
+Trois sources, dans l'ordre de rendement observé :
 
 1. **Les annuaires de Douala** (pagespratiquescm, maligah, doualazoom) — 68 % des numéros y joignent
    WhatsApp (leçon du 19/09). **King seul peut les ouvrir** : cet environnement n'a pas de réseau vers
@@ -85,6 +86,8 @@ de rendement observé :
    `python3 tools/outreach/supply.py ingest --in ~/annuaire.csv --source annuaire --vu 2026-10-27`
    → neuf chiffres exigés, préfixes `+237`/`00237` ramenés à neuf, doublons du CRM et doublons internes
    écartés, un **fichier de transit** (`leads/STAGING-<date>.csv`), jamais le CRM directement.
+   Plus rapide encore quand la source est une page web : il la **colle** et laisse l'extracteur sortir
+   les numéros — `python3 tools/outreach/supply.py extract --in /tmp/p.txt --source facebook`.
 2. **Les pages Facebook professionnelles** — elles donnent le nom, le quartier et souvent le numéro.
 3. **Le passage** — une affiche relevée en boutique vaut trois numéros d'annuaire (une seule ligne du
    CRM vient de là, et c'est la mieux renseignée).
@@ -98,7 +101,7 @@ de rendement observé :
 | 1 | Ets Espace Médical · 655 04 95 29 | ☐ | ☐ | ☐ | ☐ |
 | 2 | ASS pour RRPHDD · 675 39 90 23 | ☐ | ☐ | ☐ | ☐ |
 | 3 | ISEE · 656 97 80 43 | ☐ | ☐ | ☐ | ☐ |
-| … | les 7 de la vague 2, puis 13 de la vague 3, puis le lot volume | ☐ | ☐ | ☐ | ☐ |
+| … | les 7 de la vague 2 **en tête**, puis les 13 du lot volume, puis les 17 | ☐ | ☐ | ☐ | ☐ |
 
 **Ce qui compte n'est pas « envoyé » mais « répondu »** — et le seul chiffre qui décide de la suite est
 `réponses < 48 h`. Aujourd'hui il vaut **0**.

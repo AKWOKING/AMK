@@ -28,7 +28,7 @@ Usage
 -----
     python3 tools/outreach/compose.py plan --volume 20
     python3 tools/outreach/compose.py batch --date 2026-10-26 --limit 20 \\
-        --out sales/ENVOI-VAGUE-3-2026-10-26.md
+        --out sales/ENVOI-VOLUME-2026-10-27.md
 """
 from __future__ import annotations
 
@@ -273,6 +273,22 @@ class Lead:
         return "\n".join(self.lignes)
 
 
+def ecarte(leads: list[Lead], verif: Path) -> tuple[list[Lead], list[Lead]]:
+    """Ce que le vérificateur a condamné ne s'écrit pas, même bien.
+
+    Deux verdicts seulement ferment la porte à l'écriture : `JAMAIS` (le numéro ne joint pas WhatsApp —
+    écrire là, c'est remplir une journée avec du vide) et `HORS-CIBLE` (le cabinet a déjà un site : lui
+    dire qu'il lui en manque un est la faute du 24/09). Les 2/3 et les 1/3 restent dans le lot : leur
+    porte A se ferme à l'envoi, en huit secondes, pas à l'écriture.
+    """
+    import json
+    v = {x["num"]: x["verdict"] for x in json.loads(verif.read_text(encoding="utf-8"))}
+    garde, ecartes = [], []
+    for l in leads:
+        (ecartes if v.get(l.numero) in ("JAMAIS", "HORS-CIBLE") else garde).append(l)
+    return garde, ecartes
+
+
 def lit_crm(chemin: Path) -> list[Lead]:
     out: list[Lead] = []
     with chemin.open(encoding="utf-8-sig", newline="") as f:
@@ -436,6 +452,11 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--angle", default="")
     ap.add_argument("--date", default="")
+    ap.add_argument("--verif", default="",
+                    help="VERIF-*.json : ne garder que les pistes à 3/3 (le droit d'écrire, pas le texte)")
+    ap.add_argument("--ecarter", default="",
+                    help="VERIF-*.json : écarter seulement les numéros morts et les cabinets déjà pourvus "
+                         "d'un site ; les 2/3 et les 1/3 restent, avec leur porte A à fermer à l'envoi")
     ap.add_argument("--deja", nargs="*", default=[],
                     help="lots déjà écrits : leurs numéros sortent du calcul")
     a = ap.parse_args()
@@ -445,6 +466,19 @@ def main() -> int:
         raise SystemExit("réservoir refusé :\n  " + "\n  ".join(fautes))
 
     leads = lit_crm(Path(a.crm))
+    if a.verif:
+        import json
+        v = json.loads(Path(a.verif).read_text(encoding="utf-8"))
+        permis = {x["num"] for x in v if x.get("verdict") == "ENVOYER"}
+        avant = len(leads)
+        leads = [l for l in leads if l.numero in permis]
+        print(f"Filtre `--verif` : {len(leads)} ligne(s) sur {avant} ont les trois portes (§8b).")
+    if a.ecarter:
+        avant = len(leads)
+        leads, ecartes = ecarte(leads, Path(a.ecarter))
+        print(f"Filtre `--ecarter` : {len(ecartes)} ligne(s) sur {avant} écartée(s) — numéro mort "
+              f"ou site déjà en ligne : " + ", ".join(l.nom for l in ecartes[:6])
+              + ("…" if len(ecartes) > 6 else ""))
     if a.angle:
         leads = [l for l in leads if l.angle == a.angle]
     if a.deja:

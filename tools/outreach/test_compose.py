@@ -121,6 +121,36 @@ def _():
     return "1 doublon nommé"
 
 
+@cas("le filtre `--ecarter` écarte le mort et le hors-cible, jamais le 2/3")
+def _():
+    import json, tempfile
+    leads = [compose.Lead(slug=f"l{i}", nom=f"Cabinet {i}", quartier="Douala", numero=n,
+                          profil="", ville="Douala") for i, n in
+             enumerate(["699000001", "699000002", "699000003", "699000004"])]
+    verif = {"699000001": "JAMAIS", "699000002": "HORS-CIBLE", "699000003": "KING-TRANCHE"}
+    tmp = Path(tempfile.mkdtemp()) / "v.json"
+    tmp.write_text(json.dumps([{"num": n, "verdict": v} for n, v in verif.items()]), encoding="utf-8")
+    garde, ecartes = compose.ecarte(leads, tmp)
+    assert [l.numero for l in ecartes] == ["699000001", "699000002"], ecartes
+    assert [l.numero for l in garde] == ["699000003", "699000004"], garde
+    return "2 écartés, 2 gardés (le 2/3 et le numéro absent du vérificateur)"
+
+
+@cas("sur le vrai vérificateur, le filtre écarte seize lignes et n'en perd aucun 3/3")
+def _():
+    import json
+    verif = compose.RACINE / "leads/VERIF-2026-10-27.json"
+    js = json.loads(verif.read_text(encoding="utf-8"))
+    leads = [compose.Lead(slug=x["slug"], nom=x.get("nom", ""), quartier="Douala", numero=x["num"],
+                          profil="", ville="Douala")
+             for x in js if x.get("verdict") in ("JAMAIS", "HORS-CIBLE")]
+    tres = [x for x in js if x.get("verdict") == "ENVOYER"]
+    garde, ecartes = compose.ecarte(leads, verif)
+    assert len(ecartes) == len(leads) and not garde, (len(ecartes), len(garde))
+    assert len(tres) == 7, len(tres)          # les sept 3/3 ne sont pas dans le filtre
+    return f"{len(ecartes)} lignes condamnées, 7 ENVOYER hors filtre"
+
+
 # ── le lot réel ───────────────────────────────────────────────────────────────────────────────
 
 @cas("sur le vrai CRM, seize messages se composent et passent la porte sans un mot répété")
@@ -128,7 +158,7 @@ def _():
     leads = compose.lit_crm(CRM)
     deja = set()
     for nom in ("sales/ENVOI-VAGUE-2-2026-10-26.md", "sales/ENVOI-VOLUME-2026-10-27.md",
-                "sales/ENVOI-VAGUE-3-2026-10-26.md"):
+                "sales/retires/ENVOI-VAGUE-3-2026-10-26.md"):
         p = compose.RACINE / nom
         if p.exists():
             deja |= {compose.numero(m.phone) for m in compose.parse(p)}
@@ -137,9 +167,9 @@ def _():
     return f"{len(libres)} ligne(s) encore libres sur {len(leads)} composables"
 
 
-@cas("le lot livré du 26/10 passe la porte, lot entier compris")
+@cas("le lot retiré du 26/10 reste lisible et propre — retiré pour ses cibles, pas pour son texte")
 def _():
-    p = compose.RACINE / "sales/ENVOI-VAGUE-3-2026-10-26.md"
+    p = compose.RACINE / "sales/retires/ENVOI-VAGUE-3-2026-10-26.md"
     msgs = compose.parse(p)
     assert len(msgs) == 16, len(msgs)
     for m in msgs:
