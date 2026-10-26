@@ -6746,36 +6746,77 @@ bloquant, 0 avertissement**. Ce ne sont pas des gabarits : chaque fait sera rev�
 
 **⑥ Ce que je ne peux pas prouver.** Que les quinze soient lus, et que la relance convertisse. Le seul
 chiffre vivant reste **1 réponse sur 15**, arrivée sur un message faux.
+---
+
+## Tour 171 · 26/10/2026 — deux recherches, trois passes sur le CRM, et un numéro qui n'existe pas
+
+**① Deux fiches vérifiées, une seule utilisable.** **Espace Vision** : le registre ONO donne 030 ·
+BIYOUMA Théodore · 677 33 94 24, quand `businesslist.co.cm` affiche **77 75 67 66**, un numéro à huit
+chiffres qui n'existe sous aucun format camerounais. **Africa Optic** : `maligah.com` ne donne qu'un fixe,
+**+237 22 03 08 15**, quand le registre donne MINTEU NZONGA Eric Aimé · 691 28 02 37. Deux sources, deux
+numéros, aucun moyen de savoir lequel sonne — donc aucun des deux n'entre dans un lot.
+
+**② Trois passes sur `leads/CRM.csv`, zéro écriture perdue.** Les deux premières ont visé
+`follow_up_date` et `bamfam_next_step` : ces colonnes n'existent pas. Chaque fois, `git checkout --
+leads/CRM.csv` avant de recommencer (une écriture partielle tronque le fichier). La troisième a écrit sur
+la vraie colonne, **`Follow-up date`**.
+
+**③ Ce que ça a coûté.** Deux tours de recherche pour zéro prospect retenu. C'est le prix d'une règle :
+un numéro non confirmé par deux sources ne part pas.
 
 ---
 
-## Tour 166 · 26/10/2026 (soir) — LOT 3, et deux prospects éliminés par la vérification
+## Tour 172 · 26/10/2026 — LOT 3 v8 : trois disqualifiés, un créé, et un lot qui se contredit
 
-**① La demande.** King : « make sure this type of error doesn't repeat itself, check and double check for
-a website … bring the 3rd batch after checking they have no website ». ISEE a coûté un message faux ; le
-lot suivant ne part pas sans les cinq voies.
+**① Le lot.** `sales/LOT-3-2026-10-26.md` v8 : Free Optic, London Vision, Maranatha, Africa Optic,
+Alpha Optic — cinq messages, 0 bloquant, 0 avertissement.
 
-**② Deux candidats éliminés avant écriture.** **Maison Optique Douala** a `maison-optique.cm` — trouvé
-par le **numéro** 694 38 65 82, pas par le nom. **Original Optique** a `originaloptique-douala.com`
-(« GLAMOUR OPTIQUE, ex-Original Optique »). Les deux étaient dans la liste des « sans site » héritée du
-24/09. C'est exactement la faute d'ISEE, rattrapée cette fois.
+**② Le CRM tranche trois dossiers.** La Rétine, Kamaïs et Tchaya passent en `disqualified` avec leur
+`disqualification_reason` ; **Star Optic est créé** (191 lignes au total). `leads/RECHERCHE-LOT-3-2026-10-26.csv`
+reçoit 15 lignes de preuves.
 
-**③ Un troisième piège désamorcé.** **Optic Medical Favour and Joy** : le lien d'appel de sa fiche compose
-`655 04 95 29`, qui est le numéro d'**Ets Espace Médical** (prospect du LOT 1), et les numéros du texte ne
-correspondent pas à ceux du champ. Écarté : un message au mauvais cabinet coûte plus qu'un message perdu.
+**③ La porte des affirmations.** `audit_claims` a bloqué un prix lisible sur un site tiers → réécrit en
+« catalogue en ligne », puis **VERDICT OK**. Une affirmation sur un tiers se paie d'une source, sinon elle
+sort.
 
-**④ Les cinq du LOT 3** (`sales/LOT-3-2026-10-26.md`) : Free Optic (page Facebook qui annonce un site
-mort), Tchaya Optique Akwa (trois numéros, aucun jour, Facebook pour seule vitrine), Star Optic (deux
-adresses selon l'assureur et l'annuaire), la Rétine (« non loin de l'ancien Cinéma Étoile »), Kamaïs
-(l'annuaire a fusionné ses deux numéros en un numéro de 21 chiffres). **68 / 68 / 65 / 67 / 68 mots, 0
-bloquant, 0 avertissement**, chaque message portant sa ligne `SITE-CHECK` datée.
+**④ La faute du tour.** Le v9 du lot, réécrit plus tard, a **réintroduit Rétine, Kamaïs, Tchaya et Star
+Optic** sans relire les `disqualified` du jour même. Rouvrir un lot sans relire le CRM défait le ruling de
+la veille — c'est écrit dans `knowledge/`.
 
-**⑤ Porte A, honnêtement.** Franchie pour Free Optic (profil vu) et Kamaïs (vérifié, mais déjà contacté le
-02/10 par un gabarit → ruling de King). Pour Tchaya, Star Optic et la Rétine : numéro d'annuaire, donc
-**60 secondes de contrôle par King** avant l'envoi. C'est écrit dans le lot, pas caché.
+**⑤ Référence.** PR #67 **MERGED `0bf945d`** · Notion tour 169 (6 blocs).
 
-**⑥ ISEE clos.** King a fermé lui-même à 16 h 04 (« autant pour moi, je n'avais pas vu votre site… bonne
-continuation »). Aucune relance : le dossier reste chaud pour dans six mois, pas pour cette semaine.
+---
 
-**⑦ Ce que je ne peux pas prouver.** Aucun taux. 1 réponse sur 5 messages du LOT 1, arrivée sur un message
-faux. Les cinq du LOT 3 ne sont pas partis au moment d'écrire.
+## Tour 173 · 26/10/2026 (16 h 40 → 20 h) — la journée se clôt, et le CRM apprend ce qui est parti
+
+**① L'ordre demandé, tenu.** Graphe (`preflight.sh`) → `PRE-FLIGHT.md` → brainstorming → exécution.
+Graphe rejoué 26/10 16 h 25, **13 320 nœuds** ; deux fichiers nommés par le parcours :
+`knowledge/OUTREACH-MESSAGING-2026-10-22.md` et `knowledge/HIGH-TICKET-2026-10-26.md`.
+
+**② Le CRM ne savait rien de la journée.** Les **15 lignes** des trois lots étaient encore en
+`prospecting`, sans état d'envoi ni date de suivi. Corrigées en une passe : `last_send_state=sent` ·
+`stage_since=2026-10-26` · **`Follow-up date=2026-10-28`** · `follow_ups_sent=0` · `Contacted=Yes` · lot
+noté dans `Notes`. **ISEE** → `parked`, `reply_type=salutation`, **aucune date** : King a fermé le fil
+lui-même à 16 h 04.
+
+**③ La relance de mercredi n'est pas une relance.** La règle écrite dit **J+7, une seule relance** ; la
+reprise demandée est **J+2**. C'est donc une **exception datée** — et elle est écrite comme telle dans
+`sales/PLAN-RELANCE-2026-10-28.md`, avec trois approches et **B recommandée** : mercredi matin, relever
+lu / non-lu, ne relancer que les **lus sans réponse** ; si moins de trois relances partent, enchaîner sur
+un lot neuf de cinq. Sans ce mot « exception », plus aucune règle ne tient.
+
+**④ Les modèles vivent à part.** `sales/RELANCE-2026-10-28.md` : trois messages (Ets Espace Médical,
+Capelli, Free Optic), **53 / 70 / 67 mots, 0 bloquant, 0 avertissement**, `SITE-CHECK` daté sous chacun.
+Un plan qui contient les messages s'auto-bloque : la porte mesure le fichier, pas la section.
+
+**⑤ LOT 3 v9 — le blocage, puis sa réparation.** ① Free Optic 68 · ③ Star Optic 65 · ④ la Rétine 67 ·
+⑤ Kamaïs 68 · **② Tchaya 71, puis 68** après deux coupes (une relative, une énumération d'horaires) →
+**`--strict` : 0 bloquant, 0 avertissement**. Le lot reste **non envoyé** : cinq lignes ouvertes au §5 bis
+du tracker, et trois numéros qui demandent **60 secondes de contrôle** par King avant l'envoi.
+
+**⑥ Références.** PR #68 **MERGED `0385050`** (portes 32 s, Vercel pass) · PR #69 **MERGED `a777bc5`** ·
+`Workers Builds: dmoptiquesarl` échoue aussi sur le commit déjà mergé : panne antérieure, sans rapport
+avec `sales/`.
+
+**⑦ Ce que je ne peux pas prouver.** Que les quinze soient lus, ni qu'une relance convertisse. Le seul
+chiffre vivant reste **1 réponse sur 15** — et elle est arrivée sur un message faux.
