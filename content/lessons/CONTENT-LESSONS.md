@@ -611,3 +611,30 @@ montant exige une preuve que nous n'avons pas : **un client, zéro résultat mes
 écrit** : aucun palier de site au-delà de 450 000 FCFA avant un résultat (`PRIX` §4 bis). Une source qui
 donne des **prix** ne donne pas une **preuve** — et c'est la seule différence qui compte entre un cadre et
 une promesse.
+
+## 25 · 26/10/2026 (11 h) — « adapté à chaque plateforme » ne veut pas dire « refait trois fois »
+
+**La question de King, une heure avant la publication** : des légendes séparées pour TikTok et Instagram,
+« ou est-ce qu'on devrait retoucher les vidéos pour chaque plateforme ? ». La réponse est dans le dépôt
+depuis le 23/10 et elle n'a pas été lue : **un tournage, deux montages** — TikTok 12–16 s, Facebook 16–22 s.
+Ce n'est donc pas la matière qui change, c'est le montage.
+
+**Ce que la mesure a dit, frame par frame, avant de décider.** Le texte utile de la v6 vit entre **12 % et
+53 %** de la hauteur, le bas de l'image ne porte que la mascotte et la barre de progression, la droite est
+libre à 19–46 % : le master est **utilisable tel quel** sur TikTok et Instagram malgré leurs interfaces.
+Le seul écart réel est la **durée** (23,7 s contre 12–16 s), et il se paie en rétention, pas en lisibilité.
+
+**Ce que ça change dans la façon de décider.** Une règle écrite il y a trois jours peut être enfreinte
+**une fois**, à condition de dire pourquoi : ici, l'heure. Mais l'exception ne s'écrit pas comme un oubli —
+elle s'écrit comme une **dette datée** (« la coupe 16 s est pour EP02, décidée avant d'écrire le script »),
+sinon la règle du 23/10 est morte sans que personne l'ait décidé.
+
+**Ce qui a été refusé, et qui compte autant.** Une version anglaise pour Instagram : le dépôt a déjà tranché
+— **FR à l'écran, EN en légende** (`brand/AMK-PRESENCE` §2, correction 5). Doubler la voix, c'est doubler la
+relecture de King pour un compte à **6 abonnés**. Le jour où l'anglophone devient une cible mesurée, on
+rouvre ; pas avant.
+
+**La leçon de méthode, la même tous les jours.** Trois règles écrites n'étaient vérifiées par rien : le
+nombre et la nature des hashtags, les sous-titres manuels, la langue de la légende Instagram. Elles ont
+maintenant une porte (`tools/qa/audit_platform.py`, **16/16**), et elle **avertit** au lieu de refuser quand
+le master dépasse 16 s — une pièce longue a le droit de sortir, encore faut-il le savoir en la publiant.
