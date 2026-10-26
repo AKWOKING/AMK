@@ -2,17 +2,17 @@
 
 ```text
 Généré par tools/graphify/build_full_graph.py — 2026-10-26
-Source : graphify-out/graph.json (13591 nœuds, 17657 arêtes)
+Source : graphify-out/graph.json (13595 nœuds, 17681 arêtes)
 Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même
 carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.
 ```
 
 ## 0 · En une page
 
-- **13591 nœuds** — dont 844 documents, 203 scripts, 31 modules, 140 pages HTML, 474 images, 8 vidéos, 40 audios, 43 fichiers de données, 11 PDF.
-- **3697 citations entre documents** (3021 en chemin exact, 676 par nom unique)
+- **13595 nœuds** — dont 844 documents, 203 scripts, 31 modules, 140 pages HTML, 474 images, 8 vidéos, 40 audios, 43 fichiers de données, 11 PDF.
+- **3704 citations entre documents** (3025 en chemin exact, 679 par nom unique)
 - **157 arêtes de remplacement** · **3 documents marqués périmés**
-- **427 documents que personne ne cite** (atteignables par aucun chemin de lecture)
+- **426 documents que personne ne cite** (atteignables par aucun chemin de lecture)
 - **Couverture : 1869 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
 
 ### Les dossiers du dépôt, par poids — et ce que chacun porte
@@ -111,13 +111,13 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 ## 3 bis · Ce que personne ne cite — à relire ou à archiver
 
-427 documents n'ont aucune citation entrante. Un orphelin n'est pas inutile : il est **inatteignable**. Soit il faut le citer là où il sert, soit il faut l'archiver.
+426 documents n'ont aucune citation entrante. Un orphelin n'est pas inutile : il est **inatteignable**. Soit il faut le citer là où il sert, soit il faut l'archiver.
 
-- **121 à traiter** · 164 dans `design/vendor/` (imports tiers, normal) · 142 dans `leads/records/` (reliés par le CRM, pas par citation)
+- **120 à traiter** · 164 dans `design/vendor/` (imports tiers, normal) · 142 dans `leads/records/` (reliés par le CRM, pas par citation)
 
 - **`tools/`** — 49 : `tools/claude-seo/README.md`, `tools/content/README.md`, `tools/docs/README.md`, `tools/geo-seo-claude/README.md`, `tools/humanizer/README.md`, `tools/marketingskills/README.md` … (+43)
-- **`clients/`** — 20 : `clients/dm-optic/brag/MEDIA.md`, `clients/dm-optic/brag/brag-plan.md`, `clients/dm-optic/content/month1/c1-render/README.md`, `clients/dm-optic/content/month1/w2/etapes-01-validation-client.md`, `clients/dm-optic/content/month1/w2/etapes-01.md`, `clients/dm-optic/content/month1/w2/facebook-post-enfants.md` … (+14)
 - **`content/`** — 20 : `content/Avatar/_composites/busts-694/MEDIA.md`, `content/README.md`, `content/assets/ASSETS.md`, `content/assets/fonts/MEDIA.md`, `content/pipeline/post01/SENTENCE-TIMING-v5d.md`, `content/pipeline/post01/layers/MEDIA.md` … (+14)
+- **`clients/`** — 19 : `clients/dm-optic/brag/MEDIA.md`, `clients/dm-optic/brag/brag-plan.md`, `clients/dm-optic/content/month1/c1-render/README.md`, `clients/dm-optic/content/month1/w2/etapes-01-validation-client.md`, `clients/dm-optic/content/month1/w2/etapes-01.md`, `clients/dm-optic/content/month1/w2/facebook-post-enfants.md` … (+13)
 - **`ops/`** — 11 : `ops/BRAINSTORM-INDEXATION-DMOPTIC-2026-10-26.md`, `ops/BRAINSTORM-LOT-1-V2-2026-10-26.md`, `ops/BRAINSTORM-LOT-2026-10-27.md`, `ops/CHANGELOG-VENDREDI.md`, `ops/CHECKPOINT-MARDI-06-10-20H.md`, `ops/HANDOFF-2026-10-26.md` … (+5)
 - **`hosting/`** — 6 : `hosting/previews/dmoptic/montures/MEDIA.md`, `hosting/previews/dr-ophtalmo/README.md`, `hosting/previews/dr-ophtalmo/assets/src/MEDIA.md`, `hosting/samples/DEPLOY.md`, `hosting/samples/design-research.md`, `hosting/samples/img/MEDIA.md`
 - **`sales/`** — 4 : `sales/AMK-Client-Kickoff-Kit.docx`, `sales/Send-UNIVERS-OPTIQUE-2026-09-21-Soir.md`, `sales/Suivi-CAVISA-2026-10-05.md`, `sales/VAGUE-2026-10-12/VERIFIED-LIST.md`
@@ -130,11 +130,11 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 ## 4 · Les communautés du dépôt — les sujets, tels que les documents se relient
 
-9 communautés détectées sur le réseau des citations (propagation d'étiquettes, sans aléa). Chaque bloc est un sujet réel : les documents qui s'y trouvent se citent entre eux.
+10 communautés détectées sur le réseau des citations (propagation d'étiquettes, sans aléa). Chaque bloc est un sujet réel : les documents qui s'y trouvent se citent entre eux.
 
 *Le pivot d'une communauté est le document que **les autres membres du groupe** citent le plus (degré interne) — pas le document le plus cité du dépôt, qui l'est partout.*
 
-**593 documents sur 844 sont dans un sujet.** Les 214 autres ne touchent aucune citation — ni entrante, ni sortante : ce sont eux qui se perdent (voir §3 bis). Un sujet se nomme par ses pivots ; un document hors sujet ne se retrouve pas tout seul.
+**595 documents sur 844 sont dans un sujet.** Les 214 autres ne touchent aucune citation — ni entrante, ni sortante : ce sont eux qui se perdent (voir §3 bis). Un sujet se nomme par ses pivots ; un document hors sujet ne se retrouve pas tout seul.
 
 | # | Docs | Les 3 pivots internes | Ce que le groupe a en propre |
 |---|---|---|---|
@@ -146,7 +146,8 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | 5 | 3 | `builder-check-prompt.md` · `visual-companion.md` | `tools/` (100 % du groupe) |
 | 6 | 3 | `implementer-prompt.md` · `task-reviewer-prompt.md` | `tools/` (100 % du groupe) |
 | 7 | 2 | `etapes-01-PUBLICATION.md` | `clients/` (100 % du groupe) |
-| 8 | 2 | `DESIGN.md` | `design/` (100 % du groupe) |
+| 8 | 2 | `RUNBOOK-403-2026-10-26.md` | `clients/` (100 % du groupe) |
+| 9 | 2 | `DESIGN.md` | `design/` (100 % du groupe) |
 
 ### Communauté 0 — 550 documents
 
@@ -201,6 +202,10 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 ### Communauté 8 — 2 documents
 
+- `clients/dm-optic/seo/RUNBOOK-403-2026-10-26.md` — cité 1× dans le groupe, 1× au total
+
+### Communauté 9 — 2 documents
+
 - `design/vendor/taste/skills/stitch-skill/DESIGN.md` — cité 1× dans le groupe, 1× au total
 
 ## 5 · Le reste du dépôt, par nature
@@ -223,7 +228,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | sous-titre | 3 | `clients/dm-optic/content/month1/w1/tiktok-01-v2.fr.srt`, `clients/dm-optic/content/month1/w1/tiktok-01.fr.srt`, `clients/dm-optic/content/month1/w2/etapes-01.srt` |
 | archive | 1 | `dmopticsarl-2026-10-21.zip` |
 | style | 1 | `hosting/previews/dr-ophtalmo/css/styles.css` |
-| symboles extraits (titres de documents + fonctions/classes du code) | 11722 | — |
+| symboles extraits (titres de documents + fonctions/classes du code) | 11726 | — |
 
 ### Les outils et skills installés — 1 dossier = 1 outil
 
