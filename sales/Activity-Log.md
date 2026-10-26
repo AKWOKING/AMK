@@ -6849,3 +6849,31 @@ mesure de réponse : c'est une hypothèse, écrite comme telle.
 
 **⑥ Références.** PR #69 **MERGED `a777bc5`** · PR #70 **MERGED `6230318`** · PR #71 **MERGED** ·
 `Workers Builds: dmoptiquesarl` échoue aussi sur le commit déjà mergé (panne antérieure, sans rapport).
+
+---
+
+## Tour 175 · 26/10/2026 (21 h 30) — les quinze sont partis, le CRM le dit déjà, et une ligne ne devait pas l'être
+
+**① La question.** King : « all messages including that of capelli have been sent, now we wait for replies,
+I hope you have updated the CRM ». Vérifié ligne par ligne, pas de mémoire : **14 lignes** avec
+`last_send_state=sent` · `stage_since=2026-10-26` · `Follow-up date=2026-10-28` · `follow_ups_sent=0` ·
+`Contacted=Yes`, plus **ISEE** `parked` sans date. **15 messages, 15 lignes.** Capelli y est, avec sa date
+de relance.
+
+**② Ce qui n'allait pas, et qui est corrigé.** **Star Optic** traînait à l'état vide avec une note de
+disqualification : `not_sent`, `Contacted=No`, aucune date, motif daté (654 04 68 45 absent de WhatsApp).
+Une ligne vide dans un CRM se lit plus tard comme un dossier jamais travaillé.
+
+**③ La vraie faute du tour précédent, réparée.** Le §5 bis du tracker présentait les cinq du **v9** comme
+« le LOT 3, non envoyé » — alors que le LOT 3 parti est le **v8** (Free Optic, London Vision, Maranatha,
+Africa Optic, Alpha Optic). Le §5 bis dit maintenant pourquoi le v9 ne partira jamais : Free Optic déjà
+écrit, Tchaya / la Rétine / Kamaïs `disqualified`, Star Optic hors WhatsApp. Le v9 porte un bandeau
+« non envoyé » dans son propre fichier.
+
+**④ L'essai « aperçu déjà fait » n'a pas eu lieu.** ① Capelli est parti avec « un mot et je l'envoie ? »,
+sans aperçu construit. C'est écrit dans `sales/LOT-2-2026-10-27.md` §8 bis : la comparaison n'a pas une
+seule ligne de données, et le test reste disponible pour le prochain lot.
+
+**⑤ Ce qui reste ouvert.** 14 relances au 28/10 (`sales/PLAN-RELANCE-2026-10-28.md`), **1 réponse sur 15**
+(ISEE, sur un message faux), zéro conversation engagée. Les heures d'envoi du jour ne sont pas notées —
+King ne les a pas données, et une heure inventée vaut moins qu'une heure absente.
