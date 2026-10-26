@@ -167,6 +167,64 @@ def dedoublonne(nouvelles: list[Ligne], crm: Path) -> tuple[list[Ligne], list[st
     return garde, refus
 
 
+# ── extraire d'une page collée ──────────────────────────────────────────────────────────────────
+#
+# Le geste réel de King n'est pas de remplir un tableau : c'est de copier une page d'annuaire ou de
+# page Facebook et de la coller quelque part. Ce bloc transforme ce collage en lignes de transit.
+
+TEL_DANS_TEXTE = re.compile(r"(?:\+?237[\s.\-]*|00237[\s.\-]*)?6(?:[\s.\-]?\d){8}")
+BRUIT = re.compile(r"^\W*(?:\d|voir|plus|whatsapp|watsapp|appel|contact|tel\b|tél|téléphone|"
+                   r"telephone|mobile|fixe|ouvert|ferm|avis|note|page|envoy|message|site|e-?mail|"
+                   r"mail|horaire|adresse|quartier|ville|bp\b|www|http)", re.I)
+
+
+def _ligne_nom(avant: str) -> str:
+    """Le nom du cabinet : la dernière ligne de texte qui ressemble à un nom, pas à un bouton du site.
+
+    Les pages copiées sont pleines de « WhatsApp : », « Contactez-nous au », « Avis 4,6 ». Ces lignes
+    sont juste au-dessus du numéro et c'est elles qu'un extracteur naïf ramasse. On remonte jusqu'à la
+    première ligne qui a l'air d'une enseigne.
+    """
+    candidates: list[str] = []
+    for brut in reversed(avant.splitlines()[-7:]):
+        l = re.sub(r"\s{2,}", " ", brut.strip(" \t·•-–|—>"))
+        l = re.sub(r"\s*[:|]\s*$", "", l)
+        if not (3 <= len(l) <= 70):
+            continue
+        if len(re.sub(r"\D", "", l)) >= 6:            # un autre numéro sur la ligne
+            continue
+        if BRUIT.match(l):                             # « WhatsApp : », « Contactez-nous au »…
+            continue
+        if re.match(r"^[a-zà-ÿ]", l):                  # une phrase, pas une enseigne
+            continue
+        if not re.search(r"[A-Za-zÀ-ÿ]{3}", l):
+            continue
+        candidates.append(l)
+
+    # Une enseigne a au moins deux mots commençant par une majuscule et pas de virgule ; une
+    # description (« Cabinet dentaire, ouvert du lundi au samedi ») n'en a pas. On préfère la première.
+    for l in candidates:
+        if "," not in l and len(re.findall(r"(?:^|\s)[A-ZÀ-Ý][\w&'’.\-]{1,}", l)) >= 2:
+            return l
+    return candidates[0] if candidates else ""
+
+
+def extrait(texte: str, source: str, vu_le: str) -> list[Ligne]:
+    """Tout numéro camerounais collé, avec le nom le plus proche au-dessus. Rien d'inventé."""
+    out: list[Ligne] = []
+    vus: set[str] = set()
+    for m in TEL_DANS_TEXTE.finditer(texte):
+        num = numero(m.group(0))
+        if not num or num in vus:
+            continue
+        vus.add(num)
+        nom = _ligne_nom(texte[:m.start()])
+        q = re.search(r"\(([^)]{2,30})\)", nom)
+        out.append(Ligne(nom=nom or f"(sans nom) {joli(num)}", ville=q.group(1) if q else "",
+                         num=num, source=source, detail=m.group(0).strip(), vu_le=vu_le))
+    return out
+
+
 def ecrit_transit(lignes: list[Ligne], out: Path) -> None:
     out.parent.mkdir(parents=True, exist_ok=True)
     with out.open("w", encoding="utf-8", newline="") as f:
@@ -288,7 +346,30 @@ def main() -> int:
                    help="profils ouverts par jour (chacun transforme une 2/3 en 3/3)")
     p.add_argument("--crm", default=str(RACINE / "leads/CRM.csv"))
 
+    e = sub.add_parser("extract", help="coller une page entière et en sortir les numéros")
+    e.add_argument("--in", dest="entree", default="", help="fichier ; sinon l'entrée standard")
+    e.add_argument("--out", default="")
+    e.add_argument("--source", default="annuaire")
+    e.add_argument("--vu", default=date.today().isoformat())
+    e.add_argument("--crm", default=str(RACINE / "leads/CRM.csv"))
+
     a = ap.parse_args()
+    if a.action == "extract":
+        texte = Path(a.entree).read_text(encoding="utf-8-sig") if a.entree else sys.stdin.read()
+        if not texte.strip():
+            raise SystemExit("rien à lire : colle la page (ou --in fichier)")
+        trouvees = extrait(texte, a.source, a.vu)
+        garde, refus = dedoublonne(trouvees, Path(a.crm))
+        out = Path(a.out) if a.out else RACINE / f"leads/STAGING-{a.vu}.csv"
+        if garde:
+            ecrit_transit(garde, out)
+        print(f"{len(trouvees)} numéro(s) trouvé(s) · {len(garde)} nouveau(x) → {out}")
+        for l in garde:
+            print(f"  + {l.nom} — {joli(l.num)}")
+        for motif in refus:
+            print(f"  ✗ {motif}")
+        return 0 if garde else 1
+
     if a.action == "ingest":
         lignes, refus = lit_liste(Path(a.entree), a.source, a.vu)
         garde, doubl = dedoublonne(lignes, Path(a.crm))

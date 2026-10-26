@@ -6219,3 +6219,17 @@ recomptage : **28 testés · 22 joignables · 6 morts**.
 **⑥ Ce que la recherche change, et ce qu'elle ne change pas.** Palier 2 (nom + quartier + métier) : 4,4 % de réponses ; palier 3 (une ligne recherchée) : 7,8 % ; palier 4 (déclencheur) : 11,2 %. À 20/jour au palier 2 ≈ 0,9 réponse/jour ; à 7/jour au palier 3 ≈ 0,8. **Le volume gagne de peu, et seulement si on ne descend pas au palier 1.** Donc le prochain effort de qualité ne va pas dans plus de phrases : il va dans une ligne de fait par prospect — c'est-à-dire dans les profils que King ouvre.
 
 **⑦ Ce qui n'est pas fait.** Aucun message envoyé, aucun numéro ouvert, aucune ligne sourcée : le réseau de cet environnement s'arrête à GitHub, npm et PyPI. Le stock tient deux jours et demi, et la seule voie vers 40/jour est un annuaire que King seul peut ouvrir.
+
+## 26/10/2026 (16 h 10, tour 155 bis) — « quels annuaires, concrètement ? » : la réponse en quatre sources et vingt minutes
+
+**① La question de King, et sa réponse.** Il demande *où* et *quoi faire*. Le dépôt avait déjà la réponse depuis le 18/09 : **canal d'abord, jamais annuaire d'abord**. OraCare237 (trouvé par sa pub Facebook) et MITOC (Facebook seulement) ont répondu ; COMOBIL, Summerset, SBHS, NABESK — tous venus d'annuaires — étaient injoignables.
+
+**② Quatre sources, classées par preuve d'activité** : **DoualaTour** (seul annuaire du dépôt avec compteur de clics WhatsApp par fiche) · **pages Facebook** (bouton WhatsApp = le numéro dans l'URL) · **registre ONOC** (28 % de réponses, mais Douala épuisé) · **goafricaonline / africannuaire** (labos, beaucoup de fixes → dernier). Écartés : Google Maps, listes achetées, repli téléphone.
+
+**③ Le vivier du *Remote Sweep #1* est épuisé — vérifié.** Sur ses douze noms : **huit déjà contactés** (CAMERA, J&E, LE NID, La Béthanie, The Skye, YAKS, Afrique Labo, L'Opticien Bali), **trois sans numéro** (Wonders, Clinique des Anges, JOSS MEDI), un seul libre. Le prochain tour ne doit pas refaire ce travail.
+
+**④ `supply.py extract` — le geste réel devient une commande.** Coller une page d'annuaire ou de page Facebook suffit : il sort les mobiles camerounais, prend l'enseigne la plus haute qui ressemble à un nom (pas « WhatsApp : », pas « Avis 4,6 »), écarte les fixes, les doublons internes et ce que le CRM connaît déjà, et écrit un fichier de transit. Banc `test_supply.py` porté à **16/16**.
+
+**⑤ La doc d'exécution** : `sales/SOURCING-2026-10-27.md` — pourquoi (le calcul : 20/jour = 140/semaine, nous en avons 52 dont 7 prouvées), les quatre sources et leur piège, six étapes clic par clic, ce qu'on écarte, et ce que ça change (le plan 20 · 22 · 11 · **0** redevient 20 sur quatre jours).
+
+**⑥ Ce qui reste à King** : ouvrir les quatre sources (cet environnement n'a de réseau que vers GitHub, npm et PyPI), et les huit secondes de vérification WhatsApp par numéro. Rien de tout cela ne s'automatise d'ici.

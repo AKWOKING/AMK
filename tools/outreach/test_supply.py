@@ -10,6 +10,7 @@ promettre plus de messages qu'il n'y a de lignes.
 from __future__ import annotations
 
 import csv
+import re
 import sys
 import tempfile
 from datetime import date
@@ -125,6 +126,56 @@ def _():
     assert list(r[0].keys()) == supply.ENTETES
     assert r[0]["Phone"] == "699 12 12 12" and r[0]["slug"] == "optique-gamma-1212"
     return "colonnes CRM, slug stable"
+
+
+# ── extraire d'une page collée ────────────────────────────────────────────────────────────────
+
+PAGE = """Clinique Dentaire Le Sourire (Bonamoussadi)
+Cabinet dentaire, ouvert du lundi au samedi
+WhatsApp : +237 699 12 34 56
+Appeler : 233 42 11 22
+
+OPTIQUE VISION PLUS (Akwa)
+Lunetterie et examens de vue
+Contactez-nous au 00237 677 88 99 00
+Avis 4,6 (38 avis)
+"""
+
+
+@cas("une page collée rend ses mobiles, avec l'enseigne au-dessus et pas le bouton du site")
+def _():
+    lignes = supply.extrait(PAGE, "facebook", "2026-10-27")
+    noms = [(l.nom, l.num) for l in lignes]
+    assert noms == [("Clinique Dentaire Le Sourire (Bonamoussadi)", "699123456"),
+                    ("OPTIQUE VISION PLUS (Akwa)", "677889900")], noms
+    assert lignes[0].ville == "Bonamoussadi", lignes[0].ville
+    return "2 mobiles, 2 enseignes, 1 fixe ignoré"
+
+
+@cas("« WhatsApp : », « Contactez-nous au », « Avis » ne sont jamais pris pour un nom")
+def _():
+    for l in supply.extrait(PAGE, "facebook", "2026-10-27"):
+        assert not re.match(r"(?i)^(whatsapp|contactez|appeler|avis)", l.nom), l.nom
+    return "3 pièges évités"
+
+
+@cas("un fixe (233 …) n'est pas un mobile : il n'entre pas")
+def _():
+    nums = [l.num for l in supply.extrait(PAGE, "facebook", "2026-10-27")]
+    assert "233421122" not in nums
+    return "fixe écarté"
+
+
+@cas("un même numéro collé deux fois n'entre qu'une fois")
+def _():
+    assert len(supply.extrait("Optique A 699 11 22 33\nOptique B 699 11 22 33", "x", "2026-10-27")) == 1
+    return "1 seule ligne"
+
+
+@cas("une page sans numéro mobile ne produit rien, et le dit")
+def _():
+    assert supply.extrait("Belle page sans contact\nAucun numéro ici.", "x", "2026-10-27") == []
+    return "0 ligne"
 
 
 # ── le plan ───────────────────────────────────────────────────────────────────────────────────

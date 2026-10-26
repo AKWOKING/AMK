@@ -76,8 +76,9 @@ ouvre un lot de 81.
 | Cliniques, labos, écoles | ~36 | verticales mesurées à **0/15** de réponses : à ne rouvrir qu'avec l'offre, pas avec l'angle « nom » |
 | **Total envoyable** | **78** | 1,9 jour à 40/jour — **49 déjà écrites**, donc 29 en réserve |
 
-**Ce qu'il faut** : environ **200 numéros par semaine** pour tenir 40/jour. Trois sources, dans l'ordre
-de rendement observé :
+**Ce qu'il faut** : environ **200 numéros par semaine** pour tenir 40/jour. Le mode d'emploi complet —
+quatre sources nommées, vingt minutes de gestes, ce qu'on écarte — est dans `sales/SOURCING-2026-10-27.md`.
+Trois sources, dans l'ordre de rendement observé :
 
 1. **Les annuaires de Douala** (pagespratiquescm, maligah, doualazoom) — 68 % des numéros y joignent
    WhatsApp (leçon du 19/09). **King seul peut les ouvrir** : cet environnement n'a pas de réseau vers
@@ -85,6 +86,8 @@ de rendement observé :
    `python3 tools/outreach/supply.py ingest --in ~/annuaire.csv --source annuaire --vu 2026-10-27`
    → neuf chiffres exigés, préfixes `+237`/`00237` ramenés à neuf, doublons du CRM et doublons internes
    écartés, un **fichier de transit** (`leads/STAGING-<date>.csv`), jamais le CRM directement.
+   Plus rapide encore quand la source est une page web : il la **colle** et laisse l'extracteur sortir
+   les numéros — `python3 tools/outreach/supply.py extract --in /tmp/p.txt --source facebook`.
 2. **Les pages Facebook professionnelles** — elles donnent le nom, le quartier et souvent le numéro.
 3. **Le passage** — une affiche relevée en boutique vaut trois numéros d'annuaire (une seule ligne du
    CRM vient de là, et c'est la mieux renseignée).
