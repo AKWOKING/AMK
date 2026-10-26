@@ -69,9 +69,9 @@ de fréquence réelle :
 | 4 | **Redirect Rule www → apex mal formée** | une redirection vers un hôte qui re-renvoie peut rendre 403 pour les URL profondes | Rules → Redirect Rules : la règle utilise-t-elle `concat()` et un `$1` correct ? |
 | 5 | Règle de sécurité de zone (« I'm under attack ») | toucherait **tout**, donc improbable ici | Security → Settings → Security Level |
 
-**Ce qu'il faut pour trancher, et que je n'ai pas :** la **liste des 8 URL**. Elle est dans Search
-Console, derrière un clic : *Indexing → Pages → « Blocked due to access forbidden (403) » → Exporter*.
-Sans elle, on répare à l'aveugle — et une règle WAF élargie « pour être sûr » ouvrirait le site à tout.
+> **RÉPONDU le 26/10 au soir.** La liste est arrivée : **5 URL sur `www.`, 3 sans barre finale,
+> 1 en `http://`** — ce sont 4 pages vues sous 3 variantes, pas 8 pages. Aucune règle WAF ne bloque
+> Googlebot (0 événement sur 35). Voir **§7**, qui remplace les hypothèses ci-dessus.
 
 ### 3.2 · Le Redirect error (2 pages) — deux candidates, une seule vérifiable ici
 
@@ -143,3 +143,74 @@ partagées, inchangé) · `audit_seo.py` : 97 pages, 0 problème, 48 paires href
 Google refusait (80 pages sans contenu) et répare ce qui le bloquait (16 URL demandées, 403 côté
 Cloudflare). La visibilité, elle, dépend de l'autorité du domaine — fiche Google Business Profile
 reliée au site, inscription ONOC, page Facebook du cabinet.
+
+## 7 · Les 8 URL, livrées le 26/10 — et le diagnostic qui change
+
+Les preuves brutes sont dans `clients/dm-optic/seo/preuves-2026-10-26/` :
+`gsc-403-2026-10-23.csv` (les 8 URL), `gsc-indexees-2026-10-23.csv` (les 4 URL indexées),
+`gsc-raisons-2026-10-23.csv`, `gsc-courbe-2026-10-23.csv`, et `cloudflare-events-24h.json`
+(les 35 événements de sécurité du 25/10 19 h 51 au 26/10 19 h 51 UTC).
+
+### 7.1 · Les 8 URL en 403, et ce qu'elles sont vraiment
+
+| # | URL | Dernier crawl | Famille |
+|---|---|---|---|
+| 1 | `http://dmoptiquesarl.com/` | 2026-10-20 | **schéma** : `http` au lieu de `https` |
+| 2 | `https://dmoptiquesarl.com/montures/` | 2026-10-20 | hôte canonique — la bonne URL |
+| 3 | `https://www.dmoptiquesarl.com/montures/enfants/` | 2026-10-20 | **hôte** : `www` |
+| 4 | `https://www.dmoptiquesarl.com/montures/femmes` | 2026-10-20 | **hôte + barre** finale |
+| 5 | `https://www.dmoptiquesarl.com/montures/hommes` | 2026-10-20 | **hôte + barre** finale |
+| 6 | `https://dmoptiquesarl.com/montures/femmes` | 2026-10-20 | **barre** finale |
+| 7 | `https://www.dmoptiquesarl.com/` | 2026-10-20 | **hôte** : `www` |
+| 8 | `https://www.dmoptiquesarl.com/montures/` | 2026-10-20 | **hôte** : `www` |
+
+**Ce ne sont pas 8 pages : ce sont 4 pages vues sous 3 variantes.** Cinq URL portent `www.`, trois
+n'ont pas la barre finale, une est en `http://`. Aucune n'a de problème de contenu — c'est un
+problème de **canonicalisation d'URL**, pas de page.
+
+**Et les 8 ont toutes été crawlées le 20/10** — deux jours **avant** la publication du site sur
+Cloudflare (22/10, `launch/DEPLOIEMENT-CLOUDFLARE-2026-10-22.md` §3). Google n'y est pas revenu
+depuis.
+
+### 7.2 · Ce que le site répond aujourd'hui (relevés du 26/10, un par famille)
+
+| Variante testée | Réponse observée le 26/10 | Verdict |
+|---|---|---|
+| `https://www.dmoptiquesarl.com/montures/femmes` (sans barre) | redirige vers `https://dmoptiquesarl.com/montures/femmes/` | ✅ corrigé |
+| `https://www.dmoptiquesarl.com/montures/enfants/` | redirige vers l'apex, page servie | ✅ corrigé |
+| `http://dmoptiquesarl.com/` | **sert la page en 200 sur `http://`** | ❌ **encore ouvert** |
+
+Autrement dit : **les familles « www » et « barre finale » sont réglées** (elles l'étaient déjà par la
+publication du 22/10). Il reste **une seule famille** : `http` n'est pas redirigé vers `https`, donc
+la même page existe deux fois. C'est le réglage Cloudflare **SSL/TLS → Edge Certificates → Always Use
+HTTPS**, qui est resté éteint.
+
+### 7.3 · L'hypothèse « le WAF bloque Googlebot » est éliminée
+
+Les 35 événements de sécurité des dernières 24 h, comptés depuis le JSON :
+
+| Ce que dit le fichier | Ce que ça prouve |
+|---|---|
+| **35 / 35** viennent de `firewallManaged` (règles Cloudflare) | aucune règle personnalisée, aucun rate limiting, aucun Cloudflare Access |
+| Règles déclenchées : `React - RCE - CVE:CVE-2025-55182` (29) et `Wordpress - Broken Access Control` (6) | ce sont des **scanners** qui cherchent des failles WordPress et React |
+| Chemins : `/wp-config.php` (4), `/wp-config.php.old` (2), `/` (29) | rien qui ressemble à un crawl de site |
+| ASN : Amazon 27, TECHOFF 4, TC Datacenter 2, **Google LLC 2** | les 2 « Google LLC » (ASN 396982) sont **Google Cloud**, pas Googlebot (ASN 15169) |
+| User-agents : tous des chaînes de navigateur Chrome | **aucun `Googlebot`** dans les 35 événements |
+
+**Conclusion : le pare-feu fait son travail et ne touche pas Googlebot.** Rien à désactiver — et c'est
+une bonne nouvelle : toute règle « Skip » ajoutée par précaution aurait ouvert le site aux scanners
+qui frappent déjà à la porte.
+
+### 7.4 · Les 4 URL indexées, et une propriété Search Console à changer
+
+`https://dmoptiquesarl.com/en`, `https://dmoptiquesarl.com/en/`, `https://dmoptiquesarl.com/`,
+`https://dmoptiquesarl.com/examen-de-vue/` — **aucune fiche de monture** : la liste blanche reste
+vide, et le correctif du 26/10 (80 fiches en `noindex`) ne retire rien de l'index.
+
+Deux d'entre elles sont la **même page** (`/en` et `/en/`). Et surtout : les e-mails de Search Console
+parlent de `https://www.dmoptiquesarl.com/`, alors que le site canonise l'**apex**. Une propriété
+« préfixe d'URL `www` » ne peut pas indexer des URL qui redirigent toutes vers l'apex : c'est
+exactement ce qui produit un « Redirect error » permanent.
+
+**Recommandation :** suivre une **propriété Domaine** (`dmoptiquesarl.com`, qui couvre `http`, `https`,
+`www` et l'apex), et garder la propriété `www` seulement pour valider le correctif des 403.

@@ -146,9 +146,30 @@ def applique() -> None:
     print(f"  sitemap : {len(urls)} URL (avant : 96)")
 
 
-def check() -> list[str]:
-    """Les quatre invariants. Chacun nomme le fichier et la règle, jamais « erreur »."""
+def canonicalisation() -> list[str]:
+    """Aucune page ne doit pointer vers `http://` ni vers `www.` — c'est ce qui a produit les 8 403.
+
+    Le 26/10, Search Console a livré la liste des 8 URL refusées : **5 sur `www.`, 1 en `http://`,
+    3 sans barre finale**. Les trois familles sont des variantes de la même page, et Google les a
+    vues en 403 le 20/10 (avant la publication du 22/10). Aujourd'hui `www` et la barre finale
+    redirigent correctement ; `http` est encore servi en 200 (Cloudflare « Always Use HTTPS » est
+    resté éteint). Ce contrôle empêche qu'un lien absolu réintroduise le problème depuis le site.
+    """
     pbs: list[str] = []
+    for f in sorted(SITE.rglob("*.html")):
+        html = f.read_text(encoding="utf-8", errors="replace")
+        for motif, regle in ((r'(?:href|src)="http://dmoptiquesarl', "lien absolu en http://"),
+                             (r'(?:href|src)="//www\.dmoptiquesarl', "lien absolu vers www."),
+                             (r'rel="canonical" href="http://', "canonical en http://")):
+            if re.search(motif, html):
+                pbs.append(f"{f.relative_to(SITE)} : {regle} — la variante sera vue comme une "
+                           f"seconde page (famille des 403 du 20/10)")
+    return pbs
+
+
+def check() -> list[str]:
+    """Les invariants. Chacun nomme le fichier et la règle, jamais « erreur »."""
+    pbs: list[str] = canonicalisation()
     garde = whitelist()
     noindex_attendu = 0
     for p in fiches():
