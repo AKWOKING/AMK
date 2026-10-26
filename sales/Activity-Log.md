@@ -6690,3 +6690,31 @@ Huit lignes de preuve ajoutées au CSV (25 au total).
 
 **⑤ Ce qui reste à King.** Le contrôle de 60 secondes sur les liens WhatsApp de ②③④ (numéros d'annuaire), et
 le ruling sur ⑤ Kamaïs, déjà contacté le 02/10 par un gabarit.
+
+---
+
+## Tour 169 · 26/10/2026 (nuit) — trois remplacements demandés, quatre trouvés
+
+**① La demande.** King : Star Optic n'est pas sur WhatsApp ; la Rétine et Kamaïs ont déjà été contactés et
+sont morts ; « find replacements for those 3 ».
+
+**② Ce que la vérification a ajouté.** En relisant le CRM avant d'écrire, **Tchaya Optique Akwa** est
+apparu mort lui aussi : contacté le 24/09, message livré, **jamais ouvert**, ruling de King du 24/09 =
+aucune relance. Il figurait en ② du lot tel que je l'avais montré, et je ne l'avais pas vu : la
+vérification portait sur le site, pas sur l'historique d'envoi. **Quatre remplacements, donc, pas trois.**
+
+**③ Ce que la deuxième passe a encore écarté.** **K Vision Care** a `kvisioncare.com` — un domaine à lui,
+vivant — et il avait déjà été contacté. **El Roï** et **La Ligne Optic** n'ont pas de site, mais ont déjà
+reçu un message ; La Ligne a même **répondu**.
+
+**④ Le lot v8** (`sales/LOT-3-2026-10-26.md`) : Free Optic (le lien mort de `freeoptic.cm`, 3 essais) ·
+**London Vision** (l'assureur Zenith lui donne « DOUALA » comme quartier **et** comme adresse) ·
+**Maranatha Optics** (Ascoma le joint au 681 43 92 30, l'Ordre au 658 16 31 90) · **Africa Optic**
+(l'annuaire n'a qu'un fixe, l'Ordre a le mobile) · **Alpha Optic** (ligne 87 du tableau de l'Ordre, et
+rien d'autre nulle part). **68 / 69 / 70 / 69 / 66 mots, 0 bloquant, 0 avertissement.**
+
+**⑤ Bookkeeping.** CRM : la Rétine, Kamaïs et Tchaya passés en `disqualified` avec leur motif daté ; Star
+Optic ajouté en `disqualified` (absent de WhatsApp). **15 lignes de preuve** ajoutées au CSV (40 au total).
+
+**⑥ Ce que je ne peux pas prouver.** Que ces cinq aient WhatsApp ouvert : deux le sont (profils vus le
+25/10), deux demandent les 60 secondes de King, et le cinquième repose sur un numéro d'Ordre.
