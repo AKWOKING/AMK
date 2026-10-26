@@ -6279,7 +6279,7 @@ porte**. Si la recherche ne donne rien, le message part tel quel : un lot n'atte
 
 **③ Le Roast Room a recalé l'option « recherche longue ».** Cinq sièges, verdict **7,8** pour trois
 requêtes contre **5,9** pour l'envoi tel quel et **4,9** pour la recherche libre. L'argument qui tranche
-n'est pas le taux de réponse (+0,17 attendu par lot, 4,4 % → 7,8 %) : c'est que **5 h par jour pour 20
+n'est pas le taux de réponse (+0,17 attendu par lot, 4,4 % → 7,8 %, estimation du Roast Room — non revérifiée, aucune source publique) : c'est que **5 h par jour pour 20
 messages** est une journée de conseil, pas de prospection. Buffett a posé la condition qui rend l'option
 tenable : les phrases de rechange sont écrites et contrôlées **avant**, jamais improvisées à 22 h.
 

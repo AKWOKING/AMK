@@ -90,7 +90,8 @@ justement le test propre qui manque.
 **Les opticiens d'abord, comme verticale de prospection froide** — pour quatre raisons qui se
 cumulent, et une seule d'entre elles serait suffisante :
 
-1. **Le taux de réponse** : 28 % contre 0 %, et un p de 0,033 qui, malgré le confondant, ne se
+1. **Le taux de réponse** : 28 % (7 sur 25) contre 0 % (0 sur 15), et un p de 0,033 (§2.3, Fisher
+   exact) qui, malgré le confondant, ne se
    retourne pas.
 2. **Le seul euro encaissé** est un opticien (DM Optique) — et les trois fils les plus avancés aussi
    (Univers, Cavisa, Cristallin).
@@ -100,7 +101,7 @@ cumulent, et une seule d'entre elles serait suffisante :
    gabarit DM sont déjà écrits ; l'extension try-on (900 000) ne s'adresse qu'à eux.
 
 **Les cliniques ne sont pas fermées** : elles deviennent le **bras de contrôle** du lot du 26/10 —
-cinq messages, texte neuf, même porte. Si le taux de réponse reste sous 10 % sur ces cinq, le vertical
+cinq messages, texte neuf, même porte. Si le taux de réponse reste sous 10 % (seuil posé ici — non revérifié, il ne vient d'aucune source) sur ces cinq, le vertical
 froid se ferme pour de bon, chiffre en main ; s'il monte, la thèse « c'était la copie » gagne et on
 rouvre.
 
