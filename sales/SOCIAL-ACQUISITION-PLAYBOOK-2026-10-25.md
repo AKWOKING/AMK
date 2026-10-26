@@ -539,7 +539,7 @@ chiffre daté, donc un actif que nous possédons ; **samedi** (autorité ≥ 2 m
 pas un constat. Et le premier lot de recherche — la watchlist — conditionne les trois.
 
 **La chaîne, à ne plus sauter** : `audit_ideas.py` (idée) → `audit_hook.py` (accroche) →
-`audit_trust.py` (rôle) → `audit_reel.py` (forme). Une pièce bien montée qui vient d'un original non
+**`audit_story.py` (récit)** → `audit_trust.py` (rôle) → `audit_reel.py` (forme). Une pièce bien montée qui vient d'un original non
 déclaré échoue à la première.
 
 ### 5 sexies · L'accroche, l'échelle et la grille (25/10, trois captures du même compte)

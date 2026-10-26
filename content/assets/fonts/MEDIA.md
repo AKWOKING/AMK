@@ -10,9 +10,9 @@
 
 | Fichier | Dimensions | Poids | Empreinte | Citations |
 |---|---|---|---|---|
-| `Montserrat-Bold.ttf` | — | 727.5 Ko | `6499a5fc23b1` | 3 |
-| `Montserrat-ExtraBold.ttf` | — | 727.5 Ko | `b6738bc158be` | 3 |
-| `Montserrat-Medium.ttf` | — | 727.5 Ko | `7f544ceef74a` | 4 |
-| `Montserrat-SemiBold.ttf` | — | 727.5 Ko | `df44f761332e` | 2 |
-| `Montserrat-VF.ttf` | — | 727.5 Ko | `0f7b311b2f32` | 1 |
+| `Montserrat-Bold.ttf` | — | 727.5 Ko | `6499a5fc23b1` | 5 |
+| `Montserrat-ExtraBold.ttf` | — | 727.5 Ko | `b6738bc158be` | 4 |
+| `Montserrat-Medium.ttf` | — | 727.5 Ko | `7f544ceef74a` | 5 |
+| `Montserrat-SemiBold.ttf` | — | 727.5 Ko | `df44f761332e` | 3 |
+| `Montserrat-VF.ttf` | — | 727.5 Ko | `0f7b311b2f32` | 2 |
 | `Poppins-SemiBold.ttf` | — | 153.6 Ko | `d3bf1bdaf055` | 2 |

@@ -162,6 +162,30 @@ l'**échelle des histoires** en cinq niveaux (Reporter → Maestro) et la **gril
 disent **quoi dire** ; les six mots disent **ce qui doit y être** ; l'échelle dit **jusqu'où on monte**
 dans une durée donnée. Les deux modèles ne se remplacent pas, ils s'empilent.
 
+### 3 quater · La porte du récit (26/10) — la règle qui n'était vérifiée par rien
+
+Les §3 et §3 bis ci-dessus décrivent la structure d'un script depuis le 22–23/10. **Aucune porte ne la
+vérifiait.** C'est ce qui a laissé passer EP01 v4 : quatre portes vertes, et un script sans scène, sans
+rehook, avec une preuve muette et un cadeau enterré — quatre défauts que trois sièges du Roast Room ont
+trouvés en dix secondes (`knowledge/ROAST-2026-10-26-SCRIPT-EP01.md`).
+
+**`tools/qa/audit_story.py`** (banc : 29 cas) refuse désormais onze choses et en avertit cinq :
+
+| Refus | Ce qu'il dit, en clair | Règle source |
+|---|---|---|
+| `pas-de-cas` | la pièce ouvre sur une consigne, pas sur une situation vécue | §3, temps 1 |
+| `pas-de-lockin` | rien n'annonce, dans les trois premiers beats, pourquoi rester | §3 bis, lock-in zone |
+| `preuve-absente` / `preuve-muette` | la pièce affirme sans fait, ou **montre** un chiffre sans le **prononcer** | §3, temps 4 |
+| `pas-de-rehook` / `rehook-mal-place` | rien ne relance entre deux blocs de corps | §3 bis, rehook |
+| `cta-non-aligne` | le CTA ne prononce pas le mot de la promesse | `VIDEOS-2026-10-23-AUDIT` §6 |
+| `deux-cta` | plus d'un verbe d'action, même réparti sur deux phrases | §3, temps 5 |
+| `liste-sans-axe` | quatre arguments empilés dans le même beat | §3, temps 3 |
+| `urgence` / `promesse` | même lexique qu'`audit_hook` | ruling 25/10 |
+| `sortie-absente` / `sortie-mal-placee` / `trop-de-beats` / `beat-vide` / `role-inconnu` | la forme de la pièce est cassée | §3 bis |
+
+**Un rôle peut en porter deux** (`lockin+preuve`) : dans un beat de 4 s, exiger une fonction par phrase
+fabrique un script haché. C'est la porte qui s'est pliée à l'écriture, pas l'inverse.
+
 **Trois règles d'usage** (sinon la banque devient un générateur de clickbait) :
 
 - **le hook ne promet rien que la vidéo ne tienne** — un hook qui ment coûte le compte, pas la vue ;
@@ -712,6 +736,7 @@ sienne.
 | 23/10 | **Insights 24 h du reel** (Facebook Business Suite, TikTok Studio) | la preuve que les deux réseaux ne mesurent pas la même chose : 12 % de lecture moyenne sur Facebook contre 26 % sur TikTok pour le même film | §5 quater | la comparaison brute des vues (227 contre 80) : elle ne dit rien de la qualité |
 | 23/10 | **Capture WhatsApp DM OPTIQUE** (13h00, message d'avis du client) | le texte exact de sa demande d'avis, ses liens, et l'heure | `clients/dm-optic/launch/SOLDE-75K-2026-10-23.md` §3 bis | la tentation d'y répondre : c'est un message de masse, pas une question |
 | **25/10** | **Capture @kallowaymarketing** (7 slides, reçue de King) | l'arc moderne : départ à **70**, secousse entre 5 et 10 s, **trois cimes**, relâchements, CTA en dernière cime | §3 bis (l'ordre des blocs — l'arc en est la version sociale) · `knowledge/STORY-ARC-2026-10-25.md` · `tools/qa/audit_reel.py` | le « 742 jours / 207 clients » de la slide : cas unique, pas une preuve (§1g) — non repris |
+| **26/10** | **Roast Room — le script d'EP01** (5 sièges, verdict 8,1/10) | un ordre, pas des phrases : la scène avant la consigne, le rehook au milieu, la preuve **dite**, le cadeau tôt | `knowledge/ROAST-2026-10-26-SCRIPT-EP01.md` · `tools/qa/audit_story.py` · EP01 v5 | croire qu'une pièce qui passe les portes est une bonne pièce : les portes ne voyaient pas le récit |
 | **25/10** | **Captures @kallowaymarketing — « the 6 Hook Power Words »** | les **six mots** et les quatre obligatoires (sujet, action, objectif, **contraste**) ; le contraste comme « the most important in the entire stack » | `knowledge/HOOKS-2026-10-25.md` §1 · `tools/qa/audit_hook.py` · §3 ter (le renvoi) | l'idée qu'un mot suffit : un hook de 4 mots sans action ne fait rien faire (mesuré sur EP01 v3) |
 | **25/10** | **Capture @kallowaymarketing — « the Story Ladder »** | les 5 niveaux (Reporter, Magician, Fortuneteller, Architect, Maestro) et l'idée qu'on monte un niveau à la fois | `knowledge/HOOKS-2026-10-25.md` §2 · `Hook.level` dans la pièce | le niveau 5 (Maestro) : hors de portée d'un opérateur seul, et non vérifiable |
 | **25/10** | **Capture @kallowaymarketing — « the 331 Strategy »** | 3 sujets × 3 formats = 9 pièces, et une **dixième** décidée par la donnée | `content/ideas/GRID-331-2026-10-25.md` · `audit_hook.py --grid` | les « 20 formats » annoncés mais non fournis (« comment FORMATS ») : nous n'en nommons que trois, les nôtres |

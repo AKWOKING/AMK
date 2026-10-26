@@ -10,5 +10,5 @@
 
 | Fichier | Dimensions | Poids | Empreinte | Citations |
 |---|---|---|---|---|
-| `Video_06_Facebook_No_Booking.mp4` | — | 3.2 Mo | `fafff9cce7b5` | 6 |
-| `Video_06_Facebook_No_Booking_VOIX.mp4` | — | 4.1 Mo | `b285ea7634aa` | 8 |
+| `Video_06_Facebook_No_Booking.mp4` | — | 3.2 Mo | `fafff9cce7b5` | 5 |
+| `Video_06_Facebook_No_Booking_VOIX.mp4` | — | 4.1 Mo | `b285ea7634aa` | 7 |
