@@ -245,11 +245,27 @@ def joignable(l: Lead) -> bool:
     return l.stage in ("prospecting", "parked")
 
 
+def portes(leads: list[Lead]) -> dict[str, int]:
+    """Le nombre de portes §8b que la piste franchit — lu par `scout.py`, jamais deviné ici."""
+    try:
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        import scout
+        return {p.numero: p.portes for p in scout.lit_crm()}
+    except Exception:  # noqa: BLE001 — sans le vérificateur, on n'ordonne pas, on n'invente pas
+        return {}
+
+
 def selection(leads: list[Lead], angle: str | None = None) -> list[Lead]:
-    """Les opticiens d'abord : c'est la seule verticale mesurée à 28 % de réponses (7/25)."""
+    """L'ordre est un ordre de preuve : les portes franches d'abord, puis les opticiens.
+
+    Un numéro dont King a vu le profil le 25/10 n'a pas le même coût qu'un numéro d'annuaire : le
+    premier part sans vérification, le second demande huit secondes avant l'envoi. Mettre les portes
+    devant, c'est dire à King où son temps est déjà dépensé.
+    """
     optique = re.compile(r"optic|optique|lunett|vision", re.I)
     dispo = [l for l in leads if joignable(l) and l.angle and (angle is None or l.angle == angle)]
-    dispo.sort(key=lambda l: (not optique.search(l.nom), l.angle != "nom", l.cle))
+    p = portes(dispo)
+    dispo.sort(key=lambda l: (-p.get(l.numero, 0), not optique.search(l.nom), l.angle != "nom", l.cle))
     return dispo
 
 

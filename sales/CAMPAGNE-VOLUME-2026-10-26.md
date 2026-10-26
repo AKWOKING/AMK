@@ -4,7 +4,9 @@
 DÉCISION King, 26/10 : « we can't be sending just 1 message per day, we send between 20-50 ».
 Ce document dit comment on tient cette cadence sans perdre le numéro, ce que la fabrique garantit,
 et ce que King fait chaque matin en 25 minutes.
-Lot du jour : sales/ENVOI-VOLUME-2026-10-27.md — 49 messages, 0 bloquant, 0 avertissement.
+Deux fichiers, 49 messages écrits et mesurés le 26/10 :
+         sales/ENVOI-VAGUE-2-2026-10-26.md (7 à la main, 0/0) et
+         sales/ENVOI-VOLUME-2026-10-27.md (42 par la fabrique, 0/0, réparti 13 / 22 / 7).
 ```
 
 ## 1 · La montée, jour par jour
@@ -13,18 +15,21 @@ Un pic de 1 à 40 messages en une nuit est **le** signal qu'utilise WhatsApp pou
 compromis (ask4lead, 24/07/2026). On monte donc par paliers, et le palier ne s'ouvre que si le
 précédent n'a produit aucun blocage.
 
-| Jour | Messages | Ce qui doit être vrai la veille | Lot |
+| Jour | Messages | D'où ils viennent | Ce qui doit être vrai la veille |
 |---|---|---|---|
-| **mar. 27/10** | **20** | — | `ENVOI-VOLUME` J1 |
-| **mer. 28/10** | **29** | 0 blocage, 0 signalement le 27 | `ENVOI-VOLUME` J2 |
-| jeu. 29/10 | 30 | 0 blocage | **à composer** (stock 22) |
-| ven. 30/10 | 40 | 0 blocage, ≥ 1 réponse humaine | **à composer** (stock épuisé) |
-| sam. 31/10 | — | rien : journée de relance, pas d'envoi neuf | — |
-| lun. 02/11 | 50 | ratio de blocages < 1 % | **nouveau stock obligatoire** |
+| **mar. 27/10** | **20** | les **7** écrits à la main (3/3, en tête) + **13** du lot volume J1 | — |
+| **mer. 28/10** | **22** | lot volume J2 | 0 blocage, 0 signalement le 27 |
+| **jeu. 29/10** | **36** | **7** du lot volume J3 + **29** lignes de stock, à composer | 0 blocage le 28 |
+| ven. 30/10 | **0** | plus rien d'écrit | **stock épuisé : journée de prospection, pas d'envoi** |
+| sam. 31/10 | — | rien : paiement DM Optique, on ne mélange pas | — |
+| lun. 02/11 | 40–50 | **nouveau stock obligatoire** (≈ 200 numéros/semaine, §4) | ratio de blocages < 1 % |
 
-**Ce que la table dit vraiment** : au-delà du 29/10, **nous n'avons plus de lignes**. 71 envoyables
-aujourd'hui, 49 écrites. Les 22 restantes tiennent une journée. Le reste du plan dépend d'une seule
-chose — trouver des numéros — et c'est le §4.
+**Ce que la table dit vraiment** : la cadence de 20–50 tient **trois jours**, puis elle bute sur le stock.
+78 lignes envoyables au CRM, 49 écrites, **29 restantes** — et ces 29 ne sont pas un stock de luxe : la
+plupart n'ont jamais été ouvertes sur WhatsApp, donc la vérification de 8 secondes décidera de leur sort.
+
+**Le vrai chiffre du jour** : nous avons assez de texte pour trois jours et assez de numéros prouvés pour
+**un seul** (les 7). Le reste du plan dépend d'une seule chose — ouvrir des annuaires — et c'est le §4.
 
 ## 2 · L'interrupteur — la seule métrique qui arrête la campagne
 
@@ -51,7 +56,7 @@ cochée = un blocage.** Pas de mesure automatique : nous n'avons pas d'accès à
 | aucun message ne partage **douze mots** avec un autre du lot (§10) | que le fait soit vrai : la fabrique ne dit que ce que la ligne prouve, elle ne prouve rien |
 | 35 à 55 mots, une seule question, une question qui **demande une action** | que le numéro **joigne WhatsApp** : c'est la porte A, et c'est le geste de King |
 | aucun lien, aucun prix, aucune signature, aucun emoji | que le message tombe juste — un message qui passe la porte peut rester plat |
-| aucun doublon de numéro dans le lot (3 existent au CRM, ils sont écartés) | le bon moment de la journée |
+| aucun doublon de numéro dans le lot — **mesuré le 26/10** : 3 numéros du CRM vivent sur deux lignes, il n'en reste **qu'un** dans le stock envoyable (CEMECES ↔ INSES, 674 93 66 04), et la fabrique garde la première | le bon moment de la journée |
 | l'objet de l'offre correspond au **métier** (une école n'entend pas parler d'opticien) | que l'interlocuteur soit le décideur (porte C) |
 
 **Réserve** : la fabrique plafonne à **49 messages par lot** — au-delà, elle refuse plutôt que de
@@ -63,9 +68,9 @@ ouvre un lot de 81.
 | Gisement | Ce qu'il reste | Pourquoi |
 |---|---|---|
 | Opticiens ONOC | **0** | 28 testés le 25/10, 22 joignables, **0 restant** |
-| Annuaire (137 lignes) | ~70 jamais contactées | dont **19 seulement** avec un profil vu — les autres sont des numéros non prouvés |
+| Annuaire (137 lignes) | ~70 jamais contactées | dont **17** avec un profil vu le 25/10 — les autres sont des numéros non prouvés |
 | Cliniques, labos, écoles | ~36 | verticales mesurées à **0/15** de réponses : à ne rouvrir qu'avec l'offre, pas avec l'angle « nom » |
-| **Total envoyable** | **71** | 1,8 jour à 40/jour |
+| **Total envoyable** | **78** | 1,9 jour à 40/jour — **49 déjà écrites**, donc 29 en réserve |
 
 **Ce qu'il faut** : environ **200 numéros par semaine** pour tenir 40/jour. Trois sources, dans l'ordre
 de rendement observé :
@@ -83,8 +88,10 @@ de rendement observé :
 
 | # | Cabinet | Envoyé | Lu | Répondu | Bloqué |
 |---|---|---|---|---|---|
-| 1 | Optique Pro · 690 03 48 18 | ☐ | ☐ | ☐ | ☐ |
-| 2 | Africa Optic · 691 28 02 37 | ☐ | ☐ | ☐ | ☐ |
+| 1 | Ets Espace Médical · 655 04 95 29 | ☐ | ☐ | ☐ | ☐ |
+| 2 | ASS pour RRPHDD · 675 39 90 23 | ☐ | ☐ | ☐ | ☐ |
+| 3 | ISEE · 656 97 80 43 | ☐ | ☐ | ☐ | ☐ |
+| … | les 7 de la vague 2, puis les 42 du lot volume | ☐ | ☐ | ☐ | ☐ |
 
 **Ce qui compte n'est pas « envoyé » mais « répondu »** — et le seul chiffre qui décide de la suite est
 `réponses < 48 h`. Aujourd'hui il vaut **0**.
