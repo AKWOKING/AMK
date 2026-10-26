@@ -102,7 +102,7 @@ Trois sources, dans l'ordre de rendement observé :
 |---|---|---|---|---|---|
 | 1 | Ets Espace Médical · 655 04 95 29 | **☑ 26/10** | ☐ | ☐ | ☐ |
 | 2 | ASS pour RRPHDD · 675 39 90 23 | **☑ 26/10** | ☐ | ☐ | ☐ |
-| 3 | ISEE · 656 97 80 43 | **☑ 26/10** | ☐ | ☐ | ☐ |
+| 3 | ISEE · 656 97 80 43 | **☑ 26/10 15:15** | **☑ 15:41** | **☑ « Bonjour » 15:41** | ☐ |
 | 4 | Bellevue Optique · 694 89 26 96 | **☑ 26/10** | ☐ | ☐ | ☐ |
 | 5 | S.O.S Vision · 699 86 04 63 | **☑ 26/10** | ☐ | ☐ | ☐ |
 | 6 | Capelli Optique Médicale · 675 26 89 81 | ☐ | ☐ | ☐ | ☐ |
@@ -115,8 +115,12 @@ Trois sources, dans l'ordre de rendement observé :
 (`sales/LOT-2-2026-10-27.md`) est écrit et contrôlé, **pas encore envoyé**. La règle du §2 s'applique
 dès la première réponse : un blocage arrête la journée.
 
+**ISEE est la première réponse du lot, en 26 minutes** — et elle arrive sur un message faux :
+`iseecameroon.com` existe, la correction est écrite (`sales/REPARATION-ISEE-2026-10-26.md`) et doit partir
+avant la démo promise à 15 h 45.
+
 **Ce qui compte n'est pas « envoyé » mais « répondu »** — et le seul chiffre qui décide de la suite est
-`réponses < 48 h`. Aujourd'hui il vaut **0**.
+`réponses < 48 h`. Aujourd'hui : **1 réponse sur 5**, à qualifier après la réparation.
 
 ## 6 · Les 25 minutes du matin
 

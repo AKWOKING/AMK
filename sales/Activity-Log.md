@@ -6570,3 +6570,34 @@ est un audit ; le comportement sans le fait est un tract.
 
 **⑧ Ce que je ne peux toujours pas prouver.** Aucun taux. Cinq messages partis, zéro réponse consignée ;
 les cinq de v6 ne sont pas partis au moment d'écrire.
+
+---
+
+## Tour 165 · 26/10/2026 — ISEE avait un site, et ce qu'on lui dit maintenant
+
+**① L'erreur, datée.** 15 h 15 : premier message du LOT 1 à ISEE, avec « aucune de ces deux vitrines ne
+lui permet de vous joindre ». 15 h 41 : ils répondent « Bonjour ». 16 h : King ouvre
+**`iseecameroon.com`** — boutique WooCommerce depuis 2024, collections avec prix, bouton WhatsApp sur
+chaque monture, page « Prendre RDV », six assureurs en logo. **Le message était faux.**
+
+**② Pourquoi la recherche a raté.** On a cherché « ISEE » et « I See Better ». Le site s'appelle **Isee
+Cameroun**. Un cabinet de Douala porte trois ou quatre noms ; on en avait cherché deux.
+
+**③ La réparation écrite.** `sales/REPARATION-ISEE-2026-10-26.md` : le message à envoyer tel quel (retrait
+explicite, deux faits qui restent — site figé depuis le 14/11/2024, trois noms pour un cabinet —, offre
+changée), la page de cinq lignes promise, et l'offre qui convient à un cabinet qui a déjà un site :
+`Suivi` 30 000/mois, pas un site neuf.
+
+**④ La porte installée.** `tools/qa/audit_outreach.py` règle 11 : toute affirmation d'absence de site
+exige une ligne `SITE-CHECK aaaa-mm-jj · voies · résultat` sous le titre ; si la ligne dit « site
+trouvé », le message est bloqué aussi. **29/29 cas** dans `test_audit_outreach.py`, dont deux neufs.
+
+**⑤ Le LOT 1 corrigé.** ③ ISEE sort du lot comme message envoyable et devient un enregistrement de ce
+qui est parti + de la correction. ⑤ S.O.S Vision reçoit son SITE-CHECK daté. Le lot repasse à **0
+bloquant / 0 avertissement** pour les messages qui peuvent encore partir.
+
+**⑥ La leçon, écrite.** `knowledge/PORTE-C-SITE-AVANT-D-AFFIRMER-2026-10-26.md` : cinq voies (nom exact,
+nom WhatsApp, variantes, numéro, Google Maps), et la règle d'offre qui va avec.
+
+**⑦ Le chiffre, pour la première fois non nul.** 1 réponse sur 5 messages partis, en 26 minutes — sur un
+message faux. Le taux ne sera compté qu'après la réparation.
