@@ -12,7 +12,8 @@
 |---|---|
 | `reelkit.py` | le moteur : scènes, fond, cartes, pastilles, mascotte, barre de progression, encodage |
 | `ep01/make_ep01.py` | l'épisode 01 : **6 beats, arc moderne, 24,3 s** — le scénario est **dans le code**, et la pièce déclare son **accroche** (`HOOK`) et son **jeu** (`TRUST`) |
-| `ep01/ep01-v4.mp4` | **le master courant** : 1080×1920, 30 fps, H.264 + AAC, **24,28 s, avec voix, accroche à quatre mots** |
+| `ep01/ep01-v5.mp4` | **le master courant** : 1080×1920, 30 fps, H.264 + AAC, **24,80 s, avec voix, script conforme à la porte du récit** |
+| `ep01/ep01-v4.mp4` | la v4 (24,50 s) — **le filet** : si la v5 déplaît à l'oreille, on republie celle-là |
 | `ep01/ep01-v4-silent.mp4` | la même image sans son (pour reposer une autre voix sans refaire le rendu) |
 | `ep01/ep01-v3.mp4` | la v3 (23,76 s, conseil gratuit, accroche « Votre cabinet existe ») — conservée comme trace |
 | `ep01/ep01-v2.mp4` | la v2 (23,4 s, trois cimes, un souffle en `release2`) — conservée comme trace |
@@ -22,6 +23,7 @@
 | `tools/qa/audit_reel.py` | **la porte de l'arc** — refuse un réel mal formé avant le rendu |
 | `tools/qa/audit_trust.py` | **la porte du jeu** — refuse une pièce dont le rôle ne tient pas le score (`CONTENT-GAMES`, §3) |
 | `tools/qa/audit_hook.py` | **la porte de l'accroche** — quatre mots obligatoires, échelle, pas de peur ni de promesse (`HOOKS`, §1–2) ; `--grid` vérifie la grille 331 |
+| `tools/qa/audit_story.py` | **la porte du récit** — la scène, le lock-in, la preuve **prononcée**, le rehook, le CTA aligné (`CONTENT-CREATION` §3/§3 bis) |
 | `ep01/poster.jpg` | la couverture — frame **2,2 s du master v4** pour la vignette |
 | `ep01/frames/` | les captures de contrôle (inspection avant diffusion) — `v3-*` sont les six beats du master courant |
 | `ep01/assets/mascot.png` | la mascotte — illustration générée, fond retiré par diffusion |
@@ -65,30 +67,31 @@ fichier variable** (744 936 octets chacun). Sans `set_variation_by_name`, PIL re
 **Thin**. Le premier rendu sortait donc en maigre alors que le code demandait `ExtraBold`.
 `reelkit.font()` demande l'axe ; ne pas le retirer.
 
-## 4 · L'épisode 01 — « Tapez votre nom sur Google. » (v4, 24,76 s)
+## 4 · L'épisode 01 — « Votre patient tape opticien Akwa. » (v5, 24,80 s)
 
-> **Re-rendu le 26/10 (tour 149)** — même pièce, **voix changée**. Les `.mp3` ne persistent pas d'un bac
-> à l'autre : la voix du tour 148 n'existait plus. Re-synthèse avec `voice-04`, **0,4 s plus lente** que
-> l'ancienne → l'accroche ne tenait plus dans les 5 s du contexte (5,21 s). Le texte a donc été raccourci
-> de deux mots : « il appelle ceux qui ont un site » → **« il appelle les autres »**. Même 4/4 mots, même
-> niveau 3, même case de grille. **24,76 s**, trois portes vertes. C'est la deuxième fois que le plafond
-> de 5 s écrit l'accroche — la leçon est dans `CONTENT-LESSONS` §21.
+> **Reconstruit le 26/10 (tour 150)** après le **Roast Room** (`knowledge/ROAST-2026-10-26-SCRIPT-EP01.md`,
+> verdict C, 8,1/10) et **sous la nouvelle porte du récit** (`tools/qa/audit_story.py`). La v4 était une
+> bonne pièce **mal ordonnée** : elle ouvrait sur une consigne, ne relançait jamais au milieu, montrait
+> « 12 avis » sans le prononcer, et donnait son meilleur cadeau à 18 s. La v5 corrige les quatre, et rien
+> d'autre. **le lien : https://github.com/AKWOKING/AMK/blob/main/content/reels/ep01/ep01-v5.mp4**
+> La v4 reste dans le dépôt (`ep01-v4.mp4`) comme filet — la condition de Buffett.
 
-| Beat | Durée | La voix dit | L'écran montre | La cime | D'où vient le fait |
+| Beat | Durée | La voix dit | L'écran montre | La cime | Rôle déclaré |
 |---|---|---|---|---|---|
-| **hook** | 0,00–5,00 | « Tapez votre nom sur Google : il appelle les autres, pas vous. » | le champ « opticien akwa », **deux** résultats — un avec site (coche verte), un sans (croix orange) — et l'accroche en quatre lignes | 70 | — (mécanisme, aucun chiffre) |
-| **spike1** | 5,00–10,51 | « Google demande trois choses : horaires, site, premier avis. » | trois cartes punaisées : `Add business hours` · `Add website` · `Pas encore d'avis` | **92** | capture Optix **24/10** (`PACK-OPTICIEN`) |
-| **release1** | 10,51–12,81 | « Vous en avez une. » | le mot « une. » qui s'allume, puis « jamais les trois » | 58 | — |
-| **spike2** | 12,81–17,96 | « Un site ne sert pas à avoir un site. Il répond avant l'appel. » | la phrase barrée, puis Horaires · Adresse · WhatsApp avec la coche dessinée | **88** | ruling 142 : le site est le produit |
-| **release2** | 17,96–20,68 | « Dix minutes, et c'est gratuit. » | « Deux se font sans personne. » — Horaires ✓ · fiche à réclamer ✓ · l'avis, un patient l'écrit ✗ · « Le site, c'est le seul qui se construise. » | 60 | les trois gestes gratuits, aucun chiffre de résultat |
-| **cta** | 20,68–24,28 | « Écrivez APERÇU sur WhatsApp. » | `APERÇU` en grand, le numéro, « 10 minutes cette semaine » | **95** | playbook §4 : un lien, une action |
+| **hook** | 0,00–5,00 | « Votre patient tape opticien Akwa. Il appelle l'un des deux. Pas vous. » | la recherche, **deux** résultats (coche verte / croix orange), puis la scène en trois lignes | 70 | `cas` |
+| **spike1** | 5,00–9,67 | « Sa fiche : un site, douze avis. La vôtre : un nom. » | deux cartes : `SON SITE · 6 photos`, `SES AVIS · douze` — puis « La vôtre : **un nom.** » | **92** | `lockin+preuve` |
+| **release1** | 9,67–13,33 | « Horaires et fiche : dix minutes, gratuit. » | « Dix minutes. **Gratuit.** » et la coche | 58 | `corps` |
+| **spike2** | 13,33–16,53 | « Ce n'est pas le site. Il veut venir ce soir. » | « Ce n'est pas **le site.** » barré, puis « Il veut venir **ce soir.** » et le sceau « 22 h · le cabinet est fermé » | **88** | `rehook+corps` |
+| **release2** | 16,53–21,61 | « Un site répond à 22 heures. Horaires, adresse, WhatsApp. » | « **à 22 h 00.** » puis la carte verte, la coche et « Une seule page. Une seule réponse. » | 60 | `corps` |
+| **cta** | 21,61–24,80 | « Écrivez APERÇU sur WhatsApp. » | `APERÇU` en grand, le numéro, « 10 minutes cette semaine » | **95** | `sortie` |
 
-**Les trois portes, et ce qu'elles disent de la v4** : `✓ accroche niveau 3 · mots ✓✓✓✓` (sujet, action,
-objectif, contraste) · `✓ arc 24,3 s · 6 beats · 3 cimes` · `✓ rôle porte 24,3 s · 20/125 · plancher 12`.
+**Les quatre portes, et ce qu'elles disent de la v5** : `✓ récit · 24,8 s · 6 beats` (cas, lock-in,
+preuve dite, rehook, sortie alignée — **zéro avertissement**) · `✓ accroche niveau 3 · 4/4 mots · 12 mots`
+(⚠ `sans-intrigue`) · `✓ rôle 24,8 s · 20/125 · plancher 12` · `✓ arc 6 beats · 3 cimes`.
 
 **Ce qui a changé entre les trois versions** — et pourquoi :
 
-| | v1 (20:25) | v2 (21:45) | v3 (22:35) | **v4 (23:40)** |
+| | v1 (20:25) | v2 (21:45) | v3 (22:35) | v4 (23:40) | **v5 (26/10)** |
 |---|---|---|---|---|
 | ouverture | carton de titre, **à zéro** | on est **déjà** dans l'écran de recherche | idem | idem, **deux** résultats — le contraste est montré |
 | accroche | carton | « Votre cabinet existe. Votre site, non. » | idem | **« Tapez votre nom sur Google : il appelle les autres, pas vous. »** |
@@ -99,7 +102,11 @@ objectif, contraste) · `✓ arc 24,3 s · 6 beats · 3 cimes` · `✓ rôle por
 | `release2` | décorative | **souffle** muet | **le conseil gratuit** | inchangé |
 | utilité (jeu 5) | 2 | 3 | 4 | 4 |
 | durée | 21,4 s | 23,4 s | 23,76 s | **24,76 s** |
-| vérification | aucune | `audit_reel` | + `audit_trust` (20/125) | **+ `audit_hook`** (4/4, niveau 3, grille case 3) |
+| vérification | aucune | `audit_reel` | + `audit_trust` (20/125) | + `audit_hook` (4/4) | **+ `audit_story`** (la porte du récit) |
+| ouverture | carton | recherche | un résultat | **deux** résultats + consigne | **une scène : le patient tape** |
+| rehook | — | — | — | — | **oui (« ce n'est pas le site »)** |
+| preuve dite | — | — | — | non (à l'écran seulement) | **« douze avis »** |
+| cadeau | — | — | 18 s | 18 s | **9,7 s** |
 
 **La voix** : `voice-03` (masculine, registre publicitaire), français, synthèse du 25/10. Les six clips sont
 dans `ep01/voice/`, les durées mesurées dans `timing.json`. **Le beat s'allonge jusqu'à la voix, jamais
@@ -137,6 +144,12 @@ déclaré est une dette de contenu — il occupe 2,3 s de l'attention et ne rend
 - **Aucune demande de vues** : la pièce est une **porte** (score 20/125). Elle n'essaie pas d'être
   partagée, elle essaie d'être comprise par l'opticien de Douala qui la voit une fois.
 
+**Pourquoi le script a été reconstruit (v5)** : la v4 passait quatre portes et restait faible à
+l'oreille — King l'a dit avant les portes. Le Roast Room a nommé les quatre causes, chacune adossée à
+une règle que le dépôt **écrivait déjà sans la vérifier** : pas de scène (`CONTENT-CREATION` §3, temps 1),
+pas de rehook (§3 bis), preuve montrée mais jamais dite (temps 4), cadeau enterré (§3 bis, principe 4).
+`tools/qa/audit_story.py` transforme ces quatre règles en refus. Une règle sans porte = un trou.
+
 **Pourquoi l'accroche a été refaite (v4)** : `knowledge/HOOKS-2026-10-25.md` §1 dit qu'un hook porte
 quatre mots obligatoires — sujet, action, objectif, contraste. La v3 en avait deux : elle **constatait**
 (« votre site, non ») sans donner ni geste ni résultat. Le spectateur ne pouvait rien en faire. La v4
@@ -163,6 +176,7 @@ timeline à maintenir : **le code est le montage**.
 
 ## 6 · Porte avant diffusion (§7 du playbook, version vidéo)
 
+- [ ] `python3 tools/qa/audit_story.py content/reels/epNN/make_epNN.py` → **✓** (scène, lock-in, preuve dite, rehook, CTA aligné)
 - [ ] `python3 tools/qa/audit_hook.py content/reels/epNN/make_epNN.py` → **✓** (4 mots obligatoires, échelle déclarée)
 - [ ] `python3 tools/qa/audit_hook.py --grid content/ideas/GRID-331-*.md` → **✓** (la case existe dans la grille)
 - [ ] `python3 tools/qa/audit_ideas.py content/ideas/SHORTLIST-YYYY-MM-DD.md` → **✓** (la pièce a une

@@ -25,13 +25,15 @@ MARGE = 0.30  # respiration après la voix
 RMS_MIN = 0.02  # en dessous, le clip est muet : une synthèse « réussie » peut rendre du silence
 
 # durée visée · cime · forme  (la géométrie de l'arc : premier pic à 5,0 s exactement)
+# Les durées visées de la v5 sont **mesurées sur la voix nettoyée** (silences retirés), pas rêvées :
+# cette voix parle à ~0,45 s/mot, donc 25 s = ~50 mots, pas 65. Total 24,15 s.
 PLAN = {
     "hook": (5.0, 70, "contexte"),
-    "spike1": (4.6, 92, "contraste"),
-    "release1": (2.3, 58, "relache"),
-    "spike2": (3.3, 88, "contraste"),
-    "release2": (2.3, 60, "relache"),
-    "cta": (3.6, 95, "appel"),
+    "spike1": (4.45, 92, "contraste"),
+    "release1": (3.45, 58, "relache"),  # v5 : le cadeau passe au beat 3 (il était à 18 s en v4)
+    "spike2": (3.2, 88, "contraste"),   # v5 : le rehook — le beat que la v4 n'avait pas
+    "release2": (4.85, 60, "relache"),
+    "cta": (3.2, 95, "appel"),
 }
 ORDRE = list(PLAN)
 

@@ -501,3 +501,42 @@ bac à l'autre) ; 0,4 s plus lente → **5,21 s** sur une place de **5,00 s**. D
 « il appelle **ceux qui ont un site** » → « il appelle **les autres** ». Même leçon, même plafond, deuxième
 démonstration : **c'est la place qui écrit l'accroche**. Une leçon qui se vérifie deux fois cesse d'être
 une anecdote.
+
+---
+
+## 22 · 26/10/2026 (00:40) — une pièce peut passer quatre portes et être faible : le récit n'avait pas de porte
+
+**Ce qui s'est passé.** King a écouté EP01 v4 et dit trois choses justes : *« the voice is okay, the
+video type is okay, but I feel like we can write a better script »*. Il n'a pas dit pourquoi. Le **Roast
+Room** (cinq sièges, verdict C à 8,1/10) l'a dit, et chaque raison s'adossait à une règle que le dépôt
+**écrivait déjà** :
+
+| Ce que le conseil a vu | La règle qui existait déjà | Où elle était |
+|---|---|---|
+| on ouvre sur une **consigne** (« Tapez votre nom »), pas sur une scène | temps 1 : « une situation vécue, à la 2ᵉ personne, dans les 3 premières secondes » | `CONTENT-CREATION` §3 |
+| **aucun rehook** — l'attention tombe au milieu | « le rehook est un besoin physiologique » | §3 bis |
+| la capture dit **douze avis**, la voix n'en dit aucun | temps 4 : « un fait vérifiable, **une fois** » | §3 |
+| le meilleur argument (**gratuit, dix minutes**) arrive à 18 s sur 24,5 | principe 4 : « annoncer la valeur tôt » | §3 bis |
+
+**La leçon de méthode, et c'est la seule qui compte :** ces quatre règles n'étaient **vérifiées par
+rien**. Idée, accroche, rôle, forme avaient une porte ; le récit n'en avait aucune — donc trois défauts
+sur quatre étaient invisibles à la machine et visibles à l'oreille. Une règle sans porte n'est pas une
+règle, c'est une intention. `tools/qa/audit_story.py` (29 cas) est la porte ; elle refuse onze choses,
+avertit sur cinq, et **la v4 réelle y échoue** (le banc le vérifie : c'est le seul test qui compte).
+
+**Trois choses que la séance a apprises au passage :**
+
+1. **« un » n'est pas un chiffre.** La première version de la porte comptait « un site » comme une
+   preuve ; elle laissait donc passer exactement le défaut qu'elle devait attraper. Le banc l'a montré
+   en une exécution — corriger le lexique, pas le test.
+2. **Un rôle doit pouvoir en porter deux.** « Sa fiche : un site, douze avis » retient **et** prouve. La
+   première porte exigeait une fonction par phrase : elle aurait fabriqué un script haché que personne
+   n'écrirait. C'est la porte qui s'est pliée à l'écriture.
+3. **La voix a encore écrit le texte.** Cinquième version, troisième fois : le premier jet faisait
+   **30,50 s** (la voix parle à ~0,45 s/mot, donc 25 s = 50 mots, pas 65). On a coupé dans le texte —
+   « il appelle celui qui a un site » → « il appelle l'un des deux » — jamais dans la voix.
+
+**Et ce que la séance a refusé.** Les cinq sièges ont voté **contre** « publier tel quel » (4,7/10) et
+**contre** « réécrire les lignes sans toucher l'ordre » (6,5/10) : le défaut n'était pas dans les
+phrases, il était dans la **séquence**. Buffett, seul contre quatre, a posé la condition qui a évité le
+pire : **garder la v4 rendue comme filet** et ne pas toucher au hook. Elle est dans le dépôt, à côté.

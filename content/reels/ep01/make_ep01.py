@@ -17,6 +17,14 @@ objectif, un spectateur ne pouvait rien y faire ; ② l'échelle est déclarée 
 un mensonge dans 24 s ; ③ la pièce prend sa case dans la **grille 331** : *fiche Google × scénario*,
 case 3 sur 9 (`content/ideas/GRID-331-2026-10-25.md`).
 
+v5 (**26/10, 00:40**) applique le **Roast Room** du 26/10 (`knowledge/ROAST-2026-10-26-SCRIPT-EP01.md`,
+verdict C, 8,1/10) et la porte du récit (`tools/qa/audit_story.py`) : ① on **ouvre sur une scène** — le
+patient qui tape, au lieu d'une consigne au spectateur (« Tapez votre nom ») ; ② la **preuve est
+prononcée** (« douze avis », capture Optix du 24/10) au lieu d'être seulement affichée ; ③ un **rehook**
+au milieu (« ce n'est pas le site qu'il regarde ») ; ④ le **cadeau passe de 18 s à 9,6 s** (les horaires
+et la fiche : dix minutes, gratuit) ; ⑤ le **site n'arrive qu'après** — c'est la réponse de 22 h, pas
+l'objet vendu. Même accroche à quatre mots, même niveau 3, même case de grille.
+
     python3 content/reels/ep01/make_ep01.py            # rendu + voix si voice/timing.json existe
     python3 tools/qa/audit_reel.py content/reels/ep01/make_ep01.py   # la porte, avant le rendu
 
@@ -58,12 +66,12 @@ TIMING = os.path.join(HERE, "voice", "timing.json")
 
 # Le plan par défaut, si la voix n'a pas encore été générée (v2 pré-voix).
 DEFAULT = [
-    ("hook", 5.5, 70, "contexte", None),
-    ("spike1", 5.4, 92, "contraste", "capture Optix 24/10"),
-    ("release1", 2.3, 58, "relache", None),
-    ("spike2", 5.0, 88, "contraste", "capture Optix 24/10"),
-    ("release2", 2.4, 60, "relache", None),
-    ("cta", 3.6, 95, "appel", None),
+    ("hook", 5.0, 70, "contexte", None),
+    ("spike1", 4.45, 92, "contraste", "capture Optix 24/10"),
+    ("release1", 3.45, 58, "relache", None),
+    ("spike2", 3.2, 88, "contraste", None),
+    ("release2", 4.85, 60, "relache", None),
+    ("cta", 3.2, 95, "appel", None),
 ]
 
 
@@ -84,8 +92,8 @@ PLAN = load_plan()
 # ── la forme déclarée à la porte (`tools/qa/audit_reel.py`) ─────────────────────
 BEAT_FACTS = {
     "hook": None,
-    "spike1": "Add business hours · Add website · Be the first to review",
-    "spike2": "neuf fiches, zéro site",
+    "spike1": "capture Optix 24/10 : un site · 6 photos · 12 avis",
+    "spike2": None,
 }
 
 
@@ -116,6 +124,7 @@ DURATION = round(sum(p[1] for p in PLAN), 3)
 # EP01 est une **porte** : courte par construction, elle fait entrer, elle ne construit pas la
 # confiance. Déclarée « autorité », la même pièce échoue (`trop-court`) — c'est la leçon du 25/10.
 from audit_hook import Hook  # noqa: E402
+from audit_story import Line, Script  # noqa: E402
 from audit_trust import Piece  # noqa: E402
 
 # ── l'accroche, telle que la porte la lit (`knowledge/HOOKS-2026-10-25.md`) ───────────────────
@@ -123,10 +132,30 @@ from audit_trust import Piece  # noqa: E402
 # « pas celui qui n'en a pas ». Aucun chiffre de résultat, aucune promesse, aucune urgence.
 HOOK = Hook(
     text=(
-        "Tapez votre nom sur Google : "
-        "il appelle les autres, pas vous."
+        "Votre patient tape opticien Akwa. "
+        "Il appelle l'un des deux. Pas vous."
     ),
     level=3,   # Fortuneteller : on annonce ce que fait le patient. Niveau 4 = le plan, plus tard.
+)
+
+# ── le script, tel que la porte du récit le lit (`tools/qa/audit_story.py`) ──────────────────────
+# Les rôles sont **cumulables** : « lockin+preuve » veut dire que la même phrase retient (elle montre
+# ce qu'il a vu) et prouve (elle prononce « douze avis »). Exiger une fonction par phrase fabrique des
+# scripts hachés — et c'est exactement ce que le Roast Room reprochait à la v4.
+SCRIPT = Script(
+    piece="ep01",
+    promise="aperçu",
+    proof_on_screen="capture Optix 24/10 : un site · 6 photos · 12 avis",
+    lines=[
+        Line("hook", "Votre patient tape opticien Akwa. Il appelle l'un des deux. Pas vous.",
+             "cas"),
+        Line("spike1", "Sa fiche : un site, douze avis. La vôtre : un nom.",
+             "lockin+preuve"),
+        Line("release1", "Horaires et fiche : dix minutes, gratuit.", "corps"),
+        Line("spike2", "Ce n'est pas le site. Il veut venir ce soir.", "rehook+corps"),
+        Line("release2", "Un site répond à vingt-deux heures. Horaires, adresse, WhatsApp.", "corps"),
+        Line("cta", "Écrivez APERÇU sur WhatsApp.", "sortie"),
+    ],
 )
 
 TRUST = Piece(
@@ -182,9 +211,10 @@ def search_bar(d, y, query, y2=None):
 def s_hook(kit, img, d, t, dur):
     """Deux résultats, un seul a un site : le contraste de l'accroche est **montré**.
 
-    v3 ouvrait sur un seul résultat (« Aucun site · pas d'horaires ») et un constat. Ici le spectateur
-    voit la comparaison que l'accroche nomme — celui qu'on appelle, celui qu'on saute — donc la vidéo
-    ne décrit plus un problème, elle montre un choix.
+    v3 ouvrait sur un seul résultat (« Aucun site · pas d'horaires ») et un constat. La v4 montrait la
+    comparaison. La v5 raconte **la scène** : un patient, une recherche, deux fiches — et le spectateur
+    n'a plus rien à faire, seulement à reconnaître (Roast Room du 26/10 : « un ordre ne demande rien,
+    une scène demande tout »).
     """
     label(d, "GOOGLE · DOUALA")
     search_bar(d, 250, "opticien akwa")
@@ -209,124 +239,127 @@ def s_hook(kit, img, d, t, dur):
             d.line([(cx - 26, cy - 26), (cx + 26, cy + 26)], fill=P["orange"], width=9)
             d.line([(cx + 26, cy - 26), (cx - 26, cy + 26)], fill=P["orange"], width=9)
 
-    fnt = font("Montserrat-ExtraBold.ttf", 92)
+    fnt = font("Montserrat-ExtraBold.ttf", 88)
     lignes = [
-        ("Tapez votre nom", P["ink"]),
-        ("sur Google.", P["ink"]),
-        ("Il appelle", P["ink"]),
-        ("les autres.", P["orange"]),
+        ("Votre patient", P["ink"]),
+        ("tape opticien", P["ink"]),
+        ("Akwa.", P["ink"]),
     ]
     for i, (ligne, couleur) in enumerate(lignes):
-        a = ease((t - 0.7 - i * 0.16) / 0.5)
+        a = ease((t - 0.6 - i * 0.16) / 0.5)
         if a <= 0:
             continue
-        draw_text(d, (MARGIN, 764 + i * 104 + int((1 - a) * 22)), ligne, fnt, couleur)
+        draw_text(d, (MARGIN, 764 + i * 100 + int((1 - a) * 22)), ligne, fnt, couleur)
 
-    if t > 2.2:
-        draw_text(d, (MARGIN, 1210), "Pas vous.", font("Montserrat-Bold.ttf", 56),
-                  P["ink_soft"] if a > 0.5 else P["ink_soft"])
-    kit.mascot.draw(img, 30, 1270, t, height=600)
+    if t > 1.9:
+        draw_text(d, (MARGIN, 1080), "Il appelle", font("Montserrat-Bold.ttf", 54), P["ink"])
+        draw_text(d, (MARGIN, 1142), "l'un des deux.", font("Montserrat-Bold.ttf", 54), P["orange"])
+    if t > 3.0:
+        draw_text(d, (MARGIN, 1226), "Pas vous.", font("Montserrat-SemiBold.ttf", 46), P["ink_soft"])
+    kit.mascot.draw(img, 20, 1280, t, height=580)
 
 
 # ─────────────────────────────────────────────────── beat 2 · secousse (92) ──
 
 
-CARDS = [("HORAIRES", "Add business hours"), ("SITE WEB", "Add website"), ("AVIS", "Pas encore d'avis")]
+CARDS = [("SON SITE", "6 photos", True),
+         ("SES AVIS", "douze", True)]
 
 
 def s_spike1(kit, img, d, t, dur):
+    """La preuve, **prononcée** : « sa fiche a des horaires, un site, douze avis ».
+
+    Les trois lignes viennent de la capture Optix du 24/10 (un site · 6 photos · 12 avis) : la pièce ne
+    prouve pas avec un chiffre de marché, elle prouve avec ce que le patient voit sur son téléphone.
+    """
     punch(img, t, 0.0)
-    label(d, "LA FICHE DU CABINET")
-    draw_text(d, (MARGIN, 250), "Google demande\ntrois choses.", font("Montserrat-ExtraBold.ttf", 78),
-              P["ink"], spacing=8)
-    for i, (name, prompt) in enumerate(CARDS):
-        appear = ease((t - 0.2 - i * 0.2) / 0.4)
+    label(d, "CE QUE LE PATIENT VOIT")
+    draw_text(d, (MARGIN, 250), "Sa fiche :", font("Montserrat-ExtraBold.ttf", 82), P["ink"])
+    for i, (name, value, coche) in enumerate(CARDS):
+        appear = ease((t - 0.15 - i * 0.18) / 0.4)
         if appear <= 0:
             continue
-        y = 600 + i * 214 + int((1 - appear) * 26)
-        fill = [P["orange_soft"], P["blue_soft"], P["green_soft"]][i]
-        rounded_card(img, (MARGIN, y, W - MARGIN, y + 180), fill, radius=14, pin=P["orange"])
-        d.text((MARGIN + 44, y + 44), name, font=font("Montserrat-SemiBold.ttf", 30), fill=P["ink_soft"])
-        d.text((MARGIN + 44, y + 88), prompt, font=font("Montserrat-Bold.ttf", 54), fill=P["ink"])
-    kit.mascot.draw(img, -10, 1270, t, talking=1.0, height=560)
-    if t > 0.9:
-        pill(img, (700, 1380), [("trois ", P["white"]), ("choses", P["orange"])], size=50)
+        y = 400 + i * 190 + int((1 - appear) * 24)
+        rounded_card(img, (MARGIN, y, W - MARGIN, y + 150), P["cream_light"], radius=14)
+        d.text((MARGIN + 40, y + 34), name, font=font("Montserrat-SemiBold.ttf", 28), fill=P["ink_soft"])
+        d.text((MARGIN + 40, y + 76), value, font=font("Montserrat-Bold.ttf", 56), fill=P["ink"])
+        draw_check(d, (W - MARGIN - 78, y + 75), 52, P["green"], width=9)
+    if t > 1.2:
+        draw_text(d, (MARGIN, 880), "La vôtre :", font("Montserrat-ExtraBold.ttf", 62), P["ink"])
+        draw_text(d, (MARGIN, 960), "un nom.", font("Montserrat-ExtraBold.ttf", 82), P["orange"])
+    kit.mascot.draw(img, 380, 1120, t, talking=1.0, height=640)
 
 
 # ─────────────────────────────────────────────────── beat 3 · relâche (58) ──
 
 
 def s_release1(kit, img, d, t, dur):
-    draw_text(d, (MARGIN, 520), "Vous en avez", font("Montserrat-ExtraBold.ttf", 92), P["ink"])
-    a = ease((t - 0.4) / 0.6)
-    word = "une."
-    fnt = font("Montserrat-ExtraBold.ttf", 150)
-    draw_text(d, (MARGIN, 640), word, fnt, P["orange"] if a > 0.35 else P["sand"])
-    if a > 0.5:
-        draw_text(d, (MARGIN, 900), "Jamais les trois.", font("Montserrat-Medium.ttf", 48), P["ink_soft"])
-    kit.mascot.draw(img, 20, 1080, t, height=740)
+    """Le cadeau, **à 9,6 s** — le défaut de la v4 était de le garder pour la fin (18 s).
+
+    « Vos horaires et votre fiche : dix minutes, gratuit. » C'est vrai, c'est vérifiable, et c'est le
+    seul moment de la pièce où le spectateur gagne quelque chose sans rien nous acheter.
+    """
+    label(d, "CE QUI EST DÉJÀ GRATUIT")
+    draw_text(d, (MARGIN, 300), "Dix minutes.", font("Montserrat-ExtraBold.ttf", 96), P["ink"])
+    a = ease((t - 0.35) / 0.5)
+    draw_text(d, (MARGIN, 430), "Gratuit.", font("Montserrat-ExtraBold.ttf", 110),
+              P["green"] if a > 0.3 else P["sand"])
+    if t > 0.6:
+        draw_text(d, (MARGIN, 640), "Horaires", font("Montserrat-SemiBold.ttf", 50), P["ink_soft"])
+        draw_text(d, (MARGIN, 706), "et fiche.", font("Montserrat-SemiBold.ttf", 50), P["ink_soft"])
+        draw_check(d, (W - MARGIN - 80, 660), 76, P["green"], width=12)
+    kit.mascot.draw(img, 20, 900, t, height=740)
 
 
 # ─────────────────────────────────────────────────── beat 4 · secousse (88) ──
 
 
 def s_spike2(kit, img, d, t, dur):
-    punch(img, t, 0.0, strength=0.14)
-    label(d, "CE QUE FAIT UN SITE")
-    draw_text(d, (MARGIN, 250), "Un site ne sert pas", font("Montserrat-ExtraBold.ttf", 66), P["ink"])
-    fnt = font("Montserrat-ExtraBold.ttf", 66)
-    draw_text(d, (MARGIN, 336), "à « avoir un site ».", fnt, P["orange"])
-    # le trait sous la phrase qu'on retire (pas de rature sur les glyphes : illisible)
-    d.rectangle((MARGIN + 4, 336 + 72, MARGIN + text_width(fnt, "à « avoir un site »."), 336 + 80),
-                fill=P["orange"])
+    """Le **rehook** : « ce n'est pas le site qu'il regarde. Il veut venir ce soir. »
 
-    if t > 0.5:
-        a = ease((t - 0.5) / 0.5)
-        y = 520 + int((1 - a) * 30)
-        rounded_card(img, (MARGIN, y, W - MARGIN, y + 350), P["green_soft"], radius=18, pin=P["green"])
-        d.text((MARGIN + 48, y + 46), "IL RÉPOND AVANT L'APPEL", font=font("Montserrat-SemiBold.ttf", 28),
-               fill=P["ink_soft"])
-        for i, line in enumerate(["Horaires", "Adresse", "WhatsApp"]):
-            draw_text(d, (MARGIN + 48, y + 104 + i * 88), line, font("Montserrat-Bold.ttf", 58), P["ink"])
-        draw_check(d, (W - MARGIN - 90, y + 210), 92, P["green"], width=14)
-    kit.mascot.draw(img, 0, 1270, t, talking=1.0, height=560)
+    C'est le beat que la v4 n'avait pas — celui qui remet le sablier à zéro en déplaçant la question
+    du produit (le site) vers le désir (venir ce soir). Aucune donnée, aucune promesse.
+    """
+    punch(img, t, 0.0, strength=0.14)
+    label(d, "CE QU'IL REGARDE VRAIMENT")
+    fnt = font("Montserrat-ExtraBold.ttf", 70)
+    draw_text(d, (MARGIN, 260), "Ce n'est pas", fnt, P["ink"])
+    draw_text(d, (MARGIN, 348), "le site.", fnt, P["ink"])
+    d.rectangle((MARGIN + 4, 348 + 74, MARGIN + text_width(fnt, "le site."), 348 + 82),
+                fill=P["orange"])
+    if t > 0.6:
+        draw_text(d, (MARGIN, 520), "Il veut venir", font("Montserrat-ExtraBold.ttf", 78), P["orange"])
+        draw_text(d, (MARGIN, 618), "ce soir.", font("Montserrat-ExtraBold.ttf", 78), P["orange"])
+    if t > 1.2:
+        pill(img, (W // 2, 790), [("22 h · ", P["white"]), ("le cabinet est fermé", P["orange"])],
+             size=44, pad=(36, 24))
+    kit.mascot.draw(img, 20, 950, t, talking=1.0, height=720)
 
 
 # ─────────────────────────────────────────────────── beat 5 · relâche (60) ──
 
 
 def s_release2(kit, img, d, t, dur):
-    """Le conseil gratuit — la pièce doit laisser quelque chose d'appliquable (utilité, jeu 5).
+    """Le mécanisme : « un site répond à vingt-deux heures. Horaires, adresse, WhatsApp. »
 
-    Ce qui est vrai, et que la pièce peut donc montrer : les horaires se publient en dix minutes,
-    la fiche se réclame, l'avis ne se fabrique pas — il vient d'un patient. Le site, lui, se
-    construit : c'est le seul des trois qui soit notre travail.
+    Le site n'est plus l'objet vendu, il est **la réponse de 22 h**. C'est ce déplacement que le
+    Roast Room a demandé (Graham : « il ne veut pas un site, il veut que le téléphone sonne »).
     """
-    label(d, "CE QUI EST DÉJÀ GRATUIT")
-    draw_text(d, (MARGIN, 250), "Deux se font", font("Montserrat-ExtraBold.ttf", 72), P["ink"])
-    draw_text(d, (MARGIN, 330), "sans personne.", font("Montserrat-ExtraBold.ttf", 72), P["orange"])
-
-    rows = [
-        ("Horaires", "10 minutes, vous-même", True),
-        ("Votre fiche", "à réclamer", True),
-        ("L'avis", "un patient l'écrit", False),
-    ]
-    for i, (titre, detail, coche) in enumerate(rows):
-        a = ease((t - 0.15 - i * 0.15) / 0.35)
-        if a <= 0:
-            continue
-        y = 520 + i * 150 + int((1 - a) * 18)
-        d.rounded_rectangle((MARGIN, y, W - MARGIN, y + 122), radius=12, fill=P["cream_light"])
-        d.text((MARGIN + 36, y + 30), titre, font=font("Montserrat-Bold.ttf", 44), fill=P["ink"])
-        d.text((MARGIN + 36, y + 80), detail, font=font("Montserrat-Medium.ttf", 28), fill=P["ink_soft"])
-        if coche:
-            draw_check(d, (W - MARGIN - 70, y + 61), 52, P["green"], width=10)
-        else:
-            d.line([(W - MARGIN - 96, y + 61), (W - MARGIN - 44, y + 61)], fill=P["orange"], width=8)
-
-    draw_text(d, (MARGIN, 1020), "Le site, c'est le seul qui se construise.",
-              font("Montserrat-SemiBold.ttf", 40), P["ink_soft"])
-    kit.mascot.draw(img, 40, 1120, t, talking=1.0, height=620)
+    label(d, "UN SITE RÉPOND")
+    draw_text(d, (MARGIN, 250), "à 22 h 00.", font("Montserrat-ExtraBold.ttf", 96), P["ink"])
+    a = ease((t - 0.5) / 0.5)
+    if a > 0:
+        y = 430 + int((1 - a) * 30)
+        rounded_card(img, (MARGIN, y, W - MARGIN, y + 470), P["green_soft"], radius=18, pin=P["green"])
+        d.text((MARGIN + 48, y + 44), "LE CABINET EST FERMÉ. LA PAGE, NON.",
+               font=font("Montserrat-SemiBold.ttf", 26), fill=P["ink_soft"])
+        for i, ligne in enumerate(["Horaires", "Adresse", "WhatsApp"]):
+            draw_text(d, (MARGIN + 48, y + 110 + i * 100), ligne, font("Montserrat-Bold.ttf", 58), P["ink"])
+        draw_check(d, (W - MARGIN - 96, y + 210), 92, P["green"], width=14)
+    if t > 1.6:
+        draw_text(d, (MARGIN, 970), "Une seule page. Une seule réponse.",
+                  font("Montserrat-Medium.ttf", 38), P["ink_soft"])
+    kit.mascot.draw(img, 40, 1060, t, talking=1.0, height=760)
 
 
 # ────────────────────────────────────────────────────── beat 6 · CTA (95) ──
@@ -412,10 +445,10 @@ if __name__ == "__main__":
     inconnues = flags - {"--sans-voix"}
     if inconnues:
         sys.exit(f"option inconnue : {' '.join(sorted(inconnues))} — connu : --sans-voix")
-    out = args[0] if args else os.path.join(HERE, "ep01-v4.mp4")
+    out = args[0] if args else os.path.join(HERE, "ep01-v5.mp4")
     with_voice = "--sans-voix" not in flags
     kit = build()
-    silent = os.path.join(HERE, "ep01-v4-silent.mp4")
+    silent = os.path.join(HERE, "ep01-v5-silent.mp4")
     kit.render(silent)
     print(f"✅ image : {silent} · {DURATION:.1f} s")
     if with_voice and os.path.exists(TIMING):
