@@ -2,15 +2,15 @@
 
 ```text
 Généré par tools/graphify/build_full_graph.py — 2026-10-26
-Source : graphify-out/graph.json (13244 nœuds, 17115 arêtes)
+Source : graphify-out/graph.json (13246 nœuds, 17119 arêtes)
 Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même
 carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.
 ```
 
 ## 0 · En une page
 
-- **13244 nœuds** — dont 824 documents, 202 scripts, 21 modules, 139 pages HTML, 459 images, 6 vidéos, 40 audios, 41 fichiers de données, 11 PDF.
-- **3636 citations entre documents** (2954 en chemin exact, 682 par nom unique)
+- **13246 nœuds** — dont 824 documents, 202 scripts, 21 modules, 139 pages HTML, 459 images, 6 vidéos, 40 audios, 41 fichiers de données, 11 PDF.
+- **3638 citations entre documents** (2956 en chemin exact, 682 par nom unique)
 - **157 arêtes de remplacement** · **1 documents marqués périmés**
 - **417 documents que personne ne cite** (atteignables par aucun chemin de lecture)
 - **Couverture : 1806 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
@@ -42,7 +42,7 @@ carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10
 
 | Document | Titres | Cité par | Son sujet, dans ses propres mots |
 |---|---|---|---|
-| `knowledge/PRIX-2026-10-24.md` | 11 | 14× | Le prix du socle et de l'entretien — recherche du 24/10/2026 |
+| `knowledge/PRIX-2026-10-24.md` | 11 | 15× | Le prix du socle et de l'entretien — recherche du 24/10/2026 |
 | `knowledge/OUTREACH-MESSAGING-2026-10-22.md` | 8 | 10× | Le message qui accroche un gérant de clinique — motifs tirés de trois comptes, 22/10/2026 |
 | `knowledge/IDEA-PIPES-2026-10-25.md` | 12 | 9× | LES SIX TUYAUX À IDÉES — d'où vient une idée, avant de savoir si elle est bonne |
 | `knowledge/CONTENT-CREATION-2026-10-22.md` | 39 | 8× | Création de contenu — ce que le dépôt sait faire, au 22/10/2026 |
@@ -75,7 +75,7 @@ C'est ce réseau qui décide de ce qui s'applique à un travail. Si un document 
 
 | Rang | Document | Cité par | Titres |
 |---|---|---|---|
-| 1 | `sales/Activity-Log.md` | **200** | 280 |
+| 1 | `sales/Activity-Log.md` | **200** | 281 |
 | 2 | `AMK-DESIGN-SKILLS.md` | **41** | 173 |
 | 3 | `PRE-FLIGHT.md` | **37** | 41 |
 | 4 | `research/YouTube-Lessons.md` | **30** | 202 |
@@ -94,7 +94,7 @@ C'est ce réseau qui décide de ce qui s'applique à un travail. Si un document 
 | 17 | `content/scripts/README.md` | **16** | 3 |
 | 18 | `ops/TOOL-SCAN.md` | **16** | 44 |
 | 19 | `content/strategy/TIKTOK-SEO-CHECKLIST-2026-10.md` | **15** | 14 |
-| 20 | `sales/research/2026-W43-techniques.md` | **15** | 27 |
+| 20 | `knowledge/PRIX-2026-10-24.md` | **15** | 11 |
 
 ## 3 · ⚠️ Documents encore cités alors qu'ils sont marqués périmés
 
@@ -238,7 +238,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | vidéo | 6 | `clients/dm-optic/brag/brag.mp4`, `content/reels/ep01/ep01-v4.mp4`, `content/reels/ep01/ep01-v5.mp4` |
 | sous-titre | 3 | `clients/dm-optic/content/month1/w1/tiktok-01-v2.fr.srt`, `clients/dm-optic/content/month1/w1/tiktok-01.fr.srt`, `clients/dm-optic/content/month1/w2/etapes-01.srt` |
 | archive | 1 | `dmopticsarl-2026-10-21.zip` |
-| symboles extraits (titres de documents + fonctions/classes du code) | 11438 | — |
+| symboles extraits (titres de documents + fonctions/classes du code) | 11440 | — |
 
 ### Les outils et skills installés — 1 dossier = 1 outil
 
