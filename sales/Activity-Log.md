@@ -6917,3 +6917,24 @@ King ne les a pas données, et une heure inventée vaut moins qu'une heure absen
   la carte). Versionné : `clients/dr-ophtalmo/brag/brag.mp4` (4,1 Mo) + `brag-whatsapp.mp4` (2,5 Mo) +
   `poster.jpg` (67 Ko), exception datée dans `.gitignore` comme EP01 ; le master de 14 Mo reste dehors.
   Documentation : `clients/dr-ophtalmo/brag/brag-plan.md` (scènes, portiques, reprise de zéro).
+
+## 26/10/2026 (soir) · Africa Optic — la première conversation engagée, et deux choses à ne pas laisser passer
+
+- 26/10/2026 · **Réponse d'Africa Optic** (691 28 02 37, lot du v8, message parti le 26/10). Trois messages,
+  dans cet ordre : « ok je vous reviens » · « vous avez encore besoin des éléments » · « je pense que ses
+  plus mieux avec mes photos ». King a répondu et promis **2 ou 3 portraits professionnels du cabinet + son
+  nom complet officiel**. CRM : `stage=qualifying`, `reply_type=interested`, `stage_since=2026-10-26`.
+  Tracker : `réponses < 48 h` passe à **2 / 15** (ISEE sur un message faux, Africa Optic sur un message juste).
+- 26/10/2026 · **Ce que le prospect a donné de lui-même**, et qui suffit à écrire son aperçu sans rien
+  inventer : *« samedi sur rendez-vous à l'hôpital charity médical assurance center situé à bonaberie grand
+  hagard bloc7 »*. Deux faits, pas un de plus. Tout le reste — jours de semaine, services, assurances,
+  montures — n'existe pas encore et ne s'écrira pas avant qu'il le dise.
+- 26/10/2026 · **Deux risques nommés, avant qu'ils coûtent quelque chose.**
+  **① Le lien envoyé est l'aperçu d'un autre client** : `dr-ophtalmo-preview.vercel.app` décrit un
+  ophtalmologue itinérant avec **ses** quatre lieux et **ses** jours. Africa Optic l'a ouvert, et sa réponse
+  montre qu'il l'a lu comme un gabarit (« c'est mieux avec mes photos »). Il faut donc lui livrer **son**
+  aperçu — ses deux lieux, son samedi — et cesser d'envoyer ce lien-là à d'autres prospects : un aperçu qui
+  contient les données d'un client est une fuite, même en `noindex`.
+  **② « Docteur »** : Africa Optic est un opticien du tableau de l'Ordre (titulaire MINTEU NZONGA Eric Aimé).
+  L'appeler « Docteur » flatte peut-être juste, mais s'il ne l'est pas, la première phrase du premier message
+  devient une erreur qu'il voit. À trancher par King avant le message suivant.

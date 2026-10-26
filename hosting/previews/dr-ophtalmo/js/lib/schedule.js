@@ -8,6 +8,17 @@ import { doctorConfig } from "../config/doctor.js";
 export const WEEK = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 
 /**
+ * Les horaires peuvent être une chaîne (« 8 h – 15 h ») ou un objet bilingue
+ * ({ fr, en }) quand le texte n'est pas une heure mais une modalité —
+ * « Sur rendez-vous ». Cette fonction rend toujours une chaîne affichable.
+ */
+export const hoursText = (hours, lang = "fr") => {
+  if (!hours) return "";
+  if (typeof hours === "string") return hours.trim();
+  return (hours[lang] || hours.fr || "").trim();
+};
+
+/**
  * @returns {Array<{day: string, entries: Array<{
  *   locationId: string, city: string, facility: string,
  *   hours: string, status: string, asOf: string
@@ -37,7 +48,7 @@ export const hasAnySchedule = (config = doctorConfig) =>
 
 /** Y a-t-il au moins une heure connue ? Sinon on l'écrit, au lieu de laisser vide. */
 export const hasAnyHours = (config = doctorConfig) =>
-  config.locations.some((location) => Boolean(location.hours && location.hours.trim()));
+  config.locations.some((location) => Boolean(hoursText(location.hours)));
 
 /** Le libellé d'un lieu, sans jamais afficher «  » ou « undefined ». */
 export function locationLabel(location, t) {

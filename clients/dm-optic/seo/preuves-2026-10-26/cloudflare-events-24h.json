@@ -1,0 +1,1367 @@
+[
+  {
+    "action": "block",
+    "clientASNDescription": "TC DATACENTER LIMITED",
+    "clientAsn": "218785",
+    "clientCountryName": "NL",
+    "clientIP": "185.218.86.14",
+    "clientRefererHost": "www.dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "GET",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/wp-config.php",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-26T17:57:05Z",
+    "description": "Wordpress - Broken Access Control, File Inclusion",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "43"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a50b57659eb93331",
+    "ref": "13bc8134cfdbfbec7c0b647ddb242a9f",
+    "ruleId": "9ce4e284ff2a486aaa37d642bff5a079",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "TC DATACENTER LIMITED",
+    "clientAsn": "218785",
+    "clientCountryName": "NL",
+    "clientIP": "185.218.86.14",
+    "clientRefererHost": "",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "GET",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/wp-config.php",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-26T08:52:35Z",
+    "description": "Wordpress - Broken Access Control, File Inclusion",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "43"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a50839cb9f542151",
+    "ref": "13bc8134cfdbfbec7c0b647ddb242a9f",
+    "ruleId": "9ce4e284ff2a486aaa37d642bff5a079",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Google LLC",
+    "clientAsn": "396982",
+    "clientCountryName": "SG",
+    "clientIP": "34.142.218.26",
+    "clientRefererHost": "",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-26T05:28:59Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a5070f88cfafe1e1",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Google LLC",
+    "clientAsn": "396982",
+    "clientCountryName": "SG",
+    "clientIP": "34.142.218.26",
+    "clientRefererHost": "",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-26T05:28:58Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a5070f87ad89e1e1",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "TECHOFF SRV LIMITED",
+    "clientAsn": "48090",
+    "clientCountryName": "NL",
+    "clientIP": "45.148.10.62",
+    "clientRefererHost": "",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "GET",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/wp-config.php.old",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-26T05:23:41Z",
+    "description": "Wordpress - Broken Access Control, File Inclusion",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "43"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a50707c81da57763",
+    "ref": "13bc8134cfdbfbec7c0b647ddb242a9f",
+    "ruleId": "9ce4e284ff2a486aaa37d642bff5a079",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "TECHOFF SRV LIMITED",
+    "clientAsn": "48090",
+    "clientCountryName": "NL",
+    "clientIP": "45.148.10.62",
+    "clientRefererHost": "",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "GET",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/wp-config.php",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-26T05:23:41Z",
+    "description": "Wordpress - Broken Access Control, File Inclusion",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "43"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a50707c7dd367763",
+    "ref": "13bc8134cfdbfbec7c0b647ddb242a9f",
+    "ruleId": "9ce4e284ff2a486aaa37d642bff5a079",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "TECHOFF SRV LIMITED",
+    "clientAsn": "48090",
+    "clientCountryName": "NL",
+    "clientIP": "45.148.10.62",
+    "clientRefererHost": "www.dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "GET",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/wp-config.php.old",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-26T04:40:48Z",
+    "description": "Wordpress - Broken Access Control, File Inclusion",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "43"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a506c8f97e141717",
+    "ref": "13bc8134cfdbfbec7c0b647ddb242a9f",
+    "ruleId": "9ce4e284ff2a486aaa37d642bff5a079",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "TECHOFF SRV LIMITED",
+    "clientAsn": "48090",
+    "clientCountryName": "NL",
+    "clientIP": "45.148.10.62",
+    "clientRefererHost": "www.dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "GET",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/wp-config.php",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-26T04:40:48Z",
+    "description": "Wordpress - Broken Access Control, File Inclusion",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "43"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a506c8f94da21717",
+    "ref": "13bc8134cfdbfbec7c0b647ddb242a9f",
+    "ruleId": "9ce4e284ff2a486aaa37d642bff5a079",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Amazon.com, Inc.",
+    "clientAsn": "14618",
+    "clientCountryName": "US",
+    "clientIP": "100.54.194.69",
+    "clientRefererHost": "dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-25T22:54:30Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a504cdb2ce2bff28",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Amazon.com, Inc.",
+    "clientAsn": "14618",
+    "clientCountryName": "US",
+    "clientIP": "100.54.194.69",
+    "clientRefererHost": "dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-25T22:54:30Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a504cdb26c6cff28",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Amazon.com, Inc.",
+    "clientAsn": "14618",
+    "clientCountryName": "US",
+    "clientIP": "100.54.194.69",
+    "clientRefererHost": "dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-25T22:54:30Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a504cdb21b1eff28",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Amazon.com, Inc.",
+    "clientAsn": "14618",
+    "clientCountryName": "US",
+    "clientIP": "100.54.194.69",
+    "clientRefererHost": "dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-25T22:54:30Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a504cdaef8c67fa4",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Amazon.com, Inc.",
+    "clientAsn": "14618",
+    "clientCountryName": "US",
+    "clientIP": "100.54.194.69",
+    "clientRefererHost": "dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-25T22:54:30Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a504cdae2e147fa4",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Amazon.com, Inc.",
+    "clientAsn": "14618",
+    "clientCountryName": "US",
+    "clientIP": "100.54.194.69",
+    "clientRefererHost": "dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-25T22:54:29Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a504cdad4b8d7fa4",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Amazon.com, Inc.",
+    "clientAsn": "14618",
+    "clientCountryName": "US",
+    "clientIP": "100.54.194.69",
+    "clientRefererHost": "dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-25T22:54:29Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a504cdacda497fa4",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Amazon.com, Inc.",
+    "clientAsn": "14618",
+    "clientCountryName": "US",
+    "clientIP": "100.54.194.69",
+    "clientRefererHost": "dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-25T22:54:29Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a504cdac48c27fa4",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Amazon.com, Inc.",
+    "clientAsn": "14618",
+    "clientCountryName": "US",
+    "clientIP": "100.54.194.69",
+    "clientRefererHost": "dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-25T22:54:29Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a504cda948167fa4",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Amazon.com, Inc.",
+    "clientAsn": "16509",
+    "clientCountryName": "SG",
+    "clientIP": "47.128.253.187",
+    "clientRefererHost": "dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-25T22:37:18Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a504b47c8fee3f69",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Amazon.com, Inc.",
+    "clientAsn": "16509",
+    "clientCountryName": "SG",
+    "clientIP": "47.128.253.187",
+    "clientRefererHost": "dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-25T22:37:18Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a504b47c5fe03f69",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Amazon.com, Inc.",
+    "clientAsn": "16509",
+    "clientCountryName": "SG",
+    "clientIP": "47.128.253.187",
+    "clientRefererHost": "dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-25T22:37:18Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a504b47bd93fdfc6",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Amazon.com, Inc.",
+    "clientAsn": "16509",
+    "clientCountryName": "SG",
+    "clientIP": "47.128.253.187",
+    "clientRefererHost": "dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-25T22:37:17Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a504b47af836dfc6",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Amazon.com, Inc.",
+    "clientAsn": "16509",
+    "clientCountryName": "SG",
+    "clientIP": "47.128.253.187",
+    "clientRefererHost": "dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-25T22:37:17Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a504b47a8fa0dfc6",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Amazon.com, Inc.",
+    "clientAsn": "16509",
+    "clientCountryName": "SG",
+    "clientIP": "47.128.253.187",
+    "clientRefererHost": "dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-25T22:37:17Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a504b47a4f53dfc6",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Amazon.com, Inc.",
+    "clientAsn": "16509",
+    "clientCountryName": "SG",
+    "clientIP": "47.128.253.187",
+    "clientRefererHost": "dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-25T22:37:17Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a504b479feeedfc6",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Amazon.com, Inc.",
+    "clientAsn": "16509",
+    "clientCountryName": "SG",
+    "clientIP": "47.128.253.187",
+    "clientRefererHost": "dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-25T22:37:17Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a504b4797e48dfc6",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Amazon.com, Inc.",
+    "clientAsn": "16509",
+    "clientCountryName": "SG",
+    "clientIP": "47.128.253.187",
+    "clientRefererHost": "dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-25T22:37:17Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a504b4784d00dfc6",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Amazon.com, Inc.",
+    "clientAsn": "14618",
+    "clientCountryName": "US",
+    "clientIP": "54.160.247.72",
+    "clientRefererHost": "dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-25T21:47:23Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a5046b5eb916c989",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Amazon.com, Inc.",
+    "clientAsn": "14618",
+    "clientCountryName": "US",
+    "clientIP": "54.160.247.72",
+    "clientRefererHost": "dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-25T21:47:22Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a5046b5c7fb72eee",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Amazon.com, Inc.",
+    "clientAsn": "14618",
+    "clientCountryName": "US",
+    "clientIP": "54.160.247.72",
+    "clientRefererHost": "dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-25T21:47:22Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a5046b5bbfe7c950",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Amazon.com, Inc.",
+    "clientAsn": "14618",
+    "clientCountryName": "US",
+    "clientIP": "54.160.247.72",
+    "clientRefererHost": "dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-25T21:47:22Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a5046b594cd12eee",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Amazon.com, Inc.",
+    "clientAsn": "14618",
+    "clientCountryName": "US",
+    "clientIP": "54.160.247.72",
+    "clientRefererHost": "dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-25T21:47:22Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a5046b5879a42eee",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Amazon.com, Inc.",
+    "clientAsn": "14618",
+    "clientCountryName": "US",
+    "clientIP": "54.160.247.72",
+    "clientRefererHost": "dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-25T21:47:22Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a5046b5838bb2eee",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Amazon.com, Inc.",
+    "clientAsn": "14618",
+    "clientCountryName": "US",
+    "clientIP": "54.160.247.72",
+    "clientRefererHost": "dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-25T21:47:22Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a5046b57bef92eee",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Amazon.com, Inc.",
+    "clientAsn": "14618",
+    "clientCountryName": "US",
+    "clientIP": "54.160.247.72",
+    "clientRefererHost": "dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-25T21:47:22Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a5046b56ec062eee",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  },
+  {
+    "action": "block",
+    "clientASNDescription": "Amazon.com, Inc.",
+    "clientAsn": "14618",
+    "clientCountryName": "US",
+    "clientIP": "54.160.247.72",
+    "clientRefererHost": "dmoptiquesarl.com",
+    "clientRequestHTTPHost": "dmoptiquesarl.com",
+    "clientRequestHTTPMethodName": "POST",
+    "clientRequestHTTPProtocol": "HTTP/1.1",
+    "clientRequestPath": "/",
+    "clientRequestQuery": "",
+    "contentScanObjTypes": [],
+    "datetime": "2026-10-25T21:47:21Z",
+    "description": "React - RCE - CVE:CVE-2025-55182",
+    "matchIndex": 0,
+    "metadata": [
+      {
+        "key": "ruleset_version",
+        "value": "82"
+      },
+      {
+        "key": "version",
+        "value": "2"
+      },
+      {
+        "key": "configuration_id",
+        "value": "903833798"
+      }
+    ],
+    "rayName": "a5046b536faf2eee",
+    "ref": "05253e585770c8f62cc649ddbfa9997a",
+    "ruleId": "2b5d06e34a814a889bee9a0699702280",
+    "rulesetId": "77454fe2d30c4220b5701f6fdfb893ba",
+    "sampleInterval": 1,
+    "source": "firewallManaged",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "zoneVersion": 0
+  }
+]

@@ -21,6 +21,8 @@ Pièges joués :
  10. `price` dans le JSON-LD                                   → D7 P1
  11. fiche produit sans `Product`                              → D7 P2
  12. HSTS absent                                               → D8 P2
+ 13. URL du sitemap dont la page porte `noindex`                 → D9 P1
+ 14. URL du sitemap sans fichier sur le disque                  → D9 P2
 """
 
 import os
@@ -213,7 +215,24 @@ def main():
 
         broken("sans-hsts", no_hsts, "D8", "P2")
 
-        print("\n%d assertion(s) verte(s), %d échec(s) — la porte de livraison mord sur les douze pièges."
+        # 13 · le cas DM OPTIQUE du 26/10 : le sitemap demande l'index d'une page qui le refuse.
+        #      Search Console nomme ça « Submitted URL marked noindex » ; c'est une contradiction
+        #      entre deux fichiers du site, pas un détail.
+        def sm_noindex(d):
+            write(os.path.join(d, "contact", "index.html"), page(
+                "Contact", NAV_OK,
+                HEAD_OK + '<meta name="robots" content="noindex,follow">'))
+
+        broken("sitemap-demande-une-page-noindex", sm_noindex, "D9", "P1", strict_rc=1)
+
+        # 14 · le fantôme : une URL au sitemap dont le fichier n'existe pas.
+        def sm_fantome(d):
+            with open(os.path.join(d, "sitemap.xml"), "a", encoding="utf-8") as f:
+                f.write("<url><loc>%s/pages-disparue/</loc></url>" % HOST)
+
+        broken("sitemap-avec-fantome", sm_fantome, "D9", "P2")
+
+        print("\n%d assertion(s) verte(s), %d échec(s) — la porte de livraison mord sur les quatorze pièges."
               % (ok, fail))
     finally:
         shutil.rmtree(tmp, ignore_errors=True)

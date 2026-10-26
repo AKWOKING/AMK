@@ -6,16 +6,16 @@
 export const en = {
   meta: {
     lang: "en",
-    title: "Ophthalmology in Cameroon: consultations in Mbouda, Bafoussam, Douala and Bonabéri",
+    title: "Dr Fogue, ophthalmologist: consultations in Mbouda, Bafoussam and Douala",
     description:
-      "Professional website of an itinerant ophthalmologist in Cameroon: consultation locations, weekly days, and appointment requests by WhatsApp or phone.",
+      "Dr Fogue, ophthalmologist, consults in Mbouda, Bafoussam, Douala (Africa Médical) and Bonabéri (Hôpital Charity). Consultation days and direct contact by WhatsApp or phone.",
   },
 
   common: {
     skip: "Skip to content",
-    brand: "Ophthalmology",
-    brandSub: "Cameroon",
-    doctorFallback: "the doctor",
+    brand: "Dr Fogue",
+    brandSub: "Ophthalmology",
+    doctorFallback: "Dr Fogue",
     unknown: "To be confirmed",
     reported: "Reported",
     confirmed: "Confirmed",
@@ -42,27 +42,29 @@ export const en = {
 
   hero: {
     eyebrow: "OPHTHALMOLOGY · CAMEROON",
-    h1: ["YOUR", "VISION,", "MY PRIORITY."],
+    h1: ["TAKE CARE", "OF YOUR SIGHT,", "WITH DR FOGUE."],
     lead:
-      "“An ophthalmologist who listens, consulting in several cities and medical facilities across Cameroon.”",
-    ctaPrimary: "Find a consultation location",
-    ctaSecondary: "Meet the doctor",
+      "“Ophthalmology consultations, eye examinations, diagnosis and advice to support you in looking after your eyes.”",
+    ctaPrimary: "Request an appointment",
+    ctaSecondary: "See consultation locations",
+    whatsappCta: "Message on WhatsApp",
+    identityPending: "Name and specialty to be confirmed",
     placesLabel: "Consultation locations",
     places: "Mbouda · Bafoussam · Douala · Bonabéri",
     placesNote:
-      "These cities are consultation locations. They do not mean the doctor consults in each of them every day.",
+      "Days differ from one location to another: the full week is listed further down, location by location.",
     portraitCaption:
       "Illustrative portrait (generated image), to be replaced by the doctor’s own photograph.",
-    statusLine: "Information reported on 26 October 2026. Reconfirm before travelling.",
+    statusLine: "Days reported by Dr Fogue on 26 October 2026. Reconfirm before travelling.",
   },
 
   parcours: {
-    kicker: "ABOUT THE DOCTOR",
-    title: "“Medical expertise, several consultation locations.”",
+    kicker: "THE DOCTOR",
+    title: "“Your eye specialist.”",
     p1:
-      "“Because access to eye care is not limited to a single address, Dr [DOCTOR NAME] consults in several cities and medical facilities, on a defined schedule.”",
+      "“Dr Fogue supports you in caring for your eyesight through consultations organised at several locations across Cameroon.”",
     p2:
-      "“This website gathers the essential information to help you identify the right consultation location, prepare your visit, and reach the right person.”",
+      "“This page gathers the practical details you need to prepare your consultation and reach his team: the days he is present, location by location, the address where it is known, and the number to call.”",
     profileTitle: "Professional details",
     profileNote:
       "Only information provided by the doctor appears here. No degree, registration or experience is invented to fill the page.",
@@ -90,14 +92,14 @@ export const en = {
       "Eye examination in a consultation room: an illustrative photograph (generated image), not tied to any particular partner facility.",
     equipmentCaption: "Slit lamp and examination chair, an illustrative photograph (generated image).",
     photoNote:
-      "The photographs on this page are generated illustrations. They show neither the doctor nor a specific partner location.",
+      "The photographs on this page are Dr Fogue’s own, supplied by him on 26 October 2026. No generated image appears on the site.",
   },
 
   consultations: {
     kicker: "LOCATIONS AND CONSULTATION DAYS",
-    title: "“Where can you see the doctor?”",
+    title: "“Where can you see Dr Fogue?”",
     lead:
-      "“Find the consultation locations and the days the doctor is present. Check the information before travelling, and request an appointment for the relevant facility.”",
+      "“Four consultation locations, with different days depending on the place. Check the information before travelling, then request an appointment for the relevant facility.”",
     selectLabel: "Choose a location",
     selected: "Selected location",
     requestCta: "Request an appointment",
@@ -114,10 +116,10 @@ export const en = {
     facilityPlaceholder: "Host facility to be specified",
     facilityNote:
       "The doctor consults at this facility. This site does not claim he runs it, nor that he is based there permanently.",
-    scheduleTitle: "The consultation week",
+    scheduleTitle: "Dr Fogue’s week",
     scheduleLead: "One row per day. The location shown is the one reported by the doctor.",
     scheduleUnverified:
-      "“Consultation days and hours are to be confirmed. Contact us before travelling.”",
+      "“Consultation days and hours are to be confirmed. Please contact Dr Fogue before travelling.”",
     scheduleHoursMissing: "Hours to be confirmed",
     scheduleDayEmpty: "No consultation announced",
     scheduleNote:
@@ -148,7 +150,7 @@ export const en = {
     kicker: "APPOINTMENTS",
     title: "“Let’s take care of your vision.”",
     lead:
-      "“Choose your consultation location and contact us to request an appointment. Our team will confirm the consultation arrangements.”",
+      "“Choose your consultation location, then prepare your message: it goes to WhatsApp, and you send it yourself. Dr Fogue or his team reply to confirm the slot.”",
     formTitle: "Appointment request",
     formNote:
       "Please do not send medical information here: no prescription, no photograph, no diagnosis. The doctor will ask if needed.",
@@ -207,6 +209,8 @@ export const en = {
   },
 
   wa: {
+    direct:
+      "Hello Dr Fogue, I would like information about your ophthalmology consultations and to know the next available slot. Thank you.",
     greeting: "Hello, I would like to request an appointment with {doctor}.",
     place: "Preferred location: {place}",
     date: "Preferred date: {date}",
@@ -217,8 +221,8 @@ export const en = {
   },
 
   footer: {
-    title: "Professional website",
-    line: "One ophthalmologist, several consultation locations in Cameroon.",
+    title: "Dr Fogue · Ophthalmology",
+    line: "One ophthalmologist, four consultation locations in Cameroon.",
     consultations: "Consultations",
     contact: "Contact",
     contactMissing: "Contact details to be published",
@@ -227,7 +231,9 @@ export const en = {
     legal: "Information",
     legalLine:
       "Days, hours and addresses are those reported by the doctor and remain to be confirmed before travelling. This site collects no data: the form only prepares a message.",
-    imagesLine: "Photography: generated images used as illustrations. None of them shows the real doctor.",
+    imagesLine:
+      "Photographs of Dr Fogue, supplied by the doctor on 26 October 2026. The team photograph is not published: its location is unconfirmed.",
+    questionsTitle: "Points to confirm with Dr Fogue",
     editLink: "Information to publish",
     editTitle: "What still has to be published",
     editIntro:
@@ -235,6 +241,6 @@ export const en = {
     editHint: "Fill in js/config/doctor.js, then have the doctor confirm each line.",
     backToTop: "Top of page",
     rights: "Professional website · Cameroon",
-    credit: "AMK preview, not published: the doctor’s details are still to be confirmed.",
+    credit: "AMK preview, not published: awaiting Dr Fogue’s approval.",
   },
 };

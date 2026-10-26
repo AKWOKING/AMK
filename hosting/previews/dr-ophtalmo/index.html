@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Médecine ophtalmologique au Cameroun — consultations à Mbouda, Bafoussam, Douala et Bonabéri</title>
+    <title>Dr Fogue, ophtalmologue — consultations à Mbouda, Bafoussam et Douala</title>
     <meta
       name="description"
-      content="Site professionnel d’un médecin ophtalmologue itinérant au Cameroun : lieux et jours de consultation, demande de rendez-vous par WhatsApp ou téléphone."
+      content="Le Dr Fogue, ophtalmologue, consulte à Mbouda, Bafoussam, Douala (Africa Médical) et Bonabéri (Hôpital Charity). Jours de consultation et contact direct par WhatsApp ou téléphone."
     />
     <!-- Aperçu privé : le site ne doit pas être indexé tant que le médecin ne l'a pas validé et publié. -->
     <meta name="robots" content="noindex, nofollow" />
@@ -15,10 +15,10 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fr_CM" />
     <meta property="og:locale:alternate" content="en_GB" />
-    <meta property="og:title" content="Votre vision, ma priorité — médecine ophtalmologique au Cameroun" />
+    <meta property="og:title" content="Dr Fogue, ophtalmologue au Cameroun — un médecin, quatre lieux de consultation" />
     <meta
       property="og:description"
-      content="Un médecin ophtalmologue, plusieurs lieux de consultation : Mbouda, Bafoussam, Douala et Bonabéri. Jours de consultation et demande de rendez-vous."
+      content="Un ophtalmologue, quatre lieux de consultation : Mbouda, Bafoussam, Africa Médical à Douala et l’Hôpital Charity à Bonabéri. Jours de consultation et contact direct."
     />
     <!-- Remplacer par l'URL absolue du domaine une fois publié (les réseaux sociaux l'exigent) -->
     <!-- JPEG 1200 × 630 et non WebP : l'aperçu de partage doit s'afficher dans WhatsApp -->
@@ -26,9 +26,47 @@
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Médecine ophtalmologique au Cameroun : consultations à Mbouda, Bafoussam, Douala et Bonabéri." />
+    <meta property="og:image:alt" content="Le Dr Fogue, ophtalmologue, en blouse blanche." />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+    <!-- Le médecin, en données structurées : lisible sans exécuter JavaScript. -->
+    <script type="application/ld+json">
+{
+        "@context": "https://schema.org",
+        "@type": "Physician",
+        "name": "Dr Fogue",
+        "medicalSpecialty": "https://schema.org/Ophthalmologic",
+        "telephone": "+237691280237",
+        "url": "https://dr-ophtalmo-preview.vercel.app/",
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Mbouda"
+          },
+          {
+            "@type": "City",
+            "name": "Bafoussam"
+          },
+          {
+            "@type": "City",
+            "name": "Douala"
+          },
+          {
+            "@type": "City",
+            "name": "Bonabéri, Douala"
+          }
+        ],
+        "availableService": {
+          "@type": "MedicalProcedure",
+          "name": "Consultation ophtalmologique"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Douala",
+          "addressCountry": "CM"
+        }
+      }
+    </script>
     <link
       rel="preload"
       href="assets/fonts/inter-tight-latin-400-normal.woff2"
@@ -55,7 +93,7 @@
       <div class="header-inner">
         <a class="wordmark" href="#hero" aria-label="Accueil" data-i18n-aria="nav.home">
           <span class="wordmark-mark" aria-hidden="true">
-            <svg viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentColor">
+            <svg viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentColor" aria-hidden="true">
               <path d="M2 16c4.5-7 10.5-10 14-10s9.5 3 14 10c-4.5 7-10.5 10-14 10S6.5 23 2 16Z" />
               <circle cx="16" cy="16" r="5.2" />
               <path d="M16 10.8a5.2 5.2 0 0 1 0 10.4" stroke-linecap="round" stroke-dasharray="2 3" />
@@ -105,11 +143,14 @@
             <h1 class="hero-title" id="hero-title" data-hero-title>
               <span>VOTRE</span><span>VISION,</span><span>MA PRIORITÉ.</span>
             </h1>
+            <p class="hero-identity" data-hero-identity hidden></p>
             <p class="hero-lead" data-i18n="hero.lead"></p>
             <div class="hero-actions">
-              <a class="btn btn--primary" href="#consultations" data-i18n="hero.ctaPrimary"></a>
-              <a class="btn btn--ghost" href="#parcours" data-i18n="hero.ctaSecondary"></a>
+              <a class="btn btn--primary" href="#consultations" data-i18n="hero.ctaPrimary">Prendre rendez-vous</a>
+              <a class="btn btn--ghost" href="#parcours" data-i18n="hero.ctaSecondary">Voir les lieux de consultation</a>
             </div>
+            <a class="hero-wa" data-hero-wa href="#appointments" hidden data-i18n="hero.whatsappCta">Écrire sur WhatsApp</a>
+
             <div class="hero-places">
               <p class="hero-places-label" data-i18n="hero.placesLabel"></p>
               <p class="hero-places-line" data-i18n="hero.places"></p>
@@ -121,12 +162,12 @@
             <div class="hero-photo">
               <img
                 data-portrait
-                src="assets/img/portrait-960.webp"
+                src="assets/img/dr-fogue-hero-960.webp"
                 srcset=""
                 sizes="(min-width: 1000px) 42vw, 92vw"
                 alt=""
-                width="1376"
-                height="768"
+                width="960"
+                height="1474"
                 fetchpriority="high"
                 decoding="async"
               />
@@ -151,26 +192,16 @@
             <p class="lede" data-i18n="parcours.p2"></p>
 
             <figure class="parcours-figure">
-              <picture>
-                <source
-                  type="image/webp"
-                  srcset="
-                    assets/img/examination-640.webp  640w,
-                    assets/img/examination-960.webp  960w,
-                    assets/img/examination-1440.webp 1440w
-                  "
-                  sizes="(min-width: 1000px) 54vw, 92vw"
-                />
-                <img
-                  src="assets/img/examination-960.webp"
-                  alt="Examen de la vue : une praticienne examine l’œil d’une patiente à la lampe à fente, dans une salle de consultation claire."
-                  width="1376"
-                  height="768"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-              <figcaption class="caption" data-i18n="parcours.examinationCaption"></figcaption>
+              <img
+                data-photo="about"
+                src="assets/img/dr-fogue-cabinet-960.webp"
+                alt=""
+                width="960"
+                height="812"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="caption" data-photo-caption></figcaption>
             </figure>
           </div>
 
@@ -188,28 +219,6 @@
           </aside>
         </div>
 
-        <figure class="band-figure">
-          <picture>
-            <source
-              type="image/webp"
-              srcset="
-                assets/img/equipment-640.webp  640w,
-                assets/img/equipment-960.webp  960w,
-                assets/img/equipment-1440.webp 1440w
-              "
-              sizes="92vw"
-            />
-            <img
-              src="assets/img/equipment-960.webp"
-              alt="Lampe à fente et fauteuil d’examen ophtalmologique dans une salle de consultation contemporaine."
-              width="1376"
-              height="768"
-              loading="lazy"
-              decoding="async"
-            />
-          </picture>
-          <figcaption class="caption" data-i18n="parcours.equipmentCaption"></figcaption>
-        </figure>
       </section>
 
       <!-- ══ 3 · CONSULTATIONS (et Rendez-vous à l'intérieur) ═════════════ -->
@@ -244,6 +253,19 @@
           <p class="panel-note" data-schedule-note></p>
         </div>
 
+        <figure class="consult-figure">
+          <img
+            data-photo="consultation"
+            src="assets/img/dr-fogue-consultation-720.webp"
+            alt=""
+            width="720"
+            height="1400"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption class="caption" data-photo-caption></figcaption>
+        </figure>
+
         <!-- Rendez-vous : ancre #appointments DANS Consultations -->
         <div class="appointments-wrap" id="appointments">
           <div class="grid appointments-grid">
@@ -263,7 +285,7 @@
 
               <form class="appointment-form" novalidate data-form>
                 <div class="field">
-                  <label for="fullName" data-i18n="appointment.labels.fullName"></label>
+                  <label for="fullName" data-i18n="appointment.labels.fullName">Nom complet</label>
                   <input
                     id="fullName"
                     name="fullName"
@@ -282,7 +304,7 @@
                 </fieldset>
 
                 <div class="field">
-                  <label for="contact" data-contact-label data-i18n="appointment.labels.contactPhone"></label>
+                  <label for="contact" data-contact-label data-i18n="appointment.labels.contactPhone">Numéro de téléphone</label>
                   <input
                     id="contact"
                     name="contact"
@@ -298,7 +320,7 @@
                 </div>
 
                 <div class="field">
-                  <label for="locationId" data-i18n="appointment.labels.locationId"></label>
+                  <label for="locationId" data-i18n="appointment.labels.locationId">Ville ou structure souhaitée</label>
                   <select id="locationId" name="locationId" data-field="locationId" data-location-select>
                     <option value="" data-i18n="appointment.placeholders.choose"></option>
                   </select>
@@ -307,20 +329,20 @@
 
                 <div class="field-row">
                   <div class="field">
-                    <label for="preferredDate" data-i18n="appointment.labels.preferredDate"></label>
+                    <label for="preferredDate" data-i18n="appointment.labels.preferredDate">Date souhaitée</label>
                     <input id="preferredDate" name="preferredDate" type="date" data-field="preferredDate" />
                     <p class="field-hint" data-i18n="appointment.hints.preferredDate"></p>
                     <p class="field-error" data-error="preferredDate"></p>
                   </div>
                   <div class="field">
-                    <label for="preferredTime" data-i18n="appointment.labels.preferredTime"></label>
+                    <label for="preferredTime" data-i18n="appointment.labels.preferredTime">Heure souhaitée</label>
                     <input id="preferredTime" name="preferredTime" type="time" data-field="preferredTime" />
                     <p class="field-error" data-error="preferredTime"></p>
                   </div>
                 </div>
 
                 <div class="field">
-                  <label for="note" data-i18n="appointment.labels.note"></label>
+                  <label for="note" data-i18n="appointment.labels.note">Message (facultatif)</label>
                   <textarea id="note" name="note" rows="3" maxlength="400" data-field="note"></textarea>
                   <p class="field-hint" data-i18n="appointment.hints.note"></p>
                   <p class="field-error" data-error="note"></p>
@@ -329,8 +351,8 @@
                 <p class="form-summary" data-form-summary role="alert" aria-live="assertive"></p>
 
                 <div class="form-actions">
-                  <button type="submit" class="btn btn--dark" data-submit data-i18n="appointment.submit"></button>
-                  <button type="button" class="btn btn--quiet" data-reset data-i18n="appointment.reset"></button>
+                  <button type="submit" class="btn btn--dark" data-submit data-i18n="appointment.submit">Préparer ma demande</button>
+                  <button type="button" class="btn btn--quiet" data-reset data-i18n="appointment.reset">Recommencer</button>
                 </div>
               </form>
 
@@ -339,8 +361,8 @@
                 <p class="result-note" data-result-note></p>
                 <pre class="result-message" data-result-message></pre>
                 <div class="result-actions">
-                  <a class="btn btn--primary" data-result-whatsapp hidden data-i18n="appointment.whatsapp"></a>
-                  <button type="button" class="btn btn--ghost" data-copy data-i18n="appointment.copy"></button>
+                  <a class="btn btn--primary" data-result-whatsapp hidden data-i18n="appointment.whatsapp">Envoyer ma demande sur WhatsApp</a>
+                  <button type="button" class="btn btn--ghost" data-copy data-i18n="appointment.copy">Copier le message</button>
                 </div>
                 <p class="result-warning" data-i18n="appointment.disclaimer"></p>
               </div>
@@ -371,7 +393,7 @@
         <div class="footer-block">
           <h2 class="footer-heading" data-i18n="footer.legal"></h2>
           <p class="footer-line footer-line--muted" data-i18n="footer.legalLine"></p>
-          <button type="button" class="link-button" data-open-info data-i18n="footer.editLink"></button>
+          <button type="button" class="link-button" data-open-info data-i18n="footer.editLink">Informations à publier</button>
         </div>
       </div>
       <div class="footer-strip">
@@ -380,7 +402,7 @@
           <span data-i18n="footer.credit"></span>
         </p>
         <p data-footer-rights></p>
-        <a href="#hero" class="footer-top" data-i18n="footer.backToTop"></a>
+        <a href="#hero" class="footer-top" data-i18n="footer.backToTop">Haut de page</a>
       </div>
     </footer>
 
@@ -391,7 +413,7 @@
         <div data-info-list></div>
         <p class="info-hint" data-i18n="footer.editHint"></p>
         <form method="dialog" class="info-actions">
-          <button class="btn btn--dark" data-i18n="common.close"></button>
+          <button class="btn btn--dark" data-i18n="common.close">Fermer</button>
         </form>
       </div>
     </dialog>

@@ -1,98 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Surface d'indexation décidée le 26/10/2026 : les 8 pages qui ont du contenu, et leurs
+     8 miroirs anglais. Les 80 fiches de montures restent en ligne mais en noindex,follow —
+     elles servent au lien WhatsApp, pas au référencement. Voir
+     clients/dm-optic/seo/DIAGNOSTIC-INDEXATION-2026-10-26.md §3.3 et
+     tools/ops/dm_index_surface.py, option check. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://dmoptiquesarl.com/</loc><lastmod>2026-10-21</lastmod></url>
   <url><loc>https://dmoptiquesarl.com/montures/</loc><lastmod>2026-10-21</lastmod></url>
   <url><loc>https://dmoptiquesarl.com/montures/femmes/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/femmes/f01-ovale-doree/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/femmes/f04-papillon-rose/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/femmes/f06-papillon-transparente/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/femmes/f08-hexagonale-ecaille/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/femmes/f09-hexagonale-ecaille-claire/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/femmes/f10-hexagonale-argentee/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/femmes/f11-hexagonale-argentee/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/femmes/f13-hexagonale-argentee-et-rose/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/femmes/f14-papillon-rose-translucide/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/femmes/f17-papillon-bordeaux/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/femmes/f19-papillon-ecaille/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/femmes/f21-carree-noire/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/femmes/f24-carree-ecaille/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/femmes/f25-papillon-ecaille-translucide/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/femmes/f26-ronde-bleue-multicolore/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/femmes/f27-hexagonale-bleu-marine/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/femmes/f29-hexagonale-grise/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/femmes/f34-ovale-argentee/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/femmes/f38-rectangulaire-noire/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/femmes/f40-carree-rouge-et-ecaille/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/femmes/f57-papillon-noire-et-doree/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/femmes/f59-carree-corail-et-ecaille/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/femmes/f60-carree-grise/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/femmes/f61-carree-noire-et-ecaille/</loc><lastmod>2026-10-21</lastmod></url>
   <url><loc>https://dmoptiquesarl.com/montures/hommes/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/hommes/h01-double-pont-noir-et-dore/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/hommes/h02-double-pont-rectangulaire-noir/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/hommes/h04-double-pont-dore/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/hommes/h05-double-pont-carre-noir-et-dore/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/hommes/h07-double-pont-gris/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/hommes/h08-double-pont-aviateur-noir-et-dore/</loc><lastmod>2026-10-21</lastmod></url>
   <url><loc>https://dmoptiquesarl.com/montures/enfants/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/enfants/e07-ovale-noire-et-rouge/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/enfants/e13-ronde-noire-et-rouge/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/enfants/e14-ovale-violet/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/enfants/e15-ovale-violette/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/enfants/e16-carree-bleue/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/enfants/e17-rectangulaire-transparente/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/enfants/e18-rectangulaire-noire-et-rouge/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/enfants/e19-ovale-bordeaux/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/enfants/e22-carree-ecaille/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/montures/enfants/e27-ovale-translucide/</loc><lastmod>2026-10-21</lastmod></url>
   <url><loc>https://dmoptiquesarl.com/examen-de-vue/</loc><lastmod>2026-10-21</lastmod></url>
   <url><loc>https://dmoptiquesarl.com/le-cabinet/</loc><lastmod>2026-10-21</lastmod></url>
   <url><loc>https://dmoptiquesarl.com/contact/</loc><lastmod>2026-10-21</lastmod></url>
   <url><loc>https://dmoptiquesarl.com/en/</loc><lastmod>2026-10-21</lastmod></url>
   <url><loc>https://dmoptiquesarl.com/en/montures/</loc><lastmod>2026-10-21</lastmod></url>
   <url><loc>https://dmoptiquesarl.com/en/montures/femmes/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/femmes/f01-ovale-doree/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/femmes/f04-papillon-rose/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/femmes/f06-papillon-transparente/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/femmes/f08-hexagonale-ecaille/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/femmes/f09-hexagonale-ecaille-claire/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/femmes/f10-hexagonale-argentee/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/femmes/f11-hexagonale-argentee/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/femmes/f13-hexagonale-argentee-et-rose/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/femmes/f14-papillon-rose-translucide/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/femmes/f17-papillon-bordeaux/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/femmes/f19-papillon-ecaille/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/femmes/f21-carree-noire/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/femmes/f24-carree-ecaille/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/femmes/f25-papillon-ecaille-translucide/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/femmes/f26-ronde-bleue-multicolore/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/femmes/f27-hexagonale-bleu-marine/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/femmes/f29-hexagonale-grise/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/femmes/f34-ovale-argentee/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/femmes/f38-rectangulaire-noire/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/femmes/f40-carree-rouge-et-ecaille/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/femmes/f57-papillon-noire-et-doree/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/femmes/f59-carree-corail-et-ecaille/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/femmes/f60-carree-grise/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/femmes/f61-carree-noire-et-ecaille/</loc><lastmod>2026-10-21</lastmod></url>
   <url><loc>https://dmoptiquesarl.com/en/montures/hommes/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/hommes/h01-double-pont-noir-et-dore/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/hommes/h02-double-pont-rectangulaire-noir/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/hommes/h04-double-pont-dore/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/hommes/h05-double-pont-carre-noir-et-dore/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/hommes/h07-double-pont-gris/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/hommes/h08-double-pont-aviateur-noir-et-dore/</loc><lastmod>2026-10-21</lastmod></url>
   <url><loc>https://dmoptiquesarl.com/en/montures/enfants/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/enfants/e07-ovale-noire-et-rouge/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/enfants/e13-ronde-noire-et-rouge/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/enfants/e14-ovale-violet/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/enfants/e15-ovale-violette/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/enfants/e16-carree-bleue/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/enfants/e17-rectangulaire-transparente/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/enfants/e18-rectangulaire-noire-et-rouge/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/enfants/e19-ovale-bordeaux/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/enfants/e22-carree-ecaille/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://dmoptiquesarl.com/en/montures/enfants/e27-ovale-translucide/</loc><lastmod>2026-10-21</lastmod></url>
   <url><loc>https://dmoptiquesarl.com/en/examen-de-vue/</loc><lastmod>2026-10-21</lastmod></url>
   <url><loc>https://dmoptiquesarl.com/en/le-cabinet/</loc><lastmod>2026-10-21</lastmod></url>
   <url><loc>https://dmoptiquesarl.com/en/contact/</loc><lastmod>2026-10-21</lastmod></url>

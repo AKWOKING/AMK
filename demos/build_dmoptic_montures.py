@@ -45,6 +45,30 @@ FRAMES = ROOT / "clients/dm-optic/site/frames.json"
 # française sous /en/). Ajouter une monture = ajouter une entrée ici.
 FRAMES_EN = ROOT / "clients/dm-optic/site/frames-en.json"
 OUTDIR = ROOT / "hosting/previews/dmoptic"
+
+# ── Surface d'indexation (26/10/2026) ───────────────────────────────────────────────────────────
+# Search Console du 23/10 : 102 pages non indexées, 4 indexées, dont 89 « Discovered » — le site
+# demandait 96 URL alors que 80 fiches (40 × FR/EN) n'ont qu'un titre, une phrase et trois photos.
+# Décision : les fiches restent EN LIGNE (le lien WhatsApp continue de marcher) mais passent en
+# `noindex,follow`, et le sitemap ne garde que les 8 pages qui ont du contenu + leurs 8 miroirs.
+# `INDEX_FICHES = True` rouvre tout : c'est le seul endroit à changer, et le sitemap suit.
+# La porte qui empêche la dérive : `tools/ops/dm_index_surface.py --check`.
+INDEX_FICHES = False
+WHITELIST = ROOT / "clients/dm-optic/seo/index-whitelist.txt"
+ROBOTS_NOINDEX = '<meta name="robots" content="noindex,follow">'
+
+
+def liste_blanche() -> set:
+    """Les fiches que Google a DÉJÀ indexées : elles restent indexables (voir le fichier)."""
+    if not WHITELIST.exists():
+        return set()
+    out = set()
+    for ligne in WHITELIST.read_text(encoding="utf-8").splitlines():
+        l = ligne.split("#", 1)[0].strip()
+        if l:
+            out.add(l if l.endswith("/") else l + "/")
+    return out
+
 WA = "https://wa.me/237656122239?text="
 TEL = "tel:+237656122239"
 ADDRESS_FR = "Ndobo Mayor — Immeuble West Hotel, 1er étage, dernière porte à droite, Bonabéri, Douala"
@@ -441,6 +465,7 @@ class Site:
         self.dock = dock.group(0) if dock else ""
         self.scripts = re.findall(r"<script>/\* ── (?:LES DEUX|LE MOUVEMENT).*?</script>", src, re.S)
         self.paths = ["/"]
+        self.noindex = []        # pages écrites en noindex,follow (26/10) : hors sitemap
         self.pairs = []          # (chemin, titre EN, description EN) — miroir /en/
 
     @staticmethod
@@ -526,8 +551,12 @@ class Site:
         return dock
 
     def page(self, path, title, desc, main_html, ld_graph=None, og_image=None, og_wh=None, extra_script="", dock_wa=None,
-             en_meta=None):
+             en_meta=None, indexable=True):
         head = self._head(path, title, desc, ld_graph, og_image, og_wh)
+        if not indexable:
+            # Le miroir anglais est fabriqué à partir de ce fichier : il hérite du noindex, c'est voulu.
+            head = head.replace("</head>", ROBOTS_NOINDEX + "\n</head>", 1)
+            self.noindex.append(path)
         # Images du corps en relatif (profondeur de la page) : navigateur et `audit_images.py`
         # résolvent depuis le dossier de la page ; canoniques/OG/JSON-LD restent absolus.
         depth = len([p for p in path.split("/") if p])
@@ -748,6 +777,7 @@ def main():
                 ld_graph=[site.crumb_ld([("Accueil", "/"), ("Montures", "/montures/"),
                                           (fr_l, f"/montures/{c}/"), (f["nom"], frame_url(f))])],
                 og_image=(f["photos"][0], f["nom"]), og_wh=(1600, 1200), dock_wa=(fr_m, en_m),
+                indexable=(INDEX_FICHES or frame_url(f) in liste_blanche()),
                 en_meta=(f"{tr_en(f, 'nom')} — DM OPTIQUE SARL",
                          f"{tr_en(f, 'phrase')} Ask for it on WhatsApp at 656 122 239 — reference {f['code']}.")))
 
@@ -965,7 +995,8 @@ def main():
         # qui serait fausse — Google ignore un lastmod qui ne bouge jamais, ou qui bouge toujours).
         stamps = [FRAMES, FRAMES_EN, ROOT / "demos/dmoptic-v1.tpl.html"]
         lastmod = max(datetime.date.fromtimestamp(t.stat().st_mtime) for t in stamps if t.exists()).isoformat()
-        all_paths = list(site.paths) + [en_path(p) for p, _, _ in site.pairs]
+        all_paths = [p for p in site.paths if p not in site.noindex] + \
+                    [en_path(p) for p, _, _ in site.pairs if p not in site.noindex]
         urls = "".join(f"  <url><loc>{esc(site.abs(p))}</loc><lastmod>{lastmod}</lastmod></url>\n" for p in all_paths)
         (OUTDIR / "sitemap.xml").write_text(
             '<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -974,7 +1005,10 @@ def main():
     else:
         print("! pas d'adresse canonique dans l'accueil : sitemap non régénéré")
 
-    print(f"ok: {len(written)} pages v2 ({len(frames)} montures) + sitemap ({len(site.paths)} URL)")
+    print(f"ok: {len(written)} pages v2 ({len(frames)} montures) · "
+          f"sitemap {len([p for p in site.paths if p not in site.noindex])} URL FR + "
+          f"{len([p for p, _, _ in site.pairs if p not in site.noindex])} EN · "
+          f"noindex {len(site.noindex)}")
 
 
 if __name__ == "__main__":
