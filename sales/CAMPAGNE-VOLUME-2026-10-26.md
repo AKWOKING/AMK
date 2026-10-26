@@ -122,6 +122,21 @@ avant la démo promise à 15 h 45.
 **Ce qui compte n'est pas « envoyé » mais « répondu »** — et le seul chiffre qui décide de la suite est
 `réponses < 48 h`. Aujourd'hui : **1 réponse sur 5**, à qualifier après la réparation.
 
+
+### 5 bis · LOT 3 — cinq lignes ouvertes, aucune cochée
+
+| # | Cabinet | Envoyé | Lu | Répondu | Bloqué |
+|---|---|---|---|---|---|
+| 11 | Free Optic · 679 11 37 60 | ☐ | ☐ | ☐ | ☐ |
+| 12 | Tchaya Optique Akwa · 699 98 87 24 | ☐ (contrôle 60 s) | ☐ | ☐ | ☐ |
+| 13 | Star Optic · 654 04 68 45 | ☐ (contrôle 60 s) | ☐ | ☐ | ☐ |
+| 14 | Cabinet d'Optique la Rétine · 695 47 43 64 | ☐ (contrôle 60 s) | ☐ | ☐ | ☐ |
+| 15 | Kamaïs Optic · 678 43 54 60 | ☐ (ruling : 2ᵉ approche) | ☐ | ☐ | ☐ |
+
+**ISEE (n° 3) est clos le 26/10 à 16 h 04** : King a fermé la conversation lui-même (« autant pour moi, je
+n'avais pas vu votre site… bonne continuation »). Aucune relance après un mot pareil — le dossier reste
+chaud pour dans six mois, pas pour cette semaine.
+
 ## 6 · Les 25 minutes du matin
 
 | Minute | Geste |
