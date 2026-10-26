@@ -45,6 +45,33 @@ La porte ne prouve pas que la recherche a eu lieu. Elle prouve qu'on a écrit **
 **quand** — comme les portes A et B. C'est le maximum qu'un script puisse faire d'une vérification
 manuelle ; le reste est la parole de celui qui envoie.
 
+## 3 bis · Le cas qui a coûté un message : ISEE, et les deux passes qui l'auraient arrêté
+
+Le 26/10, un message est parti à **ISEE** en affirmant l'absence de site. Le site existait
+(`iseecameroon.com`) et le cabinet a répondu en trois mots, poliment. Deux passes, faites dans cet ordre,
+l'auraient arrêté — et ce sont elles qui sont désormais obligatoires, pas la recherche par le nom seule.
+
+**Première passe — par le numéro, entre guillemets.** `"6 xx xx xx xx"` dans un moteur, puis le numéro
+sans espaces. Un site se trouve souvent par son numéro de téléphone (page « contact »), pas par son nom :
+c'est ainsi que **Maison Optique Douala** (`maison-optique.cm`) et **Original Optique**
+(`originaloptique-douala.com`, rebaptisé GLAMOUR OPTIQUE) ont été sortis du LOT 3 avant écriture. Un site
+trouvé par le numéro est un site trouvé : il disqualifie le prospect du lot « sans site ».
+
+**Seconde passe — par `disqualification_reason` dans `leads/CRM.csv`.** Avant d'écrire une ligne, filtrer
+le CRM sur `disqualification_reason` non vide et sur ces quatre motifs : `site-existe`,
+`site-trouve-par-numero`, `deja-contacte`, `whatsapp-absent`. Un cabinet déjà disqualifié pour site qui
+réapparaît dans un lot, c'est la porte qui n'a pas été lue — et c'est arrivé au tour 172, quand le v9 du
+LOT 3 a réintroduit Rétine, Kamaïs, Tchaya et Star Optic, tous disqualifiés le jour même.
+
+**La règle qui en sort, en une phrase :** *une deuxième passe ne consiste pas à re-chercher le même nom
+plus fort — elle consiste à chercher par un autre identifiant (le numéro) et à relire ce que le CRM sait
+déjà (le motif de disqualification).* Re-chercher le nom avec d'autres mots donne l'illusion du sérieux et
+laisse passer exactement les mêmes dossiers.
+
+**Ce que ça ne garantit pas.** Un cabinet sans site peut ouvrir un site le lendemain : la ligne
+`SITE-CHECK` datée, sous chaque message, dit **quand** on a cherché — c'est la seule chose honnête à
+écrire, et c'est pour cela qu'elle porte une date.
+
 ## 4 · Ce que ça change dans la façon d'écrire
 
 Les messages sûrs ne parlent pas de ce qui **manque** au cabinet, mais de ce que le patient **ne trouve
