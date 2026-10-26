@@ -128,7 +128,7 @@ def _():
     leads = compose.lit_crm(CRM)
     deja = set()
     for nom in ("sales/ENVOI-VAGUE-2-2026-10-26.md", "sales/ENVOI-VOLUME-2026-10-27.md",
-                "sales/ENVOI-VAGUE-3-2026-10-26.md"):
+                "sales/retires/ENVOI-VAGUE-3-2026-10-26.md"):
         p = compose.RACINE / nom
         if p.exists():
             deja |= {compose.numero(m.phone) for m in compose.parse(p)}
@@ -137,9 +137,9 @@ def _():
     return f"{len(libres)} ligne(s) encore libres sur {len(leads)} composables"
 
 
-@cas("le lot livré du 26/10 passe la porte, lot entier compris")
+@cas("le lot retiré du 26/10 reste lisible et propre — retiré pour ses cibles, pas pour son texte")
 def _():
-    p = compose.RACINE / "sales/ENVOI-VAGUE-3-2026-10-26.md"
+    p = compose.RACINE / "sales/retires/ENVOI-VAGUE-3-2026-10-26.md"
     msgs = compose.parse(p)
     assert len(msgs) == 16, len(msgs)
     for m in msgs:

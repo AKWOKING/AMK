@@ -1,11 +1,10 @@
-# ENVOI — VAGUE 2 · les sept qui sont à 3/3 (26/10/2026)
+# ENVOI — VAGUE 2 · les sept qui ont les trois portes (26/10/2026)
 
 ```text
 PORTE    python3 tools/qa/audit_outreach.py sales/ENVOI-VAGUE-2-2026-10-26.md --strict
          → 0 bloquant, 0 avertissement (§13 : ≤ 55 mots, une question, dédouanement, action finale)
-SOURCE   leads/VERIF-2026-10-26.md §1 — sept cabinets à 3/3, capture du 25/10
-FAIT     un fait daté par message, et un seul. Rien d'autre n'est affirmé.
-CADENCE  les sept en tête du palier de 20 du lundi 27/10 — voir CAMPAGNE-VOLUME §1
+SOURCE   leads/VERIF-2026-10-27.md §1 — sept cabinets à 3/3, capture du 25/10, titulaire nommé au CRM
+CADENCE  les sept partent le 27/10, en tête du palier de 20 (CAMPAGNE-VOLUME §1)
 ```
 
 ## 1 · L'ordre, et ce qui le fixe
@@ -15,22 +14,19 @@ sous **un autre nom** que celui du tableau de l'Ordre — c'est le fait le plus 
 le seul dont le patient subit la conséquence tous les jours. Les quatre autres ont un profil Business :
 la vitrine existe, mais elle est dans WhatsApp, que Google ne lit pas.
 
-**Les sept partent le même jour, en tête de journée — lundi 27/10 — et comptent dans le palier de 20.**
-Ce ne sont pas sept jours de données, c'est un jour à vingt messages : treize de ce fichier + ces sept-là
-(`sales/CAMPAGNE-VOLUME-2026-10-26.md` §1). La règle « un message par jour » a été annulée le 26/10.
-
 | # | Cabinet | Numéro | Le fait, et sa date |
 |---|---|---|---|
-| ① | Ets Espace Médical (PK11) | 655 04 95 29 | Business « Optic Medical Favour and Joy » ≠ tableau de l'Ordre — capture 25/10 |
-| ② | ASS pour RRPHDD | 675 39 90 23 | Business « AMBASSADOR Vision Sarl » ≠ tableau de l'Ordre — capture 25/10 |
-| ③ | ISEE | 656 97 80 43 | Business « I See Better » ≠ tableau de l'Ordre — capture 25/10 |
-| ④ | Bellevue Optique (Bali) | 694 89 26 96 | Business, adresse Bali Serena Hôtel rue des pavés — capture 25/10 |
-| ⑤ | S.O.S Vision | 699 86 04 63 | Business, trois métiers + horaires + catalogue — capture 25/10 |
-| ⑥ | Free Optic | 679 11 37 60 | Business, « examens de vue, vente de lunettes » — capture 25/10 |
-| ⑦ | Capelli Optique Médicale | 675 26 89 81 | Business, Optometrist · Optician + adresse — capture 25/10 |
+| ① | Ets Espace Médical (PK11) | 655 04 95 29 | Business « Optic Medical Favour and Joy » ≠ tableau de l'Ordre — 25/10 |
+| ② | ASS pour RRPHDD | 675 39 90 23 | Business « AMBASSADOR Vision Sarl » ≠ tableau de l'Ordre — 25/10 |
+| ③ | ISEE | 656 97 80 43 | Business « I See Better » ≠ tableau de l'Ordre — 25/10 |
+| ④ | Bellevue Optique (Bali) | 694 89 26 96 | Business, adresse Bali Serena Hôtel rue des pavés — 25/10 |
+| ⑤ | S.O.S Vision | 699 86 04 63 | Business, trois métiers + horaires + catalogue — 25/10 |
+| ⑥ | Free Optic | 679 11 37 60 | Business, « examens de vue, vente de lunettes » — 25/10 |
+| ⑦ | Capelli Optique Médicale | 675 26 89 81 | Business, Optometrist · Optician + adresse — 25/10 |
 
-> **Samedi 31/10 : rien.** C'est le jour du paiement DM Optique ; on n'envoie pas un message froid le
-> même jour qu'on facture un client.
+> **Les sept partent le même jour, dans cet ordre, avant les treize du lot volume.** Ce ne sont pas sept
+> jours de données, c'est **un** jour à vingt messages. La règle « un message par jour » a été annulée
+> le 26/10 : elle avait été écrite pour un numéro qui n'avait jamais rien envoyé.
 
 ## 2 · Les sept messages, mot pour mot
 
@@ -94,7 +90,7 @@ il ne justifie ni un second message, ni un appel (ruling 25/10 : pas de repli ho
 
 ## 5 · Ce que King fait, et dans quel ordre
 
-1. Envoyer les sept **dans cet ordre**, d'affilée, avant les treize du lot volume.
+1. Envoyer ① à ⑦ **dans cet ordre**, d'affilée, puis les treize du lot volume.
 2. Répondre **dans l'heure** à qui répond : c'est la fenêtre où le prospect est devant son écran.
 3. Si la réponse est **oui**, ouvrir `sales/REPONSE-OUI-2026-10-26.md` — la page part dans les 24 h.
-4. Cocher le tracker (`SCOUT-2026-10-26.md` → `leads/Daily Ops.csv`).
+4. Cocher le tracker (`CAMPAGNE-VOLUME` §5) le soir, même si la case est vide.

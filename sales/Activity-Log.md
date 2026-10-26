@@ -6233,3 +6233,21 @@ recomptage : **28 testés · 22 joignables · 6 morts**.
 **⑤ La doc d'exécution** : `sales/SOURCING-2026-10-27.md` — pourquoi (le calcul : 20/jour = 140/semaine, nous en avons 52 dont 7 prouvées), les quatre sources et leur piège, six étapes clic par clic, ce qu'on écarte, et ce que ça change (le plan 20 · 22 · 11 · **0** redevient 20 sur quatre jours).
 
 **⑥ Ce qui reste à King** : ouvrir les quatre sources (cet environnement n'a de réseau que vers GitHub, npm et PyPI), et les huit secondes de vérification WhatsApp par numéro. Rien de tout cela ne s'automatise d'ici.
+
+## 26/10/2026 (17 h 30, tour 155) — la cadence passe à 20-50, la fabrique écrit, le vérificateur refuse
+
+**① La règle du 05/10 est révisée, pas jetée.** King : « we can't be sending just 1 message per day, we send between 20-50 ». La recherche lui donne raison sur le principe **et borne le chiffre** : pas de quota officiel WhatsApp, mais un ratio de blocages (2-3 % suffisent) ; 20-49 envois par boîte = +27 % de taux de réponse (Hunter) ; 200 génériques valent 30 travaillés (Inboxkit) ; et le palier 2 (nom + quartier + métier) vaut 4,4 % contre 11,2 % pour un déclencheur réel (Gangly). Décision : montée **20 → 30 → 40 → 50**, interrupteur au premier blocage.
+
+**② Deux outils neufs, et une seule autorité.** `scout.py` trouve les pistes jamais contactées et dit pourquoi les autres sont exclues ; `verify.py` applique les portes §8b à des **preuves datées** et sort les **hors-cible** (cabinet ayant déjà un site — on ne lui dira jamais qu'il lui manque une page). `scout.py verify` délègue désormais au second : deux verdicts différents sur le même cabinet, c'est un trou. Bancs : 10/10 et 12/12.
+
+**③ La fabrique.** `compose.py` écrit une journée : 7 variantes par phrase, charnière `(a, b, a+b)`, une page **par métier**, et elle refuse d'écrire une phrase de douze mots hors nom propre — c'est ce refus qui empêche un gabarit de revenir. Elle juge son lot avec `audit_outreach` avant de le rendre, et répare en changeant de combinaison.
+
+**④ Ce que la fabrique a corrigé dans le lot du matin.** Sur 49 messages prétendument bons : **16 lignes écartées** — numéros vus **morts** le 25/10, et cabinets ayant **déjà un site** (Cristalys, LyfyOptic, Royal Optic, Win Optic Plus, Biolex, Biomedicam…). C'est la faute que le §8c interdit depuis le 24/09, et elle était dans le fichier.
+
+**⑤ Les deux lots.** `ENVOI-VAGUE-2` : sept messages écrits à la main, tous à **3/3**, un fait daté chacun (trois cabinets exercent sous un autre nom que le tableau de l'Ordre). `ENVOI-VOLUME` : 30 messages composés, 14 à 2/3 et 16 à 1/3, aucun numéro mort, aucun cabinet déjà pourvu. Les deux passent `--strict` à **0 bloquant, 0 avertissement**.
+
+**⑥ Le vrai chiffre.** 78 lignes joignables, **52 composables**, **37 écrites**, **0 restante**. La cadence tient **deux jours** (20 le 27/10, 17 le 28/10), puis le stock s'arrête. Le goulot n'est pas la cadence, c'est la preuve : `sales/SOURCING-2026-10-27.md` et `sales/SWEEP-PORTE-B-2026-10-27.md` disent les deux gestes qui débloquent (des numéros, et une date par cabinet).
+
+**⑦ Ce que la vidéo change, et ce qu'elle ne change pas.** Notre propre site comme preuve : pris. Maquette gratuite au premier message : refusée (15 aperçus pour 1 client payant, 24/10). Vidéo de 5 minutes : dette datée, pas avant EP02.
+
+**⑧ Ce qui n'est pas fait.** Aucun message envoyé, aucun profil rouvert : la porte A reste le geste de King, huit secondes par ligne. Et le réseau de cet environnement s'arrête à GitHub, npm et PyPI — la fabrique compose, elle ne cherche pas.

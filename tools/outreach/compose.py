@@ -28,7 +28,7 @@ Usage
 -----
     python3 tools/outreach/compose.py plan --volume 20
     python3 tools/outreach/compose.py batch --date 2026-10-26 --limit 20 \\
-        --out sales/ENVOI-VAGUE-3-2026-10-26.md
+        --out sales/ENVOI-VOLUME-2026-10-27.md
 """
 from __future__ import annotations
 
@@ -436,6 +436,11 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--angle", default="")
     ap.add_argument("--date", default="")
+    ap.add_argument("--verif", default="",
+                    help="VERIF-*.json : ne garder que les pistes à 3/3 (le droit d'écrire, pas le texte)")
+    ap.add_argument("--ecarter", default="",
+                    help="VERIF-*.json : écarter seulement les numéros morts et les cabinets déjà pourvus "
+                         "d'un site ; les 2/3 et les 1/3 restent, avec leur porte A à fermer à l'envoi")
     ap.add_argument("--deja", nargs="*", default=[],
                     help="lots déjà écrits : leurs numéros sortent du calcul")
     a = ap.parse_args()
@@ -445,6 +450,22 @@ def main() -> int:
         raise SystemExit("réservoir refusé :\n  " + "\n  ".join(fautes))
 
     leads = lit_crm(Path(a.crm))
+    if a.verif:
+        import json
+        v = json.loads(Path(a.verif).read_text(encoding="utf-8"))
+        permis = {x["num"] for x in v if x.get("verdict") == "ENVOYER"}
+        avant = len(leads)
+        leads = [l for l in leads if l.numero in permis]
+        print(f"Filtre `--verif` : {len(leads)} ligne(s) sur {avant} ont les trois portes (§8b).")
+    if a.ecarter:
+        import json
+        v = {x["num"]: x["verdict"] for x in json.loads(Path(a.ecarter).read_text(encoding="utf-8"))}
+        avant = len(leads)
+        ecartes = [l.nom for l in leads
+                   if v.get(l.numero) in ("JAMAIS", "HORS-CIBLE")]
+        leads = [l for l in leads if v.get(l.numero) not in ("JAMAIS", "HORS-CIBLE")]
+        print(f"Filtre `--ecarter` : {len(ecartes)} ligne(s) sur {avant} écartée(s) — numéro mort "
+              f"ou site déjà en ligne : " + ", ".join(ecartes[:6]) + ("…" if len(ecartes) > 6 else ""))
     if a.angle:
         leads = [l for l in leads if l.angle == a.angle]
     if a.deja:

@@ -15,7 +15,10 @@ Deux commandes, deux fichiers, un seul principe : **on n'invente rien**.
           avec la raison de chaque exclusion. Il ne classe pas par opinion : il trie par ce que la
           ligne prouve.
 
-  verify  applique les trois portes du §8b et rend un verdict par piste :
+  verify  applique les trois portes du §8b et rend un verdict par piste. **Depuis le 26/10, l'autorité
+          pour les portes est `tools/outreach/verify.py`** : même règle, plus les preuves datées, les
+          hors-cible (site déjà en ligne) et le JSON que lit la fabrique. `scout.verify` reste pour la
+          lecture des captures du 25/10 — les deux doivent dire la même chose, et le banc le vérifie :
             A · joignabilité  — le numéro joint WhatsApp, le profil a été VU (capture datée)
             B · intention numérique — un signe daté que le cabinet agit en ligne (§8b porte B)
             C · acheteur — un décideur est nommé, et ce n'est pas un siège
@@ -36,6 +39,7 @@ Usage
 from __future__ import annotations
 
 import argparse
+import os
 import csv
 import re
 import sys
@@ -325,6 +329,12 @@ def main() -> int:
 
     PORTE_A = Path(args.porte_a)
     date = args.date or "2026-10-26"
+    if args.action == "verify":
+        # Une seule autorité pour les portes : `verify.py`. Deux outils qui rendent deux verdicts
+        # différents sur le même cabinet, c'est un trou, pas une ceinture et des bretelles.
+        cible = Path(__file__).with_name("verify.py")
+        print(f"→ `verify` est tenu par {cible.name} (portes §8b + preuves datées + hors-cible + JSON).")
+        os.execv(sys.executable, [sys.executable, str(cible), "--date", date, "--crm", args.crm])
     pistes = lit_crm(Path(args.crm))
     garde, exclues = scout(pistes)
     if args.action == "scout":

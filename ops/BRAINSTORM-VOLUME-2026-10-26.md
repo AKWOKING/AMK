@@ -152,20 +152,24 @@ c'est « combien de profils King ouvre le matin »**. À huit secondes par ligne
 coûte cinq minutes — c'est faisable, et c'est le seul chemin vers 40 par jour.
 
 **③ Un texte propre n'est pas un message qu'on a le droit d'envoyer.** Le lot de 49 messages du matin
-passait la porte avec **0 bloquant** — et contenait **neuf cabinets à 2/3** et **un à 1/3**, dont sa
-première ligne. La porte mesure le texte ; le vérificateur mesure le droit d'écrire. Il fallait les deux,
+passait la porte avec **0 bloquant** — et **seize de ses lignes** visaient un numéro vu **mort** le 25/10
+ou un cabinet qui a **déjà un site dédié** (Cristalys, LyfyOptic, Royal Optic, Win Optic Plus, Biolex,
+Biomedicam…). Dire « il vous manque une page » à quelqu'un qui en a une est la faute du 24/09, et elle
+était dans le fichier. La porte mesure le texte ; le vérificateur mesure le droit d'écrire. Il fallait les deux,
 et c'est désormais écrit dans le lot lui-même (`sales/ENVOI-VOLUME-2026-10-27.md`, section du compte).
 
 ### La table qui remplace le plan de montée
 
 | Jour | Envois | D'où | Réserve après |
 |---|---|---|---|
-| **lun. 27/10** | **20** | 7 écrits à la main (3/3) + 13 de la vague 3 | 33 |
-| **mar. 28/10** | **22** | lot volume, opticiens d'abord | 11 |
-| **mer. 29/10** | **11** | fin du lot volume + les 3 restants de la vague 3 | **0** |
-| jeu. 30/10 | **0** | plus une ligne composable : journée de **sourcing**, pas d'envoi | 0 |
+| **lun. 27/10** | **20** | 7 écrits à la main (3/3) + 13 du lot volume | 17 |
+| **mar. 28/10** | **17** | fin du lot volume, opticiens d'abord | **0** |
+| **mer. 29/10** | **0** | plus une ligne composable : journée de **sourcing**, pas d'envoi | 0 |
+| jeu. 30/10 | 20 | **nouveau stock obligatoire** (`sales/SOURCING-2026-10-27.md`) | 0 |
 
-C'est moins glorieux que 50, et c'est vrai. `python3 tools/outreach/supply.py plan` rend ce tableau et
+C'est moins glorieux que 50, et c'est vrai. **Deux jours**, pas cinq : la vague 3 du matin est retirée
+(`sales/retires/`), parce que douze de ses seize cibles étaient mortes ou déjà pourvues d'un site et les
+quatre autres des doublons du lot volume. 37 messages vivants, 0 ligne libre après le 28/10. `python3 tools/outreach/supply.py plan` rend ce tableau et
 **refuse** de promettre davantage : il compare, jour par jour, ce que la cadence demande et ce que le
 stock prouve.
 
@@ -188,7 +192,9 @@ s'investit dans **une ligne de fait par prospect** — c'est-à-dire dans les pr
 | `tools/outreach/compose.py batch` | écrit la journée (7 variantes × 3 phrases, charnière `(a, b, a+b)`), une page par métier | d'écrire un lot où une phrase atteint douze mots hors nom propre, ou deux messages partagent une séquence |
 | `tools/outreach/supply.py plan` | dit ce que la cadence demande et ce que le stock tient | de promettre plus de messages qu'il n'y a de lignes |
 | `tools/outreach/supply.py ingest` | valide une liste collée (annuaire, page Facebook, passage) : neuf chiffres, doublons écartés | d'écrire dans le CRM — il ne produit qu'un fichier de transit |
-| `tools/outreach/scout.py verify` | applique les trois portes et nomme les contradictions | d'inventer une porte : sans capture datée, elle reste `inconnue` |
+| `tools/outreach/verify.py` | les trois portes §8b **plus** les preuves datées (`leads/PREUVES-*.csv`) et les **hors-cible** (site déjà en ligne) ; écrit le JSON que lit la fabrique | d'inventer une porte : sans preuve datée, elle reste `inconnue` |
+| `tools/outreach/compose.py --ecarter` | écarte à l'écriture ce que la vérification a condamné (mort, hors-cible) | d'écrire à un numéro mort pour « ne pas perdre la ligne » |
+| `tools/outreach/scout.py scout` | les pistes jamais contactées et la raison de chaque exclusion | de réécrire le CRM |
 
 **Ce qui manque, et qui ne s'invente pas dimanche soir** : les numéros. Il en faut **200 par semaine**
 pour tenir 40/jour, et cet environnement n'a de réseau que vers GitHub, npm et PyPI — aucun annuaire.
