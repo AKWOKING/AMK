@@ -6,16 +6,16 @@
 export const fr = {
   meta: {
     lang: "fr",
-    title: "Médecine ophtalmologique au Cameroun — consultations à Mbouda, Bafoussam, Douala et Bonabéri",
+    title: "Dr Fogue, ophtalmologue — consultations à Mbouda, Bafoussam et Douala",
     description:
-      "Site professionnel d’un médecin ophtalmologue itinérant au Cameroun : lieux et jours de consultation, demande de rendez-vous par WhatsApp ou téléphone.",
+      "Le Dr Fogue, ophtalmologue, consulte à Mbouda, Bafoussam, Douala (Africa Médical) et Bonabéri (Hôpital Charity). Jours de consultation et contact direct par WhatsApp ou téléphone.",
   },
 
   common: {
     skip: "Aller au contenu",
-    brand: "Médecine ophtalmologique",
-    brandSub: "Cameroun",
-    doctorFallback: "le médecin",
+    brand: "Dr Fogue",
+    brandSub: "Ophtalmologie",
+    doctorFallback: "le Dr Fogue",
     unknown: "À confirmer",
     reported: "Communiqué",
     confirmed: "Confirmé",
@@ -41,28 +41,30 @@ export const fr = {
   },
 
   hero: {
-    eyebrow: "MÉDECINE OPHTALMOLOGIQUE · CAMEROUN",
-    h1: ["VOTRE", "VISION,", "MA PRIORITÉ."],
+    eyebrow: "OPHTALMOLOGIE · CAMEROUN",
+    h1: ["PRENEZ SOIN", "DE VOTRE VUE,", "AVEC LE DR FOGUE."],
     lead:
-      "«Un médecin ophtalmologue à votre écoute, avec des consultations dans plusieurs villes et structures médicales au Cameroun.»",
-    ctaPrimary: "Trouver un lieu de consultation",
-    ctaSecondary: "Découvrir le médecin",
+      "«Consultations ophtalmologiques, examen de la vue, diagnostic et conseils pour vous accompagner dans la santé de vos yeux.»",
+    ctaPrimary: "Prendre rendez-vous",
+    ctaSecondary: "Voir les lieux de consultation",
+    whatsappCta: "Écrire sur WhatsApp",
+    identityPending: "Nom et spécialité à confirmer",
     placesLabel: "Lieux de consultation",
     places: "Mbouda · Bafoussam · Douala · Bonabéri",
     placesNote:
-      "Ces villes sont des lieux de consultation. Elles ne veulent pas dire que le médecin consulte chaque jour dans chacune.",
+      "Les jours changent d’un lieu à l’autre : la semaine complète est un peu plus bas, lieu par lieu.",
     portraitCaption:
       "Portrait d’illustration (image générée) — il sera remplacé par la photographie du médecin.",
-    statusLine: "Informations communiquées le 26 octobre 2026 — à reconfirmer avant tout déplacement.",
+    statusLine: "Jours communiqués par le Dr Fogue le 26 octobre 2026 — à reconfirmer avant tout déplacement.",
   },
 
   parcours: {
-    kicker: "À PROPOS DU MÉDECIN",
-    title: "«Une expertise médicale, plusieurs lieux de consultation.»",
+    kicker: "LE MÉDECIN",
+    title: "«Votre spécialiste de la vue.»",
     p1:
-      "«Parce que l’accès aux soins visuels ne se limite pas à une seule adresse, le Dr [NOM DU MÉDECIN] propose des consultations dans plusieurs villes et structures médicales, selon un calendrier défini.»",
+      "«Le Dr Fogue vous accompagne dans la prise en charge de votre santé visuelle à travers des consultations organisées dans plusieurs lieux au Cameroun.»",
     p2:
-      "«Ce site rassemble les informations essentielles pour vous aider à identifier le lieu de consultation adapté, à préparer votre visite et à contacter le bon interlocuteur.»",
+      "«Retrouvez ici les informations pratiques pour préparer votre consultation et contacter son équipe : les jours de présence lieu par lieu, l’adresse quand elle est connue, et le numéro à joindre.»",
     profileTitle: "Fiche professionnelle",
     profileNote:
       "Seules les informations communiquées par le médecin figurent ici. Aucun diplôme, aucune inscription, aucune expérience n’est inventée pour remplir la page.",
@@ -87,18 +89,18 @@ export const fr = {
     servicesNotice:
       "La liste des actes pratiqués sera publiée après confirmation du médecin. En cas de doute, posez la question au moment de la prise de rendez-vous.",
     examinationCaption:
-      "Examen de la vue en salle de consultation — photographie d’illustration (image générée), sans lien avec une structure partenaire en particulier.",
+      "Le Dr Fogue en consultation. Photographie transmise par le médecin, 26 octobre 2026.",
     equipmentCaption:
-      "Lampe à fente et fauteuil d’examen — photographie d’illustration (image générée).",
+      "Le Dr Fogue en consultation. Affiche du cabinet, recadrée — 26 octobre 2026.",
     photoNote:
-      "Les photographies de cette page sont des illustrations générées. Elles ne montrent ni le médecin, ni un lieu partenaire précis.",
+      "Les photographies de cette page sont celles du Dr Fogue, transmises par lui le 26 octobre 2026. Aucune image générée ne figure sur le site.",
   },
 
   consultations: {
     kicker: "LIEUX ET JOURS DE CONSULTATION",
-    title: "«Où consulter le médecin ?»",
+    title: "«Où consulter le Dr Fogue ?»",
     lead:
-      "«Retrouvez les lieux de consultation et les jours de présence du médecin. Vérifiez les informations avant votre déplacement et demandez un rendez-vous pour la structure concernée.»",
+      "«Quatre lieux de consultation, et des jours différents selon le lieu. Vérifiez l’information avant de vous déplacer, puis demandez un rendez-vous pour la structure concernée.»",
     selectLabel: "Choisir un lieu",
     selected: "Lieu sélectionné",
     requestCta: "Demander un rendez-vous",
@@ -115,10 +117,10 @@ export const fr = {
     facilityPlaceholder: "Structure d’accueil à préciser",
     facilityNote:
       "Le médecin consulte dans cette structure. Le site ne dit ni qu’il la dirige, ni qu’il y est installé de façon permanente.",
-    scheduleTitle: "La semaine de consultation",
+    scheduleTitle: "La semaine du Dr Fogue",
     scheduleLead: "Une ligne par jour. Le lieu indiqué est celui communiqué par le médecin.",
     scheduleUnverified:
-      "«Les jours et horaires de consultation sont à confirmer. Contactez-nous avant de vous déplacer.»",
+      "«Les jours et horaires de consultation sont à confirmer. Veuillez contacter le Dr Fogue avant de vous déplacer.»",
     scheduleHoursMissing: "Horaires à confirmer",
     scheduleDayEmpty: "Pas de consultation annoncée",
     scheduleNote:
@@ -149,7 +151,7 @@ export const fr = {
     kicker: "RENDEZ-VOUS",
     title: "«Prenons soin de votre vision.»",
     lead:
-      "«Choisissez votre lieu de consultation et contactez-nous pour demander un rendez-vous. Notre équipe pourra vous confirmer les modalités de consultation.»",
+      "«Choisissez votre lieu de consultation, puis préparez votre message : il part sur WhatsApp, et c’est vous qui l’envoyez. Le Dr Fogue ou son équipe vous répond pour confirmer le créneau.»",
     formTitle: "Demande de rendez-vous",
     formNote:
       "Ne transmettez pas d’informations médicales ici : ni ordonnance, ni photo, ni diagnostic. Le médecin les demandera si nécessaire.",
@@ -208,6 +210,8 @@ export const fr = {
   },
 
   wa: {
+    direct:
+      "Bonjour Docteur Fogue, je souhaiterais obtenir des informations sur vos consultations ophtalmologiques et connaître le prochain créneau disponible. Merci.",
     greeting: "Bonjour, je souhaite demander un rendez-vous avec {doctor}.",
     place: "Lieu souhaité : {place}",
     date: "Date souhaitée : {date}",
@@ -218,8 +222,8 @@ export const fr = {
   },
 
   footer: {
-    title: "Site professionnel",
-    line: "Un médecin ophtalmologue, plusieurs lieux de consultation au Cameroun.",
+    title: "Dr Fogue · Ophtalmologie",
+    line: "Un ophtalmologue, quatre lieux de consultation au Cameroun.",
     consultations: "Consultations",
     contact: "Contact",
     contactMissing: "Coordonnées à publier",
@@ -227,15 +231,17 @@ export const fr = {
       "Le médecin n’a pas encore communiqué de numéro vérifié. Aucun numéro n’est affiché plutôt qu’un numéro approximatif.",
     legal: "Informations",
     legalLine:
-      "Les jours, horaires et adresses sont ceux communiqués par le médecin et restent à confirmer avant un déplacement. Aucune donnée n’est collectée par ce site : le formulaire ne fait que préparer un message.",
-    imagesLine: "Photographies : images générées, utilisées comme illustrations. Aucune ne montre le médecin réel.",
+      "Les jours, horaires et adresses sont ceux communiqués par le Dr Fogue et restent à confirmer avant un déplacement. Aucune donnée n’est collectée par ce site : le formulaire ne fait que préparer un message.",
+    imagesLine:
+      "Photographies du Dr Fogue, transmises par le médecin le 26 octobre 2026. La photographie d’équipe n’est pas publiée : son lieu n’est pas confirmé.",
+    questionsTitle: "Questions à confirmer avec le Dr Fogue",
     editLink: "Informations à publier",
     editTitle: "Ce qu’il reste à publier",
     editIntro:
       "Liste tirée de la configuration du site. Chaque ligne vide s’affiche « à confirmer » sur la page : rien n’est inventé pour la remplir.",
     editHint: "À renseigner dans js/config/doctor.js, puis à confirmer avec le médecin.",
     backToTop: "Haut de page",
-    rights: "Site professionnel — Cameroun",
-    credit: "Aperçu AMK, non publié — les informations du médecin restent à confirmer.",
+    rights: "Dr Fogue · Ophtalmologie — Cameroun",
+    credit: "Aperçu AMK, non publié — à valider par le Dr Fogue avant publication.",
   },
 };

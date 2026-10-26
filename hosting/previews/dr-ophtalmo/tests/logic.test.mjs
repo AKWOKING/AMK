@@ -92,13 +92,60 @@ check("les jours annoncés tombent sur le bon lieu", () => {
   assert.deepEqual(place("wed"), ["bafoussam"]);
   assert.deepEqual(place("thu"), ["bafoussam"]);
   assert.deepEqual(place("fri"), ["africa-medical"]);
-  assert.deepEqual(place("sat"), ["africa-medical"]);
+  // Le 26/10, le médecin écrit « samedi sur rendez-vous à l’hôpital charity » :
+  // le samedi est donc à Bonabéri, et Africa Médical garde le vendredi.
+  assert.deepEqual(place("sat"), ["hopital-charity"]);
   assert.deepEqual(place("sun"), []);
 });
 
-check("un lieu sans jour n'entre pas dans la semaine", () => {
+check("un lieu n'apparaît que les jours qu'il annonce", () => {
   const all = week.flatMap((d) => d.entries.map((e) => e.locationId));
-  assert.ok(!all.includes("hopital-charity"));
+  for (const location of doctorConfig.locations) {
+    const attendu = (location.days || []).length > 0;
+    assert.equal(all.includes(location.id), attendu, `${location.id} : présence incohérente`);
+  }
+});
+
+check("le numéro publié est celui du médecin", () => {
+  assert.equal(whatsappNumber(), "237691280237");
+  assert.equal(doctorConfig.contact.phone, "+237 691 280 237");
+  assert.equal(doctorConfig.contact.status, "confirmed");
+  assert.match(doctorConfig.contact.source, /\d{2}\/\d{2}\/\d{4}/);
+});
+
+check("le nom affiché est « Dr Fogue », et il vient du médecin", () => {
+  assert.equal(doctorDisplayName(), "Dr Fogue");
+  assert.equal(doctorConfig.specialty, "Ophtalmologie");
+});
+
+check("les trois photographies déclarées existent sur le disque", () => {
+  const site = path.resolve(new URL("..", import.meta.url).pathname);
+  const cfg = doctorConfig.images;
+  assert.deepEqual(Object.keys(cfg).sort(), ["about", "consultation", "hero"]);
+  for (const [name, image] of Object.entries(cfg)) {
+    for (const file of [image.src, ...image.srcset.split(",").map((part) => part.trim().split(" ")[0])]) {
+      assert.ok(fs.existsSync(path.join(site, file)), `${name} : ${file} manquant`);
+    }
+    for (const lang of ["fr", "en"]) {
+      assert.ok(image.alt[lang] && image.alt[lang].length > 20, `${name} : alt ${lang} trop court`);
+    }
+    assert.match(image.alt.fr, /Fogue/, `${name} : l'alt ne nomme pas le médecin`);
+  }
+});
+
+check("aucune photographie n'est annoncée comme générée", () => {
+  for (const [name, image] of Object.entries(doctorConfig.images)) {
+    const texte = [image.alt?.fr, image.caption?.fr, image.alt?.en, image.caption?.en].join(" ");
+    assert.ok(!/génér|generated|illustration/i.test(texte), `${name} : texte d'illustration générée`);
+  }
+});
+
+check("les questions à confirmer sont bilingues et datées", () => {
+  assert.ok(doctorConfig.meta.questions.length >= 5);
+  for (const question of doctorConfig.meta.questions) {
+    assert.ok(question.fr && question.fr.length > 20);
+    assert.ok(question.en && question.en.length > 20);
+  }
 });
 
 check("sans horaires connus, le drapeau le dit", () => {
@@ -303,7 +350,10 @@ check("aucune ressource servie depuis un domaine tiers", () => {
     for (const m of src.matchAll(/https?:\/\/[^"'`)\s]+/g)) {
       const url = m[0];
       // Seuls les liens de documentation et les URI de schéma sont tolérés.
+      // L'URL de l'aperçu est une DONNÉE (JSON-LD `url`), pas une ressource chargée :
+      // aucun navigateur ne va la chercher. Elle est donc tolérée ici, et elle seule.
       if (/schema\.org|w3\.org|github\.com\/AKWOKING|mdn\.|example\.com|wa\.me/.test(url)) continue;
+      if (url === "https://dr-ophtalmo-preview.vercel.app/") continue;
       found.push(url);
     }
   }

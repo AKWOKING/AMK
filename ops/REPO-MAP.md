@@ -2,14 +2,14 @@
 
 ```text
 Généré par tools/graphify/build_full_graph.py — 2026-10-26
-Source : graphify-out/graph.json (13622 nœuds, 17712 arêtes)
+Source : graphify-out/graph.json (13624 nœuds, 17724 arêtes)
 Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même
 carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.
 ```
 
 ## 0 · En une page
 
-- **13622 nœuds** — dont 845 documents, 203 scripts, 31 modules, 140 pages HTML, 474 images, 8 vidéos, 40 audios, 51 fichiers de données, 11 PDF.
+- **13624 nœuds** — dont 845 documents, 203 scripts, 31 modules, 140 pages HTML, 474 images, 8 vidéos, 40 audios, 51 fichiers de données, 11 PDF.
 - **3716 citations entre documents** (3029 en chemin exact, 687 par nom unique)
 - **157 arêtes de remplacement** · **3 documents marqués périmés**
 - **426 documents que personne ne cite** (atteignables par aucun chemin de lecture)
@@ -223,7 +223,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | sous-titre | 3 | `clients/dm-optic/content/month1/w1/tiktok-01-v2.fr.srt`, `clients/dm-optic/content/month1/w1/tiktok-01.fr.srt`, `clients/dm-optic/content/month1/w2/etapes-01.srt` |
 | archive | 1 | `dmopticsarl-2026-10-21.zip` |
 | style | 1 | `hosting/previews/dr-ophtalmo/css/styles.css` |
-| symboles extraits (titres de documents + fonctions/classes du code) | 11744 | — |
+| symboles extraits (titres de documents + fonctions/classes du code) | 11746 | — |
 
 ### Les outils et skills installés — 1 dossier = 1 outil
 

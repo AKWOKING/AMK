@@ -235,6 +235,35 @@ main [id] {
   letter-spacing: -0.01em;
 }
 
+/* Le nom du médecin, sous le titre : c'est la première chose qu'on doit lire */
+.hero-identity {
+  margin-top: 0.15rem;
+  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+  letter-spacing: 0.02em;
+  color: var(--ice);
+  opacity: 0.9;
+}
+
+/* Le contact direct, sans passer par le formulaire */
+.hero-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--teal);
+  text-decoration: none;
+  border-bottom: 1px solid rgb(94 234 212 / 35%);
+  padding-bottom: 0.15rem;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.hero-wa:hover,
+.hero-wa:focus-visible {
+  color: var(--ice);
+  border-color: var(--ice);
+}
+
 .section-title {
   font-family: var(--serif);
   font-weight: 300;
@@ -607,8 +636,8 @@ main [id] {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 52% 34%;
-  filter: saturate(0.94) contrast(1.02);
+  object-position: 50% 22%;
+  filter: saturate(0.96) contrast(1.02);
 }
 .hero-photo-frame {
   position: absolute;
@@ -676,7 +705,7 @@ main [id] {
 }
 .parcours-figure img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
 }
 .parcours-figure .caption {
@@ -1721,7 +1750,7 @@ main [id] {
     aspect-ratio: 16 / 11;
   }
   .hero-photo img {
-    object-position: 52% 28%;
+    object-position: 50% 18%;
   }
   .hero-title {
     font-size: clamp(2.6rem, 12vw, 4.6rem);
@@ -1960,4 +1989,30 @@ main [id] {
   border-radius: 50%;
   background: var(--teal);
   flex: none;
+}
+
+/* ── La photographie de consultation, sous la semaine ────────────────────── */
+.consult-figure {
+  margin: clamp(1.8rem, 4vw, 3rem) auto 0;
+  max-width: 22rem;
+  text-align: center;
+}
+.consult-figure img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: 50% 16%;
+  border-radius: var(--radius);
+  box-shadow: 0 32px 64px -44px rgb(0 0 0 / 70%);
+}
+.consult-figure .caption {
+  margin-top: 0.7rem;
+  font-size: 0.78rem;
+  color: rgb(197 220 233 / 70%);
+}
+
+@media (max-width: 640px) {
+  .consult-figure {
+    max-width: 17rem;
+  }
 }

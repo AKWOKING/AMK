@@ -17,7 +17,7 @@ import {
   buildWhatsappUrl,
 } from "./config/appointment.js";
 import { createTranslator, defaultLang, supportedLangs, langTag } from "./i18n/index.js";
-import { buildWeek, hasAnyHours, locationDays, locationLabel } from "./lib/schedule.js";
+import { buildWeek, hasAnyHours, hoursText, locationDays, locationLabel } from "./lib/schedule.js";
 import { validate, errorText } from "./lib/validators.js";
 
 /* ── État : une seule source, et le rendu en découle ───────────────────── */
@@ -124,20 +124,9 @@ function renderStatic() {
     for (const line of t("hero.h1")) heroTitle.append(el("span", { text: line }));
   }
 
-  // Portrait légendé : une image générée ne se fait jamais passer pour le médecin
-  const portrait = $("[data-portrait]");
-  const portraitCfg = doctorConfig.profile.portrait;
-  if (portrait) {
-    portrait.srcset = portraitCfg.srcset;
-    portrait.alt = portraitCfg.alt[state.lang] || portraitCfg.alt[defaultLang];
-  }
-  const portraitCaption = $("[data-portrait-caption]");
-  if (portraitCaption) {
-    portraitCaption.textContent = portraitCfg.isRealPhoto
-      ? ""
-      : t("hero.portraitCaption");
-    portraitCaption.hidden = Boolean(portraitCaption.textContent === "");
-  }
+  // Les photographies du médecin, remplies depuis la configuration : jamais
+  // une image en dur dans le HTML, sinon la légende et l'alt divergent.
+  renderImages();
 
   const heroStatus = $("[data-hero-status]");
   if (heroStatus) heroStatus.textContent = t("hero.statusLine");
@@ -279,7 +268,7 @@ function renderDetail() {
     ["facility", location.facility],
     ["address", location.address],
     ["days", days],
-    ["hours", location.hours],
+    ["hours", hoursText(location.hours, state.lang)],
     ["phone", location.contactPhone],
   ];
 
@@ -372,7 +361,7 @@ function renderSchedule() {
         .join(" · ");
       row.append(el("p", { class: "day-place", text: placeText }));
 
-      const hours = day.entries.map((entry) => entry.hours).filter(isKnown).join(" · ");
+      const hours = day.entries.map((entry) => hoursText(entry.hours, state.lang)).filter(isKnown).join(" · ");
       row.append(
         hours
           ? el("p", { class: "day-hours", text: hours })
@@ -706,12 +695,86 @@ function renderFooter() {
 const formatPhone = (digits) =>
   String(digits).replace(/^(\d{3})(\d{1})(\d{2})(\d{2})(\d{2})(\d{2})$/, "+$1 $2 $3 $4 $5 $6");
 
+
+/* ═════════════════════════════════════════════════════════════════════════
+   1 bis · Photographies du médecin, et actions directes
+   ═════════════════════════════════════════════════════════════════════════ */
+
+/**
+ * Chaque `img[data-photo]` reçoit sa source, son srcset, ses dimensions et son
+ * texte alternatif depuis `doctorConfig.images`. Les légendes suivent : une
+ * photographie réelle porte sa provenance, une image d'illustration se déclare.
+ */
+function renderImages() {
+  const images = doctorConfig.images || {};
+  for (const img of $$("img[data-photo]")) {
+    const cfg = images[img.dataset.photo];
+    if (!cfg) continue;
+    img.src = cfg.src;
+    img.srcset = cfg.srcset || "";
+    if (cfg.width) img.width = cfg.width;
+    if (cfg.height) img.height = cfg.height;
+    img.alt = cfg.alt ? cfg.alt[state.lang] || cfg.alt[defaultLang] : "";
+    const caption = img.closest("figure")?.querySelector("[data-photo-caption]");
+    if (caption) {
+      const text = cfg.caption ? cfg.caption[state.lang] || cfg.caption[defaultLang] : "";
+      caption.textContent = text || "";
+      caption.hidden = !text;
+    }
+  }
+
+  // Le portrait du hero garde son propre point d'entrée (compatibilité).
+  const portrait = $("[data-portrait]");
+  const portraitCfg = doctorConfig.profile.portrait;
+  if (portrait && portraitCfg) {
+    portrait.srcset = portraitCfg.srcset;
+    portrait.alt = portraitCfg.alt[state.lang] || portraitCfg.alt[defaultLang];
+  }
+  const portraitCaption = $("[data-portrait-caption]");
+  if (portraitCaption) {
+    const text = portraitCfg?.isRealPhoto
+      ? portraitCfg.caption?.[state.lang] || portraitCfg.caption?.[defaultLang] || ""
+      : t("hero.portraitCaption");
+    portraitCaption.textContent = text;
+    portraitCaption.hidden = !text;
+  }
+
+  // L'identité affichée sous le titre du hero : « Dr Fogue · Ophtalmologie ».
+  const identity = $("[data-hero-identity]");
+  if (identity) {
+    const name = doctorDisplayName();
+    identity.textContent = name ? `${name} · ${doctorConfig.specialty}` : t("hero.identityPending");
+    identity.hidden = false;
+  }
+
+  // Le bouton WhatsApp du hero : il n'existe que si un numéro est publié.
+  const waLink = $("[data-hero-wa]");
+  if (waLink) {
+    const number = whatsappNumber();
+    if (number) {
+      waLink.href = buildWhatsappUrl(number, t("wa.direct"));
+      waLink.textContent = `${t("hero.whatsappCta")} · ${formatPhone(number)}`;
+      waLink.hidden = false;
+    } else {
+      waLink.hidden = true;
+    }
+  }
+}
+
 function renderInfoDialog() {
   const container = $("[data-info-list]");
   if (!container) return;
   clear(container);
 
   const groups = [
+    {
+      title: t("footer.questionsTitle"),
+      items: (doctorConfig.meta.questions || []).map((question) => [
+        question[state.lang] || question.fr,
+        false,
+        "",
+      ]),
+    },
     {
       title: t("parcours.labels.name"),
       items: [
@@ -735,7 +798,7 @@ function renderInfoDialog() {
         [t("consultations.labels.facility"), isKnown(location.facility), location.facility],
         [t("consultations.labels.address"), isKnown(location.address), location.address],
         [t("consultations.labels.days"), (location.days || []).length > 0, locationDays(location, t)],
-        [t("consultations.labels.hours"), isKnown(location.hours), location.hours],
+        [t("consultations.labels.hours"), isKnown(hoursText(location.hours, state.lang)), hoursText(location.hours, state.lang)],
         [t("consultations.labels.phone"), isKnown(location.contactPhone), location.contactPhone],
       ],
     })),
@@ -818,7 +881,6 @@ function setLang(lang) {
   renderForm();
   renderFooter();
   renderInfoDialog();
-  renderStructuredData();
 
   // L'URL suit la langue, sans recharger la page ni perdre la section.
   const url = new URL(window.location.href);

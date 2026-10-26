@@ -52,8 +52,12 @@ from typing import NamedTuple
 
 # --------------------------------------------------------------------------- outils
 
-LOCAL_TYPES = ("Optician", "LocalBusiness", "Store", "MedicalBusiness", "MedicalClinic", "Dentist",
-               "Pharmacy", "HealthAndBeautyBusiness", "ProfessionalService", "Organization", "Corporation")
+# « Physician » ajouté le 26/10/2026 : un médecin en exercice est bien une entité locale au sens de
+# schema.org (`Physician` → `MedicalBusiness` → `LocalBusiness`). Sans lui, le JSON-LD du Dr Fogue
+# était lu comme une entité sans téléphone ni adresse alors qu'il porte les deux.
+LOCAL_TYPES = ("Optician", "Physician", "MedicalOrganization", "LocalBusiness", "Store", "MedicalBusiness",
+               "MedicalClinic", "Dentist", "Pharmacy", "HealthAndBeautyBusiness", "ProfessionalService",
+               "Organization", "Corporation")
 IMG_EXT = (".webp", ".jpg", ".jpeg", ".png", ".avif", ".gif", ".svg")
 FONT_EXT = (".woff2", ".woff", ".ttf", ".otf")
 MENU_BTN_RE = re.compile(r"<button\b[^>]*\baria-expanded\s*=[^>]*>", re.I)
