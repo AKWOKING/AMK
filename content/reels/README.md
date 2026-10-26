@@ -12,7 +12,8 @@
 |---|---|
 | `reelkit.py` | le moteur : scènes, fond, cartes, pastilles, mascotte, barre de progression, encodage |
 | `ep01/make_ep01.py` | l'épisode 01 : **6 beats, arc moderne, 24,3 s** — le scénario est **dans le code**, et la pièce déclare son **accroche** (`HOOK`) et son **jeu** (`TRUST`) |
-| `ep01/ep01-v5.mp4` | **le master courant** : 1080×1920, 30 fps, H.264 + AAC, **24,80 s, avec voix, script conforme à la porte du récit** |
+| `ep01/ep01-v6.mp4` | **le master courant** : 1080×1920, 30 fps, H.264 + AAC, **23,71 s, avec voix, CTA qui porte sa récompense** |
+| `ep01/ep01-v5.mp4` | la v5 (24,80 s) — le filet précédent, gardé pour comparaison d'oreille |
 | `ep01/ep01-v4.mp4` | la v4 (24,50 s) — **le filet** : si la v5 déplaît à l'oreille, on republie celle-là |
 | `ep01/ep01-v4-silent.mp4` | la même image sans son (pour reposer une autre voix sans refaire le rendu) |
 | `ep01/ep01-v3.mp4` | la v3 (23,76 s, conseil gratuit, accroche « Votre cabinet existe ») — conservée comme trace |
@@ -67,31 +68,36 @@ fichier variable** (744 936 octets chacun). Sans `set_variation_by_name`, PIL re
 **Thin**. Le premier rendu sortait donc en maigre alors que le code demandait `ExtraBold`.
 `reelkit.font()` demande l'axe ; ne pas le retirer.
 
-## 4 · L'épisode 01 — « Votre patient tape opticien Akwa. » (v5, 24,80 s)
+## 4 · L'épisode 01 — « Il appelle l'autre, pas vous. » (v6, 23,71 s)
 
-> **Reconstruit le 26/10 (tour 150)** après le **Roast Room** (`knowledge/ROAST-2026-10-26-SCRIPT-EP01.md`,
-> verdict C, 8,1/10) et **sous la nouvelle porte du récit** (`tools/qa/audit_story.py`). La v4 était une
-> bonne pièce **mal ordonnée** : elle ouvrait sur une consigne, ne relançait jamais au milieu, montrait
-> « 12 avis » sans le prononcer, et donnait son meilleur cadeau à 18 s. La v5 corrige les quatre, et rien
-> d'autre. **le lien : https://github.com/AKWOKING/AMK/blob/main/content/reels/ep01/ep01-v5.mp4**
-> La v4 reste dans le dépôt (`ep01-v4.mp4`) comme filet — la condition de Buffett.
+> **Réécrit le 26/10 (tour 151)** après trois reproches de King, dans cet ordre : **ça sonne robotique**
+> (passage `humanizer`, cinq tics corrigés), **« écrivez APERÇU pour faire quoi ? »** (le CTA porte sa
+> récompense), **les cinq tactiques de vente** (trois tiennent dans 25 s). Le **Roast Room** a tranché le
+> CTA à 7,1/10 contre 6,9 et 5,0 : voir `knowledge/ROAST-2026-10-26-EP01-VENTE.md`.
+> **Le lien : https://github.com/AKWOKING/AMK/blob/main/content/reels/ep01/ep01-v6.mp4**
+> Les v4 et v5 restent dans le dépôt : si la v6 déplaît à l'oreille, on republie la précédente.
 
-| Beat | Durée | La voix dit | L'écran montre | La cime | Rôle déclaré |
+| Beat | Durée | La voix dit | L'écran montre | Cime | Rôle |
 |---|---|---|---|---|---|
-| **hook** | 0,00–5,00 | « Votre patient tape opticien Akwa. Il appelle l'un des deux. Pas vous. » | la recherche, **deux** résultats (coche verte / croix orange), puis la scène en trois lignes | 70 | `cas` |
-| **spike1** | 5,00–9,67 | « Sa fiche : un site, douze avis. La vôtre : un nom. » | deux cartes : `SON SITE · 6 photos`, `SES AVIS · douze` — puis « La vôtre : **un nom.** » | **92** | `lockin+preuve` |
-| **release1** | 9,67–13,33 | « Horaires et fiche : dix minutes, gratuit. » | « Dix minutes. **Gratuit.** » et la coche | 58 | `corps` |
-| **spike2** | 13,33–16,53 | « Ce n'est pas le site. Il veut venir ce soir. » | « Ce n'est pas **le site.** » barré, puis « Il veut venir **ce soir.** » et le sceau « 22 h · le cabinet est fermé » | **88** | `rehook+corps` |
-| **release2** | 16,53–21,61 | « Un site répond à 22 heures. Horaires, adresse, WhatsApp. » | « **à 22 h 00.** » puis la carte verte, la coche et « Une seule page. Une seule réponse. » | 60 | `corps` |
-| **cta** | 21,61–24,80 | « Écrivez APERÇU sur WhatsApp. » | `APERÇU` en grand, le numéro, « 10 minutes cette semaine » | **95** | `sortie` |
+| **hook** | 0,00–5,00 | « Votre patient tape opticien Akwa. Il appelle **l'autre**, pas vous. » | la recherche, deux résultats (coche / croix), la scène en trois lignes | 70 | `cas` |
+| **spike1** | 5,00–8,76 | « Sa fiche a **douze avis**. La vôtre n'a qu'un nom. » | `SON SITE · 6 photos`, `SES AVIS · douze`, puis « La vôtre n'a **un nom.** » | **92** | `lockin+preuve` |
+| **release1** | 8,76–12,25 | « Les horaires, ça se change en dix minutes. **Sans moi.** » | « Les horaires, ça se change **en dix minutes** » / « Sans moi. » + coche | 58 | `corps` |
+| **spike2** | 12,25–16,32 | « **Le soir, il veut venir. Et personne ne répond.** » | la scène, puis « Et personne ne répond. » + le sceau « 22 h · le cabinet est fermé » | **88** | `rehook+corps` |
+| **release2** | 16,32–19,52 | « Une page avec vos horaires **répond à votre place**. » | « Votre page **répond à votre place** », la carte verte (Horaires / Adresse / WhatsApp) | 60 | `corps` |
+| **cta** | 19,52–23,71 | « Écrivez APERÇU. **Voyez votre page avant de payer.** » | `APERÇU`, « Votre page, avant de payer. », le numéro, « on regarde votre fiche / vous décidez après » | **95** | `sortie` |
 
-**Les quatre portes, et ce qu'elles disent de la v5** : `✓ récit · 24,8 s · 6 beats` (cas, lock-in,
-preuve dite, rehook, sortie alignée — **zéro avertissement**) · `✓ accroche niveau 3 · 4/4 mots · 12 mots`
-(⚠ `sans-intrigue`) · `✓ rôle 24,8 s · 20/125 · plancher 12` · `✓ arc 6 beats · 3 cimes`.
+**Ce que le CTA promet, et ce qu'il ne promet pas.** Il promet **une page, vue avant tout paiement** —
+on la livre en une heure, sans tiers dans la boucle. Il **ne promet pas** « on vous crée votre fiche
+Google » : la création d'une fiche Business dépend d'une vérification que Google contrôle, et le dépôt a
+déjà vécu une promesse plus large que la livraison (24/09, `MESSAGES` §2). La fiche est **regardée** et
+nommée à l'écran ; elle n'est pas promise au sens de « validée par Google ».
+
+**Les quatre portes, sur la v6** : `✓ récit 23,7 s · 6 beats` (zéro avertissement) · `✓ accroche niveau 3
+· 4/4 mots · 10 mots` (⚠ `sans-intrigue`) · `✓ arc 23,7 s · 6 beats · 3 cimes` · `✓ rôle 23,7 s · 20/125`.
 
 **Ce qui a changé entre les trois versions** — et pourquoi :
 
-| | v1 (20:25) | v2 (21:45) | v3 (22:35) | v4 (23:40) | **v5 (26/10)** |
+| | v1 (20:25) | v2 (21:45) | v3 (22:35) | v4 (23:40) | v5 (26/10) | **v6 (26/10)** |
 |---|---|---|---|---|
 | ouverture | carton de titre, **à zéro** | on est **déjà** dans l'écran de recherche | idem | idem, **deux** résultats — le contraste est montré |
 | accroche | carton | « Votre cabinet existe. Votre site, non. » | idem | **« Tapez votre nom sur Google : il appelle les autres, pas vous. »** |
@@ -102,11 +108,11 @@ preuve dite, rehook, sortie alignée — **zéro avertissement**) · `✓ accroc
 | `release2` | décorative | **souffle** muet | **le conseil gratuit** | inchangé |
 | utilité (jeu 5) | 2 | 3 | 4 | 4 |
 | durée | 21,4 s | 23,4 s | 23,76 s | **24,76 s** |
-| vérification | aucune | `audit_reel` | + `audit_trust` (20/125) | + `audit_hook` (4/4) | **+ `audit_story`** (la porte du récit) |
+| vérification | aucune | `audit_reel` | + `audit_trust` (20/125) | + `audit_hook` (4/4) | + `audit_story` | **+ `cta-sans-recompense`** |
 | ouverture | carton | recherche | un résultat | **deux** résultats + consigne | **une scène : le patient tape** |
 | rehook | — | — | — | — | **oui (« ce n'est pas le site »)** |
 | preuve dite | — | — | — | non (à l'écran seulement) | **« douze avis »** |
-| cadeau | — | — | 18 s | 18 s | **9,7 s** |
+| cadeau | — | — | 18 s | 18 s | 9,7 s | **8,8 s** |
 
 **La voix** : `voice-03` (masculine, registre publicitaire), français, synthèse du 25/10. Les six clips sont
 dans `ep01/voice/`, les durées mesurées dans `timing.json`. **Le beat s'allonge jusqu'à la voix, jamais

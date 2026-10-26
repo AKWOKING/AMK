@@ -6113,3 +6113,21 @@ recomptage : **28 testés · 22 joignables · 6 morts**.
 **⑧ La chaîne passe à cinq portes** : idée → accroche → **récit** → rôle → forme. C'est écrit dans `PRE-FLIGHT` §1, `IDEA-PIPES` §7, `CONTENT-CREATION` §3 quater, `reels/README` §4/§6, `PLAYBOOK` §5 sexies et `CONTENT-LESSONS` §22. Réflexion préalable : `ops/BRAINSTORM-SCRIPT-2026-10-26.md`.
 
 **⑨ Ce qui reste à King** : écouter la v5 (elle est **plus concrète et plus rapide** que la v4, et le mot « site » n'arrive plus en ouverture), dire si elle lui va, puis publier mardi 27/10. Et les 45 minutes de watchlist (tuyau 2) restent la seule chose que je ne peux pas faire.
+
+## 26/10/2026 (tour 151) — EP01 v6 : humanisée, armée des cinq tactiques, et un CTA qui dit enfin ce qu'on reçoit
+
+**① Trois reproches, trois remèdes.** King : *« the video looks good but I think we can improve the phrasings and the script to sound less robotic and more human… also when you close with "Écrivez APERÇU sur WhatsApp" they should write that to do what ?? »*, plus cinq tactiques de vente à étudier. Ce sont **trois problèmes distincts** : une langue, une promesse, un levier. Les mélanger aurait produit exactement le ton de vendeur qu'on fuit.
+
+**② Graphe puis pré-vol, comme la règle l'exige.** `graphify` rejoué (**12 600 nœuds**), deux `ask` (« humanizer tics écriture IA » → 32 documents ; « réciprocité rareté preuve sociale autorité conversion CTA » → 116), `preflight.sh` rejoué, `brainstorming` tracé. Réflexion écrite : `ops/BRAINSTORM-EP01-VENTE-2026-10-26.md`.
+
+**③ `humanizer` installé et passé sur le texte prononcé** (pin `8c307f3`, 26 motifs). Cinq tics trouvés sur cinquante mots — fragment théâtral, triade forcée, ouvertures répétées, deux-points en série, mot d'annonce — et corrigés un par un (`knowledge/HUMANIZER-EP01-2026-10-26.md`). La correction n'est pas « plus chaleureux » : c'est **remplacer la typographie par de la parole**.
+
+**④ Les cinq tactiques, passées au crible du format** (`knowledge/SALES-5-TACTICS-2026-10-26.md`). **Trois appliquées** : réciprocité (« les horaires, ça se change en dix minutes. Sans moi. » — un cadeau utilisable sans nous), cohérence (le plus petit pas : **un mot**, pas le nom du cabinet), autorité (le **diagnostic**, jamais le titre). **Deux écartées, avec la raison** : la rareté grille le crédit sur un premier contact (réservée au BOFU du 07/11, avec la capacité réelle) ; la preuve sociale de quartier est impossible — **un client, aucune mesure**. Chaque tactique retenue tient dans 25 s sans mentir.
+
+**⑤ Le CTA, tranché par le Roast Room** (`knowledge/ROAST-2026-10-26-EP01-VENTE.md`, 5 sièges, verdict **7,1/10** pour « un mot » contre 6,9 pour « le nom en plus » et 5,0 pour « envoyez le nom »). Retenu : **« Écrivez APERÇU. Voyez votre page avant de payer. »** La récompense est nommée, le coût est nommé, l'action reste un mot. Et un refus net : **pas de « on vous crée votre fiche Google »** — la vérification d'une fiche Business dépend de Google, et le dépôt a déjà vécu une promesse plus large que la livraison (24/09). La fiche est **regardée** et nommée à l'écran, jamais promise comme validée.
+
+**⑥ Une porte de plus, sur la demande exacte de King.** `audit_story` avertit désormais **`cta-sans-recompense`** : une sortie qui nomme l'action sans dire ce qu'on reçoit est signalée. Banc **31/31**. Et une contrainte mesurée : la sortie est plafonnée à **4,5 s** — « Vous voyez votre page avant de payer » faisait 4,81 s ⛔, « **Voyez** votre page avant de payer » fait **4,19 s** ✓. Quatrième fois en deux jours que le plafond écrit le texte.
+
+**⑦ EP01 v6, rendue et mesurée** : `content/reels/ep01/ep01-v6.mp4` — **23,71 s**, 1080×1920, 30 fps, H.264+AAC, six beats audibles (RMS 0,092–0,111). **Quatre portes vertes** : récit 23,7 s · 6 beats (zéro avertissement) · accroche 4/4 niveau 3, 10 mots · arc 6 beats / 3 cimes · rôle 20/125. Lien : `.../blob/main/content/reels/ep01/ep01-v6.mp4`. Les **v4 et v5 restent** dans le dépôt comme filets.
+
+**⑧ Ce que King doit trancher** : (a) la v6 lui va-t-elle à l'oreille ? (b) veut-il **quand même** la promesse explicite « on vous crée votre fiche Google » — c'est son nom sur le message, et la ligne est isolée pour être changée en une minute. Ma recommandation reste « on regarde votre fiche », pour la raison du 24/09.

@@ -29,6 +29,7 @@ tools/record/node_modules/
 #    pièce courante du pipeline : il doit être atteignable par un LIEN, pas par un chemin dans un
 #    bac qui redémarre. Seuls le master et sa vignette entrent ; le rendu muet reste dehors (il se
 #    refait en 30 s). Poids : 1,9 Mo — c'est le prix d'un lien qui marche.
+!content/reels/ep01/ep01-v6.mp4
 !content/reels/ep01/ep01-v5.mp4
 !content/reels/ep01/ep01-v4.mp4
 !content/reels/ep01/poster.jpg

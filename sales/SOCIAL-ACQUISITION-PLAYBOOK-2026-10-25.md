@@ -292,8 +292,12 @@ Le lien prérempli, si le bouton ne peut pas être configuré :
 
 ### 4.2 La « page de réservation » = le message d'accueil WhatsApp (à coller tel quel)
 
-> **Bonjour 👋 — vous avez écrit APERÇU, c'est bien ça.
-> Deux questions et je vous dis si un aperçu à votre nom a du sens : (1) le nom du cabinet, (2) la ville ou le quartier.
+> **Bonjour 👋 — vous avez écrit APERÇU, c'est bien ça. Le nom de votre cabinet ?**
+> (puis, dans le même fil) La ville ou le quartier, et je regarde ce que Google affiche pour vous aujourd'hui.
+
+*Révisé le 26/10 (condition 2 du Roast Room sur le CTA) : le nom du cabinet se demande **dans la
+première ligne**, pas après un bonjour de trois lignes — chaque aller-retour perdu avant l'aperçu est un
+prospect perdu (`ROAST-2026-10-26-EP01-VENTE` §Tour 2, Hormozi).
 > Si oui, vous recevez une page à votre nom avant de payer quoi que ce soit.
 > Si non, je vous le dis aussi — ça vous fait gagner la conversation.**
 

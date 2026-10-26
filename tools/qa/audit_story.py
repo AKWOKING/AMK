@@ -103,6 +103,16 @@ PROMESSE = re.compile(
     re.I,
 )
 
+# Ce qu'on REÇOIT. Un CTA qui ne nomme que l'action (« écrivez APERÇU ») laisse le spectateur sans
+# réponse à « pour faire quoi ? » — c'est le reproche exact de King le 26/10. On ne peut pas juger si la
+# récompense est *bonne*, mais on peut vérifier qu'elle est **nommée**.
+BENEFICE = re.compile(
+    r"\b(voyez|voyez-|vous voyez|recevez|obtenez|affichez|avant de payer|sans payer|gratuit|gratuite|"
+    r"on vous montre|je vous montre|on regarde|vous décidez|votre page|votre fiche|en dix minutes|"
+    r"dans la journée|aujourd'hui)\b",
+    re.I,
+)
+
 # Le cadeau : ce qui est offert gratuitement, et qui doit arriver tôt.
 CADEAU = re.compile(r"\b(gratuit|gratuite|gratis|dix minutes|10 minutes|sans payer|sans rien payer)\b", re.I)
 
@@ -310,6 +320,13 @@ def audit(script: Script) -> Verdict:
     # 11 · le hook ne doit pas manger le contexte (5 s)
     if script.duree_connue and lines[0].duree > CONTEXTE_MAX:
         v.warn(f"[hook-long] {lines[0].duree:.1f} s > {CONTEXTE_MAX:.0f} s de contexte")
+
+    # 11 bis · le CTA nomme sa récompense (reproche de King, 26/10 : « écrivez APERÇU, pour faire quoi ? »)
+    if sorties:
+        texte_cta = lines[sorties[-1]].text
+        if not BENEFICE.search(texte_cta):
+            v.warn(f"[cta-sans-recompense] « {texte_cta} » nomme l'action, pas ce qu'on reçoit : "
+                   "ajouter ce que le spectateur obtient, ou à quelle condition")
 
     # 12 · deux verbes de CTA différents = deux CTA déguisés
     verbes = {m.lower() for l in lines for m in VERBES_CTA.findall(l.text)}
