@@ -6951,7 +6951,7 @@ Alpha Optic, Free Optic, London Vision, Maranatha, Africa Optic). Envoyer depuis
 **Africa Optic, lui, n'est plus une cible froide** : c'est le Dr Fogue, qui a répondu le 26/10 et attend
 ses photos. Il sort de toute file d'envoi.
 
-**Le lot du 27** (`sales/LOT-2026-10-27.md`, quinze messages, trois sous-lots de cinq) :
+**Le lot du 27** (`sales/LOT-2026-10-27.md`, onze messages, deux sous-lots) :
 `audit_outreach.py --strict` → **0 bloquant, 0 avertissement**. Chaque message porte un fait daté, une
 source lisible dans `§3` du fichier, et un angle différent : deux numéros (Optic Swiss), deux boutiques
 (Leroy), une rue absente (Le Cristallin), quatre numéros (Bely), des agences hors de Douala (Gift
@@ -6967,7 +6967,18 @@ l'Ordre : c'est écrit dans le fichier, pas masqué.
 Optic Laser, Cristalys, LyfyOptic, Maison Optique, Original Optique, Vision Care Center (domaines vivants),
 et les huit cabinets déjà écrits le 26/10.
 
-**Bookkeeping** : cinq fiches ajoutées au CRM (196 lignes) pour les cabinets qui n'y étaient pas —
-Optic Swiss, Leroy, Le Cristallin, Bely, SkyOptic — en `prospecting`, `wa_verified=no`, source datée.
+**Bookkeeping** : deux fiches ajoutées au CRM pour les cabinets qui n'y étaient pas — Optic Swiss,
+Leroy — en `prospecting`, `wa_verified=no`, source datée. Trois fiches que j'avais créées (Bely,
+Planète Optique, SkyOptic Akwa) ont été **retirées** : un second exemplaire du même cabinet existait
+déjà, parfois déjà contacté.
 
-**Reste à faire** : les quinze ouvertures WhatsApp de King, puis l'envoi par sous-lot, une heure d'écart.
+**Ce que la relecture du CRM a empêché, et c'est le fait du jour.** Ma première version comptait
+**quinze** messages. Quatre destinataires y étaient de trop : **Le Cristallin est un client en cours**,
+avec un site en ligne (`lecristallinoptique.com`) — lui écrire « aucun annuaire ne donne votre rue »
+aurait été la faute la plus coûteuse du lot ; **Bely**, **Planète Optique**, **L'Opticien Bali** et
+**SkyOptic** avaient chacun une seconde fiche, déjà contactée (l'une a même répondu). Le lot est donc
+livré à **onze**, avec la liste des quatre écartés et leur motif au §4 du fichier. Quatre cabinets
+restent en réserve, jamais contactés (Mouscou, OMB, Le Samaritain, JiredOptic) : il leur manque un fait
+autre que la ligne du registre.
+
+**Reste à faire** : les onze ouvertures WhatsApp de King, puis l'envoi par sous-lot, une heure d'écart.
