@@ -57,6 +57,15 @@ else
 fi
 rm -f "$delivery_log"
 
+echo "── 5. surface d'indexation (ce qu'on demande à Google) ──"
+if python3 tools/ops/dm_index_surface.py --check 2>&1 | tail -2 | grep -q "OK"; then
+  python3 tools/ops/dm_index_surface.py --check 2>&1 | grep -E "pages cœur"
+else
+  echo "  ⛔ la surface d'indexation dérive (sitemap ou noindex) :"
+  python3 tools/ops/dm_index_surface.py --check 2>&1 | grep -E "✗"
+  fail=1
+fi
+
 echo
 if [ "$fail" -ne 0 ]; then
   echo "PORTE : BLOQUÉE — corriger avant d'écrire ou de publier."

@@ -499,6 +499,12 @@ def check_llms(site: Path) -> list[Finding]:
         "lisent les moteurs et assistants"))
     extra = sorted(listed - locs - {"https://schema.org", "https://dmoptiquesarl.com"})
     extra = [u for u in extra if not u.rstrip("/").endswith(".xml")]
+    # ... sauf si la page est en noindex : elle existe, elle est utile au lien qu'on envoie, elle
+    # n'a simplement pas à figurer au sitemap (décision du 26/10 sur les fiches de montures).
+    par_url = {url_of(site, pg).rstrip("/"): pg for pg in pages_of(site)}
+    extra = [u for u in extra
+             if not re.search(r'<meta name="robots"[^>]*noindex',
+                              read(par_url[u.rstrip("/")]) if u.rstrip("/") in par_url else "")]
     if extra:
         out.append(Finding("D5", "P3", "llms.txt", f"{len(extra)} URL de llms.txt absentes du sitemap",
                            "vérifier qu'elles existent vraiment ; sinon les retirer"))
@@ -619,6 +625,47 @@ def check_schema(site: Path, pages: list[Path]) -> list[Finding]:
 
 # --------------------------------------------------------------------------- sortie
 
+# --------------------------------------------------------------------------- D9 sitemap ↔ noindex
+#
+# Le 26/10/2026, DM OPTIQUE demandait à Google d'indexer 96 URL dont 80 fiches de montures qui ne
+# contenaient qu'un titre, une phrase et trois photos : Google a répondu « Discovered – currently not
+# indexed » pour 89 d'entre elles. La correction passe les fiches en `noindex,follow` et ramène le
+# sitemap à 16 URL. Ce contrôle est la porte de cette décision : les deux listes ne doivent jamais se
+# contredire. Une URL du sitemap en noindex est une **contradiction** (Search Console la nomme
+# « Submitted URL marked noindex ») ; une URL du sitemap sans fichier est un **fantôme**.
+
+def check_sitemap_noindex(site: Path, pages: list[Path], host: str) -> list[Finding]:
+    smap = site / "sitemap.xml"
+    if not smap.exists():
+        return []
+    locs = LOC_RE.findall(read(smap))
+    # La racine vaut « / » : sans ce `or "/"`, `index.html` se retrouvait sous la clé vide et la page
+    # d'accueil passait pour un fantôme.
+    par_url = {(url_of(site, p).rstrip("/") or "/"): p for p in pages}
+    contradits, fantomes = [], []
+    for loc in locs:
+        chemin = re.sub(r"^https?://[^/]+", "", loc).rstrip("/") or "/"
+        page = par_url.get(chemin)
+        if page is None:
+            fantomes.append(loc)
+        elif re.search(r'<meta name="robots"[^>]*noindex', read(page)):
+            contradits.append(chemin)
+    out = []
+    if contradits:
+        out.append(Finding(
+            "D9", "P1", f"{len(contradits)} URL · ex. {contradits[0]}",
+            "le sitemap demande l'indexation de pages qui portent `noindex` — Search Console le lit "
+            "comme « Submitted URL marked noindex »",
+            "retirer ces URL du sitemap, ou retirer leur noindex : les deux listes doivent dire la "
+            "même chose (outil DM : tools/ops/dm_index_surface.py --apply)"))
+    if fantomes:
+        out.append(Finding(
+            "D9", "P2", f"{len(fantomes)} URL · ex. {fantomes[0]}",
+            "le sitemap liste des URL sans fichier sur le disque — Google les recevra en 404",
+            "régénérer le sitemap depuis les pages réellement écrites"))
+    return out
+
+
 def run(site: Path, base: str) -> list[Finding]:
     host = (base or "").split("//", 1)[-1].split("/", 1)[0].replace("www.", "")
     pages = pages_of(site)
@@ -630,6 +677,7 @@ def run(site: Path, base: str) -> list[Finding]:
     findings += check_llms(site)
     findings += check_social(site, pages)
     findings += check_schema(site, pages)
+    findings += check_sitemap_noindex(site, pages, host)
     order = {"P1": 0, "P2": 1, "P3": 2}
     return sorted(findings, key=lambda f: (order[f.sev], f.code))
 

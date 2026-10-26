@@ -1,0 +1,11 @@
+# Liste blanche d'indexation — DM OPTIQUE SARL (26/10/2026)
+#
+# Une fiche de monture listée ici RESTE indexable, même si la règle générale la met en noindex.
+# On n'y met qu'une page que Google a DÉJÀ indexée : on ne retire jamais du champ ce qu'il a accepté.
+#
+# Format : un chemin par ligne, avec la barre finale. Les lignes # sont des commentaires.
+# Le contrôle : python3 tools/ops/dm_index_surface.py --check
+#
+# État au 26/10 : VIDE. Les 4 pages indexées ne sont pas connues avant l'extraction
+# Search Console (plan, étape 3). Si l'une d'elles est une fiche, on l'ajoute ici, et le sitemap
+# la reprend automatiquement.
