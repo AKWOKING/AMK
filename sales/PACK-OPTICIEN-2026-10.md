@@ -11,6 +11,11 @@
 | **Gestion mensuelle** | 2 publications/semaine (1 UGC IA + 1 carrousel), maintenance, rapport | **50 000 FCFA/mois** nouveau (30k = fondateur DM, signé) |
 | **Extension try-on** | App Android local-only, sideloadée, ≤ 3 appareils, ≤ 30 montures, admin self-service, garantie 30 j | **900 000 one-time** (pilote, 300/300/300) · **1 400 000** opticien 2+ |
 
+**Le plafond (26/10)** : ces prix sont ceux qui tiennent aujourd'hui. **Aucun palier de site au-delà de
+450 000 FCFA** tant qu'aucun résultat client n'est mesuré — la règle et son calcul sont dans
+`knowledge/PRIX-2026-10-24.md` §4 bis, la lecture qui l'a motivée dans `knowledge/HIGH-TICKET-2026-10-26.md`.
+L'extension try-on ci-dessus reste hors plafond : c'est un produit, pas un palier.
+
 ## Pourquoi opticiens (signal marché, pas préférence)
 - 5 des 6 fils vivants sont opticiens (DM, Univers, Cristallin, Labiomed, Cavisa).
 - Le seul produit répétable du portefeuille est opticien-shaped (try-on : opticien n°2 = configuration,

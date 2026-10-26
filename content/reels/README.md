@@ -25,7 +25,9 @@
 | `tools/qa/audit_trust.py` | **la porte du jeu** — refuse une pièce dont le rôle ne tient pas le score (`CONTENT-GAMES`, §3) |
 | `tools/qa/audit_hook.py` | **la porte de l'accroche** — quatre mots obligatoires, échelle, pas de peur ni de promesse (`HOOKS`, §1–2) ; `--grid` vérifie la grille 331 |
 | `tools/qa/audit_story.py` | **la porte du récit** — la scène, le lock-in, la preuve **prononcée**, le rehook, le CTA aligné (`CONTENT-CREATION` §3/§3 bis) |
-| `ep01/poster.jpg` | la couverture — frame **2,2 s du master v4** pour la vignette |
+| `tools/qa/audit_publication.py` | **la porte de la publication** — légende (accroche en première ligne, un seul CTA, aucun prix, aucune promesse), réponse d'accueil (nom du cabinet en première ligne, heure de livraison), lien, compteur, et la durée du master (≤ 25 s). Banc : `test_audit_publication.py`, **18/18** |
+| `ep01/PUBLICATION-2026-10-26.md` | **le kit du 26/10 12 h** : les quatre gestes avant l'heure, la légende, l'épinglé, la réponse d'accueil, le compteur et les règles de décision |
+| `ep01/poster.jpg` | la couverture — frame **2,2 s du master v6** pour la vignette (régénérée le 26/10) |
 | `ep01/frames/` | les captures de contrôle (inspection avant diffusion) — `v3-*` sont les six beats du master courant |
 | `ep01/assets/mascot.png` | la mascotte — illustration générée, fond retiré par diffusion |
 
@@ -42,6 +44,7 @@ python3 tools/qa/audit_hook.py content/reels/ep01/make_ep01.py            # ① 
 python3 tools/qa/audit_trust.py content/reels/ep01/make_ep01.py           # ② la porte du jeu
 python3 content/reels/ep01/make_ep01.py content/reels/ep01/ep01-v4.mp4    # ③ ≈ 30 s de rendu
 python3 tools/ops/projection.py                                            # ④ la salle : http://0.0.0.0:8000/
+python3 tools/qa/audit_publication.py content/reels/ep01/PUBLICATION-*.md content/reels/ep01/ep01-v6.mp4  # ⑤ la porte AVANT de publier
 ```
 
 **L'ordre n'est pas décoratif** : la porte lit `BEATS`, construit depuis `voice/timing.json`. Une voix trop
