@@ -6159,3 +6159,19 @@ recomptage : **28 testés · 22 joignables · 6 morts**.
 **④ Une porte de plus : `tools/qa/audit_platform.py`** — hashtags 3–8 avec local + marque, mot-clé APERÇU, aucun prix, aucune mendicité (#fyp, « abonnez-vous »), un seul CTA, sous-titres **manuels** déclarés, légende Instagram **en anglais**, alt text, lieu, commentaire épinglé ; avertit `coupe-tiktok-manquante` au-delà de 16 s. Banc `test_audit_platform.py` : **16/16**.
 
 **⑤ Ce qui n'est pas mesuré** : aucune portée, aucun taux, aucun « hashtag qui marche ». La seule mesure IG reste celle du 08/10 (6 abonnés, 122 vues/30 j) ; la seule mesure TikTok reste 156 et 121 vues.
+
+## 26/10/2026 (12 h 10, tour 154) — la prospection commence : 7 pistes à 3/3, 10 en attente d'une preuve
+
+**① Graphe, pré-vol, brainstorm.** `preflight.sh` (**12 782 nœuds**), `ask` « prospection lead scout vérification porte A message personnalisé » → 298 documents ; `superpowers/brainstorming`. Réflexion : `ops/BRAINSTORM-OUTREACH-2026-10-26.md`.
+
+**② Le flux du 24/10 est exécuté, plus récité.** `docs/superpowers/specs/2026-10-24-flux-prospection-design.md` décrivait scout → vérifier → construire → écrire → personnaliser, et **rien ne l'exécutait**. Deux commandes le font maintenant : `tools/outreach/scout.py scout` (pistes jamais contactées + raison de chaque exclusion) et `verify` (les trois portes §8b à partir de preuves datées). Banc `test_scout.py` : **9/9**, dont la seule famille qui compte — sur le vrai CRM, **sept ENVOI et pas huit**, avec les bons noms.
+
+**③ Ce que le CRM contenait sans qu'on le sache : 62 pistes jamais contactées avec un numéro**, dont **17 dont le numéro a été vu sur WhatsApp par King le 25/10** (la porte A était déjà faite, personne ne l'avait exploitée). Le vérificateur en laisse passer **7 à 3/3** et **10 à 2/3** (porte A ✓, porte C ✓, porte B sans preuve). **44 restent sans porte A** — elles attendent King, pas un message.
+
+**④ Sept messages personnalisés** (`sales/ENVOI-VAGUE-2-2026-10-26.md`) : Ets Espace Médical, ASS pour RRPHDD, ISEE, Bellevue Optique, S.O.S Vision, Free Optic, Capelli. Chaque message porte **une preuve datée** (profil WhatsApp Business du 25/10, tableau de l'Ordre du 24/10) et **une question fermée à un mot**. Porte : **0 bloquant, 0 avertissement**, y compris en `--strict` — pour la première fois sur un lot froid.
+
+**⑤ La règle tenue** : **aucun message ne dit « vous n'avez pas de site »**. Nous ne l'avons pas vérifié (§8c) ; les messages décrivent ce qui **existe** et où ça vit. La cadence du ruling 05/10 est tenue : **un message par jour**, 28/29/30 octobre puis 02/03/04/05 novembre, rien le 31/10 (paiement DM).
+
+**⑥ La réponse à un « oui » est écrite avant qu'il arrive** (`sales/REPONSE-OUI-2026-10-26.md`) : huit gestes, **3 h de travail réel** dans une fenêtre de 24 h — faits avec source, design réservé au registre, gabarit DM, six portes, fiction étiquetée, déploiement sur le projet du client, deploy gate sur son téléphone. Et six interdits, dont son nom en clair et la promesse d'une fiche Google validée.
+
+**⑦ Ce qui n'est pas fait, et qui ne se fera pas d'ici** : aucune vérification WhatsApp (pas de téléphone), aucune visite de site (pas de réseau vers les domaines), aucun envoi. Les trois restent à King, et le document dit lequel des trois prend combien de temps.

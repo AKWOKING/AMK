@@ -638,3 +638,25 @@ rouvre ; pas avant.
 nombre et la nature des hashtags, les sous-titres manuels, la langue de la légende Instagram. Elles ont
 maintenant une porte (`tools/qa/audit_platform.py`, **16/16**), et elle **avertit** au lieu de refuser quand
 le master dépasse 16 s — une pièce longue a le droit de sortir, encore faut-il le savoir en la publiant.
+
+## 26 · 26/10/2026 (12 h 10) — la porte A était déjà passée depuis la veille, et personne ne s'en servait
+
+**Ce que le CRM contenait.** 190 lignes, dont **17 opticiens dont le numéro avait été vu sur WhatsApp par
+King le 25/10** — profil affiché, nom d'établissement, parfois Business avec catalogue. Le lot en cours
+n'en utilisait que deux. Les quinze autres attendaient, non pas une vérification, mais **quelqu'un qui
+lise la colonne `wa_verified`**. La porte A n'était pas le goulot : le goulot était de ne pas regarder.
+
+**Ce que le vérificateur a changé.** Appliquer §8b à la main sur 62 pistes prend une heure et se fait de
+mémoire ; le faire en une commande prend 0,3 s et **écrit la raison de chaque exclusion**. Il a laissé
+passer **7** pistes à 3/3 et bloqué **10** à 2/3 — non pas parce qu'elles sont mauvaises, mais parce
+qu'**aucune preuve datée** de leur activité numérique n'est consignée. La différence entre « pas de site »
+et « on ne sait pas » est toute la règle du 24/09 : une phrase fausse coûte le meilleur prospect.
+
+**Le détail qui a fait la différence sur les messages.** Les faits les plus forts n'étaient pas des
+manques, c'étaient des **contradictions de nom** : « Ets Espace Médical » au tableau de l'Ordre et « Optic
+Medical Favour and Joy » sur WhatsApp ; « ISEE » et « I See Better ». Trois des sept messages n'ont rien
+eu besoin d'affirmer sur leur site — ils montrent qu'un patient qui cherche l'un ne trouve pas l'autre.
+
+**Et une mesure de méthode** : pour la première fois, un lot froid passe `audit_outreach --strict` avec
+**0 bloquant et 0 avertissement**. Ce n'est pas que les textes soient meilleurs ; c'est que le plafond de
+55 mots et le quartier dans la première ligne ont été écrits **avant** la première phrase, pas après.
