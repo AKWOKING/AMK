@@ -30,7 +30,9 @@ le stock. 52 lignes sont composables au total ; 53 messages sont écrits. Et la 
 jamais été ouverte sur WhatsApp : la vérification de huit secondes décidera de leur sort.
 
 **Le vrai chiffre du jour** : assez de texte pour trois jours, assez de numéros **prouvés pour un** (les
-sept). `tools/outreach/supply.py plan` rend ce tableau et refuse d'en promettre un plus flatteur. Le reste
+sept). `tools/outreach/supply.py plan` rend ce tableau et refuse d'en promettre un plus flatteur : il
+compte les **pistes** que voit le vérificateur (77) et les **messages** que la fabrique peut écrire (52),
+et il dit l'écart — 53 messages écrits pour 52 lignes, donc **un** message sans ligne. Le reste
 du plan dépend d'une seule chose — ouvrir des annuaires — et c'est le §4.
 
 ## 2 · L'interrupteur — la seule métrique qui arrête la campagne

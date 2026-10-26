@@ -190,6 +190,20 @@ def stock() -> dict[str, int]:
     return out
 
 
+def composables() -> int:
+    """Combien de lignes la fabrique peut réellement écrire : métier avec une page, lieu sûr, numéro.
+
+    Le vérificateur compte des **pistes** ; la fabrique compte des **messages**. Les deux nombres ne
+    sont pas égaux (77 pistes, 52 messages le 26/10) et confondre les deux, c'est promettre une
+    cadence que rien ne remplit.
+    """
+    try:
+        import compose
+        return len(compose.lit_crm(RACINE / "leads/CRM.csv"))
+    except Exception:  # noqa: BLE001 — sans la fabrique, on ne prétend pas compter
+        return -1
+
+
 def plan(volumes: list[int], debut: date, dispo: dict[str, int],
          captures_par_jour: int = 0) -> tuple[str, bool]:
     """Le plan jour par jour, et le refus s'il demande plus de faits qu'il n'en existe.
@@ -233,10 +247,18 @@ def plan(volumes: list[int], debut: date, dispo: dict[str, int],
 def rendu(volumes: list[int], debut: date, dispo: dict[str, int], captures: int) -> str:
     corps, _ = plan(volumes, debut, dispo, captures)
     taux = sum(TAUX[c][0] * n for c, n in dispo.items()) / max(sum(dispo.values()), 1)
+    n = composables()
+    avert = ""
+    if 0 <= n < sum(v for v in volumes if v > 0):
+        avert = (f"\n**⚠ La fabrique ne peut écrire que {n} messages** sur ce stock : "
+                 f"{sum(v for v in volumes if v > 0) - n} des envois prévus n'ont pas de ligne.\n")
     return "\n".join([
         f"Stock jamais contacté : **{sum(dispo.values())}** lignes "
         f"({dispo['3/3']} à 3/3 · {dispo['2/3']} à 2/3 · {dispo['1/3']} à 1/3).",
         f"Rendement moyen du stock, aux taux de référence : **{taux * 100:.1f} %** de réponses.",
+        (f"Composables par la fabrique (`compose.py`) : **{n}** — métier avec une page, lieu sûr, numéro."
+         if n >= 0 else ""),
+        avert,
         "",
         corps,
         "",
