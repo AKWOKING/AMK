@@ -301,6 +301,16 @@ def lit_crm(chemin: Path) -> list[Lead]:
                 continue
             if g("Contacted").lower().startswith("y") or g("stage") in ("lost", "disqualified", "closing"):
                 continue
+            # Deux refus appris à la main, et qui ne se réapprennent pas tout seuls (26/10) :
+            #   · `wa_verified=no` — King a ouvert la conversation et WhatsApp a refusé le numéro
+            #     (Royal Optic, Win Optic Plus). Écrire là, c'est remplir une journée avec du vide ;
+            #   · un site **vivant** — lui proposer un site est la faute d'ISEE (26/10). Cristalys,
+            #     LyfyOptic et Gift étaient dans les « composables » alors que leur page existe.
+            if g("wa_verified").lower() == "no":
+                continue
+            enseigne = fold(g("Website") + " " + g("Website status"))
+            if "vivant" in enseigne or "declare" in enseigne:
+                continue
             lead = Lead(slug=g("slug") or re.sub(r"[^a-z0-9]+", "-", fold(nom)).strip("-") + "-" + tel[-4:],
                         nom=nom_propre(nom), quartier=quartier(g("City")), numero=tel,
                         profil=g("profile_name_seen"), ville=g("City"))

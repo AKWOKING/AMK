@@ -110,6 +110,27 @@ def _():
     return "1 composable sur 5"
 
 
+@cas("un numéro que King a vu mort, ou une enseigne dont le site est vivant, ne se compose pas")
+def _():
+    # Le 26/10, la fabrique comptait encore Royal Optic et Win Optic Plus (numéros refusés par
+    # WhatsApp) et Cristalys, LyfyOptic, Gift (sites vivants). Un compte qui inclut ces lignes
+    # promet une cadence que l'envoi ne tient pas : le filtre est ici, pas dans la tête de King.
+    f = crm_temp([
+        {"School": "Optique Vivante", "City": "Akwa", "wa_number": "699 00 00 01", "slug": "a"},
+        {"School": "Optique Morte", "City": "Akwa", "wa_number": "699 00 00 02", "slug": "b",
+         "wa_verified": "no"},
+        {"School": "Optique Site Vivant", "City": "Akwa", "wa_number": "699 00 00 03", "slug": "c",
+         "Website": "opticetest.com — VIVANT (24/09) : deux magasins"},
+        {"School": "Optique Site Déclaré", "City": "Akwa", "wa_number": "699 00 00 04", "slug": "d",
+         "Website": "opticedeclaree.com — DÉCLARÉ sur sa propre fiche d'entreprise"},
+        {"School": "Optique Cherchée", "City": "Akwa", "wa_number": "699 00 00 05", "slug": "e",
+         "Website": "none found (22/09)"},
+    ])
+    leads = compose.lit_crm(f)
+    assert [l.slug for l in leads] == ["a", "e"], [l.slug for l in leads]
+    return "2 composables sur 5 : le mort et les deux sites vivants sont écartés"
+
+
 @cas("deux lignes, un numéro : la fabrique le dit, et le lot ne part pas deux fois")
 def _():
     f = crm_temp([
