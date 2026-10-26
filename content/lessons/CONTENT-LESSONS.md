@@ -679,3 +679,13 @@ vraie à 90 % vaut zéro.
 c'est une signature. Le seul garde-fou utile est mécanique — **aucune séquence de douze mots ne revient
 trois fois** — et il a fallu le construire avant d'écrire le premier message du lot, pas après. Premier
 lot de 49 messages froids à passer `--strict` avec zéro avertissement dans ce dépôt.
+
+## 28 · 26/10/2026 (14 h 40) — « 0 bloquant » veut dire que le texte est propre, pas qu'on a le droit d'écrire
+
+**Le fait.** Le lot de 49 messages du matin a passé la porte avec **0 bloquant et 0 avertissement**. Le vérificateur, écrit l'après-midi, y a trouvé **neuf cabinets à 2/3 et un à 1/3** — dix lignes qui n'auraient pas dû partir, dont la première du fichier.
+
+**Pourquoi.** Les deux outils ne mesurent pas la même chose. La porte de `audit_outreach.py` juge **le texte** : longueur, question, motifs répétés, promesses. Le vérificateur juge **le droit d'écrire** : le numéro joint-il WhatsApp, a-t-on vu le profil, sait-on à qui on parle. Un lot peut être irréprochable et mal adressé.
+
+**La leçon.** Tout artefact de volume doit porter **deux verdicts**, et le second doit être visible **avant** le premier message du fichier. Un « 0 bloquant » en tête d'un document qui contient des lignes non prouvées n'est pas une garantie, c'est une impression.
+
+**Comment on l'applique.** `scout.py verify` écrit une section « contradictions » qui liste nommément tout cabinet déjà présent dans un lot et qui n'est pas à 3/3. Un banc l'exige (`tools/outreach/test_scout.py`). Et chaque lot de volume déclare, en tête, combien de ses lignes sont à 3/3, à 2/3 et à 1/3 — ici : **0 / 9 / 33**.
