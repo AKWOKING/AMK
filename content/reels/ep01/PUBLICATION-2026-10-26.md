@@ -128,3 +128,30 @@ par conversation**, pas une ligne par vue.
   propriétaires de cabinets **aujourd'hui**. Si King le fait, il le fait à 12 h 15, avec le lien prérempli,
   et il accepte que ses contacts personnels le voient.
 - **La publication elle-même** : King seul (`PLAYBOOK` §3.3). Ce document ne publie rien.
+
+---
+
+## 8 · L'écran Facebook, champ par champ (ajouté le 26/10, la veille de la publication)
+
+King est dans la fenêtre **« Edit reel »** à 11 h : voici ce que chaque champ reçoit, et ce qu'il ne reçoit pas.
+
+| Champ | Ce qu'on met | Pourquoi |
+|---|---|---|
+| **Add tags** | **rien** — ou un seul mot (`opticien Douala`) | Cinq étiquettes ne donnent pas de portée ; elles diluent la phrase qui, elle, en donne. |
+| **Closed captions** | **ON**, puis relire les six lignes | Le texte de la pièce n'est **pas** le verbatim de la voix (« Sa fiche a douze avis » n'est pas « SON SITE · 6 photos »). Sans sous-titres, un visionnage sans son perd la preuve. Si l'automatique est faux, on le coupe : un sous-titre faux est pire que pas de sous-titre. |
+| **Audio descriptions** | **OFF** | Décrire à voix haute ce qui est déjà écrit en gros à l'écran n'ajoute rien. |
+| **Text transcripts** | **OFF** | Le transcript automatique de Facebook suffit. |
+| **Audience** | **Public** | Un reel visible des seuls amis n'existe pas pour un opticien qui ne nous connaît pas. À vérifier **avant** de valider. |
+| **Légende** | §2, mot pour mot | C'est elle qui porte l'accroche dans les deux premières lignes. |
+| **Booster / Advertise** | **non** | Zéro résultat mesuré : booster achète des vues, pas des conversations. Le premier euro de publicité se dépense après la première mesure, pas avant. |
+
+**Programmer n'est pas être absent.** Un post programmé part sans nous : pas d'épinglage, pas de premier commentaire, pas de réponse dans l'heure. Donc à **12 h 00**, même programmé :
+
+1. ouvrir la page et vérifier que le reel est **public** et se lit ;
+2. **épingler** le post ;
+3. poster le **§3** (le premier commentaire) ;
+4. rester jusqu'à **15 h** avec le §4 ouvert.
+
+**Si « Schedule » n'apparaît pas** dans la fenêtre de publication — l'application n'offre pas toujours la programmation d'un reel — deux chemins : (a) **Meta Business Suite → Planner** programme le reel à 12 h 00 ; (b) un rappel à 11 h 55 et publication à la main. On ne publie jamais « vers midi » : une heure annoncée est une heure tenue.
+
+**Après publication, trois vérifications de dix secondes** : le reel apparaît dans l'onglet **Reels** de la page *et* dans le fil · si la vignette sort **noire**, choisir `ep01/poster.jpg` comme couverture · le bouton WhatsApp de la page ouvre bien une conversation avec le numéro.

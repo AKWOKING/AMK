@@ -243,7 +243,11 @@ def _():
     assert kit_reel.exists(), kit_reel
     v = audit(kit_reel, master)
     assert v.ok, v.fails
-    assert v.duree is not None and 23.0 <= v.duree <= 24.0, v.duree
+    assert v.duree is not None, (
+        "aucun ffmpeg : `pip install --break-system-packages imageio-ffmpeg` "
+        "(content/reels/README §2) — la porte ne mesure pas la durée, elle l'affirme"
+    )
+    assert 23.0 <= v.duree <= 24.0, v.duree
     return f"✓ {v.blocs} blocs · master {v.duree} s"
 
 
