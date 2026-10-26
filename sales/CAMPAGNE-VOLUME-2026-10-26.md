@@ -111,11 +111,15 @@ Trois sources, dans l'ordre de rendement observé :
 | 11 | 3 | Free Optic · 679 11 37 60 | **☑ 26/10** | ☐ | ☐ | 28/10 |
 | 12 | 3 | London Vision · 696 76 81 16 | **☑ 26/10** | ☐ | ☐ | 28/10 |
 | 13 | 3 | Maranatha Optics · 658 16 31 90 | **☑ 26/10** | ☐ | ☐ | 28/10 |
-| 14 | 3 | Africa Optic · 691 28 02 37 | **☑ 26/10** | ☐ | ☐ | 28/10 |
+| 14 | 3 | Africa Optic · 691 28 02 37 | **☑ 26/10** | ☑ | **☑ 26/10** | *en conversation* |
 | 15 | 3 | Alpha Optic · 699 57 34 57 | **☑ 26/10** | ☐ | ☐ | 28/10 |
 
-**État au 26/10, 16 h 30.** Quinze messages partis, **une réponse** (ISEE, 26 minutes, sur un message faux),
-**zéro conversation engagée**, un fil fermé par King lui-même. Les quinze lignes sont dans `leads/CRM.csv`
+**État au 26/10, 21 h 30.** Quinze messages partis, **deux réponses** : ISEE (26 minutes, sur un message
+faux, fil fermé par King) et **Africa Optic** — la première conversation réellement engagée. Le docteur a
+écrit « ok je vous reviens », puis « vous avez encore besoin des éléments », puis « je pense que ses plus
+mieux avec mes photos ». King lui a promis 2 ou 3 portraits du cabinet **et son nom complet officiel**.
+Autrement dit : **le premier prospect qui dit oui à l'aperçu, et qui demande à y mettre ses photos**, ce qui
+est exactement l'objet de l'offre. Détail et risques : `sales/Activity-Log.md`, entrée du 26/10 au soir. Les quinze lignes sont dans `leads/CRM.csv`
 avec `last_send_state=sent`, `stage_since=2026-10-26`, `Follow-up date=2026-10-28` — sauf ISEE, `parked`,
 sans date de relance.
 
@@ -123,8 +127,9 @@ sans date de relance.
 pas une réponse, et l'absence d'accusé ne prouve pas que le message n'a pas été lu : sur WhatsApp Business,
 les ticks bleus dépendent des réglages du destinataire.
 
-**Le chiffre qui décide de la suite** reste `réponses < 48 h` : **1 / 15** à cette heure, et elle est
-arrivée sur un message faux. Aucun taux camerounais n'existe encore dans nos sources.
+**Le chiffre qui décide de la suite** reste `réponses < 48 h` : **2 / 15** à cette heure — une sur un
+message faux (ISEE), une sur un message juste (Africa Optic). Aucun taux camerounais n'existe encore dans
+nos sources.
 
 **Le plan de relance est écrit** : `sales/PLAN-RELANCE-2026-10-28.md` — qui relancer, avec quel second
 fait, et pourquoi la relance du 28/10 est **une exception datée** à la règle du J+7.
