@@ -1,5 +1,10 @@
 # Brainstorm — 26/10/2026 (tour 154, 12 h 10) · commencer la prospection, aujourd'hui
 
+> ⚠️ **Le même jour, quatre heures plus tard**, King a renversé la cadence : « we can't be sending just
+> 1 message per day, we send between 20-50 ». Ce document reste valable pour le **tri** (scout,
+> vérificateur, sept pistes à 3/3) ; sa recommandation « un message par jour » est **remplacée** par
+> `ops/BRAINSTORM-VOLUME-2026-10-26.md` et `sales/CAMPAGNE-VOLUME-2026-10-26.md`.
+
 ```text
 Demande   King : « now let's begin outreach, lead scout, lead verifier, then personalized outreach message,
           web design if the customer says yes »

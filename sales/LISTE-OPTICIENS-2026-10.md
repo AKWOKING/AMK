@@ -3,6 +3,12 @@
 > Construite le 05/10, zéro heure-King. **Rien ne part avant mercredi 07/10** (hold standing).
 > **Cadence 1/jour (ruling King 05/10 — 2/jour veto : spam flag + liste brûlée en 5 j).** Chauds
 > d'abord, froids après ; les réponses chaudes informent l'opener froid avant de l'engager.
+>
+> ⚠️ **RÉVISÉ le 26/10 (ruling King : « we can't be sending just 1 message per day, we send between
+> 20-50 »).** Ce qui fondait la règle du 05/10 — le texte identique répété — reste vrai et devient une
+> **porte** (`audit_outreach` §10 bloque toute séquence de douze mots répétée). La cadence applicable
+> est celle de `sales/CAMPAGNE-VOLUME-2026-10-26.md` : montée 20 → 30 → 40 → 50 par jour, interrupteur
+> au premier blocage. La liste elle-même reste valable ; c'est la vitesse qui change.
 > Exclusion : Bely Optique Médicale (refus écrit « Non Merci » le 24/09 — on ne re-contacte jamais).
 
 **Ruling 06/10 : re-pull ONOC dimanche 11/10** — la veille du premier envoi (Bali, 12/10), pas avant.

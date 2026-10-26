@@ -6175,3 +6175,19 @@ recomptage : **28 testés · 22 joignables · 6 morts**.
 **⑥ La réponse à un « oui » est écrite avant qu'il arrive** (`sales/REPONSE-OUI-2026-10-26.md`) : huit gestes, **3 h de travail réel** dans une fenêtre de 24 h — faits avec source, design réservé au registre, gabarit DM, six portes, fiction étiquetée, déploiement sur le projet du client, deploy gate sur son téléphone. Et six interdits, dont son nom en clair et la promesse d'une fiche Google validée.
 
 **⑦ Ce qui n'est pas fait, et qui ne se fera pas d'ici** : aucune vérification WhatsApp (pas de téléphone), aucune visite de site (pas de réseau vers les domaines), aucun envoi. Les trois restent à King, et le document dit lequel des trois prend combien de temps.
+
+## 26/10/2026 (13 h 05, tour 155) — la cadence passe de 1 à 20-50 par jour, et la porte qui manquait est construite
+
+**① Graphe et pré-vol.** `preflight.sh` (**12 856 nœuds**), 321 documents sur la question du volume ; lecture de `LISTE-OPTICIENS` §1 (ruling 05/10), `Playbook-Addendum-4` §blasts, `CLIENT-MESSAGING-RULES` §13, `audit_outreach.py` en entier.
+
+**② La règle du 05/10 est révisée, pas jetée.** King : « in cold messaging volume counts ». La recherche lui donne raison **et fixe le plafond** : sur WhatsApp le déclencheur n'est pas le volume mais le **ratio de blocages** (2–3 % suffisent ; dix blocages sur cinquante est pire qu'un sur mille), et le pic soudain est lu comme un compte compromis. Sur courriel, où c'est mesuré : **30 messages très personnalisés ≈ 200 génériques** en réponses par jour, et 20–49 envois par boîte font +27 % de taux de réponse. Décision : montée **20 → 30 → 40 → 50**, interrupteur au premier blocage. Chiffres sourcés et datés dans `ops/BRAINSTORM-VOLUME-2026-10-26.md`.
+
+**③ La porte qui manquait : la ressemblance.** À sept messages écrits à la main, deux phrases communes ne sont rien ; à quarante par jour, une séquence de douze mots répétée **est** la signature d'un compte qui diffuse. `audit_outreach.py` §10 la bloque désormais (blocage à partir de trois messages, alerte à deux dans un lot de douze et plus). Calibrée sur le lot du 26/10 : recouvrement maximal 0,124, il reste à **0 bloquant 0 avertissement**.
+
+**④ La fabrique.** `tools/outreach/compose.py` (plan · write · check), banc **10/10**. Elle n'écrit que ce que la ligne du CRM prouve, choisit l'angle autorisé — **le nom** (deux noms pour un cabinet) ou **l'offre** (une page réelle par métier : opticien DM, clinique, école, laboratoire) —, plafonne à 49, écarte les doublons, et **vérifie son propre lot avec l'aune de la porte**. La construction est un code de Reed-Solomon sur sept éléments : deux messages ne partagent jamais deux phrases. Les phrases fixes tiennent sous onze mots (neuf au milieu) pour que la fenêtre de douze mords toujours sur la suivante.
+
+**⑤ Le lot.** `sales/ENVOI-VOLUME-2026-10-27.md` — **49 messages**, 20 le 27/10 et 29 le 28/10, **0 bloquant, 0 avertissement, --strict**. 47 par l'offre, 2 par le nom. Aucun message n'affirme quoi que ce soit sur le prospect : nous n'avons pas vérifié, et le §8c l'interdit.
+
+**⑥ Trois trous de données trouvés en chemin, et ce qu'on en fait.** L'`ID` du CRM n'est pas une clé (**152 lignes sur 190 n'en ont pas**) → la fabrique identifie par `slug`. **Trois numéros apparaissent deux fois** → elle garde la première ligne et écarte la seconde ; deux fois le même message, c'est un blocage. Et le stock n'est pas la cadence : **71 lignes envoyables, soit 1,8 jour à 40/jour** — le gisement ONOC est épuisé, il faut 200 numéros par semaine, et aucun outil d'ici ne peut les trouver sans réseau.
+
+**⑦ Ce qui n'est pas fait.** Aucun message envoyé, aucun numéro vérifié : la porte A reste le geste de King (8 s par ligne). Et la vidéo explicative de cinq minutes que recommande la vidéo n'existe pas — nous avons des reels de 20–30 s ; c'est une dette EP02, datée, pas un oubli.
