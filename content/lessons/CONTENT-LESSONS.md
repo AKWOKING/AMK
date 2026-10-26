@@ -705,3 +705,21 @@ l'est pas.
 **La règle, désormais outillée** : deux mesures avant chaque envoi, jamais une. Le texte est-il propre
 (`audit_outreach --strict`) **et** a-t-on le droit d'écrire (`verify.py`, portes §8b + hors-cible) ? Un
 lot qui n'a que la première est un gabarit bien écrit.
+
+## 30 · 26/10/2026 (18 h 10) — compter ses messages sans leur verdict, c'est compter de l'espoir
+
+Le lot du 26/10 disait « 49 messages prêts ». Le plan du matin, lui, dit **37 messages dont 7 prêts** —
+et les 30 autres n'ont pas le droit de partir avant une décision humaine sur chacun.
+
+**L'écart n'est pas une nuance de vocabulaire.** Un message écrit n'est pas un message envoyable : il
+manque la porte A (le numéro joint-il WhatsApp), la porte B (l'intention numérique, datée) et la porte C
+(l'acheteur est-il joignable par ce numéro). Écrire d'avance ne coûte que du temps machine ; **annoncer
+« 49 prêts » coûte la confiance** quand sept seulement le sont.
+
+**La règle outillée** : `tools/outreach/plan_jour.py` ne compte comme prêts que les `ENVOYER` du
+vérificateur, met les `KING-TRANCHE` juste derrière, et range les autres dans la file de vérification.
+Il refuse de classer un numéro absent du vérificateur autrement que `PAS-ENVOYÉ` : **l'absence de preuve
+n'est pas une preuve d'absence de problème.**
+
+**Le chiffre qui décide** n'est donc jamais « combien on a écrit », c'est « combien partent sans qu'on
+ait à décider » — aujourd'hui **7 sur 37**.
