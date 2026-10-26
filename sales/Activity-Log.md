@@ -6451,3 +6451,46 @@ pluriel (la cause nommée restait invisible quand la phrase disait « deux annua
 5. **Ce qui reste ouvert** : le handoff date du 22/10 (quatre jours), et le LOT 1 attend toujours la
    décision de King sur la v5. `knowledge/AUDIT-LOT-1-HUMANIZER-2026-10-26.md` §5 en donne le prix :
    dix minutes par prospect, cinquante pour cinq.
+
+### Tour 162 — 26/10/2026 (soir) — la v5, réécrite du point de vue du patron, et le Roast Room
+
+**① Ton ruling, d'abord.** La preuve ne nomme plus le client : **« je fais les sites pour les opticiens
+de Douala »**, et un site qui tourne. Demander son accord à DM Optique viendra plus tard, comme tu l'as
+dit. La ligne rouge est écrite dans `knowledge/PREUVE-VAGUE-ET-PERMISSION-2026-10-26.md` : c'est une
+**catégorie de métier**, jamais un compteur — ni « la plupart », ni un chiffre.
+
+**② Ta deuxième phrase était la bonne question.** « S'ils disent non, notre taux de fermeture est
+faible » : oui, et c'est un défaut d'offre, pas de style. La v4 demandait un oui sans dire **ce qui
+arrive**, **ce que ça coûte**, **ce qu'il doit faire**, **quand**. La v5 répond aux quatre. Les cinq
+messages sont dans `sales/LOT-1-2026-10-27.md` §2, et recopiés dans le message de clôture.
+
+**③ Les trois audits, dans l'ordre demandé.** Le skill humanizer (réinstallé, pin `8c307f3`) : cinq
+ouvertures différentes, **zéro tiret cadratin**, la preuve écrite de cinq façons, deux deux-points par
+message au lieu de trois. Le graphe (`find.py`, `preflight.sh`, 13 223 nœuds) : c'est
+`knowledge/OUTREACH-MESSAGING` §1 qui a donné le temps qui manquait — **le coût de l'inaction, au
+passé** ; trois des cinq messages le portent maintenant. Le web : WhatsApp froid **3–5 %** ;
+messages documentés **15–20 %** ; longueur optimale **50–125 mots** — nos 58–69 sont dedans, donc
+raccourcir aurait été un recul ; et surtout **la permission d'abord** (15–22 %) bat l'envoi non
+sollicité (3–4 %).
+
+**④ Ce que ça a corrigé dans mes propres conseils.** La veille, je recommandais de construire un aperçu
+par prospect (10 min × 5). La recherche dit l'inverse : on demande, puis on construit pour ceux qui ont
+dit oui. La v5 est écrite pour ça.
+
+**⑤ Le Roast Room, séance du soir** (`knowledge/ROAST-2026-10-26-LOT-1-V5.md`) : cinq sièges, trois
+tours, **8,0 pour la v5** contre **7,4 pour la v4** et **5,7** pour un raccourci à trois phrases qui
+aurait coupé le désarmement. Verdict **B** : la v5, plus **un** aperçu construit — celui de ①, dix
+minutes — pour que sa promesse ne soit pas une promesse. Deux conditions appliquées tout de suite : **aucune
+heure dans un message** (« ce soir » a été retiré de ④ — une heure ne s'écrit que sur un fichier fini)
+et **② / ④ pas le même jour** (même bloc de Bali). La troisième engage le ruling 155 : **c'est toi qui
+tranches**, pas moi.
+
+**⑥ Ce qui a bougé dans la porte.** `PREUVE` ne voyait pas la nouvelle phrase (même défaut que `CAUSE`
+au pluriel la veille) : trois motifs ajoutés, **un cas de banc** (la preuve vague passe), banc
+**26/26**. Le message d'alerte ne cite plus DM Optique dans son propre code. `compose.py` : réservoirs
+`NOM_PREUVE` réécrits (7 variantes, métier + ville), **12/12**, et un lot d'essai sort **0/0**.
+
+**⑦ Ce qui reste faux, et qu'il faut dire.** « L'aperçu ne coûte rien » est vrai **de l'aperçu** ; le
+site, lui, se paie, et le prix n'entre pas dans un premier message (§13). Si la première réponse est
+« c'est combien ? », elle est prête : c'est la deuxième réponse, pas la première. Et rien n'est mesuré :
+**aucun message n'est parti**, et aucun taux camerounais n'existe.

@@ -124,6 +124,15 @@ CAS: list[tuple[str, str, str, str]] = [
         "pas de désarmement",
     ),
     (
+        "preuve vague, ruling King 26/10 : le client n'est pas nommé",
+        "Bonjour, sans doute inattendu : à Bonanjo votre fiche Google tient debout, quatre avis. "
+        "Le patient tape votre nom, atterrit sur deux annuaires qui recopient votre fiche, puis "
+        "rappelle la boutique qui a un site. Je fais les sites pour les opticiens de Douala, et "
+        "l'un des leurs est en ligne. Dites-moi un mot : je vous envoie le site, avec vos horaires ?",
+        "Bonanjo",
+        "",
+    ),
+    (
         "aucune preuve sociale",
         BON.replace("J'ai fait le site d'un opticien d'ici, il est en ligne. ", ""),
         "Bonanjo",
