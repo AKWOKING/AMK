@@ -2,7 +2,7 @@
 
 ```text
 Généré par tools/graphify/build_full_graph.py — 2026-10-26
-Source : graphify-out/graph.json (13170 nœuds, 17008 arêtes)
+Source : graphify-out/graph.json (13170 nœuds, 17009 arêtes)
 Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même
 carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.
 ```
@@ -10,7 +10,7 @@ carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10
 ## 0 · En une page
 
 - **13170 nœuds** — dont 818 documents, 202 scripts, 21 modules, 139 pages HTML, 459 images, 6 vidéos, 40 audios, 41 fichiers de données, 11 PDF.
-- **3595 citations entre documents** (2917 en chemin exact, 678 par nom unique)
+- **3596 citations entre documents** (2918 en chemin exact, 678 par nom unique)
 - **152 arêtes de remplacement** · **1 documents marqués périmés**
 - **416 documents que personne ne cite** (atteignables par aucun chemin de lecture)
 - **Couverture : 1800 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
@@ -126,11 +126,11 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 *Le pivot d'une communauté est le document que **les autres membres du groupe** citent le plus (degré interne) — pas le document le plus cité du dépôt, qui l'est partout.*
 
-**574 documents sur 818 sont dans un sujet.** Les 214 autres ne touchent aucune citation — ni entrante, ni sortante : ce sont eux qui se perdent (voir §3 bis). Un sujet se nomme par ses pivots ; un document hors sujet ne se retrouve pas tout seul.
+**575 documents sur 818 sont dans un sujet.** Les 213 autres ne touchent aucune citation — ni entrante, ni sortante : ce sont eux qui se perdent (voir §3 bis). Un sujet se nomme par ses pivots ; un document hors sujet ne se retrouve pas tout seul.
 
 | # | Docs | Les 3 pivots internes | Ce que le groupe a en propre |
 |---|---|---|---|
-| 0 | 292 | `AMK-DESIGN-SKILLS.md` · `PRE-FLIGHT.md` · `YouTube-Lessons.md` | `sales/` (34 % du groupe) |
+| 0 | 293 | `AMK-DESIGN-SKILLS.md` · `PRE-FLIGHT.md` · `YouTube-Lessons.md` | `sales/` (34 % du groupe) |
 | 1 | 145 | `Activity-Log.md` · `Send-BATCH-2026-09-24-Opticiens-2.md` · `Send-BATCH-2026-09-24-Opticiens.md` | `leads/` (89 % du groupe) |
 | 2 | 90 | `pre-launch-checklist.md` · `tiktok-01.md` · `content-plan-month1.md` | `clients/` (64 % du groupe) |
 | 3 | 20 | `analyst-common.md` · `context-safety.md` · `report.md` | `tools/` (100 % du groupe) |
@@ -143,7 +143,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | 10 | 2 | `etapes-01-PUBLICATION.md` | `clients/` (100 % du groupe) |
 | 11 | 2 | `DESIGN.md` | `design/` (100 % du groupe) |
 
-### Communauté 0 — 292 documents
+### Communauté 0 — 293 documents
 
 - `AMK-DESIGN-SKILLS.md` — cité 38× dans le groupe, 41× au total
 - `PRE-FLIGHT.md` — cité 29× dans le groupe, 36× au total
