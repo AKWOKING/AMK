@@ -2,24 +2,24 @@
 
 ```text
 Généré par tools/graphify/build_full_graph.py — 2026-10-26
-Source : graphify-out/graph.json (13624 nœuds, 17724 arêtes)
+Source : graphify-out/graph.json (13623 nœuds, 17724 arêtes)
 Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même
 carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.
 ```
 
 ## 0 · En une page
 
-- **13624 nœuds** — dont 845 documents, 203 scripts, 31 modules, 140 pages HTML, 474 images, 8 vidéos, 40 audios, 51 fichiers de données, 11 PDF.
+- **13623 nœuds** — dont 845 documents, 203 scripts, 31 modules, 140 pages HTML, 473 images, 8 vidéos, 40 audios, 51 fichiers de données, 11 PDF.
 - **3716 citations entre documents** (3029 en chemin exact, 687 par nom unique)
 - **157 arêtes de remplacement** · **3 documents marqués périmés**
 - **426 documents que personne ne cite** (atteignables par aucun chemin de lecture)
-- **Couverture : 1878 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
+- **Couverture : 1877 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
 
 ### Les dossiers du dépôt, par poids — et ce que chacun porte
 
 | Dossier | Fichiers | Ce que c'est |
 |---|---|---|
-| `hosting/` | 351 | Sites déployés et aperçus |
+| `hosting/` | 350 | Sites déployés et aperçus |
 | `tools/` | 290 | Outils et skills installés |
 | `clients/` | 231 | Dossiers clients |
 | `content/` | 223 | Contenu, vidéos, carrousels, scripts |
@@ -208,7 +208,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | Nature | Fichiers | Où |
 |---|---|---|
 | document | 845 | `AGENTS.md`, `AMK-DESIGN-SKILLS.md`, `AMK-SEO-PLAYBOOK.md` |
-| image | 474 | `brand/AMK-logo-mono.png`, `brand/AMK-logo-mono.svg`, `brand/AMK-logo-primary.png` |
+| image | 473 | `brand/AMK-logo-mono.png`, `brand/AMK-logo-mono.svg`, `brand/AMK-logo-primary.png` |
 | script | 203 | `brand/build_fb_assets.py`, `clients/dm-optic/launch/facebook-assets/build_cover.py`, `clients/dm-optic/launch/social/build_frame_cards.py` |
 | page | 140 | `brand/AMK-Logo-Kit.html`, `brand/v1-green/AMK-Logo-Kit.html`, `clients/dm-optic/brand/CARTE-SIGNATURE-TABLEAU-VISION.html` |
 | données | 51 | `clients/dm-optic/content/month1/w1/spot-02.json`, `clients/dm-optic/content/month1/w1/spot-03.json`, `clients/dm-optic/content/month1/w1/ugc-03.json` |
