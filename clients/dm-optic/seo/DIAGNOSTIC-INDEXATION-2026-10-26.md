@@ -225,8 +225,10 @@ exactement ce qui produit un « Redirect error » permanent.
 
 **Ce que ça règle, et ce qu'il faut vérifier soi-même :**
 
-- `http://` → `https://` : la famille n°1 des 8 URL est fermée côté zone. À revérifier demain en
-  rouvrant `http://dmoptiquesarl.com/` : l'adresse doit basculer **avant** l'affichage.
+- `http://` → `https://` : **vérifié le 26/10 au soir, après le geste.** `http://dmoptiquesarl.com/`
+  rend désormais `https://dmoptiquesarl.com/` — l'adresse bascule avant l'affichage, et la page servie
+  ne contient plus un seul lien interne en `http://`. **Les trois familles des 8 URL sont donc fermées**
+  (`www` et barre finale l'étaient déjà, §7.2).
 - Les familles « `www` » et « sans barre finale » étaient **déjà** correctes (relevés du §7.2). La
   validation en cours ne fait que le constater côté Google.
 - **HSTS** : le bouton « Enable HSTS » est resté inactif. **C'est bien ainsi** : le site envoie déjà
