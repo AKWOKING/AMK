@@ -86,8 +86,8 @@ métier, remplie de six faits**. On offre donc la même chose que lui, pour un c
 | La pièce | Ce qu'elle fait | État |
 |---|---|---|
 | **la vidéo de 5 minutes** « pourquoi un site » | envoyée **après** le oui, avec la page : c'est le deuxième étage de la vidéo | **n'existe pas** — déjà dette depuis le 26/10, désormais confirmée par une source tierce |
-| **la preuve sociale** | « j'ai fait le site d'un opticien de Douala, il est en ligne » — vrai (DM Optique) | **jamais utilisée** : à tester sur le LOT 2, pas sur celui-ci (cinq messages ne mesurent rien) |
-| **le désarmement** | une ligne qui excuse l'intrusion | à tester au LOT 2 : elle coûte 6 mots, et nos messages sont à 54 |
+| **la preuve sociale** | « j'ai fait ça pour un opticien d'ici » — vrai (DM Optique), sans nommer le client | **posée au LOT 1** le 26/10 (v3 puis v4) : elle tient en 9 mots, sans lien. Le LOT 2 la reprend tel quel |
+| **le désarmement** | « je sais que c'est inattendu » — une ligne qui excuse l'intrusion | **posée au LOT 1** le 26/10 : 6 mots, et le message reste sous 60. ⚠ lire l'audit humanizer : c'est un calque de l'anglais de la vidéo, donc un tell |
 
 ## 7 · Ce que cette lecture a changé, ce soir
 
@@ -99,6 +99,10 @@ métier, remplie de six faits**. On offre donc la même chose que lui, pour un c
    à produire, mais sa place est écrite.
 4. **La leçon §32** et ce document sont dans le graphe : ils se lisent depuis `PRE-FLIGHT`.
 
-**Ce que je n'ai pas fait, et qu'il faut dire** : le « désarmement » et la preuve sociale ne sont pas dans
-les cinq messages. À 54 mots, il n'y a pas la place pour les deux, et les ajouter aurait poussé le message à
-65 mots — c'est-à-dire au publipostage que la vidéo dénonce elle-même. Ils passent en test sur le LOT 2.
+**Correction du 26/10 (tour 160)** : cette page disait « à tester au LOT 2 ». C'était faux dès le lendemain —
+le désarmement et la preuve sociale sont **dans les cinq messages du LOT 1** (v3, puis v4), à 54–58 mots. Le
+LOT 2 ne les teste donc pas : il les garde. Le seul verdict qui manque est celui de l'envoi (rien n'est parti).
+
+**Ce que l'audit humanizer du même soir ajoute** : les deux pièces sont là, mais **la silhouette des cinq
+messages est identique** — même négation en deuxième position, même chute d'une ligne. Voir
+`knowledge/AUDIT-LOT-1-HUMANIZER-2026-10-26.md`.

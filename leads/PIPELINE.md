@@ -16,7 +16,7 @@
 | ⛔ Écarté | **21** |
 | **Total** | **190** |
 
-- **Contactés :** 69 · **Réponses humaines :** 10 · **Taux de réponse : 14.5 %**
+- **Contactés :** 69 · **Réponses humaines :** 10 · **Taux de réponse : 14.5 %** (10 / 69, calculé sur `leads/CRM.csv`)
 - **Réponses automatiques (hors PRR) :** 1
 - **Clients :** 0 · **Revenu :** 0 FCFA
 
