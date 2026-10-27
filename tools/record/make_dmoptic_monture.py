@@ -442,6 +442,28 @@ MASTERS = {}
 ASSETS = os.path.join(ROOT, "clients", "dm-optic", "content", "month1", "w3", "assets")
 
 
+def trim_seam(img, band=160, tol=6.0):
+    """Coupe une capture pleine page **avant son raccord**.
+
+    Chromium, sur une capture `fullPage`, réimprime parfois le haut de la page une seconde fois (mesuré
+    le 27/10 : 8 190 px sur le catalogue hommes, 2 225 px sur la fiche H08). Utiliser la capture telle
+    quelle donne un plan où la page **bégаie** — et personne ne le voit en survolant le fichier.
+
+    On cherche donc la première ligne, après 500 px, dont la bande ressemble à la bande du haut ; on
+    coupe là. Si aucun raccord n'est trouvé, on rend l'image entière et on le dit.
+    """
+    import numpy as np
+    a = np.asarray(img.convert("L"), dtype=np.float32)
+    if a.shape[0] < band * 3:
+        return img
+    sig = a[0:band]
+    for y in range(500, a.shape[0] - band, 5):
+        if float(np.abs(a[y:y + band] - sig).mean()) < tol:
+            print(f"  raccord de capture détecté à {y} px → coupé")
+            return img.crop((0, 0, img.width, y))
+    return img
+
+
 def build_masters():
     path = os.path.join(SITE, PHOTO)
     MASTERS["card"] = base.master_product(path, up=1.3)
@@ -450,10 +472,11 @@ def build_masters():
     # ── la page RÉELLE du catalogue (capture Chromium, 1080×10830) : c'est elle qui prouve le
     #    « toutes s'appellent par un code ». Aucune maquette, aucune reconstruction.
     cat = Image.open(os.path.join(ASSETS, "catalogue-hommes.jpg")).convert("RGB")
-    MASTERS["page"] = cat.crop((0, 0, cat.width, 8150))   # 0→8 150 px : avant le raccord de capture
+    # coupé **avant le raccord** : mesuré, pas deviné (voir `trim_seam`)
+    MASTERS["page"] = trim_seam(cat)
     # ── la fiche H08, capture pleine page : c'est là que le nom gagne s'écrira.
     fic = Image.open(os.path.join(ASSETS, "fiche-h08.jpg")).convert("RGB")
-    MASTERS["fiche"] = fic.crop((0, 0, fic.width, 2200))   # 0→2 200 px : avant le raccord de capture
+    MASTERS["fiche"] = trim_seam(fic)
     # ── le visage : image générée (exception demandée par King, 27/10), cadrée plus large que le
     #    cadre pour que le mouvement ait de la matière.
     vis = Image.open(os.path.join(ASSETS, "visage-h08.jpg")).convert("RGB")

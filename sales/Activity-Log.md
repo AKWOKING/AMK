@@ -7080,3 +7080,13 @@ King ne les a pas données, et une heure inventée vaut moins qu'une heure absen
   (RÉSULTAT MARDI, LUN/MAR/MER). Rendu **29,53 s** parlé et muet. Portes : `audit_story` ✓,
   `audit_hook` ✓, `audit_video_motion --calme` OK sur les deux fichiers (2,3 s max, 19 changements),
   `audit_post_dm` ✓, banc 35/35.
+- 27/10/2026 · **Publié à 17 h 48 — Facebook et TikTok** (épisode 1, H08, 29,53 s). Le kit de publication et
+  le compteur J0 → J+7 sont dans `clients/dm-optic/content/month1/w3/PUBLICATION-2026-10-27.md`. **Aucun
+  chiffre n'est noté** : la pièce a moins d'une heure, et un chiffre écrit sans l'avoir lu ne vaut rien. Ce
+  qui a été fait ensuite, à la demande de King (« document all we went through so that we don't repeat these
+  errors ») : `knowledge/MAKING-OF-MONTURE-01-2026-10-27.md` — sept tours, **21 rendus** dont **17** de
+  correction, **21 erreurs** classées en cinq familles — et la leçon §34 des `CONTENT-LESSONS`. Deux
+  préventions ajoutées au code : `trim_seam()` (le raccord des captures pleine page est détecté et
+  **imprimé** à chaque rendu, plus besoin de le mesurer à la main) et la vérification que le rendu reste
+  identique aux portes (2,33 s max, 19 changements). Passage de relais : `ops/HANDOFF-2026-10-27.md`.
+

@@ -23,6 +23,8 @@ Portes       audit_story ✓ 6 beats, 0 avertissement · audit_hook ✓ · audit
 Amendement   brand/DIRECTION-MARQUE-v2 §12 (27/10) — la monture est **le personnage** de cette série
 Fait le      27/10/2026 — tours 194 (muet), 195 (voix), 196 (histoire + jeu), 197 (vote A/B + cadence),
              198 (les trois images), 199 (humanizer + roast + film calme), 200 (le script final de King)
+Publiée      **mardi 27/10/2026 à 17 h 48** — Facebook et TikTok · compteur et décisions :
+             `PUBLICATION-2026-10-27.md` (même dossier)
 ```
 
 ---
