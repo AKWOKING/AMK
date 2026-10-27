@@ -7090,3 +7090,15 @@ King ne les a pas données, et une heure inventée vaut moins qu'une heure absen
   **imprimé** à chaque rendu, plus besoin de le mesurer à la main) et la vérification que le rendu reste
   identique aux portes (2,33 s max, 19 changements). Passage de relais : `ops/HANDOFF-2026-10-27.md`.
 
+### 27/10/2026 (soir) — hygiène du dépôt : 44 branches supprimées, 3 gardées
+
+**Rien à voir avec un envoi** : cette entrée existe pour que la session suivante ne cherche pas des branches
+qui n'existent plus. **47 branches `origin/arena/*` → 3** (44 supprimées). Critère (la généalogie ne marche pas ici, l'historique
+est squashé) : PR **MERGED** **et** `git diff --shortstat origin/main <branche>` = 0 fichier.
+
+- **Supprimées (44)** : toutes avaient une **PR fusionnée** (76 PR de #1 à #83 — les mêmes noms de branche
+  ont servi plusieurs fois). Aucune branche à PR ouverte n'a été touchée.
+- **Gardées** : `arena/d9c51fc4-amk` (**#84 OPEN** — la branche de travail, contenu **pas** dans `main`) ·
+  `arena/ecb2ac1c-amk` (**#78 OPEN** — lot de vente du 27/10, +574/−777) · `arena/fc8110b1-amk`
+  (**#40 OPEN** — photo du dépôt au 24/10, −30 858 lignes).
+- **Le détail et la commande** : `ops/GIT-STABILITY-NOTE.md`, section du 27/10 au soir.
