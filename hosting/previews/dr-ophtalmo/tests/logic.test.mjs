@@ -156,6 +156,16 @@ check("la photographie d'équipe est publiable en l'état", () => {
   }
 });
 
+check("la page ne dit jamais qu'une photo publiée ne l'est pas", () => {
+  // Le 27/10, la photographie d'équipe est entrée dans la page tandis qu'une
+  // question du panneau « à confirmer » affirmait encore qu'elle n'était pas
+  // publiée. Une page qui se contredit coûte plus cher que dix questions.
+  const questions = (doctorConfig.info?.questions ?? []).flatMap((q) => [q.fr, q.en].filter(Boolean));
+  for (const q of questions) {
+    assert.ok(!/n’est pas publiée|not published/i.test(q), `question contradictoire : ${q}`);
+  }
+});
+
 check("aucune légende ne porte la mention de provenance datée", () => {
   // Ruling King 27/10 : « Photographie transmise par le médecin, 26 octobre
   // 2026 » n'est pas nécessaire. Une légende dit qui est sur la photo, pas d'où
