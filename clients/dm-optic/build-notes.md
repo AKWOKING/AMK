@@ -2611,3 +2611,38 @@ la phrase exacte de la voix) · `audit_hook` ✓ · `test_audit_post_dm` **35/35
 **Toujours non vérifié** : la **H08 est-elle encore au cabinet** · les horaires 8h30–13h00 ne sont pas
 reconfirmés cette semaine · la voix est une **voix de synthèse**, pas celle du cabinet — et le kit ne le
 laisse pas croire.
+
+---
+
+## Épisode 1, v3 — **l'histoire et le jeu** · tour 196 (27/10/2026)
+
+King : *« the video style and idea are good, but I need you to audit and edit the script, also making it
+more human. Create a story behind the naming of the glasses, if not viewers won't feel engaged, won't see
+a reason to participate… we can create games/competitions behind it or even polls. »*
+
+| | |
+|---|---|
+| script | `content/month1/w3/MONTURE-01-SCRIPT.py` — 6 beats, rôles, jeu en trois manches, porte W43 |
+| rendu | `assets/monture-01-h08-voix.mp4` **25,01 s** (3,07 Mo) · `monture-01-h08.mp4` muet **25,0 s** (2,67 Mo) · couverture |
+| voix | `voice-05`, six blocs mesurés : 4,64 · 4,63 · 3,48 · 3,84 · 2,67 · 4,35 s + 0,28 s entre chacun |
+| accroche | **« Votre monture n'a pas de nom. Elle s'appelle H08, comme un colis. »** — ✓, **niveau 2 (Magician)** |
+| histoire | sur notre site, **40 montures, 40 codes, zéro nom propre** — la fiche H08 est la première |
+| jeu | **un mot** (cette vidéo) → **vote « 1 ou 2 »** (samedi) → **le nom reste sur la fiche** (épisode 2) |
+| portes | `audit_story` ✓ 6 beats 0 avertissement · `audit_hook` ✓ · `audit_video_motion` **OK** 1 s et 2 s (0–1 s : max 46,19, **8 coupes**) · `audit_post_dm` ✓ · `test_audit_post_dm` **35/35** |
+
+**Ce que le tour a appris, et qui vaut pour les suivantes** :
+① une **histoire** n'est pas un décor : c'est un fait vérifiable que personne ne remarque (« le nom d'une
+fiche est son code »), une raison locale (ici, un taxi a un nom), et un enjeu qui survit à la vidéo (le nom
+écrit sur la page). Retirer un des trois, et la pièce redevient une consigne ;
+② **le chiffre inventé a été attrapé avant le rendu** : j'allais dire « 65 montures » (le nombre de photos
+dans le dossier) ; le site en publie **40** (10 + 24 + 6). Compter la source, pas le dossier ;
+③ **un beat de voix long ne tient pas sur un plan unique** — même règle qu'au tour 195, et le portique l'a
+redite sur `b1` : trois plans, dont une coupe à **0,93 s** ;
+④ **la passe `humanizer` change des phrases, pas des idées** : deux ouvertures « On… » d'affilée, un
+deux-points d'énumération, un fragment de présentateur — corrigés sans toucher au propos ;
+⑤ **un jeu se juge à son plus petit pas** : proposer un mot est déjà un effort ; voter « 1 ou 2 » ne l'est
+presque pas. C'est pour ça que la manche 2 existe — et c'est elle qu'on mesurera.
+
+**Toujours non vérifié** : la **H08 est-elle encore au cabinet** · les horaires 8h30–13h00 · **le vote de
+samedi suppose que King publie samedi** (la seule promesse du jeu) · rien ne prouve qu'un jeu à un mot
+produise plus de commentaires — le seuil de 5 est une cible, pas une prévision.

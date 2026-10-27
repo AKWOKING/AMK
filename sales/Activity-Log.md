@@ -7027,3 +7027,12 @@ King ne les a pas données, et une heure inventée vaut moins qu'une heure absen
   `hook-desaligne` (« 1 nombre commun ») alors que texte et voix disent tous deux **H08** et **un quartier,
   une ville**. L'extracteur ne voyait ni `H08` ni `8h30` (lettre collée au chiffre) et comptait les fenêtres
   de temps comme du contenu. Il les voit ; **le seuil ne bouge pas** (≥ 2) ; banc **35/35**.
+- 27/10/2026 · **Épisode 1, v3 — l'histoire et le jeu** (tour 196, King : « create a story behind the naming
+  … more human … games/competitions/polls »). Le script vit désormais dans
+  `content/month1/w3/MONTURE-01-SCRIPT.py` (6 beats + rôles + Porte W43), lu par `audit_story` : **✓ 0
+  avertissement**. Histoire : sur le site, **40 montures, 40 codes** — la fiche s'appelle
+  « H08 · Double pont aviateur noir et doré ». Jeu en trois manches : un mot → vote « 1 ou 2 » → le nom
+  reste écrit sur la fiche. Passe `humanizer` sur les 6 phrases (2 ouvertures « On… », 1 deux-points
+  d'énumération, 1 fragment). Rendu **25,01 s** parlée + **25,0 s** muette, portique **OK** aux deux
+  fenêtres. **Un chiffre faux attrapé avant le rendu** : « 65 montures » → **40** (le site en publie 40 ;
+  65, c'est le nombre de photos dans le dossier).

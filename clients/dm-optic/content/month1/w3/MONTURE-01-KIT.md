@@ -1,26 +1,29 @@
 # KIT — « La monture cherche son nom », épisode 1 · H08
 
 ```
-Pièce A      monture-01-h08-voix.mp4 · 19,87 s · 1080×1920 · 30 fps · H.264 + AAC 48 kHz mono
-             2,30 Mo · **parlée** (voice-05) — la pièce à publier
-Pièce B      monture-01-h08.mp4 · 14,20 s · 1,35 Mo · **muette** — le même film sans voix, gardé au dépôt
+Pièce A      monture-01-h08-voix.mp4 · 25,01 s · 1080×1920 · 30 fps · H.264 + AAC 48 kHz mono
+             3,07 Mo · **parlée** (voice-05) — la pièce à publier
+Pièce B      monture-01-h08.mp4 · 25,0 s · 2,67 Mo · **muette** — le même film, même histoire, sans la voix
 Sans visage  ✅ aucun être humain dans le cadre — aucune photo du personnel, aucun patient
 Sans tournage ✅ aucune caméra : la monture est une photo **réelle** du cabinet, déjà au dépôt
 Sans le docteur ✅ rien à demander au cabinet pour produire ce fichier
-Règle        knowledge/HOOK-FIRST-2026-10-27.md (texte > visuel > parlé : les trois disent la même chose) ·
-             knowledge/LEAD-MAGNETS-2026-10-27.md (boucle ouverte, conversion par vue) ·
-             clients/dm-optic/content/IDEES-ABONNES-2026-10-27.md (IDEA-01)
-Rendu par    tools/record/make_dmoptic_monture.py (muet) et `--voice-dir` (parlé) — reproductible
-Portes       audit_video_motion : OK aux fenêtres 1 s **et** 2 s · audit_hook : ✓ · audit_post_dm : ✓
-Fait le      27/10/2026 — tour 194 (muet) et tour 195 (parlé)
+Histoire     sur notre site, **40 montures, 40 codes** — aucune n'a de nom propre. On commence par celle-ci
+Jeu          trois manches : **un mot** (cette vidéo) → **un vote « 1 ou 2 »** (samedi) → **le nom reste** (épisode 2)
+Règle        knowledge/HOOK-FIRST (les trois composantes disent la même chose) · knowledge/STORY-ARC (6 beats,
+             rehook obligatoire au-delà de 25 s) · knowledge/HOOKS (niveau 2, **Magician** : on révèle le mécanisme) ·
+             knowledge/CONTENT-GAMES (jeu 5) · knowledge/HUMANIZER-EP01 (les tics à ne pas refaire)
+Script       content/month1/w3/MONTURE-01-SCRIPT.py — les 6 beats, les rôles, le jeu (lu par `audit_story`)
+Rendu par    tools/record/make_dmoptic_monture.py (`--voice-dir` pour la version parlée) — reproductible
+Portes       audit_story ✓ 6 beats, 0 avertissement · audit_hook ✓ 12 mots, niveau 2 · audit_video_motion **OK**
+             aux fenêtres 1 s **et** 2 s · audit_post_dm ✓ · test_audit_post_dm 35/35
+Fait le      27/10/2026 — tours 194 (muet v1), 195 (voix v2), 196 (l'histoire et le jeu)
 ```
 
-> **Ce que ce kit résout.** C'est la seule des deux séries d'abonnés qui ne demande **ni le docteur, ni un
-> visage, ni une caméra, ni un tournage**. Tout est déjà au dépôt : une photo de monture prise au cabinet
-> et la référence que le site publie. Le film se refait d'une commande, et un épisode coûte **45 s de
-> rendu** — pas une demi-journée de plateau. Depuis le 27/10 (tour 195), il **parle** : la voix est une
-> voix de synthèse enregistrée beat par beat, jamais un prompt recollé sur un minutage. Rien n'a été
-> tourné, et le docteur n'a toujours rien à faire.
+> **Ce que ce kit résout.** La v2 disait quoi faire (« donnez un nom à cette monture ») sans dire pourquoi
+> ce cadre en mérite un — et un code de stock n'est pas une histoire. La v3 donne **un fait que personne
+> ne remarque** (sur notre site, le nom d'une monture *est* son code), **une raison locale de nommer** (ici,
+> un taxi a un nom ; une moto aussi) et **un enjeu qui reste** (le nom gagne est écrit sur la fiche, sur le
+> site — il ne part pas avec la vidéo). Aucun tournage, aucun visage, et rien à demander au cabinet.
 
 ---
 
@@ -28,39 +31,46 @@ Fait le      27/10/2026 — tour 194 (muet) et tour 195 (parlé)
 
 | Composante | Ce qui est écrit / montré / dit | Secondes |
 |---|---|---|
-| **texte** | **ELLE N'A PAS DE NOM** (0,0–2,2) puis **H08 · DOUBLE PONT** (2,2–4,0) puis **AU CABINET / À BONABÉRI**, puis **UN QUARTIER · UNE VILLE · UN PRÉNOM** (4,0–9,0) et au carton final **DEMAIN : LA DEUXIÈME** — huit cartons écrits à la main, jamais d'automatique | 0,0–2,2 |
-| **visuel** | la monture réelle **en macro**, cadrée sur la double barre ; le cadre glisse en continu **et** la première seconde porte une poussée de 0,45 s | 0,0–2,2 |
-| **parlé** | voix de synthèse (`voice-05`) : « **Votre monture n'a pas de nom. Regardez : elle devient la vôtre.** » puis « **H08**, double pont. Elle est au cabinet, à Bonabéri. » puis « **Un** quartier, **une** ville, un prénom : choisissez. » — la voix ne se comprime jamais, le montage se cale sur elle | 0,0–2,2 |
+| **texte** | **ELLE N'A PAS DE NOM** (0,0–2,3) puis **ELLE S'APPELLE H08** (2,3–4,6) · **40 MONTURES / 40 CODES** (4,9–9,5) · **UN TAXI A UN NOM / UNE MOTO AUSSI** · **SUR LE VISAGE / TOUS LES JOURS** · **LE NOM RESTE / SUR SA PAGE** · **ÉCRIVEZ UN NOM / UN SEUL MOT** — huit cartons écrits à la main, aucun automatique | 0,0–2,3 |
+| **visuel** | la monture **réelle**, entière d'abord (0,0–0,9), puis macro de la double barre, puis la fiche crème — une coupe à **0,93 s**, jamais une image qui s'installe | 0,0–2,3 |
+| **parlé** | voix de synthèse (`voice-05`) : « **Votre monture n'a pas de nom. Elle s'appelle H08** (*dit : « H, zéro, huit »*), **comme un colis.** » puis « Sur notre site, **quarante** montures ont un code. Celle-ci, c'est vous qui la nommez. » | 0,0–2,3 |
 
-**Pourquoi c'est aligné** : le texte dit « elle n'a pas de nom », l'image montre **l'objet sans étiquette**
-— ni marque, ni prix, ni référence à l'écran pendant ces 2 s — et la voix prononce **exactement** la phrase
-écrite en légende, au mot près, dès **0,0 s** — c'est cette phrase-là qui a passé `audit_hook`. Trois couches, une phrase. Rien à interpréter.
+**Pourquoi c'est aligné** : le carton dit « elle n'a pas de nom », l'image montre **l'objet sans
+étiquette** — ni marque, ni prix, ni référence pendant ces 2 s — et la voix prononce la même phrase, au
+mot près, dès **0,0 s**. La légende écrit ces deux clauses exactes. La précision « comme un colis » est
+**dite et pas écrite** : elle ajoute une image, elle ne change pas le fait.
 
-**Ce que la voix a changé dans le montage.** Le film n'est plus calé sur un minutage écrit à la main : les
-cinq blocs sont mesurés (4,23 · 3,72 · 6,70 · 1,99 · 2,12 s) et le plan se cale dessus, avec **0,28 s de
-respiration** entre deux blocs. C'est la règle de `HOOK-FIRST` : on ne comprime pas une accroche pour la
-faire entrer dans une durée — on allonge l'image de 5,7 s.
+**Ce que la v3 change par rapport à la v2** — et pourquoi.
 
-**Les accroches, et ce que la porte en a dit** (`audit_hook`, tour 195) :
+| # | Reproche (King, 27/10) | Ce qui a été fait | Ce que ça donne à l'écran |
+|---|---|---|---|
+| 1 | *« Create a story behind the naming »* | l'histoire tient dans un fait vérifiable : **40 fiches en ligne, 40 codes, zéro nom** | « 40 MONTURES · 40 CODES » ; la fiche H08 est la première |
+| 2 | *« viewers won't see a reason to participate »* | l'enjeu est nommé **et tenu** : le nom gagne est **écrit sur la fiche**, sur le site | « LE NOM RESTE / SUR SA PAGE » |
+| 3 | *« will I stop doomscrolling just to name frames? »* | on ne demande plus de nommer **dans le vide** : on demande **un mot** (contrainte = jeu), le reste est un vote à un caractère | « ÉCRIVEZ UN NOM / UN SEUL MOT » |
+| 4 | *« games/competitions/polls »* | les trois, dans cet ordre : proposition → vote → résultat (voir §5) | le vote est annoncé dans la légende, pas dans le film |
+| 5 | *« make it more human »* | passe `humanizer` sur les 6 phrases (tableau en §6) | moins de « on », plus de dislocation orale |
+
+**Les accroches, et ce que la porte en a dit** (`audit_hook`, tour 196) :
 
 | # | Accroche | Verdict |
 |---|---|---|
-| 1 | **« Votre monture n'a pas de nom. Regardez : elle devient la vôtre. »** | **retenue** — 12 mots, **✓ niveau 1**, deux réserves assumées (`sans-intrigue`, `niveau-1`). C'est **mot pour mot** ce que la voix prononce et ce que la légende écrit |
-| 2 | « Votre monture n'a pas de nom. Celle-ci devient la vôtre demain. » | **écartée** — `mots-manquants` : il manque l'**action** (« regardez ») ; le contraste ne suffit pas |
-| 3 | « Elle n'a pas de nom. C'est vous qui allez lui en donner un. » | **écartée** — `mots-manquants` : pas de sujet possessif, pas d'objectif |
-| 4 | « Regardez cette monture… » / « Cette monture n'a pas de nom… » | **écartées** — `mots-manquants` : « regardez » seul ne dit pas à qui l'on parle |
-| 5 | **ELLE N'A PAS DE NOM** (le carton seul) | **insuffisant seul** — la porte ne voit pas le carton : c'est la **phrase de légende** qui porte les quatre mots. Le carton reste ce qui est **à l'écran** |
+| 1 | **« Votre monture n'a pas de nom. Elle s'appelle H08, comme un colis. »** | **retenue** — 12 mots, **✓**, **niveau 2 (Magician)** : elle ne rapporte pas un état, elle révèle un mécanisme |
+| 2 | « Votre monture n'a pas de nom. Elle s'appelle H08. » | **retenue pour la première ligne de légende** — 49 caractères (la porte TikTok conseille 60) ; la voix ajoute « comme un colis » |
+| 3 | « Votre monture s'appelle H08. On lui cherche un vrai nom… » | **écartée** — `mots-manquants` : il manque le **contraste** |
+| 4 | « Votre monture n'a pas de nom. Regardez : on lui en donne un… » | **écartée** — `mots-manquants` : il manque l'**objectif** |
+| 5 | « Elle n'a pas de nom. C'est vous qui allez lui en donner un. » | **écartée** (tour 195) — pas de sujet possessif, pas d'objectif |
 
 ---
 
 ## 2 · TikTok — 19 h 00
 
 ```text
-Votre monture n'a pas de nom. Regardez : elle devient la vôtre.
+Votre monture n'a pas de nom. Elle s'appelle H08.
 
-H08 · double pont, aviateur, noir et doré. Elle est au cabinet, à Bonabéri.
-Un quartier, une ville, un prénom : écrivez-le en commentaire. Le cabinet choisit — et demain,
-la deuxième arrive avec le nom qu'il aura retenu.
+Sur notre site, quarante montures. Toutes portent un code, comme celle-ci.
+Alors on commence par elle : donnez-lui un nom, un seul mot, en commentaire.
+Samedi, les deux mots qui reviennent le plus passent au vote. Dimanche, le nom qui gagne est écrit
+sur sa page, sur notre site. Et la suite, c'est la monture d'après — jusqu'à la quarantième.
 
 Écrivez-nous : https://wa.me/237656122239?text=Bonjour%2C%20je%20viens%20de%20voir%20la%20monture%20sans%20nom%20sur%20TikTok.%20La%20H08%20est%20au%20cabinet%20%3F
 📍 West Hotel, 1er étage — Ndobo Mayor, Bonabéri · Examen de vue 8h30–13h00, du lundi au samedi
@@ -68,31 +78,27 @@ la deuxième arrive avec le nom qu'il aura retenu.
 #dmoptique #opticienbonaberi #douala
 ```
 
-- **Sous-titres manuels** — 8 cartons écrits à la main, **aucun automatique** (ruling 11/10). La voix ne
-  remplace pas les cartons : 85 % des vues arrivent son coupé, et la version muette reste publiable telle
-  quelle — c'est le même film, sans la piste audio.
+- **Sous-titres manuels** — huit cartons écrits à la main, aucun automatique (ruling 11/10). La voix ne
+  remplace pas les cartons : la version muette est publiable telle quelle, c'est le même film sans la piste.
 - **Commentaire épinglé** :
-  > La règle du jeu : un nom par personne, en commentaire. Un quartier, une ville, un prénom — pas un nom de
-  > marque, et rien qui promette quoi que ce soit sur la vue. Le cabinet choisit demain, et le nom retenu
-  > s'affichera dans la deuxième.
+  > La règle du jeu : **un seul mot**, pas une marque, et rien qui promette quoi que ce soit sur la vue.
+  > Les deux mots qui reviennent le plus passent au vote samedi. Le nom qui gagne, on l'écrit sur sa fiche —
+  > et on demande son accord à la personne qui l'a trouvé avant de la citer.
   > WhatsApp 656 122 239 · examen de vue 8h30–13h00, du lundi au samedi.
-- **La boucle est dans la vidéo** (« DEMAIN · LA DEUXIÈME ») **et** dans la légende : c'est la seule chose
-  qui peut transformer une vue en abonné.
-- **Ce que la voix dit, au mot près** (à ne pas paraphraser dans un commentaire) : « Votre monture n'a pas
-  de nom. Regardez : elle devient la vôtre. » / « H08, double pont. Elle est au cabinet, à Bonabéri. » /
-  « Un quartier, une ville, un prénom : choisissez. » / « Écrivez son nom. Demain, la deuxième. » /
-  « DM Optique, Ndobo Mayor. »
-
----
+- **Ce qu'on ne promet pas** : ni remise, ni monture offerte, ni délai. Le seul prix du jeu, c'est un mot —
+  et la seule récompense, c'est un nom écrit sur une page qu'on tient nous-mêmes.
+- **Le vote (manche 2, samedi)** : un post court, deux mots, « tapez 1 ou 2 ». Un caractère : c'est le plus
+  petit pas possible, et ceux qui ont proposé reviennent défendre leur mot.
 
 ## 3 · Facebook — 20 h 30
 
 ```text
-Votre monture n'a pas de nom. Regardez : elle devient la vôtre.
+Votre monture n'a pas de nom. Elle s'appelle H08.
 
-H08 · double pont, aviateur, noir et doré. Elle est au cabinet, à Bonabéri — photographiée là, pas en studio.
-Un quartier, une ville, un prénom : écrivez-le en commentaire. Le cabinet choisit, et demain la deuxième
-arrive.
+Sur notre site, quarante montures. Toutes portent un code, comme celle-ci.
+Donnez-lui un nom, un seul mot, en commentaire. Samedi, les deux mots qui reviennent le plus passent
+au vote — et dimanche le nom qui gagne est écrit sur sa fiche, sur notre site. La suite, c'est la
+monture d'après, jusqu'à la quarantième.
 
 Écrivez-nous : https://wa.me/237656122239?text=Bonjour%2C%20je%20viens%20de%20voir%20la%20monture%20sans%20nom%20sur%20Facebook.%20La%20H08%20est%20au%20cabinet%20%3F
 📍 West Hotel, 1er étage — Ndobo Mayor, Bonabéri · Examen de vue 8h30–13h00, du lundi au samedi
@@ -100,11 +106,12 @@ arrive.
 #dmoptique #opticienbonaberi #douala
 ```
 
-- **Alt text** : *« Vidéo de 20 secondes, avec voix : une monture noire et dorée à double pont, photographiée
-  au cabinet. On entend « votre monture n'a pas de nom », puis la référence H08 et le lieu. À l'écran :
-  « elle n'a pas de nom », puis « demain, la deuxième ». »*
+- **Alt text** : *« Vidéo de 25 secondes, avec voix : une monture noire et dorée à double pont posée sur la
+  carte crème de sa fiche. On entend « votre monture n'a pas de nom, elle s'appelle H08, comme un colis »,
+  puis « quarante montures, toutes avec un code ». À l'écran : « elle n'a pas de nom », « elle s'appelle
+  H08 », « le nom reste sur sa page », « écrivez un nom, un seul mot ». »*
 - Le texte prérempli **diffère** de celui de TikTok : deux liens, deux provenances.
-- Un seul CTA (**écrire**) ; la demande de commentaire est une mécanique de série, pas un second CTA.
+- Un seul CTA (**écrire**) ; la demande de commentaire est la mécanique du jeu, pas un second CTA.
 
 ---
 
@@ -113,6 +120,11 @@ arrive.
 > Bonjour, ici **DM Optique**, Ndobo Mayor (Bonabéri) — vous écrivez pour la monture sans nom, la H08 ?
 > Elle est au cabinet. L'examen de vue se fait le matin, **8h30–13h00**, du lundi au samedi.
 > Vous voulez passer l'essayer, ou vous préférez que je vous envoie deux autres photos ?
+
+*(si la personne a proposé un mot, et seulement alors)*
+
+> Votre mot est noté, il est dans la liste. Les deux qui reviennent le plus passent au vote samedi.
+> Si c'est le vôtre qui gagne, on l'écrit sur la fiche — et on vous demande votre accord avant de vous citer.
 
 *(puis, quand l'heure est choisie)*
 
@@ -123,24 +135,27 @@ arrive.
 
 ## 5 · Ce qu'on compte, et ce que ça décide
 
-| Moment | Vues | Messages reçus (préremplis) | Commentaires (noms proposés) | Conversations qualifiées | Abonnés gagnés |
+| Moment | Vues | Messages reçus (préremplis) | Mots proposés (commentaires) | Conversations qualifiées | Abonnés gagnés |
 |---|---|---|---|---|---|
 | J+1 (28/10) | | | | | |
 | J+7 (03/11) | | | | | |
 
-**Quatre nombres décident** : commentaires (un nom est facile à écrire — cible **≥ 5**), abonnés gagnés
-(c'est l'objectif de la série), messages préremplis (le cabinet), et **les deux premières secondes** — la
-seule chose que l'on compare à la référence du 22/10 (**22 %** de rétention, arrêt à `0:01`, `ANALYSE-POST-1`
-§7). Les vues ne décident rien.
+**Quatre nombres décident** : **mots proposés** (cible **≥ 5** — un mot est facile à écrire), **votes en
+manche 2** (cible **≥ 10** — un caractère, donc le vrai test de friction), **abonnés gagnés** (l'objectif
+de la série), **messages préremplis** (le cabinet). Les vues ne décident rien.
 
 **Le seuil, écrit d'avance** : moins de **200 vues** → **pas de résultat**, on ne conclut pas sur la série ;
-on conclut sur la première seconde. Moins de **3 commentaires** → le nom n'est pas la bonne mécanique
-d'interaction, et on change la mécanique, pas le sujet.
+on conclut sur la première seconde. Moins de **3 mots** → le jeu n'intéresse pas, et on change la mécanique,
+pas le sujet. Moins de **10 votes** en manche 2 alors qu'il y a eu des mots → **c'est le retour** qui manque,
+pas l'envie : la boucle entre les deux posts était mal faite.
 
-**Ce que la voix doit apporter, et comment on le saura** : rien ne prouve encore qu'une voix change quoi
-que ce soit sur nos vues — nous n'en avons jamais publié. La version muette et la version parlée sont donc
-**deux pièces séparées**, et si les deux sortent, elles sortent à **des jours différents** : le même film
-avec et sans voix, c'est deux fois la même idée, et un compte qui se répète perd plus qu'il ne gagne.
+**Les trois manches, et ce que chacune coûte** :
+
+| Manche | Quand | Ce qu'on demande | Coût de production |
+|---|---|---|---|
+| 1 · proposition | cette vidéo | **un seul mot** en commentaire | déjà rendue |
+| 2 · vote | samedi 31/10 | **1 ou 2**, entre les deux mots les plus dits | un carton de 15 s, aucune voix à refaire |
+| 3 · résultat | épisode 2 | rien — on annonce | la fiche du site est mise à jour (titre + alt) |
 
 ---
 
@@ -148,52 +163,56 @@ avec et sans voix, c'est deux fois la même idée, et un compte qui se répète 
 
 | Porte | Résultat |
 |---|---|
-| `tools/qa/audit_video_motion.py` | **OK — fenêtre 1 s** : 0–1 s max **9,08** (2 coupes, 2 mouvements) · 1–2 s 2,75 · 3–4 s 4,30. **OK — fenêtre 2 s** également |
-| `tools/qa/audit_post_dm.py` | **✓** — plus d'avertissement `piece-muette`. Deux nombres communs entre le texte et la voix : **1** (« un quartier, une ville ») et **8** (« H08 »). Un ⚠ subsiste, assumé : la première ligne TikTok fait **63 caractères** pour 60 conseillés — c'est la phrase exacte que la voix dit, et la fin de phrase se replie sous « voir plus » |
-| `tools/qa/audit_hook.py` | **✓ niveau 1** — « Votre monture n'a pas de nom. Regardez : elle devient la vôtre. » 13 mots. Deux réserves **assumées** : `sans-intrigue` (elle dit tout de suite de quoi il s'agit) et `niveau-1` (vocabulaire simple, voulu) |
-| Audio mesuré | premier bloc audible à **0,0 s** · dernier à **19,7 s** · RMS médian **−19,9 dB** · **deux respirations** (1,6–2,3 s après la première phrase, 15,0–15,4 s entre b3 et b4) |
-| Visages | **aucun** — vérifié sur les 6 images de contrôle |
-| Images IA | **aucune** — la photo est celle du cabinet |
-| Prix · marque · promesse | **aucun** — trois verrous tenus |
+| `tools/qa/audit_story.py` | **✓** — 6 beats, 0 avertissement : cas → lock-in+preuve → corps → **rehook** → corps → sortie. Débit **3,1 mots/s**, preuve à **20 %** de la pièce |
+| `tools/qa/audit_hook.py` | **✓** — « Votre monture n'a pas de nom. Elle s'appelle H08, comme un colis. » 12 mots. ⚠️ **La porte, interrogée sur la phrase seule, la lit niveau 1** (Reporter) ; le script la **déclare niveau 2** (Magician) parce qu'elle ne rapporte pas l'état, elle révèle le mécanisme — le nom est un code. La déclaration est dans le fichier, et elle se discute : c'est écrit ici plutôt que corrigé en silence |
+| `tools/qa/audit_video_motion.py` | **OK** aux **deux** fenêtres — 1 s : 0–1 s max **46,19**, **8 coupes** ; 2 s : mouvement dans chaque fenêtre |
+| `tools/qa/audit_post_dm.py` | **✓** — plus d'avertissement : première ligne TikTok **49 caractères**, deux nombres communs entre le texte et la voix (**8** pour H08, **40** pour quarante) |
+| Audio mesuré | premier bloc audible **0,0 s** · dernier **24,8 s** · RMS médian **−20,7 dB** · six blocs mesurés (4,64 · 4,63 · 3,48 · 3,84 · 2,67 · 4,35 s) et **0,28 s** de respiration entre chacun |
+| Visages · images IA · prix · marque · promesse | **aucun** — cinq verrous tenus |
 
-**Ce que la porte ne savait pas lire (corrigé, banc à 35/35).** Au premier passage, `audit_post_dm` refusait
-cette pièce en `hook-desaligne` — *« 1 nombre en commun »* — alors que le texte **et** la voix disent tous
-deux « H08 » et « un quartier, une ville ». Cause : l'extracteur ne voyait que `\b\d{1,4}\b`, donc **ni
-`H08`** (lettre collée au chiffre), **ni `8h30`**, et il comptait comme du contenu les fenêtres de temps du
-tableau. Ce n'était pas une accroche désalignée, c'était une mesure aveugle. La mesure voit maintenant les
-références produit et les heures ; **le seuil n'a pas bougé** (≥ 2 nombres communs), et quatre cas ont été
-ajoutés au banc — dont un qui vérifie qu'une voix qui ne reprend ni la référence ni le nom est **toujours**
-refusée.
+**La passe `humanizer` (sur les 6 phrases prononcées, pas sur les cartons).**
+
+| Motif (skill) | Ce qui était écrit | Ce qui est dit | Pourquoi |
+|---|---|---|---|
+| §7 ouvertures répétées | « **On** lui en cherche un… » puis « **On** la porte sur le visage… » | « **Le nom qu'on garde**, il reste écrit sur sa page. » | deux beats d'affilée qui démarrent sur le même moule : ça s'entend |
+| §8 deux-points en série | « Ici, on nomme ce qui compte : un taxi, une moto. » | « Ici, un taxi a un nom. Une moto aussi. » | on ne dit pas une énumération avec deux points ; on constate, deux fois |
+| §6 triade forcée | « un quartier, une ville, un prénom » (v2) | supprimé | trois mots alignés pour faire complet ; personne ne les énumère |
+| §2 fragment théâtral | « Elle mérite mieux. » seul | « Elle mérite mieux que H08. » | le fragment de présentateur devient une phrase qui compare |
+| §16 langage d'annonce | « gratuit », « offert » (v1 du CTA) | aucun | le jeu n'offre rien : il promet un nom écrit, et c'est déjà beaucoup |
+| — précision écrite | « 65 montures » (ce que je croyais) | « **quarante** montures » | le site en publie **40** (10 enfants + 24 femmes + 6 hommes) : 65, c'est le nombre de photos dans le dossier. Le chiffre faux a été attrapé **avant** le rendu |
 
 **Deux écarts déclarés, pas cachés.**
-1. **Le premier jet de légende disait « Regardez : celle-ci devient la vôtre demain »** alors que la voix
-   prononce « Regardez : elle devient la vôtre ». La légende a été **réécrite sur la voix** — les trois
-   couches disent maintenant la même phrase au mot près. Le « demain » n'a pas disparu du film : il est au
-   carton final (**DEMAIN : LA DEUXIÈME**), et c'est là qu'il se voit.
-2. Les **horaires** (8h30–13h00) ne sont **pas dits** dans le film : ils sont dans la légende, dans le
-   commentaire épinglé et dans la réponse d'accueil. C'est un choix — trois secondes de voix de plus pour
-   une information que personne ne retient à l'oral, alors qu'elle se lit. Conséquence : la ligne
-   « parlé » ne porte pas d'horaire, et le kit ne prétend pas le contraire.
+1. La voix dit « comme un colis », la légende ne l'écrit pas — la première ligne s'arrête à
+   « Elle s'appelle H08. » (49 caractères, pour rester sous les 60 conseillés par TikTok). Le fait, lui,
+   est le même : le nom est un code.
+2. **Aucun horaire n'est dit dans le film** : ils sont dans la légende, dans l'épinglé et dans la réponse
+   d'accueil. Trois secondes de voix pour une information que personne ne retient à l'oral.
+
+---
 
 ## 7 · Ce qui est vérifié, et ce qui ne l'est pas
 
-**Vérifié dans cet environnement** (ffprobe + mesure PCM, 27/10) :
-- version parlée : **19,87 s** · 1080×1920 · 30 fps · **H.264 + AAC 48 kHz mono** · **2,30 Mo** · première
-  syllabe à **0,0 s** · RMS médian **−19,9 dB** ;
-- version muette : **14,20 s** · 1,35 Mo · **aucune piste audio** ;
-- mouvement **OK** aux fenêtres 1 s et 2 s sur la version parlée (c'est elle qui bouge le plus : la poussée
-  d'entrée et le décalage des deux lignes du carton) ;
-- 6 images de contrôle relues à l'œil : aucun visage, aucune image générée.
+**Vérifié dans cet environnement** (ffprobe + mesure PCM + lecture des 7 images de contrôle, 27/10) :
+- parlée : **25,01 s** · 1080×1920 · 30 fps · **H.264 + AAC 48 kHz mono** · **3,07 Mo** · première syllabe
+  à **0,0 s** · RMS médian **−20,7 dB** ;
+- muette : **25,0 s** · 2,67 Mo · **aucune piste audio** ;
+- mouvement **OK** aux fenêtres 1 s et 2 s sur les deux versions ;
+- **aucun visage**, aucune image générée, aucun prix.
+
+**Ce qui a été vérifié pour l'histoire, et comment** :
+- **40 montures en ligne** : 10 fiches enfants + 24 femmes + 6 hommes dans
+  `hosting/previews/dmoptic/montures/*/index.html` — compté le 27/10 ;
+- **le nom d'une fiche est son code** : la fiche s'appelle `H08 · Double pont aviateur noir et doré`
+  (`/montures/hommes/h08-double-pont-aviateur-noir-et-dore/`) — c'est le titre que le site publie ;
+- **« un taxi a un nom, une moto aussi »** : une observation de quartier, pas une mesure. Elle est dite
+  comme telle, et elle n'est **pas** chiffrée.
 
 **Non vérifié, et il faut le dire** :
-- **la H08 est-elle encore au cabinet ?** Le site la publie (`/montures/hommes/h08-double-pont-aviateur-noir-et-dore/`),
-  mais personne ne l'a confirmé cette semaine. Si elle est vendue, l'épisode 1 prend la suivante — le
-  moteur accepte n'importe quelle référence, c'est une ligne à changer.
-- **« un aviateur, noir et doré »** vient de la fiche du site. C'est la description du dépôt, pas une
-  parole du cabinet.
-- **8h30–13h00** est l'horaire que le cabinet publie ; il n'a pas été reconfirmé cette semaine.
-- Le nom retenu sera **choisi par le cabinet** : rien dans ce kit ne promet qu'un nom proposé sera gardé —
-  la légende dit « le cabinet choisit », et c'est volontaire.
-- **La voix est une voix de synthèse** (`voice-05`). Elle est propre et posée ; elle n'est pas la voix de
-  quelqu'un du cabinet, et le kit ne le laisse pas croire. Si le cabinet veut sa propre voix, il enregistre
-  les cinq phrases au téléphone et le moteur reprend le même montage (`--voice-dir`).
+- **la H08 est-elle encore au cabinet ?** Le site la publie, personne ne l'a confirmée cette semaine. Si
+  elle est vendue, l'épisode 1 prend la suivante — le moteur accepte n'importe quelle référence.
+- **8h30–13h00** est l'horaire que le cabinet publie ; pas reconfirmé cette semaine.
+- **Le vote de samedi suppose que King publie samedi.** La mécanique est écrite, pas encore tenue : si le
+  post de vote ne sort pas, la promesse « samedi » tombe — et c'est la seule promesse du jeu.
+- **Rien ne prouve qu'un jeu à un mot produise plus de commentaires** qu'une demande simple. Nous n'avons
+  pas de mesure : le seuil de 5 mots est une **cible**, pas une prévision.
+- La voix est une **voix de synthèse**. Le kit ne laisse pas croire que c'est quelqu'un du cabinet.
