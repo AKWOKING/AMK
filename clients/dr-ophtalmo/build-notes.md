@@ -131,3 +131,48 @@ la composition décrite scène par scène et les captures reproductibles en 10 s
 
 Tant que ces trois points ne sont pas tranchés, le site reste un aperçu privé et **la vidéo reste un
 brouillon** : rien n'est publié ni envoyé au médecin sans la validation de King.
+
+## 8 · Refonte du premier écran — 27 octobre 2026
+
+**Ce qui a changé, et pourquoi.** Le premier écran était un panneau bleu nuit avec une carte photo de
+22 rem posée à droite : la photographie du médecin servait d'illustration, pas de composition. King a
+demandé que la photo de la salle d'examen devienne **le fond du hero**, pleine largeur, sous la
+navigation. C'est fait.
+
+- **Le cadrage suit la photographie, pas l'inverse.** L'image est déjà composée : zone sombre à gauche,
+  médecin à droite, matériel éclairé au fond. Le dégradé navy s'arrête à 74 % de la largeur ; à droite,
+  l'image est intacte — ni filtre, ni vignette, ni flou. Le texte ne dépasse jamais 41 % de la largeur,
+  donc il ne passe jamais sur le visage.
+- **Mise en page mobile décidée pour le mobile.** Sous 900 px, un fond pleine largeur rendrait la moitié
+  du texte illisible : la composition est empilée — panneau de texte sur navy, photographie juste
+  dessous à son propre cadrage (`object-position: 66% 30%`), les deux boutons empilés sous 480 px.
+  Les deux actions sont visibles sans défiler.
+- **Deux légendes de provenance supprimées** (ruling King : « Photographie transmise par le médecin,
+  26 octobre 2026 » n'est pas nécessaire) et **une troisième remplacée** : le portrait isolé de 22 rem a
+  cédé sa place à la photographie du Dr Fogue avec ses confrères, en bande pleine largeur. Légende
+  neutre — « Le Dr Fogue avec des confrères, dans un service d'ophtalmologie » —, aucune affiliation
+  affirmée : le panneau « Hôpital de Paris » visible sur l'image n'est pas vérifié.
+- **Palette réconciliée sans rupture** : le fond passe de `#07111d` à `#071b2a` (le bleu de la photo),
+  les surfaces sombres à `#10354c`, les sections claires à `#edf5fa`. Le teal reste le seul accent des
+  actions. Aucune autre section n'a été redessinée.
+- **Copie** : eyebrow « OPHTALMOLOGIE · CAMEROUN », titre « Votre vision, / ma priorité. », lead du
+  brief, CTA « Prendre rendez-vous » (→ `#appointments`) et « Voir les lieux de consultation »
+  (→ `#consultations`). En-tête : « Dr Fogue / Ophtalmologue ».
+- **Ce qui n'a pas bougé** : navigation, sélecteur FR/EN, parcours de rendez-vous, sections lieux,
+  questions fréquentes, pied de page, JSON-LD.
+
+**Deux règles du corpus tranchées explicitement.** `AMK-DESIGN-SKILLS.md` §26.1 interdit « du texte sur
+une photographie » ; le brief demande l'inverse. La contradiction est résolue par le dégradé : le texte
+se pose sur un aplat navy *issu* de la photo, jamais sur une zone à détail. Et `imagegen-frontend-web`
+(« HERO COMPOSITION BIAS ») demande de composer pour l'image : ici, l'image était déjà composée avant
+d'arriver — c'est elle qui commande le cadrage.
+
+**Photographies.** Dérivés WebP créés depuis les deux fichiers transmis le 27/10 :
+`dr-fogue-hero-room-{640,960,1280}.webp` (16/9, 19/31/43 Ko) et `dr-fogue-equipe-{640,960,1024}.webp`
+(4/5, 54/87/95 Ko). `og.jpg` recadré en 1200 × 630 sur la nouvelle photo. Les anciens dérivés
+`dr-fogue-hero-*` et `dr-fogue-consultation-*` sont supprimés du dépôt : plus aucune page ne les
+appelle.
+
+**Mesures avant déploiement.** Le texte garde **7,3:1 à 9:1** de contraste sur ordinateur (pire cas
+mesuré sur 96 × 54 points de la photographie, dégradé compris) et le visage reste entier aux quatre
+largeurs testées (1100, 1280, 1440, 1920).

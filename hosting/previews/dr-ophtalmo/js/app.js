@@ -723,42 +723,19 @@ function renderImages() {
     }
   }
 
-  // Le portrait du hero garde son propre point d'entrée (compatibilité).
+  // La photographie du premier écran : `profile.portrait` reste la seule
+  // source de son srcset et de son texte alternatif. Aucune légende sous le
+  // hero — la provenance d'une photographie ne se raconte pas deux fois.
   const portrait = $("[data-portrait]");
   const portraitCfg = doctorConfig.profile.portrait;
   if (portrait && portraitCfg) {
     portrait.srcset = portraitCfg.srcset;
     portrait.alt = portraitCfg.alt[state.lang] || portraitCfg.alt[defaultLang];
   }
-  const portraitCaption = $("[data-portrait-caption]");
-  if (portraitCaption) {
-    const text = portraitCfg?.isRealPhoto
-      ? portraitCfg.caption?.[state.lang] || portraitCfg.caption?.[defaultLang] || ""
-      : t("hero.portraitCaption");
-    portraitCaption.textContent = text;
-    portraitCaption.hidden = !text;
-  }
 
-  // L'identité affichée sous le titre du hero : « Dr Fogue · Ophtalmologie ».
-  const identity = $("[data-hero-identity]");
-  if (identity) {
-    const name = doctorDisplayName();
-    identity.textContent = name ? `${name} · ${doctorConfig.specialty}` : t("hero.identityPending");
-    identity.hidden = false;
-  }
-
-  // Le bouton WhatsApp du hero : il n'existe que si un numéro est publié.
-  const waLink = $("[data-hero-wa]");
-  if (waLink) {
-    const number = whatsappNumber();
-    if (number) {
-      waLink.href = buildWhatsappUrl(number, t("wa.direct"));
-      waLink.textContent = `${t("hero.whatsappCta")} · ${formatPhone(number)}`;
-      waLink.hidden = false;
-    } else {
-      waLink.hidden = true;
-    }
-  }
+  // Le premier écran ne porte que la copie du brief : pas de nom répété sous
+  // le titre (l'en-tête le dit déjà), pas de troisième action. Le WhatsApp
+  // reste dans la section rendez-vous, là où il sert.
 }
 
 function renderInfoDialog() {
@@ -965,7 +942,7 @@ function setupSmoothAnchors() {
 
 function setupReveal() {
   if (reducedMotion() || !("IntersectionObserver" in window)) return;
-  const targets = $$(".section-title, .lede, .parcours-figure, .profile-card, .band-figure, .panel, .location-detail, .appointment-card, .hero-figure");
+  const targets = $$(".section-title, .lede, .parcours-figure, .profile-card, .band-figure, .panel, .location-detail, .appointment-card, .team-band");
   targets.forEach((node, index) => {
     node.dataset.reveal = "";
     node.style.setProperty("--reveal-delay", `${Math.min(index % 4, 3) * 70}ms`);

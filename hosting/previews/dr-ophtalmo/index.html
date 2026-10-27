@@ -100,8 +100,8 @@
             </svg>
           </span>
           <span class="wordmark-text">
-            <span class="wordmark-title" data-i18n="common.brand">Médecine ophtalmologique</span>
-            <span class="wordmark-sub" data-i18n="common.brandSub">Cameroun</span>
+            <span class="wordmark-title" data-i18n="common.brand">Dr Fogue</span>
+            <span class="wordmark-sub" data-i18n="common.brandSub">Ophtalmologue</span>
           </span>
         </a>
 
@@ -137,48 +137,47 @@
     <main id="main">
       <!-- ══ 1 · HERO ══════════════════════════════════════════════════════ -->
       <section class="hero" id="hero" aria-labelledby="hero-title">
-        <div class="hero-grid grid">
+        <!-- La photographie EST le fond du premier écran : elle porte déjà une zone
+             bleu nuit à gauche et le médecin à droite. Le dégradé ne l'assombrit que
+             là où le texte se pose, jamais sur lui. -->
+        <div class="hero-media">
+          <img
+            data-photo="hero"
+            data-portrait
+            src="assets/img/dr-fogue-hero-room-960.webp"
+            srcset="assets/img/dr-fogue-hero-room-640.webp 640w, assets/img/dr-fogue-hero-room-960.webp 960w, assets/img/dr-fogue-hero-room-1280.webp 1280w"
+            sizes="100vw"
+            alt=""
+            width="960"
+            height="540"
+            fetchpriority="high"
+            decoding="async"
+          />
+          <span class="hero-scrim" aria-hidden="true"></span>
+        </div>
+
+        <div class="hero-inner grid">
           <div class="hero-copy">
-            <p class="eyebrow" data-i18n="hero.eyebrow">MÉDECINE OPHTALMOLOGIQUE · CAMEROUN</p>
+            <p class="eyebrow" data-i18n="hero.eyebrow">OPHTALMOLOGIE · CAMEROUN</p>
             <h1 class="hero-title" id="hero-title" data-hero-title>
-              <span>VOTRE</span><span>VISION,</span><span>MA PRIORITÉ.</span>
+              <span>VOTRE VISION,</span><span>MA PRIORITÉ.</span>
             </h1>
-            <p class="hero-identity" data-hero-identity hidden></p>
-            <p class="hero-lead" data-i18n="hero.lead"></p>
+            <p class="hero-lead" data-i18n="hero.lead">Le Dr Fogue vous accompagne dans la santé de vos yeux. Retrouvez les informations sur ses consultations et contactez-le pour préparer votre rendez-vous.</p>
             <div class="hero-actions">
-              <a class="btn btn--primary" href="#consultations" data-i18n="hero.ctaPrimary">Prendre rendez-vous</a>
-              <a class="btn btn--ghost" href="#parcours" data-i18n="hero.ctaSecondary">Voir les lieux de consultation</a>
+              <a class="btn btn--primary" href="#appointments" data-i18n="hero.ctaPrimary">Prendre rendez-vous</a>
+              <a class="btn btn--ghost" href="#consultations" data-i18n="hero.ctaSecondary">Voir les lieux de consultation</a>
             </div>
-            <a class="hero-wa" data-hero-wa href="#appointments" hidden data-i18n="hero.whatsappCta">Écrire sur WhatsApp</a>
 
             <div class="hero-places">
-              <p class="hero-places-label" data-i18n="hero.placesLabel"></p>
-              <p class="hero-places-line" data-i18n="hero.places"></p>
-              <p class="hero-places-note" data-i18n="hero.placesNote"></p>
+              <p class="hero-places-label" data-i18n="hero.placesLabel">Lieux de consultation</p>
+              <p class="hero-places-line" data-i18n="hero.places">Mbouda · Bafoussam · Douala · Bonabéri</p>
+              <p class="hero-places-note" data-i18n="hero.placesNote">Les jours changent d’un lieu à l’autre : la semaine complète est un peu plus bas, lieu par lieu.</p>
             </div>
           </div>
-
-          <figure class="hero-figure">
-            <div class="hero-photo">
-              <img
-                data-portrait
-                src="assets/img/dr-fogue-hero-960.webp"
-                srcset=""
-                sizes="(min-width: 1000px) 42vw, 92vw"
-                alt=""
-                width="960"
-                height="1474"
-                fetchpriority="high"
-                decoding="async"
-              />
-              <span class="hero-photo-frame" aria-hidden="true"></span>
-            </div>
-            <figcaption class="caption" data-portrait-caption></figcaption>
-          </figure>
         </div>
 
         <div class="hero-strip">
-          <p class="status-dot" data-hero-status></p>
+          <p class="status-dot" data-hero-status>Jours communiqués par le Dr Fogue le 26 octobre 2026 — à reconfirmer avant tout déplacement.</p>
         </div>
       </section>
 
@@ -253,17 +252,22 @@
           <p class="panel-note" data-schedule-note></p>
         </div>
 
-        <figure class="consult-figure">
+        <!-- La photographie d'équipe remplace le portrait isolé : à 22 rem au
+             centre d'une section pleine largeur, il laissait deux vides de la
+             taille de l'écran. -->
+        <figure class="team-band">
           <img
-            data-photo="consultation"
-            src="assets/img/dr-fogue-consultation-720.webp"
+            data-photo="team"
+            src="assets/img/dr-fogue-equipe-960.webp"
+            srcset="assets/img/dr-fogue-equipe-640.webp 640w, assets/img/dr-fogue-equipe-960.webp 960w, assets/img/dr-fogue-equipe-1024.webp 1024w"
+            sizes="(min-width: 1000px) 62rem, 94vw"
             alt=""
-            width="720"
-            height="1400"
+            width="960"
+            height="1200"
             loading="lazy"
             decoding="async"
           />
-          <figcaption class="caption" data-photo-caption></figcaption>
+          <figcaption class="caption caption--light" data-photo-caption></figcaption>
         </figure>
 
         <!-- Rendez-vous : ancre #appointments DANS Consultations -->

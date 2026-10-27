@@ -121,7 +121,7 @@ check("le nom affiché est « Dr Fogue », et il vient du médecin", () => {
 check("les trois photographies déclarées existent sur le disque", () => {
   const site = path.resolve(new URL("..", import.meta.url).pathname);
   const cfg = doctorConfig.images;
-  assert.deepEqual(Object.keys(cfg).sort(), ["about", "consultation", "hero"]);
+  assert.deepEqual(Object.keys(cfg).sort(), ["about", "hero", "team"]);
   for (const [name, image] of Object.entries(cfg)) {
     for (const file of [image.src, ...image.srcset.split(",").map((part) => part.trim().split(" ")[0])]) {
       assert.ok(fs.existsSync(path.join(site, file)), `${name} : ${file} manquant`);
@@ -131,6 +131,66 @@ check("les trois photographies déclarées existent sur le disque", () => {
     }
     assert.match(image.alt.fr, /Fogue/, `${name} : l'alt ne nomme pas le médecin`);
   }
+});
+
+check("le hero est un paysage, pas un portrait recadré", () => {
+  // La photographie de la salle d'examen est en 16/9 : c'est sa composition
+  // (zone sombre à gauche, médecin à droite) qui fait le premier écran. Un
+  // cadrage portrait la transformerait en bande verticale et viderait la page.
+  const hero = doctorConfig.images.hero;
+  assert.ok(hero.width > hero.height, `hero ${hero.width}×${hero.height} n'est pas un paysage`);
+  assert.match(hero.src, /hero-room/, "le hero doit être la photo de la salle d'examen");
+  assert.ok(!hero.caption, "le hero ne porte pas de légende");
+  assert.match(doctorConfig.profile.portrait.src, /hero-room/, "le portrait affiché est celui du hero");
+});
+
+check("la photographie d'équipe est publiable en l'état", () => {
+  const team = doctorConfig.images.team;
+  assert.ok(team.width < team.height, "la photo d'équipe est un portrait 4/5");
+  for (const lang of ["fr", "en"]) {
+    assert.ok(team.caption[lang].length > 20, `légende ${lang} trop courte`);
+    // Rien n'affirme l'affiliation : le panneau visible sur la photo n'est pas
+    // vérifié, la légende ne nomme donc aucun hôpital.
+    assert.ok(!/hôpital de paris|hopital de paris/i.test(team.caption[lang] + team.alt[lang]),
+      "la légende ne peut pas nommer un hôpital non confirmé");
+  }
+});
+
+check("aucune légende ne porte la mention de provenance datée", () => {
+  // Ruling King 27/10 : « Photographie transmise par le médecin, 26 octobre
+  // 2026 » n'est pas nécessaire. Une légende dit qui est sur la photo, pas d'où
+  // elle vient.
+  for (const [name, image] of Object.entries(doctorConfig.images)) {
+    const texte = [image.caption?.fr, image.caption?.en].filter(Boolean).join(" ");
+    assert.ok(!/transmise par le médecin|supplied by the doctor/i.test(texte),
+      `${name} : la légende raconte encore la provenance`);
+    assert.ok(!/\d{1,2} (?:octobre|october) 2026/i.test(texte),
+      `${name} : la légende porte encore une date`);
+  }
+});
+
+check("chaque image demandée par la page existe dans la configuration", () => {
+  // Une image retirée du HTML mais laissée dans la configuration est un fichier
+  // mort ; une image demandée par la page sans configuration ne s'affiche pas.
+  const site = path.resolve(new URL("..", import.meta.url).pathname);
+  const html = fs.readFileSync(path.join(site, "index.html"), "utf8");
+  const demandees = [...html.matchAll(/data-photo="([a-z]+)"/g)].map((m) => m[1]).sort();
+  assert.deepEqual(demandees, Object.keys(doctorConfig.images).sort(),
+    `la page demande ${demandees.join(", ")}, la configuration déclare ${Object.keys(doctorConfig.images).join(", ")}`);
+});
+
+check("le premier écran pose son texte sur la photographie, pas à côté", () => {
+  const site = path.resolve(new URL("..", import.meta.url).pathname);
+  const html = fs.readFileSync(path.join(site, "index.html"), "utf8");
+  const css = fs.readFileSync(path.join(site, "css/styles.css"), "utf8");
+  assert.match(html, /class="hero-media"/, "le hero n'a pas de couche photographique");
+  assert.match(html, /class="hero-scrim"/, "le dégradé de lisibilité manque");
+  assert.ok(!/data-portrait-caption/.test(html), "la légende du portrait est toujours dans la page");
+  // Le dégradé existe dans les deux sens : horizontal sur ordinateur, vertical
+  // sur téléphone (la composition est empilée sous 900 px).
+  const scrim = css.slice(css.indexOf(".hero-scrim"), css.indexOf(".hero-copy"));
+  assert.match(scrim, /linear-gradient\(\s*90deg/, "pas de dégradé horizontal");
+  assert.match(css, /@media \(max-width: 900px\)[\s\S]{0,2400}\.hero-scrim/, "pas de dégradé mobile");
 });
 
 check("aucune photographie n'est annoncée comme générée", () => {
@@ -197,9 +257,12 @@ check("aucun texte vide dans les dictionnaires", () => {
   }
 });
 
-check("le titre du hero fait trois lignes dans les deux langues", () => {
-  assert.equal(fr("hero.h1").length, 3);
-  assert.equal(en("hero.h1").length, 3);
+check("le titre du hero tient en deux lignes, dans les deux langues", () => {
+  // Ruling King 27/10 : « Votre vision, / ma priorité. » — deux lignes qui
+  // laissent respirer la photographie entre le texte et le visage.
+  assert.equal(fr("hero.h1").length, 2);
+  assert.equal(en("hero.h1").length, 2);
+  assert.equal(fr("hero.h1").join(" "), "VOTRE VISION, MA PRIORITÉ.");
 });
 
 check("l'anglais ne renvoie pas vers le français par accident", () => {

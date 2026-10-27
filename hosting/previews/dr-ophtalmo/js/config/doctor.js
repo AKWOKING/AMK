@@ -44,21 +44,18 @@ export const doctorConfig = {
     interests: [],
     bio: "",
     portrait: {
-      // La photographie réelle du médecin, transmise par lui le 26/10/2026.
-      src: "assets/img/dr-fogue-hero-960.webp",
+      // La photographie du hero, dans la salle d'examen (27/10/2026). Le médecin
+      // n'est plus présenté en buste sur une affiche, mais dans son lieu de travail.
+      src: "assets/img/dr-fogue-hero-room-960.webp",
       srcset:
-        "assets/img/dr-fogue-hero-640.webp 640w, assets/img/dr-fogue-hero-960.webp 960w, assets/img/dr-fogue-hero-1440.webp 1440w",
+        "assets/img/dr-fogue-hero-room-640.webp 640w, assets/img/dr-fogue-hero-room-960.webp 960w, assets/img/dr-fogue-hero-room-1280.webp 1280w",
       width: 960,
-      height: 1474,
+      height: 540,
       alt: {
-        fr: "Le Dr Fogue, ophtalmologue, en blouse blanche sur fond bleu.",
-        en: "Dr Fogue, ophthalmologist, in a white coat against a blue background.",
+        fr: "Le Dr Fogue, en tenue de bloc bleue et lunettes, souriant dans une salle d’examen ophtalmologique.",
+        en: "Dr Fogue, in blue scrubs and glasses, smiling in an ophthalmology examination room.",
       },
       isRealPhoto: true,
-      caption: {
-        fr: "Le Dr Fogue, ophtalmologue. Photographie transmise par le médecin, 26 octobre 2026.",
-        en: "Dr Fogue, ophthalmologist. Photograph supplied by the doctor, 26 October 2026.",
-      },
     },
   },
 
@@ -69,14 +66,32 @@ export const doctorConfig = {
    */
   images: {
     hero: {
-      src: "assets/img/dr-fogue-hero-960.webp",
+      // 1280 × 720 : le paysage porte une zone bleu nuit à gauche et le médecin à
+      // droite. C'est cette composition qui sert de fond au premier écran — pas une
+      // image recadrée en portrait, qui perdrait la pièce et la lumière.
+      src: "assets/img/dr-fogue-hero-room-960.webp",
       srcset:
-        "assets/img/dr-fogue-hero-640.webp 640w, assets/img/dr-fogue-hero-960.webp 960w, assets/img/dr-fogue-hero-1440.webp 1440w",
+        "assets/img/dr-fogue-hero-room-640.webp 640w, assets/img/dr-fogue-hero-room-960.webp 960w, assets/img/dr-fogue-hero-room-1280.webp 1280w",
       width: 960,
-      height: 1474,
+      height: 540,
       alt: {
-        fr: "Portrait du Dr Fogue, ophtalmologue, en blouse blanche et lunettes, sur fond bleu.",
-        en: "Portrait of Dr Fogue, ophthalmologist, wearing glasses and a white coat against a blue background.",
+        fr: "Le Dr Fogue, en tenue de bloc bleue et lunettes, souriant dans une salle d’examen ophtalmologique.",
+        en: "Dr Fogue, in blue scrubs and glasses, smiling in an ophthalmology examination room.",
+      },
+    },
+    team: {
+      src: "assets/img/dr-fogue-equipe-960.webp",
+      srcset:
+        "assets/img/dr-fogue-equipe-640.webp 640w, assets/img/dr-fogue-equipe-960.webp 960w, assets/img/dr-fogue-equipe-1024.webp 1024w",
+      width: 960,
+      height: 1200,
+      alt: {
+        fr: "Le Dr Fogue au centre d’un groupe de cinq soignants en blouse blanche, devant une échelle d’acuité visuelle, dans un service d’ophtalmologie.",
+        en: "Dr Fogue at the centre of a group of five clinicians in white coats, in front of a visual acuity chart, in an ophthalmology department.",
+      },
+      caption: {
+        fr: "Le Dr Fogue avec des confrères, dans un service d’ophtalmologie.",
+        en: "Dr Fogue with colleagues, in an ophthalmology department.",
       },
     },
     about: {
@@ -90,23 +105,8 @@ export const doctorConfig = {
         en: "Dr Fogue in a white coat with a stethoscope, in front of a turquoise wall, during a consultation.",
       },
       caption: {
-        fr: "Le Dr Fogue en consultation. Photographie transmise par le médecin, 26 octobre 2026.",
-        en: "Dr Fogue during a consultation. Photograph supplied by the doctor, 26 October 2026.",
-      },
-    },
-    consultation: {
-      src: "assets/img/dr-fogue-consultation-720.webp",
-      srcset:
-        "assets/img/dr-fogue-consultation-480.webp 480w, assets/img/dr-fogue-consultation-720.webp 720w",
-      width: 720,
-      height: 1400,
-      alt: {
-        fr: "Le Dr Fogue en tenue de consultation bleue, souriant, dans une salle d’examen.",
-        en: "Dr Fogue in blue clinical scrubs, smiling, in an examination room.",
-      },
-      caption: {
-        fr: "Le Dr Fogue en consultation. Affiche du cabinet, recadrée — 26 octobre 2026.",
-        en: "Dr Fogue in consultation. Practice poster, cropped — 26 October 2026.",
+        fr: "Le Dr Fogue au cabinet.",
+        en: "Dr Fogue at his practice.",
       },
     },
   },
