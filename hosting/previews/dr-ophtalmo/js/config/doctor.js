@@ -239,10 +239,6 @@ export const doctorConfig = {
         fr: "Les langues de consultation (français, anglais, autres).",
         en: "Consultation languages (French, English, others).",
       },
-      {
-        fr: "La photographie d’équipe transmise porte un panneau « Hôpital de Paris » : elle n’est pas publiée tant que son origine n’est pas confirmée par vous.",
-        en: "The team photograph supplied shows an “Hôpital de Paris” sign: it is not published until you confirm where it was taken.",
-      },
     ],
   },
 };
