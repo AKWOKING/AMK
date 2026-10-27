@@ -7017,3 +7017,13 @@ King ne les a pas données, et une heure inventée vaut moins qu'une heure absen
 - 27/10/2026 · **Ce qui manque** : la **H08 est-elle encore au cabinet** — le site la publie, personne ne l'a
   confirmée cette semaine. Si elle est vendue, l'épisode 1 prend la monture suivante (une ligne à changer).
   Rien n'est publié.
+- 27/10/2026 · **Épisode 1, version parlée** (tour 195, King : « audit it for hooks and retention rate then add
+  voice ») : accroche auditée — les deux phrases utilisées jusqu'ici sont **refusées** par `audit_hook`
+  (`mots-manquants`), la retenue est **« Votre monture n'a pas de nom. Regardez : elle devient la vôtre. »**
+  (✓ niveau 1). Mouvement repris (0–1 s : max 9,08, **2 coupes**), **8 cartons**, aucun tenu plus de 1,8 s.
+  Voix `voice-05`, 5 blocs mesurés, montage **calé sur la mesure**. Rendu
+  `w3/assets/monture-01-h08-voix.mp4` — **19,87 s**, H.264 + AAC 48 kHz mono, 2,30 Mo. Le master muet reste.
+- 27/10/2026 · **Un faux négatif corrigé dans la porte** : `audit_post_dm` refusait la pièce parlée en
+  `hook-desaligne` (« 1 nombre commun ») alors que texte et voix disent tous deux **H08** et **un quartier,
+  une ville**. L'extracteur ne voyait ni `H08` ni `8h30` (lettre collée au chiffre) et comptait les fenêtres
+  de temps comme du contenu. Il les voit ; **le seuil ne bouge pas** (≥ 2) ; banc **35/35**.

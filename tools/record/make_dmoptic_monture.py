@@ -2,23 +2,36 @@
 # -*- coding: utf-8 -*-
 """DM Optique — « La monture cherche son nom », épisode 1 (H08) — moteur de rendu.
 
-1080×1920 · 30 fps · 14,2 s · **sans visage, sans tournage, sans le médecin**.
+1080×1920 · 30 fps · **deux rendus** : muet (14,20 s) et parlé (19,87 s) · **sans visage, sans tournage,
+sans le médecin**.
 
 Pourquoi cette pièce (27/10/2026, tour 194)
 -------------------------------------------
 King a demandé laquelle des deux séries d'abonnés peut se faire **sans le docteur et sans visage**.
 Réponse : celle-ci, parce que sa matière est **déjà au dépôt** — une photo de monture prise au cabinet
 (`hosting/previews/dmoptic/montures/`), la référence que le site publie déjà (H08 · double pont, aviateur,
-noir et doré), et la carte crème des fiches produit. Aucun être humain n'entre dans le cadre, aucune
-voix n'est nécessaire : la pièce se lit, comme 100 % de nos deux posts mesurés.
+noir et doré), et la carte crème des fiches produit. Aucun être humain n'entre dans le cadre.
 
-Ce que le film fait, dans l'ordre (`content/IDEES-ABONNES-2026-10-27.md`, IDEA-01)
--------------------------------------------------------------------------------
-0,0–2,2   l'accroche : **ELLE N'A PAS DE NOM**, sur une macro de la double barre — ça bouge dès 0,0 s
-2,2–5,2   la référence existe : **H08 · DOUBLE PONT** — « un aviateur, noir et doré »
-5,2–9,0   les trois mots qui font un nom : **UN QUARTIER · UNE VILLE · UN PRÉNOM**
-9,0–11,5  ce qu'on demande : **ÉCRIVEZ SON NOM** — et demain, elle le porte
-11,5–14,2 le carton : logo, **DEMAIN : LA DEUXIÈME**, WhatsApp 656 122 239
+Tour 195 : la voix (King : « add voice »)
+-----------------------------------------
+Le film n'est plus monté sur un minutage écrit à la main, mais **sur la voix** — parce que la doctrine
+interdit de comprimer une accroche pour la faire entrer dans une durée décidée d'avance
+(`knowledge/HOOK-FIRST-2026-10-27.md`). `PLAN` porte le texte de chaque beat ; `measure_clips()` mesure
+les clips **nettoyés** (silence de tête et de queue retiré) ; `timeline()` en déduit les bornes. La voix
+ne bouge jamais, c'est l'image qui se cale.
+
+Les cinq beats (`--voice-dir`), et le plan qui va avec
+------------------------------------------------------
+b1  0,00–4,23  « Votre monture n'a pas de nom. Regardez : elle devient la vôtre. » → carton **ELLE N'A PAS DE NOM**
+b2  4,51–8,23  « H08, double pont. Elle est au cabinet, à Bonabéri. » → **H08 · DOUBLE PONT** puis **AU CABINET**
+b3  8,51–15,21 « Un quartier, une ville, un prénom : choisissez. » → **UN QUARTIER / UNE VILLE / UN PRÉNOM / CHOISISSEZ**
+b4 15,49–17,48 « Écrivez son nom. Demain, la deuxième. » → **ÉCRIVEZ SON NOM · EN COMMENTAIRE**
+b5 17,76–19,88 « DM Optique, Ndobo Mayor. » → carton final, logo, **DEMAIN : LA DEUXIÈME**, WhatsApp
+
+Un beat long se découpe **toujours** en 2–3 plans (`shots`) : un carton unique tenu sur une macro de
+6,7 s produit une fenêtre figée que `audit_video_motion` attrape (vécu sur b3 au premier rendu parlé).
+La première seconde a deux mouvements à elle seule — une poussée de 0,45 s et les deux lignes du carton
+qui arrivent à 0,22 s d'intervalle : c'est la seule fenêtre où le pouce hésite encore.
 
 Aucun mouvement n'est figé : chaque plan est une fenêtre qui se déplace dans un master plus grand
 (`crop_window`), et les textes arrivent en glissant. C'est la leçon du 23/10 : sur TikTok, la moitié de
@@ -27,6 +40,7 @@ l'audience part avant **0:02** (`ANALYSE-POST-1` §7).
 Usage
 -----
     python3 tools/record/make_dmoptic_monture.py --out clients/dm-optic/content/month1/w3/assets/monture-01.mp4
+    python3 tools/record/make_dmoptic_monture.py --voice-dir /tmp/voixF --out /tmp/monture-voix.mp4  # parlé
     python3 tools/record/make_dmoptic_monture.py --preview /tmp/monture-preview   # 6 PNG de contrôle
     python3 tools/record/make_dmoptic_monture.py --cover <chemin.jpg>             # couverture 1080x1920
 
@@ -46,7 +60,7 @@ import make_dmoptic_tiktok as base  # noqa: E402  (mêmes masters, mêmes police
 ROOT = base.ROOT
 SITE = base.SITE
 W, H, FPS = base.W, base.H, base.FPS
-DUR = 14.2
+DUR = 14.2          # valeur de repli (version muette) ; la version parlée calcule la sienne
 
 NIGHT, PAPER, EMBER, BRAND, WA, CREAM = base.NIGHT, base.PAPER, base.EMBER, base.BRAND, base.WA, base.CREAM
 F_TITLE, F_HEAD, F_BODY, F_MONO = base.F_TITLE, base.F_HEAD, base.F_BODY, base.F_MONO
@@ -54,30 +68,40 @@ font, ease, crop_window = base.font, base.ease, base.crop_window
 
 PHOTO = "montures/monture-h08.webp"
 
-# Découpage : (début, fin, type de master, zoom, pan, drift)
-#   « card »   = la fiche monture sur la carte crème (plan large)
-#   « macro »  = la monture très agrandie, cadrée sur la double barre
-# Le mouvement des deux premières secondes n'est pas décoratif : sur TikTok, la moitié de l'audience part
-# avant 0:02 (`ANALYSE-POST-1` §7). Les amplitudes ci-dessous sont mesurées par `audit_video_motion.py`
-# avec une fenêtre de **1 s** — la fenêtre où l'on perd, pas la fenêtre confortable de 2 s.
-BEATS = [
-    (0.0, 2.2, "card", 0.22, 0.65, -0.45),
-    (2.2, 5.2, "card", 0.16, -0.55, 0.35),
-    (5.2, 9.0, "macro", 0.14, -0.65, 0.40),
-    (9.0, 11.5, "card", 0.20, 0.55, -0.40),
-    (11.5, DUR, "end", 0.28, 0.0, 0.55),
+# ── LE PLAN EST PILOTÉ PAR LA VOIX (ajout du 27/10, tour 195) ───────────────────────────────────
+# La doctrine maison est explicite : **ce n'est pas le style qui choisit la longueur d'une accroche,
+# c'est la place qu'on lui donne** (`HOOKS-2026-10-25` §7 bis) — et la voix ne se comprime pas pour
+# entrer dans un montage. Donc : on enregistre, on **mesure**, et le montage se cale sur la mesure.
+# Chaque beat = un clip de voix + un plan + ses cartons. Les cartons sont exprimés en **fractions** du
+# beat : ils suivent la voix même si elle change de durée à la re-synthèse.
+# `shots` = les plans d'un même beat de voix : (fin en fraction du beat, type, zoom, pan, drift).
+# Un beat long est TOUJOURS coupé en deux plans. Motif mesuré le 27/10 : un carton unique tenu 6,7 s sur
+# une macro de monture donne une fenêtre **figée** à 9-10 s (`audit_video_motion --window 1`) — le gate est
+# bloquant, et il a raison : à l'écran, plus rien ne bouge pendant que la voix parle.
+PLAN = [
+    dict(clip="b1",
+         shots=[(1.00, "card", 0.30, 0.70, -0.50)],
+         subs=[(0.00, 1.00, ["ELLE N'A PAS", "DE NOM"], 112, 0.695)]),
+    dict(clip="b2",
+         shots=[(0.50, "card", 0.24, -0.60, 0.40), (1.00, "macro", 0.28, 0.65, -0.50)],
+         subs=[(0.00, 0.48, ["H08 · DOUBLE PONT"], 84, 0.735),
+               (0.48, 1.00, ["AU CABINET", "À BONABÉRI"], 100, 0.700)]),
+    dict(clip="b3",
+         shots=[(0.34, "macro", 0.30, -0.70, 0.55), (0.68, "card", 0.26, 0.60, -0.45),
+                (1.00, "macro", 0.30, 0.70, -0.55)],
+         subs=[(0.00, 0.26, ["UN QUARTIER"], 112, 0.735),
+               (0.26, 0.50, ["UNE VILLE"], 112, 0.735),
+               (0.50, 0.74, ["UN PRÉNOM"], 112, 0.735),
+               (0.74, 1.00, ["CHOISISSEZ"], 108, 0.735)]),
+    dict(clip="b4",
+         shots=[(0.55, "card", 0.28, 0.60, -0.45), (1.00, "macro", 0.30, -0.65, 0.50)],
+         subs=[(0.00, 0.55, ["ÉCRIVEZ SON NOM"], 100, 0.735),
+               (0.55, 1.00, ["EN COMMENTAIRE"], 100, 0.735)]),
+    dict(clip="b5",
+         shots=[(1.00, "end", 0.30, 0.0, 0.55)],
+         subs=[]),
 ]
-
-# Textes à l'écran : (début, fin, lignes, taille, ancrage vertical)
-SUBS = [
-    (0.0, 2.2, ["ELLE N'A PAS", "DE NOM"], 116, 0.695),
-    (2.2, 5.2, ["H08 · DOUBLE PONT"], 84, 0.735),
-    (5.2, 6.5, ["UN QUARTIER"], 116, 0.735),
-    (6.5, 7.8, ["UNE VILLE"], 116, 0.735),
-    (7.8, 9.0, ["UN PRÉNOM"], 116, 0.735),
-    (9.0, 11.5, ["ÉCRIVEZ SON NOM"], 100, 0.735),
-]
-
+GAP = 0.28          # respiration entre deux beats (silence, pas de coupe sèche)
 
 def macro_master(path, up=1.22, fx=0.5, fy=0.5):
     """La monture agrandie, **sur son propre fond** (la carte crème des fiches produit).
@@ -179,14 +203,46 @@ def draw_subs(img, t):
         d.rectangle((0, top - pad, W, top + block_h + int(pad * 0.35)),
                     fill=NIGHT + (int(236 * prog * out),))
         for i, line in enumerate(lines):
+            # chaque ligne arrive avec 0,22 s de retard sur la précédente : deux mouvements au lieu d'un
+            decal = min(1.0, max(0.0, (t - s0 - 0.22 * i) / 0.42))
+            a_ligne = int(alpha * ease(decal))
+            if a_ligne <= 2:
+                continue
+            y_ligne = top + i * lh + int(12 * (1 - ease(decal)))
             f = font(F_TITLE, size)
             tw = d.textlength(line, font=f)
-            d.text(((W - tw) / 2, top + i * lh), line, font=f, fill=(255, 255, 255, alpha))
+            d.text(((W - tw) / 2, y_ligne), line, font=f, fill=(255, 255, 255, a_ligne))
         half = int(W * 0.12 * prog)
         d.rectangle((W // 2 - half, top - int(pad * 0.55), W // 2 + half, top - int(pad * 0.55) + 7),
                     fill=EMBER + (255,))
         return Image.alpha_composite(img.convert("RGBA"), layer).convert("RGB")
     return img
+
+
+BEATS = []          # (début, fin, type, zoom, pan, drift) — construits par `timeline()`
+SUBS = []           # (début, fin, lignes, taille, ancrage) — idem
+
+
+def timeline(durations, gap=GAP):
+    """Construit BEATS et SUBS à partir des durées **mesurées** des clips de voix.
+
+    Retourne la durée totale du film. Les cartons d'un beat sont placés en fraction de sa durée :
+    si la voix change, les cartons suivent — on ne recale jamais la voix sur le montage.
+    """
+    global BEATS, SUBS, DUR
+    BEATS, SUBS = [], []
+    t = 0.0
+    for i, beat in enumerate(PLAN):
+        d = durations[beat["clip"]]
+        borne = 0.0
+        for (fin, kind, zoom, pan, drift) in beat["shots"]:
+            BEATS.append((round(t + borne * d, 3), round(t + fin * d, 3), kind, zoom, pan, drift))
+            borne = fin
+        for (f0, f1, lignes, taille, ancrage) in beat["subs"]:
+            SUBS.append((round(t + f0 * d, 3), round(t + f1 * d, 3), lignes, taille, ancrage))
+        t += d + (gap if i < len(PLAN) - 1 else 0.0)
+    DUR = round(t, 3)
+    return DUR
 
 
 def frame(i):
@@ -202,6 +258,12 @@ def frame(i):
             break
     else:
         img = Image.new("RGB", (W, H), NIGHT)
+
+    if t < 0.45:
+        k = 1.10 - 0.10 * ease(t / 0.45)
+        w2, h2 = int(W * k), int(H * k)
+        img = img.resize((w2, h2), Image.LANCZOS)
+        img = img.crop(((w2 - W) // 2, (h2 - H) // 2, (w2 - W) // 2 + W, (h2 - H) // 2 + H))
 
     img = draw_subs(img, t)
     d = ImageDraw.Draw(img)
@@ -219,15 +281,63 @@ def build_masters():
     MASTERS["macro"] = macro_master(path, up=1.22, fx=0.5, fy=0.5)
 
 
+NETS = {}           # clip -> fichier nettoyé (silences de tête et de queue retirés)
+
+
+def clip_path(dossier, nom):
+    for ext in (".wav", ".mp3", ".m4a"):
+        p = os.path.join(dossier, nom + ext)
+        if os.path.exists(p):
+            return p
+    raise SystemExit(f"clip manquant : {nom} dans {dossier}")
+
+
+def measure_clips(dossier):
+    """Durée **réelle** de chaque clip, silences de tête et de queue retirés.
+
+    On ne rogne que le silence : aucune syllabe ne disparaît, et la mesure reste honnête. C'est cette
+    mesure qui décide de la durée de chaque plan — la voix ne se comprime jamais.
+    """
+    ffmpeg = base.imageio_ffmpeg.get_ffmpeg_exe()
+    out = {}
+    for beat in PLAN:
+        nom = beat["clip"]
+        src = clip_path(dossier, nom)
+        net = os.path.join(os.path.dirname(src), nom + ".net.wav")
+        subprocess.run([ffmpeg, "-y", "-v", "error", "-i", src, "-af",
+                        "silenceremove=start_periods=1:start_duration=0.02:start_threshold=-45dB:detection=peak,"
+                        "areverse,"
+                        "silenceremove=start_periods=1:start_duration=0.02:start_threshold=-45dB:detection=peak,"
+                        "areverse", "-ar", "48000", "-ac", "1", net], check=True)
+        r = subprocess.run([ffmpeg, "-i", net], capture_output=True, text=True)
+        m = __import__("re").search(r"Duration: (\d+):(\d+):([\d.]+)", r.stderr)
+        out[nom] = round(int(m.group(1)) * 3600 + int(m.group(2)) * 60 + float(m.group(3)), 3)
+        NETS[nom] = net
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=os.path.join(ROOT, "clients", "dm-optic", "content", "month1",
                                                  "w3", "assets", "monture-01-h08.mp4"))
     ap.add_argument("--preview", default=None, help="dossier où écrire 6 PNG de contrôle")
     ap.add_argument("--cover", default=None, help="chemin d'une couverture 1080x1920 (JPG)")
+    ap.add_argument("--voice-dir", default=None,
+                    help="dossier des clips b1…b5 : la voix décide du montage (durées mesurées)")
+    ap.add_argument("--no-voice", action="store_true", help="rendu muet, durées de repli")
     args = ap.parse_args()
 
     build_masters()
+    durations = None
+    if args.voice_dir:
+        durations = measure_clips(args.voice_dir)
+        total = timeline(durations)
+        print("voix : " + " · ".join(f"{k} {v:.2f}s" for k, v in durations.items())
+              + f"  →  film {total:.2f} s")
+    else:
+        # version muette : durées de repli, un carton ne tient jamais plus de 1,8 s
+        repli = {"b1": 2.2, "b2": 3.0, "b3": 3.8, "b4": 2.5, "b5": 2.7}
+        timeline(repli) if not args.no_voice else timeline(repli)
 
     if args.cover:
         img = crop_window(MASTERS["card"], 0.55, 0.0, 0.0, 0.0).convert("RGBA")
@@ -253,7 +363,8 @@ def main():
 
     if args.preview:
         os.makedirs(args.preview, exist_ok=True)
-        for t in (0.6, 2.0, 3.8, 6.0, 9.6, 12.6):
+        pts = [round(DUR * f, 2) for f in (0.04, 0.14, 0.27, 0.42, 0.62, 0.88)]
+        for t in pts:
             frame(int(t * FPS)).save(os.path.join(args.preview, "frame-%05.1fs.png" % t))
         print("preview ->", args.preview)
         return 0
@@ -274,8 +385,30 @@ def main():
     proc.stdin.close()
     proc.wait()
     sys.stderr.write("\n")
-    os.replace(tmp, args.out)
-    print("ok ->", args.out)
+
+    if durations is None:
+        os.replace(tmp, args.out)
+        print("ok ->", args.out, "(muet)")
+        return 0
+
+    # ── la bande son : les clips bout à bout, avec une respiration entre chacun ──────────────────
+    audio = args.out + ".audio.wav"
+    entrées, filtres, noms = [], [], []
+    for i, beat in enumerate(PLAN):
+        entrées += ["-i", NETS.get(beat["clip"]) or clip_path(args.voice_dir, beat["clip"])]
+        filtres.append(f"[{i}:a]aresample=48000,apad=pad_dur={GAP if i < len(PLAN) - 1 else 0.35}[a{i}]")
+        noms.append(f"[a{i}]")
+    chaine = ";".join(filtres) + ";" + "".join(noms) + f"concat=n={len(PLAN)}:v=0:a=1[out]"
+    subprocess.run([ffmpeg, "-y", "-v", "error", *entrées, "-filter_complex", chaine,
+                    "-map", "[out]", "-ar", "48000", "-ac", "1", audio], check=True)
+    subprocess.run([ffmpeg, "-y", "-v", "error", "-i", tmp, "-i", audio,
+                    "-map", "0:v:0", "-map", "1:a:0", "-c:v", "copy",
+                    "-c:a", "aac", "-b:a", "128k", "-shortest", "-movflags", "+faststart",
+                    args.out], check=True)
+    for f in (tmp, audio):
+        if os.path.exists(f):
+            os.remove(f)
+    print("ok ->", args.out, "(parlé)")
     return 0
 
 

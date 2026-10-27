@@ -2571,3 +2571,43 @@ cabinet, pas le docteur.
 
 **Portes** : `audit_video_motion` **OK** (fenêtres 1 s et 2 s) · `audit_post_dm` ✓ (+ avertissement
 `piece-muette`, attendu) · `test_audit_post_dm` **31/31** · `audit_ideas` ✓ · graphe rejoué (**13 778 nœuds**).
+
+---
+
+## Épisode 1, version **parlée** — tour 195 (27/10/2026)
+
+King : *« la video est bonne audit it for hooks and retention rate then add voice »*. Le concept n'a pas
+bougé ; ce qui a bougé, c'est **la mesure** et **la voix**.
+
+| | |
+|---|---|
+| fichier | `clients/dm-optic/content/month1/w3/assets/monture-01-h08-voix.mp4` |
+| format | **19,87 s** · 1080×1920 · 30 fps · H.264 + **AAC 48 kHz mono** · **2,30 Mo** |
+| voix | **`voice-05`**, 5 blocs mesurés (4,23 · 3,72 · 6,70 · 1,99 · 2,12 s) + 0,28 s de respiration |
+| accroche | **« Votre monture n'a pas de nom. Regardez : elle devient la vôtre. »** — `audit_hook` ✓ niveau 1, 12 mots |
+| portique mouvement | **OK** aux fenêtres **1 s** (0–1 s : max 9,08, **2 coupes**) **et** 2 s |
+| audio mesuré | premier bloc audible **0,0 s** · dernier **19,7 s** · RMS médian **−19,9 dB** |
+| kit | `content/month1/w3/MONTURE-01-KIT.md` — réécrit : les trois couches disent la même phrase |
+| version muette | **conservée** (`monture-01-h08.mp4`) — deux pièces distinctes, jamais un remplacement |
+
+**Ce que ce tour a appris, et qui vaut pour les suivantes** :
+① une pièce **pilotée par la voix** se monte à l'envers : on mesure les clips, on en déduit la timeline —
+l'inverse (écrire un minutage puis presser la voix) oblige à comprimer l'accroche, ce que la doctrine
+interdit ; ② un **beat long** (6,7 s) doit se découper en 2–3 plans, sinon `audit_video_motion` attrape une
+fenêtre figée — c'est arrivé au premier rendu parlé, entre 9 et 10 s ; ③ **concatener les clips bruts**
+décale toute la voix du silence de tête (premier mot à 0,23 s au lieu de 0,0) : il faut concatener les
+clips **nettoyés** ; ④ `audit_hook` refuse « Elle n'a pas de nom. C'est vous qui allez lui en donner un. »
+(`mots-manquants`, il manque l'action) et exige **« Votre monture »** + un futur de bénéfice.
+
+**Un faux négatif corrigé dans la porte, pas contourné** : `audit_post_dm` refusait la pièce en
+`hook-desaligne` (« 1 nombre commun ») alors que texte et voix disent tous deux **H08** et **un quartier,
+une ville**. L'extracteur ne voyait ni `H08` ni `8h30` (lettre collée au chiffre) et comptait les fenêtres
+de temps comme du contenu. Il les voit maintenant ; **le seuil reste ≥ 2**, et quatre cas de banc ont été
+ajoutés — dont un qui vérifie qu'une voix désalignée est toujours refusée. `test_audit_post_dm` **35/35**.
+
+**Portes** : `audit_video_motion` **OK** (1 s et 2 s) · `audit_post_dm` ✓ (⚠ `accroche-tiktok-longue` 63 car.,
+la phrase exacte de la voix) · `audit_hook` ✓ · `test_audit_post_dm` **35/35**.
+
+**Toujours non vérifié** : la **H08 est-elle encore au cabinet** · les horaires 8h30–13h00 ne sont pas
+reconfirmés cette semaine · la voix est une **voix de synthèse**, pas celle du cabinet — et le kit ne le
+laisse pas croire.

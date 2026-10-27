@@ -151,10 +151,27 @@ def _hashtags(cap: str) -> list[str]:
     return [h.lower() for h in re.findall(r"#[0-9A-Za-zÀ-ÿ_]+", cap)]
 
 
+REF_PRODUIT = re.compile(r"\b[a-z]{1,3}(\d{1,3})\b")   # H08, F24, E07 — la lettre collée au chiffre
+HEURE_COLLE = re.compile(r"\b(\d{1,2})\s?h\s?(\d{2})?\b")  # 8h30, 13h00, 8 h
+
+
 def _nombres(texte: str) -> set[int]:
-    """Les nombres d'une ligne, en chiffres **et** en mots — c'est ce qui rend l'alignement mesurable."""
-    bas = _plat(texte)
+    """Les nombres d'une ligne, en chiffres **et** en mots — c'est ce qui rend l'alignement mesurable.
+
+    Trois écritures échappaient à `\b\d{1,4}\b`, et ce sont justement celles de nos pièces :
+    les **références produit** (`H08` — la lettre est collée au chiffre, donc pas de frontière de mot),
+    les **heures** (`8h30` — même cause) et les **fenêtres de temps** du tableau (`0,0–2,2`, qui ne sont
+    pas du contenu). Résultat : le 27/10, une pièce où le texte et la voix disaient tous deux « H08 » et
+    « 8h30–13h00 » n'avait **qu'un** nombre commun et se faisait refuser — un faux négatif, pas une
+    accroche désalignée. On voit ces écritures ; on ne baisse pas le seuil (toujours ≥ 2).
+    """
+    bas = RANGE.sub(" ", _plat(texte))
     out = {int(n) for n in re.findall(r"\b\d{1,4}\b", bas)}
+    out |= {int(n) for n in REF_PRODUIT.findall(bas)}
+    for h, m in HEURE_COLLE.findall(bas):
+        out.add(int(h))
+        if m:
+            out.add(int(m))
     for mot, val in MOTS_NOMBRES.items():
         if re.search(rf"\b{re.escape(mot)}\b", bas):
             out.add(val)

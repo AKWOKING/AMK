@@ -16,7 +16,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from audit_post_dm import audit  # noqa: E402
+from audit_post_dm import _nombres, audit  # noqa: E402
 
 CAS = []
 
@@ -316,6 +316,43 @@ def _():
     cap = CAP_TT.replace("C'est tout.", "C'est tout l'épisode 1.")
     tt = ("Sous-titres manuels. Commentaire épinglé.\n\n```text\n" + cap + "\n```\n")
     _refus("épisode sans boucle", "[serie-sans-boucle]", kit(tt=tt))
+
+
+# ── ⑨ l'alignement texte / voix, y compris les écritures qui collent la lettre au chiffre ────────
+HOOK_H08 = (
+    "| Composante | Ce qui est écrit / montré / dit | Secondes |\n"
+    "|---|---|---|\n"
+    "| **texte** | **ELLE N'A PAS DE NOM** (0,0–2,2) · **H08 · DOUBLE PONT** · **UN QUARTIER / UNE VILLE** | 0,0–2,2 |\n"
+    "| **visuel** | la monture en macro, cadre en mouvement | 0,0–2,2 |\n"
+    "| **parlé** | « Votre monture n'a pas de nom. » puis « H08, double pont. » puis « Un quartier, une ville. » | 0,0–2,2 |\n\n"
+    "Trois accroches écrites : ① retenue · ② écartée · ③ écartée — deux écartées.\n"
+)
+
+
+@cas("une référence produit et une heure sont des nombres, pas du décor")
+def _():
+    assert _nombres("H08 · double pont") == {8}, _nombres("H08 · double pont")
+    assert {8, 30, 13} <= _nombres("examen 8h30–13h00"), _nombres("examen 8h30–13h00")
+
+
+@cas("une fenêtre de temps ne compte pas comme un nombre commun")
+def _():
+    assert _nombres("0,0–2,2 puis 4,0–9,0") == set(), _nombres("0,0–2,2 puis 4,0–9,0")
+
+
+@cas("texte et voix qui disent tous deux H08 et « un quartier » : alignés")
+def _():
+    v = _audit(kit(hook=HOOK_H08))
+    assert v.ok, v.fails
+
+
+@cas("une voix qui ne reprend ni la référence ni le nom : refusée")
+def _():
+    hook = HOOK_H08.replace(
+        "| **parlé** | « Votre monture n'a pas de nom. » puis « H08, double pont. » puis « Un quartier, une ville. » | 0,0–2,2 |",
+        "| **parlé** | « Elle n'a pas encore de nom. » puis « C'est vous qui choisirez. » | 0,0–2,2 |",
+    )
+    _refus("voix désalignée", "[hook-desaligne]", kit(hook=hook))
 
 
 def main() -> int:
