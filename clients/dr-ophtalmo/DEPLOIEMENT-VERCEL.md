@@ -62,6 +62,28 @@ Production* sur celui du commit `9930a44` suffit, et c'est plus rapide que tout 
    Le jour où le Dr Fogue valide le site comme son vrai site, ces deux verrous s'ouvrent **avant** la mise
    en ligne — sinon il n'apparaîtra jamais sur Google, même avec le bon contenu.
 
+## Refonte du 27 octobre 2026 (premier écran) — en production
+
+Le merge de la PR **#80** (`3062e0f`) a déclenché `dpl_EVtBffdtadDcNtT49fuTa7UiWQzZ`, **READY ·
+PROMOTED** sur `main`. `https://dr-ophtalmo-preview.vercel.app/` sert la nouvelle version, relevée à la
+lecture externe : hero sur la photographie de la salle d'examen, titre « VOTRE VISION, MA PRIORITÉ. »,
+les deux boutons, la ligne des quatre lieux, la bande d'équipe avec sa légende neutre, aucune mention
+de provenance.
+
+**Un défaut restait sur cette version** : le panneau « Questions à confirmer » affirmait encore que la
+photographie d'équipe n'était pas publiée (la page se contredisait elle-même). Corrigé dans la PR
+**#81** (`001ee81`, commit `55006ac`), fusionnée le 27/10 à 00 h 32 — mais **ce correctif n'est pas
+encore en ligne** : l'API refuse toute création de déploiement en `402 api-deployments-free-per-day`
+(plus de 100 déploiements créés sur la journée, offre gratuite), et le déclenchement par Git n'a rien
+produit non plus. Le contenu de `main` est juste ; c'est la publication qui attend.
+
+**Pour le publier**, au choix :
+
+1. dans Vercel → projet `dr-ophtalmo-preview` → *Deployments* → *Create Deployment* sur `main` (ou un
+   `git push` vide sur `main`) une fois le quota de la journée repassé ;
+2. le déploiement de branche `dpl_9AMr9E1cNQv74r2wkznDmZ7TsVQ9` (commit `55006ac`, celui de la
+   correction) contient déjà le bon contenu : *Promote to Production* suffit.
+
 ## Refonte du 27 octobre 2026 (premier écran)
 
 Deuxième dépôt de la même journée : le hero refait (photo de la salle d'examen en fond plein cadre,
