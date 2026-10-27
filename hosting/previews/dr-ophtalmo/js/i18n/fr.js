@@ -14,7 +14,7 @@ export const fr = {
   common: {
     skip: "Aller au contenu",
     brand: "Dr Fogue",
-    brandSub: "Ophtalmologie",
+    brandSub: "Ophtalmologue",
     doctorFallback: "le Dr Fogue",
     unknown: "À confirmer",
     reported: "Communiqué",
@@ -42,9 +42,9 @@ export const fr = {
 
   hero: {
     eyebrow: "OPHTALMOLOGIE · CAMEROUN",
-    h1: ["PRENEZ SOIN", "DE VOTRE VUE,", "AVEC LE DR FOGUE."],
+    h1: ["VOTRE VISION,", "MA PRIORITÉ."],
     lead:
-      "«Consultations ophtalmologiques, examen de la vue, diagnostic et conseils pour vous accompagner dans la santé de vos yeux.»",
+      "Le Dr Fogue vous accompagne dans la santé de vos yeux. Retrouvez les informations sur ses consultations et contactez-le pour préparer votre rendez-vous.",
     ctaPrimary: "Prendre rendez-vous",
     ctaSecondary: "Voir les lieux de consultation",
     whatsappCta: "Écrire sur WhatsApp",
@@ -53,8 +53,6 @@ export const fr = {
     places: "Mbouda · Bafoussam · Douala · Bonabéri",
     placesNote:
       "Les jours changent d’un lieu à l’autre : la semaine complète est un peu plus bas, lieu par lieu.",
-    portraitCaption:
-      "Portrait d’illustration (image générée) — il sera remplacé par la photographie du médecin.",
     statusLine: "Jours communiqués par le Dr Fogue le 26 octobre 2026 — à reconfirmer avant tout déplacement.",
   },
 

@@ -50,9 +50,10 @@
 
 /* ── Jetons ─────────────────────────────────────────────────────────────── */
 :root {
-  --bg: #07111d;
-  --midnight: #0b1b2b;
-  --surface: #f6f8fa;
+  --bg: #071b2a;            /* bleu de minuit de la photographie */
+  --midnight: #10354c;      /* second bleu : les surfaces sombres posées */
+  --surface: #edf5fa;       /* blanc bleuté des sections claires */
+  --clinical: #287cb5;      /* bleu clinique — filets et repères, jamais du texte */
   --ink: #f7fafc;
   --ink-dark: #142536;
   --ice: #c5dce9;
@@ -217,51 +218,22 @@ main [id] {
 .hero-title {
   font-family: var(--serif);
   font-weight: 300;
-  /* Plafonné pour que « MA PRIORITÉ. » tienne dans six colonnes, sans jamais casser */
-  font-size: clamp(2.55rem, 5.2vw, 4.65rem);
-  line-height: 0.94;
-  letter-spacing: -0.02em;
+  /* Plafonné : le titre ne doit pas disputer le visage du médecin, qui occupe
+     la moitié droite de la photographie. */
+  font-size: clamp(2.35rem, 4.6vw, 4.05rem);
+  line-height: 0.98;
+  letter-spacing: -0.018em;
   text-transform: uppercase;
-  margin-block: clamp(0.9rem, 2vw, 1.6rem) clamp(1rem, 2.2vw, 1.8rem);
+  margin-block: clamp(0.85rem, 1.8vw, 1.5rem) clamp(0.9rem, 2vw, 1.55rem);
+  text-wrap: balance;
 }
 .hero-title span {
   display: block;
 }
 .hero-title span:nth-child(2) {
   color: var(--ice);
-}
-.hero-title span:nth-child(3) {
   font-style: italic;
-  letter-spacing: -0.01em;
-}
-
-/* Le nom du médecin, sous le titre : c'est la première chose qu'on doit lire */
-.hero-identity {
-  margin-top: 0.15rem;
-  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
-  letter-spacing: 0.02em;
-  color: var(--ice);
-  opacity: 0.9;
-}
-
-/* Le contact direct, sans passer par le formulaire */
-.hero-wa {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 0.35rem;
-  font-size: 0.92rem;
-  font-weight: 500;
-  color: var(--teal);
-  text-decoration: none;
-  border-bottom: 1px solid rgb(94 234 212 / 35%);
-  padding-bottom: 0.15rem;
-  transition: color 0.2s ease, border-color 0.2s ease;
-}
-.hero-wa:hover,
-.hero-wa:focus-visible {
-  color: var(--ice);
-  border-color: var(--ice);
+  letter-spacing: -0.008em;
 }
 
 .section-title {
@@ -311,14 +283,14 @@ main [id] {
   inset-inline: 0;
   top: 0;
   z-index: 60;
-  background: rgb(7 17 29 / 76%);
+  background: rgb(7 27 42 / 88%);
   -webkit-backdrop-filter: blur(16px) saturate(1.1);
   backdrop-filter: blur(16px) saturate(1.1);
   border-bottom: 1px solid var(--rule);
   transition: background 0.35s ease, border-color 0.35s ease;
 }
 .site-header.is-scrolled {
-  background: rgb(7 17 29 / 94%);
+  background: rgb(7 27 42 / 97%);
 }
 .header-inner {
   display: flex;
@@ -511,13 +483,13 @@ main [id] {
   background: #8ac9c4;
 }
 .btn--ghost {
-  border-color: var(--rule);
+  border-color: rgb(255 255 255 / 38%);
   color: var(--ink);
-  background: var(--glass);
+  background: rgb(7 27 42 / 34%);
 }
 .btn--ghost:hover {
-  background: var(--glass-hover);
-  border-color: rgb(185 211 229 / 40%);
+  background: rgb(7 27 42 / 56%);
+  border-color: rgb(255 255 255 / 62%);
 }
 .btn--dark {
   background: var(--midnight);
@@ -550,42 +522,106 @@ main [id] {
 }
 
 /* ── 1 · HERO ───────────────────────────────────────────────────────────── */
+/* ── Premier écran : la photographie porte le fond ──────────────────────── *
+ * Composition déjà présente dans l'image : bleu nuit à gauche, le médecin à
+ * droite, la salle d'examen derrière lui. Le texte se pose dans la zone sombre,
+ * le dégradé ne recouvre jamais son visage.                                  */
 .hero {
   position: relative;
-  padding-top: calc(var(--header-h) + clamp(1.5rem, 5vh, 4rem));
-  padding-bottom: 0;
-  background:
-    radial-gradient(1100px 620px at 78% 8%, rgb(118 185 180 / 10%), transparent 62%),
-    radial-gradient(760px 520px at 8% 92%, rgb(197 220 233 / 6%), transparent 65%),
-    linear-gradient(180deg, #07111d 0%, #081522 58%, #07111d 100%);
+  isolation: isolate;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: clamp(40rem, 78vh, 48rem);
+  padding-top: var(--header-h);
+  background: var(--bg);
+  color: var(--ink);
   overflow: clip;
 }
-.hero::before {
-  content: "";
+.hero-media {
+  position: absolute;
+  /* La photographie commence sous la barre de navigation : le sommet du crâne
+     ne passe jamais derrière l'en-tête, et le cadrage ne coupe pas la tête. */
+  inset: var(--header-h) 0 0 0;
+  z-index: 0;
+  background: var(--bg);
+}
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Le visage occupe 57–68 % de la largeur : 62 % le garde entier quand la
+     fenêtre se resserre. À la verticale, l'image est ancrée en haut et le
+     surplus est pris sous la poitrine — jamais sur le front. */
+  object-position: 62% 0%;
+  filter: saturate(1.03) contrast(1.01);
+}
+/* Le dégradé : opaque à gauche, nul à 74 %. Aucun filtre coloré sur
+   l'ensemble — les tons de peau, le bleu de la tenue et la salle restent ceux
+   de la photographie. */
+.hero-scrim {
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(to right, var(--rule) 1px, transparent 1px);
-  background-size: min(8.33%, 6rem) 100%;
-  opacity: 0.28;
-  mask-image: linear-gradient(180deg, transparent, #000 12%, #000 88%, transparent);
   pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      rgb(7 27 42 / 97%) 0%,
+      rgb(7 27 42 / 94%) 26%,
+      rgb(7 27 42 / 78%) 42%,
+      rgb(7 27 42 / 38%) 58%,
+      rgb(7 27 42 / 0%) 74%
+    ),
+    linear-gradient(180deg, rgb(7 23 36 / 34%) 0%, rgb(7 23 36 / 0%) 18%),
+    linear-gradient(0deg, rgb(7 23 36 / 52%) 0%, rgb(7 23 36 / 0%) 24%);
 }
-.hero-grid {
+.hero-inner {
   position: relative;
+  z-index: 1;
   align-items: center;
-  padding-bottom: clamp(2rem, 5vh, 3.5rem);
-  grid-template-rows: auto;
+  align-content: center;
+  padding-block: clamp(2.5rem, 9vh, 5.5rem);
 }
 .hero-copy {
   grid-column: 1 / span 6;
-  padding-block: clamp(0.5rem, 2vh, 1.5rem);
+  max-width: 34rem;
 }
+/* L'entrée du premier écran : trois bloc seulement, 620 ms, et rien du tout
+   quand la personne a demandé moins de mouvement. L'état de base reste
+   visible : si l'animation ne joue pas, la page n'est pas vide. */
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 0.65rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-copy > * {
+    animation: hero-rise 620ms var(--ease-reveal) both;
+  }
+  .hero-copy > :nth-child(1) {
+    animation-delay: 40ms;
+  }
+  .hero-copy > :nth-child(2) {
+    animation-delay: 110ms;
+  }
+  .hero-copy > :nth-child(4),
+  .hero-copy > :nth-child(5) {
+    animation-delay: 200ms;
+  }
+  .hero-copy > .hero-actions {
+    animation-delay: 270ms;
+  }
+}
+
 .hero-lead {
-  font-size: clamp(1.02rem, 1.3vw, 1.18rem);
+  font-size: clamp(1rem, 1.25vw, 1.14rem);
   line-height: 1.66;
   color: var(--ice);
-  opacity: 0.9;
-  max-width: 42ch;
+  max-width: 40ch;
 }
 .hero-actions {
   display: flex;
@@ -597,69 +633,34 @@ main [id] {
   margin-top: clamp(1.8rem, 4vh, 2.8rem);
   padding-top: 1.1rem;
   border-top: 1px solid var(--rule);
-  max-width: 44ch;
+  max-width: 34ch;
 }
 .hero-places-label {
   font-size: 0.8rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--muted-on-dark);
+  /* Plus clair que --muted-on-dark : sur la photographie, le gris de la page
+     tombe sous 4,5:1 dès que le dégradé s'éclaircit. */
+  color: #b7cdda;
 }
 .hero-places-line {
   font-family: var(--serif);
   font-size: clamp(1.05rem, 1.5vw, 1.35rem);
-  color: var(--ice);
+  color: var(--ink);
   margin-top: 0.35rem;
   letter-spacing: 0.01em;
 }
 .hero-places-note {
   font-size: 0.8rem;
   line-height: 1.55;
-  color: var(--muted-on-dark);
+  color: #b7cdda;
   margin-top: 0.5rem;
-  max-width: 40ch;
-}
-
-.hero-figure {
-  grid-column: 8 / span 5;
-  align-self: center;
-}
-.hero-photo {
-  position: relative;
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: #0c1c2c;
-  aspect-ratio: 4 / 4.6;
-  box-shadow: 0 40px 80px -50px rgb(0 0 0 / 80%);
-}
-.hero-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 22%;
-  filter: saturate(0.96) contrast(1.02);
-}
-.hero-photo-frame {
-  position: absolute;
-  inset: 0;
-  border: 1px solid rgb(197 220 233 / 18%);
-  border-radius: var(--radius);
-  pointer-events: none;
-}
-.hero-photo-frame::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 38%;
-  background: linear-gradient(180deg, transparent, rgb(7 17 29 / 42%));
-}
-.hero-figure .caption {
-  color: rgb(197 220 233 / 78%);
-  font-size: 0.8rem;
+  max-width: 32ch;
 }
 
 .hero-strip {
   position: relative;
+  z-index: 1;
   border-top: 1px solid var(--rule);
   padding-block: 0.9rem;
   padding-inline: clamp(1rem, 4vw, 3.25rem);
@@ -1660,9 +1661,21 @@ main [id] {
 @media (max-width: 1080px) {
   .hero-copy {
     grid-column: 1 / span 7;
+    max-width: 32rem;
   }
-  .hero-figure {
-    grid-column: 8 / span 5;
+  /* Le visage se rapproche du centre : le dégradé doit tenir jusqu'à 62 %. */
+  .hero-scrim {
+    background:
+      linear-gradient(
+        90deg,
+        rgb(7 27 42 / 97%) 0%,
+        rgb(7 27 42 / 95%) 34%,
+        rgb(7 27 42 / 82%) 52%,
+        rgb(7 27 42 / 40%) 66%,
+        rgb(7 27 42 / 0%) 80%
+      ),
+      linear-gradient(180deg, rgb(7 23 36 / 40%) 0%, rgb(7 23 36 / 0%) 20%),
+      linear-gradient(0deg, rgb(7 23 36 / 52%) 0%, rgb(7 23 36 / 0%) 24%);
   }
   .parcours-text,
   .profile-card {
@@ -1733,30 +1746,47 @@ main [id] {
     font-size: 0.8rem;
   }
 
-  .hero-grid {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 1rem;
-    row-gap: 2rem;
+  /* Sous 900 px, un fond pleine largeur couperait la zone sombre : la
+     composition est donc empilée — texte sur bleu de minuit, photographie
+     juste en dessous, à son propre cadrage. */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    background: linear-gradient(180deg, #071b2a 0%, #0b2536 100%);
+  }
+  .hero-inner {
+    order: 1;
+    display: block;
+    padding-block: clamp(1.75rem, 5vh, 2.75rem) clamp(1.25rem, 4vh, 2rem);
   }
   .hero-copy {
-    grid-column: 1 / span 6;
-    order: 1;
-  }
-  .hero-figure {
-    grid-column: 1 / span 6;
-    order: 2;
-  }
-  .hero-photo {
-    aspect-ratio: 16 / 11;
-  }
-  .hero-photo img {
-    object-position: 50% 18%;
+    max-width: none;
   }
   .hero-title {
-    font-size: clamp(2.6rem, 12vw, 4.6rem);
+    font-size: clamp(2.3rem, 9.6vw, 3.4rem);
   }
   .hero-strip {
-    margin-top: 0.5rem;
+    order: 2;
+    border-top: 1px solid var(--rule);
+    padding-top: 0.85rem;
+    padding-bottom: 1rem;
+  }
+  .hero-media {
+    position: relative;
+    inset: auto;
+    order: 3;
+    aspect-ratio: 16 / 11;
+  }
+  .hero-media img {
+    object-position: 66% 30%;
+  }
+  /* Le voile s'inverse : il fond le haut de la photographie dans le panneau
+     de texte, et laisse le bas intact. */
+  .hero-scrim {
+    background:
+      linear-gradient(180deg, #071b2a 0%, rgb(7 27 42 / 62%) 10%, rgb(7 27 42 / 0%) 38%),
+      linear-gradient(0deg, rgb(7 23 36 / 34%) 0%, rgb(7 23 36 / 0%) 26%);
   }
   .status-dot {
     font-size: 0.8rem;
@@ -1852,7 +1882,19 @@ main [id] {
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: clamp(2.35rem, 13.5vw, 3.4rem);
+    font-size: clamp(2.1rem, 10.5vw, 2.9rem);
+  }
+  .hero-media {
+    aspect-ratio: 4 / 3;
+  }
+  /* À cette largeur, deux libellés entiers ne tiennent pas côte à côte : on
+     les empile plutôt que de laisser un bouton plus court que l'autre. */
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-actions .btn {
+    width: 100%;
   }
   .wordmark-sub {
     display: none;
@@ -1879,7 +1921,6 @@ main [id] {
     grid-template-columns: minmax(0, 1fr);
   }
   .hero-copy,
-  .hero-figure,
   .parcours-text,
   .profile-card,
   .consultations-heading,
@@ -1911,6 +1952,7 @@ main [id] {
 /* ── Impression : les informations, sans la navigation ──────────────────── */
 @media print {
   .site-header,
+  .hero-media,
   .hero-strip,
   .nav-toggle,
   .lang-switch,
@@ -1927,6 +1969,7 @@ main [id] {
   .hero,
   .consultations,
   .site-footer {
+    min-height: 0 !important;
     background: #fff !important;
     color: #000 !important;
   }
@@ -1992,27 +2035,31 @@ main [id] {
 }
 
 /* ── La photographie de consultation, sous la semaine ────────────────────── */
-.consult-figure {
-  margin: clamp(1.8rem, 4vw, 3rem) auto 0;
-  max-width: 22rem;
-  text-align: center;
+/* La photographie d'équipe occupe la largeur de la section : le portrait isolé
+   de 22 rem laissait, sur un grand écran, deux vides de la taille d'un écran. */
+.team-band {
+  max-width: var(--max);
+  margin: clamp(2.5rem, 6vh, 4rem) auto 0;
+  padding-inline: clamp(1rem, 4vw, 3.25rem);
 }
-.consult-figure img {
+.team-band img {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
-  object-position: 50% 16%;
+  /* Les cinq visages sont dans la moitié haute : 30 % garde le groupe entier. */
+  object-position: 50% 30%;
   border-radius: var(--radius);
-  box-shadow: 0 32px 64px -44px rgb(0 0 0 / 70%);
+  box-shadow: 0 50px 90px -70px rgb(0 0 0 / 90%);
 }
-.consult-figure .caption {
-  margin-top: 0.7rem;
-  font-size: 0.78rem;
-  color: rgb(197 220 233 / 70%);
+.team-band .caption {
+  margin-top: 0.8rem;
+  font-size: 0.8rem;
+  color: rgb(197 220 233 / 76%);
 }
 
-@media (max-width: 640px) {
-  .consult-figure {
-    max-width: 17rem;
+@media (max-width: 900px) {
+  .team-band img {
+    aspect-ratio: 4 / 3;
+    object-position: 50% 26%;
   }
 }

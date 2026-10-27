@@ -62,6 +62,13 @@ Production* sur celui du commit `9930a44` suffit, et c'est plus rapide que tout 
    Le jour où le Dr Fogue valide le site comme son vrai site, ces deux verrous s'ouvrent **avant** la mise
    en ligne — sinon il n'apparaîtra jamais sur Google, même avec le bon contenu.
 
+## Refonte du 27 octobre 2026 (premier écran)
+
+Deuxième dépôt de la même journée : le hero refait (photo de la salle d'examen en fond plein cadre,
+dégradé navy à gauche, bande d'équipe à la place du portrait isolé). L'archive
+`dr-ophtalmo-site-2026-10-27.zip` à la racine du dépôt a été **régénérée** : 32 fichiers, 703 Ko,
+17 références vérifiées présentes. Si le glisser-déposer est utilisé, c'est cette version-là qu'il faut.
+
 ## Après le déploiement
 
 Me le dire : je relis la page en production et je confirme point par point ce qui est passé — le nom,

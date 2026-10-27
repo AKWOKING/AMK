@@ -14,7 +14,7 @@ export const en = {
   common: {
     skip: "Skip to content",
     brand: "Dr Fogue",
-    brandSub: "Ophthalmology",
+    brandSub: "Ophthalmologist",
     doctorFallback: "Dr Fogue",
     unknown: "To be confirmed",
     reported: "Reported",
@@ -42,9 +42,9 @@ export const en = {
 
   hero: {
     eyebrow: "OPHTHALMOLOGY · CAMEROON",
-    h1: ["TAKE CARE", "OF YOUR SIGHT,", "WITH DR FOGUE."],
+    h1: ["YOUR VISION,", "MY PRIORITY."],
     lead:
-      "“Ophthalmology consultations, eye examinations, diagnosis and advice to support you in looking after your eyes.”",
+      "Dr Fogue supports you in looking after your eyes. Find out about his consultation locations and get in touch to prepare your appointment.",
     ctaPrimary: "Request an appointment",
     ctaSecondary: "See consultation locations",
     whatsappCta: "Message on WhatsApp",
@@ -53,8 +53,6 @@ export const en = {
     places: "Mbouda · Bafoussam · Douala · Bonabéri",
     placesNote:
       "Days differ from one location to another: the full week is listed further down, location by location.",
-    portraitCaption:
-      "Illustrative portrait (generated image), to be replaced by the doctor’s own photograph.",
     statusLine: "Days reported by Dr Fogue on 26 October 2026. Reconfirm before travelling.",
   },
 
