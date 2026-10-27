@@ -2646,3 +2646,36 @@ presque pas. C'est pour ça que la manche 2 existe — et c'est elle qu'on mesur
 **Toujours non vérifié** : la **H08 est-elle encore au cabinet** · les horaires 8h30–13h00 · **le vote de
 samedi suppose que King publie samedi** (la seule promesse du jeu) · rien ne prouve qu'un jeu à un mot
 produise plus de commentaires — le seuil de 5 est une cible, pas une prévision.
+
+---
+
+## Épisode 1, v4 — **le vote, et la cadence** · tour 197 (27/10/2026)
+
+King : *« why do you say "Votre monture" when it isn't theirs… I'll propose three and you give me your
+pov »*, + une cadence (mardi vidéo / vendredi carrousel / mardi résultat).
+
+| | |
+|---|---|
+| script | `content/month1/w3/MONTURE-01-SCRIPT.py` — 6 beats, `audit_story` **✓ 0 avertissement** |
+| rendu | parlée **27,30 s** (3,19 Mo) · muette **27,3 s** (2,74 Mo) · couverture « Éclat ou Minuit ? » |
+| voix | `voice-05`, six blocs : 3,92 · 4,88 · 6,02 · 3,86 · 3,43 · 2,89 s + **0,9 s** de queue pour le carton |
+| accroche | **« Elle n'a pas de nom. Vous choisissez celui qui reste. »** — 53 car., ✓ |
+| jeu | **A (Éclat) / B (Minuit) / ou votre mot** → vendredi le carrousel des 5 → mardi le résultat |
+| portes | `audit_story` ✓ · `audit_hook` ✓ · `audit_video_motion` **OK** 1 s (8 coupes) et 2 s · `audit_post_dm` ✓ 0 avertissement · banc 35/35 |
+
+**Ce que le tour a appris** :
+① **les trois scripts de King échouent aux quatre mêmes points** (`pas-de-lockin`, `preuve-absente`,
+`rehook-mal-place`, `cta-non-aligne`) — c'est une lacune de **structure**, pas de style, et la porte l'a
+dit en une seconde là où l'œil aurait discuté une heure ;
+② **« Votre monture » n'était pas seulement maladroit, c'était faux** : la monture n'est pas au spectateur.
+La correction n'est pas de changer le mot, c'est de changer **qui est sujet** — « vous choisissez » ;
+③ le **vote binaire** (P1) est la meilleure idée des trois : une lettre à taper, et une question qui tient
+la vidéo entière. Il est entré dans le film au beat 3, les deux noms **à l'écran en même temps** ;
+④ **« Suis la page » / « Abonnez-vous »** est refusé par notre propre porte : demander un abonné n'en
+produit pas. Ce qui produit un abonné, c'est une **raison de revenir** — ici, le résultat de mardi ;
+⑤ un **amendement de doctrine** était devenu nécessaire : `DIRECTION-MARQUE-v2` §8 et §10.5 interdisaient
+la monture-sujet et **tout nombre de montures**. La série les contredit depuis le tour 194 sans que rien
+ne le dise. C'est écrit maintenant (§12), daté, borné, révocable.
+
+**Toujours non vérifié** : la H08 est-elle encore au cabinet · les horaires · **la cadence suppose que
+King publie mardi et vendredi** — « mardi » est écrit sur le carton final.

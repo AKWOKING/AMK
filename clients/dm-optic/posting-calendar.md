@@ -337,3 +337,31 @@ totalement, C4 devient aussi une variante « service ».***
 
 **Aucune publication avant : l'approbation du plan de contenu · l'encaissement de l'acompte · les
 photos pour les semaines 2 à 4.**
+
+---
+
+## Amendement du 27/10/2026 — la série de nommage prend le créneau vidéo
+
+King a tranché la cadence de la série « la monture cherche son nom » : **la vidéo du mardi ouvre, le
+carrousel du vendredi vote, la vidéo du mardi suivant révèle** — et le résultat rouvre l'épisode suivant.
+C'est **exactement** le rythme contractuel (2 publications/semaine), avec un rôle par créneau.
+
+| Créneau | Pièce | Contenu | Pourquoi là |
+|---|---|---|---|
+| **mardi** (vidéo) | `w3/assets/monture-01-h08-voix.mp4` (27,3 s) | l'appel : A (Éclat) / B (Minuit) / ou un mot | c'est le créneau vidéo du contrat |
+| **vendredi** (carrousel) | « les 5 noms en lice » — 8 slides | le **vote** entre les cinq mots les plus dits | le carrousel du contrat, et le week-end porte les votes |
+| **mardi suivant** (vidéo) | résultat + **H09** | on annonce le nom, on crédite (avec accord), on ouvre la monture suivante | chaque révélation est l'appel suivant |
+
+**Deux conséquences, écrites pour ne pas les découvrir en route :**
+
+1. **« Pourquoi on revient »** (prévu pour le carrousel du 30/10, `content/month1/w3/pourquoi-on-revient.md`)
+   **recule au vendredi 06/11**. Il ne disparaît pas : c'est la pièce de service qui parle à ceux qui ont
+   déjà des lunettes, et elle reste la meilleure entrée du mois. La déplacer coûte une semaine, la publier
+   en même temps que le vote coûte les deux.
+2. **Le créneau du vendredi est désormais tenu par un vote** : il ne peut pas être « vide » sans casser la
+   boucle. Si les mots proposés sont moins de trois, le carrousel ne saute pas — il passe à **« A ou B,
+   voilà où en est le vote »** avec les deux noms de départ. Un carrousel faible vaut mieux qu'un mardi de
+   révélation sans vote.
+
+**Ce que cet amendement ne change pas** : les dates restent conditionnées à la publication réelle (rien ne
+s'imprime tout seul), et rien n'est publié sans validation de King.

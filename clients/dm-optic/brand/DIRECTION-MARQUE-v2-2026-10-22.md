@@ -224,3 +224,32 @@ dans le §7) :
 - **Verbatims** : `clients/dm-optic/onboarding/REPONSES-CLIENT.md` (15/10), `site/CLIENT-REQUIREMENTS-BRIEF.md` (08/10), `dossier.md`, `sales/Activity-Log.md` (01/10, 19/10).
 - **Recherche interne** : `research/market-analysis.md` §7 (moteurs d'achat, confiance dans le professionnel) ; `sales/research/2026-W43-techniques.md` §12 (synthèse « le client ne veut pas des lunettes ») et §12b (porte en cinq temps).
 - **Recherche externe, lue le 22/10** : Ocuco, *Short-Form Video for Opticians* (juillet 2026) ; d4ymrkt, *Top 10 marketing predictions for eye care 2026* (janvier 2026) ; RevolutionEHR, *Optometry Social Media Marketing* (règle 80/20) ; Heygen, *Optometry Marketing* (septembre 2026 — la décision « qui soigne » ≠ la décision « où acheter »).
+
+---
+
+## 12 · Amendement du 27/10/2026 — la série « la monture cherche son nom »
+
+> **Ce que cet amendement corrige.** Le §8 dit : « *la monture n'est plus un sujet. Elle apparaît comme la
+> conséquence d'un besoin, jamais comme une vitrine* », et le §10.5 a été **barré** : « *aucun nombre de
+> montures, nulle part, y compris à l'écran* ». La série tournée les 27/10 (tours 194–197) fait exactement
+> l'inverse : **la monture est le sujet**, et le film dit « **quarante montures** ».
+>
+> Ce n'est pas un oubli de fabrication : c'est une **instruction de King** du 27/10 — *« create a story
+> behind the naming of the glasses, if not viewers won't feel engaged »* — qui demande une série où le
+> cadre est le personnage. Une doctrine se corrige, elle ne se contourne pas : voilà la correction, écrite,
+> datée, et bornée.
+
+| Ce que la v2 disait | Ce que la série fait | Portée |
+|---|---|---|
+| la monture **n'est pas un sujet** | elle est **le personnage** d'une série de nommage : un objet sans nom, qu'on nomme en public | **uniquement** la série « la monture cherche son nom », épisode par épisode |
+| **aucun nombre de montures**, nulle part | « quarante montures, quarante codes » (vidéo) et « 40 » à l'écran | **uniquement** le nombre de **fiches publiées sur le site** — jamais un stock, jamais une disponibilité, jamais un prix |
+| une pièce par semaine, la monture en conséquence | la série occupe le **créneau vidéo du mardi**, le carrousel du vendredi porte le vote | la cadence contractuelle (2 publications/semaine) ne change pas |
+
+**Ce qui ne change pas, et qui reste opposable** : aucun visage de patient, aucune photo du personnel sans
+accord, aucun diagnostic, aucune promesse de vue, aucun prix de monture, aucune marque nommée tant que la
+liste du client n'est pas reçue, la sortie honnête (« si vous voyez bien, ne venez pas »), et les portes
+(`audit_hook`, `audit_story`, `audit_post_dm`, `audit_video_motion`).
+
+**Ce qui peut annuler cet amendement** : un mot de King. La série est la sienne ; le §8 reste vrai pour
+toutes les autres pièces du mois (le réglage, l'examen, le nettoyage), qui ne parlent toujours pas d'une
+monture en particulier.

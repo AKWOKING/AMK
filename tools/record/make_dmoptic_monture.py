@@ -22,12 +22,12 @@ ne bouge jamais, c'est l'image qui se cale.
 
 Les six beats (`--voice-dir`), et le plan qui va avec
 ------------------------------------------------------
-b1  0,00–4,66  « Votre monture n'a pas de nom. Elle s'appelle H zéro huit, comme un colis. »
-b2  4,94–9,54  « Sur notre site, quarante montures ont un code. Celle-ci, c'est vous qui la nommez. »
-b3  9,82–13,33 « Ici, un taxi a un nom. Une moto aussi. »
-b4 13,61–17,45  « On la porte sur le visage tous les jours. Elle mérite mieux que H zéro huit. »
-b5 17,73–20,40  « Le nom qu'on garde, il reste écrit sur sa page. »
-b6 20,68–24,95  « Écrivez un nom, un seul mot. On vous montre le nom qui gagne. » → carton final
+b1  0,00–3,93  « Elle n'a pas de nom. Vous choisissez celui qui reste. »
+b2  4,21–8,97  « Sur notre site, quarante montures. Tous s'appellent par un code. »
+b3  9,25–15,13  « Celle-ci s'appelle H zéro huit. Deux noms sont sur la table : Éclat ou Minuit. »
+b4 15,41–19,26  « Elle ira sur un visage, tous les jours. Elle mérite mieux qu'un code. »
+b5 19,54–22,93  « Le nom qui gagne s'écrit sur sa page, et il y reste. »
+b6 23,21–26,10  « Écrivez A, B, ou votre mot. On vous montre le nom qui gagne. » → carton final
 
 Le scénario, les rôles et le jeu en trois manches vivent dans
 `clients/dm-optic/content/month1/w3/MONTURE-01-SCRIPT.py` — ce fichier-ci ne fait que rendre l'image
@@ -84,40 +84,41 @@ PHOTO = "montures/monture-h08.webp"
 # une macro de monture donne une fenêtre **figée** à 9-10 s (`audit_video_motion --window 1`) — le gate est
 # bloquant, et il a raison : à l'écran, plus rien ne bouge pendant que la voix parle.
 PLAN = [
-    # b1 · 4,66 s — LE CODE. Le fait que personne ne remarque : ce nom est un numéro de colis.
+    # b1 · 3,93 s — LE CONSTAT, ET LE SPECTATEUR COMME SUJET (King, 27/10 : « elle n'est pas à lui »).
+    # Trois plans, coupe à 0,94 s : la première seconde ne reste jamais sur une image.
     dict(clip="b1",
-         # trois plans, dont une coupe à 0,93 s : la première seconde ne reste jamais sur une image.
-         # Le premier plan est la monture **entière** — la macro n'arrive qu'après, quand l'œil est là.
-         shots=[(0.20, "card", 0.30, 0.90, 0.40), (0.52, "card", 0.26, -0.90, -0.40),
+         shots=[(0.24, "card", 0.30, 0.90, 0.40), (0.60, "card", 0.26, -0.90, -0.40),
                 (1.00, "macro", 0.28, 0.65, -0.45)],
-         subs=[(0.00, 0.50, ["ELLE N'A PAS", "DE NOM"], 108, 0.695),
-               (0.50, 1.00, ["ELLE S'APPELLE", "H08"], 96, 0.700)]),
-    # b2 · 4,60 s — L'ÉCHELLE ET L'INVITATION. « quarante » est la preuve, et elle est prononcée.
+         subs=[(0.00, 0.50, ["ELLE N'A PAS", "DE NOM"], 100, 0.695),
+               (0.50, 1.00, ["VOUS CHOISISSEZ"], 88, 0.700)]),
+    # b2 · 4,76 s — LA PREUVE, prononcée : « quarante ».
     dict(clip="b2",
-         shots=[(0.50, "card", 0.26, -0.60, 0.40), (1.00, "macro", 0.28, 0.60, -0.50)],
-         subs=[(0.00, 0.48, ["40 MONTURES"], 112, 0.700),
-               (0.48, 1.00, ["40 CODES"], 112, 0.700)]),
-    # b3 · 3,51 s — LA RAISON LOCALE. Trois plans : un beat ne tient jamais sur une image fixe.
+         shots=[(0.48, "card", 0.26, -0.60, 0.40), (1.00, "macro", 0.28, 0.60, -0.50)],
+         subs=[(0.00, 0.50, ["40 MONTURES"], 110, 0.700),
+               (0.50, 1.00, ["40 CODES"], 110, 0.700)]),
+    # b3 · 5,88 s — LE CODE, PUIS LES DEUX NOMS. Trois plans pour un beat long.
     dict(clip="b3",
-         shots=[(0.45, "macro", 0.30, -0.70, 0.55), (0.78, "card", 0.24, 0.60, -0.45),
-                (1.00, "macro", 0.30, 0.65, -0.50)],
-         subs=[(0.00, 0.52, ["UN TAXI", "A UN NOM"], 92, 0.700),
-               (0.52, 1.00, ["UNE MOTO AUSSI"], 92, 0.700)]),
-    # b4 · 3,84 s — LE REHOOK. Ce n'est plus un objet : c'est un visage, tous les jours.
+         shots=[(0.32, "card", 0.28, 0.70, -0.45), (0.64, "macro", 0.26, -0.65, 0.50),
+                (1.00, "card", 0.24, 0.60, -0.40)],
+         # les deux noms restent à l'écran **ensemble** : un vote où l'on ne voit qu'une option
+         # à la fois n'est pas un vote, c'est une devinette.
+         subs=[(0.00, 0.34, ["H08"], 124, 0.700),
+               (0.34, 1.00, ["A · ÉCLAT", "B · MINUIT"], 88, 0.680)]),
+    # b4 · 3,85 s — LE REHOOK : ce n'est plus un objet, c'est un visage.
     dict(clip="b4",
-         shots=[(0.52, "macro", 0.28, -0.60, 0.50), (1.00, "card", 0.26, 0.60, -0.45)],
-         subs=[(0.00, 0.55, ["SUR LE VISAGE", "TOUS LES JOURS"], 88, 0.700),
-               (0.55, 1.00, ["ELLE MÉRITE", "MIEUX"], 100, 0.700)]),
-    # b5 · 2,67 s — L'ENJEU QUI RESTE. Le nom ne part pas avec la vidéo.
+         shots=[(0.50, "macro", 0.28, -0.60, 0.50), (1.00, "card", 0.26, 0.60, -0.45)],
+         subs=[(0.00, 0.55, ["SUR UN VISAGE", "TOUS LES JOURS"], 86, 0.700),
+               (0.55, 1.00, ["ELLE MÉRITE", "MIEUX"], 104, 0.700)]),
+    # b5 · 3,39 s — L'ENJEU QUI RESTE.
     dict(clip="b5",
          shots=[(0.55, "card", 0.28, 0.55, -0.40), (1.00, "macro", 0.30, -0.60, 0.50)],
          subs=[(0.00, 1.00, ["LE NOM RESTE", "SUR SA PAGE"], 94, 0.700)]),
-    # b6 · 4,27 s — LA SORTIE. Un mot, un seul : le jeu tient dans une contrainte.
+    # b6 · 2,89 s + queue — LA SORTIE : A, B, ou un mot. Puis le carton.
     dict(clip="b6",
-         shots=[(0.50, "card", 0.30, 0.60, -0.45), (1.00, "end", 0.30, 0.0, 0.55)],
-         subs=[(0.00, 0.30, ["ÉCRIVEZ UN NOM"], 110, 0.700),
-               (0.30, 0.50, ["UN SEUL MOT"], 100, 0.700)]),
+         shots=[(0.42, "card", 0.30, 0.60, -0.45), (1.00, "end", 0.30, 0.0, 0.55)],
+         subs=[(0.00, 0.42, ["A, B", "OU VOTRE MOT"], 100, 0.700)]),
 ]
+TAIL = 0.9          # queue de respiration après le dernier mot : le carton final se lit
 GAP = 0.28          # respiration entre deux beats (silence, pas de coupe sèche)
 
 def macro_master(path, up=1.22, fx=0.5, fy=0.5):
@@ -172,15 +173,15 @@ def end_card(t, t0, t1, K=1.22):
 
     a = ease(min(1.0, (t - t0) / 0.55))
     y = int(CH * 0.435)
-    f1 = font(F_HEAD, int(44 * K))
-    d.text(((CW - d.textlength("DANS LA DEUXIÈME", font=f1)) / 2, y), "DANS LA DEUXIÈME",
+    f1 = font(F_HEAD, int(36 * K))
+    d.text(((CW - d.textlength("MARDI, DANS LA VIDÉO SUIVANTE", font=f1)) / 2, y), "MARDI, DANS LA VIDÉO SUIVANTE",
            font=f1, fill=PAPER + (int(235 * a),))
     f2 = font(F_TITLE, int(84 * K))
     t2 = "LE NOM QUI GAGNE"
     d.text(((CW - d.textlength(t2, font=f2)) / 2, y + int(60 * K)), t2,
            font=f2, fill=(255, 255, 255, int(255 * a)))
     f3 = font(F_BODY, int(40 * K))
-    t3 = "écrit sur sa page, au cabinet"
+    t3 = "écrit sur sa page, sur notre site"
     d.text(((CW - d.textlength(t3, font=f3)) / 2, y + int(190 * K)), t3,
            font=f3, fill=PAPER + (int(200 * a),))
 
@@ -251,6 +252,8 @@ def timeline(durations, gap=GAP):
     t = 0.0
     for i, beat in enumerate(PLAN):
         d = durations[beat["clip"]]
+        if i == len(PLAN) - 1:
+            d += TAIL          # le carton final a besoin de temps pour se lire
         borne = 0.0
         for (fin, kind, zoom, pan, drift) in beat["shots"]:
             BEATS.append((round(t + borne * d, 3), round(t + fin * d, 3), kind, zoom, pan, drift))
@@ -353,7 +356,7 @@ def main():
               + f"  →  film {total:.2f} s")
     else:
         # version muette : durées de repli, un carton ne tient jamais plus de 1,8 s
-        repli = {"b1": 4.7, "b2": 4.6, "b3": 3.5, "b4": 3.8, "b5": 2.7, "b6": 4.3}
+        repli = {"b1": 3.9, "b2": 4.8, "b3": 5.9, "b4": 3.9, "b5": 3.4, "b6": 2.9}
         timeline(repli) if not args.no_voice else timeline(repli)
 
     if args.cover:
@@ -364,7 +367,7 @@ def main():
         d.text(((W - d.textlength(t1, font=f_top)) / 2, 150), t1, font=f_top, fill=(214, 224, 240, 235))
         y = int(H * 0.655)
         for line, size, gap in (("Elle n'a pas", 104, 118), ("de nom.", 104, 132),
-                                ("H08 · comme un colis", 58, 84)):
+                                ("Éclat ou Minuit ?", 58, 84)):
             f = font(F_TITLE, size)
             d.text(((W - d.textlength(line, font=f)) / 2, y), line, font=f, fill=(255, 255, 255, 255))
             y += gap
@@ -413,7 +416,7 @@ def main():
     entrées, filtres, noms = [], [], []
     for i, beat in enumerate(PLAN):
         entrées += ["-i", NETS.get(beat["clip"]) or clip_path(args.voice_dir, beat["clip"])]
-        filtres.append(f"[{i}:a]aresample=48000,apad=pad_dur={GAP if i < len(PLAN) - 1 else 0.35}[a{i}]")
+        filtres.append(f"[{i}:a]aresample=48000,apad=pad_dur={GAP if i < len(PLAN) - 1 else TAIL}[a{i}]")
         noms.append(f"[a{i}]")
     chaine = ";".join(filtres) + ";" + "".join(noms) + f"concat=n={len(PLAN)}:v=0:a=1[out]"
     subprocess.run([ffmpeg, "-y", "-v", "error", *entrées, "-filter_complex", chaine,

@@ -60,35 +60,36 @@ from audit_story import Line, Script  # noqa: E402
 # Niveau 2 (**Magician**) et pas 1 : la phrase ne rapporte pas un état, elle **révèle un mécanisme** —
 # le nom qu'on croit être un nom est un code de stock. C'est exactement ce que la fiche du site montre.
 HOOK = Hook(
-    text="Votre monture n'a pas de nom. Elle s'appelle H08, comme un colis.",
+    text="Elle n'a pas de nom. Vous choisissez celui qui reste.",
     level=2,
 )
 
 # ── le script, tel qu'il est PRONONCÉ (pas tel qu'il est affiché) ────────────────────────────────
-# Les rôles sont cumulables (`corps+preuve`) : un beat de 4 s qui doit à la fois porter l'idée et le
-# fait. `H08` est prononcé « H, zéro, huit » — écrit tel quel dans le texte de la voix, parce qu'un
-# synthétiseur qui lit « H08 » d'un bloc dit « huit », et la moitié de la phrase tombe.
+# Durées **mesurées** sur les clips de la voix (`voice-05`, 27/10, tour 197) : la voix ne se comprime
+# pas, c'est le montage qui se cale sur elle. 0,28 s de respiration entre deux beats.
+#
+# Deux choses ont changé au tour 197, et elles viennent de King :
+# ① « Votre monture » **n'est pas la leur** — la pièce parle maintenant de « elle », et c'est le
+#    spectateur qui est **sujet** de la phrase (« vous choisissez ») : il ne possède rien, il décide ;
+# ② le **vote binaire** entre au film (Éclat / Minuit) : un nom à taper vaut mieux qu'une page blanche
+#    à remplir, et « ou votre mot » garde la porte ouverte à celui qui a mieux.
 SCRIPT = Script(
     piece="monture-01",
     promise="nom",
     proof_on_screen="40 MONTURES · 40 CODES (site DM Optique, 27/10/2026)",
-    # Durées **mesurées** sur les clips de la voix (`voice-05`, 27/10) : la voix ne se comprime pas,
-    # c'est le montage qui se cale sur elle. 0,28 s de respiration entre deux beats.
     lines=[
-        Line("cas", "Votre monture n'a pas de nom. Elle s'appelle H zéro huit, comme un colis.",
-             "cas", 0.00, 4.64),
-        Line("lockin", "Sur notre site, quarante montures ont un code. "
-                       "Celle-ci, c'est vous qui la nommez.",
-             "lockin+preuve", 4.92, 9.55),
-        Line("corps", "Ici, un taxi a un nom. Une moto aussi.",
-             "corps", 9.83, 13.31),
-        Line("rehook", "On la porte sur le visage tous les jours. "
-                       "Elle mérite mieux que H zéro huit.",
-             "rehook", 13.59, 17.43),
-        Line("corps", "Le nom qu'on garde, il reste écrit sur sa page.",
-             "corps", 17.71, 20.38),
-        Line("sortie", "Écrivez un nom, un seul mot. On vous montre le nom qui gagne.",
-             "sortie", 20.66, 25.01),
+        Line("cas", "Elle n'a pas de nom. Vous choisissez celui qui reste.",
+             "cas", 0.00, 3.93),
+        Line("lockin", "Sur notre site, quarante montures. Toutes s'appellent par un code.",
+             "lockin+preuve", 4.21, 8.97),
+        Line("corps", "Celle-ci s'appelle H zéro huit. Deux noms sont sur la table : Éclat ou Minuit.",
+             "corps", 9.25, 15.13),
+        Line("rehook", "Elle ira sur un visage, tous les jours. Elle mérite mieux qu'un code.",
+             "rehook", 15.41, 19.26),
+        Line("corps", "Le nom qui gagne s'écrit sur sa page, et il y reste.",
+             "corps", 19.54, 22.93),
+        Line("sortie", "Écrivez A, B, ou votre mot. On vous montre le nom qui gagne.",
+             "sortie", 23.21, 26.10),
     ],
 )
 

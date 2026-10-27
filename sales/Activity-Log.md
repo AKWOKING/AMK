@@ -7036,3 +7036,13 @@ King ne les a pas données, et une heure inventée vaut moins qu'une heure absen
   d'énumération, 1 fragment). Rendu **25,01 s** parlée + **25,0 s** muette, portique **OK** aux deux
   fenêtres. **Un chiffre faux attrapé avant le rendu** : « 65 montures » → **40** (le site en publie 40 ;
   65, c'est le nombre de photos dans le dossier).
+- 27/10/2026 · **Épisode 1, v4 — le vote A/B et la cadence** (tour 197). King : « Votre monture n'est pas
+  la leur » + trois scripts proposés + cadence mardi/vendredi/mardi. Les trois scripts passent par
+  `audit_story` : **mêmes quatre refus** (`pas-de-lockin`, `preuve-absente`, `rehook-mal-place`,
+  `cta-non-aligne`) — verdict de porte, pas de goût. On garde d'eux **le vote binaire** (P1), « c'est son
+  code » (P2), l'ancrage local et la date (P3) ; on refuse **« Suis la page »** (notre porte :
+  `abonnement-mendicite`) et le **« coup de cœur »** (un jury qui peut tout faire n'est pas un concours).
+  Accroche : **« Elle n'a pas de nom. Vous choisissez celui qui reste. »** (53 car.). Rendu **27,30 s**
+  parlée / **27,3 s** muette. **Amendement** `DIRECTION-MARQUE-v2` §12 : la monture est le personnage de
+  cette série, et « quarante montures » est autorisé à l'écran (le §10.5 le refusait). Cadence écrite dans
+  `posting-calendar.md` ; « Pourquoi on revient » recule au 06/11.
