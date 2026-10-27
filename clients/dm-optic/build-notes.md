@@ -2427,3 +2427,60 @@ VERT (1 P3 connu) · `audit_reveal` 4 fautes préexistantes, inchangées.
 **Ce que je ne promets pas** : que le cercle soit *franc* sur téléphone. À 33 % d'encre il reste
 discret ; l'affermir demande d'épaissir le trait ou de relever les arrêts du dégradé, donc de changer le
 dessin du client. C'est une question à lui poser, pas un réglage à glisser.
+
+---
+
+## § — 27/10/2026 (tour 192) · l'accroche d'abord : la pièce du soir, et la porte qui la vérifie
+
+**La demande de King** : « aujourd'hui c'est le 27/10, il faut penser à ce qu'on publie sur les pages
+sociales de DM Optique — TikTok et Facebook. Relis tous les documents liés. Puis **apprends et intègre
+dans le graphe** : l'accroche passe avant tout, elle a trois composantes (texte, visuel, parlé), et le
+texte est la plus importante. »
+
+**Ce qui a été lu avant d'écrire** — et ce qui manquait : `knowledge/CONTENT-CREATION` §3 bis/§3 ter (§4,
+quatre piliers, banque de 15 hooks), `knowledge/HOOKS-2026-10-25` (six mots de puissance, échelle,
+grille 331), `knowledge/CONTENT-GAMES` (jeu 5, planchers), `knowledge/MARKETING-OPTICAL` §1 (les avis
+passent avant la vidéo), `FUNNEL-WHATSAPP-2026-10-23`, `content-plan-month1`, `ANALYSE-POST-1-2026-10-23`
+(**la seule donnée réelle du compte**), `w1/tiktok-01-v2`, `w2/PLAN-27-10`, `DIRECTION-MARQUE-v2` §7.
+
+**Ce que la donnée du 23/10 impose** : sortie massive à **0:02 sur TikTok** et **0:05 sur Facebook**,
+**12 %** de lecture moyenne, **0 partage**, **0 conversation attribuable**. Le sujet n'est pas le problème ;
+la deuxième seconde l'est. C'est exactement ce que la doctrine reçue dit autrement.
+⚠️ **Piège de lecture** : `ANALYSE-POST-1` attire l'attention sur les **55,5 % de spectateurs de 55 ans et
+plus**. Le texte reçu parle d'un « **85 % de vidéos regardées sans son** » — **non vérifiable**. Les deux
+ne disent pas la même chose, et **ce n'est pas contradictoire** : un spectateur de 65 ans qui lit ses
+sous-titres est précisément un spectateur **muet**. La conséquence est la même dans les deux cas — le
+carton doit se lire seul.
+
+**Ce qui a changé dans le dépôt**
+
+| Fichier | Ce qu'il fait maintenant |
+|---|---|
+| **`knowledge/HOOK-FIRST-2026-10-27.md`** | la doctrine : trois composantes et leur ordre, l'alignement maximal, les deux exigences (clarté + boucle de curiosité), le temps (30–40 %), **et ce qui du tunnel ne s'applique pas** (pas d'e-mail pour un patient de Bonabéri, pas de DM automatique) |
+| **`tools/qa/audit_post_dm.py`** (neuf) | la porte du **kit client** : accroche sur trois composantes, alignement mesuré par les **nombres communs**, texte avant 3 s, légende TikTok **et** Facebook, un seul CTA, `wa.me` prérempli **différent par plateforme**, horaires, réponse d'accueil, compteur. 15 refus, 3 avertissements |
+| `tools/qa/test_audit_post_dm.py` (neuf) | banc : **26/26** |
+| **`content/month1/w3/KIT-27-10-HOOK.md`** (neuf) | la pièce du soir, prête à coller : accroche, deux légendes, réponse d'accueil, compteur, montage en 5 étapes, **repli** |
+| `content/month1/w3/assets/hook-tt-1080x1920.jpg` | carton d'accroche, voile 62 %, vraies polices, vrais nombres |
+| `content/month1/w3/assets/post-fb-1080x1350.jpg` | carte Facebook **et repli** : trois montures réelles du cabinet (F24, H08, F01), aucune image générée |
+| `content/month1/w2/PLAN-27-10.md` §6 | ce qui part, ce qui change, le seuil de lecture |
+| `content/month1/w2/ANALYSE-POST-1-2026-10-23.md` §4 | **correction datée** : « visuel > écrit > parlé » était faux — c'est **écrit > visuel > parlé** |
+| `PRE-FLIGHT.md` §1g | la ligne contenu route vers la doctrine **et** la nouvelle porte |
+| `knowledge/HOOKS-2026-10-25.md` | *(inchangé — il dit ce qui doit être dans la phrase ; le nouveau dit où ça se voit)* |
+
+**Pourquoi une deuxième porte, et pas un élargissement d'`audit_publication`** : celle du 26/10 est réglée
+sur **AMK** (mot-clé `APERÇU`, `#AMKweb`, Instagram, plafond 25 s). Un kit DM y échouerait sur des
+paramètres qui n'ont rien à voir avec la qualité du post, et un contournement silencieux vaut moins qu'une
+porte au profil du client.
+
+**Trois accroches écrites, deux écartées** — première application de la règle du 25/10 :
+
+| Accroche | `audit_hook` | Verdict |
+|---|---|---|
+| « 8 HEURES À 40 CM · 20 SECONDES À 6 MÈTRES » | ✅ 4/4 (sujet, action, objectif, contraste) | **retenue** |
+| « Vos yeux passent la journée à 40 cm » | ⛔ objectif + contraste manquants | écartée |
+| « Regardez au loin 20 secondes toutes les 20 minutes » | ⛔ sujet + objectif manquants | écartée |
+
+**Ce qui n'est pas vérifié, et qui se dit** : le master `tiktok-01-v2.mp4` **n'est pas dans cet
+environnement** (`*.mp4` ignoré) ; les 23,00 s / 4,3 Mo sont ceux du contrôle du **22/10**. Les horaires
+8h30–13h00 viennent du dépôt, **aucune confirmation écrite du cabinet**. Rien n'est publié : la pièce est
+une proposition à valider, comme les précédentes.

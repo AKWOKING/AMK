@@ -221,8 +221,11 @@ délai.**
 
 1. **Le hook est un geste, pas une phrase.** Sur TikTok, la moitié part à 0:02 : la première image doit
    montrer quelqu'un en train de faire quelque chose, pas un décor.
-2. **Le texte arrive avant la voix** (règle du 23/10 : visuel > écrit > parlé) — et **sous-titres
-   obligatoires**, la vidéo doit marcher sans son.
+2. **Le texte arrive avant la voix** — et **sous-titres obligatoires**, la vidéo doit marcher sans son.
+   ⚠️ **Correction du 27/10** : l'ordre écrit ici le 23/10 (« visuel > écrit > parlé ») est **faux**.
+   La doctrine est « **écrit > visuel > parlé** » (`knowledge/HOOK-FIRST-2026-10-27.md` §1). Le seul
+   point sur lequel les deux s'accordent, et qui décidait déjà cette vidéo : **le parlé est dernier**.
+   L'analyse du 23/10 reste datée ; c'est la règle qui se corrige.
 3. **Pas de mot-clé.** Décision du 23/10 : sur DM OPTIQUE, on demande **un rendez-vous**, pas un mot à
    commenter. L'attribution se fait par un lien `wa.me` **pré-rempli** (« Bonjour, je viens de votre
    vidéo ») : un appui, rien à mémoriser, et on sait d'où vient la conversation.

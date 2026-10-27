@@ -6938,3 +6938,27 @@ King ne les a pas données, et une heure inventée vaut moins qu'une heure absen
   **② « Docteur »** : Africa Optic est un opticien du tableau de l'Ordre (titulaire MINTEU NZONGA Eric Aimé).
   L'appeler « Docteur » flatte peut-être juste, mais s'il ne l'est pas, la première phrase du premier message
   devient une erreur qu'il voit. À trancher par King avant le message suivant.
+
+## 27/10/2026 (soir) · DM Optique — l'accroche d'abord, et la porte qui la vérifie
+
+- 27/10/2026 · **Demande de King** : « aujourd'hui c'est le 27/10, on pense à ce qu'on publie sur les pages
+  sociales de DM Optique (TikTok et Facebook), relis tous les documents liés », avec un texte sur les
+  **trois composantes de l'accroche** (texte à l'écran > visuel > parlé) et sur le tunnel
+  vidéo → contact. Livré : `knowledge/HOOK-FIRST-2026-10-27.md` (doctrine), `tools/qa/audit_post_dm.py`
+  + `test_audit_post_dm.py` (**26/26**) — la porte du **kit client**, et
+  `clients/dm-optic/content/month1/w3/KIT-27-10-HOOK.md` — la pièce du soir.
+- 27/10/2026 · **La pièce du 22/10 ne change pas** (décision de King : « okay to post tiktok-01-v2 on
+  tuesday »). Ce qui change est l'**accroche** : carton de 3 s « 20 SECONDES / À 6 MÈTRES » (avec
+  « 8 heures à 40 cm » en gris au-dessus), une phrase d'accroche à dire par-dessus si l'enregistrement est
+  possible, une ligne de partage à la fin, et **deux liens `wa.me` préremplis différents** — un par
+  plateforme. Aucune pièce publiée avant aujourd'hui ne permettait de savoir d'où venait une conversation.
+- 27/10/2026 · **Trois accroches écrites, deux écartées** (première application de la règle du 25/10) :
+  la voix existante — « Vingt minutes d'écran. Puis vingt secondes. À six mètres. » — **échoue** à
+  `audit_hook` (0 mot de puissance sur 4) ; c'est le diagnostic exact de la sortie massive à **0:02** du
+  23/10. Les deux accroches retenues (une à l'écran, une prononcée) passent **4/4**.
+- 27/10/2026 · **Ce qui n'est pas vérifié, et qui se dit** : le master `tiktok-01-v2.mp4` **n'existe pas
+  dans l'environnement** (`*.mp4` ignoré) — les 23,00 s / 4,3 Mo sont ceux du contrôle du 22/10. Les
+  horaires 8h30–13h00 viennent du dépôt, aucune confirmation écrite du cabinet. **Rien n'est publié.**
+- 27/10/2026 · **Intégré au graphe** : `build_full_graph.py` rejoué (13 696 nœuds), `ops/REPO-MAP.md`
+  réécrit ; doctrine routée depuis `PRE-FLIGHT.md` §1g ; la ligne fausse « visuel > écrit > parlé » de
+  `ANALYSE-POST-1` **corrigée et datée** (c'est « écrit > visuel > parlé »).
