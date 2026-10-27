@@ -25,8 +25,33 @@
  *     sous chaque lieu. Aucune heure n'y figure : elles restent vides.
  */
 
+import { bookingCapability } from "../booking.js";
+
 const WHATSAPP = "237691280237";
 const PHONE = "+237 691 280 237";
+
+/* ── Réservation en ligne (route A) — éteinte tant que ces champs sont vides ─
+ * Le jour où le Dr Fogue donne sa page de réservation (Google Agenda →
+ * « Créneaux de rendez-vous »), coller l'URL et rien d'autre. Deux endroits,
+ * et ils ne servent pas à la même chose :
+ *
+ *   `bookingUrl` du lieu   → cette page ne vaut que pour ce lieu. C'est le
+ *                            montage gratuit honnête : une page pour Africa
+ *                            Médical (le vendredi), la demande écrite ailleurs.
+ *   `bookingUrl` général   → la page vaut pour les quatre lieux (à ne mettre
+ *                            que si le médecin ouvre bien des créneaux partout).
+ *
+ * Le lieu gagne toujours. Dès qu'un lien existe quelque part, les phrases qui
+ * niaient tout agenda basculent (js/booking.js, `liveNoteKey`), le bouton
+ * n'apparaît que sur les lieux qui ont un créneau, et les tests suivent.
+ *
+ * Ce qu'il faut AVANT de le faire, et qui manque aujourd'hui : des horaires.
+ * Une page de réservation se construit sur des plages horaires hebdomadaires,
+ * et aucun des quatre lieux n'a d'heure communiquée — le vendredi est même en
+ * conflit (affiche du cabinet contre message du médecin). Brancher le lien sur
+ * une information contradictoire ne rendrait pas service au médecin.
+ */
+const BOOKING_URL = "";
 
 export const doctorConfig = {
   /* ── Identité professionnelle ───────────────────────────────────────────── */
@@ -34,6 +59,9 @@ export const doctorConfig = {
   title: "Dr",
   specialty: "Ophtalmologie",
   specialtyStatus: "confirmed", // « par contre je suis ophtalmologue », 26/10 17:26
+
+  // Vide = aucune réservation en ligne, pour aucun lieu. Voir le bloc ci-dessus.
+  bookingUrl: BOOKING_URL,
 
   // Rien de ce qui suit n'a été communiqué : qualifications, inscription à
   // l'Ordre, années d'exercice, biographie, intérêts cliniques, langues.
@@ -133,6 +161,7 @@ export const doctorConfig = {
   locations: [
     {
       id: "mbouda",
+      bookingUrl: "", // ce lieu a-t-il sa propre page de réservation ?
       order: "01",
       city: "Mbouda",
       facility: "",
@@ -149,6 +178,7 @@ export const doctorConfig = {
     },
     {
       id: "bafoussam",
+      bookingUrl: "", // ce lieu a-t-il sa propre page de réservation ?
       order: "02",
       city: "Bafoussam",
       facility: "",
@@ -165,6 +195,7 @@ export const doctorConfig = {
     },
     {
       id: "africa-medical",
+      bookingUrl: "", // ce lieu a-t-il sa propre page de réservation ?
       order: "03",
       city: "Douala",
       facility: "Africa Médical",
@@ -181,6 +212,7 @@ export const doctorConfig = {
     },
     {
       id: "hopital-charity",
+      bookingUrl: "", // ce lieu a-t-il sa propre page de réservation ?
       order: "04",
       city: "Bonabéri, Douala",
       facility: "Hôpital Charity — Medical Assurance Center",
@@ -206,8 +238,10 @@ export const doctorConfig = {
     // tableau des jours : « informations communiquées le … — à reconfirmer ».
     infoAsOf: "2026-10-26",
     infoSource: "Message du médecin, 26/10/2026 17:53 (WhatsApp) + affiche du cabinet.",
-    // Le site ne prétend pas être branché sur un agenda : aucune synchronisation
-    // n'existe. Ce champ l'écrit en clair, pour que l'écran ne l'oublie pas.
+    // Écrit juste après cet objet, et jamais à la main : le site ne prétend
+    // être branché sur un agenda que si une page de réservation existe
+    // réellement, quelque part. Aujourd'hui : aucune. Voir la ligne
+    // `doctorConfig.meta.liveSync = …` sous la définition.
     liveSync: false,
     /**
      * Les questions à poser au médecin avant de publier le site pour de bon.
@@ -242,6 +276,11 @@ export const doctorConfig = {
     ],
   },
 };
+
+/* `liveSync` se déduit des liens, il ne s'écrit pas : une page de réservation
+ * par lieu suffit à rendre la phrase vraie. Muté ici parce que `locations` n'est
+ * pas encore défini à l'endroit où l'objet est construit. */
+doctorConfig.meta.liveSync = bookingCapability(doctorConfig);
 
 /* ── Petits lecteurs, utilisés partout ───────────────────────────────────── */
 

@@ -1218,6 +1218,61 @@ main [id] {
   padding: clamp(1.25rem, 2.6vw, 2.15rem);
   box-shadow: 0 50px 90px -70px rgb(0 0 0 / 90%);
 }
+/* ── Réservation en ligne (route A) ────────────────────────────────────── *
+ * Ce bloc n'existe à l'écran que si `bookingUrl` est renseigné : le bouton
+ * sort du site, la page ne charge rien de Google. Pas d'iframe, jamais. */
+.booking {
+  margin-top: 1.15rem;
+  padding-bottom: 1.15rem;
+  border-bottom: 1px solid var(--rule-light);
+}
+.booking-link {
+  width: 100%;
+  gap: 0.5rem;
+}
+.booking-arrow {
+  flex: none;
+  translate: 0 -0.02em;
+}
+.booking-note {
+  margin-top: 0.7rem;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: #5c7080;
+}
+/* Le message qui part du numéro du patient, après une réservation. */
+.booking-wa {
+  margin-top: 0.9rem;
+}
+.booking-wa-link {
+  width: 100%;
+  gap: 0.45rem;
+}
+.booking-wa-note {
+  margin-top: 0.55rem;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: #5c7080;
+}
+/* Ce lieu n'a pas de page de réservation : une phrase, pas un bouton grisé. */
+.booking-partial {
+  margin-top: 1.15rem;
+  padding: 0.85rem 0.95rem;
+  border: 1px dashed rgb(20 37 54 / 22%);
+  border-radius: var(--radius);
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #33465a;
+}
+.booking-or {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #5c7080;
+}
+
 .card-title {
   font-family: var(--serif);
   font-weight: 300;

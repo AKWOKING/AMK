@@ -19,6 +19,7 @@ import {
 import { createTranslator, defaultLang, supportedLangs, langTag } from "./i18n/index.js";
 import { buildWeek, hasAnyHours, hoursText, locationDays, locationLabel } from "./lib/schedule.js";
 import { validate, errorText } from "./lib/validators.js";
+import { bookingFor, bookingCapability, bookingMode, liveCopyKey, liveNoteKey } from "./booking.js";
 
 /* ── État : une seule source, et le rendu en découle ───────────────────── */
 const STORAGE_KEY = "dr-ophtalmo.lang";
@@ -145,6 +146,62 @@ function renderStatic() {
     const label = toggle.querySelector(".visually-hidden");
     if (label) label.textContent = open ? t("common.closeMenu") : t("common.openMenu");
   }
+
+  renderBooking();
+}
+
+/* ═════════════════════════════════════════════════════════════════════════
+   1 bis · Réservation en ligne — route A
+   ═════════════════════════════════════════════════════════════════════════
+   Le bouton et les phrases qui parlent d'agenda viennent du même état, calculé
+   une seule fois par cette fonction : impossible d'avoir le bouton sans la
+   copie, ou la copie sans le bouton. `bookingUrl` vide = rien ne change. */
+function renderBooking() {
+  // Le lieu qui compte : celui du formulaire s'il est choisi, sinon celui de la
+  // fiche ouverte, sinon le premier lieu (la page parle de « ce lieu »).
+  const locationId = state.values.locationId || state.selectedId || doctorConfig.locations[0]?.id || "";
+  const mode = bookingMode(doctorConfig, locationId);
+  const status = bookingFor(doctorConfig, locationId);
+  const block = $("[data-booking]");
+
+  if (block) {
+    const link = $("[data-booking-link]", block);
+    if (link) {
+      if (status.enabled) link.href = status.href;
+      else link.removeAttribute("href");
+    }
+    block.hidden = mode !== "on";
+  }
+
+  // Le message WhatsApp après réservation : seulement s'il y a un créneau à
+  // annoncer et un numéro publié. Sans numéro, on n'affiche pas un bouton mort.
+  const waBlock = $("[data-booking-wa-block]");
+  const waLink = $("[data-booking-wa]");
+  if (waBlock && waLink) {
+    const number = whatsappNumber();
+    if (mode === "on" && number) {
+      const place = locationLabel(
+        doctorConfig.locations.find((item) => item.id === locationId) || {},
+        t,
+      );
+      const message = t("booking.waMessage", { doctor: doctorDisplayName() || t("hero.identityPending"), place });
+      waLink.href = buildWhatsappUrl(number, message);
+      waBlock.hidden = false;
+    } else {
+      waLink.removeAttribute("href");
+      waBlock.hidden = true;
+    }
+  }
+
+  // L'état intermédiaire : ce lieu n'a pas de page, et on le dit à sa place.
+  const partial = $("[data-booking-partial]");
+  if (partial) partial.hidden = mode !== "partial";
+
+  // La phrase des rendez-vous : trois états, une seule fonction qui choisit.
+  const note = $("[data-i18n-when-booked]");
+  if (note) note.textContent = t(liveNoteKey(mode));
+
+  return { mode, status, locationId };
 }
 
 /* ═════════════════════════════════════════════════════════════════════════
@@ -390,7 +447,11 @@ function renderSchedule() {
         text: t("consultations.scheduleAsOf", { date: formatDateOnly(doctorConfig.meta.infoAsOf, state.lang) }),
       }),
     );
-    noteNode.append(el("p", { text: t("consultations.scheduleNote") }));
+    noteNode.append(
+      el("p", {
+        text: t(liveCopyKey("consultations.scheduleNote", bookingCapability(doctorConfig))),
+      }),
+    );
     if (anythingMissing) {
       noteNode.append(
         el("p", { class: "note-alert" }, [
@@ -414,6 +475,7 @@ function selectLocation(id, { scroll = false } = {}) {
   }
 
   renderDetail();
+  renderBooking();
 
   if (state.attempted) {
     state.errors = validate(state.values, { t });
@@ -767,6 +829,10 @@ function renderInfoDialog() {
       items: [
         [t("footer.contact"), isKnown(doctorConfig.contact.whatsapp), ""],
         [t("appointment.labels.contactEmail"), isKnown(doctorConfig.contact.email), ""],
+        // Tant que le champ est vide, la ligne s'affiche « à renseigner » —
+        // c'est le rappel que le médecin a une page de réservation à donner.
+        // Un lien, même sur un seul lieu, suffit : la ligne est cochée.
+        [t("booking.label"), bookingCapability(doctorConfig), ""],
       ],
     },
     ...doctorConfig.locations.map((location) => ({
@@ -987,6 +1053,7 @@ function setupForm() {
       state.selectedId = state.values.locationId;
       for (const radio of $$('input[name="location"]')) radio.checked = radio.value === state.selectedId;
       renderDetail();
+      renderBooking();
     }
   });
 

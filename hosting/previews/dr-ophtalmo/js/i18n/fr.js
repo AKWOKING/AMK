@@ -123,6 +123,8 @@ export const fr = {
     scheduleDayEmpty: "Pas de consultation annoncée",
     scheduleNote:
       "Aucune synchronisation avec un agenda n’existe : cette page est mise à jour à la main, et les horaires peuvent changer d’une semaine à l’autre.",
+    scheduleNoteWhenBooked:
+      "Les jours de présence ci-dessus sont mis à jour à la main : ils peuvent changer d’une semaine à l’autre. Les créneaux libres, eux, se réservent dans l’agenda du Dr Fogue — le bouton est plus bas, dans la section rendez-vous.",
     scheduleAsOf: "Informations communiquées le {date}.",
     scheduleAction: "Rendez-vous",
     sourceLabel: "Source",
@@ -203,8 +205,31 @@ export const fr = {
     disclaimer:
       "Une demande n’est pas un rendez-vous confirmé. Attendez la confirmation du médecin ou de la structure avant de vous déplacer.",
     liveNote: "Ce site n’affiche pas de disponibilités en temps réel : aucune connexion à un agenda n’existe.",
+    // Trois variantes, jamais deux à la fois (js/booking.js, `liveNoteKey`) :
+    // aucune page de réservation, ce lieu en a une, ou un autre lieu en a une.
+    liveNoteWhenBooked:
+      "Cette page n’affiche pas de disponibilités en temps réel. Les créneaux libres se voient sur la page de réservation du Dr Fogue, reliée à son agenda ; le bouton est juste au-dessus du formulaire.",
+    liveNotePartial:
+      "Pour ce lieu, les créneaux ne se réservent pas encore en ligne : préparez une demande ci-dessous. La réservation en ligne existe pour les autres lieux de consultation, un peu plus haut dans la page.",
     reset: "Recommencer",
     summaryTitle: "Votre demande",
+  },
+
+  booking: {
+    cta: "Choisir un créneau",
+    opensNewTab: "s’ouvre dans un nouvel onglet",
+    note: "Vous choisissez l’heure dans l’agenda du Dr Fogue : le rendez-vous s’inscrit aussitôt dans son agenda et vous recevez la confirmation de Google. Si aucune heure ne vous convient, préparez une demande ci-dessous.",
+    or: "Ou préparez une demande",
+    label: "Réservation en ligne",
+    notForPlace:
+      "Ce lieu ne propose pas encore de réservation en ligne. Préparez une demande ci-dessous : elle part sur WhatsApp, et le Dr Fogue vous répond pour fixer l’heure.",
+    // Le message part du numéro du patient : le médecin le reçoit comme un
+    // message ordinaire, dans la conversation. Rien n’est envoyé par le site.
+    waCta: "Prévenir le Dr Fogue sur WhatsApp",
+    waNote:
+      "Facultatif : ce message part de votre propre numéro, avec le lieu et l’heure que vous venez de réserver. Vous pouvez le modifier avant de l’envoyer.",
+    waMessage:
+      "Bonjour {doctor}, je viens de réserver un créneau sur votre page de réservation — lieu : {place}. Pouvez-vous me confirmer que le rendez-vous est bien noté ? Merci.",
   },
 
   wa: {
