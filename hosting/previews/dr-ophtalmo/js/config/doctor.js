@@ -25,8 +25,24 @@
  *     sous chaque lieu. Aucune heure n'y figure : elles restent vides.
  */
 
+import { bookingEnabled } from "../booking.js";
+
 const WHATSAPP = "237691280237";
 const PHONE = "+237 691 280 237";
+
+/* ── Réservation en ligne (route A) — éteinte tant que ce champ est vide ────
+ * Le jour où le Dr Fogue donne sa page de réservation (Google Agenda →
+ * « Créneaux de rendez-vous »), coller l'URL ici et rien d'autre : le bouton
+ * apparaît dans la section rendez-vous, et les deux phrases qui nient tout
+ * agenda basculent ensemble (js/booking.js, `liveCopyKey`). Les tests suivent.
+ *
+ * Ce qu'il faut AVANT de le faire, et qui manque aujourd'hui : des horaires.
+ * Une page de réservation se construit sur des plages horaires hebdomadaires,
+ * et aucun des quatre lieux n'a d'heure communiquée — le vendredi est même en
+ * conflit (affiche du cabinet contre message du médecin). Brancher le lien sur
+ * une information contradictoire ne rendrait pas service au médecin.
+ */
+const BOOKING_URL = "";
 
 export const doctorConfig = {
   /* ── Identité professionnelle ───────────────────────────────────────────── */
@@ -34,6 +50,9 @@ export const doctorConfig = {
   title: "Dr",
   specialty: "Ophtalmologie",
   specialtyStatus: "confirmed", // « par contre je suis ophtalmologue », 26/10 17:26
+
+  // Vide = aucune réservation en ligne. Voir le bloc au-dessus de ce fichier.
+  bookingUrl: BOOKING_URL,
 
   // Rien de ce qui suit n'a été communiqué : qualifications, inscription à
   // l'Ordre, années d'exercice, biographie, intérêts cliniques, langues.
@@ -206,9 +225,9 @@ export const doctorConfig = {
     // tableau des jours : « informations communiquées le … — à reconfirmer ».
     infoAsOf: "2026-10-26",
     infoSource: "Message du médecin, 26/10/2026 17:53 (WhatsApp) + affiche du cabinet.",
-    // Le site ne prétend pas être branché sur un agenda : aucune synchronisation
-    // n'existe. Ce champ l'écrit en clair, pour que l'écran ne l'oublie pas.
-    liveSync: false,
+    // Dérivé de `bookingUrl`, jamais écrit à la main : le site ne prétend être
+    // branché sur un agenda que si un lien de réservation existe réellement.
+    liveSync: bookingEnabled(BOOKING_URL),
     /**
      * Les questions à poser au médecin avant de publier le site pour de bon.
      * Elles s'affichent dans le panneau « Informations à publier », et aucune

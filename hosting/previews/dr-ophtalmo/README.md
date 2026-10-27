@@ -95,18 +95,54 @@ fichier. Rien n'est écrit deux fois.
 
 ---
 
+## 4 bis · Activer la réservation en ligne (route A) — une ligne, quand les horaires existeront
+
+Le site sait déjà recevoir un lien de réservation Google Agenda. Il ne l'affiche pas tant que le champ
+est vide :
+
+```js
+// js/config/doctor.js
+const BOOKING_URL = "";   // ← coller ici l'URL de la page de réservation
+```
+
+Dès qu'elle est remplie, **trois choses basculent ensemble** — c'est le même calcul (`js/booking.js`) :
+
+| Ce qui change | Éteint (aujourd'hui) | Allumé |
+|---|---|---|
+| Le bouton dans la section rendez-vous | absent (bloc `hidden`, sans même un `href`) | « Choisir un créneau » → nouvel onglet |
+| La phrase des rendez-vous | « aucune connexion à un agenda n'existe » | « les créneaux libres se voient sur la page de réservation » |
+| La phrase de la semaine | « aucune synchronisation avec un agenda » | « les créneaux libres se réservent dans l'agenda du médecin » |
+| `meta.liveSync` | `false` | `true` |
+| Le panneau « Informations à publier » | « Réservation en ligne — à renseigner » | la ligne est cochée |
+
+Ce que le lien n'est **pas** : une iframe, un script, un cookie. C'est un `<a target="_blank"
+rel="noopener noreferrer">`. Le site reste à zéro requête tierce, et Google ne voit que ceux qui cliquent.
+
+Ce qui est refusé sans le dire : un lien qui n'est pas en `https`, ou qui ne pointe pas vers
+`calendar.app.google` / `calendar.google.com` (`BOOKING_HOSTS` dans `js/booking.js`). Le bouton
+n'apparaît simplement pas — on n'ouvre pas une erreur devant un patient.
+
+**Ce qu'il faut avant de le brancher, et qui manque encore :** des horaires. Une page de réservation se
+construit sur des plages horaires hebdomadaires ; aucun des quatre lieux n'a d'heure communiquée, et le
+vendredi est en conflit (affiche du cabinet contre message du médecin). Programmer une récurrence sur
+une information contradictoire serait pire que pas de réservation du tout.
+
+---
+
 ## 5 · Ce que le site ne fait pas — et le dit
 
-- **Pas de réservation en ligne.** Aucun rendez-vous n'est créé, aucune place n'est réservée. Le site
-  prépare un message, et le rappelle sous le formulaire (« Une demande n'est pas un rendez-vous confirmé »).
-- **Pas de disponibilités en temps réel.** Aucun agenda n'est branché (`meta.liveSync = false`), et la
-  page l'écrit.
+- **Pas de réservation en ligne tant que le lien est vide.** Aucun rendez-vous n'est créé, aucune place
+  n'est réservée : le site prépare un message, et le rappelle sous le formulaire (« Une demande n'est pas
+  un rendez-vous confirmé »). Dès que `bookingUrl` est renseigné, le créneau se réserve **chez Google**,
+  pas ici — et les deux phrases qui parlaient d'agenda basculent (voir §4 bis).
+- **Pas de disponibilités en temps réel.** Aucun agenda n'est branché tant que `bookingUrl` est vide
+  (`meta.liveSync`, déduit du champ, jamais écrit à la main), et la page l'écrit.
 - **Pas de collecte de données.** Aucun formulaire ne part vers un serveur : il n'y a ni backend, ni
   cookie, ni mesure d'audience. Le formulaire refuse explicitement les informations médicales.
 - **Pas de faux avis.** Aucun témoignage, aucune note, aucun compteur.
-- **Photographies générées.** Les trois images sont des illustrations produites pour cet aperçu ; deux
-  légendes le disent à l'écran. Aucune ne montre le médecin réel : dès qu'il envoie sa photo, remplacer
-  `profile.portrait.src`, `srcset`, `alt` et passer `isRealPhoto` à `true` (la légende disparaît).
+- **Photographies réelles, et attribuées.** Les trois images du médecin viennent de lui (27/10/2026) ;
+  aucune n'est générée, aucune ne porte de légende de provenance (ruling King du 27/10). La légende de la
+  photo d'équipe ne nomme aucune affiliation : le panneau visible sur l'image n'est pas vérifié.
 
 ---
 

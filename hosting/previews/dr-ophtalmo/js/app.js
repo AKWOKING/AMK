@@ -19,6 +19,7 @@ import {
 import { createTranslator, defaultLang, supportedLangs, langTag } from "./i18n/index.js";
 import { buildWeek, hasAnyHours, hoursText, locationDays, locationLabel } from "./lib/schedule.js";
 import { validate, errorText } from "./lib/validators.js";
+import { bookingStatus, liveCopyKey } from "./booking.js";
 
 /* ── État : une seule source, et le rendu en découle ───────────────────── */
 const STORAGE_KEY = "dr-ophtalmo.lang";
@@ -145,6 +146,35 @@ function renderStatic() {
     const label = toggle.querySelector(".visually-hidden");
     if (label) label.textContent = open ? t("common.closeMenu") : t("common.openMenu");
   }
+
+  renderBooking();
+}
+
+/* ═════════════════════════════════════════════════════════════════════════
+   1 bis · Réservation en ligne — route A
+   ═════════════════════════════════════════════════════════════════════════
+   Le bouton et les phrases qui parlent d'agenda viennent du même état, calculé
+   une seule fois par cette fonction : impossible d'avoir le bouton sans la
+   copie, ou la copie sans le bouton. `bookingUrl` vide = rien ne change. */
+function renderBooking() {
+  const status = bookingStatus(doctorConfig.bookingUrl);
+  const block = $("[data-booking]");
+
+  if (block) {
+    const link = $("[data-booking-link]", block);
+    if (link) {
+      if (status.enabled) link.href = status.href;
+      else link.removeAttribute("href");
+    }
+    block.hidden = !status.enabled;
+  }
+
+  for (const node of $$("[data-i18n-when-booked]")) {
+    const key = status.enabled ? node.dataset.i18nWhenBooked : node.dataset.i18n;
+    if (key) node.textContent = t(key);
+  }
+
+  return status;
 }
 
 /* ═════════════════════════════════════════════════════════════════════════
@@ -390,7 +420,11 @@ function renderSchedule() {
         text: t("consultations.scheduleAsOf", { date: formatDateOnly(doctorConfig.meta.infoAsOf, state.lang) }),
       }),
     );
-    noteNode.append(el("p", { text: t("consultations.scheduleNote") }));
+    noteNode.append(
+      el("p", {
+        text: t(liveCopyKey("consultations.scheduleNote", bookingStatus(doctorConfig.bookingUrl).enabled)),
+      }),
+    );
     if (anythingMissing) {
       noteNode.append(
         el("p", { class: "note-alert" }, [
@@ -767,6 +801,9 @@ function renderInfoDialog() {
       items: [
         [t("footer.contact"), isKnown(doctorConfig.contact.whatsapp), ""],
         [t("appointment.labels.contactEmail"), isKnown(doctorConfig.contact.email), ""],
+        // Tant que le champ est vide, la ligne s'affiche « à renseigner » —
+        // c'est le rappel que le médecin a une page de réservation à donner.
+        [t("booking.label"), Boolean(doctorConfig.bookingUrl), ""],
       ],
     },
     ...doctorConfig.locations.map((location) => ({

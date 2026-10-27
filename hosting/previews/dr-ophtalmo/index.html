@@ -279,13 +279,31 @@
               <p class="lede lede--light" data-i18n="appointment.lead"></p>
               <p class="notice notice--light">
                 <span class="notice-icon" aria-hidden="true">i</span>
-                <span data-i18n="appointment.liveNote"></span>
+                <!-- Deux variantes, une seule à l'écran : tant que `bookingUrl`
+                     est vide, celle-ci ; dès qu'il est renseigné, celle de
+                     data-i18n-when-booked (js/booking.js, liveCopyKey). -->
+                <span data-i18n="appointment.liveNote" data-i18n-when-booked="appointment.liveNoteWhenBooked"></span>
               </p>
             </div>
 
             <div class="appointment-card">
               <h3 class="card-title" data-i18n="appointment.formTitle"></h3>
               <p class="card-note" data-i18n="appointment.formNote"></p>
+
+              <!-- Réservation en ligne (route A). Masqué en dur, et sans même
+                   un href : sans lien configuré, il n'y a ici ni bouton mort ni
+                   lien trompeur, même si JavaScript ne s'exécute pas. -->
+              <div class="booking" data-booking hidden>
+                <a class="btn btn--dark booking-link" data-booking-link target="_blank" rel="noopener noreferrer">
+                  <span data-i18n="booking.cta">Choisir un créneau</span>
+                  <span class="visually-hidden" data-i18n="booking.opensNewTab">s’ouvre dans un nouvel onglet</span>
+                  <svg class="booking-arrow" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true" focusable="false">
+                    <path d="M4.5 11.5 11.5 4.5M6 4.5h5.5V10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+                <p class="booking-note" data-i18n="booking.note"></p>
+                <p class="booking-or" data-i18n="booking.or"></p>
+              </div>
 
               <form class="appointment-form" novalidate data-form>
                 <div class="field">

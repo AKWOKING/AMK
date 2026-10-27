@@ -123,6 +123,8 @@ export const fr = {
     scheduleDayEmpty: "Pas de consultation annoncée",
     scheduleNote:
       "Aucune synchronisation avec un agenda n’existe : cette page est mise à jour à la main, et les horaires peuvent changer d’une semaine à l’autre.",
+    scheduleNoteWhenBooked:
+      "Les jours de présence ci-dessus sont mis à jour à la main : ils peuvent changer d’une semaine à l’autre. Les créneaux libres, eux, se réservent dans l’agenda du Dr Fogue — le bouton est plus bas, dans la section rendez-vous.",
     scheduleAsOf: "Informations communiquées le {date}.",
     scheduleAction: "Rendez-vous",
     sourceLabel: "Source",
@@ -203,8 +205,20 @@ export const fr = {
     disclaimer:
       "Une demande n’est pas un rendez-vous confirmé. Attendez la confirmation du médecin ou de la structure avant de vous déplacer.",
     liveNote: "Ce site n’affiche pas de disponibilités en temps réel : aucune connexion à un agenda n’existe.",
+    // Variante quand `bookingUrl` est renseigné (js/booking.js, liveCopyKey).
+    // Jamais les deux à la fois : la page ne peut pas dire les deux choses.
+    liveNoteWhenBooked:
+      "Cette page n’affiche pas de disponibilités en temps réel. Les créneaux libres se voient sur la page de réservation du Dr Fogue, reliée à son agenda ; le bouton est juste au-dessus du formulaire.",
     reset: "Recommencer",
     summaryTitle: "Votre demande",
+  },
+
+  booking: {
+    cta: "Choisir un créneau",
+    opensNewTab: "s’ouvre dans un nouvel onglet",
+    note: "Vous choisissez l’heure dans l’agenda du Dr Fogue : le créneau est réservé aussitôt et apparaît dans son agenda. Si aucune heure ne vous convient, préparez une demande ci-dessous.",
+    or: "Ou préparez une demande",
+    label: "Réservation en ligne",
   },
 
   wa: {
