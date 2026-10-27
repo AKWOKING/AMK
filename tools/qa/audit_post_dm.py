@@ -202,6 +202,12 @@ def audit(chemin: str | Path, master: str | Path | None = None) -> Verdict:
         manquantes = [n for n, t in (("texte", t_txt), ("visuel", t_vis), ("parlé", t_par)) if not t]
         if manquantes:
             v.fails.append(f"[hook-incomplet] composante(s) absente(s) : {', '.join(manquantes)}")
+        muet = "muet" in _plat(t_par) or "aucune voix" in _plat(t_par) or "sans voix" in _plat(t_par)
+        if muet:
+            # Une pièce muette est un choix, pas un oubli : le texte et le visuel portent tout.
+            # On ne peut pas mesurer l'alignement sur une voix qui n'existe pas — on le dit.
+            v.warns.append("[piece-muette] la pièce est déclarée muette : vérifier à l'œil, son coupé, "
+                           "que le texte suffit seul à comprendre la scène")
         else:
             communs = _nombres(t_txt) & _nombres(t_par)
             if len(communs) < 2:
@@ -210,14 +216,15 @@ def audit(chemin: str | Path, master: str | Path | None = None) -> Verdict:
                     f"{len(communs)} nombre(s) en commun ({sorted(communs) or 'aucun'}) — "
                     "le spectateur reçoit deux messages et part (HOOK-FIRST §1)"
                 )
-            m = RANGE.search(_ligne_de(table, "texte", garder_temps=True))
-            if m:
-                fin = float(f"{m.group(3)}.{m.group(4)}")
-                if fin > HOOK_FIN_MAX:
-                    v.fails.append(f"[hook-tardif] le texte à l'écran tient jusqu'à {fin} s "
-                                   f"(max {HOOK_FIN_MAX} s)")
-            else:
-                v.fails.append("[hook-tardif] aucune fenêtre de temps déclarée pour le texte à l'écran")
+        # la fenêtre du texte à l'écran, indépendante de la voix (vaut aussi pour une pièce muette)
+        m = RANGE.search(_ligne_de(table, "texte", garder_temps=True))
+        if m:
+            fin = float(f"{m.group(3)}.{m.group(4)}")
+            if fin > HOOK_FIN_MAX:
+                v.fails.append(f"[hook-tardif] le texte à l'écran tient jusqu'à {fin} s "
+                               f"(max {HOOK_FIN_MAX} s)")
+        else:
+            v.fails.append("[hook-tardif] aucune fenêtre de temps déclarée pour le texte à l'écran")
         if len(re.findall(r"^\|\s*(?:variante|écart|rejet)", table, re.I | re.M)) < 3:
             if _plat(un).count("ecartee") + _plat(un).count("ecartees") < 3:
                 v.warns.append("[variantes-absentes] moins de trois accroches écrites pour la même pièce "

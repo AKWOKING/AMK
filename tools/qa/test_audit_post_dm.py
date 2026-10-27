@@ -277,7 +277,17 @@ def _():
     _refus("compteur absent", "[compteur-absent]", kit(table="| Moment | Vues |\n|---|---|\n| J+1 | |\n"))
 
 
-# ── ⑦ la mécanique d'abonné (doctrine du 27/10) ─────────────────────────────────────────────────
+# ── ⑦ la pièce muette ───────────────────────────────────────────────────────────────────────────
+@cas("une pièce déclarée muette passe, et le dit")
+def _():
+    hook = HOOK.replace("| **parlé** | « Vingt minutes d'écran. Puis vingt secondes. À six mètres. » | 0,0–3,2 |",
+                        "| **parlé** | **aucune voix** — pièce muette : le texte porte tout | 0,0–3,0 |")
+    v = _audit(kit(hook=hook))
+    assert v.ok, v.fails
+    assert any("piece-muette" in w for w in v.warns), v.warns
+
+
+# ── ⑧ la mécanique d'abonné (doctrine du 27/10) ─────────────────────────────────────────────────
 @cas("demander un abonnement est refusé")
 def _():
     cap = CAP_TT.replace("C'est tout.", "C'est tout. Abonnez-vous pour la suite.")

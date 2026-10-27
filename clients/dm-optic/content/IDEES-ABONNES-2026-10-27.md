@@ -245,3 +245,35 @@ quartier ») et on le dit ; on ne répond qu'aux questions traitables **sans exa
   Si King veut une pièce d'autorité, il faut **2 minutes** et un autre format — c'est un autre chantier.
 - **Elles ne promettent aucun abonné.** C'est écrit dans `BRAND-STRATEGY` : on ne promet ni vues, ni
   abonnés, ni patients. On mesure, et on dit ce qu'on a mesuré.
+
+---
+
+## 8 · 27/10 (tour 194) — laquelle des deux se fait **sans le docteur et sans visage** ?
+
+**Réponse : IDEA-01, et elle seule.** IDEA-02 **ne peut pas** être produite sans le cabinet — pas à cause
+d'un visage, mais à cause du **décor et du geste**.
+
+| Ce qu'il faut pour tourner | **IDEA-01 · la monture** | **IDEA-02 · la question** |
+|---|---|---|
+| une caméra (ou un téléphone) | ⛔ **non** — une photo suffit | ✅ oui |
+| quelqu'un dans le cadre | ⛔ **non** — la monture seule | ⚠️ **des mains**, pas un visage : la monture qui glisse, la pince qui règle |
+| **le docteur** | ⛔ **non** | ⛔ **non, mais…** : le geste doit être **vrai**, donc fait au cabinet, avec son accord et son matériel |
+| le décor du cabinet | ⚠️ une photo du stock suffit (elle existe) | ✅ **obligatoire** : c'est le comptoir qui rend la réponse crédible |
+| une confirmation du cabinet | la référence est **au stock** (déjà publiée sur le site) | « ça se règle en 30 secondes » — **à confirmer**, et le réglage doit être montré, pas raconté |
+| délai de production | **45 secondes de rendu**, 0 tournage | une demi-journée d'organisation, 1 prise par question |
+
+**Ce qui a donc été fait le 27/10** : l'épisode 1 d'IDEA-01 est **produit, monté, muet, sans un seul être
+humain dans le cadre** — `content/month1/w3/assets/monture-01-h08.mp4`, 14,2 s, 1080×1920, rendu par
+`tools/record/make_dmoptic_monture.py`, portique mouvement **OK**. Le kit de publication est écrit :
+`content/month1/w3/MONTURE-01-KIT.md`.
+
+**Et ce qui ne peut pas être fait sans le cabinet, dit franchement** : IDEA-02 reste **la meilleure des
+deux pour les commentaires** (une question posée = une réponse écrite), mais elle demande **des mains, le
+comptoir et un accord**. Elle attend. IDEA-01 n'attend rien — sauf une chose, écrite dans le kit : **la H08
+est-elle toujours au cabinet ?** Si elle est vendue, l'épisode 1 prend la monture suivante : c'est une ligne
+à changer dans le moteur, pas un nouveau tournage.
+
+**La nuance qui compte pour King** : « sans le docteur » ne veut pas dire « sans le cabinet » pour toute la
+série. L'épisode 1 ne demande **rien** ; les suivants demanderont peut-être une photo de la monture
+suivante, prise au cabinet lors d'un passage — le stock photo du dépôt couvre déjà **65 montures**, donc
+plusieurs épisodes d'avance.

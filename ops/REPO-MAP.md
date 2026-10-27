@@ -2,18 +2,18 @@
 
 ```text
 Généré par tools/graphify/build_full_graph.py — 2026-10-27
-Source : graphify-out/graph.json (13754 nœuds, 17955 arêtes)
+Source : graphify-out/graph.json (13778 nœuds, 17986 arêtes)
 Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même
 carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.
 ```
 
 ## 0 · En une page
 
-- **13754 nœuds** — dont 852 documents, 205 scripts, 33 modules, 140 pages HTML, 482 images, 8 vidéos, 40 audios, 51 fichiers de données, 11 PDF.
-- **3775 citations entre documents** (3070 en chemin exact, 705 par nom unique)
+- **13778 nœuds** — dont 854 documents, 205 scripts, 33 modules, 140 pages HTML, 482 images, 8 vidéos, 40 audios, 51 fichiers de données, 11 PDF.
+- **3786 citations entre documents** (3079 en chemin exact, 707 par nom unique)
 - **159 arêtes de remplacement** · **3 documents marqués périmés**
 - **429 documents que personne ne cite** (atteignables par aucun chemin de lecture)
-- **Couverture : 1898 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
+- **Couverture : 1900 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
 
 ### Les dossiers du dépôt, par poids — et ce que chacun porte
 
@@ -21,15 +21,15 @@ carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10
 |---|---|---|
 | `hosting/` | 352 | Sites déployés et aperçus |
 | `tools/` | 293 | Outils et skills installés |
-| `clients/` | 244 | Dossiers clients |
+| `clients/` | 245 | Dossiers clients |
 | `content/` | 223 | Contenu, vidéos, carrousels, scripts |
 | `leads/` | 187 | CRM machine (CSV, records, vues générées) |
 | `design/` | 179 | Design, skills, vendor |
 | `sales/` | 150 | Vente, prospection, CRM humain |
 | `site/` | 80 | Site AMK |
 | `ops/` | 50 | Opérations, portiques, facturation |
+| `knowledge/` | 31 | Couche connaissance — les règles de référence |
 | `research/` | 31 | Recherche externe (vidéos, articles) |
-| `knowledge/` | 30 | Couche connaissance — les règles de référence |
 | `brand/` | 25 | Marque AMK |
 | `demos/` | 21 | Maquettes et concepts |
 | `tryon-camera/` | 9 | Expérimentation |
@@ -43,18 +43,18 @@ carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10
 | Document | Titres | Cité par | Son sujet, dans ses propres mots |
 |---|---|---|---|
 | `knowledge/PRIX-2026-10-24.md` | 11 | 17× | Le prix du socle et de l'entretien — recherche du 24/10/2026 |
+| `knowledge/CONTENT-CREATION-2026-10-22.md` | 39 | 10× | Création de contenu — ce que le dépôt sait faire, au 22/10/2026 |
 | `knowledge/IDEA-PIPES-2026-10-25.md` | 12 | 10× | LES SIX TUYAUX À IDÉES — d'où vient une idée, avant de savoir si elle est bonne |
 | `knowledge/OUTREACH-MESSAGING-2026-10-22.md` | 8 | 10× | Le message qui accroche un gérant de clinique — motifs tirés de trois comptes, 22/10/2026 |
-| `knowledge/CONTENT-CREATION-2026-10-22.md` | 39 | 9× | Création de contenu — ce que le dépôt sait faire, au 22/10/2026 |
-| `knowledge/CONTENT-GAMES-2026-10-25.md` | 12 | 8× | LES CINQ JEUX DE CONTENU — quel jeu nous jouons, et ce que ça change |
+| `knowledge/CONTENT-GAMES-2026-10-25.md` | 12 | 9× | LES CINQ JEUX DE CONTENU — quel jeu nous jouons, et ce que ça change |
 | `knowledge/HOOKS-2026-10-25.md` | 13 | 8× | L'ACCROCHE, L'ÉCHELLE ET LA GRILLE — trois sources du 25/10, et une seule pièce refaite |
 | `knowledge/STORY-ARC-2026-10-25.md` | 7 | 7× | L'ARC MODERNE — comment un réel tient 21 secondes |
 | `knowledge/HIGH-TICKET-2026-10-26.md` | 12 | 6× | HIGH-TICKET — ce que le document « High-Ticket Lead Gen Agency » vaut pour AMK, et où il s |
 | `knowledge/OUTREACH-CAMERON-JEANES-2026-10-26.md` | 8 | 6× | La leçon de Cameron Jeanes — ce qu'un message froid doit demander (26/10/2026) |
+| `knowledge/HOOK-FIRST-2026-10-27.md` | 9 | 5× | L'ACCROCHE D'ABORD — les trois composantes, l'alignement, et le tunnel qui les suit |
 | `knowledge/OUTREACH-SELF-MADE-2026-10-26.md` | 7 | 5× | Les 14 méthodes de Self-Made Web Designer — ce qu'on prend, ce qu'on jette (26/10/2026) |
 | `knowledge/SALES-5-TACTICS-2026-10-26.md` | 12 | 5× | LES CINQ TACTIQUES DE VENTE — ce qui tient dans 25 secondes, ce qui n'y tient pas |
 | `knowledge/AUDIT-LOT-1-HUMANIZER-2026-10-26.md` | 8 | 4× | AUDIT HUMANIZER DU LOT 1 — ce qui sonne écrit, et la seule question qui reste |
-| `knowledge/HOOK-FIRST-2026-10-27.md` | 9 | 4× | L'ACCROCHE D'ABORD — les trois composantes, l'alignement, et le tunnel qui les suit |
 | `knowledge/HUMANIZER-EP01-2026-10-26.md` | 5 | 4× | HUMANIZER SUR EP01 — les tics trouvés dans la v5, et ce qu'on en a fait |
 | `knowledge/MAINTENANCE-CLIENTS-2026-10-22.md` | 11 | 4× | La routine de maintenance clients — quotidien, hebdomadaire, mensuel |
 | `knowledge/ROAST-2026-10-24-PRIX-v2.md` | 8 | 4× | Roast Room — séance du 24/10/2026 · « quel prix pour le socle, et pour l'entretien ? » |
@@ -64,6 +64,7 @@ carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10
 | `knowledge/ROAST-2026-10-26-SCRIPT-EP01.md` | 11 | 3× | Roast Room — séance du 26/10/2026 · « le script d'EP01 est-il bon, ou seulement bien accro |
 | `knowledge/DEUX-TEXTES-RECUS-2026-10-26.md` | 6 | 2× | Deux textes reçus, une seule leçon : ne rien faire admettre (26/10/2026) |
 | `knowledge/HOUSE-KNOWLEDGE-BASE.md` | 16 | 2× | HOUSE KNOWLEDGE BASE — la couche de référence |
+| `knowledge/LEAD-MAGNETS-2026-10-27.md` | 9 | 2× | L'AIMANT ET LA CONVERSION PAR VUE — le tunnel qui transforme des vues en contacts |
 | `knowledge/MARKETING-OPTICAL-2026-10-22.md` | 19 | 2× | Marketing de l'optique — ce que le dépôt sait, au 22/10/2026 |
 | `knowledge/PREUVE-VAGUE-ET-PERMISSION-2026-10-26.md` | 5 | 2× | La preuve vague, et le droit de ne pas construire d'avance (26/10/2026) |
 | `knowledge/VIDEOS-2026-10-23-AUDIT.md` | 10 | 2× | Cinq vidéos, deux images — ce qu'on garde, ce qu'on corrige, ce qu'on jette |
@@ -135,11 +136,11 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 *Le pivot d'une communauté est le document que **les autres membres du groupe** citent le plus (degré interne) — pas le document le plus cité du dépôt, qui l'est partout.*
 
-**601 documents sur 852 sont dans un sujet.** Les 214 autres ne touchent aucune citation — ni entrante, ni sortante : ce sont eux qui se perdent (voir §3 bis). Un sujet se nomme par ses pivots ; un document hors sujet ne se retrouve pas tout seul.
+**603 documents sur 854 sont dans un sujet.** Les 214 autres ne touchent aucune citation — ni entrante, ni sortante : ce sont eux qui se perdent (voir §3 bis). Un sujet se nomme par ses pivots ; un document hors sujet ne se retrouve pas tout seul.
 
 | # | Docs | Les 3 pivots internes | Ce que le groupe a en propre |
 |---|---|---|---|
-| 0 | 558 | `Activity-Log.md` · `AMK-DESIGN-SKILLS.md` · `PRE-FLIGHT.md` | `leads/` (27 % du groupe) |
+| 0 | 560 | `Activity-Log.md` · `AMK-DESIGN-SKILLS.md` · `PRE-FLIGHT.md` | `leads/` (27 % du groupe) |
 | 1 | 20 | `analyst-common.md` · `context-safety.md` · `report.md` | `tools/` (100 % du groupe) |
 | 2 | 5 | `claude-code-tools.md` · `codex-tools.md` · `pi-tools.md` | `tools/` (100 % du groupe) |
 | 3 | 4 | `PHOTOSHOOT-FICHE-1PAGE-2026-10.md` · `DEMO-SCRIPT-2026-10-07.md` · `VISIT-RUNSHEET-2026-10-07.md` | `clients/` (100 % du groupe) |
@@ -149,7 +150,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | 7 | 2 | `etapes-01-PUBLICATION.md` | `clients/` (100 % du groupe) |
 | 8 | 2 | `DESIGN.md` | `design/` (100 % du groupe) |
 
-### Communauté 0 — 558 documents
+### Communauté 0 — 560 documents
 
 - `sales/Activity-Log.md` — cité 200× dans le groupe, 203× au total
 - `AMK-DESIGN-SKILLS.md` — cité 40× dans le groupe, 42× au total
@@ -208,7 +209,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 | Nature | Fichiers | Où |
 |---|---|---|
-| document | 852 | `AGENTS.md`, `AMK-DESIGN-SKILLS.md`, `AMK-SEO-PLAYBOOK.md` |
+| document | 854 | `AGENTS.md`, `AMK-DESIGN-SKILLS.md`, `AMK-SEO-PLAYBOOK.md` |
 | image | 482 | `brand/AMK-logo-mono.png`, `brand/AMK-logo-mono.svg`, `brand/AMK-logo-primary.png` |
 | script | 205 | `brand/build_fb_assets.py`, `clients/dm-optic/launch/facebook-assets/build_cover.py`, `clients/dm-optic/launch/social/build_frame_cards.py` |
 | page | 140 | `brand/AMK-Logo-Kit.html`, `brand/v1-green/AMK-Logo-Kit.html`, `clients/dm-optic/brand/CARTE-SIGNATURE-TABLEAU-VISION.html` |
@@ -224,7 +225,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | sous-titre | 3 | `clients/dm-optic/content/month1/w1/tiktok-01-v2.fr.srt`, `clients/dm-optic/content/month1/w1/tiktok-01.fr.srt`, `clients/dm-optic/content/month1/w2/etapes-01.srt` |
 | archive | 2 | `dmopticsarl-2026-10-21.zip`, `dr-ophtalmo-site-2026-10-27.zip` |
 | style | 1 | `hosting/previews/dr-ophtalmo/css/styles.css` |
-| symboles extraits (titres de documents + fonctions/classes du code) | 11856 | — |
+| symboles extraits (titres de documents + fonctions/classes du code) | 11878 | — |
 
 ### Les outils et skills installés — 1 dossier = 1 outil
 
@@ -274,7 +275,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 | Client | Fichiers | Documents | Brief ? |
 |---|---|---|---|
-| `dm-optic/` | 201 | 91 | oui |
+| `dm-optic/` | 202 | 92 | oui |
 | `dr-ophtalmo/` | 19 | 9 | — |
 | `labiomed/` | 1 | 1 | — |
 | `le-cristallin/` | 2 | 2 | — |

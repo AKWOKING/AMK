@@ -2533,3 +2533,41 @@ amendé en ce sens, daté.
 **Ce qui n'est pas vérifié** : le **profil TikTok** (bio, épinglés, playlists) — aucune capture, alors que
 c'est là que se prend la décision de s'abonner ; les visites de profil (absentes des captures) ; le master
 de la vidéo ; et « un réglage prend 30 secondes », qui doit être confirmé par le cabinet.
+
+## § — 27/10/2026 (tour 194) · laquelle des deux séries se fait sans le docteur — et la réponse est un fichier
+
+**La question de King** : *« IDEA-01 et IDEA-02, laquelle peut être faite sans le docteur, laquelle peut
+être faite sans visage ? »*
+
+**La réponse, en une ligne** : **IDEA-01**, et **IDEA-02 ne peut pas** — pas à cause d'un visage, à cause du
+**décor et du geste**. IDEA-02 vit du comptoir : la monture qui glisse, la pince, le réglage filmé. Retirer
+le cabinet, c'est retirer la preuve ; et « ça se règle en 30 secondes » doit être **montré**, donc fait.
+
+**Donc l'épisode 1 d'IDEA-01 a été produit** — pas décrit :
+
+| Élément | Valeur |
+|---|---|
+| fichier | `clients/dm-optic/content/month1/w3/assets/monture-01-h08.mp4` |
+| format | **14,20 s** · 1080×1920 · 30 fps · H.264 · **1,35 Mo** · **muet** |
+| moteur | `tools/record/make_dmoptic_monture.py` — reproductible en **45 s**, zéro tournage |
+| visages | **aucun** — vérifié sur 6 images de contrôle |
+| matière | la **vraie** photo du cabinet (`monture-h08.webp`) et la **vraie** référence du site : H08 · double pont, aviateur, noir et doré |
+| portique mouvement | **OK** — mouvement dans chaque fenêtre, y compris avec la fenêtre serrée d'**1 s** (0–1 s : max 13,76) |
+| kit de publication | `content/month1/w3/MONTURE-01-KIT.md` — 2 légendes, épinglé, réponse d'accueil, compteur, seuils |
+| couverture | `assets/monture-01-cover.jpg` — accroche dans le carré central de la grille de profil |
+
+**Ce qui a été appris en montant la pièce, et qui vaut pour les suivantes** :
+① un **macro** de monture sur fond blanc casse le cadre (on ne comprend plus l'objet) → le macro ne sert
+qu'**un** plan, sur une zone précise (la double barre) ; ② le **logo** est un carré à fond blanc : sans
+pastille crème autour, il apparaît comme une vignette collée ; ③ le bandeau de texte doit être **opaque**
+au-dessus d'une carte crème, le voile translucide laisse passer le blanc et le texte disparaît ;
+④ le portique à **2 s** ne voit pas les fenêtres molles : c'est à **1 s** qu'on mesure la rétention, et
+c'est cette mesure-là qui a fait retravailler les amplitudes.
+
+**Ce qui manque, et qui se dit** : que la **H08 soit encore au cabinet** cette semaine — le site la publie,
+personne ne l'a confirmée. Si elle est vendue, l'épisode 1 prend la monture suivante : une ligne à changer,
+pas un nouveau tournage. Et IDEA-02 reste la meilleure des deux **pour les commentaires** — elle attend le
+cabinet, pas le docteur.
+
+**Portes** : `audit_video_motion` **OK** (fenêtres 1 s et 2 s) · `audit_post_dm` ✓ (+ avertissement
+`piece-muette`, attendu) · `test_audit_post_dm` **31/31** · `audit_ideas` ✓ · graphe rejoué (**13 778 nœuds**).

@@ -1,0 +1,283 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""DM Optique — « La monture cherche son nom », épisode 1 (H08) — moteur de rendu.
+
+1080×1920 · 30 fps · 14,2 s · **sans visage, sans tournage, sans le médecin**.
+
+Pourquoi cette pièce (27/10/2026, tour 194)
+-------------------------------------------
+King a demandé laquelle des deux séries d'abonnés peut se faire **sans le docteur et sans visage**.
+Réponse : celle-ci, parce que sa matière est **déjà au dépôt** — une photo de monture prise au cabinet
+(`hosting/previews/dmoptic/montures/`), la référence que le site publie déjà (H08 · double pont, aviateur,
+noir et doré), et la carte crème des fiches produit. Aucun être humain n'entre dans le cadre, aucune
+voix n'est nécessaire : la pièce se lit, comme 100 % de nos deux posts mesurés.
+
+Ce que le film fait, dans l'ordre (`content/IDEES-ABONNES-2026-10-27.md`, IDEA-01)
+-------------------------------------------------------------------------------
+0,0–2,2   l'accroche : **ELLE N'A PAS DE NOM**, sur une macro de la double barre — ça bouge dès 0,0 s
+2,2–5,2   la référence existe : **H08 · DOUBLE PONT** — « un aviateur, noir et doré »
+5,2–9,0   les trois mots qui font un nom : **UN QUARTIER · UNE VILLE · UN PRÉNOM**
+9,0–11,5  ce qu'on demande : **ÉCRIVEZ SON NOM** — et demain, elle le porte
+11,5–14,2 le carton : logo, **DEMAIN : LA DEUXIÈME**, WhatsApp 656 122 239
+
+Aucun mouvement n'est figé : chaque plan est une fenêtre qui se déplace dans un master plus grand
+(`crop_window`), et les textes arrivent en glissant. C'est la leçon du 23/10 : sur TikTok, la moitié de
+l'audience part avant **0:02** (`ANALYSE-POST-1` §7).
+
+Usage
+-----
+    python3 tools/record/make_dmoptic_monture.py --out clients/dm-optic/content/month1/w3/assets/monture-01.mp4
+    python3 tools/record/make_dmoptic_monture.py --preview /tmp/monture-preview   # 6 PNG de contrôle
+    python3 tools/record/make_dmoptic_monture.py --cover <chemin.jpg>             # couverture 1080x1920
+
+Portes avant publication : `tools/qa/audit_video_motion.py <fichier>` (aucune fenêtre figée) et
+`tools/qa/audit_post_dm.py <kit>.md <fichier>` (le kit de publication).
+"""
+import argparse
+import os
+import subprocess
+import sys
+
+from PIL import Image, ImageDraw, ImageFilter
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import make_dmoptic_tiktok as base  # noqa: E402  (mêmes masters, mêmes polices, même mouvement)
+
+ROOT = base.ROOT
+SITE = base.SITE
+W, H, FPS = base.W, base.H, base.FPS
+DUR = 14.2
+
+NIGHT, PAPER, EMBER, BRAND, WA, CREAM = base.NIGHT, base.PAPER, base.EMBER, base.BRAND, base.WA, base.CREAM
+F_TITLE, F_HEAD, F_BODY, F_MONO = base.F_TITLE, base.F_HEAD, base.F_BODY, base.F_MONO
+font, ease, crop_window = base.font, base.ease, base.crop_window
+
+PHOTO = "montures/monture-h08.webp"
+
+# Découpage : (début, fin, type de master, zoom, pan, drift)
+#   « card »   = la fiche monture sur la carte crème (plan large)
+#   « macro »  = la monture très agrandie, cadrée sur la double barre
+# Le mouvement des deux premières secondes n'est pas décoratif : sur TikTok, la moitié de l'audience part
+# avant 0:02 (`ANALYSE-POST-1` §7). Les amplitudes ci-dessous sont mesurées par `audit_video_motion.py`
+# avec une fenêtre de **1 s** — la fenêtre où l'on perd, pas la fenêtre confortable de 2 s.
+BEATS = [
+    (0.0, 2.2, "card", 0.22, 0.65, -0.45),
+    (2.2, 5.2, "card", 0.16, -0.55, 0.35),
+    (5.2, 9.0, "macro", 0.14, -0.65, 0.40),
+    (9.0, 11.5, "card", 0.20, 0.55, -0.40),
+    (11.5, DUR, "end", 0.28, 0.0, 0.55),
+]
+
+# Textes à l'écran : (début, fin, lignes, taille, ancrage vertical)
+SUBS = [
+    (0.0, 2.2, ["ELLE N'A PAS", "DE NOM"], 116, 0.695),
+    (2.2, 5.2, ["H08 · DOUBLE PONT"], 84, 0.735),
+    (5.2, 6.5, ["UN QUARTIER"], 116, 0.735),
+    (6.5, 7.8, ["UNE VILLE"], 116, 0.735),
+    (7.8, 9.0, ["UN PRÉNOM"], 116, 0.735),
+    (9.0, 11.5, ["ÉCRIVEZ SON NOM"], 100, 0.735),
+]
+
+
+def macro_master(path, up=1.22, fx=0.5, fy=0.5):
+    """La monture agrandie, **sur son propre fond** (la carte crème des fiches produit).
+
+    Ce n'est pas une retouche : on recadre la photo réelle du cabinet au plus près du produit, et on
+    l'agrandit. Le fond reste **le sien** — le blanc cassé des fiches — parce que changer ce fond serait
+    retoucher le produit, ce que la maison ne fait pas. `fx`/`fy` choisissent la zone que le mouvement
+    traversera (0 = gauche/haut, 1 = droite/bas).
+    """
+    src = Image.open(path).convert("RGB")
+    bgcol = base.sample_bg(src)
+    prod = base.tight_crop(src, bgcol, pad=0.06)
+    cw, ch = int(W * up), int(H * up)
+    canvas = Image.new("RGB", (cw, ch), bgcol)
+    s = max(cw / prod.width, ch / prod.height)
+    pw, ph = max(1, int(prod.width * s)), max(1, int(prod.height * s))
+    prod = prod.resize((pw, ph), Image.LANCZOS).filter(
+        ImageFilter.UnsharpMask(radius=2, percent=55, threshold=2))
+    x0 = int((cw - pw) * fx)
+    y0 = int((ch - ph) * fy)
+    canvas.paste(prod, (x0, y0))
+    return canvas
+
+
+def end_card(t, t0, t1, K=1.22):
+    """Carton final — bleu de marque, logo, la promesse de suite, le numéro. Mouvement continu."""
+    p = (t - t0) / max(0.001, (t1 - t0))
+    CW, CH = int(W * K), int(H * K)
+    img = Image.new("RGB", (CW, CH), NIGHT)
+    cx, cy = CW // 2, int(CH * 0.33)
+    r = int(560 * K + 34 * K * p)
+    halo = Image.new("RGBA", (CW, CH), (0, 0, 0, 0))
+    hd = ImageDraw.Draw(halo)
+    for i in range(8, 0, -1):
+        rr = int(r * i / 8)
+        hd.ellipse((cx - rr, cy - rr, cx + rr, cy + rr), fill=BRAND + (int(9 * (9 - i)),))
+    img = Image.alpha_composite(img.convert("RGBA"), halo.filter(ImageFilter.GaussianBlur(30))).convert("RGB")
+    d = ImageDraw.Draw(img)
+
+    # le logo est un carré à fond blanc : on le pose sur une pastille crème, jamais en carré blanc nu
+    logo = Image.open(os.path.join(SITE, "dm-logo.webp")).convert("RGBA")
+    lw = int(206 * K * (1 + 0.05 * p))
+    logo = logo.resize((lw, int(lw * logo.height / logo.width)), Image.LANCZOS)
+    lx, ly = (CW - logo.width) // 2, int(CH * 0.235)
+    pad = int(16 * K)
+    d = ImageDraw.Draw(img)
+    d.rounded_rectangle((lx - pad, ly - pad, lx + logo.width + pad, ly + logo.height + pad),
+                        radius=int(26 * K), fill=CREAM)
+    img.paste(logo, (lx, ly), logo)
+    d = ImageDraw.Draw(img)
+
+    a = ease(min(1.0, (t - t0) / 0.55))
+    y = int(CH * 0.435)
+    f1 = font(F_HEAD, int(44 * K))
+    d.text(((CW - d.textlength("DEMAIN", font=f1)) / 2, y), "DEMAIN",
+           font=f1, fill=PAPER + (int(235 * a),))
+    f2 = font(F_TITLE, int(96 * K))
+    t2 = "LA DEUXIÈME"
+    d.text(((CW - d.textlength(t2, font=f2)) / 2, y + int(64 * K)), t2,
+           font=f2, fill=(255, 255, 255, int(255 * a)))
+    f3 = font(F_BODY, int(42 * K))
+    t3 = "et c'est vous qui l'aurez nommée"
+    d.text(((CW - d.textlength(t3, font=f3)) / 2, y + int(190 * K)), t3,
+           font=f3, fill=PAPER + (int(200 * a),))
+
+    a2 = ease(min(1.0, (t - t0 - 0.3) / 0.6))
+    py = int(CH * 0.700) + int(14 * K * (1 - a2))
+    fw = font(F_TITLE, int(60 * K))
+    wtxt = "WhatsApp 656 122 239"
+    tw = d.textlength(wtxt, font=fw)
+    padx, pady = int(44 * K), int(28 * K)
+    d.rounded_rectangle(((CW - tw) / 2 - padx, py, (CW + tw) / 2 + padx, py + int(60 * K) + 2 * pady),
+                        radius=int(18 * K), fill=WA + (int(255 * a2),))
+    d.text(((CW - tw) / 2, py + pady), wtxt, font=fw, fill=(255, 255, 255, int(255 * a2)))
+
+    f4 = font(F_BODY, int(36 * K))
+    t4 = "Ndobo Mayor · Immeuble West Hotel, 1er étage"
+    d.text(((CW - d.textlength(t4, font=f4)) / 2, int(CH * 0.855)), t4,
+           font=f4, fill=(190, 200, 216, int(225 * a2)))
+    return img
+
+
+def draw_subs(img, t):
+    """Les textes à l'écran : arrivée en glissant (18 px), filet accent qui grandit, jamais de cadre figé."""
+    for (s0, s1, lines, size, anchor) in SUBS:
+        if not (s0 <= t < s1):
+            continue
+        prog = ease((t - s0) / 0.42)
+        out = 1.0 if t < s1 - 0.22 else max(0.0, (s1 - t) / 0.22)  # sortie douce en fondu
+        layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        d = ImageDraw.Draw(layer)
+        off = int(20 * (1 - prog))
+        alpha = int(255 * prog * out)
+        lh = int(size * 1.1)
+        top = int(H * anchor) + off
+        # bandeau derrière le texte : lisible sur la carte crème comme sur le carton marine
+        block_h = lh * len(lines)
+        pad = int(size * 0.40)
+        d.rectangle((0, top - pad, W, top + block_h + int(pad * 0.35)),
+                    fill=NIGHT + (int(236 * prog * out),))
+        for i, line in enumerate(lines):
+            f = font(F_TITLE, size)
+            tw = d.textlength(line, font=f)
+            d.text(((W - tw) / 2, top + i * lh), line, font=f, fill=(255, 255, 255, alpha))
+        half = int(W * 0.12 * prog)
+        d.rectangle((W // 2 - half, top - int(pad * 0.55), W // 2 + half, top - int(pad * 0.55) + 7),
+                    fill=EMBER + (255,))
+        return Image.alpha_composite(img.convert("RGBA"), layer).convert("RGB")
+    return img
+
+
+def frame(i):
+    t = i / FPS
+    for (b0, b1, kind, zoom, pan, drift) in BEATS:
+        if b0 <= t < b1:
+            p = (t - b0) / (b1 - b0)
+            if kind == "end":
+                big = end_card(t, b0, DUR)
+            else:
+                big = MASTERS[kind]
+            img = crop_window(big, p, zoom, pan, drift)
+            break
+    else:
+        img = Image.new("RGB", (W, H), NIGHT)
+
+    img = draw_subs(img, t)
+    d = ImageDraw.Draw(img)
+    base.draw_band(d, ease(min(1.0, t / 0.45)))
+    return img
+
+
+MASTERS = {}
+
+
+def build_masters():
+    path = os.path.join(SITE, PHOTO)
+    MASTERS["card"] = base.master_product(path, up=1.3)
+    # la double barre est au centre haut de la monture : on parcourt cette zone
+    MASTERS["macro"] = macro_master(path, up=1.22, fx=0.5, fy=0.5)
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--out", default=os.path.join(ROOT, "clients", "dm-optic", "content", "month1",
+                                                 "w3", "assets", "monture-01-h08.mp4"))
+    ap.add_argument("--preview", default=None, help="dossier où écrire 6 PNG de contrôle")
+    ap.add_argument("--cover", default=None, help="chemin d'une couverture 1080x1920 (JPG)")
+    args = ap.parse_args()
+
+    build_masters()
+
+    if args.cover:
+        img = crop_window(MASTERS["card"], 0.55, 0.0, 0.0, 0.0).convert("RGBA")
+        d = ImageDraw.Draw(img)
+        f_top = font(F_MONO, 30)
+        t1 = "DM OPTIQUE · BONABÉRI"
+        d.text(((W - d.textlength(t1, font=f_top)) / 2, 150), t1, font=f_top, fill=(214, 224, 240, 235))
+        y = int(H * 0.655)
+        for line, size, gap in (("Elle n'a pas", 104, 118), ("de nom.", 104, 132),
+                                ("H08 · double pont", 62, 84)):
+            f = font(F_TITLE, size)
+            d.text(((W - d.textlength(line, font=f)) / 2, y), line, font=f, fill=(255, 255, 255, 255))
+            y += gap
+        half = int(W * 0.115)
+        d.rectangle((W // 2 - half, y + 6, W // 2 + half, y + 13), fill=EMBER)
+        f_bot = font(F_BODY, 34)
+        t2 = "Opticien optométriste · WhatsApp 656 122 239"
+        d.text(((W - d.textlength(t2, font=f_bot)) / 2, int(H * 0.935)), t2, font=f_bot,
+               fill=(186, 198, 218, 230))
+        img.convert("RGB").save(args.cover, quality=92, optimize=True)
+        print("cover ->", args.cover)
+        return 0
+
+    if args.preview:
+        os.makedirs(args.preview, exist_ok=True)
+        for t in (0.6, 2.0, 3.8, 6.0, 9.6, 12.6):
+            frame(int(t * FPS)).save(os.path.join(args.preview, "frame-%05.1fs.png" % t))
+        print("preview ->", args.preview)
+        return 0
+
+    ffmpeg = base.imageio_ffmpeg.get_ffmpeg_exe()
+    tmp = args.out + ".silent.mp4"
+    cmd = [ffmpeg, "-y", "-v", "error",
+           "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", "%dx%d" % (W, H),
+           "-r", str(FPS), "-i", "pipe:0",
+           "-an", "-c:v", "libx264", "-preset", "medium", "-crf", "23",
+           "-pix_fmt", "yuv420p", "-movflags", "+faststart", tmp]
+    proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
+    n = int(DUR * FPS)
+    for i in range(n):
+        proc.stdin.write(frame(i).tobytes())
+        if i % 60 == 0:
+            sys.stderr.write("\r%d/%d" % (i, n))
+    proc.stdin.close()
+    proc.wait()
+    sys.stderr.write("\n")
+    os.replace(tmp, args.out)
+    print("ok ->", args.out)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

@@ -6994,3 +6994,26 @@ King ne les a pas données, et une heure inventée vaut moins qu'une heure absen
 - 27/10/2026 · **Ce qui manque** : une capture du **profil TikTok** (bio, épinglés, playlists) — la décision
   de s'abonner se prend là, et on n'en a aucune image. Les visites de profil ne figurent pas dans les
   captures. Rien n'est tourné, rien n'est publié.
+
+## 27/10/2026 (soir, 3) · DM Optique — sans le docteur, sans visage : la réponse est un fichier de 14 s
+
+- 27/10/2026 · **Question de King** : « IDEA-01 et IDEA-02, laquelle peut être faite sans le docteur,
+  laquelle peut être faite sans visage ? » **Réponse** : **IDEA-01** — et **IDEA-02 ne peut pas** : elle vit
+  du comptoir (la monture qui glisse, la pince, le réglage), donc du décor et du geste, pas d'un visage.
+  Le tableau des dépendances est dans `content/IDEES-ABONNES-2026-10-27.md` §8.
+- 27/10/2026 · **Épisode 1 d'IDEA-01 produit** : `clients/dm-optic/content/month1/w3/assets/monture-01-h08.mp4`
+  — **14,20 s**, 1080×1920, 30 fps, H.264, 1,35 Mo, **muet**, **aucun visage**, **aucun tournage**. Moteur
+  reproductible `tools/record/make_dmoptic_monture.py` (45 s de rendu). Matière : la photo réelle du cabinet
+  et la référence que le site publie (H08 · double pont, aviateur, noir et doré).
+- 27/10/2026 · **Portique mouvement** : **OK**, y compris à la fenêtre serrée d'**1 s** — c'est cette mesure
+  qui a fait retravailler le cadrage (un macro de monture sur fond blanc casse le cadre ; le logo a besoin
+  d'une pastille crème ; le bandeau de texte doit être opaque sur la carte crème).
+- 27/10/2026 · **Kit de publication** : `content/month1/w3/MONTURE-01-KIT.md` — accroche sur trois composantes
+  (texte / visuel / **parlé : aucune voix, déclaré**), deux légendes avec **deux liens préremplis différents**,
+  commentaire épinglé, réponse d'accueil, compteur, seuils écrits d'avance. `audit_post_dm` passe ; le refus
+  `hook-desaligne` a été **étendu** : une pièce déclarée **muette** passe avec un avertissement explicite
+  (`piece-muette`), banc **31/31**. Exception `.gitignore` datée : le master entre au dépôt (1,4 Mo) pour
+  être atteignable par un lien.
+- 27/10/2026 · **Ce qui manque** : la **H08 est-elle encore au cabinet** — le site la publie, personne ne l'a
+  confirmée cette semaine. Si elle est vendue, l'épisode 1 prend la monture suivante (une ligne à changer).
+  Rien n'est publié.
