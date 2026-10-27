@@ -208,8 +208,22 @@ recherche appelle *un rythme qu'on peut tenir*, pas une campagne.
 | Itinéraires demandés et appels depuis la fiche | GBP → Performance | l'intention locale |
 | Enregistrements / partages des vidéos | TikTok Studio | l'utilité réelle (le pilier 1) |
 
-**Ce qu'on ne mesure pas** : les likes, les impressions, les abonnés. Ils ne décident de rien.
+**Ce qu'on ne mesure pas** : les likes, les impressions. Ils ne décident de rien.
 **Ce qu'on ne promet pas** : des vues, des abonnés, des patients.
+
+> **Amendement du 27/10/2026 (ruling King).** *« we need followers, if not the carousels of the products
+> or the website will not have much traffic. »* — Les **abonnés** passent de « non mesuré » à
+> **indicateur intermédiaire mesuré**, avec trois limites écrites :
+> ① ce n'est pas un objectif en soi : c'est le **dénominateur** des carrousels et des fiches produit, qui
+> n'ont d'audience que si quelqu'un revient ; ② il se lit en **taux de suivi** (abonnés ÷ vues), jamais en
+> nombre absolu — 90 vues et 0 abonné le 22/10, c'est un taux de **0,0 %**, et c'est ce taux qu'on pilote ;
+> ③ **la promesse ne change pas** : on ne promet ni abonnés, ni vues, ni patients — on mesure et on publie
+> le chiffre mesuré. Détail : `content/IDEES-ABONNES-2026-10-27.md` §1.
+>
+> **Et un fait de plateforme qui borne l'espoir** : au Cameroun, le compte est **personnel** (vérification
+> d'entreprise indisponible), donc **pas de lien cliquable en bio**. Des abonnés produisent des
+> **conversations WhatsApp**, pas du trafic vers le site — le site se gagne par Google et la fiche
+> (`TIKTOK-SEO-CHECKLIST` §A).
 
 ---
 

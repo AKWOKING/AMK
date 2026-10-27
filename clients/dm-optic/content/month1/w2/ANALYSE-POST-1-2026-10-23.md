@@ -5,6 +5,7 @@ Sujet      vidéo n°1 « Ce n'est pas une photo floue » (etapes-01) — Facebo
 Données    relevées le 23/10/2026, ~23 h après publication, captures de King
            Facebook Business Suite · TikTok Studio · fiche Google Business Profile
 Statut     analyse définitive sur ces chiffres ; la vidéo n°2 est une PROPOSITION
+           ⚠ relue le 27/10 : voir le §7 — un TROISIÈME post (31 s, 14:36) existe, et il corrige 3 points
 Règle      aucun chiffre sans source (§1g) ; une capture n'est pas une tendance
 ```
 
@@ -299,3 +300,63 @@ Relevés au même moment, 48 h et 72 h après publication :
 | **Avis Google** | 4 | **≥ 6** — c'est le chiffre qui parle au client |
 
 Aucun de ces seuils ne devient une règle avant d'avoir été lu **deux fois** (deux vidéos, deux relevés).
+
+---
+
+## 7 · 27/10/2026 — la capture manquante : le fichier de **31 s** existe, et il dit autre chose
+
+> Section ajoutée le **27/10** (tour 193), à partir de **quatre captures TikTok Studio** envoyées par King
+> (téléphone, 27/10, 12:49–12:50). Elle **ne remplace pas** les §1 à §6 : elle corrige ce que le relevé du
+> 23/10 ne pouvait pas voir, et elle **résout** le ⚠️ qui était resté ouvert.
+
+**Le ⚠️ du 23/10 disait** : *« les deux relevés TikTok ne parlent pas du même fichier »*. C'est confirmé,
+et l'explication est simple : **ce ne sont pas deux relevés du même post, ce sont deux posts différents.**
+
+| Post TikTok du 22/10 | Heure | Durée | Vues | Likes | Comm. | Partages | Lecture moy. | Complètes | Arrêt |
+|---|---|---|---|---|---|---|---|---|---|
+| **A — celui de ces captures** | **14:36** | **31,02 s** | **90** | **8** | **1** | **1** | **7,0 s** | **5,31 %** | **0:01** |
+| B — relevé du 23/10 | 16:17 | 18,00 s | 80 | 3 | 0 | 0 | 4,7 s | 6,67 % | 0:02 |
+
+**Ce que A dit en plus, et qui n'était nulle part au dépôt :**
+
+| Mesure | Valeur (verbatim de la capture) | Ce que ça change |
+|---|---|---|
+| Nouveaux abonnés | **0** | sur 90 vues, le taux de suivi est de **0,0 %** |
+| Spectateurs au total | **86** (+0 vs la veille) | le post est **arrêté** : plus une vue depuis |
+| Nouveaux / de retour | **94 % / 6 %** | presque personne ne revient |
+| Abonnés / non-abonnés | **0 % / 100 %** | la vidéo ne touche **que** des inconnus |
+| Rétention | **22 %** en moyenne, *« Most viewers stopped watching at 0:01 »* | la falaise est à **une seconde**, pas deux |
+| Likes | pic à **0:00**, **29 %** | l'idée plaît **avant** que la vidéo commence ; c'est la suite qui perd |
+
+**Trois corrections à faire, et elles sont datées :**
+
+1. **« 0 partage sur les deux réseaux »** (écrit au §2 ④ le 23/10) est **faux** pour TikTok : le post A en a
+   **1**. Un partage sur 90 vues, ce n'est pas un moteur — mais ce n'est pas zéro, et un chiffre faux dans
+   un document de travail finit par devenir une règle.
+2. **« la falaise à 0:02 »** était la mesure du fichier de 18 s. Sur le fichier de 31 s, elle est à
+   **0:01**. Le fait central ne change pas, il s'aggrave : **la première seconde décide**, pas la deuxième.
+3. **Le temps de lecture ne se réconcilie pas.** La capture affiche 7,0 s de lecture moyenne **et**
+   13 min 05 s de temps total pour 90 vues — soit **8,7 s par vue**. Les deux chiffres ne parlent donc pas
+   du même dénominateur (vues ou spectateurs, relectures comprises). **Je ne choisis pas une explication** :
+   je retiens le **pourcentage** (22 %), qui est celui que TikTok affiche avec sa phrase, et je laisse le
+   reste comme non résolu.
+
+**Et une chose que cette capture rend visible sans le dire** : le **même film est parti trois fois en deux
+heures** le 22/10 — TikTok 14:36 (31 s), Facebook 15:24 (31 s), TikTok 16:17 (18 s). Aucun des deux posts
+TikTok n'a dépassé **90 vues**. On ne peut pas prouver que la répétition a coupé la distribution ; on peut
+dire qu'elle n'a aidé aucun des deux, et qu'elle rend toute comparaison entre eux **impossible** (même film,
+deux durées, deux heures, deux mesures).
+
+### Ce que ça dit du problème « abonnés », qui est la question de King
+
+**Le compte n'a pas un problème de portée, il a un problème de retour.** 94 % de nouveaux spectateurs,
+100 % de non-abonnés, et **6 %** de revenants : chaque vidéo est un **premier contact**. Une personne qui
+ne revient pas ne s'abonne pas ; et un compte sans abonnés ne peut compter que sur l'algorithme, à chaque
+fois, pour chaque post.
+
+**Ce qui manque n'est pas une meilleure vidéo — c'est une raison de revenir.** Aucune des deux pièces
+publiées ne promet de suite, ne pose de question, ne nomme personne. Le seul CTA est le WhatsApp : il est
+bon pour le cabinet, il est **inutile pour l'audience**. C'est exactement ce que `CONTENT-CREATION` §5
+sexies avait tranché le 23/10 (la série « vous demandez, on répond ») et qui n'a **jamais été tournée**.
+
+→ Les deux propositions qui en découlent : `clients/dm-optic/content/IDEES-ABONNES-2026-10-27.md`.

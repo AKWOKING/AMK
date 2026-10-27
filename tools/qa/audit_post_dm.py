@@ -36,6 +36,10 @@ Ce qu'elle refuse
 - `nom-tardif` · la première ligne de la réponse d'accueil ne nomme pas le cabinet
 - `compteur-absent` · §5 n'a pas ses colonnes de décision
 - `alt-absent` · pas de texte alternatif pour la publication Facebook
+- `abonnement-mendicite` · « abonnez-vous », « likez » — demander un abonné n'en produit pas
+  (doctrine du 27/10, `LEAD-MAGNETS` §2)
+- `serie-sans-boucle` · le kit déclare une **série** et ne promet aucune suite — sans boucle ouverte,
+  une série ne fait pas revenir, donc ne fait pas s'abonner
 
 Ce qu'elle avertit
 ------------------
@@ -69,6 +73,13 @@ HOOK_FIN_MAX = 3.0
 MARQUE = "#dmoptique"
 LOCAL = ("#douala", "#bonaberi", "#bonabéri", "#cameroun", "#cameroon")
 INTERDITS = ("#fyp", "#pourtoi", "#viral", "#follow", "abonnez-vous", "abonnez vous", "likez", "partagez svp")
+# Mendier un abonnement ne donne pas d'abonnement — et ça signale un compte qui cherche des vues
+# (`CONTENT-CREATION` §5 quater, `TIKTOK-SEO-CHECKLIST` §C). Ce qu'on écrit à la place : une raison de
+# revenir, c'est-à-dire une boucle ouverte dont on tient la promesse.
+MENDICITE_ABO = ("abonnez-vous", "abonnez vous", "abonne-toi", "abonne toi", "abonnes-toi",
+                 "follow me", "suivez-moi", "suivez moi", "likez", "mets un like", "mettre un like")
+BOUCLE = ("demain", "la prochaine", "prochain episode", "prochaine video", "episode suivant",
+          "la suite", "rendez-vous demain", "dans l'episode")
 ACTION = ("ecrivez", "envoyez", "passez", "appelez", "cliquez", "contactez", "demandez", "venez")
 PROMESSES = ("garanti", "garantie", "garantis", "promis", "plus de patients", "plus de clients",
              "resultat assure", "vous verrez mieux")
@@ -278,6 +289,25 @@ def audit(chemin: str | Path, master: str | Path | None = None) -> Verdict:
         v.fails.append("[epingle-absent] §2 : pas de commentaire épinglé")
     if "alt" not in _plat(_section(sections, "3")):
         v.fails.append("[alt-absent] §3 : pas de texte alternatif pour la publication Facebook")
+
+    # ② bis · la mécanique d'abonné (doctrine du 27/10, `LEAD-MAGNETS` §2 et §6)
+    for nom, cap in (("tiktok", cap_tt), ("facebook", cap_fb)):
+        plat_cap = _plat(cap)
+        for mot in MENDICITE_ABO:
+            if mot in plat_cap:
+                v.fails.append(
+                    f"[abonnement-mendicite] {nom} : « {mot} » — demander un abonnement ne produit pas "
+                    "d'abonné ; c'est une raison de revenir qui en produit un"
+                )
+                break
+    declare_serie = "serie" in _plat(texte) or "episode" in _plat(texte)
+    if declare_serie:
+        ouvert = any(m in _plat(cap_tt) or m in _plat(cap_fb) or m in _plat(un) for m in BOUCLE)
+        if not ouvert:
+            v.fails.append(
+                "[serie-sans-boucle] le kit déclare une série mais ne promet aucune suite — "
+                "sans boucle ouverte, une série ne fait pas revenir, donc ne fait pas s'abonner"
+            )
 
     # ③ le chemin d'entrée et les horaires
     if not HEURE.search(texte):

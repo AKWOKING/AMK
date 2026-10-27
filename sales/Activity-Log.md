@@ -6962,3 +6962,35 @@ King ne les a pas données, et une heure inventée vaut moins qu'une heure absen
 - 27/10/2026 · **Intégré au graphe** : `build_full_graph.py` rejoué (13 696 nœuds), `ops/REPO-MAP.md`
   réécrit ; doctrine routée depuis `PRE-FLIGHT.md` §1g ; la ligne fausse « visuel > écrit > parlé » de
   `ANALYSE-POST-1` **corrigée et datée** (c'est « écrit > visuel > parlé »).
+
+## 27/10/2026 (soir, 2) · DM Optique — un troisième post retrouvé, et deux séries pour les abonnés
+
+- 27/10/2026 · **Quatre captures TikTok Studio** envoyées par King : elles révèlent un **troisième post** du
+  22/10 — **31,02 s, publié à 14:36**, 90 vues, 8 likes, 1 commentaire, **1 partage**, 7,0 s de lecture
+  moyenne, **22 %** de rétention, **arrêt à 0:01**, **0 abonné**, **100 % de non-abonnés**, 94 % de
+  nouveaux spectateurs. Le relevé du 23/10 ne parlait que du fichier de 18 s (16:17) : le ⚠️ « les deux
+  relevés ne parlent pas du même fichier » est **résolu** — c'étaient **deux posts**, plus un troisième sur
+  Facebook à 15:24. Trois envois du même film en deux heures. Détail et corrections datées :
+  `clients/dm-optic/content/month1/w2/ANALYSE-POST-1-2026-10-23.md` **§7**.
+- 27/10/2026 · **Trois corrections, faites le jour même** : ① « 0 partage sur les deux réseaux » était
+  **faux** (1 partage sur le post de 31 s) ; ② la falaise est à **0:01**, pas 0:02 ; ③ le temps total de
+  lecture (13 min 05 s) ne se réconcilie pas avec la moyenne annoncée (7,0 s) — **laissé non résolu**, sans
+  explication inventée.
+- 27/10/2026 · **La leçon reçue est rangée** : `knowledge/LEAD-MAGNETS-2026-10-27.md` — flux d'activation,
+  les sept types d'aimants, la page, et la seule mesure qui compte (**conversions par vue**). Chez DM, l'
+  aimant est **une monture** (photo envoyée en conversation), l'étage e-mail est **remplacé** par WhatsApp,
+  la page d'atterrissage n'est **pas** construite. Chez AMK, `CONTRÔLE` est déjà l'aimant « document
+  unique » ; il manque le **dénominateur** (les `CONTRÔLE` reçus par vidéo).
+- 27/10/2026 · **Deux idées, et elles étaient déjà écrites** : `content/IDEES-ABONNES-2026-10-27.md` —
+  **« La monture cherche son nom »** (série 5 épisodes, `content-plan-month1` §2b, jamais tournée) et
+  **« Une question, une réponse »** (série validée par King le 23/10, `CONTENT-CREATION` §5 sexies, jamais
+  tournée). Mécanique d'abonné dans les deux cas : **une promesse de suite tenue le lendemain**. Les deux
+  accroches passent **4/4** à `audit_hook` ; `audit_ideas` passe avec trois avertissements conservés.
+- 27/10/2026 · **Garde-fous neufs** dans `tools/qa/audit_post_dm.py` : `abonnement-mendicite` et
+  `serie-sans-boucle` — banc **30/30**. `BRAND-STRATEGY` §11 **amendé** : les abonnés passent de « non
+  mesuré » à **indicateur intermédiaire**, lu en **taux de suivi**, sans changer la promesse (on ne promet
+  ni vues, ni abonnés, ni patients). Borne rappelée : au Cameroun, **pas de lien en bio** — des abonnés
+  produisent des **conversations WhatsApp**, pas du trafic vers le site.
+- 27/10/2026 · **Ce qui manque** : une capture du **profil TikTok** (bio, épinglés, playlists) — la décision
+  de s'abonner se prend là, et on n'en a aucune image. Les visites de profil ne figurent pas dans les
+  captures. Rien n'est tourné, rien n'est publié.

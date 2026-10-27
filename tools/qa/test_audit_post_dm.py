@@ -277,6 +277,37 @@ def _():
     _refus("compteur absent", "[compteur-absent]", kit(table="| Moment | Vues |\n|---|---|\n| J+1 | |\n"))
 
 
+# ── ⑦ la mécanique d'abonné (doctrine du 27/10) ─────────────────────────────────────────────────
+@cas("demander un abonnement est refusé")
+def _():
+    cap = CAP_TT.replace("C'est tout.", "C'est tout. Abonnez-vous pour la suite.")
+    tt = ("Sous-titres manuels. Commentaire épinglé.\n\n```text\n" + cap + "\n```\n")
+    _refus("mendicité d'abonnement", "[abonnement-mendicite]", kit(tt=tt))
+
+
+@cas("une série déclarée sans boucle ouverte est refusée")
+def _():
+    texte = kit().replace("# KIT — test", "# KIT — série « la monture »")
+    _refus("série sans boucle", "[serie-sans-boucle]", texte)
+
+
+@cas("une série qui promet la suite passe")
+def _():
+    texte = kit().replace("# KIT — test", "# KIT — série « la monture »")
+    cap_tt = CAP_TT.replace("C'est tout.", "C'est tout. Demain : la deuxième monture.")
+    tt = ("Sous-titres manuels. Commentaire épinglé.\n\n```text\n" + cap_tt + "\n```\n")
+    v = _audit(kit(tt=tt).replace("# KIT — test", "# KIT — série « la monture »"))
+    assert v.ok, v.fails
+
+
+@cas("un épisode numéroté sans suite promise est refusé")
+def _():
+    # le refus porte sur la série déclarée, pas sur le mot « épisode » employé seul dans un titre
+    cap = CAP_TT.replace("C'est tout.", "C'est tout l'épisode 1.")
+    tt = ("Sous-titres manuels. Commentaire épinglé.\n\n```text\n" + cap + "\n```\n")
+    _refus("épisode sans boucle", "[serie-sans-boucle]", kit(tt=tt))
+
+
 def main() -> int:
     ko = 0
     for nom, fn in CAS:

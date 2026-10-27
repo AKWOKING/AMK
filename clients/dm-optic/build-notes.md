@@ -2484,3 +2484,52 @@ porte au profil du client.
 environnement** (`*.mp4` ignoré) ; les 23,00 s / 4,3 Mo sont ceux du contrôle du **22/10**. Les horaires
 8h30–13h00 viennent du dépôt, **aucune confirmation écrite du cabinet**. Rien n'est publié : la pièce est
 une proposition à valider, comme les précédentes.
+
+---
+
+## § — 27/10/2026 (tour 193) · les abonnés, la capture de 31 s, et deux séries qui n'ont jamais été tournées
+
+**La demande de King** : deux idées pour DM Optique, objectif **abonnés** (« sinon les carrousels produit
+et le site n'auront pas de trafic »), à partir de la recherche, des leçons du dépôt et des analytics TikTok
+du post du 22/10. Et : analyser la leçon reçue (aimant + conversion par vue) et **la ranger**.
+
+**Ce que les quatre captures ont changé** — un **troisième post** existait, et personne ne l'avait vu :
+**31,02 s, publié le 22/10 à 14:36**, 90 vues, 8 likes, 1 commentaire, **1 partage**, 7,0 s de lecture
+moyenne, **22 %** de rétention, **arrêt à 0:01**, 5,31 % vues en entier, **0 abonné**, **100 % de
+non-abonnés**, 94 % de nouveaux spectateurs. Détail : `ANALYSE-POST-1` **§7**, avec trois corrections
+datées (le « 0 partage sur les deux réseaux » était faux ; la falaise est à **0:01**, pas 0:02 ; le temps
+total de lecture ne se réconcilie pas avec la moyenne — laissé non résolu, pas expliqué).
+
+**Ce que l'arithmétique impose** : `abonnés = vues × taux de suivi`. Les vues appartiennent à
+l'algorithme ; le **taux de suivi** est à nous, et il valait **0,0 %** (0 / 90). Deux posts, zéro abonné,
+6 % de revenants : le compte n'a pas un problème de portée, il a un problème de **retour**.
+
+**Les deux idées ne sont pas neuves — elles sont déjà écrites et validées, jamais tournées** :
+
+| Idée | D'où elle vient (déjà au dépôt) | Mécanique d'abonné |
+|---|---|---|
+| **IDEA-01 · « La monture cherche son nom »** | `content-plan-month1` §2b (le nommage, 01/10) | série numérotée + **le nom du suivant choisi par le public** : on s'abonne pour la suite |
+| **IDEA-02 · « Une question, une réponse »** | `CONTENT-CREATION` §5 sexies — validée par King le **23/10** (« oui, on démarre la série ») | **la question de quelqu'un devient la vidéo de demain** |
+
+**Ce qui a été produit** : `content/IDEES-ABONNES-2026-10-27.md` — deux séries complètes (accroche sur
+trois composantes, cinq beats, script, légende, verrous, mesure, seuils de lecture écrits d'avance).
+Les deux accroches passent **4/4** à `audit_hook` ; la porte des idées passe avec **trois avertissements
+qu'on garde** (`original-sans-données`, `preuve-sans-chiffre`, `aucune-idée-validée`) : ce sont deux
+brouillons d'original, pas un résultat de recherche sur outliers — et le dire est la seule façon de ne pas
+se raconter d'histoires.
+
+**La doctrine rangée** : `knowledge/LEAD-MAGNETS-2026-10-27.md` (le flux d'activation, les sept aimants,
+la page, **la conversion par vue**). Ce qui s'applique chez DM : l'aimant **n'est pas un PDF, c'est une
+monture** ; l'étage e-mail est **remplacé** par le fil WhatsApp ; la page d'atterrissage n'est **pas**
+construite (le message prérempli la remplace). Ce qui s'applique chez AMK : `CONTRÔLE` est déjà du type
+« document unique », le moins coûteux — il manque seulement le **dénominateur**.
+
+**Deux garde-fous neufs dans `audit_post_dm.py`** (banc 26 → **30/30**) : `abonnement-mendicite` («
+abonnez-vous » ne produit pas d'abonné) et `serie-sans-boucle` (une série déclarée doit promettre une
+suite). **Borne de plateforme rappelée** : au Cameroun, compte personnel, **pas de lien en bio** — des
+abonnés produisent des **conversations WhatsApp**, pas du trafic vers le site. `BRAND-STRATEGY` §11 est
+amendé en ce sens, daté.
+
+**Ce qui n'est pas vérifié** : le **profil TikTok** (bio, épinglés, playlists) — aucune capture, alors que
+c'est là que se prend la décision de s'abonner ; les visites de profil (absentes des captures) ; le master
+de la vidéo ; et « un réglage prend 30 secondes », qui doit être confirmé par le cabinet.
