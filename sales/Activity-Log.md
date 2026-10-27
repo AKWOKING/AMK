@@ -7068,3 +7068,15 @@ King ne les a pas données, et une heure inventée vaut moins qu'une heure absen
   (**voice-06**), respirations internes ramenées à 0,20 s : **28,37 s / 1,75 Mo** parlée, **27,10 s /
   1,29 Mo** muette. Portes : `audit_story` ✓, `audit_hook` ✓, `audit_video_motion --calme` OK (2,17 s max,
   28 changements), `audit_post_dm` ✓, banc 35/35.
+- 27/10/2026 · **Épisode 1, v7 — le script final de King** (tour 200). Cinq blocs (hook · show the frame
+  · vote · set the rule · follow CTA) et un déroulé image en six plans, appliqués. Gardé mot pour mot : la
+  ligne de vote, la règle (« le surnom le plus cité avant mardi… dans l'épisode 2 »), « Résultat mardi »,
+  « Suivez la page ». Trois corrections argumentées : le hook (la porte `audit_hook` exigeait sujet,
+  action, objectif, contraste), la preuve (40 montures / 40 codes, **prononcée** — sa condition même :
+  on ne montre que ce qu'on dit), et le CTA (« Suivez DM Optique » seul = `abonnement-mendicite` ; sa
+  propre ligne image disait « Résultat mardi — suivez la page », c'est elle qui est gardée, avec la
+  récompense datée). **Aucun essayage, aucune image générée, aucune maquette renommée.** Deux cartons
+  dessinés : `vote_card` (A et B côte à côte, l'un allumé puis l'autre par coupe) et `rule_card`
+  (RÉSULTAT MARDI, LUN/MAR/MER). Rendu **29,53 s** parlé et muet. Portes : `audit_story` ✓,
+  `audit_hook` ✓, `audit_video_motion --calme` OK sur les deux fichiers (2,3 s max, 19 changements),
+  `audit_post_dm` ✓, banc 35/35.

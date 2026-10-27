@@ -1,11 +1,13 @@
 # KIT — « La monture cherche son nom », épisode 1 · H08
 
 ```
-Pièce A      monture-01-h08-voix.mp4 · 28,37 s · 1080×1920 · 30 fps · H.264 + AAC 48 kHz mono
-             1,75 Mo · **parlée** (voice-06, 27/10) — la pièce à publier
-Pièce B      monture-01-h08.mp4 · 27,10 s · 1,29 Mo · **muette** — le même film, même histoire, sans la voix
+Pièce A      monture-01-h08-voix.mp4 · 29,53 s · 1080×1920 · 30 fps · H.264 + AAC 48 kHz mono
+             **parlée** (voice-06, 27/10) — **le script final de King** (tour 200) — la pièce à publier
+Pièce B      monture-01-h08.mp4 · même durée, **muette** — le même film, mêmes coupes, sans la voix
 Mouvement    ✅ **aucun élément de motion design** — images fixes, coupes franches, texte en fondu de
              0,12 s (King, 27/10 : « the images move too much » → voir §9)
+Script       **celui de King** (27/10, tour 200) : hook · show the frame · vote · set the rule · CTA.
+             Ses phrases sont gardées mot pour mot ; trois corrections argumentées au §10
 Images       **les trois que King a demandées** — la monture (macro) · le **catalogue du site** qui défile ·
              une personne portant la H08 (**image générée**, déclarée §8) — **plus** la **fiche H08** au beat 5
 Visage       ⚠ **un visage, et il est généré** — aucun patient, aucune photo du personnel, aucun tournage
@@ -17,10 +19,10 @@ Cadence      **mardi** la vidéo (appel) · **vendredi** le carrousel (5 noms, v
 Script       content/month1/w3/MONTURE-01-SCRIPT.py — 6 beats, rôles, jeu (lu par `audit_story`)
 Rendu par    tools/record/make_dmoptic_monture.py (`--voice-dir` pour la version parlée)
 Portes       audit_story ✓ 6 beats, 0 avertissement · audit_hook ✓ · audit_video_motion **--calme OK**
-             sur les deux fichiers (tenue max 2,2 s · 28 changements) · audit_post_dm ✓ · banc 35/35
+             sur les deux fichiers (tenue max 2,3 s · 19 changements) · audit_post_dm ✓ · banc 35/35
 Amendement   brand/DIRECTION-MARQUE-v2 §12 (27/10) — la monture est **le personnage** de cette série
 Fait le      27/10/2026 — tours 194 (muet), 195 (voix), 196 (histoire + jeu), 197 (vote A/B + cadence),
-             198 (les trois images), 199 (humanizer + roast + film calme)
+             198 (les trois images), 199 (humanizer + roast + film calme), 200 (le script final de King)
 ```
 
 ---
@@ -98,13 +100,14 @@ qui viennent pour un examen de vue, et le mélange s'entend.
 ## 2 · TikTok — 19 h 00 (mardi)
 
 ```text
-Elle n'a pas de nom. Vous choisissez celui qui reste.
+H08, c'est son code, pas un nom.
+Vous choisissez le surnom qui reste.
 
-Sur notre site, il y a quarante montures. Chacune a un code à la place d'un nom. Celle-là, c'est la H08.
-Deux noms sur la table : A, Éclat. B, Minuit. Tapez A ou B. Si vous avez mieux, votre mot.
+Sur notre site, quarante montures comme elle, un code chacune. Regardez ses détails : lequel lui va le
+mieux ? A, Éclat. B, Minuit. Votez A ou B, ou proposez un autre surnom en un seul mot.
 
-Vendredi, les cinq mots les plus dits passent au vote. Mardi, le nom gagne et s'écrit sur sa fiche.
-La suite ? La monture d'après.
+Le surnom le plus cité avant mardi sort dans l'épisode 2, et il s'écrit sur sa fiche. La suite ? La
+monture d'après.
 
 Écrivez-nous : https://wa.me/237656122239?text=Bonjour%2C%20je%20viens%20de%20voir%20la%20monture%20sans%20nom%20sur%20TikTok.%20La%20H08%20est%20au%20cabinet%20%3F
 📍 West Hotel, 1er étage — Ndobo Mayor, Bonabéri · Examen de vue 8h30–13h00, du lundi au samedi
@@ -127,13 +130,14 @@ La suite ? La monture d'après.
 ## 3 · Facebook — 20 h 30 (mardi)
 
 ```text
-Elle n'a pas de nom. Vous choisissez celui qui reste.
+H08, c'est son code, pas un nom.
+Vous choisissez le surnom qui reste.
 
-Sur notre site, il y a quarante montures. Chacune a un code à la place d'un nom. Celle-là, c'est la H08.
-Deux noms sur la table : A, Éclat. B, Minuit. Tapez A ou B. Si vous avez mieux, votre mot.
+Sur notre site, quarante montures comme elle, un code chacune. Regardez ses détails : lequel lui va le
+mieux ? A, Éclat. B, Minuit. Votez A ou B, ou proposez un autre surnom en un seul mot.
 
-Vendredi, les cinq mots les plus dits passent au vote. Mardi, le nom gagne et s'écrit sur sa fiche.
-La suite ? La monture d'après.
+Le surnom le plus cité avant mardi sort dans l'épisode 2, et il s'écrit sur sa fiche. La suite ? La
+monture d'après.
 
 Écrivez-nous : https://wa.me/237656122239?text=Bonjour%2C%20je%20viens%20de%20voir%20la%20monture%20sans%20nom%20sur%20Facebook.%20La%20H08%20est%20au%20cabinet%20%3F
 📍 West Hotel, 1er étage — Ndobo Mayor, Bonabéri · Examen de vue 8h30–13h00, du lundi au samedi
@@ -141,11 +145,11 @@ La suite ? La monture d'après.
 #dmoptique #opticienbonaberi #douala
 ```
 
-- **Alt text** : *« Vidéo de 28 secondes, avec voix. Une monture noire et dorée à double pont, puis la page
-  du catalogue du site qui défile — H02, H04, H05, chacune avec son code —, puis une femme qui porte cette
-  monture (image générée), puis la fiche H08 sur le site. On entend « elle n'a pas de nom, vous choisissez
-  celui qui reste », « quarante montures, toutes avec un code », « Éclat ou Minuit ». À l'écran, les deux
-  noms sont proposés côte à côte, A et B, et le carton final dit « le nom qui gagne, mardi ». »*
+- **Alt text** : *« Vidéo de 29 secondes, avec voix. Une monture noire et dorée à double pont, puis la page
+  du catalogue du site — H02, H04, H05, chacune avec son code —, le carton de vote avec A et B côte à
+  côte, deux cadrages du produit, puis la fiche H08 sur le site. On entend « H08, c'est son code, pas un
+  nom », « quarante montures comme elle, un code chacune », « votez A ou B, ou proposez un autre surnom ».
+  Le carton final dit « A, B ou votre surnom ? » et « résultat mardi ». »*
 - Le texte prérempli **diffère** de TikTok : deux liens, deux provenances.
 - Un seul CTA (**écrire**) ; le vote est la mécanique du jeu, pas un second CTA.
 - **Sondage Facebook** : il ne remplace pas le commentaire, il le **double** (un vote à un clic pour ceux
@@ -319,3 +323,50 @@ corrigés — triade, deux-points, trois « Elle » en ouverture, fragment sans 
 **Roast Room** (séance du 27/10, verdict B : humaniser + calmer, garder la structure). Les deux documents
 sont au dépôt : `knowledge/HUMANIZER-MONTURE-01-2026-10-27.md` et
 `knowledge/ROAST-2026-10-27-MONTURE-01.md`.
+
+---
+
+## 10 · Le script final — celui de King, et les trois choses qui ont bougé
+
+King, 27/10 (tour 200), a livré **son** script : cinq blocs (hook · show the frame · vote · set the rule ·
+follow CTA) et un déroulé image en six plans. Il est appliqué **tel quel** là où il pouvait l'être. Voici ce
+qui a changé, avec la raison, et ce que ça coûte.
+
+| Sa ligne | Ce qui est au film | Pourquoi |
+|---|---|---|
+| « H08, c'est son code. Son surnom : Éclat ou Minuit ? » | « **H08, c'est son code, pas un nom. Vous choisissez le surnom qui reste.** » | la porte `audit_hook` refuse sa forme : il manque **sujet, action, objectif, contraste** (4 mots obligatoires). La version gardée est la sienne + un mot de contraste, et elle ajoute **qui décide** |
+| « Regardez bien ses détails. Lequel lui va le mieux ? » | « Regardez ses détails. **Quarante montures comme elle, un code chacune.** » | `audit_story` refuse une pièce qui **montre** une preuve sans la **prononcer** (`preuve-muette`) : 40 montures / 40 codes est le fait vérifiable du film, il est dit **et** montré |
+| « Votez A, B, ou proposez un autre surnom en un seul mot. » | **gardé mot pour mot** | rien à redire : c'est précis, court, et ça donne la règle du jeu en une phrase |
+| « Le surnom le plus cité avant mardi sera révélé dans l'épisode 2. » | **gardé**, avec un carton `RÉSULTAT MARDI` + les trois jours | sa phrase pilote le carton de règle ; le calendrier rend la date lisible sans lire |
+| « Suivez DM Optique pour découvrir lequel l'emporte. » | « **Suivez DM Optique : mardi, vous voyez quel surnom gagne.** » | ⚠ **désaccord assumé** : « suivez » seul est refusé par notre porte (`abonnement-mendicite` — demander un abonné n'en produit pas). Sa **propre** ligne image disait « Résultat mardi — Suivez la page » : c'est elle qui est gardée, avec la **récompense datée**. Si King veut sa formulation exacte, c'est une ligne à changer dans `PLAN` et un clip à refaire |
+| « Flash 2–3 real catalogue items and their codes… **use this only if the spoken line about 40 distinct frames is accurate** » | 3 cartes réelles (H02, H04, H05, H07) **+ la phrase prononcée** | sa condition est remplie **parce qu'on a ajouté la phrase**. Sans elle, on ne montrait rien qu'on ne dise |
+| « Use a staff try-on **only if you already have an approved, accurate image** » | **aucun essayage** | nous n'avons pas cette image. Le plan 15–19 s reste sur la **photo réelle** du produit et le carton de règle |
+| « Avoid implying it has already been renamed » | la fiche H08 est montrée **telle qu'elle est** (elle s'appelle toujours H08), avec le carton « et il reste sur sa fiche » | aucune maquette, aucun faux renommage |
+
+**Le minutage.** Ses blocs étaient écrits en secondes (0–3, 3–7, 7–11, 11–16, 16–20). Chez `voice-06`, la
+même voix parle plus lentement : le film réel fait **29,53 s**, et ses cinq blocs tombent à 0–4,8 · 4,8–11,4
+· 11,4–15,6 · 15,6–19,8 · 19,8–24,3 · 24,3–29,5. **L'ordre et le texte sont les siens ; les durées sont
+mesurées**, pas décrétées — c'est la règle de la maison depuis le tour 195 (`HOOK-FIRST` §7 bis).
+
+**Ce que le film montre, plan par plan**
+
+| # | Temps | Image | Carton |
+|---|---|---|---|
+| 1 | 0,00–2,40 | la monture sur sa carte crème | **H08 — C'EST SON CODE** |
+| 2 | 2,40–4,80 | **la carte H02 du catalogue**, code sous la photo | **ÉCLAT OU MINUIT ?** |
+| 3 | 5,08–7,06 | détail serré : le double pont | REGARDEZ SES DÉTAILS |
+| 4 | 7,06–9,03 | détail plus large : la branche dorée | 40 MONTURES · 40 CODES |
+| 5 | 9,03–11,45 | la page du catalogue (H04, H05, H07) | 40 MONTURES · 40 CODES |
+| 6 | 11,73–13,69 | carton de vote, **A allumé** | A · ÉCLAT / B · MINUIT |
+| 7 | 13,69–15,64 | même carton, **B allumé** — une coupe, pas une animation | idem |
+| 8 | 15,92–18,32 | carton de règle : **RÉSULTAT MARDI**, LUN/MAR/MER | — |
+| 9 | 18,32–19,79 | la monture, cadrage large | — |
+| 10 | 20,07–22,18 | fiche H08, haut (elle s'appelle **toujours** H08) | ET IL RESTE SUR SA FICHE |
+| 11 | 22,18–24,30 | fiche H08, plus bas | idem |
+| 12 | 24,58–26,08 | la monture | **SUIVEZ LA PAGE** |
+| 13 | 26,08–27,10 | la monture, cadrage large | — |
+| 14 | 27,10–29,53 | carton final | **A, B OU VOTRE SURNOM ?** · RÉSULTAT MARDI |
+
+**Aucune image générée dans ce film.** Le visage du tour 198 (kit §8) n'est plus utilisé : le script de King
+ne le demande pas et son déroulé image dit « stay with the real product photo ». L'exception reste écrite,
+elle n'est simplement plus exercée.

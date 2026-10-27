@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 """DM Optique — « La monture cherche son nom », épisode 1 (H08) — moteur de rendu.
 
-1080×1920 · 30 fps · **deux rendus** : muet (27,10 s) et parlé (28,37 s) · **film calme** (aucun
-motion design, tour 199) · **sans tournage, sans le médecin** — et, depuis le tour 198, avec **une seule image générée** (un visage portant la monture),
+1080×1920 · 30 fps · **deux rendus** : muet et parlé (29,53 s) · **film calme** (aucun motion design,
+tour 199) · **script final de King** (tour 200) · **sans tournage, sans le médecin** — et, depuis le tour 198, avec **une seule image générée** (un visage portant la monture),
 déclarée au kit §8.
 
 Pourquoi cette pièce (27/10/2026, tour 194)
@@ -106,39 +106,42 @@ PHOTO = "montures/monture-h08.webp"
 # une macro de monture donne une fenêtre **figée** à 9-10 s (`audit_video_motion --window 1`) — le gate est
 # bloquant, et il a raison : à l'écran, plus rien ne bouge pendant que la voix parle.
 PLAN = [
-    # b1 · LE CONSTAT. Deux images fixes, coupe à 42 % du beat : le cadre ne bouge pas, c'est la
-    # coupe qui fait le mouvement (King, 27/10 : « the images move too much »).
+    # ── LE SCRIPT DE KING (27/10, tour 200) — six beats, ses phrases, ses cartons ────────────────
+    # b1 · 0–4,8 s · HOOK : « H08, c'est son code, pas un nom. Vous choisissez le surnom qui reste. »
+    # La deuxième image n'est pas décorative : c'est le **catalogue du site**, où des montures portent
+    # « H04 · Double pont doré », « H05 · … ». « C'est son code » se vérifie à l'écran. On ne dit
+    # **aucun nombre** : King a lui-même posé la condition (« use this only if the spoken line about
+    # 40 distinct frames is accurate ») et la ligne prononcée ne le dit pas.
     dict(clip="b1",
-         shots=[(0.42, "card", 0.10, 0.0, -0.15), (1.00, "macro", 0.0, 0.0, 0.0)],
-         subs=[(0.00, 0.52, ["ELLE N'A PAS", "DE NOM"], 100, 0.695),
-               (0.52, 1.00, ["VOUS CHOISISSEZ", "CELUI QUI RESTE"], 84, 0.690)]),
-    # b2 · LA PREUVE. Deux fenêtres fixes dans la page du catalogue — les codes changent de cut en
-    # cut, la page ne défile plus.
+         shots=[(0.50, "card", 0.10, 0.0, -0.15), (1.00, "page", 0.0, 0.30, 0.30)],
+         subs=[(0.00, 0.55, ["H08", "C'EST SON CODE"], 100, 0.690),
+               (0.55, 1.00, ["ÉCLAT OU MINUIT ?"], 92, 0.698)]),
+    # b2 · SHOW THE FRAME (King, 3–7 s) : « deux ou trois angles du même modèle, avec des coupes
+    # rapides ». Trois cadrages du même produit, aucune image d'emprunt, aucune image générée.
     dict(clip="b2",
-         shots=[(0.33, "page", 0.0, 0.22, 0.22), (0.66, "page", 0.0, 0.45, 0.45),
-                (1.00, "page", 0.0, 0.70, 0.70)],
-         subs=[(0.00, 0.50, ["40 MONTURES"], 110, 0.700),
-               (0.50, 1.00, ["UN CODE,", "PAS UN NOM"], 96, 0.690)]),
-    # b3 · LE CODE, PUIS LES DEUX NOMS (à l'écran ensemble : un vote ne montre jamais une seule option).
+         shots=[(0.34, "macro", 0.30, 0.0, -0.10), (0.62, "macro", 0.08, 0.0, 0.0),
+                (1.00, "page", 0.0, 0.30, 0.30)],
+         subs=[(0.00, 0.42, ["REGARDEZ", "SES DÉTAILS"], 94, 0.695),
+               (0.42, 1.00, ["40 MONTURES", "40 CODES"], 92, 0.690)]),
+    # b3 · VOTE : la monture reste **entière** pendant qu'on décide (King : « keep the frame visible
+    # while people decide ») — deux cadrages pleins, jamais la charnière seule.
     dict(clip="b3",
-         shots=[(0.30, "card", 0.30, 0.0, -0.25), (0.62, "macro", 0.0, 0.0, 0.0),
-                (1.00, "card", 0.10, 0.0, 0.0)],
-         subs=[(0.00, 0.30, ["H08"], 124, 0.700),
-               (0.30, 1.00, ["A · ÉCLAT", "B · MINUIT"], 88, 0.680)]),
-    # b4 · LE REHOOK : on coupe d'un visage serré à un visage large. Aucun zoom, deux cadrages.
+         shots=[(0.50, "vote", 0.0, 0.0, 0.0), (1.00, "vote", 0.0, 0.0, 1.0)],
+         subs=[]),
+    # b4 · SET THE RULE : le produit réel, aucun essayage (King : « only if you already have an
+    # approved, accurate image » — nous n'en avons pas).
     dict(clip="b4",
-         shots=[(0.55, "visage", 0.14, -0.05, 0.05), (1.00, "visage", 0.0, 0.0, 0.15)],
-         subs=[(0.00, 0.55, ["DEMAIN, QUELQU'UN", "LA PORTERA"], 84, 0.700),
-               (0.55, 1.00, ["ELLE MÉRITE", "MIEUX QUE H08"], 94, 0.700)]),
-    # b5 · L'ENJEU QUI RESTE : la fiche, deux cadrages fixes de la même page.
+         shots=[(0.62, "rule", 0.0, 0.0, 0.0), (1.00, "card", 0.24, 0.0, -0.15)],
+         subs=[]),
+    # b5 · CE QUI RESTE : la vraie fiche, sans laisser croire qu'elle est déjà renommée.
     dict(clip="b5",
-         shots=[(0.55, "fiche", 0.0, 0.0, 0.0), (1.00, "fiche", 0.0, 0.28, 0.28)],
-         subs=[(0.00, 1.00, ["LE NOM RESTE", "SUR SA FICHE"], 94, 0.700)]),
-    # b6 · LA SORTIE : la monture, puis le carton final — fixes, tous les deux.
+         shots=[(0.50, "fiche", 0.0, 0.0, 0.0), (1.00, "fiche", 0.0, 0.28, 0.28)],
+         subs=[(0.00, 1.00, ["ET IL RESTE", "SUR SA FICHE"], 94, 0.695)]),
+    # b6 · CTA : « Suivez la page », puis le carton final.
     dict(clip="b6",
-         shots=[(0.35, "card", 0.30, 0.10, -0.10), (0.62, "card", 0.10, 0.0, 0.0),
+         shots=[(0.30, "card", 0.30, 0.10, -0.10), (0.60, "card", 0.10, 0.0, 0.0),
                 (1.00, "end", 0.0, 0.0, 0.0)],
-         subs=[(0.00, 0.38, ["A OU B", "OU VOTRE MOT"], 96, 0.700)]),
+         subs=[(0.00, 0.42, ["SUIVEZ", "LA PAGE"], 100, 0.695)]),
 ]
 TAIL = 0.9          # queue de respiration après le dernier mot : le carton final se lit
 GAP = 0.28          # respiration entre deux beats (silence, pas de coupe sèche)
@@ -196,14 +199,14 @@ def end_card(t, t0, t1, K=1.22):
     a = ease(min(1.0, (t - t0) / 0.55))
     y = int(CH * 0.435)
     f1 = font(F_HEAD, int(36 * K))
-    d.text(((CW - d.textlength("MARDI, DANS LA VIDÉO SUIVANTE", font=f1)) / 2, y), "MARDI, DANS LA VIDÉO SUIVANTE",
+    d.text(((CW - d.textlength("RÉSULTAT MARDI", font=f1)) / 2, y), "RÉSULTAT MARDI",
            font=f1, fill=PAPER + (int(235 * a),))
-    f2 = font(F_TITLE, int(84 * K))
-    t2 = "LE NOM QUI GAGNE"
+    f2 = font(F_TITLE, int(72 * K))
+    t2 = "A, B OU VOTRE SURNOM ?"
     d.text(((CW - d.textlength(t2, font=f2)) / 2, y + int(60 * K)), t2,
            font=f2, fill=(255, 255, 255, int(255 * a)))
     f3 = font(F_BODY, int(40 * K))
-    t3 = "s'écrit sur sa fiche, sur notre site"
+    t3 = "Le plus cité s'écrit sur sa fiche"
     d.text(((CW - d.textlength(t3, font=f3)) / 2, y + int(190 * K)), t3,
            font=f3, fill=PAPER + (int(200 * a),))
 
@@ -291,6 +294,67 @@ def timeline(durations, gap=GAP):
     return DUR
 
 
+
+def _panel(canvas, box, radius, fill):
+    layer = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
+    ImageDraw.Draw(layer).rounded_rectangle(box, radius=radius, fill=fill)
+    return Image.alpha_composite(canvas.convert("RGBA"), layer).convert("RGB")
+
+
+def vote_card(choix="A"):
+    """LE CARTON DE VOTE — la monture en haut, A et B côte à côte en bas.
+
+    C'est le seul plan du film où le spectateur doit **faire quelque chose** : les deux choix sont donc
+    écrits en gros, encadrés, au même niveau, et la monture reste **entière** au-dessus (King : « keep
+    the frame visible while people decide »). Un vote où l'on ne voit qu'une option n'est pas un vote.
+    """
+    canvas = Image.new("RGB", (W, H), NIGHT)
+    prod = still_crop(MASTERS["card"], 0.0, 0.0, -0.10).crop((140, 380, 940, 1420))
+    canvas.paste(prod.resize((760, 988), Image.LANCZOS), ((W - 760) // 2, 96))
+    d = ImageDraw.Draw(canvas)
+    fa = font(F_TITLE, 58)
+    opts = ((64, 528, "A · ÉCLAT", PAPER, NIGHT), (552, 1016, "B · MINUIT", EMBER, (255, 255, 255)))
+    if choix == "B":                       # même carton, l'autre option allumée — une coupe, pas un effet
+        opts = (opts[0][:3] + (EMBER, (255, 255, 255)),) + (opts[1][:3] + (PAPER, NIGHT),)
+    for (x0, x1, txt, bg, fg) in opts:
+        canvas = _panel(canvas, (x0, 1090, x1, 1200), 18, bg + (255,))
+        d = ImageDraw.Draw(canvas)
+        d.text(((x0 + x1 - d.textlength(txt, font=fa)) / 2, 1112), txt, font=fa, fill=fg)
+    fb = font(F_BODY, 42)
+    t = "ou votre mot, en un seul"
+    d.text(((W - d.textlength(t, font=fb)) / 2, 1232), t, font=fb, fill=(214, 224, 240))
+    return canvas
+
+
+def rule_card():
+    """LE CARTON DE RÈGLE — quand, et où. Aucune image de produit : c'est une date, pas une vitrine."""
+    canvas = Image.new("RGB", (W, H), NIGHT)
+    d = ImageDraw.Draw(canvas)
+    d.rectangle((0, 0, W, 12), fill=EMBER)
+    f1 = font(F_HEAD, 44)
+    t1 = "LE SURNOM LE PLUS CITÉ"
+    d.text(((W - d.textlength(t1, font=f1)) / 2, 470), t1, font=f1, fill=(190, 200, 216))
+    f2 = font(F_TITLE, 132)
+    for i, (txt, col) in enumerate(((("RÉSULTAT", (255, 255, 255)), ("MARDI", EMBER)))):
+        d.text(((W - d.textlength(txt, font=f2)) / 2, 540 + i * 150), txt, font=f2, fill=col)
+    # trois jours, un seul allumé : la date se lit sans être lue
+    f3 = font(F_MONO, 34)
+    jours = ("LUN", "MAR", "MER")
+    bw, gap = 150, 26
+    x0 = (W - (3 * bw + 2 * gap)) / 2
+    for i, j in enumerate(jours):
+        on = (j == "MAR")
+        box = (x0 + i * (bw + gap), 900, x0 + i * (bw + gap) + bw, 990)
+        canvas = _panel(canvas, box, 14, (EMBER + (255,)) if on else (255, 255, 255, 26))
+        d = ImageDraw.Draw(canvas)
+        d.text((box[0] + (bw - d.textlength(j, font=f3)) / 2, 926), j, font=f3,
+               fill=(255, 255, 255) if on else (150, 162, 182))
+    f4 = font(F_BODY, 40)
+    t4 = "dans l'épisode 2 · ici même"
+    d.text(((W - d.textlength(t4, font=f4)) / 2, 1040), t4, font=f4, fill=(200, 210, 226))
+    return canvas
+
+
 STILLS = {}         # cache des images fixes (mode calme) : un plan = une image, calculée une fois
 
 
@@ -312,6 +376,10 @@ def still(kind, zoom, pan, drift):
         return STILLS[key]
     if kind == "end":
         img = still_crop(end_card(DUR, 0.0, DUR), 0.0, 0.0, 0.0)
+    elif kind == "vote":
+        img = vote_card("B" if drift > 0.5 else "A")
+    elif kind == "rule":
+        img = rule_card()
     elif kind == "page":
         f = (pan + drift) / 2.0                     # le milieu du défilement prévu
         img = page_window(MASTERS["page"], 0.5, f, f, 0.0)
@@ -326,30 +394,37 @@ def still(kind, zoom, pan, drift):
 
 def frame(i):
     t = i / FPS
+    image_plan = None
     for (b0, b1, kind, zoom, pan, drift) in BEATS:
         if b0 <= t < b1:
-            if CALME:
-                img = still(kind, zoom, pan, drift)
-            else:
-                p = (t - b0) / (b1 - b0)
-                if kind == "end":
-                    big = end_card(t, b0, DUR)
-                elif kind == "page":
-                    # `pan` = fraction de départ dans la page, `drift` = fraction d'arrivée
-                    img = page_window(MASTERS["page"], p, pan, drift, zoom)
-                    big = None
-                elif kind == "fiche":
-                    img = fiche_card(p, pan, drift, zoom)
-                    big = None
-                else:
-                    big = MASTERS[kind]
-                if big is not None:
-                    img = crop_window(big, p, zoom, pan, drift)
+            image_plan = (kind, zoom, pan, drift, 0.0)
             break
+        if b0 <= t:
+            # dernier plan déjà commencé : c'est lui qu'on tient pendant les respirations
+            image_plan = (kind, zoom, pan, drift, 1.0)
+    if image_plan is not None and CALME:
+        kind, zoom, pan, drift, _ = image_plan
+        img = still(kind, zoom, pan, drift)
+    elif image_plan is not None:
+        kind, zoom, pan, drift, fini = image_plan
+        p = 1.0 if fini else (t - b0) / (b1 - b0)
+        if kind == "end":
+            big = end_card(t, b0, DUR)
+        elif kind == "page":
+            # `pan` = fraction de départ dans la page, `drift` = fraction d'arrivée
+            img = page_window(MASTERS["page"], p, pan, drift, zoom)
+            big = None
+        elif kind == "fiche":
+            img = fiche_card(p, pan, drift, zoom)
+            big = None
+        else:
+            big = MASTERS[kind]
+        if big is not None:
+            img = crop_window(big, p, zoom, pan, drift)
     else:
         img = Image.new("RGB", (W, H), NIGHT)
 
-    if t < 0.45 and not CALME:
+    if t < 0.45 and not CALME and image_plan is not None and not image_plan[4]:
         k = 1.10 - 0.10 * ease(t / 0.45)
         w2, h2 = int(W * k), int(H * k)
         img = img.resize((w2, h2), Image.LANCZOS)
@@ -417,7 +492,7 @@ def fiche_card(p, y0f, y1f, zoom=0.0):
     début à la fin du plan, et la lente poussée du carton ajoute un mouvement qui ne dépend pas du
     défilement. La page, elle, défile **dans** le carton — c'est toujours la vraie page du site.
     """
-    CW, CH = 648, 1152                      # même rapport que le cadre (0,5625) : la page reste droite
+    CW, CH = 610, 1084                      # même rapport que le cadre (0,5625) : la page reste droite
     inner = page_window(MASTERS["fiche"], p, y0f, y1f, zoom)
     k = 1.0 if CALME else 1.0 + 0.070 * (0.55 * ease(p) + 0.45 * p)
     cw, ch = int(CW * k), int(CH * k)
@@ -431,7 +506,7 @@ def fiche_card(p, y0f, y1f, zoom=0.0):
     card = Image.composite(card, Image.new("RGB", (cw, ch), NIGHT), fade)
     canvas = Image.new("RGB", (W, H), NIGHT)
     q = 0.0 if CALME else 0.55 * ease(p) + 0.45 * p
-    x, y = (W - cw) // 2 + int(16 * (0.5 - q)), 146 - int((ch - CH) / 2) - int(20 * q)
+    x, y = (W - cw) // 2 + int(16 * (0.5 - q)), 116 - int((ch - CH) / 2) - int(20 * q)
     # ombre portée douce : le carton se détache du fond sans contour dur
     sh = Image.new("L", (W, H), 0)
     ImageDraw.Draw(sh).rounded_rectangle((x - 6, y + 10, x + cw + 6, y + ch + 14), radius=30, fill=90)
@@ -511,7 +586,10 @@ def main():
               + f"  →  film {total:.2f} s")
     else:
         # version muette : durées de repli, un carton ne tient jamais plus de 1,8 s
-        repli = {"b1": 3.9, "b2": 4.8, "b3": 5.9, "b4": 3.9, "b5": 3.4, "b6": 2.9}
+        # durée de repli = **les durées mesurées** de la voix de référence (voice-06, 27/10) : le
+        # montage muet garde les mêmes coupes, donc le même rythme. Une image ne tient jamais plus de
+        # 2,4 s, même sans voix.
+        repli = {"b1": 4.80, "b2": 6.37, "b3": 3.91, "b4": 3.87, "b5": 4.23, "b6": 4.05}
         timeline(repli) if not args.no_voice else timeline(repli)
 
     if args.cover:
@@ -521,7 +599,7 @@ def main():
         t1 = "DM OPTIQUE · BONABÉRI"
         d.text(((W - d.textlength(t1, font=f_top)) / 2, 150), t1, font=f_top, fill=(214, 224, 240, 235))
         y = int(H * 0.655)
-        for line, size, gap in (("Elle n'a pas", 104, 118), ("de nom.", 104, 132),
+        for line, size, gap in (("H08, c'est", 96, 108), ("son code.", 96, 124),
                                 ("Éclat ou Minuit ?", 58, 84)):
             f = font(F_TITLE, size)
             d.text(((W - d.textlength(line, font=f)) / 2, y), line, font=f, fill=(255, 255, 255, 255))

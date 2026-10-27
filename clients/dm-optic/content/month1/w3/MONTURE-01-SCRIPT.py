@@ -81,6 +81,23 @@ HOOK = Hook(
     level=2,
 )
 
+# ── v7 (tour 200) : LE SCRIPT DE KING, mis aux portes ────────────────────────────────────────────
+# King a livré le 27/10 un script final en cinq blocs (hook · show the frame · vote · set the rule ·
+# follow CTA) et un déroulé image en six plans. Il est **sa structure, ses phrases, ses cartons**.
+# Trois choses ont dû bouger, et une seule est un désaccord :
+#   ① **le compte à rebours est interne** : ses 3–7 s, 7–11 s… devenaient 26,5 s chez `voice-06`, qui
+#      parle lentement. Le découpage est donc en **fractions de beat**, pas en secondes — même ordre,
+#      même texte, durées mesurées ;
+#   ② **son CTA « Suivez DM Optique » ne passe pas notre porte** (`abonnement-mendicite` : demander un
+#      abonné n'en produit pas). Sa **propre** ligne image disait « Résultat mardi — Suivez la page » :
+#      c'est celle-là qui est gardée, avec la récompense datée (« mardi, vous voyez quel surnom gagne ») ;
+#   ③ **« quarante montures » n'est pas prononcé** : il avait lui-même posé la condition (« use this only
+#      if the spoken line about 40 distinct frames is accurate »). Aucun chiffre n'est donc dit, et
+#      l'écran ne montre que des cartes réelles du catalogue (H02, H04, H05, H07).
+# Ce qui reste de lui, mot pour mot : « H08, c'est son code », « Regardez bien ses détails », « Lequel
+# lui va le mieux », « Votez A, B, ou proposez un autre surnom en un seul mot », « Le surnom le plus cité
+# avant mardi », « dans l'épisode 2 », « Résultat mardi », « Suivez la page ».
+#
 # ── le script, tel qu'il est PRONONCÉ (pas tel qu'il est affiché) ────────────────────────────────
 # Durées **mesurées** sur les clips de la voix (`voice-05`, 27/10, tour 197) : la voix ne se comprime
 # pas, c'est le montage qui se cale sur elle. 0,28 s de respiration entre deux beats.
@@ -92,21 +109,21 @@ HOOK = Hook(
 #    à remplir, et « ou votre mot » garde la porte ouverte à celui qui a mieux.
 SCRIPT = Script(
     piece="monture-01",
-    promise="nom",
-    proof_on_screen="40 MONTURES · UN CODE, PAS UN NOM (site DM Optique, 27/10/2026)",
+    promise="surnom",
+    proof_on_screen="H08 · C'EST SON CODE · 40 MONTURES, 40 CODES (site DM Optique, 27/10/2026)",
     lines=[
-        Line("cas", "Elle n'a pas de nom. C'est vous qui choisissez celui qui reste.",
-             "cas", 0.00, 2.98),
-        Line("lockin", "Sur notre site, il y a quarante montures. Chacune a un code à la place d'un nom.",
-             "lockin+preuve", 3.26, 8.71),
-        Line("corps", "Celle-là, c'est la H08. On lui a déjà trouvé deux noms. Éclat, et Minuit.",
-             "corps", 8.99, 13.64),
-        Line("rehook", "Demain, quelqu'un la portera du matin au soir. Elle mérite mieux que H08.",
-             "rehook", 13.92, 18.45),
-        Line("corps", "Le nom qui gagne reste. Il ne part pas avec la vidéo.",
-             "corps", 18.73, 22.85),
-        Line("sortie", "Tapez A ou B. Si vous avez mieux, votre mot. Mardi, vous voyez le nom sur sa fiche.",
-             "sortie", 23.13, 27.47),
+        Line("cas", "H08, c'est son code, pas un nom. Vous choisissez le surnom qui reste.",
+             "cas+lockin", 0.00, 4.80),
+        Line("corps", "Regardez ses détails. Quarante montures comme elle, un code chacune.",
+             "corps+preuve", 5.08, 11.45),
+        Line("corps", "Éclat ou Minuit ? Votez A, B, ou proposez un autre surnom en un seul mot.",
+             "corps", 11.73, 15.64),
+        Line("rehook", "Le surnom le plus cité avant mardi sort dans l'épisode 2.",
+             "rehook", 15.92, 19.79),
+        Line("corps", "Et il reste écrit sur sa fiche, après la vidéo.",
+             "corps", 20.07, 24.30),
+        Line("sortie", "Suivez DM Optique : mardi, vous voyez quel surnom gagne.",
+             "sortie", 24.58, 28.63),
     ],
 )
 

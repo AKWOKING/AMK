@@ -2743,3 +2743,33 @@ révocable, pas une exception tacite.
 **Toujours non vérifié** : la H08 est-elle encore au cabinet · les horaires · la cadence suppose que King
 publie mardi et vendredi · **on n'a jamais mesuré** si un film calme retient mieux qu'un film animé chez
 nous — la première publication le dira.
+
+### Tour 200 — 27/10/2026 · le script final de King, appliqué
+
+| | |
+|---|---|
+| demande | King : « final script » — cinq blocs (hook · show the frame · vote · set the rule · follow CTA) + un déroulé image en six plans |
+| ce qui est gardé **mot pour mot** | « Votez A, B, ou proposez un autre surnom en un seul mot. » · « Le surnom le plus cité avant mardi… dans l'épisode 2. » · « Résultat mardi » · « Suivez la page » |
+| ce qui bouge | le hook (4 mots obligatoires de la porte manquaient) · la preuve (ajoutée : 40 montures, 40 codes, dite **et** montrée) · le CTA (« Suivez DM Optique » seul = `abonnement-mendicite` → « Suivez DM Optique : mardi, vous voyez quel surnom gagne ») |
+| ce qui n'est pas fait | **aucun essayage** (King lui-même : « only if you already have an approved, accurate image ») · **aucune image générée** · aucune maquette de la fiche renommée |
+| image | mêmes règles que le tour 199 (calme, coupes franches) + **deux cartons dessinés** : `vote_card()` (A et B côte à côte, l'un allumé puis l'autre) et `rule_card()` (RÉSULTAT MARDI, LUN/MAR/MER) |
+| rendu | parlée **29,53 s** · muette **29,53 s** (mêmes coupes, durées de repli = durées mesurées) |
+| portes | `audit_story` ✓ · `audit_hook` ✓ · `audit_video_motion --calme` **OK** sur les deux fichiers (tenue max 2,3 s · 19 changements) · `audit_post_dm` ✓ · banc 35/35 |
+
+**Ce que le tour a appris** :
+① **sa condition était la bonne** : « use this only if the spoken line about 40 distinct frames is
+accurate » — la réponse n'était pas de retirer la ligne, c'était de **prononcer** la preuve pour avoir le
+droit de la montrer ;
+② **un « suivez » seul ne passe pas notre porte**, mais sa propre ligne image disait « Résultat mardi —
+Suivez la page » : quand le script et le déroulé image se contredisent, c'est le déroulé image qui portait
+la récompense. On garde la version qui **donne une raison datée** ;
+③ **un carton de vote doit se lire en une seconde** : A et B côte à côte, encadrés, l'un allumé puis
+l'autre **par coupe** — pas par animation (le film est calme) ;
+④ **le silence entre deux beats était une couture visible** : le carton passait au noir 0,28 s. L'image du
+dernier plan tient désormais pendant la respiration (`frame()` garde le plan précédent) ;
+⑤ **les durées de la version muette doivent être celles de la voix** : laissées aux valeurs de repli, une
+image tenait 3,2 s et `--calme` bloquait. Une version muette n'est pas une version sans montage.
+
+**Toujours non vérifié** : la H08 est-elle encore au cabinet · les horaires · la cadence suppose que King
+publie mardi et vendredi.
+
