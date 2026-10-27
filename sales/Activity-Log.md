@@ -7046,3 +7046,15 @@ King ne les a pas données, et une heure inventée vaut moins qu'une heure absen
   parlée / **27,3 s** muette. **Amendement** `DIRECTION-MARQUE-v2` §12 : la monture est le personnage de
   cette série, et « quarante montures » est autorisé à l'écran (le §10.5 le refusait). Cadence écrite dans
   `posting-calendar.md` ; « Pourquoi on revient » recule au 06/11.
+- 27/10/2026 · **Épisode 1, v5 — les trois images** (tour 198). King : « en plus du script et ce qui
+  apparaît sur l'écran, je veux que tu ajoutes des images », avec trois beats nommés. Trois inserts
+  ajoutés au film, **deux sur de la matière réelle** : la **page du catalogue** du site qui défile (H02,
+  H04, H05 — le « toutes s'appellent par un code » devient visible au lieu d'être affirmé) et la **fiche
+  H08** posée dans le cadre. Le troisième est le **visage** : une personne portant la monture, en **image
+  générée** — l'exception que King a accordée, écrite au kit §8 (un plan, une approximation de la H08,
+  révocable, remplaçable par une vraie photo en une commande). Rendu **27,30 s / 4,35 Mo** parlée,
+  **27,10 s / 3,91 Mo** muette ; la voix n'a pas été refaite. **Portes** : `audit_story` ✓,
+  `audit_video_motion` **OK** aux fenêtres 1 s **et** 2 s sur les deux fichiers, `audit_post_dm` ✓, banc
+  35/35. Deux choses apprises et écrites : une capture pleine page contient un **raccord** à couper
+  (8 190 px / 2 225 px), et un défilement en `ease` pur **s'arrête** en fin de plan — corrigé en
+  55 % ease + 45 % linéaire.

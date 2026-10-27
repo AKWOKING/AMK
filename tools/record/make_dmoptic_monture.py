@@ -2,8 +2,9 @@
 # -*- coding: utf-8 -*-
 """DM Optique — « La monture cherche son nom », épisode 1 (H08) — moteur de rendu.
 
-1080×1920 · 30 fps · **deux rendus** : muet (14,20 s) et parlé (19,87 s) · **sans visage, sans tournage,
-sans le médecin**.
+1080×1920 · 30 fps · **deux rendus** : muet (27,10 s) et parlé (27,30 s) · **sans tournage, sans le
+médecin** — et, depuis le tour 198, avec **une seule image générée** (un visage portant la monture),
+déclarée au kit §8.
 
 Pourquoi cette pièce (27/10/2026, tour 194)
 -------------------------------------------
@@ -38,6 +39,20 @@ Un beat long se découpe **toujours** en 2–3 plans (`shots`) : un carton uniqu
 La première seconde a deux mouvements à elle seule — une poussée de 0,45 s et les deux lignes du carton
 qui arrivent à 0,22 s d'intervalle : c'est la seule fenêtre où le pouce hésite encore.
 
+Tour 198 : les trois images (King, 27/10 : « en plus du script et ce qui apparaît à l'écran, ajoute des images »)
+---------------------------------------------------------------------------------------------------------
+Trois inserts, un par beat nommé, et **de la matière réelle** partout où c'est possible :
+
+| beat | ce qu'on voit | d'où ça vient |
+|---|---|---|
+| b2 « quarante montures, toutes avec un code » | **la page du catalogue hommes**, qui défile | capture Chromium du vrai site (`tools/video/capture.mjs --mode full`) |
+| b4 « elle ira sur un visage » | une personne portant la H08 | **image générée** (`generate_image`, référence = la photo du cabinet) — l'exception demandée par King |
+| b5 « le nom… s'écrit sur sa page » | **la fiche H08** du site, posée dans le cadre | même capture, `fiche_card()` |
+
+Les deux captures sont **coupées avant le raccord** que produit la capture pleine page (le haut de la page
+réapparaît une seconde fois) : catalogue 0→8 150 px, fiche 0→2 200 px. Sans cette coupe, le plan montre une
+page qui bégaie.
+
 Aucun mouvement n'est figé : chaque plan est une fenêtre qui se déplace dans un master plus grand
 (`crop_window`), et les textes arrivent en glissant. C'est la leçon du 23/10 : sur TikTok, la moitié de
 l'audience part avant **0:02** (`ANALYSE-POST-1` §7).
@@ -57,7 +72,7 @@ import os
 import subprocess
 import sys
 
-from PIL import Image, ImageDraw, ImageFilter
+from PIL import Image, ImageChops, ImageDraw, ImageFilter
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import make_dmoptic_tiktok as base  # noqa: E402  (mêmes masters, mêmes polices, même mouvement)
@@ -91,27 +106,31 @@ PLAN = [
                 (1.00, "macro", 0.28, 0.65, -0.45)],
          subs=[(0.00, 0.50, ["ELLE N'A PAS", "DE NOM"], 100, 0.695),
                (0.50, 1.00, ["VOUS CHOISISSEZ"], 88, 0.700)]),
-    # b2 · 4,76 s — LA PREUVE, prononcée : « quarante ».
+    # b2 · la PREUVE, et elle est **montrée** : le catalogue réel du site, qui défile. Les codes
+    # (H01, H02, H04) sont lisibles à l'écran au moment où la voix dit « toutes s'appellent par un code ».
     dict(clip="b2",
-         shots=[(0.48, "card", 0.26, -0.60, 0.40), (1.00, "macro", 0.28, 0.60, -0.50)],
+         shots=[(1.00, "page", 0.12, 0.30, 0.64)],
          subs=[(0.00, 0.50, ["40 MONTURES"], 110, 0.700),
                (0.50, 1.00, ["40 CODES"], 110, 0.700)]),
     # b3 · 5,88 s — LE CODE, PUIS LES DEUX NOMS. Trois plans pour un beat long.
     dict(clip="b3",
-         shots=[(0.32, "card", 0.28, 0.70, -0.45), (0.64, "macro", 0.26, -0.65, 0.50),
-                (1.00, "card", 0.24, 0.60, -0.40)],
+         shots=[(0.32, "card", 0.40, 0.80, -0.55), (0.64, "macro", 0.30, -0.55, 0.55),
+                (1.00, "card", 0.34, 0.70, -0.50)],
          # les deux noms restent à l'écran **ensemble** : un vote où l'on ne voit qu'une option
          # à la fois n'est pas un vote, c'est une devinette.
          subs=[(0.00, 0.34, ["H08"], 124, 0.700),
                (0.34, 1.00, ["A · ÉCLAT", "B · MINUIT"], 88, 0.680)]),
-    # b4 · 3,85 s — LE REHOOK : ce n'est plus un objet, c'est un visage.
+    # b4 · LE REHOOK : ce n'est plus un objet, c'est un visage. Image **générée** — exception
+    # demandée par King le 27/10, déclarée au kit (§7) : ce n'est pas un patient, pas un portrait
+    # du cabinet, et la monture y est une **approximation** du H08 (lunettes à double pont, noir et doré).
     dict(clip="b4",
-         shots=[(0.50, "macro", 0.28, -0.60, 0.50), (1.00, "card", 0.26, 0.60, -0.45)],
+         shots=[(1.00, "visage", 0.24, 0.10, 0.40)],
          subs=[(0.00, 0.55, ["SUR UN VISAGE", "TOUS LES JOURS"], 86, 0.700),
                (0.55, 1.00, ["ELLE MÉRITE", "MIEUX"], 104, 0.700)]),
-    # b5 · 3,39 s — L'ENJEU QUI RESTE.
+    # b5 · L'ENJEU QUI RESTE — et il est **montré** : la fiche réelle de la H08, celle où le nom
+    # s'écrira. Le mouvement descend de l'en-tête vers le titre de la fiche.
     dict(clip="b5",
-         shots=[(0.55, "card", 0.28, 0.55, -0.40), (1.00, "macro", 0.30, -0.60, 0.50)],
+         shots=[(1.00, "fiche", 0.02, 0.0, 0.10)],
          subs=[(0.00, 1.00, ["LE NOM RESTE", "SUR SA PAGE"], 94, 0.700)]),
     # b6 · 2,89 s + queue — LA SORTIE : A, B, ou un mot. Puis le carton.
     dict(clip="b6",
@@ -181,7 +200,7 @@ def end_card(t, t0, t1, K=1.22):
     d.text(((CW - d.textlength(t2, font=f2)) / 2, y + int(60 * K)), t2,
            font=f2, fill=(255, 255, 255, int(255 * a)))
     f3 = font(F_BODY, int(40 * K))
-    t3 = "écrit sur sa page, sur notre site"
+    t3 = "s'écrit sur sa page, sur notre site"
     d.text(((CW - d.textlength(t3, font=f3)) / 2, y + int(190 * K)), t3,
            font=f3, fill=PAPER + (int(200 * a),))
 
@@ -219,7 +238,7 @@ def draw_subs(img, t):
         block_h = lh * len(lines)
         pad = int(size * 0.40)
         d.rectangle((0, top - pad, W, top + block_h + int(pad * 0.35)),
-                    fill=NIGHT + (int(236 * prog * out),))
+                    fill=NIGHT + (int(248 * prog * out),))
         for i, line in enumerate(lines):
             # chaque ligne arrive avec 0,22 s de retard sur la précédente : deux mouvements au lieu d'un
             decal = min(1.0, max(0.0, (t - s0 - 0.22 * i) / 0.42))
@@ -272,9 +291,17 @@ def frame(i):
             p = (t - b0) / (b1 - b0)
             if kind == "end":
                 big = end_card(t, b0, DUR)
+            elif kind == "page":
+                # `pan` = fraction de départ dans la page, `drift` = fraction d'arrivée
+                img = page_window(MASTERS["page"], p, pan, drift, zoom)
+                big = None
+            elif kind == "fiche":
+                img = fiche_card(p, pan, drift, zoom)
+                big = None
             else:
                 big = MASTERS[kind]
-            img = crop_window(big, p, zoom, pan, drift)
+            if big is not None:
+                img = crop_window(big, p, zoom, pan, drift)
             break
     else:
         img = Image.new("RGB", (W, H), NIGHT)
@@ -294,11 +321,83 @@ def frame(i):
 MASTERS = {}
 
 
+ASSETS = os.path.join(ROOT, "clients", "dm-optic", "content", "month1", "w3", "assets")
+
+
 def build_masters():
     path = os.path.join(SITE, PHOTO)
     MASTERS["card"] = base.master_product(path, up=1.3)
     # la double barre est au centre haut de la monture : on parcourt cette zone
     MASTERS["macro"] = macro_master(path, up=1.22, fx=0.5, fy=0.5)
+    # ── la page RÉELLE du catalogue (capture Chromium, 1080×10830) : c'est elle qui prouve le
+    #    « toutes s'appellent par un code ». Aucune maquette, aucune reconstruction.
+    cat = Image.open(os.path.join(ASSETS, "catalogue-hommes.jpg")).convert("RGB")
+    MASTERS["page"] = cat.crop((0, 0, cat.width, 8150))   # 0→8 150 px : avant le raccord de capture
+    # ── la fiche H08, capture pleine page : c'est là que le nom gagne s'écrira.
+    fic = Image.open(os.path.join(ASSETS, "fiche-h08.jpg")).convert("RGB")
+    MASTERS["fiche"] = fic.crop((0, 0, fic.width, 2200))   # 0→2 200 px : avant le raccord de capture
+    # ── le visage : image générée (exception demandée par King, 27/10), cadrée plus large que le
+    #    cadre pour que le mouvement ait de la matière.
+    vis = Image.open(os.path.join(ASSETS, "visage-h08.jpg")).convert("RGB")
+    up = 1.34
+    s_ = max(W * up / vis.width, H * up / vis.height)
+    vis = vis.resize((int(vis.width * s_), int(vis.height * s_)), Image.LANCZOS)
+    x0 = max(0, (vis.width - int(W * up)) // 2)
+    y0 = max(0, (vis.height - int(H * up)) // 2)
+    MASTERS["visage"] = vis.crop((int(x0), y0, int(x0 + W * up), int(y0 + H * up)))
+
+
+def page_window(big, p, y0f, y1f, zoom=0.0):
+    """Défilement vertical d'une page réelle : la fenêtre 1080×1920 descend dans la capture.
+
+    `p` est la progression du beat ; `y0f`/`y1f` les deux **fractions** de la page traversées.
+    L'interpolation passe par `ease` : une page qui démarre et s'arrête en douceur, jamais un
+    défilement linéaire — c'est la différence entre une capture d'écran et un plan.
+    """
+    # 55 % d'ease + 45 % de linéaire : une page qui ralentit en fin de plan s'arrête, et un plan qui
+    # s'arrête est un plan figé (le gate 1 s l'a mesuré à 22–23 s sur la version précédente).
+    e = 0.55 * ease(p) + 0.45 * p
+    # le zoom réduit la fenêtre : le bas du cadre se rapproche, comme un léger travelling avant
+    k = 1.0 + zoom * e
+    cw, ch = int(W / k), int(H / k)
+    x0 = (big.width - cw) // 2
+    ay = max(0, big.height - ch)
+    y0 = int(ay * (y0f + (y1f - y0f) * e))
+    return big.crop((x0, y0, x0 + cw, y0 + ch)).resize((W, H), Image.LANCZOS)
+
+
+def fiche_card(p, y0f, y1f, zoom=0.0):
+    """La fiche H08 **dans le cadre** : une page tenue à la main, pas une capture plein écran.
+
+    Trois raisons de la poser ainsi plutôt qu'en plein cadre : le bandeau de texte tombe alors sur
+    le fond marine (jamais sur le bouton vert de la page), le titre de la fiche reste lisible du
+    début à la fin du plan, et la lente poussée du carton ajoute un mouvement qui ne dépend pas du
+    défilement. La page, elle, défile **dans** le carton — c'est toujours la vraie page du site.
+    """
+    CW, CH = 648, 1152                      # même rapport que le cadre (0,5625) : la page reste droite
+    inner = page_window(MASTERS["fiche"], p, y0f, y1f, zoom)
+    k = 1.0 + 0.070 * (0.55 * ease(p) + 0.45 * p)               # poussée avant : 8,5 % sur toute la durée du plan
+    cw, ch = int(CW * k), int(CH * k)
+    card = inner.resize((cw, ch), Image.LANCZOS)
+    # le bas du carton se fond dans le marine : la page ne s'arrête pas sur une ligne coupée
+    fade = Image.new("L", (cw, ch), 0)
+    fd = ImageDraw.Draw(fade)
+    for i in range(170):
+        fd.rectangle((0, ch - 170 + i, cw, ch - 170 + i + 1), fill=int(255 * (i / 170) ** 1.5))
+    fade = ImageChops.invert(fade)
+    card = Image.composite(card, Image.new("RGB", (cw, ch), NIGHT), fade)
+    canvas = Image.new("RGB", (W, H), NIGHT)
+    q = 0.55 * ease(p) + 0.45 * p          # le carton glisse aussi : un objet posé qui respire
+    x, y = (W - cw) // 2 + int(16 * (0.5 - q)), 146 - int((ch - CH) / 2) - int(20 * q)
+    # ombre portée douce : le carton se détache du fond sans contour dur
+    sh = Image.new("L", (W, H), 0)
+    ImageDraw.Draw(sh).rounded_rectangle((x - 6, y + 10, x + cw + 6, y + ch + 14), radius=30, fill=90)
+    sh = sh.filter(ImageFilter.GaussianBlur(18))
+    canvas = Image.composite(Image.new("RGB", (W, H), (0, 0, 0)), canvas, sh)
+    mask = Image.new("L", (cw, ch), 0)
+    ImageDraw.Draw(mask).rounded_rectangle((0, 0, cw - 1, ch - 1), radius=26, fill=255)
+    canvas.paste(card, (x, y), mask)
+    return canvas
 
 
 NETS = {}           # clip -> fichier nettoyé (silences de tête et de queue retirés)

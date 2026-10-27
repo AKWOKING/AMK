@@ -2679,3 +2679,34 @@ ne le dise. C'est écrit maintenant (§12), daté, borné, révocable.
 
 **Toujours non vérifié** : la H08 est-elle encore au cabinet · les horaires · **la cadence suppose que
 King publie mardi et vendredi** — « mardi » est écrit sur le carton final.
+
+### Tour 198 — 27/10/2026 · les trois images du film
+
+| | |
+|---|---|
+| demande | King : *« en plus du script et ce qui apparaît sur l'écran, je veux que tu ajoutes des images »* — un insert par beat nommé |
+| b2 · la preuve **montrée** | `assets/catalogue-hommes.jpg` — capture Chromium du **vrai** catalogue hommes (1080×10 696) : H02, H04, H05 lisibles, chacune avec son code |
+| b4 · le rehook **incarné** | `assets/visage-h08.jpg` — **image générée** (référence : la photo du cabinet), l'exception accordée par King, bornée et déclarée au kit §8 |
+| b5 · la page où le nom s'écrit | `assets/fiche-h08.jpg` — capture de la **vraie** fiche H08, posée dans le cadre (`fiche_card()`), bas fondu |
+| rendu | parlée **27,30 s / 4,35 Mo** · muette **27,10 s / 3,91 Mo** · la voix n'a pas été refaite (mêmes six clips) |
+| portes | `audit_story` ✓ · `audit_video_motion` **OK** 1 s **et** 2 s, sur les deux fichiers · `audit_post_dm` ✓ · banc 35/35 |
+
+**Ce que le tour a appris** :
+① **une capture pleine page n'est pas une image** : Chromium y laisse un **raccord** — le haut de la page
+réapparaît à 8 190 px (catalogue) et 2 225 px (fiche). Il a fallu **mesurer** ce raccord pour le couper ;
+sans ça, le plan montrait une page qui bégaie, et personne ne l'aurait vu avant publication ;
+② **la même image ne marche pas deux fois** : le catalogue passe en plein cadre (le mur des codes), la
+fiche doit être **posée dans le cadre** — en plein écran, le bandeau de texte tombait sur le bouton vert
+de la page. Deux plans, deux traitements, une seule règle : le texte ne marche jamais sur un bouton ;
+③ **le gate 1 s attrape l'immobilité qu'on ne voit pas** : `page_window` en `ease` pur s'arrêtait en fin de
+plan (fenêtre **22–23 s figée**, mesurée). Corrigé par un mélange **55 % ease + 45 % linéaire** — une page
+qui ralentit s'arrête, une page qui glisse ne s'arrête pas ;
+④ **`--mode scroll` est un piège** sur une page longue : la durée du rush est imposée par la hauteur
+(4 455 px ÷ 700 px/s → 7,4 s). La bonne matière, c'est **une** capture pleine page + un défilement
+programmatique. Les 368 images de rushes ont été jetées ;
+⑤ **l'exception d'image générée doit être écrite, pas seulement utilisée** : elle est au kit §8, avec sa
+portée exacte (un plan, une approximation de monture, révocable). Une exception tacite devient une règle
+en trois épisodes.
+
+**Toujours non vérifié** : la H08 est-elle encore au cabinet · les horaires · la cadence suppose que King
+publie mardi et vendredi · **on n'a pas mesuré** qu'un insert de page web retienne mieux qu'une macro.

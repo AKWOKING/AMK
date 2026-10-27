@@ -2,9 +2,11 @@
 
 ```
 Pièce A      monture-01-h08-voix.mp4 · 27,30 s · 1080×1920 · 30 fps · H.264 + AAC 48 kHz mono
-             3,19 Mo · **parlée** (voice-05) — la pièce à publier
-Pièce B      monture-01-h08.mp4 · 27,3 s · 2,74 Mo · **muette** — le même film, même histoire, sans la voix
-Sans visage  ✅ aucun être humain dans le cadre — aucune photo du personnel, aucun patient
+             4,35 Mo · **parlée** (voice-05) — la pièce à publier
+Pièce B      monture-01-h08.mp4 · 27,10 s · 3,91 Mo · **muette** — le même film, même histoire, sans la voix
+Images       **les trois que King a demandées** — la monture (macro) · le **catalogue du site** qui défile ·
+             une personne portant la H08 (**image générée**, déclarée §8) — **plus** la **fiche H08** au beat 5
+Visage       ⚠ **un visage, et il est généré** — aucun patient, aucune photo du personnel, aucun tournage
 Sans tournage ✅ aucune caméra : la monture est une photo **réelle** du cabinet, déjà au dépôt
 Sans le docteur ✅ rien à demander au cabinet pour produire ce fichier
 Histoire     sur notre site, **40 montures, 40 codes** — aucune n'a de nom propre
@@ -15,7 +17,8 @@ Rendu par    tools/record/make_dmoptic_monture.py (`--voice-dir` pour la version
 Portes       audit_story ✓ 6 beats, 0 avertissement · audit_hook ✓ · audit_video_motion **OK** aux
              fenêtres 1 s **et** 2 s · audit_post_dm ✓ · test_audit_post_dm 35/35
 Amendement   brand/DIRECTION-MARQUE-v2 §12 (27/10) — la monture est **le personnage** de cette série
-Fait le      27/10/2026 — tours 194 (muet), 195 (voix), 196 (histoire + jeu), 197 (vote A/B + cadence)
+Fait le      27/10/2026 — tours 194 (muet), 195 (voix), 196 (histoire + jeu), 197 (vote A/B + cadence),
+             198 (les trois images)
 ```
 
 ---
@@ -136,10 +139,11 @@ sur sa page. La suite, c'est la monture d'après, jusqu'à la quarantième.
 #dmoptique #opticienbonaberi #douala
 ```
 
-- **Alt text** : *« Vidéo de 27 secondes, avec voix : une monture noire et dorée à double pont, posée sur la
-  carte crème de sa fiche. On entend « elle n'a pas de nom, vous choisissez celui qui reste », puis
-  « quarante montures, toutes avec un code », puis « Éclat ou Minuit ». À l'écran, les deux noms sont
-  proposés côte à côte, A et B, et le carton final dit « le nom qui gagne, mardi ». »*
+- **Alt text** : *« Vidéo de 27 secondes, avec voix. Une monture noire et dorée à double pont, puis la page
+  du catalogue du site qui défile — H02, H04, H05, chacune avec son code —, puis une femme qui porte cette
+  monture (image générée), puis la fiche H08 sur le site. On entend « elle n'a pas de nom, vous choisissez
+  celui qui reste », « quarante montures, toutes avec un code », « Éclat ou Minuit ». À l'écran, les deux
+  noms sont proposés côte à côte, A et B, et le carton final dit « le nom qui gagne, mardi ». »*
 - Le texte prérempli **diffère** de TikTok : deux liens, deux provenances.
 - Un seul CTA (**écrire**) ; le vote est la mécanique du jeu, pas un second CTA.
 - **Sondage Facebook** : il ne remplace pas le commentaire, il le **double** (un vote à un clic pour ceux
@@ -201,17 +205,19 @@ Moins de **10 votes** (A + B + mots) → le vote n'intéresse pas : on change la
 |---|---|
 | `tools/qa/audit_story.py` | **✓** — 6 beats, 0 avertissement : cas → lock-in+preuve → corps → **rehook** → corps → sortie · débit **~3 mots/s** · preuve à **16 %** de la pièce |
 | `tools/qa/audit_hook.py` | **✓** — « Elle n'a pas de nom. Vous choisissez celui qui reste. » 10 mots, **53 caractères** ⚠ `sans-intrigue` + `niveau-1` assumés (comme sur toutes les variantes testées) |
-| `tools/qa/audit_video_motion.py` | **OK** aux **deux** fenêtres — 1 s : 0–1 s max **20,29**, **8 coupes** ; 2 s : mouvement dans chaque fenêtre |
+| `tools/qa/audit_video_motion.py` | **OK** aux **deux** fenêtres, sur les **deux** fichiers — 1 s : 0–1 s max **20,30**, **8 coupes**, aucune fenêtre figée ; 2 s : mouvement dans chaque fenêtre |
 | `tools/qa/audit_post_dm.py` | **✓** sans avertissement — première ligne **53 caractères**, deux nombres communs entre le texte et la voix (**8** pour H08, **40** pour quarante) |
 | Audio mesuré | premier bloc **0,0 s** · dernier **26,3 s** · RMS médian **−21,7 dB** · six blocs (3,92 · 4,88 · 6,02 · 3,86 · 3,43 · 2,89 s) + **0,9 s** de queue pour lire le carton final |
-| Visages · IA · prix · marque · promesse | **aucun** — cinq verrous tenus |
+| Visages · IA · prix · marque · promesse | **un visage, et il est généré** — les quatre autres verrous tenus ; l'image est déclarée au kit §8, pas au spectateur sous un faux air de photo du cabinet |
 
 ---
 
 ## 7 · Ce qui est vérifié, et ce qui ne l'est pas
 
 **Vérifié** (ffprobe + PCM + images de contrôle, 27/10) : parlée **27,30 s** · H.264 + AAC 48 kHz mono ·
-**3,19 Mo** · muette **27,3 s** · **2,74 Mo** · mouvement OK aux deux fenêtres · aucun visage.
+**4,35 Mo** · muette **27,10 s** · **3,91 Mo** · mouvement OK aux deux fenêtres sur les deux fichiers ·
+**un visage, généré** (voir §8) · les deux captures de site sont **coupées avant le raccord** de la capture
+pleine page.
 
 **Vérifié pour l'histoire** : **40 fiches en ligne** (10 enfants + 24 femmes + 6 hommes, comptées dans
 `hosting/previews/dmoptic/montures/`) · chaque fiche s'appelle par son code (`H08 · Double pont aviateur
@@ -230,3 +236,45 @@ une instruction de King du 27/10, écrite, datée, bornée à cette série — e
   public peut les battre avec un mot — c'est la règle, elle est écrite dans l'épinglé.
 - **Rien ne prouve qu'un vote à une lettre produise plus de commentaires** qu'une demande libre chez nous :
   nous n'avons jamais publié de jeu. Le seuil de 10 votes est une **cible**, pas une prévision.
+
+---
+
+## 8 · Les images — et l'exception qu'elles demandent
+
+King, 27/10 (tour 198) : *« en plus du script et ce qui apparaît sur l'écran, je veux que tu ajoutes des
+images »*, avec trois beats nommés. La règle de la maison était simple : **aucune image générée**. Elle est
+levée **une fois, pour un seul plan**, et voici ce que ça coûte et ce que ça ne coûte pas.
+
+| Beat | Ce qu'on voit | D'où ça vient | Fichier |
+|---|---|---|---|
+| 1 · « elle n'a pas de nom » | la monture, macro sur le double pont | photo **réelle** du cabinet, déjà publiée sur le site | `hosting/previews/dmoptic/montures/monture-h08.webp` |
+| 2 · « quarante montures, toutes avec un code » | la page **Montures hommes** qui défile ; H02, H04, H05 lisibles | capture Chromium du **vrai site** (27/10/2026), 1080×10 696 | `assets/catalogue-hommes.jpg` (764 Ko) |
+| 4 · « elle ira sur un visage » | une femme portant une double pont noire et dorée | **image générée** (référence : la photo du cabinet) | `assets/visage-h08.jpg` (174 Ko, 768×1376) |
+| 5 · « le nom… s'écrit sur sa page » | la **fiche H08**, posée dans le cadre, qui défile | capture Chromium de la **vraie fiche** (27/10/2026) | `assets/fiche-h08.jpg` (493 Ko, 1080×8 000) |
+
+**Ce que l'exception couvre, et rien de plus.** Le visage du beat 4 n'est pas un patient, ce n'est pas un
+membre du cabinet, et il ne porte pas *exactement* la H08 : c'est une **approximation** — double pont, noir
+et doré. Le film ne dit nulle part « voici la H08 portée ». Le jour où le cabinet veut un vrai visage, il
+suffit de remplacer `assets/visage-h08.jpg` et de relancer **une** commande :
+
+```bash
+python3 tools/record/make_dmoptic_monture.py --voice-dir /tmp/voixI \
+        --out clients/dm-optic/content/month1/w3/assets/monture-01-h08-voix.mp4
+```
+
+**Ce que l'exception ne couvre pas** — et qui reste interdit : une image générée pour un prix, une monture
+en stock, un résultat de vue, ou un « client satisfait ». Le §12 de la direction de marque borne
+l'amendement à cette série ; il est révocable par un mot de King.
+
+**Deux détails de fabrication qui se voient à l'écran**
+
+- Les captures pleine page du site contiennent un **raccord** (le haut de la page réapparaît une seconde
+  fois, à 8 190 px pour le catalogue, 2 225 px pour la fiche). Les masters sont coupés **avant** : sans
+  ça, le plan montre une page qui bégaie. C'est mesuré, pas supposé.
+- La fiche du beat 5 est **posée dans le cadre** (648×1 152, ombre douce, bas fondu) et non en plein
+  écran : le bandeau de texte tombe alors sur le marine, jamais sur le bouton vert de la page, et le titre
+  de la fiche reste lisible du début à la fin du plan.
+
+**Ce qu'on ne sait pas** : si une page du site change, les captures vieillissent — elles sont datées du
+27/10/2026 et devront être refaites pour l'épisode 2. Et personne n'a encore mesuré si un insert de page
+web retient mieux qu'une macro de produit : nous le saurons au compteur, pas avant.

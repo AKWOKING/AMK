@@ -36,6 +36,23 @@ Ce qui n'est **pas** promis, et ne le sera pas : une remise, une monture offerte
 un résultat de vue. Aucune de ces quatre choses n'est au cabinet, et une promesse qu'on ne tient pas
 coûte le compte (`knowledge/CONTENT-CREATION` §6 bis).
 
+Les trois images du film (tour 198)
+-----------------------------------
+King : *« en plus du script et ce qui apparaît sur l'écran, je veux que tu ajoutes des images »*, avec
+trois beats nommés. Le film ne raconte donc plus seulement : il **montre**.
+
+| beat | l'image | sa provenance |
+|---|---|---|
+| 1 « elle n'a pas de nom » | la monture, macro sur le double pont | photo **réelle** du cabinet (site, H08) |
+| 2 « quarante montures, toutes avec un code » | le catalogue du site qui défile, codes H02/H04/H05 lisibles | capture du **vrai site**, 27/10/2026 |
+| 4 « elle ira sur un visage » | une personne portant la H08 | **image générée** — l'exception que King a accordée |
+| 5 « le nom s'écrit sur sa page » | la fiche H08, posée dans le cadre | capture du **vrai site**, 27/10/2026 |
+
+Ce que l'exception ne couvre pas : aucune autre image générée n'entre dans la série. Le visage n'est pas un
+patient, ce n'est pas un portrait du cabinet, et la monture qu'il porte est une **approximation** du H08 —
+lunettes à double pont, noir et doré. Le kit le dit au spectateur (§8) ; on ne fait pas passer une image
+générée pour une photo du cabinet.
+
 Porte W43 §12b — [x] cas client d'abord · [x] un seul axe · [x] objet réel · [x] preuve citée une fois
                  · [x] sortie honnête · [x] un seul CTA
 
