@@ -1,9 +1,11 @@
 # KIT — « La monture cherche son nom », épisode 1 · H08
 
 ```
-Pièce A      monture-01-h08-voix.mp4 · 27,30 s · 1080×1920 · 30 fps · H.264 + AAC 48 kHz mono
-             4,35 Mo · **parlée** (voice-05) — la pièce à publier
-Pièce B      monture-01-h08.mp4 · 27,10 s · 3,91 Mo · **muette** — le même film, même histoire, sans la voix
+Pièce A      monture-01-h08-voix.mp4 · 28,37 s · 1080×1920 · 30 fps · H.264 + AAC 48 kHz mono
+             1,75 Mo · **parlée** (voice-06, 27/10) — la pièce à publier
+Pièce B      monture-01-h08.mp4 · 27,10 s · 1,29 Mo · **muette** — le même film, même histoire, sans la voix
+Mouvement    ✅ **aucun élément de motion design** — images fixes, coupes franches, texte en fondu de
+             0,12 s (King, 27/10 : « the images move too much » → voir §9)
 Images       **les trois que King a demandées** — la monture (macro) · le **catalogue du site** qui défile ·
              une personne portant la H08 (**image générée**, déclarée §8) — **plus** la **fiche H08** au beat 5
 Visage       ⚠ **un visage, et il est généré** — aucun patient, aucune photo du personnel, aucun tournage
@@ -14,11 +16,11 @@ Jeu          **A (Éclat) / B (Minuit) / ou votre mot** — un vote à une lettr
 Cadence      **mardi** la vidéo (appel) · **vendredi** le carrousel (5 noms, vote) · **mardi** le résultat
 Script       content/month1/w3/MONTURE-01-SCRIPT.py — 6 beats, rôles, jeu (lu par `audit_story`)
 Rendu par    tools/record/make_dmoptic_monture.py (`--voice-dir` pour la version parlée)
-Portes       audit_story ✓ 6 beats, 0 avertissement · audit_hook ✓ · audit_video_motion **OK** aux
-             fenêtres 1 s **et** 2 s · audit_post_dm ✓ · test_audit_post_dm 35/35
+Portes       audit_story ✓ 6 beats, 0 avertissement · audit_hook ✓ · audit_video_motion **--calme OK**
+             sur les deux fichiers (tenue max 2,2 s · 28 changements) · audit_post_dm ✓ · banc 35/35
 Amendement   brand/DIRECTION-MARQUE-v2 §12 (27/10) — la monture est **le personnage** de cette série
 Fait le      27/10/2026 — tours 194 (muet), 195 (voix), 196 (histoire + jeu), 197 (vote A/B + cadence),
-             198 (les trois images)
+             198 (les trois images), 199 (humanizer + roast + film calme)
 ```
 
 ---
@@ -98,11 +100,11 @@ qui viennent pour un examen de vue, et le mélange s'entend.
 ```text
 Elle n'a pas de nom. Vous choisissez celui qui reste.
 
-Sur notre site, quarante montures, toutes avec un code. Celle-ci s'appelle H08.
-Deux noms sur la table : A, Éclat. B, Minuit. Tapez A ou B. Vous avez mieux ? Écrivez votre mot.
+Sur notre site, il y a quarante montures. Chacune a un code à la place d'un nom. Celle-là, c'est la H08.
+Deux noms sur la table : A, Éclat. B, Minuit. Tapez A ou B. Si vous avez mieux, votre mot.
 
-Vendredi, les cinq mots les plus dits passent au vote. Mardi, le nom qui gagne est écrit
-sur sa page. La suite, c'est la monture d'après, jusqu'à la quarantième.
+Vendredi, les cinq mots les plus dits passent au vote. Mardi, le nom gagne et s'écrit sur sa fiche.
+La suite ? La monture d'après.
 
 Écrivez-nous : https://wa.me/237656122239?text=Bonjour%2C%20je%20viens%20de%20voir%20la%20monture%20sans%20nom%20sur%20TikTok.%20La%20H08%20est%20au%20cabinet%20%3F
 📍 West Hotel, 1er étage — Ndobo Mayor, Bonabéri · Examen de vue 8h30–13h00, du lundi au samedi
@@ -127,11 +129,11 @@ sur sa page. La suite, c'est la monture d'après, jusqu'à la quarantième.
 ```text
 Elle n'a pas de nom. Vous choisissez celui qui reste.
 
-Sur notre site, quarante montures, toutes avec un code. Celle-ci s'appelle H08.
-Deux noms sur la table : A, Éclat. B, Minuit. Tapez A ou B. Vous avez mieux ? Écrivez votre mot.
+Sur notre site, il y a quarante montures. Chacune a un code à la place d'un nom. Celle-là, c'est la H08.
+Deux noms sur la table : A, Éclat. B, Minuit. Tapez A ou B. Si vous avez mieux, votre mot.
 
-Vendredi, les cinq mots les plus dits passent au vote. Mardi, le nom qui gagne est écrit
-sur sa page. La suite, c'est la monture d'après, jusqu'à la quarantième.
+Vendredi, les cinq mots les plus dits passent au vote. Mardi, le nom gagne et s'écrit sur sa fiche.
+La suite ? La monture d'après.
 
 Écrivez-nous : https://wa.me/237656122239?text=Bonjour%2C%20je%20viens%20de%20voir%20la%20monture%20sans%20nom%20sur%20Facebook.%20La%20H08%20est%20au%20cabinet%20%3F
 📍 West Hotel, 1er étage — Ndobo Mayor, Bonabéri · Examen de vue 8h30–13h00, du lundi au samedi
@@ -139,7 +141,7 @@ sur sa page. La suite, c'est la monture d'après, jusqu'à la quarantième.
 #dmoptique #opticienbonaberi #douala
 ```
 
-- **Alt text** : *« Vidéo de 27 secondes, avec voix. Une monture noire et dorée à double pont, puis la page
+- **Alt text** : *« Vidéo de 28 secondes, avec voix. Une monture noire et dorée à double pont, puis la page
   du catalogue du site qui défile — H02, H04, H05, chacune avec son code —, puis une femme qui porte cette
   monture (image générée), puis la fiche H08 sur le site. On entend « elle n'a pas de nom, vous choisissez
   celui qui reste », « quarante montures, toutes avec un code », « Éclat ou Minuit ». À l'écran, les deux
@@ -205,7 +207,7 @@ Moins de **10 votes** (A + B + mots) → le vote n'intéresse pas : on change la
 |---|---|
 | `tools/qa/audit_story.py` | **✓** — 6 beats, 0 avertissement : cas → lock-in+preuve → corps → **rehook** → corps → sortie · débit **~3 mots/s** · preuve à **16 %** de la pièce |
 | `tools/qa/audit_hook.py` | **✓** — « Elle n'a pas de nom. Vous choisissez celui qui reste. » 10 mots, **53 caractères** ⚠ `sans-intrigue` + `niveau-1` assumés (comme sur toutes les variantes testées) |
-| `tools/qa/audit_video_motion.py` | **OK** aux **deux** fenêtres, sur les **deux** fichiers — 1 s : 0–1 s max **20,30**, **8 coupes**, aucune fenêtre figée ; 2 s : mouvement dans chaque fenêtre |
+| `tools/qa/audit_video_motion.py` `--calme` | **OK** sur les **deux** fichiers — image la plus longue tenue **2,17 s** (plafond 2,6 s), **28 changements** de plan ou de carton · le mode par défaut (fenêtres 1 s / 2 s) n'est plus la bonne règle pour un film volontairement immobile (voir §9) |
 | `tools/qa/audit_post_dm.py` | **✓** sans avertissement — première ligne **53 caractères**, deux nombres communs entre le texte et la voix (**8** pour H08, **40** pour quarante) |
 | Audio mesuré | premier bloc **0,0 s** · dernier **26,3 s** · RMS médian **−21,7 dB** · six blocs (3,92 · 4,88 · 6,02 · 3,86 · 3,43 · 2,89 s) + **0,9 s** de queue pour lire le carton final |
 | Visages · IA · prix · marque · promesse | **un visage, et il est généré** — les quatre autres verrous tenus ; l'image est déclarée au kit §8, pas au spectateur sous un faux air de photo du cabinet |
@@ -214,10 +216,10 @@ Moins de **10 votes** (A + B + mots) → le vote n'intéresse pas : on change la
 
 ## 7 · Ce qui est vérifié, et ce qui ne l'est pas
 
-**Vérifié** (ffprobe + PCM + images de contrôle, 27/10) : parlée **27,30 s** · H.264 + AAC 48 kHz mono ·
-**4,35 Mo** · muette **27,10 s** · **3,91 Mo** · mouvement OK aux deux fenêtres sur les deux fichiers ·
-**un visage, généré** (voir §8) · les deux captures de site sont **coupées avant le raccord** de la capture
-pleine page.
+**Vérifié** (ffprobe + PCM + images de contrôle, 27/10) : parlée **28,37 s** · H.264 + AAC 48 kHz mono ·
+**1,75 Mo** · muette **27,10 s** · **1,29 Mo** · **film calme** vérifié par `audit_video_motion --calme`
+sur les deux fichiers · **un visage, généré** (voir §8) · les deux captures de site sont **coupées avant
+le raccord** de la capture pleine page.
 
 **Vérifié pour l'histoire** : **40 fiches en ligne** (10 enfants + 24 femmes + 6 hommes, comptées dans
 `hosting/previews/dmoptic/montures/`) · chaque fiche s'appelle par son code (`H08 · Double pont aviateur
@@ -278,3 +280,42 @@ l'amendement à cette série ; il est révocable par un mot de King.
 **Ce qu'on ne sait pas** : si une page du site change, les captures vieillissent — elles sont datées du
 27/10/2026 et devront être refaites pour l'épisode 2. Et personne n'a encore mesuré si un insert de page
 web retient mieux qu'une macro de produit : nous le saurons au compteur, pas avant.
+
+---
+
+## 9 · Le film calme — et pourquoi la porte du mouvement a changé de règle
+
+King, 27/10 (tour 199) : *« remove all the motion design elements, the images move too much »*. Ce n'est
+pas une préférence de goût qu'on discute : c'est une instruction, et elle est écrite dans
+`brand/DIRECTION-MARQUE-v2` **§13** (amendement du 27/10, borné à cette série, révocable).
+
+| Ce qui a été enlevé | Ce qui reste |
+|---|---|
+| poussées avant, panoramiques, dérives dans le cadre | **les coupes** (13 plans pour 6 beats) |
+| bandeaux qui glissent de 20 px, lignes qui arrivent en décalé | le texte, en **fondu de 0,12 s** |
+| filet accent qui grandit sous le carton | le filet, **fixe**, à sa largeur finale |
+| poussée de 8,5 % sur la fiche, glissement du carton | la fiche, **posée**, immobile |
+| zoom d'entrée sur les 0,45 premières secondes | rien : la première image est déjà là |
+
+**La porte a suivi, elle n'a pas été contournée.** `audit_video_motion` jugeait « une fenêtre figée =
+diaporama ». Sur ce film-ci, à la fenêtre **1 s**, l'ancienne règle **bloque** (9 fenêtres figées : 4-5,
+7-8, 12-13, 15-16, 17-18, 19-20, 20-21, 24-25, 27-28 s) ; à 2 s elle passe. Autrement dit : elle mesure le
+**mouvement**, pas le **rythme**. Elle est donc complétée, pas désarmée : le mode **`--calme`** juge la **tenue** — *aucune image ne tient plus de 2,6 s
+sans un changement* (coupe, carton, texte). C'est ce qui sépare un film calme d'un diaporama, et c'est
+mesuré à chaque rendu :
+
+```
+monture-01-h08-voix.mp4 · 28,37 s · mode calme · plafond 2,6 s
+tenue la plus longue : 2,17 s · 28 changements      → OK
+monture-01-h08.mp4      · 27,10 s · mode calme · plafond 2,6 s
+tenue la plus longue : 2,08 s · 30 changements      → OK
+```
+
+**Pour rallumer le mouvement** (si le calme ne retient personne) : une option, aucun autre fichier à
+toucher — `python3 tools/record/make_dmoptic_monture.py --voice-dir /tmp/voixJ --mouvement --out …`
+
+**Ce que le tour a changé dans le texte** : les six phrases sont passées au skill `humanizer` (5 motifs
+corrigés — triade, deux-points, trois « Elle » en ouverture, fragment sans verbe, sujet absent) puis à la
+**Roast Room** (séance du 27/10, verdict B : humaniser + calmer, garder la structure). Les deux documents
+sont au dépôt : `knowledge/HUMANIZER-MONTURE-01-2026-10-27.md` et
+`knowledge/ROAST-2026-10-27-MONTURE-01.md`.

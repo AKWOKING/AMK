@@ -253,3 +253,25 @@ liste du client n'est pas reçue, la sortie honnête (« si vous voyez bien, ne 
 **Ce qui peut annuler cet amendement** : un mot de King. La série est la sienne ; le §8 reste vrai pour
 toutes les autres pièces du mois (le réglage, l'examen, le nettoyage), qui ne parlent toujours pas d'une
 monture en particulier.
+
+## 13 · Amendement du 27/10/2026 (soir) — le film calme
+
+> **La parole de King, mot pour mot** : *« remove all the motion design elements, the images move too
+> much »*. Elle ne porte pas sur le texte (il est traité au §11b et par le skill humanizer) : elle porte
+> sur **la façon dont l'image se tient**.
+
+| Ce que la maison faisait | Ce que la série fait désormais | Portée |
+|---|---|---|
+| poussées avant, panoramiques, bandeaux qui glissent, filets qui grandissent — « un plan qui s'arrête est un plan figé » | **images fixes, coupes franches**, texte en fondu de 0,12 s, carton du site immobile | **uniquement** la série « la monture cherche son nom » |
+| `audit_video_motion` bloquait toute fenêtre figée plus de 2 s (règle du 21/10, née d'un diaporama) | le mode **`--calme`** juge la **tenue** : aucune image ne tient plus de **2,6 s** sans un changement (coupe, carton, texte) | le mode par défaut ne change pas ; `--calme` est explicite dans la commande |
+
+**Pourquoi ce n'est pas un renoncement au rythme.** Le mouvement quitte le cadre et reste dans le
+montage : 12 images, 15 changements, aucune tenue au-delà de 2,6 s. C'est mesurable, et c'est mesuré à
+chaque rendu.
+
+**Ce qui ne change pas** : les cinq verrous du §12, l'interdiction des promesses, le vouvoiement, la
+sortie honnête, et la règle du texte prononcé avant l'image (`HOOK-FIRST`).
+
+**Ce qui peut annuler cet amendement** : un mot de King. Si le calme ne retient personne, on rallume le
+mouvement avec `--mouvement` — l'ancien film est toujours dans le même fichier, une option à passer.
+

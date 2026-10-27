@@ -2710,3 +2710,36 @@ en trois épisodes.
 
 **Toujours non vérifié** : la H08 est-elle encore au cabinet · les horaires · la cadence suppose que King
 publie mardi et vendredi · **on n'a pas mesuré** qu'un insert de page web retienne mieux qu'une macro.
+
+### Tour 199 — 27/10/2026 · humanizer + Roast Room + film calme
+
+| | |
+|---|---|
+| demande | King : *« the script needs to go through humanizer and roast room, remove all the motion design elements, the images move too much »* |
+| texte | six phrases passées au skill `humanizer` (pin `8c307f3`) : **5 motifs** corrigés — triade forcée, deux-points-connecteur, trois « Elle » en ouverture, fragment sans verbe, sujet absent (« on vous montre » → « vous voyez ») |
+| séance | **Roast Room du 27/10**, cinq sièges, trois options → verdict **B** (humaniser + calmer, garder les six beats) : `knowledge/ROAST-2026-10-27-MONTURE-01.md` |
+| image | **aucun élément de motion design** : images fixes, 13 plans, coupes franches, texte en fondu de 0,12 s · `--mouvement` rend l'ancien film |
+| voix | **voice-06**, six clips neufs, respirations internes ramenées à 0,20 s (montage radio, débit intact) |
+| rendu | parlée **28,37 s / 1,75 Mo** · muette **27,10 s / 1,29 Mo** |
+| portes | `audit_story` ✓ · `audit_hook` ✓ · `audit_video_motion --calme` **OK** (tenue max 2,17 s, 28 changements) · `audit_post_dm` ✓ · banc 35/35 |
+| doctrine | `DIRECTION-MARQUE-v2` **§13** : le film calme, borné à la série, révocable |
+
+**Ce que le tour a appris** :
+① **la porte du mouvement jugeait le mouvement, pas le rythme** : sur ce film, l'ancienne règle bloque à
+la fenêtre **1 s** (9 fenêtres figées) et passe à 2 s — elle mesure l'écart entre images, pas la tenue des
+plans. Le mode `--calme` ajoute la règle qui manquait : **aucune image plus de 2,6 s sans changement**.
+C'est le montage qui fait le rythme, pas le zoom ; on ne désarme pas une porte, on la complète et on écrit
+pourquoi ;
+② **humanizer attrape ce que l'oreille entend sans savoir nommer** : trois phrases ouvertes sur « Elle »,
+un fragment sans verbe, un « on » qui prend la place du spectateur. Cinq corrections, aucun fait ajouté ;
+③ **la voix porte son propre rythme** : les mêmes phrases chez `voice-06` donnaient **33 s** à cause de
+respirations d'une seconde entre les phrases — ramenées à 0,20 s, le film passe à **28,4 s** sans changer
+un mot ni accélérer la voix ;
+④ **le texte ralentit quand on l'humanise** : trois phrases de plus qu'en v5, mais 28 s contre 27 — la
+différence, ce sont les pauses, pas les mots ;
+⑤ **une doctrine se corrige, elle ne se contourne pas** : le calme est un amendement (§13), daté, borné,
+révocable, pas une exception tacite.
+
+**Toujours non vérifié** : la H08 est-elle encore au cabinet · les horaires · la cadence suppose que King
+publie mardi et vendredi · **on n'a jamais mesuré** si un film calme retient mieux qu'un film animé chez
+nous — la première publication le dira.

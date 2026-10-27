@@ -7058,3 +7058,13 @@ King ne les a pas données, et une heure inventée vaut moins qu'une heure absen
   35/35. Deux choses apprises et écrites : une capture pleine page contient un **raccord** à couper
   (8 190 px / 2 225 px), et un défilement en `ease` pur **s'arrête** en fin de plan — corrigé en
   55 % ease + 45 % linéaire.
+- 27/10/2026 · **Épisode 1, v6 — humanizer, Roast Room, film calme** (tour 199). King : « the script needs
+  to go through humanizer and roast room, remove all the motion design elements, the images move too
+  much ». Les six phrases passent au skill `humanizer` (5 motifs corrigés), puis à une **séance de Roast
+  Room** à cinq sièges : trois options, vote pondéré **B** (humaniser + calmer, garder la structure).
+  L'image passe en **calme** : images fixes, 13 plans, coupes franches, plus aucun zoom ni bandeau qui
+  glisse. `audit_video_motion` est **complété** d'un mode `--calme` (tenue max 2,6 s par image) — une
+  porte se complète, elle ne se désarme pas ; règle écrite en `DIRECTION-MARQUE-v2` **§13**. Nouvelle voix
+  (**voice-06**), respirations internes ramenées à 0,20 s : **28,37 s / 1,75 Mo** parlée, **27,10 s /
+  1,29 Mo** muette. Portes : `audit_story` ✓, `audit_hook` ✓, `audit_video_motion --calme` OK (2,17 s max,
+  28 changements), `audit_post_dm` ✓, banc 35/35.

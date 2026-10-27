@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 """DM Optique — « La monture cherche son nom », épisode 1 (H08) — moteur de rendu.
 
-1080×1920 · 30 fps · **deux rendus** : muet (27,10 s) et parlé (27,30 s) · **sans tournage, sans le
-médecin** — et, depuis le tour 198, avec **une seule image générée** (un visage portant la monture),
+1080×1920 · 30 fps · **deux rendus** : muet (27,10 s) et parlé (28,37 s) · **film calme** (aucun
+motion design, tour 199) · **sans tournage, sans le médecin** — et, depuis le tour 198, avec **une seule image générée** (un visage portant la monture),
 déclarée au kit §8.
 
 Pourquoi cette pièce (27/10/2026, tour 194)
@@ -82,6 +82,13 @@ SITE = base.SITE
 W, H, FPS = base.W, base.H, base.FPS
 DUR = 14.2          # valeur de repli (version muette) ; la version parlée calcule la sienne
 
+# ── LE MODE CALME (King, 27/10, tour 199) ────────────────────────────────────────────────────────
+# « remove all the motion design elements, the images move too much ». Le film passe donc en
+# **images fixes + coupes franches** : plus de poussée, plus de panoramique, plus de bandeau qui
+# glisse, plus de filet qui grandit. Ce qui bouge encore : les coupes (le montage) et l'apparition
+# du texte (0,12 s de fondu). `--mouvement` rend l'ancien film, pour comparer.
+CALME = True
+
 NIGHT, PAPER, EMBER, BRAND, WA, CREAM = base.NIGHT, base.PAPER, base.EMBER, base.BRAND, base.WA, base.CREAM
 F_TITLE, F_HEAD, F_BODY, F_MONO = base.F_TITLE, base.F_HEAD, base.F_BODY, base.F_MONO
 font, ease, crop_window = base.font, base.ease, base.crop_window
@@ -99,43 +106,39 @@ PHOTO = "montures/monture-h08.webp"
 # une macro de monture donne une fenêtre **figée** à 9-10 s (`audit_video_motion --window 1`) — le gate est
 # bloquant, et il a raison : à l'écran, plus rien ne bouge pendant que la voix parle.
 PLAN = [
-    # b1 · 3,93 s — LE CONSTAT, ET LE SPECTATEUR COMME SUJET (King, 27/10 : « elle n'est pas à lui »).
-    # Trois plans, coupe à 0,94 s : la première seconde ne reste jamais sur une image.
+    # b1 · LE CONSTAT. Deux images fixes, coupe à 42 % du beat : le cadre ne bouge pas, c'est la
+    # coupe qui fait le mouvement (King, 27/10 : « the images move too much »).
     dict(clip="b1",
-         shots=[(0.24, "card", 0.30, 0.90, 0.40), (0.60, "card", 0.26, -0.90, -0.40),
-                (1.00, "macro", 0.28, 0.65, -0.45)],
-         subs=[(0.00, 0.50, ["ELLE N'A PAS", "DE NOM"], 100, 0.695),
-               (0.50, 1.00, ["VOUS CHOISISSEZ"], 88, 0.700)]),
-    # b2 · la PREUVE, et elle est **montrée** : le catalogue réel du site, qui défile. Les codes
-    # (H01, H02, H04) sont lisibles à l'écran au moment où la voix dit « toutes s'appellent par un code ».
+         shots=[(0.42, "card", 0.10, 0.0, -0.15), (1.00, "macro", 0.0, 0.0, 0.0)],
+         subs=[(0.00, 0.52, ["ELLE N'A PAS", "DE NOM"], 100, 0.695),
+               (0.52, 1.00, ["VOUS CHOISISSEZ", "CELUI QUI RESTE"], 84, 0.690)]),
+    # b2 · LA PREUVE. Deux fenêtres fixes dans la page du catalogue — les codes changent de cut en
+    # cut, la page ne défile plus.
     dict(clip="b2",
-         shots=[(1.00, "page", 0.12, 0.30, 0.64)],
+         shots=[(0.33, "page", 0.0, 0.22, 0.22), (0.66, "page", 0.0, 0.45, 0.45),
+                (1.00, "page", 0.0, 0.70, 0.70)],
          subs=[(0.00, 0.50, ["40 MONTURES"], 110, 0.700),
-               (0.50, 1.00, ["40 CODES"], 110, 0.700)]),
-    # b3 · 5,88 s — LE CODE, PUIS LES DEUX NOMS. Trois plans pour un beat long.
+               (0.50, 1.00, ["UN CODE,", "PAS UN NOM"], 96, 0.690)]),
+    # b3 · LE CODE, PUIS LES DEUX NOMS (à l'écran ensemble : un vote ne montre jamais une seule option).
     dict(clip="b3",
-         shots=[(0.32, "card", 0.40, 0.80, -0.55), (0.64, "macro", 0.30, -0.55, 0.55),
-                (1.00, "card", 0.34, 0.70, -0.50)],
-         # les deux noms restent à l'écran **ensemble** : un vote où l'on ne voit qu'une option
-         # à la fois n'est pas un vote, c'est une devinette.
-         subs=[(0.00, 0.34, ["H08"], 124, 0.700),
-               (0.34, 1.00, ["A · ÉCLAT", "B · MINUIT"], 88, 0.680)]),
-    # b4 · LE REHOOK : ce n'est plus un objet, c'est un visage. Image **générée** — exception
-    # demandée par King le 27/10, déclarée au kit (§7) : ce n'est pas un patient, pas un portrait
-    # du cabinet, et la monture y est une **approximation** du H08 (lunettes à double pont, noir et doré).
+         shots=[(0.30, "card", 0.30, 0.0, -0.25), (0.62, "macro", 0.0, 0.0, 0.0),
+                (1.00, "card", 0.10, 0.0, 0.0)],
+         subs=[(0.00, 0.30, ["H08"], 124, 0.700),
+               (0.30, 1.00, ["A · ÉCLAT", "B · MINUIT"], 88, 0.680)]),
+    # b4 · LE REHOOK : on coupe d'un visage serré à un visage large. Aucun zoom, deux cadrages.
     dict(clip="b4",
-         shots=[(1.00, "visage", 0.24, 0.10, 0.40)],
-         subs=[(0.00, 0.55, ["SUR UN VISAGE", "TOUS LES JOURS"], 86, 0.700),
-               (0.55, 1.00, ["ELLE MÉRITE", "MIEUX"], 104, 0.700)]),
-    # b5 · L'ENJEU QUI RESTE — et il est **montré** : la fiche réelle de la H08, celle où le nom
-    # s'écrira. Le mouvement descend de l'en-tête vers le titre de la fiche.
+         shots=[(0.55, "visage", 0.14, -0.05, 0.05), (1.00, "visage", 0.0, 0.0, 0.15)],
+         subs=[(0.00, 0.55, ["DEMAIN, QUELQU'UN", "LA PORTERA"], 84, 0.700),
+               (0.55, 1.00, ["ELLE MÉRITE", "MIEUX QUE H08"], 94, 0.700)]),
+    # b5 · L'ENJEU QUI RESTE : la fiche, deux cadrages fixes de la même page.
     dict(clip="b5",
-         shots=[(1.00, "fiche", 0.02, 0.0, 0.10)],
-         subs=[(0.00, 1.00, ["LE NOM RESTE", "SUR SA PAGE"], 94, 0.700)]),
-    # b6 · 2,89 s + queue — LA SORTIE : A, B, ou un mot. Puis le carton.
+         shots=[(0.55, "fiche", 0.0, 0.0, 0.0), (1.00, "fiche", 0.0, 0.28, 0.28)],
+         subs=[(0.00, 1.00, ["LE NOM RESTE", "SUR SA FICHE"], 94, 0.700)]),
+    # b6 · LA SORTIE : la monture, puis le carton final — fixes, tous les deux.
     dict(clip="b6",
-         shots=[(0.42, "card", 0.30, 0.60, -0.45), (1.00, "end", 0.30, 0.0, 0.55)],
-         subs=[(0.00, 0.42, ["A, B", "OU VOTRE MOT"], 100, 0.700)]),
+         shots=[(0.35, "card", 0.30, 0.10, -0.10), (0.62, "card", 0.10, 0.0, 0.0),
+                (1.00, "end", 0.0, 0.0, 0.0)],
+         subs=[(0.00, 0.38, ["A OU B", "OU VOTRE MOT"], 96, 0.700)]),
 ]
 TAIL = 0.9          # queue de respiration après le dernier mot : le carton final se lit
 GAP = 0.28          # respiration entre deux beats (silence, pas de coupe sèche)
@@ -200,7 +203,7 @@ def end_card(t, t0, t1, K=1.22):
     d.text(((CW - d.textlength(t2, font=f2)) / 2, y + int(60 * K)), t2,
            font=f2, fill=(255, 255, 255, int(255 * a)))
     f3 = font(F_BODY, int(40 * K))
-    t3 = "s'écrit sur sa page, sur notre site"
+    t3 = "s'écrit sur sa fiche, sur notre site"
     d.text(((CW - d.textlength(t3, font=f3)) / 2, y + int(190 * K)), t3,
            font=f3, fill=PAPER + (int(200 * a),))
 
@@ -226,11 +229,15 @@ def draw_subs(img, t):
     for (s0, s1, lines, size, anchor) in SUBS:
         if not (s0 <= t < s1):
             continue
-        prog = ease((t - s0) / 0.42)
-        out = 1.0 if t < s1 - 0.22 else max(0.0, (s1 - t) / 0.22)  # sortie douce en fondu
+        if CALME:
+            prog = min(1.0, (t - s0) / 0.12)
+            out = 1.0 if t < s1 - 0.12 else max(0.0, (s1 - t) / 0.12)
+        else:
+            prog = ease((t - s0) / 0.42)
+            out = 1.0 if t < s1 - 0.22 else max(0.0, (s1 - t) / 0.22)
         layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
         d = ImageDraw.Draw(layer)
-        off = int(20 * (1 - prog))
+        off = 0 if CALME else int(20 * (1 - prog))
         alpha = int(255 * prog * out)
         lh = int(size * 1.1)
         top = int(H * anchor) + off
@@ -241,15 +248,15 @@ def draw_subs(img, t):
                     fill=NIGHT + (int(248 * prog * out),))
         for i, line in enumerate(lines):
             # chaque ligne arrive avec 0,22 s de retard sur la précédente : deux mouvements au lieu d'un
-            decal = min(1.0, max(0.0, (t - s0 - 0.22 * i) / 0.42))
+            decal = prog if CALME else min(1.0, max(0.0, (t - s0 - 0.22 * i) / 0.42))
             a_ligne = int(alpha * ease(decal))
             if a_ligne <= 2:
                 continue
-            y_ligne = top + i * lh + int(12 * (1 - ease(decal)))
+            y_ligne = top + i * lh + (0 if CALME else int(12 * (1 - ease(decal))))
             f = font(F_TITLE, size)
             tw = d.textlength(line, font=f)
             d.text(((W - tw) / 2, y_ligne), line, font=f, fill=(255, 255, 255, a_ligne))
-        half = int(W * 0.12 * prog)
+        half = int(W * 0.12) if CALME else int(W * 0.12 * prog)
         d.rectangle((W // 2 - half, top - int(pad * 0.55), W // 2 + half, top - int(pad * 0.55) + 7),
                     fill=EMBER + (255,))
         return Image.alpha_composite(img.convert("RGBA"), layer).convert("RGB")
@@ -284,29 +291,65 @@ def timeline(durations, gap=GAP):
     return DUR
 
 
+STILLS = {}         # cache des images fixes (mode calme) : un plan = une image, calculée une fois
+
+
+def still_crop(big, zoom, pan, drift):
+    """Un cadrage FIXE dans un master plus grand — l'image ne bouge pas d'un pixel."""
+    s_ = 1.0 + max(0.0, zoom)
+    cw, ch = int(big.width / s_), int(big.height / s_)
+    ax, ay = big.width - cw, big.height - ch
+    x0 = max(0, min(ax, int(ax * (0.5 + pan * 0.5))))
+    y0 = max(0, min(ay, int(ay * (0.5 + drift * 0.5))))
+    return big.crop((x0, y0, x0 + cw, y0 + ch)).resize((W, H), Image.LANCZOS)
+
+
+def still(kind, zoom, pan, drift):
+    """L'image d'un plan en mode calme. `pan`/`drift` gardent leur sens : fraction pour une page,
+    décalage (−1…1) pour une photo."""
+    key = (kind, round(zoom, 3), round(pan, 3), round(drift, 3))
+    if key in STILLS:
+        return STILLS[key]
+    if kind == "end":
+        img = still_crop(end_card(DUR, 0.0, DUR), 0.0, 0.0, 0.0)
+    elif kind == "page":
+        f = (pan + drift) / 2.0                     # le milieu du défilement prévu
+        img = page_window(MASTERS["page"], 0.5, f, f, 0.0)
+    elif kind == "fiche":
+        f = (pan + drift) / 2.0
+        img = fiche_card(0.0, f, f, 0.0)
+    else:
+        img = still_crop(MASTERS[kind], zoom, pan, drift)
+    STILLS[key] = img
+    return img
+
+
 def frame(i):
     t = i / FPS
     for (b0, b1, kind, zoom, pan, drift) in BEATS:
         if b0 <= t < b1:
-            p = (t - b0) / (b1 - b0)
-            if kind == "end":
-                big = end_card(t, b0, DUR)
-            elif kind == "page":
-                # `pan` = fraction de départ dans la page, `drift` = fraction d'arrivée
-                img = page_window(MASTERS["page"], p, pan, drift, zoom)
-                big = None
-            elif kind == "fiche":
-                img = fiche_card(p, pan, drift, zoom)
-                big = None
+            if CALME:
+                img = still(kind, zoom, pan, drift)
             else:
-                big = MASTERS[kind]
-            if big is not None:
-                img = crop_window(big, p, zoom, pan, drift)
+                p = (t - b0) / (b1 - b0)
+                if kind == "end":
+                    big = end_card(t, b0, DUR)
+                elif kind == "page":
+                    # `pan` = fraction de départ dans la page, `drift` = fraction d'arrivée
+                    img = page_window(MASTERS["page"], p, pan, drift, zoom)
+                    big = None
+                elif kind == "fiche":
+                    img = fiche_card(p, pan, drift, zoom)
+                    big = None
+                else:
+                    big = MASTERS[kind]
+                if big is not None:
+                    img = crop_window(big, p, zoom, pan, drift)
             break
     else:
         img = Image.new("RGB", (W, H), NIGHT)
 
-    if t < 0.45:
+    if t < 0.45 and not CALME:
         k = 1.10 - 0.10 * ease(t / 0.45)
         w2, h2 = int(W * k), int(H * k)
         img = img.resize((w2, h2), Image.LANCZOS)
@@ -314,7 +357,7 @@ def frame(i):
 
     img = draw_subs(img, t)
     d = ImageDraw.Draw(img)
-    base.draw_band(d, ease(min(1.0, t / 0.45)))
+    base.draw_band(d, 1.0 if CALME else ease(min(1.0, t / 0.45)))
     return img
 
 
@@ -376,7 +419,7 @@ def fiche_card(p, y0f, y1f, zoom=0.0):
     """
     CW, CH = 648, 1152                      # même rapport que le cadre (0,5625) : la page reste droite
     inner = page_window(MASTERS["fiche"], p, y0f, y1f, zoom)
-    k = 1.0 + 0.070 * (0.55 * ease(p) + 0.45 * p)               # poussée avant : 8,5 % sur toute la durée du plan
+    k = 1.0 if CALME else 1.0 + 0.070 * (0.55 * ease(p) + 0.45 * p)
     cw, ch = int(CW * k), int(CH * k)
     card = inner.resize((cw, ch), Image.LANCZOS)
     # le bas du carton se fond dans le marine : la page ne s'arrête pas sur une ligne coupée
@@ -387,7 +430,7 @@ def fiche_card(p, y0f, y1f, zoom=0.0):
     fade = ImageChops.invert(fade)
     card = Image.composite(card, Image.new("RGB", (cw, ch), NIGHT), fade)
     canvas = Image.new("RGB", (W, H), NIGHT)
-    q = 0.55 * ease(p) + 0.45 * p          # le carton glisse aussi : un objet posé qui respire
+    q = 0.0 if CALME else 0.55 * ease(p) + 0.45 * p
     x, y = (W - cw) // 2 + int(16 * (0.5 - q)), 146 - int((ch - CH) / 2) - int(20 * q)
     # ombre portée douce : le carton se détache du fond sans contour dur
     sh = Image.new("L", (W, H), 0)
@@ -423,11 +466,18 @@ def measure_clips(dossier):
         nom = beat["clip"]
         src = clip_path(dossier, nom)
         net = os.path.join(os.path.dirname(src), nom + ".net.wav")
+        # ① tête et queue rognées (aucune syllabe touchée) ;
+        # ② les **respirations internes** ramenées à 0,20 s : une voix qui marque 1 s entre deux
+        #    phrases fait un film de 33 s là où la même voix, au même débit, en fait 29. C'est du
+        #    montage radio, pas de la compression de la voix : le débit ne change pas, les trous si.
         subprocess.run([ffmpeg, "-y", "-v", "error", "-i", src, "-af",
                         "silenceremove=start_periods=1:start_duration=0.02:start_threshold=-45dB:detection=peak,"
                         "areverse,"
                         "silenceremove=start_periods=1:start_duration=0.02:start_threshold=-45dB:detection=peak,"
-                        "areverse", "-ar", "48000", "-ac", "1", net], check=True)
+                        "areverse,"
+                        "silenceremove=start_periods=0:stop_periods=-1:stop_duration=0.42:"
+                        "stop_threshold=-45dB:stop_silence=0.20:detection=peak", "-ar", "48000", "-ac", "1", net],
+                       check=True)
         r = subprocess.run([ffmpeg, "-i", net], capture_output=True, text=True)
         m = __import__("re").search(r"Duration: (\d+):(\d+):([\d.]+)", r.stderr)
         out[nom] = round(int(m.group(1)) * 3600 + int(m.group(2)) * 60 + float(m.group(3)), 3)
@@ -444,7 +494,13 @@ def main():
     ap.add_argument("--voice-dir", default=None,
                     help="dossier des clips b1…b5 : la voix décide du montage (durées mesurées)")
     ap.add_argument("--no-voice", action="store_true", help="rendu muet, durées de repli")
+    ap.add_argument("--mouvement", action="store_true",
+                    help="rétablit l'ancien film animé (zooms, panoramiques, bandeaux qui glissent)")
     args = ap.parse_args()
+    global CALME
+    if args.mouvement:
+        CALME = False
+        STILLS.clear()
 
     build_masters()
     durations = None
