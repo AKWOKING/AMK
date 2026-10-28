@@ -2,18 +2,18 @@
 
 ```text
 Généré par tools/graphify/build_full_graph.py — 2026-10-27
-Source : graphify-out/graph.json (13854 nœuds, 18112 arêtes)
+Source : graphify-out/graph.json (13900 nœuds, 18197 arêtes)
 Aucun LLM, aucune clé : la carte ne lit que les fichiers SUIVIS par git — même commit, même
 carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10 secondes.
 ```
 
 ## 0 · En une page
 
-- **13854 nœuds** — dont 857 documents, 207 scripts, 33 modules, 140 pages HTML, 486 images, 10 vidéos, 40 audios, 51 fichiers de données, 11 PDF.
-- **3817 citations entre documents** (3099 en chemin exact, 718 par nom unique)
+- **13900 nœuds** — dont 860 documents, 207 scripts, 33 modules, 140 pages HTML, 486 images, 10 vidéos, 40 audios, 51 fichiers de données, 11 PDF.
+- **3856 citations entre documents** (3130 en chemin exact, 726 par nom unique)
 - **161 arêtes de remplacement** · **3 documents marqués périmés**
-- **429 documents que personne ne cite** (atteignables par aucun chemin de lecture)
-- **Couverture : 1911 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
+- **428 documents que personne ne cite** (atteignables par aucun chemin de lecture)
+- **Couverture : 1914 fichiers indexés.** Le seul exclu est cette carte (`ops/REPO-MAP.md`, qui se citerait elle-même) et `graphify-out/` (sortie régénérable). Rien d'autre n'est laissé de côté : ni image, ni audio, ni police, ni PDF, ni archive, ni sous-titre, ni fichier de données.
 
 ### Les dossiers du dépôt, par poids — et ce que chacun porte
 
@@ -21,14 +21,14 @@ carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10
 |---|---|---|
 | `hosting/` | 352 | Sites déployés et aperçus |
 | `tools/` | 294 | Outils et skills installés |
-| `clients/` | 253 | Dossiers clients |
+| `clients/` | 254 | Dossiers clients |
 | `content/` | 223 | Contenu, vidéos, carrousels, scripts |
 | `leads/` | 187 | CRM machine (CSV, records, vues générées) |
 | `design/` | 179 | Design, skills, vendor |
 | `sales/` | 150 | Vente, prospection, CRM humain |
 | `site/` | 80 | Site AMK |
-| `ops/` | 50 | Opérations, portiques, facturation |
-| `knowledge/` | 33 | Couche connaissance — les règles de référence |
+| `ops/` | 51 | Opérations, portiques, facturation |
+| `knowledge/` | 34 | Couche connaissance — les règles de référence |
 | `research/` | 31 | Recherche externe (vidéos, articles) |
 | `brand/` | 25 | Marque AMK |
 | `demos/` | 21 | Maquettes et concepts |
@@ -42,7 +42,7 @@ carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10
 
 | Document | Titres | Cité par | Son sujet, dans ses propres mots |
 |---|---|---|---|
-| `knowledge/PRIX-2026-10-24.md` | 11 | 17× | Le prix du socle et de l'entretien — recherche du 24/10/2026 |
+| `knowledge/PRIX-2026-10-24.md` | 11 | 18× | Le prix du socle et de l'entretien — recherche du 24/10/2026 |
 | `knowledge/CONTENT-CREATION-2026-10-22.md` | 39 | 10× | Création de contenu — ce que le dépôt sait faire, au 22/10/2026 |
 | `knowledge/IDEA-PIPES-2026-10-25.md` | 12 | 10× | LES SIX TUYAUX À IDÉES — d'où vient une idée, avant de savoir si elle est bonne |
 | `knowledge/OUTREACH-MESSAGING-2026-10-22.md` | 8 | 10× | Le message qui accroche un gérant de clinique — motifs tirés de trois comptes, 22/10/2026 |
@@ -59,16 +59,17 @@ carte, à l'octet (c'est ce que la CI vérifie à chaque push). Rejouable en ~10
 | `knowledge/MAINTENANCE-CLIENTS-2026-10-22.md` | 11 | 4× | La routine de maintenance clients — quotidien, hebdomadaire, mensuel |
 | `knowledge/ROAST-2026-10-24-PRIX-v2.md` | 8 | 4× | Roast Room — séance du 24/10/2026 · « quel prix pour le socle, et pour l'entretien ? » |
 | `knowledge/ROAST-2026-10-26-LOT-1-V5.md` | 9 | 4× | Roast Room — séance du 26/10/2026 · « le patron dirait-il oui, cette fois ? » |
+| `knowledge/HUMANIZER-MONTURE-01-2026-10-27.md` | 6 | 3× | HUMANIZER SUR « LA MONTURE CHERCHE SON NOM » — les tics des six lignes, et ce qu'on en a f |
 | `knowledge/LANDING-FUNNEL-2026-10-23.md` | 18 | 3× | Le tunnel qui convertit — ce qu'on a appris, ce qu'on applique, ce qu'on refuse |
+| `knowledge/MAKING-OF-MONTURE-01-2026-10-27.md` | 10 | 3× | LA FABRICATION DE « LA MONTURE CHERCHE SON NOM » (épisode 1, H08) — tout ce qui a été trav |
 | `knowledge/ROAST-2026-10-26-EP01-VENTE.md` | 11 | 3× | Roast Room — séance du 26/10/2026 · « le CTA d'EP01 fait-il cliquer, et peut-on le savoir  |
 | `knowledge/ROAST-2026-10-26-SCRIPT-EP01.md` | 11 | 3× | Roast Room — séance du 26/10/2026 · « le script d'EP01 est-il bon, ou seulement bien accro |
+| `knowledge/ROAST-2026-10-27-MONTURE-01.md` | 9 | 3× | Roast Room — séance du 27/10/2026 · « le film doit-il rester animé, et les phrases tenir d |
 | `knowledge/DEUX-TEXTES-RECUS-2026-10-26.md` | 6 | 2× | Deux textes reçus, une seule leçon : ne rien faire admettre (26/10/2026) |
 | `knowledge/HOUSE-KNOWLEDGE-BASE.md` | 16 | 2× | HOUSE KNOWLEDGE BASE — la couche de référence |
-| `knowledge/HUMANIZER-MONTURE-01-2026-10-27.md` | 6 | 2× | HUMANIZER SUR « LA MONTURE CHERCHE SON NOM » — les tics des six lignes, et ce qu'on en a f |
 | `knowledge/LEAD-MAGNETS-2026-10-27.md` | 9 | 2× | L'AIMANT ET LA CONVERSION PAR VUE — le tunnel qui transforme des vues en contacts |
 | `knowledge/MARKETING-OPTICAL-2026-10-22.md` | 19 | 2× | Marketing de l'optique — ce que le dépôt sait, au 22/10/2026 |
 | `knowledge/PREUVE-VAGUE-ET-PERMISSION-2026-10-26.md` | 5 | 2× | La preuve vague, et le droit de ne pas construire d'avance (26/10/2026) |
-| `knowledge/ROAST-2026-10-27-MONTURE-01.md` | 9 | 2× | Roast Room — séance du 27/10/2026 · « le film doit-il rester animé, et les phrases tenir d |
 | `knowledge/VIDEOS-2026-10-23-AUDIT.md` | 10 | 2× | Cinq vidéos, deux images — ce qu'on garde, ce qu'on corrige, ce qu'on jette |
 | `knowledge/CE-QUI-FAIT-DIRE-OUI-2026-10-26.md` | 11 | 1× | Ce qui fait dire oui — la comparaison du 26/10, texte reçu contre texte écrit |
 | `knowledge/PORTE-C-SITE-AVANT-D-AFFIRMER-2026-10-26.md` | 8 | 1× | On ne dit pas à quelqu'un ce qu'il n'a pas avant d'avoir cherché tous ses noms |
@@ -82,21 +83,21 @@ C'est ce réseau qui décide de ce qui s'applique à un travail. Si un document 
 
 | Rang | Document | Cité par | Titres |
 |---|---|---|---|
-| 1 | `sales/Activity-Log.md` | **203** | 298 |
+| 1 | `sales/Activity-Log.md` | **205** | 300 |
 | 2 | `AMK-DESIGN-SKILLS.md` | **42** | 173 |
 | 3 | `PRE-FLIGHT.md` | **38** | 41 |
 | 4 | `research/YouTube-Lessons.md` | **30** | 202 |
 | 5 | `content/strategy/RULE-CREDENTIAL-CLAIMS.md` | **25** | 11 |
 | 6 | `sales/RESEARCH-STANDARD.md` | **23** | 15 |
-| 7 | `clients/dm-optic/build-notes.md` | **22** | 106 |
+| 7 | `clients/dm-optic/build-notes.md` | **22** | 107 |
 | 8 | `sales/CLIENT-MESSAGING-RULES.md` | **21** | 25 |
 | 9 | `sales/MESSAGES-2026-09-23-PERSUASION.md` | **20** | 14 |
 | 10 | `clients/_uniqueness-registry.md` | **19** | 1 |
-| 11 | `clients/dm-optic/pre-launch-checklist.md` | **18** | 22 |
-| 12 | `content/lessons/CONTENT-LESSONS.md` | **18** | 43 |
+| 11 | `content/lessons/CONTENT-LESSONS.md` | **19** | 44 |
+| 12 | `clients/dm-optic/pre-launch-checklist.md` | **18** | 22 |
 | 13 | `content/strategy/CONTENT-STRATEGY-V2-2026-10-05.md` | **18** | 16 |
-| 14 | `hosting/previews/README.md` | **17** | 6 |
-| 15 | `knowledge/PRIX-2026-10-24.md` | **17** | 11 |
+| 14 | `knowledge/PRIX-2026-10-24.md` | **18** | 11 |
+| 15 | `hosting/previews/README.md` | **17** | 6 |
 | 16 | `sales/PRIX-ET-RECURRENCE-2026-09-24.md` | **17** | 16 |
 | 17 | `clients/dm-optic/content-plan-month1.md` | **16** | 18 |
 | 18 | `content/scripts/README.md` | **16** | 3 |
@@ -115,14 +116,14 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 ## 3 bis · Ce que personne ne cite — à relire ou à archiver
 
-429 documents n'ont aucune citation entrante. Un orphelin n'est pas inutile : il est **inatteignable**. Soit il faut le citer là où il sert, soit il faut l'archiver.
+428 documents n'ont aucune citation entrante. Un orphelin n'est pas inutile : il est **inatteignable**. Soit il faut le citer là où il sert, soit il faut l'archiver.
 
-- **123 à traiter** · 164 dans `design/vendor/` (imports tiers, normal) · 142 dans `leads/records/` (reliés par le CRM, pas par citation)
+- **122 à traiter** · 164 dans `design/vendor/` (imports tiers, normal) · 142 dans `leads/records/` (reliés par le CRM, pas par citation)
 
 - **`tools/`** — 49 : `tools/claude-seo/README.md`, `tools/content/README.md`, `tools/docs/README.md`, `tools/geo-seo-claude/README.md`, `tools/humanizer/README.md`, `tools/marketingskills/README.md` … (+43)
 - **`clients/`** — 21 : `clients/dm-optic/brag/MEDIA.md`, `clients/dm-optic/brag/brag-plan.md`, `clients/dm-optic/content/month1/c1-render/README.md`, `clients/dm-optic/content/month1/w2/etapes-01-validation-client.md`, `clients/dm-optic/content/month1/w2/etapes-01.md`, `clients/dm-optic/content/month1/w2/facebook-post-enfants.md` … (+15)
 - **`content/`** — 20 : `content/Avatar/_composites/busts-694/MEDIA.md`, `content/README.md`, `content/assets/ASSETS.md`, `content/assets/fonts/MEDIA.md`, `content/pipeline/post01/SENTENCE-TIMING-v5d.md`, `content/pipeline/post01/layers/MEDIA.md` … (+14)
-- **`ops/`** — 11 : `ops/BRAINSTORM-INDEXATION-DMOPTIC-2026-10-26.md`, `ops/BRAINSTORM-LOT-1-V2-2026-10-26.md`, `ops/BRAINSTORM-LOT-2026-10-27.md`, `ops/CHANGELOG-VENDREDI.md`, `ops/CHECKPOINT-MARDI-06-10-20H.md`, `ops/HANDOFF-2026-10-26.md` … (+5)
+- **`ops/`** — 10 : `ops/BRAINSTORM-INDEXATION-DMOPTIC-2026-10-26.md`, `ops/BRAINSTORM-LOT-1-V2-2026-10-26.md`, `ops/BRAINSTORM-LOT-2026-10-27.md`, `ops/CHANGELOG-VENDREDI.md`, `ops/CHECKPOINT-MARDI-06-10-20H.md`, `ops/POST-WEDNESDAY-2026-10.md` … (+4)
 - **`hosting/`** — 6 : `hosting/previews/dmoptic/montures/MEDIA.md`, `hosting/previews/dr-ophtalmo/README.md`, `hosting/previews/dr-ophtalmo/assets/src/MEDIA.md`, `hosting/samples/DEPLOY.md`, `hosting/samples/design-research.md`, `hosting/samples/img/MEDIA.md`
 - **`sales/`** — 5 : `sales/AMK-Client-Kickoff-Kit.docx`, `sales/PORTE-A-DEMAIN-2026-10-27.md`, `sales/Send-UNIVERS-OPTIQUE-2026-09-21-Soir.md`, `sales/Suivi-CAVISA-2026-10-05.md`, `sales/VAGUE-2026-10-12/VERIFIED-LIST.md`
 - **`research/`** — 3 : `research/youtube-lessons/2026-10-11-batch-2/INDEX.md`, `research/youtube-lessons/2026-10-11-batch-3/INDEX.md`, `research/youtube-lessons/2026-10-11-batch-4/INDEX.md`
@@ -138,11 +139,11 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 *Le pivot d'une communauté est le document que **les autres membres du groupe** citent le plus (degré interne) — pas le document le plus cité du dépôt, qui l'est partout.*
 
-**606 documents sur 857 sont dans un sujet.** Les 214 autres ne touchent aucune citation — ni entrante, ni sortante : ce sont eux qui se perdent (voir §3 bis). Un sujet se nomme par ses pivots ; un document hors sujet ne se retrouve pas tout seul.
+**609 documents sur 860 sont dans un sujet.** Les 214 autres ne touchent aucune citation — ni entrante, ni sortante : ce sont eux qui se perdent (voir §3 bis). Un sujet se nomme par ses pivots ; un document hors sujet ne se retrouve pas tout seul.
 
 | # | Docs | Les 3 pivots internes | Ce que le groupe a en propre |
 |---|---|---|---|
-| 0 | 563 | `Activity-Log.md` · `AMK-DESIGN-SKILLS.md` · `PRE-FLIGHT.md` | `leads/` (27 % du groupe) |
+| 0 | 566 | `Activity-Log.md` · `AMK-DESIGN-SKILLS.md` · `PRE-FLIGHT.md` | `leads/` (27 % du groupe) |
 | 1 | 20 | `analyst-common.md` · `context-safety.md` · `report.md` | `tools/` (100 % du groupe) |
 | 2 | 5 | `claude-code-tools.md` · `codex-tools.md` · `pi-tools.md` | `tools/` (100 % du groupe) |
 | 3 | 4 | `PHOTOSHOOT-FICHE-1PAGE-2026-10.md` · `DEMO-SCRIPT-2026-10-07.md` · `VISIT-RUNSHEET-2026-10-07.md` | `clients/` (100 % du groupe) |
@@ -152,9 +153,9 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | 7 | 2 | `etapes-01-PUBLICATION.md` | `clients/` (100 % du groupe) |
 | 8 | 2 | `DESIGN.md` | `design/` (100 % du groupe) |
 
-### Communauté 0 — 563 documents
+### Communauté 0 — 566 documents
 
-- `sales/Activity-Log.md` — cité 200× dans le groupe, 203× au total
+- `sales/Activity-Log.md` — cité 202× dans le groupe, 205× au total
 - `AMK-DESIGN-SKILLS.md` — cité 40× dans le groupe, 42× au total
 - `PRE-FLIGHT.md` — cité 38× dans le groupe, 38× au total
 - `research/YouTube-Lessons.md` — cité 29× dans le groupe, 30× au total
@@ -211,7 +212,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 | Nature | Fichiers | Où |
 |---|---|---|
-| document | 857 | `AGENTS.md`, `AMK-DESIGN-SKILLS.md`, `AMK-SEO-PLAYBOOK.md` |
+| document | 860 | `AGENTS.md`, `AMK-DESIGN-SKILLS.md`, `AMK-SEO-PLAYBOOK.md` |
 | image | 486 | `brand/AMK-logo-mono.png`, `brand/AMK-logo-mono.svg`, `brand/AMK-logo-primary.png` |
 | script | 207 | `brand/build_fb_assets.py`, `clients/dm-optic/content/month1/w3/MONTURE-01-SCRIPT.py`, `clients/dm-optic/launch/facebook-assets/build_cover.py` |
 | page | 140 | `brand/AMK-Logo-Kit.html`, `brand/v1-green/AMK-Logo-Kit.html`, `clients/dm-optic/brand/CARTE-SIGNATURE-TABLEAU-VISION.html` |
@@ -227,7 +228,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 | sous-titre | 3 | `clients/dm-optic/content/month1/w1/tiktok-01-v2.fr.srt`, `clients/dm-optic/content/month1/w1/tiktok-01.fr.srt`, `clients/dm-optic/content/month1/w2/etapes-01.srt` |
 | archive | 2 | `dmopticsarl-2026-10-21.zip`, `dr-ophtalmo-site-2026-10-27.zip` |
 | style | 1 | `hosting/previews/dr-ophtalmo/css/styles.css` |
-| symboles extraits (titres de documents + fonctions/classes du code) | 11943 | — |
+| symboles extraits (titres de documents + fonctions/classes du code) | 11986 | — |
 
 ### Les outils et skills installés — 1 dossier = 1 outil
 
@@ -277,7 +278,7 @@ Ce sont les consignes mortes qu'on risque de réappliquer. Chaque ligne est un c
 
 | Client | Fichiers | Documents | Brief ? |
 |---|---|---|---|
-| `dm-optic/` | 210 | 93 | oui |
+| `dm-optic/` | 211 | 94 | oui |
 | `dr-ophtalmo/` | 19 | 9 | — |
 | `labiomed/` | 1 | 1 | — |
 | `le-cristallin/` | 2 | 2 | — |

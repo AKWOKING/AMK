@@ -7102,3 +7102,24 @@ est squashé) : PR **MERGED** **et** `git diff --shortstat origin/main <branche>
   `arena/ecb2ac1c-amk` (**#78 OPEN** — lot de vente du 27/10, +574/−777) · `arena/fc8110b1-amk`
   (**#40 OPEN** — photo du dépôt au 24/10, −30 858 lignes).
 - **Le détail et la commande** : `ops/GIT-STABILITY-NOTE.md`, section du 27/10 au soir.
+### 28/10/2026 (matin) — le fil du Dr FOGUE passé au crible : un oui verbal, zéro franc
+
+King a fourni quatre captures du fil (26/10 17 h 19 → 27/10 21 h 46) et demandé l'analyse. **Rien n'a été
+envoyé au client** : ce tour écrit seulement l'analyse et répare ce qui la rendait invisible.
+
+- **`knowledge/ANALYSE-FIL-DR-FOGUE-2026-10-28.md`** — chronologie message par message, ce qui a marché
+  (la vitesse, le rattrapage du 17 h 33, la question fermée qui a produit « ok allez y »), ce qui a cassé
+  (**quatre règles maison violées** : prix par écrit, « coût total », remise préventive, messages de 6 à
+  12 lignes ; **un fait inventé** — « votre emplacement principal à Akwa » ; **une image générée d'une
+  praticienne** montrée comme son site), l'objection relue (« pas sûr que ça marche » = risque, pas
+  valeur), et **les deux messages à envoyer** (note vocale 25 s + deux créneaux).
+- **`knowledge/ROAST-2026-10-28-DR-FOGUE-PRIX.md`** — séance à 5 sièges / 10 voix : A silence 3,7 ·
+  **B voix + créneaux 8,4** · C baisse à 120 000 3,1. Verdict **B**, et la remise déjà offerte se
+  convertit en **périmètre + calendrier**, jamais en prix.
+- **`leads/build/crm.py`** — table `FIL_AFRICA_OPTIC_2710` : la conversation, `Contacted/Reply/stage/
+  reply_type/last_send_state/Follow-up date`, et deux corrections de fait. **Avant ce tour**, toute
+  l'histoire de ce prospect ne vivait que dans `leads/CRM.csv`, une **sortie** du script : un rebuild
+  remettait la ligne à `Contacted=No` / `stage=prospecting` (mesuré : 10 colonnes perdues).
+- **Décalage mesuré au passage** : **18 lignes** du CSV diffèrent du générateur, dont **17 = tout l'état
+  d'envoi du LOT 3 du 26/10**, **1 lead absent** (« Star Optic ») et **2 `reply_type` hors vocabulaire**
+  (`interested`, `salutation`). **Non réparé** : trancher `salutation` d'abord (voir analyse §9 ④).

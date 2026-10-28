@@ -2563,6 +2563,60 @@ VERIF_WA_2510 = {
 }
 
 
+
+# ── LE FIL DU Dr FOGUE (26–27/10) — la mémoire du prospect le plus chaud du dépôt ────────────────
+# Constat du 28/10 : toute la conversation (« je ne suis pas opticien patron », les trois photos,
+# « ok allez y », la demande de rencontre) vivait UNIQUEMENT dans `leads/CRM.csv`, qui est une SORTIE
+# de ce script. Un rebuild remettait la ligne à Contacted=No / Reply=No / stage=prospecting : le
+# prospect le plus chaud redevenait un inconnu, en silence. Mesuré en générant dans /tmp et en
+# comparant colonne par colonne — 10 colonnes perdues.
+#
+# Deux corrections de fait, en plus du récit :
+#   ① la note disait que `dr-ophtalmo-preview.vercel.app` était « l'aperçu d'un AUTRE client ». Faux :
+#      `hosting/previews/dr-ophtalmo/js/config/doctor.js` cite ses messages du 26/10 mot pour mot, et
+#      porte son numéro (691 28 02 37), son nom et ses quatre lieux. C'est LUI.
+#   ② trois noms pour une seule personne : « Africa Optic » (l'annuaire ONOC, titulaire public
+#      MINTEU NZONGA Eric Aimé — pas la personne qui a répondu), « Africa Médical » (le cabinet du
+#      vendredi, ancien dépôt Guinness) et Dr FOGUE, ophtalmologue. Le nom exact du cabinet a été
+#      demandé le 26/10 à 17 h 33 et n'a jamais été donné : première question de la rencontre.
+FIL_AFRICA_OPTIC_2710 = {
+    "africa-optic": {
+        "Contacted": "Yes",
+        "Reply": "Yes",
+        "stage": "qualifying",
+        "stage_since": "2026-10-26",
+        "reply_type": "human",           # vocabulaire fermé REPLY_TYPES : « human », pas « interested »
+        "last_send_state": "sent",
+        "follow_ups_sent": "0",
+        "Follow-up date": "2026-10-28",
+        "Conversation_extra":
+            "26/10 17:19 touche LOT 3 → 17:24 « je ne suis pas opticien patron » · 17:26 « par contre "
+            "je suis ophtalmologue » (la prémisse du message était fausse : il n'est pas opticien) · "
+            "17:53 il donne ses quatre lieux et ses jours (Mbouda lun-mar, Bafoussam mer-jeu, Africa "
+            "Médical ven-sam sur RDV, Hôpital Charity Bonabéri sam) · 19:19 aperçu envoyé, « ok je "
+            "vous reviens » · 21:08 « vous avez encore besoin des éléments » + « je pense que ses plus "
+            "mieux avec mes photos » → 21:37/21:45 il envoie TROIS photos de lui et de son équipe · "
+            "27/10 01:57 version avec ses vraies photos · 20:55 « ok allez y » (ACCORD SUR LE PRINCIPE) "
+            "· 21:02 puis 21:29 puis 21:30 « vous êtes situés où » (trois fois) · 21:28 « je vais vous "
+            "rencontrer » · 21:43 prix annoncé par écrit : 150 000 FCFA total · 21:44 « pourquoi donner "
+            "une somme pareil déjà que je suis pas sûr que ça marche » · 21:46 réponse de légitimité + "
+            "« je peux vous baisser le prix si vous m'associez à votre référencement » (REMISE OFFERTE, "
+            "contre PRIX-2026-10-24 §7.4) · depuis : silence. "
+            "PROCHAIN GESTE (28/10) : note vocale 25 s + deux créneaux (ven. Africa Médical, sam. "
+            "Charity). Ne PAS renvoyer de prix par écrit : CLIENT-MESSAGING-RULES §3.",
+        "Notes_extra":
+            "CORRECTION 28/10 — la note antérieure disait que le lien `dr-ophtalmo-preview.vercel.app` "
+            "était « l'aperçu d'un AUTRE client » : c'est FAUX, ce client EST le Dr Fogue "
+            "(`clients/dr-ophtalmo/`, config `js/config/doctor.js` : son numéro, son nom, ses quatre "
+            "lieux, ses messages du 26/10 cités mot pour mot, ses photos). Ne pas traiter cette ligne "
+            "comme « un opticien à qui on a montré l'aperçu de quelqu'un d'autre ». · IDENTITÉ NON "
+            "ÉTABLIE : « Africa Optic » (annuaire ONOC, titulaire public MINTEU NZONGA Eric Aimé) ≠ "
+            "« Africa Médical » (le cabinet du vendredi) ≠ Dr FOGUE (l'ophtalmologue qui répond). Le "
+            "nom exact du cabinet, demandé le 26/10 17:33, n'a jamais été donné. · Analyse complète : "
+            "`knowledge/ANALYSE-FIL-DR-FOGUE-2026-10-28.md` + `knowledge/ROAST-2026-10-28-DR-FOGUE-PRIX.md`.",
+    },
+}
+
 def _apply_state(out: list, table: dict, name: str) -> None:
     """Applique une table d'état au relevé : elle ÉCRASE les champs scalaires qu'elle cite (elle est
     plus récente que tout le monde) et APPEND les deux champs de récit (`Conversation_extra`,
@@ -4298,6 +4352,7 @@ def main() -> int:
     _apply_state(out, LOT_0210_KING, "LOT_0210_KING")
     _apply_state(out, LOT2_0210_KING, "LOT2_0210_KING")
     _apply_state(out, VERIF_WA_2510, "VERIF_WA_2510")
+    _apply_state(out, FIL_AFRICA_OPTIC_2710, "FIL_AFRICA_OPTIC_2710")
     check_reply_types(out)
     check_no_wa_is_dead(out)
     check_tables_sans_doublon()
