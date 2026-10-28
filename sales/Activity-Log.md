@@ -7358,7 +7358,7 @@ can be applied to our workflow. » — **`knowledge/COULEUR-60-30-10-2026-10-28.
 - **Le trou trouvé** : `AMK-DESIGN-SKILLS.md` §6.1 énonce la règle 60-30-10 **depuis le 17/09** et **aucun
   des vingt-huit outils de `tools/qa/` ne mesurait une proportion**. Une règle écrite, jamais exécutée —
   le défaut que le dépôt dénonce ailleurs.
-- **`tools/qa/audit_palette.py` créé** — **19 cas de banc, 19/19**. Trois modes : `--sheet` (contrat des
+- **`tools/qa/audit_palette.py` créé** — **20 cas de banc, 20/20**. Trois modes : `--sheet` (contrat des
   jetons et paires de contraste, à l'étape 4), `--html` (ce que le CSS peint, à l'étape 9), `--image`
   (**la vraie surface en pixels**, sur une capture). PNG décodé **sans Pillow ni numpy** (zlib seul) :
   une capture 1080×1080 en 1,2 s. Le contraste n'est pas rejoué — le script **importe `lum`/`ratio`
@@ -7375,6 +7375,10 @@ can be applied to our workflow. » — **`knowledge/COULEUR-60-30-10-2026-10-28.
   le vide et une page correcte échoue.
 - **Bandelettes** : dominant 45–85 % (seul « trop peu » est une faute ; 95 % de navy sur nos posts Facebook
   est un parti pris), secondaire 5–40 %, accent 0,7–15 % (trop = faute). Le banc verrouille les deux cas.
+- **Deux leçons du banc lui-même** : un accent employé comme couleur de texte n'est pas une faute *par
+  nature* (l'ambre clair sur le navy du site est à **13,06:1**) ; la faute est l'illisibilité. Sur la page
+  d'accueil, les deux seuls usages sont des chiffres et un label mono : **avertissement, pas blocage**.
+  Et un champ à 95 % d'une couleur n'est pas un défaut : seul « trop peu de dominant » bloque.
 - **Portes posées** : `design/WORKFLOW.md` §4 (avant le HTML) et §9 (après la capture) ; §6.1 de
   `AMK-DESIGN-SKILLS.md` pointe maintenant vers l'outil et ses bandes.
 - **Ce que la règle ne fait pas** : elle ne rend pas une palette belle, elle ne remplace pas 4,5:1, et

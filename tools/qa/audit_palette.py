@@ -118,10 +118,6 @@ def parse_sheets(text):
     return sheets
 
 
-def title_before(text, block_marker_count):
-    return None
-
-
 def check_sheet(vars_, label=""):
     """Contrat de rôles + paires de contraste canoniques sur une planche de jetons."""
     out = {"label": label, "fails": [], "warns": [], "roles": {}, "ratios": []}
@@ -201,10 +197,33 @@ def check_html(path):
                     accent_as_text_on_body.append((selector.strip()[:60], key))
 
     out = {"fails": [], "warns": [], "counts": counts, "total": sum(counts.values()) or 1}
+    # Le texte en accent n'est pas interdit par nature : un chiffre clé ou un label mono peut le porter.
+    # Ce qui est interdit, c'est qu'il soit ILLISIBLE. On tranche donc au ratio, pas à l'intuition.
+    #
+    # Limite assumée : le fond réel d'un sélecteur dépend de SA section (nos pages ont des blocs sombres
+    # dans une page claire). L'outil ne lit pas le DOM. Il teste donc l'accent contre chaque jeton de fond
+    # déclaré et retient le meilleur : si ce meilleur échoue, aucun fond possible ne sauve le texte ; s'il
+    # passe, on avertit au lieu de blanchir — la vérité péremptoire est celle d'audit_html.py, qui mesure
+    # le rendu.
+    toks = dict(re.findall(r"(--[\w-]+)\s*:\s*(#[0-9a-fA-F]{6}|#[0-9a-fA-F]{3})", styles))
+    bgs = {k: hex_to_rgb(v) for k, v in toks.items()
+           if role_of(k) in ("surface", "ink", "other") and k in toks}
     for sel, key in accent_as_text_on_body:
-        out["fails"].append(
-            f"l'accent « {key} » est utilisé comme COULEUR DE TEXTE sur « {sel} » — l'accent met en "
-            f"valeur un bouton ou un chiffre, il ne porte jamais le texte courant (§6.1, 1.4.3)")
+        fg = hex_to_rgb(toks[key]) if key in toks else None
+        if fg is None:
+            out["warns"].append(
+                f"accent « {key} » en couleur de texte sur « {sel} » — valeur non résolue, à vérifier à l'œil")
+            continue
+        best_k, best_r = max(((k, ratio(fg, v)) for k, v in bgs.items() if k != key),
+                             key=lambda kv: kv[1], default=(None, 0.0))
+        if best_r >= 4.5:
+            out["warns"].append(
+                f"accent « {key} » en couleur de texte sur « {sel} » — {best_r:.2f}:1 sur « {best_k} » : "
+                f"lisible, donc permis s'il s'agit d'un chiffre ou d'un label, jamais d'un paragraphe")
+        else:
+            out["fails"].append(
+                f"accent « {key} » en couleur de texte sur « {sel} » — {best_r:.2f}:1 au mieux sur "
+                f"« {best_k} » : illisible (1.4.3), et l'accent ne porte pas le texte courant (§6.1)")
 
     shares = {}
     for key, n in counts.items():
@@ -417,10 +436,17 @@ def self_test():
     # 4 · le CSS : accent sur le texte courant
     with tempfile.TemporaryDirectory() as d:
         p = pathlib.Path(d) / "x.html"
-        p.write_text("<style>p{color:var(--accent);} .btn{background:var(--accent);}</style>",
+        p.write_text("<style>:root{--surface:#FFF;--accent:#F59E0B}"
+                     "p{color:var(--accent);} .btn{background:var(--accent);}</style>",
                      encoding="utf-8")
         r = check_html(p)
-        check("accent sur <p> → faute", any("COULEUR DE TEXTE" in f for f in r["fails"]))
+        check("accent sur <p> à 2:1 → faute", any("1.4.3" in f for f in r["fails"]))
+        # même accent, mais sur un fond sombre : lisible, donc simple avertissement
+        p.write_text("<style>:root{--surface:#0F172A;--accent:#F59E0B}"
+                     "b{color:var(--accent);}</style>", encoding="utf-8")
+        r = check_html(p)
+        check("accent sur <b> à 11:1 → avertissement, pas faute",
+              not r["fails"] and any("lisible" in w for w in r["warns"]))
         p.write_text("<style>.btn{background:var(--accent);} h1{color:var(--ink);}</style>",
                      encoding="utf-8")
         r = check_html(p)
