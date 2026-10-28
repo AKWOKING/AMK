@@ -2,8 +2,9 @@
 
 **Date** : 28/10/2026 · **Périmètre** : `hosting/previews/dmoptic/` (97 pages, FR + miroir EN)
 **Méthode** : les portiques de `tools/qa/` d'abord, l'œil ensuite, dans cet ordre. Le navigateur tourne
-enfin dans cette session (`bash tools/video/install.sh`), donc tout ce qui se mesure sur un rendu a été
-mesuré sur un rendu : Chromium 153, captures 1440×900 et 390×844.
+enfin dans cette session (`bash tools/video/install.sh`, qui installe désormais aussi Pillow, numpy et
+Playwright), donc tout ce qui se mesure sur un rendu a été mesuré sur un rendu : Chromium 153,
+captures 1440×900 et 390×844. **Aucune ligne de ce rapport ne dit « non mesurable ici ».**
 
 **Verdict avant** : la page d'accueil passait les portiques de contraste et d'accessibilité, et **échouait
 sur six règles du livre** — dont deux que personne n'avait vues parce que rien ne les mesurait.
@@ -119,7 +120,7 @@ la section des questions ; le compte des liens dit 5 et nomme les cinq.
 ## 5 · Reproduire
 
 ```bash
-bash tools/video/install.sh                       # une fois par session (Chromium + libs + polices)
+bash tools/video/install.sh                       # une fois par session : Chromium + libs + polices + Pillow/numpy/playwright
 python3 demos/build_dmoptic.py --production --url https://dmoptiquesarl.com/ --force-rebuild
 python3 demos/build_dmoptic_montures.py           # les 47 sous-pages + le miroir EN
 python3 tools/qa/shot.py hosting/previews/dmoptic/index.html --out /tmp/dm

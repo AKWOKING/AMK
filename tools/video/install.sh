@@ -25,8 +25,14 @@ if [ ! -d node_modules/@sparticuz/chromium ]; then
 fi
 
 # dépendances Python (peuvent disparaître à chaque redémarrage de l'environnement)
-python3 - <<'PYCHK' || pip install --break-system-packages -q brotli Pillow numpy imageio-ffmpeg
+# 28/10 : playwright en plus de Pillow/numpy — le moteur du dépôt reste puppeteer-core (shot.mjs), mais
+# Playwright sert aux vérifications DOM ad hoc, et il manquait à chaque session neuve.
+python3 - <<'PYCHK' || pip install --break-system-packages --user -q brotli Pillow numpy imageio-ffmpeg playwright
 import brotli, PIL, numpy, imageio_ffmpeg  # noqa
+try:
+    import playwright  # noqa
+except ImportError:
+    raise SystemExit(1)
 PYCHK
 
 echo "▸ extraction des couches embarquées (brotli + tar)…"
