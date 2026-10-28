@@ -7276,3 +7276,38 @@ Europe et aux États-Unis, et **« the export doesn't wait »**, objectif **500 
 - **Décision de King attendue** sur l'aperçu automatique (le ruling du 24/10 interdit la page construite
   par prospect : la lettre est violée, l'esprit est sauf si c'est un script), sur le maintien de 500 $
   jusqu'au cinquième client, et sur la ligne « on dit la vérité quand on demande d'où on travaille ».
+
+### 28/10 (nuit, 3) · Vban : le rail est moins cher, mais il ne prélève rien
+
+King : *« I won't use Payoneer I'll use Vban. »* Recherche faite aux sources de Vban, pas aux articles qui
+la présentent. **`knowledge/VBAN-2026-10-28.md`**.
+
+- **Ce qui est documenté** : TM Payments Limited (société canadienne), **« Vban is not a bank »**, services
+  via des partenaires régulés **non nommés**, **Cameroun (XAF) explicitement listé**, comptes USD/GBP/EUR
+  **au nom du titulaire** — Vban écrit elle-même qu'elle **n'opère pas de compte « open beneficiary »**.
+- **Les frais, au centime** : réception USD ACH **0,5 %** (min 1 $, max 19 $), virement USD 0,8 % (min 5 $,
+  max 15 $), EUR 0,5 % (min 2 €, max 8 €), **conversion 0 %, retrait vers XAF 0 %**. Sur 500 $ :
+  **2,50 $** contre **20,44 $** chez Payoneer. Sur 95 $ : **1 $** contre 4,28 $.
+- **Conséquence arithmétique** : **neuf abonnés** au lieu de dix (55 460 FCFA nets par client américain).
+  Onze à douze avec l'attrition, contre dix à onze — le plan a été recalculé.
+- **La contrainte que la page d'accueil ne dit pas** : **Vban n'encaisse pas les cartes**. Ni lien de
+  paiement, ni facturation automatique, ni prélèvement. L'argent arrive **par virement** sur un compte
+  virtuel. Donc **les 95 $ mensuels ne se prélèvent pas** : sans changement d'offre, c'est l'attrition
+  silencieuse garantie. Réponse écrite : **l'année payée d'avance (950 $, deux mois de service en plus)**
+  devient la forme normale de l'abonnement — un seul virement, zéro relance, et 557 700 FCFA encaissés.
+  Ce n'est pas une remise : la règle du 24/10 interdit de baisser un prix, elle n'interdit pas d'ajouter
+  du périmètre.
+- **Le risque, dit franchement** : 3,4/5 sur 108 avis Play, 3,2/5 sur 13 avis Trustpilot ; les griefs sont
+  répétés et précis — fonds annoncés jamais crédités, remboursements qui traînent des semaines, comptes
+  gelés. Et un cas instructif : le support a répondu à un utilisateur que l'application était **réservée
+  aux freelancers**, donc **la nature des fonds est contrôlée**. Trois règles : **retrait hebdomadaire,
+  solde au plancher** ; **facture + périmètre + capture pour chaque virement** ; **Payoneer en secours**,
+  proposé au client, pas subi.
+- **Cinq questions sans réponse publique** sont écrites dans le dossier, à poser **par écrit avant le
+  premier dollar** (taux XAF réel, banques camerounaises acceptées, virement d'une société sur un compte
+  personnel, existence d'un compte entreprise, ségrégation des fonds). Et le test à 1 $ : recevoir,
+  retirer, exporter le relevé, chronométrer.
+- **Un point pour King** : **950 $ = 560 500 FCFA dépasse le plafond de 450 000** du 24/10. Recommandation
+  écrite : le plafond vise la vente d'un site au-delà de sa valeur prouvée, pas l'encaissement d'un an de
+  service à prix unitaire inchangé — donc il passe. **La décision reste à King, et elle est écrite comme
+  telle.**

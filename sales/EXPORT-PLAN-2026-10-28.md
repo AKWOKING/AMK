@@ -35,33 +35,37 @@ signés, ce qui n'est pas le cas aujourd'hui (un seul, DM Optique, à 30 000/moi
 inatteignable sans l'export** — et que l'export n'est donc pas une envie, c'est le seul chemin qui
 reste. Les installations (250 000 la pièce) comblent un mois, jamais un mois sur trois.
 
-### 1.2 Le compte, avec les frais réels
+### 1.2 Le compte, avec les frais réels — Vban, pas Payoneer
 
-Payoneer facture **3,99 % + 0,49 $** sur carte, **0 à 1 %** sur virement bancaire local (ACH américain,
-SEPA européen). Ce n'est pas un détail : c'est la différence entre 9 et 10 clients.
+**Ruling King, 28/10 : « I won't use Payoneer, I'll use Vban. »** Les frais changent le compte, et dans
+le bon sens. Vban (TM Payments Limited, Cameroun en XAF explicitement supporté) facture :
 
-| Ce que le client paie | Net carte (3,99 % + 0,49 $) | Net virement (1 %) | En FCFA net (carte) |
+| Ce que le client paie | Frais Vban | Net | En FCFA net (1 $ = 590) |
 |---|---|---|---|
-| **500 $ installation** | 479,56 $ | 495 $ | **282 900** |
-| **95 $ / mois** | 90,72 $ | 94,05 $ | **53 525** |
+| **500 $ installation** (virement ACH US) | 0,5 %, min 1 $, max 19 $ → **2,50 $** | 497,50 $ | **293 525** |
+| **95 $ / mois** (ACH US) | 0,5 % = 0,475 $ → **minimum 1 $** | 94,00 $ | **55 460** |
+| 437 € installation (SEPA) | 0,5 %, min 2 €, max 8 € → **2,19 €** | 434,81 € | 285 190 |
+| 83 € / mois (SEPA) | 0,5 % → **minimum 2 €** | 81,00 € | 53 130 |
 
 **Ce qu'il faut pour 500 000 FCFA par mois :**
 
 | Scénario | Calcul | Résultat |
 |---|---|---|
-| **Tout en abonnement, paiement carte** | 500 000 ÷ 53 525 | **10 abonnés** |
-| Tout en abonnement, virement | 500 000 ÷ 55 490 | **9 abonnés** |
-| 8 abonnés + 1 installation par mois | 8 × 53 525 + 282 900 | **711 100 FCFA** |
-| 6 abonnés + 1 installation par mois | 6 × 53 525 + 282 900 | **604 050 FCFA** |
+| **Tout en abonnement, clients US payés en dollars** | 500 000 ÷ 55 460 | **9 abonnés** |
+| Tout en abonnement, clients EU payés en euros | 500 000 ÷ 53 130 | 10 abonnés |
+| 7 abonnés US + 1 installation par mois | 7 × 55 460 + 293 525 | **681 745 FCFA** |
 
-> **Le chiffre à retenir : dix abonnés.** Pas dix clients — dix **abonnements à 95 $**. Une installation
-> ne compte pas dans le récurrent : elle paie le mois où elle tombe, pas les suivants.
+> **Le chiffre à retenir : neuf abonnés en dollars**, contre dix avec Payoneer. Le minimum de 1 $ sur un
+> paiement de 95 $ coûte 1,05 % ; sur un paiement de 500 $ la commission plafonne à 19 $.
+> **Conséquence pratique : on facture en dollars les clients américains et en euros les clients
+> européens, jamais l'inverse** — un euros facturé à un Américain coûte deux conversions.
 
 ### 1.3 Le vrai risque de ce modèle : le départ
 
 À 95 $/mois, personne ne se bat pour rester. Un taux de départ de 5 %/mois (la norme basse de ce genre
-d'offre) signifie : **dix abonnés perdent un demi-client par mois**. Pour tenir 500 000 en régime de
-croisière, il faut donc **11 ou 12 abonnés**, pas 10.
+d'offre) signifie : **neuf abonnés perdent un demi-client par mois**. Pour tenir 500 000 en régime de
+croisière, il faut donc **10 ou 11 abonnés**, pas 9. Et **Vban ne prélève rien automatiquement** (§4) :
+ce risque de départ n'est pas une hypothèse de marché, c'est une conséquence mécanique du rail.
 
 C'est la raison pour laquelle le §4 (livrer) compte autant que le §3 (vendre) : un client qui ne voit
 jamais personne passer finit par résilier.
@@ -181,24 +185,74 @@ client et par mois** : deux modifications, deux posts Google, un rapport automat
 
 ---
 
-## 4 · Encaisser — le rail, vérifié aujourd'hui
+## 4 · Encaisser — Vban, ce qu'il fait, ce qu'il ne fait pas
 
-| Élément | Ce que Payoneer permet (28/10/2026) |
+**Vérifié le 28/10/2026 sur les pages d'aide et les conditions de Vban.**
+
+| Élément | État |
 |---|---|
-| **Demande de paiement** | Un e-mail avec un lien ; le client paie par **carte, ACH, virement local, ou PayPal** — **sans compte Payoneer** |
-| **Lien de paiement** | Réutilisable : **« abonnement » possible sans générer un lien par mois** |
-| **Frais** | Carte 3,99 % + 0,49 $ · virement local 0–1 % · réception en devise locale gratuite |
-| **Délai** | 1 h à 3 jours ouvrés selon le moyen |
-| **Sortie** | Retrait vers compte bancaire camerounais (Afriland, Ecobank, BICEC, UBA) |
+| **Pays** | **Cameroun (XAF) explicitement listé** dans les conditions et sur la fiche Play Store |
+| **Comptes** | USD, GBP, EUR **à ton nom** — Vban écrit noir sur blanc qu'elle **n'opère pas de compte « open beneficiary »** (le titulaire est bien toi, pas un intermédiaire) |
+| **Frais de réception** | USD ACH **0,5 %** (min 1 $, max 19 $) · virement USD **0,8 %** (min 5 $, max 15 $) · EUR **0,5 %** (min 2 €, max 8 €) · GBP 0,5 % (min 2 £) |
+| **Change et retrait** | conversion **0 %**, retrait vers XOF/XAF/GHS **0 % de frais** |
+| **Plafonds** | dépôt USD **4 000 $ maximum par envoi depuis un particulier** ; **aucune limite fixe depuis une entreprise** ; au-delà de 9 999 $, justificatifs |
+| **Délais annoncés** | USD ≈ 24 h · GBP ≈ 4,5 h · EUR ≈ 12 h |
 
-**Ce qu'il faut faire avant le premier dollar, et qui ne se fait pas en une heure** : ouvrir le compte,
-faire vérifier l'identité et l'activité (Payoneer demande la nature du business), faire un **test réel à
-1 $** sur son propre lien. Un compte non vérifié le jour où un client paie, c'est une vente perdue.
+### 4.1 Ce que Vban ne fait pas, et qui change l'offre
 
-**Règle qui ne bouge pas** : **jamais** d'encaissement par un intermédiaire WhatsApp. C'était déjà écrit
-le 28/10 au matin ; l'ouverture de l'export ne la change pas, elle la rend plus urgente.
+**Vban n'encaisse pas les cartes.** Ce n'est pas une passerelle marchand : pas de lien de paiement, pas de
+facturation automatique, pas de prélèvement récurrent. **L'argent arrive par virement** sur un compte
+virtuel. Trois conséquences, aucune n'est théorique :
 
----
+1. **Le client doit faire un virement, pas cliquer.** Pour une boutique de detailing américaine, c'est
+   normal pour une facture de 500 $ — mais ce n'est pas aussi simple qu'un bouton « payer ». Le message de
+   vente doit donc **demander le virement dès le départ**, pas le découvrir au moment de payer.
+2. **Pas de prélèvement automatique des 95 $.** Chaque mois, le client renvoie un virement, ou l'oublie.
+   C'est le vrai risque du modèle : **l'attrition silencieuse**. Réponse : l'offre annuelle (§4.2).
+3. **Aucun remboursement par carte.** Un litige se règle par virement retour, à la main. C'est une raison
+   de plus de tenir la promesse de livraison — et de ne jamais encaisser avant d'avoir quelque chose à
+   montrer.
+
+### 4.2 L'offre annuelle, née de la contrainte du rail
+
+Puisque rien ne peut être prélevé automatiquement, **l'abonnement mensuel est le produit le plus fragile
+et le plus coûteux en relances**. Deux formes, et la seconde est meilleure :
+
+| Forme | Prix | Ce que ça donne |
+|---|---|---|
+| Mensuel | **95 $/mois** | Neuf virements par client et par an, neuf occasions d'oublier |
+| **Annuel** | **950 $ (deux mois offerts)** | **Un** virement, zéro relance, et 557 700 FCFA encaissés d'un coup |
+
+**Ce n'est pas une remise** — la règle du 24/10 l'interdit. C'est **un an payé d'avance contre deux mois
+de service en plus** : le périmètre change, pas le prix du mois. Deux clients annuels = **1 114 400 FCFA
+par an, soit 92 900 FCFA par mois** sans une seule relance.
+
+### 4.3 Le risque, dit franchement
+
+Vban est **jeune et contesté** : **3,4/5 sur 108 avis** Play Store, **3,2/5 sur 13 avis** Trustpilot. Les
+griefs récurrents sont précis et graves : fonds envoyés jamais crédités, remboursements qui traînent des
+semaines, comptes bloqués. Un utilisateur rapporte même que le support lui a répondu que l'application
+était **« réservée aux freelancers »** et non aux paiements réguliers — c'est-à-dire que **la nature des
+fonds reçus est contrôlée**.
+
+Et la réponse de Vban à « is my money safe? » est du marketing (« Absolutely! »), sans
+licence nommée ni garantie des dépôts. Les conditions disent : **« Vban is not a bank »**, services Rendus
+par des partenaires régulés non précisés.
+
+**Donc trois règles, et elles ne sont pas négociables :**
+
+1. **On ne laisse jamais d'argent dormir.** Retrait vers le compte bancaire camerounais **chaque semaine**,
+   solde maintenu au plus bas. Un solde chez Vban n'est pas un compte d'épargne, c'est de l'argent en
+   transit.
+2. **Chaque paiement a sa preuve** : facture numérotée, périmètre écrit, capture du virement. C'est ce qui
+   répond à une demande de justificatif — et il y en aura.
+3. **Vban est le rail principal, jamais le seul.** Un client qui ne peut pas virer (carte uniquement) ne
+   doit pas être une vente perdue : la réponse de secours existe (Payoneer, 3,99 % + 0,49 $), elle coûte
+   plus cher et **elle se propose au client, pas à nous**.
+
+**Avant le premier dollar** : compte ouvert, KYC terminé, **test réel à 1 $** depuis un compte tiers, un
+retrait de 1 $ vers la banque camerounaise, et le relevé exporté en PDF. Tant que ces quatre gestes ne
+sont pas faits, le rail n'est pas vérifié — il est seulement installé.
 
 ## 5 · La machine d'acquisition, et ce qu'elle coûte
 
@@ -208,7 +262,7 @@ le 28/10 au matin ; l'ouverture de l'export ne la change pas, elle la rend plus 
 LISTE  → fiche Google Maps sans site, avec téléphone et au moins 5 avis
 APERÇU → une page remplie avec SES photos, SON nom, SA ville, SES horaires, SES avis
 ENVOI  → 4 lignes + le lien de l'aperçu
-PAIE   → lien Payoneer, 500 $ puis 95 $/mois
+PAIE   → facture + coordonnées du compte virtuel Vban, 500 $ puis 95 $/mois
 LIVRE  → domaine à son nom, 72 h, deux séries de retouches
 ```
 
@@ -227,7 +281,7 @@ s'écrit.
 |---|---|---|
 | Nom de domaine d'envoi (ex. `getamk.com`) | ~12 $/an | À vérifier au registraire, non acheté |
 | Boîte e-mail professionnelle | 1–7 $/mois | Zoho ou Google Workspace |
-| Payoneer | 0 $ | Gratuit à l'ouverture |
+| Vban | 0 $ | Compte virtuel gratuit ; réception 0,5 % |
 | Liste Google Maps | 0 $ au départ | **Manuel : 20 fiches/jour.** Un scraper ne se paie qu'après la première vente |
 | Outil d'envoi (Instantly, Smartlead) | 0 $ au départ | **Boîte normale, 30 e-mails/jour maximum.** L'outil vient après le premier client payé |
 | **Total pour commencer** | **≈ 25 $** | Le reste attend d'être financé par le premier client |
@@ -256,7 +310,7 @@ n'est pas faisable sans gabarit.
 
 | Jours | Ce qui se fait | Ce qui doit être vrai à la fin |
 |---|---|---|
-| **1–7** | Compte Payoneer ouvert et vérifié · domaine acheté · boîte créée · chauffe démarrée · **générateur d'aperçus** construit (CSV → page) · gabarit detailing FR + EN | Un aperçu se produit en **moins de 5 minutes** |
+| **1–7** | Compte Vban ouvert, KYC terminé, test à 1 $ reçu et retiré · domaine acheté · boîte créée · chauffe démarrée · **générateur d'aperçus** construit (CSV → page) · gabarit detailing FR + EN | Un aperçu se produit en **moins de 5 minutes** |
 | **8–14** | 100 fiches Maps relevées (3 villes US) · 30 aperçus · envoi manuel limité (10/jour) · **2 messages de `leads/DIASPORA-2026-10-28.md`** partent à zéro coût | 30 aperçus existent, les taux de réponse sont lisibles |
 | **15–30** | 300 contacts · ajustement du message sur les réponses | **Au moins 1 client payé** et un taux de réponse ≥ 3 % |
 | **31–60** | 3 à 4 abonnés · première installation · le livrable de 72 h est tenu deux fois | Le temps réel par client est mesuré, pas estimé |
@@ -285,7 +339,7 @@ n'est pas faisable sans gabarit.
    Quand un client demande d'où on travaille, **on répond la vérité**. Est-ce la ligne ? (Ma
    recommandation : oui. Cacher l'origine est le seul mensonge qui tue une réputation en ligne.)
 
-**Ce qui démarre sans réponse** : le compte Payoneer, le domaine, la chauffe, le générateur d'aperçus, et
+**Ce qui démarre sans réponse** : le compte Vban, le domaine, la chauffe, le générateur d'aperçus, et
 les deux messages de la liste diaspora. **Rien de tout cela n'engage un prix ni une parole publique.**
 
 ---
@@ -306,9 +360,12 @@ du site de detailing · zar la, fourchettes designers (2 000–8 000 $) · PISCE
 **Le panier du client** — Housecall Pro, « Car Detailing Prices 2026 » (céramique 700–2 000 $) ·
 hulotrade, 03/2026 (céramique 800–2 500 $).
 
-**Encaisser** — Payoneer, pages « Payment request », « Payment links », « Get paid by clients » et
-« How to pay a Payoneer user » (frais carte 3,99 % + 0,49 $, virement local 0–1 %, sans compte côté
-client), consultées le 28/10/2026.
+**Encaisser** — Vban : pages d'aide « Our pricing and fees », « General FAQs » et « Does Vban operate an
+Open Beneficiary account », conditions de service (`vban.com/terms`) et fiche Play Store, consultées le
+28/10/2026 (Cameroun XAF listé ; frais USD ACH 0,5 % min 1 $ max 19 $ ; EUR 0,5 % min 2 € max 8 € ;
+retrait XAF 0 % ; plafond 4 000 $ par dépôt depuis un particulier, aucune limite depuis une entreprise) ·
+avis publics : Play Store 3,4/5 sur 108 avis, Trustpilot 3,2/5 sur 13 avis · Payoneer conservé en rail de
+secours (3,99 % + 0,49 $ carte, 0–1 % virement local).
 
 **Interne** — `knowledge/PRIX-2026-10-24.md` §4 bis (plafond 450 000) et §7 (cinq clients, 85 000 FCFA de
 charges fixes) · `knowledge/MAINTENANCE-CLIENTS-2026-10-22.md` (4–5 h/mois par client) ·
